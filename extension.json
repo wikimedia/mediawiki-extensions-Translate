@@ -494,27 +494,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.groupselector": {
-			"styles": "resources/css/ext.translate.groupselector.less",
-			"scripts": "resources/js/ext.translate.groupselector.js",
-			"dependencies": [
-				"ext.translate.base",
-				"ext.translate.loader",
-				"ext.translate.statsbar",
-				"jquery.ui.position",
-				"mediawiki.jqueryMsg"
-			],
-			"messages": [
-				"translate-msggroupselector-search-all",
-				"translate-msggroupselector-search-placeholder",
-				"translate-msggroupselector-search-recent",
-				"translate-msggroupselector-view-subprojects"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.hooks": {
 			"scripts": "resources/js/ext.translate.hooks.js",
 			"targets": [
@@ -596,15 +575,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.multiselectautocomplete": {
-			"scripts": "resources/js/ext.translate.multiselectautocomplete.js",
-			"dependencies": [
-				"jquery.ui.autocomplete"
-			],
-			"targets": [
-				"desktop"
-			]
-		},
 		"ext.translate.navitoggle": {
 			"skinScripts": {
 				"vector": "resources/js/ext.translate.navitoggle.js"
@@ -652,40 +622,11 @@
 				"mobile"
 			]
 		},
-		"ext.translate.special.aggregategroups": {
-			"scripts": "resources/js/ext.translate.special.aggregategroups.js",
-			"dependencies": [
-				"jquery.ui.autocomplete",
-				"mediawiki.api",
-				"mediawiki.util"
-			],
-			"messages": [
-				"tpt-aggregategroup-add",
-				"tpt-aggregategroup-edit-description",
-				"tpt-aggregategroup-edit-name",
-				"tpt-aggregategroup-remove-confirm",
-				"tpt-aggregategroup-update",
-				"tpt-aggregategroup-update-cancel",
-				"tpt-invalid-group"
-			],
-			"targets": [
-				"desktop"
-			]
-		},
 		"ext.translate.special.aggregategroups.styles": {
 			"styles": "resources/css/ext.translate.special.aggregategroups.css",
 			"targets": [
 				"desktop",
 				"mobile"
-			]
-		},
-		"ext.translate.special.importtranslations": {
-			"scripts": "resources/js/ext.translate.special.importtranslations.js",
-			"dependencies": [
-				"jquery.ui.autocomplete"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.translate.special.languagestats": {
@@ -751,45 +692,6 @@
 			"targets": [
 				"desktop",
 				"mobile"
-			]
-		},
-		"ext.translate.special.managetranslatorsandbox": {
-			"scripts": "resources/js/ext.translate.special.managetranslatorsandbox.js",
-			"dependencies": [
-				"ext.translate.loader",
-				"ext.translate.translationstashstorage",
-				"ext.uls.mediawiki",
-				"jquery.ui.dialog",
-				"mediawiki.api",
-				"mediawiki.jqueryMsg",
-				"mediawiki.language",
-				"mediawiki.notify"
-			],
-			"messages": [
-				"tsb-accept-all-button-label",
-				"tsb-accept-button-label",
-				"tsb-reject-confirmation",
-				"tsb-accept-confirmation",
-				"tsb-all-languages-button-label",
-				"tsb-didnt-make-any-translations",
-				"tsb-no-requests-from-new-users",
-				"tsb-older-requests",
-				"tsb-reject-all-button-label",
-				"tsb-reject-button-label",
-				"tsb-reminder-failed",
-				"tsb-reminder-link-text",
-				"tsb-reminder-sending",
-				"tsb-reminder-sent",
-				"tsb-reminder-sent-new",
-				"tsb-request-count",
-				"tsb-selected-count",
-				"tsb-translations-current",
-				"tsb-translations-source",
-				"tsb-translations-user",
-				"tsb-user-posted-a-comment"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.translate.special.managetranslatorsandbox.styles": {
@@ -902,15 +804,6 @@
 			"targets": [
 				"desktop",
 				"mobile"
-			]
-		},
-		"ext.translate.special.searchtranslations.operatorsuggest": {
-			"scripts": "resources/js/ext.translate.special.operatorsuggest.js",
-			"dependencies": [
-				"jquery.ui.autocomplete"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.translate.special.searchtranslations.styles": {

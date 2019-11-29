@@ -853,15 +853,110 @@ class TranslateHooks {
 	 * @param ResourceLoader $resourceLoader
 	 */
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
-		$modules = [];
-		$modules['ext.translate.recentgroups'] = [
-			'scripts' => 'resources/js/ext.translate.recentgroups.js',
-			'dependencies' => [
-				'mediawiki.storage'
-			],
+		// Support: MediaWiki <= 1.33
+		global $wgVersion;
+		$hasOldJqUI = version_compare( $wgVersion, '1.34', '<' );
+		$tpl = [
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'Translate',
 			'targets' => [ 'desktop', 'mobile' ],
+		];
+
+		$modules = [
+			'ext.translate.recentgroups' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.recentgroups.js',
+				'dependencies' => [
+					'mediawiki.storage'
+				],
+			],
+			'ext.translate.groupselector' => $tpl + [
+				'styles' => 'resources/css/ext.translate.groupselector.less',
+				'scripts' => 'resources/js/ext.translate.groupselector.js',
+				'dependencies' => [
+					'ext.translate.base',
+					'ext.translate.loader',
+					'ext.translate.statsbar',
+					$hasOldJqUI ? 'jquery.ui.position' : 'jquery.ui',
+					'mediawiki.jqueryMsg'
+				],
+				'messages' => [
+					'translate-msggroupselector-search-all',
+					'translate-msggroupselector-search-placeholder',
+					'translate-msggroupselector-search-recent',
+					'translate-msggroupselector-view-subprojects'
+				]
+			],
+			'ext.translate.multiselectautocomplete' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.multiselectautocomplete.js',
+				'dependencies' => [
+					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+				]
+			],
+			'ext.translate.special.aggregategroups' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
+				'dependencies' => [
+					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+					'mediawiki.api',
+					'mediawiki.util'
+				],
+				'messages' => [
+					'tpt-aggregategroup-add',
+					'tpt-aggregategroup-edit-description',
+					'tpt-aggregategroup-edit-name',
+					'tpt-aggregategroup-remove-confirm',
+					'tpt-aggregategroup-update',
+					'tpt-aggregategroup-update-cancel',
+					'tpt-invalid-group'
+				]
+			],
+			'ext.translate.special.importtranslations' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.special.importtranslations.js',
+				'dependencies' => [
+					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+				]
+			],
+			'ext.translate.special.managetranslatorsandbox' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
+				'dependencies' => [
+					'ext.translate.loader',
+					'ext.translate.translationstashstorage',
+					'ext.uls.mediawiki',
+					$hasOldJqUI ? 'jquery.ui.dialog' : 'jquery.ui',
+					'mediawiki.api',
+					'mediawiki.jqueryMsg',
+					'mediawiki.language',
+					'mediawiki.notify'
+				],
+				'messages' => [
+					'tsb-accept-all-button-label',
+					'tsb-accept-button-label',
+					'tsb-reject-confirmation',
+					'tsb-accept-confirmation',
+					'tsb-all-languages-button-label',
+					'tsb-didnt-make-any-translations',
+					'tsb-no-requests-from-new-users',
+					'tsb-older-requests',
+					'tsb-reject-all-button-label',
+					'tsb-reject-button-label',
+					'tsb-reminder-failed',
+					'tsb-reminder-link-text',
+					'tsb-reminder-sending',
+					'tsb-reminder-sent',
+					'tsb-reminder-sent-new',
+					'tsb-request-count',
+					'tsb-selected-count',
+					'tsb-translations-current',
+					'tsb-translations-source',
+					'tsb-translations-user',
+					'tsb-user-posted-a-comment'
+				]
+			],
+			'ext.translate.special.searchtranslations.operatorsuggest' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.special.operatorsuggest.js',
+				'dependencies' => [
+					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+				]
+			],
 		];
 
 		$resourceLoader->register( $modules );
