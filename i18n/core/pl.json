@@ -245,6 +245,7 @@
 	"translate-smg-rename-select": "Wybierz",
 	"translate-smg-rename-cancel": "Anuluj",
 	"translate-smg-rename-select-err": "Wybierz komunikat, którego nazwę chcesz zmienić",
+	"translate-smg-rename-no-msg": "Nie znaleziono komunikatów.",
 	"translate-smg-rename-new": "Dodaj jako nowy…",
 	"translate-smg-rename-rename": "Dodaj jako efekt zmiany nazwy…",
 	"translate-manage-import-diff": "Komunikat $1 | Operacje: $2",

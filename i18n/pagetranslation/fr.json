@@ -142,7 +142,7 @@
 	"logentry-pagetranslation-associate": "$1{{GENDER:$2|}} a ajouté la page traduisible $3 au groupe agrégé $4",
 	"logentry-pagetranslation-dissociate": "$1{{GENDER:$2|}} a supprimé la page traduisible $3 du groupe agrégé $4",
 	"log-action-filter-pagetranslation": "Type d’action :",
-	"log-action-filter-pagetranslation-mark": "Marquer à traduire",
+	"log-action-filter-pagetranslation-mark": "Marquage comme étant à traduire",
 	"log-action-filter-pagetranslation-unmark": "Retrait de la possibilité de traduire",
 	"log-action-filter-pagetranslation-move": "Déplacements de pages",
 	"log-action-filter-pagetranslation-delete": "Suppressions de pages",

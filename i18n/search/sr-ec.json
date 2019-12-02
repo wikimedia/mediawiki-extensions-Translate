@@ -5,7 +5,8 @@
 			"Milicevic01",
 			"Сербијана",
 			"Obsuser",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"searchtranslations": "Претрага превода",
@@ -30,5 +31,7 @@
 	"tux-sst-ellipsis-outdated": "Застарели преводи",
 	"tux-sst-link-all-match": "Ограничи на све речи из претраге.",
 	"tux-sst-match-message": "Приказани су преводи који одговарају било којој речи из претраге. $1",
-	"tux-sst-case-sensitive": "Разликуј велика и мала слова"
+	"tux-sst-case-sensitive": "Разликуј велика и мала слова",
+	"tux-sst-error-offset": "Не могу се више приказивати резултати претраживања. Молимо сузите претрагу.",
+	"tux-sst-error-language": "Није могуће користити овај језик са овим типом претраге."
 }
