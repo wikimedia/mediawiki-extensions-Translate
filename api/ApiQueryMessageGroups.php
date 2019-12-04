@@ -68,7 +68,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			// Have dynamic groups appear first in the list
 			$groups = $dynamicGroups + $groups;
 		}
-		'@phan-var MessageGroup[] $groups';
+		'@phan-var (MessageGroup|array)[] $groups';
 
 		// Do not list the sandbox group. The code that knows it
 		// exists can access it directly.
@@ -81,10 +81,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$result = $this->getResult();
 		$matcher = new StringMatcher( '', $filter );
 		/**
-		 * @var MessageGroup $mixed
+		 * @var MessageGroup|array $mixed
 		 */
 		foreach ( $groups as $mixed ) {
-			if ( $filter !== [] && !$matcher->match( $mixed->getId() ) ) {
+			// array when Format = tree
+			$group = is_array( $mixed ) ? reset( $mixed ) : $mixed;
+			if ( $filter !== [] && !$matcher->match( $group->getId() ) ) {
 				continue;
 			}
 
