@@ -616,18 +616,20 @@ class SpecialPageTranslation extends SpecialPage {
 			// We need to do checks for both new and existing sections.
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.
-			if ( isset( $usedNames[$s->id] ) ) {
+			$usedNames[$s->id] = ( $usedNames[$s->id] ?? 0 ) + 1;
+			$s->name = $s->id;
+		}
+		foreach ( $usedNames as $name => $count ) {
+			if ( $count > 1 ) {
+				// Only show error once per duplicated translation unit
 				$this->getOutput()->addElement(
 					'p',
 					[ 'class' => 'errorbox' ],
-					$this->msg( 'tpt-duplicate' )->params( $s->id )->text()
+					$this->msg( 'tpt-duplicate' )->params( $name )->text()
 				);
 				$error = true;
 			}
-			$usedNames[$s->id] = true;
-			$s->name = $s->id;
 		}
-
 		return $sections;
 	}
 
