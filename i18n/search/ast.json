@@ -26,5 +26,7 @@
 	"tux-sst-ellipsis-outdated": "Traducciones anticuaes",
 	"tux-sst-link-all-match": "Riquir toles palabres buscaes.",
 	"tux-sst-match-message": "Amosar les traducciones que casen con cualesquiera de les palabres buscaes. $1",
-	"tux-sst-case-sensitive": "Sensible a mayúscules"
+	"tux-sst-case-sensitive": "Sensible a mayúscules",
+	"tux-sst-error-offset": "Nun puen amosase más resultaos de la gueta. Tienes d'afinar la gueta.",
+	"tux-sst-error-language": "Esti idioma nun pue utilizase con esti tipu de gueta."
 }
