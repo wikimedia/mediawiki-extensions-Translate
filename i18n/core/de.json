@@ -20,7 +20,8 @@
 			"Shirayuki",
 			"Tbleher",
 			"The Evil IP address",
-			"Umherirrender"
+			"Umherirrender",
+			"Tobi 406"
 		]
 	},
 	"translate": "Übersetzen",
@@ -103,6 +104,7 @@
 	"translate-checks-plural": "Die Übersetzungsvorlage verwendet <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.",
 	"translate-checks-plural-forms": "Zu <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|wurde eine Ausprägung|wurden $1 Ausprägungen}} angegeben. Es {{PLURAL:$2|wird allerdings nur eine Ausprägung|werden allerdings nur $2 Ausprägungen}} unterstützt (auschließlich 0= und 1= forms).",
 	"translate-checks-plural-dupe": "Zu <nowiki>{{PLURAL:}}</nowiki> wurden zwei gleiche Ausprägungen angegeben. Bspw. sollte aber <nowiki>{{PLURAL:$1|Milch|Milch}}</nowiki> als <nowiki>{{PLURAL:$1|Milch}}</nowiki> angegeben werden.",
+	"translate-checks-unicode-plural-missing": "Diese Übersetzung muss <nowiki>{{PLURAL|}}</nowiki> haben.",
 	"translate-checks-pagename": "Der Namensraum weicht von dem in der Übersetzungsvorlage ab.",
 	"translate-checks-format": "Diese Übersetzung entspricht nicht der Übersetzungsvorlage oder enthält eine ungültige Syntax: $1",
 	"translate-checks-escape": "Die folgenden Escape-Sequenzen könnten versehentlich vorhanden sein: <strong>$1</strong>",
@@ -226,6 +228,8 @@
 	"translate-smg-more": "Nach dem Speichern dieser Änderungen müssen weitere Änderungen verarbeitet werden.",
 	"translate-smg-left": "Nachrichteninhalt im Wiki",
 	"translate-smg-right": "Eingegangene Änderungen",
+	"translate-smg-rename-select": "Auswählen",
+	"translate-smg-rename-cancel": "Abbrechen",
 	"translate-manage-import-diff": "Nachricht $1 | Aktionen: $2",
 	"translate-manage-import-new": "Neue Nachricht $1",
 	"translate-manage-import-deleted": "Gelöschte Nachricht $1",
@@ -393,5 +397,6 @@
 	"translate-ulsdep-title": "Konfigurationsfehler",
 	"translate-ulsdep-body": "Die Übersetzungserweiterung hängt von der [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Erweiterung für die universelle Sprachauswahl] ab.",
 	"tux-session-expired": "Du bist nicht mehr angemeldet. Bitte melde dich auf einer getrennten Registerkarte an. Alternativ kannst du eine Kopie deiner ungespeicherten Übersetzungen machen, dich anmelden, zu dieser Seite zurückkehren und deine Übersetzungen erneut eingeben.",
-	"tux-nojs": "Dieses Werkzeug funktioniert ohne JavaScript nicht. Es ist deaktiviert, funktioniert nicht oder dieser Browser wird nicht unterstützt."
+	"tux-nojs": "Dieses Werkzeug funktioniert ohne JavaScript nicht. Es ist deaktiviert, funktioniert nicht oder dieser Browser wird nicht unterstützt.",
+	"specialpages-group-translation": "Übersetzung"
 }
