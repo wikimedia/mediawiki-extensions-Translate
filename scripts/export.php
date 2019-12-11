@@ -235,8 +235,8 @@ class CommandlineExport extends Maintenance {
 
 				if ( $emptyLangs !== [] ) {
 					$this->output(
-						"Message group $groupId in language(s) " . implode( $emptyLangs ) .
-						" doesn't contain messages."
+						"Message group $groupId doesn't contain messages in language(s): " .
+						implode( ', ', $emptyLangs ) . "."
 					);
 				}
 
