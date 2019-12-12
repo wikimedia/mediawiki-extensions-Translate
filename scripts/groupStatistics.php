@@ -356,7 +356,7 @@ class GroupStatistics extends Maintenance {
 		}
 
 		if ( !count( $groups ) ) {
-			$this->error( 'No groups given', true );
+			$this->fatalError( 'No groups given' );
 		}
 
 		// List of all languages.
