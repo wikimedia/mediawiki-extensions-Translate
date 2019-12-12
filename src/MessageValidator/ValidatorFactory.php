@@ -18,6 +18,7 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralVa
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
 use InvalidArgumentException;
 use RuntimeException;
 
@@ -41,6 +42,7 @@ class ValidatorFactory {
 		'Newline' => NewlineValidator::class,
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
+		'WikiParameter' => WikiParameterValidator::class,
 	];
 
 	/**

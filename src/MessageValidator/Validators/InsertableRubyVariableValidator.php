@@ -8,7 +8,7 @@
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
 /**
- * An insertable Ruby variable validator that is also acts as a Suggester
+ * An insertable Ruby variable validator that also acts as an InsertableSuggester
  * @since 2019.06
  */
 class InsertableRubyVariableValidator extends InsertableRegexValidator {
