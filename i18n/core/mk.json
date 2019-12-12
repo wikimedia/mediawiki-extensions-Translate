@@ -81,7 +81,7 @@
 	"translate-magic-notsaved": "Вашето уредување не беше зачувано!",
 	"translate-magic-errors": "Поправете {{PLURAL:$1|ја следнава грешка|ги следниве грешки}} во преводот:",
 	"translate-magic-saved": "Промените се зачувани.",
-	"translate-checks-parameters": "{{PLURAL:$2|Следниов параметар не се користи|Следниве параметри се користат}}:\n<strong>$1</strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|Не се користи следниов параметар|Не се користат следниве параметри}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Следниов параметар е непознат|Следниве параметри се непознати}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "Непарен број на загради, {{PLURAL:$2|заграда|загради}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Следнава врска предизвикува проблеми|Следниве $2 врски предизвикуваат проблеми}}:\n<strong><nowiki>$1</nowiki></strong>",
