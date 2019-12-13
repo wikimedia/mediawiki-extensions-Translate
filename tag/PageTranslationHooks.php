@@ -68,6 +68,7 @@ class PageTranslationHooks {
 		$name = $page->getPageDisplayTitle( $code );
 		if ( $name ) {
 			$name = $parser->recursivePreprocess( $name );
+			$name = $parser->getTargetLanguage()->convert( $name );
 			$parser->getOutput()->setDisplayTitle( $name );
 		}
 		self::$renderingContext = false;
