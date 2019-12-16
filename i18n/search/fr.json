@@ -9,7 +9,8 @@
 			"Bluenaranja",
 			"Verdy p",
 			"Pols12",
-			"Urhixidur"
+			"Urhixidur",
+			"Thibaut120094"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -24,12 +25,12 @@
 	"tux-sst-nosolr-body": "Ce wiki n’a pas de service de recherche de traduction.",
 	"tux-sst-solr-offline-title": "Recherche indisponible",
 	"tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
-	"tux-sst-next": "Suivant ›",
-	"tux-sst-prev": "‹ Précédent",
+	"tux-sst-next": "Suivant ›",
+	"tux-sst-prev": "‹ Précédent",
 	"tux-sst-default": "Traductions",
-	"tux-sst-translated": "Traduits depuis la source en $1",
-	"tux-sst-untranslated": "Pas encore traduits depuis la source en $1",
-	"tux-sst-outdated": "Traductions désuètes depuis la source en $1",
+	"tux-sst-translated": "Originaux en $1 traduits",
+	"tux-sst-untranslated": "Originaux en $1 pas encore traduits",
+	"tux-sst-outdated": "Originaux en $1 dont la traduction est à mettre à jour",
 	"tux-sst-ellipsis-untranslated": "Non traduits",
 	"tux-sst-ellipsis-outdated": "Traductions désuètes",
 	"tux-sst-link-all-match": "Exiger la présence de tous les termes de la recherche.",

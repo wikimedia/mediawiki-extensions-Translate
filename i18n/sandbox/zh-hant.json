@@ -7,7 +7,8 @@
 			"LNDDYL",
 			"和平奮鬥救地球",
 			"Kly",
-			"Sean"
+			"Sean",
+			"Xiplus"
 		]
 	},
 	"managetranslatorsandbox": "管理翻譯人員沙盒",
@@ -18,10 +19,10 @@
 	"tsb-reminder-sent": "{{PLURAL:$1|已傳送 $1 條提醒，時間於 $2。|已傳送 $1 條提醒，最後一次時間於 $2}}",
 	"tsb-reminder-sent-new": "傳送備忘通知",
 	"tsb-reminder-failed": "傳送備忘通知失敗",
-	"tsb-email-promoted-subject": "您已成為 {{SITENAME}} 的翻譯人員",
-	"tsb-email-promoted-body": "您好 {{GENDER:$1|$1}}，\n\n恭喜您！ 我已核可您在 {{SITENAME}} 所做的翻譯測驗並授權您所有翻譯人員的權限。\n\n您可至 {{SITENAME}} 繼續翻譯工作:\n$2\n\n歡迎您的加入並感謝您所做的貢獻！\n\n{{GENDER:$3|$3}}，\n{{SITENAME}} 工作團隊",
-	"tsb-email-rejected-subject": "您於 {{SITENAME}} 翻譯人員申請被拒絕",
-	"tsb-email-rejected-body": "您好 {{GENDER:$1|$1}}，\n\n感謝您申請成為 {{SITENAME}} 的翻譯人員，很抱歉通知您我們已拒絕您的申請，因為您的翻譯水準未達我們所需的標準。\n\n若您對申請的結果有疑問，請於 {{SITENAME}} 再申請翻譯人員一次。 您可於此處註冊：\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}} 工作團隊",
+	"tsb-email-promoted-subject": "您已成為{{SITENAME}}的翻譯人員",
+	"tsb-email-promoted-body": "您好 {{GENDER:$1|$1}}，\n\n恭喜您！我已核可您在{{SITENAME}}所做的翻譯測驗並授權您所有翻譯人員的權限。\n\n您可至{{SITENAME}}繼續翻譯工作:\n$2\n\n歡迎您的加入並感謝您所做的貢獻！\n\n{{GENDER:$3|$3}}，\n{{SITENAME}}工作團隊",
+	"tsb-email-rejected-subject": "您於{{SITENAME}}翻譯人員申請被拒絕",
+	"tsb-email-rejected-body": "您好 {{GENDER:$1|$1}}，\n\n感謝您申請成為{{SITENAME}}的翻譯人員，很抱歉通知您我們已拒絕您的申請，因為您的翻譯水準未達我們所需的標準。\n\n若您對申請的結果有疑問，請於{{SITENAME}}再申請翻譯人員一次。 您可於此處註冊：\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}}工作團隊",
 	"tsb-request-count": "$1 筆請求",
 	"tsb-all-languages-button-label": "所有語言",
 	"tsb-search-requests": "搜尋等候的請求",

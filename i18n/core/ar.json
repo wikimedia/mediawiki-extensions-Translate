@@ -120,6 +120,7 @@
 	"translate-checks-newline-missing-end": "هناك {{PLURAL:$1|سطر جديد يفتقد|سطور جديدة تفتقد}} $1 {{PLURAL:$1|حرف|أحرف}} في نهاية الترجمة.",
 	"translate-checks-newline-extra-start": "هناك {{PLURAL:$1|سطر إضافي يفتقد|سطور إضافية تفتقد}} $1 {{PLURAL:$1|حرف|أحرف}} في بداية الترجمة.",
 	"translate-checks-newline-extra-end": "هناك {{PLURAL:$1|سطر إضافي يفتقد|سطور إضافية تفتقد}} $1 {{PLURAL:$1|حرف|أحرف}} في نهاية الترجمة.",
+	"translate-checks-value-not-present": "يجب أن تكون الترجمة مساوية {{PLURAL:$1|1=|لإحدى القيم التالية:}} $1.",
 	"translate-pref-nonewsletter": "لا ترسل إليّ نشرات إخبارية  عن طريق البريد الإلكتروني",
 	"translate-pref-editassistlang": "لغات المساعد:",
 	"prefs-translate": "خيارات الترجمة",

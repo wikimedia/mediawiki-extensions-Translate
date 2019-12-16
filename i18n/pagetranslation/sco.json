@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"John Reid",
-			"AmaryllisGardener"
+			"AmaryllisGardener",
+			"MJL"
 		]
 	},
 	"pagetranslation": "Page owersetin",
@@ -72,6 +73,7 @@
 	"tpt-aggregategroup-new-description": "Descreeption (aen optie):",
 	"tpt-aggregategroup-remove-confirm": "Ar ye sair that ye want tae delyte this aggregate groop?",
 	"tpt-aggregategroup-invalid-group": "Groop disna exeest",
+	"tpt-aggregategroup-edit-description": "Descreeption:",
 	"pt-parse-open": "Onbalancet &lt;translate> tag.\nOwersetin template: <pre>$1</pre>",
 	"pt-parse-close": "Onbalancet &lt;/translate> tag.\nOwersetin template: <pre>$1</pre>",
 	"pt-parse-nested": "Nested &lt;translate> owersetin units arna permittit.\nTag tex: <pre>$1</pre>",

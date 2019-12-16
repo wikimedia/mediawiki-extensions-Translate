@@ -20,7 +20,8 @@
 			"EagerLin",
 			"Wehwei",
 			"Hello903hello",
-			"Kly"
+			"Kly",
+			"Xiplus"
 		]
 	},
 	"translate": "翻譯",
@@ -122,6 +123,7 @@
 	"translate-checks-newline-missing-end": "在翻譯的結尾{{PLURAL:$1|有}}缺少著 $1 個換行{{PLURAL:$1|字元}}。",
 	"translate-checks-newline-extra-start": "在翻譯的開頭{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
 	"translate-checks-newline-extra-end": "在翻譯的結尾{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
+	"translate-checks-value-not-present": "此翻譯應相同於{{PLURAL:$1|1=|以下值之一：}}$1。",
 	"translate-pref-nonewsletter": "不要傳送電子報給我",
 	"translate-pref-editassistlang": "輔助語言：",
 	"prefs-translate": "翻譯選項",
@@ -221,7 +223,7 @@
 	"translate-mgs-invalid-group": "指定的群組 $1 不存在。",
 	"translate-mgs-nothing": "所請求的統計資訊沒有任何內容可以顯示。",
 	"supportedlanguages": "支援的語言",
-	"supportedlanguages-summary": "本頁顯示 {{SITENAME}} 所有支援的語言清單，\n連同翻譯該語言的翻譯人員姓名，\n翻譯人員的姓名越大，代表翻譯人員的編輯貢獻越多，\n底線的顏色用來表示翻譯人員最近活動的狀況。",
+	"supportedlanguages-summary": "本頁顯示{{SITENAME}}所有支援的語言清單，\n連同翻譯該語言的翻譯人員姓名，\n翻譯人員的姓名越大，代表翻譯人員的編輯貢獻越多，\n底線的顏色用來表示翻譯人員最近活動的狀況。",
 	"supportedlanguages-colorlegend": "色彩圖例：最近一次翻譯於 $1 天前。",
 	"supportedlanguages-sqlite-error": "不支援 SQLite",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|翻譯人員}}}}：$1",

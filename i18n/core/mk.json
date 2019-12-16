@@ -109,6 +109,7 @@
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|Недостасува|Недостасуваат}} $1 {{PLURAL:$1|знак|знаци}} за нов ред на крајот од преводот.",
 	"translate-checks-newline-extra-start": "Има $1 {{PLURAL:$1|излишен знак|излишни знаци}} за нов ред на почетокот од преводот.",
 	"translate-checks-newline-extra-end": "Има $1 {{PLURAL:$1|излишен знак|излишни знаци}} за нов ред на крајот од преводот.",
+	"translate-checks-value-not-present": "Преводот мора да е еднаков на {{PLURAL:$1|1=|една од следниве вредности:}} $1.",
 	"translate-pref-nonewsletter": "Не ми испраќај новости по е-пошта",
 	"translate-pref-editassistlang": "Помошни јазици:",
 	"prefs-translate": "Нагодувања за преведување",

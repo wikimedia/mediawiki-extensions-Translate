@@ -14,21 +14,22 @@
 			"TomT0m",
 			"Derugon",
 			"Wladek92",
-			"Verdy p"
+			"Verdy p",
+			"Thibaut120094"
 		]
 	},
 	"managetranslatorsandbox": "Gérer le bac à sable de traduction",
 	"tsb-filter-pending": "Requêtes en attente",
 	"tsb-reminder-title-generic": "Veuillez compléter votre présentation de candidature pour devenir un traducteur",
-	"tsb-reminder-content-generic": "Bonjour $1,\n\nMerci de vous être inscrit sur {{SITENAME}}.\n\nSi vous achevez vos traductions de test, les administrateurs vous accorderont peu après un plein accès aux traductions.\n\nVeuillez aller ici et faire quelques traductions supplémentaires :\n$2\n\n$3,\nL’équipe de {{SITENAME}}",
+	"tsb-reminder-content-generic": "Bonjour $1,\n\nMerci de vous être inscrit sur {{SITENAME}}.\n\nSi vous achevez vos traductions de test, les administrateurs vous accorderont peu après un plein accès aux traductions.\n\nVeuillez aller ici et faire quelques traductions supplémentaires :\n$2\n\n$3,\nL’équipe de {{SITENAME}}",
 	"tsb-reminder-sending": "Envoi du rappel en cours...",
-	"tsb-reminder-sent": "{{PLURAL:$1|$1 rappel envoyé le $2|$1 rappels envoyés, le dernier le / à $2}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|$1 rappel envoyé le $2|$1 rappels envoyés, le dernier le / à $2}}",
 	"tsb-reminder-sent-new": "Rappel envoyé",
 	"tsb-reminder-failed": "L’envoi du rappel a échoué",
 	"tsb-email-promoted-subject": "Vous êtes maintenant un traducteur sur {{SITENAME}}",
-	"tsb-email-promoted-body": "Bonjour {{GENDER:$1|}}$1,\n\nFélicitations ! J’ai vérifié les traductions d’essai que vous avez effectuées sur {{SITENAME}} et je vous ai donné les droits complets de traduct{{GENDER:$1|eur|rice}}.\n\nVenez sur {{SITENAME}} pour continuer à traduire dès maintenant et tous les jours :\n$2\n\nBienvenue et merci pour vos contributions !\n\n{{GENDER:$3|}}$3,\nmembre de l’équipe de {{SITENAME}}.",
+	"tsb-email-promoted-body": "Bonjour {{GENDER:$1|}}$1,\n\nFélicitations ! J’ai vérifié les traductions d’essai que vous avez effectuées sur {{SITENAME}} et je vous ai donné les droits complets de traduct{{GENDER:$1|eur|rice}}.\n\nVenez sur {{SITENAME}} pour continuer à traduire dès maintenant et tous les jours :\n$2\n\nBienvenue et merci pour vos contributions !\n\n{{GENDER:$3|}}$3,\nmembre de l’équipe de {{SITENAME}}.",
 	"tsb-email-rejected-subject": "Votre demande pour devenir traducteur sur {{SITENAME}} a été rejetée",
-	"tsb-email-rejected-body": "Bonjour {{GENDER:$1|}}$1,\n\nMerci de votre candidature comme traducteur sur {{SITENAME}}. J’ai le regret de vous informer que j’ai rejeté votre candidature, car la qualité de vos traductions ne correspond pas aux attentes.\n\nSi vous pensez que votre candidature a été rejetée par erreur, veuillez refaire une demande comme traducteur sur {{SITENAME}}. Vous pouvez vous inscrire ici :\n$2\n\n{{GENDER:$3|}}$3,\nmembre de l’équipe de {{SITENAME}}.",
+	"tsb-email-rejected-body": "Bonjour {{GENDER:$1|}}$1,\n\nMerci de votre candidature comme traducteur sur {{SITENAME}}. J’ai le regret de vous informer que j’ai rejeté votre candidature, car la qualité de vos traductions ne correspond pas aux attentes.\n\nSi vous pensez que votre candidature a été rejetée par erreur, veuillez refaire une demande comme traducteur sur {{SITENAME}}. Vous pouvez vous inscrire ici :\n$2\n\n{{GENDER:$3|}}$3,\nmembre de l’équipe de {{SITENAME}}.",
 	"tsb-request-count": "$1 demande{{PLURAL:$1||s}}",
 	"tsb-all-languages-button-label": "Toutes les langues",
 	"tsb-search-requests": "Chercher les requêtes en cours",
@@ -60,6 +61,6 @@
 	"log-name-translatorsandbox": "Journal du bac à sable de traduction",
 	"log-description-translatorsandbox": "Un journal des actions sur les utilisateurs du bac à sable de traduction",
 	"logentry-translatorsandbox-promoted": "$1{{GENDER:$2|}} a promu $3 en traduct{{GENDER:$4|eur|rice}}.",
-	"logentry-translatorsandbox-rejected": "$1{{GENDER:$2|}} a rejeté la demande de « $3 » pour devenir traduct·eur·rice",
+	"logentry-translatorsandbox-rejected": "$1{{GENDER:$2|}} a rejeté la demande de « $3 » pour devenir traduct·eur·rice",
 	"logentry-newusers-tsbpromoted": "Le compte de l’utilisat·eur·rice $3 a été créé par promotion du bac à sable par {{GENDER:$2|}}$2"
 }
