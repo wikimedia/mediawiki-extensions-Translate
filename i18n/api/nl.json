@@ -28,6 +28,8 @@
 	"apihelp-query+messagetranslations-example-1": "Lijst met vertalingen in de wiki voor \"MediaWiki:January\"",
 	"apihelp-translationstash-param-subaction": "Handeling.",
 	"apihelp-translationstash-param-metadata": "JSON-object.",
+	"apihelp-ttmserver-param-sourcelanguage": "De taalcode van de brontekst.",
+	"apihelp-ttmserver-param-targetlanguage": "De taalcode van de suggestie.",
 	"apihelp-searchtranslations-description": "Vertalingen doorzoeken.",
 	"apihelp-searchtranslations-summary": "Vertalingen doorzoeken.",
 	"apihelp-translationcheck-summary": "Vertalingen controleren.",

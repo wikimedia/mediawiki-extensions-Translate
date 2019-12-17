@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"LeGuyanaisPure"
+			"LeGuyanaisPure",
+			"Léon973"
 		]
 	},
+	"translate-edit-contribute": "kontribiyé",
+	"translate-magic-module": "Modjoul :",
 	"translate-documentation-language": "Dokimantasyon di mésaj"
 }
