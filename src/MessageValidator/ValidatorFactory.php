@@ -8,6 +8,7 @@
 namespace MediaWiki\Extensions\Translate\MessageValidator;
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
@@ -33,6 +34,7 @@ class ValidatorFactory {
 	 */
 	protected static $validators = [
 		'BraceBalance' => BraceBalanceValidator::class,
+		'EscapeCharacter' => EscapeCharacterValidator::class,
 		'GettextNewline' => GettextNewlineValidator::class,
 		'GettextPlural' => GettextPluralValidator::class,
 		'InsertableRegex' => InsertableRegexValidator::class,

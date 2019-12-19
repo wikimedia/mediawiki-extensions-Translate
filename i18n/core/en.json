@@ -100,7 +100,7 @@
 	"translate-checks-unicode-plural-invalid": "Plural forms should be defined as $1. This translation contains $2.",
 	"translate-checks-pagename": "Namespace changed from the definition",
 	"translate-checks-format": "This translation does not follow the definition or has invalid syntax: $1",
-	"translate-checks-escape": "The following escapes may be accidental: <strong>$1</strong>",
+	"translate-checks-escape": "The following escape {{PLURAL:$2|character|characters}} may be accidental: <strong>$1</strong>. {{PLURAL:$4|A valid escape character is|Valid escape characters include:}} $3.",
 	"translate-checks-parametersnotequal": "Parameter count is {{PLURAL:$1|$1}}; should be {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> is malformed.",
 	"translate-checks-fudforum-syntax": "Use <nowiki>$1</nowiki> instead of <nowiki>$2</nowiki> in this project.",
