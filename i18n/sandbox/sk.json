@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"LacoR",
-			"Lexected"
+			"Lexected",
+			"Luky001"
 		]
 	},
-	"tsb-reject-confirmation": "{{PLURAL:$1|User|Users}} úspešne zamietnutý",
-	"tsb-accept-confirmation": "{{PLURAL:$1|User|Users}} úspešne prijatý",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Používateľ|Používatelia}} úspešne {{PLURAL:$1|zamietnutý|zamietnutí}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Používateľ|Používatelia}} úspešne {{PLURAL:$1|prijatý|prijatí}}",
 	"tsb-limit-reached-title": "Ďakujeme za vaše preklady",
 	"log-name-translatorsandbox": "Záznam z pieskoviska prekladov"
 }
