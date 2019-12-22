@@ -200,6 +200,7 @@
 	"translate-save": "Uložiť ($1)",
 	"translate-jssti-add": "Pridať do zoznamu",
 	"managemessagegroups": "Správa skupín správ",
+	"translate-smg-nochanges": "Neexistujú žiadne zmeny na spracovanie.",
 	"translate-manage-import-diff": "Správa $1 | Operácie: $2",
 	"translate-manage-import-new": "Nová správa $1",
 	"translate-manage-import-deleted": "Zmazaná správa $1",

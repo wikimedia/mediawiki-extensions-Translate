@@ -28,7 +28,7 @@
 	"tux-sst-next": "Suivant ›",
 	"tux-sst-prev": "‹ Précédent",
 	"tux-sst-default": "Traductions",
-	"tux-sst-translated": "Originaux en $1 traduits",
+	"tux-sst-translated": "Originaux {{GENDER:$1|}} traduits",
 	"tux-sst-untranslated": "Originaux {{GENDER:$1|}} à traduire",
 	"tux-sst-outdated": "Originaux {{GENDER:$1|}} à retraduire",
 	"tux-sst-ellipsis-untranslated": "Non traduits",
