@@ -87,6 +87,9 @@
 	"translate-checks-links-missing": "{{PLURAL:$2|Nedostaje sljedeća poveznica|$2 Nedostaju sljedeće poveznice}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Molimo, zamijenite {{PLURAL:$2|oznaku točnom|sljedeće oznake točnim}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, ali prijevod ne.",
+	"translate-checks-plural-forms": "U <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|je upisan jedan oblik|su upisana $1 oblika|je upisano $1 oblika}}, ali on {{PLURAL:$2|podržava samo jedan|podržava samo $2}} (izuzimajući oblike 0= i 1=).",
+	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ima duplicirane oblike na kraju. <nowiki>{{PLURAL:$1|škare|škare}}</nowiki> trebalo bi pisati kao <nowiki>{{PLURAL:$1|škare}}</nowiki>.",
+	"translate-checks-gettext-plural-missing": "Ovaj prijevod mora sadržavati <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-fudforum-syntax": "Upotrijebite nowiki>$1</nowiki> umjesto <nowiki>$2</nowiki> u ovom projektu.",
 	"translate-pref-nonewsletter": "Ne šalji mi e-poštom obavijesti translatewiki.net projekta",
 	"translate-pref-editassistlang": "Pomoćni jezici:",
@@ -107,6 +110,8 @@
 	"translate-rcfilters-translations-only-desc": "Promjene stranica s prijevodima.",
 	"translate-rcfilters-translations-filter-label": "Nisu prijevodi",
 	"translate-rcfilters-translations-filter-desc": "Sva uređivanja koja nisu prijevodi.",
+	"translate-rcfilters-translations-site-label": "Poruke vezane uz prevođenje",
+	"translate-rcfilters-translations-site-desc": "Prilagođavanja poruka mrežnoga sjedišta u imenskom prostoru za prevođenje poruka.",
 	"translate-rc-translation-filter": "Filtriraj prijevode:",
 	"translate-rc-translation-filter-no": "Ne filtriraj ništa",
 	"translate-rc-translation-filter-only": "Prikaži samo prijevode",
@@ -358,5 +363,6 @@
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|skupina|skupine|skupina}}",
 	"translate-ulsdep-title": "Pogrješka u konfiguraciji",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u zasebnoj kartici. Druga mogućnost je da prekopirate nesačuvane prijevode, prijavite se, vratite se na ovu stranicu i ponovo upišete svoje prijevode.",
-	"tux-nojs": "Ovaj alat ne radi bez JavaScripta. Javascript je onemogućen, ne radi ili je preglednik nepodržan."
+	"tux-nojs": "Ovaj alat ne radi bez JavaScripta. Javascript je onemogućen, ne radi ili je preglednik nepodržan.",
+	"specialpages-group-translation": "Prevođenje"
 }
