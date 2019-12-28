@@ -352,24 +352,6 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Hook: UnitTestsList
-	 *
-	 * @param array &$files
-	 */
-	public static function setupUnitTests( array &$files ) {
-		$dir = __DIR__ . '/tests/phpunit';
-		$directoryIterator = new RecursiveDirectoryIterator( $dir );
-		$fileIterator = new RecursiveIteratorIterator( $directoryIterator );
-
-		/** @var SplFileInfo $fileInfo */
-		foreach ( $fileIterator as $fileInfo ) {
-			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
-				$files[] = $fileInfo->getPathname();
-			}
-		}
-	}
-
-	/**
 	 * Hook: LoadExtensionSchemaUpdates
 	 *
 	 * @param DatabaseUpdater $updater

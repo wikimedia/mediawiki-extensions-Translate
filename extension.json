@@ -266,7 +266,6 @@
 	},
 	"Hooks": {
 		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
-		"UnitTestsList": "TranslateHooks::setupUnitTests",
 		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
 		"ParserTestTables": "TranslateHooks::parserTestTables",
 		"PageContentLanguage": "TranslateHooks::onPageContentLanguage",
