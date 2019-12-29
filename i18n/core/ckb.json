@@ -8,7 +8,8 @@
 			"رزگار",
 			"Sarchia",
 			"Lost Whispers",
-			"Épine"
+			"Épine",
+			"ئارام بکر"
 		]
 	},
 	"translate": "وەرگێڕان",
@@ -22,7 +23,7 @@
 	"translate-page-group": "گرووپ",
 	"translate-page-language": "زمان",
 	"translate-page-limit": "سنوور",
-	"translate-page-limit-option": "$1 {{PLURAL:$1|پەیام|پەیام}} لەھەر پەڕەیکدا",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|پەیام|پەیام}} لەھەر پەڕەیەکدا",
 	"translate-submit": "گەڕان",
 	"translate-page-navigation-legend": "ڕێدۆزی",
 	"translate-page-showing": "نیشاندانی پەیامەکانی $1 تا $2 لە کۆی $3.",
