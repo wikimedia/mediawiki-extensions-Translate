@@ -36,7 +36,10 @@ module.exports = function ( grunt ) {
 				'i18n/pagetranslation',
 				'i18n/sandbox',
 				'i18n/search'
-			]
+			],
+			options: {
+				requireLowerCase: 'initial'
+			}
 		}
 	} );
 
