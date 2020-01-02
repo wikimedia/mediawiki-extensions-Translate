@@ -14,7 +14,8 @@
 			"Ömer Berkay",
 			"Arystanbek",
 			"McAang",
-			"Bulgu"
+			"Bulgu",
+			"BaRaN6161 TURK"
 		]
 	},
 	"pagetranslation": "Çeviri sayfası",
@@ -70,6 +71,7 @@
 	"tpt-aggregategroup-edit-name": "Adı:",
 	"tpt-aggregategroup-edit-description": "Açıklama:",
 	"tpt-aggregategroup-update": "Kaydet",
+	"tpt-aggregategroup-update-cancel": "İptal",
 	"tpt-invalid-group": "Geçersiz grup",
 	"log-name-pagetranslation": "Sayfa çeviri kütüğü",
 	"logentry-pagetranslation-mark": "$1, $3 sayfasını çeviri için {{GENDER:$2|işaretledi}}",
@@ -91,6 +93,7 @@
 	"pm-langcode-missing": "Lütfen dil kodunu girin.",
 	"pp-pagename-placeholder": "Sayfa adı girin",
 	"pp-save-button-label": "Kaydet",
+	"pp-cancel-button-label": "İptal",
 	"pp-save-message": "Sayfa kaydedildi. Artık [$1  düzenleme] yapabilirsiniz.",
 	"pp-pagename-missing": "Lütfen sayfa adı girin."
 }
