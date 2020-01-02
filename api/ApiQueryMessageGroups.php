@@ -198,6 +198,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				$a['groups'][] = $this->formatGroup( $sg, $props );
 			}
 			$result = $this->getResult();
+			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$result->setIndexedTagName( $a['groups'], 'group' );
 		}
 

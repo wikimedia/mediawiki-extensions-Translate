@@ -155,6 +155,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			}
 
 			$key = $mangler->mangle( $key );
+			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$messages[$key] = $potmode ? $item['id'] : $item['str'];
 			$template[$key] = $item;
 		}

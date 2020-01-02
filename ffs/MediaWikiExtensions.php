@@ -255,6 +255,7 @@ class PremadeMediawikiExtensionGroups {
 							}
 
 							$messages = array_map( 'trim', explode( ',', $messages ) );
+							// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 							$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
 							break;
 						default:

@@ -169,6 +169,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$s = '';
 		$context = 'pt-movepage-error-placeholder';
 		foreach ( $errors as $title ) {
+			// @phan-suppress-next-line PhanTypeSuspiciousStringExpression
 			$s .= "'''$title'''\n\n";
 			$s .= $errors[ $title ]->getWikiText( false, $context );
 		}

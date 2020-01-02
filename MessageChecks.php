@@ -343,14 +343,17 @@ class MessageChecker {
 			$definition = $message->definition();
 
 			$balance = [];
+			// @phan-suppress-next-line PhanSuspiciousValueComparisonInLoop
 			if ( $counts['['] !== $counts[']'] && self::checkStringCountEqual( $definition, '[', ']' ) ) {
 				$balance[] = '[]: ' . ( $counts['['] - $counts[']'] );
 			}
 
+			// @phan-suppress-next-line PhanSuspiciousValueComparisonInLoop
 			if ( $counts['{'] !== $counts['}'] && self::checkStringCountEqual( $definition, '{', '}' ) ) {
 				$balance[] = '{}: ' . ( $counts['{'] - $counts['}'] );
 			}
 
+			// @phan-suppress-next-line PhanSuspiciousValueComparisonInLoop
 			if ( $counts['('] !== $counts[')'] && self::checkStringCountEqual( $definition, '(', ')' ) ) {
 				$balance[] = '(): ' . ( $counts['('] - $counts[')'] );
 			}

@@ -60,6 +60,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			$config['url'] = wfExpandUrl( wfScript( 'api' ), PROTO_CANONICAL );
 		}
 
+		// @phan-suppress-next-line PhanRedundantCondition
 		if ( isset( $handlers[$config['type']] ) ) {
 			$class = $handlers[$config['type']];
 
