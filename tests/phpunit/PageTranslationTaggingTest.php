@@ -68,14 +68,14 @@ class PageTranslationTaggingTest extends MediaWikiTestCase {
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was added' );
 
-		global $wgUser;
 		$cascade = false;
+		$user = $this->getTestSysop()->getUser();
 		$page->doUpdateRestrictions(
 			[ 'edit' => 'sysop' ],
 			[],
 			$cascade,
 			'Test case',
-			$wgUser
+			$user
 		);
 
 		$newLatest = $latest + 1;
@@ -90,7 +90,7 @@ class PageTranslationTaggingTest extends MediaWikiTestCase {
 			'Marked tag was not updated after protection'
 		);
 
-		$page->doUpdateRestrictions( [], [], $cascade, 'Test case', $wgUser );
+		$page->doUpdateRestrictions( [], [], $cascade, 'Test case', $user );
 	}
 
 	public function testTranslationPageRestrictions() {
