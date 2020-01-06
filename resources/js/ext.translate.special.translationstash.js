@@ -68,7 +68,7 @@
 						// unicode-bidi: isolate
 						// is supported everywhere
 						$( '<span>' )
-							.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
+							.html( $( document.body ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
 						$( '<span>' )
 							.addClass( 'tux-list-translation' )
 							.attr( {

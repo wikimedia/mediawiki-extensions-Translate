@@ -13,7 +13,7 @@
 		this.$container = $( container );
 
 		// Hide the workflow selector when clicking outside of it
-		$( 'html' ).on( 'click', function ( e ) {
+		$( document.documentElement ).on( 'click', function ( e ) {
 			if ( !e.isDefaultPrevented() ) {
 				$( container )
 					.find( '.tux-workflow-status-selector' )

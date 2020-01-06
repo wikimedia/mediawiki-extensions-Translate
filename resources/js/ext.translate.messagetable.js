@@ -201,7 +201,7 @@
 							// unicode-bidi: isolate
 							// is supported everywhere
 							$( '<span>' )
-								.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
+								.html( $( document.body ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
 							$( '<span>' )
 								.addClass( 'tux-list-translation' )
 								.attr( {
@@ -284,7 +284,7 @@
 					}
 
 					offset = $icon.offset();
-					tooltip.$element.appendTo( 'body' );
+					tooltip.$element.appendTo( document.body );
 					tooltip.toggle( true ).toggleClipping( false ).togglePositioning( false );
 					tooltip.$element.css( {
 						top: offset.top + $icon.outerHeight() + 5,

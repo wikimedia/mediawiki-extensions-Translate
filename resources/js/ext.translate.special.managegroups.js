@@ -7,7 +7,7 @@
 		RenameDropdown.init();
 		// Create and append a window manager.
 		windowManager = new OO.ui.WindowManager();
-		$( document.body ).append( windowManager.$element );
+		windowManager.$element.appendTo( document.body );
 
 		// Create a new process dialog window.
 		renameDialog = new mw.translate.MessageRenameDialog( {
@@ -43,7 +43,7 @@
 			event.preventDefault();
 		} );
 
-		$( 'html' ).on( 'click', function ( event ) {
+		$( document.documentElement ).on( 'click', function ( event ) {
 			if ( !event.isDefaultPrevented() ) {
 				RenameDropdown.hide();
 			}
@@ -239,7 +239,7 @@
 		 * @return {RenameDropdown}
 		 */
 		function init() {
-			$renameMenu = getRenameDropdown().appendTo( $( 'body' ) );
+			$renameMenu = getRenameDropdown().appendTo( document.body );
 			return this;
 		}
 

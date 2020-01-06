@@ -8,7 +8,7 @@
 			var editorOffset, minTop, maxTop, maxLeft, middle, rtl;
 
 			// Any better way?
-			rtl = $( 'body' ).is( '.rtl' );
+			rtl = $( document.body ).is( '.rtl' );
 
 			editorOffset = this.$editor.offset();
 			minTop = editorOffset.top;
@@ -22,14 +22,14 @@
 			$( '<div>' )
 				.text( '↑' )
 				.addClass( 'shortcut-popup' )
-				.appendTo( 'body' )
+				.appendTo( document.body )
 				.offset( { top: middle - 15, left: maxLeft } )
 				.css( 'transform', 'translate( -50%, 0 )' );
 
 			$( '<div>' )
 				.text( '↓' )
 				.addClass( 'shortcut-popup' )
-				.appendTo( 'body' )
+				.appendTo( document.body )
 				.offset( { top: middle + 15, left: maxLeft } )
 				.css( 'transform', 'translate( -50%, 0 )' );
 
@@ -44,7 +44,7 @@
 				$( '<div>' )
 					.text( index + 1 )
 					.addClass( 'shortcut-popup' )
-					.appendTo( 'body' )
+					.appendTo( document.body )
 					.offset( offset )
 					.css( 'transform', 'translate( -50%, -50% )' );
 			} );

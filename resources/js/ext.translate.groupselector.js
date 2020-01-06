@@ -117,7 +117,7 @@
 
 			this.$menu.append( $listFiltersGroup, this.$loader, this.$list );
 
-			$( 'body' ).append( this.$menu );
+			this.$menu.appendTo( document.body );
 		},
 
 		/**
@@ -169,7 +169,7 @@
 				groupSelector = this;
 
 			// Hide the selector panel when clicking outside of it
-			$( 'html' ).on( 'click', this.hide.bind( this ) );
+			$( document.documentElement ).on( 'click', this.hide.bind( this ) );
 
 			groupSelector.$trigger.on( 'click', function () {
 				groupSelector.toggle();

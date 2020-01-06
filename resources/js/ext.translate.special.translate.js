@@ -300,7 +300,7 @@
 			} );
 		}
 
-		if ( $( 'body' ).hasClass( 'rtl' ) ) {
+		if ( $( document.body ).hasClass( 'rtl' ) ) {
 			position = {
 				my: 'right top',
 				at: 'right+80 bottom+5'

@@ -266,7 +266,7 @@
 				);
 			$parent.append( $grouSelectorTrigger );
 
-			if ( $( 'body' ).hasClass( 'rtl' ) ) {
+			if ( $( document.body ).hasClass( 'rtl' ) ) {
 				position = {
 					my: 'right top',
 					at: 'right+90 top+40',

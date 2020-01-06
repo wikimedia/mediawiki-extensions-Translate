@@ -6,7 +6,7 @@
 ( function () {
 	'use strict';
 
-	var $body = $( 'body' );
+	var $body = $( document.body );
 
 	if ( $body.width() < 1000 || mw.storage.get( 'translate-navitoggle' ) === '1' ) {
 		$body.addClass( 'tux-navi-collapsed' );
