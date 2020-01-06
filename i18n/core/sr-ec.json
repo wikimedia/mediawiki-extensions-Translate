@@ -330,7 +330,7 @@
 	"tux-status-unsaved": "Несачувано",
 	"tux-save-unknown-error": "Дошло је до непознате грешке.",
 	"tux-editor-placeholder": "Ваш превод",
-	"tux-editor-editsummary-placeholder": "Опционалан резиме",
+	"tux-editor-editsummary-placeholder": "Опционални резиме",
 	"tux-editor-paste-original-button-label": "Налепи изворни текст",
 	"tux-editor-discard-changes-button-label": "Одбаци промене",
 	"tux-editor-save-button-label": "Сачувај превод",
