@@ -236,9 +236,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * with ArrayAccess or iteration.
 	 */
 	public function loadTranslations() {
-		$this->loadData( $this->keys );
-		$this->loadInfo( $this->keys );
-		$this->loadReviewInfo( $this->keys );
+		// Performance optimization: Instead of building conditions based on key in every
+		// method, build them once and pass it on to each of them.
+		$dbr = TranslateUtils::getSafeReadDB();
+		$titleConds = $this->getTitleConds( $dbr );
+
+		$this->loadData( $this->keys, $titleConds );
+		$this->loadInfo( $this->keys, $titleConds );
+		$this->loadReviewInfo( $this->keys, $titleConds );
 		$this->initMessages();
 	}
 
@@ -641,8 +646,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Loads existence and fuzzy state for given list of keys.
 	 * @param string[] $keys List of keys in database format.
+	 * @param string|null $titleConds Database query condition based on current keys.
 	 */
-	protected function loadInfo( array $keys ) {
+	protected function loadInfo( array $keys, string $titleConds = null ) {
 		if ( $this->dbInfo !== null ) {
 			return;
 		}
@@ -655,7 +661,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = [ 'page', 'revtag' ];
 		$fields = [ 'page_namespace', 'page_title', 'rt_type' ];
-		$conds = $this->getTitleConds( $dbr );
+		$conds = $titleConds ?? $this->getTitleConds( $dbr );
 		$joins = [ 'revtag' =>
 		[
 			'LEFT JOIN',
@@ -669,8 +675,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Loads reviewers for given messages.
 	 * @param string[] $keys List of keys in database format.
+	 * @param string|null $titleConds Database query condition based on current keys.
 	 */
-	protected function loadReviewInfo( array $keys ) {
+	protected function loadReviewInfo( array $keys, string $titleConds = null ) {
 		if ( $this->dbReviewData !== null ) {
 			return;
 		}
@@ -683,7 +690,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = [ 'page', 'translate_reviews' ];
 		$fields = [ 'page_namespace', 'page_title', 'trr_user' ];
-		$conds = $this->getTitleConds( $dbr );
+		$conds = $titleConds ?? $this->getTitleConds( $dbr );
 		$joins = [ 'translate_reviews' =>
 			[
 				'JOIN',
@@ -697,8 +704,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Loads translation for given list of keys.
 	 * @param string[] $keys List of keys in database format.
+	 * @param string|null $titleConds Database query condition based on current keys.
 	 */
-	protected function loadData( array $keys ) {
+	protected function loadData( array $keys, string $titleConds = null ) {
 		if ( $this->dbData !== null ) {
 			return;
 		}
@@ -717,7 +725,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$revQuery = $revisionStore->getQueryInfo( [ 'page', 'text' ] );
 		}
 		$conds = [ 'page_latest = rev_id' ];
-		$conds[] = $this->getTitleConds( $dbr );
+
+		$conds[] = $titleConds ?? $this->getTitleConds( $dbr );
 
 		$res = $dbr->select(
 			$revQuery['tables'], $revQuery['fields'], $conds, __METHOD__, [], $revQuery['joins']
