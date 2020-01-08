@@ -180,11 +180,8 @@ class ThinMessage extends TMessage {
 		}
 
 		$field = self::$propertyMap[$key];
-		if ( !isset( $this->row->$field ) ) {
-			return null;
-		}
 
-		return $this->row->$field;
+		return $this->row->$field ?? null;
 	}
 
 	// Re-implemented
