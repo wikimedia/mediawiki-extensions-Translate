@@ -10,8 +10,7 @@ module.exports = function ( grunt ) {
 		eslint: {
 			options: {
 				extensions: [ '.js', '.json' ],
-				cache: true,
-				reportUnusedDisableDirectives: true
+				cache: true
 			},
 			all: [
 				'**/*.js{,on}',
