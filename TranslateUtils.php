@@ -8,8 +8,8 @@
  */
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\RevisionRecord;
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
@@ -100,11 +100,15 @@ class TranslateUtils {
 			foreach ( $rows as $row ) {
 				/** @var RevisionRecord|null $rev */
 				$rev = $revisions[$row->rev_id];
-				if ( $rev && $rev->getContent( SlotRecord::MAIN ) ) {
-					$titleContents[$row->page_title] = [
-						$rev->getContent( SlotRecord::MAIN )->getText(),
-						$row->rev_user_text
-					];
+				if ( $rev ) {
+					/** @var TextContent $content */
+					$content = $rev->getContent( SlotRecord::MAIN );
+					if ( $content ) {
+						$titleContents[$row->page_title] = [
+							$content->getText(),
+							$row->rev_user_text
+						];
+					}
 				}
 			}
 			$rows->free();

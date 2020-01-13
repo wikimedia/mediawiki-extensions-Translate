@@ -9,8 +9,8 @@
  */
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\RevisionRecord;
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Core message collection class.
@@ -547,11 +547,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			foreach ( $infileRows as $row ) {
 				/** @var RevisionRecord|null $rev */
 				$rev = $revisions[$row->rev_id];
-				if ( $rev && $rev->getContent( SlotRecord::MAIN ) ) {
-					$mkey = $this->rowToKey( $row );
-					if ( $this->infile[$mkey] === $rev->getContent( SlotRecord::MAIN )->getText() ) {
-						// Remove unchanged messages from the list
-						unset( $keys[$mkey] );
+				if ( $rev ) {
+					/** @var TextContent $content */
+					$content = $rev->getContent( SlotRecord::MAIN );
+					if ( $content ) {
+						$mkey = $this->rowToKey( $row );
+						if ( $this->infile[$mkey] === $content->getText() ) {
+							// Remove unchanged messages from the list
+							unset( $keys[$mkey] );
+						}
 					}
 				}
 			}

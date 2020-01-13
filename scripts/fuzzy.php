@@ -11,7 +11,7 @@
 
 // Standard boilerplate to define $IP
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\IResultWrapper;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {

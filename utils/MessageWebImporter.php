@@ -11,7 +11,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
