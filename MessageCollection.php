@@ -11,7 +11,6 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionRecord;
 use MediaWiki\Storage\SlotRecord;
-use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * Core message collection class.
@@ -22,6 +21,14 @@ use Wikimedia\Rdbms\IResultWrapper;
  * ways.
  */
 class MessageCollection implements ArrayAccess, Iterator, Countable {
+	/**
+	 * The queries can get very large because each message title is specified
+	 * individually. Very large queries can confuse the database query planner.
+	 * Queries are split into multiple separate queries having at most this many
+	 * items.
+	 */
+	private const MAX_ITEMS_PER_QUERY = 2000;
+
 	/**
 	 * @var string Language code.
 	 */
@@ -56,13 +63,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	// Database resources
 
-	/** @var IResultWrapper|null Stored message existence and fuzzy state. */
+	/** @var ?Traversable Stored message existence and fuzzy state. */
 	protected $dbInfo;
 
-	/** @var IResultWrapper|null Stored translations in database. */
+	/** @var ?Traversable Stored translations in database. */
 	protected $dbData;
 
-	/** @var IResultWrapper|null Stored reviews in database. */
+	/** @var ?Traversable Stored reviews in database. */
 	protected $dbReviewData;
 
 	/**
@@ -646,15 +653,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Loads existence and fuzzy state for given list of keys.
 	 * @param string[] $keys List of keys in database format.
-	 * @param string|null $titleConds Database query condition based on current keys.
+	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
-	protected function loadInfo( array $keys, string $titleConds = null ) {
+	protected function loadInfo( array $keys, ?array $titleConds = null ) {
 		if ( $this->dbInfo !== null ) {
 			return;
 		}
 
 		if ( !count( $keys ) ) {
-			$this->dbInfo = new FakeResultWrapper( [] );
+			$this->dbInfo = new EmptyIterator();
 			return;
 		}
 
@@ -669,21 +676,27 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		]
 		];
 
-		$this->dbInfo = $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins );
+		$titleConds = $titleConds ?? $this->getTitleConds( $dbr );
+		$iterator = new AppendIterator();
+		foreach ( $titleConds as $conds ) {
+			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
+		}
+
+		$this->dbInfo = $iterator;
 	}
 
 	/**
 	 * Loads reviewers for given messages.
 	 * @param string[] $keys List of keys in database format.
-	 * @param string|null $titleConds Database query condition based on current keys.
+	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
-	protected function loadReviewInfo( array $keys, string $titleConds = null ) {
+	protected function loadReviewInfo( array $keys, ?array $titleConds = null ) {
 		if ( $this->dbReviewData !== null ) {
 			return;
 		}
 
 		if ( !count( $keys ) ) {
-			$this->dbReviewData = new FakeResultWrapper( [] );
+			$this->dbReviewData = new EmptyIterator();
 			return;
 		}
 
@@ -698,21 +711,27 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			]
 		];
 
-		$this->dbReviewData = $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins );
+		$titleConds = $titleConds ?? $this->getTitleConds( $dbr );
+		$iterator = new AppendIterator();
+		foreach ( $titleConds as $conds ) {
+			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
+		}
+
+		$this->dbReviewData = $iterator;
 	}
 
 	/**
 	 * Loads translation for given list of keys.
 	 * @param string[] $keys List of keys in database format.
-	 * @param string|null $titleConds Database query condition based on current keys.
+	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
-	protected function loadData( array $keys, string $titleConds = null ) {
+	protected function loadData( array $keys, ?array $titleConds = null ) {
 		if ( $this->dbData !== null ) {
 			return;
 		}
 
 		if ( !count( $keys ) ) {
-			$this->dbData = new FakeResultWrapper( [] );
+			$this->dbData = new EmptyIterator();
 			return;
 		}
 
@@ -724,42 +743,54 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			// Pre MW 1.34 compatibility
 			$revQuery = $revisionStore->getQueryInfo( [ 'page', 'text' ] );
 		}
-		$conds = [ 'page_latest = rev_id' ];
+		$tables = $revQuery['tables'];
+		$fields = $revQuery['fields'];
+		$joins = $revQuery['joins'];
 
-		$conds[] = $titleConds ?? $this->getTitleConds( $dbr );
+		$titleConds = $titleConds ?? $this->getTitleConds( $dbr );
+		$iterator = new AppendIterator();
+		foreach ( $titleConds as $conds ) {
+			$conds = [ 'page_latest = rev_id', $conds ];
+			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
+		}
 
-		$res = $dbr->select(
-			$revQuery['tables'], $revQuery['fields'], $conds, __METHOD__, [], $revQuery['joins']
-		);
-		$this->dbData = $res;
+		$this->dbData = $iterator;
 	}
 
 	/**
 	 * Of the current set of keys, construct database query conditions.
 	 * @since 2011-12-28
 	 * @param \Wikimedia\Rdbms\IDatabase $db
-	 * @return string
+	 * @return string[]
 	 */
 	protected function getTitleConds( $db ) {
-		// Array of array( namespace, pagename )
-		$byNamespace = [];
-		foreach ( $this->getTitles() as $title ) {
-			$namespace = $title->getNamespace();
-			$pagename = $title->getDBkey();
-			$byNamespace[$namespace][] = $pagename;
+		$titles = $this->getTitles();
+		$chunks = array_chunk( $titles, self::MAX_ITEMS_PER_QUERY );
+		$results = [];
+
+		foreach ( $chunks as $titles ) {
+			// Array of array( namespace, pagename )
+			$byNamespace = [];
+			foreach ( $titles as $title ) {
+				$namespace = $title->getNamespace();
+				$pagename = $title->getDBkey();
+				$byNamespace[$namespace][] = $pagename;
+			}
+
+			$conds = [];
+			foreach ( $byNamespace as $namespaces => $pagenames ) {
+				$cond = [
+					'page_namespace' => $namespaces,
+					'page_title' => $pagenames,
+				];
+
+				$conds[] = $db->makeList( $cond, LIST_AND );
+			}
+
+			$results[] = $db->makeList( $conds, LIST_OR );
 		}
 
-		$conds = [];
-		foreach ( $byNamespace as $namespaces => $pagenames ) {
-			$cond = [
-				'page_namespace' => $namespaces,
-				'page_title' => $pagenames,
-			];
-
-			$conds[] = $db->makeList( $cond, LIST_AND );
-		}
-
-		return $db->makeList( $conds, LIST_OR );
+		return $results;
 	}
 
 	/**
