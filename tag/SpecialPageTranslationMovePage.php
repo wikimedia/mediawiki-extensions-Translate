@@ -53,6 +53,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$user = $this->getUser();
+		$this->addHelpLink( 'Help:Moving a page' );
 
 		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->oldText = $request->getVal( 'wpOldTitle', $request->getVal( 'target', $par ) );
