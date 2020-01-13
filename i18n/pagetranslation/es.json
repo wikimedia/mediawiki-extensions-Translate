@@ -21,7 +21,8 @@
 			"Mgpena",
 			"GamemOfAnime",
 			"Dgstranz",
-			"Cuatro Remos"
+			"Cuatro Remos",
+			"DannyS712"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
@@ -116,7 +117,7 @@
 	"log-description-pagetranslation": "Registro para acciones relacionadas al sistema de traducción de página",
 	"log-name-pagetranslation": "Registro de traducción de página",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marcó}} $3 para traducción",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|eliminó}} $3 de la traducción",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|eliminó}} $3 del sistema de traducción",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completó}} el renombramiento de la página traducible $3 a $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|encontró}} un problema al mover la página $3 a $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|completó}} el borrado de la página traducible $3",
