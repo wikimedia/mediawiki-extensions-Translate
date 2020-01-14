@@ -57,6 +57,8 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	}
 
 	public function execute( $par ) {
+		$this->addhelpLink( 'Help:Deletion_and_undeletion' );
+
 		$request = $this->getRequest();
 
 		$par = (string)$par;
