@@ -115,7 +115,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 
 		// In the beginning...
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
-		$this->assertEquals( false, $currentState, 'groups start from unset state' );
+		$this->assertFalse( $currentState, 'groups start from unset state' );
 
 		// First translation
 		$title = Title::newFromText( 'MediaWiki:key1/fi' );

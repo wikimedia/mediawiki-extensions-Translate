@@ -119,12 +119,10 @@ class MessageValidatorTest extends MediaWikiTestCase {
 			'the number of descriptive warnings messages matches the number of warnings.'
 		);
 
-		$this->assertInternalType( 'string',
-			$validationResult->getDescriptiveWarnings( $requestContext )[0],
+		$this->assertIsString( $validationResult->getDescriptiveWarnings( $requestContext )[0],
 			'warning messages are of type string.'
 		);
-		$this->assertInternalType( 'string',
-			$validationResult->getDescriptiveErrors( $requestContext )[0],
+		$this->assertIsString( $validationResult->getDescriptiveErrors( $requestContext )[0],
 			'error messages are of type string'
 		);
 	}

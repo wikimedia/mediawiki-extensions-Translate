@@ -20,7 +20,7 @@ function wfAddNamespace( $id, $name, $constant = null ) {
 	global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
 		$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
 
-	if ( is_null( $constant ) ) {
+	if ( $constant === null ) {
 		$constant = strtoupper( "NS_$name" );
 	}
 

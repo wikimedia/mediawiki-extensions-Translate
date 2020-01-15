@@ -7,6 +7,7 @@
 
 namespace MediaWiki\Extensions\Translate\MessageValidator;
 
+use InvalidArgumentException;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
@@ -21,7 +22,6 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
-use InvalidArgumentException;
 use RuntimeException;
 
 /**

@@ -583,7 +583,7 @@ HTML
 			Html::closeElement( 'div' );
 
 		$lang = $this->getRequest()->getVal( 'language' );
-		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
+		$language = $lang === null ? '' : Html::hidden( 'language', $lang );
 
 		$form = Html::rawElement( 'form', [ 'action' => wfScript(), 'name' => 'searchform' ],
 			$title . $input . $submit . $checkLabel . $language

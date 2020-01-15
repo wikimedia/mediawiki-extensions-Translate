@@ -6,8 +6,8 @@
 
 namespace MediaWiki\Extensions\Translate\Utilities;
 
-use TranslateUtils;
 use RuntimeException;
+use TranslateUtils;
 
 /**
  * @since 2019.09

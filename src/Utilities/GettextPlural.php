@@ -6,9 +6,9 @@
 
 namespace MediaWiki\Extensions\Translate\Utilities;
 
+use GettextPluralException;
 use InvalidArgumentException;
 use TranslateUtils;
-use GettextPluralException;
 
 /**
  * @since 2019.09

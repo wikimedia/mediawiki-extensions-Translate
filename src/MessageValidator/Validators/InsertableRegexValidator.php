@@ -7,9 +7,9 @@
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
-use MediaWiki\Extensions\Translate\MessageValidator\ValidationHelper;
 use InvalidArgumentException;
+use MediaWiki\Extensions\Translate\MessageValidator\ValidationHelper;
+use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use RegexInsertablesSuggester;
 use TMessage;
 

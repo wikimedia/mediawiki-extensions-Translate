@@ -8,7 +8,7 @@ use MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural;
 
 /**
  * @covers \MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural
-*/
+ */
 class SmartFormatPluralTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideTestGetPluralInstances

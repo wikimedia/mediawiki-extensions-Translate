@@ -9,8 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page

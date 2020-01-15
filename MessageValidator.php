@@ -8,8 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\MessageValidator\ValidationResult;
+use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\MessageValidator\ValidatorFactory;
 
 /**

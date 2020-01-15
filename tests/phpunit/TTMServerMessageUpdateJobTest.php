@@ -357,7 +357,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertEquals( 0, count( $job->getResentJobs() ) );
+		$this->assertCount( 0, $job->getResentJobs() );
 	}
 }
 

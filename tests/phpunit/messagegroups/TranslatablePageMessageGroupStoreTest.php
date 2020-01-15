@@ -52,8 +52,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiTestCase {
 		] );
 
 		$this->mgTranslateStore->recache();
-		$updatedCount = count( $this->mgTranslateStore->getGroups() );
-		$this->assertEquals( 0, $updatedCount, 'no translatable pages returned' );
+		$this->assertCount( 0, $this->mgTranslateStore->getGroups(), 'no translatable pages returned' );
 	}
 
 	public function testCacheCalls() {

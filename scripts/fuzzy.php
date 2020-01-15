@@ -266,7 +266,7 @@ class FuzzyScript {
 	 * @param Title $title
 	 * @param string $text
 	 * @param bool $dryrun Whether to really do it or just show what would be done.
-	 * @param string $comment Edit summary.
+	 * @param string|null $comment Edit summary.
 	 */
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
 		global $wgTranslateDocumentationLanguageCode;

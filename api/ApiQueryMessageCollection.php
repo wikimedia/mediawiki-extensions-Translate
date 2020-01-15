@@ -139,7 +139,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		foreach ( $messages->keys() as $mkey => $titleValue ) {
 			$title = Title::newFromLinkTarget( $titleValue );
 
-			if ( is_null( $resultPageSet ) ) {
+			if ( $resultPageSet === null ) {
 				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
 				$data['title'] = $title->getPrefixedText();
 				$data['targetLanguage'] = $messages->getLanguage();
@@ -156,7 +156,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			}
 		}
 
-		if ( is_null( $resultPageSet ) ) {
+		if ( $resultPageSet === null ) {
 			$result->addIndexedTagName(
 				[ 'query', $this->getModuleName() ],
 				'message'

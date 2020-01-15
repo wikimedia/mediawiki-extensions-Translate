@@ -58,14 +58,14 @@ class MessageGroupStatsTest extends MediaWikiTestCase {
 		$invalidGroup = MessageGroupStats::forGroup( 'invalid-mg-group',
 			MessageGroupStats::FLAG_CACHE_ONLY );
 
-		$this->assertInternalType( 'array', current( $validLang ),
+		$this->assertIsArray( current( $validLang ),
 			'forLanguage returns data in valid format for valid language' );
-		$this->assertInternalType( 'array', current( $invalidLang ),
+		$this->assertIsArray( current( $invalidLang ),
 			'forLanguage returns data in valid format for invalid language' );
 
-		$this->assertInternalType( 'array', current( $validGroup ),
+		$this->assertIsArray( current( $validGroup ),
 			'forGroup returns data in valid format for valid group' );
-		$this->assertInternalType( 'array', current( $invalidGroup ),
+		$this->assertIsArray( current( $invalidGroup ),
 			'forGroup returns data in valid format for invalid group' );
 	}
 }

@@ -7,12 +7,12 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\Auth\AuthManager;
+use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
-use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
 
 /**
  * Utility class for the sandbox feature of Translate. Do not try this yourself. This code makes a

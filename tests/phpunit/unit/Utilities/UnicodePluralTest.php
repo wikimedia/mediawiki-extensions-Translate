@@ -8,7 +8,7 @@ use MediaWiki\Extensions\Translate\Utilities\UnicodePlural;
 
 /**
  * @coversDefaultClass \MediaWiki\Extensions\Translate\Utilities\UnicodePlural
-*/
+ */
 class UnicodePluralTest extends MediaWikiUnitTestCase {
 	/**
 	 * @covers ::getPluralKeywords

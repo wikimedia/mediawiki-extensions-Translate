@@ -9,8 +9,8 @@
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
 
 /**

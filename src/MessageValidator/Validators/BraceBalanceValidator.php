@@ -7,8 +7,8 @@
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\MessageValidator\ValidationHelper;
+use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use TMessage;
 
 /**

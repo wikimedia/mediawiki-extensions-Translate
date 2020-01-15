@@ -54,7 +54,7 @@ abstract class TMessage {
 
 	/**
 	 * Get the message translation.
-	 * @return string|null
+	 * @return ?string
 	 */
 	abstract public function translation();
 
@@ -68,7 +68,7 @@ abstract class TMessage {
 
 	/**
 	 * Returns the committed translation.
-	 * @return string|null
+	 * @return ?string
 	 */
 	public function infile() {
 		return $this->infile;
@@ -160,6 +160,9 @@ class ThinMessage extends TMessage {
 		$this->translation = $text;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function translation() {
 		if ( !isset( $this->row ) ) {
 			return $this->infile();
@@ -167,7 +170,10 @@ class ThinMessage extends TMessage {
 
 		if ( $this->translation === null ) {
 			// Should only happen with MW < 1.34. Slow if the text table hasn't been joined in!
-			$this->translation = Revision::getRevisionText( $this->row );
+			$text = Revision::getRevisionText( $this->row );
+			if ( $text !== false ) {
+				$this->translation = $text;
+			}
 		}
 
 		return $this->translation;

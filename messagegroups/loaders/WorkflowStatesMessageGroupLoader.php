@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
- /**
+/**
  * Loads WorkflowStatesMessageGroup, and handles the related cache.
  * @since 2019.05
  */
