@@ -134,7 +134,7 @@
 	"translate-checks-unicode-plural-invalid": "Les formes plurielles doivent être définies comme $1. Cette traduction contient $2.",
 	"translate-checks-pagename": "Espace de noms modifié depuis la définition",
 	"translate-checks-format": "Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1",
-	"translate-checks-escape": "Les échappements suivants peuvent être accidentels : <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|Le caractère d’échappement suivant peut être accidentel|Les caractères d’échappement suivants peuvent être accidentels}} : <strong>$1</strong>. {{PLURAL:$4|Un caractère d’échappement valide est|Les caractères d’échappement valides sont :}} $3.",
 	"translate-checks-parametersnotequal": "Le nombre de paramètres est {{PLURAL:$1|$1}} ; ce devrait être {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> est mal formé.",
 	"translate-checks-fudforum-syntax": "Utiliser <nowiki>$1</nowiki> au lieu de <nowiki>$2</nowiki> dans ce projet.",

@@ -113,7 +113,7 @@
 	"translate-checks-unicode-plural-invalid": "Çoğul biçimler $1 olarak tanımlanmalıdır. Bu çeviri $2 içeriyor.",
 	"translate-checks-pagename": "Tanımdaki ad alanı değiştirilmiş",
 	"translate-checks-format": "Bu çeviri tanıma uymuyor ya da geçersiz söz dizimi var: $1",
-	"translate-checks-escape": "Şu çıkışlar yanlışlıkla olmuş olabilir: <strong>$1</strong>",
+	"translate-checks-escape": "Aşağıdaki çıkış {{PLURAL:$2|karakter|karakter}} yanlışlıkla olabilir: <strong>$1</strong>. {{PLURAL:$4|Geçerli bir kaçış karakteri|Geçerli geçerli kaçış karakterleri şunlardır:}} $3.",
 	"translate-checks-parametersnotequal": "Parametre sayısı {{PLURAL:$1|$1}}; {{PLURAL:$2|$2}} olmalı.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> hatalı biçimlendirilmiş.",
 	"translate-checks-fudforum-syntax": "Bu projede <nowiki>$2</nowiki> yerine <nowiki>$1</nowiki> kullanın.",
