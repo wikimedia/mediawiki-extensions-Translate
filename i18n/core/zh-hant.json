@@ -115,7 +115,7 @@
 	"translate-checks-unicode-plural-invalid": "Plural 形式應定義成 $1。此翻譯包含著 $2。",
 	"translate-checks-pagename": "命名空間與原文不符",
 	"translate-checks-format": "此翻譯未依照原文或有語法錯誤：$1",
-	"translate-checks-escape": "下列跳脫字元可能會導致錯誤：<strong>$1</strong>",
+	"translate-checks-escape": "下列跳脫{{PLURAL:$2|字元}}可能會導致錯誤：<strong>$1</strong>。\n{{PLURAL:$4|有效的跳脫字元是|有效的跳脫字元包含有：}}$3。",
 	"translate-checks-parametersnotequal": "共有 {{PLURAL:$1|$1}} 個參數，應有{{PLURAL:$2|$2}} 個。",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> 格式不正確。",
 	"translate-checks-fudforum-syntax": "在此專案中使用 <nowiki>$1</nowiki> 替代 <nowiki>$2</nowiki>。",

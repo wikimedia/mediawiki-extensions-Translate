@@ -106,7 +106,7 @@
 	"translate-checks-unicode-plural-invalid": "צורות רבים אמורות להיות מוגדרות בתור $1. התרגום הזה מכיל $2.",
 	"translate-checks-pagename": "מרחבי שם ששונו מהגדרתם",
 	"translate-checks-format": "תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1",
-	"translate-checks-escape": "ייתכן שהחילופים הבאים נוצרו בשגגה: <strong>$1</strong>",
+	"translate-checks-escape": "ייתכן {{PLURAL:$2|שתו החילוף הבא נכתב|שתווי החילוף הבאים נכתבו}} בשגגה: <strong>$1</strong>. {{PLURAL:$4|תו חילוף התקין הוא|תווי החילוף התקינים הם}}: $3",
 	"translate-checks-parametersnotequal": "{{PLURAL:$1|נמצא פרמטר אחד|נמצאו $1 פרמטרים}}; {{PLURAL:אמורים להיות $2|אמור להיות אחד}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> אינו תקין.",
 	"translate-checks-fudforum-syntax": "השתמשו ב־<nowiki>$1</nowiki> ולא ב־<nowiki>$2</nowiki> בפרויקט הזה.",

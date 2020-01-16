@@ -7,7 +7,8 @@
 			"Naudefj",
 			"SPQRobin",
 			"පසිඳු කාවින්ද",
-			"Fwolff"
+			"Fwolff",
+			"Joris Darlington Quarshie"
 		]
 	},
 	"translate": "Vertaal",
@@ -79,7 +80,7 @@
 	"translate-checks-plural": "Die definisie bevat <nowiki>{{PLURAL:}}</nowiki>, maar die vertaling nie.",
 	"translate-checks-pagename": "Naamspasie het verander van die definisie",
 	"translate-checks-format": "Hierdie vertaling wyk af van die bronboodskap of het 'n ongeldige sintaks: $1",
-	"translate-checks-escape": "Die volgende \"escapes\" is waarskynlik per ongeluk toegepas: <strong>$1</strong>",
+	"translate-checks-escape": "Die volgende ontsnapping {{PLURAL:$2|karakter|karakters}} kan toevallig wees:<strong>$1</strong>.{{MEERVOUD:$4|'n geldige ontsnapkarakter is|geldige ontsnapkarakter bevat:}} $3",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> het 'n ongeldige indeling.",
 	"translate-checks-fudforum-syntax": "Gebruik <nowiki>$1</nowiki> i.p.v. <nowiki>$2</nowiki> vir hierdie projek.",
 	"translate-pref-nonewsletter": "Moenie aan my nuusbriewe per e-pos stuur nie",
