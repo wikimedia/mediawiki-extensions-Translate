@@ -331,12 +331,8 @@ class SpecialTranslate extends SpecialPage {
 
 	protected function getGroupDescription( MessageGroup $group ) {
 		$description = $group->getDescription( $this->getContext() );
-		if ( $description !== null ) {
-			return TranslateUtils::parseAsInterface(
-				$this->getOutput(), $description
-			);
-		}
-		return '';
+		return $description === null ?
+			'' : $this->getOutput()->parseAsInterface( $description );
 	}
 
 	protected function tuxGroupWarning() {

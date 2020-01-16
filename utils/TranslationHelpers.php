@@ -380,9 +380,7 @@ class TranslationHelpers {
 		}
 		$class .= ' mw-sp-translate-message-documentation';
 
-		$contents = TranslateUtils::parseInlineAsInterface(
-			$context->getOutput(), $info
-		);
+		$contents = $context->getOutput()->parseInlineAsInterface( $info );
 
 		return TranslateUtils::fieldset(
 			$context->msg( 'translate-edit-information' )->rawParams( $edit )->escaped(),

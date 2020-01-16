@@ -31,9 +31,7 @@ class DocumentationAid extends TranslationAid {
 		return [
 			'language' => MediaWikiServices::getInstance()->getContentLanguage()->getCode(),
 			'value' => $info,
-			'html' => TranslateUtils::parseAsInterface(
-				$this->context->getOutput(), $info
-			),
+			'html' => $this->context->getOutput()->parseAsInterface( $info )
 		];
 	}
 }
