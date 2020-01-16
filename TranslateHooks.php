@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Some hooks for Translate extension.
@@ -679,7 +680,8 @@ class TranslateHooks {
 	 */
 	public static function addConfig( array &$vars, OutputPage $out ) {
 		$title = $out->getTitle();
-		list( $alias, ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
+		list( $alias, ) = MediaWikiServices::getInstance()
+			->getSpecialPageFactory()->resolveAlias( $title->getText() );
 
 		if ( $title->isSpecialPage()
 			&& ( $alias === 'Translate'
@@ -792,7 +794,8 @@ class TranslateHooks {
 			return true;
 		}
 
-		list( $name, $subpage ) = TranslateUtils::resolveSpecialPageAlias( $target->getDBkey() );
+		list( $name, $subpage ) = MediaWikiServices::getInstance()
+			->getSpecialPageFactory()->resolveAlias( $target->getDBkey() );
 		if ( $name !== 'MyLanguage' ) {
 			return true;
 		}
@@ -965,13 +968,7 @@ class TranslateHooks {
 			return true;
 		}
 
-		if ( is_callable( [ $content, 'getText' ] ) ) {
-			$text = $content->getText();
-		} else {
-			// Pre 1.33 compatibility
-			$text = $content->getNativeData();
-		}
-
+		$text = $content->getText();
 		$title = $context->getTitle();
 		$handle = new MessageHandle( $title );
 

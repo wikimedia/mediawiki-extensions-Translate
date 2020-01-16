@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements the core of Translate extension - a special page which shows
  * a list of messages in a format defined by Tasks.
@@ -366,7 +368,8 @@ class SpecialTranslate extends SpecialPage {
 	 */
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
-		list( $alias, $sub ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
+		list( $alias, $sub ) = MediaWikiServices::getInstance()
+			->getSpecialPageFactory()->resolveAlias( $title->getText() );
 
 		$pagesInGroup = [ 'Translate', 'LanguageStats', 'MessageGroupStats' ];
 		if ( !in_array( $alias, $pagesInGroup, true ) ) {

@@ -403,7 +403,8 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
-		list( $alias, ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
+		$specialPageFactory = MediaWikiServices::getInstance()->getSpecialPageFactory();
+		list( $alias, ) = $specialPageFactory->resolveAlias( $title->getText() );
 
 		$pagesInGroup = [
 			'ManageMessageGroups' => 'namespaces',
@@ -419,7 +420,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		$tabs['namespaces'] = [];
 		foreach ( $pagesInGroup as $spName => $section ) {
-			$spClass = TranslateUtils::getSpecialPage( $spName );
+			$spClass = $specialPageFactory->getPage( $spName );
 
 			// DisabledSpecialPage was added in MW 1.33
 			if ( $spClass === null || $spClass instanceof DisabledSpecialPage ) {

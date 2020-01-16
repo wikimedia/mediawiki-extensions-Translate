@@ -66,7 +66,7 @@ class MessageGroups {
 	 * @return array
 	 */
 	protected function getCachedGroupDefinitions( $recache = false ) {
-		global $wgAutoloadClasses, $wgVersion;
+		global $wgAutoloadClasses;
 
 		$regenerator = function () {
 			global $wgAutoloadClasses;
@@ -108,12 +108,6 @@ class MessageGroups {
 				'minAsOf' => $recache ? INF : $cache::MIN_TIMESTAMP_NONE, // "miss" on recache
 			]
 		);
-
-		// B/C for "touchedCallback" param not existing
-		if ( version_compare( $wgVersion, '1.33', '<' ) && $wrapper->isExpired() ) {
-			$wrapper = $regenerator();
-			$cache->set( self::getCacheKey(), $wrapper, $cache::TTL_DAY );
-		}
 
 		$value = $wrapper->getValue();
 		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );

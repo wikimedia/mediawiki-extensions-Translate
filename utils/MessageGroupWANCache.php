@@ -81,8 +81,6 @@ class MessageGroupWANCache {
 	 * @return mixed
 	 */
 	public function getValue( $recache = false ) {
-		global $wgVersion;
-
 		$this->checkConfig();
 
 		$cacheData = $this->cache->getWithSetCallback(
@@ -104,14 +102,6 @@ class MessageGroupWANCache {
 				'minAsOf' => $recache ? INF : WANObjectCache::MIN_TIMESTAMP_NONE,
 			]
 		);
-
-		// B/C for "touchedCallback" param not existing
-		if ( version_compare( $wgVersion, '1.33', '<' ) ) {
-			if ( $this->touchedCallback && call_user_func( $this->touchedCallback, $cacheData ) ) {
-				$cacheData = call_user_func( $this->regenerator );
-				$this->setValue( $cacheData );
-			}
-		}
 
 		return $cacheData;
 	}
