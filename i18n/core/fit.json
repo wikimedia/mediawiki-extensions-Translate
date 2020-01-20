@@ -181,6 +181,7 @@
 	"tux-editor-message-tools-translations": "Kaikki käänökset",
 	"tux-editor-message-tools-linktothis": "Länkki tähän viestiin",
 	"tux-editor-loading": "Ladathaan...",
+	"tux-editor-loading-failed": "Käänösapuvälineiden lattaus epäonnistui: $1",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kieli|kieltä}} lissää",
 	"translate-statsbar-tooltip": "$1 % käänetty, $2 % tarkastettu",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % käänetty, $2 % tarkastettu, $3 % vanhentunut",

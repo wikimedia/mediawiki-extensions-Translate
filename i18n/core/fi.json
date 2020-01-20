@@ -402,6 +402,7 @@
 	"tux-editor-message-tools-translations": "Kaikki käännökset",
 	"tux-editor-message-tools-linktothis": "Linkki tähän viestiin",
 	"tux-editor-loading": "Ladataan...",
+	"tux-editor-loading-failed": "Käännösapuvälineiden lataus epäonnistui: $1",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kieli|kieltä}} lisää",
 	"translate-statsbar-tooltip": "$1 % käännetty, $2 % tarkastettu",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % käännetty, $2 % tarkastettu, $3 % vanhentunut",

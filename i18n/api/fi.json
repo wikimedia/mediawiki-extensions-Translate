@@ -46,7 +46,7 @@
 	"apierror-translate-language-disabled": "Kääntäminen kielelle $1 ei ole mahdollista.",
 	"apierror-translate-language-disabled-reason": "Kääntäminen kielelle $1 ei ole mahdollista: $2",
 	"apierror-translate-nodynamicgroups": "Dynaamisiä viestiryhmiä ei tueta täällä",
-	"apierror-translate-nomessagefortitle": "Otsikko ei vastaa käännettävää viesti",
+	"apierror-translate-nomessagefortitle": "Otsikko ei vastaa käännettävää viestiä",
 	"apierror-translate-owntranslation": "Ei voida tarkistaa omia käännöksiä",
 	"apierror-translate-sandboxdisabled": "Hiekkalaatikko-ominaisuus ei ole käytössä",
 	"apierror-translate-sandbox-invalidppassword": "Virheellinen salasana",

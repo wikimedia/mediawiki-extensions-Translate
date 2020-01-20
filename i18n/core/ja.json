@@ -114,7 +114,7 @@
 	"translate-checks-unicode-plural-invalid": "複数形の定義は$1にする必要があります。この翻訳には$2が含まれています。",
 	"translate-checks-pagename": "名前空間が変更されており、定義と異なっています",
 	"translate-checks-format": "この翻訳は定義に沿っていない、または無効な構文を使用しています: $1",
-	"translate-checks-escape": "以下のエスケープは偶発的なものかもしれません: <strong>$1</strong>",
+	"translate-checks-escape": "以下のエスケープ{{PLURAL:$2|文字列}}は偶発的なものかもしれません: <strong>$1</strong>。{{PLURAL:$4|有効なエスケープ記号}}は$3です。",
 	"translate-checks-parametersnotequal": "引数の数が{{PLURAL:$1|$1}}個ですが、{{PLURAL:$2|$2}}個である必要があります。",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> の形式に誤りがあります。",
 	"translate-checks-fudforum-syntax": "このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。",

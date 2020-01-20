@@ -112,7 +112,7 @@
 	"translate-checks-unicode-plural-invalid": "يجب أن تكون أشكال الجمع بصيغة $1، هذه الترجمة تحتوي على $2.",
 	"translate-checks-pagename": "النطاق تغير من التعريف",
 	"translate-checks-format": "هذه الترجمة لا تتبع التعريف أو تحتوي على صياغة خاطئة: $1",
-	"translate-checks-escape": "عمليات الهروب التالية ربما تكون حدثت بالصدفة: <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|الحرف|الحروف}} التالية ربما تكون حدثت بالصدفة: <strong>$1</strong>. {{PLURAL:$4|حرف الهروب الصحيح هو|حروف الهروب الصحيحة تتضمن:}} $3.",
 	"translate-checks-parametersnotequal": "عدد المتغيرات هو {{PLURAL:$1|$1}}؛ ينبغي أن يكون {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> صيغته غير صحيحة.",
 	"translate-checks-fudforum-syntax": "استخدم <nowiki>$1</nowiki> بدلًا من <nowiki>$2</nowiki> في هذا المشروع.",

@@ -89,7 +89,7 @@
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ima na koncu podvojeni obliki. <nowiki>{{PLURAL:$1|ovca|ovca}}</nowiki> naj bo napisano kot <nowiki>{{PLURAL:$1|ovca}}</nowiki>.",
 	"translate-checks-pagename": "Imenski prostor je drugačen kot v opredelitvi",
 	"translate-checks-format": "Ta prevod ne sledi opredelitvi ali ima neveljavno skladnjo: $1",
-	"translate-checks-escape": "Naslednji ubegi so morda naključni: <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|Naslednji ubežni znak je morda naključen|Naslednja ubežna znaka sta morda naključna|Naslednji ubežni znaki so morda naključni}}: <strong>$1</strong>. {{PLURAL:$4|Veljavni ubežni znak je|Veljavna ubežna znaka sta:|Veljavni ubežni znaki so:}} $3.",
 	"translate-checks-parametersnotequal": "Število parametrov je {{PLURAL:$1|$1}}; moralo bi biti {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> je poškodovan.",
 	"translate-checks-fudforum-syntax": "V tem projektu uporabite <nowiki>$1</nowiki> namesto <nowiki>$2</nowiki>.",
