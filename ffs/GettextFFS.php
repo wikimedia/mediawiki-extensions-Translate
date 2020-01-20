@@ -636,4 +636,35 @@ PHP;
 
 		return $schema;
 	}
+
+	public function isContentEqual( $a, $b ) {
+		if ( $a === $b ) {
+			return true;
+		}
+
+		try {
+			$parsedA = GettextPlural::parsePluralForms( $a );
+			$parsedB = GettextPlural::parsePluralForms( $b );
+
+			// if they have the different number of plural forms, just fail
+			if ( count( $parsedA[1] ) !== count( $parsedB[1] ) ) {
+				return false;
+			}
+
+		} catch ( GettextPluralException $e ) {
+			// Something failed, invalid syntax?
+			return false;
+		}
+
+		$expectedPluralCount = count( $parsedA[1] );
+
+		// GettextPlural::unflatten() will return an empty array when $expectedPluralCount is 0
+		// So if they do not have translations and are different strings, they are not equal
+		if ( $expectedPluralCount === 0 ) {
+			return false;
+		}
+
+		return GettextPlural::unflatten( $a, $expectedPluralCount )
+			=== GettextPlural::unflatten( $b, $expectedPluralCount );
+	}
 }

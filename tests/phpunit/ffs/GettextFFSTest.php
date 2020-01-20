@@ -253,4 +253,19 @@ GETTEXT
 
 		return $cases;
 	}
+
+	public function testIsContentEqual() {
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		$ffs = new GettextFFS( $group );
+
+		$this->assertTrue( $ffs->isContentEqual( 'Foo bar', 'Foo bar' ) );
+		$this->assertTrue( $ffs->isContentEqual(
+			'The bunnies stole {{PLURAL:GETTEXT|one carrot|%{count} carrots}}.',
+			'{{PLURAL:GETTEXT|The bunnies stole one carrot.|The bunnies stole %{count} carrots.}}' ) );
+
+		$this->assertFalse( $ffs->isContentEqual( 'Foo bar', 'Foo baz' ) );
+		$this->assertFalse( $ffs->isContentEqual(
+			'The bunnies stole {{PLURAL:GETTEXT|one banana|%{count} carrots}}.',
+			'{{PLURAL:GETTEXT|The bunnies stole one carrot.|The bunnies stole %{count} carrots.}}' ) );
+	}
 }
