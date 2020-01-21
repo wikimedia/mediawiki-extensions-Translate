@@ -80,17 +80,17 @@ class TTMServerBootstrap extends Maintenance {
 		$pid = pcntl_fork();
 		if ( $pid === 0 ) {
 			$this->resetStateForFork();
-			$this->beginBootStrap( $config );
+			$this->beginBootstrap( $config );
 			exit();
 		} elseif ( $pid === -1 ) {
 			// Fork failed do it serialized
-			$this->beginBootStrap( $config );
+			$this->beginBootstrap( $config );
 		} else {
 			// Main thread
 			$this->statusLine( "Forked thread $pid to handle bootstrapping\n" );
 			$status = 0;
 			pcntl_waitpid( $pid, $status );
-			// beginBootStrap probably failed, give up.
+			// beginBootstrap probably failed, give up.
 			if ( $status !== 0 ) {
 				$this->fatalError( 'Boostrap failed.' );
 			}
@@ -140,7 +140,7 @@ class TTMServerBootstrap extends Maintenance {
 		$this->endBootstrap( $config );
 	}
 
-	protected function beginBootStrap( $config ) {
+	protected function beginBootstrap( $config ) {
 		$server = TTMServer::factory( $config );
 		'@phan-var ElasticSearchTTMServer $server';
 		$server->setLogger( $this );
