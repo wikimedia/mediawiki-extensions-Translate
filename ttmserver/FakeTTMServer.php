@@ -57,4 +57,7 @@ class FakeTTMServer implements ReadableTTMServer, WritableTTMServer {
 	public function isFrozen() {
 		return false;
 	}
+
+	public function setDoReIndex() {
+	}
 }

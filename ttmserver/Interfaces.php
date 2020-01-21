@@ -116,6 +116,12 @@ interface WritableTTMServer {
 	 * @return bool true if the service is frozen
 	 */
 	public function isFrozen();
+
+	/**
+	 * Instruct the service to fully wipe the index and start from scratch.
+	 * @since 2020.01
+	 */
+	public function setDoReIndex();
 }
 
 /**

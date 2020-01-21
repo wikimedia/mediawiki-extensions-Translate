@@ -591,9 +591,9 @@ class ElasticSearchTTMServer
 
 	/**
 	 * Force the update of index mappings
-	 * @since 2015.03
+	 * @inheritDoc
 	 */
-	public function doMappingUpdate() {
+	public function setDoReIndex() {
 		$this->updateMapping = true;
 	}
 

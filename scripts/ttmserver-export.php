@@ -22,11 +22,6 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class TTMServerBootstrap extends Maintenance {
 	/**
-	 * @var bool Option for reindexing
-	 */
-	protected $reindex;
-
-	/**
 	 * @var int
 	 */
 	private $start;
@@ -51,6 +46,14 @@ class TTMServerBootstrap extends Maintenance {
 			'reindex',
 			'Update the index mapping. Warning: Clears all existing data in the index.'
 		);
+		$this->addOption(
+			'dry-run',
+			'Do not make any actualy changes in the index.'
+		);
+		$this->addOption(
+			'verbose',
+			'Output more status information.'
+		);
 		$this->setBatchSize( 500 );
 		$this->requireExtension( 'Translate' );
 		$this->start = microtime( true );
@@ -72,19 +75,27 @@ class TTMServerBootstrap extends Maintenance {
 			$this->fatalError( 'Translation memory is not configured properly' );
 		}
 
-		$config = $wgTranslateTranslationServices[$configKey];
-		$this->reindex = $this->getOption( 'reindex', false );
+		$dryRun = $this->getOption( 'dry-run' );
+		if ( $dryRun ) {
+			$config = [ 'class' => FakeTTMServer::class ];
+		} else {
+			$config = $wgTranslateTranslationServices[$configKey];
+		}
+
+		$server = $this->getServer( $config );
+		$this->logInfo( "Implementation: " . get_class( $server ) . "\n" );
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
 		// See also #resetStateForFork.
 		$pid = pcntl_fork();
 		if ( $pid === 0 ) {
 			$this->resetStateForFork();
-			$this->beginBootstrap( $config );
+			$server = $this->getServer( $config );
+			$this->beginBootstrap( $server );
 			exit();
 		} elseif ( $pid === -1 ) {
 			// Fork failed do it serialized
-			$this->beginBootstrap( $config );
+			$this->beginBootstrap( $server );
 		} else {
 			// Main thread
 			$this->statusLine( "Forked thread $pid to handle bootstrapping\n" );
@@ -92,7 +103,7 @@ class TTMServerBootstrap extends Maintenance {
 			pcntl_waitpid( $pid, $status );
 			// beginBootstrap probably failed, give up.
 			if ( $status !== 0 ) {
-				$this->fatalError( 'Bootstrap failed.' );
+				$this->fatalError( 'Boostrap failed.' );
 			}
 		}
 
@@ -111,11 +122,12 @@ class TTMServerBootstrap extends Maintenance {
 
 			if ( $pid === 0 ) {
 				$this->resetStateForFork();
-				$this->exportGroup( $group, $config );
+				$server = $this->getServer( $config );
+				$this->exportGroup( $group, $server );
 				exit();
 			} elseif ( $pid === -1 ) {
 				// Fork failed do it serialized
-				$this->exportGroup( $group, $config );
+				$this->exportGroup( $group, $server );
 			} else {
 				// Main thread
 				$this->statusLine( "Forked thread $pid to handle $id\n" );
@@ -137,47 +149,65 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		// It's okay to do this in the main thread as it is the last thing
-		$this->endBootstrap( $config );
+		$this->endBootstrap( $server );
 	}
 
-	protected function beginBootstrap( $config ) {
+	private function getServer( array $config ): WritableTTMServer {
 		$server = TTMServer::factory( $config );
-		'@phan-var ElasticSearchTTMServer $server';
-		$server->setLogger( $this );
+		if ( !$server instanceof WritableTTMServer ) {
+			$this->fatalError( "Service must implement WritableTTMServer" );
+		}
+
+		if ( is_callable( [ $server, 'setLogger' ] ) ) {
+			// Phan, why you so strict?
+			// @phan-suppress-next-line PhanUndeclaredMethod
+			$server->setLogger( $this );
+		}
+
 		if ( $server->isFrozen() ) {
 			$this->fatalError( "The service is frozen, giving up." );
 		}
-		$this->statusLine( "Cleaning up old entries...\n" );
-		if ( $this->reindex ) {
-			$server->doMappingUpdate();
+
+		if ( $this->getOption( 'reindex', false ) ) {
+			// This doesn't do the update, just sets a flag to do it
+			$server->setDoReIndex();
 		}
+
+		return $server;
+	}
+
+	protected function beginBootstrap( WritableTTMServer $server ) {
+		$this->statusLine( "Cleaning up old entries...\n" );
 		$server->beginBootstrap();
 	}
 
-	protected function endBootstrap( $config ) {
+	protected function endBootstrap( WritableTTMServer $server ) {
 		$this->statusLine( "Optimizing...\n" );
-		$server = TTMServer::factory( $config );
-		'@phan-var ElasticSearchTTMServer $server';
-		$server->setLogger( $this );
 		$server->endBootstrap();
 	}
 
-	protected function exportGroup( MessageGroup $group, $config ) {
-		$server = TTMServer::factory( $config );
-		'@phan-var ElasticSearchTTMServer $server';
-		$server->setLogger( $this );
+	protected function exportGroup( MessageGroup $group, WritableTTMServer $server ) {
+		$times = [
+			'total' => -microtime( true ),
+			'stats' => 0,
+			'init' => 0,
+			'trans' => 0,
+		];
+		$countItems = 0;
 
 		$id = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();
 
+		$times[ 'stats' ] -= microtime( true );
 		$stats = MessageGroupStats::forGroup( $id );
+		$times[ 'stats' ] += microtime( true );
 
+		$times[ 'init' ] -= microtime( true );
 		$collection = $group->initCollection( $sourceLanguage );
 		$collection->filter( 'ignored' );
 		$collection->initMessages();
 
 		$server->beginBatch();
-
 		$inserts = [];
 		foreach ( $collection->keys() as $mkey => $titleValue ) {
 			$title = Title::newFromLinkTarget( $titleValue );
@@ -185,12 +215,15 @@ class TTMServerBootstrap extends Maintenance {
 			$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->definition() ];
 		}
 
+		$countItems += count( $inserts );
 		while ( $inserts !== [] ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertDefinitions( $batch );
 		}
-
 		$inserts = [];
+		$times[ 'init' ] += microtime( true );
+
+		$times[ 'trans' ] -= microtime( true );
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
 				continue;
@@ -210,18 +243,40 @@ class TTMServerBootstrap extends Maintenance {
 				$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->translation() ];
 			}
 
+			$countItems += count( $inserts );
 			while ( count( $inserts ) >= $this->mBatchSize ) {
 				$batch = array_splice( $inserts, 0, $this->mBatchSize );
 				$server->batchInsertTranslations( $batch );
 			}
 		}
 
+		$countItems += count( $inserts );
 		while ( $inserts !== [] ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertTranslations( $batch );
 		}
 
 		$server->endBatch();
+		$times[ 'trans' ] += microtime( true );
+		$times[ 'total' ] += microtime( true );
+
+		$debug = sprintf(
+			"Total %.1f s for %d items >> stats/init/trans %%: %d/%d/%d >> %.1f ms/item",
+			$times[ 'total' ],
+			$countItems,
+			$times[ 'stats'] / $times[ 'total' ] * 100,
+			$times[ 'init'] / $times[ 'total' ] * 100,
+			$times[ 'trans'] / $times[ 'total' ] * 100,
+			$times[ 'total' ] / $countItems * 1000
+		);
+
+		$this->logInfo( "Finished exporting $id. $debug\n" );
+	}
+
+	private function logInfo( string $text ) {
+		if ( $this->getOption( 'verbose', false ) ) {
+			$this->statusLine( $text );
+		}
 	}
 
 	protected function resetStateForFork() {

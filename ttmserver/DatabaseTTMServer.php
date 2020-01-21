@@ -281,4 +281,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 		return $results;
 	}
+
+	public function setDoReIndex() {
+	}
 }

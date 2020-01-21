@@ -438,4 +438,8 @@ class TestableTTMServer extends TTMServer implements WritableTTMServer {
 	public function isFrozen() {
 		return $this->delegate->isFrozen();
 	}
+
+	public function setDoReIndex() {
+		return $this->delegate->setDoReIndex();
+	}
 }

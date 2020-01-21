@@ -262,9 +262,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function resetForNewLanguage( $code ) {
 		$this->code = $code;
 		$this->keys = $this->fixKeys();
-		$this->dbInfo = null;
-		$this->dbData = null;
-		$this->dbReviewData = null;
+		$this->dbInfo = [];
+		$this->dbData = [];
+		$this->dbReviewData = [];
 		$this->messages = null;
 		$this->infile = [];
 		$this->authors = [];
@@ -660,7 +660,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	protected function loadInfo( array $keys, ?array $titleConds = null ) {
-		if ( $this->dbInfo !== null ) {
+		if ( $this->dbInfo !== [] ) {
 			return;
 		}
 
@@ -695,7 +695,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	protected function loadReviewInfo( array $keys, ?array $titleConds = null ) {
-		if ( $this->dbReviewData !== null ) {
+		if ( $this->dbReviewData !== [] ) {
 			return;
 		}
 
@@ -730,7 +730,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	protected function loadData( array $keys, ?array $titleConds = null ) {
-		if ( $this->dbData !== null ) {
+		if ( $this->dbData !== [] ) {
 			return;
 		}
 
