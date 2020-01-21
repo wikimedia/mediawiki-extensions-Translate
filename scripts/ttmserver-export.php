@@ -92,7 +92,7 @@ class TTMServerBootstrap extends Maintenance {
 			pcntl_waitpid( $pid, $status );
 			// beginBootstrap probably failed, give up.
 			if ( $status !== 0 ) {
-				$this->fatalError( 'Boostrap failed.' );
+				$this->fatalError( 'Bootstrap failed.' );
 			}
 		}
 
