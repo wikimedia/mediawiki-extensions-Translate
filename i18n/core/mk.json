@@ -101,7 +101,7 @@
 	"translate-checks-unicode-plural-invalid": "Множинските облици треба да се задаваат како $1. Овој превод содржи $2.",
 	"translate-checks-pagename": "Изменета е определбата на именскиот простор",
 	"translate-checks-format": "Овој превод не ја следи определбата или има неправилна синтакса: $1",
-	"translate-checks-escape": "Следниве испуштања може да се ненамерни: <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|Следниов изменителен знак може да е ненамерен|Следниве изменителни знаци може да се ненамерни}}: <strong>$1</strong>. {{PLURAL:$4|Важечки е|Важечки се:}} $3.",
 	"translate-checks-parametersnotequal": "Бројот на параметри изнесува {{PLURAL:$1|$1}}, а треба да биде {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> е погрешно внесено.",
 	"translate-checks-fudforum-syntax": "Користете <nowiki>$1</nowiki> наместо <nowiki>$2</nowiki> во овој проект.",
