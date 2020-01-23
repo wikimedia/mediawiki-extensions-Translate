@@ -1,0 +1,16 @@
+== Translate 2020.01 ==
+Released at 2020-01-23.
+
+=== Noteworthy changes ===
+* Translate extension now requires PHP 7.2.x and MediaWiki 1.33 or above.
+* Convert PageDisplayTitle to language variant. ([[phab:T230681|Phab:T230681]])
+* Prevent duplicate translation unit error from showing twice.
+([[phab:T236153|Phab:T236153]])
+* Add secondary check before displaying tpt-unknown-page error.
+([[phab:T221119|Phab:T221119]])
+* Display an error message if translation aids fail to load.
+([[phab:T221119|Phab:T221119]])
+* Improve performance with large message groups by implement maximum query size
+in MessageCollection. ([[phab:T230100|Phab:T230100]])
+* Improve message group selector performance reducing Translate API request
+time. ([[phab:T236904|Phab:T236904]])
