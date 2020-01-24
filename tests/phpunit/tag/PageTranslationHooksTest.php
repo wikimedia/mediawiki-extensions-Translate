@@ -170,7 +170,8 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 			[ 'edit' => 'sysop' ],
 			[ 'edit' => '20200101040404' ],
 			false,
-			'Testing'
+			'Testing',
+			$this->getTestUser()->getUser()
 		);
 		$this->assertNotNull( $nullRev, 'Sanity: must create null revision' );
 		$this->assertEquals(
