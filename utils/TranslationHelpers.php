@@ -253,7 +253,7 @@ class TranslationHelpers {
 		$sl = Language::factory( $this->group->getSourceLanguage() );
 
 		$dialogID = $this->dialogID();
-		$id = Sanitizer::escapeId( "def-$dialogID" );
+		$id = Sanitizer::escapeIdForAttribute( "def-$dialogID" );
 		$msg = $this->adder( $id, $sl ) . "\n" . Html::rawElement( 'div',
 			[
 				'class' => 'mw-translate-edit-deftext',
@@ -310,7 +310,7 @@ class TranslationHelpers {
 			}
 
 			$dialogID = $this->dialogID();
-			$id = Sanitizer::escapeId( "other-$fbcode-$dialogID" );
+			$id = Sanitizer::escapeIdForAttribute( "other-$fbcode-$dialogID" );
 
 			$params = [ 'class' => 'mw-translate-edit-item' ];
 
