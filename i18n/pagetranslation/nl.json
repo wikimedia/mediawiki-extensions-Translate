@@ -38,6 +38,7 @@
 	"tpt-mark-summary": "Heeft deze versie voor vertaling gemarkeerd",
 	"tpt-edit-failed": "De pagina \"$1\" kon niet bijgewerkt worden.",
 	"tpt-duplicate": "De vertaaleenheid \"$1\" wordt meer dan eens gebruikt.",
+	"tpt-invalid": "De vertaaleenheidnaam $1 mag geen laag streepje (_) of schuine streep (/) bevatten.",
 	"tpt-already-marked": "De meest recente versie van deze pagina is al gemarkeerd voor vertaling.",
 	"tpt-unmarked": "Pagina \"[[:$1]]\" is niet langer te vertalen.",
 	"tpt-list-nopages": "Er zijn geen pagina's gemarkeerd voor vertaling, noch klaar om gemarkeerd te worden voor vertaling.",
