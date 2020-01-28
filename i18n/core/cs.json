@@ -13,7 +13,8 @@
 			"Clon",
 			"Marek Pavlica",
 			"Dvorapa",
-			"Ilimanaq29"
+			"Ilimanaq29",
+			"Martin Urbanec"
 		]
 	},
 	"translate": "Překládání",
@@ -62,6 +63,11 @@
 	"translate-use-suggestion": "Nahradit stávající překlad tímto návrhem.",
 	"translate-edit-nopermission": "K překládání zpráv potřebujete překladatelská práva.",
 	"translate-edit-askpermission": "Získat oprávnění",
+	"exporttranslations": "Exportovat překlady",
+	"translate-export-form-format": "Formát",
+	"translate-export-invalid-format": "Prosím, specifikujte platný formát.",
+	"translate-export-not-supported": "Export překladů není podporován.",
+	"translate-export-format-notsupported": "Specifikovaný formát není podporovaný touto skupinou zpráv.",
 	"translate-magic-pagename": "Rozšířená možnost překladu MediaWiki",
 	"translate-magic-help": "Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.\n\nAliasy speciálních stránek a kouzelná slova mohou mít více překladů.\nPřeklady se oddělují čárkou (,).\nNázvy jmenných prostorů mohou mít jen jeden překlad.\n\nV překladech jmenných prostorů se <code>$1 talk</code> chová zvláštně.\n<code>$1</code> se nahradí názvem projektu (např. <code>{{ns:project_talk}}</code>).\nPokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, dejte nám vědět na stránce [[Support]].\n\nAbyste mohli ukládat změny, musíte být překladatel.\nZměny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ dole.",
 	"translate-magic-module": "Modul:",
@@ -194,6 +200,7 @@
 	"supportedlanguages-summary": "Na této stránce se nachází seznam všech jazyků podporovaných na {{grammar:6sg|{{SITENAME}}}}\nspolu se jmény překladatelů, kteří na jazyku pracují.\nČím více editací překladatel poskytnul, tím větší se jeho jméno zobrazuje.\nBarva podtržení znázorňuje, jak nedávno zde byl překladatel aktivní.",
 	"supportedlanguages-colorlegend": "Legenda k barvám: Poslední překlad před $1 dny.",
 	"supportedlanguages-portallink": "[$1] $2 – $3",
+	"supportedlanguages-sqlite-error": "SQLite není podporován",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Překladatel|Překladatelka}}|Překladatelé}}: $1",
 	"supportedlanguages-recenttranslations": "nedávné překlady",
 	"supportedlanguages-count": "Celkem $1 {{PLURAL:$1|jazyk|jazyky|jazyků}}.",
@@ -371,5 +378,6 @@
 	"translate-ulsdep-title": "Chyba konfigurace",
 	"translate-ulsdep-body": "Rozšíření Translate závisí na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšíření Universal Language Selector].",
 	"tux-session-expired": "Již nejste přihlášen(a). Přihlaste se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se, vraťte se na tuto stránku a zadejte je znovu.",
-	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je buď vypnut, nebo zkolaboval anebo není podporován tento prohlížeč."
+	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je buď vypnut, nebo zkolaboval anebo není podporován tento prohlížeč.",
+	"specialpages-group-translation": "Překlad"
 }

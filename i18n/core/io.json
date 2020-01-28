@@ -125,6 +125,7 @@
 	"tux-editor-in-other-languages": "En altra lingui",
 	"tux-editor-need-more-help": "Ka vu bezonas plusa helpo?",
 	"tux-editor-ask-help": "Demandez plusa informi",
+	"tux-notices-more": "{{PLURAL:$1|$1 pluse}}",
 	"tux-editor-save-failed": "Faliis pri konservar la tradukuro: $1",
 	"tux-editor-n-uses": "uzita $1 {{PLURAL:$1|foyo|foyi}}",
 	"tux-editor-message-desc-more": "Montrez pluse",
