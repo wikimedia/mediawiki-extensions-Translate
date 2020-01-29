@@ -7,6 +7,8 @@
 		]
 	},
 	"tpt-select-prioritylangs-reason": "Reden:",
+	"translate-tag-translate-link-desc": "Dizze side oersette",
+	"tpt-translation-intro": "Dizze side is in <span class=\"plainlinks\">[$1 oersette ferzje]</span> fan 'e side [[$2]], en de oersetting is $3% kompleet.",
 	"tpt-languages-legend": "Oare talen:",
 	"tpt-languages-nonzero": "$1 ($2% oerset)",
 	"tpt-tab-translate": "Oersette",
