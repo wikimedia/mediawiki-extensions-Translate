@@ -83,6 +83,7 @@ class PluralCompare extends Maintenance {
 			$mw = $gt = $cl = '?';
 
 			if ( $mwExp ) {
+				// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 				$exp = $lang->getCompiledPluralRules();
 				$mw = Evaluator::evaluateCompiled( $i, $exp );
 			}

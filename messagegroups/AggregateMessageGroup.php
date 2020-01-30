@@ -33,7 +33,6 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$messages += $group->load( $code );
 		}
 
-		// @phan-suppress-next-line PhanTypeMismatchReturn += is interpreted as addition, not array_plus
 		return $messages;
 	}
 

@@ -126,6 +126,7 @@ class MagicExport extends Maintenance {
 					}
 					break;
 				case 'magic':
+					// @phan-suppress-next-line PhanImpossibleConditionInLoop
 					if ( !isset( $magicWords ) ) {
 						$this->error( "File '$inFile' does not contain a magic words array." );
 						continue 2;

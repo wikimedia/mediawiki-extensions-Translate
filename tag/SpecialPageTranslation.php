@@ -417,7 +417,6 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		// broken and proposed take preference over discouraged status
-		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 		foreach ( $out['active'] as $index => $page ) {
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] );
 			$group = MessageGroups::getGroup( $id );

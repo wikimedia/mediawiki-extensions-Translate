@@ -120,11 +120,11 @@ class ApiAggregateGroups extends ApiBase {
 			$idExists = MessageGroups::getGroup( $aggregateGroupId );
 			if ( $idExists ) {
 				$i = 1;
-				while ( $idExists ) {
+				do {
 					$tempId = $aggregateGroupId . '-' . $i;
 					$idExists = MessageGroups::getGroup( $tempId );
 					$i++;
-				}
+				} while ( $idExists );
 				$aggregateGroupId = $tempId;
 			}
 

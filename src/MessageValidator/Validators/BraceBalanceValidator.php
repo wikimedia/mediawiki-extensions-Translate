@@ -39,17 +39,14 @@ class BraceBalanceValidator implements Validator {
 		$definition = $message->definition();
 
 		$balance = [];
-		// @phan-suppress-next-line PhanSuspiciousValueComparison
 		if ( $counts['['] !== $counts[']'] && self::checkStringCountEqual( $definition, '[', ']' ) ) {
 			$balance[] = '[]: ' . ( $counts['['] - $counts[']'] );
 		}
 
-		// @phan-suppress-next-line PhanSuspiciousValueComparison
 		if ( $counts['{'] !== $counts['}'] && self::checkStringCountEqual( $definition, '{', '}' ) ) {
 			$balance[] = '{}: ' . ( $counts['{'] - $counts['}'] );
 		}
 
-		// @phan-suppress-next-line PhanSuspiciousValueComparison
 		if ( $counts['('] !== $counts[')'] && self::checkStringCountEqual( $definition, '(', ')' ) ) {
 			$balance[] = '(): ' . ( $counts['('] - $counts[')'] );
 		}

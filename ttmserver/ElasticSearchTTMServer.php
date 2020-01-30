@@ -181,6 +181,7 @@ class ElasticSearchTTMServer
 			}
 
 			// After the first query, the smallest score is the new threshold.
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$query->setParam( 'min_score', $score );
 			$query->setFrom( $query->getParam( 'size' ) + $query->getParam( 'from' ) );
 			$query->setSize( $sizeSecond );
