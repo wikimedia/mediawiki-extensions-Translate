@@ -921,7 +921,7 @@
 			]
 		},
 		"ext.translate.tag.languages": {
-			"styles": "resources/css/ext.translate.tag.languages.css",
+			"styles": "resources/css/ext.translate.tag.languages.less",
 			"targets": [
 				"desktop",
 				"mobile"

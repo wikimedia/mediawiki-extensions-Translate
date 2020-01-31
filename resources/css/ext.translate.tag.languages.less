@@ -1,3 +1,5 @@
+@import 'mediawiki.ui/variables.less';
+
 .mw-pt-languages {
 	background-color: #f8f9fa;
 	display: table;
@@ -16,16 +18,12 @@
 
 .mw-pt-languages-label {
 	background-color: #eaecf0;
-	display: table-cell;
-	/* Given `white-space: nowrap` above, label never shrinks underneath textual content. */
-	width: 1%;
 	padding: 0.5em;
 	font-weight: bold;
 	white-space: nowrap;
 }
 
 .mw-pt-languages-list {
-	display: table-cell;
 	padding: 0.5em;
 }
 
@@ -73,4 +71,16 @@
 
 .mw-pt-progress--complete {
 	background-image: url( ../images/prog-5.png );
+}
+
+@media screen and ( min-width: @width-breakpoint-tablet ) {
+	.mw-pt-languages-label {
+		display: table-cell;
+		/* Given `white-space: nowrap` above, label never shrinks underneath textual content. */
+		width: 1%;
+	}
+
+	.mw-pt-languages-list {
+		display: table-cell;
+	}
 }
