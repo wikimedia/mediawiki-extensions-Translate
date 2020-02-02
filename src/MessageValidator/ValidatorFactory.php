@@ -16,12 +16,14 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexVa
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PythonInterpolationValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiLinkValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
 use RuntimeException;
 
@@ -42,6 +44,7 @@ class ValidatorFactory {
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'MatchSet' => MatchSetValidator::class,
 		'MediaWikiMisc' => MediaWikiMiscValidator::class,
+		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
 		'Newline' => NewlineValidator::class,
 		'Printf' => PrintfValidator::class,
@@ -49,6 +52,7 @@ class ValidatorFactory {
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
 		'WikiParameter' => WikiParameterValidator::class,
+		'WikiLink' => WikiLinkValidator::class
 	];
 
 	/**
