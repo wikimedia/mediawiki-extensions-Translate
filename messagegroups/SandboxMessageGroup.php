@@ -121,10 +121,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		return $list;
 	}
 
-	public function getChecker() {
-		return null;
-	}
-
 	public function getValidator() {
 		return null;
 	}

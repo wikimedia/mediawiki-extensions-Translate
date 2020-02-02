@@ -268,13 +268,12 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		// Not all groups have checkers or validators
+		// Not all groups have validators
 		$group = $handle->getGroup();
-		$checker = $group->getChecker();
 		$validator = $group->getValidator();
 
-		// no checker or validator set
-		if ( !$checker && !$validator ) {
+		// no validator set
+		if ( !$validator ) {
 			return false;
 		}
 
@@ -285,21 +284,8 @@ class TranslateEditAddons {
 		// Take the contents from edit field as a translation.
 		$message->setTranslation( $text );
 
-		if ( $checker ) {
-			$checks = $checker->checkMessage( $message, $code );
-			if ( count( $checks ) ) {
-				return true;
-			}
-		}
-
-		if ( $validator ) {
-			$validationResult = $validator->quickValidate( $message, $code );
-			if ( $validationResult->hasErrors() || $validationResult->hasWarnings() ) {
-				return true;
-			}
-		}
-
-		return false;
+		$validationResult = $validator->quickValidate( $message, $code );
+		return $validationResult->hasErrors() || $validationResult->hasWarnings();
 	}
 
 	/**

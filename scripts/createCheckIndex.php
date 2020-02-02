@@ -74,8 +74,8 @@ class CreateCheckIndex extends Maintenance {
 				continue;
 			}
 
-			$checker = $g->getChecker();
-			if ( !$checker ) {
+			$validator = $g->getValidator();
+			if ( !$validator ) {
 				unset( $g );
 				continue;
 			}
@@ -105,8 +105,8 @@ class CreateCheckIndex extends Maintenance {
 				$collection->loadTranslations();
 
 				foreach ( $collection as $key => $message ) {
-					$prob = $checker->checkMessageFast( $message, $code );
-					if ( $prob ) {
+					$result = $validator->quickValidate( $message, $code );
+					if ( $result->hasWarnings() || $result->hasErrors() ) {
 						if ( $verbose ) {
 							// Print it
 							$nsText = $contLang->getNsText( $g->getNamespace() );

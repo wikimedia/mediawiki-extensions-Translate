@@ -157,13 +157,6 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 	}
 
 	/**
-	 * @inheritDoc
-	 */
-	public function getChecker() {
-		return null;
-	}
-
-	/**
 	 * @return MessageValidator
 	 */
 	public function getValidator() {

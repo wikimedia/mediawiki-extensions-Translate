@@ -1,5 +1,4 @@
 <?php
-use MediaWiki\Extensions\Translate\MessageValidator\ValidationResult;
 
 /**
  * @since 2017.10
@@ -16,26 +15,12 @@ class ApiTranslationCheck extends ApiBase {
 		$handle = new MessageHandle( $title );
 		$translation = $params[ 'translation' ];
 
-		$checkResults = $this->getWarnings( $handle, $translation );
 		$validationResult = $this->validateTranslation( $handle, $translation );
 
 		if ( $validationResult ) {
-			// Added for backward compatibility with previous MessageChecker framework.
-			// TODO: MessageValidator - Remove in the future.
-			$validationResult->setWarnings(
-				array_merge( $checkResults, $validationResult->getWarnings() )
-			);
-
 			$this->getResult()->addValue( null, 'validation', [
 				'errors' => $validationResult->getDescriptiveErrors( $this->getContext() ),
 				'warnings' => $validationResult->getDescriptiveWarnings( $this->getContext() ),
-			] );
-		} else {
-			// To maintain backward compatibility with previous MessageChecker framework.
-			// TODO: MessageValidator - Remove in the future.
-			$this->getResult()->addValue( null, 'validation', [
-				'errors' => [],
-				'warnings' => ValidationResult::expandMessages( $this->getContext(), $checkResults )
 			] );
 		}
 	}
@@ -57,28 +42,6 @@ class ApiTranslationCheck extends ApiBase {
 		$validationResult = $messageValidator->validateMessage( $message, $handle->getCode() );
 
 		return $validationResult;
-	}
-
-	private function getWarnings( MessageHandle $handle, $translation ) {
-		if ( $handle->isDoc() || !$handle->isValid() ) {
-			return [];
-		}
-
-		$checker = $handle->getGroup()->getChecker();
-		if ( !$checker ) {
-			return [];
-		}
-
-		$definition = $this->getDefinition( $handle );
-		$message = new FatMessage( $handle->getKey(), $definition );
-		$message->setTranslation( $translation );
-
-		$checks = $checker->checkMessage( $message, $handle->getCode() );
-		if ( $checks === [] ) {
-			return [];
-		}
-
-		return $checks;
 	}
 
 	private function getDefinition( MessageHandle $handle ) {

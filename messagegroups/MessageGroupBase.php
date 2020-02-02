@@ -110,31 +110,6 @@ abstract class MessageGroupBase implements MessageGroup {
 		return new $class( $this );
 	}
 
-	public function getChecker() {
-		$class = $this->getFromConf( 'CHECKER', 'class' );
-
-		if ( $class === null ) {
-			return null;
-		}
-
-		if ( !class_exists( $class ) ) {
-			throw new MWException( "Checker class $class does not exist." );
-		}
-
-		$checker = new $class( $this );
-		$checks = $this->getFromConf( 'CHECKER', 'checks' );
-
-		if ( !is_array( $checks ) ) {
-			throw new MWException( "Checker class $class not supplied with proper checks." );
-		}
-
-		foreach ( $checks as $check ) {
-			$checker->addCheck( [ $checker, $check ] );
-		}
-
-		return $checker;
-	}
-
 	public function getValidator() {
 		$validatorConfigs = $this->getFromConf( 'VALIDATORS' );
 		if ( $validatorConfigs === null ) {
@@ -205,9 +180,6 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		if ( $suggesters === [] ) {
-			// TODO: MessageValidator - This can be removed in the future. Needed for B.C.
-			// no suggesters yet, lets see if there are insertables with the array configuration
-			// structure.
 			$suggesters = $this->getArrayInsertables();
 		}
 
@@ -480,7 +452,8 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	/**
 	 * Fetches insertables that have been added in the array configuration format.
-	 * TODO: MessageValidator - Move this code to getInsertablesSuggester
+	 * TODO: MessageValidator - Move this code to getInsertablesSuggester once all
+	 * insertables in group config file have been migrated to the array structure.
 	 * @return array
 	 */
 	private function getArrayInsertables() {

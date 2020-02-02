@@ -14,7 +14,7 @@
  *
  * Message groups are the heart of the Translate extension. They encapsulate
  * a set of messages each. Aside from basic information like id, label and
- * description, the class defines which mangler, message checker and file
+ * description, the class defines which mangler, validators and file
  * system support (FFS), if any, the group uses.
  *
  * @ingroup MessageGroup
@@ -86,13 +86,6 @@ interface MessageGroup {
 	 * @return FFS|null
 	 */
 	public function getFFS();
-
-	/**
-	 * Returns a message checker object or null.
-	 * @todo Make an interface for message checkers.
-	 * @return MessageChecker|null
-	 */
-	public function getChecker();
 
 	/**
 	 * Returns a message validator object or null.

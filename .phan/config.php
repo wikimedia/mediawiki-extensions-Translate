@@ -9,9 +9,7 @@ $cfg['scalar_implicit_cast'] = true;
 $cfg['file_list'] = array_merge(
 	$cfg['file_list'],
 	[
-		'MediaWikiMessageChecker.php',
 		'Message.php',
-		'MessageChecks.php',
 		'MessageCollection.php',
 		'MessageGroupConfigurationParser.php',
 		'MessageGroups.php',

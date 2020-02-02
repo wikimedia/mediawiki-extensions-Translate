@@ -115,7 +115,7 @@
 	"apihelp-searchtranslations-param-limit": "Size of the result.",
 	"apihelp-searchtranslations-example-1": "Show translations for the language.",
 	"apihelp-searchtranslations-example-2": "Show untranslated messages matching the query in the source language.",
-	"apihelp-translationcheck-description": "Validate given translation input against message checkers.",
+	"apihelp-translationcheck-description": "Validate given translation input against configured message validators.",
 	"apihelp-translationcheck-summary": "Validate translations.",
 	"apihelp-translationcheck-param-title": "Page title with namespace and language code.",
 	"apihelp-translationcheck-param-translation": "The translation to validate.",

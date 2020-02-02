@@ -13,16 +13,13 @@ FILES:
   aliasFileSource: "%GROUPROOT%/mediawiki-extensions/extensions/FooBar.alias.php"
   magicFileSource: "%GROUPROOT%/mediawiki-extensions/extensions/FooBar.magic.php"
 
-CHECKER:
-  class: MediaWikiMessageChecker
-  checks:
-   - pluralCheck
-   - pluralFormsCheck
-   - wikiParameterCheck
-   - wikiLinksCheck
-   - braceBalanceCheck
-   - pagenameMessagesCheck
-   - miscMWChecks
+VALIDATORS:
+  - id: BraceBalance
+  - id: MediaWikiMisc
+  - id: MediaWikiPageName
+  - id: MediaWikiPlural
+  - id: WikiLink
+  - id: WikiParameter
 
 INSERTABLES:
   class: MediaWikiInsertablesSuggester

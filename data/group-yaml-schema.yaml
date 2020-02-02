@@ -40,16 +40,6 @@ root:
         class:
           _type: text
           _not_empty: true
-    CHECKER:
-      _type: array
-      _children:
-        class:
-          _type: text
-          _not_empty: true
-        checks:
-          _type: prototype
-          _prototype:
-            _type: text
     INSERTABLES:
       _type: choice
       _choices:

@@ -10,16 +10,13 @@ FILES:
   class: JsonFFS
   sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/foo"
 
-CHECKER:
-  class: MediaWikiMessageChecker
-  checks:
-   - pluralCheck
-   - pluralFormsCheck
-   - wikiParameterCheck
-   - wikiLinksCheck
-   - braceBalanceCheck
-   - pagenameMessagesCheck
-   - miscMWChecks
+VALIDATORS:
+  - id: MediaWikiPlural
+  - id: WikiParameter
+  - id: WikiLink
+  - id: BraceBalance
+  - id: MediaWikiPageName
+  - id: MediaWikiMisc
 
 INSERTABLES:
   class: MediaWikiInsertablesSuggester

@@ -311,10 +311,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return true;
 	}
 
-	public function getChecker() {
-		return null;
-	}
-
 	public function getValidator() {
 		return null;
 	}

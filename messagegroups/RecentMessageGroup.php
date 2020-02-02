@@ -148,10 +148,6 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return $defs;
 	}
 
-	public function getChecker() {
-		return null;
-	}
-
 	public function getValidator() {
 		return null;
 	}

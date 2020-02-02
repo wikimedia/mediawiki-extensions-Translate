@@ -149,15 +149,25 @@ class PremadeMediawikiExtensionGroups {
 			}
 		}
 
-		$conf['CHECKER']['class'] = MediaWikiMessageChecker::class;
-		$conf['CHECKER']['checks'] = [
-			'pluralCheck',
-			'pluralFormsCheck',
-			'wikiParameterCheck',
-			'wikiLinksCheck',
-			'braceBalanceCheck',
-			'pagenameMessagesCheck',
-			'miscMWChecks',
+		$conf['VALIDATORS'] = [
+			[
+				'id' => 'BraceBalance'
+			],
+			[
+				'id' => 'MediaWikiMisc'
+			],
+			[
+				'id' => 'MediaWikiPageName'
+			],
+			[
+				'id' => 'MediaWikiPlural'
+			],
+			[
+				'id' => 'WikiLink'
+			],
+			[
+				'id' => 'WikiParameter'
+			]
 		];
 
 		$conf['INSERTABLES']['class'] = MediaWikiInsertablesSuggester::class;
