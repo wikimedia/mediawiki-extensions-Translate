@@ -4,7 +4,8 @@
 			"Chrumps",
 			"Woytecr",
 			"Railfail536",
-			"Rail"
+			"Rail",
+			"Matma Rex"
 		]
 	},
 	"searchtranslations": "Szukaj tłumaczenia",
@@ -22,8 +23,8 @@
 	"tux-sst-next": "Następne ›",
 	"tux-sst-prev": "‹ Poprzednie",
 	"tux-sst-default": "Tłumaczenia",
-	"tux-sst-translated": "Tłumaczenia z $1",
-	"tux-sst-untranslated": "Brak tłumaczeń z $1",
+	"tux-sst-translated": "Tłumaczenia z języka $1",
+	"tux-sst-untranslated": "Nie przetłumaczone na język $1",
 	"tux-sst-outdated": "Przestarzałe tłumaczenia z $1",
 	"tux-sst-ellipsis-untranslated": "Brak tłumaczeń",
 	"tux-sst-ellipsis-outdated": "Przestarzałe tłumaczenia",
