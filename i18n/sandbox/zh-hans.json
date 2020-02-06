@@ -7,7 +7,8 @@
 			"Shizhao",
 			"Xiaomingyan",
 			"Yfdyh000",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"铁桶"
 		]
 	},
 	"managetranslatorsandbox": "管理译者沙盒",
@@ -24,7 +25,7 @@
 	"tsb-email-rejected-body": "嗨，{{GENDER:$1|$1}}：\n\n感谢您在{{SITENAME}}申请成为译者。但我不得不遗憾地通知您，我拒绝了您的申请，因为您的的译文质量不符合要求。\n\n如果您认为您的申请是被错误地拒绝了，请尝试在{{SITENAME}}重新申请成为译者。您可以在这里登记：\n$2\n\n{{GENDER:$3|$3}}，\n{{SITENAME}}工作人员",
 	"tsb-request-count": "$1条{{PLURAL:$1|申请}}",
 	"tsb-all-languages-button-label": "所有语言",
-	"tsb-search-requests": "搜索申请",
+	"tsb-search-requests": "搜索待处理的请求",
 	"tsb-accept-button-label": "接受",
 	"tsb-reject-button-label": "拒绝",
 	"tsb-selected-count": "{{PLURAL:$1|$1位已选定用户}}",
