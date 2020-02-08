@@ -61,18 +61,38 @@ class ApiManageMessageGroups extends ApiBase {
 			return $this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
 		}
 
-		if ( $op === 'rename' ) {
-			$this->handleRename(
-				$group, $sourceChanges, $msgKey, $renameKey, $group->getSourceLanguage()
+		try {
+			if ( $op === 'rename' ) {
+				$this->handleRename(
+					$group, $sourceChanges, $msgKey, $renameKey, $group->getSourceLanguage()
+				);
+			} elseif ( $op === 'new' ) {
+				$this->handleNew( $sourceChanges, $msgKey, $group->getSourceLanguage() );
+			} else {
+				return $this->dieWithError(
+					[ 'apierror-translate-invalid-operation', wfEscapeWikiText( $op ),
+						wfEscapeWikiText( implode( '/', [ 'new' , 'rename' ] ) ) ],
+					'invalidoperation'
+				);
+			}
+		} catch ( Exception $ex ) {
+			// Log necessary parameters and rethrow.
+			$data = [
+				'op' => $op,
+				'msgKey' => $msgKey,
+				'renameKey' => $renameKey,
+				'groupId' => $group->getId(),
+				'group' => $group->getLabel(),
+				'groupSourceLang' => $group->getSourceLanguage(),
+				'exception' => $ex
+			];
+
+			error_log(
+				"Error while running: ApiManageMessageGroups::execute. Inputs: \n" .
+				FormatJson::encode( $data, true )
 			);
-		} elseif ( $op === 'new' ) {
-			$this->handleNew( $sourceChanges, $msgKey, $group->getSourceLanguage() );
-		} else {
-			return $this->dieWithError(
-				[ 'apierror-translate-invalid-operation', wfEscapeWikiText( $op ),
-					wfEscapeWikiText( implode( '/', [ 'new' , 'rename' ] ) ) ],
-				'invalidoperation'
-			);
+
+			throw $ex;
 		}
 
 		// Write the source changes back to file.
@@ -135,16 +155,16 @@ class ApiManageMessageGroups extends ApiBase {
 				$renameMsgState
 			);
 
-			// 'content' will not be present if it was a deleted message, since we track
-			// content only for renamed messages. In such case, we'll have to load the
-			// content or the key itself from the database
+			// content / msg will not be present if the message was deleted from the wiki or
+			// was for some reason unavailable during processing incoming changes. We're going
+			// to try and load it here again from the database. Very rare chance of this happening.
 			if ( $renameMsg === null || !isset( $renameMsg['content'] ) ) {
 				$title = Title::newFromText(
 					TranslateUtils::title( $renameKey, $code, $group->getNamespace() ),
 					$group->getNamespace()
 				);
 
-				$renameContent = TranslateUtils::getContentForTitle( $title, true );
+				$renameContent = TranslateUtils::getContentForTitle( $title, true ) ?? '';
 
 				$renameMsg = [
 					'key' => $renameKey,

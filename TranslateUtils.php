@@ -149,7 +149,14 @@ class TranslateUtils {
 	 * @return string|null
 	 */
 	public static function getContentForTitle( Title $title, $addFuzzy = false ) {
-		$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
+		$store = MediaWikiServices::getInstance()->getRevisionStore();
+		$revision = $store->getRevisionByTitle( $title );
+
+		if ( $revision === null ) {
+			return null;
+		}
+
+		$wiki = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
 
 		if ( !$wiki ) {
 			return null;

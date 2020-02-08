@@ -18,6 +18,13 @@
 				if ( data.managemessagegroups && data.managemessagegroups.success ) {
 					location.reload();
 				}
+			} ).fail( function ( code, result ) {
+				if ( result.error ) {
+					mw.notify( result.error.info, {
+						type: 'error',
+						tag: 'new-error'
+					} );
+				}
 			} );
 		} );
 
