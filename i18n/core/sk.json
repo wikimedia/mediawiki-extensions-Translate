@@ -94,7 +94,7 @@
 	"translate-checks-plural-dupe": "Na konci <nowiki>{{PLURAL:}}</nowiki> sú uvedené duplicitné varianty. Namiesto <nowiki>{{PLURAL:$1|námestie|námestie|námestie}}</nowiki> má byť zadané len <nowiki>{{PLURAL:$1|námestie}}</nowiki>.",
 	"translate-checks-pagename": "Oproti definícii sa zmenil menný priestor",
 	"translate-checks-format": "Tento preklad nezodpovedá definícii alebo má neplatnú syntax: $1",
-	"translate-checks-escape": "Nasledové únikové klauzuly sú možno uvedené omylom: <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|Nasledovná úniková klauzula je možno uvedená|Nasledovné únikové klauzuly sú možno uvedené}} omylom: <strong>$1</strong>. {{PLURAL:$4|Platná úniková klauzula je|Platné únikové klauzuly zahŕňajú:}} $3.",
 	"translate-checks-parametersnotequal": "Počet parametrov je {{PLURAL:$1|$1}}; mal by byť {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki>má nesprávny formát.",
 	"translate-checks-fudforum-syntax": "V tomto projekte používať <nowiki>$1</nowiki> namiesto <nowiki>$2</nowiki>.",
@@ -339,7 +339,7 @@
 	"translate-ulsdep-title": "Chyba konfigurácie",
 	"translate-ulsdep-body": "Rozšírenie Translate závisí na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšírení Universal Language Selector].",
 	"translate-syntax-error": "Preklad obsahuje chybu v syntaxi",
-	"tux-session-expired": "Už nie ste prihlásený. Prihláste sa, prosím, na inom liste, alebo skopírujte neuložený preklad, prihláste sa, vráťte sa k tejto stránke a zadajte znovu váš preklad.",
+	"tux-session-expired": "Už nie ste prihlásení. Prihláste sa, prosím, na inej karte, alebo skopírujte neuložený preklad, prihláste sa, vráťte sa k tejto stránke a zadajte znovu váš preklad.",
 	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je vypnutý alebo zlyhal alebo prehliadač nie je podporovaný.",
 	"specialpages-group-translation": "Preklad"
 }
