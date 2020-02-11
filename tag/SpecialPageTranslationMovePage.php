@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Overrides Special:Movepage to to allow renaming a page translation page and
  * all related translations and derivative pages.
@@ -137,7 +139,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		}
 
 		// Check rights
-		$permErrors = $this->oldTitle->getUserPermissionsErrors( 'move', $this->getUser() );
+		$permErrors = MediaWikiServices::getInstance()->getPermissionManager()
+			->getPermissionErrors( 'move', $this->getUser(), $this->oldTitle );
 		if ( count( $permErrors ) ) {
 			throw new PermissionsError( 'move', $permErrors );
 		}

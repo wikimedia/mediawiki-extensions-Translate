@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Special page which enables deleting translations of translatable pages
  *
@@ -150,7 +152,8 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
-		$permissionErrors = $this->title->getUserPermissionsErrors( 'delete', $this->getUser() );
+		$permissionErrors = MediaWikiServices::getInstance()->getPermissionManager()
+			->getPermissionErrors( 'delete', $this->getUser(), $this->title );
 		if ( count( $permissionErrors ) ) {
 			throw new PermissionsError( 'delete', $permissionErrors );
 		}
