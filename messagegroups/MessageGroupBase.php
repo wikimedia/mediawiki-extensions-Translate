@@ -497,7 +497,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 
 			$class = $config['class'];
-			$suggesters[] = new $class( $config['params'] );
+			$suggesters[] = new $class( $config['params'] ?? [] );
 		}
 
 		return $suggesters;
