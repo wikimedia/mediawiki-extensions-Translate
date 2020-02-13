@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @group Database
  * @group medium
@@ -113,16 +115,17 @@ class PageTranslationTaggingTest extends MediaWikiTestCase {
 		MessageGroups::singleton()->recache();
 
 		$translationPage = Title::newFromText( 'Translatable page/fi' );
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		TranslateRenderJob::newJob( $translationPage )->run();
-		$this->assertTrue( $translationPage->userCan( 'read', $superUser ),
+		$this->assertTrue( $pm->userCan( 'read', $superUser, $translationPage ),
 			'Users can read existing translation pages' );
-		$this->assertFalse( $translationPage->userCan( 'edit', $superUser ),
+		$this->assertFalse( $pm->userCan( 'edit', $superUser, $translationPage ),
 			'Users can not edit existing translation pages' );
 
 		$translationPage = Title::newFromText( 'Translatable page/ab' );
-		$this->assertTrue( $translationPage->userCan( 'read', $superUser ),
+		$this->assertTrue( $pm->userCan( 'read', $superUser, $translationPage ),
 			'Users can read non-existing translation pages' );
-		$this->assertFalse( $translationPage->userCan( 'edit', $superUser ),
+		$this->assertFalse( $pm->userCan( 'edit', $superUser, $translationPage ),
 			'Users can not edit non-existing translation pages' );
 	}
 }

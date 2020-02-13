@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @group Database
  */
@@ -90,14 +92,15 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	public function testPermissions() {
 		$user = TranslateSandbox::addUser( 'Test user7', 'test@blackhole.io', 'test password' );
 		$title = Title::makeTitle( NS_USER_TALK, $user->getName() );
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 
 		$this->assertFalse(
-			$title->userCan( 'edit', $user ),
+			$pm->userCan( 'edit', $user, $title ),
 			'Sandboxed users cannot edit their own talk page'
 		);
 		TranslateSandbox::promoteUser( $user );
 		$this->assertTrue(
-			$title->userCan( 'edit', $user ),
+			$pm->userCan( 'edit', $user, $title ),
 			'Promoted users can edit their own talk page'
 		);
 	}
