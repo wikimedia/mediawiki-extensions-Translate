@@ -213,9 +213,9 @@ class TTMServerBootstrap extends Maintenance {
 			$title = Title::newFromLinkTarget( $titleValue );
 			$handle = new MessageHandle( $title );
 			$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->definition() ];
+			$countItems++;
 		}
 
-		$countItems += count( $inserts );
 		while ( $inserts !== [] ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertDefinitions( $batch );
@@ -241,16 +241,15 @@ class TTMServerBootstrap extends Maintenance {
 				$title = Title::newFromLinkTarget( $titleValue );
 				$handle = new MessageHandle( $title );
 				$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->translation() ];
+				$countItems++;
 			}
 
-			$countItems += count( $inserts );
 			while ( count( $inserts ) >= $this->mBatchSize ) {
 				$batch = array_splice( $inserts, 0, $this->mBatchSize );
 				$server->batchInsertTranslations( $batch );
 			}
 		}
 
-		$countItems += count( $inserts );
 		while ( $inserts !== [] ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertTranslations( $batch );
