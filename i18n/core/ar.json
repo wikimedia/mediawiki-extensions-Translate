@@ -228,6 +228,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|لغة|لغات}} إجمالا.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|تعديل|تعديلات}} - آخر تعديل منذ $3 {{PLURAL:$3|يوم|أيام}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "النص المصدر لوحدة الترجمة",
+	"abusefilter-edit-builder-vars-translate-target-language": "اللغة الهدف للترجمة",
 	"translate-save": "حفظ ($1)",
 	"translate-jssti-add": "أضف إلى القائمة",
 	"managemessagegroups": "إدارة مجموعة الرسائل",

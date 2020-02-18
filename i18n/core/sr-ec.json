@@ -220,6 +220,7 @@
 	"supportedlanguages-count": "Укупно $1 {{PLURAL:$1|језик|језика}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|измена|измене|измена}} – последња измена пре $3 {{PLURAL:$3|дан|дана|дана}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "Изворни текст преводилачке јединице",
+	"abusefilter-edit-builder-vars-translate-target-language": "Жељени језик за превођење",
 	"translate-save": "Сачувај ($1)",
 	"translate-jssti-add": "Додај на списак",
 	"managemessagegroups": "Управљање групама порука",
