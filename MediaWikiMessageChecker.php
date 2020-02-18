@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements MessageChecker for %MediaWiki.
  *
@@ -256,7 +259,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 		};
 
 		// Setup parser
-		$parser = new Parser();
+		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		// Load the default magic words etc now.
 		$parser->firstCallInit();
 		// So that they don't overrider our own callback

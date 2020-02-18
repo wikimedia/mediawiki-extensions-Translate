@@ -8,6 +8,7 @@
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use MediaWiki\MediaWikiServices;
 use TMessage;
 
 /**
@@ -127,7 +128,7 @@ class MediaWikiPluralValidator implements Validator {
 		};
 
 		// Setup parser
-		$parser = new \Parser();
+		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		// Load the default magic words etc now.
 		$parser->firstCallInit();
 		// So that they don't overrider our own callback
