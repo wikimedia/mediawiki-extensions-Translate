@@ -409,7 +409,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
 				$tables = [ 'user', 'r' => [ 'revision' ] + $actorQuery['tables'] ];
 				$joins = [
-					'r' => [ 'JOIN', 'user_id = rev_user' ],
+					'r' => [ 'JOIN', 'user_id = ' . $actorQuery['fields']['rev_user'] ],
 				] + $actorQuery['joins'];
 			} else {
 				$tables = [ 'user', 'revision' ];
