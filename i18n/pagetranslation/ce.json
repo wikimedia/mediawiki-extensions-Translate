@@ -52,5 +52,6 @@
 	"pp-save-message": "АгӀо Ӏалашйина. Хьан йиш ю иза [$1 таян].",
 	"pp-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе.",
 	"pp-diff-old-header": "ДӀадолалун йоза",
-	"pp-diff-new-header": "Кечдина йоза"
+	"pp-diff-new-header": "Кечдина йоза",
+	"tpt-generic-button": "Бакъдан"
 }

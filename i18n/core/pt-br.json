@@ -229,6 +229,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|idioma|idiomas}} ao todo.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edição|edições}} - a última edição foi há $3 {{PLURAL:$3|dia|dias}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "Texto original da unidade de tradução",
+	"abusefilter-edit-builder-vars-translate-target-language": "Idioma alvo para tradução",
 	"translate-save": "Salvar ($1)",
 	"translate-jssti-add": "Adicionar à lista",
 	"managemessagegroups": "Gerenciamento de grupos de mensagens",

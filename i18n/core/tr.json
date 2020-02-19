@@ -231,6 +231,7 @@
 	"supportedlanguages-count": "Toplamda $1 {{PLURAL:$1|dil|dil}}",
 	"supportedlanguages-activity": "$1: toplam $2 {{PLURAL:$2|değişiklik|değişiklik}} - son değişiklik $3 {{PLURAL:$3|gün|gün}} önce yapıldı",
 	"abusefilter-edit-builder-vars-translate-source-text": "Çeviri biriminin kaynak metni",
+	"abusefilter-edit-builder-vars-translate-target-language": "Çeviri için hedef dil",
 	"translate-save": "Kaydet ($1)",
 	"translate-jssti-add": "Listeye ekle",
 	"managemessagegroups": "İleti grubu yönetimi",

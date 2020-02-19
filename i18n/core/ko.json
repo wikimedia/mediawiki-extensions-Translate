@@ -214,6 +214,7 @@
 	"supportedlanguages-count": "총 {{PLURAL:$1|언어 수}}는 $1개입니다.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|편집}} $2회 - 마지막 편집 $3{{PLURAL:$3|일}} 전",
 	"abusefilter-edit-builder-vars-translate-source-text": "번역 단위의 소스 본문",
+	"abusefilter-edit-builder-vars-translate-target-language": "번역 대상 언어",
 	"translate-save": "저장 ($1)",
 	"translate-jssti-add": "목록에 추가",
 	"managemessagegroups": "메시지 그룹 관리",

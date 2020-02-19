@@ -228,6 +228,7 @@
 	"supportedlanguages-count": "合計 $1 {{PLURAL:$1|言語}}",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|回の編集}}・$3 {{PLURAL:$3|日}}前に最終編集",
 	"abusefilter-edit-builder-vars-translate-source-text": "翻訳単位の原文",
+	"abusefilter-edit-builder-vars-translate-target-language": "翻訳先言語",
 	"translate-save": "保存 ($1)",
 	"translate-jssti-add": "追加",
 	"managemessagegroups": "メッセージ群の管理",
