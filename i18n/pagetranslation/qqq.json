@@ -78,6 +78,8 @@
 	"tpt-sections-syntaxversion": "Section title in [[Special:PageTranslation]].",
 	"tpt-syntaxversion-text": "Additional explanation",
 	"tpt-syntaxversion-label": "Label for a checkbox",
+	"tpt-transclusion": "Section title in [[Special:PageTranslation]].",
+	"tpt-transclusion-label": "Label for template transclusion",
 	"tpt-rev-mark": "Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
 	"tpt-rev-unmark": "Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
 	"tpt-rev-discourage": "Possible page action and link text in [[Special:PageTranslation]]. In parenthesis after page name. [[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",

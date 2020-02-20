@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\Database;
 
@@ -640,6 +641,36 @@ class TranslatablePage {
 		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
+	}
+
+	public function supportsTransclusion(): ?bool {
+		$transclusion = TranslateMetadata::get( $this->getMessageGroupId(), 'transclusion' );
+		if ( $transclusion === false ) {
+			return null;
+		}
+
+		return $transclusion === '1';
+	}
+
+	public function setTransclusion( bool $supportsTransclusion ): void {
+		TranslateMetadata::set(
+			$this->getMessageGroupId(),
+			'transclusion',
+			$supportsTransclusion ? '1' : '0'
+		);
+	}
+
+	public function getRevisionRecordWithFallback(): ?RevisionRecord {
+		$title = $this->getTitle();
+		$store = MediaWikiServices::getInstance()->getRevisionStore();
+		$revRecord = $store->getRevisionByTitle( $title->getSubpage( $this->targetLanguage ) );
+		if ( $revRecord ) {
+			return $revRecord;
+		}
+
+		// Fetch the source fallback
+		$sourceLanguage = $this->getMessageGroup()->getSourceLanguage();
+		return $store->getRevisionByTitle( $title->getSubpage( $sourceLanguage ) );
 	}
 
 	/**

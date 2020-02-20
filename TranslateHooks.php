@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
+use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Hook\PageMoveCompleteHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
@@ -152,6 +153,11 @@ class TranslateHooks {
 			$wgHooks['ParserBeforeInternalParse'][] = 'PageTranslationHooks::renderTagPage';
 			$wgHooks['ParserOutputPostCacheTransform'][] =
 				'PageTranslationHooks::onParserOutputPostCacheTransform';
+
+			if ( interface_exists( BeforeParserFetchTemplateRevisionRecordHook::class ) ) {
+				$wgHooks['BeforeParserFetchTemplateRevisionRecord'][] =
+					'PageTranslationHooks::fetchTranslatableTemplateAndTitle';
+			}
 
 			// Set the page content language
 			$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';

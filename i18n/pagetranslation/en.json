@@ -56,6 +56,8 @@
 	"tpt-sections-syntaxversion": "Syntax version",
 	"tpt-syntaxversion-text": "This page currently uses an old version of translatable page source syntax. The new version will wrap untranslated sections with an HTML tag to indicate the correct language of the text. Example: $1. You can use a new markup syntax $2 to prevent any kind of wrapping in places where it is not appropriate, such as when translating <code>title</code> attribute of an element. It is not possible to go back to an old syntax version.",
 	"tpt-syntaxversion-label": "Use latest syntax version for this page",
+	"tpt-transclusion": "Template transclusion",
+	"tpt-transclusion-label": "Enable translation aware transclusion for this page",
 	"tpt-rev-mark": "mark for translation",
 	"tpt-rev-unmark": "remove from translation",
 	"tpt-rev-discourage": "discourage",

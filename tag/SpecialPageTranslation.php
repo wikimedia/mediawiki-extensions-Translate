@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
+use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Revision\RevisionRecord;
 
 /**
@@ -234,8 +235,9 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 
 			$setVersion = $firstMark || $request->getCheck( 'use-latest-syntax' );
+			$transclusion = $request->getCheck( 'transclusion' );
 
-			$err = $this->markForTranslation( $page, $sections, $setVersion );
+			$err = $this->markForTranslation( $page, $sections, $setVersion, $transclusion );
 
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
@@ -757,11 +759,15 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->wrapWikiMsg( '<div class="successbox">$1</div>', 'tpt-mark-nochanges' );
 		}
 
+		$this->priorityLanguagesForm( $page );
+
+		// When marking a page that does not have template transclusion we select the
+		// template transclusion checkbox
+		$this->templateTransclusionForm( $page->supportsTransclusion() ?? true );
+
 		$version = TranslateMetadata::getWithDefaultValue(
 			$page->getMessageGroupId(), 'version', self::DEFAULT_SYNTAX_VERSION
 		);
-		$this->priorityLanguagesForm( $page );
-
 		$this->syntaxVersionForm( $version, $firstMark );
 
 		$submitButton = new OOUI\FieldLayout(
@@ -855,6 +861,30 @@ class SpecialPageTranslation extends SpecialPage {
 		$out->addHTML( $checkBox->toString() );
 	}
 
+	private function templateTransclusionForm( bool $supportsTransclusion ): void {
+		// Transclusion is only supported if this hook is available so avoid showing the
+		// form if it's not. This hook should be available for MW >= 1.36
+		if ( !interface_exists( BeforeParserFetchTemplateRevisionRecordHook::class ) ) {
+			return;
+		}
+
+		$out = $this->getOutput();
+		$out->wrapWikiMsg( '==$1==', 'tpt-transclusion' );
+
+		$checkBox = new OOUI\FieldLayout(
+			new OOUI\CheckboxInputWidget( [
+				'name' => 'transclusion',
+				'selected' => $supportsTransclusion
+			] ),
+			[
+				'label' => $out->msg( 'tpt-transclusion-label' )->text(),
+				'align' => 'inline',
+			]
+		);
+
+		$out->addHTML( $checkBox->toString() );
+	}
+
 	/**
 	 * This function does the heavy duty of marking a page.
 	 * - Updates the source page with section markers.
@@ -866,12 +896,14 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param TranslatablePage $page
 	 * @param TPSection[] $sections
 	 * @param bool $updateVersion
+	 * @param bool $transclusion
 	 * @return array|bool
 	 */
 	protected function markForTranslation(
 		TranslatablePage $page,
 		array $sections,
-		bool $updateVersion
+		bool $updateVersion,
+		bool $transclusion
 	) {
 		// Add the section markers to the source page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
@@ -957,6 +989,8 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $updateVersion ) {
 			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
 		}
+
+		$page->setTransclusion( $transclusion );
 
 		$page->addMarkedTag( $newRevisionId );
 		MessageGroups::singleton()->recache();

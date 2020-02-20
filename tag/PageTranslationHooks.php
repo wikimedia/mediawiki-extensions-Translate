@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\ScopedCallback;
@@ -116,6 +117,81 @@ class PageTranslationHooks {
 	) {
 		if ( $out->getExtensionData( 'Translate-noeditsection' ) ) {
 			$options['enableSectionEditLinks'] = false;
+		}
+	}
+
+	/**
+	 * This sets &$revRecord to the revision of transcluded page translation if it exists,
+	 * or sets it to the source language if the page translation does not exist.
+	 * The page translation is chosen based on language of the source page.
+	 * Used in MW >= 1.36
+	 *
+	 * Hook: BeforeParserFetchTemplateRevisionRecord
+	 * @param LinkTarget|null $contextLink
+	 * @param LinkTarget|null $templateLink
+	 * @param bool &$skip
+	 * @param RevisionRecord|null &$revRecord
+	 */
+	public static function fetchTranslatableTemplateAndTitle(
+		?LinkTarget $contextLink,
+		?LinkTarget $templateLink,
+		bool &$skip,
+		?RevisionRecord &$revRecord
+	): void {
+		if ( !$templateLink ) {
+			return;
+		}
+
+		$templateTitle = Title::castFromLinkTarget( $templateLink );
+
+		$templateTranslationPage = TranslatablePage::isTranslationPage( $templateTitle );
+		if ( $templateTranslationPage ) {
+			// Template is referring to a translation page, fetch it and incase it doesn't
+			// exist, fetch the source fallback
+			$revRecord = $templateTranslationPage->getRevisionRecordWithFallback();
+			return;
+		}
+
+		if ( !TranslatablePage::isSourcePage( $templateTitle ) ) {
+			return;
+		}
+
+		$translatableTemplatePage = TranslatablePage::newFromTitle( $templateTitle );
+
+		if ( !( $translatableTemplatePage->supportsTransclusion() ?? false ) ) {
+			// Page being transcluded does not support language aware transclusion
+			return;
+		}
+
+		$store = MediaWikiServices::getInstance()->getRevisionStore();
+
+		if ( $contextLink ) {
+			// Fetch the context page language, and then check if template is present in that language
+			$templateTranslationTitle = $templateTitle->getSubpage(
+				Title::castFromLinkTarget( $contextLink )->getPageLanguage()->getCode()
+			 );
+
+			if ( $templateTranslationTitle ) {
+				if ( $templateTranslationTitle->exists() ) {
+					// Template is present in the context page language, fetch the revision record and return
+					$revRecord = $store->getRevisionByTitle( $templateTranslationTitle );
+				} else {
+					// In case the template has not been translated to the context page language,
+					// we assign a MutableRevisionRecord in order to add a dependency, so that when
+					// it is created, the newly created page is loaded rather than the fallback
+					$revRecord = new MutableRevisionRecord( $templateTranslationTitle );
+				}
+				return;
+			}
+		}
+
+		// Context page information not available OR the template translation title could not be determined.
+		// Fetch and return the RevisionRecord of the template in the source language
+		$sourceTemplateTitle = $templateTitle->getSubpage(
+			$translatableTemplatePage->getMessageGroup()->getSourceLanguage()
+		);
+		if ( $sourceTemplateTitle && $sourceTemplateTitle->exists() ) {
+			$revRecord = $store->getRevisionByTitle( $sourceTemplateTitle );
 		}
 	}
 
@@ -1364,6 +1440,7 @@ class PageTranslationHooks {
 				continue;
 			}
 
+			/** @var WikiPageMessageGroup */
 			$group = $handle->getGroup();
 			if ( !$group instanceof WikiPageMessageGroup ) {
 				continue;
