@@ -13,6 +13,6 @@ namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
  */
 class PrintfValidator extends InsertableRegexValidator {
 	public function __construct() {
-		parent::__construct( '/%(\d+\$)?[dfsu]/' );
+		parent::__construct( '/%(\d+\$)?(\.\d+)?[sduf]/U' );
 	}
 }

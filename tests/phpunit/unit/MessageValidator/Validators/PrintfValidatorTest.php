@@ -45,6 +45,22 @@ class PrintfValidatorTest extends MediaWikiUnitTestCase {
 			$code,
 			null
 		];
+
+		$message = new FatMessage( $key, '%2$.2f' );
+		$message->setTranslation( '%2$f' );
+		yield [
+			$message,
+			$code,
+			[ 'variable', 'missing', $key, $code ]
+		];
+
+		$message = new FatMessage( $key, '%.2f' );
+		$message->setTranslation( '%2$f' );
+		yield [
+			$message,
+			$code,
+			[ 'variable', 'missing', $key, $code ]
+		];
 	}
 
 	/**
