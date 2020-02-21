@@ -8,7 +8,8 @@
 			"Roberta F.",
 			"SpeedyGonsales",
 			"Tivek",
-			"Bugoslav"
+			"Bugoslav",
+			"Neptune, the Mystic"
 		]
 	},
 	"translate": "Prevedi",
@@ -196,6 +197,7 @@
 	"supportedlanguages-count": "Ukupno $1 {{PLURAL:$1|jezik|jezika}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|uređivanje|uređivanja}} – posljednje uređivanje prije $3 {{PLURAL:$3|dan|dana}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "Izvorni tekst prijevodne jedinice",
+	"abusefilter-edit-builder-vars-translate-target-language": "Željeni jezik za prevođenje",
 	"translate-save": "Sačuvaj ($1)",
 	"translate-jssti-add": "Dodaj na popis",
 	"managemessagegroups": "Upravljanje skupinom poruka",

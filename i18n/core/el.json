@@ -210,6 +210,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|γλώσσα|γλώσσες}} συνολικά.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|επεξεργασία|επεξεργασίες}} - τελευταία επεξεργασία $3 {{PLURAL:$3|day|days}} πριν",
 	"abusefilter-edit-builder-vars-translate-source-text": "Αρχικό κείμενο μεταφραστικής ενότητας",
+	"abusefilter-edit-builder-vars-translate-target-language": "Γλώσσα στόχος για μετάφραση",
 	"translate-save": "Αποθήκευση ($1)",
 	"translate-jssti-add": "Προσθήκη στην λίστα",
 	"managemessagegroups": "Διαχείριση ομάδας μηνυμάτων",
