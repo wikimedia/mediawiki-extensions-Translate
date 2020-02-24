@@ -35,7 +35,8 @@
 			"Diralik",
 			"Movses",
 			"Valencia212",
-			"Katunchik"
+			"Katunchik",
+			"Alexander Yukal"
 		]
 	},
 	"translate": "Перевод",
@@ -241,6 +242,7 @@
 	"supportedlanguages-count": "Всего $1 {{PLURAL:$1|язык|языка|языков}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|правка|правки|правок}} — последняя правка $3 {{PLURAL:$3|день|дня|дней}} назад",
 	"abusefilter-edit-builder-vars-translate-source-text": "Исходный текст элемента перевода",
+	"abusefilter-edit-builder-vars-translate-target-language": "Целевой язык для перевода",
 	"translate-save": "Сохранить ($1)",
 	"translate-jssti-add": "Добавить в список",
 	"managemessagegroups": "Управление группами сообщений",

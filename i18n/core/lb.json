@@ -195,6 +195,7 @@
 	"supportedlanguages-count": "{{PLURAL:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Ännerung|Ännerungen}} - lescht Ännerung viru(n) $3 {{PLURAL:$3|Dag|Deeg}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "Quelltext vun der Iwwersetzungseenheet",
+	"abusefilter-edit-builder-vars-translate-target-language": "Zilsprooch fir d'Iwwersetzung",
 	"translate-save": "Späicher ($1)",
 	"translate-jssti-add": "Op d'Lëscht dobäisetzen",
 	"managemessagegroups": "Gestioun vun de Gruppe vu Messagen",

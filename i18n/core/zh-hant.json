@@ -386,7 +386,7 @@
 	"tux-messagetable-more-messages": "還有 $1 則訊息",
 	"tux-messagetable-loading-messages": "讀取 $1 筆訊息中...",
 	"tux-message-filter-placeholder": "篩選清單",
-	"tux-message-filter-result": "找到 $1 筆包含 \"$2\" 的結果",
+	"tux-message-filter-result": "找到$1筆包含「$2」的結果",
 	"tux-message-filter-advanced-button": "進階搜尋",
 	"tux-message-filter-optional-messages-label": "可選填訊息",
 	"tux-proofread-translated-by-self": "您的翻譯",

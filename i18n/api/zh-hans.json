@@ -4,7 +4,8 @@
 			"Liuxinyu970226",
 			"HERAN",
 			"Yfdyh000",
-			"LNDDYL"
+			"LNDDYL",
+			"VulpesVulpes825"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",
@@ -28,6 +29,10 @@
 	"apihelp-query+languagestats-param-language": "语言代码。",
 	"apihelp-query+languagestats-example-1": "芬兰语的翻译完成统计列表",
 	"apihelp-query+messagecollection-description": "查询有关翻译的MessageCollection。",
+	"apihelp-query+managemessagegroups-summary": "在导入期间为组中的消息获取可能的重命名",
+	"apihelp-query+managemessagegroups-description": "在导入期间为组中的消息获取可能的重命名",
+	"apihelp-query+managemessagegroups-param-groupId": "群组ID",
+	"apihelp-query+managemessagegroups-param-messageKey": "消息键",
 	"apihelp-query+messagecollection-summary": "查询有关翻译的MessageCollection。",
 	"apihelp-query+messagecollection-param-group": "信息组。",
 	"apihelp-query+messagecollection-param-language": "语言代码。",
@@ -58,6 +63,7 @@
 	"apihelp-query+messagetranslations-summary": "查询单个信息的所有翻译。",
 	"apihelp-query+messagetranslations-param-title": "已知消息的完整标题。",
 	"apihelp-query+messagetranslations-example-1": "Wiki中用于“MediaWiki:January”的翻译列表",
+	"apihelp-managemessagegroups-param-groupId": "群组ID",
 	"apihelp-translatesandbox-description": "注册和管理沙盒化用户。",
 	"apihelp-translatesandbox-summary": "注册和管理沙盒化用户。",
 	"apihelp-translatesandbox-param-do": "要干什么。",
@@ -126,6 +132,7 @@
 	"apierror-translate-owntranslation": "不能复核自己的翻译",
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
 	"apierror-translate-sandbox-invalidppassword": "无效密码",
+	"apierror-translate-smg-nochanges": "没有要处理的更改。",
 	"apierror-translate-unknownmessage": "未知消息",
 	"apiwarn-translate-alreadyreviewedbyyou": "已被您标记为已复核",
 	"apiwarn-translate-language-disabled-source": "此组的原始语言是$1。请选择另一语言进行翻译。"
