@@ -84,7 +84,7 @@
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ha formas duplicate al fin. Per exemplo, <nowiki>{{PLURAL:$1|cosalia|cosalia}}</nowiki> debe esser scribite como <nowiki>{{PLURAL:$1|cosalia}}</nowiki>.",
 	"translate-checks-pagename": "Spatio de nomines cambiate ab le definition",
 	"translate-checks-format": "Iste traduction non seque le definition o ha un syntaxe invalide: $1",
-	"translate-checks-escape": "Le sequente {{PLURAL:$2|character|characteres}} de escappamento pote esser accidental: <strong>$1</strong>. {PLURAL:$4|Un character de escappamento valide es|Le characteres de escappamento valide include:}} $3.",
+	"translate-checks-escape": "Le sequente {{PLURAL:$2|character|characteres}} de escappamento pote esser accidental: <strong>$1</strong>. {{PLURAL:$4|Un character de escappamento valide es|Le characteres de escappamento valide include:}} $3.",
 	"translate-checks-parametersnotequal": "Le numero de parametros es {{PLURAL:$1|$1}}; debe esser {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> es mal formate.",
 	"translate-checks-fudforum-syntax": "Usar <nowiki>$1</nowiki> in loco de <nowiki>$2</nowiki> in iste projecto.",
