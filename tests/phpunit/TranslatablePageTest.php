@@ -5,11 +5,23 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @ingroup PageTranslation
  * @coversDefaultClass \TranslatablePage
  */
-class TranslatablePageTest extends PHPUnit\Framework\TestCase {
+class TranslatablePageTest extends MediaWikiIntegrationTestCase {
+	use TranslatablePageTestTrait;
+
+	public function setUp() : void {
+		parent::setUp();
+
+		$this->setMwGlobals( [
+			'wgEnablePageTranslation' => true
+		] );
+	}
+
 	/**
 	 * @dataProvider provideTestSectionise
 	 */
@@ -143,5 +155,23 @@ class TranslatablePageTest extends PHPUnit\Framework\TestCase {
 				'language' => 'Foo',
 			]
 		];
+	}
+
+	public function testIsSourcePage() {
+		$translatablePage = $this->createMarkedTranslatablePage(
+			'Test page', 'Testing page', $this->getTestSysop()->getUser()
+		);
+
+		$this->assertTrue(
+			TranslatablePage::isSourcePage( $translatablePage->getTitle() )
+		);
+
+		$translatablePage->unmarkTranslatablePage();
+
+		MediaWikiServices::getInstance()->getMainWANObjectCache()->clearProcessCache();
+
+		$this->assertFalse(
+			TranslatablePage::isSourcePage( $translatablePage->getTitle() )
+		);
 	}
 }

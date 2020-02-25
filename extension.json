@@ -212,6 +212,7 @@
 		"TranslatablePageInsertablesSuggester": "insertables/TranslatablePageInsertablesSuggester.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslatablePageMoveJob": "tag/TranslatablePageMoveJob.php",
+		"TranslatablePageTestTrait": "tests/phpunit/helpers/TranslatablePageTestTrait.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
 		"TranslateDeleteJob": "tag/TranslateDeleteJob.php",
 		"TranslateEditAddons": "TranslateEditAddons.php",

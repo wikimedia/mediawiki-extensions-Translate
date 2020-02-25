@@ -3,6 +3,7 @@
  * @group Database
  */
 class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase {
+	use TranslatablePageTestTrait;
 
 	/**
 	 * @var TranslatablePageMessageGroupStore
@@ -27,7 +28,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 	public function testRecache() {
 		$prevGroupCount = count( $this->mgTranslateStore->getGroups() );
 
-		$this->createTranslatePage( 'Upyog', 'Upyog' );
+		$this->createMarkedTranslatablePage( 'Upyog', 'Upyog', $this->getTestSysop()->getUser() );
 
 		$countBeforeRecache = count( $this->mgTranslateStore->getGroups() );
 		$this->assertEquals( $prevGroupCount, $countBeforeRecache,
@@ -41,7 +42,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 	}
 
 	public function testGlobalFlag() {
-		$this->createTranslatePage( 'Upyon - 22', 'Upyog' );
+		$this->createMarkedTranslatablePage( 'Upyon - 22', 'Upyog', $this->getTestSysop()->getUser() );
 		$this->mgTranslateStore->recache();
 		$prevCount = count( $this->mgTranslateStore->getGroups() );
 		$this->assertGreaterThanOrEqual( 1, $prevCount, 'there is atleast 1 ' .
@@ -84,22 +85,5 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 
 		// should trigger the delete method on cache
 		$translateStore->clearCache();
-	}
-
-	private function createTranslatePage( $title, $content ) {
-		// Create new page
-		$superUser = $this->getTestSysop()->getUser();
-		$translatablePageTitle = Title::newFromText( $title );
-		$page = WikiPage::factory( $translatablePageTitle );
-		$text = "<translate>$content</translate>";
-		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
-		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
-
-		// Create the page
-		$editStatus = $page->doEditContent( $content, __METHOD__, 0, false, $superUser );
-
-		// Mark the page for translation
-		$latestRevisionId = $editStatus->value['revision']->getId();
-		$translatablePage->addMarkedTag( $latestRevisionId );
 	}
 }

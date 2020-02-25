@@ -514,6 +514,7 @@ class TranslatablePage {
 	 */
 	public function addMarkedTag( $revision, $value = null ) {
 		$this->addTag( 'tp:mark', $revision, $value );
+		self::clearSourcePageCache();
 	}
 
 	/**
@@ -591,6 +592,7 @@ class TranslatablePage {
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $aid ], __METHOD__ );
 		unset( self::$tagCache[$aid] );
+		self::clearSourcePageCache();
 	}
 
 	/**
@@ -887,22 +889,33 @@ class TranslatablePage {
 	 */
 	public static function isSourcePage( Title $title ) {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$pcTTL = $cache::TTL_PROC_LONG;
+		$cacheKey = $cache->makeKey( 'pagetranslation', 'sourcepages' );
 
-		// TODO: we could manually mark this key stale when Special:PageTranslation is used.
 		$translatablePageIds = $cache->getWithSetCallback(
-			$cache->makeKey( 'pagetranslation', 'sourcepages' ),
-			$cache::TTL_MINUTE * 5,
+			$cacheKey,
+			$cache::TTL_HOUR * 2,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return self::getTranslatablePages();
 			},
-			[ 'pcTTL' => $pcTTL, 'pcGroup' => __CLASS__ . ':30' ]
+			[
+				'checkKeys' => [ $cacheKey ],
+				'pcTTL' => $cache::TTL_PROC_SHORT,
+				'pcGroup' => __CLASS__ . ':1'
+			]
 		);
 
 		return in_array( $title->getArticleID(), $translatablePageIds );
+	}
+
+	/**
+	 * Clears the source page cache
+	 */
+	public static function clearSourcePageCache(): void {
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cache->touchCheckKey( $cache->makeKey( 'pagetranslation', 'sourcepages' ) );
 	}
 
 	/**
