@@ -13,7 +13,8 @@
 			"Urhixidur",
 			"ALDO CP",
 			"McDutchie",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Eneelk"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes de messages agrégés.\n\nVous pouvez ajouter et supprimer des groupes de messages agrégés, les associer les uns aux autres ou les dissocier les uns des autres (un à la fois).",
@@ -128,7 +129,7 @@
 	"apihelp-searchtranslations-param-limit": "Taille du résultat.",
 	"apihelp-searchtranslations-example-1": "Afficher les traductions pour la langue.",
 	"apihelp-searchtranslations-example-2": "Afficher les messages non traduits correspondant à la demande dans la langue source.",
-	"apihelp-translationcheck-description": "Valider la saisie de la traduction fournie d’après les vérificateurs de message.",
+	"apihelp-translationcheck-description": "Valider la saisie de la traduction fournie d’après les validateurs de message configurés.",
 	"apihelp-translationcheck-summary": "Valider les traductions.",
 	"apihelp-translationcheck-param-title": "Titre de page avec espace de noms et code langue.",
 	"apihelp-translationcheck-param-translation": "La traduction à valider.",

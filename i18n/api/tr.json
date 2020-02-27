@@ -120,7 +120,7 @@
 	"apihelp-searchtranslations-param-limit": "Sonucun boyutu.",
 	"apihelp-searchtranslations-example-1": "Dil için çevirileri göster.",
 	"apihelp-searchtranslations-example-2": "Kaynak dilde sorguyla eşleşen çevrilmemiş iletileri göster.",
-	"apihelp-translationcheck-description": "İleti denetleyicilerine karşı verilen çeviri girişini doğrulayın.",
+	"apihelp-translationcheck-description": "Verilen çeviri girişini yapılandırılmış mesaj doğrulayıcılarına göre doğrulayın.",
 	"apihelp-translationcheck-summary": "Çevirileri doğrulayın.",
 	"apihelp-translationcheck-param-title": "Ad alanı ve dil kodu içeren sayfa başlığı.",
 	"apihelp-translationcheck-param-translation": "Doğrulanacak çeviri.",

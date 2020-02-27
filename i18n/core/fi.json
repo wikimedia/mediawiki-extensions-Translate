@@ -103,7 +103,7 @@
 	"translate-checks-gettext-plural-missing": "Käännöksen tulee sisältää <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-unsupported": "Tämä viesti ei tue <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> vaatii täsmälleen $1 {{PLURAL:$1|monikkomuodon|monikkomuotoa}}. Nyt siinä on $2 {{PLURAL:$2|monikkomuoto|monikkomuotoa}}.",
-	"translate-checks-smartformat-plural-missing": "Käännöksen pitää käyttää monikkimuotoja muuttujalla $1.",
+	"translate-checks-smartformat-plural-missing": "Käännöksen pitää käyttää monikkomuotoja muuttujalla $1.",
 	"translate-checks-smartformat-plural-unsupported": "Tämä viesti ei tue monikkomuotoja muuttujalla $1.",
 	"translate-checks-unicode-plural-missing": "Käännöksen tulee sisältää <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-unsupported": "Tämä viesti ei tue <nowiki>{{PLURAL|}}</nowiki>.",

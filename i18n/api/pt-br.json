@@ -120,7 +120,7 @@
 	"apihelp-searchtranslations-param-limit": "Tamanho do resultado.",
 	"apihelp-searchtranslations-example-1": "Mostrar traduções para o idioma.",
 	"apihelp-searchtranslations-example-2": "Mostre mensagens não traduzidas correspondentes à consulta no idioma de origem.",
-	"apihelp-translationcheck-description": "Validar a tradução fornecida contra os verificadores de mensagens.",
+	"apihelp-translationcheck-description": "Valide a entrada de conversão fornecida em relação aos validadores de mensagens configurados.",
 	"apihelp-translationcheck-summary": "Validar traduções.",
 	"apihelp-translationcheck-param-title": "Título de página com espaço nominal e código de língua.",
 	"apihelp-translationcheck-param-translation": "A tradução para validar.",

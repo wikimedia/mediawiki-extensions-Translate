@@ -118,7 +118,7 @@
 	"apihelp-searchtranslations-param-limit": "結果的大小。",
 	"apihelp-searchtranslations-example-1": "顯示用於語言的翻譯。",
 	"apihelp-searchtranslations-example-2": "顯示在來源語言裡符合查詢的尚未翻譯訊息。",
-	"apihelp-translationcheck-description": "驗證提供的翻譯輸入內容是否符合訊息檢查者要求。",
+	"apihelp-translationcheck-description": "驗證提供的翻譯輸入內容是否符合所設置的訊息驗證要求。",
 	"apihelp-translationcheck-summary": "驗證翻譯。",
 	"apihelp-translationcheck-param-title": "帶有命名空間與語言代碼的頁面標題。",
 	"apihelp-translationcheck-param-translation": "要驗證的翻譯。",
