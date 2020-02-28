@@ -188,7 +188,7 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|1={{GENDER:$3|Перакладчык|Перакладчыца}}|Перакладчыкі}}: $1",
 	"supportedlanguages-recenttranslations": "апошнія пераклады",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|мова|мовы|моваў}} агулам.",
-	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|праўка|праўкі|правак}}, апошняя — $3 {{PLURAL:$3|дзень|дні|дзён}} таму",
+	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|рэдагаваньне|рэдагаваньні|рэдагаваньняў}}, апошняе — $3 {{PLURAL:$3|дзень|дні|дзён}} таму",
 	"translate-save": "Захаваць ($1)",
 	"translate-jssti-add": "Дадаць у сьпіс",
 	"managemessagegroups": "Кіраваньне групамі паведамленьняў",
