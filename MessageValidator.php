@@ -385,8 +385,8 @@ class MessageValidator {
 	 * @param array $validator
 	 * @param TMessage $message
 	 * @param string $code
-	 * @param array $errors
-	 * @param array $warnings
+	 * @param array &$errors
+	 * @param array &$warnings
 	 * @param bool $ignoreWarnings
 	 */
 	private function runValidation(

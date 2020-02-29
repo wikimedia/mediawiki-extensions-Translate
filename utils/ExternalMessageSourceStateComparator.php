@@ -269,6 +269,7 @@ class ExternalMessageSourceStateComparator {
 	/**
 	 * For non source languages, we look at additions and see if they have been
 	 * added as renames in the source language.
+	 * @param MessageSourceChange $changes
 	 * @param string $sourceLanguage
 	 * @param string $targetLanguage
 	 * @param MessageCollection $wiki
