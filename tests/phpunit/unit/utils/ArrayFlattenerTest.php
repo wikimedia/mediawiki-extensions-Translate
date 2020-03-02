@@ -95,13 +95,19 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 					'one' => 'One dog',
 					'two' => 'Two doggies',
 					'other' => 'Some dogs'
+				],
+				'hello' => [
+					'world' => 'hey',
+					'other' => 'hello world'
 				]
 			],
 			[
 				'cat' => 'An amount of cats',
 				'mice/0' => 'Frankie',
 				'mice/1' => 'Benjy',
-				'dog or dogs' => '{{PLURAL|one=One dog|two=Two doggies|Some dogs}}'
+				'dog or dogs' => '{{PLURAL|one=One dog|two=Two doggies|Some dogs}}',
+				'hello/world' => 'hey',
+				'hello/other' => 'hello world'
 			],
 		];
 

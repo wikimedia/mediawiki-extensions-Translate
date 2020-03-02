@@ -78,8 +78,8 @@ class ArrayFlattener {
 	 * @return bool|string
 	 */
 	public function flattenCLDRPlurals( $messages ) {
-		$pluralKeys = false;
-		$nonPluralKeys = false;
+		$hasNonPluralKeys = false;
+		$pluralKeys = [];
 		foreach ( $messages as $key => $value ) {
 			if ( is_array( $value ) ) {
 				// Plurals can only happen in the lowest level of the structure
@@ -88,9 +88,9 @@ class ArrayFlattener {
 
 			// Check if we find any reserved plural keyword
 			if ( isset( self::$pluralWords[$key] ) ) {
-				$pluralKeys = true;
+				$pluralKeys[] = $key;
 			} else {
-				$nonPluralKeys = true;
+				$hasNonPluralKeys = true;
 			}
 		}
 
@@ -100,7 +100,12 @@ class ArrayFlattener {
 		}
 
 		// Mixed plural keys with other keys, should not happen
-		if ( $nonPluralKeys ) {
+		if ( $hasNonPluralKeys ) {
+			 // Allow `other` with other keys, as long it is is only one of the reserved ones
+			if ( $pluralKeys === [ 'other' ] ) {
+				return false;
+			}
+
 			$keys = implode( ', ', array_keys( $messages ) );
 			throw new MWException( "Reserved plural keywords mixed with other keys: $keys." );
 		}
