@@ -19,6 +19,7 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscVali
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PythonInterpolationValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
@@ -47,6 +48,7 @@ class ValidatorFactory {
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
 		'Newline' => NewlineValidator::class,
+		'NumericalParameter' => NumericalParameterValidator::class,
 		'Printf' => PrintfValidator::class,
 		'PythonInterpolation' => PythonInterpolationValidator::class,
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
