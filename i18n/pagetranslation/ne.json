@@ -3,10 +3,12 @@
 		"authors": [
 			"Ganesh Paudel",
 			"NehalDaveND",
-			"राम प्रसाद जोशी"
+			"राम प्रसाद जोशी",
+			"पर्वत सुबेदी"
 		]
 	},
 	"tpt-rev-encourage": "पूर्वावस्थामा ल्याउनुहोस्",
+	"tpt-languages-legend": "अन्य भाषाहरू:",
 	"tpt-languages-nonzero": "$1 ($2% अनुवादित)",
 	"tpt-tab-translate": "अनुवाद गर्नु",
 	"tpt-aggregategroup-add": "थप्न",
