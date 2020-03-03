@@ -6,5 +6,6 @@
 	},
 	"apierror-translate-language-disabled": "Onemogućeno je prevođenje na jezik: $1.",
 	"apierror-translate-language-disabled-reason": "Onemogućeno je prevođenje na sljedeći jezik: $1; razlog: $2",
+	"apierror-translate-nomessagefortitle": "Naslov ne odgovara prevodivoj poruci",
 	"apiwarn-translate-language-disabled-source": "Izvorni jezik ove grupe je $1. Molimo Vas, izaberite drugi jezik na koji želite prevoditi."
 }

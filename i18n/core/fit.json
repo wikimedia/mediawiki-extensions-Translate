@@ -146,6 +146,7 @@
 	"log-name-translationreview": "Arvioitujen käänösten loki",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|tarkasti}} käänöksen $3",
 	"translate-workflow-set-doing": "Asetethaan...",
+	"translate-dynagroup-recent-label": "Tuoreet käänökset",
 	"translate-dynagroup-recent-desc": "Tämä viestijoukko näythää kaikki verekset käänökset.\nSoveltuu hyvin käänösten tarkastamiseen.",
 	"translate-msggroupselector-search-recent": "Verekset",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|alajoukko|alajoukkoa}}",
