@@ -109,6 +109,7 @@
 		"GettextPluralException": "ffs/GettextFFS.php",
 		"HashMessageIndex": "utils/MessageIndex.php",
 		"HTMLJsSelectToInputField": "utils/HTMLJsSelectToInputField.php",
+		"HtmlTagInsertablesSuggester": "insertables/HtmlTagInsertablesSuggester.php",
 		"IniFFS": "ffs/IniFFS.php",
 		"InOtherLanguagesAid": "translationaids/InOtherLanguagesAid.php",
 		"Insertable": "insertables/Insertable.php",
