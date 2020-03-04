@@ -163,7 +163,7 @@
 	"tux-editor-cancel-button-label": "Lopeta",
 	"tux-editor-confirm-button-label": "Hyväksy käänös",
 	"tux-editor-proofread-button-label": "Markeeraa tarkastetuksi",
-	"tux-editor-shortcut-info": "Paina ”$1” hyväksyäksesi ja siirtyäksesi seuraavaan viestiin, ”$2” ohittaaksesi, ”$4” siirtyäksesi yhteenvethoon tai ”$3” näyttääksesi muut näppäinyhdistelmät.",
+	"tux-editor-shortcut-info": "Paina ”$1” hyväksyäksesi ja siirtyäksesi seuraavaan viestiin, ”$2” ohittaaksesi, ”$4” siirtyäksesi yhteenvethoon tai ”$3” näyttääksesi muut näppäinyhistelmät.",
 	"tux-editor-edit-desc": "Mookkaa tokymenttasuunia",
 	"tux-editor-add-desc": "Lissää tokymenttasuuni",
 	"tux-editor-suggestions-title": "Ehotukset",

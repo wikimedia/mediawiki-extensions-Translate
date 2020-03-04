@@ -22,7 +22,8 @@
 			"Gminky",
 			"Omotecho",
 			"Afaz",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Kkairri"
 		]
 	},
 	"translate": "翻訳",
@@ -302,7 +303,7 @@
 	"translate-search-nofilter": "すべて表示",
 	"log-name-translationreview": "翻訳査読記録",
 	"log-description-translationreview": "翻訳とメッセージ群に対するすべての査読の記録",
-	"logentry-translationreview-message": "$1 が $3 の翻訳を{{GENDER:$2|査読}}",
+	"logentry-translationreview-message": "$1 が $3 の翻訳を{{GENDER:$2|査読}}しました",
 	"logentry-translationreview-group": "$1 が $3 の $4 の翻訳の状態を $6 から $7 に{{GENDER:$2|変更}}",
 	"group-translate-sandboxed": "未承認の翻訳者",
 	"group-translate-sandboxed-member": "{{GENDER:$1|未承認の翻訳者}}",
