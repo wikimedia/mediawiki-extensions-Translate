@@ -8,6 +8,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+
 /**
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
@@ -141,19 +144,21 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
 		if ( PageTranslationHooks::$renderingContext ) {
-			$revFlags = Revision::READ_NORMAL; // bug T95753
+			$revFlags = IDBAccessObject::READ_NORMAL; // bug T95753
 		} else {
 			$revFlags = ( $flags & self::READ_LATEST ) == self::READ_LATEST
-				? Revision::READ_LATEST
-				: Revision::READ_NORMAL;
+				? IDBAccessObject::READ_LATEST
+				: IDBAccessObject::READ_NORMAL;
 		}
-		$rev = Revision::newFromTitle( $title, false, $revFlags );
+		$rev = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionByTitle( $title, false, $revFlags );
 
 		if ( !$rev ) {
 			return null;
 		}
 
-		return ContentHandler::getContentText( $rev->getContent() );
+		return ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
 	}
 
 	/**

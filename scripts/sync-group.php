@@ -11,6 +11,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Shell\Shell;
 
 // Standard boilerplate to define $IP
@@ -447,15 +449,17 @@ class ChangeSyncer {
 		global $wgTranslateFuzzyBotName;
 
 		$wikiTs = false;
-		$revision = Revision::newFromTitle( $title );
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		$revision = $revisionLookup->getRevisionByTitle( $title );
 		while ( $revision ) {
 			// No need to go back further
 			if ( $startTs && $wikiTs && ( $wikiTs < $startTs ) ) {
 				break;
 			}
 
-			if ( $revision->getUserText( Revision::RAW ) === $wgTranslateFuzzyBotName ) {
-				$revision = $revision->getPrevious();
+			$revUser = $revision->getUser( RevisionRecord::RAW );
+			if ( ( $revUser ? $revUser->getName() : '' ) === $wgTranslateFuzzyBotName ) {
+				$revision = $revisionLookup->getPreviousRevision( $revision );
 				continue;
 			}
 

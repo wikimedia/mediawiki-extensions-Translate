@@ -6,6 +6,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @group Database
  */
@@ -97,8 +99,10 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 
 		foreach ( $testcases as $case ) {
 			list( $expected, $user, $page, $comment ) = $case;
-			$revision = Revision::newFromTitle( Title::makeTitle( NS_MEDIAWIKI, $page ) );
-			$ok = ApiTranslationReview::getReviewBlockers( $user, $revision );
+			$revision = MediaWikiServices::getInstance()
+				->getRevisionLookup()
+				->getRevisionByTitle( new TitleValue( NS_MEDIAWIKI, $page ) );
+			$ok = ApiTranslationReview::getReviewBlockers( $user, new Revision( $revision ) );
 			$this->assertEquals( $expected, $ok, $comment );
 		}
 	}

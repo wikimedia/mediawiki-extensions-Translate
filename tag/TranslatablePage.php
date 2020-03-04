@@ -9,6 +9,7 @@
 
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\Database;
 
 /**
@@ -94,7 +95,9 @@ class TranslatablePage {
 	 * @return self
 	 */
 	public static function newFromRevision( Title $title, $revision ) {
-		$rev = Revision::newFromTitle( $title, $revision );
+		$rev = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionByTitle( $title, $revision );
 		if ( $rev === null ) {
 			throw new MWException( 'Revision is null' );
 		}
@@ -142,8 +145,10 @@ class TranslatablePage {
 				case 'title':
 					$this->revision = $this->getMarkedTag();
 				case 'revision':
-					$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
-					$this->text = ContentHandler::getContentText( $rev->getContent() );
+					$rev = MediaWikiServices::getInstance()
+						->getRevisionLookup()
+						->getRevisionByTitle( $this->getTitle(), $this->revision );
+					$this->text = ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
 					break;
 			}
 		}

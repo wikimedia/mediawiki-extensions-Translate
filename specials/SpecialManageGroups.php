@@ -11,6 +11,7 @@
 
 use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
@@ -248,7 +249,12 @@ class SpecialManageGroups extends SpecialPage {
 		$titleLink = $this->getLinkRenderer()->makeLink( $title );
 
 		if ( $type === 'deletion' ) {
-			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
+			$wiki = ContentHandler::getContentText(
+				MediaWikiServices::getInstance()
+					->getRevisionLookup()
+					->getRevisionByTitle( $title )
+					->getContent( SlotRecord::MAIN )
+			);
 			$oldContent = ContentHandler::makeContent( $wiki, $title );
 			$newContent = ContentHandler::makeContent( '', $title );
 
