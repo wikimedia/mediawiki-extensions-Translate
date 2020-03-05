@@ -13,6 +13,6 @@ namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
  */
 class PythonInterpolationValidator extends InsertableRegexValidator {
 	public function __construct() {
-		parent::__construct( '/\%(?:\([a-zA-Z0-9]*?\))?[diouxXeEfFgGcrs]/U' );
+		parent::__construct( '/\%(?:\([a-zA-Z0-9_]*?\))?[diouxXeEfFgGcrs]/U' );
 	}
 }

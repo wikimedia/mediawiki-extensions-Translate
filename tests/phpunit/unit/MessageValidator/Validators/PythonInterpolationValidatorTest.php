@@ -38,6 +38,14 @@ class PythonInterpolationValidatorTest extends MediaWikiUnitTestCase {
 			[ 'variable', 'unknown', $key, $code ]
 		];
 
+		$message = new FatMessage( $key, 'The URL is %(parent_url)s.' );
+		$message->setTranslation( 'This is invalid' );
+		yield [
+			$message,
+			$code,
+			[ 'variable', 'missing', $key, $code ]
+		];
+
 		$message = new FatMessage( $key, 'My name is %s' );
 		$message->setTranslation( 'This is a value: %s' );
 		yield [
