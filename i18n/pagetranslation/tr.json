@@ -75,7 +75,7 @@
 	"tpt-translation-intro-fuzzy": "Eski çeviriler bu şekilde işaretlenir.",
 	"tpt-languages-legend": "Diğer diller:",
 	"tpt-languages-zero": "Bu dil için başlangıç çeviri",
-	"tpt-languages-nonzero": "$1 ($2% çevrildi)",
+	"tpt-languages-nonzero": "$1 (%$2 çevrildi)",
 	"tpt-tab-translate": "Çevir",
 	"tpt-target-page": "Bu sayfa manüel olarak güncellenemez.\nBu sayfa [[$1]] sayfasının bir çevirisidir ve çeviri [$2 çeviri aracı] kullanılarak güncellenebilir.",
 	"tpt-patrolling-blocked": "Bu sayfa devriye gezilemez. Bunun yerine, incelemek için çeviri eylemini kullanın.",
