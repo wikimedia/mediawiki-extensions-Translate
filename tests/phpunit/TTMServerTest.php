@@ -71,7 +71,7 @@ class TTMServerTest extends MediaWikiTestCase {
 			'FakeTTMServer returns no suggestions for all queries'
 		);
 
-		$title = new Title();
+		$title = $this->createMock( Title::class );
 		$handle = new MessageHandle( $title );
 
 		$this->assertNull(
