@@ -22,7 +22,8 @@
 			"Guycn2",
 			"Zoranzoki21",
 			"Metalhead64",
-			"Pols12"
+			"Pols12",
+			"BaRaN6161 TURK"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -210,9 +211,9 @@
 	"pm-swap-icon-hover-text": "Hover text for the icon on Special:PageMigration which, when clicked, swaps a unit (text area) with the unit below.",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"pm-pagetitle-placeholder": "Placeholder for the page title input field.",
-	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered",
+	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered.\n{{doc-important|Do not translate \"<code><page-name>/<language-code></code>\".}}",
 	"pm-pagetitle-missing": "Error message given when page title field is blank",
-	"pm-langcode-missing": "Error message given when the page title field does not contain a language code.",
+	"pm-langcode-missing": "Error message given when the page title field does not contain a language code.\n{{doc-important|Do not translate \"<code><page-name>/<language-code></code>\".}}",
 	"pm-summary-import": "Edit summary used while creating translation pages which were imported using [[Special:PageMigration]], see [[mw:Help:Extension:Translate/Page_translation_administration#Migrating to page translation]]",
 	"pm-on-import-message-text": "Message shown at Special:PageMigration after importing the translations",
 	"pm-on-save-message-text": "Message shown at Special:PageMigration after saving the translation units",

@@ -110,7 +110,7 @@
 	"translate-checks-unicode-plural-invalid": "La forma plurale dovrebbe essere definita come $1. Questa traduzione contiene $2.",
 	"translate-checks-pagename": "Namespace cambiato rispetto alla definizione",
 	"translate-checks-format": "Questa traduzione non segue la definizione o ha una sintassi non valida: $1",
-	"translate-checks-escape": "La seguente escape\n{{PLURAL:$2|carattere|caratteri}} potrebbe essere accidentale: <strong>$1</strong>. {{PLURAL:$4|Un carattere escape valido è|I caratteri escape validi includono:}} $3.",
+	"translate-checks-escape": "{{PLURAL:$2|Il seguente carattere di escape potrebbe essere accidentale|I seguenti caratteri di escape potrebbero essere accidentali}}: <strong>$1</strong>. {{PLURAL:$4|Un carattere escape valido è|I caratteri escape validi sono:}} $3.",
 	"translate-checks-parametersnotequal": "Il numero dei parametri è {{PLURAL:$1|$1}}; dovrebbe essere {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> non è corretto.",
 	"translate-checks-fudforum-syntax": "In questo progetto usare <nowiki>$1</nowiki> invece di <nowiki>$2</nowiki>.",
