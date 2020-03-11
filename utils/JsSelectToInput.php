@@ -100,7 +100,9 @@ class JsSelectToInput {
 		$html = Xml::element( 'input', [
 			'type' => 'button',
 			'value' => wfMessage( $msg )->text(),
-			'onclick' => Xml::encodeJsCall( 'appendFromSelect', [ $source, $target ] )
+			'class' => 'mw-translate-jssti',
+			'data-translate-jssti-sourceid' => $source,
+			'data-translate-jssti-targetid' => $target
 		] );
 
 		return $html;
