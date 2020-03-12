@@ -71,7 +71,7 @@
 	"translate-magic-cm-updatedusing": "[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] प्रयाेग गरि अद्यावधिक गरिएकाे",
 	"translate-magic-cm-savefailed": "संग्रह विफल भयो",
 	"translate-magic-words": "जादुई शब्दहरू",
-	"translate-magic-namespace": "नामस्थान नामहरू",
+	"translate-magic-namespace": "नामपद नामहरू",
 	"translate-magic-notsaved": "तपाईंको सम्पादन संग्रह गरिएको थिएन!",
 	"translate-magic-errors": "कृपया निम्न अनुवादहरूमा {{PLURAL:$1|त्रुटि|त्रुटीहरू}} मिलाउनुहाेस्:",
 	"translate-magic-saved": "तपाईका परिवर्तनहरू सफलता पूर्वक सङ्ग्रह भएका छन्।",
