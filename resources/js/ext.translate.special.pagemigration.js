@@ -54,18 +54,18 @@
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var pageContent, oldTranslationUnits, obj, page,
-				errorBox = $( '.mw-tpm-sp-error__message' );
+				$errorBox = $( '.mw-tpm-sp-error__message' );
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[ page ];
 			}
 			if ( obj === undefined ) {
 				// obj was not initialized
-				errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
 			}
 			if ( obj.revisions === undefined ) {
 				// the case of /en subpage where first edit is by FuzzyBot
-				errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
 			}
 			pageContent = obj.revisions[ 0 ][ '*' ];
@@ -96,18 +96,18 @@
 		} ).then( function ( data ) {
 			var timestampFB, dateFB, timestampOld,
 				page, obj,
-				errorBox = $( '.mw-tpm-sp-error__message' );
+				$errorBox = $( '.mw-tpm-sp-error__message' );
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[ page ];
 			}
 			// Page does not exist if missing field is present
 			if ( obj === undefined || obj.missing === '' ) {
-				errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
 			}
 			// Page exists, but no edit by FuzzyBot
 			if ( obj.revisions === undefined ) {
-				errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
 			} else {
 				// FB over here refers to FuzzyBot
@@ -205,15 +205,15 @@
 	 */
 
 	function createNewUnit( sourceText, targetText ) {
-		var newUnit, sourceUnit, targetUnit, actionUnit;
+		var $newUnit, sourceUnit, targetUnit, $actionUnit;
 
-		newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
+		$newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
 		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
 			.prop( 'readonly', true ).attr( 'tabindex', '-1' ).val( sourceText );
 		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
 			.val( targetText ).prop( 'dir', $.uls.data.getDir( langCode ) );
-		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
-		actionUnit.append(
+		$actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
+		$actionUnit.append(
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' )
 				.attr( 'title', mw.msg( 'pm-add-icon-hover-text' ) ),
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--swap' )
@@ -221,8 +221,8 @@
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' )
 				.attr( 'title', mw.msg( 'pm-delete-icon-hover-text' ) )
 		);
-		newUnit.append( sourceUnit, targetUnit, actionUnit );
-		return newUnit;
+		$newUnit.append( sourceUnit, targetUnit, $actionUnit );
+		return $newUnit;
 	}
 
 	/**
@@ -232,14 +232,14 @@
 	 * @param {Array} translations
 	 */
 	function displayUnits( sourceUnits, translations ) {
-		var i, totalUnits, newUnit, unitListing,
+		var i, totalUnits, $newUnit, $unitListing,
 			sourceText, targetText;
 
 		noOfSourceUnits = sourceUnits.length;
 		noOfTranslationUnits = translations.length;
 		totalUnits = noOfSourceUnits > noOfTranslationUnits ? noOfSourceUnits : noOfTranslationUnits;
-		unitListing = $( '.mw-tpm-sp-unit-listing' );
-		unitListing.html( '' );
+		$unitListing = $( '.mw-tpm-sp-unit-listing' );
+		$unitListing.html( '' );
 		for ( i = 0; i < totalUnits; i++ ) {
 			sourceText = targetText = '';
 			if ( sourceUnits[ i ] !== undefined ) {
@@ -248,8 +248,8 @@
 			if ( translations[ i ] !== undefined ) {
 				targetText = translations[ i ];
 			}
-			newUnit = createNewUnit( sourceText, targetText );
-			unitListing.append( newUnit );
+			$newUnit = createNewUnit( sourceText, targetText );
+			$unitListing.append( $newUnit );
 		}
 	}
 
@@ -387,17 +387,17 @@
 	 * @param {jQuery.Event} event
 	 */
 	function addHandler( event ) {
-		var nextRow, text, newUnit, targetUnit;
+		var $nextRow, text, $newUnit, $targetUnit;
 
-		nextRow = $( event.target ).closest( '.mw-tpm-sp-unit' ).next();
-		targetUnit = nextRow.find( '.mw-tpm-sp-unit__target' );
-		text = targetUnit.val();
-		targetUnit.val( '' );
-		nextRow = nextRow.next();
-		text = shiftRowsDown( nextRow, text );
+		$nextRow = $( event.target ).closest( '.mw-tpm-sp-unit' ).next();
+		$targetUnit = $nextRow.find( '.mw-tpm-sp-unit__target' );
+		text = $targetUnit.val();
+		$targetUnit.val( '' );
+		$nextRow = $nextRow.next();
+		text = shiftRowsDown( $nextRow, text );
 		if ( text ) {
-			newUnit = createNewUnit( '', text );
-			$( '.mw-tpm-sp-unit-listing' ).append( newUnit );
+			$newUnit = createNewUnit( '', text );
+			$( '.mw-tpm-sp-unit-listing' ).append( $newUnit );
 		}
 		noOfTranslationUnits += 1;
 	}
@@ -409,14 +409,14 @@
 	 * @param {jQuery.Event} event
 	 */
 	function deleteHandler( event ) {
-		var sourceText, rowUnit;
-		rowUnit = $( event.target ).closest( '.mw-tpm-sp-unit' );
-		sourceText = rowUnit.find( '.mw-tpm-sp-unit__source' ).val();
+		var sourceText, $rowUnit;
+		$rowUnit = $( event.target ).closest( '.mw-tpm-sp-unit' );
+		sourceText = $rowUnit.find( '.mw-tpm-sp-unit__source' ).val();
 		if ( !sourceText ) {
-			rowUnit.remove();
+			$rowUnit.remove();
 		} else {
-			rowUnit.find( '.mw-tpm-sp-unit__target' ).val( '' );
-			shiftRowsUp( rowUnit );
+			$rowUnit.find( '.mw-tpm-sp-unit__target' ).val( '' );
+			shiftRowsUp( $rowUnit );
 		}
 		noOfTranslationUnits -= 1;
 	}
@@ -428,12 +428,12 @@
 	 * @param {jQuery.Event} event
 	 */
 	function swapHandler( event ) {
-		var rowUnit, tempText, nextVal;
-		rowUnit = $( event.target ).closest( '.mw-tpm-sp-unit' );
-		tempText = rowUnit.find( '.mw-tpm-sp-unit__target' ).val();
-		nextVal = rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val();
-		rowUnit.find( '.mw-tpm-sp-unit__target' ).val( nextVal );
-		rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val( tempText );
+		var $rowUnit, tempText, nextVal;
+		$rowUnit = $( event.target ).closest( '.mw-tpm-sp-unit' );
+		tempText = $rowUnit.find( '.mw-tpm-sp-unit__target' ).val();
+		nextVal = $rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val();
+		$rowUnit.find( '.mw-tpm-sp-unit__target' ).val( nextVal );
+		$rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val( tempText );
 	}
 
 	/**
@@ -444,21 +444,21 @@
 	 */
 	function importHandler( e ) {
 		var pageTitle, slashPos, titleObj,
-			errorBox = $( '.mw-tpm-sp-error__message' ),
-			messageBox = $( '.mw-tpm-sp-instructions' );
+			$errorBox = $( '.mw-tpm-sp-error__message' ),
+			$messageBox = $( '.mw-tpm-sp-instructions' );
 
 		e.preventDefault();
 
 		pageTitle = $( '#title' ).val().trim();
 		if ( pageTitle === '' ) {
-			errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
 			return;
 		}
 
 		titleObj = mw.Title.newFromText( pageTitle );
-		messageBox.hide( 'fast' );
+		$messageBox.hide( 'fast' );
 		if ( titleObj === null ) {
-			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
 			return;
 		}
 
@@ -466,7 +466,7 @@
 		slashPos = pageTitle.lastIndexOf( '/' );
 
 		if ( slashPos === -1 ) {
-			errorBox.text( mw.msg( 'pm-langcode-missing' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-langcode-missing' ) ).show( 'fast' );
 			return;
 		}
 
@@ -474,11 +474,11 @@
 		langCode = pageTitle.substring( slashPos + 1 );
 
 		if ( pageName === '' ) {
-			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
 			return;
 		}
 
-		errorBox.hide( 'fast' );
+		$errorBox.hide( 'fast' );
 
 		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
@@ -490,7 +490,7 @@
 					displayUnits( sourceUnits, translationUnits );
 					$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					$( '#action-import' ).addClass( 'hide' );
-					messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show( 'fast' );
+					$messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show( 'fast' );
 				} );
 			} );
 	}

@@ -386,10 +386,10 @@
 		} );
 
 		$( '#action-prepare' ).click( function () {
-			var pageName, messageDiv = $( '.messageDiv' );
+			var pageName, $messageDiv = $( '.messageDiv' );
 
 			pageName = $input.val().trim();
-			messageDiv.hide();
+			$messageDiv.hide();
 			if ( pageName === '' ) {
 				// eslint-disable-next-line no-alert
 				alert( mw.msg( 'pp-pagename-missing' ) );
@@ -410,19 +410,19 @@
 					pageContent = pageContent.trim();
 					getDiff( pageName, pageContent ).done( function ( diff ) {
 						if ( diff === undefined ) {
-							messageDiv.text( mw.msg( 'pp-diff-error' ) ).show();
+							$messageDiv.text( mw.msg( 'pp-diff-error' ) ).show();
 							return;
 						}
 
 						$( '.diff tbody' ).append( diff );
 						$( '.divDiff' ).show( 'fast' );
 						if ( diff !== '' ) {
-							messageDiv.text( mw.msg( 'pp-prepare-message' ) ).show();
+							$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).show();
 							$( '#action-prepare' ).hide();
 							$( '#action-save' ).show();
 							$( '#action-cancel' ).show();
 						} else {
-							messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).show();
+							$messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).show();
 						}
 					} );
 				} );

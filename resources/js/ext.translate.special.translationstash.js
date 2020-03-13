@@ -167,7 +167,7 @@
 
 		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ) )
 			.done( function ( result ) {
-				var untranslated, messages = result.query.messagecollection;
+				var $untranslated, messages = result.query.messagecollection;
 
 				$messageTable.empty();
 				$.each( messages, function ( index, message ) {
@@ -184,11 +184,11 @@
 				} );
 
 				// Show the editor for the first untranslated message.
-				untranslated = $( '.tux-message' )
+				$untranslated = $( '.tux-message' )
 					.has( '.tux-message-item.untranslated' )
 					.first();
-				if ( untranslated.length ) {
-					untranslated.data( 'translateeditor' ).show();
+				if ( $untranslated.length ) {
+					$untranslated.data( 'translateeditor' ).show();
 				}
 
 				updateStats();
