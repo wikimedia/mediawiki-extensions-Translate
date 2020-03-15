@@ -182,7 +182,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		// which is applied in mangleString.
 		$unescapedString = preg_replace_callback( '/=([A-F0-9]{2})/',
 			function ( $match ) {
-				return chr( hexdec( $match[0] ) );
+				return chr( hexdec( $match[1] ) );
 			},
 			$string
 		);
