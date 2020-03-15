@@ -15,7 +15,7 @@ module.exports = function ( grunt ) {
 			all: [
 				'**/*.js{,on}',
 				'!extensions/**',
-				'!resources/js/jquery.autosize.js',
+				'!resources/lib/**',
 				'!{vendor,node_modules}/**'
 			]
 		},

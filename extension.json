@@ -961,7 +961,7 @@
 			]
 		},
 		"jquery.autosize": {
-			"scripts": "resources/js/jquery.autosize.js",
+			"scripts": "resources/lib/jquery.autosize.js",
 			"targets": [
 				"desktop",
 				"mobile"
