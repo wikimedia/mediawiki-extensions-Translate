@@ -67,7 +67,7 @@
 	"translate-tag-markthis": "Märk den här sidan för översättning",
 	"translate-tag-markthisagain": "Den här sidan har <span class=\"plainlinks\">[$1 förändringar]</span> sedan den senast <span class=\"plainlinks\">[$2 märktes för översättning]</span>.",
 	"translate-tag-hasnew": "Den här sidan innehåller <span class=\"plainlinks\">[$1 förändringar]</span> som inte är märkta för översättning.",
-	"tpt-translation-intro": "Det här är en <span class=\"plainlinks\">[$1 översatt version]</span> av sidan [[$2]]. Översättningen är till $3% färdig och uppdaterad.",
+	"tpt-translation-intro": "Det här är en <span class=\"plainlinks\">[$1 översatt version]</span> av sidan [[$2]]. Översättningen är till $3 % färdig och uppdaterad.",
 	"tpt-translation-intro-fuzzy": "Föråldrade översättningar markeras på det här sättet.",
 	"tpt-languages-legend": "Andra språk:",
 	"tpt-languages-zero": "Starta översättning för detta språk",

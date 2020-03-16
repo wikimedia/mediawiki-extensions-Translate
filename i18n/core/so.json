@@ -3,7 +3,8 @@
 		"authors": [
 			"Abshirdheere",
 			"Maax",
-			"Mimursal"
+			"Mimursal",
+			"Abdullahi"
 		]
 	},
 	"translate": "Fasir",
@@ -30,5 +31,6 @@
 	"translate-mgs-submit": "Itus tirakoobka",
 	"translate-mgs-column-language": "Luqada",
 	"supportedlanguages-count": "Wadarta ku jirta waa $1 {{PLURAL:$1|luqad|luqadood}}.",
+	"translate-documentation-language": "Dukumiinti fariin ah",
 	"translate-dynagroup-recent-desc": "Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.\nEe faaiidada badan leh saxidda luqada."
 }

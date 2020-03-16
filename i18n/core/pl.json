@@ -70,7 +70,7 @@
 	"translate-edit-title": "Edycja „$1“",
 	"translate-edit-definition": "Tekst źródłowy komunikatu",
 	"translate-edit-translation": "Tłumaczenie",
-	"translate-edit-contribute": "prześlij",
+	"translate-edit-contribute": "zmień",
 	"translate-edit-no-information": "<em>Ten komunikat nie posiada dokumentacji.\nJeśli wiesz gdzie lub jak ten komunikat jest używany, możesz pomóc innym tłumaczom przez dodanie dokumentacji do tego komunikatu.</em>",
 	"translate-edit-information": "Objaśnienie komunikatu ($1)",
 	"translate-edit-in-other-languages": "Komunikat w innych językach",
