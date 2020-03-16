@@ -78,6 +78,7 @@
 		"ApiTranslationStash": "api/ApiTranslationStash.php",
 		"ApiTTMServer": "api/ApiTTMServer.php",
 		"AppleFFS": "ffs/AppleFFS.php",
+		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
 		"ArrayFlattener": "utils/ArrayFlattener.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
 		"CachedMessageIndex": "utils/MessageIndex.php",

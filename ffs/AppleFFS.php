@@ -59,7 +59,7 @@ class AppleFFS extends SimpleFFS {
 					continue;
 				}
 
-				list( $key, $value ) = self::readRow( $line );
+				list( $key, $value ) = static::readRow( $line );
 				$messages[$key] = $value;
 			}
 		}
@@ -74,6 +74,7 @@ class AppleFFS extends SimpleFFS {
 
 	/**
 	 * Parses non-empty strings file row to key and value.
+	 * Can be overridden by child classes.
 	 * @param string $line
 	 * @throws MWException
 	 * @return array array( string $key, string $val )
@@ -121,7 +122,7 @@ class AppleFFS extends SimpleFFS {
 			}
 
 			$key = $mangler->unmangle( $key );
-			$output .= self::writeRow( $key, $value );
+			$output .= static::writeRow( $key, $value );
 		}
 
 		if ( $output ) {
@@ -135,6 +136,7 @@ class AppleFFS extends SimpleFFS {
 
 	/**
 	 * Writes well-formed properties file row with key and value.
+	 * Can be overridden by child classes.
 	 * @param string $key
 	 * @param string $value
 	 * @return string
