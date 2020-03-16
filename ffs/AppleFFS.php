@@ -32,10 +32,11 @@ class AppleFFS extends SimpleFFS {
 
 		$value = '';
 		foreach ( $lines as $line ) {
+			$line = trim( $line );
 			if ( $linecontinuation ) {
-				$linecontinuation = false;
-				$valuecont = $line;
-				$value .= $valuecont;
+				if ( strpos( $line, '*/' ) !== false ) {
+					$linecontinuation = false;
+				}
 			} else {
 				if ( $line === '' ) {
 					continue;

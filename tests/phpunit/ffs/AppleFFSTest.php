@@ -31,6 +31,9 @@ class AppleFFSTest extends MediaWikiTestCase {
 /* You are reading the ".strings" entry. */
 /* It's all for fun and fun for all.
 On two lines! */
+ /* This is a
+    Multiline comment
+	  test */
 // Author: Testy McTesterson
 "website" = "<nowiki>http://en.wikipedia.org/</nowiki>";
 "language" = "English";
