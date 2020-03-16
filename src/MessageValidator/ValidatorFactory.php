@@ -14,6 +14,7 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineVal
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\IosVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator;
@@ -43,6 +44,7 @@ class ValidatorFactory {
 		'GettextPlural' => GettextPluralValidator::class,
 		'InsertableRegex' => InsertableRegexValidator::class,
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
+		'IosVariable' => IosVariableValidator::class,
 		'MatchSet' => MatchSetValidator::class,
 		'MediaWikiMisc' => MediaWikiMiscValidator::class,
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
@@ -53,8 +55,8 @@ class ValidatorFactory {
 		'PythonInterpolation' => PythonInterpolationValidator::class,
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
-		'WikiParameter' => WikiParameterValidator::class,
-		'WikiLink' => WikiLinkValidator::class
+		'WikiLink' => WikiLinkValidator::class,
+		'WikiParameter' => WikiParameterValidator::class
 	];
 
 	/**
