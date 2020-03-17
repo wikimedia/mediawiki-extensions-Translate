@@ -24,7 +24,22 @@
 		{
 			"name": "Siebrand Mazeland",
 			"email": "siebrand@kitano.nl",
-			"role": "Developer"
+			"role": "Ex-maintainer, ex-product manager"
+		},
+		{
+			"name": "Santhosh Thottingal",
+			"email": "santhosh.thottingal@gmail.com",
+			"role": "Ex-developer"
+		},
+		{
+			"name": "Amir E. Aharoni",
+			"email": "amir.aharoni@mail.huji.ac.il",
+			"role": "Ex-developer"
+		},
+		{
+			"name": "Abijeet Patro",
+			"email": "abijeetpatro@gmail.com",
+			"role": "Maintainer"
 		}
 	],
 	"support": {

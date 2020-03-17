@@ -3,8 +3,10 @@
 	"type": "specialpage",
 	"author": [
 		"Niklas Laxström",
-		"Santhosh Thottingal",
 		"Siebrand Mazeland",
+		"Santhosh Thottingal",
+		"Amir E. Aharoni",
+		"Abijeet Patro",
 		"..."
 	],
 	"version": "2020-01-23",
