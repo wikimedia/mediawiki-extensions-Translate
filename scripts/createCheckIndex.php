@@ -27,9 +27,8 @@ class CreateCheckIndex extends Maintenance {
 			'checking for problems.' );
 		$this->addOption(
 			'group',
-			'(optional) Comma separated list of group IDs to process (can use * as wildcard). ' .
-			'Default: "*"',
-			false, /*required*/
+			'Comma separated list of group IDs to process (can use * as wildcard).',
+			true, /*required*/
 			true /*has arg*/
 		);
 
@@ -51,32 +50,31 @@ class CreateCheckIndex extends Maintenance {
 			unset( $codes[$wgTranslateDocumentationLanguageCode] );
 		}
 
-		$reqGroups = $this->getOption( 'group' );
-		if ( $reqGroups ) {
-			$reqGroups = explode( ',', $reqGroups );
-			$reqGroups = array_map( 'trim', $reqGroups );
-			$reqGroups = MessageGroups::expandWildcards( $reqGroups );
-		}
+		$reqGroupsPattern = $this->getOption( 'group' );
+		$reqGroups = explode( ',', $reqGroupsPattern );
+		$reqGroups = array_map( 'trim', $reqGroups );
+		$reqGroups = MessageGroups::expandWildcards( $reqGroups );
 
 		$verbose = $this->hasOption( 'verbose' );
+
+		if ( !$reqGroups ) {
+			$this->fatalError( "Pattern '$reqGroupsPattern' did not match any groups" );
+		}
 
 		$groups = MessageGroups::singleton()->getGroups();
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		/** @var MessageGroup $g */
-		foreach ( $groups as $g ) {
+		foreach ( $reqGroups as $id ) {
+			$g = MessageGroups::getGroup( $id );
+			// Aliases may have changed the id
 			$id = $g->getId();
 			$sourceLanguage = $g->getSourceLanguage();
-
-			// Skip groups that are not requested
-			if ( $reqGroups && !in_array( $id, $reqGroups ) ) {
-				unset( $g );
-				continue;
-			}
 
 			$validator = $g->getValidator();
 			if ( !$validator ) {
 				unset( $g );
+				$this->output( "Skipping group $id due to lack of validators" );
 				continue;
 			}
 
@@ -87,7 +85,7 @@ class CreateCheckIndex extends Maintenance {
 				continue;
 			}
 
-			$this->output( "Working with $id: ", $id );
+			$this->output( "Processing group $id: ", $id );
 
 			// Skip source language code
 			$langCodes = $codes;
@@ -103,6 +101,9 @@ class CreateCheckIndex extends Maintenance {
 
 				$collection->resetForNewLanguage( $code );
 				$collection->loadTranslations();
+				$collection->filter( 'ignored' );
+				$collection->filter( 'fuzzy' );
+				$collection->filter( 'translated', false );
 
 				foreach ( $collection as $key => $message ) {
 					$result = $validator->quickValidate( $message, $code );
@@ -123,28 +124,39 @@ class CreateCheckIndex extends Maintenance {
 		}
 	}
 
-	public static function tagFuzzy( $problematic ) {
-		if ( !count( $problematic ) ) {
+	public static function tagFuzzy( array $problematic ): void {
+		if ( $problematic === [] ) {
 			return;
 		}
 
+		$titleConditions = [];
 		$dbw = wfGetDB( DB_MASTER );
+
 		foreach ( $problematic as $p ) {
+			// Normalize page key
 			$title = Title::makeTitleSafe( $p[0], $p[1] );
 			$titleText = $title->getDBkey();
-			$res = $dbw->select( 'page', [ 'page_id', 'page_latest' ],
-				[ 'page_namespace' => $p[0], 'page_title' => $titleText ], __METHOD__ );
-
-			$inserts = [];
-			foreach ( $res as $r ) {
-				$inserts = [
-					'rt_page' => $r->page_id,
-					'rt_revision' => $r->page_latest,
-					'rt_type' => RevTag::getType( 'fuzzy' )
-				];
-			}
-			$dbw->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
+			$titleConditions[] = $dbw->makeList(
+				[
+					'page_namespace' => $p[0],
+					'page_title' => $titleText
+				],
+				LIST_AND
+			);
 		}
+
+		$conds = $dbw->makeList( $titleConditions, LIST_OR );
+
+		$res = $dbw->select( 'page', [ 'page_id', 'page_latest' ], $conds, __METHOD__ );
+		$inserts = [];
+		foreach ( $res as $row ) {
+			$inserts[] = [
+				'rt_page' => $row->page_id,
+				'rt_revision' => $row->page_latest,
+				'rt_type' => RevTag::getType( 'fuzzy' )
+			];
+		}
+		$dbw->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 	}
 }
 
