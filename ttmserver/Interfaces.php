@@ -33,7 +33,7 @@ interface ReadableTTMServer {
 	 * Determines if the suggestion returned by this TTMServer comes
 	 * from this wiki or any other wiki.
 	 * @param array $suggestion
-	 * @return Bool
+	 * @return bool
 	 */
 	public function isLocalSuggestion( array $suggestion );
 
