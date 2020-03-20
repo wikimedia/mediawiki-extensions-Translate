@@ -41,7 +41,7 @@ interface ReadableTTMServer {
 	 * Given suggestion returned by this TTMServer, constructs fully
 	 * qualified URL to the location of the translation.
 	 * @param array $suggestion
-	 * @return String URL
+	 * @return string URL
 	 */
 	public function expandLocation( array $suggestion );
 }

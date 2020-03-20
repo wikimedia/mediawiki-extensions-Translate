@@ -87,7 +87,7 @@ class TranslationHelpers {
 
 	/**
 	 * Sets the HTML id of the text area that contains the translation.
-	 * @param String $id
+	 * @param string $id
 	 */
 	public function setTextareaId( $id ) {
 		$this->textareaId = $id;
@@ -103,7 +103,7 @@ class TranslationHelpers {
 
 	/**
 	 * Gets the message definition.
-	 * @return String
+	 * @return string
 	 */
 	public function getDefinition() {
 		$this->mustBeKnownMessage();
