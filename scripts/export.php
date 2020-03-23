@@ -93,6 +93,12 @@ class CommandlineExport extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
+		$this->addOption(
+			'offline-gettext-format',
+			'(optional) Export languages in offline Gettext format',
+			false, /*required*/
+			false /*has arg*/
+		);
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -127,6 +133,7 @@ class CommandlineExport extends Maintenance {
 		$reqLangs = array_flip( $reqLangs );
 
 		$codemapOnly = $this->hasOption( 'codemaponly' );
+		$forOffline = $this->hasOption( 'offline-gettext-format' );
 
 		$groupIds = explode( ',', trim( $this->getOption( 'group' ) ) );
 		$groupIds = MessageGroups::expandWildcards( $groupIds );
@@ -141,7 +148,7 @@ class CommandlineExport extends Maintenance {
 				continue;
 			}
 
-			if ( !$group instanceof FileBasedMessageGroup ) {
+			if ( !$forOffline && !$group instanceof FileBasedMessageGroup ) {
 				$this->output( "EE2: Unexportable message group $groupId.\n" );
 				unset( $groups[$groupId] );
 				continue;
@@ -257,7 +264,14 @@ class CommandlineExport extends Maintenance {
 
 			$this->output( 'Exporting ' . count( $langs ) . " languages for group $groupId" );
 
-			$ffs = $group->getFFS();
+			if ( $forOffline ) {
+				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group );
+				$ffs = new GettextFFS( $fileBasedGroup );
+				$ffs->setOfflineMode( true );
+			} else {
+				$ffs = $group->getFFS();
+			}
+
 			$ffs->setWritePath( $target );
 			$sourceLanguage = $group->getSourceLanguage();
 			$collection = $group->initCollection( $sourceLanguage );

@@ -35,7 +35,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 			],
 			'FILES' => [
 				'sourcePattern' => '',
-				'targetPattern' => '',
+				'targetPattern' => "{$group->getId()}/%CODE%.po",
 			],
 		];
 
