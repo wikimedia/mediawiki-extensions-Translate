@@ -390,7 +390,6 @@
 		"ext.translate.base": {
 			"scripts": "resources/js/ext.translate.base.js",
 			"dependencies": [
-				"ext.translate.hooks",
 				"mediawiki.api",
 				"mediawiki.util"
 			],
@@ -426,7 +425,6 @@
 			"dependencies": [
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
-				"ext.translate.hooks",
 				"ext.translate.storage",
 				"jquery.autosize",
 				"jquery.makeCollapsible",
@@ -496,13 +494,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.hooks": {
-			"scripts": "resources/js/ext.translate.hooks.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.legacy": {
 			"styles": "resources/css/ext.translate.legacy.css",
 			"targets": [
@@ -522,7 +513,6 @@
 			"styles": "resources/css/ext.translate.messagetable.less",
 			"dependencies": [
 				"ext.translate.base",
-				"ext.translate.hooks",
 				"ext.translate.loader",
 				"ext.translate.parsers",
 				"jquery.textchange",
