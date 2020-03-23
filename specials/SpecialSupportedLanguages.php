@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * Implements special page Special:SupportedLanguages. The wiki administrator
  * must define NS_PORTAL, otherwise this page does not work. This page displays
@@ -337,6 +339,14 @@ class SpecialSupportedLanguages extends SpecialPage {
 		arsort( $users );
 		foreach ( $users as $username => $count ) {
 			$title = Title::makeTitleSafe( NS_USER, $username );
+			if ( !$title ) {
+				LoggerFactory::getInstance( 'Translate' )->warning(
+					"T248125: Got Title-invalid username '{username}'",
+					[ 'username' => $username ]
+				);
+				continue;
+			}
+
 			$enc = htmlspecialchars( $username );
 
 			$attribs = [];
