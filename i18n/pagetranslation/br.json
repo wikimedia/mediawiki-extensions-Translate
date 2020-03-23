@@ -77,6 +77,7 @@
 	"pt-shake-empty": "Rannbennad c'houllo evit ar merker $1.",
 	"log-description-pagetranslation": "Marilh an obererezhioù liammet gant sistem treiñ pajennoù",
 	"log-name-pagetranslation": "Marilh troidigezhioù pajennoù",
+	"log-action-filter-pagetranslation-prioritylanguages": "Kemmañ priorelezh ar yezhoù",
 	"pt-movepage-title": "Fiñval ar bajenn da dreiñ $1",
 	"pt-movepage-blockers": "Ar bajenn da dreiñ na c'hell ket bezañ adanvet en abeg d'ar fazi{{PLURAL:$1||où}} da-heul :",
 	"pt-movepage-block-base-exists": "Bez ez eus eus ar bajenn diazez moned [[:$1]].",
