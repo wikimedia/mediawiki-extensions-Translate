@@ -134,3 +134,6 @@ Post processing step to format in wiki
 ;mw.translate.editor.showTranslationHelpers: Provides an opportunity to handle custom translation helpers
  object          result.helpers: JSON subset focusing on the helpers returned e.g. result.helpers.definition
  jQuery          translateEditor.$editor: The current translation-editing form
+
+;wikipage.content: See this hook in MediaWiki core. Fired for message documentation in the translation editor.
+ jQuery          $content

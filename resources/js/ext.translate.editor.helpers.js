@@ -70,11 +70,11 @@
 					} ).fail( function ( errorCode, results ) {
 						$messageDesc.html( newDocumentation );
 						mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
+					} ).always( function () {
+						// A collapsible element etc. may have been added
+						mw.hook( 'wikipage.content' ).fire( $messageDesc );
+						translateEditor.hideDocumentationEditor();
 					} );
-					// A collapsible element may have been added
-					$( '.mw-identical-title' ).makeCollapsible();
-
-					translateEditor.hideDocumentationEditor();
 				} else {
 					mw.notify( 'Error saving message documentation' );
 					mw.log( 'Error saving documentation', response );
@@ -170,9 +170,8 @@
 					$messageDoc.addClass( 'long compact' ).on( 'mouseenter mouseleave', expand );
 				}
 
-				// Enable the collapsible elements,
-				// used in {{Identical}} on translatewiki.net
-				$( '.mw-identical-title' ).makeCollapsible();
+				// Enable dynamic content, such as collapsible elements
+				mw.hook( 'wikipage.content' ).fire( $messageDoc );
 			} else {
 				$descEditLink.text( mw.msg( 'tux-editor-add-desc' ) );
 			}
