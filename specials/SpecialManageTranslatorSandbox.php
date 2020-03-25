@@ -59,15 +59,20 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	protected function deleteUserPage( $user ) {
 		$userpage = WikiPage::factory( $user->getUserPage() );
 		if ( $userpage->exists() ) {
-			$dummyError = '';
-			$userpage->doDeleteArticleReal(
-				wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text(),
-				false,
-				0,
-				true,
-				$dummyError,
-				$this->getUser()
-			);
+			$reason = wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text();
+			if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
+				$dummyError = '';
+				$userpage->doDeleteArticleReal(
+					$reason,
+					false,
+					0,
+					true,
+					$dummyError,
+					$this->getUser()
+				);
+			} else {
+				$userpage->doDeleteArticleReal( $reason, $this->getUser() );
+			}
 		}
 	}
 
