@@ -54,22 +54,7 @@ class MessageGroupCache {
 	 * @return bool
 	 */
 	public function exists() {
-		$old = $this->getOldCacheFileName();
-		$new = $this->getCacheFileName();
-		$exists = file_exists( $new );
-
-		if ( $exists ) {
-			return true;
-		}
-
-		// Perform migration if possible
-		if ( file_exists( $old ) ) {
-			wfMkdirParents( dirname( $new ) );
-			rename( $old, $new );
-			return true;
-		}
-
-		return false;
+		return file_exists( $this->getCacheFileName() );
 	}
 
 	/**
@@ -238,10 +223,6 @@ class MessageGroupCache {
 	protected function open() {
 		if ( $this->cache === null ) {
 			$this->cache = \Cdb\Reader::open( $this->getCacheFileName() );
-			if ( $this->cache->get( '#version' ) !== '3' ) {
-				$this->close();
-				unlink( $this->getCacheFileName() );
-			}
 		}
 
 		return $this->cache;
@@ -263,16 +244,6 @@ class MessageGroupCache {
 	 */
 	protected function getCacheFileName() {
 		$cacheFileName = "translate_groupcache-{$this->group->getId()}/{$this->code}.cdb";
-
-		return TranslateUtils::cacheFile( $cacheFileName );
-	}
-
-	/**
-	 * Returns full path to the old cache file location.
-	 * @return string
-	 */
-	protected function getOldCacheFileName() {
-		$cacheFileName = "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb";
 
 		return TranslateUtils::cacheFile( $cacheFileName );
 	}
