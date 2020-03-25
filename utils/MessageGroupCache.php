@@ -1,9 +1,7 @@
 <?php
 /**
- * Code for caching the messages of file based message groups.
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2013 Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
@@ -11,7 +9,8 @@
  * Caches messages of file based message group source file. Can also track
  * that the cache is up to date. Parsing the source files can be slow, so
  * constructing CDB cache makes accessing that data constant speed regardless
- * of the actual format.
+ * of the actual format. This also avoid having to deal with potentially unsafe
+ * external files during web requests.
  *
  * @ingroup MessageGroups
  */
@@ -21,7 +20,7 @@ class MessageGroupCache {
 	const CHANGED = 3;
 
 	/**
-	 * @var MessageGroup
+	 * @var FileBasedMessageGroup
 	 */
 	protected $group;
 
@@ -36,17 +35,28 @@ class MessageGroupCache {
 	protected $code;
 
 	/**
+	 * @var string
+	 */
+	private $cacheFilePath;
+
+	/**
 	 * Contructs a new cache object for given group and language code.
 	 * @param string|MessageGroup $group Group object or id.
 	 * @param string $code Language code. Default value 'en'.
+	 * @param string|null $cacheFilePath
 	 */
-	public function __construct( $group, $code = 'en' ) {
+	public function __construct( $group, $code = 'en', $cacheFilePath = null ) {
 		if ( is_object( $group ) ) {
 			$this->group = $group;
 		} else {
 			$this->group = MessageGroups::getGroup( $group );
 		}
 		$this->code = $code;
+
+		// TODO: move this code somewhere else
+		$this->cacheFilePath = $cacheFilePath ?? TranslateUtils::cacheFile(
+			"translate_groupcache-{$this->group->getId()}/{$this->code}.cdb"
+		);
 	}
 
 	/**
@@ -54,7 +64,7 @@ class MessageGroupCache {
 	 * @return bool
 	 */
 	public function exists() {
-		return file_exists( $this->getCacheFileName() );
+		return file_exists( $this->getCacheFilePath() );
 	}
 
 	/**
@@ -62,10 +72,19 @@ class MessageGroupCache {
 	 * @return string[] Message keys that can be passed one-by-one to get() method.
 	 */
 	public function getKeys() {
-		$value = $this->open()->get( '#keys' );
-		$array = unserialize( $value );
+		$reader = $this->open();
+		$keys = [];
 
-		return $array;
+		$key = $reader->firstkey();
+		while ( $key !== false ) {
+			if ( ( $key[0] ?? '' ) !== '#' ) {
+				$keys[] = $key;
+			}
+
+			$key = $reader->nextkey();
+		}
+
+		return $keys;
 	}
 
 	/**
@@ -104,7 +123,7 @@ class MessageGroupCache {
 		if ( $messages === [] ) {
 			if ( $this->exists() ) {
 				// Delete stale cache files
-				unlink( $this->getCacheFileName() );
+				unlink( $this->getCacheFilePath() );
 			}
 
 			return; // Don't create empty caches
@@ -113,15 +132,12 @@ class MessageGroupCache {
 		'@phan-var FileBasedMessageGroup $group';
 		$hash = md5( file_get_contents( $group->getSourceFilePath( $this->code ) ) );
 
-		wfMkdirParents( dirname( $this->getCacheFileName() ) );
-		$cache = \Cdb\Writer::open( $this->getCacheFileName() );
-		$keys = array_keys( $messages );
-		$cache->set( '#keys', serialize( $keys ) );
+		wfMkdirParents( dirname( $this->getCacheFilePath() ) );
+		$cache = \Cdb\Writer::open( $this->getCacheFilePath() );
 
 		foreach ( $messages as $key => $value ) {
 			$cache->set( $key, $value );
 		}
-
 		$cache->set( '#created', $created ?: wfTimestamp() );
 		$cache->set( '#updated', wfTimestamp() );
 		$cache->set( '#filehash', $hash );
@@ -142,7 +158,7 @@ class MessageGroupCache {
 	public function isValid( &$reason ) {
 		$group = $this->group;
 		'@phan-var FileBasedMessageGroup $group';
-		$groupId = $group->getId();
+		$uniqueId = $this->getCacheFilePath();
 
 		$pattern = $group->getSourceFilePath( '*' );
 		$filename = $group->getSourceFilePath( $this->code );
@@ -154,12 +170,12 @@ class MessageGroupCache {
 			$source = $group->getFFS()->read( $this->code ) !== false;
 		} else {
 			static $globCache = [];
-			if ( !isset( $globCache[$groupId] ) ) {
-				$globCache[$groupId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
+			if ( !isset( $globCache[$uniqueId] ) ) {
+				$globCache[$uniqueId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
 				// Definition file might not match the above pattern
-				$globCache[$groupId][$group->getSourceFilePath( 'en' )] = true;
+				$globCache[$uniqueId][$group->getSourceFilePath( 'en' )] = true;
 			}
-			$source = isset( $globCache[$groupId][$filename] );
+			$source = isset( $globCache[$uniqueId][$filename] );
 		}
 
 		$cache = $this->exists();
@@ -222,7 +238,7 @@ class MessageGroupCache {
 	 */
 	protected function open() {
 		if ( $this->cache === null ) {
-			$this->cache = \Cdb\Reader::open( $this->getCacheFileName() );
+			$this->cache = \Cdb\Reader::open( $this->getCacheFilePath() );
 		}
 
 		return $this->cache;
@@ -242,9 +258,7 @@ class MessageGroupCache {
 	 * Returns full path to the cache file.
 	 * @return string
 	 */
-	protected function getCacheFileName() {
-		$cacheFileName = "translate_groupcache-{$this->group->getId()}/{$this->code}.cdb";
-
-		return TranslateUtils::cacheFile( $cacheFileName );
+	protected function getCacheFilePath(): string {
+		return $this->cacheFilePath;
 	}
 }
