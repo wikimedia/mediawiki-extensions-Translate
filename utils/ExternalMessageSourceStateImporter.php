@@ -32,7 +32,7 @@ class ExternalMessageSourceStateImporter {
 				continue;
 			}
 
-			$processed[$groupId] = 0;
+			$processed[$groupId] = [];
 			$languages = $changesForGroup->getLanguages();
 
 			foreach ( $languages as $language ) {
@@ -52,7 +52,7 @@ class ExternalMessageSourceStateImporter {
 				);
 
 				$jobs = array_merge( $jobs, $groupJobs );
-				$processed[$groupId] = $groupProcessed;
+				$processed[$groupId][$language] = $groupProcessed;
 
 				$changesForGroup->removeChangesForLanguage( $language );
 

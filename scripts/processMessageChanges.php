@@ -159,8 +159,11 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	protected function printChangeInfo( array $info ) {
-		foreach ( $info['processed'] as $group => $count ) {
-			$this->output( "Imported $count new messages or translations for $group.\n" );
+		foreach ( $info['processed'] as $group => $languages ) {
+			$newMessageCount = array_sum( $languages );
+			if ( $newMessageCount ) {
+				$this->output( "Imported $newMessageCount new messages or translations for $group.\n" );
+			}
 		}
 
 		if ( $info['skipped'] !== [] ) {
