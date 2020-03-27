@@ -74,6 +74,7 @@
 	"translate-export-invalid-format": "Lütfen geçerli bir format belirtiniz.",
 	"translate-export-not-supported": "Çeviriyi dışa aktarım desteklenmiyor.",
 	"translate-export-format-notsupported": "Belirtilen dışa aktarım biçimi, ileti grubu tarafından desteklenmiyor.",
+	"translate-export-group-too-large": "Seçilen mesaj grubu çok büyük. $1 daha az mesaj içeren bir mesaj grubu seçin veya tavsiye için çeviri yöneticisine başvurun.",
 	"translate-magic-pagename": "Genişletilmiş MediaWiki çevirisi",
 	"translate-magic-help": "Özel sayfa takma adları, sihirli kelimeler ve ad alanı adlarını çevirebilirsiniz.\n\nÖzel sayfa takma adları ve sihirli sözcükler birden fazla çeviriye sahip olabilir.\nÇeviriler virgülle (,) ayrılır.\nAd alanları yalnızca bir çeviriye sahip olabilir.\n\nProje konuşması ad alanını çevirmek <code>$1 talk</code> karmaşık olabilir.\n<code>$1</code>, proje site adıyla değiştirildi (örneğin, <code>{{ns:project_talk}}</code>).\nDilinizde, site adını değiştirmeden geçerli bir ifade oluşturmak mümkün değilse, lütfen [[Support|Destek]] konusunda bize bildirin.\n\nDeğişiklikleri kaydetmek için tercüman olmanız gerekir.\nAşağıdaki kaydet düğmesine tıklanana kadar değişiklikler kaydedilmez.",
 	"translate-magic-module": "Modül:",

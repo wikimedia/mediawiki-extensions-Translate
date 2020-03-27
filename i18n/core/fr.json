@@ -95,6 +95,7 @@
 	"translate-export-invalid-format": "Veuillez fournir un format valide.",
 	"translate-export-not-supported": "L’exportation des traductions n’est pas prise en charge.",
 	"translate-export-format-notsupported": "Le format d’exportation spécifié n’est pas pris en charge par le groupe de messages.",
+	"translate-export-group-too-large": "Le groupe de message choisi est trop gros. Choisir un groupe de message qui a moins de $1 {{PLURAL:$1|message|messages}} ou contacter l'administrateur de traduction pour avoir son conseil.",
 	"translate-magic-pagename": "Traduction étendue de MediaWiki",
 	"translate-magic-help": "Vous pouvez traduire les alias de pages spéciales, les mots magiques et les noms des espaces de noms.\n\nLes alias de pages spéciales et les mots magiques peuvent avoir plusieurs traductions.\nLes traductions sont séparées par une virgule (,).\nLes espaces de noms ne peuvent avoir qu’une seule traduction.\n\nTraduire l’espace de noms de discussion du projet <code>$1 talk</code> peut être compliqué.\n<code>$1</code> est remplacé par le nom du site (par exemple <code>{{ns:project_talk}}</code>).\nS’il n’est pas possible d’obtenir une expression valide dans votre langue sans changer le nom du site, veuillez nous contacter sur [[Support|Assistance]].\n\nVous devez appartenir au groupe des traducteurs pour enregistrer toute modification.\nLes modifications ne sont pas enregistrées tant que vous n’avez pas cliqué sur le bouton de sauvegarde ci-dessous.",
 	"translate-magic-module": "Module :",

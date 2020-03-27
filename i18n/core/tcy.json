@@ -19,6 +19,7 @@
 	"translate-prev": "ದುಂಬುದ ಪುಟೊ",
 	"translate-edit-contribute": "ಸಹಾಯ ಕೊರ್ಲೆ",
 	"translate-edit-in-other-languages": "ಬೇತೆ ಬಾಸೆಲೆಡ್ ಸಂದೇಶೊ",
+	"translate-export-group-too-large": "ಆಯ್ಕೆ ಮಲ್ತಿನ ಸಂದೇಸೊದ ಗುಂಪು ದಿಂಜ ಮಲ್ಲೆ ಆತ್ಂಡ್. ಗುಂಪು ೧ {{PLURAL: $ 1 | ಸಂದೇಸೊ | ಸಂದೇಸೊಲು}} ಡ್ದ್ ಕಡಮೆ ಇಪ್ಪುನ ಸಂದೇಸೊ ಗುಂಪುನು ನಾಡ್ ಅತ್ತಂಡ ಸಲಹೆಗಾದ್ ಅನುವಾದೊ ನಿರ್ವಾಹಕೆರೆನ್ ಸಂಪರ್ಕಿಸಲ.",
 	"translate-magic-module": "ಘಟಕ:",
 	"translate-pref-nonewsletter": "ಎಂಕ್ ಈ-ಮೈಲ್ ವಾರ್ತಾಪತ್ರೊಲೆನ್ ಕಡಪುಡುನ ಬೊಡ್ಚಿ",
 	"translate-rc-translation-filter": "ತರ್ಜುಮೆದ ಅರಿಪೆ",
