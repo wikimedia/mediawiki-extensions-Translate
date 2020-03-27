@@ -852,9 +852,14 @@ class TranslateHooks {
 	 * @param ResourceLoader $resourceLoader
 	 */
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
-		// Support: MediaWiki <= 1.33
 		global $wgVersion;
+
+		// Support: MediaWiki <= 1.33
 		$hasOldJqUI = version_compare( $wgVersion, '1.34', '<' );
+
+		// Support: MediaWiki <= 1.34
+		$hasOldTokens = version_compare( $wgVersion, '1.35', '<' );
+
 		$tpl = [
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'Translate',
@@ -954,6 +959,18 @@ class TranslateHooks {
 				'scripts' => 'resources/js/ext.translate.special.operatorsuggest.js',
 				'dependencies' => [
 					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+				]
+			],
+			'ext.translate.special.pagetranslation' => $tpl + [
+				'scripts' => 'resources/js/ext.translate.special.pagetranslation.js',
+				'dependencies' => [
+					'ext.translate.multiselectautocomplete',
+					'mediawiki.ui.button',
+					'mediawiki.Uri',
+					$hasOldTokens ? 'user.tokens' : 'user.options',
+				],
+				'targets' => [
+					'desktop'
 				]
 			],
 		];

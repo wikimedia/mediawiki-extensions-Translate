@@ -760,18 +760,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.special.pagetranslation": {
-			"scripts": "resources/js/ext.translate.special.pagetranslation.js",
-			"dependencies": [
-				"ext.translate.multiselectautocomplete",
-				"mediawiki.ui.button",
-				"mediawiki.Uri",
-				"user.tokens"
-			],
-			"targets": [
-				"desktop"
-			]
-		},
 		"ext.translate.special.pagetranslation.styles": {
 			"styles": "resources/css/ext.translate.special.pagetranslation.css",
 			"targets": [
