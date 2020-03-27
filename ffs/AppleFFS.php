@@ -214,4 +214,24 @@ class AppleFFS extends SimpleFFS {
 
 		return $output;
 	}
+
+	public static function getExtraSchema() {
+		$schema = [
+			'root' => [
+				'_type' => 'array',
+				'_children' => [
+					'FILES' => [
+						'_type' => 'array',
+						'_children' => [
+							'header' => [
+								'_type' => 'text',
+							],
+						]
+					]
+				]
+			]
+		];
+
+		return $schema;
+	}
 }
