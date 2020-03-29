@@ -209,23 +209,25 @@
 		 * @param {Array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
-			var translateEditor = this;
+			var $elements;
 
 			if ( translations.error ) {
-				// Do not proceed if errored/unsupported
 				return;
 			}
 
-			$.each( translations, function ( index ) {
-				var $otherLanguage, langAttr,
-					translation = translations[ index ];
+			if ( !translations.length ) {
+				return;
+			}
+
+			$elements = translations.map( function ( translation ) {
+				var $element, langAttr;
 
 				langAttr = {
 					lang: translation.language,
 					dir: $.uls.data.getDir( translation.language )
 				};
 
-				$otherLanguage = $( '<div>' )
+				$element = $( '<div>' )
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
@@ -238,12 +240,14 @@
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
-				translateEditor.suggestionAdder( $otherLanguage, translation.value );
+				this.suggestionAdder( $element, translation.value );
 
-				translateEditor.$editor.find( '.in-other-languages-title' )
-					.removeClass( 'hide' )
-					.after( $otherLanguage );
-			} );
+				return $element;
+			}.bind( this ) );
+
+			this.$editor.find( '.in-other-languages-title' )
+				.removeClass( 'hide' )
+				.after( $elements );
 		},
 
 		/**
