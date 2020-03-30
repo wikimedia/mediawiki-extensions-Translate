@@ -117,7 +117,7 @@
 	"apihelp-searchtranslations-param-limit": "Големина на исходот.",
 	"apihelp-searchtranslations-example-1": "Прикажи преводи на овој јазик.",
 	"apihelp-searchtranslations-example-2": "Приказ на непреведени статии што одвораваат на бараното на изворниот јазик.",
-	"apihelp-translationcheck-description": "Потврди даден преводен внос според проверувачите на пораки.",
+	"apihelp-translationcheck-description": "Потврди даден преводен внос според поставените проверувачи на пораки.",
 	"apihelp-translationcheck-summary": "Потврди преводи.",
 	"apihelp-translationcheck-param-title": "Наслов на страницата со именски простор и јазичен код.",
 	"apihelp-translationcheck-param-translation": "Превод за потврда.",

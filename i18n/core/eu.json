@@ -7,7 +7,8 @@
 			"Xabier Armendaritz",
 			"Subi",
 			"Sator",
-			"Mikel Ibaiba"
+			"Mikel Ibaiba",
+			"Iñaki LL"
 		]
 	},
 	"translate": "Itzuli",
@@ -50,6 +51,7 @@
 	"translate-edit-askpermission": "Baimena lortu",
 	"exporttranslations": "Itzulpenak esportatu",
 	"translate-export-form-format": "Formatua",
+	"translate-export-group-too-large": "Aukeratutako mezu taldea handiegia da. Aukeratu  $1 {{PLURAL:$1|mezu}} baino gutxiago dituen mezu talde bat, edo jarri harremanetan itzulpeneko administrariarekin aholkua eskatzeko.",
 	"translate-magic-pagename": "MediaWiki itzulpen zabaldua",
 	"translate-magic-module": "Modulu:",
 	"translate-magic-submit": "Bilatu",

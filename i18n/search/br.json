@@ -1,11 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fohanno"
+			"Fohanno",
+			"Fulup"
 		]
 	},
+	"searchtranslations": "Klask troidigezhioù",
+	"tux-sst-edit": "Kemmañ an droidigezh",
+	"tux-sst-view-foreign": "Gwelet war $1",
 	"tux-sst-search": "Klask",
 	"tux-sst-search-ph": "Klask troidigezhioù",
 	"tux-sst-count": "{{PLURAL:$1|Un disoc'h kavet|$1 disoc'h kavet}}",
-	"tux-sst-facet-language": "Yezhoù"
+	"tux-sst-facet-language": "Yezhoù",
+	"tux-sst-facet-group": "Strolladoù kemennadennoù",
+	"tux-sst-nosolr-title": "Ne c'haller ket ober enklaskoù",
+	"tux-sst-nosolr-body": "N'eus servij ebet war ar wiki-mañ evit klask troidigezhioù.",
+	"tux-sst-solr-offline-title": "Ne c'haller ket ober enklaskoù",
+	"tux-sst-solr-offline-body": "Evit ar poent ne c'haller ket ober gant ar servij klask.",
+	"tux-sst-next": "War-lerc'h›",
+	"tux-sst-prev": "‹ Kent",
+	"tux-sst-default": "Troidigezhioù",
+	"tux-sst-translated": "Troidigezhioù diwar $1",
+	"tux-sst-untranslated": "Troidigezh ebet diwar $1",
+	"tux-sst-outdated": "Troidigezhioù dispredet e",
+	"tux-sst-ellipsis-untranslated": "Troidigezh ebet",
+	"tux-sst-ellipsis-outdated": "Troidigezhioù dispredet",
+	"tux-sst-link-all-match": "Klask en holl c'herioù dre ret",
+	"tux-sst-match-message": "Diskouez a ra troidigezhioù a glot gant ger pe c'her spisaet en enklask. $1",
+	"tux-sst-case-sensitive": "Diforc'hañ al lizherennoù munut diouzh ar pennlizherennoù",
+	"tux-sst-error-offset": "Ne c'haller ket diskouez muioc'h a zisoc'hoù. Resisait hoc'h enklask.",
+	"tux-sst-error-language": "Ne c'haller ket implijout ar yezh-mañ e seurt enklaskoù."
 }
