@@ -14,7 +14,6 @@ module.exports = function ( grunt ) {
 			},
 			all: [
 				'**/*.js{,on}',
-				'!extensions/**',
 				'!resources/lib/**',
 				'!{vendor,node_modules}/**'
 			]
@@ -24,7 +23,6 @@ module.exports = function ( grunt ) {
 				'**/*.css',
 				'**/*.less',
 				'!node_modules/**',
-				'!extensions/**',
 				'!vendor/**'
 			]
 		},
