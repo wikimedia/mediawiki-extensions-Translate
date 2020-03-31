@@ -21,6 +21,9 @@ use MediaWiki\Logger\LoggerFactory;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
+	private const USER_TRANSLATIONS = 0;
+	private const USER_LAST_ACTIVITY = 1;
+
 	/// Whether to skip and regenerate caches
 	protected $purge = false;
 
@@ -80,7 +83,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
 
 			$users = $this->fetchTranslators( $code );
-			if ( $users === false ) {
+			if ( !$users ) {
 				// generic-pool-error is from MW core
 				$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
 				return;
@@ -93,12 +96,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 	}
 
-	protected function showLanguage( $code, $users ) {
+	protected function showLanguage( string $code, array $users ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
-
-		$usernames = array_keys( $users );
-		$userStats = $this->getUserStats( $usernames );
 
 		// Information to be used inside the foreach loop.
 		$linkInfo = [];
@@ -144,7 +144,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$linkList = $lang->listToText( $links );
 
 		$out->addHTML( '<p>' . $linkList . "</p>\n" );
-		$this->makeUserList( $users, $userStats );
+		$this->makeUserList( $users );
 	}
 
 	protected function languageCloud() {
@@ -189,11 +189,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 	 * Fetch the translators for a language with caching
 	 *
 	 * @param string $code
-	 * @return array|bool Map of (user name => page count) or false on failure
+	 * @return ?array Map of (user name => translation stats) or null on failure
 	 */
-	public function fetchTranslators( $code ) {
+	public function fetchTranslators( string $code ): ?array {
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list-v1', $code );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list-v2', $code );
 
 		if ( $this->purge ) {
 			$cache->delete( $cachekey );
@@ -220,11 +220,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 				'doCachedWork' => function () use ( $cache, $cachekey ) {
 					$newData = $cache->get( $cachekey );
 					// Use new cache value from other thread
-					return is_array( $newData ) ? $newData['users'] : false;
+					return is_array( $newData ) ? $newData['users'] : null;
 				},
 				'fallback' => function () use ( $data ) {
 					// Use stale cache if possible
-					return is_array( $data ) ? $data['users'] : false;
+					return is_array( $data ) ? $data['users'] : null;
 				}
 			]
 		);
@@ -236,9 +236,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 	 * Fetch the translators for a language
 	 *
 	 * @param string $code
-	 * @return array Map of (user name => page count)
+	 * @return array Map of user name to translation stats
 	 */
-	public function loadTranslators( $code ) {
+	public function loadTranslators( string $code ): array {
 		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
@@ -256,6 +256,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
 		$fields = [
 			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
+			'MAX(rev_timestamp) as lastedit',
 			'count(page_id) as count'
 		];
 		$conds = [
@@ -271,7 +272,10 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			$data[$row->rev_user_text] = $row->count;
+			$data[$row->rev_user_text] = [
+				self::USER_TRANSLATIONS => $row->count,
+				self::USER_LAST_ACTIVITY => $row->lastedit,
+			];
 		}
 
 		return $data;
@@ -326,7 +330,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$out->addHTML( '</div>' );
 	}
 
-	protected function makeUserList( $users, $stats ) {
+	protected function makeUserList( array $userStats ): void {
 		$day = 60 * 60 * 24;
 
 		// Scale of the activity colors, anything
@@ -336,8 +340,12 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$links = [];
 		$statsTable = new StatsTable();
 
-		arsort( $users );
-		foreach ( $users as $username => $count ) {
+		// List users in descending order by number of translations in this language
+		uasort( $userStats, function ( $a, $b ) {
+			return -( $a[self::USER_TRANSLATIONS] <=> $b[self::USER_TRANSLATIONS] );
+		} );
+
+		foreach ( $userStats as $username => $stats ) {
 			$title = Title::makeTitleSafe( NS_USER, $username );
 			if ( !$title ) {
 				LoggerFactory::getInstance( 'Translate' )->warning(
@@ -347,27 +355,22 @@ class SpecialSupportedLanguages extends SpecialPage {
 				continue;
 			}
 
+			$count = $stats[self::USER_TRANSLATIONS];
+			$lastTranslationTimestamp = $stats[self::USER_LAST_ACTIVITY];
+
 			$enc = htmlspecialchars( $username );
 
 			$attribs = [];
 			$styles = [];
-			if ( isset( $stats[$username][0] ) ) {
-				if ( $count === -1 ) {
-					$count = $stats[$username][0];
-				}
+			$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
-				$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
-
-				$last = wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $stats[$username][1] );
-				$last = round( $last / $day );
-				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )
-					->numParams( $count, $last )->text();
-				$last = max( 1, min( $period, $last ) );
-				$styles['border-bottom'] = '3px solid #' .
-					$statsTable->getBackgroundColor( ( $period - $last ) / $period );
-			} else {
-				$enc = "<del>$enc</del>";
-			}
+			$last = wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $lastTranslationTimestamp );
+			$last = round( $last / $day );
+			$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )
+				->numParams( $count, $last )->text();
+			$last = max( 1, min( $period, $last ) );
+			$styles['border-bottom'] = '3px solid #' .
+				$statsTable->getBackgroundColor( ( $period - $last ) / $period );
 
 			$stylestr = $this->formatStyle( $styles );
 			if ( $stylestr ) {
@@ -378,10 +381,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		// for GENDER support
-		$username = '';
-		if ( count( $users ) === 1 ) {
-			$keys = array_keys( $users );
-			$username = $keys[0];
+		$usernameForGender = '';
+		if ( count( $userStats ) === 1 ) {
+			$usernameForGender = array_key_first( $userStats );
 		}
 
 		$linkList = $this->getLanguage()->listToText( $links );
@@ -389,55 +391,10 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$html .= $this->msg( 'supportedlanguages-translators' )
 			->rawParams( $linkList )
 			->numParams( count( $links ) )
-			->params( $username )
+			->params( $usernameForGender )
 			->escaped();
 		$html .= "</p>\n";
 		$this->getOutput()->addHTML( $html );
-	}
-
-	protected function getUserStats( $users ) {
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$dbr = wfGetDB( DB_REPLICA );
-		$keys = [];
-
-		foreach ( $users as $username ) {
-			$keys[] = wfMemcKey( 'translate', 'sl-usertats', $username );
-		}
-
-		$cached = $cache->getMulti( $keys );
-		$data = [];
-
-		foreach ( $users as $index => $username ) {
-			$cachekey = $keys[$index];
-
-			if ( !$this->purge && isset( $cached[$cachekey] ) ) {
-				$data[$username] = $cached[$cachekey];
-				continue;
-			}
-
-			if ( class_exists( ActorMigration::class ) ) {
-				$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
-				$tables = [ 'user', 'r' => [ 'revision' ] + $actorQuery['tables'] ];
-				$joins = [
-					'r' => [ 'JOIN', 'user_id = ' . $actorQuery['fields']['rev_user'] ],
-				] + $actorQuery['joins'];
-			} else {
-				$tables = [ 'user', 'revision' ];
-				$joins = [ 'revision' => [ 'JOIN', 'user_id = rev_user' ] ];
-			}
-
-			$fields = [ 'user_name', 'user_editcount', 'MAX(rev_timestamp) as lastedit' ];
-			$conds = [
-				'user_name' => $username,
-			];
-
-			$res = $dbr->selectRow( $tables, $fields, $conds, __METHOD__, [], $joins );
-			$data[$username] = [ $res->user_editcount, $res->lastedit ];
-
-			$cache->set( $cachekey, $data[$username], 3600 );
-		}
-
-		return $data;
 	}
 
 	protected function formatStyle( $styles ) {
@@ -449,9 +406,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		return $stylestr;
 	}
 
-	protected function preQueryUsers( $users ) {
+	protected function preQueryUsers( array $users ): void {
 		$lb = new LinkBatch;
-		foreach ( $users as $user => $count ) {
+		foreach ( $users as $user => $data ) {
 			$user = Title::capitalize( $user, NS_USER );
 			$lb->add( NS_USER, $user );
 			$lb->add( NS_USER_TALK, $user );
