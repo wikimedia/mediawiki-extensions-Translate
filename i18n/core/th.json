@@ -227,7 +227,7 @@
 	"translate-manage-import-ok": "นำเข้าแล้ว: $1",
 	"translate-manage-import-done": "การนำเข้าเสร็จสมบูรณ์!",
 	"importtranslations": "นำเข้างานแปล",
-	"translate-import-from-local": "อัพโหลดไฟล์:",
+	"translate-import-from-local": "อัปโหลดไฟล์:",
 	"translate-import-load": "โหลดไฟล์",
 	"translate-import-err-dl-failed": "ไม่สามารถดีงไฟล์นี้ได้:\n<br />$1",
 	"translate-import-err-ul-failed": "การอัปโหลดไฟล์ล้มเหลว",
