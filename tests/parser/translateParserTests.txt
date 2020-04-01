@@ -1,3 +1,5 @@
+!! Version 2
+# Force the test runner to ensure the extension is loaded
 !! functionhooks
 translation
 !! endfunctionhooks
@@ -6,9 +8,9 @@ translation
 #translation as magic word for valid language code
 !! options
 title=[[Test/mr]]
-!! input
+!! wikitext
 {{#translation:}}
-!!result
+!! html
 <p>/mr
 </p>
 !! end
@@ -17,9 +19,9 @@ title=[[Test/mr]]
 #translation as magic word for source page
 !! options
 title=[[Test]]
-!! input
+!! wikitext
 {{#translation:}}
-!!result
+!! html
 
 !! end
 
@@ -27,8 +29,8 @@ title=[[Test]]
 #translation as magic word for invalid language code
 !! options
 title=[[Test/ugaaa]]
-!! input
+!! wikitext
 {{#translation:}}
-!!result
+!! html
 
 !! end
