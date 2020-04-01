@@ -554,9 +554,9 @@ PHP;
 	}
 
 	protected function getPotTime() {
-		$defs = new MessageGroupCache( $this->group );
+		$cache = $this->group->getMessageGroupCache( $this->group->getSourceLanguage() );
 
-		return $defs->exists() ? $defs->getTimestamp() : wfTimestampNow();
+		return $cache->exists() ? $cache->getTimestamp() : wfTimestampNow();
 	}
 
 	protected function getGenerator() {

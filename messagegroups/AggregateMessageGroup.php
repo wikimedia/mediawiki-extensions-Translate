@@ -89,7 +89,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 			}
 			'@phan-var FileBasedMessageGroup $group';
 
-			$cache = new MessageGroupCache( $group );
+			$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
 			if ( $cache->exists() ) {
 				foreach ( $cache->getKeys() as $key ) {
 					$messages[$key] = $cache->get( $key );

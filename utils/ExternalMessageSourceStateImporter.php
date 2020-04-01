@@ -26,11 +26,15 @@ class ExternalMessageSourceStateImporter {
 		 * @var MessageSourceChange $changesForGroup
 		 */
 		foreach ( $changeData as $groupId => $changesForGroup ) {
+			/**
+			 * @var FileBasedMessageGroup
+			 */
 			$group = MessageGroups::getGroup( $groupId );
 			if ( !$group ) {
 				unset( $changeData[$groupId] );
 				continue;
 			}
+			'@phan-var FileBasedMessageGroup $group';
 
 			$processed[$groupId] = [];
 			$languages = $changesForGroup->getLanguages();
@@ -47,7 +51,7 @@ class ExternalMessageSourceStateImporter {
 					continue;
 				}
 
-				list( $groupJobs, $groupProcessed ) = $this->createMessageUpdateJobs(
+				[ $groupJobs, $groupProcessed ] = $this->createMessageUpdateJobs(
 					$group, $additions, $language
 				);
 
@@ -55,9 +59,7 @@ class ExternalMessageSourceStateImporter {
 				$processed[$groupId][$language] = $groupProcessed;
 
 				$changesForGroup->removeChangesForLanguage( $language );
-
-				$cache = new MessageGroupCache( $groupId, $language );
-				$cache->create();
+				$group->getMessageGroupCache( $language )->create();
 			}
 		}
 

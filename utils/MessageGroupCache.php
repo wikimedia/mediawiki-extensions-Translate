@@ -41,22 +41,18 @@ class MessageGroupCache {
 
 	/**
 	 * Contructs a new cache object for given group and language code.
-	 * @param string|MessageGroup $group Group object or id.
-	 * @param string $code Language code. Default value 'en'.
-	 * @param string|null $cacheFilePath
+	 * @param FileBasedMessageGroup $group
+	 * @param string $code Language code.
+	 * @param string $cacheFilePath
 	 */
-	public function __construct( $group, $code = 'en', $cacheFilePath = null ) {
-		if ( is_object( $group ) ) {
-			$this->group = $group;
-		} else {
-			$this->group = MessageGroups::getGroup( $group );
-		}
+	public function __construct(
+		FileBasedMessageGroup $group,
+		string $code,
+		string $cacheFilePath
+	) {
+		$this->group = $group;
 		$this->code = $code;
-
-		// TODO: move this code somewhere else
-		$this->cacheFilePath = $cacheFilePath ?? TranslateUtils::cacheFile(
-			"translate_groupcache-{$this->group->getId()}/{$this->code}.cdb"
-		);
+		$this->cacheFilePath = $cacheFilePath;
 	}
 
 	/**

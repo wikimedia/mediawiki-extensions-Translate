@@ -145,16 +145,8 @@ class SpecialManageGroups extends SpecialPage {
 		$limit = $limit - 3;
 
 		$reader = \Cdb\Reader::open( $this->cdb );
-		$groups = TranslateUtils::deserialize( $reader->get( '#keys' ) );
-		foreach ( $groups as $id ) {
-			$group = MessageGroups::getGroup( $id );
-			if ( !$group ) {
-				continue;
-			}
-
-			/**
-			 * @var MessageSourceChange $sourceChanges
-			 */
+		$groups = $this->getGroupsFromCdb( $reader );
+		foreach ( $groups as $id => $group ) {
 			$sourceChanges = MessageSourceChange::loadModifications(
 				TranslateUtils::deserialize( $reader->get( $id ) )
 			);
@@ -326,12 +318,10 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		$reader = \Cdb\Reader::open( $this->cdb );
-		$groups = TranslateUtils::deserialize( $reader->get( '#keys' ) );
-
+		$groups = $this->getGroupsFromCdb( $reader );
 		$postponed = [];
 
-		foreach ( $groups as $groupId ) {
-			$group = MessageGroups::getGroup( $groupId );
+		foreach ( $groups as $groupId => $group ) {
 			try {
 				$sourceChanges = MessageSourceChange::loadModifications(
 					TranslateUtils::deserialize( $reader->get( $groupId ) )
@@ -349,8 +339,7 @@ class SpecialManageGroups extends SpecialPage {
 						$postponed, $groupRenameJobData, $groupModificationJobs );
 
 					if ( !isset( $postponed[$groupId][$language] ) ) {
-						$cache = new MessageGroupCache( $groupId, $language );
-						$cache->create();
+						$group->getMessageGroupCache( $language )->create();
 					}
 				}
 
@@ -410,7 +399,7 @@ class SpecialManageGroups extends SpecialPage {
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
 		$specialPageFactory = MediaWikiServices::getInstance()->getSpecialPageFactory();
-		list( $alias, ) = $specialPageFactory->resolveAlias( $title->getText() );
+		[ $alias, ] = $specialPageFactory->resolveAlias( $title->getText() );
 
 		$pagesInGroup = [
 			'ManageMessageGroups' => 'namespaces',
@@ -648,7 +637,7 @@ class SpecialManageGroups extends SpecialPage {
 
 			$id = self::changeId( $groupId, $language, MessageSourceChange::RENAME, $key );
 
-			list( $renameMissing, $isCurrentKeyPresent ) = $this->isRenameMissing(
+			[ $renameMissing, $isCurrentKeyPresent ] = $this->isRenameMissing(
 				$req, $sourceChanges, $id, $key, $language, $groupId, $isSourceLang
 			);
 
@@ -831,5 +820,18 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		return $errorMsg;
+	}
+
+	/**
+	 * @param \Cdb\Reader $reader
+	 * @return FileBasedMessageGroup[]
+	 */
+	private function getGroupsFromCdb( \Cdb\Reader $reader ): array {
+		$groups = [];
+		$groupIds = TranslateUtils::deserialize( $reader->get( '#keys' ) );
+		foreach ( $groupIds as $id ) {
+			$groups[$id] = MessageGroups::getGroup( $id );
+		}
+		return array_filter( $groups );
 	}
 }

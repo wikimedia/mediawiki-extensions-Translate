@@ -89,7 +89,7 @@ class ExternalMessageSourceStateComparator {
 	protected function processLanguage(
 		FileBasedMessageGroup $group, $language, MessageSourceChange $changes
 	) {
-		$cache = new MessageGroupCache( $group, $language );
+		$cache = $group->getMessageGroupCache( $language );
 		$reason = 0;
 		if ( !$cache->isValid( $reason ) ) {
 			$this->addMessageUpdateChanges( $group, $language, $changes, $reason, $cache );

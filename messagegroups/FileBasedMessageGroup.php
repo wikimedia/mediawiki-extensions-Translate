@@ -189,7 +189,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	 * @inheritDoc
 	 */
 	public function getKeys() {
-		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
+		$cache = $this->getMessageGroupCache( $this->getSourceLanguage() );
 		if ( !$cache->exists() ) {
 			return array_keys( $this->getDefinitions() );
 		} else {
@@ -204,7 +204,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		$namespace = $this->getNamespace();
 		$messages = [];
 
-		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
+		$cache = $this->getMessageGroupCache( $this->getSourceLanguage() );
 		if ( !$cache->exists() ) {
 			wfWarn( "By-passing message group cache for {$this->getId()}" );
 			$messages = $this->getDefinitions();
@@ -225,7 +225,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	 * @inheritDoc
 	 */
 	public function getMessage( $key, $code ) {
-		$cache = new MessageGroupCache( $this, $code );
+		$cache = $this->getMessageGroupCache( $code );
 		if ( $cache->exists() ) {
 			$msg = $cache->get( $key );
 
@@ -247,5 +247,13 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		} else {
 			return null;
 		}
+	}
+
+	public function getMessageGroupCache( string $code ): MessageGroupCache {
+		$cacheFilePath = TranslateUtils::cacheFile(
+			"translate_groupcache-{$this->getId()}/{$code}.cdb"
+		);
+
+		return new MessageGroupCache( $this, $code, $cacheFilePath );
 	}
 }
