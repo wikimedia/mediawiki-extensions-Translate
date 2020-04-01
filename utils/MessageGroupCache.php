@@ -109,13 +109,44 @@ class MessageGroupCache {
 	}
 
 	/**
+	 * Get a list of authors.
+	 * @return string[]
+	 * @since 2020.04
+	 */
+	public function getAuthors(): array {
+		$data = $this->open()->get( '#authors' );
+
+		if ( $data ) {
+			$data = $this->unserialize( $data );
+		}
+
+		return $data ?? [];
+	}
+
+	/**
+	 * Get other data cached from the FFS class.
+	 * @return array
+	 * @since 2020.04
+	 */
+	public function getExtra(): array {
+		$data = $this->open()->get( '#extra' );
+
+		if ( $data ) {
+			$data = $this->unserialize( $data );
+		}
+
+		return $data ?? [];
+	}
+
+	/**
 	 * Populates the cache from current state of the source file.
 	 * @param bool|string $created Unix timestamp when the cache is created (for automatic updates).
 	 */
 	public function create( $created = false ) {
 		$this->close(); // Close the reader instance just to be sure
 
-		$messages = $this->group->load( $this->code );
+		$parseOutput = $this->group->parseExternal( $this->code );
+		$messages = $parseOutput['MESSAGES'];
 		if ( $messages === [] ) {
 			if ( $this->exists() ) {
 				// Delete stale cache files
@@ -124,9 +155,7 @@ class MessageGroupCache {
 
 			return; // Don't create empty caches
 		}
-		$group = $this->group;
-		'@phan-var FileBasedMessageGroup $group';
-		$hash = md5( file_get_contents( $group->getSourceFilePath( $this->code ) ) );
+		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
 
 		wfMkdirParents( dirname( $this->getCacheFilePath() ) );
 		$cache = \Cdb\Writer::open( $this->getCacheFilePath() );
@@ -134,6 +163,8 @@ class MessageGroupCache {
 		foreach ( $messages as $key => $value ) {
 			$cache->set( $key, $value );
 		}
+		$cache->set( '#authors', $this->serialize( $parseOutput['AUTHORS'] ) );
+		$cache->set( '#extra', $this->serialize( $parseOutput['EXTRA'] ) );
 		$cache->set( '#created', $created ?: wfTimestamp() );
 		$cache->set( '#updated', wfTimestamp() );
 		$cache->set( '#filehash', $hash );
@@ -153,17 +184,19 @@ class MessageGroupCache {
 	 */
 	public function isValid( &$reason ) {
 		$group = $this->group;
-		'@phan-var FileBasedMessageGroup $group';
 		$uniqueId = $this->getCacheFilePath();
 
 		$pattern = $group->getSourceFilePath( '*' );
 		$filename = $group->getSourceFilePath( $this->code );
 
+		$parseOutput = null;
+
 		// If the file pattern is not dependent on the language, we will assume
 		// that all translations are stored in one file. This means we need to
 		// actually parse the file to know if a language is present.
 		if ( strpos( $pattern, '*' ) === false ) {
-			$source = $group->getFFS()->read( $this->code ) !== false;
+			$parseOutput = $group->parseExternal( $this->code );
+			$source = $parseOutput['MESSAGES'] !== [];
 		} else {
 			static $globCache = [];
 			if ( !isset( $globCache[$uniqueId] ) ) {
@@ -204,7 +237,8 @@ class MessageGroupCache {
 		}
 
 		// Message count check
-		$messages = $group->load( $this->code );
+		$parseOutput = $parseOutput ?? $group->parseExternal( $this->code );
+		$messages = $parseOutput['MESSAGES'];
 		// CDB converts numbers to strings
 		$count = (int)( $this->get( '#msgcount' ) );
 		if ( $count !== count( $messages ) ) {
@@ -226,6 +260,21 @@ class MessageGroupCache {
 		$reason = self::CHANGED;
 
 		return false;
+	}
+
+	private function serialize( array $data ): string {
+		// Using simple prefix for easy future extension
+		return 'J' . json_encode( $data );
+	}
+
+	private function unserialize( string $serialized ): array {
+		$type = $serialized[0];
+
+		if ( $type !== 'J' ) {
+			throw new RuntimeException( 'Unknown serialization format' );
+		}
+
+		return json_decode( substr( $serialized, 1 ), true );
 	}
 
 	/**

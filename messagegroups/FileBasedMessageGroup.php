@@ -57,6 +57,25 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	}
 
 	/**
+	 * @param string $code Language tag.
+	 * @return array Array with keys MESSAGES, AUTHORS and EXTRA, containing only primitive values.
+	 * @since 2020.04
+	 */
+	public function parseExternal( string $code ): array {
+		$supportedKeys = [ 'MESSAGES', 'AUTHORS', 'EXTRA' ];
+
+		$parsedData = $this->getFFS()->read( $code );
+
+		// Ensure we return correct keys
+		$data = [];
+		foreach ( $supportedKeys as $key ) {
+			$data[$key] = $parsedData[$key] ?? [];
+		}
+
+		return $data;
+	}
+
+	/**
 	 * @param string $code Language code.
 	 * @return string
 	 * @throws MWException
