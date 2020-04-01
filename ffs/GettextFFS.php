@@ -139,7 +139,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
-			$item = self::parseGettextSection( $section, $pluralCount, $metadata );
+			$item = self::parseGettextSection( $section, $pluralCount );
 			if ( $item === false ) {
 				continue;
 			}
@@ -161,13 +161,15 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		return [
 			'MESSAGES' => $messages,
-			'TEMPLATE' => $template,
-			'METADATA' => $metadata,
-			'HEADERS' => $headers
+			'EXTRA' => [
+				'TEMPLATE' => $template,
+				'METADATA' => $metadata,
+				'HEADERS' => $headers,
+			],
 		];
 	}
 
-	public static function parseGettextSection( $section, $pluralCount, &$metadata ) {
+	public static function parseGettextSection( $section, $pluralCount ) {
 		if ( trim( $section ) === '' ) {
 			return false;
 		}
@@ -370,9 +372,9 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
-		$pot = $this->read( 'en' );
+		$pot = $this->read( 'en' )['EXTRA'];
 		$code = $collection->code;
-		$template = $this->read( $code );
+		$template = $this->read( $code )['EXTRA'];
 		$pluralCount = false;
 		$output = $this->doGettextHeader( $collection, $template );
 

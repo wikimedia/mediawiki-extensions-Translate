@@ -201,7 +201,9 @@ class SpecialImportTranslations extends SpecialPage {
 		'@phan-var FileBasedMessageGroup $group';
 
 		$ffs = new GettextFFS( $group );
-		$data = $ffs->readFromVariable( $data );
+
+		$parseOutput = $ffs->readFromVariable( $data );
+		$data = $parseOutput['EXTRA'];
 
 		/**
 		 * Special data added by GettextFFS

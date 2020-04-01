@@ -545,14 +545,21 @@ class MessageGroupStats {
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			$ffs = $group->getFFS();
 			if ( $ffs instanceof GettextFFS ) {
-				$template = $ffs->read( 'en' );
-				$infile = [];
-				foreach ( $template['TEMPLATE'] as $key => $data ) {
-					if ( isset( $data['comments']['.'] ) ) {
-						$infile[$key] = '1';
+				/**
+				 * @var FileBasedMessageGroup $group
+				 */
+				'@phan-var FileBasedMessageGroup $group';
+				$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
+				if ( $cache->exists() ) {
+					$template = $cache->getExtra()['TEMPLATE'] ?? [];
+					$infile = [];
+					foreach ( $template as $key => $data ) {
+						if ( isset( $data['comments']['.'] ) ) {
+							$infile[$key] = '1';
+						}
 					}
+					$collection->setInFile( $infile );
 				}
-				$collection->setInFile( $infile );
 			}
 		}
 

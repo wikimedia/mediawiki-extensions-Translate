@@ -22,24 +22,28 @@ class GettextDocumentationAid extends TranslationAid {
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();
 		if ( !$group instanceof FileBasedMessageGroup ) {
-			throw new TranslationHelperException( 'Not a Gettext group' );
+			throw new TranslationHelperException( 'Not a FileBasedMessageGroup group' );
 		}
 
 		$ffs = $group->getFFS();
 		if ( !$ffs instanceof GettextFFS ) {
-			throw new TranslationHelperException( 'Not a Gettext group' );
+			throw new TranslationHelperException( 'Group is not using GettextFFS' );
 		}
 
+		$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
+		if ( !$cache->exists() ) {
+			throw new TranslationHelperException( 'Definitions are not cached' );
+		}
+
+		$extra = $cache->getExtra();
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		$mykey = $contLang->lcfirst( $this->handle->getKey() );
 		$mykey = str_replace( ' ', '_', $mykey );
-		$data = $ffs->read( $group->getSourceLanguage() );
 
-		// $mykey can be unset if the source file has changed since last import.
-		// FIXME: the template should be cached in message group source cache to
-		// avoid frequent re-parsing and this issue.
-		// See https://phabricator.wikimedia.org/T39168
-		$help = $data['TEMPLATE'][$mykey]['comments'] ?? [];
+		$help = $extra['TEMPLATE'][$mykey]['comments'] ?? null;
+		if ( !$help ) {
+			throw new TranslationHelperException( "No comments found for key '$mykey'" );
+		}
 
 		$conf = $group->getConfiguration();
 		if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
