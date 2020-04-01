@@ -193,72 +193,10 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	/**
-	 * Optimized version of array_keys( $_->getDefinitions() ).
-	 * @return array
-	 * @since 2012-08-21
+	 * @inheritDoc
 	 */
 	public function getKeys() {
-		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
-		if ( !$cache->exists() ) {
-			return array_keys( $this->getDefinitions() );
-		} else {
-			return $cache->getKeys();
-		}
-	}
-
-	/**
-	 * @param string $code Language code.
-	 * @return MessageCollection
-	 */
-	public function initCollection( $code ) {
-		$namespace = $this->getNamespace();
-		$messages = [];
-
-		$cache = new MessageGroupCache( $this, $this->getSourceLanguage() );
-		if ( !$cache->exists() ) {
-			wfWarn( "By-passing message group cache for {$this->getId()}" );
-			$messages = $this->getDefinitions();
-		} else {
-			foreach ( $cache->getKeys() as $key ) {
-				$messages[$key] = $cache->get( $key );
-			}
-		}
-
-		$definitions = new MessageDefinitions( $messages, $namespace );
-		$collection = MessageCollection::newFromDefinitions( $definitions, $code );
-		$this->setTags( $collection );
-
-		return $collection;
-	}
-
-	/**
-	 * @param string $key Message key
-	 * @param string $code Language code
-	 * @return string|null
-	 */
-	public function getMessage( $key, $code ) {
-		$cache = new MessageGroupCache( $this, $code );
-		if ( $cache->exists() ) {
-			$msg = $cache->get( $key );
-
-			if ( $msg !== false ) {
-				return $msg;
-			}
-
-			// Try harder
-			$nkey = str_replace( ' ', '_', strtolower( $key ) );
-			$keys = $cache->getKeys();
-
-			foreach ( $keys as $k ) {
-				if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {
-					return $cache->get( $k );
-				}
-			}
-
-			return null;
-		} else {
-			return null;
-		}
+		return array_keys( $this->getDefinitions() );
 	}
 
 	public function getTags( $type = null ) {
