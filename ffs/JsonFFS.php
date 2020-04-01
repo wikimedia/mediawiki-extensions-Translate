@@ -80,21 +80,11 @@ class JsonFFS extends SimpleFFS {
 		$messages = [];
 		$template = $this->read( $collection->getLanguage() );
 
-		$messages['@metadata'] = [];
-		if ( isset( $template['METADATA'] ) ) {
-			$messages['@metadata'] = $template['METADATA'];
-		}
+		$messages['@metadata'] = $template['METADATA'] ?? [];
 
 		$authors = $collection->getAuthors();
-		$authors = $this->filterAuthors( $authors, $collection->code );
-
-		if ( isset( $template['AUTHORS'] ) ) {
-			$authors = array_unique( array_merge( $template['AUTHORS'], $authors ) );
-		}
-
-		if ( $authors !== [] ) {
-			$messages['@metadata']['authors'] = array_values( $authors );
-		}
+		$authors = $this->filterAuthors( $authors, $collection->getLanguage() );
+		$messages['@metadata']['authors'] = array_values( $authors );
 
 		$mangler = $this->group->getMangler();
 
