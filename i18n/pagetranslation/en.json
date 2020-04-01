@@ -68,7 +68,6 @@
 	"tpt-languages-nonzero": "$1 ($2% translated)",
 	"tpt-tab-translate": "Translate",
 	"tpt-target-page": "This page cannot be updated manually.\nThis page is a translation of the page [[$1]] and the translation can be updated using [$2 the translation tool].",
-	"tpt-patrolling-blocked": "This page cannot be patrolled. Instead, use the translate action to review it.",
 	"tpt-unknown-page": "This namespace is reserved for content page translations.\nThe page you are trying to edit does not seem to correspond to any page marked for translation.",
 	"tpt-translation-restricted": "Translation of this page to this language has been prevented by a translation administrator.\n\nReason: $1",
 	"tpt-discouraged-language-force-header": "This page cannot be translated to $1.",

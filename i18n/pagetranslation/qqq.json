@@ -88,7 +88,6 @@
 	"tpt-languages-nonzero": "Tooltip for a link to go to a translated version of a translatable page.\n\nParameters:\n* $1 - page title (translated if present)\n* $2 - translation percentage, without decimals (supports PLURAL)",
 	"tpt-tab-translate": "Used as label for the tab.\n\nReplaces the edit tab with translation tab for translation pages.\n{{Identical|Translate}}",
 	"tpt-target-page": "Message displayed when trying to edit a translatable page directly. Parameters:\n* $1 is the translatable page\n* $2 is a link to the translation tool for the translatable page.",
-	"tpt-patrolling-blocked": "Message returned when a user tries to patrol a translation page directly.",
 	"tpt-unknown-page": "See [[mw:Help:Extension:Translate/Translation example]] for context on page translation feature.",
 	"tpt-translation-restricted": "Error message shown to user when translation to a language which is restricted by translation admin.\n\nParameters:\n* $1 - reason",
 	"tpt-discouraged-language-force-header": "Header for error shown along with group description if the language is prevented from translation for the selected language.\n\nParameter:\n* $1 - the language to which the user asked to translate the page",
