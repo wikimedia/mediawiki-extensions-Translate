@@ -22,7 +22,6 @@ use MediaWiki\MediaWikiServices;
 abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	protected $namespace;
-	protected $groups;
 
 	/**
 	 * @var StringMatcher
