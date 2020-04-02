@@ -125,6 +125,13 @@ interface MessageGroup {
 	public function getDefinitions();
 
 	/**
+	 * Shortcut for array_keys( getDefinitions() ) that can be optimized by
+	 * the implementing classes.
+	 * @return string[] List of message keys.
+	 */
+	public function getKeys();
+
+	/**
 	 * Returns message tags. If type is given, only message keys with that
 	 * tag are returned. Otherwise an array[tag => keys] is returned.
 	 * @param string|null $type

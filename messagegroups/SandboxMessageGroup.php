@@ -141,12 +141,8 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		}
 
 		// Try harder
-		if ( is_callable( [ $group, 'getKeys' ] ) ) {
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$keys = $group->getKeys();
-		} else {
-			$keys = array_keys( $group->getDefinitions() );
-		}
+		$keys = $group->getKeys();
+
 		// Try to find the original key with correct case
 		foreach ( $keys as $realkey ) {
 			if ( $key === strtolower( $realkey ) ) {

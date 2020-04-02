@@ -162,17 +162,9 @@ class AggregateMessageGroup extends MessageGroupBase {
 		 * @var $group MessageGroup
 		 */
 		foreach ( $this->getGroups() as $group ) {
-			// @todo Not all oldstyle groups have getKeys yet
-			if ( is_callable( [ $group, 'getKeys' ] ) ) {
-				// @phan-suppress-next-line PhanUndeclaredMethod
-				$moreKeys = $group->getKeys();
-			} else {
-				$moreKeys = array_keys( $group->getDefinitions() );
-			}
-
 			// Array merge is *really* slow (tested in PHP 7.1), so avoiding it. A loop
 			// followed by array_unique (which we need anyway) is magnitudes faster.
-			foreach ( $moreKeys as $key ) {
+			foreach ( $group->getKeys() as $key ) {
 				$keys[] = $key;
 			}
 		}

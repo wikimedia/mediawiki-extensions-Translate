@@ -296,21 +296,8 @@ abstract class MessageIndex {
 	 * @param bool $ignore
 	 */
 	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
-		if ( is_callable( [ $g, 'getKeys' ] ) ) {
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$keys = $g->getKeys();
-		} else {
-			$messages = $g->getDefinitions();
-
-			if ( !is_array( $messages ) ) {
-				return;
-			}
-
-			$keys = array_keys( $messages );
-		}
-
+		$keys = $g->getKeys();
 		$id = $g->getId();
-
 		$namespace = $g->getNamespace();
 
 		foreach ( $keys as $key ) {

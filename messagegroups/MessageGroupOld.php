@@ -207,6 +207,13 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	public function getKeys() {
+		return array_keys( $this->getDefinitions() );
+	}
+
+	/**
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
 	 *
