@@ -4,11 +4,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialExportTranslations extends SpecialPage {
-	/**
-	 * Maximum size of a group until exporting is not allowed due to performance reasons.
-	 */
-	public const MAX_EXPORT_SIZE = 10000;
-
 	/** @var string */
 	protected $language;
 
@@ -171,14 +166,6 @@ class SpecialExportTranslations extends SpecialPage {
 			&& !$msgGroup instanceof FileBasedMessageGroup
 		) {
 			$status->fatal( 'translate-export-format-notsupported' );
-		}
-
-		$size = count( $msgGroup->getKeys() );
-		if ( $size > self::MAX_EXPORT_SIZE ) {
-			$status->fatal(
-				'translate-export-group-too-large',
-				Message::numParam( self::MAX_EXPORT_SIZE )
-			);
 		}
 
 		return $status;
