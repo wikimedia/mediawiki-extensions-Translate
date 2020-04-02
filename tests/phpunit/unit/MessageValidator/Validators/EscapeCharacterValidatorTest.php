@@ -77,7 +77,7 @@ class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 
 	public function testEmptyValues() {
 		$this->expectException( \InvalidArgumentException::class );
-		$this->expectExceptionMessageRegExp( '/no values provided/i' );
+		$this->expectExceptionMessageMatches( '/no values provided/i' );
 		new EscapeCharacterValidator( [
 			'values' => [],
 		] );
@@ -85,7 +85,7 @@ class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 
 	public function testInvalidEscape() {
 		$this->expectException( \InvalidArgumentException::class );
-		$this->expectExceptionMessageRegExp( '/invalid escape character/i' );
+		$this->expectExceptionMessageMatches( '/invalid escape character/i' );
 		new EscapeCharacterValidator( [
 			'values' => [ '\c' ],
 		] );
