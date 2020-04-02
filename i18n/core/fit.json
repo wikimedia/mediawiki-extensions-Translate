@@ -107,7 +107,7 @@
 	"translate-tag-page-desc": "Wikisivun [[$2|$1]] käänös kielestä $3 ($4).",
 	"translate-sidebar-alltrans": "Muila kielilä",
 	"translations": "Kaikki käänökset",
-	"translations-summary": "Kirjoita alle sen viestin nimi, jonka kaikki käänökset haluat nähdä.",
+	"translations-summary": "Kirjota alle sen viestin nimi, jonka kaikki käänökset halvaat nähä.",
 	"translate-translations-no-message": "”$1” ei ole käänettävä viesti",
 	"translate-translations-none": "Viestillä ”$1” ei ole käänöksiä",
 	"translate-translations-count": "Kaikkians {{PLURAL:$1|yksi käänös|$1 käänöstä}}.",
