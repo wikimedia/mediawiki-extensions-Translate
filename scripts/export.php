@@ -93,11 +93,13 @@ class CommandlineExport extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
+
 		$this->addOption(
 			'offline-gettext-format',
-			'(optional) Export languages in offline Gettext format',
+			'(optional) Export languages in offline Gettext format. Give a file pattern with '
+			. '%GROUPID% and %CODE%. Empty pattern defaults to %GROUPID%/%CODE%.po.',
 			false, /*required*/
-			false /*has arg*/
+			true /*has arg*/
 		);
 		$this->requireExtension( 'Translate' );
 	}
@@ -134,6 +136,7 @@ class CommandlineExport extends Maintenance {
 
 		$codemapOnly = $this->hasOption( 'codemaponly' );
 		$forOffline = $this->hasOption( 'offline-gettext-format' );
+		$offlineTargetPattern = $this->getOption( 'offline-gettext-format' ) ?: "%GROUPID%/%CODE%.po";
 
 		$groupIds = explode( ',', trim( $this->getOption( 'group' ) ) );
 		$groupIds = MessageGroups::expandWildcards( $groupIds );
@@ -265,7 +268,7 @@ class CommandlineExport extends Maintenance {
 			$this->output( 'Exporting ' . count( $langs ) . " languages for group $groupId" );
 
 			if ( $forOffline ) {
-				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group );
+				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group, $offlineTargetPattern );
 				$ffs = new GettextFFS( $fileBasedGroup );
 				$ffs->setOfflineMode( true );
 			} else {

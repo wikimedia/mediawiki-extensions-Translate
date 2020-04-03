@@ -23,9 +23,13 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	 * Constructs a FileBasedMessageGroup from any normal message group.
 	 * Useful for doing special Gettext exports from any group.
 	 * @param MessageGroup $group
+	 * @param string $targetPattern Value for FILES.targetPattern
 	 * @return self
 	 */
-	public static function newFromMessageGroup( $group ) {
+	public static function newFromMessageGroup(
+		MessageGroup $group,
+		string $targetPattern = ''
+	) {
 		$conf = [
 			'BASIC' => [
 				'class' => self::class,
@@ -35,7 +39,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 			],
 			'FILES' => [
 				'sourcePattern' => '',
-				'targetPattern' => "{$group->getId()}/%CODE%.po",
+				'targetPattern' => $targetPattern,
 			],
 		];
 
@@ -137,6 +141,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 			'%CODE%' => $this->mapCode( $code ),
 			'%MWROOT%' => $IP,
 			'%GROUPROOT%' => $wgTranslateGroupRoot,
+			'%GROUPID%' => $this->getId(),
 		];
 
 		Hooks::run( 'TranslateMessageGroupPathVariables', [ $this, &$variables ] );
