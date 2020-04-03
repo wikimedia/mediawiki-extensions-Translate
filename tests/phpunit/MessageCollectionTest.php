@@ -10,7 +10,7 @@
  * @group medium
  * @covers MessageCollection
  */
-class MessageCollectionTest extends MediaWikiTestCase {
+class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

@@ -13,7 +13,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group Database
  * @group large
  */
-class MessageIndexTest extends MediaWikiTestCase {
+class MessageIndexTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 		$this->setMwGlobals( [

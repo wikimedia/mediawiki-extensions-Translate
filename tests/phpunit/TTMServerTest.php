@@ -6,7 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
-class TTMServerTest extends MediaWikiTestCase {
+class TTMServerTest extends MediaWikiIntegrationTestCase {
 	protected $config;
 
 	protected function setUp() : void {

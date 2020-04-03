@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-class XliffFFSTest extends MediaWikiTestCase {
+class XliffFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,

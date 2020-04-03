@@ -8,7 +8,7 @@
 /**
  * @coversDefaultClass \MessageGroupCache
  */
-class MessageGroupCacheTest extends MediaWikiTestCase {
+class MessageGroupCacheTest extends MediaWikiIntegrationTestCase {
 	public function testKeyOrder() {
 		$messages = [
 			'x-message' => '',

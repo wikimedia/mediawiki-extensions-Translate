@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
-class DtdFFSTest extends MediaWikiTestCase {
+class DtdFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration = [
 		'BASIC' => [

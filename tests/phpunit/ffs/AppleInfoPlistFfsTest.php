@@ -11,7 +11,7 @@
 /**
  * @covers AppleInfoPlistFfs
  */
-class AppleInfoPlistFfsTest extends MediaWikiTestCase {
+class AppleInfoPlistFfsTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfigurationInfoPList = [
 		'BASIC' => [

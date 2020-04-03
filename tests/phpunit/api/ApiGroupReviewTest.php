@@ -10,7 +10,7 @@
 /**
  * @group Database
  */
-class ApiGroupReviewTest extends MediaWikiTestCase {
+class ApiGroupReviewTest extends MediaWikiIntegrationTestCase {
 	public function testGetSetState() {
 		$group = new WikiMessageGroup( 'testgroup', 'wewgweg' );
 

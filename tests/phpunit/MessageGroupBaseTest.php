@@ -2,7 +2,7 @@
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 
-class MessageGroupBaseTest extends MediaWikiTestCase {
+class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @var MessageGroup

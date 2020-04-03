@@ -8,7 +8,7 @@
 /**
  * @ingroup PageTranslation
  */
-class TPParseTest extends MediaWikiTestCase {
+class TPParseTest extends MediaWikiIntegrationTestCase {
 	public function testGetTranslationPageText() {
 		$title = Title::newFromText( __CLASS__ );
 		$page = TranslatablePage::newFromText(

@@ -3,7 +3,7 @@
 /**
  * @group Database
  */
-class MessageWebImporterTest extends MediaWikiTestCase {
+class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 	private const PAGE = 'MediaWiki:' . __METHOD__ . '_translated';
 
 	protected function setUp() : void {

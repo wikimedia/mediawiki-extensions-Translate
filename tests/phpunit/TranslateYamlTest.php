@@ -6,7 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
-class TranslateYamlTest extends MediaWikiTestCase {
+class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

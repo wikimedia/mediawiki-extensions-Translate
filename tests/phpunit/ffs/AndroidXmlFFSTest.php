@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-class AndroidXmlFFSTest extends MediaWikiTestCase {
+class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration = [
 		'BASIC' => [

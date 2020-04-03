@@ -12,7 +12,7 @@
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\ValidationResult
  * @group TranslationValidators
  */
-class MessageValidatorTest extends MediaWikiTestCase {
+class MessageValidatorTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @var MessageGroup

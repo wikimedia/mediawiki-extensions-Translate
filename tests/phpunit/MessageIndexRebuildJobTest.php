@@ -9,7 +9,7 @@
  * @group Database
  * @group medium
  */
-class MessageIndexRebuildJobTest extends MediaWikiTestCase {
+class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 	protected $config = [];
 
 	public function setUp() : void {

@@ -8,7 +8,7 @@
 /**
  * Mostly test mirroring and failure modes.
  */
-class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
+class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @var WritableTTMServer[] used to link our mocks with TestableTTMServer built by the
 	 * factory

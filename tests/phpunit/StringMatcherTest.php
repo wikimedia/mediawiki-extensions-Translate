@@ -6,7 +6,7 @@
  * @file
  */
 
-class StringMatcherTest extends MediaWikiTestCase {
+class StringMatcherTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @dataProvider messageKeyProvider
 	 */

@@ -9,7 +9,7 @@
  * @file
  */
 
-class AppleFFSTest extends MediaWikiTestCase {
+class AppleFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration = [
 		'BASIC' => [

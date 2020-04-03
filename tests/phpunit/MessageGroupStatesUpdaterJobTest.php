@@ -4,7 +4,7 @@
  * @group Database
  * @group medium
  */
-class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
+class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

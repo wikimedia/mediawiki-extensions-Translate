@@ -4,7 +4,7 @@
  * @group Database
  * @covers TranslationAidDataProvider
  */
-class TranslationAidDataProviderTest extends MediaWikiTestCase {
+class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp() : void {
 		parent::setUp();

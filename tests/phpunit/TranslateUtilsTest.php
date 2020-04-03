@@ -7,7 +7,7 @@ use MediaWiki\Revision\RevisionRecord;
  * @group Database
  * @covers TranslateUtils
  */
-class TranslateUtilsTest extends MediaWikiTestCase {
+class TranslateUtilsTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * Creates a new page with name and text, returns a revision

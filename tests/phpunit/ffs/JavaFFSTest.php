@@ -8,7 +8,7 @@
  * @file
  */
 
-class JavaFFSTest extends MediaWikiTestCase {
+class JavaFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration = [
 		'BASIC' => [

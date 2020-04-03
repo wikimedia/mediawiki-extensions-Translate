@@ -11,7 +11,7 @@
 /**
  * @see JsonFFS
  */
-class JsonFFSTest extends MediaWikiTestCase {
+class JsonFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function setUp() : void {
 		parent::setUp();

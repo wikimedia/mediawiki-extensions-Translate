@@ -11,7 +11,7 @@ use MediaWiki\MediaWikiServices;
 /**
  * @group Database
  */
-class ApiTranslationReviewTest extends MediaWikiTestCase {
+class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

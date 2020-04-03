@@ -8,7 +8,7 @@
  /**
   * @group medium
   */
-class WikiPageMessageGroupTest extends MediaWikiTestCase {
+class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

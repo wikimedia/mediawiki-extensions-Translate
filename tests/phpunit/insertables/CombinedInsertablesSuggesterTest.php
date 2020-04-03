@@ -5,7 +5,7 @@
  * @author Geoffrey Mon
  * @license GPL-2.0-or-later
  */
-class CombinedInsertablesSuggesterTest extends MediaWikiTestCase {
+class CombinedInsertablesSuggesterTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @dataProvider getInsertablesProvider

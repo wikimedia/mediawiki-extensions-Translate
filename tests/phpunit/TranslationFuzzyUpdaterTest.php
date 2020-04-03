@@ -11,7 +11,7 @@
  * @group Database
  * @group medium
  */
-class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
+class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

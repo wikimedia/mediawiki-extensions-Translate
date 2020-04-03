@@ -9,7 +9,7 @@
  * @group Database
  * ^ See AggregateMessageGroup::getGroups -> MessageGroups::getPriority
  */
-class MessageGroupsTest extends MediaWikiTestCase {
+class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

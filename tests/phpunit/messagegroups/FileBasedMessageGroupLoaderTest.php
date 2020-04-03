@@ -1,6 +1,6 @@
 <?php
 
-class FileBasedMessageGroupLoaderTest extends MediaWikiTestCase {
+class FileBasedMessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @var FileBasedMessageGroupLoader
 	 */

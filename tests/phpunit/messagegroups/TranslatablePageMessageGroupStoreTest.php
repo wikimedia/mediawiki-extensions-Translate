@@ -2,7 +2,7 @@
 /**
  * @group Database
  */
-class TranslatablePageMessageGroupStoreTest extends MediaWikiTestCase {
+class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @var TranslatablePageMessageGroupStore

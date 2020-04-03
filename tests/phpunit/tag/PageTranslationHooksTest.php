@@ -14,7 +14,7 @@ use MediaWiki\Revision\RevisionRecord;
  * @group Database
  * @group medium
  */
-class PageTranslationHooksTest extends MediaWikiTestCase {
+class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

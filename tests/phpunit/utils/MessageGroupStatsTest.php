@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-class MessageGroupStatsTest extends MediaWikiTestCase {
+class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

@@ -11,7 +11,7 @@
  * @ingroup PageTranslation
  * @group Database
  */
-class PageTranslationParserTest extends MediaWikiTestCase {
+class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 	public static function provideTestFiles() {
 		$dir = __DIR__;
 		$testFiles = glob( "$dir/pagetranslation/*.ptfile" );

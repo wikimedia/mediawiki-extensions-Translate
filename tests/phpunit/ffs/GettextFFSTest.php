@@ -11,7 +11,7 @@
 /**
  * @see GettextFFS
  */
-class GettextFFSTest extends MediaWikiTestCase {
+class GettextFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration;
 
 	public function setUp() : void {

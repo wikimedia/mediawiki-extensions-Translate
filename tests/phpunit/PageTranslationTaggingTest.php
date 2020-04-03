@@ -6,7 +6,7 @@ use MediaWiki\MediaWikiServices;
  * @group Database
  * @group medium
  */
-class PageTranslationTaggingTest extends MediaWikiTestCase {
+class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 

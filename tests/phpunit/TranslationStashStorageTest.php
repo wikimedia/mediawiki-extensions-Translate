@@ -8,7 +8,7 @@
 /**
  * @group Database
  */
-class TranslationStashStorageTest extends MediaWikiTestCase {
+class TranslationStashStorageTest extends MediaWikiIntegrationTestCase {
 
 	public function testAdd() {
 		$storage = new TranslationStashStorage( wfGetDB( DB_MASTER ) );

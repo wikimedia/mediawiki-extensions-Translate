@@ -11,7 +11,7 @@
 /**
  * @see AmdFFS
  */
-class AmdFFSTest extends MediaWikiTestCase {
+class AmdFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function setUp() : void {
 		parent::setUp();
