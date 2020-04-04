@@ -451,7 +451,12 @@ class TranslateUtils {
 		$formats = [];
 
 		$filename = substr( $icon, 7 );
-		$file = wfFindFile( $filename );
+		if ( method_exists( MediaWikiServices::class, 'getRepoGroup' ) ) {
+			// MediaWiki 1.34+
+			$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $filename );
+		} else {
+			$file = wfFindFile( $filename );
+		}
 		if ( !$file ) {
 			wfWarn( "Unknown message group icon file $icon" );
 
