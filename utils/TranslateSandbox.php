@@ -49,9 +49,15 @@ class TranslateSandbox {
 		$creator = TranslateUserManager::getUser();
 		$guard = $permissionManager->addTemporaryUserRights( $creator, 'createaccount' );
 
-		$reqs = AuthManager::singleton()->getAuthenticationRequests( AuthManager::ACTION_CREATE );
+		if ( method_exists( MediaWikiServices::class, 'getAuthManager' ) ) {
+			// MediaWiki 1.35+
+			$authManager = MediaWikiServices::getInstance()->getAuthManager();
+		} else {
+			$authManager = AuthManager::singleton();
+		}
+		$reqs = $authManager->getAuthenticationRequests( AuthManager::ACTION_CREATE );
 		$reqs = AuthenticationRequest::loadRequestsFromSubmission( $reqs, $data );
-		$res = AuthManager::singleton()->beginAccountCreation( $creator, $reqs, 'null:' );
+		$res = $authManager->beginAccountCreation( $creator, $reqs, 'null:' );
 
 		ScopedCallback::consume( $guard );
 
