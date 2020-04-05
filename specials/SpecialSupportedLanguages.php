@@ -243,15 +243,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
 
-		if ( class_exists( ActorMigration::class ) ) {
-			$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
-		} else {
-			$actorQuery = [
-				'tables' => [],
-				'fields' => [ 'rev_user_text' => 'rev_user_text' ],
-				'joins' => [],
-			];
-		}
+		$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
 
 		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
 		$fields = [
