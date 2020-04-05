@@ -8,7 +8,12 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extensions\Translate\Statistics\StatisticsUnavailable;
+use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
+use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Implements special page Special:SupportedLanguages. The wiki administrator
@@ -21,17 +26,20 @@ use MediaWiki\Logger\LoggerFactory;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
-	private const USER_TRANSLATIONS = 0;
-	private const USER_LAST_ACTIVITY = 1;
+	private $options;
 
-	/// Whether to skip and regenerate caches
-	protected $purge = false;
+	/** @var TranslatorActivity */
+	private $translatorActivity;
 
 	/// Cutoff time for inactivity in days
 	protected $period = 180;
 
 	public function __construct() {
 		parent::__construct( 'SupportedLanguages' );
+		// TODO: Use construction injection when 1.33 is no longer supported
+		// TODO: Only inject the needed configuration options when 1.33 is no longer supported
+		$this->options = MediaWikiServices::getInstance()->getMainConfig();
+		$this->translatorActivity = Services::getInstance()->getTranslatorActivity();
 	}
 
 	protected function getGroupName() {
@@ -45,9 +53,6 @@ class SpecialSupportedLanguages extends SpecialPage {
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
-
-		// Only for manual debugging nowdays
-		$this->purge = false;
 
 		$this->setHeaders();
 		$out->addModules( 'ext.translate.special.supportedlanguages' );
@@ -77,26 +82,26 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->outputLanguageCloud( $languages, $names );
 		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $languages ) ) );
 
-		if ( $par && Language::isKnownLanguageTag( $par ) ) {
-			$code = $par;
-
-			$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
-
-			$users = $this->fetchTranslators( $code );
-			if ( !$users ) {
-				// generic-pool-error is from MW core
-				$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
-				return;
-			}
-
-			global $wgTranslateAuthorBlacklist;
-			$users = $this->filterUsers( $users, $code, $wgTranslateAuthorBlacklist );
-			$this->preQueryUsers( $users );
-			$this->showLanguage( $code, $users );
+		if ( !$par || !Language::isKnownLanguageTag( $par ) ) {
+			return;
 		}
+
+		$language = $par;
+		try {
+			$data = $this->translatorActivity->inLanguage( $language );
+		} catch ( StatisticsUnavailable $e ) {
+			// generic-pool-error is from MW core
+			$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
+			return;
+		}
+
+		$users = $data['users'];
+		$users = $this->filterUsers( $users, $language );
+		$this->preQueryUsers( $users );
+		$this->showLanguage( $language, $users, $data['asOfTime'] );
 	}
 
-	protected function showLanguage( string $code, array $users ): void {
+	protected function showLanguage( string $code, array $users, int $cachedAt ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 
@@ -145,20 +150,22 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$out->addHTML( '<p>' . $linkList . "</p>\n" );
 		$this->makeUserList( $users );
+
+		$ageString = $this->getLanguage()->formatTimePeriod(
+			time() - $cachedAt,
+			[ 'noabbrevs' => true, 'avoid' => 'avoidseconds' ]
+		);
+		$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
+		$out->addWikiMsg( 'translate-supportedlanguages-cached', $ageString );
 	}
 
 	protected function languageCloud() {
-		global $wgTranslateMessageNamespaces;
-
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages-language-cloud' );
-		if ( $this->purge ) {
-			$cache->delete( $cachekey );
-		} else {
-			$data = $cache->get( $cachekey );
-			if ( is_array( $data ) ) {
-				return $data;
-			}
+
+		$data = $cache->get( $cachekey );
+		if ( is_array( $data ) ) {
+			return $data;
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
@@ -168,7 +175,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$conds = [
 			# Without the quotes the rc_timestamp index isn't used and this query is much slower
 			"rc_timestamp > '$timestamp'",
-			'rc_namespace' => $wgTranslateMessageNamespaces,
+			'rc_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 		];
 		$options = [ 'GROUP BY' => 'lang', 'HAVING' => 'count > 20', 'ORDER BY' => 'NULL' ];
@@ -185,102 +192,16 @@ class SpecialSupportedLanguages extends SpecialPage {
 		return $data;
 	}
 
-	/**
-	 * Fetch the translators for a language with caching
-	 *
-	 * @param string $code
-	 * @return ?array Map of (user name => translation stats) or null on failure
-	 */
-	public function fetchTranslators( string $code ): ?array {
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list-v2', $code );
+	protected function filterUsers( array $users, string $code ): array {
+		$blacklist = $this->options->get( 'TranslateAuthorBlacklist' );
 
-		if ( $this->purge ) {
-			$cache->delete( $cachekey );
-			$data = false;
-		} else {
-			$staleCutoffUnix = time() - 3600;
-			$data = $cache->get( $cachekey );
-			if ( is_array( $data ) && $data['asOfTime'] > $staleCutoffUnix ) {
-				return $data['users'];
-			}
-		}
-
-		$that = $this;
-		$work = new PoolCounterWorkViaCallback(
-			'TranslateFetchTranslators',
-			"TranslateFetchTranslators-$code",
-			[
-				'doWork' => function () use ( $that, $code, $cache, $cachekey ) {
-					$users = $that->loadTranslators( $code );
-					$newData = [ 'users' => $users, 'asOfTime' => time() ];
-					$cache->set( $cachekey, $newData, 86400 );
-					return $users;
-				},
-				'doCachedWork' => function () use ( $cache, $cachekey ) {
-					$newData = $cache->get( $cachekey );
-					// Use new cache value from other thread
-					return is_array( $newData ) ? $newData['users'] : null;
-				},
-				'fallback' => function () use ( $data ) {
-					// Use stale cache if possible
-					return is_array( $data ) ? $data['users'] : null;
-				}
-			]
-		);
-
-		return $work->execute();
-	}
-
-	/**
-	 * Fetch the translators for a language
-	 *
-	 * @param string $code
-	 * @return array Map of user name to translation stats
-	 */
-	public function loadTranslators( string $code ): array {
-		global $wgTranslateMessageNamespaces;
-
-		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
-
-		$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
-
-		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
-		$fields = [
-			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
-			'MAX(rev_timestamp) as lastedit',
-			'count(page_id) as count'
-		];
-		$conds = [
-			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
-			'page_namespace' => $wgTranslateMessageNamespaces,
-		];
-		$options = [ 'GROUP BY' => $actorQuery['fields']['rev_user_text'], 'ORDER BY' => 'NULL' ];
-		$joins = [
-			'revision' => [ 'JOIN', 'page_id=rev_page' ],
-		] + $actorQuery['joins'];
-
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
-
-		$data = [];
-		foreach ( $res as $row ) {
-			$data[$row->rev_user_text] = [
-				self::USER_TRANSLATIONS => $row->count,
-				self::USER_LAST_ACTIVITY => $row->lastedit,
-			];
-		}
-
-		return $data;
-	}
-
-	protected function filterUsers( array $users, $code, $blacklist ) {
 		foreach ( array_keys( $users ) as $username ) {
 			# We do not know the group
 			$hash = "#;$code;$username";
 
 			$blacklisted = false;
 			foreach ( $blacklist as $rule ) {
-				list( $type, $regex ) = $rule;
+				[ $type, $regex ] = $rule;
 
 				if ( preg_match( $regex, $hash ) ) {
 					if ( $type === 'white' ) {
@@ -334,7 +255,11 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		// List users in descending order by number of translations in this language
 		uasort( $userStats, function ( $a, $b ) {
-			return -( $a[self::USER_TRANSLATIONS] <=> $b[self::USER_TRANSLATIONS] );
+			return -(
+				$a[TranslatorActivityQuery::USER_TRANSLATIONS]
+				<=>
+				$b[TranslatorActivityQuery::USER_TRANSLATIONS]
+			);
 		} );
 
 		foreach ( $userStats as $username => $stats ) {
@@ -347,8 +272,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 				continue;
 			}
 
-			$count = $stats[self::USER_TRANSLATIONS];
-			$lastTranslationTimestamp = $stats[self::USER_LAST_ACTIVITY];
+			$count = $stats[TranslatorActivityQuery::USER_TRANSLATIONS];
+			$lastTranslationTimestamp = $stats[TranslatorActivityQuery::USER_LAST_ACTIVITY];
 
 			$enc = htmlspecialchars( $username );
 

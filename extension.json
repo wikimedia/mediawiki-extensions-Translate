@@ -21,6 +21,9 @@
 	},
 	"callback": "TranslateHooks::setupTranslate",
 	"load_composer_autoloader": true,
+	"ServiceWiringFiles": [
+		"src/ServiceWiring.php"
+	],
 	"manifest_version": 2,
 	"namespaces": [
 		{
@@ -260,6 +263,9 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extensions\\Translate\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Extensions\\Translate\\": "tests/phpunit/unit/"
+	},
 	"Hooks": {
 		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
 		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
@@ -360,7 +366,8 @@
 		"MessageGroupStatsRebuildJob": "MessageGroupStatsRebuildJob",
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
-		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob"
+		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
+		"UpdateTranslatorActivity": "\\MediaWiki\\Extensions\\Translate\\Statistics\\UpdateTranslatorActivityJob"
 	},
 	"LogTypes": [
 		"translationreview"
