@@ -672,7 +672,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = [ 'page', 'revtag' ];
 		$fields = [ 'page_namespace', 'page_title', 'rt_type' ];
-		$conds = $titleConds ?? $this->getTitleConds( $dbr );
 		$joins = [ 'revtag' =>
 		[
 			'LEFT JOIN',
@@ -707,7 +706,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = [ 'page', 'translate_reviews' ];
 		$fields = [ 'page_namespace', 'page_title', 'trr_user' ];
-		$conds = $titleConds ?? $this->getTitleConds( $dbr );
 		$joins = [ 'translate_reviews' =>
 			[
 				'JOIN',
