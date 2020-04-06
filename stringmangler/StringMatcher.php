@@ -174,24 +174,28 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 	/**
 	 * Unmangles the message key by removing the prefix it it exists.
-	 * @param string $string Message key.
+	 * @param string $key Message key.
 	 * @return string Unmangled message key.
 	 */
-	protected function unMangleString( $string ) {
+	protected function unMangleString( string $key ): string {
 		// Unescape the "quoted-printable"-like escaping,
 		// which is applied in mangleString.
 		$unescapedString = preg_replace_callback( '/=([A-F0-9]{2})/',
 			function ( $match ) {
 				return chr( hexdec( $match[1] ) );
 			},
-			$string
+			$key
 		);
 
 		if ( strncmp( $unescapedString, $this->sPrefix, strlen( $this->sPrefix ) ) === 0 ) {
-			return substr( $unescapedString, strlen( $this->sPrefix ) );
-		} else {
-			return $unescapedString;
+			$unmangled = substr( $unescapedString, strlen( $this->sPrefix ) );
+
+			// Check if this string should be mangled / un-mangled to begin with
+			if ( $this->match( $unmangled ) ) {
+				return $unmangled;
+			}
 		}
+		return $unescapedString;
 	}
 
 	/**
