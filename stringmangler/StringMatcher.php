@@ -26,7 +26,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 *
 	 * @return self
 	 */
-	public static function EmptyMatcher() {
+	public static function EmptyMatcher(): self {
 		return new self();
 	}
 
@@ -36,12 +36,12 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @param string $prefix
 	 * @param array $patterns
 	 */
-	public function __construct( $prefix = '', array $patterns = [] ) {
+	public function __construct( string $prefix = '', array $patterns = [] ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
 	}
 
-	protected static function getValidKeyChars() {
+	protected static function getValidKeyChars(): string {
 		static $valid = null;
 		if ( $valid === null ) {
 			global $wgLegalTitleChars;
@@ -55,7 +55,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		return $valid;
 	}
 
-	public function setConf( $conf ) {
+	public function setConf( array $conf ) {
 		$this->sPrefix = $conf['prefix'];
 		$this->init( $conf['patterns'] );
 	}
@@ -82,22 +82,22 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param string $string
+	 * @param string $key
 	 * @return bool
 	 */
-	public function match( $string ) {
-		if ( in_array( $string, $this->aExact ) ) {
+	public function match( string $key ): bool {
+		if ( in_array( $key, $this->aExact ) ) {
 			return true;
 		}
 
 		foreach ( $this->aPrefix as $prefix => $len ) {
-			if ( strncmp( $string, $prefix, $len ) === 0 ) {
+			if ( strncmp( $key, $prefix, $len ) === 0 ) {
 				return true;
 			}
 		}
 
 		foreach ( $this->aRegex as $regex ) {
-			if ( preg_match( $regex, $string ) ) {
+			if ( preg_match( $regex, $key ) ) {
 				return true;
 			}
 		}
@@ -140,17 +140,17 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 	/**
 	 * Mangles or unmangles single string.
-	 * @param string $string Message key.
+	 * @param string $key Message key.
 	 * @param bool $reverse Direction of mangling or unmangling.
 	 * @return string
 	 */
-	protected function mangleString( $string, $reverse = false ) {
+	protected function mangleString( string $key, bool $reverse = false ): string {
 		if ( $reverse ) {
-			return $this->unMangleString( $string );
+			return $this->unMangleString( $key );
 		}
 
-		if ( $this->match( $string ) ) {
-			$string = $this->sPrefix . $string;
+		if ( $this->match( $key ) ) {
+			$key = $this->sPrefix . $key;
 		}
 
 		$escaper = function ( $match ) {
@@ -163,13 +163,13 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 		// Apply a "quoted-printable"-like escaping
 		$valid = self::getValidKeyChars();
-		$string = preg_replace_callback( "/[^$valid]/", $escaper, $string );
+		$key = preg_replace_callback( "/[^$valid]/", $escaper, $key );
 		// Additional limitations in MediaWiki, see MediaWikiTitleCodec::splitTitleString
-		$string = preg_replace_callback( '/(~~~|^[ _]|[ _]$|[ _]{2,}|^:)/', $escaper, $string );
+		$key = preg_replace_callback( '/(~~~|^[ _]|[ _]$|[ _]{2,}|^:)/', $escaper, $key );
 		// TODO: length check + truncation
 		// TODO: forbid path travels
 
-		return $string;
+		return $key;
 	}
 
 	/**
@@ -206,7 +206,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @param bool $reverse Direction of mangling or unmangling.
 	 * @return string[]|array (Un)mangled strings.
 	 */
-	protected function mangleArray( array $array, $reverse = false ) {
+	protected function mangleArray( array $array, $reverse = false ): array {
 		$temp = [];
 
 		if ( !$this->isAssoc( $array ) ) {
@@ -224,7 +224,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		return $temp;
 	}
 
-	protected function isAssoc( array $array ) {
+	protected function isAssoc( array $array ): bool {
 		$assoc = (bool)count( array_filter( array_keys( $array ), 'is_string' ) );
 		if ( $assoc ) {
 			return true;
@@ -234,7 +234,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		return !array_key_exists( 0, $array );
 	}
 
-	public static function getExtraSchema() {
+	public static function getExtraSchema(): array {
 		$schema = [
 			'root' => [
 				'_type' => 'array',

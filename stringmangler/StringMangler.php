@@ -23,7 +23,7 @@ interface StringMangler {
 	 * General way to pass configuration to the mangler.
 	 * @param array $configuration
 	 */
-	public function setConf( $configuration );
+	public function setConf( array $configuration );
 
 	/**
 	 * Match strings against a pattern.
@@ -31,7 +31,7 @@ interface StringMangler {
 	 * @param string $string Message key.
 	 * @return bool
 	 */
-	public function match( $string );
+	public function match( string $string ): bool;
 
 	/**
 	 * Mangles a list of message keys.
