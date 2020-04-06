@@ -85,6 +85,7 @@
 	"translate-mgs-pagename": "Statistiki pri la grupo di mesaji",
 	"translate-mgs-fieldset": "Montrez preferaji",
 	"translate-mgs-group": "Grupo di mesaji:",
+	"translate-mgs-column-language": "Linguo",
 	"supportedlanguages": "Suportita lingui",
 	"supportedlanguages-summary": "Ica pagino montras listo pri omna lingui suportida da {{SITENAME}}, kune la nomi di la tradukeri qui verkas en singla de la lingui.\nLa nomo dil tradukero videsas tante plu granda kam la quanto di redakti quin ilu facabas.\nLa koloro dil substrekizo indikas quan recenta esas la verko dil tradukero hike.",
 	"supportedlanguages-colorlegend": "Skalo di kolori: Lasta modifikuri dum la $1 dii.",

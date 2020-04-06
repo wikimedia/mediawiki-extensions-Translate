@@ -77,6 +77,7 @@
 	"translate-export-invalid-format": "Ange ett giltigt format.",
 	"translate-export-not-supported": "Översättningsexportering stöds inte.",
 	"translate-export-format-notsupported": "Det angivna exportformatet stöds inte av meddelandegruppen.",
+	"translate-export-group-too-large": "Den valda meddelandegruppen är för stor. Välj en meddelandegrupp som har färre än $1 {{PLURAL:$1|meddelande}} eller kontakta en översättningsadministratör för råd.",
 	"translate-magic-pagename": "Utökad MediaWiki-översättning",
 	"translate-magic-help": "Du kan översätta alias för specialsidor, magiska ord och namnrymdsnamn.\n\nAlias för specialsidor och magiska ord kan ha flera översättningar.\nÖversättningar skiljs åt med ett kommatecken (,).\nNamnrymder kan endast ha en översättning.\n\nÖversättning av projektets diskussionsnamnrymd <code>$1 talk</code> kan vara komplicerat.\n<code>$1</code> ersätts med projektets webbplatsnamn (till exempel <code>{{ns:project_talk}}</code>).\nOm det inte är möjligt att skapa en giltig översättning till ditt språk utan att ändra webbplatsens namn, var god [[Support|kontakta oss]].\n\nFör att kunna spara ändringar så behöver du vara översättare.\nÄndringar sparas inte förrän du klickar på spara-knappen nedan.",
 	"translate-magic-module": "Modul:",
