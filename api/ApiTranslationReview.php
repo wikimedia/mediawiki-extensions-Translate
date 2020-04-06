@@ -6,6 +6,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
+
 /**
  * API module for marking translations as reviewed
  *
@@ -19,12 +22,14 @@ class ApiTranslationReview extends ApiBase {
 
 		$params = $this->extractRequestParams();
 
-		$revision = Revision::newFromId( $params['revision'] );
-		if ( !$revision ) {
+		$revRecord = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionById( $params['revision'] );
+		if ( !$revRecord ) {
 			$this->dieWithError( [ 'apierror-nosuchrevid', $params['revision'] ], 'invalidrevision' );
 		}
 
-		$error = self::getReviewBlockers( $this->getUser(), $revision );
+		$error = self::getReviewBlockers( $this->getUser(), $revRecord );
 		switch ( $error ) {
 			case '':
 				// Everything is okay
@@ -48,15 +53,18 @@ class ApiTranslationReview extends ApiBase {
 				$this->dieWithError( [ 'apierror-unknownerror', $error ], $error );
 		}
 
-		$ok = self::doReview( $this->getUser(), $revision );
+		$ok = self::doReview( $this->getUser(), $revRecord );
 		if ( !$ok ) {
 			$this->addWarning( 'apiwarn-translate-alreadyreviewedbyyou' );
 		}
 
+		$prefixedText = MediaWikiServices::getInstance()
+			->getTitleFormatter()
+			->getPrefixedText( $revRecord->getPageAsLinkTarget() );
 		$output = [ 'review' => [
-			'title' => $revision->getTitle()->getPrefixedText(),
-			'pageid' => $revision->getPage(),
-			'revision' => $revision->getId()
+			'title' => $prefixedText,
+			'pageid' => $revRecord->getPageId(),
+			'revision' => $revRecord->getId()
 		] ];
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
@@ -65,17 +73,17 @@ class ApiTranslationReview extends ApiBase {
 	/**
 	 * Executes the real stuff. No checks done!
 	 * @param User $user
-	 * @param Revision $revision
+	 * @param RevisionRecord $revRecord
 	 * @param null|string $comment
 	 * @return bool whether the action was recorded.
 	 */
-	public static function doReview( User $user, Revision $revision, $comment = null ) {
+	public static function doReview( User $user, RevisionRecord $revRecord, $comment = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_reviews';
 		$row = [
 			'trr_user' => $user->getId(),
-			'trr_page' => $revision->getPage(),
-			'trr_revision' => $revision->getId(),
+			'trr_page' => $revRecord->getPageId(),
+			'trr_revision' => $revRecord->getId(),
 		];
 		$options = [ 'IGNORE' ];
 		$dbw->insert( $table, $row, __METHOD__, $options );
@@ -84,14 +92,14 @@ class ApiTranslationReview extends ApiBase {
 			return false;
 		}
 
-		$title = $revision->getTitle();
+		$title = $revRecord->getPageAsLinkTarget();
 
 		$entry = new ManualLogEntry( 'translationreview', 'message' );
 		$entry->setPerformer( $user );
 		$entry->setTarget( $title );
 		$entry->setComment( $comment );
 		$entry->setParameters( [
-			'4::revision' => $revision->getId(),
+			'4::revision' => $revRecord->getId(),
 		] );
 
 		$logid = $entry->insert();
@@ -106,11 +114,11 @@ class ApiTranslationReview extends ApiBase {
 	/**
 	 * Validates review action by checking permissions and other things.
 	 * @param User $user
-	 * @param Revision $revision
+	 * @param RevisionRecord $revRecord
 	 * @return string Error key or empty string if review is allowed.
 	 * @since 2012-09-24
 	 */
-	public static function getReviewBlockers( User $user, Revision $revision ) {
+	public static function getReviewBlockers( User $user, RevisionRecord $revRecord ) {
 		if ( !$user->isAllowed( self::$right ) ) {
 			return 'permissiondenied';
 		}
@@ -119,13 +127,13 @@ class ApiTranslationReview extends ApiBase {
 			return 'blocked';
 		}
 
-		$title = $revision->getTitle();
+		$title = $revRecord->getPageAsLinkTarget();
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
 			return 'unknownmessage';
 		}
 
-		if ( $revision->getUser() === $user->getId() ) {
+		if ( $user->equals( $revRecord->getUser() ) ) {
 			return 'owntranslation';
 		}
 

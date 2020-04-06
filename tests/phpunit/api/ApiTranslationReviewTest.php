@@ -99,10 +99,10 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 
 		foreach ( $testcases as $case ) {
 			list( $expected, $user, $page, $comment ) = $case;
-			$revision = MediaWikiServices::getInstance()
+			$revRecord = MediaWikiServices::getInstance()
 				->getRevisionLookup()
 				->getRevisionByTitle( new TitleValue( NS_MEDIAWIKI, $page ) );
-			$ok = ApiTranslationReview::getReviewBlockers( $user, new Revision( $revision ) );
+			$ok = ApiTranslationReview::getReviewBlockers( $user, $revRecord );
 			$this->assertEquals( $expected, $ok, $comment );
 		}
 	}

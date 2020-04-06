@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -15,7 +16,7 @@ use MediaWiki\MediaWikiServices;
  */
 class MessageHandle {
 	/**
-	 * @var Title
+	 * @var LinkTarget
 	 */
 	protected $title;
 
@@ -34,7 +35,7 @@ class MessageHandle {
 	 */
 	protected $groupIds;
 
-	public function __construct( Title $title ) {
+	public function __construct( LinkTarget $title ) {
 		$this->title = $title;
 	}
 
@@ -44,7 +45,7 @@ class MessageHandle {
 	 */
 	public function isMessageNamespace() {
 		global $wgTranslateMessageNamespaces;
-		$namespace = $this->getTitle()->getNamespace();
+		$namespace = $this->title->getNamespace();
 
 		return in_array( $namespace, $wgTranslateMessageNamespaces );
 	}
@@ -55,9 +56,8 @@ class MessageHandle {
 	 */
 	public function figureMessage() {
 		if ( $this->key === null ) {
-			$title = $this->getTitle();
 			// Check if this is a valid message first
-			$this->key = $title->getDBkey();
+			$this->key = $this->title->getDBkey();
 			$known = MessageIndex::singleton()->getGroupIds( $this ) !== [];
 
 			$pos = strrpos( $this->key, '/' );
@@ -125,7 +125,7 @@ class MessageHandle {
 	 * @return bool
 	 */
 	public function isPageTranslation() {
-		return $this->getTitle()->inNamespace( NS_TRANSLATIONS );
+		return $this->title->inNamespace( NS_TRANSLATIONS );
 	}
 
 	/**
@@ -192,7 +192,7 @@ class MessageHandle {
 	 * @return Title
 	 */
 	public function getTitle() {
-		return $this->title;
+		return Title::newFromLinkTarget( $this->title );
 	}
 
 	/**
@@ -262,7 +262,7 @@ class MessageHandle {
 	public function getInternalKey() {
 		$key = $this->getKey();
 
-		if ( !MWNamespace::isCapitalized( $this->getTitle()->getNamespace() ) ) {
+		if ( !MWNamespace::isCapitalized( $this->title->getNamespace() ) ) {
 			return $key;
 		}
 
