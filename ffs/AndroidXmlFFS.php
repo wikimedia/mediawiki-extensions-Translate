@@ -65,7 +65,7 @@ class AndroidXmlFFS extends SimpleFFS {
 
 		return [
 			'AUTHORS' => $this->scrapeAuthors( $data ),
-			'MESSAGES' => $mangler->mangle( $messages ),
+			'MESSAGES' => $mangler->mangleArray( $messages ),
 		];
 	}
 

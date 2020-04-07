@@ -50,7 +50,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	 */
 	public function getMangler() {
 		if ( $this->mangler === null ) {
-			$this->mangler = StringMatcher::EmptyMatcher();
+			$this->mangler = new StringMatcher();
 		}
 
 		return $this->mangler;

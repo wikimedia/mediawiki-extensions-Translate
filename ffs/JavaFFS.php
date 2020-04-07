@@ -85,7 +85,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			}
 		}
 
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$messages = $this->group->getMangler()->mangleArray( $messages );
 
 		return [
 			'AUTHORS' => $authors,

@@ -58,7 +58,7 @@ class IniFFS extends SimpleFFS {
 
 		$messages = parse_ini_string( $data );
 		if ( is_array( $messages ) ) {
-			$messages = $this->group->getMangler()->mangle( $messages );
+			$messages = $this->group->getMangler()->mangleArray( $messages );
 		} else {
 			$messages = null;
 		}

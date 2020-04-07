@@ -129,7 +129,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			$class = $this->getFromConf( 'MANGLER', 'class' );
 
 			if ( $class === null ) {
-				$this->mangler = StringMatcher::EmptyMatcher();
+				$this->mangler = new StringMatcher();
 
 				return $this->mangler;
 			}

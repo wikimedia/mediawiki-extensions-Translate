@@ -166,7 +166,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	public function getMangler() {
 		if ( !isset( $this->mangler ) ) {
-			$this->mangler = StringMatcher::EmptyMatcher();
+			$this->mangler = new StringMatcher();
 		}
 
 		return $this->mangler;

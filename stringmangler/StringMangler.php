@@ -1,6 +1,5 @@
 <?php
 /**
- * StringMangler interface.
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
@@ -14,36 +13,72 @@
  *
  * The operations have to be reversible so that
  * x equals unmangle( mangle( x ) ).
+ *
+ * @since 2020.04 Interface was changed.
  */
 interface StringMangler {
-	/// @todo Does this really need to be in the interface???
-	public static function EmptyMatcher();
-
 	/**
 	 * General way to pass configuration to the mangler.
+	 *
 	 * @param array $configuration
 	 */
-	public function setConf( array $configuration );
+	public function setConf( array $configuration ): void;
 
 	/**
 	 * Match strings against a pattern.
-	 * If string matches, mangle() should mangle the key.
-	 * @param string $string Message key.
+	 *
+	 * If string matches, mangle() prefixes the key.
+	 *
+	 * @param string $key Message key
 	 * @return bool
 	 */
-	public function match( string $string ): bool;
+	public function match( string $key ): bool;
 
 	/**
-	 * Mangles a list of message keys.
-	 * @param string|string[] $data Unmangled message keys.
-	 * @return string|string[] Mangled message keys.
+	 * Mangle a string.
+	 *
+	 * @param string $key
+	 * @return string Mangled message key
 	 */
-	public function mangle( $data );
+	public function mangle( string $key ): string;
 
 	/**
-	 * Reverses the operation mangle() did.
-	 * @param string|string[] $data Mangled message keys.
-	 * @return string|string[] Umangled message keys.
+	 * Mangle a list of strings.
+	 *
+	 * @param string[] $list
+	 * @return string[]
 	 */
-	public function unmangle( $data );
+	public function mangleList( array $list ): array;
+
+	/**
+	 * Mangle the keys of an array.
+	 *
+	 * @param array<string,mixed> $array
+	 * @return array<string,mixed>
+	 */
+	public function mangleArray( array $array ): array;
+
+	/**
+	 * Reverse mangling of a string.
+	 *
+	 * @param string $key Mangled message key
+	 * @return string $key Unmangled message key
+	 */
+	public function unmangle( string $key ): string;
+
+	/**
+	 * Reverse mangling a list of strings.
+	 *
+	 * @param string[] $list
+	 * @return string[]
+	 */
+	public function unmangleList( array $list ): array;
+
+	/**
+	 * Reverse mangling of the keys of an array.
+	 *
+	 * @param array<string,mixed> $array
+	 * @return array<string,mixed>
+	 */
+	public function unmangleArray( array $array ): array;
 }

@@ -1,6 +1,5 @@
 <?php
 /**
- * Default StringMangler implementation.
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
@@ -22,17 +21,6 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	protected $aRegex = [];
 
 	/**
-	 * Alias for making NO-OP string mangler.
-	 *
-	 * @return self
-	 */
-	public static function EmptyMatcher(): self {
-		return new self();
-	}
-
-	/**
-	 * Constructor, see EmptyMatcher();
-	 *
 	 * @param string $prefix
 	 * @param array $patterns
 	 */
@@ -41,32 +29,15 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		$this->init( $patterns );
 	}
 
-	protected static function getValidKeyChars(): string {
-		static $valid = null;
-		if ( $valid === null ) {
-			global $wgLegalTitleChars;
-			$valid = strtr( $wgLegalTitleChars, [
-				'=' => '', // equals sign, which is itself usef for escaping
-				'&' => '', // ampersand, for entities
-				'%' => '', // percent sign, which is used in URL encoding
-			] );
-		}
-
-		return $valid;
-	}
-
-	public function setConf( array $conf ) {
-		$this->sPrefix = $conf['prefix'];
-		$this->init( $conf['patterns'] );
-	}
-
 	/**
 	 * Preprocesses the patterns.
+	 *
 	 * They are split into exact keys, prefix matches and pattern matches to
 	 * speed up matching process.
+	 *
 	 * @param string[] $strings Key patterns.
 	 */
-	protected function init( array $strings ) {
+	protected function init( array $strings ): void {
 		foreach ( $strings as $string ) {
 			$pos = strpos( $string, '*' );
 			if ( $pos === false ) {
@@ -81,10 +52,30 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		}
 	}
 
-	/**
-	 * @param string $key
-	 * @return bool
-	 */
+	protected static function getValidKeyChars(): string {
+		static $valid = null;
+		if ( $valid === null ) {
+			global $wgLegalTitleChars;
+			$valid = strtr(
+				$wgLegalTitleChars,
+				[
+					'=' => '', // equals sign, which is itself usef for escaping
+					'&' => '', // ampersand, for entities
+					'%' => '', // percent sign, which is used in URL encoding
+				]
+			);
+		}
+
+		return $valid;
+	}
+
+	/** @inheritDoc */
+	public function setConf( array $conf ): void {
+		$this->sPrefix = $conf['prefix'];
+		$this->init( $conf['patterns'] );
+	}
+
+	/** @inheritDoc */
 	public function match( string $key ): bool {
 		if ( in_array( $key, $this->aExact ) ) {
 			return true;
@@ -105,57 +96,15 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		return false;
 	}
 
-	/**
-	 * Mangles the input. Input can either be a plain string, a list of strings
-	 * or an associative array. In the last case the keys of the array are
-	 * mangled.
-	 *
-	 * @param string|string[]|array $data
-	 * @return string|string[]|array
-	 * @throws MWException
-	 */
-	public function mangle( $data ) {
-		if ( is_array( $data ) ) {
-			return $this->mangleArray( $data );
-		} elseif ( is_string( $data ) ) {
-			return $this->mangleString( $data );
-		} elseif ( $data === null ) {
-			return $data;
-		} else {
-			throw new MWException( __METHOD__ . ': Unsupported datatype' );
-		}
-	}
-
-	public function unmangle( $data ) {
-		if ( is_array( $data ) ) {
-			return $this->mangleArray( $data, true );
-		} elseif ( is_string( $data ) ) {
-			return $this->mangleString( $data, true );
-		} elseif ( $data === null ) {
-			return $data;
-		} else {
-			throw new MWException( __METHOD__ . ': Unsupported datatype' );
-		}
-	}
-
-	/**
-	 * Mangles or unmangles single string.
-	 * @param string $key Message key.
-	 * @param bool $reverse Direction of mangling or unmangling.
-	 * @return string
-	 */
-	protected function mangleString( string $key, bool $reverse = false ): string {
-		if ( $reverse ) {
-			return $this->unMangleString( $key );
-		}
-
+	/** @inheritDoc */
+	public function mangle( string $key ): string {
 		if ( $this->match( $key ) ) {
 			$key = $this->sPrefix . $key;
 		}
 
 		$escaper = function ( $match ) {
 			$esc = '';
-			foreach ( str_split( $match[ 0 ] ) as $c ) {
+			foreach ( str_split( $match[0] ) as $c ) {
 				$esc .= '=' . sprintf( '%02X', ord( $c ) );
 			}
 			return $esc;
@@ -172,15 +121,31 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		return $key;
 	}
 
-	/**
-	 * Unmangles the message key by removing the prefix it it exists.
-	 * @param string $key Message key.
-	 * @return string Unmangled message key.
-	 */
-	protected function unMangleString( string $key ): string {
+	/** @inheritDoc */
+	public function mangleList( array $list ): array {
+		foreach ( $list as $index => $key ) {
+			$list[$index] = $this->mangle( $key );
+		}
+
+		return $list;
+	}
+
+	/** @inheritDoc */
+	public function mangleArray( array $array ): array {
+		$out = [];
+		foreach ( $array as $key => $value ) {
+			$out[$this->mangle( $key )] = $value;
+		}
+
+		return $out;
+	}
+
+	/** @inheritDoc */
+	public function unmangle( string $key ): string {
 		// Unescape the "quoted-printable"-like escaping,
-		// which is applied in mangleString.
-		$unescapedString = preg_replace_callback( '/=([A-F0-9]{2})/',
+		// which is applied in mangle
+		$unescapedString = preg_replace_callback(
+			'/=([A-F0-9]{2})/',
 			function ( $match ) {
 				return chr( hexdec( $match[1] ) );
 			},
@@ -198,42 +163,26 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		return $unescapedString;
 	}
 
-	/**
-	 * Mangles or unmangles list of strings. If an associative array is given,
-	 * the keys of the array will be mangled. For lists the values are mangled.
-	 *
-	 * @param string[]|array $array Strings.
-	 * @param bool $reverse Direction of mangling or unmangling.
-	 * @return string[]|array (Un)mangled strings.
-	 */
-	protected function mangleArray( array $array, $reverse = false ): array {
-		$temp = [];
-
-		if ( !$this->isAssoc( $array ) ) {
-			foreach ( $array as $key => &$value ) {
-				$value = $this->mangleString( $value, $reverse );
-				$temp[$key] = $value; // Assign a reference
-			}
-		} else {
-			foreach ( $array as $key => &$value ) {
-				$key = $this->mangleString( $key, $reverse );
-				$temp[$key] = $value; // Assign a reference
-			}
+	/** @inheritDoc */
+	public function unmangleList( array $list ): array {
+		foreach ( $list as $index => $key ) {
+			$list[$index] = $this->unmangle( $key );
 		}
 
-		return $temp;
+		return $list;
 	}
 
-	protected function isAssoc( array $array ): bool {
-		$assoc = (bool)count( array_filter( array_keys( $array ), 'is_string' ) );
-		if ( $assoc ) {
-			return true;
+	/** @inheritDoc */
+	public function unmangleArray( array $array ): array {
+		$out = [];
+		foreach ( $array as $key => $value ) {
+			$out[$this->unmangle( $key )] = $value;
 		}
 
-		// Also check that the indexing starts from zero
-		return !array_key_exists( 0, $array );
+		return $out;
 	}
 
+	/** @inheritDoc */
 	public static function getExtraSchema(): array {
 		$schema = [
 			'root' => [
@@ -244,7 +193,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 						'_children' => [
 							'prefix' => [
 								'_type' => 'text',
-								'_not_empty' => true
+								'_not_empty' => true,
 							],
 							'patterns' => [
 								'_type' => 'array',
@@ -252,10 +201,10 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 								'_ignore_extra_keys' => true,
 								'_children' => [],
 							],
-						]
-					]
-				]
-			]
+						],
+					],
+				],
+			],
 		];
 
 		return $schema;

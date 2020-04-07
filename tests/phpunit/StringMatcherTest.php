@@ -58,11 +58,11 @@ class StringMatcherTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider problematicMessageKeyProvider
 	 */
 	public function testKeyMangling( string $key ): void {
-		$matcher = StringMatcher::EmptyMatcher();
+		$matcher = new StringMatcher();
 		$mangled = $matcher->mangle( $key );
-
 		$title = Title::makeTitleSafe( NS_MEDIAWIKI, $mangled );
 		$this->assertInstanceOf( 'Title', $title, "Key '$mangled' did not produce a valid title" );
+
 		$unmangled = $matcher->unmangle( $mangled );
 		$this->assertEquals( $key, $unmangled, 'Mangling is reversible' );
 	}

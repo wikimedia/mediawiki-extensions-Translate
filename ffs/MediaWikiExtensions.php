@@ -142,10 +142,10 @@ class PremadeMediawikiExtensionGroups {
 
 			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
 			if ( isset( $info['ignored'] ) ) {
-				$info['ignored'] = $mangler->mangle( $info['ignored'] );
+				$info['ignored'] = $mangler->mangleList( $info['ignored'] );
 			}
 			if ( isset( $info['optional'] ) ) {
-				$info['optional'] = $mangler->mangle( $info['optional'] );
+				$info['optional'] = $mangler->mangleList( $info['optional'] );
 			}
 		}
 

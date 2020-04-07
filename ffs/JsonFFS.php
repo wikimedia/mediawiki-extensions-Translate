@@ -63,7 +63,7 @@ class JsonFFS extends SimpleFFS {
 			$messages = $this->flattener->flatten( $messages );
 		}
 
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$messages = $this->group->getMangler()->mangleArray( $messages );
 
 		return [
 			'MESSAGES' => $messages,

@@ -167,7 +167,7 @@ class SimpleFFS implements FFS {
 			$messages[$key] = $message;
 		}
 
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$messages = $this->group->getMangler()->mangleArray( $messages );
 
 		return [
 			'AUTHORS' => $authors,

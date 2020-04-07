@@ -87,7 +87,7 @@ class XliffFFS extends SimpleFFS {
 		}
 
 		return [
-			'MESSAGES' => $mangler->mangle( $messages ),
+			'MESSAGES' => $mangler->mangleArray( $messages ),
 		];
 	}
 

@@ -42,7 +42,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		}
 
 		$messages = $this->flatten( $messages );
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$messages = $this->group->getMangler()->mangleArray( $messages );
 		foreach ( $messages as &$value ) {
 			$value = rtrim( $value, "\n" );
 		}
