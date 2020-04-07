@@ -9,15 +9,15 @@
 			"Nedergard",
 			"Nike",
 			"Olli",
+			"Pxos",
+			"Pyscowicz",
 			"Silvonen",
 			"Str4nd",
 			"Stryn",
 			"Usp",
 			"VezonThunder",
 			"Vililikku",
-			"ZeiP",
-			"Pxos",
-			"Pyscowicz"
+			"ZeiP"
 		]
 	},
 	"translate": "Käännä",
@@ -71,7 +71,7 @@
 	"translate-export-form-format": "Muoto",
 	"translate-export-invalid-format": "Määritä kelvollinen muoto.",
 	"translate-export-not-supported": "Käännösten vientiä ei tueta.",
-	"translate-export-format-notsupported": "Määritelty vientimuoto ei tue viestiryhmää.",
+	"translate-export-format-notsupported": "Tätä viestiryhmää ei voi viedä tässä muodossa.",
 	"translate-magic-pagename": "Laajennettu MediaWikin kääntäminen",
 	"translate-magic-help": "Voit kääntää toimintosivujen vaihtoehtoisia nimiä, taikasanoja ja nimiavaruuksien nimiä.\n\nToimintosivujen vaihtoehtoisilla nimillä ja taikasanoilla voi olla useita käännöksiä.\nKäännökset erotetaan pilkulla (,).\nNimiavaruuksilla voi olla vain yksi käännös.\n\nNimiavaruuksien käännöksissä <code>$1 talk</code> on erikoistapaus. <code>$1</code> korvataan sivuston nimellä (esimerkiksi <code>{{ns:project_talk}}</code>).\nJos kielessäsi on mahdotonta muotoilla oikeaa käännöstä ilman sivuston nimen taivuttamista, kerro siitä sivulla [[Support]].\n\nSinun tulee olla kääntäjä, jotta voit tallentaa muutokset.\nMuutoksia ei tallenneta, ennen kuin painat Tallenna-painiketta.",
 	"translate-magic-module": "Moduuli:",

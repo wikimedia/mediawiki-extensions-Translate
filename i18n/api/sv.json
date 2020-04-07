@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lokal Profil",
-			"WikiPhoenix",
+			"Bengtsson96",
 			"Dan Koehl",
-			"Victorsa",
 			"Josve05a",
-			"Bengtsson96"
+			"Lokal Profil",
+			"Victorsa",
+			"WikiPhoenix"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Meddelandegrupp-ID.",

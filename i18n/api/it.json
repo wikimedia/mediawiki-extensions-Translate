@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ricordisamoa",
-			"F. Cosoleto",
-			"Statix64",
+			"Anto",
 			"Beta16",
-			"Anto"
+			"F. Cosoleto",
+			"Ricordisamoa",
+			"Statix64"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gestisci gruppi di messaggi aggregati.\n\nPuoi aggiungere e rimuovere gruppi di messaggi aggregati e associare o dissociare i gruppi di messaggi l'uno dall'altro (uno alla volta).",

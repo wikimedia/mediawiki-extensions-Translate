@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Leeheonjin",
 			"Emem.calist",
-			"Jojit fb"
+			"Jojit fb",
+			"Leeheonjin"
 		]
 	},
 	"apierror-translate-language-disabled": "Ang pagsasaling wika sa $1 ay naka-'disabled'",

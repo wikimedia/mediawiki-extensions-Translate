@@ -5,9 +5,9 @@
 			"Jim-by",
 			"Red Winged Duck",
 			"Renessaince",
+			"Shirayuki",
 			"Wizardist",
-			"Zedlik",
-			"Shirayuki"
+			"Zedlik"
 		]
 	},
 	"translate": "Пераклад",
@@ -351,6 +351,7 @@
 	"tux-editor-message-tools-history": "Гісторыя",
 	"tux-editor-message-tools-translations": "Усе пераклады",
 	"tux-editor-loading": "Загрузка...",
+	"tux-editor-loading-failed": "Памылка загрузкі падказак перакладу: $1",
 	"translate-search-more-languages-info": "Яшчэ на $1 {{PLURAL:$1|мове|мовах}}",
 	"translate-statsbar-tooltip": "$1% перакладзена, $2% вычытана",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% перакладзена, $2% вычытана, $3% састарэла",

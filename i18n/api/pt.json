@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente",
 			"Fúlvio",
 			"Hamilton Abreu",
-			"Mansil"
+			"Mansil",
+			"Vitorvicentevalente"
 		]
 	},
 	"apihelp-aggregategroups-description": "Administrar grupos agregadores de mensagens.\n\nPode adicionar e remover grupos agregadores de mensagens e associar-lhes ou desassociar-lhes grupos de mensagens (um de cada vez).",

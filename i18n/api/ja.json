@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sujiniku",
+			"Omotecho",
 			"Shirayuki",
-			"Omotecho"
+			"Sujiniku"
 		]
 	},
 	"apihelp-aggregategroups-description": "メッセージ群の集計は追加もしくは削除の対象で、メッセージ群を関連付けまたは分離できます（処理は一度に1件ずつ）。",

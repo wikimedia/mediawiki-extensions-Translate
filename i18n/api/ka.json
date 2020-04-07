@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"MIKHEIL",
-			"David1010"
+			"David1010",
+			"MIKHEIL"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "შეტყობინების ჯგუფის ID.",

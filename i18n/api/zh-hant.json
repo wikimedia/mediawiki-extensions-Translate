@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226",
+			"Kly",
 			"LNDDYL",
-			"Kly"
+			"Liuxinyu970226"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理集合訊息群組。\n\n您可以添加或移除集合訊息群組，以及從其中來關聯或取消關聯訊息群組（每一次一個）。",

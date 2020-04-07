@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Marmase",
-			"Kumkumuk",
-			"Mirzali",
-			"Gırd",
+			"Dılmıc",
 			"Gambollar",
-			"Dılmıc"
+			"Gırd",
+			"Kumkumuk",
+			"Marmase",
+			"Mirzali"
 		]
 	},
 	"tsb-request-count": "$1 {{PLURAL:$1|waştış|waştışi}}",

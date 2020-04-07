@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sjoerddebruin",
-			"Siebrand",
-			"Robin0van0der0vliet",
+			"Elroy",
 			"Mainframe98",
-			"Robin van der Vliet",
 			"Mar(c)",
-			"Elroy"
+			"Robin van der Vliet",
+			"Robin0van0der0vliet",
+			"Siebrand",
+			"Sjoerddebruin"
 		]
 	},
 	"apihelp-aggregategroups-description": "Samengestelde berichtgroepen beheren.\n\nJe kunt samengestelde berichtgroepen toevoegen en verwijderen. Verder kun je berichtgroepen eraan koppelen of ontkoppelen (één per keer).",

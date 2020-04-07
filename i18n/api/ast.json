@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu",
-			"Fitoschido"
+			"Fitoschido",
+			"Xuacu"
 		]
 	},
 	"apihelp-aggregategroups-description": "Xestionar grupos de mensaxes agregaos.\n\nPues amestar y desaniciar grupos de mensaxes agregaos y asociar o disociar grupos de mensaxes d'ellos (unu de cada vez).",

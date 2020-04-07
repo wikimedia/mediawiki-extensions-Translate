@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615",
+			"Alireza Ivaz",
 			"Huji",
 			"Ladsgroup",
-			"Alireza Ivaz"
+			"Reza1615"
 		]
 	},
 	"apihelp-aggregategroups-description": "مدیریت گروه‌های پیغام دسته‌جمعی.\n\nشما می توانید گروه‌های پیغام دسته‌جمعی را بیفزایید یا حذف کنید یا گروه‌های پیغام را به آن‌ها متصل یا جدا کنید (در هر زمان یکی).",

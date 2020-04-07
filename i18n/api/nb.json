@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kingu",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Kingu"
 		]
 	},
 	"apihelp-aggregategroups-description": "Behandle aggregatmeldingsgrupper.\n\nDu kan legge til og fjerne aggregatmeldingsgrupper og assosiere eller disassosiere meldingsgrupper fra dem (én av gangen).",

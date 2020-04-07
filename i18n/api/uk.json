@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ypryima",
 			"Base",
-			"Ата",
 			"Dars",
-			"Piramidion"
+			"Piramidion",
+			"Ypryima",
+			"Ата"
 		]
 	},
 	"apihelp-aggregategroups-description": "Керування агрегованими групами повідомлень.\n\nВи можете додавати або вилучати агреговані групи повідомлень та додавати чи вилучати повідомлення з них (одне за раз).",

@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby",
-			"Liuxinyu970226",
 			"Amire80",
+			"Liuxinyu970226",
 			"Nemo bis",
 			"Purodha",
-			"Raymond"
+			"Raymond",
+			"Robby"
 		]
 	},
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",

@@ -1,20 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Djiboun",
-			"Pathe",
-			"TomT0m",
-			"Gomoko",
-			"Wladek92",
-			"Sacamol",
-			"Hpetit",
-			"Verdy p",
-			"Derugon",
-			"Urhixidur",
 			"ALDO CP",
+			"Derugon",
+			"Djiboun",
+			"Eneelk",
+			"Gomoko",
+			"Hpetit",
 			"McDutchie",
+			"Pathe",
+			"Sacamol",
 			"Thibaut120094",
-			"Eneelk"
+			"TomT0m",
+			"Urhixidur",
+			"Verdy p",
+			"Wladek92"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes de messages agrégés.\n\nVous pouvez ajouter et supprimer des groupes de messages agrégés, les associer les uns aux autres ou les dissocier les uns des autres (un à la fois).",

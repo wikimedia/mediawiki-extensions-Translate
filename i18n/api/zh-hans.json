@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226",
 			"HERAN",
-			"Yfdyh000",
 			"LNDDYL",
-			"VulpesVulpes825"
+			"Liuxinyu970226",
+			"VulpesVulpes825",
+			"Yfdyh000"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",

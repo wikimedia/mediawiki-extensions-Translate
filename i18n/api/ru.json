@@ -1,16 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras",
 			"Kaganer",
-			"Дмитрий",
-			"Туллук",
 			"Kareyac",
-			"ЛосЯш",
-			"Putnik",
+			"Movses",
+			"Okras",
 			"Ole Yves",
+			"Putnik",
 			"Stjn",
-			"Movses"
+			"Дмитрий",
+			"ЛосЯш",
+			"Туллук"
 		]
 	},
 	"apihelp-aggregategroups-description": "Вы можете добавлять и удалять агрегированные группы сообщений, группировать и разгруппировывать сообщения в них (по одному за раз) .",

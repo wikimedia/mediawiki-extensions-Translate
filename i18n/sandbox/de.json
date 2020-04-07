@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64",
-			"Rillke",
 			"J. 'mach' wust",
-			"Kghbln"
+			"Kghbln",
+			"Metalhead64",
+			"Rillke"
 		]
 	},
 	"managetranslatorsandbox": "Übersetzer-Spielwiese konfigurieren",
