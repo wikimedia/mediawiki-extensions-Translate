@@ -161,7 +161,8 @@ class SpecialExportTranslations extends SpecialPage {
 		// Do not show this error if no/invalid format is specified for translatable
 		// page groups as we can show a textarea box containing the translation page text
 		// (however it's not currently supported for other groups).
-		if ( !$msgGroup instanceof WikiPageMessageGroup
+		if (
+			!$msgGroup instanceof WikiPageMessageGroup
 			&& !in_array( $this->format, self::$validFormats )
 		) {
 			$status->fatal( 'translate-export-invalid-format' );
@@ -173,12 +174,14 @@ class SpecialExportTranslations extends SpecialPage {
 			$status->fatal( 'translate-export-format-notsupported' );
 		}
 
-		$size = count( $msgGroup->getKeys() );
-		if ( $size > self::MAX_EXPORT_SIZE ) {
-			$status->fatal(
-				'translate-export-group-too-large',
-				Message::numParam( self::MAX_EXPORT_SIZE )
-			);
+		if ( $msgGroup && !MessageGroups::isDynamic( $msgGroup ) ) {
+			$size = count( $msgGroup->getKeys() );
+			if ( $size > self::MAX_EXPORT_SIZE ) {
+				$status->fatal(
+					'translate-export-group-too-large',
+					Message::numParam( self::MAX_EXPORT_SIZE )
+				);
+			}
 		}
 
 		return $status;
