@@ -8,6 +8,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+
 /**
  * Translation aid which gives the message definition.
  * This usually matches the content of the page ns:key/source_language.
@@ -40,13 +43,15 @@ class UpdatedDefinitionAid extends TranslationAid {
 			throw new TranslationHelperException( 'Definition page does not exist' );
 		}
 
-		// Using newFromId instead of newFromTitle, because the page might have been renamed
-		$oldrev = Revision::newFromId( $translationRevision );
-		if ( !$oldrev ) {
+		// Using getRevisionById instead of byTitle, because the page might have been renamed
+		$oldRevRecord = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionById( $translationRevision );
+		if ( !$oldRevRecord ) {
 			throw new TranslationHelperException( 'Old definition version does not exist anymore' );
 		}
 
-		$oldContent = $oldrev->getContent();
+		$oldContent = $oldRevRecord->getContent( SlotRecord::MAIN );
 		$newContent = $this->dataProvider->getDefinitionContent();
 
 		if ( !$oldContent ) {
@@ -75,7 +80,7 @@ class UpdatedDefinitionAid extends TranslationAid {
 		return [
 			'value_old' => $oldContent->getNativeData(),
 			'value_new' => $newContent->getNativeData(),
-			'revisionid_old' => $oldrev->getId(),
+			'revisionid_old' => $oldRevRecord->getId(),
 			'revisionid_new' => $definitionTitle->getLatestRevID(),
 			'language' => $this->group->getSourceLanguage(),
 			'html' => $html,
