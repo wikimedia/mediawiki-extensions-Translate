@@ -213,13 +213,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				'label' => $this->msg( 'pt-movepage-reason' )->text(),
 				'size' => 45,
 				'default' => $this->reason,
-			],
-			'subpages' => [
-				'type' => 'check',
-				'name' => 'subpages',
-				'id' => 'mw-subpages',
-				'label' => $this->msg( 'pt-movepage-subpages' )->text(),
-				'default' => $this->moveSubpages,
 			]
 		];
 
@@ -274,46 +267,54 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$base = $this->oldTitle->getPrefixedText();
 		$target = $this->newTitle;
 		$count = 0;
+		$subpagesCount = 0;
 
 		$types = [
 			'pt-movepage-list-pages' => [ $this->oldTitle ],
 			'pt-movepage-list-translation' => $this->getTranslationPages(),
 			'pt-movepage-list-section' => $this->getSectionPages(),
 			'pt-movepage-list-translatable' => $this->getTranslatableSubpages(),
-			'pt-movepage-list-other' => $this->getNormalSubpages(),
+			'pt-movepage-list-other' => $this->getNormalSubpages()
 		];
 
 		foreach ( $types as $type => $pages ) {
-			$out->wrapWikiMsg( '=== $1 ===', [ $type, count( $pages ) ] );
+			$pageCount = count( $pages );
+			$out->wrapWikiMsg( '=== $1 ===', [ $type, $pageCount ] );
+
+			if ( !$pageCount ) {
+				$out->addWikiMsg( 'pt-movepage-list-no-pages' );
+				continue;
+			}
+
 			if ( $type === 'pt-movepage-list-translatable' ) {
-				$out->addWikiMsg( 'pt-movepage-list-translatable-note' );
+				$out->wrapWikiMsg(
+					"'''$1'''", $this->msg( 'pt-movepage-list-translatable-note' )
+				);
 			}
 
 			$lines = [];
 			foreach ( $pages as $old ) {
-				$toBeMoved = true;
-
-				// These pages need specific checks
-				if ( $type === 'pt-movepage-list-other' ) {
-					$toBeMoved = $this->moveSubpages;
-				}
-
-				if ( $type === 'pt-movepage-list-translatable' ) {
-					$toBeMoved = false;
-				}
-
-				if ( $toBeMoved ) {
+				$canBeMoved = $type !== 'pt-movepage-list-translatable';
+				if ( $canBeMoved ) {
 					$count++;
 				}
 
-				$lines[] = $this->getChangeLine( $base, $old, $target, $toBeMoved );
+				if ( $type === 'pt-movepage-list-other' ) {
+					$subpagesCount++;
+				}
+
+				$lines[] = $this->getChangeLine( $base, $old, $target, $canBeMoved );
 			}
 
 			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
 		}
 
 		$out->addWikiTextAsInterface( "----\n" );
-		$out->addWikiMsg( 'pt-movepage-list-count', $this->getLanguage()->formatNum( $count ) );
+		$out->addWikiMsg(
+			'pt-movepage-list-count',
+			$this->getLanguage()->formatNum( $count ),
+			$this->getLanguage()->formatNum( $subpagesCount )
+		);
 
 		$br = Html::element( 'br' );
 		$readonly = [ 'readonly' => 'readonly' ];
