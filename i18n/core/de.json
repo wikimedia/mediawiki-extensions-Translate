@@ -231,6 +231,7 @@
 	"supportedlanguages-recenttranslations": "Aktuelle Übersetzungen",
 	"supportedlanguages-count": "Insgesamt $1 {{PLURAL:$1|Sprache|Sprachen}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Bearbeitung|Bearbeitungen}} - letzte Bearbeitung vor $3 {{PLURAL:$3|Tag|Tagen}}",
+	"translate-supportedlanguages-cached": "Diese Informationen wurden vor $1 zwischengespeichert.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Quelltext der Übersetzungseinheit",
 	"abusefilter-edit-builder-vars-translate-target-language": "Zielsprache für die Übersetzung",
 	"translate-save": "Speichern ($1)",

@@ -231,6 +231,7 @@
 	"supportedlanguages-recenttranslations": "son çeviriler",
 	"supportedlanguages-count": "Toplamda $1 dil.",
 	"supportedlanguages-activity": "$1: toplam $2 değişiklik - son değişiklik $3 gün önce yapıldı",
+	"translate-supportedlanguages-cached": "Bu bilgiler $1 önce önbelleğe alındı.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Çeviri biriminin kaynak metni",
 	"abusefilter-edit-builder-vars-translate-target-language": "Çeviri için hedef dil",
 	"translate-save": "Kaydet ($1)",

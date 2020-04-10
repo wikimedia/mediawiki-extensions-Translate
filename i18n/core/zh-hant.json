@@ -231,6 +231,7 @@
 	"supportedlanguages-recenttranslations": "最近的翻譯",
 	"supportedlanguages-count": "總共有 $1 語言",
 	"supportedlanguages-activity": "$1：$2 次編輯 - 最近一次編輯於 $3 天前",
+	"translate-supportedlanguages-cached": "此資訊在$1前被快取。",
 	"abusefilter-edit-builder-vars-translate-source-text": "翻譯單元的來源文字",
 	"abusefilter-edit-builder-vars-translate-target-language": "翻譯的目標語言",
 	"translate-save": "儲存 ($1)",
