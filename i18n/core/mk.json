@@ -219,6 +219,7 @@
 	"supportedlanguages-recenttranslations": "скорешни преводи",
 	"supportedlanguages-count": "Вкупно $1 {{PLURAL:$1|јазик|јазици}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|уредување|уредувања}} - последното пред $3 {{PLURAL:$3|ден|дена}}",
+	"translate-supportedlanguages-cached": "Оваа информација е меѓускладирана пред $1.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Изворен текст на преводната единица",
 	"abusefilter-edit-builder-vars-translate-target-language": "Целен јазик за преводот",
 	"translate-save": "Зачувај ($1)",

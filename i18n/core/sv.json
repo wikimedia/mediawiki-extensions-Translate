@@ -232,6 +232,7 @@
 	"supportedlanguages-recenttranslations": "senaste översättningar",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|språk}} totalt.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|redigering|redigeringar}} - senaste redigering $3 {{PLURAL:$3|dag|dagar}} sedan",
+	"translate-supportedlanguages-cached": "Denna information cachelagrades $1 sedan.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Översättningsenhetens källtext",
 	"abusefilter-edit-builder-vars-translate-target-language": "Målspråk för översättning",
 	"translate-save": "Spara ($1)",

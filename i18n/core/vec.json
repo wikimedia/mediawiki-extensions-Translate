@@ -2,19 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Candalua",
+			"Conky77",
 			"Fierodelveneto"
 		]
 	},
 	"translate": "Tradusion",
 	"translate-extensionname": "Traduxi",
-	"translate-desc": "[[Special:Translate|Pajina speçałe]] par tradure MediaWiki e altro",
+	"translate-desc": "[[Special:Translate|Pàjina speçałe]] par tradure MediaWiki e altro",
 	"translate-page-no-such-language": "La lengua indicà no la xe valida.",
 	"translate-page-no-such-group": "El grupo indicà no'l xe valido.",
 	"translate-page-settings-legend": "Inpostassion",
 	"translate-page-group": "Grupo",
 	"translate-page-language": "Lengua",
 	"translate-page-limit": "Limite",
-	"translate-page-limit-option": "$1 {{PLURAL:$1|mesajo|mesaji}} par pajina",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|mesajo|mesaji}} par pàjina",
 	"translate-submit": "Mostra",
 	"translate-page-navigation-legend": "Navigassion",
 	"translate-page-showing": "Sti qua i xe i messagi da $1 a $2 de $3.",
@@ -59,7 +60,7 @@
 	"translationstats": "Statìsteghe de tradussion",
 	"translate-stats-edits": "Modifiche",
 	"translate-stats-users": "Tradutori",
-	"translate-statsf-options": "Opzioni grafico",
+	"translate-statsf-options": "Opsion del grafego",
 	"translate-statsf-width": "Larghezza in pixel:",
 	"translate-statsf-height": "Altezza in pixel:",
 	"translate-statsf-days": "Periodo de tenpo in giorni:",

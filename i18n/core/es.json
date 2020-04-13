@@ -226,6 +226,7 @@
 	"supportedlanguages-recenttranslations": "traducciones recientes",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|idioma|idiomas}} en total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|ediciones}}, última edición hace $3 {{PLURAL:$3|día|días}}",
+	"translate-supportedlanguages-cached": "Esta información se prealmacenó hace $1.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Texto de origen de la unidad de traducción",
 	"translate-save": "Guardar ($1)",
 	"translate-jssti-add": "Añadir a la lista",

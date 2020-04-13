@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"translate-tag-translate-link-desc": "እዚ ገጽ ተርጎመ",
+	"tpt-tab-translate": "ተርጎመ",
+	"tpt-aggregategroup-add": "ወስኽ",
+	"tpt-aggregategroup-save": "ኣቐምጥ",
+	"tpt-aggregategroup-update": "ኣቐምጥ",
+	"tpt-aggregategroup-update-cancel": "ኣትርፍ",
+	"pm-import-button-label": "ኣእትው",
+	"pm-savepages-button-label": "ኣቐምጥ",
+	"pm-cancel-button-label": "ኣትርፍ",
+	"pp-save-button-label": "ኣቐምጥ",
+	"pp-cancel-button-label": "ኣትርፍ",
+	"tpt-generic-button": "ኣረጋገጸ"
+}

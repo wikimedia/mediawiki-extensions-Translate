@@ -6,8 +6,16 @@
 	},
 	"searchtranslations": "ትርጉማት ምድላይ",
 	"tux-sst-edit": "ትርጉም የዐርይ",
+	"tux-sst-view-foreign": "ብ$1 ርኣይ",
 	"tux-sst-search": "ምድላይ",
 	"tux-sst-search-ph": "ትርጉማት ምድላይ",
+	"tux-sst-count": "{{PLURAL:$1|ሓደ ውጽኢት ተረኸቡ|$1 ውጺኢታት ተረኸቡን}}",
 	"tux-sst-facet-language": "ቋንቋታት",
-	"tux-sst-default": "ትርጉማት"
+	"tux-sst-facet-group": "መልእክትታት ጉጅለታት",
+	"tux-sst-next": "ቀጻሊ ›",
+	"tux-sst-prev": "‹ ዝቐደመ",
+	"tux-sst-default": "ትርጉማት",
+	"tux-sst-translated": "ካብ $1 ትርጉማት",
+	"tux-sst-untranslated": "ካብ $1 ብዘይ ትርጉም",
+	"tux-sst-ellipsis-untranslated": "ብዘይ ትርጉም"
 }
