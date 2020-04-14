@@ -54,12 +54,13 @@
 	"translate-js-save": "ኣቐምጥ",
 	"translate-gs-code": "ኮድ",
 	"translate-searchprofile": "ትርጉማት",
-	"translate-msggroupselector-search-all": "ምሉእ",
+	"translate-msggroupselector-search-all": "ኩሉ",
 	"tux-languageselector": "ተርጎመ ናብ",
-	"tux-tab-all": "ምሉእ",
+	"tux-tab-all": "ኩሉ",
 	"tux-tab-translated": "ዝተተርጎመ",
 	"tux-edit": "የዐርይ",
 	"tux-status-translated": "ዝተተርጎመ",
+	"tux-editor-save-button-label": "ትርጉም ኣቐምጥ",
 	"tux-editor-cancel-button-label": "ኣትርፍ",
 	"tux-editor-suggestions-title": "ርእይቶታት",
 	"tux-notices-hide": "ከውል",
@@ -67,6 +68,7 @@
 	"tux-editor-translate-mode": "ዝርዝር",
 	"tux-proofread-edit-label": "የዐርይ",
 	"tux-editor-page-mode": "ገጽ",
+	"tux-editor-doc-editor-save": "ምስናድ ኣቐምጥ",
 	"tux-editor-doc-editor-cancel": "ኣትርፍ",
 	"tux-message-filter-advanced-button": "ብሉጽ ምድላይ",
 	"tux-empty-list-translated-action": "ተርጎመ",
@@ -74,5 +76,5 @@
 	"tux-editor-message-tools-history": "ታሪኽ",
 	"tux-editor-message-tools-delete": "ሰረዘ",
 	"tux-editor-message-tools-translations": "ኩሉ ትርጉማት",
-	"tux-editor-loading": "ጽዕነት..."
+	"tux-editor-loading": "ይጽዕን ኣሎ..."
 }
