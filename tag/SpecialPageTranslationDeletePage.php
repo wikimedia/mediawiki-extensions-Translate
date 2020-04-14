@@ -180,22 +180,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	protected function showForm() {
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro' );
 
-		$formDescriptor = [
-			'wpTitle' => [
-				'type' => 'text',
-				'name' => 'wpTitle',
-				'label' => $this->msg( 'pt-deletepage-current' )->text(),
-				'size' => 30,
-				'default' => $this->text,
-			],
-			'wpReason' => [
-				'type' => 'text',
-				'name' => 'wpReason',
-				'label' => $this->msg( 'pt-deletepage-reason' )->text(),
-				'size' => 60,
-				'default' => $this->reason,
-			]
-		];
+		$formDescriptor = $this->getCommonFormFields();
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
@@ -216,6 +201,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	protected function showConfirmation() {
 		$out = $this->getOutput();
 		$count = 0;
+		$subpageCount = 0;
 
 		$out->addWikiMsg( 'pt-deletepage-intro' );
 
@@ -234,7 +220,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			$count++;
 			$lines[] = $this->getChangeLine( $old );
 		}
-		$out->addWikiTextAsInterface( implode( "\n", $lines ) );
+		$this->listPages( $out, $lines );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
 		$sectionPages = $this->getSectionPages();
@@ -243,7 +229,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			$count++;
 			$lines[] = $this->getChangeLine( $old );
 		}
-		$out->addWikiTextAsInterface( implode( "\n", $lines ) );
+		$this->listPages( $out, $lines );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
 		$subpages = $this->getSubpages();
@@ -253,40 +239,26 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 				continue;
 			}
 
-			if ( $this->doSubpages ) {
-				$count++;
-			}
-
-			$lines[] = $this->getChangeLine( $old, $this->doSubpages );
+			$subpageCount++;
+			$lines[] = $this->getChangeLine( $old );
 		}
-		$out->addWikiTextAsInterface( implode( "\n", $lines ) );
+		$this->listPages( $out, $lines );
+		$totalPageCount = $count + $subpageCount;
 
 		$out->addWikiTextAsInterface( "----\n" );
-		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );
+		$out->addWikiMsg(
+			'pt-deletepage-list-count',
+			$this->getLanguage()->formatNum( $totalPageCount ),
+			$this->getLanguage()->formatNum( $subpageCount )
+		);
 
-		$formDescriptor = [
-			'wpTitle' => [
-				'type' => 'text',
-				'name' => 'wpTitle',
-				'label' => $this->msg( 'pt-deletepage-current' )->text(),
-				'size' => 30,
-				'default' => $this->text,
-				'readonly' => true,
-			],
-			'wpReason' => [
-				'type' => 'text',
-				'name' => 'wpReason',
-				'label' => $this->msg( 'pt-deletepage-reason' )->text(),
-				'size' => 60,
-				'default' => $this->reason,
-			],
-			'subpages' => [
-				'type' => 'check',
-				'name' => 'subpages',
-				'id' => 'mw-subpages',
-				'label' => $this->msg( 'pt-deletepage-subpages' )->text(),
-				'default' => $this->doSubpages,
-			]
+		$formDescriptor = $this->getCommonFormFields();
+		$formDescriptor['subpages'] = [
+			'type' => 'check',
+			'name' => 'subpages',
+			'id' => 'mw-subpages',
+			'label' => $this->msg( 'pt-deletepage-subpages' )->text(),
+			'default' => $this->doSubpages,
 		];
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
@@ -313,15 +285,10 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 	/**
 	 * @param Title $title
-	 * @param bool $enabled
 	 * @return string One line of wikitext, without trailing newline.
 	 */
-	protected function getChangeLine( $title, $enabled = true ) {
-		if ( $enabled ) {
-			return '* ' . $title->getPrefixedText();
-		} else {
-			return '* <s>' . $title->getPrefixedText() . '</s>';
-		}
+	protected function getChangeLine( $title ) {
+		return '* ' . $title->getPrefixedText();
 	}
 
 	protected function performAction() {
@@ -465,5 +432,33 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	 */
 	protected function singleLanguage() {
 		return $this->code !== '';
+	}
+
+	protected function getCommonFormFields() {
+		return [
+			'wpTitle' => [
+				'type' => 'text',
+				'name' => 'wpTitle',
+				'label' => $this->msg( 'pt-deletepage-current' )->text(),
+				'size' => 30,
+				'default' => $this->text,
+				'readonly' => true,
+			],
+			'wpReason' => [
+				'type' => 'text',
+				'name' => 'wpReason',
+				'label' => $this->msg( 'pt-deletepage-reason' )->text(),
+				'size' => 60,
+				'default' => $this->reason,
+			]
+		];
+	}
+
+	protected function listPages( OutputPage $out, array $lines ): void {
+		if ( $lines ) {
+			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
+		} else {
+			$out->addWikiMsg( 'pt-deletepage-list-no-pages' );
+		}
 	}
 }
