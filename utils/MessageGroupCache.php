@@ -114,13 +114,9 @@ class MessageGroupCache {
 	 * @since 2020.04
 	 */
 	public function getAuthors(): array {
-		$data = $this->open()->get( '#authors' );
-
-		if ( $data ) {
-			$data = $this->unserialize( $data );
-		}
-
-		return $data ?? [];
+		$cache = $this->open();
+		return $cache->exists( '#authors' ) ?
+			$this->unserialize( $cache->get( '#authors' ) ) : [];
 	}
 
 	/**
@@ -129,13 +125,8 @@ class MessageGroupCache {
 	 * @since 2020.04
 	 */
 	public function getExtra(): array {
-		$data = $this->open()->get( '#extra' );
-
-		if ( $data ) {
-			$data = $this->unserialize( $data );
-		}
-
-		return $data ?? [];
+		$cache = $this->open();
+		return $cache->exists( '#extra' ) ? $this->unserialize( $cache->get( '#extra' ) ) : [];
 	}
 
 	/**
