@@ -165,14 +165,29 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 			'Sanity: must tag revision 1 ready for translate'
 		);
 
-		$nullRev = WikiPage::newFromID( $title->getArticleID() )->insertProtectNullRevision(
-			'test comment',
-			[ 'edit' => 'sysop' ],
-			[ 'edit' => '20200101040404' ],
-			false,
-			'Testing',
-			$this->getTestUser()->getUser()
-		);
+		$wikiPage = WikiPage::newFromID( $title->getArticleID() );
+		if ( method_exists( $wikiPage, 'insertNullProtectionRevision' ) ) {
+			// MW 1.35+
+			$nullRev = $wikiPage->insertNullProtectionRevision(
+				'test comment',
+				[ 'edit' => 'sysop' ],
+				[ 'edit' => '20200101040404' ],
+				false,
+				'Testing',
+				$this->getTestUser()->getUser()
+			);
+		} else {
+			$nullRev = $wikiPage->insertProtectNullRevision(
+				'test comment',
+				[ 'edit' => 'sysop' ],
+				[ 'edit' => '20200101040404' ],
+				false,
+				'Testing',
+				$this->getTestUser()->getUser()
+			);
+		}
+		// $nullRev is either a RevisionRecord or a Revision, both work for the test
+
 		$this->assertNotNull( $nullRev, 'Sanity: must create null revision' );
 		$this->assertEquals(
 			$translatablePage->getReadyTag(),
