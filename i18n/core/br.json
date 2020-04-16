@@ -196,6 +196,7 @@
 	"supportedlanguages-recenttranslations": "troidigezhioù ziwezhañ",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|yezh|yezh}} en holl.",
 	"supportedlanguages-activity": "$1 : $2 {{PLURAL:$2|c'hemm|kemm}} - kemm diwezhañ $3 {{PLURAL:$3|devezh|devezh}} zo",
+	"translate-supportedlanguages-cached": "Krubuilhet eo bet an titouroù-mañ $1 zo.",
 	"translate-save": "Enrollañ ($1)",
 	"translate-jssti-add": "Ouzhpennañ d'ar roll",
 	"managemessagegroups": "Merañ ar strollad kemennadennoù",
