@@ -159,9 +159,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		}
 
 		# Check for database lock
-		if ( wfReadOnly() ) {
-			throw new ReadOnlyError;
-		}
+		$this->checkReadOnly();
 
 		// Let the caller know it's safe to continue
 		return true;
