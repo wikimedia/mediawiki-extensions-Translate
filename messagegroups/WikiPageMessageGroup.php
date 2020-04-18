@@ -72,7 +72,6 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		$defs = [];
-		$prefix = $this->getTitle()->getPrefixedDBkey() . '/';
 
 		foreach ( $res as $r ) {
 			$section = new TPSection();
@@ -80,14 +79,18 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 			$defs[$r->trs_key] = $section->getTextWithVariables();
 		}
 
-		$new_defs = [];
-		foreach ( $defs as $k => $v ) {
-			$k = str_replace( ' ', '_', $k );
-			$new_defs[$prefix . $k] = $v;
-		}
+		$groupKeys = $this->makeGroupKeys( array_keys( $defs ) );
+		$this->definitions = array_combine( $groupKeys, array_values( $defs ) );
 
-		$this->definitions = $new_defs;
 		return $this->definitions;
+	}
+
+	public function makeGroupKeys( array $keys ): array {
+		$prefix = $this->getTitle()->getPrefixedDBkey() . '/';
+		foreach ( $keys as $index => $key ) {
+			$keys[$index] = $prefix . str_replace( ' ', '_', $key );
+		}
+		return $keys;
 	}
 
 	/**

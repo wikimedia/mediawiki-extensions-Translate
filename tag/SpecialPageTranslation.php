@@ -926,6 +926,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision );
 		MessageGroups::singleton()->recache();
 
+		$group = $page->getMessageGroup();
+		$newKeys = $group->makeGroupKeys( $changed );
+		MessageIndex::singleton()->storeInterim( $group, $newKeys );
 		$job = TranslationsUpdateJob::newFromPage( $page, $sections );
 		JobQueueGroup::singleton()->push( $job );
 

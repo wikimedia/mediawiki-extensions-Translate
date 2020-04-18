@@ -19,7 +19,27 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( [
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 			'wgTranslateTranslationServices' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
 		] );
+
+		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( new WANObjectCache( [ 'cache' => ObjectCache::getInstance( 'hash' ) ] ) );
+		$mg->recache();
+	}
+
+	public function getTestGroups( &$list ) {
+		$messages = [
+			'translated' => 'bunny',
+			'untranslated' => 'fanny',
+			'changedtranslated_1' => 'bunny',
+			'changedtranslated_2' => 'fanny'
+		];
+		$list['test-group'] =
+			new MockWikiMessageGroup( 'test-group', $messages );
+
+		return false;
 	}
 
 	public function provideTranslateMessageIndexConfig() {
@@ -190,6 +210,19 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 			[ new TestableHashMessageIndex() ],
 			// Not testing CachedMessageIndex because there is no easy way to mockup those.
 		];
+	}
+
+	public function testInterimCache() {
+		$group = MessageGroups::getGroup( 'test-group' );
+		MessageIndex::singleton()->storeInterim( $group, [
+			'translated_changed',
+		] );
+
+		$handle = new MessageHandle(
+			Title::makeTitle( $group->getNamespace(), 'translated_changed' )
+		);
+
+		$this->assertTrue( $handle->isValid() );
 	}
 }
 

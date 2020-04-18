@@ -17,6 +17,8 @@
  * to message groups.
  */
 abstract class MessageIndex {
+	private const CACHEKEY = 'Translate-MessageIndex-interim';
+
 	/**
 	 * @var self
 	 */
@@ -26,6 +28,9 @@ abstract class MessageIndex {
 	 * @var MapCacheLRU|null
 	 */
 	private static $keysCache;
+
+	/** @var BagOStuff */
+	protected $interimCache;
 
 	/**
 	 * @return self
@@ -61,7 +66,7 @@ abstract class MessageIndex {
 	 * @param MessageHandle $handle
 	 * @return array
 	 */
-	public static function getGroupIds( MessageHandle $handle ) {
+	public static function getGroupIds( MessageHandle $handle ): array {
 		global $wgTranslateMessageNamespaces;
 
 		$title = $handle->getTitle();
@@ -77,10 +82,7 @@ abstract class MessageIndex {
 		$cache = self::getCache();
 		$value = $cache->get( $normkey );
 		if ( $value === null ) {
-			$value = self::singleton()->get( $normkey );
-			$value = $value !== null
-				? (array)$value
-				: [];
+			$value = (array)self::singleton()->getWithCache( $normkey );
 			$cache->set( $normkey, $value );
 		}
 
@@ -106,6 +108,15 @@ abstract class MessageIndex {
 		$groups = self::getGroupIds( $handle );
 
 		return count( $groups ) ? array_shift( $groups ) : null;
+	}
+
+	private function getWithCache( $key ) {
+		$interimCacheValue = $this->getInterimCache()->get( self::CACHEKEY );
+		if ( $interimCacheValue && isset( $interimCacheValue['newKeys'][$key] ) ) {
+			return $interimCacheValue['newKeys'][$key];
+		}
+
+		return $this->get( $key );
 	}
 
 	/**
@@ -144,7 +155,14 @@ abstract class MessageIndex {
 		return true;
 	}
 
-	public function rebuild() {
+	/**
+	 * Creates the index from scratch.
+	 *
+	 * @param float|null $timestamp Purge interim caches older than this timestamp.
+	 * @return array
+	 * @throws Exception
+	 */
+	public function rebuild( float $timestamp = null ): array {
 		static $recursion = 0;
 
 		if ( $recursion > 0 ) {
@@ -194,11 +212,47 @@ abstract class MessageIndex {
 		$diff = self::getArrayDiff( $old, $new );
 		$this->store( $new, $diff['keys'] );
 		$this->unlock();
+
+		$cache = $this->getInterimCache();
+		$interimCacheValue = $cache->get( self::CACHEKEY );
+		$timestamp = $timestamp ?? microtime( true );
+		if ( $interimCacheValue && $interimCacheValue['timestamp'] <= $timestamp ) {
+			$cache->delete( self::CACHEKEY );
+		}
+
 		$this->clearMessageGroupStats( $diff );
 
 		$recursion--;
 
 		return $new;
+	}
+
+	private function getInterimCache(): BagOStuff {
+		return ObjectCache::getInstance( CACHE_ANYTHING );
+	}
+
+	public function storeInterim( MessageGroup $group, array $newKeys ): void {
+		$namespace = $group->getNamespace();
+		$id = $group->getId();
+
+		$normalizedNewKeys = [];
+		foreach ( $newKeys as $key ) {
+			$normalizedNewKeys[TranslateUtils::normaliseKey( $namespace, $key )] = $id;
+		}
+
+		$cache = $this->getInterimCache();
+		// Merge existing with existing keys
+		$interimCacheValue = $cache->get( self::CACHEKEY, $cache::READ_LATEST );
+		if ( $interimCacheValue ) {
+			$normalizedNewKeys = array_merge( $interimCacheValue['newKeys'], $normalizedNewKeys );
+		}
+
+		$value = [
+			'timestamp' => microtime( true ),
+			'newKeys' => $normalizedNewKeys,
+		];
+
+		$cache->set( self::CACHEKEY, $value, $cache::TTL_DAY );
 	}
 
 	/**
@@ -280,10 +334,10 @@ abstract class MessageIndex {
 
 		foreach ( $diff['keys'] as $keys ) {
 			foreach ( $keys as $key => $data ) {
-				list( $ns, $pagename ) = explode( ':', $key, 2 );
+				[ $ns, $pagename ] = explode( ':', $key, 2 );
 				$title = Title::makeTitle( $ns, $pagename );
 				$handle = new MessageHandle( $title );
-				list( $oldGroups, $newGroups ) = $data;
+				[ $oldGroups, $newGroups ] = $data;
 				Hooks::run( 'TranslateEventMessageMembershipChange',
 					[ $handle, $oldGroups, $newGroups ] );
 			}
@@ -496,7 +550,7 @@ class DatabaseMessageIndex extends MessageIndex {
 
 		foreach ( [ $diff['add'], $diff['mod'] ] as $changes ) {
 			foreach ( $changes as $key => $data ) {
-				list( , $new ) = $data;
+				[ , $new ] = $data;
 				$updates[] = [
 					'tmi_key' => $key,
 					'tmi_value' => $this->serialize( $new ),

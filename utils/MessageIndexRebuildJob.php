@@ -14,12 +14,12 @@
  * @ingroup JobQueue
  */
 class MessageIndexRebuildJob extends Job {
-
 	/**
 	 * @return self
 	 */
 	public static function newJob() {
-		$job = new self( Title::newMainPage() );
+		$timestamp = microtime( true );
+		$job = new self( Title::newMainPage(), [ 'timestamp' => $timestamp ] );
 
 		return $job;
 	}
@@ -33,7 +33,9 @@ class MessageIndexRebuildJob extends Job {
 	}
 
 	public function run() {
-		MessageIndex::singleton()->rebuild();
+		// BC for existing jobs which may not have this parameter set
+		$timestamp = $this->getParams()['timestamp'] ?? microtime( true );
+		MessageIndex::singleton()->rebuild( $timestamp );
 
 		return true;
 	}
