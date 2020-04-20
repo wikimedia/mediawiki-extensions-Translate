@@ -686,6 +686,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$this->dbInfo = $iterator;
+
+		// Populate and cache reverse map now, since if call to initMesages is delayed (e.g. a
+		// filter that calls loadData() is used, or ::slice is used) the reverse map will not
+		// contain all the entries that are present in our $iterator and will throw notices.
+		$this->getReverseMap();
 	}
 
 	/**
@@ -720,6 +725,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$this->dbReviewData = $iterator;
+
+		// Populate and cache reverse map now, since if call to initMesages is delayed (e.g. a
+		// filter that calls loadData() is used, or ::slice is used) the reverse map will not
+		// contain all the entries that are present in our $iterator and will throw notices.
+		$this->getReverseMap();
 	}
 
 	/**
@@ -757,6 +767,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$this->dbData = $iterator;
+
+		// Populate and cache reverse map now, since if call to initMesages is delayed (e.g. a
+		// filter that calls loadData() is used, or ::slice is used) the reverse map will not
+		// contain all the entries that are present in our $iterator and will throw notices.
+		$this->getReverseMap();
 	}
 
 	/**
