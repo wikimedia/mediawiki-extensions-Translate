@@ -1,0 +1,36 @@
+== Translate 2020.04 ==
+Released at 2020-04-20.
+
+=== Noteworthy changes ===
+* '''SECURITY FIX''': Fixed - [Possible XSS vulnerability] HTML from messages
+rendered in Message group management ([[phab:T242115|Phab:T242115]])
+* Mangler: Don't remove prefix on unmangle if pattern doesn't match
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/586346 Gerrit Patch])
+* Add <code>translate_target_language</code> variable for abuse filters
+([[phab:T236447|Phab:T236447]])
+* Put label of languages box on separate line on narrow screens
+([[phab:T243997|Phab:T243997]])
+* Show assistant languages in the order defined -
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/585121 Gerrit Patch])
+* Remove unused create-language-models.php script
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/420840 Gerrit Patch])
+* GettextFFS should implement isContentEqual ([[phab:T233402|Phab:T233402]])
+* Expand toggles in message documentation are inactive when linking to a
+message directly ([[phab:T248265|Phab:T248265]])
+* Test and add support for PHP 7.4 ([[phab:T247657|Phab:T247657]])
+* Support export for offline translation also from command line
+([[phab:T248200|Phab:T248200]])
+* Remove PHP entry point ([[phab:T228055|Phab:T228055]])
+* mw.translateHooks JavaScript class was removed
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/582782 Gerrit Patch])
+* Code related to the unused and broken translation interface of special page
+aliases, namespaces and magic words was removed.
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/583299 Gerrit Patch])
+* MessageGroupCache: Remove code support old versions of the cache
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/585121 Gerrit Patch])
+* Removed old MessageChecker code. This has been replaced by the new validator
+framework. ([[phab:T241465|Phab:T241465]])
+* Make Special:SupportedLanguages do less work during web requests
+([[phab:T249439|Phab:T249439]])
+* Special:ExportTranslations: Disallow exporting huge groups
+([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/583044 Gerrit Patch])
