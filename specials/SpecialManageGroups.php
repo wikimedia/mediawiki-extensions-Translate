@@ -558,7 +558,8 @@ class SpecialManageGroups extends SpecialPage {
 		$text = $this->diff->getDiff(
 			$deletedTitleLink,
 			$addedTitleLink . $menu . $actions,
-			$isEqual ? $addedMsg['content'] : '' );
+			$isEqual ? htmlspecialchars( $addedMsg['content'] ) : ''
+		);
 
 		$hidden = Html::hidden( $id, 1 );
 		$limit--;
