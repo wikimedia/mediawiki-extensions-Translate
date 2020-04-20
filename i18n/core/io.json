@@ -39,6 +39,7 @@
 	"translate-magic-namespace": "Nomi di la nomari",
 	"translate-magic-notsaved": "Vua redakto ne konservesis!",
 	"translate-checks-parameters": "Atencez! La sequanta {{PLURAL:$2|parametro|parametri}} ne uzesis:\n<strong>$1</strong>",
+	"translate-checks-parameters-unknown": "La sequanta {{PLURAL:$2|parametro|parametri}} esas nekonocata:\n<strong>$1</strong>",
 	"translate-checks-balance": "Existas neegala quanto di {{PLURAL:$2|parentezo|parentezi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "La sequanta {{PLURAL:$2|ligilo|$2 ligili}} havas problemi:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "La sequanta {{PLURAL:$2|ligilo|$2 ligili}} mankas:\n<strong><nowiki>$1</nowiki></strong>",
@@ -158,5 +159,6 @@
 	"tux-editor-message-tools-delete": "Efacar",
 	"tux-editor-message-tools-translations": "Omna tradukuri",
 	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo",
-	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita"
+	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita",
+	"tux-nojs": "Ca utensilo ne funcionas sen JavaScript. Sive JavaScript esas nekapabligata, sive ne funcionis, sive vua interreto-navigilo ('browser') ne suportas ol."
 }

@@ -36,7 +36,7 @@
 	"translate": "Przetłumacz",
 	"translate-extensionname": "Przetłumacz",
 	"translate-desc": "[[Special:Translate|Strona specjalna]] umożliwiająca tłumaczenie MediaWiki oraz innych programów",
-	"translate-fuzzybot-desc": "To jest specjalne konto systemowe używane przez rozszerzenie MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate] służące do utrzymywania tłumaczeń.\nTo konto to część oprogramowania MediaWiki - nie jest prowadzone przez żadnego użytkownika.",
+	"translate-fuzzybot-desc": "To jest specjalne konto systemowe używane przez rozszerzenie MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] służące do utrzymywania tłumaczeń.\nTo konto jest częścią oprogramowania MediaWiki - nie jest prowadzone przez żadnego użytkownika.",
 	"translate-taskui-export-to-file": "Eksportuj w formacie macierzystym",
 	"translate-taskui-export-as-po": "Eksportuj do tłumaczenia off-line",
 	"translate-taction-translate": "Przetłumacz",

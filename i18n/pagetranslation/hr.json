@@ -73,6 +73,7 @@
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|uklonio|uklonila}} je prednosne jezike s prevodive stranice $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|postavio|postavila}} je prednosne jezike $5 za prevodivu stranicu $3",
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|ograničio|ograničila}} je jezike prevodive stranice $3 na $5",
+	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|dodao|dodala|dodao/dodala}} je prevodivu stranicu $3 u zbirnu skupinu $4",
 	"log-action-filter-pagetranslation": "Vrsta radnje:",
 	"log-action-filter-pagetranslation-mark": "Označivanje za prevođenje",
 	"log-action-filter-pagetranslation-unmark": "Uklanjanje iz prevođenja",
