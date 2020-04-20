@@ -12,6 +12,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
 		] );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
+
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => ObjectCache::getInstance( 'hash' ) ] ) );
 		$mg->recache();

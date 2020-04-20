@@ -15,9 +15,7 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 
-		global $wgHooks;
 		$this->setMwGlobals( [
-			'wgHooks' => $wgHooks,
 			'wgGroupPermissions' => [
 				'sysop' => [
 					'translate-messagereview' => true,
@@ -25,7 +23,8 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 			],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
-		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
+		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
+
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
 		$mg->recache();

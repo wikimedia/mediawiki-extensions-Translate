@@ -15,13 +15,10 @@ class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 	public function setUp() : void {
 		parent::setUp();
 
-		global $wgHooks;
 		$this->setMwGlobals( [
-			'wgHooks' => $wgHooks,
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateDelayedMessageIndexRebuild' => false
 		] );
-		$wgHooks['TranslatePostInitGroups'] = [];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
