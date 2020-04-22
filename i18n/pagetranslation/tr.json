@@ -111,7 +111,7 @@
 	"pt-shake-position": "Çeviri birimi işaretçileri beklenmedik bir konumda.\nÇeviri birimi metni: <pre>$1</pre>",
 	"pt-shake-empty": "\"$1\" işareti için boş çeviri birimi.",
 	"log-description-pagetranslation": "Sayfa çeviri sistemiyle ilgili eylemlerin günlüğü",
-	"log-name-pagetranslation": "Sayfa çeviri kütüğü",
+	"log-name-pagetranslation": "Sayfa çeviri günlüğü",
 	"logentry-pagetranslation-mark": "$1, $3 sayfasını çeviri için {{GENDER:$2|işaretledi}}",
 	"logentry-pagetranslation-unmark": "$1, $3 sayfası çeviri sisteminden {{GENDER:$2|kaldırdı}}",
 	"logentry-pagetranslation-moveok": "$1 ile $4 çevrilebilir $3 sayfanın yeniden adlandırılması {{GENDER:$2|tamamlandı}}",
