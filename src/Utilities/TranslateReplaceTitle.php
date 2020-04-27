@@ -35,7 +35,7 @@ class TranslateReplaceTitle {
 			$handle = new MessageHandle( $title );
 			// This takes care of situations where we have two different titles
 			// foo and foo/bar, both will be matched and fetched but the slash
-			// does not represent a language seperator
+			// does not represent a language separator
 			if ( $handle->getKey() !== $sourceMessageHandle->getKey() ) {
 				continue;
 			}
