@@ -48,6 +48,12 @@ class MessageGroupStatsRebuildJob extends Job {
 		$params = $this->params;
 		$flags = 0;
 
+		// Sanity check that this is run via JobQueue. Immediate writes are only safe when they
+		// are run in isolation, e.g. as a separate job in the JobQueue.
+		if ( defined( 'MEDIAWIKI_JOB_RUNNER' ) ) {
+			$flags |= MessageGroupStats::FLAG_IMMEDIATE_WRITES;
+		}
+
 		// This is to make sure the priority value is not read from the process cache.
 		// There is still a possibility that, due to replication lag, an old value is read.
 		MessageGroups::singleton()->clearProcessCache();
