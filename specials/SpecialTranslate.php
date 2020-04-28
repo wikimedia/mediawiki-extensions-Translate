@@ -53,6 +53,13 @@ class SpecialTranslate extends SpecialPage {
 		$this->setHeaders();
 
 		$this->setup( $parameters );
+
+		// Redirect old export URLs to Special:ExportTranslations
+		if ( $this->getRequest()->getText( 'taction' ) === 'export' ) {
+			$exportPage = SpecialPage::getTitleFor( 'ExportTranslations' );
+			$out->redirect( $exportPage->getLocalURL( $this->nondefaults ) );
+		}
+
 		$out->addModules( 'ext.translate.special.translate' );
 		$out->addJsConfigVars( 'wgTranslateLanguages', TranslateUtils::getLanguageNames( null ) );
 
@@ -74,7 +81,6 @@ class SpecialTranslate extends SpecialPage {
 		$request = $this->getRequest();
 
 		$defaults = [
-			/* str  */'taction'  => 'translate',
 			/* str  */'language' => $this->getLanguage()->getCode(),
 			/* str  */'group'    => '!additions',
 		];
@@ -117,23 +123,6 @@ class SpecialTranslate extends SpecialPage {
 			}
 
 			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
-		}
-
-		// Fix defaults based on what we got
-		if ( isset( $nondefaults['taction'] ) ) {
-			if ( $nondefaults['taction'] === 'export' ) {
-				// Redirect old export URLs to Special:ExportTranslations
-				$params = [];
-				if ( isset( $nondefaults['group'] ) ) {
-					$params['group'] = $nondefaults['group'];
-				}
-				if ( isset( $nondefaults['language'] ) ) {
-					$params['language'] = $nondefaults['language'];
-				}
-
-				$export = SpecialPage::getTitleFor( 'ExportTranslations' )->getLocalURL( $params );
-				$this->getOutput()->redirect( $export );
-			}
 		}
 
 		$this->defaults = $defaults;
@@ -387,8 +376,6 @@ class SpecialTranslate extends SpecialPage {
 		$params['language'] = $request->getVal( 'language' );
 		$params['group'] = $request->getVal( 'group' );
 
-		$taction = $request->getVal( 'taction', 'translate' );
-
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$languagestats = SpecialPage::getTitleFor( 'LanguageStats' );
 		$messagegroupstats = SpecialPage::getTitleFor( 'MessageGroupStats' );
@@ -402,7 +389,7 @@ class SpecialTranslate extends SpecialPage {
 			'class' => 'tux-tab',
 		];
 
-		if ( $alias === 'Translate' && $taction === 'translate' ) {
+		if ( $alias === 'Translate' ) {
 			$tabs['namespaces']['translate']['class'] .= ' selected';
 		}
 
