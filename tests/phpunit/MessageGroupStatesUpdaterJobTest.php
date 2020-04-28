@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Revision\SlotRecord;
+
 /**
  * @group Database
  * @group medium
@@ -109,6 +111,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 	public function testHooks() {
 		$user = $this->getTestSysop()->getUser();
 		$group = MessageGroups::getGroup( 'group-trans' );
+		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
 
 		// In the beginning...
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
@@ -119,14 +122,16 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'trans1', $title );
 
-		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$revRecord = $updater->saveRevision( $summary );
 
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress after first translation' );
 
 		// First review
-		ApiTranslationReview::doReview( $user, self::getRevisionRecord( $status ), __METHOD__ );
+		ApiTranslationReview::doReview( $user, $revRecord, __METHOD__ );
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress while untranslated messages' );
@@ -136,14 +141,16 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'trans2', $title );
 
-		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$revRecord = $updater->saveRevision( $summary );
 
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
 		$this->assertEquals( 'proofreading', $currentState, 'proofreading after second translation' );
 
 		// Second review
-		ApiTranslationReview::doReview( $user, self::getRevisionRecord( $status ), __METHOD__ );
+		ApiTranslationReview::doReview( $user, $revRecord, __METHOD__ );
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
 		$this->assertEquals( 'ready', $currentState, 'ready when all proofread' );
@@ -153,7 +160,9 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'trans1 updated', $title );
 
-		$page->doEditContent( $content, __METHOD__, 0, false, $user );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( $summary );
 
 		self::runJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
@@ -162,12 +171,6 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 			$currentState,
 			'back to proofreading after translation changed'
 		);
-	}
-
-	protected static function getRevisionRecord( Status $s ) {
-		$value = $s->getValue();
-
-		return $value['revision']->getRevisionRecord();
 	}
 
 	protected static function runJobs() {

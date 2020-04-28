@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * @group Database
@@ -34,7 +35,10 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'kissa', $title );
 
-		$page->doEditContent( $content,  'Test case' );
+		$updater = $page->newPageUpdater( $this->getTestSysop()->getUser() );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( 'Test case' );
+		$updater->saveRevision( $summary );
 
 		$this->assertFalse( $translatablePage->getReadyTag(), 'No ready tag was added' );
 		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
@@ -48,8 +52,13 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		$content = ContentHandler::makeContent( '<translate>kissa</translate>', $title );
-		$status = $page->doEditContent( $content, 'Test case' );
-		$latest = $status->value['revision']->getId();
+
+		$updater = $page->newPageUpdater( $this->getTestSysop()->getUser() );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( 'Test case' );
+		$revRecord = $updater->saveRevision( $summary );
+
+		$latest = $revRecord->getId();
 
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
@@ -63,15 +72,20 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		$content = ContentHandler::makeContent( '<translate>koira</translate>', $title );
-		$status = $page->doEditContent( $content, 'Test case' );
-		$latest = $status->value['revision']->getId();
+		$user = $this->getTestSysop()->getUser();
+
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( 'Test case' );
+		$revRecord = $updater->saveRevision( $summary );
+
+		$latest = $revRecord->getId();
 
 		$translatablePage->addMarkedTag( $latest, [ 'foo' ] );
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was added' );
 
 		$cascade = false;
-		$user = $this->getTestSysop()->getUser();
 		$page->doUpdateRestrictions(
 			[ 'edit' => 'sysop' ],
 			[],

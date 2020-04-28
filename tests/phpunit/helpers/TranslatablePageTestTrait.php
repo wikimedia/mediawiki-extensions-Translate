@@ -4,6 +4,8 @@
  * @file
  */
 
+use MediaWiki\Revision\SlotRecord;
+
 /**
  * A utility trait containing reusable methods for use in tests
  * @since 2020.04
@@ -48,11 +50,14 @@ trait TranslatablePageTestTrait {
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
 
 		// Create the page
-		$editStatus = $page->doEditContent( $content, __METHOD__, 0, false, $creator );
+		$updater = $page->newPageUpdater( $creator );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
+		$revRecord = $updater->saveRevision( $summary );
 
 		if ( $markForTranslation ) {
 			// Mark the page for translation
-			$latestRevisionId = $editStatus->value['revision']->getId();
+			$latestRevisionId = $revRecord->getId();
 			$translatablePage->addMarkedTag( $latestRevisionId );
 		}
 

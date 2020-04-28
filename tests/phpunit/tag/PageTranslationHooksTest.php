@@ -9,6 +9,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * @group Database
@@ -70,7 +71,11 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$messageGroups = MessageGroups::singleton();
 
 		// Create the page
-		$editStatus = $page->doEditContent( $content, __METHOD__, 0, false, $superUser );
+		$updater = $page->newPageUpdater( $superUser );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
+		$revRecord = $updater->saveRevision( $summary );
+
 		$messageGroups->recache();
 
 		// Check that we don't interfere with non-translatable pages at all
@@ -80,7 +85,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $actual, 'Extension data is not set on unmarked source page' );
 
 		// Mark the page for translation
-		$latestRevisionId = $editStatus->value['revision']->getId();
+		$latestRevisionId = $revRecord->getId();
 		$translatablePage->addMarkedTag( $latestRevisionId );
 		$messageGroups->recache();
 		$translationPageTitle = Title::newFromText( 'Vuosaari/fi' );

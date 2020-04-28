@@ -6,6 +6,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Revision\SlotRecord;
+
 /**
  * Tests for fuzzy flag change on edits.
  * @group Database
@@ -44,13 +46,14 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$title = Title::newFromText( 'MediaWiki:Ugakey/nl' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
-		$status = $page->doEditContent( $content, __METHOD__ );
-		$value = $status->getValue();
-		/**
-		 * @var Revision $rev
-		 */
-		$rev = $value['revision'];
-		$revision = $rev->getId();
+		$user = $this->getTestSysop()->getUser();
+
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
+		$revRecord = $updater->saveRevision( $summary );
+
+		$revision = $revRecord->getId();
 
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = [
@@ -67,16 +70,22 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after database fuzzying' );
 		// Update the translation without the fuzzy string
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
-		$page->doEditContent( $content, __METHOD__ );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( $summary );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 
 		$content = ContentHandler::makeContent( '!!FUZZY!!$1 van $2', $title );
-		$page->doEditContent( $content, __METHOD__ );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( $summary );
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after manual fuzzying' );
 
 		// Update the translation without the fuzzy string
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
-		$page->doEditContent( $content, __METHOD__ );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( $summary );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 	}
 
@@ -84,7 +93,11 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$title = Title::newFromText( 'MediaWiki:nlkey/en-gb' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'Test message', $title );
-		$page->doEditContent( $content, __METHOD__ );
+
+		$updater = $page->newPageUpdater( $this->getTestSysop()->getUser() );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
+		$updater->saveRevision( $summary );
 
 		$handle = new MessageHandle( $title );
 		$this->assertTrue( $handle->isValid(), 'Message is known' );

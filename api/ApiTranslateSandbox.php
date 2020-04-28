@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Revision\SlotRecord;
+
 /**
  * WebAPI for the sandbox feature of Translate.
  * @ingroup API TranslateAPI
@@ -161,27 +163,27 @@ class ApiTranslateSandbox extends ApiBase {
 	 * preferences.
 	 *
 	 * @param User $user
-	 * @return Status|bool False when a user page already existed, or the Status
-	 *   of the user page creation from WikiPage::doEditContent().
 	 */
-	protected function createUserPage( User $user ) {
+	private function createUserPage( User $user ) {
 		$userpage = $user->getUserPage();
 
 		if ( $userpage->exists() ) {
-			return false;
+			return;
 		}
 
 		$languagePrefs = FormatJson::decode( $user->getOption( 'translate-sandbox' ), true );
 		$languages = implode( '|', $languagePrefs[ 'languages' ] ?? [] );
 		$babeltext = "{{#babel:$languages}}";
-		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();
 
 		$page = WikiPage::factory( $userpage );
 		$content = ContentHandler::makeContent( $babeltext, $userpage );
 
-		$editResult = $page->doEditContent( $content, $summary, EDIT_NEW, false, $user );
+		$updater = $page->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
 
-		return $editResult;
+		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage();
+		$comment = CommentStoreComment::newUnsavedComment( $summary );
+		$updater->saveRevision( $comment, EDIT_NEW );
 	}
 
 	public function isWriteMode() {

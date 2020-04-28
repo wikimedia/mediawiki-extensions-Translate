@@ -10,6 +10,7 @@
 
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extensions\Translate\Utilities\TranslateReplaceTitle;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Job for updating translation pages when translation or message definition changes.
@@ -98,13 +99,19 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
 		$content = ContentHandler::makeContent( $params['content'], $title );
-		$editStatus = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
-		if ( !$editStatus->isOK() ) {
+
+		$updater = $wikiPage->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$comment = CommentStoreComment::newUnsavedComment( $summary );
+		$updater->saveRevision( $comment, $flags );
+
+		if ( !$updater->wasSuccessful() ) {
+			// TODO PageUpdater::getStatus may be deprecated
 			$this->logError(
 				'Failed to update content for source message',
 				[
 					'content' => $content,
-					'errors' => $editStatus->getErrors()
+					'errors' => $updater->getStatus()->getErrors()
 				]
 			);
 		}
@@ -265,13 +272,18 @@ class MessageUpdateJob extends GenericTranslateJob {
 			$title = Title::newFromText( $titleStr, $groupNamespace );
 			$wikiPage = WikiPage::factory( $title );
 			$content = ContentHandler::makeContent( $contentStr, $title );
-			$status = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
-			if ( !$status->isOK() ) {
+
+			$updater = $wikiPage->newPageUpdater( $user );
+			$updater->setContent( SlotRecord::MAIN, $content );
+			$summary = CommentStoreComment::newUnsavedComment( $summary );
+			$updater->saveRevision( $summary, $flags );
+			if ( !$updater->wasSuccessful() ) {
+				// FIXME PageUpdater::getStatus may be deprecated
 				$this->logError(
 					'Failed to update content for non-source message',
 					[
 						'title' => $title->getPrefixedText(),
-						'errors' => $status->getErrors()
+						'errors' => $updater->getStatus()->getErrors()
 					]
 				);
 			}
