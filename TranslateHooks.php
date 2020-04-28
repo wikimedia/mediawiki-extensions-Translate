@@ -46,9 +46,7 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Initialises the extension.
-	 * Does late-initialization that is not possible at file level,
-	 * because it depends on user configuration.
+	 * Do late setup that depends on configuration.
 	 */
 	public static function setupTranslate() {
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks, $wgTranslateYamlLibrary;
