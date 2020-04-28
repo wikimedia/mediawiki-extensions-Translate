@@ -557,4 +557,17 @@ class TranslateUtils {
 	public static function deserialize( $str, $opts = [ 'allowed_classes' => false ] ) {
 		return unserialize( $str, $opts );
 	}
+
+	/**
+	 * @return string
+	 * @since 2020.05
+	 */
+	public static function getVersion(): string {
+		// Avoid parsing JSON multiple time per request
+		static $version = null;
+		if ( $version === null ) {
+			$version = json_decode( file_get_contents( __DIR__ . '/extension.json' ) )->version;
+		}
+		return $version;
+	}
 }

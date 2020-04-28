@@ -51,10 +51,6 @@ class TranslateHooks {
 	public static function setupTranslate() {
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks, $wgTranslateYamlLibrary;
 
-		if ( !defined( 'TRANSLATE_VERSION' ) ) {
-			define( 'TRANSLATE_VERSION', '2019-04-24' );
-		}
-
 		/*
 		 * Text that will be shown in translations if the translation is outdated.
 		 * Must be something that does not conflict with actual content.

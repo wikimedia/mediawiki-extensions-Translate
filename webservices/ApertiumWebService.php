@@ -56,7 +56,7 @@ class ApertiumWebService extends TranslationWebService {
 		$params = [
 			'q' => $text,
 			'langpair' => "$from|$to",
-			'x-application' => 'MediaWiki Translate extension ' . TRANSLATE_VERSION,
+			'x-application' => 'MediaWiki Translate extension ' . TranslateUtils::getVersion(),
 		];
 
 		return TranslationQuery::factory( $this->config['url'] )

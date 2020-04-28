@@ -54,7 +54,7 @@ class QueryAggregator {
 	public function run() {
 		global $wgSitename;
 
-		$version = TRANSLATE_VERSION;
+		$version = TranslateUtils::getVersion();
 
 		$http = new MultiHttpClient( [
 			'reqTimeout' => $this->timeout,
