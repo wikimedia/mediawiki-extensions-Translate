@@ -51,16 +51,6 @@ class TranslateHooks {
 	 * because it depends on user configuration.
 	 */
 	public static function setupTranslate() {
-		global $wgPageTranslationNamespace;
-		if ( isset( $wgPageTranslationNamespace ) &&
-		$wgPageTranslationNamespace !== NS_TRANSLATIONS ) {
-			throw new MWException(
-				'$wgPageTranslationNamespace is no longer supported. Instead, define ' .
-				'NS_TRANSLATIONS and NS_TRANSLATIONS_TALK in LocalSettings.php before loading ' .
-				'Translate.'
-			);
-		}
-
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks, $wgTranslateYamlLibrary;
 
 		if ( !defined( 'TRANSLATE_VERSION' ) ) {
