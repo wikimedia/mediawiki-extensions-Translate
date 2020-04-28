@@ -52,13 +52,6 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setHeaders();
 
-		if ( !defined( 'ULS_VERSION' ) ) {
-			throw new ErrorPageError(
-				'translate-ulsdep-title',
-				'translate-ulsdep-body'
-			);
-		}
-
 		$this->setup( $parameters );
 		$out->addModules( 'ext.translate.special.translate' );
 		$out->addJsConfigVars( 'wgTranslateLanguages', TranslateUtils::getLanguageNames( null ) );
