@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Naufal06",
 			"NoiX180",
 			"Pras"
 		]
@@ -138,6 +139,7 @@
 	"pt-deletepage-list-section": "Kaca iji pertalan",
 	"pt-deletepage-list-other": "Subkaca liya",
 	"pt-deletepage-list-count": "Kabèhé $1 {{PLURAL:$1|kaca|kaca}} sing arep dibusak.",
+	"pt-deletepage-list-no-pages": "Ora ditemokaké kaca sing cocog",
 	"pt-deletepage-full-logreason": "Perangan kaca \"$1\" kang bisa kapertal",
 	"pt-deletepage-lang-logreason": "Pérangan kaca pertalan \"$1\"",
 	"pt-deletepage-started": "Mangga priksa [[Special:Log/pagetranslation|log terjemahan kaca]] kanggo layang kasalahan lan parampungan.",
