@@ -338,7 +338,6 @@
 	"translate-search-more-languages-info": "още $1 {{PLURAL:$1|език|езика}}",
 	"translate-statsbar-tooltip": "$1% преведени, $2% проверени",
 	"translate-search-more-groups-info": "още $1 {{PLURAL:$1|група|групи}}",
-	"translate-ulsdep-title": "Грешка в конфигурацията",
 	"tux-nojs": "Този инструмент не работи без JavaScript. JavaScript е деактивиран, не работи или не се поддържа от браузъра.",
 	"specialpages-group-translation": "Превод"
 }

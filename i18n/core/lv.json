@@ -254,7 +254,6 @@
 	"tux-editor-loading": "Ielādē...",
 	"translate-search-more-languages-info": "vēl $1 {{PLURAL:$1|valodas|valoda|valodas}}",
 	"translate-search-more-groups-info": "vēl $1 {{PLURAL:$1|grupas|grupa|grupas}}",
-	"translate-ulsdep-title": "Konfigurācijas kļūda",
 	"translate-syntax-error": "Tulkojums satur sintakses kļūdas",
 	"specialpages-group-translation": "Tulkojums"
 }

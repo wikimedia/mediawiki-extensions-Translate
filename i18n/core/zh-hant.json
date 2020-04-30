@@ -424,8 +424,6 @@
 	"translate-statsbar-tooltip": "$1% 已翻譯，$2% 已審查",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 已翻譯，$2% 已檢閱，$3% 已過時",
 	"translate-search-more-groups-info": "還有 $1 個{{PLURAL:$1|群組|群組}}",
-	"translate-ulsdep-title": "設定錯誤",
-	"translate-ulsdep-body": "翻譯擴充套件需要相依 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用語言選擇器擴充套件]。",
 	"translate-syntax-error": "翻譯含有語法錯誤",
 	"tux-session-expired": "您已不在登入狀態，請使用另一個頁籤登入。或者備份您尚未儲存的翻譯，登入返回此頁然後再輸入您的翻譯一次。",
 	"tux-nojs": "此工具在沒有 JavaScript 時無法運作。JavaScript 已停用、運作失敗，或者此瀏覽器不受支援。",

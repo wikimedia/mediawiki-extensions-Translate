@@ -349,7 +349,5 @@
 	"translate-search-more-languages-info": "$1 lagi bahasa",
 	"translate-statsbar-tooltip": "$1% diterjemah, $2% disemak",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% diterjemah, $2% disemak, $3 lapuk",
-	"translate-search-more-groups-info": "$1 lagi kumpulan",
-	"translate-ulsdep-title": "Ralat konfigurasi",
-	"translate-ulsdep-body": "Sambungan Translate bersandarkan [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector sambugnan Universal Language Selector]."
+	"translate-search-more-groups-info": "$1 lagi kumpulan"
 }

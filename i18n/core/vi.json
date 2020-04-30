@@ -377,8 +377,6 @@
 	"translate-statsbar-tooltip": "Đã biên dịch $1%, đã duyệt $2%",
 	"translate-statsbar-tooltip-with-fuzzy": "Đã biên dịch $1%, đã duyệt $2%, $3% lỗi thời",
 	"translate-search-more-groups-info": "$1 nhóm nữa",
-	"translate-ulsdep-title": "Lỗi cấu hình",
-	"translate-ulsdep-body": "Phần mở rộng Biên dịch cần [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector?uselang=vi phần mở rộng Lựa chọn Ngôn ngữ Toàn thể].",
 	"tux-session-expired": "Bạn không còn đăng nhập. Xin vui lòng đăng nhập trong thẻ riêng. Thay thế, hãy sao chép các bản dịch chưa lưu, đăng nhập, trở lại trang này, và nhập lại các bản dịch của bạn.",
 	"tux-nojs": "Trang này cần JavaScript để hoạt động. JavaScript đang tắt hay bị hư hỏng, hoặc trình duyệt này không được hỗ trợ."
 }

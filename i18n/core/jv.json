@@ -355,8 +355,6 @@
 	"translate-statsbar-tooltip": "$1% wis kapertal, $2% wis kapriksa",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% wis kapertal, $2% wis kapriksa, $3% wis lawas",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|golongan}} liyané",
-	"translate-ulsdep-title": "Masalah konfigurasi",
-	"translate-ulsdep-body": "Èkstènsi pertalan gumantung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector èkstènsi Sèlèktor Basa Global].",
 	"tux-session-expired": "Kowé wis ora mlebu log manèh. Mlebua log lumantar tab séjé. Utawa, turuna pertalan kang durung kasimpen, mlebua log, balia menyang kaca iki banjur isinen manèh pertalanmu.",
 	"tux-nojs": "Kaca iki butuh JavaScript."
 }

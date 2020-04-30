@@ -15,6 +15,7 @@
 	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
+	"pt-deletepage-list-no-pages": "Nula pagino trovesis.",
 	"pm-cancel-button-label": "Nuligar",
 	"pp-cancel-button-label": "Nuligar",
 	"tpt-generic-button": "Konfirmez"

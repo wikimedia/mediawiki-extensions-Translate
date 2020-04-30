@@ -382,8 +382,6 @@
 	"translate-statsbar-tooltip": "$1% prevedeno, $2% pregledano",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% prevedeno, $2% pregledano, $3% zastarelo",
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|grupa|grupe|grupa}}",
-	"translate-ulsdep-title": "Greška u konfiguraciji",
-	"translate-ulsdep-body": "Dodatak „Prevođenje” (Translate) zavisi od [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector dodatka „Univerzalan birač jezika” (Universal Language Selector)].",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u zasebnoj kartici. Druga mogućnost je da prekopirate nesačuvane prevode, prijavite se, vratite se na ovu stranicu i ponovo unesete svoje prevode.",
 	"tux-nojs": "Ova alatka ne radi bez JavaScript-a. JavaScript je onemogućen, ne radi ili je ovaj pregledač nepodržan."
 }

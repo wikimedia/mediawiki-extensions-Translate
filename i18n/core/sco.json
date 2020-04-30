@@ -299,7 +299,5 @@
 	"translate-search-more-languages-info": "$1 mair {{PLURAL:$1|leid|leids}}",
 	"translate-statsbar-tooltip": "$1% owerset, $2% luikt ower",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% owerset, $2% luikt ower, $3% ootdated",
-	"translate-search-more-groups-info": "$1 mair {{PLURAL:$1|groop|groops}}",
-	"translate-ulsdep-title": "Confeeguration mistak",
-	"translate-ulsdep-body": "Owerset extension depends oan the [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Uneeversal Leid Selecter extension]."
+	"translate-search-more-groups-info": "$1 mair {{PLURAL:$1|groop|groops}}"
 }

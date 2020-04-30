@@ -184,6 +184,7 @@
 	"pt-deletepage-list-section": "Páginas de unidades de traducción",
 	"pt-deletepage-list-other": "Otras subpáginas",
 	"pt-deletepage-list-count": "En total $1 {{PLURAL:$1|página|páginas}} a eliminar.",
+	"pt-deletepage-list-no-pages": "No se encontró ninguna página.",
 	"pt-deletepage-full-logreason": "Parte de la página traducible «$1»",
 	"pt-deletepage-lang-logreason": "Parte de la página de traducción «$1»",
 	"pt-deletepage-started": "Compruebe los errores y los mensajes de conclusión en el [[Special:Log/pagetranslation|registro de traducción de páginas]].",

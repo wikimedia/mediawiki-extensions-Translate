@@ -348,7 +348,5 @@
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|dalša rěč|dalšej rěči|dalše rěče|dalšich rěčow}}",
 	"translate-statsbar-tooltip": "$1 % přełoženy, $2 % přepruwowany",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % přełoženy, $2 % přepruwowany, $3 % zestarjeny",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}",
-	"translate-ulsdep-title": "Konfiguraciski zmylk",
-	"translate-ulsdep-body": "Přełožowanske rozšěrjenje wotwisuje wot [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšěrjenja Universal Language Selector]."
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}"
 }

@@ -367,8 +367,6 @@
 	"translate-statsbar-tooltip": "$1% prevedeno, $2% pregledano",
 	"translate-statsbar-tooltip-with-fuzzy": "‎$1% prevedeno, $2% pregledano, $3% zastareno",
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|grupa|grupe|grupa}}",
-	"translate-ulsdep-title": "Greška u konfiguraciji",
-	"translate-ulsdep-body": "Proširenje Translate ovisi o [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Univerzalnom jezičkom selektoru].",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u drugoj kartici. Druga mogućnost je da prekopirate nesačuvane prijevode, prijavite se, vratite se na ovu stranicu i ponovo upišete svoje prijevode.",
 	"tux-nojs": "Ova stranica zahtijeva JavaScript."
 }

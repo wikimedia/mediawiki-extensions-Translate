@@ -364,7 +364,6 @@
 	"translate-statsbar-tooltip": "$1 % prevedeno, $2 % pregledano",
 	"translate-statsbar-tooltip-with-fuzzy": "‎$1 % prevedeno, $2 % provjereno, $3 % zastarjelo",
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|skupina|skupine|skupina}}",
-	"translate-ulsdep-title": "Pogrješka u konfiguraciji",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u zasebnoj kartici. Druga mogućnost je da prekopirate nesačuvane prijevode, prijavite se, vratite se na ovu stranicu i ponovo upišete svoje prijevode.",
 	"tux-nojs": "Ovaj alat ne radi bez JavaScripta. Javascript je onemogućen, ne radi ili je preglednik nepodržan.",
 	"specialpages-group-translation": "Prevođenje"

@@ -344,7 +344,5 @@
 	"translate-search-more-languages-info": "Încă {{PLURAL:$1|o limbă|$1 limbi|$1 de limbi}}",
 	"translate-statsbar-tooltip": "$1% traduse, $2% revizuite",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduse, $2% revizuite, $3% învechite",
-	"translate-search-more-groups-info": "Încă {{PLURAL:$1|un grup|$1 grupuri|$1 de grupuri}}",
-	"translate-ulsdep-title": "Eroare de configurare",
-	"translate-ulsdep-body": "Extensia Translate depinde de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensia Universal Language Selector]."
+	"translate-search-more-groups-info": "Încă {{PLURAL:$1|un grup|$1 grupuri|$1 de grupuri}}"
 }

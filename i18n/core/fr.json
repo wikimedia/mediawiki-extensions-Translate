@@ -445,8 +445,6 @@
 	"translate-statsbar-tooltip": "$1% traduit, $2% relu",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduit, $2% relu, $3% désuet",
 	"translate-search-more-groups-info": "$1 groupe{{PLURAL:$1||s}} de plus",
-	"translate-ulsdep-title": "Erreur de configuration",
-	"translate-ulsdep-body": "L’extension de traduction dépend de l’[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extension Sélecteur universel de langue].",
 	"translate-syntax-error": "La traduction contient des erreurs de syntaxe",
 	"tux-session-expired": "Vous n’êtes plus connecté. Veuillez vous connecter dans un autre onglet. Sinon, faites une copie des traductions non enregistrées, connectez-vous et revenez sur cette page.",
 	"tux-nojs": "Cet outil ne fonctionne pas sans JavaScript. JavaScript est désactivé ou n’a pas pu s’exécuter, ou bien votre explorateur ne le prend pas en charge.",

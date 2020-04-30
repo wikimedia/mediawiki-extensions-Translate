@@ -297,6 +297,5 @@
 	"translate-statsbar-tooltip": "$1% аударылған, $2% тексерілген",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% аударылған, $2% тексерілген, $3%  жаңартуды қажет етеді",
 	"translate-search-more-groups-info": "Көбірек $1 {{PLURAL:$1|топ|топ}}:",
-	"translate-ulsdep-title": "Ішқұрылым қатесі",
 	"tux-nojs": "Бұл бет JavaScript керек етеді."
 }
