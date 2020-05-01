@@ -73,7 +73,6 @@
 	"tpt-languages-nonzero": "$1 ($2% vertaald)",
 	"tpt-tab-translate": "Vertalen",
 	"tpt-target-page": "Deze pagina kan niet handmatig worden bijgewerkt.\nDeze pagina is een vertaling van de pagina [[$1]].\nDe vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].",
-	"tpt-patrolling-blocked": "Deze pagina kan niet worden gecontroleerd. Gebruik in plaats hiervan de vertaal actie.",
 	"tpt-unknown-page": "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.\nDe pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
 	"tpt-translation-restricted": "De vertaling van deze pagina in deze taal is onmogelijk gemaakt door de vertalingenbeheerder.\n\nReden: $1",
 	"tpt-discouraged-language-force-header": "Deze pagina kan niet in het $1 vertaald worden.",

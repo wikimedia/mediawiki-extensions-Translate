@@ -75,7 +75,6 @@
 	"tpt-languages-nonzero": "$1 ($2 % käännetty)",
 	"tpt-tab-translate": "Käännä",
 	"tpt-target-page": "Tätä sivua ei voi muokata tavalliseen tapaan.\nTämä sivu on käännös sivusta [[$1]] ja käännöstä voi päivittää käyttämällä [$2 käännöstyökalua].",
-	"tpt-patrolling-blocked": "Tätä sivua ei voi tarkastaa. Käytä käännöstyökalua sen oikolukemiseen.",
 	"tpt-unknown-page": "Tämä nimiavaruus on varattu sisältösivujen käännöksille.\nSivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitty käännettäväksi.",
 	"tpt-translation-restricted": "Käännösylläpitäjä on estänyt tämän sivun kääntämisen tälle kielelle.\n\nSyy: $1",
 	"tpt-discouraged-language-force-header": "Tätä sivua ei voi kääntää kielelle $1.",

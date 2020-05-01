@@ -75,7 +75,6 @@
 	"tpt-languages-nonzero": "$1 ($2% 翻訳済)",
 	"tpt-tab-translate": "翻訳",
 	"tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
-	"tpt-patrolling-blocked": "このページは監視の対象外です。翻訳動作を使って査読してください。",
 	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳用に予約されています。\n編集しようとしているページには翻訳対象ページが対応していないようです。",
 	"tpt-translation-restricted": "翻訳管理者がこのページのこの言語への翻訳を禁止しています。\n\n理由: $1",
 	"tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",

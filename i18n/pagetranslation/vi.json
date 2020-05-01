@@ -64,7 +64,6 @@
 	"tpt-languages-nonzero": "$1 (đã biên dịch $2%)",
 	"tpt-tab-translate": "Biên dịch",
 	"tpt-target-page": "Trang này không thể cập nhật bằng tay.\nNó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].",
-	"tpt-patrolling-blocked": "Không thể tuần tra trang này. Thay thế, hãy sử dụng tác vụ biên dịch để xem lại nó.",
 	"tpt-unknown-page": "Không gian tên này được dành cho các bản dịch trang nội dung.\nTrang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.",
 	"tpt-translation-restricted": "Một người quản lý biên dịch không cho phép dịch trang ra ngôn ngữ này.\n\nLý do: $1",
 	"tpt-discouraged-language-force-header": "Không thể biên dịch trang này ra $1.",

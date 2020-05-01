@@ -58,7 +58,6 @@
 	"tpt-languages-zero": "या भाषेत भाषांतर सुरू करा",
 	"tpt-languages-nonzero": "$1 ($2% भाषांतरीत)",
 	"tpt-tab-translate": "भाषांतर करा",
-	"tpt-patrolling-blocked": "या पानावर पहारा देता येणार नाही,त्याऐवजी,याचे पुनरावलोकन करण्यास भाषांतर क्रिया वापरा.",
 	"tpt-translation-restricted": "या पानाच्या या भाषेतील भाषांतरास, भाषांतर प्रशासकाने अटकाव केलेला आहे.\n\nकारण:$1",
 	"tpt-discouraged-language-force-header": "या पानाचे $1 ला भाषांतर होउ शकत नाही.",
 	"tpt-discouraged-language-force-content": "भाषांतर प्रशासकाने, या पानाचे $1 ला भाषांतर करण्याचे ठरविले आहे.",

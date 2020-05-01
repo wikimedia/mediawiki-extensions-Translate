@@ -70,7 +70,6 @@
 	"tpt-languages-nonzero": "$1 ($2 % oversatt)",
 	"tpt-tab-translate": "Oversett",
 	"tpt-target-page": "Denne siden kan ikke oppdateres manuelt.\nDenne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].",
-	"tpt-patrolling-blocked": "Denne siden kan ikke patruljeres. Bruk i stedet oversettelseshandlingen for å godkjenne den.",
 	"tpt-unknown-page": "Dette navnerommet er reservert for oversettelser av innholdssider.\nDenne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.",
 	"tpt-translation-restricted": "Oversettelse av denne siden til dette språket har blitt forhindret av en oversettelsesadministrator.\n\nÅrsak: $1",
 	"tpt-discouraged-language-force-header": "Denne siden kan ikke oversettes til $1.",

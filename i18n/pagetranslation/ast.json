@@ -65,7 +65,6 @@
 	"tpt-languages-nonzero": "$1 ($2% traducío)",
 	"tpt-tab-translate": "Traducir",
 	"tpt-target-page": "Esta páxina nun se pue anovar manualmente.\nEsta páxina ye una traducción de la páxina [[$1]] y la traducción pue anovase usando [$2 la ferramienta de traducción].",
-	"tpt-patrolling-blocked": "Esta páxina nun puede patrullase. Usa meyor l'aición traducir pa revisala.",
 	"tpt-unknown-page": "Esti espaciu de nomes ta acutáu pa les traducciones de les páxines de conteníu.\nLa páxina que tas intentando editar paez que nun correspuende con denguna páxina marcada pa traducir.",
 	"tpt-translation-restricted": "Un alministrador de traducciones torgó la traducción d'esta páxina a esta llingua.\n\nMotivu: $1",
 	"tpt-discouraged-language-force-header": "Esta páxina nun puede traducise al $1.",

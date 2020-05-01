@@ -74,7 +74,6 @@
 	"tpt-languages-nonzero": "$1 ($2 % översatt)",
 	"tpt-tab-translate": "Översätt",
 	"tpt-target-page": "Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].",
-	"tpt-patrolling-blocked": "Denna sidan kan inte patrulleras. Använd översättningsåtgärden för att granska den.",
 	"tpt-unknown-page": "Den här namnrymden är reserverad för översättningar av sidor. Sidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.",
 	"tpt-translation-restricted": "Översättningar av denna sida har förhindrats av en översättningsadministratör.\n\nAnledningar: $1",
 	"tpt-discouraged-language-force-header": "Denna sida kan inte översättas till $1.",
