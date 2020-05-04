@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Streetdeck",
 			"Yueman"
 		]
 	},
-	"tpt-languages-nonzero": "$1（$2% 翻譯咗）"
+	"tpt-languages-nonzero": "$1（$2% 翻譯咗）",
+	"pt-movepage-list-no-pages": "維基百科無呢個名嘅文",
+	"pt-deletepage-list-no-pages": "維基百科無呢個名嘅文"
 }

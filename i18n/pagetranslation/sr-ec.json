@@ -3,6 +3,7 @@
 		"authors": [
 			"Acamicamacaraca",
 			"BadDog",
+			"MarinaSimic",
 			"Milicevic01",
 			"Obsuser",
 			"Rancher",
@@ -111,6 +112,7 @@
 	"pt-movepage-list-translatable-note": "Ове странице морају да се засебно преместе.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друга подстраница|Друге подстранице}}",
 	"pt-movepage-list-count": "Укупно $1 {{PLURAL:$1|страница|странице|страница}} за премештање.",
+	"pt-movepage-list-no-pages": "Нема пронађених страница.",
 	"pt-movepage-legend": "Премести преводиву страницу",
 	"pt-movepage-current": "Тренутно име:",
 	"pt-movepage-new": "Ново име:",

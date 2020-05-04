@@ -147,7 +147,7 @@
 	"pt-movepage-list-translatable": "{{PLURAL:$1|Sottopagina contrassegnata|Sottopagine contrassegnate}} per la traduzione",
 	"pt-movepage-list-translatable-note": "Queste pagine devono essere spostate separatamente.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Altra sottopagina|Altre sottopagine}}",
-	"pt-movepage-list-count": "$1 {{PLURAL:$1|pagina|pagine}} in tutto da spostare.",
+	"pt-movepage-list-count": "In totale $1 {{PLURAL:$1|pagina|pagine}} e $2 {{PLURAL:$2|sottopagina|sottopagine}} da spostare.",
 	"pt-movepage-legend": "Sposta pagina traducibile",
 	"pt-movepage-current": "Nome attuale:",
 	"pt-movepage-new": "Nuovo nome:",

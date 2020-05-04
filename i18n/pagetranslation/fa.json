@@ -146,6 +146,7 @@
 	"pt-movepage-list-section": "{{PLURAL:$1|صفحهٔ|صفحه‌های}} واحد ترجمه",
 	"pt-movepage-list-other": "زیر{{PLURAL:$1|صفحهٔ|صفحه‌های}} دیگر",
 	"pt-movepage-list-count": "در کل $1 {{PLURAL:$1|صفحه|صفحه‌ها}} برای حذف شدن.",
+	"pt-movepage-list-no-pages": "هیچ صفحه‌ای یافته نشد.",
 	"pt-movepage-legend": "انتقال صفحهٔ قابل ترجمه",
 	"pt-movepage-current": "نام فعلی:",
 	"pt-movepage-new": "نام تازه:",

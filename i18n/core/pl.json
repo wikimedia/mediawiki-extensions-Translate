@@ -85,6 +85,7 @@
 	"translate-export-invalid-format": "Proszę podać poprawny format.",
 	"translate-export-not-supported": "Eksport tłumaczeń nie jest obsługiwany.",
 	"translate-export-format-notsupported": "Określony format eksportu nie jest obsługiwany przez tę grupę komunikatów.",
+	"translate-export-group-too-large": "Wybrana grupa komunikatów jest za duża. Wybierz grupę, która ma mniej niż $1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} lub skontaktuj się z administratorem tłumaczeń.",
 	"translate-magic-pagename": "Rozszerzone tłumaczenie MediaWiki",
 	"translate-magic-help": "Istnieje możliwość tłumaczenia aliasów stron specjalnych, magicznych słów i nazw poszczególnych przestrzeni nazw.\n\nAliasy stron specjalnych i magiczne słowa mogą mieć wiele tłumaczeń.\nTłumaczenia rozdziela się przecinkiem (,).\nPrzestrzenie nazw mogą mieć tylko jedno tłumaczenie.\n\nTłumaczenie nazw przestrzeni nazw <code>Dyskusja $1</code> zawierających strony dyskusji może być bardziej złożone.\n<code>$1</code> zamieniane jest na nazwę serwisu – na przykład <code>{{ns:project_talk}}</code>.\nJeśli w danym języku niemożliwe jest sformułowanie prawidłowego wpisu bez zmiany nazwy serwisu, należy nas zawiadomić przez [[Support]].\n\nZapisanie zmian jest możliwe tylko przez członków grupy tłumaczy.\nZmiany nie są zapisywane, dopóki użytkownik nie naciśnie umieszczonego poniżej przycisku „Zapisz”.",
 	"translate-magic-module": "Moduł:",

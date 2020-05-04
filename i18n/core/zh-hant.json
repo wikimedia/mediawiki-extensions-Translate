@@ -178,7 +178,7 @@
 	"translate-statsf-language": "語言代碼 (以逗號分隔)：",
 	"translate-statsf-group": "群組代碼 (以逗號分隔)：",
 	"translate-statsf-submit": "預覽",
-	"translate-tag-page-desc": "Wiki 頁面 [[$2|$1]] 來自$3 ($4) 的翻譯。",
+	"translate-tag-page-desc": "wiki頁面[[$2|$1]]來自$3（$4）的翻譯。",
 	"translate-sidebar-alltrans": "其他翻譯",
 	"translations": "所有翻譯",
 	"translations-summary": "在下方輸入訊息名稱以顯示所有可用的翻譯。",

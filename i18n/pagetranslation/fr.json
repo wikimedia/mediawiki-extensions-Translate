@@ -165,7 +165,7 @@
 	"pt-movepage-list-translatable": "Sous-page{{PLURAL:$1||s}} marquée{{PLURAL:$1||s}} à traduire",
 	"pt-movepage-list-translatable-note": "Ces pages doivent être renommées séparément.",
 	"pt-movepage-list-other": "Autre{{PLURAL:$1||s}} sous-page{{PLURAL:$1||s}}",
-	"pt-movepage-list-count": "Au total $1 {{PLURAL:$1|page|pages}} à déplacer et $2 {{PLURAL:$2|sous-page|sous-pages}}.",
+	"pt-movepage-list-count": "Au total, $1 page{{PLURAL:$1||s}} et $2 sous-page{{PLURAL:$2||s}} à déplacer.",
 	"pt-movepage-list-no-pages": "Aucune page trouvée.",
 	"pt-movepage-legend": "Déplacer la page traduisible",
 	"pt-movepage-current": "Nom actuel :",
