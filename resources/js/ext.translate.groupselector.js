@@ -8,7 +8,7 @@
 	 *  - position: accepts same values as jquery.ui.position
 	 *  - onSelect:
 	 *  - language:
-	 *  - preventSelector: boolean to load but not show the group selector.
+	 *  - preventSelector: boolean to not allow selection of subgroups.
 	 *  - recent: list of recent group ids
 	 * groups: list of message group ids
 	 *
@@ -17,7 +17,7 @@
 	 * @param {Object} [options.position] Accepts same values as jquery.ui.position.
 	 * @param {Function} [options.onSelect] Callback with message group id when selected.
 	 * @param {string} options.language Language code for statistics.
-	 * @param {boolean} [options.preventSelector] Whether not to show the group selector.
+	 * @param {boolean} [options.preventSelector] Do not allow selection of subgroups.
 	 * @param {string[]} [options.recent] List of recent message group ids.
 	 * @param {string[]} [groups] List of message group ids to show.
 	 */
