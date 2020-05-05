@@ -570,4 +570,16 @@ class TranslateUtils {
 		}
 		return $version;
 	}
+
+	/**
+	 * Checks if the namespace that the title belongs to allows subpages
+	 *
+	 * @internal - For internal use only
+	 * @param Title $title
+	 * @return bool
+	 */
+	public static function allowsSubpages( Title $title ): bool {
+		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		return $namespaceInfo->hasSubpages( $title->getNamespace() );
+	}
 }

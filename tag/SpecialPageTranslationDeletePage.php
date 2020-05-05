@@ -231,18 +231,21 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		}
 		$this->listPages( $out, $lines );
 
-		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
-		$subpages = $this->getSubpages();
-		$lines = [];
-		foreach ( $subpages as $old ) {
-			if ( TranslatablePage::isTranslationPage( $old ) ) {
-				continue;
-			}
+		if ( TranslateUtils::allowsSubpages( $this->title ) ) {
+			$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
+			$subpages = $this->getSubpages();
+			$lines = [];
+			foreach ( $subpages as $old ) {
+				if ( TranslatablePage::isTranslationPage( $old ) ) {
+					continue;
+				}
 
-			$subpageCount++;
-			$lines[] = $this->getChangeLine( $old );
+				$subpageCount++;
+				$lines[] = $this->getChangeLine( $old );
+			}
+			$this->listPages( $out, $lines );
 		}
-		$this->listPages( $out, $lines );
+
 		$totalPageCount = $count + $subpageCount;
 
 		$out->addWikiTextAsInterface( "----\n" );

@@ -273,9 +273,12 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			'pt-movepage-list-pages' => [ $this->oldTitle ],
 			'pt-movepage-list-translation' => $this->getTranslationPages(),
 			'pt-movepage-list-section' => $this->getSectionPages(),
-			'pt-movepage-list-translatable' => $this->getTranslatableSubpages(),
-			'pt-movepage-list-other' => $this->getNormalSubpages()
+			'pt-movepage-list-translatable' => $this->getTranslatableSubpages()
 		];
+
+		if ( TranslateUtils::allowsSubpages( $this->oldTitle ) ) {
+			$types[ 'pt-movepage-list-other'] = $this->getNormalSubpages();
+		}
 
 		foreach ( $types as $type => $pages ) {
 			$pageCount = count( $pages );
