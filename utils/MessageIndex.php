@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
  * used to get the groups they belong to. This is used as a fallback when
@@ -163,6 +165,8 @@ abstract class MessageIndex {
 	 * @throws Exception
 	 */
 	public function rebuild( float $timestamp = null ): array {
+		$logger = LoggerFactory::getInstance( 'Translate' );
+
 		static $recursion = 0;
 
 		if ( $recursion > 0 ) {
@@ -174,11 +178,23 @@ abstract class MessageIndex {
 		}
 		$recursion++;
 
+		$logger->info(
+			'[MessageIndex] Started rebuild. Initiated by {callers}',
+			[ 'callers' => wfGetAllCallers( 20 ) ]
+		);
+
 		$groups = MessageGroups::singleton()->getGroups();
 
+		$tsStart = microtime( true );
 		if ( !$this->lock() ) {
 			throw new Exception( __CLASS__ . ': unable to acquire lock' );
 		}
+
+		$lockWaitDuration = microtime( true ) - $tsStart;
+		$logger->info(
+			'[MessageIndex] Got lock in {duration}',
+			[ 'duration' => $lockWaitDuration ]
+		);
 
 		self::getCache()->clear();
 
@@ -212,6 +228,12 @@ abstract class MessageIndex {
 		$diff = self::getArrayDiff( $old, $new );
 		$this->store( $new, $diff['keys'] );
 		$this->unlock();
+
+		$criticalSectionDuration = microtime( true ) - $tsStart - $lockWaitDuration;
+		$logger->info(
+			'[MessageIndex] Finished critical section in {duration}',
+			[ 'duration' => $criticalSectionDuration ]
+		);
 
 		$cache = $this->getInterimCache();
 		$interimCacheValue = $cache->get( self::CACHEKEY );
