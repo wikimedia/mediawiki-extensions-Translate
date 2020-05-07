@@ -177,6 +177,7 @@
 	"pt-deletepage-list-section": "صفحه‌های واحد ترجمه",
 	"pt-deletepage-list-other": "زیرصفحه‌های دیگر",
 	"pt-deletepage-list-count": "در کل $1 {{PLURAL:$1|صفحه|صفحه}} حذف می‌شوند.",
+	"pt-deletepage-list-no-pages": "هیچ صفحه‌ای یافته نشد.",
 	"pt-deletepage-full-logreason": "قسمتی از صفحهٔ قابل ترجمه «$1».",
 	"pt-deletepage-lang-logreason": "قسمتی از ترجمه «$1»",
 	"pt-deletepage-started": "لطفاً [[Special:Log/pagetranslation|سیاهه صفحه ترجمه]] را برای خطاها و پیام تکمیل بررسی کنید.",

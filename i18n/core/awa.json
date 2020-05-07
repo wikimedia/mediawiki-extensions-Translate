@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"1AnuraagPandey"
+			"1AnuraagPandey",
+			"Ajeetsinghawadhi"
 		]
 	},
 	"translate": "अनुवाद करा जाय",
@@ -21,5 +22,6 @@
 	"supportedlanguages-recenttranslations": "नँवा अनुवाद",
 	"supportedlanguages-count": "कुल $1 {{PLURAL:$1|भाषा|भाषा}} ।",
 	"translate-documentation-language": "मैसेज डकुमेन्टेशन",
+	"tux-editor-skip-button-label": "छोड़यँ औ आगे जायँ",
 	"tux-editor-in-other-languages": "दुसर भाषा में"
 }
