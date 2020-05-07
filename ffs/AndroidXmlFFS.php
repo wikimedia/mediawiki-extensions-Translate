@@ -91,7 +91,7 @@ class AndroidXmlFFS extends SimpleFFS {
 
 	protected function formatElementContents( $contents ) {
 		// Kudos to the brilliant person who invented this braindead file format
-		$escaped = addcslashes( $contents, '"\'' );
+		$escaped = addcslashes( $contents, '"\'\\' );
 		if ( substr( $escaped, 0, 1 ) === '@' ) {
 			// '@' at beginning of string refers to another string by name.
 			// Add backslash to escape it too.
@@ -142,7 +142,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		}
 
 		/**
-		 * @var $m TMessage
+		 * @var TMessage $m
 		 */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );

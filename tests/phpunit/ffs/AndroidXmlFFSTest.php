@@ -23,7 +23,7 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function testParsing() {
 		$file =
-<<<XML
+<<<'XML'
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Authors:
 * Imaginary translator
@@ -39,6 +39,7 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 	<string name="starts_with_at">\@Wikipedia</string>
 	<string name="has_ampersand">1&amp;nbsp;000</string>
 	<string name="has_newline">first\nsecond</string>
+	<string name="has_slashes">first \\ second</string>
 </resources>
 XML;
 
@@ -57,6 +58,7 @@ XML;
 				'starts_with_at' => '@Wikipedia',
 				'has_ampersand' => '1&nbsp;000',
 				'has_newline' => "first\nsecond",
+				'has_slashes' => 'first \\ second'
 			],
 			'AUTHORS' => [
 				'Imaginary translator',
@@ -79,6 +81,7 @@ XML;
 			'amuch' => '{{PLURAL|one=bunny|bunnies}}',
 			'ampersand' => '&nbsp; &foo',
 			'newlines' => "first\nsecond",
+			'slashes' => 'has \\ slash'
 		];
 		$authors = [
 			'1 Hyphen-Fan',
