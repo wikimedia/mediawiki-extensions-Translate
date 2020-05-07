@@ -839,7 +839,7 @@ class TranslateHooks {
 		$hasOldJqUI = version_compare( $wgVersion, '1.34', '<' );
 
 		// Support: MediaWiki <= 1.34
-		$hasOldTokens = version_compare( $wgVersion, '1.35', '<' );
+		$hasOldTokens = $hasOldNotify = version_compare( $wgVersion, '1.35', '<' );
 
 		$tpl = [
 			'localBasePath' => __DIR__,
@@ -902,7 +902,7 @@ class TranslateHooks {
 			],
 			'ext.translate.special.managetranslatorsandbox' => $tpl + [
 				'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
-				'dependencies' => [
+				'dependencies' => array_merge( [
 					'ext.translate.loader',
 					'ext.translate.translationstashstorage',
 					'ext.uls.mediawiki',
@@ -910,8 +910,7 @@ class TranslateHooks {
 					'mediawiki.api',
 					'mediawiki.jqueryMsg',
 					'mediawiki.language',
-					'mediawiki.notify'
-				],
+				], $hasOldNotify ? [ 'mediawiki.notify' ] : [] ),
 				'messages' => [
 					'tsb-accept-all-button-label',
 					'tsb-accept-button-label',
