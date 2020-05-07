@@ -933,6 +933,108 @@ class TranslateHooks {
 					'desktop'
 				]
 			],
+			"ext.translate.editor" => $tpl + [
+				"scripts" => [
+					"resources/js/ext.translate.editor.helpers.js",
+					"resources/js/ext.translate.editor.js",
+					"resources/js/ext.translate.editor.shortcuts.js",
+					"resources/js/ext.translate.pagemode.js",
+					"resources/js/ext.translate.proofread.js"
+				],
+				"styles" => [
+					"resources/css/ext.translate.editor.css",
+					"resources/css/ext.translate.pagemode.css",
+					"resources/css/ext.translate.proofread.css"
+				],
+				"dependencies" => array_merge( [
+					"ext.translate.base",
+					"ext.translate.dropdownmenu",
+					"ext.translate.storage",
+					"jquery.autosize",
+					"jquery.makeCollapsible",
+					"jquery.textSelection",
+					"jquery.textchange",
+					"mediawiki.Uri",
+					"mediawiki.api",
+					"mediawiki.jqueryMsg",
+					"mediawiki.language",
+					"mediawiki.user",
+					"mediawiki.util"
+				], $hasOldNotify ? [ 'mediawiki.notify' ] : [] ),
+				"messages" => [
+					"translate-edit-askpermission",
+					"translate-edit-nopermission",
+					"tux-editor-add-desc",
+					"tux-editor-ask-help",
+					"tux-editor-cancel-button-label",
+					"tux-editor-close-tooltip",
+					"tux-editor-collapse-tooltip",
+					"tux-editor-confirm-button-label",
+					"tux-editor-discard-changes-button-label",
+					"tux-editor-doc-editor-cancel",
+					"tux-editor-doc-editor-placeholder",
+					"tux-editor-doc-editor-save",
+					"tux-editor-edit-desc",
+					"tux-editor-expand-tooltip",
+					"tux-editor-in-other-languages",
+					"tux-editor-loading",
+					"tux-editor-loading-failed",
+					"tux-editor-message-desc-less",
+					"tux-editor-message-desc-more",
+					"tux-editor-message-tools-show-editor",
+					"tux-editor-message-tools-delete",
+					"tux-editor-message-tools-history",
+					"tux-editor-message-tools-translations",
+					"tux-editor-message-tools-linktothis",
+					"tux-editor-n-uses",
+					"tux-editor-need-more-help",
+					"tux-editor-outdated-notice",
+					"tux-editor-outdated-notice-diff-link",
+					"tux-editor-paste-original-button-label",
+					"tux-editor-placeholder",
+					"tux-editor-editsummary-placeholder",
+					"tux-editor-proofread-button-label",
+					"tux-editor-save-button-label",
+					"tux-editor-save-failed",
+					"tux-editor-shortcut-info",
+					"tux-editor-skip-button-label",
+					"tux-editor-suggestions-title",
+					"tux-editor-tm-match",
+					"tux-proofread-action-tooltip",
+					"tux-proofread-edit-label",
+					"tux-proofread-translated-by-self",
+					"tux-session-expired",
+					"tux-status-saving",
+					"tux-status-translated",
+					"tux-status-unsaved",
+					"tux-save-unknown-error",
+					"tux-notices-hide",
+					"tux-notices-more",
+					"spamprotectiontext"
+				],
+				"targets" => [
+					"desktop",
+					"mobile"
+				]
+			],
+			"ext.translate.special.managegroups" => $tpl + [
+				"dependencies" => array_merge( [
+					"ext.translate.messagerenamedialog"
+				], $hasOldNotify ? [ 'mediawiki.notify' ] : [] ),
+				"messages" => [
+					"translate-smg-rename-new",
+					"translate-smg-rename-rename",
+					"translate-smg-rename-dialog-title",
+					"percent"
+				],
+				"scripts" => [
+					"resources/js/ext.translate.special.managegroups.js"
+				],
+				"targets" => [
+					"desktop",
+					"mobile"
+				]
+			],
 		];
 
 		$resourceLoader->register( $modules );
