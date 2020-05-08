@@ -9,8 +9,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Revision\SlotRecord;
-
 /**
  * @ingroup MessageGroup
  */
@@ -52,7 +50,6 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		}
 
 		$defs = TranslateUtils::getContents( array_keys( $keys ), $this->getNamespace() );
-		$user = FuzzyBot::getUser();
 		foreach ( $keys as $key => $state ) {
 			if ( !isset( $defs[$key] ) ) {
 				// @todo Use jobqueue
@@ -60,17 +57,13 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 				$page = new WikiPage( $title );
 				$content = ContentHandler::makeContent( $state, $title );
 
-				$updater = $page->newPageUpdater( $user );
-				$updater->setContent(
-					SlotRecord::MAIN,
-					$content
+				$page->doEditContent(
+					$content,
+					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text(),
+					0, /*flags*/
+					false, /* base revision id */
+					FuzzyBot::getUser()
 				);
-
-				$summary = CommentStoreComment::newUnsavedComment(
-					wfMessage( 'translate-workflow-autocreated-summary', $state )
-						->inContentLanguage()
-				);
-				$updater->saveRevision( $summary );
 			} else {
 				// Use the wiki translation as definition if available.
 				// getContents returns array( content, last author )

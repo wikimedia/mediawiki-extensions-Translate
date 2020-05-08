@@ -13,7 +13,6 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Shell\Shell;
 
 // Standard boilerplate to define $IP
@@ -487,17 +486,15 @@ class ChangeSyncer {
 
 		$wikipage = new WikiPage( $title );
 		$content = ContentHandler::makeContent( $translation, $title );
-
-		$updater = $wikipage->newPageUpdater( FuzzyBot::getUser() );
-		$updater->setContent(
-			SlotRecord::MAIN,
-			$content
+		$status = $wikipage->doEditContent(
+			$content,
+			$comment,
+			$flags,
+			false,
+			FuzzyBot::getUser()
 		);
 
-		$summary = CommentStoreComment::newUnsavedComment( $comment );
-		$updater->saveRevision( $summary, $flags );
-
-		$success = $updater->wasSuccessful();
+		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		$this->reportProgress( $success ? 'OK' : 'FAILED', $title );
 	}
 }

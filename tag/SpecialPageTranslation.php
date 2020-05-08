@@ -9,7 +9,6 @@
  */
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\SlotRecord;
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -139,19 +138,16 @@ class SpecialPageTranslation extends SpecialPage {
 				$title
 			);
 
-			$updater = WikiPage::factory( $title )->newPageUpdater( $user );
-			$updater->setContent( SlotRecord::MAIN, $content );
-
-			$summary = CommentStoreComment::newUnsavedComment(
-				$this->msg( 'tpt-unlink-summary' )->inContentLanguage()
+			$status = WikiPage::factory( $title )->doEditContent(
+				$content,
+				$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
+				EDIT_FORCE_BOT | EDIT_UPDATE
 			);
-			$updater->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
 
-			if ( !$updater->wasSuccessful() ) {
-				// FIXME PageUpdater::getStatus will need to be deprecated
+			if ( !$status->isOK() ) {
 				$out->wrapWikiMsg(
 					'<div class="errorbox">$1</div>',
-					[ 'tpt-edit-failed', $updater->getStatus()->getWikiText() ]
+					[ 'tpt-edit-failed', $status->getWikiText() ]
 				);
 
 				return;
@@ -869,25 +865,28 @@ class SpecialPageTranslation extends SpecialPage {
 			$page->getTitle()
 		);
 
-		$updater = $wikiPage->newPageUpdater( $this->getUser() );
-		$updater->setContent( SlotRecord::MAIN, $content );
-
-		$summary = CommentStoreComment::newUnsavedComment(
-			$this->msg( 'tpt-mark-summary' )->inContentLanguage()
+		$status = $wikiPage->doEditContent(
+			$content,
+			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),
+			EDIT_FORCE_BOT | EDIT_UPDATE
 		);
-		$revRecord = $updater->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
 
-		if ( !$updater->wasSuccessful() ) {
-			// FIXME PageUpdater::getStatus may be deprecated
-			return [ 'tpt-edit-failed', $updater->getStatus()->getWikiText() ];
+		if ( !$status->isOK() ) {
+			return [ 'tpt-edit-failed', $status->getWikiText() ];
 		}
 
-		if ( $revRecord === null ) {
+		$newrevision = $status->value['revision'];
+
+		// In theory it is either null or Revision object,
+		// never revision object with null id, but who knows
+		if ( $newrevision instanceof Revision ) {
+			$newrevision = $newrevision->getId();
+		}
+
+		if ( $newrevision === null ) {
 			// Probably a no-change edit, so no new revision was assigned.
 			// Get the latest revision manually
 			$newrevision = $page->getTitle()->getLatestRevID();
-		} else {
-			$newrevision = $revRecord->getId();
 		}
 
 		$inserts = [];

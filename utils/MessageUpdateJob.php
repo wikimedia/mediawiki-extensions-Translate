@@ -10,7 +10,6 @@
 
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extensions\Translate\Utilities\TranslateReplaceTitle;
-use MediaWiki\Revision\SlotRecord;
 
 /**
  * Job for updating translation pages when translation or message definition changes.
@@ -99,19 +98,13 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
 		$content = ContentHandler::makeContent( $params['content'], $title );
-
-		$updater = $wikiPage->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$comment = CommentStoreComment::newUnsavedComment( $summary );
-		$updater->saveRevision( $comment, $flags );
-
-		if ( !$updater->wasSuccessful() ) {
-			// TODO PageUpdater::getStatus may be deprecated
+		$editStatus = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
+		if ( !$editStatus->isOK() ) {
 			$this->logError(
 				'Failed to update content for source message',
 				[
 					'content' => $content,
-					'errors' => $updater->getStatus()->getErrors()
+					'errors' => $editStatus->getErrors()
 				]
 			);
 		}
@@ -272,18 +265,13 @@ class MessageUpdateJob extends GenericTranslateJob {
 			$title = Title::newFromText( $titleStr, $groupNamespace );
 			$wikiPage = WikiPage::factory( $title );
 			$content = ContentHandler::makeContent( $contentStr, $title );
-
-			$updater = $wikiPage->newPageUpdater( $user );
-			$updater->setContent( SlotRecord::MAIN, $content );
-			$summary = CommentStoreComment::newUnsavedComment( $summary );
-			$updater->saveRevision( $summary, $flags );
-			if ( !$updater->wasSuccessful() ) {
-				// FIXME PageUpdater::getStatus may be deprecated
+			$status = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
+			if ( !$status->isOK() ) {
 				$this->logError(
 					'Failed to update content for non-source message',
 					[
 						'title' => $title->getPrefixedText(),
-						'errors' => $updater->getStatus()->getErrors()
+						'errors' => $status->getErrors()
 					]
 				);
 			}

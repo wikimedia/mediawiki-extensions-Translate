@@ -451,21 +451,16 @@ class MessageWebImporter {
 		$wikiPage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $message, $title );
 		$status = $wikiPage->doEditContent( $content, $summary, $editFlags, false, $user );
+		$success = $status->isOK();
 
-		$updater = $wikiPage->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$summary = CommentStoreComment::newUnsavedComment( $summary );
-		$updater->saveRevision( $summary, $editFlags );
-
-		if ( $updater->wasSuccessful() ) {
+		if ( $success ) {
 			return [ 'translate-manage-import-ok',
 				wfEscapeWikiText( $title->getPrefixedText() )
 			];
 		}
 
-		// FIXME PageUpdater::getStatus will be deprecated
 		$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
-		$text .= "{$updater->getStatus()->getWikiText()}";
+		$text .= "{$status->getWikiText()}";
 		throw new MWException( $text );
 	}
 

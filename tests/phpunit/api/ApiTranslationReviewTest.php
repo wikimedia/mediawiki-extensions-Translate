@@ -7,7 +7,6 @@
  */
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\SlotRecord;
 
 /**
  * @group Database
@@ -52,25 +51,17 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 
 		$plainUser = $this->getMutableTestUser()->getUser();
 
-		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
-
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
 		$content = ContentHandler::makeContent( 'trans1', $title );
-		$updater = WikiPage::factory( $title )->newPageUpdater( $superUser1 );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$updater->saveRevision( $summary );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/fi' );
 		$content = ContentHandler::makeContent( '!!FUZZY!!trans2', $title );
-		$updater = WikiPage::factory( $title )->newPageUpdater( $superUser2 );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$updater->saveRevision( $summary );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser2 );
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey3/fi' );
 		$content = ContentHandler::makeContent( 'unknown message', $title );
-		$updater = WikiPage::factory( $title )->newPageUpdater( $superUser1 );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$updater->saveRevision( $summary );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
 
 		$testcases = [
 			[

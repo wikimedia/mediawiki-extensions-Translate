@@ -5,8 +5,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Revision\SlotRecord;
-
 /**
  * @group Database
  * @group medium
@@ -47,14 +45,11 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
 
-		$updater = $page->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
+		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
 
-		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
-		$result = $updater->saveRevision( $summary );
-
-		$this->assertNotNull( $result );
-		$revision = $result->getId();
+		$value = $status->getValue();
+		$rev = $value['revision'];
+		$revision = $rev->getId();
 
 		$group = MessageGroups::getGroup( 'test-group' );
 		$collection = $group->initCollection( 'fi' );
