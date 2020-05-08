@@ -7,8 +7,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Revision\SlotRecord;
-
 /**
  * @group Database
  * @group medium
@@ -46,14 +44,10 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 	public function testPreventCategorization() {
 		$user = $this->getTestSysop()->getUser();
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey1/fi' );
-		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
 
-		$updater = $wikipage->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$updater->saveRevision( $summary );
-
+		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
 			[],
 			$title->getParentCategories(),
@@ -64,10 +58,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbe]]', $title );
 
-		$updater = $wikipage->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$updater->saveRevision( $summary );
-
+		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
 			[ 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ],
 			$title->getParentCategories(),
@@ -78,10 +69,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
 
-		$updater = $wikipage->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$updater->saveRevision( $summary );
-
+		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals( [], $title->getParentCategories(), 'unknown message' );
 	}
 

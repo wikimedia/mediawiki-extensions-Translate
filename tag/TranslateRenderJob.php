@@ -8,7 +8,6 @@
  */
 
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Revision\SlotRecord;
 
 /**
  * Job for updating translation pages when translation or template changes.
@@ -73,20 +72,13 @@ class TranslateRenderJob extends GenericTranslateJob {
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
-
-		$updater = $page->newPageUpdater( $user );
-		$updater->setContent( SlotRecord::MAIN, $content );
-
-		$summary = CommentStoreComment::newUnsavedComment( $summary );
-		$updater->saveRevision( $summary, $flags );
-
-		if ( !$updater->wasSuccessful() ) {
-			// FIXME PageUpdater::getStatus may be deprecated
+		$editStatus = $page->doEditContent( $content, $summary, $flags, false, $user );
+		if ( !$editStatus->isOK() ) {
 			$this->logError(
 				'Error while editing content in page.',
 				[
 					'content' => $content,
-					'errors' => $updater->getStatus()->getErrors()
+					'errors' => $editStatus->getErrors()
 				]
 			);
 		}

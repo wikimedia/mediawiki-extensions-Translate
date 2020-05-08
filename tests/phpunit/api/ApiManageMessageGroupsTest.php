@@ -5,7 +5,6 @@
  */
 
 use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Revision\SlotRecord;
 
 /**
  * @group medium
@@ -44,13 +43,8 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		$title = Title::makeTitle( $group->getNamespace(),
 			TranslateUtils::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
 		$content = ContentHandler::makeContent( 'world 23', $title );
-
-		$updater = WikiPage::factory( $title )->newPageUpdater(
-			$this->getTestSysop()->getUser()
-		);
-		$updater->setContent( SlotRecord::MAIN, $content );
-		$summary = CommentStoreComment::newUnsavedComment( __METHOD__ );
-		$updater->saveRevision( $summary );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false,
+			self::getTestSysop()->getUser() );
 
 		return false;
 	}

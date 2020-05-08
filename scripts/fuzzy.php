@@ -293,17 +293,15 @@ class FuzzyScript {
 
 		$wikipage = new WikiPage( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-
-		$updater = $wikipage->newPageUpdater( FuzzyBot::getUser() );
-		$updater->setContent(
-			SlotRecord::MAIN,
-			$content
+		$status = $wikipage->doEditContent(
+			$content,
+			$comment ?: 'Marking as fuzzy',
+			EDIT_FORCE_BOT | EDIT_UPDATE,
+			false, /*base revision id*/
+			FuzzyBot::getUser()
 		);
 
-		$summary = CommentStoreComment::newUnsavedComment( $comment ?: 'Marking as fuzzy' );
-		$updater->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
-
-		$success = $updater->wasSuccessful();
+		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		$this->reportProgress( $success ? 'OK' : 'FAILED', $title );
 	}
 }
