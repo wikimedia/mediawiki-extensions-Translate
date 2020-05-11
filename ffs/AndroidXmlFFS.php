@@ -39,6 +39,9 @@ class AndroidXmlFFS extends SimpleFFS {
 		$messages = [];
 		$mangler = $this->group->getMangler();
 
+		$regexBacktrackLimit = ini_get( 'pcre.backtrack_limit' );
+		ini_set( 'pcre.backtrack_limit', 10 );
+
 		/** @var SimpleXMLElement $element */
 		foreach ( $reader as $element ) {
 			$key = (string)$element['name'];
@@ -63,6 +66,8 @@ class AndroidXmlFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
+		ini_set( 'pcre.backtrack_limit', $regexBacktrackLimit );
+
 		return [
 			'AUTHORS' => $this->scrapeAuthors( $data ),
 			'MESSAGES' => $mangler->mangleArray( $messages ),
@@ -85,8 +90,19 @@ class AndroidXmlFFS extends SimpleFFS {
 		return $authors;
 	}
 
-	protected function readElementContents( $element ) {
-		return stripcslashes( (string)$element );
+	protected function readElementContents( $element ): string {
+		$elementStr = (string)$element;
+
+		// Convert string of format \uNNNN (eg: \u1234) to symbols
+		$converted = preg_replace_callback(
+			'/(?<!\\\\)(?:\\\\{2})*+\\K\\\\u([0-9A-Fa-f]{4,6})+/',
+			function ( array $matches ) {
+				return IntlChar::chr( hexdec( $matches[1] ) );
+			},
+			$elementStr
+		);
+
+		return stripcslashes( $converted );
 	}
 
 	protected function formatElementContents( $contents ) {

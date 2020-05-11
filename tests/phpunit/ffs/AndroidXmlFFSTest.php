@@ -40,6 +40,8 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 	<string name="has_ampersand">1&amp;nbsp;000</string>
 	<string name="has_newline">first\nsecond</string>
 	<string name="has_slashes">first \\ second</string>
+	<string name="utf8_symbols">Hello World: \\u1234 \u1234 \\\u1234</string>
+	<string name="quote_double_slash">Hello World: \' \\\'</string>
 </resources>
 XML;
 
@@ -58,7 +60,9 @@ XML;
 				'starts_with_at' => '@Wikipedia',
 				'has_ampersand' => '1&nbsp;000',
 				'has_newline' => "first\nsecond",
-				'has_slashes' => 'first \\ second'
+				'has_slashes' => 'first \\ second',
+				'utf8_symbols' => "Hello World: \u1234 ሴ \ሴ",
+				'quote_double_slash' => 'Hello World: \' \\\''
 			],
 			'AUTHORS' => [
 				'Imaginary translator',
