@@ -125,6 +125,7 @@
 	"tux-editor-discard-changes-button-label": "Eliminar modifikuri",
 	"tux-editor-save-button-label": "Sparez la tradukuro",
 	"tux-editor-skip-button-label": "Saltez a la sequanta",
+	"tux-editor-cancel-button-label": "Nuligar",
 	"tux-editor-shortcut-info": "Kliktez \"$1\" por konservar, o \"$2\" por saltar a la sequanta mesajo, o \"$4\" por furnisar rezumo, o \"$3\" por altra plu kurta voyi tra la klavaro.",
 	"tux-editor-edit-desc": "Redaktar dokumentigo",
 	"tux-editor-add-desc": "Adjuntez dokumenti",

@@ -181,7 +181,7 @@
 	"pt-deletepage-list-translation": "Páginas de tradução",
 	"pt-deletepage-list-section": "Páginas de unidades de tradução",
 	"pt-deletepage-list-other": "Outras subpáginas",
-	"pt-deletepage-list-count": "No total, $1 {{PLURAL:$1|page|pages}} para serem excluídas e $2 {{PLURAL:$2|subpage|subpages}}.",
+	"pt-deletepage-list-count": "No total, $1 {{PLURAL:$1|página|páginas}} para serem excluídas e $2 {{PLURAL:$2|subpágina|subpáginas}}.",
 	"pt-deletepage-list-no-pages": "Não foi encontrada nenhuma página.",
 	"pt-deletepage-full-logreason": "Parte da página traduzível \"$1\"",
 	"pt-deletepage-lang-logreason": "Parte da página de tradução \"$1\"",

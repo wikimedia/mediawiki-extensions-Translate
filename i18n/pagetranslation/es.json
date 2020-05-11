@@ -153,6 +153,7 @@
 	"pt-movepage-list-translatable-note": "Estas páginas deben trasladarse de manera separada.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Otra subpágina|Otras subpáginas}}",
 	"pt-movepage-list-count": "En total $1 {{PLURAL:$1|página|páginas}} a trasladar y $2 {{PLURAL:$2|subpágina|subpáginas}}.",
+	"pt-movepage-list-no-pages": "No se encontró ninguna página.",
 	"pt-movepage-legend": "Trasladar página traducible",
 	"pt-movepage-current": "Nombre actual:",
 	"pt-movepage-new": "Nuevo nombre:",

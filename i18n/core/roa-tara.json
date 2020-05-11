@@ -95,7 +95,7 @@
 	"translate-checks-unicode-plural-invalid": "'A forme plurale avessa essere definite cumme $1. Sta traduzione tène $2.",
 	"translate-checks-pagename": "'U namespace ha cangiate da 'a definizione",
 	"translate-checks-format": "Sta traduzione non ge segue 'a definizione o tène 'na sindassi invalide: $1",
-	"translate-checks-escape": "Le cange de codece seguende ponne essere accidendale: <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|Stu carattere de escape pò essere accidendale|ste carattere de escape ponne essere accidendale}}: <strong>$1</strong>. {{PLURAL:$4|'Nu carattere escape valide jè|Le caratteri escape valide sò:}} $3.",
 	"translate-checks-parametersnotequal": "'U cunde de le parametre jè {{PLURAL:$1|$1}}; invece avessa essere {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> jè malformate.",
 	"translate-checks-fudforum-syntax": "Ause <nowiki>$1</nowiki> invece de <nowiki>$2</nowiki> jndr'à stu proggette.",

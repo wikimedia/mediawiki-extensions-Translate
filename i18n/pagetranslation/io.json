@@ -13,6 +13,7 @@
 	"tpt-tab-translate": "Tradukar",
 	"tpt-discouraged-language-reason": "Motivo: $1",
 	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
+	"tpt-aggregategroup-update-cancel": "Nuligar",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
 	"pt-deletepage-list-no-pages": "Nula pagino trovesis.",
