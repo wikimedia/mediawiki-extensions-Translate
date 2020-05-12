@@ -124,7 +124,7 @@
 	"pt-movepage-list-translation": "Iwwersetzung {{PLURAL:$1|Säit|Säiten}}",
 	"pt-movepage-list-section": "Iwwersetzungseenheet {{PLURAL:$1|Säit|Säiten}}",
 	"pt-movepage-list-other": "Aner Ënner{{PLURAL:$1|säit|säiten}}",
-	"pt-movepage-list-count": "Am ganzen $1 {{PLURAL:$1|Säit|Säite}} fir ze réckelen.",
+	"pt-movepage-list-count": "Am ganzen $1 {{PLURAL:$1|Säit|Säite}} fir ze réckelen an $2 {{PLURAL:$2|Ënnersäit|Ënnersäiten}}.",
 	"pt-movepage-list-no-pages": "Keng Säite fonnt.",
 	"pt-movepage-legend": "Iwwersetzbar Säit réckelen",
 	"pt-movepage-current": "Aktuellen Numm:",
