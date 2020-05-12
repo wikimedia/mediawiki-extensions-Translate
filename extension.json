@@ -269,7 +269,6 @@
 		"MediaWiki\\Extensions\\Translate\\": "tests/phpunit/unit/"
 	},
 	"Hooks": {
-		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
 		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
 		"ParserTestTables": "TranslateHooks::parserTestTables",
 		"PageContentLanguage": "TranslateHooks::onPageContentLanguage",
@@ -958,6 +957,18 @@
 				"mobile"
 			]
 		}
+	},
+	"QUnitTestModule": {
+		"localBasePath": "",
+		"remoteExtPath": "Translate",
+		"scripts": [
+			"tests/qunit/ext.translate.parsers.test.js",
+			"tests/qunit/ext.translate.special.pagemigration.test.js"
+		],
+		"dependencies": [
+			"ext.translate.parsers",
+			"ext.translate.special.pagemigration"
+		]
 	},
 	"config": {
 		"PageTranslationLanguageList": {

@@ -26,26 +26,6 @@ class TranslateHooks {
 	];
 
 	/**
-	 * Hook: ResourceLoaderTestModules
-	 * @param array &$modules
-	 */
-	public static function onResourceLoaderTestModules( array &$modules ) {
-		$modules['qunit']['ext.translate.parsers.test'] = [
-			'scripts' => [ 'tests/qunit/ext.translate.parsers.test.js' ],
-			'dependencies' => [ 'ext.translate.parsers' ],
-			'localBasePath' => __DIR__,
-			'remoteExtPath' => 'Translate',
-		];
-
-		$modules['qunit']['ext.translate.special.pagemigration.test'] = [
-			'scripts' => [ 'tests/qunit/ext.translate.special.pagemigration.test.js' ],
-			'dependencies' => [ 'ext.translate.special.pagemigration' ],
-			'localBasePath' => __DIR__,
-			'remoteExtPath' => 'Translate',
-		];
-	}
-
-	/**
 	 * Do late setup that depends on configuration.
 	 */
 	public static function setupTranslate() {
