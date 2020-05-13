@@ -1,6 +1,9 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class TranslateSandboxEmailJob extends Job {
+
 	/**
 	 * @param array $params
 	 * @return self
@@ -18,13 +21,27 @@ class TranslateSandboxEmailJob extends Job {
 	}
 
 	public function run() {
-		$status = UserMailer::send(
-			$this->params['to'],
-			$this->params['from'],
-			$this->params['subj'],
-			$this->params['body'],
-			[ 'replyTo' => $this->params['replyto'] ]
-		);
+		$services = MediaWikiServices::getInstance();
+		if ( is_callable( [ $services, 'getEmailer' ] ) ) {
+			$status = $services
+				->getEmailer()
+				->send(
+					[ $this->params['to'] ],
+					$this->params['from'],
+					$this->params['subj'],
+					$this->params['body'],
+					null,
+					[ 'replyTo' => $this->params['replyto'] ]
+				);
+		} else {
+			$status = UserMailer::send(
+				$this->params['to'],
+				$this->params['from'],
+				$this->params['subj'],
+				$this->params['body'],
+				[ 'replyTo' => $this->params['replyto'] ]
+			);
+		}
 
 		$isOK = $status->isOK();
 
