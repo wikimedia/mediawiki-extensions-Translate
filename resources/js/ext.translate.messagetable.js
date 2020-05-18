@@ -771,7 +771,7 @@
 				$.each( messageTable.messages, function ( index, message ) {
 					messageTable.add( message );
 				} );
-			} else if ( messageTable.initialized ) {
+			} else if ( messageTable.initialized && !messageTable.loading ) {
 				messageTable.displayEmptyListHelp();
 			}
 
