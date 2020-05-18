@@ -72,7 +72,7 @@
 	"translate-tag-translate-link-desc": "翻譯此頁面",
 	"translate-tag-markthis": "標記此頁面需要翻譯",
 	"translate-tag-markthisagain": "此頁面在 <span class=\"plainlinks\">[$2 標記需要翻譯]</span> 之後，已有 <span class=\"plainlinks\">[$1 變更]</span>。",
-	"translate-tag-hasnew": "此頁面包含未被標記用來翻譯的 <span class=\"plainlinks\">[$1 變更]</span>。",
+	"translate-tag-hasnew": "此頁面包含未被標記用來翻譯的<span class=\"plainlinks\">[$1 變更]</span>。",
 	"tpt-translation-intro": "此頁面為頁面 [[$2]] <span class=\"plainlinks\">[$1 翻譯後的版本]</span> 且翻譯完成進度為 $3%。",
 	"tpt-translation-intro-fuzzy": "已過時的翻譯標記為這樣。",
 	"tpt-languages-legend": "其他語言：",
