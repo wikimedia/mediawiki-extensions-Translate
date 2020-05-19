@@ -87,8 +87,8 @@ class SpecialImportTranslations extends SpecialPage {
 		}
 
 		$messages = $data['MESSAGES'];
-		$group = $data['METADATA']['group'];
-		$code = $data['METADATA']['code'];
+		$group = $data['EXTRA']['METADATA']['group'];
+		$code = $data['EXTRA']['METADATA']['code'];
 
 		if ( !MessageGroups::exists( $group ) ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
@@ -117,7 +117,6 @@ class SpecialImportTranslations extends SpecialPage {
 		// translate-import-err-dl-failed, translate-import-err-ul-failed,
 		// translate-import-err-invalid-title, translate-import-err-no-such-file,
 		// translate-import-err-stale-group, translate-import-err-no-headers,
-		// translate-import-err-warnings
 		if ( $msg[0] !== 'ok' ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
 			$msg[0] = 'translate-import-err-' . $msg[0];
@@ -183,7 +182,7 @@ class SpecialImportTranslations extends SpecialPage {
 	 * @param string $data
 	 * @return array
 	 */
-	protected function parseFile( $data ) {
+	protected function parseFile( string $data ): array {
 		/** Construct a dummy group for us...
 		 * @todo Time to rethink the interface again?
 		 * @var FileBasedMessageGroup $group
@@ -203,29 +202,15 @@ class SpecialImportTranslations extends SpecialPage {
 		$ffs = new GettextFFS( $group );
 
 		$parseOutput = $ffs->readFromVariable( $data );
-		$data = $parseOutput['EXTRA'];
+		// Special data added by GettextFFS
+		$metadata = $parseOutput['EXTRA']['METADATA'];
 
-		/**
-		 * Special data added by GettextFFS
-		 */
-		$metadata = $data['METADATA'];
-
-		/**
-		 * This should catch everything that is not a gettext file exported from us
-		 */
+		// This should catch everything that is not a Gettext file exported from us
 		if ( !isset( $metadata['code'] ) || !isset( $metadata['group'] ) ) {
 			return [ 'no-headers' ];
 		}
 
-		/**
-		 * And check for stupid editors that drop msgctxt which
-		 * unfortunately breaks submission.
-		 */
-		if ( isset( $metadata['warnings'] ) ) {
-			return [ 'warnings', $this->getLanguage()->commaList( $metadata['warnings'] ) ];
-		}
-
-		return [ 'ok', $data ];
+		return [ 'ok', $parseOutput ];
 	}
 
 	protected function setCachedData( $data ) {
