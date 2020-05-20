@@ -187,7 +187,7 @@ abstract class MessageIndex {
 
 		$tsStart = microtime( true );
 		if ( !$this->lock() ) {
-			throw new Exception( __CLASS__ . ': unable to acquire lock' );
+			throw new MessageIndexException( __CLASS__ . ': unable to acquire lock' );
 		}
 
 		$lockWaitDuration = microtime( true ) - $tsStart;
@@ -238,8 +238,15 @@ abstract class MessageIndex {
 		$cache = $this->getInterimCache();
 		$interimCacheValue = $cache->get( self::CACHEKEY );
 		$timestamp = $timestamp ?? microtime( true );
-		if ( $interimCacheValue && $interimCacheValue['timestamp'] <= $timestamp ) {
-			$cache->delete( self::CACHEKEY );
+		if ( $interimCacheValue ) {
+			if ( $interimCacheValue['timestamp'] <= $timestamp ) {
+				$cache->delete( self::CACHEKEY );
+			} else {
+				// We got timestamp lower than newest front cache. This may be caused due to
+				// job deduplication. Just in case, spin off a new job to clean up the cache.
+				$job = MessageIndexRebuildJob::newJob();
+				JobQueueGroup::singleton()->push( $job );
+			}
 		}
 
 		$this->clearMessageGroupStats( $diff );

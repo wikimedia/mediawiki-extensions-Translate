@@ -41,6 +41,10 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 	}
 
 	public function run() {
+		// WARNING: Nothing here must not depend on message index being up to date.
+		// For performance reasons, message index rebuild is run a separate job after
+		// everything else is updated.
+
 		$this->logInfo( 'Starting TranslationsUpdateJob' );
 
 		$page = TranslatablePage::newFromTitle( $this->title );
@@ -70,25 +74,33 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		// marked for translation. Otherwise getMessageGroup in the next line
 		// returns null. There is no need to regenerate the global cache.
 		MessageGroups::singleton()->clearProcessCache();
-		// Ensure fresh definitions for MessageIndex and stats
+		// Ensure fresh definitions for stats
 		$page->getMessageGroup()->clearCaches();
-
-		MessageIndex::singleton()->rebuild();
 
 		$this->logInfo( 'Cleared caches' );
 
-		// Refresh translations statistics
+		// Refresh translations statistics, we want these to be up to date for the
+		// RenderJobs, for displaying up to date statistics on the translation pages.
 		$id = $page->getMessageGroupId();
 		MessageGroupStats::forGroup( $id, MessageGroupStats::FLAG_NO_CACHE );
 		$this->logInfo( 'Updated the message group stats' );
 
+		// Try to avoid stale statistics on the base page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$wikiPage->doPurge();
 		$this->logInfo( 'Finished purging' );
 
+		// These can be run independently and in parallel if possible
 		$renderJobs = self::getRenderJobs( $page );
 		JobQueueGroup::singleton()->push( $renderJobs );
 		$this->logInfo( 'Added ' . count( $renderJobs ) . ' RenderJobs to the queue' );
+
+		// Schedule message index update. Thanks to front caching, it is okay if this takes
+		// a while (and on large wikis it does take a while!). Running it as a separate job
+		// also allows de-duplication in case multiple translatable pages are being marked
+		// for translation in a short period of time.
+		$job = MessageIndexRebuildJob::newJob();
+		JobQueueGroup::singleton()->push( $job );
 
 		$this->logInfo( 'Finished TranslationsUpdateJob' );
 
