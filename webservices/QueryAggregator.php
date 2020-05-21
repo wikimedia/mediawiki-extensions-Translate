@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Runs multiple web service queries asynchronously to save time.
  *
@@ -56,7 +58,7 @@ class QueryAggregator {
 
 		$version = TranslateUtils::getVersion();
 
-		$http = new MultiHttpClient( [
+		$http = MediaWikiServices::getInstance()->getHttpRequestFactory()->createMultiClient( [
 			'reqTimeout' => $this->timeout,
 			'connTimeout' => 3,
 			'userAgent' => "MediaWiki Translate extension $version for $wgSitename"
