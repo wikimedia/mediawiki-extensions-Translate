@@ -265,7 +265,6 @@
 	"translate-import-err-no-such-file": "文件<nowiki>$1</nowiki>不存在或未被本地上传。",
 	"translate-import-err-stale-group": "该文件属于的信息组不存在。",
 	"translate-import-err-no-headers": "文件不是翻译扩展程序所需格式的Gettext文件：无法从文件头确定信息组和语言。",
-	"translate-import-err-warnings": "该文件格式不正确。请确保您的编辑器不会移除msgctxt字段。详细信息：$1",
 	"translate-js-summary": "摘要：",
 	"translate-js-save": "保存",
 	"translate-js-next": "保存并打开下一条",

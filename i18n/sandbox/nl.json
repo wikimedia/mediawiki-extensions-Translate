@@ -24,7 +24,7 @@
 	"tsb-email-rejected-body": "Hallo {{GENDER:$1|$1}},\n\nDank u voor de aanmelding als vertaler bij {{SITENAME}}. Ik vind het jammer u moeten melden dat ik de aanmelding heb geweigerd aangezien de kwaliteit van uw vertalingen niet aan de eisen voldoet.\n\nAls u van mening bent dat deze afwijzing onjuist is, dan kunt u zich opnieuw als vertaler aanmelden bij {{SITENAME}}. U kunt zich hieronder  inschrijven:\n$2\n\n{{GENDER:$3|$3}}, \n{{SITENAME}} staff",
 	"tsb-request-count": "{{PLURAL:$1|Eén verzoek|$1 verzoeken}}",
 	"tsb-all-languages-button-label": "Alle talen",
-	"tsb-search-requests": "Verzoeken zoeken",
+	"tsb-search-requests": "Openstaande verzoeken zoeken",
 	"tsb-accept-button-label": "Accepteren",
 	"tsb-reject-button-label": "Afwijzen",
 	"tsb-selected-count": "{{PLURAL:$1|Eén gebruiker|$1 gebruikers}} geselecteerd",

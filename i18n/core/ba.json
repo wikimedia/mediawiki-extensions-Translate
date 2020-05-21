@@ -164,7 +164,6 @@
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> юҡ йәки урында индерелмәгән.",
 	"translate-import-err-stale-group": "Был файлға ҡараған яҙмалар төркөмө юҡ.",
 	"translate-import-err-no-headers": "Файл —Translate киңәйеүе форматында дөрөҫ Gettext-файл түгел:\nФайлдың башлыҡтарынан төркөмдө һәм телде билдәләп булмай.",
-	"translate-import-err-warnings": "Файл дөрөҫ төҙөлмәгән.\nҺеҙҙең мөхәррирләүсегеҙ msgctxt юлдарын юймай икәнен тикшерегеҙ.\nТулыраҡ: $1",
 	"translate-js-next": "Һаҡларға һәм сираттағыны асырға",
 	"translate-js-skip": "Сираттағыға күсергә",
 	"translate-js-history": "Тәржемә тарихы",

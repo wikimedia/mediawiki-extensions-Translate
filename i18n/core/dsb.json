@@ -215,7 +215,6 @@
 	"translate-import-err-no-such-file": "Dataja <nowiki>$1</nowiki> njeeksistěrujo abo jnejo se lokalnje nagrała.",
 	"translate-import-err-stale-group": "Kupka powěźeńkow, ku kótarejž toś ta dataja słuša, njeeksistěrujo.",
 	"translate-import-err-no-headers": "Dataja mjejp derje wuformowana dataja gettext we formaśe pśełožowańskego formata:\nNjemóžno kupku a rěc z datajowych głowow zwěsćiś.",
-	"translate-import-err-warnings": "Dataja njejo derje wuformowana.\nZawěsć, až twój editor njewótpórujo póla msgctxt.\nDrobnostki: $1",
 	"translate-js-summary": "Zespominanje:",
 	"translate-js-save": "Składowaś",
 	"translate-js-next": "Pśiducu powěźeńku składowaś a wocyniś",

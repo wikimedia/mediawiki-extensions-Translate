@@ -218,7 +218,6 @@
 	"translate-import-err-no-such-file": "Dataja <nowiki>$1</nowiki> njeeksistuje abo njeje so lokalnje nahrała.",
 	"translate-import-err-stale-group": "Skupina powěsćow, ke kotrejž tuta dataja słuša, njeeksistuje.",
 	"translate-import-err-no-headers": "Dataja derje sformowana dataja Gettext we formaće rozšěrjenje \"Translate\" njeje:\nNjeje móžno skupinu a rěč z hłowy dataje zwěsćić.",
-	"translate-import-err-warnings": "Dataja derje sformowana njeje.\nZawěsć, zo twój editor pola <code>msgctxt</code> njewotstronja.\nPodrobnosće: $1",
 	"translate-js-summary": "Zjeće:",
 	"translate-js-save": "Składować",
 	"translate-js-next": "Přichodnu powěsć składować a wočinić",

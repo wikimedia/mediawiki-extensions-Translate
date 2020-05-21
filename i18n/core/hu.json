@@ -252,7 +252,6 @@
 	"translate-import-err-no-such-file": "A(z) <nowiki>$1</nowiki> fájl nem létezik vagy nem helyben lett feltöltve.",
 	"translate-import-err-stale-group": "A fájlhoz tartozó üzenetcsoport nem létezik.",
 	"translate-import-err-no-headers": "A fájl nem egy jól formázott Gettext-fájl a Translate-kiterjesztés formátumával:\nnem sikerült meghatározni a csoportot és a nyelvet a fájl fejlécéből.",
-	"translate-import-err-warnings": "A fájl nem megfelelően formázott.\nEllenőrizd, hogy a szerkesztőd nem távolította-e el az msgctxt-mezőket.\nRészletek: $1",
 	"translate-js-summary": "Összefoglaló:",
 	"translate-js-save": "Mentés",
 	"translate-js-next": "Mentés és a következő megnyitása",

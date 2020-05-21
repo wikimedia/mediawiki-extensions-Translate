@@ -156,7 +156,6 @@
 	"translate-import-err-invalid-title": "اسم الملف المعطى <nowiki>$1</nowiki> غير صالح.",
 	"translate-import-err-no-such-file": "الملف <nowiki>$1</nowiki> غير موجود أو لم يرفع محليًا.",
 	"translate-import-err-no-headers": "الملف ليس ملف  Gettext صحيح بصيغه امتداد الترجمة:\nغير قادر على تحديد المجموعه واللغه من مقدمه الملف.",
-	"translate-import-err-warnings": "الملف ليس مكونا بشكل صحيح.\nتأكد من أن محررك لا يزيل حقول msgctxt .\nالتفاصيل: $1",
 	"translate-js-save": "سييف",
 	"translate-gs-pos": "الترتيب",
 	"translate-gs-code": "الرمز",

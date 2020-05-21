@@ -224,7 +224,6 @@
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не існуе альбо не загружаны лякальна.",
 	"translate-import-err-stale-group": "Група паведамленьняў, да якой належыць гэты файл, не існуе.",
 	"translate-import-err-no-headers": "Файл не зьяўляецца слушным файлам Gettext у фармаце пашырэньня Translate:\nНемагчыма вызначыць групу і мову з загалоўку файла.",
-	"translate-import-err-warnings": "Няслушны файл.\nУпэўніцеся што Ваш рэдактар не выдаляе палі msgctxt.\nПадрабязнасьці: $1",
 	"translate-js-summary": "Апісаньне:",
 	"translate-js-save": "Захаваць",
 	"translate-js-next": "Захаваць і адкрыць наступнае",

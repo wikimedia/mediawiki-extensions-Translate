@@ -209,7 +209,6 @@
 	"translate-import-err-no-such-file": "Lo fichiér <nowiki>$1</nowiki> ègziste pas ou ben il est pas étâ importâ localament.",
 	"translate-import-err-stale-group": "Lo groupo de mèssâjos uquint cél fichiér apartint ègziste pas.",
 	"translate-import-err-no-headers": "Lo fichiér est pas un fichiér ''gettext'' bien formâ dens lo format atendu per l’èxtension ''Translate'' :\no est empossiblo de dètèrmenar lo groupo et la lengoua dês los en-tétes du fichiér.",
-	"translate-import-err-warnings": "Lo fichiér est pas bien formâ.\nAssurâd-vos que voutron changior enléve pas los champs « msgctxt ».\nDètalys : $1",
 	"translate-js-summary": "Rèsumâ :",
 	"translate-js-save": "Encartar",
 	"translate-js-next": "Encartar et pués uvrir celi d’aprés",

@@ -248,7 +248,6 @@
 	"translate-import-err-no-such-file": "La dosiero <nowiki>$1</nowiki> ne ekzistas aŭ ne estis ŝargita ĉi-loke.",
 	"translate-import-err-stale-group": "La mesaĝgrupo al kiu apartenas ĉi tiu dosiero ne ekzistas.",
 	"translate-import-err-no-headers": "La dosiero estas ne bone formita Gettext-dosiero en la formato de la Traduk-etendaĵo:\nneeblas decidi grupon kaj lingvon el dosierkapo.",
-	"translate-import-err-warnings": "La dosiero ne estas bone formita.\nBonvolu kontroli ke via redaktilo ne forigas msgctxt-kampojn.\nDetaloj: $1",
 	"translate-js-summary": "Resumo:",
 	"translate-js-save": "Konservi",
 	"translate-js-next": "Konservi kaj malfermi la sekvan",

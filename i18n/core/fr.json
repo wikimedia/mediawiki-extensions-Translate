@@ -306,7 +306,6 @@
 	"translate-import-err-no-such-file": "Le fichier « <nowiki>$1</nowiki> » n’existe pas ou n’a pas été importé localement.",
 	"translate-import-err-stale-group": "Le groupe de messages auquel ce fichier appartient n’existe pas.",
 	"translate-import-err-no-headers": "Le fichier n’est pas un fichier ''Gettext'' bien formé dans le format attendu par l’extension ''Translate'' :\nil est impossible de déterminer le groupe et la langue depuis les entêtes du fichier.",
-	"translate-import-err-warnings": "Le fichier n’est pas bien formé.\nAssurez-vous que votre outil de traduction ne supprime pas les champs « msgctxt ».\nDétails : $1",
 	"translate-js-summary": "Résumé :",
 	"translate-js-save": "Enregistrer",
 	"translate-js-next": "Enregistrer et ouvrir le suivant",

@@ -276,7 +276,6 @@
 	"translate-import-err-no-such-file": "הקובץ <nowiki>$1</nowiki> אינו קיים או שהוא לא הועלה באופן מקומי.",
 	"translate-import-err-stale-group": "קבוצת ההודעות שהקובץ הזה שייך אליה אינה קיימת.",
 	"translate-import-err-no-headers": "הקובץ זה אינו קובץ Gettext תקין בתסדיר שתואם להרחבת התרגום:\nלא ניתן לקבוע אץ הקבוצה ואת השפה מכותרות הקובץ.",
-	"translate-import-err-warnings": "הקובץ אינו תקין.\nאנא ודאו כי העורך שלכם אינו מסיר את שדות ה־msgctxt.\nפרטים: $1",
 	"translate-js-summary": "תקציר:",
 	"translate-js-save": "שמירה",
 	"translate-js-next": "לשמור ולפתוח את ההודעה הבאה",

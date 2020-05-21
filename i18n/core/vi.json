@@ -239,7 +239,6 @@
 	"translate-import-err-no-such-file": "Tập tin <nowiki>$1</nowiki> không tồn tại hoặc chưa được tải lên đây.",
 	"translate-import-err-stale-group": "Tập tin này được xếp vào nhóm thông điệp không tồn tại.",
 	"translate-import-err-no-headers": "Tập tin không phải là tập tin Gettext định dạng đúng trong định dạng mở rộng Translate:\nKhông thể xác định nhóm và ngôn ngữ từ tiêu đề tập tin.",
-	"translate-import-err-warnings": "Tập tin không được định dạng đúng.\nHãy đảm bảo trình duyệt của bạn không xóa đi vùng msgctxt.\nChi tiết:$1",
 	"translate-js-summary": "Tóm lược:",
 	"translate-js-save": "Lưu",
 	"translate-js-next": "Lưu và sang thông điệp sau",

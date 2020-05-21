@@ -219,7 +219,6 @@
 	"translate-import-err-no-such-file": "Fail <nowiki>$1</nowiki> tidak wujud atau telah dimuat naik secara setempat.",
 	"translate-import-err-stale-group": "Kumpulan mesej bagi fail ini tidak wujud.",
 	"translate-import-err-no-headers": "Fail ini bukan fail Gettext yang dibentuk dengan betul dalam format sambungan Translate:\nKumpulan dan bahasa tidak dapat ditentukan daripada pengatas fail.",
-	"translate-import-err-warnings": "Fail ini tidak dibentuk dengan betul.\nPastikan editor anda tidak menguggurkan medan msgctxt.\nButiran: $1",
 	"translate-js-summary": "Ringkasan:",
 	"translate-js-save": "Simpan",
 	"translate-js-next": "Simpan dan buka yang seterusnya",

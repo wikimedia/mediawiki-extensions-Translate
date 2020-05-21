@@ -205,7 +205,6 @@
 	"translate-import-err-no-such-file": "Die Dadai <nowiki>$1</nowiki> hods ned oda isch do ned ruffglaade worre.",
 	"translate-import-err-stale-group": "Die Nochrischdegrubb vonde Dadai hods ned.",
 	"translate-import-err-no-headers": "Die Dadai isch ned im Gettext-Foamad vunde Eawaidarung \"Iwasedze\":\nDie Grubb un Schbrooch hodned ausm Dadaikopp bschdimmd werre kenne.",
-	"translate-import-err-warnings": "Midde Dadai schdimmd was ned.\nSchdell sischa, dassdo kä <code>msgctxt</code>-Felda gleschd werren.\nHiwais: $1",
 	"translate-js-summary": "Zommefassung:",
 	"translate-js-save": "Schbaischare",
 	"translate-js-next": "Schbaischare unde negschd effne",

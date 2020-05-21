@@ -163,7 +163,6 @@
 	"translate-import-err-invalid-title": "Non fichye <nowiki>$1</nowiki> pa bon.",
 	"translate-import-err-no-such-file": "Fichye <nowiki>$1</nowiki> pa egziste oubyen pa t chaje localman.",
 	"translate-import-err-no-headers": "Fichye sa pa byen fòme nan fòma Gettext pou ekstansyon tradiksyon:\nPa kapab detèmine gwoup ak lang depi tèt fichye.",
-	"translate-import-err-warnings": "Fichye sa pa byen fòme.\nAsire w editè ou itilize a pa retire mòso msgctxt yo.\nDetay: $1",
 	"translate-js-next": "Anrejistre epi ouvri swivan.",
 	"translate-js-skip": "Sote ale nan swivan",
 	"translate-js-history": "Istorik tradiksyon",

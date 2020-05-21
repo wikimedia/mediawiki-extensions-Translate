@@ -167,7 +167,6 @@
 	"translate-import-err-no-such-file": "Fiiliä <nowiki>$1</nowiki> ei ole tai sitä ei ole säästetty paikallisesti.",
 	"translate-import-err-stale-group": "Tämä fiili kuuluu viestijoukkoon, jota ei ole olemassa.",
 	"translate-import-err-no-headers": "Fiili ei ole kelvollisesti muotoiltu Gettext-fiili Translate-laajennoksen käyttämässä muodossa:\nViestijoukko- ja kielitietoja ei löytynyt fiilin otsakkeesta.",
-	"translate-import-err-warnings": "Fiilissä oon ongelmia.\nVarmista, ettei käyttämäsi mookkausohjelma poista msgctxt-kenttiä.\nTieot: $1",
 	"translate-js-summary": "Yhteenveto:",
 	"translate-js-save": "Säästä",
 	"translate-js-next": "Säästä ja aukase seuraava",

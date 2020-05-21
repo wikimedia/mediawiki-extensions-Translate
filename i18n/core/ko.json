@@ -262,7 +262,6 @@
 	"translate-import-err-no-such-file": "<nowiki>$1</nowiki> 파일이 없거나 이 위키에 올려지지 않았습니다.",
 	"translate-import-err-stale-group": "이 파일에 들어있는 메시지 그룹이 존재하지 않습니다.",
 	"translate-import-err-no-headers": "파일이 번역 확장 기능에 쓰이는 올바른 형식의 Gettext 파일이 아닙니다:\n파일 헤더에서 메시지 그룹과 언어를 판독할 수 없습니다.",
-	"translate-import-err-warnings": "이 파일을 형식이 올바르지 않습니다.\n에디터가 msgctxt 칸을 지우지 않았는지 확인해주세요.\n자세한 내용: $1",
 	"translate-js-summary": "요약:",
 	"translate-js-save": "저장",
 	"translate-js-next": "저장하고 다음으로 넘어가기",

@@ -233,7 +233,6 @@
 	"translate-import-err-no-such-file": "N'eus ket eus ar restr <nowiki>$1</nowiki> pe neuze n'eo ket bet enporzhiet ent lec'hel.",
 	"translate-import-err-stale-group": "Ar restr-mañ zo en ur strollad kemennadennoù n'eus ket anezhañ.",
 	"translate-import-err-no-headers": "N'eo ket ar restr ur restr ''Gettext'' stummet mat er furmad gortozet gant an astenn ''Translate'' :\nDibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
-	"translate-import-err-warnings": "Ne oa ket stummet mat ar restr-mañ.\nBezit sur ne lam ket ho skridaozer ar maeziennoù msgctxt kuit.\nMunudoù : $1",
 	"translate-js-summary": "Diverrañ :",
 	"translate-js-save": "Enrollañ",
 	"translate-js-next": "Enrollañ ha digeriñ an hini da-heul",

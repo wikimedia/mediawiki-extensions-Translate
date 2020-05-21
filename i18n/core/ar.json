@@ -280,7 +280,6 @@
 	"translate-import-err-no-such-file": "الملف <nowiki>$1</nowiki> غير موجود أو لم يرفع محليًا.",
 	"translate-import-err-stale-group": "مجموعة الرسائل المنتمية إلى هذا الملف غير موجود.",
 	"translate-import-err-no-headers": "الملف ليس ملف  Gettext صحيح بصيغة امتداد الترجمة:\nغير قادر على تحديد المجموعة واللغة من مقدمة الملف.",
-	"translate-import-err-warnings": "الملف ليس مكونا بشكل صحيح.\nتأكد من أن محررك لا يزيل حقول msgctxt .\nالتفاصيل: $1",
 	"translate-js-summary": "ملخص:",
 	"translate-js-save": "حفظ",
 	"translate-js-next": "احفظ وافتح التالية",

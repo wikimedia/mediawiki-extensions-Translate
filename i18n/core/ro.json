@@ -220,7 +220,6 @@
 	"translate-import-err-no-such-file": "Fișierul <nowiki>$1</nowiki> nu există sau nu a fost încărcat local.",
 	"translate-import-err-stale-group": "Grupul de mesaje de care aparține acest fișier nu există.",
 	"translate-import-err-no-headers": "Fișierul nu este un fișier Gettext bine formatat în conformitate cu formatul necesar extensiei Translate:\nNu se poate determina grupul de mesaje și limba din antetele fișierului.",
-	"translate-import-err-warnings": "Fișierul nu este bine alcătuit.\nAsigurați-vă vă editorul dumneavoastră nu înlătură câmpurile msgctxt.\nDetalii: $1",
 	"translate-js-summary": "Rezumat:",
 	"translate-js-save": "Salvare",
 	"translate-js-next": "Salvează și mergi mai departe",

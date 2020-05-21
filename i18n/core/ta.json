@@ -162,7 +162,6 @@
 	"translate-import-err-dl-failed": "கொண்டுவர இயலாத கோப்பு: $1",
 	"translate-import-err-ul-failed": "கோப்பு ஏற்றம் வெற்றியடையவில்லை",
 	"translate-import-err-invalid-title": "வழங்கப்பட்ட கோப்பின் பெயர் <nowiki>$1</nowiki> தவறானது.",
-	"translate-import-err-warnings": "இந்தக் கோப்பு சரியாக அமைக்கப்பெறவில்லை. உங்கள் தொகுப்பான் msgctxt புலங்களை நீக்காமல் இருக்க உறுதிசெய்யவும். விரிகுறிப்புகள்: $1",
 	"translate-js-summary": "சுருக்கம்:",
 	"translate-js-save": "சேமி",
 	"translate-js-next": "சேமித்து அடுத்ததைத் திறக்கவும்",

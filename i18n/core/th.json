@@ -235,7 +235,6 @@
 	"translate-import-err-no-such-file": "ไม่ปรากฎไฟล์ <nowiki>$1</nowiki> หรือไฟล์นี้ไม่ได้ถูกอัพโหลดเข้ามา",
 	"translate-import-err-stale-group": "ไฟล์ที่เป็นสมาชิกของกลุ่มข้อความนี้ไม่มีอยู่",
 	"translate-import-err-no-headers": "ไฟล์นี้ไม่ใช่ไฟล์ Gettext ในส่วนเพิ่มเติมการแปลภาษาที่ดี:\n<br />ไม่สามารถกำหนดกลุ่มและภาษาจากส่วนต้นของไฟล์ได้",
-	"translate-import-err-warnings": "ไฟล์ไม่ได้ถูกสร้างโดยปกติ\n<br />ตรวจสอบให้แน่ใจว่าตัวแก้ไขของคุณไม่ได้ลบส่วนของ msgctxt ออกไป\n<br />รายละเอียด: $1",
 	"translate-js-summary": "สรุป:",
 	"translate-js-save": "บันทึก",
 	"translate-js-next": "บันทึกและแปลต่อ",

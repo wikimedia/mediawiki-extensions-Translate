@@ -286,7 +286,6 @@
 	"translate-import-err-no-such-file": "Fil <nowiki>$1</nowiki> finns inte, eller har inte laddats upp lokalt.",
 	"translate-import-err-stale-group": "Meddelandegruppen som den här filen tillhör finns inte.",
 	"translate-import-err-no-headers": "Filen är inte en välformerad Gettext-fil i översättnings-förlängningsformat:\nDet gick inte att bestämma grupp och språk från filhuvuden.",
-	"translate-import-err-warnings": "Filen är inte välformaterad.\nKontrollera att din redigerare inte tar bort msgctxt fält.\nDetaljer: $1",
 	"translate-js-summary": "Sammanfattning:",
 	"translate-js-save": "Spara",
 	"translate-js-next": "Spara och öppna nästa",

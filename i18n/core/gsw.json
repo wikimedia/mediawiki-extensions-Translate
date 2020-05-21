@@ -214,7 +214,6 @@
 	"translate-import-err-no-such-file": "D Datei <nowiki>$1</nowiki> git s nit oder isch nit lokal uffeglade wore.",
 	"translate-import-err-stale-group": "D Nochrichtegruppe, wu die Datei zuegordnet woren isch, git s nit.",
 	"translate-import-err-no-headers": "D Datei isch kei Datei im Gettext-Format vu dr Erwyterig „Translate“:\nD Gruppen un Sproche hän nit us em Dateichopf chenne ermittlet wäre.",
-	"translate-import-err-warnings": "D Datei entspricht nit em erwartete Format.\nStell sicher, ass dr Editor kei <code>msgctxt</code>-Fälder usenimmt.\nDetail: $1",
 	"translate-js-summary": "Zämmefassig:",
 	"translate-js-save": "Spychere",
 	"translate-js-next": "Spychere un di negscht ufmache",

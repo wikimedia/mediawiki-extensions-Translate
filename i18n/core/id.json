@@ -248,7 +248,6 @@
 	"translate-import-err-no-such-file": "Berkas <nowiki>$1</nowiki> tidak ada atau belum diunggah secara lokal.",
 	"translate-import-err-stale-group": "Kelompok pesan dari berkas ini tidak ditemukan.",
 	"translate-import-err-no-headers": "Berkas bukan merupakan berkas Gettext dalam format pengaya Translate yang diciptakan dengan benar:\nTidak dapat menentukan kelompok pesan dan bahasa dari kop berkas.",
-	"translate-import-err-warnings": "Berkas ini tidak diciptakan dengan benar.\nPastikan penyunting Anda tidak membuang bidang msgctxt.\nRincian: $1",
 	"translate-js-summary": "Ringkasan:",
 	"translate-js-save": "Simpan",
 	"translate-js-next": "Simpan dan buka selanjutnya",

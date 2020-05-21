@@ -236,7 +236,6 @@
 	"translate-import-err-no-such-file": "O ficheiro \"<nowiki>$1</nowiki>\" non existe ou non foi cargado localmente.",
 	"translate-import-err-stale-group": "O grupo de mensaxes ao que pertence este ficheiro non existe.",
 	"translate-import-err-no-headers": "O ficheiro non é un ficheiro Gettext ben formado co formato da extensión Translate:\nnon se poden determinar o grupo e a lingua a partir das cabeceiras do ficheiro.",
-	"translate-import-err-warnings": "O ficheiro non está ben formado.\nAsegúrese de que o seu editor non elimina campos msgctxt.\nDetalles: $1",
 	"translate-js-summary": "Resumo:",
 	"translate-js-save": "Gardar",
 	"translate-js-next": "Gardar e abrir a seguinte",

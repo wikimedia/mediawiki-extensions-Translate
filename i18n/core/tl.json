@@ -214,7 +214,6 @@
 	"translate-import-err-no-such-file": "Hindi umiiral o hindi pa naikakargang nakaukol dito ang talaksang <nowiki>$1</nowiki>.",
 	"translate-import-err-stale-group": "Hindi umiiral ang pangkat ng mensahe na kinaaaniban ng talaksang ito.",
 	"translate-import-err-no-headers": "Ang talaksang ay isang hindi isang talaksang Gettext may mabuting anyo na pangkaanyuhang dugtong na Isalinwika:\nHindi natukoy ang pangkat at wika mula sa mga paulo ng talaksan.",
-	"translate-import-err-warnings": "Hindi mabuti ang pagkakabuo ng talaksan.\nTiyaking hindi tatanggalin ng patnugot mo ang mga lugar ng msgctxt.\nMga detalye: $1",
 	"translate-js-summary": "Buod:",
 	"translate-js-save": "Itala",
 	"translate-js-next": "Susunod na sasagipin at bubuksan",

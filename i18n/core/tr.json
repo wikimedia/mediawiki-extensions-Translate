@@ -285,7 +285,6 @@
 	"translate-import-err-no-such-file": "<nowiki>$1</nowiki> dosyası mevcut değil ya da yerel olarak yüklenmiş.",
 	"translate-import-err-stale-group": "Bu dosyanın ait olduğu ileti grubu mevcut değil.",
 	"translate-import-err-no-headers": "Dosya Çeviri uzantısı biçiminde iyi biçimlendirilmiş bir Gettext dosyası değil:\nİleti grubu ve dil dosya başlığından belirlenemiyor.",
-	"translate-import-err-warnings": "Bu dosya iyi biçimlendirilmemiş.\nDüzenleyicinizin msgctxt alanlarını çıkarmadığından emin olun.\nAyrıntılar: $1",
 	"translate-js-summary": "Özet:",
 	"translate-js-save": "Kaydet",
 	"translate-js-next": "Kaydet ve sonrakini aç",

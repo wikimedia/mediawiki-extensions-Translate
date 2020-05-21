@@ -271,7 +271,6 @@
 	"translate-import-err-no-such-file": "Filen <nowiki>$1</nowiki> finnes ikke eller har ikke blitt lastet opp lokalt.",
 	"translate-import-err-stale-group": "Meldingsgruppen som denne filen tilhører finnes ikke.",
 	"translate-import-err-no-headers": "Filen er ikke en velformatert Gettext-fil i Translate-utvidelsesformatet:\nKunne ikke fastslå gruppe og språk fra filoverskriftene.",
-	"translate-import-err-warnings": "Filen er ikke velformatert.\nKontroller at editoren ikke fjerner msgctxt-feltene.\nDetaljer: $1",
 	"translate-js-summary": "Forklaring:",
 	"translate-js-save": "Lagre",
 	"translate-js-next": "Lagre og åpne neste",

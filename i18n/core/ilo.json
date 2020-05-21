@@ -214,7 +214,6 @@
 	"translate-import-err-no-such-file": "Awan ti papeles ti<nowiki>$1</nowiki> wenno saan pay a lokal a naikarga.",
 	"translate-import-err-stale-group": "Awan ti grupo ti mensahe nga agtagikua iti daytoy a papeles.",
 	"translate-import-err-no-headers": "Ti papeles ket saan a nasayaat a naporma a papeles iti Gettext iti pormat a pagpaatiddog ti Translate:\nDi naikeddeng ti grupo ti mensahe ken pagsasao manipud kadagiti paulo ti papeles.",
-	"translate-import-err-warnings": "Saan a nasayaat a naporma daytoy a papeles.\nSiguraduem a ti editormo ket saan nga agikkat kadagiti pagikabilan ti msgctxt.\nDagiti salaysay: $1",
 	"translate-js-summary": "Pakabuklan:",
 	"translate-js-save": "Idulin",
 	"translate-js-next": "Idulin ken lukatan ti sumaruno",

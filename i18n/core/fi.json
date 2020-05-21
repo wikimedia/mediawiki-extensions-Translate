@@ -268,7 +268,6 @@
 	"translate-import-err-no-such-file": "Tiedostoa <nowiki>$1</nowiki> ei ole tai sitä ei ole tallennettu paikallisesti.",
 	"translate-import-err-stale-group": "Tämä tiedosto kuuluu viestiryhmään, jota ei ole olemassa.",
 	"translate-import-err-no-headers": "Tiedosto ei ole kelvollisesti muotoiltu Gettext-tiedosto Translate-laajennoksen käyttämässä muodossa:\nViestiryhmä- ja kielitietoja ei löytynyt tiedoston otsakkeesta.",
-	"translate-import-err-warnings": "Tiedostossa on ongelmia.\nVarmista, ettei käyttämäsi muokkausohjelma poista msgctxt-kenttiä.\nTiedot: $1",
 	"translate-js-summary": "Yhteenveto:",
 	"translate-js-save": "Tallenna",
 	"translate-js-next": "Tallenna ja avaa seuraava",

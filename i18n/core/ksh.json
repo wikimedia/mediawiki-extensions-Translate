@@ -217,7 +217,6 @@
 	"translate-import-err-no-such-file": "Di Datei „<nowiki>$1</nowiki>“ jidd_et nit, udder se es nit heh en et Wiki huhjelaade.",
 	"translate-import-err-stale-group": "De Jropp met Täxte un Nohreeschte, woh heh di Dattei bei jehüüre sull, di jidd_et jaanit.",
 	"translate-import-err-no-headers": "Di Dattei es nit em Jettäx Fommaht vum Zohsazprojramm <code lang=\"en\" xml:lang=\"en\">Translate</code>: Kunnt de Jropp un Schprohch nit uß de Koppdahte eruß krijje.",
-	"translate-import-err-warnings": "Di Dattei es nit em reschteje Fommaat. Beß sescher, dat kein vun Dinge Projramme de <code lang=\"en\">msgctxt</code> Felder fott määt. De Einzelheite: $1",
 	"translate-js-summary": "Koot Zosammejefaß:",
 	"translate-js-save": "Faßhalde",
 	"translate-js-next": "Faßhalde un op de nähkßte jonn",

@@ -264,7 +264,6 @@
 	"translate-import-err-no-such-file": "'U file <nowiki>$1</nowiki> non g'esiste o non già state carecate in locale.",
 	"translate-import-err-stale-group": "Jndr'à 'u gruppe de messàgge stu file non g'esiste.",
 	"translate-import-err-no-headers": "'U file non g'è 'nu Gettext formattate correttamende pe l'estenzione Translate:\n'Mbossibbile determinà 'u gruppe de messàgge e 'a lènghe da le 'ndestazziune d'u file.",
-	"translate-import-err-warnings": "'U file non g'è furmate bbuène.\nAssecurate ca 'u probbie cangiatore non ge leve le cambe msgctxt.\nDettaglie: $1",
 	"translate-js-summary": "Riepileghe:",
 	"translate-js-save": "Reggìstre",
 	"translate-js-next": "Reggìstre e iapre 'u prossime",

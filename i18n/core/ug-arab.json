@@ -206,7 +206,6 @@
 	"translate-import-err-no-such-file": "ھۆججەت <nowiki>$1</nowiki> مەۋجۇت ئەمەس ياكى يەرلىكتىن يۈكلەنمىدى.",
 	"translate-import-err-stale-group": "بۇ ھۆججەت تەۋە ئۇچۇر گۇرۇپپىسى مەۋجۇت ئەمەس.",
 	"translate-import-err-no-headers": "بۇ ھۆججەت تەرجىمە كېڭەيتىلگەن ياخشى پىچىمدىكى Gettext ھۆججەت ئەمەس:\nھۆججەت بېشىدىن ئۇچۇر گۇرۇپپىسى ۋە تىلنى جەزملىيەلمىدى.",
-	"translate-import-err-warnings": "ھۆججەت پىچىمى ياخشى ئەمەس.\nتەھرىرلىگۈچىڭىزنىڭ msgctxt  بۆلىكىنى چىقىرىۋەتمەيدىغانلىقىنى جەزملەڭ.\nتەپسىلاتى: $1",
 	"translate-js-summary": "ئۈزۈندە",
 	"translate-js-save": "ساقلا",
 	"translate-js-next": "ساقلاپ كېيىنكىنى ئاچ",

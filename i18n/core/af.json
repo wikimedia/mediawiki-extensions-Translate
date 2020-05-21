@@ -208,7 +208,6 @@
 	"translate-import-err-no-such-file": "Die lêer <nowiki>$1</nowiki> bestaan nie of is nie na die bediener opgelaai nie.",
 	"translate-import-err-stale-group": "Die boodskapgroep waaraan die lêer behoort bestaan ​​nie.",
 	"translate-import-err-no-headers": "Die lêer bevat nie goed gevormde gettext soos deur die \"Translate\"-uitbreiding vereis word nie.\nDit is nie moontlik om die groep en taal uit die lêer te bepaal nie.",
-	"translate-import-err-warnings": "Die lêer is nie goed gevorm nie.\nMaak seker dat u teksverwerker nie \"msgctxt\"-velde verwyder nie.\nBesonderhede: $1",
 	"translate-js-summary": "Samevatting:",
 	"translate-js-save": "Stoor",
 	"translate-js-next": "Stoor en open die volgende",

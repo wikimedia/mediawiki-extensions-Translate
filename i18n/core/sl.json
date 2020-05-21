@@ -231,7 +231,6 @@
 	"translate-import-err-no-such-file": "Datoteka <nowiki>$1</nowiki> ne obstaja ali pa ni bila naložena lokalno.",
 	"translate-import-err-stale-group": "Skupina sporočil, kateri pripada ta datoteka, ne obstaja.",
 	"translate-import-err-no-headers": "Datoteka ni dobro oblikovana datoteka Gettext v obliki razširitve Translate:\nNe morem določiti skupine in jezika iz glav datoteke.",
-	"translate-import-err-warnings": "Datoteka ni dobro oblikovana.\nPrepričajte se, da vaš urejevalnik ne odstrani polj msgctxt.\nPodrobnosti: $1",
 	"translate-js-summary": "Povzetek:",
 	"translate-js-save": "Shrani",
 	"translate-js-next": "Shrani in odpri naslednje",

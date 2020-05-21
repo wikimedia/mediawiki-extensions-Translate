@@ -277,7 +277,6 @@
 	"translate-import-err-no-such-file": "ファイル <nowiki>$1</nowiki> は存在しないか、ローカルにアップロードされていません。",
 	"translate-import-err-stale-group": "このファイルが所属するメッセージ群は存在しません。",
 	"translate-import-err-no-headers": "ファイルが Translate 拡張機能の形式に正しく適応した gettext ファイルではありません。\nファイル ヘッダーからメッセージ群と言語を決定できませんでした。",
-	"translate-import-err-warnings": "このファイルは形式が正しくありません。\nあなたが使用したエディターが msgctxt フィールドを除去していないか確認してください。\n詳細: $1",
 	"translate-js-summary": "要約:",
 	"translate-js-save": "保存",
 	"translate-js-next": "保存して次を開く",

@@ -254,7 +254,6 @@
 	"translate-import-err-no-such-file": "پرونده <nowiki>$1</nowiki> وجود ندارد یا به طور محلی بارگذاری نشده است.",
 	"translate-import-err-stale-group": "گروه پیغامی که این پرونده به آن تعلق دارد وجود ندارد.",
 	"translate-import-err-no-headers": "پرونده دارای قالب مناسب Gettext برای افزونهٔ ترجمه نیست:\nشناسایی گروه پیغام و زبان از سرایندهای پرونده ممکن نبود.",
-	"translate-import-err-warnings": "پرونده دارای قالب مناسب نیست.\nاطمینان حاصل کنید که ویرایشگر شما بخش‌های msgctxt را پاک نکرده‌است.\nجزئیات: $1",
 	"translate-js-summary": "خلاصه:",
 	"translate-js-save": "ذخیره",
 	"translate-js-next": "ذخیره و بازکردن بعدی",

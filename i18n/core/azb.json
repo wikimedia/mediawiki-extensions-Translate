@@ -214,7 +214,6 @@
 	"translate-import-err-no-such-file": "<nowiki>$1</nowiki> فایلی یوخدور یادا یئرلی یوکلنیلمه‌ییب‌دیر.",
 	"translate-import-err-stale-group": "بو فایل اونا عاید اولان مئساژ گروپو یوخدور.",
 	"translate-import-err-no-headers": "فایلین ترجومه اوزانتی فورمتینده دوزگون Gettext فورمو یوخدور.\nفایل باشلیقلاریندان دیل و مئساژ گروپونو بیلمک اولمور.",
-	"translate-import-err-warnings": "فایلین دوزگون فورمو یوخدور.\nآرخایین اولون سیزین دَییشدیرَنیز msgctxt‌ فیلدلرینی سیلمیر.\nبیلگیلر: $1",
 	"translate-js-summary": "آچیقلاما:",
 	"translate-js-save": "ذخیره ائت",
 	"translate-js-next": "قئید ائت و سونراکینی آچ",

@@ -288,7 +288,6 @@
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не існує або не завантажений локально.",
 	"translate-import-err-stale-group": "Група повідомлень, до якої належить цей файл, не існує.",
 	"translate-import-err-no-headers": "Файл не є правильно побудованим Gettext-файлом у форматі розширення Translate: не вдалося визначити групу і мову із заголовка файлу.",
-	"translate-import-err-warnings": "Файл неправильно побудований.\nВпевніться, що ваш редактор не стер поля msgctxt.\nДеталі: $1",
 	"translate-js-summary": "Опис:",
 	"translate-js-save": "Зберегти",
 	"translate-js-next": "Зберегти і відкрити наступне",

@@ -225,7 +225,6 @@
 	"translate-import-err-no-such-file": "Barkas <nowiki>$1</nowiki> ora ana utawa durung diunggah ing papan lokal.",
 	"translate-import-err-stale-group": "Golongan layangé barkas iki ora ana.",
 	"translate-import-err-no-headers": "Barkasé dudu barkas Gettext kang karipta kanthi becik nganggo format èstènsi Pertal:\nOra bisa nemtokaké golongan lan basané layang saka sesirahé barkas.",
-	"translate-import-err-warnings": "Barkas ora kayasa kanthi becik.\nPesthèkaké pambesutmu ora mbusak babagan msgctxt.\nRerincèn: $1",
 	"translate-js-summary": "Ringkesan:",
 	"translate-js-save": "Simpen",
 	"translate-js-next": "Simpen lan bukak sabanjuré",

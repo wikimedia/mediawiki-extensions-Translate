@@ -267,7 +267,6 @@
 	"translate-import-err-no-such-file": "Датотека <nowiki>$1</nowiki> не постоји или није локално отпремљена.",
 	"translate-import-err-stale-group": "Група порука којој ова датотека припада не постоји.",
 	"translate-import-err-no-headers": "Датотека није исправно обликована Gettext датотека у формату додатка „Превођење”:\nНије могуће одредити групу порука и језик из заглавља датотеке.",
-	"translate-import-err-warnings": "Датотека није исправно обликована.\nУверите се да уређивач не уклања поља msgctxt.\nДетаљи: $1",
 	"translate-js-summary": "Резиме:",
 	"translate-js-save": "Сачувај",
 	"translate-js-next": "Сачувај и отвори следећу",

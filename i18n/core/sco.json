@@ -186,7 +186,6 @@
 	"translate-import-err-no-such-file": "File <nowiki>$1</nowiki> disna exeest or haes na been uplaided locallie.",
 	"translate-import-err-stale-group": "The message groop that this file belangs til disna exeest.",
 	"translate-import-err-no-headers": "File's na ae weel formed Gettext file in Owerset extension format:\nOnable tae determine message groop n leid fae file heiders.",
-	"translate-import-err-warnings": "The file's na weel formed.\nMak sair that yer eediter disna remove msgctxt fields.\nDetails: $1",
 	"translate-js-summary": "Ootline:",
 	"translate-js-save": "Hain",
 	"translate-js-next": "Hain n apen nex",

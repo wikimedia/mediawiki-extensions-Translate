@@ -232,7 +232,6 @@
 	"translate-import-err-no-such-file": "Lo fichièr <nowiki>$1</nowiki> existís pas o es pas importat localament.",
 	"translate-import-err-stale-group": "Lo grop de messatges qu'aquel fichièr i aperten existís pas.",
 	"translate-import-err-no-headers": "Lo fichièr es pas un fichièr ''Gettext'' plan format dins lo format esperat per l’extension ''Translate'' :\nes impossible de determinar lo grop e la lenga dempuèi las entèstas del fichièr.",
-	"translate-import-err-warnings": "Lo fichièr es pas format coma cal.\nAsseguratz-vos que vòstra aisina de traduccion suprimís pas los camps « msgctxt ».\nDetalhs : $1",
 	"translate-js-summary": "Resumit :",
 	"translate-js-save": "Enregistrar",
 	"translate-js-next": "Salvar e dobrir lo seguent",

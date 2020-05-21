@@ -252,7 +252,6 @@
 	"translate-import-err-no-such-file": "El ficheru \"<nowiki>$1</nowiki>\" nun esiste o nun se xubió de mou llocal.",
 	"translate-import-err-stale-group": "El grupu de mensaxes al que pertenez esti ficheru nun esiste.",
 	"translate-import-err-no-headers": "El ficheru nun ye un ficheru Gettext bien formáu nel formatu d'estensión Translate:\nNun se puen determinar el grupu y la llingua a partir de les testeres del ficheru.",
-	"translate-import-err-warnings": "El ficheru nun ta bien formáu.\nAsegúrate de que'l to editor nun desanicia los campos msgctxt.\nDetalles: $1",
 	"translate-js-summary": "Resume:",
 	"translate-js-save": "Guardar",
 	"translate-js-next": "Guardar y abrir el siguiente",

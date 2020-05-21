@@ -244,7 +244,6 @@
 	"translate-import-err-no-such-file": "Datoteka <nowiki>$1</nowiki> ne postoji ili nije otpremljena lokalno.",
 	"translate-import-err-stale-group": "Grupa poruka kojoj ova datoteka pripada ne postoji.",
 	"translate-import-err-no-headers": "Datoteka nije dobro formirana Gettext datoteka u formatu dodatka „Prevođenje”:\nNe mogu da odredim grupu poruka i jezik iz zaglavlja datoteke.",
-	"translate-import-err-warnings": "Datoteka nije dobro formirana.\nUverite se da vaš uređivač ne uklanja polja msgctxt.\nDetalji: $1",
 	"translate-js-summary": "Rezime:",
 	"translate-js-save": "Sačuvaj",
 	"translate-js-next": "Sačuvaj i otvori sledeću",

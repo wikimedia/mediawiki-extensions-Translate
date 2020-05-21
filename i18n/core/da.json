@@ -238,7 +238,6 @@
 	"translate-import-err-no-such-file": "Fil <nowiki>$1</nowiki> eksisterer ikke eller er ikke blevet uploadet lokalt.",
 	"translate-import-err-stale-group": "Beskedgruppen, som denne fil tilhører, findes ikke.",
 	"translate-import-err-no-headers": "Filen er ikke en velformateret Gettext-fil i Oversæt-udvidelsens format:\nKan ikke bestemme gruppe og sprog fra fil-headere.",
-	"translate-import-err-warnings": "Filen er ikke velformateret.\nSørg for, at din editor ikke fjerner msgctxt-felter.\nDetaljer: $1",
 	"translate-js-summary": "Beskrivelse:",
 	"translate-js-save": "Gem",
 	"translate-js-next": "Gem og åben næste",

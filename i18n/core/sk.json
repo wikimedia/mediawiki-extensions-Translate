@@ -227,7 +227,6 @@
 	"translate-import-err-no-such-file": "Súbor „<nowiki>$1</nowiki>“ neexistuje alebo nebol lokálne nahraný.",
 	"translate-import-err-stale-group": "Skupina správ, do ktorej patrí tento súbor neexistuje.",
 	"translate-import-err-no-headers": "Súbor nie je správne vytvorený Gettext súbor vo formáte rozšírenia Translate:\nNebolo možné určiť skupinu a jazyk z hlavičiek súboru.",
-	"translate-import-err-warnings": "Tento súbor nie je platný.\nUistite sa, že váš editor neodstraňuje polia msgctxt.\nPodrobnosti: $1",
 	"translate-js-summary": "Zhrnutie:",
 	"translate-js-save": "Uložiť",
 	"translate-js-next": "Uložiť a otvoriť ďalšiu",
