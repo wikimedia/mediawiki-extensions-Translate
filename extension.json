@@ -503,6 +503,34 @@
 				"mobile"
 			]
 		},
+		"ext.translate.edit.documentation": {
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui-windows"
+			],
+			"messages": [
+				"tps-edit-sourcepage-ve-warning-title",
+				"tps-edit-sourcepage-ve-warning-text",
+				"tps-edit-sourcepage-ve-warning-button"
+			],
+			"scripts": [
+				"resources/js/ext.translate.edit.documentation.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.edit.documentation.styles": {
+			"styles": [
+				"resources/css/ext.translate.edit.documentation.less"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
 		"ext.translate.parsers": {
 			"scripts": "resources/js/ext.translate.parsers.js",
 			"dependencies": [

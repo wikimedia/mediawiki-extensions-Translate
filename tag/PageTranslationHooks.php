@@ -132,11 +132,23 @@ class PageTranslationHooks {
 	 * @param int $oldid
 	 * @param array &$notices
 	 */
-	public static function onTitleGetEditNotices( Title $title, $oldid, array &$notices ) {
-		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage();
+	public static function onTitleGetEditNotices( Title $title, int $oldid, array &$notices ) {
+		if ( TranslatablePage::isSourcePage( $title ) ) {
+			$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage();
+			if ( !$msg->isDisabled() ) {
+				$notices['translate-tag'] = $msg->parseAsBlock();
+			}
 
-		if ( !$msg->isDisabled() && TranslatablePage::isSourcePage( $title ) ) {
-			$notices['translate-tag'] = $msg->parseAsBlock();
+			$label = wfMessage( 'tps-edit-sourcepage-title' )->escaped();
+			$msg = Html::rawElement(
+				'div',
+				[],
+				wfMessage( 'tps-edit-sourcepage-text' )->parse()
+			);
+
+			$notices[] = TranslateUtils::fieldset(
+				$label, $msg, [ 'class' => 'mw-infobox translate-edit-documentation' ]
+			);
 		}
 	}
 
@@ -156,6 +168,12 @@ class PageTranslationHooks {
 		if ( $isSource || $isTranslation ) {
 			if ( $wgTranslatePageTranslationULS ) {
 				$out->addModules( 'ext.translate.pagetranslation.uls' );
+			}
+
+			if ( $isSource && TranslateUtils::isEditPage( $out->getContext()->getRequest() ) ) {
+				// Adding a help notice
+				$out->addModuleStyles( 'ext.translate.edit.documentation.styles' );
+				$out->addModules( 'ext.translate.edit.documentation' );
 			}
 
 			if ( $isTranslation ) {

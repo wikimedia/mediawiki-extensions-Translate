@@ -582,4 +582,18 @@ class TranslateUtils {
 		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
 		return $namespaceInfo->hasSubpages( $title->getNamespace() );
 	}
+
+	public static function isEditPage( WebRequest $request ): bool {
+		$veAction = $request->getVal( 'veaction' );
+		if ( $veAction ) {
+			return true;
+		}
+
+		$action = $request->getVal( 'action' );
+		if ( $action === 'edit' ) {
+			return true;
+		}
+
+		return false;
+	}
 }
