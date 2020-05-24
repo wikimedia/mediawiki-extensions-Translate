@@ -39,17 +39,6 @@ class SpecialSearchTranslations extends SpecialPage {
 		];
 	}
 
-	public function setHeaders() {
-		// Overwritten the parent because it sucks!
-		// We want to set <title> but not <h1>
-		$out = $this->getOutput();
-		$out->setArticleRelated( false );
-		$out->setRobotPolicy( 'noindex,nofollow' );
-		$name = $this->msg( 'searchtranslations' );
-		$name = Sanitizer::stripAllTags( $name );
-		$out->setHTMLTitle( $this->msg( 'pagetitle' )->rawParams( $name ) );
-	}
-
 	public function execute( $par ) {
 		global $wgLanguageCode;
 		$this->setHeaders();
@@ -276,7 +265,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			"$prev $next"
 		);
 
-		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
+		$count = $this->msg( 'tux-sst-count' )->numParams( $total )->escaped();
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml, $total );
 	}
