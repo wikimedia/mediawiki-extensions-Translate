@@ -15,7 +15,7 @@ use MediaWiki\Revision\SlotRecord;
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
  */
-class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
+class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 	/**
 	 * @var Title|string
 	 */
@@ -28,11 +28,11 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 
 	/**
 	 * @param string $id
-	 * @param Title|string $source
+	 * @param Title|string $title
 	 */
-	public function __construct( $id, $source ) {
+	public function __construct( $id, $title ) {
 		$this->id = $id;
-		$this->title = $source;
+		$this->title = $title;
 	}
 
 	public function getSourceLanguage() {
