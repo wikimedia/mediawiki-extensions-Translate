@@ -58,11 +58,20 @@ class QueryAggregator {
 
 		$version = TranslateUtils::getVersion();
 
-		$http = MediaWikiServices::getInstance()->getHttpRequestFactory()->createMultiClient( [
+		$clientOptions = [
 			'reqTimeout' => $this->timeout,
 			'connTimeout' => 3,
 			'userAgent' => "MediaWiki Translate extension $version for $wgSitename"
-		] );
+		];
+
+		$httpRequestFactory = MediaWikiServices::getInstance()->getHttpRequestFactory();
+		// BC for MW < 1.35
+		if ( is_callable( [ $httpRequestFactory, 'createMultiClient' ] ) ) {
+			$http = $httpRequestFactory->createMultiClient( $clientOptions );
+		} else {
+			$http = new MultiHttpClient( $clientOptions );
+		}
+
 		$responses = $http->runMulti( $this->getMultiHttpQueries( $this->queries ) );
 		foreach ( $responses as $index => $response ) {
 			$this->responses[$index] = $response;
