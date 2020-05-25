@@ -311,7 +311,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * Can be overwritten to retun false if something is wrong.
+	 * Can be overwritten to return false if something is wrong.
 	 * @return bool
 	 */
 	public function exists() {
