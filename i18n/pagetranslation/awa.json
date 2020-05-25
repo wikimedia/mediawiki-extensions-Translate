@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"1AnuraagPandey"
+			"1AnuraagPandey",
+			"Ajeetsinghawadhi"
 		]
 	},
+	"pagetranslation": "पन्ना अनुवाद",
 	"tpt-languages-nonzero": "$1 ($2% अनूदित)"
 }

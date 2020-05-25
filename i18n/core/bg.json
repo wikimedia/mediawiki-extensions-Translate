@@ -13,7 +13,7 @@
 	},
 	"translate": "Превеждане",
 	"translate-desc": "[[Special:Translate|Специална страница]] за превеждане на МедияУики и други",
-	"translate-fuzzybot-desc": "Това е служебна системна сметка, която се използва от разширението [https://www.mediawiki.org/wiki/Extension:Translate Превеждане] на МедияУики за поддържане на преводи.\nТази сметка е част от MediaWiki и не е собственост на никой потребител.",
+	"translate-fuzzybot-desc": "Това е служебна системна сметка, която се използва от разширението [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Превеждане] на МедияУики за поддържане на преводи.\nТази сметка е част от MediaWiki и не е собственост на никой потребител.",
 	"translate-taskui-export-to-file": "Експортиране в собствен формат",
 	"translate-taskui-export-as-po": "Експортиране за офлайн превод",
 	"translate-taction-translate": "Превеждане",
