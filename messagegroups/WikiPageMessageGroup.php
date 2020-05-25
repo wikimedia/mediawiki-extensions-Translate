@@ -64,10 +64,17 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 			return $this->definitions;
 		}
 
+		$title = $this->getTitle();
+
 		$dbr = TranslateUtils::getSafeReadDB();
-		$tables = 'translate_sections';
+		$tables = [ 'page', 'translate_sections' ];
 		$vars = [ 'trs_key', 'trs_text' ];
-		$conds = [ 'trs_page' => $this->getTitle()->getArticleID() ];
+		$conds = [
+			'page_namespace' => $title->getNamespace(),
+			'page_title' => $title->getDBkey(),
+			// The join condition
+			'page_id = trs_page',
+		];
 		$options = [ 'ORDER BY' => 'trs_order' ];
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
