@@ -307,9 +307,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $collection;
 	}
 
-	public function __construct() {
-	}
-
 	/**
 	 * Can be overwritten to return false if something is wrong.
 	 * @return bool

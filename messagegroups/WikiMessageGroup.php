@@ -28,7 +28,6 @@ class WikiMessageGroup extends MessageGroupOld {
 	 * @param string $source Mediawiki message that contains list of message keys.
 	 */
 	public function __construct( $id, $source ) {
-		parent::__construct();
 		$this->id = $id;
 		$this->source = $source;
 	}
