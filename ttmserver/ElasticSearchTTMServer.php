@@ -17,7 +17,7 @@ use MediaWiki\Logger\LoggerFactory;
  */
 class ElasticSearchTTMServer
 	extends TTMServer
-	implements ReadableTTMServer, WritableTTMServer, SearchableTTMserver
+	implements ReadableTTMServer, WritableTTMServer, SearchableTTMServer
 {
 	/**
 	 * @const int number of documents that will be loaded and deleted in a
