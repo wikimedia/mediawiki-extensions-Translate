@@ -49,7 +49,8 @@ class ApiTTMServer extends ApiBase {
 
 		$good = [];
 		foreach ( $wgTranslateTranslationServices as $id => $config ) {
-			if ( isset( $config['public'] ) && $config['public'] === true ) {
+			$public = $config['public'] ?? false;
+			if ( $config['type'] === 'ttmserver' && $public ) {
 				$good[] = $id;
 			}
 		}

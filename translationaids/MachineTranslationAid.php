@@ -25,7 +25,7 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 			return;
 		}
 
-		foreach ( $this->getWebServices( 'mt' ) as $service ) {
+		foreach ( $this->getWebServices() as $service ) {
 			if ( $service->checkTranslationServiceFailure() ) {
 				continue;
 			}
@@ -83,5 +83,22 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 			'source_language' => $sourceLanguage,
 			'source' => $sourceText,
 		];
+	}
+
+	/** @return TranslationWebService[] */
+	private function getWebServices(): array {
+		global $wgTranslateTranslationServices;
+
+		$services = [];
+		foreach ( $wgTranslateTranslationServices as $name => $config ) {
+			$service = TranslationWebService::factory( $name, $config );
+			if ( !$service || $service->getType() !== 'mt' ) {
+				continue;
+			}
+
+			$services[$name] = $service;
+		}
+
+		return $services;
 	}
 }

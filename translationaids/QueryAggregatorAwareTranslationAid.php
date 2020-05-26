@@ -59,25 +59,4 @@ abstract class QueryAggregatorAwareTranslationAid
 
 		return $this->queries;
 	}
-
-	/**
-	 * Returns all web services of given type.
-	 * @param string $type
-	 * @return TranslationWebService[]
-	 */
-	protected function getWebServices( $type ) {
-		global $wgTranslateTranslationServices;
-
-		$services = [];
-		foreach ( $wgTranslateTranslationServices as $name => $config ) {
-			$service = TranslationWebService::factory( $name, $config );
-			if ( !$service || $service->getType() !== $type ) {
-				continue;
-			}
-
-			$services[$name] = $service;
-		}
-
-		return $services;
-	}
 }

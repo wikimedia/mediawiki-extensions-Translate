@@ -14,12 +14,19 @@
  * @since 2013-01-01 | 2015.02 extends QueryAggregatorAwareTranslationAid
  */
 class TTMServerAid extends QueryAggregatorAwareTranslationAid {
+	/** @var array[] */
+	private $services;
+
 	public function populateQueries() {
 		$text = $this->dataProvider->getDefinition();
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 
-		foreach ( $this->getWebServices( 'ttmserver' ) as $service ) {
+		if ( trim( $text ) === '' ) {
+			return;
+		}
+
+		foreach ( $this->getWebServices() as $service ) {
 			$this->storeQuery( $service, $from, $to, $text );
 		}
 	}
@@ -124,28 +131,68 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		return $items;
 	}
 
-	/**
-	 * @return ReadableTTMServer[]
-	 */
-	private function getInternalServices() {
-		$services = [];
-
-		// "Local" queries using a client can't be run in parallel with web services
-		global $wgTranslateTranslationServices;
-		foreach ( $wgTranslateTranslationServices as $name => $config ) {
-			$service = TTMServer::factory( $config );
-			if ( !$service ) {
-				continue;
+	/** @return ReadableTTMServer[] */
+	private function getInternalServices(): array {
+		$services = $this->getQueryableServices();
+		foreach ( $services as $name => $config ) {
+			if ( $config['type'] === 'ttmserver' ) {
+				$services[$name] = TTMServer::factory( $config );
+			} else {
+				unset( $services[$name] );
 			}
+		}
 
-			// Except if they are public, we can call back via API.
-			// See TranslationWebService::factory
+		return $services;
+	}
+
+	/** @return RemoteTTMServerWebService[] */
+	private function getWebServices(): array {
+		$services = $this->getQueryableServices();
+		foreach ( $services as $name => $config ) {
+			if ( $config['type'] === 'remote-ttmserver' ) {
+				$services[$name] = TranslationWebService::factory( $name, $config );
+			} else {
+				unset( $services[$name] );
+			}
+		}
+
+		return $services;
+	}
+
+	private function getQueryableServices(): array {
+		if ( !$this->services ) {
+			global $wgTranslateTranslationServices;
+			$this->services = $this->getQueryableServicesUncached(
+				$wgTranslateTranslationServices );
+		}
+
+		return $this->services;
+	}
+
+	private function getQueryableServicesUncached( array $services ): array {
+		// First remove mirrors of the primary service
+		$primary = TTMServer::primary();
+		$mirrors = $primary ? $primary->getMirrors() : [];
+		foreach ( $mirrors as $mirrorName ) {
+			unset( $services[$mirrorName] );
+		}
+
+		// Then remove non-ttmservers
+		foreach ( $services as $name => $config ) {
+			$type = $config['type'];
+			if ( $type !== 'ttmserver' && $type !== 'remote-ttmserver' ) {
+				unset( $services[$name] );
+			}
+		}
+
+		// Then determine the query method. Prefer HTTP queries that can be run parallel.
+		foreach ( $services as $name => &$config ) {
 			$public = $config['public'] ?? false;
-			if ( $service instanceof ReadableTTMServer && $public === true ) {
-				continue;
+			if ( $config['type'] === 'ttmserver' && $public ) {
+				$config['type'] = 'remote-ttmserver';
+				$config['service'] = $name;
+				$config['url'] = wfExpandUrl( wfScript( 'api' ), PROTO_CANONICAL );
 			}
-
-			$services[ $name ] = $service;
 		}
 
 		return $services;

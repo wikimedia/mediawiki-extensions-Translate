@@ -47,24 +47,8 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			$config['timeout'] = 3;
 		}
 
-		// Alter local ttmserver instance to appear as remote
-		// to take advantage of the query aggregator. But only
-		// if they are public.
-		if (
-			isset( $config['class'] ) &&
-			$config['class'] === ElasticSearchTTMServer::class &&
-			isset( $config['public'] ) &&
-			$config['public'] === true
-		) {
-			$config['type'] = 'remote-ttmserver';
-			$config['service'] = $name;
-			$config['url'] = wfExpandUrl( wfScript( 'api' ), PROTO_CANONICAL );
-		}
-
-		// @phan-suppress-next-line PhanRedundantCondition
-		if ( isset( $handlers[$config['type']] ) ) {
-			$class = $handlers[$config['type']];
-
+		$class = $handlers[$config['type']] ?? null;
+		if ( $class ) {
 			$obj = new $class( $name, $config );
 			$obj->setLogger( LoggerFactory::getInstance( 'translationservices' ) );
 			return $obj;
