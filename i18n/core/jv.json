@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Diki Ananta",
 			"Kaganer",
 			"Meursault2004",
 			"NoiX180",
@@ -133,7 +134,7 @@
 	"translate-statsf-count": "Ukuran:",
 	"translate-statsf-count-edits": "Cacahing besutan",
 	"translate-statsf-count-users": "Pamertal aktif",
-	"translate-statsf-count-registrations": "Panganggo anyar",
+	"translate-statsf-count-registrations": "Naraguna anyar",
 	"translate-statsf-count-reviews": "Pepriksan pertalan",
 	"translate-statsf-count-reviewers": "Pamriksa",
 	"translate-statsf-language": "Pratélan kodhe basa kang kapisah komah:",
@@ -253,8 +254,8 @@
 	"logentry-translationreview-message": "$1 {{GENDER:$2|mriksa}} pertalan $3",
 	"group-translate-sandboxed": "Juru pamertal kang durung katampa",
 	"group-translate-sandboxed-member": "{{GENDER:$1|juru pamertal kang durung katampa}}",
-	"right-translate-sandboxmanage": "Kemunah panganggo ing bak wedhi",
-	"action-translate-sandboxmanage": "kemunah panganggo ing bak wedhi",
+	"right-translate-sandboxmanage": "Kemunah naraguna ing bak wedhi",
+	"action-translate-sandboxmanage": "kemunah naraguna ing bak wedhi",
 	"translate-workflow-state-": "(durung disetel)",
 	"translate-workflowstatus": "Status: $1",
 	"translate-workflow-set-doing": "Nyetèl...",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diki Ananta",
 			"N219",
 			"Naufal06",
 			"NoiX180",
@@ -117,7 +118,7 @@
 	"pt-movepage-action-check": "Priksa yèn pangalihé bisa diayahi",
 	"pt-movepage-action-perform": "Pindhahaké",
 	"pt-movepage-action-other": "Ganti patujon",
-	"pt-movepage-intro": "Kaca astamiwa iki nglilakaké panjenengan mindhahaké kaca sing ditandhai kanggo terjemahan.\nPamidhahan ora bakal gelis, amarga akèh kaca sing kudu dipindhahaké.\nNalika kaca dipindhahaké, ora bisa interaksi karo kaca sing dimaksud.\nKagagalan bakal dilebokaké nèng [[Special:Log/pagetranslation|log terjemahan kaca]] lan ora perlu dibenahi manual.",
+	"pt-movepage-intro": "Kaca mirunggan iki nglilakaké panjenengan mindhahaké kaca sing ditandhai kanggo terjemahan.\nPamidhahan ora bakal gelis, amarga akèh kaca sing kudu dipindhahaké.\nNalika kaca dipindhahaké, ora bisa interaksi karo kaca sing dimaksud.\nKagagalan bakal dilebokaké nèng [[Special:Log/pagetranslation|log terjemahan kaca]] lan ora perlu dibenahi manual.",
 	"pt-movepage-logreason": "Pérangan kaca \"$1\" kang bisa kapertal",
 	"pt-movepage-started": "Mangga priksanen [[Special:Log/pagetranslation|log pertalan kaca]] sadhéla bokmanawa ana masalah lan layang rampungan.",
 	"pt-locked-page": "Kaca iki digembok amarga kaca sing bisa diterjemahaké saiki wis dipindhah.",

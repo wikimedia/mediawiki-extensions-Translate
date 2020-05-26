@@ -40,6 +40,8 @@
 	"translate-translations-project": "ፕሮጀክት፥",
 	"translate-translations-history-short": "ታ",
 	"languagestats": "ናይ ቋንቋ ስታቲስቲክስ",
+	"translate-langstats-expand": "ዘርግሕ",
+	"translate-langstats-collapse": "ኣክብ",
 	"translate-language-code": "ናይ ቋንቋ ኮድ",
 	"translate-language-code-field-name": "ናይ ቋንቋ ኮድ፥",
 	"translate-language": "ቋንቋ",
@@ -48,6 +50,7 @@
 	"translate-mgs-submit": "ስታቲስቲክስ ኣርእይ",
 	"translate-mgs-column-language": "ቋንቋ",
 	"translate-save": "ኣቐምጥ ($1)",
+	"translate-smg-rename-select": "ምረጽ",
 	"translate-smg-rename-cancel": "ኣትርፍ",
 	"translate-manage-import-new": "ሓድሽ መልእኽቲ $1",
 	"translate-manage-action-rename": "ደጊምኸ ስም ሃብ",
@@ -61,6 +64,8 @@
 	"tux-tab-translated": "ዝተተርጎመ",
 	"tux-edit": "ኣተዓራረየ",
 	"tux-status-translated": "ዝተተርጎመ",
+	"tux-status-saving": "የቐምጥ ኣሎ...",
+	"tux-editor-placeholder": "ትርጉምካ",
 	"tux-editor-save-button-label": "ትርጉም ኣቐምጥ",
 	"tux-editor-cancel-button-label": "ኣትርፍ",
 	"tux-editor-suggestions-title": "ርእይቶታት",
@@ -74,8 +79,11 @@
 	"tux-message-filter-advanced-button": "ብሉጽ ምድላይ",
 	"tux-empty-list-translated-action": "ተርጎመ",
 	"tux-editor-close-tooltip": "ዕጸው",
+	"tux-editor-expand-tooltip": "ዘርግሕ",
+	"tux-editor-collapse-tooltip": "ኣክብ",
 	"tux-editor-message-tools-history": "ታሪኽ",
 	"tux-editor-message-tools-delete": "ሰረዘ",
 	"tux-editor-message-tools-translations": "ኩሉ ትርጉማት",
-	"tux-editor-loading": "ይጽዕን ኣሎ..."
+	"tux-editor-loading": "ይጽዕን ኣሎ...",
+	"specialpages-group-translation": "ትርጉም"
 }

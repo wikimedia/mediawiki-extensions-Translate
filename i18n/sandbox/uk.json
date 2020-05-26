@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Andriykopanytsia",
+			"BaRaN6161 TURK",
 			"Base",
 			"Movses",
 			"Piramidion",
@@ -19,7 +20,7 @@
 	"tsb-reminder-failed": "Не вдалося надіслати нагадування",
 	"tsb-email-promoted-subject": "Тепер ви - перекладач на {{SITENAME}}",
 	"tsb-email-promoted-body": "Привіт {{GENDER:$1|$1}},\n\nВітаємо! Я перевірив тестові переклади, виконані вами на {{SITENAME}}, і надав вам повні права перекладача.\n\nЗаходьте на {{SITENAME}}, щоб продовжувати переклад нині і щодня:\n$2\n\nВітаємо вас у команді перекладачів і дякуємо вам за ваш внесок!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
-	"tsb-email-rejected-subject": "Вашу заявку на перекладача на {{ім'я сайту}} відхилено",
+	"tsb-email-rejected-subject": "Вашу заявку на перекладача на {{SITENAME}} відхилено",
 	"tsb-email-rejected-body": "Привіт {{GENDER:$1|$1}},\n\nДякуємо вам за намагання стати перекладачем на  translator at {{SITENAME}}. На жаль, я з жалем повідомляю вас, що відхиляю вашу заявку, бо якість ваших перекладів не відповідає вимогам.\n\nЯкщо ви вважаєте, що ваша заявка відхилена помилково, то можете спробувати знову подати заявку на перекладача на please try to apply again as a translator at {{SITENAME}}. Ви можете зареєструватися тут:\n$2\n\n{{GENDER:$3|$3}},\nКоманда {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Один запит|$1 запити|$1 запитів}}",
 	"tsb-all-languages-button-label": "Усі мови",
