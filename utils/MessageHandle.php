@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -176,10 +177,19 @@ class MessageHandle {
 		// Do another check that the group actually exists
 		$group = $this->getGroup();
 		if ( !$group ) {
-			$warning = "MessageIndex is out of date – refers to unknown group {$groups[0]}. ";
-			$warning .= 'Doing a rebuild.';
-			wfWarn( $warning );
-			MessageIndexRebuildJob::newJob()->run();
+			$logger = LoggerFactory::getInstance( 'Translate' );
+			$logger->warning(
+				'[MessageHandle] MessageIndex is out of date. Page {pagename} refers to ' .
+				'unknown group {messagegroup}',
+				[
+					'pagename' => $this->getTitle()->getPrefixedText(),
+					'messagegroup' => $groups[0],
+				]
+			);
+
+			// Schedule a job in the job queue (with deduplication)
+			$job = MessageIndexRebuildJob::newJob();
+			JobQueueGroup::singleton()->push( $job );
 
 			return false;
 		}
