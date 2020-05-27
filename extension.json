@@ -146,6 +146,7 @@
 		"MessageGroupWANCache": "utils/MessageGroupWANCache.php",
 		"MessageHandle": "utils/MessageHandle.php",
 		"MessageIndex": "utils/MessageIndex.php",
+		"MessageIndexException": "utils/MessageIndexException.php",
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
 		"MessageValidator": "MessageValidator.php",
