@@ -5,7 +5,9 @@
 		]
 	},
 	"searchtranslations": "Serchar tradukuri",
+	"tux-sst-search": "Serchez",
 	"tux-sst-search-ph": "Serchar tradukuri",
 	"tux-sst-facet-language": "Lingui",
-	"tux-sst-facet-group": "Grupo di mesaji"
+	"tux-sst-facet-group": "Grupo di mesaji",
+	"tux-sst-case-sensitive": "''Case sensitive''"
 }
