@@ -24,6 +24,7 @@
 	"tux-sst-outdated": "Ширделла гочдарш $1",
 	"tux-sst-ellipsis-untranslated": "Гочдар дац",
 	"tux-sst-ellipsis-outdated": "Ширделла гочдарш",
-	"tux-sst-link-all-match": "Дехо дерриг дешнаш лоьхуш",
+	"tux-sst-link-all-match": "Дерриг дешнаш лаха.",
+	"tux-sst-match-message": "Гойтуш ду лоьхуш долучу муьлхачу дешнашца догӀурш. $1",
 	"tux-sst-case-sensitive": "регистр лоруш"
 }
