@@ -93,7 +93,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertEquals( 1, count( $job->getResentJobs() ) );
+		$this->assertSame( 1, count( $job->getResentJobs() ) );
 		$expectedParams = [
 			'errorCount' => 1,
 			'service' => 'secondary',
@@ -249,7 +249,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertEquals( 1, count( $job->getResentJobs() ) );
+		$this->assertSame( 1, count( $job->getResentJobs() ) );
 		$expectedParams = [
 			'errorCount' => 0,
 			'retryCount' => 1,

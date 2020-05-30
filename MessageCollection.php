@@ -1046,6 +1046,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function count() {
 		return count( $this->keys() );
 	}
+
 	/** @} */
 }
 
