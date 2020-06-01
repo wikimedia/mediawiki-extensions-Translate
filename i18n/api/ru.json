@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diman Russkov",
 			"Kaganer",
 			"Kareyac",
 			"Movses",
@@ -34,6 +35,8 @@
 	"apihelp-query+languagestats-param-language": "Код языка.",
 	"apihelp-query+languagestats-example-1": "Список статистики завершённости перевода для финского.",
 	"apihelp-query+messagecollection-description": "Запросить MessageCollection о переводах.",
+	"apihelp-query+managemessagegroups-param-groupId": "Идентификатор группы",
+	"apihelp-query+managemessagegroups-param-messageKey": "Ключ сообщения",
 	"apihelp-query+messagecollection-summary": "Запросить MessageCollection о переводах.",
 	"apihelp-query+messagecollection-param-group": "Группа сообщений.",
 	"apihelp-query+messagecollection-param-language": "Код языка.",
@@ -54,6 +57,7 @@
 	"apihelp-query+messagetranslations-summary": "Запросить все переводы для одного сообщения.",
 	"apihelp-query+messagetranslations-param-title": "Полный заголовок известного сообщения.",
 	"apihelp-query+messagetranslations-example-1": "Список переводов в вики для «MediaWiki:January»",
+	"apihelp-managemessagegroups-param-groupId": "Идентификатор группы",
 	"apihelp-translatesandbox-description": "Зарегистрировать и управлять пользователями в песочнице.",
 	"apihelp-translatesandbox-summary": "Зарегистрировать и управлять пользователями в песочнице.",
 	"apihelp-translatesandbox-param-do": "Что делать.",
@@ -86,6 +90,7 @@
 	"apihelp-searchtranslations-example-2": "Показать непереведённые сообщения, соответствующие запросу на исходном языке.",
 	"apierror-translate-invalidupdate": "Недопустимое обновление.",
 	"apierror-translate-language-disabled": "Перевод на $1 отключён.",
+	"apierror-translate-language-disabled-reason": "Перевод на $1 отключён: $2",
 	"apierror-translate-nodynamicgroups": "Динамические группы сообщений здесь не поддерживаются.",
 	"apierror-translate-nomessagefortitle": "Заголовок не соответствует переводимому сообщению.",
 	"apierror-translate-owntranslation": "Не может проверять собственные переводы",
