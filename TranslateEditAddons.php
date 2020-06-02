@@ -285,7 +285,7 @@ class TranslateEditAddons {
 		$message->setTranslation( $text );
 
 		$validationResult = $validator->quickValidate( $message, $code );
-		return $validationResult->hasErrors() || $validationResult->hasWarnings();
+		return $validationResult->hasIssues();
 	}
 
 	/**

@@ -5,85 +5,102 @@
  *
  * @file
  * @author Abijeet Patro
+ * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
 namespace MediaWiki\Extensions\Translate\MessageValidator;
 
 use IContextSource;
+use InvalidArgumentException;
+use Language;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
 /**
- * A wrapper class built to make it easier to interact with the
- * response from MessageValidator
- * @since 2019.06
+ * Container for validation issues returned by MessageValidator.
+ *
+ * @since 2020.06 (originally 2019.06)
  */
 class ValidationResult {
-	/**
-	 * Contains validation errors
-	 * @var array
-	 */
-	protected $errors = [];
+	/** @var ValidationIssues */
+	protected $errors;
 
-	/**
-	 * Contains validation warnings
-	 * @var array
-	 */
-	protected $warnings = [];
+	/** @var ValidationIssues */
+	protected $warnings;
 
-	public function __construct( array $errors, array $warnings ) {
-		$this->setErrors( $errors );
-		$this->setWarnings( $warnings );
-	}
-
-	public function hasWarnings() {
-		return $this->warnings !== [];
-	}
-
-	public function hasErrors() {
-		return $this->errors !== [];
-	}
-
-	public function setWarnings( array $warnings ) {
+	public function __construct( ValidationIssues $errors, ValidationIssues $warnings ) {
+		$this->errors = $errors;
 		$this->warnings = $warnings;
 	}
 
-	public function addWarnings( $warning ) {
-		$this->warnings[] = $warning;
+	public function hasIssues(): bool {
+		return $this->hasWarnings() || $this->hasErrors();
 	}
 
-	public function getWarnings() {
+	public function getIssues(): ValidationIssues {
+		$issues = new ValidationIssues();
+		$issues->merge( $this->errors );
+		$issues->merge( $this->warnings );
+		return $issues;
+	}
+
+	public function hasWarnings(): bool {
+		return $this->warnings->hasIssues();
+	}
+
+	public function hasErrors(): bool {
+		return $this->errors->hasIssues();
+	}
+
+	public function getWarnings(): ValidationIssues {
 		return $this->warnings;
 	}
 
-	public function getDescriptiveWarnings( IContextSource $context ) {
-		return self::expandMessages( $context, $this->warnings );
-	}
-
-	public function setErrors( array $errors ) {
-		$this->errors = $errors;
-	}
-
-	public function addError( $error ) {
-		$this->errors[] = $error;
-	}
-
-	public function getErrors() {
+	public function getErrors(): ValidationIssues {
 		return $this->errors;
 	}
 
-	public function getDescriptiveErrors( IContextSource $context ) {
-		return self::expandMessages( $context, $this->errors );
+	public function getDescriptiveWarnings( IContextSource $context ): array {
+		return $this->expandMessages( $context, $this->warnings );
 	}
 
-	public static function expandMessages( IContextSource $context, array $notices ) {
-		$expandedNotices = [];
+	public function getDescriptiveErrors( IContextSource $context ): array {
+		return $this->expandMessages( $context, $this->errors );
+	}
 
-		foreach ( $notices as $item ) {
-			$key = array_shift( $item );
-			$msg = $context->msg( $key, $item )->parse();
-			$expandedNotices[] = $msg;
+	private function expandMessages( IContextSource $context, ValidationIssues $issues ): array {
+		$expandMessage = function ( ValidationIssue $issue ) use ( $context ): string {
+			$params = $this->fixMessageParams( $context->getLanguage(), $issue->messageParams() );
+			return $context->msg( $issue->messageKey() )->params( $params )->parse();
+		};
+
+		return array_map( $expandMessage, iterator_to_array( $issues ) );
+	}
+
+	private function fixMessageParams( Language $lang, array $params ): array {
+		$out = [];
+
+		foreach ( $params as $param ) {
+			if ( !is_array( $param ) ) {
+				$out[] = $param;
+			} else {
+				[ $type, $value ] = $param;
+				if ( $type === 'COUNT' ) {
+					$out[] = $lang->formatNum( $value );
+				} elseif ( $type === 'PARAMS' ) {
+					$out[] = $lang->commaList( $value );
+				} elseif ( $type === 'PLAIN-PARAMS' ) {
+					$value = array_map( 'wfEscapeWikiText', $value );
+					$out[] = $lang->commaList( $value );
+				} elseif ( $type === 'PLAIN' ) {
+					$out[] = wfEscapeWikiText( $value );
+				} else {
+					throw new InvalidArgumentException( "Unknown type $type" );
+				}
+			}
 		}
 
-		return $expandedNotices;
+		return $out;
 	}
 }

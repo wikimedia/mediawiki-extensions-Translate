@@ -107,7 +107,7 @@ class CreateCheckIndex extends Maintenance {
 
 				foreach ( $collection as $key => $message ) {
 					$result = $validator->quickValidate( $message, $code );
-					if ( $result->hasWarnings() || $result->hasErrors() ) {
+					if ( $result->hasIssues() ) {
 						if ( $verbose ) {
 							// Print it
 							$nsText = $contLang->getNsText( $g->getNamespace() );

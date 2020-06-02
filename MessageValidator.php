@@ -5,12 +5,15 @@
  * @file
  * @defgroup MessageValidator Message Validators
  * @author Abijeet Patro
+ * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
 use MediaWiki\Extensions\Translate\MessageValidator\ValidationResult;
 use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\MessageValidator\ValidatorFactory;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
 /**
  * Message validator is used to run validators to find common mistakes so that
@@ -182,11 +185,13 @@ class MessageValidator {
 			$this->runValidation( $validator, $message, $code, $errors, $warnings, $ignoreWarnings );
 		}
 
-		$warnings = $this->normalizeNotices( $message->key(), $warnings );
-		$errors = $this->normalizeNotices( $message->key(), $errors );
+		$errors = $this->filterValidations( $errors );
+		$warnings = $this->filterValidations( $warnings );
 
-		$validationResult = new ValidationResult( $errors, $warnings );
-		return $validationResult;
+		$errorIssues = self::convertNoticesToValidationIssues( $errors, $message->key() );
+		$warningIssues = self::convertNoticesToValidationIssues( $warnings, $message->key() );
+
+		return new ValidationResult( $errorIssues, $warningIssues );
 	}
 
 	/**
@@ -203,16 +208,36 @@ class MessageValidator {
 		foreach ( $this->validators as $validator ) {
 			$this->runValidation( $validator, $message, $code, $errors, $warnings, $ignoreWarnings );
 
-			$warnings = $this->normalizeNotices( $message->key(), $warnings );
-			$errors = $this->normalizeNotices( $message->key(), $errors );
+			$errors = $this->filterValidations( $errors );
+			$warnings = $this->filterValidations( $warnings );
 
 			if ( $warnings !== [] || $errors !== [] ) {
 				break;
 			}
 		}
 
-		$validationResult = new ValidationResult( $errors, $warnings );
-		return $validationResult;
+		$errorIssues = self::convertNoticesToValidationIssues( $errors, $message->key() );
+		$warningIssues = self::convertNoticesToValidationIssues( $warnings, $message->key() );
+
+		return new ValidationResult( $errorIssues, $warningIssues );
+	}
+
+	private function convertNoticesToValidationIssues(
+		array $notices,
+		string $messageKey
+	): ValidationIssues {
+		$issues = new ValidationIssues();
+		foreach ( $notices[$messageKey] ?? [] as $notice ) {
+			$issue = new ValidationIssue(
+				$notice[0][0],
+				$notice[0][1],
+				$notice[1],
+				array_slice( $notice, 2 )
+			);
+			$issues->add( $issue );
+		}
+
+		return $issues;
 	}
 
 	/**
@@ -301,45 +326,6 @@ class MessageValidator {
 	}
 
 	/**
-	 * Converts the special params to something nice.
-	 * @param array $notices List of warnings / errors
-	 * @throws InvalidArgumentException
-	 * @return array List of validation messages with parameters.
-	 */
-	protected function fixMessageParams( array $notices ) {
-		$lang = RequestContext::getMain()->getLanguage();
-
-		$validators = [];
-		foreach ( $notices as $vkey => $validator ) {
-			array_shift( $validator );
-			$message = [ array_shift( $validator ) ];
-
-			foreach ( $validator as $param ) {
-				if ( !is_array( $param ) ) {
-					$message[] = $param;
-				} else {
-					list( $type, $value ) = $param;
-					if ( $type === 'COUNT' ) {
-						$message[] = $lang->formatNum( $value );
-					} elseif ( $type === 'PARAMS' ) {
-						$message[] = $lang->commaList( $value );
-					} elseif ( $type === 'PLAIN-PARAMS' ) {
-						$value = array_map( 'wfEscapeWikiText', $value );
-						$message[] = $lang->commaList( $value );
-					} elseif ( $type === 'PLAIN' ) {
-						$message[] = wfEscapeWikiText( $value );
-					} else {
-						throw new InvalidArgumentException( "Unknown type $type" );
-					}
-				}
-			}
-			$validators[$vkey] = $message;
-		}
-
-		return $validators;
-	}
-
-	/**
 	 * If the 'keymatch' option is specified in the validator, checks and ensures that the
 	 * key matches.
 	 * @param string $key
@@ -414,22 +400,5 @@ class MessageValidator {
 				$this->groupId . "; validator: " . get_class( $validator['instance'] ) . "\n. Exception: $e"
 			);
 		}
-	}
-
-	/**
-	 * Filters and then normalizes the notices array.
-	 *
-	 * @param string $messageKey
-	 * @param array $notices
-	 * @return array
-	 */
-	private function normalizeNotices( $messageKey, $notices ) {
-		$notices = $this->filterValidations( $notices );
-		if ( count( $notices ) > 0 ) {
-			$notices = $notices[$messageKey];
-			$notices = $this->fixMessageParams( $notices );
-		}
-
-		return $notices;
 	}
 }
