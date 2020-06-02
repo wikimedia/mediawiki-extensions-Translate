@@ -188,7 +188,6 @@ class SpecialLanguageStats extends SpecialPage {
 			if ( $this->nothing ) {
 				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
 			}
-			// @phan-suppress-next-line SecurityCheck-XSS False positive
 			$out->addHTML( $output );
 		} elseif ( $submitted ) {
 			$this->invalidTarget();

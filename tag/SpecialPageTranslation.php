@@ -875,6 +875,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return [ 'tpt-edit-failed', $status->getWikiText() ];
 		}
 
+		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 		$newrevision = $status->value['revision'];
 
 		// In theory it is either null or Revision object,

@@ -260,6 +260,7 @@ HTML;
 		usort( $requests, [ __CLASS__, 'translatorRequestSort' ] );
 
 		foreach ( $requests as $request ) {
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$items[] = $this->makeRequestItem( $request );
 		}
 
@@ -286,14 +287,14 @@ HTML;
 	protected function makeRequestItem( $request ) {
 		$requestdataEnc = htmlspecialchars( FormatJson::encode( $request ) );
 		$nameEnc = htmlspecialchars( $request['username'] );
-		$nameEncForId = htmlspecialchars( Sanitizer::escapeIdForAttribute( $request['username'] ) );
+		$nameEncForId = htmlspecialchars( Sanitizer::escapeIdForAttribute( 'tsb-request-' . $request['username'] ) );
 		$emailEnc = htmlspecialchars( $request['email'] );
 		$countEnc = htmlspecialchars( $request['translations'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
 		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
 
 		return <<<HTML
-<div class="row request" data-data="$requestdataEnc" id="tsb-request-$nameEncForId">
+<div class="row request" data-data="$requestdataEnc" id="$nameEncForId">
 	<div class="two columns amount">
 		<div class="translation-count">$countEnc</div>
 	</div>
