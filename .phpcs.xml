@@ -20,6 +20,11 @@
 			<property name="ignoreList" type="array" value="$IP" />
 		</properties>
 	</rule>
+	<!-- New code uses parameter and return type hints. Repeating them in tags adds no
+	     additional value. -->
+	<rule ref="MediaWiki.Commenting.FunctionComment.MissingParamTag">
+		<exclude-pattern>src/</exclude-pattern>
+	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php"/>
 	<arg name="encoding" value="UTF-8"/>
