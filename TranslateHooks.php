@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -226,6 +227,13 @@ class TranslateHooks {
 					'public' => false,
 				];
 			}
+		}
+
+		// Add the BaseTemplateToolbox handler only when the new hook hasn't been defined yet.
+		if ( interface_exists( SidebarBeforeOutputHook::class ) ) {
+			$wgHooks['SidebarBeforeOutput'][] = 'TranslateToolbox::toolboxAllTranslations';
+		} else {
+			$wgHooks['BaseTemplateToolbox'][] = 'TranslateToolbox::toolboxAllTranslationsOld';
 		}
 	}
 

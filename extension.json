@@ -297,7 +297,6 @@
 		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
 		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
 		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
-		"BaseTemplateToolbox": "TranslateToolbox::toolboxAllTranslations",
 		"AbortEmailNotification": "TranslateHooks::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "TTMServer::onDelete",
 		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
