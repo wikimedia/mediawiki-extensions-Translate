@@ -12,12 +12,6 @@
 use MediaWiki\Extensions\Translate\Utilities\GettextPlural;
 
 /**
- * Identifies Gettext plural exceptions.
- */
-class GettextPluralException extends MWException {
-}
-
-/**
  * New-style FFS class that implements support for gettext file format.
  * @ingroup FFS
  */
