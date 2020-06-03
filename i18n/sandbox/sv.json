@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"JohanahoJ",
 			"Jopparn",
 			"Lokal Profil",
 			"WikiPhoenix"
@@ -48,7 +49,7 @@
 	"tsb-create-user-page": "Skapade grundläggande användarsida",
 	"log-name-translatorsandbox": "Logg för översättningssandlåda",
 	"log-description-translatorsandbox": "En logg över åtgärder på översättningssandlådeanvändare",
-	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|befordrades}} $3 till {{GENDER:$4|översättare}}",
+	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|befordrade}} $3 till {{GENDER:$4|översättare}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|avvisade}} begäran från \"$3\" att bli en översättare",
 	"logentry-newusers-tsbpromoted": "Användarkontot $3 {{GENDER:$2|skapades}} genom befordran från sandlådan"
 }
