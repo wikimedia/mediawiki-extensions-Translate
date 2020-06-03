@@ -23,7 +23,7 @@ use MediaWiki\Revision\SlotRecord;
  * Rewritten in 2012-04-23
  */
 class SpecialManageGroups extends SpecialPage {
-	const RIGHT = 'translate-manage';
+	private const RIGHT = 'translate-manage';
 
 	/**
 	 * @var DifferenceEngine

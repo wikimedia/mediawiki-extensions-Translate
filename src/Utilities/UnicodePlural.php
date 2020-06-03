@@ -13,8 +13,8 @@ use TranslateUtils;
  * @since 2019.09
  */
 class UnicodePlural {
-	const PRE = '{{PLURAL|';
-	const POST = '}}';
+	private const PRE = '{{PLURAL|';
+	private const POST = '}}';
 
 	/**
 	 * Returns CLDR plural rule for given language.

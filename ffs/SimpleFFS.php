@@ -37,8 +37,8 @@ class SimpleFFS implements FFS {
 	 */
 	protected $extra;
 
-	const RECORD_SEPARATOR = "\0";
-	const PART_SEPARATOR = "\0\0\0\0";
+	private const RECORD_SEPARATOR = "\0";
+	private const PART_SEPARATOR = "\0\0\0\0";
 
 	public function __construct( FileBasedMessageGroup $group ) {
 		$this->setGroup( $group );

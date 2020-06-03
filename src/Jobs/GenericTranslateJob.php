@@ -27,7 +27,7 @@ abstract class GenericTranslateJob extends \Job {
 	 * Channel name to be used during logging
 	 * @var string
 	 */
-	const CHANNEL_NAME = 'Translate.Jobs';
+	private const CHANNEL_NAME = 'Translate.Jobs';
 
 	/**
 	 * Returns a logger instance with the channel name. Can have only a single

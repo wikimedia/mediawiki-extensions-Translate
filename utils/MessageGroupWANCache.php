@@ -68,7 +68,7 @@ class MessageGroupWANCache {
 	 * A prefix for all keys saved by this cache
 	 * @var string
 	 */
-	const KEY_PREFIX = 'translate-mg';
+	private const KEY_PREFIX = 'translate-mg';
 
 	public function __construct( WANObjectCache $cache ) {
 		$this->cache = $cache;

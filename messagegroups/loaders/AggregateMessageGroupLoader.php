@@ -18,8 +18,8 @@ use Wikimedia\Rdbms\IDatabase;
 class AggregateMessageGroupLoader extends MessageGroupLoader
 	implements CachedMessageGroupLoader {
 
-	const CACHE_KEY = 'aggregate';
-	const CACHE_VERSION = 1;
+	private const CACHE_KEY = 'aggregate';
+	private const CACHE_VERSION = 1;
 
 	/**
 	 * @var MessageGroupWANCache

@@ -17,8 +17,8 @@ use MediaWiki\MediaWikiServices;
 class FileBasedMessageGroupLoader extends MessageGroupLoader
 	implements CachedMessageGroupLoader {
 
-	const CACHE_KEY = 'filebased';
-	const CACHE_VERSION = 1;
+	private const CACHE_KEY = 'filebased';
+	private const CACHE_VERSION = 1;
 
 	/**
 	 * List of groups

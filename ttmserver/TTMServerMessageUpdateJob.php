@@ -34,20 +34,20 @@ class TTMServerMessageUpdateJob extends Job {
 	 * Number of *retries* allowed, 4 means we attempt
 	 * to run the job 5 times (1 initial attempt + 4 retries).
 	 */
-	const MAX_ERROR_RETRY = 4;
+	protected const MAX_ERROR_RETRY = 4;
 
 	/**
 	 * Constant used by backoffDelay().
 	 * With 7 the cumulative delay between the first and last attempt is
 	 * between 8 and 33 minutes.
 	 */
-	const WRITE_BACKOFF_EXPONENT = 7;
+	protected const WRITE_BACKOFF_EXPONENT = 7;
 
 	/**
 	 * The maximum amount of time jobs delayed due to frozen services can remain
 	 * in the job queue.
 	 */
-	const DROP_DELAYED_JOBS_AFTER = 86400; // 60 * 60 * 24 * 1;
+	public const DROP_DELAYED_JOBS_AFTER = 86400; // 60 * 60 * 24 * 1;
 
 	/**
 	 * @param MessageHandle $handle

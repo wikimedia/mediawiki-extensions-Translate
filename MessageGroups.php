@@ -42,7 +42,7 @@ class MessageGroups {
 	 * will automatically expire and be cleared off.
 	 * @var int
 	 */
-	const CACHE_VERSION = 3;
+	private const CACHE_VERSION = 3;
 
 	/**
 	 * Initialises the list of groups

@@ -15,9 +15,9 @@
  * @ingroup MessageGroups
  */
 class MessageGroupCache {
-	const NO_SOURCE = 1;
-	const NO_CACHE = 2;
-	const CHANGED = 3;
+	public const NO_SOURCE = 1;
+	public const NO_CACHE = 2;
+	public const CHANGED = 3;
 
 	/**
 	 * @var FileBasedMessageGroup

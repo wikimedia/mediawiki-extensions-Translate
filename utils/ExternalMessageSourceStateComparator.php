@@ -13,7 +13,7 @@ use MediaWiki\Extensions\Translate\Utilities\StringComparators\StringComparator;
 
 class ExternalMessageSourceStateComparator {
 	/** Process all languages supported by the message group */
-	const ALL_LANGUAGES = 'all languages';
+	public const ALL_LANGUAGES = 'all languages';
 
 	/**
 	 * @var StringComparator

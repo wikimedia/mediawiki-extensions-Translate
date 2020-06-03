@@ -25,13 +25,13 @@ class MessageSourceChange {
 	 */
 	protected $changes = [];
 
-	const ADDITION = 'addition';
-	const CHANGE = 'change';
-	const DELETION = 'deletion';
-	const RENAME = 'rename';
-	const NONE = 'none';
+	public const ADDITION = 'addition';
+	public const CHANGE = 'change';
+	public const DELETION = 'deletion';
+	public const RENAME = 'rename';
+	public const NONE = 'none';
 
-	const SIMILARITY_THRESHOLD = 0.9;
+	private const SIMILARITY_THRESHOLD = 0.9;
 
 	/**
 	 * Contains a mapping of mesasge type, and the corresponding addition function

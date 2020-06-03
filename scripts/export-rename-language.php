@@ -16,7 +16,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class ExportRenameLanguage extends Maintenance {
-	const MARKER = '%CODE%';
+	private const MARKER = '%CODE%';
 
 	public function __construct() {
 		parent::__construct();

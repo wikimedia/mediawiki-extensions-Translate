@@ -20,36 +20,30 @@ class ElasticSearchTTMServer
 	implements ReadableTTMServer, WritableTTMServer, SearchableTTMServer
 {
 	/**
-	 * @const int number of documents that will be loaded and deleted in a
-	 * single operation
-	 */
-	const BULK_DELETE_CHUNK_SIZE = 100;
-
-	/**
 	 * @const int in case a write operation fails during a batch process
 	 * this constant controls the number of times we will retry the same
 	 * operation.
 	 */
-	const BULK_INDEX_RETRY_ATTEMPTS = 5;
+	private const BULK_INDEX_RETRY_ATTEMPTS = 5;
 
 	/**
 	 * @const int time (seconds) to wait for the index to ready before
 	 * starting to index. Since we wait for index status it can be relatively
 	 * long especially if some nodes are restarted.
 	 */
-	const WAIT_UNTIL_READY_TIMEOUT = 3600;
+	private const WAIT_UNTIL_READY_TIMEOUT = 3600;
 
 	/**
 	 * Flag in the frozen index that indicates that all indices
 	 * are frozen (useful only when this service shares the cluster with
 	 * CirrusSearch)
 	 */
-	const ALL_INDEXES_FROZEN_NAME = 'freeze_everything';
+	protected const ALL_INDEXES_FROZEN_NAME = 'freeze_everything';
 
 	/**
 	 * Type used in the frozen index
 	 */
-	const FROZEN_TYPE = 'frozen';
+	protected const FROZEN_TYPE = 'frozen';
 
 	/**
 	 * @var \Elastica\Client

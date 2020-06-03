@@ -18,8 +18,8 @@ class TranslatablePageMessageGroupStore extends MessageGroupLoader
 	implements CachedMessageGroupLoader
 {
 
-	const CACHE_KEY = 'wikipage';
-	const CACHE_VERSION = 1;
+	private const CACHE_KEY = 'wikipage';
+	private const CACHE_VERSION = 1;
 
 	/**
 	 * @var Wikimedia\Rdbms\IDatabase

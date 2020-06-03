@@ -18,7 +18,7 @@ use MediaWiki\Extensions\Translate\Utilities\StringComparators\SimpleStringCompa
  * @ingroup API TranslateAPI
  */
 class ApiManageMessageGroups extends ApiBase {
-	const RIGHT = 'translate-manage';
+	private const RIGHT = 'translate-manage';
 
 	public function execute() {
 		$this->checkUserRightsAny( self::RIGHT );

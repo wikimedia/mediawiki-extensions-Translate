@@ -14,7 +14,7 @@
  * @since 2012-10-05
  */
 class MessageGroupStates {
-	const CONDKEY = 'state conditions';
+	private const CONDKEY = 'state conditions';
 
 	protected $config;
 

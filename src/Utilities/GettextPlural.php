@@ -14,8 +14,8 @@ use TranslateUtils;
  * @since 2019.09
  */
 class GettextPlural {
-	const PRE = '{{PLURAL:GETTEXT|';
-	const POST = '}}';
+	private const PRE = '{{PLURAL:GETTEXT|';
+	private const POST = '}}';
 
 	/**
 	 * Returns Gettext plural rule for given language.

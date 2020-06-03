@@ -19,7 +19,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CommandlineExport extends Maintenance {
-	const EXPORT_LOG_FILE = 'translation-exports';
+	private const EXPORT_LOG_FILE = 'translation-exports';
 
 	public function __construct() {
 		parent::__construct();

@@ -11,7 +11,7 @@
 use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
 
 class MessageChangeStorage {
-	const DEFAULT_NAME = 'default';
+	public const DEFAULT_NAME = 'default';
 
 	/**
 	 * Writes change array as a serialized file.

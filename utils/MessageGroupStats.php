@@ -20,19 +20,19 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class MessageGroupStats {
 	/// Name of the database table
-	const TABLE = 'translate_groupstats';
+	private const TABLE = 'translate_groupstats';
 
-	const TOTAL = 0; ///< Array index
-	const TRANSLATED = 1; ///< Array index
-	const FUZZY = 2; ///< Array index
-	const PROOFREAD = 3; ///< Array index
+	public const TOTAL = 0; ///< Array index
+	public const TRANSLATED = 1; ///< Array index
+	public const FUZZY = 2; ///< Array index
+	public const PROOFREAD = 3; ///< Array index
 
 	/// If stats are not cached, do not attempt to calculate them on the fly
-	const FLAG_CACHE_ONLY = 1;
+	public const FLAG_CACHE_ONLY = 1;
 	/// Ignore cached values. Useful for updating stale values.
-	const FLAG_NO_CACHE = 2;
+	public const FLAG_NO_CACHE = 2;
 	/// Do not defer updates. Meant for jobs like MessageGroupStatsRebuildJob.
-	const FLAG_IMMEDIATE_WRITES = 4;
+	public const FLAG_IMMEDIATE_WRITES = 4;
 
 	/**
 	 * @var array[]

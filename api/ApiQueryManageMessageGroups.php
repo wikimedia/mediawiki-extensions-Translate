@@ -16,7 +16,7 @@ use MediaWiki\Extensions\Translate\Utilities\StringComparators\SimpleStringCompa
  * @ingroup API TranslateAPI
  */
 class ApiQueryManageMessageGroups extends ApiQueryBase {
-	const RIGHT = 'translate-manage';
+	private const RIGHT = 'translate-manage';
 
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'mmg' );
