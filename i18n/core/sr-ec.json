@@ -131,7 +131,7 @@
 	"translate-rcfilters-translations-only-label": "Преводи",
 	"translate-rcfilters-translations-only-desc": "Промене преведених страница",
 	"translate-rcfilters-translations-filter-label": "Нису преводи",
-	"translate-rcfilters-translations-filter-desc": "Све промене које нису преводи.",
+	"translate-rcfilters-translations-filter-desc": "Све измене које нису преводи",
 	"translate-rcfilters-translations-site-label": "Системске поруке",
 	"translate-rcfilters-translations-site-desc": "Прилагођавања порука сајта у именском простору Медијавики.",
 	"translate-rc-translation-filter": "Филтрирај преводе:",

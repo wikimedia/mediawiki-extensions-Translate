@@ -86,6 +86,9 @@
 	"translate-untranslated": "Mia tradoti",
 	"translate-percentage-complete": "Conpletà",
 	"translate-percentage-fuzzy": "Da ajornar",
+	"translate-ls-column-group": "Grupo de mesaji",
+	"translate-mgs-group": "Grupo de mesaji",
 	"translate-save": "Salva ($1)",
-	"translate-documentation-language": "Documentasion del mesajo"
+	"translate-documentation-language": "Documentasion del mesajo",
+	"translate-msggroupselector-projects": "Grupo de mesaji"
 }
