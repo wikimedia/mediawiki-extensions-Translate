@@ -51,8 +51,18 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 			$this->assertEquals( file_get_contents( "$pattern.ptsource" ), $source );
 		}
 
+		// Fiddle sections to be all translated, since we are not testing wrapping here
+		$collection = [];
+		foreach ( $parse->sections as $key => $section ) {
+			// By default all new sections have key -1, which makes them indistinguishable
+			$section->id = $key;
+			$message = new FatMessage( 'ignoredKey', $section->getTextWithVariables() );
+			$message->setTranslation( $section->getTextWithVariables() );
+			$collection[$pagename . '/' . $section->id] = $message;
+		}
+
 		if ( file_exists( "$pattern.pttarget" ) ) {
-			$target = $parse->getTranslationPageText( [] );
+			$target = $parse->getTranslationPageText( $collection );
 			$this->assertEquals( file_get_contents( "$pattern.pttarget" ), $target );
 		}
 

@@ -71,7 +71,7 @@ class TPSection {
 	}
 
 	/**
-	 * Returns the text with tvars replaces with placeholders.
+	 * Returns the text with tvars replaced with placeholders.
 	 * @return string Wikitext.
 	 * @since 2014.07
 	 */
