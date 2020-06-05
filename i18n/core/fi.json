@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"01miki10",
 			"Beluga",
 			"Centerlink",
 			"Cimon Avaro",
@@ -120,7 +121,7 @@
 	"translate-checks-newline-extra-end": "Käännöksen lopussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-value-not-present": "Käännöksen täytyy olla {{PLURAL:$1|1=|yksi seuraavista vaihtoehdoista:}} $1.",
 	"translate-pref-nonewsletter": "Älä lähetä uutiskirjeitä",
-	"translate-pref-editassistlang": "Apukielet",
+	"translate-pref-editassistlang": "Apukielet:",
 	"prefs-translate": "Käännösasetukset",
 	"translate-pref-editassistlang-help": "Pilkuin eroteltu lista kielikoodeista.\nViestin käännökset näillä kielillä näkyvät kääntäessäsi.\nAsetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä.",
 	"translate-pref-editassistlang-bad": "Listassa on kelpaamaton kielikoodi:\n<nowiki>$1</nowiki>.",
