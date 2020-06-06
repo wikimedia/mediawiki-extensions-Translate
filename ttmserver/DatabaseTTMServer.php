@@ -9,6 +9,7 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBQueryError;
 
 /**
@@ -168,7 +169,8 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			$context = Title::makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
 			$this->sids[$key] = $this->insertSource( $context, $language, $text );
 		}
-		wfWaitForSlaves( 10 );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lbFactory->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
 	public function batchInsertTranslations( array $batch ) {
@@ -184,7 +186,8 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 		$dbw = $this->getDB( DB_MASTER );
 		$dbw->insert( 'translate_tmt', $rows, __METHOD__ );
-		wfWaitForSlaves( 10 );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lbFactory->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
 	public function endBatch() {
