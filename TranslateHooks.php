@@ -700,7 +700,7 @@ class TranslateHooks {
 		// Update the non-duplicate rows, we'll just delete
 		// the duplicate ones later
 		foreach ( self::$userMergeTables as $table => $field ) {
-			if ( $dbw->tableExists( $table ) ) {
+			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
 				$dbw->update(
 					$table,
 					[ $field => $newUser->getId() ],
@@ -723,7 +723,7 @@ class TranslateHooks {
 
 		// Delete any remaining rows that didn't get merged
 		foreach ( self::$userMergeTables as $table => $field ) {
-			if ( $dbw->tableExists( $table ) ) {
+			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
 				$dbw->delete(
 					$table,
 					[ $field => $oldUser->getId() ],

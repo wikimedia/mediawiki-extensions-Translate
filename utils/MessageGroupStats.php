@@ -274,7 +274,7 @@ class MessageGroupStats {
 	 */
 	public static function clearAll() {
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( self::TABLE, '*' );
+		$dbw->delete( self::TABLE, '*', __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared everything :(' );
 	}
 

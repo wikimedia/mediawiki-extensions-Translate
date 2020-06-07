@@ -69,7 +69,7 @@ class RemoveOrphanedActors extends Maintenance {
 		}
 
 		// Delete orphaned actors
-		$dbw->delete( 'actor', [ 'actor_id' => $orphanedActorIds ] );
+		$dbw->delete( 'actor', [ 'actor_id' => $orphanedActorIds ], __METHOD__ );
 
 		$this->output( "deleted orphaned actors\n" );
 

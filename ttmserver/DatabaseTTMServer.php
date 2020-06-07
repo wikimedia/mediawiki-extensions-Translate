@@ -151,7 +151,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		// @phan-suppress-next-line PhanUndeclaredMethod
 		$table = $dbw->tableName( 'translate_tmf' );
 		try {
-			$dbw->query( "DROP INDEX tmf_text ON $table" );
+			$dbw->query( "DROP INDEX tmf_text ON $table", __METHOD__ );
 		} catch ( DBQueryError $e ) {
 			// Perhaps the script was aborted before it got
 			// chance to add the index back.
@@ -197,7 +197,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$dbw = $this->getDB( DB_MASTER );
 		// @phan-suppress-next-line PhanUndeclaredMethod
 		$table = $dbw->tableName( 'translate_tmf' );
-		$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)" );
+		$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)", __METHOD__ );
 	}
 
 	/* Reading interface */

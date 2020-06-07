@@ -62,7 +62,7 @@ class TranslateMetadata {
 		$data = [ 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
-			$dbw->delete( 'translate_metadata', $data );
+			$dbw->delete( 'translate_metadata', $data, __METHOD__ );
 			unset( self::$cache[$group][$key] );
 		} else {
 			$dbw->replace(
@@ -119,7 +119,7 @@ class TranslateMetadata {
 	public static function deleteGroup( $groupId ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = [ 'tmd_group' => $groupId ];
-		$dbw->delete( 'translate_metadata', $conds );
+		$dbw->delete( 'translate_metadata', $conds, __METHOD__ );
 		self::$cache[$groupId] = null;
 	}
 }

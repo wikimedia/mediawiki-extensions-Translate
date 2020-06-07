@@ -1334,9 +1334,9 @@ class PageTranslationHooks {
 		};
 
 		if ( is_callable( [ $dbw, 'onTransactionCommitOrIdle' ] ) ) {
-			$dbw->onTransactionCommitOrIdle( $callback );
+			$dbw->onTransactionCommitOrIdle( $callback, __METHOD__ );
 		} else {
-			$dbw->onTransactioIdle( $callback );
+			$dbw->onTransactionIdle( $callback, __METHOD__ );
 		}
 	}
 }

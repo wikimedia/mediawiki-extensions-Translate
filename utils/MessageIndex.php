@@ -523,15 +523,15 @@ class DatabaseMessageIndex extends MessageIndex {
 		} elseif ( is_callable( [ $dbw, 'onTransactionResolution' ] ) ) { // 1.28
 			$dbw->onTransactionResolution( function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
-			} );
+			}, $fname );
 		} elseif ( is_callable( [ $dbw, 'onTransactionCommitOrIdle' ] ) ) {
 			$dbw->onTransactionCommitOrIdle( function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
-			} );
+			}, $fname );
 		} else {
 			$dbw->onTransactionIdle( function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
-			} );
+			}, $fname );
 		}
 
 		return true;
