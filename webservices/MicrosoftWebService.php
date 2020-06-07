@@ -48,7 +48,7 @@ class MicrosoftWebService extends TranslationWebService {
 		$url = $this->config['url'] . '/languages?api-version=3.0';
 
 		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
-			->create( $url, $options );
+			->create( $url, $options, __METHOD__ );
 		$req->setHeader( 'Ocp-Apim-Subscription-Key', $key );
 
 		$status = $req->execute();
