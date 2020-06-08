@@ -13,6 +13,7 @@
 			"KATRINE1993",
 			"Lou",
 			"Nikosgranturismogt",
+			"Norhorn",
 			"Omnipaedista",
 			"Protnet",
 			"ZaDiak",
@@ -221,6 +222,8 @@
 	"translate-smg-more": "Θα υπάρχουν περισσότερες αλλαγές για διεκπεραίωση μετά την υποβολή αυτών των αλλαγών.",
 	"translate-smg-left": "Περιεχόμενο μηνύματος στο wiki",
 	"translate-smg-right": "Εισερχόμενες αλλαγές",
+	"translate-smg-rename-select": "Επιλογή",
+	"translate-smg-rename-cancel": "Άκυρο",
 	"translate-manage-import-diff": "Μήνυμα $1 | Ενέργειες: $2",
 	"translate-manage-import-new": "Νέο μήνυμα $1",
 	"translate-manage-import-deleted": "Διαγεγραμμένο μήνυμα $1",
@@ -228,6 +231,7 @@
 	"translate-manage-action-conflict": "Εισαγωγή και ασαφοποίηση",
 	"translate-manage-action-ignore": "Αγνόηση",
 	"translate-manage-action-fuzzy": "Εισαγωγή και ασαφοποίηση μεταφράσεων",
+	"translate-manage-action-rename": "Μετονομασία",
 	"translate-manage-nochanges": "Δεν υπάρχουν αλλαγές στους ορισμούς μηνυμάτων για αυτήν την ομάδα.",
 	"translate-manage-nochanges-other": "Δεν υπήρξαν μεταβολές για αυτήν τη γλώσσα.\nΧρησιμοποιήστε τον παρακάτω σύνδεσμο για να επιστρέψετε σε προβολή λεπτομερειών ομάδας.",
 	"translate-manage-inconsistent": "Εντοπίστηκε ασυνέπεια στο αίτημα.\nΠαρακαλούμε ελέγξτε για αλλαγές και προσπαθήστε ξανά.\nΛεπτομέρειες: $1.",
@@ -385,5 +389,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% μεταφρασμένα, $2% θεωρημένα, $3% παρωχημένα",
 	"translate-search-more-groups-info": "$1 ακόμα {{PLURAL:$1|ομάδα|ομάδες}}",
 	"tux-session-expired": "Δεν είστε πια σε σύνδεση. Παρακαλούμε συνδεθείτε σε ξεχωριστή καρτέλα. Εναλλακτικά, δημιουργήστε ένα αντίγραφο των μη αποθηκευμένων μεταφράσεων, συνδεθείτε, επιστρέψετε σε αυτή τη σελίδα και εισαγάγετε τις μεταφράσεις σας ξανά.",
-	"tux-nojs": "Αυτό το εργαλείο δεν λειτουργεί χωρίς JavaScript. Ή το JavaScript είναι απενεργοποιημένο, ή απέτυχε να δουλέψει ή αυτό το πρόγραμμα περιήγησης δεν υποστηρίζεται."
+	"tux-nojs": "Αυτό το εργαλείο δεν λειτουργεί χωρίς JavaScript. Ή το JavaScript είναι απενεργοποιημένο, ή απέτυχε να δουλέψει ή αυτό το πρόγραμμα περιήγησης δεν υποστηρίζεται.",
+	"specialpages-group-translation": "Μετάφραση"
 }
