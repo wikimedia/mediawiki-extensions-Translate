@@ -266,7 +266,8 @@ class ArrayFlattener {
 		}
 
 		if ( !isset( $alts["$key{$this->sep}other"] ) ) {
-			wfWarn( "Other not set for key $key" );
+			// Ensure other form is always present, even if missing from the translation
+			$alts["$key{$this->sep}other"] = end( $alts );
 		}
 
 		return $alts;
