@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -875,19 +876,29 @@ class SpecialPageTranslation extends SpecialPage {
 			return [ 'tpt-edit-failed', $status->getWikiText() ];
 		}
 
-		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-		$newrevision = $status->value['revision'];
-
-		// In theory it is either null or Revision object,
-		// never revision object with null id, but who knows
-		if ( $newrevision instanceof Revision ) {
-			$newrevision = $newrevision->getId();
+		if ( array_key_exists( 'revision-record', $status->value ) ) {
+			// MW 1.35+
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+			$newRevisionRecord = $status->value['revision-record'];
+		} else {
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+			$newRevision = $status->value['revision'];
+			$newRevisionRecord = $newRevision ? $newRevision->getRevisionRecord() : null;
 		}
 
-		if ( $newrevision === null ) {
-			// Probably a no-change edit, so no new revision was assigned.
-			// Get the latest revision manually
-			$newrevision = $page->getTitle()->getLatestRevID();
+		// In theory it is either null or RevisionRecord object,
+		// not a RevisionRecord object with null id, but who knows
+		if ( $newRevisionRecord instanceof RevisionRecord ) {
+			$newRevisionId = $newRevisionRecord->getId();
+		} else {
+			$newRevisionId = null;
+		}
+
+		// Probably a no-change edit, so no new revision was assigned.
+		// Get the latest revision manually
+		// Could also occur on the off chance $newRevisionRecord->getId() returns null
+		if ( $newRevisionId === null ) {
+			$newRevisionId = $page->getTitle()->getLatestRevID();
 		}
 
 		$inserts = [];
@@ -924,7 +935,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 		TranslateMetadata::set( $page->getMessageGroupId(), 'maxid', $maxid );
 
-		$page->addMarkedTag( $newrevision );
+		$page->addMarkedTag( $newRevisionId );
 		MessageGroups::singleton()->recache();
 
 		$group = $page->getMessageGroup();
@@ -940,7 +951,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$entry->setPerformer( $this->getUser() );
 		$entry->setTarget( $page->getTitle() );
 		$entry->setParameters( [
-			'revision' => $newrevision,
+			'revision' => $newRevisionId,
 			'changed' => count( $changed ),
 		] );
 		$logid = $entry->insert();

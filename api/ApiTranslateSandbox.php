@@ -161,14 +161,12 @@ class ApiTranslateSandbox extends ApiBase {
 	 * preferences.
 	 *
 	 * @param User $user
-	 * @return Status|bool False when a user page already existed, or the Status
-	 *   of the user page creation from WikiPage::doEditContent().
 	 */
-	protected function createUserPage( User $user ) {
+	private function createUserPage( User $user ) {
 		$userpage = $user->getUserPage();
 
 		if ( $userpage->exists() ) {
-			return false;
+			return;
 		}
 
 		$languagePrefs = FormatJson::decode( $user->getOption( 'translate-sandbox' ), true );
@@ -179,9 +177,7 @@ class ApiTranslateSandbox extends ApiBase {
 		$page = WikiPage::factory( $userpage );
 		$content = ContentHandler::makeContent( $babeltext, $userpage );
 
-		$editResult = $page->doEditContent( $content, $summary, EDIT_NEW, false, $user );
-
-		return $editResult;
+		$page->doEditContent( $content, $summary, EDIT_NEW, false, $user );
 	}
 
 	public function isWriteMode() {

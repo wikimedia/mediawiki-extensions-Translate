@@ -52,7 +52,7 @@ trait TranslatablePageTestTrait {
 
 		if ( $markForTranslation ) {
 			// Mark the page for translation
-			$latestRevisionId = $editStatus->value['revision']->getId();
+			$latestRevisionId = $editStatus->value['revision-record']->getId();
 			$translatablePage->addMarkedTag( $latestRevisionId );
 		}
 

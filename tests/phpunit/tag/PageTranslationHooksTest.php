@@ -80,7 +80,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $actual, 'Extension data is not set on unmarked source page' );
 
 		// Mark the page for translation
-		$latestRevisionId = $editStatus->value['revision']->getId();
+		$latestRevisionId = $editStatus->value['revision-record']->getId();
 		$translatablePage->addMarkedTag( $latestRevisionId );
 		$messageGroups->recache();
 		$translationPageTitle = Title::newFromText( 'Vuosaari/fi' );

@@ -6,6 +6,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Revision\RevisionRecord;
+
 /**
  * Tests for fuzzy flag change on edits.
  * @group Database
@@ -47,16 +49,16 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$status = $page->doEditContent( $content, __METHOD__ );
 		$value = $status->getValue();
 		/**
-		 * @var Revision $rev
+		 * @var RevisionRecord $revisionRecord
 		 */
-		$rev = $value['revision'];
-		$revision = $rev->getId();
+		$revisionRecord = $value['revision-record'];
+		$revisionId = $revisionRecord->getId();
 
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = [
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'fuzzy' ),
-			'rt_revision' => $revision
+			'rt_revision' => $revisionId
 		];
 
 		$index = array_keys( $conds );

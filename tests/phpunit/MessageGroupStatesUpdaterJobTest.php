@@ -167,7 +167,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 	protected static function getRevisionRecord( Status $s ) {
 		$value = $s->getValue();
 
-		return $value['revision']->getRevisionRecord();
+		return $value['revision-record'];
 	}
 
 	protected static function runJobs() {

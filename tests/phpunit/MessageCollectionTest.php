@@ -48,8 +48,8 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
 
 		$value = $status->getValue();
-		$rev = $value['revision'];
-		$revision = $rev->getId();
+		$revisionRecord = $value['revision-record'];
+		$revisionId = $revisionRecord->getId();
 
 		$group = MessageGroups::getGroup( 'test-group' );
 		$collection = $group->initCollection( 'fi' );
@@ -68,7 +68,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 			$translated->getProperty( 'status' ),
 			'message status is translated'
 		);
-		$this->assertEquals( $revision, $translated->getProperty( 'revision' ) );
+		$this->assertEquals( $revisionId, $translated->getProperty( 'revision' ) );
 
 		/** @var TMessage $untranslated */
 		$untranslated = $collection['untranslated'];

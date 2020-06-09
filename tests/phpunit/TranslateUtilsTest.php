@@ -19,7 +19,7 @@ class TranslateUtilsTest extends MediaWikiIntegrationTestCase {
 	private function createPageWithNameAndText( $name, $text, $user ) {
 		$status = $this->editPage( $name, $text, '', NS_MAIN, $user );
 		$this->assertTrue( $status->isOK() );
-		return $status->getValue()['revision']->getRevisionRecord();
+		return $status->getValue()['revision-record'];
 	}
 
 	/**
