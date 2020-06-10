@@ -24,7 +24,16 @@
 	     additional value. -->
 	<rule ref="MediaWiki.Commenting.FunctionComment.MissingParamTag">
 		<exclude-pattern>src/</exclude-pattern>
+		<!-- Temporarily until moved under src/ -->
+		<exclude-pattern>MessageValidator\.php</exclude-pattern>
 	</rule>
+	<!-- Same as above. No idea why it is named without "Tag". -->
+	<rule ref="MediaWiki.Commenting.FunctionComment.MissingReturn">
+		<exclude-pattern>src/</exclude-pattern>
+		<!-- Temporarily until moved under src/ -->
+		<exclude-pattern>MessageValidator\.php</exclude-pattern>
+	</rule>
+
 	<file>.</file>
 	<arg name="extensions" value="php"/>
 	<arg name="encoding" value="UTF-8"/>

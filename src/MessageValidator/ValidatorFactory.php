@@ -27,6 +27,8 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPlural
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiLinkValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
+use MediaWiki\Extensions\Translate\Validation\LegacyValidatorAdapter;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
 use RuntimeException;
 
 /**
@@ -60,45 +62,41 @@ class ValidatorFactory {
 	];
 
 	/**
-	 * Returns a validator instance based on the Id specified
+	 * Returns a validator instance based on the id specified
+	 *
 	 * @param string $id Id of the pre-defined validator class
 	 * @param mixed|null $params
-	 * @return Validator
+	 * @throws InvalidArgumentException
+	 * @return MessageValidator
 	 */
 	public static function get( $id, $params = null ) {
-		if ( isset( self::$validators[ $id ] ) ) {
-			// @phan-suppress-next-line PhanParamTooMany Not all sub classes using the arg
-			return new self::$validators[ $id ]( $params );
+		if ( !isset( self::$validators[ $id ] ) ) {
+			throw new InvalidArgumentException( "Could not find validator with id - '$id'. " );
 		}
 
-		throw new InvalidArgumentException( "Could not find validator with id - '$id'. " );
+		return self::loadInstance( self::$validators[ $id ], $params );
 	}
 
 	/**
 	 * Takes a Validator class name, and returns an instance of that class.
-	 * Ensures that the class implements the Validator interface.
 	 *
 	 * @param string $class Custom validator class name
 	 * @param mixed|null $params
 	 * @throws InvalidArgumentException
-	 * @return Validator
+	 * @return MessageValidator
 	 */
-	public static function loadInstance( $class, $params = null ) {
-		if ( class_exists( $class ) ) {
-			$validator = new $class( $params );
-
-			if ( !$validator instanceof Validator ) {
-				// Note that this checks for the class in the global namespace and not
-				// the current namespace.
-				throw new InvalidArgumentException(
-					"Validator '$class' does not implement the Validator interface."
-				);
-			}
-
-			return $validator;
+	public static function loadInstance( $class, $params = null ): MessageValidator {
+		if ( !class_exists( $class ) ) {
+			throw new InvalidArgumentException( "Could not find validator class - '$class'. " );
 		}
 
-		throw new InvalidArgumentException( "Could not find validator class - '$class'. " );
+		$validator = new $class( $params );
+
+		if ( $validator instanceof Validator ) {
+			return new LegacyValidatorAdapter( $validator );
+		}
+
+		return $validator;
 	}
 
 	/**

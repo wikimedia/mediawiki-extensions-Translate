@@ -27,6 +27,10 @@ class MessageValidatorTest extends MediaWikiIntegrationTestCase {
 
 		MessageIndex::setInstance( new HashMessageIndex() );
 		MessageIndex::singleton()->rebuild();
+
+		// Run with empty ignore list by default
+		$this->setMwGlobals( 'wgTranslateCheckBlacklist', false );
+		MessageValidator::reloadIgnorePatterns();
 	}
 
 	public function getTestGroups( &$list ) {
@@ -161,7 +165,7 @@ class MessageValidatorTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testCheckBlacklist() {
+	public function testIgnoreList() {
 		$this->setMwGlobals( [
 			'wgTranslateCheckBlacklist' => __DIR__ . '/data/check-blacklist.php'
 		] );
@@ -174,7 +178,7 @@ class MessageValidatorTest extends MediaWikiIntegrationTestCase {
 		$collectionFr->loadTranslations();
 
 		$msgValidator = $group->getValidator();
-		$msgValidator::reloadCheckBlacklist();
+		$msgValidator::reloadIgnorePatterns();
 
 		$validationResult = $msgValidator->validateMessage( $collection[ 'translated' ], 'en-gb' );
 		$this->assertCount(

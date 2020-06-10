@@ -10,8 +10,8 @@
  */
 
 use MediaWiki\Extensions\Translate\MessageValidator\ValidationResult;
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\MessageValidator\ValidatorFactory;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator as MessageValidatorInterface;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
@@ -22,27 +22,12 @@ use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
  * that translations that do not pass validation are not saved.
  *
  * To create your own validator, implement the following interface,
- * @see MediaWiki\Extensions\Translate\MessageValidator\Validator
+ * @see MediaWiki\Extensions\Translate\Validation\MessageValidator
  *
  * In addition you can use the following Trait to reuse some pre-existing methods,
  * @see MediaWiki\Extensions\Translate\MessageValidator\ValidatorHelper
  *
  * There are two types of notices - error and warning.
- *
- * The format for notices,
- * <pre>
- * $notices[$key][] = [
- *    # check idenfitication
- *    [ 'printf', $subcheck, $key, $code ],
- *    # check notice message
- *    'translate-checks-parameters-unknown',
- *    # optional special param list, formatted later with Language::commaList().
- *    # If you need wikitext formatting in $params, you can use PARAMS.
- *    [ 'PLAIN-PARAMS', $params ],
- *    # optional number of params, formatted later with Language::formatNum().
- *    [ 'COUNT', count( $params ) ] ],
- *    'Any other parameters to the message',
- * </pre>
  *
  * @link https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration#VALIDATORS
  * @link https://www.mediawiki.org/wiki/Help:Extension:Translate/Validators
@@ -52,33 +37,19 @@ use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
  */
 class MessageValidator {
 
-	/**
-	 * Contains list of validators
-	 *
-	 * @var array[]
-	 */
+	/** @var array List of validator data */
 	protected $validators = [];
 
-	/**
-	 * @var string
-	 */
+	/** @var string Message group id */
 	protected $groupId;
 
 	/** @var string[][] */
-	private static $globalBlacklist;
+	private static $ignorePatterns;
 
-	/**
-	 * Constructs a suitable validator for given message group.
-	 * @param string $groupId
-	 */
 	public function __construct( string $groupId ) {
-		global $wgTranslateCheckBlacklist;
-
-		if ( $wgTranslateCheckBlacklist === false ) {
-			self::$globalBlacklist = [];
-		} elseif ( self::$globalBlacklist === null ) {
+		if ( self::$ignorePatterns === null ) {
 			// TODO: Review if this logic belongs in this class.
-			self::reloadCheckBlacklist();
+			self::reloadIgnorePatterns();
 		}
 
 		$this->groupId = $groupId;
@@ -128,7 +99,7 @@ class MessageValidator {
 		}
 
 		$isInsertable = $validatorConfig['insertable'] ?? false;
-		if ( $isInsertable && !$validator instanceof \InsertablesSuggester ) {
+		if ( $isInsertable && !$validator instanceof InsertablesSuggester ) {
 			throw new InvalidArgumentException(
 				"Insertable validator does not implement InsertablesSuggester interface."
 			);
@@ -144,9 +115,10 @@ class MessageValidator {
 
 	/**
 	 * Returns the currently set validators for this group.
-	 * @return Validator[] List of currently set validators.
+	 *
+	 * @return MessageValidatorInterface[] List of validators
 	 */
-	public function getValidators() {
+	public function getValidators(): array {
 		return array_map( function ( $validator ) {
 			return $validator['instance'];
 		}, $this->validators );
@@ -155,9 +127,10 @@ class MessageValidator {
 	/**
 	 * Returns currently set validators that are insertable.
 	 *
-	 * @return Validator[] List of currently set insertable validators.
+	 * @return MessageValidatorInterface[] List of insertable
+	 * validators
 	 */
-	public function getInsertableValidators() {
+	public function getInsertableValidators(): array {
 		$insertableValidators = [];
 		foreach ( $this->validators as $validator ) {
 			if ( $validator['insertable'] === true ) {
@@ -171,80 +144,53 @@ class MessageValidator {
 	/**
 	 * Validates one message, returns array of warnings / errors that can be
 	 * passed to OutputPage::addWikiMsg or similar.
-	 *
-	 * @param TMessage $message
-	 * @param string $code Language code
-	 * @param bool $ignoreWarnings Ignore warnings, and only run enforced validators
-	 * @return ValidationResult
 	 */
-	public function validateMessage( TMessage $message, $code, $ignoreWarnings = false ) {
-		$warnings = [];
-		$errors = [];
+	public function validateMessage(
+		TMessage $message, string $code, bool $ignoreWarnings = false
+	): ValidationResult {
+		$errors = new ValidationIssues();
+		$warnings = new ValidationIssues();
 
 		foreach ( $this->validators as $validator ) {
 			$this->runValidation( $validator, $message, $code, $errors, $warnings, $ignoreWarnings );
 		}
 
-		$errors = $this->filterValidations( $errors );
-		$warnings = $this->filterValidations( $warnings );
+		$errors = $this->filterValidations( $errors, $code );
+		$warnings = $this->filterValidations( $warnings, $code );
 
-		$errorIssues = self::convertNoticesToValidationIssues( $errors, $message->key() );
-		$warningIssues = self::convertNoticesToValidationIssues( $warnings, $message->key() );
-
-		return new ValidationResult( $errorIssues, $warningIssues );
+		return new ValidationResult( $errors, $warnings );
 	}
 
-	/**
-	 * Validates a message, and returns as soon as any validation fails.
-	 * @param TMessage $message
-	 * @param string $code Language code
-	 * @param bool $ignoreWarnings Should warnings be ignored?
-	 * @return ValidationResult
-	 */
-	public function quickValidate( TMessage $message, $code, $ignoreWarnings = false ) {
-		$warnings = [];
-		$errors = [];
+	/** Validates a message, and returns as soon as any validation fails. */
+	public function quickValidate(
+		TMessage $message, string $code, bool $ignoreWarnings = false
+	): ValidationResult {
+		$errors = new ValidationIssues();
+		$warnings = new ValidationIssues();
 
 		foreach ( $this->validators as $validator ) {
 			$this->runValidation( $validator, $message, $code, $errors, $warnings, $ignoreWarnings );
 
-			$errors = $this->filterValidations( $errors );
-			$warnings = $this->filterValidations( $warnings );
+			$errors = $this->filterValidations( $errors, $code );
+			$warnings = $this->filterValidations( $warnings, $code );
 
-			if ( $warnings !== [] || $errors !== [] ) {
+			if ( $warnings->hasIssues() || $errors->hasIssues() ) {
 				break;
 			}
 		}
 
-		$errorIssues = self::convertNoticesToValidationIssues( $errors, $message->key() );
-		$warningIssues = self::convertNoticesToValidationIssues( $warnings, $message->key() );
-
-		return new ValidationResult( $errorIssues, $warningIssues );
+		return new ValidationResult( $errors, $warnings );
 	}
 
-	private function convertNoticesToValidationIssues(
-		array $notices,
-		string $messageKey
-	): ValidationIssues {
-		$issues = new ValidationIssues();
-		foreach ( $notices[$messageKey] ?? [] as $notice ) {
-			$issue = new ValidationIssue(
-				$notice[0][0],
-				$notice[0][1],
-				$notice[1],
-				array_slice( $notice, 2 )
-			);
-			$issues->add( $issue );
+	/** @internal Should only be used by tests and inside this class. */
+	public static function reloadIgnorePatterns(): void {
+		global $wgTranslateCheckBlacklist;
+
+		if ( $wgTranslateCheckBlacklist === false ) {
+			self::$ignorePatterns = [];
+			return;
 		}
 
-		return $issues;
-	}
-
-	/**
-	 * Updates the blacklist
-	 */
-	public static function reloadCheckBlacklist() {
-		global $wgTranslateCheckBlacklist;
 		$list = PHPVariableLoader::loadVariableFromPHPFile(
 			$wgTranslateCheckBlacklist, 'checkBlacklist'
 		);
@@ -263,59 +209,49 @@ class MessageValidator {
 			}
 		}
 
-		self::$globalBlacklist = $list;
+		self::$ignorePatterns = $list;
 	}
 
-	/**
-	 * Filters validations defined in check-blacklist.php.
-	 * @param array $validationsArray List of validations failures produced by validateMessage()
-	 * or quickValidate().
-	 * @return array List of filtered validations.
-	 */
-	protected function filterValidations( array $validationsArray ) {
-		// There is an array of messages...
-		foreach ( $validationsArray as $mkey => $validations ) {
-			// ... each which has an array of validations.
-			foreach ( $validations as $vkey => $validation ) {
-				$validator = array_shift( $validation );
-				// Check if the key is blacklisted...
-				foreach ( self::$globalBlacklist as $pattern ) {
-					if ( !$this->match( $pattern['group'], $this->groupId ) ) {
-						continue;
-					}
-					if ( !$this->match( $pattern['check'], $validator[0] ) ) {
-						continue;
-					}
-					if ( !$this->match( $pattern['subcheck'], $validator[1] ) ) {
-						continue;
-					}
-					if ( !$this->match( $pattern['message'], $validator[2] ) ) {
-						continue;
-					}
-					if ( !$this->match( $pattern['code'], $validator[3] ) ) {
-						continue;
-					}
+	/** Filters validations based on a ignore list. */
+	private function filterValidations(
+		ValidationIssues $issues,
+		string $targetLanguage
+	): ValidationIssues {
+		$filteredIssues = new ValidationIssues();
 
-					// If all of the above match, filter the validator
-					unset( $validationsArray[$mkey][$vkey] );
-				}
-
-				if ( $validationsArray[$mkey] === [] ) {
-					unset( $validationsArray[$mkey] );
+		foreach ( $issues as $issue ) {
+			foreach ( self::$ignorePatterns as $pattern ) {
+				if ( $this->shouldIgnore( $issue, $this->groupId, $targetLanguage, $pattern ) ) {
+					continue 2;
 				}
 			}
+			$filteredIssues->add( $issue );
 		}
 
-		return $validationsArray;
+		return $filteredIssues;
+	}
+
+	private function shouldIgnore(
+		ValidationIssue $issue,
+		string $messageGroupId,
+		string $targetLanguage,
+		array $pattern
+	): bool {
+		return $this->match( $pattern['group'], $messageGroupId )
+			&& $this->match( $pattern['check'], $issue->type() )
+			&& $this->match( $pattern['subcheck'], $issue->subType() )
+			&& $this->match( $pattern['message'], $issue->messageKey() )
+			&& $this->match( $pattern['code'], $targetLanguage );
 	}
 
 	/**
-	 * Matches validation information against blacklist pattern.
+	 * Matches validation information against a ignore pattern.
+	 *
 	 * @param string|array $pattern
 	 * @param string $value The actual value in the validation produced by the validator
 	 * @return bool True if the pattern matches the value.
 	 */
-	protected function match( $pattern, $value ) {
+	protected function match( $pattern, string $value ): bool {
 		if ( $pattern === '#' ) {
 			return true;
 		} elseif ( is_array( $pattern ) ) {
@@ -328,11 +264,12 @@ class MessageValidator {
 	/**
 	 * If the 'keymatch' option is specified in the validator, checks and ensures that the
 	 * key matches.
+	 *
 	 * @param string $key
 	 * @param string[] $keyMatches
 	 * @return bool True if the key matches one of the matchers, false otherwise.
 	 */
-	protected function doesKeyMatch( string $key, array $keyMatches ) : bool {
+	protected function doesKeyMatch( string $key, array $keyMatches ): bool {
 		$normalizedKey = lcfirst( $key );
 		foreach ( $keyMatches as $match ) {
 			if ( is_string( $match ) ) {
@@ -344,7 +281,7 @@ class MessageValidator {
 
 			// The value is neither a string nor an array, should never happen but still handle it.
 			if ( !is_array( $match ) ) {
-				throw new \InvalidArgumentException(
+				throw new InvalidArgumentException(
 					"Invalid key matcher configuration passed. Expected type: array or string. " .
 					"Recieved: " . gettype( $match ) . ". match value: " . FormatJson::encode( $match )
 				);
@@ -366,38 +303,37 @@ class MessageValidator {
 	}
 
 	/**
-	 * Runs the actual validation. Reused by quickValidate() and validateMessage()
+	 * Run the validator to produce warnings and errors.
 	 *
-	 * @param array $validator
-	 * @param TMessage $message
-	 * @param string $code
-	 * @param array &$errors
-	 * @param array &$warnings
-	 * @param bool $ignoreWarnings
+	 * May also skip validation depending on validator configuration and $ignoreWarnings.
 	 */
 	private function runValidation(
-		$validator, TMessage $message, $code, &$errors, &$warnings, $ignoreWarnings
-	) {
+		array $validatorData,
+		TMessage $message,
+		string $targetLanguage,
+		ValidationIssues $errors,
+		ValidationIssues $warnings,
+		bool $ignoreWarnings
+	): void {
 		// Check if key match has been specified, and then check if the key matches it.
+		/** @var MessageValidatorInterface $validator */
+		$validator = $validatorData['instance'];
 		try {
-			$keyMatches = $validator['keymatch'];
+			$keyMatches = $validatorData['keymatch'];
 			if ( $keyMatches !== false && !$this->doesKeyMatch( $message->key(), $keyMatches ) ) {
 				return;
 			}
 
-			if ( $validator['enforce'] === true ) {
-				$validator['instance']->validate( $message, $code, $errors );
-			} else {
-				// let's not bother running "warning" validators if warnings are ignored.
-				if ( $ignoreWarnings ) {
-					return;
-				}
-				$validator['instance']->validate( $message, $code, $warnings );
+			if ( $validatorData['enforce'] === true ) {
+				$errors->merge( $validator->getIssues( $message, $targetLanguage ) );
+			} elseif ( !$ignoreWarnings ) {
+				$warnings->merge( $validator->getIssues( $message, $targetLanguage ) );
 			}
-		} catch ( \Exception $e ) {
+			// else: caller does not want warnings, skip running the validator
+		} catch ( Exception $e ) {
 			throw new \RuntimeException(
 				'An error occurred while validating message: ' . $message->key() . '; group: ' .
-				$this->groupId . "; validator: " . get_class( $validator['instance'] ) . "\n. Exception: $e"
+				$this->groupId . "; validator: " . get_class( $validator ) . "\n. Exception: $e"
 			);
 		}
 	}

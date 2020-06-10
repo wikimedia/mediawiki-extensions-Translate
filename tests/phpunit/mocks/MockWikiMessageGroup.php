@@ -22,7 +22,7 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 }
 
 /**
- * Has validators that always return a valiation error and warning.
+ * Has validators that always return a validation error and warning.
  */
 class MockWikiValidationMessageGroup extends MockWikiMessageGroup {
 	public function getValidator() {
