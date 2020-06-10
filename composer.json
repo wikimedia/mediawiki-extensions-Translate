@@ -75,6 +75,10 @@
 			"parallel-lint . --exclude vendor --exclude node_modules",
 			"phpcs -p -s",
 			"minus-x check ."
+		],
+		"quicktest": [
+			"parallel-lint . --exclude vendor --exclude node_modules --no-progress",
+			"phpcs -p -s --cache"
 		]
 	}
 }
