@@ -1173,7 +1173,11 @@ class PageTranslationHooks {
 		}
 
 		// Copied from Skin::subPageSubtitle()
-		if ( $out->isArticle() && MWNamespace::hasSubpages( $out->getTitle()->getNamespace() ) ) {
+		$nsInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		if (
+			$out->isArticle() &&
+			$nsInfo->hasSubpages( $out->getTitle()->getNamespace() )
+		) {
 			$ptext = $out->getTitle()->getPrefixedText();
 			if ( strpos( $ptext, '/' ) !== false ) {
 				$links = explode( '/', $ptext );

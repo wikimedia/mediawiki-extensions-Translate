@@ -326,7 +326,14 @@
 		"MessageGroupStats": "SpecialMessageGroupStats",
 		"ImportTranslations": "SpecialImportTranslations",
 		"ExportTranslations": "SpecialExportTranslations",
-		"ManageMessageGroups": "SpecialManageGroups",
+		"ManageMessageGroups": {
+			"class": "SpecialManageGroups",
+			"services": [
+				"ContentLanguage",
+				"NamespaceInfo",
+				"RevisionLookup"
+			]
+		},
 		"SupportedLanguages": {
 			"class": "SpecialSupportedLanguages",
 			"services": [

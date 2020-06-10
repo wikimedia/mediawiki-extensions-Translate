@@ -272,7 +272,8 @@ class MessageHandle {
 	public function getInternalKey() {
 		$key = $this->getKey();
 
-		if ( !MWNamespace::isCapitalized( $this->title->getNamespace() ) ) {
+		$nsInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		if ( !$nsInfo->isCapitalized( $this->title->getNamespace() ) ) {
 			return $key;
 		}
 

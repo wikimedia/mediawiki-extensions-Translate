@@ -11,6 +11,7 @@
 
 use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 
 /**
@@ -24,25 +25,29 @@ use MediaWiki\Revision\SlotRecord;
  */
 class SpecialManageGroups extends SpecialPage {
 	private const RIGHT = 'translate-manage';
-
-	/**
-	 * @var DifferenceEngine
-	 */
+	/** @var DifferenceEngine */
 	protected $diff;
-
-	/**
-	 * @var string Path to the change cdb file.
-	 */
+	/** @var string Path to the change cdb file. */
 	protected $cdb;
-
-	/**
-	 * @var bool Has the necessary right specified by the RIGHT constant
-	 */
+	/** @var bool Has the necessary right specified by the RIGHT constant */
 	protected $hasRight = false;
+	/** @var Language */
+	private $contLang;
+	/** @var NamespaceInfo */
+	private $nsInfo;
+	/** @var RevisionLookup */
+	private $revLookup;
 
-	public function __construct() {
+	public function __construct(
+		Language $contLang,
+		NamespaceInfo $nsInfo,
+		RevisionLookup $revLookup
+	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
+		$this->contLang = $contLang;
+		$this->nsInfo = $nsInfo;
+		$this->revLookup = $revLookup;
 	}
 
 	public function doesWrites() {
@@ -121,8 +126,6 @@ class SpecialManageGroups extends SpecialPage {
 	}
 
 	protected function showChanges( $limit ) {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
 		$diff = new DifferenceEngine( $this->getContext() );
 		$diff->showDiffStyle();
 		$diff->setReducedLineNumbers();
@@ -155,7 +158,7 @@ class SpecialManageGroups extends SpecialPage {
 			// Reduce page existance queries to one per group
 			$lb = new LinkBatch();
 			$ns = $group->getNamespace();
-			$isCap = MWNamespace::isCapitalized( $ns );
+			$isCap = $this->nsInfo->isCapitalized( $ns );
 			$languages = $sourceChanges->getLanguages();
 
 			foreach ( $languages as $language ) {
@@ -165,7 +168,7 @@ class SpecialManageGroups extends SpecialPage {
 						// Constructing title objects is way slower
 						$key = $params['key'];
 						if ( $isCap ) {
-							$key = $contLang->ucfirst( $key );
+							$key = $this->contLang->ucfirst( $key );
 						}
 						$lb->add( $ns, "$key/$language" );
 					}
@@ -242,8 +245,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		if ( $type === 'deletion' ) {
 			$wiki = ContentHandler::getContentText(
-				MediaWikiServices::getInstance()
-					->getRevisionLookup()
+				$this->revLookup
 					->getRevisionByTitle( $title )
 					->getContent( SlotRecord::MAIN )
 			);
