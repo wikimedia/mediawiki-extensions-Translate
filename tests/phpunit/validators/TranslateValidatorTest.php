@@ -7,7 +7,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
@@ -17,26 +16,6 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
  * @group TranslationValidators
  */
 class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
-
-	/**
-	 * @dataProvider getBraceBalanceValidatorProvider
-	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator
-	 */
-	public function testBraceBalanceValidator(
-		$key, $definition, $translation, $expected, $msg
-	) {
-		$validator = new BraceBalanceValidator();
-		$notices = [];
-		$message = new FatMessage( $key, $definition );
-		$message->setTranslation( $translation );
-		$validator->validate( $message, 'en-gb', $notices );
-		if ( $expected ) {
-			$this->assertCount( $expected, $notices[ $key ], $msg );
-		} else {
-			$this->assertCount( $expected, $notices, $msg );
-		}
-	}
-
 	/**
 	 * @dataProvider getInsertableRubyValidatorProvider
 	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator
@@ -126,20 +105,6 @@ class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
 				$this->assertEquals( $subcheck, $notices[ $key ][$i ][0][1], $msg );
 			}
 		}
-	}
-
-	public function getBraceBalanceValidatorProvider() {
-		yield [
-			'hello', '{{ Hello }}',
-			'{{ Hello }}}', 1,
-			'should return a notice for a message containing non-matching braces.'
-		];
-
-		yield [
-			'hello2', '[[ Hello ]]',
-			'[[ Hello ]]', 0,
-			'should not set any notice for a valid message.'
-		];
 	}
 
 	public function getInsertableRubyValidatorProvider() {

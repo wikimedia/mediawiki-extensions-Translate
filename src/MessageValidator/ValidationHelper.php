@@ -78,14 +78,4 @@ trait ValidationHelper {
 
 		return $missing;
 	}
-
-	/**
-	 * @param string $source
-	 * @param string $str1
-	 * @param string $str2
-	 * @return bool whether $source has an equal number of occurences of $str1 and $str2
-	 */
-	protected static function checkStringCountEqual( $source, $str1, $str2 ) {
-		return substr_count( $source, $str1 ) === substr_count( $source, $str2 );
-	}
 }
