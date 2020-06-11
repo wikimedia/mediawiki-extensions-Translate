@@ -9,6 +9,7 @@
 
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
+use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\MediaWikiServices;
 
 return [
@@ -29,4 +30,7 @@ return [
 			$languageValidator
 		);
 	},
+	'Translate:GroupSynchronizationCache' => function (): GroupSynchronizationCache {
+		return new GroupSynchronizationCache( ObjectCache::getInstance( CACHE_DB ) );
+	}
 ];

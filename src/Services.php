@@ -7,6 +7,7 @@
 namespace MediaWiki\Extensions\Translate;
 
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
+use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 
@@ -45,5 +46,9 @@ class Services implements ContainerInterface {
 
 	public function getTranslatorActivity(): TranslatorActivity {
 		return $this->container->getService( 'Translate:TranslatorActivity' );
+	}
+
+	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
+		return $this->container->getService( 'Translate:GroupSynchronizationCache' );
 	}
 }
