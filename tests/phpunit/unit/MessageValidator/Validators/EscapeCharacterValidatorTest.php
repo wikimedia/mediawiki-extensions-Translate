@@ -4,54 +4,43 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 
 /**
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator
  */
 class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 	public static function provideValidate() {
-		$key = 'key';
-		$code = 'en-gb';
-		$message = new FatMessage( $key, 'Hello' );
+		$message = new FatMessage( 'key', 'Hello' );
 
 		yield [
 			'Hello\n',
-			[
-				'values' => [ '\n', '\\\\' ],
-			],
+			[ 'values' => [ '\n', '\\\\' ] ],
 			$message,
-			$code,
 			null
 		];
 
 		yield [
 			'Hello\n',
-			[
-				'values' => [ '\b' ],
-			],
+			[ 'values' => [ '\b' ] ],
 			$message,
-			$code,
-			[ 'escape', 'invalid', $key, $code ]
+			[ 'type' => 'escape', 'subtype' => 'invalid' ]
 		];
 
 		yield [
 			'Hello \b',
-			[
-				'values' => [ '\\\\', '\n' ]
-			],
+			[ 'values' => [ '\\\\', '\n' ] ],
 			$message,
-			$code,
-			[ 'escape', 'invalid', $key, $code ]
+			[ 'type' => 'escape', 'subtype' => 'invalid' ]
 		];
 
 		yield [
 			'Hello\\\\',
-			[
-				'values' => [ '\\\\', '\n' ]
-			],
+			[ 'values' => [ '\\\\', '\n' ] ],
 			$message,
-			$code,
 			null
 		];
 	}
@@ -60,18 +49,21 @@ class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 	 * @dataProvider provideValidate
 	 */
 	public function testValidate(
-		string $translation, array $config, FatMessage $message, $code, $expected
+		string $translation, array $config, FatMessage $message, array $expected = null
 	) {
 		$message->setTranslation( $translation );
 		$validator = new EscapeCharacterValidator( $config );
 
-		$notice = [];
-		$validator->validate( $message, $code, $notice );
+		$issues = $validator->getIssues( $message, 'en-gb' );
 
 		if ( $expected === null ) {
-			$this->assertEmpty( $notice );
+			$this->assertCount( 0, $issues, 'no issues' );
 		} else {
-			$this->assertSame( $expected, $notice[ $message->key() ][ 0 ][ 0 ] );
+			$this->assertCount( 1, $issues, 'issue raised' );
+			/** @var ValidationIssue $issue */
+			$issue = $issues->getIterator()->current();
+			$this->assertSame( $expected['type'], $issue->type(), 'issue has correct type' );
+			$this->assertSame( $expected['subtype'], $issue->subType(), 'issue has correct subtype' );
 		}
 	}
 

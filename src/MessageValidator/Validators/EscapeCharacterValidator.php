@@ -4,16 +4,20 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
  * Ensures that only the specified escape character are present.
  * @since 2020.01
  */
-class EscapeCharacterValidator implements Validator {
+class EscapeCharacterValidator implements MessageValidator {
 	/**
 	 * @var string[]
 	 */
@@ -41,24 +45,29 @@ class EscapeCharacterValidator implements Validator {
 		$this->regex = $this->buildRegex( $this->allowedCharacters );
 	}
 
-	public function validate( TMessage $message, $code, array &$notices ) : void {
-		$key = $message->key();
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
 		$translation = $message->translation();
-
 		preg_match_all( "/$this->regex/U", $translation, $transVars );
 
 		// Check for missing variables in the translation
 		$params = $transVars[0];
 		if ( count( $params ) ) {
-			$notices[$key][] = [
-				[ 'escape', 'invalid', $key, $code ],
-				'translate-checks-escape',
+			$messageParams = [
 				[ 'PARAMS', $params ],
 				[ 'COUNT', count( $params ) ],
 				[ 'PARAMS', $this->allowedCharacters ],
 				[ 'COUNT', count( $this->allowedCharacters ) ]
 			];
+
+			$issue =
+				new ValidationIssue(
+					'escape', 'invalid', 'translate-checks-escape', $messageParams
+				);
+			$issues->add( $issue );
 		}
+
+		return $issues;
 	}
 
 	private function buildRegex( array $allowedCharacters ): string {
