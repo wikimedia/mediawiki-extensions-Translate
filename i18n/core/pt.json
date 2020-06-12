@@ -20,7 +20,7 @@
 	},
 	"translate": "Traduzir",
 	"translate-desc": "[[Special:Translate|Página especial]] para traduzir o MediaWiki e outras aplicações",
-	"translate-fuzzybot-desc": "Esta é uma conta de sistema especial utilizada pela extensão de [https://www.mediawiki.org/wiki/Extension:Translate/pt Tradução] do MediaWiki, para manter as traduções.\nEsta conta faz parte do programa MediaWiki e não pertence a nenhum utilizador.",
+	"translate-fuzzybot-desc": "Esta é uma conta de sistema especial utilizada pela extensão  [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate '''Translate'''] do MediaWiki utilizada para manter as traduções. Esta conta é parte do ''software'' MediaWiki e não é propriedade de qualquer utilizador.",
 	"translate-taskui-export-to-file": "Exportar no formato original",
 	"translate-taskui-export-as-po": "Exportar para tradução ''off-line''",
 	"translate-taction-translate": "Traduzir",
