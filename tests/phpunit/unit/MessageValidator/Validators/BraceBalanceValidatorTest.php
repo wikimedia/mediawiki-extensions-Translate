@@ -54,7 +54,7 @@ class BraceBalanceValidatorTest extends MediaWikiUnitTestCase {
 			'Hello :]',
 			'Hello :)',
 			1,
-			'should not set any issue if definition is unbalanced.'
+			'balancedness only applies to one brace type, for other types still raise an issue.'
 		];
 	}
 }
