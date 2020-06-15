@@ -118,8 +118,8 @@ class TranslateHooks {
 
 			/// Page translation hooks
 
-			/// @todo Register our css, is there a better place for this?
-			$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
+			/// Register our CSS and metadata
+			$wgHooks['BeforePageDisplay'][] = 'PageTranslationHooks::onBeforePageDisplay';
 
 			// Check syntax for \<translate>
 			$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';

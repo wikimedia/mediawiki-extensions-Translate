@@ -139,12 +139,12 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Hook: OutputPageBeforeHTML
+	 * Hook: BeforePageDisplay
 	 * @param OutputPage $out
-	 * @param string $text
+	 * @param Skin $skin
 	 * @return true
 	 */
-	public static function injectCss( OutputPage $out, /*string*/ $text ) {
+	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		global $wgTranslatePageTranslationULS;
 
 		$title = $out->getTitle();
