@@ -25,6 +25,7 @@
 			"Yfdyh000",
 			"予弦",
 			"神樂坂秀吉",
+			"铁桶",
 			"阿pp"
 		]
 	},
@@ -54,7 +55,7 @@
 	"tpt-edit-failed": "无法更新该页面：$1",
 	"tpt-duplicate": "翻译单位名称$1已被使用超过一次。",
 	"tpt-already-marked": "此页面的最新版本已经已标记进行翻译。",
-	"tpt-unmarked": "$1页不再被标记进行翻译。",
+	"tpt-unmarked": "页面[[:$1]]不再被标记进行翻译。",
 	"tpt-list-nopages": "没有被标记进行翻译或者准备被标记进行翻译的页面。",
 	"tpt-new-pages-title": "提议翻译的页面",
 	"tpt-old-pages-title": "正在翻译的页面",
