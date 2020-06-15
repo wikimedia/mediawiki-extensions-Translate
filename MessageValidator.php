@@ -36,7 +36,6 @@ use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
  * @since 2019.06
  */
 class MessageValidator {
-
 	/** @var array List of validator data */
 	protected $validators = [];
 
@@ -55,32 +54,28 @@ class MessageValidator {
 		$this->groupId = $groupId;
 	}
 
-	/**
-	 * Normalises validator keys.
-	 * @param string $value validator key
-	 * @return string Normalised validator key
-	 */
-	protected static function foldValue( $value ) {
+	/** Normalise validator keys. */
+	protected static function foldValue( string $value ): string {
 		return str_replace( ' ', '_', strtolower( $value ) );
 	}
 
 	/**
-	 * Set the validators for this group. Removes the existing validators.
+	 * Set the validators for this group.
+	 *
+	 * Removes the existing validators.
+	 *
 	 * @see addValidator()
 	 * @param array $validatorConfigs List of Validator configurations
 	 */
-	public function setValidators( array $validatorConfigs ) {
+	public function setValidators( array $validatorConfigs ): void {
 		$this->validators = [];
 		foreach ( $validatorConfigs as $config ) {
 			$this->addValidator( $config );
 		}
 	}
 
-	/**
-	 * Adds a validator for this group.
-	 * @param array $validatorConfig
-	 */
-	public function addValidator( array $validatorConfig ) {
+	/** Add a validator for this group. */
+	public function addValidator( array $validatorConfig ): void {
 		$validatorId = $validatorConfig['id'] ?? null;
 		$className = $validatorConfig['class'] ?? null;
 
@@ -114,7 +109,7 @@ class MessageValidator {
 	}
 
 	/**
-	 * Returns the currently set validators for this group.
+	 * Return the currently set validators for this group.
 	 *
 	 * @return MessageValidatorInterface[] List of validators
 	 */
@@ -125,7 +120,7 @@ class MessageValidator {
 	}
 
 	/**
-	 * Returns currently set validators that are insertable.
+	 * Return currently set validators that are insertable.
 	 *
 	 * @return MessageValidatorInterface[] List of insertable
 	 * validators
@@ -142,8 +137,9 @@ class MessageValidator {
 	}
 
 	/**
-	 * Validates one message, returns array of warnings / errors that can be
-	 * passed to OutputPage::addWikiMsg or similar.
+	 * Validate a translation of a message.
+	 *
+	 * Returns a ValidationResult that contains methods to print the issues.
 	 */
 	public function validateMessage(
 		TMessage $message, string $code, bool $ignoreWarnings = false
@@ -161,7 +157,7 @@ class MessageValidator {
 		return new ValidationResult( $errors, $warnings );
 	}
 
-	/** Validates a message, and returns as soon as any validation fails. */
+	/** Validate a message, and return as soon as any validation fails. */
 	public function quickValidate(
 		TMessage $message, string $code, bool $ignoreWarnings = false
 	): ValidationResult {
@@ -212,7 +208,7 @@ class MessageValidator {
 		self::$ignorePatterns = $list;
 	}
 
-	/** Filters validations based on a ignore list. */
+	/** Filter validations based on a ignore list. */
 	private function filterValidations(
 		ValidationIssues $issues,
 		string $targetLanguage
@@ -245,7 +241,7 @@ class MessageValidator {
 	}
 
 	/**
-	 * Matches validation information against a ignore pattern.
+	 * Match validation information against a ignore pattern.
 	 *
 	 * @param string|array $pattern
 	 * @param string $value The actual value in the validation produced by the validator
@@ -262,8 +258,9 @@ class MessageValidator {
 	}
 
 	/**
-	 * If the 'keymatch' option is specified in the validator, checks and ensures that the
-	 * key matches.
+	 * Check if key matches validator's key patterns.
+	 *
+	 * Only relevant if the 'keymatch' option is specified in the validator.
 	 *
 	 * @param string $key
 	 * @param string[] $keyMatches
