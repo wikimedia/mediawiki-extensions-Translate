@@ -40,12 +40,6 @@
 	"translate-edit-tmmatch": "$1% मिलान",
 	"translate-use-suggestion": "ई सुझाव के संग ई अनुवाद के बदलीं",
 	"translate-edit-askpermission": "अनुमती खातिर अनुरोध करीं",
-	"translate-magic-module": "माड्यूल:",
-	"translate-magic-submit": "निकालीं",
-	"translate-magic-cm-export": "निर्यात",
-	"translate-magic-nothing-to-export": "निर्यात करै खातिर किछु नइखे बा।",
-	"translate-magic-cm-current": "वर्तमान",
-	"translate-magic-cm-original": "मूल",
 	"translate-documentation-language": "संदेस परलेखन",
 	"tux-editor-message-tools-delete": "मिटाईं"
 }

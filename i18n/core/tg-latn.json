@@ -26,17 +26,5 @@
 	"translate-edit-definition": "Ta'rifi pajƣom",
 	"translate-edit-contribute": "hissaguzorī",
 	"translate-edit-no-information": "''In pajƣom doroi tavzehot nest.\nAgar şumo medoned in paƣom ciguna jo dar kuço istifoda meşavad, şumo metavoned bo izofa kardani tavzehot ba in pajƣom ba digar tarçumakunandagon kūmak kuned.''",
-	"translate-edit-warnings": "Huşdor dar mavridi tarçumahoi nokomil",
-	"translate-magic-pagename": "Tarçumai gustarişjoftai MediaViki",
-	"translate-magic-submit": "Vokaşidan",
-	"translate-magic-cm-export": "Sudur",
-	"translate-magic-cm-to-be": "Budan",
-	"translate-magic-cm-current": "Kununī",
-	"translate-magic-cm-original": "Aslī",
-	"translate-magic-cm-comment": "Tavzehot:",
-	"translate-magic-cm-save": "Zaxira",
-	"translate-magic-cm-updatedusing": "Barūz şud tavassuti [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]",
-	"translate-magic-cm-savefailed": "Şikast dar zaxira kardan",
-	"translate-magic-words": "Kalimahoi çoduī",
-	"translate-magic-namespace": "Ismi fazohoi nom"
+	"translate-edit-warnings": "Huşdor dar mavridi tarçumahoi nokomil"
 }

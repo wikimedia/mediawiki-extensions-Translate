@@ -20,8 +20,6 @@
 	"translate-edit-no-information": "''ይኸው መልእክት ምንም መረጃ የለውም።\nመልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
 	"translate-edit-information": "መረጃ ስለዚሁ መልእክት ($1)",
 	"translate-edit-in-other-languages": "መልዕክቱ በሌሎች ልሳናት",
-	"translate-magic-cm-current": "ያሁኑኑ",
-	"translate-magic-cm-comment": "ማጠቃለያ፦",
 	"translate-sidebar-alltrans": "ይኸው መልዕክት በሌሎች ልሳናት",
 	"translate-language": "ቋንቋ"
 }
