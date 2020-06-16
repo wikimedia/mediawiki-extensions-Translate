@@ -8,14 +8,9 @@ declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator
- */
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator */
 class BraceBalanceValidatorTest extends MediaWikiUnitTestCase {
-	/**
-	 * @dataProvider getBraceBalanceValidatorProvider
-	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator
-	 */
+	/** @dataProvider getBraceBalanceValidatorProvider */
 	public function testBraceBalanceValidator(
 		string $definition, string $translation, int $expectedCount, string $msg
 	) {

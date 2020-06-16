@@ -1,14 +1,17 @@
 <?php
-
 /**
  * @file
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
@@ -16,9 +19,8 @@ use TMessage;
  * message at the beginning of the string.
  * @since 2019.09
  */
-class NewlineValidator implements Validator {
-	public function validate( TMessage $message, $code, array &$notices ) {
-		$key = $message->key();
+class NewlineValidator implements MessageValidator {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		$translation = $message->translation();
 		$definition = $message->definition();
 
@@ -29,20 +31,21 @@ class NewlineValidator implements Validator {
 			$definitionStartNewline, $translationStartNewline
 		);
 
-		$this->addNotices( $failingChecks, $notices, $key, $code );
+		return $this->createIssues( $failingChecks );
 	}
 
-	protected function getStartingNewLinesCount( $str ) {
+	protected function getStartingNewLinesCount( string $str ): int {
 		return strspn( $str, "\n" );
 	}
 
-	protected function getEndingNewLineCount( $str ) {
+	protected function getEndingNewLineCount( string $str ): int {
 		return strspn( strrev( $str ), "\n" );
 	}
 
 	protected function validateStartingNewline(
-		$definitionStartNewline, $translationStartNewline
-	) {
+		int $definitionStartNewline,
+		int $translationStartNewline
+	): array {
 		$failingChecks = [];
 		if ( $definitionStartNewline < $translationStartNewline ) {
 			// Extra whitespace at beginning
@@ -61,7 +64,10 @@ class NewlineValidator implements Validator {
 		return $failingChecks;
 	}
 
-	protected function validateEndingNewline( $definitionEndNewline, $translationEndNewline ) {
+	protected function validateEndingNewline(
+		int $definitionEndNewline,
+		int $translationEndNewline
+	): array {
 		$failingChecks = [];
 		if ( $definitionEndNewline < $translationEndNewline ) {
 			// Extra whitespace at end
@@ -80,13 +86,19 @@ class NewlineValidator implements Validator {
 		return $failingChecks;
 	}
 
-	protected function addNotices( $failingChecks, &$notices, $key, $code ) {
-		foreach ( $failingChecks as $subcheck ) {
-			$notices[$key][] = [
-				[ 'newline', $subcheck[0], $key, $code ],
-				'translate-checks-newline-' . $subcheck[0],
-				[ 'COUNT', $subcheck[1] ]
-			];
+	protected function createIssues( array $failingChecks ): ValidationIssues {
+		$issues = new ValidationIssues();
+		foreach ( $failingChecks as [ $subType, $count ] ) {
+			$issue = new ValidationIssue(
+				'newline',
+				$subType,
+				"translate-checks-newline-$subType",
+				[ 'COUNT', $count ]
+			);
+
+			$issues->add( $issue );
 		}
+
+		return $issues;
 	}
 }

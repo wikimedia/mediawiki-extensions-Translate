@@ -14,23 +14,17 @@ use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
- * Ensures that only the specified escape character are present.
+ * Ensures that only the specified escape characters are present.
  * @since 2020.01
  */
 class EscapeCharacterValidator implements MessageValidator {
-	/**
-	 * @var string[]
-	 */
+	/** @var string[] */
 	protected $allowedCharacters;
 
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $regex;
 
-	/**
-	 * List of valid escape characters recognized.
-	 */
+	/** List of valid escape characters recognized. */
 	private const VALID_CHARS = [ '\t', '\n', '\\\'', '\"', '\f', '\r', '\a', '\b', '\\\\' ];
 
 	public function __construct( array $params ) {

@@ -1,25 +1,25 @@
 <?php
-
 /**
  * @file
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
  * Ensures that the translation has the same number of newlines as the source
  * message at the beginning and end of the string. This works specifically
- * for GetText FFS.
+ * for GettextFFS.
  * @since 2019.09
  */
-class GettextNewlineValidator extends NewlineValidator implements Validator {
-	public function validate( TMessage $message, $code, array &$notices ) {
-		$key = $message->key();
+class GettextNewlineValidator extends NewlineValidator {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		$translation = $message->translation();
 		$definition = $message->definition();
 
@@ -38,10 +38,10 @@ class GettextNewlineValidator extends NewlineValidator implements Validator {
 			$this->validateEndingNewline( $definitionEndNewline, $translationEndNewline )
 		);
 
-		$this->addNotices( $failingChecks, $notices, $key, $code );
+		return $this->createIssues( $failingChecks );
 	}
 
-	protected function removeTrailingSlash( $str ) {
+	private function removeTrailingSlash( string $str ): string {
 		if ( substr( $str, -strlen( '\\' ) ) === '\\' ) {
 			return substr( $str, 0, -1 );
 		}

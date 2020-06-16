@@ -9,9 +9,7 @@ declare( strict_types = 1 );
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator
- */
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator */
 class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 	public static function provideValidate() {
 		$message = new FatMessage( 'key', 'Hello' );
@@ -45,9 +43,7 @@ class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
+	/** @dataProvider provideValidate */
 	public function testValidate(
 		string $translation, array $config, FatMessage $message, array $expected = null
 	) {
