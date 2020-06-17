@@ -9,46 +9,38 @@ declare( strict_types = 1 );
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
 
 /** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator */
-class BraceBalanceValidatorTest extends MediaWikiUnitTestCase {
-	/** @dataProvider getBraceBalanceValidatorProvider */
-	public function testBraceBalanceValidator(
-		string $definition, string $translation, int $expectedCount, string $msg
-	) {
-		$validator = new BraceBalanceValidator();
-
-		$message = new FatMessage( 'key', $definition );
-		$message->setTranslation( $translation );
-
-		$actual = $validator->getIssues( $message, 'en-gb' );
-		$this->assertCount( $expectedCount, $actual, $msg );
+class BraceBalanceValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new BraceBalanceValidator(), 'balance', ...$params );
 	}
 
-	public function getBraceBalanceValidatorProvider() {
+	public function provideTestCases() {
 		yield [
 			'{{ Hello }}',
 			'{{ Hello }}}',
-			1,
+			[ 'brace' ],
 			'should return an issue for a message containing non-matching braces.'
 		];
 
 		yield [
 			'[[ Hello ]]',
 			'[[ Hello ]]',
-			0,
+			[],
 			'should not set any issue for a balanced translation.'
 		];
 
 		yield [
 			'Hello :]',
 			'Hello :]',
-			0,
+			[],
 			'should not set any issue if definition is unbalanced.'
 		];
 
 		yield [
 			'Hello :]',
 			'Hello :)',
-			1,
+			[ 'brace' ],
 			'balancedness only applies to one brace type, for other types still raise an issue.'
 		];
 	}

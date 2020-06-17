@@ -85,6 +85,7 @@
 		"AppleFFS": "ffs/AppleFFS.php",
 		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
 		"ArrayFlattener": "utils/ArrayFlattener.php",
+		"BaseValidatorTestCase": "tests/phpunit/unit/MessageValidator/Validators/BaseValidatorTestCase.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
 		"CachedMessageIndex": "utils/MessageIndex.php",
 		"CaighdeanWebService": "webservices/CaighdeanWebService.php",

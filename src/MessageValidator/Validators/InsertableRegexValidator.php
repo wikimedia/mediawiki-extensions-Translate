@@ -5,11 +5,14 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
 use InvalidArgumentException;
-use MediaWiki\Extensions\Translate\MessageValidator\ValidationHelper;
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use RegexInsertablesSuggester;
 use TMessage;
 
@@ -17,14 +20,9 @@ use TMessage;
  * A generic regex validator and insertable that can be reused by other classes.
  * @since 2019.06
  */
-class InsertableRegexValidator extends RegexInsertablesSuggester implements Validator {
-	use ValidationHelper;
-
-	/**
-	 * The regex to run on the message for validation purpose.
-	 * @var string
-	 */
-	protected $validationRegex;
+class InsertableRegexValidator extends RegexInsertablesSuggester implements MessageValidator {
+	/** @var string */
+	private $validationRegex;
 
 	public function __construct( $params ) {
 		parent::__construct( $params );
@@ -41,7 +39,44 @@ class InsertableRegexValidator extends RegexInsertablesSuggester implements Vali
 		}
 	}
 
-	public function validate( TMessage $message, $code, array &$notice ) {
-		self::parameterCheck( $message, $code, $notice, $this->validationRegex );
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
+
+		preg_match_all( $this->validationRegex, $message->definition(), $definitionMatch );
+		preg_match_all( $this->validationRegex, $message->translation(), $translationMatch );
+		$definitionVariables = $definitionMatch[0];
+		$translationVariables = $translationMatch[0];
+
+		$missingVariables = array_diff( $definitionVariables, $translationVariables );
+		if ( $missingVariables ) {
+			$issue = new ValidationIssue(
+				'variable',
+				'missing',
+				'translate-checks-parameters',
+				[
+					[ 'PLAIN-PARAMS', $missingVariables ],
+					[ 'COUNT', count( $missingVariables ) ]
+				]
+			);
+
+			$issues->add( $issue );
+		}
+
+		$unknownVariables = array_diff( $translationVariables, $definitionVariables );
+		if ( $unknownVariables ) {
+			$issue = new ValidationIssue(
+				'variable',
+				'unknown',
+				'translate-checks-parameters-unknown',
+				[
+					[ 'PLAIN-PARAMS', $unknownVariables ],
+					[ 'COUNT', count( $unknownVariables ) ]
+				]
+			);
+
+			$issues->add( $issue );
+		}
+
+		return $issues;
 	}
 }

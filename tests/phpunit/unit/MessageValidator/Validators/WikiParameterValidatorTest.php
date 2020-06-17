@@ -4,62 +4,53 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator
- */
-class WikiParameterValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'key';
-		$code = 'en';
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator */
+class WikiParameterValidatorTest extends BaseValidatorTestCase {
 
-		$message = new FatMessage( $key, '$1' );
-		$message->setTranslation( 'a' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, '$1' );
-		$message->setTranslation( '$2' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'a' );
-		$message->setTranslation( '$1' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'unknown', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, '$1' );
-		$message->setTranslation( '$1' );
-		yield [
-			$message,
-			$code,
-			null
-		];
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new WikiParameterValidator(), 'variable', ...$params );
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
-		$validator = new WikiParameterValidator();
+	public static function provideTestCases() {
+		yield [
+			'$1',
+			'a',
+			[ 'missing' ],
+			'missing variable is an issue'
+		];
 
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
+		yield [
+			'$1',
+			'$2',
+			[ 'missing', 'unknown' ],
+			'typoed variable is two issues'
+		];
 
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
-		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
-		}
+		yield [
+			'a',
+			'$1',
+			[ 'unknown' ],
+			'unknown variable is an issue'
+		];
+
+		yield [
+			'$1$2 $3',
+			'$3$2 $1',
+			[],
+			'all variables used is not an issue'
+		];
+
+		// This fails, deprecate this class in favor of NumericalParameterValidator?
+		/*yield [
+			'$13',
+			'$12',
+			[ 'missing' ],
+			'missing large variable is an issue'
+		];*/
 	}
 }

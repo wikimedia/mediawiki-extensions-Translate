@@ -4,78 +4,62 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator
- */
-class PrintfValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator */
+class PrintfValidatorTest extends BaseValidatorTestCase {
+
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new PrintfValidator(), 'variable', ...$params );
+	}
+
+	public static function provideTestCases() {
 		$key = 'key';
 		$code = 'en';
 
-		$message = new FatMessage( $key, '%2$f' );
-		$message->setTranslation( 'a' );
 		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
+			'%2$f',
+			'a',
+			[ 'missing' ],
+			'missing positional variable is an issue'
 		];
 
-		$message = new FatMessage( $key, '%2$f' );
-		$message->setTranslation( '%3$d' );
 		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
+			'%2$f',
+			'%3$d',
+			[ 'missing', 'unknown' ],
+			'typoed variable is two issues'
 		];
 
-		$message = new FatMessage( $key, 'abc' );
-		$message->setTranslation( '%4$d' );
 		yield [
-			$message,
-			$code,
-			[ 'variable', 'unknown', $key, $code ]
+			'abc',
+			'%4$d',
+			[ 'unknown' ],
+			'unknown positional variable is an issue'
 		];
 
-		$message = new FatMessage( $key, '%2$f' );
-		$message->setTranslation( '%2$f' );
 		yield [
-			$message,
-			$code,
-			null
+			'%2$f',
+			'%2$f',
+			[],
+			'all variables are used, no issues'
 		];
 
-		$message = new FatMessage( $key, '%2$.2f' );
-		$message->setTranslation( '%2$f' );
 		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
+			'%2$.2f',
+			'%2$f',
+			[ 'missing', 'unknown' ],
+			'changing precision is not supported'
 		];
 
-		$message = new FatMessage( $key, '%.2f' );
-		$message->setTranslation( '%2$f' );
 		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
+			'%.2f',
+			'%2$f',
+			[ 'missing', 'unknown' ],
+			'changing precision and position is not supported'
 		];
-	}
-
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
-		$validator = new PrintfValidator();
-
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
-
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
-		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
-		}
 	}
 }

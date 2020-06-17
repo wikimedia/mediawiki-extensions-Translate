@@ -4,62 +4,44 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator
- */
-class NumericalParameterValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'key';
-		$code = 'en';
-
-		$message = new FatMessage( $key, '$12' );
-		$message->setTranslation( 'a' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, '$1' );
-		$message->setTranslation( '$2' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'a' );
-		$message->setTranslation( '$11' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'unknown', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, '$32' );
-		$message->setTranslation( '$32' );
-		yield [
-			$message,
-			$code,
-			null
-		];
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator */
+class NumericalParameterValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new NumericalParameterValidator(), 'variable', ...$params );
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
-		$validator = new NumericalParameterValidator();
+	public static function provideTestCases() {
+		yield [
+			'$12',
+			'a',
+			[ 'missing' ],
+			'missing variable is an issue'
+		];
 
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
+		yield [
+			'$1',
+			'$2',
+			[ 'missing', 'unknown' ],
+			'typoed variable is two issues'
+		];
 
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
-		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
-		}
+		yield [
+			'a',
+			'$11',
+			[ 'unknown' ],
+			'unknown variable is an issue'
+		];
+
+		yield [
+			'$32',
+			'$32',
+			[],
+			'all variables used, no issues',
+		];
 	}
 }

@@ -4,70 +4,47 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PythonInterpolationValidator;
 
 /**
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\PythonInterpolationValidator
  */
-class PythonInterpolationValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'key';
-		$code = 'en';
+class PythonInterpolationValidatorTest extends BaseValidatorTestCase {
 
-		$message = new FatMessage( $key, 'My name is %s' );
-		$message->setTranslation( 'This is invalid' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'My name is %(name)s' );
-		$message->setTranslation( 'This is invalid.' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'My name is %(name)s' );
-		$message->setTranslation( 'This is an invalid %(aaaa)d %(name)s variable.' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'unknown', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'The URL is %(parent_url)s.' );
-		$message->setTranslation( 'This is invalid' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'My name is %s' );
-		$message->setTranslation( 'This is a value: %s' );
-		yield [
-			$message,
-			$code,
-			null
-		];
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new PythonInterpolationValidator(), 'variable', ...$params );
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
-		$validator = new PythonInterpolationValidator();
+	public static function provideTestCases() {
+		yield [
+			'My name is %s',
+			'This is invalid',
+			[ 'missing' ],
+			'missing unnamed variable is an issue'
+		];
 
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
+		yield [
+			'My name is %(name)s',
+			'This is invalid.',
+			[ 'missing' ],
+			'missing named variable is an issue'
+		];
 
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
-		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
-		}
+		yield [
+			'My name is %(name)s',
+			'This is an invalid %(aaaa)d %(name)s variable.',
+			[ 'unknown' ],
+			'unknown named variable is an issue'
+		];
+
+		yield [
+			'My name is %s',
+			'This is a value: %s',
+			[],
+			'all variables are used, not an issue'
+		];
 	}
 }

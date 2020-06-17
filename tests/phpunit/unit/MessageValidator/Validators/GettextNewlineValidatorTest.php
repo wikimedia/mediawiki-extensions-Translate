@@ -7,33 +7,15 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
 /** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator */
-class GettextNewlineValidatorTest extends MediaWikiUnitTestCase {
-	/** @dataProvider getGettextNewlineValidatorProvider */
-	public function testBraceBalanceValidator(
-		string $definition, string $translation, array $subTypes, string $msg
-	) {
-		$validator = new GettextNewlineValidator();
-
-		$message = new FatMessage( 'key', $definition );
-		$message->setTranslation( $translation );
-
-		$actual = $validator->getIssues( $message, 'en-gb' );
-		$this->assertSameSize( $subTypes, $actual, $msg );
-		$this->assertArrayEquals( $subTypes, $this->getSubTypes( $actual ) );
+class GettextNewlineValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new GettextNewlineValidator(), 'newline', ...$params );
 	}
 
-	/** @return string[] */
-	private function getSubTypes( ValidationIssues $issues ): array {
-		return array_map( function ( ValidationIssue $x ) {
-			return $x->subType();
-		}, iterator_to_array( $issues ) );
-	}
-
-	public function getGettextNewlineValidatorProvider() {
+	public function provideTestCases() {
 		yield [
 			"\n\nHello\n\n\\",
 			"\nHello World\n\n\n\\",

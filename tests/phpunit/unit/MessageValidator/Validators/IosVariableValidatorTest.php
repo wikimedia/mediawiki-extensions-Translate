@@ -4,54 +4,38 @@
  * @license GPL-2.0-or-later
  */
 
+declare( strict_types = 1 );
+
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\IosVariableValidator;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\IosVariableValidator
- */
-class IosVariableValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'key';
-		$code = 'en';
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\IosVariableValidator */
+class IosVariableValidatorTest extends BaseValidatorTestCase {
 
-		$message = new FatMessage( $key, 'My name is %@' );
-		$message->setTranslation( 'This is invalid' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'My name is %5d' );
-		$message->setTranslation( 'This is invalid.' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'missing', $key, $code ]
-		];
-
-		$message = new FatMessage( $key, 'My name is %ld.' );
-		$message->setTranslation( 'This is invalid: %ld %d.' );
-		yield [
-			$message,
-			$code,
-			[ 'variable', 'unknown', $key, $code ]
-		];
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new IosVariableValidator(), 'variable', ...$params );
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
-		$validator = new IosVariableValidator();
+	public static function provideTestCases() {
+		yield [
+			'My name is %@',
+			'This is invalid',
+			[ 'missing' ],
+			'missing %@ is an issue'
+		];
 
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
+		yield [
+			'My name is %5d',
+			'This is invalid',
+			[ 'missing' ],
+			'missing %5d is an issue'
+		];
 
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
-		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
-		}
+		yield [
+			'My name is %ld.',
+			'This is invalid: %ld %d.',
+			[ 'unknown' ],
+			'unknown %d is an issue'
+		];
 	}
 }
