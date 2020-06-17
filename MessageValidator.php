@@ -315,6 +315,14 @@ class MessageValidator {
 		// Check if key match has been specified, and then check if the key matches it.
 		/** @var MessageValidatorInterface $validator */
 		$validator = $validatorData['instance'];
+
+		$definition = $message->definition();
+		if ( $definition === null ) {
+			// This should NOT happen, but add a check since it seems to be happening
+			// See: https://phabricator.wikimedia.org/T255669
+			return;
+		}
+
 		try {
 			$keyMatches = $validatorData['keymatch'];
 			if ( $keyMatches !== false && !$this->doesKeyMatch( $message->key(), $keyMatches ) ) {

@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * Various editing enhancements to the edit page interface.
  * Partly succeeded by the new ajax-enhanced editor but kept for compatibility.
@@ -283,6 +285,19 @@ class TranslateEditAddons {
 		$message = new FatMessage( $key, $en );
 		// Take the contents from edit field as a translation.
 		$message->setTranslation( $text );
+		if ( $message->definition() === null ) {
+			// This should NOT happen, but add a check since it seems to be happening
+			// See: https://phabricator.wikimedia.org/T255669
+			LoggerFactory::getInstance( 'Translate' )->warning(
+				'Message definition is empty! Title: {title}, group: {group}, key: {key}',
+				[
+					'title' => $handle->getTitle()->getPrefixedText(),
+					'group' => $group->getId(),
+					'key' => $key
+				]
+			);
+			return false;
+		}
 
 		$validationResult = $validator->quickValidate( $message, $code );
 		return $validationResult->hasIssues();

@@ -19,6 +19,13 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 	public function getDefinitions() {
 		return $this->messages;
 	}
+
+	public function getMessage( $key, $code ) {
+		if ( $code === $this->getSourceLanguage() ) {
+			return $this->messages[strtolower( $key )] ?? null;
+		}
+		parent::getMessage( $key, $code );
+	}
 }
 
 /**
