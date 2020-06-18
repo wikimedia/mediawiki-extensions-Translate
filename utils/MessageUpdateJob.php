@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\TranslateReplaceTitle;
 
@@ -85,6 +86,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$isRename = $params['rename'] ?? false;
 		$isFuzzy = $params['fuzzy'] ?? false;
 		$otherLangs = $params['otherLangs'] ?? [];
+		$originalTitle = Title::newFromLinkTarget( $this->title->getTitleValue(), Title::NEW_CLONE );
 
 		if ( $isRename ) {
 			$this->title = $this->handleRename( $params['target'], $params['replacement'], $user );
@@ -97,6 +99,8 @@ class MessageUpdateJob extends GenericTranslateJob {
 						'target' => $params['target']
 					]
 				);
+
+				$this->removeFromCache( $originalTitle );
 				return true;
 			}
 		}
@@ -128,6 +132,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 			$this->handleFuzzy( $title );
 		}
 
+		$this->removeFromCache( $originalTitle );
 		return true;
 	}
 
@@ -275,6 +280,38 @@ class MessageUpdateJob extends GenericTranslateJob {
 					]
 				);
 			}
+		}
+	}
+
+	private function removeFromCache( Title $title ): void {
+		$currentTitle = $title;
+		// Check if the current title, is equal to the title passed. This condition will be
+		// true incase of rename where the old title would have been renamed.
+		if ( $this->title && $this->title->getPrefixedDBkey() !== $title->getPrefixedDBkey() ) {
+			$currentTitle = $this->title;
+		}
+
+		$sourceMessageHandle = new MessageHandle( $currentTitle );
+		$groupIds = $sourceMessageHandle->getGroupIds();
+		if ( !$groupIds ) {
+			$this->logWarning(
+				'Could not find group Id for message title',
+				$this->getParams()
+			);
+			return;
+		}
+
+		$groupId = $groupIds[0];
+		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+		$messageKey = $title->getPrefixedDBkey();
+
+		if ( $groupSyncCache->isMessageBeingProcessed( $groupId, $messageKey ) ) {
+			$groupSyncCache->removeMessages( $groupId, $messageKey );
+		} else {
+			$this->logWarning(
+				"Did not find key: $messageKey; in group: $groupId in group sync cache",
+				$this->getParams()
+			);
 		}
 	}
 }

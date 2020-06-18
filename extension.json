@@ -325,7 +325,8 @@
 			"services": [
 				"ContentLanguage",
 				"NamespaceInfo",
-				"RevisionLookup"
+				"RevisionLookup",
+				"Translate:GroupSynchronizationCache"
 			]
 		},
 		"SupportedLanguages": {

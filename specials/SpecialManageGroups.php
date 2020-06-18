@@ -10,6 +10,8 @@
  */
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
+use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
@@ -38,17 +40,21 @@ class SpecialManageGroups extends SpecialPage {
 	private $nsInfo;
 	/** @var RevisionLookup */
 	private $revLookup;
+	/** @var GroupSynchronizationCache */
+	private $synchronizationCache;
 
 	public function __construct(
 		Language $contLang,
 		NamespaceInfo $nsInfo,
-		RevisionLookup $revLookup
+		RevisionLookup $revLookup,
+		GroupSynchronizationCache $synchronizationCache
 	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
 		$this->contLang = $contLang;
 		$this->nsInfo = $nsInfo;
 		$this->revLookup = $revLookup;
+		$this->synchronizationCache = $synchronizationCache;
 	}
 
 	public function doesWrites() {
@@ -349,8 +355,8 @@ class SpecialManageGroups extends SpecialPage {
 					}
 				}
 
-				$modificationJobs = array_merge( $modificationJobs, $groupModificationJobs );
-				$renameJobData = array_merge( $renameJobData, $groupRenameJobData );
+				$modificationJobs[$groupId] = $groupModificationJobs;
+				$renameJobData[$groupId] = $groupRenameJobData;
 			} catch ( Exception $e ) {
 				error_log(
 					"SpecialManageGroups: Error in processSubmit. Group: $groupId\n" .
@@ -361,9 +367,8 @@ class SpecialManageGroups extends SpecialPage {
 			}
 		}
 
-		JobQueueGroup::singleton()->push( MessageIndexRebuildJob::newJob() );
-		JobQueueGroup::singleton()->push( $modificationJobs );
-		JobQueueGroup::singleton()->push( $this->createRenameJobs( $renameJobData ) );
+		$renameJobs = $this->createRenameJobs( $renameJobData );
+		$this->startSync( $modificationJobs, $renameJobs );
 
 		$reader->close();
 		rename( $this->cdb, $this->cdb . '-' . wfTimestamp() );
@@ -729,12 +734,15 @@ class SpecialManageGroups extends SpecialPage {
 
 	protected function createRenameJobs( $jobParams ) {
 		$jobs = [];
-		foreach ( $jobParams as $params ) {
-			$jobs[] = MessageUpdateJob::newRenameJob(
-				$params['targetTitle'], $params['target'],
-				$params['replacement'], $params['fuzzy'], $params['content'],
-				$params['others']
-			);
+		foreach ( $jobParams as $groupId => $groupJobParams ) {
+			$jobs[$groupId] = $jobs[$groupId] ?? [];
+			foreach ( $groupJobParams as $params ) {
+				$jobs[$groupId][] = MessageUpdateJob::newRenameJob(
+					$params['targetTitle'], $params['target'],
+					$params['replacement'], $params['fuzzy'], $params['content'],
+					$params['others']
+				);
+			}
 		}
 
 		return $jobs;
@@ -837,5 +845,58 @@ class SpecialManageGroups extends SpecialPage {
 			$groups[$id] = MessageGroups::getGroup( $id );
 		}
 		return array_filter( $groups );
+	}
+
+	/**
+	 * Add jobs to the queue, updates the interim cache, and start sync process for the group.
+	 * @param MessageUpdateJob[][] $modificationJobs
+	 * @param MessageUpdateJob[][] $renameJobs
+	 * @return void
+	 */
+	private function startSync( array $modificationJobs, array $renameJobs ): void {
+		// We are adding an empty array for groups that have no jobs. This is mainly done to
+		// avoid adding unnecessary checks. Remove those using array_filter
+		$modificationGroupIds = array_keys( array_filter( $modificationJobs ) );
+		$renameGroupIds = array_keys( array_filter( $renameJobs ) );
+		$uniqueGroupIds = array_unique( array_merge( $modificationGroupIds, $renameGroupIds ) );
+		$messageIndexInstance = MessageIndex::singleton();
+		$jobQueueInstance = JobQueueGroup::singleton();
+
+		foreach ( $uniqueGroupIds as $groupId ) {
+			$messages = [];
+			$renamedMessageKeys = [];
+			$groupJobs = [];
+
+			$groupRenameJobs = $renameJobs[$groupId] ?? [];
+			/** @var MessageUpdateJob $job */
+			foreach ( $groupRenameJobs as $job ) {
+				$groupJobs[] = $job;
+				$messageUpdateParam = MessageUpdateParameter::createFromJob( $job );
+				$messages[] = $messageUpdateParam;
+
+				// Build the handle to add the message key in interim cache
+				$replacement = $messageUpdateParam->getReplacementValue();
+				$targetTitle = Title::makeTitle( $job->getTitle()->getNamespace(), $replacement );
+				$renamedMessageKeys[] = ( new MessageHandle( $targetTitle ) )->getKey();
+			}
+
+			// Store the renamed message keys in the interim cache
+			$group = MessageGroups::getGroup( $groupId );
+			$messageIndexInstance->storeInterim( $group, $renamedMessageKeys );
+
+			$groupModificationJobs = $modificationJobs[$groupId] ?? [];
+			/** @var MessageUpdateJob $job */
+			foreach ( $groupModificationJobs as $job ) {
+				$groupJobs[] = $job;
+				$messageUpdateParam = MessageUpdateParameter::createFromJob( $job );
+				$messages[] = $messageUpdateParam;
+			}
+
+			$this->synchronizationCache->addMessages( $groupId, ...$messages );
+			$this->synchronizationCache->markGroupForSync( $groupId );
+
+			$jobQueueInstance->push( $groupJobs );
+			$jobQueueInstance->push( MessageIndexRebuildJob::newJob() );
+		}
 	}
 }
