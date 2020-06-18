@@ -234,7 +234,7 @@
 	"translate-import-err-no-headers": "Το αρχείο δεν είναι ένα σωστά σχηματισμένο αρχείο τύπου Gettext στη μορφή που αναγνωρίζει η επέκταση Translate:\nΑδύνατος ο προσδιορισμός ομάδας μηνυμάτων και γλώσσας από την κεφαλίδα του αρχείου.",
 	"translate-js-summary": "Σύνοψη:",
 	"translate-js-save": "Αποθήκευση",
-	"translate-js-next": "Αποθήκευση και άνοιγμα του επόμενου",
+	"translate-js-next": "Δημοσίευση και άνοιγμα του επόμενου",
 	"translate-js-skip": "Μετάβαση στο επόμενο",
 	"translate-js-history": "Ιστορικό μετάφρασης",
 	"translate-js-support": "Κάντε ερώτηση",
