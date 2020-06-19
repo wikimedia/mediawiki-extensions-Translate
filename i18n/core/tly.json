@@ -10,10 +10,14 @@
 	"translate-page-settings-legend": "Кукон",
 	"translate-page-language": "Zıvon",
 	"translate-next": "Пешонә сәһифә",
-	"translate-page-edit": "redaktə karde",
+	"translate-page-edit": "dəqiş karde",
+	"translate-edit-title": "Dəqiş karde \"$1\"",
 	"translate-edit-translation": "Пегордыније",
+	"translate-stats-edits": "Dəqişion karde",
 	"translate-smg-rename-cancel": "Ləğv karde",
 	"translate-documentation-language": "Mesaji dokumentasiyə",
+	"tux-edit": "Dəqiş karde",
 	"tux-editor-cancel-button-label": "Ləğv karde",
+	"tux-proofread-edit-label": "Dəqiş karde",
 	"tux-editor-doc-editor-cancel": "Ləğv karde"
 }

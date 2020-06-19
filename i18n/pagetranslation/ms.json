@@ -4,7 +4,8 @@
 			"Anakmalaysia",
 			"Jeluang Terluang",
 			"Muhdnurhidayat",
-			"Pizza1016"
+			"Pizza1016",
+			"Tofeiku"
 		]
 	},
 	"pagetranslation": "Penterjemahan laman",
@@ -157,7 +158,9 @@
 	"pt-deletepage-lang-logreason": "Sebahagian laman penterjemahan $1.",
 	"pt-deletepage-started": "Sila periksa [[Special:Log/pagetranslation|log penterjemahan laman]] untuk ralat dan mesej penyiapan.",
 	"pt-deletepage-intro": "Laman khas ini membolehkan anda menghapuskan seluruh laman boleh terjemah atau halaman terjemahan individu dalam sesebuah bahasa.\nTindakan penghapusan itu tidak meninggalkan kesan serta-merta kerana semua halaman yang bergantung padanya akan turut dihapuskan.\nKegagalan akan dilogkan dalam [[Special:Log/pagetranslation|log penterjemahan laman]] dan perlu dibaiki dengan tangan.",
+	"pp-save-button-label": "Terbitkan",
 	"pp-cancel-button-label": "Batalkan",
+	"pp-save-message": "Laman tersebut diterbitkan. Anda boleh [$1 menyuntingnya].",
 	"tpt-unlink-confirm": "Sila sahkan bahawa anda benar-benar ingin menggugurkan laman ini dari sistem penterjemahan.\nPemilih bahasa dan nama-nama laman yang diterjemah akan berhenti berfungsi.\nLaman-laman penterjenahan akan tidak boleh disunting lagi.",
 	"tpt-unlink-button": "Gugurkan dari terjemahan",
 	"tpt-unlink-summary": "Menggugurkan laman dari terjemahan"
