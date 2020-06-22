@@ -3,6 +3,7 @@
 		"authors": [
 			"Asoxor",
 			"Calak",
+			"Cwtiyar",
 			"Marmzok",
 			"Muhammed taha",
 			"Sarchia",
@@ -31,5 +32,6 @@
 	"pt-movepage-reason": "هۆکار:",
 	"pt-deletepage-current": "ناوی پەڕە:",
 	"pt-deletepage-reason": "هۆکار:",
-	"pm-cancel-button-label": "ھەڵوەشاندنەوە"
+	"pm-cancel-button-label": "ھەڵوەشاندنەوە",
+	"pp-save-button-label": "بڵاوکردنەوە"
 }

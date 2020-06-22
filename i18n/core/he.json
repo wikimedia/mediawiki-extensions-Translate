@@ -11,6 +11,7 @@
 			"Shirayuki",
 			"Steeve815",
 			"YaronSh",
+			"דגש חזק",
 			"חיים",
 			"ערן",
 			"פוילישער"
@@ -317,7 +318,7 @@
 	"tux-status-fuzzy": "לא מעודכנת",
 	"tux-status-proofread": "נסקרה",
 	"tux-status-translated": "מתורגמת",
-	"tux-status-saving": "מתבצע פרסום...",
+	"tux-status-saving": "מתפרסם...",
 	"tux-status-unsaved": "לא התפרסמה",
 	"tux-save-unknown-error": "אירעה שגיאה בלתי־ידועה.",
 	"tux-editor-placeholder": "התרגום שלך",

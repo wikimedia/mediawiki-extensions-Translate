@@ -8,7 +8,14 @@
 	"apihelp-groupreview-param-language": "שפראַך קאד.",
 	"apihelp-query+languagestats-param-language": "שפראַך קאד.",
 	"apihelp-query+messagecollection-param-language": "שפראַך-קאד.",
+	"apihelp-query+messagecollection-example-1": "ליסטע פֿון אונטערגשטיצטע שפראכן",
 	"apihelp-translatesandbox-param-do": "וואס צו טון.",
+	"apihelp-ttmserver-param-sourcelanguage": "שפראך-קאד פון דעם קוואלטעקסט.",
+	"apihelp-searchtranslations-description": "זוכן איבערזעצונגען",
+	"apihelp-searchtranslations-summary": "זוכן איבערזעצונגען",
+	"apihelp-searchtranslations-param-sourcelanguage": "שפראך-קאד פון דעם קוואלטעקסט.",
 	"apihelp-searchtranslations-example-1": "ווייזן איבערזעצונגען פאר דער שפראך.",
-	"apierror-translate-sandbox-invalidppassword": "אומגילטיק פאסווארט"
+	"apihelp-searchtranslations-example-2": "ווייז נישט-איבערגעזעצטע מעלדונגען וואס פאסן צו דער פֿראגע אין דער קוואלשפראך.",
+	"apierror-translate-sandbox-invalidppassword": "אומגילטיק פאסווארט",
+	"apiwarn-translate-language-disabled-source": "די קוואלשפראך פֿאר דער דאזיקער גרופע איז $1. זייט אזוי גוט און וויילט אן אנדער שפראך איבערצוזעצן דערצו."
 }

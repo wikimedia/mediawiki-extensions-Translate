@@ -88,5 +88,6 @@
 	"pt-deletepage-started": "தயவுகூர்ந்து  [[Special:Log/pagetranslation|பக்க மொழிபெயர்ப்பு குறிப்பேடு]] ல்  பிழைகளை மற்றும் நிறைவு தகவலை சரிபார்க்கவும், .",
 	"pagemigration": "பக்க இடப்பெயர்வு",
 	"pm-page-does-not-exist": "$1 இ்டம்பெறவில்லை",
-	"pp-pagename-placeholder": "பக்கப் பெயரைப் பதிவிடுக"
+	"pp-pagename-placeholder": "பக்கப் பெயரைப் பதிவிடுக",
+	"pp-save-button-label": "பதிப்பிடு"
 }

@@ -311,7 +311,7 @@
 	"translate-searchprofile-note": "Plus d’options de recherche sont disponibles avec la [$1 recherche de traductions].",
 	"translate-search-languagefilter": "Filtrer par langue :",
 	"translate-search-nofilter": "Aucun filtrage",
-	"log-name-translationreview": "Journal de relecture des traductions",
+	"log-name-translationreview": "Journal des relectures de traduction",
 	"log-description-translationreview": "Journal de toutes les relectures des traductions et des groupes de messages.",
 	"logentry-translationreview-message": "$1{{GENDER:$2|}} a relu la traduction $3",
 	"logentry-translationreview-group": "$1{{GENDER:$2|}} a modifié l’état des traductions en $4 de $3 de $6 à $7",

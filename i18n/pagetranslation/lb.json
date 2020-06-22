@@ -181,7 +181,7 @@
 	"pagepreparation": "D'Säit fir d'Iwwersetzung virbereeden",
 	"pp-pagename-placeholder": "Gitt den Numm vun der Säit an",
 	"pp-prepare-button-label": "Preparéieren",
-	"pp-save-button-label": "Späicheren",
+	"pp-save-button-label": "Publizéieren",
 	"pp-cancel-button-label": "Ofbriechen",
 	"pp-save-message": "D^?Säit gouf gespäichert. Dir kënnt se [$1 änneren].",
 	"pp-prepare-message": "D'Säit gouf fir d'Iwwersetzung virbereed. Kuckt d'Differenz hei drënner. Klickt de \"{{int:pp-save-button-label}}\" Knäppche wann et ok ass!",
