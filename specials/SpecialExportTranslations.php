@@ -235,8 +235,6 @@ class SpecialExportTranslations extends SpecialPage {
 					if ( $displayTitle ) {
 						$text = "{{DISPLAYTITLE:$displayTitle}}$text";
 					}
-					// See https://phabricator.wikimedia.org/T255561 for details
-					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 					$box = Html::element(
 						'textarea',
 						[ 'id' => 'wpTextbox', 'rows' => 40, ],

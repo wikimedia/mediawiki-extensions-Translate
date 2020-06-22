@@ -13,7 +13,6 @@
  * extracted sections and a template.
  *
  * @ingroup PageTranslation
- * @todo Make this a value class.
  */
 class TPParse {
 	/** @var Title Title of the page. */
@@ -169,7 +168,7 @@ class TPParse {
 	 * translation tags removed and outdated translation marked with a class
 	 * mw-translate-fuzzy.
 	 *
-	 * @param MessageCollection|array $collection Collection that holds translated messages.
+	 * @param MessageCollection $collection Collection that holds translated messages.
 	 * @param bool $showOutdated Whether to show outdated sections, wrapped in a HTML class.
 	 * @return string Whole page as wikitext.
 	 */
@@ -178,7 +177,6 @@ class TPParse {
 
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBkey() . '/';
-		$sourceLanguage = $this->title->getPageLanguage();
 
 		if ( $collection instanceof MessageCollection ) {
 			$collection->loadTranslations();
@@ -191,7 +189,6 @@ class TPParse {
 
 		foreach ( $this->sections as $ph => $s ) {
 			$sectiontext = null;
-			$wrapAttributes = [];
 
 			if ( isset( $collection[$prefix . $s->id] ) ) {
 				/** @var TMessage $msg */
@@ -203,7 +200,14 @@ class TPParse {
 				if ( $msg->hasTag( 'fuzzy' ) ) {
 					// We do not ever want to show explicit fuzzy marks in the rendered pages
 					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $sectiontext );
-					$wrapAttributes['class'] = 'mw-translate-fuzzy';
+
+					if ( $s->isInline() ) {
+						$sectiontext = "<span class=\"mw-translate-fuzzy\">$sectiontext</span>";
+					} else {
+						// We add new lines around the text to avoid disturbing any mark-up that
+						// has special handling on line start, such as lists.
+						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
+					}
 				}
 			}
 
@@ -214,27 +218,8 @@ class TPParse {
 			// The getTextWithVariables will convert declarations to normal variables
 			// for us so that the variable substitutions below will also work
 			// for the source language.
-			if ( $sectiontext === $s->getText() ) {
+			if ( $sectiontext === null || $sectiontext === $s->getText() ) {
 				$sectiontext = $s->getTextWithVariables();
-			} elseif ( $sectiontext === null ) {
-				$sectiontext = $s->getTextWithVariables();
-				$wrapAttributes['lang'] = $sourceLanguage->getHtmlCode();
-				$wrapAttributes['dir'] = $sourceLanguage->getDir();
-			}
-
-			if ( $wrapAttributes !== [] ) {
-				$inline = $s->isInline();
-				$element = $inline ? 'span' : 'div';
-				// This is really wikitext, not html or xml, but using for convenience.
-				$start = Html::openElement( $element, $wrapAttributes );
-				$end = Html::closeElement( $element );
-				if ( $inline ) {
-					$sectiontext = "$start$sectiontext$end";
-				} else {
-					// We add new lines around the text to avoid disturbing any mark-up that
-					// has special handling on line start in the parser, such as lists.
-					$sectiontext = "$start\n$sectiontext\n$end";
-				}
 			}
 
 			// Substitute variables into section text and substitute text into document
