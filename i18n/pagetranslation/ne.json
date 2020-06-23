@@ -3,6 +3,7 @@
 		"authors": [
 			"Ganesh Paudel",
 			"NehalDaveND",
+			"Nirajan pant",
 			"पर्वत सुबेदी",
 			"राम प्रसाद जोशी"
 		]
@@ -23,6 +24,6 @@
 	"pm-import-button-label": "आयात",
 	"pm-savepages-button-label": "संग्रह गर्ने",
 	"pm-cancel-button-label": "रद्द",
-	"pp-save-button-label": "संग्रह गर्नु",
+	"pp-save-button-label": "प्रकाशन",
 	"pp-cancel-button-label": "रद्द गर्नु"
 }

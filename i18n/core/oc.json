@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BrennodAloisi",
 			"Cedric31",
 			"ChrisPtDe",
 			"Jfblanc",
@@ -214,8 +215,8 @@
 	"translate-import-err-stale-group": "Lo grop de messatges qu'aquel fichièr i aperten existís pas.",
 	"translate-import-err-no-headers": "Lo fichièr es pas un fichièr ''Gettext'' plan format dins lo format esperat per l’extension ''Translate'' :\nes impossible de determinar lo grop e la lenga dempuèi las entèstas del fichièr.",
 	"translate-js-summary": "Resumit :",
-	"translate-js-save": "Enregistrar",
-	"translate-js-next": "Salvar e dobrir lo seguent",
+	"translate-js-save": "Publicar",
+	"translate-js-next": "Publicar e dobrir lo seguent",
 	"translate-js-skip": "Anar al seguent",
 	"translate-js-history": "Istoric de traduccion",
 	"translate-js-support": "Pausar una question",
@@ -272,8 +273,8 @@
 	"tux-status-fuzzy": "Obsolèt",
 	"tux-status-proofread": "Corregit",
 	"tux-status-translated": "Traduit",
-	"tux-status-saving": "Enregistrament en cors…",
-	"tux-status-unsaved": "Pas enregistrada",
+	"tux-status-saving": "Publicacion en cors…",
+	"tux-status-unsaved": "Pas publicada",
 	"tux-save-unknown-error": "Una error desconeguda s'es produita.",
 	"tux-editor-placeholder": "Vòstra traduccion",
 	"tux-editor-editsummary-placeholder": "Resumit opcional",
