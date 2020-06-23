@@ -9,6 +9,7 @@
 
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\Database;
 
@@ -137,6 +138,10 @@ class TranslatablePage {
 	 * @return string
 	 */
 	public function getText() {
+		$flags = TranslateUtils::shouldReadFromMaster()
+			? RevisionLookup::READ_LATEST
+			: RevisionLookup::READ_NORMAL;
+
 		if ( $this->init === false ) {
 			switch ( $this->source ) {
 				case 'text':
@@ -147,7 +152,7 @@ class TranslatablePage {
 				case 'revision':
 					$rev = MediaWikiServices::getInstance()
 						->getRevisionLookup()
-						->getRevisionByTitle( $this->getTitle(), $this->revision );
+						->getRevisionByTitle( $this->getTitle(), $this->revision, $flags );
 					$this->text = ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
 					break;
 			}
