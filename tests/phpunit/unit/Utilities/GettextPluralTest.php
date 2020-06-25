@@ -117,6 +117,18 @@ class GettextPluralTest extends MediaWikiUnitTestCase {
 			'pre {{PLURAL:GETTEXT|a|b}} middle {{PLURAL:GETTEXT|a|b}} post',
 			2,
 		];
+
+		yield [
+			[ 'pre a|/|daa', 'pre b|/|dau' ],
+			'pre {{PLURAL:GETTEXT|a|/|daa|b|/|dau}}',
+			2,
+		];
+
+		yield [
+			[ '{1} item waiting at {0}', '{1} items waiting at {0}' ],
+			'{{PLURAL:GETTEXT|{1} item waiting at {0}|{1} items waiting at {0}}}',
+			2,
+		];
 	}
 
 	/**

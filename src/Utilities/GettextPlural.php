@@ -36,7 +36,7 @@ class GettextPlural {
 			if ( trim( $line ) === '' ) {
 				continue;
 			}
-			list( $rulecode, $rule ) = explode( "\t", $line );
+			[ $rulecode, $rule ] = explode( "\t", $line );
 			if ( $rulecode === $code ) {
 				return $rule;
 			}
@@ -93,7 +93,7 @@ class GettextPlural {
 	 * @return string[]
 	 */
 	public static function unflatten( $text, $expectedPluralCount ) {
-		list( $template, $instanceMap ) = self::parsePluralForms( $text );
+		[ $template, $instanceMap ] = self::parsePluralForms( $text );
 		return self::expandTemplate( $template, $instanceMap, $expectedPluralCount );
 	}
 
@@ -106,13 +106,17 @@ class GettextPlural {
 	private static function armour( $text ) {
 		// |/| is commonly used in KDE to support inflections. It needs to be escaped
 		// to avoid it messing up the plural markup.
-		$replacements = [ '|/|' ];
-		$map = [];
-		foreach ( $replacements as $replacement ) {
-			$ph = TranslateUtils::getPlaceholder();
-			$map[ $ph ] = $replacement;
-			$text = str_replace( $replacement, $ph, $text );
+		$replacements = [
+			'|/|' => TranslateUtils::getPlaceholder(),
+		];
+		// {0} is a common variable format
+		preg_match_all( '/\{\d+\}/', $text, $matches );
+		foreach ( $matches[0] as $m ) {
+			$replacements[$m] = TranslateUtils::getPlaceholder();
 		}
+
+		$text = strtr( $text, $replacements );
+		$map = array_flip( $replacements );
 
 		return [ $text, $map ];
 	}
@@ -125,11 +129,7 @@ class GettextPlural {
 	 * @return string
 	 */
 	private static function unarmour( $text, array $map ) {
-		foreach ( $map as $ph => $replacement ) {
-			$text = str_replace( $ph, $replacement, $text );
-		}
-
-		return $text;
+		return strtr( $text, $map );
 	}
 
 	/**
@@ -143,7 +143,7 @@ class GettextPlural {
 		$pre = preg_quote( self::PRE, '/' );
 		$post = preg_quote( self::POST, '/' );
 
-		list( $armouredText, $armourMap ) = self::armour( $text );
+		[ $armouredText, $armourMap ] = self::armour( $text );
 
 		$ok = preg_match_all( "/$pre(.*)$post/Us", $armouredText, $m );
 		if ( $ok === false ) {
