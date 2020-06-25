@@ -48,6 +48,13 @@ class TranslateHooks {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}
 
+		$usePageSaveComplete = version_compare( MW_VERSION, '1.35', '>=' );
+		if ( $usePageSaveComplete ) {
+			$wgHooks['PageSaveComplete'][] = 'TranslateEditAddons::onSaveComplete';
+		} else {
+			$wgHooks['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
+		}
+
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {
@@ -127,7 +134,11 @@ class TranslateHooks {
 				'PageTranslationHooks::tpSyntaxCheckForEditContent';
 
 			// Add transtag to page props for discovery
-			$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+			if ( $usePageSaveComplete ) {
+				$wgHooks['PageSaveComplete'][] = 'PageTranslationHooks::addTranstagAfterSave';
+			} else {
+				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+			}
 			$wgHooks['RevisionRecordInserted'][] =
 				'PageTranslationHooks::updateTranstagOnNullRevisions';
 

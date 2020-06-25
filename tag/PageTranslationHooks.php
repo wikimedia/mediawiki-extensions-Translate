@@ -11,6 +11,7 @@ use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\UserIdentity;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -177,12 +178,11 @@ class PageTranslationHooks {
 	 * @param string $summary
 	 * @param bool $minor
 	 * @param int $flags
-	 * @param Revision $revision
 	 * @param MessageHandle $handle
 	 * @return true
 	 */
 	public static function onSectionSave( WikiPage $wikiPage, User $user, TextContent $content,
-		$summary, $minor, $flags, $revision, MessageHandle $handle
+		$summary, $minor, $flags, MessageHandle $handle
 	) {
 		// FuzzyBot may do some duplicate work already worked on by other jobs
 		if ( FuzzyBot::getName() === $user->getName() ) {
@@ -665,7 +665,53 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Hook: PageSaveComplete
+	 *
+	 * Only run in versions of mediawiki beginning 1.35; before 1.35, ::addTranstag is used
+	 *
+	 * @param WikiPage $wikiPage
+	 * @param UserIdentity $userIdentity
+	 * @param string $summary
+	 * @param int $flags
+	 * @param RevisionRecord $revisionRecord
+	 * @param mixed $editResult documented as mixed because the EditResult class didn't exist
+	 *   before 1.35
+	 * @return true
+	 */
+	public static function addTranstagAfterSave(
+		WikiPage $wikiPage,
+		UserIdentity $userIdentity,
+		string $summary,
+		int $flags,
+		RevisionRecord $revisionRecord,
+		$editResult
+	) {
+		$content = $wikiPage->getContent();
+
+		if ( $content instanceof TextContent ) {
+			$text = $content->getNativeData();
+		} else {
+			// Screw it, not interested
+			return true;
+		}
+
+		// Quick escape on normal pages
+		if ( strpos( $text, '</translate>' ) === false ) {
+			return true;
+		}
+
+		// Add the ready tag
+		$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
+		$page->addReadyTag( $revisionRecord->getId() );
+
+		return true;
+	}
+
+	/**
 	 * Hook: PageContentSaveComplete
+	 *
+	 * Only run in versions of mediawiki before 1.35; in 1.35+, ::addTranstag is used
+	 *
 	 * @param WikiPage $wikiPage
 	 * @param User $user
 	 * @param Content $content
