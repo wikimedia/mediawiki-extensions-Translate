@@ -26,9 +26,9 @@
 		},
 
 		delayedHandler: function () {
-			var element = $( this );
+			var $element = $( this );
 			setTimeout( function () {
-				$.event.special.textchange.triggerIfChanged( element );
+				$.event.special.textchange.triggerIfChanged( $element );
 			}, 25 );
 		},
 

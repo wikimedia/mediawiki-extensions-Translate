@@ -21,7 +21,7 @@
 			$messageDescViewer.addClass( 'hide' );
 
 			$messageDescEditor.removeClass( 'hide' );
-			$messageDescEditor.find( '.tux-textarea-documentation' ).focus();
+			$messageDescEditor.find( '.tux-textarea-documentation' ).trigger( 'focus' );
 
 			// So that the link won't be followed
 			return false;
@@ -162,7 +162,7 @@
 					$readMore = $( '<span>' )
 						.addClass( 'read-more column' )
 						.text( mw.msg( 'tux-editor-message-desc-more' ) )
-						.click( readMore );
+						.on( 'click', readMore );
 
 					$messageDescViewer.find( '.message-desc-control' )
 						.prepend( $readMore );
@@ -418,7 +418,7 @@
 			translationLang = $messageList.data( 'targetlangcode' );
 			translationDir = $messageList.data( 'targetlangdir' );
 
-			$.each( suggestions, function ( index, translation ) {
+			suggestions.forEach( function ( translation ) {
 				var $translation;
 
 				$translation = $( '<div>' )
@@ -462,7 +462,7 @@
 				}
 
 				if ( !selection ) {
-					$target.val( suggestion ).focus().trigger( 'input' );
+					$target.val( suggestion ).trigger( 'focus' ).trigger( 'input' );
 				}
 			};
 
@@ -519,7 +519,7 @@
 					pre: data.pre,
 					post: data.post
 				} );
-				$textarea.focus().trigger( 'input' );
+				$textarea.trigger( 'focus' ).trigger( 'input' );
 			} );
 
 			this.resizeInsertables( $textarea );

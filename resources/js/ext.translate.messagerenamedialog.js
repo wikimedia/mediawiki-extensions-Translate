@@ -1,6 +1,7 @@
 /**
  * Dialog for displaying possible renamed messages.
  * Note that methods are not safe to call before the dialog has initialized.
+ *
  * @copyright See AUTHORS.txt
  * @license GPL-2.0-or-later
  */
@@ -169,6 +170,7 @@ mw.translate.MessageRenameDialog.prototype.getTeardownProcess = function ( data 
 
 /**
  * Displays the given messages on the dialog box.
+ *
  * @param {Array} messages
  */
 mw.translate.MessageRenameDialog.prototype.displayMessages = function ( messages ) {
@@ -185,6 +187,7 @@ mw.translate.MessageRenameDialog.prototype.displayMessages = function ( messages
 
 /**
  * Generates the HTML to display a single message
+ *
  * @param {Object} message
  */
 mw.translate.MessageRenameDialog.prototype.displayMessage = function ( message ) {
@@ -210,6 +213,7 @@ mw.translate.MessageRenameDialog.prototype.displayMessage = function ( message )
 
 /**
  * Callback triggered when a message is selected.
+ *
  * @param {Object} event
  */
 mw.translate.MessageRenameDialog.prototype.selectMessage = function ( event ) {
@@ -234,7 +238,8 @@ mw.translate.MessageRenameDialog.prototype.resetProperties = function () {
 
 /**
  * Perform the actual rename
- * @return {Promise} Resolves after making call to the onRenameSelect function.
+ *
+ * @return {jQuery.Promise} Resolves after making call to the onRenameSelect function.
  */
 mw.translate.MessageRenameDialog.prototype.rename = function () {
 	var deferred, promise, renameData;
@@ -265,6 +270,7 @@ mw.translate.MessageRenameDialog.prototype.rename = function () {
 
 /**
  * Callback function triggered to handle the search.
+ *
  * @param {Object} searchValue
  */
 mw.translate.MessageRenameDialog.prototype.filterMessages = function ( searchValue ) {
@@ -283,6 +289,7 @@ mw.translate.MessageRenameDialog.prototype.filterMessages = function ( searchVal
 		if ( message.content.toLowerCase().indexOf( normalizedSearchVal ) !== -1 ) {
 			return true;
 		}
+		return false;
 	} );
 
 	this.clearMessages();
@@ -292,6 +299,7 @@ mw.translate.MessageRenameDialog.prototype.filterMessages = function ( searchVal
 
 /**
  * Method use to display a notice on the dialog box
+ *
  * @param {string} msg
  * @param {string} type
  */

@@ -99,7 +99,7 @@
 			$display = $( '<div>' )
 				.addClass( 'tux-workflow-status' )
 				.text( mw.msg( 'translate-workflow-state-' ) )
-				.click( function ( e ) {
+				.on( 'click', function ( e ) {
 					$list.toggleClass( 'hide' );
 					e.stopPropagation();
 				} );
@@ -129,7 +129,7 @@
 				$state.appendTo( $list );
 			} );
 
-			$list.find( '.changeable' ).click( function () {
+			$list.find( '.changeable' ).on( 'click', function () {
 				var state,
 					$this = $( this );
 

@@ -54,7 +54,7 @@
 		}
 
 		if ( $nextRequest.length ) {
-			$nextRequest.click();
+			$nextRequest.trigger( 'click' );
 			updateSelectedIndicator( 1 );
 		} else {
 			updateSelectedIndicator( 0 );
@@ -267,9 +267,7 @@
 	function displayOnMultipleSelection() {
 		var selectedUserIDs = $( '.request-selector:checked' ).map( function ( i, checkedBox ) {
 			return $( checkedBox ).parents( 'div.request' ).data( 'data' ).userid;
-		} );
-
-		selectedUserIDs = selectedUserIDs.toArray();
+		} ).toArray();
 
 		$( '.details.pane' ).empty().append(
 			$( '<div>' )
@@ -548,7 +546,7 @@
 		getOlderRequests().each( function ( index, request ) {
 			$( request ).find( '.request-selector' )
 				.prop( 'checked', true ) // Otherwise the state doesn't actually change
-				.change();
+				.trigger( 'change' );
 		} );
 	}
 
@@ -689,7 +687,7 @@
 			$firstVisibleUser = $( '.request:not(.hide)' ).first();
 
 		if ( $firstVisibleUser.length ) {
-			$firstVisibleUser.click();
+			$firstVisibleUser.trigger( 'click' );
 		} else {
 			$( '.details.pane' ).empty();
 			$selectedRequests = $( '.request-selector:checked' );
@@ -746,7 +744,7 @@
 		$( '.older-requests-indicator' ).on( 'click', oldRequestSelector );
 
 		if ( $requestRows.length ) {
-			$requestRows.first().click();
+			$requestRows.first().trigger( 'click' );
 		}
 
 		updateRequestCount();

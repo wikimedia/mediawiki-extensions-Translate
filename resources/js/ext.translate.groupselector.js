@@ -127,7 +127,7 @@
 			this.$menu.addClass( 'open' ).show();
 			this.position();
 			// Place the focus in the message group search box.
-			this.$search.focus();
+			this.$search.trigger( 'focus' );
 			// Start loading the groups, but assess the situation again after
 			// they are loaded, in case user has made further interactions.
 			if ( this.firstShow ) {
@@ -256,6 +256,7 @@
 		 */
 		position: function () {
 			if ( this.options.position.of === undefined ) {
+				// eslint-disable-next-line no-jquery/variable-pattern
 				this.options.position.of = this.$trigger;
 			}
 			this.$menu.position( this.options.position );

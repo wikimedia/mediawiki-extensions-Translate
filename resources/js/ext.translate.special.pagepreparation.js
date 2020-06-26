@@ -362,11 +362,11 @@
 		var pageContent,
 			$input = $( '#page' );
 
-		$( '#action-cancel' ).click( function () {
+		$( '#action-cancel' ).on( 'click', function () {
 			document.location.reload( true );
 		} );
 
-		$( '#action-save' ).click( function () {
+		$( '#action-save' ).on( 'click', function () {
 			var pageName,
 				pageUrl = '';
 
@@ -385,7 +385,7 @@
 			} );
 		} );
 
-		$( '#action-prepare' ).click( function () {
+		$( '#action-prepare' ).on( 'click', function () {
 			var pageName, $messageDiv = $( '.messageDiv' );
 
 			pageName = $input.val().trim();

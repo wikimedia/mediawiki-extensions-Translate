@@ -59,7 +59,7 @@
 		/**
 		 * Click handler triggered when "Add as rename" is clicked in the dropdown.
 		 */
-		$( '.smg-rename-rename-action' ).click( function () {
+		$( '.smg-rename-rename-action' ).on( 'click', function () {
 			var keyData = RenameDropdown.getData(),
 				$renameButton = getRenameButton( $( event.target ) );
 			toggleLoading( $renameButton, true );
@@ -88,7 +88,7 @@
 		/**
 		 * Click handler triggered when "Add as new" is clicked in the dropdown.
 		 */
-		$( '.smg-rename-new-action' ).click( function () {
+		$( '.smg-rename-new-action' ).on( 'click', function () {
 			var keyData = RenameDropdown.getData(),
 				$renameButton = getRenameButton( $( event.target ) ),
 				isReloading = false;
@@ -131,6 +131,7 @@
 
 	/**
 	 * Fetch the possible renames for a given message.
+	 *
 	 * @param {string} groupId
 	 * @param {string} msgKey
 	 * @return {jQuery.Promise}
@@ -157,6 +158,7 @@
 
 	/**
 	 * Identifies and returns the group name from the URL
+	 *
 	 * @return {string}
 	 */
 	function getChangesetName() {
@@ -184,6 +186,7 @@
 
 	/**
 	 * Update the rename associated with a message
+	 *
 	 * @param {Object} renameParams
 	 * @param {string} renameParams.groupId
 	 * @param {string} renameParams.selectedKey Key to be matched to. This message will be renamed.
@@ -213,6 +216,7 @@
 
 	/**
 	 * Mark the message as a new message
+	 *
 	 * @param {string} groupId
 	 * @param {string} msgKey
 	 * @return {jQuery.Promise}
@@ -243,7 +247,8 @@
 
 		/**
 		 * Initialization function. Creates the elements for the rename dropdown
-		 * @return {RenameDropdown}
+		 *
+		 * @chainable
 		 */
 		function init() {
 			$renameMenu = getRenameDropdown().appendTo( document.body );
@@ -252,6 +257,7 @@
 
 		/**
 		 * Returns the HTML element for the dropdown
+		 *
 		 * @return {jQuery}
 		 */
 		function getRenameDropdown() {
@@ -276,7 +282,8 @@
 
 		/**
 		 * Displays the rename menu
-		 * @return {RenameDropdown}
+		 *
+		 * @chainable
 		 */
 		function show() {
 			$renameMenu.addClass( 'show' );
@@ -285,7 +292,8 @@
 
 		/**
 		 * Hides the rename menu
-		 * @return {RenameDropdown}
+		 *
+		 * @chainable
 		 */
 		function hide() {
 			$renameMenu.removeClass( 'show' );
@@ -294,10 +302,11 @@
 
 		/**
 		 * Appends the dropdown to a container element
+		 *
 		 * @param {jQuery} target Target trigger element
 		 * @param {jQuery} $container Container to which to append the menu
 		 * @param {Object} customData Custom data to be associated with the menu
-		 * @return {RenameDropdown}
+		 * @chainable
 		 */
 		function appendTo( target, $container, customData ) {
 			var $currentTarget = $( target );
@@ -314,6 +323,7 @@
 
 		/**
 		 * Fetch the custom data associated with rename menu
+		 *
 		 * @return {Object}
 		 */
 		function getData() {
@@ -322,8 +332,9 @@
 
 		/**
 		 * Hide a specific option in the dropdown
+		 *
 		 * @param {string} optSelector
-		 * @return {RenameDropdown}
+		 * @chainable
 		 */
 		function hideOption( optSelector ) {
 			$renameMenu.find( optSelector ).parent().hide();

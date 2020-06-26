@@ -28,7 +28,7 @@
 		 * Get language stats for a language from the API.
 		 *
 		 * @param {string} language Language code.
-		 * @return {deferred}
+		 * @return {jQuery.Deferred}
 		 */
 		loadLanguageStats: function ( language ) {
 			if ( !mw.translate.languageStatsLoader[ language ] ) {
@@ -82,7 +82,7 @@
 		 * and recurse it through sub groups.
 		 *
 		 * @param {string} id Group id to search for.
-		 * @param {Array} groups Array of message grous
+		 * @param {Array} groups Array of message groups
 		 * @return {Object} Message group object
 		 */
 		findGroup: function ( id, groups ) {
@@ -92,7 +92,7 @@
 				return groups;
 			}
 
-			$.each( groups, function ( index, group ) {
+			groups.forEach( function ( group ) {
 				if ( group.id === id ) {
 					result = group;
 					return false;

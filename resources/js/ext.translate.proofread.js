@@ -195,7 +195,7 @@
 		 * Mark this message as proofread.
 		 */
 		proofread: function () {
-			var reviews, counter, params,
+			var reviews, $counter, params,
 				message = this.message,
 				$message = this.$message,
 				api = new mw.Api();
@@ -214,9 +214,9 @@
 					.removeClass( 'tux-notice' ) // in case, it failed previously
 					.addClass( 'accepted' );
 
-				counter = $message.find( '.tux-proofread-count' );
-				reviews = counter.data( 'reviewCount' );
-				counter.text( mw.language.convertNumber( reviews + 1 ) );
+				$counter = $message.find( '.tux-proofread-count' );
+				reviews = $counter.data( 'reviewCount' );
+				$counter.text( mw.language.convertNumber( reviews + 1 ) );
 
 				// Update stats
 				$( '.tux-action-bar .tux-statsbar' ).trigger(

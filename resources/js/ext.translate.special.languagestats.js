@@ -39,11 +39,15 @@
 			}
 
 			// Build toggle link
-			$toggler = $( '<span class="groupexpander collapsed">[</span>' )
-				.append( $( '<a href="#"></a>' )
-					.text( mw.msg( 'translate-langstats-expand' ) ) )
-				.append( ']' )
-				.click( function ( e ) {
+			$toggler = $( '<span>' ).addClass( 'groupexpander collapsed' )
+				.append(
+					'[',
+					$( '<a>' )
+						.attr( 'href', '#' )
+						.text( mw.msg( 'translate-langstats-expand' ) ),
+					']'
+				)
+				.on( 'click', function ( e ) {
 					var $el = $( this );
 					// Switch the state and toggle the rows
 					if ( $el.hasClass( 'collapsed' ) ) {
@@ -60,7 +64,7 @@
 				} );
 
 			// Add the toggle link to the first cell of the meta group table-row
-			$parent.find( ' > td:first' ).append( $toggler );
+			$parent.find( ' > td' ).first().append( $toggler );
 
 			// Handle hide/show recursively, so that collapsing parent group
 			// hides all sub groups regardless of nesting level
@@ -75,11 +79,15 @@
 		// Create, bind and append the toggle-all button
 		$allChildRows = $( 'tr[data-parentgroup]', $translateTable );
 		$allTogglesCache = null;
-		$toggleAllButton = $( '<span class="collapsed">[</span>' )
-			.append( $( '<a href="#"></a>' )
-				.text( mw.msg( 'translate-langstats-expandall' ) ) )
-			.append( ']' )
-			.click( function ( e ) {
+		$toggleAllButton = $( '<span>' ).addClass( 'collapsed' )
+			.append(
+				'[',
+				$( '<a>' )
+					.attr( 'href', '#' )
+					.text( mw.msg( 'translate-langstats-expandall' ) ),
+				']'
+			)
+			.on( 'click', function ( e ) {
 				var $el = $( this ),
 					$allToggles = $allTogglesCache || $( '.groupexpander', $translateTable );
 
@@ -106,7 +114,7 @@
 		doZebra();
 
 		// Add the toggle-all button above the table
-		$( '<p class="groupexpander-all"></p>' ).append( $toggleAllButton ).insertBefore( $translateTable );
+		$( '<p>' ).addClass( 'groupexpander-all' ).append( $toggleAllButton ).insertBefore( $translateTable );
 	} );
 
 	$( function () {

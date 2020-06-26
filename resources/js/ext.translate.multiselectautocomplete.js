@@ -57,6 +57,7 @@ $( function () {
 								option: this
 							};
 						}
+						return undefined;
 					} ) );
 				},
 				select: function ( event, ui ) {

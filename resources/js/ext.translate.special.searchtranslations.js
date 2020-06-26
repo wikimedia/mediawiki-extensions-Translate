@@ -6,7 +6,7 @@
 	$( function () {
 		resultGroups = $( '.facet.groups' ).data( 'facets' );
 
-		$( '.tux-searchpage .button' ).click( function () {
+		$( '.tux-searchpage .button' ).on( 'click', function () {
 			var query = $( '.tux-searchpage .searchinputbox' ).val(),
 				result = lexOperators( query ),
 				$form = $( '.tux-searchpage form[name=searchform]' );
@@ -33,7 +33,7 @@
 		showMessageGroups();
 
 		// Make the whole rows clickable
-		$( '.tux-searchpage .row .facet-item' ).click( function ( event ) {
+		$( '.tux-searchpage .row .facet-item' ).on( 'click', function ( event ) {
 			window.location = $( this ).find( 'a' ).attr( 'href' );
 			event.stopPropagation();
 		} );

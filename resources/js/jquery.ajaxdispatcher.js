@@ -6,7 +6,7 @@
 	 *
 	 * @author Niklas Laxström
 	 *
-	 * @param {callable[]} list List of callbacks returning promises.
+	 * @param {Function[]} list List of callbacks returning promises.
 	 * @param {number} maxRetries Maximum number of times a failed promise is retried.
 	 * @return {jQuery.Promise}
 	 */

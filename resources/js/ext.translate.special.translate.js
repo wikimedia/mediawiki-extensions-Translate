@@ -319,7 +319,7 @@
 			var $target = $( this );
 			mw.loader.using( 'ext.uls.mediawiki' ).done( function () {
 				setupLanguageSelector( $target );
-				$target.click();
+				$target.trigger( 'click' );
 			} );
 		} );
 
@@ -337,7 +337,7 @@
 		$hideTranslatedButton = $translateContainer.find( '.tux-editor-clear-translated' );
 		$hideTranslatedButton
 			.prop( 'disabled', !getTranslatedMessages( $translateContainer ).length )
-			.click( function () {
+			.on( 'click', function () {
 				getTranslatedMessages( $translateContainer ).remove();
 				$( this ).prop( 'disabled', true );
 			} );

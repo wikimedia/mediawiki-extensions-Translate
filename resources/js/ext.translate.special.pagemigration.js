@@ -205,12 +205,12 @@
 	 */
 
 	function createNewUnit( sourceText, targetText ) {
-		var $newUnit, sourceUnit, targetUnit, $actionUnit;
+		var $newUnit, $sourceUnit, $targetUnit, $actionUnit;
 
 		$newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
-		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
+		$sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
 			.prop( 'readonly', true ).attr( 'tabindex', '-1' ).val( sourceText );
-		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
+		$targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
 			.val( targetText ).prop( 'dir', $.uls.data.getDir( langCode ) );
 		$actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
 		$actionUnit.append(
@@ -221,7 +221,7 @@
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' )
 				.attr( 'title', mw.msg( 'pm-delete-icon-hover-text' ) )
 		);
-		$newUnit.append( sourceUnit, targetUnit, $actionUnit );
+		$newUnit.append( $sourceUnit, $targetUnit, $actionUnit );
 		return $newUnit;
 	}
 
@@ -260,7 +260,7 @@
 	 * @return {string[]} Array having the headers split into new unit
 	 */
 	function splitHeaders( translations ) {
-		return $.map( translations, function ( elem ) {
+		return translations.map( function ( elem ) {
 			// Check https://regex101.com/r/oT7fZ2 for details
 			return elem.match( /(^==.+$|(?:(?!^==).+\n?)+)/gm );
 		} );
@@ -364,6 +364,7 @@
 				$( '.mw-tpm-sp-instructions' ).text( mw.msg( 'pm-on-save-message-text' ) ).show( 'fast' );
 			} ).fail( function ( errmsg ) {
 				$( 'input' ).prop( 'disabled', false );
+				// eslint-disable-next-line mediawiki/msg-doc
 				$( '.mw-tpm-sp-error__message' ).text( mw.msg( errmsg ) ).show( 'fast' );
 			} );
 		}
@@ -501,10 +502,10 @@
 	function listen() {
 		var $listing = $( '.mw-tpm-sp-unit-listing' );
 
-		$( '#mw-tpm-sp-primary-form' ).submit( importHandler );
-		$( '#action-import' ).click( importHandler );
-		$( '#action-save' ).click( saveHandler );
-		$( '#action-cancel' ).click( cancelHandler );
+		$( '#mw-tpm-sp-primary-form' ).on( 'submit', importHandler );
+		$( '#action-import' ).on( 'click', importHandler );
+		$( '#action-save' ).on( 'click', saveHandler );
+		$( '#action-cancel' ).on( 'click', cancelHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--swap', swapHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--delete', deleteHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--add', addHandler );

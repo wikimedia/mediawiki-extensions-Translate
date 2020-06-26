@@ -82,6 +82,13 @@
 					.append(
 						$( '<span>' )
 							.addClass( statusClass )
+							// The following messages are used here:
+							// * tux-status-optional
+							// * tux-status-fuzzy
+							// * tux-status-proofread
+							// * tux-status-translated
+							// * tux-status-saving
+							// * tux-status-unsaved
 							.text( statusMsg ? mw.msg( statusMsg ) : '' )
 					),
 				$( '<div>' )

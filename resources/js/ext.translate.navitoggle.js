@@ -33,7 +33,7 @@
 		$toggle = $( '<div>' )
 			.addClass( 'tux-navitoggle' )
 			.css( rtl ? 'right' : 'left', delim )
-			.click( function () {
+			.on( 'click', function () {
 				$body.toggleClass( 'tux-navi-collapsed' );
 				mw.storage.set(
 					'translate-navitoggle',

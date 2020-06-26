@@ -9,7 +9,7 @@
 			result = [],
 			lastterm = request.term.split( ' ' ).pop();
 
-		$.each( operators, function ( index, value ) {
+		operators.forEach( function ( value ) {
 			var pos = value.indexOf( lastterm );
 			if ( pos === 0 ) {
 				result.push( value );

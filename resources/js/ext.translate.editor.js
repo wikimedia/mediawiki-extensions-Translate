@@ -55,7 +55,7 @@
 	 * @param {Function} [options.onSave] Callback to call when translation has been saved.
 	 * @param {Function} [options.onSkip] Callback to call when a message is skipped.
 	 * @param {Object} options.message Object as returned by messagecollection api.
-	 * @param {TranslationApiStorage} [options.storage]
+	 * @param {mw.translate.TranslationApiStorage} [options.storage]
 	 */
 	function TranslateEditor( element, options ) {
 		this.$editTrigger = $( element );
@@ -407,6 +407,7 @@
 						href: uri.toString(),
 						target: '_blank'
 					} )
+					// eslint-disable-next-line mediawiki/msg-doc
 					.text( mw.msg( message ) )
 				);
 		},
@@ -645,14 +646,14 @@
 
 			// Shortcuts for various insertable things
 			$textarea.on( 'keyup keydown', function ( e ) {
-				var index, info, direction;
+				var index, $info, direction;
 
 				if ( e.type === 'keydown' && e.altKey === true ) {
 					// Up and down arrows
 					if ( e.keyCode === 38 || e.keyCode === 40 ) {
 						direction = e.keyCode === 40 ? 1 : -1;
-						info = translateEditor.$editor.find( '.infocolumn' );
-						info.scrollTop( info.scrollTop() + 100 * direction );
+						$info = translateEditor.$editor.find( '.infocolumn' );
+						$info.scrollTop( $info.scrollTop() + 100 * direction );
 						translateEditor.showShortcuts();
 					}
 				}
@@ -747,7 +748,7 @@
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
 					.on( 'click', function () {
 						$textarea
-							.focus()
+							.trigger( 'focus' )
 							.val( sourceString )
 							.trigger( 'input' );
 
@@ -778,10 +779,10 @@
 					}
 
 					if ( !$saveButton.is( ':disabled' ) ) {
-						$saveButton.click();
+						$saveButton.trigger( 'click' );
 						return;
 					}
-					$skipButton.click();
+					$skipButton.trigger( 'click' );
 				} );
 
 				if ( originalTranslation !== null ) {
@@ -791,7 +792,7 @@
 						.on( 'click', function () {
 							// Restore the translation
 							$textarea
-								.focus()
+								.trigger( 'focus' )
 								.val( originalTranslation );
 
 							// and go back to hiding.
@@ -1034,6 +1035,7 @@
 
 		/**
 		 * Remove all notices of given types
+		 *
 		 * @param {(string|string[])} types
 		 */
 		removeNotices: function ( types ) {
@@ -1272,7 +1274,7 @@
 
 			this.$messageItem.addClass( 'hide' );
 			this.$editor.removeClass( 'hide' );
-			$textarea.focus();
+			$textarea.trigger( 'focus' );
 
 			autosize( $textarea );
 			this.resizeInsertables( $textarea );
@@ -1381,7 +1383,7 @@
 		listen: function () {
 			var translateEditor = this;
 
-			this.$editTrigger.find( '.tux-message-item' ).click( function () {
+			this.$editTrigger.find( '.tux-message-item' ).on( 'click', function () {
 				translateEditor.show();
 
 				return false;
@@ -1405,6 +1407,7 @@
 
 		/**
 		 * Utility method to display a list of notices on the UI
+		 *
 		 * @param {Array} notices
 		 * @param {string} noticeType
 		 */
