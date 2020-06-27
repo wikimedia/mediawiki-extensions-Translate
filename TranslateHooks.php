@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Hook\PageMoveCompleteHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
 
@@ -183,7 +184,11 @@ class TranslateHooks {
 			$wgHooks['SkinTemplateNavigation'][] = 'PageTranslationHooks::translateTab';
 
 			// Update translated page when translation unit is moved
-			$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
+			if ( interface_exists( PageMoveCompleteHook::class ) ) {
+				$wgHooks['PageMoveComplete'][] = 'PageTranslationHooks::onMovePageTranslationUnits';
+			} else {
+				$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
+			}
 
 			// Update translated page when translation unit is deleted
 			$wgHooks['ArticleDeleteComplete'][] = 'PageTranslationHooks::onDeleteTranslationUnit';

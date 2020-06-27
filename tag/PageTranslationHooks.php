@@ -1249,7 +1249,78 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook to update source and destination translation pages on moving translation units
+	 * Hook: PageMoveComplete
+	 *
+	 * Only run in versions of mediawiki beginning 1.35; before 1.35, ::onMoveTranslationUnits is used
+	 *
+	 * @param LinkTarget $oldLinkTarget
+	 * @param LinkTarget $newLinkTarget
+	 * @param UserIdentity $userIdentity
+	 * @param int $oldid
+	 * @param int $newid
+	 * @param string $reason
+	 * @param RevisionRecord $revisionRecord
+	 */
+	public static function onMovePageTranslationUnits(
+		LinkTarget $oldLinkTarget,
+		LinkTarget $newLinkTarget,
+		UserIdentity $userIdentity,
+		int $oldid,
+		int $newid,
+		string $reason,
+		RevisionRecord $revisionRecord
+	) {
+		$user = User::newFromIdentity( $userIdentity );
+		// TranslatablePageMoveJob takes care of handling updates because it performs
+		// a lot of moves at once. As a performance optimization, skip this hook if
+		// we detect moves from that job. As there isn't a good way to pass information
+		// to this hook what originated the move, we use some heuristics.
+		if ( defined( 'MEDIAWIKI_JOB_RUNNER' ) && $user->equals( FuzzyBot::getUser() ) ) {
+			return;
+		}
+
+		$oldTitle = Title::newFromLinkTarget( $oldLinkTarget );
+		$newTitle = Title::newFromLinkTarget( $newLinkTarget );
+		$groupLast = null;
+		foreach ( [ $oldTitle, $newTitle ] as $title ) {
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				continue;
+			}
+
+			// Documentation pages are never translation pages
+			if ( $handle->isDoc() ) {
+				continue;
+			}
+
+			$group = $handle->getGroup();
+			if ( !$group instanceof WikiPageMessageGroup ) {
+				continue;
+			}
+
+			$language = $handle->getCode();
+
+			// Ignore pages such as Translations:Page/unit without language code
+			if ( (string)$language === '' ) {
+				continue;
+			}
+
+			// Update the page only once if source and destination units
+			// belong to the same page
+			if ( $group !== $groupLast ) {
+				$groupLast = $group;
+				$page = TranslatablePage::newFromTitle( $group->getTitle() );
+				self::updateTranslationPage( $page, $language, $user, 0, $reason );
+			}
+		}
+	}
+
+	/**
+	 * Hook to update source and destination translation pages on moving translation units
 	 * Hook: TitleMoveComplete
+	 *
+	 * Only run in versions of mediawiki before 1.35; in 1.35+, ::onMovePageTranslationUnits is used
+	 *
 	 * @since 2014.08
 	 * @param Title $ot
 	 * @param Title $nt
