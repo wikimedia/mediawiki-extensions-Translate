@@ -45,7 +45,7 @@
 	"tsb-limit-reached-body": "Yeni çevirmenler için çeviri sınırına ulaştınız.\nEkibimiz hesabınızı yakında doğrulayacak ve yeni sürüme geçirecek.\nO zaman sınırsız çeviri yapabilirsiniz.",
 	"tsb-no-requests-from-new-users": "Yeni kullanıcılardan istek yok",
 	"tsb-create-user-page": "Temel kullanıcı sayfası oluşturuldu",
-	"log-name-translatorsandbox": "Çeviri sandbox günlüğü",
+	"log-name-translatorsandbox": "Çeviri deneme tahtası günlüğü",
 	"log-description-translatorsandbox": "Çeviri sanal alanı kullanıcıları için bir işlem günlüğü",
 	"logentry-translatorsandbox-promoted": "$1, $3 sayfasına {{GENDER:$4|çeviriyi}} {{GENDER:$2|yükseldi}}",
 	"logentry-translatorsandbox-rejected": "$1, çevirmen olma isteğini \"$3\" sayfasına {{GENDER:$2|reddetti}}",

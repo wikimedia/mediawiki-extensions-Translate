@@ -85,7 +85,7 @@
 	"log-action-filter-pagetranslation-delete": "Eliminacions de pàgina",
 	"pt-movepage-title": "Mou la pàgina traduïble $1",
 	"pt-movepage-blockers": "La pàgina traduïble no pot ser reanomenada a causa {{PLURAL:$1|de l'error següent|dels errors següents}}:",
-	"pt-movepage-block-base-exists": "La pàgina base de traaducció [[:$1]] ja existeix.",
+	"pt-movepage-block-base-exists": "Ja existeix la pàgina traduïble de destinació «[[:$1]]».",
 	"pt-movepage-block-base-invalid": "El nom de la pàgina traduïble de destinació no té un títol vàlid.",
 	"pt-movepage-block-tp-exists": "La pàgina de traducció de destinació [[:$2]] ja existeix.",
 	"pt-movepage-block-tp-invalid": "El títol de la pàgina de traducció de destinació [[:$1]] no seria vàlid (potser seria massa llarg).",
