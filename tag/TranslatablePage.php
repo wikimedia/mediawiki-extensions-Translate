@@ -296,39 +296,33 @@ class TranslatablePage {
 		while ( true ) {
 			$re = '~(<translate>)(.*?)(</translate>)~s';
 			$matches = [];
-			$ok = preg_match_all( $re, $text, $matches, PREG_OFFSET_CAPTURE );
+			$ok = preg_match( $re, $text, $matches, PREG_OFFSET_CAPTURE );
 
-			if ( $ok === 0 ) {
-				break; // No matches
+			if ( $ok === 0 || $ok === false ) {
+				break; // No match or failure
 			}
 
-			// Do-placehold for the whole stuff
+			$contentWithTags = $matches[0][0];
+			$contentWithoutTags = $matches[2][0];
+			$offsetStart = $matches[0][1];
+			$offsetEnd = $offsetStart + strlen( $contentWithTags );
+
+			// Replace the whole match with a placeholder
 			$ph = TranslateUtils::getPlaceholder();
-			$start = $matches[0][0][1];
-			$len = strlen( $matches[0][0][0] );
-			$end = $start + $len;
-			$text = self::index_replace( $text, $ph, $start, $end );
+			$text = substr( $text, 0, $offsetStart ) . $ph . substr( $text, $offsetEnd );
 
-			// Sectionise the contents
-			// Strip the surrounding tags
-			$contents = $matches[0][0][0]; // full match
-			$start = $matches[2][0][1] - $matches[0][0][1]; // bytes before actual content
-			$len = strlen( $matches[2][0][0] ); // len of the content
-			$end = $start + $len;
-
-			$sectiontext = substr( $contents, $start, $len );
-
-			if ( strpos( $sectiontext, '<translate>' ) !== false ) {
-				throw new TPException( [ 'pt-parse-nested', $sectiontext ] );
+			if ( strpos( $contentWithoutTags, '<translate>' ) !== false ) {
+				throw new TPException( [ 'pt-parse-nested', $contentWithoutTags ] );
 			}
 
-			$sectiontext = self::unArmourNowiki( $nowiki, $sectiontext );
+			$contentWithoutTags = self::unArmourNowiki( $nowiki, $contentWithoutTags );
 
-			$parse = self::sectionise( $sectiontext );
+			$parse = self::sectionise( $contentWithoutTags );
 			$sections += $parse['sections'];
 
-			$tagPlaceHolders[$ph] =
-				self::index_replace( $contents, $parse['template'], $start, $end );
+			$openTag = $matches[1][0];
+			$closeTag = $matches[3][0];
+			$tagPlaceHolders[$ph] = $openTag . $parse['template'] . $closeTag;
 		}
 
 		$prettyTemplate = $text;
@@ -342,9 +336,8 @@ class TranslatablePage {
 			throw new TPException( [ 'pt-parse-close', $prettyTemplate ] );
 		}
 
-		foreach ( $tagPlaceHolders as $ph => $value ) {
-			$text = str_replace( $ph, $value, $text );
-		}
+		// Replace the tag placeholders with unit placeholders to form the template
+		$text = strtr( $text, $tagPlaceHolders );
 
 		if ( count( $sections ) === 1 ) {
 			// Don't return display title for pages which have no sections
@@ -411,17 +404,6 @@ class TranslatablePage {
 		}
 
 		return $text;
-	}
-
-	/**
-	 * @param string $string
-	 * @param string $rep
-	 * @param int $start
-	 * @param int $end
-	 * @return string
-	 */
-	protected static function index_replace( $string, $rep, $start, $end ) {
-		return substr( $string, 0, $start ) . $rep . substr( $string, $end );
 	}
 
 	/**
