@@ -44,6 +44,9 @@ class TPSection {
 	 */
 	protected $inline = false;
 
+	/** @var bool Whether wrapping the section is allowed */
+	private $canWrap = true;
+
 	/**
 	 * @var int Version number for the serialization.
 	 */
@@ -60,6 +63,22 @@ class TPSection {
 
 	public function isInline() {
 		return $this->inline;
+	}
+
+	/**
+	 * @param bool $value
+	 * @since 2020.07
+	 */
+	public function setCanWrap( bool $value ): void {
+		$this->canWrap = $value;
+	}
+
+	/**
+	 * @return bool
+	 * @since 2020.07
+	 */
+	public function canWrap(): bool {
+		return $this->canWrap;
 	}
 
 	/**

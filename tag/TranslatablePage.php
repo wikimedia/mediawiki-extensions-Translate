@@ -294,7 +294,7 @@ class TranslatablePage {
 		$tagPlaceHolders = [];
 
 		while ( true ) {
-			$re = '~(<translate>)(.*?)(</translate>)~s';
+			$re = '~(<translate(?: nowrap)?>)(.*?)</translate>~s';
 			$matches = [];
 			$ok = preg_match( $re, $text, $matches, PREG_OFFSET_CAPTURE );
 
@@ -304,6 +304,7 @@ class TranslatablePage {
 
 			$contentWithTags = $matches[0][0];
 			$contentWithoutTags = $matches[2][0];
+			// These are offsets to the content inside the tags in $text
 			$offsetStart = $matches[0][1];
 			$offsetEnd = $offsetStart + strlen( $contentWithTags );
 
@@ -311,18 +312,20 @@ class TranslatablePage {
 			$ph = TranslateUtils::getPlaceholder();
 			$text = substr( $text, 0, $offsetStart ) . $ph . substr( $text, $offsetEnd );
 
-			if ( strpos( $contentWithoutTags, '<translate>' ) !== false ) {
+			if ( preg_match( '~<translate( nowrap)?>~', $contentWithoutTags ) !== 0 ) {
 				throw new TPException( [ 'pt-parse-nested', $contentWithoutTags ] );
 			}
 
-			$contentWithoutTags = self::unArmourNowiki( $nowiki, $contentWithoutTags );
-
-			$parse = self::sectionise( $contentWithoutTags );
-			$sections += $parse['sections'];
-
 			$openTag = $matches[1][0];
-			$closeTag = $matches[3][0];
-			$tagPlaceHolders[$ph] = $openTag . $parse['template'] . $closeTag;
+			$canWrap = $openTag !== '<translate nowrap>';
+
+			// Parse the content inside the tags
+			$contentWithoutTags = self::unArmourNowiki( $nowiki, $contentWithoutTags );
+			$parse = self::sectionise( $contentWithoutTags, $canWrap );
+
+			// Update list of sections and the template with the results
+			$sections += $parse['sections'];
+			$tagPlaceHolders[$ph] = $openTag . $parse['template'] . '</translate>';
 		}
 
 		$prettyTemplate = $text;
@@ -330,7 +333,7 @@ class TranslatablePage {
 			$prettyTemplate = str_replace( $ph, '[...]', $prettyTemplate );
 		}
 
-		if ( strpos( $text, '<translate>' ) !== false ) {
+		if ( preg_match( '~<translate( nowrap)?>~', $text ) !== 0 ) {
 			throw new TPException( [ 'pt-parse-open', $prettyTemplate ] );
 		} elseif ( strpos( $text, '</translate>' ) !== false ) {
 			throw new TPException( [ 'pt-parse-close', $prettyTemplate ] );
@@ -367,7 +370,7 @@ class TranslatablePage {
 	public static function cleanupTags( $text ) {
 		$nowiki = [];
 		$text = self::armourNowiki( $nowiki, $text );
-		$text = preg_replace( '~<translate>\n?~s', '', $text );
+		$text = preg_replace( '~<translate( nowrap)?>\n?~s', '', $text );
 		$text = preg_replace( '~\n?</translate>~s', '', $text );
 		// Mirroring what TPSection::getTextForTrans does
 		$text = preg_replace( '~<tvar\|([^>]+)>(.*?)</>~u', '\2', $text );
@@ -412,9 +415,10 @@ class TranslatablePage {
 	 * in the template and is not included in the sections.
 	 *
 	 * @param string $text Contents of one pair of \<translate> tags.
+	 * @param bool $canWrap
 	 * @return array Contains a template and array of unparsed sections.
 	 */
-	public static function sectionise( $text ) {
+	public static function sectionise( string $text, bool $canWrap ): array {
 		$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
 		$parts = preg_split( '~(^\s*|\s*\n\n\s*|\s*$)~', $text, -1, $flags );
 
@@ -430,6 +434,7 @@ class TranslatablePage {
 				$ph = TranslateUtils::getPlaceholder();
 				$tpsection = self::shakeSection( $_ );
 				$tpsection->setIsInline( $inline );
+				$tpsection->setCanWrap( $canWrap );
 				$sections[$ph] = $tpsection;
 				$template .= $ph;
 			}

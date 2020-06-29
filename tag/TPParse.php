@@ -168,7 +168,7 @@ class TPParse {
 	 * translation tags removed and outdated translation marked with a class
 	 * mw-translate-fuzzy.
 	 *
-	 * @param MessageCollection $collection Collection that holds translated messages.
+	 * @param MessageCollection|array $collection Collection that holds translated messages.
 	 * @param bool $showOutdated Whether to show outdated sections, wrapped in a HTML class.
 	 * @return string Whole page as wikitext.
 	 */
@@ -201,12 +201,15 @@ class TPParse {
 					// We do not ever want to show explicit fuzzy marks in the rendered pages
 					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $sectiontext );
 
-					if ( $s->isInline() ) {
-						$sectiontext = "<span class=\"mw-translate-fuzzy\">$sectiontext</span>";
-					} else {
-						// We add new lines around the text to avoid disturbing any mark-up that
-						// has special handling on line start, such as lists.
-						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
+					if ( $s->canWrap() ) {
+						if ( $s->isInline() ) {
+							$sectiontext = "<span class=\"mw-translate-fuzzy\">$sectiontext</span>";
+						} else {
+							// We add new lines around the text to avoid disturbing any mark-up that
+							// has special handling on line start, such as lists.
+							$sectiontext =
+								"<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
+						}
 					}
 				}
 			}
@@ -230,21 +233,21 @@ class TPParse {
 		$nph = [];
 		$text = TranslatablePage::armourNowiki( $nph, $text );
 
-		// Remove translation markup from the template to produce final text
+		// Remove translation markup from the template to produce the final text.
 		$cb = [ __CLASS__, 'replaceTagCb' ];
-		$text = preg_replace_callback( '~(<translate>)(.*)(</translate>)~sU', $cb, $text );
+		$text = preg_replace_callback( '~<translate(?: nowrap)?>(.*?)</translate>~s', $cb, $text );
 		$text = TranslatablePage::unArmourNowiki( $nph, $text );
 
 		return $text;
 	}
 
 	/**
-	 * Chops of trailing or preceeding whitespace intelligently to avoid
-	 * build up of unintented whitespace.
+	 * Chops of trailing or preceding whitespace intelligently to avoid
+	 * build up of unintended whitespace.
 	 * @param string[] $matches
 	 * @return string
 	 */
 	protected static function replaceTagCb( $matches ) {
-		return preg_replace( '~^\n|\n\z~', '', $matches[2] );
+		return preg_replace( '~^\n|\n\z~', '', $matches[1] );
 	}
 }

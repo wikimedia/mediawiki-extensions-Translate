@@ -7,14 +7,11 @@
 
 use MediaWiki\MediaWikiServices;
 
-/**
- * @ingroup PageTranslation
- * @coversDefaultClass \TranslatablePage
- */
+/** @covers \TranslatablePage */
 class TranslatablePageTest extends MediaWikiIntegrationTestCase {
 	use TranslatablePageTestTrait;
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [
@@ -22,11 +19,10 @@ class TranslatablePageTest extends MediaWikiIntegrationTestCase {
 		] );
 	}
 
-	/**
-	 * @dataProvider provideTestSectionise
-	 */
+	/** @dataProvider provideTestSectionise */
 	public function testSectionise( $input, $pattern, $comment ) {
-		$result = TranslatablePage::sectionise( $input );
+		$canWrap = true;
+		$result = TranslatablePage::sectionise( $input, $canWrap );
 		$pattern = addcslashes( $pattern, '~' );
 		$this->assertRegExp( "~^$pattern$~", $result['template'], $comment );
 	}
@@ -37,25 +33,25 @@ class TranslatablePageTest extends MediaWikiIntegrationTestCase {
 
 		$cases = [];
 
-		$cases[] = [
+		yield [
 			'Hello',
 			"$ph",
 			'No surrounding whitespace',
 		];
 
-		$cases[] = [
+		yield [
 			"\nHello",
 			"\n$ph",
 			'With surrounding whitespace',
 		];
 
-		$cases[] = [
+		yield [
 			"\nHello world\n\nBunny\n",
 			"\n$ph\n\n$ph\n",
 			'Splitting at one empty line',
 		];
 
-		$cases[] = [
+		yield [
 			"First\n\n\n\n\nSecond\n\nThird",
 			"$ph\n\n\n\n\n$ph\n\n$ph",
 			'Splitting with multiple empty lines',
@@ -64,60 +60,60 @@ class TranslatablePageTest extends MediaWikiIntegrationTestCase {
 		return $cases;
 	}
 
-	/**
-	 * @dataProvider provideTestCleanupTags
-	 */
+	/** @dataProvider provideTestCleanupTags */
 	public function testCleanupTags( $input, $expected, $comment ) {
 		$output = TranslatablePage::cleanupTags( $input );
 		$this->assertEquals( $expected, $output, $comment );
 	}
 
 	public static function provideTestCleanupTags() {
-		$cases = [];
-
-		$cases[] = [
+		yield [
 			"== Hello ==\n</translate>",
 			'== Hello ==',
 			'Unbalanced tag in a section preview',
 		];
 
-		$cases[] = [
+		yield [
 			"</translate><translate>",
 			'',
 			'Unbalanced tags, no whitespace',
 		];
 
-		$cases[] = [
+		yield [
 			"1\n2<translate>3\n4</translate>5\n6",
 			"1\n23\n45\n6",
-			'Unbalanced tags, non-removable whitespace',
+			'Balanced tags, non-removable whitespace',
 		];
 
-		$cases[] = [
+		yield [
 			"1<translate>\n\n</translate>2",
 			'12',
-			'Unbalanced tags, removable whitespace',
+			'Balanced tags, removable whitespace',
 		];
 
-		$cases[] = [
+		yield [
 			'[[<tvar|wmf>Special:MyLanguage/Wikimedia Foundation</>|Wikimedia Foundation]].',
 			'[[Special:MyLanguage/Wikimedia Foundation|Wikimedia Foundation]].',
 			'TVAR tag is collapsed',
 		];
 
-		$cases[] = [
+		yield [
 			'You can use the <nowiki><translate></nowiki> tag.',
 			'You can use the <nowiki><translate></nowiki> tag.',
 			'Tag inside a nowiki is retained',
 		];
 
-		$cases[] = [
+		yield [
 			'What if I <translate and </translate>.',
 			'What if I <translate and .',
 			'Broken tag is retained',
 		];
 
-		return $cases;
+		yield [
+			'<abbr title="<translate nowrap>Careful unselfish true engineer</translate>">CUTE</abbr>',
+			'<abbr title="Careful unselfish true engineer">CUTE</abbr>',
+			'Nowrap is removed',
+		];
 	}
 
 	/**
