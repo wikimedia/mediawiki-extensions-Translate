@@ -25,7 +25,7 @@ class TranslatablePage {
 	protected $title;
 
 	/**
-	 * Text contents of the page.
+	 * @var ?string Text contents of the page.
 	 */
 	protected $text;
 
@@ -41,11 +41,6 @@ class TranslatablePage {
 	 * Can be: text, revision, title
 	 */
 	protected $source;
-
-	/**
-	 * Whether the page contents is already loaded.
-	 */
-	protected $init = false;
 
 	/**
 	 * Name of the section which contains the translated page title.
@@ -95,7 +90,7 @@ class TranslatablePage {
 	 * @throws MWException
 	 * @return self
 	 */
-	public static function newFromRevision( Title $title, $revision ) {
+	public static function newFromRevision( Title $title, int $revision ) {
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
 			->getRevisionByTitle( $title, $revision );
@@ -134,35 +129,38 @@ class TranslatablePage {
 
 	/**
 	 * Returns the text for this translatable page.
-	 * @throws MWException
 	 * @return string
 	 */
-	public function getText() {
+	public function getText(): string {
+		if ( $this->text !== null ) {
+			return $this->text;
+		}
+
+		$page = $this->getTitle()->getPrefixedDBkey();
+
+		if ( $this->source === 'title' ) {
+			$revision = $this->getMarkedTag();
+			if ( !is_int( $revision ) ) {
+				throw new LogicException(
+					"Trying to load a text for $page which is not marked for translation"
+				);
+			}
+			$this->revision = $revision;
+		}
+
 		$flags = TranslateUtils::shouldReadFromMaster()
 			? RevisionLookup::READ_LATEST
 			: RevisionLookup::READ_NORMAL;
+		$rev = MediaWikiServices::getInstance()
+			->getRevisionLookup()
+			->getRevisionByTitle( $this->getTitle(), $this->revision, $flags );
+		$text = ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
 
-		if ( $this->init === false ) {
-			switch ( $this->source ) {
-				case 'text':
-					break;
-				/** @noinspection PhpMissingBreakStatementInspection */
-				case 'title':
-					$this->revision = $this->getMarkedTag();
-				case 'revision':
-					$rev = MediaWikiServices::getInstance()
-						->getRevisionLookup()
-						->getRevisionByTitle( $this->getTitle(), $this->revision, $flags );
-					$this->text = ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
-					break;
-			}
+		if ( !is_string( $text ) ) {
+			throw new RuntimeException( "Failed to load text for $page" );
 		}
 
-		if ( !is_string( $this->text ) ) {
-			throw new MWException( 'We have no text' );
-		}
-
-		$this->init = true;
+		$this->text = $text;
 
 		return $this->text;
 	}
@@ -171,18 +169,8 @@ class TranslatablePage {
 	 * Revision is null if object was constructed using newFromText.
 	 * @return null|int
 	 */
-	public function getRevision() {
+	public function getRevision(): ?int {
 		return $this->revision;
-	}
-
-	/**
-	 * Manually set a revision number to use loading page text.
-	 * @param int $revision
-	 */
-	public function setRevision( $revision ) {
-		$this->revision = $revision;
-		$this->source = 'revision';
-		$this->init = false;
 	}
 
 	/**

@@ -1,67 +1,18 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @file
+ * @covers \TPParse
  */
+class TPParseTest extends \MediaWikiUnitTestCase {
+	public function setUp(): void {
+		parent::setUp();
 
-/**
- * @ingroup PageTranslation
- */
-class TPParseTest extends MediaWikiIntegrationTestCase {
-	/** @dataProvider provideTestGetTranslationPageText */
-	public function testGetTranslationPageText( string $pageContents, string $expected ) {
-		$title = Title::makeTitle( NS_MAIN, __CLASS__ );
-		$page = TranslatablePage::newFromText( $title, $pageContents );
-		$prefix = $title->getPrefixedDBkey() . '/';
-		$parse = $page->getParse();
-
-		$collection = [];
-		$actual = $parse->getTranslationPageText( $collection );
-		$this->assertEquals(
-			$expected,
-			$actual,
-			'Variable declarations are substituted when no translation'
-		);
-
-		foreach ( $parse->sections as $section ) {
-			$key = $prefix . $section->id;
-			$message = new FatMessage( $key, $section->getText() );
-			$message->setTranslation( $section->getText() );
-			$collection[$key] = $message;
+		if ( !defined( 'TRANSLATE_FUZZY' ) ) {
+			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 		}
-
-		$actual = $parse->getTranslationPageText( $collection );
-		$this->assertEquals(
-			$expected,
-			$actual,
-			'Variable declarations are substituted in source language'
-		);
-
-		foreach ( $parse->sections as $section ) {
-			$key = $prefix . $section->id;
-			$message = new FatMessage( $key, $section->getText() );
-			$message->setTranslation( $section->getTextForTrans() );
-			$collection[$key] = $message;
-		}
-		$actual = $parse->getTranslationPageText( $collection );
-		$this->assertEquals(
-			$expected,
-			$actual,
-			'Variable declarations are substituted in translation'
-		);
-	}
-
-	public function provideTestGetTranslationPageText() {
-		yield [
-			'<translate>Hello <tvar|abc>peter!</></translate>',
-			'Hello peter!'
-		];
-
-		yield [
-			'<translate nowrap>Hello <tvar|abc>peter!</></translate>',
-			'Hello peter!'
-		];
 	}
 
 	/** @dataProvider provideTestSectionWrapping */

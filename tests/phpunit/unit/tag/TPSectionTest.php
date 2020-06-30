@@ -1,18 +1,16 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @file
+ * @covers \TPSection
  */
-
-/**
- * @ingroup PageTranslation
- */
-class TPSectionTest extends PHPUnit\Framework\TestCase {
-	/**
-	 * @dataProvider providerTestGetMarkedText
-	 */
-	public function testGetMarkedText( $name, $text, $inline, $expected ) {
+class TPSectionTest extends \MediaWikiUnitTestCase {
+	/** @dataProvider providerTestGetMarkedText */
+	public function testGetMarkedText(
+		string $name, string $text, bool $inline, string $expected
+	) {
 		$section = new TPSection();
 		$section->name = $name;
 		$section->text = $text;
@@ -23,10 +21,8 @@ class TPSectionTest extends PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expected, $output );
 	}
 
-	/**
-	 * @dataProvider providerTestGetTextWithVariables
-	 */
-	public function testGetTextWithVariables( $text, $expected ) {
+	/** @dataProvider providerTestGetTextWithVariables */
+	public function testGetTextWithVariables( string $text, string $expected ) {
 		$section = new TPSection();
 		$section->text = $text;
 
@@ -35,10 +31,8 @@ class TPSectionTest extends PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expected, $output );
 	}
 
-	/**
-	 * @dataProvider providerTestGetTextForTrans
-	 */
-	public function testGetTextForTrans( $text, $expected ) {
+	/** @dataProvider providerTestGetTextForTrans */
+	public function testGetTextForTrans( string $text, string $expected ) {
 		$section = new TPSection();
 		$section->text = $text;
 
