@@ -43,7 +43,7 @@ class PageTranslationHooks {
 	public static function renderTagPage( $parser, &$text, $state ) {
 		$title = $parser->getTitle();
 
-		if ( strpos( $text, '<translate>' ) !== false ) {
+		if ( preg_match( '~</?translate[ >]~', $text ) !== 0 ) {
 			try {
 				$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse();
 				$text = $parse->getTranslationPageText( null );
@@ -66,7 +66,7 @@ class PageTranslationHooks {
 		}
 
 		self::$renderingContext = true;
-		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+		[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
 		$name = $page->getPageDisplayTitle( $code );
 		if ( $name ) {
 			$name = $parser->recursivePreprocess( $name );
@@ -116,7 +116,7 @@ class PageTranslationHooks {
 		// For translation pages, parse plural, grammar etc with correct language,
 		// and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
-			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
 			$pageLang = Language::factory( $code );
 		}
 
@@ -577,16 +577,7 @@ class PageTranslationHooks {
 	 * @return true
 	 */
 	public static function tpSyntaxCheckForEditContent( $context, $content, $status, $summary ) {
-		if ( !$content instanceof TextContent ) {
-			return true; // whatever.
-		}
-
-		$text = $content->getNativeData();
-		// See T154500
-		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
-		$title = $context->getTitle();
-
-		$e = self::tpSyntaxError( $title, $text );
+		$e = self::tpSyntaxError( $context->getTitle(), $content );
 
 		if ( $e ) {
 			$msg = $e->getMsg();
@@ -599,25 +590,31 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/**
-	 * Returns any syntax error.
-	 * @param Title $title
-	 * @param string $text
-	 * @return null|TPException
-	 */
-	protected static function tpSyntaxError( $title, $text ) {
-		if ( strpos( $text, '<translate>' ) === false ) {
+	/** Returns any syntax error */
+	protected static function tpSyntaxError( ?Title $title, Content $content ): ?TPException {
+		if ( !$content instanceof TextContent || !$title ) {
+			return null;
+		}
+
+		$text = $content->getNativeData();
+
+		// See T154500
+		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
+
+		if ( preg_match( '~</?translate[ >]~', $text ) === 0 ) {
 			return null;
 		}
 
 		$page = TranslatablePage::newFromText( $title, $text );
+
+		$exception = null;
 		try {
 			$page->getParse();
-
-			return null;
 		} catch ( TPException $e ) {
-			return $e;
+			$exception = $e;
 		}
+
+		return $exception;
 	}
 
 	/**
@@ -638,24 +635,8 @@ class PageTranslationHooks {
 	public static function tpSyntaxCheck( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $status
 	) {
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-			// See T154500
-			$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
-		} else {
-			// Screw it, not interested
-			return true;
-		}
-
-		// Quick escape on normal pages
-		if ( strpos( $text, '<translate>' ) === false ) {
-			return true;
-		}
-
-		$page = TranslatablePage::newFromText( $wikiPage->getTitle(), $text );
-		try {
-			$page->getParse();
-		} catch ( TPException $e ) {
+		$e = self::tpSyntaxError( $wikiPage->getTitle(), $content );
+		if ( $e ) {
 			call_user_func_array( [ $status, 'fatal' ], $e->getMsg() );
 
 			return false;
@@ -696,7 +677,7 @@ class PageTranslationHooks {
 		}
 
 		// Quick escape on normal pages
-		if ( strpos( $text, '</translate>' ) === false ) {
+		if ( preg_match( '~</?translate[ >]~', $text ) === 0 ) {
 			return true;
 		}
 
@@ -739,7 +720,7 @@ class PageTranslationHooks {
 		}
 
 		// Quick escape on normal pages
-		if ( strpos( $text, '</translate>' ) === false ) {
+		if ( preg_match( '~</?translate[ >]~', $text ) === 0 ) {
 			return true;
 		}
 
@@ -923,7 +904,7 @@ class PageTranslationHooks {
 
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false && $page->getMarkedTag() ) {
-			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
 			$result = [
 				'tpt-target-page',
 				':' . $page->getTitle()->getPrefixedText(),
@@ -1070,7 +1051,7 @@ class PageTranslationHooks {
 			return;
 		}
 
-		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+		[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
 
 		// Get the translation percentage
 		$pers = $page->getTranslationPercentages();
