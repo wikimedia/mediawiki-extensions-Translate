@@ -11,6 +11,7 @@
  * @file
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Shell\Shell;
@@ -446,8 +447,6 @@ class ChangeSyncer {
 	 * @return int|bool Timestamp or false.
 	 */
 	public function getLastGoodChange( $title, $startTs = false ) {
-		global $wgTranslateFuzzyBotName;
-
 		$wikiTs = false;
 		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 		$revision = $revisionLookup->getRevisionByTitle( $title );
@@ -458,7 +457,7 @@ class ChangeSyncer {
 			}
 
 			$revUser = $revision->getUser( RevisionRecord::RAW );
-			if ( ( $revUser ? $revUser->getName() : '' ) === $wgTranslateFuzzyBotName ) {
+			if ( !$revUser || $revUser->equals( FuzzyBot::getUser() ) ) {
 				$revision = $revisionLookup->getPreviousRevision( $revision );
 				continue;
 			}

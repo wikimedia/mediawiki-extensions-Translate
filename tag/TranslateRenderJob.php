@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 
 /**
  * Job for updating translation pages when translation or template changes.
@@ -45,7 +46,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 
 		// Initialization
 		$title = $this->title;
-		list( , $code ) = TranslateUtils::figureMessage( $title->getPrefixedText() );
+		[ , $code ] = TranslateUtils::figureMessage( $title->getPrefixedText() );
 
 		// Return the actual translation page...
 		$page = TranslatablePage::isTranslationPage( $title );

@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
@@ -1082,7 +1083,7 @@ class MessageDefinitions {
 		foreach ( array_keys( $this->messages ) as $key ) {
 			if ( $namespace === false ) {
 				// pages are in format ex. "8:jan"
-				list( $tns, $tkey ) = explode( ':', $key, 2 );
+				[ $tns, $tkey ] = explode( ':', $key, 2 );
 				$title = Title::makeTitleSafe( $tns, $tkey );
 			} else {
 				$title = Title::makeTitleSafe( $namespace, $key );

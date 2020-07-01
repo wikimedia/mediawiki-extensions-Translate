@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+
 /**
  * @since 2012-11-01
  * @ingroup MessageGroup

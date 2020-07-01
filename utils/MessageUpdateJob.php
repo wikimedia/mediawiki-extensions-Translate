@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extensions\Translate\Utilities\TranslateReplaceTitle;
 
 /**
@@ -159,7 +160,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 			 * @var Title $sourceTitle
 			 * @var Title $replacementTitle
 			 */
-			list( $sourceTitle, $replacementTitle ) = $mTitle;
+			[ $sourceTitle, $replacementTitle ] = $mTitle;
 			$mv = new MovePage( $sourceTitle, $replacementTitle );
 
 			$status = $mv->move( $user, $renameSummary, false );
@@ -174,7 +175,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 				);
 			}
 
-			list( , $targetCode ) = TranslateUtils::figureMessage( $replacementTitle->getText() );
+			[ , $targetCode ] = TranslateUtils::figureMessage( $replacementTitle->getText() );
 			if ( !$newSourceTitle && $sourceMessageHandle->getCode() === $targetCode ) {
 				$newSourceTitle = $replacementTitle;
 			}

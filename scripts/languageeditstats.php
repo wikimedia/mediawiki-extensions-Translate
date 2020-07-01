@@ -11,6 +11,8 @@
  */
 
 // Standard boilerplate to define $IP
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
@@ -73,14 +75,13 @@ class Languageeditstats extends Maintenance {
 		 * Get counts for edits per language code after filtering out edits by FuzzyBot
 		 */
 		$codes = [];
-		global $wgTranslateFuzzyBotName;
 		foreach ( $rows as $_ ) {
-			// Filter out edits by $wgTranslateFuzzyBotName
-			if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) {
+			// Filter out edits by FuzzyBot
+			if ( $_->rc_user_text === FuzzyBot::getName() ) {
 				continue;
 			}
 
-			list( , $code ) = TranslateUtils::figureMessage( $_->rc_title );
+			[ , $code ] = TranslateUtils::figureMessage( $_->rc_title );
 
 			if ( !isset( $codes[$code] ) ) {
 				$codes[$code] = 0;

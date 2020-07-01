@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Hook\PageMoveCompleteHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
@@ -676,7 +677,7 @@ class TranslateHooks {
 	 */
 	public static function addConfig( array &$vars, OutputPage $out ) {
 		$title = $out->getTitle();
-		list( $alias, ) = MediaWikiServices::getInstance()
+		[ $alias, ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $title->getText() );
 
 		if ( $title->isSpecialPage()
@@ -790,7 +791,7 @@ class TranslateHooks {
 			return true;
 		}
 
-		list( $name, $subpage ) = MediaWikiServices::getInstance()
+		[ $name, $subpage ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $target->getDBkey() );
 		if ( $name !== 'MyLanguage' ) {
 			return true;
@@ -1090,8 +1091,8 @@ class TranslateHooks {
 			return true;
 		}
 
-		// Don't bother validating if fuzzybot or translation admin are saving.
-		if ( $user->isAllowed( 'translate-manage' ) || $user->getName() === \FuzzyBot::getName() ) {
+		// Don't bother validating if FuzzyBot or translation admin are saving.
+		if ( $user->isAllowed( 'translate-manage' ) || $user->equals( FuzzyBot::getUser() ) ) {
 			return true;
 		}
 

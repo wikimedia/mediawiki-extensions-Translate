@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+
 /**
  * Logic for handling automatic message group state changes
  *
@@ -128,7 +130,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	 */
 	public static function getNewState( $stats, $transitions ) {
 		foreach ( $transitions as $transition ) {
-			list( $newState, $conds ) = $transition;
+			[ $newState, $conds ] = $transition;
 			$match = true;
 
 			foreach ( $conds as $type => $cond ) {

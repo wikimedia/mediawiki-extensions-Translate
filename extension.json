@@ -108,7 +108,6 @@
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FileBasedMessageGroupLoader": "messagegroups/loaders/FileBasedMessageGroupLoader.php",
 		"FlatPhpFFS": "ffs/FlatPhpFFS.php",
-		"FuzzyBot": "utils/FuzzyBot.php",
 		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
 		"GettextDocumentationAid": "translationaids/GettextDocumentationAid.php",
 		"GettextFFS": "ffs/GettextFFS.php",

@@ -10,6 +10,7 @@
  */
 
 // Standard boilerplate to define $IP
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -148,7 +149,7 @@ class FuzzyScript {
 		$this->reportProgress( "Found $count pages to update.", 'pagecount' );
 
 		foreach ( $msgs as $phpIsStupid ) {
-			list( $title, $text ) = $phpIsStupid;
+			[ $title, $text ] = $phpIsStupid;
 			$this->updateMessage( $title, TRANSLATE_FUZZY . $text, $this->dryrun, $this->comment );
 			unset( $phpIsStupid );
 		}

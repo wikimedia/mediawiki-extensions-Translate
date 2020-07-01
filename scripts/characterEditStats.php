@@ -10,6 +10,8 @@
  */
 
 // Standard boilerplate to define $IP
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
@@ -44,7 +46,7 @@ class CharacterEditStats extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgTranslateFuzzyBotName, $wgSitename, $wgTranslateMessageNamespaces;
+		global $wgSitename, $wgTranslateMessageNamespaces;
 
 		$days = (int)$this->getOption( 'days', 30 );
 		$top = (int)$this->getOption( 'top', -1 );
@@ -69,8 +71,8 @@ class CharacterEditStats extends Maintenance {
 		$codes = [];
 
 		foreach ( $rows as $_ ) {
-			// Filter out edits by $wgTranslateFuzzyBotName
-			if ( $_->user_text === $wgTranslateFuzzyBotName ) {
+			// Filter out edits by FuzzyBot
+			if ( $_->user_text === FuzzyBot::getName() ) {
 				continue;
 			}
 

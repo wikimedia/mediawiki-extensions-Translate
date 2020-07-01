@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -185,7 +186,7 @@ class PageTranslationHooks {
 		$summary, $minor, $flags, MessageHandle $handle
 	) {
 		// FuzzyBot may do some duplicate work already worked on by other jobs
-		if ( FuzzyBot::getName() === $user->getName() ) {
+		if ( $user->equals( FuzzyBot::getUser() ) ) {
 			return true;
 		}
 

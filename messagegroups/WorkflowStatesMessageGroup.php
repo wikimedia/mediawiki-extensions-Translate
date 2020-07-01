@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+
 /**
  * @ingroup MessageGroup
  */
@@ -67,7 +69,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 			} else {
 				// Use the wiki translation as definition if available.
 				// getContents returns array( content, last author )
-				list( $content, ) = $defs[$key];
+				[ $content, ] = $defs[$key];
 				$keys[$key] = $content;
 			}
 		}
