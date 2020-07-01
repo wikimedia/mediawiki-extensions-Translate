@@ -1,25 +1,19 @@
 <?php
-
-/**
- * A wrapper response class for validation responses.
- *
- * @file
- * @author Abijeet Patro
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator;
 
 use IContextSource;
 use InvalidArgumentException;
-use Language;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
 /**
  * Container for validation issues returned by MessageValidator.
  *
+ * @author Abijeet Patro
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2020.06 (originally 2019.06)
  */
 class ValidationResult {
@@ -71,15 +65,16 @@ class ValidationResult {
 
 	private function expandMessages( IContextSource $context, ValidationIssues $issues ): array {
 		$expandMessage = function ( ValidationIssue $issue ) use ( $context ): string {
-			$params = $this->fixMessageParams( $context->getLanguage(), $issue->messageParams() );
+			$params = $this->fixMessageParams( $context, $issue->messageParams() );
 			return $context->msg( $issue->messageKey() )->params( $params )->parse();
 		};
 
 		return array_map( $expandMessage, iterator_to_array( $issues ) );
 	}
 
-	private function fixMessageParams( Language $lang, array $params ): array {
+	private function fixMessageParams( IContextSource $context, array $params ): array {
 		$out = [];
+		$lang = $context->getLanguage();
 
 		foreach ( $params as $param ) {
 			if ( !is_array( $param ) ) {
@@ -95,6 +90,10 @@ class ValidationResult {
 					$out[] = $lang->commaList( $value );
 				} elseif ( $type === 'PLAIN' ) {
 					$out[] = wfEscapeWikiText( $value );
+				} elseif ( $type === 'MESSAGE' ) {
+					$messageKey = array_shift( $value );
+					$messageParams = $this->fixMessageParams( $context, $value );
+					$out[] = $context->msg( $messageKey )->params( $messageParams );
 				} else {
 					throw new InvalidArgumentException( "Unknown type $type" );
 				}

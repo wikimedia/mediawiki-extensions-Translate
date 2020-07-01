@@ -1,9 +1,5 @@
 <?php
-/**
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator;
 
@@ -16,9 +12,9 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexVa
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\IosVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator;
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiTimeListValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
@@ -33,12 +29,13 @@ use RuntimeException;
 
 /**
  * A factory class used to instantiate instances of pre-provided Validators
+ *
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
  * @since 2019.06
  */
 class ValidatorFactory {
-	/**
-	 * @var string[]
-	 */
+	/** @var string[] */
 	protected static $validators = [
 		'BraceBalance' => BraceBalanceValidator::class,
 		'EscapeCharacter' => EscapeCharacterValidator::class,
@@ -48,9 +45,11 @@ class ValidatorFactory {
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'IosVariable' => IosVariableValidator::class,
 		'MatchSet' => MatchSetValidator::class,
-		'MediaWikiMisc' => MediaWikiMiscValidator::class,
+		// TODO: Remove this BC alias
+		'MediaWikiMisc' => MediaWikiTimeListValidator::class,
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
+		'MediaWikiTimeList' => MediaWikiTimeListValidator::class,
 		'Newline' => NewlineValidator::class,
 		'NumericalParameter' => NumericalParameterValidator::class,
 		'Printf' => PrintfValidator::class,

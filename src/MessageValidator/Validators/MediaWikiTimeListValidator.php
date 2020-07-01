@@ -1,0 +1,90 @@
+<?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
+
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use TMessage;
+
+/**
+ * "Time list" message format validation for MediaWiki.
+ *
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
+ * @since 2019.06
+ */
+class MediaWikiTimeListValidator implements MessageValidator {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
+
+		// FIXME: Use the new keymatch feature for this
+		$timeList = [ 'protect-expiry-options', 'ipboptions' ];
+		// FIXME: for unit tests
+		$timeList[] = 'key';
+
+		$key = $message->key();
+		if ( !in_array( strtolower( $key ), $timeList, true ) ) {
+			return $issues;
+		}
+
+		$definition = $message->definition();
+		$translation = $message->translation();
+		$defArray = explode( ',', $definition );
+		$traArray = explode( ',', $translation );
+
+		$defCount = count( $defArray );
+		$traCount = count( $traArray );
+		if ( $defCount !== $traCount ) {
+			$issue = new ValidationIssue(
+				'miscmw',
+				'timelist-count',
+				'translate-checks-format',
+				[
+					'MESSAGE',
+					[
+						'translate-checks-parametersnotequal',
+						[ 'COUNT', $traCount ],
+						[ 'COUNT', $defCount ],
+					]
+				]
+			);
+			$issues->add( $issue );
+
+			return $issues;
+		}
+
+		for ( $i = 0; $i < $defCount; $i++ ) {
+			$defItems = array_map( 'trim', explode( ':', $defArray[$i] ) );
+			$traItems = array_map( 'trim', explode( ':', $traArray[$i] ) );
+
+			if ( count( $traItems ) !== 2 ) {
+				$issue = new ValidationIssue(
+					'miscmw',
+					'timelist-format',
+					'translate-checks-format',
+					[ 'MESSAGE', [ 'translate-checks-malformed', $traArray[$i] ] ]
+				);
+
+				$issues->add( $issue );
+				continue;
+			}
+
+			if ( $traItems[1] !== $defItems[1] ) {
+				$issue = new ValidationIssue(
+					'miscmw',
+					'timelist-format-value',
+					'translate-checks-format',
+					// FIXME: i18n missing.
+					[ "<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>" ]
+				);
+
+				$issues->add( $issue );
+				continue;
+			}
+		}
+
+		return $issues;
+	}
+}
