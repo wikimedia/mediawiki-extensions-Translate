@@ -1,68 +1,48 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator;
 
 /**
+ * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator
  */
-class MatchSetValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'key';
-		$code = 'en-gb';
-		$message = new FatMessage( $key, 'rtl' );
-		$message->setTranslation( 'ltr' );
-
-		yield [
-			[
-				'values' => [ 'rtl', 'Ltr' ],
-			],
-			$message,
-			$code,
-			[ 'value-not-present', 'invalid', $key, $code ]
-		];
-
-		yield [
-			[
-				'values' => [ 'rtl', 'Ltr' ],
-				'caseSensitive' => false
-			],
-			$message,
-			$code,
-			null
-		];
-
-		yield [
-			[
-				'values' => [ 'rtl', 'etc' ]
-			],
-			$message,
-			$code,
-			[ 'value-not-present', 'invalid', $key, $code ]
-		];
+class MatchSetValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$constructorParams = array_shift( $params );
+		$validator = new MatchSetValidator( $constructorParams );
+		$this->runValidatorTests( $validator, 'value-not-present', ...$params );
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( array $config, TMessage $message, $code, $expected ) {
-		$validator = new MatchSetValidator( $config );
+	public function provideTestCases() {
+		yield [
+			[ 'values' => [ 'rtl', 'Ltr' ] ],
+			'rtl',
+			'ltr',
+			[ 'invalid' ],
+			'Wrong case (case-sensitive) is an issue'
+		];
 
-		$notice = [];
-		$validator->validate( $message, $code, $notice );
+		yield [
+			[ 'values' => [ 'rtl', 'Ltr' ], 'caseSensitive' => false ],
+			'rtl',
+			'ltr',
+			[],
+			'Matching value (case-insensitive) is not an issue'
+		];
 
-		if ( $expected === null ) {
-			$this->assertEmpty( $notice );
-		} else {
-			$this->assertSame( $expected, $notice[ $message->key() ][ 0 ][ 0 ] );
-		}
+		yield [
+			[ 'values' => [ 'rtl', 'etc' ] ],
+			'rtl',
+			'ltr',
+			[ 'invalid' ],
+			'Wrong value (case-sensitive) is an issue'
+		];
 	}
 
 	public function testEmptyValues() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		new MatchSetValidator( [
 			'values' => [],
 		] );

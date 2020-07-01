@@ -1,32 +1,28 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use InvalidArgumentException;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
  * Ensures that the translation for a message matches a value from a list.
+ *
+ * @license GPL-2.0-or-later
  * @since 2019.12
  */
-class MatchSetValidator implements Validator {
-	/**
-	 * @var string[]
-	 */
+class MatchSetValidator implements MessageValidator {
+	/** @var string[] */
 	protected $possibleValues;
 
-	/**
-	 * @var string[]
-	 */
+	/** @var string[] */
 	protected $normalizedValues;
 
-	/**
-	 * @var bool
-	 */
+	/** @var bool */
 	protected $caseSensitive;
 
 	public function __construct( array $params ) {
@@ -34,7 +30,7 @@ class MatchSetValidator implements Validator {
 		$this->caseSensitive = (bool)( $params['caseSensitive'] ?? true );
 
 		if ( $this->possibleValues === [] ) {
-			throw new \InvalidArgumentException( 'No values provided for MatchSet validator.' );
+			throw new InvalidArgumentException( 'No values provided for MatchSet validator.' );
 		}
 
 		if ( $this->caseSensitive ) {
@@ -44,18 +40,28 @@ class MatchSetValidator implements Validator {
 		}
 	}
 
-	public function validate( TMessage $message, $code, array &$notices ) : void {
-		$translation =
-			$this->caseSensitive ? $message->translation() : strtolower( $message->translation() );
-		$key = $message->key();
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
+
+		$translation = $message->translation();
+		if ( $this->caseSensitive ) {
+			$translation = strtolower( $translation );
+		}
 
 		if ( array_search( $translation, $this->normalizedValues, true ) === false ) {
-			$notices[$key][] = [
-				[ 'value-not-present', 'invalid', $key, $code ],
+			$issue = new ValidationIssue(
+				'value-not-present',
+				'invalid',
 				'translate-checks-value-not-present',
-				[ 'PLAIN-PARAMS', $this->possibleValues ],
-				[ 'COUNT', count( $this->possibleValues ) ]
-			];
+				[
+					[ 'PLAIN-PARAMS', $this->possibleValues ],
+					[ 'COUNT', count( $this->possibleValues ) ]
+				]
+			);
+
+			$issues->add( $issue );
 		}
+
+		return $issues;
 	}
 }
