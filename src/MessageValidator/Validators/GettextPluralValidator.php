@@ -1,27 +1,28 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\Utilities\GettextPlural;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
+ * @license GPL-2.0-or-later
  * @since 2019.09
  */
-class GettextPluralValidator implements Validator {
-	public function validate( TMessage $message, $code, array &$notices ) {
-		$pluralRule = GettextPlural::getPluralRule( $code );
+class GettextPluralValidator implements MessageValidator {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
+
+		$pluralRule = GettextPlural::getPluralRule( $targetLanguage );
 		// Skip validation for languages for which we do not know the plural rule
 		if ( !$pluralRule ) {
-			return;
+			return $issues;
 		}
 
-		$key = $message->key();
 		$definition = $message->definition();
 		$translation = $message->translation();
 		$expectedPluralCount = GettextPlural::getPluralCount( $pluralRule );
@@ -34,37 +35,38 @@ class GettextPluralValidator implements Validator {
 			$expectedPluralCount
 		);
 
-		if ( $presence === 'not-applicable' ) {
-			// Plural is not present in translation, but that is fine
-
-			return;
+		if ( $presence === 'ok' ) {
+			[ $msgcode, $data ] = $this->pluralFormCountCheck( $translation, $expectedPluralCount );
+			if ( $msgcode === 'invalid-count' ) {
+				$issue = new ValidationIssue(
+					'plural',
+					'forms',
+					'translate-checks-gettext-plural-count',
+					[
+						[ 'COUNT', $expectedPluralCount ],
+						[ 'COUNT', $data[ 'count' ] ],
+					]
+				);
+				$issues->add( $issue );
+			}
 		} elseif ( $presence === 'missing' ) {
-			$notices[$key][] = [
-				// Using same check keys as MediaWikiPluralValidator
-				[ 'plural', 'missing', $key, $code ],
+			$issue = new ValidationIssue(
+				'plural',
+				'missing',
 				'translate-checks-gettext-plural-missing'
-			];
-
-			return;
+			);
+			$issues->add( $issue );
 		} elseif ( $presence === 'unsupported' ) {
-			$notices[$key][] = [
-				[ 'plural', 'unsupported', $key, $code ],
+			$issue = new ValidationIssue(
+				'plural',
+				'unsupported',
 				'translate-checks-gettext-plural-unsupported'
-			];
-
-			return;
+			);
+			$issues->add( $issue );
 		}
+		// else not-applicable: Plural is not present in translation, but that is fine
 
-		list( $msgcode, $data ) = $this->pluralFormCountCheck( $translation, $expectedPluralCount );
-		if ( $msgcode === 'invalid-count' ) {
-			$notices[$key][] = [
-				// Using same check keys as MediaWikiPluralValidator
-				[ 'plural', 'forms', $key, $code ],
-				'translate-checks-gettext-plural-count',
-				[ 'COUNT', $expectedPluralCount ],
-				[ 'COUNT', $data[ 'count' ] ],
-			];
-		}
+		return $issues;
 	}
 
 	private function pluralPresenceCheck(
@@ -90,7 +92,7 @@ class GettextPluralValidator implements Validator {
 	}
 
 	private function pluralFormCountCheck( $text, $expectedPluralCount ) {
-		list( , $instanceMap ) = GettextPlural::parsePluralForms( $text );
+		[ , $instanceMap ] = GettextPlural::parsePluralForms( $text );
 
 		foreach ( $instanceMap as $forms ) {
 			$formsCount = count( $forms );
