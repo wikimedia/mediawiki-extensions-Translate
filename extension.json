@@ -289,10 +289,7 @@
 			"SpecialTranslate::tabify",
 			"SpecialManageGroups::tabify"
 		],
-		"GetPreferences": [
-			"TranslatePreferences::onGetPreferences",
-			"TranslatePreferences::translationAssistLanguages"
-		],
+		"GetPreferences": "TranslatePreferences::translationAssistLanguages",
 		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
 		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
 		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
@@ -884,11 +881,6 @@
 		"TranslateFuzzyBotName": {
 			"value": "FuzzyBot",
 			"description": "Name of the bot which will invalidate translations and do maintenance for page translation feature. Also used for importing messages from external sources.",
-			"public": true
-		},
-		"TranslateNewsletterPreference": {
-			"value": false,
-			"description": "Add a preference 'Do not send me email newsletters' in the email preferences.",
 			"public": true
 		},
 		"TranslateLanguageFallbacks": {

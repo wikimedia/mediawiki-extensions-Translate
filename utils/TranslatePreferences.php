@@ -14,36 +14,6 @@
  */
 class TranslatePreferences {
 	/**
-	 * Add 'translate-pref-nonewsletter' preference.
-	 * This is most probably specific to translatewiki.net. Can be enabled
-	 * with $wgTranslateNewsletterPreference.
-	 * @param User $user
-	 * @param array &$preferences
-	 * @return bool
-	 */
-	public static function onGetPreferences( User $user, array &$preferences ) {
-		global $wgTranslateNewsletterPreference;
-
-		if ( !$wgTranslateNewsletterPreference ) {
-			return true;
-		}
-
-		global $wgEnableEmail;
-
-		// Only show if email is enabled and user has a confirmed email address.
-		if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
-			// 'translate-pref-nonewsletter' is used as opt-out for
-			// users with a confirmed email address
-			$preferences['translate-nonewsletter'] = [
-				'type' => 'toggle',
-				'section' => 'personal/email',
-				'label-message' => 'translate-pref-nonewsletter'
-			];
-
-		}
-	}
-
-	/**
 	 * Add 'translate-editlangs' preference.
 	 * These are the languages also shown when translating.
 	 *
