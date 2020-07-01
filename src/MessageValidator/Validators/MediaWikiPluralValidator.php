@@ -1,60 +1,52 @@
 <?php
-/**
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use Language;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use MediaWiki\MediaWikiServices;
+use Parser;
+use ParserOptions;
+use PPFrame;
 use TMessage;
+use User;
 
 /**
- * Handles plural validation for MediaWiki text
+ * Handles plural validation for MediaWiki inline plural syntax.
+ *
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
  * @since 2019.06
  */
-class MediaWikiPluralValidator implements Validator {
-	public function validate( TMessage $message, $code, array &$notices ) {
-		$this->pluralCheck( $message, $code, $notices );
-		$this->pluralFormsCheck( $message, $code, $notices );
+class MediaWikiPluralValidator implements MessageValidator {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
+		$this->pluralCheck( $message, $issues );
+		$this->pluralFormsCheck( $message, $targetLanguage, $issues );
+
+		return $issues;
 	}
 
-	/**
-	 * Checks if the translation doesn't use plural while the definition has one.
-	 *
-	 * @param TMessage $message
-	 * @param string $code Language code of the translations.
-	 * @param array &$notices Array where warnings / errors are appended to.
-	 */
-	protected function pluralCheck( TMessage $message, $code, &$notices ) {
-		$key = $message->key();
+	private function pluralCheck( TMessage $message, ValidationIssues $issues ): void {
 		$definition = $message->definition();
 		$translation = $message->translation();
 
-		$subcheck = 'missing';
 		if (
 			stripos( $definition, '{{plural:' ) !== false &&
 			stripos( $translation, '{{plural:' ) === false
 		) {
-			$notices[$key][] = [
-				[ 'plural', $subcheck, $key, $code ],
-				'translate-checks-plural',
-			];
+			$issue = new ValidationIssue( 'plural', 'missing', 'translate-checks-plural' );
+			$issues->add( $issue );
 		}
 	}
 
-	/**
-	 * Checks if the translation uses too many plural forms
-	 * @param TMessage $message
-	 * @param string $code
-	 * @param array &$notices
-	 */
-	protected function pluralFormsCheck( TMessage $message, $code, &$notices ) {
-		$key = $message->key();
+	protected function pluralFormsCheck(
+		TMessage $message, string $code, ValidationIssues $issues
+	): void {
 		$translation = $message->translation();
-
 		// Are there any plural forms for this language in this message?
 		if ( stripos( $translation, '{{plural:' ) === false ) {
 			return;
@@ -68,45 +60,42 @@ class MediaWikiPluralValidator implements Validator {
 			$provided = count( $forms );
 
 			if ( $provided > $allowed ) {
-				$notices[$key][] = [
-					[ 'plural', 'forms', $key, $code ],
+				$issue = new ValidationIssue(
+					'plural',
+					'forms',
 					'translate-checks-plural-forms',
-					[ 'COUNT', $provided ],
-					[ 'COUNT', $allowed ],
-				];
+					[
+						[ 'COUNT', $provided ],
+						[ 'COUNT', $allowed ],
+					]
+				);
+
+				$issues->add( $issue );
 			}
 
 			// Are the last two forms identical?
 			if ( $provided > 1 && $forms[$provided - 1] === $forms[$provided - 2] ) {
-				$notices[$key][] = [
-					[ 'plural', 'dupe', $key, $code ],
-					'translate-checks-plural-dupe'
-				];
+				$issue = new ValidationIssue( 'plural',	'dupe', 'translate-checks-plural-dupe' );
+				$issues->add( $issue );
 			}
 		}
 	}
 
-	/**
-	 * Returns the number of plural forms %MediaWiki supports
-	 * for a language.
-	 * @param string $code Language code
-	 * @return int
-	 */
-	public static function getPluralFormCount( $code ) {
-		$forms = \Language::factory( $code )->getPluralRules();
+	/** Returns the number of plural forms %MediaWiki supports for a language. */
+	public static function getPluralFormCount( string $code ): int {
+		$forms = Language::factory( $code )->getPluralRules();
 
 		// +1 for the 'other' form
 		return count( $forms ) + 1;
 	}
 
 	/**
-	 * Ugly home made probably awfully slow looping parser
-	 * that parses {{PLURAL}} instances from message and
-	 * returns array of invokations having array of forms.
-	 * @param string $translation
+	 * Ugly home made probably awfully slow looping parser that parses {{PLURAL}} instances from
+	 * a message and returns array of invocations having array of forms.
+	 *
 	 * @return array[]
 	 */
-	public static function getPluralForms( $translation ) {
+	public static function getPluralForms( string $translation ): array {
 		// Stores the forms from plural invocations
 		$plurals = [];
 
@@ -117,7 +106,7 @@ class MediaWikiPluralValidator implements Validator {
 				// The first arg is the number, we skip it
 				if ( $index !== 0 ) {
 					// Collect the raw text
-					$forms[] = $frame->expand( $form, \PPFrame::RECOVER_ORIG );
+					$forms[] = $frame->expand( $form, PPFrame::RECOVER_ORIG );
 					// Expand the text to process embedded plurals
 					$frame->expand( $form );
 				}
@@ -132,24 +121,19 @@ class MediaWikiPluralValidator implements Validator {
 		// Load the default magic words etc now.
 		$parser->firstCallInit();
 		// So that they don't overrider our own callback
-		$parser->setFunctionHook( 'plural', $cb, \Parser::SFH_NO_HASH | \Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'plural', $cb, Parser::SFH_NO_HASH | Parser::SFH_OBJECT_ARGS );
 
 		// Setup things needed for preprocess
 		$title = null;
-		$options = new \ParserOptions( new \User(), \Language::factory( 'en' ) );
+		$options = new ParserOptions( new User(), Language::factory( 'en' ) );
 
 		$parser->preprocess( $translation, $title, $options );
 
 		return $plurals;
 	}
 
-	/**
-	 * Imitiates the core plural form handling by removing
-	 * plural forms that start with explicit number.
-	 * @param array $forms
-	 * @return array
-	 */
-	public static function removeExplicitPluralForms( array $forms ) {
+	/** Remove forms that start with an explicit number. */
+	public static function removeExplicitPluralForms( array $forms ): array {
 		// Handle explicit 0= and 1= forms
 		foreach ( $forms as $index => $form ) {
 			if ( preg_match( '/^[0-9]+=/', $form ) ) {

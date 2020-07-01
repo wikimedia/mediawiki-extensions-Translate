@@ -1,22 +1,15 @@
 <?php
-/**
- * Test for MediaWiki related validators.
- *
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 
 /**
- * @group TranslationValidators
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator
  */
-class MediaWikiTranslateValidatorTest extends PHPUnit\Framework\TestCase {
-
-	/**
-	 * @dataProvider getPluralFormCountProvider
-	 */
+class MediaWikiPluralValidatorTest extends PHPUnit\Framework\TestCase {
+	/** @dataProvider getPluralFormCountProvider */
 	public function testGetPluralFormCount( $expected, $code, $comment ) {
 		$provided = MediaWikiPluralValidator::getPluralFormCount( $code );
 		$this->assertEquals( $expected, $provided, $comment );
@@ -28,9 +21,7 @@ class MediaWikiTranslateValidatorTest extends PHPUnit\Framework\TestCase {
 		yield [ 5, 'br', 'Breton has five plural forms' ];
 	}
 
-	/**
-	 * @dataProvider getPluralFormsProvider
-	 */
+	/** @dataProvider getPluralFormsProvider */
 	public function testGetPluralForms( $expected, $string, $comment ) {
 		$provided = MediaWikiPluralValidator::getPluralForms( $string );
 		$this->assertSame( $expected, $provided, $comment );
@@ -90,9 +81,7 @@ class MediaWikiTranslateValidatorTest extends PHPUnit\Framework\TestCase {
 		];
 	}
 
-	/**
-	 * @dataProvider removeExplicitPluralFormsProvider
-	 */
+	/** @dataProvider removeExplicitPluralFormsProvider */
 	public function testRemoveExplicitPluralForms( $expected, $forms, $comment ) {
 		$provided = MediaWikiPluralValidator::removeExplicitPluralForms( $forms );
 		$this->assertEquals( $expected, $provided, $comment );
