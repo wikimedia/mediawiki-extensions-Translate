@@ -1,60 +1,38 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator;
 
 /**
+ * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator
  */
-class MediaWikiPageNameValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'test';
-		$code = 'en-gb';
+class MediaWikiPageNameValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new MediaWikiPageNameValidator(), 'pagename', ...$params );
+	}
 
+	public function provideTestCases() {
 		yield [
 			'{{ns:project}}:hello',
 			'{{ns:hello}}:hello',
-			$key,
-			$code,
-			[ 'pagename', 'namespace', $key, $code ]
+			[ 'namespace' ],
+			'Changed namespace is an issue'
 		];
 
 		yield [
 			'help:me',
 			'help:me',
-			$key,
-			$code,
-			null
+			[],
+			'Unchanged namespace is not an issue'
 		];
 
 		yield [
 			'{{ns:project}}:hello',
 			'{{ns:project}}:Hey!',
-			$key,
-			$code,
-			null
+			[],
+			'Unchanged namespace is not an issue'
 		];
-	}
-
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( $messageText, $translation, $key, $code, $expected ) {
-		$message = new FatMessage( $key, $messageText );
-		$message->setTranslation( $translation );
-
-		$validator = new MediaWikiPageNameValidator();
-
-		$notice = [];
-		$validator->validate( $message, $code, $notice );
-
-		if ( $expected === null ) {
-			$this->assertEmpty( $notice );
-		} else {
-			$this->assertSame( $expected, $notice[ $message->key() ][ 0 ][ 0 ] );
-		}
 	}
 }
