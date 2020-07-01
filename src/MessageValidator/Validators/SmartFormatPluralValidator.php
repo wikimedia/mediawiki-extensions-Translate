@@ -1,30 +1,31 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
 use Insertable;
 use InsertablesSuggester;
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural;
 use MediaWiki\Extensions\Translate\Utilities\UnicodePlural;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
+ * @license GPL-2.0-or-later
  * @since 2019.11
  */
-class SmartFormatPluralValidator implements Validator, InsertablesSuggester {
-	public function validate( TMessage $message, $code, array &$notices ) : void {
-		$expectedKeywords = UnicodePlural::getPluralKeywords( $code );
+class SmartFormatPluralValidator implements MessageValidator, InsertablesSuggester {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
+
+		$expectedKeywords = UnicodePlural::getPluralKeywords( $targetLanguage );
 		// Skip validation for languages for which we do not know the plural rule
 		if ( $expectedKeywords === null ) {
-			return;
+			return $issues;
 		}
 
-		$key = $message->key();
 		$definition = $message->definition();
 		$translation = $message->translation();
 		$expectedPluralCount = count( $expectedKeywords );
@@ -36,11 +37,16 @@ class SmartFormatPluralValidator implements Validator, InsertablesSuggester {
 		);
 
 		foreach ( $unsupportedVariables as $unsupportedVariable ) {
-			$notices[$key][] = [
-				[ 'plural', 'unsupported', $key, $code ],
+			$issue = new ValidationIssue(
+				'plural',
+				'unsupported',
 				'translate-checks-smartformat-plural-unsupported',
-				[ 'PLAIN', '{' . $unsupportedVariable . '}' ],
-			];
+				[
+					[ 'PLAIN', '{' . $unsupportedVariable . '}' ],
+				]
+			);
+
+			$issues->add( $issue );
 		}
 
 		if ( $expectedPluralCount > 1 ) {
@@ -49,11 +55,16 @@ class SmartFormatPluralValidator implements Validator, InsertablesSuggester {
 			);
 
 			foreach ( $missingVariables as $missingVariable ) {
-				$notices[$key][] = [
-					[ 'plural', 'missing', $key, $code ],
+				$issue = new ValidationIssue(
+					'plural',
+					'missing',
 					'translate-checks-smartformat-plural-missing',
-					[ 'PLAIN', '{' . $missingVariable . '}' ],
-				];
+					[
+						[ 'PLAIN', '{' . $missingVariable . '}' ],
+					]
+				);
+
+				$issues->add( $issue );
 			}
 		}
 
@@ -63,22 +74,25 @@ class SmartFormatPluralValidator implements Validator, InsertablesSuggester {
 			foreach ( $pluralInstances as $pluralInstance ) {
 				$actualPluralCount = count( $pluralInstance[ 'forms' ] );
 				if ( $actualPluralCount !== $expectedPluralCount ) {
-					$notices[$key][] = [
-						// Using same check keys as MediaWikiPluralValidator
-						[ 'plural', 'forms', $key, $code ],
+					$issue = new ValidationIssue(
+						'plural',
+						'forms',
 						'translate-checks-smartformat-plural-count',
-						[ 'COUNT', $expectedPluralCount ],
-						[ 'COUNT', $actualPluralCount ],
-						[ 'PLAIN', $pluralInstance[ 'original' ] ],
-					];
+						[
+							[ 'COUNT', $expectedPluralCount ],
+							[ 'COUNT', $actualPluralCount ],
+							[ 'PLAIN', $pluralInstance[ 'original' ] ],
+						]
+					);
+
+					$issues->add( $issue );
 				}
 			}
 		}
+
+		return $issues;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
 	public function getInsertables( $text ) : array {
 		$definitionPlurals = SmartFormatPlural::getPluralInstances( $text );
 		$insertables = [];

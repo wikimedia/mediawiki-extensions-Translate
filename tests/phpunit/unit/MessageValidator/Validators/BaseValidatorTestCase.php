@@ -22,7 +22,8 @@ class BaseValidatorTestCase extends MediaWikiUnitTestCase {
 		$message = new FatMessage( 'key', $definition );
 		$message->setTranslation( $translation );
 
-		$actual = $validator->getIssues( $message, 'en-gb' );
+		// Target language code should have valid CLDR plural rules
+		$actual = $validator->getIssues( $message, 'fr' );
 		foreach ( $actual as $issue ) {
 			/** @var ValidationIssue $issue */
 			$this->assertSame( $type, $issue->type(), $msg );

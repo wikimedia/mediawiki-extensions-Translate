@@ -1,67 +1,61 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
 
 /**
+ * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator
  */
-class SmartFormatPluralValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'k';
-		$code = 'en';
-		$message = new FatMessage( $key, '{0:message|messages}' );
-		$message->setTranslation( '{1:test|tests}{0:message|messages}' );
+class SmartFormatPluralValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new SmartFormatPluralValidator(), 'plural', ...$params );
+	}
+
+	public function provideTestCases() {
 		yield [
-			$message,
-			$code,
-			[ 'plural', 'unsupported', $key, $code ]
+			'{0:message|messages}',
+			'{1:test|tests}{0:message|messages}',
+			[ 'unsupported' ],
+			'Using plural on an unsupported parameter is an issue'
 		];
 
-		$code = 'en';
-		$message = new FatMessage( $key, '{0:message|messages}' );
-		$message->setTranslation( 'translation' );
 		yield [
-			$message,
-			$code,
-			[ 'plural', 'missing', $key, $code ]
+			'{0:message|messages}',
+			'translation',
+			[ 'missing' ],
+			'Missing plural on an unsupported parameter is an issue'
 		];
 
-		$code = 'en';
-		$message = new FatMessage( $key, '{0:message|messages}' );
-		$message->setTranslation( '{0:message|messages|messages}' );
 		yield [
-			$message,
-			$code,
-			[ 'plural', 'forms', $key, $code ]
+			'{0:message|messages}',
+			'{0:message|messages|messages}',
+			[ 'forms' ],
+			'Extra plural form is an issue'
 		];
 
-		$code = 'en';
-		$message = new FatMessage( $key, '{0:message|messages}' );
-		$message->setTranslation( '{0:message|messages}' );
 		yield [
-			$message,
-			$code,
-			null
+			'{0:message|messages}',
+			'{0:message|messages}',
+			[],
+			'Correct plural forms are not an issue'
 		];
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
+	/** @dataProvider provideInsertable */
+	public function testInsertable( $text, $displayText, $preText = '', $postText = '' ) {
 		$validator = new SmartFormatPluralValidator();
 
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
+		$insertables = $validator->getInsertables( $text );
 
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
+		if ( $displayText === null ) {
+			$this->assertSame( [], $insertables );
 		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
+			$this->assertCount( 1, $insertables );
+			$this->assertSame( $insertables[0]->getPreText(), $preText );
+			$this->assertSame( $insertables[0]->getPostText(), $postText );
+			$this->assertSame( $insertables[0]->getDisplayText(), $displayText );
 		}
 	}
 
@@ -77,23 +71,5 @@ class SmartFormatPluralValidatorTest extends MediaWikiUnitTestCase {
 			'contains no pluralization',
 			null
 		];
-	}
-
-	/**
-	 * @dataProvider provideInsertable
-	 */
-	public function testInsertable( $text, $displayText, $preText = '', $postText = '' ) {
-		$validator = new SmartFormatPluralValidator();
-
-		$insertables = $validator->getInsertables( $text );
-
-		if ( $displayText === null ) {
-			$this->assertSame( [], $insertables );
-		} else {
-			$this->assertCount( 1, $insertables );
-			$this->assertSame( $insertables[0]->getPreText(), $preText );
-			$this->assertSame( $insertables[0]->getPostText(), $postText );
-			$this->assertSame( $insertables[0]->getDisplayText(), $displayText );
-		}
 	}
 }
