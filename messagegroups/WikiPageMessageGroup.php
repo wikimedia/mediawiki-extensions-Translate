@@ -178,8 +178,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		$validator = new MessageValidator( $this->getId() );
 		$validator->setValidators( [
 			[ 'id' => 'MediaWikiPlural' ],
-			[ 'id' => 'BraceBalance' ],
-			[ 'id' => 'MediaWikiMisc' ]
+			[ 'id' => 'BraceBalance' ]
 		] );
 
 		return $validator;

@@ -45,8 +45,6 @@ class ValidatorFactory {
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'IosVariable' => IosVariableValidator::class,
 		'MatchSet' => MatchSetValidator::class,
-		// TODO: Remove this BC alias
-		'MediaWikiMisc' => MediaWikiTimeListValidator::class,
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
 		'MediaWikiTimeList' => MediaWikiTimeListValidator::class,

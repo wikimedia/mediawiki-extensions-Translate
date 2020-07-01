@@ -19,16 +19,6 @@ class MediaWikiTimeListValidator implements MessageValidator {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
-		// FIXME: Use the new keymatch feature for this
-		$timeList = [ 'protect-expiry-options', 'ipboptions' ];
-		// FIXME: for unit tests
-		$timeList[] = 'key';
-
-		$key = $message->key();
-		if ( !in_array( strtolower( $key ), $timeList, true ) ) {
-			return $issues;
-		}
-
 		$definition = $message->definition();
 		$translation = $message->translation();
 		$defArray = explode( ',', $definition );
