@@ -179,7 +179,7 @@
 	"supportedlanguages-recenttranslations": "nedavni prijevodi",
 	"supportedlanguages-count": "Ukupno $1 {{PLURAL:$1|jezik|jezika}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|uređivanje|uređivanja}} – posljednje uređivanje prije $3 {{PLURAL:$3|dan|dana}}",
-	"translate-supportedlanguages-cached": "Ova informacija nalazila se u međuspremniku prije $1.",
+	"translate-supportedlanguages-cached": "Ova informacija nalazila se u međuspremniku prije: $1.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Izvorni tekst prijevodne jedinice",
 	"abusefilter-edit-builder-vars-translate-target-language": "Željeni jezik za prevođenje",
 	"translate-save": "Objavi ($1)",
