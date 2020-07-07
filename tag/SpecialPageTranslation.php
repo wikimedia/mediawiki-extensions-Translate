@@ -390,40 +390,49 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param array[] $in
+	 * Classify a list of pages and amend them with additional metadata.
+	 *
+	 * @param array[] $pages
 	 * @return array[]
-	 * @phan-return array{proposed:array[],active:array[],broken:array[],discouraged:array[]}
+	 * @phan-return array{proposed:array[],active:array[],broken:array[],outdated:array[]}
 	 */
-	protected function classifyPages( array $in ) {
+	private function classifyPages( array $pages ): array {
+		// Preload stuff for performance
+		$messageGroupIdsForPreload = [];
+		foreach ( $pages as $i => $page ) {
+			$id = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] );
+			$messageGroupIdsForPreload[] = $id;
+			$pages[$i]['groupid'] = $id;
+		}
+		TranslateMetadata::preloadGroups( $messageGroupIdsForPreload );
+
 		$out = [
-			'proposed' => [],
+			// The ideal state for pages: marked and up to date
 			'active' => [],
+			'proposed' => [],
+			'outdated' => [],
 			'broken' => [],
-			'discouraged' => [],
 		];
 
-		foreach ( $in as $index => $page ) {
+		foreach ( $pages as $page ) {
+			$group = MessageGroups::getGroup( $page['groupid'] );
+			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
+
 			if ( !isset( $page['tp:mark'] ) ) {
 				// Never marked, check that the latest version is ready
 				if ( $page['tp:tag'] === $page['latest'] ) {
-					$out['proposed'][$index] = $page;
+					$out['proposed'][] = $page;
 				} // Otherwise ignore such pages
 			} elseif ( $page['tp:tag'] === $page['latest'] ) {
-				// Marked and latest version if fine
-				$out['active'][$index] = $page;
+				if ( $page['tp:mark'] === $page['tp:tag'] ) {
+					// Marked and latest version is fine
+					$out['active'][] = $page;
+				} else {
+					$out['outdated'][] = $page;
+				}
 			} else {
-				// Marked but latest version if not fine
-				$out['broken'][$index] = $page;
-			}
-		}
-
-		// broken and proposed take preference over discouraged status
-		foreach ( $out['active'] as $index => $page ) {
-			$id = TranslatablePage::getMessageGroupIdFromTitle( $page['title'] );
-			$group = MessageGroups::getGroup( $id );
-			if ( MessageGroups::getPriority( $group ) === 'discouraged' ) {
-				$out['discouraged'][$index] = $page;
-				unset( $out['active'][$index] );
+				// Marked but latest version is not fine
+				$out['broken'][] = $page;
 			}
 		}
 
@@ -454,73 +463,34 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-new-pages-title' );
 			$out->addWikiMsg( 'tpt-new-pages', count( $pages ) );
-			$out->addHTML( '<ol>' );
-			foreach ( $pages as $page ) {
-				$link = Linker::link( $page['title'] );
-				$acts = $this->actionLinks( $page, 'proposed' );
-				$out->addHTML( "<li>$link $acts</li>" );
-			}
-			$out->addHTML( '</ol>' );
-		}
-
-		$pages = $types['active'];
-		if ( count( $pages ) ) {
-			$out->wrapWikiMsg( '== $1 ==', 'tpt-old-pages-title' );
-			$out->addWikiMsg( 'tpt-old-pages', count( $pages ) );
-			$out->addHTML( '<ol>' );
-			foreach ( $pages as $page ) {
-				$link = Linker::link( $page['title'] );
-				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
-					$link = "<strong>$link</strong>";
-				}
-
-				$acts = $this->actionLinks( $page, 'active' );
-				$out->addHTML( "<li>$link $acts</li>" );
-			}
-			$out->addHTML( '</ol>' );
+			$out->addHTML( $this->getPageList( $pages, 'proposed' ) );
 		}
 
 		$pages = $types['broken'];
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-other-pages-title' );
 			$out->addWikiMsg( 'tpt-other-pages', count( $pages ) );
-			$out->addHTML( '<ol>' );
-			foreach ( $pages as $page ) {
-				$link = Linker::link( $page['title'] );
-				$acts = $this->actionLinks( $page, 'broken' );
-				$out->addHTML( "<li>$link $acts</li>" );
-			}
-			$out->addHTML( '</ol>' );
+			$out->addHTML( $this->getPageList( $pages, 'broken' ) );
 		}
 
-		$pages = $types['discouraged'];
+		$pages = $types['outdated'];
 		if ( count( $pages ) ) {
-			$out->wrapWikiMsg( '== $1 ==', 'tpt-discouraged-pages-title' );
-			$out->addWikiMsg( 'tpt-discouraged-pages', count( $pages ) );
-			$out->addHTML( '<ol>' );
-			foreach ( $pages as $page ) {
-				$link = Linker::link( $page['title'] );
-				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
-					$link = "<strong>$link</strong>";
-				}
+			$out->wrapWikiMsg( '== $1 ==', 'tpt-outdated-pages-title' );
+			$out->addWikiMsg( 'tpt-outdated-pages', count( $pages ) );
+			$out->addHTML( $this->getPageList( $pages, 'outdated' ) );
+		}
 
-				$acts = $this->actionLinks( $page, 'discouraged' );
-				$out->addHTML( "<li>$link $acts</li>" );
-			}
-			$out->addHTML( '</ol>' );
+		$pages = $types['active'];
+		if ( count( $pages ) ) {
+			$out->wrapWikiMsg( '== $1 ==', 'tpt-old-pages-title' );
+			$out->addWikiMsg( 'tpt-old-pages', count( $pages ) );
+			$out->addHTML( $this->getPageList( $pages, 'active' ) );
 		}
 	}
 
-	/**
-	 * @param array $page
-	 * @param string $type
-	 * @return string
-	 */
-	protected function actionLinks( array $page, $type ) {
+	private function actionLinks( array $page, string $type ): string {
 		$actions = [];
-		/**
-		 * @var Title $title
-		 */
+		/** @var Title $title */
 		$title = $page['title'];
 		$user = $this->getUser();
 
@@ -528,8 +498,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$js = [ 'class' => 'mw-translate-jspost' ];
 
 		if ( $user->isAllowed( 'pagetranslation' ) ) {
-			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
-			if ( $type === 'proposed' || $pending ) {
+			if ( $type === 'proposed' || $type === 'outdated' ) {
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-mark' )->escaped(),
@@ -542,31 +511,31 @@ class SpecialPageTranslation extends SpecialPage {
 				);
 			}
 
-			if ( $type === 'active' ) {
-				$actions[] = Linker::linkKnown(
-					$this->getPageTitle(),
-					$this->msg( 'tpt-rev-discourage' )->escaped(),
-					[ 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ] + $js,
-					[
-						'do' => 'discourage',
-						'target' => $title->getPrefixedText(),
-						'revision' => -1,
-					]
-				);
-			} elseif ( $type === 'discouraged' ) {
-				$actions[] = Linker::linkKnown(
-					$this->getPageTitle(),
-					$this->msg( 'tpt-rev-encourage' )->escaped(),
-					[ 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ] + $js,
-					[
-						'do' => 'encourage',
-						'target' => $title->getPrefixedText(),
-						'revision' => -1,
-					]
-				);
-			}
-
 			if ( $type !== 'proposed' ) {
+				if ( $page['discouraged'] ) {
+					$actions[] = Linker::linkKnown(
+						$this->getPageTitle(),
+						$this->msg( 'tpt-rev-encourage' )->escaped(),
+						[ 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ] + $js,
+						[
+							'do' => 'encourage',
+							'target' => $title->getPrefixedText(),
+							'revision' => -1,
+						]
+					);
+				} else {
+					$actions[] = Linker::linkKnown(
+						$this->getPageTitle(),
+						$this->msg( 'tpt-rev-discourage' )->escaped(),
+						[ 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ] + $js,
+						[
+							'do' => 'discourage',
+							'target' => $title->getPrefixedText(),
+							'revision' => -1,
+						]
+					);
+				}
+
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-unmark' )->escaped(),
@@ -584,13 +553,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return '';
 		}
 
-		$flattened = $this->getLanguage()->semicolonList( $actions );
-
-		return Html::rawElement(
-			'span',
-			[ 'class' => 'mw-tpt-actions' ],
-			$this->msg( 'parentheses' )->rawParams( $flattened )->escaped()
-		);
+		return '<div>' . $this->getLanguage()->pipeList( $actions ) . '</div>';
 	}
 
 	/**
@@ -1035,5 +998,32 @@ class SpecialPageTranslation extends SpecialPage {
 		$text = $parse->getTranslationPageText( null );
 		$text = preg_replace( '~<languages\s*/>\n?~s', '', $text );
 		return $text;
+	}
+
+	private function getPageList( array $pages, string $type ): string {
+		$items = [];
+
+		foreach ( $pages as $page ) {
+			$link = Linker::link( $page['title'] );
+			$acts = $this->actionLinks( $page, $type );
+			$tags = [];
+			if ( $page['discouraged'] ) {
+				$tags[] = $this->msg( 'tpt-tag-discouraged' )->escaped();
+			}
+			$tagList = '';
+			if ( $tags ) {
+				$tagList = Html::rawElement(
+					'span',
+					[ 'class' => 'mw-tpt-actions' ],
+					$this->msg( 'parentheses' )->rawParams(
+							$this->getLanguage()->pipeList( $tags )
+						)->escaped()
+				);
+			}
+
+			$items[] = "<li>$link $tagList $acts</li>";
+		}
+
+		return '<ol>' . implode( "", $items ) . '</ol>';
 	}
 }
