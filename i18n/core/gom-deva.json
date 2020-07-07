@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Konknni mogi 24",
-			"Supriya kankumbikar"
+			"Supriya kankumbikar",
+			"The Discoverer"
 		]
 	},
-	"translate-documentation-language": "संदेश दस्तावेजीकरण"
+	"translate-documentation-language": "संदेश दस्तावेजीकरण",
+	"translate-searchprofile": "भाशांतरां"
 }
