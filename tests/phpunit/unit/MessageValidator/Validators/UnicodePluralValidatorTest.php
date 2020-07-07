@@ -1,67 +1,45 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
 
 /**
+ * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator
  */
-class UnicodePluralValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
-		$key = 'k';
-		$code = 'en';
-		$message = new FatMessage( $key, '{{PLURAL|one=a|b}}' );
-		$message->setTranslation( 'a' );
-		yield [
-			$message,
-			$code,
-			[ 'plural', 'missing', $key, $code ]
-		];
-
-		$code = 'en';
-		$message = new FatMessage( $key, 'a' );
-		$message->setTranslation( '{{PLURAL|one=a|b}}' );
-		yield [
-			$message,
-			'en',
-			[ 'plural', 'unsupported', $key, $code ]
-		];
-
-		$code = 'en';
-		$message = new FatMessage( $key, '{{PLURAL|one=a|b}}' );
-		$message->setTranslation( '{{PLURAL|one=a|b}}' );
-		yield [
-			$message,
-			'en',
-			null
-		];
-
-		$code = 'en';
-		$message = new FatMessage( $key, '{{PLURAL|one=a|b}}' );
-		$message->setTranslation( '{{PLURAL|one=a|two=b|c}}' );
-		yield [
-			$message,
-			'en',
-			[ 'plural', 'forms', $key, $code ]
-		];
+class UnicodePluralValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( ...$params ) {
+		$this->runValidatorTests( new UnicodePluralValidator(), 'plural', ...$params );
 	}
 
-	/**
-	 * @dataProvider provideValidate
-	 */
-	public function testValidate( TMessage $message, $code, $expected ) {
-		$validator = new UnicodePluralValidator();
+	public function provideTestCases() {
+		yield [
+			'{{PLURAL|one=a|b}}',
+			'a',
+			[ 'missing' ],
+			'Missing plural is an issue'
+		];
 
-		$notices = [];
-		$validator->validate( $message, $code, $notices );
+		yield [
+			'a',
+			'{{PLURAL|one=a|b}}',
+			[ 'unsupported' ],
+			'Plural in an unsupported message is an issue'
+		];
 
-		if ( $expected === null ) {
-			$this->assertSame( [], $notices );
-		} else {
-			$this->assertSame( $expected, $notices[ $message->key() ][ 0 ][ 0 ] );
-		}
+		yield [
+			'{{PLURAL|one=a|b}}',
+			'{{PLURAL|one=aa|bb}}',
+			[],
+			'Correct plural syntax is not an issue'
+		];
+
+		yield [
+			'{{PLURAL|one=a|b}}',
+			'{{PLURAL|one=a|two=b|c}}',
+			[ 'forms' ],
+			'Extra plural forms are an issue'
+		];
 	}
 }

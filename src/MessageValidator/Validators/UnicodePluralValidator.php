@@ -1,37 +1,32 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use MediaWiki\Extensions\Translate\Utilities\UnicodePlural;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
  * This is a very strict validator class for Unicode CLDR based plural markup.
  *
  * It requires all forms to be present and in correct order. Whitespace around keywords
- * and values are trimmed. The keyword `other` is left out, though it is allowed in input.
+ * and values is trimmed. The keyword `other` is left out, though it is allowed in input.
  * @since 2019.09
+ * @license GPL-2.0-or-later
  */
-class UnicodePluralValidator implements Validator {
-	public function validate( TMessage $message, $code, array &$notices ) {
-		global $wgTranslateDocumentationLanguageCode;
+class UnicodePluralValidator implements MessageValidator {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		$issues = new ValidationIssues();
 
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
-			return;
-		}
-
-		$expectedKeywords = UnicodePlural::getPluralKeywords( $code );
+		$expectedKeywords = UnicodePlural::getPluralKeywords( $targetLanguage );
 		// Skip validation for languages for which we do not know the plural rule
 		if ( $expectedKeywords === null ) {
-			return;
+			return $issues;
 		}
 
-		$key = $message->key();
 		$definition = $message->definition();
 		$translation = $message->translation();
 		$definitionHasPlural = UnicodePlural::hasPlural( $definition );
@@ -42,54 +37,48 @@ class UnicodePluralValidator implements Validator {
 			$translationHasPlural
 		);
 
-		if ( $presence === 'not-applicable' ) {
-			// Plural is not present in translation, but that is fine
-
-			return;
-		} elseif ( $presence === 'missing' ) {
-			$notices[$key][] = [
-				// Using same check keys as MediaWikiPluralValidator
-				[ 'plural', 'missing', $key, $code ],
-				'translate-checks-unicode-plural-missing'
-			];
-
-			return;
+		// Using same check keys as MediaWikiPluralValidator
+		if ( $presence === 'missing' ) {
+			$issue = new ValidationIssue( 'plural', 'missing', 'translate-checks-unicode-plural-missing' );
+			$issues->add( $issue );
 		} elseif ( $presence === 'unsupported' ) {
-			$notices[$key][] = [
-				[ 'plural', 'unsupported', $key, $code ],
-				'translate-checks-unicode-plural-unsupported'
-			];
+			$issue = new ValidationIssue( 'plural', 'unsupported', 'translate-checks-unicode-plural-unsupported' );
+			$issues->add( $issue );
+		} elseif ( $presence === 'ok' ) {
+			[ $msgcode, $actualKeywords ] =
+				$this->pluralFormCheck( $translation, $expectedKeywords );
+			if ( $msgcode === 'invalid' ) {
+				$expectedExample = UnicodePlural::flattenList(
+					array_map( [ $this, 'createFormExample' ], $expectedKeywords )
+				);
+				$actualExample = UnicodePlural::flattenList(
+					array_map( [ $this, 'createFormExample' ], $actualKeywords )
+				);
 
-			return;
-		}
+				$issue = new ValidationIssue(
+					'plural',
+					'forms',
+					'translate-checks-unicode-plural-invalid',
+					[
+						[ 'PLAIN', $expectedExample ],
+						[ 'PLAIN', $actualExample ],
+					]
+				);
+				$issues->add( $issue );
+			}
+		} // else: not-applicable
 
-		list( $msgcode, $actualKeywords ) = $this->pluralFormCheck( $translation, $expectedKeywords );
-		if ( $msgcode === 'invalid' ) {
-			$expectedExample = UnicodePlural::flattenList(
-				array_map( [ $this, 'createFormExample' ], $expectedKeywords )
-			);
-			$actualExample = UnicodePlural::flattenList(
-				array_map( [ $this, 'createFormExample' ], $actualKeywords )
-			);
-
-			$notices[$key][] = [
-				// Using same check keys as MediaWikiPluralValidator
-				[ 'plural', 'forms', $key, $code ],
-				'translate-checks-unicode-plural-invalid',
-				[ 'PLAIN',  $expectedExample ],
-				[ 'PLAIN', $actualExample ],
-			];
-		}
+		return $issues;
 	}
 
-	private function createFormExample( $keyword ) {
+	private function createFormExample( string $keyword ): array {
 		return [ $keyword, '…' ];
 	}
 
 	private function pluralPresenceCheck(
-		$definitionHasPlural,
-		$translationHasPlural
-	) {
+		bool $definitionHasPlural,
+		bool $translationHasPlural
+	): string {
 		if ( !$definitionHasPlural && $translationHasPlural ) {
 			return 'unsupported';
 		} elseif ( $definitionHasPlural && !$translationHasPlural ) {
@@ -102,12 +91,12 @@ class UnicodePluralValidator implements Validator {
 		return 'ok';
 	}
 
-	private function pluralFormCheck( $text, $expectedKeywords ) {
-		list( , $instanceMap ) = UnicodePlural::parsePluralForms( $text );
+	private function pluralFormCheck( string $text, array $expectedKeywords ): array {
+		[ , $instanceMap ] = UnicodePlural::parsePluralForms( $text );
 
 		foreach ( $instanceMap as $forms ) {
 			$actualKeywords = [];
-			foreach ( $forms as list( $keyword, ) ) {
+			foreach ( $forms as [ $keyword, ] ) {
 				$actualKeywords[] = $keyword;
 			}
 
