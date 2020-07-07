@@ -8,7 +8,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 
 /**
@@ -48,6 +47,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.pagetranslation' );
 		$out->addHelpLink( 'Help:Extension:Translate/Page_translation_example' );
+		$out->enableOOUI();
 
 		if ( $target === '' ) {
 			$this->listPages();
@@ -635,12 +635,18 @@ class SpecialPageTranslation extends SpecialPage {
 				$s->type = $defaultChecked ? $s->type : 'new';
 
 				// Checkbox for page title optional translation
-				$this->getOutput()->addHTML( Xml::checkLabel(
-					$this->msg( 'tpt-translate-title' )->text(),
-					'translatetitle',
-					'mw-translate-title',
-					$defaultChecked
-				) );
+				$checkBox = new OOUI\FieldLayout(
+					new OOUI\CheckboxInputWidget( [
+						'name' => 'translatetitle',
+						'selected' => $defaultChecked,
+					] ),
+					[
+						'label' => $this->msg( 'tpt-translate-title' )->text(),
+						'align' => 'inline',
+						'classes' => [ 'mw-tpt-m-vertical' ]
+					]
+				);
+				$out->addHTML( $checkBox->toString() );
 			}
 
 			if ( $s->type === 'new' ) {
@@ -666,13 +672,18 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->showDiffStyle();
 
 				$id = "tpt-sect-{$s->id}-action-nofuzzy";
-				$checkLabel = Xml::checkLabel(
-					$this->msg( 'tpt-action-nofuzzy' )->text(),
-					$id,
-					$id,
-					false
+				$checkLabel = new OOUI\FieldLayout(
+					new OOUI\CheckboxInputWidget( [
+						'name' => $id,
+						'selected' => false,
+					] ),
+					[
+						'label' => $this->msg( 'tpt-action-nofuzzy' )->text(),
+						'align' => 'inline',
+						'classes' => [ 'mw-tpt-m-vertical' ]
+					]
 				);
-				$text = $checkLabel . $text;
+				$text = $checkLabel->toString() . $text;
 			} else {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 			}
@@ -749,58 +760,64 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$this->syntaxVersionForm( $version, $firstMark );
 
-		$out->addHTML(
-			Xml::submitButton( $this->msg( 'tpt-submit' )->text() ) .
-			Xml::closeElement( 'form' )
+		$submitButton = new OOUI\FieldLayout(
+			new OOUI\ButtonInputWidget( [
+				'label' => $this->msg( 'tpt-submit' )->text(),
+				'type' => 'submit',
+				'flags' => [ 'primary', 'progressive' ],
+			] ),
+			[
+				'label' => null,
+				'align' => 'top',
+			]
 		);
+
+		$out->addHTML( $submitButton->toString() );
+		$out->addHTML( '</form>' );
 	}
 
 	private function priorityLanguagesForm( TranslatablePage $page ): void {
 		$groupId = $page->getMessageGroupId();
+
+		$form = new OOUI\FieldsetLayout( [
+			'items' => [
+				new OOUI\FieldLayout(
+					new OOUI\TextInputWidget( [
+						'name' => 'prioritylangs',
+						'value' => TranslateMetadata::get( $groupId, 'prioritylangs' ),
+						'inputId' => 'tpt-prioritylangs',
+						'dir' => 'ltr',
+					] ),
+					[
+						'label' => $this->msg( 'tpt-select-prioritylangs' )->text(),
+						'align' => 'top',
+					]
+				),
+				new OOUI\FieldLayout(
+					new OOUI\CheckboxInputWidget( [
+						'name' => 'forcelimit',
+						'selected' => TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on',
+					] ),
+					[
+						'label' => $this->msg( 'tpt-select-prioritylangs-force' )->text(),
+						'align' => 'inline',
+					]
+				),
+				new OOUI\FieldLayout(
+					new OOUI\TextInputWidget( [
+						'name' => 'priorityreason',
+					] ),
+					[
+						'label' => $this->msg( 'tpt-select-prioritylangs-reason' )->text(),
+						'align' => 'top',
+					]
+				),
+
+			]
+		] );
+
 		$this->getOutput()->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
-
-		$langSelector = Xml::languageSelector(
-			MediaWikiServices::getInstance()->getContentLanguage()->getCode(),
-			false,
-			$this->getLanguage()->getCode()
-		);
-
-		$hLangs = Xml::inputLabelSep(
-			$this->msg( 'tpt-select-prioritylangs' )->text(),
-			'prioritylangs', // name
-			'tpt-prioritylangs', // id
-			50,
-			TranslateMetadata::get( $groupId, 'prioritylangs' )
-		);
-
-		$hForce = Xml::checkLabel(
-			$this->msg( 'tpt-select-prioritylangs-force' )->text(),
-			'forcelimit', // name
-			'tpt-priority-forcelimit', // id
-			TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on'
-		);
-
-		$hReason = Xml::inputLabelSep(
-			$this->msg( 'tpt-select-prioritylangs-reason' )->text(),
-			'priorityreason', // name
-			'tpt-priority-reason', // id
-			50, // size
-			TranslateMetadata::get( $groupId, 'priorityreason' )
-		);
-
-		$this->getOutput()->addHTML(
-			'<table>' .
-			'<tr>' .
-			"<td class='mw-label'>$hLangs[0]</td>" .
-			"<td class='mw-input'>$hLangs[1]$langSelector[1]</td>" .
-			'</tr>' .
-			"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
-			'<tr>' .
-			"<td class='mw-label'>$hReason[0]</td>" .
-			"<td class='mw-input'>$hReason[1]</td>" .
-			'</tr>' .
-			'</table>'
-		);
+		$this->getOutput()->addHTML( $form->toString() );
 	}
 
 	private function syntaxVersionForm( string $version, bool $firstMark ): void {
@@ -817,15 +834,17 @@ class SpecialPageTranslation extends SpecialPage {
 			'<code>' . wfEscapeWikiText( '<translate nowrap>...</translate>' ) . '</code>'
 		);
 
-		$out->addHTML(
-			'<div>' .
-			Xml::checkLabel(
-				$this->msg( 'tpt-syntaxversion-label' )->text(),
-				'use-latest-syntax',
-				'tpt-latest-syntax'
-			) .
-			'</div>'
+		$checkBox = new OOUI\FieldLayout(
+			new OOUI\CheckboxInputWidget( [
+				'name' => 'use-latest-syntax'
+			] ),
+			[
+				'label' => $out->msg( 'tpt-syntaxversion-label' )->text(),
+				'align' => 'inline',
+			]
 		);
+
+		$out->addHTML( $checkBox->toString() );
 	}
 
 	/**
