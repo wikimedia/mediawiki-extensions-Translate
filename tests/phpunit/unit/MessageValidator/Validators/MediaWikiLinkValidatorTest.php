@@ -1,16 +1,16 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiLinkValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiLinkValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiLinkValidator
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiLinkValidator
  */
-class WikiLinkValidatorTest extends BaseValidatorTestCase {
+class MediaWikiLinkValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */
 	public function test( ...$params ) {
-		$this->runValidatorTests( new WikiLinkValidator(), 'links', ...$params );
+		$this->runValidatorTests( new MediaWikiLinkValidator(), 'links', ...$params );
 	}
 
 	public function provideTestCases() {

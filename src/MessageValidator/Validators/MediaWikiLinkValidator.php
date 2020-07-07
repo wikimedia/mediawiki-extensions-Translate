@@ -17,7 +17,7 @@ use TMessage;
  * @license GPL-2.0-or-later
  * @since 2020.02
  */
-class WikiLinkValidator implements MessageValidator {
+class MediaWikiLinkValidator implements MessageValidator {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 

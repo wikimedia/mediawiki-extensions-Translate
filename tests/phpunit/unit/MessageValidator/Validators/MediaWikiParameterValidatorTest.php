@@ -6,14 +6,13 @@
 
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiParameterValidator;
 
-/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator */
-class WikiParameterValidatorTest extends BaseValidatorTestCase {
-
+/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiParameterValidator */
+class MediaWikiParameterValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */
 	public function test( ...$params ) {
-		$this->runValidatorTests( new WikiParameterValidator(), 'variable', ...$params );
+		$this->runValidatorTests( new MediaWikiParameterValidator(), 'variable', ...$params );
 	}
 
 	public static function provideTestCases() {

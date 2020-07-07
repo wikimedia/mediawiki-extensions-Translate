@@ -12,7 +12,9 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexVa
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\IosVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiLinkValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPageNameValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiParameterValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiTimeListValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
@@ -21,8 +23,6 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PythonInterpolationValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiLinkValidator;
-use MediaWiki\Extensions\Translate\MessageValidator\Validators\WikiParameterValidator;
 use MediaWiki\Extensions\Translate\Validation\LegacyValidatorAdapter;
 use MediaWiki\Extensions\Translate\Validation\MessageValidator;
 use RuntimeException;
@@ -45,7 +45,9 @@ class ValidatorFactory {
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'IosVariable' => IosVariableValidator::class,
 		'MatchSet' => MatchSetValidator::class,
+		'MediaWikiLink' => MediaWikiLinkValidator::class,
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
+		'MediaWikiParameter' => MediaWikiParameterValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
 		'MediaWikiTimeList' => MediaWikiTimeListValidator::class,
 		'Newline' => NewlineValidator::class,
@@ -54,8 +56,10 @@ class ValidatorFactory {
 		'PythonInterpolation' => PythonInterpolationValidator::class,
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
-		'WikiLink' => WikiLinkValidator::class,
-		'WikiParameter' => WikiParameterValidator::class
+		// BC: remove when unused
+		'WikiLink' => MediaWikiLinkValidator::class,
+		// BC: remove when unused
+		'WikiParameter' => MediaWikiParameterValidator::class,
 	];
 
 	/**
