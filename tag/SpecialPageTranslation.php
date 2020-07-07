@@ -21,6 +21,8 @@ use MediaWiki\Revision\RevisionRecord;
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
+	private const LATEST_SYNTAX_VERSION = '2';
+
 	public function __construct() {
 		parent::__construct( 'PageTranslation' );
 	}
@@ -212,17 +214,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		$lastRev = $page->getMarkedTag();
-		$firstMark = $lastRev === false;
-		if ( !$firstMark && $lastRev === $revision ) {
-			$out->wrapWikiMsg(
-				'<div class="warningbox">$1</div>',
-				[ 'tpt-already-marked' ]
-			);
-			$this->listPages();
-
-			return;
-		}
+		$firstMark = $page->getMarkedTag() === false;
 
 		// This will modify the sections to include name property
 		$error = false;
@@ -238,7 +230,9 @@ class SpecialPageTranslation extends SpecialPage {
 				} );
 			}
 
-			$err = $this->markForTranslation( $page, $sections );
+			$setVersion = $firstMark || $request->getCheck( 'use-latest-syntax' );
+
+			$err = $this->markForTranslation( $page, $sections, $setVersion );
 
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
@@ -250,7 +244,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		$this->showPage( $page, $sections );
+		$this->showPage( $page, $sections, $firstMark );
 	}
 
 	/**
@@ -417,6 +411,7 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$group = MessageGroups::getGroup( $page['groupid'] );
 			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
+			$page['version'] = TranslateMetadata::get( $page['groupid'], 'version' );
 
 			if ( !isset( $page['tp:mark'] ) ) {
 				// Never marked, check that the latest version is ready
@@ -498,7 +493,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$js = [ 'class' => 'mw-translate-jspost' ];
 
 		if ( $user->isAllowed( 'pagetranslation' ) ) {
-			if ( $type === 'proposed' || $type === 'outdated' ) {
+			// Enable re-marking of all pages to allow changing of priority languages
+			// or migration to the new syntax version
+			if ( $type !== 'broken' ) {
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-mark' )->escaped(),
@@ -597,16 +594,9 @@ class SpecialPageTranslation extends SpecialPage {
 		return $sections;
 	}
 
-	/**
-	 * Displays the sections and changes for the user to review
-	 * @param TranslatablePage $page
-	 * @param TPSection[] $sections
-	 */
-	public function showPage( TranslatablePage $page, array $sections ) {
+	private function showPage( TranslatablePage $page, array $sections, bool $firstMark ): void {
 		$out = $this->getOutput();
-
 		$out->setSubtitle( Linker::link( $page->getTitle() ) );
-
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
 		$formParams = [
@@ -699,9 +689,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$hasChanges = true;
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
-			/**
-			 * @var TPSection $s
-			 */
+			/** @var TPSection $s */
 			foreach ( $deletedSections as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
@@ -751,7 +739,10 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->wrapWikiMsg( '<div class="successbox">$1</div>', 'tpt-mark-nochanges' );
 		}
 
+		$version = TranslateMetadata::get( $page->getMessageGroupId(), 'version' );
 		$this->priorityLanguagesForm( $page );
+
+		$this->syntaxVersionForm( $version, $firstMark );
 
 		$out->addHTML(
 			Xml::submitButton( $this->msg( 'tpt-submit' )->text() ) .
@@ -759,10 +750,7 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
-	/**
-	 * @param TranslatablePage $page
-	 */
-	protected function priorityLanguagesForm( TranslatablePage $page ) {
+	private function priorityLanguagesForm( TranslatablePage $page ): void {
 		$groupId = $page->getMessageGroupId();
 		$this->getOutput()->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
 
@@ -810,6 +798,31 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
+	private function syntaxVersionForm( string $version, bool $firstMark ): void {
+		$out = $this->getOutput();
+
+		if ( $version === self::LATEST_SYNTAX_VERSION || $firstMark ) {
+			return;
+		}
+
+		$out->wrapWikiMsg( '==$1==', 'tpt-sections-syntaxversion' );
+		$out->addWikiMsg(
+			'tpt-syntaxversion-text',
+			'<code>' . wfEscapeWikiText( '<span lang="en" dir="ltr">...</span>' ) . '</code>',
+			'<code>' . wfEscapeWikiText( '<translate nowrap>...</translate>' ) . '</code>'
+		);
+
+		$out->addHTML(
+			'<div>' .
+			Xml::checkLabel(
+				$this->msg( 'tpt-syntaxversion-label' )->text(),
+				'use-latest-syntax',
+				'tpt-latest-syntax'
+			) .
+			'</div>'
+		);
+	}
+
 	/**
 	 * This function does the heavy duty of marking a page.
 	 * - Updates the source page with section markers.
@@ -819,9 +832,14 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Invalidates caches
 	 * @param TranslatablePage $page
 	 * @param TPSection[] $sections
+	 * @param bool $updateVersion
 	 * @return array|bool
 	 */
-	protected function markForTranslation( TranslatablePage $page, array $sections ) {
+	protected function markForTranslation(
+		TranslatablePage $page,
+		array $sections,
+		bool $updateVersion
+	) {
 		// Add the section markers to the source page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$content = ContentHandler::makeContent(
@@ -873,7 +891,8 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$inserts = [];
 		$changed = [];
-		$maxid = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
+		$groupId = $page->getMessageGroupId();
+		$maxid = (int)TranslateMetadata::get( $groupId, 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
 		/**
@@ -903,7 +922,10 @@ class SpecialPageTranslation extends SpecialPage {
 			__METHOD__
 		);
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
-		TranslateMetadata::set( $page->getMessageGroupId(), 'maxid', $maxid );
+		TranslateMetadata::set( $groupId, 'maxid', $maxid );
+		if ( $updateVersion ) {
+			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
+		}
 
 		$page->addMarkedTag( $newRevisionId );
 		MessageGroups::singleton()->recache();
@@ -1010,6 +1032,10 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $page['discouraged'] ) {
 				$tags[] = $this->msg( 'tpt-tag-discouraged' )->escaped();
 			}
+			if ( $type !== 'proposed' && $page['version'] !== self::LATEST_SYNTAX_VERSION ) {
+				$tags[] = $this->msg( 'tpt-tag-oldsyntax' )->escaped();
+			}
+
 			$tagList = '';
 			if ( $tags ) {
 				$tagList = Html::rawElement(
