@@ -10,7 +10,6 @@ use TMessage;
 
 /**
  * Ensures that translations do not translate namespaces.
- *
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @since 2020.02

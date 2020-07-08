@@ -1,14 +1,12 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator;
 
-/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator */
+/**
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\NumericalParameterValidator
+ */
 class NumericalParameterValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */
 	public function test( ...$params ) {

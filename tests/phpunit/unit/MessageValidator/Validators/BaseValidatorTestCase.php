@@ -1,15 +1,13 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\Validation\MessageValidator;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
+/**
+ * @license GPL-2.0-or-later
+ */
 class BaseValidatorTestCase extends MediaWikiUnitTestCase {
 	public function runValidatorTests(
 		MessageValidator $validator,

@@ -1,16 +1,13 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
 
-/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator */
+/**
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator
+ */
 class InsertableRegexValidatorTest extends BaseValidatorTestCase {
-
 	/** @dataProvider provideTestCases */
 	public function test( $constructorParams, ...$params ) {
 		$validator = new InsertableRegexValidator( $constructorParams );

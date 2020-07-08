@@ -11,7 +11,6 @@ use TMessage;
 
 /**
  * Ensures that the translation for a message matches a value from a list.
- *
  * @license GPL-2.0-or-later
  * @since 2019.12
  */

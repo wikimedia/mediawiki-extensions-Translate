@@ -16,7 +16,6 @@ use User;
 
 /**
  * Handles plural validation for MediaWiki inline plural syntax.
- *
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @since 2019.06

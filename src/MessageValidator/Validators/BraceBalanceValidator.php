@@ -1,10 +1,4 @@
 <?php
-/**
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
@@ -16,6 +10,8 @@ use TMessage;
 
 /**
  * Handles brace balance validation
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
  * @since 2019.06
  */
 class BraceBalanceValidator implements MessageValidator {

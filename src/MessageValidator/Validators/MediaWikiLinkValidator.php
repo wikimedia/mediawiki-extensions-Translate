@@ -13,7 +13,6 @@ use TMessage;
  * Checks if the translation uses links that are discouraged. Valid links are those that link
  * to Special: or {{ns:special}}: or project pages trough MediaWiki messages like
  * {{MediaWiki:helppage-url}}:. Also links in the definition are allowed.
- *
  * @license GPL-2.0-or-later
  * @since 2020.02
  */

@@ -1,15 +1,13 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 
-/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator */
+/**
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator
+ */
 class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
 	public static function provideValidate() {
 		$message = new FatMessage( 'key', 'Hello' );

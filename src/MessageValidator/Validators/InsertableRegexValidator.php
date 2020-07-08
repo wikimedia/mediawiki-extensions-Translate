@@ -1,10 +1,4 @@
 <?php
-/**
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
@@ -18,6 +12,8 @@ use TMessage;
 
 /**
  * A generic regex validator and insertable that can be reused by other classes.
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
  * @since 2019.06
  */
 class InsertableRegexValidator extends RegexInsertablesSuggester implements MessageValidator {

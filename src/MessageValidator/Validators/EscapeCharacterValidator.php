@@ -1,9 +1,4 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\MessageValidator\Validators;
@@ -15,6 +10,7 @@ use TMessage;
 
 /**
  * Ensures that only the specified escape characters are present.
+ * @license GPL-2.0-or-later
  * @since 2020.01
  */
 class EscapeCharacterValidator implements MessageValidator {

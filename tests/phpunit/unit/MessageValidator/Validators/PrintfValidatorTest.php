@@ -1,16 +1,13 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
-
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator;
 
-/** @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator */
+/**
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\PrintfValidator
+ */
 class PrintfValidatorTest extends BaseValidatorTestCase {
-
 	/** @dataProvider provideTestCases */
 	public function test( ...$params ) {
 		$this->runValidatorTests( new PrintfValidator(), 'variable', ...$params );
