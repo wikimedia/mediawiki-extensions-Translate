@@ -32,11 +32,13 @@ class MediaWikiTimeListValidator implements MessageValidator {
 				'timelist-count',
 				'translate-checks-format',
 				[
-					'MESSAGE',
 					[
-						'translate-checks-parametersnotequal',
-						[ 'COUNT', $traCount ],
-						[ 'COUNT', $defCount ],
+						'MESSAGE',
+						[
+							'translate-checks-parametersnotequal',
+							[ 'COUNT', $traCount ],
+							[ 'COUNT', $defCount ],
+						]
 					]
 				]
 			);
@@ -54,7 +56,7 @@ class MediaWikiTimeListValidator implements MessageValidator {
 					'miscmw',
 					'timelist-format',
 					'translate-checks-format',
-					[ 'MESSAGE', [ 'translate-checks-malformed', $traArray[$i] ] ]
+					[ [ 'MESSAGE', [ 'translate-checks-malformed', $traArray[$i] ] ] ]
 				);
 
 				$issues->add( $issue );
