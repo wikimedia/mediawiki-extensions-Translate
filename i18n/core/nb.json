@@ -93,7 +93,6 @@
 	"translate-checks-newline-extra-start": "Det er $1 {{PLURAL:$1|linjeskift}} for mye i begynnelsen av oversettelsen.",
 	"translate-checks-newline-extra-end": "Det er $1 {{PLURAL:$1|linjeskift}} for mye i slutten av oversettelsen.",
 	"translate-checks-value-not-present": "Oversettelsen må være lik {{PLURAL:$1|1=|én av følgende verdier:}} $1.",
-	"translate-pref-nonewsletter": "Ikke send meg nyhetsbrev på e-post",
 	"translate-pref-editassistlang": "Hjelpespråk:",
 	"prefs-translate": "Oversettelsesalternativ",
 	"translate-pref-editassistlang-help": "Kommaseparert liste over språkkoder.\nOversettelsen av en melding i disse språkene blir vist mens du oversetter.\nStandardlisten over språk avhenger av språket ditt.",

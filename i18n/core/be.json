@@ -70,7 +70,6 @@
 	"translate-checks-parametersnotequal": "Колькасць параметраў — $1, а {{PLURAL:$2|павінен|павінна}} быць — $2.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> няслушна сфарміраваны.",
 	"translate-checks-fudforum-syntax": "Выкарыстоўваць у гэтым праекце <nowiki>$1</nowiki> замест <nowiki>$2</nowiki>.",
-	"translate-pref-nonewsletter": "Не адпраўляць мне інфармацыйны бюлетэнь па электроннай пошце",
 	"translate-pref-editassistlang": "Дапаможныя мовы:",
 	"prefs-translate": "Настройкі перакладу",
 	"translate-pref-editassistlang-help": "Падзелены коскамі спіс кодаў моў.\nПераклады на гэтыя мовы будуць указаны пры праўцы паведамленняў.\nСпіс па змоўчанні залежыць ад вашай мовы.",

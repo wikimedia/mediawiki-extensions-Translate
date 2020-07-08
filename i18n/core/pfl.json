@@ -63,7 +63,6 @@
 	"translate-checks-parametersnotequal": "Die Oazahl vunde Parameter isch {{PLURAL:$1|$1}}; solld awa {{PLURAL:$2|$2}} soi.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> isch ugildisch.",
 	"translate-checks-fudforum-syntax": "In dem Brojegd bnudz <nowiki>$1</nowiki> schdad <nowiki>$2</nowiki>.",
-	"translate-pref-nonewsletter": "Sendma kä E-Mail-Naijischkaide",
 	"translate-pref-editassistlang": "Hilfschbrooch:",
 	"prefs-translate": "Meschlischkaide fas Iwasedze",
 	"translate-pref-editassistlang-help": "Komma gdrendi Lischd vun Schbroochcodes.\nIwasedzunge vun Nochrischde in die Schbrooche werren baim Iwasedze gzaischd.\nDie Schdandadlischd vunde Schbrooche b'ruhd uff doina Schbrooch.",

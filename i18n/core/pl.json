@@ -107,7 +107,6 @@
 	"translate-checks-parametersnotequal": "Liczba parametrów to {{PLURAL:$1|$1}}; {{PLURAL:$2|powinien być $2|powinno być $2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> jest niepoprawne.",
 	"translate-checks-fudforum-syntax": "Użyj w tym projekcie <nowiki>$1</nowiki> zamiast <nowiki>$2</nowiki>.",
-	"translate-pref-nonewsletter": "Nie wysyłaj do mnie biuletynów pocztą elektroniczną",
 	"translate-pref-editassistlang": "Języki pomocnicze:",
 	"prefs-translate": "Opcje tłumaczenia",
 	"translate-pref-editassistlang-help": "Lista kodów językowych rozdzielonych przecinkami.\nKomunikat w tych językach będzie widoczny podczas wykonywania tłumaczenia.\nDomyślna lista języków zależy od Twojego języka.",

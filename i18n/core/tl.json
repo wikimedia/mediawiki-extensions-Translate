@@ -65,7 +65,6 @@
 	"translate-checks-parametersnotequal": "Ang bilang ng parametro ay {{PLURAL:$1|$1}}; dapat na {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "Sira ang porma ng <nowiki>$1</nowiki>.",
 	"translate-checks-fudforum-syntax": "Gamitin ang <nowiki>$1</nowiki> sa halip na <nowiki>$2</nowiki> sa loob ng proyektong ito.",
-	"translate-pref-nonewsletter": "Huwag akong padalhan ng mga ulat-balita sa pamamagitan ng e-liham",
 	"translate-pref-editassistlang": "Katulong na mga wika:",
 	"prefs-translate": "Mga mapagpipilian na pangsalinwika",
 	"translate-pref-editassistlang-help": "Talaan ng mga kodigong pangwika na pinaghihiwalay ng kuwit.\nAng salinwika ng isang mensahe sa mga wikang ito ay ipinapakita kapag nagsasalinwika ka.\nNakasalalay sa wika mo ang likas na nakatakdang talaan ng mga wika.",

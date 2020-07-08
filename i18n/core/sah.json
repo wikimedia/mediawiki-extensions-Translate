@@ -65,7 +65,6 @@
 	"translate-checks-parametersnotequal": "Парааметрдарын ахсаана — $1, дьиҥэ $2 буолуохтаах.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> алҕастаах.",
 	"translate-checks-fudforum-syntax": "Бу бырайыакка <nowiki>$2</nowiki> оннугар маны туһан: <nowiki>$1</nowiki>.",
-	"translate-pref-nonewsletter": "Бүллүтүөнү электроннай почтаннан миэхэ ыытымаҥ",
 	"translate-pref-editassistlang": "Көмө тыллар:",
 	"prefs-translate": "Тылбаас туруоруулара",
 	"translate-pref-editassistlang-help": "Соппутуойунан араарыллыбыт тыллар куодтарын тиһигэ.\nБу тыллар тылбаастара тылбаастыыргар көстүөхтэрэ.\nТуспа этиллибэтэҕинэ тахсар тыллар тиһиктэрэ тылтан тутулуктаах.",

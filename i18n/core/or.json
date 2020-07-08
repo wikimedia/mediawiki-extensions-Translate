@@ -55,7 +55,6 @@
 	"translate-checks-parameters-unknown": "ଏହି {{PLURAL:$2|ପାରାମିଟର ଟି|ପାରାମିଟରମାନ}} ଅଜଣା:\n<strong>$1</strong>",
 	"translate-checks-balance": "ଏଠାରେ ଅସମ ସଂଖ୍ୟକ {{PLURAL:$2|ପେରେନ୍ଥେସ|ପେରେନ୍ଥେସସବୁ}} ରହିଛି:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "ଏହି {{PLURAL:$2|ଲିଙ୍କଟି|$2 lଲିଙ୍କମାନ}} ଅସୁବିଧାଜନକ: <strong><nowiki>$1</nowiki></strong>",
-	"translate-pref-nonewsletter": "ମୋତେ ଇ-ମେଲ ନିଉଜଲେଟର ପଠାଇବେ ନାହିଁ",
 	"prefs-translate": "ଅନୁବାଦ ବିକଳ୍ପସବୁ",
 	"translate-rc-translation-filter-no": "କିଛି ବି କରିବେ ନାହିଁ",
 	"translate-rc-translation-filter-only": "କେବଳ ଅନୁବାଦସବୁ ଦେଖାନ୍ତୁ",

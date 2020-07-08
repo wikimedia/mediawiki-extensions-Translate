@@ -102,7 +102,6 @@
 	"translate-checks-parametersnotequal": "El número de parámetros es {{PLURAL:$1|$1}}; debería ser {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> es incorrecto.",
 	"translate-checks-fudforum-syntax": "Usar <nowiki>$1</nowiki> en lugar de <nowiki>$2</nowiki> en este proyecto.",
-	"translate-pref-nonewsletter": "No quiero recibir correos de noticias",
 	"translate-pref-editassistlang": "Idiomas auxiliares:",
 	"prefs-translate": "Opciones de traducción",
 	"translate-pref-editassistlang-help": "Lista de códigos de idiomas separados por comas.\nSe mostrarán las traducciones de los mensajes en esos idiomas mientras traduces.\nLa lista de idiomas predeterminada depende de tu idioma.",

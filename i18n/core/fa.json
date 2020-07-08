@@ -91,7 +91,6 @@
 	"translate-checks-parametersnotequal": "شمار پارامترها {{PLURAL:$1|$1}} تاست؛ بایست {{PLURAL:$2|$2}} تا باشد.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> بدشکل است.",
 	"translate-checks-fudforum-syntax": "در این پروژه از <nowiki>$1</nowiki> به جای <nowiki>$2</nowiki> استفاده کنید.",
-	"translate-pref-nonewsletter": "برای من خبرنامهٔ الکترونیکی ارسال نشود",
 	"translate-pref-editassistlang": "زبان‌های دستیار:",
 	"prefs-translate": "گزینه‌های ترجمه",
 	"translate-pref-editassistlang-help": "فهرست کدهای زبان جدا شده با کاما.\nترجمه‌های پیغام‌های این زبان‌ها در زمانی که شما ترجمه می‌کنید نمایش داده می‌شوند.\nفهرست پیش‌فرض زبان‌ها بستگی به این دارد که زبان شما چیست.",

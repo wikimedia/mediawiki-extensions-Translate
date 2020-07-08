@@ -43,7 +43,6 @@
 	"translate-edit-in-other-languages": "ეს შეტყობინება სხვა ენებზე",
 	"translate-edit-tmmatch": "$1% შესაბამისობა",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> არაკორექტულია.",
-	"translate-pref-nonewsletter": "არ გამომიგზავნო სიახლეები ელ. ფოსტით",
 	"translate-pref-editassistlang": "დამხმარე ენები:",
 	"prefs-translate": "თარგმნის პარამეტრები",
 	"translate-pref-editassistlang-help": "მძიმეებით გაყოფილი ენების კოდების სია. ამ ენებზე თარგმანები ნაჩვენები იქნება შეტყობინების ცვლილების დროს. სია, ნაგულისხმევად თქვენ ენაზეა დამოკიდებული.",

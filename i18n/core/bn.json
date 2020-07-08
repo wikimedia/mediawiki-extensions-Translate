@@ -76,7 +76,6 @@
 	"translate-checks-newline-missing-end": "অনুবাদটির শেষে নতুন লাইনের $1টি {{PLURAL:$1|অক্ষর}} অনুপস্থিত রয়েছে।",
 	"translate-checks-newline-extra-start": "অনুবাদটির শুরুতে নতুন লাইনের $1টি {{PLURAL:$1|অক্ষর}} অতিরিক্ত রয়েছে।",
 	"translate-checks-newline-extra-end": "অনুবাদটির শেষে নতুন লাইনের $1টি {{PLURAL:$1|অক্ষর}} অতিরিক্ত রয়েছে।",
-	"translate-pref-nonewsletter": "আমাকে ইমেইল নিউজলেটার প্রেরণ করবেন না",
 	"translate-pref-editassistlang": "সহযোগী ভাষা:",
 	"prefs-translate": "অনুবাদ অপশন",
 	"translate-pref-editassistlang-help": "কমা দ্বারা পৃথক করা ভাষার কোডের তালিকা। আপনি অনুবাদ করার সময় এই ভাষাগুলিতে বার্তার অনুবাদ থাকলে তা প্রদর্শিত হবে। ভাষাগুলির পূর্বনির্ধারিত তালিকা আপনার ভাষার উপর নির্ভর করে।",

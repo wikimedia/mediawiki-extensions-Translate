@@ -61,7 +61,6 @@
 	"translate-checks-parametersnotequal": "Tal av parametrum er {{PLURAL:$1|$1}}; eigur at vera {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> er skeivt skrivað.",
 	"translate-checks-fudforum-syntax": "Nýt <nowiki>$1</nowiki> ístaðin fyri <nowiki>$2</nowiki> í hesi verkætlanini.",
-	"translate-pref-nonewsletter": "Ikki senda mær týðindabrøv við telduposti",
 	"translate-pref-editassistlang": "Stuðlandi mál:",
 	"prefs-translate": "Møguleikar fyri týðing",
 	"translate-pref-editassistlang-help": "Listi við málkotum atskilt við komma.\nTýðing av einum boði í hesum málum vera víst, meðan tú týðir.\nStandardlistin yvir mál avhengur av tínum máli.",

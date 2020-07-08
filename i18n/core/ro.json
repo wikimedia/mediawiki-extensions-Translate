@@ -73,7 +73,6 @@
 	"translate-checks-parametersnotequal": "Numărul de parametri este {{PLURAL:$1|$1}}; ar trebui să fie {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> este incorect.",
 	"translate-checks-fudforum-syntax": "Utilizați <nowiki>$1</nowiki> în loc de <nowiki>$2</nowiki> în cadrul acestui proiect.",
-	"translate-pref-nonewsletter": "Nu-mi trimite știri prin e-mail",
 	"translate-pref-editassistlang": "Limbi ajutătoare",
 	"prefs-translate": "Opțiuni de traducere",
 	"translate-pref-editassistlang-help": "Listă de coduri de limbă separate prin virgulă.\nTraducerea unui mesaj în aceste limbi vă este afișată în timp ce traduceți.\nLista implicită de limbi depinde de propria dumneavoastră limbă.",

@@ -86,7 +86,6 @@
 	"translate-checks-parametersnotequal": "Το πλήθος των παραμέτρων είναι {{PLURAL:$1|$1}} ενώ θα έπρεπε να είναι {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "Το <nowiki>$1</nowiki> έχει λανθασμένη μορφή.",
 	"translate-checks-fudforum-syntax": "Χρήση του <nowiki>$1</nowiki> αντί του <nowiki>$2</nowiki> σε αυτό το εγχείρημα.",
-	"translate-pref-nonewsletter": "Μην μου στέλνετε e-mail newsletters",
 	"translate-pref-editassistlang": "Βοηθητικές γλώσσες:",
 	"prefs-translate": "Επιλογές μετάφρασης",
 	"translate-pref-editassistlang-help": "Κατάλογος κωδικών γλωσσών χωρισμένων με κόμματα.\nΗ μετάφραση ενός μηνύματος σε αυτές τις γλώσσες εμφανίζεται μόνο κατά τη διενέργεια μιας μετάφρασης.\nΗ προεπιλεγμένη λίστα των γλωσσών εξαρτάται από τη γλώσσα σου.",

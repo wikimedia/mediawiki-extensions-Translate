@@ -67,7 +67,6 @@
 	"translate-checks-parametersnotequal": "D Parameteraazahl isch {{PLURAL:$1|$1}}, sott aber {{PLURAL:$2|$2}} syy.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> isch formal nit giltig.",
 	"translate-checks-fudforum-syntax": "Bitte bruch <nowiki>$1</nowiki> statt <nowiki>$2</nowiki> in däm Projäkt.",
-	"translate-pref-nonewsletter": "Schick mir kei E-Mail-Newsletter zue",
 	"translate-pref-editassistlang": "Hilfssproche:",
 	"prefs-translate": "Ibersetzigoptione",
 	"translate-pref-editassistlang-help": "Dur Komma trännti Lischt vu Sprochcodes.\nIbersetzige vun ere Nochricht in däne Sproche wäre aazeigt, wänn du am Ibersetze bisch.\nD Standardlischt vu Sproche hangt vu Dyyre Sproch ab.",

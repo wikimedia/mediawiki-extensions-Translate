@@ -74,7 +74,6 @@
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ima duplicirane oblike na kraju. <nowiki>{{PLURAL:$1|škare|škare}}</nowiki> trebalo bi pisati kao <nowiki>{{PLURAL:$1|škare}}</nowiki>.",
 	"translate-checks-gettext-plural-missing": "Ovaj prijevod mora sadržavati <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-fudforum-syntax": "Upotrijebite nowiki>$1</nowiki> umjesto <nowiki>$2</nowiki> u ovom projektu.",
-	"translate-pref-nonewsletter": "Ne šalji mi e-poštom obavijesti translatewiki.net projekta",
 	"translate-pref-editassistlang": "Pomoćni jezici:",
 	"prefs-translate": "Mogućnosti prijevoda",
 	"translate-pref-editassistlang-help": "Popis jezičnih kodova odijeljen zarezima.\nPrijevod poruke na tim jezicima bit će prikazani dok prevodite.\nZadani popis jezika ovisi o vašem jeziku.",

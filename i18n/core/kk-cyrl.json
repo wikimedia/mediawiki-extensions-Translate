@@ -59,7 +59,6 @@
 	"translate-checks-xhtml": "Келесі {{PLURAL:$2|белгіні|белгіні}} дұрыстарымен алмастырыңыз: \n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аударма жоқ.",
 	"translate-checks-pagename": "Анықтамадан есім кеңістігі өзгертілген",
-	"translate-pref-nonewsletter": "Жаңалық хаттарды маған жіберме",
 	"translate-pref-editassistlang": "Көмекші тілдер:",
 	"prefs-translate": "Аударма баптаулары",
 	"translate-pref-editassistlang-bad": "Тізімдегі дұрыс емес тіл коды:\n<nowiki>$1</nowiki>.",

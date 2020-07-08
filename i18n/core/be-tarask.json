@@ -73,7 +73,6 @@
 	"translate-checks-parametersnotequal": "Колькасьць парамэтраў — {{PLURAL:$1|$1}}, а мусіць быць — $2.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> няслушны.",
 	"translate-checks-fudforum-syntax": "Выкарыстоўваць <nowiki>$1</nowiki> замест <nowiki>$2</nowiki> у гэтым праекце.",
-	"translate-pref-nonewsletter": "Не дасылаць мне інфармацыйныя лісты па электроннай пошце",
 	"translate-pref-editassistlang": "Дапаможныя мовы:",
 	"prefs-translate": "Налады перакладу",
 	"translate-pref-editassistlang-help": "Падзелены коскамі сьпіс кодаў моў.\nПераклады паведамленьняў на гэтыя мовы паказваюцца ў працэсе перакладаньня.\nСьпіс перадвызначаных моў залежыць ад Вашай мовы.",

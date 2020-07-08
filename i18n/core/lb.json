@@ -72,7 +72,6 @@
 	"translate-checks-parametersnotequal": "D'Zuel vun de Parameteren ass {{PLURAL:$1|$1}} et {{PLURAL:$2|dierft awer nëmmen ee sinn|missten der awer $2 sinn}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> ass formal net valabel.",
 	"translate-checks-fudforum-syntax": "<nowiki>$1</nowiki>  aplaz vu(n) <nowiki>$2</nowiki>  an dësem Projet benotzen.",
-	"translate-pref-nonewsletter": "Schéckt mir keng E-Mail-Newsletter.",
 	"translate-pref-editassistlang": "Sproochen déi ënnerstëtzen:",
 	"prefs-translate": "Optioune vun der Iwwersetzung",
 	"translate-pref-editassistlang-help": "Mat Komma getrennte Lëscht vun de Sproochcoden.\nIwwersetzung vun engem Message an dës Sprooche gëtt gewisen wann Dir iwwersetzt.\nD'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",

@@ -106,7 +106,6 @@
 	"translate-checks-newline-extra-start": "在翻譯的開頭{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
 	"translate-checks-newline-extra-end": "在翻譯的結尾{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
 	"translate-checks-value-not-present": "此翻譯應相同於{{PLURAL:$1|1=|以下值之一：}}$1。",
-	"translate-pref-nonewsletter": "不要傳送電子報給我",
 	"translate-pref-editassistlang": "輔助語言：",
 	"prefs-translate": "翻譯選項",
 	"translate-pref-editassistlang-help": "以逗號分隔語言代碼。\n當您翻譯的時，會隨著顯示這些語言的訊息。\n預設會使用您的語言。",

@@ -49,7 +49,6 @@
 	"translate-checks-format": "Tradiksyon sa a pa swiv definisyon a oubyen gen yon sentaks ki pa bon: $1",
 	"translate-checks-escape": "Echapman sa yo kapab rive pa aksidan: <strong>$1</strong>",
 	"translate-checks-fudforum-syntax": "Pito ou sèvi ak <nowiki>$1</nowiki> pase <nowiki>$2</nowiki> nan pwojè sa a.",
-	"translate-pref-nonewsletter": "Pa voye imèl nouvèl yo ban mwen",
 	"translate-pref-editassistlang": "Lang pou sipòte:",
 	"prefs-translate": "Opsyon pou tradiksyon",
 	"translate-pref-editassistlang-help": "Lis kòd lang yo ki separe pa vigil.\nTradiksyon pou yon mesaj nan lang sa yo parèt lè w ap tradui.\nLis lang pa defo depann de lang ou an.",

@@ -58,7 +58,6 @@
 	"translate-checks-xhtml": "કૃપા કરી આપેલ {{PLURAL:$2|ટૈગ|ટૈગ્સ}}ને સાચી શાથે બદલો:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "વ્યાખ્યા વપરાઇ <nowiki>{{PLURAL:}}</nowiki> પરંતુ ભાષાંતર નહીં.",
 	"translate-checks-format": "આ ભાષાંતર વ્યાખ્યાનું પાલન કરતું નથી કે અવૈધ વાક્યવિન્યાસ $1 ધરાવે છે:",
-	"translate-pref-nonewsletter": "મને ઇ-મેઇલ પત્રિકા મોકલશો નહીં",
 	"translate-pref-editassistlang": "સહાયક ભાષાઓ:",
 	"prefs-translate": "ભાષાંતર વિકલ્પો",
 	"translate-pref-editassistlang-help": "અલ્પવિરામો વડે વિભાજીત ભાષાસંકેતોની યાદી.\n\nજ્યારે તમે ભાષાંતર કરતા હશો ત્યારે આ ભાષાઓમાં ભાષાંતરીત સંદેશાઓ જોવા મળશે.\n\nભાષાઓની ડિફોલ્ટ યાદી તમારી ભાષા પર આધારીત છે.",

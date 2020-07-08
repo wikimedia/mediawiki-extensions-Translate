@@ -76,7 +76,6 @@
 	"translate-checks-parametersnotequal": "Có {{PLURAL:$1|$1}} tham số; phải có {{PLURAL:$2|$2}} tham số.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> hư hỏng.",
 	"translate-checks-fudforum-syntax": "Hãy dùng <nowiki>$1</nowiki> thay cho <nowiki>$2</nowiki> trong dự án này.",
-	"translate-pref-nonewsletter": "Đừng gửi cho tôi bản tin qua thư điện tử",
 	"translate-pref-editassistlang": "Ngôn ngữ bổ trợ:",
 	"prefs-translate": "Tùy chọn bản dịch",
 	"translate-pref-editassistlang-help": "Danh sách các ngôn ngữ phân tách bằng dấu phẩy.\nBản dịch thông điệp sang các ngôn ngữ này được hiển thị khi bạn dịch.\nDanh sách các ngôn ngữ mặc định sẽ tùy thuộc vào ngôn ngữ mà bạn chọn.",

@@ -66,7 +66,6 @@
 	"translate-checks-parametersnotequal": "De Aanzahl Parrammeeter es {{PLURAL:$1|$1}}, sulld ävver {{PLURAL:$2|$2}} sin.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> es esu nit jöltesch.",
 	"translate-checks-fudforum-syntax": "Nemm <nowiki>$1</nowiki> aanshtatt vun <nowiki>$2</nowiki> en heh dämm Projäk.",
-	"translate-pref-nonewsletter": "Donn mer keijn Rondschriive övver de eläktronesche Poß scheke",
 	"translate-pref-editassistlang": "Schprohche för ze Hällfe:",
 	"prefs-translate": "Enshtällunge för et Övversäze",
 	"translate-pref-editassistlang-help": "En Leß met Köözelle för Schprohche.\nDe Övversäzonge en di Schprohche wääde Der jezeich, wann De aam Övversäze bes.\nWat De jezeisch kreß, wann De nix enndrähß, deiht vun dä Schprohch afhange, en di De övversaz.",

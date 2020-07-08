@@ -82,7 +82,6 @@
 	"translate-checks-parametersnotequal": "Broj korišćenih parametara je {{PLURAL:$1|$1}}; trebalo bi da je {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> ima pogrešan format.",
 	"translate-checks-fudforum-syntax": "Koristi <nowiki>$1</nowiki> umesto <nowiki>$2</nowiki> u ovom projektu.",
-	"translate-pref-nonewsletter": "Ne šalji mi biltene putem imejla",
 	"translate-pref-editassistlang": "Pomoćni jezici:",
 	"prefs-translate": "Opcije prevođenja",
 	"translate-pref-editassistlang-help": "Spisak kodova jezika razdvojenih zarezom.\nPrevod poruke na ovim jezicima prikazuje se dok prevodite.\nPodrazumevai spisak jezika zavisi od vašeg jezika.",

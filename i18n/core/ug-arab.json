@@ -64,7 +64,6 @@
 	"translate-checks-parametersnotequal": "ماقالىدىكى پارامېتىر سانى {{PLURAL:$1|$1}}: ئەسلىدە {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> پىچىمى خاتا.",
 	"translate-checks-fudforum-syntax": "بۇ قۇرۇلۇشتىكى <nowiki>$2</nowiki> نى ئەمەس بەلكى <nowiki>$1</nowiki> نى ئىشلىتىدۇ.",
-	"translate-pref-nonewsletter": "ماڭا ئېلخەت خەۋەرلىرى ئەۋەتمە",
 	"translate-pref-editassistlang": "ياردەمچى تىل:",
 	"prefs-translate": "تەرجىمە تاللانما",
 	"translate-pref-editassistlang-help": "پەش بىلەن ئايرىلغان تىل كودى تىزىمى.\nتەرجىمە قىلىۋاتقان ۋاقتىڭىزدا مۇناسىپ ئۇچۇرنىڭ تەرجىمىسى بۇ تىللاردا كۆرۈنىدۇ.\nكۆڭۈلدىكى تىل تىزىمى تىلىڭىزغا باغلىق.",

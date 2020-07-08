@@ -86,7 +86,6 @@
 	"translate-checks-parametersnotequal": "Parametronombro estas {{PLURAL:$1|$1}}; devus esti {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> estas malĝusta..",
 	"translate-checks-fudforum-syntax": "Uzu <nowiki>$1</nowiki> anstataŭ <nowiki>$2</nowiki> en ĉi tiu projekto.",
-	"translate-pref-nonewsletter": "Ne sendi al mi retpoŝtajn gazetojn",
 	"translate-pref-editassistlang": "Helpaj lingvoj:",
 	"prefs-translate": "Tradukaj agordoj",
 	"translate-pref-editassistlang-help": "Listo da lingvokodoj disigitaj de komoj.\nTraduko de mesaĝo en ĉi tiuj lingvoj estas montritaj kiam vi estas tradukanta.\nLa defaŭlta lingvolisto dependas de via lingvo.",

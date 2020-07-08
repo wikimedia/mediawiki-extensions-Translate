@@ -93,7 +93,6 @@
 	"translate-checks-malformed": "<nowiki>$1</nowiki> heeft een ongeldige indeling.",
 	"translate-checks-fudforum-syntax": "Gebruik <nowiki>$1</nowiki> in plaats van <nowiki>$2</nowiki> voor dit project.",
 	"translate-checks-value-not-present": "De vertaling moet gelijk zijn aan {{PLURAL:$1|1=|een van de volgende waarden:}} $1.",
-	"translate-pref-nonewsletter": "Mij geen nieuwsbrieven per e-mail sturen",
 	"translate-pref-editassistlang": "Hulptalen:",
 	"prefs-translate": "Vertaalinstellingen",
 	"translate-pref-editassistlang-help": "Kommagescheiden lijst van taalcodes.\nDe vertaling van berichten in deze talen worden weergegeven tijdens het vertalen.\nDe standaardlijst van hulptalen is taalafhankelijk.",

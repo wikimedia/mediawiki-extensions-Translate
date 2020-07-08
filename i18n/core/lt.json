@@ -70,7 +70,6 @@
 	"translate-checks-links-missing": "{{PLURAL:$2|Šios nuorodos|šių $2 nuorodų}} trūksta:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Prašome pakeisti {{PLURAL:$2|šią žymę teisinga žyme|šias žymes teisingomis žymėmis}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.",
-	"translate-pref-nonewsletter": "Nesiųskite man el. pašto naujienlaiškus",
 	"translate-pref-editassistlang": "Asistentinės kalbos:",
 	"prefs-translate": "Vertimo nustatymai",
 	"right-translate": "Redaguoti naudojant vertėjo sąsają",

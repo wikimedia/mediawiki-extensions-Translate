@@ -86,7 +86,6 @@
 	"translate-checks-parametersnotequal": "El compte de paràmetres és {{PLURAL:$1|$1}}; hauria de ser{{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> té un format incorrecte.",
 	"translate-checks-fudforum-syntax": "Feu servir <nowiki>$1</nowiki> en comptes de <nowiki>$2</nowiki> en aquest projecte.",
-	"translate-pref-nonewsletter": "No m’enviïs per correu electrònic el recull de notícies",
 	"translate-pref-editassistlang": "Idiomes d'ajuda:",
 	"prefs-translate": "Opcions de traducció",
 	"translate-pref-editassistlang-help": "Llista separada per comes dels codis dels idiomes que vulgueu utilitzar. Quan traduïu un missatge podreu veure les seves traduccions a aquests idiomes. La llista d'idiomes per defecte depèn del vostre idioma.",

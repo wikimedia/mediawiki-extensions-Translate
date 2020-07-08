@@ -73,7 +73,6 @@
 	"translate-checks-parametersnotequal": "Itungan paramèter {{PLURAL:$1|$1}}; kuduné {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> salah format.",
 	"translate-checks-fudforum-syntax": "Anggonen <nowiki>$1</nowiki> tinimbang <nowiki>$2</nowiki> ing proyèk iki.",
-	"translate-pref-nonewsletter": "Aja kirimi aku pawarta layang-èl",
 	"translate-pref-editassistlang": "Basa panyengkuyung:",
 	"prefs-translate": "Pilihan pertalan",
 	"translate-pref-editassistlang-help": "Pratélan kodhe basa kang kapisah komah.\nPertalan layang ing basa iki bakal katuduhaké nalika kowé pinuju mertal.\nPratélan basa baku gumantung ing basamu.",

@@ -63,7 +63,6 @@
 	"translate-checks-parametersnotequal": "Чісло параметрів {{PLURAL:$1|$1}};мало бы быти {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> мать неправилный формат.",
 	"translate-checks-fudforum-syntax": "У тім проєктї мусите намісто <nowiki>$2</nowiki> хосновати <nowiki>$1</nowiki>.",
-	"translate-pref-nonewsletter": "Не посылати мі вістї ел. поштов",
 	"translate-pref-editassistlang": "Помічны языкы:",
 	"prefs-translate": "Наставлїня перекладу",
 	"translate-pref-editassistlang-help": "Список кодів языків оддїленый комами.\nПереклады зволеного повідомлїня до тых языків суть зображены в часї перекладаня.\nІмпліцітный список (''default'') залежыть од вашого языка.",

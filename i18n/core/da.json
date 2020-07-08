@@ -78,7 +78,6 @@
 	"translate-checks-parametersnotequal": "Antallet af parametre er {{PLURAL:$1|$1}}; det burde være {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> er fejlbehæftet.",
 	"translate-checks-fudforum-syntax": "Brug <nowiki>$1</nowiki> i stedet for <nowiki>$2</nowiki> i dette projekt.",
-	"translate-pref-nonewsletter": "Send ikke e-mail-nyhedsbreve til mig",
 	"translate-pref-editassistlang": "Hjælpesprog:",
 	"prefs-translate": "Oversættelsesindstillinger",
 	"translate-pref-editassistlang-help": "Kommasepareret liste med sprogkoder.\nOversættelsen af en besked til disse sprog vises når du oversætter.\nStandardlisten afhænger af dit sprog.",

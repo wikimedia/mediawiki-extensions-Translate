@@ -63,7 +63,6 @@
 	"translate-checks-parametersnotequal": "Lo nombro de paramètros est {{PLURAL:$1|$1}} ; cen devrêt étre {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> est fôx.",
 	"translate-checks-fudforum-syntax": "Empleyéd <nowiki>$1</nowiki> nan pas <nowiki>$2</nowiki> dens ceti projèt.",
-	"translate-pref-nonewsletter": "Pas mè mandar les lètres de novèles per mèssageria èlèctronica",
 	"translate-pref-editassistlang": "Lengoues d’assistance :",
 	"prefs-translate": "Chouèx de traduccion",
 	"translate-pref-editassistlang-help": "Lista de codes lengoues sèparâs per na virgula.\nLa traduccion d’un mèssâjo dens cetes lengoues est montrâye quand vos éte aprés lo traduire.\nLa lista de les lengoues per dèfôt dèpend de voutra lengoua.",

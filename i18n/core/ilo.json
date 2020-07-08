@@ -66,7 +66,6 @@
 	"translate-checks-parametersnotequal": "Ti bilang ti parametro ket {{PLURAL:$1|$1}}; nasken kuma a {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "Ti <nowiki>$1</nowiki> ket nadadael.",
 	"translate-checks-fudforum-syntax": "Usaren ti <nowiki>$1</nowiki> imbes nga ti <nowiki>$2</nowiki> iti daytoy a gandat.",
-	"translate-pref-nonewsletter": "Saannak a patulodan iti esurat ti damdamag",
 	"translate-pref-editassistlang": "Dagiti katakunaynay a pagsasao:",
 	"prefs-translate": "Dagiti pagpilian ti panagipatarus",
 	"translate-pref-editassistlang-help": "Listaan dagiti kodigo ti pagsasao nga insinsina ti koma.\nTi patarus ti mensahe kadagitoy a pagsasao ket maipakita no agipatpataruska.\nTi kasisigud a listan dagiti pagsasao ket depende iti pagsasaom.",

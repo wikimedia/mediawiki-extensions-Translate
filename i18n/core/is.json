@@ -67,7 +67,6 @@
 	"translate-checks-parametersnotequal": "Fjöldi stika er {{PLURAL:$1|$1}}, en ætti að vera {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> er ógilt.",
 	"translate-checks-fudforum-syntax": "Notaðu <nowiki>$1</nowiki> í staðinn fyrir <nowiki>$2</nowiki> í þessu verkefni.",
-	"translate-pref-nonewsletter": "Ekki senda mér rafrænt fréttabréf",
 	"translate-pref-editassistlang": "Aðstoðar tungumál:",
 	"prefs-translate": "Stillingar þýðinga",
 	"translate-pref-editassistlang-help": "Listi yfir tungumálakóða, aðskildir með kommu.\nSkilaboðin eru sýnd á þessum tungumálum þegar þú þýðir skilaboð.\nSjálfvirkur listi tungumála fer eftir tungumáli þínu.",

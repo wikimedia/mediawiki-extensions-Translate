@@ -79,7 +79,6 @@
 	"translate-checks-parametersnotequal": "Počet parametrov je {{PLURAL:$1|$1}}; mal by byť {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki>má nesprávny formát.",
 	"translate-checks-fudforum-syntax": "V tomto projekte používať <nowiki>$1</nowiki> namiesto <nowiki>$2</nowiki>.",
-	"translate-pref-nonewsletter": "Neposielať mi novinky e-mailom",
 	"translate-pref-editassistlang": "Pomocné jazyky:",
 	"prefs-translate": "Možnosti prekladu",
 	"translate-pref-editassistlang-help": "Čiarkami oddelený zoznam kódov jazykov.\nPreklady správ v týchto jazykoch sa zobrazujú, keď prekladáte.\nPredvolený zoznam jazykov závisí na vašom jazyku.",

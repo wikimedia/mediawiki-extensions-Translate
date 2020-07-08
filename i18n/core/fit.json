@@ -57,7 +57,6 @@
 	"translate-checks-newline-missing-end": "Käänöksen lopusta puuttuu $1 {{PLURAL:$1|rivinvaihto|rivinvaihtoa}}.",
 	"translate-checks-newline-extra-start": "Käänöksen alussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-newline-extra-end": "Käänöksen lopussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
-	"translate-pref-nonewsletter": "Älä lähätä uutiskirjeitä",
 	"prefs-translate": "Käännösinställninkit",
 	"translate-pref-editassistlang-help": "Pilkuin eroteltu lista kielikooteista.\nViestin käänökset näillä kielillä näkyvät kääntäessäsi.\nInställninkien oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä.",
 	"translate-pref-editassistlang-bad": "Listassa on kelpaamaton kielikooti:\n<nowiki>$1</nowiki>.",

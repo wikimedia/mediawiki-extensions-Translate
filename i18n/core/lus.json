@@ -59,7 +59,6 @@
 	"translate-checks-parametersnotequal": "Hmanraw zât {{PLURAL:$1|$1}}; {{PLURAL:$2|$2}} tùr.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> hi a dik lo.",
 	"translate-checks-fudforum-syntax": "He hna-hmachhawpah hian <nowiki>$2</nowki> aiah <nowiki>$1</nowiki> hmang zawk rawh",
-	"translate-pref-nonewsletter": "E-chanchinbu min thawn suh",
 	"translate-pref-editassistlang": "Puitu ţawngte:",
 	"prefs-translate": "Lehlin duhdàn",
 	"translate-pref-editassistlang-bad": "Tlar zingah ţawng thurûk dik lo a awm:\n<nowiki>$1</nowiki>.",

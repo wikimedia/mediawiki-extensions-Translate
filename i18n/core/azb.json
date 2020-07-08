@@ -71,7 +71,6 @@
 	"translate-checks-parametersnotequal": "پارامِتر سایی {{PLURAL:$1|$1}}-دیر؛ گرک {{PLURAL:$2|$2}} اولا.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> پیس فورم‌دادیر.",
 	"translate-checks-fudforum-syntax": "بو پروژه‌ده <nowiki>$2</nowiki> یئرینه <nowiki>$1</nowiki>-ی ایشلدین.",
-	"translate-pref-nonewsletter": "منه ایمیل خبرنامه‌لری گؤندرمه",
 	"translate-pref-editassistlang": "کؤمکچی دیل‌لر:",
 	"prefs-translate": "چئویرمک سئچمه‌لری",
 	"translate-pref-editassistlang-help": "کاما ایله آیریلمیش دیل کودلاری.\nسیز چئویرنده، بو دیل‌ده مئساژلارین چئویرمه‌لری گؤستریلر.\nدیل‌لری ایلک لیستی، سیزین دیل‌لرینیزه باغلی‌دیر.",

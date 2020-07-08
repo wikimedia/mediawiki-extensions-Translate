@@ -63,7 +63,6 @@
 	"translate-export-form-format": "Format",
 	"translate-checks-parameters": "{{PLURAL:$2|Parametreyê cêrêni nêgureniyayê|Parametreyo cêrên nêgureniyayo}}: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|Gıra|$2 Gırey}} ceri berbata: <strong><nowiki>$1</nowiki></strong>",
-	"translate-pref-nonewsletter": "Mı rê bultena xeberanê eposta merışê",
 	"translate-pref-editassistlang": "Zıwanê peşti:",
 	"prefs-translate": "Opsiyonê çarnayışi",
 	"translate-pref-editassistlang-help": "Virgula abıryaye lista qodanê zıwanan. Nê zıwanan de açarnayışê yew zıwani, şıma wexteyo ke açarnayış kenê aseno. Hesabyaye lista zıwani aitê zıwanê şımaya.",

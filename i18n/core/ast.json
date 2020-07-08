@@ -87,7 +87,6 @@
 	"translate-checks-newline-extra-start": "Hai $1 {{PLURAL:$1|carácter|carácteres}} de saltu de llinia {{PLURAL:$1|sobrante|sobrantes}} al principiu de la traducción.",
 	"translate-checks-newline-extra-end": "Hai $1 {{PLURAL:$1|carácter|carácteres}} de saltu de llinia {{PLURAL:$1|sobrante|sobrantes}} al final de la traducción.",
 	"translate-checks-value-not-present": "La traducción tien de ser igual a {{PLURAL:$1|1=|unu de los valores siguientes:}} $1.",
-	"translate-pref-nonewsletter": "Nun unviame boletinos per corréu electrónicu",
 	"translate-pref-editassistlang": "Llingües d'ayuda:",
 	"prefs-translate": "Opciones de traducción",
 	"translate-pref-editassistlang-help": "Llista de códigos de llingua separaos por comes.\nCuando traduces s'amuesen les traducciones d'un mensaxe nestes llingües.\nLa llista predeterminada de llingües depende de la to llingua.",

@@ -60,7 +60,6 @@
 	"translate-checks-escape": "The follaein escapes micht be accidental: <strong>$1</strong>",
 	"translate-checks-parametersnotequal": "Guidin coont is {{PLURAL:$1|$1}}; shid be {{PLURAL:$2|$2}}.",
 	"translate-checks-fudforum-syntax": "Uise <nowiki>$1</nowiki> instead o <nowiki>$2</nowiki> in this waurk.",
-	"translate-pref-nonewsletter": "Dinna send me wab-mail newsletters",
 	"translate-pref-editassistlang": "Assistant leids:",
 	"prefs-translate": "Owersetin opties",
 	"translate-pref-editassistlang-help": "Comma separated leet o lee codes.\nThe owersetin o ae message in thir leids ar shawn whan ye'r owersetin.\nThe defaut leet o leids depends oan yer leid.",

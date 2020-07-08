@@ -81,7 +81,6 @@
 	"translate-checks-parametersnotequal": "A paraméterek száma a szükséges {{PLURAL:$1|$1}} helyett {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> hibás formátumú.",
 	"translate-checks-fudforum-syntax": "Használj <nowiki>$1</nowiki> formát <nowiki>$2</nowiki> helyett ebben a projektben.",
-	"translate-pref-nonewsletter": "Ne küldjenek hírlevelet",
 	"translate-pref-editassistlang": "Segédnyelvek:",
 	"prefs-translate": "Fordítási beállítások",
 	"translate-pref-editassistlang-help": "Nyelvkódok vesszővel elválasztott listája.\nAz üzenetek fordításai ezeken a nyelveken jelennek meg, amikor fordítasz.\nA nyelvek alapértelmezett listája a nyelvedtől függ.",

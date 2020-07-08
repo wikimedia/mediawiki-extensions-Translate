@@ -73,7 +73,6 @@
 	"translate-checks-parametersnotequal": "Parameterteljaren er {{PLURAL:$1|$1}}; skulle vore {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> er vanskapt.",
 	"translate-checks-fudforum-syntax": "Bruk <nowiki>$1</nowiki> i staden for <nowiki>$2</nowiki> på dette prosjektet.",
-	"translate-pref-nonewsletter": "Ikkje send meg nyhendebrev",
 	"translate-pref-editassistlang": "Hjelpespråk:",
 	"prefs-translate": "Omsetjingsval",
 	"translate-pref-editassistlang-help": "Kommaåtskild liste over språkkodar.\nOmsetjinga av meldinga på desse språka vert viste medan du set om.\nStandardlista over språk fylgjer med språket ditt.",

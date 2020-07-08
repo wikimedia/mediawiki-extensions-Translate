@@ -53,7 +53,6 @@
 	"translate-checks-format": "Din it-traduzzjoni ma ssegwix id-definizzjoni segwenti jew għandha sintassi invalidi: $1",
 	"translate-checks-escape": "L-''escapes'' segwenti jistgħu jkunu aċċidentali: <strong>$1</strong>",
 	"translate-checks-fudforum-syntax": "Uża <nowiki>$1</nowiki> minflok <nowiki>$2</nowiki> f'dan il-proġett.",
-	"translate-pref-nonewsletter": "Tibgħatlix ''newsletters'' permezz ta' ittra-e",
 	"translate-pref-editassistlang": "Lingwi assistenti:",
 	"prefs-translate": "Opzjonijiet għat-traduzzjoni",
 	"translate-pref-editassistlang-help": "Kodiċi tal-lingwi separati minn virgola.\nIt-traduzzjonijiet ta' messaġġ f'dawn il-lingwi huma murija meta tkun qed tittraduċi.\nIl-lista predefinita tal-lingwi tiddependi fuq il-lingwa tiegħek.",

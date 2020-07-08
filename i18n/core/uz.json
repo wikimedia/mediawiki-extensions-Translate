@@ -58,7 +58,6 @@
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki>da {{PLURAL:$1|$1 ta o'zgaruvchi}} kiritildi, lekin {{PLURAL:$2|faqat bitta o'zgaruvchi|$2 ta o'zgaruvchi}} qo'llaniladi (0= va 1= talik o'zgaruvchilar bundan mustasno).",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> xato.",
 	"translate-checks-fudforum-syntax": "Ushbu loyihada <nowiki>$2</nowiki> o'rniga <nowiki>$1</nowiki> dan foydalanish.",
-	"translate-pref-nonewsletter": "Menga elektron pochta orqali axborot xatlari joʻnatilmasin",
 	"translate-pref-editassistlang": "Yordamchi tillar:",
 	"prefs-translate": "Tarjima moslamalari",
 	"translate-pref-editassistlang-bad": "Ro'yxatda noto'g'ri til kodi:\n<nowiki>$1</nowiki>.",

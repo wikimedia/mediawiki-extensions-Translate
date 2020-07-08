@@ -60,7 +60,6 @@
 	"translate-checks-plural": "Mae'r gwreiddiol yn defnyddio <nowiki>{{PLURAL:}}</nowiki> ond nid y cyfieithiad.",
 	"translate-checks-pagename": "Mae'r parth yn y cyfieithiad yn wahanol i'r parth yn y neges wreiddiol",
 	"translate-checks-format": "Nid yw'r cyfieithiad yn gydnaws â'r gwreiddiol, ynteu mae cystrawen annilys ynddo: $1",
-	"translate-pref-nonewsletter": "Peidier ag anfon cylchlythyron e-bost ataf",
 	"translate-pref-editassistlang": "Ieithoedd cynorthwyol:",
 	"prefs-translate": "Dewisiadau cyfieithu",
 	"translate-pref-editassistlang-help": "Rhestr coma-wahanedig o godau iaith.\nWrth gyfieithu neges, bydd cyfieithiadau ohono yn yr ieithoedd hyn i'w gweld.\nBydd y rhestr diofyn o ieithoedd yn dibynnu ar eich iaith chi.",

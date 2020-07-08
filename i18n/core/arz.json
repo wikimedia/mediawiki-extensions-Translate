@@ -49,7 +49,6 @@
 	"translate-checks-format": "هذه الترجمه لا تتبع التعريف أو لديها صياغه خاطئة: $1",
 	"translate-checks-escape": "عمليات الهروب التاليه ربما تكون حدثت بالصدفة: <strong>$1</strong>",
 	"translate-checks-fudforum-syntax": "استخدم <nowiki>$1</nowiki> بدلًا من <nowiki>$2</nowiki> فى هذا المشروع.",
-	"translate-pref-nonewsletter": "لا ترسل لى إخطارات بريديه بالبريد الإلكتروني",
 	"translate-pref-editassistlang": "لغات المساعد:",
 	"prefs-translate": "خيارات الترجمة",
 	"translate-pref-editassistlang-help": "قائمه برموز اللغات مفصوله بفواصل.\nتُعرض ترجمه الرساله بهذه اللغات عندما تترجم.\nقائمه اللغات المبدئيه تعتمد على لغتك.",

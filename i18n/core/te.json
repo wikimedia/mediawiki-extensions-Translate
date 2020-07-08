@@ -70,7 +70,6 @@
 	"translate-checks-parametersnotequal": "ఉన్న పరామితుల సంఖ్య {{PLURAL:$1|$1}}; ఉండాల్సినది {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> తప్పుగా రూపించబడింది.",
 	"translate-checks-fudforum-syntax": "ఈ ప్రాజెక్టులో <nowiki>$2</nowiki> బదులు <nowiki>$1</nowiki> వాడండి.",
-	"translate-pref-nonewsletter": "నాకు ఈ-మెయిలు వార్తాలేఖలు పంపించవద్దు",
 	"translate-pref-editassistlang": "సహాయిక భాషలు:",
 	"prefs-translate": "అనువాద ఎంపికలు",
 	"translate-pref-editassistlang-bad": "జాబితాలో తప్పుడు భాషా సంకేతం:\n<nowiki>$1</nowiki>.",

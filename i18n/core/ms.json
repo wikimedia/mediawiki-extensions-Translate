@@ -70,7 +70,6 @@
 	"translate-checks-parametersnotequal": "Kiraan parameter ialah {{PLURAL:$1|$1}}; sepatutnya {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> cacat.",
 	"translate-checks-fudforum-syntax": "Usah gunakan <nowiki>$2</nowiki>, gunakan <nowiki>$1</nowiki> di projek ini.",
-	"translate-pref-nonewsletter": "Jangan hantar surat berita e-mel kepada saya",
 	"translate-pref-editassistlang": "Bahasa pembantu:",
 	"prefs-translate": "Pilihan penterjemahan",
 	"translate-pref-editassistlang-help": "Senarai kod bahasa terpisah koma.\nTerjemahan mesej dalam bahasa-bahasa ini ditunjukkan apabila anda menterjemah.\nSenarai bahasa asali bergantung pada bahasa anda.",

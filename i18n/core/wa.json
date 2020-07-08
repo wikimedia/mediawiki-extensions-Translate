@@ -62,7 +62,6 @@
 	"translate-checks-parametersnotequal": "Li nombe di paramets est d' {{PLURAL:$1|$1}}; adon ki ça dvreut esse {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "«<nowiki>$1</nowiki>» est cron.",
 	"translate-checks-fudforum-syntax": "So ç' pordjet ci vos dvoz eployî <nowiki>$1</nowiki> purade ki <nowiki>$2</nowiki>.",
-	"translate-pref-nonewsletter": "Èn nén m' evoyî les emiles d' infôrmåcion",
 	"translate-pref-editassistlang": "Lingaedjes d' aidance:",
 	"prefs-translate": "Tchuzes di ratournaedje",
 	"translate-pref-editassistlang-help": "Djivêye di côdes di lingaedje, dispårtis avou des comas.\nLi ratournaedje d' on messaedje dins onk di ces lingaedjes la srè håyné cwand vos estoz dins l' boesse di ratournaedje.\nLi prémetowe djivêye dipind d' vosse lingaedje po l' eterface.",

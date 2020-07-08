@@ -39,7 +39,6 @@
 	"translate-checks-links": "{{PLURAL:$2|El colegamento seguente el|I colegamenti seguenti i}} pol causar problemi:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Par piaser, sostituìssi {{PLURAL:$2|el seguente tag con quel giusto|i seguenti tag con quei giusti}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definission la dòpara <nowiki>{{PLURAL:}}</nowiki> ma la tradussion no.",
-	"translate-pref-nonewsletter": "No stà mandarme notiziari par e-mail",
 	"right-translate": "Modifica doparando l'interfacia de tradussion",
 	"translate-rc-translation-filter": "Filtra le tradussion:",
 	"translate-rc-translation-filter-no": "No stà far gnente",

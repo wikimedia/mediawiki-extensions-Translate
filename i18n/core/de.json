@@ -106,7 +106,6 @@
 	"translate-checks-newline-extra-start": "Am Anfang der Übersetzung {{PLURAL:$1|ist ein zusätzliches|sind $1 zusätzliche}} Zeilenumbruchzeichen.",
 	"translate-checks-newline-extra-end": "Am Ende der Übersetzung {{PLURAL:$1|ist ein zusätzliches|sind $1 zusätzliche}} Zeilenumbruchzeichen.",
 	"translate-checks-value-not-present": "Die Übersetzung muss {{PLURAL:$1|1=|einem der folgenden Werte entsprechen:}} $1.",
-	"translate-pref-nonewsletter": "Sende mir keinen E-Mail-Newsletter zu",
 	"translate-pref-editassistlang": "Unterstützungssprachen:",
 	"prefs-translate": "Übersetzungsoptionen",
 	"translate-pref-editassistlang-help": "Mit Kommas getrennte Liste von Sprachcodes.\nDie Übersetzungen der Nachrichten in den gewählten Sprachen werden beim Übersetzen angezeigt.\nDie Standardliste ist abhängig von der Sprache der Benutzeroberfläche.",

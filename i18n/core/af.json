@@ -65,7 +65,6 @@
 	"translate-checks-escape": "Die volgende ontsnapping {{PLURAL:$2|karakter|karakters}} kan toevallig wees:<strong>$1</strong>.{{MEERVOUD:$4|'n geldige ontsnapkarakter is|geldige ontsnapkarakter bevat:}} $3",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> het 'n ongeldige indeling.",
 	"translate-checks-fudforum-syntax": "Gebruik <nowiki>$1</nowiki> i.p.v. <nowiki>$2</nowiki> vir hierdie projek.",
-	"translate-pref-nonewsletter": "Moenie aan my nuusbriewe per e-pos stuur nie",
 	"translate-pref-editassistlang": "Hulptale:",
 	"prefs-translate": "Vertalings opsies",
 	"translate-pref-editassistlang-help": "Komma-geskeide lys van taalkodes.\nVertaling van 'n boodskap in hierdie tale word vertoon wanneer u vertaal.\nDie versteklys van tale hang van u taal af.",

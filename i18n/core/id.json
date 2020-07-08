@@ -85,7 +85,6 @@
 	"translate-checks-parametersnotequal": "Terdapat {{PLURAL:$1|$1}} parameter; seharusnya ada {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "Bentukan <nowiki>$1</nowiki> salah.",
 	"translate-checks-fudforum-syntax": "Gunakan <nowiki>$1</nowiki> bukan <nowiki>$2</nowiki> pada proyek ini.",
-	"translate-pref-nonewsletter": "Jangan kirimi saya surel berita",
 	"translate-pref-editassistlang": "Bahasa penunjang:",
 	"prefs-translate": "Opsi terjemahan",
 	"translate-pref-editassistlang-help": "Daftar kode bahasa dipisahkan koma.\nTerjemahan pesan dalam bahasa ini ditampilkan saat Anda menerjemahkan.\nDaftar bahasa baku tergantung pada bahasa Anda.",

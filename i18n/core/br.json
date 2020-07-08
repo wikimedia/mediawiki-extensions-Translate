@@ -72,7 +72,6 @@
 	"translate-checks-parametersnotequal": "{{PLURAL:$1|$1}} eo an niver a arventennoù pa zlefe bezañ {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "Stummet fall eo <nowiki>$1</nowiki>.",
 	"translate-checks-fudforum-syntax": "Ober gant <nowiki>$1</nowiki> e-lec'h <nowiki>$2</nowiki> er raktres-mañ.",
-	"translate-pref-nonewsletter": "Arabat kas din kelc'hlizheroù dre bostel",
 	"translate-pref-editassistlang": "Yezhoù skoazell :",
 	"prefs-translate": "Dibarzhioù treiñ",
 	"translate-pref-editassistlang-help": "Roll kodoù yezh dispartiet dre ur skej.\nDiskwelet eo an droidigezh er yezhoù-se pa vezit o treiñ ur gemennadenn.\nCheñch a ra roll dre ziouer ar yezhoù-se diouzh ar yezh a rit ganti.",

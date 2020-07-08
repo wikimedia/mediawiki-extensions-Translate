@@ -72,7 +72,6 @@
 	"translate-checks-pagename": "Променена е дефиницията на именното пространство",
 	"translate-checks-format": "Този превод не е съгласно дефиницията или има невалиден синтаксис: $1",
 	"translate-checks-fudforum-syntax": "Използвайте <nowiki>$1</nowiki> вместо <nowiki>$2</nowiki> в този проект.",
-	"translate-pref-nonewsletter": "Без получаване на бюлетин по е-поща",
 	"translate-pref-editassistlang": "Помощни езици:",
 	"prefs-translate": "Настройки на превеждането",
 	"right-translate": "Редактиране чрез интерфейса за превод",

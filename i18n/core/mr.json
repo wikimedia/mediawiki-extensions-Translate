@@ -72,7 +72,6 @@
 	"translate-checks-parametersnotequal": "प्राचल मोजणी {{PLURAL:$1|$1}} आहे; {{PLURAL:$2|$2}} हवी.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> मध्ये विकृती आहे.",
 	"translate-checks-fudforum-syntax": "या प्रकल्पात <nowiki>$2</nowiki> ऐवजी <nowiki>$1</nowiki>वापरा.",
-	"translate-pref-nonewsletter": "मला विपत्राद्वारे बातमीपत्र पाठवू नका",
 	"translate-pref-editassistlang": "सहायक भाषा:",
 	"prefs-translate": "भाषांतर पर्याय",
 	"translate-pref-editassistlang-help": "ही स्वल्पविरामाद्वारे विभाजित केलेली भाषासंकेतांची यादी आहे.\n\nआपण भाषांतर करीत असतांना,संदेशाचे या भाषेतील भाषांतर दाखविल्या जाते.\n\nयातील अविचल भाषा आपल्या मूळ भाषेवर आधारीत आहेत.",

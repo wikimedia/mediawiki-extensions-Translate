@@ -104,7 +104,6 @@
 	"translate-checks-parametersnotequal": "共计{{PLURAL:$1|$1}}个参数，应为{{PLURAL:$2|$2}}个。",
 	"translate-checks-malformed": "<nowiki>$1</nowiki>格式不正确。",
 	"translate-checks-fudforum-syntax": "请在该项目使用<nowiki>$1</nowiki>而不是<nowiki>$2</nowiki>。",
-	"translate-pref-nonewsletter": "不要给我发送电子邮件通讯",
 	"translate-pref-editassistlang": "辅助语言：",
 	"prefs-translate": "翻译选项",
 	"translate-pref-editassistlang-help": "请用逗号分隔语言代码列表。这些语言的信息翻译会在您翻译的时显示。默认语言列表基于您的语言。",

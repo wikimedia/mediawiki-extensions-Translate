@@ -8,6 +8,7 @@
 			"Manop",
 			"Octahedron80",
 			"Passawuth",
+			"Patsagorn Y.",
 			"Woraponboonkerd"
 		]
 	},
@@ -76,7 +77,6 @@
 	"translate-checks-parametersnotequal": "การนับตัวแปรคือ {{PLURAL:$1|$1}} ซึ่งควรจะเป็น {{PLURAL:$2|$2}}",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> ผิดรูปแบบ",
 	"translate-checks-fudforum-syntax": "ใช้ <nowiki>$1</nowiki> แทน <nowiki>$2</nowiki> ในโครงการนี้",
-	"translate-pref-nonewsletter": "ไม่รับอีเมลประจำเดือนของเว็บไซต์",
 	"translate-pref-editassistlang": "ภาษาช่วยเหลือ:",
 	"prefs-translate": "ตัวเลือกการแปล",
 	"translate-pref-editassistlang-help": "รายการโค้ดภาษาที่มีจุลภาคคั่นอยู่\nการแปลข้อความในภาษาเหล่านี้จะปรากฏระหว่างที่คุณแปล\nรายการภาษาเริ่มต้นขึ้นอยู่กับภาษาของคุณ",
@@ -170,7 +170,7 @@
 	"translate-mgs-noempty": "ไม่ต้องแสดงภาษาที่ยังไม่ได้มีการแปลใด ๆ",
 	"translate-mgs-submit": "แสดงสถิติ",
 	"translate-mgs-column-language": "ภาษา",
-	"translate-mgs-totals": "{{PLURAL:$1|ภาษา}}ทั้งหมด $1 ภาษาด้วยกัน",
+	"translate-mgs-totals": "รวมทั้งหมด $1 {{PLURAL:$1|ภาษา}}",
 	"translate-mgs-invalid-group": "กลุ่ม $1 ที่ระบุไม่มีอยู่",
 	"translate-mgs-nothing": "ไม่มีอะไรที่จะแสดงสำหรับสถิติที่ร้องขอ",
 	"supportedlanguages": "ภาษาที่รองรับ",

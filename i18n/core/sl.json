@@ -74,7 +74,6 @@
 	"translate-checks-parametersnotequal": "Število parametrov je {{PLURAL:$1|$1}}; moralo bi biti {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> je poškodovan.",
 	"translate-checks-fudforum-syntax": "V tem projektu uporabite <nowiki>$1</nowiki> namesto <nowiki>$2</nowiki>.",
-	"translate-pref-nonewsletter": "Ne pošiljaj mi e-poštnih glasil",
 	"translate-pref-editassistlang": "Pomožni jeziki:",
 	"prefs-translate": "Možnosti prevajanja",
 	"translate-pref-editassistlang-help": "Z vejicami ločen seznam kod jezikov.\nKo prevajate, so prikazani prevodi sporočila v teh jezikih.\nPrivzeti seznam jezikov je odvisen od vašega jezika.",

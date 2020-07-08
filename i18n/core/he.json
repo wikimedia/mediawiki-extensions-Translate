@@ -98,7 +98,6 @@
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|יש תו שורה חדשה אחד מיותר|יש $1 תווי שורה חדשה מיותרים}} בתחילת התרגום.",
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|יש תו שורה חדשה אחד מיותר|יש $1 תווי שורה חדשה מיותרים}} בסוף התרגום.",
 	"translate-checks-value-not-present": "התרגום צריך להיות שווה {{PLURAL:$1|ל־$1|לאחד מהערכים הבאים: $1}}.",
-	"translate-pref-nonewsletter": "אל תשלחו אליי חדשות תקופתיות בדואר אלקטרוני",
 	"translate-pref-editassistlang": "שפות מסייעות:",
 	"prefs-translate": "אפשרויות תרגום",
 	"translate-pref-editassistlang-help": "רשימת קודים של שפות, כאשר פסיקים מפרידים בין שפה לשפה.\nבעת תרגום של הודעה, יוצגו התרגומים של ההודעה לשפות העזר הללו.\nשפת העזר המשמשת כברירת מחדל תלויה בשפת הממשק שלך.",

@@ -45,7 +45,6 @@
 	"translate-export-form-format": "Формат",
 	"translate-checks-parameters": "Түбәндәге {{PLURAL:$2|параметр|параметрлар}} кулланылмый:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Түбәндәге {{PLURAL:$2|параметр|параметрлар}} билгесез:\n<strong>$1</strong>",
-	"translate-pref-nonewsletter": "Минем электрон почтага мәгълүмати бюллетень җибәрмәскә",
 	"translate-pref-editassistlang": "Ярдәмчел телләр:",
 	"prefs-translate": "Тәрҗемә көйләнмәләре",
 	"right-translate-messagereview": "Тәрҗемәләрне тикшерү",

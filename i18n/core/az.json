@@ -54,7 +54,6 @@
 	"translate-edit-askpermission": "İcazə al",
 	"translate-checks-parameters": "Aşağıdakı {{PLURAL:$2|parametrdən|parametrlərdən}} istifadə edilmir:\n<strong>$1</strong>",
 	"translate-checks-pagename": "Anlayışdakı ad sahəsi dəyişdirilib",
-	"translate-pref-nonewsletter": "Mənə e-poçt xəbər bülleteni göndərmə",
 	"translate-pref-editassistlang": "Köməkçi dillər:",
 	"prefs-translate": "Tərcümə seçimləri",
 	"translate-pref-editassistlang-bad": "Siyahıdakı etibarsız dil kodu:\n<nowiki>$1</nowiki>.",

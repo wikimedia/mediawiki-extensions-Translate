@@ -66,7 +66,6 @@
 	"translate-checks-parametersnotequal": "පරාමිති ගණනය {{PLURAL:$1|$1}}; {{PLURAL:$2|$2}} විය යුතුයි.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> විකෘති වී ඇත.",
 	"translate-checks-fudforum-syntax": "මෙම ව්‍යාපෘතියෙහි <nowiki>$1</nowiki> වෙනුවට <nowiki>$2</nowiki> භාවිතා කරන්න.",
-	"translate-pref-nonewsletter": "මට ඊ-තැපැල් පුවත්ලිපි එවන්න එපා",
 	"translate-pref-editassistlang": "සහයක භෂාවන්:",
 	"prefs-translate": "පරිවර්තන විකල්පයන්",
 	"translate-pref-editassistlang-bad": "ලයිස්තුවේ වලංගු නොවන භාෂා කේතයක්:\n<nowiki>$1</nowiki>.",

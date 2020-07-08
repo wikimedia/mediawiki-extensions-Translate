@@ -66,7 +66,6 @@
 	"translate-checks-parametersnotequal": "Ël conteur dij paràmetr a l'é {{PLURAL:$1|$1}}; a dovrìa esse {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> a va nen bin.",
 	"translate-checks-fudforum-syntax": "Dovré <nowiki>$1</nowiki> nopà ëd <nowiki>$2</nowiki> an cost proget-sì.",
-	"translate-pref-nonewsletter": "Mandeme nen ij mëssagi d'anformassion an pòsta eletrònica",
 	"translate-pref-editassistlang": "Lenghe dl'assistent:",
 	"prefs-translate": "Opsion ëd tradussion",
 	"translate-pref-editassistlang-help": "Lista dij còdes ëd le lenghe separà da na vìrgola.\nLa tradussion d'un mëssagi an ste lenghe-sì a l'é mostrà quand ch'a l'é an camin a fé la tradussion.\nLa lista dle lenghe dë stàndard a dipend da soa lenga.",

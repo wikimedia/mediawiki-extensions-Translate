@@ -67,7 +67,6 @@
 	"translate-checks-parametersnotequal": "Licba parametrow jo {{PLURAL:$1|$1}}; to měł {{PLURAL:$2|$2}} byś.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> ma njepłaśiwu formu.",
 	"translate-checks-fudforum-syntax": "<nowiki>$1</nowiki> město <nowiki>$2</nowiki> w toś tom projekśe wužywaś.",
-	"translate-pref-nonewsletter": "Njesćelśo mě emailowy list nowosćow",
 	"translate-pref-editassistlang": "Pomocne rěcy:",
 	"prefs-translate": "Pśełožowańske opcije",
 	"translate-pref-editassistlang-help": "Lisćina rěcnych kodow z komu ako źěleńske znamuško.\nPśełožowanje powěźeńki w toś tych rěcach se pokazuju, gaž pśełožujoš.\nStandardna lisćina rěcow wótwisujo wót swójeje rěcy.",

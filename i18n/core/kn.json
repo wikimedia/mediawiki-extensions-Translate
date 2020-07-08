@@ -53,7 +53,6 @@
 	"translate-checks-format": "ಈ ಭಾಷಾಂತರವು ವ್ಯಾಖ್ಯೆಗ ಸರಿಹೊಂದುತ್ತಿಲ್ಲ ಅಥವಾ ತಪ್ಪು ಪದವಿನ್ಯಾಸವನ್ನು ಹೊಂದಿದೆ: $1",
 	"translate-checks-escape": "ಈ ಕೆಳಗಿನ ಗಮನಕ್ಕೆ ಬಾರದಿರುವ ವಿಷಯ ಆಕಸ್ಮಿಕವಿರಬಹುದು: <strong>$1</strong>",
 	"translate-checks-fudforum-syntax": " <nowiki>$2</nowiki> ರ ಬದಲು <nowiki>$1</nowiki> ನ್ನು ಈ ಯೋಜನೆಯಲ್ಲಿ ಬಳಸಿ  in this project.",
-	"translate-pref-nonewsletter": "ನನಗೆ ಮಿಂಚಂಚೆ ವಾರ್ತಾಪತ್ರಿಕೆಗಳನ್ನು ಕಳುಹಿಸುವುದು ಬೇಡ",
 	"translate-pref-editassistlang": "ಸಹಾಯಕ ಭಾಷೆ:",
 	"prefs-translate": "ಭಾಷಾಂತರ ಆಯ್ಕೆಗಳು",
 	"translate-pref-editassistlang-bad": "ಈ ಪಟ್ಟಿಯಲ್ಲಿರುವ ಭಾಷಾ ಸಂಕೇತ ಅಸಿಂಧು: $1",
