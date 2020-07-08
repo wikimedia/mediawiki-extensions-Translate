@@ -2,63 +2,52 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 
 /**
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extensions\Translate\MessageValidator\Validators\EscapeCharacterValidator
  */
-class EscapeCharacterValidatorTest extends MediaWikiUnitTestCase {
-	public static function provideValidate() {
+class EscapeCharacterValidatorTest extends BaseValidatorTestCase {
+	/** @dataProvider provideTestCases */
+	public function test( $constructorParams, ...$params ) {
+		$validator = new EscapeCharacterValidator( $constructorParams );
+		$this->runValidatorTests( $validator, 'escape', ...$params );
+	}
+
+	public function provideTestCases() {
 		$message = new FatMessage( 'key', 'Hello' );
 
 		yield [
-			'Hello\n',
 			[ 'values' => [ '\n', '\\\\' ] ],
-			$message,
-			null
-		];
-
-		yield [
+			'Hello',
 			'Hello\n',
+			[],
+			'Correct escape is not an issue'
+		];
+
+		yield [
 			[ 'values' => [ '\b' ] ],
-			$message,
-			[ 'type' => 'escape', 'subtype' => 'invalid' ]
+			'Hello',
+			'Hello\n',
+			[ 'invalid' ],
+			'Unsupported escape is an issue'
 		];
 
 		yield [
-			'Hello \b',
 			[ 'values' => [ '\\\\', '\n' ] ],
-			$message,
-			[ 'type' => 'escape', 'subtype' => 'invalid' ]
+			'Hello',
+			'Hello\b',
+			[ 'invalid' ],
+			'Unsupported escape is an issue'
 		];
 
 		yield [
+			[ 'values' => [ '\\\\', '\n' ] ],
+			'Hello',
 			'Hello\\\\',
-			[ 'values' => [ '\\\\', '\n' ] ],
-			$message,
-			null
+			[],
+			'Correct escape is not an issue'
 		];
-	}
-
-	/** @dataProvider provideValidate */
-	public function testValidate(
-		string $translation, array $config, FatMessage $message, array $expected = null
-	) {
-		$message->setTranslation( $translation );
-		$validator = new EscapeCharacterValidator( $config );
-
-		$issues = $validator->getIssues( $message, 'en-gb' );
-
-		if ( $expected === null ) {
-			$this->assertCount( 0, $issues, 'no issues' );
-		} else {
-			$this->assertCount( 1, $issues, 'issue raised' );
-			/** @var ValidationIssue $issue */
-			$issue = $issues->getIterator()->current();
-			$this->assertSame( $expected['type'], $issue->type(), 'issue has correct type' );
-			$this->assertSame( $expected['subtype'], $issue->subType(), 'issue has correct subtype' );
-		}
 	}
 
 	public function testEmptyValues() {
