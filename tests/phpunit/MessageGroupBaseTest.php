@@ -1,12 +1,15 @@
 <?php
+declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator as MessageValidatorInterface;
+use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
+/**
+ * @license GPL-2.0-or-later
+ * @covers MessageGroupBase
+ */
 class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
-
-	/**
-	 * @var MessageGroup
-	 */
+	/** @var MessageGroup */
 	protected $group;
 
 	protected $groupConfiguration = [
@@ -265,8 +268,9 @@ class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
 	}
 }
 
-class FakeInsertableValidator implements Validator, InsertablesSuggester {
-	public function validate( TMessage $message, $code, array &$notices ) {
+class FakeInsertableValidator implements MessageValidatorInterface, InsertablesSuggester {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		return new ValidationIssues();
 	}
 
 	public function getInsertables( $text ) {
@@ -274,8 +278,9 @@ class FakeInsertableValidator implements Validator, InsertablesSuggester {
 	}
 }
 
-class AnotherFakeInsertableValidator implements Validator, InsertablesSuggester {
-	public function validate( TMessage $message, $code, array &$notices ) {
+class AnotherFakeInsertableValidator implements MessageValidatorInterface, InsertablesSuggester {
+	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+		return new ValidationIssues();
 	}
 
 	public function getInsertables( $text ) {
