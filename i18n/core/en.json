@@ -90,6 +90,7 @@
 	"translate-checks-newline-extra-start": "There {{PLURAL:$1|is|are}} $1 extra newline {{PLURAL:$1|character|characters}} at the beginning of the translation.",
 	"translate-checks-newline-extra-end": "There {{PLURAL:$1|is|are}} $1 extra newline {{PLURAL:$1|character|characters}} at the end of the translation.",
 	"translate-checks-value-not-present": "The translation must be equal to {{PLURAL:$1|1=|one of the following values:}} $1.",
+	"translate-checks-replacement": "Use $2 instead of $1.",
 	"translate-pref-editassistlang": "Assistant languages:",
 	"prefs-translate": "Translation options",
 	"translate-pref-editassistlang-help": "Comma separated list of language codes.\nTranslation of a message in these languages are shown when you are translating.\nThe default list of languages depends on your language.",
