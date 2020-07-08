@@ -67,7 +67,6 @@
 	"translate-checks-balance": "There is an uneven amount of {{PLURAL:$2|parenthesis|parentheses}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Following {{PLURAL:$2|link is|$2 links are}} problematic:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Following {{PLURAL:$2|link is|$2 links are}} missing:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Please replace the following {{PLURAL:$2|tag|tags}} with correct ones:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definition uses <nowiki>{{PLURAL:}}</nowiki> but translation does not.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> was given {{PLURAL:$1|one form|$1 forms}} but {{PLURAL:$2|only one form is|$2 forms are}} supported (excluding 0= and 1= forms).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> has duplicate forms at the end. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> should be written as <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",
