@@ -9,8 +9,7 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator
  */
 class MatchSetValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */
-	public function test( ...$params ) {
-		$constructorParams = array_shift( $params );
+	public function test( $constructorParams, ...$params ) {
 		$validator = new MatchSetValidator( $constructorParams );
 		$this->runValidatorTests( $validator, 'value-not-present', ...$params );
 	}
