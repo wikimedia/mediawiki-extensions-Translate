@@ -11,11 +11,11 @@ FILES:
   sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/foo"
 
 VALIDATORS:
-  - id: MediaWikiPlural
-  - id: WikiParameter
-  - id: WikiLink
   - id: BraceBalance
+  - id: MediaWikiLink
   - id: MediaWikiPageName
+  - id: MediaWikiParameter
+  - id: MediaWikiPlural
 
 INSERTABLES:
   class: MediaWikiInsertablesSuggester

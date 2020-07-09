@@ -150,21 +150,11 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$conf['VALIDATORS'] = [
-			[
-				'id' => 'BraceBalance'
-			],
-			[
-				'id' => 'MediaWikiPageName'
-			],
-			[
-				'id' => 'MediaWikiPlural'
-			],
-			[
-				'id' => 'WikiLink'
-			],
-			[
-				'id' => 'WikiParameter'
-			]
+			[ 'id' => 'BraceBalance' ],
+			[ 'id' => 'MediaWikiLink' ],
+			[ 'id' => 'MediaWikiPageName' ],
+			[ 'id' => 'MediaWikiParameter' ],
+			[ 'id' => 'MediaWikiPlural' ],
 		];
 
 		$conf['INSERTABLES']['class'] = MediaWikiInsertablesSuggester::class;
