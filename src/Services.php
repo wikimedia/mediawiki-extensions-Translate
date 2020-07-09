@@ -8,6 +8,7 @@ namespace MediaWiki\Extensions\Translate;
 
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
+use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 
@@ -44,11 +45,17 @@ class Services implements ContainerInterface {
 		return $this->container->has( $id );
 	}
 
-	public function getTranslatorActivity(): TranslatorActivity {
-		return $this->container->getService( 'Translate:TranslatorActivity' );
+	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
+		return $this->container->get( 'Translate:GroupSynchronizationCache' );
 	}
 
-	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
-		return $this->container->getService( 'Translate:GroupSynchronizationCache' );
+	/** @since 2020.07 */
+	public function getParsingPlaceholderFactory(): ParsingPlaceholderFactory {
+		return $this->container->get( 'Translate:ParsingPlaceholderFactory' );
 	}
+
+	public function getTranslatorActivity(): TranslatorActivity {
+		return $this->container->get( 'Translate:TranslatorActivity' );
+	}
+
 }
