@@ -16,7 +16,6 @@ VALIDATORS:
   - id: WikiLink
   - id: BraceBalance
   - id: MediaWikiPageName
-  - id: MediaWikiMisc
 
 INSERTABLES:
   class: MediaWikiInsertablesSuggester

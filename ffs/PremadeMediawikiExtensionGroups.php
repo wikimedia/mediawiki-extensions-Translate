@@ -154,9 +154,6 @@ class PremadeMediawikiExtensionGroups {
 				'id' => 'BraceBalance'
 			],
 			[
-				'id' => 'MediaWikiMisc'
-			],
-			[
 				'id' => 'MediaWikiPageName'
 			],
 			[
