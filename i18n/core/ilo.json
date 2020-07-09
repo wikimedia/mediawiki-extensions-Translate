@@ -56,7 +56,6 @@
 	"translate-checks-balance": "Adda saan nga agtumbas a bilang {{PLURAL:$2|ti parentesis|dagiti parentesis}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Ti sumaganad a silpo|Dagiti sumaganad a $2 a silpo}} ket problematiko:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Ti sumaganad a silpo|Dagiti sumaganad a $2 silpo}} ket awan:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Pangngaasi a sukatan {{PLURAL:$2|ti etiketa|dagiti etiketa}} kadagiti husto:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Ti panangipalawag ket agus-usar ti <nowiki>{{PLURAL:}}</nowiki> ngem ti panangipatarus ket saan.",
 	"translate-checks-plural-forms": "Ti <nowiki>{{PLURAL:}}</nowiki> ket naikkan {{PLURAL:$1|ti maysa a porma|kadagiti $1 a porma}} ngem {{PLURAL:$2|maysa laeng a porma|$2 a porporma}} ti masuportaran (malaksid ti 0= ken 1= a porporma).",
 	"translate-checks-plural-dupe": "Ti <nowiki>{{PLURAL:}}</nowiki> ket addaan ti duplikado a porporma iti gibus. Ti <nowiki>{{PLURAL:$1|karnero|karnero}}</nowiki> ket maisurat kuma a kas <nowiki>{{PLURAL:$1|karnero}}</nowiki>.",

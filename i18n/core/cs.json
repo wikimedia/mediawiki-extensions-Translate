@@ -73,7 +73,6 @@
 	"translate-checks-balance": "Následující {{PLURAL:$2|typ závorek není správně spárován|typy závorek nejsou správně spárovány}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Následující {{PLURAL:$2|odkaz je problematický|odkazy jsou problematické}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Následující odkaz|Následující $2 odkazy|Následujících $2 odkazů}} chybí:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Opravte následující {{PLURAL:$2|značku|značky}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Zdroj používá <nowiki>{{PLURAL:}}</nowiki>, ale překlad nikoliv.",
 	"translate-checks-plural-forms": "Do <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|byla vložena jedna varianta|byly vloženy $1 varianty|bylo vloženo $1 variant}}, ale {{PLURAL:$2|podporována je pouze jedna|podporovány jsou pouze $2|podporováno je pouze $2}} (kromě variant 0= a 1=).",
 	"translate-checks-plural-dupe": "Na konci <nowiki>{{PLURAL:}}</nowiki> jsou uvedeny duplicitní varianty. Místo <nowiki>{{PLURAL:$1|náměstí|náměstí|náměstí}}</nowiki> má být zadáno jen <nowiki>{{PLURAL:$1|náměstí}}</nowiki>.",

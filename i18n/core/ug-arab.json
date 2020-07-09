@@ -56,7 +56,6 @@
 	"translate-checks-balance": "پەرلەشمىگەن بىر {{PLURAL:$2|تىرناق|تىرناق}} بار:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "تۆۋەندىكى {{PLURAL:$2|ئۇلانما|$2 ئۇلانما}}دا مەسىلە بار:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "تۆۋەندىكى {{PLURAL:$2|پارامېتىر|پارامېتىر}} كەم:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "تۆۋەندىكى {{PLURAL:$2|بەلگە|بەلگە}}نى توغرىسىغا ئالماشتۇرۇڭ:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "ئەسلى ئۇچۇردا <nowiki>{{PLURAL:}}</nowiki> ئىشلەتكەن ئەمما تەرجىمىدە ئىشلەتمىگەن.",
 	"translate-checks-pagename": "ئات بوشلۇقى ئېنىقلىمىدىن ئۆزگەرتىلدى",
 	"translate-checks-format": "بۇ تەرجىمە ئېنىقلىمىغا بوي سۇنمايدۇ ياكى تىلقۇرما ئىناۋەتسىز: $1",

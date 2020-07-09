@@ -57,7 +57,6 @@
 	"translate-checks-balance": "Mayroong isang hindi magkapantay na bilang ng {{PLURAL:$2|panaklong|mga panaklong}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Ang sumusunod na {{PLURAL:$2|kawing ay|$2 mga kawing ay}} may suliranin:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Nawawala ang sumusunod na {{PLURAL:$2|kawing|$2 mga kawing}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Pakipalitan ang sumusunod na {{PLURAL:$2|tatak|mga tatak}} ng mga tama/naaangkop:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Gumagamit ang kahulugan ng <nowiki>{{PLURAL:}}</nowiki> subalit hindi ang salinwika.",
 	"translate-checks-pagename": "Espasyo ng pangalan binago mula sa kahulugan",
 	"translate-checks-format": "Ang salinwikang ito ay hindi sumusunod sa kahulugan o may hindi tanggap na palaugnayan: $1",

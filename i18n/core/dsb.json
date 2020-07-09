@@ -57,7 +57,6 @@
 	"translate-checks-balance": "Jo njerowna licba {{PLURAL:$2|spinka|spinkow}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Slědujucy wótkaz jo problematiski|Slědujucej wótkaza stej problematiskej|Slědujuce wótkaze su problematiske|Slědujucych wótkazow jo problematiske}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Slědujucy wótkaz felujo|Slědujucej $2 wótkaza felujotej|Slědujuce $2 wótkaze feluju|Slědujucych $2 wótkazow felujo}}: <strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Wuměń pšosym {{PLURAL:$2|Slědujucy tag|slědujucej taga|slědujuce tagi|slědujuce tagi}} pśez {{PLURAL:$2|korektny|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definicija <nowiki>{{PLURAL:}}</nowiki> wužywa, pśełožk pak nic.",
 	"translate-checks-plural-forms": "Za <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|jo se jadna forma pódała|stej se $1 formje pódałej|su se $1 formy pódali|jo se $1 formow pódało}}, ale {{PLURAL:$2|pódpěra se jano jadna forma|pódpěratej se $2 formje|pódpěraju se $2 formy|pódpěra se $2 formow}} (bźez formow 0= a 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ma dwě jadnuckej formje na kóńcu. <nowiki>{{PLURAL:$1|mloko|mloko}}</nowiki> měł se ako <nowiki>{{PLURAL:$1|mloko}}</nowiki> pisaś.",

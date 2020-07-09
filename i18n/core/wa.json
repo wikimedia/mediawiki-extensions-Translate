@@ -54,7 +54,6 @@
 	"translate-checks-balance": "I gn a {{PLURAL:$2|ene drovante åtchete|des drovantès åtchetes}} sins {{PLURAL:$2|l' cloyante ki va avou|les cloyantes ki vont avou}}, ou årvierdimint:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Li loyén shuvant a-st on problinme|Les $2 loyéns shuvants ont des problinmes}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Li loyén shuvant manke|Les $2 loyéns shuvants mankèt}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "I vs fåt coridjî {{PLURAL:$2|l' etikete shuvante|les etiketes shuvantes}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Li definixha eploye <nowiki>{{PLURAL:}}</nowiki> mins nén l' ratournaedje.",
 	"translate-checks-pagename": "L' espåce di lomaedje est diferin do ci dins l' definixha",
 	"translate-checks-format": "Ci ratournaedje ci n' shût nén l' definixha oudonbén a ene sintacse nén valide: $1",

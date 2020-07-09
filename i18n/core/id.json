@@ -75,7 +75,6 @@
 	"translate-checks-balance": "Terdapat {{PLURAL:$2|tanda kurung|tanda kurung}} dengan jumlah yang tidak sama:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Pranala|Pranala}} berikut ini bermasalah:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Pranala|Pranala}} berikut ini hilang:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Harap ganti {{PLURAL:$2|tag|tag}} berikut ini dengan tag yang tepat:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definisi menggunakan <nowiki>{{PLURAL:}}</nowiki> namun terjemahannya tidak menggunakannya.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> diberikan {{PLURAL:$1|satu bentukan|$1 bentukan}}, namun {{PLURAL:$2|hanya ada satu bentukan|sebenarnya ada $2 buah bentuk}} yang didukung (selain bentukan 0= dan 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> memiliki bentukan yang sama di akhir. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> seharusnya ditulis menjadi <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",

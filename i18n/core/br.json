@@ -64,7 +64,6 @@
 	"translate-checks-balance": "Ampar eo an niver a {{PLURAL:$2|grommelloù|grommelloù}} : <strong>$1</strong>",
 	"translate-checks-links": "Kudennek eo al {{PLURAL:$2|liamm|liammoù}} da-heul : <strong>$1</strong>",
 	"translate-checks-links-missing": "Mankout a ra {{PLURAL:$2|al liamm|an $2 liamm}} da-heul :\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Erlec'hiit an {{PLURAL:$2|dikedenn|tikedennoù}} da-heul gant ar re a zegouezh : <strong>$1</strong>",
 	"translate-checks-plural": "Ober a ra an termenadur gant <nowiki>{{PLURAL:}}</nowiki> padal an droidigezh ne ra ket.",
 	"translate-checks-pagename": "Anv esaouenn kemmet adalek an termenadur",
 	"translate-checks-format": "Ne glot ket an droidigezh-mañ gant an termenadur pe faziek eo an ereadurezh anezhi : $1",

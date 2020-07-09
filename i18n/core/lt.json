@@ -68,7 +68,6 @@
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Šis parametras yra nežinomas|Šie parametrai yra nežinomi}}:\n<strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|Ši nuoroda yra problematiška|$2 nuorodos yra problematiškos}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Šios nuorodos|šių $2 nuorodų}} trūksta:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Prašome pakeisti {{PLURAL:$2|šią žymę teisinga žyme|šias žymes teisingomis žymėmis}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Aprašymas naudoja <nowiki>{{PLURAL:}}</nowiki>, bet vertimas ne.",
 	"translate-pref-editassistlang": "Asistentinės kalbos:",
 	"prefs-translate": "Vertimo nustatymai",

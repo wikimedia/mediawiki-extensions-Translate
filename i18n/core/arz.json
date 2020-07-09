@@ -43,7 +43,6 @@
 	"translate-checks-balance": "يوجد عدد غير زوجى من {{PLURAL:$2|الأقواس}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2||الوصله التالية|الوصلتان التاليتان|ال$2 وصلات التالية|ال$2 وصله التالية}} بها مشاكل:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2||الوصله التاليه مفقودة|الوصلتان التاليتان مفقودتان|ال$2 وصلات التاليه مفقودة|ال$2 وصله التاليه مفقودة}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "من فضلك استبدل {{PLURAL:$2||الوسم التالي|الوسمين التاليين|الوسوم التالية}} بالوسوم الصحيحة:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمه لا.",
 	"translate-checks-pagename": "النطاق تغير من التعريف",
 	"translate-checks-format": "هذه الترجمه لا تتبع التعريف أو لديها صياغه خاطئة: $1",

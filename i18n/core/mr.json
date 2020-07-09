@@ -62,7 +62,6 @@
 	"translate-checks-balance": "यात चुकिचे {{PLURAL:$2|गोल कंसचिन्ह आहे}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "खालील {{PLURAL:$2|दुवा त्रासदायक आहे|$2 दुवे त्रासदायक आहेत}}:\n\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "खालील {{PLURAL:$2|दुवा अनुपलब्ध आहे|$2 दुवे अनुपलब्ध आहेत}} :\n\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "कृपया खालील {{PLURAL:$2|खूणपताका}} योग्य खूणपताकेने बदला:\n\n\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "व्याख्येत <nowiki>{{PLURAL:}}</nowiki>चा वापर आहे पण भाषांतरात नाही.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|एक फॉर्म|$1 फॉर्म्स}}परंतु, {{PLURAL:$2|फक्त एकच फॉर्म सहाय्यीकृत आहे|$2 फॉर्म्स सहाय्यीकृत आहेत }} ( 0= व 1= फॉर्म्स वगळून).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ला शेवटी द्विरुक्त फॉर्म्स आहेत.<nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> ला <nowiki>{{PLURAL:$1|sheep}}</nowiki>असे लिहिल्या जावयास हवे.",

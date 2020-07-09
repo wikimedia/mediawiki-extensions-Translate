@@ -76,7 +76,6 @@
 	"translate-checks-balance": "Estas nepara nombro de {{PLURAL:$2|krampo|krampoj}}: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|Jenaj ligiloj estas problemaj|Jena ligilo estas problema}}: <strong>$1</strong>",
 	"translate-checks-links-missing": "Mankas {{PLURAL:$2|jena ligilo|jenaj ligiloj}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Bonvolu anstataŭigi {{PLURAL:$2|jena etikedo|jenajn etikedojn}} per la ĝustaj:\n<strong>$1</strong>",
 	"translate-checks-plural": "Difino uzas <nowiki>{{PLURAL:}}</nowiki>, sed traduko ne.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> ricevis {{PLURAL:$1|unu formon|$1 formojn}}, sed {{PLURAL:$2|nur unu formo|$2 formoj}} estas subtenataj (aldone al la formoj 0= kaj 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> havas ripetitajn formojn ĉe la fino. Anstataŭ <nowiki>{{PLURAL:$1|okulvitroj|okulvitroj}}</nowiki> estu skribita nur <nowiki>{{PLURAL:$1|okulvitroj}}</nowiki>.",

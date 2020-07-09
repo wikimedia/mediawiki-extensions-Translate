@@ -3,7 +3,8 @@
 		"authors": [
 			"Dr Lotus Black",
 			"Erikoo",
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Teitei Para"
 		]
 	},
 	"translate": "ဘာသာပြန်ပါ",
@@ -45,6 +46,7 @@
 	"translate-edit-askpermission": "ခွင့်ပြုချက် ရယူရန်",
 	"exporttranslations": "ဘာသာပြန်များကို တင်ပို့ရန်",
 	"translate-export-form-format": "ဖောမတ်",
+	"translate-checks-replacement": "$1 ၏အစား $2 ကိုသုံးပါ",
 	"translate-pref-editassistlang": "အထောက်အကူ ဘာသာစကားများ:",
 	"prefs-translate": "ဘာသာပြန် ရွေးချယ်စရာများ",
 	"translate-pref-editassistlang-help": "ကော်မာ ကြားခံထားသော ဘာသာစကားကုဒ်များစာရင်း။ ဘာသာပြန်ဆိုချိန်တွင် ဤဘာသာစကားများရှိ မက်ဆေ့တစ်ခု၏ဘာသာပြန်ကို ပြသထားပါသည်။ ဘာသာစကားများ၏ နဂိုစာရင်းသည် သင်၏ဘာသာစကားပေါ်တွင် မူတည်ပါသည်။",

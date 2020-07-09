@@ -75,7 +75,6 @@
 	"translate-checks-balance": "Hi ha un nombre senar de {{PLURAL:$2|parèntesis, claus i/o claudàtors|parèntesis, claus i/o claudàtors}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|L'enllaç següent és problemàtic|Els enllaços següents són problemàtics}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "No hi ha {{PLURAL:$2|l'enllaç següent|els següents $2 enllaços}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "{{PLURAL:$2|Reemplaceu l'etiqueta següent per la correcta|Reemplaceu les etiquetes següents per les correctes}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> es va donar {{PLURAL:$1|una forma|$1 formes}} però {{PLURAL:$2|només una forma és|$2 formes són}} compatible/s (excloent les formes 0= i 1=)",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> conté una forma duplicada al final. <nowiki>{{PLURAL:$1|atles|atles}}</nowiki> s'hauria d'escriure <nowiki>{{PLURAL:$1|atles}}</nowiki>.",

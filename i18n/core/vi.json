@@ -66,7 +66,6 @@
 	"translate-checks-balance": "Số {{PLURAL:$2}}dấu ngoặc bị lẻ:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Liên kết|Các liên kết}} sau đây bị thiếu:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Xin thay thế {{PLURAL:$2|thẻ|các thẻ}} sau bằng thẻ đúng:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Định nghĩa sử dụng <nowiki>{{PLURAL:}}</nowiki> nhưng bản dịch không có.",
 	"translate-checks-plural-forms": "{{PLURAL:$1|Một dạng|$1 dạng}} được cung cấp trong thẻ <nowiki>{{PLURAL:}}</nowiki> nhưng ngôn ngữ {{PLURAL:$2|không có phân biệt số ít với số nhiều|chỉ có phân biệt $2 dạng số}} (trừ các dạng 0= và 1=).",
 	"translate-checks-plural-dupe": "Đuôi của thẻ <nowiki>{{PLURAL:}}</nowiki> có dạng thừa. Ví dụ nên đổi <nowiki>{{PLURAL:$1|chó|chó}}</nowiki> thành <nowiki>{{PLURAL:$1|chó}}</nowiki>.",

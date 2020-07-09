@@ -60,7 +60,6 @@
 	"translate-checks-balance": "Ójafn fjöldi {{PLURAL:$2|sviga}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Eftirfarandi {{PLURAL:$2|tengill er vafasamur|$2 tenglar eru vafasamir}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Eftirfarandi {{PLURAL:$2|tengil|$2 tengla}} vantar:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Vinsamlegast skiptu út eftirfarandi {{PLURAL:$2|tagi|tögum}} fyrir þau réttu:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Skilgreiningin notar <nowiki>{{PLURAL:}}</nowiki> en ekki þýðingin.",
 	"translate-checks-pagename": "Nafnrýmið er annað en í skilgreiningunni.",
 	"translate-checks-format": "Þýðingin fylgir ekki skilgreiningunni eða hefur ógilda málskipan: $1",

@@ -52,7 +52,6 @@
 	"translate-checks-balance": "Tað er ólíka mongd av {{PLURAL:$2|klombru|klombrum}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Fylgjandi {{PLURAL:$2|leinkja er problematisk|$2 leinkjur eru problematiskar}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Fylgjandi {{PLURAL:$2|leinkja manglar|$2 leinkjur mangla}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Vinarliga útskift fylgjandi {{PLURAL:$2|lyklaorð}} við tey røttu:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Upprunateksturin nýtir <nowiki>{{PLURAL:}}</nowiki> meðan týðingin ikki ger tað.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> fingu {{PLURAL:$1|ein form|$1 formar}} men {{PLURAL:$2|bert ein formur verður|$2 formar verða}} stuðlaðir (0= og 1= formar ikki íroknaðir).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> hevur dupultan form í endanum. <nowiki>{{PLURAL:$1|mál|mál}}</nowiki> eigur at skrivast sum <nowiki>{{PLURAL:$1|mál}}</nowiki>.",

@@ -56,7 +56,6 @@
 	"translate-checks-balance": "Мында {{PLURAL:$2|жақшаның|жақшалардың}} бүкіл саны жұп емес: \n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Келесі {{PLURAL:$2|сілтеме|$2 сілтеме}} жарамсыз: \n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Келесі {{PLURAL:$2|сілтемені|$2 сілтемені}} қажет етеді:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Келесі {{PLURAL:$2|белгіні|белгіні}} дұрыстарымен алмастырыңыз: \n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Анықталымда <nowiki>{{PLURAL:}}</nowiki> пайдаланылған, бірақ аударма жоқ.",
 	"translate-checks-pagename": "Анықтамадан есім кеңістігі өзгертілген",
 	"translate-pref-editassistlang": "Көмекші тілдер:",

@@ -57,7 +57,6 @@
 	"translate-checks-balance": "Die {{PLURAL:$2|Chlammeresetzig isch|Chlammersetzige sin}} nit uusgliche: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|De Link isch|Die Links sin}} problematisch: <strong>$1</strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|De Link wird|Die $2 Links wäre}} vermisst:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Bitte ersetz {{PLURAL:$2|dää Tag|die Tag}} dur di korrekte: <strong>$1</strong>",
 	"translate-checks-plural": "S Original bruucht <nowiki>{{PLURAL:}}</nowiki>, d Ibersetzig aber nit.",
 	"translate-checks-plural-forms": "Zue <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|isch ei Form|sin $1 Forme}} aagee wore. S {{PLURAL:$2|wird aber nume ei Form|wäre aber nume $2 Forme}} unterstitzt (uuschließli 0= un 1=).",
 	"translate-checks-plural-dupe": "Zue <nowiki>{{PLURAL:}}</nowiki> sin zwoo glychi Forme aagee wore. Bspw. sott aber <nowiki>{{PLURAL:$1|Milch|Milch}}</nowiki> as <nowiki>{{PLURAL:$1|Milch}}</nowiki> aagee wäre.",

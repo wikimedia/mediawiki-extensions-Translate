@@ -63,7 +63,6 @@
 	"translate-checks-balance": "មាន{{PLURAL:$2|វង់ក្រចក|វង់ក្រចក}}​ដែលមិន​មាន​គូ៖\n\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|តំណភ្ជាប់|តំណភ្ជាប់}}ខាងក្រោមនេះ​មានបញ្ហា៖ <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Following {{PLURAL:$2|តំណភ្ជាប់|តំណភ្ជាប់ចំនួន $2}} ខាងក្រោមនេះបាត់៖\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "សូម​ជំនួស​{{PLURAL:$2|tag|ស្លាក}}​ខាងក្រោមដោយស្លាកដែលត្រឹមត្រូវ៖\n\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "និយមន័យ​ប្រើប្រាស់ <nowiki>{{PLURAL:}}</nowiki> ប៉ុន្តែ​បទប្រែសម្រួល​មិនមាន ។",
 	"translate-checks-pagename": "លំហឈ្មោះ​ត្រូវ​បាន​ផ្លាស់ប្ដូរ​ពី​និយមន័យ",
 	"translate-checks-format": "ការបកប្រែនេះមិនគោរពតាមនិយមន័យឬមានវេយ្យាករណ៍មិនត្រឹមត្រូវ៖ $1",

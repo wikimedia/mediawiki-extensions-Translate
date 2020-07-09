@@ -66,7 +66,6 @@
 	"translate-checks-balance": "Cacahing {{PLURAL:$2|pangapit|pangapit-pangapit}} ora seimbang:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Pranala|Pranala-pranala}} iki nduwèni masalah:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Pranala|Pranala-pranala}} iki ilang:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Gantinen {{PLURAL:$2|tenger|tenger-tenger}} iki nganggo tenger kang mathuk:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Wedharané nganggo <nowiki>{{PLURAL:}}</nowiki> nanging pertalané ora.",
 	"translate-checks-pagename": "Mandhala aran owah saka wedharané",
 	"translate-checks-format": "Pertalan iki ora manut wedharané utawa ora trep sintaksisé: $1",

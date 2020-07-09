@@ -33,6 +33,5 @@
 	"translate-checks-parameters": "Kelesi baptalımdar paýdalanılmağan: <strong>$1</strong>",
 	"translate-checks-balance": "Mında jaqşalardıñ barlıq sanı jup emes:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Kelesi siltemeler jaramsız:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Kelesi belgilemelerdi durıstarımen almastırıñız:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Anıqtalımda <nowiki>{{PLURAL:}}</nowiki> paýdalanılğan, biraq awdarmada bul joq."
 }

@@ -81,7 +81,6 @@
 	"translate-checks-balance": "تعداد {{PLURAL:$2|پرانتزها|پرانتزها}} جفت نیست:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|پیوندهایی که در ادامه می‌آیند مشکل‌ساز هستند|پیوندی که در ادامه می‌آید مشکل ساز است}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|پیوند|پیوندهای}} زیر پیدا {{PLURAL:$2|نشد|نشدند}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "لطفاً این {{PLURAL:$2|برچسب|برچسب‌ها}} را با موارد درست جایگزین کنید:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "تعریف از <nowiki>{{PLURAL:}}</nowiki> استفاده می‌کند اما ترجمه از آن استفاده نمی‌کند.",
 	"translate-checks-plural-forms": "{{PLURAL:$1|یک فرم|$1 فرم}} به <nowiki>{{PLURAL:}}</nowiki> داده شده اما {{PLURAL:$2|تنها یک فرم|$2 forms are}} پشتیبانی می‌شود (به جز فرم‌های 0= و 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> دارای فرم‌های تکراری در انتهایش است. <nowiki>{{PLURAL:$1|گوسفند|گوسفند}}</nowiki> باید به صورت <nowiki>{{PLURAL:$1|گوسفند}}</nowiki> نوشته شود.",

@@ -55,7 +55,6 @@
 	"translate-checks-balance": "Do hodse uglaischi Oazahl vun {{PLURAL:$2|Klommare|Klommare}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|De Ling'g isch|Die $2 Ling'gs sin}} broblemadisch:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|De Ling'g fehld|Die $2 Ling'gs fehln}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Bidde easedz die {{PLURAL:$2|Uffschrifd|Uffschrifde}} midm rischdische:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Die Feschleschung bnudzd <nowiki>{{PLURAL:}}</nowiki>, awa die Iwasedzung ned.",
 	"translate-checks-pagename": "De Noamensraum waischd vunde Feschleschung ab.",
 	"translate-checks-format": "Die Iwasedzung folschd nedde Feschdleschung oda hodn ugildischi Sadzbau: $1",

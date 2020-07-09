@@ -60,7 +60,6 @@
 	"translate-checks-balance": "Bilangan {{PLURAL:$2|tanda kurungan|tanda kurungan}} tidak sekata:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Pautan|$2 pautan}} yang berikut ada masalah:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Pautan|$2 pautan}} yang berikut tidak dijumpai:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Sila ganti {{PLURAL:$2|tag|tag-tag}} berikut dengan yang betul:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Takrifan menggunakan <nowiki>{{PLURAL:}}</nowiki> tapi terjemahan pula tidak.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> diberi {{PLURAL:$1|satu bentuk|$1 bentuk}} tetapi {{PLURAL:$2|hanya satu bentuk|$2 bentuk}} disokong (kecuali bentuk 0= dad 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> mempunyai bentuk pendua di hujung. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> sepatutnya ditulis sebagai <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",

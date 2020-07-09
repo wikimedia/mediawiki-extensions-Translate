@@ -37,7 +37,6 @@
 	"translate-checks-parameters": "{{PLURAL:$2|El seguente parametro no'l|I seguenti parametri no i}} xe mìa doparà: <strong>$1</strong>",
 	"translate-checks-balance": "Ghe xe un nùmaro dispari de {{PLURAL:$2|paréntesi|paréntesi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|El colegamento seguente el|I colegamenti seguenti i}} pol causar problemi:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Par piaser, sostituìssi {{PLURAL:$2|el seguente tag con quel giusto|i seguenti tag con quei giusti}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definission la dòpara <nowiki>{{PLURAL:}}</nowiki> ma la tradussion no.",
 	"right-translate": "Modifica doparando l'interfacia de tradussion",
 	"translate-rc-translation-filter": "Filtra le tradussion:",

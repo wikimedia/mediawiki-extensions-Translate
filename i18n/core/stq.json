@@ -36,7 +36,6 @@
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Die foulgjende Parameter is|Do foulgjende Parametere sunt}} uunbekoand: <strong>$1</strong>",
 	"translate-checks-balance": "{{PLURAL:$2|Ju foulgjende Klammersättenge is|Do foulgjende Klammersättengen sunt}} nit uutglieked: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|Die foulgjende Link is|Do foulgjende Linke sunt}} problematisk: <strong>$1</strong>",
-	"translate-checks-xhtml": "Ärsät {{PLURAL:$2|dän foulgjende Tag|do foulgjende Tags}} truch do korrekte: <strong>$1</strong>",
 	"translate-checks-plural": "Dät Originoal benutset <nowiki>{{PLURAL:}}</nowiki>, man ju Uursättenge nit.",
 	"translate-checks-pagename": "Noomensruum annerd truch ju Definition",
 	"translate-checks-format": "Disse Uursättenge äntspräkt nit ju Definition of häd ne uungultige Syntax: $1",

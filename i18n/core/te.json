@@ -60,7 +60,6 @@
 	"translate-checks-balance": "{{PLURAL:$2|బ్రాకెట్లు|బ్రాకెట్లు}} సరి సమాన సంఖ్యలో లేవు:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "ఈ {{PLURAL:$2|లింకు సమస్యాత్మకంగా ఉంది|$2 లింకులు సమస్యాత్మకంగా ఉన్నాయి}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "ఈ క్రింది {{PLURAL:$2|లింకు |$2 లింకులు}} లేవు:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "ఈ {{PLURAL:$2|టాగుని సరైన దానితో|టాగులని సరైన వాటితో}} మార్చండి:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "అసలు సందేశంలో <nowiki>{{PLURAL:}}</nowiki> అనివుంది కానీ అనువాదంలో లేదు.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> ఇవ్వబడింది {{PLURAL:$1|ఫార్మ్|$1 ఫారములు}} కాని {{PLURAL:$2|ఒకే ఒక ఫార్మ్|$2 ఫారములు}} మద్దతివ్వబడ్డాయి (మినహాయింపు 0= కాని 1=ఫారములు).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki>కి చివరన ఒకే రూపాలు ఉన్నాయి. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki>ని ఇలా వ్రాయాలి <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",

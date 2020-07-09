@@ -65,7 +65,6 @@
 	"translate-checks-balance": "I a un nombre impar de {{PLURAL:$2|parentèsis|parentèsis}} : <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Lo ligam seguent causa|Los ligams seguents causan}} de problèmas : <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Lo ligam seguent es mancant|Los $2 ligams seguents son mancants}} :\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Sètz convidat(ada) a corregir {{PLURAL:$2|la balisa seguenta|las balisas seguentas}} : <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> a recebut {{PLURAL:$1|una forma|$1 formas}} mas {{PLURAL:$2|una sola es suportada|solas $2 son suportadas}} (fòra las formas 0= e 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> a de formas duplicadas al final. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> deuriá èsser escrit atal : <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",

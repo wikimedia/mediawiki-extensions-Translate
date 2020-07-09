@@ -13,7 +13,6 @@
 	"translate-edit-no-information": "''Zu dieser Nachricht ist keine Dokumentation vorhanden.''\nSofern Sie wissen, wo und in welchem Zusammenhang sie genutzt wird, können Sie anderen Übersetzern bei ihrer Arbeit helfen, indem Sie eine Dokumentation hinzufügen.",
 	"translate-use-suggestion": "Ersetzen Sie die aktuelle Übersetzung mit diesem Vorschlag.",
 	"translate-edit-nopermission": "Sie benötigen Übersetzerrechte, um Nachrichten übersetzen zu können.",
-	"translate-checks-xhtml": "Bitte ersetzen Sie {{PLURAL:$2|den folgenden Tag|die folgenden Tags}} durch die korrekten: <strong>$1</strong>",
 	"translate-checks-fudforum-syntax": "Bitte benutzen Sie <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki> in diesem Projekt.",
 	"translate-statsf-intro": "Sie können einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.",
 	"translations-summary": "Geben Sie einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.",

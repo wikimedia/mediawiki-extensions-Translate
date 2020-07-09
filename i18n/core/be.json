@@ -61,7 +61,6 @@
 	"translate-checks-balance": "Няпарная колькасць {{PLURAL:$2|дужак}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Наступная спасылка выклікае праблемы|Наступныя спасылкі выклікаюць праблемы}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Адсутнічае $2 спасылка|Адсутнічаюць $2 спасылкі|Адсутнічаюць $2 спасылак}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Калі ласка, выправіце {{PLURAL:$2|наступны тэг|наступныя тэгі}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Арыгінал выкарыстоўвае <nowiki>{{PLURAL:}}</nowiki>, а пераклад — не.",
 	"translate-checks-plural-forms": "Выразу <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|была дадзена адна форма|былі дадзены $1 формы|былі дадзены $1 формаў}}, але {{PLURAL:$2|падтрымліваецца толькі адна форма|падтрымліваюцца $2 формы|падтрымліваюцца $2 формаў}} (акрамя формаў 0= і 1=).",
 	"translate-checks-plural-dupe": "У канцы выразу <nowiki>{{PLURAL:}}</nowiki> дзве аднолькавых формы. Замест <nowiki>{{PLURAL:$1|паліто|паліто}}</nowiki> лепш напісаць <nowiki>{{PLURAL:$1|паліто}}</nowiki>.",

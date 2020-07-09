@@ -5,6 +5,5 @@
 		]
 	},
 	"translate-checks-parameters": "ای پارامتران استفاده نه بیتگن: <strong>$1</strong>",
-	"translate-checks-links": "جهلگی لینکانء مشکل اش هست: <strong>$1</strong>",
-	"translate-checks-xhtml": "لطفا ای جهلگی برچسپانء گون درستین ان جاه په جاه کنیت: <strong>$1</strong>"
+	"translate-checks-links": "جهلگی لینکانء مشکل اش هست: <strong>$1</strong>"
 }

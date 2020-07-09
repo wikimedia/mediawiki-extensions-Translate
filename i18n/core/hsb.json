@@ -57,7 +57,6 @@
 	"translate-checks-balance": "Je njeruna ličba {{PLURAL:$2|spinka|spinkow|spinkow|spinkow}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Slědowacy wotkaz je problematiski|Slědowacej wotkazaj stej problematiskej|Slědowace wotkazy wotkazy su problematiske|Slědowacych wotkazow je problematiske}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Slědowacy wotkaz pobrachuje|Slědowacej $2 wotkazaj pobrachujetej|Slědowace $2 wotkazy pobrachuja|Slědowacych $2 wotkazow pobrachuje}}: <strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Narunaj prošu {{PLURAL:$2|slědowacu tafličku|slědowacej tafličce|slědowace taflički|slědowacych tafličkow}} přez {{PLURAL:$2|korektnu|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definicija wužiwa <nowiki>{{PLURAL:}}</nowiki>, přełožk pak nic.",
 	"translate-checks-plural-forms": "Za <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|je so jedna forma podała|stej so $1 formje podałoj|su so $1 formy podali|je so $1 formow podało}}, ale {{PLURAL:$2|podpěruje so jenož jedna forma|podpěrujetej so $2 formje|podpěruja so $2 formy|podpěruje so $2 formow}} (bjez formow 0= a 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ma dwě jeničkej formje na kóncu. <nowiki>{{PLURAL:$1|mloko|mloko}}</nowiki> měł so jako <nowiki>{{PLURAL:$1|mloko}}</nowiki> pisać.",

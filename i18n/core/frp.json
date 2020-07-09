@@ -55,7 +55,6 @@
 	"translate-checks-balance": "Y at un nombro mâl-par de parentès{{PLURAL:$2|a|es}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Ceti lim est|Cetos $2 lims sont}} pas de sûr :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Ceti lim est manquent|Cetos $2 lims sont manquents}} :\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Volyéd corregiér {{PLURAL:$2|ceta balisa|cetes balises}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La dèfinicion empleye <nowiki>{{PLURAL:}}</nowiki> mas pas la sina traduccion.",
 	"translate-checks-pagename": "Èspâço de noms changiê dês la dèfinicion",
 	"translate-checks-format": "Ceta traduccion siut pas la dèfinicion ou ben el at na sintaxa fôssa : $1",

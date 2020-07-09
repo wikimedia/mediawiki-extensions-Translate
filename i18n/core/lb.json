@@ -61,7 +61,6 @@
 	"translate-checks-balance": "Et gëtt eng ongerued Zuel vu {{PLURAL:$2|Klammere|Klammere}} benotzt:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Dëse Link ass|Dës Linke si}} problematesch:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Dëse Link feelt|Dës $2 Linke feelen}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Ersetzt {{PLURAL:$2|dësen Tag|dës Tagen}} wgl. duerch déi korrekt:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "D'Definitioun benotzt <nowiki>{{PLURAL:}}</nowiki> awer d'Iwwersetzung mécht dat net.",
 	"translate-checks-plural-forms": "Fir <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|gouf eng Form|goufen $1 Formen}} uginn. Et {{PLURAL:$2|gëtt awer nëmmen eng Form|ginn awer nëmme(n) $2 Formen}} ënnerstëtzt (ausser de Formen 0= an 1= ).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> huet zweemol déiselwecht Zeechen um Schluss. <nowiki>{{PLURAL:$1|Schof|Schof}}</nowiki> soll sou geschriwwe ginn: <nowiki>{{PLURAL:$1|Schof}}</nowiki>.",

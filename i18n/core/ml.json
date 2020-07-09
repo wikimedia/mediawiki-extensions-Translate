@@ -59,7 +59,6 @@
 	"translate-checks-balance": "{{PLURAL:$2|കോഷ്ഠകങ്ങളുടെ|കോഷ്ഠകങ്ങളുടെ}} എണ്ണം ഇരട്ടയല്ല:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "ഇനിക്കൊടുക്കുന്ന {{PLURAL:$2|കണ്ണി|$2 കണ്ണികൾ}} പ്രശ്നകാരിയാണ്:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "ഇനിക്കൊടുക്കുന്ന {{PLURAL:$2|കണ്ണി|$2 കണ്ണികൾ}} ചേർത്തിട്ടില്ല:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "ഇനിക്കൊടുക്കുന്ന {{PLURAL:$2|റ്റാഗ്|റ്റാഗുകൾ}} ദയവായി ശരിയായവ കൊണ്ട് മാറ്റിച്ചേർക്കുക:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "നിർ‌വചനം <nowiki>{{PLURAL:}}</nowiki> ഉപയോഗിക്കുന്നു, പക്ഷെ പരിഭാഷ ഉപയോഗിക്കുന്നില്ല.",
 	"translate-checks-pagename": "നാമമേഖല നിർവ്വചനത്തിൽ നിന്നും മാറിയിരിക്കുന്നു",
 	"translate-checks-format": "ഈ പരിഭാഷ നിർവ്വചനം അനുസരിച്ചുള്ളതല്ല അല്ലെങ്കിൽ അസാധുവായ എഴുത്തുരീതി ഉൾപ്പെടുന്നു: $1",

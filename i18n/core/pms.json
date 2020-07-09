@@ -56,7 +56,6 @@
 	"translate-checks-balance": "A-i é un nùmer dëscobi ëd {{PLURAL:$2|paréntesi|paréntesi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Ël  colegament sota a l'é|Ij $2 colegament sota a son}} problemàtich:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|L'anliura dì-dapress a a l'é|Le $2 anliure sì-dapress a son}} mancante:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Për piasì rimpiassa {{PLURAL:$2|la tichëtta|le tichëtte}} sì-dapress con cole giuste:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definission a deuvra <nowiki>{{PLURAL:}}</nowiki> ma pa la tradussion.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> a l'é stàit dovrà ant {{PLURAL:$1|na forma|$1 forme}} ma {{PLURAL:$2|mach na forma a l'é|$2 forme a son}} mantnùe (an gavand le forme 0= e 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> a l'ha dle forme duplicà a la fin. <nowiki>{{PLURAL:$1|fèja|fèja}}</nowiki> a dovrìa esse scrivù com <nowiki>{{PLURAL:$1|fèje}}</nowiki>.",

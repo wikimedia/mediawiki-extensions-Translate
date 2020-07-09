@@ -67,7 +67,6 @@
 	"translate-checks-balance": "Съобщението съдържа нечетен брой {{PLURAL:$2|скоби}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Следната препратка е проблемна|Следните $2 препратки са проблемни}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Липсва следната препратка|Липсват следните $2 препратки}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Необходимо е заместване на {{PLURAL:$2|посочения етикет с правилен|посочените етикети с правилни}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригиналното съобщение използва <nowiki>{{PLURAL:}}</nowiki>, а преводът — не.",
 	"translate-checks-pagename": "Променена е дефиницията на именното пространство",
 	"translate-checks-format": "Този превод не е съгласно дефиницията или има невалиден синтаксис: $1",

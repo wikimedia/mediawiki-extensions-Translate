@@ -67,7 +67,6 @@
 	"translate-checks-balance": "จับคู่{{PLURAL:$2|วงเล็บ|วงเล็บ}}ไม่ครบคู่:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|ลิงก์|ลิงก์ $2 ลิงก์}}ต่อไปนี้ทำให้เกิดปัญหา:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|ลิงก์|ลิงก์ $2 ลิงก์}}ต่อไปนี้ไม่มีอยู่:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "{{PLURAL:$2|tag ต่อไปนี้|tag เหล่านี้}}ไม่ถูกต้อง กรุณาแก้ไขโดยใช้ tag ที่ถูกต้อง:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "ข้อความต้นฉบับใช้ <nowiki>{{PLURAL:}}</nowiki> ในขณะที่คำแปลไม่ได้ใช้",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> ถูกให้มา {{PLURAL:$1|1 รูปแบบ|$1 รูปแบบ}} แต่{{PLURAL:$2|มีเพียง 1 รูปแบบ|มีเพียง $2 รูปแบบ}}เท่านั้นที่รองรับ (ยกเว้นรูปแบบ 0= และ 1=)",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> มีรูปแบบที่ซ้ำกันในตอนท้าย <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> ควรเขียนเป็น <nowiki>{{PLURAL:$1|sheep}}</nowiki>",

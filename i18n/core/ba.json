@@ -46,7 +46,6 @@
 	"translate-checks-balance": "Уң һәм һул {{PLURAL:$2|1=йәйә|йәйә}} һаны парлы түгел:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Түбәндәге {{PLURAL:$2|1=һылтанма|$2 һылтанмалар}} ҡыйынлыҡтар тыуҙыра.\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Түбәндәге {{PLURAL:$2|1=һылтанма|$2 һылтанмалар}} кәрәк:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Түбәндәге {{PLURAL:$2|1=тэгты|тэгтарҙы}} төҙәтегеҙ, зинһар:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Сығанаҡ <nowiki>{{PLURAL:}}</nowiki> ҡуллана, ә тәржемә ҡулланмай.",
 	"translate-checks-pagename": "Исемдәр арауығының билдәләмәһе үҙгәргән",
 	"translate-checks-format": "Был тәржемә билдәләмәһе менән тап килмәй йәки синтаксик хаталары бар: $1",

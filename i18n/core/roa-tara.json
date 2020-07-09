@@ -62,7 +62,6 @@
 	"translate-checks-balance": "Ste 'nu numere de {{PLURAL:$2|parendesi}} scucchiate: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|'U collegamende suguende jè probblematiche|Le $2 collegaminde seguende sò probblematece}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|'U collegamende suguende jè |Le $2 collegaminde seguende sò }} mangande:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Pe piacere sostituisce {{PLURAL:$2|'u tag|le tag}} cu une corrette:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "'A definizioen ause <nowiki>{{PLURAL:}}</nowiki> ma 'a traduzione none.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|ha state date 'nu module form|onne state date $1 module}} ma {{PLURAL:$2|sulamende 'nu module jè|$2 module sò}} supportate (escludenne 0= e 1= module).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ave module duplicate a 'a fine. <nowiki>{{PLURAL:$1|pecore|pecore}}</nowiki> avessera essere scritte cumme a <nowiki>{{PLURAL:$1|pecore}}</nowiki>.",

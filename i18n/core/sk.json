@@ -70,7 +70,6 @@
 	"translate-checks-balance": "Nevyvážené počty {{PLURAL:$2|zátvoriek|zátvoriek}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Nasledovný odkaz je problematický|Nasledovné odkazy sú problematické}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Nasledovný odkaz chýba|Nasledovné $2 odkazy chýbajú|Nasledovných $2 odkazov chýba}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Prosím, nahraďte {{PLURAL:$2|nasledovnú značku správnou|nasledovné značky správnymi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definícia používa <nowiki>{{PLURAL:}}</nowiki>, ale preklad nie.",
 	"translate-checks-plural-dupe": "Na konci <nowiki>{{PLURAL:}}</nowiki> sú uvedené duplicitné varianty. Namiesto <nowiki>{{PLURAL:$1|námestie|námestie|námestie}}</nowiki> má byť zadané len <nowiki>{{PLURAL:$1|námestie}}</nowiki>.",
 	"translate-checks-pagename": "Oproti definícii sa zmenil menný priestor",

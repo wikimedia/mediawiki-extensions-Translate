@@ -85,7 +85,6 @@
 	"translate-checks-balance": "Неоднакова кількість відкритих і закритих {{PLURAL:$2|1=дужок|дужок}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|1=Наступне посилання проблематичне|Наступні посилання проблематичні}} : <strong>$1</strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Відсутнє одне посилання|Відсутні $2 посилання|Відсутні $2 посилань}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Будь ласка, виправте {{PLURAL:$2|1=наступний тег|наступні теги}}: <strong>$1</strong>",
 	"translate-checks-plural": "Оригінал використовує <nowiki>{{PLURAL:}}</nowiki>, а переклад — ні.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> було використано з {{PLURAL:$1|1=одною формою|$1 формами}}, але {{PLURAL:$2|1=лише одна форма|$2 форм}} підтримується (за винятком форм 0= та 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> має дублікати форм у кінці. <nowiki>{{PLURAL:$1|1=метро|метро}}</nowiki> повинно бути записано як <nowiki>{{PLURAL:$1|метро}}</nowiki>.",

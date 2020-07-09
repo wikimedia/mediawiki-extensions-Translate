@@ -69,7 +69,6 @@
 	"translate-checks-balance": "Det er et ujevnt antall {{PLURAL:$2|parenteser|paranteser}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Følgende {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Følgende {{PLURAL:$2|lenke|$2 lenker}} mangler:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Erstatt følgende {{PLURAL:$2|merke med det korrekte|merker med de korrekte}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> ble gitt {{PLURAL:$1|én form|$1 former}}, men kun {{PLURAL:$2|én form|$2 former}} støttes (utenom 0- og 1-former).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> har duplikatformer på slutten. <nowiki>{{PLURAL:$1|hus|hus}}</nowiki> bør skrives som <nowiki>{{PLURAL:$1|hus}}</nowiki>.",

@@ -50,7 +50,6 @@
 	"translate-checks-balance": "Kualkhungna hman khingbai nei lo a la awm{{PLURAL:$2||}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "A hnuaia  zawmna{{PLURAL:$2||te}} khu a dikhlel:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "A hnuaia zawmna{{PLURAL:$2||te}} khu i la hmaih:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "A hnuaia hmingrelh{{PLURAL:$2||te}} khu a dikin thlâk rawh:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "A thu hnarin <nowiki>{{PLURAL:}}</nowiki> a hmang a, lehlinnain a hmang lo.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> kha lehkha {{PLURAL:$1|pakhat|$1}} pêk a ni a, mahsé lehkha {{PLURAL:$2|pakhat|$2}} chauh tih theih a ni (0= leh 1= lehkhate tiam lohvin).",
 	"translate-checks-pagename": "Hrilhfiahna aţang hminghmun thlâk a ni",

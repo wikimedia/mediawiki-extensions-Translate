@@ -55,7 +55,6 @@
 	"translate-checks-balance": "Наслїдуючій {{PLURAL:$2|тіп затворок не є правилно спарованый|тіпы затворок не суть правилно спарованы}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Наступный {{PLURAL:$2|одказ є проблематічный|одказы суть проблематічны}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Наступный одказ|Наступны $2 одказы|Наступных $2 одказів}} хыбує:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Справте {{PLURAL:$2|наступну значку|наступны значкы}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оріґінал хоснує <nowiki>{{PLURAL:}}</nowiki>, але переклад нїт.",
 	"translate-checks-pagename": "Проти дефініції ся змінив простор назв",
 	"translate-checks-format": "Тот переклад не одповідать дефініції або має неправилну сінтаксіс: $1",

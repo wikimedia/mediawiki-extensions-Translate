@@ -63,7 +63,6 @@
 	"translate-checks-balance": "Няпарная колькасьць {{PLURAL:$2|дужкі|дужак|дужак}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|1=Праблематычная спасылка|Праблематычныя спасылкі}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Адсутнічае наступная $2 спасылка|Адсутнічаюць наступныя $2 спасылкі|Адсутнічаюць наступныя $2 спасылак}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Калі ласка, выпраўце {{PLURAL:$2|1=наступную метку|наступныя меткі}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Крынічны тэкст выкарыстоўвае <nowiki>{{PLURAL:}}</nowiki>, а пераклад — не.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> быў выкарыстаны {{PLURAL:$1|1=з адной формай|з $1 формамі}}, але {{PLURAL:$2|падтрымліваецца $2 форма|падтрымліваюцца $2 формы|падтрымліваюцца $2 формаў}} (за выняткам формаў 0= і 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> мае аднолькавыя формы на канцы. <nowiki>{{PLURAL:$1|мэтро|мэтро}}</nowiki> мусіць быць замененае на <nowiki>{{PLURAL:$1|мэтро}}</nowiki>.",

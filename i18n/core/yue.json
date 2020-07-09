@@ -48,7 +48,6 @@
 	"translate-checks-parameters": "下面{{PLURAL:$2|嘅參數|啲參數}}係無用到嘅: <strong>$1</strong>",
 	"translate-checks-balance": "插入字嘅數量唔均等: <strong>$1</strong>",
 	"translate-checks-links": "下面嘅連結有問題: <strong>$1</strong>",
-	"translate-checks-xhtml": "請改下面嘅標籤去正確嘅: <strong>$1</strong>",
 	"translate-checks-plural": "用 <nowiki>{{PLURAL:}}</nowiki> 嘅解解釋但係翻譯無用到。",
 	"translate-mgs-totals": "總共有$1個文",
 	"translate-gs-multiple": "多種語言",

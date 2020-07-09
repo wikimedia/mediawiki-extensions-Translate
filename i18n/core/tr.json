@@ -80,7 +80,6 @@
 	"translate-checks-balance": "{{PLURAL:$2|Parantezin}} açılış ve kapanış sayısı eşleşmiyor: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Aşağıdaki $2 bağlantı sorunlu: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Aşağıdaki $2 bağlantı eksik: <strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Aşağıdaki {{PLURAL:$2|etiketi}} doğru olanı ile değiştirin: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Tanım <nowiki>{{PLURAL:}}</nowiki> kullanıyor, ancak çeviri kullanmıyor.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|bir form|$1 form}} verildi, ancak {{PLURAL:$2|sadece bir form|$2 form}} desteklenir (0= ve 1= formlar hariç).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> sonunda yinelenen formlar var. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> <nowiki>{{PLURAL:$1|sheep}}</nowiki> şeklinde yazılmalıdır.",

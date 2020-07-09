@@ -59,7 +59,6 @@
 	"translate-checks-balance": "{{PLURAL:$2|Sulge}} on paaritu arv:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Järgmine link on probleemne|Järgmised $2 linki on probleemsed}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Järgmine link puudub|Järgmised $2 linki puuduvad}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Palun asenda {{PLURAL:$2|järgmine silt|järgmised sildid}} korrektsetega:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Määratluses on <nowiki>{{PLURAL:}}</nowiki>, aga tõlkes pole.",
 	"translate-checks-pagename": "Määratluses esinev nimeruum muudetud",
 	"translate-checks-format": "Tõlge ei lähtu määratlusest või selle süntaks on vigane: $1",

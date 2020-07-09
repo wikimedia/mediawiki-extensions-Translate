@@ -60,7 +60,6 @@
 	"translate-checks-balance": "Gh'è 'n nummero despa de {{PLURAL:$2|parentexi}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|O seguente ingancio o l'è problemattico|I seguenti $2 inganci son problemattichi}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Gh'amanca {{PLURAL:$2|o seguente ingancio|i $2 seguenti inganci}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Sostituî {{PLURAL:$2|o marcatô seguente|i marcatoî seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definission a l'adoeuvia <nowiki>{{PLURAL:}}</nowiki> ma a tradussion no.",
 	"languagestats": "Statisteghe da lengoa",
 	"translate-js-support": "Fanni 'na domanda",

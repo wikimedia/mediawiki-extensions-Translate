@@ -84,7 +84,6 @@
 	"translate-checks-balance": "{{PLURAL:$2|括弧}}の個数が一致していません:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "以下の{{PLURAL:$2|リンク|​&#32;$2 個のリンク}}に問題点があります:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "以下の{{PLURAL:$2|リンク|​&#32;$2 個のリンク}}がありません:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "以下の{{PLURAL:$2|タグ}}を正しいものに書き換えてください:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "定義に<nowiki>{{PLURAL:}}</nowiki>がありますが、翻訳にはありません。",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> で {{PLURAL:$1|$1 形式}}を指定しましたが、{{PLURAL:$2|1 形式のみ|$2 形式}}に対応しています (0= 形式および 1= 形式を除く)。",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> での指定が重複しています。<nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> であれば <nowiki>{{PLURAL:$1|sheep}}</nowiki> と書いてください。",

@@ -68,7 +68,6 @@
 	"translate-checks-balance": "Der er et ulige antal {{PLURAL:$2|parenteser|parenteser}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Følgende {{PLURAL:$2|henvisning er problematisk|$2 henvisninger er problematiske}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Følgende {{PLURAL:$2|henvisning|$2 henvisninger}} mangler:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Erstat venligst følgende {{PLURAL:$2|tag|$2 tags}} med de korrekte:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Originalen bruger <nowiki>{{PLURAL:}}</nowiki>, men oversættelsen gør det ikke.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> fik {{PLURAL:$1|en form|$1 forme}}, men {{PLURAL:$2|kun en form|$2 forme}} er understøttet (fraregnet 0=- og 1=-forme).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> har en gentaget form til sidst. <nowiki>{{PLURAL:$1|får|får}}</nowiki> bør skrives som <nowiki>{{PLURAL:$1|får}}</nowiki>.",

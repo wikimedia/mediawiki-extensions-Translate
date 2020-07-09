@@ -61,7 +61,6 @@
 	"translate-checks-balance": "{{PLURAL:$2|پارانتز|پارانتزلر}} سایی جوت دئییل:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "بو {{PLURAL:$2|باغلانتی ایشکال‌لی‌دیر|باغلانتیلار ایشکال‌لی‌دیلار}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "بو {{PLURAL:$2|باغلانتی یوخدور|باغلانتیلار یوخدولار}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "لوطفاً بو {{PLURAL:$2|اِتیکِتی دوز اِتیکِت|اِتیکِتلری دوز اِتیکِتلر}} ایله دَییشدیرین:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "قایناق‌دا <nowiki>{{PLURAL:}}</nowiki> ایشلنیب‌دیر، اما چئویرمه‌ده یوخ.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> اوچون {{PLURAL:$1|بیر|$1}} فورم وئریلیب‌دیر اما {{PLURAL:$2|یالنیز بیر|$2}} فورم دستکلنیر (0= و 1= فورملارینی چیخاراق).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> سونوندا عینی فورملار وئریلیب‌دیر. <nowiki>{{PLURAL:$1|قویون|قویون}}</nowiki> گرک <nowiki>{{PLURAL:$1|قویون}}</nowiki> کیمی یازیلا.",

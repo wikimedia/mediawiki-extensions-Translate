@@ -79,7 +79,6 @@
 	"translate-checks-balance": "Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|O link a seguir é problemático|Os $2 links a seguir são problemáticos}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|O seguinte link está|Os $2 seguintes links estão}} faltando:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Corrija {{PLURAL:$2|a seguinte tag pela correta|as seguintes tags}}:\n<strong>$1</strong>",
 	"translate-checks-plural": "A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.",
 	"translate-checks-plural-forms": "A <nowiki>{{PLURAL:}}</nowiki> foi fornecida em {{PLURAL:$1|uma forma|$1 formas}} mas {{PLURAL:$2|apenas uma forma é suportada|$2 formas são suportadas}} (excluindo formas 0= e 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> tem formas duplicadas. <nowiki>{{PLURAL:$1|pastel|pastel}}</nowiki> deve ser escrito como <nowiki>{{PLURAL:$1|pastel}}</nowiki>.",

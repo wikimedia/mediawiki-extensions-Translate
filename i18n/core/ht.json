@@ -43,7 +43,6 @@
 	"translate-checks-balance": "Genyen yon kantite {{PLURAL:$2|parantèz|parantèz}} ki enpè:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Lyen swivan an|$2 lyen swivan yo}} gen pwoblèm:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Lyen swivan an|$2 lyen swivan yo}} manke:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Tanpri, ranplase {{PLURAL:$2|etikèt swivan|etikèt swivan yo}} avèk sa ki kòrèk yo:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definisyon itilize <nowiki>{{PLURAL:}}</nowiki> men pa tradiksyon.",
 	"translate-checks-pagename": "Espas non chanje apati definisyon an",
 	"translate-checks-format": "Tradiksyon sa a pa swiv definisyon a oubyen gen yon sentaks ki pa bon: $1",

@@ -58,7 +58,6 @@
 	"translate-checks-balance": "එහි {{PLURAL:$2|parentheses|වරහන්}}  අසමසම ගණනක් තිබේ :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "පහත {{PLURAL:$2|සබැඳිය|සබැඳියන් $2}} ගැටළු සහගතයි:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "පහත {{PLURAL:$2|සබැඳිය|සබැඳියන් $2}} මඟ හැරී ඇත:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "කරුණාකර පහත {{PLURAL:$2|ටැගය|ටැගයන්}} නිවැරදි ඒවා සමඟ ප්‍රතිස්ථාපනය කරන්න :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "නිර්වචනය <nowiki>{{PLURAL:}}</nowiki> භාවිතා කරයි නමුත් පරිවර්තනය එසේ නොකරයි.",
 	"translate-checks-pagename": "නාමාඅවකාශය නිර්වචනයෙන් වෙනස් වී ඇත",
 	"translate-checks-format": "පරිවර්තනය විසින් නිර්වචනය අනුගමනය නොකරනවා හෝ වලංගු නොවන කාරකරීතියක් තිබේ: $1",

@@ -33,7 +33,6 @@
 	"translate-edit-in-other-languages": "Talatah \"$1\" dina basa séjén",
 	"translate-edit-warnings": "Panginget ngeunaan tarjamahan anu teu pepek",
 	"translate-edit-tmmatch": "$1% cocog",
-	"translate-checks-xhtml": "Sok ganti {{PLURAL:$2|tag|tag-tag}} ieu kalawan tag anu pas:\n<strong><nowiki>$1</nowiki></strong>",
 	"right-translate": "Édit migunakeun antarmuka panarjamah",
 	"translationstats": "Statistik alihbasa",
 	"translate-statsf-width": "Lébar dina piksel:",

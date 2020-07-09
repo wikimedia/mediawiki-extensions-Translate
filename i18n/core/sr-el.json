@@ -72,7 +72,6 @@
 	"translate-checks-balance": "Prisutan je neparan broj {{PLURAL:$2|zagrada}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Sledeća veza je problematična|Sledeće $2 veze su problematične|Sledećih $2 veza je problematično}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Sledeća veza nedostaje|Sledeće $2 veze nedostaju|Sledećih $2 veza nedostaju}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Zamenite {{PLURAL:$2|sledeću oznaku ispravnom|sledeće oznake ispravnim}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definicija koristi <nowiki>{{PLURAL:}}</nowiki>, a prevod ne.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> je data {{PLURAL:$1|jedan oblik|$1 oblika}} ali {{PLURAL:$2|samo jedan oblik je|$2 oblika je}} podržano (izuzimajući oblike 0= i 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> sadrži dupliranu formu. Formu <nowiki>{{PLURAL:$1|vrata|vrata}}</nowiki> bi trebalo pisati kao <nowiki>{{PLURAL:$1|vrata}}</nowiki>.",

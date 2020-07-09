@@ -76,7 +76,6 @@
 	"translate-checks-balance": "Υπάρχει ακανόνιστη ποσότητα {{PLURAL:$2|παρενθέσεων|παρενθέσεων}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Ο ακόλουθος σύνδεσμος|Οι ακόλουθοι $2 σύνδεσμοι}} είναι {{PLURAL:$2|προβληματικός|προβληματικοί}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Ο ακόλουθος σύνδεσμος απουσιάζει|Οι ακόλουθοι $2 σύνδεσμοι απουσιάζει}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Παρακαλώ αντικαταστήστε {{PLURAL:$2|την ακόλουθη ετικέτα|τις ακόλουθες ετικέτες}} με {{PLURAL:$2|τη σωστή|τις σωστές}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Ο ορισμός χρησιμοποιεί τη συνάρτηση <nowiki>{{PLURAL:}}</nowiki> αλλά η μετάφραση όχι.",
 	"translate-checks-plural-forms": "Στη συνάρτηση <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|δόθηκε μια μορφή|δόθηκαν $1 μορφές}} αλλά {{PLURAL:$2|αλλά μόνο μια μορφή υποστηρίζεται|υποστηρίζονται $2 μορφές}}  (εξαιρώντας τις μορφές 0= και 1=).",
 	"translate-checks-plural-dupe": "Η συνάρτηση <nowiki>{{PLURAL:}}</nowiki> έχει διπλές μορφές στο τέλος. Το <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> πρέπει να γράφεται ως <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",

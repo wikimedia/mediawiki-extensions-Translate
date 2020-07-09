@@ -58,7 +58,6 @@
 	"translate-checks-balance": "Daar is 'n onewe {{PLURAL:$2|aantal hakkies|aantal hakkies}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Die volgende {{PLURAL:$2|verwysing is|verwysings is}} problematies:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Die volgende {{PLURAL:$2|verwysing is weg|$2 verwysings is weg}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Vervang die volgende {{PLURAL:$2|etiket|etikette}} met die regtes:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Die definisie bevat <nowiki>{{PLURAL:}}</nowiki>, maar die vertaling nie.",
 	"translate-checks-pagename": "Naamspasie het verander van die definisie",
 	"translate-checks-format": "Hierdie vertaling wyk af van die bronboodskap of het 'n ongeldige sintaks: $1",

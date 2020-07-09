@@ -60,7 +60,6 @@
 	"translate-checks-balance": "די צאל {{PLURAL:$2|קלאמערן|קלאמערן}} איז נישט באלאנסירט:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|דער פֿאלגנדער לינק איז|די פֿאלגנדע $2 לינקען זענען}} פראבלעמאַטיש:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|דער פֿאלגנדער לינק פֿעלט|די פֿאלגנדע $2 לינקס פֿעלן}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "ביטע פֿארבײַטן די פֿאלגנדע {{PLURAL:$2|טאג|טאגן}} מיט געהעריקע:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "דעפֿיניציע ניצט <nowiki>{{PLURAL:}}</nowiki>, די איבערזעצונג אבער נישט.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> איז געגעבען געווארן {{PLURAL:$1|איין פֿארעם|$1 פֿארמען}} אבער {{PLURAL:$2|נאר איין פֿארעם איז|$2 פֿארמען זענען}} געשטיצט (אחוץ 0= און 1= פֿארמען).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> האט דופליקאטע פארעמס צום סוף. <nowiki>{{PLURAL:$1|פֿיש|פֿיש}}</nowiki> דארף מען שרײַבן <nowiki>{{PLURAL:$1|פֿיש}}</nowiki>.",

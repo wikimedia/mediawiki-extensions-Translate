@@ -63,7 +63,6 @@
 	"translate-checks-balance": "Există un număr impar de {{PLURAL:$2|paranteze|paranteze}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Următoarea legătură este problematică|Următoarele $2 legături sunt problematice}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Următoarea legătură lipsește|Următoarele $2 legături lipsesc}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Vă rugăm să înlocuiți {{PLURAL:$2|următoarea|următoarele}} {{PLURAL:$2|etichetă|etichete}} cu cele corecte:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definiția folosește <nowiki>{{PLURAL:}}</nowiki>, dar traducerea nu.",
 	"translate-checks-plural-forms": "Expresia <nowiki>{{PLURAL:}}</nowiki> a primit {{PLURAL:$1|un element|$1 elemente|$1 de elemente}}, însă {{PLURAL:$2|este acceptat doar un element|sunt acceptate doar $2 elemente|sunt acceptate doar $2 de elemente}} (excluzând 0= și 1=).",
 	"translate-checks-plural-dupe": "Expresia <nowiki>{{PLURAL:}}</nowiki> are elemente duplicate la sfârșit. <nowiki>{{PLURAL:$1|oaie|oaie}}</nowiki> trebuie scris ca <nowiki>{{PLURAL:$1|oaie}}</nowiki>.",

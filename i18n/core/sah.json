@@ -57,7 +57,6 @@
 	"translate-checks-balance": "Сабар дуу аһар дуу {{PLURAL:$2|ускуопка тиийбэт|ускуопкалар тиийбэттэр}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Бу сигэ сыыһалаах|Бу сигэлэр сыыһалаахтар}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Бу {{PLURAL:$2|сигэ|$2 сигэ}} суох:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Бука диэн бу {{PLURAL:$2|анал бэлиэни|анал бэлиэлэри}} көннөр:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригинал <nowiki>{{PLURAL:}}</nowiki> туттар, оттон тылбааһа — туттубат.",
 	"translate-checks-plural-dupe": "Манна <nowiki>{{PLURAL:}}</nowiki> тыл икки тэҥ формата туттуллубут. <nowiki>{{PLURAL:$1|сон|сон}}</nowiki> оннугар <nowiki>{{PLURAL:$1|сон}}</nowiki> диэн суруйар ордук.",
 	"translate-checks-pagename": "Аат далын быһаарыыта уларыйбыт",

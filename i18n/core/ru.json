@@ -103,7 +103,6 @@
 	"translate-checks-balance": "Непарное количество открывающих и закрывающих {{PLURAL:$2|скобок}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|1=Следующая ссылка вызывает проблемы|Следующие ссылки вызывают проблемы}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Отсутствует $2 ссылка|Отсутствуют $2 ссылки|Отсутствуют $2 ссылок}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Пожалуйста, исправьте {{PLURAL:$2|1=следующий тег|следующие теги}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригинал использует <nowiki>{{PLURAL:}}</nowiki>, а перевод — нет.",
 	"translate-checks-plural-forms": "Выражению <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|была дана одна форма|были даны $1 формы|были даны $1 форм}}, но {{PLURAL:$2|поддерживается только $2 форма|поддерживаются $2 формы|поддерживаются $2 форм|1=поддерживается только одна форма}} (кроме форм 0= и 1=).",
 	"translate-checks-plural-dupe": "В конце выражения <nowiki>{{PLURAL:}}</nowiki> две одинаковые формы. Вместо <nowiki>{{PLURAL:$1|пальто|пальто}}</nowiki> лучше написать <nowiki>{{PLURAL:$1|пальто}}</nowiki>.",

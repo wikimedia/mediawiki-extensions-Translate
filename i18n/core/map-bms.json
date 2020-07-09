@@ -46,6 +46,5 @@
 	"translate-checks-balance": "Ana jumlah sing ora rata sekang {{PLURAL:$2|''parenthesis''|}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|pranala|$2 pranala-pranala}} kiye nduwe masalah:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Pranala|Pranala-pranala}} kiye ilang:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Monggo ganti {{PLURAL:$2|tag|tag-tag}} kiye nganggo tag sing cocog:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> wis aweh {{PLURAL:$1|siji formulir|$1 formulir-formulir}} ningen mung {{PLURAL:$2|siji formulir|$2 formulir-formulir}} sing didukung (excluding 0= lan 1= formulir)."
 }

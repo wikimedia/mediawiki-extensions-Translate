@@ -56,7 +56,6 @@
 	"translate-checks-balance": "Mae nifer y {{PLURAL:$2|cromfachau}} yn odrif, fel a ganlyn:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Ymddengys bod nam ar y {{PLURAL:$2|cyswllt|cyswllt|$2 gyswllt|$2 cyswllt|£2 chyswllt|$2 cyswllt}} canlynol:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Mae'r {{PLURAL:$2|cyswllt|cyswllt|$2 gyswllt|$2 cyswllt|£2 chyswllt|$2 cyswllt}} canlynol yn eisiau:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Rhowch {{PLURAL:$2|tag|tag|tagiau}} cywir yn lle'r rhai canlynol:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Mae'r gwreiddiol yn defnyddio <nowiki>{{PLURAL:}}</nowiki> ond nid y cyfieithiad.",
 	"translate-checks-pagename": "Mae'r parth yn y cyfieithiad yn wahanol i'r parth yn y neges wreiddiol",
 	"translate-checks-format": "Nid yw'r cyfieithiad yn gydnaws â'r gwreiddiol, ynteu mae cystrawen annilys ynddo: $1",
