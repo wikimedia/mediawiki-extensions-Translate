@@ -102,6 +102,7 @@
 	"translate-checks-newline-extra-start": "Há $1 {{PLURAL:$1|carácter|caracteres}} de nova linha a mais no início da tradução.",
 	"translate-checks-newline-extra-end": "Há $1 {{PLURAL:$1|carácter|caracteres}} de nova linha a mais no fim da tradução.",
 	"translate-checks-value-not-present": "A tradução deve ser igual a {{PLURAL:$1|1=|um dos seguintes valores:}} $1.",
+	"translate-checks-replacement": "Use $2 em vez de $1.",
 	"translate-pref-editassistlang": "Idiomas auxiliares:",
 	"prefs-translate": "Opções de tradução",
 	"translate-pref-editassistlang-help": "Liste os idiomas, separados por vírgulas.\nQuando você estiver traduzindo, as traduções nos idiomas aqui definidos também serão exibidas.\nOs idiomas padrão deste recurso variam de acordo com a língua de sua interface.",

@@ -103,6 +103,7 @@
 	"translate-checks-newline-extra-start": "Çevirinin başında $1 ekstra yeni satır karakter var.",
 	"translate-checks-newline-extra-end": "Çevirinin sonunda $1 ekstra yeni satır karakter var.",
 	"translate-checks-value-not-present": "Çeviri {{PLURAL:$1|1=|şu değerlerden birine eşit olmalıdır:}} $1.",
+	"translate-checks-replacement": "$1 yerine $2 kullanın.",
 	"translate-pref-editassistlang": "Yardımcı diller:",
 	"prefs-translate": "Çeviri seçenekleri",
 	"translate-pref-editassistlang-help": "Dil kodlarının virgülle ayrılmış listesi.\nTercüme ederken, bu dillerde bir mesajın çevirisi gösterilir.\nVarsayılan dil listesi dilinize bağlıdır.",

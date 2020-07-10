@@ -36,7 +36,7 @@
 	"tpt-edit-failed": "Ažuriranje stranice nije moguće: $1",
 	"tpt-new-pages-title": "Stranice predložene za prevođenje",
 	"tpt-old-pages-title": "Stranice u prevođenju",
-	"tpt-discouraged-pages-title": "Nepreporučene stranice",
+	"tpt-tag-discouraged": "obeshrabruje se",
 	"tpt-select-prioritylangs-reason": "Razlog:",
 	"tpt-sections-prioritylangs": "Prednosni jezici",
 	"tpt-rev-mark": "označi za prevođenje",

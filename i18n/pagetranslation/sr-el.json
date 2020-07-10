@@ -34,7 +34,6 @@
 	"tpt-new-pages-title": "Stranice predložene za prevođenje",
 	"tpt-old-pages-title": "Stranice za prevođenje",
 	"tpt-other-pages-title": "Pokvarene stranice",
-	"tpt-discouraged-pages-title": "Nepreporučene stranice",
 	"tpt-new-pages": "{{PLURAL:$1|Ova stranica sadrži|Ove stranice sadrže}} tekst za oznakama za prevođenje, ali nema verzije {{PLURAL:$1|ove stranice koja je|ove stranice koje su}} trenutno {{PLURAL:$1|označena|označene}} za prevođenje.",
 	"tpt-old-pages": "{{PLURAL:$1|Neka verzija ove stranice je označena|Neke verzije ovih stranica su označene}} za prevođenje.",
 	"tpt-other-pages": "{{PLURAL:$1|Starija verzija ove stranice je označena|Starije verzije ovih stranica su označene}} za prevođenje, \nali {{PLURAL:$1|najnovija verzija|najnovije verzije}} ne mogu da budu označene za prevođenje.",

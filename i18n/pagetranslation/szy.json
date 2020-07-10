@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Benel"
+			"Benel",
+			"Bunukwiki"
 		]
 	},
+	"tps-edit-sourcepage-ve-warning-button": "kapahtu",
 	"tpt-languages-nonzero": "$1 ($2% mabelih tuway)",
 	"tpt-aggregategroup-add": "cunus"
 }

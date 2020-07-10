@@ -26,7 +26,6 @@
 	"tpt-offer-notify": "شما می‌توانید <span class=\"plainlinks\">[$1 notify translators]</span> درباره این صفحه.",
 	"tpt-old-pages-title": "وةڵگةدر ترجمه",
 	"tpt-other-pages-title": "وةڵگةل نادرست",
-	"tpt-discouraged-pages-title": "صفحات دلسرد",
 	"tpt-new-pages": "{{PLURAL:$1|این صفحه شامل|این صفحات شامل}} متن با برچسب‌های ترجمه،\nاما هیچ نسخه‌ {{PLURAL:$1|این صفحه|این صفحات}} در حال حاضر برای ترجمه علامت‌گذاری نشده‌است.",
 	"tpt-select-prioritylangs-reason": ":دةلیل",
 	"tpt-sections-prioritylangs": "زبان‌های با اولویت بالا",

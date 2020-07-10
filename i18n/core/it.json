@@ -98,6 +98,7 @@
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|C'è|Ci sono}} $1 {{PLURAL:$1|carattere|caratteri}} di nuova riga mancanti alla fine della traduzione.",
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|C'è|Ci sono}} $1 {{PLURAL:$1|carattere|caratteri}} di nuova riga in più all'inizio della traduzione.",
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|C'è|Ci sono}} $1 {{PLURAL:$1|carattere|caratteri}} di nuova riga in più alla fine della traduzione.",
+	"translate-checks-replacement": "Usa $2 anziché $1.",
 	"translate-pref-editassistlang": "Lingue di confronto:",
 	"prefs-translate": "Opzioni di traduzione",
 	"translate-pref-editassistlang-help": "Codici delle lingue separati da virgola.\nLe traduzioni di un messaggio in queste lingue sono mostrate durante la traduzione.\nL'elenco predefinito (default) delle lingue dipende dalla propria lingua.",

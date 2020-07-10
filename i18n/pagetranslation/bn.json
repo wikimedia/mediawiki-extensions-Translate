@@ -24,7 +24,6 @@
 	"tpt-already-marked": "এই পাতার সর্বশেষ সংস্করণটি ইতিমধ্যে অনুবাদের জন্য চিহ্নিত করা হয়েছে।",
 	"tpt-old-pages-title": "অনুবাদে থাকা পাতা",
 	"tpt-other-pages-title": "ভাঙ্গা পাতা",
-	"tpt-discouraged-pages-title": "নিরুৎসাহিত করা পাতা",
 	"tpt-old-pages": "{{PLURAL:$1|এই পাতাটির|এই পাতাগুলির}} কিছু সংস্করণ অনুবাদের জন্য চিহ্নিত করা হয়েছে।",
 	"tpt-select-prioritylangs-reason": "কারণ:",
 	"tpt-sections-prioritylangs": "অগ্রাধিকারের ভাষাগুলি",
