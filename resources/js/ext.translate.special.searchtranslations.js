@@ -211,7 +211,7 @@
 		groupList.sort( sortGroups );
 		for ( i = 0; i < groupList.length; i++ ) {
 			groupId = groupList[ i ];
-			group = mw.translate.findGroup( groupId, resultGroups );
+			group = findGroup( groupId, resultGroups );
 			if ( !group ) {
 				continue;
 			}
@@ -340,8 +340,8 @@
 	}
 
 	function sortGroups( groupIdA, groupIdB ) {
-		var groupAName = mw.translate.findGroup( groupIdA, resultGroups ).count,
-			groupBName = mw.translate.findGroup( groupIdB, resultGroups ).count;
+		var groupAName = findGroup( groupIdA, resultGroups ).count,
+			groupBName = findGroup( groupIdB, resultGroups ).count;
 
 		if ( groupAName > groupBName ) {
 			return -1;
@@ -350,6 +350,27 @@
 		}
 
 		return 0;
+	}
+
+	/**
+	 * Finds a specific group from a groups object containing nested groups.
+	 * @param {string} targetGroupId
+	 * @param {Object} groups
+	 * @return {Object} Message group object, or null if group is not found
+	 */
+	function findGroup( targetGroupId, groups ) {
+		var group = groups[ targetGroupId ], groupId;
+		if ( group ) {
+			return group;
+		}
+
+		for ( groupId in groups ) {
+			if ( groups[ groupId ].groups ) {
+				return findGroup( targetGroupId, groups[ groupId ].groups );
+			}
+		}
+
+		return null;
 	}
 
 	function sortLanguages( languageA, languageB ) {

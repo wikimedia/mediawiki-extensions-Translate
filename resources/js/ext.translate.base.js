@@ -86,16 +86,16 @@
 		 * @return {Object} Message group object
 		 */
 		findGroup: function ( id, groups ) {
-			var result = null;
+			var result;
 
 			if ( !id ) {
 				return groups;
 			}
 
-			groups.forEach( function ( group ) {
+			groups.some( function ( group ) {
 				if ( group.id === id ) {
 					result = group;
-					return false;
+					return true;
 				}
 
 				if ( group.groups ) {
@@ -103,9 +103,11 @@
 
 					if ( group ) {
 						result = group;
-						return false;
+						return true;
 					}
 				}
+
+				return false;
 			} );
 
 			return result;
