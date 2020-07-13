@@ -51,6 +51,21 @@ class TranslateMetadata {
 	}
 
 	/**
+	 * Get a metadata value for the given group and key.
+	 * If it does not exist, return the default value.
+	 * @param string $group
+	 * @param string $key
+	 * @param string $defaultValue
+	 * @return string
+	 */
+	public static function getWithDefaultValue(
+		string $group, string $key, string $defaultValue
+	): string {
+		$value = self::get( $group, $key );
+		return $value === false ? $defaultValue : $value;
+	}
+
+	/**
 	 * Set a metadata value for the given group and metadata key. Updates the
 	 * value if already existing.
 	 * @param string $group The group id

@@ -21,7 +21,8 @@ use MediaWiki\Revision\RevisionRecord;
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
-	private const LATEST_SYNTAX_VERSION = '2';
+	private const LATEST_SYNTAX_VERSION = '1';
+	private const DEFAULT_SYNTAX_VERSION = '1';
 
 	public function __construct() {
 		parent::__construct( 'PageTranslation' );
@@ -411,7 +412,9 @@ class SpecialPageTranslation extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$group = MessageGroups::getGroup( $page['groupid'] );
 			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
-			$page['version'] = TranslateMetadata::get( $page['groupid'], 'version' );
+			$page['version'] = TranslateMetadata::getWithDefaultValue(
+				$page['groupid'], 'version', self::DEFAULT_SYNTAX_VERSION
+			);
 
 			if ( !isset( $page['tp:mark'] ) ) {
 				// Never marked, check that the latest version is ready
@@ -739,7 +742,9 @@ class SpecialPageTranslation extends SpecialPage {
 			$out->wrapWikiMsg( '<div class="successbox">$1</div>', 'tpt-mark-nochanges' );
 		}
 
-		$version = TranslateMetadata::get( $page->getMessageGroupId(), 'version' );
+		$version = TranslateMetadata::getWithDefaultValue(
+			$page->getMessageGroupId(), 'version', self::DEFAULT_SYNTAX_VERSION
+		);
 		$this->priorityLanguagesForm( $page );
 
 		$this->syntaxVersionForm( $version, $firstMark );
