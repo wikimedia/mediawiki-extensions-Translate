@@ -383,10 +383,14 @@
 		},
 
 		resize: function () {
-			var actualWidth = 0;
+			var actualWidth = 0, $messageSelector = $( '.row.tux-message-selector' );
+
+			if ( $messageSelector.is( ':hidden' ) ) {
+				return;
+			}
 
 			// Calculate the total width required for the filters
-			$( '.row.tux-message-selector > li' ).each( function () {
+			$messageSelector.children( 'li' ).each( function () {
 				actualWidth += $( this ).outerWidth( true );
 			} );
 
