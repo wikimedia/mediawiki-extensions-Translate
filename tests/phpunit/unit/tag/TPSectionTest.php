@@ -7,6 +7,14 @@ declare( strict_types = 1 );
  * @covers \TPSection
  */
 class TPSectionTest extends \MediaWikiUnitTestCase {
+	public function setUp(): void {
+		parent::setUp();
+
+		if ( !defined( 'TRANSLATE_FUZZY' ) ) {
+			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+		}
+	}
+
 	/** @dataProvider providerTestGetMarkedText */
 	public function testGetMarkedText(
 		string $name, string $text, bool $inline, string $expected
@@ -110,5 +118,54 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 		];
 
 		return $cases;
+	}
+
+	/** @dataProvider provideTestGetTextForRendering */
+	public function testGetTextForRendering(
+		string $source,
+		?string $translation,
+		bool $fuzzy,
+		string $expected
+	 ) {
+		$unit = new TPSection();
+		$unit->text = $source;
+		$unit->setIsInline( true );
+
+		$msg = null;
+		if ( $translation !== null ) {
+			$msg = new FatMessage( '', $unit->getTextWithVariables() );
+			$msg->setTranslation( $translation );
+			if ( $fuzzy ) {
+				$msg->addTag( 'fuzzy' );
+			}
+		}
+
+		$this->assertEquals( $expected, $unit->getTextForRendering( $msg ) );
+	}
+
+	public function provideTestGetTextForRendering() {
+		$fuzzy = true;
+		$notFuzzy = false;
+
+		yield [
+			'Hello <tvar|abc>peter</>!',
+			null,
+			$notFuzzy,
+			'Hello peter!'
+		];
+
+		yield [
+			'Hello <tvar|abc>peter</>!',
+			'Hejsan $abc!',
+			$notFuzzy,
+			'Hejsan peter!'
+		];
+
+		yield [
+			'Hello <tvar|abc>peter</>!',
+			'Hejsan $abc!',
+			$fuzzy,
+			'<span class="mw-translate-fuzzy">Hejsan peter!</span>'
+		];
 	}
 }

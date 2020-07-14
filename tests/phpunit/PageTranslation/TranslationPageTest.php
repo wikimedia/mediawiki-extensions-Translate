@@ -1,51 +1,60 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extensions\Translate\PageTranslation;
+
+use FatMessage;
+use Language;
+use MediaWikiTestCase;
+use TPSection;
+use WikiPageMessageGroup;
+
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \TPParse
+ * @covers \MediaWiki\Extensions\Translate\PageTranslation\TranslationPage
  */
-class TPParseTest extends \MediaWikiUnitTestCase {
-	protected function setUp(): void {
-		parent::setUp();
-
-		if ( !defined( 'TRANSLATE_FUZZY' ) ) {
-			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
-		}
-	}
-
-	/** @dataProvider provideTestSectionWrapping */
-	public function testSectionWrapping(
+class TranslationPageTest extends MediaWikiTestCase {
+	/** @dataProvider provideTestGenerateSourceFromTranslations */
+	public function testGenerateSourceFromTranslations(
 		bool $inline,
 		bool $canWrap,
 		array $messages,
 		string $expected,
 		string $comment
 	) {
-		$title = Title::makeTitle( NS_MAIN, __CLASS__ );
-		$prefix = $title->getPrefixedDBkey() . '/';
+		// This test skips all the message loading from database
 
-		$sections = $collection = [];
+		$template = '<S>';
+		$unitMap = [];
 		foreach ( $messages as $id => $m ) {
 			/** @var FatMessage $m */
-			$section = new TPSection();
-			$section->id = $id;
-			$section->text = $m->definition();
-			$section->setIsInline( $inline );
-			$section->setCanWrap( $canWrap );
+			$unit = new TPSection();
+			$unit->id = $id;
+			$unit->text = $m->definition();
+			$unit->setIsInline( $inline );
+			$unit->setCanWrap( $canWrap );
 
-			$sections[$id] = $section;
-			$collection[$prefix . $id] = $m;
+			$unitMap[$unit->id] = $unit;
 		}
 
-		$parse = new TPParse( $title );
-		$parse->sections = $sections;
-
+		// Then create appropriate units in the section. We are using the array keys, which
+		// works as long as there are less than ten units.
 		$glue = $inline ? ' | ' : "\n\n";
-		$parse->template = implode( $glue, array_keys( $sections ) );
+		$sectionMap = [ '<S>' => new Section( '', implode( $glue, array_keys( $unitMap ) ), '' ) ];
+		$output = new ParserOutput( $template, $sectionMap, $unitMap );
 
-		$actual = $parse->getTranslationPageText( $collection );
+		$translationPage = new TranslationPage(
+			$output,
+			$this->createMock( WikiPageMessageGroup::class ),
+			Language::factory( 'ar' ),
+			Language::factory( 'en' ),
+			true /*$showOutdated*/,
+			false /*$wrapUntranslated*/,
+			'' /*$prefix*/
+		);
+
+		$actual = $translationPage->generateSourceFromTranslations( $messages );
 		$this->assertSame(
 			$expected,
 			$actual,
@@ -53,7 +62,7 @@ class TPParseTest extends \MediaWikiUnitTestCase {
 		);
 	}
 
-	public function provideTestSectionWrapping() {
+	public function provideTestGenerateSourceFromTranslations() {
 		$inline = true;
 		$block = false;
 

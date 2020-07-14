@@ -6,7 +6,8 @@
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
+use MediaWiki\Extensions\Translate\PageTranslation\TranslationPage;
+use MediaWiki\Extensions\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
@@ -54,6 +55,9 @@ class TranslatablePage {
 	protected $pageDisplayTitle;
 
 	protected $cachedParse;
+
+	/** @var ?string */
+	private $targetLanguage;
 
 	/**
 	 * @param Title $title Title object for the page
@@ -266,80 +270,21 @@ class TranslatablePage {
 			return $this->cachedParse;
 		}
 
-		$text = $this->getText();
+		$services = Services::getInstance();
+		$parser = $services->getTranslatablePageParser();
+		$placeholderFactory = $services->getParsingPlaceholderFactory();
 
-		$nowiki = [];
-		$text = self::armourNowiki( $nowiki, $text );
-
-		$sections = [];
+		$parserOutput = $parser->parse( $this->getText() );
 
 		// Add section to allow translating the page name
-		$displayTitle = new TPSection;
+		$displayTitle = new TPSection();
 		$displayTitle->id = $this->displayTitle;
 		$displayTitle->text = $this->getTitle()->getPrefixedText();
-		$sections[TranslateUtils::getPlaceholder()] = $displayTitle;
-
-		$tagPlaceHolders = [];
-
-		while ( true ) {
-			$re = '~(<translate(?: nowrap)?>)(.*?)</translate>~s';
-			$matches = [];
-			$ok = preg_match( $re, $text, $matches, PREG_OFFSET_CAPTURE );
-
-			if ( $ok === 0 || $ok === false ) {
-				break; // No match or failure
-			}
-
-			$contentWithTags = $matches[0][0];
-			$contentWithoutTags = $matches[2][0];
-			// These are offsets to the content inside the tags in $text
-			$offsetStart = $matches[0][1];
-			$offsetEnd = $offsetStart + strlen( $contentWithTags );
-
-			// Replace the whole match with a placeholder
-			$ph = TranslateUtils::getPlaceholder();
-			$text = substr( $text, 0, $offsetStart ) . $ph . substr( $text, $offsetEnd );
-
-			if ( preg_match( '~<translate( nowrap)?>~', $contentWithoutTags ) !== 0 ) {
-				throw new TPException( [ 'pt-parse-nested', $contentWithoutTags ] );
-			}
-
-			$openTag = $matches[1][0];
-			$canWrap = $openTag !== '<translate nowrap>';
-
-			// Parse the content inside the tags
-			$contentWithoutTags = self::unArmourNowiki( $nowiki, $contentWithoutTags );
-			$parse = self::sectionise( $contentWithoutTags, $canWrap );
-
-			// Update list of sections and the template with the results
-			$sections += $parse['sections'];
-			$tagPlaceHolders[$ph] = $openTag . $parse['template'] . '</translate>';
-		}
-
-		$prettyTemplate = $text;
-		foreach ( $tagPlaceHolders as $ph => $value ) {
-			$prettyTemplate = str_replace( $ph, '[...]', $prettyTemplate );
-		}
-
-		if ( preg_match( '~<translate( nowrap)?>~', $text ) !== 0 ) {
-			throw new TPException( [ 'pt-parse-open', $prettyTemplate ] );
-		} elseif ( strpos( $text, '</translate>' ) !== false ) {
-			throw new TPException( [ 'pt-parse-close', $prettyTemplate ] );
-		}
-
-		// Replace the tag placeholders with unit placeholders to form the template
-		$text = strtr( $text, $tagPlaceHolders );
-
-		if ( count( $sections ) === 1 ) {
-			// Don't return display title for pages which have no sections
-			$sections = [];
-		}
-
-		$text = self::unArmourNowiki( $nowiki, $text );
 
 		$parse = new TPParse( $this->getTitle() );
-		$parse->template = $text;
-		$parse->sections = $sections;
+		$parse->template = $parserOutput->sourcePageTemplate();
+		// Make it be the first section
+		$parse->sections = [ $placeholderFactory->make() => $displayTitle ] + $parserOutput->units();
 
 		// Cache it
 		$this->cachedParse = $parse;
@@ -348,140 +293,52 @@ class TranslatablePage {
 	}
 
 	/**
-	 * Remove all opening and closing translate tags following the same whitespace rules
-	 * as the regular parsing. The difference is that this doesn't try to parse the page,
-	 * so it can handle unbalanced tags.
-	 *
-	 * @param string $text Wikitext
-	 * @return string Wikitext without translate tags.
-	 */
-	public static function cleanupTags( $text ) {
-		$nowiki = [];
-		$text = self::armourNowiki( $nowiki, $text );
-		$text = preg_replace( '~<translate( nowrap)?>\n?~s', '', $text );
-		$text = preg_replace( '~\n?</translate>~s', '', $text );
-		// Mirroring what TPSection::getTextForTrans does
-		$text = preg_replace( '~<tvar\|([^>]+)>(.*?)</>~u', '\2', $text );
-
-		$text = self::unArmourNowiki( $nowiki, $text );
-		return $text;
-	}
-
-	/**
-	 * @param array &$holders
-	 * @param string $text
 	 * @return string
+	 * @since 2020.07
 	 */
-	public static function armourNowiki( &$holders, $text ) {
-		$re = '~(<nowiki>)(.*?)(</nowiki>)~s';
-
-		while ( preg_match( $re, $text, $matches ) ) {
-			$ph = TranslateUtils::getPlaceholder();
-			$text = str_replace( $matches[0], $ph, $text );
-			$holders[$ph] = $matches[0];
-		}
+	public function getStrippedSourcePageText(): string {
+		$parser = Services::getInstance()->getTranslatablePageParser();
+		$text = $parser->cleanupTags( $this->getText() );
+		$text = preg_replace( '~<languages\s*/>\n?~s', '', $text );
 
 		return $text;
 	}
 
 	/**
-	 * @param array $holders
-	 * @param string $text
-	 * @return mixed
+	 * @param Title $title
+	 * @return ?TranslationPage
+	 * @since 2020.07
 	 */
-	public static function unArmourNowiki( $holders, $text ) {
-		foreach ( $holders as $ph => $value ) {
-			$text = str_replace( $ph, $value, $text );
+	public static function getTranslationPageFromTitle( Title $title ): ?TranslationPage {
+		$self = self::isTranslationPage( $title );
+		if ( !$self ) {
+			return null;
 		}
 
-		return $text;
+		return $self->getTranslationPage( $self->targetLanguage );
 	}
 
 	/**
-	 * Splits the content marked with \<translate> tags into sections, which
-	 * are separated with with two or more newlines. Extra whitespace is captured
-	 * in the template and is not included in the sections.
-	 *
-	 * @param string $text Contents of one pair of \<translate> tags.
-	 * @param bool $canWrap
-	 * @return array Contains a template and array of unparsed sections.
+	 * @param string $targetLanguage
+	 * @return TranslationPage
+	 * @since 2020.07
 	 */
-	public static function sectionise( string $text, bool $canWrap ): array {
-		$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
-		$parts = preg_split( '~(^\s*|\s*\n\n\s*|\s*$)~', $text, -1, $flags );
+	public function getTranslationPage( string $targetLanguage ): TranslationPage {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$parser = Services::getInstance()->getTranslatablePageParser();
+		$parserOutput = $parser->parse( $this->getText() );
+		// TODO: connect this
+		$wrapUntranslated = false;
 
-		$inline = preg_match( '~\n~', $text ) === 0;
-
-		$template = '';
-		$sections = [];
-
-		foreach ( $parts as $_ ) {
-			if ( trim( $_ ) === '' ) {
-				$template .= $_;
-			} else {
-				$ph = TranslateUtils::getPlaceholder();
-				$tpsection = self::shakeSection( $_ );
-				$tpsection->setIsInline( $inline );
-				$tpsection->setCanWrap( $canWrap );
-				$sections[$ph] = $tpsection;
-				$template .= $ph;
-			}
-		}
-
-		return [
-			'template' => $template,
-			'sections' => $sections,
-		];
-	}
-
-	/**
-	 * Checks if this section already contains a section marker. If there
-	 * is not, a new one will be created. Marker will have the value of
-	 * -1, which will later be replaced with a real value.
-	 *
-	 * May throw a TPException if there is error with existing section
-	 * markers.
-	 *
-	 * @param string $content Content of one section
-	 * @throws TPException
-	 * @return TPSection
-	 */
-	public static function shakeSection( $content ) {
-		$re = '~<!--T:(.*?)-->~';
-		$matches = [];
-		$count = preg_match_all( $re, $content, $matches, PREG_SET_ORDER );
-
-		if ( $count > 1 ) {
-			throw new TPException( [ 'pt-shake-multiple', $content ] );
-		}
-
-		$section = new TPSection;
-		if ( $count === 1 ) {
-			foreach ( $matches as $match ) {
-				list( /*full*/, $id ) = $match;
-				$section->id = $id;
-
-				// Currently handle only these two standard places.
-				// Is this too strict?
-				$rer1 = '~^<!--T:(.*?)-->( |\n)~'; // Normal sections
-				$rer2 = '~\s*<!--T:(.*?)-->$~m'; // Sections with title
-				$content = preg_replace( $rer1, '', $content );
-				$content = preg_replace( $rer2, '', $content );
-
-				if ( preg_match( $re, $content ) === 1 ) {
-					throw new TPException( [ 'pt-shake-position', $content ] );
-				} elseif ( trim( $content ) === '' ) {
-					throw new TPException( [ 'pt-shake-empty', $id ] );
-				}
-			}
-		} else {
-			// New section
-			$section->id = -1;
-		}
-
-		$section->text = $content;
-
-		return $section;
+		return new TranslationPage(
+			$parserOutput,
+			$this->getMessageGroup(),
+			Language::factory( $targetLanguage ),
+			Language::factory( $this->getSourceLanguageCode() ),
+			$config->get( 'TranslateKeepOutdatedTranslations' ),
+			$wrapUntranslated,
+			$this->getTitle()->getPrefixedDBkey() . '/'
+		);
 	}
 
 	protected static $tagCache = [];
@@ -663,7 +520,7 @@ class TranslatablePage {
 		$prefix = $this->getTitle()->getText();
 		/** @var Title $title */
 		foreach ( $titles as $title ) {
-			list( $name, $code ) = TranslateUtils::figureMessage( $title->getText() );
+			[ $name, $code ] = TranslateUtils::figureMessage( $title->getText() );
 			if ( !isset( $codes[$code] ) || $name !== $prefix ) {
 				continue;
 			}
@@ -830,6 +687,8 @@ class TranslatablePage {
 		if ( $page->getMarkedTag() === false ) {
 			return false;
 		}
+
+		$page->targetLanguage = $code;
 
 		return $page;
 	}

@@ -1,64 +1,91 @@
 <?php
-/**
- * @author Niklas Laxström
- * @copyright Copyright © 2010-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- * @file
- */
+declare( strict_types = 1 );
+
+use MediaWiki\Extensions\Translate\PageTranslation\ParserOutput;
+use MediaWiki\Extensions\Translate\PageTranslation\ParsingFailure;
+use MediaWiki\Extensions\Translate\PageTranslation\TestingParsingPlaceholderFactory;
+use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extensions\Translate\PageTranslation\TranslationPage;
 
 /**
  * Custom testing framework for page translation parser.
  * @ingroup PageTranslation
- * @group Database
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 	public static function provideTestFiles() {
 		$dir = __DIR__;
 		$testFiles = glob( "$dir/pagetranslation/*.ptfile" );
 		foreach ( $testFiles as $i => $file ) {
-			$testFiles[$i] = [ $file ];
+			$testFiles[$i] = [ basename( $file, '.ptfile' ), $file ];
 		}
 
 		return $testFiles;
 	}
 
-	/**
-	 * @dataProvider provideTestFiles
-	 */
-	public function testParsing( $file ) {
-		$filename = basename( $file );
-		list( $pagename, ) = explode( '.', $filename, 2 );
-		$title = Title::newFromText( $pagename );
-		$translatablePage = TranslatablePage::newFromText( $title, file_get_contents( $file ) );
-
-		$pattern = dirname( $file ) . "/$pagename";
-
-		if ( $filename === 'FailNotAtomic.ptfile' ) {
+	/** @dataProvider provideTestFiles */
+	public function testParsing( string $name, string $file ) {
+		if ( $name === 'FailNotAtomic' ) {
 			$this->markTestSkipped( 'Extended validation not yet implemented' );
 		}
 
-		$failureExpected = strpos( $pagename, 'Fail' ) === 0;
-
-		if ( $failureExpected ) {
-			$this->expectException( TPException::class );
+		if ( $name !== 'Whitespace' ) {
+			$this->markTestSkipped( 'Extended validation not yet implemented' );
 		}
 
-		$parse = $translatablePage->getParse();
-		$this->assertInstanceOf( 'TPParse', $parse );
+		if ( strpos( $name, 'Fail' ) === 0 ) {
+			$this->expectException( ParsingFailure::class );
+		}
+
+		$title = Title::newFromText( $name );
+		$inputSourceText = file_get_contents( $file );
+		$parser = new TranslatablePageParser( new TestingParsingPlaceholderFactory() );
+		$parserOutput = $parser->parse( $inputSourceText );
+
+		$pattern = dirname( $file ) . "/$name";
 
 		if ( file_exists( "$pattern.ptsource" ) ) {
-			$source = $parse->getSourcePageText();
-			$this->assertEquals( file_get_contents( "$pattern.ptsource" ), $source );
+			$source = $parserOutput->sourcePageTextForSaving();
+			$this->assertSame(
+				file_get_contents( "$pattern.ptsource" ),
+				$source,
+				'Marked source text is as expected'
+			);
 		}
 
 		if ( file_exists( "$pattern.pttarget" ) ) {
-			$target = $parse->getTranslationPageText( [] );
-			$this->assertEquals( file_get_contents( "$pattern.pttarget" ), $target );
+			$translationPage = $this->getTranslationPage( $title, $parserOutput );
+			$target = $translationPage->generateSourceFromTranslations( [] );
+			$this->assertEquals(
+				file_get_contents( "$pattern.pttarget" ),
+				$target,
+				'Generated translation page text is as expected'
+			);
 		}
 
 		// Custom tests written in php
 		if ( file_exists( "$pattern.pttest" ) ) {
 			require "$pattern.pttest";
 		}
+	}
+
+	// This is copy of TranslatablePage::getTranslationPage, to mock WikiPageMessageGroup
+	private function getTranslationPage(
+		Title $title,
+		ParserOutput $parserOutput
+	): TranslationPage {
+		$showOutdated = true;
+		$wrapUntranslated = false;
+
+		return new TranslationPage(
+			$parserOutput,
+			$this->createMock( WikiPageMessageGroup::class ),
+			Language::factory( 'en' ),
+			Language::factory( 'en' ),
+			$showOutdated,
+			$wrapUntranslated,
+			$title->getPrefixedDBkey() . '/'
+		);
 	}
 }

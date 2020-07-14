@@ -138,8 +138,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $action === 'unlink' ) {
 			$page = TranslatablePage::newFromTitle( $title );
+
 			$content = ContentHandler::makeContent(
-				self::getStrippedSourcePageText( $page->getParse() ),
+				$page->getStrippedSourcePageText(),
 				$title
 			);
 
@@ -569,8 +570,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave( $highest );
 
+		$ic = preg_quote( TPSection::UNIT_MARKER_INVALID_CHARS, '~' );
 		foreach ( $sections as $s ) {
-			if ( preg_match( '~[_/]~', $s->id ) ) {
+			if ( preg_match( "~[$ic]~", $s->id ) ) {
 				$this->getOutput()->addElement(
 					'p',
 					[ 'class' => 'errorbox' ],
@@ -1043,19 +1045,6 @@ class SpecialPageTranslation extends SpecialPage {
 			$logid = $entry->insert();
 			$entry->publish( $logid );
 		}
-	}
-
-	/**
-	 * Returns the source page without any translation markup.
-	 *
-	 * @param TPParse $parse
-	 * @return string
-	 * @since 2014.09
-	 */
-	public static function getStrippedSourcePageText( TPParse $parse ) {
-		$text = $parse->getTranslationPageText( null );
-		$text = preg_replace( '~<languages\s*/>\n?~s', '', $text );
-		return $text;
 	}
 
 	private function getPageList( array $pages, string $type ): string {

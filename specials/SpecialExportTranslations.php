@@ -227,26 +227,32 @@ class SpecialExportTranslations extends SpecialPage {
 
 			default:
 				// @todo Add web viewing for groups other than WikiPageMessageGroup
-				$pageTranslation = $this->getConfig()->get( 'EnablePageTranslation' );
-				if ( $pageTranslation && $group instanceof WikiPageMessageGroup ) {
-					$collection->loadTranslations();
-					$page = TranslatablePage::newFromTitle( $group->getTitle() );
-					$text = $page->getParse()->getTranslationPageText( $collection );
-					$displayTitle = $page->getPageDisplayTitle( $this->language );
-					if ( $displayTitle ) {
-						$text = "{{DISPLAYTITLE:$displayTitle}}$text";
-					}
-					$box = Html::element(
-						'textarea',
-						[ 'id' => 'wpTextbox', 'rows' => 40, ],
-						$text
-					);
-					$out->addHTML( $box );
-					return;
+				if ( !$group instanceof WikiPageMessageGroup ) {
+					// This should have been prevented at validation. See checkInput().
+					throw new LogicException( 'Unexpected export format.' );
 				}
 
-				// This should have been prevented at validation. See checkInput().
-				throw new Exception( 'Unexpected export format.' );
+				$translatablePage = TranslatablePage::newFromTitle( $group->getTitle() );
+				$translationPage = $translatablePage->getTranslationPage( $collection->getLanguage() );
+
+				$translationPage->filterMessageCollection( $collection );
+				$messages = $translationPage->extractMessages( $collection );
+				$text = $translationPage->generateSourceFromTranslations( $messages );
+
+				$displayTitle = $translatablePage->getPageDisplayTitle( $this->language );
+				if ( $displayTitle ) {
+					$text = "{{DISPLAYTITLE:$displayTitle}}$text";
+				}
+
+				// See https://phabricator.wikimedia.org/T255561 for details
+				// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+				$box = Html::element(
+					'textarea',
+					[ 'id' => 'wpTextbox', 'rows' => 40, ],
+					$text
+				);
+				$out->addHTML( $box );
+
 		}
 	}
 

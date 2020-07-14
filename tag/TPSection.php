@@ -13,6 +13,8 @@
  * @ingroup PageTranslation
  */
 class TPSection {
+	public const UNIT_MARKER_INVALID_CHARS = '_/\n<>';
+
 	/**
 	 * @var string Section name
 	 */
@@ -47,14 +49,10 @@ class TPSection {
 	/** @var bool Whether wrapping the section is allowed */
 	private $canWrap = true;
 
-	/**
-	 * @var int Version number for the serialization.
-	 */
+	/** @var int Version number for the serialization. */
 	private $version = 1;
 
-	/**
-	 * @var string[] List of properties to serialize.
-	 */
+	/** @var string[] List of properties to serialize. */
 	private static $properties = [ 'version', 'id', 'name', 'text', 'type', 'oldText', 'inline' ];
 
 	public function setIsInline( $value ) {
@@ -190,5 +188,28 @@ class TPSection {
 		}
 
 		return $section;
+	}
+
+	public function getTextForRendering( ?TMessage $msg ): string {
+		$attributes = [];
+
+		if ( $msg && $msg->translation() !== null ) {
+			$content = $msg->translation();
+			if ( $msg->hasTag( 'fuzzy' ) ) {
+				// We do not ever want to show explicit fuzzy marks in the rendered pages
+				$content = str_replace( TRANSLATE_FUZZY, '', $content );
+				$attributes['class'] = 'mw-translate-fuzzy';
+			}
+		} else {
+			$content = $this->getTextWithVariables();
+		}
+
+		if ( $this->canWrap() && $attributes ) {
+			$tag = $this->isInline() ? 'span' : 'div';
+			$content = $this->isInline() ? $content : "\n$content\n";
+			$content = Html::rawElement( $tag, $attributes, $content );
+		}
+
+		return strtr( $content, $this->getVariables() );
 	}
 }

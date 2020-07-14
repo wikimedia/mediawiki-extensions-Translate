@@ -14,23 +14,19 @@
  * @ingroup PageTranslation
  */
 class TPException extends MWException {
-	protected $msg;
+	private $msg;
 
 	/**
-	 * @todo Pass around Messages when Status class doesn't suck
 	 * @param array $msg Message key with parameters
 	 */
 	public function __construct( array $msg ) {
 		$this->msg = $msg;
 		// Using ->plain() instead of ->text() due to bug T58226
-		$wikitext = call_user_func_array( 'wfMessage', $msg )->plain();
+		$wikitext = wfMessage( ...$msg )->plain();
 		parent::__construct( $wikitext );
 	}
 
-	/**
-	 * @return array
-	 */
-	public function getMsg() {
+	public function getMsg(): array {
 		return $this->msg;
 	}
 }

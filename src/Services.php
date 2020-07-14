@@ -6,6 +6,7 @@
  */
 namespace MediaWiki\Extensions\Translate;
 
+use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
@@ -54,6 +55,10 @@ class Services implements ContainerInterface {
 	/** @since 2020.07 */
 	public function getParsingPlaceholderFactory(): ParsingPlaceholderFactory {
 		return $this->container->getService( 'Translate:ParsingPlaceholderFactory' );
+	}
+
+	public function getTranslatablePageParser(): TranslatablePageParser {
+		return $this->container->get( 'Translate:TranslatablePageParser' );
 	}
 
 	public function getTranslatorActivity(): TranslatorActivity {

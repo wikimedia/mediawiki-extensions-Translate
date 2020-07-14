@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
@@ -20,6 +21,14 @@ return [
 
 	'Translate:ParsingPlaceholderFactory' => function (): ParsingPlaceholderFactory {
 		return new ParsingPlaceholderFactory();
+	},
+
+	'Translate:TranslatablePageParser' => function ( MediaWikiServices $services )
+	: TranslatablePageParser
+	{
+		return new TranslatablePageParser(
+			$services->get( 'Translate:ParsingPlaceholderFactory' )
+		);
 	},
 
 	'Translate:TranslatorActivity' => function ( MediaWikiServices $services ): TranslatorActivity {

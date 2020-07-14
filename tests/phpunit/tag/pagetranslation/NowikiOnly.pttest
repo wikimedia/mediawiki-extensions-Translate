@@ -2,6 +2,4 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-if ( $parse->countSections() !== 0 ) {
-	$this->fail( "Testfile $filename failed misc tests... number of sections should be zero" );
-}
+$this->assertEmpty( $parserOutput->units(), 'number of sections should be zero' );

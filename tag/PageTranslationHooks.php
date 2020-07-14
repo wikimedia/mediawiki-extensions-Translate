@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\PageTranslation\ParsingFailure;
+use MediaWiki\Extensions\Translate\Services;
 use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
@@ -35,32 +37,35 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ParserBeforeInternalParse
-	 * @param Parser $parser
+	 *
+	 * @param Parser $wikitextParser
 	 * @param string &$text
 	 * @param-taint $text escapes_htmlnoent
 	 * @param string $state
 	 * @return bool
 	 */
-	public static function renderTagPage( $parser, &$text, $state ) {
-		$title = $parser->getTitle();
+	public static function renderTagPage( $wikitextParser, &$text, $state ) {
+		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
 
-		if ( preg_match( '~</?translate[ >]~', $text ) !== 0 ) {
+		if ( $translatablePageParser->containsMarkup( $text ) ) {
 			try {
-				$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse();
-				$text = $parse->getTranslationPageText( null );
-				$parser->getOutput()->addModuleStyles( 'ext.translate' );
-			} catch ( TPException $e ) {
-				wfDebug( 'TPException caught; expected' );
+				$parserOutput = $translatablePageParser->parse( $text );
+				// If parsing succeeds, replace text and add styles
+				$text = $parserOutput->sourcePageTextForRendering();
+				$wikitextParser->getOutput()->addModuleStyles( 'ext.translate' );
+			} catch ( ParsingFailure $e ) {
+				wfDebug( 'ParsingFailure caught; expected' );
 			}
 		}
 
 		// For section previews, perform additional clean-up, given tags are often
 		// unbalanced when we preview one section only.
-		if ( $parser->getOptions()->getIsSectionPreview() ) {
-			$text = TranslatablePage::cleanupTags( $text );
+		if ( $wikitextParser->getOptions()->getIsSectionPreview() ) {
+			$text = $translatablePageParser->cleanupTags( $text );
 		}
 
 		// Set display title
+		$title = $wikitextParser->getTitle();
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
 			return true;
@@ -70,13 +75,13 @@ class PageTranslationHooks {
 		[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
 		$name = $page->getPageDisplayTitle( $code );
 		if ( $name ) {
-			$name = $parser->recursivePreprocess( $name );
-			$name = $parser->getTargetLanguage()->convert( $name );
-			$parser->getOutput()->setDisplayTitle( $name );
+			$name = $wikitextParser->recursivePreprocess( $name );
+			$name = $wikitextParser->getTargetLanguage()->convert( $name );
+			$wikitextParser->getOutput()->setDisplayTitle( $name );
 		}
 		self::$renderingContext = false;
 
-		$parser->getOutput()->setExtensionData(
+		$wikitextParser->getOutput()->setExtensionData(
 			'translate-translation-page',
 			[
 				'sourcepagetitle' => $page->getTitle(),
@@ -86,7 +91,7 @@ class PageTranslationHooks {
 		);
 
 		// Disable edit section links
-		$parser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
+		$wikitextParser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
 
 		return true;
 	}
@@ -609,7 +614,6 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/** Returns any syntax error */
 	protected static function tpSyntaxError( ?Title $title, Content $content ): ?TPException {
 		if ( !$content instanceof TextContent || !$title ) {
 			return null;
@@ -620,17 +624,14 @@ class PageTranslationHooks {
 		// See T154500
 		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
 
-		if ( preg_match( '~</?translate[ >]~', $text ) === 0 ) {
-			return null;
-		}
-
-		$page = TranslatablePage::newFromText( $title, $text );
-
 		$exception = null;
-		try {
-			$page->getParse();
-		} catch ( TPException $e ) {
-			$exception = $e;
+		$parser = Services::getInstance()->getTranslatablePageParser();
+		if ( $parser->containsMarkup( $text ) ) {
+			try {
+				$parser->parse( $text );
+			} catch ( ParsingFailure $e ) {
+				$exception = new TPException( $e->getMessageSpecification() );
+			}
 		}
 
 		return $exception;
@@ -691,18 +692,16 @@ class PageTranslationHooks {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
 		} else {
-			// Screw it, not interested
+			// Not applicable
 			return true;
 		}
 
-		// Quick escape on normal pages
-		if ( preg_match( '~</?translate[ >]~', $text ) === 0 ) {
-			return true;
+		$parser = Services::getInstance()->getTranslatablePageParser();
+		if ( $parser->containsMarkup( $text ) ) {
+			// Add the ready tag
+			$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
+			$page->addReadyTag( $revisionRecord->getId() );
 		}
-
-		// Add the ready tag
-		$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
-		$page->addReadyTag( $revisionRecord->getId() );
 
 		return true;
 	}
@@ -734,18 +733,16 @@ class PageTranslationHooks {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
 		} else {
-			// Screw it, not interested
+			// Not applicable
 			return true;
 		}
 
-		// Quick escape on normal pages
-		if ( preg_match( '~</?translate[ >]~', $text ) === 0 ) {
-			return true;
+		$parser = Services::getInstance()->getTranslatablePageParser();
+		if ( $parser->containsMarkup( $text ) ) {
+			// Add the ready tag
+			$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
+			$page->addReadyTag( $revision->getId() );
 		}
-
-		// Add the ready tag
-		$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
-		$page->addReadyTag( $revision->getId() );
 
 		return true;
 	}
