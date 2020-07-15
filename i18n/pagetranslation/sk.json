@@ -29,7 +29,6 @@
 	"tpt-showpage-intro": "Nižšie sú uvedené nové, súčasné a zmazané prekladové časti.\nPredtým, než túto verziu označíte na preklad, skontrolujte, že zmeny prekladových častí sú minimálne, aby ste zabránili zbytočnej práci prekladateľov.",
 	"tpt-mark-summary": "Táto verzia je označená na preklad",
 	"tpt-edit-failed": "Nebolo možné aktualizovať stránku: $1",
-	"tpt-already-marked": "Najnovšia verzia tejto stránky už bola označená na preklad.",
 	"tpt-list-nopages": "Žiadne stránky nie sú označené na preklad alebo na to nie sú pripravené.",
 	"tpt-new-pages": "{{PLURAL:$1|Táto stránka obsahuje|Tieto stránky obsahujú}} text so značkami na preklad, ale žiadna verzia {{PLURAL:$1|tejto stránky|týchto stránok}} nie je označená na preklad.",
 	"tpt-old-pages": "Niektoré verzie {{PLURAL:$1|tejto stránky|týchto stránok}} boli označené na preklad.",

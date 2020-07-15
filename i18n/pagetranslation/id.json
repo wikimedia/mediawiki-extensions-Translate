@@ -36,7 +36,6 @@
 	"tpt-showpage-intro": "Berikut adalah daftar bagian baru, bagian yang telah ada, dan bagian yang dihapus.\nSebelum menandai revisi ini untuk diterjemahkan, harap periksa agar perubahan ke bagian-bagian dapat diminimalisasi guna menghindarkan para penerjemah dari melakukan pekerjaan yang tidak diperlukan.",
 	"tpt-mark-summary": "Menandai revisi ini untuk diterjemahkan",
 	"tpt-edit-failed": "Tidak dapat memperbarui halaman: $1",
-	"tpt-already-marked": "Revisi terakhir halaman ini telah ditandai untuk diterjemahkan.",
 	"tpt-unmarked": "Halaman $1 tidak lagi ditandai untuk diterjemahkan.",
 	"tpt-list-nopages": "Tidak ada halaman yang ditandai untuk diterjemahkan atau siap ditandai untuk diterjemahkan.",
 	"tpt-new-pages": "{{PLURAL:$1|Halaman ini berisikan|Halaman-halaman ini berisikan}} teks dengan tag terjemahan, tetapi tidak ada versi {{PLURAL:$1|halaman ini|halaman-halaman ini}} yang sudah ditandai untuk diterjemahkan.",

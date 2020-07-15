@@ -7,6 +7,8 @@
 	},
 	"tpt-diff-old": "Икелень текст",
 	"tpt-diff-new": "Од текст",
+	"tpt-tag-oldsyntax": "ташто синтаксис",
+	"tpt-sections-syntaxversion": "Синтаксонь версиясь",
 	"translate-tag-translate-link-desc": "Йутавтык те лопанть",
 	"tpt-languages-legend": "Лия кельтне:",
 	"tpt-languages-nonzero": "$1 ($2% ютавтозь)"

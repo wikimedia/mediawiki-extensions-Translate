@@ -23,7 +23,6 @@
 	"tpt-showpage-intro": "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.\nAbans de marcar aquestas versions per èsser traduitas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
 	"tpt-mark-summary": "Aquesta version es estada marcada per èsser traduita",
 	"tpt-edit-failed": "Impossible de metre a jorn la pagina $1",
-	"tpt-already-marked": "La darrièra version d'aquesta pagina ja es estada marcada per èsser traduita.",
 	"tpt-list-nopages": "Cap de pagina es pas estada marcada per èsser traduita o prèsta per l'èsser.",
 	"tpt-new-pages": "{{PLURAL:$1|Aquesta pagina conten|Aquestas paginas contenon}} de tèxte amb de balisas de traduccion, mas cap de version d'{{PLURAL:$1|aquesta pagina es pas marcada per èsser traduita|aquestas paginas son pas marcadas per èsser traduitas}}.",
 	"tpt-old-pages": "De versions d'{{PLURAL:$1|aquesta pagina|aquestas paginas}} son estadas marcadas per èsser traduitas.",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Dori",
 			"GretaDoci",
 			"Kosovastar",
@@ -10,6 +11,7 @@
 	},
 	"translate": "Përkthime",
 	"translate-extensionname": "Përkthe",
+	"translate-taction-translate": "Përkthej",
 	"translate-taction-lstats": "Statistikat gjuhësore",
 	"translate-page-group": "Grupi",
 	"translate-page-language": "Gjuha",

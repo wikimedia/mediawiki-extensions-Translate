@@ -36,7 +36,6 @@
 	"tpt-edit-failed": "Kunne ikke oppdatere siden: $1",
 	"tpt-duplicate": "Oversettelsens enhetsnavn $1 er brukt mer enn en gang.",
 	"tpt-invalid": "Oversettelsesenhetetsnavnet $1 kan ikke inneholde undestrek eller bindestrek.",
-	"tpt-already-marked": "Den siste versjonen av denne siden har allerede blitt markert for oversettelse.",
 	"tpt-unmarked": "Siden [[:$1]] er ikke lenger markert for oversettelse.",
 	"tpt-list-nopages": "Ingen sider er markert for oversettelse, eller er klare for å bli markert for oversettelse.",
 	"tpt-new-pages-title": "Sider foreslått for oversettelse",

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Narazeni",
 			"Silovan"
 		]
 	},
+	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-languages-nonzero": "$1 ($2% თანგილი)"
 }

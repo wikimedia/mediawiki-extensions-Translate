@@ -17,7 +17,6 @@
 	"tpt-badtitle": "ఇచ్చిన పేజీ పేరు ($1) సరైన శీర్షిక కాదు",
 	"tpt-nosuchpage": "$1 అనే పుట లేనే లేదు",
 	"tpt-edit-failed": "పేజీని తాజాకరించలేకపోయాం: $1",
-	"tpt-already-marked": "ఈ పేజీ యొక్క సరికొత్త కూర్పుని ఇప్పటికే అనువాదానికై గుర్తించారు.",
 	"tpt-select-prioritylangs-reason": "కారణం:",
 	"tpt-sections-prioritylangs": "ప్రాధాన్య భాషలు",
 	"tpt-rev-mark": "అనువాదం కోసం గుర్తు పెట్టు",

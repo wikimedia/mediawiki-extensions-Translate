@@ -41,7 +41,6 @@
 	"tpt-mark-nochanges": "Ei tarkistettavia muutoksia. Tämän sivun merkitseminen käännettäväksi ei muokkaa sivua eikä olemassa olevia käännösyksiköitä.",
 	"tpt-edit-failed": "Sivun päivittäminen epäonnistui: $1",
 	"tpt-duplicate": "Käännösosion nimeä $1 on käytetty useammin kuin kerran.",
-	"tpt-already-marked": "Viimeisin versio tästä sivusta on jo merkitty käännettäväksi.",
 	"tpt-unmarked": "Sivu $1 ei ole enää käännettävänä.",
 	"tpt-list-nopages": "Yhtään sivua ei ole merkitty käännettäväksi eikä yhtään sivua ole valmiina käännettäväksi merkitsemistä varten.",
 	"tpt-new-pages-title": "Käännettäväksi ehdotetut sivut",

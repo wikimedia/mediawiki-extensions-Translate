@@ -28,7 +28,6 @@
 	"tpt-saveok": "Sida [[:$1]] er vorten merkt for omsetjing med {{PLURAL:$2|éi omsetjingseining|$2 omsetjingseiningar}}. Ho kan no verta <span class=\"plainlinks\">[$3 sett om]</span>.",
 	"tpt-mark-summary": "Markerte denne versjonen for omsetjing",
 	"tpt-edit-failed": "Kunne ikkje oppdatera sida: $1",
-	"tpt-already-marked": "Den siste versjonen av denne sida har allereie vorte markert for omsetjing.",
 	"tpt-list-nopages": "Ingen sider er markerte for omsetjing, eller klar til å verta markert for omsetjing.",
 	"tpt-new-pages": "{{PLURAL:$1|Sida|Sidene}} inneheld tekst med omsetjingsmerke, men ingen versjon av {{PLURAL:$1|henne|dei}} er for tida merkt for omsetjing.",
 	"tpt-old-pages": "Ein versjon av {{PLURAL:$1|denne sida|desse sidene}} er vorten merkt for omsetjing.",

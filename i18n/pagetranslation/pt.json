@@ -41,7 +41,6 @@
 	"tpt-edit-failed": "Não foi possível atualizar a página: $1",
 	"tpt-duplicate": "O nome $1 é usado mais do que uma vez nas unidades de tradução.",
 	"tpt-invalid": "O nome da unidade de tradução $1 não pode conter sublinhados nem barras.",
-	"tpt-already-marked": "A versão mais recente desta página já foi marcada para tradução.",
 	"tpt-unmarked": "A página [[:$1]] já não está marcada para tradução.",
 	"tpt-list-nopages": "Não existem páginas marcadas para tradução, nem prontas a ser marcadas para tradução.",
 	"tpt-new-pages-title": "Páginas propostas para tradução",

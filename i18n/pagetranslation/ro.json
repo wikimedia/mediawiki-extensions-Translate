@@ -29,7 +29,6 @@
 	"tpt-offer-notify": "Puteți <span class=\"plainlinks\">[$1 notifica traducătorii]</span> despre această pagină.",
 	"tpt-mark-summary": "Marcat această versiune pentru traducere",
 	"tpt-edit-failed": "Pagina nu a putut fi actualizată: $1",
-	"tpt-already-marked": "Ultima versiune a acestei pagini a fost deja marcată pentru traducere.",
 	"tpt-unmarked": "Pagina $1 nu mai este marcată pentru traducere.",
 	"tpt-list-nopages": "Nici o pagină nu este marcată pentru traducere sau gata să fie marcată pentru traducere.",
 	"tpt-new-pages-title": "Pagini propuse pentru traducere",

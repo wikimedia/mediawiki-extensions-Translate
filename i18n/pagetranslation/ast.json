@@ -31,7 +31,6 @@
 	"tpt-edit-failed": "Nun se pudo anovar la páxina: $1",
 	"tpt-duplicate": "El nome de la unidá de traducción  $1 s'utiliza más d'una vegada.",
 	"tpt-invalid": "El nome $1 de la unidá traducción nun pue contener un guión baxu o una barra.",
-	"tpt-already-marked": "La cabera versión d'esta páxina yá se marcó pa traducir.",
 	"tpt-unmarked": "La páxina [[:$1]] yá nun ta marcada pa traducir.",
 	"tpt-list-nopages": "Nun hai páxina dala marcada pa traducir nin preparada pa marcase pa traducir.",
 	"tpt-new-pages-title": "Páxines propuestes pa traducción",

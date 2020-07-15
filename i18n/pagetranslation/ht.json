@@ -25,7 +25,6 @@
 	"tpt-showpage-intro": "Anba, gen yon lis tout sèksyon ki nouvo, sa ki egzsite ak sa ki te efase yo.\nAnvan ou make vèsyon sa pou yo tradui, verifye ki chanjman nan seksyon yo pa anpil, yon fason pou pa bay tradiktè yo travay ki pa nesesè.",
 	"tpt-mark-summary": "Make vèsyon sa pou tradui",
 	"tpt-edit-failed": "Pa t kapab mete paj sa ajou: $1",
-	"tpt-already-marked": "Dènye vèsyon paj sa te make pou yo tradui l deja.",
 	"tpt-unmarked": "Paj $1 pa make pou tradui ankò.",
 	"tpt-list-nopages": "Pa gen okenn paj ki make pou tradui oubyen ki pare pou sa.",
 	"tpt-new-pages": "{{PLURAL:$1|Paj sa genyen|Paj sa yo genyen}} teks ak baliz tradiksyon, men pa gen okenn vèsyon {{PLURAL:$1|paj sa|paj sa yo}} ki make pou tradui.",

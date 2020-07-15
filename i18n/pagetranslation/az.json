@@ -32,7 +32,6 @@
 	"tpt-edit-failed": "Bu səhifəni yeniləmək olmur: $1",
 	"tpt-duplicate": "Tərcümə vahidinin adı $1, bir dəfədən çox istifadə olunur.",
 	"tpt-invalid": "Tərcümə vahidinin adı $1, alt ehtiva etməməli və ya kəsik olmamalıdır.",
-	"tpt-already-marked": "Bu səhifənin son versiyası tərcümə üçün artıq qeyd edilmişdir.",
 	"tpt-unmarked": "Səhifə [[:$1]] artıq tərcümə üçün qeyd olunmur.",
 	"tpt-list-nopages": "Tərcümə üçün heç bir səhifə qeyd olunmur və ya tərcümə üçün qeyd olunmağa hazırdır.",
 	"tpt-new-pages-title": "Tərcümə üçün təklif olunan səhifələr",

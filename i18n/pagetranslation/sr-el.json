@@ -29,7 +29,6 @@
 	"tpt-showpage-intro": "Ispod novih, postojeće i izbrisane prevodilačke jedinice su navedene.\nPre nego što označite ovu verziju za prevod, proverite da li su izmene prevodilačkih jedinica svedene na minimum da biste izbegli nepotreban rad za prevodioce.",
 	"tpt-mark-nochanges": "Nema promena za pregled. Označavanje ove stranice za prevođenje neće da uredi stranicu niti bilo koju postojeću jedinicu prevođenja.",
 	"tpt-edit-failed": "Nije moguće ažurirati stranicu: $1",
-	"tpt-already-marked": "Najnovija verzija ove stranice je već označena za prevođenje.",
 	"tpt-unmarked": "Stranica $1 nije više označena za prevođenje.",
 	"tpt-new-pages-title": "Stranice predložene za prevođenje",
 	"tpt-old-pages-title": "Stranice za prevođenje",
