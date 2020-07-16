@@ -851,13 +851,6 @@
 				"mobile"
 			]
 		},
-		"jquery.autosize": {
-			"scripts": "resources/lib/jquery.autosize.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"jquery.textchange": {
 			"scripts": "resources/js/jquery.textchange.js",
 			"targets": [

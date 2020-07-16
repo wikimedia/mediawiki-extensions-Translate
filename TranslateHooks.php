@@ -961,6 +961,7 @@ class TranslateHooks {
 			"ext.translate.editor" => $tpl + [
 				"scripts" => [
 					"resources/js/ext.translate.storage.js",
+					"resources/lib/jquery.autosize.js",
 					"resources/js/ext.translate.editor.helpers.js",
 					"resources/js/ext.translate.editor.js",
 					"resources/js/ext.translate.editor.shortcuts.js",
@@ -975,7 +976,6 @@ class TranslateHooks {
 				"dependencies" => array_merge( [
 					"ext.translate.base",
 					"ext.translate.dropdownmenu",
-					"jquery.autosize",
 					"jquery.makeCollapsible",
 					"jquery.textSelection",
 					"jquery.textchange",
