@@ -408,7 +408,10 @@
 			]
 		},
 		"ext.translate.specialpages.styles": {
-			"styles": "resources/css/ext.translate.special.translations.css",
+			"styles": [
+				"resources/css/ext.translate.special.translations.css",
+				"resources/css/ext.translate.special.aggregategroups.css"
+			],
 			"targets": [
 				"desktop",
 				"mobile"
@@ -531,13 +534,6 @@
 		},
 		"ext.translate.selecttoinput": {
 			"scripts": "resources/js/ext.translate.selecttoinput.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"ext.translate.special.aggregategroups.styles": {
-			"styles": "resources/css/ext.translate.special.aggregategroups.css",
 			"targets": [
 				"desktop",
 				"mobile"

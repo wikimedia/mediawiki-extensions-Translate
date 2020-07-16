@@ -26,7 +26,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$this->addHelpLink( 'Help:Extension:Translate/Page translation administration' );
 
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.translate.special.aggregategroups.styles' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 
 		// Check permissions
 		if ( $this->getUser()->isAllowed( 'translate-manage' ) ) {
