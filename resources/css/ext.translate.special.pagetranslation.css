@@ -21,7 +21,7 @@
 	padding-right: 2em;
 }
 
-.ui-autocomplete {
+.mw-special-PageTranslation .ui-autocomplete {
 	max-height: 100px;
 	overflow-y: auto;
 	/* prevent horizontal scrollbar */

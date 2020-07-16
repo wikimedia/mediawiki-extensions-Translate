@@ -185,7 +185,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
 
-		$out->addModuleStyles( 'ext.translate.special.pagetranslation.styles' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 
 		if ( $revision === 0 ) {
 			// Get the latest revision

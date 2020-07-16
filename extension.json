@@ -413,7 +413,8 @@
 				"resources/css/ext.translate.special.aggregategroups.css",
 				"resources/css/ext.translate.special.managegroups.css",
 				"resources/css/ext.translate.special.pagemigration.css",
-				"resources/css/ext.translate.special.pagepreparation.css"
+				"resources/css/ext.translate.special.pagepreparation.css",
+				"resources/css/ext.translate.special.pagetranslation.css"
 			],
 			"targets": [
 				"desktop",
@@ -637,13 +638,6 @@
 				"pp-save-button-label",
 				"pp-save-message"
 			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"ext.translate.special.pagetranslation.styles": {
-			"styles": "resources/css/ext.translate.special.pagetranslation.css",
 			"targets": [
 				"desktop",
 				"mobile"
