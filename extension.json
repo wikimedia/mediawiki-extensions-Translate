@@ -410,7 +410,8 @@
 		"ext.translate.specialpages.styles": {
 			"styles": [
 				"resources/css/ext.translate.special.translations.css",
-				"resources/css/ext.translate.special.aggregategroups.css"
+				"resources/css/ext.translate.special.aggregategroups.css",
+				"resources/css/ext.translate.special.managegroups.css"
 			],
 			"targets": [
 				"desktop",
@@ -550,15 +551,6 @@
 			"dependencies": "jquery.tablesorter",
 			"targets": [
 				"desktop"
-			]
-		},
-		"ext.translate.special.managegroups.styles": {
-			"styles": [
-				"resources/css/ext.translate.special.managegroups.css"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.messagerenamedialog": {

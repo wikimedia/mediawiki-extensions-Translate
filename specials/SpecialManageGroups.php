@@ -61,7 +61,7 @@ class SpecialManageGroups extends SpecialPage {
 		$this->setHeaders();
 
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.translate.special.managegroups.styles' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 		$out->addModules( 'ext.translate.special.managegroups' );
 		$out->addHelpLink( 'Help:Extension:Translate/Group_management' );
 
