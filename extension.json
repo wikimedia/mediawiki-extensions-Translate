@@ -409,14 +409,14 @@
 		},
 		"ext.translate.specialpages.styles": {
 			"styles": [
-				"resources/css/ext.translate.special.translations.css",
 				"resources/css/ext.translate.special.aggregategroups.css",
 				"resources/css/ext.translate.special.managegroups.css",
 				"resources/css/ext.translate.special.pagemigration.css",
 				"resources/css/ext.translate.special.pagepreparation.css",
 				"resources/css/ext.translate.special.pagetranslation.css",
 				"resources/css/ext.translate.special.searchtranslations.css",
-				"resources/css/ext.translate.special.supportedlanguages.css"
+				"resources/css/ext.translate.special.supportedlanguages.css",
+				"resources/css/ext.translate.special.translations.css"
 			],
 			"targets": [
 				"desktop",
