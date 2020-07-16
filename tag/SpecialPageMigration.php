@@ -28,14 +28,14 @@ class SpecialPageMigration extends SpecialPage {
 		$this->outputHeader( 'pagemigration-summary' );
 		$output->addModules( 'ext.translate.special.pagemigration' );
 		$output->addModuleStyles( [
-			'ext.translate.special.pagemigration.styles',
+			'ext.translate.specialpages.styles',
 			'jquery.uls.grid'
 		] );
 
 		# Do stuff
 		# ...
 		$out = '';
-		$out .= Html::openElement( 'div', [ 'class' => 'grid' ] );
+		$out .= Html::openElement( 'div', [ 'class' => 'mw-tpm-sp-container grid' ] );
 		$out .= Html::openElement( 'div', [ 'class' => 'mw-tpm-sp-error row',
 			'id' => 'mw-tpm-sp-error-div' ] );
 		$out .= Html::element( 'div',

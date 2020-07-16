@@ -1,8 +1,8 @@
-#page {
+.mw-tpp-sp-form #page {
 	width: 35%;
 }
 
-.client-nojs .grid {
+.client-nojs .mw-tpp-sp-container {
 	display: none;
 }
 

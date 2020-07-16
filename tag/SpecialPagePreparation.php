@@ -31,7 +31,7 @@ class SpecialPagePreparation extends SpecialPage {
 		$summaryValue = $this->msg( 'pp-save-summary' )->inContentLanguage()->escaped();
 		$output->addModules( 'ext.translate.special.pagepreparation' );
 		$output->addModuleStyles( [
-			'ext.translate.special.pagepreparation.styles',
+			'ext.translate.specialpages.styles',
 			'jquery.uls.grid'
 		] );
 
@@ -41,7 +41,7 @@ class SpecialPagePreparation extends SpecialPage {
 			$this->msg( 'pp-diff-new-header' )->escaped() );
 
 		$out = <<<HTML
-<div class="grid">
+<div class="mw-tpp-sp-container grid">
 	<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form" action="">
 		<input id="pp-summary" type="hidden" value="{$summaryValue}" />
 		<input name="page" id="page" class="mw-searchInput mw-ui-input"

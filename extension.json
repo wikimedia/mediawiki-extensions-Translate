@@ -411,7 +411,9 @@
 			"styles": [
 				"resources/css/ext.translate.special.translations.css",
 				"resources/css/ext.translate.special.aggregategroups.css",
-				"resources/css/ext.translate.special.managegroups.css"
+				"resources/css/ext.translate.special.managegroups.css",
+				"resources/css/ext.translate.special.pagemigration.css",
+				"resources/css/ext.translate.special.pagepreparation.css"
 			],
 			"targets": [
 				"desktop",
@@ -617,13 +619,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.special.pagemigration.styles": {
-			"styles": "resources/css/ext.translate.special.pagemigration.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.special.pagepreparation": {
 			"scripts": "resources/js/ext.translate.special.pagepreparation.js",
 			"dependencies": [
@@ -642,13 +637,6 @@
 				"pp-save-button-label",
 				"pp-save-message"
 			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"ext.translate.special.pagepreparation.styles": {
-			"styles": "resources/css/ext.translate.special.pagepreparation.css",
 			"targets": [
 				"desktop",
 				"mobile"

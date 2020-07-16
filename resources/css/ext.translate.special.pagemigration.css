@@ -5,12 +5,8 @@
 	border: 2px solid #808080;
 }
 
-#title {
+.mw-tpm-sp-form #title {
 	width: 35%;
-}
-
-.hide {
-	display: none;
 }
 
 .mw-tpm-sp-unit:last-child .mw-tpm-sp-action--swap,
@@ -22,7 +18,7 @@
 	padding-bottom: 10px;
 }
 
-.grid .mw-tpm-sp-unit textarea {
+.mw-tpm-sp-container .mw-tpm-sp-unit textarea {
 	padding: 10px;
 }
 
@@ -67,7 +63,7 @@
 	margin: 0.7em 0;
 }
 
-.client-nojs .grid {
+.client-nojs .mw-tpm-sp-container {
 	display: none;
 }
 
