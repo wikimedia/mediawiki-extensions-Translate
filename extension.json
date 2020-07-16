@@ -616,9 +616,11 @@
 			]
 		},
 		"ext.translate.special.pagemigration": {
-			"scripts": "resources/js/ext.translate.special.pagemigration.js",
+			"scripts": [
+				"resources/js/jquery.ajaxdispatcher.js",
+				"resources/js/ext.translate.special.pagemigration.js"
+			],
 			"dependencies": [
-				"jquery.ajaxdispatcher",
 				"mediawiki.api",
 				"mediawiki.Title",
 				"mediawiki.ui",
@@ -844,13 +846,6 @@
 				"ext.translate.dropdownmenu",
 				"mediawiki.api"
 			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"jquery.ajaxdispatcher": {
-			"scripts": "resources/js/jquery.ajaxdispatcher.js",
 			"targets": [
 				"desktop",
 				"mobile"
