@@ -480,18 +480,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.navitoggle": {
-			"skinScripts": {
-				"vector": "resources/js/ext.translate.navitoggle.js"
-			},
-			"skinStyles": {
-				"vector": "resources/css/ext.translate.navitoggle.css"
-			},
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.pagetranslation.uls": {
 			"scripts": "resources/js/ext.translate.pagetranslation.uls.js",
 			"dependencies": [
@@ -730,13 +718,18 @@
 				"resources/js/ext.translate.special.translate.js"
 			],
 			"styles": "resources/css/ext.translate.workflowselector.css",
+			"skinScripts": {
+				"vector": "resources/js/ext.translate.navitoggle.js"
+			},
+			"skinStyles": {
+				"vector": "resources/css/ext.translate.navitoggle.css"
+			},
 			"dependencies": [
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"ext.translate.editor",
 				"ext.translate.groupselector",
 				"ext.translate.messagetable",
-				"ext.translate.navitoggle",
 				"ext.translate.recentgroups",
 				"jquery.uls.data",
 				"mediawiki.Uri",
