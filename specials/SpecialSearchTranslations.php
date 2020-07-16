@@ -51,7 +51,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'jquery.uls.grid' );
-		$out->addModuleStyles( 'ext.translate.special.searchtranslations.styles' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 		$out->addModuleStyles( 'ext.translate.special.translate.styles' );
 		$out->addModuleStyles( [ 'mediawiki.ui.button', 'mediawiki.ui.input', 'mediawiki.ui.checkbox' ] );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
