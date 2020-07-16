@@ -8,13 +8,13 @@
 	margin-top: 2em;
 }
 
-.tagcloud {
+.mw-special-SupportedLanguages .tagcloud {
 	line-height: 200%;
 	margin: 5em;
 	text-align: center;
 }
 
-.tagcloud .tag {
+.mw-special-SupportedLanguages .tagcloud .tag {
 	white-space: nowrap;
 	margin: 0.5ex;
 	color: #000;

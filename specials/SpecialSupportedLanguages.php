@@ -55,8 +55,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$lang = $this->getLanguage();
 
 		$this->setHeaders();
-		$out->addModules( 'ext.translate.special.supportedlanguages' );
-		$out->addModuleStyles( 'ext.translate.special.supportedlanguages' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 
 		$out->addHelpLink(
 			'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
