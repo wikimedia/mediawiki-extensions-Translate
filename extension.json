@@ -808,13 +808,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.storage": {
-			"scripts": "resources/js/ext.translate.storage.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.tabgroup": {
 			"styles": "resources/css/ext.translate.tabgroup.css",
 			"targets": [
