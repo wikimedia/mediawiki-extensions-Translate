@@ -725,15 +725,19 @@
 			]
 		},
 		"ext.translate.special.translate": {
-			"scripts": "resources/js/ext.translate.special.translate.js",
+			"scripts": [
+				"resources/js/ext.translate.workflowselector.js",
+				"resources/js/ext.translate.special.translate.js"
+			],
+			"styles": "resources/css/ext.translate.workflowselector.css",
 			"dependencies": [
 				"ext.translate.base",
+				"ext.translate.dropdownmenu",
 				"ext.translate.editor",
 				"ext.translate.groupselector",
 				"ext.translate.messagetable",
 				"ext.translate.navitoggle",
 				"ext.translate.recentgroups",
-				"ext.translate.workflowselector",
 				"jquery.uls.data",
 				"mediawiki.Uri",
 				"mediawiki.api",
@@ -745,7 +749,10 @@
 				"tpt-discouraged-language-force-header",
 				"tpt-discouraged-language-header",
 				"tux-editor-proofreading-hide-own-translations",
-				"tux-editor-proofreading-show-own-translations"
+				"tux-editor-proofreading-show-own-translations",
+				"translate-workflow-set-doing",
+				"translate-workflow-state-",
+				"translate-workflowstatus"
 			],
 			"targets": [
 				"desktop",
@@ -827,23 +834,6 @@
 		"ext.translate.translationstashstorage": {
 			"scripts": "resources/js/ext.translate.translationstashstorage.js",
 			"dependencies": [
-				"mediawiki.api"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"ext.translate.workflowselector": {
-			"styles": "resources/css/ext.translate.workflowselector.css",
-			"scripts": "resources/js/ext.translate.workflowselector.js",
-			"messages": [
-				"translate-workflow-set-doing",
-				"translate-workflow-state-",
-				"translate-workflowstatus"
-			],
-			"dependencies": [
-				"ext.translate.dropdownmenu",
 				"mediawiki.api"
 			],
 			"targets": [
