@@ -473,13 +473,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.messagewebimporter": {
-			"styles": "resources/css/ext.translate.messagewebimporter.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.pagetranslation.uls": {
 			"scripts": "resources/js/ext.translate.pagetranslation.uls.js",
 			"dependencies": [
