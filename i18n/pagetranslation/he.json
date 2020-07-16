@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"BaRaN6161 TURK",
 			"Deror avi",
 			"Guycn2",
 			"Inkbug",
@@ -152,7 +153,7 @@
 	"pt-movepage-list-translatable": "{{PLURAL:$1|דף־משנה שסומן|דפי־משנה שסומנו}} לתרגום",
 	"pt-movepage-list-translatable-note": "צריך להעביר את הדפים האלה בנפרד.",
 	"pt-movepage-list-other": "{{PLURAL:$1|דף־משנה אחר|דפי־משנה אחרים}}",
-	"pt-movepage-list-count": "בסך הכול יש {{PLURAL:$1|דף אחד|$1 דפים}} להעברה {{ודף־משנה אחד|ו־$2 דפי־משנה}}.",
+	"pt-movepage-list-count": "בסך הכול יש {{PLURAL:$1|דף אחד|$1 דפים}} להעברה {{PLURAL:$2|ודף־משנה אחד}}.",
 	"pt-movepage-list-no-pages": "לא נמצאו דפים.",
 	"pt-movepage-legend": "העברת דף שניתן לתרגום",
 	"pt-movepage-current": "השם הנוכחי:",
@@ -183,7 +184,7 @@
 	"pt-deletepage-list-translation": "דפי תרגום",
 	"pt-deletepage-list-section": "דפי יחידת תרגום",
 	"pt-deletepage-list-other": "דפי משנה אחרים",
-	"pt-deletepage-list-count": "סך הכול {{PLURAL:$1|דף אחד|$1 דפים}} למחוק {{ודף־משנה אחד|ו־$2 דפי־משנה}}.",
+	"pt-deletepage-list-count": "סך הכול {{PLURAL:$1|דף אחד|$1 דפים}} למחוק {{PLURAL:$2|ודף־משנה אחד}}.",
 	"pt-deletepage-list-no-pages": "לא נמצאו דפים.",
 	"pt-deletepage-full-logreason": "חלק מהדף הניתן לתרגום \"$1\"",
 	"pt-deletepage-lang-logreason": "חלק מדף התרגום \"$1\"",
