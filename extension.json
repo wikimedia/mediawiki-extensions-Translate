@@ -407,8 +407,8 @@
 				"mobile"
 			]
 		},
-		"ext.translate.legacy": {
-			"styles": "resources/css/ext.translate.legacy.css",
+		"ext.translate.specialpages.styles": {
+			"styles": "resources/css/ext.translate.special.translations.css",
 			"targets": [
 				"desktop",
 				"mobile"

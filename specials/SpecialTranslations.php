@@ -39,7 +39,7 @@ class SpecialTranslations extends SpecialAllPages {
 		$this->outputHeader();
 
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.translate.legacy' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 
 		$par = (string)$par;
 
