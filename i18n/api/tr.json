@@ -4,13 +4,14 @@
 			"Arystanbek",
 			"BaRaN6161 TURK",
 			"Hedda",
+			"Rapsar",
 			"Sayginer",
 			"Vito Genovese"
 		]
 	},
-	"apihelp-aggregategroups-description": "Toplu ileti gruplarını yönet.\n\nToplu ileti grupları ekleyebilir ve kaldırabilir ve ileti gruplarını ilişkilendirebilir veya birbirinden ayırabilirsiniz (bir seferde bir tane).",
-	"apihelp-aggregategroups-summary": "Toplu ileti gruplarını yönetin.",
-	"apihelp-aggregategroups-extended-description": "Toplu ileti grupları ekleyebilir ve kaldırabilir ve ileti gruplarını (bir seferde bir tane) onlarla ilişkilendirebilir veya birbirinden ayırabilirsiniz.",
+	"apihelp-aggregategroups-description": "Toplu mesaj gruplarını yönet.\n\nToplu mesaj gruplarını ekleyebilir, kaldırabilir, ilişkilendirebilir veya birbirinden ayırabilirsiniz (tek seferde bir defa).",
+	"apihelp-aggregategroups-summary": "Toplu mesaj gruplarını yönetin.",
+	"apihelp-aggregategroups-extended-description": "Toplu mesaj gruplarını ekleyebilir, kaldırabilir, (tek seferde bir defa olmak üzere) ilişkilendirebilir veya birbirinden ayırabilirsiniz.",
 	"apihelp-aggregategroups-param-do": "Toplu mesaj grubuyla ne yapmalı.",
 	"apihelp-aggregategroups-param-aggregategroup": "Toplu mesaj grubu kimliği.",
 	"apihelp-aggregategroups-param-group": "Mesaj grup kimliği.",

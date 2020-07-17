@@ -3,6 +3,7 @@
 		"authors": [
 			"Hello903hello",
 			"Ktchankt",
+			"Moon0319",
 			"Obonggi",
 			"Shinjiman",
 			"Yueman"
@@ -18,7 +19,7 @@
 	"translate-page-no-such-group": "所指定嘅組唔正確。",
 	"translate-page-settings-legend": "設定",
 	"translate-page-group": "組",
-	"translate-page-language": "語言",
+	"translate-page-language": "話",
 	"translate-page-limit": "上限",
 	"translate-page-limit-option": "每一版有$1個信息",
 	"translate-submit": "擷取",
@@ -68,5 +69,5 @@
 	"tux-editor-clear-translated": "收埋譯咗嘅",
 	"tux-editor-translate-mode": "一覽",
 	"tux-messagetable-more-messages": "重有$1句{{PLURAL:$1|訊息}}",
-	"translate-search-more-languages-info": "重有 $1 種{{PLURAL:$1|語言|語言}}"
+	"translate-search-more-languages-info": "重有 $1 種{{PLURAL:$1|話|話}}"
 }

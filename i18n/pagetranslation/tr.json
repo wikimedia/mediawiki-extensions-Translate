@@ -221,7 +221,7 @@
 	"pagepreparation": "Çeviri için sayfayı hazırlayın",
 	"pp-pagename-placeholder": "Sayfa adı girin",
 	"pp-prepare-button-label": "Hazırla",
-	"pp-save-button-label": "Yayınla",
+	"pp-save-button-label": "Yayımla",
 	"pp-cancel-button-label": "İptal",
 	"pp-save-message": "Sayfa yayınlandı. Artık [$1 düzenleme] yapabilirsiniz.",
 	"pp-prepare-message": "Sayfa çeviri için hazırlanmıştır. Aşağıdaki farkı inceleyin. Tamamsa {{int:pp-save-button-label}}\" düğmesini tıklayın!",
