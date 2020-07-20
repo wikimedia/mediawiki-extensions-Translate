@@ -197,7 +197,7 @@ class SpecialTranslations extends SpecialAllPages {
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
 
 		$tableheader = Xml::openElement( 'table', [
-			'class' => 'mw-sp-translate-table sortable'
+			'class' => 'mw-sp-translate-table sortable wikitable'
 		] );
 
 		$tableheader .= Xml::openElement( 'tr' );
@@ -239,10 +239,9 @@ class SpecialTranslations extends SpecialAllPages {
 				[ 'action' => 'history' ]
 			);
 
+			$class = '';
 			if ( MessageHandle::hasFuzzyString( $pageInfo[$key][0] ) || $tHandle->isFuzzy() ) {
-				$class = 'orig';
-			} else {
-				$class = 'def';
+				$class = 'mw-sp-translate-fuzzy';
 			}
 
 			$languageAttributes = [];

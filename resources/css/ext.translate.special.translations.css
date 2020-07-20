@@ -1,39 +1,7 @@
-.mw-sp-translate-table {
-	width: 100%;
-	border-width: 1px;
-	border-collapse: collapse;
-}
-
-.mw-sp-translate-table th {
-	background-color: #b2b2ff;
-	border: 1px solid;
-}
-
-.mw-sp-translate-table tr.orig {
+.mw-sp-translate-table .mw-sp-translate-fuzzy {
 	background-color: #ffe2e2;
 }
 
-.mw-sp-translate-table tr.new {
-	background-color: #e2ffe2;
-}
-
-.mw-sp-translate-table tr.def {
-	background-color: #f0f0ff;
-}
-
-.mw-sp-translate-table tr.ign {
-	background-color: #202020;
-}
-
-.mw-sp-translate-table tr.opt {
-	background-color: #f2f200;
-}
-
-.mw-sp-translate-table .untranslated {
-	background-color: #a2f290;
-}
-
-.mw-sp-translate-table > tbody > tr > * {
+.mw-sp-translate-table td {
 	vertical-align: top;
-	border: 1px solid #909090;
 }
