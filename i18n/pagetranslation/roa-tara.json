@@ -7,6 +7,7 @@
 	"pagetranslation": "Pàgene de traduzione",
 	"right-pagetranslation": "Signe le revisiune de le pàggene pe traduzione",
 	"action-pagetranslation": "gestisce le pàggene traducibbele",
+	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "Aunità de traduzione $1",
 	"tpt-section-new": "Nova unità de traduzione.\nNome: $1",
 	"tpt-section-deleted": "Unità de traduzione $1",
@@ -84,6 +85,8 @@
 	"pt-movepage-title": "Spuèste 'a pàgene traducibbile \"$1\"",
 	"pt-movepage-list-pages": "Elenghe de le pàggene da spustà",
 	"pt-movepage-list-count": "In totale $1 {{PLURAL:$1|pàgene|pàggene}} e $2 $2 {{PLURAL:$2|sottepàgene|sottepàggene}} da spustà.",
+	"pt-movepage-list-no-pages": "Nisciuna pàgene acchiate.",
+	"pt-movepage-legend": "Spuèste 'a pàgene traducibbile",
 	"pt-movepage-current": "Nome de mò:",
 	"pt-movepage-new": "Nome nuève:",
 	"pt-movepage-reason": "Mutive:",
@@ -108,8 +111,8 @@
 	"pm-delete-icon-hover-text": "Scangìlle l'aunità",
 	"pm-pagetitle-placeholder": "Mitte 'u titole d'a pàgene",
 	"pm-pagetitle-missing": "Pe piacere mitte 'u titole d'a vôsce.",
-	"pp-save-button-label": "Reggìstre",
+	"pp-save-button-label": "Pubbleche",
 	"pp-cancel-button-label": "Annulle",
-	"pp-save-message": "'A pàgene ha state reggistrate. Puè [$1 cangiarle].",
+	"pp-save-message": "'A pàgene ha state pubblecate. Puè [$1 cangiarle].",
 	"tpt-generic-button": "Conferme"
 }

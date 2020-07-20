@@ -13,6 +13,7 @@
 			"Jhonnatanricardo",
 			"Luckas",
 			"Rodrigo codignoli",
+			"Shirayuki",
 			555
 		]
 	},
@@ -20,7 +21,7 @@
 	"right-pagetranslation": "Marca versões de páginas para tradução",
 	"action-pagetranslation": "gerir páginas traduzíveis",
 	"tps-edit-sourcepage-title": "Editar uma página traduzível",
-	"tps-edit-sourcepage-text": "Você está editando uma página de tradução de origem. Verifique se você está familiarizado com a seguinte documentação:\n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Mudando_o_texto_fonte Alterando o texto de origem] \n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Exemplos_de_marcação Exemplo de marcação a ser usada]",
+	"tps-edit-sourcepage-text": "Você está editando uma página de tradução de origem. Verifique se você está familiarizado com a seguinte documentação:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Alterando o texto de origem] \n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Exemplo de marcação a ser usada]",
 	"tps-edit-sourcepage-ve-warning-title": "Aviso: página não suportada",
 	"tps-edit-sourcepage-ve-warning-text": "Você está editando uma página traduzível. A edição destes neste editor ainda não é oficialmente suportada. Por favor, use o editor de código-fonte.",
 	"tps-edit-sourcepage-ve-warning-button": "OK",
