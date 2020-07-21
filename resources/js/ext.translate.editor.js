@@ -210,7 +210,7 @@
 				translateEditor = this;
 
 			mw.hook( 'mw.translate.editor.beforeSubmit' ).fire( translateEditor.$editor );
-			translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
+			translation = translateEditor.$editor.find( '.tux-textarea-translation' ).val();
 			editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
 
 			translateEditor.saving = true;
