@@ -117,7 +117,7 @@
 	"apihelp-searchtranslations-param-limit": "Resultatets størrelse.",
 	"apihelp-searchtranslations-example-1": "Vis oversettelser for språket.",
 	"apihelp-searchtranslations-example-2": "Vis uoversatte beskjeder som matcher spørringen på målspråket.",
-	"apihelp-translationcheck-description": "Valider gitt oversettelsesinndata mot beskjedsjekkere.",
+	"apihelp-translationcheck-description": "Valider gitt oversettelsesinndata mot konfigurerte beskjedvalidatorer.",
 	"apihelp-translationcheck-summary": "Valider oversettelser.",
 	"apihelp-translationcheck-param-title": "Sidetittel med navnerom og språkkode.",
 	"apihelp-translationcheck-param-translation": "Oversettelsen som skal valideres.",

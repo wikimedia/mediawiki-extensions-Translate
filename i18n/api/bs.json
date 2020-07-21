@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Srdjan m"
+			"Srdjan m",
+			"Srđan"
 		]
 	},
 	"apihelp-aggregategroups-description": "Upravljanje zbirnim grupama poruka.\n\nMožete dodavati i uklanjati zbirne grupe poruka i pridruživati ili odstranjivati iz zbirnih poruka (jednu po jednu).",
