@@ -9,6 +9,7 @@
 
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job for updating translation pages when translation or template changes.
@@ -43,6 +44,12 @@ class TranslateRenderJob extends GenericTranslateJob {
 		global $wgTranslateKeepOutdatedTranslations;
 
 		$this->logInfo( 'Starting TranslateRenderJob' );
+
+		// We may be doing double wait here if this job was spawned by TranslationUpdateJob
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		if ( !$lb->waitForReplication() ) {
+			$this->logWarning( 'Continuing despite replication lag' );
+		}
 
 		// Initialization
 		$title = $this->title;

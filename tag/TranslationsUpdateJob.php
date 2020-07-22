@@ -1,5 +1,6 @@
 <?php
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job for updating translation units and translation pages when
@@ -45,9 +46,9 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		// For performance reasons, message index rebuild is run a separate job after
 		// everything else is updated.
 
+		// START: This section does not care about replication lag
 		$this->logInfo( 'Starting TranslationsUpdateJob' );
 
-		$page = TranslatablePage::newFromTitle( $this->title );
 		$sections = $this->params[ 'sections' ];
 		foreach ( $sections as $index => $section ) {
 			// Old jobs stored sections as objects because they were serialized and
@@ -59,6 +60,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		}
 
 		// Units should be updated before the render jobs are run
+		$page = TranslatablePage::newFromTitle( $this->title );
 		$unitJobs = self::getTranslationUnitJobs( $page, $sections );
 		foreach ( $unitJobs as $job ) {
 			$job->run();
@@ -68,6 +70,12 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 			'Finished running ' . count( $unitJobs ) . ' MessageUpdate jobs for '
 			. count( $sections ) . ' sections'
 		);
+		// END: This section does not care about replication lag
+
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		if ( !$lb->waitForReplication() ) {
+			$this->logWarning( 'Continuing despite replication lag' );
+		}
 
 		// Ensure we are using the latest group definitions. This is needed so
 		// that in long running scripts we do see the page which was just

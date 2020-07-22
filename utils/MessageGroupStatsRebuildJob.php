@@ -7,12 +7,15 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\MediaWikiServices;
+
 /**
  * Job for rebuilding message group stats.
  *
  * @ingroup JobQueue
  */
-class MessageGroupStatsRebuildJob extends Job {
+class MessageGroupStatsRebuildJob extends GenericTranslateJob {
 	/**
 	 * @param array $params
 	 * @return self
@@ -45,6 +48,11 @@ class MessageGroupStatsRebuildJob extends Job {
 	}
 
 	public function run() {
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		if ( !$lb->waitForReplication() ) {
+			$this->logWarning( 'Continuing despite replication lag' );
+		}
+
 		$params = $this->params;
 		$flags = 0;
 
