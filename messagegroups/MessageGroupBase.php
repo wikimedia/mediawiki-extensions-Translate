@@ -118,7 +118,16 @@ abstract class MessageGroupBase implements MessageGroup {
 		$msgValidator = new MessageValidator( $this->getId() );
 
 		foreach ( $validatorConfigs as $config ) {
-			$msgValidator->addValidator( $config );
+			try {
+				$msgValidator->addValidator( $config );
+			} catch ( Exception $e ) {
+				$id = $this->getId();
+				throw new InvalidArgumentException(
+					"Unable to construct validator for message group $id: " . $e->getMessage(),
+					0,
+					$e
+				);
+			}
 		}
 
 		return $msgValidator;
