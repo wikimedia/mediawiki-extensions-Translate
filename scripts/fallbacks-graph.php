@@ -45,8 +45,8 @@ XML;
 		$langs = Language::fetchLanguageNames( null, 'mw' );
 		$nodes = $edges = [];
 		foreach ( $langs as $code => $name ) {
-			$fallbacks = Language::getFallbacksFor( $code );
-			if ( $fallbacks === [ 'en' ] ) {
+			$fallbacks = Language::getFallbacksFor( $code, Language::STRICT_FALLBACKS );
+			if ( $fallbacks === [] ) {
 				continue;
 			}
 
@@ -71,10 +71,10 @@ XML;
 			. Xml::openElement( 'y:Shapenode' )
 			. Xml::element(
 				'y:Geometry',
-				[ 'height' => 30, 'width' => max( 30, 10 * strlen( $code ) ) ],
+				[ 'height' => 40, 'width' => max( 40, 20 * strlen( $code ) ) ],
 				''
 			)
-			. Xml::element( 'y:NodeLabel', [], $code )
+			. Xml::element( 'y:NodeLabel', [ 'fontSize' => '24' ], $code )
 			. Xml::element( 'y:BorderStyle', [ 'hasColor' => 'false' ], '' )
 			. Xml::element( 'y:Fill', [ 'hasColor' => 'false' ], '' )
 			. Xml::closeElement( 'y:Shapenode' )
