@@ -143,9 +143,22 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 
 		$sourceLanguage = $this->createStub( Language::class );
 		$sourceLanguage->method( 'getHtmlCode' )->willReturn( 'en-GB' );
+		$sourceLanguage->method( 'getCode' )->willReturn( 'en-gb' );
 		$sourceLanguage->method( 'getDir' )->willReturn( 'ltr' );
 
-		$this->assertEquals( $expected, $unit->getTextForRendering( $msg, $sourceLanguage ) );
+		$targetLanguage = $this->createStub( Language::class );
+		$targetLanguage->method( 'getHtmlCode' )->willReturn( 'ar' );
+		$targetLanguage->method( 'getCode' )->willReturn( 'ar' );
+		$targetLanguage->method( 'getDir' )->willReturn( 'rtl' );
+
+		$wrapUntranslated = true;
+		$actual = $unit->getTextForRendering(
+			$msg,
+			$sourceLanguage,
+			$targetLanguage,
+			$wrapUntranslated
+		);
+		$this->assertEquals( $expected, $actual );
 	}
 
 	public function provideTestGetTextForRendering() {
@@ -199,6 +212,30 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 			$fuzzy,
 			$block,
 			"<div class=\"mw-translate-fuzzy\">\nHejsan peter!\n</div>"
+		];
+
+		yield [
+			'{{TRANSLATIONLANGUAGE}}',
+			null,
+			!$fuzzy,
+			$inline,
+			'<span lang="en-GB" dir="ltr" class="mw-content-ltr">en-gb</span>'
+		];
+
+		yield [
+			'{{TRANSLATIONLANGUAGE}}',
+			'{{TRANSLATIONLANGUAGE}}',
+			$fuzzy,
+			$inline,
+			'<span class="mw-translate-fuzzy">ar</span>'
+		];
+
+		yield [
+			'Lang: <tvar|code>{{TRANSLATIONLANGUAGE}}</>',
+			'Lang: $code',
+			!$fuzzy,
+			$inline,
+			'Lang: ar'
 		];
 	}
 }

@@ -88,8 +88,12 @@ class TranslationPage {
 		foreach ( $this->output->units() as $placeholder => $unit ) {
 			/** @var TMessage $msg */
 			$msg = $messages[$unit->id] ?? null;
-			$sourceLanguage = $this->wrapUntranslated ? $this->sourceLanguage : null;
-			$replacements[$placeholder] = $unit->getTextForRendering( $msg, $sourceLanguage );
+			$replacements[$placeholder] = $unit->getTextForRendering(
+				$msg,
+				$this->sourceLanguage,
+				$this->targetLanguage,
+				$this->wrapUntranslated
+			);
 		}
 
 		$template = $this->output->translationPageTemplate();

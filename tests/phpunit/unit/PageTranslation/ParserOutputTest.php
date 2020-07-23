@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extensions\Translate\PageTranslation;
 
 use InvalidArgumentException;
+use Language;
 use MediaWikiUnitTestCase;
 use TPSection;
 
@@ -74,7 +75,10 @@ class ParserOutputTest extends MediaWikiUnitTestCase {
 			$units
 		);
 
-		$this->assertSame( 'AHelloB', $output->sourcePageTextForRendering() );
+		$language = $this->createStub( Language::class );
+		$language->method( 'getHtmlCode' )->willReturn( 'en-GB' );
+
+		$this->assertSame( 'AHelloB', $output->sourcePageTextForRendering( $language ) );
 	}
 
 	public function testSourcePageTextForSaving() {

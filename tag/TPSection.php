@@ -190,7 +190,12 @@ class TPSection {
 		return $section;
 	}
 
-	public function getTextForRendering( ?TMessage $msg, ?Language $sourceLanguage ): string {
+	public function getTextForRendering(
+		?TMessage $msg,
+		Language $sourceLanguage,
+		Language $targetLanguage,
+		bool $wrapUntranslated
+	): string {
 		$attributes = [];
 
 		if ( $msg && $msg->translation() !== null ) {
@@ -200,13 +205,15 @@ class TPSection {
 				$content = str_replace( TRANSLATE_FUZZY, '', $content );
 				$attributes['class'] = 'mw-translate-fuzzy';
 			}
+			$translationLanguage = $targetLanguage->getCode();
 		} else {
 			$content = $this->getTextWithVariables();
-			if ( $sourceLanguage ) {
+			if ( $wrapUntranslated ) {
 				$attributes['lang'] = $sourceLanguage->getHtmlCode();
 				$attributes['dir'] = $sourceLanguage->getDir();
 				$attributes['class'] = 'mw-content-' . $sourceLanguage->getDir();
 			}
+			$translationLanguage = $sourceLanguage->getCode();
 		}
 
 		if ( $this->canWrap() && $attributes ) {
@@ -215,6 +222,15 @@ class TPSection {
 			$content = Html::rawElement( $tag, $attributes, $content );
 		}
 
-		return strtr( $content, $this->getVariables() );
+		$content = strtr( $content, $this->getVariables() );
+
+		// Allow wrapping this inside variables
+		$content = preg_replace(
+			'/\{\{\s*TRANSLATIONLANGUAGE\s*\}\}/',
+			$translationLanguage,
+			$content
+		);
+
+		return $content;
 	}
 }

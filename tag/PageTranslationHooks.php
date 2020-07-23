@@ -51,7 +51,9 @@ class PageTranslationHooks {
 			try {
 				$parserOutput = $translatablePageParser->parse( $text );
 				// If parsing succeeds, replace text and add styles
-				$text = $parserOutput->sourcePageTextForRendering();
+				$text = $parserOutput->sourcePageTextForRendering(
+					$wikitextParser->getTargetLanguage()
+				);
 				$wikitextParser->getOutput()->addModuleStyles( 'ext.translate' );
 			} catch ( ParsingFailure $e ) {
 				wfDebug( 'ParsingFailure caught; expected' );

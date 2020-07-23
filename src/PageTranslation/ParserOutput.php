@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extensions\Translate\PageTranslation;
 
 use InvalidArgumentException;
+use Language;
 use TPSection;
 
 /**
@@ -61,11 +62,12 @@ class ParserOutput {
 	}
 
 	/** Returns the source page wikitext used for rendering the page. */
-	public function sourcePageTextForRendering() {
+	public function sourcePageTextForRendering( Language $sourceLanguage ) {
 		$text = $this->translationPageTemplate();
 
 		foreach ( $this->unitMap as $ph => $s ) {
-			$text = str_replace( $ph, $s->getTextForRendering( null, null ), $text );
+			$t = $s->getTextForRendering( null, $sourceLanguage, $sourceLanguage, false );
+			$text = str_replace( $ph, $t, $text );
 		}
 
 		return $text;
