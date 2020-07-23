@@ -6,9 +6,11 @@
 			"SADIQUI"
 		]
 	},
+	"translate-langstats-collapse": "طوي",
 	"translate-manage-import-new": "Méṣaj jdid $1",
 	"translate-manage-import-deleted": "Méṣaj memḫi $1",
 	"translate-documentation-language": "توثيق الرسالة",
 	"translate-msggroupselector-search-all": "كلشي",
-	"tux-tab-all": "كلشي"
+	"tux-tab-all": "كلشي",
+	"tux-editor-collapse-tooltip": "طوي"
 }
