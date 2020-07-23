@@ -125,11 +125,12 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 		string $source,
 		?string $translation,
 		bool $fuzzy,
+		bool $inline,
 		string $expected
 	 ) {
 		$unit = new TPSection();
 		$unit->text = $source;
-		$unit->setIsInline( true );
+		$unit->setIsInline( $inline );
 
 		$msg = null;
 		if ( $translation !== null ) {
@@ -140,24 +141,31 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 			}
 		}
 
-		$this->assertEquals( $expected, $unit->getTextForRendering( $msg ) );
+		$sourceLanguage = $this->createStub( Language::class );
+		$sourceLanguage->method( 'getHtmlCode' )->willReturn( 'en-GB' );
+		$sourceLanguage->method( 'getDir' )->willReturn( 'ltr' );
+
+		$this->assertEquals( $expected, $unit->getTextForRendering( $msg, $sourceLanguage ) );
 	}
 
 	public function provideTestGetTextForRendering() {
 		$fuzzy = true;
-		$notFuzzy = false;
+		$inline = true;
+		$block = false;
 
 		yield [
 			'Hello <tvar|abc>peter</>!',
 			null,
-			$notFuzzy,
-			'Hello peter!'
+			!$fuzzy,
+			$inline,
+			'<span lang="en-GB" dir="ltr" class="mw-content-ltr">Hello peter!</span>'
 		];
 
 		yield [
 			'Hello <tvar|abc>peter</>!',
 			'Hejsan $abc!',
-			$notFuzzy,
+			!$fuzzy,
+			$inline,
 			'Hejsan peter!'
 		];
 
@@ -165,7 +173,32 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 			'Hello <tvar|abc>peter</>!',
 			'Hejsan $abc!',
 			$fuzzy,
+			$inline,
 			'<span class="mw-translate-fuzzy">Hejsan peter!</span>'
+		];
+
+		yield [
+			'Hello <tvar|abc>peter</>!',
+			null,
+			!$fuzzy,
+			$block,
+			"<div lang=\"en-GB\" dir=\"ltr\" class=\"mw-content-ltr\">\nHello peter!\n</div>"
+		];
+
+		yield [
+			'Hello <tvar|abc>peter</>!',
+			'Hejsan $abc!',
+			!$fuzzy,
+			$block,
+			'Hejsan peter!'
+		];
+
+		yield [
+			'Hello <tvar|abc>peter</>!',
+			'Hejsan $abc!',
+			$fuzzy,
+			$block,
+			"<div class=\"mw-translate-fuzzy\">\nHejsan peter!\n</div>"
 		];
 	}
 }

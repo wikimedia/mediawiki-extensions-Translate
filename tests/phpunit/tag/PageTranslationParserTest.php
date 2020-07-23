@@ -75,7 +75,7 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 		Title $title,
 		ParserOutput $parserOutput
 	): TranslationPage {
-		$showOutdated = true;
+		$showOutdated = false;
 		$wrapUntranslated = false;
 
 		return new TranslationPage(

@@ -190,7 +190,7 @@ class TPSection {
 		return $section;
 	}
 
-	public function getTextForRendering( ?TMessage $msg ): string {
+	public function getTextForRendering( ?TMessage $msg, ?Language $sourceLanguage ): string {
 		$attributes = [];
 
 		if ( $msg && $msg->translation() !== null ) {
@@ -202,6 +202,11 @@ class TPSection {
 			}
 		} else {
 			$content = $this->getTextWithVariables();
+			if ( $sourceLanguage ) {
+				$attributes['lang'] = $sourceLanguage->getHtmlCode();
+				$attributes['dir'] = $sourceLanguage->getDir();
+				$attributes['class'] = 'mw-content-' . $sourceLanguage->getDir();
+			}
 		}
 
 		if ( $this->canWrap() && $attributes ) {

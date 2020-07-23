@@ -21,7 +21,7 @@ use MediaWiki\Revision\RevisionRecord;
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
-	private const LATEST_SYNTAX_VERSION = '1';
+	private const LATEST_SYNTAX_VERSION = '2';
 	private const DEFAULT_SYNTAX_VERSION = '1';
 
 	public function __construct() {

@@ -65,7 +65,7 @@ class ParserOutput {
 		$text = $this->translationPageTemplate();
 
 		foreach ( $this->unitMap as $ph => $s ) {
-			$text = str_replace( $ph, $s->getTextForRendering( null ), $text );
+			$text = str_replace( $ph, $s->getTextForRendering( null, null ), $text );
 		}
 
 		return $text;

@@ -327,8 +327,8 @@ class TranslatablePage {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$parser = Services::getInstance()->getTranslatablePageParser();
 		$parserOutput = $parser->parse( $this->getText() );
-		// TODO: connect this
-		$wrapUntranslated = false;
+		$pageVersion = (int)TranslateMetadata::get( $this->getMessageGroupId(), 'version' );
+		$wrapUntranslated = $pageVersion >= 2;
 
 		return new TranslationPage(
 			$parserOutput,

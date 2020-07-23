@@ -19,9 +19,9 @@ class TranslationPageTest extends MediaWikiTestCase {
 	public function testGenerateSourceFromTranslations(
 		bool $inline,
 		bool $canWrap,
+		bool $wrapUntranslated,
 		array $messages,
-		string $expected,
-		string $comment
+		string $expected
 	) {
 		// This test skips all the message loading from database
 
@@ -40,8 +40,7 @@ class TranslationPageTest extends MediaWikiTestCase {
 
 		// Then create appropriate units in the section. We are using the array keys, which
 		// works as long as there are less than ten units.
-		$glue = $inline ? ' | ' : "\n\n";
-		$sectionMap = [ '<S>' => new Section( '', implode( $glue, array_keys( $unitMap ) ), '' ) ];
+		$sectionMap = [ '<S>' => new Section( '', implode( ' | ', array_keys( $unitMap ) ), '' ) ];
 		$output = new ParserOutput( $template, $sectionMap, $unitMap );
 
 		$translationPage = new TranslationPage(
@@ -50,16 +49,12 @@ class TranslationPageTest extends MediaWikiTestCase {
 			Language::factory( 'ar' ),
 			Language::factory( 'en' ),
 			true /*$showOutdated*/,
-			false /*$wrapUntranslated*/,
+			$wrapUntranslated,
 			'' /*$prefix*/
 		);
 
 		$actual = $translationPage->generateSourceFromTranslations( $messages );
-		$this->assertSame(
-			$expected,
-			$actual,
-			$comment
-		);
+		$this->assertSame( $expected, $actual );
 	}
 
 	public function provideTestGenerateSourceFromTranslations() {
@@ -69,8 +64,9 @@ class TranslationPageTest extends MediaWikiTestCase {
 		$wrap = true;
 		$nowrap = false;
 
+		$wrapUntranslated = true;
+
 		$sectionText = 'Hello';
-		$fuzzyClass = 'mw-translate-fuzzy';
 
 		$okMessage = new FatMessage( 'ignoredKey', $sectionText );
 		$okMessage->setTranslation( 'Hallo' );
@@ -84,120 +80,74 @@ class TranslationPageTest extends MediaWikiTestCase {
 		$identicalMessage = new FatMessage( 'ignoredKey', $sectionText );
 		$identicalMessage->setTranslation( $sectionText );
 
+		$inlineWrappedOutdated = '<span class="mw-translate-fuzzy">hallo</span>';
+		$inlineWrappedUntranslated = '<span lang="en" dir="ltr" class="mw-content-ltr">Hello</span>';
+		$blockWrappedOutdated = "<div class=\"mw-translate-fuzzy\">\nhallo\n</div>";
+		$blockWrappedUntranslated = "<div lang=\"en\" dir=\"ltr\" class=\"mw-content-ltr\">\nHello\n</div>";
+
+		// Matrix of (inline|block) * (no)wrap * (no)wrapUntranslated
 		yield [
 			$inline,
 			$wrap,
-			[ $okMessage ],
-			'Hallo',
-			'OK inline translation is not wrapped'
-		];
-
-		yield [
-			$inline,
-			$nowrap,
-			[ $okMessage ],
-			'Hallo',
-			'OK inline translation is not wrapped in nowrap'
-		];
-
-		yield [
-			$block,
-			$wrap,
-			[ $okMessage ],
-			$okMessage->translation(),
-			'OK block translation is not wrapped'
-		];
-
-		yield [
-			$block,
-			$nowrap,
-			[ $okMessage ],
-			$okMessage->translation(),
-			'OK block translation is not wrapped in nowrap'
-		];
-
-		yield [
-			$inline,
-			$wrap,
-			[ $fuzzyMessage ],
-			"<span class=\"$fuzzyClass\">hallo</span>",
-			'Fuzzy inline translation is wrapped'
-		];
-
-		yield [
-			$inline,
-			$nowrap,
-			[ $fuzzyMessage ],
-			'hallo',
-			'Fuzzy inline translation is not wrapped in nowrap'
-		];
-
-		yield [
-			$block,
-			$wrap,
-			[ $fuzzyMessage ],
-			"<div class=\"$fuzzyClass\">\nhallo\n</div>",
-			'Fuzzy block translation is wrapped'
-		];
-
-		yield [
-			$block,
-			$nowrap,
-			[ $fuzzyMessage ],
-			'hallo',
-			'Fuzzy block translation is not wrapped in nowrap'
-		];
-
-		yield [
-			$inline,
-			$wrap,
-			[ $identicalMessage ],
-			'Hello',
-			'Identically translated inline message is not wrapped'
-		];
-
-		yield [
-			$block,
-			$nowrap,
-			[ $identicalMessage ],
-			'Hello',
-			'Identically translated block message is not wrapped in nowrap'
-		];
-
-		yield [
-			$inline,
-			$wrap,
+			$wrapUntranslated,
 			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			"Hallo | <span class=\"$fuzzyClass\">hallo</span> | Hello | Hello",
-			'Different kinds of inline messages together are appropriately wrapped'
+			"Hallo | $inlineWrappedOutdated | Hello | $inlineWrappedUntranslated"
+		];
+
+		yield [
+			$inline,
+			$wrap,
+			!$wrapUntranslated,
+			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
+			"Hallo | $inlineWrappedOutdated | Hello | Hello"
 		];
 
 		yield [
 			$inline,
 			$nowrap,
+			$wrapUntranslated,
 			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
 			'Hallo | hallo | Hello | Hello',
-			'Different kinds of inline messages together are not wrapped in nowrap'
 		];
 
-		$blockText = <<<WIKITEXT
-Hallo
-
-<div class="{$fuzzyClass}">
-hallo
-</div>
-
-Hello
-
-Hello
-WIKITEXT;
+		yield [
+			$inline,
+			$nowrap,
+			!$wrapUntranslated,
+			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello',
+		];
 
 		yield [
 			$block,
 			$wrap,
+			$wrapUntranslated,
 			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			$blockText,
-			'Different kinds of block messages together are wrapped appropriately'
+			"Hallo | $blockWrappedOutdated | Hello | $blockWrappedUntranslated"
+		];
+
+		yield [
+			$block,
+			$wrap,
+			!$wrapUntranslated,
+			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
+			"Hallo | $blockWrappedOutdated | Hello | Hello"
+		];
+
+		yield [
+			$block,
+			$nowrap,
+			$wrapUntranslated,
+			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello',
+		];
+
+		yield [
+			$block,
+			$nowrap,
+			!$wrapUntranslated,
+			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello',
 		];
 	}
 }
