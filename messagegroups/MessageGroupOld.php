@@ -81,46 +81,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * List of messages that are hidden by default, but can still be translated if
-	 * needed.
-	 */
-	protected $optional = [];
-
-	/**
-	 * @return array
-	 */
-	public function getOptional() {
-		return $this->optional;
-	}
-
-	/**
-	 * @param array $value
-	 */
-	public function setOptional( $value ) {
-		$this->optional = $value;
-	}
-
-	/**
-	 * List of messages that are always hidden and cannot be translated.
-	 */
-	protected $ignored = [];
-
-	/**
-	 * @return array
-	 */
-	public function getIgnored() {
-		return $this->ignored;
-	}
-
-	/**
-	 * @param array $value
-	 */
-	public function setIgnored( $value ) {
-		$this->ignored = $value;
-	}
-
-	/**
-	 * Holds descripton of this group. Description is a wiki text snippet that
+	 * Holds description of this group. Description is a wiki text snippet that
 	 * gives information about this group to translators.
 	 */
 	protected $description = null;
@@ -320,16 +281,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	public function getTags( $type = null ) {
-		$tags = [
-			'optional' => $this->optional,
-			'ignored' => $this->ignored,
-		];
-
-		if ( !$type ) {
-			return $tags;
-		}
-
-		return $tags[$type] ?? [];
+		return [];
 	}
 
 	/**
