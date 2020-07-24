@@ -10,7 +10,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extensions\Translate\Validation;
 
 use InsertablesSuggester;
-use MediaWiki\Extensions\Translate\MessageValidator\Validator;
 use TMessage;
 
 /**

@@ -9,7 +9,7 @@
 
 /**
  * @covers \MessageValidator
- * @covers \MediaWiki\Extensions\Translate\MessageValidator\ValidationResult
+ * @covers \MediaWiki\Extensions\Translate\Validation\ValidationResult
  * @group TranslationValidators
  */
 class MessageValidatorTest extends MediaWikiIntegrationTestCase {

@@ -9,11 +9,11 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\MessageValidator\ValidationResult;
-use MediaWiki\Extensions\Translate\MessageValidator\ValidatorFactory;
 use MediaWiki\Extensions\Translate\Validation\MessageValidator as MessageValidatorInterface;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extensions\Translate\Validation\ValidationResult;
+use MediaWiki\Extensions\Translate\Validation\ValidatorFactory;
 
 /**
  * Message validator is used to run validators to find common mistakes so that
@@ -21,11 +21,7 @@ use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
  * Checker framework because it allows maintainers to enforce a validation so
  * that translations that do not pass validation are not saved.
  *
- * To create your own validator, implement the following interface,
- * @see MediaWiki\Extensions\Translate\Validation\MessageValidator
- *
- * In addition you can use the following Trait to reuse some pre-existing methods,
- * @see MediaWiki\Extensions\Translate\MessageValidator\ValidatorHelper
+ * To create your own validator, implement the MessageValidator interface.
  *
  * There are two types of notices - error and warning.
  *
