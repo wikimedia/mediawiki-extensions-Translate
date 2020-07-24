@@ -10,8 +10,6 @@
  * @group medium
  */
 class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
-	protected $config = [];
-
 	public function setUp() : void {
 		parent::setUp();
 

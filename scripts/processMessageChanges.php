@@ -31,13 +31,6 @@ use MediaWiki\Extensions\Translate\Utilities\StringComparators\SimpleStringCompa
  * @since 2012-04-23
  */
 class ProcessMessageChanges extends Maintenance {
-	protected $changes = [];
-
-	/**
-	 * @var int
-	 */
-	protected $counter;
-
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Script for processing message changes in file based message groups' );

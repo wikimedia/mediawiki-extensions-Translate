@@ -15,8 +15,6 @@ use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
  * @ingroup MessageGroup
  */
 class RecentAdditionsMessageGroup extends RecentMessageGroup {
-	protected $groupInfoCache = [];
-
 	public function getId() {
 		return '!additions';
 	}

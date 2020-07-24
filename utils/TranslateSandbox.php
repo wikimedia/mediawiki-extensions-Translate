@@ -19,8 +19,6 @@ use Wikimedia\ScopedCallback;
  * lot of assumptions about what happens to the user account.
  */
 class TranslateSandbox {
-	public static $userToCreate = null;
-
 	/**
 	 * Adds a new user without doing much validation.
 	 *
