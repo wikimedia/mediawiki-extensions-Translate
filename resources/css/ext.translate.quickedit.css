@@ -2,17 +2,10 @@
 	color: #00f;
 }
 
-.mw-translate-tmsug {
-	margin-bottom: 0.2em;
-}
-
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
 	margin: 0;
 	border: 1px solid #dbdbdb;
-	/* Browsers suck
-	max-height: 250px; */
-	overflow: auto;
 }
 
 .mw-sp-translate-edit-fields legend {
@@ -42,43 +35,11 @@
 	font-family: monospace, monospace;
 }
 
-.mw-translate-edit-area {
-	padding: 0;
-	width: 100%;
-}
-
-/* Buttons */
-.mw-translate-history {
-	float: right;
-}
-
-.mw-ajax-dialog #summary {
-	width: 5em;
-}
-
 /* Blue tints for translate fieldsets */
-.mw-sp-translate-in-other-small {
-	background-color: #f0f8ff;
-}
-
-.mw-sp-translate-in-other-big {
-	background-color: #f0f8ff;
-}
-
 .mw-sp-translate-message-documentation {
 	background-color: #ebebeb;
 }
 
 .mw-sp-translate-edit-definition {
 	background-color: #eaf3fc;
-}
-
-.mw-translate-inputs {
-	overflow: auto; /* Fix "100%" width after floats issue */
-	padding: 2px; /* Avoid random scrollbars (browsers suck) */
-}
-
-.mw-translate-bottom {
-	clear: both;
-	margin-top: -3px; /* Reduce excess whitespace */
 }

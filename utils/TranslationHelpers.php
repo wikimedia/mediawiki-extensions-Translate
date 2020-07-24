@@ -252,7 +252,7 @@ class TranslationHelpers {
 
 		$msg .= $this->wrapInsert( $id, $en );
 
-		$class = [ 'class' => 'mw-sp-translate-edit-definition mw-translate-edit-definition' ];
+		$class = [ 'class' => 'mw-sp-translate-edit-definition' ];
 
 		return TranslateUtils::fieldset( $label, $msg, $class );
 	}
