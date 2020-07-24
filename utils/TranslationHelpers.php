@@ -144,25 +144,6 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * Gets the linguistically correct language code for translation
-	 * @return string
-	 */
-	public function getTargetLanguage() {
-		global $wgLanguageCode, $wgTranslateDocumentationLanguageCode;
-
-		$code = $this->handle->getCode();
-		if ( !$code ) {
-			$this->mustBeKnownMessage();
-			$code = $this->group->getSourceLanguage();
-		}
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
-			return $wgLanguageCode;
-		}
-
-		return $code;
-	}
-
-	/**
 	 * Returns block element HTML snippet that contains the translation aids.
 	 * Not all boxes are shown all the time depending on whether they have
 	 * any information to show and on configuration variables.
