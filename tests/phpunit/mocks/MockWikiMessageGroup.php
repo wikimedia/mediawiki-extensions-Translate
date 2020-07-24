@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+
 /**
  * This file contains multiple unmanaged message group implementation.
  *
@@ -33,7 +36,7 @@ class MockWikiMessageGroup extends WikiMessageGroup {
  */
 class MockWikiValidationMessageGroup extends MockWikiMessageGroup {
 	public function getValidator() {
-		$validator = new MessageValidator( $this->getId() );
+		$validator = new ValidationRunner( $this->getId() );
 		$validator->setValidators( [
 			[ 'class' => AnotherMockTranslateValidator::class ],
 			[

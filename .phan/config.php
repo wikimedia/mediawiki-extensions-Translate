@@ -13,7 +13,6 @@ $cfg['file_list'] = array_merge(
 		'MessageCollection.php',
 		'MessageGroupConfigurationParser.php',
 		'MessageGroups.php',
-		'MessageValidator.php',
 		'MetaYamlSchemaExtender.php',
 		'TranslateEditAddons.php',
 		'TranslateHooks.php',

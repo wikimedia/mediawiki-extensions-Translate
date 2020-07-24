@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+
 /**
  * Interface for message groups.
  *
@@ -89,7 +91,7 @@ interface MessageGroup {
 
 	/**
 	 * Returns a message validator object or null.
-	 * @return MessageValidator|null
+	 * @return ValidationRunner|null
 	 */
 	public function getValidator();
 

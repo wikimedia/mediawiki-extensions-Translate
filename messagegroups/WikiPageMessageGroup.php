@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
@@ -172,10 +173,10 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 	}
 
 	/**
-	 * @return MessageValidator
+	 * @return ValidationRunner
 	 */
 	public function getValidator() {
-		$validator = new MessageValidator( $this->getId() );
+		$validator = new ValidationRunner( $this->getId() );
 		$validator->setValidators( [
 			[ 'id' => 'MediaWikiPlural' ],
 			[ 'id' => 'BraceBalance' ]

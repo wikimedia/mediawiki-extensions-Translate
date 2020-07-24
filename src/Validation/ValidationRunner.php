@@ -9,11 +9,14 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Validation\MessageValidator as MessageValidatorInterface;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
-use MediaWiki\Extensions\Translate\Validation\ValidationResult;
-use MediaWiki\Extensions\Translate\Validation\ValidatorFactory;
+namespace MediaWiki\Extensions\Translate\Validation;
+
+use Exception;
+use FormatJson;
+use InsertablesSuggester;
+use InvalidArgumentException;
+use PHPVariableLoader;
+use TMessage;
 
 /**
  * Message validator is used to run validators to find common mistakes so that
@@ -31,13 +34,11 @@ use MediaWiki\Extensions\Translate\Validation\ValidatorFactory;
  * @ingroup MessageValidator
  * @since 2019.06
  */
-class MessageValidator {
+class ValidationRunner {
 	/** @var array List of validator data */
 	protected $validators = [];
-
 	/** @var string Message group id */
 	protected $groupId;
-
 	/** @var string[][] */
 	private static $ignorePatterns;
 
@@ -60,8 +61,8 @@ class MessageValidator {
 	 *
 	 * Removes the existing validators.
 	 *
-	 * @see addValidator()
 	 * @param array $validatorConfigs List of Validator configurations
+	 * @see addValidator()
 	 */
 	public function setValidators( array $validatorConfigs ): void {
 		$this->validators = [];
@@ -81,8 +82,10 @@ class MessageValidator {
 				$validatorConfig['params'] ?? null
 			);
 		} elseif ( $className !== null ) {
-			$validator = ValidatorFactory::loadInstance( $className,
-				$validatorConfig['params'] ?? null );
+			$validator = ValidatorFactory::loadInstance(
+				$className,
+				$validatorConfig['params'] ?? null
+			);
 		} else {
 			throw new InvalidArgumentException(
 				'Validator configuration does not specify the \'class\' or \'id\'.'
@@ -100,25 +103,28 @@ class MessageValidator {
 			'instance' => $validator,
 			'insertable' => $isInsertable,
 			'enforce' => $validatorConfig['enforce'] ?? false,
-			'keymatch' => $validatorConfig['keymatch'] ?? false
+			'keymatch' => $validatorConfig['keymatch'] ?? false,
 		];
 	}
 
 	/**
 	 * Return the currently set validators for this group.
 	 *
-	 * @return MessageValidatorInterface[] List of validators
+	 * @return MessageValidator[] List of validators
 	 */
 	public function getValidators(): array {
-		return array_map( function ( $validator ) {
-			return $validator['instance'];
-		}, $this->validators );
+		return array_map(
+			function ( $validator ) {
+				return $validator['instance'];
+			},
+			$this->validators
+		);
 	}
 
 	/**
 	 * Return currently set validators that are insertable.
 	 *
-	 * @return MessageValidatorInterface[] List of insertable
+	 * @return MessageValidator[] List of insertable
 	 * validators
 	 */
 	public function getInsertableValidators(): array {
@@ -138,13 +144,22 @@ class MessageValidator {
 	 * Returns a ValidationResult that contains methods to print the issues.
 	 */
 	public function validateMessage(
-		TMessage $message, string $code, bool $ignoreWarnings = false
+		TMessage $message,
+		string $code,
+		bool $ignoreWarnings = false
 	): ValidationResult {
 		$errors = new ValidationIssues();
 		$warnings = new ValidationIssues();
 
 		foreach ( $this->validators as $validator ) {
-			$this->runValidation( $validator, $message, $code, $errors, $warnings, $ignoreWarnings );
+			$this->runValidation(
+				$validator,
+				$message,
+				$code,
+				$errors,
+				$warnings,
+				$ignoreWarnings
+			);
 		}
 
 		$errors = $this->filterValidations( $errors, $code );
@@ -155,13 +170,22 @@ class MessageValidator {
 
 	/** Validate a message, and return as soon as any validation fails. */
 	public function quickValidate(
-		TMessage $message, string $code, bool $ignoreWarnings = false
+		TMessage $message,
+		string $code,
+		bool $ignoreWarnings = false
 	): ValidationResult {
 		$errors = new ValidationIssues();
 		$warnings = new ValidationIssues();
 
 		foreach ( $this->validators as $validator ) {
-			$this->runValidation( $validator, $message, $code, $errors, $warnings, $ignoreWarnings );
+			$this->runValidation(
+				$validator,
+				$message,
+				$code,
+				$errors,
+				$warnings,
+				$ignoreWarnings
+			);
 
 			$errors = $this->filterValidations( $errors, $code );
 			$warnings = $this->filterValidations( $warnings, $code );
@@ -184,7 +208,8 @@ class MessageValidator {
 		}
 
 		$list = PHPVariableLoader::loadVariableFromPHPFile(
-			$wgTranslateCheckBlacklist, 'checkBlacklist'
+			$wgTranslateCheckBlacklist,
+			'checkBlacklist'
 		);
 		$keys = [ 'group', 'check', 'subcheck', 'code', 'message' ];
 
@@ -194,7 +219,10 @@ class MessageValidator {
 					$list[$key][$checkKey] = '#';
 				} elseif ( is_array( $pattern[$checkKey] ) ) {
 					$list[$key][$checkKey] =
-						array_map( 'MessageValidator::foldValue', $pattern[$checkKey] );
+						array_map(
+							[ self::class, 'foldValue' ],
+							$pattern[$checkKey]
+						);
 				} else {
 					$list[$key][$checkKey] = self::foldValue( $pattern[$checkKey] );
 				}
@@ -276,7 +304,7 @@ class MessageValidator {
 			if ( !is_array( $match ) ) {
 				throw new InvalidArgumentException(
 					"Invalid key matcher configuration passed. Expected type: array or string. " .
-					"Recieved: " . gettype( $match ) . ". match value: " . FormatJson::encode( $match )
+					"Received: " . gettype( $match ) . ". match value: " . FormatJson::encode( $match )
 				);
 			}
 
@@ -309,7 +337,7 @@ class MessageValidator {
 		bool $ignoreWarnings
 	): void {
 		// Check if key match has been specified, and then check if the key matches it.
-		/** @var MessageValidatorInterface $validator */
+		/** @var MessageValidator $validator */
 		$validator = $validatorData['instance'];
 
 		$definition = $message->definition();

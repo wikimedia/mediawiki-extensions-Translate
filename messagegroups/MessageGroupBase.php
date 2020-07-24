@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -115,7 +116,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			return null;
 		}
 
-		$msgValidator = new MessageValidator( $this->getId() );
+		$msgValidator = new ValidationRunner( $this->getId() );
 
 		foreach ( $validatorConfigs as $config ) {
 			try {

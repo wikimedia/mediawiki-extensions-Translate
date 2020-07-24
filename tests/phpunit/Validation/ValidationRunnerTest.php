@@ -7,13 +7,14 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+
 /**
- * @covers \MessageValidator
+ * @covers \MediaWiki\Extensions\Translate\Validation\ValidationRunner
  * @covers \MediaWiki\Extensions\Translate\Validation\ValidationResult
- * @group TranslationValidators
  */
-class MessageValidatorTest extends MediaWikiIntegrationTestCase {
-	protected function setUp() : void {
+class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setTemporaryHook(
@@ -30,7 +31,7 @@ class MessageValidatorTest extends MediaWikiIntegrationTestCase {
 
 		// Run with empty ignore list by default
 		$this->setMwGlobals( 'wgTranslateCheckBlacklist', false );
-		MessageValidator::reloadIgnorePatterns();
+		ValidationRunner::reloadIgnorePatterns();
 	}
 
 	public function getTestGroups( &$list ) {
@@ -167,7 +168,7 @@ class MessageValidatorTest extends MediaWikiIntegrationTestCase {
 
 	public function testIgnoreList() {
 		$this->setMwGlobals( [
-			'wgTranslateCheckBlacklist' => __DIR__ . '/data/check-blacklist.php'
+			'wgTranslateCheckBlacklist' => __DIR__ . '/../data/check-blacklist.php'
 		] );
 
 		$group = MessageGroups::getGroup( 'test-group' );

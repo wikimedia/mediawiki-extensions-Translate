@@ -150,7 +150,6 @@
 		"MessageIndexException": "utils/MessageIndexException.php",
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
-		"MessageValidator": "MessageValidator.php",
 		"MessageWebImporter": "utils/MessageWebImporter.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
 		"MicrosoftWebService": "webservices/MicrosoftWebService.php",

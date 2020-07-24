@@ -1,8 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\MessageValidator as MessageValidatorInterface;
+use MediaWiki\Extensions\Translate\Validation\MessageValidator;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 
 /**
  * @license GPL-2.0-or-later
@@ -204,8 +205,8 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 		$messageValidators = $this->group->getValidator();
 		$insertables = $this->group->getInsertablesSuggester()->getInsertables( '' );
 
-		$this->assertInstanceOf( MessageValidator::class, $messageValidators,
-			"should correctly fetch a 'MessageValidator' using the 'VALIDATOR' configuration."
+		$this->assertInstanceOf( ValidationRunner::class, $messageValidators,
+			"should correctly fetch a 'ValidationRunner' using the 'VALIDATOR' configuration."
 		);
 
 		// Returns insertables from,
@@ -268,7 +269,7 @@ class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
 	}
 }
 
-class FakeInsertableValidator implements MessageValidatorInterface, InsertablesSuggester {
+class FakeInsertableValidator implements MessageValidator, InsertablesSuggester {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		return new ValidationIssues();
 	}
@@ -278,7 +279,7 @@ class FakeInsertableValidator implements MessageValidatorInterface, InsertablesS
 	}
 }
 
-class AnotherFakeInsertableValidator implements MessageValidatorInterface, InsertablesSuggester {
+class AnotherFakeInsertableValidator implements MessageValidator, InsertablesSuggester {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		return new ValidationIssues();
 	}
