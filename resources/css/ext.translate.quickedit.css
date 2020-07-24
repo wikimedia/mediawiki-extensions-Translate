@@ -19,14 +19,6 @@
 	background-color: transparent;
 }
 
-.mw-translate-legend {
-	border-left: 1px solid #000;
-	float: right;
-	margin-left: 1em;
-	padding-left: 5pt;
-	font-weight: bold;
-}
-
 /* Align the adder according to the target language */
 /* @noflip */
 .mw-translate-adder-ltr {
@@ -38,11 +30,6 @@
 .mw-translate-adder-rtl {
 	float: right;
 	padding-left: 1px;
-}
-
-.mw-translate-sep {
-	margin-bottom: 1ex;
-	margin-top: 0.5ex;
 }
 
 .mw-translate-edit-deftext {
@@ -74,10 +61,6 @@
 }
 
 /* Blue tints for translate fieldsets */
-.mw-sp-translate-edit-inother {
-	background-color: #f8f8ff;
-}
-
 .mw-sp-translate-in-other-small {
 	background-color: #f0f8ff;
 }

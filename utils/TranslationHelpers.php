@@ -223,7 +223,6 @@ class TranslationHelpers {
 	 */
 	public function getBoxNames() {
 		return [
-			'other-languages' => [ $this, 'getOtherLanguagesBox' ],
 			'documentation' => [ $this, 'getDocumentationBox' ],
 			'definition' => [ $this, 'getDefinitionBox' ],
 		];
@@ -284,65 +283,6 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset( $label, $msg, $class );
 	}
 
-	public function getOtherLanguagesBox() {
-		$code = $this->handle->getCode();
-		$page = $this->handle->getKey();
-		$ns = $this->handle->getTitle()->getNamespace();
-
-		$boxes = [];
-		foreach ( self::getFallbacks( $code ) as $fbcode ) {
-			$text = TranslateUtils::getMessageContent( $page, $fbcode, $ns );
-			if ( $text === null ) {
-				continue;
-			}
-
-			$fbLanguage = Language::factory( $fbcode );
-			$context = RequestContext::getMain();
-			$label = TranslateUtils::getLanguageName( $fbcode, $context->getLanguage()->getCode() ) .
-				$context->msg( 'word-separator' )->text() .
-				$context->msg( 'parentheses', $fbLanguage->getHtmlCode() )->text();
-
-			$target = $this->handle->getTitleForLanguage( $fbcode );
-
-			if ( $target ) {
-				$label = self::ajaxEditLink( $target, $label );
-			}
-
-			$dialogID = $this->dialogID();
-			$id = Sanitizer::escapeIdForAttribute( "other-$fbcode-$dialogID" );
-
-			$params = [ 'class' => 'mw-translate-edit-item' ];
-
-			$display = TranslateUtils::convertWhiteSpaceToHTML( $text );
-			$display = Html::rawElement( 'div', [
-					'lang' => $fbLanguage->getHtmlCode(),
-					'dir' => $fbLanguage->getDir() ],
-				$display
-			);
-
-			$contents = self::legend( $label ) . "\n" . $this->adder( $id, $fbLanguage ) .
-				$display . self::clear();
-
-			$boxes[] = Html::rawElement( 'div', $params, $contents ) .
-				$this->wrapInsert( $id, $text );
-		}
-
-		if ( count( $boxes ) ) {
-			$sep = Html::element( 'hr', [ 'class' => 'mw-translate-sep' ] );
-
-			return TranslateUtils::fieldset(
-				wfMessage(
-					'translate-edit-in-other-languages',
-					$page
-				)->escaped(),
-				implode( "$sep\n", $boxes ),
-				[ 'class' => 'mw-sp-translate-edit-inother' ]
-			);
-		}
-
-		return null;
-	}
-
 	public function getDocumentationBox() {
 		global $wgTranslateDocumentationLanguageCode;
 
@@ -381,56 +321,6 @@ class TranslationHelpers {
 			$context->msg( 'translate-edit-information' )->rawParams( $edit )->escaped(),
 			Html::rawElement( 'div', $divAttribs, $contents ), [ 'class' => $class ]
 		);
-	}
-
-	/**
-	 * @param string $label
-	 * @return string
-	 */
-	protected static function legend( $label ) {
-		# Float it to the opposite direction
-		return Html::rawElement( 'div', [ 'class' => 'mw-translate-legend' ], $label );
-	}
-
-	/**
-	 * @return string
-	 */
-	protected static function clear() {
-		return Html::element( 'div', [ 'style' => 'clear:both;' ] );
-	}
-
-	/**
-	 * @param string $code
-	 * @return array
-	 */
-	protected static function getFallbacks( $code ) {
-		global $wgTranslateLanguageFallbacks;
-
-		// User preference has the final say
-		$user = RequestContext::getMain()->getUser();
-		$preference = $user->getOption( 'translate-editlangs' );
-		if ( $preference !== 'default' ) {
-			$fallbacks = array_map( 'trim', explode( ',', $preference ) );
-			foreach ( $fallbacks as $k => $v ) {
-				if ( $v === $code ) {
-					unset( $fallbacks[$k] );
-				}
-			}
-
-			return $fallbacks;
-		}
-
-		// Global configuration settings
-		$fallbacks = [];
-		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
-			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
-		}
-
-		$list = Language::getFallbacksFor( $code );
-		array_pop( $list ); // Get 'en' away from the end
-		$fallbacks = array_merge( $list, $fallbacks );
-
-		return array_unique( $fallbacks );
 	}
 
 	/**
