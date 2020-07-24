@@ -100,7 +100,7 @@ class ApiTranslationStash extends ApiBase {
 		return 'csrf';
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'subaction' => [
 				ApiBase::PARAM_TYPE => [ 'add', 'query' ],

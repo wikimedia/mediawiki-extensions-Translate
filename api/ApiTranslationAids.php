@@ -104,7 +104,7 @@ class ApiTranslationAids extends ApiBase {
 		$result->addValue( null, 'times', $times );
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		$props = array_keys( TranslationAid::getTypes() );
 		Hooks::run( 'TranslateTranslationAids', [ &$props ] );
 

@@ -42,7 +42,7 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		return $data;
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['language'] = [
 			ApiBase::PARAM_TYPE => 'string',

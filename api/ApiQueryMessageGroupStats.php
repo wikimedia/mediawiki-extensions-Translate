@@ -44,7 +44,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		return $data;
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['group'] = [
 			ApiBase::PARAM_TYPE => 'string',

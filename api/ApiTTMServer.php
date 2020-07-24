@@ -58,7 +58,7 @@ class ApiTTMServer extends ApiBase {
 		return $good;
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		global $wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();
 

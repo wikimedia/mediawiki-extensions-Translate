@@ -57,7 +57,7 @@ class ApiTranslationCheck extends ApiBase {
 		}
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'title' => [
 				ApiBase::PARAM_TYPE => 'string',

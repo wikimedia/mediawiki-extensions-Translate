@@ -225,7 +225,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		);
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'group' => [
 				ApiBase::PARAM_TYPE => 'string',

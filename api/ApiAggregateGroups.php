@@ -191,7 +191,7 @@ class ApiAggregateGroups extends ApiBase {
 		return 'csrf';
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'do' => [
 				ApiBase::PARAM_TYPE => [ 'associate', 'dissociate', 'remove', 'add', 'update' ],

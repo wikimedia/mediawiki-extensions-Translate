@@ -246,7 +246,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		return $stateConfig;
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		$allowedParams = [
 			'depth' => [
 				ApiBase::PARAM_TYPE => 'integer',

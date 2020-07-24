@@ -114,7 +114,7 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 		return $renameList;
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['groupId'] = [
 			ApiBase::PARAM_TYPE => 'string',

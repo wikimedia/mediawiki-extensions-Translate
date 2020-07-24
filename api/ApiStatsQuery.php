@@ -76,7 +76,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 		];
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'offset' => [
 				ApiBase::PARAM_DFLT => '0',

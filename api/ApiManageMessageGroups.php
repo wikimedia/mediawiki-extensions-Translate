@@ -289,7 +289,7 @@ class ApiManageMessageGroups extends ApiBase {
 		}
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'groupId' => [
 				ApiBase::PARAM_TYPE => 'string',

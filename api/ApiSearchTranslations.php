@@ -60,7 +60,7 @@ class ApiSearchTranslations extends ApiBase {
 		];
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		global $wgLanguageCode,
 			$wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();

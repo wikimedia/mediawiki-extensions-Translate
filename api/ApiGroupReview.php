@@ -121,7 +121,7 @@ class ApiGroupReview extends ApiBase {
 		return 'csrf';
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'group' => [
 				ApiBase::PARAM_TYPE => 'string',

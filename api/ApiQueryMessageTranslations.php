@@ -112,7 +112,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		$result->addIndexedTagName( [ 'query', $this->getModuleName() ], 'message' );
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'title' => [
 				ApiBase::PARAM_TYPE => 'string',

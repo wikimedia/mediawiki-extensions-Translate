@@ -188,7 +188,7 @@ class ApiTranslateSandbox extends ApiBase {
 		return 'csrf';
 	}
 
-	public function getAllowedParams() {
+	protected function getAllowedParams() {
 		return [
 			'do' => [
 				ApiBase::PARAM_TYPE => [ 'create', 'delete', 'promote', 'remind' ],
