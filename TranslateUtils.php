@@ -579,8 +579,16 @@ class TranslateUtils {
 	 * @return bool
 	 */
 	public static function allowsSubpages( Title $title ): bool {
-		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
-		return $namespaceInfo->hasSubpages( $title->getNamespace() );
+		$mwInstance = MediaWikiServices::getInstance();
+		if ( is_callable( [ $mwInstance, 'getNamespaceInfo' ] ) ) {
+			$namespaceInfo = $mwInstance->getNamespaceInfo();
+			return $namespaceInfo->hasSubpages( $title->getNamespace() );
+		} else {
+			// BC for MW 1.33
+			global $wgNamespacesWithSubpages;
+			return isset( $wgNamespacesWithSubpages[ $title->getNamespace() ] ) &&
+				$wgNamespacesWithSubpages[ $title->getNamespace() ];
+		}
 	}
 
 	public static function isEditPage( WebRequest $request ): bool {
