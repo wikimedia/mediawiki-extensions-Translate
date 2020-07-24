@@ -76,7 +76,7 @@
 	"tpt-translation-intro": "הדף הזה הוא <span class=\"plainlinks\">[$1 גרסה מתורגמת]</span> של הדף [[$2]] והתרגום שלם ב־$3%.",
 	"tpt-translation-intro-fuzzy": "תרגומים שפג תוקפם מסומנים כך.",
 	"tpt-languages-legend": "שפות אחרות:",
-	"tpt-languages-zero": "להתחיל לתרגום לשפה הזאת",
+	"tpt-languages-zero": "להתחיל לתרגם לשפה הזאת",
 	"tpt-languages-nonzero": "$1 (מתורגם: $2%)",
 	"tpt-tab-translate": "תרגום",
 	"tpt-target-page": "לא ניתן לעדכן דף זה ידנית.\nדף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].",
