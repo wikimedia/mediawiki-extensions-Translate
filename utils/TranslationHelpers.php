@@ -202,20 +202,11 @@ class TranslationHelpers {
 		$this->mustHaveDefinition();
 		$en = $this->getDefinition();
 
-		$title = Linker::link(
-			SpecialPage::getTitleFor( 'Translate' ),
-			htmlspecialchars( $this->group->getLabel() ),
-			[],
-			[
-				'group' => $this->group->getId(),
-				'language' => $this->handle->getCode()
-			]
-		);
-
+		$linkTag = self::ajaxEditLink( $this->handle->getTitle(), $this->group->getLabel() );
 		$label =
 			wfMessage( 'translate-edit-definition' )->escaped() .
 				wfMessage( 'word-separator' )->escaped() .
-				wfMessage( 'parentheses' )->rawParams( $title )->escaped();
+				wfMessage( 'parentheses' )->rawParams( $linkTag )->escaped();
 
 		// Source language object
 		$sl = Language::factory( $this->group->getSourceLanguage() );
