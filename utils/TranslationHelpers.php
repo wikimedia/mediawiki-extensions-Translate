@@ -224,7 +224,6 @@ class TranslationHelpers {
 	public function getBoxNames() {
 		return [
 			'other-languages' => [ $this, 'getOtherLanguagesBox' ],
-			'separator' => [ $this, 'getSeparatorBox' ],
 			'documentation' => [ $this, 'getDocumentationBox' ],
 			'definition' => [ $this, 'getDefinitionBox' ],
 		];
@@ -342,10 +341,6 @@ class TranslationHelpers {
 		}
 
 		return null;
-	}
-
-	public function getSeparatorBox() {
-		return Html::element( 'div', [ 'class' => 'mw-translate-edit-extra' ] );
 	}
 
 	public function getDocumentationBox() {
