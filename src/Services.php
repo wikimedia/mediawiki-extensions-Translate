@@ -37,25 +37,27 @@ class Services implements ContainerInterface {
 
 	/** @inheritDoc */
 	public function get( $id ) {
-		return $this->container->get( $id );
+		// Can be changed to using ::get once we drop support for MW 1.33
+		return $this->container->getService( $id );
 	}
 
 	/** @inheritDoc */
 	public function has( $id ) {
-		return $this->container->has( $id );
+		// Can be changed to using ::has once we drop support for MW 1.33
+		return $this->container->hasService( $id );
 	}
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
-		return $this->container->get( 'Translate:GroupSynchronizationCache' );
+		return $this->container->getService( 'Translate:GroupSynchronizationCache' );
 	}
 
 	/** @since 2020.07 */
 	public function getParsingPlaceholderFactory(): ParsingPlaceholderFactory {
-		return $this->container->get( 'Translate:ParsingPlaceholderFactory' );
+		return $this->container->getService( 'Translate:ParsingPlaceholderFactory' );
 	}
 
 	public function getTranslatorActivity(): TranslatorActivity {
-		return $this->container->get( 'Translate:TranslatorActivity' );
+		return $this->container->getService( 'Translate:TranslatorActivity' );
 	}
 
 }
