@@ -86,14 +86,6 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * Sets the HTML id of the text area that contains the translation.
-	 * @param string $id
-	 */
-	public function setTextareaId( $id ) {
-		$this->textareaId = $id;
-	}
-
-	/**
 	 * Enable or disable extra help for editing.
 	 * @param bool $mode
 	 */
