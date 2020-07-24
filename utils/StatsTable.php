@@ -310,22 +310,4 @@ class StatsTable {
 
 		return $blacklisted;
 	}
-
-	/**
-	 * Used to circumvent ugly tooltips when newlines are used in the
-	 * message content ("x\ny" becomes "x y").
-	 * @param string $text
-	 * @return string
-	 */
-	public static function formatTooltip( $text ) {
-		$wordSeparator = wfMessage( 'word-separator' )->text();
-
-		$text = strtr( $text, [
-			"\n" => $wordSeparator,
-			"\r" => $wordSeparator,
-			"\t" => $wordSeparator,
-		] );
-
-		return $text;
-	}
 }
