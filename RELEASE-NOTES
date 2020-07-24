@@ -1,0 +1,15 @@
+== Translate 2020.07 ==
+Released at 2020-07-24.
+
+=== Noteworthy changes ===
+* Fixes to moving and deletion of translatable pages. ([[phab:T168591|Phab:T168591]])
+* Improved escape sequence handling for the Android XML file format. ([[phab:T192062|Phab:T192062]])
+* Display a help message when editing a translatable page source. ([[phab:T192052|Phab:T192052]])
+* Translations are now published instead of saved, for consistency with rest of MediaWiki. ([[phab:T131132|Phab:T131132]])
+* Updated Google Translate integration ([[phab:T33695|Phab:T33695]])
+* Patrolling of edits to translation pages is allowed. ([[phab:T151172|Phab:T151172]])
+* Message index should now be more robust and issues like "the message does not correspond to any message group" when translating should no longer occur. ([[phab:T221119|Phab:T221119]])
+* Ensure plural keyword other is always present in exports for yaml and json. ([[gerrit:c/mediawiki/extensions/Translate/+/603470|Gerrit Patch]])
+* Interface changes to message validator code. If you have custom validators, you need to migrate them to a new interface. ([[gerrit:c/mediawiki/extensions/Translate/+/604400|Gerrit Patch]])
+* Translatable pages can now prevent wrapping of outdated (and in future untranslated) units by using &lt;translate nowrap> syntax.<!-- unescape for email -->([[phab:T256625|Phab:T256625]])
+* Slight changes to Special:PageTranslation interface. ([[gerrit:c/mediawiki/extensions/Translate/+/610073|Gerrit Patch]])
