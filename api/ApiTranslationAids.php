@@ -49,6 +49,7 @@ class ApiTranslationAids extends ApiBase {
 		$result = $this->getResult();
 
 		// Create list of aids, populate web services queries
+		/** @var TranslationAid[] $aids */
 		$aids = [];
 
 		$dataProvider = new TranslationAidDataProvider( $handle );
