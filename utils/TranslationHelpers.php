@@ -210,10 +210,7 @@ class TranslationHelpers {
 		}
 	}
 
-	/**
-	 * @return array
-	 */
-	public function getBoxNames() {
+	public function getBoxNames(): array {
 		return [
 			'documentation' => [ $this, 'getDocumentationBox' ],
 			'definition' => [ $this, 'getDefinitionBox' ],
@@ -315,10 +312,7 @@ class TranslationHelpers {
 		);
 	}
 
-	/**
-	 * @return string
-	 */
-	public function dialogID() {
+	public function dialogID(): string {
 		$hash = sha1( $this->handle->getTitle()->getPrefixedDBkey() );
 
 		return substr( $hash, 0, 4 );
