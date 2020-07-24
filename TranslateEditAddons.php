@@ -448,7 +448,6 @@ class TranslateEditAddons {
 		$boxes = [];
 		$boxes[] = $th->callBox( 'documentation', [ $th, 'getDocumentationBox' ] );
 		$boxes[] = $th->callBox( 'definition', [ $th, 'getDefinitionBox' ] );
-		$boxes[] = $th->callBox( 'translation', [ $th, 'getTranslationDisplayBox' ] );
 
 		$output = implode( "\n", $boxes );
 		$output = Html::rawElement(

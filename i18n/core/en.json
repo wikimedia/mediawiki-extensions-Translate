@@ -45,7 +45,6 @@
 	"translate-ignored": "(ignored)",
 	"translate-edit-title": "Edit \"$1\"",
 	"translate-edit-definition": "Message definition",
-	"translate-edit-translation": "Translation",
 	"translate-edit-contribute": "contribute",
 	"translate-edit-no-information": "<em>This message has no documentation.\nIf you know where or how this message is used, you can help other translators by adding documentation to this message.</em>",
 	"translate-edit-information": "Information about message ($1)",

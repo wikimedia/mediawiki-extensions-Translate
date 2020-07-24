@@ -80,7 +80,6 @@
 	"translate-ignored": "{{Identical|Ignore}}",
 	"translate-edit-title": "Used as a tooltip for edit links in lists with translatable messages. Parameters:\n* $1 is the name of the page to be edited.\n{{Identical|Edit}}",
 	"translate-edit-definition": "Heading of infobox containing original message to be translated.",
-	"translate-edit-translation": "Legend for box like {{msg-mw|Translate-edit-definition}} or {{msg-mw|Translate-edit-in-other-languages}}.\n{{Identical|Translation}}",
 	"translate-edit-contribute": "This appears in the parentheses after {{msg-mw|Translate-edit-information}}. It links to the information page in edit mode.\n{{Identical|Contribute}}",
 	"translate-edit-no-information": "Message is used as a hint to translators that documentation for a message without documentation is needed.",
 	"translate-edit-information": "Caption for box which contains information about the message. $1 is {{msg-mw|translate-edit-contribute}}.",

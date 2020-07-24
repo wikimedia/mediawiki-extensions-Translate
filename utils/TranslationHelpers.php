@@ -229,21 +229,6 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset( $label, $msg, $class );
 	}
 
-	public function getTranslationDisplayBox() {
-		$en = $this->getTranslation();
-		if ( $en === null ) {
-			return null;
-		}
-		$label = wfMessage( 'translate-edit-translation' )->escaped();
-		$class = [ 'class' => 'mw-translate-edit-translation' ];
-		$msg = Html::rawElement( 'span',
-			[ 'class' => 'mw-translate-edit-translationtext' ],
-			TranslateUtils::convertWhiteSpaceToHTML( $en )
-		);
-
-		return TranslateUtils::fieldset( $label, $msg, $class );
-	}
-
 	public function getDocumentationBox() {
 		global $wgTranslateDocumentationLanguageCode;
 
