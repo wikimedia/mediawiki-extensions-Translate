@@ -103,65 +103,6 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * Replace the normal save button with one that says if you are editing
-	 * message documentation to try to avoid accidents.
-	 * Hook: EditPageBeforeEditButtons
-	 *
-	 * @param EditPage $editpage
-	 * @param array &$buttons
-	 * @param int $tabindex
-	 */
-	public static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
-		$handle = new MessageHandle( $editpage->getTitle() );
-		if ( !$handle->isValid() ) {
-			return;
-		}
-
-		$context = $editpage->getArticle()->getContext();
-
-		if ( $handle->isDoc() ) {
-			$langCode = $context->getLanguage()->getCode();
-			$name = TranslateUtils::getLanguageName( $handle->getCode(), $langCode );
-			$attribs = [
-				'id' => 'wpSave',
-				'name' => 'wpSave',
-				'tabindex' => ++$tabindex,
-			] + Linker::tooltipAndAccesskeyAttribs( 'save' );
-
-			$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
-			$buttons['save'] = new OOUI\ButtonInputWidget( [
-				// Support: IE 6 – Use <input>, otherwise it can't distinguish which button was clicked
-				'useInputTag' => true,
-				'flags' => [ 'progressive', 'primary' ],
-				'label' => $context->msg( 'translate-save', $name )->text(),
-				'type' => 'submit',
-			] + $saveConfig );
-		}
-
-		try {
-			$supportUrl = SupportAid::getSupportUrl( $handle->getTitle() );
-		} catch ( TranslationHelperException $e ) {
-			return;
-		}
-
-		$attribs = [
-			'id' => 'wpSupport',
-			'name' => 'wpSupport',
-			'type' => 'button',
-			'tabindex' => ++$tabindex,
-			'title' => $context->msg( 'translate-js-support-title' )->text(),
-		];
-
-		$attribs += [
-			'label' => $context->msg( 'translate-js-support' )->text(),
-			'href' => $supportUrl,
-			'target' => '_blank',
-		];
-		$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
-		$buttons['ask'] = new OOUI\ButtonWidget( $saveConfig );
-	}
-
-	/**
 	 * @param EditPage $editpage
 	 * @return string
 	 */

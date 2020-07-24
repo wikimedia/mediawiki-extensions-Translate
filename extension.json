@@ -277,7 +277,6 @@
 		"EditPage::showEditForm:initial": "TranslateEditAddons::addTools",
 		"AlternateEdit": "TranslateEditAddons::suppressIntro",
 		"getUserPermissionsErrorsExpensive": "TranslateEditAddons::disallowLangTranslations",
-		"EditPageBeforeEditButtons": "TranslateEditAddons::buttonHack",
 		"LanguageGetTranslatedLanguageNames": "TranslateHooks::translateMessageDocumentationLanguage",
 		"TranslateSupportedLanguages": "TranslateHooks::translateMessageDocumentationLanguage",
 		"ArticlePrepareTextForEdit": "TranslateEditAddons::disablePreSaveTransform",
