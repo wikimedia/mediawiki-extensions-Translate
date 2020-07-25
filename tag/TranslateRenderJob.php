@@ -74,12 +74,13 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$user = $this->getUser();
 		$summary = $this->getSummary();
 		$flags = $this->getFlags();
+		$model = $page->getTitle()->getContentModel();
 
 		$page = WikiPage::factory( $title );
 
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
-		$content = ContentHandler::makeContent( $text, $page->getTitle() );
+		$content = ContentHandler::makeContent( $text, $page->getTitle(), $model );
 		$editStatus = $page->doEditContent( $content, $summary, $flags, false, $user );
 		if ( !$editStatus->isOK() ) {
 			$this->logError(
