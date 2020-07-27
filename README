@@ -19,10 +19,18 @@ More documentation is at
  https://www.mediawiki.org/wiki/Help:Extension:Translate/Configuration
 
 == Contributing ==
-* Translations? Go to https://translatewiki.net and sign up.
-* Code? File format handlers? New message groups? Graphics? Suggestions?
-  Bug reports? File a bug or feature request or join us at #mediawiki-i18n
-  and let us know what you have in mind.
+To translate this extension go to https://translatewiki.net and sign up.
 
-Known bugs and feature requests are collected at:
+To contribute features, fixes and code maintenance, please see
+* https://www.mediawiki.org/wiki/How_to_become_a_MediaWiki_hacker
+* https://www.mediawiki.org/wiki/Special:MyLanguage/Code_of_Conduct
+* https://www.mediawiki.org/wiki/Help:Extension:Translate/Developer_guide
+
+There is also a dedicated Translate and translatewiki.net development
+environment, see
+* https://gerrit.wikimedia.org/r/plugins/gitiles/translatewiki/+/refs/heads/master/puppet/README
+
+Known bugs and feature requests are collected and reported at
  https://phabricator.wikimedia.org/tag/mediawiki-extensions-translate/
+
+You can chat with the developers at #mediawiki-i18n on Freenode IRC.
