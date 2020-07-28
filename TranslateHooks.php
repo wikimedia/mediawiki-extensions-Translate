@@ -876,12 +876,6 @@ class TranslateHooks {
 					'translate-msggroupselector-view-subprojects'
 				]
 			],
-			'ext.translate.multiselectautocomplete' => $tpl + [
-				'scripts' => 'resources/js/ext.translate.multiselectautocomplete.js',
-				'dependencies' => [
-					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
-				]
-			],
 			'ext.translate.special.aggregategroups' => $tpl + [
 				'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
 				'dependencies' => [
@@ -947,11 +941,16 @@ class TranslateHooks {
 				]
 			],
 			'ext.translate.special.pagetranslation' => $tpl + [
-				'scripts' => 'resources/js/ext.translate.special.pagetranslation.js',
+				'packageFiles' => [
+					'resources/js/ext.translate.special.pagetranslation.js',
+					'resources/js/LanguagesMultiselectWidget.js'
+				],
 				'dependencies' => [
-					'ext.translate.multiselectautocomplete',
-					'mediawiki.ui.button',
 					'mediawiki.Uri',
+					'mediawiki.api',
+					'mediawiki.ui.button',
+					'mediawiki.widgets',
+					'oojs-ui-widgets',
 					$hasOldTokens ? 'user.tokens' : 'user.options',
 				],
 				'targets' => [

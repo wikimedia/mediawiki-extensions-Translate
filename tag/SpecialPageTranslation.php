@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Revision\RevisionRecord;
 
 /**
@@ -778,15 +779,19 @@ class SpecialPageTranslation extends SpecialPage {
 
 	private function priorityLanguagesForm( TranslatablePage $page ): void {
 		$groupId = $page->getMessageGroupId();
+		$interfaceLanguage = $this->getLanguage()->getCode();
+		$storedLanguages = (string)TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$default = $storedLanguages !== '' ? explode( ',', $storedLanguages ) : [];
 
 		$form = new OOUI\FieldsetLayout( [
 			'items' => [
 				new OOUI\FieldLayout(
-					new OOUI\TextInputWidget( [
+					new LanguagesMultiselectWidget( [
+						'infusable' => true,
 						'name' => 'prioritylangs',
-						'value' => TranslateMetadata::get( $groupId, 'prioritylangs' ),
-						'inputId' => 'tpt-prioritylangs',
-						'dir' => 'ltr',
+						'id' => 'mw-translate-SpecialPageTranslation-prioritylangs',
+						'languages' => TranslateUtils::getLanguageNames( $interfaceLanguage ),
+						'default' => $default,
 					] ),
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs' )->text(),
@@ -984,14 +989,17 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param TranslatablePage $page
 	 */
 	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page ) {
-		// new priority languages
-		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs' ) ), ',' );
+		// Get the priority languages from the request
+		// We've to do some extra work here because if JS is disabled, we will be getting
+		// the values split by newline.
+		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs', '' ) ), ',' );
+		$npLangs = implode( ',', explode( "\n", $npLangs ) );
+		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
+		$npLangs = array_unique( $npLangs );
+
 		$npForce = $request->getCheck( 'forcelimit' ) ? 'on' : 'off';
 		$npReason = trim( $request->getText( 'priorityreason' ) );
 
-		// Normalize
-		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
-		$npLangs = array_unique( $npLangs );
 		// Remove invalid language codes.
 		$languages = Language::fetchLanguageNames();
 		foreach ( $npLangs as $index => $language ) {

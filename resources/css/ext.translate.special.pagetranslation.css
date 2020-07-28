@@ -21,11 +21,6 @@
 	padding-right: 2em;
 }
 
-.mw-special-PageTranslation .ui-autocomplete {
-	max-height: 100px;
-	overflow-y: auto;
-	/* prevent horizontal scrollbar */
-	overflow-x: hidden;
-	/* add padding to account for vertical scrollbar */
-	padding-right: 20px;
+.client-nojs .mw-tpt-sp-markform .mw-widgets-pendingTextInputWidget {
+	display: none;
 }
