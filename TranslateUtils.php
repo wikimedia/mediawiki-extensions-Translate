@@ -499,7 +499,7 @@ class TranslateUtils {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		$index = self::shouldReadFromMaster() ? DB_MASTER : DB_REPLICA;
 
-		return $lb->getConnection( $index );
+		return $lb->getConnectionRef( $index );
 	}
 
 	/**
