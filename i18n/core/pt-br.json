@@ -61,7 +61,6 @@
 	"translate-edit-contribute": "contribua",
 	"translate-edit-no-information": "<em>Esta mensagem ainda não foi documentada.\nCaso você saiba onde ou como ela é utilizada, poderá ajudar outros tradutores adicionando informações sobre esta mensagem.</em>",
 	"translate-edit-information": "Informações sobre a mensagem ($1)",
-	"translate-edit-in-other-languages": "Esta mensagem em outros idiomas",
 	"translate-edit-warnings": "Avisos sobre traduções incompletas",
 	"translate-edit-tmmatch-source": "Texto de origem da tradução: $1",
 	"translate-edit-tmmatch": "$1% coincidente",

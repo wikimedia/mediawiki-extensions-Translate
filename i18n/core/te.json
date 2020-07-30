@@ -46,7 +46,6 @@
 	"translate-edit-contribute": "తోడ్పడండి",
 	"translate-edit-no-information": "<em>ఈ సందేశానికి డాక్యుమెంటేషను లేదు. \nఈ సందేశాన్ని ఎక్కడ లేదా ఎలా ఉపయోగిస్తారో మీకు తెలిస్తే, దీనికి ఆ సమాచారాన్ని చేర్చి ఇతర అనువాదకులకు తోడ్పడవచ్చు.</em>",
 	"translate-edit-information": "సందేశం గురించి సమాచారం ($1)",
-	"translate-edit-in-other-languages": "ఇతర భాషలలో సందేశం",
 	"translate-edit-warnings": "అసంపూర్తి అనువాదాల గురించి హెచ్చరికలు",
 	"translate-edit-tmmatch-source": "మూలకోశ అనువాదం: $1",
 	"translate-edit-tmmatch": "$1% పోలిక",

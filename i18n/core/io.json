@@ -27,7 +27,6 @@
 	"translate-edit-contribute": "kontributez",
 	"translate-edit-no-information": "<em>Ica mesajo ne havas dokumentigo.\nSe vu savas ube o quale ica mesajo uzesas, vu povas helpar altra tradukuri, per la kreado di dokumentigo pri ica mesajo.</em>",
 	"translate-edit-information": "Informo pri mesajo ($1)",
-	"translate-edit-in-other-languages": "Mesajo en altra lingui",
 	"translate-edit-warnings": "Avizi pri nekompleta tradukuri",
 	"translate-use-suggestion": "Substitucar la nuna tradukuro per ca sugesto.",
 	"translate-checks-parameters": "Atencez! La sequanta {{PLURAL:$2|parametro|parametri}} ne uzesis:\n<strong>$1</strong>",

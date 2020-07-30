@@ -45,7 +45,6 @@
 	"translate-edit-contribute": "matschaffen",
 	"translate-edit-no-information": "<em>Dëse Message huet keng Dokumentatioun.\nWann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aner Iwwersetzer hëllefen an deem Dir Informatiounen iwwer dëse Message gitt.</em>",
 	"translate-edit-information": "Informatioun iwwer de Message ($1)",
-	"translate-edit-in-other-languages": "Message an anere Sproochen",
 	"translate-edit-warnings": "Warnunge virun onkompletten Iwwersetzungen",
 	"translate-edit-tmmatch-source": "Quelltext fir d'Iwwersetzung: $1",
 	"translate-edit-tmmatch": "$1% Iwwereneestëmmung",

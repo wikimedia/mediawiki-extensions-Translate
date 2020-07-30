@@ -56,7 +56,6 @@
 	"translate-edit-contribute": "přispět",
 	"translate-edit-no-information": "<em>K této zprávě není dokumentace. Pokud víte, kde nebo jak se zpráva používá, můžete pomoci dalším překladatelům tím, že přidáte dokumentaci k této zprávě.</em>",
 	"translate-edit-information": "Informace o zprávě ($1)",
-	"translate-edit-in-other-languages": "Zpráva v jiných jazycích",
 	"translate-edit-warnings": "Upozornění na neúplný překlad",
 	"translate-edit-tmmatch-source": "Zdrojový text překladu: $1",
 	"translate-edit-tmmatch": "$1% shoda",

@@ -46,7 +46,6 @@
 	"translate-edit-contribute": "wysig",
 	"translate-edit-no-information": "''Die boodskap het geen dokumentasie nie.''\n''As u weet waar die boodskap gebruik word, kan u ander gebruikers help deur dokumentasie by te voeg.''",
 	"translate-edit-information": "Inligting oor boodskap ($1)",
-	"translate-edit-in-other-languages": "Boodskap in ander tale",
 	"translate-edit-warnings": "Waarskuwings oor onvoltooide vertalings",
 	"translate-edit-tmmatch-source": "Bronteks vir vertaling: $1",
 	"translate-edit-tmmatch": "$1% ooreenkoms",

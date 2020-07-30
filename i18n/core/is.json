@@ -46,7 +46,6 @@
 	"translate-edit-contribute": "breyta",
 	"translate-edit-no-information": "<em>Þessi melding er ekki með neinar leiðbeiningar.\nEf þú veist hvar eða hvernig meldingin er notuð getur þú hjálpað öðrum þýðendum með því að bæta ábendingum við hana.</em>",
 	"translate-edit-information": "Upplýsingar um þessa meldingu ($1)",
-	"translate-edit-in-other-languages": "Meldingin á öðrum tungumálum",
 	"translate-edit-warnings": "Viðvaranir vegna ókláraðra þýðinga",
 	"translate-edit-tmmatch-source": "Uppruna texti þýðingarinnar: $1",
 	"translate-edit-tmmatch": "$1% samsvörun",

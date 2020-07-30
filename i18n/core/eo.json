@@ -59,7 +59,6 @@
 	"translate-edit-contribute": "kontribui",
 	"translate-edit-no-information": "<em>Ĉi tiu mesaĝo ne havas dokumentadon. Se vi scias, kie aŭ kiel ĉi tiu mesaĝo estas uzata, vi povas helpi al aliaj tradukantoj aldonante dokumentadon al ĉi tiu mesaĝo.</em>",
 	"translate-edit-information": "Informo pri la mesaĝo ($1)",
-	"translate-edit-in-other-languages": "Mesaĝo en aliaj lingvoj",
 	"translate-edit-warnings": "Avertoj pri nekompletaj tradukoj",
 	"translate-edit-tmmatch-source": "Tradukfontateksto: $1",
 	"translate-edit-tmmatch": "$1% kongrueco",

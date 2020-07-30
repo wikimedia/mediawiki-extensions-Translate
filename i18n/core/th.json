@@ -50,7 +50,6 @@
 	"translate-edit-contribute": "ช่วยเขียน",
 	"translate-edit-no-information": "<em>ข้อความนี้ไม่มีคำอธิบายการใช้งาน\nถ้าคุณทราบว่าข้อความนี้ใช้ตรงส่วนไหนหรือใช้อย่างไร คุณสามารถช่วยเพิ่มคำอธิบายการใช้งานของข้อความนี้ เพื่อเป็นประโยชน์แก่ผู้แปลคนอื่นได้</em>",
 	"translate-edit-information": "ข้อมูลเกี่ยวกับข้อความ ($1)",
-	"translate-edit-in-other-languages": "ข้อความในภาษาอื่น ๆ",
 	"translate-edit-warnings": "คำเตือนเกี่ยวกับคำแปลที่ยังไม่สมบูรณ์หรือมีปัญหา",
 	"translate-edit-tmmatch-source": "ข้อความต้นทางการแปล: $1",
 	"translate-edit-tmmatch": "ตรงกัน $1%",

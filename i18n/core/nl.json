@@ -60,7 +60,6 @@
 	"translate-edit-contribute": "bijdragen",
 	"translate-edit-no-information": "<em>Dit bericht heeft geen documentatie.\nAls u weet waar of hoe dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.</em>",
 	"translate-edit-information": "Informatie over bericht ($1)",
-	"translate-edit-in-other-languages": "Bericht in andere talen",
 	"translate-edit-warnings": "Waarschuwingen over onjuiste vertalingen",
 	"translate-edit-tmmatch-source": "Brontekst voor vertaling: $1",
 	"translate-edit-tmmatch": "$1% overeenkomst",

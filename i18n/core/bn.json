@@ -50,7 +50,6 @@
 	"translate-edit-contribute": "অবদান",
 	"translate-edit-no-information": "<em>এই বার্তাটির কোন নথি নেই।\nআপনি যদি জানেন এই বার্তাটি কোথায় বা কিভাবে ব্যবহার করা হয়েছে, আপনি এই বার্তায় নথি যোগ করে অন্যান্য অনুবাদকদের সাহায্য করতে পারেন।</em>",
 	"translate-edit-information": "বার্তা সম্পর্কে তথ্য ($1)",
-	"translate-edit-in-other-languages": "অন্যান্য ভাষায় বার্তা",
 	"translate-edit-warnings": "অসম্পূর্ণ অনুবাদের ওপর সতর্কবার্তা",
 	"translate-edit-tmmatch-source": "অনুবাদের জন্য উৎস পাঠ্য: $1",
 	"translate-edit-tmmatch": "{{formatnum:$1}}% মিল রয়েছে",

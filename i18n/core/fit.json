@@ -33,7 +33,6 @@
 	"translate-edit-translation": "Käänös",
 	"translate-edit-contribute": "avusta tokymentoinnissa",
 	"translate-edit-no-information": "<em>Tätä viestiä ei ole tokymentoitu.\nJos tiiät missä tai miten tätä viestiä käytethään, voit auttaa muita kääntäjiä lissäämällä kommentteja tähän viestiin.</em>",
-	"translate-edit-in-other-languages": "Viesti muila kielilä",
 	"translate-edit-tmmatch-source": "Käänöksen läheteksti: $1",
 	"translate-use-suggestion": "Korvaa nykynen käänös tällä ehotuksella.",
 	"translate-edit-nopermission": "Viestien kääntämisheen tarvithaan käänösoikeuet.",

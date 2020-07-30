@@ -58,7 +58,6 @@
 	"translate-edit-contribute": "berkontribusi",
 	"translate-edit-no-information": "<em>Pesan ini tidak memiliki dokumentasi.\nJika Anda mengetahui di mana dan bagaimana pesan ini digunakan, Anda dapat membantu penerjemah lain dengan menambahkan dokumentasi untuk pesan ini.</em>",
 	"translate-edit-information": "Informasi mengenai pesan ($1)",
-	"translate-edit-in-other-languages": "Pesan dalam bahasa lain",
 	"translate-edit-warnings": "Peringatan mengenai terjemahan yang tak lengkap",
 	"translate-edit-tmmatch-source": "Teks sumber terjemahan: $1",
 	"translate-edit-tmmatch": "$1% sesuai",

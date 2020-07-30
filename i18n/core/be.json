@@ -49,7 +49,6 @@
 	"translate-edit-contribute": "правіць",
 	"translate-edit-no-information": "<em>Гэта паведамленне не мае апісання. Калі вы ведаеце, дзе ці як гэта паведамленне выкарыстоўваецца, то можаце дапамагчы іншым перакладчыкам, дадаўшы да яго апісанне.</em>",
 	"translate-edit-information": "Інфармацыя пра паведамленне ($1)",
-	"translate-edit-in-other-languages": "Паведамленне на іншых мовах",
 	"translate-edit-warnings": "Папярэджанні пра няпоўныя пераклады",
 	"translate-edit-tmmatch-source": "Тэкст зыходнага паведамлення для перакладу: $1",
 	"translate-edit-tmmatch": "$1% адпаведнасць",

@@ -44,7 +44,6 @@
 	"translate-edit-contribute": "cofnodi eglurhad",
 	"translate-edit-no-information": "<em>Nid oes unrhyw wybodaeth wedi ei chofnodi am y neges hon eto.\nOs ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.</em>",
 	"translate-edit-information": "Gwybodaeth am y neges ($1)",
-	"translate-edit-in-other-languages": "Y neges mewn ieithoedd eraill",
 	"translate-edit-warnings": "Rhybudd am gyfieithiad anghyflawn",
 	"translate-edit-tmmatch-source": "Y testun gwreiddiol i'w gyfieithu: $1",
 	"translate-edit-tmmatch": "yn cyd-fynd $1%",

@@ -34,7 +34,6 @@
 	"translate-edit-contribute": "ساهم",
 	"translate-edit-no-information": "''ليس لهذه الرساله توثيق.\nإذا كنت تعرف أين أو كيف يتم استخدام هذه الرساله، فيمكنك مساعده المترجمين الآخرين بإضافه توثيق إلى هذه الرساله.''",
 	"translate-edit-information": "معلومات عن الرساله ($1)",
-	"translate-edit-in-other-languages": "الرساله بلغات تانيه",
 	"translate-edit-warnings": "التحذيرات حول الترجمات غير المكتملة",
 	"translate-edit-tmmatch-source": "نص المصدر للترجمه: $1",
 	"translate-edit-tmmatch": "$1% مطابقة",

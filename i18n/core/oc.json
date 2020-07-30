@@ -48,7 +48,6 @@
 	"translate-edit-contribute": "contribuir",
 	"translate-edit-no-information": "<em>Aqueste messatge es pas documentat.\nSe sabètz ont o cossí aqueste messatge es utilizat, podètz ajudar los autres traductors en creant sa documentacion.</em>",
 	"translate-edit-information": "Entresenhas a prepaus del messatge ($1)",
-	"translate-edit-in-other-languages": "Messatge dins d'autras lengas",
 	"translate-edit-warnings": "Avertiments que concernisson las traduccions incompletas",
 	"translate-edit-tmmatch-source": "Tèxte font de la traduccion : $1",
 	"translate-edit-tmmatch": "$1 % de correspondéncia",

@@ -67,7 +67,6 @@
 	"translate-edit-contribute": "編集",
 	"translate-edit-no-information": "<em>このメッセージについての説明文はありません。\nこのメッセージがどこでどのように使用されているか知っている場合は、説明文を投稿して他の翻訳者を助けてください。</em>",
 	"translate-edit-information": "メッセージについての情報 ($1)",
-	"translate-edit-in-other-languages": "他言語でのメッセージ",
 	"translate-edit-warnings": "不完全な翻訳に対する警告",
 	"translate-edit-tmmatch-source": "翻訳元の文章: $1",
 	"translate-edit-tmmatch": "$1%の一致",

@@ -27,7 +27,6 @@
 	"translate-edit-contribute": "kontribuoj",
 	"translate-edit-no-information": "''Ky mesazh nuk ka asnjë dokumentacion. Nëse ju e dini se ku apo se si ky mesazh është përdorur, ju mund të ndihmoni përkthyes të tjerë duke dokumentacionin në këtë mesazh.''",
 	"translate-edit-information": "Informacion rreth mesazh \"$2\" ($1)",
-	"translate-edit-in-other-languages": "Mesazhi \"$1\" në gjuhë të tjera",
 	"translate-edit-warnings": "Paralajmërimet për përkthime të plota",
 	"translate-edit-tmmatch": "ndeshje $1%",
 	"translate-manage-import-diff": "Mesazhi $1 | Veprimi: $2",

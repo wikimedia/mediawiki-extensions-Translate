@@ -86,7 +86,7 @@
 	"tpt-languages-zero": "Bu dili için çeviriyi başlatın",
 	"tpt-languages-nonzero": "$1 (%$2 çevrildi)",
 	"tpt-tab-translate": "Çevir",
-	"tpt-target-page": "Bu sayfa manüel olarak güncellenemez.\nBu sayfa [[$1]] sayfasının bir çevirisidir ve çeviri [$2 çeviri aracı] kullanılarak güncellenebilir.",
+	"tpt-target-page": "Bu sayfa elle güncellenemez.\nBu sayfa [[$1]] sayfasının bir çevirisidir ve çeviri, [$2 çeviri aracı] kullanılarak güncellenebilir.",
 	"tpt-unknown-page": "Bu ad alanı içerik sayfası çevirileri için ayrılmıştır.\nDüzenlemeye çalıştığınız sayfa, çeviri için işaretlenmiş hiçbir sayfaya karşılık gelmiyor gibi görünüyor.",
 	"tpt-translation-restricted": "Bu sayfanın bu dile çevirisi çeviri hizmetlisi tarafından engellendi.\n\nSebep: $1",
 	"tpt-discouraged-language-force-header": "Bu sayfa $1 ile çevrilemez.",

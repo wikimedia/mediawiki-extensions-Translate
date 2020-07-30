@@ -40,7 +40,6 @@
 	"translate-edit-definition": "შეტყობინების განმარტება",
 	"translate-edit-translation": "თარგმანი",
 	"translate-edit-no-information": "''ამ შეტყობინებას არ აქვს დოკუმენტაცია.''\n''თუ იცით სად და როგორ გამოიყენება ეს შეტყობინება, გთხოვთ დაეხმაროთ სხვა მთარგმნელებს და დაურთოთ დოკუმენტაცია ამ შეტყობინებას.''",
-	"translate-edit-in-other-languages": "ეს შეტყობინება სხვა ენებზე",
 	"translate-edit-tmmatch": "$1% შესაბამისობა",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> არაკორექტულია.",
 	"translate-pref-editassistlang": "დამხმარე ენები:",

@@ -56,7 +56,6 @@
 	"translate-edit-contribute": "לתרום תיעוד",
 	"translate-edit-no-information": "<em>להודעה זו אין תיעוד.\nאם ידוע לך היכן או כיצד משתמשים בהודעה הזאת, באפשרותך לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.</em>",
 	"translate-edit-information": "מידע על ההודעה ($1)",
-	"translate-edit-in-other-languages": "ההודעה בשפות אחרות",
 	"translate-edit-warnings": "אזהרות על תרגומים חלקיים",
 	"translate-edit-tmmatch-source": "טקסט המקור של התרגום: $1",
 	"translate-edit-tmmatch": "רמת התאמה: $1%",

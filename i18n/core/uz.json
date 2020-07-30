@@ -43,7 +43,6 @@
 	"translate-edit-contribute": "tahrirlash",
 	"translate-edit-no-information": "'Bu xabar tavsifga ega emas. Agar siz bu xabar qayerda va qanday ishlatilishini bilsangiz, u holda unga tavsif kiritib boshqa tarjimonlarga yordam berishingiz mumkin.''",
 	"translate-edit-information": "Xabar haqida maʼlumot ($1)",
-	"translate-edit-in-other-languages": "Xabar boshqa tillarda",
 	"translate-edit-warnings": "Chala tarjima qilinayotgani haqida ogohlantirishlar",
 	"translate-edit-tmmatch-source": "Tarjima uchun manba xabar matni: $1",
 	"translate-edit-tmmatch": "$1% moslik",

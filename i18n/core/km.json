@@ -48,7 +48,6 @@
 	"translate-edit-contribute": "រួមចំណែក",
 	"translate-edit-no-information": "<em>សារ​នេះ​មិន​មាន​ព័ត៌មាន​បន្ថែម​ទេ​។\nប្រសិនបើ​អ្នក​ដឹង​ពី​ទីកន្លែង និង​របៀប​ប្រើប្រាស់​សារ​នេះ អ្នក​អាច​ជួយ​អ្នក​បកប្រែ​ផ្សេងទៀត​តាមរយៈ​ការ​ដាក់​បន្ថែម​ព័ត៌មាន​ទាំងនោះ​មក​ឱ្យ​សារ​នេះ​។</em>",
 	"translate-edit-information": "ព័ត៌មាន​អំពី​សារ ($1)",
-	"translate-edit-in-other-languages": "សារជាភាសា​ដទៃទៀត",
 	"translate-edit-warnings": "ការព្រមាន​អំពី​បទប្រែសម្រួលមិនពេញលេញ",
 	"translate-edit-tmmatch-source": "ការ​បក​ប្រែ​ប្រភព​អត្ថបទ៖ $1",
 	"translate-edit-tmmatch": "ត្រូវគ្នា $1%",

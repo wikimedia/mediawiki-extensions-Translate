@@ -52,7 +52,6 @@
 	"translate-edit-contribute": "papildyti",
 	"translate-edit-no-information": "<em>Šis pranešimas neturi dokumentacijos.\nJei žinote kur ar kaip šis pranešimas naudojamas, galite padėti kitiems vertėjams pridėdami dokumentacijos į šį pranešimą.</em>",
 	"translate-edit-information": "Informacija apie pranešimą ($1)",
-	"translate-edit-in-other-languages": "Pranešimas kitomis kalbomis",
 	"translate-edit-warnings": "Įspėjimai apie nepilnus vertimus",
 	"translate-edit-tmmatch-source": "Vertimo šaltinio tekstas: $1",
 	"translate-edit-tmmatch": "$1% atitinka",

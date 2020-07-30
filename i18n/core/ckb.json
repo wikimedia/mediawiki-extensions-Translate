@@ -41,7 +41,6 @@
 	"translate-edit-translation": "وەرگێڕان",
 	"translate-edit-contribute": "بەشداری بکە",
 	"translate-edit-information": "زانیاری سەبارت بە پەیام ($1)",
-	"translate-edit-in-other-languages": "پەیام لە زمانەکانی تردا",
 	"translate-edit-warnings": "ئاگادارییەکان سەبارەت بە وەرگێڕانی ناتەواو",
 	"translate-edit-tmmatch": "$1% یەکسانی",
 	"translate-checks-parameters": "ئەم {{PLURAL:$2|پارامەترە بەکارنەھێنراوە|پارامەترانە بەکارنەھێنراون}} :\n<strong>$1</strong>",

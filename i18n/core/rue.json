@@ -43,7 +43,6 @@
 	"translate-edit-contribute": "приспіти",
 	"translate-edit-no-information": "''Тото повідомлїня не має документацію. Кідь знаєте, де або як ся повідомлїня хоснує, можете помочі далшым перекладателям так, же придате документацію ку тому повідомлїню.''",
 	"translate-edit-information": "Інформація о повідомлїню ($1)",
-	"translate-edit-in-other-languages": "Повідомлїня іншыма языками",
 	"translate-edit-warnings": "Упозорнїня на неповный переклад",
 	"translate-edit-tmmatch-source": "Жрідловый текст перекладу: $1",
 	"translate-edit-tmmatch": "$1% згода",

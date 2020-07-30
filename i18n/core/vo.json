@@ -29,7 +29,6 @@
 	"translate-edit-contribute": "keblünön",
 	"translate-edit-no-information": "Nun at no peplänon. If sevol, kiöpo u lio nun at pagebon, kanol yufön tradutanis votik medä penol pläni gudik dö geb onik.",
 	"translate-edit-information": "Plän nuna ($1)",
-	"translate-edit-in-other-languages": "Nun: \"$1\" in püks votik",
 	"translate-edit-warnings": "Nüneds tefü tradutods no lölöfiks",
 	"translate-checks-parameters": "{{PLURAL:$2|Paramet|Paramets}} sököl no {{PLURAL:$2|pagebon|pagebons}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Paramet|Paramets}} sököl {{PLURAL:$2|binon nesevädik|binons nesevädiks}}:\n<strong>$1</strong>",

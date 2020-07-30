@@ -47,7 +47,6 @@
 	"translate-edit-contribute": "prispevaj",
 	"translate-edit-no-information": "<em>Sporočilo nima dokumentacije.\nČe veste, kje in kako je uporabljeno, lahko pomagate drugim prevajalcem z dodajanjem dokumentacije.</em>",
 	"translate-edit-information": "Podatki o sporočilu ($1)",
-	"translate-edit-in-other-languages": "Sporočilo v drugih jezikih",
 	"translate-edit-warnings": "Opozorila o nepopolnosti prevoda",
 	"translate-edit-tmmatch-source": "Izvirno besedilo prevoda: $1",
 	"translate-edit-tmmatch": "$1-% ujemanje",

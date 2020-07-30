@@ -50,7 +50,6 @@
 	"translate-edit-contribute": "принос",
 	"translate-edit-no-information": "<em>За това съобщение няма документация.\nАко знаете къде и как се използва, можете да помогнете на останалите преводачи, като добавите документация за съобщението.</em>",
 	"translate-edit-information": "Информация за съобщението ($1)",
-	"translate-edit-in-other-languages": "Съобщението на други езици",
 	"translate-edit-warnings": "Предупреждения за непълни преводи",
 	"translate-edit-tmmatch-source": "Изходен текст за превода: $1",
 	"translate-edit-tmmatch": "$1% съвпадение",

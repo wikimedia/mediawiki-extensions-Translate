@@ -45,7 +45,6 @@
 	"translate-edit-contribute": "täienda",
 	"translate-edit-no-information": "<em>Sellel sõnumil pole dokumentatsiooni.\nKui tead, kus seda sõnumit kasutatakse, saad dokumentatsiooni lisamisega teisi tõlkijaid aidata.</em>",
 	"translate-edit-information": "Selle sõnumi teave ($1)",
-	"translate-edit-in-other-languages": "Sõnum teistes keeltes",
 	"translate-edit-warnings": "Hoiatused puuduliku tõlke kohta",
 	"translate-edit-tmmatch-source": "Tõlke alliktekst: $1",
 	"translate-edit-tmmatch": "Vastavus: $1%",

@@ -50,7 +50,6 @@
 	"translate-edit-contribute": "придонес",
 	"translate-edit-no-information": "<em>Оваа порака нема документација.\nАко знаете каде или како се користи поракава, тогаш помогнете им на другите преведувачи додавајќи ѝ документација.</em>",
 	"translate-edit-information": "Информации за пораката ($1)",
-	"translate-edit-in-other-languages": "Пораката на други јазици",
 	"translate-edit-warnings": "Предупредувања за нецелосни преводи",
 	"translate-edit-tmmatch-source": "Изворен текст за преводот: $1",
 	"translate-edit-tmmatch": "$1% совпаѓање",

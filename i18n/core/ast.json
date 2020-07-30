@@ -46,7 +46,6 @@
 	"translate-edit-contribute": "contribuyir",
 	"translate-edit-no-information": "<em>Esti mensaxe nun tien documentación. Si sabe ú o cómo s'usa esti mensaxe, pue ayudar a otros traductores amestando documentación a esti mensaxe.</em>",
 	"translate-edit-information": "Información tocante a esti mensaxe ($1)",
-	"translate-edit-in-other-languages": "Mensaxe n'otres llingües",
 	"translate-edit-warnings": "Avisos sobre traducciones incompletes",
 	"translate-edit-tmmatch-source": "Testu orixinal de la traducción: $1",
 	"translate-edit-tmmatch": "$1 % de coincidencia",

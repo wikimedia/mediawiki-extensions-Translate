@@ -64,7 +64,6 @@
 	"translate-edit-contribute": "貢獻",
 	"translate-edit-no-information": "<em>此訊息沒有任何說明資訊。\n如果您知道這個訊息使用的地方，您可以增加說明資訊以協助其他翻譯人員。</em>",
 	"translate-edit-information": "關於訊息的資訊 ($1)",
-	"translate-edit-in-other-languages": "訊息的其他語言",
 	"translate-edit-warnings": "未完成翻譯的警告",
 	"translate-edit-tmmatch-source": "翻譯原文：$1",
 	"translate-edit-tmmatch": "$1% 符合",

@@ -44,7 +44,6 @@
 	"translate-edit-contribute": "өңдеу",
 	"translate-edit-no-information": "<em>Бұл хабар құжаттамасыз.\nЕгер бұл хабардың қайда немесе қалай қолданғанын білсеңіз, бұл хабарға құжаттама келтіру арқылы басқа аударушыларға көмектесе аласыз.</em>",
 	"translate-edit-information": "Бұл хабар туралы мәлімет ($1)",
-	"translate-edit-in-other-languages": "Хабар басқа тілдерде",
 	"translate-edit-warnings": "Толық аударылмаған аудармалар туралы ескертулер",
 	"translate-edit-tmmatch-source": "Аударма қайнар мәтіні: $1",
 	"translate-edit-tmmatch": "$1% сәйкес келеді",

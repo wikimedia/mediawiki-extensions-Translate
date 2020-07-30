@@ -85,7 +85,6 @@
 	"translate-edit-contribute": "править",
 	"translate-edit-no-information": "<em>Это сообщение не имеет описания. Если вы знаете, где или как это сообщение используется, то можете помочь другим переводчикам, добавив к нему описание.</em>",
 	"translate-edit-information": "Информация о сообщении ($1)",
-	"translate-edit-in-other-languages": "Сообщение на других языках",
 	"translate-edit-warnings": "Предупреждения о неполных переводах",
 	"translate-edit-tmmatch-source": "Текст исходного сообщения для перевода: $1",
 	"translate-edit-tmmatch": "$1% соответствия",

@@ -64,7 +64,6 @@
 	"translate-edit-contribute": "bearbeiten",
 	"translate-edit-no-information": "<em>Zu dieser Nachricht ist keine Dokumentation vorhanden.\nSofern du weißt, wo und in welchem Zusammenhang sie genutzt wird, kannst du anderen Übersetzern bei ihrer Arbeit helfen, indem du eine Dokumentation hinzufügst.</em>",
 	"translate-edit-information": "Information zur Nachricht ($1)",
-	"translate-edit-in-other-languages": "Nachricht in anderen Sprachen",
 	"translate-edit-warnings": "Warnungen zu unvollständigen Übersetzungen",
 	"translate-edit-tmmatch-source": "Übersetzungsquelltext: $1",
 	"translate-edit-tmmatch": "$1 % Übereinstimmung",

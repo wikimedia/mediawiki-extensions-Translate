@@ -63,7 +63,6 @@
 	"translate-edit-contribute": "contribuisci",
 	"translate-edit-no-information": "<em>Questo messaggio non ha documentazione.\nSe sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori aggiungendo la documentazione a questo messaggio.</em>",
 	"translate-edit-information": "Informazioni sul messaggio ($1)",
-	"translate-edit-in-other-languages": "Messaggio in altre lingue",
 	"translate-edit-warnings": "Avvisi sulle traduzioni incomplete",
 	"translate-edit-tmmatch-source": "Testo di origine per la traduzione: $1",
 	"translate-edit-tmmatch": "$1&nbsp;% di corrispondenza",

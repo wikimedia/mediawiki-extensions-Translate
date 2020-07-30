@@ -54,7 +54,6 @@
 	"translate-edit-contribute": "prispejte",
 	"translate-edit-no-information": "<em>Táto správa nemá dokumentáciu.\nAk viete kde alebo ako je táto správa použitá, môžete pomôcť ostatným prekladateľom tým, že pridáte dokumentáciu.</em>",
 	"translate-edit-information": "Informácia o správe ($1)",
-	"translate-edit-in-other-languages": "Správa v iných jazykoch",
 	"translate-edit-warnings": "Upozornenia na neúplné preklady",
 	"translate-edit-tmmatch-source": "Zdroj prekladu: $1",
 	"translate-edit-tmmatch": "$1% zhoda",

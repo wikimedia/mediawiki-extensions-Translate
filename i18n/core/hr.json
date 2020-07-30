@@ -51,7 +51,6 @@
 	"translate-edit-contribute": "dodaj",
 	"translate-edit-no-information": "<em>Ova poruka nema dokumentacije. Ako znate gdje ili kako se koristi poruka, možete pomoći drugim prevoditeljima dodavajući dokumentaciju ovoj poruci.</em>",
 	"translate-edit-information": "Informacije o poruci ($1)",
-	"translate-edit-in-other-languages": "Poruka na ostalim jezicima",
 	"translate-edit-warnings": "Upozorenja o nepotpunim prijevodima",
 	"translate-edit-tmmatch-source": "Izvorni tekst: $1",
 	"translate-edit-tmmatch": "$1% podudarnosti",

@@ -30,7 +30,6 @@
 	"translate-edit-contribute": "beoarbaidje",
 	"translate-edit-no-information": "''Disse Systemättergjucht häd noch neen Dokumentation. Wan du waast, wier un in wäkken Touhoopehong ju benutsed wäd, koast du uur Uursättere hälpe, deertruch dät du ne Dokumentation bietouföigest.''",
 	"translate-edit-information": "Information uur Systemättergjucht ($1)",
-	"translate-edit-in-other-languages": "Systemättergjucht in uur Sproaken",
 	"translate-edit-warnings": "Woarskauenge uur uunfulboodige Uursättengen",
 	"translate-checks-parameters": "{{PLURAL:$2|Die foulgjende Parameter wäd|Do foulgjende Parametere wäide}} nit benutsed: <strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Die foulgjende Parameter is|Do foulgjende Parametere sunt}} uunbekoand: <strong>$1</strong>",

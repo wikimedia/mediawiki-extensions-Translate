@@ -50,7 +50,6 @@
 	"translate-edit-contribute": "contribuír",
 	"translate-edit-no-information": "<em>Esta mensaxe non ten documentación.\nSe sabe onde ou como se usa esta mensaxe, pode axudar aos outros tradutores engadíndolle datos.</em>",
 	"translate-edit-information": "Información acerca da mensaxe ($1)",
-	"translate-edit-in-other-languages": "Mensaxe noutras linguas",
 	"translate-edit-warnings": "Avisos acerca de traducións incompletas",
 	"translate-edit-tmmatch-source": "Texto fonte da tradución: $1",
 	"translate-edit-tmmatch": "$1% de coincidencia",

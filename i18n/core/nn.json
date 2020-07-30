@@ -51,7 +51,6 @@
 	"translate-edit-contribute": "bidra",
 	"translate-edit-no-information": "<em>Denne meldinga har ingen dokumentasjon.\nOm du veit kvar eller korleis denne meldinga vert nytta, kan du hjelpe andre omsetjarar ved å legge inn dokumentasjon til denne meldinga.</em>",
 	"translate-edit-information": "Informasjon om meldinga ($1)",
-	"translate-edit-in-other-languages": "Meldinga på andre språk",
 	"translate-edit-warnings": "Åtvaringar om ufullstendige omsetjingar",
 	"translate-edit-tmmatch-source": "Kjeldetekst for omsetjing: $1",
 	"translate-edit-tmmatch": "$1% samsvar",

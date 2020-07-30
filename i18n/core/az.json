@@ -45,7 +45,6 @@
 	"translate-edit-contribute": "töhfə ver",
 	"translate-edit-no-information": "<em>Bu mesajın təsviri yoxdur.\nƏgər bu mesajın harada və necə istifadə edildiyini bilirsinizsə, onda bu mesaj üçün bir sənədləşmə əlavə edərək digər tərcüməçilərə kömək ola bilərsiniz.</em>",
 	"translate-edit-information": "Mesaj haqqında məlumat(lar) ($1)",
-	"translate-edit-in-other-languages": "Digər dillərdəki mesaj",
 	"translate-edit-warnings": "Yarımçıq tərcümələr haqqında xəbərdarlıqlar",
 	"translate-edit-tmmatch-source": "Tərcümə mənbəsi mətni: $1",
 	"translate-edit-tmmatch": "$1% oxşar",

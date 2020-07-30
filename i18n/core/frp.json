@@ -43,7 +43,6 @@
 	"translate-edit-contribute": "édiér",
 	"translate-edit-no-information": "''Ceti mèssâjo est pas documentâ.''\n''Se vos sâde yô ou ben coment il est empleyê, vos pouede édiér los ôtros traductors en fassent la documentacion de ceti mèssâjo.''",
 	"translate-edit-information": "Enformacions sur lo mèssâjo ($1)",
-	"translate-edit-in-other-languages": "Mèssâjo dens d’ôtres lengoues",
 	"translate-edit-warnings": "Avèrtissements sur les traduccions encomplètes",
 	"translate-edit-tmmatch-source": "Tèxto sôrsa de la traduccion : $1",
 	"translate-edit-tmmatch": "$1 % de corrèspondance",

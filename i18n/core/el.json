@@ -59,7 +59,6 @@
 	"translate-edit-contribute": "συμβάλλετε",
 	"translate-edit-no-information": "<em>Αυτό το μήνυμα δεν έχει τεκμηρίωση. \nΑν γνωρίζετε πού ή πώς χρησιμοποιείται αυτό το μήνυμα, μπορείτε να βοηθήσετε άλλους μεταφραστές προσθέτοντας τεκμηρίωση σε αυτό.</em>",
 	"translate-edit-information": "Πληροφορίες σχετικά με το μήνυμα ($1)",
-	"translate-edit-in-other-languages": "Μήνυμα σε άλλες γλώσσες",
 	"translate-edit-warnings": "Προειδοποιήσεις για ημιτελείς μεταφράσεις",
 	"translate-edit-tmmatch-source": "Πηγαίο κείμενο μετάφρασης: $1",
 	"translate-edit-tmmatch": "$1% αντιστοίχιση",

@@ -62,7 +62,6 @@
 	"translate-edit-contribute": "katkıda bulun",
 	"translate-edit-no-information": "<em>Bu iletide belge yok.\nBu iletinin nerede veya nasıl kullanıldığını biliyorsanız, bu iletiyi belge ekleyerek diğer çevirmenlere yardımcı olabilirsiniz.</em>",
 	"translate-edit-information": "İleti hakkında bilgi ($1)",
-	"translate-edit-in-other-languages": "Diğer dillerdeki iletisi",
 	"translate-edit-warnings": "Tamamlanmamış çeviriler hakkındaki uyarılar",
 	"translate-edit-tmmatch-source": "Çeviri kaynağı metin: $1",
 	"translate-edit-tmmatch": "%$1 benzer",

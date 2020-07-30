@@ -53,7 +53,6 @@
 	"translate-edit-contribute": "bidrag",
 	"translate-edit-no-information": "<em>Denne besked har ingen dokumentation.\nHvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversættere ved at tilføje dokumentation til beskeden.</em>",
 	"translate-edit-information": "Information om beskeden ($1)",
-	"translate-edit-in-other-languages": "Beskeden på andre sprog",
 	"translate-edit-warnings": "Advarsler om ufuldstændige oversættelser",
 	"translate-edit-tmmatch-source": "Kildetekst til oversættelse: $1",
 	"translate-edit-tmmatch": "$1 % overensstemmelse",

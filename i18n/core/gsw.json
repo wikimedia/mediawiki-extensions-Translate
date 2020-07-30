@@ -45,7 +45,6 @@
 	"translate-edit-contribute": "bearbeite",
 	"translate-edit-no-information": "''Die Syschtemnochricht het no kei Dokumentation. Wänn Du weisch, wu un in welem Zämmehang si bruucht wird, no chasch andere Ibersetzer hälfe, wänn Du ne Dokumentation zuefiegsch.''",
 	"translate-edit-information": "Information iber d Syschtemnochricht ($1)",
-	"translate-edit-in-other-languages": "Syschtemnochricht in andere Sproche",
 	"translate-edit-warnings": "Warnig iber uuvollständigi Ibersetzige",
 	"translate-edit-tmmatch-source": "Ibersetzigsquälltext: $1",
 	"translate-edit-tmmatch": "$1% Ibereinstimmig",

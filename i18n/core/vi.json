@@ -49,7 +49,6 @@
 	"translate-edit-contribute": "đóng góp",
 	"translate-edit-no-information": "<em>Thông điệp này hiện chưa có tài liệu hướng dẫn. Nếu bạn biết thông điệp này dùng ở đâu và dùng như thế nào, bạn có thể giúp những biên dịch viên khác bằng cách thêm tài liệu hướng dẫn cho nó.</em>",
 	"translate-edit-information": "Thông tin về thông điệp ($1)",
-	"translate-edit-in-other-languages": "Thông điệp bằng thứ tiếng khác",
 	"translate-edit-warnings": "Các cảnh báo về các bản dịch chưa hoàn thành",
 	"translate-edit-tmmatch-source": "Văn bản gốc để dịch: $1",
 	"translate-edit-tmmatch": "trùng $1%",

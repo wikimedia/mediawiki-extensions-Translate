@@ -39,7 +39,6 @@
 	"translate-edit-title": "Labot \"$1\"",
 	"translate-edit-translation": "Tulkojums",
 	"translate-edit-information": "Informācija par ziņojumu ($1)",
-	"translate-edit-in-other-languages": "Ziņojums citās valodās",
 	"translate-edit-warnings": "Brīdinājumi par nepilnīgiem tulkojumiem",
 	"translate-edit-tmmatch-source": "Tulkojuma izejas teksts: $1",
 	"translate-edit-tmmatch": "$1% atbilstība",

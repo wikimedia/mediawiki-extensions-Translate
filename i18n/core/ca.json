@@ -59,7 +59,6 @@
 	"translate-edit-contribute": "contribuïu-hi",
 	"translate-edit-no-information": "<em>Aquest missatge no té documentació.\nSi sabeu on o com és usat aquest missatge podeu ajudar la resta de traductors afegint-hi la documentació.</em>",
 	"translate-edit-information": "Informació sobre el missatge ($1)",
-	"translate-edit-in-other-languages": "El missatge en altres idiomes",
 	"translate-edit-warnings": "Avisos de traducció incompleta",
 	"translate-edit-tmmatch-source": "Text original de la traducció: $1",
 	"translate-edit-tmmatch": "coincidència del $1%",

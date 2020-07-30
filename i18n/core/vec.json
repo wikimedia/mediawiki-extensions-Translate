@@ -32,7 +32,6 @@
 	"translate-edit-contribute": "contribuìssi",
 	"translate-edit-no-information": "''Sto messagio no'l gà documentassion.\nSe te sè dove o come sto messagio el vien doparà, te podi jutar altri tradutori zontando documentassion a sto messagio.''",
 	"translate-edit-information": "Informassion sul messagio \"$2\" ($1)",
-	"translate-edit-in-other-languages": "El messagio \"$1\" in altre lengue",
 	"translate-edit-warnings": "Avertimenti su tradussion incomplete",
 	"translate-checks-parameters": "{{PLURAL:$2|El seguente parametro no'l|I seguenti parametri no i}} xe mìa doparà: <strong>$1</strong>",
 	"translate-checks-balance": "Ghe xe un nùmaro dispari de {{PLURAL:$2|paréntesi|paréntesi}}:\n<strong><nowiki>$1</nowiki></strong>",

@@ -39,7 +39,6 @@
 	"translate-edit-contribute": "貢獻",
 	"translate-edit-no-information": "<em>呢句信息無註解。\n如果你知道呢句信息響邊同埋點用，你可以加註解去呢個信息去幫其他嘅譯者。</em>",
 	"translate-edit-information": "呢句信息嘅資料 ($1)",
-	"translate-edit-in-other-languages": "呢個訊息嘅第啲語文",
 	"translate-edit-warnings": "有關未譯好嘅警告",
 	"translate-edit-tmmatch-source": "翻譯原文：$1",
 	"translate-edit-tmmatch": "$1%符合",

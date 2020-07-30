@@ -68,7 +68,6 @@
 	"translate-edit-contribute": "bidra",
 	"translate-edit-no-information": "<em>Det här meddelandet har ingen dokumentation.\nOm du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.</em>",
 	"translate-edit-information": "Information om meddelandet ($1)",
-	"translate-edit-in-other-languages": "Meddelandet på andra språk",
 	"translate-edit-warnings": "Varningar om fel i översättningen",
 	"translate-edit-tmmatch-source": "Källtext för översättning: $1",
 	"translate-edit-tmmatch": "$1&nbsp;% likhet",

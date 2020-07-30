@@ -61,7 +61,6 @@
 	"translate-edit-contribute": "auta dokumentoinnissa",
 	"translate-edit-no-information": "<em>Tätä viestiä ei ole dokumentoitu.\nJos tiedät missä tai miten tätä viestiä käytetään, voit auttaa muita kääntäjiä lisäämällä kommentteja tähän viestiin.</em>",
 	"translate-edit-information": "Tietoja viestistä ($1)",
-	"translate-edit-in-other-languages": "Viesti muilla kielillä",
 	"translate-edit-warnings": "Varoitukset virheellisestä käännöksestä",
 	"translate-edit-tmmatch-source": "Käännöksen lähdeteksti: $1",
 	"translate-edit-tmmatch": "Vastaavuus $1%",

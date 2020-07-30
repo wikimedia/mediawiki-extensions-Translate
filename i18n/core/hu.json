@@ -54,7 +54,6 @@
 	"translate-edit-contribute": "szerkesztés",
 	"translate-edit-no-information": "''Ehhez az üzenethez még nincs leírás. Ha tudod, hogy hol vagy hogyan jelenik meg, segítheted a többi fordítót az üzenet dokumentálásával.''",
 	"translate-edit-information": "Információk az üzenetről ($1)",
-	"translate-edit-in-other-languages": "Az üzenet más nyelveken",
 	"translate-edit-warnings": "Hiányosságok a fordításban",
 	"translate-edit-tmmatch-source": "Fordítási forrás szöveg: $1",
 	"translate-edit-tmmatch": "$1%-os egyezés",

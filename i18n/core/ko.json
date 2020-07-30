@@ -58,7 +58,6 @@
 	"translate-edit-contribute": "기여",
 	"translate-edit-no-information": "이 메시지에 대한 설명문이 없습니다.\n만약 이 메시지가 어디에 어떻게 사용되는지 알고 있다면 설명문을 작성해 다른 번역자를 도와줄 수 있습니다.",
 	"translate-edit-information": "이 메시지에 대한 정보 ($1)",
-	"translate-edit-in-other-languages": "이 메시지의 다른 언어판",
 	"translate-edit-warnings": "불완전한 번역에 대한 경고",
 	"translate-edit-tmmatch-source": "번역 원본 텍스트: $1",
 	"translate-edit-tmmatch": "$1% 일치",
