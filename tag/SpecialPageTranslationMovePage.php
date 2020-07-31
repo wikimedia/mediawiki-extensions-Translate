@@ -160,10 +160,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * Pretty-print the list of errors.
 	 * @param SplObjectStorage $errors Array with message key and parameters
 	 */
-	protected function showErrors( SplObjectStorage $errors ) {
+	protected function showErrors( SplObjectStorage $errors ): void {
 		$out = $this->getOutput();
 
-		$out->addHtml( Html::openElement( 'div', [ 'class' => 'errorbox' ] ) );
+		$out->addHTML( Html::openElement( 'div', [ 'class' => 'errorbox' ] ) );
 		$out->addWikiMsg(
 			'pt-movepage-blockers',
 			$this->getLanguage()->formatNum( count( $errors ) )
@@ -173,13 +173,13 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$s = '';
 		$context = 'pt-movepage-error-placeholder';
 		foreach ( $errors as $title ) {
-			// @phan-suppress-next-line PhanTypeSuspiciousStringExpression
-			$s .= "'''$title'''\n\n";
+			$titleText = $title->getPrefixedText();
+			$s .= "'''$titleText'''\n\n";
 			$s .= $errors[ $title ]->getWikiText( false, $context );
 		}
 
 		$out->addWikiTextAsInterface( $s );
-		$out->addHtml( Html::closeElement( 'div' ) );
+		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
 	/**
