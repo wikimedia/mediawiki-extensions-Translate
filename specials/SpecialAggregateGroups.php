@@ -48,7 +48,7 @@ class SpecialAggregateGroups extends SpecialPage {
 				$pages[] = $group;
 			} elseif ( $group instanceof AggregateMessageGroup ) {
 				$subgroups = TranslateMetadata::getSubgroups( $group->getId() );
-				if ( $subgroups !== false ) {
+				if ( $subgroups !== null ) {
 					$aggregates[] = $group;
 				}
 			}
@@ -230,7 +230,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out = Html::openElement( 'ol', [ 'id' => $id ] );
 
 		// Not calling $parent->getGroups() because it has done filtering already
-		$subgroupIds = TranslateMetadata::getSubgroups( $parent->getId() );
+		$subgroupIds = TranslateMetadata::getSubgroups( $parent->getId() ) ?? [];
 
 		// Get the respective groups and sort them
 		$subgroups = MessageGroups::getGroupsById( $subgroupIds );

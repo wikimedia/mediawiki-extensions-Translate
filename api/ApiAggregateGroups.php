@@ -34,12 +34,12 @@ class ApiAggregateGroups extends ApiBase {
 			}
 			$aggregateGroup = $params['aggregategroup'];
 			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroup );
-			if ( !$subgroups ) {
-				// For newly created groups the subgroups value might be empty,
-				// but check that.
-				if ( TranslateMetadata::get( $aggregateGroup, 'name' ) === false ) {
-					$this->dieWithError( 'apierror-translate-invalidaggregategroup', 'invalidaggregategroup' );
-				}
+			if ( $subgroups === null ) {
+				// For a newly created aggregate group, it may contain no subgroups, but null
+				// means the group does not exist or something has gone wrong.
+
+				$this->dieWithError( 'apierror-translate-invalidaggregategroup', 'invalidaggregategroup' );
+				// For static analysers
 				$subgroups = [];
 			}
 
