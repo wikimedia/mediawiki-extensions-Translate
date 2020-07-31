@@ -21,7 +21,7 @@ class TranslateReplaceTitle {
 	 * be moved but are not moveable, due to permissions or any other reason.
 	 * @param MessageHandle $sourceMessageHandle
 	 * @param string $replacement
-	 * @return array
+	 * @return Title[][]
 	 */
 	public static function getTitlesForMove(
 		MessageHandle $sourceMessageHandle, $replacement

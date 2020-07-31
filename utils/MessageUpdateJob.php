@@ -152,15 +152,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$renameSummary = wfMessage( 'translate-manage-import-rename-summary' )
 			->inContentLanguage()->plain();
 
-		/**
-		 * @var Title[] $movableTitles
-		 */
-		foreach ( $movableTitles as $mTitle ) {
-			/**
-			 * @var Title $sourceTitle
-			 * @var Title $replacementTitle
-			 */
-			[ $sourceTitle, $replacementTitle ] = $mTitle;
+		foreach ( $movableTitles as [ $sourceTitle, $replacementTitle ] ) {
 			$mv = new MovePage( $sourceTitle, $replacementTitle );
 
 			$status = $mv->move( $user, $renameSummary, false );
