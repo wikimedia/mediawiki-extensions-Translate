@@ -123,7 +123,6 @@
 	"supportedlanguages": "Tutlayin yettusefraken",
 	"supportedlanguages-recenttranslations": "tisuqilin tineggura",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|tutlayt|tutlayin}} s umata.",
-	"translate-save": "Sekles ($1)",
 	"managemessagegroups": "Asefrek n ugraw n yiznan",
 	"translate-manage-import-diff": "Iznan $1 | Tiggawin: $2",
 	"translate-manage-import-new": "Izen amaynut $1",

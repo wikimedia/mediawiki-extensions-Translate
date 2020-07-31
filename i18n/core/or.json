@@ -88,7 +88,6 @@
 	"supportedlanguages-recenttranslations": "ବର୍ତ୍ତମାନର ଅନୁବାଦସବୁ",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|ଭାଷା|ଭାଷା}} ସବୁ ମିଶି ।",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|ବଦଳ|ବଦଳସବୁ}} - ଶେଷ ବଦଳ $3 {{PLURAL:$3|ଦିନ|ଦିନସବୁ}} ଆଗରୁ",
-	"translate-save": "($1)କୁ ସାଇତିବେ",
 	"translate-jssti-add": "ତାଲିକାରେ ଯୋଡ଼ନ୍ତୁ",
 	"translate-manage-import-new": "ନୂଆ ସନ୍ଦେଶ $1",
 	"translate-manage-action-import": "ଆମଦାନି",

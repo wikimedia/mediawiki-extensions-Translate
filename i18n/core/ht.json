@@ -113,7 +113,6 @@
 	"supportedlanguages-summary": "Paj sa a montre yon lis tout lang ki sipòte pa {{SITENAME}}, ansanm ak non tradiktè yo ki ap travay nan lang sa yo.\nSi nou ta renmen konn pi plis sou yon lang, klike sou lyen pou paj prensipal lang sa a.\nSi ou klike sou non yon tradiktè, w ap jwenn paj itilizatè li.\n\nSi yon lang pa parèt nan lis, ou kapab gade \"[[Translating:Process|nouvèl lang]]\" pou ou konnen ki jan ou fè pou komanse yon pwojè lokalizasyon pou li.\n\nSi ou tradui vè yon lang epi non ou pa nan lis tradiktè pou lang sa, tanpri ajoute l nan [[:Category:Languages|paj prensipal]].\nGade meni a pou jwenn lyen pou paj prensipal lang ou prefere a.",
 	"supportedlanguages-translators": "{{PLURAL:$2|Tradiktè|Tradiktè yo}}: $1",
 	"supportedlanguages-recenttranslations": "dènye tradiksyon yo",
-	"translate-save": "Anrejistre ($1)",
 	"translate-jssti-add": "Ajoute nan lis",
 	"managemessagegroups": "Jesyon gwoup mesaj",
 	"translate-manage-import-diff": "Mesaj: $1 | Aksyon yo: $2",

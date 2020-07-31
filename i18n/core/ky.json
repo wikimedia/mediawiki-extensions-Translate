@@ -47,7 +47,6 @@
 	"supportedlanguages": "Колдолгон тилдер",
 	"supportedlanguages-translators": "{{PLURAL:$2|Котормочу|Котормочулар}}: $1",
 	"supportedlanguages-recenttranslations": "жакындагы котормолор",
-	"translate-save": "Сактоо ($1)",
 	"translate-jssti-add": "Тизмеге кошуу",
 	"translate-manage-import-new": "Жаңы билдирүү $1",
 	"translate-manage-action-import": "Импорт",

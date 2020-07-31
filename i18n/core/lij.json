@@ -61,6 +61,5 @@
 	"translate-checks-links-missing": "Gh'amanca {{PLURAL:$2|o seguente ingancio|i $2 seguenti inganci}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definission a l'adoeuvia <nowiki>{{PLURAL:}}</nowiki> ma a tradussion no.",
 	"languagestats": "Statisteghe da lengoa",
-	"translate-js-support": "Fanni 'na domanda",
 	"translate-documentation-language": "Documentassion do messaggio"
 }

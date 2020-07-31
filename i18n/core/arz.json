@@ -107,7 +107,6 @@
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|مترجم|مترجمه}}|مترجمين}}: $1",
-	"translate-save": "سييف ($1)",
 	"translate-jssti-add": "أضف إلى القائمة",
 	"translate-manage-import-diff": "الرساله $1 | الإجراءات: $2",
 	"translate-manage-import-new": "رساله جديده $1",
