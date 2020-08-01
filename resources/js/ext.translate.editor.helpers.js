@@ -68,8 +68,10 @@
 					).done( function ( parsedDocumentation ) {
 						$messageDesc.html( parsedDocumentation );
 					} ).fail( function ( errorCode, results ) {
+						// Note: It is possible for results to be undefined.
+						var errorInfo = results && results.error ? results.error.info : 'No information';
 						$messageDesc.html( newDocumentation );
-						mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
+						mw.log( 'Error parsing documentation ' + errorCode + ' ' + errorInfo );
 					} ).always( function () {
 						// A collapsible element etc. may have been added
 						mw.hook( 'wikipage.content' ).fire( $messageDesc );
