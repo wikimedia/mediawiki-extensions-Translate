@@ -34,7 +34,7 @@
 	"tpt-old-pages-title": "Tõlgitavad leheküljed",
 	"tpt-other-pages-title": "Katkised leheküljed",
 	"tpt-new-pages": "{{PLURAL:$1|See lehekülg sisaldab|Need leheküljed sisaldavad}} tõlkesiltidega teksti,\naga ükski {{PLURAL:$1|selle lehekülje|nende lehekülgede}} versioon pole praegu märgitud tõlkimiseks.",
-	"tpt-old-pages": "Mõned {{PLURAL:$1|selle lehekülje|nende lehekülgede}} versioonid on märgitud tõlkimiseks.",
+	"tpt-old-pages": "{{PLURAL:$1|Selle lehekülje viimane versioon|Nende lehekülgede viimased versioonid}} on märgitud tõlkimiseks.",
 	"tpt-other-pages": "{{PLURAL:$1|Selle lehekülje vana versioon|Nende lehekülgede vanad versioonid}} on märgitud tõlkimiseks\nja {{PLURAL:$1|uusimat versiooni|uusimaid versioone}} ei saa tõlgitavaks teha.",
 	"tpt-select-prioritylangs": "Olulisemate keelte koodide komaga eraldatud loetelu:",
 	"tpt-select-prioritylangs-force": "Enneta tõlkimist teistesse keeltesse peale olulisemate keelte",

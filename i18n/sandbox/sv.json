@@ -4,6 +4,7 @@
 			"JohanahoJ",
 			"Jopparn",
 			"Lokal Profil",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -21,7 +22,7 @@
 	"tsb-email-rejected-body": "Hej {{GENDER:$1|$1}},\n\nTack för att du ansöker om att bli översättare på {{SITENAME}}. Jag måste tyvärr meddela att jag har avslagit din ansökan, eftersom kvaliteten på dina översättningar inte uppfyllde kraven.\n\nOm du tror att din ansökan avslogs av misstag, var god försök att ansöka igen som en översättare på {{SITENAME}}. Du kan registrera dig här:\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}} personal",
 	"tsb-request-count": "{{PLURAL:$1|En begäran|$1 begäran}}",
 	"tsb-all-languages-button-label": "Alla språk",
-	"tsb-search-requests": "Sökbegäran",
+	"tsb-search-requests": "Sök bland väntande förfrågningar",
 	"tsb-accept-button-label": "Acceptera",
 	"tsb-reject-button-label": "Acceptera inte",
 	"tsb-selected-count": "{{PLURAL:$1|En användare vald|$1 användare valda}}",

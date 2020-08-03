@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kiathy",
 			"Teitei Para"
 		]
 	},
@@ -8,6 +9,6 @@
 	"right-pagetranslation": "Reihpaleina châta châhmiazy vâsiezy âbina tao",
 	"action-pagetranslation": "reihpalei theipa châhmiazy kha tiehparaih teih",
 	"tps-edit-sourcepage-title": "Reihpalei theipa châhmia sâkha taopathina",
-	"tps-edit-sourcepage-text": "Nâ cha reihpaleina châhmia hnawh sâkha na taopathi hai. Ary lâta piepa châhna-rahvozy nata hmia nâ pahnopa pasia bei mah y: \n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text] \n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
+	"tps-edit-sourcepage-text": "Nâ cha reihpaleina châhmia hnawh sâkha na taopathi hai. Ary lâta piepa châhna-rahvozy nata hmia nâ pahnopa pasia bei mah y: \n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text] \n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
 	"tpt-languages-nonzero": "$1 (reihpalei hawpa $2)"
 }
