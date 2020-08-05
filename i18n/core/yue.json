@@ -5,6 +5,7 @@
 			"Ktchankt",
 			"Moon0319",
 			"Obonggi",
+			"Roy17",
 			"Shinjiman",
 			"Yueman"
 		]
@@ -56,9 +57,9 @@
 	"translate-gs-multiple": "多種語言",
 	"translate-documentation-language": "訊息說明文檔",
 	"translate-msggroupselector-projects": "訊息組",
-	"translate-msggroupselector-search-all": "冚唪唥",
+	"translate-msggroupselector-search-all": "全部",
 	"tux-languageselector": "譯做",
-	"tux-tab-all": "冚唪唥",
+	"tux-tab-all": "全部",
 	"tux-tab-untranslated": "未譯",
 	"tux-tab-outdated": "過咗時",
 	"tux-tab-translated": "譯咗",
