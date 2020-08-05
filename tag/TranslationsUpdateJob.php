@@ -120,10 +120,10 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 	 * Creates jobs needed to create or update all translation page definitions.
 	 * @param TranslatablePage $page
 	 * @param TPSection[] $sections
-	 * @return Job[]
+	 * @return RunnableJob[]
 	 * @since 2013-01-28
 	 */
-	public static function getTranslationUnitJobs( TranslatablePage $page, array $sections ) {
+	private static function getTranslationUnitJobs( TranslatablePage $page, array $sections ): array {
 		$jobs = [];
 
 		$code = $page->getSourceLanguageCode();
@@ -143,10 +143,10 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 	/**
 	 * Creates jobs needed to create or update all translation pages.
 	 * @param TranslatablePage $page
-	 * @return Job[]
+	 * @return RunnableJob[]
 	 * @since 2013-01-28
 	 */
-	public static function getRenderJobs( TranslatablePage $page ) {
+	public static function getRenderJobs( TranslatablePage $page ): array {
 		$jobs = [];
 
 		$jobTitles = $page->getTranslationPages();

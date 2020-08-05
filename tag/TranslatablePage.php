@@ -274,10 +274,10 @@ class TranslatablePage {
 		$sections = [];
 
 		// Add section to allow translating the page name
-		$displaytitle = new TPSection;
-		$displaytitle->id = $this->displayTitle;
-		$displaytitle->text = $this->getTitle()->getPrefixedText();
-		$sections[TranslateUtils::getPlaceholder()] = $displaytitle;
+		$displayTitle = new TPSection;
+		$displayTitle->id = $this->displayTitle;
+		$displayTitle->text = $this->getTitle()->getPrefixedText();
+		$sections[TranslateUtils::getPlaceholder()] = $displayTitle;
 
 		$tagPlaceHolders = [];
 

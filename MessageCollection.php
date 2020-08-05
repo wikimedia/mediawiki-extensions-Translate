@@ -16,7 +16,7 @@ use MediaWiki\Revision\SlotRecord;
 /**
  * Core message collection class.
  *
- * Message group is collection of messages of one message group in one
+ * Message collection is collection of messages of one message group in one
  * language. It handles loading of the messages in one huge batch, and also
  * stores information that can be used to filter the collection in different
  * ways.

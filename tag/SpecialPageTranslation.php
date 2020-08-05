@@ -857,8 +857,9 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Updates the source page with section markers.
 	 * - Updates translate_sections table
 	 * - Updates revtags table
-	 * - Setups renderjobs to update the translation pages
+	 * - Sets up renderjobs to update the translation pages
 	 * - Invalidates caches
+	 * - Adds interim cache for MessageIndex
 	 * @param TranslatablePage $page
 	 * @param TPSection[] $sections
 	 * @param bool $updateVersion
@@ -959,15 +960,17 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newRevisionId );
 		MessageGroups::singleton()->recache();
 
+		// Store interim cache
 		$group = $page->getMessageGroup();
 		$newKeys = $group->makeGroupKeys( $changed );
 		MessageIndex::singleton()->storeInterim( $group, $newKeys );
+
 		$job = TranslationsUpdateJob::newFromPage( $page, $sections );
 		JobQueueGroup::singleton()->push( $job );
 
-		// Logging
 		$this->handlePriorityLanguages( $this->getRequest(), $page );
 
+		// Logging
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
 		$entry->setPerformer( $this->getUser() );
 		$entry->setTarget( $page->getTitle() );

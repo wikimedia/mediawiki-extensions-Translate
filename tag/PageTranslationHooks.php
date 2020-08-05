@@ -229,8 +229,8 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	public static function updateTranslationPage( TranslatablePage $page,
-		$code, $user, $flags, $summary
+	public static function updateTranslationPage(
+		TranslatablePage $page, $code, $user, $flags, $summary
 	) {
 		$source = $page->getTitle();
 		$target = $source->getSubpage( $code );
