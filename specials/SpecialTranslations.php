@@ -18,7 +18,8 @@ use MediaWiki\MediaWikiServices;
  */
 class SpecialTranslations extends SpecialAllPages {
 	public function __construct() {
-		parent::__construct( 'Translations' );
+		parent::__construct();
+		$this->mName = 'Translations';
 	}
 
 	protected function getGroupName() {
