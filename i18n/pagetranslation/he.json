@@ -15,7 +15,7 @@
 	"right-pagetranslation": "סימון גרסאות של דפים כגרסאות שצריך לתרגם",
 	"action-pagetranslation": "לנהל דפים שאפשר לתרגם",
 	"tps-edit-sourcepage-title": "עריכת דף שאפשר לתרגם",
-	"tps-edit-sourcepage-text": "{{GENDER:|אתה עורך|את עורכת}} את המקור של דף התרגום. נא לוודא {{GENDER:|שאתה מכיר|שאת מכירה}} את המסמכים הבאים:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text שינוי טקסט המקור]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples דוגמה לשימוש בשפת עיצוב]",
+	"tps-edit-sourcepage-text": "{{GENDER:|אתה עורך|את עורכת}} את המקור של דף שאשפשר לתרגם. נא לוודא {{GENDER:|שאתה מכיר|שאת מכירה}} את המסמכים הבאים:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text שינוי טקסט המקור]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples דוגמה לשימוש בשפת עיצוב]",
 	"tps-edit-sourcepage-ve-warning-title": "אזהרה: דף שאינו נתמך",
 	"tps-edit-sourcepage-ve-warning-text": "{{GENDER:|אתה עורך|את עורכת}} דף שאפשר לתרגם. עריכה של דפים כאלה בתוכנת העריכה הזאת עדיין לא נתמכת. נא להשתמש בעורך קוד המקור.",
 	"tps-edit-sourcepage-ve-warning-button": "אישור",

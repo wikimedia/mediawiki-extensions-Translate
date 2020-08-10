@@ -65,6 +65,7 @@
 	"tpt-select-prioritylangs-reason": "Motivo:",
 	"tpt-sections-prioritylangs": "Idiomas prioritários",
 	"tpt-sections-syntaxversion": "Versão da sintaxe",
+	"tpt-syntaxversion-text": "Esta página atualmente usa uma versão antiga da sintaxe de fonte de página traduzível. A nova versão envolverá as seções não traduzidas com uma etiqueta HTML para indicar o idioma correto do texto. Exemplo: $1. Você pode usar uma nova sintaxe de marcação $2 para evitar qualquer tipo de empacotamento em lugares onde não é apropriado, como ao traduzir o atributo <code>title</code> de um elemento. Não é possível voltar para uma versão de sintaxe antiga.",
 	"tpt-syntaxversion-label": "Use a versão mais recente da sintaxe para esta página",
 	"tpt-rev-mark": "marcar para traduzir",
 	"tpt-rev-unmark": "remover das traduções",

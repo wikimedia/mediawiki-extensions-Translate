@@ -5,6 +5,7 @@
 			"Dan Koehl",
 			"Josve05a",
 			"Lokal Profil",
+			"Sabelöga",
 			"Victorsa",
 			"WikiPhoenix"
 		]
@@ -16,7 +17,7 @@
 	"apihelp-aggregategroups-example-1": "Associera en grupp",
 	"apihelp-groupreview-param-group": "Meddelandegrupp.",
 	"apihelp-groupreview-param-language": "Språkkod.",
-	"apihelp-groupreview-example-1": "Markera gruppen \"group-Example\" som redo för tyska",
+	"apihelp-groupreview-example-1": "Markera statusen för den tyska översättningen av gruppen \"group-Example\" som redo",
 	"apihelp-query+languagestats-param-language": "Språkkod.",
 	"apihelp-query+managemessagegroups-param-groupId": "Grupp-ID",
 	"apihelp-query+managemessagegroups-param-messageKey": "Meddelandenyckel",
