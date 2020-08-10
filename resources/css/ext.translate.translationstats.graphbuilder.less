@@ -1,0 +1,53 @@
+/**
+ * Contains CSS for the error messages and loaders displayed.
+ * when loading the translation stats graph.
+ * @license GPL-2.0-or-later
+ */
+.mw-translate-translationstats-graph-container {
+	@keyframes mw-translate-loading-spinner {
+		from {
+			transform: rotate( 0deg );
+		}
+
+		to {
+			transform: rotate( 360deg );
+		}
+	}
+	position: relative;
+
+	.mw-translate-loading-spinner {
+		/* @embed */
+		background-image: url( ../images/loading.svg );
+		background-size: 100%;
+		animation-name: mw-translate-loading-spinner;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		height: 34px;
+		width: 34px;
+		backface-visibility: hidden;
+		position: absolute;
+		left: 48%;
+		top: 15%;
+		display: none;
+	}
+
+	.mw-translate-error-container {
+		width: 100%;
+		top: 1em;
+		position: absolute;
+		background-color: #fee7e6;
+		color: #b32424;
+		padding: 0.6em 1em;
+		text-align: center;
+		display: none;
+	}
+
+	&.mw-translate-loading .mw-translate-loading-spinner {
+		display: block;
+	}
+
+	&.mw-translate-has-error .mw-translate-error-container {
+		display: block;
+	}
+}

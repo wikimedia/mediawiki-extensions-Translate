@@ -6,6 +6,9 @@
 		"wikimedia/mediawiki",
 		"wikimedia/jsduck"
 	],
+	"globals": {
+		"Chart": "readonly"
+	},
 	"rules": {
 		"max-len": "off",
 		"no-use-before-define": "off",

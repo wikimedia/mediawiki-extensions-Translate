@@ -26,6 +26,10 @@ class SpecialTranslationStats extends SpecialPage {
 	/** @var \MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider */
 	private $dataProvider;
 
+	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
+
+	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-graph-container';
+
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
 		$this->dataProvider = Services::getInstance()->getTranslationStatsDataProvider();
@@ -59,20 +63,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts = $graphOpts->getFormOptions();
 
 		if ( $this->including() ) {
-			$this->getOutput()->addHTML( $this->image( $opts ) );
-		} elseif ( $opts['graphit'] ) {
-			if ( !class_exists( PHPlot::class ) ) {
-				header( 'HTTP/1.0 500 Multi fail' );
-				echo 'PHPlot not found';
-			}
-
-			if ( !$this->getRequest()->getBool( 'debug' ) ) {
-				$this->getOutput()->disable();
-				header( 'Content-Type: image/png' );
-				header( 'Cache-Control: private, max-age=3600' );
-				header( 'Expires: ' . wfTimestamp( TS_RFC2822, time() + 3600 ) );
-			}
-			$this->draw( $graphOpts );
+			$this->getOutput()->addHTML( $this->embed( $opts ) );
 		} else {
 			$this->form( $opts );
 		}
@@ -85,23 +76,19 @@ class SpecialTranslationStats extends SpecialPage {
 	 */
 	protected function form( FormOptions $opts ) {
 		global $wgScript;
-
 		$this->setHeaders();
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.translationstats' );
 		$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 		$out->addWikiMsg( 'translate-statsf-intro' );
-
 		$out->addHTML(
 			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) .
-				Html::openElement( 'form', [ 'action' => $wgScript ] ) .
+				Html::openElement( 'form', [ 'action' => $wgScript, 'id' => 'translationStatsConfig' ] ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'preview', 1 ) .
 				'<table>'
 		);
-
 		$submit = Xml::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
-
 		$out->addHTML(
 			$this->eInput( 'width', $opts ) .
 				$this->eInput( 'height', $opts ) .
@@ -116,23 +103,19 @@ class SpecialTranslationStats extends SpecialPage {
 				'<tr><td colspan="2"><hr /></td></tr>' .
 				'<tr><td colspan="2">' . $submit . '</td></tr>'
 		);
-
 		$out->addHTML(
 			'</table>' .
 				'</form>' .
 				'</fieldset>'
 		);
-
 		if ( !$opts['preview'] ) {
 			return;
 		}
-
 		$spiParams = '';
 		foreach ( $opts->getChangedValues() as $key => $v ) {
 			if ( $key === 'preview' ) {
 				continue;
 			}
-
 			if ( $spiParams !== '' ) {
 				$spiParams .= ';';
 			}
@@ -142,25 +125,24 @@ class SpecialTranslationStats extends SpecialPage {
 			}
 			$spiParams .= wfEscapeWikiText( "$key=$v" );
 		}
-
 		if ( $spiParams !== '' ) {
 			$spiParams = '/' . $spiParams;
 		}
-
 		$titleText = $this->getPageTitle()->getPrefixedText();
-
 		$out->addHTML(
 			Html::element( 'hr' ) .
 				Html::element( 'pre', [], "{{{$titleText}{$spiParams}}}" )
 		);
-
+		// Element to render the Graph
 		$out->addHTML(
-			Html::element( 'hr' ) .
-				Html::rawElement(
-					'div',
-					[ 'style' => 'margin: 1em auto; text-align: center;' ],
-					$this->image( $opts )
-				)
+			Html::rawElement(
+				'div',
+				[
+					'id' => self::GRAPH_CONTAINER_ID ,
+					'style' => 'margin: 2em auto;',
+					'class' => self::GRAPH_CONTAINER_CLASS
+				]
+			)
 		);
 	}
 
@@ -173,7 +155,6 @@ class SpecialTranslationStats extends SpecialPage {
 	 */
 	protected function eInput( $name, FormOptions $opts, $width = 4 ) {
 		$value = $opts[$name];
-
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			Xml::input( $name, $width, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";
@@ -191,7 +172,6 @@ class SpecialTranslationStats extends SpecialPage {
 		// translate-statsf-language, translate-statsf-group
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
-
 		return Xml::tags( 'label', [ 'for' => $name ], $label );
 	}
 
@@ -208,7 +188,6 @@ class SpecialTranslationStats extends SpecialPage {
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
 		$s = '<tr><td>' . $label . '</td><td>';
-
 		$options = [];
 		foreach ( $alts as $alt ) {
 			$id = "$name-$alt";
@@ -216,10 +195,8 @@ class SpecialTranslationStats extends SpecialPage {
 				[ 'id' => $id ] ) . ' ';
 			$options[] = $radio . ' ' . $this->eLabel( $id );
 		}
-
 		$s .= implode( ' ', $options );
 		$s .= '</td></tr>' . "\n";
-
 		return $s;
 	}
 
@@ -234,7 +211,6 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$select = $this->languageSelector();
 		$select->setTargetId( 'language' );
-
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			$select->getHtmlAndPrepareJS() . '<br />' .
 			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
@@ -247,16 +223,12 @@ class SpecialTranslationStats extends SpecialPage {
 	 */
 	protected function languageSelector() {
 		$languages = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
-
 		ksort( $languages );
-
 		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector' );
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
-
 		$jsSelect = new JsSelectToInput( $selector );
-
 		return $jsSelect;
 	}
 
@@ -271,7 +243,6 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$select = $this->groupSelector();
 		$select->setTargetId( 'group' );
-
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			$select->getHtmlAndPrepareJS() . '<br />' .
 			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
@@ -293,9 +264,7 @@ class SpecialTranslationStats extends SpecialPage {
 				continue;
 			}
 		}
-
 		ksort( $groups );
-
 		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector' );
 		/**
 		 * @var MessageGroup $name
@@ -303,145 +272,21 @@ class SpecialTranslationStats extends SpecialPage {
 		foreach ( $groups as $code => $name ) {
 			$selector->addOption( $name->getLabel(), $code );
 		}
-
 		$jsSelect = new JsSelectToInput( $selector );
-
 		return $jsSelect;
 	}
 
-	/**
-	 * Returns an \<img> tag for graph.
-	 * @param FormOptions $opts
-	 * @return string Html.
-	 */
-	protected function image( FormOptions $opts ) {
-		$title = $this->getPageTitle();
-
-		$params = $opts->getChangedValues();
-		$params[ 'graphit' ] = true;
-		$src = $title->getLocalURL( $params );
-
-		$srcsets = [];
-		foreach ( [ 1.5, 2, 3 ] as $scale ) {
-			$params[ 'imagescale' ] = $scale;
-			$srcsets[] = "{$title->getLocalURL( $params )} {$scale}x";
-		}
-
-		return Xml::element( 'img',
+	protected function embed( FormOptions $opts ) {
+		$this->getOutput()->addModules( 'ext.translate.translationstats.embedded' );
+		return Html::rawElement(
+			'div',
 			[
-				'src' => $src,
-				'srcset' => implode( ', ', $srcsets ),
-				'width' => $opts['width'],
-				'height' => $opts['height'],
-			]
+				'class' => self::GRAPH_CONTAINER_CLASS
+			],
+			Html::hidden(
+				'translationStatsGraphOptions',
+				json_encode( $opts->getAllValues() )
+			)
 		);
-	}
-
-	/**
-	 * Adds raw image data of the graph to the output.
-	 * @param TranslationStatsGraphOptions $graphOpts
-	 */
-	public function draw( TranslationStatsGraphOptions $graphOpts ) {
-		global $wgTranslatePHPlotFont;
-
-		$opts = $graphOpts->getFormOptions();
-		$imageScale = $opts->getValue( 'imagescale' );
-		$width = $opts->getValue( 'width' );
-		$height = $opts->getValue( 'height' );
-		// Define the object
-		$plot = new PHPlot( $width * $imageScale, $height * $imageScale );
-
-		[ $legend, $resData ] = $this->dataProvider->getGraphData( $graphOpts, $this->getLanguage() );
-		$count = count( $resData );
-		$skip = (int)( $count / ( $width / 60 ) - 1 );
-		$i = $count;
-		$data = [];
-
-		foreach ( $resData as $date => $edits ) {
-			if ( $skip > 0 &&
-				( $count - $i ) % $skip !== 0
-			) {
-				$date = '';
-			}
-
-			if ( strpos( $date, ';' ) !== false ) {
-				list( , $date ) = explode( ';', $date, 2 );
-			}
-
-			array_unshift( $edits, $date );
-			$data[] = $edits;
-			$i--;
-		}
-
-		$font = FCFontFinder::findFile( $this->getLanguage()->getCode() );
-		if ( !$font ) {
-			$font = $wgTranslatePHPlotFont;
-		}
-		$numberFont = FCFontFinder::findFile( 'en' );
-		$plot->SetDefaultTTFont( $font );
-		$plot->SetFontTTF( 'generic', $font, 12 * $imageScale );
-		$plot->SetFontTTF( 'legend', $font, 12 * $imageScale );
-		$plot->SetFontTTF( 'x_title', $font, 10 * $imageScale );
-		$plot->SetFontTTF( 'y_title', $font, 10 * $imageScale );
-		$plot->SetFontTTF( 'x_label', $numberFont, 8 * $imageScale );
-		$plot->SetFontTTF( 'y_label', $numberFont, 8 * $imageScale );
-
-		$plot->SetDataValues( $data );
-
-		if ( $legend !== null ) {
-			$plot->SetLegend( $legend );
-		}
-
-		// Give grep a chance to find the usages:
-		// translate-stats-edits, translate-stats-users, translate-stats-registrations,
-		// translate-stats-reviews, translate-stats-reviewers
-		$yTitle = $this->msg( 'translate-stats-' . $opts['count'] )->escaped();
-
-		// Turn off X axis ticks and labels because they get in the way:
-		$plot->SetYTitle( $yTitle );
-		$plot->SetXTickLabelPos( 'none' );
-		$plot->SetXTickPos( 'none' );
-		$plot->SetXLabelAngle( 45 );
-
-		$max = max( array_map( 'max', $resData ) );
-		$max = self::roundToSignificant( $max, 1 );
-		$max = round( $max, (int)( -log( $max, 10 ) ) );
-
-		$yTick = 10;
-		while ( $max / $yTick > $height / 20 ) {
-			$yTick *= 2;
-		}
-
-		// If we have very small case, ensure that there is at least one tick
-		$yTick = min( $max, $yTick );
-		$yTick = self::roundToSignificant( $yTick );
-		$plot->SetYTickIncrement( $yTick );
-		$plot->SetPlotAreaWorld( null, 0, null, max( $max, 10 ) );
-
-		$plot->SetTransparentColor( 'white' );
-		$plot->SetBackgroundColor( 'white' );
-
-		// Draw it
-		$plot->DrawGraph();
-	}
-
-	/**
-	 * Enhanced version of round that supports rounding up to a given scale
-	 * relative to the number itself. Examples:
-	 * - roundToSignificant( 1234, 0 ) = 10000
-	 * - roundToSignificant( 1234, 1 ) = 2000
-	 * - roundToSignificant( 1234, 2 ) = 1300
-	 * - roundToSignificant( 1234, 3 ) = 1240
-	 *
-	 * @param int $number Number to round.
-	 * @param int $significant How many signficant numbers to keep.
-	 * @return int Rounded number.
-	 */
-	public static function roundToSignificant( $number, $significant = 1 ) {
-		$log = (int)log( $number, 10 );
-		$nonSignificant = max( 0, $log - $significant + 1 );
-		$factor = pow( 10, $nonSignificant );
-
-		return (int)( ceil( $number / $factor ) * $factor );
 	}
 }

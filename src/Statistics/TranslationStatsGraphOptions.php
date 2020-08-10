@@ -19,7 +19,6 @@ class TranslationStatsGraphOptions {
 
 	public function __construct() {
 		$this->formOptions = new FormOptions();
-		$this->formOptions->add( 'graphit', false );
 		$this->formOptions->add( 'preview', false );
 		$this->formOptions->add( 'language', [] );
 		$this->formOptions->add( 'count', 'edits' );
@@ -30,7 +29,6 @@ class TranslationStatsGraphOptions {
 		$this->formOptions->add( 'group', [] );
 		$this->formOptions->add( 'uselang', '' );
 		$this->formOptions->add( 'start', '' );
-		$this->formOptions->add( 'imagescale', 1.0 );
 	}
 
 	public function bindArray( array $inputs ): void {
@@ -57,7 +55,6 @@ class TranslationStatsGraphOptions {
 		$this->formOptions->validateIntBounds( 'days', 1, 10000 );
 		$this->formOptions->validateIntBounds( 'width', 200, 1000 );
 		$this->formOptions->validateIntBounds( 'height', 200, 1000 );
-		$this->formOptions->validateBounds( 'imagescale', 1.0, 4.0 );
 
 		if ( $this->formOptions['start'] !== '' ) {
 			$timestamp = wfTimestamp( TS_ISO_8601, $this->formOptions['start'] );

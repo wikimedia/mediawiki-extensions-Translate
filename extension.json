@@ -728,9 +728,54 @@
 			]
 		},
 		"ext.translate.special.translationstats": {
-			"scripts": "resources/js/ext.translate.special.translationstats.js",
+			"packageFiles": [
+				"resources/js/ext.translate.special.translationstats.js"
+			],
 			"dependencies": [
+				"ext.translate.translationstats.graphbuilder.js",
 				"mediawiki.widgets.datetime"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.translationstats.embedded": {
+			"packageFiles": [
+				"resources/js/ext.translate.translationstats.embedded.js"
+			],
+			"dependencies": [
+				"ext.translate.translationstats.graphbuilder.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.translationstats.graphbuilder.js": {
+			"scripts": [
+				"resources/js/ext.translate.translationstats.graphbuilder.js",
+				"resources/lib/Chart.js/Chart.js"
+			],
+			"dependencies": [
+				"mediawiki.api"
+			],
+			"styles": [
+				"resources/lib/Chart.js/Chart.css",
+				"resources/css/ext.translate.translationstats.graphbuilder.less"
+			],
+			"messages": [
+				"translate-statsf-count-edits",
+				"translate-statsf-count-users",
+				"translate-statsf-count-registrations",
+				"translate-statsf-count-reviews",
+				"translate-statsf-count-reviewers",
+				"translate-statsf-scale-months",
+				"translate-statsf-scale-weeks",
+				"translate-statsf-scale-days",
+				"translate-statsf-scale-hours",
+				"translate-statsf-unknown-error",
+				"translate-statsf-error-message"
 			],
 			"targets": [
 				"desktop",
@@ -915,16 +960,6 @@
 		"TranslateDelayedMessageIndexRebuild": {
 			"value": false,
 			"description": "If you have lots of message groups, especially file based ones, and the message index rebuilding gets slow, set this to true to delay the rebuilding via JobQueue. This only makes sense if you have configured jobs to be processed outside of requests via cron or similar.",
-			"public": true
-		},
-		"TranslatePHPlot": {
-			"value": false,
-			"description": "For Special:TranslationStats PHPlot is needed to produce graphs. Set this the location of phplot.php.",
-			"public": true
-		},
-		"TranslatePHPlotFont": {
-			"value": "/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf",
-			"description": "The default font for PHPlot for drawing text. Only used if the automatic best font selection fails. The automatic best font selector uses language code to call fc-match program. If you have open_basedir restriction or safe-mode, using the found font is likely to fail. In this case you need to change the code to use hard-coded font, or copy fonts to location PHP can access them, and make sure fc-match returns only those fonts.",
 			"public": true
 		},
 		"TranslateUseSandbox": {

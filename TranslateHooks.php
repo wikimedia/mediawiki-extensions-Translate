@@ -32,7 +32,7 @@ class TranslateHooks {
 	 * Do late setup that depends on configuration.
 	 */
 	public static function setupTranslate() {
-		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks, $wgTranslateYamlLibrary;
+		global $wgHooks, $wgTranslateYamlLibrary;
 
 		/*
 		 * Text that will be shown in translations if the translation is outdated.
@@ -44,10 +44,6 @@ class TranslateHooks {
 
 		if ( $wgTranslateYamlLibrary === null ) {
 			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
-		}
-
-		if ( $wgTranslatePHPlot ) {
-			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}
 
 		$usePageSaveComplete = version_compare( MW_VERSION, '1.35', '>=' );

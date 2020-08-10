@@ -51,8 +51,7 @@
 	"require": {
 		"php": ">=7.2",
 		"composer/installers": ">=1.0.1",
-		"mustangostang/spyc": "^0.6.3",
-		"davefx/phplot": "6.2.1"
+		"mustangostang/spyc": "^0.6.3"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "31.0.0",

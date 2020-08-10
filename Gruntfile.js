@@ -24,7 +24,8 @@ module.exports = function ( grunt ) {
 				'**/*.css',
 				'**/*.less',
 				'!node_modules/**',
-				'!vendor/**'
+				'!vendor/**',
+				'!resources/lib/**'
 			]
 		},
 		// eslint-disable-next-line es/no-object-assign
