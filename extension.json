@@ -12,6 +12,7 @@
 	"version": "2020-07-20",
 	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
 	"descriptionmsg": "translate-desc",
+	"namemsg": "translate-extensionname",
 	"license-name": "GPL-2.0-or-later",
 	"requires": {
 		"MediaWiki": ">= 1.33.0",
