@@ -100,7 +100,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 			'languagecode' => 'fi',
 			'messagegroupid' => 'page-Vuosaari',
 		];
-		$this->assertTrue( is_array( $actual ), 'Extension data is set on marked page' );
+		$this->assertIsArray( $actual, 'Extension data is set on marked page' );
 		$this->assertSame(
 			'Vuosaari',
 			$actual[ 'sourcepagetitle' ]->getPrefixedText(),

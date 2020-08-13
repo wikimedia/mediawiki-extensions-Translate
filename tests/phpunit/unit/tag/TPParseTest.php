@@ -7,7 +7,7 @@ declare( strict_types = 1 );
  * @covers \TPParse
  */
 class TPParseTest extends \MediaWikiUnitTestCase {
-	public function setUp(): void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		if ( !defined( 'TRANSLATE_FUZZY' ) ) {

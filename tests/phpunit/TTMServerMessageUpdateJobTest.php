@@ -15,7 +15,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 */
 	public static $mockups = [];
 
-	public function setUp() : void {
+	protected function setUp() : void {
 		parent::setUp();
 		self::$mockups = [];
 		$this->setMwGlobals( [
@@ -36,7 +36,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		] );
 	}
 
-	public function tearDown() : void {
+	protected function tearDown() : void {
 		parent::tearDown();
 		self::$mockups = [];
 	}
@@ -93,7 +93,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertSame( 1, count( $job->getResentJobs() ) );
+		$this->assertCount( 1, $job->getResentJobs() );
 		$expectedParams = [
 			'errorCount' => 1,
 			'service' => 'secondary',
@@ -132,7 +132,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertEquals( 2, count( $job->getResentJobs() ) );
+		$this->assertCount( 2, $job->getResentJobs() );
 		$expectedParams = [
 			'errorCount' => 1,
 			'service' => 'primary',
@@ -249,7 +249,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertSame( 1, count( $job->getResentJobs() ) );
+		$this->assertCount( 1, $job->getResentJobs() );
 		$expectedParams = [
 			'errorCount' => 0,
 			'retryCount' => 1,
@@ -296,7 +296,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				->getMock()
 		);
 		$job->run();
-		$this->assertEquals( 2, count( $job->getResentJobs() ) );
+		$this->assertCount( 2, $job->getResentJobs() );
 		$expectedParams = [
 			'errorCount' => 1,
 			'retryCount' => 0,

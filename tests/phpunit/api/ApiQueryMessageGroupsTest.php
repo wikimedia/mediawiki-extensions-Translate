@@ -72,14 +72,14 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$this->assertCount( 2, $items, 'Only the two groups specified are in the api' );
 		$this->assertStringEndsWith( 'id', $items[0]['id'] );
 		$this->assertStringEndsWith( 'id', $items[1]['id'] );
-		$this->assertSame( $items[0]['label'], 'thelabel' );
-		$this->assertSame( $items[1]['label'], 'thelabel' );
-		$this->assertSame( $items[0]['exists'], true );
-		$this->assertSame( $items[1]['exists'], true );
-		$this->assertSame( $items[0]['namespace'], 5 );
-		$this->assertSame( $items[1]['namespace'], 5 );
-		$this->assertSame( $items[0]['class'], WikiMessageGroup::class );
-		$this->assertSame( $items[1]['class'], WikiMessageGroup::class );
+		$this->assertSame( 'thelabel', $items[0]['label'] );
+		$this->assertSame( 'thelabel', $items[1]['label'] );
+		$this->assertTrue( $items[0]['exists'] );
+		$this->assertTrue( $items[1]['exists'] );
+		$this->assertSame( 5, $items[0]['namespace'] );
+		$this->assertSame( 5, $items[1]['namespace'] );
+		$this->assertSame( WikiMessageGroup::class, $items[0]['class'] );
+		$this->assertSame( WikiMessageGroup::class, $items[1]['class'] );
 	}
 
 	public function testAPIFilterAccuracy() {
@@ -119,12 +119,12 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			$item = $data['query']['messagegroups'][0];
 			$this->assertCount( 5, $item );
 
-			$this->assertSame( $item['id'], $id );
-			$this->assertSame( $item['label'], 'thelabel' );
-			$this->assertSame( $item['exists'], true );
+			$this->assertSame( $id, $item['id'] );
+			$this->assertSame( 'thelabel', $item['label'] );
+			$this->assertTrue( $item['exists'] );
 			$this->assertStringEndsWith( 'id', $item['id'] ); // theid, anotherid
-			$this->assertSame( $item['namespace'], 5 );
-			$this->assertSame( $item['class'], WikiMessageGroup::class );
+			$this->assertSame( 5, $item['namespace'] );
+			$this->assertSame( WikiMessageGroup::class, $item['class'] );
 		}
 	}
 

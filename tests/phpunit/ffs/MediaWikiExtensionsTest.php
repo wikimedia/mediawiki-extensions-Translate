@@ -16,8 +16,8 @@ class MediaWikiExtensionsTest extends PHPUnit\Framework\TestCase {
 		$list = $deps = $autoload = [];
 		$foo->register( $list, $deps, $autoload );
 
-		$this->assertSame( 1, count( $deps ), 'A dependency to definition file was added' );
-		$this->assertEquals( 5, count( $list ), 'Right number of groups were created' );
+		$this->assertCount( 1, $deps, 'A dependency to definition file was added' );
+		$this->assertCount( 5, $list, 'Right number of groups were created' );
 
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/../data/MediaWikiExtensionTest-conf2.yaml' );
