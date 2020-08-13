@@ -9,7 +9,7 @@
  */
 
 /**
- * @see JsonFFS
+ * @covers \JsonFFS
  */
 class JsonFFSTest extends MediaWikiIntegrationTestCase {
 

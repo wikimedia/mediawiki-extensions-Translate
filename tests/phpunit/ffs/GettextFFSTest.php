@@ -9,7 +9,7 @@
  */
 
 /**
- * @see GettextFFS
+ * @covers \GettextFFS
  */
 class GettextFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration;

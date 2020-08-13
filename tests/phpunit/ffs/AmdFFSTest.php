@@ -9,7 +9,7 @@
  */
 
 /**
- * @see AmdFFS
+ * @covers \AmdFFS
  */
 class AmdFFSTest extends MediaWikiIntegrationTestCase {
 
