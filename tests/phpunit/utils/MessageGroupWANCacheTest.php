@@ -1,4 +1,5 @@
 <?php
+
 class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 	protected $mgCache;
 

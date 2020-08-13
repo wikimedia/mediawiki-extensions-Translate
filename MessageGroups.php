@@ -556,7 +556,6 @@ class MessageGroups {
 	}
 
 	/**
-	 * Constructor function.
 	 * @return self
 	 */
 	public static function singleton() {

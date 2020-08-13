@@ -22,8 +22,6 @@ class WikiMessageGroup extends MessageGroupOld {
 	protected $source;
 
 	/**
-	 * Constructor.
-	 *
 	 * @param string $id Unique id for this group.
 	 * @param string $source Mediawiki message that contains list of message keys.
 	 */

@@ -3,7 +3,6 @@
 use MediaWiki\Revision\RevisionRecord;
 
 /**
- * Class TranslateUtilsTest
  * @group Database
  * @covers TranslateUtils
  */

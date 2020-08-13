@@ -750,7 +750,6 @@ class TranslatablePage {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getTranslationPercentages() {

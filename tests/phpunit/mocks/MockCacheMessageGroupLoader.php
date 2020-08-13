@@ -1,4 +1,5 @@
 <?php
+
 class MockCacheMessageGroupLoader extends MessageGroupLoader
 	implements CachedMessageGroupLoader {
 

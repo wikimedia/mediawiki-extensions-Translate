@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Test for parsing the special definition file for mediawiki-extensions
  * @author Niklas Laxström

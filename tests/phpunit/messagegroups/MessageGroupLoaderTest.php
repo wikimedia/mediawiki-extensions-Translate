@@ -1,4 +1,5 @@
 <?php
+
 class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 
 	protected $cacheLoaderMock;

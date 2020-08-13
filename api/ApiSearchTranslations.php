@@ -1,4 +1,5 @@
 <?php
+
 /**
  * API module for search translations
  * @since 2015.07

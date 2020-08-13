@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cross Language Translation Search.
  * @since 2015.08

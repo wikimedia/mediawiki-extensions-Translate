@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AppleInfoPlistFfs extends the AppleFFS class and implements support for
  * Apple InfoPlist .strings files.

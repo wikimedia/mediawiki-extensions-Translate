@@ -1,4 +1,5 @@
 <?php
+
 /**
  * stub for davefx/phplot
  * @phpcs:disable MediaWiki.Files.ClassMatchesFilename
