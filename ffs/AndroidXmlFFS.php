@@ -75,9 +75,7 @@ class AndroidXmlFFS extends SimpleFFS {
 	}
 
 	protected function scrapeAuthors( $string ) {
-		$match = [];
-		preg_match( '~<!-- Authors:\n((?:\* .*\n)*)-->~', $string, $match );
-		if ( !$match ) {
+		if ( !preg_match( '~<!-- Authors:\n((?:\* .*\n)*)-->~', $string, $match ) ) {
 			return [];
 		}
 
