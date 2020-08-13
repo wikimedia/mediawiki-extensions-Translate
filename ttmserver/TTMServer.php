@@ -74,24 +74,11 @@ class TTMServer {
 	 * @return array[]
 	 */
 	public static function sortSuggestions( array $suggestions ) {
-		usort( $suggestions, [ __CLASS__, 'qualitySort' ] );
+		usort( $suggestions, function ( $a, $b ) {
+			return $b['quality'] <=> $a['quality'];
+		} );
 
 		return $suggestions;
-	}
-
-	/**
-	 * @param array $a
-	 * @param array $b
-	 * @return int
-	 */
-	protected static function qualitySort( $a, $b ) {
-		list( $c, $d ) = [ $a['quality'], $b['quality'] ];
-		if ( $c === $d ) {
-			return 0;
-		}
-
-		// Descending sort
-		return ( $c > $d ) ? -1 : 1;
 	}
 
 	/**
