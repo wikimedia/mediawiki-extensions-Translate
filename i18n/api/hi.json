@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"NehalDaveND",
 			"Sfic"
 		]
@@ -20,5 +21,6 @@
 	"apihelp-searchtranslations-param-limit": "परिणाम का आकार",
 	"apihelp-searchtranslations-example-1": "भाषा का अनुवाद दिखाएँ",
 	"apierror-translate-invalidupdate": "अमान्य अद्यतन",
+	"apierror-translate-sandbox-invalidppassword": "अवैध पासवर्ड",
 	"apierror-translate-unknownmessage": "अज्ञात संदेश"
 }

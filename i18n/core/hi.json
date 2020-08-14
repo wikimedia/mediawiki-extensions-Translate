@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Amire80",
 			"Ansumang",
 			"Ashishbhatnagar72",
@@ -115,11 +116,14 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|भाषा|भाषाएँ}} कुल ।",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|सम्पादन|सम्पादन}} - शेष सम्पादन $3 {{PLURAL:$3|दिन|दिन}} पेहले",
 	"translate-jssti-add": "सूची में जोड़ें",
+	"translate-smg-rename-select": "चुनें",
+	"translate-smg-rename-cancel": "रद्द करें",
 	"translate-manage-import-diff": "संदेश $1 | क्रियाएँ: $2",
 	"translate-manage-import-new": "नये सन्देश $1",
 	"translate-manage-action-import": "आयात",
 	"translate-manage-action-conflict": "आयात और फजी",
 	"translate-manage-action-ignore": "उपेक्षा",
+	"translate-manage-action-rename": "नाम बदलें",
 	"translate-manage-import-done": "आयात पूर्ण!",
 	"importtranslations": "अनुवाद आयात करें",
 	"translate-import-from-local": "स्थानीय फ़ाइल अपलोड:",
