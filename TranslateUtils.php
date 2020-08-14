@@ -86,11 +86,12 @@ class TranslateUtils {
 				$query['fields'],
 				[
 					'page_namespace' => $namespace,
-					'page_title' => $titles
+					'page_title' => $titles,
+					'page_latest=rev_id',
 				],
 				__METHOD__,
 				[],
-				$query['joins'] + [ 'JOIN', 'page_latest=rev_id' ]
+				$query['joins']
 			);
 
 			$revisions = $revStore->newRevisionsFromBatch( $rows, [
