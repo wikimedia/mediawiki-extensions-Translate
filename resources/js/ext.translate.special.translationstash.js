@@ -177,7 +177,7 @@
 				var $untranslated, messages = result.query.messagecollection;
 
 				$messageTable.empty();
-				$.each( messages, function ( index, message ) {
+				messages.forEach( function ( message ) {
 					message.properties = {};
 					message.properties.status = 'untranslated';
 
@@ -246,10 +246,9 @@
 		translationStashStorage.getUserTranslations()
 			.done( function ( translations ) {
 				if ( translations.translationstash.translations ) {
-					$.each( translations.translationstash.translations,
-						function ( index, translation ) {
-							userTranslations[ translation.title ] = translation;
-						} );
+					translations.translationstash.translations.forEach( function ( translation ) {
+						userTranslations[ translation.title ] = translation;
+					} );
 				}
 				loadMessages();
 			} );

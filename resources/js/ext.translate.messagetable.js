@@ -509,7 +509,7 @@
 					}
 				}
 
-				$.each( messages, function ( index, message ) {
+				messages.forEach( function ( message, index ) {
 					message.group = self.settings.group;
 					self.add( message );
 					self.messages.push( message );
@@ -779,7 +779,7 @@
 			}
 
 			if ( messageTable.messages.length ) {
-				$.each( messageTable.messages, function ( index, message ) {
+				messageTable.messages.forEach( function ( message ) {
 					messageTable.add( message );
 				} );
 			} else if ( messageTable.initialized && !messageTable.loading ) {

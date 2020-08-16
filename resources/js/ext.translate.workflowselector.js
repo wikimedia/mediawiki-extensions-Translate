@@ -104,23 +104,23 @@
 					e.stopPropagation();
 				} );
 
-			$.each( this.states, function ( id, data ) {
-				var $state;
+			Object.keys( instance.states ).forEach( function ( key ) {
+				var data = instance.states[ key ], $state;
 
 				// Store the id also
-				data.id = id;
+				data.id = key;
 
 				$state = $( '<li>' )
 					.data( 'state', data )
 					.text( data.name );
 
-				if ( data.canchange && id !== instance.currentState ) {
+				if ( data.canchange && data.id !== instance.currentState ) {
 					$state.addClass( 'changeable' );
 				} else {
 					$state.addClass( 'unchangeable' );
 				}
 
-				if ( id === instance.currentState ) {
+				if ( data.id === instance.currentState ) {
 					$display.text( instance.getStateDisplay( data.name ) );
 					$display.append( $( '<span>' ).addClass( 'tux-workflow-status-triangle' ) );
 					$state.addClass( 'selected' );

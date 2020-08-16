@@ -337,7 +337,7 @@
 			this.loadGroups()
 				.then( function ( allGroups ) {
 					var rows = [];
-					$.each( groups, function ( index, id ) {
+					groups.forEach( function ( id ) {
 						var group = mw.translate.findGroup( id, allGroups );
 						if ( group ) {
 							rows.push( groupSelector.prepareMessageGroupRow( group ) );
@@ -466,7 +466,7 @@
 				return;
 			}
 
-			$.each( groups, function ( index, group ) {
+			groups.forEach( function ( group ) {
 				/* Hide from the selector:
 				 * - discouraged groups (the only priority value currently supported).
 				 * - groups that are recommended for other languages.

@@ -70,8 +70,8 @@
 			uri.extend( params );
 
 			// Support removing keys from the query
-			$.each( params, function ( key, val ) {
-				if ( val === null ) {
+			Object.keys( params ).forEach( function ( key ) {
+				if ( params[ key ] === null ) {
 					delete uri.query[ key ];
 				}
 			} );

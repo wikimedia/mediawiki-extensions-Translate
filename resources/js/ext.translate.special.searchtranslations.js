@@ -6,21 +6,21 @@
 	$( function () {
 		resultGroups = $( '.facet.groups' ).data( 'facets' );
 
-		$( '.tux-searchpage .button' ).on( 'click', function () {
+		$( '.tux-searchpage .mw-ui-button' ).on( 'click', function () {
 			var query = $( '.tux-searchpage .searchinputbox' ).val(),
 				result = lexOperators( query ),
 				$form = $( '.tux-searchpage form[name=searchform]' );
 
-			$.each( result, function ( index, value ) {
+			Object.keys( result ).forEach( function ( index ) {
 				var $input = $( '<input>' ).prop( 'type', 'hidden' ),
 					$elem = $form.find( 'input[name=' + index + ']' );
 
 				if ( $elem.length ) {
-					$elem.val( value );
+					$elem.val( result[ index ] );
 				} else {
 					$form.append( $input
 						.prop( {
-							value: value,
+							value: result[ index ],
 							name: index
 						} )
 					);
@@ -135,7 +135,7 @@
 			);
 		}
 
-		$.each( Object.keys( languages ), function ( index, languageCode ) {
+		Object.keys( languages ).forEach( function ( languageCode ) {
 			ulslanguages[ languageCode ] = mw.config.get( 'wgTranslateLanguages' )[ languageCode ];
 		} );
 
@@ -297,14 +297,14 @@
 	}
 
 	function lexOperators( str ) {
-		var string = str.split( ' ' ),
+		var splitValues = str.split( ' ' ),
 			result = {},
 			query = '';
 
-		$.each( string, function ( index, value ) {
-			matchOperators( value, function ( obj ) {
+		splitValues.forEach( function ( string ) {
+			matchOperators( string, function ( obj ) {
 				if ( obj === false ) {
-					query = query + ' ' + value;
+					query = query + ' ' + string;
 				} else {
 					result[ obj.operator ] = obj.value;
 				}
@@ -321,7 +321,7 @@
 			// Add operators for different filters
 			operatorRegex = [ 'language', 'group', 'filter' ];
 
-		$.each( operatorRegex, function ( index, value ) {
+		operatorRegex.forEach( function ( value ) {
 			var regex = new RegExp( value + ':(\\S+)', 'i' );
 			if ( ( matches = regex.exec( str ) ) !== null ) {
 				counter = true;

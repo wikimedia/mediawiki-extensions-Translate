@@ -31,7 +31,7 @@
 	}
 
 	function associate( event, resp ) {
-		var successFunction, params, subgroupId,
+		var successFunction, params, subgroupId, i,
 			$target = $( event.target ),
 			$parent = $target.parents( '.mw-tpa-group' ),
 			parentId = $parent.data( 'id' ),
@@ -63,11 +63,12 @@
 
 		// Get the label for the value and make API request if valid
 		subgroupId = '';
-		$.each( resp, function ( key, value ) {
-			if ( subgroupName === value.label ) {
-				subgroupId = value.id;
+		for ( i = 0; i < resp.length; ++i ) {
+			if ( subgroupName === resp[ i ].label ) {
+				subgroupId = resp[ i ].id;
+				break;
 			}
-		} );
+		}
 
 		if ( subgroupId ) {
 			params = $.extend( getApiParams( $target ), {
@@ -201,11 +202,15 @@
 
 			resp = [];
 
-			$.each( groups, function ( key, value ) {
-				if ( value.label.match( inp ) && exclude.indexOf( value.label ) === -1 ) {
-					resp.push( value );
+			Object.keys( groups ).forEach( function ( key ) {
+				if (
+					groups[ key ].label.match( inp ) &&
+					exclude.indexOf( groups[ key ].label ) === -1
+				) {
+					resp.push( groups[ key ] );
 				}
 			} );
+
 			response( resp );
 		};
 

@@ -156,7 +156,7 @@
 
 		if ( request.languagepreferences ) {
 			if ( request.languagepreferences.languages ) {
-				$.each( request.languagepreferences.languages, function ( index, language ) {
+				request.languagepreferences.languages.forEach( function ( language ) {
 					$detailsPane.find( '.languages' ).append(
 						$( '<span>' )
 							.prop( {
@@ -220,7 +220,7 @@
 		);
 
 		translations.translationstash.translations.sort( sortTranslationsByLanguage );
-		$.each( translations.translationstash.translations, function ( index, translation ) {
+		translations.translationstash.translations.forEach( function ( translation ) {
 			showTranslation( translation );
 		} );
 	}
