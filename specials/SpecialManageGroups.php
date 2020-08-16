@@ -604,11 +604,7 @@ class SpecialManageGroups extends SpecialPage {
 			$replacementContent = $matchedMsg['content'];
 		}
 
-		if ( $selectedVal === 'renamefuzzy' ) {
-			$params['fuzzy'] = 'fuzzy';
-		} else {
-			$params['fuzzy'] = false;
-		}
+		$params['fuzzy'] = $selectedVal === 'renamefuzzy';
 
 		$params['content'] = $replacementContent;
 
@@ -719,7 +715,7 @@ class SpecialManageGroups extends SpecialPage {
 					continue;
 				}
 
-				$fuzzy = $selectedVal === 'fuzzy' ? 'fuzzy' : false;
+				$fuzzy = $selectedVal === 'fuzzy';
 				$messageUpdateJob[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
 			}
 		}
