@@ -182,12 +182,12 @@
 		var preferredLanguages, headerMessage, languagesMessage,
 			$groupWarning = $( '.tux-editor-header .group-warning' );
 
-		if ( isPriorityLanguage( language, group.prioritylangs ) ) {
+		if ( !group.prioritylangs || isPriorityLanguage( language, group.prioritylangs ) ) {
 			return;
 		}
 
 		// Make a comma-separated list of preferred languages
-		preferredLanguages = $.map( group.prioritylangs, function ( lang ) {
+		preferredLanguages = group.prioritylangs.map( function ( lang ) {
 			// bidi isolation for language names
 			return '<bdi>' + $.uls.data.getAutonym( lang ) + '</bdi>';
 		} ).join( ', ' );

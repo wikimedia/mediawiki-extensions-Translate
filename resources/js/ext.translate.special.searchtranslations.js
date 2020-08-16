@@ -191,7 +191,6 @@
 			currentGroup = $( '.facet.groups' ).data( 'group' ),
 			resultCount = groupList.length,
 			position,
-			groups,
 			options,
 			grouppath;
 
@@ -289,12 +288,10 @@
 				},
 				preventSelector: true
 			};
-			groups = $.map( resultGroups, function ( value, index ) {
-				return index;
-			} );
+
 			$grouSelectorTrigger.msggroupselector(
 				options,
-				groups
+				Object.keys( resultGroups )
 			);
 		}
 	}

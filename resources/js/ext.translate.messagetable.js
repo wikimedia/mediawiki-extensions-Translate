@@ -855,7 +855,7 @@
 			var $warningContainer = $( '.tux-editor-header .group-warning' );
 
 			if ( errors ) {
-				$.map( errors, function ( error ) {
+				errors.forEach( function ( error ) {
 					$warningContainer.append( error.html );
 				} );
 			} else {
