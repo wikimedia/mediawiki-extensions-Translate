@@ -240,7 +240,6 @@ class SpecialPageTranslation extends SpecialPage {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
 				$this->showSuccess( $page, $firstMark );
-				$this->listPages();
 			}
 
 			return;
@@ -283,6 +282,8 @@ class SpecialPageTranslation extends SpecialPage {
 				[ 'tpage' => $page->getTitle()->getArticleID() ] );
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}
+
+		$this->getOutput()->addWikiMsg( 'tpt-list-pages-in-translations' );
 	}
 
 	protected function showGenericConfirmation( array $params ) {

@@ -31,6 +31,7 @@
 	"tpt-saveok": "The page [[:$1]] has been marked up for translation with $2 {{PLURAL:$2|translation unit|translation units}}.\nThe page can now be <span class=\"plainlinks\">[$3 translated]</span>.",
 	"tpt-saveok-first": "You can [[Special:PageMigration|import pre-existing translation]] for this page (if any).",
 	"tpt-offer-notify": "You can <span class=\"plainlinks\">[$1 notify translators]</span> about this page.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|View the list of translatable pages.]]",
 	"tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimized to avoid unnecessary work for translators.",
 	"tpt-mark-summary": "Marked this version for translation",
 	"tpt-mark-nochanges": "No changes to review. Marking this page for translation will not edit the page nor any existing translation unit.",
