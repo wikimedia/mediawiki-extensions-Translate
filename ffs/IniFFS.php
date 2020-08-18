@@ -18,9 +18,7 @@
 class IniFFS extends SimpleFFS {
 	public static function isValid( $data ) {
 		$conf = [ 'BASIC' => [ 'class' => FileBasedMessageGroup::class, 'namespace' => 8 ] ];
-		/**
-		 * @var FileBasedMessageGroup $group
-		 */
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $conf );
 		'@phan-var FileBasedMessageGroup $group';
 
@@ -73,9 +71,7 @@ class IniFFS extends SimpleFFS {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
-		/**
-		 * @var $m TMessage
-		 */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( $value === null ) {

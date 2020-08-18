@@ -64,9 +64,8 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$mangler = $this->group->getMangler();
 
 		$messages = [];
-		/**
-		 * @var $m TMessage
-		 */
+
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$value = $m->translation();

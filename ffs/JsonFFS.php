@@ -88,9 +88,7 @@ class JsonFFS extends SimpleFFS {
 
 		$mangler = $this->group->getMangler();
 
-		/**
-		 * @var $m TMessage
-		 */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( $value === null ) {
