@@ -9,5 +9,7 @@
 	"tux-sst-search-ph": "Serchar tradukuri",
 	"tux-sst-facet-language": "Lingui",
 	"tux-sst-facet-group": "Grupo di mesaji",
+	"tux-sst-default": "Tradukuri",
+	"tux-sst-translated": "Tradukuri de $1",
 	"tux-sst-case-sensitive": "''Case sensitive''"
 }
