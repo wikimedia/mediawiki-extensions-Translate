@@ -285,17 +285,17 @@
 				} );
 
 				setTimeout( function () {
-					var offset, $icon = $( '.autotooltip:visible' );
-					if ( !$icon.length ) {
+					var offset, $visibleIcon = $( '.autotooltip:visible' );
+					if ( !$visibleIcon.length ) {
 						return;
 					}
 
-					offset = $icon.offset();
+					offset = $visibleIcon.offset();
 					tooltip.$element.appendTo( document.body );
 					tooltip.toggle( true ).toggleClipping( false ).togglePositioning( false );
 					tooltip.$element.css( {
-						top: offset.top + $icon.outerHeight() + 5,
-						left: offset.left + $icon.outerWidth() - tooltip.$element.width() / 2 - 15
+						top: offset.top + $visibleIcon.outerHeight() + 5,
+						left: offset.left + $visibleIcon.outerWidth() - tooltip.$element.width() / 2 - 15
 					} );
 
 					setTimeout( function () {

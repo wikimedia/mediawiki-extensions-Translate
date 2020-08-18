@@ -268,9 +268,7 @@
 				data = $this.data( 'proofread' );
 
 			if ( !data ) {
-				$this.data( 'proofread',
-					( data = new Proofread( this, options ) )
-				);
+				$this.data( 'proofread', new Proofread( this, options ) );
 			}
 
 		} );

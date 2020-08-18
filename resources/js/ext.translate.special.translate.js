@@ -143,18 +143,18 @@
 	/**
 	 * Updates all group specific stuff on the page.
 	 *
-	 * @param {Object} state Information about current group and language.
-	 * @param {string} state.group Message group id.
-	 * @param {string} state.language Language.
+	 * @param {Object} stateInfo Information about current group and language.
+	 * @param {string} stateInfo.group Message group id.
+	 * @param {string} stateInfo.language Language.
 	 */
-	function updateGroupInformation( state ) {
+	function updateGroupInformation( stateInfo ) {
 		var props = 'id|priority|prioritylangs|priorityforce|description';
 
-		mw.translate.recentGroups.append( state.group );
+		mw.translate.recentGroups.append( stateInfo.group );
 
-		mw.translate.getMessageGroup( state.group, props ).done( function ( group ) {
+		mw.translate.getMessageGroup( stateInfo.group, props ).done( function ( group ) {
 			updateDescription( group );
-			updateGroupWarning( group, state.language );
+			updateGroupWarning( group, stateInfo.language );
 		} );
 	}
 
@@ -388,11 +388,11 @@
 			} );
 
 		$( '#tux-option-optional' ).on( 'change', function () {
-			var uri = new mw.Uri( window.location.href ),
+			var currentUri = new mw.Uri( window.location.href ),
 				checked = $( this ).prop( 'checked' );
 
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
-			mw.translate.changeFilter( uri.query.filter );
+			mw.translate.changeFilter( currentUri.query.filter );
 		} );
 	} );
 

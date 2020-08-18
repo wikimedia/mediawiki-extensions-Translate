@@ -175,7 +175,7 @@
 				data = $this.data( 'languagestatsbar' );
 
 			if ( !data ) {
-				$this.data( 'languagestatsbar', ( data = new LanguageStatsBar( this, options ) ) );
+				$this.data( 'languagestatsbar', new LanguageStatsBar( this, options ) );
 			}
 		} );
 	};

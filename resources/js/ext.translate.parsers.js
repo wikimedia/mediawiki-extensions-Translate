@@ -36,14 +36,14 @@
 			} );
 
 			text = text.replace( /(^\*.*(\n|$))+/gm, function ( match ) {
-				match = match.replace( /^\*(.*)/gm, function ( match, p1 ) {
+				match = match.replace( /^\*(.*)/gm, function ( fullMatch, p1 ) {
 					return $( '<div>' ).append( $( '<li>' ).html( p1 ) ).html();
 				} );
 				return $( '<div>' ).append( $( '<ul>' ).html( match ) ).html();
 			} );
 
 			text = text.replace( /(^#.*(\n|$))+/gm, function ( match ) {
-				match = match.replace( /^#(.*)/gm, function ( match, p1 ) {
+				match = match.replace( /^#(.*)/gm, function ( fullMatch, p1 ) {
 					return $( '<div>' ).append( $( '<li>' ).html( p1 ) ).html();
 				} );
 				return $( '<div>' ).append( $( '<ol>' ).html( match ) ).html();

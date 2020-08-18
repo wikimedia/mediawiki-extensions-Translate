@@ -505,7 +505,7 @@
 				$editSummary,
 				$editSummaryBlock,
 				$discardChangesButton = $( [] ),
-				$saveButton,
+				$saveButton = $( [] ),
 				$requestRight,
 				$skipButton,
 				$cancelButton,
@@ -689,9 +689,7 @@
 			} );
 
 			$textarea.on( 'textchange', function () {
-				var $textarea = $( this ),
-					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
-					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
+				var $pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
 					original = translateEditor.message.translation || '',
 					current = $textarea.val() || '';
 

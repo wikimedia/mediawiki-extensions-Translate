@@ -281,10 +281,10 @@
 			options = {
 				language: mw.config.get( 'wgUserLanguage' ),
 				position: position,
-				onSelect: function ( group ) {
-					var uri = new mw.Uri( location.href );
-					uri.extend( { group: group.id, grouppath: group.id } );
-					location.href = uri.toString();
+				onSelect: function ( selectedGroup ) {
+					var currentUri = new mw.Uri( location.href );
+					currentUri.extend( { group: selectedGroup.id, grouppath: selectedGroup.id } );
+					location.href = currentUri.toString();
 				},
 				preventSelector: true
 			};

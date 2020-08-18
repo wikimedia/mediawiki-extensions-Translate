@@ -157,7 +157,7 @@
 				data = $this.data( 'workflowselector' );
 
 			if ( !data ) {
-				$this.data( 'workflowselector', ( data = new WorkflowSelector( this ) ) );
+				$this.data( 'workflowselector', new WorkflowSelector( this ) );
 			}
 			$this.data( 'workflowselector' ).receiveState( groupId, language, state );
 		} );

@@ -405,10 +405,10 @@
 				pageContent = addNewLines( pageContent );
 				pageContent = fixInternalLinks( pageContent );
 				pageContent = doTemplates( pageContent );
-				doFiles( pageContent ).then( doCategories ).done( function ( pageContent ) {
-					pageContent = postPreparationCleanup( pageContent );
-					pageContent = pageContent.trim();
-					getDiff( pageName, pageContent ).done( function ( diff ) {
+				doFiles( pageContent ).then( doCategories ).done( function ( preppedContent ) {
+					preppedContent = postPreparationCleanup( preppedContent );
+					preppedContent = preppedContent.trim();
+					getDiff( pageName, preppedContent ).done( function ( diff ) {
 						if ( diff === undefined ) {
 							$messageDiv.text( mw.msg( 'pp-diff-error' ) ).show();
 							return;
