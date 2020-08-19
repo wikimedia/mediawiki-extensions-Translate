@@ -43,9 +43,15 @@ abstract class GenericTranslateJob extends \Job {
 		return $this->logger;
 	}
 
-	protected function getLogPrefix() {
-		return '[Job: ' . $this->getType() . '][Request ID: ' . $this->getRequestId() .
-			'][Title: ' . $this->title->getPrefixedText() . '] ';
+	protected function getLogPrefix(): string {
+		$prefix = $this->getType();
+		if ( isset( $this->title ) ) {
+			$prefix .= ' [' . $this->title->getPrefixedText() . ']';
+		}
+
+		// Add a separator at the end.
+		$prefix .= ': ';
+		return $prefix;
 	}
 
 	protected function logInfo( $msg, $context = [] ) {
