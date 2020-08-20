@@ -18,9 +18,13 @@
 	"translate-statsf-scale-weeks": "Hafton",
 	"translate-statsf-scale-days": "Rüjon",
 	"translate-statsf-scale-hours": "Saaton",
+	"translate-translations-fieldset-title": "Nomə",
 	"translate-translations-messagename": "Nom:",
 	"translate-translations-project": "Naxşə:",
 	"translate-translations-history-short": "tar.",
+	"translate-total": "Noməon",
+	"translate-ls-column-group": "Nomə qrup",
+	"translate-mgs-group": "Nomə qrup:",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"translate-smg-rename-cancel": "Ləğv karde",
@@ -30,5 +34,6 @@
 	"tux-edit": "Dəqiş karde",
 	"tux-editor-cancel-button-label": "Ləğv karde",
 	"tux-proofread-edit-label": "Dəqiş karde",
+	"tux-editor-doc-editor-placeholder": "Nomə dokumentasiyə",
 	"tux-editor-doc-editor-cancel": "Ləğv karde"
 }
