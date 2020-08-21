@@ -15,7 +15,6 @@
 	"translate-prev": "letscht Blatt",
 	"translate-page-edit": "ennere",
 	"translate-edit-title": "„$1“ ennere",
-	"translate-edit-translation": "Iwwersetzing",
 	"translationstats": "Nummere vun Iwwersetzinge",
 	"translate-stats-edits": "Enneringe",
 	"translate-stats-users": "Iwwersetzer",
@@ -50,6 +49,5 @@
 	"translate-jssti-add": "Zu de Lischt dezu duh",
 	"translate-manage-import-done": "Alles geduh!",
 	"translate-import-load": "Feil ufflaade",
-	"translate-js-save": "Beilege",
 	"translate-gs-speakers": "Schwetzer"
 }
