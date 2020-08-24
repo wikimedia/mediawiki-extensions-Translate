@@ -94,8 +94,9 @@ class ValidationRunner {
 
 		$isInsertable = $validatorConfig['insertable'] ?? false;
 		if ( $isInsertable && !$validator instanceof InsertablesSuggester ) {
+			$actualClassName = get_class( $validator );
 			throw new InvalidArgumentException(
-				"Insertable validator does not implement InsertablesSuggester interface."
+				"Insertable validator $actualClassName does not implement InsertablesSuggester interface."
 			);
 		}
 
