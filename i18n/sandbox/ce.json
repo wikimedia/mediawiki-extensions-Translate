@@ -37,5 +37,5 @@
 	"log-description-translatorsandbox": "Гочдаран ловзаран майдан чохь декъашхоша бина хийцамаш",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|вина|йина}}$3 {{GENDER:$4|гочдархо}}.",
 	"logentry-translatorsandbox-rejected": "гочдархо статусан дехар $3 $1 {{GENDER:$2|юхадаьккхина}}.",
-	"logentry-newusers-tsbpromoted": "Декъашхочун $3 дӀаяздар {{GENDER:$2|кхоьллина}} ловзаран майдан чура дӀаяздарх"
+	"logentry-newusers-tsbpromoted": "Декъашхочун $3 агӀо {{GENDER:$2|кхоьллина}} ловзаран майдан чура дӀаяздарх"
 }

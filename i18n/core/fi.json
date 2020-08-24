@@ -18,6 +18,7 @@
 			"Usp",
 			"VezonThunder",
 			"Vililikku",
+			"Yupik",
 			"ZeiP"
 		]
 	},
@@ -288,7 +289,7 @@
 	"translate-msggroupselector-search-all": "Kaikki",
 	"translate-msggroupselector-search-recent": "Äskettäiset",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|alaryhmä|alaryhmää}}",
-	"tux-languageselector": "Kieli",
+	"tux-languageselector": "Kohdekieli:",
 	"tux-tab-all": "Kaikki",
 	"tux-tab-untranslated": "Kääntämättömät",
 	"tux-tab-outdated": "Vanhentuneet",

@@ -87,7 +87,7 @@
 	"logentry-pagetranslation-deletefok": "$1 је {{GENDER:$2|избрисао|избрисала}} преводиву страницу $3",
 	"logentry-pagetranslation-deletelok": "$1 је {{GENDER:$2|избрисао|избрисала}} преводиву страницу $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 је {{GENDER:$2|одредио|одредила}} приоритетне језике за преводиву страницу $3: $5",
-	"log-action-filter-pagetranslation": "Тип радње:",
+	"log-action-filter-pagetranslation": "Врста радње:",
 	"log-action-filter-pagetranslation-mark": "Означавање за превођење",
 	"log-action-filter-pagetranslation-unmark": "Уклањање из система превођења",
 	"log-action-filter-pagetranslation-move": "Премештања страница",

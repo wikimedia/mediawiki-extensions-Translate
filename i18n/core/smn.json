@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Trondtr"
+			"Trondtr",
+			"Yupik"
 		]
 	},
-	"translate-documentation-language": "jurgâlemravvuuh"
+	"translate-next": "Čuávuvâš sijđo",
+	"translate-prev": "Oovdeb sijđo",
+	"translate-stats-users": "Jurgâleijeeh",
+	"translate-sidebar-alltrans": "Eres kielâin",
+	"translate-documentation-language": "jurgâlemravvuuh",
+	"tux-languageselector": "Puátukielâ:",
+	"tux-editor-in-other-languages": "Eres kielâin"
 }

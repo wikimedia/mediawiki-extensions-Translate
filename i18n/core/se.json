@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"translate-next": "Čuovvovaš siidu",
+	"translate-prev": "Ovddit siidu",
+	"translate-stats-users": "Jorgaleaddjit",
+	"translate-sidebar-alltrans": "Eará gielaide",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
+	"tux-editor-in-other-languages": "Eará gielaide"
+}
