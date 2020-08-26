@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
@@ -31,6 +32,10 @@ return [
 		);
 	},
 
+	'Translate:TranslationStatsDataProvider' => function (): TranslationStatsDataProvider {
+		return new TranslationStatsDataProvider();
+	},
+
 	'Translate:TranslatorActivity' => function ( MediaWikiServices $services ): TranslatorActivity {
 		$query = new TranslatorActivityQuery(
 			$services->getMainConfig(),
@@ -47,6 +52,5 @@ return [
 			JobQueueGroup::singleton(),
 			$languageValidator
 		);
-	},
-
+	}
 ];

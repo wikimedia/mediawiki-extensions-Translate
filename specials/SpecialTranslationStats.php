@@ -8,9 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Statistics\ReviewPerLanguageStats;
-use MediaWiki\Extensions\Translate\Statistics\TranslatePerLanguageStats;
-use MediaWiki\Extensions\Translate\Statistics\TranslateRegistrationStats;
+use MediaWiki\Extensions\Translate\Services;
 
 /**
  * @defgroup Stats Statistics
@@ -23,17 +21,13 @@ use MediaWiki\Extensions\Translate\Statistics\TranslateRegistrationStats;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialTranslationStats extends SpecialPage {
-	/// @since 2012-03-05
-	protected static $graphs = [
-		'edits' => TranslatePerLanguageStats::class,
-		'users' => TranslatePerLanguageStats::class,
-		'registrations' => TranslateRegistrationStats::class,
-		'reviews' => ReviewPerLanguageStats::class,
-		'reviewers' => ReviewPerLanguageStats::class,
-	];
+
+	/** @var \MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider */
+	private $dataProvider;
 
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
+		$this->dataProvider = Services::getInstance()->getTranslationStatsDataProvider();
 	}
 
 	public function isIncludable() {
@@ -42,23 +36,6 @@ class SpecialTranslationStats extends SpecialPage {
 
 	protected function getGroupName() {
 		return 'translation';
-	}
-
-	/**
-	 * @since 2012-03-05
-	 * @return array List of graph types
-	 */
-	public function getGraphTypes() {
-		return array_keys( self::$graphs );
-	}
-
-	/**
-	 * @since 2012-03-05
-	 * @param string $type
-	 * @return string
-	 */
-	public function getGraphClass( $type ) {
-		return self::$graphs[$type];
 	}
 
 	public function execute( $par ) {
@@ -110,7 +87,7 @@ class SpecialTranslationStats extends SpecialPage {
 			$opts->validateIntBounds( 'days', 1, 4 );
 		}
 
-		$validCounts = $this->getGraphTypes();
+		$validCounts = $this->dataProvider->getGraphTypes();
 		if ( !in_array( $opts['count'], $validCounts ) ) {
 			$opts['count'] = 'edits';
 		}
@@ -175,7 +152,7 @@ class SpecialTranslationStats extends SpecialPage {
 				$this->eInput( 'start', $opts, 24 ) .
 				$this->eInput( 'days', $opts ) .
 				$this->eRadio( 'scale', $opts, [ 'months', 'weeks', 'days', 'hours' ] ) .
-				$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
+				$this->eRadio( 'count', $opts, $this->dataProvider->getGraphTypes() ) .
 				'<tr><td colspan="2"><hr /></td></tr>' .
 				$this->eLanguage( 'language', $opts ) .
 				$this->eGroup( 'group', $opts ) .
@@ -401,173 +378,6 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	/**
-	 * Fetches and preprocesses graph data that can be fed to graph drawer.
-	 * @param FormOptions $opts
-	 * @return array ( string => array ) Data indexed by their date labels.
-	 */
-	protected function getData( FormOptions $opts ) {
-		$dbr = wfGetDB( DB_REPLICA );
-
-		$class = $this->getGraphClass( $opts['count'] );
-		$so = new $class( $opts );
-
-		$fixedStart = $opts->getValue( 'start' ) !== '';
-
-		$now = time();
-		$period = 3600 * 24 * $opts->getValue( 'days' );
-
-		if ( $fixedStart ) {
-			$cutoff = wfTimestamp( TS_UNIX, $opts->getValue( 'start' ) );
-		} else {
-			$cutoff = $now - $period;
-		}
-		$cutoff = self::roundTimestampToCutoff( $opts['scale'], $cutoff, 'earlier' );
-
-		$start = $cutoff;
-
-		if ( $fixedStart ) {
-			$end = self::roundTimestampToCutoff( $opts['scale'], $start + $period, 'later' ) - 1;
-		} else {
-			$end = null;
-		}
-
-		$tables = [];
-		$fields = [];
-		$conds = [];
-		$type = __METHOD__;
-		$options = [];
-		$joins = [];
-
-		$so->preQuery( $tables, $fields, $conds, $type, $options, $joins, $start, $end );
-		$res = $dbr->select( $tables, $fields, $conds, $type, $options, $joins );
-		wfDebug( __METHOD__ . "-queryend\n" );
-
-		// Start processing the data
-		$dateFormat = $so->getDateFormat();
-		$increment = self::getIncrement( $opts['scale'] );
-
-		$labels = $so->labels();
-		$keys = array_keys( $labels );
-		$values = array_pad( [], count( $labels ), 0 );
-		$defaults = array_combine( $keys, $values );
-
-		$data = [];
-		// Allow 10 seconds in the future for processing time
-		$lastValue = $end ?? $now + 10;
-		$lang = $this->getLanguage();
-		while ( $cutoff <= $lastValue ) {
-			$date = $lang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );
-			$cutoff += $increment;
-			$data[$date] = $defaults;
-		}
-
-		// Processing
-		$labelToIndex = array_flip( $labels );
-
-		foreach ( $res as $row ) {
-			$indexLabels = $so->indexOf( $row );
-			if ( $indexLabels === false ) {
-				continue;
-			}
-
-			foreach ( (array)$indexLabels as $i ) {
-				if ( !isset( $labelToIndex[$i] ) ) {
-					continue;
-				}
-				$date = $lang->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
-				// Ignore values outside range
-				if ( !isset( $data[$date] ) ) {
-					continue;
-				}
-
-				$data[$date][$labelToIndex[$i]]++;
-			}
-		}
-
-		// Don't display dummy label
-		if ( count( $labels ) === 1 && $labels[0] === 'all' ) {
-			$labels = [];
-		}
-
-		foreach ( $labels as &$label ) {
-			if ( strpos( $label, '@' ) === false ) {
-				continue;
-			}
-			list( $groupId, $code ) = explode( '@', $label, 2 );
-			if ( $code && $groupId ) {
-				$code = TranslateUtils::getLanguageName( $code, $lang->getCode() ) . " ($code)";
-				$group = MessageGroups::getGroup( $groupId );
-				$group = $group ? $group->getLabel() : $groupId;
-				$label = "$group @ $code";
-			} elseif ( $code ) {
-				$label = TranslateUtils::getLanguageName( $code, $lang->getCode() ) . " ($code)";
-			} elseif ( $groupId ) {
-				$group = MessageGroups::getGroup( $groupId );
-				$label = $group ? $group->getLabel() : $groupId;
-			}
-		}
-
-		if ( $end === null ) {
-			$last = array_splice( $data, -1, 1 );
-			// Indicator that the last value is not full
-			$data[key( $last ) . '*'] = current( $last );
-		}
-
-		return [ $labels, $data ];
-	}
-
-	/**
-	 * Gets the closest earlieast timestamp that corresponds to start of a
-	 * period in given scale, like, midnight, monday or first day of the month.
-	 * @param string $scale One of hours, days, weeks, months
-	 * @param int $cutoff Timestamp in unix format.
-	 * @param string $direction One of earlier, later
-	 * @return int
-	 */
-	protected static function roundTimestampToCutoff( $scale, $cutoff, $direction = 'earlier' ) {
-		$dir = $direction === 'earlier' ? -1 : 1;
-
-		/* Ensure that the first item in the graph has full data even
-		* if it doesn't align with the given 'days' boundary */
-		if ( $scale === 'hours' ) {
-			$cutoff += self::roundingAddition( $cutoff, 3600, $dir );
-		} elseif ( $scale === 'days' ) {
-			$cutoff += self::roundingAddition( $cutoff, 86400, $dir );
-		} elseif ( $scale === 'weeks' ) {
-			/* Here we assume that week starts on monday, which does not
-			* always hold true. Go Xwards day by day until we are on monday */
-			while ( date( 'D', $cutoff ) !== 'Mon' ) {
-				$cutoff += $dir * 86400;
-			}
-			// Round to nearest day
-			$cutoff -= ( $cutoff % 86400 );
-		} elseif ( $scale === 'months' ) {
-			// Go Xwards/ day by day until we are on the first day of the month
-			while ( date( 'j', $cutoff ) !== '1' ) {
-				$cutoff += $dir * 86400;
-			}
-			// Round to nearest day
-			$cutoff -= ( $cutoff % 86400 );
-		}
-
-		return $cutoff;
-	}
-
-	/**
-	 * @param int $ts
-	 * @param int $amount
-	 * @param int $dir
-	 * @return int
-	 */
-	protected static function roundingAddition( $ts, $amount, $dir ) {
-		if ( $dir === -1 ) {
-			return -1 * ( $ts % $amount );
-		} else {
-			return $amount - ( $ts % $amount );
-		}
-	}
-
-	/**
 	 * Adds raw image data of the graph to the output.
 	 * @param FormOptions $opts
 	 */
@@ -580,7 +390,7 @@ class SpecialTranslationStats extends SpecialPage {
 		// Define the object
 		$plot = new PHPlot( $width * $imageScale, $height * $imageScale );
 
-		list( $legend, $resData ) = $this->getData( $opts );
+		[ $legend, $resData ] = $this->dataProvider->getGraphData( $opts, $this->getLanguage() );
 		$count = count( $resData );
 		$skip = (int)( $count / ( $width / 60 ) - 1 );
 		$i = $count;
@@ -672,28 +482,5 @@ class SpecialTranslationStats extends SpecialPage {
 		$factor = pow( 10, $nonSignificant );
 
 		return (int)( ceil( $number / $factor ) * $factor );
-	}
-
-	/**
-	 * Returns an increment in seconds for a given scale.
-	 * The increment must be small enough that we will hit every item in the
-	 * scale when using different multiples of the increment. It should be
-	 * large enough to avoid hitting the same item multiple times.
-	 * @param string $scale Either months, weeks, days or hours.
-	 * @return int Number of seconds in the increment.
-	 */
-	public static function getIncrement( $scale ) {
-		$increment = 3600 * 24;
-		if ( $scale === 'months' ) {
-			/* We use increment to fill up the values. Use number small enough
-			 * to ensure we hit each month */
-			$increment = 3600 * 24 * 15;
-		} elseif ( $scale === 'weeks' ) {
-			$increment = 3600 * 24 * 7;
-		} elseif ( $scale === 'hours' ) {
-			$increment = 3600;
-		}
-
-		return $increment;
 	}
 }

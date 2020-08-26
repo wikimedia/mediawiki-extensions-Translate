@@ -7,6 +7,7 @@
 namespace MediaWiki\Extensions\Translate;
 
 use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
@@ -61,8 +62,12 @@ class Services implements ContainerInterface {
 		return $this->container->get( 'Translate:TranslatablePageParser' );
 	}
 
+	/** @since 2020.09 */
+	public function getTranslationStatsDataProvider(): TranslationStatsDataProvider {
+		return $this->container->getService( 'Translate:TranslationStatsDataProvider' );
+	}
+
 	public function getTranslatorActivity(): TranslatorActivity {
 		return $this->container->getService( 'Translate:TranslatorActivity' );
 	}
-
 }
