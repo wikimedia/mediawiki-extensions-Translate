@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Statistics;
 
-use FormOptions;
 use Language;
 use MessageGroups;
 use TranslateUtils;
@@ -15,7 +14,7 @@ use TranslateUtils;
  * @since 2020.09
  */
 class TranslationStatsDataProvider {
-	protected const GRAPHS = [
+	public const GRAPHS = [
 		'edits' => TranslatePerLanguageStats::class,
 		'users' => TranslatePerLanguageStats::class,
 		'registrations' => TranslateRegistrationStats::class,
@@ -29,14 +28,14 @@ class TranslationStatsDataProvider {
 
 	/**
 	 * Fetches and preprocesses graph data that can be fed to graph drawer.
-	 * @param FormOptions $opts
+	 * @param TranslationStatsGraphOptions $opts
 	 * @param Language $language
 	 * @return array ( string => array ) Data indexed by their date labels.
 	 */
-	public function getGraphData( FormOptions $opts, Language $language ) {
+	public function getGraphData( TranslationStatsGraphOptions $opts, Language $language ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$class = $this->getGraphClass( $opts['count'] );
+		$class = $this->getGraphClass( $opts->getValue( 'count' ) );
 		$so = new $class( $opts );
 
 		$fixedStart = $opts->getValue( 'start' ) !== '';
@@ -49,12 +48,12 @@ class TranslationStatsDataProvider {
 		} else {
 			$cutoff = $now - $period;
 		}
-		$cutoff = self::roundTimestampToCutoff( $opts['scale'], $cutoff, 'earlier' );
+		$cutoff = self::roundTimestampToCutoff( $opts->getValue( 'scale' ), $cutoff, 'earlier' );
 
 		$start = $cutoff;
 
 		if ( $fixedStart ) {
-			$end = self::roundTimestampToCutoff( $opts['scale'], $start + $period, 'later' ) - 1;
+			$end = self::roundTimestampToCutoff( $opts->getValue( 'scale' ), $start + $period, 'later' ) - 1;
 		} else {
 			$end = null;
 		}
@@ -72,7 +71,7 @@ class TranslationStatsDataProvider {
 
 		// Start processing the data
 		$dateFormat = $so->getDateFormat();
-		$increment = self::getIncrement( $opts['scale'] );
+		$increment = self::getIncrement( $opts->getValue( 'scale' ) );
 
 		$labels = $so->labels();
 		$keys = array_keys( $labels );

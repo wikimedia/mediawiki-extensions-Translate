@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extensions\Translate\Statistics;
 
 use ActorMigration;
-use FormOptions;
 use MediaWiki\MediaWikiServices;
 use TranslateUtils;
 
@@ -18,12 +17,12 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	/** @var int[][] array( string => int ) Cache used to count active users only once per day. */
 	protected $usercache;
 
-	protected $codes, $groups;
+	protected $groups;
 
-	public function __construct( FormOptions $opts ) {
+	public function __construct( TranslationStatsGraphOptions $opts ) {
 		parent::__construct( $opts );
 		// This query is slow... ensure a lower limit.
-		$opts->validateIntBounds( 'days', 1, 200 );
+		$opts->boundValue( 'days', 1, 200 );
 	}
 
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
@@ -46,9 +45,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		$options = [ 'ORDER BY' => 'rc_timestamp' ];
 
-		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
-		$this->groups = array_map( 'MessageGroups::normalizeId', $this->groups );
-		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
+		$this->groups = array_map( 'MessageGroups::normalizeId', $this->opts->getGroups() );
 
 		$namespaces = self::namespacesFromGroups( $this->groups );
 		if ( count( $namespaces ) ) {
@@ -56,7 +53,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		$languages = [];
-		foreach ( $this->codes as $code ) {
+		foreach ( $this->opts->getLanguages() as $code ) {
 			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
 		}
 		if ( count( $languages ) ) {
@@ -69,7 +66,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$fields[] = 'rc_namespace';
 		}
 
-		if ( $this->opts['count'] === 'users' ) {
+		if ( $this->opts->getValue( 'count' ) === 'users' ) {
 			if ( class_exists( ActorMigration::class ) ) {
 				$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
 				$tables += $actorQuery['tables'];
@@ -85,7 +82,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 	public function indexOf( $row ) {
 		// We need to check that there is only one user per day.
-		if ( $this->opts['count'] === 'users' ) {
+		if ( $this->opts->getValue( 'count' ) === 'users' ) {
 			$date = $this->formatTimestamp( $row->rc_timestamp );
 
 			if ( isset( $this->usercache[$date][$row->rc_user_text] ) ) {
@@ -101,7 +98,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		// No filters, just one key to track.
-		if ( !$this->groups && !$this->codes ) {
+		if ( !$this->groups && !$this->opts->getLanguages() ) {
 			return [ 'all' ];
 		}
 
@@ -109,7 +106,6 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
 
 		$groups = [];
-		$codes = [];
 
 		if ( $this->groups ) {
 			/*
@@ -120,15 +116,11 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$groups = array_intersect( $this->groups, $groups );
 		}
 
-		if ( $this->codes ) {
-			$codes = [ $code ];
-		}
-
-		return $this->combineTwoArrays( $groups, $codes );
+		return $this->combineTwoArrays( $groups, $this->opts->getLanguages() );
 	}
 
 	public function labels() {
-		return $this->combineTwoArrays( $this->groups, $this->codes );
+		return $this->combineTwoArrays( $this->groups, $this->opts->getLanguages() );
 	}
 
 	public function getTimestamp( $row ) {
@@ -183,7 +175,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	 * @return string
 	 */
 	protected function formatTimestamp( $timestamp ) {
-		switch ( $this->opts['scale'] ) {
+		switch ( $this->opts->getValue( 'scale' ) ) {
 			case 'hours' :
 				$cut = 4;
 				break;

@@ -3,8 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Statistics;
 
-use FormOptions;
-
 /**
  * Interface for producing different kinds of graphs.
  * The graphs are based on data queried from the database.
@@ -16,9 +14,9 @@ interface TranslationStatsInterface {
 	/**
 	 * Constructor. The implementation can access the graph options, but not
 	 * define new ones.
-	 * @param FormOptions $opts
+	 * @param TranslationStatsGraphOptions $opts
 	 */
-	public function __construct( FormOptions $opts );
+	public function __construct( TranslationStatsGraphOptions $opts );
 
 	/**
 	 * Query details that the graph must fill.

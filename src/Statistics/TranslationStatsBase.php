@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Statistics;
 
-use FormOptions;
 use MessageGroups;
 
 /**
@@ -13,10 +12,10 @@ use MessageGroups;
  * @since 2010.07
  */
 abstract class TranslationStatsBase implements TranslationStatsInterface {
-	/** @var FormOptions Graph options. */
+	/** @var TranslationStatsGraphOptions */
 	protected $opts;
 
-	public function __construct( FormOptions $opts ) {
+	public function __construct( TranslationStatsGraphOptions $opts ) {
 		$this->opts = $opts;
 	}
 
@@ -30,11 +29,12 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 
 	public function getDateFormat() {
 		$dateFormat = 'Y-m-d';
-		if ( $this->opts['scale'] === 'months' ) {
+		$scale = $this->opts->getValue( 'scale' );
+		if ( $scale === 'months' ) {
 			$dateFormat = 'Y-m';
-		} elseif ( $this->opts['scale'] === 'weeks' ) {
+		} elseif ( $scale === 'weeks' ) {
 			$dateFormat = 'Y-\WW';
-		} elseif ( $this->opts['scale'] === 'hours' ) {
+		} elseif ( $scale === 'hours' ) {
 			$dateFormat .= ';H';
 		}
 

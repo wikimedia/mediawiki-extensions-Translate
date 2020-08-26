@@ -32,8 +32,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 		$options = [ 'ORDER BY' => 'log_timestamp' ];
 
-		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
-		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
+		$this->groups = $this->opts->getGroups();
 
 		$namespaces = self::namespacesFromGroups( $this->groups );
 		if ( count( $namespaces ) ) {
@@ -41,7 +40,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		$languages = [];
-		foreach ( $this->codes as $code ) {
+		foreach ( $this->opts->getLanguages() as $code ) {
 			$languages[] = 'log_title ' . $db->buildLike( $db->anyString(), "/$code" );
 		}
 		if ( count( $languages ) ) {
@@ -54,7 +53,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			$fields[] = 'log_namespace';
 		}
 
-		if ( $this->opts['count'] === 'reviewers' ) {
+		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
 			if ( class_exists( ActorMigration::class ) ) {
 				$actorQuery = ActorMigration::newMigration()->getJoin( 'log_user' );
 				$tables += $actorQuery['tables'];
@@ -70,7 +69,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 	public function indexOf( $row ) {
 		// We need to check that there is only one user per day.
-		if ( $this->opts['count'] === 'reviewers' ) {
+		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
 			$date = $this->formatTimestamp( $row->log_timestamp );
 
 			if ( isset( $this->usercache[$date][$row->log_user_text] ) ) {
@@ -86,7 +85,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		// No filters, just one key to track.
-		if ( !$this->groups && !$this->codes ) {
+		if ( !$this->groups && !$this->opts->getLanguages() ) {
 			return [ 'all' ];
 		}
 
@@ -94,7 +93,6 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->log_title );
 
 		$groups = [];
-		$codes = [];
 
 		if ( $this->groups ) {
 			/* Get list of keys that the message belongs to, and filter
@@ -103,15 +101,11 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			$groups = array_intersect( $this->groups, $groups );
 		}
 
-		if ( $this->codes ) {
-			$codes = [ $code ];
-		}
-
-		return $this->combineTwoArrays( $groups, $codes );
+		return $this->combineTwoArrays( $groups, $this->opts->getLanguages() );
 	}
 
 	public function labels() {
-		return $this->combineTwoArrays( $this->groups, $this->codes );
+		return $this->combineTwoArrays( $this->groups, $this->opts->getLanguages() );
 	}
 
 	public function getTimestamp( $row ) {

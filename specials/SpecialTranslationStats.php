@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extensions\Translate\Statistics\TranslationStatsGraphOptions;
 
 /**
  * @defgroup Stats Statistics
@@ -39,68 +40,23 @@ class SpecialTranslationStats extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		$this->getOutput()->addModules( 'ext.translate.special.translationstats' );
-
-		$opts = new FormOptions();
-		$opts->add( 'graphit', false );
-		$opts->add( 'preview', false );
-		$opts->add( 'language', '' );
-		$opts->add( 'count', 'edits' );
-		$opts->add( 'scale', 'days' );
-		$opts->add( 'days', 30 );
-		$opts->add( 'width', 600 );
-		$opts->add( 'height', 400 );
-		$opts->add( 'group', '' );
-		$opts->add( 'uselang', '' );
-		$opts->add( 'start', '' );
-		$opts->add( 'imagescale', 1.0 );
-		$opts->fetchValuesFromRequest( $this->getRequest() );
+		$graphOpts = new TranslationStatsGraphOptions();
+		$graphOpts->bindArray( $this->getRequest()->getValues() );
 
 		$pars = explode( ';', $par );
-
 		foreach ( $pars as $item ) {
 			if ( strpos( $item, '=' ) === false ) {
 				continue;
 			}
 
 			list( $key, $value ) = array_map( 'trim', explode( '=', $item, 2 ) );
-			if ( isset( $opts[$key] ) ) {
-				$opts[$key] = $value;
+			if ( $graphOpts->hasValue( $key ) ) {
+				$graphOpts->setValue( $key, $value );
 			}
 		}
 
-		$opts->validateIntBounds( 'days', 1, 10000 );
-		$opts->validateIntBounds( 'width', 200, 1000 );
-		$opts->validateIntBounds( 'height', 200, 1000 );
-		$opts->validateBounds( 'imagescale', 1.0, 4.0 );
-
-		if ( $opts['start'] !== '' ) {
-			$opts['start'] = rtrim( wfTimestamp( TS_ISO_8601, $opts['start'] ), 'Z' );
-		}
-
-		$validScales = [ 'months', 'weeks', 'days', 'hours' ];
-		if ( !in_array( $opts['scale'], $validScales ) ) {
-			$opts['scale'] = 'days';
-		}
-
-		if ( $opts['scale'] === 'hours' ) {
-			$opts->validateIntBounds( 'days', 1, 4 );
-		}
-
-		$validCounts = $this->dataProvider->getGraphTypes();
-		if ( !in_array( $opts['count'], $validCounts ) ) {
-			$opts['count'] = 'edits';
-		}
-
-		foreach ( [ 'group', 'language' ] as $t ) {
-			$values = array_map( 'trim', explode( ',', $opts[$t] ) );
-			$values = array_splice( $values, 0, 4 );
-			if ( $t === 'group' ) {
-				// BC for old syntax which replaced _ to | which was not allowed
-				$values = preg_replace( '~^page_~', 'page-', $values );
-			}
-			$opts[$t] = implode( ',', $values );
-		}
+		$graphOpts->normalize();
+		$opts = $graphOpts->getFormOptions();
 
 		if ( $this->including() ) {
 			$this->getOutput()->addHTML( $this->image( $opts ) );
@@ -116,7 +72,7 @@ class SpecialTranslationStats extends SpecialPage {
 				header( 'Cache-Control: private, max-age=3600' );
 				header( 'Expires: ' . wfTimestamp( TS_RFC2822, time() + 3600 ) );
 			}
-			$this->draw( $opts );
+			$this->draw( $graphOpts );
 		} else {
 			$this->form( $opts );
 		}
@@ -132,6 +88,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$this->setHeaders();
 		$out = $this->getOutput();
+		$out->addModules( 'ext.translate.special.translationstats' );
 		$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 		$out->addWikiMsg( 'translate-statsf-intro' );
 
@@ -379,18 +336,19 @@ class SpecialTranslationStats extends SpecialPage {
 
 	/**
 	 * Adds raw image data of the graph to the output.
-	 * @param FormOptions $opts
+	 * @param TranslationStatsGraphOptions $graphOpts
 	 */
-	public function draw( FormOptions $opts ) {
+	public function draw( TranslationStatsGraphOptions $graphOpts ) {
 		global $wgTranslatePHPlotFont;
 
+		$opts = $graphOpts->getFormOptions();
 		$imageScale = $opts->getValue( 'imagescale' );
 		$width = $opts->getValue( 'width' );
 		$height = $opts->getValue( 'height' );
 		// Define the object
 		$plot = new PHPlot( $width * $imageScale, $height * $imageScale );
 
-		[ $legend, $resData ] = $this->dataProvider->getGraphData( $opts, $this->getLanguage() );
+		[ $legend, $resData ] = $this->dataProvider->getGraphData( $graphOpts, $this->getLanguage() );
 		$count = count( $resData );
 		$skip = (int)( $count / ( $width / 60 ) - 1 );
 		$i = $count;
