@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extensions\Translate\Utilities\GettextPlural;
+use MediaWiki\Logger\LoggerFactory;
 
 /**
  * New-style FFS class that implements support for gettext file format.
@@ -358,7 +359,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			if ( strpos( $line, ':' ) === false ) {
 				error_log( __METHOD__ . ": $line" );
 			}
-			list( $key, $value ) = explode( ':', $line, 2 );
+			[ $key, $value ] = explode( ':', $line, 2 );
 			$tags[trim( $key )] = trim( $value );
 		}
 
@@ -375,7 +376,10 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$pluralRule = GettextPlural::getPluralRule( $code );
 		if ( !$pluralRule ) {
 			$pluralRule = GettextPlural::getPluralRule( 'en' );
-			error_log( "Missing plural rule for code $code" );
+			LoggerFactory::getInstance( 'Translate' )->warning(
+				"T235180: Missing Gettext plural rule for '{languagecode}'",
+				[ 'languagecode' => $code ]
+			);
 		}
 		$pluralCount = GettextPlural::getPluralCount( $pluralRule );
 
