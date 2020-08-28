@@ -46,6 +46,7 @@
 	"tpt-saveok": "頁面 [[:$1]] 已被標記需要翻譯，包含 $2 個翻譯單元。\n現在已可 <span class=\"plainlinks\">[$3 翻譯]</span> 頁面。",
 	"tpt-saveok-first": "您可以替此頁面[[Special:PageMigration|匯入先前存在的翻譯]]（如果有的話）。",
 	"tpt-offer-notify": "您可以 <span class=\"plainlinks\">[$1 通知翻譯人員]</span> 翻譯此頁。",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|檢視可翻譯頁面清單。]]",
 	"tpt-showpage-intro": "下列為新的，已存在與已刪除的翻譯單元。\n在將此版本標記為需要翻譯之前，請先檢查翻譯單元已最小化，避免翻譯人員不必要的作業。",
 	"tpt-mark-summary": "已標記此版本用來翻譯",
 	"tpt-mark-nochanges": "沒有變更需要審查。標記此頁面需要翻譯不會編輯頁面，也沒有任何現有的翻譯單元。",

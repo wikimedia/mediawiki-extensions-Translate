@@ -42,6 +42,7 @@
 	"tpt-saveok": "A página [[:$1]] foi marcada para tradução com $2 {{PLURAL:$2|unidade|unidades}} de tradução.\nA página já pode ser <span class=\"plainlinks\">[$3 traduzida]</span>.",
 	"tpt-saveok-first": "Você pode [[Special:PageMigration|importar tradução pré-existente]] para esta página (se houver).",
 	"tpt-offer-notify": "Você pode <span class=\"plainlinks\">[$1 notificar tradutores]</span> sobre esta página.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Veja a lista de páginas traduzíveis.]]",
 	"tpt-showpage-intro": "A seguir estão listadas as unidades de tradução novas, existentes e removidas.\nAntes de marcar esta versão para tradução, verifique se as mudanças nas unidades de tradução foram minimizadas, para que seja evitado trabalho desnecessário aos tradutores.",
 	"tpt-mark-summary": "Marcou esta versão para tradução",
 	"tpt-mark-nochanges": "Nenhuma alteração para revisar. Marcar esta página para tradução não editará a página nem qualquer unidade de tradução existente.",

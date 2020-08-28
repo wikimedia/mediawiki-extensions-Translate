@@ -32,6 +32,7 @@
 	"tpt-nosuchpage": "Stranica $1 ne postoji",
 	"tpt-oldrevision": "$2 nije posljednja inačica stranice [[:$1]].\nJedino posljednje inačice mogu se označiti za prevođenje.",
 	"tpt-notsuitable": "Stranica $1 nije pogodna za prevođenje.\nUtvrdite, postoje li oznake <nowiki><translate></nowiki> i ispravna sintaksa.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Vidi popis prevodljivih stranica.]]",
 	"tpt-mark-summary": "Ova inačica označena je za prevođenje",
 	"tpt-edit-failed": "Ažuriranje stranice nije moguće: $1",
 	"tpt-new-pages-title": "Stranice predložene za prevođenje",

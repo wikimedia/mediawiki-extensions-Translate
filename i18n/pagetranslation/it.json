@@ -40,6 +40,7 @@
 	"tpt-notsuitable": "La pagina $1 non è adatta per la traduzione.\nAssicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.",
 	"tpt-saveok": "La pagina [[:$1]] è stata segnalata per la traduzione con $2 {{PLURAL:$2|elemento di traduzione|elementi di traduzione}}.\nLa pagina può ora essere <span class=\"plainlinks\">[$3 tradotta]</span>.",
 	"tpt-offer-notify": "Puoi <span class=\"plainlinks\">[$1 notificare questa pagina]</span> ai traduttori.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Vedi l'elenco delle pagine traducibili.]]",
 	"tpt-showpage-intro": "Di seguito sono elencate gli elementi di traduzione nuovi, esistenti e cancellati.\nPrima di segnare questa versione per la traduzione, controllare che i cambiamenti per gli elementi di traduzione siano ridotti al minimo per evitare lavoro superfluo ai traduttori.",
 	"tpt-mark-summary": "Versione segnata per la traduzione",
 	"tpt-mark-nochanges": "Nessuna modifica da rivedere. Contrassegnare questa pagina per la traduzione non modificherà la pagina, né alcuna unità di traduzione esistente.",

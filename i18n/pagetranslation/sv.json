@@ -42,6 +42,7 @@
 	"tpt-saveok": "Sidan [[:$1]] har märkts för översättning med {{PLURAL:$2|en översättningsdel|$2 översättningsdelar}}. Sidan kan nu <span class=\"plainlinks\">[$3 översättas]</span>.",
 	"tpt-saveok-first": "Du kan [[Special:PageMigration|importera befintlig översättning]] för denna sida (om det finns någon).",
 	"tpt-offer-notify": "Du kan <span class=\"plainlinks\">[$1 meddela översättare]</span> om den här sidan.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Se listan över översättbara sidor.]]",
 	"tpt-showpage-intro": "Nedanför finns nya, existerande och raderade översättningsenheter uppradade.\nInnan den här versionen märks för översättning, kontrollera att ändringarna i översättningsenheterna är minimala för att undvika extra arbete för översättarna.",
 	"tpt-mark-summary": "Den här versionen är märkt för översättning",
 	"tpt-mark-nochanges": "Inga ändringar att granska. Varken sidan eller befintliga översättningsenheter kommer att redigeras om denna sida märks för översättning.",

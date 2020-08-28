@@ -45,6 +45,7 @@
 	"tpt-saveok": "Strona [[:$1]] została oznaczona do tłumaczenia razem z $2 {{PLURAL:$2|jednostką|jednostkami}} tłumaczenia.\nMożna ją teraz <span class=\"plainlinks\">[$3 przetłumaczyć]</span>.",
 	"tpt-saveok-first": "Możesz [[Special:PageMigration|zaimportować istniejące tłumaczenia]] dla tej strony (jeżeli istnieją).",
 	"tpt-offer-notify": "Możesz <span class=\"plainlinks\">[$1 powiadomić tłumaczy]</span> o tej stronie.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Zobacz listę stron do przetłumaczenia.]]",
 	"tpt-showpage-intro": "Poniżej wypisane są nowe, istniejące i usunięte sekcje.\nPrzed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy tłumaczy, sprawdź czy zmiany w sekcjach zostały zminimalizowane.",
 	"tpt-mark-summary": "Oznaczono tę wersję do tłumaczenia",
 	"tpt-mark-nochanges": "Nie ma zmian do przejrzenia. Oznaczenie tej strony do tłumaczenia nie spowoduje jej zmiany ani żadnej istniejącej jednostki tłumaczeń.",

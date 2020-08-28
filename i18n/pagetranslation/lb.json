@@ -29,6 +29,7 @@
 	"tpt-notsuitable": "D'Säit $1 ass net geeegent fir iwwersat ze ginn.\nVergewëssert Iech ob se <nowiki><translate></nowiki>-Taggen  an eng valabel Syntax huet.",
 	"tpt-saveok": "D'Säit [[:$1]] gouf fir d'Iwwersetzung mat $2 {{PLURAL:$2|Iwwersetzungseenheet|Iwwersetzungseenheete}} markéiert.\nD'Säit kann elo <span class=\"plainlinks\">[$3 iwwersat]</span> ginn.",
 	"tpt-offer-notify": "Dir kënnt iwwer dës Säit <span class=\"plainlinks\">[$1 Iwwersetzer informéieren]</span>.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Lëscht vun den iwwersetzbare Säite weisen.]]",
 	"tpt-showpage-intro": "Ënnendrënner stinn déi nei, aktuell a geläscht Abschnitter.\nIer Dir dës Versioun fir d'iwwersetze markéiert, kuckt wgl. no datt d'Ännerunge vun den Abschnitter déi iwwersat solle ginn op e Minimum reduzéiert gi fir onnëtz Aarbecht vun den Iwwersetzer ze vermeiden.",
 	"tpt-mark-summary": "huet dës Versioun fir d'Iwwersetzung markéiert",
 	"tpt-mark-nochanges": "Keng Ännerunge fir nozekucken. D'Markéiere fir z'iwwersetze vun dëser Säit ännert weder d'Säit nach eng Iwwersetzungseenheet déi et scho gëtt.",
