@@ -21,13 +21,13 @@ class TranslationStatsGraphOptions {
 		$this->formOptions = new FormOptions();
 		$this->formOptions->add( 'graphit', false );
 		$this->formOptions->add( 'preview', false );
-		$this->formOptions->add( 'language', '' );
+		$this->formOptions->add( 'language', [] );
 		$this->formOptions->add( 'count', 'edits' );
 		$this->formOptions->add( 'scale', 'days' );
 		$this->formOptions->add( 'days', 30 );
 		$this->formOptions->add( 'width', 800 );
 		$this->formOptions->add( 'height', 600 );
-		$this->formOptions->add( 'group', '' );
+		$this->formOptions->add( 'group', [] );
 		$this->formOptions->add( 'uselang', '' );
 		$this->formOptions->add( 'start', '' );
 		$this->formOptions->add( 'imagescale', 1.0 );
@@ -82,30 +82,26 @@ class TranslationStatsGraphOptions {
 		}
 
 		foreach ( [ 'group', 'language' ] as $t ) {
-			$values = array_map( 'trim', explode( ',', $this->formOptions[$t] ) );
+			if ( is_string( $this->formOptions[$t] ) ) {
+				$this->formOptions[$t] = explode( ',', $this->formOptions[$t] );
+			}
+
+			$values = array_map( 'trim', $this->formOptions[$t] );
 			$values = array_splice( $values, 0, 4 );
 			if ( $t === 'group' ) {
 				// BC for old syntax which replaced _ to | which was not allowed
 				$values = preg_replace( '~^page_~', 'page-', $values );
 			}
-			$this->formOptions[$t] = implode( ',', $values );
+			$this->formOptions[$t] = $values;
 		}
 	}
 
 	public function getGroups(): array {
-		if ( $this->formOptions['group'] ) {
-			return explode( ',', $this->formOptions['group'] );
-		}
-
-		return [];
+		return $this->formOptions['group'];
 	}
 
 	public function getLanguages(): array {
-		if ( $this->formOptions['language'] ) {
-			return explode( ',', $this->formOptions['language'] );
-		}
-
-		return [];
+		return $this->formOptions['language'];
 	}
 
 	public function getFormOptions(): FormOptions {

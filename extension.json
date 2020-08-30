@@ -349,6 +349,7 @@
 		"translationaids": "ApiTranslationAids",
 		"translationreview": "ApiTranslationReview",
 		"translationcheck": "ApiTranslationCheck",
+		"translationstats": "\\MediaWiki\\Extensions\\Translate\\Statistics\\QueryTranslationStatsActionApi",
 		"ttmserver": "ApiTTMServer",
 		"searchtranslations": "ApiSearchTranslations"
 	},

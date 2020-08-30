@@ -137,6 +137,9 @@ class SpecialTranslationStats extends SpecialPage {
 				$spiParams .= ';';
 			}
 
+			if ( is_array( $v ) ) {
+				$v = implode( ',', $v );
+			}
 			$spiParams .= wfEscapeWikiText( "$key=$v" );
 		}
 
@@ -227,7 +230,7 @@ class SpecialTranslationStats extends SpecialPage {
 	 * @return string Html.
 	 */
 	protected function eLanguage( $name, FormOptions $opts ) {
-		$value = $opts[$name];
+		$value = implode( ',', $opts[$name] );
 
 		$select = $this->languageSelector();
 		$select->setTargetId( 'language' );
@@ -264,7 +267,7 @@ class SpecialTranslationStats extends SpecialPage {
 	 * @return string Html.
 	 */
 	protected function eGroup( $name, FormOptions $opts ) {
-		$value = $opts[$name];
+		$value = implode( ',', $opts[$name] );
 
 		$select = $this->groupSelector();
 		$select->setTargetId( 'group' );
