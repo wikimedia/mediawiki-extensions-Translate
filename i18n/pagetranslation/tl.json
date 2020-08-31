@@ -61,8 +61,6 @@
 	"tpt-unknown-page": "Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.\nTila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.",
 	"tpt-translation-restricted": "Ang pagsasalinwika ng pahinang ito na papunta sa wikang ito ay pinigilan ng isang tagapangasiwa ng salinwika.\n\nDahilan: $1",
 	"tpt-discouraged-language-force": "<strong>Ang pahinang ito ay hindi maisasalinwika upang maging $2.</strong>\n\nIsang tagapangasiwa ng pagsasalinwika ang nagpasya na ang pahinang ito ay maisasalinwika lamang papunta sa $3.",
-	"tpt-discouraged-language": "<strong>Ang pagsasalinwika papunta sa $2 ay hindi isang nararapat na unahin para sa pahinang ito.</strong>\n\nIsang tagapangasiwa ng salinwika ang nagpasyang ituon ang mga pagsisikap ng pagsasalinwika sa $3.",
-	"tpt-discouraged-language-reason": "Dahilan: $1",
 	"tpt-priority-languages": "Isang tagapangasiwa ng salinwika ang nagtakda ng mga wikang nararapat na unahin para sa pangkat na ito upang maging $1.",
 	"tpt-render-summary": "Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina",
 	"aggregategroups": "Mga pangkat na pinagsama-sama",

@@ -60,8 +60,6 @@
 	"tpt-unknown-page": "This namespace is reserved fer content page owersets.\nThe page that ye'r ettlin tae eedit disna seem tae correspond wi onie page maurkt fer owersetin.",
 	"tpt-translation-restricted": "Owersetin o this page intil this leid haes been stapt bi aen owerset admeenistrater.\n\nReason: $1",
 	"tpt-discouraged-language-force": "<strong>This page canna be owerset intil $2.</strong>\n\nAen owerset admeenistrater decided that this page can yinlie be owerset intil $3.",
-	"tpt-discouraged-language": "<strong>Owersetin intil $2 isna ae prioritie fer this page.</strong>\n\nAen owerset admeenistrater decided tae focus the owersetin efforts oan $3.",
-	"tpt-discouraged-language-reason": "Raison: $1",
 	"tpt-priority-languages": "Aen owerset admeenistrater haes set the prioritie leids fer this groop til $1.",
 	"tpt-render-summary": "Updatin tae match new version o soorce page",
 	"aggregategroups": "Aggregate groops",

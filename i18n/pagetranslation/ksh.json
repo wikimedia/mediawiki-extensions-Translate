@@ -68,8 +68,6 @@
 	"tpt-discouraged-language-header": "Heh di Sigg op $1 ze övversäze es nit weschtesch.",
 	"tpt-discouraged-language-content": "Ene translation administrator  häd äntschihde, de Övversäzong op $1 ze konzäntrehre.",
 	"tpt-discouraged-language-force": "<strong>Heh di Sigg kam_mer nit op $2 övversäze.</strong>\n\nEne Verwallder vum Övversäzze hät faßjelaat, dat di Sigg bloß op $3 övversaz wääde sull.",
-	"tpt-discouraged-language": "<strong>Heh di Sigg op $2 övversäze hät keine Vörrang.</strong>\n\nEne Verwallder vum Övversäzze hät faßjelaat, dat di Sigg en de Houpsaach op $3 övversaz wääde sull.",
-	"tpt-discouraged-language-reason": "Jrond: $1",
 	"tpt-priority-languages": "Ene Verwallder vum Övversäzze hät de Houpschprooche för heh di Jropp op $1 jesaz.",
 	"tpt-render-summary": "Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme",
 	"aggregategroups": "Sammeljroppe",

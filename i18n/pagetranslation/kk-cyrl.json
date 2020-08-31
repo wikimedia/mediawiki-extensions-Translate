@@ -41,7 +41,6 @@
 	"tpt-languages-zero": "Мына тілде аударманы бастау",
 	"tpt-languages-nonzero": "$1 ($2% аударылды)",
 	"tpt-tab-translate": "Аудару",
-	"tpt-discouraged-language-reason": "Себебі: $1",
 	"tpt-render-summary": "Қайнар беттің жаңа нұсқасына сәйкестігін жаңарту",
 	"tpt-aggregategroup-add": "Қосу",
 	"tpt-aggregategroup-save": "Сақтау",

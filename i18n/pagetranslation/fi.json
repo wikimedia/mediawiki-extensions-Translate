@@ -82,8 +82,6 @@
 	"tpt-discouraged-language-header": "Tämän sivun ensisijainen käännöskieli ei ole $1.",
 	"tpt-discouraged-language-content": "Käännösylläpitäjä on päättänyt, että tämä sivu tulee ensisijaisesti kääntää kielille $1.",
 	"tpt-discouraged-language-force": "<strong>Tätä sivua ei voi kääntää kielelle $2.</strong>\n\nKäännösylläpitäjä on päättänyt, että tämän sivun voi kääntää vain kielille $3.",
-	"tpt-discouraged-language": "<strong>Tämän sivun ensijainen käännöskieli ei ole $2.</strong>\n\nKäännösylläpitäjä on päättänyt, että tämä sivu tulee ensisijaisesti kääntää kielille $3.",
-	"tpt-discouraged-language-reason": "Syy: $1",
 	"tpt-priority-languages": "Käännösylläpitäjä on asettanut tämän ryhmän ensisijaisiksi käännöskieliksi $1.",
 	"tpt-priority-languages-force": "Käännösylläpitäjä on määritellyt tämän ryhmän prioriteettikieliksi $1. Kääntäminen muille kielille ei ole mahdollista.",
 	"tpt-render-summary": "Päivitetty vastaamaan uutta versiota lähdesivusta",

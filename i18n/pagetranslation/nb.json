@@ -87,8 +87,6 @@
 	"tpt-discouraged-language-header": "Oversettelser til $1 er ikke en prioritet for denne siden.",
 	"tpt-discouraged-language-content": "En oversettelsesadministrator har bestemt at oversettelsene skal fokuseres på $1.",
 	"tpt-discouraged-language-force": "<strong>Denne siden kan ikke oversettes til $2.</strong>\n\nEn oversettelsesadministrator har bestemt at denne siden bare kan oversettes til $3.",
-	"tpt-discouraged-language": "<strong>Oversettelse til $2 er ikke prioritert for denne siden.</strong>\n\nEn oversettelsesadministrator har besluttet å fokusere oversettelsesarbeidet på $3.",
-	"tpt-discouraged-language-reason": "Årsak: $1",
 	"tpt-priority-languages": "En oversettelsesadministrator har satt prioritetsspråkene for denne gruppen til $1.",
 	"tpt-priority-languages-force": "En oversettelsesadministrator har satt de prioriterte språkene for denne gruppa til $1. Å oversette til andre språk er ikke tillatt.",
 	"tpt-render-summary": "Oppdaterer for å svare til ny versjon av kildesiden",

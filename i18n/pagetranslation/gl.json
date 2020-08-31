@@ -69,8 +69,6 @@
 	"tpt-discouraged-language-header": "A tradución desta páxina ao $1 non é unha tarefa prioritaria.",
 	"tpt-discouraged-language-content": "Un administrador de traducións decidiu centrar os esforzos en traducir a páxina ao $1.",
 	"tpt-discouraged-language-force": "<strong>Esta páxina non se pode traducir ao $2.</strong>\n\nUn administrador de traducións decidiu que esta páxina só se pode traducir ao $3.",
-	"tpt-discouraged-language": "<strong>A tradución ao $2 non é unha prioridade para esta páxina.</strong>\n\nUn administrador de traducións decidiu centrar os esforzos en traducir a páxina ao $3.",
-	"tpt-discouraged-language-reason": "Motivo: $1",
 	"tpt-priority-languages": "Un administrador de traducións definiu as linguas prioritarias deste grupo a $1.",
 	"tpt-render-summary": "Actualizando para coincidir coa nova versión da páxina de orixe",
 	"aggregategroups": "Grupos de agregación",

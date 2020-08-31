@@ -69,8 +69,6 @@
 	"tpt-discouraged-language-header": "La traducción al $1 nun ye prioritaria pa esta páxina.",
 	"tpt-discouraged-language-content": "Un alministrador de traducciones decidió concentrar el trabayu de traducción nel $1.",
 	"tpt-discouraged-language-force": "<strong>Esta páxina nun pue traducise al $2.</strong>\n\nUn alministrador de traducciones decidió qu'esta páxina sólo pue traducise al $3.",
-	"tpt-discouraged-language": "<strong>La traducción al $2 nun ye una prioridá pa esta páxina.</strong>\n\nUn alministrador de traducción decidió centrar l'esfuerzu de traducción en $3.",
-	"tpt-discouraged-language-reason": "Motivu: $1",
 	"tpt-priority-languages": "Un alministrador de traducciones definió les llingües prioritaries d'esti grupu como $1.",
 	"tpt-priority-languages-force": "Un alministrador de traducciones configuró les llingües prioritaries d'esti grupu como $1. Nun se permite traducir a otres llingües.",
 	"tpt-render-summary": "Anovando pa casar cola nueva versión de la páxina orixinal",

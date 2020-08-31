@@ -44,7 +44,6 @@
 	"tpt-languages-zero": "Ektraduki por ĉi tiu lingvo",
 	"tpt-languages-nonzero": "$1 ($2% {{PLURAL:$2|tradukita|tradukitaj}})",
 	"tpt-tab-translate": "Traduki",
-	"tpt-discouraged-language-reason": "Kialo: $1",
 	"tpt-aggregategroup-add": "Aldoni",
 	"tpt-aggregategroup-save": "Konservi",
 	"tpt-aggregategroup-new-name": "Nomo:",

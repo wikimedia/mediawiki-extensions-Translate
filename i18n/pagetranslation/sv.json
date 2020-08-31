@@ -94,8 +94,6 @@
 	"tpt-discouraged-language-header": "Översättning till $1 är inte en prioritet för denna sida.",
 	"tpt-discouraged-language-content": "En översättningsadministratör har beslutat att fokusera översättningsinsatserna till $1.",
 	"tpt-discouraged-language-force": "<strong>Denna sida kan inte översättas till $2.</strong>\n\nEn översättningsadministratör har beslutat att denna sida endast kan översättas till $3.",
-	"tpt-discouraged-language": "<strong>Översättning till $2 är inte en prioritering på denna sida.</strong>\n\nEn översättningsadministratör har beslutat att fokusera översättning på $3.",
-	"tpt-discouraged-language-reason": "Anledning: $1",
 	"tpt-priority-languages": "En översättningsadministratör har ställt in prioritetsspråken för denna grupp till $1.",
 	"tpt-priority-languages-force": "En översättningsadministratör har ändrat prioritetsspråket för denna grupp till $1. Det är inte tillåtet att översätta till andra språk.",
 	"tpt-render-summary": "Uppdaterar för att matcha den nya versionen av källpaketet",

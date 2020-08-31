@@ -61,8 +61,6 @@
 	"tpt-unknown-page": "Dää Namensruum isch reserviert fir Ibersetzige vu Inhaltssyte.\nD Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze markiert isch.",
 	"tpt-translation-restricted": "S Ibersetze vu däre Syte in die Sproch isch vun eme Ibersetzigsadministrator deaktiviert wore.\n\nGrund: $1",
 	"tpt-discouraged-language-force": "<strong>Die Syte cha nit in $2 ibersetzt wäre.</strong>\n\nEn Ibersetzigsadministrator het entschide, dass die Syte nume in $3 cha ibersetzt wäre.",
-	"tpt-discouraged-language": "<strong>En Ibersetzig in $2 isch kei Prioritet vu däre Syte.</strong>\n\nEn Ibersetzigsadministrator het entschide, dass die Syte vor allem in $3 sott ibersetzt wäre.",
-	"tpt-discouraged-language-reason": "Grund: $1",
 	"tpt-priority-languages": "En Ibersetzigsadministrator het di priorisierte Sproche fir die Nochrichtegruppe uf $1 feschtgleit.",
 	"tpt-render-summary": "Aktualisiere zum e neji Version vu dr Quällsyte z finde",
 	"aggregategroups": "Sammelgruppe",

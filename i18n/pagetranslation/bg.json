@@ -20,7 +20,6 @@
 	"tpt-translation-intro": "Тази страница е <span class=\"plainlinks\">[$1 преведена версия]</span> на страницата [[$2]] и преводът е завършен на $3%.",
 	"tpt-languages-legend": "Други езици:",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
-	"tpt-discouraged-language-reason": "Причина: $1",
 	"tpt-aggregategroup-add": "Добавяне",
 	"tpt-aggregategroup-save": "Съхраняване",
 	"tpt-aggregategroup-new-name": "Име:",

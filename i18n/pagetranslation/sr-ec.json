@@ -66,8 +66,6 @@
 	"tpt-tab-translate": "Превођење",
 	"tpt-discouraged-language-header": "Превођење ове странице на $1 није приоритет.",
 	"tpt-discouraged-language-force": "<strong>Ова страница се не може превести на $2.</strong>\n\nАдминистратор превођења је одредио да се ова страница може превести само на: $3.",
-	"tpt-discouraged-language": "<strong>Превођење ове странице на $2 није приоритет.</strong>\n\nАдминистратор превођења је одредио приоритетне језике и они су: $3.",
-	"tpt-discouraged-language-reason": "Разлог: $1",
 	"aggregategroups": "Збирне групе",
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Сачувај",

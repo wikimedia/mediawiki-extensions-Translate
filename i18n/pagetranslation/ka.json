@@ -26,7 +26,6 @@
 	"tpt-languages-zero": "ამ ენაზე თარგმნის დაწყება",
 	"tpt-languages-nonzero": "$1 ($2% ნათარგმნი)",
 	"tpt-tab-translate": "თარგმნა",
-	"tpt-discouraged-language-reason": "მიზეზი: $1",
 	"tpt-aggregategroup-add": "დამატება",
 	"tpt-aggregategroup-save": "შენახვა",
 	"tpt-aggregategroup-new-name": "სახელი:",

@@ -45,8 +45,6 @@
 	"tpt-discouraged-language-header": "Vertimas į $1 nėra prioritetas šiam puslapiui.",
 	"tpt-discouraged-language-content": "Vertimų administratorius nusprendė sutelkti pastangas ties $1.",
 	"tpt-discouraged-language-force": "<strong>Šis puslapis negali būti išverstas į $2.</strong>\n\nVertimų administratorius nusprendė, kad šis puslapis gali būti išverstas tik į $3.",
-	"tpt-discouraged-language": "<strong>Vertimas į $2 nėra prioritetas šiam puslapiui.</strong>\n\nVertimų administratorius nusprendė sutelkti vertimų pastangas ties $3.",
-	"tpt-discouraged-language-reason": "Priežastis: $1",
 	"tpt-priority-languages": "Vertimų administratorius nustatė šios grupes prioritetines kalbas į $1.",
 	"aggregategroups": "Bendros grupės",
 	"tpt-aggregategroup-add": "Pridėti",

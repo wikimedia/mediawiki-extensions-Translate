@@ -64,7 +64,6 @@
 	"tpt-tab-translate": "Tradueix",
 	"tpt-target-page": "Aquesta pàgina no es pot editar manualment.\nÉs una traducció de la pàgina [[$1]] i la traducció es realitza amb [$2 l'eina de traducció].",
 	"tpt-discouraged-language-force-header": "Aquesta pàgina no es pot traduir a $1.",
-	"tpt-discouraged-language-reason": "Motiu: $1",
 	"tpt-render-summary": "S'està actualitzant per a coincidir amb la nova versió de la pàgina font",
 	"aggregategroups": "Grups d'agregació",
 	"tpt-aggregategroup-add": "Afegeix",

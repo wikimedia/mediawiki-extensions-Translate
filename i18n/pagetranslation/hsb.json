@@ -62,8 +62,6 @@
 	"tpt-unknown-page": "Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.\nStrona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.",
 	"tpt-translation-restricted": "Přełožowanski administrator je přełožowanju tuteje strony do tuteje rěče zadźěwał.\n\nPřičina: $1",
 	"tpt-discouraged-language-force": "<strong>Tuta strona njehodźi so do $2 přełožić.</strong>\n\nPřełožowanski administrator je rozsudźił, zo tuta strona hodźi so jenož do $3 přełožować.",
-	"tpt-discouraged-language": "<strong>Přełožowanje do $2 nima prioritu za tutu stronu.</strong>\n\nPřełožowanski administrator je rozsudźił, fokus přełožowanskich procowanjow na $3 stajić.",
-	"tpt-discouraged-language-reason": "Přičina: $1",
 	"tpt-priority-languages": "Přełožowanski administrator je primarne rěče za tutu skupinu jako $1 nastajił.",
 	"tpt-render-summary": "Aktualizacija po nowej wersiji žórłoweje strony",
 	"aggregategroups": "Skupiny zjednoćić",

@@ -76,8 +76,6 @@
 	"tpt-discouraged-language-header": "D'Iwwersetzen op $1 ass keng Prioritéit fir dës Säit.",
 	"tpt-discouraged-language-content": "Een Iwwersetzungsadministrateur huet decidéiert d'Iwwersetzungen op $1 ze konzentréieren.",
 	"tpt-discouraged-language-force": "<strong>Dës Säit kann net op $2 iwwersat ginn.</strong>\n\nEn Iwwersetzungs-Administrateur huet decidéiert datt dës Säit nëmmen op $3 iwwersat ka ginn.",
-	"tpt-discouraged-language": "<strong>D'Iwwersetzung op $2 ass keng Prioritéit fir dës Säit.</strong>\n\nEn Iwwersetzungs-Administrateur huet decidéiert fir d'Iwwersetzungs-Efforten op $3 ze konzentréieren.",
-	"tpt-discouraged-language-reason": "Grond: $1",
 	"tpt-priority-languages": "En Iwwersetzungs-Administrateur huet déi prioritiséiert Sprooche fir dëse Grupp op $1 agestallt.",
 	"tpt-render-summary": "Aktualiséieren fir mat der neier Versioun vun der Quellsäit iwwereneenzestëmmen",
 	"aggregategroups": "Gruppe fusionéieren",

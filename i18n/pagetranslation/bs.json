@@ -71,8 +71,6 @@
 	"tpt-discouraged-language-header": "Prevođenje na $1 nije prioritet za ovu stranicu.",
 	"tpt-discouraged-language-content": "Prevodilački administrator odlučio je da se prevođenje treba usredotočiti na $1.",
 	"tpt-discouraged-language-force": "<strong>Stranica se ne može prevesti na $2.</strong>\n\nPrevodilački administrator odlučio je da se stranica može prevesti samo na $3.",
-	"tpt-discouraged-language": "<strong>Prevođenje ove stranice na $2 nije prioritet.</strong>\n\nPrevodilački administrator odlučio je da se treba usredotočiti na $3.",
-	"tpt-discouraged-language-reason": "Razlog: $1",
 	"tpt-priority-languages": "Prevodilački administrator ovoj grupi je postavio sljedeće prioritetne jezike: $1.",
 	"tpt-render-summary": "Ažuriram na novu verziju izvorne stranice",
 	"aggregategroups": "Zbirne grupe",

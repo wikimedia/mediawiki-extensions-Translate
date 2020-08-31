@@ -63,8 +63,6 @@
 	"tpt-translation-restricted": "Terjemahan kaca iki nèng basa iki ditolak déning panata pertalan.\n\nAlesan: $1",
 	"tpt-discouraged-language-force-header": "Kaca iki ora bisa kapertal menyang $1.",
 	"tpt-discouraged-language-force": "<strong>Kaca iki ora bisa diterjemahaké menyang $2.</strong>\n\nPanata pertalan milih supaya kaca iki namung bisa diterjemahaké menyang $3.",
-	"tpt-discouraged-language": "<strong>Mertal menyang $2 dudu prioritas kanggo kaca iki.</strong>\n\nPanata pertalan milih fokus mertal nang $3.",
-	"tpt-discouraged-language-reason": "Alesan: $1",
 	"tpt-priority-languages": "Panata pertalan nyetèl basa prioritas kanggo klompok iki dadi $1.",
 	"tpt-render-summary": "Nganyari kanggo nyocokaké vèrsi anyar kaca sumber",
 	"tpt-aggregategroup-add": "Tambah",

@@ -79,8 +79,6 @@
 	"tpt-discouraged-language-header": "ترجمه به $1 برای این صفحه اولویت ندارد.",
 	"tpt-discouraged-language-content": "یک مدیر ترجمه تصمیم گرفته که تلاش‌های ترجمه را به $1 متمرکز کند.",
 	"tpt-discouraged-language-force": "<strong> این صفحه نمی‌تواند به $2 ترجمه شود.</strong>\n\nمدیر ترجمه تصمیم گرفت که این صفحه می‌تواند تنها به $3 ترجمه شود.",
-	"tpt-discouraged-language": "<strong> ترجمه به $2 اولویتی برای این صفحه نیست.<strong>\n\nمدیر ترجمه تصمیم به تمرکز تلاش‌های ترجمه بر روی $3 گرفت.",
-	"tpt-discouraged-language-reason": "دلیل: $1",
 	"tpt-priority-languages": "مدیر ترجمه اولویت زبان‌ها را برای این گروه به $1 تنظیم کرده‌است.",
 	"tpt-render-summary": "روزآمدسازی برای انطباق با نسخهٔ تازهٔ صفحهٔ اصلی",
 	"aggregategroups": "گروه‌های تجمیعی",

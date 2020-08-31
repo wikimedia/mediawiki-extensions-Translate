@@ -76,8 +76,6 @@
 	"tpt-discouraged-language-header": "Překlad do jazyka $1 není pro tuto stránku prioritou.",
 	"tpt-discouraged-language-content": "Správce překladů se rozhodl zacílit překladatelské úsilí na $1.",
 	"tpt-discouraged-language-force": "<strong>Tuto stránku nelze překládat do jazyka $2.</strong>\n\nSprávce překladů se rozhodl, že tuto stránku lze překládat pouze do $3.",
-	"tpt-discouraged-language": "<strong>Překlad do jazyka $2 není pro tuto stránku prioritní.</strong>\n\nSprávce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
-	"tpt-discouraged-language-reason": "Zdůvodnění: $1",
 	"tpt-priority-languages": "Správce překladů nastavil prioritní jazyky pro tuto skupinu na $1.",
 	"tpt-render-summary": "Stránka aktualizována, aby odpovídala nové verzi zdrojové stránky",
 	"tpt-aggregategroup-add": "Přidat",

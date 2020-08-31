@@ -71,8 +71,6 @@
 	"tpt-discouraged-language-force-header": "Denne side kan ikke oversættes til $1.",
 	"tpt-discouraged-language-header": "Oversættelser til $1 er ikke en prioritet for denne side.",
 	"tpt-discouraged-language-force": "<strong>Denne side kan ikke oversættes til $2.</strong>\n\nEn oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.",
-	"tpt-discouraged-language": "<strong>Oversættelse til $2 er ikke en prioritet for denne side.</strong>\n\nEn oversættelsesadministrator besluttede at fokusere oversættelsesarbejdet på $3.",
-	"tpt-discouraged-language-reason": "Begrundelse: $1",
 	"tpt-priority-languages": "En oversættelsesadministrator har sat prioritetssprogene for denne gruppe til $1.",
 	"tpt-render-summary": "Opdaterer for at passe til en ny version af kildesiden",
 	"aggregategroups": "Samlegrupper",

@@ -42,7 +42,6 @@
 	"tpt-languages-nonzero": "$1 ($2% tradotte)",
 	"tpt-tab-translate": "Traduce",
 	"tpt-discouraged-language-force-header": "Sta pàgene non ge pò essere tradotte jndr'à $1.",
-	"tpt-discouraged-language-reason": "Mutive: $1",
 	"aggregategroups": "Gruppe aggregate",
 	"tpt-aggregategroup-add": "Aggiunge",
 	"tpt-aggregategroup-save": "Reggìstre",

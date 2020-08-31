@@ -98,8 +98,6 @@
 	"tpt-discouraged-language-header": "翻譯為 $1 並非此頁面優先的工作。",
 	"tpt-discouraged-language-content": "翻譯管理員決定全力將此頁面翻譯為 $1。",
 	"tpt-discouraged-language-force": "<strong>此頁面不能翻譯為 $2。</strong>\n\n翻譯管理員決定只將此頁面翻譯為 $3。",
-	"tpt-discouraged-language": "<strong>翻譯為 $2 不是此頁面的優先工作。</strong>\n\n翻譯管理員決定全力將此頁面翻譯為 $3。",
-	"tpt-discouraged-language-reason": "原因：$1",
 	"tpt-priority-languages": "翻譯管理員已將此群組的優先語言設為 $1。",
 	"tpt-priority-languages-force": "翻譯管理員已設定此群組的屬性語言成$1，不允許翻譯成其它語言。",
 	"tpt-render-summary": "正在更新來源頁面以與新版本相符",

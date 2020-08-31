@@ -88,8 +88,6 @@
 	"tpt-discouraged-language-header": "A fordítás $1 nyelvre nem a legfontosabb feladat ennél a lapnál.",
 	"tpt-discouraged-language-content": "Egy fordítási adminisztrátor úgy döntött, hogy elsődlegesen $1 nyelvre kell fordítani.",
 	"tpt-discouraged-language-force": "<strong>Ez a lap nem fordítható $2 nyelvre.</strong>\n\nEgy fordítási adminisztrátor úgy döntött, hogy ez a lap csak $3 nyelvre fordítható.",
-	"tpt-discouraged-language": "<strong>$2 — a fordítás erre a nyelvre nem a legfontosabb feladat.</strong>\n\nAz adminisztrátori javaslat szerint a legfontosabb nyelvek a következők: $3.\n\nKérjük, ha beszéled ezek közül valamelyiket, fontold meg, hogy inkább arra a nyelvre fordítasz előbb: munkádnak így többek láthatják hasznát.",
-	"tpt-discouraged-language-reason": "Indoklás: $1",
 	"tpt-priority-languages": "Egy fordítási adminisztrátor ennek a csoportnak a kiemelt célnyelveit a következő(k)re állította: $1",
 	"tpt-priority-languages-force": "Egy fordítási adminisztrátor ennek a csoportnak az elsőbbségi nyelveit a következőkre állította: $1. Más nyelvekre nem engedélyezett a fordítás.",
 	"tpt-render-summary": "Frissítés, hogy megegyezzen a forráslap új változatával",

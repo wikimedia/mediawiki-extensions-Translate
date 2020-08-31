@@ -89,8 +89,6 @@
 	"tpt-discouraged-language-header": "Vertalen in het $1 is geen prioriteit voor deze pagina.",
 	"tpt-discouraged-language-content": "Een vertalingenbeheerder heeft besloten om prioriteit te leggen bij de volgende talen: $1.",
 	"tpt-discouraged-language-force": "<strong>Deze pagina kan niet vertaald worden in het $2.</strong>\n\nEen vertalingenbeheerder heeft de talen waarin deze pagina vertaald kan worden beperkt tot de volgende talen: $3.",
-	"tpt-discouraged-language": "<strong>Het vertalen van deze pagina in het $2 heeft geen prioriteit.</strong>\n\nEen vertalingenbeheerder heeft besloten prioriteit te leggen bij de volgende talen: $3.",
-	"tpt-discouraged-language-reason": "Reden: $1",
 	"tpt-priority-languages": "Een vertalingenbeheerder heeft de prioriteitstalen voor deze groep ingesteld op $1.",
 	"tpt-priority-languages-force": "Een vertalingsbeheerder heeft de prioriteitstalen voor deze groep ingesteld op $1. Vertalen naar andere talen is niet toegestaan.",
 	"tpt-render-summary": "Bijgewerkt vanwege een nieuwe basisversie van de bronpagina",

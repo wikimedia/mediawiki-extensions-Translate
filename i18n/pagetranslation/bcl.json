@@ -59,8 +59,6 @@
 	"tpt-unknown-page": "Ining espasyong ngaran nakareserba para sa pahina kan laman nin mga dakit-taramon.\nAn pahina na saimong boot na pagliliwaton garo habong magtutugot sa arinman na pahinang markado para ipagdakit-taramon.",
 	"tpt-translation-restricted": "An pagdakit-taramon kaining pahina sa lengguwaheng ini pinagpupugulan kan administrador nin pagdakit-taramon.\n\nRason: $1",
 	"tpt-discouraged-language-force": "<strong>Ining pahina dae puwedeng ipagdakit-taramon sa $2.</strong>\n\nAn administrador kan pagdakit-taramon nagdesisyon na ining pahina mapuwedeng sanang ipagdakit-taramon sa $3.",
-	"tpt-discouraged-language": "<strong>An pagdadakit-taramon sa $2 bakong prayoridad para sa pahinang ini.</strong>\n\nAn administrador kan pagdakit-taramon nagdesisyon na itutok an gibong pagdakit-taramon sa $3.",
-	"tpt-discouraged-language-reason": "Rason: $1",
 	"tpt-priority-languages": "An administrador kan pagdakit-taramon ikinaag an prayoridad na mga lengguwahe para kaining grupo sa $1.",
 	"tpt-render-summary": "Panunumpayan tanganing ipagtugma sa baguhong bersyon kan ginikanang pahina",
 	"aggregategroups": "Sinurumpay na mga grupo",

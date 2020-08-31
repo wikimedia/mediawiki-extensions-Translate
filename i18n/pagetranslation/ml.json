@@ -34,7 +34,6 @@
 	"tpt-languages-nonzero": "$1 ($2% പരിഭാഷപ്പെടുത്തി)",
 	"tpt-tab-translate": "പരിഭാഷപ്പെടുത്തുക",
 	"tpt-target-page": "ഈ താൾ താങ്കൾക്ക് പുതുക്കാൻ കഴിയില്ല.\nഈ താൾ [[$1]] എന്ന താളിന്റെ പരിഭാഷയാണ്, പരിഭാഷ പുതുക്കാൻ [$2 പരിഭാഷാ ഉപകരണം] ഉപയോഗിക്കുക.",
-	"tpt-discouraged-language-reason": "കാരണം: $1",
 	"tpt-aggregategroup-add": "കൂട്ടിച്ചേർക്കുക",
 	"tpt-aggregategroup-save": "സേവ് ചെയ്യുക",
 	"tpt-aggregategroup-new-name": "പേര്:",

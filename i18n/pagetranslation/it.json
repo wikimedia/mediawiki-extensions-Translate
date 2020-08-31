@@ -85,8 +85,6 @@
 	"tpt-discouraged-language-header": "La traduzione in $1 non è prioritaria per questa pagina.",
 	"tpt-discouraged-language-content": "Un amministratore di traduzione ha deciso di concentrare gli sforzi per la traduzione in $1.",
 	"tpt-discouraged-language-force": "<strong>Questa pagina non può essere tradotta in $2.</strong>\n\nUn amministratore delle traduzioni ha deciso che questa pagina può essere tradotta solo in $3.",
-	"tpt-discouraged-language": "<strong>La traduzione in $2 non è una priorità per questa pagina.</strong>\n\nUn amministratore delle traduzioni ha deciso di concentrare gli sforzi traduzioni in $3.",
-	"tpt-discouraged-language-reason": "Motivo: $1",
 	"tpt-priority-languages": "L'amministratore ha impostato le lingue prioritarie per questo gruppo in $1.",
 	"tpt-render-summary": "Aggiornamento come da nuova versione della pagina di origine",
 	"aggregategroups": "Gruppi aggregati",

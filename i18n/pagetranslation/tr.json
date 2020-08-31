@@ -96,8 +96,6 @@
 	"tpt-discouraged-language-header": "$1 ile çevirmek bu sayfaya bir öncelik değildir.",
 	"tpt-discouraged-language-content": "Bir çeviri hizmetlisi çeviri çabalarını $1 ile odaklamaya karar verdi.",
 	"tpt-discouraged-language-force": "<strong>Bu sayfa $2 ile çevrilemez.</strong>\n\nBir çeviri hizmetlisi bu sayfanın yalnızca $3 ile çevrilebileceğine karar verdi.",
-	"tpt-discouraged-language": "<strong>$2 ile çevirmek bu sayfa için bir öncelik değil.</strong>\n\nBir çeviri hizmetlisi çeviri çabalarını $3 ile odaklamaya karar verdi.",
-	"tpt-discouraged-language-reason": "Sebep: $1",
 	"tpt-priority-languages": "Bir çeviri hizmetlisi bu grup için öncelik dillerini $1 olarak ayarladı.",
 	"tpt-priority-languages-force": "Bir çeviri hizmetlisi bu grup için öncelik dillerini $1 olarak ayarladı. Başka dillere tercüme yapılamaz.",
 	"tpt-render-summary": "Kaynak sayfanın yeni sürümü ile eşleme için güncelleniyor",

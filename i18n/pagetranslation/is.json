@@ -68,8 +68,6 @@
 	"tpt-discouraged-language-header": "Að þýða á $1 er ekki í forgangi fyrir þessa síðu.",
 	"tpt-discouraged-language-content": "Kerfisstjóri þýðinga ákvað að áhersla sé lögð á að þýða á $1.",
 	"tpt-discouraged-language-force": "<strong>Þessa síðu er ekki hægt að þýða á $2.</strong>\n\nKerfisstjóri þýðinga ákvað að þessa síðu sé einungis hægt að þýða á $3.",
-	"tpt-discouraged-language": "<strong>Að þýða á $2 er ekki í forgangi fyrir þessa síðu.</strong>\n\nKerfisstjóri þýðinga ákvað að áhersla sé lögð á að þýða á $3.",
-	"tpt-discouraged-language-reason": "Ástæða: $1",
 	"tpt-priority-languages": "Kerfisstjóri þýðinga stillti forgangstungumál þessa hóps sem $1.",
 	"tpt-render-summary": "Uppfæri til að samsvara nýrri útgáfu grunnsíðunnar",
 	"aggregategroups": "Safna saman hópum",

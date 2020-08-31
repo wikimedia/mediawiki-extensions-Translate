@@ -49,7 +49,6 @@
 	"tpt-languages-nonzero": "$1 ($2% অনূদিত)",
 	"tpt-tab-translate": "অনুবাদ",
 	"tpt-target-page": "এই পাতাটি ম্যানুয়ালি হালনাগাদ করা যাবে না।\nএই পাতাটি  [[$1]] পাতার একটি অনুবাদ এবং [$2 অনুবাদ সরঞ্জাম] ব্যবহার করে অনুবাদ হালনাগাদ করা যাবে।",
-	"tpt-discouraged-language-reason": "কারণ: $1",
 	"tpt-render-summary": "উৎস পাতার নতুন সংস্করণের সাথে মেলাতে হালনাগাদ করা হচ্ছে",
 	"tpt-aggregategroup-add": "যোগ",
 	"tpt-aggregategroup-save": "সংরক্ষণ",
