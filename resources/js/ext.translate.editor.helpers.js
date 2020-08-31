@@ -570,10 +570,12 @@
 				);
 
 			}.bind( this ) ).fail( function ( errorCode, results ) {
+				// results.error may be undefined
+				var errorInfo = results && results.error && results.error.info || 'Unknown error';
 				this.$editor.find( '.infocolumn .loading' ).remove();
 				this.$editor.find( '.infocolumn' ).append(
 					$( '<div>' )
-						.text( mw.msg( 'tux-editor-loading-failed', results.error.info ) )
+						.text( mw.msg( 'tux-editor-loading-failed', errorInfo ) )
 						.addClass( 'warningbox tux-translation-aid-error' )
 				);
 				mw.log.error( 'Error loading translation aids:', errorCode, results );
