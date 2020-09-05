@@ -351,6 +351,7 @@
 
 	/**
 	 * Finds a specific group from a groups object containing nested groups.
+	 *
 	 * @param {string} targetGroupId
 	 * @param {Object} groups
 	 * @return {Object} Message group object, or null if group is not found

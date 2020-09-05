@@ -16,6 +16,7 @@
 		"no-jquery/no-fade": "warn",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-map-util": "warn",
-		"no-jquery/no-sizzle": "warn"
+		"no-jquery/no-sizzle": "warn",
+		"no-shadow": "warn"
 	}
 }
