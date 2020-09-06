@@ -222,6 +222,7 @@
 	"pp-pagename-missing": "Voer een paginanaam in.",
 	"pp-diff-old-header": "Brontekst",
 	"pp-diff-new-header": "Voorbereide tekst",
+	"tpt-unlink-confirm": "Bevestig dat u deze pagina daadwerkelijk uit het vertalingssysteem wilt verwijderen.\nDe taalbalk en vertaalde paginanamen zullen niet meer werken. \nDe vertaalde pagina's zullen bewerkbaar worden.",
 	"tpt-unlink-button": "Verwijderen uit vertaling",
 	"tpt-unlink-summary": "Verwijderd als vertaalbare pagina",
 	"tpt-generic-confirm": "Bevestig de handeling.",
