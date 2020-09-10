@@ -106,6 +106,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
 
 		$groups = [];
+		$codes = [];
 
 		if ( $this->groups ) {
 			/*
@@ -116,7 +117,11 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$groups = array_intersect( $this->groups, $groups );
 		}
 
-		return $this->combineTwoArrays( $groups, $this->opts->getLanguages() );
+		if ( $this->opts->getLanguages() ) {
+			$codes = [ $code ];
+		}
+
+		return $this->combineTwoArrays( $groups, $codes );
 	}
 
 	public function labels() {

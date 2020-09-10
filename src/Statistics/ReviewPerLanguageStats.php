@@ -93,6 +93,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->log_title );
 
 		$groups = [];
+		$codes = [];
 
 		if ( $this->groups ) {
 			/* Get list of keys that the message belongs to, and filter
@@ -101,7 +102,11 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			$groups = array_intersect( $this->groups, $groups );
 		}
 
-		return $this->combineTwoArrays( $groups, $this->opts->getLanguages() );
+		if ( $this->opts->getLanguages() ) {
+			$codes = [ $code ];
+		}
+
+		return $this->combineTwoArrays( $groups, $codes );
 	}
 
 	public function labels() {
