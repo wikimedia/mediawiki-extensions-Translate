@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Khan27"
+			"Khan27",
+			"Şeyx Şamil"
 		]
 	},
 	"searchtranslations": "Tərcümələri axtar",
@@ -12,5 +13,10 @@
 	"tux-sst-facet-language": "Dillər",
 	"tux-sst-facet-group": "Mesaj qrupları",
 	"tux-sst-nosolr-title": "Axtarış mümkün deyil",
-	"tux-sst-nosolr-body": "Bu viki üçün tərcümə axtarış sistemi yoxdur."
+	"tux-sst-nosolr-body": "Bu viki üçün tərcümə axtarış sistemi yoxdur.",
+	"tux-sst-default": "Tərcümələr",
+	"tux-sst-translated": "$1 dilindən tərcümələr",
+	"tux-sst-untranslated": "$1 dilindən tərcümə yoxdur",
+	"tux-sst-ellipsis-untranslated": "Tərcümə yoxdur",
+	"tux-sst-ellipsis-outdated": "Köhnəlmiş tərcümələr"
 }

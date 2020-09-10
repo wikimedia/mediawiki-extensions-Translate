@@ -15,7 +15,7 @@
 	"tsb-email-rejected-subject": "A fordítói jelentkezésedet a(z) {{SITENAME}} wikin elutasították",
 	"tsb-request-count": "$1 kérés",
 	"tsb-all-languages-button-label": "Minden nyelv",
-	"tsb-search-requests": "Keresés a kérések között",
+	"tsb-search-requests": "Keresés a függőben lévő kérések között",
 	"tsb-accept-button-label": "Elfogadás",
 	"tsb-reject-button-label": "Elutasítás",
 	"tsb-selected-count": "$1 felhasználó kiválasztva",

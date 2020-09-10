@@ -63,6 +63,7 @@
 	"tpt-select-prioritylangs-reason": "理由:",
 	"tpt-sections-prioritylangs": "優先言語",
 	"tpt-sections-syntaxversion": "構文のバージョン",
+	"tpt-syntaxversion-text": "このページは現在、翻訳対象ページの古いバージョンのソース構文を使用しています。新しいバージョンは、翻訳されていない節を HTML タグで囲んで、テキストの正しい言語を示します。例: $1。新しいマークアップ構文 $2 を使用して、要素のタイトル属性を翻訳する際など、適切ではない場所での折り返しを防止できます。古い構文バージョンに戻すことはできません。",
 	"tpt-syntaxversion-label": "このページでは構文の最新バージョンを使用",
 	"tpt-rev-mark": "翻訳対象に指定",
 	"tpt-rev-unmark": "翻訳対象から除去",
