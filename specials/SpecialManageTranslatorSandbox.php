@@ -58,21 +58,19 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	 */
 	protected function deleteUserPage( $user ) {
 		$userpage = WikiPage::factory( $user->getUserPage() );
-		if ( $userpage->exists() ) {
-			$reason = wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text();
-			if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
-				$dummyError = '';
-				$userpage->doDeleteArticleReal(
-					$reason,
-					false,
-					0,
-					true,
-					$dummyError,
-					$this->getUser()
-				);
-			} else {
-				$userpage->doDeleteArticleReal( $reason, $this->getUser() );
-			}
+		if ( !$userpage->exists() ) {
+			return;
+		}
+
+		$reason = wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text();
+		$deleter = $this->getUser();
+		if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
+			$dummyError = '';
+			// https://phabricator.wikimedia.org/T262800
+			// @phan-suppress-next-line PhanTypeMismatchArgumentReal
+			$userpage->doDeleteArticleReal( $reason, false, 0, true, $dummyError, $deleter );
+		} else {
+			$userpage->doDeleteArticleReal( $reason, $deleter );
 		}
 	}
 

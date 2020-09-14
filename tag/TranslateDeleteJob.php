@@ -63,6 +63,8 @@ class TranslateDeleteJob extends Job {
 		if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
 			$status = $wikipage->doDeleteArticleReal(
 				"{$summary}: $reason",
+				// https://phabricator.wikimedia.org/T262800
+				// @phan-suppress-next-line PhanTypeMismatchArgumentReal
 				false,
 				0,
 				true,
