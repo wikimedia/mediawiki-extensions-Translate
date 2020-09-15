@@ -122,6 +122,9 @@ class SpecialTranslationStats extends SpecialPage {
 
 			if ( is_array( $v ) ) {
 				$v = implode( ',', $v );
+				if ( !strlen( $v ) ) {
+					continue;
+				}
 			}
 			$spiParams .= wfEscapeWikiText( "$key=$v" );
 		}
