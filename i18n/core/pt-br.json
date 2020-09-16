@@ -153,6 +153,8 @@
 	"translate-statsf-language": "Códigos de idiomas, separados por vírgulas:",
 	"translate-statsf-group": "Códigos de grupos, separados por vírgulas:",
 	"translate-statsf-submit": "Visualizar",
+	"translate-statsf-unknown-error": "Ocorreu um erro desconhecido.",
+	"translate-statsf-error-message": "Ocorreu um erro ao carregar o gráfico: $1",
 	"translate-tag-page-desc": "Tradução da página wiki [[$2|$1]] de $3 ($4).",
 	"translate-sidebar-alltrans": "Em outros idiomas",
 	"translations": "Todas as traduções",

@@ -4,7 +4,8 @@
 			"Bishnu Saikia",
 			"Chaipau",
 			"Dibya Dutta",
-			"Gitartha.bordoloi"
+			"Gitartha.bordoloi",
+			"Simbu123"
 		]
 	},
 	"pagetranslation": "পৃষ্ঠা ভাঙনি",
@@ -33,5 +34,6 @@
 	"pt-movepage-reason": "কাৰণ:",
 	"pt-movepage-action-perform": "স্থানান্তৰ নকৰিব",
 	"pt-deletepage-current": "পৃষ্ঠাৰ নাম:",
-	"pt-deletepage-reason": "কাৰণ:"
+	"pt-deletepage-reason": "কাৰণ:",
+	"pm-pagetitle-placeholder": "পৃষ্ঠাৰ শিৰোনাম লিখক"
 }

@@ -142,6 +142,8 @@
 	"translate-statsf-language": "Список на јазични кодови, одвоени со запирка:",
 	"translate-statsf-group": "Список на групни кодови, одвоени со запирка:",
 	"translate-statsf-submit": "Преглед",
+	"translate-statsf-unknown-error": "Се појави непозната грешка.",
+	"translate-statsf-error-message": "Се јави грешка при вчитувањето на графикот: $1",
 	"translate-tag-page-desc": "Превод на викистраницата [[$2|$1]] од $3 ($4).",
 	"translate-sidebar-alltrans": "На други јазици",
 	"translations": "Сите преводи",

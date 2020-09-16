@@ -156,6 +156,8 @@
 	"translate-statsf-language": "Komma-getrennte Liste der Sprachcodes:",
 	"translate-statsf-group": "Komma-getrennte Liste der Gruppencodes:",
 	"translate-statsf-submit": "Vorschau",
+	"translate-statsf-unknown-error": "Es ist ein unbekannter Fehler aufgetreten.",
+	"translate-statsf-error-message": "Beim Laden der Grafik gab es einen Fehler: $1",
 	"translate-tag-page-desc": "Übersetzung der Wikiseite [[$2|$1]] von $3 ($4).",
 	"translate-sidebar-alltrans": "In anderen Sprachen",
 	"translations": "Alle Übersetzungen",
