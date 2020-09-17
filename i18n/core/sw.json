@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Edwingudfriend",
 			"Kwisha",
 			"Lloffiwr",
 			"Stephenwanjau"
@@ -40,6 +41,8 @@
 	"translate-statsf-count": "Pima:",
 	"translate-statsf-count-edits": "Idadi ya hariri",
 	"translate-statsf-count-registrations": "Watumiaji wapya",
+	"translate-statsf-unknown-error": "Ilitokea hitilafu isiyojulikana.",
+	"translate-statsf-error-message": "Kulikuwa na hitilafu wakati wa kupakia grafu: $ 1",
 	"translate-sidebar-alltrans": "Katika lugha nyingine",
 	"translations": "Tafsiri zote",
 	"translate-translations-fieldset-title": "Ujumbe",

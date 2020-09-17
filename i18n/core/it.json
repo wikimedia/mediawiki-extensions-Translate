@@ -148,6 +148,7 @@
 	"translate-statsf-language": "Elenco dei codici delle lingue separati da virgola:",
 	"translate-statsf-group": "Elenco dei codici dei gruppi separati da virgola:",
 	"translate-statsf-submit": "Anteprima",
+	"translate-statsf-unknown-error": "Si è verificato un errore sconosciuto.",
 	"translate-tag-page-desc": "Traduzione della pagina wiki [[$2|$1]] da $3 ($4).",
 	"translate-sidebar-alltrans": "In altre lingue",
 	"translations": "Tutte le traduzioni",

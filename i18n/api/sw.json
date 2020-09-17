@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Edwingudfriend"
+		]
+	},
+	"apihelp-translationstats-description": "Leta takwimu za tafsiri zinazohusiana na ubadilishaji wa tafsiri, tafsiri inayotumika, watumiaji wapya, hakiki za tafsiri na wakaguzi.",
+	"apihelp-translationstats-summary": "Leta takwimu za tafsiri",
+	"apihelp-translationstats-param-count": "Aina ya takwimu zinazoombwa",
+	"apihelp-translationstats-param-days": "Idadi ya siku za kuleta takwimu za",
+	"apihelp-translationstats-param-group": "Orodha ya vikundi vya kuleta takwimu za.",
+	"apihelp-translationstats-param-language": "Orodha ya lugha za kuleta takwimu za.",
+	"apihelp-translationstats-param-scale": "Kiwango cha takwimu za tafsiri",
+	"apihelp-translationstats-param-start": "Tarehe ya kuanzia ambapo tutachukua takwimu za tafsiri. Chaguo-msingi hadi tarehe ya sasa ukiondoa idadi ya 'siku'.",
+	"apihelp-translationstats-example-1": "Leta hesabu ya hariri kwa siku 30 zilizopita, kwa vikundi na lugha zote",
+	"apihelp-translationstats-example-2": "Leta hesabu ya hariri kwa siku 30 zilizopita, kwa lugha za Kiingereza na Kifaransa."
+}
