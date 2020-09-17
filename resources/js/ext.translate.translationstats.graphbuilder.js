@@ -120,7 +120,10 @@
 							},
 							ticks: {
 								beginAtZero: true,
-								precision: 0
+								precision: 0,
+								callback: function ( value ) {
+									return mw.language.convertNumber( Number( value ) );
+								}
 							}
 						} ],
 						xAxes: [ {
@@ -135,6 +138,20 @@
 								display: false
 							}
 						} ]
+					},
+					tooltips: {
+						callbacks: {
+							label: function ( tooltipItem, data ) {
+								var convertedValue = mw.language.convertNumber( Number( tooltipItem.yLabel ) ),
+									label = data.datasets[ tooltipItem.datasetIndex ].label;
+
+								if ( label ) {
+									return label + ': ' + convertedValue;
+								}
+
+								return convertedValue;
+							}
+						}
 					}
 				}
 			} );

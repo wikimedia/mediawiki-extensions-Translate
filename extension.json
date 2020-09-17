@@ -758,7 +758,8 @@
 				"resources/lib/Chart.js/Chart.js"
 			],
 			"dependencies": [
-				"mediawiki.api"
+				"mediawiki.api",
+				"mediawiki.language"
 			],
 			"styles": [
 				"resources/lib/Chart.js/Chart.css",
