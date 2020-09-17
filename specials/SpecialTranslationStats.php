@@ -136,13 +136,13 @@ class SpecialTranslationStats extends SpecialPage {
 			Html::element( 'hr' ) .
 				Html::element( 'pre', [], "{{{$titleText}{$spiParams}}}" )
 		);
-		// Element to render the Graph
+		// Element to render the graph
 		$out->addHTML(
 			Html::rawElement(
 				'div',
 				[
 					'id' => self::GRAPH_CONTAINER_ID ,
-					'style' => 'margin: 2em auto;',
+					'style' => 'margin: 2em auto; display: block',
 					'class' => self::GRAPH_CONTAINER_CLASS
 				]
 			)
