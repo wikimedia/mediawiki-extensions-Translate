@@ -133,7 +133,7 @@
 	"apihelp-translationstats-param-days": "{{doc-apihelp-param|translationstats|days}}",
 	"apihelp-translationstats-param-group": "{{doc-apihelp-param|translationstats|group}}",
 	"apihelp-translationstats-param-language": "{{doc-apihelp-param|translationstats|language}}",
-	"apihelp-translationstats-param-scale": "{{doc-apihelp-param|translationstats|scale}}",
+	"apihelp-translationstats-param-scale": "{{doc-apihelp-param|translationstats|scale}}\n\n\"Scale\" here refers to the time period - days, months.",
 	"apihelp-translationstats-param-start": "{{doc-apihelp-param|translationstats|start}}",
 	"apihelp-translationstats-example-1": "{{doc-apihelp-example|translationstats}}",
 	"apihelp-translationstats-example-2": "{{doc-apihelp-example|translationstats}}",

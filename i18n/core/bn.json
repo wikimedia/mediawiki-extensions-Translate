@@ -117,6 +117,7 @@
 	"translate-tag-page-desc": "$3 ($4) থেকে [[$2|$1]] উইকি পাতার অনুবাদ।",
 	"translate-sidebar-alltrans": "অন্যান্য ভাষায়",
 	"translations": "সমস্ত অনুবাদ",
+	"translations-summary": "সমস্ত উপলব্ধ অনুবাদ দেখার জন্য নিচে একটি বার্তার নাম লিখুন।",
 	"translate-translations-no-message": "\"$1\" অনুবাদযোগ্য বার্তা নয়",
 	"translate-translations-none": "\"$1\"-এর জন্য কোন অনুবাদ নেই",
 	"translate-translations-count": "{{PLURAL:$1|একটি অনুবাদ|$1টি অনুবাদ}} পাওয়া গেছে।",
