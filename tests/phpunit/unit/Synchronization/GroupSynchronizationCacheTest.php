@@ -14,6 +14,7 @@ class GroupSynchronizationCacheTest extends MediaWikiUnitTestCase {
 	private $groupSyncCache;
 
 	protected function setUp(): void {
+		parent::setUp();
 		$this->groupSyncCache = $this->getGroupSynchronizationCache();
 	}
 
