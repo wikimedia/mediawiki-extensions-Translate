@@ -150,6 +150,7 @@
 	"translate-statsf-language": "Lista de códigos de idioma separados por comas:",
 	"translate-statsf-group": "Lista de códigos de grupo separados por comas:",
 	"translate-statsf-submit": "Vista previa",
+	"translate-statsf-unknown-error": "Se produjo un error desconocido.",
 	"translate-tag-page-desc": "Traducción de la página wiki [[$2|$1]] del $3 ($4).",
 	"translate-sidebar-alltrans": "En otros idiomas",
 	"translations": "Todas las traducciones",

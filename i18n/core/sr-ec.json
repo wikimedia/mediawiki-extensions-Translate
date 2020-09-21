@@ -263,7 +263,7 @@
 	"log-name-translationreview": "Дневник провере превода",
 	"log-description-translationreview": "Дневник свих провера превода и група порука.",
 	"logentry-translationreview-message": "$1 је {{GENDER:$2|прегледао|прегледала}} превод $3",
-	"logentry-translationreview-group": "$1 је {{GENDER:$2|променио|променила}} стање $4 превода $3 са $6 на $7",
+	"logentry-translationreview-group": "$1 је {{GENDER:$2|променио|променила}} стање превода странице $3 на $4 језику са $6 у $7",
 	"group-translate-sandboxed": "Неодобрени преводиоци",
 	"group-translate-sandboxed-member": "{{GENDER:$1|неодобрени преводилац|неодобрена преводитељка}}",
 	"right-translate-sandboxmanage": "управљање корисницима у песку",
