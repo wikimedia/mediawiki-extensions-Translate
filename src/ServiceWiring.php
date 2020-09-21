@@ -8,6 +8,8 @@
  */
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extensions\Translate\Cache\PersistentCache;
+use MediaWiki\Extensions\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
@@ -31,6 +33,15 @@ return [
 
 	'Translate:ParsingPlaceholderFactory' => function (): ParsingPlaceholderFactory {
 		return new ParsingPlaceholderFactory();
+	},
+
+	'Translate:PersistentCache' => function ( MediaWikiServices $services ): PersistentCache {
+		return new PersistentDatabaseCache(
+			$services->getDBLoadBalancer(),
+			// TODO: Since we have a similar interface, see if we can load the JsonCodec
+			// from the core here if available
+			$services->get( 'Translate:JsonCodec' )
+		 );
 	},
 
 	'Translate:TranslatablePageParser' => function ( MediaWikiServices $services )

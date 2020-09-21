@@ -476,6 +476,13 @@ class TranslateHooks {
 			"$dir/translate_reviews-patch-01-primary-key.sql",
 			true
 		] );
+
+		$updater->addExtensionUpdate( [
+			'addTable',
+			'translate_cache',
+			"$dir/translate_cache.sql",
+			true
+		] );
 	}
 
 	/**

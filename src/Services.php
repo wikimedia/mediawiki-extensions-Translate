@@ -6,6 +6,7 @@
  */
 namespace MediaWiki\Extensions\Translate;
 
+use MediaWiki\Extensions\Translate\Cache\PersistentCache;
 use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
@@ -61,6 +62,11 @@ class Services implements ContainerInterface {
 	/** @since 2020.07 */
 	public function getParsingPlaceholderFactory(): ParsingPlaceholderFactory {
 		return $this->get( 'Translate:ParsingPlaceholderFactory' );
+	}
+
+	/** @since 2020.12 */
+	public function getPersistentCache(): PersistentCache {
+		return $this->get( 'Translate:PersistentCache' );
 	}
 
 	public function getTranslatablePageParser(): TranslatablePageParser {
