@@ -124,7 +124,7 @@
 	"apihelp-translationstats-param-count": "Type of statistics being requested",
 	"apihelp-translationstats-param-days": "Number of days to fetch statistics for",
 	"apihelp-translationstats-param-group": "List of groups to fetch statistics for.",
-	"apihelp-translationstats-param-language": "List of languages to fetch statistics for. ",
+	"apihelp-translationstats-param-language": "List of languages to fetch statistics for.",
 	"apihelp-translationstats-param-scale": "Scale of the translation statistics",
 	"apihelp-translationstats-param-start": "Starting date from which to fetch translation statistics. Defaults to current date minus the number of 'days'.",
 	"apihelp-translationstats-example-1": "Fetch edit count for the last 30 days, for all groups and languages",
