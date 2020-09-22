@@ -33,6 +33,7 @@
 	"tpt-badtitle": "El nom de pàgina donat ($1) no és un títol vàlid",
 	"tpt-nosuchpage": "La pàgina $1 no existeix",
 	"tpt-notsuitable": "La pàgina $1 no està preparada per a la seva traducció.\nAssegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Vegeu la llista de pàgines traduïbles.]]",
 	"tpt-mark-summary": "S'ha marcat aquesta versió per traduir",
 	"tpt-edit-failed": "No s'ha pogut actualitzar la pàgina: $1",
 	"tpt-unmarked": "La pàgina $1 ja no està marcada per traduir.",

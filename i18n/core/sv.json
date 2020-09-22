@@ -160,6 +160,8 @@
 	"translate-statsf-language": "Kommaseparerad lista över språkkoder:",
 	"translate-statsf-group": "Kommaseparerad lista över gruppkoder:",
 	"translate-statsf-submit": "Förhandsgranska",
+	"translate-statsf-unknown-error": "Ett okänt fel har uppstått.",
+	"translate-statsf-error-message": "Ett fel uppstod när grafen lästes in: $1",
 	"translate-tag-page-desc": "Översättning av wikisidan [[$2|$1]] från $3 ($4).",
 	"translate-sidebar-alltrans": "På andra språk",
 	"translations": "Alla översättningar",

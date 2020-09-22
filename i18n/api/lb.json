@@ -32,6 +32,7 @@
 	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen.",
 	"apihelp-translationcheck-summary": "Iwwersetzunge validéieren.",
 	"apihelp-translationcheck-param-translation": "D'Iwweersetzung fir ze validéieren.",
+	"apihelp-translationstats-summary": "Statistike vun der Iwwersetzung ofruffen",
 	"apierror-translate-duplicateaggregategroup": "De Grupp vu Message gëtt et schonn",
 	"apierror-translate-fuzzymessage": "Fuzzy Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-invalidlanguage": "Déi gefrot Sprooch ass net valabel.",

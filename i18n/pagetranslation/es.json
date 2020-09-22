@@ -48,6 +48,7 @@
 	"tpt-notsuitable": "La página $1 no es adecuada para traducción.\nAsegúrate que tiene etiquetas <nowiki><translate></nowiki> y tiene una sintaxis válida.",
 	"tpt-saveok": "La página [[:$1]] ha sido marcada para traducción con $2 {{PLURAL:$2|unidad|unidades}} de traducción.\nLa página puede ser ahora <span class=\"plainlinks\">[$3 traducida]</span>.",
 	"tpt-offer-notify": "Puedes <span class=\"plainlinks\">[$1 notificar a los traductores]</span> de esta página.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Ver la lista de páginas traducibles.]]",
 	"tpt-showpage-intro": "Debajo están listadas las unidades de traducción nuevas, existentes y borradas.\nAntes de marcar esta versión para traducción, verifica que los cambios a las unidades de traducción son mínimos para evitar trabajo innecesario a los traductores.",
 	"tpt-mark-summary": "Se marcó esta sección para su traducción",
 	"tpt-mark-nochanges": "No hay cambios para revisar. Marcar esta página para su traducción no editará la página ni ninguna de las unidades de traducción existentes.",
