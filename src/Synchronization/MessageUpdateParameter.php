@@ -3,9 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Synchronization;
 
-use FormatJson;
+use JsonSerializable;
+use MediaWiki\Extensions\Translate\Utilities\Json\JsonUnserializable;
+use MediaWiki\Extensions\Translate\Utilities\Json\JsonUnserializableTrait;
 use MessageUpdateJob;
-use Serializable;
 
 /**
  * Store params for MessageUpdateJob.
@@ -13,26 +14,22 @@ use Serializable;
  * @license GPL-2.0-or-later
  * @since 2020.06
  */
-class MessageUpdateParameter implements Serializable {
+class MessageUpdateParameter implements JsonSerializable, JsonUnserializable {
+	use JsonUnserializableTrait;
+
 	/** @var string */
 	private $pageName;
-
 	/** @var bool */
 	private $rename;
-
 	/** @var bool */
 	private $fuzzy;
-
 	/** @var string */
 	private $content;
-
 	/** @var string */
 	private $target;
-
 	/** @var string */
 	private $replacement;
-
-	/** @var array */
+	/** @var array|null */
 	private $otherLangs;
 
 	public function __construct( array $params ) {
@@ -63,18 +60,17 @@ class MessageUpdateParameter implements Serializable {
 		return $this->fuzzy;
 	}
 
-	public function getOtherLangs(): array {
+	public function getOtherLangs(): ?array {
 		return $this->otherLangs;
 	}
 
-	public function serialize(): string {
-		$return = FormatJson::encode( get_object_vars( $this ), false, FormatJson::ALL_OK );
-		return $return;
+	public static function newFromJsonArray( array $params ) {
+		return new self( $params );
 	}
 
-	public function unserialize( $deserialized ) {
-		$params = FormatJson::decode( $deserialized, true );
-		$this->assignPropsFromArray( $params );
+	/** @return mixed[] */
+	protected function toJsonArray(): array {
+		return get_object_vars( $this );
 	}
 
 	private function assignPropsFromArray( array $params ) {

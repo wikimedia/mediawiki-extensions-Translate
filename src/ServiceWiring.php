@@ -23,8 +23,10 @@ use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
-	'Translate:GroupSynchronizationCache' => function (): GroupSynchronizationCache {
-		return new GroupSynchronizationCache( ObjectCache::getInstance( CACHE_DB ) );
+	'Translate:GroupSynchronizationCache' => function (
+		MediaWikiServices $services
+	): GroupSynchronizationCache {
+		return new GroupSynchronizationCache( $services->get( 'Translate:PersistentCache' ) );
 	},
 
 	'Translate:JsonCodec' => function (): JsonCodec {

@@ -3,32 +3,48 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Synchronization;
 
-use BagOStuff;
 use DateTime;
+use InvalidArgumentException;
+use LogicException;
+use MediaWiki\Extensions\Translate\Cache\PersistentCache;
+use MediaWiki\Extensions\Translate\Cache\PersistentCacheEntry;
+use RuntimeException;
 
 /**
  * Message group synchronization cache. Handles storage of data in the cache
- * to track which groups are currently being synchronized
+ * to track which groups are currently being synchronized.
+ * Stores:
+ *
+ * 1. Groups in sync:
+ *   - Key: {hash($groupId)}_$groupId
+ *   - Value: $groupId
+ *   - Tag: See GroupSynchronizationCache::getGroupsTag()
+ *   - Exptime: Set when startSyncTimer is called
+ *
+ * 2. Message under each group being modified:
+ *   - Key: {hash($groupId_$messageKey)}_$messageKey
+ *   - Value: MessageUpdateParameter
+ *   - Tag: gsc_$groupId
+ *   - Exptime: none
+ *
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @since 2020.06
  */
 class GroupSynchronizationCache {
-	private const CACHE_PREFIX = 'translate-msg-group-sync';
-
-	private const OP_ADD = 'add';
-
-	private const OP_DEL = 'remove';
-
-	/** @var BagOStuff */
+	/** @var PersistentCache */
 	private $cache;
-
 	/** @var int */
-	private $timeout;
+	private $timeoutSeconds;
 
-	public function __construct( BagOStuff $cache, int $timeout = 600 ) {
+	/** @var string Cache tag used for groups */
+	private const GROUP_LIST_TAG = 'gsc_%group_in_sync%';
+
+	// TODO: Decide timeout based on monitoring. Also check if it needs to be configurable
+	// based on the number of messages in the group.
+	public function __construct( PersistentCache $cache, int $timeoutSeconds = 2400 ) {
 		$this->cache = $cache;
-		$this->timeout = $timeout;
+		$this->timeoutSeconds = $timeoutSeconds;
 	}
 
 	/**
@@ -36,118 +52,130 @@ class GroupSynchronizationCache {
 	 * @return string[]
 	 */
 	public function getGroupsInSync(): array {
-		$groupsCacheKey = $this->getGroupsKey();
-		$groupsInSync = $this->cache->get( $groupsCacheKey );
-
-		return $groupsInSync === false ? [] : $groupsInSync;
-	}
-
-	/** Start the synchronization process for a group with the given groupId */
-	public function startSync( string $groupId ): void {
-		$this->cache->set( $this->getSyncTimeKey( $groupId ), ( new DateTime() )->getTimestamp() );
-		$this->cache->set( $this->getGroupKey( $groupId ), [] );
-
-		$this->modifyGroupsInSync( $groupId, self::OP_ADD );
-	}
-
-	public function getSyncStartTime( string $groupId ): ?int {
-		$timestamp = $this->cache->get( $this->getSyncTimeKey( $groupId ) );
-		if ( $timestamp === false ) {
-			return null;
+		$groupsInSyncEntries = $this->cache->getByTag( self::GROUP_LIST_TAG );
+		/** @var string[] */
+		$groups = [];
+		foreach ( $groupsInSyncEntries as $entry ) {
+			$groups[] = $entry->value();
 		}
 
-		return (int)$timestamp;
+		return $groups;
 	}
 
-	/**
-	 * End synchronization for a group. Removes the sync time, deletes the group key, and
-	 * removes the groupId from groups in sync list
-	 */
+	/** Start synchronization process for a group and starts the expiry time */
+	public function markGroupForSync( string $groupId ): void {
+		$expTime = $this->getExpireTime();
+		$this->cache->set(
+			new PersistentCacheEntry(
+				$this->getGroupKey( $groupId ),
+				$groupId,
+				$expTime,
+				self::GROUP_LIST_TAG
+			)
+		);
+	}
+
+	public function getSyncEndTime( string $groupId ): ?int {
+		$cacheEntry = $this->cache->get( $this->getGroupKey( $groupId ) );
+		return $cacheEntry ? $cacheEntry[0]->exptime() : null;
+	}
+
+	/** End synchronization for a group. Deletes the group key */
 	public function endSync( string $groupId ): void {
-		// Remove all the messages for the group
+		if ( $this->cache->hasEntryWithTag( $this->getGroupTag( $groupId ) ) ) {
+			throw new InvalidArgumentException(
+				'Cannot end synchronization for a group that still has messages to be processed.'
+			);
+		}
+
 		$groupKey = $this->getGroupKey( $groupId );
-		$groupMessageKeys = $this->cache->get( $groupKey );
-		$this->removeMessages( ...$groupMessageKeys );
-
-		// Remove the group message list
 		$this->cache->delete( $groupKey );
-
-		// Delete the group sync start time
-		$this->cache->delete( $this->getSyncTimeKey( $groupId ) );
-
-		// Remove the group from groups in sync list
-		$this->modifyGroupsInSync( $groupId, self::OP_DEL );
 	}
 
-	/** Add multiple messages from a group to the cache */
+	/** End synchronization for a group. Deletes the group key and messages */
+	public function forceEndSync( string $groupId ): void {
+		$this->cache->deleteEntriesWithTag( $this->getGroupTag( $groupId ) );
+		$this->endSync( $groupId );
+	}
+
+	/** Add messages for a group to the cache */
 	public function addMessages( string $groupId, MessageUpdateParameter ...$messageParams ): void {
 		$messagesToAdd = [];
+		$groupTag = $this->getGroupTag( $groupId );
 		foreach ( $messageParams as $messageParam ) {
-			$messagesToAdd[ $this->getMessageTitleKey( $messageParam->getPageName() ) ] =
-				$messageParam;
+			$titleKey = $this->getMessageKeys( $groupId, $messageParam->getPageName() )[0];
+			$messagesToAdd[] = new PersistentCacheEntry(
+				$titleKey,
+				$messageParam,
+				null,
+				$groupTag
+			);
 		}
 
-		$this->cache->setMulti( $messagesToAdd );
-		$this->modifyGroupMessagesInSync( $groupId, $messageParams, self::OP_ADD );
+		$this->cache->set( ...$messagesToAdd );
 	}
 
 	/** Check if the group is in synchronization */
 	public function isGroupBeingProcessed( string $groupId ): bool {
-		$groupMessages = $this->cache->get( $this->getGroupKey( $groupId ) );
-		return $groupMessages !== false;
+		$groupEntry = $this->cache->get( $this->getGroupKey( $groupId ) );
+		return $groupEntry !== [];
 	}
 
 	/**
-	 * Return messages keys belonging to group Id currently in synchronization.
+	 * Return all messages in a group
 	 * @param string $groupId
-	 * @return string[]
-	 */
-	public function getGroupMessageKeys( string $groupId ): array {
-		$groupMessages = $this->cache->get( $this->getGroupKey( $groupId ) );
-		if ( $groupMessages === false ) {
-			return [];
-		}
-
-		return $groupMessages;
-	}
-
-	/**
-	 * Return values for multiple messages from the cache.
-	 * @param string ...$messageKeys
 	 * @return MessageUpdateParameter[] Returns a key value pair, with the key being the
-	 * messageKey and value being MessageUpdateParameter or null if the key is not available
-	 * in the cache.
+	 * messageKey and value being MessageUpdateParameter
 	 */
-	public function getMessages( string ...$messageKeys ): array {
-		$messageCacheKeys = [];
-		foreach ( $messageKeys as $messageKey ) {
-			$messageCacheKeys[] = $this->getMessageTitleKey( $messageKey );
-		}
-
-		$messageParams = $this->cache->getMulti( $messageCacheKeys );
+	public function getGroupMessages( string $groupId ): array {
+		$messageEntries = $this->cache->getByTag( $this->getGroupTag( $groupId ) );
 
 		$allMessageParams = [];
-		foreach ( $messageCacheKeys as $index => $messageCacheKey ) {
-			$allMessageParams[$messageKeys[$index]] = $messageParams[$messageCacheKey] ?? null;
+		foreach ( $messageEntries as $entry ) {
+			$message = $entry->value();
+			if ( $message instanceof MessageUpdateParameter ) {
+				$allMessageParams[$message->getPageName()] = $message;
+			} else {
+				// Should not happen, but handle primarily to keep phan happy.
+				throw $this->invalidArgument( $message, MessageUpdateParameter::class );
+			}
 		}
 
 		return $allMessageParams;
 	}
 
-	/**
-	 * Update the group cache with the latest information with the status of message
-	 * update jobs, then check if the group has timed out and returns the latest information
-	 */
+	/** Check if a message is being processed */
+	public function isMessageBeingProcessed( string $groupId, string $messageKey ): bool {
+		$messageCacheKey = $this->getMessageKeys( $groupId, $messageKey );
+		return $this->cache->has( $messageCacheKey[0] );
+	}
+
+	/** Get the current synchronization status of the group. Does not perform any updates. */
 	public function getSynchronizationStatus( string $groupId ): GroupSynchronizationResponse {
-		$this->syncGroup( $groupId );
-		$syncStartTime = $this->getSyncStartTime( $groupId );
-		if ( !$syncStartTime ) {
-			// Processing is done
+		if ( !$this->isGroupBeingProcessed( $groupId ) ) {
+			// Group is currently not being processed.
+			throw new LogicException(
+				'Sync requested for a group currently not being processed. Check if ' .
+				'group is being processed by calling isGroupBeingProcessed() first'
+			);
+		}
+
+		$remainingMessages = $this->getGroupMessages( $groupId );
+
+		// No messages are present
+		if ( !$remainingMessages ) {
 			return new GroupSynchronizationResponse( $groupId, [], false );
 		}
 
-		$hasTimedOut = $this->hasGroupTimedOut( $syncStartTime );
-		$remainingMessages = $this->getGroupMessageKeys( $groupId );
+		$syncExpTime = $this->getSyncEndTime( $groupId );
+		if ( $syncExpTime === null ) {
+			// This should not happen
+			throw new RuntimeException(
+				"Unexpected condition. Group: $groupId; Messages present, but group key not found."
+			);
+		}
+
+		$hasTimedOut = $this->hasGroupTimedOut( $syncExpTime );
 
 		return new GroupSynchronizationResponse(
 			$groupId,
@@ -156,125 +184,52 @@ class GroupSynchronizationCache {
 		);
 	}
 
-	/**
-	 * Remove messages from the cache. Removes the message keys, but DOES NOT the update group
-	 * message key list.
-	 */
-	public function removeMessages( string ...$messageKeys ): void {
-		$messageCacheKeys = [];
-		foreach ( $messageKeys as $key ) {
-			$messageCacheKeys[] = $this->getMessageTitleKey( $key );
-		}
+	/** Remove messages from the cache. */
+	public function removeMessages( string $groupId, string ...$messageKeys ): void {
+		$messageCacheKeys = $this->getMessageKeys( $groupId, ...$messageKeys );
 
-		$this->cache->deleteMulti( $messageCacheKeys );
+		$this->cache->delete( ...$messageCacheKeys );
 	}
 
-	/**
-	 * Check messages keys that are still present in the cache and update the list of keys
-	 * in the message group.
-	 */
-	private function syncGroup( string $groupId ): void {
-		$groupCacheKey = $this->getGroupKey( $groupId );
-		$groupMessages = $this->cache->get( $groupCacheKey );
-		if ( $groupMessages === false ) {
-			return;
-		}
-
-		$messageCacheKeys = [];
-		foreach ( $groupMessages as $messageKey ) {
-			$messageCacheKeys[] = $this->getMessageTitleKey( $messageKey );
-		}
-
-		$messageParams = $this->cache->getMulti( $messageCacheKeys );
-
-		// No keys are present, delete the message and mark the group as synced
-		if ( !$messageParams ) {
-			$this->endSync( $groupId );
-			return;
-		}
-
-		// Make a list of remaining jobs that are running.
-		$remainingJobTitle = [];
-		foreach ( $messageCacheKeys as $index => $messageCacheKey ) {
-			if ( isset( $messageParams[$messageCacheKey] ) ) {
-				$groupMessageTitle = $groupMessages[$index];
-				$remainingJobTitle[] = $groupMessageTitle;
-			}
-		}
-
-		// Set the group cache with the remaining job title.
-		$this->cache->set( $groupCacheKey, $remainingJobTitle );
+	private function hasGroupTimedOut( int $syncExpTime ): bool {
+		return ( new DateTime() )->getTimestamp() > $syncExpTime;
 	}
 
-	private function hasGroupTimedOut( int $syncStartTime ): bool {
-		$secondsSinceSyncStart = ( new DateTime() )->getTimestamp() - $syncStartTime;
-		return $secondsSinceSyncStart > $this->timeout;
+	private function getExpireTime(): int {
+		$currentTime = ( new DateTime() )->getTimestamp();
+		$expTime = ( new DateTime() )
+			->setTimestamp( $currentTime + $this->timeoutSeconds )
+			->getTimestamp();
+
+		return $expTime;
 	}
 
-	private function modifyGroupsInSync( string $groupId, string $op ): void {
-		$groupsCacheKey = $this->getGroupsKey();
-		$this->cache->lock( $groupsCacheKey );
-
-		$groupsInSync = $this->getGroupsInSync();
-		if ( $groupsInSync === [] && $op === self::OP_DEL ) {
-			return;
-		}
-
-		$this->modifyArray( $groupsInSync, $groupId, $op );
-
-		$this->cache->set( $groupsCacheKey, $groupsInSync );
-		$this->cache->unlock( $groupsCacheKey );
+	private function invalidArgument( $value, string $expectedType ): RuntimeException {
+		$valueType = $value ? get_class( $value ) : gettype( $value );
+		return new RuntimeException( "Expected $expectedType, got $valueType" );
 	}
 
-	private function modifyGroupMessagesInSync(
-		string $groupId, array $messageParams, string $op
-	): void {
-		$groupCacheKey = $this->getGroupKey( $groupId );
+	// Cache keys / tag related functions start here.
 
-		$this->cache->lock( $groupCacheKey );
-
-		$groupMessages = $this->getGroupMessageKeys( $groupId );
-		if ( $groupMessages === [] && $op === self::OP_DEL ) {
-			return;
-		}
-
-		/** @var MessageUpdateParameter $messageParam */
-		foreach ( $messageParams as $messageParam ) {
-			$messageTitle = $messageParam->getPageName();
-			$this->modifyArray( $groupMessages, $messageTitle, $op );
-		}
-
-		$this->cache->set( $groupCacheKey, $groupMessages );
-		$this->cache->unlock( $groupCacheKey );
-	}
-
-	private function modifyArray(
-		array &$toModify, string $needle, string $op
-	): void {
-		$needleIndex = array_search( $needle, $toModify );
-		if ( $op === self::OP_ADD && $needleIndex === false ) {
-			$toModify[] = $needle;
-		} elseif ( $op === self::OP_DEL && $needleIndex !== false ) {
-			array_splice( $toModify, $needleIndex, 1 );
-		}
-	}
-
-	// Cache keys related functions start here.
-
-	private function getGroupsKey(): string {
-		return $this->cache->makeKey( self::CACHE_PREFIX );
-	}
-
-	private function getSyncTimeKey( string $groupId ): string {
-		return $this->cache->makeKey( self::CACHE_PREFIX, $groupId, 'time' );
+	private function getGroupTag( string $groupId ): string {
+		return 'gsc_' . $groupId;
 	}
 
 	private function getGroupKey( string $groupId ): string {
-		return $this->cache->makeKey( self::CACHE_PREFIX, 'group', $groupId );
+		$hash = substr( hash( 'sha256', $groupId ), 0, 40 );
+		return substr( "{$hash}_$groupId", 0, 255 );
 	}
 
-	private function getMessageTitleKey( string $title ): string {
-		return $this->cache->makeKey( self::CACHE_PREFIX, 'msg-title', $title );
-	}
+	/** @return string[] */
+	private function getMessageKeys( string $groupId, string ...$messages ): array {
+		$messageKeys = [];
+		foreach ( $messages as $message ) {
+			$key = $groupId . '_' . $message;
+			$hash = substr( hash( 'sha256', $key ), 0, 40 );
+			$finalKey = substr( $hash . '_' . $key, 0, 255 );
+			$messageKeys[] = $finalKey;
+		}
 
+		return $messageKeys;
+	}
 }

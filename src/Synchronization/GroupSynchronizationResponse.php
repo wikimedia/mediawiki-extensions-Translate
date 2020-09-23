@@ -12,8 +12,8 @@ namespace MediaWiki\Extensions\Translate\Synchronization;
  * @since 2020.06
  */
 class GroupSynchronizationResponse {
-	/** @var array */
-	private $remainingMessageKeys;
+	/** @var MessageUpdateParameter[] */
+	private $remainingMessages;
 
 	/** @var string */
 	private $groupId;
@@ -22,19 +22,20 @@ class GroupSynchronizationResponse {
 	private $timeout;
 
 	public function __construct(
-		string $groupId, array $remainingMessageKeys, bool $hasTimedOut
+		string $groupId, array $remainingMessages, bool $hasTimedOut
 	) {
 		$this->groupId = $groupId;
-		$this->remainingMessageKeys = $remainingMessageKeys;
+		$this->remainingMessages = $remainingMessages;
 		$this->timeout = $hasTimedOut;
 	}
 
 	public function isDone(): bool {
-		return $this->remainingMessageKeys === [];
+		return $this->remainingMessages === [];
 	}
 
+	/** @return MessageUpdateParameter[] */
 	public function getRemainingMessages(): array {
-		return $this->remainingMessageKeys;
+		return $this->remainingMessages;
 	}
 
 	public function getGroupId(): string {

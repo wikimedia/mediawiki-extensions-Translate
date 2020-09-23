@@ -47,20 +47,20 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 			}
 
 			if ( $groupResponse->hasTimedOut() ) {
-				$remainingMessageKeys = $groupResponse->getRemainingMessages();
+				$remainingMessages = $groupResponse->getRemainingMessages();
 				$logger->warning(
 					'MessageUpdateJobs timed out for group - {groupId}; ' .
 					'Messages - {messages}; ' .
 					'Jobs remaining - {jobRemaining}',
 					[
 						'groupId' => $groupId ,
-						'jobRemaining' => count( $remainingMessageKeys ),
-						'messages' => implode( ', ', $remainingMessageKeys )
+						'jobRemaining' => count( $remainingMessages ),
+						'messages' => implode( ', ', array_keys( $remainingMessages ) )
 					]
 				);
 				wfLogWarning( 'MessageUpdateJob timed out for group - ' . $groupId );
 
-				$groupSyncCache->endSync( $groupId );
+				$groupSyncCache->forceEndSync( $groupId );
 			} else {
 				$groupsInProgress[] = $groupId;
 			}
