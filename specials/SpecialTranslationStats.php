@@ -133,8 +133,7 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 		$titleText = $this->getPageTitle()->getPrefixedText();
 		$out->addHTML(
-			Html::element( 'hr' ) .
-				Html::element( 'pre', [], "{{{$titleText}{$spiParams}}}" )
+			Html::element( 'hr' )
 		);
 		// Element to render the graph
 		$out->addHTML(
@@ -145,6 +144,14 @@ class SpecialTranslationStats extends SpecialPage {
 					'style' => 'margin: 2em auto; display: block',
 					'class' => self::GRAPH_CONTAINER_CLASS
 				]
+			)
+		);
+
+		$out->addHTML(
+			Html::element(
+				'pre',
+				[ 'aria-label' => $this->msg( 'translate-statsf-embed' )->text() ],
+				"{{{$titleText}{$spiParams}}}"
 			)
 		);
 	}

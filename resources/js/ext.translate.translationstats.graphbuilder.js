@@ -33,37 +33,45 @@
 	 */
 	GraphBuilder = function ( $graphContainer, graphOptions ) {
 		var $graphElement = $( '<canvas>' )
-				.attr( 'class', 'mw-translate-translationstats-graph' ),
+				.attr( 'class', 'mw-translate-translationstats-graph' )
+				.attr( 'role', 'img' )
+				.attr( 'tabindex', 0 )
+				.text( mw.msg( 'translate-statsf-graph-alt-text-info' ) ),
+			$graphWrapper = $( '<div>' )
+				.attr( 'class', 'js-mw-translationstats-container' ),
 			$loadingElement = $( '<div>' )
 				.attr( 'class', 'mw-translate-loading-spinner' ),
 			$errorElement = $( '<div>' )
 				.attr( 'class', 'mw-translate-error-container' ),
+			$tableElement = $( '<table>' )
+				.addClass( 'wikitable mw-translate-translationstats-table' )
+				.attr( 'tabindex', 0 )
+				.attr(
+					'summary', mw.msg( 'translate-statsf-alt-text' )
+				),
 			lineChart;
 
+		$graphWrapper
+			.width( graphOptions && graphOptions.width )
+			.height( graphOptions && graphOptions.height );
+
+		// Set the container height and width if passed.
 		$graphContainer.append( [
-			$graphElement,
+			$graphWrapper,
 			$loadingElement,
 			$errorElement
 		] );
 
-		// Set the container height and width if passed.
-		if ( graphOptions ) {
-			if ( graphOptions.width ) {
-				$graphContainer.width( graphOptions.width );
-			}
-
-			if ( graphOptions.height ) {
-				$graphContainer.height( graphOptions.height );
-			}
-		}
+		$graphWrapper.append( $graphElement );
 
 		function display( options ) {
 			if ( lineChart ) {
-				lineChart.destroy();
+				cleanup();
 			}
 
 			// Set the appropriate height and width and display the loader.
-			$graphContainer.width( options.width )
+			$graphWrapper
+				.width( options.width )
 				.height( options.height );
 
 			showLoading();
@@ -155,6 +163,9 @@
 					}
 				}
 			} );
+
+			// Generate table inside the canvas element to improve accessibility.
+			showTable( graphData, datasetLabels, options );
 		}
 
 		function getAxesLabelsAndData( jsonGraphData ) {
@@ -253,6 +264,74 @@
 
 		function hideLoading() {
 			$graphContainer.removeClass( 'mw-translate-loading' );
+		}
+
+		function showTable( graphData, datasetLabels, options ) {
+			$tableElement
+				.append(
+					$( '<caption>' ).text( getGraphSummary( options ) )
+				)
+				.append( getTableHead( datasetLabels, options ) )
+				.append( getTableBody( graphData ) );
+
+			$graphContainer.append( $tableElement );
+		}
+
+		function getTableHead( datasetLabels, options ) {
+			var $tableHead = $( '<thead>' ),
+				$tableHeadRow = $( '<tr>' ),
+				i = 0;
+
+			$tableHeadRow.append( $( '<th>' ).text( getYAxesLabel( options.granularity ) ) );
+
+			if ( datasetLabels && datasetLabels.length ) {
+				for ( ; i < datasetLabels.length; ++i ) {
+					$tableHeadRow.append( $( '<th>' ).text( datasetLabels[ i ] ) );
+				}
+			} else {
+				$tableHeadRow.append( $( '<th>' ).text( getXAxesLabel( options.measure ) ) );
+			}
+
+			return $tableHead.append( $tableHeadRow );
+		}
+
+		function getTableBody( graphData ) {
+			var $tbody = $( '<tbody>' ),
+				scaleIndex, datasetIndex, $tBodyRow,
+				columnValue;
+
+			for ( scaleIndex = 0; scaleIndex < graphData.axesLabels.length; scaleIndex++ ) {
+				$tBodyRow = $( '<tr>' )
+					.append( $( '<td>' ).text( graphData.axesLabels[ scaleIndex ] ) );
+
+				for ( datasetIndex = 0; datasetIndex < graphData.data.length; datasetIndex++ ) {
+					columnValue = '';
+					if (
+						graphData.data[ datasetIndex ] &&
+						graphData.data[ datasetIndex ][ scaleIndex ] !== undefined
+					) {
+						columnValue =
+							mw.language.convertNumber(
+								Number( graphData.data[ datasetIndex ][ scaleIndex ] )
+							);
+					}
+					$tBodyRow.append( $( '<td>' ).text( columnValue ) );
+				}
+
+				$tbody.append( $tBodyRow );
+			}
+
+			return $tbody;
+		}
+
+		function cleanup() {
+			lineChart.destroy();
+			$tableElement.remove();
+		}
+
+		function getGraphSummary( options ) {
+			return getXAxesLabel( options.measure ) + ' / ' +
+				getYAxesLabel( options.granularity );
 		}
 
 		return {

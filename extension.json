@@ -776,7 +776,9 @@
 				"translate-statsf-scale-days",
 				"translate-statsf-scale-hours",
 				"translate-statsf-unknown-error",
-				"translate-statsf-error-message"
+				"translate-statsf-error-message",
+				"translate-statsf-graph-alt-text-info",
+				"translate-statsf-alt-text"
 			],
 			"targets": [
 				"desktop",
