@@ -144,6 +144,8 @@
 	"translate-statsf-language": "Kommaseparert liste over språkkoder:",
 	"translate-statsf-group": "Kommaseparert liste over gruppekoder:",
 	"translate-statsf-submit": "Forhåndsvisning",
+	"translate-statsf-unknown-error": "En ukjent feil har oppstått.",
+	"translate-statsf-error-message": "En feil oppsto under lasting av grafen: $1",
 	"translate-tag-page-desc": "Oversettelse av wikisiden [[$2|$1]] fra $3 ($4).",
 	"translate-sidebar-alltrans": "På andre språk",
 	"translations": "Alle oversettelser",
