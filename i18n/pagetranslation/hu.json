@@ -52,7 +52,7 @@
 	"tpt-outdated-pages-title": "Lapok függőben lévő változásokkal.",
 	"tpt-new-pages": "{{PLURAL:$1|Ez a lap tartalmaz|Ezek a lapok tartalmaznak}} fordítási tagekkel ellátott szöveget, de jelenleg egyik {{PLURAL:$1|változata|változatuk}} sincs megjelölve fordításra.",
 	"tpt-old-pages": "{{PLURAL:$1|Ennek a lapnak|Ezeknek a lapoknak}} a legfrissebb {{PLURAL:$1|változata meg van|változatai meg vannak}} jelölve fordításra.",
-	"tpt-other-pages": "A lap korábbi {{PLURAL:$1|változata|változatai}} fordíthatónak voltak megjelölve, de a legutóbbi {{PLURAL:$1|változatot|változatokat}} nem lehet megjelölni fordításra.",
+	"tpt-other-pages": "Ezen {{PLURAL:$1|lap egy korábbi változata fordíthatónak volt|lapok korábbi változatai fordíthatónak voltak}} megjelölve, de a legutóbbi {{PLURAL:$1|változatot|változatokat}} nem lehet megjelölni fordításra.",
 	"tpt-outdated-pages": "{{PLURAL:$1|Ezen a lapon|Ezeken a lapokon}} vannak fordításra meg nem jelölt változtatások.",
 	"tpt-tag-discouraged": "nem javasolt",
 	"tpt-tag-oldsyntax": "régi szintaxis",
