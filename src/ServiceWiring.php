@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
@@ -32,8 +33,15 @@ return [
 		);
 	},
 
-	'Translate:TranslationStatsDataProvider' => function (): TranslationStatsDataProvider {
-		return new TranslationStatsDataProvider();
+	'Translate:TranslationStatsDataProvider' => function ( MediaWikiServices $services )
+	: TranslationStatsDataProvider {
+		return new TranslationStatsDataProvider(
+			new ServiceOptions(
+				TranslationStatsDataProvider::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getObjectFactory()
+		);
 	},
 
 	'Translate:TranslatorActivity' => function ( MediaWikiServices $services ): TranslatorActivity {

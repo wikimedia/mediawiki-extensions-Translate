@@ -59,7 +59,7 @@ class SpecialTranslationStats extends SpecialPage {
 			}
 		}
 
-		$graphOpts->normalize();
+		$graphOpts->normalize( $this->dataProvider->getGraphTypes() );
 		$opts = $graphOpts->getFormOptions();
 
 		if ( $this->including() ) {

@@ -4,8 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extensions\Translate\Statistics;
 
 use Language;
+use MediaWiki\Config\ServiceOptions;
 use MessageGroups;
 use TranslateUtils;
+use Wikimedia\ObjectFactory;
 
 /**
  * Provides translation stats data
@@ -14,16 +16,26 @@ use TranslateUtils;
  * @since 2020.09
  */
 class TranslationStatsDataProvider {
-	public const GRAPHS = [
-		'edits' => TranslatePerLanguageStats::class,
-		'users' => TranslatePerLanguageStats::class,
-		'registrations' => TranslateRegistrationStats::class,
-		'reviews' => ReviewPerLanguageStats::class,
-		'reviewers' => ReviewPerLanguageStats::class,
+	public const CONSTRUCTOR_OPTIONS = [
+		'TranslateStatsProviders'
 	];
 
+	/** @var ObjectFactory */
+	private $objectFactory;
+	/** @var ServiceOptions */
+	private $options;
+
+	public function __construct( ServiceOptions $options, ObjectFactory $objectFactory ) {
+		$this->options = $options;
+		$this->objectFactory = $objectFactory;
+	}
+
+	private function getGraphSpecifications(): array {
+		return array_filter( $this->options->get( 'TranslateStatsProviders' ) );
+	}
+
 	public function getGraphTypes(): array {
-		return array_keys( self::GRAPHS );
+		return array_keys( $this->getGraphSpecifications() );
 	}
 
 	/**
@@ -35,8 +47,7 @@ class TranslationStatsDataProvider {
 	public function getGraphData( TranslationStatsGraphOptions $opts, Language $language ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$class = $this->getGraphClass( $opts->getValue( 'count' ) );
-		$so = new $class( $opts );
+		$so = $this->getStatsProvider( $opts->getValue( 'count' ), $opts );
 
 		$fixedStart = $opts->getValue( 'start' ) !== '';
 
@@ -119,7 +130,7 @@ class TranslationStatsDataProvider {
 			if ( strpos( $label, '@' ) === false ) {
 				continue;
 			}
-			list( $groupId, $code ) = explode( '@', $label, 2 );
+			[ $groupId, $code ] = explode( '@', $label, 2 );
 			if ( $code && $groupId ) {
 				$code = TranslateUtils::getLanguageName( $code, $language->getCode() ) . " ($code)";
 				$group = MessageGroups::getGroup( $groupId );
@@ -142,8 +153,17 @@ class TranslationStatsDataProvider {
 		return [ $labels, $data ];
 	}
 
-	private function getGraphClass( string $type ): string {
-		return self::GRAPHS[$type];
+	/** @noinspection PhpIncompatibleReturnTypeInspection */
+	private function getStatsProvider( string $type, TranslationStatsGraphOptions $opts )
+	: TranslationStatsInterface {
+		$specs = $this->getGraphSpecifications();
+		return $this->objectFactory->createObject(
+			$specs[$type],
+			[
+				'allowClassName' => true,
+				'extraArgs' => [ $opts ],
+			]
+		);
 	}
 
 	/**

@@ -51,7 +51,7 @@ class TranslationStatsGraphOptions {
 		return $this->formOptions[$key];
 	}
 
-	public function normalize(): void {
+	public function normalize( array $validCounts ): void {
 		$this->formOptions->validateIntBounds( 'days', 1, 10000 );
 		$this->formOptions->validateIntBounds( 'width', 200, 1000 );
 		$this->formOptions->validateIntBounds( 'height', 200, 1000 );
@@ -73,7 +73,6 @@ class TranslationStatsGraphOptions {
 			$this->formOptions->validateIntBounds( 'days', 1, 4 );
 		}
 
-		$validCounts = array_keys( TranslationStatsDataProvider::GRAPHS );
 		if ( !in_array( $this->formOptions['count'], $validCounts ) ) {
 			$this->formOptions['count'] = 'edits';
 		}
