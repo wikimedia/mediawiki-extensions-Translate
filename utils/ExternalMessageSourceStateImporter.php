@@ -9,6 +9,8 @@
  */
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
 
 class ExternalMessageSourceStateImporter {
 
@@ -34,6 +36,7 @@ class ExternalMessageSourceStateImporter {
 
 			$processed[$groupId] = [];
 			$languages = $changesForGroup->getLanguages();
+			$groupJobs = [];
 
 			foreach ( $languages as $language ) {
 				if ( !self::isSafe( $changesForGroup, $language ) ) {
@@ -47,15 +50,20 @@ class ExternalMessageSourceStateImporter {
 					continue;
 				}
 
-				[ $groupJobs, $groupProcessed ] = $this->createMessageUpdateJobs(
+				[ $groupLanguageJobs, $groupProcessed ] = $this->createMessageUpdateJobs(
 					$group, $additions, $language
 				);
 
-				$jobs = array_merge( $jobs, $groupJobs );
+				$groupJobs = array_merge( $groupJobs, $groupLanguageJobs );
 				$processed[$groupId][$language] = $groupProcessed;
 
 				$changesForGroup->removeChangesForLanguage( $language );
 				$group->getMessageGroupCache( $language )->create();
+			}
+
+			if ( $groupJobs !== [] ) {
+				$this->updateGroupSyncInfo( $groupId, $groupJobs );
+				$jobs = array_merge( $jobs, $groupJobs );
 			}
 		}
 
@@ -118,5 +126,20 @@ class ExternalMessageSourceStateImporter {
 		}
 
 		return [ $jobs, $processed ];
+	}
+
+	/**
+	 * @param string $groupId
+	 * @param MessageUpdateJob[] $groupJobs
+	 */
+	private function updateGroupSyncInfo( string $groupId, array $groupJobs ): void {
+		$messageParams = [];
+		foreach ( $groupJobs as $job ) {
+			$messageParams[] = MessageUpdateParameter::createFromJob( $job );
+		}
+
+		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+		$groupSyncCache->addMessages( $groupId, ...$messageParams );
+		$groupSyncCache->markGroupForSync( $groupId );
 	}
 }
