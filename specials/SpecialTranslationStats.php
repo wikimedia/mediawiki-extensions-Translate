@@ -28,7 +28,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
 
-	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-graph-container';
+	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-container';
 
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );

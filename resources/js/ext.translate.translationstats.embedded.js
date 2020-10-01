@@ -37,7 +37,7 @@ var EmbeddedHandler = function ( $graphContainer ) {
 };
 
 $( function () {
-	var $graphContainers = $( '.mw-translate-translationstats-graph-container' ),
+	var $graphContainers = $( '.mw-translate-translationstats-container' ),
 		currentGraph = 0,
 		graphInstances = [];
 

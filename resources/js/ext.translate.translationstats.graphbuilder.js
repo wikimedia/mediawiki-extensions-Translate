@@ -38,7 +38,7 @@
 				.attr( 'tabindex', 0 )
 				.text( mw.msg( 'translate-statsf-graph-alt-text-info' ) ),
 			$graphWrapper = $( '<div>' )
-				.attr( 'class', 'js-mw-translationstats-container' ),
+				.attr( 'class', 'mw-translationstats-graph-container' ),
 			$loadingElement = $( '<div>' )
 				.attr( 'class', 'mw-translate-loading-spinner' ),
 			$errorElement = $( '<div>' )
