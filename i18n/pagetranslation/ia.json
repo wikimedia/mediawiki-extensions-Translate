@@ -161,7 +161,7 @@
 	"pm-add-icon-hover-text": "Adde un unitate hic infra",
 	"pm-swap-icon-hover-text": "Excambiar con le unitate hic infra",
 	"pm-delete-icon-hover-text": "Deler unitate",
-	"pm-langcode-missing": "Le codice de lingua manca in le titulo. Per favor, entra le titulo in formato <nomine-de-pagina>/<codice-de-lingua>.",
+	"pm-langcode-missing": "Le codice de lingua manca in le titulo. Per favor, entra le titulo in formato <page-name>/<language-code>.",
 	"tpt-translate-title": "Permitter le traduction del titulo del pagina",
 	"pp-diff-error": "Un error ha occurrite durante le obtention del diff ab le servitor."
 }

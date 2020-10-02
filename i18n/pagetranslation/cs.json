@@ -126,7 +126,7 @@
 	"pm-add-icon-hover-text": "Přidat část níže",
 	"pm-swap-icon-hover-text": "Prohodit s částí níže",
 	"pm-delete-icon-hover-text": "Smazat položku",
-	"pm-langcode-missing": "Vypadá to, že za názvem stránky schází kód jazyka. Zadejte prosím název stránky ve tvaru <název-stránky>/<kód-jazyka>.",
+	"pm-langcode-missing": "Vypadá to, že za názvem stránky schází kód jazyka. Zadejte prosím název stránky ve tvaru <page-name>/<language-code>.",
 	"tpt-translate-title": "Umožnit překlad názvu stránky",
 	"pp-prepare-button-label": "Připravit",
 	"pp-save-button-label": "Uložit",

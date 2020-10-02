@@ -213,7 +213,7 @@
 	"pm-pagetitle-placeholder": "Podaj tytuł strony",
 	"pm-pagetitle-invalid": "Podaj poprawny tytuł strony. Powinien być w formacie <page-name>/<language-code>.",
 	"pm-pagetitle-missing": "Podaj tytuł strony.",
-	"pm-langcode-missing": "Wydaje się, że w tytule brakuje kodu języka. Wprowadź tytuł strony w formacie <nazwa strony>/<kod języka>.",
+	"pm-langcode-missing": "Wydaje się, że w tytule brakuje kodu języka. Wprowadź tytuł strony w formacie <page-name>/<language-code>.",
 	"pm-summary-import": "Importowane tłumaczenie za pomocą [[Special:PageMigration|migracji strony]]",
 	"pm-on-import-message-text": "Zaimportowano stare tłumaczenia. Użyj opcji dodaj, zamień i usuń, aby dopasować jednostki tłumaczenia, a następnie kliknij przycisk \"{{int:pm-savepages-button-label}}\", aby je zapisać. Kliknij przycisk \"{{int:pm-cancel-button-label}}\", aby je odrzucić.",
 	"pm-on-save-message-text": "Jednostki tłumaczenia zostały zapisane. Możesz teraz wpisać tytuł nowej przetłumaczonej strony, aby dokonać migracji lub dokonać zmian w poniższych jednostkach i zapisać nową wersję.",

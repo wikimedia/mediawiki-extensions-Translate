@@ -183,7 +183,7 @@
 	"pm-pagetitle-placeholder": "Escribe'l títulu de la páxina",
 	"pm-pagetitle-invalid": "Escribe un títulu de páxina válidu. Tien de tener el formatu <nome-de-páxina>/<códigu-de-llingua>.",
 	"pm-pagetitle-missing": "Escribe'l títulu de la páxina.",
-	"pm-langcode-missing": "Paez que falta'l códigu de llingua nel títulu. Escribe'l títulu de la páxina col formatu <nome-de-páxina>/<códigu-de-llingua>.",
+	"pm-langcode-missing": "Paez que falta'l códigu de llingua nel títulu. Escribe'l títulu de la páxina col formatu <page-name>/<language-code>.",
 	"pm-summary-import": "Traducción importada usando [[Special:PageMigration|migración de páxina]]",
 	"pm-on-import-message-text": "Importáronse les traducciones antigües. Usa les opciones añadir, cambiar y desaniciar p'axustar les unidaes de traducción y fai click nel botón \"{{int:pm-savepages-button-label}}\" pa guardales. Fai click nel botón \"{{int:pm-cancel-button-label}}\" pa descartales.",
 	"pm-on-save-message-text": "Guardáronse les unidaes de traducción. Agora puedes escribir el títulu d'una nueva páxina de traducción pa migrales o facer cambios nes unidaes de más abaxo y guardar una nueva revisión.",

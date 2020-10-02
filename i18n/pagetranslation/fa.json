@@ -190,7 +190,7 @@
 	"pm-swap-icon-hover-text": "واحدی را در زیر جایگزین کنید",
 	"pm-delete-icon-hover-text": "حذف واحد",
 	"pm-pagetitle-placeholder": "نام صفحه را وارد کنید",
-	"pm-pagetitle-invalid": "لطفا یک عنوان صفحهٔ معتبر وارد کنید. عنوان باید دارای قالب <عنوان-صفحه>/<کد-زبان> باشد.",
+	"pm-pagetitle-invalid": "لطفا یک عنوان صفحهٔ معتبر وارد کنید. عنوان باید دارای قالب <page-name>/<language-code> باشد.",
 	"pm-pagetitle-missing": "عنوان صفحه را وارد کنید.",
 	"pm-langcode-missing": "به نظر می‌رسد کد زبان از عنوان جا افتاده باشد.  عنوان باید دارای قالب <عنوان-صفحه>/<کد-زبان> باشد.",
 	"pm-summary-import": "ترجمه با استفاده از [[Special:PageMigration|مهاجرت صفحه]] وارد شده‌است",
