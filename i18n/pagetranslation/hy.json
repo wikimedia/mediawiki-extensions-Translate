@@ -7,6 +7,9 @@
 	},
 	"tps-edit-sourcepage-ve-warning-button": "Լավ",
 	"tpt-languages-nonzero": "$1 ($2% թարգմանված)",
+	"tpt-aggregategroup-update-cancel": "Չեղարկել",
 	"pt-deletepage-list-no-pages": "Ոչ մի էջ չի գտնվել։",
-	"pp-save-button-label": "Հրապարակել"
+	"pm-cancel-button-label": "Չեղարկել",
+	"pp-save-button-label": "Հրապարակել",
+	"pp-cancel-button-label": "Չեղարկել"
 }

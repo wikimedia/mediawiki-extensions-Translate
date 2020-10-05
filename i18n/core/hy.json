@@ -16,5 +16,7 @@
 	"translate-smg-rename-cancel": "Չեղարկել",
 	"translate-manage-import-new": "Նոր Հաղորդագրություն $1",
 	"translate-manage-action-rename": "Վերանվանել",
-	"translate-documentation-language": "Հաղորդագրության փաստաթղթեր"
+	"translate-documentation-language": "Հաղորդագրության փաստաթղթեր",
+	"tux-editor-cancel-button-label": "Չեղարկել",
+	"tux-editor-doc-editor-cancel": "Չեղարկել"
 }
