@@ -250,11 +250,16 @@ class PageTranslationHooks {
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
-		$job->run();
+		JobQueueGroup::singleton()->push( $job );
 
 		// Invalidate caches so that language bar is up-to-date
 		$pages = $page->getTranslationPages();
 		foreach ( $pages as $title ) {
+			if ( $title->equals( $target ) ) {
+				// Handled by the TranslateRenderJob
+				continue;
+			}
+
 			$wikiPage = WikiPage::factory( $title );
 			$wikiPage->doPurge();
 		}
