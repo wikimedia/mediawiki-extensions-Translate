@@ -133,6 +133,7 @@
 	"translate-statsf-submit": "Előnézet",
 	"translate-statsf-unknown-error": "Ismeretlen hiba történt.",
 	"translate-statsf-error-message": "Hiba történt a $1 grafikon betöltése közben",
+	"translate-statsf-graph-alt-text-info": "A fordítási statisztikák szöveges alternatívája az alábbi adattáblában található.",
 	"translate-statsf-alt-text": "Fordítási statisztikák szöveges alternatívája.",
 	"translate-statsf-embed": "Kód a fordítási statisztikákat mutató ábra más oldalakra való beágyaázásához.",
 	"translate-tag-page-desc": "A(z) [[$2|$1]] lap fordítása $3 ($4) nyelvről",

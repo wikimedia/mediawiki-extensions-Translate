@@ -18,5 +18,6 @@
 	"translate-manage-action-rename": "Վերանվանել",
 	"translate-documentation-language": "Հաղորդագրության փաստաթղթեր",
 	"tux-editor-cancel-button-label": "Չեղարկել",
-	"tux-editor-doc-editor-cancel": "Չեղարկել"
+	"tux-editor-doc-editor-cancel": "Չեղարկել",
+	"tux-editor-close-tooltip": "Փակել"
 }
