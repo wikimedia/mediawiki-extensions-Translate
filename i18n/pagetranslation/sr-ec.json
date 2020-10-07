@@ -72,7 +72,7 @@
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Започните превођење на овом језику",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
-	"tpt-tab-translate": "Превођење",
+	"tpt-tab-translate": "Преведи",
 	"tpt-discouraged-language-force-header": "Ова страница не може да буде преведена на $1.",
 	"tpt-discouraged-language-header": "Превођење ове странице на $1 није приоритет.",
 	"tpt-discouraged-language-force": "<strong>Ова страница се не може превести на $2.</strong>\n\nАдминистратор превођења је одредио да се ова страница може превести само на: $3.",
