@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+			"Pols12",
 			"Trần Nguyễn Minh Huy",
 			"Vinhtantran"
 		]
@@ -177,7 +178,7 @@
 	"pm-swap-icon-hover-text": "Đổi chỗ với đơn vị bên dưới",
 	"pm-delete-icon-hover-text": "Xóa đơn vị",
 	"pm-pagetitle-placeholder": "Nhập tên trang",
-	"pm-pagetitle-invalid": "Xin vui lòng nhập một tên trang hợp lệ. Nên sử dụng định dạng <page-name>/<language-code>.",
+	"pm-pagetitle-invalid": "Xin vui lòng nhập một tên trang hợp lệ. Nên sử dụng định dạng <tên-trang>/<mã-ngôn-ngữ>.",
 	"pm-pagetitle-missing": "Vui lòng nhập tên trang.",
 	"pm-langcode-missing": "Hình như tên trang thiếu mã ngôn ngữ. Xin vui lòng nhập tên trang ở dạng <page-name>/<language-code>.",
 	"pm-summary-import": "Đã nhập bản dịch bằng cách [[Special:PageMigration|chuyển trang]]",

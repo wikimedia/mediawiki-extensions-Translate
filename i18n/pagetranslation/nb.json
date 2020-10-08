@@ -7,6 +7,7 @@
 			"Laaknor",
 			"Nghtwlkr",
 			"Njardarlogar",
+			"Pols12",
 			"Purodha"
 		]
 	},
@@ -201,7 +202,7 @@
 	"pm-swap-icon-hover-text": "Bytt med enheten under",
 	"pm-delete-icon-hover-text": "Slett enhet",
 	"pm-pagetitle-placeholder": "Skriv inn sidetittelen",
-	"pm-pagetitle-invalid": "Skriv inn en gyldig sidetittel. Den bør være i formatet <page-name>/<language-code>.",
+	"pm-pagetitle-invalid": "Skriv inn en gyldig sidetittel. Den bør være i formatet <sidenavn>/<språkkode>.",
 	"pm-pagetitle-missing": "Skriv inn sidetittelen.",
 	"pm-langcode-missing": "Språkkoden mangler i tittelen. Skriv inn sidetittelen i formatet <page-name>/<language-code>.",
 	"pm-summary-import": "Importerte oversettelse med [[Special:PageMigration|sidemigrasjon]]",

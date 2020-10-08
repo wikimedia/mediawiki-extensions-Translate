@@ -221,7 +221,7 @@
 	"pm-swap-icon-hover-text": "Hover text for the icon on Special:PageMigration which, when clicked, swaps a unit (text area) with the unit below.",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"pm-pagetitle-placeholder": "Placeholder for the page title input field.",
-	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered.\n{{doc-important|Do not translate \"<code><page-name>/<language-code></code>\".}}",
+	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered. You should translate format indication; you can localize brackets but you must keep the middle slash <code>/</code>.",
 	"pm-pagetitle-missing": "Error message given when page title field is blank",
 	"pm-langcode-missing": "Error message given when the page title field does not contain a language code.\n{{doc-important|Do not translate \"<code><page-name>/<language-code></code>\".}}",
 	"pm-summary-import": "Edit summary used while creating translation pages which were imported using [[Special:PageMigration]], see [[mw:Help:Extension:Translate/Page_translation_administration#Migrating to page translation]]",

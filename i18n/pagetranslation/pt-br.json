@@ -12,6 +12,7 @@
 			"Helder.wiki",
 			"Jhonnatanricardo",
 			"Luckas",
+			"Pols12",
 			"Rodrigo codignoli",
 			"Shirayuki",
 			555
@@ -209,7 +210,7 @@
 	"pm-swap-icon-hover-text": "Trocar com a unidade abaixo",
 	"pm-delete-icon-hover-text": "Excluir unidade",
 	"pm-pagetitle-placeholder": "Digite o título da página",
-	"pm-pagetitle-invalid": "Digite um título de página válido. Deve estar no formato <page-name>/<language-code>.",
+	"pm-pagetitle-invalid": "Digite um título de página válido. Deve estar no formato <nome da página>/<código do idioma>.",
 	"pm-pagetitle-missing": "Por favor, insira o título da página.",
 	"pm-langcode-missing": "O código do idioma parece estar faltando no título. Por favor, digite o título da página no formato <page-name>/<language-code>.",
 	"pm-summary-import": "Tradução importada usando [[Special:PageMigration|migração de página]]",
