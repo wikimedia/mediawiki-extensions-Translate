@@ -204,6 +204,11 @@
 		var isNarrowMode, minimumTableWidth,
 			$table = $( '.statstable' );
 
+		// Sometimes the table is not present on the page
+		if ( !$table.length ) {
+			return;
+		}
+
 		// Calculate absolute minimum table width
 		if ( window.ResizeObserver ) {
 			$table.css( 'max-width', '1px' );
