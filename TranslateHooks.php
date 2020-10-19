@@ -265,17 +265,12 @@ class TranslateHooks {
 	 * Used for setting an AbuseFilter variable.
 	 *
 	 * @param AbuseFilterVariableHolder &$vars
-	 * @param Title|null $title
-	 * @todo Remove "AbuseFilter-filterAction" from extension.json once we support 1.34+ only.
-	 *  At that point, add a $user parameter to this handler, add typehints on all arguments
-	 *  (including $title which will always be a Title), and remove the logging below.
+	 * @param Title $title
+	 * @param User $user
 	 */
-	public static function onAbuseFilterAlterVariables( &$vars, $title ) {
-		if ( !$title instanceof Title ) {
-			wfDebugLog( 'T143073', 'Got non-Title in ' . wfGetAllCallers( 5 ) );
-			return;
-		}
-
+	public static function onAbuseFilterAlterVariables(
+		&$vars, Title $title, User $user
+	) {
 		$handle = new MessageHandle( $title );
 
 		// Only set this variable if we are in a proper namespace to avoid
@@ -836,9 +831,6 @@ class TranslateHooks {
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
 		global $wgVersion;
 
-		// Support: MediaWiki <= 1.33
-		$hasOldJqUI = version_compare( $wgVersion, '1.34', '<' );
-
 		// Support: MediaWiki <= 1.34
 		$hasOldTokens = $hasOldNotify = version_compare( $wgVersion, '1.35', '<' );
 
@@ -862,7 +854,7 @@ class TranslateHooks {
 					'ext.translate.base',
 					'ext.translate.loader',
 					'ext.translate.statsbar',
-					$hasOldJqUI ? 'jquery.ui.position' : 'jquery.ui',
+					'jquery.ui',
 					'mediawiki.jqueryMsg'
 				],
 				'messages' => [
@@ -875,7 +867,7 @@ class TranslateHooks {
 			'ext.translate.special.aggregategroups' => $tpl + [
 				'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
 				'dependencies' => [
-					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+					'jquery.ui',
 					'mediawiki.api',
 					'mediawiki.util'
 				],
@@ -892,7 +884,7 @@ class TranslateHooks {
 			'ext.translate.special.importtranslations' => $tpl + [
 				'scripts' => 'resources/js/ext.translate.special.importtranslations.js',
 				'dependencies' => [
-					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+					'jquery.ui',
 				]
 			],
 			'ext.translate.special.managetranslatorsandbox' => $tpl + [
@@ -901,7 +893,7 @@ class TranslateHooks {
 					'ext.translate.loader',
 					'ext.translate.translationstashstorage',
 					'ext.uls.mediawiki',
-					$hasOldJqUI ? 'jquery.ui.dialog' : 'jquery.ui',
+					'jquery.ui',
 					'mediawiki.api',
 					'mediawiki.jqueryMsg',
 					'mediawiki.language',
@@ -933,7 +925,7 @@ class TranslateHooks {
 			'ext.translate.special.searchtranslations.operatorsuggest' => $tpl + [
 				'scripts' => 'resources/js/ext.translate.special.operatorsuggest.js',
 				'dependencies' => [
-					$hasOldJqUI ? 'jquery.ui.autocomplete' : 'jquery.ui',
+					'jquery.ui',
 				]
 			],
 			'ext.translate.special.pagetranslation' => $tpl + [

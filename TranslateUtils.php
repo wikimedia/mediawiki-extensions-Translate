@@ -79,67 +79,43 @@ class TranslateUtils {
 		$dbr = wfGetDB( DB_REPLICA );
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$titleContents = [];
-		if ( is_callable( [ $revStore, 'newRevisionsFromBatch' ] ) ) {
-			$query = $revStore->getQueryInfo( [ 'page', 'user' ] );
-			$rows = $dbr->select(
-				$query['tables'],
-				$query['fields'],
-				[
-					'page_namespace' => $namespace,
-					'page_title' => $titles,
-					'page_latest=rev_id',
-				],
-				__METHOD__,
-				[],
-				$query['joins']
-			);
 
-			$revisions = $revStore->newRevisionsFromBatch( $rows, [
-				'slots' => true,
-				'content' => true
-			] )->getValue();
-			foreach ( $rows as $row ) {
-				/** @var RevisionRecord|null $rev */
-				$rev = $revisions[$row->rev_id];
-				if ( $rev ) {
-					/** @var TextContent $content */
-					$content = $rev->getContent( SlotRecord::MAIN );
-					if ( $content ) {
-						$titleContents[$row->page_title] = [
-							$content->getText(),
-							$row->rev_user_text
-						];
-					}
+		$query = $revStore->getQueryInfo( [ 'page', 'user' ] );
+		$rows = $dbr->select(
+			$query['tables'],
+			$query['fields'],
+			[
+				'page_namespace' => $namespace,
+				'page_title' => $titles,
+				'page_latest=rev_id',
+			],
+			__METHOD__,
+			[],
+			$query['joins']
+		);
+
+		$revisions = $revStore->newRevisionsFromBatch( $rows, [
+			'slots' => true,
+			'content' => true
+		] )->getValue();
+
+		foreach ( $rows as $row ) {
+			/** @var RevisionRecord|null $rev */
+			$rev = $revisions[$row->rev_id];
+			if ( $rev ) {
+				/** @var TextContent $content */
+				$content = $rev->getContent( SlotRecord::MAIN );
+				if ( $content ) {
+					$titleContents[$row->page_title] = [
+						$content->getText(),
+						$row->rev_user_text
+					];
 				}
 			}
-			$rows->free();
-		} else {
-			// Pre 1.34 compatibility
-			$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
-			$rows = $dbr->select( [ 'page', 'revision', 'text' ] + $actorQuery['tables'],
-				[
-					'page_title', 'old_text', 'old_flags',
-					'rev_user_text' => $actorQuery['fields']['rev_user_text']
-				],
-				[
-					'page_namespace' => $namespace,
-					'page_title' => $titles
-				],
-				__METHOD__,
-				[],
-				[
-					'revision' => [ 'JOIN', 'page_latest=rev_id' ],
-					'text' => [ 'JOIN', 'rev_text_id=old_id' ],
-				] + $actorQuery['joins']
-			);
-			foreach ( $rows as $row ) {
-				$titleContents[$row->page_title] = [
-					Revision::getRevisionText( $row ),
-					$row->rev_user_text
-				];
-			}
-			$rows->free();
 		}
+
+		$rows->free();
+
 		return $titleContents;
 	}
 
@@ -452,12 +428,7 @@ class TranslateUtils {
 		$formats = [];
 
 		$filename = substr( $icon, 7 );
-		if ( method_exists( MediaWikiServices::class, 'getRepoGroup' ) ) {
-			// MediaWiki 1.34+
-			$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $filename );
-		} else {
-			$file = wfFindFile( $filename );
-		}
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $filename );
 		if ( !$file ) {
 			wfWarn( "Unknown message group icon file $icon" );
 
@@ -581,15 +552,8 @@ class TranslateUtils {
 	 */
 	public static function allowsSubpages( Title $title ): bool {
 		$mwInstance = MediaWikiServices::getInstance();
-		if ( is_callable( [ $mwInstance, 'getNamespaceInfo' ] ) ) {
-			$namespaceInfo = $mwInstance->getNamespaceInfo();
-			return $namespaceInfo->hasSubpages( $title->getNamespace() );
-		} else {
-			// BC for MW 1.33
-			global $wgNamespacesWithSubpages;
-			return isset( $wgNamespacesWithSubpages[ $title->getNamespace() ] ) &&
-				$wgNamespacesWithSubpages[ $title->getNamespace() ];
-		}
+		$namespaceInfo = $mwInstance->getNamespaceInfo();
+		return $namespaceInfo->hasSubpages( $title->getNamespace() );
 	}
 
 	public static function isEditPage( WebRequest $request ): bool {

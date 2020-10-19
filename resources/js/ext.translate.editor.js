@@ -244,16 +244,6 @@
 				if ( editResp.result === 'Success' ) {
 					translateEditor.message.translation = translation;
 					translateEditor.onSaveSuccess();
-				// Handle errors
-				// BC MW < 1.34
-				} else if ( editResp.spamblacklist ) {
-					translateEditor.onSaveFail( mw.msg( 'spamprotectiontext' ) );
-				// BC MW < 1.34
-				} else if ( editResp.info &&
-					editResp.info.indexOf( 'Hit AbuseFilter:' ) === 0 &&
-					editResp.warning
-				) {
-					translateEditor.onSaveFail( editResp.warning );
 				} else {
 					translateEditor.onSaveFail( mw.msg( 'tux-save-unknown-error' ) );
 					mw.log( response, xhr );
