@@ -52,11 +52,15 @@
 					var $el = $( this );
 					// Switch the state and toggle the rows
 					if ( $el.hasClass( 'collapsed' ) ) {
-						$children.fadeIn( { start: doZebra } ).trigger( 'show' );
+						$children.fadeIn( { start: function () {
+							doZebra( $table );
+						} } ).trigger( 'show' );
 						$el.removeClass( 'collapsed' ).addClass( 'expanded' );
 						$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
 					} else {
-						$children.fadeOut( { done: doZebra } ).trigger( 'hide' );
+						$children.fadeOut( { done: function () {
+							doZebra( $table );
+						} } ).trigger( 'hide' );
 						$el.addClass( 'collapsed' ).removeClass( 'expanded' );
 						$el.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 					}
@@ -106,7 +110,7 @@
 					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 				}
 
-				doZebra();
+				doZebra( $table );
 				e.preventDefault();
 			} );
 
