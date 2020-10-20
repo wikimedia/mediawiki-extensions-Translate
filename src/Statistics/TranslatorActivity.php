@@ -78,11 +78,11 @@ class TranslatorActivity {
 	}
 
 	private function getCacheKey( string $language ): string {
-		return $this->cache->makeKey( 'translate-translator-activity-v1', $language );
+		return $this->cache->makeKey( 'translate-translator-activity-v2', $language );
 	}
 
 	private function isStale( array $value ): bool {
-		$age = ConvertibleTimestamp::now( TS_UNIX ) - $value['asOfTime'];
+		$age = intval( ConvertibleTimestamp::now( TS_UNIX ) ) - $value['asOfTime'];
 		return $age >= self::CACHE_STALE;
 	}
 
@@ -92,7 +92,7 @@ class TranslatorActivity {
 	}
 
 	private function doQueryAndCache( string $language ) {
-		$now = ConvertibleTimestamp::now( TS_UNIX );
+		$now = (int)ConvertibleTimestamp::now( TS_UNIX );
 
 		$work = new PoolCounterWorkViaCallback(
 			'TranslateFetchTranslators', "TranslateFetchTranslators-$language", [
@@ -120,7 +120,7 @@ class TranslatorActivity {
 
 	/** Update cache for all languages, even if not stale. */
 	public function updateAllLanguages(): void {
-		$now = ConvertibleTimestamp::now( TS_UNIX );
+		$now = (int)ConvertibleTimestamp::now( TS_UNIX );
 		foreach ( $this->query->inAllLanguages() as $language => $users ) {
 			if ( !$this->isValidLanguage( $language ) ) {
 				continue;

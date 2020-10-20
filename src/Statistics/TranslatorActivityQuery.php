@@ -66,7 +66,7 @@ class TranslatorActivityQuery {
 		$data = [];
 		foreach ( $res as $row ) {
 			$data[$row->rev_user_text] = [
-				self::USER_TRANSLATIONS => $row->count,
+				self::USER_TRANSLATIONS => (int)$row->count,
 				self::USER_LAST_ACTIVITY => $row->lastedit,
 			];
 		}

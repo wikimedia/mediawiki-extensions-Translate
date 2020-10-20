@@ -1,4 +1,6 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * Contains logic for special page Special:SupportedLanguages
  *
@@ -36,7 +38,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	/** @var ILoadBalancer */
 	private $loadBalancer;
 	/// Cutoff time for inactivity in days
-	protected $period = 180;
+	private $period = 180;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateAuthorBlacklist',
@@ -111,7 +113,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$users = $data['users'];
 		$users = $this->filterUsers( $users, $language );
 		$this->preQueryUsers( $users );
-		$this->showLanguage( $language, $users, $data['asOfTime'] );
+		$this->showLanguage( $language, $users, (int)$data['asOfTime'] );
 	}
 
 	protected function showLanguage( string $code, array $users, int $cachedAt ): void {
@@ -172,10 +174,10 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$out->addWikiMsg( 'translate-supportedlanguages-cached', $ageString );
 	}
 
-	protected function languageCloud() {
+	private function languageCloud(): array {
 		// TODO: Inject a factory when such a thing is available in MediaWiki core
 		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
-		$cachekey = $cache->makeKey( 'translate-supportedlanguages-language-cloud' );
+		$cachekey = $cache->makeKey( 'translate-supportedlanguages-language-cloud', 'v2' );
 
 		$data = $cache->get( $cachekey );
 		if ( is_array( $data ) ) {
@@ -198,7 +200,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			$data[$row->lang] = $row->count;
+			$data[$row->lang] = (int)$row->count;
 		}
 
 		$cache->set( $cachekey, $data, 3600 );
@@ -338,7 +340,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	protected function preQueryUsers( array $users ): void {
-		$lb = new LinkBatch;
+		$lb = new LinkBatch();
 		foreach ( $users as $user => $data ) {
 			$user = Title::capitalize( $user, NS_USER );
 			$lb->add( NS_USER, $user );
