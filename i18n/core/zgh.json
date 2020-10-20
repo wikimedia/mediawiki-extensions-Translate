@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amara-Amaziɣ",
+			"Hakim1bal",
 			"Mdb897"
 		]
 	},
@@ -15,10 +16,12 @@
 	"translate-taction-lstats": "ⵉⵙⵏⵎⴽⵜⴰⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ",
 	"translate-taction-mstats": "ⵉⵙⵏⵎⴽⵜⴰⵏ ⵏ ⵉⴳⵔⴰⵡⵏ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
 	"translate-taction-export": "ⵙⵙⵓⴼⵖ",
+	"translate-page-settings-legend": "ⵜⵉⵙⵖⴰⵍ",
 	"translate-page-language": "ⵜⵓⵜⵍⴰⵢⵜ",
 	"translate-page-limit": "ⴰⵡⵜⵜⵓ",
 	"right-translate": "ⵙⵏⴼⵍ ⵙ ⵓⵏⴳⵔⵓⴷⵎ ⵏ ⵓⵙⵓⵖⵍ",
 	"translate-statsf-count-registrations": "ⵉⵏⵙⵙⵎⵔⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ",
+	"translate-translations-project": "ⴰⵙⵏⴼⴰⵕ:",
 	"translate-manage-import-new": "ⵜⵓⵣⵉⵏⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ $1",
 	"translate-manage-import-summary": "ⴰⵙⴽⵛⵎ ⵏ ⵜⵓⵏⵖⵉⵍⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵙⴳ ⵓⵙⴰⴳⵎ ⴰⴱⵔⵔⴰⵏⵉ",
 	"translate-documentation-language": "ⴰⵏⵜⴰⵎ ⵏ ⵜⵓⵣⵉⵏⵜ",

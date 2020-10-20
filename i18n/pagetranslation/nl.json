@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aranka",
 			"Dutchy45",
 			"HanV",
 			"Kippenvlees1",
@@ -204,7 +205,7 @@
 	"pm-swap-icon-hover-text": "Verwissel met de eenheid hier beneden",
 	"pm-delete-icon-hover-text": "Eenheid verwijderen",
 	"pm-pagetitle-placeholder": "Geef de paginatitel op",
-	"pm-pagetitle-invalid": "Geef een geldige paginanaam op. De indeling is <paginanaam>/<taalcode>.",
+	"pm-pagetitle-invalid": "Gelieve een geldige paginanaam op te geven. De indeling is <paginanaam>/<taalcode>.",
 	"pm-pagetitle-missing": "Voer een paginanaam in.",
 	"pm-langcode-missing": "De taal lijkt te ontbreken in de titel. Voer de titel van de pagina in de opmaak <page-name>/<language-code> in.",
 	"pm-summary-import": "Vertaling geïmporteerd met [[Special:PageMigration|pagina migratie]]",
