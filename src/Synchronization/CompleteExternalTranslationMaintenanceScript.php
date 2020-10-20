@@ -7,7 +7,6 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use Maintenance;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
-use MessageIndex;
 
 /**
  * @author Abijeet Patro
@@ -68,8 +67,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 
 		if ( !$groupsInProgress ) {
 			// No groups in progress.
-			$logger->info( 'All message groups are now in sync. Starting MessageIndex rebuild' );
-			MessageIndex::singleton()->rebuild();
+			$logger->info( 'All message groups are now in sync.' );
 		}
 
 		$logger->info(
