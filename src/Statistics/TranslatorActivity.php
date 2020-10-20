@@ -1,4 +1,6 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * @file
  * @author Niklas Laxström
@@ -10,7 +12,7 @@ namespace MediaWiki\Extensions\Translate\Statistics;
 use BagOStuff;
 use InvalidArgumentException;
 use JobQueueGroup;
-use Language;
+use MediaWiki\Languages\LanguageNameUtils;
 use PoolCounterWorkViaCallback;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -26,19 +28,18 @@ class TranslatorActivity {
 	private $cache;
 	private $query;
 	private $jobQueue;
-	private $languageValidator;
+	private $languageNameUtils;
 
 	public function __construct(
 		BagOStuff $cache,
 		TranslatorActivityQuery $query,
 		JobQueueGroup $jobQueue,
-		callable $languageValidator
+		LanguageNameUtils $languageNameUtils
 	) {
 		$this->cache = $cache;
 		$this->query = $query;
 		$this->jobQueue = $jobQueue;
-		// FIXME: use LanguageNameUtils once 1.33 is no longer supported
-		$this->languageValidator = $languageValidator;
+		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	/**
@@ -117,13 +118,11 @@ class TranslatorActivity {
 		$this->cache->set( $cacheKey, $value, self::CACHE_TIME );
 	}
 
-	/**
-	 * Update cache for all languages, even if not stale.
-	 */
+	/** Update cache for all languages, even if not stale. */
 	public function updateAllLanguages(): void {
 		$now = ConvertibleTimestamp::now( TS_UNIX );
 		foreach ( $this->query->inAllLanguages() as $language => $users ) {
-			if ( !Language::isKnownLanguageTag( $language ) ) {
+			if ( !$this->isValidLanguage( $language ) ) {
 				continue;
 			}
 
@@ -145,11 +144,11 @@ class TranslatorActivity {
 
 		$queriedValue = $this->doQueryAndCache( $language );
 		if ( !$queriedValue ) {
-			throw new StatisticsUnavailable( "Unable to load stats" );
+			throw new StatisticsUnavailable( 'Unable to load stats' );
 		}
 	}
 
 	private function isValidLanguage( string $language ): bool {
-		return call_user_func( $this->languageValidator, $language );
+		return $this->languageNameUtils->isKnownLanguageTag( $language );
 	}
 }

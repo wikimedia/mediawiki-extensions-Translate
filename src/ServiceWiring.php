@@ -50,15 +50,11 @@ return [
 			$services->getDBLoadBalancer()
 		);
 
-		$languageValidator = function ( string $language ): bool {
-			return Language::isKnownLanguageTag( $language );
-		};
-
 		return new TranslatorActivity(
 			$services->getMainObjectStash(),
 			$query,
 			JobQueueGroup::singleton(),
-			$languageValidator
+			$services->getLanguageNameUtils()
 		);
 	}
 ];
