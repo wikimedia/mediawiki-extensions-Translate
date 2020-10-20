@@ -8,12 +8,13 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extensions\Translate\Statistics\StatisticsUnavailable;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Implements special page Special:SupportedLanguages. The wiki administrator
@@ -26,20 +27,37 @@ use MediaWiki\MediaWikiServices;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
+	/** @var ServiceOptions */
 	private $options;
 
 	/** @var TranslatorActivity */
 	private $translatorActivity;
 
+	/** @var LanguageNameUtils */
+	private $langNameUtils;
+
+	/** @var ILoadBalancer */
+	private $loadBalancer;
+
 	/// Cutoff time for inactivity in days
 	protected $period = 180;
 
-	public function __construct() {
+	public const CONSTRUCTOR_OPTIONS = [
+		'TranslateAuthorBlacklist',
+		'TranslateMessageNamespaces',
+	];
+
+	public function __construct(
+		Config $config,
+		TranslatorActivity $translatorActivity,
+		LanguageNameUtils $langNameUtils,
+		ILoadBalancer $loadBalancer
+	) {
 		parent::__construct( 'SupportedLanguages' );
-		// TODO: Use construction injection when 1.33 is no longer supported
-		// TODO: Only inject the needed configuration options when 1.33 is no longer supported
-		$this->options = MediaWikiServices::getInstance()->getMainConfig();
-		$this->translatorActivity = Services::getInstance()->getTranslatorActivity();
+		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
+		$this->translatorActivity = $translatorActivity;
+		$this->langNameUtils = $langNameUtils;
+		$this->loadBalancer = $loadBalancer;
 	}
 
 	protected function getGroupName() {
@@ -62,7 +80,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		);
 
 		$this->outputHeader( 'supportedlanguages-summary' );
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
 		if ( $dbr->getType() === 'sqlite' ) {
 			$out->wrapWikiMsg(
 				'<div class="errorbox">$1</div>',
@@ -73,7 +91,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		$out->addWikiMsg( 'supportedlanguages-localsummary' );
 
-		$names = Language::fetchLanguageNames( null, 'all' );
+		$names = $this->langNameUtils->getLanguageNames( null, 'all' );
 		$languages = $this->languageCloud();
 		// There might be all sorts of subpages which are not languages
 		$languages = array_intersect_key( $languages, $names );
@@ -81,7 +99,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->outputLanguageCloud( $languages, $names );
 		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $languages ) ) );
 
-		if ( !$par || !Language::isKnownLanguageTag( $par ) ) {
+		if ( !$par || !$this->langNameUtils->isKnownLanguageTag( $par ) ) {
 			return;
 		}
 
@@ -111,8 +129,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
 		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->text();
 
-		$local = Language::fetchLanguageName( $code, $lang->getCode(), 'all' );
-		$native = Language::fetchLanguageName( $code, null, 'all' );
+		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode(), 'all' );
+		$native = $this->langNameUtils->getLanguageName( $code, null, 'all' );
 
 		if ( $local !== $native ) {
 			$headerText = $this->msg( 'supportedlanguages-portallink' )
@@ -168,7 +186,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			return $data;
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' ];
 		$timestamp = $dbr->timestamp( wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );

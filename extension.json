@@ -327,7 +327,15 @@
 		"ImportTranslations": "SpecialImportTranslations",
 		"ExportTranslations": "SpecialExportTranslations",
 		"ManageMessageGroups": "SpecialManageGroups",
-		"SupportedLanguages": "SpecialSupportedLanguages",
+		"SupportedLanguages": {
+			"class": "SpecialSupportedLanguages",
+			"services": [
+				"MainConfig",
+				"Translate:TranslatorActivity",
+				"LanguageNameUtils",
+				"DBLoadBalancer"
+			]
+		},
 		"AggregateGroups": "SpecialAggregateGroups",
 		"SearchTranslations": "SpecialSearchTranslations"
 	},
