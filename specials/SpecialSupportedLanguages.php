@@ -159,8 +159,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	protected function languageCloud() {
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-language-cloud' );
+		// TODO: Inject a factory when such a thing is available in MediaWiki core
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cachekey = $cache->makeKey( 'translate-supportedlanguages-language-cloud' );
 
 		$data = $cache->get( $cachekey );
 		if ( is_array( $data ) ) {
