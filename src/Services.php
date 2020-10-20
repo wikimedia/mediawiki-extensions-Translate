@@ -25,10 +25,10 @@ class Services implements ContainerInterface {
 	/** @var self */
 	private static $instance;
 
-	/** @var MediaWikiServices */
+	/** @var ContainerInterface */
 	private $container;
 
-	private function __construct( MediaWikiServices $container ) {
+	private function __construct( ContainerInterface $container ) {
 		$this->container = $container;
 	}
 
@@ -39,35 +39,33 @@ class Services implements ContainerInterface {
 
 	/** @inheritDoc */
 	public function get( $id ) {
-		// Can be changed to using ::get once we drop support for MW 1.33
-		return $this->container->getService( $id );
+		return $this->container->get( $id );
 	}
 
 	/** @inheritDoc */
 	public function has( $id ) {
-		// Can be changed to using ::has once we drop support for MW 1.33
-		return $this->container->hasService( $id );
+		return $this->container->has( $id );
 	}
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
-		return $this->container->getService( 'Translate:GroupSynchronizationCache' );
+		return $this->get( 'Translate:GroupSynchronizationCache' );
 	}
 
 	/** @since 2020.07 */
 	public function getParsingPlaceholderFactory(): ParsingPlaceholderFactory {
-		return $this->container->getService( 'Translate:ParsingPlaceholderFactory' );
+		return $this->get( 'Translate:ParsingPlaceholderFactory' );
 	}
 
 	public function getTranslatablePageParser(): TranslatablePageParser {
-		return $this->container->get( 'Translate:TranslatablePageParser' );
+		return $this->get( 'Translate:TranslatablePageParser' );
 	}
 
 	/** @since 2020.09 */
 	public function getTranslationStatsDataProvider(): TranslationStatsDataProvider {
-		return $this->container->getService( 'Translate:TranslationStatsDataProvider' );
+		return $this->get( 'Translate:TranslationStatsDataProvider' );
 	}
 
 	public function getTranslatorActivity(): TranslatorActivity {
-		return $this->container->getService( 'Translate:TranslatorActivity' );
+		return $this->get( 'Translate:TranslatorActivity' );
 	}
 }
