@@ -17,7 +17,7 @@
 	"apihelp-query+languagestats-param-language": "Кôд језика",
 	"apihelp-managemessagegroups-param-groupId": "ID групе",
 	"apihelp-translationstash-param-subaction": "Радња",
-	"apierror-translate-sandbox-invalidppassword": "Неважећа лозинка",
+	"apierror-translate-sandbox-invalidppassword": "Невалидна лозинка",
 	"apierror-translate-smg-nochanges": "Нема измена за обраду.",
 	"apierror-translate-unknownmessage": "Непозната порука",
 	"apierror-translate-invalid-changeset-name": "Дато је неважеће име датотеке скупа измена — $1",
