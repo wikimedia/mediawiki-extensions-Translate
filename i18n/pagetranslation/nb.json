@@ -222,7 +222,7 @@
 	"pp-pagename-missing": "Skriv inn sidenavnet.",
 	"pp-diff-old-header": "Kildetekst",
 	"pp-diff-new-header": "Forberedt tekst",
-	"tpt-unlink-confirm": "Bekreft at du ønsker å fjerne siden fra oversettelsessystemet.\nSpråkvelgeren og oversatte sidenavn vil slutte å fungere.\nDe enkelte oversatte sidene vil kunne ridegeres direkte.",
+	"tpt-unlink-confirm": "Bekreft at du ønsker å fjerne siden fra oversettelsessystemet.\nSpråkvelgeren og oversatte sidenavn vil slutte å fungere.\nDe enkelte oversatte sidene vil kunne redigeres direkte.",
 	"tpt-unlink-button": "Fjern fra oversettelse",
 	"tpt-unlink-summary": "Fjernet side fra oversettelse",
 	"tpt-generic-confirm": "Bekreft handlingen.",

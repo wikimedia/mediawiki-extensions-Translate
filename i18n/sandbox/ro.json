@@ -27,5 +27,6 @@
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|traducere finalizată|traduceri finalizate|de traduceri finalizate}}",
 	"translate-translationstash-skip-button-label": "Încercați o alta",
 	"tsb-limit-reached-title": "Mulțumim pentru traduceri",
-	"tsb-no-requests-from-new-users": "Nicio cerere din partea utilizatorilor noi"
+	"tsb-no-requests-from-new-users": "Nicio cerere din partea utilizatorilor noi",
+	"log-name-translatorsandbox": "Jurnal traduceri cutie cu nisip"
 }

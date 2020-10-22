@@ -50,6 +50,8 @@
 	"translate-pref-editassistlang": "सहायक भाषा:",
 	"prefs-translate": "अनुवाद विकल्प",
 	"right-translate-messagereview": "अनुवाद समीक्षा",
+	"translate-rcfilters-translations": "अनुवाद",
+	"translate-rcfilters-translations-only-label": "अनुवाद",
 	"translate-rc-translation-filter": "अनुवाद फ़िल्टर करें:",
 	"translate-rc-translation-filter-no": "कुछ न करें",
 	"translate-rc-translation-filter-only": "केवल अनुवाद दिखाएँ",
