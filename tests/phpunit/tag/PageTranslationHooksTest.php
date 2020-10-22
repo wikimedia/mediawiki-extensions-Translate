@@ -95,15 +95,14 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		// Check that our code works for translation pages
 		$parserOutput = $parser->parse( 'fi-pupu', $translationPageTitle, $options );
 		$actual = $parserOutput->getExtensionData( 'translate-translation-page' );
-		$expected = [
-			'sourcepagetitle' => $translatablePageTitle,
-			'languagecode' => 'fi',
-			'messagegroupid' => 'page-Vuosaari',
-		];
 		$this->assertIsArray( $actual, 'Extension data is set on marked page' );
+		$actualTitle = Title::makeTitle(
+			$actual[ 'sourcepagetitle' ][ 'namespace' ],
+			$actual[ 'sourcepagetitle' ][ 'dbkey' ]
+		);
 		$this->assertSame(
 			'Vuosaari',
-			$actual[ 'sourcepagetitle' ]->getPrefixedText(),
+			$actualTitle->getPrefixedText(),
 			'Source page title is correct'
 		);
 		$this->assertSame(
