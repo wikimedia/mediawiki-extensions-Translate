@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hakim1bal"
+		]
+	},
+	"searchtranslations": "ⵔⵣⵓ ⵜⵉⵙⵓⵖⴰⵍ",
+	"tux-sst-edit": "ⵙⵏⴼⵍ ⵜⴰⵙⵓⵖⵍⵜ",
+	"tux-sst-view-foreign": "ⵙⴽⵏ ⴳ $1",
+	"tux-sst-search": "ⵔⵣⵓ",
+	"tux-sst-search-ph": "ⵔⵣⵓ ⵜⵉⵙⵓⵖⴰⵍ",
+	"tux-sst-facet-language": "ⵜⵓⵜⵍⴰⵢⵉⵏ",
+	"tux-sst-next": "ⵖⵔ ⵣⴷⴰⵜ",
+	"tux-sst-prev": "ⵖⵔ ⴷⴼⴼⵉⵔ",
+	"tux-sst-default": "ⵜⵉⵙⵓⵖⴰⵍ",
+	"tux-sst-translated": "ⵜⵉⵙⵓⵖⴰⵍ ⵙⴳ $1",
+	"tux-sst-untranslated": "ⵡⴰⵍⵓ ⵜⵉⵙⵓⵖⴰⵍ ⵙⴳ $1",
+	"tux-sst-ellipsis-untranslated": "ⵡⴰⵍⵓ ⵜⵉⵙⵓⵖⴰⵍ"
+}

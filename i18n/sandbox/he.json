@@ -18,7 +18,7 @@
 	"tsb-email-rejected-body": "שלום $1,\n\nתודה על בקשתך להיות {{GENDER:$1|מתרגם|מתרגמת}} באתר {{SITENAME}}. אני {{GENDER:$3|מצטער|מצטערת}} להודיע לך שדחיתי את בקשתך משום שהאיכות של התרגומים שלך לא עמדה בדרישות.\n\nאם נראה לך שהבקשה נדחתה בטעות, {{GENDER:$1|נסה|נסי}} להירשם שוב בתור {{GENDER:$1|מתרגם|מתרגמת}} באתר {{SITENAME}} בכתובת הבאה:\n$2\n\n$3\nסגל {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|בקשה אחת|$1 בקשות}}",
 	"tsb-all-languages-button-label": "כל השפות",
-	"tsb-search-requests": "חיפוש בקשות",
+	"tsb-search-requests": "חיפוש בקשות ממתינות",
 	"tsb-accept-button-label": "לקבל",
 	"tsb-reject-button-label": "לדחות",
 	"tsb-selected-count": "{{PLURAL:$1|נבחר משתמש אחד|נבחרו $1 משתמשים}}",

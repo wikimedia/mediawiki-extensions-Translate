@@ -1,8 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aefgh39622",
 			"Octahedron80"
 		]
 	},
-	"tux-sst-count": "ค้นพบ $1 {{PLURAL:$1|ผลลัพธ์|ผลลัพธ์}}"
+	"searchtranslations": "ค้นหาการแปล",
+	"tux-sst-edit": "แก้ไขการแปล",
+	"tux-sst-view-foreign": "ดูที่ $1",
+	"tux-sst-search": "ค้นหา",
+	"tux-sst-search-ph": "ค้นหาการแปล",
+	"tux-sst-count": "ค้นพบ $1 {{PLURAL:$1|ผลลัพธ์|ผลลัพธ์}}",
+	"tux-sst-facet-language": "ภาษา",
+	"tux-sst-facet-group": "กลุ่มข้อความ",
+	"tux-sst-nosolr-title": "การค้นหาไม่สามารถใช้ได้",
+	"tux-sst-nosolr-body": "วิกินี้ไม่มีบริการค้นหาการแปล",
+	"tux-sst-solr-offline-title": "การค้นหาไม่สามารถใช้ได้",
+	"tux-sst-solr-offline-body": "บริการค้นหาไม่สามารถใช้ได้ชั่วคราว",
+	"tux-sst-next": "ถัดไป ›",
+	"tux-sst-prev": "‹ ก่อนหน้า",
+	"tux-sst-default": "การแปล",
+	"tux-sst-translated": "การแปลจาก $1",
+	"tux-sst-untranslated": "ไม่มีการแปลจาก $1",
+	"tux-sst-ellipsis-untranslated": "ไม่มีการแปล"
 }

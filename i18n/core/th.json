@@ -187,6 +187,8 @@
 	"translate-smg-more": "จะมีการเปลี่ยนแปลงที่จะประมวลผลเพิ่มเติมหลังจากที่ส่งการเปลี่ยนแปลงเหล่านี้แล้ว",
 	"translate-smg-left": "เนื้อหาข้อความในวิกิ",
 	"translate-smg-right": "การเปลี่ยนแปลงที่ใกล้จะมาถึง",
+	"translate-smg-rename-select": "เลือก",
+	"translate-smg-rename-cancel": "ยกเลิก",
 	"translate-manage-import-diff": "ข้อความ $1 | การกระทำ: $2",
 	"translate-manage-import-new": "ข้อความใหม่ $1",
 	"translate-manage-import-deleted": "ข้อความที่ลบแล้ว $1",
@@ -212,12 +214,13 @@
 	"translate-import-err-no-such-file": "ไม่ปรากฎไฟล์ <nowiki>$1</nowiki> หรือไฟล์นี้ไม่ได้ถูกอัพโหลดเข้ามา",
 	"translate-import-err-stale-group": "ไฟล์ที่เป็นสมาชิกของกลุ่มข้อความนี้ไม่มีอยู่",
 	"translate-import-err-no-headers": "ไฟล์นี้ไม่ใช่ไฟล์ Gettext ในส่วนเพิ่มเติมการแปลภาษาที่ดี:\n<br />ไม่สามารถกำหนดกลุ่มและภาษาจากส่วนต้นของไฟล์ได้",
-	"translate-js-support-unsaved-warning": "คุณมีการแปลที่ยังไม่ได้บันทึก",
+	"translate-js-support-unsaved-warning": "คุณมีการแปลที่ยังไม่ได้เผยแพร่",
 	"translate-gs-pos": "ตำแหน่ง",
 	"translate-gs-code": "รหัส",
 	"translate-gs-continent": "ทวีป",
 	"translate-gs-speakers": "จำนวนผู้ใช้",
 	"translate-gs-score": "คะแนน",
+	"translate-gs-count": "จำนวน",
 	"translate-gs-total": "รวม",
 	"translate-gs-avgscore": "คะแนนเฉลี่ย",
 	"translate-documentation-language": "เอกสารกำกับสาร",
@@ -337,5 +340,7 @@
 	"translate-statsbar-tooltip": "แปลแล้ว $1%, ตรวจทานแล้ว $2%",
 	"translate-statsbar-tooltip-with-fuzzy": "แปลแล้ว $1%, ตรวจทานแล้ว $2%, ล้าสมัย $3%",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|กลุ่ม}}เพิ่มเติม",
-	"tux-nojs": "เครื่องมือนี้ไม่สามารถทำงานได้โดยไม่มี JavaScript JavaScript อาจถูกปิดใช้งาน ไม่สามารถทำงานได้ หรือเบราว์เซอร์นี้ไม่รองรับ"
+	"translate-syntax-error": "การแปลมีข้อผิดพลาดไวยากรณ์",
+	"tux-nojs": "เครื่องมือนี้ไม่สามารถทำงานได้โดยไม่มี JavaScript JavaScript อาจถูกปิดใช้งาน ไม่สามารถทำงานได้ หรือเบราว์เซอร์นี้ไม่รองรับ",
+	"specialpages-group-translation": "การแปล"
 }

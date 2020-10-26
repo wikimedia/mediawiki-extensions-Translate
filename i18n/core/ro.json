@@ -9,6 +9,7 @@
 			"KlaudiuMihaila",
 			"McDutchie",
 			"Minisarm",
+			"NGC 54",
 			"Sociologist",
 			"Stelistcristi"
 		]
@@ -81,6 +82,7 @@
 	"action-translate-import": "importați traduceri off-line",
 	"right-translate-messagereview": "Revizuiește traduceri",
 	"right-translate-groupreview": "Schimbă starea fluxului de lucru a grupurilor de mesaje",
+	"translate-rcfilters-translations-filter-label": "Nu traduceri",
 	"translate-rc-translation-filter": "Filtru de traduceri:",
 	"translate-rc-translation-filter-no": "Nu fă nimic",
 	"translate-rc-translation-filter-only": "Arată doar traduceri",
