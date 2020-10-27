@@ -60,7 +60,7 @@ class TranslateDeleteJob extends Job {
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
-		if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
+		if ( version_compare( TranslateUtils::getMWVersion(), '1.35', '<' ) ) {
 			$status = $wikipage->doDeleteArticleReal(
 				"{$summary}: $reason",
 				// https://phabricator.wikimedia.org/T262800

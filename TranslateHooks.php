@@ -46,7 +46,7 @@ class TranslateHooks {
 			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 		}
 
-		$usePageSaveComplete = version_compare( MW_VERSION, '1.35', '>=' );
+		$usePageSaveComplete = version_compare( TranslateUtils::getMWVersion(), '1.35', '>=' );
 		if ( $usePageSaveComplete ) {
 			$wgHooks['PageSaveComplete'][] = 'TranslateEditAddons::onSaveComplete';
 		} else {
@@ -829,10 +829,10 @@ class TranslateHooks {
 	 * @param ResourceLoader $resourceLoader
 	 */
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
-		global $wgVersion;
-
 		// Support: MediaWiki <= 1.34
-		$hasOldTokens = $hasOldNotify = version_compare( $wgVersion, '1.35', '<' );
+		$hasOldTokens = $hasOldNotify = version_compare(
+			TranslateUtils::getMWVersion(), '1.35', '<'
+		);
 
 		$tpl = [
 			'localBasePath' => __DIR__,

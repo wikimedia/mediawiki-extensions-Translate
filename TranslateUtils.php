@@ -569,4 +569,17 @@ class TranslateUtils {
 
 		return false;
 	}
+
+	/**
+	 * Add support for <= 1.34. Wrapper method to fetch the the MW version
+	 * @return string
+	 */
+	public static function getMWVersion(): string {
+		if ( defined( 'MW_VERSION' ) ) {
+			return MW_VERSION;
+		}
+
+		global $wgVersion;
+		return $wgVersion;
+	}
 }

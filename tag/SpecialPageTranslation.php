@@ -890,7 +890,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return [ 'tpt-edit-failed', $status->getWikiText() ];
 		}
 
-		if ( version_compare( MW_VERSION, '1.35', '>=' ) ) {
+		if ( version_compare( TranslateUtils::getMWVersion(), '1.35', '>=' ) ) {
 			// MW 1.35+
 			// Cannot use array_key_exists with DeprecatablePropertyArray, and
 			// $status->value['revision-record'] can be null, so isset doesn't

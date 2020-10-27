@@ -64,7 +64,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 
 		$reason = wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text();
 		$deleter = $this->getUser();
-		if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
+		if ( version_compare( TranslateUtils::getMWVersion(), '1.35', '<' ) ) {
 			$dummyError = '';
 			// https://phabricator.wikimedia.org/T262800
 			// @phan-suppress-next-line PhanTypeMismatchArgumentReal
