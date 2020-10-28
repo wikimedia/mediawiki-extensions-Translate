@@ -69,8 +69,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		$this->text = $request->getVal( 'wpTitle', $par );
 		$this->title = Title::newFromText( $this->text );
 		$this->reason = $request->getText( 'wpReason' );
-		// Checkboxes that default being checked are tricky
-		$this->doSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
+		$this->doSubpages = $request->getBool( 'subpages' );
 
 		$user = $this->getUser();
 
@@ -322,7 +321,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			);
 		}
 
-		if ( !$this->doSubpages ) {
+		if ( $this->doSubpages ) {
 			$subpages = $this->getSubpages();
 			foreach ( $subpages as $old ) {
 				if ( TranslatablePage::isTranslationPage( $old ) ) {
