@@ -81,7 +81,7 @@
 	"tux-editor-doc-editor-save": "ምስናድ ሓትም",
 	"tux-editor-doc-editor-cancel": "ኣትርፍ",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|መልእኽቲ|መልእኽትታት}} ኣብ ምጽዓን...",
-	"tux-message-filter-advanced-button": "ብሉጽ ምድላይ",
+	"tux-message-filter-advanced-button": "ዝማዕበለ ምድላይ",
 	"tux-message-filter-optional-messages-label": "ኣማራጽያዊ መልእኽትታት",
 	"tux-empty-list-translated-action": "ተርጉም",
 	"tux-editor-close-tooltip": "ዕጸው",
