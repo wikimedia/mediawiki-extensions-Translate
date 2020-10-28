@@ -179,7 +179,7 @@
 	}
 
 	function updateGroupWarning( group, language ) {
-		var preferredLanguages, headerMessage, languagesMessage,
+		var $preferredLanguages, headerMessage, languagesMessage,
 			$groupWarning = $( '.tux-editor-header .group-warning' );
 
 		if ( !group.prioritylangs || isPriorityLanguage( language, group.prioritylangs ) ) {
@@ -187,29 +187,42 @@
 		}
 
 		// Make a comma-separated list of preferred languages
-		preferredLanguages = group.prioritylangs.map( function ( lang ) {
+		$preferredLanguages = $( '<span>' );
+		group.prioritylangs.forEach( function ( languageCode, index ) {
 			// bidi isolation for language names
-			return '<bdi>' + $.uls.data.getAutonym( lang ) + '</bdi>';
-		} ).join( ', ' );
+			$preferredLanguages.append(
+				$( '<bdi>' ).text( $.uls.data.getAutonym( languageCode ) )
+			);
 
-		headerMessage = mw.message(
-			group.priorityforce ?
-				'tpt-discouraged-language-force-header' :
+			// Add comma between languages
+			if ( index + 1 !== group.prioritylangs.length ) {
+				$preferredLanguages.append( ', ' );
+			}
+		} );
+
+		if ( group.priorityforce ) {
+			headerMessage = mw.message(
+				'tpt-discouraged-language-force-header',
+				$.uls.data.getAutonym( language )
+			);
+			languagesMessage = mw.message(
+				'tpt-discouraged-language-force-content',
+				$preferredLanguages
+			);
+		} else {
+			headerMessage = mw.message(
 				'tpt-discouraged-language-header',
-			$.uls.data.getAutonym( language )
-		).parse();
-
-		languagesMessage = mw.message(
-			group.priorityforce ?
-				'tpt-discouraged-language-force-content' :
+				$.uls.data.getAutonym( language )
+			);
+			languagesMessage = mw.message(
 				'tpt-discouraged-language-content',
-			preferredLanguages
-		).parse();
+				$preferredLanguages
+			);
+		}
 
 		$groupWarning.append(
-			$( '<p>' ).append( $( '<strong>' ).text( headerMessage ) ),
-			// html because of the <bdi> and because it's parsed
-			$( '<p>' ).html( languagesMessage )
+			$( '<p>' ).append( $( '<strong>' ).text( headerMessage.text() ) ),
+			$( '<p>' ).append( languagesMessage.parseDom() )
 		);
 	}
 
