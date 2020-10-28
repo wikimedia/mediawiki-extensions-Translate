@@ -1,0 +1,24 @@
+== Translate 2020.10 ==
+Released at 2020-10-28.
+
+=== Highlights ===
+The Translate extension now requires MediaWiki 1.34 or above.
+
+* Update the language selector on the Special:PageTranslation ({{Gerrit|616762}})
+* Do not list all pages on marking a page for translation ({{Gerrit|621034}})
+* Add API to fetch translation statistics ({{Gerrit|623169}})
+* Replace PHPlot with Chart.js on Special:TranslationStats ({{Phabricator|T134634}})
+* Fix mandatory deletion of sub pages when deleting translatable pages ({{Gerrit|636871}})
+* Rename MessageValidator namespace to Validation ({{Gerrit|616069}})
+* Legacy editor: remove various translation helpers, custom buttons
+* Make Language stats appear better on mobile screens and the header sticky ({{Gerrit|631979}})
+* Tag untranslated translations units with lang and dir attributes ({{Phabricator|T254484}})
+* Add magic word: <code>{{TRANSLATIONLANGUAGE}}</code> for translatable
+pages ({{Phabricator|T254486}})
+* Avoid showing bdi tags on Special:Translate ({{Phabricator|T117852}})
+* Add [[Help:Extension:Translate/Developer_guide|Developer guide]] for
+Translate ({{Phabricator|T256873}})
+* Fix "Translation page does not contain the latest translations/last
+translation" ({{Phabricator|T255334}})
+* Fix "This namespace is reserved for content page translations" when trying to
+translate a recently created translation unit" ({{Phabricator|T221119}})
