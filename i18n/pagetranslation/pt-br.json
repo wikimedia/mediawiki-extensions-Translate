@@ -91,6 +91,7 @@
 	"tpt-target-page": "Esta página não pode ser atualizada manualmente.\nEsta página é uma tradução da página [[$1]]. Sua tradução pode ser atualizada usando [$2 a ferramenta de tradução].",
 	"tpt-unknown-page": "Este espaço nominal é reservado para traduções de páginas de conteúdo.\nA página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.",
 	"tpt-translation-restricted": "Um coordenador de traduções desautorizou que esta página seja traduzida para este idioma.\n\nMotivo: $1",
+	"tpt-translation-restricted-no-reason": "A tradução desta página para este idioma foi impedida por um administrador de tradução.",
 	"tpt-discouraged-language-force-header": "Est página não pode ser traduzida para $1.",
 	"tpt-discouraged-language-force-content": "Um administrador de tradução decidiu que esta página só pode ser traduzida para $1.",
 	"tpt-discouraged-language-header": "Traduzir para $1 não é uma prioridade para esta página.",
