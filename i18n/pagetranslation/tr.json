@@ -93,6 +93,7 @@
 	"tpt-target-page": "Bu sayfa elle güncellenemez.\nBu sayfa [[$1]] sayfasının bir çevirisidir ve çeviri, [$2 çeviri aracı] kullanılarak güncellenebilir.",
 	"tpt-unknown-page": "Bu ad alanı içerik sayfası çevirileri için ayrılmıştır.\nDüzenlemeye çalıştığınız sayfa, çeviri için işaretlenmiş hiçbir sayfaya karşılık gelmiyor gibi görünüyor.",
 	"tpt-translation-restricted": "Bu sayfanın bu dile çevirisi çeviri hizmetlisi tarafından engellendi.\n\nSebep: $1",
+	"tpt-translation-restricted-no-reason": "Bu sayfanın bu dile çevrilmesi bir çeviri hizmetli tarafından engellendi.",
 	"tpt-discouraged-language-force-header": "Bu sayfa $1 ile çevrilemez.",
 	"tpt-discouraged-language-force-content": "Bir çeviri hizmetlisi bu sayfanın yalnızca $1 ile çevrilebileceğine karar verdi.",
 	"tpt-discouraged-language-header": "$1 ile çevirmek bu sayfaya bir öncelik değildir.",
