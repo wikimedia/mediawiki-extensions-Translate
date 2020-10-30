@@ -76,7 +76,7 @@ class MessageHandle {
 
 	/**
 	 * Returns the identified or guessed message key.
-	 * @return String
+	 * @return string
 	 */
 	public function getKey() {
 		$this->figureMessage();
@@ -87,7 +87,7 @@ class MessageHandle {
 	/**
 	 * Returns the language code.
 	 * For language codeless source messages will return empty string.
-	 * @return String
+	 * @return string
 	 */
 	public function getCode() {
 		$this->figureMessage();

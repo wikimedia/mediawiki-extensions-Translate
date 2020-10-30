@@ -180,7 +180,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 *
 	 * @param string $key Message key
 	 * @param string $code Language code
-	 * @return Mixed List of stored translation or \null.
+	 * @return mixed List of stored translation or \null.
 	 */
 	public function getMessage( $key, $code ) {
 		if ( !isset( $this->messages[$code] ) ) {

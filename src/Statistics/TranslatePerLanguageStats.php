@@ -181,16 +181,16 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	 */
 	protected function formatTimestamp( $timestamp ) {
 		switch ( $this->opts->getValue( 'scale' ) ) {
-			case 'hours' :
+			case 'hours':
 				$cut = 4;
 				break;
-			case 'days' :
+			case 'days':
 				$cut = 6;
 				break;
 			case 'months':
 				$cut = 8;
 				break;
-			default :
+			default:
 				return MediaWikiServices::getInstance()->getContentLanguage()
 					->sprintfDate( $this->getDateFormat(), $timestamp );
 		}

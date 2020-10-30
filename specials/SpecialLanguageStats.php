@@ -26,7 +26,7 @@ class SpecialLanguageStats extends SpecialPage {
 	protected $table;
 
 	/**
-	 * @var Array
+	 * @var array
 	 */
 	protected $targetValueName = [ 'code', 'language' ];
 

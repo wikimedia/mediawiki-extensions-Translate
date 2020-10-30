@@ -79,7 +79,7 @@ class TranslationHelpers {
 
 	/**
 	 * Gets the HTML id of the text area that contains the translation.
-	 * @return String
+	 * @return string
 	 */
 	public function getTextareaId() {
 		return $this->textareaId;
@@ -147,7 +147,7 @@ class TranslationHelpers {
 	 * Returns block element HTML snippet that contains the translation aids.
 	 * Not all boxes are shown all the time depending on whether they have
 	 * any information to show and on configuration variables.
-	 * @return String Block level HTML snippet or empty string.
+	 * @return string Block level HTML snippet or empty string.
 	 */
 	public function getBoxes() {
 		// Box filter
