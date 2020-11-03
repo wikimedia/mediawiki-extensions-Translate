@@ -302,7 +302,7 @@
 	"translate-workflow-autocreated-summary": "Automatisk skapande av sida för arbetsflödesstatus $1",
 	"translate-stats-workflow": "Tillstånd",
 	"translate-workflowgroup-label": "Arbetsflödesstatus",
-	"translate-workflowgroup-desc": "Denna meddelandegrupp visar all arbetsflödesstatus för översättningar.\nAll status är definierad i konfigurationsvariabeln $wgTranslateWorkflowStates.",
+	"translate-workflowgroup-desc": "Denna meddelandegrupp visar alla arbetsflödesstatusar för översättningar.\nAlla statusar finns definierade i konfigurationsvariabeln $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Senaste översättningar",
 	"translate-dynagroup-recent-desc": "Denna meddelandegrupp visar alla de senaste översättningar på detta språk.\nFrämst användbar för granskningsuppgifter.",
 	"translate-dynagroup-additions-label": "Senaste tillägg",
