@@ -59,6 +59,9 @@
 			"i18n/search"
 		]
 	},
+	"ContentHandlers": {
+		"translate-messagebundle": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\MessageBundleContentHandler"
+	},
 	"AutoloadClasses": {
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
 		"AggregateMessageGroupLoader": "messagegroups/loaders/AggregateMessageGroupLoader.php",
@@ -307,7 +310,16 @@
 		"AbuseFilterAlterVariables": "TranslateHooks::onAbuseFilterAlterVariables",
 		"AbuseFilter-computeVariable": "TranslateHooks::onAbuseFilterComputeVariable",
 		"AbuseFilter-builder": "TranslateHooks::onAbuseFilterBuilder",
-		"EditFilterMergedContent": "TranslateHooks::validateMessage"
+		"EditFilterMergedContent": [
+			"TranslateHooks::validateMessage",
+			"messageBundle"
+		],
+		"PageSaveComplete": "messageBundle"
+	},
+	"HookHandlers": {
+		"messageBundle": {
+			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
+		}
 	},
 	"SpecialPages": {
 		"Translate": "SpecialTranslate",

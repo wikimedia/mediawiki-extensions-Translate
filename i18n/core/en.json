@@ -412,5 +412,13 @@
 	"translate-syntax-error": "Translation contains syntax errors",
 	"tux-session-expired": "You are no longer logged in. Please log in in a separate tab. Alternatively, make a copy of unsaved translations, log in, return to this page and enter your translations again.",
 	"tux-nojs": "This tool does not work without JavaScript. JavaScript is disabled, failed to work, or this browser is unsupported.",
-	"specialpages-group-translation": "Translation"
+	"specialpages-group-translation": "Translation",
+	"content-model-translate-messagebundle": "Translatable message bundle",
+	"translate-messagebundle-validation-error": "Invalid message bundle: $1",
+	"translate-messagebundle-error-invalid-array": "Message bundle must be a JSON object. Got type $1",
+	"translate-messagebundle-error-key-empty": "Message bundle must not contain an empty key",
+	"translate-messagebundle-error-key-too-long": "Key \"$1\" is too long",
+	"translate-messagebundle-error-key-invalid-characters": "Key \"$1\" contains disallowed characters",
+	"translate-messagebundle-error-invalid-value": "Key \"$1\" does not contain string value",
+	"translate-messagebundle-error-empty-value": "Key \"$1\" does not have a value"
 }

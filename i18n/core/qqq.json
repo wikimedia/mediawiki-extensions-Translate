@@ -447,5 +447,13 @@
 	"translate-syntax-error": "Notice shown to the user when saving a translation fails validation due to syntax errors. This is shown following the message:\n* {{msg-mw|Tux-editor-save-failed}}",
 	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired.",
 	"tux-nojs": "An error shown in Special:Translate.",
-	"specialpages-group-translation": "{{doc-special-group}}\n{{Identical|Translation}}"
+	"specialpages-group-translation": "{{doc-special-group}}\n{{Identical|Translation}}",
+	"content-model-translate-messagebundle": "Name of a page content type",
+	"translate-messagebundle-validation-error": "Error message.\n* $1 - more details",
+	"translate-messagebundle-error-invalid-array": "Error message.\n* $1 - unlocalised PHP type",
+	"translate-messagebundle-error-key-empty": "Error message.",
+	"translate-messagebundle-error-key-too-long": "Error message.\n* $1 - message key",
+	"translate-messagebundle-error-key-invalid-characters": "Error message.\n* $1 - message key",
+	"translate-messagebundle-error-invalid-value": "Error message.\n* $1 - message key",
+	"translate-messagebundle-error-empty-value": "Error message.\n* $1 - message key"
 }
