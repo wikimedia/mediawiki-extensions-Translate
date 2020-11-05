@@ -246,7 +246,7 @@ class CommandlineExport extends Maintenance {
 				if ( $emptyLangs !== [] ) {
 					$this->output(
 						"Message group $groupId doesn't contain messages in language(s): " .
-						implode( ', ', $emptyLangs ) . "."
+						implode( ', ', $emptyLangs ) . ".\n"
 					);
 				}
 
@@ -265,7 +265,7 @@ class CommandlineExport extends Maintenance {
 				continue;
 			}
 
-			$this->output( 'Exporting ' . count( $langs ) . " languages for group $groupId" );
+			$this->output( 'Exporting ' . count( $langs ) . " languages for group $groupId\n" );
 
 			if ( $forOffline ) {
 				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group, $offlineTargetPattern );
