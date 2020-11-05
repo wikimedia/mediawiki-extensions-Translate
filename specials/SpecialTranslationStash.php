@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
+
 /**
  * Special page for new users to translate example messages.
  *

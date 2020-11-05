@@ -7,20 +7,23 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+
+use Title;
+use User;
+
 /**
  * Value object for stashed translation which you can construct.
+ *
  * @since 2013.06
  */
 class StashedTranslation {
 	/** @var User */
 	protected $user;
-
 	/** @var Title */
 	protected $title;
-
 	/** @var string */
 	protected $value;
-
 	/** @var array|null */
 	protected $metadata;
 

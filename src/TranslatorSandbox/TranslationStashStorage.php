@@ -7,16 +7,20 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+
+use Title;
+use User;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Storage class for stashed translations. This one uses sql tables as storage.
+ *
  * @since 2013.06
  */
 class TranslationStashStorage {
 	/** @var IDatabase */
 	protected $db;
-
 	/** @var string */
 	protected $dbTable;
 
@@ -45,7 +49,7 @@ class TranslationStashStorage {
 		];
 
 		$indexes = [
-			[ 'ts_user', 'ts_namespace', 'ts_title' ]
+			[ 'ts_user', 'ts_namespace', 'ts_title' ],
 		];
 
 		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );
@@ -53,6 +57,7 @@ class TranslationStashStorage {
 
 	/**
 	 * Gets all stashed translations for the given user.
+	 *
 	 * @param User $user
 	 * @return StashedTranslation[]
 	 */
@@ -77,6 +82,7 @@ class TranslationStashStorage {
 
 	/**
 	 * Delete all stashed translations for the given user.
+	 *
 	 * @param User $user
 	 * @since 2013.10
 	 */

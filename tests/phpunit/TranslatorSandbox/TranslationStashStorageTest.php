@@ -5,11 +5,16 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+
+use MediaWikiIntegrationTestCase;
+use Title;
+use User;
+
 /**
  * @group Database
  */
 class TranslationStashStorageTest extends MediaWikiIntegrationTestCase {
-
 	public function testAdd() {
 		$storage = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
