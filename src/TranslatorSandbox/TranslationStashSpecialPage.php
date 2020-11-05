@@ -22,7 +22,7 @@ use TranslateUtils;
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslationStash extends SpecialPage {
+class TranslationStashSpecialPage extends SpecialPage {
 	/** @var TranslationStashStorage */
 	protected $stash;
 
