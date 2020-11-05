@@ -24,9 +24,10 @@ use User;
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialManageTranslatorSandbox extends SpecialPage {
+class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 	/** @var TranslationStashReader */
 	private $stash;
+
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
 	];
