@@ -8,7 +8,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorSandbox\StashedTranslation;
 use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
 
 /**
@@ -49,131 +48,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
-		$this->prepareForTests();
 		$this->showPage();
-	}
-
-	/**
-	 * Deletes a user page if it exists.
-	 * This is needed especially when deleting sandbox users
-	 * that were created as part of the integration tests.
-	 * @param User $user
-	 */
-	protected function deleteUserPage( $user ) {
-		$userpage = WikiPage::factory( $user->getUserPage() );
-		if ( !$userpage->exists() ) {
-			return;
-		}
-
-		$reason = wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text();
-		$deleter = $this->getUser();
-		if ( version_compare( TranslateUtils::getMWVersion(), '1.35', '<' ) ) {
-			$dummyError = '';
-			// https://phabricator.wikimedia.org/T262800
-			// @phan-suppress-next-line PhanTypeMismatchArgumentReal
-			$userpage->doDeleteArticleReal( $reason, false, 0, true, $dummyError, $deleter );
-		} else {
-			$userpage->doDeleteArticleReal( $reason, $deleter );
-		}
-	}
-
-	/**
-	 * Add users to the sandbox or delete them to facilitate browsers tests.
-	 * Use with caution!
-	 */
-	public function prepareForTests() {
-		$request = $this->getRequest();
-
-		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
-			// Empty all the users, even if they were created manually
-			// to ensure the number of users is what the tests expect
-			$this->emptySandbox();
-
-			$textUsernamePrefixes = [ 'Pupu', 'Orava' ];
-			$testLanguages = [ 'fi', 'uk', 'nl', 'he', 'bn' ];
-			$testLanguagesCount = count( $testLanguages );
-
-			foreach ( $textUsernamePrefixes as $prefix ) {
-				for ( $i = 0; $i < $testLanguagesCount; $i++ ) {
-					$name = "$prefix$i";
-
-					// Get rid of users, even if promoted during tests
-					$userToDelete = User::newFromName( $name, false );
-					$this->deleteUserPage( $userToDelete );
-					TranslateSandbox::deleteUser( $userToDelete, 'force' );
-
-					$user = TranslateSandbox::addUser( $name, "$name@blackhole.io", 'porkkana' );
-					$user->setOption(
-						'translate-sandbox',
-						FormatJson::encode( [
-							'languages' => [ $testLanguages[$i] ],
-							'comment' => '',
-						] )
-					);
-
-					$reminders = [];
-					// @phan-suppress-next-line PhanSuspiciousValueComparison
-					for ( $reminderIndex = 0; $reminderIndex < $i; $reminderIndex++ ) {
-						$reminders[] = wfTimestamp() - $reminderIndex * $i * 10000;
-					}
-
-					$user->setOption(
-						'translate-sandbox-reminders',
-						implode( '|', $reminders )
-					);
-					$user->saveSettings();
-
-					// @phan-suppress-next-line PhanSuspiciousValueComparison
-					for ( $j = 0; $j < $i; $j++ ) {
-						$title = Title::makeTitle(
-							NS_MEDIAWIKI,
-							wfRandomString( 24 ) . '/' . $testLanguages[$i]
-						);
-						$translation = 'plop';
-						$stashedTranslation = new StashedTranslation( $user, $title, $translation );
-						$this->stash->addTranslation( $stashedTranslation );
-					}
-				}
-			}
-
-			// Another account for testing a translator to multiple languages
-			$oldPolyglotUser = User::newFromName( 'Kissa', false );
-			$this->deleteUserPage( $oldPolyglotUser );
-			TranslateSandbox::deleteUser( $oldPolyglotUser, 'force' );
-
-			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@blackhole.io', 'porkkana' );
-			$polyglotUser->setOption(
-				'translate-sandbox',
-				FormatJson::encode( [
-					'languages' => $testLanguages,
-					'comment' => "I know some languages, and I'm a developer.",
-				] )
-			);
-			$polyglotUser->saveSettings();
-			for ( $polyglotLang = 0; $polyglotLang < $testLanguagesCount; $polyglotLang++ ) {
-				$title = Title::makeTitle(
-					NS_MEDIAWIKI,
-					wfRandomString( 24 ) . '/' . $testLanguages[$polyglotLang]
-				);
-				$translation = "plop in $testLanguages[$polyglotLang]";
-				$stashedTranslation = new StashedTranslation( $polyglotUser, $title, $translation );
-				$this->stash->addTranslation( $stashedTranslation );
-			}
-		} elseif ( $request->getVal( 'integrationtesting' ) === 'empty' ) {
-			$this->emptySandbox();
-		}
-	}
-
-	/**
-	 * Delete all the users in the sandbox.
-	 * Use with caution!
-	 * To facilitate browsers tests.
-	 */
-	protected function emptySandbox() {
-		$users = TranslateSandbox::getUsers();
-		foreach ( $users as $user ) {
-			TranslateSandbox::deleteUser( $user );
-		}
 	}
 
 	/**
