@@ -367,11 +367,11 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
-		$pot = $this->read( 'en' )['EXTRA'];
+		// FIXME: this should be the source language
+		$pot = $this->read( 'en' ) ?? [];
 		$code = $collection->code;
-		$template = $this->read( $code )['EXTRA'];
-		$pluralCount = false;
-		$output = $this->doGettextHeader( $collection, $template );
+		$template = $this->read( $code ) ?? [];
+		$output = $this->doGettextHeader( $collection, $template['EXTRA'] ?? [] );
 
 		$pluralRule = GettextPlural::getPluralRule( $code );
 		if ( !$pluralRule ) {
@@ -385,8 +385,8 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
-			$transTemplate = $template['TEMPLATE'][$key] ?? [];
-			$potTemplate = $pot['TEMPLATE'][$key] ?? [];
+			$transTemplate = $template['EXTRA']['TEMPLATE'][$key] ?? [];
+			$potTemplate = $pot['EXTRA']['TEMPLATE'][$key] ?? [];
 
 			$output .= $this->formatMessageBlock( $key, $m, $transTemplate, $potTemplate, $pluralCount );
 		}
