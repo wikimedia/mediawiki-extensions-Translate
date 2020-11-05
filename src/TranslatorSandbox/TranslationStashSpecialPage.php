@@ -1,11 +1,5 @@
 <?php
-/**
- * TranslationStash - Translator screening page
- *
- * @file
- * @author Santhosh Thottingal
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
 
@@ -22,6 +16,8 @@ use TranslateUtils;
 /**
  * Special page for new users to translate example messages.
  *
+ * @author Santhosh Thottingal
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslationStashSpecialPage extends SpecialPage {
@@ -85,26 +81,13 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$this->showPage();
 	}
 
-	/**
-	 * Checks that the user is in the sandbox. Also handles special overrides
-	 * mainly used for integration testing.
-	 *
-	 * @return bool
-	 */
-	protected function hasPermissionToUse() {
-		$user = $this->getUser();
-
-		if ( !TranslateSandbox::isSandboxed( $user ) ) {
-			return false;
-		}
-
-		return true;
+	/** Checks that the user is in the sandbox. */
+	private function hasPermissionToUse(): bool {
+		return TranslateSandbox::isSandboxed( $this->getUser() );
 	}
 
-	/**
-	 * Generates the whole page html and appends it to output
-	 */
-	protected function showPage() {
+	/** Generates the whole page html and appends it to output */
+	private function showPage(): void {
 		$out = $this->getOutput();
 		$user = $this->getUser();
 
@@ -112,9 +95,9 @@ class TranslationStashSpecialPage extends SpecialPage {
 		if ( $count === 0 ) {
 			$progress = $this->msg( 'translate-translationstash-initialtranslation' )->parse();
 		} else {
-			$progress =
-				$this->msg( 'translate-translationstash-translations' )
-					->numParams( $count )->parse();
+			$progress = $this->msg( 'translate-translationstash-translations' )
+				->numParams( $count )
+				->parse();
 		}
 
 		$out->addHTML(
@@ -143,11 +126,11 @@ HTML
 		);
 	}
 
-	protected function getMessageTable() {
+	private function getMessageTable(): string {
 		$sourceLang = $this->getSourceLanguage();
 		$targetLang = $this->getTargetLanguage();
 
-		$list = Html::element(
+		return Html::element(
 			'div',
 			[
 				'class' => 'row tux-messagelist',
@@ -157,11 +140,9 @@ HTML
 				'data-targetlangdir' => $targetLang->getDir(),
 			]
 		);
-
-		return $list;
 	}
 
-	protected function tuxLanguageSelector() {
+	private function tuxLanguageSelector(): string {
 		// The name will be displayed in the UI language,
 		// so use for lang and dir
 		$language = $this->getTargetLanguage();
@@ -188,22 +169,14 @@ HTML
 		return "$label&#160;$trigger";
 	}
 
-	/**
-	 * Returns the source language for messages.
-	 *
-	 * @return Language
-	 */
-	protected function getSourceLanguage() {
+	/** Returns the source language for messages. */
+	protected function getSourceLanguage(): Language {
 		// Bad
 		return Language::factory( 'en' );
 	}
 
-	/**
-	 * Returns the default target language for messages.
-	 *
-	 * @return Language
-	 */
-	protected function getTargetLanguage() {
+	/** Returns the default target language for messages. */
+	private function getTargetLanguage(): Language {
 		$ui = $this->getLanguage();
 		$source = $this->getSourceLanguage();
 		if ( !$ui->equals( $source ) ) {
