@@ -125,7 +125,7 @@ HTML;
 			if ( $remindersCount ) {
 				$lastReminderTimestamp = new MWTimestamp( end( $reminders ) );
 				$lastReminderAgo = htmlspecialchars(
-					$lastReminderTimestamp->getHumanTimestamp()
+					$this->getHumanTimestamp( $lastReminderTimestamp )
 				);
 			} else {
 				$lastReminderAgo = '';
@@ -184,7 +184,7 @@ HTML;
 		$emailEnc = htmlspecialchars( $request['email'] );
 		$countEnc = htmlspecialchars( (string)$request['translations'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
-		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
+		$agoEnc = htmlspecialchars( $this->getHumanTimestamp( $timestamp ) );
 
 		return <<<HTML
 <div class="row request" data-data="$requestdataEnc" id="$nameEncForId">
@@ -201,6 +201,10 @@ HTML;
 	</div>
 </div>
 HTML;
+	}
+
+	private function getHumanTimestamp( MWTimestamp $ts ): string {
+		return $this->getLanguage()->getHumanTimestamp( $ts, null, $this->getUser() );
 	}
 
 	/**
