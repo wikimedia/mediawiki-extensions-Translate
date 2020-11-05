@@ -7,7 +7,15 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
+namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+
+use FormatJson;
+use Html;
+use Language;
+use SpecialPage;
+use Title;
+use TranslateSandbox;
+use TranslateUtils;
 
 /**
  * Special page for new users to translate example messages.
@@ -85,11 +93,13 @@ class SpecialTranslationStash extends SpecialPage {
 		if ( $count === 0 ) {
 			$progress = $this->msg( 'translate-translationstash-initialtranslation' )->parse();
 		} else {
-			$progress = $this->msg( 'translate-translationstash-translations' )
-				->numParams( $count )->parse();
+			$progress =
+				$this->msg( 'translate-translationstash-translations' )
+					->numParams( $count )->parse();
 		}
 
-		$out->addHTML( <<<HTML
+		$out->addHTML(
+			<<<HTML
 <div class="grid">
 	<div class="row translate-welcome-header">
 		<h1>
@@ -118,13 +128,16 @@ HTML
 		$sourceLang = $this->getSourceLanguage();
 		$targetLang = $this->getTargetLanguage();
 
-		$list = Html::element( 'div', [
-			'class' => 'row tux-messagelist',
-			'data-sourcelangcode' => $sourceLang->getCode(),
-			'data-sourcelangdir' => $sourceLang->getDir(),
-			'data-targetlangcode' => $targetLang->getCode(),
-			'data-targetlangdir' => $targetLang->getDir(),
-		] );
+		$list = Html::element(
+			'div',
+			[
+				'class' => 'row tux-messagelist',
+				'data-sourcelangcode' => $sourceLang->getCode(),
+				'data-sourcelangdir' => $sourceLang->getDir(),
+				'data-targetlangcode' => $targetLang->getCode(),
+				'data-targetlangdir' => $targetLang->getDir(),
+			]
+		);
 
 		return $list;
 	}
@@ -158,6 +171,7 @@ HTML
 
 	/**
 	 * Returns the source language for messages.
+	 *
 	 * @return Language
 	 */
 	protected function getSourceLanguage() {
@@ -167,6 +181,7 @@ HTML
 
 	/**
 	 * Returns the default target language for messages.
+	 *
 	 * @return Language
 	 */
 	protected function getTargetLanguage() {
@@ -179,7 +194,7 @@ HTML
 		$options = FormatJson::decode( $this->getUser()->getOption( 'translate-sandbox' ), true );
 		$supported = TranslateUtils::getLanguageNames( 'en' );
 
-		if ( isset( $options['languages' ] ) ) {
+		if ( isset( $options['languages'] ) ) {
 			foreach ( $options['languages'] as $code ) {
 				if ( !isset( $supported[$code] ) ) {
 					continue;

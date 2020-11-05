@@ -195,7 +195,6 @@
 		"SpecialSupportedLanguages": "specials/SpecialSupportedLanguages.php",
 		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"SpecialTranslations": "specials/SpecialTranslations.php",
-		"SpecialTranslationStash": "specials/SpecialTranslationStash.php",
 		"SpecialTranslationStats": "specials/SpecialTranslationStats.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",

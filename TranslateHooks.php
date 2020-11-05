@@ -11,6 +11,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extensions\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
+use MediaWiki\Extensions\Translate\TranslatorSandbox\SpecialTranslationStash;
 use MediaWiki\Hook\PageMoveCompleteHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
@@ -211,7 +212,7 @@ class TranslateHooks {
 					}
 				]
 			];
-			$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
+			$wgSpecialPages['TranslationStash'] = SpecialTranslationStash::class;
 			$wgDefaultUserOptions['translate-sandbox'] = '';
 			// right-translate-sandboxmanage action-translate-sandboxmanage
 			$wgAvailableRights[] = 'translate-sandboxmanage';
