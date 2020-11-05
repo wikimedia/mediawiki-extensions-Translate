@@ -103,8 +103,7 @@ HTML
 	protected function makeSearchBox() {
 		return <<<HTML
 <input class="request-filter-box right"
-	placeholder="{$this->msg( 'tsb-search-requests' )->escaped()}" type="search">
-</input>
+	placeholder="{$this->msg( 'tsb-search-requests' )->escaped()}" type="search" />
 HTML;
 	}
 
