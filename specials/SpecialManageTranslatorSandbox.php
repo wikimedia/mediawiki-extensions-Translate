@@ -8,7 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
 
 /**
  * Special page for managing sandboxed users.
@@ -16,7 +17,7 @@ use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialManageTranslatorSandbox extends SpecialPage {
-	/** @var TranslationStashStorage */
+	/** @var TranslationStashReader */
 	protected $stash;
 
 	public function __construct() {
@@ -46,7 +47,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 			'jquery.uls.grid'
 		] );
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
-		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$this->stash = Services::getInstance()->getTranslationStashReader();
 
 		$this->showPage();
 	}
