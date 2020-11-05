@@ -208,16 +208,8 @@ HTML;
 	 * registration date and username
 	 */
 	private function translatorRequestSort( array $a, array $b ): int {
-		$translationCountDiff = $b['translations'] - $a['translations'];
-		if ( $translationCountDiff !== 0 ) {
-			return $translationCountDiff;
-		}
-
-		$registrationDateDiff = $b['registrationdate'] - $a['registrationdate'];
-		if ( $registrationDateDiff !== 0 ) {
-			return $registrationDateDiff;
-		}
-
-		return strcmp( $a['username'], $b['username'] );
+		return $b['translations'] <=> $a['translations']
+			?: $b['registrationdate'] <=> $a['registrationdate']
+				?: strnatcasecmp( $a['username'], $b['username'] );
 	}
 }
