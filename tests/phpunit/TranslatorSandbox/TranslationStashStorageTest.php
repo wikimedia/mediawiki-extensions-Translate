@@ -1,9 +1,5 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
 
@@ -12,6 +8,8 @@ use Title;
 use User;
 
 /**
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @group Database
  */
 class TranslationStashStorageTest extends MediaWikiIntegrationTestCase {

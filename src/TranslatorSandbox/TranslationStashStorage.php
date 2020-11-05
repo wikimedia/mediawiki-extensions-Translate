@@ -1,11 +1,5 @@
 <?php
-/**
- * Storage class for stashed translations.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
 
@@ -16,7 +10,9 @@ use Wikimedia\Rdbms\IDatabase;
 /**
  * Storage class for stashed translations. This one uses sql tables as storage.
  *
- * @since 2013.06
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @since 2013.06 (namespaced in 2020.11)
  */
 class TranslationStashStorage {
 	/** @var IDatabase */
@@ -24,11 +20,7 @@ class TranslationStashStorage {
 	/** @var string */
 	protected $dbTable;
 
-	/**
-	 * @param IDatabase $db
-	 * @param string $table
-	 */
-	public function __construct( IDatabase $db, $table = 'translate_stash' ) {
+	public function __construct( IDatabase $db, string $table = 'translate_stash' ) {
 		$this->db = $db;
 		$this->dbTable = $table;
 	}
@@ -36,10 +28,8 @@ class TranslationStashStorage {
 	/**
 	 * Adds a new translation to the stash. If the same key already exists, the
 	 * previous translation and metadata will be replaced with the new one.
-	 *
-	 * @param StashedTranslation $item
 	 */
-	public function addTranslation( StashedTranslation $item ) {
+	public function addTranslation( StashedTranslation $item ): void {
 		$row = [
 			'ts_user' => $item->getUser()->getId(),
 			'ts_title' => $item->getTitle()->getDBkey(),
@@ -58,10 +48,9 @@ class TranslationStashStorage {
 	/**
 	 * Gets all stashed translations for the given user.
 	 *
-	 * @param User $user
 	 * @return StashedTranslation[]
 	 */
-	public function getTranslations( User $user ) {
+	public function getTranslations( User $user ): array {
 		$conds = [ 'ts_user' => $user->getId() ];
 		$fields = [ 'ts_namespace', 'ts_title', 'ts_value', 'ts_metadata' ];
 
@@ -83,10 +72,9 @@ class TranslationStashStorage {
 	/**
 	 * Delete all stashed translations for the given user.
 	 *
-	 * @param User $user
 	 * @since 2013.10
 	 */
-	public function deleteTranslations( User $user ) {
+	public function deleteTranslations( User $user ): void {
 		$conds = [ 'ts_user' => $user->getId() ];
 		$this->db->delete( $this->dbTable, $conds, __METHOD__ );
 	}

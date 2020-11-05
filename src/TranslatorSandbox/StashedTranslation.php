@@ -1,11 +1,5 @@
 <?php
-/**
- * Value object for stashed translation.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
 
@@ -15,7 +9,9 @@ use User;
 /**
  * Value object for stashed translation which you can construct.
  *
- * @since 2013.06
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @since 2013.06 (namespaced in 2020.11)
  */
 class StashedTranslation {
 	/** @var User */
@@ -27,44 +23,26 @@ class StashedTranslation {
 	/** @var array|null */
 	protected $metadata;
 
-	/**
-	 * @param User $user
-	 * @param Title $title
-	 * @param string $value
-	 * @param array|null $metadata
-	 */
-	public function __construct( User $user, Title $title, $value, array $metadata = null ) {
+	public function __construct( User $user, Title $title, string $value, array $metadata = null ) {
 		$this->user = $user;
 		$this->title = $title;
 		$this->value = $value;
 		$this->metadata = $metadata;
 	}
 
-	/**
-	 * @return User
-	 */
-	public function getUser() {
+	public function getUser(): User {
 		return $this->user;
 	}
 
-	/**
-	 * @return Title
-	 */
-	public function getTitle() {
+	public function getTitle(): Title {
 		return $this->title;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getValue() {
+	public function getValue(): string {
 		return $this->value;
 	}
 
-	/**
-	 * @return array|null
-	 */
-	public function getMetadata() {
+	public function getMetadata(): ?array {
 		return $this->metadata;
 	}
 }
