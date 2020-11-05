@@ -14,7 +14,7 @@ use Wikimedia\Rdbms\IDatabase;
  * @license GPL-2.0-or-later
  * @since 2013.06 (namespaced in 2020.11)
  */
-class TranslationStashStorage {
+class TranslationStashStorage implements TranslationStashReader, TranslationStashWriter {
 	/** @var IDatabase */
 	protected $db;
 	/** @var string */
@@ -25,31 +25,6 @@ class TranslationStashStorage {
 		$this->dbTable = $table;
 	}
 
-	/**
-	 * Adds a new translation to the stash. If the same key already exists, the
-	 * previous translation and metadata will be replaced with the new one.
-	 */
-	public function addTranslation( StashedTranslation $item ): void {
-		$row = [
-			'ts_user' => $item->getUser()->getId(),
-			'ts_title' => $item->getTitle()->getDBkey(),
-			'ts_namespace' => $item->getTitle()->getNamespace(),
-			'ts_value' => $item->getValue(),
-			'ts_metadata' => serialize( $item->getMetadata() ),
-		];
-
-		$indexes = [
-			[ 'ts_user', 'ts_namespace', 'ts_title' ],
-		];
-
-		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );
-	}
-
-	/**
-	 * Gets all stashed translations for the given user.
-	 *
-	 * @return StashedTranslation[]
-	 */
 	public function getTranslations( User $user ): array {
 		$conds = [ 'ts_user' => $user->getId() ];
 		$fields = [ 'ts_namespace', 'ts_title', 'ts_value', 'ts_metadata' ];
@@ -69,11 +44,22 @@ class TranslationStashStorage {
 		return $objects;
 	}
 
-	/**
-	 * Delete all stashed translations for the given user.
-	 *
-	 * @since 2013.10
-	 */
+	public function addTranslation( StashedTranslation $item ): void {
+		$row = [
+			'ts_user' => $item->getUser()->getId(),
+			'ts_title' => $item->getTitle()->getDBkey(),
+			'ts_namespace' => $item->getTitle()->getNamespace(),
+			'ts_value' => $item->getValue(),
+			'ts_metadata' => serialize( $item->getMetadata() ),
+		];
+
+		$indexes = [
+			[ 'ts_user', 'ts_namespace', 'ts_title' ],
+		];
+
+		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );
+	}
+
 	public function deleteTranslations( User $user ): void {
 		$conds = [ 'ts_user' => $user->getId() ];
 		$this->db->delete( $this->dbTable, $conds, __METHOD__ );

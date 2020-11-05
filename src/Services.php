@@ -10,6 +10,7 @@ use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
+use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
@@ -58,6 +59,11 @@ class Services implements ContainerInterface {
 
 	public function getTranslatablePageParser(): TranslatablePageParser {
 		return $this->get( 'Translate:TranslatablePageParser' );
+	}
+
+	/** @since 2020.11 */
+	public function getTranslationStashReader(): TranslationStashReader {
+		return $this->get( 'Translate:TranslationStashReader' );
 	}
 
 	/** @since 2020.09 */
