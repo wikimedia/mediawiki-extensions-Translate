@@ -8,7 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
 
 /**
@@ -18,14 +18,22 @@ use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
  */
 class SpecialManageTranslatorSandbox extends SpecialPage {
 	/** @var TranslationStashReader */
-	protected $stash;
+	private $stash;
 
-	public function __construct() {
-		global $wgTranslateUseSandbox;
+	public const CONSTRUCTOR_OPTIONS = [
+		'TranslateUseSandbox',
+	];
+
+	public function __construct(
+		TranslationStashReader $stash,
+		ServiceOptions $options
+	) {
+		$this->stash = $stash;
+
 		parent::__construct(
 			'ManageTranslatorSandbox',
 			'translate-sandboxmanage',
-			$wgTranslateUseSandbox
+			$options->get( 'TranslateUseSandbox' )
 		);
 	}
 
@@ -47,7 +55,6 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 			'jquery.uls.grid'
 		] );
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
-		$this->stash = Services::getInstance()->getTranslationStashReader();
 
 		$this->showPage();
 	}

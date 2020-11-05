@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Hook\PageMoveCompleteHook;
@@ -195,7 +196,20 @@ class TranslateHooks {
 		if ( $wgTranslateUseSandbox ) {
 			global $wgSpecialPages, $wgAvailableRights, $wgDefaultUserOptions;
 
-			$wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
+			$wgSpecialPages['ManageTranslatorSandbox'] = [
+				'class' => SpecialManageTranslatorSandbox::class,
+				'services' => [
+					'Translate:TranslationStashReader',
+				],
+				'args' => [
+					function () {
+						return new ServiceOptions(
+							SpecialManageTranslatorSandbox::CONSTRUCTOR_OPTIONS,
+							MediaWikiServices::getInstance()->getMainConfig()
+						);
+					}
+				]
+			];
 			$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
 			$wgDefaultUserOptions['translate-sandbox'] = '';
 			// right-translate-sandboxmanage action-translate-sandboxmanage
