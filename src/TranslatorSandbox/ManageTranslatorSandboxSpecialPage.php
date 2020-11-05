@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains logic for Special:ManageTranslatorSandbox
- *
- * @file
- * @author Niklas Laxström
- * @author Amir E. Aharoni
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
 
@@ -22,6 +15,9 @@ use User;
 /**
  * Special page for managing sandboxed users.
  *
+ * @author Niklas Laxström
+ * @author Amir E. Aharoni
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ManageTranslatorSandboxSpecialPage extends SpecialPage {
@@ -69,10 +65,8 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		$this->showPage();
 	}
 
-	/**
-	 * Generates the whole page html and appends it to output
-	 */
-	protected function showPage() {
+	/** Generates the whole page html and appends it to output */
+	private function showPage(): void {
 		$out = $this->getOutput();
 
 		$nojs = Html::element(
@@ -107,18 +101,18 @@ HTML
 		);
 	}
 
-	protected function makeFilter() {
+	private function makeFilter(): string {
 		return $this->msg( 'tsb-filter-pending' )->escaped();
 	}
 
-	protected function makeSearchBox() {
+	private function makeSearchBox(): string {
 		return <<<HTML
 <input class="request-filter-box right"
 	placeholder="{$this->msg( 'tsb-search-requests' )->escaped()}" type="search" />
 HTML;
 	}
 
-	protected function makeList() {
+	private function makeList(): string {
 		$items = [];
 		$requests = [];
 		$users = TranslateSandbox::getUsers();
@@ -153,7 +147,7 @@ HTML;
 		}
 
 		// Sort the requests based on translations and registration date
-		usort( $requests, [ __CLASS__, 'translatorRequestSort' ] );
+		usort( $requests, [ $this, 'translatorRequestSort' ] );
 
 		foreach ( $requests as $request ) {
 			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
@@ -180,7 +174,7 @@ HTML;
 HTML;
 	}
 
-	protected function makeRequestItem( $request ) {
+	private function makeRequestItem( array $request ): string {
 		$requestdataEnc = htmlspecialchars( FormatJson::encode( $request ) );
 		$nameEnc = htmlspecialchars( $request['username'] );
 		$nameEncForId =
@@ -188,7 +182,7 @@ HTML;
 				Sanitizer::escapeIdForAttribute( 'tsb-request-' . $request['username'] )
 			);
 		$emailEnc = htmlspecialchars( $request['email'] );
-		$countEnc = htmlspecialchars( $request['translations'] );
+		$countEnc = htmlspecialchars( (string)$request['translations'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
 		$agoEnc = htmlspecialchars( $timestamp->getHumanTimestamp() );
 
@@ -212,13 +206,8 @@ HTML;
 	/**
 	 * Sorts groups by descending order of number of translations,
 	 * registration date and username
-	 *
-	 * @param array $a Translation request
-	 * @param array $b Translation request
-	 * @return int comparison result
-	 * @since 2013.12
 	 */
-	public static function translatorRequestSort( $a, $b ) {
+	private function translatorRequestSort( array $a, array $b ): int {
 		$translationCountDiff = $b['translations'] - $a['translations'];
 		if ( $translationCountDiff !== 0 ) {
 			return $translationCountDiff;
