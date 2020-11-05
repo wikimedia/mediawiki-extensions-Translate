@@ -10,6 +10,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Extensions\Translate\TranslatorSandbox\SpecialManageTranslatorSandbox;
 use MediaWiki\Hook\PageMoveCompleteHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;

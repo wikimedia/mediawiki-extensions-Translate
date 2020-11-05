@@ -185,7 +185,6 @@
 		"SpecialImportTranslations": "specials/SpecialImportTranslations.php",
 		"SpecialLanguageStats": "specials/SpecialLanguageStats.php",
 		"SpecialManageGroups": "specials/SpecialManageGroups.php",
-		"SpecialManageTranslatorSandbox": "specials/SpecialManageTranslatorSandbox.php",
 		"SpecialMessageGroupStats": "specials/SpecialMessageGroupStats.php",
 		"SpecialPageMigration": "tag/SpecialPageMigration.php",
 		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",

@@ -8,8 +8,16 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+
+use FormatJson;
+use Html;
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
+use MWTimestamp;
+use Sanitizer;
+use SpecialPage;
+use TranslateSandbox;
+use User;
 
 /**
  * Special page for managing sandboxed users.
@@ -19,7 +27,6 @@ use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
 class SpecialManageTranslatorSandbox extends SpecialPage {
 	/** @var TranslationStashReader */
 	private $stash;
-
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
 	];
@@ -49,11 +56,13 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$out = $this->getOutput();
-		$out->addModuleStyles( [
-			'ext.translate.special.managetranslatorsandbox.styles',
-			'mediawiki.ui.button',
-			'jquery.uls.grid'
-		] );
+		$out->addModuleStyles(
+			[
+				'ext.translate.special.managetranslatorsandbox.styles',
+				'mediawiki.ui.button',
+				'jquery.uls.grid',
+			]
+		);
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
 
 		$this->showPage();
@@ -72,7 +81,8 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		);
 		$out->addHTML( $nojs );
 
-		$out->addHTML( <<<HTML
+		$out->addHTML(
+			<<<HTML
 <div class="grid tsb-container">
 	<div class="row">
 		<div class="nine columns pane filter">{$this->makeFilter()}</div>
@@ -132,7 +142,9 @@ HTML;
 				'gender' => $user->getOption( 'gender' ),
 				'registrationdate' => $user->getRegistration(),
 				'translations' => count( $this->stash->getTranslations( $user ) ),
-				'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
+				'languagepreferences' => FormatJson::decode(
+					$user->getOption( 'translate-sandbox' )
+				),
 				'userid' => $user->getId(),
 				'reminderscount' => $remindersCount,
 				'lastreminder' => $lastReminderAgo,
@@ -170,7 +182,10 @@ HTML;
 	protected function makeRequestItem( $request ) {
 		$requestdataEnc = htmlspecialchars( FormatJson::encode( $request ) );
 		$nameEnc = htmlspecialchars( $request['username'] );
-		$nameEncForId = htmlspecialchars( Sanitizer::escapeIdForAttribute( 'tsb-request-' . $request['username'] ) );
+		$nameEncForId =
+			htmlspecialchars(
+				Sanitizer::escapeIdForAttribute( 'tsb-request-' . $request['username'] )
+			);
 		$emailEnc = htmlspecialchars( $request['email'] );
 		$countEnc = htmlspecialchars( $request['translations'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
@@ -197,10 +212,10 @@ HTML;
 	 * Sorts groups by descending order of number of translations,
 	 * registration date and username
 	 *
-	 * @since 2013.12
 	 * @param array $a Translation request
 	 * @param array $b Translation request
 	 * @return int comparison result
+	 * @since 2013.12
 	 */
 	public static function translatorRequestSort( $a, $b ) {
 		$translationCountDiff = $b['translations'] - $a['translations'];
