@@ -212,7 +212,21 @@ class TranslateHooks {
 					}
 				]
 			];
-			$wgSpecialPages['TranslationStash'] = TranslationStashSpecialPage::class;
+			$wgSpecialPages['TranslationStash'] = [
+				'class' => TranslationStashSpecialPage::class,
+				'services' => [
+					'LanguageNameUtils',
+					'Translate:TranslationStashReader'
+				],
+				'args' => [
+					function () {
+						return new ServiceOptions(
+							TranslationStashSpecialPage::CONSTRUCTOR_OPTIONS,
+							MediaWikiServices::getInstance()->getMainConfig()
+						);
+					}
+				]
+			];
 			$wgDefaultUserOptions['translate-sandbox'] = '';
 			// right-translate-sandboxmanage action-translate-sandboxmanage
 			$wgAvailableRights[] = 'translate-sandboxmanage';

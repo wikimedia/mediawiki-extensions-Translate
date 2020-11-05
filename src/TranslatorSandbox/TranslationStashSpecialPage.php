@@ -12,6 +12,8 @@ namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
 use FormatJson;
 use Html;
 use Language;
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Languages\LanguageNameUtils;
 use SpecialPage;
 use Title;
 use TranslateSandbox;
@@ -23,10 +25,26 @@ use TranslateUtils;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslationStashSpecialPage extends SpecialPage {
-	/** @var TranslationStashStorage */
-	protected $stash;
+	/** @var TranslationStashReader */
+	private $stash;
+	/** @var ServiceOptions */
+	private $options;
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
 
-	public function __construct() {
+	public const CONSTRUCTOR_OPTIONS = [
+		'TranslateSandboxLimit',
+		'TranslateSecondaryPermissionUrl'
+	];
+
+	public function __construct(
+		LanguageNameUtils $languageNameUtils,
+		TranslationStashReader $stash,
+		ServiceOptions $options
+	) {
+		$this->languageNameUtils = $languageNameUtils;
+		$this->stash = $stash;
+		$this->options = $options;
 		parent::__construct( 'TranslationStash' );
 	}
 
@@ -39,7 +57,8 @@ class TranslationStashSpecialPage extends SpecialPage {
 	}
 
 	public function execute( $params ) {
-		global $wgTranslateSandboxLimit, $wgTranslateSecondaryPermissionUrl;
+		$limit = $this->options->get( 'TranslateSandboxLimit' );
+		$secondaryPermissionUrl = $this->options->get( 'TranslateSecondaryPermissionUrl' );
 
 		$this->setHeaders();
 		$out = $this->getOutput();
@@ -47,9 +66,9 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		if ( !$this->hasPermissionToUse() ) {
-			if ( $wgTranslateSecondaryPermissionUrl && $this->getUser()->isLoggedIn() ) {
+			if ( $secondaryPermissionUrl && $this->getUser()->isLoggedIn() ) {
 				$out->redirect(
-					Title::newFromText( $wgTranslateSecondaryPermissionUrl )->getLocalURL()
+					Title::newFromText( $secondaryPermissionUrl )->getLocalURL()
 				);
 
 				return;
@@ -60,7 +79,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$out->addJsConfigVars( 'wgTranslateSandboxLimit', $wgTranslateSandboxLimit );
+		$out->addJsConfigVars( 'wgTranslateSandboxLimit', $limit );
 		$out->addModules( 'ext.translate.special.translationstash' );
 		$out->addModuleStyles( 'mediawiki.ui.button' );
 		$this->showPage();
@@ -146,7 +165,7 @@ HTML
 		// The name will be displayed in the UI language,
 		// so use for lang and dir
 		$language = $this->getTargetLanguage();
-		$targetLangName = Language::fetchLanguageName( $language->getCode() );
+		$targetLangName = $this->languageNameUtils->getLanguageName( $language->getCode() );
 
 		$label = Html::element(
 			'span',
