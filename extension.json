@@ -110,6 +110,7 @@
 		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
 		"GettextDocumentationAid": "translationaids/GettextDocumentationAid.php",
 		"GettextFFS": "ffs/GettextFFS.php",
+		"GettextParseException": "ffs/GettextParseException.php",
 		"GettextPluralException": "ffs/GettextPluralException.php",
 		"GoogleTranslateWebService": "webservices/GoogleTranslateWebService.php",
 		"HashMessageIndex": "utils/MessageIndex.php",

@@ -105,7 +105,8 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 				$potmode = true;
 			}
 		} else {
-			throw new MWException( "Gettext file header was not found:\n\n$data" );
+			$message = "Gettext file header was not found:\n\n$data";
+			throw new GettextParseException( $message );
 		}
 
 		$template = [];

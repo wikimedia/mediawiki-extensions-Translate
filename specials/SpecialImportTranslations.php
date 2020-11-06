@@ -201,7 +201,12 @@ class SpecialImportTranslations extends SpecialPage {
 
 		$ffs = new GettextFFS( $group );
 
-		$parseOutput = $ffs->readFromVariable( $data );
+		try {
+			$parseOutput = $ffs->readFromVariable( $data );
+		} catch ( GettextParseException $e ) {
+			return [ 'no-headers' ];
+		}
+
 		// Special data added by GettextFFS
 		$metadata = $parseOutput['EXTRA']['METADATA'];
 
