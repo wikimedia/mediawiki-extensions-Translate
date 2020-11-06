@@ -6,7 +6,26 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"managetranslatorsandbox": "Oersetterssânbak beheare",
+	"tsb-filter-pending": "Net-ôfdiene oanfragen",
+	"tsb-request-count": "$1 {{PLURAL:$1|oanfraach|oanfragen}}",
+	"tsb-all-languages-button-label": "Alle talen",
+	"tsb-search-requests": "Net-ôfdiene oanfragen trochsykje",
+	"tsb-selected-count": "{{PLURAL:$1|$1 meidogger selektearre|$1 meidoggers selektearre}}",
+	"tsb-older-requests": "$1 âldere {{PLURAL:$1|oanfraach|oanfragen}}",
+	"tsb-user-posted-a-comment": "Gjin oersetter",
+	"tsb-didnt-make-any-translations": "Dizze meidogger hat gjin oersettings makke.",
+	"tsb-translations-source": "Boarne",
+	"tsb-translations-user": "Oersettings fan 'e {{GENDER:$1|meidogger}}",
+	"tsb-translations-current": "Besteande oersettings",
+	"tsb-delete-userpage-summary": "Meidoggerside fan in sânbakmeidogger wiske",
 	"translationstash": "Wolkom",
+	"translate-translationstash-welcome": "Wolkom, {{GENDER:$1|$1}}. Jo binne fan no ôf oersetter",
+	"translate-translationstash-initialtranslation": "Jo earste oersetting",
 	"tsb-create-user-page": "Ienfâldige meidoggerside oanmakke",
-	"log-name-translatorsandbox": "Oersetsânbakloch"
+	"log-name-translatorsandbox": "Oersetsânbakloch",
+	"log-description-translatorsandbox": "In loch fan hannelings oangeande meidoggers yn 'e oersetsânbak",
+	"logentry-translatorsandbox-promoted": "$1 hat $3 ta {{GENDER:$4|oersetter}} {{GENDER:$2|promovearre}}",
+	"logentry-translatorsandbox-rejected": "$1 hat de oanfraach fan \"$3\" om oersetter te wurden {{GENDER:$2|ôfwiisd}}",
+	"logentry-newusers-tsbpromoted": "It meidochakkount $3 is by promoasje út 'e sânbak {{GENDER:$2|oanmakke}}"
 }

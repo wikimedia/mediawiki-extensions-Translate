@@ -75,6 +75,7 @@
 	"translate-searchprofile": "Oersettings",
 	"log-name-translationreview": "Oersettingshifkloch",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|hat}} de oersetting $3 hifke",
+	"action-translate-sandboxmanage": "sânbakmeidoggers te behearen",
 	"translate-msggroupselector-projects": "Berjochtegroep",
 	"translate-msggroupselector-search-placeholder": "Groepen sykje",
 	"translate-msggroupselector-search-all": "Alles",
