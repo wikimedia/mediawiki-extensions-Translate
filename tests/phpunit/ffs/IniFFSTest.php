@@ -46,6 +46,9 @@ class IniFFSTest extends MediaWikiIntegrationTestCase {
 			'AUTHORS' => [ 'The king of very small kingdom' ]
 		];
 		$this->assertEquals( $expected, $parsed );
+
+		$invalidContent = 'Invalid-Ini-Content';
+		$this->assertFalse( IniFFS::isValid( $invalidContent ) );
 	}
 
 	public function testExport() {

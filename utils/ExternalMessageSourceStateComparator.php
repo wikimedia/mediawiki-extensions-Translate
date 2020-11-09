@@ -125,9 +125,8 @@ class ExternalMessageSourceStateComparator {
 	) {
 		/* This throws a warning if message definitions are not yet
 		 * cached and will read the file for definitions. */
-		Wikimedia\suppressWarnings();
-		$wiki = $group->initCollection( $language );
-		Wikimedia\restoreWarnings();
+		// phpcs:disable Generic.PHP.NoSilencedErrors.Discouraged
+		$wiki = @$group->initCollection( $language );
 		$wiki->filter( 'hastranslation', false );
 		$wiki->loadTranslations();
 		$wikiKeys = $wiki->getMessageKeys();
