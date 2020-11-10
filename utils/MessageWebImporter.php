@@ -393,7 +393,7 @@ class MessageWebImporter {
 	 * Perform an action on a given group/key/code
 	 *
 	 * @param string $action Options: 'import', 'conflict' or 'ignore'
-	 * @param MessageGroup $group Group object
+	 * @param MessageGroup $group
 	 * @param string $key Message key
 	 * @param string $code Language code
 	 * @param string $message Contents for the $key/code combination

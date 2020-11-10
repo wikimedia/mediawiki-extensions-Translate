@@ -806,7 +806,7 @@ class ElasticSearchTTMServer
 	 *  in 2.x and returned in 5.x.
 	 *
 	 * @param \Elastica\Type $type the source index
-	 * @param \Elastica\Query $query the query
+	 * @param \Elastica\Query $query
 	 * @throws \RuntimeException
 	 */
 	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {

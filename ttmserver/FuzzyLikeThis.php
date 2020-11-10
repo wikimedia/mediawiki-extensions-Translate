@@ -152,8 +152,6 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	}
 
 	/**
-	 * Set Prefix Length.
-	 *
 	 * @param int $value Prefix length
 	 *
 	 * @return $this
@@ -178,8 +176,6 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	}
 
 	/**
-	 * Set analyzer.
-	 *
 	 * @param string $text Analyzer text
 	 *
 	 * @return $this

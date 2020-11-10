@@ -48,7 +48,7 @@ class TranslateToolbox {
 	/**
 	 * This handler will be called for MW >= 1.35
 	 *
-	 * @param Skin $skin The skin
+	 * @param Skin $skin
 	 * @param array &$sidebar Array with sidebar items
 	 *
 	 * @return void

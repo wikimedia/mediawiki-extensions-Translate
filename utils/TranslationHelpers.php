@@ -277,7 +277,7 @@ class TranslationHelpers {
 
 	/**
 	 * @param string $source jQuery selector for element containing the source
-	 * @param Language $lang Language object
+	 * @param Language $lang
 	 * @return string
 	 */
 	public function adder( $source, $lang ) {
