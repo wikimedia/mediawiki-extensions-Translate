@@ -85,8 +85,7 @@ class SpecialExportTranslations extends SpecialPage {
 				'default' => $this->format,
 			],
 		];
-		$form = HTMLForm::factory( 'ooui', $fields, $this->getContext() );
-		$form
+		HTMLForm::factory( 'ooui', $fields, $this->getContext() )
 			->setMethod( 'get' )
 			->setWrapperLegendMsg( 'translate-page-settings-legend' )
 			->setSubmitTextMsg( 'translate-submit' )

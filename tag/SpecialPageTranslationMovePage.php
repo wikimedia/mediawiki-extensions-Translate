@@ -214,8 +214,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			]
 		];
 
-		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
-		$htmlForm
+		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
 			->setMethod( 'post' )
 			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
 			->setSubmitName( 'subaction' )

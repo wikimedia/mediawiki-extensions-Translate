@@ -116,8 +116,7 @@ class SpecialTranslations extends SpecialAllPages {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
-		$htmlForm
+		HTMLForm::factory( 'ooui', $formDescriptor, $context )
 			->setMethod( 'get' )
 			->setSubmitTextMsg( 'allpagessubmit' )
 			->setWrapperLegendMsg( 'translate-translations-fieldset-title' )
