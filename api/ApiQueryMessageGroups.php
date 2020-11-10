@@ -86,7 +86,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		foreach ( $groups as $mixed ) {
 			// array when Format = tree
 			$group = is_array( $mixed ) ? reset( $mixed ) : $mixed;
-			if ( $filter !== [] && !$matcher->match( $group->getId() ) ) {
+			if ( $filter !== [] && !$matcher->matches( $group->getId() ) ) {
 				continue;
 			}
 

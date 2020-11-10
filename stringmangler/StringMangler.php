@@ -32,7 +32,7 @@ interface StringMangler {
 	 * @param string $key Message key
 	 * @return bool
 	 */
-	public function match( string $key ): bool;
+	public function matches( string $key ): bool;
 
 	/**
 	 * Mangle a string.

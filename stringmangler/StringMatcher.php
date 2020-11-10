@@ -76,7 +76,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	}
 
 	/** @inheritDoc */
-	public function match( string $key ): bool {
+	public function matches( string $key ): bool {
 		if ( in_array( $key, $this->aExact ) ) {
 			return true;
 		}
@@ -98,7 +98,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 	/** @inheritDoc */
 	public function mangle( string $key ): string {
-		if ( $this->match( $key ) ) {
+		if ( $this->matches( $key ) ) {
 			$key = $this->sPrefix . $key;
 		}
 
@@ -156,7 +156,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 			$unmangled = substr( $unescapedString, strlen( $this->sPrefix ) );
 
 			// Check if this string should be mangled / un-mangled to begin with
-			if ( $this->match( $unmangled ) ) {
+			if ( $this->matches( $unmangled ) ) {
 				return $unmangled;
 			}
 		}

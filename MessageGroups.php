@@ -635,7 +635,7 @@ class MessageGroups {
 		// Slow path for the ones with wildcards
 		$matcher = new StringMatcher( '', $ids );
 		foreach ( self::getAllGroups() as $id => $_ ) {
-			if ( $matcher->match( $id ) ) {
+			if ( $matcher->matches( $id ) ) {
 				$all[] = $id;
 			}
 		}

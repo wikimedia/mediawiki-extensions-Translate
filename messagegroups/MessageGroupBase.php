@@ -247,7 +247,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			 * Use mangler to find messages that match.
 			 */
 			foreach ( $messageKeys as $key ) {
-				if ( $mangler->match( $key ) ) {
+				if ( $mangler->matches( $key ) ) {
 					$matches[] = $key;
 				}
 			}

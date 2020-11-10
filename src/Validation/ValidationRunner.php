@@ -258,21 +258,21 @@ class ValidationRunner {
 		string $targetLanguage,
 		array $pattern
 	): bool {
-		return $this->match( $pattern['group'], $messageGroupId )
-			&& $this->match( $pattern['check'], $issue->type() )
-			&& $this->match( $pattern['subcheck'], $issue->subType() )
-			&& $this->match( $pattern['message'], $issue->messageKey() )
-			&& $this->match( $pattern['code'], $targetLanguage );
+		return $this->matchesIgnorePattern( $pattern['group'], $messageGroupId )
+			&& $this->matchesIgnorePattern( $pattern['check'], $issue->type() )
+			&& $this->matchesIgnorePattern( $pattern['subcheck'], $issue->subType() )
+			&& $this->matchesIgnorePattern( $pattern['message'], $issue->messageKey() )
+			&& $this->matchesIgnorePattern( $pattern['code'], $targetLanguage );
 	}
 
 	/**
 	 * Match validation information against a ignore pattern.
 	 *
-	 * @param string|array $pattern
+	 * @param string|string[] $pattern
 	 * @param string $value The actual value in the validation produced by the validator
 	 * @return bool True if the pattern matches the value.
 	 */
-	protected function match( $pattern, string $value ): bool {
+	private function matchesIgnorePattern( $pattern, string $value ): bool {
 		if ( $pattern === '#' ) {
 			return true;
 		} elseif ( is_array( $pattern ) ) {
