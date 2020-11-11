@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Banjo",
 			"Elisardojm",
 			"Iváns",
@@ -113,7 +114,7 @@
 	"apierror-translate-invalidstate": "O estado solicitado non é válido.",
 	"apierror-translate-invalidlanguage": "A lingua solicitada non é válida.",
 	"apierror-translate-invalidupdate": "Actualización non válida",
-	"apierror-translate-language-disabled": "A tradución a esta lingua está desactivada",
+	"apierror-translate-language-disabled": "A tradución a $1 está desactivada",
 	"apierror-translate-nodynamicgroups": "Aquí non están admitidos os grupos de mensaxes dinámicas",
 	"apierror-translate-nomessagefortitle": "O título non se corresponde cunha mensaxe traducible",
 	"apierror-translate-owntranslation": "Non pode revisar as súas traducións",
