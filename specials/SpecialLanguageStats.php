@@ -521,35 +521,40 @@ class SpecialLanguageStats extends SpecialPage {
 		$params[] = $this->getLanguage()->getCode();
 		$params[] = md5( $this->target );
 		$params[] = $parent ? $parent->getId() : '!';
-		$cachekey = wfMemcKey( __METHOD__ . '-v3', implode( '-', $params ) );
-		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
-		if ( is_string( $cacheval ) ) {
-			return $cacheval;
-		}
 
-		// Any data variable read below should be part of the cache key above
-		$extra = [];
-		if ( $translated === $total ) {
-			$extra = [ 'action' => 'proofread' ];
-		}
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 
-		$rowParams = [];
-		$rowParams['data-groupid'] = $groupId;
-		$rowParams['class'] = get_class( $group );
-		if ( $parent ) {
-			$rowParams['data-parentgroup'] = $parent->getId();
-		}
+		return $cache->getWithSetCallback(
+			$cache->makeKey( __METHOD__ . '-v3', implode( '-', $params ) ),
+			$cache::TTL_DAY,
+			function () use ( $translated, $total, $groupId, $group, $parent, $stats, $state ) {
+				// Any data variable read below should be part of the cache key above
+				$extra = [];
+				if ( $translated === $total ) {
+					$extra = [ 'action' => 'proofread' ];
+				}
 
-		$out = "\t" . Html::openElement( 'tr', $rowParams );
-		$out .= "\n\t\t" . Html::rawElement( 'td', [],
-			$this->table->makeGroupLink( $group, $this->target, $extra ) );
-		$out .= $this->table->makeNumberColumns( $stats );
-		$out .= $this->getWorkflowStateCell( $groupId, $state );
-		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
+				$rowParams = [];
+				$rowParams['data-groupid'] = $groupId;
+				$rowParams['class'] = get_class( $group );
+				if ( $parent ) {
+					$rowParams['data-parentgroup'] = $parent->getId();
+				}
 
-		wfGetCache( CACHE_ANYTHING )->set( $cachekey, $out, 3600 * 24 );
-
-		return $out;
+				return "\t" .
+					Html::openElement( 'tr', $rowParams ) .
+					"\n\t\t" .
+					Html::rawElement(
+						'td',
+						 [],
+						$this->table->makeGroupLink( $group, $this->target, $extra )
+					) . $this->table->makeNumberColumns( $stats ) .
+					$this->getWorkflowStateCell( $groupId, $state ) .
+					"\n\t" .
+					Html::closeElement( 'tr' ) .
+					"\n";
+			}
+		);
 	}
 
 	protected function getWorkflowStates( $field = 'tgr_group', $filter = 'tgr_lang' ) {

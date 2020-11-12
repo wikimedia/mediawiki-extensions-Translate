@@ -10,8 +10,7 @@
 
 /**
  * Wrapper around font-config to get useful ttf font given a language code.
- * Uses wfShellExec, wfEscapeShellArg and wfDebugLog, wfGetCache and
- * wfMemckey from %MediaWiki.
+ * Uses wfShellExec, wfEscapeShellArg and wfDebugLog, and wfGetCache from %MediaWiki.
  *
  * @ingroup Stats
  */
@@ -53,7 +52,7 @@ class FCFontFinder {
 		}
 
 		$cache = self::getCache();
-		$cachekey = wfMemcKey( 'fcfont', $code );
+		$cachekey = $cache->makeKey( 'fcfont', $code );
 		$timeout = 60 * 60 * 12;
 
 		$cached = $cache->get( $cachekey );

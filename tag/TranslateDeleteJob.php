@@ -106,11 +106,12 @@ class TranslateDeleteJob extends Job {
 
 		PageTranslationHooks::$allowTargetEdit = false;
 
-		$cache = wfGetCache( CACHE_DB );
-		$pages = (array)$cache->get( wfMemcKey( 'pt-base', $base ) );
+		$cache = ObjectCache::getInstance( CACHE_DB );
+		$pageKey = $cache->makeKey( 'pt-base', $base );
+		$pages = (array)$cache->get( $pageKey );
 		$lastitem = array_pop( $pages );
 		if ( $title->getPrefixedText() === $lastitem ) {
-			$cache->delete( wfMemcKey( 'pt-base', $base ) );
+			$cache->delete( $pageKey );
 
 			$type = $this->getFull() ? 'deletefok' : 'deletelok';
 			$entry = new ManualLogEntry( 'pagetranslation', $type );

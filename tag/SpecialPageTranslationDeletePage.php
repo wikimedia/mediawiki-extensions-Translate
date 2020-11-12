@@ -349,11 +349,11 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 		JobQueueGroup::singleton()->push( $jobs );
 
-		$cache = wfGetCache( CACHE_DB );
+		$cache = ObjectCache::getInstance( CACHE_DB );
 		$cache->set(
-			wfMemcKey( 'pt-base', $target->getPrefixedText() ),
+			$cache->makeKey( 'pt-base', $target->getPrefixedText() ),
 			array_keys( $jobs ),
-			60 * 60 * 6
+			6 * $cache::TTL_HOUR
 		);
 
 		if ( !$this->singleLanguage() ) {

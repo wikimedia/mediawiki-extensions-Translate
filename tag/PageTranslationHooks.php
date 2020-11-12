@@ -1159,8 +1159,8 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$key = wfMemcKey( 'pt-lock', sha1( $title->getPrefixedText() ) );
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$key = $cache->makeKey( 'pt-lock', sha1( $title->getPrefixedText() ) );
 		if ( $cache->get( $key ) === 'locked' ) {
 			$result = [ 'pt-locked-page' ];
 

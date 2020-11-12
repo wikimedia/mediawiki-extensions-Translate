@@ -153,18 +153,18 @@ class TranslatablePageMoveJob extends Job {
 	}
 
 	private function lock( array $titles ) {
-		$cache = wfGetCache( CACHE_ANYTHING );
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 		$data = [];
 		foreach ( $titles as $title ) {
-			$data[wfMemcKey( 'pt-lock', sha1( $title ) )] = 'locked';
+			$data[$cache->makeKey( 'pt-lock', sha1( $title ) )] = 'locked';
 		}
 		$cache->setMulti( $data );
 	}
 
 	private function unlock( array $titles ) {
-		$cache = wfGetCache( CACHE_ANYTHING );
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 		foreach ( $titles as $title ) {
-			$cache->delete( wfMemcKey( 'pt-lock', sha1( $title ) ) );
+			$cache->delete( $cache->makeKey( 'pt-lock', sha1( $title ) ) );
 		}
 	}
 }

@@ -219,20 +219,23 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * @throws TranslationWebServiceConfigurationException
 	 */
 	protected function getSupportedLanguagePairs() {
-		$key = wfMemcKey( 'translate-tmsug-pairs-' . $this->service );
-		$pairs = wfGetCache( CACHE_ANYTHING )->get( $key );
-		if ( !is_array( $pairs ) ) {
-			try {
-				$pairs = $this->doPairs();
-			} catch ( Exception $e ) {
-				$this->reportTranslationServiceFailure( $e->getMessage() );
-				return [];
-			}
-			// Cache the result for a day
-			wfGetCache( CACHE_ANYTHING )->set( $key, $pairs, 60 * 60 * 24 );
-		}
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 
-		return $pairs;
+		return $cache->getWithSetCallback(
+			$cache->makeKey( 'translate-tmsug-pairs-' . $this->service ),
+			$cache::TTL_DAY,
+			function ( &$ttl ) use ( $cache ) {
+				try {
+					$pairs = $this->doPairs();
+				} catch ( Exception $e ) {
+					$pairs = [];
+					$this->reportTranslationServiceFailure( $e->getMessage() );
+					$ttl = $cache::TTL_UNCACHEABLE;
+				}
+
+				return $pairs;
+			}
+		);
 	}
 
 	/**
@@ -284,18 +287,21 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 */
 	public function checkTranslationServiceFailure() {
 		$service = $this->service;
-		$key = wfMemcKey( "translate-service-$service" );
-		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+
+		$key = $cache->makeKey( "translate-service-$service" );
+		$value = $cache->get( $key );
 		if ( !is_string( $value ) ) {
 			return false;
 		}
+
 		list( $count, $failed ) = explode( '|', $value, 2 );
 
 		if ( $failed + ( 2 * $this->serviceFailurePeriod ) < wfTimestamp() ) {
 			if ( $count >= $this->serviceFailureCount ) {
 				$this->logger->warning( "Translation service $service (was) restored" );
 			}
-			wfGetCache( CACHE_ANYTHING )->delete( $key );
+			$cache->delete( $key );
 
 			return false;
 		} elseif ( $failed + $this->serviceFailurePeriod < wfTimestamp() ) {
@@ -318,8 +324,10 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		$service = $this->service;
 		$this->logger->warning( "Translation service $service problem: $msg" );
 
-		$key = wfMemcKey( "translate-service-$service" );
-		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$key = $cache->makeKey( "translate-service-$service" );
+
+		$value = $cache->get( $key );
 		if ( !is_string( $value ) ) {
 			$count = 0;
 		} else {
@@ -328,7 +336,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 		$count++;
 		$failed = wfTimestamp();
-		wfGetCache( CACHE_ANYTHING )->set(
+		$cache->set(
 			$key,
 			"$count|$failed",
 			$this->serviceFailurePeriod * 5
