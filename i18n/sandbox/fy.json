@@ -37,7 +37,7 @@
 	"tsb-reject-confirmation": "{{PLURAL:$1|Meidogger|Meidoggers}} ôfwiisd",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Meidogger|Meidoggers}} goedkard",
 	"translationstash": "Wolkom",
-	"translate-translationstash-welcome": "Wolkom, {{GENDER:$1|$1}}. Jo binne in nije oersetter",
+	"translate-translationstash-welcome": "Wolkom, $1. Jo binne in nije {{GENDER:$1|oersetter|oersetster}}",
 	"translate-translationstash-welcome-note": "Meitsje jo it oersetark eigen. Set in stikmannich berjochten oer, en krij de folsleine oersettersrjochten foar jo favorite projekten.",
 	"translate-translationstash-initialtranslation": "Jo earste oersetting",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|oersetting|oersettings}} makke",
