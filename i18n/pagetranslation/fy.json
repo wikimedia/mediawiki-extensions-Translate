@@ -6,6 +6,11 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"pagetranslation": "Oersetten fan siden",
+	"right-pagetranslation": "Sideferzjes foar oersetten frijjaan",
+	"action-pagetranslation": "oersetbere siden te behearen",
+	"tps-edit-sourcepage-title": "Bewurkjen fan in oersetbere side",
+	"tps-edit-sourcepage-ve-warning-title": "Warskôging: Net-stipe side",
 	"tpt-select-prioritylangs-reason": "Reden:",
 	"translate-tag-translate-link-desc": "Dizze side oersette",
 	"tpt-translation-intro": "Dizze side is in <span class=\"plainlinks\">[$1 oersette ferzje]</span> fan 'e side [[$2]], en de oersetting is $3% kompleet.",

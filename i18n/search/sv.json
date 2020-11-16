@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -28,5 +29,6 @@
 	"tux-sst-link-all-match": "Kräv alla sökord.",
 	"tux-sst-match-message": "Visar översättningar som överensstämmer något sökord. $1",
 	"tux-sst-case-sensitive": "Skiftlägeskänsligt",
+	"tux-sst-error-offset": "Kan inte visa fler resultat. Begränsa din sökning.",
 	"tux-sst-error-language": "Detta språk kan inte användas med denna sökningstyp."
 }
