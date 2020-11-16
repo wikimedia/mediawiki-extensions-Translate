@@ -104,7 +104,6 @@
 		"ExternalMessageSourceStateImporter": "utils/ExternalMessageSourceStateImporter.php",
 		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
 		"FatMessage": "Message.php",
-		"FCFontFinder": "utils/FCFontFinder.php",
 		"FFS": "ffs/FFS.php",
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FileBasedMessageGroupLoader": "messagegroups/loaders/FileBasedMessageGroupLoader.php",
