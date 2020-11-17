@@ -67,21 +67,6 @@ class CommandlineExport extends Maintenance {
 			true /*has arg*/
 		);
 		$this->addOption(
-			'ppgettext',
-			'(optional) Group root path for checkout of product. "msgmerge" will post ' .
-			'process on the export result based on the current source file ' .
-			'in that location (from sourcePattern or definitionFile)',
-			false, /*required*/
-			true /*has arg*/
-		);
-		$this->addOption(
-			'no-location',
-			'(optional) Only used combined with "ppgettext". This option will rebuild ' .
-			'the gettext file without location information',
-			false, /*required*/
-			false /*has arg*/
-		);
-		$this->addOption(
 			'no-fuzzy',
 			'(optional) Do not include any messages marked as fuzzy/outdated',
 			false, /*required*/
@@ -116,11 +101,6 @@ class CommandlineExport extends Maintenance {
 
 		$threshold = $this->getOption( 'threshold' );
 		$noFuzzy = $this->hasOption( 'no-fuzzy' );
-
-		$noLocation = '';
-		if ( $this->hasOption( 'no-location' ) ) {
-			$noLocation = '--no-location ';
-		}
 
 		$skip = [];
 		if ( $this->hasOption( 'skip' ) ) {
@@ -279,22 +259,6 @@ class CommandlineExport extends Maintenance {
 			$sourceLanguage = $group->getSourceLanguage();
 			$collection = $group->initCollection( $sourceLanguage );
 
-			$definitionFile = false;
-
-			if ( $this->hasOption( 'ppgettext' ) && $ffs instanceof GettextFFS ) {
-				global $wgMaxShellMemory, $wgTranslateGroupRoot;
-
-				// Need more shell memory for msgmerge.
-				$wgMaxShellMemory = 402400;
-
-				$path = $group->getSourceFilePath( $sourceLanguage );
-				$definitionFile = str_replace(
-					$wgTranslateGroupRoot,
-					$this->getOption( 'ppgettext' ),
-					$path
-				);
-			}
-
 			$whitelist = $group->getTranslatableLanguages();
 
 			wfDebugLog(
@@ -305,7 +269,6 @@ class CommandlineExport extends Maintenance {
 			$langExportTimes = [
 				'collection' => 0,
 				'ffs' => 0,
-				'definitionFile' => 0
 			];
 			$langStartTime = microtime( true );
 			foreach ( $langs as $lang ) {
@@ -338,27 +301,6 @@ class CommandlineExport extends Maintenance {
 				$ffs->write( $collection );
 				$endTime = microtime( true );
 				$langExportTimes['ffs'] += ( $endTime - $startTime );
-
-				// Do post processing if requested.
-				if ( $definitionFile ) {
-					$startTime = microtime( true );
-					if ( is_file( $definitionFile ) ) {
-						$targetFileName = $ffs->getWritePath() .
-							'/' . $group->getTargetFilename( $collection->code );
-						$cmd = 'msgmerge --quiet ' . $noLocation . '--output-file=' .
-							$targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
-						wfShellExec( $cmd, $ret );
-
-						// Report on errors.
-						if ( $ret ) {
-							$this->error( "ERROR: $ret" );
-						}
-					} else {
-						$this->fatalError( "$definitionFile does not exist for group $groupId." );
-					}
-					$endTime = microtime( true );
-					$langExportTimes['definitionFile'] += ( $endTime - $startTime );
-				}
 			}
 			$langEndTime = microtime( true );
 
