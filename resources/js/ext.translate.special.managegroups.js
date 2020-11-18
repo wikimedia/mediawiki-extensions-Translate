@@ -45,6 +45,7 @@
 			} ).show();
 
 			if ( $parentContainer.hasClass( 'smg-change-addition' ) ) {
+				// For a new message, the "add as new" option is hidden.
 				RenameDropdown.hideOption( '.smg-rename-new-action' );
 			}
 			event.preventDefault();
@@ -121,10 +122,11 @@
 
 	function toggleLoading( $element, isLoading ) {
 		if ( isLoading ) {
-			$( '.smg-rename-actions' ).hide();
-			$element.show().addClass( 'loading' );
+			// hide all the rename buttons, but show the current one with loading animation
+			$( '.smg-rename-actions' ).addClass( 'mw-translate-hide' );
+			$element.removeClass( 'mw-translate-hide' ).addClass( 'loading' );
 		} else {
-			$( '.smg-rename-actions' ).show();
+			$( '.smg-rename-actions' ).removeClass( 'mw-translate-hide' );
 			$element.removeClass( 'loading' );
 		}
 	}
@@ -264,13 +266,13 @@
 			var $addAsRename = $( '<li>' ).append(
 					$( '<button>' )
 						.attr( 'type', 'button' )
-						.addClass( 'smg-rename-new-action' )
+						.addClass( 'smg-rename-new-action mw-translate-hide' )
 						.text( mw.msg( 'translate-smg-rename-new' ) )
 				),
 				$addAsNew = $( '<li>' ).append(
 					$( '<button>' )
 						.attr( 'type', 'button' )
-						.addClass( 'smg-rename-rename-action' )
+						.addClass( 'smg-rename-rename-action mw-translate-hide' )
 						.text( mw.msg( 'translate-smg-rename-rename' ) )
 				);
 
@@ -316,8 +318,9 @@
 				left: $currentTarget.position().left - $renameMenu.width() + $currentTarget.width()
 			} ).data( 'custom-data', customData );
 
-			// show all the li's
-			$renameMenu.find( 'li' ).show();
+			// When appending, show all the li's by default since based on the
+			// message type (RENAME / NEW) some li's may be hidden previously
+			$renameMenu.find( 'li' ).removeClass( 'mw-translate-hide' );
 			return this;
 		}
 
@@ -337,7 +340,7 @@
 		 * @chainable
 		 */
 		function hideOption( optSelector ) {
-			$renameMenu.find( optSelector ).parent().hide();
+			$renameMenu.find( optSelector ).parent().addClass( 'mw-translate-hide' );
 			return this;
 		}
 
