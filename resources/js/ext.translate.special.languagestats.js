@@ -52,15 +52,13 @@
 					var $el = $( this );
 					// Switch the state and toggle the rows
 					if ( $el.hasClass( 'collapsed' ) ) {
-						$children.fadeIn( { start: function () {
-							doZebra( $table );
-						} } ).trigger( 'show' );
+						$children.removeClass( 'statstable-hide' ).trigger( 'show' );
+						doZebra( $table );
 						$el.removeClass( 'collapsed' ).addClass( 'expanded' );
 						$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
 					} else {
-						$children.fadeOut( { done: function () {
-							doZebra( $table );
-						} } ).trigger( 'hide' );
+						$children.addClass( 'statstable-hide' ).trigger( 'hide' );
+						doZebra( $table );
 						$el.addClass( 'collapsed' ).removeClass( 'expanded' );
 						$el.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 					}
@@ -99,12 +97,12 @@
 				// Switch the state and toggle the rows
 				// and update the local toggles too
 				if ( $el.hasClass( 'collapsed' ) ) {
-					$allChildRows.show();
+					$allChildRows.removeClass( 'statstable-hide' );
 					$el.add( $allToggles ).removeClass( 'collapsed' ).addClass( 'expanded' );
 					$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapseall' ) );
 					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
 				} else {
-					$allChildRows.hide();
+					$allChildRows.addClass( 'statstable-hide' );
 					$el.add( $allToggles ).addClass( 'collapsed' ).removeClass( 'expanded' );
 					$el.find( '> a' ).text( mw.msg( 'translate-langstats-expandall' ) );
 					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
@@ -115,7 +113,7 @@
 			} );
 
 		// Initially hide them
-		$allChildRows.hide();
+		$allChildRows.addClass( 'statstable-hide' );
 		doZebra( $table );
 
 		// Add the toggle-all button above the table
