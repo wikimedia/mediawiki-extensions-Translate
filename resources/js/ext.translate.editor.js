@@ -1379,7 +1379,7 @@
 		},
 
 		/**
-		 * Makes the textare large enough for insertables and positions the insertables.
+		 * Makes the textarea large enough for insertables and positions the insertables.
 		 *
 		 * @param {jQuery} $textarea Text area.
 		 */

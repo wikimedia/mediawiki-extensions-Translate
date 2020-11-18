@@ -64,7 +64,7 @@
 
 			this.$menu = $( '<div>' )
 				.addClass( 'tux-groupselector' )
-				.addClass( 'grid' );
+				.addClass( 'grid hide' );
 
 			$searchIcon = $( '<div>' )
 				.addClass( 'two columns tux-groupselector__filter__search__icon' );
@@ -124,7 +124,7 @@
 		 * Show the selector
 		 */
 		show: function () {
-			this.$menu.addClass( 'open' ).show();
+			this.$menu.addClass( 'open' ).removeClass( 'hide' );
 			this.position();
 			// Place the focus in the message group search box.
 			this.$search.trigger( 'focus' );
@@ -147,7 +147,7 @@
 				return;
 			}
 
-			this.$menu.hide().removeClass( 'open' );
+			this.$menu.addClass( 'hide' ).removeClass( 'open' );
 		},
 
 		/**
@@ -301,7 +301,7 @@
 		showDefaultGroups: function () {
 			var groupSelector = this;
 
-			this.$loader.show();
+			this.$loader.removeClass( 'hide' );
 
 			this.loadGroups().done( function ( groups ) {
 				var groupsToShow = mw.translate.findGroup( groupSelector.parentGroupId, groups );
@@ -311,7 +311,7 @@
 					groupsToShow = groupsToShow.groups;
 				}
 
-				groupSelector.$loader.hide();
+				groupSelector.$loader.addClass( 'hide' );
 				groupSelector.$list.empty();
 				groupSelector.addGroupRows( groupsToShow );
 			} );
@@ -333,7 +333,7 @@
 		 */
 		showSelectedGroups: function ( groups ) {
 			var groupSelector = this;
-			this.$loader.show();
+			this.$loader.removeClass( 'hide' );
 			this.loadGroups()
 				.then( function ( allGroups ) {
 					var rows = [];
@@ -346,7 +346,7 @@
 					return rows;
 				} )
 				.always( function () {
-					groupSelector.$loader.hide();
+					groupSelector.$loader.addClass( 'hide' );
 					groupSelector.$list.empty();
 				} )
 				.done( function ( rows ) {
@@ -415,7 +415,7 @@
 					}
 				}
 
-				self.$loader.hide();
+				self.$loader.addClass( 'hide' );
 				self.$list.empty();
 				self.addGroupRows( foundGroups );
 			} );
