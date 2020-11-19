@@ -376,12 +376,12 @@
 				$( '.messageDiv' )
 					.empty()
 					.append( mw.message( 'pp-save-message', pageUrl ).parseDom() )
-					.show();
-				$( '.divDiff' ).hide( 'fast' );
-				$( '#action-prepare' ).show();
+					.removeClass( 'hide' );
+				$( '.divDiff' ).addClass( 'hide' );
+				$( '#action-prepare' ).removeClass( 'hide' );
 				$input.val( '' );
-				$( '#action-save' ).hide();
-				$( '#action-cancel' ).hide();
+				$( '#action-save' ).addClass( 'hide' );
+				$( '#action-cancel' ).addClass( 'hide' );
 			} );
 		} );
 
@@ -389,7 +389,7 @@
 			var pageName, $messageDiv = $( '.messageDiv' );
 
 			pageName = $input.val().trim();
-			$messageDiv.hide();
+			$messageDiv.addClass( 'hide' );
 			if ( pageName === '' ) {
 				// eslint-disable-next-line no-alert
 				alert( mw.msg( 'pp-pagename-missing' ) );
@@ -410,19 +410,19 @@
 					preppedContent = preppedContent.trim();
 					getDiff( pageName, preppedContent ).done( function ( diff ) {
 						if ( diff === undefined ) {
-							$messageDiv.text( mw.msg( 'pp-diff-error' ) ).show();
+							$messageDiv.text( mw.msg( 'pp-diff-error' ) ).removeClass( 'hide' );
 							return;
 						}
 
 						$( '.diff tbody' ).append( diff );
-						$( '.divDiff' ).show( 'fast' );
+						$( '.divDiff' ).removeClass( 'hide' );
 						if ( diff !== '' ) {
-							$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).show();
-							$( '#action-prepare' ).hide();
-							$( '#action-save' ).show();
-							$( '#action-cancel' ).show();
+							$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).removeClass( 'hide' );
+							$( '#action-prepare' ).addClass( 'hide' );
+							$( '#action-save' ).removeClass( 'hide' );
+							$( '#action-cancel' ).removeClass( 'hide' );
 						} else {
-							$messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).show();
+							$messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).removeClass( 'hide' );
 						}
 					} );
 				} );
