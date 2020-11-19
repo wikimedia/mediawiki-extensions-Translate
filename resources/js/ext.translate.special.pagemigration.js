@@ -60,12 +60,12 @@
 			}
 			if ( obj === undefined ) {
 				// obj was not initialized
-				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			}
 			if ( obj.revisions === undefined ) {
 				// the case of /en subpage where first edit is by FuzzyBot
-				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			}
 			pageContent = obj.revisions[ 0 ][ '*' ];
@@ -102,12 +102,12 @@
 			}
 			// Page does not exist if missing field is present
 			if ( obj === undefined || obj.missing === '' ) {
-				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			}
 			// Page exists, but no edit by FuzzyBot
 			if ( obj.revisions === undefined ) {
-				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
+				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			} else {
 				// FB over here refers to FuzzyBot
@@ -342,14 +342,14 @@
 	function saveHandler() {
 		var i, content, list = [];
 
-		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
+		$( '.mw-tpm-sp-error__message' ).addClass( 'hide' );
 		if ( noOfSourceUnits < noOfTranslationUnits ) {
 			$( '.mw-tpm-sp-error__message' ).text( mw.msg( 'pm-extra-units-warning' ) )
-				.show( 'fast' );
+				.removeClass( 'hide' );
 			return;
 		} else {
 			$( 'input' ).prop( 'disabled', true );
-			$( '.mw-tpm-sp-instructions' ).hide( 'fast' );
+			$( '.mw-tpm-sp-instructions' ).addClass( 'hide' );
 			for ( i = 0; i < noOfSourceUnits; i++ ) {
 				content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
 				content = content.trim();
@@ -361,11 +361,13 @@
 			$.ajaxDispatcher( list, 1 ).done( function () {
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).prop( 'disabled', false );
-				$( '.mw-tpm-sp-instructions' ).text( mw.msg( 'pm-on-save-message-text' ) ).show( 'fast' );
+				$( '.mw-tpm-sp-instructions' )
+					.text( mw.msg( 'pm-on-save-message-text' ) )
+					.removeClass( 'hide' );
 			} ).fail( function ( errmsg ) {
 				$( 'input' ).prop( 'disabled', false );
 				// eslint-disable-next-line mediawiki/msg-doc
-				$( '.mw-tpm-sp-error__message' ).text( mw.msg( errmsg ) ).show( 'fast' );
+				$( '.mw-tpm-sp-error__message' ).text( mw.msg( errmsg ) ).removeClass( 'hide' );
 			} );
 		}
 	}
@@ -374,8 +376,8 @@
 	 * Handler for 'Cancel' button click event.
 	 */
 	function cancelHandler() {
-		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
-		$( '.mw-tpm-sp-instructions' ).hide( 'fast' );
+		$( '.mw-tpm-sp-error__message' ).addClass( 'hide' );
+		$( '.mw-tpm-sp-instructions' ).addClass( 'hide' );
 		$( '#action-save, #action-cancel' ).addClass( 'hide' );
 		$( '#action-import' ).removeClass( 'hide' );
 		$( '.mw-tpm-sp-unit-listing' ).html( '' );
@@ -452,14 +454,14 @@
 
 		pageTitle = $( '#title' ).val().trim();
 		if ( pageTitle === '' ) {
-			$errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).removeClass( 'hide' );
 			return;
 		}
 
 		titleObj = mw.Title.newFromText( pageTitle );
-		$messageBox.hide( 'fast' );
+		$messageBox.addClass( 'hide' );
 		if ( titleObj === null ) {
-			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).removeClass( 'hide' );
 			return;
 		}
 
@@ -467,7 +469,7 @@
 		slashPos = pageTitle.lastIndexOf( '/' );
 
 		if ( slashPos === -1 ) {
-			$errorBox.text( mw.msg( 'pm-langcode-missing' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-langcode-missing' ) ).removeClass( 'hide' );
 			return;
 		}
 
@@ -475,11 +477,11 @@
 		langCode = pageTitle.substring( slashPos + 1 );
 
 		if ( pageName === '' ) {
-			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).removeClass( 'hide' );
 			return;
 		}
 
-		$errorBox.hide( 'fast' );
+		$errorBox.addClass( 'hide' );
 
 		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
@@ -491,7 +493,7 @@
 					displayUnits( sourceUnits, translationUnits );
 					$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					$( '#action-import' ).addClass( 'hide' );
-					$messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show( 'fast' );
+					$messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).removeClass( 'hide' );
 				} );
 			} );
 	}
