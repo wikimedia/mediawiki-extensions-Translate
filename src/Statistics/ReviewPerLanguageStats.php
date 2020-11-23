@@ -54,14 +54,10 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
-			if ( class_exists( ActorMigration::class ) ) {
-				$actorQuery = ActorMigration::newMigration()->getJoin( 'log_user' );
-				$tables += $actorQuery['tables'];
-				$fields['log_user_text'] = $actorQuery['fields']['log_user_text'];
-				$joins += $actorQuery['joins'];
-			} else {
-				$fields[] = 'log_user_text';
-			}
+			$actorQuery = ActorMigration::newMigration()->getJoin( 'log_user' );
+			$tables += $actorQuery['tables'];
+			$fields['log_user_text'] = $actorQuery['fields']['log_user_text'];
+			$joins += $actorQuery['joins'];
 		}
 
 		$type .= '-reviews';

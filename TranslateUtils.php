@@ -167,15 +167,7 @@ class TranslateUtils {
 
 		$dbr = wfGetDB( DB_REPLICA );
 
-		if ( class_exists( ActorMigration::class ) ) {
-			$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
-		} else {
-			$actorQuery = [
-				'tables' => [],
-				'fields' => [ 'rc_user_text' => 'rc_user_text' ],
-				'joins' => [],
-			];
-		}
+		$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
 
 		$hours = (int)$hours;
 		$cutoff_unixtime = time() - ( $hours * 3600 );

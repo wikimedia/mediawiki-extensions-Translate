@@ -43,12 +43,8 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 			'rc_id > ' . $this->getRCCutoff(),
 		];
 
-		if ( class_exists( ActorMigration::class ) ) {
-			$conds[] = ActorMigration::newMigration()
-				->getWhere( $db, 'rc_user', FuzzyBot::getUser() )['conds'];
-		} else {
-			$conds['rc_user'] = FuzzyBot::getUser()->getId();
-		}
+		$conds[] = ActorMigration::newMigration()
+			->getWhere( $db, 'rc_user', FuzzyBot::getUser() )['conds'];
 
 		return $conds;
 	}
