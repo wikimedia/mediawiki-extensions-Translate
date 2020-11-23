@@ -15,6 +15,7 @@ use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -22,6 +23,10 @@ use MediaWiki\MediaWikiServices;
 return [
 	'Translate:GroupSynchronizationCache' => function (): GroupSynchronizationCache {
 		return new GroupSynchronizationCache( ObjectCache::getInstance( CACHE_DB ) );
+	},
+
+	'Translate:JsonCodec' => function (): JsonCodec {
+		return new JsonCodec();
 	},
 
 	'Translate:ParsingPlaceholderFactory' => function (): ParsingPlaceholderFactory {
