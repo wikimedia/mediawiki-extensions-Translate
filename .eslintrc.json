@@ -16,10 +16,10 @@
 		"no-jquery/no-animate-toggle": "warn",
 		"no-jquery/no-class-state": "off",
 		"no-jquery/no-each-util": "warn",
-		"no-jquery/no-fade": "warn",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-map-util": "warn",
 		"no-jquery/no-sizzle": "warn",
-		"no-shadow": "warn"
+		"no-shadow": "warn",
+		"no-jquery/no-visibility": "error"
 	}
 }

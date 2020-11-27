@@ -115,7 +115,7 @@ $( function () {
 		max: new Date()
 	} );
 
-	$input.after( widget.$element ).hide();
+	$input.after( widget.$element ).addClass( 'mw-translate-translationstats-hide' );
 	widget.on( 'change', function ( data ) {
 		$input.val( data + 'T00:00:00' );
 	} );

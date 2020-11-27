@@ -361,7 +361,7 @@
 			e.stopPropagation();
 
 			if ( suggestion.$sourcesElement ) {
-				suggestion.$sourcesElement.toggle();
+				suggestion.$sourcesElement.toggleClass( 'hide' );
 				return;
 			}
 
