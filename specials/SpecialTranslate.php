@@ -122,7 +122,9 @@ class SpecialTranslate extends SpecialPage {
 				throw new MWException( '$r was not set' );
 			}
 
-			wfAppendToArrayIfNotDefault( $v, $r, $defaults, $nondefaults );
+			if ( $defaults[$v] !== $r ) {
+				$nondefaults[$v] = $r;
+			}
 		}
 
 		$this->defaults = $defaults;
