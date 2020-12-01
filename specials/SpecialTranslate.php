@@ -355,7 +355,7 @@ class SpecialTranslate extends SpecialPage {
 		list( $alias, $sub ) = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $title->getText() );
 
-		$pagesInGroup = [ 'Translate', 'LanguageStats', 'MessageGroupStats' ];
+		$pagesInGroup = [ 'Translate', 'LanguageStats', 'MessageGroupStats', 'ExportTranslations' ];
 		if ( !in_array( $alias, $pagesInGroup, true ) ) {
 			return true;
 		}

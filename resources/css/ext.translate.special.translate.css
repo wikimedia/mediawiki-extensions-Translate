@@ -214,3 +214,7 @@
 .client-js .tux-nojs {
 	display: none;
 }
+
+.mw-special-Translate #firstHeading {
+	display: none;
+}
