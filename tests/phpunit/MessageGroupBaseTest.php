@@ -89,65 +89,6 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testInsertablesSuggesterClass() {
-		$conf = $this->groupConfiguration;
-		$conf['INSERTABLES']['class'] = FakeInsertablesSuggester::class;
-		$this->group = MessageGroupBase::factory( $conf );
-
-		$this->assertArrayEquals(
-			[ new Insertable( 'Fake', 'Insertables', 'Suggester' ) ],
-			$this->group->getInsertablesSuggester()->getInsertables( '' )
-		);
-	}
-
-	public function testInsertablesSuggesterClasses() {
-		$conf = $this->groupConfiguration;
-		$conf['INSERTABLES']['classes'] = [
-			'FakeInsertablesSuggester',
-			'AnotherFakeInsertablesSuggester',
-		];
-		$this->group = MessageGroupBase::factory( $conf );
-
-		$this->assertArrayEquals(
-			[
-				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
-				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
-			],
-			$this->group->getInsertablesSuggester()->getInsertables( '' )
-		);
-	}
-
-	public function testInsertablesSuggesterClassAndClasses() {
-		$conf = $this->groupConfiguration;
-		$conf['INSERTABLES']['class'] = FakeInsertablesSuggester::class;
-		$conf['INSERTABLES']['classes'] = [ AnotherFakeInsertablesSuggester::class ];
-		$this->group = MessageGroupBase::factory( $conf );
-
-		$this->assertArrayEquals(
-			[
-				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
-				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
-			],
-			$this->group->getInsertablesSuggester()->getInsertables( '' )
-		);
-
-		$conf['INSERTABLES']['classes'][] = 'FakeInsertablesSuggester';
-		$conf['INSERTABLES']['classes'][] = 'AnotherFakeInsertablesSuggester';
-		$this->group = MessageGroupBase::factory( $conf );
-
-		$this->assertArrayEquals(
-			[
-				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
-				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
-			],
-			$this->group->getInsertablesSuggester()->getInsertables( '' ),
-			false,
-			false,
-			"should correctly get InsertablesSuggesters using " .
-			"both 'class' and 'classes' options and removing duplicates."
-		);
-	}
-
 	public function testGetNamespaceInvalid() {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = 'ergweofijwef';
@@ -186,8 +127,9 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 	public function testInsertableValidatorConfiguration() {
 		$conf = $this->groupConfiguration;
 
-		unset( $conf['INSERTABLES']['class'] );
-		$conf['INSERTABLES']['classes'] = [ AnotherFakeInsertablesSuggester::class ];
+		$conf['INSERTABLES'] = [
+			[ 'class' => AnotherFakeInsertablesSuggester::class ]
+		];
 		$conf['VALIDATORS'] = [];
 		$conf['VALIDATORS'][] = [
 			'class' => FakeInsertableValidator::class,
@@ -226,8 +168,6 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 
 	public function testInsertableArrayConfiguration() {
 		$conf = $this->groupConfiguration;
-		unset( $conf['INSERTABLES']['class'] );
-		unset( $conf['INSERTABLES']['classes'] );
 
 		$conf['INSERTABLES'] = [
 			[

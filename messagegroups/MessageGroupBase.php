@@ -164,35 +164,24 @@ abstract class MessageGroupBase implements MessageGroup {
 	 * @return CombinedInsertablesSuggester
 	 */
 	public function getInsertablesSuggester() {
-		$allClasses = [];
-
-		$class = $this->getFromConf( 'INSERTABLES', 'class' );
-		if ( $class !== null ) {
-			$allClasses[] = $class;
-		}
-
-		$classes = $this->getFromConf( 'INSERTABLES', 'classes' );
-		if ( $classes !== null ) {
-			$allClasses = array_merge( $allClasses, $classes );
-		}
-
-		$allClasses = array_unique( $allClasses, SORT_REGULAR );
-
 		$suggesters = [];
+		$insertableConf = $this->getFromConf( 'INSERTABLES' ) ?? [];
 
-		foreach ( $allClasses as $class ) {
+		foreach ( $insertableConf as $config ) {
+			if ( !isset( $config['class'] ) ) {
+				throw new InvalidArgumentException( "Insertable configuration does not provide a class." );
+			}
+
+			$class = $config['class'];
+
 			if ( !class_exists( $class ) ) {
 				throw new InvalidArgumentException( "InsertablesSuggester class $class does not exist." );
 			}
 
-			$suggesters[] = new $class();
+			$suggesters[] = new $class( $config['params'] ?? [] );
 		}
 
-		if ( $suggesters === [] ) {
-			$suggesters = $this->getArrayInsertables();
-		}
-
-		// get validators marked as insertable
+		// Get validators marked as insertable
 		$messageValidator = $this->getValidator();
 		if ( $messageValidator ) {
 			$suggesters = array_merge( $suggesters, $messageValidator->getInsertableValidators() );
@@ -395,31 +384,5 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	public function getTranslationAids() {
 		return TranslationAid::getTypes();
-	}
-
-	/**
-	 * Fetches insertables that have been added in the array configuration format.
-	 * TODO: MessageValidator - Move this code to getInsertablesSuggester once all
-	 * insertables in group config file have been migrated to the array structure.
-	 * @return array
-	 */
-	private function getArrayInsertables() {
-		$suggesters = [];
-		$insertableConf = $this->getFromConf( 'INSERTABLES' );
-
-		if ( $insertableConf === null ) {
-			return $suggesters;
-		}
-
-		foreach ( $insertableConf as $config ) {
-			if ( !isset( $config['class'] ) ) {
-				throw new InvalidArgumentException( "Insertable configuration does not provide a class." );
-			}
-
-			$class = $config['class'];
-			$suggesters[] = new $class( $config['params'] ?? [] );
-		}
-
-		return $suggesters;
 	}
 }

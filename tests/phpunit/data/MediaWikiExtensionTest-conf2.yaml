@@ -21,7 +21,7 @@ VALIDATORS:
   - id: MediaWikiPlural
 
 INSERTABLES:
-  class: MediaWikiInsertablesSuggester
+  - class: MediaWikiInsertablesSuggester
 
 MANGLER:
   class: StringMatcher
