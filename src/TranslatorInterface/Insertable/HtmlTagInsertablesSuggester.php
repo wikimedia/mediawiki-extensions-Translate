@@ -1,13 +1,13 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
 
 /**
  * Suggester for HTML tags
- * @since 2020.03
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @since 2020.12
  */
 class HtmlTagInsertablesSuggester implements InsertablesSuggester {
 	/** @var InsertablesSuggester */
@@ -22,7 +22,7 @@ class HtmlTagInsertablesSuggester implements InsertablesSuggester {
 		] );
 	}
 
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return $this->suggester->getInsertables( $text );
 	}
 }

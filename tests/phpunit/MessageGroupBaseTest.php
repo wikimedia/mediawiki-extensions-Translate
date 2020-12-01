@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use MediaWiki\Extensions\Translate\Validation\MessageValidator;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
@@ -198,13 +200,13 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 }
 
 class FakeInsertablesSuggester implements InsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return [ new Insertable( 'Fake', 'Insertables', 'Suggester' ) ];
 	}
 }
 
 class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return [ new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ) ];
 	}
 }
@@ -214,7 +216,7 @@ class FakeInsertableValidator implements MessageValidator, InsertablesSuggester 
 		return new ValidationIssues();
 	}
 
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return [ new Insertable( 'Fake', 'Insertable', 'Validator' ) ];
 	}
 }
@@ -224,7 +226,7 @@ class AnotherFakeInsertableValidator implements MessageValidator, InsertablesSug
 		return new ValidationIssues();
 	}
 
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return [ new Insertable( 'Another', 'Fake Insertable', 'Validator' ) ];
 	}
 }

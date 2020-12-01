@@ -1,14 +1,16 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+
 /**
  * Insertables suggester for numerical parameters such as $1, $2, $3
- *
- * @file
  * @author Geoffrey Mon
  * @license GPL-2.0-or-later
+ * @since 2020.12
  */
-
 class NumericalParameterInsertablesSuggester implements InsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		$insertables = [];
 
 		// $1, $2, $3 etc.

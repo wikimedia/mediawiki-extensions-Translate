@@ -5,11 +5,13 @@
  * @license GPL-2.0-or-later
  */
 
-class MediaWikiInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
 
-	/**
-	 * @dataProvider getInsertablesProvider
-	 */
+use MediaWikiUnitTestCase;
+
+/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester */
+class MediaWikiInsertablesSuggesterTest extends MediaWikiUnitTestCase {
+	/** @dataProvider getInsertablesProvider */
 	public function testGetInsertables( $input, $expected ) {
 		$suggester = new MediaWikiInsertablesSuggester();
 		$this->assertEquals( $expected, $suggester->getInsertables( $input ) );

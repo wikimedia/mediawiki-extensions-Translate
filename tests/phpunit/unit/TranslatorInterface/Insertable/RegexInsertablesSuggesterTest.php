@@ -5,10 +5,13 @@
  * @license GPL-2.0-or-later
  */
 
-class RegexInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
-	/**
-	 * @dataProvider getTestRegexInsertableProvider
-	 */
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+
+use MediaWikiUnitTestCase;
+
+/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\RegexInsertablesSuggester */
+class RegexInsertablesSuggesterTest extends MediaWikiUnitTestCase {
+	/** @dataProvider getTestRegexInsertableProvider */
 	public function testRegexInsertable( $text, $params, $expectedVals ) {
 		$insertablesSuggester = new RegexInsertablesSuggester( $params );
 		$insertables = $insertablesSuggester->getInsertables( $text );

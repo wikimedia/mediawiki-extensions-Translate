@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertableFactory;
 use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 
@@ -169,16 +171,20 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		foreach ( $insertableConf as $config ) {
 			if ( !isset( $config['class'] ) ) {
-				throw new InvalidArgumentException( "Insertable configuration does not provide a class." );
+				throw new InvalidArgumentException(
+					'Insertable configuration for group: ' . $this->getId() .
+					' does not provide a class.'
+				);
 			}
 
-			$class = $config['class'];
-
-			if ( !class_exists( $class ) ) {
-				throw new InvalidArgumentException( "InsertablesSuggester class $class does not exist." );
+			if ( !is_string( $config['class'] ) ) {
+				throw new InvalidArgumentException(
+					'Expected Insertable class to be string, got: ' . gettype( $config['class'] ) .
+					' for group: ' . $this->getId()
+				);
 			}
 
-			$suggesters[] = new $class( $config['params'] ?? [] );
+			$suggesters[] = InsertableFactory::make( $config['class'], $config['params'] ?? [] );
 		}
 
 		// Get validators marked as insertable

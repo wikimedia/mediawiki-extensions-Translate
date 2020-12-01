@@ -1,17 +1,19 @@
 <?php
-
 /**
  * @file
  * @author Geoffrey Mon
  * @license GPL-2.0-or-later
  */
-class NumericalParameterInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
 
-	/**
-	 * @dataProvider getInsertablesProvider
-	 */
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+
+use MediaWikiUnitTestCase;
+
+/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\NumericalParameterInsertablesSuggester */
+class NumericalParameterInsertablesSuggesterTest extends MediaWikiUnitTestCase {
+	/** @dataProvider getInsertablesProvider */
 	public function testGetInsertables( $input, $expected ) {
-		$suggester = new MediaWikiInsertablesSuggester();
+		$suggester = new NumericalParameterInsertablesSuggester();
 		$this->assertEquals( $expected, $suggester->getInsertables( $input ) );
 	}
 

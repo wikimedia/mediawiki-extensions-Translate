@@ -25,7 +25,6 @@ $cfg['directory_list'] = array_merge(
 	[
 		'api',
 		'ffs',
-		'insertables',
 		'messagegroups',
 		'scripts',
 		'specials',

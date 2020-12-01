@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extensions\Translate\Validation\Validators;
 
 use InvalidArgumentException;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\RegexInsertablesSuggester;
 use MediaWiki\Extensions\Translate\Validation\MessageValidator;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
-use RegexInsertablesSuggester;
 use TMessage;
 
 /**

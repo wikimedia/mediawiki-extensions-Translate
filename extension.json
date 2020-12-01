@@ -91,7 +91,6 @@
 		"CachedMessageIndex": "utils/MessageIndex.php",
 		"CaighdeanWebService": "webservices/CaighdeanWebService.php",
 		"CDBMessageIndex": "utils/MessageIndex.php",
-		"CombinedInsertablesSuggester": "insertables/CombinedInsertablesSuggester.php",
 		"CrossLanguageTranslationSearchQuery": "ttmserver/CrossLanguageTranslationSearchQuery.php",
 		"CurrentTranslationAid": "translationaids/CurrentTranslationAid.php",
 		"CxserverWebService": "webservices/CxserverWebService.php",
@@ -115,19 +114,15 @@
 		"GoogleTranslateWebService": "webservices/GoogleTranslateWebService.php",
 		"HashMessageIndex": "utils/MessageIndex.php",
 		"HTMLJsSelectToInputField": "utils/HTMLJsSelectToInputField.php",
-		"HtmlTagInsertablesSuggester": "insertables/HtmlTagInsertablesSuggester.php",
 		"IniFFS": "ffs/IniFFS.php",
 		"InOtherLanguagesAid": "translationaids/InOtherLanguagesAid.php",
-		"Insertable": "insertables/Insertable.php",
 		"InsertablesAid": "translationaids/InsertablesAid.php",
-		"InsertablesSuggester": "insertables/InsertablesSuggester.php",
 		"JavaFFS": "ffs/JavaFFS.php",
 		"JavaScriptFFS": "ffs/JavaScriptFFS.php",
 		"JsonFFS": "ffs/JsonFFS.php",
 		"JsSelectToInput": "utils/JsSelectToInput.php",
 		"MachineTranslationAid": "translationaids/MachineTranslationAid.php",
 		"MediaWikiExtensionMessageGroup": "messagegroups/MediaWikiExtensionMessageGroup.php",
-		"MediaWikiInsertablesSuggester": "insertables/MediaWikiInsertablesSuggester.php",
 		"MessageChangeStorage": "utils/MessageChangeStorage.php",
 		"MessageCollection": "MessageCollection.php",
 		"MessageDefinitionAid": "translationaids/MessageDefinitionAid.php",
@@ -158,7 +153,6 @@
 		"MockTranslateValidator": "tests/phpunit/mocks/MockValidators.php",
 		"MockWikiMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
 		"MockWikiValidationMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
-		"NumericalParameterInsertablesSuggester": "insertables/NumericalParameterInsertablesSuggester.php",
 		"PageTranslationHooks": "tag/PageTranslationHooks.php",
 		"PageTranslationLogFormatter": "tag/PageTranslationLogFormatter.php",
 		"PHPVariableLoader": "utils/PHPVariableLoader.php",
@@ -170,7 +164,6 @@
 		"ReadableTTMServer": "ttmserver/Interfaces.php",
 		"RecentAdditionsMessageGroup": "messagegroups/RecentAdditionsMessageGroup.php",
 		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
-		"RegexInsertablesSuggester": "insertables/RegexInsertablesSuggester.php",
 		"RemoteTTMServer": "ttmserver/RemoteTTMServer.php",
 		"RemoteTTMServerWebService": "webservices/RemoteTTMServerWebService.php",
 		"RESTBaseWebService": "webservices/RESTBaseWebService.php",
@@ -206,7 +199,6 @@
 		"TPParse": "tag/TPParse.php",
 		"TPSection": "tag/TPSection.php",
 		"TranslatablePage": "tag/TranslatablePage.php",
-		"TranslatablePageInsertablesSuggester": "insertables/TranslatablePageInsertablesSuggester.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslatablePageMoveJob": "tag/TranslatablePageMoveJob.php",
 		"TranslatablePageTestTrait": "tests/phpunit/helpers/TranslatablePageTestTrait.php",
@@ -255,6 +247,9 @@
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extensions\\Translate\\": "src/"
+	},
+	"TestAutoloadClasses": {
+		"MockCustomInsertableSuggester": "tests/phpunit/mocks/MockCustomInsertableSuggester.php"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extensions\\Translate\\": "tests/phpunit/unit/"

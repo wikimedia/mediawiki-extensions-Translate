@@ -1,16 +1,19 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\PageTranslation;
+
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 
 /**
  * Special insertables for translatable pages.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013.11
  */
 class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		$insertables = parent::getInsertables( $text );
 
 		// Translatable pages allow naming the variables. Basically anything is

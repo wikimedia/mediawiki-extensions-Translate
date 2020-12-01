@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Validation\Validators;
 
-use Insertable;
-use InsertablesSuggester;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural;
 use MediaWiki\Extensions\Translate\Utilities\UnicodePlural;
 use MediaWiki\Extensions\Translate\Validation\MessageValidator;
@@ -93,7 +93,7 @@ class SmartFormatPluralValidator implements MessageValidator, InsertablesSuggest
 		return $issues;
 	}
 
-	public function getInsertables( $text ) : array {
+	public function getInsertables( string $text ) : array {
 		$definitionPlurals = SmartFormatPlural::getPluralInstances( $text );
 		$insertables = [];
 

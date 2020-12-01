@@ -9,7 +9,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extensions\Translate\Validation;
 
-use InsertablesSuggester;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use TMessage;
 
 /**
@@ -51,7 +51,7 @@ class LegacyValidatorAdapter implements MessageValidator, InsertablesSuggester {
 	}
 
 	/** @inheritDoc */
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		if ( $this->validator instanceof InsertablesSuggester ) {
 			return $this->validator->getInsertables( $text );
 		}

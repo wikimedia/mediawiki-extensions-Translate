@@ -5,10 +5,14 @@
  * @license GPL-2.0-or-later
  */
 
-class TranslatablePageInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
-	/**
-	 * @dataProvider getInsertablesProvider
-	 */
+namespace MediaWiki\Extensions\Translate\PageTranslation;
+
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWikiUnitTestCase;
+
+/** @covers \MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageInsertablesSuggester */
+class TranslatablePageInsertablesSuggesterTest extends MediaWikiUnitTestCase {
+	/** @dataProvider getInsertablesProvider */
 	public function testGetInsertables( $input, $expected ) {
 		$suggester = new TranslatablePageInsertablesSuggester();
 		$this->assertEquals( $expected, $suggester->getInsertables( $input ) );

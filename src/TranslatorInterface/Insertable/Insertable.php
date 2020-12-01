@@ -1,16 +1,14 @@
 <?php
-/**
- * Value object for insertables.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
 
 /**
  * Insertable is a string that usually does not need translation and is
  * difficult to type manually.
- * @since 2013.09
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @since 2020.12
  */
 class Insertable {
 	/** @var string What to show to the user */
@@ -25,21 +23,21 @@ class Insertable {
 	 * @param string $pre What to insert before selection
 	 * @param string $post What to insert after selection
 	 */
-	public function __construct( $display, $pre = '', $post = '' ) {
+	public function __construct( string $display, string $pre = '', string $post = '' ) {
 		$this->display = $display;
 		$this->pre = $pre;
 		$this->post = $post;
 	}
 
-	public function getPreText() {
+	public function getPreText(): string {
 		return $this->pre;
 	}
 
-	public function getPostText() {
+	public function getPostText(): string {
 		return $this->post;
 	}
 
-	public function getDisplayText() {
+	public function getDisplayText(): string {
 		return $this->display;
 	}
 }

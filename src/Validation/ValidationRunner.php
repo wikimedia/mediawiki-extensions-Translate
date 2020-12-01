@@ -13,8 +13,8 @@ namespace MediaWiki\Extensions\Translate\Validation;
 
 use Exception;
 use FormatJson;
-use InsertablesSuggester;
 use InvalidArgumentException;
+use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use PHPVariableLoader;
 use TMessage;
 

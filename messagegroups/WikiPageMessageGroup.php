@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
 use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;

@@ -1,14 +1,16 @@
 <?php
-/**
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+
+use InvalidArgumentException;
 
 /**
  * Regex InsertablesSuggester implementation that can be extended or used
  * for insertables in message groups
- * @since 2019.06
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
+ * @since 2020.12
  */
 class RegexInsertablesSuggester implements InsertablesSuggester {
 	/**
@@ -92,7 +94,7 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 		}
 	}
 
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		$insertables = [];
 
 		$matches = [];

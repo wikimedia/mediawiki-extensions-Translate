@@ -1,15 +1,17 @@
 <?php
-
 /**
  * @file
  * @author Geoffrey Mon
  * @license GPL-2.0-or-later
  */
-class CombinedInsertablesSuggesterTest extends MediaWikiIntegrationTestCase {
 
-	/**
-	 * @dataProvider getInsertablesProvider
-	 */
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+
+use MediaWikiUnitTestCase;
+
+/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester */
+class CombinedInsertablesSuggesterTest extends MediaWikiUnitTestCase {
+	/** @dataProvider getInsertablesProvider */
 	public function testGetInsertables( $suggesters, $input, $expected ) {
 		$suggester = new CombinedInsertablesSuggester( $suggesters );
 		$this->assertArrayEquals( $expected, $suggester->getInsertables( $input ) );
@@ -70,13 +72,13 @@ class CombinedInsertablesSuggesterTest extends MediaWikiIntegrationTestCase {
 }
 
 class TestingInsertablesSuggester implements InsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return [ new Insertable( 'Test', 'Test', '' ) ];
 	}
 }
 
 class TestingDuplicateInsertablesSuggester implements InsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		return [
 			new Insertable( '$1', '$1', '' ),
 			new Insertable( '$1', '$1', '' ),

@@ -1,16 +1,16 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
 
 /**
  * InsertablesSuggester implementation for MediaWiki message translations.
- * @since 2013.09
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @since 2020.12
  */
 class MediaWikiInsertablesSuggester implements InsertablesSuggester {
-	public function getInsertables( $text ) {
+	public function getInsertables( string $text ): array {
 		$insertables = [];
 
 		$matches = [];
