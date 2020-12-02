@@ -19,7 +19,7 @@ class TranslatablePageMessageGroupStore extends MessageGroupLoader
 {
 
 	private const CACHE_KEY = 'wikipage';
-	private const CACHE_VERSION = 1;
+	private const CACHE_VERSION = 2;
 
 	/**
 	 * @var Wikimedia\Rdbms\IDatabase

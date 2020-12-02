@@ -19,7 +19,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	implements CachedMessageGroupLoader {
 
 	private const CACHE_KEY = 'aggregate';
-	private const CACHE_VERSION = 1;
+	private const CACHE_VERSION = 2;
 
 	/**
 	 * @var MessageGroupWANCache
