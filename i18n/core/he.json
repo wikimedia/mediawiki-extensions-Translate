@@ -153,7 +153,7 @@
 	"translate-statsf-graph-alt-text-info": "טקסט חלופי לסטטיסטיקת התרגום בטבלת הנתונים להלן.",
 	"translate-statsf-alt-text": "זה הטקסט החלופי לסטטיסטיקות התרגום.",
 	"translate-statsf-embed": "קוד לשיבוץ בתרשים סטטיסטיקות התרגום בדפים אחרים.",
-	"translate-tag-page-desc": "תרגום של דף הוויקי [[$2|$1]] מ־$3 ($4).",
+	"translate-tag-page-desc": "תרגום של דף הוויקי [[$2|$1]] מ{{GRAMMAR:תחילית|$3}} ($4).",
 	"translate-sidebar-alltrans": "בשפות אחרות",
 	"translations": "כל התרגומים",
 	"translations-summary": "הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.",

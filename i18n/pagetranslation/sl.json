@@ -57,7 +57,7 @@
 	"tpt-translation-intro": "Ta stran je <span class=\"plainlinks\">[$1 prevedena različica]</span> strani [[$2]] in prevod je $3 % dokončan.",
 	"tpt-translation-intro-fuzzy": "Zastareli prevodi so označeni tako.",
 	"tpt-languages-legend": "Drugi jeziki:",
-	"tpt-languages-zero": "Prični s prevajanjem v ta jezik",
+	"tpt-languages-zero": "Začni prevajanje v ta jezik",
 	"tpt-languages-nonzero": "$1 ($2 % prevedeno)",
 	"tpt-target-page": "Te strani ni mogoče ročno posodobiti.\nTa stran je prevod strani [[$1]], njen prevod lahko posodobite z uporabo [$2 prevajalskega orodja].",
 	"tpt-unknown-page": "Ta imenski prostor je pridržan za prevode vsebinskih strani.\nStran, ki jo poskušate urediti, ne ustreza nobeni strani označeni za prevajanje.",
