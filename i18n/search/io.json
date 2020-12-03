@@ -8,6 +8,7 @@
 	"tux-sst-edit": "Modifikar tradukuro",
 	"tux-sst-search": "Serchez",
 	"tux-sst-search-ph": "Serchar tradukuri",
+	"tux-sst-count": "{{PLURAL:$1|1 rezulto|$1 rezulti}} trovesis",
 	"tux-sst-facet-language": "Lingui",
 	"tux-sst-facet-group": "Grupo di mesaji",
 	"tux-sst-default": "Tradukuri",
