@@ -11,5 +11,7 @@
 	"apihelp-query+languagestats-param-language": "Taalkoade.",
 	"apihelp-query+messagecollection-param-group": "Berjochtegroep.",
 	"apihelp-query+messagecollection-param-language": "Taalkoade.",
-	"apihelp-translationstash-param-subaction": "Hanneling."
+	"apihelp-translationstash-param-subaction": "Hanneling.",
+	"apierror-translate-language-disabled": "Oersetten yn it $1 is útskeakele.",
+	"apierror-translate-language-disabled-reason": "Oersetten yn it $1 is útskeakele: $2"
 }

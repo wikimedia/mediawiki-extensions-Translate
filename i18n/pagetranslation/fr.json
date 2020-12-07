@@ -130,7 +130,7 @@
 	"tpt-aggregategroup-update": "Enregistrer",
 	"tpt-aggregategroup-update-cancel": "Annuler",
 	"tpt-invalid-group": "Groupe non valide",
-	"pt-parse-open": "Balise <tt>&lt;translate></tt> asymétrique.\nModèle de traduction : <pre>$1</pre>",
+	"pt-parse-open": "Balise &lt;translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-close": "Balise &lt;/translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-nested": "L’imbrication des sections <tt>&lt;translate></tt> n’est pas autorisée.\nTexte de la balise : <pre>$1</pre>",
 	"pt-shake-multiple": "Multiples marqueurs d’unité de traduction pour une même unité de traduction.\nTexte de l’unité de traduction : <pre>$1</pre>",
