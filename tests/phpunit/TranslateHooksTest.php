@@ -43,7 +43,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 
 	public function testPreventCategorization() {
 		$user = $this->getTestSysop()->getUser();
-		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey1/fi' );
+		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
 
@@ -54,18 +54,18 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 			'translation of known message'
 		);
 
-		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey2/qqq' );
+		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/qqq' );
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbe]]', $title );
 
 		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
-			[ 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ],
+			[ 'Category:Shouldbe' => 'MediaWiki:Ugakey2/qqq' ],
 			$title->getParentCategories(),
 			'message docs'
 		);
 
-		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey3/no' );
+		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey3/no' );
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
 
