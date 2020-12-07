@@ -12,7 +12,6 @@
 		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingVar" />
 		<exclude name="MediaWiki.Commenting.PropertyDocumentation.WrongStyle" />
 		<exclude name="MediaWiki.Usage.ExtendClassUsage.FunctionConfigUsage" />
-		<exclude name="MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 	</rule>
 	<rule ref="Generic.Files.LineLength">
