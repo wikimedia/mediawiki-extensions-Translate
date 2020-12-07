@@ -110,3 +110,14 @@
 	background-color: #f0f0f0;
 	color: #222;
 }
+
+.smg-group-sync-cache {
+	padding: 0.5em 1em;
+	background: #f0f0f0;
+	border-radius: 3px;
+}
+
+.smg-group-sync-cache a {
+	position: absolute;
+	right: 1em;
+}
