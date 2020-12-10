@@ -202,11 +202,15 @@ class SpecialManageGroups extends SpecialPage {
 			}
 		}
 
-		$attribs = [ 'type' => 'submit', 'class' => 'mw-translate-smg-submit' ];
+		$attribs = [
+			'type' => 'submit',
+			'class' => 'mw-ui-button mw-ui-progressive mw-translate-smg-submit'
+		];
 		if ( !$this->hasRight ) {
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = $this->msg( 'translate-smg-notallowed' )->text();
 		}
+		// TODO: Use Html::submitButton once https://phabricator.wikimedia.org/T101480 is fixed.
 		$button = Html::element( 'button', $attribs, $this->msg( 'translate-smg-submit' )->text() );
 		$out->addHTML( $button );
 		$out->addHTML( Html::closeElement( 'form' ) );
