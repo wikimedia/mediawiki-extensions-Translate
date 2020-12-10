@@ -9,6 +9,8 @@
 	"translate": "Tradusion",
 	"translate-extensionname": "Traduxi",
 	"translate-desc": "[[Special:Translate|Pàjina speçałe]] par tradure MediaWiki e altro",
+	"translate-taction-lstats": "Statìsteghe de ła łéngua",
+	"translate-taction-mstats": "Statìsteghe del grupo de mesaji",
 	"translate-page-no-such-language": "La lengua indicà no la xe valida.",
 	"translate-page-no-such-group": "El grupo indicà no'l xe valido.",
 	"translate-page-settings-legend": "Inpostasion",
@@ -61,7 +63,7 @@
 	"translate-translations-fieldset-title": "Messajo",
 	"translate-translations-messagename": "Nome:",
 	"translate-translations-project": "Projeto:",
-	"languagestats": "Statìsteghe de łe łéngue",
+	"languagestats": "Statìsteghe de ła łéngua",
 	"translate-language-code": "Còdese lengoa",
 	"translate-language-code-field-name": "Còdese lengoa:",
 	"translate-language": "Lengoa",
@@ -70,7 +72,9 @@
 	"translate-percentage-complete": "Conpletà",
 	"translate-percentage-fuzzy": "Da ajornar",
 	"translate-ls-column-group": "Grupo de mesaji",
+	"translate-mgs-pagename": "Statìsteghe del grupo de mesaji",
 	"translate-mgs-group": "Grupo de mesaji",
+	"managemessagegroups": "Xestion del grupo de mesaji",
 	"translate-documentation-language": "Documentasion del mesajo",
 	"translate-msggroupselector-projects": "Grupo de mesaji"
 }

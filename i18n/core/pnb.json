@@ -6,6 +6,7 @@
 		]
 	},
 	"translate": "ترجمعہ",
+	"translate-taction-lstats": "بولی آنکڑے",
 	"translate-page-settings-legend": "ترتیب",
 	"translate-page-group": "ٹولی",
 	"translate-page-language": "بولی",
@@ -14,8 +15,13 @@
 	"translate-page-showing-none": "وکھانے آسطے کوئی سنیعا نئیں۔",
 	"translate-next": "اگلا صفحہ",
 	"translate-page-description-legend": "ٹولی دے بارے چ معلومات",
+	"translationstats": "ترجمہ آنکڑے",
+	"languagestats": "بولی آنکڑے",
+	"translate-ls-submit": "آنکڑے ویکھاؤ",
+	"translate-mgs-submit": "آنکڑے ویکھاؤ",
 	"translate-documentation-language": "سنیہا دستاویز",
 	"tux-notices-more": "{{PLURAL:$1|$1 ہور}}",
+	"tux-notices-hide": "لُکاؤ",
 	"tux-editor-message-desc-more": "ہور دیکھو",
 	"tux-messagetable-more-messages": "$1 ہور {{PLURAL:$1|سنیہا|سنیہے}}",
 	"translate-search-more-languages-info": "$1 ہور {{PLURAL:$1|بولی|بولیاں}}"
