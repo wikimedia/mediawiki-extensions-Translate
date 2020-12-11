@@ -145,7 +145,7 @@ class SpecialManageGroups extends SpecialPage {
 		);
 
 		// The above count as three
-		$limit = $limit - 3;
+		$limit -= 3;
 
 		$reader = \Cdb\Reader::open( $this->cdb );
 		$groups = $this->getGroupsFromCdb( $reader );

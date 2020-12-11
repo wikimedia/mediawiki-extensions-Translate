@@ -536,9 +536,7 @@ HTML
 			$container .
 			Html::closeElement( 'li' );
 
-		$output .= Html::closeElement( 'ul' );
-		$output .= Html::closeElement( 'div' );
-		$output .= Html::closeElement( 'div' );
+		$output .= Html::closeElement( 'ul' ) . Html::closeElement( 'div' ) . Html::closeElement( 'div' );
 
 		return $output;
 	}

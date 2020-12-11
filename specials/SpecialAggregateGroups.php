@@ -187,7 +187,6 @@ class SpecialAggregateGroups extends SpecialPage {
 		 * @var AggregateMessageGroup $group
 		 */
 		foreach ( $aggregates as $group ) {
-			// @phan-suppress-next-line SecurityCheck-XSS
 			$out->addHTML( $this->showAggregateGroup( $group ) );
 		}
 

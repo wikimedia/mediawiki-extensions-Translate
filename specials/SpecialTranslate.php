@@ -234,16 +234,17 @@ class SpecialTranslate extends SpecialPage {
 		$output .= Html::closeElement( 'ul' );
 		$output .= Html::closeElement( 'div' ); // close nine columns
 		$output .= Html::openElement( 'div', [ 'class' => 'three columns' ] );
-		$output .= Html::openElement( 'div', [ 'class' => 'tux-message-filter-wrapper' ] );
-		$output .= Html::element( 'input', [
-			'class' => 'tux-message-filter-box',
-			'type' => 'search',
-		] );
-		$output .= Html::closeElement( 'div' ); // close tux-message-filter-wrapper
+		$output .= Html::rawElement(
+			'div',
+			[ 'class' => 'tux-message-filter-wrapper' ],
+			Html::element( 'input', [
+				'class' => 'tux-message-filter-box',
+				'type' => 'search',
+			] )
+		);
 
-		$output .= Html::closeElement( 'div' ); // close three columns
-
-		$output .= Html::closeElement( 'div' ); // close the row
+		// close three columns and the row
+		$output .= Html::closeElement( 'div' ) . Html::closeElement( 'div' );
 
 		return $output;
 	}

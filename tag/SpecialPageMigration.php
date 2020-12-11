@@ -64,8 +64,7 @@ class SpecialPageMigration extends SpecialPage {
 			'value' => $this->msg( 'pm-cancel-button-label' )->text() ] );
 		$out .= Html::closeElement( 'form' );
 		$out .= Html::element( 'div', [ 'class' => 'mw-tpm-sp-instructions hide' ] );
-		$out .= Html::openElement( 'div', [ 'class' => 'mw-tpm-sp-unit-listing' ] );
-		$out .= Html::closeElement( 'div' );
+		$out .= Html::rawElement( 'div', [ 'class' => 'mw-tpm-sp-unit-listing' ] );
 		$out .= Html::closeElement( 'div' );
 
 		$output->addHTML( $out );
