@@ -547,28 +547,16 @@ class ElasticSearchTTMServer
 	}
 
 	protected function waitUntilReady() {
-		if ( method_exists( MWElasticUtils::class, 'waitForGreen' ) ) {
-			$statuses = MWElasticUtils::waitForGreen(
-				$this->getClient(),
-				$this->getIndexName(),
-				self::WAIT_UNTIL_READY_TIMEOUT );
-			$this->logOutput( "Waiting for the index to go green..." );
-			foreach ( $statuses as $message ) {
-				$this->logOutput( $message );
-			}
-
-			if ( !$statuses->getReturn() ) {
-				die( "Timeout! Please check server logs for {$this->getIndexName()}." );
-			}
-
-			return;
+		$statuses = MWElasticUtils::waitForGreen(
+			$this->getClient(),
+			$this->getIndexName(),
+			self::WAIT_UNTIL_READY_TIMEOUT );
+		$this->logOutput( "Waiting for the index to go green..." );
+		foreach ( $statuses as $message ) {
+			$this->logOutput( $message );
 		}
 
-		// TODO: This code can be removed in the future as we drop support for
-		// older versions of the Elastica extension.
-		$indexName = $this->getType()->getIndex()->getName();
-		$this->logOutput( "Waiting for the index to go green..." );
-		if ( !$this->waitForGreen( $indexName, self::WAIT_UNTIL_READY_TIMEOUT ) ) {
+		if ( !$statuses->getReturn() ) {
 			die( "Timeout! Please check server logs for {$this->getIndexName()}." );
 		}
 	}
@@ -810,43 +798,15 @@ class ElasticSearchTTMServer
 	 * @throws \RuntimeException
 	 */
 	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
-		if ( method_exists( MWElasticUtils::class, 'deleteByQuery' ) ) {
-			try {
-				MWElasticUtils::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
-			} catch ( \Exception $e ) {
-				LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
-					'Problem encountered during deletion.',
-					[ 'exception' => $e ]
-				);
-
-				throw new \RuntimeException( "Problem encountered during deletion.\n" . $e );
-			}
-			return;
-		}
-		// TODO: This code can be removed in the future as we drop support for
-		// older versions of the Elastica extension.
-		$retryAttempts = self::BULK_INDEX_RETRY_ATTEMPTS;
-		$search = new \Elastica\Search( $this->getClient() );
-		$search->setQuery( $query );
-		$search->addType( $type );
-		$search->addIndex( $type->getIndex() );
-		$scroll = new \Elastica\Scroll( $search, '15m' );
-
-		foreach ( $scroll as $results ) {
-			$ids = [];
-			foreach ( $results as $result ) {
-				$ids[] = $result->getId();
-			}
-
-			if ( $ids === [] ) {
-				continue;
-			}
-
-			MWElasticUtils::withRetry( $retryAttempts,
-				function () use ( $ids, $type ) {
-					$type->deleteIds( $ids );
-				}
+		try {
+			MWElasticUtils::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
+		} catch ( \Exception $e ) {
+			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
+				'Problem encountered during deletion.',
+				[ 'exception' => $e ]
 			);
+
+			throw new \RuntimeException( "Problem encountered during deletion.\n" . $e );
 		}
 	}
 
@@ -854,35 +814,8 @@ class ElasticSearchTTMServer
 	 * @return bool
 	 */
 	public function isFrozen() {
-		if ( method_exists( MWElasticUtils::class, 'isFrozen' ) ) {
-			try {
-				return MWElasticUtils::isFrozen( $this->getClient() );
-			} catch ( \Exception $e ) {
-				LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
-					'Problem encountered while checking the frozen index.',
-					[ 'exception' => $e ]
-				);
-				return false;
-			}
-		}
-
-		// TODO: This code can be removed in the future as we drop support for
-		// older versions of the Elastica extension.
-		if ( !isset( $this->config['frozen_index'] ) ) {
-			return false;
-		}
-		$frozenIndex = $this->config['frozen_index'];
-		$indices = [ static::ALL_INDEXES_FROZEN_NAME, $this->getIndexName() ];
-		$ids = ( new \Elastica\Query\Ids() )
-			->setIds( $indices );
-
 		try {
-			$resp = $this->getClient()
-				->getIndex( $frozenIndex )
-				->getType( static::FROZEN_TYPE )
-				->search( \Elastica\Query::create( $ids ) );
-
-			return $resp->count() !== 0;
+			return MWElasticUtils::isFrozen( $this->getClient() );
 		} catch ( \Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
 				'Problem encountered while checking the frozen index.',
