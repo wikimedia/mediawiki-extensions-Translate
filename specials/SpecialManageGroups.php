@@ -13,6 +13,7 @@ use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
+use OOUI\ButtonInputWidget;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
@@ -202,16 +203,15 @@ class SpecialManageGroups extends SpecialPage {
 			}
 		}
 
-		$attribs = [
+		$out->enableOOUI();
+		$button = new ButtonInputWidget( [
 			'type' => 'submit',
-			'class' => 'mw-ui-button mw-ui-progressive mw-translate-smg-submit'
-		];
-		if ( !$this->hasRight ) {
-			$attribs['disabled'] = 'disabled';
-			$attribs['title'] = $this->msg( 'translate-smg-notallowed' )->text();
-		}
-		// TODO: Use Html::submitButton once https://phabricator.wikimedia.org/T101480 is fixed.
-		$button = Html::element( 'button', $attribs, $this->msg( 'translate-smg-submit' )->text() );
+			'label' => $this->msg( 'translate-smg-submit' )->plain(),
+			'disabled' => !$this->hasRight ? 'disabled' : null,
+			'classes' => [ 'mw-translate-smg-submit' ],
+			'title' => !$this->hasRight ? $this->msg( 'translate-smg-notallowed' )->plain() : null,
+			'flags' => [ 'primary', 'progressive' ],
+		] );
 		$out->addHTML( $button );
 		$out->addHTML( Html::closeElement( 'form' ) );
 	}
