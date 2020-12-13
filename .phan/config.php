@@ -28,7 +28,6 @@ $cfg['directory_list'] = array_merge(
 		'messagegroups',
 		'scripts',
 		'specials',
-		'stash',
 		'stringmangler',
 		'tag',
 		'translationaids',
