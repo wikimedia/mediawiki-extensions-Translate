@@ -3,10 +3,11 @@
 		"authors": [
 			"Ammartivari",
 			"Liridon",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Olsi"
 		]
 	},
-	"tpt-languages-legend": "Gjuhe te tjera:",
+	"tpt-languages-legend": "Gjuhë të tjera:",
 	"tpt-languages-nonzero": "$1 ($2% i përkëthyer)",
 	"pt-deletepage-reason": "Arsyeja:"
 }
