@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abbas dhothar",
 			"Khalid Mahmood"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% بولی پلٹی گئی)"
+	"tpt-select-prioritylangs-reason": "وجہ:",
+	"tpt-languages-nonzero": "$1 ($2% بولی پلٹی گئی)",
+	"tpt-translation-restricted": "وجہ: $1",
+	"pt-movepage-reason": "وجہ:",
+	"pt-deletepage-reason": "وجہ:"
 }
