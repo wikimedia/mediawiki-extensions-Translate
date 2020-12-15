@@ -23,10 +23,16 @@ class GoogleTranslateWebService extends TranslationWebService {
 
 	/** @inheritDoc */
 	protected function mapCode( $code ) {
-		if ( $code === 'be-tarask' ) {
-			$code = 'be';
-		}
-		return $code;
+		/** @phpcs-require-sorted-array */
+		$map = [
+			'be-tarask' => 'be',
+			'zh-cn' => 'zh-CN',
+			'zh-hans' => 'zh-CN',
+			'zh-hant' => 'zh-TW',
+			'zh-tw' => 'zh-TW',
+		];
+
+		return $map[$code] ?? $code;
 	}
 
 	/** @inheritDoc */
