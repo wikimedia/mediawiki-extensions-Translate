@@ -19,7 +19,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$this->setMwGlobals( [
-			'wgTranslateCacheDirectory' => __DIR__ . '/../data',
+			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 		] );
 
 		$this->setGroupPermissions( 'translate-admin', 'translate-manage', true );
@@ -171,17 +171,6 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 				'changesetModified' => $date->getTimestamp(),
 			],  null, $this->user, 'csrf'
 		);
-	}
-
-	public static function tearDownAfterClass() : void {
-		parent::tearDownAfterClass();
-
-		global $wgTranslateCacheDirectory;
-		$tmp = $wgTranslateCacheDirectory;
-		$wgTranslateCacheDirectory = __DIR__ . '/../data';
-		$filePath = self::getStoragePath();
-		unlink( $filePath );
-		$wgTranslateCacheDirectory = $tmp;
 	}
 
 	private static function getStoragePath() {
