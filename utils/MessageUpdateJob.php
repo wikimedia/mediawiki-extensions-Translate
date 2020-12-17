@@ -18,7 +18,13 @@ use MediaWiki\Extensions\Translate\Utilities\TranslateReplaceTitle;
  * @ingroup JobQueue
  */
 class MessageUpdateJob extends GenericTranslateJob {
-	/** Create a normal message update job without a rename process */
+	/**
+	 * Create a normal message update job without a rename process
+	 * @param Title $target
+	 * @param string $content
+	 * @param string|false $fuzzy
+	 * @return self
+	 */
 	public static function newJob(
 		Title $target, string $content, $fuzzy = false
 	): self {
@@ -32,7 +38,16 @@ class MessageUpdateJob extends GenericTranslateJob {
 		return $job;
 	}
 
-	/** Create a message update job containing a rename process */
+	/**
+	 * Create a message update job containing a rename process
+	 * @param Title $target
+	 * @param string $targetStr
+	 * @param string $replacement
+	 * @param string|false $fuzzy
+	 * @param string $content
+	 * @param array $otherLangContents
+	 * @return self
+	 */
 	public static function newRenameJob(
 		Title $target,
 		string $targetStr,

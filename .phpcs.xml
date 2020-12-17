@@ -16,22 +16,24 @@
 	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>Translate\.alias\.php</exclude-pattern>
+		<exclude-pattern>Translate\.i18n\.magic\.php</exclude-pattern>
 	</rule>
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
 		<properties>
 			<property name="ignoreList" type="array" value="$IP" />
 		</properties>
 	</rule>
-	<!-- New code uses parameter and return type hints. Repeating them in tags adds no
-	     additional value. -->
+	<!-- New code uses parameter and return type hints. Repeating them in tags adds no additional value. -->
 	<rule ref="MediaWiki.Commenting.FunctionComment.MissingParamTag">
-		<exclude-pattern>src/</exclude-pattern>
-		<exclude-pattern>tests/</exclude-pattern>
+		<!-- exclude pattern here does not support relative path and CI exclude this for the whole repo -->
+		<exclude-pattern>Translate/src/</exclude-pattern>
+		<exclude-pattern>Translate/tests/</exclude-pattern>
 	</rule>
 	<!-- Same as above. No idea why it is named without "Tag". -->
 	<rule ref="MediaWiki.Commenting.FunctionComment.MissingReturn">
-		<exclude-pattern>src/</exclude-pattern>
-		<exclude-pattern>tests/</exclude-pattern>
+		<!-- exclude pattern here does not support relative path and CI exclude this for the whole repo -->
+		<exclude-pattern>Translate/src/</exclude-pattern>
+		<exclude-pattern>Translate/tests/</exclude-pattern>
 	</rule>
 	<rule ref="MediaWiki.Files.ClassMatchesFilename.NotMatch">
 		<exclude-pattern>tests/|ttmserver/|scripts/|Message\.php</exclude-pattern>
