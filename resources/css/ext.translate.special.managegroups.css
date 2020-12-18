@@ -48,7 +48,11 @@
 }
 
 .oo-ui-buttonElement.mw-translate-smg-submit {
-	font-size: 4em;
+	display: block;
+}
+
+.oo-ui-buttonElement.mw-translate-smg-submit button {
+	font-size: 3.5em;
 	margin: auto;
 	width: 80%;
 	display: block;
