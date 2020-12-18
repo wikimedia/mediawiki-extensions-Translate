@@ -26,7 +26,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 
 	public function testAddUser() {
 		$user = TranslateSandbox::addUser( 'Test user', 'test@blackhole.io', 'test password' );
-		$this->assertTrue( $user->isLoggedIn(), 'User exists' );
+		$this->assertTrue( $user->isRegistered(), 'User exists' );
 
 		$groups = array_unique( $user->getGroups() );
 
@@ -36,7 +36,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 	public function testDeleteUser() {
 		$user = TranslateSandbox::addUser( 'Test user2', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::deleteUser( $user );
-		$this->assertFalse( $user->isLoggedIn(), 'User no longer exists' );
+		$this->assertFalse( $user->isRegistered(), 'User no longer exists' );
 	}
 
 	public function testDeleteUserPromoted() {

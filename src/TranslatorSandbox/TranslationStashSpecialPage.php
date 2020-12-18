@@ -62,7 +62,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		if ( !$this->hasPermissionToUse() ) {
-			if ( $secondaryPermissionUrl && $this->getUser()->isLoggedIn() ) {
+			if ( $secondaryPermissionUrl && $this->getUser()->isRegistered() ) {
 				$out->redirect(
 					Title::newFromText( $secondaryPermissionUrl )->getLocalURL()
 				);
