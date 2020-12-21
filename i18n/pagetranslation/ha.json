@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Kambai Akau"
+		]
 	},
+	"tpt-languages-nonzero": "$1 (an fassara $2%)",
 	"pt-movepage-reason": "Dalili:"
 }
