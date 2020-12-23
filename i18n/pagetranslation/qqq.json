@@ -31,7 +31,6 @@
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
 	"right-pagetranslation": "{{doc-right|pagetranslation}}",
 	"action-pagetranslation": "{{doc-action|pagetranslation}}",
-	"tps-edit-sourcepage-title": "Caption for the box that appears while editing a source translation page.",
 	"tps-edit-sourcepage-text": "Help text shown while editing a source translation page. Contains links to various Translate extension documentation page. Appears below {{msg-mw|Tps-edit-sourcepage-title}}.",
 	"tps-edit-sourcepage-ve-warning-title": "Title for the warning dialog shown when user is editing the sourcepage using Visual Editor 'visual' mode",
 	"tps-edit-sourcepage-ve-warning-text": "Text shown in the warning dialog when user is editing the sourcepage using Visual Editor 'visual' mode",

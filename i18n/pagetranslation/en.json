@@ -9,7 +9,6 @@
 	"pagetranslation": "Page translation",
 	"right-pagetranslation": "Mark versions of pages for translation",
 	"action-pagetranslation": "manage translatable pages",
-	"tps-edit-sourcepage-title": "Editing a translatable page",
 	"tps-edit-sourcepage-text": "You are editing a source translation page. Please make sure that you are familiar with the following documentation:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
 	"tps-edit-sourcepage-ve-warning-title": "Warning: Unsupported page",
 	"tps-edit-sourcepage-ve-warning-text": "You are editing a translatable page. Editing these in this editor is not yet officially supported. Please use the source editor.",

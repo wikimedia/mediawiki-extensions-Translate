@@ -153,15 +153,9 @@ class PageTranslationHooks {
 				$notices['translate-tag'] = $msg->parseAsBlock();
 			}
 
-			$label = wfMessage( 'tps-edit-sourcepage-title' )->escaped();
-			$msg = Html::rawElement(
-				'div',
-				[],
-				wfMessage( 'tps-edit-sourcepage-text' )->parse()
-			);
-
-			$notices[] = TranslateUtils::fieldset(
-				$label, $msg, [ 'class' => 'mw-infobox translate-edit-documentation' ]
+			$notices[] = Html::warningBox(
+				wfMessage( 'tps-edit-sourcepage-text' )->parse(),
+				'translate-edit-documentation'
 			);
 		}
 	}
