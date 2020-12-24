@@ -44,5 +44,6 @@
 
 	<!-- See https://github.com/slevomat/coding-standard#sniffs-included-in-this-standard -->
 	<config name="installed_paths" value="../../slevomat/coding-standard"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator" />
 	<rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces" />
 </ruleset>
