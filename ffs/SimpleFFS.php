@@ -24,13 +24,9 @@ class SimpleFFS implements FFS {
 		return [];
 	}
 
-	/**
-	 * @var FileBasedMessageGroup
-	 */
+	/** @var FileBasedMessageGroup */
 	protected $group;
-
 	protected $writePath;
-
 	/**
 	 * Stores the FILES section of the YAML configuration,
 	 * which can be accessed for extra FFS class specific options.
@@ -46,30 +42,22 @@ class SimpleFFS implements FFS {
 		$this->extra = $conf['FILES'];
 	}
 
-	/**
-	 * @param FileBasedMessageGroup $group
-	 */
+	/** @param FileBasedMessageGroup $group */
 	public function setGroup( FileBasedMessageGroup $group ) {
 		$this->group = $group;
 	}
 
-	/**
-	 * @return FileBasedMessageGroup
-	 */
+	/** @return FileBasedMessageGroup */
 	public function getGroup() {
 		return $this->group;
 	}
 
-	/**
-	 * @param string $writePath
-	 */
+	/** @param string $writePath */
 	public function setWritePath( $writePath ) {
 		$this->writePath = $writePath;
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getWritePath() {
 		return $this->writePath;
 	}

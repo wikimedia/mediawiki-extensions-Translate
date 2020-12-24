@@ -17,10 +17,8 @@ use TMessage;
 class MatchSetValidator implements MessageValidator {
 	/** @var string[] */
 	protected $possibleValues;
-
 	/** @var string[] */
 	protected $normalizedValues;
-
 	/** @var bool */
 	protected $caseSensitive;
 

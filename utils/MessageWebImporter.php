@@ -19,28 +19,16 @@ use MediaWiki\Revision\SlotRecord;
  * displays them in pretty way with diffs and finally executes the actions the user choices.
  */
 class MessageWebImporter {
-	/**
-	 * @var Title
-	 */
+	/** @var Title */
 	protected $title;
-
-	/**
-	 * @var User
-	 */
+	/** @var User */
 	protected $user;
-
-	/**
-	 * @var MessageGroup
-	 */
+	/** @var MessageGroup */
 	protected $group;
 	protected $code;
 	protected $time;
-
-	/**
-	 * @var OutputPage
-	 */
+	/** @var OutputPage */
 	protected $out;
-
 	/**
 	 * Maximum processing time in seconds.
 	 */
@@ -66,30 +54,22 @@ class MessageWebImporter {
 		return $this->title;
 	}
 
-	/**
-	 * @param Title $title
-	 */
+	/** @param Title $title */
 	public function setTitle( Title $title ) {
 		$this->title = $title;
 	}
 
-	/**
-	 * @return User
-	 */
+	/** @return User */
 	public function getUser() {
 		return $this->user ?: RequestContext::getMain()->getUser();
 	}
 
-	/**
-	 * @param User $user
-	 */
+	/** @param User $user */
 	public function setUser( User $user ) {
 		$this->user = $user;
 	}
 
-	/**
-	 * @return MessageGroup
-	 */
+	/** @return MessageGroup */
 	public function getGroup() {
 		return $this->group;
 	}
@@ -106,30 +86,22 @@ class MessageWebImporter {
 		}
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getCode() {
 		return $this->code;
 	}
 
-	/**
-	 * @param string $code
-	 */
+	/** @param string $code */
 	public function setCode( $code = 'en' ) {
 		$this->code = $code;
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	protected function getAction() {
 		return $this->getTitle()->getFullURL();
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	protected function doHeader() {
 		$formParams = [
 			'method' => 'post',
@@ -143,16 +115,12 @@ class MessageWebImporter {
 			Html::hidden( 'process', 1 );
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	protected function doFooter() {
 		return '</form>';
 	}
 
-	/**
-	 * @return bool
-	 */
+	/** @return bool */
 	protected function allowProcess() {
 		$request = RequestContext::getMain()->getRequest();
 
@@ -161,9 +129,7 @@ class MessageWebImporter {
 			&& $this->getUser()->matchEditToken( $request->getVal( 'token' ) );
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	protected function getActions() {
 		if ( $this->code === 'en' ) {
 			return [ 'import', 'fuzzy', 'ignore' ];

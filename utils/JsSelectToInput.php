@@ -15,27 +15,18 @@ class JsSelectToInput {
 	protected $targetId;
 	/// Id of the \<option> field
 	protected $sourceId;
-
-	/**
-	 * @var XmlSelect
-	 */
+	/** @var XmlSelect */
 	protected $select;
-
 	/// Id on the button
 	protected $buttonId;
-
-	/**
-	 * @var string Text for the append button
-	 */
+	/** @var string Text for the append button */
 	protected $msg = 'translate-jssti-add';
 
 	public function __construct( XmlSelect $select = null ) {
 		$this->select = $select;
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getSourceId() {
 		return $this->sourceId;
 	}
@@ -48,9 +39,7 @@ class JsSelectToInput {
 		$this->targetId = $id;
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getTargetId() {
 		return $this->targetId;
 	}
@@ -63,9 +52,7 @@ class JsSelectToInput {
 		$this->msg = $message;
 	}
 
-	/**
-	 * @return string Message key.
-	 */
+	/** @return string Message key. */
 	public function getMessage() {
 		return $this->msg;
 	}

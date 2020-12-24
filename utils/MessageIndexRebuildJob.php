@@ -16,9 +16,7 @@ use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
  * @ingroup JobQueue
  */
 class MessageIndexRebuildJob extends GenericTranslateJob {
-	/**
-	 * @return self
-	 */
+	/** @return self */
 	public static function newJob() {
 		$timestamp = microtime( true );
 		$job = new self( Title::newMainPage(), [ 'timestamp' => $timestamp ] );

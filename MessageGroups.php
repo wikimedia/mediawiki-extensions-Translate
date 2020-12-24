@@ -16,24 +16,13 @@ use MediaWiki\MediaWikiServices;
  * @todo Clean up the mixed static/member method interface.
  */
 class MessageGroups {
-	/**
-	 * @var string[]|null Cache for message group priorities
-	 */
+	/** @var string[]|null Cache for message group priorities */
 	protected static $prioritycache;
-
-	/**
-	 * @var MessageGroup[]|null Map of (group ID => MessageGroup)
-	 */
+	/** @var MessageGroup[]|null Map of (group ID => MessageGroup) */
 	protected $groups;
-
-	/**
-	 * @var MessageGroupLoader[]|null
-	 */
+	/** @var MessageGroupLoader[]|null */
 	protected $groupLoaders;
-
-	/**
-	 * @var WANObjectCache|null
-	 */
+	/** @var WANObjectCache|null */
 	protected $cache;
 
 	/**
@@ -510,9 +499,7 @@ class MessageGroups {
 		$pathFinder = function ( &$paths, $group, $targetId, $prefix = '' )
 		use ( &$pathFinder ) {
 			if ( $group instanceof AggregateMessageGroup ) {
-				/**
-				 * @var MessageGroup $subgroup
-				 */
+				/** @var MessageGroup $subgroup */
 				foreach ( $group->getGroups() as $subgroup ) {
 					$subId = $subgroup->getId();
 					if ( $subId === $targetId ) {
@@ -536,9 +523,7 @@ class MessageGroups {
 			}
 
 			foreach ( $structure as $rootGroup ) {
-				/**
-				 * @var MessageGroup $rootGroup
-				 */
+				/** @var MessageGroup $rootGroup */
 				if ( $rootGroup->getId() === $group->getId() ) {
 					// Yay we found a top-level group
 					$pathFinder( $paths, $rootGroup, $targetId, $id );
@@ -555,9 +540,7 @@ class MessageGroups {
 		return $paths;
 	}
 
-	/**
-	 * @return self
-	 */
+	/** @return self */
 	public static function singleton() {
 		static $instance;
 		if ( !$instance instanceof self ) {
@@ -688,9 +671,7 @@ class MessageGroups {
 
 		// Determine the top level groups of the tree
 		$tree = $groups;
-		/**
-		 * @var MessageGroup $o
-		 */
+		/** @var MessageGroup $o */
 		foreach ( $groups as $id => $o ) {
 			if ( !$o->exists() ) {
 				unset( $groups[$id], $tree[$id] );
@@ -698,9 +679,7 @@ class MessageGroups {
 			}
 
 			if ( $o instanceof AggregateMessageGroup ) {
-				/**
-				 * @var AggregateMessageGroup $o
-				 */
+				/** @var AggregateMessageGroup $o */
 				foreach ( $o->getGroups() as $sid => $so ) {
 					unset( $tree[$sid] );
 				}

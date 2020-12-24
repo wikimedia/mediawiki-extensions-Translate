@@ -16,7 +16,6 @@ use TMessage;
 class EscapeCharacterValidator implements MessageValidator {
 	/** @var string[] */
 	protected $allowedCharacters;
-
 	/** @var string */
 	protected $regex;
 

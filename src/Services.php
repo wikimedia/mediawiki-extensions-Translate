@@ -27,7 +27,6 @@ use Psr\Container\ContainerInterface;
 class Services implements ContainerInterface {
 	/** @var self */
 	private static $instance;
-
 	/** @var ContainerInterface */
 	private $container;
 

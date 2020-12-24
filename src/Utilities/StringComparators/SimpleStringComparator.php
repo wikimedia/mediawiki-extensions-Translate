@@ -11,9 +11,7 @@ namespace MediaWiki\Extensions\Translate\Utilities\StringComparators;
  * @since 2019.10
  */
 class SimpleStringComparator implements StringComparator {
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getSimilarity( $addedMessage, $deletedMessage ) {
 		if ( $addedMessage === $deletedMessage ) {
 			return 1;

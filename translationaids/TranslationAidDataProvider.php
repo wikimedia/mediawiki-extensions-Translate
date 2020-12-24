@@ -12,13 +12,10 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\IDatabase;
 
-/**
- * @since 2018.01
- */
+/** @since 2018.01 */
 class TranslationAidDataProvider {
 	private $handle;
 	private $group;
-
 	private $definition;
 	private $translations;
 
@@ -51,9 +48,7 @@ class TranslationAidDataProvider {
 		return $this->definition;
 	}
 
-	/**
-	 * @return Content
-	 */
+	/** @return Content */
 	public function getDefinitionContent() {
 		return ContentHandler::makeContent( $this->getDefinition(), $this->handle->getTitle() );
 	}

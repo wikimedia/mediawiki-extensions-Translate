@@ -24,7 +24,6 @@ class MessageSourceChange {
 	 * @codingStandardsIgnoreEnd
 	 */
 	protected $changes = [];
-
 	public const ADDITION = 'addition';
 	public const CHANGE = 'change';
 	public const DELETION = 'deletion';
@@ -38,16 +37,13 @@ class MessageSourceChange {
 	 * @var callable[]
 	 */
 	protected $addFunctionMap;
-
 	/**
 	 * Contains a mapping of message type, and the corresponding removal function
 	 * @var callable[]
 	 */
 	protected $removeFunctionMap;
 
-	/**
-	 * @param array[][][] $changes
-	 */
+	/** @param array[][][] $changes */
 	public function __construct( $changes = [] ) {
 		$this->changes = $changes;
 		$this->addFunctionMap = [

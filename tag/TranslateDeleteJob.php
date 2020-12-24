@@ -157,9 +157,7 @@ class TranslateDeleteJob extends Job {
 		return $this->params['full'];
 	}
 
-	/**
-	 * @param User|string $performer
-	 */
+	/** @param User|string $performer */
 	public function setPerformer( $performer ) {
 		if ( is_object( $performer ) ) {
 			$this->params['performer'] = $performer->getName();
@@ -172,9 +170,7 @@ class TranslateDeleteJob extends Job {
 		return $this->params['performer'];
 	}
 
-	/**
-	 * @param User|string $user
-	 */
+	/** @param User|string $user */
 	public function setUser( $user ) {
 		if ( is_object( $user ) ) {
 			$this->params['user'] = $user->getName();

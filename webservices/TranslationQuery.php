@@ -19,10 +19,7 @@ class TranslationQuery {
 	protected $params = [];
 	protected $body;
 	protected $headers = [];
-
-	/**
-	 * @var mixed Arbitrary data that is returned with TranslationQueryResponse
-	 */
+	/** @var mixed Arbitrary data that is returned with TranslationQueryResponse */
 	protected $instructions;
 
 	// URL is mandatory, so using it here

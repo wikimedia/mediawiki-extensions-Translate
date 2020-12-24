@@ -14,9 +14,7 @@ class TranslateMetadata {
 	/** @var array Map of (group => key => value) */
 	private static $cache = [];
 
-	/**
-	 * @param string[] $groups List of translate groups
-	 */
+	/** @param string[] $groups List of translate groups */
 	public static function preloadGroups( array $groups ) {
 		$missing = array_keys( array_diff_key( array_flip( $groups ), self::$cache ) );
 		if ( !$missing ) {

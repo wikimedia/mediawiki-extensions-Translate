@@ -24,44 +24,33 @@ class TranslatablePage {
 	 * Title of the page.
 	 */
 	protected $title;
-
-	/**
-	 * @var ?string Text contents of the page.
-	 */
+	/** @var ?string Text contents of the page. */
 	protected $text;
-
 	/**
 	 * Revision of the page, if applicaple.
 	 *
 	 * @var int
 	 */
 	protected $revision;
-
 	/**
 	 * From which source this object was constructed.
 	 * Can be: text, revision, title
 	 */
 	protected $source;
-
 	/**
 	 * Name of the section which contains the translated page title.
 	 */
 	protected $displayTitle = 'Page display title';
-
 	/**
 	 * Whether the title should be translated
 	 * @var bool
 	 */
 	protected $pageDisplayTitle;
-
 	protected $cachedParse;
-
 	/** @var ?string */
 	private $targetLanguage;
 
-	/**
-	 * @param Title $title Title object for the page
-	 */
+	/** @param Title $title Title object for the page */
 	protected function __construct( Title $title ) {
 		$this->title = $title;
 	}
@@ -606,9 +595,7 @@ class TranslatablePage {
 		return $units;
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	public function getTranslationPercentages() {
 		// Calculate percentages for the available translations
 		$group = $this->getMessageGroup();

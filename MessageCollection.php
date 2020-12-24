@@ -30,65 +30,40 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	private const MAX_ITEMS_PER_QUERY = 2000;
 
-	/**
-	 * @var string Language code.
-	 */
+	/** @var string Language code. */
 	public $code;
-
-	/**
-	 * @var MessageDefinitions
-	 */
+	/** @var MessageDefinitions */
 	protected $definitions = null;
-
-	/**
-	 * @var array array( %Message key => translation, ... )
-	 */
+	/** @var array array( %Message key => translation, ... ) */
 	protected $infile = [];
-
 	// Keys and messages.
 
-	/**
-	 * @var array array( %Message display key => database key, ... )
-	 */
+	/** @var array array( %Message display key => database key, ... ) */
 	protected $keys = [];
-
-	/**
-	 * @var array array( %Message String => TMessage, ... )
-	 */
+	/** @var array array( %Message String => TMessage, ... ) */
 	protected $messages = [];
-
-	/**
-	 * @var array
-	 */
+	/** @var array */
 	protected $reverseMap;
-
 	// Database resources
 
 	/** @var ?Traversable Stored message existence and fuzzy state. */
 	protected $dbInfo;
-
 	/** @var ?Traversable Stored translations in database. */
 	protected $dbData;
-
 	/** @var ?Traversable Stored reviews in database. */
 	protected $dbReviewData;
-
 	/**
 	 * Tags, copied to thin messages
 	 * tagtype => keys
 	 * @var array[]
 	 */
 	protected $tags = [];
-
 	/**
 	 * Properties, copied to thin messages
 	 * @var array[]
 	 */
 	protected $properties = [];
-
-	/**
-	 * @var string[] Authors.
-	 */
+	/** @var string[] Authors. */
 	protected $authors = [];
 
 	/**
@@ -113,9 +88,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $collection;
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getLanguage() {
 		return $this->code;
 	}
@@ -188,9 +161,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		foreach ( $this->messages as $m ) {
 			// Check if there are authors
-			/**
-			 * @var TMessage $m
-			 */
+			/** @var TMessage $m */
 			$author = $m->getProperty( 'last-translator-text' );
 
 			if ( $author === null ) {
@@ -364,9 +335,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->applyFilter( $type, $condition, $value );
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	public static function getAvailableFilters() {
 		return [
 			'fuzzy',
@@ -820,9 +789,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$map = [];
-		/**
-		 * @var TitleValue $title
-		 */
+		/** @var TitleValue $title */
 		foreach ( $this->keys as $mkey => $title ) {
 			$map[$title->getNamespace()][$title->getDBkey()] = $mkey;
 		}
@@ -953,9 +920,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->messages[$offset] = $value;
 	}
 
-	/**
-	 * @param mixed $offset
-	 */
+	/** @param mixed $offset */
 	public function offsetUnset( $offset ) {
 		unset( $this->keys[$offset] );
 	}
@@ -1031,9 +996,7 @@ class MessageDefinitions {
 		return $this->messages;
 	}
 
-	/**
-	 * @return Title[] List of title indexed by message key.
-	 */
+	/** @return Title[] List of title indexed by message key. */
 	public function getPages() {
 		$namespace = $this->namespace;
 		if ( $this->pages !== null ) {

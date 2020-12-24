@@ -19,7 +19,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	 * @see MessageCollection::getPages()
 	 */
 	protected $namespace = false;
-
 	protected $language;
 
 	/**

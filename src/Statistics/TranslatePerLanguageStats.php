@@ -16,7 +16,6 @@ use TranslateUtils;
 class TranslatePerLanguageStats extends TranslationStatsBase {
 	/** @var int[][] array( string => int ) Cache used to count active users only once per day. */
 	protected $usercache;
-
 	protected $groups;
 
 	public function __construct( TranslationStatsGraphOptions $opts ) {

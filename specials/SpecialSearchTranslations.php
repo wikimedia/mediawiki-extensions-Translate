@@ -15,7 +15,6 @@
 class SpecialSearchTranslations extends SpecialPage {
 	/** @var FormOptions */
 	protected $opts;
-
 	/**
 	 * Placeholders used for highlighting. Search backend can mark the beginning and
 	 * end but we need to run htmlspecialchars on the result first and then
@@ -24,7 +23,6 @@ class SpecialSearchTranslations extends SpecialPage {
 	 * @var array
 	 */
 	protected $hl = [];
-
 	/**
 	 * How many search results to display per page
 	 * @var int

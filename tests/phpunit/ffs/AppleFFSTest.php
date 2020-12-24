@@ -42,9 +42,7 @@ On two lines! */
 "key-with-{curlies}" = "Value that can be looked up with \"key-with-{curlies}\".";
 STRINGS;
 
-		/**
-		 * @var FileBasedMessageGroup $group
-		 */
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AppleFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
@@ -62,9 +60,7 @@ STRINGS;
 		$this->assertEquals( $expected, $parsed );
 	}
 
-	/**
-	 * @dataProvider rowValuesProvider
-	 */
+	/** @dataProvider rowValuesProvider */
 	public function testRowRoundtrip( $key, $value, $comment ) {
 		$write = AppleFFS::writeRow( $key, $value );
 		// Trim the trailing newline

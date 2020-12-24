@@ -144,9 +144,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 			"translation with errors is saved if user with 'translate-manage' permission is translating." );
 	}
 
-	/**
-	 * @covers PageTranslationHooks::updateTranstagOnNullRevisions
-	 */
+	/** @covers PageTranslationHooks::updateTranstagOnNullRevisions */
 	public function testTagNullRevision() {
 		$title = Title::newFromText( 'translated' );
 		$status = $this->editPage(

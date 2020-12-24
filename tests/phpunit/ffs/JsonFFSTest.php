@@ -8,9 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-/**
- * @covers \JsonFFS
- */
+/** @covers \JsonFFS */
 class JsonFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp() : void {
@@ -33,13 +31,9 @@ class JsonFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration;
 
-	/**
-	 * @dataProvider jsonProvider
-	 */
+	/** @dataProvider jsonProvider */
 	public function testParsing( $messages, $authors, $file ) {
-		/**
-		 * @var FileBasedMessageGroup $group
-		 */
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JsonFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
@@ -112,9 +106,7 @@ JSON;
 
 	public function testExport() {
 		$collection = new MockMessageCollectionForExport();
-		/**
-		 * @var FileBasedMessageGroup $group
-		 */
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JsonFFS( $group );
 		$data = $ffs->writeIntoVariable( $collection );

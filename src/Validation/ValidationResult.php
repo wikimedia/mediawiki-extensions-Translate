@@ -17,7 +17,6 @@ use InvalidArgumentException;
 class ValidationResult {
 	/** @var ValidationIssues */
 	protected $errors;
-
 	/** @var ValidationIssues */
 	protected $warnings;
 

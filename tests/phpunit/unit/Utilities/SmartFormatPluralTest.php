@@ -6,13 +6,9 @@
 
 use MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural
- */
+/** @covers \MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural */
 class SmartFormatPluralTest extends MediaWikiUnitTestCase {
-	/**
-	 * @dataProvider provideTestGetPluralInstances
-	 */
+	/** @dataProvider provideTestGetPluralInstances */
 	public function testGetPluralInstances( $input, $expected ) {
 		$actual = SmartFormatPlural::getPluralInstances( $input );
 		$this->assertEquals( $expected, $actual );

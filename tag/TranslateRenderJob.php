@@ -104,9 +104,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 		return $this->params['summary'];
 	}
 
-	/**
-	 * @param User|string $user
-	 */
+	/** @param User|string $user */
 	public function setUser( $user ) {
 		if ( $user instanceof User ) {
 			$this->params['user'] = $user->getName();

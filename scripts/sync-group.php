@@ -186,16 +186,12 @@ class SyncGroup extends Maintenance {
 class ChangeSyncer {
 	/** @var callable Function to report progress updates */
 	protected $progressCallback;
-
 	/** @var bool Don't list changes in recent changes table. */
 	public $norc = false;
-
 	/** @var bool Whether the script can ask questions. */
 	public $interactive = true;
-
 	/** @var bool Disable color output. */
 	public $nocolor = false;
-
 	/** @var MessageGroup */
 	protected $group;
 

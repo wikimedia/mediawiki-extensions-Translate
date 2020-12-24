@@ -25,10 +25,7 @@ use MediaWiki\MediaWikiServices;
 abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	protected $namespace;
-
-	/**
-	 * @var StringMatcher
-	 */
+	/** @var StringMatcher */
 	protected $mangler;
 
 	protected function __construct() {
@@ -150,9 +147,7 @@ abstract class MessageGroupBase implements MessageGroup {
 				throw new MWException( "Mangler class $class does not exist." );
 			}
 
-			/**
-			 * @todo Branch handling, merge with upper branch keys
-			 */
+			/** @todo Branch handling, merge with upper branch keys */
 			$this->mangler = new $class();
 			$this->mangler->setConf( $this->conf['MANGLER'] );
 		}
@@ -196,9 +191,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return new CombinedInsertablesSuggester( $suggesters );
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getKeys() {
 		return array_keys( $this->getDefinitions() );
 	}
@@ -295,9 +288,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $code === $this->getSourceLanguage();
 	}
 
-	/**
-	 * @deprecated Use getMessageGroupStates
-	 */
+	/** @deprecated Use getMessageGroupStates */
 	public function getWorkflowConfiguration() {
 		global $wgTranslateWorkflowStates;
 		if ( !$wgTranslateWorkflowStates ) {

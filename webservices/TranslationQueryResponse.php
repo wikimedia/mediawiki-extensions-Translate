@@ -17,10 +17,7 @@ class TranslationQueryResponse {
 	protected $headers;
 	protected $body;
 	protected $error;
-
-	/**
-	 * @var TranslationQuery
-	 */
+	/** @var TranslationQuery */
 	protected $query;
 
 	protected function __construct() {

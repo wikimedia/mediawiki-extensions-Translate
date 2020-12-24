@@ -9,8 +9,6 @@ namespace MediaWiki\Extensions\Translate\Statistics;
 
 use RuntimeException;
 
-/**
- * @since 2020.04
- */
+/** @since 2020.04 */
 class StatisticsUnavailable extends RuntimeException {
 }

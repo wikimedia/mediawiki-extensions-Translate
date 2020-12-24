@@ -11,9 +11,7 @@ use GenericParameterJob;
 use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extensions\Translate\Services;
 
-/**
- * @since 2020.04
- */
+/** @since 2020.04 */
 class UpdateTranslatorActivityJob extends GenericTranslateJob implements GenericParameterJob {
 	public function __construct( array $params ) {
 		parent::__construct( 'UpdateTranslatorActivity', $params );

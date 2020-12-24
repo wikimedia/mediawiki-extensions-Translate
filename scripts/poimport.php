@@ -89,16 +89,13 @@ class Poimport extends Maintenance {
 class PoImporter {
 	/** @var callable Function to report progress updates */
 	protected $progressCallback;
-
 	/**
 	 * Path to file to parse.
 	 * @var bool|string
 	 */
 	private $file = false;
 
-	/**
-	 * @param string $file File to import
-	 */
+	/** @param string $file File to import */
 	public function __construct( $file ) {
 		$this->file = $file;
 	}
@@ -221,9 +218,7 @@ class PoImporter {
 class WikiWriter {
 	/** @var callable Function to report progress updates */
 	protected $progressCallback;
-
 	protected $user;
-
 	private $changes = [];
 	private $dryrun = true;
 	private $group = null;

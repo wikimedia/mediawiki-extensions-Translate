@@ -20,56 +20,43 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialLanguageStats extends SpecialPage {
-	/**
-	 * @var StatsTable
-	 */
+	/** @var StatsTable */
 	protected $table;
-
-	/**
-	 * @var array
-	 */
+	/** @var array */
 	protected $targetValueName = [ 'code', 'language' ];
-
 	/**
 	 * Most of the displayed numbers added together at the bottom of the table.
 	 */
 	protected $totals;
-
 	/**
 	 * Flag to set if nothing to show.
 	 * @var bool
 	 */
 	protected $nothing = false;
-
 	/**
 	 * Flag to set if not all numbers are available.
 	 * @var bool
 	 */
 	protected $incomplete = false;
-
 	/**
 	 * Whether to hide rows which are fully translated.
 	 * @var bool
 	 */
 	protected $noComplete = true;
-
 	/**
 	 * Whether to hide rows which are fully untranslated.
 	 * @var bool
 	 */
 	protected $noEmpty = false;
-
 	/**
 	 * The target of stats, language code or group id.
 	 */
 	protected $target;
-
 	/**
 	 * Whether to regenerate stats. Activated by action=purge in query params.
 	 * @var bool
 	 */
 	protected $purge;
-
 	/**
 	 * Helper variable to avoid overcounting message groups that appear
 	 * multiple times in the list with different parents. Aggregate message
@@ -78,10 +65,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @var array
 	 */
 	protected $statsCounted = [];
-
-	/**
-	 * @var array
-	 */
+	/** @var array */
 	protected $states;
 
 	public function __construct() {

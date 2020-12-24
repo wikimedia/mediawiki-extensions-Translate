@@ -6,9 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
-/**
- * @group medium
- */
+/** @group medium */
 class ApiQueryMessageGroupsTest extends ApiTestCase {
 
 	protected function setUp() : void {

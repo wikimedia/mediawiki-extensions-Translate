@@ -6,6 +6,7 @@ use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
 use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
 
 /**
+ * Base class for translation validator tests
  * @license GPL-2.0-or-later
  */
 class BaseValidatorTestCase extends MediaWikiUnitTestCase {

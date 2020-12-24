@@ -18,20 +18,17 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 	 * @var string
 	 */
 	protected $regex = null;
-
 	/**
 	 * The named parameter from the regex that should be used for
 	 * insertable display.
 	 * @var string
 	 */
 	protected $display = null;
-
 	/**
 	 * The named parameter from the regex that should be used as pre
 	 * @var string
 	 */
 	protected $pre = null;
-
 	/**
 	 * The named paramater from the regex that should be used as post
 	 * @var string

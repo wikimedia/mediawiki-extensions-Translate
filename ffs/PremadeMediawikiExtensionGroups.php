@@ -15,19 +15,15 @@ use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\MediaWikiInser
 class PremadeMediawikiExtensionGroups {
 	/** @var bool */
 	protected $useConfigure = true;
-
 	/** @var string */
 	protected $idPrefix = 'ext-';
-
 	/** @var int */
 	protected $namespace = NS_MEDIAWIKI;
-
 	/**
 	 * @var string
 	 * @see __construct
 	 */
 	protected $path;
-
 	/**
 	 * @var string
 	 * @see __construct

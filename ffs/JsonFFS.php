@@ -27,9 +27,7 @@ class JsonFFS extends SimpleFFS {
 		return is_array( FormatJson::decode( $data, /*as array*/true ) );
 	}
 
-	/**
-	 * @param FileBasedMessageGroup $group
-	 */
+	/** @param FileBasedMessageGroup $group */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
 		$this->flattener = $this->getFlattener();

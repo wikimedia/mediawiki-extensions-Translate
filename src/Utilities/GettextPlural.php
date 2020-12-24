@@ -10,9 +10,7 @@ use GettextPluralException;
 use InvalidArgumentException;
 use TranslateUtils;
 
-/**
- * @since 2019.09
- */
+/** @since 2019.09 */
 class GettextPlural {
 	private const PRE = '{{PLURAL:GETTEXT|';
 	private const POST = '}}';

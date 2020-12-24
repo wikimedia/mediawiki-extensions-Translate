@@ -19,24 +19,18 @@ class TranslationHelpers {
 	 * @since 2012-01-04
 	 */
 	protected $handle;
-
-	/**
-	 * @var TranslationAidDataProvider
-	 */
+	/** @var TranslationAidDataProvider */
 	private $dataProvider;
-
 	/**
 	 * The group object of the message (or null if there isn't any)
 	 * @var MessageGroup|null
 	 */
 	protected $group;
-
 	/**
 	 * The current translation.
 	 * @var string
 	 */
 	private $translation;
-
 	/**
 	 * HTML id to the text area that contains the translation. Used to insert
 	 * suggestion directly into the text area, for example.

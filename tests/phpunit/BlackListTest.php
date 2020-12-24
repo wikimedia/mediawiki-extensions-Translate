@@ -11,9 +11,7 @@
  */
 class BlackListTest extends MediaWikiTestCase {
 
-	/**
-	 * @var MessageGroup
-	 */
+	/** @var MessageGroup */
 	protected $group;
 	protected $codes;
 	protected $groupConfiguration = [

@@ -117,9 +117,7 @@ class TTMServerMessageUpdateJob extends Job {
 		return true;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function allowRetries() {
 		return false;
 	}

@@ -16,9 +16,7 @@
 class TPException extends MWException {
 	private $msg;
 
-	/**
-	 * @param array $msg Message key with parameters
-	 */
+	/** @param array $msg Message key with parameters */
 	public function __construct( array $msg ) {
 		$this->msg = $msg;
 		// Using ->plain() instead of ->text() due to bug T58226

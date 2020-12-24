@@ -80,9 +80,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		$result = $this->getResult();
 		$matcher = new StringMatcher( '', $filter );
-		/**
-		 * @var MessageGroup|array $mixed
-		 */
+		/** @var MessageGroup|array $mixed */
 		foreach ( $groups as $mixed ) {
 			// array when Format = tree
 			$group = is_array( $mixed ) ? reset( $mixed ) : $mixed;

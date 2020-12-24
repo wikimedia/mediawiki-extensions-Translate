@@ -155,9 +155,7 @@ class AndroidXmlFFS extends SimpleFFS {
 			return '';
 		}
 
-		/**
-		 * @var TMessage $m
-		 */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 

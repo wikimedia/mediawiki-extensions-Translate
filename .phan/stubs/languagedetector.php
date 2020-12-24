@@ -36,9 +36,7 @@ class Learn {
 
 class Config {
 
-	/**
-	 * @param bool $use
-	 */
+	/** @param bool $use */
 	public function useMb( $use ) {
 	}
 

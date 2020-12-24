@@ -14,14 +14,10 @@
  * @ingroup MessageGroup
  */
 class AggregateMessageGroup extends MessageGroupBase {
-	/**
-	 * @var MessageGroup[]
-	 */
+	/** @var MessageGroup[] */
 	private $groups;
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function exists() {
 		// Group exists if there are any subgroups.
 		$exists = (bool)$this->conf['GROUPS'];
@@ -29,15 +25,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $exists;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function load( $code ) {
 		$messages = [];
 
-		/**
-		 * @var $group MessageGroup
-		 */
+		/** @var $group MessageGroup */
 		foreach ( $this->getGroups() as $group ) {
 			$messages += $group->load( $code );
 		}
@@ -45,9 +37,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $messages;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getMangler() {
 		if ( $this->mangler === null ) {
 			$this->mangler = new StringMatcher();
@@ -116,9 +106,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $messages;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function initCollection( $code ) {
 		$messages = $this->loadMessagesFromCache( $this->getGroups() );
 		$namespace = $this->getNamespace();
@@ -130,9 +118,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $collection;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getMessage( $key, $code ) {
 		/* Just hand over the message content retrieval to the primary message
 		 * group directly. This used to iterate over the subgroups looking for
@@ -160,9 +146,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		}
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getTags( $type = null ) {
 		$tags = [];
 
@@ -173,9 +157,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $tags;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getKeys() {
 		$keys = [];
 		foreach ( $this->getGroups() as $group ) {

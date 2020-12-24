@@ -20,10 +20,8 @@ use TPSection;
 class ParserOutput {
 	/** @var string */
 	private $template;
-
 	/** @var Section[] */
 	private $sectionMap;
-
 	/** @var TPSection[] */
 	private $unitMap;
 

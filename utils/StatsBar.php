@@ -18,15 +18,9 @@ class StatsBar {
 	 * @var int[]
 	 */
 	protected $stats;
-
-	/**
-	 * @var string Message group id
-	 */
+	/** @var string Message group id */
 	protected $group;
-
-	/**
-	 * @var string Language
-	 */
+	/** @var string Language */
 	protected $language;
 
 	/**

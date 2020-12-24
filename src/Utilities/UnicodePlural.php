@@ -9,9 +9,7 @@ namespace MediaWiki\Extensions\Translate\Utilities;
 use RuntimeException;
 use TranslateUtils;
 
-/**
- * @since 2019.09
- */
+/** @since 2019.09 */
 class UnicodePlural {
 	private const PRE = '{{PLURAL|';
 	private const POST = '}}';

@@ -1,8 +1,6 @@
 <?php
 
-/**
- * @group Database
- */
+/** @group Database */
 class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 	private const PAGE = 'MediaWiki:' . __METHOD__ . '_translated';
 
@@ -27,9 +25,7 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	/**
-	 * @covers MessageWebImporter::doFuzzy
-	 */
+	/** @covers MessageWebImporter::doFuzzy */
 	public function testDoFuzzy() {
 		$this->assertTrue(
 			$this->editPage( self::PAGE . '/en', 'English Original' )->isGood(),

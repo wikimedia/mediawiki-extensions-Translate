@@ -27,9 +27,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 	protected $offlineMode = false;
 
-	/**
-	 * @param bool $value
-	 */
+	/** @param bool $value */
 	public function setOfflineMode( $value ) {
 		$this->offlineMode = $value;
 	}

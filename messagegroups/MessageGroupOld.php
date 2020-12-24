@@ -31,9 +31,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->label;
 	}
 
-	/**
-	 * @param string $value
-	 */
+	/** @param string $value */
 	public function setLabel( $value ) {
 		$this->label = $value;
 	}
@@ -43,16 +41,12 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected $id = 'none';
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getId() {
 		return $this->id;
 	}
 
-	/**
-	 * @param string $value
-	 */
+	/** @param string $value */
 	public function setId( $value ) {
 		$this->id = $value;
 	}
@@ -122,9 +116,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected $mangler = null;
 
-	/**
-	 * @return StringMatcher
-	 */
+	/** @return StringMatcher */
 	public function getMangler() {
 		if ( !isset( $this->mangler ) ) {
 			$this->mangler = new StringMatcher();
@@ -167,9 +159,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->meta ? [] : $this->getDefinitions();
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getKeys() {
 		return array_keys( $this->getDefinitions() );
 	}
@@ -307,9 +297,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	/**
-	 * @deprecated Use getMessageGroupStates
-	 */
+	/** @deprecated Use getMessageGroupStates */
 	public function getWorkflowConfiguration() {
 		global $wgTranslateWorkflowStates;
 		if ( !$wgTranslateWorkflowStates ) {

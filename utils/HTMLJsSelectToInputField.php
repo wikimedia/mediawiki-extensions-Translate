@@ -19,9 +19,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 		$input = parent::getInputHTML( $value );
 
 		if ( isset( $this->mParams['select'] ) ) {
-			/**
-			 * @var JsSelectToInput $select
-			 */
+			/** @var JsSelectToInput $select */
 			$select = $this->mParams['select'];
 			$input = $select->getHtmlAndPrepareJS() . '<br />' . $input;
 		}

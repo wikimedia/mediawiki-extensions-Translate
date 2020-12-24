@@ -25,9 +25,7 @@ class MessageChangeStorage {
 		$keys = array_keys( $changes );
 		$cache->set( '#keys', TranslateUtils::serialize( $keys ) );
 
-		/**
-		 * @var MessageSourceChange $change
-		 */
+		/** @var MessageSourceChange $change */
 		foreach ( $changes as $key => $change ) {
 			$value = TranslateUtils::serialize( $change->getAllModifications() );
 			$cache->set( $key, $value );

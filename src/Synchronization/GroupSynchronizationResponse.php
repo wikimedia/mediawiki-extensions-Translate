@@ -14,10 +14,8 @@ namespace MediaWiki\Extensions\Translate\Synchronization;
 class GroupSynchronizationResponse {
 	/** @var MessageUpdateParameter[] */
 	private $remainingMessages;
-
 	/** @var string */
 	private $groupId;
-
 	/** @var bool */
 	private $timeout;
 

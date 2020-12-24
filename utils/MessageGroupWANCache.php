@@ -14,50 +14,41 @@
  */
 class MessageGroupWANCache {
 
-	/**
-	 * @var WANObjectCache
-	 */
+	/** @var WANObjectCache */
 	protected $cache;
-
 	/**
 	 * Cache key
 	 *
 	 * @var string
 	 */
 	protected $cacheKey;
-
 	/**
 	 * Cache version
 	 *
 	 * @var int
 	 */
 	protected $cacheVersion;
-
 	/**
 	 * To be called when the cache is empty or expired to get the data
 	 * to repopulate the cache
 	 * @var \Closure
 	 */
 	protected $regenerator;
-
 	/**
 	 * @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html
 	 * @var int
 	 */
 	protected $lockTSE;
-
 	/**
 	 * @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html
 	 * @var array
 	 */
 	protected $checkKeys;
-
 	/**
 	 * @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html
 	 * @var \Closure
 	 */
 	protected $touchedCallback;
-
 	/**
 	 * @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html
 	 * @var int

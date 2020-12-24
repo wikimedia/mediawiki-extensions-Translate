@@ -7,9 +7,7 @@
  */
 
 class StringMatcherTest extends MediaWikiIntegrationTestCase {
-	/**
-	 * @dataProvider messageKeyProvider
-	 */
+	/** @dataProvider messageKeyProvider */
 	public function testKeyPrefixing(
 		string $key, string $expected, string $prefix, array $rules
 	): void {
@@ -54,9 +52,7 @@ class StringMatcherTest extends MediaWikiIntegrationTestCase {
 		return $keys;
 	}
 
-	/**
-	 * @dataProvider problematicMessageKeyProvider
-	 */
+	/** @dataProvider problematicMessageKeyProvider */
 	public function testKeyMangling( string $key ): void {
 		$matcher = new StringMatcher();
 		$mangled = $matcher->mangle( $key );
@@ -67,9 +63,7 @@ class StringMatcherTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $key, $unmangled, 'Mangling is reversible' );
 	}
 
-	/**
-	 * @dataProvider problematicMessageKeyProvider
-	 */
+	/** @dataProvider problematicMessageKeyProvider */
 	public function testKeyManglingWithPrefixing( string $key ): void {
 		$matcher = new StringMatcher( 'prefix', [ '*' ] );
 		$mangled = $matcher->mangle( $key );

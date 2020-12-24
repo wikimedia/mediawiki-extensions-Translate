@@ -14,7 +14,6 @@ use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 	/** @var MessageGroup */
 	protected $group;
-
 	protected $groupConfiguration = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,

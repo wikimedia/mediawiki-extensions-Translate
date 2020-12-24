@@ -34,9 +34,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	/**
-	 * @dataProvider provideStatValues
-	 */
+	/** @dataProvider provideStatValues */
 	public function testGetStatValue( $type, $expected ) {
 		$stats = [
 			MessageGroupStats::TOTAL => 666,
@@ -57,9 +55,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	/**
-	 * @dataProvider provideMatchCondition
-	 */
+	/** @dataProvider provideMatchCondition */
 	public function testMatchCondition( $expected, $value, $condition, $max ) {
 		$actual = MessageGroupStatesUpdaterJob::matchCondition( $value, $condition, $max );
 		$this->assertEquals( $expected, $actual );

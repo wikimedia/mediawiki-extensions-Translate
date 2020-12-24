@@ -16,24 +16,13 @@
  * @since 2013-01-01
  */
 abstract class TranslationAid {
-	/**
-	 * @var MessageGroup
-	 */
+	/** @var MessageGroup */
 	protected $group;
-
-	/**
-	 * @var MessageHandle
-	 */
+	/** @var MessageHandle */
 	protected $handle;
-
-	/**
-	 * @var IContextSource
-	 */
+	/** @var IContextSource */
 	protected $context;
-
-	/**
-	 * @var TranslationAidDataProvider
-	 */
+	/** @var TranslationAidDataProvider */
 	protected $dataProvider;
 
 	public function __construct(

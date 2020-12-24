@@ -53,42 +53,36 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 * @var array Field names
 	 */
 	protected $_fields = [];
-
 	/**
 	 * Like text.
 	 *
 	 * @var string Like text
 	 */
 	protected $_likeText = '';
-
 	/**
 	 * Ignore term frequency.
 	 *
 	 * @var bool ignore term frequency
 	 */
 	protected $_ignoreTF = false;
-
 	/**
 	 * Max query terms value.
 	 *
 	 * @var int Max query terms value
 	 */
 	protected $_maxQueryTerms = 25;
-
 	/**
 	 * fuzziness.
 	 *
 	 * @var int fuzziness
 	 */
 	protected $_fuzziness = 2;
-
 	/**
 	 * Prefix Length.
 	 *
 	 * @var int Prefix Length
 	 */
 	protected $_prefixLength = 0;
-
 	/**
 	 * Analyzer.
 	 *

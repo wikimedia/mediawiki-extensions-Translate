@@ -34,14 +34,9 @@ class MessageGroupStats {
 	/// Do not defer updates. Meant for jobs like MessageGroupStatsRebuildJob.
 	public const FLAG_IMMEDIATE_WRITES = 4;
 
-	/**
-	 * @var array[]
-	 */
+	/** @var array[] */
 	protected static $updates = [];
-
-	/**
-	 * @var string[]
-	 */
+	/** @var string[] */
 	 private static $languages;
 
 	/**
@@ -547,9 +542,7 @@ class MessageGroupStats {
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			$ffs = $group->getFFS();
 			if ( $ffs instanceof GettextFFS ) {
-				/**
-				 * @var FileBasedMessageGroup $group
-				 */
+				/** @var FileBasedMessageGroup $group */
 				'@phan-var FileBasedMessageGroup $group';
 				$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
 				if ( $cache->exists() ) {

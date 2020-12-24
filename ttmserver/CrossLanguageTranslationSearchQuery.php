@@ -7,16 +7,12 @@
 class CrossLanguageTranslationSearchQuery {
 	/** @var SearchableTTMServer */
 	protected $server;
-
 	/** @var array */
 	protected $params;
-
 	/** @var \Elastica\ResultSet */
 	protected $resultset;
-
 	/** @var int */
 	protected $total = 0;
-
 	protected $hl = [ '', '' ];
 
 	public function __construct( array $params, SearchableTTMServer $server ) {
@@ -144,9 +140,7 @@ class CrossLanguageTranslationSearchQuery {
 		return $ret;
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	public function getAvailableFilters() {
 		return [
 			'translated',

@@ -16,24 +16,13 @@ use MediaWiki\MediaWikiServices;
  * @since 2011-03-13
  */
 class MessageHandle {
-	/**
-	 * @var LinkTarget
-	 */
+	/** @var LinkTarget */
 	protected $title;
-
-	/**
-	 * @var string|null
-	 */
+	/** @var string|null */
 	protected $key;
-
-	/**
-	 * @var string|null Language code
-	 */
+	/** @var string|null Language code */
 	protected $code;
-
-	/**
-	 * @var string[]|null
-	 */
+	/** @var string[]|null */
 	protected $groupIds;
 
 	public function __construct( LinkTarget $title ) {

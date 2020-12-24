@@ -25,13 +25,10 @@ use Wikimedia\ScopedCallback;
 class PageTranslationHooks {
 	// Uuugly hacks
 	public static $allowTargetEdit = false;
-
 	// Check if job queue is running
 	public static $jobQueueRunning = false;
-
 	// Check if we are just rendering tags or such
 	public static $renderingContext = false;
-
 	// Used to communicate data between LanguageLinks and SkinTemplateGetLanguageLink hooks.
 	private static $languageLinkData = [];
 

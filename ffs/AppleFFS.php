@@ -105,9 +105,7 @@ class AppleFFS extends SimpleFFS {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
-		/**
-		 * @var TMessage $m
-		 */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );

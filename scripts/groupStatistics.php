@@ -88,7 +88,6 @@ class GroupStatistics extends Maintenance {
 		'ckb' => [ 50, 26, 'asia' ],
 		'ku-latn' => [ 50, 26, 'asia' ],
 	];
-
 	/**
 	 * Variable with key-value pairs with a named index and an array of key-value
 	 * pairs where the key is a MessageGroup ID and the value is a weight of the
@@ -116,7 +115,6 @@ class GroupStatistics extends Maintenance {
 			'ext-0-all' => 25
 		]
 	];
-
 	/**
 	 * Code map to map localisation codes to Wikimedia project codes. Only
 	 * exclusion and remapping is defined here. It is assumed that the first part
@@ -409,9 +407,7 @@ class GroupStatistics extends Maintenance {
 				);
 			}
 
-			/**
-			 * @var MessageGroup $g
-			 */
+			/** @var MessageGroup $g */
 			foreach ( $groups as $g ) {
 				// Add unprocessed description of group as heading
 				if ( $reportScore ) {

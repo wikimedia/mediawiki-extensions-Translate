@@ -79,9 +79,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		if ( MessageGroups::isDynamic( $group ) ) {
-			/**
-			 * @var RecentMessageGroup $group
-			 */
+			/** @var RecentMessageGroup $group */
 			// @phan-suppress-next-line PhanUndeclaredMethod
 			$group->setLanguage( $params['language'] );
 		}

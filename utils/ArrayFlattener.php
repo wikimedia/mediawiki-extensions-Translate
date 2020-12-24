@@ -14,7 +14,6 @@
 class ArrayFlattener {
 	protected $sep;
 	protected $parseCLDRPlurals;
-
 	// For CLDR pluralization rules
 	protected static $pluralWords = [
 		'zero' => 1,

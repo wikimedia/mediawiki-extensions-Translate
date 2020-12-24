@@ -6,13 +6,9 @@ use MediaWikiUnitTestCase;
 use MessageUpdateJob;
 use Title;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\Synchronization\MessageUpdateParameter
- */
+/** @covers \MediaWiki\Extensions\Translate\Synchronization\MessageUpdateParameter */
 class MessageUpdateParameterTest extends MediaWikiUnitTestCase {
-	/**
-	 * @dataProvider provideSerializable
-	 */
+	/** @dataProvider provideSerializable */
 	public function testSerializable(
 		string $title,
 		string $content,
@@ -32,9 +28,7 @@ class MessageUpdateParameterTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $messageParam, $serializedMessageParam );
 	}
 
-	/**
-	 * @dataProvider provideSerializable
-	 */
+	/** @dataProvider provideSerializable */
 	public function testCreateFromJob(
 		string $title,
 		string $content,

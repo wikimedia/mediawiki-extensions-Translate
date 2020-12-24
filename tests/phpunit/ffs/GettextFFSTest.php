@@ -8,9 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-/**
- * @covers \GettextFFS
- */
+/** @covers \GettextFFS */
 class GettextFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration;
 
@@ -31,9 +29,7 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	/**
-	 * @dataProvider provideMangling
-	 */
+	/** @dataProvider provideMangling */
 	public function testMangling( $expected, $item, $algo ) {
 		$this->assertEquals( $expected, GettextFFS::generateKeyFromItem( $item, $algo ) );
 	}
@@ -156,9 +152,7 @@ GETTEXT;
 		);
 	}
 
-	/**
-	 * @dataProvider provideShouldOverwrite
-	 */
+	/** @dataProvider provideShouldOverwrite */
 	public function testShouldOverwrite( $a, $b, $expected, $comment ) {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new GettextFFS( $group );

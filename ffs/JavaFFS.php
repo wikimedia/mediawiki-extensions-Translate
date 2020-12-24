@@ -20,9 +20,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 	protected $keySeparator = '=';
 
-	/**
-	 * @param FileBasedMessageGroup $group
-	 */
+	/** @param FileBasedMessageGroup $group */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
 
@@ -105,9 +103,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
-		/**
-		 * @var TMessage $m
-		 */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );

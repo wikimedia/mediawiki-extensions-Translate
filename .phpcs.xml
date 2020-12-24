@@ -45,5 +45,14 @@
 	<!-- See https://github.com/slevomat/coding-standard#sniffs-included-in-this-standard -->
 	<config name="installed_paths" value="../../slevomat/coding-standard"/>
 	<rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator" />
+	<rule ref="SlevomatCodingStandard.Classes.PropertySpacing">
+		<properties>
+			<property name="minLinesCountBeforeWithComment" value="0"/>
+			<property name="maxLinesCountBeforeWithComment" value="0"/>
+			<property name="minLinesCountBeforeWithoutComment" value="0"/>
+			<property name="maxLinesCountBeforeWithoutComment" value="0"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Commenting.RequireOneLineDocComment" />
 	<rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces" />
 </ruleset>

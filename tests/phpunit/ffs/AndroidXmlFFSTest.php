@@ -45,9 +45,7 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 </resources>
 XML;
 
-		/**
-		 * @var FileBasedMessageGroup $group
-		 */
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AndroidXmlFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
@@ -73,9 +71,7 @@ XML;
 	}
 
 	public function testWrite() {
-		/**
-		 * @var FileBasedMessageGroup $group
-		 */
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AndroidXmlFFS( $group );
 

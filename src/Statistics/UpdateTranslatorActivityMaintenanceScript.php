@@ -10,9 +10,7 @@ namespace MediaWiki\Extensions\Translate\Statistics;
 use Maintenance;
 use MediaWiki\Extensions\Translate\Services;
 
-/**
- * @since 2020.04
- */
+/** @since 2020.04 */
 class UpdateTranslatorActivityMaintenanceScript extends Maintenance {
 	public function __construct() {
 		parent::__construct();

@@ -134,9 +134,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		 * Get and write messages.
 		 */
 		$body = '';
-		/**
-		 * @var TMessage $message
-		 */
+		/** @var TMessage $message */
 		foreach ( $collection as $message ) {
 			if ( strlen( $message->translation() ) === 0 ) {
 				continue;

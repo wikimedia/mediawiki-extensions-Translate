@@ -59,9 +59,7 @@ class DtdFFS extends SimpleFFS {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
-		/**
-		 * @var TMessage $m
-		 */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();

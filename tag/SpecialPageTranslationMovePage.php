@@ -18,31 +18,20 @@ use MediaWiki\MediaWikiServices;
 class SpecialPageTranslationMovePage extends MovePageForm {
 	// Basic form parameters both as text and as titles
 	protected $newText, $oldText;
-
 	// Other form parameters
 	/**
 	 * 'check' or 'perform'
 	 */
 	protected $subaction;
-
-	/**
-	 * @var TranslatablePage instance.
-	 */
+	/** @var TranslatablePage instance. */
 	protected $page;
-
 	/**
 	 * Whether MovePageForm extends SpecialPage
 	 */
 	protected $old;
-
-	/**
-	 * @var Title[] Cached list of translation pages. Not yet loaded if null.
-	 */
+	/** @var Title[] Cached list of translation pages. Not yet loaded if null. */
 	protected $translationPages;
-
-	/**
-	 * @var Title[] Cached list of section pages. Not yet loaded if null.
-	 */
+	/** @var Title[] Cached list of section pages. Not yet loaded if null. */
 	protected $sectionPages;
 
 	/**

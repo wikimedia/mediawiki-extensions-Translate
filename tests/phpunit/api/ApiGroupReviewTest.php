@@ -9,9 +9,7 @@
 
 use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
 
-/**
- * @group Database
- */
+/** @group Database */
 class ApiGroupReviewTest extends MediaWikiIntegrationTestCase {
 	public function testGetSetState() {
 		$group = new WikiMessageGroup( 'testgroup', 'wewgweg' );

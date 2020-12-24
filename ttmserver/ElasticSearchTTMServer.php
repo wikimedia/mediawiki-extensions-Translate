@@ -45,16 +45,12 @@ class ElasticSearchTTMServer
 	 */
 	protected const FROZEN_TYPE = 'frozen';
 
-	/**
-	 * @var \Elastica\Client
-	 */
+	/** @var \Elastica\Client */
 	protected $client;
-
 	/**
 	 * Reference to the maintenance script to relay logging output.
 	 */
 	protected $logger;
-
 	/**
 	 * Used for Reindex
 	 */
@@ -468,16 +464,12 @@ class ElasticSearchTTMServer
 		return $this->client;
 	}
 
-	/**
-	 * @return true if the backend is configured with the wikimedia extra plugin
-	 */
+	/** @return true if the backend is configured with the wikimedia extra plugin */
 	public function useWikimediaExtraPlugin() {
 		return isset( $this->config['use_wikimedia_extra'] ) && $this->config['use_wikimedia_extra'];
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	private function getIndexName() {
 		return $this->config['index'] ?? 'ttmserver';
 	}
@@ -810,9 +802,7 @@ class ElasticSearchTTMServer
 		}
 	}
 
-	/**
-	 * @return bool
-	 */
+	/** @return bool */
 	public function isFrozen() {
 		try {
 			return MWElasticUtils::isFrozen( $this->getClient() );

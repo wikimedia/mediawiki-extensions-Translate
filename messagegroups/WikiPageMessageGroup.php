@@ -18,14 +18,9 @@ use MediaWiki\Revision\SlotRecord;
  * @ingroup PageTranslation MessageGroup
  */
 class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
-	/**
-	 * @var Title|string
-	 */
+	/** @var Title|string */
 	protected $title;
-
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $namespace = NS_TRANSLATIONS;
 
 	/**
@@ -41,9 +36,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		return $this->getTitle()->getPageLanguage()->getCode();
 	}
 
-	/**
-	 * @return Title
-	 */
+	/** @return Title */
 	public function getTitle() {
 		if ( is_string( $this->title ) ) {
 			$this->title = Title::newFromText( $this->title );
@@ -58,9 +51,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 	 */
 	protected $definitions;
 
-	/**
-	 * @return string[]
-	 */
+	/** @return string[] */
 	public function getDefinitions() {
 		if ( is_array( $this->definitions ) ) {
 			return $this->definitions;
@@ -173,9 +164,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		return ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
 	}
 
-	/**
-	 * @return ValidationRunner
-	 */
+	/** @return ValidationRunner */
 	public function getValidator() {
 		$validator = new ValidationRunner( $this->getId() );
 		$validator->setValidators( [

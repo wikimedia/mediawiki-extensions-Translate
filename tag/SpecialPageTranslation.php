@@ -928,9 +928,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$maxid = (int)TranslateMetadata::get( $groupId, 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
-		/**
-		 * @var TPSection $s
-		 */
+		/** @var TPSection $s */
 		foreach ( array_values( $sections ) as $index => $s ) {
 			$maxid = max( $maxid, (int)$s->name );
 			$changed[] = $s->name;

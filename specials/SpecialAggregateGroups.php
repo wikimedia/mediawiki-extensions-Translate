@@ -168,9 +168,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		return $out;
 	}
 
-	/**
-	 * @param array $aggregates
-	 */
+	/** @param array $aggregates */
 	protected function showAggregateGroups( array $aggregates ) {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.aggregategroups' );
@@ -183,9 +181,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 		$out->addHTML( $nojs );
 
-		/**
-		 * @var AggregateMessageGroup $group
-		 */
+		/** @var AggregateMessageGroup $group */
 		foreach ( $aggregates as $group ) {
 			$out->addHTML( $this->showAggregateGroup( $group ) );
 		}

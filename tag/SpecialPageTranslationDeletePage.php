@@ -17,33 +17,20 @@ use MediaWiki\MediaWikiServices;
 class SpecialPageTranslationDeletePage extends SpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $text;
-
-	/**
-	 * @var Title
-	 */
+	/** @var Title */
 	protected $title;
-
 	// Other form parameters
 	/// 'check' or 'perform'
 	protected $subaction;
-
 	/// There must be reason for everything.
 	protected $reason;
-
 	/// Allow skipping non-translation subpages.
 	protected $doSubpages = false;
-
-	/**
-	 * @var TranslatablePage
-	 */
+	/** @var TranslatablePage */
 	protected $page;
-
 	/// Contains the language code if we are working with translation page
 	protected $code;
-
-	/**
-	 * @var Title[]
-	 */
+	/** @var Title[] */
 	protected $translationPages;
 
 	public function __construct() {
@@ -428,9 +415,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		return $this->title->getSubpages();
 	}
 
-	/**
-	 * @return bool
-	 */
+	/** @return bool */
 	protected function singleLanguage() {
 		return $this->code !== '';
 	}

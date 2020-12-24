@@ -25,10 +25,7 @@ class FileBasedMessageGroupLoader extends MessageGroupLoader
 	 * @var array|null
 	 */
 	protected $groups;
-
-	/**
-	 * @var MessageGroupWANCache
-	 */
+	/** @var MessageGroupWANCache */
 	protected $cache;
 
 	public function __construct( MessageGroupWANCache $cache ) {

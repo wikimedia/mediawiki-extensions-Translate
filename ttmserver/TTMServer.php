@@ -18,9 +18,7 @@ class TTMServer {
 	/** @var array */
 	protected $config;
 
-	/**
-	 * @param array $config
-	 */
+	/** @param array $config */
 	protected function __construct( array $config ) {
 		$this->config = $config;
 	}
@@ -162,9 +160,7 @@ class TTMServer {
 		JobQueueGroup::singleton()->push( $job );
 	}
 
-	/**
-	 * @return string[]
-	 */
+	/** @return string[] */
 	public function getMirrors() {
 		global $wgTranslateTranslationServices;
 		if ( isset( $this->config['mirrors'] ) ) {
@@ -185,9 +181,7 @@ class TTMServer {
 		return [];
 	}
 
-	/**
-	 * @return bool
-	 */
+	/** @return bool */
 	public function isFrozen() {
 		return false;
 	}

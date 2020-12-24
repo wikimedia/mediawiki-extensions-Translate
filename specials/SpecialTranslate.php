@@ -19,7 +19,6 @@ use MediaWiki\MediaWikiServices;
 class SpecialTranslate extends SpecialPage {
 	/** @var MessageGroup */
 	protected $group;
-
 	protected $defaults;
 	protected $nondefaults = [];
 	protected $options;

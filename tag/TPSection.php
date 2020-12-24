@@ -15,43 +15,25 @@
 class TPSection {
 	public const UNIT_MARKER_INVALID_CHARS = "_/\n<>";
 
-	/**
-	 * @var string Section name
-	 */
+	/** @var string Section name */
 	public $id;
-
-	/**
-	 * @var string|null New name of the section, that will be saved to database.
-	 */
+	/** @var string|null New name of the section, that will be saved to database. */
 	public $name = null;
-
-	/**
-	 * @var string Section text.
-	 */
+	/** @var string Section text. */
 	public $text;
-
-	/**
-	 * @var string Is this new, existing, changed or deleted section.
-	 */
+	/** @var string Is this new, existing, changed or deleted section. */
 	public $type;
-
-	/**
-	 * @var string|null Text of previous version of this section.
-	 */
+	/** @var string|null Text of previous version of this section. */
 	public $oldText = null;
-
 	/**
 	 * @var bool Whether this section is inline section.
 	 * E.g. "Something <translate>foo</translate> bar".
 	 */
 	protected $inline = false;
-
 	/** @var bool Whether wrapping the section is allowed */
 	private $canWrap = true;
-
 	/** @var int Version number for the serialization. */
 	private $version = 1;
-
 	/** @var string[] List of properties to serialize. */
 	private static $properties = [ 'version', 'id', 'name', 'text', 'type', 'oldText', 'inline' ];
 

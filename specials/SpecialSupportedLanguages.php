@@ -29,16 +29,12 @@ use Wikimedia\Rdbms\ILoadBalancer;
 class SpecialSupportedLanguages extends SpecialPage {
 	/** @var ServiceOptions */
 	private $options;
-
 	/** @var TranslatorActivity */
 	private $translatorActivity;
-
 	/** @var LanguageNameUtils */
 	private $langNameUtils;
-
 	/** @var ILoadBalancer */
 	private $loadBalancer;
-
 	/// Cutoff time for inactivity in days
 	protected $period = 180;
 

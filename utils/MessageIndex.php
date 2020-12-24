@@ -21,22 +21,14 @@ use MediaWiki\Logger\LoggerFactory;
 abstract class MessageIndex {
 	private const CACHEKEY = 'Translate-MessageIndex-interim';
 
-	/**
-	 * @var self
-	 */
+	/** @var self */
 	protected static $instance;
-
-	/**
-	 * @var MapCacheLRU|null
-	 */
+	/** @var MapCacheLRU|null */
 	private static $keysCache;
-
 	/** @var BagOStuff */
 	protected $interimCache;
 
-	/**
-	 * @return self
-	 */
+	/** @return self */
 	public static function singleton() {
 		if ( self::$instance === null ) {
 			global $wgTranslateMessageIndex;
@@ -91,9 +83,7 @@ abstract class MessageIndex {
 		return $value;
 	}
 
-	/**
-	 * @return MapCacheLRU
-	 */
+	/** @return MapCacheLRU */
 	private static function getCache() {
 		if ( self::$keysCache === null ) {
 			self::$keysCache = new MapCacheLRU( 30 );
@@ -202,9 +192,7 @@ abstract class MessageIndex {
 		$old = $this->retrieve( 'rebuild' );
 		$postponed = [];
 
-		/**
-		 * @var MessageGroup $g
-		 */
+		/** @var MessageGroup $g */
 		foreach ( $groups as $g ) {
 			if ( !$g->exists() ) {
 				$id = $g->getId();
@@ -451,11 +439,8 @@ abstract class MessageIndex {
  * which provides random access - this backend doesn't support that.
  */
 class SerializedMessageIndex extends MessageIndex {
-	/**
-	 * @var array|null
-	 */
+	/** @var array|null */
 	protected $index;
-
 	protected $filename = 'translate_messageindex.ser';
 
 	/**
@@ -496,9 +481,7 @@ class SerializedMessageIndex extends MessageIndex {
  * @since 2012-04-12
  */
 class DatabaseMessageIndex extends MessageIndex {
-	/**
-	 * @var array|null
-	 */
+	/** @var array|null */
 	protected $index;
 
 	protected function lock() {
@@ -618,10 +601,7 @@ class DatabaseMessageIndex extends MessageIndex {
 class CachedMessageIndex extends MessageIndex {
 	protected $key = 'translate-messageindex';
 	protected $cache;
-
-	/**
-	 * @var array|null
-	 */
+	/** @var array|null */
 	protected $index;
 
 	protected function __construct() {
@@ -670,19 +650,11 @@ class CachedMessageIndex extends MessageIndex {
  * @since 2012-04-10
  */
 class CDBMessageIndex extends MessageIndex {
-	/**
-	 * @var array|null
-	 */
+	/** @var array|null */
 	protected $index;
-
-	/**
-	 * @var \Cdb\Reader|null
-	 */
+	/** @var \Cdb\Reader|null */
 	protected $reader;
-
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $filename = 'translate_messageindex.cdb';
 
 	/**
@@ -776,9 +748,7 @@ class CDBMessageIndex extends MessageIndex {
  * @since 2015.04
  */
 class HashMessageIndex extends MessageIndex {
-	/**
-	 * @var array
-	 */
+	/** @var array */
 	protected $index = [];
 
 	/**

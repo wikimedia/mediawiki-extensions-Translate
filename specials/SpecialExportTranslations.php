@@ -12,13 +12,10 @@ class SpecialExportTranslations extends SpecialPage {
 
 	/** @var string */
 	protected $language;
-
 	/** @var string */
 	protected $format;
-
 	/** @var string */
 	protected $groupId;
-
 	/** @var string[] */
 	public static $validFormats = [ 'export-as-po', 'export-to-file' ];
 
@@ -26,9 +23,7 @@ class SpecialExportTranslations extends SpecialPage {
 		parent::__construct( 'ExportTranslations' );
 	}
 
-	/**
-	 * @param null|string $par
-	 */
+	/** @param null|string $par */
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
@@ -93,9 +88,7 @@ class SpecialExportTranslations extends SpecialPage {
 			->displayForm( false );
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	protected function getGroupOptions() {
 		$selected = $this->groupId;
 		$groups = MessageGroups::getAllGroups();
@@ -115,9 +108,7 @@ class SpecialExportTranslations extends SpecialPage {
 		return $options;
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	protected function getLanguageOptions() {
 		$languages = TranslateUtils::getLanguageNames( 'en' );
 		$options = [];
@@ -128,9 +119,7 @@ class SpecialExportTranslations extends SpecialPage {
 		return $options;
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	protected function getFormatOptions() {
 		$options = [];
 		foreach ( self::$validFormats as $format ) {
@@ -140,9 +129,7 @@ class SpecialExportTranslations extends SpecialPage {
 		return $options;
 	}
 
-	/**
-	 * @return Status
-	 */
+	/** @return Status */
 	protected function checkInput() {
 		$status = Status::newGood();
 

@@ -19,24 +19,13 @@ class MessageGroupCache {
 	public const NO_CACHE = 2;
 	public const CHANGED = 3;
 
-	/**
-	 * @var FileBasedMessageGroup
-	 */
+	/** @var FileBasedMessageGroup */
 	protected $group;
-
-	/**
-	 * @var \Cdb\Reader
-	 */
+	/** @var \Cdb\Reader */
 	protected $cache;
-
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $code;
-
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	private $cacheFilePath;
 
 	/**

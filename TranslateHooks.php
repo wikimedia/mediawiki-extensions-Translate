@@ -862,9 +862,7 @@ class TranslateHooks {
 		return '';
 	}
 
-	/**
-	 * @param ResourceLoader $resourceLoader
-	 */
+	/** @param ResourceLoader $resourceLoader */
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
 		// Support: MediaWiki <= 1.34
 		$hasOldTokens = $hasOldNotify = version_compare(

@@ -17,18 +17,17 @@
 class TPParse {
 	/** @var Title Title of the page. */
 	protected $title;
-
-	/** @var TPSection[] Parsed sections indexed with placeholder.
+	/**
 	 * @todo Encapsulate
+	 * @var TPSection[] Parsed sections indexed with placeholder.
 	 */
 	public $sections = [];
-	/** @var string Page source with content replaced with placeholders.
+	/**
 	 * @todo Encapsulate
+	 * @var string Page source with content replaced with placeholders.
 	 */
 	public $template = null;
-	/**
-	 * @var null|array Sections saved in the database. array( string => TPSection, ... )
-	 */
+	/** @var null|array Sections saved in the database. array( string => TPSection, ... ) */
 	protected $dbSections = null;
 
 	/// Constructor

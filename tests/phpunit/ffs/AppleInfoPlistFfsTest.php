@@ -8,9 +8,7 @@
  * @file
  */
 
-/**
- * @covers AppleInfoPlistFfs
- */
+/** @covers AppleInfoPlistFfs */
 class AppleInfoPlistFfsTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfigurationInfoPList = [

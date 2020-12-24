@@ -9,9 +9,7 @@
 
 namespace MediaWiki\Extensions\Translate\SystemUsers;
 
-/**
- * @since 2019.08
- */
+/** @since 2019.08 */
 class TranslateUserManager {
 	public static function getUser() {
 		return \User::newSystemUser( self::getName(), [ 'steal' => true ] );

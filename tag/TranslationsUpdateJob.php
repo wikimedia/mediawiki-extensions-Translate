@@ -14,9 +14,7 @@ use MediaWiki\MediaWikiServices;
  * @since 2016.03
  */
 class TranslationsUpdateJob extends GenericTranslateJob {
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function __construct( Title $title, $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
 	}

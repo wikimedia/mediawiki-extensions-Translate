@@ -12,15 +12,11 @@ class MetaYaml {
 	public function __construct( array $schema, $validate = false ) {
 	}
 
-	/**
-	 * @return bool
-	 */
+	/** @return bool */
 	public function validateSchema() {
 	}
 
-	/**
-	 * @return array
-	 */
+	/** @return array */
 	public function getSchema() {
 	}
 

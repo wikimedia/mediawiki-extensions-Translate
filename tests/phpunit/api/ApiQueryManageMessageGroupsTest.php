@@ -11,9 +11,7 @@ use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
  * @covers ApiQueryManageMessageGroups
  */
 class ApiQueryManageMessageGroupsTest extends ApiTestCase {
-	/**
-	 * @var User
-	 */
+	/** @var User */
 	protected $user;
 
 	protected function setUp(): void {

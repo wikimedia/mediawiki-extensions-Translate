@@ -15,14 +15,10 @@ class ExternalMessageSourceStateComparator {
 	/** Process all languages supported by the message group */
 	public const ALL_LANGUAGES = 'all languages';
 
-	/**
-	 * @var StringComparator
-	 */
+	/** @var StringComparator */
 	protected $stringComparator;
 
-	/**
-	 * @param StringComparator $stringComparator
-	 */
+	/** @param StringComparator $stringComparator */
 	public function __construct( StringComparator $stringComparator ) {
 		$this->stringComparator = $stringComparator;
 	}

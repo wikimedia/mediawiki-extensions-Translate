@@ -15,9 +15,7 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWikiUnitTestCase;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
-/**
- * @covers \MediaWiki\Extensions\Translate\Statistics\TranslatorActivity
- */
+/** @covers \MediaWiki\Extensions\Translate\Statistics\TranslatorActivity */
 class TranslatorActivityTest extends MediaWikiUnitTestCase {
 	public function testInvalidLanguage() {
 		$cache = $this->createMock( EmptyBagOStuff::class );

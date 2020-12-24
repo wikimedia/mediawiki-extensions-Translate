@@ -172,19 +172,11 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/* Default implementation */
 
-	/**
-	 * @var string Name of this webservice.
-	 */
+	/** @var string Name of this webservice. */
 	protected $service;
-
-	/**
-	 * @var array
-	 */
+	/** @var array */
 	protected $config;
-
-	/**
-	 * @var LoggerInterface
-	 */
+	/** @var LoggerInterface */
 	protected $logger;
 
 	/**
@@ -274,7 +266,6 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * consider the service being temporarily off-line.
 	 */
 	protected $serviceFailureCount = 5;
-
 	/**
 	 * @var int How long after the last detected failure we clear the status and
 	 * try again.

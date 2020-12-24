@@ -35,9 +35,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		MessageIndex::singleton()->rebuild();
 	}
 
-	/**
-	 * @dataProvider provideGroups
-	 */
+	/** @dataProvider provideGroups */
 	public function testGetParentGroups( $expected, $target ) {
 		$group = MessageGroups::getGroup( $target );
 		$got = MessageGroups::getParentGroups( $group );

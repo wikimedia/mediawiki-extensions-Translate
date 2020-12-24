@@ -22,13 +22,9 @@ class ExternalMessageSourceStateImporter {
 		$jobs = [];
 		$jobs[] = MessageIndexRebuildJob::newJob();
 
-		/**
-		 * @var MessageSourceChange $changesForGroup
-		 */
+		/** @var MessageSourceChange $changesForGroup */
 		foreach ( $changeData as $groupId => $changesForGroup ) {
-			/**
-			 * @var FileBasedMessageGroup
-			 */
+			/** @var FileBasedMessageGroup */
 			$group = MessageGroups::getGroup( $groupId );
 			if ( !$group ) {
 				unset( $changeData[$groupId] );

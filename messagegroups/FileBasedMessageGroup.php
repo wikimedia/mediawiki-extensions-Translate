@@ -209,9 +209,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		return $schema;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getKeys() {
 		$cache = $this->getMessageGroupCache( $this->getSourceLanguage() );
 		if ( !$cache->exists() ) {
@@ -221,9 +219,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		}
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function initCollection( $code ) {
 		$namespace = $this->getNamespace();
 		$messages = [];
@@ -245,9 +241,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		return $collection;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function getMessage( $key, $code ) {
 		$cache = $this->getMessageGroupCache( $code );
 		if ( $cache->exists() ) {

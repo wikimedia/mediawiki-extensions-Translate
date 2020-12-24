@@ -15,24 +15,13 @@
  * @ingroup Stats
  */
 class StatsTable {
-	/**
-	 * @var Language
-	 */
+	/** @var Language */
 	protected $lang;
-
-	/**
-	 * @var Title
-	 */
+	/** @var Title */
 	protected $translate;
-
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $mainColumnHeader;
-
-	/**
-	 * @var Message[]
-	 */
+	/** @var Message[] */
 	protected $extraColumns = [];
 
 	public function __construct() {
@@ -88,16 +77,12 @@ class StatsTable {
 		return $colors[ $index ];
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @return string */
 	public function getMainColumnHeader() {
 		return $this->mainColumnHeader;
 	}
 
-	/**
-	 * @param Message $msg
-	 */
+	/** @param Message $msg */
 	public function setMainColumnHeader( Message $msg ) {
 		$this->mainColumnHeader = $this->createColumnHeader( $msg );
 	}
@@ -114,9 +99,7 @@ class StatsTable {
 		$this->extraColumns[] = $column;
 	}
 
-	/**
-	 * @return Message[]
-	 */
+	/** @return Message[] */
 	public function getOtherColumnHeaders() {
 		return array_merge( [
 			wfMessage( 'translate-total' ),
@@ -127,9 +110,7 @@ class StatsTable {
 		], $this->extraColumns );
 	}
 
-	/**
-	 * @return string HTML
-	 */
+	/** @return string HTML */
 	public function createHeader() {
 		// Create table header
 		$out = Html::openElement(

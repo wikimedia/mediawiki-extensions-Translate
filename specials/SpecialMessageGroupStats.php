@@ -21,11 +21,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected $noComplete = false;
 	/// Overwritten from SpecialLanguageStats
 	protected $noEmpty = true;
-
 	protected $names;
-
 	protected $translate;
-
 	/** @var int */
 	private $numberOfShownLanguages;
 

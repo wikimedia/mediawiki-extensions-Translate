@@ -135,12 +135,8 @@ class ThinMessage extends TMessage {
 		'last-translator-text' => 'rev_user_text',
 		'last-translator-id' => 'rev_user',
 	];
-
-	/**
-	 * @var stdClass Database Result Row
-	 */
+	/** @var stdClass Database Result Row */
 	protected $row;
-
 	/** @var string Stored translation. */
 	protected $translation;
 
@@ -160,9 +156,7 @@ class ThinMessage extends TMessage {
 		$this->translation = $text;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function translation() {
 		if ( !isset( $this->row ) ) {
 			return $this->infile();
