@@ -12,7 +12,7 @@
 class GettextFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [

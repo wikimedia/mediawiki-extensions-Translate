@@ -9,7 +9,7 @@ use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
 
 /** @group medium */
 class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setTemporaryHook(

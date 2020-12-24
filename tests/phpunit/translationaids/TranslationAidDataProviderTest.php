@@ -6,7 +6,7 @@
  */
 class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->setMwGlobals( [
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]

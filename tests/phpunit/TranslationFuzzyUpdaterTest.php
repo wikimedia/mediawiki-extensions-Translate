@@ -14,7 +14,7 @@ use MediaWiki\Revision\RevisionRecord;
  * @group medium
  */
 class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

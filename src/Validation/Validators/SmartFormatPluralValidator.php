@@ -93,7 +93,7 @@ class SmartFormatPluralValidator implements MessageValidator, InsertablesSuggest
 		return $issues;
 	}
 
-	public function getInsertables( string $text ) : array {
+	public function getInsertables( string $text ): array {
 		$definitionPlurals = SmartFormatPlural::getPluralInstances( $text );
 		$insertables = [];
 

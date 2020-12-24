@@ -9,7 +9,7 @@ use MediaWiki\MediaWikiServices;
 
 /** @group Database */
 class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

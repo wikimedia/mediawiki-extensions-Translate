@@ -853,7 +853,7 @@ class PageTranslationHooks {
 		return false;
 	}
 
-	private static function checkTranslatablePageSlow( LinkTarget $unit ) : ?TranslatablePage {
+	private static function checkTranslatablePageSlow( LinkTarget $unit ): ?TranslatablePage {
 		$parts = TranslatablePage::parseTranslationUnit( $unit );
 		$translationPageTitle = Title::newFromText(
 			$parts[ 'sourcepage' ] . '/' . $parts[ 'language' ]

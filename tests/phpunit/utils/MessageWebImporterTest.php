@@ -4,7 +4,7 @@
 class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 	private const PAGE = 'MediaWiki:' . __METHOD__ . '_translated';
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 

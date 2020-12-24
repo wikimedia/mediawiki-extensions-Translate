@@ -11,7 +11,7 @@
  * @covers MessageCollection
  */
 class MessageCollectionTest extends MediaWikiIntegrationTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

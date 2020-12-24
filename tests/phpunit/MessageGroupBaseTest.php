@@ -24,12 +24,12 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 		],
 	];
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
 	}
 
-	protected function tearDown() : void {
+	protected function tearDown(): void {
 		unset( $this->group );
 		parent::tearDown();
 	}

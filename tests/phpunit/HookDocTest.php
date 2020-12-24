@@ -29,7 +29,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 		],
 	];
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$contents = file_get_contents( __DIR__ . '/../../hooks.txt' );
 		$blocks = preg_split( '/\n\n/', $contents );

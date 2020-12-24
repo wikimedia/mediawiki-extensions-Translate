@@ -27,13 +27,13 @@ class BlackListTest extends MediaWikiTestCase {
 		],
 	];
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
 		$this->codes = array_flip( array_keys( TranslateUtils::getLanguageNames( 'en' ) ) );
 	}
 
-	protected function tearDown() : void {
+	protected function tearDown(): void {
 		unset( $this->group );
 		parent::tearDown();
 	}

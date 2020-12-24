@@ -12,7 +12,7 @@
  * @group medium
  */
 class TranslateHooksTest extends MediaWikiLangTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

@@ -154,8 +154,7 @@ class TranslationStatsDataProvider {
 	}
 
 	/** @noinspection PhpIncompatibleReturnTypeInspection */
-	private function getStatsProvider( string $type, TranslationStatsGraphOptions $opts )
-	: TranslationStatsInterface {
+	private function getStatsProvider( string $type, TranslationStatsGraphOptions $opts ): TranslationStatsInterface {
 		$specs = $this->getGraphSpecifications();
 		return $this->objectFactory->createObject(
 			$specs[$type],

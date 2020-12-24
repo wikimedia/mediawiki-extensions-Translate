@@ -7,7 +7,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 	/** @var TranslatablePageMessageGroupStore */
 	protected $mgTranslateStore;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

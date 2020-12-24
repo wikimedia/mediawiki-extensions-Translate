@@ -691,7 +691,7 @@ class TranslatablePage {
 	 * @return array
 	 * @since 2019.10
 	 */
-	public static function parseTranslationUnit( LinkTarget $translationUnit ) : array {
+	public static function parseTranslationUnit( LinkTarget $translationUnit ): array {
 		// Format is Translations:SourcePageNamespace:SourcePageName/SectionName/LanguageCode.
 		// We will drop the namespace immediately here.
 		$parts = explode( '/', $translationUnit->getText() );

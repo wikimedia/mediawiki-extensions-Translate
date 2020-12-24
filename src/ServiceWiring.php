@@ -46,23 +46,20 @@ return [
 		 );
 	},
 
-	'Translate:TranslatablePageParser' => function ( MediaWikiServices $services )
-	: TranslatablePageParser
+	'Translate:TranslatablePageParser' => function ( MediaWikiServices $services ): TranslatablePageParser
 	{
 		return new TranslatablePageParser(
 			$services->get( 'Translate:ParsingPlaceholderFactory' )
 		);
 	},
 
-	'Translate:TranslationStashReader' => function ( MediaWikiServices $services )
-	: TranslationStashReader
+	'Translate:TranslationStashReader' => function ( MediaWikiServices $services ): TranslationStashReader
 	{
 		$db = $services->getDBLoadBalancer()->getConnectionRef( DB_REPLICA );
 		return new TranslationStashStorage( $db );
 	},
 
-	'Translate:TranslationStatsDataProvider' => function ( MediaWikiServices $services )
-	: TranslationStatsDataProvider
+	'Translate:TranslationStatsDataProvider' => function ( MediaWikiServices $services ): TranslationStatsDataProvider
 	{
 		return new TranslationStatsDataProvider(
 			new ServiceOptions(

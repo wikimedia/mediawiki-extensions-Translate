@@ -11,7 +11,7 @@
 /** @covers \AmdFFS */
 class AmdFFSTest extends MediaWikiIntegrationTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [

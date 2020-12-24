@@ -14,7 +14,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group large
  */
 class MessageIndexTest extends MediaWikiIntegrationTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->setMwGlobals( [
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
