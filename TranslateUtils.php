@@ -555,11 +555,7 @@ class TranslateUtils {
 		}
 
 		$action = $request->getVal( 'action' );
-		if ( $action === 'edit' ) {
-			return true;
-		}
-
-		return false;
+		return $action === 'edit';
 	}
 
 	/**

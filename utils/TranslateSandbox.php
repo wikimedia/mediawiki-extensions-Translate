@@ -245,11 +245,7 @@ class TranslateSandbox {
 	 * @since 2013.06
 	 */
 	public static function isSandboxed( User $user ) {
-		if ( in_array( 'translate-sandboxed', $user->getGroups(), true ) ) {
-			return true;
-		}
-
-		return false;
+		return in_array( 'translate-sandboxed', $user->getGroups(), true );
 	}
 
 	/**

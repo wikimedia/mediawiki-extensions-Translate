@@ -748,6 +748,7 @@ class SpecialManageGroups extends SpecialPage {
 	 * @return bool
 	 */
 	protected function isTitlePresent( Title $title, $type ) {
+		// phpcs:ignore SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn
 		if ( ( $type === MessageSourceChange::DELETION || $type === MessageSourceChange::CHANGE ) &&
 			!$title->exists()
 		) {
