@@ -155,7 +155,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 			$diffMessages[$title] = $addedMessages[$title];
 		}
 
-		$this->assertEquals( $diffMessages,  $syncCache->getGroupMessages( $groupId ) );
+		$this->assertEquals( $diffMessages, $syncCache->getGroupMessages( $groupId ) );
 
 		if ( $diffMessages === [] ) {
 			// getSynchronizationStatus does not perform any updates

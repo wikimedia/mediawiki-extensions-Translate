@@ -54,7 +54,7 @@ class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 		$validLang = MessageGroupStats::forLanguage( 'en', MessageGroupStats::FLAG_CACHE_ONLY );
 		$invalidLang = MessageGroupStats::forLanguage( 'ffff', MessageGroupStats::FLAG_CACHE_ONLY );
 
-		$validGroup = MessageGroupStats::forGroup( 'theid',  MessageGroupStats::FLAG_CACHE_ONLY );
+		$validGroup = MessageGroupStats::forGroup( 'theid', MessageGroupStats::FLAG_CACHE_ONLY );
 		$invalidGroup = MessageGroupStats::forGroup( 'invalid-mg-group',
 			MessageGroupStats::FLAG_CACHE_ONLY );
 

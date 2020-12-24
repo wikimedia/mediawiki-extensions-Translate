@@ -41,7 +41,7 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 	/**
 	 * Constructur function
 	 * @param array|string $params If params is specified as a string, it is used as the regex.
-	 * Eg: "/\$[a-z0-9]+/".  In this case `display` is the first value from the regex match.
+	 * Eg: "/\$[a-z0-9]+/". In this case `display` is the first value from the regex match.
 	 * `pre` is also the first value from the regex match, `post` is left empty.
 	 *
 	 * If params is specified as a collection / array, see below for further details.

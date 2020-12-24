@@ -42,7 +42,7 @@ class MicrosoftWebService extends TranslationWebService {
 		$key = $this->config['key'];
 
 		$options = [];
-		$options['method']  = 'GET';
+		$options['method'] = 'GET';
 		$options['timeout'] = $this->config['timeout'];
 
 		$url = $this->config['url'] . '/languages?api-version=3.0';

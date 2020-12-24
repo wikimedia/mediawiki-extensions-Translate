@@ -41,4 +41,8 @@
 	<file>.</file>
 	<arg name="extensions" value="php"/>
 	<arg name="encoding" value="UTF-8"/>
+
+	<!-- See https://github.com/slevomat/coding-standard#sniffs-included-in-this-standard -->
+	<config name="installed_paths" value="../../slevomat/coding-standard"/>
+	<rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces" />
 </ruleset>

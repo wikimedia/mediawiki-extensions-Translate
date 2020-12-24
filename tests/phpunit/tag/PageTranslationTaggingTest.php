@@ -34,7 +34,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'kissa', $title );
 
-		$page->doEditContent( $content,  'Test case' );
+		$page->doEditContent( $content, 'Test case' );
 
 		$this->assertFalse( $translatablePage->getReadyTag(), 'No ready tag was added' );
 		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );

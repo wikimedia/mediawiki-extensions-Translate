@@ -143,7 +143,7 @@ class AndroidXmlFFS extends SimpleFFS {
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
-		$template  = '<?xml version="1.0" encoding="utf-8"?>';
+		$template = '<?xml version="1.0" encoding="utf-8"?>';
 		$template .= $this->doAuthors( $collection );
 		$template .= '<resources></resources>';
 

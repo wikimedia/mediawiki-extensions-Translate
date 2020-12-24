@@ -49,7 +49,7 @@ class ApiQueryManageMessageGroupsTest extends ApiTestCase {
 				'mmggroupId' => 'testgroup-api',
 				'mmgmessageKey' => 'keyAdded1',
 				'mmgchangesetName' => MessageChangeStorage::DEFAULT_NAME,
-			], null, false,  $this->user
+			], null, false, $this->user
 		);
 
 		$apiRespose = $data[0]['query']['managemessagegroups'][0];

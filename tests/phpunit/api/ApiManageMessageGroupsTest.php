@@ -127,7 +127,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 				'operation' => 'new',
 				'changesetName' => MessageChangeStorage::DEFAULT_NAME,
 				'changesetModified' => time()
-			],  null, $this->user, 'csrf'
+			], null, $this->user, 'csrf'
 		);
 
 		$sourceChanges = MessageChangeStorage::getGroupChanges( $filePath, 'testgroup-api' );
@@ -169,7 +169,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 				'operation' => 'new',
 				'changesetName' => MessageChangeStorage::DEFAULT_NAME,
 				'changesetModified' => $date->getTimestamp(),
-			],  null, $this->user, 'csrf'
+			], null, $this->user, 'csrf'
 		);
 	}
 

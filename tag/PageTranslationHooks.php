@@ -376,7 +376,7 @@ class PageTranslationHooks {
 					'task' => 'view'
 				];
 
-				$classes[] = 'new';  // For red link color
+				$classes[] = 'new'; // For red link color
 				$attribs = [
 					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage( $userLang )->text(),
 					'class' => $classes,

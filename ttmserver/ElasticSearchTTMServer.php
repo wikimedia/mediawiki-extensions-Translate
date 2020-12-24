@@ -376,12 +376,12 @@ class ElasticSearchTTMServer
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
 		$mapping->setProperties( [
-			'wiki'     => [ 'type' => 'keyword' ],
-			'localid'  => [ 'type' => 'keyword' ],
-			'uri'      => [ 'type' => 'keyword' ],
+			'wiki' => [ 'type' => 'keyword' ],
+			'localid' => [ 'type' => 'keyword' ],
+			'uri' => [ 'type' => 'keyword' ],
 			'language' => [ 'type' => 'keyword' ],
-			'group'    => [ 'type' => 'keyword' ],
-			'content'  => [
+			'group' => [ 'type' => 'keyword' ],
+			'content' => [
 				'type' => 'text',
 				'fields' => [
 					'content' => [
@@ -517,7 +517,7 @@ class ElasticSearchTTMServer
 	 * Wait for the index to go green
 	 *
 	 * NOTE: This method has been copied and adjusted from
-	 * CirrusSearch/includes/Maintenance/ConfigUtils.php.  Ideally we'd
+	 * CirrusSearch/includes/Maintenance/ConfigUtils.php. Ideally we'd
 	 * like to make these utility methods available in the Elastica
 	 * extension, but this one requires some refactoring in cirrus first.
 	 * TODO: Remove this code in the future as we drop support for

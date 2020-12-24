@@ -136,7 +136,7 @@ class MessageSourceChangeTest extends MediaWikiUnitTestCase {
 			'en-gb', 'renameDeleted', [ MessageSourceChange::CHANGE ]
 		);
 		$this->assertNull(
-			$changed,  'findMessage returns null when searching changes for renamed message.'
+			$changed, 'findMessage returns null when searching changes for renamed message.'
 		);
 
 		$this->change->breakRename( 'en-gb', 'renameAdded' );

@@ -532,7 +532,7 @@ class SpecialManageGroups extends SpecialPage {
 			}
 
 			$label = $this->msg( 'translate-manage-action-rename' )->text();
-			$actions .= Xml::radioLabel( $label, "msg/$id", "rename", "imp/$id",  $renameSelected );
+			$actions .= Xml::radioLabel( $label, "msg/$id", "rename", "imp/$id", $renameSelected );
 		} else {
 			$label = $this->msg( 'translate-manage-action-import' )->text();
 			$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", true );

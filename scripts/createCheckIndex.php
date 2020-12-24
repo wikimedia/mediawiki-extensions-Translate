@@ -36,7 +36,7 @@ class CreateCheckIndex extends Maintenance {
 			'verbose',
 			'(optional) Enable verbose logging. Default: off',
 			false, /*required*/
-			false  /*has arg*/
+			false /*has arg*/
 		);
 		$this->requireExtension( 'Translate' );
 	}
