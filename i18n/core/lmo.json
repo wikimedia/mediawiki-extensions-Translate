@@ -2,27 +2,29 @@
 	"@metadata": {
 		"authors": [
 			"Dakrismeno",
-			"Insübrich"
+			"Insübrich",
+			"Salvemm el lombard"
 		]
 	},
-	"translate-page-settings-legend": "Impustazión",
-	"translate-page-group": "Grüp",
+	"translate-page-settings-legend": "Impostazzion",
+	"translate-page-group": "Grup",
 	"translate-page-limit": "Limit",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|messagg|messagg}} per pagina",
-	"translate-submit": "Fàm vedè",
-	"translate-prev": "Pagina precedent",
-	"translate-pref-editassistlang": "Assistent di lenguv:",
-	"prefs-translate": "Opzión di tradüzión",
-	"translate-rc-translation-filter": "Filtra i tradüzión",
-	"translate-rc-translation-filter-no": "Fà nagòt",
-	"translate-rc-translation-filter-only": "Mustra dumà i tradüzión",
-	"translate-rc-translation-filter-filter": "Elimina i tradüzión",
-	"translate-rc-translation-filter-site": "Dumà i cambiament ai messagg del sit",
-	"translationstats": "Statistegh de tradüzión",
-	"translate-stats-edits": "Mudifegh",
-	"translate-stats-users": "Tradütur",
+	"translate-submit": "Otén",
+	"translate-prev": "Pagina indree",
+	"translate-pref-editassistlang": "Assistent di lengove:",
+	"prefs-translate": "Opzion de traduzzion",
+	"translate-rc-translation-filter": "Filtra i traduzzion",
+	"translate-rc-translation-filter-no": "Fà nagot",
+	"translate-rc-translation-filter-only": "Mostra doma i traduzzion",
+	"translate-rc-translation-filter-filter": "Fa minga vedè i traduzzion",
+	"translate-rc-translation-filter-site": "Doma i cambiament a i messagg del sit",
+	"translationstats": "Statistiche de traduzzion",
+	"translate-stats-edits": "Modifeghe",
+	"translate-stats-users": "Tradutor",
 	"translate-statsf-submit": "Fà vidè prima",
-	"translate-tag-page-desc": "Tradüzión de la pagina wiki [[$2|$1]].",
-	"translate-sidebar-alltrans": "In alter lenguv",
-	"translations": "Tüt i tradüzión"
+	"translate-tag-page-desc": "Traduzzion de la pagina wiki [[$2|$1]] de $3($4)",
+	"translate-sidebar-alltrans": "In alter lengove",
+	"translations": "Tute i traduzzion",
+	"translate-documentation-language": "Documentazzion del messagg"
 }
