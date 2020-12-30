@@ -278,7 +278,7 @@
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не существует или не загружен локально.",
 	"translate-import-err-stale-group": "Группы сообщений, к которой принадлежит этот файл, не существует.",
 	"translate-import-err-no-headers": "Указан некорректно построенный Gettext-файл в формате расширения перевода.\nИз заголовков файла невозможно определить группу и язык.",
-	"translate-js-support-unsaved-warning": "Имеются несохранённые переводы.",
+	"translate-js-support-unsaved-warning": "У вас имеются неопубликованные переводы.",
 	"translate-gs-pos": "Поз.",
 	"translate-gs-code": "Код",
 	"translate-gs-continent": "Часть света",
