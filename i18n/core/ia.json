@@ -142,7 +142,7 @@
 	"translate-language-code": "Codice de lingua",
 	"translate-language-code-field-name": "Codice de lingua:",
 	"translate-suppress-complete": "Celar le gruppos de messages completemente traducite",
-	"translate-ls-noempty": "Supprimer gruppos de messages completemente sin traduction",
+	"translate-ls-noempty": "Celar le gruppos de messages completemente sin traduction",
 	"translate-language": "Lingua",
 	"translate-total": "Messages",
 	"translate-untranslated": "Non traducite",
