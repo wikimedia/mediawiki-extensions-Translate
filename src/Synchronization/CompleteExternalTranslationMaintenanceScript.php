@@ -2,10 +2,10 @@
 
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Synchronization;
+namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Maintenance;
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MessageIndex;
 
@@ -81,3 +81,8 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		);
 	}
 }
+
+class_alias(
+	CompleteExternalTranslationMaintenanceScript::class,
+	'\MediaWiki\Extensions\Translate\CompleteExternalTranslationMaintenanceScript'
+);

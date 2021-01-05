@@ -8,9 +8,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
-use MediaWiki\Extensions\Translate\Utilities\TranslateReplaceTitle;
+use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\TranslateReplaceTitle;
 
 /**
  * Job for updating translation pages when translation or message definition changes.

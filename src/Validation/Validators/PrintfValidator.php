@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 /**
  * A validator that checks for missing and unknown printf formatting characters
@@ -14,3 +14,5 @@ class PrintfValidator extends InsertableRegexValidator {
 		parent::__construct( '/%(\d+\$)?(\.\d+)?[sduf]/U' );
 	}
 }
+
+class_alias( PrintfValidator::class, '\MediaWiki\Extensions\Translate\PrintfValidator' );

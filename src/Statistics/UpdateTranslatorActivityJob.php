@@ -5,11 +5,11 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use GenericParameterJob;
-use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\Services;
 
 /** @since 2020.04 */
 class UpdateTranslatorActivityJob extends GenericTranslateJob implements GenericParameterJob {
@@ -36,3 +36,5 @@ class UpdateTranslatorActivityJob extends GenericTranslateJob implements Generic
 		return true;
 	}
 }
+
+class_alias( UpdateTranslatorActivityJob::class, '\MediaWiki\Extensions\Translate\UpdateTranslatorActivityJob' );

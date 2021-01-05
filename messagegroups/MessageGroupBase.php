@@ -8,9 +8,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester;
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertableFactory;
-use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory;
+use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 
 /**

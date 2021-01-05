@@ -1,29 +1,29 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
 use InvalidArgumentException;
-use MediaWiki\Extensions\Translate\Validation\Validators\BraceBalanceValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\EscapeCharacterValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\GettextNewlineValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\GettextPluralValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\InsertableRegexValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\InsertableRubyVariableValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\IosVariableValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\MatchSetValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiLinkValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiPageNameValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiParameterValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiPluralValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiTimeListValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\NewlineValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\NumericalParameterValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\PrintfValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\PythonInterpolationValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\ReplacementValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\SmartFormatPluralValidator;
-use MediaWiki\Extensions\Translate\Validation\Validators\UnicodePluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\BraceBalanceValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\EscapeCharacterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\GettextNewlineValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\GettextPluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\InsertableRegexValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\InsertableRubyVariableValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\IosVariableValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MatchSetValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiLinkValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPageNameValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiParameterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiTimeListValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\NewlineValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\NumericalParameterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PrintfValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PythonInterpolationValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\ReplacementValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\SmartFormatPluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\UnicodePluralValidator;
 use RuntimeException;
 
 /**
@@ -114,3 +114,5 @@ class ValidatorFactory {
 		self::$validators[ $id ] = $ns . $validator;
 	}
 }
+
+class_alias( ValidatorFactory::class, '\MediaWiki\Extensions\Translate\ValidatorFactory' );

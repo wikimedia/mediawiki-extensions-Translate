@@ -4,7 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\Utilities;
 
 /**
  * Implements partial support for SmartFormat plural syntax parsing.
@@ -62,3 +62,5 @@ class SmartFormatPlural {
 		return $ldns;
 	}
 }
+
+class_alias( SmartFormatPlural::class, '\MediaWiki\Extensions\Translate\SmartFormatPlural' );

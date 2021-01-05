@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\PrintfValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PrintfValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\PrintfValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\PrintfValidator
  */
 class PrintfValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

@@ -7,9 +7,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\PageTranslation\ParsingFailure;
-use MediaWiki\Extensions\Translate\Services;
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;

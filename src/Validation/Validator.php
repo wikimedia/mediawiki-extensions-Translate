@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
 use TMessage;
 
@@ -19,3 +19,5 @@ use TMessage;
 interface Validator {
 	public function validate( TMessage $message, $code, array &$notices );
 }
+
+class_alias( Validator::class, '\MediaWiki\Extensions\Translate\Validator' );

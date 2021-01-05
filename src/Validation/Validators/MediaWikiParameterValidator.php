@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 /**
  * An insertable wiki parameter validator that also acts as an InsertableSuggester
@@ -13,3 +13,5 @@ class MediaWikiParameterValidator extends InsertableRegexValidator {
 		parent::__construct( '/\$[1-9]/' );
 	}
 }
+
+class_alias( MediaWikiParameterValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiParameterValidator' );

@@ -1,16 +1,16 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
+use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWikiUnitTestCase;
 use TPSection;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser
  */
 class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 	/** @dataProvider provideTestContainsMarkup */

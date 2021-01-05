@@ -7,8 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorSandbox\StashedTranslation;
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 
 /**
  * WebAPI module for storing translations for users who are in a sandbox.

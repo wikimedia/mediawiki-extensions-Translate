@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
 /**
  * Value object.
@@ -52,3 +52,5 @@ class ValidationIssue {
 		return $this->messageParams;
 	}
 }
+
+class_alias( ValidationIssue::class, '\MediaWiki\Extensions\Translate\ValidationIssue' );

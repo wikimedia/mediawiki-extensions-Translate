@@ -1,15 +1,15 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
-use MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural;
-use MediaWiki\Extensions\Translate\Utilities\UnicodePlural;
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
+use MediaWiki\Extension\Translate\Utilities\SmartFormatPlural;
+use MediaWiki\Extension\Translate\Utilities\UnicodePlural;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssue;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
@@ -108,3 +108,5 @@ class SmartFormatPluralValidator implements MessageValidator, InsertablesSuggest
 		return $insertables;
 	}
 }
+
+class_alias( SmartFormatPluralValidator::class, '\MediaWiki\Extensions\Translate\SmartFormatPluralValidator' );

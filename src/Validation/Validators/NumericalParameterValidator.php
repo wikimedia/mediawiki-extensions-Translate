@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 /**
  * An insertable numerical parameter validator that also acts as an InsertableSuggester
@@ -13,3 +13,5 @@ class NumericalParameterValidator extends InsertableRegexValidator {
 		parent::__construct( '/\$\d+/' );
 	}
 }
+
+class_alias( NumericalParameterValidator::class, '\MediaWiki\Extensions\Translate\NumericalParameterValidator' );

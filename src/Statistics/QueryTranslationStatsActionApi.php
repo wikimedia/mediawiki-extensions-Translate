@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use ApiBase;
 use ApiMain;
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\Services;
 
 /**
  * Api module for querying translation statistics
@@ -80,3 +80,5 @@ class QueryTranslationStatsActionApi extends ApiBase {
 		];
 	}
 }
+
+class_alias( QueryTranslationStatsActionApi::class, '\MediaWiki\Extensions\Translate\QueryTranslationStatsActionApi' );

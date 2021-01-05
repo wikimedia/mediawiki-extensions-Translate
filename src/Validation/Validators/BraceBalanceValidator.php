@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssue;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
@@ -53,3 +53,5 @@ class BraceBalanceValidator implements MessageValidator {
 		return substr_count( $source, $str1 ) - substr_count( $source, $str2 );
 	}
 }
+
+class_alias( BraceBalanceValidator::class, '\MediaWiki\Extensions\Translate\BraceBalanceValidator' );

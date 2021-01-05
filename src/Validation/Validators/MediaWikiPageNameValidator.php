@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssue;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
@@ -37,3 +37,5 @@ class MediaWikiPageNameValidator implements MessageValidator {
 		return $issues;
 	}
 }
+
+class_alias( MediaWikiPageNameValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiPageNameValidator' );

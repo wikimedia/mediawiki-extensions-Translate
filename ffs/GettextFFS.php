@@ -9,7 +9,7 @@
  * @file
  */
 
-use MediaWiki\Extensions\Translate\Utilities\GettextPlural;
+use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Logger\LoggerFactory;
 
 /**

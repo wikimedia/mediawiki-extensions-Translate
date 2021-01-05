@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Cache;
+namespace MediaWiki\Extension\Translate\Cache;
 
 use ArrayIterator;
 use Iterator;
-use MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -182,3 +182,5 @@ class PersistentDatabaseCache implements PersistentCache {
 		return $entries;
 	}
 }
+
+class_alias( PersistentDatabaseCache::class, '\MediaWiki\Extensions\Translate\PersistentDatabaseCache' );

@@ -10,7 +10,7 @@
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
 

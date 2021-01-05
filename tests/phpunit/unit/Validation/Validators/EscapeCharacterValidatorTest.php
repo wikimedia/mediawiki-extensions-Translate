@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\EscapeCharacterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\EscapeCharacterValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\EscapeCharacterValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\EscapeCharacterValidator
  */
 class EscapeCharacterValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

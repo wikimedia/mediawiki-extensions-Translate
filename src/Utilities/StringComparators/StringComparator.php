@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extensions\Translate\Utilities\StringComparators;
+namespace MediaWiki\Extension\Translate\Utilities\StringComparators;
 
 /**
  * An interface to be implemented by comparators that will compare percentage
@@ -16,3 +16,5 @@ interface StringComparator {
 	 */
 	public function getSimilarity( $a, $b );
 }
+
+class_alias( StringComparator::class, '\MediaWiki\Extensions\Translate\StringComparator' );

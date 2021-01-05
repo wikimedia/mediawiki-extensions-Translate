@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\Services;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Services
+ * @covers \MediaWiki\Extension\Translate\Services
  */
 class ServicesTest extends MediaWikiIntegrationTestCase {
 	public function testNoExceptions() {

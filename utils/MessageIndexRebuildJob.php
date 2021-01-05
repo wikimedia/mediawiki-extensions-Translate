@@ -8,7 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 
 /**
  * Job for rebuilding message index.

@@ -5,11 +5,11 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 use MediaWikiUnitTestCase;
 
-/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\HtmlTagInsertablesSuggester */
+/** @covers \MediaWiki\Extension\Translate\TranslatorInterface\Insertable\HtmlTagInsertablesSuggester */
 class HtmlTagInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 	/** @dataProvider getTestHtmlTagInsertablesSuggesterProvider */
 	public function testHtmlTagInsertablesSuggester( $text, $expected, $comment = '' ) {

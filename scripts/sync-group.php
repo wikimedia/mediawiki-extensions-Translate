@@ -11,7 +11,7 @@
  * @file
  */
 
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Shell\Shell;

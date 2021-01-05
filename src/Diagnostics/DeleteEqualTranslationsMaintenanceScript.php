@@ -1,10 +1,10 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Diagnostics;
+namespace MediaWiki\Extension\Translate\Diagnostics;
 
 use Maintenance;
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MessageCollection;
 use MessageGroups;
 use SplObjectStorage;
@@ -149,3 +149,8 @@ class DeleteEqualTranslationsMaintenanceScript extends Maintenance {
 		}
 	}
 }
+
+class_alias(
+	DeleteEqualTranslationsMaintenanceScript::class,
+	'\MediaWiki\Extensions\Translate\DeleteEqualTranslationsMaintenanceScript'
+);

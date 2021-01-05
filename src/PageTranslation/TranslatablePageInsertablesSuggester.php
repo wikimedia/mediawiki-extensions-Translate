@@ -1,10 +1,10 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 
 /**
  * Special insertables for translatable pages.
@@ -37,3 +37,8 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		return $insertables;
 	}
 }
+
+class_alias(
+	TranslatablePageInsertablesSuggester::class,
+	'\MediaWiki\Extensions\Translate\TranslatablePageInsertablesSuggester'
+);

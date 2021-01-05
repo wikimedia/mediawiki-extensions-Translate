@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use Language;
 use MediaWiki\Config\ServiceOptions;
@@ -229,3 +229,5 @@ class TranslationStatsDataProvider {
 		return $increment;
 	}
 }
+
+class_alias( TranslationStatsDataProvider::class, '\MediaWiki\Extensions\Translate\TranslationStatsDataProvider' );

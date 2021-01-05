@@ -247,6 +247,7 @@
 		"YandexWebService": "webservices/YandexWebService.php"
 	},
 	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\Translate\\": "src/",
 		"MediaWiki\\Extensions\\Translate\\": "src/"
 	},
 	"TestAutoloadClasses": {
@@ -255,7 +256,7 @@
 		"MockJsonUnserializableSuperClass": "tests/phpunit/mocks/json/MockJsonUnserializableSuperClass.php"
 	},
 	"TestAutoloadNamespaces": {
-		"MediaWiki\\Extensions\\Translate\\": "tests/phpunit/unit/"
+		"MediaWiki\\Extension\\Translate\\": "tests/phpunit/unit/"
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
@@ -356,7 +357,7 @@
 		"translationaids": "ApiTranslationAids",
 		"translationreview": "ApiTranslationReview",
 		"translationcheck": "ApiTranslationCheck",
-		"translationstats": "\\MediaWiki\\Extensions\\Translate\\Statistics\\QueryTranslationStatsActionApi",
+		"translationstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",
 		"ttmserver": "ApiTTMServer",
 		"searchtranslations": "ApiSearchTranslations"
 	},
@@ -366,7 +367,7 @@
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
 		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
-		"UpdateTranslatorActivity": "\\MediaWiki\\Extensions\\Translate\\Statistics\\UpdateTranslatorActivityJob"
+		"UpdateTranslatorActivity": "\\MediaWiki\\Extension\\Translate\\Statistics\\UpdateTranslatorActivityJob"
 	},
 	"LogTypes": [
 		"translationreview"
@@ -1014,11 +1015,11 @@
 		},
 		"TranslateStatsProviders": {
 			"value": {
-				"edits": "MediaWiki\\Extensions\\Translate\\Statistics\\TranslatePerLanguageStats",
-				"users": "MediaWiki\\Extensions\\Translate\\Statistics\\TranslatePerLanguageStats",
-				"reviews": "MediaWiki\\Extensions\\Translate\\Statistics\\ReviewPerLanguageStats",
-				"reviewers": "MediaWiki\\Extensions\\Translate\\Statistics\\ReviewPerLanguageStats",
-				"registrations": "MediaWiki\\Extensions\\Translate\\Statistics\\TranslateRegistrationStats"
+				"edits": "MediaWiki\\Extension\\Translate\\Statistics\\TranslatePerLanguageStats",
+				"users": "MediaWiki\\Extension\\Translate\\Statistics\\TranslatePerLanguageStats",
+				"reviews": "MediaWiki\\Extension\\Translate\\Statistics\\ReviewPerLanguageStats",
+				"reviewers": "MediaWiki\\Extension\\Translate\\Statistics\\ReviewPerLanguageStats",
+				"registrations": "MediaWiki\\Extension\\Translate\\Statistics\\TranslateRegistrationStats"
 			},
 			"description": "Add, disable or overwrite default stats type providers.",
 			"public": true

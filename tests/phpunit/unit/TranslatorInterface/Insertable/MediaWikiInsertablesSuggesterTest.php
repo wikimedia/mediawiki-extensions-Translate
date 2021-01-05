@@ -5,11 +5,11 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 use MediaWikiUnitTestCase;
 
-/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester */
+/** @covers \MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester */
 class MediaWikiInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 	/** @dataProvider getInsertablesProvider */
 	public function testGetInsertables( $input, $expected ) {

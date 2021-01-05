@@ -10,7 +10,7 @@
  */
 
 // Standard boilerplate to define $IP
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );

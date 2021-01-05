@@ -8,7 +8,7 @@
  * @file
  */
 
-use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 
 class MessageChangeStorage {
 	public const DEFAULT_NAME = 'default';

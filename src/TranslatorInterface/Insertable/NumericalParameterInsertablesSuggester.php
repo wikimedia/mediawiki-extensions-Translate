@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 /**
  * Insertables suggester for numerical parameters such as $1, $2, $3
@@ -29,3 +29,8 @@ class NumericalParameterInsertablesSuggester implements InsertablesSuggester {
 		return $insertables;
 	}
 }
+
+class_alias(
+	NumericalParameterInsertablesSuggester::class,
+	'\MediaWiki\Extensions\Translate\NumericalParameterInsertablesSuggester'
+);

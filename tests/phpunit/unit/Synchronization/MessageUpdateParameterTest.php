@@ -1,12 +1,12 @@
 <?php
 
-namespace MediaWiki\Extensions\Translate\Synchronization;
+namespace MediaWiki\Extension\Translate\Synchronization;
 
 use MediaWikiUnitTestCase;
 use MessageUpdateJob;
 use Title;
 
-/** @covers \MediaWiki\Extensions\Translate\Synchronization\MessageUpdateParameter */
+/** @covers \MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter */
 class MessageUpdateParameterTest extends MediaWikiUnitTestCase {
 	/** @dataProvider provideSerializable */
 	public function testSerializable(

@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 
 /**
  * Class which handles special definition format for %MediaWiki extensions and skins.

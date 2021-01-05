@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiTimeListValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiTimeListValidator;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiTimeListValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\MediaWikiTimeListValidator
  */
 class MediaWikiTimeListValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

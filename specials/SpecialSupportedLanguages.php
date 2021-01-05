@@ -9,9 +9,9 @@
  */
 
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extensions\Translate\Statistics\StatisticsUnavailable;
-use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
-use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
+use MediaWiki\Extension\Translate\Statistics\StatisticsUnavailable;
+use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
+use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use Wikimedia\Rdbms\ILoadBalancer;

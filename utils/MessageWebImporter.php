@@ -10,7 +10,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 

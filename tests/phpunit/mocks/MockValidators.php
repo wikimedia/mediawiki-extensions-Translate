@@ -7,9 +7,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssue;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 
 class MockTranslateValidator implements MessageValidator {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {

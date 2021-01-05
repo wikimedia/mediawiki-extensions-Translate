@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use MediaWikiIntegrationTestCase;
 use Title;

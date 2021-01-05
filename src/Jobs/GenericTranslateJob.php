@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Jobs;
+namespace MediaWiki\Extension\Translate\Jobs;
 
 use MediaWiki\Logger\LoggerFactory;
 use Psr\Log\LoggerInterface;
@@ -70,3 +70,5 @@ abstract class GenericTranslateJob extends \Job {
 		$this->getLogger()->warning( $this->getLogPrefix() . $msg, $context );
 	}
 }
+
+class_alias( GenericTranslateJob::class, '\MediaWiki\Extensions\Translate\GenericTranslateJob' );

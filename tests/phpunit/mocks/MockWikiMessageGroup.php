@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
  * This file contains multiple unmanaged message group implementation.

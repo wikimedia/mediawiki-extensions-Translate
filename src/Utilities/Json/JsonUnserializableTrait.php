@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities\Json;
+namespace MediaWiki\Extension\Translate\Utilities\Json;
 
 use FormatJson;
 
@@ -33,3 +33,5 @@ trait JsonUnserializableTrait {
 	 */
 	abstract protected function toJsonArray(): array;
 }
+
+class_alias( JsonUnserializableTrait::class, '\MediaWiki\Extensions\Translate\JsonUnserializableTrait' );

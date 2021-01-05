@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiPageNameValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPageNameValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiPageNameValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPageNameValidator
  */
 class MediaWikiPageNameValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

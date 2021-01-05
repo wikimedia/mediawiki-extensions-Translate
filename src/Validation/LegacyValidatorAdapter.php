@@ -7,9 +7,9 @@
 
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use TMessage;
 
 /**
@@ -59,3 +59,5 @@ class LegacyValidatorAdapter implements MessageValidator, InsertablesSuggester {
 		return [];
 	}
 }
+
+class_alias( LegacyValidatorAdapter::class, '\MediaWiki\Extensions\Translate\LegacyValidatorAdapter' );

@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities\Json;
+namespace MediaWiki\Extension\Translate\Utilities\Json;
 
 /**
  * Identify classes that can unserialize themselves from an array
@@ -15,3 +15,5 @@ interface JsonUnserializable {
 	/** Restore an array to an instance of the current class */
 	public static function newFromJsonArray( array $json );
 }
+
+class_alias( JsonUnserializable::class, '\MediaWiki\Extensions\Translate\JsonUnserializable' );

@@ -8,10 +8,10 @@
  */
 
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
-use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
-use MediaWiki\Extensions\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashSpecialPage;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Hook\PageMoveCompleteHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;

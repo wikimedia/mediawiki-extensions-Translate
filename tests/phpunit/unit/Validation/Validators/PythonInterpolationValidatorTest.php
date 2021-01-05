@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\PythonInterpolationValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PythonInterpolationValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\PythonInterpolationValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\PythonInterpolationValidator
  */
 class PythonInterpolationValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

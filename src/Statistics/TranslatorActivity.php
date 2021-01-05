@@ -7,7 +7,7 @@ declare( strict_types = 1 );
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use BagOStuff;
 use InvalidArgumentException;
@@ -152,3 +152,5 @@ class TranslatorActivity {
 		return $this->languageNameUtils->isKnownLanguageTag( $language );
 	}
 }
+
+class_alias( TranslatorActivity::class, '\MediaWiki\Extensions\Translate\TranslatorActivity' );

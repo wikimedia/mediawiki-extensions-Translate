@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\Utilities;
 
 /**
  * Create unique placeholders that can be used when parsing (wiki)text.
@@ -21,3 +21,5 @@ class ParsingPlaceholderFactory {
 			$this->i++;
 	}
 }
+
+class_alias( ParsingPlaceholderFactory::class, '\MediaWiki\Extensions\Translate\ParsingPlaceholderFactory' );

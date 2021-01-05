@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Synchronization;
+namespace MediaWiki\Extension\Translate\Synchronization;
 
 /**
  * Class encapsulating the response returned by the GroupSynchronizationCache
@@ -44,3 +44,5 @@ class GroupSynchronizationResponse {
 		return $this->timeout;
 	}
 }
+
+class_alias( GroupSynchronizationResponse::class, '\MediaWiki\Extensions\Translate\GroupSynchronizationResponse' );

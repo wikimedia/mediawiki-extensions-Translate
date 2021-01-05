@@ -1,14 +1,14 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWikiUnitTestCase;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\PageTranslation\Section
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\Section
  */
 class SectionTest extends MediaWikiUnitTestCase {
 	public function test() {

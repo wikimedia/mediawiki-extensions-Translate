@@ -5,10 +5,10 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use Maintenance;
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\Services;
 
 /** @since 2020.04 */
 class UpdateTranslatorActivityMaintenanceScript extends Maintenance {
@@ -23,3 +23,8 @@ class UpdateTranslatorActivityMaintenanceScript extends Maintenance {
 		$this->output( "Done.\n" );
 	}
 }
+
+class_alias(
+	UpdateTranslatorActivityMaintenanceScript::class,
+	'\MediaWiki\Extensions\Translate\UpdateTranslatorActivityMaintenanceScript'
+);

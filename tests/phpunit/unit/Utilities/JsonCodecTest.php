@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities\Json;
+namespace MediaWiki\Extension\Translate\Utilities\Json;
 
 use InvalidArgumentException;
 use JsonSerializable;
@@ -15,8 +15,8 @@ use Wikimedia\Assert\PreconditionException;
  * Remove once we need to support only MW >= 1.36
  * See Change-Id: I5433090ae8e2b3f2a4590cc404baf838025546ce
  *
- * @covers \MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec
- * @covers \MediaWiki\Extensions\Translate\Utilities\Json\JsonUnserializableTrait
+ * @covers \MediaWiki\Extension\Translate\Utilities\Json\JsonCodec
+ * @covers \MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializableTrait
  */
 class JsonCodecTest extends MediaWikiUnitTestCase {
 
@@ -100,7 +100,7 @@ class JsonCodecTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideSerializeThrowsOnFailure
-	 * @covers \MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec::serialize
+	 * @covers \MediaWiki\Extension\Translate\Utilities\Json\JsonCodec::serialize
 	 * @param mixed $value
 	 */
 	public function testSerializeThrowsOnFailure( $value ) {
@@ -120,7 +120,7 @@ class JsonCodecTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideSerializeSuccess
-	 * @covers \MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec::serialize
+	 * @covers \MediaWiki\Extension\Translate\Utilities\Json\JsonCodec::serialize
 	 * @param mixed $value
 	 */
 	public function testSerializeSuccess( $value, string $expected ) {

@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 /**
  * InsertablesSuggester implementation for MediaWiki message translations.
@@ -44,3 +44,5 @@ class MediaWikiInsertablesSuggester implements InsertablesSuggester {
 		return $insertables;
 	}
 }
+
+class_alias( MediaWikiInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\MediaWikiInsertablesSuggester' );

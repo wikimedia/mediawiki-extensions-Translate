@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\UnicodePluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\UnicodePluralValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\UnicodePluralValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\UnicodePluralValidator
  */
 class UnicodePluralValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

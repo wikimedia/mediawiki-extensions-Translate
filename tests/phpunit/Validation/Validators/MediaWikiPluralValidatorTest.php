@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiPluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPluralValidator;
 
 /**
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiPluralValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPluralValidator
  */
 class MediaWikiPluralValidatorTest extends PHPUnit\Framework\TestCase {
 	/** @dataProvider getPluralFormCountProvider */

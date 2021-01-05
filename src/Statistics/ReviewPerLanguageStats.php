@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use ActorMigration;
 use TranslateUtils;
@@ -113,3 +113,5 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		return $row->log_timestamp;
 	}
 }
+
+class_alias( ReviewPerLanguageStats::class, '\MediaWiki\Extensions\Translate\ReviewPerLanguageStats' );

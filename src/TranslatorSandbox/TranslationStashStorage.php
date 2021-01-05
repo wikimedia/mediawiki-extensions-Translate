@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use Title;
 use User;
@@ -65,3 +65,5 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 		$this->db->delete( $this->dbTable, $conds, __METHOD__ );
 	}
 }
+
+class_alias( TranslationStashStorage::class, '\MediaWiki\Extensions\Translate\TranslationStashStorage' );

@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\MediaWikiServices;
 
@@ -52,3 +52,5 @@ class ParallelExecutor {
 		}
 	}
 }
+
+class_alias( ParallelExecutor::class, '\MediaWiki\Extensions\Translate\ParallelExecutor' );

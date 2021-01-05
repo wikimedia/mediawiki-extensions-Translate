@@ -4,7 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\Utilities;
 
 use GettextPluralException;
 use InvalidArgumentException;
@@ -199,3 +199,5 @@ class GettextPlural {
 		return $formArray;
 	}
 }
+
+class_alias( GettextPlural::class, '\MediaWiki\Extensions\Translate\GettextPlural' );

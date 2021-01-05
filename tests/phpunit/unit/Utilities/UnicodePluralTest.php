@@ -4,9 +4,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Utilities\UnicodePlural;
+use MediaWiki\Extension\Translate\Utilities\UnicodePlural;
 
-/** @coversDefaultClass \MediaWiki\Extensions\Translate\Utilities\UnicodePlural */
+/** @coversDefaultClass \MediaWiki\Extension\Translate\Utilities\UnicodePlural */
 class UnicodePluralTest extends MediaWikiUnitTestCase {
 	/** @covers ::getPluralKeywords */
 	public function testGetPluralKeywords() {

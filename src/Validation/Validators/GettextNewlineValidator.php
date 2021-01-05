@@ -1,9 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
@@ -45,3 +45,5 @@ class GettextNewlineValidator extends NewlineValidator {
 		return $str;
 	}
 }
+
+class_alias( GettextNewlineValidator::class, '\MediaWiki\Extensions\Translate\GettextNewlineValidator' );

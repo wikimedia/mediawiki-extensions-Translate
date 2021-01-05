@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
  * Interface for message groups.

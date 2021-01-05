@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use User;
 
@@ -18,3 +18,5 @@ interface TranslationStashReader {
 	 */
 	public function getTranslations( User $user ): array;
 }
+
+class_alias( TranslationStashReader::class, '\MediaWiki\Extensions\Translate\TranslationStashReader' );

@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\Widget\TagMultiselectWidget;
 
@@ -31,3 +31,5 @@ class LanguagesMultiselectWidget extends TagMultiselectWidget {
 		return parent::getConfig( $config );
 	}
 }
+
+class_alias( LanguagesMultiselectWidget::class, '\MediaWiki\Extensions\Translate\LanguagesMultiselectWidget' );

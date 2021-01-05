@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\InsertableRubyVariableValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\InsertableRubyVariableValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\InsertableRubyVariableValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\InsertableRubyVariableValidator
  */
 class InsertableRubyValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

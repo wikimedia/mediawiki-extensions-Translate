@@ -1,13 +1,13 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 use InvalidArgumentException;
 use MediaWikiUnitTestCase;
 use MockTranslateValidator;
 
-/** @covers \MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertableFactory */
+/** @covers \MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory */
 class InsertableFactoryTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider getPreProvidedInsertables

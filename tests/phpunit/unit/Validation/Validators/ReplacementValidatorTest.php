@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\ReplacementValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\ReplacementValidator;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\ReplacementValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\ReplacementValidator
  */
 class ReplacementValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

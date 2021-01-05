@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Utilities\Json;
+namespace MediaWiki\Extension\Translate\Utilities\Json;
 
 use FormatJson;
 use InvalidArgumentException;
@@ -85,3 +85,5 @@ class JsonCodec {
 		return false;
 	}
 }
+
+class_alias( JsonCodec::class, '\MediaWiki\Extensions\Translate\JsonCodec' );

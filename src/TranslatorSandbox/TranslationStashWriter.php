@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use User;
 
@@ -15,3 +15,5 @@ interface TranslationStashWriter {
 	/** Delete all stashed translations for the given user. */
 	public function deleteTranslations( User $user ): void;
 }
+
+class_alias( TranslationStashWriter::class, '\MediaWiki\Extensions\Translate\TranslationStashWriter' );

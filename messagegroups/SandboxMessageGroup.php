@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 
 /**
  * @since 2013.06

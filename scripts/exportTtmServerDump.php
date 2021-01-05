@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extensions\Translate\TtmServer\ExportTtmServerDumpMaintenanceScript;
+use MediaWiki\Extension\Translate\TtmServer\ExportTtmServerDumpMaintenanceScript;
 
 $env = getenv( 'MW_INSTALL_PATH' );
 $IP = $env !== false ? $env : __DIR__ . '/../../..';

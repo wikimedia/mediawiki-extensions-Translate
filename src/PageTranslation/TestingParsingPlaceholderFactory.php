@@ -1,9 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
+use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 
 /**
  * @author Niklas Laxström
@@ -17,3 +17,8 @@ class TestingParsingPlaceholderFactory extends ParsingPlaceholderFactory {
 		return '<' . $this->i++ . '>';
 	}
 }
+
+class_alias(
+	TestingParsingPlaceholderFactory::class,
+	'\MediaWiki\Extensions\Translate\TestingParsingPlaceholderFactory'
+);

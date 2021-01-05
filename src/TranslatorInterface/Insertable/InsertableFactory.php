@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 use InvalidArgumentException;
 
@@ -46,3 +46,5 @@ class InsertableFactory {
 		return $suggester;
 	}
 }
+
+class_alias( InsertableFactory::class, '\MediaWiki\Extensions\Translate\InsertableFactory' );

@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 use Language;
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssue;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use MediaWiki\MediaWikiServices;
 use Parser;
 use ParserOptions;
@@ -143,3 +143,5 @@ class MediaWikiPluralValidator implements MessageValidator {
 		return array_values( $forms );
 	}
 }
+
+class_alias( MediaWikiPluralValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiPluralValidator' );

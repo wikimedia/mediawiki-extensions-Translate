@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 /**
  * Represents any kind of failure to parse a translatable page source code.
@@ -25,3 +25,5 @@ class ParsingFailure extends \RuntimeException {
 		return $this->messageSpec;
 	}
 }
+
+class_alias( ParsingFailure::class, '\MediaWiki\Extensions\Translate\ParsingFailure' );

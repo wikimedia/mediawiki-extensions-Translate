@@ -8,7 +8,7 @@
  * @since 2016.02
  */
 
-use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 
 class ExternalMessageSourceStateImporter {
 

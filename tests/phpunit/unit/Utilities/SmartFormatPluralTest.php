@@ -4,9 +4,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural;
+use MediaWiki\Extension\Translate\Utilities\SmartFormatPlural;
 
-/** @covers \MediaWiki\Extensions\Translate\Utilities\SmartFormatPlural */
+/** @covers \MediaWiki\Extension\Translate\Utilities\SmartFormatPlural */
 class SmartFormatPluralTest extends MediaWikiUnitTestCase {
 	/** @dataProvider provideTestGetPluralInstances */
 	public function testGetPluralInstances( $input, $expected ) {

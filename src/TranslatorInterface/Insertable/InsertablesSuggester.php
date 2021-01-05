@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 /**
  * Interface for InsertablesSuggesters. Insertable is a string that usually does
@@ -17,3 +17,5 @@ interface InsertablesSuggester {
 	 */
 	public function getInsertables( string $text ): array;
 }
+
+class_alias( InsertablesSuggester::class, '\MediaWiki\Extensions\Translate\InsertablesSuggester' );

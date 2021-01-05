@@ -5,12 +5,12 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
 use MediaWikiUnitTestCase;
 
-/** @covers \MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageInsertablesSuggester */
+/** @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester */
 class TranslatablePageInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 	/** @dataProvider getInsertablesProvider */
 	public function testGetInsertables( $input, $expected ) {

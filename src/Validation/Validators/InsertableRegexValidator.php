@@ -1,13 +1,13 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 use InvalidArgumentException;
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\RegexInsertablesSuggester;
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssue;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\RegexInsertablesSuggester;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssue;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use TMessage;
 
 /**
@@ -76,3 +76,5 @@ class InsertableRegexValidator extends RegexInsertablesSuggester implements Mess
 		return $issues;
 	}
 }
+
+class_alias( InsertableRegexValidator::class, '\MediaWiki\Extensions\Translate\InsertableRegexValidator' );

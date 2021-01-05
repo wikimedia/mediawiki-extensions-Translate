@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\MediaWikiServices;
 
 /**

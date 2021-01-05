@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use FormOptions;
 
@@ -108,3 +108,5 @@ class TranslationStatsGraphOptions {
 		$this->formOptions->validateIntBounds( $key, $min, $max );
 	}
 }
+
+class_alias( TranslationStatsGraphOptions::class, '\MediaWiki\Extensions\Translate\TranslationStatsGraphOptions' );

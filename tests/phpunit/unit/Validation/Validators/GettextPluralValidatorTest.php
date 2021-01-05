@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\GettextPluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\GettextPluralValidator;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\GettextPluralValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\GettextPluralValidator
  */
 class GettextPluralValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

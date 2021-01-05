@@ -8,7 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 
 /**
  * @since 2012-11-01

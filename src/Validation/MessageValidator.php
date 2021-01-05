@@ -7,7 +7,7 @@
 
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
 use TMessage;
 
@@ -22,3 +22,5 @@ use TMessage;
 interface MessageValidator {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues;
 }
+
+class_alias( MessageValidator::class, '\MediaWiki\Extensions\Translate\MessageValidator' );

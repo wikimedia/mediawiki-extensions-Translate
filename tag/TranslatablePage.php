@@ -6,8 +6,8 @@
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-use MediaWiki\Extensions\Translate\PageTranslation\TranslationPage;
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;

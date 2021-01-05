@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Language;
 use MessageCollection;
@@ -100,3 +100,5 @@ class TranslationPage {
 		return strtr( $template, $replacements );
 	}
 }
+
+class_alias( TranslationPage::class, '\MediaWiki\Extensions\Translate\TranslationPage' );

@@ -1,18 +1,18 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Cache;
+namespace MediaWiki\Extension\Translate\Cache;
 
 use DateInterval;
 use DateTime;
 use InvalidArgumentException;
-use MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
- * @covers \MediaWiki\Extensions\Translate\Cache\PersistentDatabaseCache
- * @covers \MediaWiki\Extensions\Translate\Cache\PersistentCacheEntry
+ * @covers \MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache
+ * @covers \MediaWiki\Extension\Translate\Cache\PersistentCacheEntry
  */
 class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 	/** @var PersistentDatabaseCache */

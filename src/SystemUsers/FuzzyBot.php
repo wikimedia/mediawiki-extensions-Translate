@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\SystemUsers;
+namespace MediaWiki\Extension\Translate\SystemUsers;
 
 use User;
 
@@ -23,3 +23,5 @@ class FuzzyBot {
 		return $wgTranslateFuzzyBotName;
 	}
 }
+
+class_alias( FuzzyBot::class, '\MediaWiki\Extensions\Translate\FuzzyBot' );

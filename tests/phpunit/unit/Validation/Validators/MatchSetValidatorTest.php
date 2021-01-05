@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\MatchSetValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MatchSetValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\MatchSetValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\MatchSetValidator
  */
 class MatchSetValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

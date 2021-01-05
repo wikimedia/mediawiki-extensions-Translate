@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 /**
  * A class to combine multiple insertables suggesters.
@@ -29,3 +29,5 @@ class CombinedInsertablesSuggester implements InsertablesSuggester {
 		return array_unique( $insertables, SORT_REGULAR );
 	}
 }
+
+class_alias( CombinedInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\CombinedInsertablesSuggester' );

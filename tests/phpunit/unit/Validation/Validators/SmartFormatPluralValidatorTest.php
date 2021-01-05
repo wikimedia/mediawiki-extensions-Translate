@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\SmartFormatPluralValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\SmartFormatPluralValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\SmartFormatPluralValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\SmartFormatPluralValidator
  */
 class SmartFormatPluralValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

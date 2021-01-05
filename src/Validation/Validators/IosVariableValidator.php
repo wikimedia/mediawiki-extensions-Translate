@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 // phpcs:disable Generic.Files.LineLength.TooLong
 /**
@@ -19,3 +19,5 @@ class IosVariableValidator extends InsertableRegexValidator {
 		);
 	}
 }
+
+class_alias( IosVariableValidator::class, '\MediaWiki\Extensions\Translate\IosVariableValidator' );

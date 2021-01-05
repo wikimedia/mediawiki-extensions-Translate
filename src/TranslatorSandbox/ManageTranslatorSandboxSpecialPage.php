@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use FormatJson;
 use Html;
@@ -217,3 +217,8 @@ HTML;
 				?: strnatcasecmp( $a['username'], $b['username'] );
 	}
 }
+
+class_alias(
+	ManageTranslatorSandboxSpecialPage::class,
+	'\MediaWiki\Extensions\Translate\ManageTranslatorSandboxSpecialPage'
+);

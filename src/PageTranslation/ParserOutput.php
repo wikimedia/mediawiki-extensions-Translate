@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
 use Language;
@@ -97,3 +97,5 @@ class ParserOutput {
 		}
 	}
 }
+
+class_alias( ParserOutput::class, '\MediaWiki\Extensions\Translate\ParserOutput' );

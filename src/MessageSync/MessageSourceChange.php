@@ -6,7 +6,7 @@
  * @file
  */
 
-namespace MediaWiki\Extensions\Translate\MessageSync;
+namespace MediaWiki\Extension\Translate\MessageSync;
 
 use InvalidArgumentException;
 
@@ -552,3 +552,5 @@ class MessageSourceChange {
 		return $similarity === 1;
 	}
 }
+
+class_alias( MessageSourceChange::class, '\MediaWiki\Extensions\Translate\MessageSourceChange' );

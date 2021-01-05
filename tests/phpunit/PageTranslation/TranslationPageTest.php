@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use FatMessage;
 use Language;
@@ -12,7 +12,7 @@ use WikiPageMessageGroup;
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\PageTranslation\TranslationPage
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationPage
  */
 class TranslationPageTest extends MediaWikiTestCase {
 	/** @dataProvider provideTestGenerateSourceFromTranslations */

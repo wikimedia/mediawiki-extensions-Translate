@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\SystemUsers;
+namespace MediaWiki\Extension\Translate\SystemUsers;
 
 /** @since 2019.08 */
 class TranslateUserManager {
@@ -21,3 +21,5 @@ class TranslateUserManager {
 		return $wgTranslateUserManagerName;
 	}
 }
+
+class_alias( TranslateUserManager::class, '\MediaWiki\Extensions\Translate\TranslateUserManager' );

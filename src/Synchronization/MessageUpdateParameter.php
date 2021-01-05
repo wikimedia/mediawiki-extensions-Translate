@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Synchronization;
+namespace MediaWiki\Extension\Translate\Synchronization;
 
 use JsonSerializable;
-use MediaWiki\Extensions\Translate\Utilities\Json\JsonUnserializable;
-use MediaWiki\Extensions\Translate\Utilities\Json\JsonUnserializableTrait;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializable;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializableTrait;
 use MessageUpdateJob;
 
 /**
@@ -96,3 +96,5 @@ class MessageUpdateParameter implements JsonSerializable, JsonUnserializable {
 		return new self( $jobParams );
 	}
 }
+
+class_alias( MessageUpdateParameter::class, '\MediaWiki\Extensions\Translate\MessageUpdateParameter' );

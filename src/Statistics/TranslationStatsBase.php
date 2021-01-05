@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use MessageGroups;
 
@@ -73,3 +73,5 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		return array_keys( $namespaces );
 	}
 }
+
+class_alias( TranslationStatsBase::class, '\MediaWiki\Extensions\Translate\TranslationStatsBase' );

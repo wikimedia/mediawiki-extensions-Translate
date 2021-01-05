@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;

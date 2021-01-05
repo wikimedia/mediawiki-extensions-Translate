@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use ActorMigration;
 use MediaWiki\MediaWikiServices;
@@ -197,3 +197,5 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		return substr( $timestamp, 0, -$cut );
 	}
 }
+
+class_alias( TranslatePerLanguageStats::class, '\MediaWiki\Extensions\Translate\TranslatePerLanguageStats' );

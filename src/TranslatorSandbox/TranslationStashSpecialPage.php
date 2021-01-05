@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use FormatJson;
 use Html;
@@ -202,3 +202,5 @@ HTML
 		return Language::factory( $source->getCode() );
 	}
 }
+
+class_alias( TranslationStashSpecialPage::class, '\MediaWiki\Extensions\Translate\TranslationStashSpecialPage' );

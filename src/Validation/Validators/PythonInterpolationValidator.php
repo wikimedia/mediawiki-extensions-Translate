@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 /**
  * An insertable python interpolation validator that also acts as an InsertableSuggester
@@ -14,3 +14,5 @@ class PythonInterpolationValidator extends InsertableRegexValidator {
 		parent::__construct( '/\%(?:\([a-zA-Z0-9_]*?\))?[diouxXeEfFgGcrs]/U' );
 	}
 }
+
+class_alias( PythonInterpolationValidator::class, '\MediaWiki\Extensions\Translate\PythonInterpolationValidator' );

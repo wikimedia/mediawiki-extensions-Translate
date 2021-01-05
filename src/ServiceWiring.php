@@ -8,17 +8,17 @@
  */
 
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extensions\Translate\Cache\PersistentCache;
-use MediaWiki\Extensions\Translate\Cache\PersistentDatabaseCache;
-use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
-use MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider;
-use MediaWiki\Extensions\Translate\Statistics\TranslatorActivity;
-use MediaWiki\Extensions\Translate\Statistics\TranslatorActivityQuery;
-use MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache;
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashReader;
-use MediaWiki\Extensions\Translate\TranslatorSandbox\TranslationStashStorage;
-use MediaWiki\Extensions\Translate\Utilities\Json\JsonCodec;
-use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
+use MediaWiki\Extension\Translate\Cache\PersistentCache;
+use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
+use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
+use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
+use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
+use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */

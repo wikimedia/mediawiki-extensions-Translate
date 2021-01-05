@@ -1,9 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use MediaWiki\Extensions\Translate\Utilities\ParsingPlaceholderFactory;
+use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use TPSection;
 
 /**
@@ -219,3 +219,5 @@ class TranslatablePageParser {
 		return strtr( $text, $holders );
 	}
 }
+
+class_alias( TranslatablePageParser::class, '\MediaWiki\Extensions\Translate\TranslatablePageParser' );

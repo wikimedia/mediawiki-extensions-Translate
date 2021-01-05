@@ -8,8 +8,8 @@
  * @since 2013.12
  */
 
-use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Extensions\Translate\Utilities\StringComparators\StringComparator;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
 
 class ExternalMessageSourceStateComparator {
 	/** Process all languages supported by the message group */

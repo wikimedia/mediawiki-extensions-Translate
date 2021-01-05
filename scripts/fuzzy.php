@@ -10,7 +10,7 @@
  */
 
 // Standard boilerplate to define $IP
-use MediaWiki\Extensions\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\IResultWrapper;

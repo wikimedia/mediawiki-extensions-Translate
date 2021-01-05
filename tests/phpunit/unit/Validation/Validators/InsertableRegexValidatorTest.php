@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\InsertableRegexValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\InsertableRegexValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\InsertableRegexValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\InsertableRegexValidator
  */
 class InsertableRegexValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

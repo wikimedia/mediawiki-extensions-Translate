@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use ActorMigration;
 use Config;
@@ -120,3 +120,5 @@ class TranslatorActivityQuery {
 		return $data;
 	}
 }
+
+class_alias( TranslatorActivityQuery::class, '\MediaWiki\Extensions\Translate\TranslatorActivityQuery' );

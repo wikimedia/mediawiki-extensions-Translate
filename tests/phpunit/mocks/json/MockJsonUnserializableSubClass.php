@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Utilities\Json\JsonUnserializableTrait;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializableTrait;
 
 /**
  * Testing class for JsonCodec unit tests.

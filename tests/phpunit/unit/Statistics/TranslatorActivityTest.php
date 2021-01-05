@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 use EmptyBagOStuff;
 use HashBagOStuff;
@@ -15,7 +15,7 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWikiUnitTestCase;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
-/** @covers \MediaWiki\Extensions\Translate\Statistics\TranslatorActivity */
+/** @covers \MediaWiki\Extension\Translate\Statistics\TranslatorActivity */
 class TranslatorActivityTest extends MediaWikiUnitTestCase {
 	public function testInvalidLanguage() {
 		$cache = $this->createMock( EmptyBagOStuff::class );

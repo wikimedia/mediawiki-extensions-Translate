@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 use InvalidArgumentException;
 
@@ -126,3 +126,5 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 		return new Insertable( $displayVal, $preVal, $postVal );
 	}
 }
+
+class_alias( RegexInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\RegexInsertablesSuggester' );

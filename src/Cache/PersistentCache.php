@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Cache;
+namespace MediaWiki\Extension\Translate\Cache;
 
 /** Defines what method should be provided by a class implementing a persistent cache */
 interface PersistentCache {
@@ -27,3 +27,5 @@ interface PersistentCache {
 
 	public function clear(): void;
 }
+
+class_alias( PersistentCache::class, '\MediaWiki\Extensions\Translate\PersistentCache' );

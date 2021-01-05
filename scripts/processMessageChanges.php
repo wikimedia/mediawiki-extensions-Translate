@@ -18,8 +18,8 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Extensions\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 
 /**
  * Script for processing message changes in file based message groups.

@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\BraceBalanceValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\BraceBalanceValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\BraceBalanceValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\BraceBalanceValidator
  */
 class BraceBalanceValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

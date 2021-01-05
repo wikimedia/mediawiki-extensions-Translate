@@ -1,12 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TtmServer;
+namespace MediaWiki\Extension\Translate\TtmServer;
 
 use FormatJson;
 use Language;
 use Maintenance;
-use MediaWiki\Extensions\Translate\Utilities\ParallelExecutor;
+use MediaWiki\Extension\Translate\Utilities\ParallelExecutor;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use MessageGroups;
@@ -190,3 +190,8 @@ class ExportTtmServerDumpMaintenanceScript extends Maintenance {
 		return array_values( $out );
 	}
 }
+
+class_alias(
+	ExportTtmServerDumpMaintenanceScript::class,
+	'\MediaWiki\Extensions\Translate\ExportTtmServerDumpMaintenanceScript'
+);

@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorInterface\Insertable;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
 
 /**
  * Insertable is a string that usually does not need translation and is
@@ -41,3 +41,5 @@ class Insertable {
 		return $this->display;
 	}
 }
+
+class_alias( Insertable::class, '\MediaWiki\Extensions\Translate\Insertable' );

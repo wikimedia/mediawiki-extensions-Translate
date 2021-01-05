@@ -1,13 +1,13 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Synchronization;
+namespace MediaWiki\Extension\Translate\Synchronization;
 
 use DateTime;
 use InvalidArgumentException;
 use LogicException;
-use MediaWiki\Extensions\Translate\Cache\PersistentCache;
-use MediaWiki\Extensions\Translate\Cache\PersistentCacheEntry;
+use MediaWiki\Extension\Translate\Cache\PersistentCache;
+use MediaWiki\Extension\Translate\Cache\PersistentCacheEntry;
 use RuntimeException;
 
 /**
@@ -233,3 +233,5 @@ class GroupSynchronizationCache {
 		return $messageKeys;
 	}
 }
+
+class_alias( GroupSynchronizationCache::class, '\MediaWiki\Extensions\Translate\GroupSynchronizationCache' );

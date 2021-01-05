@@ -4,7 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\Utilities;
 
 use RuntimeException;
 use TranslateUtils;
@@ -189,3 +189,5 @@ class UnicodePlural {
 		return $sortedFormMap;
 	}
 }
+
+class_alias( UnicodePlural::class, '\MediaWiki\Extensions\Translate\UnicodePlural' );

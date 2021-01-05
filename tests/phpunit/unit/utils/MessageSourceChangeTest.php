@@ -4,9 +4,9 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 
-/** @covers MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange */
+/** @covers MediaWiki\Extension\Translate\MessageSync\MessageSourceChange */
 class MessageSourceChangeTest extends MediaWikiUnitTestCase {
 	/** @var MessageSourceChange */
 	protected $change;

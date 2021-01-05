@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\NumericalParameterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\NumericalParameterValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\NumericalParameterValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\NumericalParameterValidator
  */
 class NumericalParameterValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

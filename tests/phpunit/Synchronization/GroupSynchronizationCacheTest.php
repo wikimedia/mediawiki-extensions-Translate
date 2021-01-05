@@ -1,16 +1,16 @@
 <?php
 
-namespace MediaWiki\Extensions\Translate\Synchronization;
+namespace MediaWiki\Extension\Translate\Synchronization;
 
 use InvalidArgumentException;
-use MediaWiki\Extensions\Translate\Cache\PersistentDatabaseCache;
-use MediaWiki\Extensions\Translate\Services;
+use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
- * @covers \MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationCache
- * @covers \MediaWiki\Extensions\Translate\Synchronization\GroupSynchronizationResponse
+ * @covers \MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache
+ * @covers \MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationResponse
  */
 class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 	/** @var GroupSynchronizationCache */

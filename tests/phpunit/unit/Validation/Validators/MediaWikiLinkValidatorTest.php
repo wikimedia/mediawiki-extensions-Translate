@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiLinkValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiLinkValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\MediaWikiLinkValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\MediaWikiLinkValidator
  */
 class MediaWikiLinkValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

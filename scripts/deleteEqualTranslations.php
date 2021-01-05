@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extensions\Translate\Diagnostics\DeleteEqualTranslationsMaintenanceScript;
+use MediaWiki\Extension\Translate\Diagnostics\DeleteEqualTranslationsMaintenanceScript;
 
 $env = getenv( 'MW_INSTALL_PATH' );
 $IP = $env !== false ? $env : __DIR__ . '/../../..';

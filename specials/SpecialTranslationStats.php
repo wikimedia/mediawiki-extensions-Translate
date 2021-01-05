@@ -8,8 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Services;
-use MediaWiki\Extensions\Translate\Statistics\TranslationStatsGraphOptions;
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Statistics\TranslationStatsGraphOptions;
 
 /**
  * @defgroup Stats Statistics
@@ -23,7 +23,7 @@ use MediaWiki\Extensions\Translate\Statistics\TranslationStatsGraphOptions;
  */
 class SpecialTranslationStats extends SpecialPage {
 
-	/** @var \MediaWiki\Extensions\Translate\Statistics\TranslationStatsDataProvider */
+	/** @var \MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider */
 	private $dataProvider;
 
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';

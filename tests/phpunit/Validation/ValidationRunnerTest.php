@@ -7,11 +7,11 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
- * @covers \MediaWiki\Extensions\Translate\Validation\ValidationRunner
- * @covers \MediaWiki\Extensions\Translate\Validation\ValidationResult
+ * @covers \MediaWiki\Extension\Translate\Validation\ValidationRunner
+ * @covers \MediaWiki\Extension\Translate\Validation\ValidationResult
  */
 class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

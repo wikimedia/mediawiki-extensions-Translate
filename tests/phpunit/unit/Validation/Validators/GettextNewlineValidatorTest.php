@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\Validation\Validators\GettextNewlineValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\GettextNewlineValidator;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extensions\Translate\Validation\Validators\GettextNewlineValidator
+ * @covers \MediaWiki\Extension\Translate\Validation\Validators\GettextNewlineValidator
  */
 class GettextNewlineValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */

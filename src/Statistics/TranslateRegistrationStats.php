@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 /**
  * Graph which provides statistics about amount of registered users in a given time.
@@ -23,3 +23,5 @@ class TranslateRegistrationStats extends TranslationStatsBase {
 		return $row->user_registration;
 	}
 }
+
+class_alias( TranslateRegistrationStats::class, '\MediaWiki\Extensions\Translate\TranslateRegistrationStats' );

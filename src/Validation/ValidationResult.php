@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
 use IContextSource;
 use InvalidArgumentException;
@@ -100,3 +100,5 @@ class ValidationResult {
 		return $out;
 	}
 }
+
+class_alias( ValidationResult::class, '\MediaWiki\Extensions\Translate\ValidationResult' );

@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\Insertable;
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
-use MediaWiki\Extensions\Translate\Validation\MessageValidator;
-use MediaWiki\Extensions\Translate\Validation\ValidationIssues;
-use MediaWiki\Extensions\Translate\Validation\ValidationRunner;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
+use MediaWiki\Extension\Translate\Validation\MessageValidator;
+use MediaWiki\Extension\Translate\Validation\ValidationIssues;
+use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
  * @license GPL-2.0-or-later

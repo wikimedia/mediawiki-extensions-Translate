@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\PageTranslation;
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 /**
  * Section is one pair of <translate>...</translate> tags.
@@ -32,3 +32,5 @@ class Section {
 		return $this->open . $this->contents . $this->close;
 	}
 }
+
+class_alias( Section::class, '\MediaWiki\Extensions\Translate\Section' );

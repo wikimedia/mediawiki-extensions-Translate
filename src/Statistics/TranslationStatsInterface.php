@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Statistics;
+namespace MediaWiki\Extension\Translate\Statistics;
 
 /**
  * Interface for producing different kinds of graphs.
@@ -61,3 +61,5 @@ interface TranslationStatsInterface {
 	 */
 	public function getDateFormat();
 }
+
+class_alias( TranslationStatsInterface::class, '\MediaWiki\Extensions\Translate\TranslationStatsInterface' );

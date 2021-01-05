@@ -8,7 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extensions\Translate\Utilities\LanguagesMultiselectWidget;
+use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Revision\RevisionRecord;
 
 /**

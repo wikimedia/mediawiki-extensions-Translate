@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\Validation\Validators;
+namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 /**
  * An insertable Ruby variable validator that also acts as an InsertableSuggester
@@ -14,3 +14,8 @@ class InsertableRubyVariableValidator extends InsertableRegexValidator {
 		parent::__construct( '/%{[a-zA-Z_]+}/' );
 	}
 }
+
+class_alias(
+	InsertableRubyVariableValidator::class,
+	'\MediaWiki\Extensions\Translate\InsertableRubyVariableValidator'
+);

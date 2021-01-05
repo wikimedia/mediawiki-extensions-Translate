@@ -9,12 +9,12 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extensions\Translate\Validation;
+namespace MediaWiki\Extension\Translate\Validation;
 
 use Exception;
 use FormatJson;
 use InvalidArgumentException;
-use MediaWiki\Extensions\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use PHPVariableLoader;
 use TMessage;
 
@@ -368,3 +368,5 @@ class ValidationRunner {
 		}
 	}
 }
+
+class_alias( ValidationRunner::class, '\MediaWiki\Extensions\Translate\ValidationRunner' );

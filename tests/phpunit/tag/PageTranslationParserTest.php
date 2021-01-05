@@ -1,11 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extensions\Translate\PageTranslation\ParserOutput;
-use MediaWiki\Extensions\Translate\PageTranslation\ParsingFailure;
-use MediaWiki\Extensions\Translate\PageTranslation\TestingParsingPlaceholderFactory;
-use MediaWiki\Extensions\Translate\PageTranslation\TranslatablePageParser;
-use MediaWiki\Extensions\Translate\PageTranslation\TranslationPage;
+use MediaWiki\Extension\Translate\PageTranslation\ParserOutput;
+use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
+use MediaWiki\Extension\Translate\PageTranslation\TestingParsingPlaceholderFactory;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
 
 /**
  * Custom testing framework for page translation parser.

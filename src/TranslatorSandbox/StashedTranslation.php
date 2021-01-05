@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extensions\Translate\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use Title;
 use User;
@@ -46,3 +46,5 @@ class StashedTranslation {
 		return $this->metadata;
 	}
 }
+
+class_alias( StashedTranslation::class, '\MediaWiki\Extensions\Translate\StashedTranslation' );
