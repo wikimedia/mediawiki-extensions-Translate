@@ -52,10 +52,12 @@
 }
 
 .oo-ui-buttonElement.mw-translate-smg-submit button {
-	font-size: 3.5em;
+	font-size: 3em;
 	margin: auto;
 	width: 80%;
 	display: block;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 .mw-translate-smg-change .diff-lineno {
