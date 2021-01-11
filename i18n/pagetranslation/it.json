@@ -20,7 +20,6 @@
 	"pagetranslation": "Traduzione pagine",
 	"right-pagetranslation": "Segna le pagine come da tradurre",
 	"action-pagetranslation": "gestire le pagine traducibili",
-	"tps-edit-sourcepage-title": "Modifica una pagina traducibile",
 	"tps-edit-sourcepage-ve-warning-title": "Attenzione: pagina non supportata",
 	"tps-edit-sourcepage-ve-warning-text": "Stai modificando una pagina traducibile. La modifica di queste pagine con questo editor non è ancora ufficialmente supportata. Usa l'editor sorgente.",
 	"tps-edit-sourcepage-ve-warning-button": "OK",

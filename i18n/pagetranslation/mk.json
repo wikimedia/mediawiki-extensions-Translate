@@ -8,7 +8,6 @@
 	"pagetranslation": "Превод на страници",
 	"right-pagetranslation": "Обележување на верзии на страници за преведување",
 	"action-pagetranslation": "раководење со преводливи страници",
-	"tps-edit-sourcepage-title": "Уредување на преводлива страница",
 	"tps-edit-sourcepage-text": "Уредувате изворна преводна страница. Осигурајте се дека сте запознаени со следнава документација: \n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Промена на изворен текст] \n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Markup_examples Пример за употреба на ознаки]",
 	"tps-edit-sourcepage-ve-warning-title": "Предупредување: Неподдржана страница",
 	"tps-edit-sourcepage-ve-warning-text": "Уредувате преводлива страница. Овој уредник сè уште не поддржува работа со вакви страници. Користете го изворниот уредник.",

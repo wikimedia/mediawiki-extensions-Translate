@@ -20,7 +20,6 @@
 	"pagetranslation": "ページ翻訳",
 	"right-pagetranslation": "ページの版を翻訳対象に指定",
 	"action-pagetranslation": "翻訳対象ページの管理",
-	"tps-edit-sourcepage-title": "翻訳対象ページの編集",
 	"tps-edit-sourcepage-text": "翻訳元ページを編集しています。以下の説明文書の内容を理解していることを確認してください:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 翻訳元テキストの変更]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples マークアップの使用例]",
 	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "翻訳単位 $1",

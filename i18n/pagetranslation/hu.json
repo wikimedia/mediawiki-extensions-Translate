@@ -18,7 +18,6 @@
 	"pagetranslation": "Lap fordítása",
 	"right-pagetranslation": "Lapok változatainak megjelölése fordítandónak",
 	"action-pagetranslation": "fordítható oldalak kezelése",
-	"tps-edit-sourcepage-title": "Lefordítható lap szerkesztése",
 	"tps-edit-sourcepage-ve-warning-title": "Figyelmeztetés: nem támogatott lap",
 	"tps-edit-sourcepage-ve-warning-text": "Egy lefordítható lapot szerkesztesz. Ezeket még nem támogatja hivatalosan ez a szerkesztő, használd a forráskódszerkesztőt.",
 	"tps-edit-sourcepage-ve-warning-button": "OK",

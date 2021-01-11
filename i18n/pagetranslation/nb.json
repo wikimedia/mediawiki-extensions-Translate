@@ -14,7 +14,6 @@
 	"pagetranslation": "Sideoversetting",
 	"right-pagetranslation": "Merk versjoner av sider for oversettelse",
 	"action-pagetranslation": "behandle oversettbare sider",
-	"tps-edit-sourcepage-title": "Redigerer en oversettbar side",
 	"tps-edit-sourcepage-text": "Du redigerer kilden til en oversettbar side. Sørg for at du er kjent med følgende dokumentasjon:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Endring av kildeteksten]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Eksempler på oppmerking som kan brukes]",
 	"tps-edit-sourcepage-ve-warning-title": "Advarsel: Ikke-støttet side",
 	"tps-edit-sourcepage-ve-warning-text": "Du redigerer en oversettbar side. Redigering av disse med denne redigeringsmodusen støttes ennå ikke. Vennligst bruk kilderedigering.",
