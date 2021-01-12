@@ -17,6 +17,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
@@ -83,4 +84,15 @@ return [
 			$services->getLanguageNameUtils()
 		);
 	},
+
+	'Translate:TtmServerFactory' => function ( MediaWikiServices $services ): TtmServerFactory {
+		$config = $services->getMainConfig();
+
+		$default = $config->get( 'TranslateTranslationDefaultService' );
+		if ( $default === false ) {
+			$default = null;
+		}
+
+		return new TtmServerFactory( $config->get( 'TranslateTranslationServices' ), $default );
+	}
 ];

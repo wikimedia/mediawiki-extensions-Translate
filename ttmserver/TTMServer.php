@@ -8,18 +8,20 @@
  * @defgroup TTMServer The Translate extension translation memory interface
  */
 
+use MediaWiki\Extension\Translate\Services;
+
 /**
  * Some general static methods for instantiating TTMServer and helpers.
  * @since 2012-01-28
  * Rewritten in 2012-06-27.
  * @ingroup TTMServer
  */
-class TTMServer {
+abstract class TTMServer {
 	/** @var array */
 	protected $config;
 
 	/** @param array $config */
-	protected function __construct( array $config ) {
+	public function __construct( array $config ) {
 		$this->config = $config;
 	}
 
@@ -27,8 +29,10 @@ class TTMServer {
 	 * @param array $config
 	 * @return TTMServer|null
 	 * @throws MWException
+	 * @deprecated Use Services::getInstance()->getTtmServerFactory()->create()
 	 */
 	public static function factory( array $config ) {
+		// Cannot call factory directly because we don't have the name.
 		if ( isset( $config['class'] ) ) {
 			$class = $config['class'];
 
@@ -53,18 +57,10 @@ class TTMServer {
 	 * Primary instance is defined by $wgTranslateTranslationDefaultService
 	 * which is a key to $wgTranslateTranslationServices.
 	 * @return WritableTTMServer
+	 * @deprecated Use Services::getInstance()->getTtmServerFactory()->getDefault()
 	 */
 	public static function primary() {
-		global $wgTranslateTranslationServices,
-			$wgTranslateTranslationDefaultService;
-		if ( isset( $wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] ) ) {
-			$obj = self::factory( $wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] );
-			if ( $obj instanceof WritableTTMServer ) {
-				return $obj;
-			}
-		}
-
-		return new FakeTTMServer();
+		return Services::getInstance()->getTtmServerFactory()->getDefault();
 	}
 
 	/**

@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
+use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
@@ -84,6 +85,11 @@ class Services implements ContainerInterface {
 
 	public function getTranslatorActivity(): TranslatorActivity {
 		return $this->get( 'Translate:TranslatorActivity' );
+	}
+
+	/** @since 2021.01 */
+	public function getTtmServerFactory(): TtmServerFactory {
+		return $this->get( 'Translate:TtmServerFactory' );
 	}
 }
 
