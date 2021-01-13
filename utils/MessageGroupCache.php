@@ -242,6 +242,11 @@ class MessageGroupCache {
 		return false;
 	}
 
+	public function invalidate(): void {
+		$this->close();
+		unlink( $this->getCacheFilePath() );
+	}
+
 	private function serialize( array $data ): string {
 		// Using simple prefix for easy future extension
 		return 'J' . json_encode( $data );
