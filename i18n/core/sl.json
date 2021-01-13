@@ -189,7 +189,7 @@
 	"translate-manage-action-ignore": "Prezri",
 	"translate-manage-action-fuzzy": "Uvozi in prevode označi kot ohlapne",
 	"translate-manage-nochanges": "Ni sprememb v opredelitvi sporočil za to skupino.",
-	"translate-manage-nochanges-other": "Za ta jezik ni bilo sprememb.\nUporabite spodnjo povezavo za vrnitev na pogled podrobnosti skupine.",
+	"translate-manage-nochanges-other": "Za ta jezik ni bilo sprememb.\nZa vrnitev na prikaz podrobnosti skupine uporabite spodnjo povezavo.",
 	"translate-manage-inconsistent": "V zahtevi je bila odkrita nedoslednost.\nProsimo, preverite spremembe in poskusite znova.\nPodrobnosti: $1",
 	"translate-manage-toolong": "Najdaljši čas obdelave $1 {{PLURAL:$1|sekunde|sekund}} je presežen.\nProsimo, ponovno potrdite obrazec, da nadaljujete z obdelavo.",
 	"translate-manage-import-summary": "Uvažanje nove različice iz zunanjega vira",

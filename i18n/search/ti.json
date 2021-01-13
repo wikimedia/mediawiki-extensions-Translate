@@ -9,7 +9,7 @@
 	"tux-sst-view-foreign": "ኣብ $1 ርኣይ",
 	"tux-sst-search": "ምድላይ",
 	"tux-sst-search-ph": "ትርጉማት ምድላይ",
-	"tux-sst-count": "{{PLURAL:$1|ሓደ ውጽኢት ተረኸቡ|$1 ውጺኢታት ተረኸቡን}}",
+	"tux-sst-count": "{{PLURAL:$1|ሓደ ውጽኢት ዝተረኸበ|$1 ውጺኢታት ዝተረኸቡ}}",
 	"tux-sst-facet-language": "ቋንቋታት",
 	"tux-sst-facet-group": "ጉጅለታት መልእኽትታት",
 	"tux-sst-nosolr-title": "ምድላይ ዘይርከብ",
