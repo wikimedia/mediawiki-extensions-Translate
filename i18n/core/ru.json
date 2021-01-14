@@ -249,6 +249,7 @@
 	"translate-smg-rename-new": "Добавить как новое...",
 	"translate-smg-rename-rename": "Добавить как переименование для...",
 	"translate-smg-rename-dialog-title": "Выбрать подходящее переименование для $1",
+	"translate-smg-strong-sync-help": "Помощь",
 	"translate-manage-import-diff": "Сообщение $1 | Действия: $2",
 	"translate-manage-import-new": "Новое сообщение $1",
 	"translate-manage-import-deleted": "Удалённое сообщение $1",
