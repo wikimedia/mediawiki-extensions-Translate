@@ -41,16 +41,14 @@ class QueryGroupSyncCacheMaintenanceScript extends Maintenance {
 
 	private function displayGroups( array $groupIds ): void {
 		if ( !$groupIds ) {
-			$this->output( "No groups found in synchronization" );
+			$this->output( "No groups found in synchronization\n" );
 			return;
 		}
 
-		$this->output( "Groups found in sync -\n" );
+		$this->output( "Groups found in sync:\n" );
 		foreach ( $groupIds as $groupId ) {
-			$this->output( "\t- $groupId" );
+			$this->output( "\t- $groupId\n" );
 		}
-
-		$this->output( "\n" );
 	}
 
 	/**
@@ -59,16 +57,14 @@ class QueryGroupSyncCacheMaintenanceScript extends Maintenance {
 	 */
 	private function displayGroupMessages( string $groupId, array $groupMessages ): void {
 		if ( !$groupMessages ) {
-			$this->output( "No messages found for group: $groupId" );
+			$this->output( "No messages found for group $groupId\n" );
 			return;
 		}
 
-		$this->output( "Messages in group: $groupId -\n" );
+		$this->output( "Messages in group $groupId:\n" );
 		foreach ( $groupMessages as $message ) {
 			$this->displayMessageDetails( $message );
 		}
-
-		$this->output( "\n" );
 	}
 
 	private function displayMessageDetails( MessageUpdateParameter $messageParam ): void {
