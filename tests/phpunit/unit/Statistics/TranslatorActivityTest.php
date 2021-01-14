@@ -1,9 +1,5 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
@@ -15,7 +11,11 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWikiUnitTestCase;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
-/** @covers \MediaWiki\Extension\Translate\Statistics\TranslatorActivity */
+/**
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extension\Translate\Statistics\TranslatorActivity
+ */
 class TranslatorActivityTest extends MediaWikiUnitTestCase {
 	public function testInvalidLanguage() {
 		$cache = $this->createMock( EmptyBagOStuff::class );
@@ -131,11 +131,13 @@ class TranslatorActivityTest extends MediaWikiUnitTestCase {
 
 	private function getExampleData(): array {
 		$translators = [
-			'Hunter' => [
+			[
+				TranslatorActivityQuery::USER_NAME => 'Hunter',
 				TranslatorActivityQuery::USER_TRANSLATIONS => 1234,
 				TranslatorActivityQuery::USER_LAST_ACTIVITY => 10,
 			],
-			'Farmer' => [
+			[
+				TranslatorActivityQuery::USER_NAME => 'Farmer',
 				TranslatorActivityQuery::USER_TRANSLATIONS => 2,
 				TranslatorActivityQuery::USER_LAST_ACTIVITY => 20,
 			],

@@ -1,9 +1,5 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
@@ -15,18 +11,19 @@ use Wikimedia\Rdbms\ILoadBalancer;
 /**
  * Gathers translator activity from the database.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2020.04
  */
 class TranslatorActivityQuery {
-	public const USER_TRANSLATIONS = 0;
-	public const USER_LAST_ACTIVITY = 1;
+	public const USER_NAME = 0;
+	public const USER_TRANSLATIONS = 1;
+	public const USER_LAST_ACTIVITY = 2;
+	/** @var Config|ServiceOptions */
 	private $options;
+	/** @var ILoadBalancer */
 	private $loadBalancer;
 
-	/**
-	 * @param Config|ServiceOptions $options
-	 * @param ILoadBalancer $loadBalancer
-	 */
 	public function __construct( $options, ILoadBalancer $loadBalancer ) {
 		$this->options = $options;
 		$this->loadBalancer = $loadBalancer;
@@ -36,7 +33,7 @@ class TranslatorActivityQuery {
 	 * Fetch the translators for a language
 	 *
 	 * @param string $code Language tag
-	 * @return array<string,array<int|string>> Map of user name to translation stats
+	 * @return array<int,array<string|int|string>> Translation stats per user
 	 */
 	public function inLanguage( string $code ): array {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA, 'vslow' );
@@ -65,7 +62,9 @@ class TranslatorActivityQuery {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			$data[$row->rev_user_text] = [
+			// Warning: user names may be numbers that get casted to ints in array keys
+			$data[] = [
+				self::USER_NAME => $row->rev_user_text,
 				self::USER_TRANSLATIONS => (int)$row->count,
 				self::USER_LAST_ACTIVITY => $row->lastedit,
 			];
@@ -79,8 +78,8 @@ class TranslatorActivityQuery {
 	 *
 	 * This is faster than doing each language separately.
 	 *
-	 * @return array<string,array<string,array<int|string>>> Map of language tags to user name to
-	 * translation stats
+	 * @return array<string,array<int,array<string|int|string>>> Map of language tags to
+	 * translation stats per user
 	 */
 	public function inAllLanguages(): array {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA, 'vslow' );
@@ -111,7 +110,9 @@ class TranslatorActivityQuery {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			$data[$row->lang][$row->rev_user_text] = [
+			// Warning: user names may be numbers that get casted to ints in array keys
+			$data[$row->lang][] = [
+				self::USER_NAME => $row->rev_user_text,
 				self::USER_TRANSLATIONS => $row->count,
 				self::USER_LAST_ACTIVITY => $row->lastedit,
 			];

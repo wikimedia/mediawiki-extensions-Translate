@@ -1,12 +1,6 @@
 <?php
 declare( strict_types = 1 );
 
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
-
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use BagOStuff;
@@ -19,6 +13,8 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 /**
  * Handles caching of translator activity.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2020.04
  */
 class TranslatorActivity {
@@ -78,7 +74,7 @@ class TranslatorActivity {
 	}
 
 	private function getCacheKey( string $language ): string {
-		return $this->cache->makeKey( 'translate-translator-activity-v2', $language );
+		return $this->cache->makeKey( 'translate-translator-activity-v3', $language );
 	}
 
 	private function isStale( array $value ): bool {

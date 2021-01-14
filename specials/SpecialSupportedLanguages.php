@@ -1,15 +1,6 @@
 <?php
 declare( strict_types = 1 );
 
-/**
- * Contains logic for special page Special:SupportedLanguages
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
-
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Statistics\StatisticsUnavailable;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
@@ -19,13 +10,13 @@ use MediaWiki\Logger\LoggerFactory;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
- * Implements special page Special:SupportedLanguages. The wiki administrator
- * must define NS_PORTAL, otherwise this page does not work. This page displays
- * a list of language portals for all portals corresponding with a language
- * code defined for MediaWiki and a subpage called "translators". The subpage
- * "translators" must contain the template [[:{{ns:template}}:User|User]],
- * taking a user name as parameter.
+ * Implements special page Special:SupportedLanguages.
  *
+ * This special page shows active languages and active translators per language.
+ *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
@@ -37,7 +28,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	private $langNameUtils;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
-	/// Cutoff time for inactivity in days
+	/** @var int Cutoff time for inactivity in days */
 	private $period = 180;
 
 	public const CONSTRUCTOR_OPTIONS = [
@@ -116,7 +107,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->showLanguage( $language, $users, (int)$data['asOfTime'] );
 	}
 
-	protected function showLanguage( string $code, array $users, int $cachedAt ): void {
+	private function showLanguage( string $code, array $users, int $cachedAt ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 
@@ -211,7 +202,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 	protected function filterUsers( array $users, string $code ): array {
 		$blacklist = $this->options->get( 'TranslateAuthorBlacklist' );
 
-		foreach ( array_keys( $users ) as $username ) {
+		foreach ( $users as $index => $user ) {
+			$username = $user[TranslatorActivityQuery::USER_NAME];
 			# We do not know the group
 			$hash = "#;$code;$username";
 
@@ -230,7 +222,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			}
 
 			if ( $blacklisted ) {
-				unset( $users[$username] );
+				unset( $users[$index] );
 			}
 		}
 
@@ -259,7 +251,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$out->addHTML( '</div>' );
 	}
 
-	protected function makeUserList( array $userStats ): void {
+	private function makeUserList( array $userStats ): void {
 		$day = 60 * 60 * 24;
 
 		// Scale of the activity colors, anything
@@ -270,7 +262,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$statsTable = new StatsTable();
 
 		// List users in descending order by number of translations in this language
-		uasort( $userStats, function ( $a, $b ) {
+		usort( $userStats, function ( $a, $b ) {
 			return -(
 				$a[TranslatorActivityQuery::USER_TRANSLATIONS]
 				<=>
@@ -278,7 +270,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 			);
 		} );
 
-		foreach ( $userStats as $username => $stats ) {
+		foreach ( $userStats as $stats ) {
+			$username = $stats[TranslatorActivityQuery::USER_NAME];
 			$title = Title::makeTitleSafe( NS_USER, $username );
 			if ( !$title ) {
 				LoggerFactory::getInstance( 'Translate' )->warning(
@@ -316,7 +309,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		// for GENDER support
 		$usernameForGender = '';
 		if ( count( $userStats ) === 1 ) {
-			$usernameForGender = array_key_first( $userStats );
+			$usernameForGender = $userStats[0][TranslatorActivityQuery::USER_NAME];
 		}
 
 		$linkList = $this->getLanguage()->listToText( $links );
@@ -341,8 +334,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 	protected function preQueryUsers( array $users ): void {
 		$lb = new LinkBatch();
-		foreach ( $users as $user => $data ) {
-			$user = Title::capitalize( $user, NS_USER );
+		foreach ( $users as $data ) {
+			$username = $data[TranslatorActivityQuery::USER_NAME];
+			$user = Title::capitalize( $username, NS_USER );
 			$lb->add( NS_USER, $user );
 			$lb->add( NS_USER_TALK, $user );
 		}
