@@ -91,7 +91,7 @@
 	"pagepreparation": "გვერდის სათარგმნად მომზადება",
 	"pp-pagename-placeholder": "შეიყვანეთ გვერდის სახელი",
 	"pp-prepare-button-label": "მომზადება",
-	"pp-save-button-label": "შენახვა",
+	"pp-save-button-label": "გამოქვეყნება",
 	"pp-cancel-button-label": "გაუქმება",
 	"pp-save-message": "გვერდი შენახულია. თქვენ შეგიძლიათ მისი [$1 რედაქტირება].",
 	"pp-pagename-missing": "გთხოვთ, შეიყვანოთ გვერდის სახელი.",

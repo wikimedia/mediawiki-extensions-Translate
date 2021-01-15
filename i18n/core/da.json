@@ -188,6 +188,7 @@
 	"translate-smg-right": "Indkommende ændringer",
 	"translate-smg-rename-select": "Vælg",
 	"translate-smg-rename-cancel": "Annullér",
+	"translate-smg-strong-sync-help": "Hjælp",
 	"translate-manage-import-diff": "Besked $1 | Handlinger: $2",
 	"translate-manage-import-new": "Ny meddelelse $1",
 	"translate-manage-import-deleted": "Slettet meddelelse $1",

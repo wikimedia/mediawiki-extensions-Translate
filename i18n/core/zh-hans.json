@@ -218,6 +218,8 @@
 	"translate-smg-more": "在处理这些更改后这里将会有更多更改。",
 	"translate-smg-left": "wiki中的信息内容",
 	"translate-smg-right": "即将进行的更改",
+	"translate-smg-strong-sync-help": "帮助",
+	"translate-smg-groups-in-sync": "正在同步的组",
 	"translate-manage-import-diff": "信息$1|操作：$2",
 	"translate-manage-import-new": "新信息$1",
 	"translate-manage-import-deleted": "删除的信息$1",

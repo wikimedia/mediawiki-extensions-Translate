@@ -261,7 +261,7 @@
 	"translate-smg-rename-dialog-title": "Title for the message rename dialog. It is followed by the key being renamed. Parameters: \n* $1 - Title message text.",
 	"translate-smg-changeset-modified": "Error message shown to the user on the [[Special:ManageMessageGroups]] page when the user tries to submit outdated changes.",
 	"translate-smg-no-groups-in-sync": "Displayed on [[Special:ManageMessageGroups]] page when there are no groups currently in synchronization.",
-	"translate-smg-strong-sync-help": "Displayed on [[Special:ManageMessageGroups]] and links to https://translatewiki.net/wiki/Special:MyLanguage/Strong_Synchronization",
+	"translate-smg-strong-sync-help": "Displayed on [[Special:ManageMessageGroups]] and links to https://translatewiki.net/wiki/Special:MyLanguage/Strong_Synchronization\n{{identical|Help}}",
 	"translate-smg-groups-in-sync": "Used as a label for the details tag that displays the groups in synchronization.",
 	"translate-smg-groups-in-sync-list": "Notice shown in the details tag when it is opened.",
 	"translate-manage-import-diff": "See screenshot [[File:Manage-2.png|150px|right|Group management interface]].\nVariables:\n*$1 - Message name\n*$2 - radio buttons\n**{{msg-mw|Translate-manage-action-import}}\n**{{msg-mw|Translate-manage-action-conflict}}\n**{{msg-mw|Translate-manage-action-ignore}}",
