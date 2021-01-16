@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\TranslateReplaceTitle;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job for updating translation pages when translation or message definition changes.
@@ -165,7 +166,9 @@ class MessageUpdateJob extends GenericTranslateJob {
 			->inContentLanguage()->plain();
 
 		foreach ( $movableTitles as [ $sourceTitle, $replacementTitle ] ) {
-			$mv = new MovePage( $sourceTitle, $replacementTitle );
+			$mv = MediaWikiServices::getInstance()
+				->getMovePageFactory()
+				->newMovePage( $sourceTitle, $replacementTitle );
 
 			$status = $mv->move( $user, $renameSummary, false );
 			if ( !$status->isOK() ) {

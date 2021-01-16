@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Contains class with job for moving translation pages. Used together with
@@ -95,7 +96,9 @@ class TranslatablePageMoveJob extends Job {
 				$user = $fuzzybot;
 			}
 
-			$mover = new MovePage( $sourceTitle, $targetTitle );
+			$mover = MediaWikiServices::getInstance()
+				->getMovePageFactory()
+				->newMovePage( $sourceTitle, $targetTitle );
 			$status = $mover->move( $user, $this->params['summary'], false );
 			if ( !$status->isOK() ) {
 				$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );

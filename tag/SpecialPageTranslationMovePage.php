@@ -400,7 +400,9 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				'pt-movepage-block-base-exists', $target->getPrefixedText()
 			);
 		} else {
-			$movePage = new MovePage( $this->oldTitle, $target );
+			$movePage = MediaWikiServices::getInstance()
+				->getMovePageFactory()
+				->newMovePage( $this->oldTitle, $target );
 			$status = $movePage->isValidMove();
 			$status->merge( $movePage->checkPermissions( $user, $this->reason ) );
 			if ( !$status->isOK() ) {
@@ -474,7 +476,9 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 					 * - 2 queries by core
 					 * - 3 queries by lqt
 					 * - and no obvious way to preload the data! */
-					$movePage = new MovePage( $old, $target );
+					$movePage = MediaWikiServices::getInstance()
+						->getMovePageFactory()
+						->newMovePage( $old, $target );
 					$status = $movePage->isValidMove();
 					// Do not check for permissions here, as these pages are not editable/movable
 					// in regular use
