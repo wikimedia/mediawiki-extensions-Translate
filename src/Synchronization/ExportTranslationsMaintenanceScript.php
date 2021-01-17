@@ -238,7 +238,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 					'Finished calculating stats for group {groupId}. Time: {duration} secs',
 					[
 						'groupId' => $groupId,
-						'duration' => $tEndTime - $tStartTime,
+						'duration' => round( $tEndTime - $tStartTime, 3 ),
 					]
 				);
 			}
@@ -318,7 +318,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 				'Done exporting translations for group {groupId}. Time taken {duration} secs.',
 				[
 					'groupId' => $groupId,
-					'duration' => $langEndTime - $langStartTime,
+					'duration' => round( $langEndTime - $langStartTime, 3 ),
 				]
 			);
 
@@ -328,7 +328,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 					[
 						'groupId' => $groupId,
 						'type' => $type,
-						'duration' => $time,
+						'duration' => round( $time, 3 ),
 					]
 				);
 			}
@@ -339,7 +339,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			'Finished export process for groups {groups}. Time: {duration} secs.',
 			[
 				'groups' => $this->getOption( 'group' ),
-				'duration' => $exportEndTime - $exportStartTime,
+				'duration' => round( $exportEndTime - $exportStartTime, 3 ),
 			]
 		);
 	}
