@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use FileBasedMessageGroup;
 use GettextFFS;
 use Maintenance;
+use MediaWiki\Logger\LoggerFactory;
 use MessageGroups;
 use MessageGroupStats;
 use MessageHandle;
@@ -20,8 +21,6 @@ use TranslateUtils;
  * @license GPL-2.0-or-later
  */
 class ExportTranslationsMaintenanceScript extends Maintenance {
-	private const EXPORT_LOG_FILE = 'translation-exports';
-
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Export translations to files.' );
@@ -91,8 +90,11 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 	}
 
 	public function execute() {
-		wfDebugLog( self::EXPORT_LOG_FILE, 'Starting exports for groups - '
-			. $this->getOption( 'group' ) . '... ' );
+		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$logger->info(
+			'Starting exports for groups {groups}',
+			[ 'groups' => $this->getOption( 'group' ) ]
+		);
 		$exportStartTime = microtime( true );
 
 		$target = $this->getOption( 'target' );
@@ -200,7 +202,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			}
 
 			if ( $threshold ) {
-				wfDebugLog( self::EXPORT_LOG_FILE, "Calculating stats for group $groupId" );
+				$logger->info( 'Calculating stats for group {groupId}', [ 'groupId' => $groupId ] );
 				$tStartTime = microtime( true );
 				$stats = MessageGroupStats::forGroup( $groupId );
 				$emptyLangs = [];
@@ -232,9 +234,13 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 				}
 
 				$tEndTime = microtime( true );
-				wfDebugLog( self::EXPORT_LOG_FILE,
-					"Finished calculating stats for group $groupId. Time: "
-					. ( $tEndTime - $tStartTime ) . ' secs.' );
+				$logger->info(
+					'Finished calculating stats for group {groupId}. Time: {duration} secs',
+					[
+						'groupId' => $groupId,
+						'duration' => $tEndTime - $tStartTime,
+					]
+				);
 			}
 
 			// Filter out unchanged languages from requested languages
@@ -262,9 +268,12 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 
 			$whitelist = $group->getTranslatableLanguages();
 
-			wfDebugLog(
-				self::EXPORT_LOG_FILE, 'Exporting languages ('
-				. count( $langs ) . ") for group - $groupId."
+			$logger->info(
+				'Exporting {count} language(s) for group {groupId}',
+				[
+					'groupId' => $groupId,
+					'count' => count( $langs ),
+				]
 			);
 
 			$langExportTimes = [
@@ -305,25 +314,33 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			}
 			$langEndTime = microtime( true );
 
-			wfDebugLog(
-				self::EXPORT_LOG_FILE,
-				"Done exporting languages for group - $groupId. " .
-				'Time taken - ' . ( $langEndTime - $langStartTime ) . ' secs.'
+			$logger->info(
+				'Done exporting translations for group {groupId}. Time taken {duration} secs.',
+				[
+					'groupId' => $groupId,
+					'duration' => $langEndTime - $langStartTime,
+				]
 			);
 
 			foreach ( $langExportTimes as $type => $time ) {
-				wfDebugLog(
-					self::EXPORT_LOG_FILE,
-					"Time taken by '$type' for group $groupId - $time secs."
+				$logger->info(
+					'Time taken by "{type}" for group {groupId} – {duration} secs.',
+					[
+						'groupId' => $groupId,
+						'type' => $type,
+						'duration' => $time,
+					]
 				);
 			}
 		}
 
 		$exportEndTime = microtime( true );
-		wfDebugLog(
-			self::EXPORT_LOG_FILE, 'Finished export process for groups - ' .
-			$this->getOption( 'group' ) .
-			'. Time: ' . ( $exportEndTime - $exportStartTime ) . ' secs.'
+		$logger->info(
+			'Finished export process for groups {groups}. Time: {duration} secs.',
+			[
+				'groups' => $this->getOption( 'group' ),
+				'duration' => $exportEndTime - $exportStartTime,
+			]
 		);
 	}
 }
