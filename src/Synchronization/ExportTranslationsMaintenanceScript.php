@@ -22,12 +22,19 @@ use TranslateUtils;
  * @license GPL-2.0-or-later
  */
 class ExportTranslationsMaintenanceScript extends Maintenance {
+	/// The translation file should be deleted if it exists
+	private const ACTION_DELETE = 'delete';
+	/// The translation file should be created or updated
+	private const ACTION_CREATE = 'create';
+	/// The translation file should be updated if exists, but not created as a new
+	private const ACTION_UPDATE = 'update';
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Export translations to files.' );
 		$this->addOption(
 			'group',
-			'Comma separated list of group IDs (can use * as wildcard)',
+			'Comma separated list of message group IDs (supports * wildcard) to export',
 			true, /*required*/
 			true /*has arg*/
 		);
@@ -51,13 +58,19 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 		);
 		$this->addOption(
 			'skipgroup',
-			'(optional) Comma separated list of group IDs that should not be exported',
+			'(optional) Comma separated list of message group IDs (supports * wildcard) to not export',
 			false, /*required*/
 			true /*has arg*/
 		);
 		$this->addOption(
 			'threshold',
-			'(optional) Do not export under this percentage translated',
+			'(optional) Threshold for translation completion percentage that must be exceeded for initial export',
+			false, /*required*/
+			true /*has arg*/
+		);
+		$this->addOption(
+			'removal-threshold',
+			'(optional) Threshold for translation completion percentage that must be exceeded to keep the file',
 			false, /*required*/
 			true /*has arg*/
 		);
@@ -106,7 +119,8 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			$this->fatalError( "Target directory is not writable ($target)." );
 		}
 
-		$threshold = $this->getOption( 'threshold' );
+		$exportThreshold = $this->getOption( 'threshold' );
+		$removalThreshold = $this->getOption( 'removal-threshold' );
 		$noFuzzy = $this->hasOption( 'no-fuzzy' );
 
 		$reqLangs = TranslateUtils::parseLanguageCodes( $this->getOption( 'lang' ) );
@@ -139,47 +153,16 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 				continue;
 			}
 
-			$langs = $reqLangs;
-
-			if ( $codemapOnly && $group instanceof FileBasedMessageGroup ) {
-				foreach ( $langs as $index => $code ) {
-					if ( $group->mapCode( $code ) === $code ) {
-						unset( $langs[$index] );
-					}
-				}
-			}
-
-			if ( $threshold ) {
+			if ( $exportThreshold || $removalThreshold ) {
 				$logger->info( 'Calculating stats for group {groupId}', [ 'groupId' => $groupId ] );
 				$tStartTime = microtime( true );
-				$stats = MessageGroupStats::forGroup( $groupId );
-				$emptyLangs = [];
-				foreach ( $langs as $index => $code ) {
-					if ( !isset( $stats[$code] ) ) {
-						unset( $langs[$index] );
-						continue;
-					}
 
-					$total = $stats[$code][MessageGroupStats::TOTAL];
-					$translated = $stats[$code][MessageGroupStats::TRANSLATED];
-
-					if ( $total === 0 ) {
-						$emptyLangs[] = $code;
-						unset( $langs[$index] );
-						continue;
-					}
-
-					if ( $translated / $total * 100 < $threshold ) {
-						unset( $langs[$index] );
-					}
-				}
-
-				if ( $emptyLangs !== [] ) {
-					$this->output(
-						"Message group $groupId doesn't contain messages in language(s): " .
-						implode( ', ', $emptyLangs ) . ".\n"
-					);
-				}
+				$languageExportActions = $this->getLanguageExportActions(
+					$groupId,
+					$reqLangs,
+					(int)$exportThreshold,
+					(int)$removalThreshold
+				);
 
 				$tEndTime = microtime( true );
 				$logger->info(
@@ -189,24 +172,25 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 						'duration' => round( $tEndTime - $tStartTime, 3 ),
 					]
 				);
+			} else {
+				// Convert list to an associate array
+				$languageExportActions = array_fill_keys( $reqLangs, self::ACTION_CREATE );
 			}
 
-			// Filter out unchanged languages from requested languages
-			if ( is_array( $changeFilter ) ) {
-				$langs = array_intersect( $langs, array_keys( $changeFilter[$groupId] ) );
-			}
-
-			if ( !count( $langs ) ) {
+			if ( $languageExportActions === [] ) {
 				continue;
 			}
 
-			$this->output( 'Exporting ' . count( $langs ) . " languages for group $groupId\n" );
+			$this->output( "Exporting group $groupId\n" );
+			$logger->info( 'Exporting group {groupId}', [ 'groupId' => $groupId ] );
 
+			/** @var FileBasedMessageGroup $fileBasedGroup */
 			if ( $forOffline ) {
 				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group, $offlineTargetPattern );
 				$ffs = new GettextFFS( $fileBasedGroup );
 				$ffs->setOfflineMode( true );
 			} else {
+				$fileBasedGroup = $group;
 				$ffs = $group->getFFS();
 			}
 
@@ -216,24 +200,46 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 
 			$whitelist = $group->getTranslatableLanguages();
 
-			$logger->info(
-				'Exporting {count} language(s) for group {groupId}',
-				[
-					'groupId' => $groupId,
-					'count' => count( $langs ),
-				]
-			);
-
 			$langExportTimes = [
 				'collection' => 0,
 				'ffs' => 0,
 			];
+
+			$languagesExportedCount = 0;
+
 			$langStartTime = microtime( true );
-			foreach ( $langs as $lang ) {
+			foreach ( $languageExportActions as $lang => $action ) {
 				// Do not export languages that are blacklisted (or not whitelisted).
 				// Also check that whitelist is not null, which means that all
 				// languages are allowed for translation and export.
 				if ( is_array( $whitelist ) && !isset( $whitelist[$lang] ) ) {
+					continue;
+				}
+
+				// Skip languages not present in recent changes
+				if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId][$lang] ) ) {
+					continue;
+				}
+
+				if (
+					$codemapOnly &&
+					$group instanceof FileBasedMessageGroup &&
+					$group->mapCode( $lang ) === $lang
+				) {
+					continue;
+				}
+
+				$targetFilePath = $target . '/' . $fileBasedGroup->getTargetFilename( $lang );
+				if ( $action === self::ACTION_DELETE ) {
+					// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+					@$ok = unlink( $targetFilePath );
+					if ( $ok ) {
+						$logger->info( "Removed $targetFilePath due to removal threshold" );
+					}
+					continue;
+				} elseif ( $action === self::ACTION_UPDATE && !file_exists( $targetFilePath ) ) {
+					// Language is under export threshold, do not export yet
+					$logger->info( "Not creating $targetFilePath due to export threshold" );
 					continue;
 				}
 
@@ -252,6 +258,9 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 				if ( $noFuzzy ) {
 					$collection->filter( 'fuzzy' );
 				}
+
+				$languagesExportedCount++;
+
 				$endTime = microtime( true );
 				$langExportTimes['collection'] += ( $endTime - $startTime );
 
@@ -263,8 +272,9 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			$langEndTime = microtime( true );
 
 			$logger->info(
-				'Done exporting translations for group {groupId}. Time taken {duration} secs.',
+				'Done exporting {count} languages for group {groupId}. Time taken {duration} secs.',
 				[
+					'count' => $languagesExportedCount,
 					'groupId' => $groupId,
 					'duration' => round( $langEndTime - $langStartTime, 3 ),
 				]
@@ -361,5 +371,37 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 		}
 
 		return array_keys( $namespaces );
+	}
+
+	private function getLanguageExportActions(
+		string $groupId,
+		array $requestedLanguages,
+		int $exportThreshold = 0,
+		int $removalThreshold = 0
+	): array {
+		$stats = MessageGroupStats::forGroup( $groupId );
+
+		$languages = [];
+
+		foreach ( $requestedLanguages as $code ) {
+			// Statistics unavailable. This should only happen if unknown language code requested.
+			if ( !isset( $stats[$code] ) ) {
+				continue;
+			}
+
+			$total = $stats[$code][MessageGroupStats::TOTAL];
+			$translated = $stats[$code][MessageGroupStats::TRANSLATED];
+			$percentage = $total === 0 ? 0 : $translated / $total * 100;
+
+			if ( $percentage === 0 || $percentage < $removalThreshold ) {
+				$languages[$code] = self::ACTION_DELETE;
+			} elseif ( $percentage > $exportThreshold ) {
+				$languages[$code] = self::ACTION_CREATE;
+			} else {
+				$languages[$code] = self::ACTION_UPDATE;
+			}
+		}
+
+		return $languages;
 	}
 }
