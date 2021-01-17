@@ -6,6 +6,7 @@ use FileBasedMessageGroup;
 use GettextFFS;
 use Maintenance;
 use MediaWiki\Logger\LoggerFactory;
+use MessageGroup;
 use MessageGroups;
 use MessageGroupStats;
 use MessageHandle;
@@ -91,9 +92,12 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 
 	public function execute() {
 		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$groupPattern = $this->getOption( 'group' ) ?? '';
+		$groupSkipPattern = $this->getOption( 'skipgroup' ) ?? '';
+
 		$logger->info(
 			'Starting exports for groups {groups}',
-			[ 'groups' => $this->getOption( 'group' ) ]
+			[ 'groups' => $groupPattern ]
 		);
 		$exportStartTime = microtime( true );
 
@@ -121,70 +125,20 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 		$forOffline = $this->hasOption( 'offline-gettext-format' );
 		$offlineTargetPattern = $this->getOption( 'offline-gettext-format' ) ?: "%GROUPID%/%CODE%.po";
 
-		$groupIds = explode( ',', trim( $this->getOption( 'group' ) ) );
-		$groupIds = MessageGroups::expandWildcards( $groupIds );
-		$groups = MessageGroups::getGroupsById( $groupIds );
-		'@phan-var FileBasedMessageGroup[] $groups';
-
-		/** @var FileBasedMessageGroup $group */
-		foreach ( $groups as $groupId => $group ) {
-			if ( $group->isMeta() ) {
-				$this->output( "Skipping meta message group $groupId.\n" );
-				unset( $groups[$groupId] );
-				continue;
-			}
-
-			if ( !$forOffline && !$group instanceof FileBasedMessageGroup ) {
-				$this->output( "EE2: Unexportable message group $groupId.\n" );
-				unset( $groups[$groupId] );
-				continue;
-			}
-		}
-
-		if ( !count( $groups ) ) {
+		$groups = $this->getMessageGroups( $groupPattern, $groupSkipPattern, $forOffline );
+		if ( $groups === [] ) {
 			$this->fatalError( 'EE1: No valid message groups identified.' );
 		}
 
-		$changeFilter = false;
-		$hours = $this->getOption( 'hours' );
-		if ( $hours ) {
-			$namespaces = [];
-
-			/** @var FileBasedMessageGroup $group */
-			foreach ( $groups as $group ) {
-				$namespaces[$group->getNamespace()] = true;
-			}
-
-			$namespaces = array_keys( $namespaces );
-			$bots = true;
-
-			$changeFilter = [];
-			$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
-			foreach ( $rows as $row ) {
-				$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
-				$handle = new MessageHandle( $title );
-				$code = $handle->getCode();
-				if ( !$code ) {
-					continue;
-				}
-				$groupIds = $handle->getGroupIds();
-				foreach ( $groupIds as $groupId ) {
-					$changeFilter[$groupId][$code] = true;
-				}
-			}
-		}
-
-		$skipGroups = [];
-		if ( $this->hasOption( 'skipgroup' ) ) {
-			$skipGroups = array_map( 'trim', explode( ',', $this->getOption( 'skipgroup' ) ) );
+		$changeFilter = null;
+		if ( $this->hasOption( 'hours' ) ) {
+			$changeFilter =	$this->getRecentlyChangedItems(
+				(int)$this->getOption( 'hours' ),
+				$this->getNamespacesForGroups( $groups )
+			);
 		}
 
 		foreach ( $groups as $groupId => $group ) {
-			if ( in_array( $groupId, $skipGroups ) ) {
-				$this->output( "Group $groupId is in skipgroup.\n" );
-				continue;
-			}
-
 			// No changes to this group at all
 			if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
 				$this->output( "No recent changes to $groupId.\n" );
@@ -193,7 +147,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 
 			$langs = $reqLangs;
 
-			if ( $codemapOnly ) {
+			if ( $codemapOnly && $group instanceof FileBasedMessageGroup ) {
 				foreach ( $langs as $index => $code ) {
 					if ( $group->mapCode( $code ) === $code ) {
 						unset( $langs[$index] );
@@ -338,9 +292,80 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 		$logger->info(
 			'Finished export process for groups {groups}. Time: {duration} secs.',
 			[
-				'groups' => $this->getOption( 'group' ),
+				'groups' => $groupPattern,
 				'duration' => round( $exportEndTime - $exportStartTime, 3 ),
 			]
 		);
+	}
+
+	/** @return MessageGroup[] */
+	private function getMessageGroups(
+		string $groupPattern,
+		string $excludePattern,
+		bool $forOffline
+	): array {
+		$groupIds = MessageGroups::expandWildcards( explode( ',', trim( $groupPattern ) ) );
+		$groups = MessageGroups::getGroupsById( $groupIds );
+
+		foreach ( $groups as $groupId => $group ) {
+			if ( $group->isMeta() ) {
+				$this->output( "Skipping meta message group $groupId.\n" );
+				unset( $groups[$groupId] );
+				continue;
+			}
+
+			if ( !$forOffline && !$group instanceof FileBasedMessageGroup ) {
+				$this->output( "EE2: Unexportable message group $groupId.\n" );
+				unset( $groups[$groupId] );
+			}
+		}
+
+		$skipIds = MessageGroups::expandWildcards( explode( ',', trim( $excludePattern ) ) );
+		foreach ( $skipIds as $groupId ) {
+			if ( isset( $groups[$groupId] ) ) {
+				unset( $groups[$groupId] );
+				$this->output( "Group $groupId is in skipgroup.\n" );
+			}
+		}
+
+		return $groups;
+	}
+
+	/**
+	 * @param int $hours
+	 * @param int[] $namespaces
+	 * @return array[]
+	 */
+	private function getRecentlyChangedItems( int $hours, array $namespaces ): array {
+		$bots = true;
+		$changeFilter = [];
+		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
+		foreach ( $rows as $row ) {
+			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
+			$handle = new MessageHandle( $title );
+			$code = $handle->getCode();
+			if ( !$code ) {
+				continue;
+			}
+			$groupIds = $handle->getGroupIds();
+			foreach ( $groupIds as $groupId ) {
+				$changeFilter[$groupId][$code] = true;
+			}
+		}
+
+		return $changeFilter;
+	}
+
+	/**
+	 * @param MessageGroup[] $groups
+	 * @return int[]
+	 */
+	private function getNamespacesForGroups( array $groups ): array {
+		$namespaces = [];
+		foreach ( $groups as $group ) {
+			$namespaces[$group->getNamespace()] = true;
+		}
+
+		return array_keys( $namespaces );
 	}
 }
