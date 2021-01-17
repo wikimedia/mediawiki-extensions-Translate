@@ -109,17 +109,11 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 		$threshold = $this->getOption( 'threshold' );
 		$noFuzzy = $this->hasOption( 'no-fuzzy' );
 
-		$skip = [];
-		if ( $this->hasOption( 'skip' ) ) {
-			$skip = array_map( 'trim', explode( ',', $this->getOption( 'skip' ) ) );
-		}
-
 		$reqLangs = TranslateUtils::parseLanguageCodes( $this->getOption( 'lang' ) );
-		$reqLangs = array_flip( $reqLangs );
-		foreach ( $skip as $skipLang ) {
-			unset( $reqLangs[$skipLang] );
+		if ( $this->hasOption( 'skip' ) ) {
+			$skipLangs = array_map( 'trim', explode( ',', $this->getOption( 'skip' ) ) );
+			$reqLangs = array_diff( $reqLangs, $skipLangs );
 		}
-		$reqLangs = array_flip( $reqLangs );
 
 		$codemapOnly = $this->hasOption( 'codemaponly' );
 		$forOffline = $this->hasOption( 'offline-gettext-format' );
