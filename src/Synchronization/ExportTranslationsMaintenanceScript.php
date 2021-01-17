@@ -12,7 +12,7 @@ use Title;
 use TranslateUtils;
 
 /**
- * Script to export translations of one message group to file(s).
+ * Script to export translations of message groups to files.
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
@@ -24,7 +24,7 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->addDescription( 'Message exporter.' );
+		$this->addDescription( 'Export translations to files.' );
 		$this->addOption(
 			'group',
 			'Comma separated list of group IDs (can use * as wildcard)',
