@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Ziņojumu grupas ID.",
+	"apihelp-aggregategroups-example-1": "Piesaistīt grupu",
 	"apihelp-groupreview-param-group": "Ziņojumu grupa.",
 	"apihelp-groupreview-param-language": "Valodas kods.",
 	"apihelp-query+languagestats-param-language": "Valodas kods.",

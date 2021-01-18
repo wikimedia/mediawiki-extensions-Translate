@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Dakrismeno",
+			"Eafoð",
 			"Insübrich",
 			"Salvemm el lombard"
 		]
@@ -26,5 +27,6 @@
 	"translate-tag-page-desc": "Traduzzion de la pagina wiki [[$2|$1]] de $3($4)",
 	"translate-sidebar-alltrans": "In alter lengove",
 	"translations": "Tute i traduzzion",
+	"translate-smg-strong-sync-help": "Aiut",
 	"translate-documentation-language": "Documentazzion del messagg"
 }

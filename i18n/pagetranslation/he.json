@@ -183,7 +183,7 @@
 	"pt-deletepage-list-pages": "רשימת דפים למחיקה",
 	"pt-deletepage-list-translation": "דפי תרגום",
 	"pt-deletepage-list-section": "דפי יחידת תרגום",
-	"pt-deletepage-list-other": "דפי משנה אחרים",
+	"pt-deletepage-list-other": "דפי־משנה אחרים",
 	"pt-deletepage-list-count": "סך הכול {{PLURAL:$1|דף אחד|$1 דפים}} למחוק {{PLURAL:$2|ודף־משנה אחד}}.",
 	"pt-deletepage-list-no-pages": "לא נמצאו דפים.",
 	"pt-deletepage-full-logreason": "חלק מהדף הניתן לתרגום \"$1\"",

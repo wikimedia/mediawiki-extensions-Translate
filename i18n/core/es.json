@@ -226,6 +226,7 @@
 	"translate-smg-rename-rename": "Añadir como cambio de nombre de…",
 	"translate-smg-rename-dialog-title": "Elige un renombramiento correspondiente para $1",
 	"translate-smg-changeset-modified": "El conjunto de cambios ha sido modificado por otro usuario o proceso. Tus cambios no se pueden guardar ya que podrían anular tus cambios. Vuelve a cargar la página para ver los últimos cambios.",
+	"translate-smg-no-groups-in-sync": "No hay ningún grupo actualmente en sincronización",
 	"translate-smg-strong-sync-help": "Ayuda",
 	"translate-smg-groups-in-sync": "Grupos actualmente en sincronización",
 	"translate-manage-import-diff": "Mensaje $1 | Acciones: $2",

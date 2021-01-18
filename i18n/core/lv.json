@@ -126,6 +126,7 @@
 	"translate-smg-rename-select": "Izvēlēties",
 	"translate-smg-rename-cancel": "Atcelt",
 	"translate-smg-rename-new": "Pievienot kā jaunu...",
+	"translate-smg-strong-sync-help": "Palīdzība",
 	"translate-manage-import-diff": "Ziņojums $1 | Darbības: $2",
 	"translate-manage-import-new": "Jauns ziņojums $1",
 	"translate-manage-action-import": "Importēt",
