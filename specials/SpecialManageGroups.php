@@ -867,7 +867,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		foreach ( $uniqueGroupIds as $groupId ) {
 			$messages = [];
-			$renamedMessageKeys = [];
+			$messageKeys = [];
 			$groupJobs = [];
 
 			$groupRenameJobs = $renameJobs[$groupId] ?? [];
@@ -880,12 +880,8 @@ class SpecialManageGroups extends SpecialPage {
 				// Build the handle to add the message key in interim cache
 				$replacement = $messageUpdateParam->getReplacementValue();
 				$targetTitle = Title::makeTitle( $job->getTitle()->getNamespace(), $replacement );
-				$renamedMessageKeys[] = ( new MessageHandle( $targetTitle ) )->getKey();
+				$messageKeys[] = ( new MessageHandle( $targetTitle ) )->getKey();
 			}
-
-			// Store the renamed message keys in the interim cache
-			$group = MessageGroups::getGroup( $groupId );
-			$messageIndexInstance->storeInterim( $group, $renamedMessageKeys );
 
 			$groupModificationJobs = $modificationJobs[$groupId] ?? [];
 			/** @var MessageUpdateJob $job */
@@ -893,7 +889,14 @@ class SpecialManageGroups extends SpecialPage {
 				$groupJobs[] = $job;
 				$messageUpdateParam = MessageUpdateParameter::createFromJob( $job );
 				$messages[] = $messageUpdateParam;
+
+				$messageKeys[] = ( new MessageHandle( $job->getTitle() ) )->getKey();
 			}
+
+			// Store all message keys in the interim cache - we're particularly interested in new
+			// and renamed messages, but it's cleaner to just store everything.
+			$group = MessageGroups::getGroup( $groupId );
+			$messageIndexInstance->storeInterim( $group, $messageKeys );
 
 			$this->synchronizationCache->addMessages( $groupId, ...$messages );
 			$this->synchronizationCache->markGroupForSync( $groupId );
