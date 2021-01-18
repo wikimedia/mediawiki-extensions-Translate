@@ -902,8 +902,9 @@ class SpecialManageGroups extends SpecialPage {
 			$this->synchronizationCache->markGroupForSync( $groupId );
 
 			$jobQueueInstance->push( $groupJobs );
-			$jobQueueInstance->push( MessageIndexRebuildJob::newJob() );
 		}
+
+		$jobQueueInstance->push( MessageIndexRebuildJob::newJob() );
 	}
 
 	private function displayGroupsInSync( OutputPage $out ): void {
