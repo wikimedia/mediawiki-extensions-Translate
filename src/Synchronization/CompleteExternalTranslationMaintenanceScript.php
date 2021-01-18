@@ -57,7 +57,9 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 						'messages' => implode( ', ', array_keys( $remainingMessages ) )
 					]
 				);
-				wfLogWarning( 'MessageUpdateJob timed out for group - ' . $groupId );
+
+				$count = count( $remainingMessages );
+				wfLogWarning( "MessageUpdateJob timed out for group $groupId with $count message(s) remaining" );
 
 				$groupSyncCache->forceEndSync( $groupId );
 			} else {
