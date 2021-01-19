@@ -38,6 +38,11 @@
 	right: 0;
 }
 
+/** Added to override hover style added by Timeless */
+.mw-translate-smg-change .smg-rename-actions:hover {
+	background-color: transparent;
+}
+
 .mw-translate-smg-change .smg-rename-actions.loading {
 	background: transparent url( ../images/loading.gif ) center center no-repeat;
 	background-size: 90%;
@@ -95,7 +100,8 @@
 	display: block;
 }
 
-.smg-rename-dropdown-menu button {
+/* Additional class to override CSS from skins */
+.smg-rename-dropdown-menu.smg-rename-dropdown-menu button {
 	display: block;
 	background: none;
 	border: 0;
@@ -105,9 +111,10 @@
 	white-space: nowrap;
 	color: #222;
 	font-size: 14px;
+	font-weight: normal;
 }
 
-.smg-rename-dropdown-menu button:hover {
+.smg-rename-dropdown-menu.smg-rename-dropdown-menu button:hover {
 	cursor: pointer;
 	background-color: #f0f0f0;
 	color: #222;
