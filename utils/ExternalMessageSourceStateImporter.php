@@ -11,6 +11,7 @@
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
+use MediaWiki\MediaWikiServices;
 
 class ExternalMessageSourceStateImporter {
 
@@ -133,6 +134,12 @@ class ExternalMessageSourceStateImporter {
 	 * @param MessageUpdateJob[] $groupJobs
 	 */
 	private function updateGroupSyncInfo( string $groupId, array $groupJobs ): void {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
+			return;
+		}
+
 		$messageParams = [];
 		foreach ( $groupJobs as $job ) {
 			$messageParams[] = MessageUpdateParameter::createFromJob( $job );

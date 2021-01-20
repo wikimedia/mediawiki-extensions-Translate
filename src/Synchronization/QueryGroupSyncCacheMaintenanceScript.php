@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Maintenance;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Query information in the group synchronization cache.
@@ -28,7 +29,14 @@ class QueryGroupSyncCacheMaintenanceScript extends Maintenance {
 	}
 
 	public function execute() {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
+			$this->fatalError( 'GroupSynchornizationCache is not enabled' );
+		}
+
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+
 		$groupId = $this->getOption( 'group' );
 		if ( $groupId ) {
 			$groupMessages = $groupSyncCache->getGroupMessages( $groupId );

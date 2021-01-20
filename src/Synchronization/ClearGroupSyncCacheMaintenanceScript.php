@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Maintenance;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Clear the contents of the group synchronization cache
@@ -35,6 +36,12 @@ class ClearGroupSyncCacheMaintenanceScript extends Maintenance {
 	}
 
 	public function execute() {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
+			$this->fatalError( 'GroupSynchornizationCache is not enabled' );
+		}
+
 		$this->validateParamsAndArgs();
 		$groupId = $this->getOption( 'group' );
 		$all = $this->hasOption( 'all' );
