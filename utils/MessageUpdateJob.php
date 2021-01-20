@@ -311,6 +311,12 @@ class MessageUpdateJob extends GenericTranslateJob {
 		}
 
 		$groupId = $groupIds[0];
+		$group = MessageGroups::getGroup( $groupId );
+
+		if ( !$group instanceof FileBasedMessageGroup ) {
+			return;
+		}
+
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$messageKey = $title->getPrefixedDBkey();
 
