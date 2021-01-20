@@ -8,7 +8,6 @@
  * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
-
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
@@ -898,8 +897,10 @@ class SpecialManageGroups extends SpecialPage {
 			$group = MessageGroups::getGroup( $groupId );
 			$messageIndexInstance->storeInterim( $group, $messageKeys );
 
-			$this->synchronizationCache->addMessages( $groupId, ...$messages );
-			$this->synchronizationCache->markGroupForSync( $groupId );
+			if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
+				$this->synchronizationCache->addMessages( $groupId, ...$messages );
+				$this->synchronizationCache->markGroupForSync( $groupId );
+			}
 
 			$jobQueueInstance->push( $groupJobs );
 		}
@@ -908,6 +909,10 @@ class SpecialManageGroups extends SpecialPage {
 	}
 
 	private function displayGroupsInSync( OutputPage $out ): void {
+		if ( !$this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
+			return;
+		}
+
 		$groupsInSync = $this->synchronizationCache->getGroupsInSync();
 		sort( $groupsInSync );
 

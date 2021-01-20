@@ -7,6 +7,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use Maintenance;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @author Abijeet Patro
@@ -24,6 +25,12 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 	}
 
 	public function execute() {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
+			$this->fatalError( 'GroupSynchornizationCache is not enabled' );
+		}
+
 		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$groupsInSync = $groupSyncCache->getGroupsInSync();

@@ -1024,6 +1024,11 @@
 			},
 			"description": "Add, disable or overwrite default stats type providers.",
 			"public": true
+		},
+		"TranslateGroupSynchronizationCache": {
+			"value": false,
+			"description": "If true, enables the group synchronization cache that keeps track of FileBasedMessageGroups messages currently being processed via MessageUpdateJob",
+			"public": true
 		}
 	},
 	"DefaultUserOptions": {

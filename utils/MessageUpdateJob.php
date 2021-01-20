@@ -287,6 +287,12 @@ class MessageUpdateJob extends GenericTranslateJob {
 	}
 
 	private function removeFromCache( Title $title ): void {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
+			return;
+		}
+
 		$currentTitle = $title;
 		// Check if the current title, is equal to the title passed. This condition will be
 		// true incase of rename where the old title would have been renamed.
