@@ -113,7 +113,7 @@ class TranslatorActivityQuery {
 			// Warning: user names may be numbers that get casted to ints in array keys
 			$data[$row->lang][] = [
 				self::USER_NAME => $row->rev_user_text,
-				self::USER_TRANSLATIONS => $row->count,
+				self::USER_TRANSLATIONS => (int)$row->count,
 				self::USER_LAST_ACTIVITY => $row->lastedit,
 			];
 		}

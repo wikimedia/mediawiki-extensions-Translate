@@ -74,7 +74,7 @@ class TranslatorActivity {
 	}
 
 	private function getCacheKey( string $language ): string {
-		return $this->cache->makeKey( 'translate-translator-activity-v3', $language );
+		return $this->cache->makeKey( 'translate-translator-activity-v4', $language );
 	}
 
 	private function isStale( array $value ): bool {
