@@ -34,6 +34,18 @@ root:
         translatorCategory:
           _type: text
           _description: Name of the category for translators of this group
+        support:
+          _type: array
+          _description: Configuration for the ask for more information link
+          _children:
+            url:
+              _type: text
+            page:
+              _type: text
+            params:
+              _type: array
+              _children: []
+              _ignore_extra_keys: true
     MANGLER:
       _type: array
       _children:

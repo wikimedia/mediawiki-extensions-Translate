@@ -378,4 +378,8 @@ abstract class MessageGroupBase implements MessageGroup {
 	public function getTranslationAids() {
 		return TranslationAid::getTypes();
 	}
+
+	public function getSupportConfig(): ?array {
+		return $this->getFromConf( 'BASIC', 'support' );
+	}
 }

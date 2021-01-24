@@ -176,4 +176,11 @@ interface MessageGroup {
 	 * @return array
 	 */
 	public function getTranslationAids();
+
+	/**
+	 * Gets support URL defined for the group if any
+	 *
+	 * @return array|null
+	 */
+	public function getSupportConfig(): ?array;
 }

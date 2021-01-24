@@ -17,30 +17,21 @@
 class SupportAid extends TranslationAid {
 	public function getData() {
 		return [
-			'url' => self::getSupportUrl( $this->handle->getTitle() ),
+			'url' => self::getSupportUrl( $this->handle ),
 		];
 	}
 
 	/**
 	 * Target URL for a link provided by a support button/aid.
 	 *
-	 * @param Title $title Title object for the translation message.
+	 * @param MessageHandle $handle MessageHandle object for the translation message.
 	 * @since 2015.09
 	 * @return string
 	 * @throws TranslationHelperException
 	 */
-	public static function getSupportUrl( Title $title ) {
-		global $wgTranslateSupportUrl, $wgTranslateSupportUrlNamespace;
-		$namespace = $title->getNamespace();
-
-		// Fetch the configuration for this namespace if possible, or the default.
-		if ( isset( $wgTranslateSupportUrlNamespace[$namespace] ) ) {
-			$config = $wgTranslateSupportUrlNamespace[$namespace];
-		} elseif ( $wgTranslateSupportUrl ) {
-			$config = $wgTranslateSupportUrl;
-		} else {
-			throw new TranslationHelperException( 'Support page not configured' );
-		}
+	public static function getSupportUrl( MessageHandle $handle ) {
+		$title = $handle->getTitle();
+		$config = self::getConfig( $handle );
 
 		// Preprocess params
 		$params = [];
@@ -62,5 +53,32 @@ class SupportAid extends TranslationAid {
 		} else {
 			throw new TranslationHelperException( 'Support page not configured properly' );
 		}
+	}
+
+	/**
+	 * Fetches Support URL config
+	 * @param MessageHandle $handle
+	 * @return array
+	 * @throws TranslationHelperException
+	 */
+	private static function getConfig( MessageHandle $handle ): array {
+		global $wgTranslateSupportUrl, $wgTranslateSupportUrlNamespace;
+
+		if ( !$handle->isValid() ) {
+			throw new TranslationHelperException( 'Invalid MessageHandle' );
+		}
+
+		// Fetch group level configuration if possible, fallback to namespace based, or default
+		$group = $handle->getGroup();
+		$namespace = $handle->getTitle()->getNamespace();
+		$config = $group->getSupportConfig()
+			?? $wgTranslateSupportUrlNamespace[$namespace]
+			?? $wgTranslateSupportUrl;
+
+		if ( !$config ) {
+			throw new TranslationHelperException( 'Support page not configured' );
+		}
+
+		return $config;
 	}
 }
