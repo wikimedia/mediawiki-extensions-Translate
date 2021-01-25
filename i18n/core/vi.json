@@ -3,6 +3,7 @@
 		"authors": [
 			"Leduyquang753",
 			"Minh Nguyen",
+			"Nghiemtrongdai VN",
 			"Phjtieudoc",
 			"Thin",
 			"Vinhtantran"
@@ -189,6 +190,7 @@
 	"translate-smg-more": "Sẽ còn nhiều thay đổi hơn để xử lý sau khi gửi những thay đổi này.",
 	"translate-smg-left": "Nội dung thông điệp trong wiki",
 	"translate-smg-right": "Các thay đổi để duyệt",
+	"translate-smg-strong-sync-help": "Trợ giúp",
 	"translate-manage-import-diff": "Thông điệp $1 | Tác vụ: $2",
 	"translate-manage-import-new": "Thông điệp mới $1",
 	"translate-manage-import-deleted": "Thông điệp đã xóa $1",

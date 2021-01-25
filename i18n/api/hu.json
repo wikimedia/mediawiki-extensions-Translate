@@ -81,7 +81,7 @@
 	"apihelp-searchtranslations-param-limit": "Az eredmény mérete.",
 	"apihelp-searchtranslations-example-1": "Fordítások megjelenítése a nyelvre.",
 	"apihelp-searchtranslations-example-2": "Lefordítatlan üzenetek megjelenítése, amik illeszkednek a lekérdezésre a forrásnyelven.",
-	"apihelp-translationcheck-description": "A megadott fordítás érvényesítése üzenet-ellenőrzőkkel.",
+	"apihelp-translationcheck-description": "A megadott fordítás érvényesítése a konfigurált üzenetérvényesítőkkel.",
 	"apihelp-translationcheck-summary": "Fordítások ellenőrzése.",
 	"apihelp-translationcheck-param-title": "Lapcím névtérrel és nyelvkóddal.",
 	"apihelp-translationcheck-param-translation": "Az érvényesítendő fordítás.",

@@ -3,7 +3,8 @@
 		"authors": [
 			"ArmenBakkalian",
 			"Azniv Stepanian",
-			"Kareyac"
+			"Kareyac",
+			"Շահէն"
 		]
 	},
 	"translate": "Թարգմանութիւն",
@@ -27,6 +28,7 @@
 	"translate-statsf-scale-hours": "Ժամեր",
 	"translate-statsf-submit": "Կանխաստուգել",
 	"translate-smg-rename-cancel": "Չեղարկել",
+	"translate-smg-strong-sync-help": "Օգնութիւն",
 	"translate-documentation-language": "Հաղորդագրութեան փաստագրութիւն",
 	"tux-editor-translate-mode": "Ցանկ"
 }
