@@ -236,6 +236,7 @@ class SpecialManageGroups extends SpecialPage {
 		$key = $params['key'];
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
 		$id = self::changeId( $group->getId(), $language, $type, $key );
+		$noticeHtml = '';
 
 		if ( $title && $type === 'addition' && $title->exists() ) {
 			// The message has for some reason dropped out from cache
@@ -246,6 +247,7 @@ class SpecialManageGroups extends SpecialPage {
 			// forever and will prevent rebuilding the cache, which
 			// leads to many other annoying problems.
 			$type = 'change';
+			$noticeHtml .= Html::warningBox( $this->msg( 'translate-manage-key-reused' )->text() );
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
 			// This happens if a message key has been renamed
 			// The change can be ignored.
@@ -261,25 +263,44 @@ class SpecialManageGroups extends SpecialPage {
 					->getRevisionByTitle( $title )
 					->getContent( SlotRecord::MAIN )
 			);
+
+			if ( $wiki === '' ) {
+				$noticeHtml .= Html::warningBox(
+					$this->msg( 'translate-manage-empty-content' )->text()
+				);
+			}
+
 			$oldContent = ContentHandler::makeContent( $wiki, $title );
 			$newContent = ContentHandler::makeContent( '', $title );
-
 			$this->diff->setContent( $oldContent, $newContent );
-
-			$text = $this->diff->getDiff( $titleLink, '' );
+			$text = $this->diff->getDiff( $titleLink, '', $noticeHtml );
 		} elseif ( $type === 'addition' ) {
-			$oldContent = ContentHandler::makeContent( '', $title );
-			$newContent = ContentHandler::makeContent( $params['content'], $title );
-
-			$this->diff->setContent( $oldContent, $newContent );
 			$menu = '';
 			if ( $group->getSourceLanguage() === $language && $this->hasRight ) {
-				$menu = Html::rawElement( 'button', [
-					'class' => 'smg-rename-actions', 'type' => 'button',
-					'data-group-id' => $group->getId(), 'data-lang' => $language, 'data-msgkey' => $key,
-					'data-msgtitle' => $title->getFullText() ], '' );
+				$menu = Html::rawElement(
+					'button',
+					[
+						'class' => 'smg-rename-actions',
+						'type' => 'button',
+						'data-group-id' => $group->getId(),
+						'data-lang' => $language,
+						'data-msgkey' => $key,
+						'data-msgtitle' => $title->getFullText()
+					],
+					''
+				);
 			}
-			$text = $this->diff->getDiff( '', $titleLink . $menu );
+
+			if ( $params['content'] === '' ) {
+				$noticeHtml .= Html::warningBox(
+					$this->msg( 'translate-manage-empty-content' )->text()
+				);
+			}
+
+			$oldContent = ContentHandler::makeContent( '', $title );
+			$newContent = ContentHandler::makeContent( $params['content'], $title );
+			$this->diff->setContent( $oldContent, $newContent );
+			$text = $this->diff->getDiff( '', $titleLink . $menu, $noticeHtml );
 		} elseif ( $type === 'change' ) {
 			$wiki = TranslateUtils::getContentForTitle( $title, true );
 
@@ -302,7 +323,7 @@ class SpecialManageGroups extends SpecialPage {
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
-			$text .= $this->diff->getDiff( $titleLink, $actions );
+			$text .= $this->diff->getDiff( $titleLink, $actions, $noticeHtml );
 		}
 
 		$hidden = Html::hidden( $id, 1 );

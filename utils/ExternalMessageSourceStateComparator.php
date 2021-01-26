@@ -228,10 +228,6 @@ class ExternalMessageSourceStateComparator {
 		$added = array_diff( $fileKeys, $wikiKeys );
 		foreach ( $added as $key ) {
 			$sourceContent = $file['MESSAGES'][$key];
-			if ( trim( $sourceContent ) === '' ) {
-				continue;
-			}
-
 			$changes->addAddition( $language, $key, $sourceContent );
 		}
 
