@@ -1,11 +1,17 @@
 <?php
+declare( strict_types = 1 );
+
 /**
- * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @covers \AndroidXmlFFS
  */
-
 class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
+	private const DOCLANG = 'qqq';
+
+	protected function setUp(): void {
+		$this->setMwGlobals( 'wgTranslateDocumentationLanguageCode', self::DOCLANG );
+	}
 
 	protected $groupConfiguration = [
 		'BASIC' => [
@@ -100,19 +106,43 @@ XML;
 		];
 		$this->assertEquals( $expected, $parsed );
 	}
+
+	public function testWriteDoc() {
+		/** @var FileBasedMessageGroup $group */
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		$ffs = new AndroidXmlFFS( $group );
+
+		$messages = [
+			'a' => 'b',
+		];
+
+		$collection = new MockMessageCollection( $messages, self::DOCLANG );
+
+		$actual = $ffs->writeIntoVariable( $collection );
+		$expected = <<<'XML'
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="all">
+  <string name="a">b</string>
+</resources>
+
+XML;
+		$this->assertEquals( $expected, $actual );
+	}
 }
 
 class MockMessageCollection extends MessageCollection {
-	public function __construct( $messages ) {
+	public function __construct( array $messages, string $code = 'en' ) {
+		$this->code = $code;
 		$keys = array_keys( $messages );
 		$this->keys = array_combine( $keys, $keys );
 		foreach ( $messages as $key => $value ) {
 			$m = new FatMessage( $key, $value );
 			$m->setTranslation( $value );
+			if ( $key === 'foobar' ) {
+				$m->addTag( 'fuzzy' );
+			}
 			$this->messages[$key] = $m;
 		}
-
-		$this->messages['foobar']->addTag( 'fuzzy' );
 	}
 
 	public function filter( $type, $condition = true, $value = null ) {

@@ -143,18 +143,28 @@ class AndroidXmlFFS extends SimpleFFS {
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
-		$template = '<?xml version="1.0" encoding="utf-8"?>';
-		$template .= $this->doAuthors( $collection );
-		$template .= '<resources></resources>';
-
-		$writer = new SimpleXMLElement( $template );
-		$mangler = $this->group->getMangler();
+		global $wgTranslateDocumentationLanguageCode;
 
 		$collection->filter( 'hastranslation', false );
 		if ( count( $collection ) === 0 ) {
 			return '';
 		}
 
+		$template = '<?xml version="1.0" encoding="utf-8"?>';
+		$template .= $this->doAuthors( $collection );
+		$template .= '<resources></resources>';
+
+		$writer = new SimpleXMLElement( $template );
+
+		if ( $collection->getLanguage() === $wgTranslateDocumentationLanguageCode ) {
+			$writer->addAttribute(
+				'tools:ignore',
+				'all',
+				'http://schemas.android.com/tools'
+			);
+		}
+
+		$mangler = $this->group->getMangler();
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
