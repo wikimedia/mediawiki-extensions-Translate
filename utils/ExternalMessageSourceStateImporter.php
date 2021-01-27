@@ -141,9 +141,21 @@ class ExternalMessageSourceStateImporter {
 		}
 
 		$messageParams = [];
+		$groupMessageKeys = [];
 		foreach ( $groupJobs as $job ) {
 			$messageParams[] = MessageUpdateParameter::createFromJob( $job );
+			// Ensure there are no duplicates as the same key may be present in
+			// multiple languages
+			$groupMessageKeys[( new MessageHandle( $job->getTitle() ) )->getKey()] = true;
 		}
+
+		$group = MessageGroups::getGroup( $groupId );
+		if ( $group === null ) {
+			// How did we get here? This should never happen.
+			throw new RuntimeException( "Did not find group $groupId" );
+		}
+
+		MessageIndex::singleton()->storeInterim( $group, array_keys( $groupMessageKeys ) );
 
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$groupSyncCache->addMessages( $groupId, ...$messageParams );
