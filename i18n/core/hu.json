@@ -204,6 +204,7 @@
 	"translate-smg-rename-select-err": "Válassz ki egy átnevezendő üzenetet",
 	"translate-smg-rename-no-msg": "Nem találhatók üzenetek.",
 	"translate-smg-rename-new": "Hozzáadás újként…",
+	"translate-smg-strong-sync-help": "Súgó",
 	"translate-manage-import-diff": "Üzenet: $1 | Műveletek: $2",
 	"translate-manage-import-new": "Új üzenet: $1",
 	"translate-manage-import-deleted": "Törölt üzenet: $1",

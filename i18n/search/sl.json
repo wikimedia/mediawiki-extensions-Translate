@@ -27,5 +27,5 @@
 	"tux-sst-ellipsis-outdated": "Zastareli prevodi",
 	"tux-sst-link-all-match": "Zahteva vse besede iskanja.",
 	"tux-sst-match-message": "Prikazuje prevode, ki se ujemajo s katerokoli od vpisanih besed. $1",
-	"tux-sst-case-sensitive": "Razlikuj velike in male črke"
+	"tux-sst-case-sensitive": "Razlikuj med velikimi in malimi črkami"
 }
