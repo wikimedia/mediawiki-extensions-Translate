@@ -1,0 +1,15 @@
+== Translate 2021.01 ==
+Released at 2021-01-28.
+
+=== Noteworthy changes ===
+* Add script to find unsynchronized definitions ({{Gerrit|655860}})
+* Various improvements to the transaction export.php script
+* Add a script to find and delete equal translations ({{Gerrit|652543}})
+* GoogleTranslateWebService: Add Chinese codes to code map ({{Gerrit|649652}})
+* Convert Special:ManageMessageGroups to OOUI ({{Gerrit|647670}})
+* Insertables have been moved to the src/TranslatorInterface/Insertable folder ({{Gerrit|644460}})
+* Stop hiding page heading on pages other than Special:Translate ({{Gerrit|644514}})
+* Drop non-array based configuration support for Insertables ({{Gerrit|644464}})
+* Remove FCFontFinder ({{Gerrit|641189}})
+* Bump group loader cache version to re-trigger re-caching of groups ({{Gerrit|644843}})
+* Remove Gettext post processing support from export.php script ({{Gerrit|641385}})
