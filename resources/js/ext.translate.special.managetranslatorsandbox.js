@@ -86,7 +86,9 @@
 			$( '<div>' )
 				.addClass( 'reminder-email row' )
 				.append(
-					$( '<span>' ).text( request.email ),
+					$( '<span>' )
+						.attr( { dir: 'ltr' } )
+						.text( request.email ),
 					$( '<a>' )
 						.prop( 'href', '#' )
 						.addClass( 'send-reminder link' )
