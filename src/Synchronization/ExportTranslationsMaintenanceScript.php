@@ -86,12 +86,6 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
-		$this->addOption(
-			'codemaponly',
-			'(optional) Only export languages that have a codeMap entry',
-			false, /*required*/
-			false /*has arg*/
-		);
 
 		$this->addOption(
 			'offline-gettext-format',
@@ -129,7 +123,6 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 			$reqLangs = array_diff( $reqLangs, $skipLangs );
 		}
 
-		$codemapOnly = $this->hasOption( 'codemaponly' );
 		$forOffline = $this->hasOption( 'offline-gettext-format' );
 		$offlineTargetPattern = $this->getOption( 'offline-gettext-format' ) ?: "%GROUPID%/%CODE%.po";
 
@@ -218,14 +211,6 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 
 				// Skip languages not present in recent changes
 				if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId][$lang] ) ) {
-					continue;
-				}
-
-				if (
-					$codemapOnly &&
-					$group instanceof FileBasedMessageGroup &&
-					$group->mapCode( $lang ) === $lang
-				) {
 					continue;
 				}
 
