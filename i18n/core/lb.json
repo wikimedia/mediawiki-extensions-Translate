@@ -209,6 +209,7 @@
 	"translate-manage-intro-other": "Ënnendrënner ass eng Lëscht vun den Ännerungen vun den Iwwersetzungen an der Sprooch $1.\nKuckt d'Ännerunge wgl. no a wielt déi Aktioun déi Dir fir déi jeeweileg Iwwersetzung wëllt.\nWann Dir decidéiert fir Ännerungen z'ignoréieren, ass dës Aktioun just temporär.",
 	"translate-manage-import-ok": "Importéiert: $1",
 	"translate-manage-import-done": "Import fäerdeg!",
+	"translate-manage-empty-content": "Den Inhalt ass eidel",
 	"importtranslations": "Iwwersetzungen importéieren",
 	"translate-import-from-local": "Fichier lokal eropgelueden:",
 	"translate-import-load": "Fichier lueden",

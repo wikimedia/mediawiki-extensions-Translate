@@ -268,6 +268,8 @@
 	"translate-manage-intro-other": "Poniżej znajduje się lista zmian komunikatów w języku $1.\nProszę przejrzeć zmiany i wybrać dla każdego komunikatu operację, którą chcesz dla niego wykonać.\nJeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym eksporcie.",
 	"translate-manage-import-ok": "Zaimportowano: $1",
 	"translate-manage-import-done": "Import zakończony!",
+	"translate-manage-empty-content": "Nie ma zawartości",
+	"translate-manage-key-reused": "Ten komunikat istnieje już na wiki. Sprawdź, czy nie doszło do przypadkowego użycia starego klucza.",
 	"importtranslations": "Importowanie tłumaczeń",
 	"translate-import-from-local": "Załadowanie lokalnego pliku",
 	"translate-import-load": "Pobierz plik",
