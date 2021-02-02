@@ -244,6 +244,8 @@
 	"translate-manage-intro-other": "Aqquà sotte ste 'n'elenghe de cangiaminde a le traduziune jndr'à lènghe $1.\nCondrolle le cangiaminde e scacchie l'azione da ffà pe ogne messàgge.\nCe scacchie de cacà le cangiaminde, sta azione addevende sulamende temboranèe.",
 	"translate-manage-import-ok": "'Mbortate: $1",
 	"translate-manage-import-done": "'Mbortazione combletate!",
+	"translate-manage-empty-content": "'U condenute jè vacande",
+	"translate-manage-key-reused": "Stu messàgge ggià esiste jndr'à sta uicchi. Condrolle pe 'n'ause accidendale de 'na vecchia chiave.",
 	"importtranslations": "'Mborte le traduziune",
 	"translate-import-from-local": "Carecamende d'u file locale:",
 	"translate-import-load": "Careche 'u file",

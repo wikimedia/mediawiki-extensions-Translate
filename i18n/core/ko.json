@@ -236,6 +236,8 @@
 	"translate-manage-intro-other": "다음은 $1로 된 번역 바뀜 목록입니다.\n바뀜을 검토하고 각 업데이트에 대해 수행할 작업을 선택하세요.\n바뀜을 무시하기로 선택했다면 이 작업만 일시적입니다.",
 	"translate-manage-import-ok": "가져옴: $1",
 	"translate-manage-import-done": "가져오기 완료!",
+	"translate-manage-empty-content": "내용이 비었음",
+	"translate-manage-key-reused": "이 메시지는 위키에 이미 존재합니다. 오래된 키를 우연히 재사용한 것은 아닌지 확인하십시오.",
 	"importtranslations": "번역 가져오기",
 	"translate-import-from-local": "컴퓨터에 있는 파일 올리기:",
 	"translate-import-load": "파일 불러오기",

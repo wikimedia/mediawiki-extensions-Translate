@@ -21,7 +21,8 @@
 			"Waihorace",
 			"Wehwei",
 			"Wrightbus",
-			"Xiplus"
+			"Xiplus",
+			"列维劳德"
 		]
 	},
 	"translate": "翻譯",
@@ -258,6 +259,7 @@
 	"translate-manage-intro-other": "下列是在 $1 語言的翻譯變更清單。\n請檢查變更，並選擇每一個變更所要執行的動作。\n若您不想變更，您可以選擇忽略。",
 	"translate-manage-import-ok": "已匯入：$1",
 	"translate-manage-import-done": "匯入完成！",
+	"translate-manage-key-reused": "此訊息已存在於本 wiki 中。請檢查舊密鑰的意外重新使用。",
 	"importtranslations": "匯入翻譯",
 	"translate-import-from-local": "上傳本地檔案：",
 	"translate-import-load": "讀取檔案",
