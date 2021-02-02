@@ -17,6 +17,7 @@ use MediaWiki\MediaWikiServices;
  * @ingroup PageTranslation JobQueue
  */
 class TranslatablePageMoveJob extends Job {
+	private const LOCK_TIMEOUT = 3600 * 2;
 
 	/**
 	 * @param Title $source
@@ -161,7 +162,11 @@ class TranslatablePageMoveJob extends Job {
 		foreach ( $titles as $title ) {
 			$data[$cache->makeKey( 'pt-lock', sha1( $title ) )] = 'locked';
 		}
-		$cache->setMulti( $data );
+
+		// Do not lock pages indefinitely during translatable page moves since
+		// they can fail. Add a timeout so that the locks expire by themselves.
+		// Timeout value has been chosen by a gut feeling
+		$cache->setMulti( $data, self::LOCK_TIMEOUT );
 	}
 
 	private function unlock( array $titles ) {
