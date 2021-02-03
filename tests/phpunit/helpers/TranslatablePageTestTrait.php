@@ -29,7 +29,7 @@ trait TranslatablePageTestTrait {
 	 * @param string $title
 	 * @param string $content
 	 * @param User $creator
-	 * @return void
+	 * @return TranslatablePage
 	 */
 	public function createMarkedTranslatablePage(
 		string $title, string $content, User $creator
