@@ -233,7 +233,7 @@
 	"action-translate-sandboxmanage": "upravljanje uporabnikov, omejenih na peskovnik",
 	"right-translate-sandboxaction": "Izvršitev dejanj, dovoljenih na peskovnik omejenim uporabnikom",
 	"action-translate-sandboxaction": "izvršitev dejanj, dovoljenih na peskovnik omejenim uporabnikom",
-	"translate-workflow-state-": "(izključeno)",
+	"translate-workflow-state-": "(nenastavljeno)",
 	"translate-workflowstatus": "Stanje: $1",
 	"translate-workflow-set-doing": "Nastavljanje ...",
 	"translate-workflow-autocreated-summary": "Samodejno ustvarjanje strani za stanje delovnega toka $1",

@@ -23,6 +23,7 @@
 			"Mor",
 			"Pols12",
 			"Purodha",
+			"Rodney Araujo",
 			"Sanbec",
 			"Translationista",
 			"Vivaelcelta"
@@ -36,7 +37,7 @@
 	"tpt-section": "Unidad de traducción $1",
 	"tpt-section-new": "Nueva unidad de traducción. \nNombre: $1",
 	"tpt-section-deleted": "Unidad de traducción $1",
-	"tpt-diff-old": "Texto previo",
+	"tpt-diff-old": "Texto anterior",
 	"tpt-diff-new": "Texto nuevo",
 	"tpt-submit": "Marcar esta versión para traducción",
 	"tpt-sections-oldnew": "Unidades de traducción nuevas y existentes",
