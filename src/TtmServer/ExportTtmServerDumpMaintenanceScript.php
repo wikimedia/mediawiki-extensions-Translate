@@ -143,7 +143,7 @@ class ExportTtmServerDumpMaintenanceScript extends Maintenance {
 	}
 
 	private function sortGroupsBySize( array $a, array $b ): int {
-		return $a[MessageGroupStats::TOTAL] <=> $b [MessageGroupStats::TOTAL];
+		return $a[MessageGroupStats::TOTAL] <=> $b[MessageGroupStats::TOTAL];
 	}
 
 	private function getOutput( MessageGroup $group ): array {
