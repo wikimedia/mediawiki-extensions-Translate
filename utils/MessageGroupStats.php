@@ -559,7 +559,7 @@ class MessageGroupStats {
 		}
 
 		$collection->filter( 'ignored' );
-		$collection->filter( 'optional' );
+		$collection->filterUntranslatedOptional();
 		// Store the count of real messages for later calculation.
 		$total = count( $collection );
 

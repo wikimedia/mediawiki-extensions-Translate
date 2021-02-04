@@ -391,18 +391,31 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->keys = $keys;
 	}
 
+	/** @internal For MessageGroupStats */
+	public function filterUntranslatedOptional(): void {
+		$optionalKeys = array_flip( $this->tags['optional'] ?? [] );
+		// Convert plain message keys to array<string,TitleValue>
+		$optional = $this->filterOnCondition( $this->keys, $optionalKeys, false );
+		// Then get reduce that list to those which have no translation. Ensure we don't
+		// accidentally populate the info cache with too few keys.
+		$this->loadInfo( $this->keys );
+		$untranslatedOptional = $this->filterHastranslation( $optional, true );
+		// Now remove that list from the full list
+		$this->keys = $this->filterOnCondition( $this->keys, $untranslatedOptional );
+	}
+
 	/**
 	 * Filters list of keys with other list of keys according to the condition.
 	 * In other words, you have a list of keys, and you have determined list of
 	 * keys that have some feature. Now you can either take messages that are
 	 * both in the first list and the second list OR are in the first list but
-	 * are not in the second list (conditition = true and false respectively).
+	 * are not in the second list (conditition = false and true respectively).
 	 * What makes this more complex is that second list of keys might not be a
 	 * subset of the first list of keys.
 	 * @param string[] $keys List of keys to filter.
 	 * @param string[] $condKeys Second list of keys for filtering.
 	 * @param bool $condition True (default) to return keys which are on first
-	 * and second list, false to return keys which are on the first but not on
+	 * but not on the second list, false to return keys which are on both.
 	 * second.
 	 * @return string[] Filtered keys.
 	 */
