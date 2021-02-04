@@ -65,7 +65,7 @@
 	"tpt-aggregategroup-add": "Dodaj",
 	"tpt-aggregategroup-save": "Shrani",
 	"tpt-aggregategroup-new-name": "Ime:",
-	"tpt-aggregategroup-new-description": "Opis (izbirno):",
+	"tpt-aggregategroup-new-description": "Opis (neobvezno):",
 	"tpt-aggregategroup-invalid-group": "Skupina ne obstaja",
 	"tpt-aggregategroup-edit-description": "Opis:",
 	"tpt-aggregategroup-update-cancel": "Prekliči",

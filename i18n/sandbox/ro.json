@@ -10,7 +10,7 @@
 	"tsb-filter-pending": "Cereri în așteptare",
 	"tsb-reminder-title-generic": "Finalizați-vă propria prezentare pentru a deveni un traducător",
 	"tsb-all-languages-button-label": "Toate limbile",
-	"tsb-search-requests": "Căutare cereri",
+	"tsb-search-requests": "Căutare cereri în așteptare",
 	"tsb-accept-button-label": "Acceptă",
 	"tsb-reject-button-label": "Respinge",
 	"tsb-selected-count": "{{PLURAL:$1|$1 utilizator selectat|$1 utilizatori selectați|$1 de utilizatori selectați}}",
