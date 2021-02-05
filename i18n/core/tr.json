@@ -265,6 +265,8 @@
 	"translate-manage-intro-other": "Aşağıda $1 dilindeki çeviri değişikliklerinin listesi bulunmaktadır.\nLütfen değişiklikleri inceleyin ve her güncelleme için yapmak istediğiniz işlemi seçin.\nDeğişiklikleri yoksaymayı seçerseniz, bu işlem yalnızca geçicidir.",
 	"translate-manage-import-ok": "İçe aktarılan: $1",
 	"translate-manage-import-done": "İçe aktarma tamamlandı!",
+	"translate-manage-empty-content": "İçerik boştur",
+	"translate-manage-key-reused": "Bu mesaj vikide zaten var. Eski bir anahtarın yanlışlıkla yeniden kullanılmasını kontrol edin.",
 	"importtranslations": "Çevirileri içe aktar",
 	"translate-import-from-local": "Yerel dosya yükleme:",
 	"translate-import-load": "Dosya yükle",
