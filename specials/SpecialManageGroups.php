@@ -53,7 +53,7 @@ class SpecialManageGroups extends SpecialPage {
 		$this->nsInfo = $nsInfo;
 		$this->revLookup = $revLookup;
 		$this->synchronizationCache = $synchronizationCache;
-		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this );
+		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this, $this->getLinkRenderer() );
 	}
 
 	public function doesWrites() {
@@ -85,6 +85,14 @@ class SpecialManageGroups extends SpecialPage {
 					$this->displayGroupSyncInfo->getGroupsInSyncHtml(
 						$this->synchronizationCache->getGroupsInSync(),
 						self::GROUP_SYNC_INFO_WRAPPER_CLASS
+					)
+				);
+
+				$out->addHTML(
+					$this->displayGroupSyncInfo->getHtmlForGroupsWithError(
+						$this->synchronizationCache,
+						self::GROUP_SYNC_INFO_WRAPPER_CLASS,
+						$this->getLanguage()
 					)
 				);
 			}
@@ -167,6 +175,14 @@ class SpecialManageGroups extends SpecialPage {
 				$this->displayGroupSyncInfo->getGroupsInSyncHtml(
 					$this->synchronizationCache->getGroupsInSync(),
 					self::GROUP_SYNC_INFO_WRAPPER_CLASS
+				)
+			);
+
+			$out->addHTML(
+				$this->displayGroupSyncInfo->getHtmlForGroupsWithError(
+					$this->synchronizationCache,
+					self::GROUP_SYNC_INFO_WRAPPER_CLASS,
+					$this->getLanguage()
 				)
 			);
 		}

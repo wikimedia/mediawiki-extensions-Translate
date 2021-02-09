@@ -32,7 +32,7 @@ class QueryGroupSyncCacheMaintenanceScript extends BaseMaintenanceScript {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
-			$this->fatalError( 'GroupSynchornizationCache is not enabled' );
+			$this->fatalError( 'GroupSynchronizationCache is not enabled' );
 		}
 
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();

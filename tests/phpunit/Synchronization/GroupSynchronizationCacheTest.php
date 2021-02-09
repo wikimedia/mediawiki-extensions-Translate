@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use InvalidArgumentException;
+use LogicException;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
@@ -166,6 +167,47 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $hasTimedOut, $groupSyncResponse->hasTimedOut() );
 		$this->assertEquals( $diffMessages, $groupSyncResponse->getRemainingMessages() );
 		$this->assertSame( $groupId, $groupSyncResponse->getGroupId() );
+	}
+
+	public function testAddGroupErrors() {
+		$this->assertEmpty( $this->groupSyncCache->getGroupsWithErrors() );
+
+		$groupId = 'test-group';
+		$groupHasTimedOut = true;
+		$groupSyncResponse = new GroupSynchronizationResponse(
+			$groupId,
+			[
+				$this->getMessageParam( $groupId, 'title1' ),
+				$this->getMessageParam( $groupId, 'title2' ),
+				$this->getMessageParam( $groupId, 'title3' )
+			],
+			$groupHasTimedOut
+		);
+
+		$this->groupSyncCache->addGroupErrors( $groupSyncResponse );
+		$this->assertContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
+		$this->assertEquals( $groupSyncResponse, $this->groupSyncCache->getGroupErrorInfo( $groupId ) );
+
+		$this->groupSyncCache->addGroupErrors( $groupSyncResponse );
+		$this->assertContains(
+			$groupId,
+			$this->groupSyncCache->getGroupsWithErrors(),
+			'Multiple additions of group errors don\'t duplicate entries in cache'
+		);
+		$this->assertEquals(
+			$groupSyncResponse,
+			$this->groupSyncCache->getGroupErrorInfo( $groupId ),
+			'Multiple additions of group errors don\'t duplicate entries in cache'
+		);
+	}
+
+	public function testAddGroupErrorsEmpty() {
+		$groupId = 'test-group';
+		$groupHasTimedOut = true;
+		$groupSyncResponse = new GroupSynchronizationResponse( $groupId, [], $groupHasTimedOut );
+
+		$this->expectException( LogicException::class );
+		$this->groupSyncCache->addGroupErrors( $groupSyncResponse );
 	}
 
 	public function provideGetSynchronizationStatus() {

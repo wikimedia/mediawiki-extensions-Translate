@@ -39,6 +39,8 @@ class GroupSynchronizationCache {
 
 	/** @var string Cache tag used for groups */
 	private const GROUP_LIST_TAG = 'gsc_%group_in_sync%';
+	/** @var string Cache tag used for tracking groups that have errors */
+	private const GROUP_ERROR_TAG = 'gsc_%group_with_error%';
 
 	// TODO: Decide timeout based on monitoring. Also check if it needs to be configurable
 	// based on the number of messages in the group.
@@ -191,6 +193,113 @@ class GroupSynchronizationCache {
 		$this->cache->delete( ...$messageCacheKeys );
 	}
 
+	public function addGroupErrors( GroupSynchronizationResponse $response ): void {
+		$groupId = $response->getGroupId();
+		$remainingMessages = $response->getRemainingMessages();
+
+		if ( !$remainingMessages ) {
+			throw new LogicException( 'Cannot add a group without any remaining messages to the errors list' );
+		}
+
+		$groupMessageErrorTag = $this->getGroupMessageErrorTag( $groupId );
+
+		$entriesToSave = [];
+		foreach ( $remainingMessages as $messageParam ) {
+			$titleErrorKey = $this->getMessageErrorKey( $groupId, $messageParam->getPageName() )[0];
+			$entriesToSave[] = new PersistentCacheEntry(
+				$titleErrorKey,
+				$messageParam,
+				null,
+				$groupMessageErrorTag
+			);
+		}
+
+		$this->cache->set( ...$entriesToSave );
+
+		$groupErrorKey = $this->getGroupErrorKey( $groupId );
+
+		// Check if the group already has errors
+		$groupInfo = $this->cache->get( $groupErrorKey );
+		if ( $groupInfo ) {
+			return;
+		}
+
+		// Group did not have an error previously, add it now. When adding,
+		// remove the remaining messages from the GroupSynchronizationResponse to
+		// avoid the value in the cache becoming too big. The remaining messages
+		// are stored as separate items in the cache.
+		$trimmedGroupSyncResponse = new GroupSynchronizationResponse(
+			$groupId,
+			[],
+			$response->hasTimedOut()
+		);
+
+		$entriesToSave[] = new PersistentCacheEntry(
+			$groupErrorKey,
+			$trimmedGroupSyncResponse,
+			null,
+			self::GROUP_ERROR_TAG
+		);
+
+		$this->cache->set( ...$entriesToSave );
+	}
+
+	/**
+	 * Return the groups that have errors
+	 * @return string[]
+	 */
+	public function getGroupsWithErrors(): array {
+		$groupsInSyncEntries = $this->cache->getByTag( self::GROUP_ERROR_TAG );
+		/** @var string[] */
+		$groupIds = [];
+		foreach ( $groupsInSyncEntries as $entry ) {
+			$groupResponse = $entry->value();
+			if ( $groupResponse instanceof GroupSynchronizationResponse ) {
+				$groupIds[] = $groupResponse->getGroupId();
+			} else {
+				// Should not happen, but handle primarily to keep phan happy.
+				throw $this->invalidArgument( $groupResponse, GroupSynchronizationResponse::class );
+			}
+		}
+
+		return $groupIds;
+	}
+
+	/** Fetch information about a particular group that has errors including messages that failed */
+	public function getGroupErrorInfo( string $groupId ): GroupSynchronizationResponse {
+		$groupMessageErrorTag = $this->getGroupMessageErrorTag( $groupId );
+		$groupMessageEntries = $this->cache->getByTag( $groupMessageErrorTag );
+
+		$groupErrorKey = $this->getGroupErrorKey( $groupId );
+		$groupResponseEntry = $this->cache->get( $groupErrorKey );
+		$groupResponse = $groupResponseEntry[0] ? $groupResponseEntry[0]->value() : null;
+		if ( $groupResponse ) {
+			if ( !$groupResponse instanceof GroupSynchronizationResponse ) {
+				// Should not happen, but handle primarily to keep phan happy.
+				throw $this->invalidArgument( $groupResponse, GroupSynchronizationResponse::class );
+			}
+		} else {
+			throw new LogicException( 'Requested to fetch errors for a group that has no errors.' );
+		}
+
+		$messageParams = [];
+		foreach ( $groupMessageEntries as $messageEntries ) {
+			$messageParam = $messageEntries->value();
+			if ( $messageParam instanceof MessageUpdateParameter ) {
+				$messageParams[] = $messageParam;
+			} else {
+				// Should not happen, but handle primarily to keep phan happy.
+				throw $this->invalidArgument( $messageParam, MessageUpdateParameter::class );
+			}
+		}
+
+		return new GroupSynchronizationResponse(
+			$groupId,
+			$messageParams,
+			$groupResponse->hasTimedOut()
+		);
+	}
+
 	private function hasGroupTimedOut( int $syncExpTime ): bool {
 		return ( new DateTime() )->getTimestamp() > $syncExpTime;
 	}
@@ -231,6 +340,28 @@ class GroupSynchronizationCache {
 		}
 
 		return $messageKeys;
+	}
+
+	private function getGroupErrorKey( string $groupId ): string {
+		$hash = substr( hash( 'sha256', $groupId ), 0, 40 );
+		return substr( "{$hash}_gsc_error_$groupId", 0, 255 );
+	}
+
+	/** @return string[] */
+	private function getMessageErrorKey( string $groupId, string ...$messages ): array {
+		$messageKeys = [];
+		foreach ( $messages as $message ) {
+			$key = $groupId . '_' . $message;
+			$hash = substr( hash( 'sha256', $key ), 0, 40 );
+			$finalKey = substr( $hash . '_gsc_error_' . $key, 0, 255 );
+			$messageKeys[] = $finalKey;
+		}
+
+		return $messageKeys;
+	}
+
+	private function getGroupMessageErrorTag( string $groupId ): string {
+		return "gsc_%error%_$groupId";
 	}
 }
 

@@ -124,9 +124,23 @@
 	padding: 0.5em 1em;
 	background: #f0f0f0;
 	border-radius: 3px;
+	margin-bottom: 1em;
 }
 
-.smg-group-sync-cache-info a {
+.smg-group-sync-cache-info__help {
 	position: absolute;
 	right: 1em;
+}
+
+.smg-group-sync-cache-info__group-errors {
+	margin-bottom: 0.5em;
+	background-color: #e0e0e0;
+	padding: 0.5em 1em;
+	border-radius: 3px;
+}
+
+.smg-group-sync-cache-info__message-error dt {
+	float: left;
+	text-align: right;
+	margin-right: 5px;
 }

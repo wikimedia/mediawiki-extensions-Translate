@@ -28,7 +28,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
-			$this->fatalError( 'GroupSynchornizationCache is not enabled' );
+			$this->fatalError( 'GroupSynchronizationCache is not enabled' );
 		}
 
 		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
@@ -67,8 +67,10 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 
 				$count = count( $remainingMessages );
 				wfLogWarning( "MessageUpdateJob timed out for group $groupId with $count message(s) remaining" );
-
 				$groupSyncCache->forceEndSync( $groupId );
+
+				$groupSyncCache->addGroupErrors( $groupResponse );
+
 			} else {
 				$groupsInProgress[] = $groupId;
 			}

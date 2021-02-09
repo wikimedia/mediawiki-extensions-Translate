@@ -4,6 +4,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use JsonSerializable;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializable;
+use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializableTrait;
+
 /**
  * Class encapsulating the response returned by the GroupSynchronizationCache
  * when requested for an update on a group synchronization status.
@@ -11,7 +15,9 @@ namespace MediaWiki\Extension\Translate\Synchronization;
  * @license GPL-2.0-or-later
  * @since 2020.06
  */
-class GroupSynchronizationResponse {
+class GroupSynchronizationResponse implements JsonSerializable, JsonUnserializable {
+	use JsonUnserializableTrait;
+
 	/** @var MessageUpdateParameter[] */
 	private $remainingMessages;
 	/** @var string */
@@ -42,6 +48,19 @@ class GroupSynchronizationResponse {
 
 	public function hasTimedOut(): bool {
 		return $this->timeout;
+	}
+
+	/** @return mixed[] */
+	protected function toJsonArray(): array {
+		return get_object_vars( $this );
+	}
+
+	public static function newFromJsonArray( array $params ) {
+		return new self(
+			$params['groupId'],
+			$params['remainingMessages'],
+			$params['timeout']
+		);
 	}
 }
 
