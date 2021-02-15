@@ -94,8 +94,18 @@ class ExternalMessageSourceStateImporter {
 	 * @param string $language
 	 * @return bool
 	 */
-	public static function isSafe( MessageSourceChange $changesForGroup, $language ) {
-		return $changesForGroup->hasOnly( $language, MessageSourceChange::ADDITION );
+	public static function isSafe( MessageSourceChange $changesForGroup, string $language ): bool {
+		if ( !$changesForGroup->hasOnly( $language, MessageSourceChange::ADDITION ) ) {
+			return false;
+		}
+
+		foreach ( $changesForGroup->getAdditions( $language ) as $change ) {
+			if ( $change['content'] === '' ) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	/**
