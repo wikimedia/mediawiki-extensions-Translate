@@ -46,7 +46,7 @@ class TTMServerBootstrap extends Maintenance {
 		);
 		$this->addOption(
 			'dry-run',
-			'Do not make any actualy changes in the index.'
+			'Do not make any changes to the index.'
 		);
 		$this->addOption(
 			'verbose',
@@ -100,11 +100,12 @@ class TTMServerBootstrap extends Maintenance {
 			$status = 0;
 			pcntl_waitpid( $pid, $status );
 			// beginBootstrap probably failed, give up.
-			if ( $status !== 0 ) {
-				$this->fatalError( 'Boostrap failed.' );
+			if ( !$this->verifyChildStatus( $pid, $status ) ) {
+				$this->fatalError( 'Bootstrap failed.' );
 			}
 		}
 
+		$hasErrors = false;
 		$threads = $this->getOption( 'threads', 1 );
 		$pids = [];
 
@@ -135,6 +136,7 @@ class TTMServerBootstrap extends Maintenance {
 				if ( count( $pids ) >= $threads ) {
 					$status = 0;
 					$pid = pcntl_wait( $status );
+					$hasErrors = $hasErrors || !$this->verifyChildStatus( $pid, $status );
 					unset( $pids[$pid] );
 				}
 			}
@@ -144,10 +146,15 @@ class TTMServerBootstrap extends Maintenance {
 		foreach ( array_keys( $pids ) as $pid ) {
 			$status = 0;
 			pcntl_waitpid( $pid, $status );
+			$hasErrors = $hasErrors || !$this->verifyChildStatus( $pid, $status );
 		}
 
 		// It's okay to do this in the main thread as it is the last thing
 		$this->endBootstrap( $server );
+
+		if ( $hasErrors ) {
+			$this->fatalError( '!!! Some threads failed. Review the script output !!!' );
+		}
 	}
 
 	private function getServer( array $config ): WritableTTMServer {
@@ -280,6 +287,22 @@ class TTMServerBootstrap extends Maintenance {
 		// Make sure all existing connections are dead,
 		// we can't use them in forked children.
 		MediaWiki\MediaWikiServices::resetChildProcessServices();
+	}
+
+	private function verifyChildStatus( int $pid, int $status ): bool {
+		if ( pcntl_wifexited( $status ) ) {
+			$code = pcntl_wexitstatus( $status );
+			if ( $code ) {
+				$this->output( "Pid $pid exited with status $code !!\n" );
+				return false;
+			}
+		} elseif ( pcntl_wifsignaled( $status ) ) {
+			$signum = pcntl_wtermsig( $status );
+			$this->output( "Pid $pid terminated by signal $signum !!\n" );
+			return false;
+		}
+
+		return true;
 	}
 }
 
