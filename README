@@ -6,7 +6,7 @@ to manage multilingual wikis in a sensible way.
 See http://www.gnu.org/licenses/gpl2.html
 
 == Installation ==
-For very very quick start add the following to LocalSettings.php:
+For a very very quick start add the following to LocalSettings.php:
 
  wfLoadExtension( 'Translate' );
  $wgGroupPermissions['user']['translate'] = true;
@@ -22,9 +22,9 @@ More documentation is at
 To translate this extension go to https://translatewiki.net and sign up.
 
 To contribute features, fixes and code maintenance, please see
-* https://www.mediawiki.org/wiki/How_to_become_a_MediaWiki_hacker
+* https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_become_a_MediaWiki_hacker
 * https://www.mediawiki.org/wiki/Special:MyLanguage/Code_of_Conduct
-* https://www.mediawiki.org/wiki/Help:Extension:Translate/Developer_guide
+* https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Getting_started_with_development
 
 There is also a dedicated Translate and translatewiki.net development
 environment, see
