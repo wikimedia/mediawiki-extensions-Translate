@@ -112,7 +112,7 @@
 	"pt-parse-open": "Eine &lt;translate&gt;-Markierung hat kein Gegenstück.\nÜbersetzungsvorlage: <pre>$1</pre>",
 	"pt-parse-close": "Eine &lt;/translate>-Markierung hat kein Gegenstück.\nÜbersetzungsvorlage: <pre>$1</pre>",
 	"pt-parse-nested": "Verschachtelte &lt;translate>-Übersetzungseinheiten sind nicht möglich.\nText des Tags: <pre>$1</pre>",
-	"pt-shake-multiple": "Mehrere Übersetzungseinheitenmarker für eine Übersetzungseinheit.\nText der Übersetzungseinheit: <pre>$1</pre>",
+	"pt-shake-multiple": "Mehrere Übersetzungseinheitenmarker für eine Übersetzungseinheit.\nAchte darauf, dass die Übersetzungseinheiten durch Leerzeilen getrennt sind.\nText der Übersetzungseinheit: <pre>$1</pre>",
 	"pt-shake-position": "Übersetzungseinheitenmarker befinden sich an unerwarteter Stelle.\nText der Übersetzungseinheit: <pre>$1</pre>",
 	"pt-shake-empty": "Die Übersetzungseinheit für Marker „$1“ ist leer.",
 	"log-description-pagetranslation": "Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem für Seiten",

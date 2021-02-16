@@ -116,7 +116,7 @@
 	"pt-parse-open": "O elemento &lt;translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-close": "O elemento &lt;/translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-nested": "Não são permitidas unidades de tradução &lt;translate> cruzadas.\nTexto do elemento: <pre>$1</pre>",
-	"pt-shake-multiple": "Vários marcadores para uma mesma unidade de tradução.\nTexto da unidade de tradução: <pre>$1</pre>",
+	"pt-shake-multiple": "Vários marcadores para uma mesma unidade de tradução.\nCertifique-se de que as unidades de tradução sejam separadas por linhas em branco.\nTexto da unidade de tradução: <pre>$1</pre>",
 	"pt-shake-position": "Marcadores de unidades de tradução em posição inesperada.\nTexto da unidade de tradução: <pre>$1</pre>",
 	"pt-shake-empty": "Unidade de tradução vazia para o marcador \"$1\".",
 	"log-description-pagetranslation": "Registro para operações relacionadas com o sistema de tradução de páginas",

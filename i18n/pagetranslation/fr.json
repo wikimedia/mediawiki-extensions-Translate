@@ -132,7 +132,7 @@
 	"pt-parse-open": "Balise &lt;translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-close": "Balise &lt;/translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-nested": "L’imbrication des sections <tt>&lt;translate></tt> n’est pas autorisée.\nTexte de la balise : <pre>$1</pre>",
-	"pt-shake-multiple": "Multiples marqueurs d’unité de traduction pour une même unité de traduction.\nTexte de l’unité de traduction : <pre>$1</pre>",
+	"pt-shake-multiple": "Multiples marqueurs d’unité de traduction pour une même unité de traduction.\nAssurez-vous que les unités de traduction sont séparées par des lignes vides.\nTexte de l’unité de traduction : <pre>$1</pre>",
 	"pt-shake-position": "Marqueurs d’unité de traduction à une position inattendue.\nTexte de l’unité de traduction : <pre>$1</pre>",
 	"pt-shake-empty": "Unité de traduction vide pour le marqueur « $1 ».",
 	"log-description-pagetranslation": "Journal des actions liées au système de traduction de pages",
