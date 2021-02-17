@@ -286,7 +286,7 @@
 	"translate-manage-import-ok": "Importé : $1",
 	"translate-manage-import-done": "Import terminé !",
 	"translate-manage-empty-content": "Le contenu est vide",
-	"translate-manage-key-reused": "Ce message existe déjà dans le wiki. Recherchez une réutilisation accidentelle d'une ancienne clé.",
+	"translate-manage-key-reused": "Ce message existe déjà dans le wiki. Recherchez une réutilisation accidentelle d’une ancienne clé.",
 	"importtranslations": "Importer les traductions",
 	"translate-import-from-local": "Importer un fichier local :",
 	"translate-import-load": "Charger le fichier",

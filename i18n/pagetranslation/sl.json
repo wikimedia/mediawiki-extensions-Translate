@@ -72,7 +72,7 @@
 	"pt-parse-open": "Neizenačena značka &lt;translate>.\nPrevajalna predloga: <pre>$1</pre>",
 	"pt-parse-close": "Neizenačena značka &lt;/translate>.\nPrevajalna predloga: <pre>$1</pre>",
 	"pt-parse-nested": "Gnezdene prevajalne enote &lt;translate> niso dovoljene.\nBesedilo značke: <pre>$1</pre>",
-	"pt-shake-multiple": "Več označevalcev prevajalnih enot za eno prevajalno enoto.\nBesedilo prevajalne enote: <pre>$1</pre>",
+	"pt-shake-multiple": "Več označevalcev prevajalnih enot za eno prevajalno enoto.\nPrepričajte se, da so prevajalne enote ločene s praznimi vrsticami.\nBesedilo prevajalne enote: <pre>$1</pre>",
 	"pt-shake-position": "Označevalci prevajalnih enot na nepričakovanem položaju.\nBesedilo prevajalne enote: <pre>$1</pre>",
 	"pt-shake-empty": "Prazna prevajalna enota označevalec »$1«.",
 	"log-description-pagetranslation": "Dnevnik dejanj, ki so povezana s sistemom prevajanja strani",

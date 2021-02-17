@@ -102,7 +102,7 @@
 	"pt-parse-open": "Marcatore &lt;translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-close": "Marcatore &lt;/translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-nested": "Non sono ammessi elementi di traduzione &lt;translate> nidificati.\nTesto del marcatore: <pre>$1</pre>",
-	"pt-shake-multiple": "Sono presenti più marcatori di elementi di traduzione per un singolo elemento.\nTesto dell'elemento di traduzione: <pre>$1</pre>",
+	"pt-shake-multiple": "Sono presenti più marcatori di elementi di traduzione per un singolo elemento.\nAssicurati che gli elementi di traduzione siano separati da linee vuote.\nTesto dell'elemento di traduzione: <pre>$1</pre>",
 	"pt-shake-position": "Sono presenti marcatori di elementi di traduzione in una posizione inaspettata.\nTesto della sezione: <pre>$1</pre>",
 	"pt-shake-empty": "Elemento di traduzione vuoto per il marcatore $1.",
 	"log-description-pagetranslation": "Registro per le azioni inerenti al sistema di traduzione delle pagine",

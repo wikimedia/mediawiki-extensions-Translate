@@ -118,7 +118,7 @@
 	"pt-parse-open": "Dengesiz &lt;translate> etiketi.\nÇeviri şablonu: <pre>$1</pre>",
 	"pt-parse-close": "Dengesiz &lt;translate> etiketi.\nÇeviri şablonu: <pre>$1</pre>",
 	"pt-parse-nested": "İç içe &lt;translate> çeviri birimlerine izin verilmez.\nEtiket metni: <pre>$1</pre>",
-	"pt-shake-multiple": "Bir çeviri birimi için çoklu çeviri birimi işaretleri.\nÇeviri birimi metni: <pre>$1</pre>",
+	"pt-shake-multiple": "Bir çeviri birimi için çoklu çeviri birimi işaretleri.\nÇeviri birimlerinin boş satırlarla ayrıldığından emin olun.\nÇeviri birimi metni: <pre>$1</pre>",
 	"pt-shake-position": "Çeviri birimi işaretçileri beklenmedik bir konumda.\nÇeviri birimi metni: <pre>$1</pre>",
 	"pt-shake-empty": "\"$1\" işareti için boş çeviri birimi.",
 	"log-description-pagetranslation": "Sayfa çeviri sistemiyle ilgili eylemlerin günlüğü",
