@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AVSmalnad77",
 			"Dimension10",
 			"Dipin",
 			"Munirathnam",
@@ -68,7 +69,7 @@
 	"translate-statsf-scale-months": "ತಿಂಗಳುಗಳು",
 	"translate-statsf-scale-weeks": "ವಾರಗಳು",
 	"translate-statsf-scale-days": "ದಿನಗಳು",
-	"translate-statsf-scale-hours": "ಘಂಟೆಗಳು",
+	"translate-statsf-scale-hours": "ಗಂಟೆಗಳು",
 	"translate-statsf-count": "ಅಳತೆ:",
 	"translate-statsf-count-edits": "ಸಂಪಾದನೆಗಳ ಸಂಖ್ಯೆ",
 	"translate-statsf-count-users": "ಸಕ್ರಿಯ ಭಾಷಾಂತರಕಾರರು",
