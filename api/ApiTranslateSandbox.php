@@ -7,6 +7,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
+
 /**
  * WebAPI for the sandbox feature of Translate.
  * @ingroup API TranslateAPI
@@ -48,7 +51,16 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$username = $params['username'];
-		if ( User::getCanonicalName( $username, 'creatable' ) === false ) {
+
+		if ( is_callable( UserNameUtils::class, 'getCanonical' ) ) {
+			// MW 1.35+
+			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+			$canonicalName = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_CREATABLE );
+		} else {
+			$canonicalName = User::getCanonicalName( $username, 'creatable' );
+		}
+
+		if ( $canonicalName === false ) {
 			$this->dieWithError( 'noname', 'invalidusername' );
 		}
 
