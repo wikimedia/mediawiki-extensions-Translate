@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ammartivari",
+			"Eraldkerciku",
 			"Liridon",
 			"MuratTheTurkish",
 			"Olsi"
@@ -9,5 +10,6 @@
 	},
 	"tpt-languages-legend": "Gjuhë të tjera:",
 	"tpt-languages-nonzero": "$1 ($2% i përkëthyer)",
+	"pt-shake-multiple": "Shënues të shumëfishtë të njësisë së përkthimit për një njësi përkthimi.\nSigurohuni që njësitë e përkthimit të ndahen me vija të zbrazëta.\nTeksti i njësisë së përkthimit: <pre> $1 </pre>",
 	"pt-deletepage-reason": "Arsyeja:"
 }
