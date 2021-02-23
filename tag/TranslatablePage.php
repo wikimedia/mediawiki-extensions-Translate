@@ -18,6 +18,19 @@ use Wikimedia\Rdbms\Database;
  * @ingroup PageTranslation
  */
 class TranslatablePage {
+	/**
+	 * List of keys in the metadata table that need to be handled for moves and deletions
+	 * @phpcs-require-sorted-array
+	 */
+	public const METADATA_KEYS = [
+		'maxid',
+		'priorityforce',
+		'prioritylangs',
+		'priorityreason',
+		'transclusion',
+		'version'
+	];
+
 	/** @var Title */
 	protected $title;
 	/** @var ?string Text contents of the page. */

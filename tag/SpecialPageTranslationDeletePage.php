@@ -357,9 +357,9 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	protected function clearMetadata() {
 		// remove the entries from metadata table.
 		$groupId = $this->page->getMessageGroupId();
-		TranslateMetadata::set( $groupId, 'prioritylangs', false );
-		TranslateMetadata::set( $groupId, 'priorityforce', false );
-		TranslateMetadata::set( $groupId, 'priorityreason', false );
+		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
+			TranslateMetadata::set( $groupId, $type, false );
+		}
 		// remove the page from aggregate groups, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
 		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ) );

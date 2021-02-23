@@ -120,10 +120,8 @@ class TranslatablePageMoveJob extends Job {
 	}
 
 	protected function moveMetadata( $oldGroupId, $newGroupId ) {
-		$types = [ 'prioritylangs', 'priorityforce', 'priorityreason' ];
-
 		TranslateMetadata::preloadGroups( [ $oldGroupId, $newGroupId ] );
-		foreach ( $types as $type ) {
+		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
 			$value = TranslateMetadata::get( $oldGroupId, $type );
 			if ( $value !== false ) {
 				TranslateMetadata::set( $oldGroupId, $type, false );
