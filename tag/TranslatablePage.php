@@ -7,8 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\PageTranslation\TPSection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
@@ -269,7 +269,7 @@ class TranslatablePage {
 		$parserOutput = $parser->parse( $this->getText() );
 
 		// Add section to allow translating the page name
-		$displayTitle = new TPSection();
+		$displayTitle = new TranslationUnit();
 		$displayTitle->id = $this->displayTitle;
 		$displayTitle->text = $this->getTitle()->getPrefixedText();
 

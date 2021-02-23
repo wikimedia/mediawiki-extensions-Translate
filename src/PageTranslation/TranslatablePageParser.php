@@ -34,10 +34,10 @@ class TranslatablePageParser {
 		$text = $this->armourNowiki( $nowiki, $text );
 		$text = preg_replace( '~<translate( nowrap)?>\n?~s', '', $text );
 		$text = preg_replace( '~\n?</translate>~s', '', $text );
-		// Mirroring what TPSection::getTextForTrans does
+		// Mirroring what TranslationUnit::getTextForTrans does
 		$text = preg_replace( '~<tvar\|([^>]+)>(.*?)</>~u', '\2', $text );
 		// Markers: headers and the rest
-		$ic = preg_quote( TPSection::UNIT_MARKER_INVALID_CHARS, '~' );
+		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		$text = preg_replace( "~(^=.*=) <!--T:[^$ic]+-->$~um", '\1', $text );
 		$text = preg_replace( "~<!--T:[^$ic]+-->[\n ]?~um", '', $text );
 
@@ -153,7 +153,7 @@ class TranslatablePageParser {
 	 * -1, which will later be replaced with a real value.
 	 * @internal
 	 */
-	public function parseUnit( string $content ): TPSection {
+	public function parseUnit( string $content ): TranslationUnit {
 		$re = '~<!--T:(.*?)-->~';
 		$matches = [];
 		$count = preg_match_all( $re, $content, $matches, PREG_SET_ORDER );
@@ -165,7 +165,7 @@ class TranslatablePageParser {
 			);
 		}
 
-		$section = new TPSection();
+		$section = new TranslationUnit();
 		if ( $count === 1 ) {
 			foreach ( $matches as $match ) {
 				[ /*full*/, $id ] = $match;

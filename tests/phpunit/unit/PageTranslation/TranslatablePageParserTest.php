@@ -154,19 +154,19 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 
 	public function provideTestParse() {
 		// Test case 1 //
-		$s1 = new TPSection();
+		$s1 = new TranslationUnit();
 		$s1->text = '== Unit tests ==';
 		$s1->id = -1;
 
-		$s2 = new TPSection();
+		$s2 = new TranslationUnit();
 		$s2->text = 'Introduction to unit tests.';
 		$s2->id = -1;
 
-		$s3 = new TPSection();
+		$s3 = new TranslationUnit();
 		$s3->text = 'They are fun.';
 		$s3->id = -1;
 
-		$s4 = new TPSection();
+		$s4 = new TranslationUnit();
 		$s4->text = 'Smilie';
 		$s4->id = -1;
 		$s4->setCanWrap( false );
@@ -217,19 +217,19 @@ SOURCE_TEMPLATE
 		];
 
 		// Test case 2 //
-		$s1 = new TPSection();
+		$s1 = new TranslationUnit();
 		$s1->text = '== Unit tests ==';
 		$s1->id = '11';
 
-		$s2 = new TPSection();
+		$s2 = new TranslationUnit();
 		$s2->text = 'Introduction to unit tests.';
 		$s2->id = '22';
 
-		$s3 = new TPSection();
+		$s3 = new TranslationUnit();
 		$s3->text = 'They are fun.';
 		$s3->id = '33';
 
-		$s4 = new TPSection();
+		$s4 = new TranslationUnit();
 		$s4->text = 'Smilie';
 		$s4->id = '44';
 		$s4->setCanWrap( false );
@@ -297,7 +297,7 @@ SOURCE_TEMPLATE
 	}
 
 	public static function provideTestParseSection() {
-		$u = new TPSection();
+		$u = new TranslationUnit();
 		$u->text = 'Hello';
 		$u->id = -1;
 		$u->setIsInline( true );
@@ -308,7 +308,7 @@ SOURCE_TEMPLATE
 			'No surrounding whitespace',
 		];
 
-		$u = new TPSection();
+		$u = new TranslationUnit();
 		$u->text = 'Hello';
 		$u->id = -1;
 		yield [
@@ -318,11 +318,11 @@ SOURCE_TEMPLATE
 			'With surrounding whitespace',
 		];
 
-		$u0 = new TPSection();
+		$u0 = new TranslationUnit();
 		$u0->text = 'Hello world';
 		$u0->id = -1;
 
-		$u1 = new TPSection();
+		$u1 = new TranslationUnit();
 		$u1->text = 'Bunny';
 		$u1->id = -1;
 		yield [
@@ -332,15 +332,15 @@ SOURCE_TEMPLATE
 			'Splitting at one empty line',
 		];
 
-		$u0 = new TPSection();
+		$u0 = new TranslationUnit();
 		$u0->text = 'First';
 		$u0->id = -1;
 
-		$u1 = new TPSection();
+		$u1 = new TranslationUnit();
 		$u1->text = 'Second';
 		$u1->id = -1;
 
-		$u2 = new TPSection();
+		$u2 = new TranslationUnit();
 		$u2->text = 'Third';
 		$u2->id = -1;
 		yield [

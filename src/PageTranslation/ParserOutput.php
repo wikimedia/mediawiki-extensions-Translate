@@ -21,12 +21,12 @@ class ParserOutput {
 	private $template;
 	/** @var Section[] */
 	private $sectionMap;
-	/** @var TPSection[] */
+	/** @var TranslationUnit[] */
 	private $unitMap;
 
 	public function __construct( string $template, array $sectionMap, array $unitMap ) {
 		$this->assertContainsOnlyInstancesOf( Section::class, '$sectionMap', $sectionMap );
-		$this->assertContainsOnlyInstancesOf( TPSection::class, '$unitMap', $unitMap );
+		$this->assertContainsOnlyInstancesOf( TranslationUnit::class, '$unitMap', $unitMap );
 
 		$this->template = $template;
 		$this->sectionMap = $sectionMap;
@@ -53,7 +53,7 @@ class ParserOutput {
 		return strtr( $this->template, $replacements );
 	}
 
-	/** @return TPSection[] */
+	/** @return TranslationUnit[] */
 	public function units(): array {
 		return $this->unitMap;
 	}

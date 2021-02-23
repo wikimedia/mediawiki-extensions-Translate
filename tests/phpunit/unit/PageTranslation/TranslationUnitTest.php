@@ -1,14 +1,14 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\PageTranslation\TPSection;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extension\Translate\PageTranslation\TPSection
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationUnit
  */
-class TPSectionTest extends \MediaWikiUnitTestCase {
+class TranslationUnitTest extends \MediaWikiUnitTestCase {
 	public function setUp(): void {
 		parent::setUp();
 
@@ -21,7 +21,7 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 	public function testGetMarkedText(
 		string $name, string $text, bool $inline, string $expected
 	) {
-		$section = new TPSection();
+		$section = new TranslationUnit();
 		$section->name = $name;
 		$section->text = $text;
 		$section->setIsInline( $inline );
@@ -33,7 +33,7 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 
 	/** @dataProvider providerTestGetTextWithVariables */
 	public function testGetTextWithVariables( string $text, string $expected ) {
-		$section = new TPSection();
+		$section = new TranslationUnit();
 		$section->text = $text;
 
 		$output = $section->getTextWithVariables();
@@ -43,7 +43,7 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 
 	/** @dataProvider providerTestGetTextForTrans */
 	public function testGetTextForTrans( string $text, string $expected ) {
-		$section = new TPSection();
+		$section = new TranslationUnit();
 		$section->text = $text;
 
 		$output = $section->getTextForTrans();
@@ -130,7 +130,7 @@ class TPSectionTest extends \MediaWikiUnitTestCase {
 		bool $inline,
 		string $expected
 	 ) {
-		$unit = new TPSection();
+		$unit = new TranslationUnit();
 		$unit->text = $source;
 		$unit->setIsInline( $inline );
 

@@ -1,7 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Extension\Translate\PageTranslation\TPSection;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -27,7 +27,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 	 * unit pages.
 	 *
 	 * @param TranslatablePage $page
-	 * @param TPSection[] $sections
+	 * @param TranslationUnit[] $sections
 	 * @return TranslationsUpdateJob
 	 * @since 2018.07
 	 */
@@ -55,7 +55,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 			// unserialized transparently. That is no longer supported, so we
 			// convert manually to primitive types first (to an PHP array).
 			if ( is_array( $section ) ) {
-				$sections[ $index ] = TPSection::unserializeFromArray( $section );
+				$sections[ $index ] = TranslationUnit::unserializeFromArray( $section );
 			}
 		}
 
@@ -117,8 +117,9 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 
 	/**
 	 * Creates jobs needed to create or update all translation page definitions.
+	 *
 	 * @param TranslatablePage $page
-	 * @param TPSection[] $sections
+	 * @param TranslationUnit[] $sections
 	 * @return RunnableJob[]
 	 * @since 2013-01-28
 	 */

@@ -28,7 +28,7 @@ class TranslationPageTest extends MediaWikiTestCase {
 		$unitMap = [];
 		foreach ( $messages as $id => $m ) {
 			/** @var FatMessage $m */
-			$unit = new TPSection();
+			$unit = new TranslationUnit();
 			$unit->id = $id;
 			$unit->text = $m->definition();
 			$unit->setIsInline( $inline );

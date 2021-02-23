@@ -8,7 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\PageTranslation\TPSection;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Revision\RevisionRecord;
@@ -565,7 +565,7 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * @param TranslatablePage $page
 	 * @param bool &$error
-	 * @return TPSection[] The array has string keys.
+	 * @return TranslationUnit[] The array has string keys.
 	 */
 	public function checkInput( TranslatablePage $page, &$error ) {
 		$usedNames = [];
@@ -573,7 +573,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave( $highest );
 
-		$ic = preg_quote( TPSection::UNIT_MARKER_INVALID_CHARS, '~' );
+		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		foreach ( $sections as $s ) {
 			if ( preg_match( "~[$ic]~", $s->id ) ) {
 				$this->getOutput()->addElement(
@@ -710,7 +710,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$hasChanges = true;
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
-			/** @var TPSection $s */
+			/** @var TranslationUnit $s */
 			foreach ( $deletedSections as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
@@ -894,8 +894,9 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Sets up renderjobs to update the translation pages
 	 * - Invalidates caches
 	 * - Adds interim cache for MessageIndex
+	 *
 	 * @param TranslatablePage $page
-	 * @param TPSection[] $sections
+	 * @param TranslationUnit[] $sections
 	 * @param bool $updateVersion
 	 * @param bool $transclusion
 	 * @return array|bool
@@ -961,7 +962,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$maxid = (int)TranslateMetadata::get( $groupId, 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
-		/** @var TPSection $s */
+		/** @var TranslationUnit $s */
 		foreach ( array_values( $sections ) as $index => $s ) {
 			$maxid = max( $maxid, (int)$s->name );
 			$changed[] = $s->name;

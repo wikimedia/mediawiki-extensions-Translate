@@ -18,7 +18,7 @@ use TMessage;
  *
  * @ingroup PageTranslation
  */
-class TPSection {
+class TranslationUnit {
 	public const UNIT_MARKER_INVALID_CHARS = "_/\n<>";
 	/** @var string Section name */
 	public $id;

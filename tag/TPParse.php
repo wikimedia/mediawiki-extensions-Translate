@@ -8,7 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\PageTranslation\TPSection;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 
 /**
  * This class represents the results of parsed source page, that is, the
@@ -21,7 +21,7 @@ class TPParse {
 	protected $title;
 	/**
 	 * @todo Encapsulate
-	 * @var TPSection[] Parsed sections indexed with placeholder.
+	 * @var TranslationUnit[] Parsed sections indexed with placeholder.
 	 */
 	public $sections = [];
 	/**
@@ -29,7 +29,7 @@ class TPParse {
 	 * @var string Page source with content replaced with placeholders.
 	 */
 	public $template = null;
-	/** @var null|array Sections saved in the database. array( string => TPSection, ... ) */
+	/** @var null|array Sections saved in the database. array( string => TranslationUnit, ... ) */
 	protected $dbSections = null;
 
 	/// Constructor
@@ -72,8 +72,9 @@ class TPParse {
 
 	/**
 	 * Gets the sections and assigns section id for new sections
+	 *
 	 * @param int $highest The largest used integer id (Since 2012-08-02)
-	 * @return TPSection[] array( string => MediaWiki\Extension\Translate\PageTranslation\TPSection, ... )
+	 * @return TranslationUnit[] array( string => TranslationUnit, ... )
 	 */
 	public function getSectionsForSave( $highest = 0 ) {
 		$this->loadFromDatabase();
@@ -109,7 +110,8 @@ class TPParse {
 
 	/**
 	 * Returns list of deleted sections.
-	 * @return TPSection[] List of sections indexed by id. array( string => TPsection, ... )
+	 *
+	 * @return TranslationUnit[] List of sections indexed by id. array( string => TranslationUnit, ... )
 	 */
 	public function getDeletedSections() {
 		$sections = $this->getSectionsForSave();
@@ -141,7 +143,7 @@ class TPParse {
 
 		$res = $db->select( $tables, $vars, $conds, __METHOD__ );
 		foreach ( $res as $r ) {
-			$section = new TPSection;
+			$section = new TranslationUnit;
 			$section->id = $r->trs_key;
 			$section->text = $r->trs_text;
 			$section->type = 'db';

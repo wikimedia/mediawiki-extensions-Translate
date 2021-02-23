@@ -8,8 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\PageTranslation\TPSection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
@@ -75,7 +75,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		$defs = [];
 
 		foreach ( $res as $r ) {
-			$section = new TPSection();
+			$section = new TranslationUnit();
 			$section->text = $r->trs_text;
 			$defs[$r->trs_key] = $section->getTextWithVariables();
 		}
