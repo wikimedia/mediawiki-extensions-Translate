@@ -85,6 +85,8 @@
 	"tpt-sections-syntaxversion": "Version de la syntaxe",
 	"tpt-syntaxversion-text": "Cette page utilise actuellement une ancienne version de la syntaxe de la page source traductible. La nouvelle version encapsulera les sections non traduites avec une balise HTML pour indiquer la langue correcte du texte. Exemple : $1. Vous pouvez utiliser une nouvelle syntaxe de balisage $2 pour empêcher tout type d’encapsulage aux endroits où cela n’est pas approprié, comme lors de la traduction de l’attribut <code>title</code> d’un élément. Il n’est pas possible de revenir à une version utilisant l’ancienne syntaxe.",
 	"tpt-syntaxversion-label": "Utiliser la dernière version de la syntaxe pour cette page",
+	"tpt-transclusion": "Inclusion de modèle",
+	"tpt-transclusion-label": "Autoriser l’inclusion sensible à la traduction pour cette page",
 	"tpt-rev-mark": "marquer à traduire",
 	"tpt-rev-unmark": "retirer la possibilité de traduire",
 	"tpt-rev-discourage": "dissuader",

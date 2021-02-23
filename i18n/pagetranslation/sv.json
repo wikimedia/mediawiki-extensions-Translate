@@ -67,6 +67,8 @@
 	"tpt-sections-syntaxversion": "Syntaxversion",
 	"tpt-syntaxversion-text": "Denna sida använder för tillfället en gammal version av syntaxen för översättbara sidor. Den nya versionen kommer kapsla in oöversättbara avsnitt med en HTML-tagg för att indikera textens korrekta språk. Exempel: $1. Du kan använda den nya formateringssyntaxen $2 för att förhindra inkapsling där det inte behövs, som när man översätter attributet <code>title</code> för ett element. Det är inte möjligt att gå tillbaka till en gammal syntaxversion.",
 	"tpt-syntaxversion-label": "Använd senaste syntaxversionen för denna sida",
+	"tpt-transclusion": "Mallinkludering",
+	"tpt-transclusion-label": "Aktivera översättningsmedveten inkludering för denna sida",
 	"tpt-rev-mark": "markera för översättning",
 	"tpt-rev-unmark": "ta bort från översättning",
 	"tpt-rev-discourage": "avråd",
