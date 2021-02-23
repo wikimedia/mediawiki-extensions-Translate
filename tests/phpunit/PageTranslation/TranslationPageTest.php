@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use FatMessage;
 use Language;
 use MediaWikiTestCase;
-use TPSection;
 use WikiPageMessageGroup;
 
 /**

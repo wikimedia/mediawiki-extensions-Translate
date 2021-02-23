@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
-use TPSection;
 
 /**
  * Generates ParserOutput from text or removes all tags from a text.

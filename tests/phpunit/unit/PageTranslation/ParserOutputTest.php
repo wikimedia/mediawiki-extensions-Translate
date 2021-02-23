@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use InvalidArgumentException;
 use Language;
 use MediaWikiUnitTestCase;
-use TPSection;
 
 /**
  * @author Niklas Laxström

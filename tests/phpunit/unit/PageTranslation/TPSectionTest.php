@@ -1,10 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\PageTranslation\TPSection;
+
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \TPSection
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TPSection
  */
 class TPSectionTest extends \MediaWikiUnitTestCase {
 	public function setUp(): void {

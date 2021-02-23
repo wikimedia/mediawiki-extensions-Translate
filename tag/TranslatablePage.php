@@ -6,6 +6,8 @@
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
+
+use MediaWiki\Extension\Translate\PageTranslation\TPSection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;

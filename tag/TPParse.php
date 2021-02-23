@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\PageTranslation\TPSection;
+
 /**
  * This class represents the results of parsed source page, that is, the
  * extracted sections and a template.
@@ -71,7 +73,7 @@ class TPParse {
 	/**
 	 * Gets the sections and assigns section id for new sections
 	 * @param int $highest The largest used integer id (Since 2012-08-02)
-	 * @return TPSection[] array( string => TPSection, ... )
+	 * @return TPSection[] array( string => MediaWiki\Extension\Translate\PageTranslation\TPSection, ... )
 	 */
 	public function getSectionsForSave( $highest = 0 ) {
 		$this->loadFromDatabase();

@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\PageTranslation\TPSection;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Revision\RevisionRecord;

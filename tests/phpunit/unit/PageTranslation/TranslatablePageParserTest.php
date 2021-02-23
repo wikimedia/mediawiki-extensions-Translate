@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWikiUnitTestCase;
-use TPSection;
 
 /**
  * @author Niklas Laxström

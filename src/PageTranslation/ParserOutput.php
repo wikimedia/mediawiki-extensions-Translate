@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
 use Language;
-use TPSection;
 
 /**
  * Represents a parsing output produced by TranslatablePageParser.

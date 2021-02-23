@@ -7,6 +7,12 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use Html;
+use Language;
+use TMessage;
+
 /**
  * This class represents one individual section in translatable page.
  *
@@ -14,7 +20,6 @@
  */
 class TPSection {
 	public const UNIT_MARKER_INVALID_CHARS = "_/\n<>";
-
 	/** @var string Section name */
 	public $id;
 	/** @var string|null New name of the section, that will be saved to database. */
@@ -63,6 +68,7 @@ class TPSection {
 
 	/**
 	 * Returns section text unmodified.
+	 *
 	 * @return string Wikitext.
 	 */
 	public function getText() {
@@ -71,6 +77,7 @@ class TPSection {
 
 	/**
 	 * Returns the text with tvars replaces with placeholders.
+	 *
 	 * @return string Wikitext.
 	 * @since 2014.07
 	 */
@@ -82,6 +89,7 @@ class TPSection {
 
 	/**
 	 * Returns section text with variables replaced.
+	 *
 	 * @return string Wikitext.
 	 */
 	public function getTextForTrans() {
@@ -117,6 +125,7 @@ class TPSection {
 
 	/**
 	 * Returns oldtext, or current text if not available.
+	 *
 	 * @return string Wikitext.
 	 */
 	public function getOldText() {
@@ -125,6 +134,7 @@ class TPSection {
 
 	/**
 	 * Returns array of variables defined on this section.
+	 *
 	 * @return array ( string => string ) Values indexed with keys which are
 	 * prefixed with a dollar sign.
 	 */
@@ -143,6 +153,7 @@ class TPSection {
 
 	/**
 	 * Serialize this object to a PHP array.
+	 *
 	 * @return array
 	 * @since 2018.07
 	 */
@@ -151,7 +162,7 @@ class TPSection {
 		foreach ( self::$properties as $index => $property ) {
 			// Because this is used for the JobQueue, use a list
 			// instead of an array to save space.
-			$data[ $index ] = $this->$property;
+			$data[$index] = $this->$property;
 		}
 
 		return $data;
@@ -159,14 +170,15 @@ class TPSection {
 
 	/**
 	 * Construct an object from previously serialized array.
+	 *
 	 * @param array $data
 	 * @return self
 	 * @since 2018.07
 	 */
 	public static function unserializeFromArray( $data ) {
-		$section = new self;
+		$section = new self();
 		foreach ( self::$properties as $index => $property ) {
-			$section->$property = $data[ $index ];
+			$section->$property = $data[$index];
 		}
 
 		return $section;
