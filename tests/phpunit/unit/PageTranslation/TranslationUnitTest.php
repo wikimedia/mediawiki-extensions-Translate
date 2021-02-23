@@ -1,14 +1,18 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use FatMessage;
+use Language;
+use MediaWikiUnitTestCase;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationUnit
  */
-class TranslationUnitTest extends \MediaWikiUnitTestCase {
+class TranslationUnitTest extends MediaWikiUnitTestCase {
 	public function setUp(): void {
 		parent::setUp();
 

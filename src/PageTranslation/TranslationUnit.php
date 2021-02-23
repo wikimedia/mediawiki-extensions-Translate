@@ -1,11 +1,4 @@
 <?php
-/**
- * Helper for TPParse.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
@@ -14,8 +7,10 @@ use Language;
 use TMessage;
 
 /**
- * This class represents one individual section in translatable page.
+ * This class represents one translation unit in a translatable page.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup PageTranslation
  */
 class TranslationUnit {
@@ -42,68 +37,43 @@ class TranslationUnit {
 	/** @var string[] List of properties to serialize. */
 	private static $properties = [ 'version', 'id', 'name', 'text', 'type', 'oldText', 'inline' ];
 
-	public function setIsInline( $value ) {
-		$this->inline = (bool)$value;
+	public function setIsInline( bool $value ): void {
+		$this->inline = $value;
 	}
 
-	public function isInline() {
+	public function isInline(): bool {
 		return $this->inline;
 	}
 
-	/**
-	 * @param bool $value
-	 * @since 2020.07
-	 */
 	public function setCanWrap( bool $value ): void {
 		$this->canWrap = $value;
 	}
 
-	/**
-	 * @return bool
-	 * @since 2020.07
-	 */
 	public function canWrap(): bool {
 		return $this->canWrap;
 	}
 
-	/**
-	 * Returns section text unmodified.
-	 *
-	 * @return string Wikitext.
-	 */
-	public function getText() {
+	/** Returns section text unmodified */
+	public function getText(): string {
 		return $this->text;
 	}
 
-	/**
-	 * Returns the text with tvars replaces with placeholders.
-	 *
-	 * @return string Wikitext.
-	 * @since 2014.07
-	 */
-	public function getTextWithVariables() {
+	/** Returns the text with tvars replaces with placeholders */
+	public function getTextWithVariables(): string {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 
 		return preg_replace( $re, '$\1', $this->text );
 	}
 
-	/**
-	 * Returns section text with variables replaced.
-	 *
-	 * @return string Wikitext.
-	 */
-	public function getTextForTrans() {
+	/** Returns section text with variables replaced. */
+	public function getTextForTrans(): string {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 
 		return preg_replace( $re, '\2', $this->text );
 	}
 
-	/**
-	 * Returns the section text with updated or added section marker.
-	 *
-	 * @return string Wikitext.
-	 */
-	public function getMarkedText() {
+	/** Returns the section text with updated or added section marker */
+	public function getMarkedText(): string {
 		$id = $this->name ?? $this->id;
 		$header = "<!--T:{$id}-->";
 		$re = '~^(=+.*?=+\s*?$)~m';
@@ -123,22 +93,13 @@ class TranslationUnit {
 		return $text;
 	}
 
-	/**
-	 * Returns oldtext, or current text if not available.
-	 *
-	 * @return string Wikitext.
-	 */
-	public function getOldText() {
+	/** Returns oldtext, or current text if not available */
+	public function getOldText(): string {
 		return $this->oldText ?? $this->text;
 	}
 
-	/**
-	 * Returns array of variables defined on this section.
-	 *
-	 * @return array ( string => string ) Values indexed with keys which are
-	 * prefixed with a dollar sign.
-	 */
-	public function getVariables() {
+	/** Returns array of variables and their values defined on this unit */
+	public function getVariables(): array {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 		$matches = [];
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
@@ -151,13 +112,8 @@ class TranslationUnit {
 		return $vars;
 	}
 
-	/**
-	 * Serialize this object to a PHP array.
-	 *
-	 * @return array
-	 * @since 2018.07
-	 */
-	public function serializeToArray() {
+	/** Serialize this object to a PHP array */
+	public function serializeToArray(): array {
 		$data = [];
 		foreach ( self::$properties as $index => $property ) {
 			// Because this is used for the JobQueue, use a list
@@ -168,14 +124,8 @@ class TranslationUnit {
 		return $data;
 	}
 
-	/**
-	 * Construct an object from previously serialized array.
-	 *
-	 * @param array $data
-	 * @return self
-	 * @since 2018.07
-	 */
-	public static function unserializeFromArray( $data ) {
+	/** Construct an object from previously serialized array */
+	public static function unserializeFromArray( $data ): self {
 		$section = new self();
 		foreach ( self::$properties as $index => $property ) {
 			$section->$property = $data[$index];

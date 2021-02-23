@@ -85,7 +85,7 @@ class ParserOutputTest extends MediaWikiUnitTestCase {
 		$units['<1>'] = new TranslationUnit();
 		$units['<1>']->text = 'Hello';
 		$units['<1>']->id = 'abc';
-		$units['<1>']->setIsInline( 'true' );
+		$units['<1>']->setIsInline( true );
 
 		$output = new ParserOutput(
 			'A<0>B',
