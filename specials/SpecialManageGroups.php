@@ -2,6 +2,7 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Synchronization\DisplayGroupSynchronizationInfo;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
 use MediaWiki\MediaWikiServices;
@@ -21,6 +22,7 @@ use OOUI\ButtonInputWidget;
  * @license GPL-2.0-or-later
  */
 class SpecialManageGroups extends SpecialPage {
+	private const GROUP_SYNC_INFO_WRAPPER_CLASS = 'smg-group-sync-cache-info';
 	private const RIGHT = 'translate-manage';
 	/** @var DifferenceEngine */
 	protected $diff;
@@ -36,6 +38,8 @@ class SpecialManageGroups extends SpecialPage {
 	private $revLookup;
 	/** @var GroupSynchronizationCache */
 	private $synchronizationCache;
+	/** @var DisplayGroupSynchronizationInfo */
+	private $displayGroupSyncInfo;
 
 	public function __construct(
 		Language $contLang,
@@ -49,6 +53,7 @@ class SpecialManageGroups extends SpecialPage {
 		$this->nsInfo = $nsInfo;
 		$this->revLookup = $revLookup;
 		$this->synchronizationCache = $synchronizationCache;
+		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this );
 	}
 
 	public function doesWrites() {
@@ -75,7 +80,15 @@ class SpecialManageGroups extends SpecialPage {
 
 		$this->cdb = MessageChangeStorage::getCdbPath( $name );
 		if ( !MessageChangeStorage::isValidCdbName( $name ) || !file_exists( $this->cdb ) ) {
-			$this->displayGroupsInSync( $out );
+			if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
+				$out->addHTML(
+					$this->displayGroupSyncInfo->getGroupsInSyncHtml(
+						$this->synchronizationCache->getGroupsInSync(),
+						self::GROUP_SYNC_INFO_WRAPPER_CLASS
+					)
+				);
+			}
+
 			// @todo Tell them when changes was last checked/process
 			// or how to initiate recheck.
 			$out->addWikiMsg( 'translate-smg-nochanges' );
@@ -149,7 +162,14 @@ class SpecialManageGroups extends SpecialPage {
 		// The above count as three
 		$limit -= 3;
 
-		$this->displayGroupsInSync( $out );
+		if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
+			$out->addHTML(
+				$this->displayGroupSyncInfo->getGroupsInSyncHtml(
+					$this->synchronizationCache->getGroupsInSync(),
+					self::GROUP_SYNC_INFO_WRAPPER_CLASS
+				)
+			);
+		}
 
 		$reader = \Cdb\Reader::open( $this->cdb );
 		$groups = $this->getGroupsFromCdb( $reader );
@@ -969,58 +989,5 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		$jobQueueInstance->push( MessageIndexRebuildJob::newJob() );
-	}
-
-	private function displayGroupsInSync( OutputPage $out ): void {
-		if ( !$this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
-			return;
-		}
-
-		$groupsInSync = $this->synchronizationCache->getGroupsInSync();
-		sort( $groupsInSync );
-
-		if ( !$groupsInSync ) {
-			$out->addHTML( Html::openElement( 'p', [ 'class' => 'smg-group-sync-cache' ] ) );
-			$out->addHTML( $this->msg( 'translate-smg-no-groups-in-sync' )->escaped() );
-			$this->addGroupSyncHelp( $out );
-			$out->addHTML( Html::closeElement( 'p' ) );
-			return;
-		}
-
-		$htmlGroupItems = [];
-		foreach ( $groupsInSync as $groupId ) {
-			$htmlGroupItems[] = Html::element( 'li', [], $groupId );
-		}
-
-		$out->addHTML( Html::openElement( 'div', [ 'class' => 'smg-group-sync-cache' ] ) );
-		$this->addGroupSyncHelp( $out );
-		$out->addHTML( Html::openElement( 'details' ) );
-		$out->addHTML(
-			Html::element( 'summary', [], $this->msg( 'translate-smg-groups-in-sync' )->text() )
-		);
-		$out->addHTML(
-			Html::element( 'p', [], $this->msg( 'translate-smg-groups-in-sync-list' )->text() )
-		);
-		$out->addHTML( Html::openElement( 'ol' ) );
-		$out->addHTML( implode( '', $htmlGroupItems ) );
-		$out->addHTML( Html::closeElement( 'ol' ) );
-		$out->addHTML( Html::closeElement( 'details' ) );
-		$out->addHTML( Html::closeElement( 'div' ) );
-	}
-
-	private function addGroupSyncHelp( OutputPage $out ): void {
-		$params = [
-			'href' => 'https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/' .
-				'Group_management#Strong_synchronization',
-			'target' => '_blank',
-		];
-
-		$helpLink = Html::element(
-			'a',
-			$params,
-			'[' . $this->msg( 'translate-smg-strong-sync-help' )->text() . ']'
-		);
-
-		$out->addHTML( $helpLink );
 	}
 }

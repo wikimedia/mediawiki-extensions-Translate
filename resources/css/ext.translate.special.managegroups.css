@@ -120,13 +120,13 @@
 	color: #222;
 }
 
-.smg-group-sync-cache {
+.smg-group-sync-cache-info {
 	padding: 0.5em 1em;
 	background: #f0f0f0;
 	border-radius: 3px;
 }
 
-.smg-group-sync-cache a {
+.smg-group-sync-cache-info a {
 	position: absolute;
 	right: 1em;
 }
