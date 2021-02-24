@@ -39,6 +39,14 @@ class ExternalMessageSourceStateImporter {
 			$languages = $changesForGroup->getLanguages();
 			$groupJobs = [];
 
+			// If the source language is not safe to import, skip importing all other
+			// languages for the group.
+			$sourceLanguage = $group->getSourceLanguage();
+			if ( !self::isSafe( $changesForGroup, $sourceLanguage ) ) {
+				$skipped[$groupId] = true;
+				continue;
+			}
+
 			foreach ( $languages as $language ) {
 				if ( !self::isSafe( $changesForGroup, $language ) ) {
 					// changes other than additions were present
