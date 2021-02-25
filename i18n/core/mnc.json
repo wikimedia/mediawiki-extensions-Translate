@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Foavi33",
 			"Moon0319"
 		]
 	},
@@ -9,5 +10,6 @@
 	"translate-taction-translate": "ᡠᠪᠠᠯᡳᠶᠠᠮᠪᡠᠮᠪᡳ",
 	"translate-page-settings-legend": "ᡳᠨᠰᡨᡝᠯᠯᡝᠨ",
 	"translate-page-language": "ᡨᠠᠠᠯ",
-	"translate-page-limit": "ᠪᡝᡦᡝᡵᡴᡝᠨ"
+	"translate-page-limit": "ᠪᡝᡦᡝᡵᡴᡝᠨ",
+	"translate-documentation-language": "medege dangse"
 }
