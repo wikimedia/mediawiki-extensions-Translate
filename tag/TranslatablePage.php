@@ -1,11 +1,4 @@
 <?php
-/**
- * Translatable page model.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
@@ -18,37 +11,26 @@ use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\Database;
 
 /**
- * Class to parse translatable wiki pages.
+ * Mixed bag of methods related to translatable pages.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup PageTranslation
  */
 class TranslatablePage {
-	/**
-	 * Title of the page.
-	 */
+	/** @var Title */
 	protected $title;
 	/** @var ?string Text contents of the page. */
 	protected $text;
-	/**
-	 * Revision of the page, if applicaple.
-	 *
-	 * @var int
-	 */
+	/** @var ?int Revision of the page, if applicable. */
 	protected $revision;
-	/**
-	 * From which source this object was constructed.
-	 * Can be: text, revision, title
-	 */
+	/** @var string From which source this object was constructed: text, revision or title */
 	protected $source;
-	/**
-	 * Name of the section which contains the translated page title.
-	 */
+	/** @var string Name of the section which contains the translated page title. */
 	protected $displayTitle = 'Page display title';
-	/**
-	 * Whether the title should be translated
-	 * @var bool
-	 */
+	/** @var ?bool Whether the title should be translated */
 	protected $pageDisplayTitle;
+	/** @var ?TPParse */
 	protected $cachedParse;
 	/** @var ?string */
 	private $targetLanguage;
