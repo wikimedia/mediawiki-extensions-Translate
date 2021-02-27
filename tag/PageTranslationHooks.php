@@ -76,7 +76,14 @@ class PageTranslationHooks {
 		$name = $page->getPageDisplayTitle( $code );
 		if ( $name ) {
 			$name = $wikitextParser->recursivePreprocess( $name );
-			$name = $wikitextParser->getTargetLanguage()->convert( $name );
+			if ( method_exists( MediaWikiServices::class, 'getLanguageConverterFactory' ) ) {
+				// MW >= 1.35
+				$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
+					->getLanguageConverter( $wikitextParser->getTargetLanguage() );
+				$name = $langConv->convert( $name );
+			} else {
+				$name = $wikitextParser->getTargetLanguage()->convert( $name );
+			}
 			$wikitextParser->getOutput()->setDisplayTitle( $name );
 		}
 		self::$renderingContext = false;
