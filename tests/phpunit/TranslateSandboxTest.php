@@ -22,11 +22,27 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 		TranslateHooks::setupTranslate();
 	}
 
+	/**
+	 * @param User $user
+	 * @return array|string[]
+	 */
+	private function getUserGroups( User $user ): array {
+		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
+			// MediaWiki 1.35+
+			$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+			$groups = $userGroupManager->getUserGroups( $user );
+		} else {
+			$groups = $user->getGroups();
+		}
+
+		return $groups;
+	}
+
 	public function testAddUser() {
 		$user = TranslateSandbox::addUser( 'Test user', 'test@blackhole.io', 'test password' );
 		$this->assertTrue( $user->isRegistered(), 'User exists' );
 
-		$groups = array_unique( $user->getGroups() );
+		$groups = array_unique( $this->getUserGroups( $user ) );
 
 		$this->assertSame( [ 'translate-sandboxed' ], $groups, 'User is in the sandboxed group' );
 	}
@@ -84,7 +100,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 		$user = TranslateSandbox::addUser( 'Test user6', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::promoteUser( $user );
 
-		$this->assertContains( 'translator', $user->getGroups() );
+		$this->assertContains( 'translator', $this->getUserGroups( $user ) );
 	}
 
 	public function testPermissions() {
@@ -101,5 +117,13 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 			$pm->userCan( 'edit', $user, $title ),
 			'Promoted users can edit their own talk page'
 		);
+	}
+
+	public function testIsSandboxed() {
+		$userNotInGroup = $this->getTestUser()->getUser();
+		$userInGroup = $this->getTestUser( [ 'translate-sandboxed' ] )->getUser();
+
+		$this->assertTrue( TranslateSandbox::isSandboxed( $userInGroup ) );
+		$this->assertFalse( TranslateSandbox::isSandboxed( $userNotInGroup ) );
 	}
 }

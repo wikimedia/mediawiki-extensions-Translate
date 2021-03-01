@@ -245,7 +245,15 @@ class TranslateSandbox {
 	 * @since 2013.06
 	 */
 	public static function isSandboxed( User $user ) {
-		return in_array( 'translate-sandboxed', $user->getGroups(), true );
+		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
+			// MediaWiki 1.35+
+			$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+			$groups = $userGroupManager->getUserGroups( $user );
+		} else {
+			$groups = $user->getGroups();
+		}
+
+		return in_array( 'translate-sandboxed', $groups, true );
 	}
 
 	/**
