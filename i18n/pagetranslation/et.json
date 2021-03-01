@@ -76,7 +76,7 @@
 	"pt-parse-open": "Puudub sildile &lt;translate> vastav lõpusilt.\nTõlkemall: <pre>$1</pre>",
 	"pt-parse-close": "Puudub sildile &lt;/translate> vastav algussilt.\nTõlkemall: <pre>$1</pre>",
 	"pt-parse-nested": "Pesastatud &lt;translate>-tõlkeüksused pole lubatud.\nSildi tekst: <pre>$1</pre>",
-	"pt-shake-multiple": "Ühel tõlkeüksusel on mitu tähist.\nTõlkeüksuse tekst: <pre>$1</pre>",
+	"pt-shake-multiple": "Ühel tõlkeüksusel on mitu tähist.\nVeendu, et tõlkeüksusi eraldavad tühjad read.\nTõlkeüksuse tekst: <pre>$1</pre>",
 	"pt-shake-position": "Tõlkeüksuse tähis on ootamatu koha peal.\nTõlkeüksuse tekst: <pre>$1</pre>",
 	"pt-shake-empty": "Tõlkeüksus tähisega \"$1\" on tühi.",
 	"log-description-pagetranslation": "Lehekülgede tõlkesüsteemiga seotud toimingute logi",
