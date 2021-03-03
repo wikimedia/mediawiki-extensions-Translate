@@ -762,9 +762,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$this->priorityLanguagesForm( $page );
 
-		// When marking a page that does not have template transclusion we select the
-		// template transclusion checkbox
-		$this->templateTransclusionForm( $page->supportsTransclusion() ?? true );
+		// If an existing page does not have the supportsTransclusion flag, keep the checkbox unchecked,
+		// If the page is being marked for translation for the first time, the checkbox can be checked
+		$this->templateTransclusionForm( $page->supportsTransclusion() ?? $firstMark );
 
 		$version = TranslateMetadata::getWithDefaultValue(
 			$page->getMessageGroupId(), 'version', self::DEFAULT_SYNTAX_VERSION
