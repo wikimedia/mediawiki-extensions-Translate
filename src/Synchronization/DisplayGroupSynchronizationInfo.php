@@ -50,7 +50,6 @@ class DisplayGroupSynchronizationInfo {
 			'translate-smg-groups-in-sync-list',
 			Html::rawElement( 'ul', [], implode( '', $htmlGroupItems ) ),
 			$this->addGroupSyncHelp( $wrapperClass )
-
 		);
 	}
 
@@ -71,7 +70,7 @@ class DisplayGroupSynchronizationInfo {
 		}
 
 		return $this->getGroupSyncInfoHtml(
-			$wrapperClass,
+			$wrapperClass . ' js-group-sync-groups-with-error',
 			'translate-smg-groups-with-error-title',
 			'translate-smg-groups-with-error-desc',
 			implode( '', $htmlGroupItems )
@@ -118,23 +117,42 @@ class DisplayGroupSynchronizationInfo {
 		Language $language,
 		string $wrapperClass
 	): string {
-		$output = Html::openElement( 'details', [ 'class' => "{$wrapperClass}__group-errors" ] );
-		$output .= Html::element( 'summary', [], $groupErrorResponse->getGroupId() );
+		$groupId = $groupErrorResponse->getGroupId();
+		$output = Html::openElement(
+			'details',
+			[ 'class' => "{$wrapperClass}__group_errors js-group-sync-group-errors" ]
+		);
+
+		$groupResolveAction = Html::linkButton(
+			$this->localizer->msg( 'translate-smg-group-action-resolve' )->text(),
+			[
+				'class' => "{$wrapperClass}__resolve-action js-group-sync-group-resolve",
+				'href' => '#',
+				'data-group-id' => $groupId,
+			]
+		);
+
+		$output .= Html::rawElement(
+			'summary',
+			[],
+			$groupId . ' ' .
+			Html::rawElement(
+				'span',
+				[ 'class' => "{$wrapperClass}__sync-actions" ],
+				$this->localizer->msg( 'parentheses' )
+					->params( $groupResolveAction )->text()
+
+			)
+		);
 
 		$errorMessages = $groupErrorResponse->getRemainingMessages();
-		$output .= Html::element(
-			'p',
-			[],
-			$this->localizer->msg( 'translate-smg-group-with-error-summary' )
-				->numParams( count( $errorMessages ) )->text()
-		);
 
 		$output .= Html::openElement( 'ol' );
 		foreach ( $errorMessages as $message ) {
 			$output .= Html::rawElement(
 				'li',
-				[ 'class' => "{$wrapperClass}__message-error" ],
-				$this->getErrorMessageHtml( $message, $language, $wrapperClass )
+				[ 'class' => "{$wrapperClass}__message-error js-group-sync-message-error" ],
+				$this->getErrorMessageHtml( $groupId, $message, $language, $wrapperClass )
 			);
 		}
 		$output .= Html::closeElement( 'ol' );
@@ -145,6 +163,7 @@ class DisplayGroupSynchronizationInfo {
 	}
 
 	private function getErrorMessageHtml(
+		string $groupId,
 		MessageUpdateParameter $message,
 		Language $language,
 		string $wrapperClass
@@ -163,14 +182,22 @@ class DisplayGroupSynchronizationInfo {
 			$output = $this->linkRenderer->makeBrokenLink( $messageTitle, $message->getPageName() );
 		}
 
-		if ( $actions ) {
-			$output .= ' ' . Html::rawElement(
-				'span',
-				[ 'class' => "{$wrapperClass}__message-error-actions" ],
-				$this->localizer->msg( 'parentheses' )
-					->params( $language->pipeList( $actions ) )->text()
-			);
-		}
+		$actions[] = Html::linkButton(
+			$this->localizer->msg( 'translate-smg-group-action-resolve' )->text(),
+			[
+				'class' => "{$wrapperClass}__resolve-action js-group-sync-message-resolve",
+				'href' => '#',
+				'data-group-id' => $groupId,
+				'data-msg-title' => $message->getPageName(),
+			]
+		);
+
+		$output .= ' ' . Html::rawElement(
+			'span',
+			[ 'class' => "{$wrapperClass}__sync-actions" ],
+			$this->localizer->msg( 'parentheses' )
+				->params( $language->pipeList( $actions ) )->text()
+		);
 
 		$output .= $this->getMessageInfoHtml( $message, $language );
 

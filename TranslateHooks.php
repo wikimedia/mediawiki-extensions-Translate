@@ -1078,6 +1078,9 @@ class TranslateHooks {
 					"translate-smg-rename-new",
 					"translate-smg-rename-rename",
 					"translate-smg-rename-dialog-title",
+					"translate-smg-loading",
+					"translate-smg-group-action-resolve",
+					"translate-smg-unknown-error",
 					"percent"
 				],
 				"scripts" => [
