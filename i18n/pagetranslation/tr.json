@@ -72,6 +72,8 @@
 	"tpt-sections-syntaxversion": "Söz dizimi sürümü",
 	"tpt-syntaxversion-text": "Bu sayfa şu anda çevrilebilir sayfa kaynağı sözdiziminin eski bir sürümünü kullanmaktadır. Yeni sürüm, metnin doğru dilini belirtmek için çevrilmemiş bölümleri bir HTML etiketi ile sarar. Örnek: $1. Bir öğenin <code>title</code> özelliğini çevirirken olduğu gibi, uygun olmayan yerlerde her tür kaydırmayı önlemek için yeni bir biçimlendirme sözdizimi $2 kullanabilirsiniz. Eski bir sözdizimi sürümüne geri dönmek mümkün değildir.",
 	"tpt-syntaxversion-label": "Bu sayfa için en son sözdizimi sürümünü kullanın",
+	"tpt-transclusion": "Şablon yansıtması",
+	"tpt-transclusion-label": "Bu sayfa için çeviriye duyarlı yansıtmayı etkinleştirin",
 	"tpt-rev-mark": "çeviri için işaretle",
 	"tpt-rev-unmark": "çeviriden kaldır",
 	"tpt-rev-discourage": "vazgeç",
