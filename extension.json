@@ -1028,6 +1028,11 @@
 			"value": false,
 			"description": "If true, enables the group synchronization cache that keeps track of FileBasedMessageGroups messages currently being processed via MessageUpdateJob",
 			"public": true
+		},
+		"TranslatePageMoveLimit": {
+			"value": 500,
+			"description": "If set, displays a warning and does not allow user to move translatable pages having more subpages than this value",
+			"public": true
 		}
 	},
 	"DefaultUserOptions": {

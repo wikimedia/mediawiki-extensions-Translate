@@ -433,9 +433,11 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			$titles['section'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
 		}
 
-		// Check that all new titles are valid
+		// Check that all new titles are valid and count them. Add 1 for source page.
+		$moveCount = 1;
 		$lb = new LinkBatch();
 		foreach ( $titles as $type => $list ) {
+			$moveCount += count( $list );
 			// Give grep a chance to find the usages:
 			// pt-movepage-block-tp-invalid, pt-movepage-block-section-invalid,
 			// pt-movepage-block-subpage-invalid
@@ -451,6 +453,14 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				$lb->addObj( $old );
 				$lb->addObj( $new );
 			}
+		}
+
+		$pageMoveLimit = $this->getConfig()->get( 'TranslatePageMoveLimit' );
+		if ( $pageMoveLimit !== null && $pageMoveLimit <= $moveCount ) {
+			$blockers[$source] = Status::newFatal(
+				'pt-movepage-page-count-limit',
+				Message::numParam( $pageMoveLimit )
+			);
 		}
 
 		if ( count( $blockers ) ) {

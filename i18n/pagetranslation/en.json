@@ -153,6 +153,7 @@
 	"pt-movepage-list-translatable-note": "These pages must be moved separately.",
 	"pt-movepage-list-other": "Other {{PLURAL:$1|subpage|subpages}}",
 	"pt-movepage-list-count": "In total $1 {{PLURAL:$1|page|pages}} to move and $2 {{PLURAL:$2|subpage|subpages}}.",
+	"pt-movepage-page-count-limit": "This translatable page consists of over $1 {{PLURAL:$1|page|pages}}. Moving this many pages has been found to be unreliable. Please contact the administrator to do this via a maintenance script.",
 	"pt-movepage-list-no-pages": "No pages found.",
 	"pt-movepage-legend": "Move translatable page",
 	"pt-movepage-current": "Current name:",
