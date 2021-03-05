@@ -10,6 +10,7 @@
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Authority;
 
 /**
  * Job for updating translation pages when translation or template changes.
@@ -92,7 +93,8 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$this->params['flags'] = $flags;
 	}
 
-	public function getFlags() {
+	/** @return int */
+	private function getFlags() {
 		return $this->params['flags'];
 	}
 
@@ -100,7 +102,8 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$this->params['summary'] = $summary;
 	}
 
-	public function getSummary() {
+	/** @return string */
+	private function getSummary() {
 		return $this->params['summary'];
 	}
 
@@ -116,9 +119,9 @@ class TranslateRenderJob extends GenericTranslateJob {
 	/**
 	 * Get a user object for doing edits.
 	 *
-	 * @return User
+	 * @return Authority
 	 */
-	public function getUser() {
+	private function getUser() {
 		return User::newFromName( $this->params['user'], false );
 	}
 }
