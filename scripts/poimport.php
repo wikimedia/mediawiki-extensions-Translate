@@ -228,7 +228,7 @@ class WikiWriter {
 	private $group;
 
 	/**
-	 * @param array $changes Array of key/langcode => translation.
+	 * @param string[] $changes Array of key/langcode => translation.
 	 * @param string $groupId Group ID.
 	 * @param string $user User who makes the edits in wiki.
 	 * @param bool $dryrun Do not do anything that affects the database.

@@ -997,11 +997,16 @@ class MessageDefinitions {
 	/** @var Title[] */
 	private $pages;
 
+	/**
+	 * @param string[] $messages
+	 * @param int|false $namespace
+	 */
 	public function __construct( array $messages, $namespace = false ) {
 		$this->namespace = $namespace;
 		$this->messages = $messages;
 	}
 
+	/** @return string[] */
 	public function getDefinitions() {
 		return $this->messages;
 	}
