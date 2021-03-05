@@ -33,9 +33,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/** @var string Language code. */
 	public $code;
 	/** @var MessageDefinitions */
-	protected $definitions = null;
+	private $definitions = null;
 	/** @var array array( %Message key => translation, ... ) */
-	protected $infile = [];
+	private $infile = [];
 	// Keys and messages.
 
 	/** @var array array( %Message display key => database key, ... ) */
@@ -43,15 +43,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/** @var array array( %Message String => TMessage, ... ) */
 	protected $messages = [];
 	/** @var array */
-	protected $reverseMap;
+	private $reverseMap;
 	// Database resources
 
 	/** @var ?Traversable Stored message existence and fuzzy state. */
-	protected $dbInfo;
+	private $dbInfo;
 	/** @var ?Traversable Stored translations in database. */
-	protected $dbData;
+	private $dbData;
 	/** @var ?Traversable Stored reviews in database. */
-	protected $dbReviewData;
+	private $dbReviewData;
 	/**
 	 * Tags, copied to thin messages
 	 * tagtype => keys
@@ -62,9 +62,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Properties, copied to thin messages
 	 * @var array[]
 	 */
-	protected $properties = [];
+	private $properties = [];
 	/** @var string[] Authors. */
-	protected $authors = [];
+	private $authors = [];
 
 	/**
 	 * Constructors. Use newFromDefinitions() instead.
@@ -990,9 +990,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
  * API totally changed in 2011-12-28
  */
 class MessageDefinitions {
-	protected $namespace;
-	protected $messages;
-	protected $pages;
+	/** @var int|false */
+	private $namespace;
+	/** @var string[] */
+	private $messages;
+	/** @var Title[] */
+	private $pages;
 
 	public function __construct( array $messages, $namespace = false ) {
 		$this->namespace = $namespace;

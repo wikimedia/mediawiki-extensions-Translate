@@ -10,7 +10,7 @@
  * @since 2014.01
  */
 class MessageGroupConfigurationParser {
-	protected $baseSchema;
+	private $baseSchema;
 
 	public function __construct() {
 		// Don't perform validations if library not available

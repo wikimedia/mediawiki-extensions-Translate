@@ -17,13 +17,13 @@ use MediaWiki\MediaWikiServices;
  */
 class MessageGroups {
 	/** @var string[]|null Cache for message group priorities */
-	protected static $prioritycache;
+	private static $prioritycache;
 	/** @var MessageGroup[]|null Map of (group ID => MessageGroup) */
-	protected $groups;
+	private $groups;
 	/** @var MessageGroupLoader[]|null */
-	protected $groupLoaders;
+	private $groupLoaders;
 	/** @var WANObjectCache|null */
-	protected $cache;
+	private $cache;
 
 	/**
 	 * Tracks the current cache verison. Update this when there are incompatible changes

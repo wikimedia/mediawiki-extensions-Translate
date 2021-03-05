@@ -88,10 +88,10 @@ class Poimport extends Maintenance {
  */
 class PoImporter {
 	/** @var callable Function to report progress updates */
-	protected $progressCallback;
+	private $progressCallback;
 	/**
 	 * Path to file to parse.
-	 * @var bool|string
+	 * @var string
 	 */
 	private $file;
 
@@ -216,12 +216,16 @@ class PoImporter {
  * Import changes to wiki as given user
  */
 class WikiWriter {
-	/** @var callable Function to report progress updates */
-	protected $progressCallback;
-	protected $user;
-	private $changes = [];
-	private $dryrun = true;
-	private $group = null;
+	/** @var callable|null Function to report progress updates */
+	private $progressCallback;
+	/** @var User */
+	private $user;
+	/** @var string[] */
+	private $changes;
+	/** @var bool */
+	private $dryrun;
+	/** @var MessageGroup|null */
+	private $group;
 
 	/**
 	 * @param array $changes Array of key/langcode => translation.
