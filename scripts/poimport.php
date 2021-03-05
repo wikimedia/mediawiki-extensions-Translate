@@ -233,7 +233,7 @@ class WikiWriter {
 	 * @param string $user User who makes the edits in wiki.
 	 * @param bool $dryrun Do not do anything that affects the database.
 	 */
-	public function __construct( $changes, $groupId, $user, $dryrun = true ) {
+	public function __construct( array $changes, $groupId, $user, $dryrun = true ) {
 		$this->changes = $changes;
 		$this->group = MessageGroups::getGroup( $groupId );
 		$this->user = User::newFromName( $user );

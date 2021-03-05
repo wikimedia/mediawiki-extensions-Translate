@@ -73,7 +73,7 @@
 	 * @return {string}
 	 */
 	function addLanguageBar( pageContent ) {
-		if ( !pageContent.match( /<languages\/>/gi ) ) {
+		if ( !/<languages\/>/gi.test( pageContent ) ) {
 			pageContent = '<languages/>\n' + pageContent;
 		}
 		pageContent = pageContent.replace( /\{\{languages.*?\}\}/gi, '' );

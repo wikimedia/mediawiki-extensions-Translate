@@ -31,7 +31,7 @@ class TranslateSandbox {
 	public static function addUser( $name, $email, $password ) {
 		$user = User::newFromName( $name, 'creatable' );
 
-		if ( !$user instanceof User ) {
+		if ( !$user ) {
 			throw new MWException( 'Invalid user name' );
 		}
 
