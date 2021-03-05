@@ -14,7 +14,7 @@ use MediaWiki\Widget\TagMultiselectWidget;
  */
 class LanguagesMultiselectWidget extends TagMultiselectWidget {
 	/** @var array */
-	private $languages = [];
+	private $languages;
 
 	public function __construct( array $config = [] ) {
 		parent::__construct( $config );

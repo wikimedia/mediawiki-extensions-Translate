@@ -11,7 +11,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
  */
 class HtmlTagInsertablesSuggester implements InsertablesSuggester {
 	/** @var InsertablesSuggester */
-	private $suggester = null;
+	private $suggester;
 
 	public function __construct() {
 		$this->suggester = new RegexInsertablesSuggester( [

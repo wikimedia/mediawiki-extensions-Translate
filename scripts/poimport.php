@@ -93,7 +93,7 @@ class PoImporter {
 	 * Path to file to parse.
 	 * @var bool|string
 	 */
-	private $file = false;
+	private $file;
 
 	/** @param string $file File to import */
 	public function __construct( $file ) {

@@ -98,7 +98,7 @@ class Fuzzy extends Maintenance {
  */
 class FuzzyScript {
 	/** @var bool Check for configuration problems. */
-	private $allclear = false;
+	private $allclear = true;
 	/** @var callable Function to report progress updates */
 	protected $progressCallback;
 	/** @var bool Dont do anything unless confirmation is given */
@@ -111,7 +111,6 @@ class FuzzyScript {
 	/** @param array $pages */
 	public function __construct( $pages ) {
 		$this->pages = $pages;
-		$this->allclear = true;
 	}
 
 	public function setProgressCallback( $callback ) {
