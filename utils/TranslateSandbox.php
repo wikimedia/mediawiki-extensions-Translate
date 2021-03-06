@@ -81,7 +81,12 @@ class TranslateSandbox {
 		}
 
 		// group-translate-sandboxed group-translate-sandboxed-member
-		$user->addGroup( 'translate-sandboxed' );
+		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
+			// MediaWiki 1.35+
+			MediaWikiServices::getInstance()->getUserGroupManager()->addUserToGroup( $user, 'translate-sandboxed' );
+		} else {
+			$user->addGroup( 'translate-sandboxed' );
+		}
 
 		return $user;
 	}
@@ -168,9 +173,20 @@ class TranslateSandbox {
 			throw new MWException( 'Not a sandboxed user' );
 		}
 
-		$user->removeGroup( 'translate-sandboxed' );
-		if ( $wgTranslateSandboxPromotedGroup ) {
-			$user->addGroup( $wgTranslateSandboxPromotedGroup );
+		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
+			// MediaWiki 1.35+
+			$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+			$userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
+
+			if ( $wgTranslateSandboxPromotedGroup ) {
+				$userGroupManager->addUserToGroup( $user, $wgTranslateSandboxPromotedGroup );
+			}
+		} else {
+			$user->removeGroup( 'translate-sandboxed' );
+
+			if ( $wgTranslateSandboxPromotedGroup ) {
+				$user->addGroup( $wgTranslateSandboxPromotedGroup );
+			}
 		}
 
 		$user->setOption( 'translate-sandbox-reminders', '' );
