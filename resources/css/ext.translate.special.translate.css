@@ -191,19 +191,17 @@
 	}
 }
 
-.tux-message-filter-wrapper {
-	background: no-repeat scroll left center transparent;
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/search.svg );
-	background-size: 25px;
-	padding-left: 30px;
-}
-
 .tux-message-filter-box {
+	background: no-repeat url( ../images/search.svg ) 8px center;
+	background-size: 18px;
 	font-size: 14px;
+	/* FIXME: `box-sizing` lives here due to a shortcoming in Timeless, isn't needed in other skins
+	As soon as https://phabricator.wikimedia.org/T276896 is resolved, next line should be removed */
+	box-sizing: border-box !important;
 	height: 28px;
 	border: 1px solid #c9c9c9;
 	width: 100%;
-	padding: 0 5px;
+	padding: 0 5px 0 34px;
 	margin: 0;
 }
 
