@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use FormatJson;
 use Language;
-use Maintenance;
+use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\ParallelExecutor;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
@@ -20,25 +20,26 @@ use WikiMap;
  * @license GPL-2.0-or-later
  * @author Niklas Laxström
  */
-class ExportTtmServerDumpMaintenanceScript extends Maintenance {
+class ExportTtmServerDumpMaintenanceScript extends BaseMaintenanceScript {
 	/** @var Language */
 	private $contentLanguage;
 
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Creates a dump file that can be imported to a TTMServer' );
+
 		$this->addOption(
 			'output-directory',
 			'Which directory to output files to',
-			true,
-			true,
+			self::REQUIRED,
+			self::HAS_ARG,
 			'o'
 		);
 		$this->addOption(
 			'threads',
 			'How many threads to use',
-			false,
-			true,
+			self::OPTIONAL,
+			self::HAS_ARG,
 			'n'
 		);
 
@@ -47,8 +48,8 @@ class ExportTtmServerDumpMaintenanceScript extends Maintenance {
 		$this->addOption(
 			'compress',
 			"Use a compression filter. Possible values: $values",
-			false,
-			true,
+			self::OPTIONAL,
+			self::HAS_ARG,
 			'c'
 		);
 

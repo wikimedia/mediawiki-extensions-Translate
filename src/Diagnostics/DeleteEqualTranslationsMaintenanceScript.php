@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
-use Maintenance;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MessageCollection;
 use MessageGroups;
 use SplObjectStorage;
@@ -19,13 +19,11 @@ use const SORT_NUMERIC;
  * @license GPL-2.0-or-later
  * @author Niklas Laxström
  */
-class DeleteEqualTranslationsMaintenanceScript extends Maintenance {
-	private const REQUIRED = true;
-	private const HAS_ARG = true;
-
+class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Delete translations that are equal to the definition' );
+
 		$this->addOption(
 			'group',
 			'Which group to scan',

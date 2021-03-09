@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
 use GettextFFS;
-use Maintenance;
+use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
 use MessageGroup;
 use MessageGroups;
@@ -21,7 +21,7 @@ use TranslateUtils;
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
-class ExportTranslationsMaintenanceScript extends Maintenance {
+class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	/// The translation file should be deleted if it exists
 	private const ACTION_DELETE = 'delete';
 	/// The translation file should be created or updated
@@ -32,68 +32,67 @@ class ExportTranslationsMaintenanceScript extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Export translations to files.' );
+
 		$this->addOption(
 			'group',
 			'Comma separated list of message group IDs (supports * wildcard) to export',
-			true, /*required*/
-			true /*has arg*/
+			self::REQUIRED,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'lang',
 			'Comma separated list of language codes or *',
-			true, /*required*/
-			true /*has arg*/
+			self::REQUIRED,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'target',
 			'Target directory for exported files',
-			true, /*required*/
-			true /*has arg*/
+			self::REQUIRED,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'skip',
 			'(optional) Languages to skip, comma separated list',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'skipgroup',
 			'(optional) Comma separated list of message group IDs (supports * wildcard) to not export',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'threshold',
 			'(optional) Threshold for translation completion percentage that must be exceeded for initial export',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'removal-threshold',
 			'(optional) Threshold for translation completion percentage that must be exceeded to keep the file',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'hours',
 			'(optional) Only export languages with changes in the last given number of hours',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'no-fuzzy',
-			'(optional) Do not include any messages marked as fuzzy/outdated',
-			false, /*required*/
-			false /*has arg*/
+			'(optional) Do not include any messages marked as fuzzy/outdated'
 		);
-
 		$this->addOption(
 			'offline-gettext-format',
 			'(optional) Export languages in offline Gettext format. Give a file pattern with '
 			. '%GROUPID% and %CODE%. Empty pattern defaults to %GROUPID%/%CODE%.po.',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
+
 		$this->requireExtension( 'Translate' );
 	}
 

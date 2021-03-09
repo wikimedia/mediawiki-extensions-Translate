@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use Maintenance;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -13,7 +13,7 @@ use MediaWiki\MediaWikiServices;
  * @license GPL-2.0-or-later
  * @since 2021.01
  */
-class ClearGroupSyncCacheMaintenanceScript extends Maintenance {
+class ClearGroupSyncCacheMaintenanceScript extends BaseMaintenanceScript {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Clear the contents of the group synchronization cache for a single or all groups' );
@@ -21,15 +21,12 @@ class ClearGroupSyncCacheMaintenanceScript extends Maintenance {
 		$this->addOption(
 			'group',
 			'(optional) Group Id being cleared',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
-
 		$this->addOption(
 			'all',
-			'(optional) Clear all groups',
-			false, /*required*/
-			false /*has arg*/
+			'(optional) Clear all groups'
 		);
 
 		$this->requireExtension( 'Translate' );

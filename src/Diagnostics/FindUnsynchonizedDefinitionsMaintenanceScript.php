@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
 use FileBasedMessageGroup;
-use Maintenance;
+use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MessageGroups;
 use Title;
 
@@ -13,9 +13,7 @@ use Title;
  * @license GPL-2.0-or-later
  * @author Niklas Laxström
  */
-class FindUnsynchonizedDefinitionsMaintenanceScript extends Maintenance {
-	private const REQUIRED = true;
-
+class FindUnsynchonizedDefinitionsMaintenanceScript extends BaseMaintenanceScript {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription(
@@ -25,9 +23,22 @@ class FindUnsynchonizedDefinitionsMaintenanceScript extends Maintenance {
 			'not. See https://phabricator.wikimedia.org/T270844'
 		);
 
-		$this->addArg( 'group-pattern', 'For example page-*,main', self::REQUIRED );
-		$this->addOption( 'ignore-trailing-whitespace', 'Ignore trailing whitespace', false, false, 'w' );
-		$this->addOption( 'fix', 'Try to fix the issues by triggering reprocessing' );
+		$this->addArg(
+			'group-pattern',
+			'For example page-*,main',
+			self::REQUIRED
+		);
+		$this->addOption(
+			'ignore-trailing-whitespace',
+			'Ignore trailing whitespace',
+			self::OPTIONAL,
+			self::NO_ARG,
+			'w'
+		);
+		$this->addOption(
+			'fix',
+			'Try to fix the issues by triggering reprocessing'
+		);
 
 		$this->requireExtension( 'Translate' );
 	}
