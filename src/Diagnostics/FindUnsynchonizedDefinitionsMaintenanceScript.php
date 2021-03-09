@@ -26,6 +26,7 @@ class FindUnsynchonizedDefinitionsMaintenanceScript extends Maintenance {
 		);
 
 		$this->addArg( 'group-pattern', 'For example page-*,main', self::REQUIRED );
+		$this->addOption( 'ignore-trailing-whitespace', 'Ignore trailing whitespace', false, false, 'w' );
 		$this->addOption( 'fix', 'Try to fix the issues by triggering reprocessing' );
 
 		$this->requireExtension( 'Translate' );
@@ -34,6 +35,7 @@ class FindUnsynchonizedDefinitionsMaintenanceScript extends Maintenance {
 	/** @inheritDoc */
 	public function execute() {
 		$spec = $this->getArg( 0 );
+		$ignoreTrailingWhitespace = $this->getOption( 'ignore-trailing-whitespace' );
 		$patterns = explode( ',', trim( $spec ) );
 		$groupIds = MessageGroups::expandWildcards( $patterns );
 		$groups = MessageGroups::getGroupsById( $groupIds );
@@ -58,7 +60,12 @@ class FindUnsynchonizedDefinitionsMaintenanceScript extends Maintenance {
 				$message = $collection[$mkey];
 				$definition = $message->definition() ?? '';
 				$translation = $message->translation() ?? '';
-				if ( $definition !== $translation ) {
+
+				$differs = $ignoreTrailingWhitespace
+					? rtrim( $definition ) !== $translation
+					: $definition !== $translation;
+
+				if ( $differs ) {
 					$groupsWithIssues[$group->getId()] = $group;
 					echo Title::newFromLinkTarget( $title )->getPrefixedText() . "\n";
 					echo $this->getSideBySide( "'$definition'", "'$translation'", 80 ) . "\n";
