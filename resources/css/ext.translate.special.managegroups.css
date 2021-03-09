@@ -82,6 +82,11 @@
 	margin-top: 2.5em;
 }
 
+.mw-translate-smg-change .mw-translate-smg-notice-important {
+	background: #fbb;
+	border: 1px solid #f58d8d;
+}
+
 /**************************
  * Rename dropdown styles
  **************************/

@@ -39,17 +39,10 @@ class ExternalMessageSourceStateImporter {
 			$languages = $changesForGroup->getLanguages();
 			$groupJobs = [];
 
-			// If the source language is not safe to import, skip importing all other
-			// languages for the group.
-			$sourceLanguage = $group->getSourceLanguage();
-			if ( !self::isSafe( $changesForGroup, $sourceLanguage ) ) {
-				$skipped[$groupId] = true;
-				continue;
-			}
+			$groupSafeLanguages = self::identifySafeLanguages( $group, $changesForGroup );
 
 			foreach ( $languages as $language ) {
-				if ( !self::isSafe( $changesForGroup, $language ) ) {
-					// changes other than additions were present
+				if ( !$groupSafeLanguages[ $language ] ) {
 					$skipped[$groupId] = true;
 					continue;
 				}
@@ -94,26 +87,6 @@ class ExternalMessageSourceStateImporter {
 			'skipped' => $skipped,
 			'name' => $name,
 		];
-	}
-
-	/**
-	 * Checks if changes for a language in a group are safe.
-	 * @param MessageSourceChange $changesForGroup
-	 * @param string $language
-	 * @return bool
-	 */
-	public static function isSafe( MessageSourceChange $changesForGroup, string $language ): bool {
-		if ( !$changesForGroup->hasOnly( $language, MessageSourceChange::ADDITION ) ) {
-			return false;
-		}
-
-		foreach ( $changesForGroup->getAdditions( $language ) as $change ) {
-			if ( $change['content'] === '' ) {
-				return false;
-			}
-		}
-
-		return true;
 	}
 
 	/**
@@ -178,5 +151,79 @@ class ExternalMessageSourceStateImporter {
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$groupSyncCache->addMessages( $groupId, ...$messageParams );
 		$groupSyncCache->markGroupForSync( $groupId );
+	}
+
+	/**
+	 * Identifies languages in a message group that are safe to import
+	 * @param MessageGroup $group
+	 * @param MessageSourceChange $changesForGroup
+	 * @return bool[]
+	 */
+	private static function identifySafeLanguages(
+		MessageGroup $group,
+		MessageSourceChange $changesForGroup
+	): array {
+		$sourceLanguage = $group->getSourceLanguage();
+		$safeLanguagesMap = [];
+		$modifiedLanguages = $changesForGroup->getLanguages();
+
+		// Set all languages to not safe to start with.
+		$safeLanguagesMap[ $sourceLanguage ] = false;
+		foreach ( $modifiedLanguages as $language ) {
+			$safeLanguagesMap[ $language ] = false;
+		}
+
+		if ( !$changesForGroup->hasOnly( $sourceLanguage, MessageSourceChange::ADDITION ) ) {
+			return $safeLanguagesMap;
+		}
+
+		$sourceLanguageKeyCache = [];
+		foreach ( $changesForGroup->getAdditions( $sourceLanguage ) as $change ) {
+			if ( $change['content'] === '' ) {
+				return $safeLanguagesMap;
+			}
+
+			$sourceLanguageKeyCache[ $change['key'] ] = true;
+		}
+
+		$safeLanguagesMap[ $sourceLanguage ] = true;
+
+		$groupNamespace = $group->getNamespace();
+
+		// Remove source language from the modifiedLanguage list if present since it's already processed.
+		// The $sourceLanguageKeyCache will only have values if sourceLanguage has safe changes.
+		if ( $sourceLanguageKeyCache ) {
+			array_splice( $modifiedLanguages, array_search( $sourceLanguage, $modifiedLanguages ), 1 );
+		}
+
+		foreach ( $modifiedLanguages as $language ) {
+			if ( !$changesForGroup->hasOnly( $language, MessageSourceChange::ADDITION ) ) {
+				continue;
+			}
+
+			foreach ( $changesForGroup->getAdditions( $language ) as $change ) {
+				if ( $change['content'] === '' ) {
+					continue 2;
+				}
+
+				$msgKey = $change['key'];
+
+				if ( !isset( $sourceLanguageKeyCache[ $msgKey ] ) ) {
+					// This is either a new external translation which is not added in the same sync
+					// as the source language key, or this translation does not have a correspoding
+					// definition. We will check the message index to determine which of the two.
+					$sourceHandle = new MessageHandle( Title::makeTitle( $groupNamespace, $msgKey ) );
+					$sourceLanguageKeyCache[ $msgKey ] = $sourceHandle->isValid();
+				}
+
+				if ( !$sourceLanguageKeyCache[ $msgKey ] ) {
+					continue 2;
+				}
+			}
+
+			$safeLanguagesMap[ $language ] = true;
+		}
+
+		return $safeLanguagesMap;
 	}
 }

@@ -225,7 +225,7 @@ class SpecialManageGroups extends SpecialPage {
 
 				foreach ( $changes as $type => $messages ) {
 					foreach ( $messages as $params ) {
-						$change = $this->formatChange( $group, $language, $type, $params, $limit );
+						$change = $this->formatChange( $group, $sourceChanges, $language, $type, $params, $limit );
 						$out->addHTML( $change );
 
 						if ( $limit <= 0 ) {
@@ -257,6 +257,7 @@ class SpecialManageGroups extends SpecialPage {
 
 	protected function formatChange(
 		MessageGroup $group,
+		MessageSourceChange $changes,
 		string $language,
 		string $type,
 		array $params,
@@ -305,18 +306,26 @@ class SpecialManageGroups extends SpecialPage {
 			$text = $this->diff->getDiff( $titleLink, '', $noticeHtml );
 		} elseif ( $type === 'addition' ) {
 			$menu = '';
-			if ( $group->getSourceLanguage() === $language && $this->hasRight ) {
-				$menu = Html::rawElement(
-					'button',
-					[
-						'class' => 'smg-rename-actions',
-						'type' => 'button',
-						'data-group-id' => $group->getId(),
-						'data-lang' => $language,
-						'data-msgkey' => $key,
-						'data-msgtitle' => $title->getFullText()
-					],
-					''
+			$sourceLanguage = $group->getSourceLanguage();
+			if ( $sourceLanguage === $language ) {
+				if ( $this->hasRight ) {
+					$menu = Html::rawElement(
+						'button',
+						[
+							'class' => 'smg-rename-actions',
+							'type' => 'button',
+							'data-group-id' => $group->getId(),
+							'data-lang' => $language,
+							'data-msgkey' => $key,
+							'data-msgtitle' => $title->getFullText()
+						],
+						''
+					);
+				}
+			} elseif ( !self::isMessageDefinitionPresent( $group, $changes, $key ) ) {
+				$noticeHtml .= Html::warningBox(
+					$this->msg( 'translate-manage-source-message-not-found' )->text(),
+					'mw-translate-smg-notice-important'
 				);
 			}
 
@@ -509,6 +518,31 @@ class SpecialManageGroups extends SpecialPage {
 				'class' => $alias === $spName ? 'selected' : '',
 			];
 		}
+	}
+
+	/**
+	 * Check if the message definition is present as an incoming addition
+	 * OR exists already on the wiki
+	 *
+	 * @internal - For internal use only
+	 * @param MessageGroup $group
+	 * @param MessageSourceChange $changes
+	 * @param string $msgKey
+	 * @return bool
+	 */
+	private static function isMessageDefinitionPresent(
+		MessageGroup $group,
+		MessageSourceChange $changes,
+		string $msgKey
+	): bool {
+		$sourceLanguage = $group->getSourceLanguage();
+		if ( $changes->findMessage( $sourceLanguage, $msgKey, [ MessageSourceChange::ADDITION ] ) ) {
+			return true;
+		}
+
+		$namespace = $group->getNamespace();
+		$sourceHandle = new MessageHandle( Title::makeTitle( $namespace, $msgKey ) );
+		return $sourceHandle->isValid();
 	}
 
 	private function showRenames(

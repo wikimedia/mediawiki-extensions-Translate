@@ -263,6 +263,7 @@
 	"translate-manage-import-done": "Import complete!",
 	"translate-manage-empty-content": "Content is empty",
 	"translate-manage-key-reused": "This message already exists in the wiki. Check for an accidental re-use of an old key.",
+	"translate-manage-source-message-not-found": "Message definition not found",
 	"importtranslations": "Import translations",
 	"translate-import-from-local": "Local file upload:",
 	"translate-import-load": "Load file",
