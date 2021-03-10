@@ -25,6 +25,7 @@ class SpecialPageMigration extends SpecialPage {
 		$output = $this->getOutput();
 		$this->setHeaders();
 		$this->checkPermissions();
+		$this->addHelpLink( 'Help:Extension:Translate/Page translation administration' );
 		$this->outputHeader( 'pagemigration-summary' );
 		$output->addModules( 'ext.translate.special.pagemigration' );
 		$output->addModuleStyles( [
