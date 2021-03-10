@@ -234,6 +234,7 @@
 	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
 	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool",
 	"pagepreparation": "{{doc-special|PageMigration}}",
+	"pagepreparation-summary": "Description appearing on top of [[Special:PagePreparation]].",
 	"pp-pagename-placeholder": "Placeholder for the pagename input field.",
 	"pp-prepare-button-label": "Used as label for the \"Prepare\" button.\n{{Identical|Prepare}}",
 	"pp-save-button-label": "Used as label for the \"Save\" button.\n{{Identical|Save}}",

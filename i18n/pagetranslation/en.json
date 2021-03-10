@@ -212,6 +212,7 @@
 	"tpt-translate-title": "Allow translation of page title",
 	"pp-save-summary": "Prepared the page for translation",
 	"pagepreparation": "Prepare page for translation",
+	"pagepreparation-summary": "Specify a page title to prepare for translation.",
 	"pp-pagename-placeholder": "Enter the page name",
 	"pp-prepare-button-label": "Prepare",
 	"pp-save-button-label": "Publish",
