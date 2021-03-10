@@ -42,7 +42,7 @@
 	"pt-movepage-block-subpage-exists": "სამიზნე ქვეგვერდი \"[[:$2]]\" უკვე არსებობს.",
 	"pt-movepage-list-pages": "გადასატანი გვერდების სია",
 	"pt-movepage-list-translation": "სათარგმნი {{PLURAL:$1|გვერდი|გვერდები}}",
-	"pt-movepage-list-other": "სხვა ქვე{{PLURAL:$1|გვერდი|გვერდები}}",
+	"pt-movepage-list-other": "სხვა {{PLURAL:$1|ქვეგვერდი|ქვეგვერდი}}",
 	"pt-movepage-legend": "თარგმნადი გვერდის გადატანა",
 	"pt-movepage-current": "მიმდინარე სახელი:",
 	"pt-movepage-new": "ახალი სახელი:",
