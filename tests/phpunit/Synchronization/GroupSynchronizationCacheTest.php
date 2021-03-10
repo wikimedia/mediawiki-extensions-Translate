@@ -173,18 +173,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->assertEmpty( $this->groupSyncCache->getGroupsWithErrors() );
 
 		$groupId = 'test-group';
-		$groupHasTimedOut = true;
-		$groupSyncResponse = new GroupSynchronizationResponse(
-			$groupId,
-			[
-				$this->getMessageParam( $groupId, 'title1' ),
-				$this->getMessageParam( $groupId, 'title2' ),
-				$this->getMessageParam( $groupId, 'title3' )
-			],
-			$groupHasTimedOut
-		);
-
-		$this->groupSyncCache->addGroupErrors( $groupSyncResponse );
+		$groupSyncResponse = $this->addTestGroupError( $groupId );
 		$this->assertContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
 		$this->assertEquals( $groupSyncResponse, $this->groupSyncCache->getGroupErrorInfo( $groupId ) );
 
@@ -199,6 +188,31 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 			$this->groupSyncCache->getGroupErrorInfo( $groupId ),
 			'Multiple additions of group errors don\'t duplicate entries in cache'
 		);
+	}
+
+	public function testMarkGroupAsResolved() {
+		$groupId = 'test-group';
+		$this->addTestGroupError( $groupId );
+
+		$this->assertContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
+		$this->groupSyncCache->markGroupAsResolved( $groupId );
+		$this->assertNotContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
+	}
+
+	public function testMarkMessageAsResolved() {
+		$groupId = 'test-group';
+		$groupSyncResponse = $this->addTestGroupError( $groupId );
+
+		$this->assertContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
+
+		$errorMessages = $groupSyncResponse->getRemainingMessages();
+		$pageName = $errorMessages[0]->getPageName();
+		$this->groupSyncCache->markMessageAsResolved( $groupId, $pageName );
+
+		$fixedGroupSyncResponse = $this->groupSyncCache->syncGroupErrors( $groupId );
+		$fixedErrorMessages = $fixedGroupSyncResponse->getRemainingMessages();
+
+		$this->assertEquals( count( $errorMessages ) - 1, count( $fixedErrorMessages ) );
 	}
 
 	public function testAddGroupErrorsEmpty() {
@@ -271,5 +285,21 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 	private function startGroupSync( string $groupId, string $title ): void {
 		$this->groupSyncCache->markGroupForSync( $groupId );
 		$this->groupSyncCache->addMessages( $groupId, $this->getMessageParam( $groupId, $title ) );
+	}
+
+	private function addTestGroupError( string $groupId ): GroupSynchronizationResponse {
+		$groupHasTimedOut = true;
+		$groupSyncResponse = new GroupSynchronizationResponse(
+			$groupId,
+			[
+				$this->getMessageParam( $groupId, 'title1' ),
+				$this->getMessageParam( $groupId, 'title2' ),
+				$this->getMessageParam( $groupId, 'title3' )
+			],
+			$groupHasTimedOut
+		);
+
+		$this->groupSyncCache->addGroupErrors( $groupSyncResponse );
+		return $groupSyncResponse;
 	}
 }

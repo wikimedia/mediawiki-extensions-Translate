@@ -357,6 +357,12 @@
 		"translationreview": "ApiTranslationReview",
 		"translationcheck": "ApiTranslationCheck",
 		"translationstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",
+		"managegroupsynchronizationcache": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupSynchronizationCacheActionApi",
+			"services": [
+				"Translate:GroupSynchronizationCache"
+			]
+		},
 		"ttmserver": "ApiTTMServer",
 		"searchtranslations": "ApiSearchTranslations"
 	},

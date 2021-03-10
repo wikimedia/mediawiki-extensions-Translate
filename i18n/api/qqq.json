@@ -74,6 +74,11 @@
 	"apihelp-managemessagegroups-param-operation": "{{doc-apihelp-param|managemessagegroups|operation}}",
 	"apihelp-managemessagegroups-param-changesetName": "{{doc-apihelp-param|managemessagegroups|changesetName}}",
 	"apihelp-managemessagegroups-param-changesetModified": "{{doc-apihelp-param|managemessagegroups|changesetModified}}",
+	"apihelp-managegroupsynchronizationcache-description": "{{doc-apihelp-description|managegroupsynchronizationcache}}",
+	"apihelp-managegroupsynchronizationcache-summary": "{{doc-apihelp-summary|managegroupsynchronizationcache}}",
+	"apihelp-managegroupsynchronizationcache-param-operation": "{{doc-apihelp-param|managegroupsynchronizationcache|operation}}",
+	"apihelp-managegroupsynchronizationcache-param-messageTitle": "{{doc-apihelp-param|managegroupsynchronizationcache|messageTitle}}",
+	"apihelp-managegroupsynchronizationcache-param-groupId": "{{doc-apihelp-param|managegroupsynchronizationcache|groupId}}",
 	"apihelp-translatesandbox-description": "{{doc-apihelp-description|translatesandbox}}",
 	"apihelp-translatesandbox-summary": "{{doc-apihelp-summary|translatesandbox}}",
 	"apihelp-translatesandbox-param-do": "{{doc-apihelp-param|translatesandbox|do}}",
@@ -164,5 +169,6 @@
 	"apierror-translate-rename-key-invalid": "{{doc-apierror}}",
 	"apierror-translate-rename-state-invalid": "'{{doc-apierror}}\n\nParameters:\n* $1 - State of the message being added as the replacement.\n$2 - State of the message being replaced.",
 	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}",
-	"apiwarn-translate-language-disabled-source": "{{doc-apierror}}\n\nParameters:\n* $1 - language name"
+	"apiwarn-translate-language-disabled-source": "{{doc-apierror}}\n\nParameters:\n* $1 - language name",
+	"apierror-translate-operation-error": "{{doc-apierror}}\n\nParameters:\n* $1 - exception message"
 }

@@ -300,6 +300,47 @@ class GroupSynchronizationCache {
 		);
 	}
 
+	/** Marks all messages in a group and the group itself as resolved */
+	public function markGroupAsResolved( string $groupId ): GroupSynchronizationResponse {
+		$groupSyncResponse = $this->getGroupErrorInfo( $groupId );
+		$errorMessages = $groupSyncResponse->getRemainingMessages();
+
+		$errorMessageKeys = [];
+		foreach ( $errorMessages as $message ) {
+			$errorMessageKeys[] = $this->getMessageErrorKey( $groupId, $message->getPageName() )[0];
+		}
+
+		$this->cache->delete( ...$errorMessageKeys );
+		return $this->syncGroupErrors( $groupId );
+	}
+
+	/** Marks errors for a message as resolved */
+	public function markMessageAsResolved( string $groupId, string $messagePageName ): void {
+		$messageErrorKey = $this->getMessageErrorKey( $groupId, $messagePageName )[0];
+		$messageInCache = $this->cache->get( $messageErrorKey );
+		if ( !$messageInCache ) {
+			throw new InvalidArgumentException(
+				'Message does not appear to have synchronization errors'
+			);
+		}
+
+		$this->cache->delete( $messageErrorKey );
+	}
+
+	/** Checks if group has unresolved error messages. If not clears the group from error list */
+	public function syncGroupErrors( string $groupId ): GroupSynchronizationResponse {
+		$groupSyncResponse = $this->getGroupErrorInfo( $groupId );
+		if ( $groupSyncResponse->getRemainingMessages() ) {
+			return $groupSyncResponse;
+		}
+
+		// No remaining messages left, remove group from errors list.
+		$groupErrorKey = $this->getGroupErrorKey( $groupId );
+		$this->cache->delete( $groupErrorKey );
+
+		return $groupSyncResponse;
+	}
+
 	private function hasGroupTimedOut( int $syncExpTime ): bool {
 		return ( new DateTime() )->getTimestamp() > $syncExpTime;
 	}
