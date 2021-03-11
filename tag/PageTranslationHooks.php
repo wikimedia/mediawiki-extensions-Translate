@@ -804,29 +804,32 @@ class PageTranslationHooks {
 	 * also adds a ready tag for the new revision (which is safe, because
 	 * the text hasn't changed). The interface will say that there has been
 	 * a change, but shows no change in the content. This lets the user to
-	 * update the translation pages in the case, the non-text changes affect
-	 * the rendering of translation pages. I'm not aware of any such cases
-	 * at the moment.
+	 * re-mark the translations of the page title as outdated (if enabled
+	 * for translation).
 	 * Hook: RevisionRecordInserted
 	 * @since 2012-05-08
 	 * @param RevisionRecord $rev
-	 * @return true
 	 */
 	public static function updateTranstagOnNullRevisions( RevisionRecord $rev ) {
-		$prevRev = MediaWikiServices::getInstance()->getRevisionLookup()
-			->getPreviousRevision( $rev );
+		$parentId = $rev->getParentId();
+		if ( $parentId === 0 || $parentId === null ) {
+			// No parent, bail out.
+			return;
+		}
 
-		if ( !$prevRev || $prevRev->getSha1() !== $rev->getSha1() ) {
+		$prevRev = MediaWikiServices::getInstance()->getRevisionLookup()
+			->getRevisionById( $parentId );
+
+		if ( !$prevRev || !$rev->hasSameContent( $prevRev ) ) {
 			// Not a null revision, bail out.
-			return true;
+			return;
 		}
 
 		$title = Title::newFromLinkTarget( $rev->getPageAsLinkTarget() );
 		$page = TranslatablePage::newFromTitle( $title );
-		if ( $page->getReadyTag() === $prevRev->getId() ) {
+		if ( $page->getReadyTag() === $parentId ) {
 			$page->addReadyTag( $rev->getId() );
 		}
-		return true;
 	}
 
 	/**

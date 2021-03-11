@@ -14,11 +14,19 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpeci
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
+use MediaWiki\Revision\RevisionLookup;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
- * Some hooks for Translate extension.
+ * Hooks for Translate extension.
+ *
+ * Main subsystems, like page translation, should have their own hook handler.
+ *
+ * Most of the hooks on this class are still old style static functions, but new new hooks should
+ * use the new style hook handlers with interfaces.
  */
-class TranslateHooks {
+class TranslateHooks implements RevisionRecordInsertedHook {
 	/**
 	 * Any user of this list should make sure that the tables
 	 * actually exist, since they may be optional
@@ -29,6 +37,15 @@ class TranslateHooks {
 		'translate_stash' => 'ts_user',
 		'translate_reviews' => 'trr_user',
 	];
+	/** @var RevisionLookup */
+	private $revisionLookup;
+	/** @var ILoadBalancer */
+	private $loadBalancer;
+
+	public function __construct( RevisionLookup $revisionLookup, ILoadBalancer $loadBalancer ) {
+		$this->revisionLookup = $revisionLookup;
+		$this->loadBalancer = $loadBalancer;
+	}
 
 	/**
 	 * Do late setup that depends on configuration.
@@ -924,5 +941,42 @@ class TranslateHooks {
 		}
 
 		return true;
+	}
+
+	/** @inheritDoc */
+	public function onRevisionRecordInserted( $revisionRecord ): void {
+		$parentId = $revisionRecord->getParentId();
+		if ( $parentId === 0 || $parentId === null ) {
+			// No parent, bail out.
+			return;
+		}
+
+		$prevRev = $this->revisionLookup->getRevisionById( $parentId );
+		if ( !$prevRev || !$revisionRecord->hasSameContent( $prevRev ) ) {
+			// Not a null revision, bail out.
+			return;
+		}
+
+		// Whitelist of tags that should be copied over when updating
+		// tp:tag and tp:mark handling is in PageTranslationHooks::updateTranstagOnNullRevisions.
+		$tagsToCopy = [ 'fuzzy', 'tp:transver' ];
+
+		$db = $this->loadBalancer->getConnectionRef( DB_MASTER );
+		$db->insertSelect(
+			'revtag',
+			'revtag',
+			[
+				'rt_type' => 'rt_type',
+				'rt_page' => 'rt_page',
+				'rt_revision' => $revisionRecord->getId(),
+				'rt_value' => 'rt_value',
+
+			],
+			[
+				'rt_type' => $tagsToCopy,
+				'rt_revision' => $parentId,
+			],
+			__METHOD__
+		);
 	}
 }

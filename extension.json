@@ -312,9 +312,17 @@
 			"TranslateHooks::validateMessage",
 			"messageBundle"
 		],
-		"PageSaveComplete": "messageBundle"
+		"PageSaveComplete": "messageBundle",
+		"RevisionRecordInserted": "main"
 	},
 	"HookHandlers": {
+		"main": {
+			"class": "TranslateHooks",
+			"services": [
+				"RevisionLookup",
+				"DBLoadBalancer"
+			]
+		},
 		"messageBundle": {
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
 		}
