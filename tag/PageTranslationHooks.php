@@ -41,10 +41,14 @@ class PageTranslationHooks {
 	 * @param string &$text
 	 * @param-taint $text escapes_htmlnoent
 	 * @param string $state
-	 * @return bool
 	 */
-	public static function renderTagPage( $wikitextParser, &$text, $state ) {
+	public static function renderTagPage( $wikitextParser, &$text, $state ): void {
 		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
+
+		if ( $text === null ) {
+			// SMW is unhelpfully sending null text if source contains section tags. Do not explode.
+			return;
+		}
 
 		if ( $translatablePageParser->containsMarkup( $text ) ) {
 			try {
@@ -69,7 +73,7 @@ class PageTranslationHooks {
 		$title = $wikitextParser->getTitle();
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
-			return true;
+			return;
 		}
 
 		self::$renderingContext = true;
@@ -106,8 +110,6 @@ class PageTranslationHooks {
 
 		// Disable edit section links
 		$wikitextParser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
-
-		return true;
 	}
 
 	/**
