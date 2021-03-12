@@ -10,6 +10,13 @@
 			page = page.replace( /\/[^/]+$/, '' );
 		}
 
-		location.href = mw.util.getUrl( page, { setlang: language } );
+		if ( mw.uls.setLanguage ) {
+			mw.uls.setLanguage( language ).then( function () {
+				location.href = mw.util.getUrl( page );
+			} );
+		} else {
+			// Fallback if ULS is older than Translate (2021.03)
+			location.href = mw.util.getUrl( page, { setlang: language } );
+		}
 	};
 }() );
