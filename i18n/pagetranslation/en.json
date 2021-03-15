@@ -49,6 +49,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|This page has|These pages have}} changes not marked for translation.",
 	"tpt-tag-discouraged": "discouraged",
 	"tpt-tag-oldsyntax": "old syntax",
+	"tpt-tag-no-transclusion-support": "no transclusion support",
 	"tpt-select-prioritylangs": "Comma-separated list of priority language codes:",
 	"tpt-select-prioritylangs-force": "Prevent translations to languages other than the priority languages",
 	"tpt-select-prioritylangs-reason": "Reason:",

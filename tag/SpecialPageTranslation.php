@@ -421,6 +421,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$page['version'] = TranslateMetadata::getWithDefaultValue(
 				$page['groupid'], 'version', self::DEFAULT_SYNTAX_VERSION
 			);
+			$page['transclusion'] = TranslateMetadata::get( $page['groupid'], 'transclusion' );
 
 			if ( !isset( $page['tp:mark'] ) ) {
 				// Never marked, check that the latest version is ready
@@ -1084,15 +1085,26 @@ class SpecialPageTranslation extends SpecialPage {
 	private function getPageList( array $pages, string $type ): string {
 		$items = [];
 
+		$tagDiscouraged = $this->msg( 'tpt-tag-discouraged' )->escaped();
+		$tagOldSyntax = $this->msg( 'tpt-tag-oldsyntax' )->escaped();
+		$tagNoTransclusionSupport = $this->msg( 'tpt-tag-no-transclusion-support' )->escaped();
+
 		foreach ( $pages as $page ) {
 			$link = Linker::link( $page['title'] );
 			$acts = $this->actionLinks( $page, $type );
 			$tags = [];
 			if ( $page['discouraged'] ) {
-				$tags[] = $this->msg( 'tpt-tag-discouraged' )->escaped();
+				$tags[] = $tagDiscouraged;
 			}
-			if ( $type !== 'proposed' && $page['version'] !== self::LATEST_SYNTAX_VERSION ) {
-				$tags[] = $this->msg( 'tpt-tag-oldsyntax' )->escaped();
+			if ( $type !== 'proposed' ) {
+				if ( $page['version'] !== self::LATEST_SYNTAX_VERSION ) {
+					$tags[] = $tagOldSyntax;
+				}
+
+				if ( $page['transclusion'] !== '1' ) {
+					$tags[] = $tagNoTransclusionSupport;
+				}
+
 			}
 
 			$tagList = '';
