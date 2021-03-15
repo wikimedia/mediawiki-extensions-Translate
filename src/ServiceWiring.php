@@ -10,6 +10,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
@@ -45,6 +46,15 @@ return [
 			// from the core here if available
 			$services->get( 'Translate:JsonCodec' )
 		 );
+	},
+
+	'Translate:TranslatablePageMover' => function ( MediaWikiServices $services ): TranslatablePageMover
+	{
+		return new TranslatablePageMover(
+			$services->getMovePageFactory(),
+			JobQueueGroup::singleton(),
+			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
+		);
 	},
 
 	'Translate:TranslatablePageParser' => function ( MediaWikiServices $services ): TranslatablePageParser

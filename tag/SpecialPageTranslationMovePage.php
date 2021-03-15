@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -33,6 +35,13 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	protected $translationPages;
 	/** @var Title[] Cached list of section pages. Not yet loaded if null. */
 	protected $sectionPages;
+	/** @var TranslatablePageMover */
+	protected $pageMover;
+
+	public function __construct() {
+		parent::__construct();
+		$this->pageMover = Services::getInstance()->getTranslatablePageMover();
+	}
 
 	/**
 	 * Partially copies from SpecialMovepage.php, because it cannot be
@@ -88,7 +97,13 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			}
 
 			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
-				$blockers = $this->checkMoveBlockers( $user );
+				$blockers = $this->pageMover->checkMoveBlockers(
+					$this->oldTitle,
+					$this->newTitle,
+					$user,
+					$this->reason,
+					$this->moveSubpages
+				);
 				if ( count( $blockers ) ) {
 					$this->showErrors( $blockers );
 					$this->showForm( [] );
@@ -96,7 +111,14 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 					$this->showConfirmation();
 				}
 			} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
-				$this->performAction();
+				$this->pageMover->moveAsynchronously(
+					$this->oldTitle,
+					$this->newTitle,
+					$this->moveSubpages,
+					$this->getUser(),
+					$this->msg( 'pt-movepage-logreason', $this->oldTitle )->inContentLanguage()->text()
+				);
+				$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
 			} else {
 				$this->showForm( [] );
 			}
@@ -231,11 +253,11 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			'pt-movepage-list-pages' => [ $this->oldTitle ],
 			'pt-movepage-list-translation' => $this->getTranslationPages(),
 			'pt-movepage-list-section' => $this->getSectionPages(),
-			'pt-movepage-list-translatable' => $this->getTranslatableSubpages()
+			'pt-movepage-list-translatable' => $this->pageMover->getTranslatableSubpages( $this->page )
 		];
 
 		if ( TranslateUtils::allowsSubpages( $this->oldTitle ) ) {
-			$types[ 'pt-movepage-list-other'] = $this->getNormalSubpages();
+			$types[ 'pt-movepage-list-other'] = $this->pageMover->getNormalSubpages( $this->page );
 		}
 
 		foreach ( $types as $type => $pages ) {
@@ -331,205 +353,12 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * @return string
 	 */
 	protected function getChangeLine( $base, Title $old, Title $target, $enabled = true ) {
-		$to = $this->newPageTitle( $base, $old, $target );
+		$to = $this->pageMover->newPageTitle( $base, $old, $target );
 
 		if ( $enabled ) {
 			return '* ' . $old->getPrefixedText() . ' → ' . $to;
 		} else {
 			return '* ' . $old->getPrefixedText();
-		}
-	}
-
-	protected function performAction() {
-		$target = $this->newTitle;
-		$base = $this->oldTitle->getPrefixedText();
-
-		$moves = [];
-		$moves[$base] = $target->getPrefixedText();
-
-		foreach ( $this->getTranslationPages() as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-		}
-
-		foreach ( $this->getSectionPages() as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-		}
-
-		if ( $this->moveSubpages ) {
-			$subpages = $this->getNormalSubpages();
-			foreach ( $subpages as $from ) {
-				$to = $this->newPageTitle( $base, $from, $target );
-				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-			}
-		}
-
-		$summary = $this->msg( 'pt-movepage-logreason', $base )->inContentLanguage()->text();
-		$job = TranslatablePageMoveJob::newJob(
-			$this->oldTitle, $this->newTitle, $moves, $summary, $this->getUser()
-		);
-
-		JobQueueGroup::singleton()->push( $job );
-
-		$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
-	}
-
-	protected function checkMoveBlockers( User $user ) {
-		$blockers = new SplObjectStorage();
-
-		$source = $this->oldTitle;
-		$target = $this->newTitle;
-
-		if ( !$target ) {
-			$blockers[$source] = Status::newFatal( 'pt-movepage-block-base-invalid' );
-
-			return $blockers;
-		}
-
-		if ( $target->inNamespaces( NS_MEDIAWIKI, NS_TRANSLATIONS ) ) {
-			$blockers[$source] = Status::newFatal(
-				'immobile-target-namespace', $target->getNsText()
-			);
-
-			return $blockers;
-		}
-
-		if ( $target->exists() ) {
-			$blockers[$source] = Status::newFatal(
-				'pt-movepage-block-base-exists', $target->getPrefixedText()
-			);
-		} else {
-			$movePage = MediaWikiServices::getInstance()
-				->getMovePageFactory()
-				->newMovePage( $this->oldTitle, $target );
-			$status = $movePage->isValidMove();
-			$status->merge( $movePage->checkPermissions( $user, $this->reason ) );
-			if ( !$status->isOK() ) {
-				$blockers[$source] = $status;
-			}
-		}
-
-		// Don't spam the same errors for all pages if base page fails
-		if ( count( $blockers ) ) {
-			return $blockers;
-		}
-
-		// Collect all the old and new titles for checcks
-		$titles = [];
-		$base = $this->oldTitle->getPrefixedText();
-		$pages = $this->getTranslationPages();
-		foreach ( $pages as $old ) {
-			$titles['tp'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
-
-		$subpages = $this->moveSubpages ? $this->getNormalSubpages() : [];
-		foreach ( $subpages as $old ) {
-			$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
-
-		$pages = $this->getSectionPages();
-		foreach ( $pages as $old ) {
-			$titles['section'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
-
-		// Check that all new titles are valid and count them. Add 1 for source page.
-		$moveCount = 1;
-		$lb = new LinkBatch();
-		foreach ( $titles as $type => $list ) {
-			$moveCount += count( $list );
-			// Give grep a chance to find the usages:
-			// pt-movepage-block-tp-invalid, pt-movepage-block-section-invalid,
-			// pt-movepage-block-subpage-invalid
-			foreach ( $list as $pair ) {
-				list( $old, $new ) = $pair;
-				if ( $new === null ) {
-					$blockers[$old] = Status::newFatal(
-						"pt-movepage-block-$type-invalid",
-						$old->getPrefixedText()
-					);
-					continue;
-				}
-				$lb->addObj( $old );
-				$lb->addObj( $new );
-			}
-		}
-
-		$pageMoveLimit = $this->getConfig()->get( 'TranslatePageMoveLimit' );
-		if ( $pageMoveLimit !== null && $pageMoveLimit <= $moveCount ) {
-			$blockers[$source] = Status::newFatal(
-				'pt-movepage-page-count-limit',
-				Message::numParam( $pageMoveLimit )
-			);
-		}
-
-		if ( count( $blockers ) ) {
-			return $blockers;
-		}
-
-		// Check that there are no move blockers
-		$lb->execute();
-		foreach ( $titles as $type => $list ) {
-			// Give grep a chance to find the usages:
-			// pt-movepage-block-tp-exists, pt-movepage-block-section-exists,
-			// pt-movepage-block-subpage-exists
-			foreach ( $list as $pair ) {
-				list( $old, $new ) = $pair;
-				if ( $new->exists() ) {
-					$blockers[$old] = Status::newFatal(
-						"pt-movepage-block-$type-exists",
-						$old->getPrefixedText(),
-						$new->getPrefixedText()
-					);
-				} else {
-					/* This method has terrible performance:
-					 * - 2 queries by core
-					 * - 3 queries by lqt
-					 * - and no obvious way to preload the data! */
-					$movePage = MediaWikiServices::getInstance()
-						->getMovePageFactory()
-						->newMovePage( $old, $target );
-					$status = $movePage->isValidMove();
-					// Do not check for permissions here, as these pages are not editable/movable
-					// in regular use
-					if ( !$status->isOK() ) {
-						$blockers[$old] = $status;
-					}
-
-					/* Because of the poor performance, check only one of the possibly thousands
-					 * of section pages and assume rest are fine. This assumes section pages are
-					 * listed last in the array. */
-					if ( $type === 'section' ) {
-						break;
-					}
-				}
-			}
-		}
-
-		return $blockers;
-	}
-
-	/**
-	 * Makes old title into a new title by replacing $base part of old title
-	 * with $target.
-	 * @param string $base Title::getPrefixedText() of the base page.
-	 * @param Title $old The title to convert.
-	 * @param Title $target The target title for the base page.
-	 * @return Title
-	 */
-	protected function newPageTitle( $base, Title $old, Title $target ) {
-		$search = preg_quote( $base, '~' );
-
-		if ( $old->inNamespace( NS_TRANSLATIONS ) ) {
-			$new = $old->getText();
-			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
-
-			return Title::makeTitleSafe( NS_TRANSLATIONS, $new );
-		} else {
-			$new = $old->getPrefixedText();
-			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
-
-			return Title::newFromText( $new );
 		}
 	}
 
@@ -555,39 +384,5 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		}
 
 		return $this->translationPages;
-	}
-
-	/**
-	 * Returns all subpages, if the namespace has them enabled.
-	 * @return Title[]
-	 */
-	protected function getSubpages() {
-		$pages = $this->page->getTitle()->getSubpages();
-		if ( $pages instanceof Traversable ) {
-			$pages = iterator_to_array( $pages );
-		}
-
-		return $pages;
-	}
-
-	private function getNormalSubpages() {
-		return array_filter(
-			$this->getSubpages(),
-			function ( $page ) {
-				return !(
-					TranslatablePage::isTranslationPage( $page ) ||
-					TranslatablePage::isSourcePage( $page )
-				);
-			}
-		);
-	}
-
-	private function getTranslatableSubpages() {
-		return array_filter(
-			$this->getSubpages(),
-			function ( $page ) {
-				return TranslatablePage::isSourcePage( $page );
-			}
-		);
 	}
 }
