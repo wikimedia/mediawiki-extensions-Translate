@@ -13,7 +13,7 @@ use Title;
  * @license GPL-2.0-or-later
  * @author Niklas Laxström
  */
-class FindUnsynchonizedDefinitionsMaintenanceScript extends BaseMaintenanceScript {
+class FindUnsynchronizedDefinitionsMaintenanceScript extends BaseMaintenanceScript {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription(

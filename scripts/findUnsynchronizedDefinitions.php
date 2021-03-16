@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extension\Translate\Diagnostics\FindUnsynchonizedDefinitionsMaintenanceScript;
+use MediaWiki\Extension\Translate\Diagnostics\FindUnsynchronizedDefinitionsMaintenanceScript;
 
-$class = FindUnsynchonizedDefinitionsMaintenanceScript::class;
+$class = FindUnsynchronizedDefinitionsMaintenanceScript::class;
 require_once '__bootstrap.php';
