@@ -83,13 +83,6 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			],
-			'timelimit' => [
-				ApiBase::PARAM_DFLT => 8,
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MAX => 10,
-				ApiBase::PARAM_MIN => 0,
-				ApiBase::PARAM_DEPRECATED => true, // Since 2018.10
-			],
 		];
 	}
 }
