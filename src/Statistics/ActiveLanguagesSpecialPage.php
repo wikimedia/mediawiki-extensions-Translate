@@ -1,17 +1,22 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use Config;
+use Html;
+use HtmlArmor;
+use LinkBatch;
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extension\Translate\Statistics\StatisticsUnavailable;
-use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
-use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
+use ObjectCache;
+use SpecialPage;
+use StatsTable;
+use Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
- * Implements special page Special:SupportedLanguages.
- *
  * This special page shows active languages and active translators per language.
  *
  * @author Niklas Laxström
@@ -19,7 +24,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialSupportedLanguages extends SpecialPage {
+class ActiveLanguagesSpecialPage extends SpecialPage {
 	/** @var ServiceOptions */
 	private $options;
 	/** @var TranslatorActivity */
@@ -292,18 +297,21 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 			$last = wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $lastTranslationTimestamp );
 			$last = round( $last / $day );
-			$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )
-				->numParams( $count, $last )->text();
+			$attribs['title'] =
+				$this->msg( 'supportedlanguages-activity', $username )
+					->numParams( $count, $last )
+					->text();
 			$last = max( 1, min( $period, $last ) );
-			$styles['border-bottom'] = '3px solid #' .
-				$statsTable->getBackgroundColor( ( $period - $last ) / $period );
+			$styles['border-bottom'] =
+				'3px solid #' . $statsTable->getBackgroundColor( ( $period - $last ) / $period );
 
 			$stylestr = $this->formatStyle( $styles );
 			if ( $stylestr ) {
 				$attribs['style'] = $stylestr;
 			}
 
-			$links[] = $this->getLinkRenderer()->makeLink( $title, new HtmlArmor( $enc ), $attribs );
+			$links[] =
+				$this->getLinkRenderer()->makeLink( $title, new HtmlArmor( $enc ), $attribs );
 		}
 
 		// for GENDER support

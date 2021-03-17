@@ -185,7 +185,6 @@
 		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
 		"SpecialPageTranslationMovePage": "tag/SpecialPageTranslationMovePage.php",
 		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
-		"SpecialSupportedLanguages": "specials/SpecialSupportedLanguages.php",
 		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"SpecialTranslations": "specials/SpecialTranslations.php",
 		"SpecialTranslationStats": "specials/SpecialTranslationStats.php",
@@ -329,7 +328,7 @@
 			]
 		},
 		"SupportedLanguages": {
-			"class": "SpecialSupportedLanguages",
+			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\ActiveLanguagesSpecialPage",
 			"services": [
 				"MainConfig",
 				"Translate:TranslatorActivity",
