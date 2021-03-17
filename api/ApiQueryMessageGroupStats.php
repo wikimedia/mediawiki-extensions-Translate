@@ -19,7 +19,9 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		parent::__construct( $query, $moduleName, 'mgs' );
 	}
 
-	/// Overwritten from ApiStatsQuery
+	// ApiStatsQuery methods
+
+	/** @inheritDoc */
 	protected function validateTargetParamater( array $params ) {
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
@@ -31,11 +33,12 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		return $group->getId();
 	}
 
-	/// Overwritten from ApiStatsQuery
+	/** @inheritDoc */
 	protected function loadStatistics( $target, $flags = 0 ) {
 		return MessageGroupStats::forGroup( $target, $flags );
 	}
 
+	/** @inheritDoc */
 	protected function makeItem( $item, $stats ) {
 		$data = parent::makeItem( $item, $stats );
 		$data['code'] = $item; // For BC
@@ -44,6 +47,14 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		return $data;
 	}
 
+	/** @inheritDoc */
+	protected function getCacheRebuildJob( string $target ): IJobSpecification {
+		return MessageGroupStatsRebuildJob::newJob( [ 'groupid' => $target ] );
+	}
+
+	// Api methods
+
+	/** @inheritDoc */
 	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['group'] = [
@@ -54,6 +65,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		return $params;
 	}
 
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&meta=messagegroupstats&mgsgroup=page-Example'

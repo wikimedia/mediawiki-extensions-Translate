@@ -61,8 +61,9 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 		$result->addIndexedTagName( [ 'query', $this->getModuleName() ], 'stats' );
 
 		if ( $incomplete ) {
-			DeferredUpdates::addCallableUpdate( function () use ( $target ) {
-				$this->loadStatistics( $target );
+			DeferredUpdates::addCallableUpdate( function () use ( $target ): void {
+				$jobQueue = JobQueueGroup::singleton();
+				$jobQueue->push( $this->getCacheRebuildJob( $target ) );
 			} );
 		}
 	}
@@ -75,6 +76,8 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 			'proofread' => $stats[MessageGroupStats::PROOFREAD],
 		];
 	}
+
+	abstract protected function getCacheRebuildJob( string $target ): IJobSpecification;
 
 	protected function getAllowedParams() {
 		return [

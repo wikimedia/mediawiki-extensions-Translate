@@ -18,7 +18,9 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		parent::__construct( $query, $moduleName, 'ls' );
 	}
 
-	/// Overwritten from ApiStatsQuery
+	// ApiStatsQuery methods
+
+	/** @inheritDoc */
 	protected function validateTargetParamater( array $params ) {
 		$all = TranslateUtils::getLanguageNames( null );
 		$requested = $params[ 'language' ];
@@ -30,11 +32,12 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		return $requested;
 	}
 
-	/// Overwritten from ApiStatsQuery
+	/** @inheritDoc */
 	protected function loadStatistics( $target, $flags = 0 ) {
 		return MessageGroupStats::forLanguage( $target, $flags );
 	}
 
+	/** @inheritDoc */
 	protected function makeItem( $item, $stats ) {
 		$data = parent::makeItem( $item, $stats );
 		$data['group'] = $item;
@@ -42,6 +45,14 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		return $data;
 	}
 
+	/** @inheritDoc */
+	protected function getCacheRebuildJob( string $target ): IJobSpecification {
+		return MessageGroupStatsRebuildJob::newJob( [ 'languagecode' => $target ] );
+	}
+
+	// Api methods
+
+	/** @inheritDoc */
 	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['language'] = [
@@ -52,6 +63,7 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		return $params;
 	}
 
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&meta=languagestats&lslanguage=fi'
