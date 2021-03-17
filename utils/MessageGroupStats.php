@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -617,6 +618,18 @@ class MessageGroupStats {
 				// Maybe another deferred update already processed these
 				if ( $updates === [] ) {
 					return;
+				}
+
+				// This path should only be hit during web requests
+				if ( count( $updates ) > 100 ) {
+					$groups = array_unique( array_column( $updates, 'tgs_group' ) );
+					LoggerFactory::getInstance( 'Translate' )->warning(
+						"Huge translation update of {count} rows for group(s) {groups}",
+						[
+							'count' => count( $updates ),
+							'groups' => implode( ', ', $groups ),
+						]
+					);
 				}
 
 				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
