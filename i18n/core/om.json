@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ahrada2016",
 			"Maammee"
 		]
 	},
+	"translate-smg-group-message-action-history": "Seenaa",
+	"translate-smg-group-message-tag-outdated": "Guyala",
+	"translate-smg-group-message-tag-rename": "Maqa sirreessi",
+	"translate-smg-group-message-message-content": "Qabiyyee:",
 	"translate-documentation-language": "Galmeessaa ragaa"
 }
