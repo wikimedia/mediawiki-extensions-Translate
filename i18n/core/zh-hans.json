@@ -221,6 +221,7 @@
 	"translate-smg-right": "即将进行的更改",
 	"translate-smg-strong-sync-help": "帮助",
 	"translate-smg-groups-in-sync": "正在同步的组",
+	"translate-smg-groups-with-error-title": "在同步化时出现错误的例组",
 	"translate-smg-groups-with-error-desc": "在同步化时有错误的列表组",
 	"translate-smg-group-message-action-history": "历史",
 	"translate-smg-group-message-tag-outdated": "已过时",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AVVK Chaitanya",
 			"Arjunaraoc",
 			"Chaduvari",
 			"Kiranmayee",
@@ -141,6 +142,17 @@
 	"supportedlanguages-count": "మొత్తం $1 {{PLURAL:$1|భాష|భాషలు}}.",
 	"translate-jssti-add": "జాబితాకి చేర్చు",
 	"managemessagegroups": "సందేశ గుంపుల నిర్వహణ",
+	"translate-smg-groups-with-error-title": "కలిసి చేయడంలో ఇబ్బందులు ఎదుర్కొన్న గుంపులు/సమూహాలు",
+	"translate-smg-groups-with-error-desc": "కలిసి చేయడంలో ఇబ్బందులు ఎదుర్కొన్న సమూహాల జాబితా",
+	"translate-smg-group-with-error-summary": "$1 {{బహువచనం:$1|సందేశం|సందేశాలు}} తప్పులతో:",
+	"translate-smg-group-message-action-history": "చరిత్ర",
+	"translate-smg-group-message-tag-outdated": "కాలం చెల్లినది లేదా పాతది",
+	"translate-smg-group-message-tag-rename": "పేరు మార్చు",
+	"translate-smg-group-message-tag-label": "{{బహువచనం:$1|ట్యాగు|ట్యాగులు}}:",
+	"translate-smg-group-message-message-content": "సమాచారం లేదా అంశం లేదా విషయం లేదా సంగతి లేదా వివరం",
+	"translate-smg-group-message-message-target": "లక్ష్యం:",
+	"translate-smg-group-message-message-replacement": "పునఃస్థాపన లేదా పునః ప్రతిష్ఠ",
+	"translate-smg-group-message-message-other-langs": "ఇతర భాషలు:",
 	"translate-manage-import-diff": "సందేశం $1 | చర్యలు: $2",
 	"translate-manage-import-new": "కొత్త సందేశం $1",
 	"translate-manage-import-deleted": "సందేశం $1ని తొలగించారు",

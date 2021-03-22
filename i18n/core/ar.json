@@ -227,6 +227,7 @@
 	"translate-smg-rename-rename": "إضافة كإعادة تسمية ...",
 	"translate-smg-rename-dialog-title": "حدد إعادة تسمية مطابقة ل$1",
 	"translate-smg-changeset-modified": "تم تعديل مجموعة التغييرات بواسطة مستخدم أو عملية أخرى، لا يمكن حفظ تغييراتك لأنها قد تتجاوز تغييراتها، تُرجَى إعادة تحميل الصفحة لرؤية آخر التغييرات.",
+	"translate-smg-group-message-message-other-langs": "اللغات الأخرى:",
 	"translate-manage-import-diff": "الرسالة $1 | الإجراءات: $2",
 	"translate-manage-import-new": "رسالة جديدة $1",
 	"translate-manage-import-deleted": "رسالة محذوفة $1",
