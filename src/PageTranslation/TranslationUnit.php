@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
@@ -15,22 +16,22 @@ use TMessage;
  */
 class TranslationUnit {
 	public const UNIT_MARKER_INVALID_CHARS = "_/\n<>";
-	/** @var string Section name */
+	/** @var string Unit name */
 	public $id;
-	/** @var string|null New name of the section, that will be saved to database. */
+	/** @var ?string New name of the unit, that will be saved to database. */
 	public $name = null;
-	/** @var string Section text. */
+	/** @var string Unit text. */
 	public $text;
-	/** @var string Is this new, existing, changed or deleted section. */
+	/** @var string Is this new, existing, changed or deleted unit. */
 	public $type;
-	/** @var string|null Text of previous version of this section. */
+	/** @var string|null Text of previous version of this unit. */
 	public $oldText = null;
 	/**
-	 * @var bool Whether this section is inline section.
+	 * @var bool Whether this unit is inline unit.
 	 * E.g. "Something <translate>foo</translate> bar".
 	 */
 	protected $inline = false;
-	/** @var bool Whether wrapping the section is allowed */
+	/** @var bool Whether wrapping the unit is allowed */
 	private $canWrap = true;
 	/** @var int Version number for the serialization. */
 	private $version = 1;
@@ -53,7 +54,7 @@ class TranslationUnit {
 		return $this->canWrap;
 	}
 
-	/** Returns section text unmodified */
+	/** Returns unit text unmodified */
 	public function getText(): string {
 		return $this->text;
 	}
@@ -65,14 +66,14 @@ class TranslationUnit {
 		return preg_replace( $re, '$\1', $this->text );
 	}
 
-	/** Returns section text with variables replaced. */
+	/** Returns unit text with variables replaced. */
 	public function getTextForTrans(): string {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 
 		return preg_replace( $re, '\2', $this->text );
 	}
 
-	/** Returns the section text with updated or added section marker */
+	/** Returns the unit text with updated or added unit marker */
 	public function getMarkedText(): string {
 		$id = $this->name ?? $this->id;
 		$header = "<!--T:{$id}-->";
@@ -124,14 +125,13 @@ class TranslationUnit {
 		return $data;
 	}
 
-	/** Construct an object from previously serialized array */
-	public static function unserializeFromArray( $data ): self {
-		$section = new self();
+	public static function unserializeFromArray( array $data ): self {
+		$unit = new self();
 		foreach ( self::$properties as $index => $property ) {
-			$section->$property = $data[$index];
+			$unit->$property = $data[$index];
 		}
 
-		return $section;
+		return $unit;
 	}
 
 	public function getTextForRendering(
@@ -170,7 +170,7 @@ class TranslationUnit {
 
 		// Allow wrapping this inside variables
 		$content = preg_replace(
-			'/\{\{\s*TRANSLATIONLANGUAGE\s*\}\}/',
+			'/{{\s*TRANSLATIONLANGUAGE\s*}}/',
 			$translationLanguage,
 			$content
 		);
