@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use Html;
 use Language;
 use TMessage;
+use const PREG_SET_ORDER;
 
 /**
  * This class represents one translation unit in a translatable page.
@@ -61,16 +62,22 @@ class TranslationUnit {
 
 	/** Returns the text with tvars replaces with placeholders */
 	public function getTextWithVariables(): string {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
+		$variableReplacements = [];
+		foreach ( $this->getVariables() as $variable ) {
+			$variableReplacements[$variable->getDefinition()] = $variable->getName();
+		}
 
-		return preg_replace( $re, '$\1', $this->text );
+		return strtr( $this->text, $variableReplacements );
 	}
 
 	/** Returns unit text with variables replaced. */
 	public function getTextForTrans(): string {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
+		$variableReplacements = [];
+		foreach ( $this->getVariables() as $variable ) {
+			$variableReplacements[$variable->getDefinition()] = $variable->getValue();
+		}
 
-		return preg_replace( $re, '\2', $this->text );
+		return strtr( $this->text, $variableReplacements );
 	}
 
 	/** Returns the unit text with updated or added unit marker */
@@ -99,15 +106,35 @@ class TranslationUnit {
 		return $this->oldText ?? $this->text;
 	}
 
-	/** Returns array of variables and their values defined on this unit */
+	/** @return TranslationVariable[] */
 	public function getVariables(): array {
+		$vars = [];
+
+		// Deprecated syntax. Example: <tvar|1>...</>
 		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 		$matches = [];
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
-		$vars = [];
-
 		foreach ( $matches as $m ) {
-			$vars['$' . $m[1]] = $m[2];
+			$vars[] = new TranslationVariable( $m[0], '$' . $m[1], $m[2] );
+		}
+
+		// Current syntax. Example: <tvar name=1>...</tvar>
+		$re = <<<'REGEXP'
+~
+<tvar \s+ name \s* = \s*
+( ( ' (?<key1> [^']* ) ' ) | ( " (?<key2> [^"]* ) " ) | (?<key3> [^"'\s>]* ) )
+\s* > (?<value>.*?) </tvar \s* >
+~xusi
+REGEXP;
+		$matches = [];
+		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
+		foreach ( $matches as $m ) {
+			$vars[] = new TranslationVariable(
+				$m[0],
+				// Maximum of one of these is non-empty string
+				'$' . ( $m['key1'] . $m['key2'] . $m['key3'] ),
+				$m['value']
+			);
 		}
 
 		return $vars;
@@ -166,7 +193,12 @@ class TranslationUnit {
 			$content = Html::rawElement( $tag, $attributes, $content );
 		}
 
-		$content = strtr( $content, $this->getVariables() );
+		$variableReplacements = [];
+		foreach ( $this->getVariables() as $variable ) {
+			$variableReplacements[$variable->getName()] = $variable->getValue();
+		}
+
+		$content = strtr( $content, $variableReplacements );
 
 		// Allow wrapping this inside variables
 		$content = preg_replace(

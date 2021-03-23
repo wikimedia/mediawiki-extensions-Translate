@@ -172,7 +172,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		$inline = true;
 		$block = false;
 
-		yield [
+		yield 'language wrapping' => [
 			'Hello <tvar|abc>peter</>!',
 			null,
 			!$fuzzy,
@@ -180,7 +180,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'<span lang="en-GB" dir="ltr" class="mw-content-ltr">Hello peter!</span>'
 		];
 
-		yield [
+		yield 'old translation variable syntax' => [
 			'Hello <tvar|abc>peter</>!',
 			'Hejsan $abc!',
 			!$fuzzy,
@@ -188,7 +188,55 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan peter!'
 		];
 
-		yield [
+		yield 'translation variable syntax without quotes' => [
+			'Hello <tvar name=abc>peter</tvar>!',
+			'Hejsan $abc!',
+			!$fuzzy,
+			$inline,
+			'Hejsan peter!'
+		];
+
+		yield 'translation variable syntax with double quotes' => [
+			'Hello <tvar name="abc">peter</tvar>!',
+			'Hejsan $abc!',
+			!$fuzzy,
+			$inline,
+			'Hejsan peter!'
+		];
+
+		yield 'translation variable syntax with single quotes' => [
+			'Hello <tvar name=\'abc\'>peter</tvar>!',
+			'Hejsan $abc!',
+			!$fuzzy,
+			$inline,
+			'Hejsan peter!'
+		];
+
+		yield 'translation variable syntax with spaces' => [
+			'Hello <tvar name =  abc   >peter</tvar>!',
+			'Hejsan $abc!',
+			!$fuzzy,
+			$inline,
+			'Hejsan peter!'
+		];
+
+		yield 'mixed variable syntax' => [
+			'Hello <tvar name=2>peter</tvar> and <tvar|1>peter</>!',
+			'Hejsan $1 and $2!',
+			!$fuzzy,
+			$inline,
+			'Hejsan peter and peter!'
+		];
+
+		yield 'special characters in variable name' => [
+			'Hello <tvar name=abc_123-АБВ$>peter</tvar>!',
+			'Hejsan $abc_123-АБВ$!',
+			!$fuzzy,
+			$inline,
+			'Hejsan peter!'
+		];
+
+		yield 'inline fuzzy wrapping' => [
 			'Hello <tvar|abc>peter</>!',
 			'Hejsan $abc!',
 			$fuzzy,
@@ -196,7 +244,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'<span class="mw-translate-fuzzy">Hejsan peter!</span>'
 		];
 
-		yield [
+		yield 'block language wrapping' => [
 			'Hello <tvar|abc>peter</>!',
 			null,
 			!$fuzzy,
@@ -204,15 +252,15 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			"<div lang=\"en-GB\" dir=\"ltr\" class=\"mw-content-ltr\">\nHello peter!\n</div>"
 		];
 
-		yield [
-			'Hello <tvar|abc>peter</>!',
+		yield 'block variables' => [
+			'Hello <tvar name=abc>peter</tvar>!',
 			'Hejsan $abc!',
 			!$fuzzy,
 			$block,
 			'Hejsan peter!'
 		];
 
-		yield [
+		yield 'block fuzzy wrapping' => [
 			'Hello <tvar|abc>peter</>!',
 			'Hejsan $abc!',
 			$fuzzy,
@@ -220,7 +268,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			"<div class=\"mw-translate-fuzzy\">\nHejsan peter!\n</div>"
 		];
 
-		yield [
+		yield 'translation language in the source' => [
 			'{{TRANSLATIONLANGUAGE}}',
 			null,
 			!$fuzzy,
@@ -228,7 +276,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'<span lang="en-GB" dir="ltr" class="mw-content-ltr">en-gb</span>'
 		];
 
-		yield [
+		yield 'translation language in the translation' => [
 			'{{TRANSLATIONLANGUAGE}}',
 			'{{TRANSLATIONLANGUAGE}}',
 			$fuzzy,
@@ -236,7 +284,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'<span class="mw-translate-fuzzy">ar</span>'
 		];
 
-		yield [
+		yield 'translation language in a variable' => [
 			'Lang: <tvar|code>{{TRANSLATIONLANGUAGE}}</>',
 			'Lang: $code',
 			!$fuzzy,

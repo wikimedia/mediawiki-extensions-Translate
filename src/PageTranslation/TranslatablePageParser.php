@@ -34,12 +34,15 @@ class TranslatablePageParser {
 		$text = $this->armourNowiki( $nowiki, $text );
 		$text = preg_replace( '~<translate( nowrap)?>\n?~s', '', $text );
 		$text = preg_replace( '~\n?</translate>~s', '', $text );
-		// Mirroring what TranslationUnit::getTextForTrans does
-		$text = preg_replace( '~<tvar\|([^>]+)>(.*?)</>~u', '\2', $text );
 		// Markers: headers and the rest
 		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		$text = preg_replace( "~(^=.*=) <!--T:[^$ic]+-->$~um", '\1', $text );
 		$text = preg_replace( "~<!--T:[^$ic]+-->[\n ]?~um", '', $text );
+		// Remove variables
+		$unit = new TranslationUnit();
+		$unit->id = 'XXX';
+		$unit->text = $text;
+		$text = $unit->getTextForTrans();
 
 		$text = $this->unarmourNowiki( $nowiki, $text );
 		return $text;
