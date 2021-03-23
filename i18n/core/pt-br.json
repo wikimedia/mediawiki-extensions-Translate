@@ -17,6 +17,7 @@
 			"Luan",
 			"Luckas",
 			"Luckas Blade",
+			"Mariagarbin",
 			"Opraco",
 			"TheEduGobi",
 			555
@@ -205,7 +206,7 @@
 	"translate-mgs-totals": "{{PLURAL:$1|A língua em conjunto|Todas as $1 línguas em conjunto}}",
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
-	"supportedlanguages": "Idiomas suportados",
+	"supportedlanguages": "Idiomas ativos",
 	"supportedlanguages-summary": "Esta página apresenta uma lista de todas os idiomas suportados por {{SITENAME}},\njunto dos respectivos nomes dos tradutores de cada idioma.\nQuanto maior for exibido um nome, com mais traduções a pessoa terá contribuído.\nA cor do sublinhado é um indicativo de atividades recentes do usuário.",
 	"supportedlanguages-colorlegend": "Legenda: última tradução $1 dias atrás.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
