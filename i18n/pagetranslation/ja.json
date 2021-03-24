@@ -57,6 +57,7 @@
 	"tpt-other-pages": "{{PLURAL:$1|このページの古い版|このページの複数の古い版}}が翻訳対象に指定されていますが、\n最新の{{PLURAL:$1|版}}は翻訳対象に指定できません。",
 	"tpt-outdated-pages": "{{PLURAL:$1|このページ|これらのページ}}には翻訳対象に指定されていない変更があります。",
 	"tpt-tag-oldsyntax": "旧構文",
+	"tpt-tag-no-transclusion-support": "参照読み込み未対応",
 	"tpt-select-prioritylangs": "優先言語のコードを列挙 (カンマ区切り):",
 	"tpt-select-prioritylangs-force": "優先言語以外への翻訳を禁止",
 	"tpt-select-prioritylangs-reason": "理由:",

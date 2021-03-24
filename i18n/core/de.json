@@ -275,6 +275,7 @@
 	"translate-manage-import-done": "Import abgeschlossen!",
 	"translate-manage-empty-content": "Der Inhalt ist leer",
 	"translate-manage-key-reused": "Diese Systemnachricht existiert bereits im Wiki. Prüfe auf eine versehentliche Wiederverwendung eines alten Schlüssels.",
+	"translate-manage-source-message-not-found": "Nachrichten-Definition nicht gefunden",
 	"importtranslations": "Übersetzungen importieren",
 	"translate-import-from-local": "Lokale Datei hochladen:",
 	"translate-import-load": "Datei laden",
