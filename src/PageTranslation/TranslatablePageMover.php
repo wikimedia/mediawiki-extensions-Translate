@@ -38,6 +38,8 @@ class TranslatablePageMover {
 	private $pageMoveLimit;
 	/** @var JobQueueGroup */
 	private $jobQueue;
+	/** @var bool */
+	private $pageMoveLimitEnabled = true;
 
 	public function __construct( MovePageFactory $movePageFactory, JobQueueGroup $jobQueue, ?int $pageMoveLimit ) {
 		$this->movePageFactory = $movePageFactory;
@@ -142,11 +144,13 @@ class TranslatablePageMover {
 			}
 		}
 
-		if ( $this->pageMoveLimit !== null && $moveCount > $this->pageMoveLimit ) {
-			$blockers[$source] = Status::newFatal(
-				'pt-movepage-page-count-limit',
-				Message::numParam( $this->pageMoveLimit )
-			);
+		if ( $this->pageMoveLimitEnabled ) {
+			if ( $this->pageMoveLimit !== null && $moveCount > $this->pageMoveLimit ) {
+				$blockers[$source] = Status::newFatal(
+					'pt-movepage-page-count-limit',
+					Message::numParam( $this->pageMoveLimit )
+				);
+			}
 		}
 
 		if ( count( $blockers ) ) {
@@ -222,9 +226,10 @@ class TranslatablePageMover {
 		Title $target,
 		array $pagesToMove,
 		User $performer,
-		string $summary
+		string $summary,
+		callable $progressCallback = null
 	): void {
-		$this->move( $source, $performer, $pagesToMove, $summary );
+		$this->move( $source, $performer, $pagesToMove, $summary, $progressCallback );
 
 		$sourcePage = TranslatablePage::newFromTitle( $source );
 		$targetPage = TranslatablePage::newFromTitle( $target );
@@ -271,6 +276,43 @@ class TranslatablePageMover {
 		);
 	}
 
+	/** @return string[] */
+	public function getPagesToMove( Title $source, Title $target, bool $moveSubPages ): array {
+		$page = TranslatablePage::newFromTitle( $source );
+		$base = $source->getPrefixedText();
+
+		$moves = [];
+		$moves[$base] = $target->getPrefixedText();
+
+		foreach ( $page->getTranslationPages() as $from ) {
+			$to = $this->newPageTitle( $base, $from, $target );
+			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
+		}
+
+		foreach ( $page->getTranslationUnitPages( 'all' ) as $from ) {
+			$to = $this->newPageTitle( $base, $from, $target );
+			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
+		}
+
+		if ( $moveSubPages ) {
+			$subpages = $this->getNormalSubpages( $page );
+			foreach ( $subpages as $from ) {
+				$to = $this->newPageTitle( $base, $from, $target );
+				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
+			}
+		}
+
+		return $moves;
+	}
+
+	public function disablePageMoveLimit(): void {
+		$this->pageMoveLimitEnabled = false;
+	}
+
+	public function enablePageMoveLimit(): void {
+		$this->pageMoveLimitEnabled = true;
+	}
+
 	/**
 	 * Returns all subpages, if the namespace has them enabled.
 	 * @return Title[]
@@ -306,53 +348,27 @@ class TranslatablePageMover {
 		}
 	}
 
-	/** @return string[] */
-	private function getPagesToMove( Title $source, Title $target, bool $moveSubPages ): array {
-		$page = TranslatablePage::newFromTitle( $source );
-		$base = $source->getPrefixedText();
-
-		$moves = [];
-		$moves[$base] = $target->getPrefixedText();
-
-		foreach ( $page->getTranslationPages() as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-		}
-
-		foreach ( $page->getTranslationUnitPages( 'all' ) as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-		}
-
-		if ( $moveSubPages ) {
-			$subpages = $this->getNormalSubpages( $page );
-			foreach ( $subpages as $from ) {
-				$to = $this->newPageTitle( $base, $from, $target );
-				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-			}
-		}
-
-		return $moves;
-	}
-
 	/**
 	 * @param Title $baseSource
 	 * @param User $performer
 	 * @param string[] $pagesToMove
 	 * @param string $summary
+	 * @param callable|null $progressCallback
 	 * @return void
 	 */
 	private function move(
 		Title $baseSource,
 		User $performer,
 		array $pagesToMove,
-		string $summary
+		string $summary,
+		callable $progressCallback = null
 	): void {
 		$fuzzybot = FuzzyBot::getUser();
 		$performer = User::newFromName( $performer );
 
 		PageTranslationHooks::$allowTargetEdit = true;
 
+		$processed = 0;
 		foreach ( $pagesToMove as $source => $target ) {
 			$sourceTitle = Title::newFromText( $source );
 			$targetTitle = Title::newFromText( $target );
@@ -365,6 +381,18 @@ class TranslatablePageMover {
 
 			$mover = $this->movePageFactory->newMovePage( $sourceTitle, $targetTitle );
 			$status = $mover->move( $user, $summary, false );
+			$processed++;
+
+			if ( $progressCallback ) {
+				$progressCallback(
+					$sourceTitle,
+					$targetTitle,
+					$status,
+					count( $pagesToMove ),
+					$processed
+				);
+			}
+
 			if ( !$status->isOK() ) {
 				$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );
 				$entry->setPerformer( $performer );
