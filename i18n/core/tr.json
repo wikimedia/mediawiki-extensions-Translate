@@ -278,6 +278,7 @@
 	"translate-manage-import-done": "İçe aktarma tamamlandı!",
 	"translate-manage-empty-content": "İçerik boştur",
 	"translate-manage-key-reused": "Bu mesaj vikide zaten var. Eski bir anahtarın yanlışlıkla yeniden kullanılmasını kontrol edin.",
+	"translate-manage-source-message-not-found": "İleti açıklaması bulunamadı",
 	"importtranslations": "Çevirileri içe aktar",
 	"translate-import-from-local": "Yerel dosya yükleme:",
 	"translate-import-load": "Dosya yükle",

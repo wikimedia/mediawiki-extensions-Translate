@@ -23,7 +23,6 @@
 	"apihelp-groupreview-example-1": "Отбелязване на състоянието на немския превод за групата съобщения „група-Пример“ като готов",
 	"apihelp-query+languagestats-description": "Статистика за езика на заявките.",
 	"apihelp-query+languagestats-summary": "Статистика за езика на заявките.",
-	"apihelp-query+languagestats-param-timelimit": "Максимално време за изчисляване на липсващи статистически данни. Ако е нула, се връщат само кешираните резултати от началото.",
 	"apihelp-query+languagestats-param-language": "Езиков код.",
 	"apihelp-query+languagestats-example-1": "Списък със статистически данни за завършване на превода за финландски",
 	"apihelp-query+messagecollection-description": "Заявка MessageCollection за преводите.",

@@ -24,7 +24,6 @@
 	"apihelp-groupreview-example-1": "Markiere den Status der deutschen Übersetzung für die Nachrichtengruppe \"group-Example\" als fertig",
 	"apihelp-query+languagestats-description": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-summary": "Ruft Sprachstatistiken ab.",
-	"apihelp-query+languagestats-param-timelimit": "Maximale Zeit für die Berechnung fehlender Statistiken. Wenn Null, werden nur die zwischengespeicherten Ergebnisse von Anfang an zurückgegeben.",
 	"apihelp-query+languagestats-param-language": "Sprachcode.",
 	"apihelp-query+languagestats-example-1": "Listet Übersetzungsvervollständigungsstatistiken für Finnisch auf.",
 	"apihelp-query+messagecollection-description": "Ruft die Nachrichtensammlung über Übersetzungen ab.",

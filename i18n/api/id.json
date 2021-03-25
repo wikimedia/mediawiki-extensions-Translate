@@ -28,7 +28,6 @@
 	"apihelp-query+messagegroups-example-1": "Tampilkan kelompok pesan",
 	"apihelp-query+messagegroupstats-description": "Kueri statistik kelompok pesan.",
 	"apihelp-query+messagegroupstats-summary": "Kueri statistik kelompok pesan.",
-	"apihelp-query+messagegroupstats-param-timelimit": "Waktu maksimum yang dihabiskan untuk menghitung statistik yang hilang. Jika nol, hanya hasil yang dari awal sudah di tembolok yang diberikan.",
 	"apihelp-query+messagegroupstats-param-group": "ID kelompok pesan.",
 	"apihelp-query+messagegroupstats-example-1": "Daftar statistik kelengkapan terjemahan untuk kelompok \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "Kueri semua terjemahan untuk sebuah pesan.",

@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dnshitobu",
 			"Hidrash"
 		]
 	},
 	"supportedlanguages": "Zuliya shaŋa din mali tumdi tuma.",
-	"translate-manage-source-message-not-found": "Lahibali gbunni kani"
+	"translate-manage-source-message-not-found": "Lahibali gbunni kani",
+	"translate-documentation-language": "Lahabali sabisɔŋ"
 }

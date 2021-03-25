@@ -21,7 +21,6 @@
 	"apihelp-groupreview-example-1": "Marcar le stato del traduction in germano pro le gruppo de messages \"group-Example\" como preste",
 	"apihelp-query+languagestats-description": "Consultar statisticas de lingua.",
 	"apihelp-query+languagestats-summary": "Consultar statisticas de lingua.",
-	"apihelp-query+languagestats-param-timelimit": "Maximo de tempore a usar pro calcular statisticas mancante. Si zero, essera retornate solmente le resultatos immagazinate in cache ab initio.",
 	"apihelp-query+languagestats-param-language": "Codice de lingua.",
 	"apihelp-query+languagestats-example-1": "Lista de statisticas de completion de traduction pro finnese",
 	"apihelp-query+messagecollection-description": "Consultar MessageCollection sur traductiones.",

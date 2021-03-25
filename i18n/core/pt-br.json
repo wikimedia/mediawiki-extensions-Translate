@@ -277,6 +277,7 @@
 	"translate-manage-import-done": "Importação completa!",
 	"translate-manage-empty-content": "O conteúdo está vazio",
 	"translate-manage-key-reused": "Esta mensagem já existe na wiki. Verifique se há uma reutilização acidental de uma chave antiga.",
+	"translate-manage-source-message-not-found": "Definição de mensagem não encontrada",
 	"importtranslations": "Importar traduções",
 	"translate-import-from-local": "Enviar arquivo local:",
 	"translate-import-load": "Enviar arquivo",

@@ -18,6 +18,8 @@
 	"apihelp-query+languagestats-description": "Hakee kielitilastoja.",
 	"apihelp-query+languagestats-param-language": "Kielikoodi.",
 	"apihelp-query+languagestats-example-1": "Luettelo käännösten kattavuustilastoista suomeksi",
+	"apihelp-query+managemessagegroups-param-groupId": "Ryhmätunnus",
+	"apihelp-query+managemessagegroups-param-messageKey": "Viestin avain",
 	"apihelp-query+messagecollection-param-group": "Viestiryhmä.",
 	"apihelp-query+messagecollection-param-language": "Kielikoodi.",
 	"apihelp-query+messagecollection-param-limit": "Kuinka monta viestiä näytetään (suotimien jälkeen).",

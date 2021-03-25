@@ -267,6 +267,7 @@
 	"translate-manage-import-done": "היבוא בוצע!",
 	"translate-manage-empty-content": "התוכן ריק",
 	"translate-manage-key-reused": "ההודעה הזאת כבר קיימת בוויקי. נא לבדוק אם נעשה שימוש חוזר במפתח ישן.",
+	"translate-manage-source-message-not-found": "הגדרת ההודעה לא נמצאה",
 	"importtranslations": "יבוא תרגומים",
 	"translate-import-from-local": "העלאת קובץ מקומי:",
 	"translate-import-load": "טעינת קובץ",

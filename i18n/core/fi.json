@@ -238,6 +238,7 @@
 	"translate-manage-intro-other": "Alla on luettelo kielen $1 käännösmuutoksista.\nTarkista muutokset ja valitse toiminto, jonka haluat tehdä jokaiselle käännökselle.\nJos valitset muutosten ohittamisen, toimintoa ei tallenneta.",
 	"translate-manage-import-ok": "Tuotu: $1",
 	"translate-manage-import-done": "Tuonti valmis.",
+	"translate-manage-source-message-not-found": "Viestin määritelmää ei löytnyt",
 	"importtranslations": "Käännösten tuonti",
 	"translate-import-from-local": "Paikallinen tiedosto",
 	"translate-import-load": "Tallenna tiedosto",

@@ -31,7 +31,6 @@
 	"apihelp-groupreview-example-1": "Задать состояние немецкого перевода для группы сообщений «group-Example» как готовое",
 	"apihelp-query+languagestats-description": "Запросить статистику языка.",
 	"apihelp-query+languagestats-summary": "Запросить статистику языка.",
-	"apihelp-query+languagestats-param-timelimit": "Максимальное время, которое следует затрачивать на подсчёт отсутствующей статистики. Если равно нулю, будут возвращены только кэшированные с самого начала результаты.",
 	"apihelp-query+languagestats-param-language": "Код языка.",
 	"apihelp-query+languagestats-example-1": "Список статистики завершённости перевода для финского.",
 	"apihelp-query+messagecollection-description": "Запросить MessageCollection о переводах.",
