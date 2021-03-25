@@ -208,6 +208,13 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 			$validationResult->getIssues(),
 			'warnings or errors are filtered as per check-blacklist only for specific language code.'
 		);
+
+		$validationResult = $msgValidator->validateMessage( $collectionFr['regex-key-test'], 'fr' );
+		$this->assertCount(
+			0,
+			$validationResult->getIssues(),
+			'warnings or errors are filtered as per check-blacklist for specific message key.'
+		);
 	}
 
 	public function testKeyMatching() {

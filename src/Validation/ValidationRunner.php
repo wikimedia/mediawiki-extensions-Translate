@@ -163,8 +163,8 @@ class ValidationRunner {
 			);
 		}
 
-		$errors = $this->filterValidations( $errors, $code );
-		$warnings = $this->filterValidations( $warnings, $code );
+		$errors = $this->filterValidations( $message->key(), $errors, $code );
+		$warnings = $this->filterValidations( $message->key(), $warnings, $code );
 
 		return new ValidationResult( $errors, $warnings );
 	}
@@ -188,8 +188,8 @@ class ValidationRunner {
 				$ignoreWarnings
 			);
 
-			$errors = $this->filterValidations( $errors, $code );
-			$warnings = $this->filterValidations( $warnings, $code );
+			$errors = $this->filterValidations( $message->key(), $errors, $code );
+			$warnings = $this->filterValidations( $message->key(), $warnings, $code );
 
 			if ( $warnings->hasIssues() || $errors->hasIssues() ) {
 				break;
@@ -235,6 +235,7 @@ class ValidationRunner {
 
 	/** Filter validations based on a ignore list. */
 	private function filterValidations(
+		string $messageKey,
 		ValidationIssues $issues,
 		string $targetLanguage
 	): ValidationIssues {
@@ -242,7 +243,7 @@ class ValidationRunner {
 
 		foreach ( $issues as $issue ) {
 			foreach ( self::$ignorePatterns as $pattern ) {
-				if ( $this->shouldIgnore( $issue, $this->groupId, $targetLanguage, $pattern ) ) {
+				if ( $this->shouldIgnore( $messageKey, $issue, $this->groupId, $targetLanguage, $pattern ) ) {
 					continue 2;
 				}
 			}
@@ -253,6 +254,7 @@ class ValidationRunner {
 	}
 
 	private function shouldIgnore(
+		string $messageKey,
 		ValidationIssue $issue,
 		string $messageGroupId,
 		string $targetLanguage,
@@ -261,7 +263,7 @@ class ValidationRunner {
 		return $this->matchesIgnorePattern( $pattern['group'], $messageGroupId )
 			&& $this->matchesIgnorePattern( $pattern['check'], $issue->type() )
 			&& $this->matchesIgnorePattern( $pattern['subcheck'], $issue->subType() )
-			&& $this->matchesIgnorePattern( $pattern['message'], $issue->messageKey() )
+			&& $this->matchesIgnorePattern( $pattern['message'], $messageKey )
 			&& $this->matchesIgnorePattern( $pattern['code'], $targetLanguage );
 	}
 
