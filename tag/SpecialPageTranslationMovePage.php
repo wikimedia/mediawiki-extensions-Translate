@@ -286,7 +286,12 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 					$subpagesCount++;
 				}
 
-				$lines[] = $this->getChangeLine( $base, $old, $target, $canBeMoved );
+				if ( $canBeMoved ) {
+					$to = $this->pageMover->newPageTitle( $base, $old, $target );
+					$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $to;
+				} else {
+					$lines[] = '* ' . $old->getPrefixedText();
+				}
 			}
 
 			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
@@ -343,23 +348,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			->setWrapperLegendMsg( 'pt-movepage-legend' )
 			->prepareForm()
 			->displayForm( false );
-	}
-
-	/**
-	 * @param string $base
-	 * @param Title $old
-	 * @param Title $target
-	 * @param bool $enabled
-	 * @return string
-	 */
-	protected function getChangeLine( $base, Title $old, Title $target, $enabled = true ) {
-		$to = $this->pageMover->newPageTitle( $base, $old, $target );
-
-		if ( $enabled ) {
-			return '* ' . $old->getPrefixedText() . ' → ' . $to;
-		} else {
-			return '* ' . $old->getPrefixedText();
-		}
 	}
 
 	/**
