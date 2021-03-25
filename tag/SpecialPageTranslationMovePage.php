@@ -1,11 +1,5 @@
 <?php
-/**
- * Contains class to override Special:MovePage for page translation.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\Services;
@@ -15,22 +9,19 @@ use MediaWiki\MediaWikiServices;
  * Overrides Special:Movepage to to allow renaming a page translation page and
  * all related translations and derivative pages.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslationMovePage extends MovePageForm {
 	// Basic form parameters both as text and as titles
-	protected $newText, $oldText;
+	/** @var string|null */
+	protected $newText;
+	/** @var string|null */
+	protected $oldText;
 	// Other form parameters
-	/**
-	 * 'check' or 'perform'
-	 */
-	protected $subaction;
 	/** @var TranslatablePage instance. */
 	protected $page;
-	/**
-	 * Whether MovePageForm extends SpecialPage
-	 */
-	protected $old;
 	/** @var Title[] Cached list of translation pages. Not yet loaded if null. */
 	protected $translationPages;
 	/** @var Title[] Cached list of section pages. Not yet loaded if null. */
@@ -46,7 +37,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/**
 	 * Partially copies from SpecialMovepage.php, because it cannot be
 	 * extended in other ways.
-	 *
 	 * @param string|null $par null if subpage not provided, string otherwise
 	 * @throws PermissionsError
 	 */
@@ -134,7 +124,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * the input looks anywhere near sane.
 	 * @throws PermissionsError|ErrorPageError|ReadOnlyError|ThrottledError
 	 */
-	protected function doBasicChecks() {
+	protected function doBasicChecks(): void {
 		$this->checkReadOnly();
 
 		if ( $this->oldTitle === null ) {
@@ -160,10 +150,9 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/**
 	 * Checks token. Use before real actions happen. Have to use wpEditToken
 	 * for compatibility for SpecialMovepage.php.
-	 *
 	 * @return bool
 	 */
-	protected function checkToken() {
+	protected function checkToken(): bool {
 		return $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) );
 	}
 
@@ -195,11 +184,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * The query form.
-	 *
 	 * @param array $err Unused.
 	 * @param bool $isPermError Unused.
 	 */
-	public function showForm( $err, $isPermError = false ) {
+	public function showForm( $err, $isPermError = false ): void {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
 		$formDescriptor = [
@@ -239,7 +227,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * The second form, which still allows changing some things.
 	 * Lists all the action which would take place.
 	 */
-	protected function showConfirmation() {
+	protected function showConfirmation(): void {
 		$out = $this->getOutput();
 
 		$out->addWikiMsg( 'pt-movepage-intro' );
@@ -354,7 +342,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * Returns all section pages, including those which are currently not active.
 	 * @return Title[]
 	 */
-	protected function getSectionPages() {
+	protected function getSectionPages(): array {
 		if ( !isset( $this->sectionPages ) ) {
 			$this->sectionPages = $this->page->getTranslationUnitPages( 'all' );
 		}
@@ -366,7 +354,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * Returns only translation subpages.
 	 * @return Title[]
 	 */
-	protected function getTranslationPages() {
+	protected function getTranslationPages(): array {
 		if ( !isset( $this->translationPages ) ) {
 			$this->translationPages = $this->page->getTranslationPages();
 		}
