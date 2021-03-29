@@ -171,7 +171,7 @@
 	"translate-mgs-totals": "รวมทั้งหมด $1 {{PLURAL:$1|ภาษา}}",
 	"translate-mgs-invalid-group": "กลุ่ม $1 ที่ระบุไม่มีอยู่",
 	"translate-mgs-nothing": "ไม่มีอะไรที่จะแสดงสำหรับสถิติที่ร้องขอ",
-	"supportedlanguages": "ภาษาที่รองรับ",
+	"supportedlanguages": "ภาษาที่มีการใช้งาน",
 	"supportedlanguages-summary": "หน้านี้แสดงรายการภาษาทั้งหมดที่ {{SITENAME}} รองรับ\nพร้อมชื่อผู้แปลที่ีทำงานแปลภาษานั้นๆ\nโดยชื่อผู้แปลจะปรากฏเป็นขนาดใหญ่ ถ้าผู้แปลคนนั้นร่วมแปลมาก\nสีขีดเส้นใต้บ่งบอกว่าผู้แปลได้ทำงานที่้นี่ครั้งล่าสุดเมื่อใด",
 	"supportedlanguages-colorlegend": "คำอธิบายสี: แปลครั้งล่าสุดเมื่อ $1 วันที่ผ่านมา",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|ผู้แปล}}|ผู้แปล}}: คุณ $1",

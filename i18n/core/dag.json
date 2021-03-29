@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Dnshitobu",
-			"Hidrash"
+			"Hidrash",
+			"Yakubu Fadilatu"
 		]
 	},
 	"supportedlanguages": "Zuliya shaŋa din mali tumdi tuma.",
+	"translate-smg-group-message-action-history": "Taarihi",
+	"translate-smg-group-message-message-other-langs": "Bali shɛŋa:",
 	"translate-manage-source-message-not-found": "Lahibali gbunni kani",
 	"translate-documentation-language": "Lahabali sabisɔŋ"
 }

@@ -72,7 +72,7 @@
 	"tpt-old-pages-title": "Pages en cours de traduction",
 	"tpt-other-pages-title": "Pages cassées",
 	"tpt-outdated-pages-title": "Pages avec des modifications en attente",
-	"tpt-new-pages": "{{PLURAL:$1|Cette page contient|Ces pages contiennent}} du texte avec des balises de traduction, mais aucune version de {{PLURAL:$1|cette page n’est marquée|ces pages ne sont marquées}} à traduire.",
+	"tpt-new-pages": "{{PLURAL:$1|Cette page contient|Ces pages contiennent}} du texte avec des balises de traduction, mais aucune version de {{PLURAL:$1|cette page|ces pages}} n’a été marquée à traduire.",
 	"tpt-old-pages": "La dernière version de {{PLURAL:$1|cette page|chacune de ces pages}} a été marquée à traduire.",
 	"tpt-other-pages": "Une ancienne version de {{PLURAL:$1|la page suivante|chacune des pages suivantes}} a été marquée pour être traduite,\nmais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peut pas être marquée ainsi :",
 	"tpt-outdated-pages": "{{PLURAL:$1|Cette page a|Ces pages ont}} des modifications non marquées à traduire.",
