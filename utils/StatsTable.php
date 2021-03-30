@@ -257,10 +257,10 @@ class StatsTable {
 	 * @param string $code Language code
 	 * @return bool
 	 */
-	public function isBlacklisted( $groupId, $code ) {
+	public function isExcluded( $groupId, $code ) {
 		global $wgTranslateBlacklist;
 
-		$blacklisted = null;
+		$excluded = null;
 
 		$checks = [
 			$groupId,
@@ -270,10 +270,10 @@ class StatsTable {
 
 		foreach ( $checks as $check ) {
 			if ( isset( $wgTranslateBlacklist[$check] ) && isset( $wgTranslateBlacklist[$check][$code] ) ) {
-				$blacklisted = $wgTranslateBlacklist[$check][$code];
+				$excluded = $wgTranslateBlacklist[$check][$code];
 			}
 
-			if ( $blacklisted !== null ) {
+			if ( $excluded !== null ) {
 				break;
 			}
 		}
@@ -281,14 +281,14 @@ class StatsTable {
 		$group = MessageGroups::getGroup( $groupId );
 		$languages = $group->getTranslatableLanguages();
 		if ( $languages !== null && !isset( $languages[$code] ) ) {
-			$blacklisted = true;
+			$excluded = true;
 		}
 
 		$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $groupId, $code ] );
 		if ( !$include ) {
-			$blacklisted = true;
+			$excluded = true;
 		}
 
-		return $blacklisted;
+		return $excluded;
 	}
 }

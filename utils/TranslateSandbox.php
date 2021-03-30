@@ -322,7 +322,7 @@ class TranslateSandbox {
 	}
 
 	/**
-	 * Whitelisting for certain API modules. See also enforcePermissions.
+	 * Inclusion listing for certain API modules. See also enforcePermissions.
 	 * Hook: ApiCheckCanExecute
 	 * @param ApiBase $module
 	 * @param User $user
@@ -330,7 +330,7 @@ class TranslateSandbox {
 	 * @return bool
 	 */
 	public static function onApiCheckCanExecute( ApiBase $module, User $user, &$message ) {
-		$whitelist = [
+		$inclusionList = [
 			// Obviously this is needed to get out of the sandbox
 			'ApiTranslationStash',
 			// Used by UniversalLanguageSelector for example
@@ -339,7 +339,7 @@ class TranslateSandbox {
 
 		if ( self::isSandboxed( $user ) ) {
 			$class = get_class( $module );
-			if ( $module->isWriteMode() && !in_array( $class, $whitelist, true ) ) {
+			if ( $module->isWriteMode() && !in_array( $class, $inclusionList, true ) ) {
 				$message = ApiMessage::create( 'apierror-writeapidenied' );
 				return false;
 			}

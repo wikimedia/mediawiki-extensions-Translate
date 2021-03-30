@@ -205,28 +205,28 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	protected function filterUsers( array $users, string $code ): array {
-		$blacklist = $this->options->get( 'TranslateAuthorBlacklist' );
+		$exclusionList = $this->options->get( 'TranslateAuthorBlacklist' );
 
 		foreach ( $users as $index => $user ) {
 			$username = $user[TranslatorActivityQuery::USER_NAME];
 			# We do not know the group
 			$hash = "#;$code;$username";
 
-			$blacklisted = false;
-			foreach ( $blacklist as $rule ) {
+			$excluded = false;
+			foreach ( $exclusionList as $rule ) {
 				[ $type, $regex ] = $rule;
 
 				if ( preg_match( $regex, $hash ) ) {
 					if ( $type === 'white' ) {
-						$blacklisted = false;
+						$excluded = false;
 						break;
 					} else {
-						$blacklisted = true;
+						$excluded = true;
 					}
 				}
 			}
 
-			if ( $blacklisted ) {
+			if ( $excluded ) {
 				unset( $users[$index] );
 			}
 		}

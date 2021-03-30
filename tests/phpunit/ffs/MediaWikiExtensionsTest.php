@@ -34,8 +34,8 @@ class MediaWikiExtensionsTest extends PHPUnit\Framework\TestCase {
 
 		$this->assertArrayHasKey( 'ext-languagesmodified', $list );
 		$languages = $list['ext-languagesmodified']->getTranslatableLanguages();
-		$this->assertArrayHasKey( 'foo', $languages, 'Whitelisted language is available' );
-		$this->assertArrayNotHasKey( 'bar', $languages, 'Blacklisted language is not available' );
+		$this->assertArrayHasKey( 'foo', $languages, 'Included language is available' );
+		$this->assertArrayNotHasKey( 'bar', $languages, 'Excluded language is not available' );
 		$this->assertArrayHasKey( 'de', $languages, 'Default language is available' );
 
 		$this->assertArrayHasKey( 'ext-languagesset', $list );

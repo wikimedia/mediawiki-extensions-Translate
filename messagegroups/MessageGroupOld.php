@@ -323,11 +323,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return new MessageGroupStates( $conf );
 	}
 
-	/**
-	 * Get all the translatable languages for a group, considering the whitelisting
-	 * and blacklisting.
-	 * @return array|null The language codes as array keys.
-	 */
+	/** @inheritDoc */
 	public function getTranslatableLanguages() {
 		return null;
 	}

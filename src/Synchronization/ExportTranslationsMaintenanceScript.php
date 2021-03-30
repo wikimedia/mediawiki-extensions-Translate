@@ -190,7 +190,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$sourceLanguage = $group->getSourceLanguage();
 			$collection = $group->initCollection( $sourceLanguage );
 
-			$whitelist = $group->getTranslatableLanguages();
+			$inclusionList = $group->getTranslatableLanguages();
 
 			$langExportTimes = [
 				'collection' => 0,
@@ -201,10 +201,10 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			$langStartTime = microtime( true );
 			foreach ( $languageExportActions as $lang => $action ) {
-				// Do not export languages that are blacklisted (or not whitelisted).
-				// Also check that whitelist is not null, which means that all
+				// Do not export languages that are excluded (or not included).
+				// Also check that inclusion list is not null, which means that all
 				// languages are allowed for translation and export.
-				if ( is_array( $whitelist ) && !isset( $whitelist[$lang] ) ) {
+				if ( is_array( $inclusionList ) && !isset( $inclusionList[$lang] ) ) {
 					continue;
 				}
 

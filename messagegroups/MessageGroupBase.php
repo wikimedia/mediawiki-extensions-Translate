@@ -314,11 +314,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return new MessageGroupStates( $conf );
 	}
 
-	/**
-	 * Get all the translatable languages for a group, considering the whitelisting
-	 * and blacklisting.
-	 * @return array|null The language codes as array keys.
-	 */
+	/** @inheritDoc */
 	public function getTranslatableLanguages() {
 		global $wgTranslateBlacklist;
 
@@ -332,39 +328,39 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		$lists = $groupConfiguration['LANGUAGES'];
 		if ( isset( $lists['blacklist'] ) ) {
-			$blacklist = $lists['blacklist'];
-			if ( $blacklist === '*' ) {
-				// All languages blacklisted
+			$exclusionList = $lists['blacklist'];
+			if ( $exclusionList === '*' ) {
+				// All excluded languages
 				$codes = [];
-			} elseif ( is_array( $blacklist ) ) {
-				foreach ( $blacklist as $code ) {
+			} elseif ( is_array( $exclusionList ) ) {
+				foreach ( $exclusionList as $code ) {
 					unset( $codes[$code] );
 				}
 			}
 		} else {
-			// Treat lack of explicit blacklist the same as blacklisting everything. This way,
-			// when one defines only whitelist, it means that only those languages are allowed.
+			// Treat lack of explicit exclusion list the same as excluding everything. This way,
+			// when one defines only inclusions, it means that only those languages are allowed.
 			$codes = [];
 		}
 
 		// DWIM with $wgTranslateBlacklist, e.g. languages in that list should not unexpectedly
-		// be enabled when a whitelist is used to whitelist any language.
+		// be enabled when an inclusion list is used to include any language.
 		$checks = [ $this->getId(), strtok( $this->getId(), '-' ), '*' ];
 		foreach ( $checks as $check ) {
 			if ( isset( $wgTranslateBlacklist[ $check ] ) ) {
-				foreach ( array_keys( $wgTranslateBlacklist[ $check ] ) as $blacklistedCode ) {
-					unset( $codes[ $blacklistedCode ] );
+				foreach ( array_keys( $wgTranslateBlacklist[ $check ] ) as $excludedCode ) {
+					unset( $codes[ $excludedCode ] );
 				}
 			}
 		}
 
 		if ( isset( $lists['whitelist'] ) ) {
-			$whitelist = $lists['whitelist'];
-			if ( $whitelist === '*' ) {
-				// All languages whitelisted (except $wgTranslateBlacklist)
+			$inclusionList = $lists['whitelist'];
+			if ( $inclusionList === '*' ) {
+				// All languages included (except $wgTranslateBlacklist)
 				return null;
-			} elseif ( is_array( $whitelist ) ) {
-				foreach ( $whitelist as $code ) {
+			} elseif ( is_array( $inclusionList ) ) {
+				foreach ( $inclusionList as $code ) {
 					$codes[$code] = true;
 				}
 			}

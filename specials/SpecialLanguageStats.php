@@ -456,7 +456,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 	/**
 	 * Actually creates the table for single message group, unless it
-	 * is blacklisted or hidden by filters.
+	 * is in the exclusion list or hidden by filters.
 	 * @param MessageGroup $group
 	 * @param array $cache
 	 * @param MessageGroup|null $parent
@@ -467,7 +467,7 @@ class SpecialLanguageStats extends SpecialPage {
 	) {
 		$groupId = $group->getId();
 
-		if ( $this->table->isBlacklisted( $groupId, $this->target ) !== null ) {
+		if ( $this->table->isExcluded( $groupId, $this->target ) !== null ) {
 			return '';
 		}
 

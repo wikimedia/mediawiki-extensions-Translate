@@ -317,7 +317,7 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
-	 * Remove blacklisted authors.
+	 * Remove excluded authors.
 	 *
 	 * @param array $authors
 	 * @param string $code
@@ -330,21 +330,21 @@ class SimpleFFS implements FFS {
 		foreach ( $authors as $i => $v ) {
 			$hash = "$groupId;$code;$v";
 
-			$blacklisted = false;
+			$excluded = false;
 			foreach ( $wgTranslateAuthorBlacklist as $rule ) {
 				list( $type, $regex ) = $rule;
 
 				if ( preg_match( $regex, $hash ) ) {
 					if ( $type === 'white' ) {
-						$blacklisted = false;
+						$excluded = false;
 						break;
 					} else {
-						$blacklisted = true;
+						$excluded = true;
 					}
 				}
 			}
 
-			if ( $blacklisted ) {
+			if ( $excluded ) {
 				unset( $authors[$i] );
 			}
 		}

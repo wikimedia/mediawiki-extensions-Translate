@@ -6,10 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
-/**
- * Unit tests for blacklisting/whitelisting languages for a message group
- */
-class BlackListTest extends MediaWikiTestCase {
+class ExclusionInclusionListTest extends MediaWikiTestCase {
 
 	/** @var MessageGroup */
 	protected $group;
@@ -43,7 +40,7 @@ class BlackListTest extends MediaWikiTestCase {
 		$this->assertNull( $translatableLanguages );
 	}
 
-	public function testAllBlackList() {
+	public function testAllExclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
 			'blacklist' => '*',
@@ -53,7 +50,7 @@ class BlackListTest extends MediaWikiTestCase {
 		$this->assertEquals( count( $translatableLanguages ), 0 );
 	}
 
-	public function testAllWhiteList() {
+	public function testAllInclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
 			'whitelist' => '*',
@@ -63,7 +60,7 @@ class BlackListTest extends MediaWikiTestCase {
 		$this->assertNull( $translatableLanguages );
 	}
 
-	public function testWhiteListOverrideBlackList() {
+	public function testInclusionListOverridesExclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
 			'whitelist' => [ 'en', 'hi', 'ta' ],
@@ -75,7 +72,7 @@ class BlackListTest extends MediaWikiTestCase {
 		$this->assertTrue( isset( $translatableLanguages['hi'] ) );
 	}
 
-	public function testSomeBlackList() {
+	public function testSomeExclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
 			'blacklist' => [ 'or', 'hi' ],

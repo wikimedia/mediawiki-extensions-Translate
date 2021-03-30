@@ -974,7 +974,7 @@ class PageTranslationHooks {
 			return [];
 		}
 
-		// And finally check whether the language is not included in whitelist
+		// And finally check whether the language is in the inclusion list
 		$languages = TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$filter = array_flip( explode( ',', $languages ) );
 		if ( !isset( $filter[$handle->getCode()] ) ) {
@@ -1003,12 +1003,12 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		$whitelist = [
+		$inclusionList = [
 			'read', 'delete', 'undelete', 'deletedtext', 'deletedhistory',
 			'review', // FlaggedRevs
 			'patrol', // T151172
 		];
-		if ( in_array( $action, $whitelist ) ) {
+		if ( in_array( $action, $inclusionList ) ) {
 			return true;
 		}
 
