@@ -11,7 +11,8 @@
 			"Sudo77(new)",
 			"Teslaton",
 			"TomášPolonec",
-			"Vegetator"
+			"Vegetator",
+			"Yardom78"
 		]
 	},
 	"translate": "Preložiť",
@@ -175,7 +176,7 @@
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|editácia|editácie|editácií}} – posledná pred $3 {{PLURAL:$3|dňom|dňami}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "Zdrojový text prekladovej jednotky",
 	"translate-jssti-add": "Pridať do zoznamu",
-	"managemessagegroups": "Správa skupín správ",
+	"managemessagegroups": "Manažment skupín správ",
 	"translate-smg-nochanges": "Neexistujú žiadne zmeny na spracovanie.",
 	"translate-manage-import-diff": "Správa $1 | Operácie: $2",
 	"translate-manage-import-new": "Nová správa $1",
