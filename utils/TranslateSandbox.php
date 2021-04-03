@@ -173,9 +173,11 @@ class TranslateSandbox {
 			throw new MWException( 'Not a sandboxed user' );
 		}
 
-		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
+		$services = MediaWikiServices::getInstance();
+
+		if ( method_exists( $services, 'getUserGroupManager' ) ) {
 			// MediaWiki 1.35+
-			$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+			$userGroupManager = $services->getUserGroupManager();
 			$userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
 
 			if ( $wgTranslateSandboxPromotedGroup ) {
@@ -189,8 +191,15 @@ class TranslateSandbox {
 			}
 		}
 
-		$user->setOption( 'translate-sandbox-reminders', '' );
-		$user->saveSettings();
+		if ( method_exists( $services, 'getUserOptionsManager' ) ) {
+			// MW 1.35+
+			$userOptionsManager = $services->getUserOptionsManager();
+			$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
+			$userOptionsManager->saveOptions( $user );
+		} else {
+			$user->setOption( 'translate-sandbox-reminders', '' );
+			$user->saveSettings();
+		}
 	}
 
 	/**

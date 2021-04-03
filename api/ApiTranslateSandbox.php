@@ -85,8 +85,16 @@ class ApiTranslateSandbox extends ApiBase {
 			'id' => $user->getId(),
 		] ];
 
-		$user->setOption( 'language', $this->getContext()->getLanguage()->getCode() );
-		$user->saveSettings();
+		$services = MediaWikiServices::getInstance();
+		if ( method_exists( $services, 'getUserOptionsManager' ) ) {
+			// MW 1.35+
+			$userOptionsManager = $services->getUserOptionsManager();
+			$userOptionsManager->setOption( $user, 'language', $this->getContext()->getLanguage()->getCode() );
+			$userOptionsManager->saveOptions( $user );
+		} else {
+			$user->setOption( 'language', $this->getContext()->getLanguage()->getCode() );
+			$user->saveSettings();
+		}
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
