@@ -11,6 +11,7 @@
 
 // Standard boilerplate to define $IP
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\MediaWikiServices;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
@@ -115,19 +116,9 @@ class CharacterEditStats extends Maintenance {
 		$dbr = wfGetDB( DB_REPLICA );
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 
-		// The field renames are to be compatible with recentchanges table query
-		if ( is_callable( [ Revision::class, 'getQueryInfo' ] ) ) {
-			$revQuery = Revision::getQueryInfo( [ 'page' ] );
-			$revUserText = $revQuery['fields']['rev_user_text'] ?? 'rev_user_text';
-		} else {
-			$revQuery = [
-				'tables' => [ 'revision', 'page' ],
-				'joins' => [
-					'page' => [ 'JOIN', 'rev_page = page_id' ],
-				]
-			];
-			$revUserText = 'rev_user_text';
-		}
+		$revQuery = MediaWikiServices::getInstance()->getRevisionStore()->getQueryInfo( [ 'page' ] );
+		$revUserText = $revQuery['fields']['rev_user_text'] ?? 'rev_user_text';
+
 		$conds = [
 			"rev_timestamp > $cutoff",
 			'page_namespace' => $namespaces,
