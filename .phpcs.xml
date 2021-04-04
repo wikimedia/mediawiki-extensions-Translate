@@ -19,6 +19,7 @@
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>Translate\.alias\.php</exclude-pattern>
 		<exclude-pattern>Translate\.i18n\.magic\.php</exclude-pattern>
+		<exclude-pattern>Translate/tests/phpunit/data/Example*\.php</exclude-pattern>
 	</rule>
 	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
 		<properties>

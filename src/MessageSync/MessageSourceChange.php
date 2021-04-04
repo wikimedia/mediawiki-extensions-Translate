@@ -19,9 +19,8 @@ use InvalidArgumentException;
 class MessageSourceChange {
 	/**
 	 * @var array[][][]
-	 * @codingStandardsIgnoreStart
+	 * @phpcs:ignore Generic.Files.LineLength
 	 * @phan-var array<string,array<string,array<string|int,array{key:string,content:string,similarity?:float,matched_to?:string,previous_state?:string}>>>
-	 * @codingStandardsIgnoreEnd
 	 */
 	protected $changes = [];
 	public const ADDITION = 'addition';
