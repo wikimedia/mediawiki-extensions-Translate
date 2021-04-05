@@ -52,7 +52,7 @@ class ApiTranslateSandbox extends ApiBase {
 
 		$username = $params['username'];
 
-		if ( is_callable( UserNameUtils::class, 'getCanonical' ) ) {
+		if ( is_callable( [ UserNameUtils::class, 'getCanonical' ] ) ) {
 			// MW 1.35+
 			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 			$canonicalName = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_CREATABLE );
