@@ -86,21 +86,12 @@ class TranslationAidDataProvider {
 
 	private static function loadTranslationData( IDatabase $db, MessageHandle $handle ) {
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
-		if ( is_callable( [ $revisionStore, 'newRevisionsFromBatch' ] ) ) {
-			$queryInfo = $revisionStore->getQueryInfo( [ 'page' ] );
-			$tables = $queryInfo[ 'tables' ];
-			$fields = $queryInfo[ 'fields' ];
-			$conds = [];
-			$options = [];
-			$joins = $queryInfo[ 'joins' ];
-		} else {
-			$queryInfo = Revision::getQueryInfo( [ 'page', 'text' ] );
-			$tables = $queryInfo[ 'tables' ];
-			$fields = $queryInfo[ 'fields' ];
-			$conds = [];
-			$options = [];
-			$joins = $queryInfo[ 'joins' ];
-		}
+		$queryInfo = $revisionStore->getQueryInfo( [ 'page' ] );
+		$tables = $queryInfo[ 'tables' ];
+		$fields = $queryInfo[ 'fields' ];
+		$conds = [];
+		$options = [];
+		$joins = $queryInfo[ 'joins' ];
 
 		// The list of pages we want to select, and their latest versions
 		$conds['page_namespace'] = $handle->getTitle()->getNamespace();
@@ -119,22 +110,16 @@ class TranslationAidDataProvider {
 		$rows = $db->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
 
 		$pages = [];
-		if ( is_callable( [ $revisionStore, 'newRevisionsFromBatch' ] ) ) {
-			$revisions = $revisionStore->newRevisionsFromBatch( $rows, [
-				'slots' => [ SlotRecord::MAIN ]
-			] )->getValue();
-			foreach ( $rows as $row ) {
-				/** @var RevisionRecord|null $rev */
-				$rev = $revisions[$row->rev_id];
-				if ( $rev && $rev->getContent( SlotRecord::MAIN ) instanceof TextContent ) {
-					$pages[$row->page_title] = $rev->getContent( SlotRecord::MAIN )->getText();
-				}
-			}
-		} else {
-			foreach ( $rows as $row ) {
-				$pages[$row->page_title] = Revision::getRevisionText( $row );
+		$revisions = $revisionStore->newRevisionsFromBatch( $rows, [ 'slots' => [ SlotRecord::MAIN ] ] )
+			->getValue();
+		foreach ( $rows as $row ) {
+			/** @var RevisionRecord|null $rev */
+			$rev = $revisions[$row->rev_id];
+			if ( $rev && $rev->getContent( SlotRecord::MAIN ) instanceof TextContent ) {
+				$pages[$row->page_title] = $rev->getContent( SlotRecord::MAIN )->getText();
 			}
 		}
+
 		return $pages;
 	}
 }
