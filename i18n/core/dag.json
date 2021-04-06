@@ -1,14 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
+			"Achiri Bitamsimli",
 			"Dnshitobu",
 			"Hidrash",
+			"Mo Yumzaa",
+			"Sir Amugi",
 			"Yakubu Fadilatu"
 		]
 	},
 	"supportedlanguages": "Zuliya shaŋa din mali tumdi tuma.",
 	"translate-smg-group-message-action-history": "Taarihi",
-	"translate-smg-group-message-message-other-langs": "Bali shɛŋa:",
+	"translate-smg-group-message-tag-outdated": "Din lan kani",
+	"translate-smg-group-message-tag-rename": "Lab Boli",
+	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Tag|Tags}}:",
+	"translate-smg-group-message-message-content": "Din bei dini",
+	"translate-smg-group-message-message-target": "Yuli nya",
+	"translate-smg-group-message-message-replacement": "Taɣibu",
+	"translate-smg-group-message-message-other-langs": "Bali shɛŋa din pahi:",
 	"translate-manage-source-message-not-found": "Lahibali gbunni kani",
 	"translate-documentation-language": "Lahabali sabisɔŋ"
 }

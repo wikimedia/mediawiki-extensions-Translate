@@ -3,8 +3,10 @@
 		"authors": [
 			"Afingba Mangang",
 			"Amire80",
-			"Awangba Mangang"
+			"Awangba Mangang",
+			"Luwanglinux"
 		]
 	},
+	"translate-smg-group-message-tag-label": "{{PLURAL:$1|ꯊꯦꯠꯄꯥ |ꯊꯦꯠꯄꯥꯁꯤꯡ}}:",
 	"translate-documentation-language": "ꯗꯣꯀꯨꯃꯦꯟꯇꯦꯁꯟꯗ ꯄꯥꯎꯖꯦꯜ ꯊꯥꯎ"
 }
