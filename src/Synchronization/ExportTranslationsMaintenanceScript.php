@@ -4,8 +4,10 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
 use GettextFFS;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use MessageGroups;
 use MessageGroupStats;
@@ -92,6 +94,12 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			self::OPTIONAL,
 			self::HAS_ARG
 		);
+		$this->addOption(
+			'skip-group-sync-check',
+			'(optional) Skip exporting group if synchronization is still in progress or if there ' .
+				'was an error during synchronization. See: ' .
+				'https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_management#Strong_synchronization'
+		);
 
 		$this->requireExtension( 'Translate' );
 	}
@@ -100,6 +108,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
 		$groupPattern = $this->getOption( 'group' ) ?? '';
 		$groupSkipPattern = $this->getOption( 'skipgroup' ) ?? '';
+		$skipGroupSyncCheck = $this->hasOption( 'skip-group-sync-check' );
 
 		$logger->info(
 			'Starting exports for groups {groups}',
@@ -138,11 +147,28 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			);
 		}
 
+		$groupSyncCacheEnabled = MediaWikiServices::getInstance()->getMainConfig()
+			->get( 'TranslateGroupSynchronizationCache' );
+
+		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+
 		foreach ( $groups as $groupId => $group ) {
 			// No changes to this group at all
 			if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
 				$this->output( "No recent changes to $groupId.\n" );
 				continue;
+			}
+
+			if ( $groupSyncCacheEnabled && !$skipGroupSyncCheck ) {
+				if ( $groupSyncCache->isGroupBeingProcessed( $groupId ) ) {
+					$this->error( "Group $groupId is currently being synchronized; skipping exports" );
+					continue;
+				}
+
+				if ( $groupSyncCache->groupHasErrors( $groupId ) ) {
+					$this->error( "Skipping $groupId due to synchronization error\n" );
+					continue;
+				}
 			}
 
 			if ( $exportThreshold || $removalThreshold ) {
