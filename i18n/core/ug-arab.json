@@ -161,6 +161,8 @@
 	"translate-smg-submitted": "ئۇچۇر ئېنىقلىمىسى يېڭىلاندى. ئۆزگىرىشنى ئارقا سۇپىدا بىر تەرەپ قىلىۋاتىدۇ.",
 	"translate-smg-left": "ۋىكىدىكى ئۇچۇر مەزمۇنى",
 	"translate-smg-right": "كىرگۈزگەن ئۆزگەرتىشلەر",
+	"translate-smg-group-message-message-target": "نىشان:",
+	"translate-smg-group-message-message-other-langs": "باشقا تىللار:",
 	"translate-manage-import-diff": "ئۇچۇر $1 | مەشغۇلات: $2",
 	"translate-manage-import-new": "يېڭى ئۇچۇر $1",
 	"translate-manage-import-deleted": "ئۆچۈرۈلگەن ئۇچۇر $1",
