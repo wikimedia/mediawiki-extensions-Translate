@@ -74,10 +74,7 @@ class PopulateFuzzy extends Maintenance {
 				break;
 			}
 
-			$slots = [];
-			if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
-				$slots = $revStore->getContentBlobsForBatch( $res, [ SlotRecord::MAIN ] )->getValue();
-			}
+			$slots = $revStore->getContentBlobsForBatch( $res, [ SlotRecord::MAIN ] )->getValue();
 			foreach ( $res as $r ) {
 				if ( isset( $slots[$r->rev_id] ) ) {
 					$text = $slots[$r->rev_id][SlotRecord::MAIN]->blob_data;

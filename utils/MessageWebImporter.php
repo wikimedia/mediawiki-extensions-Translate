@@ -473,10 +473,7 @@ class MessageWebImporter {
 		);
 
 		$changed = [];
-		$slots = [];
-		if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
-			$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
-		}
+		$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
 
 		foreach ( $rows as $row ) {
 			global $wgTranslateDocumentationLanguageCode;

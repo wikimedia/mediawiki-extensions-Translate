@@ -148,10 +148,7 @@ class FuzzyScript {
 	private static function getMessageContentsFromRows( $rows ) {
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$messagesContents = [];
-		$slots = [];
-		if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
-			$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
-		}
+		$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
 		foreach ( $rows as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 			if ( isset( $slots[$row->rev_id] ) ) {
