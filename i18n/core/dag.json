@@ -5,11 +5,13 @@
 			"Dnshitobu",
 			"Hidrash",
 			"Mo Yumzaa",
+			"Ruky Wunpini",
 			"Sir Amugi",
 			"Yakubu Fadilatu"
 		]
 	},
 	"supportedlanguages": "Zuliya shaŋa din mali tumdi tuma.",
+	"translate-smg-group-with-error-summary": "$1{{PLURAL:$1|satarli/satara}}din mali gadama.",
 	"translate-smg-group-message-action-history": "Taarihi",
 	"translate-smg-group-message-tag-outdated": "Din lan kani",
 	"translate-smg-group-message-tag-rename": "Lab Boli",

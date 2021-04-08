@@ -78,7 +78,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|Cette page a|Ces pages ont}} des modifications non marquées à traduire.",
 	"tpt-tag-discouraged": "dissuadé",
 	"tpt-tag-oldsyntax": "ancienne syntaxe",
-	"tpt-tag-no-transclusion-support": "aucune prise en charge de la transclusion",
+	"tpt-tag-no-transclusion-support": "transclusion non prise en charge",
 	"tpt-select-prioritylangs": "Liste de codes de langues prioritaires séparés par des virgules :",
 	"tpt-select-prioritylangs-force": "Empêcher les traductions en d’autres langues que les langues prioritaires",
 	"tpt-select-prioritylangs-reason": "Motif :",
