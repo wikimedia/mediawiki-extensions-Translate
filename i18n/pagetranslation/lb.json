@@ -100,7 +100,7 @@
 	"log-name-pagetranslation": "Logbuch vun de Säiteniwwersetzungen",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|huet}} d'Säit $3 markéiert fir z'iwwersetzen",
 	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|huet}} d'Säit $3 aus der Lëscht vun den Iwwersetzungen erausgeholl",
-	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|hat}} e Problem beim Réckele vun der Säit $3 op $4",
+	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|hat}} e Probleem beim Réckele vun der Säit $3 op $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|huet}} d'iwwersetzbar Säit $3 geläscht",
 	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|huet}} d'Läsche vun der Iwwersetzungssäit $3 ofgeschloss",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|huet}} d'Iwwersetzung vun $3 recommandéiert",
