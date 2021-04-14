@@ -66,9 +66,14 @@
 	"apihelp-managemessagegroups-param-groupId": "מזהה קבוצה",
 	"apihelp-managemessagegroups-param-renameMessageKey": "מפתח הודעת היעד ששמה משתנה",
 	"apihelp-managemessagegroups-param-messageKey": "מפתח ההודעה המחליפה",
-	"apihelp-managemessagegroups-param-operation": "איזו פעולה לבצע. ערכים אפשריים – rename / new",
+	"apihelp-managemessagegroups-param-operation": "איזו פעולה לבצע. ערכים אפשריים: rename / new",
 	"apihelp-managemessagegroups-param-changesetName": "שינוי שם הערכה – ברירת מחדל / בלתי־מפוקח / מדיה־ויקי וכו'",
 	"apihelp-managemessagegroups-param-changesetModified": "חותם־זמן של יוניקס של מתי ערכת השינויים שונתה בפעם האחרונה. אם ערכת השינויים שונתה אחרי זה, ה־API יזרוק שגיאה.",
+	"apihelp-managegroupsynchronizationcache-description": "ניהול מטמון סנכרון קבוצות.",
+	"apihelp-managegroupsynchronizationcache-summary": "ניהול מטמון סנכרון קבוצות.",
+	"apihelp-managegroupsynchronizationcache-param-operation": "איזו פעולה לבצע. ערכים אפשריים: resolve",
+	"apihelp-managegroupsynchronizationcache-param-messageTitle": "כותרת ההודעה שמוסמנת בתור פתורה",
+	"apihelp-managegroupsynchronizationcache-param-groupId": "מזהה הקבוצה של ההודעה שמסומנת בתור פתורה",
 	"apihelp-translatesandbox-description": "רישום וניהול משתמשים בארגז חול.",
 	"apihelp-translatesandbox-summary": "רישום וניהול משתמשים בארגז חול.",
 	"apihelp-translatesandbox-param-do": "מה לעשות.",
@@ -157,5 +162,6 @@
 	"apierror-translate-rename-key-invalid": "מפתח ההודעה שהועבר לשינוי שם לא נמצאו ברשימת השינויים עבור שפת המקור.",
 	"apierror-translate-rename-state-invalid": "אחת מההודעות שהועברו לשינוי שם אמורה להתווסף מחדש, והאחרת צריכה להימחק. מצבים נוכחיים – הוספה: $1 ומחיקה: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך",
-	"apiwarn-translate-language-disabled-source": "שפת המקור של הקבוצה הזאת היא $1. נא לבחור שפה אחרת לתרגום."
+	"apiwarn-translate-language-disabled-source": "שפת המקור של הקבוצה הזאת היא $1. נא לבחור שפה אחרת לתרגום.",
+	"apierror-translate-operation-error": "אירעה שגיאה בעת עיבוד הבקשה. שגיאה: $1"
 }

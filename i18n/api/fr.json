@@ -77,9 +77,14 @@
 	"apihelp-managemessagegroups-param-groupId": "Id du groupe",
 	"apihelp-managemessagegroups-param-renameMessageKey": "Clef du message cible à renommer",
 	"apihelp-managemessagegroups-param-messageKey": "Clef du message de remplacement",
-	"apihelp-managemessagegroups-param-operation": "L’opération à effectuer. Valeurs possibles : renommer / nouveau",
+	"apihelp-managemessagegroups-param-operation": "L’opération à effectuer. Valeurs possibles : renommer / nouveau",
 	"apihelp-managemessagegroups-param-changesetName": "Modifier le nom de l’ensemble : Défaut / Inattendu / MediaWiki / etc.",
 	"apihelp-managemessagegroups-param-changesetModified": "Horodatage Unix du moment où l’ensemble de modifications a été modifié en dernier. S’il a été modifié après cela, l’API lèvera une erreur.",
+	"apihelp-managegroupsynchronizationcache-description": "Gérer le cache de synchronisation des groupes.",
+	"apihelp-managegroupsynchronizationcache-summary": "Gérer le cache de synchronisation des groupes.",
+	"apihelp-managegroupsynchronizationcache-param-operation": "L’opération à effectuer. Valeurs possibles : résoudre",
+	"apihelp-managegroupsynchronizationcache-param-messageTitle": "Titre du message en cours de marquage comme résolu",
+	"apihelp-managegroupsynchronizationcache-param-groupId": "ID de groupe pour le message en cours de résolution",
 	"apihelp-translatesandbox-description": "Inscrivez-vous et gérez les utilisateurs du bac à sable.",
 	"apihelp-translatesandbox-summary": "Inscrivez-vous et gérez les utilisateurs du bac à sable.",
 	"apihelp-translatesandbox-param-do": "Que faire.",
@@ -168,5 +173,6 @@
 	"apierror-translate-rename-key-invalid": "Les clefs de message passées pour renommage n’ont pas été trouvées dans la liste des modifications pour la langue source.",
 	"apierror-translate-rename-state-invalid": "Un des messages passés pour renommage devrait être nouvellement ajouté et l’autre supprimé. États actuels – ajout de : $1 et suppression de : $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Déjà marqué comme ayant été relu par vous",
-	"apiwarn-translate-language-disabled-source": "La langue source de ce groupe est $1. Veuillez sélectionner une autre langue vers laquelle traduire."
+	"apiwarn-translate-language-disabled-source": "La langue source de ce groupe est $1. Veuillez sélectionner une autre langue vers laquelle traduire.",
+	"apierror-translate-operation-error": "Une erreur est survenue lors du traitement de la requête. Erreur : $1"
 }

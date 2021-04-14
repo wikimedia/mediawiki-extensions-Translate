@@ -6,6 +6,7 @@
 			"Hedda",
 			"MuratTheTurkish",
 			"Rapsar",
+			"SaldırganSincap",
 			"Sayginer",
 			"Vito Genovese"
 		]
@@ -70,9 +71,14 @@
 	"apihelp-managemessagegroups-param-groupId": "Grup Kimliği",
 	"apihelp-managemessagegroups-param-renameMessageKey": "Hedef mesaj anahtarı yeniden adlandırılıyor",
 	"apihelp-managemessagegroups-param-messageKey": "Yedek mesaj tuşu",
-	"apihelp-managemessagegroups-param-operation": "Yapılacak işlem. Olası değerler - rename / new",
+	"apihelp-managemessagegroups-param-operation": "Yapılacak işlem. Olası değerler: rename / new",
 	"apihelp-managemessagegroups-param-changesetName": "Ayarlanan adı değiştir - Varsayılan / Katılımsız / Mediawiki vb.",
 	"apihelp-managemessagegroups-param-changesetModified": "Değişiklik kümesinin en son ne zaman değiştirildiğinin Unix zaman damgası. Değişiklik kümesi bundan sonra değiştirildiyse, API hata verir.",
+	"apihelp-managegroupsynchronizationcache-description": "Grup senkronizasyon önbelleğini yönetin.",
+	"apihelp-managegroupsynchronizationcache-summary": "Grup senkronizasyon önbelleğini yönetin.",
+	"apihelp-managegroupsynchronizationcache-param-operation": "Gerçekleştirilecek işlem. Olası değerler: resolve",
+	"apihelp-managegroupsynchronizationcache-param-messageTitle": "Çözüldü olarak işaretlenen mesaj başlığı",
+	"apihelp-managegroupsynchronizationcache-param-groupId": "Çözümlenen mesajın grup kimliği",
 	"apihelp-translatesandbox-description": "Üye olun ve sanal alan kullanıcılarını yönetin.",
 	"apihelp-translatesandbox-summary": "Deneme tahtası olan kullanıcılarını kaydedin ve yönetin.",
 	"apihelp-translatesandbox-param-do": "Ne yapmalı.",
@@ -161,5 +167,6 @@
 	"apierror-translate-rename-key-invalid": "Yeniden adlandırma için iletilen mesaj anahtarları, kaynak dil için yapılan değişiklikler listesinde bulunamadı.",
 	"apierror-translate-rename-state-invalid": "Yeniden adlandırma için iletilen iletilerden biri yeni eklenmeli ve diğeri silinmelidir. Mevcut durumlar - ek: $1 ve silme: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Zaten sizin tarafınızdan incelenmiş olarak işaretlendi",
-	"apiwarn-translate-language-disabled-source": "Bu grubun kaynak dili $1. Lütfen çevrilecek başka bir dil seçin."
+	"apiwarn-translate-language-disabled-source": "Bu grubun kaynak dili $1. Lütfen çevrilecek başka bir dil seçin.",
+	"apierror-translate-operation-error": "İstek işlenirken bir hata oluştu. Hata: $1"
 }

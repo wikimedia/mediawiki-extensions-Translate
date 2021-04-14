@@ -255,6 +255,7 @@
 	"translate-smg-group-message-tag-rename": "Переименовать",
 	"translate-smg-group-message-message-content": "Содержание:",
 	"translate-smg-group-message-message-replacement": "Замена:",
+	"translate-smg-loading": "Загрузка…",
 	"translate-manage-import-diff": "Сообщение $1 | Действия: $2",
 	"translate-manage-import-new": "Новое сообщение $1",
 	"translate-manage-import-deleted": "Удалённое сообщение $1",
