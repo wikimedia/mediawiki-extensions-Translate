@@ -90,7 +90,10 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		// Refresh translations statistics, we want these to be up to date for the
 		// RenderJobs, for displaying up to date statistics on the translation pages.
 		$id = $page->getMessageGroupId();
-		MessageGroupStats::forGroup( $id, MessageGroupStats::FLAG_NO_CACHE );
+		MessageGroupStats::forGroup(
+			$id,
+			MessageGroupStats::FLAG_NO_CACHE | MessageGroupStats::FLAG_IMMEDIATE_WRITES
+		);
 		$this->logInfo( 'Updated the message group stats' );
 
 		// Try to avoid stale statistics on the base page
