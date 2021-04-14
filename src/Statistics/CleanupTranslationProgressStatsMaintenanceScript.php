@@ -32,7 +32,10 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			'*',
 			__METHOD__
 		);
-		$knownGroupIds = array_keys( MessageGroups::singleton()->getGroups() );
+		$knownGroupIds = array_map(
+			'MessageGroupStats::getDatabaseIdForGroupId',
+			array_keys( MessageGroups::singleton()->getGroups() )
+		);
 		$unknownGroupIds = array_diff( $dbGroupIds, $knownGroupIds );
 
 		if ( $unknownGroupIds !== [] ) {
