@@ -601,26 +601,25 @@ class MessageGroupStats {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		$dbw = $lb->getLazyConnectionRef( DB_MASTER ); // avoid connecting yet
 		$table = self::TABLE;
-		$updates = &self::$updates;
 		$callers = wfGetAllCallers( 50 );
 
 		$updateOp = self::withLock(
 			$dbw,
 			'updates',
 			__METHOD__,
-			static function ( IDatabase $dbw, $method ) use ( $table, &$updates, $callers ) {
+			static function ( IDatabase $dbw, $method ) use ( $table, $callers ) {
 				// Maybe another deferred update already processed these
-				if ( $updates === [] ) {
+				if ( self::$updates === [] ) {
 					return;
 				}
 
 				// This path should only be hit during web requests
-				if ( count( $updates ) > 100 ) {
-					$groups = array_unique( array_column( $updates, 'tgs_group' ) );
+				if ( count( self::$updates ) > 100 ) {
+					$groups = array_unique( array_column( self::$updates, 'tgs_group' ) );
 					LoggerFactory::getInstance( 'Translate' )->warning(
 						"Huge translation update of {count} rows for group(s) {groups}",
 						[
-							'count' => count( $updates ),
+							'count' => count( self::$updates ),
 							'groups' => implode( ', ', $groups ),
 							'callers' => $callers,
 						]
@@ -628,8 +627,8 @@ class MessageGroupStats {
 				}
 
 				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
-				$dbw->replace( $table, [ $primaryKey ], array_values( $updates ), $method );
-				$updates = [];
+				$dbw->replace( $table, [ $primaryKey ], array_values( self::$updates ), $method );
+				self::$updates = [];
 			}
 		);
 
