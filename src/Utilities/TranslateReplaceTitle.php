@@ -8,6 +8,9 @@ namespace MediaWiki\Extension\Translate\Utilities;
 
 use MessageHandle;
 use Title;
+use TitleArray;
+use TitleArrayFromResult;
+use TranslateUtils;
 
 /**
  * Helper class that cotains utility methods to help with identifying and replace titles.
@@ -41,7 +44,7 @@ class TranslateReplaceTitle {
 			}
 			$targetTitle = Title::makeTitle(
 				$namespace,
-				\TranslateUtils::title( $replacement, $handle->getCode(), $namespace )
+				TranslateUtils::title( $replacement, $handle->getCode(), $namespace )
 			);
 			$titlesForMove[] = [ $title, $targetTitle ];
 		}
@@ -51,7 +54,7 @@ class TranslateReplaceTitle {
 
 	/**
 	 * @param MessageHandle $handle
-	 * @return \TitleArrayFromResult
+	 * @return TitleArrayFromResult
 	 */
 	private static function getMatchingTitles( MessageHandle $handle ) {
 		$dbr = wfGetDB( DB_MASTER );
@@ -70,7 +73,7 @@ class TranslateReplaceTitle {
 
 		$result = $dbr->select( $tables, $vars, $conds, __METHOD__ );
 
-		return \TitleArray::newFromResult( $result );
+		return TitleArray::newFromResult( $result );
 	}
 }
 

@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use RuntimeException;
+
 /**
  * Represents any kind of failure to parse a translatable page source code.
  *
@@ -13,7 +15,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
  * @license GPL-2.0-or-later
  * @since 2020.08
  */
-class ParsingFailure extends \RuntimeException {
+class ParsingFailure extends RuntimeException {
 	private $messageSpec;
 
 	public function __construct( string $message, array $messageSpec ) {

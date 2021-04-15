@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
@@ -26,7 +27,7 @@ class EscapeCharacterValidator implements MessageValidator {
 		$this->allowedCharacters = $params['values'] ?? [];
 
 		if ( $this->allowedCharacters === [] || !is_array( $this->allowedCharacters ) ) {
-			throw new \InvalidArgumentException(
+			throw new InvalidArgumentException(
 				'No values provided for EscapeCharacter validator.'
 			);
 		}
@@ -64,7 +65,7 @@ class EscapeCharacterValidator implements MessageValidator {
 		$prefix = '';
 		foreach ( $allowedCharacters as $character ) {
 			if ( !in_array( $character, self::VALID_CHARS ) ) {
-				throw new \InvalidArgumentException(
+				throw new InvalidArgumentException(
 					"Invalid escape character encountered: $character during configuration." .
 					'Valid escape characters include: ' . implode( ', ', self::VALID_CHARS )
 				);

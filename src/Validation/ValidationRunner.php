@@ -16,6 +16,7 @@ use FormatJson;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use PHPVariableLoader;
+use RuntimeException;
 use TMessage;
 
 /**
@@ -363,7 +364,7 @@ class ValidationRunner {
 			}
 			// else: caller does not want warnings, skip running the validator
 		} catch ( Exception $e ) {
-			throw new \RuntimeException(
+			throw new RuntimeException(
 				'An error occurred while validating message: ' . $message->key() . '; group: ' .
 				$this->groupId . "; validator: " . get_class( $validator ) . "\n. Exception: $e"
 			);

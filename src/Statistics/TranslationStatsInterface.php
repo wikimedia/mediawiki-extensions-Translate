@@ -3,9 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
+use stdClass;
+
 /**
  * Interface for producing different kinds of graphs.
  * The graphs are based on data queried from the database.
+ *
  * @ingroup Stats
  * @license GPL-2.0-or-later
  * @since 2010.07
@@ -34,7 +37,7 @@ interface TranslationStatsInterface {
 	/**
 	 * Return the indexes which this result contributes to.
 	 * Return 'all' if only one variable is measured. Return false if none.
-	 * @param \stdClass $row Database Result Row
+	 * @param stdClass $row Database Result Row
 	 * @return array|false
 	 */
 	public function indexOf( $row );
@@ -49,7 +52,7 @@ interface TranslationStatsInterface {
 
 	/**
 	 * Return the timestamp associated with this result row.
-	 * @param \stdClass $row Database Result Row
+	 * @param stdClass $row Database Result Row
 	 * @return string Timestamp.
 	 */
 	public function getTimestamp( $row );
