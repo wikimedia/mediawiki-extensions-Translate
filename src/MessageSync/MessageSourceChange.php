@@ -32,7 +32,7 @@ class MessageSourceChange {
 	private const SIMILARITY_THRESHOLD = 0.9;
 
 	/**
-	 * Contains a mapping of mesasge type, and the corresponding addition function
+	 * Contains a mapping of message type, and the corresponding addition function
 	 * @var callable[]
 	 */
 	protected $addFunctionMap;
@@ -218,7 +218,7 @@ class MessageSourceChange {
 	}
 
 	/**
-	 * Break reanmes, and put messages back into their previous state.
+	 * Break renames, and put messages back into their previous state.
 	 * @param string $languageCode
 	 * @param string $msgKey
 	 * @return string|null previous state of the message

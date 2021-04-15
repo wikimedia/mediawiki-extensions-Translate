@@ -166,7 +166,7 @@ class TranslationStatsDataProvider {
 	}
 
 	/**
-	 * Gets the closest earlieast timestamp that corresponds to start of a
+	 * Gets the closest earliest timestamp that corresponds to start of a
 	 * period in given scale, like, midnight, monday or first day of the month.
 	 */
 	private static function roundTimestampToCutoff(

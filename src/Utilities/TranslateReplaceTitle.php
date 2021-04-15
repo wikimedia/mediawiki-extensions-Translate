@@ -18,7 +18,7 @@ class TranslateReplaceTitle {
 	/**
 	 * Returns two lists: a set of message handles that would be moved/renamed by
 	 * the current text replacement, and the set of message handles that would ordinarily
-	 * be moved but are not moveable, due to permissions or any other reason.
+	 * be moved but are not movable, due to permissions or any other reason.
 	 * @param MessageHandle $sourceMessageHandle
 	 * @param string $replacement
 	 * @return Title[][]

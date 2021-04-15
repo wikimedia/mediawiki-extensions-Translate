@@ -103,7 +103,7 @@ class TranslatablePageParser {
 			);
 		} elseif ( strpos( $text, '</translate>' ) !== false ) {
 			throw new ParsingFailure(
-				"Unmmatched closing tag",
+				"Unmatched closing tag",
 				[ 'pt-parse-close', $prettyTemplate ]
 			);
 		}

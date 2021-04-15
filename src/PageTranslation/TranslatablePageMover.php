@@ -102,7 +102,7 @@ class TranslatablePageMover {
 			return $blockers;
 		}
 
-		// Collect all the old and new titles for checcks
+		// Collect all the old and new titles for checks
 		$titles = [];
 		$base = $source->getPrefixedText();
 		$pages = $page->getTranslationPages();
