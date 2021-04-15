@@ -3,6 +3,7 @@
 		"authors": [
 			"Achiri Bitamsimli",
 			"Alhaj Darajaati",
+			"Chirifo",
 			"Dnshitobu",
 			"Hidrash",
 			"Mo Yumzaa",
@@ -15,7 +16,7 @@
 	"translate-smg-group-with-error-summary": "$1{{PLURAL:$1|satarli/satara}}din mali gadama.",
 	"translate-smg-group-message-action-history": "Taarihi",
 	"translate-smg-group-message-tag-outdated": "Din lan kani",
-	"translate-smg-group-message-tag-rename": "Lab Boli",
+	"translate-smg-group-message-tag-rename": "Labi ti yuli",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Tag|Tags}}:",
 	"translate-smg-group-message-message-content": "Din bei dini",
 	"translate-smg-group-message-message-target": "Yuli nya",
