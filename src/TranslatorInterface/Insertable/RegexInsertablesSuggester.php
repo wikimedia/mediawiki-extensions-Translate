@@ -92,14 +92,10 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 	}
 
 	public function getInsertables( string $text ): array {
-		$insertables = [];
-
 		$matches = [];
 		preg_match_all( $this->regex, $text, $matches, PREG_SET_ORDER );
 
-		$insertables = array_map( [ $this, 'mapInsertables' ], $matches );
-
-		return $insertables;
+		return array_map( [ $this, 'mapInsertables' ], $matches );
 	}
 
 	protected function mapInsertables( array $match ) {
