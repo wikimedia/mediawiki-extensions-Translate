@@ -69,7 +69,7 @@
 	"apihelp-managemessagegroups-param-groupId": "ID do grupo",
 	"apihelp-managemessagegroups-param-renameMessageKey": "Chave de mensagem de destino sendo renomeada",
 	"apihelp-managemessagegroups-param-messageKey": "Chave de mensagem de substituição",
-	"apihelp-managemessagegroups-param-operation": "A operação a ser executada. Valores possíveis - renomear / novo",
+	"apihelp-managemessagegroups-param-operation": "A operação a ser executada. Valores possíveis: renomear / novo",
 	"apihelp-managemessagegroups-param-changesetName": "Alterar nome do conjunto - Padrão / Autônomo / Mediawiki etc.",
 	"apihelp-managemessagegroups-param-changesetModified": "Registro de data e hora do Unix de quando o conjunto de alterações foi modificado pela última vez. Se o conjunto de alterações tiver sido modificado depois disso, a API lançará um erro.",
 	"apihelp-translatesandbox-description": "Inscreva-se e gerencie usuários da sandbox.",
@@ -160,5 +160,6 @@
 	"apierror-translate-rename-key-invalid": "As chaves de mensagem transmitidas para renomear não foram encontradas na lista de alterações no idioma de origem.",
 	"apierror-translate-rename-state-invalid": "Uma das mensagens passadas para renomear deve ser adicionada recentemente e a outra excluída. Estados atuais - adição: $1 e exclusão: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Já marcado como revisado por você",
-	"apiwarn-translate-language-disabled-source": "O idioma de origem deste grupo é $1. Selecione outro idioma, para a qual irá traduzir, por favor."
+	"apiwarn-translate-language-disabled-source": "O idioma de origem deste grupo é $1. Selecione outro idioma, para a qual irá traduzir, por favor.",
+	"apierror-translate-operation-error": "Ocorreu um erro ao processar o pedido. Erro: $1"
 }
