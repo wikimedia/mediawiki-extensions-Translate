@@ -697,6 +697,9 @@ class PageTranslationHooks {
 			// @todo Use Message object instead.
 
 			call_user_func_array( [ $status, 'fatal' ], $msg );
+			// @todo Remove this line after this extension do not support mediawiki version 1.36 and before
+			$status->value = EditPage::AS_HOOK_ERROR_EXPECTED;
+			return false;
 		}
 
 		return true;
