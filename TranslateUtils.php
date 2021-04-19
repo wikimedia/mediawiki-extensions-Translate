@@ -167,8 +167,6 @@ class TranslateUtils {
 
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
-
 		$hours = (int)$hours;
 		$cutoff_unixtime = time() - ( $hours * 3600 );
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
@@ -182,15 +180,15 @@ class TranslateUtils {
 		}
 
 		$res = $dbr->select(
-			[ 'recentchanges' ] + $actorQuery['tables'],
+			[ 'recentchanges', 'actor' ],
 			array_merge( [
 				'rc_namespace', 'rc_title', 'rc_timestamp',
-				'rc_user_text' => $actorQuery['fields']['rc_user_text'],
+				'rc_user_text' => 'actor_name',
 			], $extraFields ),
 			$conds,
 			__METHOD__,
 			[],
-			$actorQuery['joins']
+			[ 'actor' => [ 'JOIN', 'actor_id=rc_actor' ] ]
 		);
 		$rows = iterator_to_array( $res );
 

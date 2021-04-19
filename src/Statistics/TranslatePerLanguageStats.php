@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use ActorMigration;
 use MediaWiki\MediaWikiServices;
 use TranslateUtils;
 
@@ -66,14 +65,9 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		if ( $this->opts->getValue( 'count' ) === 'users' ) {
-			if ( class_exists( ActorMigration::class ) ) {
-				$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
-				$tables += $actorQuery['tables'];
-				$fields['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
-				$joins += $actorQuery['joins'];
-			} else {
-				$fields[] = 'rc_user_text';
-			}
+			$tables[] = 'actor';
+			$joins['actor'] = [ 'JOIN', 'actor_id=rc_actor' ];
+			$fields['rc_user_text'] = 'actor_name';
 		}
 
 		$type .= '-perlang';

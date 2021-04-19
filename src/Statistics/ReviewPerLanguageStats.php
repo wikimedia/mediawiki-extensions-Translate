@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use ActorMigration;
 use TranslateUtils;
 
 /**
@@ -54,10 +53,9 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
-			$actorQuery = ActorMigration::newMigration()->getJoin( 'log_user' );
-			$tables += $actorQuery['tables'];
-			$fields['log_user_text'] = $actorQuery['fields']['log_user_text'];
-			$joins += $actorQuery['joins'];
+			$tables[] = 'actor';
+			$joins['actor'] = [ 'JOIN', 'actor_id=log_actor' ];
+			$fields['log_user_text'] = 'actor_name';
 		}
 
 		$type .= '-reviews';

@@ -100,6 +100,7 @@ class TranslateSandbox {
 	 */
 	public static function deleteUser( User $user, $force = '' ) {
 		$uid = $user->getId();
+		$actorId = $user->getActorId();
 
 		if ( $force !== 'force' && !self::isSandboxed( $user ) ) {
 			throw new MWException( 'Not a sandboxed user' );
@@ -111,11 +112,10 @@ class TranslateSandbox {
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
 
-		$m = ActorMigration::newMigration();
 		$dbw->delete( 'actor', [ 'actor_user' => $uid ], __METHOD__ );
 		// Assume no joins are needed for logging or recentchanges
-		$dbw->delete( 'logging', $m->getWhere( $dbw, 'log_user', $user )['conds'], __METHOD__ );
-		$dbw->delete( 'recentchanges', $m->getWhere( $dbw, 'rc_user', $user )['conds'], __METHOD__ );
+		$dbw->delete( 'logging', [ 'log_actor' => $actorId ], __METHOD__ );
+		$dbw->delete( 'recentchanges', [ 'rc_actor' => $actorId ], __METHOD__ );
 
 		// Update the site stats
 		$statsUpdate = SiteStatsUpdate::factory( [ 'users' => -1 ] );
