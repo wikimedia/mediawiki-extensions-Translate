@@ -191,6 +191,7 @@
 	"translate-smg-strong-sync-help": "Hjælp",
 	"translate-smg-group-message-action-history": "Historik",
 	"translate-smg-group-message-tag-rename": "Omdøb",
+	"translate-smg-loading": "Indlæser...",
 	"translate-manage-import-diff": "Besked $1 | Handlinger: $2",
 	"translate-manage-import-new": "Ny meddelelse $1",
 	"translate-manage-import-deleted": "Slettet meddelelse $1",
