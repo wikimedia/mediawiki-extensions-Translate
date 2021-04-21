@@ -327,6 +327,10 @@ class SpecialManageGroups extends SpecialPage {
 					$this->msg( 'translate-manage-source-message-not-found' )->text(),
 					'mw-translate-smg-notice-important'
 				);
+
+				// Automatically ignore messages that don't have a definitions
+				$menu = Html::hidden( "msg/$id", 'ignore', [ 'id' => "i/$id" ] );
+				$limit--;
 			}
 
 			if ( $params['content'] === '' ) {
