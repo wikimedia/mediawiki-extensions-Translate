@@ -481,7 +481,7 @@ class PageTranslationHooks {
 		);
 		$out .= Html::rawElement(
 			'div',
-			[ 'class' => 'mw-pt-languages-list autonym' ],
+			[ 'class' => 'mw-pt-languages-list' ],
 			$languages
 		);
 		$out .= Html::closeElement( 'div' );
