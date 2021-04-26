@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Renan",
 			"Stavanger7"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% traductet)"
+	"tpt-languages-nonzero": "$1 ($2% traductet)",
+	"pt-deletepage-current": "Nómine del págine:"
 }
