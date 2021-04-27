@@ -112,7 +112,20 @@ class TranslateSandbox {
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
 
-		$dbw->delete( 'actor', [ 'actor_user' => $uid ], __METHOD__ );
+		if ( version_compare( TranslateUtils::getMWVersion(), '1.37', '>=' ) ) {
+			MediaWikiServices::getInstance()->getActorStore()->deleteActor( $user, $dbw );
+		} else {
+			$dbw->delete( 'actor', [ 'actor_user' => $uid ], __METHOD__ );
+			// In case we create an user with same name as was deleted during the same
+			// request, we must also reset this cache or the User class will try to load
+			// stuff for the old id, which is no longer present since we just deleted
+			// the cache above. But it would have the side effect or overwriting all
+			// member variables with null data. This used to manifest as a bug where
+			// inserting a new user fails because the mName properpty is set to null,
+			// which is then converted as the ip of the current user, and trying to
+			// add that twice results in a name conflict. It was fun to debug.
+			User::resetIdByNameCache();
+		}
 		// Assume no joins are needed for logging or recentchanges
 		$dbw->delete( 'logging', [ 'log_actor' => $actorId ], __METHOD__ );
 		$dbw->delete( 'recentchanges', [ 'rc_actor' => $actorId ], __METHOD__ );
@@ -128,16 +141,6 @@ class TranslateSandbox {
 		// Nobody should access the user by id anymore, but in case they do, purge
 		// the cache so they wont get stale data
 		$user->invalidateCache();
-
-		// In case we create an user with same name as was deleted during the same
-		// request, we must also reset this cache or the User class will try to load
-		// stuff for the old id, which is no longer present since we just deleted
-		// the cache above. But it would have the side effect or overwriting all
-		// member variables with null data. This used to manifest as a bug where
-		// inserting a new user fails because the mName properpty is set to null,
-		// which is then converted as the ip of the current user, and trying to
-		// add that twice results in a name conflict. It was fun to debug.
-		User::resetIdByNameCache();
 	}
 
 	/**
