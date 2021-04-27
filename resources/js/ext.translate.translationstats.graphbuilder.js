@@ -12,6 +12,7 @@
 			reviews: mw.msg( 'translate-statsf-count-reviews' ),
 			reviewers: mw.msg( 'translate-statsf-count-reviewers' )
 		}, granularityInfo = {
+			years: mw.msg( 'translate-statsf-scale-years' ),
 			months: mw.msg( 'translate-statsf-scale-months' ),
 			weeks: mw.msg( 'translate-statsf-scale-weeks' ),
 			days: mw.msg( 'translate-statsf-scale-days' ),

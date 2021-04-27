@@ -30,7 +30,9 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 	public function getDateFormat() {
 		$dateFormat = 'Y-m-d';
 		$scale = $this->opts->getValue( 'scale' );
-		if ( $scale === 'months' ) {
+		if ( $scale === 'years' ) {
+			$dateFormat = 'Y';
+		} elseif ( $scale === 'months' ) {
 			$dateFormat = 'Y-m';
 		} elseif ( $scale === 'weeks' ) {
 			$dateFormat = 'Y-\WW';

@@ -15,7 +15,7 @@ class TranslationStatsGraphOptions {
 	/** @var FormOptions */
 	private $formOptions;
 	/** @var string[] */
-	public const VALID_SCALES = [ 'months', 'weeks', 'days', 'hours' ];
+	public const VALID_SCALES = [ 'years', 'months', 'weeks', 'days', 'hours' ];
 
 	public function __construct() {
 		$this->formOptions = new FormOptions();

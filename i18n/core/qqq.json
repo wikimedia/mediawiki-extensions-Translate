@@ -163,6 +163,7 @@
 	"translate-statsf-days": "Label in [[Special:TranslationStats]]",
 	"translate-statsf-start": "Label in [[Special:TranslationStats]]\n{{Identical|Start date}}",
 	"translate-statsf-scale": "Used on [[Special:TranslationStats]].",
+	"translate-statsf-scale-years": "Option at [[Special:TranslationStats]].",
 	"translate-statsf-scale-months": "Option at [[Special:TranslationStats]].\n{{Identical|Month}}",
 	"translate-statsf-scale-weeks": "Option at [[Special:TranslationStats]].\n{{Identical|Week}}",
 	"translate-statsf-scale-days": "Radio button label on [[Special:TranslationStats|form]] for generating graph.\n{{Identical|Day}}",

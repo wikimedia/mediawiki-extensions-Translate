@@ -53,24 +53,21 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
-			$tables[] = 'actor';
-			$joins['actor'] = [ 'JOIN', 'actor_id=log_actor' ];
-			$fields['log_user_text'] = 'actor_name';
+			$fields[] = 'log_actor';
 		}
 
 		$type .= '-reviews';
 	}
 
 	public function indexOf( $row ) {
-		// We need to check that there is only one user per day.
 		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
 			$date = $this->formatTimestamp( $row->log_timestamp );
 
-			if ( isset( $this->usercache[$date][$row->log_user_text] ) ) {
+			if ( isset( $this->seenUsers[$date][$row->log_actor] ) ) {
 				return false;
-			} else {
-				$this->usercache[$date][$row->log_user_text] = 1;
 			}
+
+			$this->seenUsers[$date][$row->log_actor] = 1;
 		}
 
 		// Do not consider language-less pages.

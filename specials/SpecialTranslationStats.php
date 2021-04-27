@@ -95,7 +95,7 @@ class SpecialTranslationStats extends SpecialPage {
 				'<tr><td colspan="2"><hr /></td></tr>' .
 				$this->eInput( 'start', $opts, 24 ) .
 				$this->eInput( 'days', $opts ) .
-				$this->eRadio( 'scale', $opts, [ 'months', 'weeks', 'days', 'hours' ] ) .
+				$this->eRadio( 'scale', $opts, [ 'years', 'months', 'weeks', 'days', 'hours' ] ) .
 				$this->eRadio( 'count', $opts, $this->dataProvider->getGraphTypes() ) .
 				'<tr><td colspan="2"><hr /></td></tr>' .
 				$this->eLanguage( 'language', $opts ) .
