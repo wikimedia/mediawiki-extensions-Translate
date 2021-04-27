@@ -475,7 +475,6 @@
 				"ext.translate.base",
 				"ext.translate.loader",
 				"ext.translate.parsers",
-				"jquery.throttle-debounce",
 				"mediawiki.Uri",
 				"mediawiki.jqueryMsg",
 				"mediawiki.util"
