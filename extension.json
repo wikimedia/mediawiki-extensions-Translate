@@ -993,7 +993,7 @@
 			"public": true
 		},
 		"TranslateCacheDirectory": {
-			"value": "false",
+			"value": false,
 			"description": "Set location of cache files. Defaults to $wgCacheDirectory.",
 			"public": true
 		},
