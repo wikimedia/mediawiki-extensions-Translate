@@ -364,7 +364,6 @@ class TranslatablePageMover {
 		callable $progressCallback = null
 	): void {
 		$fuzzybot = FuzzyBot::getUser();
-		$performer = User::newFromName( $performer );
 
 		PageTranslationHooks::$allowTargetEdit = true;
 
