@@ -148,7 +148,7 @@ class TranslatablePageMessageGroupStore extends MessageGroupLoader
 		$tables = [ 'page', 'revtag' ];
 		$vars = [ 'page_id', 'page_namespace', 'page_title' ];
 		$conds = [ 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) ];
-		$options = [ 'GROUP BY' => 'rt_page' ];
+		$options = [ 'GROUP BY' => 'rt_page,page_id,page_namespace,page_title' ];
 		$res = $this->db->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		foreach ( $res as $r ) {
