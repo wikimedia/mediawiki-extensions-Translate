@@ -1,0 +1,22 @@
+== Translate 2021.04 ==
+Released at 2021-04-29.
+
+=== Noteworthy changes ===
+* Consider translated optional messages towards meeting the export threshold ({{Phab|T159122}})
+* Do not lock pages indefinitely during translatable page moves ({{Gerrit|661125}})
+* Support new HTML-y translation variable syntax ({{Phab|T274881}})
+* Limit pages that can be moved from the UI to 500 by default. ({{Phab|T277431}})
+** This can be modified by updating the configuration: <code>$wgTranslatePageMoveLimit</code>
+* Add moveTranslatablePage script that can move any number of pages  ({{Phab|T275109}})
+* Rename Special:SupportedLanguages to Special:ActiveLanguages externally ({{Gerrit|673007}})
+* Add description/summary to Special:PagePreparation ({{Phab|T276911}})
+* Add help link to Special:PageMigration | ({{Phab|T277031}})
+* (MW >= 1.36) Enable "opt-in" translation aware transclusion for templates ({{Phab|T47096}})
+** This has to be manually enabled for existing translatable pages but is enabled
+   by default for new pages.
+* Add script to cleanup obsolete rows from translate_groupstats ({{Gerrit|673261}})
+* Fix metadata handling for translatable page moves and deletions ({{Gerrit|666357}})
+* Namespace for classes under the <code>src/</code> folder has been changed to:
+  <code>MediaWiki\Extension\Translate</code> instead of: <code>MediaWiki\Extensions\Translate</code>.
+  <code>class_alias</code> has been used to ensure existing functionality and
+  cached data does not break. The alias will be removed in the next MLEB release.
