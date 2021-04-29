@@ -24,6 +24,8 @@
 	"apihelp-query+languagestats-param-language": "Codece d'a Lènghe.",
 	"apihelp-query+languagestats-example-1": "Elenghe de le statisteche de combletamende d'a traduzione pu finlandese",
 	"apihelp-query+messagecollection-description": "'Nderroghe MessageCollection sus a le traduziune.",
+	"apihelp-query+managemessagegroups-summary": "Pigghie le renomenaminde possibbele pe 'nu messàgge jndr'à 'nu gruppe durante le 'mbortaziune",
+	"apihelp-query+managemessagegroups-description": "Pigghie le renomenaminde possibbele pe 'nu messàgge jndr'à 'nu gruppe durante le 'mbortaziune",
 	"apihelp-query+managemessagegroups-param-groupId": "ID d'u gruppe",
 	"apihelp-query+managemessagegroups-param-messageKey": "Chiave d'u messàgge",
 	"apihelp-query+messagecollection-summary": "'Nderroghe MessageCollection sus a le traduziune.",
