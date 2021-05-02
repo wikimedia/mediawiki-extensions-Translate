@@ -8,7 +8,8 @@
 'use strict';
 
 var userTranslations = {},
-	translationStashStorage = new mw.translate.TranslationStashStorage();
+	TranslationStashStorage = require( './storage.js' ),
+	translationStorage = new TranslationStashStorage();
 
 mw.translate.canTranslate = function () {
 	// At this page, the new translator can translate
@@ -105,7 +106,7 @@ function addMessage( message ) {
 	// Attach translate editor to the message
 	$messageWrapper.translateeditor( {
 		message: message,
-		storage: translationStashStorage,
+		storage: translationStorage,
 		onSave: updateStats,
 		onSkip: function () {
 			var $next = this.$editTrigger.next( '.tux-message' );
@@ -241,7 +242,7 @@ $( function () {
 	} );
 	// Get the user translations if any(possibly from an early attempt)
 	// and new messages to try.
-	translationStashStorage.getUserTranslations()
+	translationStorage.getUserTranslations()
 		.done( function ( translations ) {
 			if ( translations.translationstash.translations ) {
 				translations.translationstash.translations.forEach( function ( translation ) {

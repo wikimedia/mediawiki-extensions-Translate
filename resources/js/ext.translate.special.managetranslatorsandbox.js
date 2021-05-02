@@ -41,7 +41,7 @@
 			.first() // First selected request
 			.closest( '.request' ) // The request corresponds that checkbox
 			.prevAll( ':not(.hide)' ) // Go back till a non-hidden request
-			.first(); // The above selecter gives list from bottom to top. Select the bottom one.
+			.first(); // The above selector gives list from bottom to top. Select the bottom one.
 
 		$selectedRequests.closest( '.request' ).remove();
 
@@ -67,8 +67,7 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var storage,
-			$reminderStatus = $( '<span>' ).addClass( 'reminder-status' ),
+		var $reminderStatus = $( '<span>' ).addClass( 'reminder-status' ),
 			$detailsPane = $( '.details.pane' );
 
 		if ( request.reminderscount ) {
@@ -182,9 +181,23 @@
 			}
 		}
 
-		// @todo: move higher in the tree
-		storage = new mw.translate.TranslationStashStorage();
-		storage.getUserTranslations( request.username ).done( showTranslations );
+		getUserTranslations( request.username ).done( showTranslations );
+	}
+
+	/**
+	 * Get the current users translations.
+	 *
+	 * @param {string} user User name
+	 * @return {jQuery.Promise}
+	 */
+	function getUserTranslations( user ) {
+		var api = new mw.Api();
+
+		return api.postWithToken( 'csrf', {
+			action: 'translationstash',
+			subaction: 'query',
+			username: user
+		} );
 	}
 
 	function showTranslations( translations ) {

@@ -852,12 +852,14 @@
 			]
 		},
 		"ext.translate.specialTranslationStash": {
-			"packageFiles": "resources/src/ext.translate.specialTranslationStash/index.js",
+			"packageFiles": [
+				"resources/src/ext.translate.specialTranslationStash/index.js",
+				"resources/src/ext.translate.specialTranslationStash/storage.js"
+			],
 			"styles": "resources/src/ext.translate.specialTranslationStash/index.css",
 			"dependencies": [
 				"ext.translate.editor",
 				"ext.translate.messagetable",
-				"ext.translate.translationstashstorage",
 				"ext.uls.mediawiki",
 				"mediawiki.api",
 				"mediawiki.language"
@@ -958,16 +960,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.translationstashstorage": {
-			"scripts": "resources/js/ext.translate.translationstashstorage.js",
-			"dependencies": [
-				"mediawiki.api"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.special.aggregategroups": {
 			"scripts": "resources/js/ext.translate.special.aggregategroups.js",
 			"dependencies": [
@@ -1003,7 +995,6 @@
 			"scripts": "resources/js/ext.translate.special.managetranslatorsandbox.js",
 			"dependencies": [
 				"ext.translate.loader",
-				"ext.translate.translationstashstorage",
 				"ext.uls.mediawiki",
 				"jquery.ui",
 				"mediawiki.api",
