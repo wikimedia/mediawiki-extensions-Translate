@@ -62,5 +62,3 @@ class SmartFormatPlural {
 		return $ldns;
 	}
 }
-
-class_alias( SmartFormatPlural::class, '\MediaWiki\Extensions\Translate\SmartFormatPlural' );

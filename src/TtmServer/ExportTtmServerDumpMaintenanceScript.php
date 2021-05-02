@@ -191,8 +191,3 @@ class ExportTtmServerDumpMaintenanceScript extends BaseMaintenanceScript {
 		return array_values( $out );
 	}
 }
-
-class_alias(
-	ExportTtmServerDumpMaintenanceScript::class,
-	'\MediaWiki\Extensions\Translate\ExportTtmServerDumpMaintenanceScript'
-);

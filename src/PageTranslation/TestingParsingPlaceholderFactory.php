@@ -17,8 +17,3 @@ class TestingParsingPlaceholderFactory extends ParsingPlaceholderFactory {
 		return '<' . $this->i++ . '>';
 	}
 }
-
-class_alias(
-	TestingParsingPlaceholderFactory::class,
-	'\MediaWiki\Extensions\Translate\TestingParsingPlaceholderFactory'
-);

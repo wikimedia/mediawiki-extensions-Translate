@@ -26,5 +26,3 @@ class HtmlTagInsertablesSuggester implements InsertablesSuggester {
 		return $this->suggester->getInsertables( $text );
 	}
 }
-
-class_alias( HtmlTagInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\HtmlTagInsertablesSuggester' );

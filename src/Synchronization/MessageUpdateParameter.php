@@ -96,5 +96,3 @@ class MessageUpdateParameter implements JsonSerializable, JsonUnserializable {
 		return new self( $jobParams );
 	}
 }
-
-class_alias( MessageUpdateParameter::class, '\MediaWiki\Extensions\Translate\MessageUpdateParameter' );

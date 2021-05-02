@@ -37,5 +37,3 @@ class MediaWikiPageNameValidator implements MessageValidator {
 		return $issues;
 	}
 }
-
-class_alias( MediaWikiPageNameValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiPageNameValidator' );

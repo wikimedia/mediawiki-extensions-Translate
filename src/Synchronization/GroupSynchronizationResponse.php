@@ -63,5 +63,3 @@ class GroupSynchronizationResponse implements JsonSerializable, JsonUnserializab
 		);
 	}
 }
-
-class_alias( GroupSynchronizationResponse::class, '\MediaWiki\Extensions\Translate\GroupSynchronizationResponse' );

@@ -148,5 +148,3 @@ class TranslatorActivity {
 		return $this->languageNameUtils->isKnownLanguageTag( $language );
 	}
 }
-
-class_alias( TranslatorActivity::class, '\MediaWiki\Extensions\Translate\TranslatorActivity' );

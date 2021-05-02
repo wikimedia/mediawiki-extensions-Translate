@@ -182,5 +182,3 @@ class PersistentDatabaseCache implements PersistentCache {
 		return $entries;
 	}
 }
-
-class_alias( PersistentDatabaseCache::class, '\MediaWiki\Extensions\Translate\PersistentDatabaseCache' );

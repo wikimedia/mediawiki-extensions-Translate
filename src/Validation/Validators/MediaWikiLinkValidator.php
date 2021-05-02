@@ -70,5 +70,3 @@ class MediaWikiLinkValidator implements MessageValidator {
 		return $links;
 	}
 }
-
-class_alias( MediaWikiLinkValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiLinkValidator' );

@@ -100,5 +100,3 @@ class TranslationPage {
 		return strtr( $template, $replacements );
 	}
 }
-
-class_alias( TranslationPage::class, '\MediaWiki\Extensions\Translate\TranslationPage' );

@@ -45,5 +45,3 @@ class GettextNewlineValidator extends NewlineValidator {
 		return $str;
 	}
 }
-
-class_alias( GettextNewlineValidator::class, '\MediaWiki\Extensions\Translate\GettextNewlineValidator' );

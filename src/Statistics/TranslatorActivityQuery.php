@@ -121,5 +121,3 @@ class TranslatorActivityQuery {
 		return $data;
 	}
 }
-
-class_alias( TranslatorActivityQuery::class, '\MediaWiki\Extensions\Translate\TranslatorActivityQuery' );

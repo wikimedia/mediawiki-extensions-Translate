@@ -405,5 +405,3 @@ class GroupSynchronizationCache {
 		return "gsc_%error%_$groupId";
 	}
 }
-
-class_alias( GroupSynchronizationCache::class, '\MediaWiki\Extensions\Translate\GroupSynchronizationCache' );

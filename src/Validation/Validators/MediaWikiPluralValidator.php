@@ -143,5 +143,3 @@ class MediaWikiPluralValidator implements MessageValidator {
 		return array_values( $forms );
 	}
 }
-
-class_alias( MediaWikiPluralValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiPluralValidator' );

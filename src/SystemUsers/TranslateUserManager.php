@@ -23,5 +23,3 @@ class TranslateUserManager {
 		return $wgTranslateUserManagerName;
 	}
 }
-
-class_alias( TranslateUserManager::class, '\MediaWiki\Extensions\Translate\TranslateUserManager' );

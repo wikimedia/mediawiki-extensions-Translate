@@ -21,5 +21,3 @@ class ParsingPlaceholderFactory {
 			$this->i++;
 	}
 }
-
-class_alias( ParsingPlaceholderFactory::class, '\MediaWiki\Extensions\Translate\ParsingPlaceholderFactory' );

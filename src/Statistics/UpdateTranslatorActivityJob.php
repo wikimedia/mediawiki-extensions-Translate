@@ -36,5 +36,3 @@ class UpdateTranslatorActivityJob extends GenericTranslateJob implements Generic
 		return true;
 	}
 }
-
-class_alias( UpdateTranslatorActivityJob::class, '\MediaWiki\Extensions\Translate\UpdateTranslatorActivityJob' );

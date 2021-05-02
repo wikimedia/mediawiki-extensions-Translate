@@ -14,8 +14,3 @@ class InsertableRubyVariableValidator extends InsertableRegexValidator {
 		parent::__construct( '/%{[a-zA-Z_]+}/' );
 	}
 }
-
-class_alias(
-	InsertableRubyVariableValidator::class,
-	'\MediaWiki\Extensions\Translate\InsertableRubyVariableValidator'
-);

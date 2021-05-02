@@ -59,5 +59,3 @@ class LegacyValidatorAdapter implements MessageValidator, InsertablesSuggester {
 		return [];
 	}
 }
-
-class_alias( LegacyValidatorAdapter::class, '\MediaWiki\Extensions\Translate\LegacyValidatorAdapter' );

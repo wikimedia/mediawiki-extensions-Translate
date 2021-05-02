@@ -22,5 +22,3 @@ use TMessage;
 interface MessageValidator {
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues;
 }
-
-class_alias( MessageValidator::class, '\MediaWiki\Extensions\Translate\MessageValidator' );

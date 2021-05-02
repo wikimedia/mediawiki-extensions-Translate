@@ -19,5 +19,3 @@ class IosVariableValidator extends InsertableRegexValidator {
 		);
 	}
 }
-
-class_alias( IosVariableValidator::class, '\MediaWiki\Extensions\Translate\IosVariableValidator' );

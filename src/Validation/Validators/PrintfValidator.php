@@ -14,5 +14,3 @@ class PrintfValidator extends InsertableRegexValidator {
 		parent::__construct( '/%(\d+\$)?(\.\d+)?[sduf]/U' );
 	}
 }
-
-class_alias( PrintfValidator::class, '\MediaWiki\Extensions\Translate\PrintfValidator' );

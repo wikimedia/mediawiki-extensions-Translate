@@ -29,8 +29,3 @@ class NumericalParameterInsertablesSuggester implements InsertablesSuggester {
 		return $insertables;
 	}
 }
-
-class_alias(
-	NumericalParameterInsertablesSuggester::class,
-	'\MediaWiki\Extensions\Translate\NumericalParameterInsertablesSuggester'
-);

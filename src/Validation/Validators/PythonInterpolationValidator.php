@@ -14,5 +14,3 @@ class PythonInterpolationValidator extends InsertableRegexValidator {
 		parent::__construct( '/\%(?:\([a-zA-Z0-9_]*?\))?[diouxXeEfFgGcrs]/U' );
 	}
 }
-
-class_alias( PythonInterpolationValidator::class, '\MediaWiki\Extensions\Translate\PythonInterpolationValidator' );

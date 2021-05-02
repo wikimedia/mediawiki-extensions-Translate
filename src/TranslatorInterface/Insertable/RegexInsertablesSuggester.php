@@ -122,5 +122,3 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 		return new Insertable( $displayVal, $preVal, $postVal );
 	}
 }
-
-class_alias( RegexInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\RegexInsertablesSuggester' );

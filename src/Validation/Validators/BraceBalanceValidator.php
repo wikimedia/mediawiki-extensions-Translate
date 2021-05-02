@@ -53,5 +53,3 @@ class BraceBalanceValidator implements MessageValidator {
 		return substr_count( $source, $str1 ) - substr_count( $source, $str2 );
 	}
 }
-
-class_alias( BraceBalanceValidator::class, '\MediaWiki\Extensions\Translate\BraceBalanceValidator' );

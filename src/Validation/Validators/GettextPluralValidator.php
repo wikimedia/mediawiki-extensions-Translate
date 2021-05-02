@@ -104,5 +104,3 @@ class GettextPluralValidator implements MessageValidator {
 		return [ 'ok', [] ];
 	}
 }
-
-class_alias( GettextPluralValidator::class, '\MediaWiki\Extensions\Translate\GettextPluralValidator' );

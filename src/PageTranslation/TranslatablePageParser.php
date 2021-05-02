@@ -221,5 +221,3 @@ class TranslatablePageParser {
 		return strtr( $text, $holders );
 	}
 }
-
-class_alias( TranslatablePageParser::class, '\MediaWiki\Extensions\Translate\TranslatablePageParser' );

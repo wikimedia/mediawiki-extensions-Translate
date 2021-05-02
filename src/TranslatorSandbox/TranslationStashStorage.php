@@ -65,5 +65,3 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 		$this->db->delete( $this->dbTable, $conds, __METHOD__ );
 	}
 }
-
-class_alias( TranslationStashStorage::class, '\MediaWiki\Extensions\Translate\TranslationStashStorage' );

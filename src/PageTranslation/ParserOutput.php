@@ -96,5 +96,3 @@ class ParserOutput {
 		}
 	}
 }
-
-class_alias( ParserOutput::class, '\MediaWiki\Extensions\Translate\ParserOutput' );

@@ -13,5 +13,3 @@ class MediaWikiParameterValidator extends InsertableRegexValidator {
 		parent::__construct( '/\$[1-9]/' );
 	}
 }
-
-class_alias( MediaWikiParameterValidator::class, '\MediaWiki\Extensions\Translate\MediaWikiParameterValidator' );

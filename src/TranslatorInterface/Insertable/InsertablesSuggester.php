@@ -17,5 +17,3 @@ interface InsertablesSuggester {
 	 */
 	public function getInsertables( string $text ): array;
 }
-
-class_alias( InsertablesSuggester::class, '\MediaWiki\Extensions\Translate\InsertablesSuggester' );

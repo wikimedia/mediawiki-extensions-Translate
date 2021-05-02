@@ -37,8 +37,3 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		return $insertables;
 	}
 }
-
-class_alias(
-	TranslatablePageInsertablesSuggester::class,
-	'\MediaWiki\Extensions\Translate\TranslatablePageInsertablesSuggester'
-);

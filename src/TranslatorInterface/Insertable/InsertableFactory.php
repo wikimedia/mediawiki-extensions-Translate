@@ -46,5 +46,3 @@ class InsertableFactory {
 		return $suggester;
 	}
 }
-
-class_alias( InsertableFactory::class, '\MediaWiki\Extensions\Translate\InsertableFactory' );

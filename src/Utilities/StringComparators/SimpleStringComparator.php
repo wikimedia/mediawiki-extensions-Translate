@@ -25,5 +25,3 @@ class SimpleStringComparator implements StringComparator {
 		return 0;
 	}
 }
-
-class_alias( SimpleStringComparator::class, '\MediaWiki\Extensions\Translate\SimpleStringComparator' );

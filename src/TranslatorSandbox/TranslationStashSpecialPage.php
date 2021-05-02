@@ -202,5 +202,3 @@ HTML
 		return Language::factory( $source->getCode() );
 	}
 }
-
-class_alias( TranslationStashSpecialPage::class, '\MediaWiki\Extensions\Translate\TranslationStashSpecialPage' );

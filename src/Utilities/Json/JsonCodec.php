@@ -85,5 +85,3 @@ class JsonCodec {
 		return false;
 	}
 }
-
-class_alias( JsonCodec::class, '\MediaWiki\Extensions\Translate\JsonCodec' );

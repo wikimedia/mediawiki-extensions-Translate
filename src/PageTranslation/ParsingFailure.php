@@ -27,5 +27,3 @@ class ParsingFailure extends RuntimeException {
 		return $this->messageSpec;
 	}
 }
-
-class_alias( ParsingFailure::class, '\MediaWiki\Extensions\Translate\ParsingFailure' );

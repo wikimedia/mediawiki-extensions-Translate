@@ -98,5 +98,3 @@ class Services implements ContainerInterface {
 		return $this->get( 'Translate:TtmServerFactory' );
 	}
 }
-
-class_alias( Services::class, '\MediaWiki\Extensions\Translate\Services' );

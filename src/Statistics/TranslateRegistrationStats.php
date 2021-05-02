@@ -23,5 +23,3 @@ class TranslateRegistrationStats extends TranslationStatsBase {
 		return $row->user_registration;
 	}
 }
-
-class_alias( TranslateRegistrationStats::class, '\MediaWiki\Extensions\Translate\TranslateRegistrationStats' );

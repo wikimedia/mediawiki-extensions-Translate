@@ -23,8 +23,3 @@ class UpdateTranslatorActivityMaintenanceScript extends Maintenance {
 		$this->output( "Done.\n" );
 	}
 }
-
-class_alias(
-	UpdateTranslatorActivityMaintenanceScript::class,
-	'\MediaWiki\Extensions\Translate\UpdateTranslatorActivityMaintenanceScript'
-);

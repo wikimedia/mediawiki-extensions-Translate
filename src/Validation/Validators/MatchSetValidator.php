@@ -62,5 +62,3 @@ class MatchSetValidator implements MessageValidator {
 		return $issues;
 	}
 }
-
-class_alias( MatchSetValidator::class, '\MediaWiki\Extensions\Translate\MatchSetValidator' );

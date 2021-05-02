@@ -46,5 +46,3 @@ class StashedTranslation {
 		return $this->metadata;
 	}
 }
-
-class_alias( StashedTranslation::class, '\MediaWiki\Extensions\Translate\StashedTranslation' );

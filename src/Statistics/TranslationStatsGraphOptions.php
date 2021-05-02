@@ -108,5 +108,3 @@ class TranslationStatsGraphOptions {
 		$this->formOptions->validateIntBounds( $key, $min, $max );
 	}
 }
-
-class_alias( TranslationStatsGraphOptions::class, '\MediaWiki\Extensions\Translate\TranslationStatsGraphOptions' );

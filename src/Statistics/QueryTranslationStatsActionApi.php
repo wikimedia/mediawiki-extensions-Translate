@@ -80,5 +80,3 @@ class QueryTranslationStatsActionApi extends ApiBase {
 		];
 	}
 }
-
-class_alias( QueryTranslationStatsActionApi::class, '\MediaWiki\Extensions\Translate\QueryTranslationStatsActionApi' );

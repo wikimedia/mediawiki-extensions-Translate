@@ -50,5 +50,3 @@ class ReplacementValidator implements MessageValidator {
 		return $issues;
 	}
 }
-
-class_alias( ReplacementValidator::class, '\MediaWiki\Extensions\Translate\ReplacementValidator' );

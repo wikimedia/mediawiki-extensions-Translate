@@ -15,5 +15,3 @@ interface TranslationStashWriter {
 	/** Delete all stashed translations for the given user. */
 	public function deleteTranslations( User $user ): void;
 }
-
-class_alias( TranslationStashWriter::class, '\MediaWiki\Extensions\Translate\TranslationStashWriter' );

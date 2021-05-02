@@ -199,5 +199,3 @@ class GettextPlural {
 		return $formArray;
 	}
 }
-
-class_alias( GettextPlural::class, '\MediaWiki\Extensions\Translate\GettextPlural' );

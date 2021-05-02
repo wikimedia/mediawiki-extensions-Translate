@@ -27,5 +27,3 @@ interface PersistentCache {
 
 	public function clear(): void;
 }
-
-class_alias( PersistentCache::class, '\MediaWiki\Extensions\Translate\PersistentCache' );

@@ -76,5 +76,3 @@ class TranslateReplaceTitle {
 		return TitleArray::newFromResult( $result );
 	}
 }
-
-class_alias( TranslateReplaceTitle::class, '\MediaWiki\Extensions\Translate\TranslateReplaceTitle' );

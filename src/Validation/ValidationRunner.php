@@ -371,5 +371,3 @@ class ValidationRunner {
 		}
 	}
 }
-
-class_alias( ValidationRunner::class, '\MediaWiki\Extensions\Translate\ValidationRunner' );

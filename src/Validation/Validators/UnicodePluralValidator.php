@@ -108,5 +108,3 @@ class UnicodePluralValidator implements MessageValidator {
 		return [ 'ok', [] ];
 	}
 }
-
-class_alias( UnicodePluralValidator::class, '\MediaWiki\Extensions\Translate\UnicodePluralValidator' );

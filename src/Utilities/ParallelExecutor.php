@@ -52,5 +52,3 @@ class ParallelExecutor {
 		}
 	}
 }
-
-class_alias( ParallelExecutor::class, '\MediaWiki\Extensions\Translate\ParallelExecutor' );

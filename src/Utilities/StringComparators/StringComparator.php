@@ -16,5 +16,3 @@ interface StringComparator {
 	 */
 	public function getSimilarity( $a, $b );
 }
-
-class_alias( StringComparator::class, '\MediaWiki\Extensions\Translate\StringComparator' );

@@ -52,5 +52,3 @@ class ValidationIssue {
 		return $this->messageParams;
 	}
 }
-
-class_alias( ValidationIssue::class, '\MediaWiki\Extensions\Translate\ValidationIssue' );

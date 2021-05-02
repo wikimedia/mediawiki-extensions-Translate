@@ -87,5 +87,3 @@ class EscapeCharacterValidator implements MessageValidator {
 		return $prefix . $regex;
 	}
 }
-
-class_alias( EscapeCharacterValidator::class, '\MediaWiki\Extensions\Translate\EscapeCharacterValidator' );

@@ -108,5 +108,3 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		return $row->log_timestamp;
 	}
 }
-
-class_alias( ReviewPerLanguageStats::class, '\MediaWiki\Extensions\Translate\ReviewPerLanguageStats' );

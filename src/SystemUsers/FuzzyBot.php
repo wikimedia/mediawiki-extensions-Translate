@@ -23,5 +23,3 @@ class FuzzyBot {
 		return $wgTranslateFuzzyBotName;
 	}
 }
-
-class_alias( FuzzyBot::class, '\MediaWiki\Extensions\Translate\FuzzyBot' );

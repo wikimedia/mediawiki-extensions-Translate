@@ -29,5 +29,3 @@ class CombinedInsertablesSuggester implements InsertablesSuggester {
 		return array_unique( $insertables, SORT_REGULAR );
 	}
 }
-
-class_alias( CombinedInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\CombinedInsertablesSuggester' );

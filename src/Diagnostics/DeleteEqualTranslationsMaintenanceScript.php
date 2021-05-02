@@ -147,8 +147,3 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 	}
 }
-
-class_alias(
-	DeleteEqualTranslationsMaintenanceScript::class,
-	'\MediaWiki\Extensions\Translate\DeleteEqualTranslationsMaintenanceScript'
-);

@@ -33,5 +33,3 @@ trait JsonUnserializableTrait {
 	 */
 	abstract protected function toJsonArray(): array;
 }
-
-class_alias( JsonUnserializableTrait::class, '\MediaWiki\Extensions\Translate\JsonUnserializableTrait' );

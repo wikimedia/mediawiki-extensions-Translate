@@ -76,5 +76,3 @@ class InsertableRegexValidator extends RegexInsertablesSuggester implements Mess
 		return $issues;
 	}
 }
-
-class_alias( InsertableRegexValidator::class, '\MediaWiki\Extensions\Translate\InsertableRegexValidator' );

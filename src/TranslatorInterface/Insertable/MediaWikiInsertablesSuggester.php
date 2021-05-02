@@ -44,5 +44,3 @@ class MediaWikiInsertablesSuggester implements InsertablesSuggester {
 		return $insertables;
 	}
 }
-
-class_alias( MediaWikiInsertablesSuggester::class, '\MediaWiki\Extensions\Translate\MediaWikiInsertablesSuggester' );

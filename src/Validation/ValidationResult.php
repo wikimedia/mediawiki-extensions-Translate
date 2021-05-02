@@ -100,5 +100,3 @@ class ValidationResult {
 		return $out;
 	}
 }
-
-class_alias( ValidationResult::class, '\MediaWiki\Extensions\Translate\ValidationResult' );

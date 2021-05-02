@@ -98,5 +98,3 @@ class NewlineValidator implements MessageValidator {
 		return $issues;
 	}
 }
-
-class_alias( NewlineValidator::class, '\MediaWiki\Extensions\Translate\NewlineValidator' );

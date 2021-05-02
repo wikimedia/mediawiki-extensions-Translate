@@ -90,8 +90,3 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		);
 	}
 }
-
-class_alias(
-	CompleteExternalTranslationMaintenanceScript::class,
-	'\MediaWiki\Extensions\Translate\CompleteExternalTranslationMaintenanceScript'
-);

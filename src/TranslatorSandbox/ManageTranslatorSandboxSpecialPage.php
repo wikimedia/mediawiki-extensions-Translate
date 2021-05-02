@@ -217,8 +217,3 @@ HTML;
 				?: strnatcasecmp( $a['username'], $b['username'] );
 	}
 }
-
-class_alias(
-	ManageTranslatorSandboxSpecialPage::class,
-	'\MediaWiki\Extensions\Translate\ManageTranslatorSandboxSpecialPage'
-);

@@ -108,5 +108,3 @@ class SmartFormatPluralValidator implements MessageValidator, InsertablesSuggest
 		return $insertables;
 	}
 }
-
-class_alias( SmartFormatPluralValidator::class, '\MediaWiki\Extensions\Translate\SmartFormatPluralValidator' );

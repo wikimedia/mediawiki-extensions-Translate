@@ -74,5 +74,3 @@ class PersistentCacheEntry {
 		return false;
 	}
 }
-
-class_alias( PersistentCacheEntry::class, '\MediaWiki\Extensions\Translate\PersistentCacheEntry' );

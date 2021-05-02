@@ -13,5 +13,3 @@ class NumericalParameterValidator extends InsertableRegexValidator {
 		parent::__construct( '/\$\d+/' );
 	}
 }
-
-class_alias( NumericalParameterValidator::class, '\MediaWiki\Extensions\Translate\NumericalParameterValidator' );

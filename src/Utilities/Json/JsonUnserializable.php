@@ -15,5 +15,3 @@ interface JsonUnserializable {
 	/** Restore an array to an instance of the current class */
 	public static function newFromJsonArray( array $json );
 }
-
-class_alias( JsonUnserializable::class, '\MediaWiki\Extensions\Translate\JsonUnserializable' );

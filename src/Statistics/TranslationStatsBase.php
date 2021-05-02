@@ -75,5 +75,3 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		return array_keys( $namespaces );
 	}
 }
-
-class_alias( TranslationStatsBase::class, '\MediaWiki\Extensions\Translate\TranslationStatsBase' );

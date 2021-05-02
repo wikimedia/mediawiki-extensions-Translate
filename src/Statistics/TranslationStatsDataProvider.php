@@ -241,5 +241,3 @@ class TranslationStatsDataProvider {
 		return $increment;
 	}
 }
-
-class_alias( TranslationStatsDataProvider::class, '\MediaWiki\Extensions\Translate\TranslationStatsDataProvider' );

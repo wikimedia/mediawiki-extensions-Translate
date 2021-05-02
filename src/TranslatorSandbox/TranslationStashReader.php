@@ -18,5 +18,3 @@ interface TranslationStashReader {
 	 */
 	public function getTranslations( User $user ): array;
 }
-
-class_alias( TranslationStashReader::class, '\MediaWiki\Extensions\Translate\TranslationStashReader' );

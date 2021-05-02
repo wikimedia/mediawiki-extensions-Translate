@@ -114,5 +114,3 @@ class ValidatorFactory {
 		self::$validators[ $id ] = $ns . $validator;
 	}
 }
-
-class_alias( ValidatorFactory::class, '\MediaWiki\Extensions\Translate\ValidatorFactory' );

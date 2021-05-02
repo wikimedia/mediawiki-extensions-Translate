@@ -41,5 +41,3 @@ class Insertable {
 		return $this->display;
 	}
 }
-
-class_alias( Insertable::class, '\MediaWiki\Extensions\Translate\Insertable' );

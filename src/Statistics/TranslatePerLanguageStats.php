@@ -191,5 +191,3 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		return substr( $timestamp, 0, -$cut );
 	}
 }
-
-class_alias( TranslatePerLanguageStats::class, '\MediaWiki\Extensions\Translate\TranslatePerLanguageStats' );

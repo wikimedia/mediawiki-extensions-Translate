@@ -245,8 +245,7 @@
 		"YandexWebService": "webservices/YandexWebService.php"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\Translate\\": "src/",
-		"MediaWiki\\Extensions\\Translate\\": "src/"
+		"MediaWiki\\Extension\\Translate\\": "src/"
 	},
 	"TestAutoloadClasses": {
 		"MockCustomInsertableSuggester": "tests/phpunit/mocks/MockCustomInsertableSuggester.php",

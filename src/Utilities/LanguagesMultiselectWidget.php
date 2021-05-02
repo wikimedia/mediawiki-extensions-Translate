@@ -31,5 +31,3 @@ class LanguagesMultiselectWidget extends TagMultiselectWidget {
 		return parent::getConfig( $config );
 	}
 }
-
-class_alias( LanguagesMultiselectWidget::class, '\MediaWiki\Extensions\Translate\LanguagesMultiselectWidget' );

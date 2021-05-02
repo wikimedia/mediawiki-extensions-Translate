@@ -51,5 +51,3 @@ class ValidationIssues implements Countable, IteratorAggregate {
 		return count( $this->issues );
 	}
 }
-
-class_alias( ValidationIssues::class, '\MediaWiki\Extensions\Translate\ValidationIssues' );

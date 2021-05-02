@@ -32,5 +32,3 @@ class Section {
 		return $this->open . $this->contents . $this->close;
 	}
 }
-
-class_alias( Section::class, '\MediaWiki\Extensions\Translate\Section' );

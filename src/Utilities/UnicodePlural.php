@@ -189,5 +189,3 @@ class UnicodePlural {
 		return $sortedFormMap;
 	}
 }
-
-class_alias( UnicodePlural::class, '\MediaWiki\Extensions\Translate\UnicodePlural' );

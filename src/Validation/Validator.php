@@ -19,5 +19,3 @@ use TMessage;
 interface Validator {
 	public function validate( TMessage $message, $code, array &$notices );
 }
-
-class_alias( Validator::class, '\MediaWiki\Extensions\Translate\Validator' );

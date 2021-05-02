@@ -64,5 +64,3 @@ interface TranslationStatsInterface {
 	 */
 	public function getDateFormat();
 }
-
-class_alias( TranslationStatsInterface::class, '\MediaWiki\Extensions\Translate\TranslationStatsInterface' );

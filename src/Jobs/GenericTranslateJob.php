@@ -71,5 +71,3 @@ abstract class GenericTranslateJob extends Job {
 		$this->getLogger()->warning( $this->getLogPrefix() . $msg, $context );
 	}
 }
-
-class_alias( GenericTranslateJob::class, '\MediaWiki\Extensions\Translate\GenericTranslateJob' );
