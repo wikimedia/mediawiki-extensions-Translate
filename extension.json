@@ -716,9 +716,9 @@
 				"mobile"
 			]
 		},
-		"ext.translate.special.translationstash": {
-			"scripts": "resources/js/ext.translate.special.translationstash.js",
-			"styles": "resources/css/ext.translate.special.translationstash.css",
+		"ext.translate.specialTranslationStash": {
+			"packageFiles": "resources/src/ext.translate.specialTranslationStash/index.js",
+			"styles": "resources/src/ext.translate.specialTranslationStash/index.css",
 			"dependencies": [
 				"ext.translate.editor",
 				"ext.translate.messagetable",

@@ -76,7 +76,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		}
 
 		$out->addJsConfigVars( 'wgTranslateSandboxLimit', $limit );
-		$out->addModules( 'ext.translate.special.translationstash' );
+		$out->addModules( 'ext.translate.specialTranslationStash' );
 		$out->addModuleStyles( 'mediawiki.ui.button' );
 		$this->showPage();
 	}
