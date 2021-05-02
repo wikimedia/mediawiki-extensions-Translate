@@ -1,5 +1,6 @@
 ( function () {
 	'use strict';
+
 	/**
 	 * Page mode plugin
 	 *
@@ -35,39 +36,38 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
-			var pagemode = this;
+			var that = this;
 
 			this.message.proofreadable = false;
 
 			this.render();
 
-			pagemode.$message.translateeditor( {
-				message: pagemode.message,
+			this.$message.translateeditor( {
+				message: this.message,
 				beforeSave: function ( translation ) {
-					pagemode.$message.find( '.tux-pagemode-translation' )
-						.html( mw.translate.formatMessageGently( translation || '', pagemode.message.key ) )
+					that.$message.find( '.tux-pagemode-translation' )
+						.html( mw.translate.formatMessageGently( translation || '', that.message.key ) )
 						.addClass( 'highlight' );
 				},
 				onSave: function ( translation ) {
-					pagemode.$message.find( '.tux-pagemode-translation' )
+					that.$message.find( '.tux-pagemode-translation' )
 						.removeClass( 'highlight' );
-					pagemode.message.translation = translation;
+					that.message.translation = translation;
 
-					pagemode.$message.find( '.tux-pagemode-status' )
+					that.$message.find( '.tux-pagemode-status' )
 						.removeClass( 'translated fuzzy proofread untranslated' )
-						.addClass( pagemode.message.properties.status );
+						.addClass( that.message.properties.status );
 				}
 			} );
 
 		},
 
 		render: function () {
-			var targetLangAttrib, targetLangDir,
-				sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
+			var targetLangAttrib, targetLangDir, sourceLangDir;
 
-			if ( this.options.targetlangcode ===
-				mw.config.get( 'wgTranslateDocumentationLanguageCode' )
-			) {
+			sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
+
+			if ( this.options.targetlangcode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 			} else {
 				targetLangAttrib = this.options.targetlangcode;
@@ -106,10 +106,10 @@
 		 * Attach event listeners
 		 */
 		listen: function () {
-			var pagemode = this;
+			var that = this;
 
 			this.$message.children( '.message' ).on( 'click', function ( e ) {
-				pagemode.$message.data( 'translateeditor' ).show();
+				that.$message.data( 'translateeditor' ).show();
 				e.preventDefault();
 			} );
 		}

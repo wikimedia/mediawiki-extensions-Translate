@@ -3,6 +3,7 @@
 
 	/**
 	 * Proofread Plugin
+	 *
 	 * Prepare a proofread UI with all the required actions
 	 * for a translation unit (message).
 	 * This is mainly used with the messagetable plugin in proofread mode,
@@ -35,7 +36,7 @@
 		 * Initialize the plugin
 		 */
 		init: function () {
-			var proofread = this;
+			var that = this;
 
 			this.render();
 
@@ -53,26 +54,25 @@
 				this.disableProofread();
 			}
 
-			proofread.$message.translateeditor( {
-				message: proofread.message,
+			this.$message.translateeditor( {
+				message: this.message,
 				onSave: function ( translation ) {
-					proofread.$message.find( '.tux-proofread-translation' )
+					that.$message.find( '.tux-proofread-translation' )
 						.text( translation );
-					proofread.message.translation = translation;
-					proofread.markSelfTranslation();
+					that.message.translation = translation;
+					that.markSelfTranslation();
 
-					proofread.$message.find( '.tux-proofread-status' )
+					that.$message.find( '.tux-proofread-status' )
 						.removeClass( 'translated fuzzy proofread untranslated' )
-						.addClass( proofread.message.properties.status );
+						.addClass( that.message.properties.status );
 				}
 			} );
 
 		},
 
 		render: function () {
-			var targetLangCode, targetLangDir, targetLangAttrib,
-				sourceLangCode, sourceLangDir,
-				$proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
+			var targetLangAttrib, targetLangDir, sourceLangDir;
+			var $proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
 				translatedBySelf, proofreadBySelf;
 
 			// List of all reviewers
@@ -88,9 +88,7 @@
 			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
 			proofreadBySelf = reviewers.indexOf( userId ) > -1;
 
-			sourceLangCode = this.options.sourcelangcode;
-			sourceLangDir = $.uls.data.getDir( sourceLangCode );
-			targetLangCode = this.options.targetlangcode;
+			sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
 
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
@@ -111,11 +109,12 @@
 					$( this ).find( '.tux-proofread-edit-label' ).addClass( 'hide' );
 				} );
 
-			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+			if ( this.options.targetlangcode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 			} else {
-				targetLangAttrib = targetLangCode;
+				targetLangAttrib = this.options.targetlangcode;
 			}
+
 			targetLangDir = $.uls.data.getDir( targetLangAttrib );
 
 			this.$message.append(
@@ -127,7 +126,7 @@
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-source' )
 							.attr( {
-								lang: sourceLangCode,
+								lang: this.options.sourcelangcode,
 								dir: sourceLangDir
 							} )
 							.text( this.message.definition ),
@@ -242,17 +241,17 @@
 		 * Attach event listeners
 		 */
 		listen: function () {
-			var proofread = this;
+			var that = this;
 
 			this.$message.find( '.tux-proofread-action' ).on( 'click', function () {
-				proofread.proofread();
+				that.proofread();
 				return false;
 			} );
 
 			this.$message.find( '.tux-proofread-edit' ).on( 'click', function () {
 				// Make sure that the tooltip is hidden when going to the editor
 				$( '.translate-tooltip' ).remove();
-				proofread.$message.data( 'translateeditor' ).show();
+				that.$message.data( 'translateeditor' ).show();
 
 				return false;
 			} );
