@@ -816,13 +816,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.tabgroup": {
-			"styles": "resources/css/ext.translate.tabgroup.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.tag.languages": {
 			"styles": "resources/css/ext.translate.tag.languages.less",
 			"targets": [

@@ -504,8 +504,6 @@ class SpecialManageGroups extends SpecialPage {
 			return;
 		}
 
-		$skin->getOutput()->addModuleStyles( 'ext.translate.tabgroup' );
-
 		$tabs['namespaces'] = [];
 		foreach ( $pagesInGroup as $spName => $section ) {
 			$spClass = $specialPageFactory->getPage( $spName );

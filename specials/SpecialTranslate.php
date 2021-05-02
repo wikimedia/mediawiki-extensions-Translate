@@ -360,8 +360,6 @@ class SpecialTranslate extends SpecialPage {
 			return true;
 		}
 
-		$skin->getOutput()->addModuleStyles( 'ext.translate.tabgroup' );
-
 		// Extract subpage syntax, otherwise the values are not passed forward
 		$params = [];
 		if ( trim( $sub ) !== '' ) {
