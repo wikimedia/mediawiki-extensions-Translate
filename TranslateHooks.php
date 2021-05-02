@@ -1006,7 +1006,6 @@ class TranslateHooks {
 					"ext.translate.dropdownmenu",
 					"jquery.makeCollapsible",
 					"jquery.textSelection",
-					"jquery.textchange",
 					"mediawiki.Uri",
 					"mediawiki.api",
 					"mediawiki.jqueryMsg",

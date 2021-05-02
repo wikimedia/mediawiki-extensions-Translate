@@ -445,7 +445,6 @@
 				"ext.translate.base",
 				"ext.translate.loader",
 				"ext.translate.parsers",
-				"jquery.textchange",
 				"jquery.throttle-debounce",
 				"mediawiki.Uri",
 				"mediawiki.jqueryMsg",
@@ -836,13 +835,6 @@
 			"dependencies": [
 				"mediawiki.api"
 			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"jquery.textchange": {
-			"scripts": "resources/js/jquery.textchange.js",
 			"targets": [
 				"desktop",
 				"mobile"

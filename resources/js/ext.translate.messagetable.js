@@ -76,7 +76,7 @@
 				$filterInput.prop( 'placeholder', mw.msg( 'tux-message-filter-placeholder' ) );
 			}
 
-			$filterInput.on( 'textchange', $.debounce( 250, function () {
+			$filterInput.on( 'input', $.debounce( 250, function () {
 				messageTable.search( $filterInput.val() );
 			} ) );
 

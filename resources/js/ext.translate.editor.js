@@ -678,7 +678,7 @@
 				}
 			} );
 
-			$textarea.on( 'textchange', function () {
+			$textarea.on( 'input', function () {
 				var $pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
 					original = translateEditor.message.translation || '',
 					current = $textarea.val() || '';
@@ -754,7 +754,7 @@
 
 				// Enable edit summary if there was a change to translation area
 				// or disable if there is no text in translation area
-				$textarea.on( 'textchange', function () {
+				$textarea.on( 'input', function () {
 					if ( $editSummary.prop( 'disabled' ) ) {
 						$editSummary.prop( 'disabled', false );
 					}
@@ -1154,7 +1154,7 @@
 
 				$messageDescTextarea = $( '<textarea>' )
 					.addClass( 'tux-textarea-documentation' )
-					.on( 'textchange', function () {
+					.on( 'input', function () {
 						$messageDescSaveButton.prop( 'disabled', false );
 					} );
 
