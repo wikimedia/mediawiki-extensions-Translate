@@ -306,26 +306,6 @@ class MessageGroupStats {
 		return $stats;
 	}
 
-	public static function update( MessageHandle $handle, array $changes = [] ) {
-		$dbids = array_map( 'self::getDatabaseIdForGroupId', $handle->getGroupIds() );
-
-		$dbw = wfGetDB( DB_MASTER );
-		$conds = [
-			'tgs_group' => $dbids,
-			'tgs_lang' => $handle->getCode(),
-		];
-
-		$values = [];
-		foreach ( [ 'total', 'translated', 'fuzzy', 'proofread' ] as $type ) {
-			if ( isset( $changes[$type] ) ) {
-				$values[] = "tgs_$type=tgs_$type" .
-					self::stringifyNumber( $changes[$type] );
-			}
-		}
-
-		$dbw->update( self::TABLE, $values, $conds, __METHOD__ );
-	}
-
 	/**
 	 * Returns an array of needed database fields.
 	 * @param stdClass $row
@@ -588,17 +568,6 @@ class MessageGroupStats {
 			self::FUZZY => $fuzzy,
 			self::PROOFREAD => $proofread,
 		];
-	}
-
-	/**
-	 * Converts input to "+2" "-4" type of string.
-	 * @param int $number
-	 * @return string
-	 */
-	protected static function stringifyNumber( $number ) {
-		$number = (int)$number;
-
-		return $number < 0 ? "$number" : "+$number";
 	}
 
 	protected static function queueUpdates( $flags ) {
