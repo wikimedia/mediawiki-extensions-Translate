@@ -5,6 +5,10 @@
 			"Stavanger7"
 		]
 	},
+	"tpt-select-prioritylangs-reason": "Rason:",
 	"tpt-languages-nonzero": "$1 ($2% traductet)",
-	"pt-deletepage-current": "Nómine del págine:"
+	"pt-movepage-reason": "Rason:",
+	"pt-deletepage-current": "Nómine del págine:",
+	"pt-deletepage-reason": "Rason:",
+	"pm-import-button-label": "Importar"
 }

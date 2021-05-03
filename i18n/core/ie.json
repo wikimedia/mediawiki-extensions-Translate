@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mithridates"
+			"Mithridates",
+			"Renan"
 		]
 	},
-	"translate-documentation-language": "Documentation de missage"
+	"translate-manage-action-import": "Importar",
+	"translate-documentation-language": "Documentation de missage",
+	"tux-editor-page-mode": "Págine"
 }
