@@ -175,8 +175,11 @@ class MessageGroupStats {
 	 * Hook: TranslateEventTranslationReview
 	 * @param MessageHandle $handle
 	 */
-	public static function clear( MessageHandle $handle ) {
+	public static function clear( MessageHandle $handle ): void {
 		$code = $handle->getCode();
+		if ( !self::isValidLanguage( $code ) ) {
+			return;
+		}
 		$groups = self::getSortedGroupsForClearing( $handle->getGroupIds() );
 		self::internalClearGroups( $code, $groups );
 	}
