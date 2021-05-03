@@ -270,6 +270,8 @@ class MessageGroupStats {
 
 	/**
 	 * Purges all cached stats.
+	 *
+	 * Mostly for testing purposes. Calling this in normal operation will cause performance issues.
 	 */
 	public static function clearAll() {
 		$dbw = wfGetDB( DB_MASTER );
