@@ -40,10 +40,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 				'page_title ' . $dbr->buildLike( "$base/", $dbr->anyString() ),
 			],
 			__METHOD__,
-			[
-				'ORDER BY' => 'page_title',
-				'USE INDEX' => 'name_title',
-			]
+			[ 'ORDER BY' => 'page_title', ]
 		);
 
 		$titles = [];

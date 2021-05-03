@@ -167,10 +167,7 @@ class SpecialTranslations extends SpecialAllPages {
 				'page_title ' . $dbr->buildLike( "$message/", $dbr->anyString() ),
 			],
 			__METHOD__,
-			[
-				'ORDER BY' => 'page_title',
-				'USE INDEX' => 'name_title',
-			]
+			[ 'ORDER BY' => 'page_title', ]
 		);
 
 		if ( !$res->numRows() ) {
