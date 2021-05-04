@@ -3,6 +3,10 @@
 	line-height: 200%;
 }
 
+.mw-translate-spsl-translators a {
+	unicode-bidi: isolate;
+}
+
 .mw-special-SupportedLanguages h2 {
 	font-weight: bold;
 	margin-top: 2em;
@@ -18,4 +22,5 @@
 	white-space: nowrap;
 	margin: 0.5ex;
 	color: #000;
+	unicode-bidi: isolate;
 }
