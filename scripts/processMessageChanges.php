@@ -19,7 +19,9 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Script for processing message changes in file based message groups.
@@ -56,9 +58,13 @@ class ProcessMessageChanges extends Maintenance {
 		);
 		$this->addOption(
 			'safe-import',
-			'(optional) Import "safe" changes: message additions when no other kind of changes.',
-			false, /*required*/
-			false /*has arg*/
+			'(optional) Import "safe" changes: message additions when no other kind of changes.'
+		);
+		$this->addOption(
+			'skip-group-sync-check',
+			'(optional) Skip importing group if synchronization is still in progress or if there ' .
+				'was an error during synchronization. See: ' .
+				'https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_management#Strong_synchronization'
 		);
 		$this->requireExtension( 'Translate' );
 	}
@@ -69,9 +75,26 @@ class ProcessMessageChanges extends Maintenance {
 		$comparator = new ExternalMessageSourceStateComparator( new SimpleStringComparator() );
 
 		$scripted = $this->hasOption( 'safe-import' );
+		$skipGroupSyncCache = $this->hasOption( 'skip-group-sync-check' );
+
+		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+		$groupSyncCacheEnabled = MediaWikiServices::getInstance()->getMainConfig()
+			->get( 'TranslateGroupSynchronizationCache' );
 
 		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $id => $group ) {
+			if ( $groupSyncCacheEnabled && !$skipGroupSyncCache ) {
+				if ( $groupSyncCache->isGroupBeingProcessed( $id ) ) {
+					$this->error( "Group $id is currently being synchronized; skipping processing of changes\n" );
+					continue;
+				}
+
+				if ( $groupSyncCache->groupHasErrors( $id ) ) {
+					$this->error( "Skipping $id due to an error during synchronization\n" );
+					continue;
+				}
+			}
+
 			if ( !$scripted ) {
 				$this->output( "Processing $id\n" );
 			}

@@ -327,6 +327,12 @@ class GroupSynchronizationCache {
 		$this->cache->delete( $messageErrorKey );
 	}
 
+	/** Checks if the group has errors */
+	public function groupHasErrors( string $groupId ): bool {
+		$groupErrorKey = $this->getGroupErrorKey( $groupId );
+		return $this->cache->has( $groupErrorKey );
+	}
+
 	/** Checks if group has unresolved error messages. If not clears the group from error list */
 	public function syncGroupErrors( string $groupId ): GroupSynchronizationResponse {
 		$groupSyncResponse = $this->getGroupErrorInfo( $groupId );
