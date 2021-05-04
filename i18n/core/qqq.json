@@ -270,6 +270,7 @@
 	"translate-smg-group-with-error-summary": "Notice shown in the details tag that lists error messages under a group. Parameters:\n* $1 Number of messages under the group that have errors",
 	"translate-smg-group-message-action-history": "Used as a label for the link that displays the history for the message that had errors.",
 	"translate-smg-group-action-resolve": "Used as a label for the link that allows translation administrator to mark the errors with the message or group as resolved.",
+	"translate-smg-group-sync-error-warn": "Notice shown under a group if it had a synchronization error previously.",
 	"translate-smg-group-message-tag-outdated": "Tag added for group synchronization message in case it is outdated",
 	"translate-smg-group-message-tag-rename": "Tag added for group synchronization message in case it is a rename\n{{identical|Rename}}",
 	"translate-smg-group-message-tag-label": "Used as a label for group synchronization message to list tags",

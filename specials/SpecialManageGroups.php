@@ -170,7 +170,8 @@ class SpecialManageGroups extends SpecialPage {
 		// The above count as three
 		$limit -= 3;
 
-		if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
+		$groupSyncCacheEnabled = $this->getConfig()->get( 'TranslateGroupSynchronizationCache' );
+		if ( $groupSyncCacheEnabled ) {
 			$out->addHTML(
 				$this->displayGroupSyncInfo->getGroupsInSyncHtml(
 					$this->synchronizationCache->getGroupsInSync(),
@@ -194,6 +195,12 @@ class SpecialManageGroups extends SpecialPage {
 				TranslateUtils::deserialize( $reader->get( $id ) )
 			);
 			$out->addHTML( Html::element( 'h2', [], $group->getLabel() ) );
+
+			if ( $groupSyncCacheEnabled && $this->synchronizationCache->groupHasErrors( $id ) ) {
+				$out->addHTML(
+					Html::warningBox( $this->msg( 'translate-smg-group-sync-error-warn' )->escaped(), 'center' )
+				);
+			}
 
 			// Reduce page existance queries to one per group
 			$lb = new LinkBatch();
@@ -396,13 +403,18 @@ class SpecialManageGroups extends SpecialPage {
 
 		$reader = \Cdb\Reader::open( $this->cdb );
 		$groups = $this->getGroupsFromCdb( $reader );
+		$groupSyncCacheEnabled = $this->getConfig()->get( 'TranslateGroupSynchronizationCache' );
 		$postponed = [];
 
 		foreach ( $groups as $groupId => $group ) {
 			try {
-				$sourceChanges = MessageSourceChange::loadModifications(
-					TranslateUtils::deserialize( $reader->get( $groupId ) )
-				);
+				$changes = TranslateUtils::deserialize( $reader->get( $groupId ) );
+				if ( $groupSyncCacheEnabled && $this->synchronizationCache->groupHasErrors( $groupId ) ) {
+					$postponed[$groupId] = $changes;
+					continue;
+				}
+
+				$sourceChanges = MessageSourceChange::loadModifications( $changes );
 				$groupModificationJobs = [];
 				$groupRenameJobData = [];
 				$languages = $sourceChanges->getLanguages();
