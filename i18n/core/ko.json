@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bluemersen",
+			"Ellif",
 			"Ficell",
 			"Freebiekr",
 			"HDNua",
@@ -126,6 +127,7 @@
 	"translate-statsf-days": "기간 일 수:",
 	"translate-statsf-start": "시작 날짜:",
 	"translate-statsf-scale": "단위:",
+	"translate-statsf-scale-years": "년",
 	"translate-statsf-scale-months": "월",
 	"translate-statsf-scale-weeks": "주",
 	"translate-statsf-scale-days": "일",

@@ -5,7 +5,10 @@
 			"Renan"
 		]
 	},
+	"translate-next": "Proxim págine",
+	"translate-prev": "Págine anteriori",
 	"translate-manage-action-import": "Importar",
 	"translate-documentation-language": "Documentation de missage",
-	"tux-editor-page-mode": "Págine"
+	"tux-editor-page-mode": "Págine",
+	"tux-message-filter-advanced-button": "Sercha avansat"
 }
