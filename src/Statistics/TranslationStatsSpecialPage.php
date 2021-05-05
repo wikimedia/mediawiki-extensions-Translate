@@ -105,25 +105,21 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		if ( !$opts['preview'] ) {
 			return;
 		}
-		$spiParams = '';
+		$spiParams = [];
 		foreach ( $opts->getChangedValues() as $key => $v ) {
 			if ( $key === 'preview' ) {
 				continue;
 			}
-			if ( $spiParams !== '' ) {
-				$spiParams .= ';';
-			}
-
 			if ( is_array( $v ) ) {
 				$v = implode( ',', $v );
 				if ( !strlen( $v ) ) {
 					continue;
 				}
 			}
-			$spiParams .= wfEscapeWikiText( "$key=$v" );
+			$spiParams[] = $key . '=' . wfEscapeWikiText( $v );
 		}
-		if ( $spiParams !== '' ) {
-			$spiParams = '/' . $spiParams;
+		if ( $spiParams ) {
+			$spiParams = '/' . implode( ';', $spiParams );
 		}
 		$titleText = $this->getPageTitle()->getPrefixedText();
 		$out->addHTML( Html::element( 'hr' ) );
