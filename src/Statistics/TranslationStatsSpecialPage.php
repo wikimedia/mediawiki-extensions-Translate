@@ -1,19 +1,11 @@
 <?php
-/**
- * Contains logic for special page Special:TranslationStats.
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use FormOptions;
 use Html;
 use JsSelectToInput;
-use MediaWiki\Extension\Translate\Services;
 use MessageGroup;
 use MessageGroups;
 use SpecialPage;
@@ -23,14 +15,12 @@ use XmlSelect;
 use function wfEscapeWikiText;
 
 /**
- * @defgroup Stats Statistics
- * Collection of code to produce various kinds of statistics.
- */
-
-/**
- * Includable special page for generating graphs on translations.
+ * Includable special page for generating graphs for statistics.
  *
- * @ingroup SpecialPage TranslateSpecialPage Stats
+ * @file
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  */
 class TranslationStatsSpecialPage extends SpecialPage {
 	/** @var TranslationStatsDataProvider */
@@ -38,24 +28,27 @@ class TranslationStatsSpecialPage extends SpecialPage {
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
 	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-container';
 
-	public function __construct() {
+	public function __construct( TranslationStatsDataProvider $dataProvider ) {
 		parent::__construct( 'TranslationStats' );
-		$this->dataProvider = Services::getInstance()->getTranslationStatsDataProvider();
+		$this->dataProvider = $dataProvider;
 	}
 
-	public function isIncludable() {
+	/** @inheritDoc */
+	public function isIncludable(): bool {
 		return true;
 	}
 
-	protected function getGroupName() {
+	/** @inheritDoc */
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 
-	public function execute( $par ) {
+	/** @inheritDoc */
+	public function execute( $par ): void {
 		$graphOpts = new TranslationStatsGraphOptions();
 		$graphOpts->bindArray( $this->getRequest()->getValues() );
 
-		$pars = explode( ';', $par );
+		$pars = explode( ';', (string)$par );
 		foreach ( $pars as $item ) {
 			if ( strpos( $item, '=' ) === false ) {
 				continue;
@@ -79,11 +72,12 @@ class TranslationStatsSpecialPage extends SpecialPage {
 
 	/**
 	 * Constructs the form which can be used to generate custom graphs.
-	 * @param FormOptions $opts
+	 *
 	 * @suppress SecurityCheck-DoubleEscaped Intentionally outputting what user should type
 	 */
-	protected function form( FormOptions $opts ) {
-		global $wgScript;
+	private function form( FormOptions $opts ): void {
+		$script = $this->getConfig()->get( 'Script' );
+
 		$this->setHeaders();
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.translationstats' );
@@ -92,7 +86,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$out->addHTML(
 			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) . Html::openElement(
 				'form',
-				[ 'action' => $wgScript, 'id' => 'translationStatsConfig' ]
+				[ 'action' => $script, 'id' => 'translationStatsConfig' ]
 			) . Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'preview', 1 ) . '<table>'
 		);
@@ -107,9 +101,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			$this->eGroup( 'group', $opts ) . '<tr><td colspan="2"><hr /></td></tr>' .
 			'<tr><td colspan="2">' . $submit . '</td></tr>'
 		);
-		$out->addHTML(
-			'</table></form></fieldset>'
-		);
+		$out->addHTML( '</table></form></fieldset>' );
 		if ( !$opts['preview'] ) {
 			return;
 		}
@@ -134,9 +126,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			$spiParams = '/' . $spiParams;
 		}
 		$titleText = $this->getPageTitle()->getPrefixedText();
-		$out->addHTML(
-			Html::element( 'hr' )
-		);
+		$out->addHTML( Html::element( 'hr' ) );
 		// Element to render the graph
 		$out->addHTML(
 			Html::rawElement(
@@ -158,25 +148,15 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		);
 	}
 
-	/**
-	 * Constructs a table row with label and input in two columns.
-	 * @param string $name Option name.
-	 * @param FormOptions $opts
-	 * @param int $width
-	 * @return string Html.
-	 */
-	protected function eInput( $name, FormOptions $opts, $width = 4 ) {
+	/// Construct HTML for a table row with label and input in two columns.
+	private function eInput( string $name, FormOptions $opts, int $width = 4 ): string {
 		$value = $opts[$name];
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			Xml::input( $name, $width, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
 	}
 
-	/**
-	 * Constructs a label for option.
-	 * @param string $name Option name.
-	 * @return string Html.
-	 */
-	protected function eLabel( $name ) {
+	/// Construct HTML for a label for option.
+	private function eLabel( string $name ): string {
 		// Give grep a chance to find the usages:
 		// translate-statsf-width, translate-statsf-height, translate-statsf-start,
 		// translate-statsf-days, translate-statsf-scale, translate-statsf-count,
@@ -186,14 +166,8 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		return Xml::tags( 'label', [ 'for' => $name ], $label );
 	}
 
-	/**
-	 * Constructs a table row with label and radio input in two columns.
-	 * @param string $name Option name.
-	 * @param FormOptions $opts
-	 * @param string[] $alts List of alternatives.
-	 * @return string Html.
-	 */
-	protected function eRadio( $name, FormOptions $opts, array $alts ) {
+	/// Construct HTML for a table row with label and radio input in two columns.
+	private function eRadio( string $name, FormOptions $opts, array $alts ): string {
 		// Give grep a chance to find the usages:
 		// translate-statsf-scale, translate-statsf-count
 		$label = 'translate-statsf-' . $name;
@@ -215,13 +189,8 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		return $s;
 	}
 
-	/**
-	 * Constructs a table row with label and language selector in two columns.
-	 * @param string $name Option name.
-	 * @param FormOptions $opts
-	 * @return string Html.
-	 */
-	protected function eLanguage( $name, FormOptions $opts ) {
+	/// Construct HTML for a table row with label and language selector in two columns.
+	private function eLanguage( string $name, FormOptions $opts ): string {
 		$value = implode( ',', $opts[$name] );
 
 		$select = $this->languageSelector();
@@ -230,28 +199,19 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			'<br />' . Xml::input( $name, 20, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
 	}
 
-	/**
-	 * Constructs a JavaScript enhanced language selector.
-	 * @return JsSelectToInput
-	 */
-	protected function languageSelector() {
+	/// Construct a JavaScript enhanced language selector.
+	private function languageSelector(): JsSelectToInput {
 		$languages = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
 		ksort( $languages );
 		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector' );
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );
 		}
-		$jsSelect = new JsSelectToInput( $selector );
-		return $jsSelect;
+		return new JsSelectToInput( $selector );
 	}
 
-	/**
-	 * Constructs a table row with label and group selector in two columns.
-	 * @param string $name Option name.
-	 * @param FormOptions $opts
-	 * @return string Html.
-	 */
-	protected function eGroup( $name, FormOptions $opts ) {
+	/// Constructs HTML for a table row with label and group selector in two columns.
+	private function eGroup( string $name, FormOptions $opts ): string {
 		$value = implode( ',', $opts[$name] );
 
 		$select = $this->groupSelector();
@@ -260,17 +220,13 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			'<br />' . Xml::input( $name, 20, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
 	}
 
-	/**
-	 * Constructs a JavaScript enhanced group selector.
-	 * @return JsSelectToInput
-	 */
-	protected function groupSelector() {
+	/// Construct a JavaScript enhanced group selector.
+	private function groupSelector(): JsSelectToInput {
 		$groups = MessageGroups::singleton()->getGroups();
 		/** @var MessageGroup $group */
 		foreach ( $groups as $key => $group ) {
 			if ( !$group->exists() ) {
 				unset( $groups[$key] );
-				continue;
 			}
 		}
 		ksort( $groups );
@@ -279,11 +235,10 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		foreach ( $groups as $code => $name ) {
 			$selector->addOption( $name->getLabel(), $code );
 		}
-		$jsSelect = new JsSelectToInput( $selector );
-		return $jsSelect;
+		return new JsSelectToInput( $selector );
 	}
 
-	protected function embed( FormOptions $opts ) {
+	private function embed( FormOptions $opts ): string {
 		$this->getOutput()->addModules( 'ext.translate.translationstats.embedded' );
 		return Html::rawElement(
 			'div',

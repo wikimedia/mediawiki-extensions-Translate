@@ -311,7 +311,12 @@
 	"SpecialPages": {
 		"Translate": "SpecialTranslate",
 		"Translations": "SpecialTranslations",
-		"TranslationStats": "\\MediaWiki\\Extension\\Translate\\Statistics\\TranslationStatsSpecialPage",
+		"TranslationStats": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\TranslationStatsSpecialPage",
+			"services": [
+				"Translate:TranslationStatsDataProvider"
+			]
+		},
 		"LanguageStats": "SpecialLanguageStats",
 		"MessageGroupStats": "SpecialMessageGroupStats",
 		"ImportTranslations": "SpecialImportTranslations",
