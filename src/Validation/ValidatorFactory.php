@@ -91,13 +91,7 @@ class ValidatorFactory {
 			throw new InvalidArgumentException( "Could not find validator class - '$class'. " );
 		}
 
-		$validator = new $class( $params );
-
-		if ( $validator instanceof Validator ) {
-			return new LegacyValidatorAdapter( $validator );
-		}
-
-		return $validator;
+		return new $class( $params );
 	}
 
 	/**
