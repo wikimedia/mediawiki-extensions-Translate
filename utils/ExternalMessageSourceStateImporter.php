@@ -23,7 +23,6 @@ class ExternalMessageSourceStateImporter {
 		$processed = [];
 		$skipped = [];
 		$jobs = [];
-		$jobs[] = MessageIndexRebuildJob::newJob();
 
 		/** @var MessageSourceChange $changesForGroup */
 		foreach ( $changeData as $groupId => $changesForGroup ) {

@@ -1070,7 +1070,5 @@ class SpecialManageGroups extends SpecialPage {
 
 			$jobQueueInstance->push( $groupJobs );
 		}
-
-		$jobQueueInstance->push( MessageIndexRebuildJob::newJob() );
 	}
 }
