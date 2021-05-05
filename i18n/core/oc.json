@@ -5,6 +5,7 @@
 			"Cedric31",
 			"ChrisPtDe",
 			"Jfblanc",
+			"Quentí",
 			"Shirayuki"
 		]
 	},
@@ -110,6 +111,7 @@
 	"translate-statsf-days": "Periòde en jorns :",
 	"translate-statsf-start": "Data de començament :",
 	"translate-statsf-scale": "Granularitat :",
+	"translate-statsf-scale-years": "Annadas",
 	"translate-statsf-scale-months": "Meses",
 	"translate-statsf-scale-weeks": "Setmanas",
 	"translate-statsf-scale-days": "Jorns",

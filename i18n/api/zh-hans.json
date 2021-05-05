@@ -3,6 +3,7 @@
 		"authors": [
 			"HERAN",
 			"LNDDYL",
+			"Lakejason0",
 			"Liuxinyu970226",
 			"VulpesVulpes825",
 			"Yfdyh000"
@@ -109,7 +110,7 @@
 	"apihelp-searchtranslations-param-limit": "结果的大小。",
 	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。",
 	"apihelp-searchtranslations-example-2": "显示在原始语言中匹配查询未翻译信息。",
-	"apihelp-translationcheck-description": "验证提供的翻译是否符合消息检查者的要求。",
+	"apihelp-translationcheck-description": "验证提供的翻译是否符合所设置的消息验证器的要求。",
 	"apihelp-translationcheck-summary": "验证翻译。",
 	"apihelp-translationcheck-param-title": "带名字空间和语言代码的页面标题。",
 	"apihelp-translationcheck-param-translation": "要验证的翻译。",
