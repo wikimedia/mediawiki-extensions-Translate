@@ -8,8 +8,19 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use FormOptions;
+use Html;
+use JsSelectToInput;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\Statistics\TranslationStatsGraphOptions;
+use MessageGroup;
+use MessageGroups;
+use SpecialPage;
+use TranslateUtils;
+use Xml;
+use XmlSelect;
+use function wfEscapeWikiText;
 
 /**
  * @defgroup Stats Statistics
@@ -21,13 +32,10 @@ use MediaWiki\Extension\Translate\Statistics\TranslationStatsGraphOptions;
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialTranslationStats extends SpecialPage {
-
-	/** @var \MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider */
+class TranslationStatsSpecialPage extends SpecialPage {
+	/** @var TranslationStatsDataProvider */
 	private $dataProvider;
-
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
-
 	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-container';
 
 	public function __construct() {
@@ -53,7 +61,7 @@ class SpecialTranslationStats extends SpecialPage {
 				continue;
 			}
 
-			list( $key, $value ) = array_map( 'trim', explode( '=', $item, 2 ) );
+			[ $key, $value ] = array_map( 'trim', explode( '=', $item, 2 ) );
 			if ( $graphOpts->hasValue( $key ) ) {
 				$graphOpts->setValue( $key, $value );
 			}
@@ -82,31 +90,25 @@ class SpecialTranslationStats extends SpecialPage {
 		$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 		$out->addWikiMsg( 'translate-statsf-intro' );
 		$out->addHTML(
-			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) .
-				Html::openElement( 'form', [ 'action' => $wgScript, 'id' => 'translationStatsConfig' ] ) .
-				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-				Html::hidden( 'preview', 1 ) .
-				'<table>'
+			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) . Html::openElement(
+				'form',
+				[ 'action' => $wgScript, 'id' => 'translationStatsConfig' ]
+			) . Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
+			Html::hidden( 'preview', 1 ) . '<table>'
 		);
 		$submit = Xml::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
 		$out->addHTML(
-			$this->eInput( 'width', $opts ) .
-				$this->eInput( 'height', $opts ) .
-				'<tr><td colspan="2"><hr /></td></tr>' .
-				$this->eInput( 'start', $opts, 24 ) .
-				$this->eInput( 'days', $opts ) .
-				$this->eRadio( 'scale', $opts, [ 'years', 'months', 'weeks', 'days', 'hours' ] ) .
-				$this->eRadio( 'count', $opts, $this->dataProvider->getGraphTypes() ) .
-				'<tr><td colspan="2"><hr /></td></tr>' .
-				$this->eLanguage( 'language', $opts ) .
-				$this->eGroup( 'group', $opts ) .
-				'<tr><td colspan="2"><hr /></td></tr>' .
-				'<tr><td colspan="2">' . $submit . '</td></tr>'
+			$this->eInput( 'width', $opts ) . $this->eInput( 'height', $opts ) .
+			'<tr><td colspan="2"><hr /></td></tr>' . $this->eInput( 'start', $opts, 24 ) .
+			$this->eInput( 'days', $opts ) .
+			$this->eRadio( 'scale', $opts, [ 'years', 'months', 'weeks', 'days', 'hours' ] ) .
+			$this->eRadio( 'count', $opts, $this->dataProvider->getGraphTypes() ) .
+			'<tr><td colspan="2"><hr /></td></tr>' . $this->eLanguage( 'language', $opts ) .
+			$this->eGroup( 'group', $opts ) . '<tr><td colspan="2"><hr /></td></tr>' .
+			'<tr><td colspan="2">' . $submit . '</td></tr>'
 		);
 		$out->addHTML(
-			'</table>' .
-				'</form>' .
-				'</fieldset>'
+			'</table></form></fieldset>'
 		);
 		if ( !$opts['preview'] ) {
 			return;
@@ -140,9 +142,9 @@ class SpecialTranslationStats extends SpecialPage {
 			Html::rawElement(
 				'div',
 				[
-					'id' => self::GRAPH_CONTAINER_ID ,
+					'id' => self::GRAPH_CONTAINER_ID,
 					'style' => 'margin: 2em auto; display: block',
-					'class' => self::GRAPH_CONTAINER_CLASS
+					'class' => self::GRAPH_CONTAINER_CLASS,
 				]
 			)
 		);
@@ -166,8 +168,7 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function eInput( $name, FormOptions $opts, $width = 4 ) {
 		$value = $opts[$name];
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			Xml::input( $name, $width, $value, [ 'id' => $name ] ) .
-			'</td></tr>' . "\n";
+			Xml::input( $name, $width, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
 	}
 
 	/**
@@ -201,8 +202,12 @@ class SpecialTranslationStats extends SpecialPage {
 		$options = [];
 		foreach ( $alts as $alt ) {
 			$id = "$name-$alt";
-			$radio = Xml::radio( $name, $alt, $alt === $opts[$name],
-				[ 'id' => $id ] ) . ' ';
+			$radio = Xml::radio(
+					$name,
+					$alt,
+					$alt === $opts[$name],
+					[ 'id' => $id ]
+				) . ' ';
 			$options[] = $radio . ' ' . $this->eLabel( $id );
 		}
 		$s .= implode( ' ', $options );
@@ -221,10 +226,8 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$select = $this->languageSelector();
 		$select->setTargetId( 'language' );
-		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			$select->getHtmlAndPrepareJS() . '<br />' .
-			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
-			'</td></tr>' . "\n";
+		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' . $select->getHtmlAndPrepareJS() .
+			'<br />' . Xml::input( $name, 20, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
 	}
 
 	/**
@@ -253,10 +256,8 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$select = $this->groupSelector();
 		$select->setTargetId( 'group' );
-		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			$select->getHtmlAndPrepareJS() . '<br />' .
-			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
-			'</td></tr>' . "\n";
+		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' . $select->getHtmlAndPrepareJS() .
+			'<br />' . Xml::input( $name, 20, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
 	}
 
 	/**
@@ -287,7 +288,7 @@ class SpecialTranslationStats extends SpecialPage {
 		return Html::rawElement(
 			'div',
 			[
-				'class' => self::GRAPH_CONTAINER_CLASS
+				'class' => self::GRAPH_CONTAINER_CLASS,
 			],
 			Html::hidden(
 				'translationStatsGraphOptions',

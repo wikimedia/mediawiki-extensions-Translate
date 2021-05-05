@@ -187,7 +187,6 @@
 		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
 		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"SpecialTranslations": "specials/SpecialTranslations.php",
-		"SpecialTranslationStats": "specials/SpecialTranslationStats.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
 		"StringMangler": "stringmangler/StringMangler.php",
@@ -312,7 +311,7 @@
 	"SpecialPages": {
 		"Translate": "SpecialTranslate",
 		"Translations": "SpecialTranslations",
-		"TranslationStats": "SpecialTranslationStats",
+		"TranslationStats": "\\MediaWiki\\Extension\\Translate\\Statistics\\TranslationStatsSpecialPage",
 		"LanguageStats": "SpecialLanguageStats",
 		"MessageGroupStats": "SpecialMessageGroupStats",
 		"ImportTranslations": "SpecialImportTranslations",
