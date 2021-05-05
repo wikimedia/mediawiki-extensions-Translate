@@ -149,7 +149,6 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 		$groupSyncCacheEnabled = MediaWikiServices::getInstance()->getMainConfig()
 			->get( 'TranslateGroupSynchronizationCache' );
-
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 
 		foreach ( $groups as $groupId => $group ) {
@@ -160,13 +159,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			}
 
 			if ( $groupSyncCacheEnabled && !$skipGroupSyncCheck ) {
-				if ( $groupSyncCache->isGroupBeingProcessed( $groupId ) ) {
-					$this->error( "Group $groupId is currently being synchronized; skipping exports" );
-					continue;
-				}
-
-				if ( $groupSyncCache->groupHasErrors( $groupId ) ) {
-					$this->error( "Skipping $groupId due to synchronization error\n" );
+				if ( !$this->canGroupBeExported( $groupSyncCache, $groupId ) ) {
 					continue;
 				}
 			}
@@ -413,5 +406,23 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		return $languages;
+	}
+
+	private function canGroupBeExported( GroupSynchronizationCache $groupSyncCache, string $groupId ): bool {
+		if ( $groupSyncCache->isGroupBeingProcessed( $groupId ) ) {
+			$this->error( "Group $groupId is currently being synchronized; skipping exports\n" );
+			return false;
+		}
+
+		if ( $groupSyncCache->groupHasErrors( $groupId ) ) {
+			$this->error( "Skipping $groupId due to synchronization error\n" );
+			return false;
+		}
+
+		if ( $groupSyncCache->isGroupInReview( $groupId ) ) {
+			$this->error( "Group $groupId is currently in review. Review changes on Special:ManageMessageGroups\n" );
+			return false;
+		}
+		return true;
 	}
 }

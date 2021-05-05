@@ -233,6 +233,15 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $this->groupSyncCache->groupHasErrors( $groupId ) );
 	}
 
+	public function testGroupInReview() {
+		$groupId = 'test-group';
+		$this->groupSyncCache->markGroupAsInReview( $groupId );
+		$this->assertTrue( $this->groupSyncCache->isGroupInReview( $groupId ) );
+
+		$this->groupSyncCache->markGroupAsInReview( $groupId );
+		$this->assertTrue( $this->groupSyncCache->isGroupInReview( $groupId ) );
+	}
+
 	public function provideGetSynchronizationStatus() {
 		$groupId = 'hello';
 

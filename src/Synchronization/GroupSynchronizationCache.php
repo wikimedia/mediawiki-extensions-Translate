@@ -41,6 +41,8 @@ class GroupSynchronizationCache {
 	private const GROUP_LIST_TAG = 'gsc_%group_in_sync%';
 	/** @var string Cache tag used for tracking groups that have errors */
 	private const GROUP_ERROR_TAG = 'gsc_%group_with_error%';
+	/** @var string Cache tag used for tracking groups that are in review */
+	private const GROUP_IN_REVIEW_TAG = 'gsc_%group_in_review%';
 
 	// TODO: Decide timeout based on monitoring. Also check if it needs to be configurable
 	// based on the number of messages in the group.
@@ -347,6 +349,27 @@ class GroupSynchronizationCache {
 		return $groupSyncResponse;
 	}
 
+	public function markGroupAsInReview( string $groupId ): void {
+		$groupReviewKey = $this->getGroupReviewKey( $groupId );
+		$this->cache->set(
+			new PersistentCacheEntry(
+				$groupReviewKey,
+				$groupId,
+				null,
+				self::GROUP_IN_REVIEW_TAG
+			)
+		);
+	}
+
+	public function markGroupAsReviewed( string $groupId ): void {
+		$groupReviewKey = $this->getGroupReviewKey( $groupId );
+		$this->cache->delete( $groupReviewKey );
+	}
+
+	public function isGroupInReview( string $groupId ): bool {
+		return $this->cache->has( $this->getGroupReviewKey( $groupId ) );
+	}
+
 	private function hasGroupTimedOut( int $syncExpTime ): bool {
 		return ( new DateTime() )->getTimestamp() > $syncExpTime;
 	}
@@ -409,5 +432,10 @@ class GroupSynchronizationCache {
 
 	private function getGroupMessageErrorTag( string $groupId ): string {
 		return "gsc_%error%_$groupId";
+	}
+
+	private function getGroupReviewKey( string $groupId ): string {
+		$hash = substr( hash( 'sha256', $groupId ), 0, 40 );
+		return substr( "{$hash}_gsc_%review%_$groupId", 0, 255 );
 	}
 }

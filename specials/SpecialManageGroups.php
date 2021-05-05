@@ -464,6 +464,10 @@ class SpecialManageGroups extends SpecialPage {
 					}
 				}
 
+				if ( $groupSyncCacheEnabled && !isset( $postponed[ $groupId ] ) ) {
+					$this->synchronizationCache->markGroupAsReviewed( $groupId );
+				}
+
 				$modificationJobs[$groupId] = $groupModificationJobs;
 				$renameJobData[$groupId] = $groupRenameJobData;
 			} catch ( Exception $e ) {

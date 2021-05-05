@@ -24,6 +24,10 @@ class ExternalMessageSourceStateImporter {
 		$skipped = [];
 		$jobs = [];
 
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$groupSyncCacheEnabled = $config->get( 'TranslateGroupSynchronizationCache' );
+		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+
 		/** @var MessageSourceChange $changesForGroup */
 		foreach ( $changeData as $groupId => $changesForGroup ) {
 			/** @var FileBasedMessageGroup */
@@ -62,8 +66,15 @@ class ExternalMessageSourceStateImporter {
 				$group->getMessageGroupCache( $language )->create();
 			}
 
+			// Mark the skipped group as in review
+			if ( $groupSyncCacheEnabled && isset( $skipped[$groupId] ) ) {
+				$groupSyncCache->markGroupAsInReview( $groupId );
+			}
+
 			if ( $groupJobs !== [] ) {
-				$this->updateGroupSyncInfo( $groupId, $groupJobs );
+				if ( $groupSyncCacheEnabled ) {
+					$this->updateGroupSyncInfo( $groupId, $groupJobs );
+				}
 				$jobs = array_merge( $jobs, $groupJobs );
 			}
 		}
@@ -124,12 +135,6 @@ class ExternalMessageSourceStateImporter {
 	 * @param MessageUpdateJob[] $groupJobs
 	 */
 	private function updateGroupSyncInfo( string $groupId, array $groupJobs ): void {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		if ( !$config->get( 'TranslateGroupSynchronizationCache' ) ) {
-			return;
-		}
-
 		$messageParams = [];
 		$groupMessageKeys = [];
 		foreach ( $groupJobs as $job ) {
