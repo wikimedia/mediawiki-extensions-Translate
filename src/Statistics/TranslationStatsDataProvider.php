@@ -8,6 +8,7 @@ use MediaWiki\Config\ServiceOptions;
 use MessageGroups;
 use TranslateUtils;
 use Wikimedia\ObjectFactory;
+use const TS_MW;
 
 /**
  * Provides translation stats data
@@ -97,6 +98,8 @@ class TranslationStatsDataProvider {
 			$cutoff += $increment;
 			$data[$date] = $defaults;
 		}
+		// Ensure $lastValue is within range, in case the loop above jumped over it
+		$data[$language->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $lastValue ) )] = $defaults;
 
 		// Processing
 		$labelToIndex = array_flip( $labels );
