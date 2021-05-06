@@ -91,9 +91,9 @@ class TPParse {
 		foreach ( $sections as $s ) {
 			$s->type = 'old';
 
-			if ( $s->id === -1 ) {
+			if ( $s->id === TranslationUnit::NEW_UNIT_ID ) {
 				$s->type = 'new';
-				$s->id = ++$highest;
+				$s->id = (string)( ++$highest );
 			} else {
 				if ( isset( $this->dbSections[$s->id] ) ) {
 					$storedText = $this->dbSections[$s->id]->text;
@@ -143,10 +143,7 @@ class TPParse {
 
 		$res = $db->select( $tables, $vars, $conds, __METHOD__ );
 		foreach ( $res as $r ) {
-			$section = new TranslationUnit;
-			$section->id = $r->trs_key;
-			$section->text = $r->trs_text;
-			$section->type = 'db';
+			$section = new TranslationUnit( $r->trs_text, $r->trs_key, null, 'db' );
 			$this->dbSections[$r->trs_key] = $section;
 		}
 	}

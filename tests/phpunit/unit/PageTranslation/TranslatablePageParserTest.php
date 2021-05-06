@@ -150,21 +150,11 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 
 	public function provideTestParse() {
 		// Test case 1 //
-		$s1 = new TranslationUnit();
-		$s1->text = '== Unit tests ==';
-		$s1->id = -1;
+		$s1 = new TranslationUnit( '== Unit tests ==' );
+		$s2 = new TranslationUnit( 'Introduction to unit tests.' );
+		$s3 = new TranslationUnit( 'They are fun.' );
 
-		$s2 = new TranslationUnit();
-		$s2->text = 'Introduction to unit tests.';
-		$s2->id = -1;
-
-		$s3 = new TranslationUnit();
-		$s3->text = 'They are fun.';
-		$s3->id = -1;
-
-		$s4 = new TranslationUnit();
-		$s4->text = 'Smilie';
-		$s4->id = -1;
+		$s4 = new TranslationUnit( 'Smilie' );
 		$s4->setCanWrap( false );
 		$s4->setIsInline( true );
 
@@ -213,21 +203,11 @@ SOURCE_TEMPLATE
 		];
 
 		// Test case 2 //
-		$s1 = new TranslationUnit();
-		$s1->text = '== Unit tests ==';
-		$s1->id = '11';
+		$s1 = new TranslationUnit( '== Unit tests ==', '11' );
+		$s2 = new TranslationUnit( 'Introduction to unit tests.', '22' );
+		$s3 = new TranslationUnit( 'They are fun.', '33' );
 
-		$s2 = new TranslationUnit();
-		$s2->text = 'Introduction to unit tests.';
-		$s2->id = '22';
-
-		$s3 = new TranslationUnit();
-		$s3->text = 'They are fun.';
-		$s3->id = '33';
-
-		$s4 = new TranslationUnit();
-		$s4->text = 'Smilie';
-		$s4->id = '44';
+		$s4 = new TranslationUnit( 'Smilie', '44' );
 		$s4->setCanWrap( false );
 		$s4->setIsInline( true );
 
@@ -293,9 +273,7 @@ SOURCE_TEMPLATE
 	}
 
 	public static function provideTestParseSection() {
-		$u = new TranslationUnit();
-		$u->text = 'Hello';
-		$u->id = -1;
+		$u = new TranslationUnit( 'Hello' );
 		$u->setIsInline( true );
 		yield [
 			'Hello',
@@ -304,9 +282,7 @@ SOURCE_TEMPLATE
 			'No surrounding whitespace',
 		];
 
-		$u = new TranslationUnit();
-		$u->text = 'Hello';
-		$u->id = -1;
+		$u = new TranslationUnit( 'Hello' );
 		yield [
 			"\nHello",
 			"\n<0>",
@@ -314,13 +290,8 @@ SOURCE_TEMPLATE
 			'With surrounding whitespace',
 		];
 
-		$u0 = new TranslationUnit();
-		$u0->text = 'Hello world';
-		$u0->id = -1;
-
-		$u1 = new TranslationUnit();
-		$u1->text = 'Bunny';
-		$u1->id = -1;
+		$u0 = new TranslationUnit( 'Hello world' );
+		$u1 = new TranslationUnit( 'Bunny' );
 		yield [
 			"\nHello world\n\nBunny\n",
 			"\n<0>\n\n<1>\n",
@@ -328,17 +299,9 @@ SOURCE_TEMPLATE
 			'Splitting at one empty line',
 		];
 
-		$u0 = new TranslationUnit();
-		$u0->text = 'First';
-		$u0->id = -1;
-
-		$u1 = new TranslationUnit();
-		$u1->text = 'Second';
-		$u1->id = -1;
-
-		$u2 = new TranslationUnit();
-		$u2->text = 'Third';
-		$u2->id = -1;
+		$u0 = new TranslationUnit( 'First' );
+		$u1 = new TranslationUnit( 'Second' );
+		$u2 = new TranslationUnit( 'Third' );
 		yield [
 			"First\n\n\n\n\nSecond\n\nThird",
 			"<0>\n\n\n\n\n<1>\n\n<2>",

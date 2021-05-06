@@ -75,8 +75,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		$defs = [];
 
 		foreach ( $res as $r ) {
-			$section = new TranslationUnit();
-			$section->text = $r->trs_text;
+			$section = new TranslationUnit( $r->trs_text );
 			$defs[$r->trs_key] = $section->getTextWithVariables();
 		}
 

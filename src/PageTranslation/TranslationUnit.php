@@ -17,6 +17,7 @@ use const PREG_SET_ORDER;
  */
 class TranslationUnit {
 	public const UNIT_MARKER_INVALID_CHARS = "_/\n<>";
+	public const NEW_UNIT_ID = '-1';
 	/** @var string Unit name */
 	public $id;
 	/** @var ?string New name of the unit, that will be saved to database. */
@@ -38,6 +39,20 @@ class TranslationUnit {
 	private $version = 1;
 	/** @var string[] List of properties to serialize. */
 	private static $properties = [ 'version', 'id', 'name', 'text', 'type', 'oldText', 'inline' ];
+
+	public function __construct(
+		string $text,
+		string $id = self::NEW_UNIT_ID,
+		?string $name = null,
+		string $type = 'new',
+		string $oldText = null
+	) {
+		$this->text = $text;
+		$this->id = $id;
+		$this->name = $name;
+		$this->type = $type;
+		$this->oldText = $oldText;
+	}
 
 	public function setIsInline( bool $value ): void {
 		$this->inline = $value;
@@ -153,7 +168,8 @@ REGEXP;
 	}
 
 	public static function unserializeFromArray( array $data ): self {
-		$unit = new self();
+		// Give dummy default text, will be overridden
+		$unit = new self( '' );
 		foreach ( self::$properties as $index => $property ) {
 			$unit->$property = $data[$index];
 		}

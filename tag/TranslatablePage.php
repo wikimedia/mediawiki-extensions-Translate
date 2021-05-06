@@ -264,9 +264,10 @@ class TranslatablePage {
 		$parserOutput = $parser->parse( $this->getText() );
 
 		// Add section to allow translating the page name
-		$displayTitle = new TranslationUnit();
-		$displayTitle->id = $this->displayTitle;
-		$displayTitle->text = $this->getTitle()->getPrefixedText();
+		$displayTitle = new TranslationUnit(
+			$this->getTitle()->getPrefixedText(),
+			$this->displayTitle
+		);
 
 		$parse = new TPParse( $this->getTitle() );
 		$parse->template = $parserOutput->sourcePageTemplate();

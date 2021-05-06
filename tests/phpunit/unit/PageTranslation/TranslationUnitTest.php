@@ -25,33 +25,23 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 	public function testGetMarkedText(
 		string $name, string $text, bool $inline, string $expected
 	) {
-		$section = new TranslationUnit();
-		$section->name = $name;
-		$section->text = $text;
+		$section = new TranslationUnit( $text, $name );
 		$section->setIsInline( $inline );
-
 		$output = $section->getMarkedText();
-
 		$this->assertEquals( $expected, $output );
 	}
 
 	/** @dataProvider providerTestGetTextWithVariables */
 	public function testGetTextWithVariables( string $text, string $expected ) {
-		$section = new TranslationUnit();
-		$section->text = $text;
-
+		$section = new TranslationUnit( $text );
 		$output = $section->getTextWithVariables();
-
 		$this->assertEquals( $expected, $output );
 	}
 
 	/** @dataProvider providerTestGetTextForTrans */
 	public function testGetTextForTrans( string $text, string $expected ) {
-		$section = new TranslationUnit();
-		$section->text = $text;
-
+		$section = new TranslationUnit( $text );
 		$output = $section->getTextForTrans();
-
 		$this->assertEquals( $expected, $output );
 	}
 
@@ -134,8 +124,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		bool $inline,
 		string $expected
 	 ) {
-		$unit = new TranslationUnit();
-		$unit->text = $source;
+		$unit = new TranslationUnit( $source );
 		$unit->setIsInline( $inline );
 
 		$msg = null;

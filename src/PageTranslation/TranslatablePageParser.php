@@ -39,9 +39,7 @@ class TranslatablePageParser {
 		$text = preg_replace( "~(^=.*=) <!--T:[^$ic]+-->$~um", '\1', $text );
 		$text = preg_replace( "~<!--T:[^$ic]+-->[\n ]?~um", '', $text );
 		// Remove variables
-		$unit = new TranslationUnit();
-		$unit->id = 'XXX';
-		$unit->text = $text;
+		$unit = new TranslationUnit( $text );
 		$text = $unit->getTextForTrans();
 
 		$text = $this->unarmourNowiki( $nowiki, $text );
@@ -168,11 +166,11 @@ class TranslatablePageParser {
 			);
 		}
 
-		$section = new TranslationUnit();
+		// If no id given in the source, default to a new section id
+		$id = TranslationUnit::NEW_UNIT_ID;
 		if ( $count === 1 ) {
 			foreach ( $matches as $match ) {
 				[ /*full*/, $id ] = $match;
-				$section->id = $id;
 
 				// Currently handle only these two standard places.
 				// Is this too strict?
@@ -193,14 +191,9 @@ class TranslatablePageParser {
 					);
 				}
 			}
-		} else {
-			// New section
-			$section->id = -1;
 		}
 
-		$section->text = $content;
-
-		return $section;
+		return new TranslationUnit( $content, $id );
 	}
 
 	/** @internal */
