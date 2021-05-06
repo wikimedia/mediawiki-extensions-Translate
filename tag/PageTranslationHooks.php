@@ -944,9 +944,11 @@ class PageTranslationHooks {
 			return null;
 		}
 
-		$sections = $translatablePage->getSections();
+		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
+		$store = $factory->getReader( $translatablePage->getTitle() );
+		$units = $store->getNames();
 
-		if ( !in_array( $parts[ 'section' ], $sections ) ) {
+		if ( !in_array( $parts[ 'section' ], $units ) ) {
 			return null;
 		}
 

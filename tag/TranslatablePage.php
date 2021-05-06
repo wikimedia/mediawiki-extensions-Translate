@@ -211,13 +211,10 @@ class TranslatablePage {
 			return $this->pageDisplayTitle;
 		}
 
-		$this->pageDisplayTitle = true;
-
 		// Check if title section exists in list of sections
-		$previous = $this->getSections();
-		if ( $previous && !in_array( $this->displayTitle, $previous ) ) {
-			$this->pageDisplayTitle = false;
-		}
+		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
+		$store = $factory->getReader( $this->getTitle() );
+		$this->pageDisplayTitle = in_array( $this->displayTitle, $store->getNames() );
 
 		return $this->pageDisplayTitle;
 	}
@@ -519,25 +516,6 @@ class TranslatablePage {
 	}
 
 	/**
-	 * Returns a list section ids.
-	 * @return string[] List of string
-	 * @since 2012-08-06
-	 */
-	public function getSections() {
-		$dbr = TranslateUtils::getSafeReadDB();
-
-		$conds = [ 'trs_page' => $this->getTitle()->getArticleID() ];
-		$res = $dbr->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
-
-		$sections = [];
-		foreach ( $res as $row ) {
-			$sections[] = $row->trs_key;
-		}
-
-		return $sections;
-	}
-
-	/**
 	 * Returns a list of translation unit pages.
 	 * @param string $set Can be either 'all', or 'active'
 	 * @param string|bool $code Only list unit pages in given language.
@@ -568,7 +546,13 @@ class TranslatablePage {
 		// Problematic cases are when pages Foo and Foo/bar are both
 		// translatable. Then when querying for Foo, we also get units
 		// belonging to Foo/bar.
-		$sections = array_flip( $this->getSections() );
+		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
+		// This method (getTranslationUnitPages) is only called when deleting or moving a
+		// translatable page. This should be low traffic, and since this method is already using
+		// the primary database for the other query, it seems safer to use the write here until
+		// this is refactored.
+		$store = $factory->getWriter( $this->getTitle() );
+		$sections = array_flip( $store->getNames() );
 		$units = [];
 		foreach ( $res as $row ) {
 			$title = Title::newFromRow( $row );

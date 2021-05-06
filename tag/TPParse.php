@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+use MediaWiki\Extension\Translate\Services;
 
 /**
  * This class represents the results of parsed source page, that is, the
@@ -32,7 +33,6 @@ class TPParse {
 	/** @var null|array Sections saved in the database. array( string => TranslationUnit, ... ) */
 	protected $dbSections = null;
 
-	/// Constructor
 	public function __construct( Title $title ) {
 		$this->title = $title;
 	}
@@ -134,18 +134,12 @@ class TPParse {
 			return;
 		}
 
-		$this->dbSections = [];
-
-		$db = TranslateUtils::getSafeReadDB();
-		$tables = 'translate_sections';
-		$vars = [ 'trs_key', 'trs_text' ];
-		$conds = [ 'trs_page' => $this->title->getArticleID() ];
-
-		$res = $db->select( $tables, $vars, $conds, __METHOD__ );
-		foreach ( $res as $r ) {
-			$section = new TranslationUnit( $r->trs_text, $r->trs_key, null, 'db' );
-			$this->dbSections[$r->trs_key] = $section;
-		}
+		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
+		// This methods is only called from SpecialPageTranslation, so it's used to read data that
+		// will be updated in next write, so it felt safer to use the writer to read from the
+		// primary database. Eventually this should go to SpecialPageTranslation out of this class.
+		$store = $factory->getWriter( $this->title );
+		$this->dbSections = $store->getUnits();
 	}
 
 	/**

@@ -9,6 +9,7 @@ namespace MediaWiki\Extension\Translate;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
@@ -87,6 +88,11 @@ class Services implements ContainerInterface {
 	/** @since 2020.09 */
 	public function getTranslationStatsDataProvider(): TranslationStatsDataProvider {
 		return $this->get( 'Translate:TranslationStatsDataProvider' );
+	}
+
+	/** @since 2021.05 */
+	public function getTranslationUnitStoreFactory(): TranslationUnitStoreFactory {
+		return $this->get( 'Translate:TranslationUnitStoreFactory' );
 	}
 
 	public function getTranslatorActivity(): TranslatorActivity {

@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
@@ -80,6 +81,12 @@ return [
 			),
 			$services->getObjectFactory()
 		);
+	},
+
+	'Translate:TranslationUnitStoreFactory' => static function (
+		MediaWikiServices $services
+	): TranslationUnitStoreFactory {
+		return new TranslationUnitStoreFactory( $services->getDBLoadBalancer() );
 	},
 
 	'Translate:TranslatorActivity' => static function ( MediaWikiServices $services ): TranslatorActivity {
