@@ -165,14 +165,4 @@ class TPParse {
 
 		return $text;
 	}
-
-	/**
-	 * Chops of trailing or preceding whitespace intelligently to avoid
-	 * build up of unintended whitespace.
-	 * @param string[] $matches
-	 * @return string
-	 */
-	protected static function replaceTagCb( $matches ) {
-		return preg_replace( '~^\n|\n\z~', '', $matches[1] );
-	}
 }
