@@ -600,7 +600,6 @@ class SpecialPageTranslation extends SpecialPage {
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.
 			$usedNames[$s->id] = ( $usedNames[$s->id] ?? 0 ) + 1;
-			$s->name = $s->id;
 		}
 		foreach ( $usedNames as $name => $count ) {
 			if ( $count > 1 ) {
@@ -649,7 +648,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
 		foreach ( $sections as $s ) {
-			if ( $s->name === 'Page display title' ) {
+			if ( $s->id === 'Page display title' ) {
 				// Set section type as new if title previously unchecked
 				$s->type = $defaultChecked ? $s->type : 'new';
 
@@ -670,9 +669,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $s->type === 'new' ) {
 				$hasChanges = true;
-				$name = $this->msg( 'tpt-section-new', $s->name )->escaped();
+				$name = $this->msg( 'tpt-section-new', $s->id )->escaped();
 			} else {
-				$name = $this->msg( 'tpt-section', $s->name )->escaped();
+				$name = $this->msg( 'tpt-section', $s->id )->escaped();
 			}
 
 			if ( $s->type === 'changed' ) {
@@ -961,8 +960,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$pageId = $page->getTitle()->getArticleID();
 		/** @var TranslationUnit $s */
 		foreach ( array_values( $sections ) as $index => $s ) {
-			$maxid = max( $maxid, (int)$s->name );
-			$changed[] = $s->name;
+			$maxid = max( $maxid, (int)$s->id );
+			$changed[] = $s->id;
 
 			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
 				// TranslationsUpdateJob will only fuzzy when type is changed
@@ -971,7 +970,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			$inserts[] = [
 				'trs_page' => $pageId,
-				'trs_key' => $s->name,
+				'trs_key' => $s->id,
 				'trs_text' => $s->getText(),
 				'trs_order' => $index
 			];

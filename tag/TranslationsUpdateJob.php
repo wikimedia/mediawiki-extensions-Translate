@@ -122,22 +122,22 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 	 * Creates jobs needed to create or update all translation page definitions.
 	 *
 	 * @param TranslatablePage $page
-	 * @param TranslationUnit[] $sections
+	 * @param TranslationUnit[] $units
 	 * @return RunnableJob[]
 	 * @since 2013-01-28
 	 */
-	private static function getTranslationUnitJobs( TranslatablePage $page, array $sections ): array {
+	private static function getTranslationUnitJobs( TranslatablePage $page, array $units ): array {
 		$jobs = [];
 
 		$code = $page->getSourceLanguageCode();
 		$prefix = $page->getTitle()->getPrefixedText();
 
-		foreach ( $sections as $s ) {
-			$unit = $s->name;
-			$title = Title::makeTitle( NS_TRANSLATIONS, "$prefix/$unit/$code" );
+		foreach ( $units as $unit ) {
+			$unitName = $unit->id;
+			$title = Title::makeTitle( NS_TRANSLATIONS, "$prefix/$unitName/$code" );
 
-			$fuzzy = $s->type === 'changed';
-			$jobs[] = MessageUpdateJob::newJob( $title, $s->getTextWithVariables(), $fuzzy );
+			$fuzzy = $unit->type === 'changed';
+			$jobs[] = MessageUpdateJob::newJob( $title, $unit->getTextWithVariables(), $fuzzy );
 		}
 
 		return $jobs;

@@ -20,8 +20,6 @@ class TranslationUnit {
 	public const NEW_UNIT_ID = '-1';
 	/** @var string Unit name */
 	public $id;
-	/** @var ?string New name of the unit, that will be saved to database. */
-	public $name = null;
 	/** @var string Unit text. */
 	public $text;
 	/** @var string Is this new, existing, changed or deleted unit. */
@@ -38,18 +36,16 @@ class TranslationUnit {
 	/** @var int Version number for the serialization. */
 	private $version = 1;
 	/** @var string[] List of properties to serialize. */
-	private static $properties = [ 'version', 'id', 'name', 'text', 'type', 'oldText', 'inline' ];
+	private static $properties = [ 'version', 'id', 'text', 'type', 'oldText', 'inline' ];
 
 	public function __construct(
 		string $text,
 		string $id = self::NEW_UNIT_ID,
-		?string $name = null,
 		string $type = 'new',
 		string $oldText = null
 	) {
 		$this->text = $text;
 		$this->id = $id;
-		$this->name = $name;
 		$this->type = $type;
 		$this->oldText = $oldText;
 	}
@@ -97,8 +93,8 @@ class TranslationUnit {
 
 	/** Returns the unit text with updated or added unit marker */
 	public function getMarkedText(): string {
-		$id = $this->name ?? $this->id;
-		$header = "<!--T:{$id}-->";
+		$id = $this->id;
+		$header = "<!--T:$id-->";
 		$re = '~^(=+.*?=+\s*?$)~m';
 		$rep = "\\1 $header";
 		$count = 0;
