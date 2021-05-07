@@ -79,6 +79,7 @@
 		"quicktest": [
 			"parallel-lint . --exclude vendor --exclude node_modules --no-progress",
 			"phpcs -p -s --cache"
-		]
+		],
+		"phan": "phan -d . --long-progress-bar"
 	}
 }
