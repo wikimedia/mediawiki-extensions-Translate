@@ -267,7 +267,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$statsTable = new StatsTable();
 
 		// List users in descending order by number of translations in this language
-		usort( $userStats, function ( $a, $b ) {
+		usort( $userStats, static function ( $a, $b ) {
 			return -(
 				$a[TranslatorActivityQuery::USER_TRANSLATIONS]
 				<=>

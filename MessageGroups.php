@@ -89,7 +89,7 @@ class MessageGroups {
 			[
 				'lockTSE' => 30, // avoid stampedes (mutex)
 				'checkKeys' => [ self::getCacheKey() ],
-				'touchedCallback' => function ( $value ) {
+				'touchedCallback' => static function ( $value ) {
 					return ( $value instanceof DependencyWrapper && $value->isExpired() )
 						? time() // treat value as if it just expired (for "lockTSE")
 						: null;
@@ -278,7 +278,7 @@ class MessageGroups {
 	 */
 	protected function getCacheGroupLoaders() {
 		// @phan-suppress-next-line PhanTypeMismatchReturn
-		return array_filter( $this->getGroupLoaders(), function ( $groupLoader ) {
+		return array_filter( $this->getGroupLoaders(), static function ( $groupLoader ) {
 			return $groupLoader instanceof CachedMessageGroupLoader;
 		} );
 	}
@@ -345,7 +345,7 @@ class MessageGroups {
 	public static function labelExists( $name ) {
 		$loader = AggregateMessageGroupLoader::getInstance();
 		$groups = $loader->loadAggregateGroups();
-		$labels = array_map( function ( $g ) {
+		$labels = array_map( static function ( $g ) {
 			/** @var MessageGroup $g */
 			return $g->getLabel();
 		}, $groups );
@@ -496,7 +496,7 @@ class MessageGroups {
 		$paths = [];
 
 		/* This function recursively finds paths to the target group */
-		$pathFinder = function ( &$paths, $group, $targetId, $prefix = '' )
+		$pathFinder = static function ( &$paths, $group, $targetId, $prefix = '' )
 		use ( &$pathFinder ) {
 			if ( $group instanceof AggregateMessageGroup ) {
 				/** @var MessageGroup $subgroup */

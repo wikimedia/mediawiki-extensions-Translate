@@ -302,7 +302,7 @@ abstract class MessageIndex {
 	 */
 	public static function getArrayDiff( array $old, array $new ) {
 		$values = [];
-		$record = function ( $groups ) use ( &$values ) {
+		$record = static function ( $groups ) use ( &$values ) {
 			foreach ( $groups as $group ) {
 				$values[$group] = true;
 			}
@@ -504,15 +504,15 @@ class DatabaseMessageIndex extends MessageIndex {
 		if ( !$dbw->trxLevel() ) {
 			$dbw->unlock( 'translate-messageindex', $fname );
 		} elseif ( is_callable( [ $dbw, 'onTransactionResolution' ] ) ) { // 1.28
-			$dbw->onTransactionResolution( function () use ( $dbw, $fname ) {
+			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
 		} elseif ( is_callable( [ $dbw, 'onTransactionCommitOrIdle' ] ) ) {
-			$dbw->onTransactionCommitOrIdle( function () use ( $dbw, $fname ) {
+			$dbw->onTransactionCommitOrIdle( static function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
 		} else {
-			$dbw->onTransactionIdle( function () use ( $dbw, $fname ) {
+			$dbw->onTransactionIdle( static function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
 		}

@@ -109,7 +109,7 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 		// Install a special permission when the group ID is matched.
 		$this->setTemporaryHook(
 			'Translate:modifyMessageGroupStates',
-			function ( $groupId, &$conf ) {
+			static function ( $groupId, &$conf ) {
 				if ( $groupId === 'test-id' ) {
 					// No users have this.
 					$conf['proofreading']['right'] = 'inobtanium';

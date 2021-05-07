@@ -212,7 +212,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$fixedGroupSyncResponse = $this->groupSyncCache->syncGroupErrors( $groupId );
 		$fixedErrorMessages = $fixedGroupSyncResponse->getRemainingMessages();
 
-		$this->assertEquals( count( $errorMessages ) - 1, count( $fixedErrorMessages ) );
+		$this->assertCount( count( $errorMessages ) - 1, $fixedErrorMessages );
 	}
 
 	public function testAddGroupErrorsEmpty() {

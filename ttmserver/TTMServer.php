@@ -68,7 +68,7 @@ abstract class TTMServer {
 	 * @return array[]
 	 */
 	public static function sortSuggestions( array $suggestions ) {
-		usort( $suggestions, function ( $a, $b ) {
+		usort( $suggestions, static function ( $a, $b ) {
 			return $b['quality'] <=> $a['quality'];
 		} );
 

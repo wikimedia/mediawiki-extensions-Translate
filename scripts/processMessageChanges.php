@@ -85,7 +85,7 @@ class ProcessMessageChanges extends Maintenance {
 		}
 
 		// Remove all groups without changes
-		$changes = array_filter( $changes, function ( MessageSourceChange $change ) {
+		$changes = array_filter( $changes, static function ( MessageSourceChange $change ) {
 			return $change->getAllModifications() !== [];
 		} );
 
@@ -141,7 +141,7 @@ class ProcessMessageChanges extends Maintenance {
 		$exclude = array_flip( $exclude );
 
 		$groups = array_filter( $groups,
-			function ( MessageGroup $group ) use ( $include, $exclude ) {
+			static function ( MessageGroup $group ) use ( $include, $exclude ) {
 				$id = $group->getId();
 
 				return isset( $include[$id] ) && !isset( $exclude[$id] );

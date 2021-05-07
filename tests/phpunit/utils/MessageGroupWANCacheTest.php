@@ -15,7 +15,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 		$this->expectExceptionMessage( 'Invalid cache key' );
 
 		$this->mgCache->configure( [
-			'regenerator' => function () {
+			'regenerator' => static function () {
 				return 'hello';
 			}
 		] );
@@ -42,7 +42,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 		$cacheData = [ 'dummy', 'data' ];
 		$this->mgCache->configure( [
 			'key' => 'mg-wan-test',
-			'regenerator' => function () use ( $cacheData ) {
+			'regenerator' => static function () use ( $cacheData ) {
 				return $cacheData;
 			}
 		] );
@@ -58,7 +58,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 
 		$this->mgCache->configure( [
 			'key' => 'mg-wan-test',
-			'regenerator' => function () {
+			'regenerator' => static function () {
 				return 'hello';
 			},
 			'touchedCallback' => 'blah'

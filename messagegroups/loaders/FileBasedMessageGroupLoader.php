@@ -103,7 +103,7 @@ class FileBasedMessageGroupLoader extends MessageGroupLoader
 			$yaml = file_get_contents( $configFile );
 			$fgroups = $parser->getHopefullyValidConfigurations(
 				$yaml,
-				function ( $index, $config, $errmsg ) use ( $configFile ) {
+				static function ( $index, $config, $errmsg ) use ( $configFile ) {
 					trigger_error( "Document $index in $configFile is invalid: $errmsg", E_USER_WARNING );
 				}
 			);
@@ -111,7 +111,7 @@ class FileBasedMessageGroupLoader extends MessageGroupLoader
 			foreach ( $fgroups as $id => $conf ) {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
 					$dir = dirname( $configFile );
-					$additions = array_map( function ( $file ) use ( $dir ) {
+					$additions = array_map( static function ( $file ) use ( $dir ) {
 						return "$dir/$file";
 					}, $conf['AUTOLOAD'] );
 					self::appendAutoloader( $additions, $autoload );

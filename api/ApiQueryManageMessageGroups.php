@@ -107,7 +107,7 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 		}
 
 		// sort them based on similarity
-		usort( $renameList, function ( $a, $b ) {
+		usort( $renameList, static function ( $a, $b ) {
 			return -( $a['similarity'] <=> $b['similarity'] );
 		} );
 

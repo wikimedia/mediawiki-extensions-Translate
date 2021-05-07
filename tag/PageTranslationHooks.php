@@ -365,7 +365,7 @@ class PageTranslationHooks {
 		}
 
 		self::$renderingContext = true;
-		$context = new ScopedCallback( function () {
+		$context = new ScopedCallback( static function () {
 			self::$renderingContext = false;
 		} );
 
@@ -595,7 +595,7 @@ class PageTranslationHooks {
 		}
 
 		self::$renderingContext = true;
-		$context = new ScopedCallback( function () {
+		$context = new ScopedCallback( static function () {
 			self::$renderingContext = false;
 		} );
 

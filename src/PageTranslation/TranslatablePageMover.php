@@ -257,7 +257,7 @@ class TranslatablePageMover {
 	public function getNormalSubpages( TranslatablePage $page ): array {
 		return array_filter(
 			$this->getSubpages( $page ),
-			function ( $page ) {
+			static function ( $page ) {
 				return !(
 					TranslatablePage::isTranslationPage( $page ) ||
 					TranslatablePage::isSourcePage( $page )
@@ -270,7 +270,7 @@ class TranslatablePageMover {
 	public function getTranslatableSubpages( TranslatablePage $page ): array {
 		return array_filter(
 			$this->getSubpages( $page ),
-			function ( $page ) {
+			static function ( $page ) {
 				return TranslatablePage::isSourcePage( $page );
 			}
 		);

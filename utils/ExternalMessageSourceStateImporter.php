@@ -70,7 +70,7 @@ class ExternalMessageSourceStateImporter {
 		}
 
 		// Remove groups where everything was imported
-		$changeData = array_filter( $changeData, function ( MessageSourceChange $change ) {
+		$changeData = array_filter( $changeData, static function ( MessageSourceChange $change ) {
 			return $change->getAllModifications() !== [];
 		} );
 

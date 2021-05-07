@@ -199,7 +199,7 @@ class TranslateUtils {
 		}
 		unset( $row );
 
-		usort( $rows, function ( $a, $b ) {
+		usort( $rows, static function ( $a, $b ) {
 			$x = strcmp( $a->lang, $b->lang );
 			if ( !$x ) {
 				// descending order

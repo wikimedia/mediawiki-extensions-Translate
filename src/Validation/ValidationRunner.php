@@ -116,7 +116,7 @@ class ValidationRunner {
 	 */
 	public function getValidators(): array {
 		return array_map(
-			function ( $validator ) {
+			static function ( $validator ) {
 				return $validator['instance'];
 			},
 			$this->validators

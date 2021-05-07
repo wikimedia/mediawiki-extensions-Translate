@@ -30,7 +30,7 @@ class MessageGroupConfigurationParser {
 	 */
 	public function getHopefullyValidConfigurations( $data, $callback = null ) {
 		if ( !is_callable( $callback ) ) {
-			$callback = function ( $unused1, $unused2, $unused3 ) {
+			$callback = static function ( $unused1, $unused2, $unused3 ) {
 				/*noop*/
 			};
 		}

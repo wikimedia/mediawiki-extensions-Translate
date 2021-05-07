@@ -12,7 +12,7 @@ class ApiQueryMessageCollectionTest extends ApiTestCase {
 
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
-			function ( &$list ) {
+			static function ( &$list ) {
 				$exampleMessageGroup = new WikiMessageGroup( 'theid', 'thesource' );
 				$exampleMessageGroup->setLabel( 'thelabel' ); // Example
 				$exampleMessageGroup->setNamespace( 5 ); // Example

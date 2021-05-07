@@ -85,7 +85,7 @@ class QueryAggregator {
 	 * @return array[]
 	 */
 	protected function getMultiHttpQueries( $queries ) {
-		$converter = function ( TranslationQuery $q ) {
+		$converter = static function ( TranslationQuery $q ) {
 			return [
 				'url' => $q->getUrl(),
 				'method' => $q->getMethod(),

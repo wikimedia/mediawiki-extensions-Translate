@@ -210,7 +210,7 @@ class ElasticSearchTTMServer
 			}
 
 			// Ensure results are in quality order
-			uasort( $suggestions, function ( $a, $b ) {
+			uasort( $suggestions, static function ( $a, $b ) {
 				if ( $a['quality'] === $b['quality'] ) {
 					return 0;
 				}
@@ -274,7 +274,7 @@ class ElasticSearchTTMServer
 			function () use ( $doc ) {
 				$this->getType()->addDocument( $doc );
 			},
-			function ( $e, $errors ) use ( $fname ) {
+			static function ( $e, $errors ) use ( $fname ) {
 				$c = get_class( $e );
 				$msg = $e->getMessage();
 				error_log( $fname . ": update failed ($c: $msg); retrying." );

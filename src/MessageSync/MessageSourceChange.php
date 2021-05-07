@@ -373,7 +373,7 @@ class MessageSourceChange {
 		} else {
 			$this->changes[$language][$type] = array_filter(
 				$this->changes[$language][$type],
-				function ( $change ) use ( $keysToRemove ) {
+				static function ( $change ) use ( $keysToRemove ) {
 					return !in_array( $change['key'], $keysToRemove, true );
 				}
 			);

@@ -25,21 +25,21 @@ use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
-	'Translate:GroupSynchronizationCache' => function (
+	'Translate:GroupSynchronizationCache' => static function (
 		MediaWikiServices $services
 	): GroupSynchronizationCache {
 		return new GroupSynchronizationCache( $services->get( 'Translate:PersistentCache' ) );
 	},
 
-	'Translate:JsonCodec' => function (): JsonCodec {
+	'Translate:JsonCodec' => static function (): JsonCodec {
 		return new JsonCodec();
 	},
 
-	'Translate:ParsingPlaceholderFactory' => function (): ParsingPlaceholderFactory {
+	'Translate:ParsingPlaceholderFactory' => static function (): ParsingPlaceholderFactory {
 		return new ParsingPlaceholderFactory();
 	},
 
-	'Translate:PersistentCache' => function ( MediaWikiServices $services ): PersistentCache {
+	'Translate:PersistentCache' => static function ( MediaWikiServices $services ): PersistentCache {
 		return new PersistentDatabaseCache(
 			$services->getDBLoadBalancer(),
 			// TODO: Since we have a similar interface, see if we can load the JsonCodec
@@ -48,7 +48,7 @@ return [
 		 );
 	},
 
-	'Translate:TranslatablePageMover' => function ( MediaWikiServices $services ): TranslatablePageMover
+	'Translate:TranslatablePageMover' => static function ( MediaWikiServices $services ): TranslatablePageMover
 	{
 		return new TranslatablePageMover(
 			$services->getMovePageFactory(),
@@ -57,21 +57,22 @@ return [
 		);
 	},
 
-	'Translate:TranslatablePageParser' => function ( MediaWikiServices $services ): TranslatablePageParser
+	'Translate:TranslatablePageParser' => static function ( MediaWikiServices $services ): TranslatablePageParser
 	{
 		return new TranslatablePageParser(
 			$services->get( 'Translate:ParsingPlaceholderFactory' )
 		);
 	},
 
-	'Translate:TranslationStashReader' => function ( MediaWikiServices $services ): TranslationStashReader
+	'Translate:TranslationStashReader' => static function ( MediaWikiServices $services ): TranslationStashReader
 	{
 		$db = $services->getDBLoadBalancer()->getConnectionRef( DB_REPLICA );
 		return new TranslationStashStorage( $db );
 	},
 
-	'Translate:TranslationStatsDataProvider' => function ( MediaWikiServices $services ): TranslationStatsDataProvider
-	{
+	'Translate:TranslationStatsDataProvider' => static function (
+		MediaWikiServices $services
+	): TranslationStatsDataProvider {
 		return new TranslationStatsDataProvider(
 			new ServiceOptions(
 				TranslationStatsDataProvider::CONSTRUCTOR_OPTIONS,
@@ -81,7 +82,7 @@ return [
 		);
 	},
 
-	'Translate:TranslatorActivity' => function ( MediaWikiServices $services ): TranslatorActivity {
+	'Translate:TranslatorActivity' => static function ( MediaWikiServices $services ): TranslatorActivity {
 		$query = new TranslatorActivityQuery(
 			$services->getMainConfig(),
 			$services->getDBLoadBalancer()
@@ -95,7 +96,7 @@ return [
 		);
 	},
 
-	'Translate:TtmServerFactory' => function ( MediaWikiServices $services ): TtmServerFactory {
+	'Translate:TtmServerFactory' => static function ( MediaWikiServices $services ): TtmServerFactory {
 		$config = $services->getMainConfig();
 
 		$default = $config->get( 'TranslateTranslationDefaultService' );

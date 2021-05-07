@@ -42,7 +42,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			$authors = [];
 		} else {
 			$authors = array_map(
-				function ( $author ) {
+				static function ( $author ) {
 					// Each line should look like " *  - Translatorname"
 					return substr( $author, 6 );
 				},

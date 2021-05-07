@@ -13,6 +13,8 @@
 	/**
 	 * Add css class to every other visible row.
 	 * It's not possible to do zebra colors with CSS only if there are hidden rows.
+	 *
+	 * @param {jQuery} $table
 	 */
 	function doZebra( $table ) {
 		$table.find( 'tr:visible:odd' ).toggleClass( 'tux-statstable-even', false );

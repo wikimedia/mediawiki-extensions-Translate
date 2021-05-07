@@ -588,7 +588,7 @@ class MessageGroupStats {
 			$dbw,
 			'updates',
 			__METHOD__,
-			function ( IDatabase $dbw, $method ) use ( $table, &$updates ) {
+			static function ( IDatabase $dbw, $method ) use ( $table, &$updates ) {
 				// Maybe another deferred update already processed these
 				if ( $updates === [] ) {
 					return;
@@ -621,7 +621,7 @@ class MessageGroupStats {
 
 	protected static function withLock( IDatabase $dbw, $key, $method, $callback ) {
 		$fname = __METHOD__;
-		return function () use ( $dbw, $key, $method, $callback, $fname ) {
+		return static function () use ( $dbw, $key, $method, $callback, $fname ) {
 			$lockName = 'MessageGroupStats:' . $key;
 			if ( !$dbw->lock( $lockName, $fname, 1 ) ) {
 				return; // raced out

@@ -110,7 +110,7 @@ class TranslateYaml {
 		$random = MWCryptRand::generateHex( 8 );
 		// Ensure our random does not look like a number
 		$random = "X$random";
-		$mangler = function ( &$item ) use ( $random ) {
+		$mangler = static function ( &$item ) use ( $random ) {
 			if ( preg_match( '/^[0-9]+\.$/', $item ) ) {
 				$item = "$random$item$random";
 			}

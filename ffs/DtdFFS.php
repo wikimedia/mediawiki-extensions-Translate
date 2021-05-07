@@ -33,7 +33,7 @@ class DtdFFS extends SimpleFFS {
 		$messages = array_combine(
 			$keys,
 			array_map(
-				function ( $message ) {
+				static function ( $message ) {
 					return html_entity_decode( $message, ENT_QUOTES );
 				},
 				$messages

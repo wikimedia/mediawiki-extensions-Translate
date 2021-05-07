@@ -230,7 +230,7 @@ class SpecialPageTranslation extends SpecialPage {
 			// Check if user wants to translate title
 			// If not, remove it from the list of sections
 			if ( !$request->getCheck( 'translatetitle' ) ) {
-				$sections = array_filter( $sections, function ( $s ) {
+				$sections = array_filter( $sections, static function ( $s ) {
 					return $s->id !== 'Page display title';
 				} );
 			}

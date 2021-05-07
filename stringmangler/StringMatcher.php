@@ -102,7 +102,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 			$key = $this->sPrefix . $key;
 		}
 
-		$escaper = function ( $match ) {
+		$escaper = static function ( $match ) {
 			$esc = '';
 			foreach ( str_split( $match[0] ) as $c ) {
 				$esc .= '=' . sprintf( '%02X', ord( $c ) );
@@ -146,7 +146,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		// which is applied in mangle
 		$unescapedString = preg_replace_callback(
 			'/=([A-F0-9]{2})/',
-			function ( $match ) {
+			static function ( $match ) {
 				return chr( hexdec( $match[1] ) );
 			},
 			$key

@@ -210,7 +210,7 @@ class TranslateHooks {
 					'Translate:TranslationStashReader',
 				],
 				'args' => [
-					function () {
+					static function () {
 						return new ServiceOptions(
 							ManageTranslatorSandboxSpecialPage::CONSTRUCTOR_OPTIONS,
 							MediaWikiServices::getInstance()->getMainConfig()
@@ -225,7 +225,7 @@ class TranslateHooks {
 					'Translate:TranslationStashReader'
 				],
 				'args' => [
-					function () {
+					static function () {
 						return new ServiceOptions(
 							TranslationStashSpecialPage::CONSTRUCTOR_OPTIONS,
 							MediaWikiServices::getInstance()->getMainConfig()

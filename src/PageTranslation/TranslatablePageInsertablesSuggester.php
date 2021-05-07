@@ -22,7 +22,7 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		$matches = [];
 		preg_match_all( '/\$([a-zA-Z0-9-_]+)/', $text, $matches, PREG_SET_ORDER );
 
-		$new = array_map( function ( $match ) {
+		$new = array_map( static function ( $match ) {
 			// Numerical ones are already handled by parent
 			if ( ctype_digit( $match[1] ) ) {
 				return null;

@@ -98,7 +98,7 @@ class MediaWikiPluralValidator implements MessageValidator {
 		// Stores the forms from plural invocations
 		$plurals = [];
 
-		$cb = function ( $parser, $frame, $args ) use ( &$plurals ) {
+		$cb = static function ( $parser, $frame, $args ) use ( &$plurals ) {
 			$forms = [];
 
 			foreach ( $args as $index => $form ) {
