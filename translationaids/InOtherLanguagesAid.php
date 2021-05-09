@@ -73,7 +73,6 @@ class InOtherLanguagesAid extends TranslationAid {
 		}
 
 		$list = Language::getFallbacksFor( $code );
-		array_pop( $list ); // Get 'en' away from the end
 		$fallbacks = array_merge( $list, $fallbacks );
 
 		return array_unique( $fallbacks );
