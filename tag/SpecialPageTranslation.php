@@ -506,9 +506,9 @@ class SpecialPageTranslation extends SpecialPage {
 			// Enable re-marking of all pages to allow changing of priority languages
 			// or migration to the new syntax version
 			if ( $type !== 'broken' ) {
-				$actions[] = Linker::linkKnown(
+				$actions[] = $this->getLinkRenderer()->makeKnownLink(
 					$this->getPageTitle(),
-					$this->msg( 'tpt-rev-mark' )->escaped(),
+					$this->msg( 'tpt-rev-mark' )->text(),
 					[ 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ],
 					[
 						'do' => 'mark',
@@ -520,9 +520,9 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $type !== 'proposed' ) {
 				if ( $page['discouraged'] ) {
-					$actions[] = Linker::linkKnown(
+					$actions[] = $this->getLinkRenderer()->makeKnownLink(
 						$this->getPageTitle(),
-						$this->msg( 'tpt-rev-encourage' )->escaped(),
+						$this->msg( 'tpt-rev-encourage' )->text(),
 						[ 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ] + $js,
 						[
 							'do' => 'encourage',
@@ -531,9 +531,9 @@ class SpecialPageTranslation extends SpecialPage {
 						]
 					);
 				} else {
-					$actions[] = Linker::linkKnown(
+					$actions[] = $this->getLinkRenderer()->makeKnownLink(
 						$this->getPageTitle(),
-						$this->msg( 'tpt-rev-discourage' )->escaped(),
+						$this->msg( 'tpt-rev-discourage' )->text(),
 						[ 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ] + $js,
 						[
 							'do' => 'discourage',
@@ -543,9 +543,9 @@ class SpecialPageTranslation extends SpecialPage {
 					);
 				}
 
-				$actions[] = Linker::linkKnown(
+				$actions[] = $this->getLinkRenderer()->makeKnownLink(
 					$this->getPageTitle(),
-					$this->msg( 'tpt-rev-unmark' )->escaped(),
+					$this->msg( 'tpt-rev-unmark' )->text(),
 					[ 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ],
 					[
 						'do' => $type === 'broken' ? 'unmark' : 'unlink',
@@ -607,7 +607,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 	private function showPage( TranslatablePage $page, array $sections, bool $firstMark ): void {
 		$out = $this->getOutput();
-		$out->setSubtitle( Linker::link( $page->getTitle() ) );
+		$out->setSubtitle( $this->getLinkRenderer()->makeKnownLink( $page->getTitle() ) );
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
 		$formParams = [
@@ -1090,7 +1090,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$tagNoTransclusionSupport = $this->msg( 'tpt-tag-no-transclusion-support' )->escaped();
 
 		foreach ( $pages as $page ) {
-			$link = Linker::link( $page['title'] );
+			$link = $this->getLinkRenderer()->makeKnownLink( $page['title'] );
 			$acts = $this->actionLinks( $page, $type );
 			$tags = [];
 			if ( $page['discouraged'] ) {
