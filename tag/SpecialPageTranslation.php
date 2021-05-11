@@ -14,11 +14,13 @@ use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\UserIdentity;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
+use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -46,11 +48,11 @@ class SpecialPageTranslation extends SpecialPage {
 		$this->languageFactory = $languageFactory;
 	}
 
-	public function doesWrites() {
+	public function doesWrites(): bool {
 		return true;
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 
@@ -199,7 +201,7 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 	}
 
-	protected function onActionMark( Title $title, $revision ) {
+	protected function onActionMark( Title $title, int $revision ): void {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
 
@@ -270,8 +272,9 @@ class SpecialPageTranslation extends SpecialPage {
 	 * Displays success message and other instructions after a page has been marked for translation.
 	 * @param TranslatablePage $page
 	 * @param bool $firstMark true if it is the first time the page is being marked for translation.
+	 * @return void
 	 */
-	public function showSuccess( TranslatablePage $page, $firstMark = false ) {
+	public function showSuccess( TranslatablePage $page, bool $firstMark = false ): void {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( [
@@ -304,7 +307,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'tpt-list-pages-in-translations' );
 	}
 
-	protected function showGenericConfirmation( array $params ) {
+	protected function showGenericConfirmation( array $params ): void {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getFullURL(),
@@ -330,7 +333,7 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
-	protected function showUnlinkConfirmation( Title $target ) {
+	protected function showUnlinkConfirmation( Title $target ): void {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getFullURL(),
@@ -351,7 +354,7 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 	}
 
-	protected function unmarkPage( TranslatablePage $page, $user ) {
+	protected function unmarkPage( TranslatablePage $page, UserIdentity $user ): void {
 		$page->unmarkTranslatablePage();
 		$page->getTitle()->invalidateCache();
 
@@ -362,7 +365,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$entry->publish( $logid );
 	}
 
-	public function loadPagesFromDB() {
+	public function loadPagesFromDB(): IResultWrapper {
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = [ 'page', 'revtag' ];
 		$vars = [
@@ -385,7 +388,7 @@ class SpecialPageTranslation extends SpecialPage {
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 	}
 
-	protected function buildPageArray( /*db result*/$res ) {
+	protected function buildPageArray( IResultWrapper $res ): array {
 		$pages = [];
 		foreach ( $res as $r ) {
 			// We have multiple rows for same page, because of different tags
@@ -457,7 +460,7 @@ class SpecialPageTranslation extends SpecialPage {
 		return $out;
 	}
 
-	public function listPages() {
+	public function listPages(): void {
 		$out = $this->getOutput();
 
 		$res = $this->loadPagesFromDB();
@@ -581,7 +584,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param bool &$error
 	 * @return TranslationUnit[] The array has string keys.
 	 */
-	public function checkInput( TranslatablePage $page, &$error ) {
+	public function checkInput( TranslatablePage $page, bool &$error ): array {
 		$usedNames = [];
 		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 		$parse = $page->getParse();
@@ -1026,8 +1029,9 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * @param WebRequest $request
 	 * @param TranslatablePage $page
+	 * @return void
 	 */
-	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page ) {
+	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page ): void {
 		// Get the priority languages from the request
 		// We've to do some extra work here because if JS is disabled, we will be getting
 		// the values split by newline.
