@@ -8,6 +8,7 @@
 	},
 	"translate-taction-proofread": "Turéksa",
 	"translate-taction-lstats": "Statistik basa",
+	"translate-taction-mstats": "Statistik seka sewala",
 	"translate-page-language": "Basa",
 	"translate-page-showing-all": "Ngédéngang $1 {{PLURAL:$1|séwala}}.",
 	"translate-next": "Kaca salanturnyané",
@@ -19,6 +20,7 @@
 	"translate-stats-reviews": "Turéksan",
 	"translate-stats-reviewers": "Sang nuréksa",
 	"translate-translations-fieldset-title": "Séwala",
+	"translate-translations-history-short": "l",
 	"languagestats": "Statistik basa",
 	"languagestats-summary": "Kaca puniki nyinahang statistik panyalinan antuk sinamian seka séwala ring satunggil basa katentu.",
 	"translate-documentation-language": "Dokuméntasi séwala"
