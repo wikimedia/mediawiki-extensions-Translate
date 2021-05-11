@@ -62,7 +62,13 @@ class TranslateHooks {
 		if ( $wgEnablePageTranslation ) {
 			// Special page and the right to use it
 			global $wgSpecialPages, $wgAvailableRights;
-			$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
+			$wgSpecialPages['PageTranslation'] = [
+				'class' => SpecialPageTranslation::class,
+				'services' => [
+					'LanguageNameUtils',
+					'LanguageFactory'
+				]
+			];
 			$wgSpecialPages['PageTranslationDeletePage'] = 'SpecialPageTranslationDeletePage';
 
 			// right-pagetranslation action-pagetranslation

@@ -11,6 +11,8 @@
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
+use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
@@ -30,9 +32,18 @@ use OOUI\TextInputWidget;
 class SpecialPageTranslation extends SpecialPage {
 	private const LATEST_SYNTAX_VERSION = '2';
 	private const DEFAULT_SYNTAX_VERSION = '1';
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
+	/** @var LanguageFactory */
+	private $languageFactory;
 
-	public function __construct() {
+	public function __construct(
+		LanguageNameUtils $languageNameUtils,
+		LanguageFactory $languageFactory
+	) {
 		parent::__construct( 'PageTranslation' );
+		$this->languageNameUtils = $languageNameUtils;
+		$this->languageFactory = $languageFactory;
 	}
 
 	public function doesWrites() {
@@ -637,7 +648,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// If the page is marked for translation the first time, default to checked.
 		$defaultChecked = $page->hasPageDisplayTitle();
 
-		$sourceLanguage = Language::factory( $page->getSourceLanguageCode() );
+		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
 		foreach ( $sections as $s ) {
 			if ( $s->name === 'Page display title' ) {
@@ -1029,7 +1040,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$npReason = trim( $request->getText( 'priorityreason' ) );
 
 		// Remove invalid language codes.
-		$languages = Language::fetchLanguageNames();
+		$languages = $this->languageNameUtils->getLanguageNames();
 		foreach ( $npLangs as $index => $language ) {
 			if ( !array_key_exists( $language, $languages ) ) {
 				unset( $npLangs[$index] );
