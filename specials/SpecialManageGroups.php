@@ -274,6 +274,7 @@ class SpecialManageGroups extends SpecialPage {
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
 		$id = self::changeId( $group->getId(), $language, $type, $key );
 		$noticeHtml = '';
+		$isReusedKey = false;
 
 		if ( $title && $type === 'addition' && $title->exists() ) {
 			// The message has for some reason dropped out from cache
@@ -285,6 +286,7 @@ class SpecialManageGroups extends SpecialPage {
 			// leads to many other annoying problems.
 			$type = 'change';
 			$noticeHtml .= Html::warningBox( $this->msg( 'translate-manage-key-reused' )->text() );
+			$isReusedKey = true;
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
 			// This happens if a message key has been renamed
 			// The change can be ignored.
@@ -355,18 +357,35 @@ class SpecialManageGroups extends SpecialPage {
 
 			$actions = '';
 			$importSelected = true;
-			if ( $group->getSourceLanguage() === $language ) {
+			$sourceLanguage = $group->getSourceLanguage();
+
+			if ( $sourceLanguage === $language ) {
 				$importSelected = false;
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
 				$actions .= Xml::radioLabel( $label, "msg/$id", "fuzzy", "f/$id", true );
 			}
 
-			$label = $this->msg( 'translate-manage-action-import' )->text();
-			$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", $importSelected );
+			if (
+				$sourceLanguage !== $language &&
+				$isReusedKey &&
+				!self::isMessageDefinitionPresent( $group, $changes, $key )
+			) {
+				$noticeHtml .= Html::warningBox(
+					$this->msg( 'translate-manage-source-message-not-found' )->text(),
+					'mw-translate-smg-notice-important'
+				);
 
-			$label = $this->msg( 'translate-manage-action-ignore' )->text();
-			$actions .= Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
-			$limit--;
+				// Automatically ignore messages that don't have a definitions
+				$actions .= Html::hidden( "msg/$id", 'ignore', [ 'id' => "i/$id" ] );
+				$limit--;
+			} else {
+				$label = $this->msg( 'translate-manage-action-import' )->text();
+				$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", $importSelected );
+
+				$label = $this->msg( 'translate-manage-action-ignore' )->text();
+				$actions .= Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
+				$limit--;
+			}
 
 			$oldContent = ContentHandler::makeContent( $wiki, $title );
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
