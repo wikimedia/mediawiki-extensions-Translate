@@ -12,7 +12,6 @@
  * Class for formatting Translate logs.
  */
 class TranslateLogFormatter extends LogFormatter {
-
 	public function getMessageParameters() {
 		$params = parent::getMessageParameters();
 
@@ -74,7 +73,7 @@ class TranslateLogFormatter extends LogFormatter {
 		?Title $title, $text, array $parameters = []
 	) {
 		if ( !$this->plaintext ) {
-			$link = Linker::link( $title, htmlspecialchars( $text ), [], $parameters );
+			$link = $this->getLinkRenderer()->makeLink( $title, $text, [], $parameters );
 		} else {
 			$target = '***';
 			if ( $title instanceof Title ) {

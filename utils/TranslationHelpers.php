@@ -303,7 +303,7 @@ class TranslationHelpers {
 	/**
 	 * Ajax-enabled message editing link.
 	 * @param Title $target Title of the target message.
-	 * @param string $text Link text for Linker::link()
+	 * @param string $text Link text (will be escaped)
 	 * @return string HTML link
 	 */
 	public static function ajaxEditLink( Title $target, $text ) {

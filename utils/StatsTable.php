@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements generation of HTML stats table.
  *
@@ -236,18 +238,19 @@ class StatsTable {
 	 * @return string Html
 	 */
 	public function makeGroupLink( MessageGroup $group, $code, $params ) {
+		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
+
 		$queryParameters = $params + [
 			'group' => $group->getId(),
 			'language' => $code
 		];
 
-		$attributes = [];
-
-		$translateGroupLink = Linker::link(
-			$this->translate, $this->getGroupLabel( $group ), $attributes, $queryParameters
+		return $linker->makeLink(
+			$this->translate,
+			new HtmlArmor( $this->getGroupLabel( $group ) ),
+			[],
+			$queryParameters
 		);
-
-		return $translateGroupLink;
 	}
 
 	/**

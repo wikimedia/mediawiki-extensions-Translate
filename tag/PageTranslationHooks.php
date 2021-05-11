@@ -399,7 +399,6 @@ class PageTranslationHooks {
 		foreach ( $status as $code => $percent ) {
 			// Get autonyms (null)
 			$name = TranslateUtils::getLanguageName( $code, null );
-			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			// Add links to other languages
 			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
@@ -411,10 +410,11 @@ class PageTranslationHooks {
 				$classes[] = 'mw-pt-languages-ui';
 			}
 
+			$linker = $parser->getLinkRenderer();
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
-				$element = Html::rawElement(
+				$element = Html::element(
 					'span',
 					[ 'class' => $classes , 'lang' => LanguageCode::bcp47( $code ) ],
 					$name
@@ -438,7 +438,7 @@ class PageTranslationHooks {
 					'lang' => LanguageCode::bcp47( $code ),
 				];
 
-				$element = Linker::linkKnown( $subpage, $name, $attribs );
+				$element = $linker->makeKnownLink( $subpage, $name, $attribs );
 			} else {
 				/* When language is included because it is a priority language,
 				 * but translation does not yet exists, link directly to the
@@ -455,7 +455,7 @@ class PageTranslationHooks {
 					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage( $userLang )->text(),
 					'class' => $classes,
 				];
-				$element = Linker::linkKnown( $specialTranslateTitle, $name, $attribs, $params );
+				$element = $linker->makeKnownLink( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
 			$languages[ $name ] = $element;
@@ -1082,6 +1082,8 @@ class PageTranslationHooks {
 	}
 
 	protected static function sourcePageHeader( IContextSource $context ) {
+		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
+
 		$language = $context->getLanguage();
 		$title = $context->getTitle();
 
@@ -1106,8 +1108,8 @@ class PageTranslationHooks {
 
 				if ( $marked === false ) {
 					// This page has never been marked
-					$linkDesc = $context->msg( 'translate-tag-markthis' )->escaped();
-					$actions[] = Linker::linkKnown( $pageTranslation, $linkDesc, [], $params );
+					$linkDesc = $context->msg( 'translate-tag-markthis' )->text();
+					$actions[] = $linker->makeKnownLink( $pageTranslation, $linkDesc, [], $params );
 				} else {
 					$markUrl = $pageTranslation->getFullURL( $params );
 					$actions[] = $context->msg( 'translate-tag-markthisagain', $diffUrl, $markUrl )
@@ -1138,9 +1140,11 @@ class PageTranslationHooks {
 	private static function getTranslateLink(
 		IContextSource $context, TranslatablePage $page, $langCode
 	) {
-		return Linker::linkKnown(
+		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
+
+		return $linker->makeKnownLink(
 				SpecialPage::getTitleFor( 'Translate' ),
-				$context->msg( 'translate-tag-translate-link-desc' )->escaped(),
+				$context->msg( 'translate-tag-translate-link-desc' )->text(),
 				[],
 				[
 					'group' => $page->getMessageGroupId(),
@@ -1252,6 +1256,8 @@ class PageTranslationHooks {
 	 * @return bool
 	 */
 	public static function replaceSubtitle( &$subpages, ?Skin $skin, OutputPage $out ) {
+		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
+
 		$isTranslationPage = TranslatablePage::isTranslationPage( $out->getTitle() );
 		if ( !$isTranslationPage
 			&& !TranslatablePage::isSourcePage( $out->getTitle() )
@@ -1284,9 +1290,9 @@ class PageTranslationHooks {
 					$linkObj = Title::newFromText( $growinglink );
 
 					if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
-						$getlink = Linker::linkKnown(
+						$getlink = $linker->makeKnownLink(
 							SpecialPage::getTitleFor( 'MyLanguage', $growinglink ),
-							htmlspecialchars( $display )
+							$display
 						);
 
 						$c++;
