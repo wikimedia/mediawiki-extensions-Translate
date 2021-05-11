@@ -370,9 +370,8 @@ class SpecialPageTranslation extends SpecialPage {
 			'ORDER BY' => 'page_namespace, page_title',
 			'GROUP BY' => 'page_id, rt_type',
 		];
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
-		return $res;
+		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 	}
 
 	protected function buildPageArray( /*db result*/$res ) {
