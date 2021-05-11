@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains logic for special page Special:ImportTranslations.
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
@@ -29,7 +22,9 @@ use Wikimedia\Rdbms\IResultWrapper;
  * It will list all pages in their various states and provides actions
  * that are suitable for given translatable page.
  *
- * @ingroup SpecialPage PageTranslation
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  */
 class SpecialPageTranslation extends SpecialPage {
 	private const LATEST_SYNTAX_VERSION = '2';
