@@ -928,23 +928,8 @@ class SpecialPageTranslation extends SpecialPage {
 			return [ 'tpt-edit-failed', $status->getWikiText() ];
 		}
 
-		if ( version_compare( TranslateUtils::getMWVersion(), '1.35', '>=' ) ) {
-			// MW 1.35+
-			// Cannot use array_key_exists with DeprecatablePropertyArray, and
-			// $status->value['revision-record'] can be null, so isset doesn't
-			// work either
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-			$newRevisionRecord = $status->value['revision-record'];
-		} else {
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-			$newRevision = $status->value['revision'];
-			if ( $newRevision instanceof Revision ) {
-				$newRevisionRecord = $newRevision->getRevisionRecord();
-			} else {
-				$newRevisionRecord = null;
-			}
-		}
-
+		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+		$newRevisionRecord = $status->value['revision-record'];
 		// In theory it is either null or RevisionRecord object,
 		// not a RevisionRecord object with null id, but who knows
 		if ( $newRevisionRecord instanceof RevisionRecord ) {
