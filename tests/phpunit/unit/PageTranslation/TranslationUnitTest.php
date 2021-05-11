@@ -281,4 +281,59 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Lang: ar'
 		];
 	}
+
+	/** @dataProvider providerTestGetIssues */
+	public function testGetIssues( $input, $expected ) {
+		// FIXME: How to avoid this? It's used by wfEscapeWikitext
+		global $wgEnableMagicLinks;
+		$wgEnableMagicLinks = [];
+
+		$unit = new TranslationUnit( $input );
+		$issues = $unit->getIssues();
+		$actual = array_map( static function ( $x ) {
+			return $x->getKey();
+		}, $issues );
+		$this->assertArrayEquals( $expected, $actual );
+	}
+
+	public function providerTestGetIssues() {
+		// We are testing the message keys here to document the checks.
+		// Severity is left untested to allow changing them easily.
+		yield 'no variables - no issues' => [
+			'Bunny guarding the garden',
+			[],
+		];
+
+		yield 'ok variable name - no issues' => [
+			'<tvar name=name>Bunny</tvar> guarding the garden',
+			[],
+		];
+
+		yield 'bad insertable variable name' => [
+			'Information about carrots: <tvar name=wp.org>https://en.wikipedia.org/wiki/carrot</tvar>',
+			[ 'tpt-validation-not-insertable' ],
+		];
+
+		yield 'multiple names get separate issues' => [
+			'<tvar name="1/2">first half</tvar><tvar name="2/2">second half</tvar>',
+			[ 'tpt-validation-not-insertable', 'tpt-validation-not-insertable' ],
+		];
+
+		yield 'single repeated name only has one issue' => [
+			'<tvar name="1/1">whole</tvar><tvar name="1/1">whole</tvar>',
+			[ 'tpt-validation-not-insertable' ],
+		];
+
+		yield 'name reuse okay\'ish with same content' => [
+			'The parameter’s value is {{#if:<tvar name="1">{{{param|}}}</tvar>|' .
+				'<tvar name="1">{{{param|}}}</tvar>|not specified}}.',
+			[],
+		];
+
+		yield 'name reuse not okay with different content' => [
+			'Allowed values <tvar name=1>snake</tvar> and <tvar name=2>alligator</tvar>. ' .
+				'When using <tvar name=1>cobra</tvar> you may hear a hissing sound.',
+			[ 'tpt-validation-name-reuse' ],
+		];
+	}
 }

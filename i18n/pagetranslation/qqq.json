@@ -251,5 +251,7 @@
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
-	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
+	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}",
+	"tpt-validation-not-insertable": "Warning shown on Special:PageTranslation when translation variable names contain characters that do not work as an insertable in the translation interface",
+	"tpt-validation-name-reuse": "Error shown on Special:PageTranslation when translation variable is defined twice with same name but different content"
 }

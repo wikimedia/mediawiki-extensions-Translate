@@ -221,4 +221,36 @@ REGEXP;
 
 		return $content;
 	}
+
+	/** @return TranslationUnitIssue[] */
+	public function getIssues(): array {
+		$issues = $usedNames = [];
+		foreach ( $this->getVariables() as $variable ) {
+			$name = $variable->getName();
+			$pattern = '/^' . TranslatablePageInsertablesSuggester::NAME_PATTERN . '$/u';
+			if ( !preg_match( $pattern, $name ) ) {
+				// Key by name to avoid multiple issues of the same name
+				$issues[$name] = new TranslationUnitIssue(
+					TranslationUnitIssue::WARNING,
+					'tpt-validation-not-insertable',
+					[ wfEscapeWikiText( $name ) ]
+				);
+			}
+
+			$usedNames[ $name ][] = $variable->getValue();
+		}
+
+		foreach ( $usedNames as $name => $contents ) {
+			$uniqueValueCount = count( array_unique( $contents ) );
+			if ( $uniqueValueCount > 1 ) {
+				$issues[] = new TranslationUnitIssue(
+					TranslationUnitIssue::ERROR,
+					'tpt-validation-name-reuse',
+					[ wfEscapeWikiText( $name ) ]
+				);
+			}
+		}
+
+		return array_values( $issues );
+	}
 }

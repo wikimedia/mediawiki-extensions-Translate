@@ -2,6 +2,7 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitIssue;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Languages\LanguageFactory;
@@ -107,7 +108,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$params = [
 					'do' => $action,
 					'target' => $title->getPrefixedText(),
-					'revision' => $revision
+					'revision' => $revision,
 				];
 				$this->showGenericConfirmation( $params );
 			}
@@ -647,6 +648,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
+		/** @var TranslationUnit[] $sections */
 		foreach ( $sections as $s ) {
 			if ( $s->id === 'Page display title' ) {
 				// Set section type as new if title previously unchecked
@@ -714,6 +716,21 @@ class SpecialPageTranslation extends SpecialPage {
 				$text,
 				$lang
 			) );
+
+			foreach ( $s->getIssues() as $issue ) {
+				$severity = $issue->getSeverity();
+				if ( $severity === TranslationUnitIssue::WARNING ) {
+					$box = Html::warningBox( $this->msg( $issue )->escaped() );
+				} elseif ( $severity === TranslationUnitIssue::ERROR ) {
+					$box = Html::errorBox( $this->msg( $issue )->escaped() );
+				} else {
+					throw new MWException(
+						"Unknown severity: $severity for key: {$issue->getKey()}"
+					);
+				}
+
+				$out->addHTML( $box );
+			}
 		}
 
 		$deletedSections = $page->getParse()->getDeletedSections();
@@ -839,7 +856,7 @@ class SpecialPageTranslation extends SpecialPage {
 					]
 				),
 
-			]
+			],
 		] );
 
 		$this->getOutput()->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );

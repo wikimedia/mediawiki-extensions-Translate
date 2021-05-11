@@ -7,24 +7,30 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 
 /**
- * Special insertables for translatable pages.
+ * Insertables for translation variables in translatable pages.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @since 2013.11
  */
 class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester {
+	/**
+	 * Translatable pages allow naming the variables. Almost anything is
+	 * allowed in a variable name, but here we are stricter to avoid too many
+	 * incorrect matches when variable name is followed by non-space characters.
+	 * @internal For use in this namespace only
+	 */
+	public const NAME_PATTERN = '\$[\pL\pN_$-]+';
+
 	public function getInsertables( string $text ): array {
 		$insertables = parent::getInsertables( $text );
 
-		// Translatable pages allow naming the variables. Basically anything is
-		// allowed in a variable name, but here we are stricter to avoid too many
-		// false positives.
 		$matches = [];
-		preg_match_all( '/\$([a-zA-Z0-9-_]+)/', $text, $matches, PREG_SET_ORDER );
+		$pattern = '/' . self::NAME_PATTERN . '/';
+		preg_match_all( $pattern, $text, $matches, PREG_SET_ORDER );
 
 		$new = array_map( static function ( $match ) {
 			// Numerical ones are already handled by parent
-			if ( ctype_digit( $match[1] ) ) {
+			if ( ctype_digit( substr( $match[0], 1 ) ) ) {
 				return null;
 			}
 
@@ -32,8 +38,6 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		}, $matches );
 
 		$new = array_filter( $new );
-		$insertables = array_merge( $insertables, $new );
-
-		return $insertables;
+		return array_merge( $insertables, $new );
 	}
 }
