@@ -180,8 +180,6 @@ class SpecialPageTranslation extends SpecialPage {
 				[ 'tpt-unmarked', $title->getPrefixedText() ]
 			);
 			$this->listPages();
-
-			return;
 		}
 	}
 
