@@ -12,6 +12,11 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Revision\RevisionRecord;
+use OOUI\ButtonInputWidget;
+use OOUI\CheckboxInputWidget;
+use OOUI\FieldLayout;
+use OOUI\FieldsetLayout;
+use OOUI\TextInputWidget;
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -641,8 +646,8 @@ class SpecialPageTranslation extends SpecialPage {
 				$s->type = $defaultChecked ? $s->type : 'new';
 
 				// Checkbox for page title optional translation
-				$checkBox = new OOUI\FieldLayout(
-					new OOUI\CheckboxInputWidget( [
+				$checkBox = new FieldLayout(
+					new CheckboxInputWidget( [
 						'name' => 'translatetitle',
 						'selected' => $defaultChecked,
 					] ),
@@ -678,8 +683,8 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->showDiffStyle();
 
 				$id = "tpt-sect-{$s->id}-action-nofuzzy";
-				$checkLabel = new OOUI\FieldLayout(
-					new OOUI\CheckboxInputWidget( [
+				$checkLabel = new FieldLayout(
+					new CheckboxInputWidget( [
 						'name' => $id,
 						'selected' => false,
 					] ),
@@ -770,8 +775,8 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 		$this->syntaxVersionForm( $version, $firstMark );
 
-		$submitButton = new OOUI\FieldLayout(
-			new OOUI\ButtonInputWidget( [
+		$submitButton = new FieldLayout(
+			new ButtonInputWidget( [
 				'label' => $this->msg( 'tpt-submit' )->text(),
 				'type' => 'submit',
 				'flags' => [ 'primary', 'progressive' ],
@@ -792,9 +797,9 @@ class SpecialPageTranslation extends SpecialPage {
 		$storedLanguages = (string)TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$default = $storedLanguages !== '' ? explode( ',', $storedLanguages ) : [];
 
-		$form = new OOUI\FieldsetLayout( [
+		$form = new FieldsetLayout( [
 			'items' => [
-				new OOUI\FieldLayout(
+				new FieldLayout(
 					new LanguagesMultiselectWidget( [
 						'infusable' => true,
 						'name' => 'prioritylangs',
@@ -807,8 +812,8 @@ class SpecialPageTranslation extends SpecialPage {
 						'align' => 'top',
 					]
 				),
-				new OOUI\FieldLayout(
-					new OOUI\CheckboxInputWidget( [
+				new FieldLayout(
+					new CheckboxInputWidget( [
 						'name' => 'forcelimit',
 						'selected' => TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on',
 					] ),
@@ -817,8 +822,8 @@ class SpecialPageTranslation extends SpecialPage {
 						'align' => 'inline',
 					]
 				),
-				new OOUI\FieldLayout(
-					new OOUI\TextInputWidget( [
+				new FieldLayout(
+					new TextInputWidget( [
 						'name' => 'priorityreason',
 					] ),
 					[
@@ -848,8 +853,8 @@ class SpecialPageTranslation extends SpecialPage {
 			'<code>' . wfEscapeWikiText( '<translate nowrap>...</translate>' ) . '</code>'
 		);
 
-		$checkBox = new OOUI\FieldLayout(
-			new OOUI\CheckboxInputWidget( [
+		$checkBox = new FieldLayout(
+			new CheckboxInputWidget( [
 				'name' => 'use-latest-syntax'
 			] ),
 			[
@@ -871,8 +876,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$out = $this->getOutput();
 		$out->wrapWikiMsg( '==$1==', 'tpt-transclusion' );
 
-		$checkBox = new OOUI\FieldLayout(
-			new OOUI\CheckboxInputWidget( [
+		$checkBox = new FieldLayout(
+			new CheckboxInputWidget( [
 				'name' => 'transclusion',
 				'selected' => $supportsTransclusion
 			] ),
