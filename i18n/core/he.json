@@ -240,6 +240,7 @@
 	"translate-smg-group-with-error-summary": "{{PLURAL:$1|הודעה אחת|$1 הודעות}} עם שגיאות:",
 	"translate-smg-group-message-action-history": "היסטוריה",
 	"translate-smg-group-action-resolve": "סימון הבעיה כפתורה",
+	"translate-smg-group-sync-error-warn": "בקבוצה הזאת אירעה שגיאה בעת הסנכרון. נא לתקן את השגיאות לפני עיבוד הקבוצה הזאת.",
 	"translate-smg-group-message-tag-outdated": "לא עדכניות",
 	"translate-smg-group-message-tag-rename": "שינוי שם",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|תג|תגים}}",

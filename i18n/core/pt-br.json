@@ -249,6 +249,7 @@
 	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|mensagem|mensagens}} com erros:",
 	"translate-smg-group-message-action-history": "Histórico",
 	"translate-smg-group-action-resolve": "Marcar como resolvido",
+	"translate-smg-group-sync-error-warn": "Este grupo tinha um erro durante a sincronização. Por favor, corrija os erros antes de processar este grupo.",
 	"translate-smg-group-message-tag-outdated": "Desatualizadas",
 	"translate-smg-group-message-tag-rename": "Renomear",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Etiqueta|Etiquetas}}:",

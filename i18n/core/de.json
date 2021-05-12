@@ -247,6 +247,7 @@
 	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|Meldung|Meldungen}} mit Fehlern:",
 	"translate-smg-group-message-action-history": "Versionsgeschichte",
 	"translate-smg-group-action-resolve": "Als erledigt markieren",
+	"translate-smg-group-sync-error-warn": "Diese Gruppe hatte einen Fehler bei der Synchronisation. Bitte behebe die Fehler, bevor du diese Gruppe bearbeitest.",
 	"translate-smg-group-message-tag-outdated": "Veraltet",
 	"translate-smg-group-message-tag-rename": "Umbenennen",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Tag|Tags}}:",
