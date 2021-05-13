@@ -16,38 +16,6 @@
  */
 class TranslateToolbox {
 	/**
-	 * This handler will be called for MW < 1.35
-	 *
-	 * @param BaseTemplate $baseTemplate The base skin template
-	 * @param array &$toolbox An array of toolbox items
-	 *
-	 * @return void
-	 */
-	public static function toolboxAllTranslationsOld(
-		BaseTemplate $baseTemplate, array &$toolbox
-	): void {
-		$skin = $baseTemplate->getSkin();
-		$title = $skin->getTitle();
-		$handle = new MessageHandle( $title );
-
-		if ( !$handle->isValid() ) {
-			return;
-		}
-
-		$message = $title->getNsText() . ':' . $handle->getKey();
-		$url = $skin::makeSpecialUrl( 'Translations', [ 'message' => $message ] );
-
-		// Add the actual toolbox entry.
-		$toolbox[ 'alltrans' ] = [
-			'href' => $url,
-			'id' => 't-alltrans',
-			'msg' => 'translate-sidebar-alltrans',
-		];
-	}
-
-	/**
-	 * This handler will be called for MW >= 1.35
-	 *
 	 * @param Skin $skin
 	 * @param array &$sidebar Array with sidebar items
 	 *

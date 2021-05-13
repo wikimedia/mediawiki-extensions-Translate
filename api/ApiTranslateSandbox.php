@@ -51,14 +51,10 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$username = $params['username'];
+		$services = MediaWikiServices::getInstance();
 
-		if ( is_callable( [ UserNameUtils::class, 'getCanonical' ] ) ) {
-			// MW 1.35+
-			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-			$canonicalName = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_CREATABLE );
-		} else {
-			$canonicalName = User::getCanonicalName( $username, 'creatable' );
-		}
+		$userNameUtils = $services->getUserNameUtils();
+		$canonicalName = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_CREATABLE );
 
 		if ( $canonicalName === false ) {
 			$this->dieWithError( 'noname', 'invalidusername' );
@@ -85,16 +81,9 @@ class ApiTranslateSandbox extends ApiBase {
 			'id' => $user->getId(),
 		] ];
 
-		$services = MediaWikiServices::getInstance();
-		if ( method_exists( $services, 'getUserOptionsManager' ) ) {
-			// MW 1.35+
-			$userOptionsManager = $services->getUserOptionsManager();
-			$userOptionsManager->setOption( $user, 'language', $this->getContext()->getLanguage()->getCode() );
-			$userOptionsManager->saveOptions( $user );
-		} else {
-			$user->setOption( 'language', $this->getContext()->getLanguage()->getCode() );
-			$user->saveSettings();
-		}
+		$userOptionsManager = $services->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, 'language', $this->getContext()->getLanguage()->getCode() );
+		$userOptionsManager->saveOptions( $user );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}

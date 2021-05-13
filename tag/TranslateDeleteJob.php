@@ -60,33 +60,18 @@ class TranslateDeleteJob extends Job {
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
-		if ( version_compare( TranslateUtils::getMWVersion(), '1.35', '<' ) ) {
-			$status = $wikipage->doDeleteArticleReal(
-				"{$summary}: $reason",
-				// https://phabricator.wikimedia.org/T262800
-				// @phan-suppress-next-line PhanTypeMismatchArgumentReal
-				false,
-				0,
-				true,
-				$error,
-				$user,
-				[],
-				'delete',
-				true
-			);
-		} else {
-			$status = $wikipage->doDeleteArticleReal(
-				"{$summary}: $reason",
-				$user,
-				false,
-				null,
-				$error,
-				null,
-				[],
-				'delete',
-				true
-			);
-		}
+
+		$status = $wikipage->doDeleteArticleReal(
+			"{$summary}: $reason",
+			$user,
+			false,
+			null,
+			$error,
+			null,
+			[],
+			'delete',
+			true
+		);
 
 		if ( !$status->isGood() ) {
 			$params = [

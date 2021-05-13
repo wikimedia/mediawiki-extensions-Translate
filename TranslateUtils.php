@@ -557,7 +557,7 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Add support for <= 1.34. Wrapper method to fetch the the MW version
+	 * Wrapper method to fetch the the MW version
 	 * @return string
 	 */
 	public static function getMWVersion(): string {

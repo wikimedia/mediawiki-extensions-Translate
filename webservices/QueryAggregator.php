@@ -65,13 +65,8 @@ class QueryAggregator {
 		];
 
 		$httpRequestFactory = MediaWikiServices::getInstance()->getHttpRequestFactory();
-		// BC for MW < 1.35
-		if ( is_callable( [ $httpRequestFactory, 'createMultiClient' ] ) ) {
-			$http = $httpRequestFactory->createMultiClient( $clientOptions );
-		} else {
-			$http = new MultiHttpClient( $clientOptions );
-		}
 
+		$http = $httpRequestFactory->createMultiClient( $clientOptions );
 		$responses = $http->runMulti( $this->getMultiHttpQueries( $this->queries ) );
 		foreach ( $responses as $index => $response ) {
 			$this->responses[$index] = $response;

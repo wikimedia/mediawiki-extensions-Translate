@@ -15,6 +15,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Storage\EditResult;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\ScopedCallback;
 
@@ -76,14 +77,10 @@ class PageTranslationHooks {
 		$name = $page->getPageDisplayTitle( $code );
 		if ( $name ) {
 			$name = $wikitextParser->recursivePreprocess( $name );
-			if ( method_exists( MediaWikiServices::class, 'getLanguageConverterFactory' ) ) {
-				// MW >= 1.35
-				$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
-					->getLanguageConverter( $wikitextParser->getTargetLanguage() );
-				$name = $langConv->convert( $name );
-			} else {
-				$name = $wikitextParser->getTargetLanguage()->convert( $name );
-			}
+
+			$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
+				->getLanguageConverter( $wikitextParser->getTargetLanguage() );
+			$name = $langConv->convert( $name );
 			$wikitextParser->getOutput()->setDisplayTitle( $name );
 		}
 		self::$renderingContext = false;
@@ -759,15 +756,12 @@ class PageTranslationHooks {
 	/**
 	 * Hook: PageSaveComplete
 	 *
-	 * Only run in versions of mediawiki beginning 1.35; before 1.35, ::addTranstag is used
-	 *
 	 * @param WikiPage $wikiPage
 	 * @param UserIdentity $userIdentity
 	 * @param string $summary
 	 * @param int $flags
 	 * @param RevisionRecord $revisionRecord
-	 * @param mixed $editResult documented as mixed because the EditResult class didn't exist
-	 *   before 1.35
+	 * @param EditResult $editResult
 	 * @return true
 	 */
 	public static function addTranstagAfterSave(
@@ -776,7 +770,7 @@ class PageTranslationHooks {
 		string $summary,
 		int $flags,
 		RevisionRecord $revisionRecord,
-		$editResult
+		EditResult $editResult
 	) {
 		$content = $wikiPage->getContent();
 
@@ -792,47 +786,6 @@ class PageTranslationHooks {
 			// Add the ready tag
 			$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
 			$page->addReadyTag( $revisionRecord->getId() );
-		}
-
-		return true;
-	}
-
-	/**
-	 * Hook: PageContentSaveComplete
-	 *
-	 * Only run in versions of mediawiki before 1.35; in 1.35+, ::addTranstag is used
-	 *
-	 * @param WikiPage $wikiPage
-	 * @param User $user
-	 * @param Content $content
-	 * @param string $summary
-	 * @param bool $minor
-	 * @param string $_1
-	 * @param bool $_2
-	 * @param int $flags
-	 * @param Revision $revision
-	 * @return true
-	 */
-	public static function addTranstag( WikiPage $wikiPage, $user, $content, $summary,
-		$minor, $_1, $_2, $flags, $revision
-	) {
-		// We are not interested in null revisions
-		if ( $revision === null ) {
-			return true;
-		}
-
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} else {
-			// Not applicable
-			return true;
-		}
-
-		$parser = Services::getInstance()->getTranslatablePageParser();
-		if ( $parser->containsMarkup( $text ) ) {
-			// Add the ready tag
-			$page = TranslatablePage::newFromTitle( $wikiPage->getTitle() );
-			$page->addReadyTag( $revision->getId() );
 		}
 
 		return true;
@@ -1354,8 +1307,6 @@ class PageTranslationHooks {
 	 * Hook to update source and destination translation pages on moving translation units
 	 * Hook: PageMoveComplete
 	 *
-	 * Only run in versions of mediawiki beginning 1.35; before 1.35, ::onMoveTranslationUnits is used
-	 *
 	 * @param LinkTarget $oldLinkTarget
 	 * @param LinkTarget $newLinkTarget
 	 * @param UserIdentity $userIdentity
@@ -1396,66 +1347,6 @@ class PageTranslationHooks {
 				continue;
 			}
 
-			$group = $handle->getGroup();
-			if ( !$group instanceof WikiPageMessageGroup ) {
-				continue;
-			}
-
-			$language = $handle->getCode();
-
-			// Ignore pages such as Translations:Page/unit without language code
-			if ( (string)$language === '' ) {
-				continue;
-			}
-
-			// Update the page only once if source and destination units
-			// belong to the same page
-			if ( $group !== $groupLast ) {
-				$groupLast = $group;
-				$page = TranslatablePage::newFromTitle( $group->getTitle() );
-				self::updateTranslationPage( $page, $language, $user, 0, $reason );
-			}
-		}
-	}
-
-	/**
-	 * Hook to update source and destination translation pages on moving translation units
-	 * Hook: TitleMoveComplete
-	 *
-	 * Only run in versions of mediawiki before 1.35; in 1.35+, ::onMovePageTranslationUnits is used
-	 *
-	 * @since 2014.08
-	 * @param Title $ot
-	 * @param Title $nt
-	 * @param User $user
-	 * @param int $oldid
-	 * @param int $newid
-	 * @param string $reason
-	 */
-	public static function onMoveTranslationUnits( Title $ot, Title $nt, User $user,
-		$oldid, $newid, $reason
-	) {
-		// TranslatablePageMoveJob takes care of handling updates because it performs
-		// a lot of moves at once. As a performance optimization, skip this hook if
-		// we detect moves from that job. As there isn't a good way to pass information
-		// to this hook what originated the move, we use some heuristics.
-		if ( defined( 'MEDIAWIKI_JOB_RUNNER' ) && $user->equals( FuzzyBot::getUser() ) ) {
-			return;
-		}
-
-		$groupLast = null;
-		foreach ( [ $ot, $nt ] as $title ) {
-			$handle = new MessageHandle( $title );
-			if ( !$handle->isValid() ) {
-				continue;
-			}
-
-			// Documentation pages are never translation pages
-			if ( $handle->isDoc() ) {
-				continue;
-			}
-
-			/** @var WikiPageMessageGroup */
 			$group = $handle->getGroup();
 			if ( !$group instanceof WikiPageMessageGroup ) {
 				continue;

@@ -130,8 +130,6 @@ class TranslateEditAddons {
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 *
-	 * Only run in versions of mediawiki beginning 1.35; before 1.35, ::onSave is used
-	 *
 	 * Hook: PageSaveComplete
 	 * @param WikiPage $wikiPage
 	 * @param UserIdentity $userIdentity
@@ -196,78 +194,6 @@ class TranslateEditAddons {
 		if ( $wgEnablePageTranslation && $handle->isPageTranslation() ) {
 			// Updates for translatable pages only
 			$minor = $flags & EDIT_MINOR;
-			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
-				$summary, $minor, $flags, $handle );
-		}
-
-		return true;
-	}
-
-	/**
-	 * Runs message checks, adds tp:transver tags and updates statistics.
-	 *
-	 * Only run in versions of mediawiki before 1.35; in 1.35+, ::onSaveComplete is used
-	 *
-	 * Hook: PageContentSaveComplete
-	 * @param WikiPage $wikiPage
-	 * @param User $user
-	 * @param Content $content
-	 * @param string $summary
-	 * @param bool $minor
-	 * @param string $_1
-	 * @param bool $_2
-	 * @param int $flags
-	 * @param Revision|null $revision
-	 * @return true
-	 */
-	public static function onSave( WikiPage $wikiPage, User $user, Content $content, $summary,
-		$minor, $_1, $_2, $flags, Revision $revision = null
-	) {
-		global $wgEnablePageTranslation;
-
-		if ( !$content instanceof TextContent ) {
-			// Screw it, not interested
-			return true;
-		}
-
-		$text = $content->getNativeData();
-		$title = $wikiPage->getTitle();
-		$handle = new MessageHandle( $title );
-
-		if ( !$handle->isValid() ) {
-			return true;
-		}
-
-		// Update it.
-		if ( $revision === null ) {
-			$revId = $wikiPage->getTitle()->getLatestRevID();
-		} else {
-			$revId = $revision->getID();
-		}
-
-		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
-		self::updateFuzzyTag( $title, $revId, $fuzzy );
-
-		$group = $handle->getGroup();
-		// Update translation stats - source language should always be up to date
-		if ( $handle->getCode() !== $group->getSourceLanguage() ) {
-			// This will update in-process cache immediately, but the value is saved
-			// to the database in a deferred update. See MessageGroupStats::queueUpdates.
-			// In case an error happens before that, the stats may be stale, but that
-			// would be fixed by the next update or purge.
-			MessageGroupStats::clear( $handle );
-		}
-
-		MessageGroupStatesUpdaterJob::onChange( $handle );
-
-		if ( $fuzzy === false ) {
-			Hooks::run( 'Translate:newTranslation', [ $handle, $revId, $text, $user ] );
-		}
-
-		TTMServer::onChange( $handle );
-
-		if ( $wgEnablePageTranslation && $handle->isPageTranslation() ) {
-			// Updates for translatable pages only
 			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
 				$summary, $minor, $flags, $handle );
 		}

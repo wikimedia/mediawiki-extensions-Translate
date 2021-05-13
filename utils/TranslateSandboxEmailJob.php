@@ -22,26 +22,16 @@ class TranslateSandboxEmailJob extends Job {
 
 	public function run() {
 		$services = MediaWikiServices::getInstance();
-		if ( is_callable( [ $services, 'getEmailer' ] ) ) {
-			$status = $services
-				->getEmailer()
-				->send(
-					[ $this->params['to'] ],
-					$this->params['from'],
-					$this->params['subj'],
-					$this->params['body'],
-					null,
-					[ 'replyTo' => $this->params['replyto'] ]
-				);
-		} else {
-			$status = UserMailer::send(
-				$this->params['to'],
+		$status = $services
+			->getEmailer()
+			->send(
+				[ $this->params['to'] ],
 				$this->params['from'],
 				$this->params['subj'],
 				$this->params['body'],
+				null,
 				[ 'replyTo' => $this->params['replyto'] ]
 			);
-		}
 
 		$isOK = $status->isOK();
 
@@ -52,15 +42,9 @@ class TranslateSandboxEmailJob extends Job {
 			$reminders = $reminders ? explode( '|', $reminders ) : [];
 			$reminders[] = wfTimestamp();
 
-			if ( method_exists( $services, 'getUserOptionsManager' ) ) {
-				// MW 1.35+
-				$userOptionsManager = $services->getUserOptionsManager();
-				$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', implode( '|', $reminders ) );
-				$userOptionsManager->saveOptions( $user );
-			} else {
-				$user->setOption( 'translate-sandbox-reminders', implode( '|', $reminders ) );
-				$user->saveSettings();
-			}
+			$userOptionsManager = $services->getUserOptionsManager();
+			$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', implode( '|', $reminders ) );
+			$userOptionsManager->saveOptions( $user );
 		}
 
 		return $isOK;

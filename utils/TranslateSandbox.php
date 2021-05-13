@@ -47,12 +47,7 @@ class TranslateSandbox {
 		$creator = TranslateUserManager::getUser();
 		$guard = $permissionManager->addTemporaryUserRights( $creator, 'createaccount' );
 
-		if ( method_exists( MediaWikiServices::class, 'getAuthManager' ) ) {
-			// MediaWiki 1.35+
-			$authManager = MediaWikiServices::getInstance()->getAuthManager();
-		} else {
-			$authManager = AuthManager::singleton();
-		}
+		$authManager = MediaWikiServices::getInstance()->getAuthManager();
 		$reqs = $authManager->getAuthenticationRequests( AuthManager::ACTION_CREATE );
 		$reqs = AuthenticationRequest::loadRequestsFromSubmission( $reqs, $data );
 		$res = $authManager->beginAccountCreation( $creator, $reqs, 'null:' );
@@ -81,12 +76,7 @@ class TranslateSandbox {
 		}
 
 		// group-translate-sandboxed group-translate-sandboxed-member
-		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
-			// MediaWiki 1.35+
-			MediaWikiServices::getInstance()->getUserGroupManager()->addUserToGroup( $user, 'translate-sandboxed' );
-		} else {
-			$user->addGroup( 'translate-sandboxed' );
-		}
+		MediaWikiServices::getInstance()->getUserGroupManager()->addUserToGroup( $user, 'translate-sandboxed' );
 
 		return $user;
 	}
@@ -178,31 +168,16 @@ class TranslateSandbox {
 
 		$services = MediaWikiServices::getInstance();
 
-		if ( method_exists( $services, 'getUserGroupManager' ) ) {
-			// MediaWiki 1.35+
-			$userGroupManager = $services->getUserGroupManager();
-			$userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
+		$userGroupManager = $services->getUserGroupManager();
+		$userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
 
-			if ( $wgTranslateSandboxPromotedGroup ) {
-				$userGroupManager->addUserToGroup( $user, $wgTranslateSandboxPromotedGroup );
-			}
-		} else {
-			$user->removeGroup( 'translate-sandboxed' );
-
-			if ( $wgTranslateSandboxPromotedGroup ) {
-				$user->addGroup( $wgTranslateSandboxPromotedGroup );
-			}
+		if ( $wgTranslateSandboxPromotedGroup ) {
+			$userGroupManager->addUserToGroup( $user, $wgTranslateSandboxPromotedGroup );
 		}
 
-		if ( method_exists( $services, 'getUserOptionsManager' ) ) {
-			// MW 1.35+
-			$userOptionsManager = $services->getUserOptionsManager();
-			$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
-			$userOptionsManager->saveOptions( $user );
-		} else {
-			$user->setOption( 'translate-sandbox-reminders', '' );
-			$user->saveSettings();
-		}
+		$userOptionsManager = $services->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
+		$userOptionsManager->saveOptions( $user );
 	}
 
 	/**
@@ -273,15 +248,8 @@ class TranslateSandbox {
 	 * @since 2013.06
 	 */
 	public static function isSandboxed( User $user ) {
-		if ( method_exists( MediaWikiServices::class, 'getUserGroupManager' ) ) {
-			// MediaWiki 1.35+
-			$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
-			$groups = $userGroupManager->getUserGroups( $user );
-		} else {
-			$groups = $user->getGroups();
-		}
-
-		return in_array( 'translate-sandboxed', $groups, true );
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+		return in_array( 'translate-sandboxed', $userGroupManager->getUserGroups( $user ), true );
 	}
 
 	/**

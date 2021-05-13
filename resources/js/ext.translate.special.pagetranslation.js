@@ -47,21 +47,11 @@ function configurePostLinks( $container ) {
 
 // Init
 $( function () {
-	var mediaWikiVersion = mw.config.get( 'wgVersion' ),
-		$widgets = $( '#mw-translate-SpecialPageTranslation-prioritylangs' );
+	var $widgets = $( '#mw-translate-SpecialPageTranslation-prioritylangs' );
 
 	configurePostLinks( $( '#mw-content-text' ) );
 
 	if ( $widgets.length ) {
-		// On MW 1.34, pre-selected priority languages are not being displayed when using
-		// LanguagesMultiselectWidget, which in turn uses MenuTagMultiselectWidget.
-		// This could be due to an older version of OOUI.
-		// Use a normal textarea and remove the loading input.
-		if ( ( /^1\.34\./ ).test( mediaWikiVersion ) ) {
-			$widgets.find( '.oo-ui-textInputWidget' ).last().remove();
-			return;
-		}
-
 		configureLanguageInput( $( '.mw-tpt-sp-markform' ), $widgets );
 	}
 } );

@@ -13,8 +13,6 @@ use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
-use MediaWiki\Hook\PageMoveCompleteHook;
-use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -50,12 +48,7 @@ class TranslateHooks {
 			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 		}
 
-		$usePageSaveComplete = version_compare( TranslateUtils::getMWVersion(), '1.35', '>=' );
-		if ( $usePageSaveComplete ) {
-			$wgHooks['PageSaveComplete'][] = 'TranslateEditAddons::onSaveComplete';
-		} else {
-			$wgHooks['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
-		}
+		$wgHooks['PageSaveComplete'][] = 'TranslateEditAddons::onSaveComplete';
 
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
@@ -142,11 +135,8 @@ class TranslateHooks {
 				'PageTranslationHooks::tpSyntaxCheckForEditContent';
 
 			// Add transtag to page props for discovery
-			if ( $usePageSaveComplete ) {
-				$wgHooks['PageSaveComplete'][] = 'PageTranslationHooks::addTranstagAfterSave';
-			} else {
-				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-			}
+			$wgHooks['PageSaveComplete'][] = 'PageTranslationHooks::addTranstagAfterSave';
+
 			$wgHooks['RevisionRecordInserted'][] =
 				'PageTranslationHooks::updateTranstagOnNullRevisions';
 
@@ -196,11 +186,7 @@ class TranslateHooks {
 			$wgHooks['SkinTemplateNavigation'][] = 'PageTranslationHooks::translateTab';
 
 			// Update translated page when translation unit is moved
-			if ( interface_exists( PageMoveCompleteHook::class ) ) {
-				$wgHooks['PageMoveComplete'][] = 'PageTranslationHooks::onMovePageTranslationUnits';
-			} else {
-				$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
-			}
+			$wgHooks['PageMoveComplete'][] = 'PageTranslationHooks::onMovePageTranslationUnits';
 
 			// Update translated page when translation unit is deleted
 			$wgHooks['ArticleDeleteComplete'][] = 'PageTranslationHooks::onDeleteTranslationUnit';
@@ -284,12 +270,7 @@ class TranslateHooks {
 			}
 		}
 
-		// Add the BaseTemplateToolbox handler only when the new hook hasn't been defined yet.
-		if ( interface_exists( SidebarBeforeOutputHook::class ) ) {
-			$wgHooks['SidebarBeforeOutput'][] = 'TranslateToolbox::toolboxAllTranslations';
-		} else {
-			$wgHooks['BaseTemplateToolbox'][] = 'TranslateToolbox::toolboxAllTranslationsOld';
-		}
+		$wgHooks['SidebarBeforeOutput'][] = 'TranslateToolbox::toolboxAllTranslations';
 	}
 
 	/**
@@ -876,11 +857,6 @@ class TranslateHooks {
 
 	/** @param ResourceLoader $resourceLoader */
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
-		// Support: MediaWiki <= 1.34
-		$hasOldTokens = $hasOldNotify = version_compare(
-			TranslateUtils::getMWVersion(), '1.35', '<'
-		);
-
 		$tpl = [
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'Translate',
@@ -936,7 +912,7 @@ class TranslateHooks {
 			],
 			'ext.translate.special.managetranslatorsandbox' => $tpl + [
 				'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
-				'dependencies' => array_merge( [
+				'dependencies' => [
 					'ext.translate.loader',
 					'ext.translate.translationstashstorage',
 					'ext.uls.mediawiki',
@@ -944,7 +920,7 @@ class TranslateHooks {
 					'mediawiki.api',
 					'mediawiki.jqueryMsg',
 					'mediawiki.language',
-				], $hasOldNotify ? [ 'mediawiki.notify' ] : [] ),
+				],
 				'messages' => [
 					'tsb-accept-all-button-label',
 					'tsb-accept-button-label',
@@ -986,7 +962,7 @@ class TranslateHooks {
 					'mediawiki.ui.button',
 					'mediawiki.widgets',
 					'oojs-ui-widgets',
-					$hasOldTokens ? 'user.tokens' : 'user.options',
+					'user.options',
 				],
 				'targets' => [
 					'desktop'
@@ -1007,7 +983,7 @@ class TranslateHooks {
 					"resources/css/ext.translate.pagemode.css",
 					"resources/css/ext.translate.proofread.css"
 				],
-				"dependencies" => array_merge( [
+				"dependencies" => [
 					"ext.translate.base",
 					"ext.translate.dropdownmenu",
 					"jquery.makeCollapsible",
@@ -1018,7 +994,7 @@ class TranslateHooks {
 					"mediawiki.language",
 					"mediawiki.user",
 					"mediawiki.util"
-				], $hasOldNotify ? [ 'mediawiki.notify' ] : [] ),
+				],
 				"messages" => [
 					"translate-edit-askpermission",
 					"translate-edit-nopermission",
@@ -1076,9 +1052,9 @@ class TranslateHooks {
 				]
 			],
 			"ext.translate.special.managegroups" => $tpl + [
-				"dependencies" => array_merge( [
+				"dependencies" => [
 					"ext.translate.messagerenamedialog"
-				], $hasOldNotify ? [ 'mediawiki.notify' ] : [] ),
+				],
 				"messages" => [
 					"translate-smg-rename-new",
 					"translate-smg-rename-rename",

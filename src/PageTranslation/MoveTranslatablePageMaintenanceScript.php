@@ -72,15 +72,8 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$reason = $this->getOption( 'reason', '' );
 		$moveSubpages = $this->hasOption( 'move-subpages' );
 
-		if ( is_callable( [ $mwService, 'getUserFactory' ] ) ) {
-			// MW 1.35+
-			$userFactory = $mwService->getUserFactory();
-			$user = $userFactory->newFromName( $username );
-		} else {
-			$user = \User::newFromName( $username );
-			// Set to null if $user is false
-			$user = $user ?: null;
-		}
+		$userFactory = $mwService->getUserFactory();
+		$user = $userFactory->newFromName( $username );
 
 		if ( $user === null || !$user->isRegistered() ) {
 			$this->fatalError( "User $username does not exist." );

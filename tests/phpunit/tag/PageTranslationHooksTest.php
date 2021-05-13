@@ -163,27 +163,14 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$wikiPage = WikiPage::newFromID( $title->getArticleID() );
-		if ( method_exists( $wikiPage, 'insertNullProtectionRevision' ) ) {
-			// MW 1.35+
-			$nullRev = $wikiPage->insertNullProtectionRevision(
-				'test comment',
-				[ 'edit' => 'sysop' ],
-				[ 'edit' => '20200101040404' ],
-				false,
-				'Testing',
-				$this->getTestUser()->getUser()
-			);
-		} else {
-			$nullRev = $wikiPage->insertProtectNullRevision(
-				'test comment',
-				[ 'edit' => 'sysop' ],
-				[ 'edit' => '20200101040404' ],
-				false,
-				'Testing',
-				$this->getTestUser()->getUser()
-			);
-		}
-		// $nullRev is either a RevisionRecord or a Revision, both work for the test
+		$nullRev = $wikiPage->insertNullProtectionRevision(
+			'test comment',
+			[ 'edit' => 'sysop' ],
+			[ 'edit' => '20200101040404' ],
+			false,
+			'Testing',
+			$this->getTestUser()->getUser()
+		);
 
 		$this->assertNotNull( $nullRev, 'Sanity: must create null revision' );
 		$this->assertEquals(

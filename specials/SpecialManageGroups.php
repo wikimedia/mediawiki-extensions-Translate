@@ -543,7 +543,6 @@ class SpecialManageGroups extends SpecialPage {
 		foreach ( $pagesInGroup as $spName => $section ) {
 			$spClass = $specialPageFactory->getPage( $spName );
 
-			// DisabledSpecialPage was added in MW 1.33
 			if ( $spClass === null || $spClass instanceof DisabledSpecialPage ) {
 				continue; // Page explicitly disabled
 			}
