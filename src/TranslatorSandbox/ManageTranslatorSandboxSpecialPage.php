@@ -164,7 +164,7 @@ HTML;
 		</button>
 	</div>
 	<div class="five columns request-count"></div>
-	<div class="three columns center">
+	<div class="three columns text-center">
 		<input class="request-selector-all" name="request" type="checkbox" />
 	</div>
 </div>
@@ -195,7 +195,7 @@ HTML;
 		<div class="row username">$nameEnc</div>
 		<div class="row email" dir="ltr">$emailEnc</div>
 	</div>
-	<div class="three columns approval center">
+	<div class="three columns approval text-center">
 		<input class="row request-selector" name="request" type="checkbox" />
 		<div class="row signup-age">$agoEnc</div>
 	</div>
