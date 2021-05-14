@@ -39,7 +39,7 @@
 		"davefx/phplot": "6.2.1"
 	},
 	"require-dev": {
-		"mediawiki/mediawiki-codesniffer": "19.1.0",
+		"mediawiki/mediawiki-codesniffer": "19.4.0",
 		"mediawiki/minus-x": "0.3.1",
 		"php-parallel-lint/php-console-highlighter": "0.3.2",
 		"php-parallel-lint/php-parallel-lint": "1.0.0"
