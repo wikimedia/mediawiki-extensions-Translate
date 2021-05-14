@@ -235,6 +235,7 @@
 	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|порака|пораки}} со грешки:",
 	"translate-smg-group-message-action-history": "Историја",
 	"translate-smg-group-action-resolve": "Означи како решено",
+	"translate-smg-group-sync-error-warn": "Во групава се појави грешка при усогласувањето. Поправете ги грешките пред да ја обработите.",
 	"translate-smg-group-message-tag-outdated": "Застарени",
 	"translate-smg-group-message-tag-rename": "Преименувај",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Ознака|Ознаки}}:",
