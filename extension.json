@@ -113,6 +113,7 @@
 		"GettextParseException": "ffs/GettextParseException.php",
 		"GettextPluralException": "ffs/GettextPluralException.php",
 		"GoogleTranslateWebService": "webservices/GoogleTranslateWebService.php",
+		"GroupsAid": "translationaids/GroupsAid.php",
 		"HashMessageIndex": "utils/MessageIndex.php",
 		"HTMLJsSelectToInputField": "utils/HTMLJsSelectToInputField.php",
 		"IniFFS": "ffs/IniFFS.php",

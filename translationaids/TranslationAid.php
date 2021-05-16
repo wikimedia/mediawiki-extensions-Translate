@@ -56,6 +56,7 @@ abstract class TranslationAid {
 	 */
 	public static function getTypes(): array {
 		return [
+			'groups' => GroupsAid::class,
 			'definition' => MessageDefinitionAid::class,
 			'translation' => CurrentTranslationAid::class,
 			'inotherlanguages' => InOtherLanguagesAid::class,
