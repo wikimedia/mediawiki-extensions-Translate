@@ -1,11 +1,5 @@
 <?php
-/**
- * Translation aid code.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
  * Multipurpose class for translation aids:
@@ -13,6 +7,8 @@
  *  - listing of available translation aids
  *
  * @defgroup TranslationAids Translation Aids
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
  */
 abstract class TranslationAid {
@@ -58,20 +54,18 @@ abstract class TranslationAid {
 	 *
 	 * @return array
 	 */
-	public static function getTypes() {
-		$types = [
-			'definition' => 'MessageDefinitionAid',
-			'translation' => 'CurrentTranslationAid',
-			'inotherlanguages' => 'InOtherLanguagesAid',
-			'documentation' => 'DocumentationAid',
-			'mt' => 'MachineTranslationAid',
-			'definitiondiff' => 'UpdatedDefinitionAid',
-			'ttmserver' => 'TTMServerAid',
-			'support' => 'SupportAid',
-			'gettext' => 'GettextDocumentationAid',
-			'insertables' => 'InsertablesAid',
+	public static function getTypes(): array {
+		return [
+			'definition' => MessageDefinitionAid::class,
+			'translation' => CurrentTranslationAid::class,
+			'inotherlanguages' => InOtherLanguagesAid::class,
+			'documentation' => DocumentationAid::class,
+			'mt' => MachineTranslationAid::class,
+			'definitiondiff' => UpdatedDefinitionAid::class,
+			'ttmserver' => TTMServerAid::class,
+			'support' => SupportAid::class,
+			'gettext' => GettextDocumentationAid::class,
+			'insertables' => InsertablesAid::class,
 		];
-
-		return $types;
 	}
 }
