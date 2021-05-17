@@ -161,7 +161,8 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 			return null;
 		}
 
-		return ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
+		$content = $rev->getContent( SlotRecord::MAIN );
+		return ( $content instanceof TextContent ) ? $content->getText() : null;
 	}
 
 	/** @return ValidationRunner */

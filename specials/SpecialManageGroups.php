@@ -298,11 +298,10 @@ class SpecialManageGroups extends SpecialPage {
 		$titleLink = $this->getLinkRenderer()->makeLink( $title );
 
 		if ( $type === 'deletion' ) {
-			$wiki = ContentHandler::getContentText(
-				$this->revLookup
-					->getRevisionByTitle( $title )
-					->getContent( SlotRecord::MAIN )
-			);
+			$content = $this->revLookup
+				->getRevisionByTitle( $title )
+				->getContent( SlotRecord::MAIN );
+			$wiki = ( $content instanceof TextContent ) ? $content->getText() : '';
 
 			if ( $wiki === '' ) {
 				$noticeHtml .= Html::warningBox(

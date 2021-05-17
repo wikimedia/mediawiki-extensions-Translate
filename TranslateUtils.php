@@ -133,7 +133,8 @@ class TranslateUtils {
 			return null;
 		}
 
-		$wiki = ContentHandler::getContentText( $revision->getContent( SlotRecord::MAIN ) );
+		$content = $revision->getContent( SlotRecord::MAIN );
+		$wiki = ( $content instanceof TextContent ) ? $content->getText() : null;
 
 		if ( !$wiki ) {
 			return null;

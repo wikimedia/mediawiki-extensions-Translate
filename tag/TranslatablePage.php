@@ -145,7 +145,8 @@ class TranslatablePage {
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
 			->getRevisionByTitle( $this->getTitle(), $this->revision, $flags );
-		$text = ContentHandler::getContentText( $rev->getContent( SlotRecord::MAIN ) );
+		$content = $rev->getContent( SlotRecord::MAIN );
+		$text = ( $content instanceof TextContent ) ? $content->getText() : null;
 
 		if ( !is_string( $text ) ) {
 			throw new RuntimeException( "Failed to load text for $page" );
