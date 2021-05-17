@@ -345,9 +345,9 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 		if ( !$this->singleLanguage() ) {
 			$this->page->unmarkTranslatablePage();
+			$this->clearMetadata();
 		}
 
-		$this->clearMetadata();
 		MessageGroups::singleton()->recache();
 		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
 
