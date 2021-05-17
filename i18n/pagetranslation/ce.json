@@ -38,7 +38,7 @@
 	"pm-cancel-button-label": "Йухайаккхар",
 	"pm-page-does-not-exist": "«$1» йац",
 	"pm-old-translations-missing": "$1 шира гочдарш чохь дац",
-	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:",
+	"pm-pagename-missing": "Дехар до, дӀайазйе агӀонан цӀе:",
 	"pm-pagetitle-invalid": "Дехар до, дӀаязеъе агӀона нийса цӀе.",
 	"pm-langcode-missing": "Дехар до, меттан код йазйе",
 	"pp-save-summary": "АгӀо гочян кечяр",
@@ -48,7 +48,7 @@
 	"pp-save-button-label": "Ӏалашйан",
 	"pp-cancel-button-label": "Цаоьшу",
 	"pp-save-message": "АгӀо Ӏалашйина. Хьан йиш йу иза [$1 тайан].",
-	"pp-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе.",
+	"pp-pagename-missing": "Дехар до, дӀайазйе агӀонан цӀе.",
 	"pp-diff-old-header": "ДӀадолалун йоза",
 	"pp-diff-new-header": "Кечдина йоза",
 	"tpt-generic-button": "Бакъдан"

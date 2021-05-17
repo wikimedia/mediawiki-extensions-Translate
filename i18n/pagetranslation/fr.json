@@ -252,7 +252,7 @@
 	"pp-pagename-missing": "Veuillez entrer le nom de la page.",
 	"pp-diff-old-header": "Texte source",
 	"pp-diff-new-header": "Texte préparé",
-	"tpt-unlink-confirm": "Veuillez confirmer que vous voulez vraiment supprimer cette page du système de traduction.\nLe sélecteur de langue et les noms des pages traduites cesseront de fonctionner.\nLes pages traduites deviendront modifiables.",
+	"tpt-unlink-confirm": "Veuillez confirmer que vous voulez vraiment supprimer cette page du système de traduction.\nLe sélecteur de langue et les noms des pages des traductions cesseront de fonctionner.\nLes pages des traductions deviendront modifiables.",
 	"tpt-unlink-button": "Retirer la possibilité de traduire",
 	"tpt-unlink-summary": "Possibilité retirée de traduire la page",
 	"tpt-generic-confirm": "Veuillez confirmer l’action.",

@@ -270,6 +270,7 @@
 	"translate-smg-group-with-error-summary": "$1 message{{PLURAL:$1||s}} avec des erreurs :",
 	"translate-smg-group-message-action-history": "Historique",
 	"translate-smg-group-action-resolve": "Marquer comme résolu",
+	"translate-smg-group-sync-error-warn": "Ce groupe a eu une erreur lors de la synchronisation. Veuillez les corriger avant de traiter ce groupe.",
 	"translate-smg-group-message-tag-outdated": "Périmé",
 	"translate-smg-group-message-tag-rename": "Renommer",
 	"translate-smg-group-message-tag-label": "Balise{{PLURAL:$1||s}} :",
