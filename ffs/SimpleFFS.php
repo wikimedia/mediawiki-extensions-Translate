@@ -349,7 +349,7 @@ class SimpleFFS implements FFS {
 			}
 		}
 
-		return $authors;
+		return array_values( $authors );
 	}
 
 	/**

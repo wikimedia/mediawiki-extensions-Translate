@@ -75,14 +75,9 @@ class JsonFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$messages = [];
 		$template = $this->read( $collection->getLanguage() );
-
-		$messages['@metadata'] = $template['EXTRA']['METADATA'] ?? [];
-
-		$authors = $collection->getAuthors();
-		$authors = $this->filterAuthors( $authors, $collection->getLanguage() );
-		$messages['@metadata']['authors'] = array_values( $authors );
+		$authors = $this->filterAuthors( $collection->getAuthors(), $collection->getLanguage() );
+		$messages = [];
 
 		$mangler = $this->group->getMangler();
 
@@ -101,17 +96,23 @@ class JsonFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
-		// Do not create empty files. Check that something besides @metadata is present.
-		if ( count( $messages ) < 2 ) {
+		// Do not create files without translations
+		if ( $messages === [] ) {
 			return '';
 		}
 
+		return $this->generateFile( $template, $authors, $messages );
+	}
+
+	public function generateFile( array $template, array $authors, array $messages ): string {
 		if ( $this->flattener ) {
 			$messages = $this->flattener->unflatten( $messages );
 		}
 
-		if ( isset( $this->extra['includeMetadata'] ) && !$this->extra['includeMetadata'] ) {
-			unset( $messages['@metadata'] );
+		if ( $this->extra['includeMetadata'] ?? true ) {
+			$metadata = $template['EXTRA']['METADATA'] ?? [];
+			$metadata['authors'] = $authors;
+			$messages = [ '@metadata' => $metadata ] + $messages;
 		}
 
 		return FormatJson::encode( $messages, "\t", FormatJson::ALL_OK ) . "\n";
