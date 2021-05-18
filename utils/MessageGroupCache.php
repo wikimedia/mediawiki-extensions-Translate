@@ -21,7 +21,7 @@ class MessageGroupCache {
 	public const NO_SOURCE = 1;
 	public const NO_CACHE = 2;
 	public const CHANGED = 3;
-
+	private const VERSION = '4';
 	/** @var FileBasedMessageGroup */
 	protected $group;
 	/** @var Reader */
@@ -151,10 +151,8 @@ class MessageGroupCache {
 		$cache->set( '#created', $created ?: wfTimestamp() );
 		$cache->set( '#updated', wfTimestamp() );
 		$cache->set( '#filehash', $hash );
-		$cache->set( '#msgcount', count( $messages ) );
-		ksort( $messages );
-		$cache->set( '#msghash', md5( serialize( $messages ) ) );
-		$cache->set( '#version', '3' );
+		$cache->set( '#msghash', md5( serialize( $parseOutput ) ) );
+		$cache->set( '#version', self::VERSION );
 		$cache->close();
 	}
 
@@ -203,7 +201,14 @@ class MessageGroupCache {
 			$reason = self::NO_SOURCE;
 
 			return false;
-		} elseif ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
+		}
+
+		if ( $this->get( '#version' ) !== self::VERSION ) {
+			$reason = self::CHANGED;
+			return false;
+		}
+
+		if ( filemtime( $filename ) <= $this->get( '#updated' ) ) {
 			return true;
 		}
 
@@ -219,21 +224,9 @@ class MessageGroupCache {
 			return true;
 		}
 
-		// Message count check
+		// Parse output hash check
 		$parseOutput = $parseOutput ?? $group->parseExternal( $this->code );
-		$messages = $parseOutput['MESSAGES'];
-		// CDB converts numbers to strings
-		$count = (int)( $this->get( '#msgcount' ) );
-		if ( $count !== count( $messages ) ) {
-			// Number of messsages has changed
-			$reason = self::CHANGED;
-
-			return false;
-		}
-
-		// Content hash check
-		ksort( $messages );
-		if ( $this->get( '#msghash' ) === md5( serialize( $messages ) ) ) {
+		if ( $this->get( '#msghash' ) === md5( serialize( $parseOutput ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
 			$this->create( $created );
 
