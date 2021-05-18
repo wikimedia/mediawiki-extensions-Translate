@@ -323,7 +323,7 @@ class SimpleFFS implements FFS {
 	 * @param string $code
 	 * @return array
 	 */
-	protected function filterAuthors( array $authors, $code ) {
+	public function filterAuthors( array $authors, $code ) {
 		global $wgTranslateAuthorBlacklist;
 		$groupId = $this->group->getId();
 
