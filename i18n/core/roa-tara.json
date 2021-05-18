@@ -229,6 +229,7 @@
 	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|messàgge}} cu errore:",
 	"translate-smg-group-message-action-history": "Cunde",
 	"translate-smg-group-action-resolve": "Signe cumme resolte",
+	"translate-smg-group-sync-error-warn": "Stu gruppe ave avute 'n'errore durande 'a sincronizzazzione. Pe piacere corregge le errore apprime de processà stu gruppe.",
 	"translate-smg-group-message-tag-outdated": "Non aggiornate",
 	"translate-smg-group-message-tag-rename": "Renomene",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Tag}}:",
