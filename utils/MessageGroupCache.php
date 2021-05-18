@@ -5,6 +5,9 @@
  * @license GPL-2.0-or-later
  */
 
+use Cdb\Reader;
+use Cdb\Writer;
+
 /**
  * Caches messages of file based message group source file. Can also track
  * that the cache is up to date. Parsing the source files can be slow, so
@@ -21,7 +24,7 @@ class MessageGroupCache {
 
 	/** @var FileBasedMessageGroup */
 	protected $group;
-	/** @var \Cdb\Reader */
+	/** @var Reader */
 	protected $cache;
 	/** @var string */
 	protected $code;
@@ -138,7 +141,7 @@ class MessageGroupCache {
 		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
 
 		wfMkdirParents( dirname( $this->getCacheFilePath() ) );
-		$cache = \Cdb\Writer::open( $this->getCacheFilePath() );
+		$cache = Writer::open( $this->getCacheFilePath() );
 
 		foreach ( $messages as $key => $value ) {
 			$cache->set( $key, $value );
@@ -264,11 +267,11 @@ class MessageGroupCache {
 
 	/**
 	 * Open the cache for reading.
-	 * @return \Cdb\Reader
+	 * @return Reader
 	 */
 	protected function open() {
 		if ( $this->cache === null ) {
-			$this->cache = \Cdb\Reader::open( $this->getCacheFilePath() );
+			$this->cache = Reader::open( $this->getCacheFilePath() );
 		}
 
 		return $this->cache;
