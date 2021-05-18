@@ -40,7 +40,7 @@ class JsonFFSTest extends MediaWikiIntegrationTestCase {
 		$expected = [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
-			'METADATA' => [],
+			'EXTRA' => [ 'METADATA' => [] ],
 		];
 		$this->assertEquals( $expected, $parsed );
 
@@ -129,7 +129,7 @@ JSON;
 
 		$this->assertEquals(
 			'metavalue',
-			$parsed['METADATA']['metakey'],
+			$parsed['EXTRA']['METADATA']['metakey'],
 			'metadata is preserved'
 		);
 	}

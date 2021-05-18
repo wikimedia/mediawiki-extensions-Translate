@@ -66,7 +66,7 @@ class JsonFFS extends SimpleFFS {
 		return [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
-			'METADATA' => $metadata,
+			'EXTRA' => [ 'METADATA' => $metadata ],
 		];
 	}
 
@@ -78,7 +78,7 @@ class JsonFFS extends SimpleFFS {
 		$messages = [];
 		$template = $this->read( $collection->getLanguage() );
 
-		$messages['@metadata'] = $template['METADATA'] ?? [];
+		$messages['@metadata'] = $template['EXTRA']['METADATA'] ?? [];
 
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->getLanguage() );
