@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34.031">
 	<g color="#000">
-		<path fill-opacity=".083" stroke="#54595d" stroke-opacity=".196" stroke-width=".5" d="M16.978.24C7.715.24.245 7.756.245 17.02c0 9.263 7.47 16.778 16.733 16.778 9.262 0 16.777-7.515 16.777-16.778C33.755 7.755 26.24.24 16.978.24zm0 4.15c6.966 0 12.627 5.66 12.627 12.628 0 6.967-5.66 12.583-12.627 12.583-6.967 0-12.584-5.615-12.584-12.582 0-6.967 5.617-12.627 12.584-12.627z" overflow="visible"/>
-		<path fill="none" stroke="#36c" stroke-width="2.258" d="M31.677 17.004a14.68 14.68 0 0 1-10.88 14.18" stroke-linecap="round" overflow="visible"/>
+		<path fill-opacity=".083" stroke="#54595d" stroke-opacity=".196" stroke-width=".5" d="M16.978.24C7.715.24.245 7.756.245 17.02c0 9.263 7.47 16.778 16.733 16.778 9.262 0 16.777-7.515 16.777-16.778C33.755 7.755 26.24.24 16.978.24zm0 4.15c6.966 0 12.627 5.66 12.627 12.628 0 6.967-5.66 12.583-12.627 12.583A12.56 12.56 0 0 1 4.394 17.019c0-6.967 5.617-12.627 12.584-12.627z" overflow="visible"/>
+		<path fill="none" stroke="#36c" stroke-linecap="round" stroke-width="2.258" d="M31.677 17.004a14.68 14.68 0 0 1-10.88 14.18" overflow="visible"/>
 	</g>
 </svg>

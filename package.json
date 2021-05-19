@@ -1,6 +1,7 @@
 {
 	"private": true,
 	"scripts": {
+		"minify-svg": "svgo --config=.svgo.config.js -q -r -f resources/images/",
 		"test": "grunt test"
 	},
 	"devDependencies": {
@@ -9,6 +10,7 @@
 		"grunt-banana-checker": "0.9.0",
 		"grunt-eslint": "23.0.0",
 		"grunt-stylelint": "0.16.0",
-		"stylelint-config-wikimedia": "0.10.3"
+		"stylelint-config-wikimedia": "0.10.3",
+		"svgo": "2.3.0"
 	}
 }
