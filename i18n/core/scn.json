@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Aushulz",
 			"Gmelfi",
 			"Sarvaturi"
@@ -18,6 +19,7 @@
 	"translate-rc-translation-filter-only": "Ammustra sulu li traduzzioni",
 	"translate-rc-translation-filter-filter": "Elìmina li traduzzioni",
 	"translate-rc-translation-filter-site": "Sulu li canciamenti ê missaggi dô situ",
+	"translate-statsf-scale-years": "Anni",
 	"translate-statsf-scale-months": "Misi",
 	"translate-statsf-scale-weeks": "Simani",
 	"translate-statsf-scale-days": "Jorna",
