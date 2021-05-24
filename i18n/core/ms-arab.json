@@ -8,6 +8,7 @@
 	"translate-extensionname": "ترجمه",
 	"translate-taction-translate": "ترجمه",
 	"translate-taction-lstats": "ستاتيستيک بهاس",
+	"translate-page-settings-legend": "تتڤن",
 	"translate-page-language": "بهاس",
 	"translate-page-navigation-legend": "ڤندو اره",
 	"translate-next": "لامن ستروسڽ",
@@ -17,5 +18,7 @@
 	"right-translate-messagereview": "سيمق سمولا ترجمهن",
 	"translate-statsf-scale-days": "هاري",
 	"translate-statsf-count-edits": "بيلڠن سونتيڠن",
-	"translate-documentation-language": "ڤندوکومنن ڤسنن"
+	"translate-sidebar-alltrans": "دالم بهاس لاءين",
+	"translate-documentation-language": "ڤندوکومنن ڤسنن",
+	"tux-editor-in-other-languages": "دالم بهاس لاءين"
 }

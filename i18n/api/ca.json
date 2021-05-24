@@ -3,7 +3,8 @@
 		"authors": [
 			"Alvaro Vidal-Abarca",
 			"Fitoschido",
-			"Jlrb+"
+			"Jlrb+",
+			"Jmarchn"
 		]
 	},
 	"apihelp-aggregategroups-example-1": "Associar un grup",
@@ -26,14 +27,14 @@
 	"apihelp-managemessagegroups-param-groupId": "Id del grup",
 	"apihelp-managemessagegroups-param-renameMessageKey": "S'està rebatejant la clau de missatge objectiu",
 	"apihelp-managemessagegroups-param-messageKey": "Clau de missatge de substitució",
-	"apihelp-managemessagegroups-param-operation": "L'operació que ha de ser executada. Possibles valors - rebateja / nou",
+	"apihelp-managemessagegroups-param-operation": "Operació a ser executada. Possibles valors: renomena / nou",
 	"apihelp-managemessagegroups-param-changesetName": "Canvia el nom del conjunt - Per defecte / No atès / Mediawiki etc.",
 	"apihelp-managemessagegroups-param-changesetModified": "Segell de temps Unix de la darrera modificació del conjunt de canvis. Si el conjunt de canvis s'ha modificat posteriorment, l'API donarà error.",
 	"apihelp-translatesandbox-param-do": "Què fer.",
 	"apihelp-translatesandbox-param-username": "Nom d'usuari a l'hora de crear l'usuari.",
 	"apihelp-translationaids-description": "Consulta totes les ajudes de traducció.",
 	"apihelp-translationstash-param-metadata": "Objecte JSON.",
-	"apihelp-ttmserver-param-targetlanguage": "Un codi d'idioma de la proposta.",
+	"apihelp-ttmserver-param-targetlanguage": "El codi d'idioma de la proposta.",
 	"apihelp-ttmserver-param-text": "El text per trobar suggeriments.",
 	"apihelp-ttmserver-example-1": "Obtenir suggeriments per a la traducció de \"Ajuda\" de l'anglès al finès",
 	"apierror-translate-changeset-modified": "Un altre usuari o procés ha modificat aquest conjunt de canvis. Els teus canvis no es poden desar perquè eliminaria els seus canvis. Refresca la pàgina per a veure els darrers canvis.",

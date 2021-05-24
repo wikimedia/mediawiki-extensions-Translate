@@ -167,7 +167,7 @@
 	"translate-mgs-noempty": "Ẩn các ngôn ngữ không có bản dịch",
 	"translate-mgs-submit": "Xem thống kê",
 	"translate-mgs-column-language": "Ngôn ngữ",
-	"translate-mgs-totals": "Mọi {{PLURAL:$1}}ngôn ngữ tập hợp",
+	"translate-mgs-totals": "Tổng hợp mọi {{PLURAL:$1}}ngôn ngữ",
 	"translate-mgs-invalid-group": "Nhóm thông điệp chỉ định, “$1”, không tồn tại.",
 	"translate-mgs-nothing": "Không có thống kê để hiển thị.",
 	"supportedlanguages": "Ngôn ngữ có sẵn",
