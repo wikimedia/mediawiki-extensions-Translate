@@ -43,11 +43,13 @@ class TranslateSandbox {
 			'realname' => '',
 		];
 
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$services = MediaWikiServices::getInstance();
+
+		$permissionManager = $services->getPermissionManager();
 		$creator = TranslateUserManager::getUser();
 		$guard = $permissionManager->addTemporaryUserRights( $creator, 'createaccount' );
 
-		$authManager = MediaWikiServices::getInstance()->getAuthManager();
+		$authManager = $services->getAuthManager();
 		$reqs = $authManager->getAuthenticationRequests( AuthManager::ACTION_CREATE );
 		$reqs = AuthenticationRequest::loadRequestsFromSubmission( $reqs, $data );
 		$res = $authManager->beginAccountCreation( $creator, $reqs, 'null:' );
@@ -76,7 +78,7 @@ class TranslateSandbox {
 		}
 
 		// group-translate-sandboxed group-translate-sandboxed-member
-		MediaWikiServices::getInstance()->getUserGroupManager()->addUserToGroup( $user, 'translate-sandboxed' );
+		$services->getUserGroupManager()->addUserToGroup( $user, 'translate-sandboxed' );
 
 		return $user;
 	}
