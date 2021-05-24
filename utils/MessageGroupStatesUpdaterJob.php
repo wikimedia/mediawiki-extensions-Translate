@@ -67,7 +67,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 		$groups = self::getGroupsWithTransitions( $handle );
 		foreach ( $groups as $id => $transitions ) {
 			$group = MessageGroups::getGroup( $id );
-			$stats = MessageGroupStats::forItem( $id, $code );
+			$stats = MessageGroupStats::forItem( $id, $code, MessageGroupStats::FLAG_IMMEDIATE_WRITES );
 			$state = self::getNewState( $stats, $transitions );
 			if ( $state ) {
 				ApiGroupReview::changeState( $group, $code, $state, FuzzyBot::getUser() );

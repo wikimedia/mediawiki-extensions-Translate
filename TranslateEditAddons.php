@@ -181,7 +181,14 @@ class TranslateEditAddons {
 			MessageGroupStats::clear( $handle );
 		}
 
-		MessageGroupStatesUpdaterJob::onChange( $handle );
+		// This job asks for stats, however the updated stats are written in a deferred update.
+		// To make it less likely that the job would be executed before the updated stats are
+		// written, create the job inside a deferred update too.
+		DeferredUpdates::addCallableUpdate(
+			static function () use ( $handle ) {
+				MessageGroupStatesUpdaterJob::onChange( $handle );
+			}
+		);
 
 		$user = User::newFromIdentity( $userIdentity );
 
