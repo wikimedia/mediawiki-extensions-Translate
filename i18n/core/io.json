@@ -161,6 +161,7 @@
 	"tux-editor-message-tools-delete": "Efacar",
 	"tux-editor-message-tools-translations": "Omna tradukuri",
 	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo",
+	"tux-editor-loading": "Karganta...",
 	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita",
 	"tux-nojs": "Ca utensilo ne funcionas sen JavaScript. Sive JavaScript esas nekapabligata, sive ne funcionis, sive vua interreto-navigilo ('browser') ne suportas ol."
 }
