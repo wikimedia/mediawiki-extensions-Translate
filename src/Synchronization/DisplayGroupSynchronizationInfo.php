@@ -245,7 +245,7 @@ class DisplayGroupSynchronizationInfo {
 					$this->localizer->msg( 'translate-smg-group-message-message-other-langs' )->text(),
 					implode(
 						$this->localizer->msg( 'comma-separator' )->text(),
-						$message->getOtherLangs()
+						array_keys( $message->getOtherLangs() )
 					)
 				);
 			}
