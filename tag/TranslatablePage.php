@@ -286,7 +286,7 @@ class TranslatablePage {
 			Language::factory( $this->getSourceLanguageCode() ),
 			$config->get( 'TranslateKeepOutdatedTranslations' ),
 			$wrapUntranslated,
-			$this->getTitle()->getPrefixedDBkey() . '/'
+			$this->getTitle()
 		);
 	}
 

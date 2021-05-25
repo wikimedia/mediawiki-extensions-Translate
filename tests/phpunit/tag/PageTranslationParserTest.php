@@ -85,7 +85,7 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 			Language::factory( 'en' ),
 			$showOutdated,
 			$wrapUntranslated,
-			$title->getPrefixedDBkey() . '/'
+			$title
 		);
 	}
 }

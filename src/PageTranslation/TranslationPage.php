@@ -3,8 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use Content;
+use ContentHandler;
 use Language;
 use MessageCollection;
+use Title;
 use TMessage;
 use WikiPageMessageGroup;
 
@@ -30,8 +33,8 @@ class TranslationPage {
 	private $showOutdated;
 	/** @var bool */
 	private $wrapUntranslated;
-	/** @var string */
-	private $prefix;
+	/** @var Title */
+	private $sourcePageTitle;
 
 	public function __construct(
 		ParserOutput $output,
@@ -40,7 +43,7 @@ class TranslationPage {
 		Language $sourceLanguage,
 		bool $showOutdated,
 		bool $wrapUntranslated,
-		string $prefix
+		Title $sourcePageTitle
 	) {
 		$this->output = $output;
 		$this->group = $group;
@@ -48,7 +51,7 @@ class TranslationPage {
 		$this->sourceLanguage = $sourceLanguage;
 		$this->showOutdated = $showOutdated;
 		$this->wrapUntranslated = $wrapUntranslated;
-		$this->prefix = $prefix;
+		$this->sourcePageTitle = $sourcePageTitle;
 	}
 
 	/** Generate translation page source using default options. */
@@ -57,6 +60,13 @@ class TranslationPage {
 		$this->filterMessageCollection( $collection );
 		$messages = $this->extractMessages( $collection );
 		return $this->generateSourceFromTranslations( $messages );
+	}
+
+	/** @since 2021.07 */
+	public function getPageContent(): Content {
+		$text = $this->generateSource();
+		$model = $this->sourcePageTitle->getContentModel();
+		return ContentHandler::makeContent( $text, null, $model );
 	}
 
 	public function getMessageCollection(): MessageCollection {
@@ -75,8 +85,9 @@ class TranslationPage {
 	/** @return TMessage[] */
 	public function extractMessages( MessageCollection $collection ): array {
 		$messages = [];
+		$prefix = $this->sourcePageTitle->getPrefixedText() . '/';
 		foreach ( $this->output->units() as $unit ) {
-			$messages[$unit->id] = $collection[$this->prefix . $unit->id] ?? null;
+			$messages[$unit->id] = $collection[$prefix . $unit->id] ?? null;
 		}
 
 		return $messages;

@@ -42,7 +42,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$this->removeDuplicates = true;
 	}
 
-	public function run() {
+	public function run(): bool {
 		$this->logInfo( 'Starting TranslateRenderJob' );
 
 		// We may be doing double wait here if this job was spawned by TranslationUpdateJob
@@ -53,13 +53,12 @@ class TranslateRenderJob extends GenericTranslateJob {
 
 		// Initialization
 		$title = $this->title;
+
 		$tpPage = TranslatablePage::getTranslationPageFromTitle( $title );
 		if ( !$tpPage ) {
 			$this->logError( 'Cannot render translation page!' );
 			return false;
 		}
-
-		$text = $tpPage->generateSource();
 
 		// Other stuff
 		$user = $this->getUser();
@@ -67,11 +66,10 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$flags = $this->getFlags();
 
 		$page = WikiPage::factory( $title );
-		$model = $page->getTitle()->getContentModel();
 
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
-		$content = ContentHandler::makeContent( $text, $page->getTitle(), $model );
+		$content = $tpPage->getPageContent();
 		$editStatus = TranslateUtils::doPageEdit(
 			$page,
 			$content,

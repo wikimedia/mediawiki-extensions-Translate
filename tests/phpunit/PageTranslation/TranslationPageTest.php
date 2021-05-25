@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use FatMessage;
 use Language;
 use MediaWikiTestCase;
+use Title;
 use WikiPageMessageGroup;
 
 /**
@@ -47,7 +48,7 @@ class TranslationPageTest extends MediaWikiTestCase {
 			Language::factory( 'en' ),
 			true /*$showOutdated*/,
 			$wrapUntranslated,
-			'' /*$prefix*/
+			Title::newFromText( __METHOD__ )
 		);
 
 		$actual = $translationPage->generateSourceFromTranslations( $messages );
