@@ -1071,7 +1071,16 @@ class SpecialManageGroups extends SpecialPage {
 				$this->synchronizationCache->markGroupForSync( $groupId );
 			}
 
-			$jobQueueInstance->push( $groupJobs );
+			// There is posibility for a race condition here: the translate_cache table / group sync
+			// cache is not yet populated with the messages to be processed, but the jobs start
+			// running and try to remove the message from the cache. This results in a "Key not found"
+			// error. Avoid this condition by using a DeferredUpdate.
+			DeferredUpdates::addCallableUpdate(
+				static function () use ( $jobQueueInstance, $groupJobs ) {
+					$jobQueueInstance->push( $groupJobs );
+				}
+			);
+
 		}
 	}
 }
