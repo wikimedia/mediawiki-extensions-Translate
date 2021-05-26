@@ -424,5 +424,13 @@
 	"translate-syntax-error": "Die Übersetzung enthält Syntaxfehler",
 	"tux-session-expired": "Du bist nicht mehr angemeldet. Bitte melde dich auf einer getrennten Registerkarte an. Alternativ kannst du eine Kopie deiner ungespeicherten Übersetzungen machen, dich anmelden, zu dieser Seite zurückkehren und deine Übersetzungen erneut eingeben.",
 	"tux-nojs": "Dieses Werkzeug funktioniert ohne JavaScript nicht. Es ist deaktiviert, funktioniert nicht oder dieser Browser wird nicht unterstützt.",
-	"specialpages-group-translation": "Übersetzung"
+	"specialpages-group-translation": "Übersetzung",
+	"content-model-translate-messagebundle": "Übersetzbares Nachrichtenpaket",
+	"translate-messagebundle-validation-error": "Ungültiges Nachrichtenpaket: $1",
+	"translate-messagebundle-error-invalid-array": "Nachrichtenpaket muss ein JSON-Objekt sein. Hat Typ $1",
+	"translate-messagebundle-error-key-empty": "Nachrichtenpaket darf keinen leeren Schlüssel enthalten",
+	"translate-messagebundle-error-key-too-long": "Schlüssel „$1“ ist zu lang",
+	"translate-messagebundle-error-key-invalid-characters": "Schlüssel „$1“ enthält unzulässige Zeichen",
+	"translate-messagebundle-error-invalid-value": "Schlüssel „$1“ enthält keinen String-Wert",
+	"translate-messagebundle-error-empty-value": "Schlüssel „$1“ hat keinen Wert"
 }
