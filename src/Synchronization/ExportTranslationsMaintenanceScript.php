@@ -195,7 +195,6 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$this->output( "Exporting group $groupId\n" );
 			$logger->info( 'Exporting group {groupId}', [ 'groupId' => $groupId ] );
 
-			/** @var FileBasedMessageGroup $fileBasedGroup */
 			if ( $forOffline ) {
 				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group, $offlineTargetPattern );
 				$ffs = new GettextFFS( $fileBasedGroup );
@@ -203,6 +202,12 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			} else {
 				$fileBasedGroup = $group;
 				$ffs = $group->getFFS();
+			}
+
+			// At this point $group should be an instance of FileBasedMessageGroup
+			// This is primarily to keep linting tools / IDE happy.
+			if ( !$fileBasedGroup instanceof FileBasedMessageGroup ) {
+				$this->fatalError( "EE2: Unexportable message group $groupId" );
 			}
 
 			$ffs->setWritePath( $target );
