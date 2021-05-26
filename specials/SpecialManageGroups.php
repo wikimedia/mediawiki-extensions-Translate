@@ -5,6 +5,7 @@ use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\DisplayGroupSynchronizationInfo;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
@@ -1069,6 +1070,14 @@ class SpecialManageGroups extends SpecialPage {
 			if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
 				$this->synchronizationCache->addMessages( $groupId, ...$messages );
 				$this->synchronizationCache->markGroupForSync( $groupId );
+
+				LoggerFactory::getInstance( 'Translate.GroupSynchronization' )->info(
+					'[' . __CLASS__ . '] Synchronization started for {groupId} by {user}',
+					[
+						'groupId' => $groupId,
+						'user' => $this->getUser()->getName()
+					]
+				);
 			}
 
 			// There is posibility for a race condition here: the translate_cache table / group sync

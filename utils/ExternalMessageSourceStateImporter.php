@@ -11,6 +11,7 @@
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
 class ExternalMessageSourceStateImporter {
@@ -155,6 +156,11 @@ class ExternalMessageSourceStateImporter {
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$groupSyncCache->addMessages( $groupId, ...$messageParams );
 		$groupSyncCache->markGroupForSync( $groupId );
+
+		LoggerFactory::getInstance( 'Translate.GroupSynchronization' )->info(
+			'[' . __CLASS__ . '] Synchronization started for {groupId}',
+			[ 'groupId' => $groupId ]
+		);
 	}
 
 	/**
