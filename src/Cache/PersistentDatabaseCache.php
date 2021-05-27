@@ -140,6 +140,16 @@ class PersistentDatabaseCache implements PersistentCache {
 		}
 	}
 
+	public function setExpiry( string $keyname, int $expiryTime ): void {
+		$dbw = $this->loadBalancer->getConnectionRef( DB_MASTER );
+		$dbw->update(
+			self::TABLE_NAME,
+			[ 'tc_exptime' => $expiryTime ],
+			[ 'tc_key' => $keyname ],
+			__METHOD__
+		);
+	}
+
 	public function delete( string ...$keynames ): void {
 		$dbw = $this->loadBalancer->getConnectionRef( DB_MASTER );
 		$dbw->delete(

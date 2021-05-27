@@ -35,7 +35,9 @@ class GroupSynchronizationCache {
 	/** @var PersistentCache */
 	private $cache;
 	/** @var int */
-	private $timeoutSeconds;
+	private $initialTimeoutSeconds;
+	/** @var int */
+	private $incrementalTimeoutSeconds;
 
 	/** @var string Cache tag used for groups */
 	private const GROUP_LIST_TAG = 'gsc_%group_in_sync%';
@@ -44,11 +46,17 @@ class GroupSynchronizationCache {
 	/** @var string Cache tag used for tracking groups that are in review */
 	private const GROUP_IN_REVIEW_TAG = 'gsc_%group_in_review%';
 
-	// TODO: Decide timeout based on monitoring. Also check if it needs to be configurable
-	// based on the number of messages in the group.
-	public function __construct( PersistentCache $cache, int $timeoutSeconds = 2400 ) {
+	// The timeout is set to 40 minutes initially, and then incremented by 10 minutes
+	// each time a message is marked as processed if group is about to expire.
+	public function __construct(
+		PersistentCache $cache,
+		int $initialTimeoutSeconds = 2400,
+		int $incrementalTimeoutSeconds = 600
+
+	) {
 		$this->cache = $cache;
-		$this->timeoutSeconds = $timeoutSeconds;
+		$this->initialTimeoutSeconds = $initialTimeoutSeconds;
+		$this->incrementalTimeoutSeconds = $incrementalTimeoutSeconds;
 	}
 
 	/**
@@ -68,7 +76,7 @@ class GroupSynchronizationCache {
 
 	/** Start synchronization process for a group and starts the expiry time */
 	public function markGroupForSync( string $groupId ): void {
-		$expTime = $this->getExpireTime();
+		$expTime = $this->getExpireTime( $this->initialTimeoutSeconds );
 		$this->cache->set(
 			new PersistentCacheEntry(
 				$this->getGroupKey( $groupId ),
@@ -370,14 +378,54 @@ class GroupSynchronizationCache {
 		return $this->cache->has( $this->getGroupReviewKey( $groupId ) );
 	}
 
+	public function extendGroupExpiryTime( string $groupId ): void {
+		$groupKey = $this->getGroupKey( $groupId );
+		$groupEntry = $this->cache->get( $groupKey );
+
+		if ( $groupEntry === [] ) {
+			// Group is currently not being processed.
+			throw new LogicException(
+				'Requested extension of expiry time for a group that is not being processed. ' .
+				'Check if group is being processed by calling isGroupBeingProcessed() first'
+			);
+		}
+
+		if ( $groupEntry[0]->hasExpired() ) {
+			throw new InvalidArgumentException(
+				'Cannot extend expiry time for a group that has already expired.'
+			);
+		}
+
+		$newExpiryTime = $this->getExpireTime( $this->incrementalTimeoutSeconds );
+
+		// We start with the initial timeout minutes, we only change the timeout if the group
+		// is actually about to expire.
+		if ( $newExpiryTime < $groupEntry[0]->exptime() ) {
+			return;
+		}
+
+		$this->cache->setExpiry( $groupKey, $newExpiryTime );
+	}
+
+	/** @internal - Internal; For testing use only */
+	public function getGroupExpiryTime( $groupId ): int {
+		$groupKey = $this->getGroupKey( $groupId );
+		$groupEntry = $this->cache->get( $groupKey );
+		if ( $groupEntry === [] ) {
+			throw new InvalidArgumentException( "$groupId currently not in processing!" );
+		}
+
+		return $groupEntry[0]->exptime();
+	}
+
 	private function hasGroupTimedOut( int $syncExpTime ): bool {
 		return ( new DateTime() )->getTimestamp() > $syncExpTime;
 	}
 
-	private function getExpireTime(): int {
+	private function getExpireTime( int $timeoutSeconds ): int {
 		$currentTime = ( new DateTime() )->getTimestamp();
 		$expTime = ( new DateTime() )
-			->setTimestamp( $currentTime + $this->timeoutSeconds )
+			->setTimestamp( $currentTime + $timeoutSeconds )
 			->getTimestamp();
 
 		return $expTime;

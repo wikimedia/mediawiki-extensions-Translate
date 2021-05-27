@@ -242,6 +242,41 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->assertTrue( $this->groupSyncCache->isGroupInReview( $groupId ) );
 	}
 
+	/** @dataProvider provideExtendGroupExpiryTime */
+	public function testExtendGroupExpiryTime( int $initialExpiryTime, string $expectedCondition ) {
+		$groupId = 'test-group-id';
+		$this->groupSyncCache = $this->getGroupSynchronizationCache( $initialExpiryTime );
+
+		$this->startGroupSync( $groupId, 'hello' );
+
+		$initialExpiryTime = $this->groupSyncCache->getGroupExpiryTime( $groupId );
+
+		$this->groupSyncCache->extendGroupExpiryTime( $groupId );
+
+		$extendedExpiryTime = $this->groupSyncCache->getGroupExpiryTime( $groupId );
+
+		$this->$expectedCondition( $initialExpiryTime, $extendedExpiryTime );
+	}
+
+	public function testExtendInvalidGroupExpiryTime() {
+		$this->expectException( LogicException::class );
+		$this->expectExceptionMessageMatches( '/group that is not being processed/i' );
+
+		$this->groupSyncCache->extendGroupExpiryTime( 'testGroupId' );
+	}
+
+	public function testExtendTimedOutGroupExpiryTime() {
+		$groupSyncCache = $this->getGroupSynchronizationCache( -1 );
+		$this->groupSyncCache = $groupSyncCache;
+
+		$this->expectException( LogicException::class );
+		$this->expectExceptionMessageMatches( '/group that has already expired/i' );
+
+		$groupId = 'test-group-id';
+		$this->startGroupSync( $groupId, 'hello' );
+		$this->groupSyncCache->extendGroupExpiryTime( $groupId );
+	}
+
 	public function provideGetSynchronizationStatus() {
 		$groupId = 'hello';
 
@@ -275,6 +310,18 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 			[ 'Hello', 'Title' ],
 			[ 'Hello' ],
 			true
+		];
+	}
+
+	public function provideExtendGroupExpiryTime() {
+		yield 'group expiry time is extended when it is about to expire' => [
+			10,
+			'assertGreaterThan'
+		];
+
+		yield 'group expiry time is not extended when it is not going to expire' => [
+			5000,
+			'assertEquals'
 		];
 	}
 

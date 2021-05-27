@@ -176,6 +176,20 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		new PersistentCacheEntry( 'testkey', null, null, $longTestTag );
 	}
 
+	public function testExtendGroupExpiryTime() {
+		$tomorrow = ( new DateTime() )->add( new DateInterval( 'P1D' ) );
+		$key = 'hello';
+		$incrementedTime = $tomorrow->getTimestamp() + 100;
+
+		$entry = new PersistentCacheEntry( $key, 'value', $tomorrow->getTimestamp() );
+
+		$this->persistentCache->set( $entry );
+		$this->persistentCache->setExpiry( $key, $incrementedTime );
+
+		$cacheEntry = $this->persistentCache->get( $key );
+		$this->assertEquals( $incrementedTime, $cacheEntry[0]->exptime() );
+	}
+
 	public function provideTestSet() {
 		yield [
 			'keyname' => 'hello',

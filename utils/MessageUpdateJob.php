@@ -322,6 +322,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 
 		if ( $groupSyncCache->isMessageBeingProcessed( $groupId, $messageKey ) ) {
 			$groupSyncCache->removeMessages( $groupId, $messageKey );
+			$groupSyncCache->extendGroupExpiryTime( $groupId );
 		} else {
 			$this->logWarning(
 				"Did not find key: $messageKey; in group: $groupId in group sync cache",
