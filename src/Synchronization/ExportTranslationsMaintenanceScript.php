@@ -164,7 +164,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				}
 			}
 
-			if ( $exportThreshold || $removalThreshold ) {
+			if ( $exportThreshold !== null || $removalThreshold !== null ) {
 				$logger->info( 'Calculating stats for group {groupId}', [ 'groupId' => $groupId ] );
 				$tStartTime = microtime( true );
 
