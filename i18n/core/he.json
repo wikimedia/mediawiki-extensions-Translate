@@ -417,5 +417,13 @@
 	"translate-syntax-error": "התרגום מכיל שגיאות תחביר",
 	"tux-session-expired": "אינך נמצא בחשבון עוד. נא להיכנס בלשונית אחרת. לחלופין, יש להעתיק תרגומים שלא נשמרו, להיכנס, לחזור לדף הזה, ולהזין שוב את התרגומים שלך.",
 	"tux-nojs": "הדף הזה דורש שימוש ב־JavaScript. התמיכה ב־JavaScript כבויה, לא פעלה, או שהדפדפן הזה אינו נתמך.",
-	"specialpages-group-translation": "תרגום"
+	"specialpages-group-translation": "תרגום",
+	"content-model-translate-messagebundle": "חבילת הודעות שאפשר לתרגם",
+	"translate-messagebundle-validation-error": "חבילת הודעות בלתי־תקינה: $1",
+	"translate-messagebundle-error-invalid-array": "חיבלת ההודעות חייבת להיות עצם JSON. הסוג שהתקבל הוא $1",
+	"translate-messagebundle-error-key-empty": "חבילת ההודעות צריכה לא להכיל מפתח ריק",
+	"translate-messagebundle-error-key-too-long": "המפתח \"$1\" ארוך מדי",
+	"translate-messagebundle-error-key-invalid-characters": "המפתח \"$1\" מכיל תווים בלתי־מורשים",
+	"translate-messagebundle-error-invalid-value": "המפתח \"$1\" אינו מכיל ערך מחרוזת",
+	"translate-messagebundle-error-empty-value": "במפתח \"$1\" אין ערך"
 }

@@ -187,5 +187,6 @@
 	"tux-editor-message-tools-translations": "બધાં ભાષાંતરો",
 	"tux-editor-message-tools-linktothis": "આ સંદેશા પરની કડી",
 	"tux-editor-loading": "લવાઇ રહ્યું છે...",
-	"translate-search-more-languages-info": "$1 વધુ {{PLURAL:$1|ભાષા|ભાષાઓ}}"
+	"translate-search-more-languages-info": "$1 વધુ {{PLURAL:$1|ભાષા|ભાષાઓ}}",
+	"translate-messagebundle-error-empty-value": "\"$1\" કળને કોઇ કિંમત નથી"
 }

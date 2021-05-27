@@ -412,5 +412,13 @@
 	"translate-syntax-error": "Преводот содржи синтаксни грешки",
 	"tux-session-expired": "Повеќе не сте најавени. Најавете се во друго јазиче. Можете и некаде да ги прекопирате незачуваните преводи, па да се најавите и да се навратите на страницава, и потоа внесете ги преводите повторно.",
 	"tux-nojs": "Оваа алатка не работи без JavaScript. JavaScript е исклучен, не работи или прелистувачот не е поддржан.",
-	"specialpages-group-translation": "Преведување"
+	"specialpages-group-translation": "Преведување",
+	"content-model-translate-messagebundle": "Купче преводливи пораки",
+	"translate-messagebundle-validation-error": "Неважечко купче пораки: $1",
+	"translate-messagebundle-error-invalid-array": "Купчето пораки мора да биде JSON-објект. Го добив видот $1",
+	"translate-messagebundle-error-key-empty": "Купчето пораки не смее да содржи празен клуч",
+	"translate-messagebundle-error-key-too-long": "Клучот „$1“ е предолг",
+	"translate-messagebundle-error-key-invalid-characters": "Клучот „$1“ содржи недозволени знаци",
+	"translate-messagebundle-error-invalid-value": "Клучот „$1“ не содржи низна вредност",
+	"translate-messagebundle-error-empty-value": "Купчето „$1“ нема вредност"
 }

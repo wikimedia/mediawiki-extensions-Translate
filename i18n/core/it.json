@@ -385,5 +385,7 @@
 	"translate-syntax-error": "La traduzione contiene errori di sintassi",
 	"tux-session-expired": "Non hai effettuato l'accesso. Accedi in una scheda separata; o in alternativa copia la traduzione non salvata, accedi, ritorna in questa pagina e inserisci nuovamente la tua traduzione.",
 	"tux-nojs": "Questo strumento non funziona senza JavaScript. JavaScript potrebbe essere disattivato, non ha funzionato o questo browser non è supportato.",
-	"specialpages-group-translation": "Traduzione"
+	"specialpages-group-translation": "Traduzione",
+	"translate-messagebundle-error-key-too-long": "La chiave \"$1\" è troppo lunga",
+	"translate-messagebundle-error-empty-value": "LA chiave \"$1\" non ha un valore"
 }
