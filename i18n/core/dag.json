@@ -7,6 +7,7 @@
 			"Dnshitobu",
 			"Hidrash",
 			"Mo Yumzaa",
+			"Munkaila Sulemana",
 			"Ruky Wunpini",
 			"Sir Amugi",
 			"Yakubu Fadilatu"
@@ -23,5 +24,6 @@
 	"translate-smg-group-message-message-replacement": "Taɣibu",
 	"translate-smg-group-message-message-other-langs": "Bali shɛŋa din pahi:",
 	"translate-manage-source-message-not-found": "Lahibali gbunni kani",
-	"translate-documentation-language": "Satarili sabisɔŋ"
+	"translate-documentation-language": "Satarili sabisɔŋ",
+	"translate-messagebundle-error-empty-value": "Key\"$1\" ka timsim"
 }

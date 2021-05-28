@@ -42,6 +42,7 @@
 	"tpt-saveok": "De pagina [[:$1]] is gemarkeerd voor vertaling met $2 te vertalen {{PLURAL:$2|vertaaleenheid|vertaaleenheden}}.\nDe pagina kan nu  <span class=\"plainlinks\">[$3 vertaald]</span> worden.",
 	"tpt-saveok-first": "U kunt [[Special:PageMigration|bestaande vertalingen]] voor deze pagina importeren (indien aanwezig).",
 	"tpt-offer-notify": "U kunt <span class=\"plainlinks\">[$1 vertalers op de hoogte stellen]</span> over deze pagina.",
+	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Toon de lijst met vertaalbare pagina's.]]",
 	"tpt-showpage-intro": "Hieronder zijn nieuwe, bestaande en verwijderde vertaaleenheden opgenomen.\nControleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de vertaaleenheden zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.",
 	"tpt-mark-summary": "Heeft deze versie voor vertaling gemarkeerd",
 	"tpt-edit-failed": "De pagina \"$1\" kon niet bijgewerkt worden.",
