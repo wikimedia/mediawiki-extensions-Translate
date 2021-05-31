@@ -57,7 +57,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 	public function parseGettext( $data ) {
 		$mangler = $this->group->getMangler();
-		$useCtxtAsKey = isset( $this->extra['CtxtAsKey'] ) && $this->extra['CtxtAsKey'];
+		$useCtxtAsKey = $this->extra['CtxtAsKey'] ?? false;
 		$keyAlgorithm = 'simple';
 		if ( isset( $this->extra['keyAlgorithm'] ) ) {
 			$keyAlgorithm = $this->extra['keyAlgorithm'];
