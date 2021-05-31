@@ -17,6 +17,9 @@ use MediaWiki\Logger\LoggerFactory;
  * @ingroup FFS
  */
 class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+	private $allowPotMode = false;
+	protected $offlineMode = false;
+
 	public function supportsFuzzy() {
 		return 'yes';
 	}
@@ -25,11 +28,22 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return [ '.pot', '.po' ];
 	}
 
-	protected $offlineMode = false;
-
 	/** @param bool $value */
 	public function setOfflineMode( $value ) {
 		$this->offlineMode = $value;
+	}
+
+	/** @inheritDoc */
+	public function read( $code ) {
+		// This is somewhat hacky, but pot mode should only ever be used for the source language.
+		// See https://phabricator.wikimedia.org/T230361
+		$this->allowPotMode = $this->getGroup()->getSourceLanguage() === $code;
+
+		try {
+			return parent::read( $code );
+		} finally {
+			$this->allowPotMode = false;
+		}
 	}
 
 	/**
@@ -63,7 +77,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$keyAlgorithm = $this->extra['keyAlgorithm'];
 		}
 
-		return self::parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm );
+		return self::parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm, $this->allowPotMode );
 	}
 
 	/**
@@ -73,10 +87,17 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * or use msgctxt (non-standard po-files)
 	 * @param StringMangler $mangler
 	 * @param string $keyAlgorithm Key generation algorithm, see generateKeyFromItem
+	 * @param bool $allowPotMode
 	 * @throws MWException
 	 * @return array
 	 */
-	public static function parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm ) {
+	public static function parseGettextData(
+		$data,
+		$useCtxtAsKey,
+		$mangler,
+		$keyAlgorithm,
+		bool $allowPotMode
+	) {
 		$potmode = false;
 
 		// Normalise newlines, to make processing easier
@@ -100,7 +121,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			// Check for pot-mode by checking if the header is fuzzy
 			$flags = self::parseFlags( $headerSection );
 			if ( in_array( 'fuzzy', $flags, true ) ) {
-				$potmode = true;
+				$potmode = $allowPotMode;
 			}
 		} else {
 			$message = "Gettext file header was not found:\n\n$data";
