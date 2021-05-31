@@ -14,6 +14,7 @@
 			"Kumkumuk",
 			"McAang",
 			"Meelo",
+			"Mim.saitkilic",
 			"MuratTheTurkish",
 			"Rapsar",
 			"SaldırganSincap",
@@ -251,6 +252,7 @@
 	"translate-smg-group-with-error-summary": "$1 hatalı {{PLURAL:$1|mesaj|mesaj}}:",
 	"translate-smg-group-message-action-history": "Geçmiş",
 	"translate-smg-group-action-resolve": "Çözümlendi olarak işaretle",
+	"translate-smg-group-sync-error-warn": "Bu grupta senkronizasyon sırasında bir hata oluştu. Lütfen bu grubu işlemeden önce hataları düzeltin.",
 	"translate-smg-group-message-tag-outdated": "Eski",
 	"translate-smg-group-message-tag-rename": "Yeniden adlandır",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Etiket|Etiket}}:",
@@ -427,5 +429,13 @@
 	"translate-syntax-error": "Çeviri, sözdizim hataları içeriyor",
 	"tux-session-expired": "Artık oturum açmadınız. Lütfen ayrı bir sekmede giriş yapın. Alternatif olarak, kaydedilmemiş çevirilerin bir kopyasını oluşturun, oturum açın, bu sayfaya geri dönün ve çevirilerinizi tekrar girin.",
 	"tux-nojs": "Bu araç JavaScript olmadan çalışmaz. JavaScript devre dışı, çalışmıyor veya bu tarayıcı desteklenmiyor.",
-	"specialpages-group-translation": "Çeviri"
+	"specialpages-group-translation": "Çeviri",
+	"content-model-translate-messagebundle": "Çevrilebilir mesaj paketi",
+	"translate-messagebundle-validation-error": "Geçersiz mesaj paketi: $1",
+	"translate-messagebundle-error-invalid-array": "İleti paketi bir JSON nesnesi olmalıdır. $1 yazın var",
+	"translate-messagebundle-error-key-empty": "İleti paketi boş bir anahtar içermemelidir",
+	"translate-messagebundle-error-key-too-long": "\"$1\" anahtarı çok uzun",
+	"translate-messagebundle-error-key-invalid-characters": "\"$1\" anahtarı, izin verilmeyen karakterler içeriyor",
+	"translate-messagebundle-error-invalid-value": "\"$1\" anahtarı dize değeri içermiyor",
+	"translate-messagebundle-error-empty-value": "\"$1\" anahtarının bir değeri yok"
 }
