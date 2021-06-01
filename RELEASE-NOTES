@@ -1,0 +1,6 @@
+== Translate 2021.06 ==
+Released at 2021-06-01.
+
+=== Noteworthy changes ===
+* Fix metadata handling for translatable page moves and deletions.
+  ({{Phab|T282905}})
