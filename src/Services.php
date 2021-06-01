@@ -1,9 +1,6 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
@@ -25,11 +22,11 @@ use Psr\Container\ContainerInterface;
  *
  * Main purpose is to give type-hinted getters for services defined in this extensions.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2020.04
  */
 class Services implements ContainerInterface {
-	/** @var self */
-	private static $instance;
 	/** @var ContainerInterface */
 	private $container;
 
@@ -38,8 +35,7 @@ class Services implements ContainerInterface {
 	}
 
 	public static function getInstance(): Services {
-		self::$instance = self::$instance ?? new self( MediaWikiServices::getInstance() );
-		return self::$instance;
+		return new self( MediaWikiServices::getInstance() );
 	}
 
 	/** @inheritDoc */
