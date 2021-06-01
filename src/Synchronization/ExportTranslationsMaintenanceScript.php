@@ -141,7 +141,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 		$changeFilter = null;
 		if ( $this->hasOption( 'hours' ) ) {
-			$changeFilter =	$this->getRecentlyChangedItems(
+			$changeFilter = $this->getRecentlyChangedItems(
 				(int)$this->getOption( 'hours' ),
 				$this->getNamespacesForGroups( $groups )
 			);
