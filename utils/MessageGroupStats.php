@@ -583,12 +583,13 @@ class MessageGroupStats {
 		$dbw = $lb->getLazyConnectionRef( DB_MASTER ); // avoid connecting yet
 		$table = self::TABLE;
 		$updates = &self::$updates;
+		$callers = wfGetAllCallers( 10 );
 
 		$updateOp = self::withLock(
 			$dbw,
 			'updates',
 			__METHOD__,
-			static function ( IDatabase $dbw, $method ) use ( $table, &$updates ) {
+			static function ( IDatabase $dbw, $method ) use ( $table, &$updates, $callers ) {
 				// Maybe another deferred update already processed these
 				if ( $updates === [] ) {
 					return;
@@ -602,6 +603,7 @@ class MessageGroupStats {
 						[
 							'count' => count( $updates ),
 							'groups' => implode( ', ', $groups ),
+							'callers' => $callers,
 						]
 					);
 				}
