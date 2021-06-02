@@ -348,14 +348,20 @@
 				"MainConfig",
 				"Translate:TranslatorActivity",
 				"LanguageNameUtils",
-				"DBLoadBalancer"
+				"DBLoadBalancer",
+				"Translate:ConfigHelper"
 			]
 		},
 		"AggregateGroups": "SpecialAggregateGroups",
 		"SearchTranslations": "SpecialSearchTranslations"
 	},
 	"APIListModules": {
-		"messagecollection": "ApiQueryMessageCollection"
+		"messagecollection": {
+			"class": "ApiQueryMessageCollection",
+			"services": [
+				"Translate:ConfigHelper"
+			]
+		}
 	},
 	"APIMetaModules": {
 		"languagestats": "ApiQueryLanguageStats",
@@ -1161,14 +1167,29 @@
 			"description": "Two-dimensional array of languages that cannot be translated. Input can be exact group name, first part before '-' or '*' for all. Second dimension should be language code mapped to reason for disabling. Reason is parsed as wikitext.\n\nExample:\n'TranslateBlacklist': { '*': { 'en': 'English is the source language.' }, 'core': { 'mul': 'Not a real language.' }, 'ext': { 'mul': 'Not a real language.'} }",
 			"public": true
 		},
+		"TranslateDisabledTargetLanguages": {
+			"value": [],
+			"description": "Two-dimensional array of languages that cannot be translated. Input can be exact group name, first part before '-' or '*' for all. Second dimension should be language code mapped to reason for disabling. Reason is parsed as wikitext.\n\nExample:\n'TranslateDisabledTargetLanguages': { '*': { 'en': 'English is the source language.' }, 'core': { 'mul': 'Not a real language.' }, 'ext': { 'mul': 'Not a real language.'} }",
+			"public": true
+		},
 		"TranslateCheckBlacklist": {
 			"value": false,
 			"description": "File containing checks that are to be skipped. See https://gerrit.wikimedia.org/g/translatewiki/+/master/groups/check-blacklist.php for example.\nSince 2012-10-15.",
 			"public": true
 		},
+		"TranslateValidationExclusionFile": {
+			"value": false,
+			"description": "File containing validations that are to be skipped. See https://gerrit.wikimedia.org/g/translatewiki/+/master/groups/check-blacklist.php for example.",
+			"public": true
+		},
 		"TranslateAuthorBlacklist": {
 			"value": [],
 			"description": "Two-dimensional array of rules that blacklists certain authors from appearing in the exports. This is useful for keeping bots and people doing maintenance work in translations not to appear besides real translators everywhere.\n\nRules are arrays, where first element is type: white or black. Whitelisting always overrules blacklisting. Second element should be a valid pattern that can be given a preg_match(). It will be matched against string of format 'group-id;language;author name', without quotes.\n\nAs an example, this rule would ignore all authors whose name ends in a bot for all languages and all groups:\n'TranslateAuthorBlacklist': [ [ 'black', '/^.*;.*;.*Bot$/Ui' ] ]",
+			"public": true
+		},
+		"TranslateAuthorExclusionList": {
+			"value": [],
+			"description": "Two-dimensional array of rules that exclude certain authors from appearing in the exports. This is useful for keeping bots and people doing maintenance work in translations not to appear besides real translators everywhere.\n\nRules are arrays, where first element is type: included or excluded. The inclusion list always overrules the exclusion list. Second element should be a valid pattern that can be given a preg_match(). It will be matched against string of format 'group-id;language;author name', without quotes.\n\nAs an example, this rule would ignore all authors whose name ends in a bot for all languages and all groups:\n'TranslateAuthorExclusionList': [ [ 'black', '/^.*;.*;.*Bot$/Ui' ] ]",
 			"public": true
 		},
 		"TranslateMessageNamespaces": {

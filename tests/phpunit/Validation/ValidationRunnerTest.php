@@ -30,7 +30,7 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		MessageIndex::singleton()->rebuild();
 
 		// Run with empty ignore list by default
-		$this->setMwGlobals( 'wgTranslateCheckBlacklist', false );
+		$this->setMwGlobals( 'wgTranslateValidationExclusionFile', false );
 		ValidationRunner::reloadIgnorePatterns();
 	}
 
@@ -168,7 +168,7 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 
 	public function testIgnoreList() {
 		$this->setMwGlobals( [
-			'wgTranslateCheckBlacklist' => __DIR__ . '/../data/check-blacklist.php'
+			'wgTranslateValidationExclusionFile' => __DIR__ . '/../data/validation-exclusion-list.php'
 		] );
 
 		$group = MessageGroups::getGroup( 'test-group' );
@@ -185,35 +185,35 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		$this->assertCount(
 			1,
 			$validationResult->getIssues(),
-			'warnings or errors are filtered as per check-blacklist.'
+			'warnings or errors are filtered as per validation-exclusion-list.'
 		);
 
 		$validationResult = $msgValidator->validateMessage( $collectionFr[ 'translated' ], 'fr' );
 		$this->assertGreaterThan(
 			1,
 			count( $validationResult->getIssues() ),
-			'warnings or errors are filtered as per check-blacklist only for specific language code.'
+			'warnings or errors are filtered as per validation-exclusion-list only for specific language code.'
 		);
 
 		$validationResult = $msgValidator->quickValidate( $collection['translated'], 'en-gb' );
 		$this->assertCount(
 			1,
 			$validationResult->getIssues(),
-			'warnings or errors are filtered as per check-blacklist.'
+			'warnings or errors are filtered as per validation-exclusion-list.'
 		);
 
 		$validationResult = $msgValidator->quickValidate( $collectionFr[ 'translated' ], 'fr' );
 		$this->assertCount(
 			1,
 			$validationResult->getIssues(),
-			'warnings or errors are filtered as per check-blacklist only for specific language code.'
+			'warnings or errors are filtered as per validation-exclusion-list only for specific language code.'
 		);
 
 		$validationResult = $msgValidator->validateMessage( $collectionFr['regex-key-test'], 'fr' );
 		$this->assertCount(
 			0,
 			$validationResult->getIssues(),
-			'warnings or errors are filtered as per check-blacklist for specific message key.'
+			'warnings or errors are filtered as per validation-exclusion-list for specific message key.'
 		);
 	}
 

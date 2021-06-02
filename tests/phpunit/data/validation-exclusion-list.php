@@ -1,6 +1,6 @@
 <?php
 
-$checkBlacklist = [
+$validationExclusionList = [
 	[
 		'check' => 'plural',
 		'code' => [ 'en-gb' ]

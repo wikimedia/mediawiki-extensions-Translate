@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
+use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
@@ -46,6 +47,10 @@ class Services implements ContainerInterface {
 	/** @inheritDoc */
 	public function has( $id ) {
 		return $this->container->has( $id );
+	}
+
+	public function getConfigHelper(): ConfigHelper {
+		return $this->get( 'Translate:ConfigHelper' );
 	}
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {

@@ -7,19 +7,24 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+
 /**
  * Api module for querying MessageCollection.
  *
  * @ingroup API TranslateAPI
  */
 class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
+	/** @var ConfigHelper */
+	private $configHelper;
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 */
-	public function __construct( $query, $moduleName ) {
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		ConfigHelper $configHelper
+	) {
 		parent::__construct( $query, $moduleName, 'mc' );
+		$this->configHelper = $configHelper;
 	}
 
 	public function execute() {
@@ -41,8 +46,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	private function run( ApiPageSet $resultPageSet = null ) {
-		global $wgTranslateBlacklist;
-
 		$params = $this->extractRequestParams();
 
 		$group = MessageGroups::getGroup( $params['group'] );
@@ -69,10 +72,11 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				'*'
 			];
 
+			$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
 			foreach ( $checks as $check ) {
-				if ( isset( $wgTranslateBlacklist[ $check ][ $languageCode ] ) ) {
+				if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
 					$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
-					$reason = $wgTranslateBlacklist[ $check ][ $languageCode ];
+					$reason = $disabledLanguages[ $check ][ $languageCode ];
 					$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
 				}
 			}

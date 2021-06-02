@@ -20,12 +20,17 @@ use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
+use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
+	'Translate:ConfigHelper' => static function (): ConfigHelper {
+		return new ConfigHelper();
+	},
+
 	'Translate:GroupSynchronizationCache' => static function (
 		MediaWikiServices $services
 	): GroupSynchronizationCache {

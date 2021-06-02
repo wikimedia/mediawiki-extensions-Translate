@@ -14,6 +14,7 @@ namespace MediaWiki\Extension\Translate\Validation;
 use Exception;
 use FormatJson;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use PHPVariableLoader;
 use RuntimeException;
@@ -202,18 +203,27 @@ class ValidationRunner {
 
 	/** @internal Should only be used by tests and inside this class. */
 	public static function reloadIgnorePatterns(): void {
-		global $wgTranslateCheckBlacklist;
+		$validationExclusionFile = Services::getInstance()->getConfigHelper()->getValidationExclusionFile();
 
-		if ( $wgTranslateCheckBlacklist === false ) {
+		if ( $validationExclusionFile === false ) {
 			self::$ignorePatterns = [];
 			return;
 		}
 
 		$list = PHPVariableLoader::loadVariableFromPHPFile(
-			$wgTranslateCheckBlacklist,
+			$validationExclusionFile,
+			'validationExclusionList'
+		) ?? PHPVariableLoader::loadVariableFromPHPFile(
+			$validationExclusionFile,
 			'checkBlacklist'
 		);
 		$keys = [ 'group', 'check', 'subcheck', 'code', 'message' ];
+
+		if ( $list && !is_array( $list ) ) {
+			throw new InvalidArgumentException(
+				"validationExclusionList defined in $validationExclusionFile must be an array"
+			);
+		}
 
 		foreach ( $list as $key => $pattern ) {
 			foreach ( $keys as $checkKey ) {

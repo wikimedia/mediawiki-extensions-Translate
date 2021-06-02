@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -21,6 +22,8 @@ class StatsTable {
 	protected $lang;
 	/** @var Title */
 	protected $translate;
+	/** @var \MediaWiki\Extension\Translate\Utilities\ConfigHelper */
+	private $configHelper;
 	/** @var string */
 	protected $mainColumnHeader;
 	/** @var Message[] */
@@ -29,6 +32,7 @@ class StatsTable {
 	public function __construct() {
 		$this->lang = RequestContext::getMain()->getLanguage();
 		$this->translate = SpecialPage::getTitleFor( 'Translate' );
+		$this->configHelper = Services::getInstance()->getConfigHelper();
 	}
 
 	/**
@@ -261,8 +265,6 @@ class StatsTable {
 	 * @return bool
 	 */
 	public function isExcluded( $groupId, $code ) {
-		global $wgTranslateBlacklist;
-
 		$excluded = null;
 
 		$checks = [
@@ -271,9 +273,11 @@ class StatsTable {
 			'*'
 		];
 
+		$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
+
 		foreach ( $checks as $check ) {
-			if ( isset( $wgTranslateBlacklist[$check] ) && isset( $wgTranslateBlacklist[$check][$code] ) ) {
-				$excluded = $wgTranslateBlacklist[$check][$code];
+			if ( isset( $disabledLanguages[$check] ) && isset( $disabledLanguages[$check][$code] ) ) {
+				$excluded = $disabledLanguages[$check][$code];
 			}
 
 			if ( $excluded !== null ) {

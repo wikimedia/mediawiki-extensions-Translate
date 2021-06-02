@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
@@ -316,8 +317,6 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	/** @inheritDoc */
 	public function getTranslatableLanguages() {
-		global $wgTranslateBlacklist;
-
 		$groupConfiguration = $this->getConfiguration();
 		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
 			// No LANGUAGES section in the configuration.
@@ -343,12 +342,13 @@ abstract class MessageGroupBase implements MessageGroup {
 			$codes = [];
 		}
 
-		// DWIM with $wgTranslateBlacklist, e.g. languages in that list should not unexpectedly
+		$disabledLanguages = Services::getInstance()->getConfigHelper()->getDisabledTargetLanguages();
+		// DWIM with $wgTranslateDisabledTargetLanguages, e.g. languages in that list should not unexpectedly
 		// be enabled when an inclusion list is used to include any language.
 		$checks = [ $this->getId(), strtok( $this->getId(), '-' ), '*' ];
 		foreach ( $checks as $check ) {
-			if ( isset( $wgTranslateBlacklist[ $check ] ) ) {
-				foreach ( array_keys( $wgTranslateBlacklist[ $check ] ) as $excludedCode ) {
+			if ( isset( $disabledLanguages[ $check ] ) ) {
+				foreach ( array_keys( $disabledLanguages[ $check ] ) as $excludedCode ) {
 					unset( $codes[ $excludedCode ] );
 				}
 			}
@@ -357,7 +357,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		if ( isset( $lists['whitelist'] ) ) {
 			$inclusionList = $lists['whitelist'];
 			if ( $inclusionList === '*' ) {
-				// All languages included (except $wgTranslateBlacklist)
+				// All languages included (except $wgTranslateDisabledTargetLanguages)
 				return null;
 			} elseif ( is_array( $inclusionList ) ) {
 				foreach ( $inclusionList as $code ) {

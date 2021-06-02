@@ -9,6 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserIdentity;
@@ -44,8 +45,6 @@ class TranslateEditAddons {
 	public static function disallowLangTranslations( Title $title, User $user,
 		$action, &$result
 	) {
-		global $wgTranslateBlacklist;
-
 		if ( $action !== 'edit' ) {
 			return true;
 		}
@@ -74,9 +73,10 @@ class TranslateEditAddons {
 			'*'
 		];
 
+		$disabledLanguages = Services::getInstance()->getConfigHelper()->getDisabledTargetLanguages();
 		foreach ( $checks as $check ) {
-			if ( isset( $wgTranslateBlacklist[$check][$langCode] ) ) {
-				$reason = $wgTranslateBlacklist[$check][$langCode];
+			if ( isset( $disabledLanguages[$check][$langCode] ) ) {
+				$reason = $disabledLanguages[$check][$langCode];
 				$result = [ 'translate-page-disabled', $reason ];
 				return false;
 			}

@@ -8,6 +8,7 @@ use Html;
 use HtmlArmor;
 use LinkBatch;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use ObjectCache;
@@ -33,11 +34,12 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private $langNameUtils;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
+	/** @var ConfigHelper */
+	private $configHelper;
 	/** @var int Cutoff time for inactivity in days */
 	private $period = 180;
 
 	public const CONSTRUCTOR_OPTIONS = [
-		'TranslateAuthorBlacklist',
 		'TranslateMessageNamespaces',
 	];
 
@@ -45,13 +47,15 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		Config $config,
 		TranslatorActivity $translatorActivity,
 		LanguageNameUtils $langNameUtils,
-		ILoadBalancer $loadBalancer
+		ILoadBalancer $loadBalancer,
+		ConfigHelper $configHelper
 	) {
 		parent::__construct( 'SupportedLanguages' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
 		$this->translatorActivity = $translatorActivity;
 		$this->langNameUtils = $langNameUtils;
 		$this->loadBalancer = $loadBalancer;
+		$this->configHelper = $configHelper;
 	}
 
 	protected function getGroupName() {
@@ -205,7 +209,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	protected function filterUsers( array $users, string $code ): array {
-		$exclusionList = $this->options->get( 'TranslateAuthorBlacklist' );
+		$authorExclusionList = $this->configHelper->getTranslateAuthorExclusionList();
 
 		foreach ( $users as $index => $user ) {
 			$username = $user[TranslatorActivityQuery::USER_NAME];
@@ -213,7 +217,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			$hash = "#;$code;$username";
 
 			$excluded = false;
-			foreach ( $exclusionList as $rule ) {
+			foreach ( $authorExclusionList as $rule ) {
 				[ $type, $regex ] = $rule;
 
 				if ( preg_match( $regex, $hash ) ) {

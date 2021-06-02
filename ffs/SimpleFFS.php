@@ -13,6 +13,7 @@
  * @ingroup FFS
  */
 
+use MediaWiki\Extension\Translate\Services;
 use UtfNormal\Validator;
 
 class SimpleFFS implements FFS {
@@ -324,14 +325,14 @@ class SimpleFFS implements FFS {
 	 * @return array
 	 */
 	public function filterAuthors( array $authors, $code ) {
-		global $wgTranslateAuthorBlacklist;
+		$authorExclusionList = Services::getInstance()->getConfigHelper()->getTranslateAuthorExclusionList();
 		$groupId = $this->group->getId();
 
 		foreach ( $authors as $i => $v ) {
 			$hash = "$groupId;$code;$v";
 
 			$excluded = false;
-			foreach ( $wgTranslateAuthorBlacklist as $rule ) {
+			foreach ( $authorExclusionList as $rule ) {
 				list( $type, $regex ) = $rule;
 
 				if ( preg_match( $regex, $hash ) ) {
