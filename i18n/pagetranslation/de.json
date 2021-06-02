@@ -161,7 +161,7 @@
 	"pt-movepage-list-translatable-note": "Diese Seiten müssen getrennt verschoben werden.",
 	"pt-movepage-list-other": "Andere {{PLURAL:$1|Unterseite|Unterseiten}}",
 	"pt-movepage-list-count": "Insgesamt gibt es $1 zu verschiebende {{PLURAL:$1|Seite|Seiten}} und $2 {{PLURAL:$2|Unterseite|Unterseiten}}.",
-	"pt-movepage-page-count-limit": "Diese übersetzbare Seite besteht aus über $1 {{PLURAL:$1|Seite|Seiten}}. Das Verschieben so vieler Seiten hat sich als unzuverlässig erwiesen. Bitte kontaktiere den Administrator, um dies über ein Wartungsskript durchzuführen.",
+	"pt-movepage-page-count-limit": "Diese übersetzbare Seite besteht aus über $1 {{PLURAL:$1|Seite|Seiten}}. Das Verschieben so vieler Seiten hat sich als unzuverlässig erwiesen. Bitte kontaktiere einen Systemadministrator, um dies über ein Wartungsskript durchzuführen.",
 	"pt-movepage-list-no-pages": "Es wurden keine Seiten gefunden.",
 	"pt-movepage-legend": "Übersetzungsseite verschieben",
 	"pt-movepage-current": "Aktueller Seitenname:",

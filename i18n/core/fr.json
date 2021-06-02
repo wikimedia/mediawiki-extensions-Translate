@@ -447,5 +447,13 @@
 	"translate-syntax-error": "La traduction contient des erreurs de syntaxe",
 	"tux-session-expired": "Vous n’êtes plus connecté. Veuillez vous connecter dans un autre onglet. Sinon, faites une copie des traductions non enregistrées, connectez-vous et revenez sur cette page.",
 	"tux-nojs": "Cet outil ne fonctionne pas sans JavaScript. JavaScript est désactivé ou n’a pas pu s’exécuter, ou bien votre explorateur ne le prend pas en charge.",
-	"specialpages-group-translation": "Traduction"
+	"specialpages-group-translation": "Traduction",
+	"content-model-translate-messagebundle": "Paquet de message à traduire",
+	"translate-messagebundle-validation-error": "Paquet de message non valide : $1",
+	"translate-messagebundle-error-invalid-array": "Le paquet de message doit être un objet JSON. Type $1 obtenu",
+	"translate-messagebundle-error-key-empty": "Le paquet de message ne doit pas contenir une clé vide",
+	"translate-messagebundle-error-key-too-long": "La clé « $1 » est trop long",
+	"translate-messagebundle-error-key-invalid-characters": "La clé « $1 » contient des caractères interdits",
+	"translate-messagebundle-error-invalid-value": "La clé « $1 » ne contient pas de valeur chaîne",
+	"translate-messagebundle-error-empty-value": "La clé « $1 » n’a pas de valeur"
 }
