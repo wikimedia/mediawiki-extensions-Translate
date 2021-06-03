@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * API module for managing aggregate message groups
  * Only supports aggregate message groups defined inside the wiki.
@@ -115,9 +117,21 @@ class ApiAggregateGroups extends ApiBase {
 					$this->dieUsageMsg( [ 'missingparam', 'aggregategroup' ] );
 				}
 			}
-			TranslateMetadata::deleteGroup( $params['aggregategroup'] );
-			// @todo Logging
 
+			$aggregateGroupId = $params['aggregategroup'];
+			$group = MessageGroups::getGroup( $aggregateGroupId );
+			if ( !$group || !( $group instanceof AggregateMessageGroup ) ) {
+				$this->dieWithError(
+					'apierror-translate-invalidaggregategroupname', 'invalidaggregategroupname'
+				);
+			}
+
+			TranslateMetadata::deleteGroup( $params['aggregategroup'] );
+			$logger = LoggerFactory::getInstance( 'Translate' );
+			$logger->info(
+				'Aggregate group {groupId} has been deleted.',
+				[ 'groupId' => $aggregateGroupId ]
+			);
 		} elseif ( $action === 'add' ) {
 			if ( !isset( $params['groupname'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
