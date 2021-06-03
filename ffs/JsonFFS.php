@@ -75,7 +75,7 @@ class JsonFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$template = $this->read( $collection->getLanguage() );
+		$template = $this->read( $collection->getLanguage() ) ?: [];
 		$authors = $this->filterAuthors( $collection->getAuthors(), $collection->getLanguage() );
 		$messages = [];
 
