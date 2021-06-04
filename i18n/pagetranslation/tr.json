@@ -167,7 +167,7 @@
 	"pt-movepage-list-translatable-note": "Bu sayfalar ayrı olarak taşınmalıdır.",
 	"pt-movepage-list-other": "Diğer {{PLURAL:$1|alt sayfa|alt sayfalar}}",
 	"pt-movepage-list-count": "Toplam $1 taşınacak sayfa ve $2 alt sayfa.",
-	"pt-movepage-page-count-limit": "Bu çevrilebilir sayfa $1 fazladan sayfa içerir. Bu kadar çok sayfanın taşınmasının güvenilmez olduğu görüldü. Bunu bir bakım betiği aracılığıyla yapmak için lütfen hizmetli ile iletişime geçin.",
+	"pt-movepage-page-count-limit": "Bu çevrilebilir sayfa $1 fazladan {{PLURAL:$1|sayfa}} içerir. Bu kadar çok sayfanın taşınmasının güvenilmez olduğu görüldü. Bunu bir bakım betiği aracılığıyla yapmak için lütfen sistem hizmetli ile iletişime geçin.",
 	"pt-movepage-list-no-pages": "Sayfa bulunamadı.",
 	"pt-movepage-legend": "Çevrilebilir sayfayı taşı",
 	"pt-movepage-current": "Geçerli adı:",

@@ -181,7 +181,7 @@
 	"pt-movepage-list-translatable-note": "Ces pages doivent être renommées séparément.",
 	"pt-movepage-list-other": "Autre{{PLURAL:$1||s}} sous-page{{PLURAL:$1||s}}",
 	"pt-movepage-list-count": "Au total, $1 page{{PLURAL:$1||s}} et $2 sous-page{{PLURAL:$2||s}} à déplacer.",
-	"pt-movepage-page-count-limit": "La page traduisible consiste en plus de $1 page{{PLURAL:$1||s}}. Déplacer en même temps un si grand nombre de pages s’est avéré peu fiable. Veuillez contacter un administrateur pour réaliser ceci par un script de maintenance.",
+	"pt-movepage-page-count-limit": "La page traduisible consiste en plus de $1 page{{PLURAL:$1||s}}. Déplacer en même temps un si grand nombre de pages s’est avéré peu fiable. Veuillez contacter un administrateur système pour réaliser ceci par un script de maintenance.",
 	"pt-movepage-list-no-pages": "Aucune page trouvée.",
 	"pt-movepage-legend": "Déplacer la page traduisible",
 	"pt-movepage-current": "Nom actuel :",

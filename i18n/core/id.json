@@ -17,6 +17,7 @@
 			"Rex",
 			"Uchup19",
 			"William Surya Permana",
+			"WillsonEP09",
 			"පසිඳු කාවින්ද"
 		]
 	},
@@ -233,7 +234,7 @@
 	"translate-smg-rename-new": "Tambahkan sebagai ... baru",
 	"translate-smg-rename-rename": "Tambahkan sebagai nama baru dari ...",
 	"translate-smg-rename-dialog-title": "Pilih nama baru yang cocok untuk $1",
-	"translate-smg-strong-sync-help": "Wantuan",
+	"translate-smg-strong-sync-help": "Bantuan",
 	"translate-manage-import-diff": "Pesan $1 | Tindakan: $2",
 	"translate-manage-import-new": "Pesan baru $1",
 	"translate-manage-import-deleted": "Pesan $1 terhapus",
@@ -334,7 +335,7 @@
 	"tux-editor-add-desc": "Tambah dokumentasi",
 	"tux-editor-suggestions-title": "Saran",
 	"tux-editor-in-other-languages": "Dalam bahasa lain",
-	"tux-editor-need-more-help": "Butuh bantuan?",
+	"tux-editor-need-more-help": "Perlu bantuan lagi?",
 	"tux-editor-ask-help": "Silakan tanya",
 	"tux-editor-tm-match": "$1% sesuai",
 	"tux-notices-more": "{{PLURAL:$1|$1 lagi}}",
