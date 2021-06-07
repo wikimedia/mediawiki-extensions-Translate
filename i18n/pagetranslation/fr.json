@@ -256,5 +256,7 @@
 	"tpt-unlink-button": "Retirer la possibilité de traduire",
 	"tpt-unlink-summary": "Possibilité retirée de traduire la page",
 	"tpt-generic-confirm": "Veuillez confirmer l’action.",
-	"tpt-generic-button": "Confirmer"
+	"tpt-generic-button": "Confirmer",
+	"tpt-validation-not-insertable": "Le nom de la variable de traduction « $1 » ne fonctionne pas comme pouvant être inséré dans l’interface de traduction. Éviter d’utiliser les caractères spéciaux.",
+	"tpt-validation-name-reuse": "La variable de traduction « $1 » est définie plusieurs fois avec un contenu différent. Modifier les noms de variable afin qu’ils soient uniques dans l’unité de traduction."
 }

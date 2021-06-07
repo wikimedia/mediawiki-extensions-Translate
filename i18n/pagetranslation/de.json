@@ -236,5 +236,7 @@
 	"tpt-unlink-button": "Von der Übersetzung entfernen",
 	"tpt-unlink-summary": "Seite von der Übersetzung entfernt",
 	"tpt-generic-confirm": "Bitte bestätige die Aktion.",
-	"tpt-generic-button": "Bestätigen"
+	"tpt-generic-button": "Bestätigen",
+	"tpt-validation-not-insertable": "Der Name der Übersetzungsvariablen „$1“ kann nicht in die Übersetzungsschnittstelle eingefügt werden. Vermeide die Verwendung von Sonderzeichen.",
+	"tpt-validation-name-reuse": "Die Übersetzungsvariable „$1“ ist mehrfach mit unterschiedlichem Inhalt definiert. Ändere die Variablennamen so, dass sie innerhalb der Übersetzungseinheit eindeutig sind."
 }
