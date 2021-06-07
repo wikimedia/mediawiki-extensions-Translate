@@ -325,27 +325,11 @@ class SimpleFFS implements FFS {
 	 * @return array
 	 */
 	public function filterAuthors( array $authors, $code ) {
-		$authorExclusionList = Services::getInstance()->getConfigHelper()->getTranslateAuthorExclusionList();
 		$groupId = $this->group->getId();
+		$configHelper = Services::getInstance()->getConfigHelper();
 
 		foreach ( $authors as $i => $v ) {
-			$hash = "$groupId;$code;$v";
-
-			$excluded = false;
-			foreach ( $authorExclusionList as $rule ) {
-				list( $type, $regex ) = $rule;
-
-				if ( preg_match( $regex, $hash ) ) {
-					if ( $type === 'white' ) {
-						$excluded = false;
-						break;
-					} else {
-						$excluded = true;
-					}
-				}
-			}
-
-			if ( $excluded ) {
+			if ( $configHelper->isAuthorExcluded( $groupId, $code, $v ) ) {
 				unset( $authors[$i] );
 			}
 		}

@@ -209,28 +209,10 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	protected function filterUsers( array $users, string $code ): array {
-		$authorExclusionList = $this->configHelper->getTranslateAuthorExclusionList();
-
 		foreach ( $users as $index => $user ) {
 			$username = $user[TranslatorActivityQuery::USER_NAME];
-			# We do not know the group
-			$hash = "#;$code;$username";
-
-			$excluded = false;
-			foreach ( $authorExclusionList as $rule ) {
-				[ $type, $regex ] = $rule;
-
-				if ( preg_match( $regex, $hash ) ) {
-					if ( $type === 'white' ) {
-						$excluded = false;
-						break;
-					} else {
-						$excluded = true;
-					}
-				}
-			}
-
-			if ( $excluded ) {
+			// We do not know the group
+			if ( $this->configHelper->isAuthorExcluded( '#', $code, $username ) ) {
 				unset( $users[$index] );
 			}
 		}

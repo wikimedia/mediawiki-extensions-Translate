@@ -45,4 +45,24 @@ class ConfigHelper {
 
 		return $wgTranslateBlacklist;
 	}
+
+	public function isAuthorExcluded( string $groupId, string $languageCode, string $username ): bool {
+		$hash = "$groupId;$languageCode;$username";
+		$authorExclusionList = $this->getTranslateAuthorExclusionList();
+		$excluded = false;
+
+		foreach ( $authorExclusionList as $rule ) {
+			list( $type, $regex ) = $rule;
+
+			if ( preg_match( $regex, $hash ) ) {
+				if ( $type === 'white' ) {
+					return false;
+				} else {
+					$excluded = true;
+				}
+			}
+		}
+
+		return $excluded;
+	}
 }
