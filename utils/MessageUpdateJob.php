@@ -304,7 +304,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$groupIds = $sourceMessageHandle->getGroupIds();
 		if ( !$groupIds ) {
 			$this->logWarning(
-				'Could not find group Id for message title',
+				"Could not find group Id for message title: {$currentTitle->getPrefixedDBkey()}",
 				$this->getParams()
 			);
 			return;
