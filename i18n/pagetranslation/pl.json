@@ -235,5 +235,6 @@
 	"tpt-unlink-button": "Usuń z tłumaczenia.",
 	"tpt-unlink-summary": "Usunięto stronę z tłumaczenia.",
 	"tpt-generic-confirm": "Proszę potwierdzić akcję.",
-	"tpt-generic-button": "Potwierdź"
+	"tpt-generic-button": "Potwierdź",
+	"tpt-validation-name-reuse": "Zmienna tłumaczeń „$1” została zdefiniowana wielokrotnie z różną zawartością. Zmień identyfikatory zmiennych tak, aby były unikalne wewnątrz jednej jednostki tłumaczeń."
 }
