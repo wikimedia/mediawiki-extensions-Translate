@@ -15,7 +15,7 @@
  * @since 2013-01-02
  */
 class SupportAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		return [
 			'url' => self::getSupportUrl( $this->handle ),
 		];

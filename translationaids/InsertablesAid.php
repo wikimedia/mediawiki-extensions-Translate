@@ -15,7 +15,7 @@
  * @since 2013.09
  */
 class InsertablesAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		// We need to get the primary group to get the correct file
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();

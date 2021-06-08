@@ -14,7 +14,7 @@
  * @since 2013-01-01
  */
 class CurrentTranslationAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		$translation = null;
 
 		$title = $this->handle->getTitle();

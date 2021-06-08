@@ -19,7 +19,7 @@ use MediaWiki\Revision\SlotRecord;
  * @since 2013-01-01
  */
 class UpdatedDefinitionAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		$db = TranslateUtils::getSafeReadDB();
 		$conds = [
 			'rt_page' => $this->handle->getTitle()->getArticleID(),

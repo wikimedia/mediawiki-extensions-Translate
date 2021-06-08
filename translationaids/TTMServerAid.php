@@ -31,7 +31,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		}
 	}
 
-	public function getData() {
+	public function getData(): array {
 		$text = $this->dataProvider->getDefinition();
 		if ( trim( $text ) === '' ) {
 			return [];

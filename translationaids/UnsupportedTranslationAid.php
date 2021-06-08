@@ -15,7 +15,7 @@
  * @since 2013-03-29
  */
 class UnsupportedTranslationAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		throw new TranslationHelperException( 'This translation aid is disabled' );
 	}
 }

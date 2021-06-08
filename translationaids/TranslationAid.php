@@ -46,7 +46,7 @@ abstract class TranslationAid {
 	 *  debugging
 	 * @return array
 	 */
-	abstract public function getData();
+	abstract public function getData(): array;
 
 	/**
 	 * List of available message types mapped to the classes

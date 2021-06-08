@@ -17,7 +17,7 @@ use MediaWiki\MediaWikiServices;
  * @since 2013-01-01
  */
 class GettextDocumentationAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		// We need to get the primary group to get the correct file
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();

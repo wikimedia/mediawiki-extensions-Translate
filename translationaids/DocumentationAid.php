@@ -17,7 +17,7 @@ use MediaWiki\MediaWikiServices;
  * @since 2013-01-01
  */
 class DocumentationAid extends TranslationAid {
-	public function getData() {
+	public function getData(): array {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( !$wgTranslateDocumentationLanguageCode ) {
 			throw new TranslationHelperException( 'Message documentation is disabled' );

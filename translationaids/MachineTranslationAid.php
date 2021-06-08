@@ -52,7 +52,7 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 		}
 	}
 
-	public function getData() {
+	public function getData(): array {
 		$suggestions = [ '**' => 'suggestion' ];
 
 		foreach ( $this->getQueryData() as $queryData ) {
