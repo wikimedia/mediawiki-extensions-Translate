@@ -1,22 +1,15 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
- * Translation aid which gives the current saved translation.
- *
- * @ingroup TranslationAids
+ * Translation aid that provides the current saved translation.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
+ * @ingroup TranslationAids
  */
 class CurrentTranslationAid extends TranslationAid {
 	public function getData(): array {
-		$translation = null;
-
 		$title = $this->handle->getTitle();
 		$translation = TranslateUtils::getMessageContent(
 			$this->handle->getKey(),
