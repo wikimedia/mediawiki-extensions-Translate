@@ -1,18 +1,14 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+use MediaWiki\MediaWikiServices;
 
 /**
- * Translation aid which gives the "in other languages" suggestions.
- *
- * @ingroup TranslationAids
+ * Translation aid that provides the "in other languages" suggestions.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
+ * @ingroup TranslationAids
  */
 class InOtherLanguagesAid extends TranslationAid {
 	public function getData(): array {
@@ -26,18 +22,18 @@ class InOtherLanguagesAid extends TranslationAid {
 
 		$sourceLanguage = $this->handle->getGroup()->getSourceLanguage();
 
-		foreach ( $this->getFallbacks( $code ) as $fbcode ) {
-			if ( !isset( $translations[$fbcode] ) ) {
+		foreach ( $this->getFallbacks( $code ) as $fallbackCode ) {
+			if ( !isset( $translations[$fallbackCode] ) ) {
 				continue;
 			}
 
-			if ( $fbcode === $sourceLanguage ) {
+			if ( $fallbackCode === $sourceLanguage ) {
 				continue;
 			}
 
 			$suggestions[] = [
-				'language' => $fbcode,
-				'value' => $translations[$fbcode],
+				'language' => $fallbackCode,
+				'value' => $translations[$fallbackCode],
 			];
 		}
 
@@ -50,11 +46,13 @@ class InOtherLanguagesAid extends TranslationAid {
 	 * @param string $code
 	 * @return string[] List of language codes
 	 */
-	protected function getFallbacks( $code ) {
+	protected function getFallbacks( string $code ): array {
 		global $wgTranslateLanguageFallbacks;
+		$mwServices = MediaWikiServices::getInstance();
 
 		// User preference has the final say
-		$preference = $this->context->getUser()->getOption( 'translate-editlangs' );
+		$userOptionLookup = $mwServices->getUserOptionsLookup();
+		$preference = $userOptionLookup->getOption( $this->context->getUser(), 'translate-editlangs' );
 		if ( $preference !== 'default' ) {
 			$fallbacks = array_map( 'trim', explode( ',', $preference ) );
 			foreach ( $fallbacks as $k => $v ) {
@@ -72,7 +70,7 @@ class InOtherLanguagesAid extends TranslationAid {
 			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
 		}
 
-		$list = Language::getFallbacksFor( $code );
+		$list = $mwServices->getLanguageFallback()->getAll( $code );
 		$fallbacks = array_merge( $list, $fallbacks );
 
 		return array_unique( $fallbacks );
