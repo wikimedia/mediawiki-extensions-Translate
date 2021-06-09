@@ -1,19 +1,13 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\MediaWikiServices;
 
 /**
- * Translation aid which gives Gettext documentation.
- *
+ * Translation aid that provides Gettext documentation.
  * @ingroup TranslationAids
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
  */
 class GettextDocumentationAid extends TranslationAid {
@@ -37,12 +31,12 @@ class GettextDocumentationAid extends TranslationAid {
 
 		$extra = $cache->getExtra();
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-		$mykey = $contLang->lcfirst( $this->handle->getKey() );
-		$mykey = str_replace( ' ', '_', $mykey );
+		$messageKey = $contLang->lcfirst( $this->handle->getKey() );
+		$messageKey = str_replace( ' ', '_', $messageKey );
 
-		$help = $extra['TEMPLATE'][$mykey]['comments'] ?? null;
+		$help = $extra['TEMPLATE'][$messageKey]['comments'] ?? null;
 		if ( !$help ) {
-			throw new TranslationHelperException( "No comments found for key '$mykey'" );
+			throw new TranslationHelperException( "No comments found for key '$messageKey'" );
 		}
 
 		$conf = $group->getConfiguration();
