@@ -1,16 +1,11 @@
 <?php
-/**
- * Translation aid helper class.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
- * Helper class for translation aids which use web services.
- *
+ * Helper class for translation aids that use web services.
  * @ingroup TranslationAids
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2015.02
  */
 abstract class QueryAggregatorAwareTranslationAid
@@ -18,21 +13,27 @@ abstract class QueryAggregatorAwareTranslationAid
 	implements QueryAggregatorAware
 {
 	private $queries = [];
+	/** @var QueryAggregator */
 	private $aggregator;
 
-	// Interface: QueryAggregatorAware
-	public function setQueryAggregator( QueryAggregator $aggregator ) {
+	public function setQueryAggregator( QueryAggregator $aggregator ): void {
 		$this->aggregator = $aggregator;
 	}
 
 	/**
 	 * Stores a web service query for later execution.
 	 * @param TranslationWebService $service
-	 * @param string $from Source language
-	 * @param string $to Target language
-	 * @param string $text Source text
+	 * @param string $from
+	 * @param string $to
+	 * @param string $text
+	 * @return void
 	 */
-	protected function storeQuery( TranslationWebService $service, $from, $to, $text ) {
+	protected function storeQuery(
+		TranslationWebService $service,
+		string $from,
+		string $to,
+		string $text
+	): void {
 		$queries = $service->getQueries( $text, $from, $to );
 		foreach ( $queries as $query ) {
 			$this->queries[] = [
@@ -51,7 +52,7 @@ abstract class QueryAggregatorAwareTranslationAid
 	 *  - text: string: source text
 	 *  - response: TranslationQueryResponse
 	 */
-	protected function getQueryData() {
+	protected function getQueryData(): array {
 		foreach ( $this->queries as &$queryData ) {
 			$queryData['response'] = $this->aggregator->getResponse( $queryData['id'] );
 			unset( $queryData['id'] );
