@@ -406,5 +406,13 @@
 	"translate-syntax-error": "'A traduzione tène errore de sindasse",
 	"tux-session-expired": "Non g'è trasute. Tràse jndr'à 'na schede a parte; oppure copie 'a traduzione ca non g'è reggistrate, tràse, e tuèrne jndr'à sta pàgene e sckaffe 'a traduziona toje.",
 	"tux-nojs": "Stu strumende non ge funzione senze JavaScript. JavaScript jè disabilitate, non ge ste funzione, o 'u browser tune non g'u supporte.",
-	"specialpages-group-translation": "Traduzione"
+	"specialpages-group-translation": "Traduzione",
+	"content-model-translate-messagebundle": "Pacchette de messàgge traducibbele",
+	"translate-messagebundle-validation-error": "Pacchette de messàgge non valide: $1",
+	"translate-messagebundle-error-invalid-array": "'U pacchette de messàgge adda essere 'nu oggette JSON. Tipe pigghiate $1",
+	"translate-messagebundle-error-key-empty": "'U pacchette de messàgge non ge pò tenè 'na chiave vacande",
+	"translate-messagebundle-error-key-too-long": "'A chiave \"$1\" jè troppe longhe",
+	"translate-messagebundle-error-key-invalid-characters": "'A chiave \"$1\" tène carattere non conzendite",
+	"translate-messagebundle-error-invalid-value": "'A chiave \"$1\" non ge tène 'nu valore stringhe",
+	"translate-messagebundle-error-empty-value": "'A chiave \"$1\" non ge tène 'nu valore"
 }
