@@ -17,7 +17,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	/** @var array[] */
 	private $services;
 
-	public function populateQueries() {
+	public function populateQueries(): void {
 		$text = $this->dataProvider->getDefinition();
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();

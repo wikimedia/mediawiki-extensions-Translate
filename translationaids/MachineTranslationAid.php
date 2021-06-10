@@ -15,7 +15,7 @@
  * @since 2013-01-01 | 2015.02 extends QueryAggregatorAwareTranslationAid
  */
 class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
-	public function populateQueries() {
+	public function populateQueries(): void {
 		$definition = $this->dataProvider->getDefinition();
 		$translations = $this->dataProvider->getGoodTranslations();
 		$from = $this->group->getSourceLanguage();
