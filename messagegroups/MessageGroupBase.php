@@ -326,8 +326,8 @@ abstract class MessageGroupBase implements MessageGroup {
 		$codes = array_flip( array_keys( TranslateUtils::getLanguageNames( null ) ) );
 
 		$lists = $groupConfiguration['LANGUAGES'];
-		if ( isset( $lists['blacklist'] ) ) {
-			$exclusionList = $lists['blacklist'];
+		$exclusionList = $lists['exclude'] ?? $lists['blacklist'] ?? null;
+		if ( $exclusionList ) {
 			if ( $exclusionList === '*' ) {
 				// All excluded languages
 				$codes = [];
@@ -354,8 +354,8 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 		}
 
-		if ( isset( $lists['whitelist'] ) ) {
-			$inclusionList = $lists['whitelist'];
+		$inclusionList = $lists['include'] ?? $lists['whitelist'] ?? null;
+		if ( $inclusionList ) {
 			if ( $inclusionList === '*' ) {
 				// All languages included (except $wgTranslateDisabledTargetLanguages)
 				return null;

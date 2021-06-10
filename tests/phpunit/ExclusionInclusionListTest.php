@@ -43,7 +43,7 @@ class ExclusionInclusionListTest extends MediaWikiTestCase {
 	public function testAllExclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
-			'blacklist' => '*',
+			'exclude' => '*',
 		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
@@ -53,7 +53,7 @@ class ExclusionInclusionListTest extends MediaWikiTestCase {
 	public function testAllInclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
-			'whitelist' => '*',
+			'include' => '*',
 		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
@@ -63,8 +63,8 @@ class ExclusionInclusionListTest extends MediaWikiTestCase {
 	public function testInclusionListOverridesExclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
-			'whitelist' => [ 'en', 'hi', 'ta' ],
-			'blacklist' => [ 'ta' ],
+			'include' => [ 'en', 'hi', 'ta' ],
+			'exclude' => [ 'ta' ],
 		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
@@ -75,7 +75,7 @@ class ExclusionInclusionListTest extends MediaWikiTestCase {
 	public function testSomeExclusionList() {
 		$conf = $this->groupConfiguration;
 		$conf['LANGUAGES'] = [
-			'blacklist' => [ 'or', 'hi' ],
+			'exclude' => [ 'or', 'hi' ],
 		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();

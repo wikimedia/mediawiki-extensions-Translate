@@ -168,20 +168,20 @@ class PremadeMediawikiExtensionGroups {
 
 		if ( isset( $info['languages'] ) ) {
 			$conf['LANGUAGES'] = [
-				'whitelist' => [],
-				'blacklist' => [],
+				'include' => [],
+				'exclude' => [],
 			];
 
 			foreach ( $info['languages'] as $tagSpec ) {
 				if ( preg_match( '/^([+-])?(.+)$/', $tagSpec, $m ) ) {
 					list( , $sign, $tag ) = $m;
 					if ( $sign === '+' ) {
-						$conf['LANGUAGES']['whitelist'][] = $tag;
+						$conf['LANGUAGES']['include'][] = $tag;
 					} elseif ( $sign === '-' ) {
-						$conf['LANGUAGES']['blacklist'][] = $tag;
+						$conf['LANGUAGES']['exclude'][] = $tag;
 					} else {
-						$conf['LANGUAGES']['blacklist'] = '*';
-						$conf['LANGUAGES']['whitelist'][] = $tag;
+						$conf['LANGUAGES']['exclude'] = '*';
+						$conf['LANGUAGES']['include'][] = $tag;
 					}
 				}
 			}

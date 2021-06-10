@@ -126,3 +126,11 @@ root:
           _type: prototype
           _prototype:
             _type: text
+        include:
+          _type: prototype
+          _prototype:
+            _type: text
+        exclude:
+          _type: prototype
+          _prototype:
+            _type: text
