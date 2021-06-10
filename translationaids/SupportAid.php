@@ -1,18 +1,12 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
- * Translation aid which gives an url where users can ask for help
- *
- * @ingroup TranslationAids
+ * Translation aid that provides an url where users can ask for help
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-02
+ * @ingroup TranslationAids
  */
 class SupportAid extends TranslationAid {
 	public function getData(): array {
@@ -23,13 +17,11 @@ class SupportAid extends TranslationAid {
 
 	/**
 	 * Target URL for a link provided by a support button/aid.
-	 *
 	 * @param MessageHandle $handle MessageHandle object for the translation message.
-	 * @since 2015.09
 	 * @return string
 	 * @throws TranslationHelperException
 	 */
-	public static function getSupportUrl( MessageHandle $handle ) {
+	public static function getSupportUrl( MessageHandle $handle ): string {
 		$title = $handle->getTitle();
 		$config = self::getConfig( $handle );
 
@@ -46,13 +38,12 @@ class SupportAid extends TranslationAid {
 			return wfAppendQuery( $config['url'], $params );
 		} elseif ( isset( $config['page'] ) ) {
 			$page = Title::newFromText( $config['page'] );
-			if ( !$page ) {
-				throw new TranslationHelperException( 'Support page not configured properly' );
+			if ( $page ) {
+				return $page->getFullURL( $params );
 			}
-			return $page->getFullURL( $params );
-		} else {
-			throw new TranslationHelperException( 'Support page not configured properly' );
 		}
+
+		throw new TranslationHelperException( 'Support page not configured properly' );
 	}
 
 	/**
