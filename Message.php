@@ -162,8 +162,9 @@ class ThinMessage extends TMessage {
 			return $this->infile();
 		}
 
-		if ( $this->translation === null ) {
+		if ( $this->translation === null && class_exists( '\Revision' ) ) {
 			// Should only happen with MW < 1.34. Slow if the text table hasn't been joined in!
+			// @phan-suppress-next-line PhanUndeclaredClassMethod
 			$text = Revision::getRevisionText( $this->row );
 			if ( $text !== false ) {
 				$this->translation = $text;
