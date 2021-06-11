@@ -1,22 +1,24 @@
 <?php
-/**
- * Translation aid code.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use Wikimedia\Rdbms\IDatabase;
 
-/** @since 2018.01 */
+/**
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @since 2018.01
+ */
 class TranslationAidDataProvider {
+	/** @var MessageHandle */
 	private $handle;
+	/** @var MessageGroup */
 	private $group;
+	/** @var string|null */
 	private $definition;
+	/** @var array */
 	private $translations;
 
 	public function __construct( MessageHandle $handle ) {
@@ -26,10 +28,9 @@ class TranslationAidDataProvider {
 
 	/**
 	 * Get the message definition. Cached for performance.
-	 *
-	 * @return string
+	 * @return string|null
 	 */
-	public function getDefinition() {
+	public function getDefinition(): ?string {
 		if ( $this->definition !== null ) {
 			return $this->definition;
 		}
@@ -48,18 +49,16 @@ class TranslationAidDataProvider {
 		return $this->definition;
 	}
 
-	/** @return Content */
-	public function getDefinitionContent() {
+	public function getDefinitionContent(): Content {
 		return ContentHandler::makeContent( $this->getDefinition(), $this->handle->getTitle() );
 	}
 
 	/**
 	 * Get the translations in all languages. Cached for performance.
 	 * Fuzzy translation are not included.
-	 *
 	 * @return array Language code => Translation
 	 */
-	public function getGoodTranslations() {
+	public function getGoodTranslations(): array {
 		if ( $this->translations !== null ) {
 			return $this->translations;
 		}
@@ -67,12 +66,13 @@ class TranslationAidDataProvider {
 		$data = self::loadTranslationData( wfGetDB( DB_REPLICA ), $this->handle );
 		$translations = [];
 		$prefixLength = strlen( $this->handle->getTitleForBase()->getDBKey() . '/' );
+		$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
 
 		foreach ( $data as $page => $translation ) {
 			// Could use MessageHandle here, but that queries the message index.
 			// Instead we can get away with simple string manipulation.
 			$code = substr( $page, $prefixLength );
-			if ( !Language::isKnownLanguageTag( $code ) ) {
+			if ( !$languageNameUtils->isKnownLanguageTag( $code ) ) {
 				continue;
 			}
 
@@ -84,7 +84,7 @@ class TranslationAidDataProvider {
 		return $translations;
 	}
 
-	private static function loadTranslationData( IDatabase $db, MessageHandle $handle ) {
+	private static function loadTranslationData( IDatabase $db, MessageHandle $handle ): array {
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$queryInfo = $revisionStore->getQueryInfo( [ 'page' ] );
 		$tables = $queryInfo[ 'tables' ];
