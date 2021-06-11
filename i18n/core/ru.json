@@ -33,6 +33,7 @@
 			"Okras",
 			"Pacha Tchernof",
 			"Ping08",
+			"Rivka Silinsky",
 			"Rubin",
 			"Tempodivalse",
 			"Valencia212",
@@ -418,5 +419,10 @@
 	"translate-syntax-error": "В переводе  имеются синтаксические ошибки.",
 	"tux-session-expired": "Вы не авторизованы. Пожалуйста, авторизуйтесь в отдельной вкладке или скопируйте несохранённый перевод, вернитесь на эту страницу после авторизации и введите свой перевод ещё раз.",
 	"tux-nojs": "Этот инструмент не работает без JavaScript. JavaScript отключён, не работает, или этот браузер не поддерживается.",
-	"specialpages-group-translation": "Перевод"
+	"specialpages-group-translation": "Перевод",
+	"content-model-translate-messagebundle": "Переводимый пакет сообщений",
+	"translate-messagebundle-validation-error": "Недопустимый пакет сообщений: $1",
+	"translate-messagebundle-error-key-empty": "Пакет сообщений не должен содержать пустой ключ",
+	"translate-messagebundle-error-key-too-long": "Ключ \"$1\" слишком длинный",
+	"translate-messagebundle-error-empty-value": "Ключ \"$1\" не имеет значения"
 }

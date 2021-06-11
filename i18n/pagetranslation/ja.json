@@ -21,6 +21,8 @@
 	"right-pagetranslation": "ページの版を翻訳対象に指定",
 	"action-pagetranslation": "翻訳対象ページの管理",
 	"tps-edit-sourcepage-text": "翻訳元ページを編集しています。以下の説明文書の内容を理解していることを確認してください:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 翻訳元テキストの変更]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples マークアップの使用例]",
+	"tps-edit-sourcepage-ve-warning-title": "警告: 未対応のページ",
+	"tps-edit-sourcepage-ve-warning-text": "翻訳対象ページを編集しています。このエディターによる編集は、まだ公式には対応していません。ソース エディターを使用してください。",
 	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "翻訳単位 $1",
 	"tpt-section-new": "新しい翻訳単位。\n名前: $1",
@@ -88,6 +90,7 @@
 	"tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
 	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳用に予約されています。\n編集しようとしているページには翻訳対象ページが対応していないようです。",
 	"tpt-translation-restricted": "翻訳管理者がこのページのこの言語への翻訳を禁止しています。\n\n理由: $1",
+	"tpt-translation-restricted-no-reason": "翻訳管理者がこのページのこの言語への翻訳を禁止しています。",
 	"tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",
 	"tpt-discouraged-language-force-content": "翻訳管理者によってこのページの翻訳は$1のみに限定されました。",
 	"tpt-discouraged-language-header": "このページでは$1への翻訳は優先課題ではありません。",
@@ -157,6 +160,7 @@
 	"pt-movepage-list-translatable-note": "これらのページは個別に移動させてください。",
 	"pt-movepage-list-other": "その他の{{PLURAL:$1|subpage|下位ページ}}",
 	"pt-movepage-list-count": "合計 $1 {{PLURAL:$1|ページ}}と $2 {{PLURAL:$2|下位ページ}} を移動します。",
+	"pt-movepage-page-count-limit": "この翻訳対象ページは、$1 {{PLURAL:$1|件以上のページ}}で構成されています。このような多数のページの移動は、信頼性に欠けることが分かっています。システム管理者に連絡して、メンテナンス スクリプトでこの作業を行ってください。",
 	"pt-movepage-list-no-pages": "ページはありません。",
 	"pt-movepage-legend": "翻訳対象ページの移動",
 	"pt-movepage-current": "現在の名前:",
@@ -230,5 +234,7 @@
 	"tpt-unlink-button": "翻訳対象から除去",
 	"tpt-unlink-summary": "ページを翻訳対象から除去",
 	"tpt-generic-confirm": "操作を確認してください。",
-	"tpt-generic-button": "確認"
+	"tpt-generic-button": "確認",
+	"tpt-validation-not-insertable": "翻訳変数名「$1」は、翻訳インターフェイスの挿入可能な変数として機能しません。特殊文字の使用は避けてください。",
+	"tpt-validation-name-reuse": "翻訳変数「$1」が異なる内容で複数回定義されています。翻訳単位内で一意になるように変数名を変更してください。"
 }
