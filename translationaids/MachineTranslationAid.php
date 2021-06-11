@@ -1,18 +1,12 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
- * Translation aid which gives suggestion from machine translation services.
- *
- * @ingroup TranslationAids
+ * Translation aid that provides suggestion from machine translation services.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01 | 2015.02 extends QueryAggregatorAwareTranslationAid
+ * @ingroup TranslationAids
  */
 class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 	public function populateQueries(): void {
@@ -62,11 +56,7 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 		return array_filter( $suggestions );
 	}
 
-	/**
-	 * @param array $queryData
-	 * @return array|null
-	 */
-	protected function formatSuggestion( array $queryData ) {
+	protected function formatSuggestion( array $queryData ): ?array {
 		$service = $queryData['service'];
 		$response = $queryData['response'];
 		$sourceLanguage = $queryData['language'];
