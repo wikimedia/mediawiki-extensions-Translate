@@ -264,8 +264,27 @@ $specialPageAliases['cs'] = [
 	'Translate' => [ 'Přeložit' ],
 ];
 
+/** Welsh (Cymraeg) */
+$specialPageAliases['cy'] = [
+	'AggravateGroups' => [ 'Grwpiau Gwaethygu' ],
+	'ImportTranslations' => [ 'Cyfieithiadau_Mewnforio' ],
+	'LanguageStats' => [ 'Ystadegau_Iaith' ],
+	'ManageMessageGroups' => [ 'Rheoli_Grwpiau_Negeseuon' ],
+	'ManageTranslatorSandbox' => [ 'Rheoli_Blwch_Tywod_Cyfieithydd' ],
+	'MessageGroupStats' => [ 'Ystadegau_Grŵp_Negeseuon' ],
+	'PageTranslationDeletePage' => [ 'Cyfieithiad_Tudalen_Dileu_Tudalen' ],
+	'SearchTranslations' => [ 'Chwilio_Cyfieithiadau' ],
+	'Translate' => [ 'Cyfieithwch' ],
+	'TranslationsStash' => [ 'Stash_Ciefithu' ],
+	'TranslationStats' => [ 'Ystadegau Cyfieithu' ],
+	'Translations' => [ 'Cyfieithiadau'],
+	'PageMigration' => [ 'Tudalen Ymfudo' ],
+	'PagePreparation' => [ 'Paratoi Tudalen' ],
+	'PageTranslation' => [ 'Cyfieithiad_Tudalen'],
+];
+
 /** Danish (dansk) */
-$specialPageAliases['da'] = [
+$specialPageAliases['da'] =
 	'PageTranslation' => [ 'Sideoversættelse' ],
 	'Translate' => [ 'Oversæt' ],
 ];
