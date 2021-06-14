@@ -242,5 +242,7 @@
 	"tpt-unlink-button": "Çeviriden kaldır",
 	"tpt-unlink-summary": "Sayfa çeviriden kaldırıldı",
 	"tpt-generic-confirm": "Lütfen işlemi onaylayın.",
-	"tpt-generic-button": "Onayla"
+	"tpt-generic-button": "Onayla",
+	"tpt-validation-not-insertable": "\"$1\" çeviri değişkeni ismi çeviri arayüzüne konulamaz. Özel karakter kullanmaktan sakının.",
+	"tpt-validation-name-reuse": "\"$1\" çeviri değişkeni farklı içerikle birden fazla kez tanımlanmış. Değişken isimlerini çeviri biriminde tek olacak şekilde değiştirin."
 }
