@@ -1,21 +1,31 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 
 /**
- * Translation aid which gives suggestion from translation memory.
- *
+ * Translation aid that provides suggestion from translation memory.
  * @ingroup TranslationAids
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01 | 2015.02 extends QueryAggregatorAwareTranslationAid
  */
 class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	/** @var array[] */
 	private $services;
+	/** @var TtmServerFactory */
+	private $ttmServerFactory;
+
+	public function __construct(
+		MessageGroup $group,
+		MessageHandle $handle,
+		IContextSource $context,
+		TranslationAidDataProvider $dataProvider
+	) {
+		parent::__construct( $group, $handle, $context, $dataProvider );
+		$this->ttmServerFactory = Services::getInstance()->getTtmServerFactory();
+	}
 
 	public function populateQueries(): void {
 		$text = $this->dataProvider->getDefinition();
@@ -66,7 +76,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		return $suggestions;
 	}
 
-	protected function formatWebSuggestions( array $queryData ) {
+	protected function formatWebSuggestions( array $queryData ): array {
 		$service = $queryData['service'];
 		$response = $queryData['response'];
 		$sourceLanguage = $queryData['language'];
@@ -101,16 +111,12 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		return $items;
 	}
 
-	/**
-	 * @param array[] $queryData
-	 * @param ReadableTTMServer $s
-	 * @param string $serviceName
-	 * @param string $sourceLanguage
-	 * @return array[]
-	 */
 	protected function formatInternalSuggestions(
-		array $queryData, ReadableTTMServer $s, $serviceName, $sourceLanguage
-	) {
+		array $queryData,
+		ReadableTTMServer $s,
+		string $serviceName,
+		string $sourceLanguage
+	): array {
 		$items = [];
 
 		foreach ( $queryData as $item ) {
@@ -136,7 +142,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		$services = $this->getQueryableServices();
 		foreach ( $services as $name => $config ) {
 			if ( $config['type'] === 'ttmserver' ) {
-				$services[$name] = TTMServer::factory( $config );
+				$services[$name] = $this->ttmServerFactory->create( $name );
 			} else {
 				unset( $services[$name] );
 			}
@@ -171,8 +177,8 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 
 	private function getQueryableServicesUncached( array $services ): array {
 		// First remove mirrors of the primary service
-		$primary = TTMServer::primary();
-		$mirrors = $primary ? $primary->getMirrors() : [];
+		$primary = $this->ttmServerFactory->getDefault();
+		$mirrors = $primary->getMirrors();
 		foreach ( $mirrors as $mirrorName ) {
 			unset( $services[$mirrorName] );
 		}
