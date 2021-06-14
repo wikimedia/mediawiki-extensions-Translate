@@ -1,22 +1,16 @@
 <?php
-/**
- * Translation aid provider.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
 /**
- * Translation aid which gives the message definition.
+ * Translation aid that provides the message definition.
  * This usually matches the content of the page ns:key/source_language.
- *
- * @ingroup TranslationAids
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
+ * @ingroup TranslationAids
  */
 class UpdatedDefinitionAid extends TranslationAid {
 	public function getData(): array {
@@ -78,8 +72,8 @@ class UpdatedDefinitionAid extends TranslationAid {
 		);
 
 		return [
-			'value_old' => $oldContent->getNativeData(),
-			'value_new' => $newContent->getNativeData(),
+			'value_old' => $oldContent->getText(),
+			'value_new' => $newContent->getText(),
 			'revisionid_old' => $oldRevRecord->getId(),
 			'revisionid_new' => $definitionTitle->getLatestRevID(),
 			'language' => $this->group->getSourceLanguage(),
