@@ -239,5 +239,7 @@
 	"tpt-unlink-button": "Remover da tradução",
 	"tpt-unlink-summary": "Página removida da tradução",
 	"tpt-generic-confirm": "Por favor, confirme a ação.",
-	"tpt-generic-button": "Confirmar"
+	"tpt-generic-button": "Confirmar",
+	"tpt-validation-not-insertable": "Nome da variável de tradução \"$1\" não funciona como inserido na interface de tradução. Evite usar caracteres especiais.",
+	"tpt-validation-name-reuse": "Variável de tradução \"$1\" é definida várias vezes com conteúdo diferente. Altere os nomes de variáveis para ser exclusivo dentro da unidade de tradução."
 }

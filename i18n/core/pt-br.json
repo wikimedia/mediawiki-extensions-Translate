@@ -208,7 +208,7 @@
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
 	"supportedlanguages": "Idiomas ativos",
-	"supportedlanguages-summary": "Esta página apresenta uma lista de todas os idiomas suportados por {{SITENAME}},\njunto dos respectivos nomes dos tradutores de cada idioma.\nQuanto maior for exibido um nome, com mais traduções a pessoa terá contribuído.\nA cor do sublinhado é um indicativo de atividades recentes do usuário.",
+	"supportedlanguages-summary": "Esta página apresenta uma lista de idiomas ativos no {{SITENAME}},\njunto dos respectivos nomes dos tradutores de cada idioma.\nQuanto maior for exibido um nome, com mais traduções a pessoa terá contribuído.\nA cor do sublinhado é um indicativo de atividades recentes do usuário.",
 	"supportedlanguages-colorlegend": "Legenda: última tradução $1 dias atrás.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
@@ -245,7 +245,7 @@
 	"translate-smg-groups-in-sync": "Grupos atualmente em sincronização",
 	"translate-smg-groups-in-sync-list": "Lista de grupos atualmente em processamento em segundo plano:",
 	"translate-smg-groups-with-error-title": "Grupos que tiveram erros durante a sincronização",
-	"translate-smg-groups-with-error-desc": "Lista de grupos que apresentaram erros durante a sincronização:",
+	"translate-smg-groups-with-error-desc": "Lista de grupos e suas mensagens que tiveram erros durante a sincronização:",
 	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|mensagem|mensagens}} com erros:",
 	"translate-smg-group-message-action-history": "Histórico",
 	"translate-smg-group-action-resolve": "Marcar como resolvido",
@@ -427,5 +427,12 @@
 	"tux-session-expired": "Você não está logado. Por favor entre em uma aba separada. Alternativamente, faça uma cópia das traduções não salvos, faça o login, retorne a esta página e inserir as traduções novamente.",
 	"tux-nojs": "Esta ferramenta não funciona sem o JavaScript. Ou o JavaScript está desativado, ou não funcionou, ou este browser não é suportado.",
 	"specialpages-group-translation": "Tradução",
-	"translate-messagebundle-error-key-too-long": "A chave \"$1\" é muito longa"
+	"content-model-translate-messagebundle": "Pacote de mensagem traduzível.",
+	"translate-messagebundle-validation-error": "Pacote de mensagem inválido: $1",
+	"translate-messagebundle-error-invalid-array": "O pacote de mensagens deve ser um objeto JSON. Tipo atual: $1",
+	"translate-messagebundle-error-key-empty": "O pacote de mensagens não deve conter uma chave vazia",
+	"translate-messagebundle-error-key-too-long": "A chave \"$1\" é muito longa",
+	"translate-messagebundle-error-key-invalid-characters": "Chave \"$1\" contém caracteres não permitidos",
+	"translate-messagebundle-error-invalid-value": "Chave \"$1\" não contém valor de string",
+	"translate-messagebundle-error-empty-value": "Chave \"$1\" não tem valor"
 }
