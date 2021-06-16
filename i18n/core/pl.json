@@ -309,7 +309,7 @@
 	"right-translate-sandboxmanage": "Zarządzanie początkującymi użytkownikami",
 	"action-translate-sandboxmanage": "zarządzanie początkującymi użytkownikami",
 	"right-translate-sandboxaction": "Wykonywanie działań dozwolonych dla początkujących użytkowników",
-	"action-translate-sandboxaction": "wykonywanie czynności dozwolonych użytkownikom w piaskownicy",
+	"action-translate-sandboxaction": "wykonywania czynności dozwolonych dla początkujących użytkowników",
 	"translate-workflow-state-": "(wyłączone)",
 	"translate-workflowstatus": "Status: $1",
 	"translate-workflow-set-doing": "Wysyłanie...",
