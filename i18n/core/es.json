@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"-jem-",
+			"Agent",
 			"Antur",
 			"Armando-Martin",
 			"Canaan9801",
@@ -285,7 +286,7 @@
 	"right-translate-sandboxmanage": "Gestionar usuarios de la zona de pruebas",
 	"action-translate-sandboxmanage": "gestionar usuarios de la zona de pruebas",
 	"right-translate-sandboxaction": "Ejecutar acciones permitidas para los usuarios de la zona de pruebas",
-	"action-translate-sandboxaction": "ejecutar acciones permitidas a los usuarios de la zona de pruebas",
+	"action-translate-sandboxaction": "ejecutar acciones permitidas para los usuarios de la zona de pruebas",
 	"translate-workflow-state-": "(no definido)",
 	"translate-workflowstatus": "Estado: $1",
 	"translate-workflow-set-doing": "Activando...",
