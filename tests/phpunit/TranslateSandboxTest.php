@@ -20,6 +20,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 
 		// Make sure the hooks are installed even if $wgTranslateUseSandbox is false.
 		TranslateHooks::setupTranslate();
+		$this->tablesUsed[] = 'user';
 	}
 
 	/**
