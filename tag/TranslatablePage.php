@@ -597,7 +597,7 @@ class TranslatablePage {
 			// Sometimes we want to display 0.00 for pages for which translation
 			// hasn't started yet.
 			$stats[$code] = 0.00;
-			if ( isset( $temp[$code] ) && $temp[$code][MessageGroupStats::TOTAL] > 0 ) {
+			if ( ( $temp[$code][MessageGroupStats::TOTAL] ?? 0 ) > 0 ) {
 				$total = $temp[$code][MessageGroupStats::TOTAL];
 				$translated = $temp[$code][MessageGroupStats::TRANSLATED];
 				$percentage = $translated / $total;

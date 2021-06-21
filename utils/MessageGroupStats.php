@@ -283,7 +283,7 @@ class MessageGroupStats {
 	 * Use this to extract results returned from selectRowsIdLang. You must pass the
 	 * message group ids you want to retrieve. Entries that do not match are not returned.
 	 *
-	 * @param Traversable $res Database result object
+	 * @param iterable $res Database result object
 	 * @param string[] $ids List of message group ids
 	 * @param array[] $stats Optional array to append results to.
 	 * @return array[]
@@ -397,7 +397,7 @@ class MessageGroupStats {
 	 * @param ?string[] $ids List of message group ids
 	 * @param ?string[] $codes List of language codes
 	 * @param int $flags Combination of FLAG_* constants.
-	 * @return Traversable Database result object
+	 * @return iterable Database result object
 	 */
 	protected static function selectRowsIdLang( ?array $ids, ?array $codes, $flags ) {
 		if ( $flags & self::FLAG_NO_CACHE ) {
