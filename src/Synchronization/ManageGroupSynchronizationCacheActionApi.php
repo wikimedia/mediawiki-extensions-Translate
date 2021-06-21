@@ -9,6 +9,7 @@ use Exception;
 use FormatJson;
 use MediaWiki\Logger\LoggerFactory;
 use MessageGroups;
+use Psr\Log\LoggerInterface;
 
 /**
  * Api module for managing group synchronization cache
@@ -22,10 +23,13 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 	private const VALID_OPS = [ 'resolveMessage', 'resolveGroup' ];
 	/** @var GroupSynchronizationCache */
 	private $groupSyncCache;
+	/** @var LoggerInterface */
+	private $groupSyncLog;
 
 	public function __construct( ApiMain $mainModule, $moduleName, GroupSynchronizationCache $groupSyncCache ) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->groupSyncCache = $groupSyncCache;
+		$this->groupSyncLog = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
 	}
 
 	public function execute() {
@@ -56,7 +60,7 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 				'exceptionMessage' => $e->getMessage()
 			];
 
-			LoggerFactory::getInstance( 'Translate.GroupSynchronization' )->error(
+			$this->groupSyncLog->error(
 				"Error while running: ManageGroupSynchronizationCacheActionApi::execute. Details: \n" .
 				FormatJson::encode( $data, true )
 			);
@@ -73,9 +77,24 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 	private function markAsResolved( string $groupId, ?string $messageTitle = null ): void {
 		if ( $messageTitle === null ) {
 			$currentGroupStatus = $this->groupSyncCache->markGroupAsResolved( $groupId );
+			$this->groupSyncLog->info(
+				'{user} resolved group {groupId}.',
+				[
+					'user' => $this->getUser()->getName(),
+					'groupId' => $groupId
+				]
+			);
 		} else {
 			$this->groupSyncCache->markMessageAsResolved( $groupId, $messageTitle );
 			$currentGroupStatus = $this->groupSyncCache->syncGroupErrors( $groupId );
+			$this->groupSyncLog->info(
+				'{user} resolved message {messageTitle} in group {groupId}.',
+				[
+					'user' => $this->getUser()->getName(),
+					'groupId' => $groupId,
+					'messageTitle' => $messageTitle
+				]
+			);
 		}
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [
