@@ -435,6 +435,23 @@ class MessageGroupStats {
 			return $stats[$id][$code];
 		}
 
+		// It may happen that caches are requested repeatedly for a group before we get a chance
+		// to write the values to the database. Check for queued updates first. This has the
+		// benefit of avoiding duplicate rows for inserts. Ideally this would be checked before we
+		// query the database for missing values. This code is somewhat ugly as it needs to
+		// reverse engineer the values from the row format.
+		$databaseGroupId = self::getDatabaseIdForGroupId( $id );
+		$uniqueKey = "$databaseGroupId|$code";
+		$queuedValue = self::$updates[$uniqueKey] ?? null;
+		if ( $queuedValue && !( $flags & self::FLAG_NO_CACHE ) ) {
+			return [
+				self::TOTAL => $queuedValue['tgs_total'],
+				self::TRANSLATED => $queuedValue['tgs_translated'],
+				self::FUZZY => $queuedValue['tgs_fuzzy'],
+				self::PROOFREAD => $queuedValue['tgs_proofread'],
+			];
+		}
+
 		if ( $group instanceof AggregateMessageGroup ) {
 			$aggregates = self::calculateAggregageGroup( $stats, $group, $code, $flags );
 		} else {
@@ -448,8 +465,8 @@ class MessageGroupStats {
 			return $aggregates;
 		}
 
-		self::$updates[] = [
-			'tgs_group' => self::getDatabaseIdForGroupId( $id ),
+		self::$updates[$uniqueKey] = [
+			'tgs_group' => $databaseGroupId,
 			'tgs_lang' => $code,
 			'tgs_total' => $aggregates[self::TOTAL],
 			'tgs_translated' => $aggregates[self::TRANSLATED],
@@ -609,7 +626,7 @@ class MessageGroupStats {
 				}
 
 				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
-				$dbw->replace( $table, [ $primaryKey ], $updates, $method );
+				$dbw->replace( $table, [ $primaryKey ], array_values( $updates ), $method );
 				$updates = [];
 			}
 		);
