@@ -583,7 +583,7 @@ class MessageGroupStats {
 		$dbw = $lb->getLazyConnectionRef( DB_MASTER ); // avoid connecting yet
 		$table = self::TABLE;
 		$updates = &self::$updates;
-		$callers = wfGetAllCallers( 10 );
+		$callers = wfGetAllCallers( 50 );
 
 		$updateOp = self::withLock(
 			$dbw,
