@@ -235,6 +235,7 @@
 	"translate-smg-rename-rename": "Tambahkan sebagai nama baru dari ...",
 	"translate-smg-rename-dialog-title": "Pilih nama baru yang cocok untuk $1",
 	"translate-smg-strong-sync-help": "Bantuan",
+	"translate-smg-group-message-action-history": "Riwayat",
 	"translate-manage-import-diff": "Pesan $1 | Tindakan: $2",
 	"translate-manage-import-new": "Pesan baru $1",
 	"translate-manage-import-deleted": "Pesan $1 terhapus",
