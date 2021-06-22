@@ -116,7 +116,7 @@ class ApiGroupReview extends ApiBase {
 		}
 
 		$table = 'translate_groupreviews';
-		$index = [ 'tgr_group', 'tgr_language' ];
+		$index = [ 'tgr_group', 'tgr_lang' ];
 		$row = [
 			'tgr_group' => $group->getId(),
 			'tgr_lang' => $code,
