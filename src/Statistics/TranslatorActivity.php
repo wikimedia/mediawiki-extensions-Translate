@@ -40,9 +40,6 @@ class TranslatorActivity {
 
 	/**
 	 * Get translations activity for a given language.
-	 *
-	 * @param string $language Language tag.
-	 * @return array Array with keys users and asOfTime
 	 * @throws StatisticsUnavailable If loading statistics is temporarily not possible.
 	 */
 	public function inLanguage( string $language ): array {
@@ -129,8 +126,6 @@ class TranslatorActivity {
 
 	/**
 	 * Update cache for one language, even if not stale.
-	 *
-	 * @param string $language Language tag
 	 * @throws StatisticsUnavailable If loading statistics is temporarily not possible.
 	 */
 	public function updateLanguage( string $language ): void {
