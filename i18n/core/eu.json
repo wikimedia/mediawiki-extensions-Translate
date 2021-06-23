@@ -117,7 +117,7 @@
 	"translate-mgs-group": "Mezu-taldea:",
 	"translate-mgs-submit": "Estatistikak erakutsi",
 	"translate-mgs-column-language": "Hizkuntza",
-	"translate-mgs-totals": "Hizkuntza guztiak batera",
+	"translate-mgs-totals": "{{PLURAL:$1|Hizkuntza bat|$1 hizkuntzak}} batera",
 	"supportedlanguages": "Laguntza duten hizkuntzak",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Translator}}|Itzultzaileak}}: $1",
 	"supportedlanguages-recenttranslations": "azken itzulpenak",
@@ -227,7 +227,7 @@
 	"tux-editor-message-tools-delete": "Ezabatu",
 	"tux-editor-message-tools-translations": "Itzulpen guztiak",
 	"tux-editor-loading": "Kargatzen...",
-	"translate-search-more-languages-info": "{{PLURAL:$1|Hizkuntza $1|$1 hizkuntza}} gehiago",
+	"translate-search-more-languages-info": "{{PLURAL:$1|Hizkuntza bat|$1 hizkuntza}} gehiago",
 	"translate-statsbar-tooltip": "%$1 itzulita, %$2 berrikusita",
 	"translate-statsbar-tooltip-with-fuzzy": "%$1 itzulita, %$2 berrikusita, %$3 zeharkituta",
 	"translate-search-more-groups-info": "{{PLURAL:$1|Talde $1|$1 talde}} gehiago"

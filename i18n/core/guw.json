@@ -3,11 +3,12 @@
 		"authors": [
 			"Anthonymodec",
 			"Gadarawamo",
+			"Misteld",
 			"Samatics"
 		]
 	},
 	"translate-smg-strong-sync-help": "Alọgọ",
-	"translate-documentation-language": "Owen he yin kinkandai",
+	"translate-documentation-language": "Owẹn he yin kinkandai",
 	"content-model-translate-messagebundle": "Beplidopo wekanhlanme he sogan yin liledogbedevome",
 	"translate-messagebundle-error-key-empty": "Beplidopo wekanhlanme lo ma Dona be honhungan he jevo hen",
 	"translate-messagebundle-error-key-too-long": "Honhungan \"$1\" ton site gbau"
