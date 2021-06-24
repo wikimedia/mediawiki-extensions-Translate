@@ -5,11 +5,15 @@
 			"Yupik"
 		]
 	},
+	"translate-page-settings-legend": "Asâttâsah",
+	"translate-page-language": "Kielâ",
 	"translate-next": "Čuávuvâš sijđo",
 	"translate-prev": "Oovdeb sijđo",
 	"translate-rcfilters-translations-filter-label": "Iä jurgâlusah",
 	"translate-stats-users": "Jurgâleijeeh",
 	"translate-sidebar-alltrans": "Eres kieláid",
+	"translate-language": "Kielâ",
+	"translate-mgs-column-language": "Kielâ",
 	"translate-documentation-language": "jurgâlemravvuuh",
 	"tux-languageselector": "Puátukielâ:",
 	"tux-editor-in-other-languages": "Eres kieláid"
