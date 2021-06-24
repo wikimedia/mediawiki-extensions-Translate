@@ -115,7 +115,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'trans1', $title );
 
-		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
+		$status = TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
 
 		self::translateRunJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
@@ -132,7 +132,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'trans2', $title );
 
-		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
+		$status = TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
 
 		self::translateRunJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
@@ -149,7 +149,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'trans1 updated', $title );
 
-		$page->doEditContent( $content, __METHOD__, 0, false, $user );
+		TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
 
 		self::translateRunJobs();
 		$currentState = ApiGroupReview::getState( $group, 'fi' );

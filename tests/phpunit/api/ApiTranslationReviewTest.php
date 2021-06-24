@@ -50,15 +50,30 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
 		$content = ContentHandler::makeContent( 'trans1', $title );
-		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
+		TranslateUtils::doPageEdit(
+			WikiPage::factory( $title ),
+			$content,
+			$superUser1,
+			__METHOD__
+		);
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/fi' );
 		$content = ContentHandler::makeContent( '!!FUZZY!!trans2', $title );
-		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser2 );
+		TranslateUtils::doPageEdit(
+			WikiPage::factory( $title ),
+			$content,
+			$superUser2,
+			__METHOD__
+		);
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey3/fi' );
 		$content = ContentHandler::makeContent( 'unknown message', $title );
-		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
+		TranslateUtils::doPageEdit(
+			WikiPage::factory( $title ),
+			$content,
+			$superUser1,
+			__METHOD__
+		);
 
 		$testcases = [
 			[

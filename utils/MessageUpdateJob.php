@@ -111,7 +111,13 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
 		$content = ContentHandler::makeContent( $params['content'], $title );
-		$editStatus = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
+		$editStatus = TranslateUtils::doPageEdit(
+			$wikiPage,
+			$content,
+			$user,
+			$summary,
+			$flags
+		);
 		if ( !$editStatus->isOK() ) {
 			$this->logError(
 				'Failed to update content for source message',
@@ -273,7 +279,13 @@ class MessageUpdateJob extends GenericTranslateJob {
 			$title = Title::newFromText( $titleStr, $groupNamespace );
 			$wikiPage = WikiPage::factory( $title );
 			$content = ContentHandler::makeContent( $contentStr, $title );
-			$status = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
+			$status = TranslateUtils::doPageEdit(
+				$wikiPage,
+				$content,
+				$user,
+				$summary,
+				$flags
+			);
 			if ( !$status->isOK() ) {
 				$this->logError(
 					'Failed to update content for non-source message',

@@ -276,12 +276,12 @@ class FuzzyScript {
 
 		$wikipage = new WikiPage( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-		$status = $wikipage->doEditContent(
+		$status = TranslateUtils::doPageEdit(
+			$wikipage,
 			$content,
+			FuzzyBot::getUser(),
 			$comment ?: 'Marking as fuzzy',
-			EDIT_FORCE_BOT | EDIT_UPDATE,
-			false, /*base revision id*/
-			FuzzyBot::getUser()
+			EDIT_FORCE_BOT | EDIT_UPDATE
 		);
 
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );

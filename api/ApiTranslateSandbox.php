@@ -186,7 +186,7 @@ class ApiTranslateSandbox extends ApiBase {
 		$page = WikiPage::factory( $userpage );
 		$content = ContentHandler::makeContent( $babeltext, $userpage );
 
-		$page->doEditContent( $content, $summary, EDIT_NEW, false, $user );
+		TranslateUtils::doPageEdit( $page, $content, $user, $summary, EDIT_NEW );
 	}
 
 	public function isWriteMode() {

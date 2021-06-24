@@ -72,7 +72,13 @@ class TranslateRenderJob extends GenericTranslateJob {
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 		$content = ContentHandler::makeContent( $text, $page->getTitle(), $model );
-		$editStatus = $page->doEditContent( $content, $summary, $flags, false, $user );
+		$editStatus = TranslateUtils::doPageEdit(
+			$page,
+			$content,
+			$user,
+			$summary,
+			$flags
+		);
 		if ( !$editStatus->isOK() ) {
 			$this->logError(
 				'Error while editing content in page.',

@@ -417,7 +417,13 @@ class MessageWebImporter {
 	public static function doImport( $title, $message, $summary, $user = null, $editFlags = 0 ) {
 		$wikiPage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $message, $title );
-		$status = $wikiPage->doEditContent( $content, $summary, $editFlags, false, $user );
+		$status = TranslateUtils::doPageEdit(
+			$wikiPage,
+			$content,
+			$user,
+			$summary,
+			$editFlags
+		);
 		$success = $status->isOK();
 
 		if ( $success ) {

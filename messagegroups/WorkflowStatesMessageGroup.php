@@ -55,12 +55,11 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 				$page = new WikiPage( $title );
 				$content = ContentHandler::makeContent( $state, $title );
 
-				$page->doEditContent(
+				TranslateUtils::doPageEdit(
+					$page,
 					$content,
-					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text(),
-					0, /*flags*/
-					false, /* base revision id */
-					FuzzyBot::getUser()
+					FuzzyBot::getUser(),
+					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text()
 				);
 			} else {
 				// Use the wiki translation as definition if available.

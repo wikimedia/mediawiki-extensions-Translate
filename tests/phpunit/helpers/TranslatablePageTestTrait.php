@@ -48,7 +48,7 @@ trait TranslatablePageTestTrait {
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
 
 		// Create the page
-		$editStatus = $page->doEditContent( $content, __METHOD__, 0, false, $creator );
+		$editStatus = TranslateUtils::doPageEdit( $page, $content, $creator, __METHOD__ );
 
 		if ( $markForTranslation ) {
 			// Mark the page for translation

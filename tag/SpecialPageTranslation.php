@@ -160,8 +160,10 @@ class SpecialPageTranslation extends SpecialPage {
 				$title
 			);
 
-			$status = WikiPage::factory( $title )->doEditContent(
+			$status = TranslateUtils::doPageEdit(
+				WikiPage::factory( $title ),
 				$content,
+				$this->getUser(),
 				$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
 				EDIT_FORCE_BOT | EDIT_UPDATE
 			);
@@ -942,8 +944,10 @@ class SpecialPageTranslation extends SpecialPage {
 			$page->getTitle()
 		);
 
-		$status = $wikiPage->doEditContent(
+		$status = TranslateUtils::doPageEdit(
+			$wikiPage,
 			$content,
+			$this->getUser(),
 			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),
 			EDIT_FORCE_BOT | EDIT_UPDATE
 		);

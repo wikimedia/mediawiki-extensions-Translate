@@ -41,8 +41,12 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		$title = Title::makeTitle( $group->getNamespace(),
 			TranslateUtils::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
 		$content = ContentHandler::makeContent( 'world 23', $title );
-		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false,
-			self::getTestSysop()->getUser() );
+		TranslateUtils::doPageEdit(
+			WikiPage::factory( $title ),
+			$content,
+			self::getTestSysop()->getUser(),
+			__METHOD__
+		);
 
 		return false;
 	}

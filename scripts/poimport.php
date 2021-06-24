@@ -302,12 +302,11 @@ class WikiWriter {
 
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-		$status = $page->doEditContent(
+		$status = TranslateUtils::doPageEdit(
+			$page,
 			$content,
-			'Updating translation from gettext import',
-			0,
-			false,
-			$this->user
+			$this->user,
+			'Updating translation from gettext import'
 		);
 
 		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {

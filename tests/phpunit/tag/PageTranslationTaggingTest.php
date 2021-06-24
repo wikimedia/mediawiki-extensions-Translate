@@ -34,7 +34,12 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'kissa', $title );
 
-		$page->doEditContent( $content, 'Test case' );
+		TranslateUtils::doPageEdit(
+			$page,
+			$content,
+			$this->getTestUser()->getUser(),
+			'Test case'
+		);
 
 		$this->assertFalse( $translatablePage->getReadyTag(), 'No ready tag was added' );
 		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
@@ -48,7 +53,12 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		$content = ContentHandler::makeContent( '<translate>kissa</translate>', $title );
-		$status = $page->doEditContent( $content, 'Test case' );
+		$status = TranslateUtils::doPageEdit(
+			$page,
+			$content,
+			$this->getTestUser()->getUser(),
+			'Test case'
+		);
 		$latest = $status->value['revision-record']->getId();
 
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
@@ -63,7 +73,12 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		$content = ContentHandler::makeContent( '<translate>koira</translate>', $title );
-		$status = $page->doEditContent( $content, 'Test case' );
+		$status = TranslateUtils::doPageEdit(
+			$page,
+			$content,
+			$this->getTestUser()->getUser(),
+			'Test case'
+		);
 		$latest = $status->value['revision-record']->getId();
 
 		$translatablePage->addMarkedTag( $latest, [ 'foo' ] );
@@ -101,12 +116,11 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '<translate>Hello</translate>', $title );
 
-		$status = $page->doEditContent(
+		$status = TranslateUtils::doPageEdit(
+			$page,
 			$content,
-			'New page',
-			0,
-			false,
-			$superUser
+			$superUser,
+			'New page'
 		);
 
 		$revisionId = $status->value['revision-record']->getId();
