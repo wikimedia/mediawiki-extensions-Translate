@@ -257,28 +257,23 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				continue;
 			}
 
-			if ( $type === 'pt-movepage-list-translatable' ) {
-				$out->wrapWikiMsg(
-					"'''$1'''", $this->msg( 'pt-movepage-list-translatable-note' )
-				);
-			}
-
 			$lines = [];
-			foreach ( $pages as $old ) {
-				$canBeMoved = $type !== 'pt-movepage-list-translatable';
-				if ( $canBeMoved ) {
+			if ( $type === 'pt-movepage-list-translatable' ) {
+				$out->wrapWikiMsg( "'''$1'''", $this->msg( 'pt-movepage-list-translatable-note' ) );
+
+				foreach ( $pages as $old ) {
+					$lines[] = '* ' . $old->getPrefixedText();
+				}
+			} else {
+				foreach ( $pages as $old ) {
 					$count++;
-				}
 
-				if ( $type === 'pt-movepage-list-other' ) {
-					$subpagesCount++;
-				}
+					if ( $type === 'pt-movepage-list-other' ) {
+						$subpagesCount++;
+					}
 
-				if ( $canBeMoved ) {
 					$to = $this->pageMover->newPageTitle( $base, $old, $target );
 					$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $to;
-				} else {
-					$lines[] = '* ' . $old->getPrefixedText();
 				}
 			}
 

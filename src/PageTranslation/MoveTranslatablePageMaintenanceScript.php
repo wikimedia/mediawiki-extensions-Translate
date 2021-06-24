@@ -196,26 +196,23 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 				continue;
 			}
 
+			$lines = [];
 			if ( $type === 'pt-movepage-list-translatable' ) {
 				$infoMessage .= $this->message( 'pt-movepage-list-translatable-note' )->text() . "\n";
-			}
 
-			$canBeMoved = $type !== 'pt-movepage-list-translatable';
-			$lines = [];
-			foreach ( $pages as $currentPage ) {
-				if ( $canBeMoved ) {
+				foreach ( $pages as $currentPage ) {
+					$lines[] = '* ' . $currentPage->getPrefixedText();
+				}
+			} else {
+				foreach ( $pages as $currentPage ) {
 					$count++;
-				}
 
-				if ( $type === 'pt-movepage-list-other' ) {
-					$subpagesCount++;
-				}
+					if ( $type === 'pt-movepage-list-other' ) {
+						$subpagesCount++;
+					}
 
-				if ( $canBeMoved ) {
 					$to = $this->pageMover->newPageTitle( $base, $currentPage, $newTitle );
 					$lines[] = '* ' . $currentPage->getPrefixedText() . ' → ' . $to;
-				} else {
-					$lines[] = '* ' . $currentPage->getPrefixedText();
 				}
 			}
 
