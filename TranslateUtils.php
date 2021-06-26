@@ -556,17 +556,4 @@ class TranslateUtils {
 		$action = $request->getVal( 'action' );
 		return $action === 'edit';
 	}
-
-	/**
-	 * Wrapper method to fetch the the MW version
-	 * @return string
-	 */
-	public static function getMWVersion(): string {
-		if ( defined( 'MW_VERSION' ) ) {
-			return MW_VERSION;
-		}
-
-		global $wgVersion;
-		return $wgVersion;
-	}
 }

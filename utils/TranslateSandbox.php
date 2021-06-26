@@ -104,7 +104,7 @@ class TranslateSandbox {
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
 
-		if ( version_compare( TranslateUtils::getMWVersion(), '1.37', '>=' ) ) {
+		if ( version_compare( MW_VERSION, '1.37', '>=' ) ) {
 			MediaWikiServices::getInstance()->getActorStore()->deleteActor( $user, $dbw );
 		} else {
 			$dbw->delete( 'actor', [ 'actor_user' => $uid ], __METHOD__ );
