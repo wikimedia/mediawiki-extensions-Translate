@@ -78,10 +78,6 @@ Post processing step to format in wiki
  MessageGroup    $group: Message group instance
  string          $code: Language code
 
-;TranslateMessageGroupPathVariables: Allows to manipulate the list of variables for message group path patterns.
- MessageGroup    $group
- array          &$variables: Variable name => replacement
-
 ;Translate:newTranslation: Event triggered when non-fuzzy translation has been made
  MessageHandle   $handle
  int             $revisionId

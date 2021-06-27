@@ -144,8 +144,6 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 			'%GROUPID%' => $this->getId(),
 		];
 
-		Hooks::run( 'TranslateMessageGroupPathVariables', [ $this, &$variables ] );
-
 		return str_replace( array_keys( $variables ), array_values( $variables ), $pattern );
 	}
 
