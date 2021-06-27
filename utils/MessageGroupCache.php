@@ -165,8 +165,6 @@ class MessageGroupCache {
 	 */
 	public function isValid( &$reason ) {
 		$group = $this->group;
-		$uniqueId = $this->getCacheFilePath();
-
 		$pattern = $group->getSourceFilePath( '*' );
 		$filename = $group->getSourceFilePath( $this->code );
 
@@ -180,12 +178,12 @@ class MessageGroupCache {
 			$source = $parseOutput['MESSAGES'] !== [];
 		} else {
 			static $globCache = [];
-			if ( !isset( $globCache[$uniqueId] ) ) {
-				$globCache[$uniqueId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
+			if ( !isset( $globCache[$pattern] ) ) {
+				$globCache[$pattern] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
 				// Definition file might not match the above pattern
-				$globCache[$uniqueId][$group->getSourceFilePath( 'en' )] = true;
+				$globCache[$pattern][$group->getSourceFilePath( 'en' )] = true;
 			}
-			$source = isset( $globCache[$uniqueId][$filename] );
+			$source = isset( $globCache[$pattern][$filename] );
 		}
 
 		$cache = $this->exists();
