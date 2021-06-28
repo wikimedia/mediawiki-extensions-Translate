@@ -368,8 +368,8 @@ class SpecialPageTranslation extends SpecialPage {
 		$tables = [ 'page', 'revtag' ];
 		$vars = [
 			'page_id',
-			'page_title',
 			'page_namespace',
+			'page_title',
 			'page_latest',
 			'MAX(rt_revision) AS rt_revision',
 			'rt_type'
@@ -380,7 +380,7 @@ class SpecialPageTranslation extends SpecialPage {
 		];
 		$options = [
 			'ORDER BY' => 'page_namespace, page_title',
-			'GROUP BY' => 'page_id, rt_type',
+			'GROUP BY' => 'page_id, page_namespace, page_title, page_latest, rt_type',
 		];
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
