@@ -73,8 +73,7 @@ class MessageGroupStatsRebuildJob extends GenericTranslateJob {
 		if ( isset( $params[ 'groupid' ] ) ) {
 			MessageGroupStats::forGroup( $params[ 'groupid' ], $flags );
 		} elseif ( isset( $params[ 'cleargroups' ] ) ) {
-			// clearGroup takes an array of group ids, but no flags
-			MessageGroupStats::clearGroup( $params[ 'cleargroups' ] );
+			MessageGroupStats::clearGroup( $params[ 'cleargroups' ], $flags );
 		} elseif ( isset( $params[ 'languagecode' ] ) ) {
 			MessageGroupStats::forLanguage( $params[ 'languagecode' ], $flags );
 		} else {

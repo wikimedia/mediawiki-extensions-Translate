@@ -181,21 +181,22 @@ class MessageGroupStats {
 			return;
 		}
 		$groups = self::getSortedGroupsForClearing( $handle->getGroupIds() );
-		self::internalClearGroups( $code, $groups );
+		self::internalClearGroups( $code, $groups, 0 );
 	}
 
 	/**
 	 * Recalculate stats for given group(s).
 	 *
 	 * @param string|string[] $id Message group ids.
+	 * @param int $flags Combination of FLAG_* constants.
 	 */
-	public static function clearGroup( $id ) {
+	public static function clearGroup( $id, int $flags = 0 ): void {
 		$languages = self::getLanguages();
 		$groups = self::getSortedGroupsForClearing( (array)$id );
 
 		// Do one language at a time, to save memory
 		foreach ( $languages as $code ) {
-			self::internalClearGroups( $code, $groups );
+			self::internalClearGroups( $code, $groups, $flags );
 		}
 	}
 
@@ -204,12 +205,13 @@ class MessageGroupStats {
 	 *
 	 * @param string $code
 	 * @param MessageGroup[] $groups
+	 * @param int $flags Combination of FLAG_* constants.
 	 */
-	private static function internalClearGroups( $code, array $groups ) {
+	private static function internalClearGroups( $code, array $groups, int $flags ): void {
 		$stats = [];
 		foreach ( $groups as $group ) {
 			// $stats is modified by reference
-			self::forItemInternal( $stats, $group, $code, 0 );
+			self::forItemInternal( $stats, $group, $code, $flags );
 		}
 		self::queueUpdates( 0 );
 	}
