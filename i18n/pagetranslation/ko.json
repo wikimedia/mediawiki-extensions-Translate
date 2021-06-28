@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Apzp79",
 			"Freebiekr",
 			"Hwangjy9",
 			"Hym411",
@@ -46,7 +47,7 @@
 	"tpt-new-pages-title": "번역하도록 제안된 문서",
 	"tpt-old-pages-title": "번역 문서",
 	"tpt-other-pages-title": "잘못된 문서",
-	"tpt-outdated-pages-title": "보류 중인 편집을 가지고 있는 문서",
+	"tpt-outdated-pages-title": "편집 보류 중인 문서",
 	"tpt-new-pages": "{{PLURAL:$1|이 문서는}} 번역하도록 태그된 문자를 포함하지만,\n번역하도록 표시된 {{PLURAL:$1|이 문서}}의 판이 없습니다.",
 	"tpt-old-pages": "{{PLURAL:$1|이 문서}}의 최신 판은 번역하도록 표시되었습니다.",
 	"tpt-other-pages": "{{PLURAL:$1|이 문서의 오래된 판}}은 번역하도록 표시했습니다,\n하지만 최신 {{PLURAL:$1|판}}은 번역하도록 표시할 수 없었습니다.",
