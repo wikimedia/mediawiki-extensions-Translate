@@ -70,7 +70,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$messageGroups = MessageGroups::singleton();
 
 		// Create the page
-		$editStatus = $page->doEditContent( $content, __METHOD__, 0, false, $superUser );
+		$editStatus = TranslateUtils::doPageEdit( $page, $content, $superUser, __METHOD__ );
 		$messageGroups->recache();
 
 		// Check that we don't interfere with non-translatable pages at all
