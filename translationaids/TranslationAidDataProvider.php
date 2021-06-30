@@ -30,7 +30,7 @@ class TranslationAidDataProvider {
 	 * Get the message definition. Cached for performance.
 	 * @return string|null
 	 */
-	public function getDefinition(): ?string {
+	public function getDefinition(): string {
 		if ( $this->definition !== null ) {
 			return $this->definition;
 		}
@@ -46,7 +46,21 @@ class TranslationAidDataProvider {
 			);
 		}
 
-		return $this->definition;
+		if ( $this->definition === null ) {
+			throw new TranslationHelperException(
+				'Did not find message definition for ' . $this->handle->getTitle()->getPrefixedText() .
+				' in group ' . $this->group->getId()
+			);
+		}
+	}
+
+	public function hasDefinition(): bool {
+		try {
+			$this->getDefinition();
+			return true;
+		} catch ( TranslationHelperException $e ) {
+			return false;
+		}
 	}
 
 	public function getDefinitionContent(): Content {
