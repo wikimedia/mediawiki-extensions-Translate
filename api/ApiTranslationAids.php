@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * Api module for querying message aids.
  *
@@ -53,6 +55,21 @@ class ApiTranslationAids extends ApiBase {
 		$aids = [];
 
 		$dataProvider = new TranslationAidDataProvider( $handle );
+
+		// Message definition should not be empty, but sometimes is.
+		// See: https://phabricator.wikimedia.org/T285830
+		// Identify and log.
+		if ( !$dataProvider->hasDefinition() ) {
+			LoggerFactory::getInstance( 'Translate' )->warning(
+				'Message definition is empty! Title: {title}, group: {group}, key: {key}',
+				[
+					'title' => $handle->getTitle()->getPrefixedText(),
+					'group' => $group->getId(),
+					'key' => $handle->getKey()
+				]
+			);
+		}
+
 		foreach ( $props as $type ) {
 			// Do not proceed if translation aid is not supported for this message group
 			if ( !isset( $types[$type] ) ) {
