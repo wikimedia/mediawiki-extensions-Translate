@@ -13,8 +13,6 @@ use SplObjectStorage;
 use Status;
 use Title;
 use TitleParser;
-use TranslatablePage;
-use TranslateUtils;
 
 class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 	/** @var TranslatablePageMover */
@@ -98,21 +96,20 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		// When moving translatable pages from script, remove all limits on the number of
 		// pages that can be moved
 		$this->pageMover->disablePageMoveLimit();
-		$blockers = $this->pageMover->checkMoveBlockers(
-			$currentTitle,
-			$newTitle,
-			$user,
-			$reason,
-			$moveSubpages
-		);
-
-		if ( count( $blockers ) ) {
-			$fatalErrorMsg = $this->parseErrorMessage( $blockers );
+		try {
+			$pageCollection = $this->pageMover->getPageMoveCollection(
+				$currentTitle,
+				$newTitle,
+				$user,
+				$reason,
+				$moveSubpages
+			);
+		} catch ( ImpossiblePageMove $e ) {
+			$fatalErrorMsg = $this->parseErrorMessage( $e->getBlockers() );
 			$this->fatalError( $fatalErrorMsg );
 		}
 
-		$groupedPagesToMove = $this->getGroupedPagesToMove( $currentTitle );
-		$this->displayPagesToMove( $currentTitle, $newTitle, $groupedPagesToMove );
+		$this->displayPagesToMove( $pageCollection );
 
 		$haveConfirmation = $this->getConfirmation();
 		if ( !$haveConfirmation ) {
@@ -122,7 +119,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 
 		$this->output( "Starting page move\n" );
 
-		$pagesToMove = $this->pageMover->getPagesToMove( $currentTitle, $newTitle, $moveSubpages );
+		$pagesToMove = $pageCollection->getListOfPages();
 
 		$this->pageMover->moveSynchronously(
 			$currentTitle,
@@ -163,57 +160,56 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		}
 	}
 
-	/** @return Title[][] */
-	private function getGroupedPagesToMove( Title $source ): array {
-		$page = TranslatablePage::newFromTitle( $source );
-
-		$types = [
-			'pt-movepage-list-pages' => [ $source ],
-			'pt-movepage-list-translation' => $page->getTranslationPages(),
-			'pt-movepage-list-section' => $page->getTranslationUnitPages( 'all' ),
-			'pt-movepage-list-translatable' => $this->pageMover->getTranslatableSubpages( $page )
-		];
-
-		if ( TranslateUtils::allowsSubpages( $source ) ) {
-			$types[ 'pt-movepage-list-other'] = $this->pageMover->getNormalSubpages( $page );
-		}
-
-		return $types;
-	}
-
-	private function displayPagesToMove( Title $currentTitle, Title $newTitle, array $pagesToMove ): void {
+	private function displayPagesToMove( PageMoveCollection $pageCollection ): void {
 		$infoMessage = "\nThe following pages will be moved:\n";
 		$count = 0;
 		$subpagesCount = 0;
-		$base = $currentTitle->getPrefixedText();
+
+		/** @var PageMoveOperation[][] */
+		$pagesToMove = [
+			'pt-movepage-list-pages' => [ $pageCollection->getTranslatablePage() ],
+			'pt-movepage-list-translation' => $pageCollection->getTranslationPagesPair(),
+			'pt-movepage-list-section' => $pageCollection->getUnitPagesPair()
+		];
+
+		$subpages = $pageCollection->getSubpagesPair();
+		if ( $subpages ) {
+			$pagesToMove[ 'pt-movepage-list-other'] = $subpages;
+		}
 
 		foreach ( $pagesToMove as $type => $pages ) {
-			$infoMessage .= $this->getSeparator();
-			$pageCount = count( $pages );
-			$infoMessage .= $this->message( $type )->numParams( $pageCount )->text() . "\n\n";
-			if ( !$pageCount ) {
-				$infoMessage .= $this->message( 'pt-movepage-list-no-pages' )->text() . "\n";
+			$lines = [];
+			$infoMessage .= $this->getSectionHeader( $type, $pages );
+			if ( !count( $pages ) ) {
 				continue;
 			}
 
+			foreach ( $pages as $pagePairs ) {
+				$count++;
+
+				if ( $type === 'pt-movepage-list-other' ) {
+					$subpagesCount++;
+				}
+
+				$old = $pagePairs->getOldTitle();
+				$new = $pagePairs->getNewTitle();
+
+				if ( $new ) {
+					$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $new->getPrefixedText();
+				}
+			}
+
+			$infoMessage .= implode( "\n", $lines ) . "\n";
+		}
+
+		$translatableSubpages = $pageCollection->getTranslatableSubpages();
+		$infoMessage .= $this->getSectionHeader( 'pt-movepage-list-translatable', $translatableSubpages );
+
+		if ( $translatableSubpages ) {
 			$lines = [];
-			if ( $type === 'pt-movepage-list-translatable' ) {
-				$infoMessage .= $this->message( 'pt-movepage-list-translatable-note' )->text() . "\n";
-
-				foreach ( $pages as $currentPage ) {
-					$lines[] = '* ' . $currentPage->getPrefixedText();
-				}
-			} else {
-				foreach ( $pages as $currentPage ) {
-					$count++;
-
-					if ( $type === 'pt-movepage-list-other' ) {
-						$subpagesCount++;
-					}
-
-					$to = $this->pageMover->newPageTitle( $base, $currentPage, $newTitle );
-					$lines[] = '* ' . $currentPage->getPrefixedText() . ' → ' . $to;
-				}
+			$infoMessage .= $this->message( 'pt-movepage-list-translatable-note' )->text() . "\n";
+			foreach ( $translatableSubpages as $page ) {
+				$lines[] = '* ' . $page->getPrefixedText();
 			}
 
 			$infoMessage .= implode( "\n", $lines ) . "\n";
@@ -229,6 +225,20 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		);
 		$this->logSeparator();
 		$this->output( "\n" );
+	}
+
+	private function getSectionHeader( string $type, array $pages ): string {
+		$infoMessage = $this->getSeparator();
+		$pageCount = count( $pages );
+
+		// $type can be: pt-movepage-list-pages, pt-movepage-list-translation, pt-movepage-list-section
+		// pt-movepage-list-other
+		$infoMessage .= $this->message( $type )->numParams( $pageCount )->text() . "\n\n";
+		if ( !$pageCount ) {
+			$infoMessage .= $this->message( 'pt-movepage-list-no-pages' )->text() . "\n";
+		}
+
+		return $infoMessage;
 	}
 
 	private function getConfirmation(): bool {

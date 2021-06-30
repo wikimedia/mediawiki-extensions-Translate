@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\PageTranslation\ImpossiblePageMove;
+use MediaWiki\Extension\Translate\PageTranslation\PageMoveCollection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
@@ -22,10 +24,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	// Other form parameters
 	/** @var TranslatablePage instance. */
 	protected $page;
-	/** @var Title[] Cached list of translation pages. Not yet loaded if null. */
-	protected $translationPages;
-	/** @var Title[] Cached list of section pages. Not yet loaded if null. */
-	protected $sectionPages;
 	/** @var TranslatablePageMover */
 	protected $pageMover;
 
@@ -53,8 +51,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$this->newTitle = Title::newFromText( $this->newText );
 
 		$this->reason = $request->getText( 'reason' );
-		// Checkboxes that default being checked are tricky
-		$this->moveSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
 
 		// This will throw exceptions if there is an error.
 		$this->doBasicChecks();
@@ -87,20 +83,25 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			}
 
 			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
-				$blockers = $this->pageMover->checkMoveBlockers(
-					$this->oldTitle,
-					$this->newTitle,
-					$user,
-					$this->reason,
-					$this->moveSubpages
-				);
-				if ( count( $blockers ) ) {
-					$this->showErrors( $blockers );
+				// When listing pages to display, default move subpages to true.
+				$this->moveSubpages = true;
+				try {
+					$pageCollection = $this->pageMover->getPageMoveCollection(
+						$this->oldTitle,
+						$this->newTitle,
+						$user,
+						$this->reason,
+						$this->moveSubpages
+					);
+				} catch ( ImpossiblePageMove $e ) {
+					$this->showErrors( $e->getBlockers() );
 					$this->showForm( [] );
-				} else {
-					$this->showConfirmation();
+					return;
 				}
+
+				$this->showConfirmation( $pageCollection );
 			} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
+				$this->moveSubpages = $request->getBool( 'subpages' );
 				$this->pageMover->moveAsynchronously(
 					$this->oldTitle,
 					$this->newTitle,
@@ -226,57 +227,61 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/**
 	 * The second form, which still allows changing some things.
 	 * Lists all the action which would take place.
+	 * @param PageMoveCollection $pageCollection
 	 */
-	protected function showConfirmation(): void {
+	protected function showConfirmation( PageMoveCollection $pageCollection ): void {
 		$out = $this->getOutput();
 
 		$out->addWikiMsg( 'pt-movepage-intro' );
 
-		$base = $this->oldTitle->getPrefixedText();
-		$target = $this->newTitle;
 		$count = 0;
 		$subpagesCount = 0;
 
-		$types = [
-			'pt-movepage-list-pages' => [ $this->oldTitle ],
-			'pt-movepage-list-translation' => $this->getTranslationPages(),
-			'pt-movepage-list-section' => $this->getSectionPages(),
-			'pt-movepage-list-translatable' => $this->pageMover->getTranslatableSubpages( $this->page )
+		$pagesToMove = [
+			'pt-movepage-list-pages' => [ $pageCollection->getTranslatablePage() ],
+			'pt-movepage-list-translation' => $pageCollection->getTranslationPagesPair(),
+			'pt-movepage-list-section' => $pageCollection->getUnitPagesPair()
 		];
 
-		if ( TranslateUtils::allowsSubpages( $this->oldTitle ) ) {
-			$types[ 'pt-movepage-list-other'] = $this->pageMover->getNormalSubpages( $this->page );
+		$subpages = $pageCollection->getSubpagesPair();
+		if ( $subpages ) {
+			$pagesToMove[ 'pt-movepage-list-other'] = $subpages;
 		}
 
-		foreach ( $types as $type => $pages ) {
-			$pageCount = count( $pages );
-			$out->wrapWikiMsg( '=== $1 ===', [ $type, $pageCount ] );
+		foreach ( $pagesToMove as $type => $pages ) {
+			$this->addSectionHeader( $out, $type, $pages );
 
-			if ( !$pageCount ) {
+			if ( !$pages ) {
 				$out->addWikiMsg( 'pt-movepage-list-no-pages' );
 				continue;
 			}
 
 			$lines = [];
-			if ( $type === 'pt-movepage-list-translatable' ) {
-				$out->wrapWikiMsg( "'''$1'''", $this->msg( 'pt-movepage-list-translatable-note' ) );
 
-				foreach ( $pages as $old ) {
-					$lines[] = '* ' . $old->getPrefixedText();
+			foreach ( $pages as $pagePairs ) {
+				$count++;
+
+				if ( $type === 'pt-movepage-list-other' ) {
+					$subpagesCount++;
 				}
-			} else {
-				foreach ( $pages as $old ) {
-					$count++;
 
-					if ( $type === 'pt-movepage-list-other' ) {
-						$subpagesCount++;
-					}
-
-					$to = $this->pageMover->newPageTitle( $base, $old, $target );
-					$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $to;
-				}
+				$old = $pagePairs->getOldTitle();
+				$new = $pagePairs->getNewTitle();
+				$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $new->getPrefixedText();
 			}
 
+			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
+		}
+
+		$translatableSubpages = $pageCollection->getTranslatableSubpages();
+		$sectionType = 'pt-movepage-list-translatable';
+		$this->addSectionHeader( $out, $sectionType, $translatableSubpages );
+		if ( $translatableSubpages ) {
+			$lines = [];
+			$out->wrapWikiMsg( "'''$1'''", $this->msg( 'pt-movepage-list-translatable-note' ) );
+			foreach ( $translatableSubpages as $page ) {
+				$lines[] = '* ' . $page->getPrefixedText();
+			}
 			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
 		}
 
@@ -333,27 +338,12 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			->displayForm( false );
 	}
 
-	/**
-	 * Returns all section pages, including those which are currently not active.
-	 * @return Title[]
-	 */
-	protected function getSectionPages(): array {
-		if ( !isset( $this->sectionPages ) ) {
-			$this->sectionPages = $this->page->getTranslationUnitPages( 'all' );
+	private function addSectionHeader( OutputPage $out, string $type, array $pages ): void {
+		$pageCount = count( $pages );
+		$out->wrapWikiMsg( '=== $1 ===', [ $type, $pageCount ] );
+
+		if ( !$pageCount ) {
+			$out->addWikiMsg( 'pt-movepage-list-no-pages' );
 		}
-
-		return $this->sectionPages;
-	}
-
-	/**
-	 * Returns only translation subpages.
-	 * @return Title[]
-	 */
-	protected function getTranslationPages(): array {
-		if ( !isset( $this->translationPages ) ) {
-			$this->translationPages = $this->page->getTranslationPages();
-		}
-
-		return $this->translationPages;
 	}
 }

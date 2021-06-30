@@ -20,6 +20,7 @@ use Title;
 use TranslatablePage;
 use TranslatablePageMoveJob;
 use TranslateMetadata;
+use TranslateUtils;
 use TranslationsUpdateJob;
 use Traversable;
 use User;
@@ -32,6 +33,7 @@ use User;
  */
 class TranslatablePageMover {
 	private const LOCK_TIMEOUT = 3600 * 2;
+	private const FETCH_TRANSLATABLE_SUBPAGES = true;
 	/** @var MovePageFactory */
 	private $movePageFactory;
 	/** @var int|null */
@@ -47,43 +49,23 @@ class TranslatablePageMover {
 		$this->pageMoveLimit = $pageMoveLimit;
 	}
 
-	/** Makes old title into a new title by replacing $base part of old title with $target. */
-	public function newPageTitle( string $base, Title $old, Title $target ): Title {
-		$search = preg_quote( $base, '~' );
-
-		if ( $old->inNamespace( NS_TRANSLATIONS ) ) {
-			$new = $old->getText();
-			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
-
-			return Title::makeTitleSafe( NS_TRANSLATIONS, $new );
-		} else {
-			$new = $old->getPrefixedText();
-			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
-
-			return Title::newFromText( $new );
-		}
-	}
-
-	/** @return SplObjectStorage Title => Status */
-	public function checkMoveBlockers(
+	public function getPageMoveCollection(
 		Title $source,
 		?Title $target,
 		User $user,
 		string $reason,
 		bool $moveSubPages
-	): SplObjectStorage {
+	): PageMoveCollection {
 		$blockers = new SplObjectStorage();
-
-		$page = TranslatablePage::newFromTitle( $source );
 
 		if ( !$target ) {
 			$blockers[$source] = Status::newFatal( 'pt-movepage-block-base-invalid' );
-			return $blockers;
+			throw new ImpossiblePageMove( $blockers );
 		}
 
 		if ( $target->inNamespaces( NS_MEDIAWIKI, NS_TRANSLATIONS ) ) {
 			$blockers[$source] = Status::newFatal( 'immobile-target-namespace', $target->getNsText() );
-			return $blockers;
+			throw new ImpossiblePageMove( $blockers );
 		}
 
 		if ( $target->exists() ) {
@@ -101,26 +83,19 @@ class TranslatablePageMover {
 
 		// Don't spam the same errors for all pages if base page fails
 		if ( count( $blockers ) ) {
-			return $blockers;
+			throw new ImpossiblePageMove( $blockers );
 		}
+
+		$pageCollection = $this->getPagesToMove(
+			$source, $target, $moveSubPages, self::FETCH_TRANSLATABLE_SUBPAGES
+		);
 
 		// Collect all the old and new titles for checks
-		$titles = [];
-		$base = $source->getPrefixedText();
-		$pages = $page->getTranslationPages();
-		foreach ( $pages as $old ) {
-			$titles['tp'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
-
-		$subpages = $moveSubPages ? $this->getNormalSubpages( $page ) : [];
-		foreach ( $subpages as $old ) {
-			$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
-
-		$pages = $page->getTranslationUnitPages( 'all' );
-		foreach ( $pages as $old ) {
-			$titles['section'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
+		$titles = [
+			'tp' => $pageCollection->getTranslationPagesPair(),
+			'subpage' => $pageCollection->getSubpagesPair(),
+			'section' => $pageCollection->getUnitPagesPair()
+		];
 
 		// Check that all new titles are valid and count them. Add 1 for source page.
 		$moveCount = 1;
@@ -131,7 +106,9 @@ class TranslatablePageMover {
 			// pt-movepage-block-tp-invalid, pt-movepage-block-section-invalid,
 			// pt-movepage-block-subpage-invalid
 			foreach ( $list as $pair ) {
-				[ $old, $new ] = $pair;
+				$old = $pair->getOldTitle();
+				$new = $pair->getNewTitle();
+
 				if ( $new === null ) {
 					$blockers[$old] = Status::newFatal(
 						"pt-movepage-block-$type-invalid",
@@ -153,8 +130,9 @@ class TranslatablePageMover {
 			}
 		}
 
+		// Stop further validation if there are blockers already.
 		if ( count( $blockers ) ) {
-			return $blockers;
+			throw new ImpossiblePageMove( $blockers );
 		}
 
 		// Check that there are no move blockers
@@ -164,7 +142,9 @@ class TranslatablePageMover {
 			// pt-movepage-block-tp-exists, pt-movepage-block-section-exists,
 			// pt-movepage-block-subpage-exists
 			foreach ( $list as $pair ) {
-				list( $old, $new ) = $pair;
+				$old = $pair->getOldTitle();
+				$new = $pair->getNewTitle();
+
 				if ( $new->exists() ) {
 					$blockers[$old] = Status::newFatal(
 						"pt-movepage-block-$type-exists",
@@ -194,7 +174,11 @@ class TranslatablePageMover {
 			}
 		}
 
-		return $blockers;
+		if ( count( $blockers ) ) {
+			throw new ImpossiblePageMove( $blockers );
+		}
+
+		return $pageCollection;
 	}
 
 	public function moveAsynchronously(
@@ -204,11 +188,14 @@ class TranslatablePageMover {
 		User $user,
 		string $summary
 	): void {
-		$pageMoves = $this->getPagesToMove( $source, $target, $moveSubPages );
+		$pageCollection = $this->getPagesToMove(
+			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES
+		);
+		$pagesToMove = $pageCollection->getListOfPages();
 
-		$job = TranslatablePageMoveJob::newJob( $source, $target, $pageMoves, $summary, $user );
-		$this->lock( array_keys( $pageMoves ) );
-		$this->lock( array_values( $pageMoves ) );
+		$job = TranslatablePageMoveJob::newJob( $source, $target, $pagesToMove, $summary, $user );
+		$this->lock( array_keys( $pagesToMove ) );
+		$this->lock( array_values( $pagesToMove ) );
 
 		$this->jobQueue->push( $job );
 	}
@@ -253,8 +240,63 @@ class TranslatablePageMover {
 		$this->jobQueue->push( $job );
 	}
 
+	public function disablePageMoveLimit(): void {
+		$this->pageMoveLimitEnabled = false;
+	}
+
+	public function enablePageMoveLimit(): void {
+		$this->pageMoveLimitEnabled = true;
+	}
+
+	private function getPagesToMove(
+		Title $source,
+		Title $target,
+		bool $moveSubPages,
+		bool $fetchTranslatableSubpages
+	): PageMoveCollection {
+		$page = TranslatablePage::newFromTitle( $source );
+		$base = $source->getPrefixedText();
+		$translatableMovePage = new PageMoveOperation( $source, $target );
+
+		$translationPages = [];
+		foreach ( $page->getTranslationPages() as $from ) {
+			$to = $this->newPageTitle( $base, $from, $target );
+			$translationPages[] = new PageMoveOperation( $from, $to );
+		}
+
+		$translationUnitPages = [];
+		foreach ( $page->getTranslationUnitPages( 'all' ) as $from ) {
+			$to = $this->newPageTitle( $base, $from, $target );
+			$translationUnitPages[] = new PageMoveOperation( $from, $to );
+		}
+
+		$subpages = [];
+		if ( TranslateUtils::allowsSubpages( $source ) && $moveSubPages ) {
+			$currentSubpages = $this->getNormalSubpages( $page );
+			foreach ( $currentSubpages as $from ) {
+				$to = $this->newPageTitle( $base, $from, $target );
+				$subpages[] = new PageMoveOperation( $from, $to );
+			}
+		}
+
+		$translatableSubpages = [];
+		if ( $fetchTranslatableSubpages ) {
+			$translatableSubpages = $this->getTranslatableSubpages(
+				TranslatablePage::newFromTitle( $source )
+			);
+		}
+
+		return new PageMoveCollection(
+			$translatableMovePage,
+			$translationPages,
+			$translationUnitPages,
+			$subpages,
+			$translatableSubpages
+		);
+	}
+
 	/** @return Title[] */
-	public function getNormalSubpages( TranslatablePage $page ): array {
+	private function getNormalSubpages( TranslatablePage $page ): array {
 		return array_filter(
 			$this->getSubpages( $page ),
 			static function ( $page ) {
@@ -267,50 +309,13 @@ class TranslatablePageMover {
 	}
 
 	/** @return Title[] */
-	public function getTranslatableSubpages( TranslatablePage $page ): array {
+	private function getTranslatableSubpages( TranslatablePage $page ): array {
 		return array_filter(
 			$this->getSubpages( $page ),
 			static function ( $page ) {
 				return TranslatablePage::isSourcePage( $page );
 			}
 		);
-	}
-
-	/** @return string[] */
-	public function getPagesToMove( Title $source, Title $target, bool $moveSubPages ): array {
-		$page = TranslatablePage::newFromTitle( $source );
-		$base = $source->getPrefixedText();
-
-		$moves = [];
-		$moves[$base] = $target->getPrefixedText();
-
-		foreach ( $page->getTranslationPages() as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-		}
-
-		foreach ( $page->getTranslationUnitPages( 'all' ) as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-		}
-
-		if ( $moveSubPages ) {
-			$subpages = $this->getNormalSubpages( $page );
-			foreach ( $subpages as $from ) {
-				$to = $this->newPageTitle( $base, $from, $target );
-				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
-			}
-		}
-
-		return $moves;
-	}
-
-	public function disablePageMoveLimit(): void {
-		$this->pageMoveLimitEnabled = false;
-	}
-
-	public function enablePageMoveLimit(): void {
-		$this->pageMoveLimitEnabled = true;
 	}
 
 	/**
@@ -449,6 +454,23 @@ class TranslatablePageMover {
 		if ( $priority !== '' ) {
 			MessageGroups::setPriority( $newGroupId, $priority );
 			MessageGroups::setPriority( $oldGroupId, '' );
+		}
+	}
+
+	/** Makes old title into a new title by replacing $base part of old title with $target. */
+	private function newPageTitle( string $base, Title $old, Title $target ): ?Title {
+		$search = preg_quote( $base, '~' );
+
+		if ( $old->inNamespace( NS_TRANSLATIONS ) ) {
+			$new = $old->getText();
+			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
+
+			return Title::makeTitleSafe( NS_TRANSLATIONS, $new );
+		} else {
+			$new = $old->getPrefixedText();
+			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
+
+			return Title::newFromText( $new );
 		}
 	}
 }
