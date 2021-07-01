@@ -400,5 +400,9 @@
 	"translate-syntax-error": "Terjemahan mengandung kesalahan sintaksis",
 	"tux-session-expired": "Anda sudah tidak lagi masuk log. Silakan masuk log di tab yang terpisah. Atau, buatlah salinan dari terjemahan yang belum disimpan, masuk log, kembali ke halaman ini, lalu masukkan kembali terjemahan Anda.",
 	"tux-nojs": "Perkakas ini tidak dapat bekerja tanpa JavaScript. JavaScript dinonaktifkan, gagal berfungsi, atau peramban ini tidak mendukungnya.",
-	"specialpages-group-translation": "Terjemahan"
+	"specialpages-group-translation": "Terjemahan",
+	"translate-messagebundle-error-key-too-long": "Kunci \"$1\" terlalu panjang",
+	"translate-messagebundle-error-key-invalid-characters": "Kunci \"$1\" mengandung karakter yang tidak diperbolehkan",
+	"translate-messagebundle-error-invalid-value": "Kunci \"$1\" tidak memiliki nilai teks",
+	"translate-messagebundle-error-empty-value": "Kunci \"$1\" tidak memiliki nilai"
 }

@@ -50,6 +50,8 @@
 	"action-translate": "uah nganggén antarmuka pangalihan basa",
 	"right-translate-import": "Impor pangalihan basa luring",
 	"action-translate-import": "impor pangalihan basa luring",
+	"right-translate-messagereview": "Turéksa pangalihan basa",
+	"action-translate-messagereview": "turéksa pangalihan basa",
 	"translate-rcfilters-translations": "Pangalihan Basa",
 	"translate-rcfilters-translations-only-label": "Pangalihan Basa",
 	"translate-stats-edits": "Uahan",
@@ -104,6 +106,8 @@
 	"translate-jssti-add": "Weweh nuju lis",
 	"translate-smg-rename-select": "Pilih",
 	"translate-smg-rename-cancel": "Wangdé",
+	"translate-smg-rename-new": "Weweh dados anyar...",
+	"translate-smg-rename-rename": "Weweh dados karanin malih saking...",
 	"translate-smg-strong-sync-help": "Wantuan",
 	"translate-smg-group-message-message-other-langs": "Basa liyanan:",
 	"translate-smg-loading": "Ngamuat...",
@@ -172,5 +176,10 @@
 	"tux-editor-message-tools-delete": "Usap",
 	"tux-editor-message-tools-translations": "Sinamian pangalihan basa",
 	"tux-editor-loading": "Ngamuat...",
-	"specialpages-group-translation": "Pangalihan Basa"
+	"translate-statsbar-tooltip": "$1% sampun kaalih basa, $2% sampun katuréksa",
+	"specialpages-group-translation": "Pangalihan Basa",
+	"translate-messagebundle-error-key-too-long": "Sereg \"$1\" bes lantang",
+	"translate-messagebundle-error-key-invalid-characters": "Sereg \"$1\" medaging karakter sané nénten kalugra",
+	"translate-messagebundle-error-invalid-value": "Sereg \"$1\" nénten madaging aji string",
+	"translate-messagebundle-error-empty-value": "Sereg \"$1\" nénten ngelah aji"
 }
