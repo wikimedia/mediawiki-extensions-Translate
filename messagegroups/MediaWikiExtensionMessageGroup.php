@@ -1,26 +1,21 @@
 <?php
-/**
- * This file a contains a message group implementation.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
- * Message group for %MediaWiki extensions.
+ * Message group for MediaWiki extensions.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup MessageGroup
  */
 class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 	/**
 	 * MediaWiki extensions all should have key in their i18n files
 	 * describing them. This override method implements the logic
-	 * to retrieve them. Also URLs are included if available.
-	 * Needs the Configure extension.
+	 * to retrieve them.
 	 * @param IContextSource|null $context
 	 * @return string
 	 */
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( IContextSource $context = null ): string {
 		$language = $this->getSourceLanguage();
 		if ( $context ) {
 			$language = $context->getLanguage()->getCode();
