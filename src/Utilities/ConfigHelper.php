@@ -55,7 +55,7 @@ class ConfigHelper {
 			list( $type, $regex ) = $rule;
 
 			if ( preg_match( $regex, $hash ) ) {
-				if ( $type === 'white' ) {
+				if ( $type === 'white' || $type === 'include' ) {
 					return false;
 				} else {
 					$excluded = true;
