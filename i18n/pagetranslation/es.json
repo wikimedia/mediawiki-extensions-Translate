@@ -15,6 +15,7 @@
 			"GamemOfAnime",
 			"Hasley",
 			"Imre",
+			"Jackiezelaya",
 			"JasterTDC",
 			"Macofe",
 			"MarcoAurelio",
@@ -229,5 +230,7 @@
 	"tpt-unlink-button": "Eliminar de la traducción",
 	"tpt-unlink-summary": "Eliminar página de la traducción",
 	"tpt-generic-confirm": "Confirma la acción.",
-	"tpt-generic-button": "Confirmar"
+	"tpt-generic-button": "Confirmar",
+	"tpt-validation-not-insertable": "El nombre de la variable de traducción \" $1 \" no funciona como insertable en la interfaz de traducción. Evite el uso de caracteres especiales.",
+	"tpt-validation-name-reuse": "La variable de traducción \"$1\" se define varias veces con diferente contenido. Cambie los nombres de las variables para que sean únicos dentro de la unidad de traducción."
 }
