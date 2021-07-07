@@ -103,7 +103,6 @@
 		"DtdFFS": "ffs/DtdFFS.php",
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
 		"ExternalMessageSourceStateComparator": "utils/ExternalMessageSourceStateComparator.php",
-		"ExternalMessageSourceStateImporter": "utils/ExternalMessageSourceStateImporter.php",
 		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
 		"FatMessage": "Message.php",
 		"FFS": "ffs/FFS.php",

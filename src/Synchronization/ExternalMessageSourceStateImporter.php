@@ -2,17 +2,28 @@
 
 /**
  * Finds external changes for file based message groups.
- *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @since 2016.02
  */
 
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use FileBasedMessageGroup;
+use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MessageChangeStorage;
+use MessageGroup;
+use MessageGroups;
+use MessageHandle;
+use MessageIndex;
+use MessageUpdateJob;
+use RuntimeException;
+use Title;
+use function wfWarn;
 
 class ExternalMessageSourceStateImporter {
 
@@ -158,7 +169,7 @@ class ExternalMessageSourceStateImporter {
 		$groupSyncCache->markGroupForSync( $groupId );
 
 		LoggerFactory::getInstance( 'Translate.GroupSynchronization' )->info(
-			'[' . __CLASS__ . '] Synchronization started for {groupId}',
+			'[ExternalMessageSourceStateImporter] Synchronization started for {groupId}',
 			[ 'groupId' => $groupId ]
 		);
 	}

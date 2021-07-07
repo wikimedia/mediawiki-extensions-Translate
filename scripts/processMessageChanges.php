@@ -20,6 +20,7 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\MediaWikiServices;
 
