@@ -18,9 +18,10 @@ class ExternalMessageSourceStateImporter {
 
 	/**
 	 * @param MessageSourceChange[] $changeData
+	 * @param string $name
 	 * @return array
 	 */
-	public function importSafe( array $changeData ) {
+	public function importSafe( array $changeData, string $name ): array {
 		$processed = [];
 		$skipped = [];
 		$jobs = [];
@@ -88,7 +89,6 @@ class ExternalMessageSourceStateImporter {
 		// Remove groups with no imports
 		$processed = array_filter( $processed );
 
-		$name = 'unattended';
 		$file = MessageChangeStorage::getCdbPath( $name );
 		MessageChangeStorage::writeChanges( $changeData, $file );
 		JobQueueGroup::singleton()->push( $jobs );

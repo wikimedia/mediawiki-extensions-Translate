@@ -70,6 +70,11 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	public function execute() {
+		$name = $this->getOption( 'name', MessageChangeStorage::DEFAULT_NAME );
+		if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
+			$this->fatalError( 'Invalid name' );
+		}
+
 		$groups = $this->getGroups();
 		$changes = [];
 		$comparator = new ExternalMessageSourceStateComparator( new SimpleStringComparator() );
@@ -122,15 +127,10 @@ class ProcessMessageChanges extends Maintenance {
 
 		if ( $scripted ) {
 			$importer = new ExternalMessageSourceStateImporter();
-			$info = $importer->importSafe( $changes );
+			$info = $importer->importSafe( $changes, $name );
 			$this->printChangeInfo( $info );
 
 			return;
-		}
-
-		$name = $this->getOption( 'name', MessageChangeStorage::DEFAULT_NAME );
-		if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
-			$this->fatalError( 'Invalid name' );
 		}
 
 		$file = MessageChangeStorage::getCdbPath( $name );
