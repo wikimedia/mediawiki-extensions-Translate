@@ -9,23 +9,47 @@
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use Config;
 use FileBasedMessageGroup;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
 use MessageChangeStorage;
 use MessageGroup;
 use MessageGroups;
 use MessageHandle;
 use MessageIndex;
 use MessageUpdateJob;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Title;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {
+	/** @var Config */
+	private $config;
+	/** @var GroupSynchronizationCache */
+	private $groupSynchronizationCache;
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
+	/** @var LoggerInterface */
+	private $logger;
+	/** @var MessageIndex */
+	private $messageIndex;
+
+	public function __construct(
+		Config $config,
+		GroupSynchronizationCache $groupSynchronizationCache,
+		JobQueueGroup $jobQueueGroup,
+		LoggerInterface $logger,
+		MessageIndex $messageIndex
+	) {
+		$this->config = $config;
+		$this->groupSynchronizationCache = $groupSynchronizationCache;
+		$this->jobQueueGroup = $jobQueueGroup;
+		$this->logger = $logger;
+		$this->messageIndex = $messageIndex;
+	}
+
 	/**
 	 * @param MessageSourceChange[] $changeData
 	 * @param string $name
@@ -36,9 +60,7 @@ class ExternalMessageSourceStateImporter {
 		$skipped = [];
 		$jobs = [];
 
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		$groupSyncCacheEnabled = $config->get( 'TranslateGroupSynchronizationCache' );
-		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+		$groupSyncCacheEnabled = $this->config->get( 'TranslateGroupSynchronizationCache' );
 
 		foreach ( $changeData as $groupId => $changesForGroup ) {
 			/** @var FileBasedMessageGroup $group */
@@ -79,7 +101,7 @@ class ExternalMessageSourceStateImporter {
 
 			// Mark the skipped group as in review
 			if ( $groupSyncCacheEnabled && isset( $skipped[$groupId] ) ) {
-				$groupSyncCache->markGroupAsInReview( $groupId );
+				$this->groupSynchronizationCache->markGroupAsInReview( $groupId );
 			}
 
 			if ( $groupJobs !== [] ) {
@@ -100,7 +122,7 @@ class ExternalMessageSourceStateImporter {
 
 		$file = MessageChangeStorage::getCdbPath( $name );
 		MessageChangeStorage::writeChanges( $changeData, $file );
-		JobQueueGroup::singleton()->push( $jobs );
+		$this->jobQueueGroup->push( $jobs );
 
 		return [
 			'processed' => $processed,
@@ -155,13 +177,12 @@ class ExternalMessageSourceStateImporter {
 			throw new RuntimeException( "Did not find group $groupId" );
 		}
 
-		MessageIndex::singleton()->storeInterim( $group, array_keys( $groupMessageKeys ) );
+		$this->messageIndex->storeInterim( $group, array_keys( $groupMessageKeys ) );
 
-		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
-		$groupSyncCache->addMessages( $groupId, ...$messageParams );
-		$groupSyncCache->markGroupForSync( $groupId );
+		$this->groupSynchronizationCache->addMessages( $groupId, ...$messageParams );
+		$this->groupSynchronizationCache->markGroupForSync( $groupId );
 
-		LoggerFactory::getInstance( 'Translate.GroupSynchronization' )->info(
+		$this->logger->info(
 			'[ExternalMessageSourceStateImporter] Synchronization started for {groupId}',
 			[ 'groupId' => $groupId ]
 		);

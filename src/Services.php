@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
+use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
@@ -51,6 +52,10 @@ class Services implements ContainerInterface {
 
 	public function getConfigHelper(): ConfigHelper {
 		return $this->get( 'Translate:ConfigHelper' );
+	}
+
+	public function getExternalMessageSourceStateImporter(): ExternalMessageSourceStateImporter {
+		return $this->get( 'Translate:ExternalMessageSourceStateImporter' );
 	}
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {

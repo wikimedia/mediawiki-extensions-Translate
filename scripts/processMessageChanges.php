@@ -20,7 +20,6 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\MediaWikiServices;
 
@@ -83,7 +82,8 @@ class ProcessMessageChanges extends Maintenance {
 		$scripted = $this->hasOption( 'safe-import' );
 		$skipGroupSyncCache = $this->hasOption( 'skip-group-sync-check' );
 
-		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
+		$services = Services::getInstance();
+		$groupSyncCache = $services->getGroupSynchronizationCache();
 		$groupSyncCacheEnabled = MediaWikiServices::getInstance()->getMainConfig()
 			->get( 'TranslateGroupSynchronizationCache' );
 
@@ -127,7 +127,7 @@ class ProcessMessageChanges extends Maintenance {
 		}
 
 		if ( $scripted ) {
-			$importer = new ExternalMessageSourceStateImporter();
+			$importer = $services->getExternalMessageSourceStateImporter();
 			$info = $importer->importSafe( $changes, $name );
 			$this->printChangeInfo( $info );
 

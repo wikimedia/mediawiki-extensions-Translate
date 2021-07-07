@@ -16,6 +16,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
+use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
@@ -23,12 +24,25 @@ use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
 	'Translate:ConfigHelper' => static function (): ConfigHelper {
 		return new ConfigHelper();
+	},
+
+	'Translate:ExternalMessageSourceStateImporter' => static function (
+		MediaWikiServices $services
+	): ExternalMessageSourceStateImporter {
+		return new ExternalMessageSourceStateImporter(
+			$services->getMainConfig(),
+			$services->get( 'Translate:GroupSynchronizationCache' ),
+			JobQueueGroup::singleton(),
+			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
+			MessageIndex::singleton()
+		);
 	},
 
 	'Translate:GroupSynchronizationCache' => static function (
