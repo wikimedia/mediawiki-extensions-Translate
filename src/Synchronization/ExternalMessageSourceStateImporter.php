@@ -26,7 +26,6 @@ use Title;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {
-
 	/**
 	 * @param MessageSourceChange[] $changeData
 	 * @param string $name
@@ -41,9 +40,8 @@ class ExternalMessageSourceStateImporter {
 		$groupSyncCacheEnabled = $config->get( 'TranslateGroupSynchronizationCache' );
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 
-		/** @var MessageSourceChange $changesForGroup */
 		foreach ( $changeData as $groupId => $changesForGroup ) {
-			/** @var FileBasedMessageGroup */
+			/** @var FileBasedMessageGroup $group */
 			$group = MessageGroups::getGroup( $groupId );
 			if ( !$group ) {
 				unset( $changeData[$groupId] );
@@ -111,17 +109,12 @@ class ExternalMessageSourceStateImporter {
 		];
 	}
 
-	/**
-	 * Creates MessagUpdateJobs additions for a language under a group
-	 *
-	 * @param MessageGroup $group
-	 * @param string[][] $additions
-	 * @param string $language
-	 * @return array
-	 */
+	/** Creates MessageUpdateJobs additions for a language under a group */
 	private function createMessageUpdateJobs(
-		MessageGroup $group, array $additions, string $language
-	) {
+		MessageGroup $group,
+		array $additions,
+		string $language
+	): array {
 		$groupId = $group->getId();
 		$jobs = [];
 		$processed = 0;
@@ -176,9 +169,7 @@ class ExternalMessageSourceStateImporter {
 
 	/**
 	 * Identifies languages in a message group that are safe to import
-	 * @param MessageGroup $group
-	 * @param MessageSourceChange $changesForGroup
-	 * @return bool[]
+	 * @return array<string,bool>
 	 */
 	private static function identifySafeLanguages(
 		MessageGroup $group,
@@ -231,7 +222,7 @@ class ExternalMessageSourceStateImporter {
 
 				if ( !isset( $sourceLanguageKeyCache[ $msgKey ] ) ) {
 					// This is either a new external translation which is not added in the same sync
-					// as the source language key, or this translation does not have a correspoding
+					// as the source language key, or this translation does not have a corresponding
 					// definition. We will check the message index to determine which of the two.
 					$sourceHandle = new MessageHandle( Title::makeTitle( $groupNamespace, $msgKey ) );
 					$sourceLanguageKeyCache[ $msgKey ] = $sourceHandle->isValid();
