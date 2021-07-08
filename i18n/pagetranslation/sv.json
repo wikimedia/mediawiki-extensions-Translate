@@ -60,6 +60,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|Denna sida|Dessa sidor}} har ändringar som inte har markerats för översättning.",
 	"tpt-tag-discouraged": "avråds",
 	"tpt-tag-oldsyntax": "gammal syntax",
+	"tpt-tag-no-transclusion-support": "inget stöd för transkludering",
 	"tpt-select-prioritylangs": "Kommaseparerad lista över prioriterade språkkoder:",
 	"tpt-select-prioritylangs-force": "Förhindra översättningar på andra språk än de prioriterade språken",
 	"tpt-select-prioritylangs-reason": "Anledning:",
@@ -116,7 +117,7 @@
 	"pt-parse-open": "Obalanserad &lt;translate>-tagg.\nÖversättningsmall: <pre>$1</pre>",
 	"pt-parse-close": "Obalanserad &lt;/translate>-tagg.\nÖversättningsmall: <pre>$1</pre>",
 	"pt-parse-nested": "Inbäddade &lt;translate>-översättningsenheter är inte tillåtna.\nTaggtext: <pre>$1</pre>",
-	"pt-shake-multiple": "Flera översättningsenhetsmarkörer för en översättningsenhet.\nÖversättningsenhetstext: <pre>$1</pre>",
+	"pt-shake-multiple": "Flera översättningsenhetsmarkörer för en översättningsenhet.\nSe till att översättningsenheter särskiljs med tomma rader.\nÖversättningsenhetstext: <pre>$1</pre>",
 	"pt-shake-position": "Översättningsenhetsmarkörer i oväntad position.\nÖversättningsenhetstext: <pre>$1</pre>",
 	"pt-shake-empty": "Tom översättningsenhet för markör $1.",
 	"log-description-pagetranslation": "Logg för åtgärder som rör systemet för sidöversättning",
@@ -162,6 +163,7 @@
 	"pt-movepage-list-translatable-note": "Dessa sidor måste flyttas separat.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Annan undersida|Andra undersidor}}",
 	"pt-movepage-list-count": "Totalt $1 {{PLURAL:$1|sida|sidor}} att flytta och $2 {{PLURAL:$2|undersida|undersidor}}.",
+	"pt-movepage-page-count-limit": "Denna översättbara sida består av fler än $1 {{PLURAL:$1|sida|sidor}}. Att flytta så många sidor har visat sig vara problematiskt. Var god kontakta en systemadministratör för att utföra detta med ett underhållsskript.",
 	"pt-movepage-list-no-pages": "Inga sidor hittades.",
 	"pt-movepage-legend": "Flytta översättningsbar sida",
 	"pt-movepage-current": "Nuvarande namn:",
@@ -220,6 +222,7 @@
 	"tpt-translate-title": "Tillåt översättning av sidans titel",
 	"pp-save-summary": "Förbered sidan för översättning",
 	"pagepreparation": "Förbered sida för översättning",
+	"pagepreparation-summary": "Ange en sidtitel för att förbereda för översättning.",
 	"pp-pagename-placeholder": "Ange sidans namn",
 	"pp-prepare-button-label": "Förbered",
 	"pp-save-button-label": "Publicera",
@@ -235,5 +238,7 @@
 	"tpt-unlink-button": "Ta bort från översättning",
 	"tpt-unlink-summary": "Tog bort sidan från översättning",
 	"tpt-generic-confirm": "Bekräfta åtgärden.",
-	"tpt-generic-button": "Bekräfta"
+	"tpt-generic-button": "Bekräfta",
+	"tpt-validation-not-insertable": "Översättningsvariabelnamnet \"$1\" fungerar inte som en insättningsbar i översättningsgränssnittet. Undvik att använda specialtecken.",
+	"tpt-validation-name-reuse": "Översättningsvariabeln \"$1\" definierades flera gånger med olika innehåll. Ändra variabelnamnen så de är unika inom översättningsenheten."
 }
