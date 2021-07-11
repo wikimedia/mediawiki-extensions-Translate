@@ -28,7 +28,7 @@ class TranslationAidDataProvider {
 
 	/**
 	 * Get the message definition. Cached for performance.
-	 * @return string|null
+	 * @return string
 	 */
 	public function getDefinition(): string {
 		if ( $this->definition !== null ) {
@@ -52,6 +52,7 @@ class TranslationAidDataProvider {
 				' in group ' . $this->group->getId()
 			);
 		}
+		return $this->definition;
 	}
 
 	public function hasDefinition(): bool {
