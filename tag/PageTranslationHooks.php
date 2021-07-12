@@ -1448,10 +1448,6 @@ class PageTranslationHooks {
 			$dbw->endAtomic( $fname );
 		};
 
-		if ( is_callable( [ $dbw, 'onTransactionCommitOrIdle' ] ) ) {
-			$dbw->onTransactionCommitOrIdle( $callback, __METHOD__ );
-		} else {
-			$dbw->onTransactionIdle( $callback, __METHOD__ );
-		}
+		$dbw->onTransactionCommitOrIdle( $callback, __METHOD__ );
 	}
 }

@@ -507,12 +507,8 @@ class DatabaseMessageIndex extends MessageIndex {
 			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
-		} elseif ( is_callable( [ $dbw, 'onTransactionCommitOrIdle' ] ) ) {
-			$dbw->onTransactionCommitOrIdle( static function () use ( $dbw, $fname ) {
-				$dbw->unlock( 'translate-messageindex', $fname );
-			}, $fname );
 		} else {
-			$dbw->onTransactionIdle( static function () use ( $dbw, $fname ) {
+			$dbw->onTransactionCommitOrIdle( static function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
 		}
