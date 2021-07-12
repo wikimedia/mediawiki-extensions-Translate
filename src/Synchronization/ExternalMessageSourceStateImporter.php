@@ -15,7 +15,6 @@ use FileBasedMessageGroup;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MessageChangeStorage;
-use MessageGroup;
 use MessageGroups;
 use MessageHandle;
 use MessageIndex;
@@ -64,13 +63,24 @@ class ExternalMessageSourceStateImporter {
 		$groupSyncCacheEnabled = $this->config->get( 'TranslateGroupSynchronizationCache' );
 
 		foreach ( $changeData as $groupId => $changesForGroup ) {
-			/** @var FileBasedMessageGroup $group */
 			$group = MessageGroups::getGroup( $groupId );
 			if ( !$group ) {
 				unset( $changeData[$groupId] );
 				continue;
 			}
-			'@phan-var FileBasedMessageGroup $group';
+
+			if ( !$group instanceof FileBasedMessageGroup ) {
+				$this->logger->warning(
+					'[ExternalMessageSourceStateImporter] Expected FileBasedMessageGroup, ' .
+					'but got {class} for group {groupId}',
+					[
+						'class' => get_class( $group ),
+						'groupId' => $groupId
+					]
+				);
+				unset( $changeData[$groupId] );
+				continue;
+			}
 
 			$processed[$groupId] = [];
 			$languages = $changesForGroup->getLanguages();
@@ -134,7 +144,7 @@ class ExternalMessageSourceStateImporter {
 
 	/** Creates MessageUpdateJobs additions for a language under a group */
 	private function createMessageUpdateJobs(
-		MessageGroup $group,
+		FileBasedMessageGroup $group,
 		array $additions,
 		string $language
 	): array {
@@ -194,7 +204,7 @@ class ExternalMessageSourceStateImporter {
 	 * @return array<string,bool>
 	 */
 	private static function identifySafeLanguages(
-		MessageGroup $group,
+		FileBasedMessageGroup $group,
 		MessageSourceChange $changesForGroup
 	): array {
 		$sourceLanguage = $group->getSourceLanguage();
