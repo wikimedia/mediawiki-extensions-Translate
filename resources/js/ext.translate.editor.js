@@ -349,12 +349,10 @@
 		next: function () {
 			var $next = this.$editTrigger.next( '.tux-message' );
 
-			// Skip if the message is hidden. For example in a filter result.
-			if ( $next.length && $next.hasClass( 'hide' ) ) {
-				this.$editTrigger = $next;
-				this.next();
-
-				return;
+			// Determine the next message to show. The immediate next one maybe hidden
+			// for example in case of filtering
+			while ( $next.length && $next.hasClass( 'hide' ) ) {
+				$next = $next.next( '.tux-message' );
 			}
 
 			// If this is the last message, just hide it
