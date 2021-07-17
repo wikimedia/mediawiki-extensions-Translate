@@ -1005,6 +1005,7 @@ class PageTranslationHooks {
 
 		$whitelist = [
 			'read', 'delete', 'undelete', 'deletedtext', 'deletedhistory',
+			'deleterevision', 'suppressrevision', 'viewsuppressed', // T286884
 			'review', // FlaggedRevs
 			'patrol', // T151172
 		];
