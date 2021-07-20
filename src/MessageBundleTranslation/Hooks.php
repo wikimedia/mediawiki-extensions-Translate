@@ -3,15 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
-use Content;
-use IContextSource;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use Psr\Log\LoggerInterface;
-use Status;
-use User;
 
 /**
  * @author Niklas Laxström
@@ -33,13 +29,15 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 		return self::$instance;
 	}
 
+	// Typehints skipped on-purpose to maintain support for MW 1.35
+
 	/** @inheritDoc */
 	public function onEditFilterMergedContent(
-		IContextSource $context,
-		Content $content,
-		Status $status,
+		$context,
+		$content,
+		$status,
 		$summary,
-		User $user,
+		$user,
 		$minoredit
 	): void {
 		if ( !$content instanceof MessageBundleContent ) {
