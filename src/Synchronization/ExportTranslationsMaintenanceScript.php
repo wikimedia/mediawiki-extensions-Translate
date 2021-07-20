@@ -11,9 +11,6 @@ use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use MessageGroups;
 use MessageGroupStats;
-use MessageHandle;
-use Title;
-use TranslateUtils;
 
 /**
  * Script to export translations of message groups to files.
@@ -96,12 +93,6 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			self::HAS_ARG
 		);
 		$this->addOption(
-			'hours',
-			'(optional) Only export languages with changes in the last given number of hours',
-			self::OPTIONAL,
-			self::HAS_ARG
-		);
-		$this->addOption(
 			'no-fuzzy',
 			'(optional) Do not include any messages marked as fuzzy/outdated'
 		);
@@ -161,25 +152,11 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$this->fatalError( 'EE1: No valid message groups identified.' );
 		}
 
-		$changeFilter = null;
-		if ( $this->hasOption( 'hours' ) ) {
-			$changeFilter = $this->getRecentlyChangedItems(
-				(int)$this->getOption( 'hours' ),
-				$this->getNamespacesForGroups( $groups )
-			);
-		}
-
 		$groupSyncCacheEnabled = MediaWikiServices::getInstance()->getMainConfig()
 			->get( 'TranslateGroupSynchronizationCache' );
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 
 		foreach ( $groups as $groupId => $group ) {
-			// No changes to this group at all
-			if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId] ) ) {
-				$this->output( "No recent changes to $groupId.\n" );
-				continue;
-			}
-
 			if ( $groupSyncCacheEnabled && !$skipGroupSyncCheck ) {
 				if ( !$this->canGroupBeExported( $groupSyncCache, $groupId ) ) {
 					continue;
@@ -263,11 +240,6 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				// Also check that inclusion list is not null, which means that all
 				// languages are allowed for translation and export.
 				if ( is_array( $inclusionList ) && !isset( $inclusionList[$lang] ) ) {
-					continue;
-				}
-
-				// Skip languages not present in recent changes
-				if ( is_array( $changeFilter ) && !isset( $changeFilter[$groupId][$lang] ) ) {
 					continue;
 				}
 
@@ -375,44 +347,6 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		return $groups;
-	}
-
-	/**
-	 * @param int $hours
-	 * @param int[] $namespaces
-	 * @return array[]
-	 */
-	private function getRecentlyChangedItems( int $hours, array $namespaces ): array {
-		$bots = true;
-		$changeFilter = [];
-		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
-		foreach ( $rows as $row ) {
-			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
-			$handle = new MessageHandle( $title );
-			$code = $handle->getCode();
-			if ( !$code ) {
-				continue;
-			}
-			$groupIds = $handle->getGroupIds();
-			foreach ( $groupIds as $groupId ) {
-				$changeFilter[$groupId][$code] = true;
-			}
-		}
-
-		return $changeFilter;
-	}
-
-	/**
-	 * @param MessageGroup[] $groups
-	 * @return int[]
-	 */
-	private function getNamespacesForGroups( array $groups ): array {
-		$namespaces = [];
-		foreach ( $groups as $group ) {
-			$namespaces[$group->getNamespace()] = true;
-		}
-
-		return array_keys( $namespaces );
 	}
 
 	/** @return string[] */
