@@ -96,9 +96,8 @@ class MessageWebImporter {
 		$this->code = $code;
 	}
 
-	/** @return string */
-	protected function getAction() {
-		return $this->getTitle()->getFullURL();
+	protected function getAction(): string {
+		return $this->getTitle()->getLocalURL();
 	}
 
 	/** @return string */
