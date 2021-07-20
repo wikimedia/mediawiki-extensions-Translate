@@ -437,22 +437,6 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Parses list of language codes to an array.
-	 * @param string $codes Comma separated list of language codes. "*" for all.
-	 * @return string[] Language codes.
-	 */
-	public static function parseLanguageCodes( $codes ) {
-		$langs = array_map( 'trim', explode( ',', $codes ) );
-		if ( $langs[0] === '*' ) {
-			$languages = Language::fetchLanguageNames();
-			ksort( $languages );
-			$langs = array_keys( $languages );
-		}
-
-		return $langs;
-	}
-
-	/**
 	 * Get a DB handle suitable for read and read-for-write cases
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase Master for HTTP POST, CLI, DB already changed;

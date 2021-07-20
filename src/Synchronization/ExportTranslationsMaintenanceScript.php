@@ -43,8 +43,20 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		);
 		$this->addOption(
 			'lang',
-			'Comma separated list of language codes or *',
+			'Comma separated list of language codes to export or * for all languages',
 			self::REQUIRED,
+			self::HAS_ARG
+		);
+		$this->addOption(
+			'always-export-languages',
+			'(optional) Comma separated list of languages to export ignoring export threshold',
+			self::OPTIONAL,
+			self::HAS_ARG
+		);
+		$this->addOption(
+			'never-export-languages',
+			'(optional) Comma separated list of languages to never export (overrides everything else)',
+			self::OPTIONAL,
 			self::HAS_ARG
 		);
 		$this->addOption(
@@ -55,7 +67,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		);
 		$this->addOption(
 			'skip',
-			'(optional) Languages to skip, comma separated list',
+			'(deprecated) See --never-export-languages',
 			self::OPTIONAL,
 			self::HAS_ARG
 		);
@@ -124,12 +136,15 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$exportThreshold = $this->getOption( 'threshold' );
 		$removalThreshold = $this->getOption( 'removal-threshold' );
 		$noFuzzy = $this->hasOption( 'no-fuzzy' );
-
-		$reqLangs = TranslateUtils::parseLanguageCodes( $this->getOption( 'lang' ) );
-		if ( $this->hasOption( 'skip' ) ) {
-			$skipLangs = array_map( 'trim', explode( ',', $this->getOption( 'skip' ) ) );
-			$reqLangs = array_diff( $reqLangs, $skipLangs );
-		}
+		$requestedLanguages = $this->parseLanguageCodes( $this->getOption( 'lang' ) );
+		$alwaysExportLanguages = $this->csv2array(
+			$this->getOption( 'always-export-languages' ) ?? ''
+		);
+		$neverExportLanguages = $this->csv2array(
+			$this->getOption( 'never-export-languages' ) ??
+			$this->getOption( 'skip' ) ??
+			''
+		);
 
 		$forOffline = $this->hasOption( 'offline-gettext-format' );
 		$offlineTargetPattern = $this->getOption( 'offline-gettext-format' ) ?: "%GROUPID%/%CODE%.po";
@@ -170,7 +185,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 				$languageExportActions = $this->getLanguageExportActions(
 					$groupId,
-					$reqLangs,
+					$requestedLanguages,
 					(int)$exportThreshold,
 					(int)$removalThreshold
 				);
@@ -184,8 +199,16 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 					]
 				);
 			} else {
-				// Convert list to an associate array
-				$languageExportActions = array_fill_keys( $reqLangs, self::ACTION_CREATE );
+				// Convert list to an associative array
+				$languageExportActions = array_fill_keys( $requestedLanguages, self::ACTION_CREATE );
+			}
+
+			foreach ( $alwaysExportLanguages as $code ) {
+				$languageExportActions[ $code ] = self::ACTION_CREATE;
+			}
+
+			foreach ( $neverExportLanguages as $code ) {
+				unset( $languageExportActions[ $code ] );
 			}
 
 			if ( $languageExportActions === [] ) {
@@ -381,6 +404,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		return array_keys( $namespaces );
 	}
 
+	/** @return string[] */
 	private function getLanguageExportActions(
 		string $groupId,
 		array $requestedLanguages,
@@ -429,5 +453,27 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			return false;
 		}
 		return true;
+	}
+
+	/** @return string[] */
+	private function csv2array( string $input ): array {
+		return array_filter(
+			array_map( 'trim', explode( ',', $input ) ),
+			static function ( $v ) {
+				return $v !== '';
+			}
+		);
+	}
+
+	/** @return string[] */
+	private function parseLanguageCodes( string $input ): array {
+		if ( $input === '*' ) {
+			$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
+			$languages = $languageNameUtils->getLanguageNames();
+			ksort( $languages );
+			return array_keys( $languages );
+		}
+
+		return $this->csv2array( $input );
 	}
 }
