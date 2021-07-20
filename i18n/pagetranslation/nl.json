@@ -111,7 +111,7 @@
 	"pt-parse-open": "Ongebalanceerd label &lt;translate>.\nVertaalsjabloon: <pre>$1</pre>",
 	"pt-parse-close": "Ongebalanceerd label &lt;translate>.\nVertaalsjabloon: <pre>$1</pre>",
 	"pt-parse-nested": "Geneste vertaaleenheden met &lt;translate> zijn niet toegestaan.\nLabeltekst: <pre>$1</pre>",
-	"pt-shake-multiple": "Meerdere markeringen voor vertaaleenheden voor een enkele vertaaleenheid aangetroffen.\nTekst vertaaleenheid: <pre>$1</pre>",
+	"pt-shake-multiple": "Meerdere markeringen voor vertaaleenheden voor een enkele vertaaleenheid aangetroffen.\nZorg ervoor dat de vertaaleenheden worden gescheiden door lege regels.\nTekst vertaaleenheid: <pre>$1</pre>",
 	"pt-shake-position": "Markeringen voor vertaaleenheden op een onverwachte plaats.\nTekst vertaaleenheid: <pre>$1</pre>",
 	"pt-shake-empty": "Lege vertaaleenheid voor markering $1.",
 	"log-description-pagetranslation": "Logboek voor handelingen gerelateerd aan het paginavertalingsysteem",

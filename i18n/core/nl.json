@@ -194,7 +194,7 @@
 	"translate-mgs-invalid-group": "De opgegeven groep \"$1\" bestaat niet.",
 	"translate-mgs-nothing": "Er is niets weer te geven voor de opgegeven statistieken.",
 	"supportedlanguages": "Actieve talen",
-	"supportedlanguages-summary": "Op deze pagina wordt een lijst van alle talen die in {{SITENAME}} worden ondersteund weergegeven, samen met de namen van de vertalers die werken aan die taal.\nDe naam van een vertaler wordt groter weergegeven als deze meer bewerkingen heeft gemaakt.\nDe kleur van een onderstreping geeft aan hoe recent een vertaler actief is geweest.",
+	"supportedlanguages-summary": "Op deze pagina staat een lijst van alle actieve talen op {{SITENAME}}, alsmede de namen van de vertalers die aan de respectieve talen werken.\nHoe meer bewerkingen een vertaler heeft bijgedragen, hoe groter diens naam wordt weergegeven.\nDe kleur van een onderstreping geeft aan hoe recent een vertaler actief is geweest.",
 	"supportedlanguages-colorlegend": "Legenda voor de kleuren: laatste vertaling $1 dagen geleden.",
 	"supportedlanguages-sqlite-error": "SQLite wordt niet ondersteund",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Vertaler}}|Vertalers}}: $1",
