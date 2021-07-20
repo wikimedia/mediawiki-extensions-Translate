@@ -60,6 +60,12 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			self::HAS_ARG
 		);
 		$this->addOption(
+			'skip-source-language',
+			'(optional) Do not export the source language of each message group',
+			self::OPTIONAL,
+			self::NO_ARG
+		);
+		$this->addOption(
 			'target',
 			'Target directory for exported files',
 			self::REQUIRED,
@@ -145,6 +151,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$this->getOption( 'skip' ) ??
 			''
 		);
+		$skipSourceLanguage = $this->hasOption( 'skip-source-language' );
 
 		$forOffline = $this->hasOption( 'offline-gettext-format' );
 		$offlineTargetPattern = $this->getOption( 'offline-gettext-format' ) ?: "%GROUPID%/%CODE%.po";
@@ -209,6 +216,10 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			foreach ( $neverExportLanguages as $code ) {
 				unset( $languageExportActions[ $code ] );
+			}
+
+			if ( $skipSourceLanguage ) {
+				unset( $languageExportActions[ $group->getSourceLanguage() ] );
 			}
 
 			if ( $languageExportActions === [] ) {
