@@ -1,10 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\PageTranslation\ParserOutput;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitIssue;
-use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Languages\LanguageFactory;
@@ -36,14 +38,26 @@ class SpecialPageTranslation extends SpecialPage {
 	private $languageNameUtils;
 	/** @var LanguageFactory */
 	private $languageFactory;
+	/** @var TranslationUnitStoreFactory */
+	private $translationUnitStoreFactory;
+	/** @var TranslatablePageParser */
+	private $translatablePageParser;
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
-		LanguageFactory $languageFactory
+		LanguageFactory $languageFactory,
+		TranslationUnitStoreFactory $translationUnitStoreFactory,
+		TranslatablePageParser $translatablePageParser,
+		LinkBatchFactory $linkBatchFactory
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageNameUtils = $languageNameUtils;
 		$this->languageFactory = $languageFactory;
+		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
+		$this->translatablePageParser = $translatablePageParser;
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function doesWrites(): bool {
@@ -237,7 +251,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$firstMark = $page->getMarkedTag() === false;
 
-		$parse = $this->getParse( $page );
+		$parse = $this->translatablePageParser->parse( $page->getText() );
 		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
 
 		$error = $this->validateUnitIds( $units );
@@ -475,7 +489,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		$lb = new LinkBatch();
+		$lb = $this->linkBatchFactory->newLinkBatch();
 		$lb->setCaller( __METHOD__ );
 		foreach ( $allPages as $page ) {
 			$lb->addObj( $page['title'] );
@@ -621,9 +635,7 @@ class SpecialPageTranslation extends SpecialPage {
 	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parse ): array {
 		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 
-		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
-		$store = $factory->getWriter( $page->getTitle() );
-
+		$store = $this->translationUnitStoreFactory->getReader( $page->getTitle() );
 		$storedUnits = $store->getUnits();
 		$parsedUnits = $parse->units();
 
@@ -814,7 +826,9 @@ class SpecialPageTranslation extends SpecialPage {
 				$page->getTitle(),
 				$page->getMarkedTag()
 			);
-			$oldTemplate = $this->getParse( $oldPage )->sourcePageTemplateForDiffs();
+			$oldTemplate = $this->translatablePageParser
+				->parse( $oldPage->getText() )
+				->sourcePageTemplateForDiffs();
 
 			if ( $oldTemplate !== $newTemplate ) {
 				$out->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
@@ -1194,11 +1208,5 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		return '<ol>' . implode( "", $items ) . '</ol>';
-	}
-
-	private function getParse( TranslatablePage $page ): ParserOutput {
-		$services = Services::getInstance();
-		$parser = $services->getTranslatablePageParser();
-		return $parser->parse( $page->getText() );
 	}
 }
