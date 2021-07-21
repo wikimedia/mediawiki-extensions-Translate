@@ -848,8 +848,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->showDiffStyle();
 				$diff->setReducedLineNumbers();
 
-				$contentParams = [ 'class' => 'mw-tpt-sp-content' ];
-				$out->addHTML( Xml::tags( 'div', $contentParams, $text ) );
+				$out->addHTML( Xml::tags( 'div', [], $text ) );
 			}
 		}
 
