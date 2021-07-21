@@ -258,7 +258,7 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
-				$this->showSuccess( $page, $firstMark );
+				$this->showSuccess( $page, $firstMark, count( $sections ) );
 			}
 
 			return;
@@ -271,11 +271,14 @@ class SpecialPageTranslation extends SpecialPage {
 	 * Displays success message and other instructions after a page has been marked for translation.
 	 * @param TranslatablePage $page
 	 * @param bool $firstMark true if it is the first time the page is being marked for translation.
+	 * @param int $unitCount
 	 * @return void
 	 */
-	public function showSuccess( TranslatablePage $page, bool $firstMark = false ): void {
+	private function showSuccess(
+		TranslatablePage $page, bool $firstMark, int $unitCount
+	): void {
 		$titleText = $page->getTitle()->getPrefixedText();
-		$num = $this->getLanguage()->formatNum( $this->getParse( $page )->countSections() );
+		$num = $this->getLanguage()->formatNum( $unitCount );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( [
 			'group' => $page->getMessageGroupId(),
 			'action' => 'page',
