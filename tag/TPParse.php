@@ -30,8 +30,8 @@ class TPParse {
 	 * @var string Page source with content replaced with placeholders.
 	 */
 	public $template = null;
-	/** @var null|array Sections saved in the database. array( string => TranslationUnit, ... ) */
-	protected $dbSections = null;
+	/** @var ?TranslationUnit[] Units saved in the database indexed by unit id */
+	private $storedUnits;
 
 	public function __construct( Title $title ) {
 		$this->title = $title;
@@ -80,7 +80,7 @@ class TPParse {
 		$this->loadFromDatabase();
 
 		$sections = $this->sections;
-		foreach ( array_keys( $this->dbSections ) as $key ) {
+		foreach ( array_keys( $this->storedUnits ) as $key ) {
 			$highest = max( $highest, (int)$key );
 		}
 
@@ -95,8 +95,8 @@ class TPParse {
 				$s->type = 'new';
 				$s->id = (string)( ++$highest );
 			} else {
-				if ( isset( $this->dbSections[$s->id] ) ) {
-					$storedText = $this->dbSections[$s->id]->text;
+				if ( isset( $this->storedUnits[$s->id] ) ) {
+					$storedText = $this->storedUnits[$s->id]->text;
 					if ( $s->text !== $storedText ) {
 						$s->type = 'changed';
 						$s->oldText = $storedText;
@@ -108,29 +108,21 @@ class TPParse {
 		return $sections;
 	}
 
-	/**
-	 * Returns list of deleted sections.
-	 *
-	 * @return TranslationUnit[] List of sections indexed by id. array( string => TranslationUnit, ... )
-	 */
-	public function getDeletedSections() {
-		$sections = $this->getSectionsForSave();
-		$deleted = $this->dbSections;
+	/** @return TranslationUnit[] */
+	public function getDeletedUnits(): array {
+		$parsedUnits = $this->getSectionsForSave();
+		$existingUnits = $this->storedUnits;
 
-		foreach ( $sections as $s ) {
-			if ( isset( $deleted[$s->id] ) ) {
-				unset( $deleted[$s->id] );
-			}
+		foreach ( $parsedUnits as $s ) {
+			unset( $existingUnits[$s->id] );
 		}
 
-		return $deleted;
+		return $existingUnits;
 	}
 
-	/**
-	 * Load section saved in the database. Populates dbSections.
-	 */
-	protected function loadFromDatabase() {
-		if ( $this->dbSections !== null ) {
+	/** Load units saved in the database into storedUnits. */
+	private function loadFromDatabase(): void {
+		if ( $this->storedUnits !== null ) {
 			return;
 		}
 
@@ -139,7 +131,7 @@ class TPParse {
 		// will be updated in next write, so it felt safer to use the writer to read from the
 		// primary database. Eventually this should go to SpecialPageTranslation out of this class.
 		$store = $factory->getWriter( $this->title );
-		$this->dbSections = $store->getUnits();
+		$this->storedUnits = $store->getUnits();
 	}
 
 	/**

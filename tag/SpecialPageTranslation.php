@@ -735,18 +735,17 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 		}
 
-		$deletedSections = $page->getParse()->getDeletedSections();
-		if ( count( $deletedSections ) ) {
+		$deletedUnits = $page->getParse()->getDeletedUnits();
+		if ( $deletedUnits ) {
 			$hasChanges = true;
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
-			/** @var TranslationUnit $s */
-			foreach ( $deletedSections as $s ) {
+			foreach ( $deletedUnits as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
 				$out->addHTML( MessageWebImporter::makeSectionElement(
 					$name,
-					$s->type,
+					'deleted',
 					$text,
 					$sourceLanguage
 				) );
