@@ -1,40 +1,29 @@
 <?php
-/**
- * Contains class with job for deleting translatable and translation pages.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 
 /**
- * Contains class with job for deleting translatable and translation pages.
- *
+ * Job for deleting translatable and translation pages.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup PageTranslation JobQueue
  */
 class TranslateDeleteJob extends Job {
-	/**
-	 * @param Title $target
-	 * @param string $base
-	 * @param string $full
-	 * @param User $performer
-	 * @param string $reason
-	 * @return self
-	 */
-	public static function newJob( Title $target, $base, $full, /*User*/ $performer, $reason ) {
-		$job = new self( $target );
-		$job->setUser( FuzzyBot::getUser() );
-		$job->setFull( $full );
-		$job->setBase( $base );
-		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
-		$job->setSummary( wfMessage( $msg, $base )->inContentLanguage()->text() );
-		$job->setPerformer( $performer );
-		$job->setReason( $reason );
+	public static function newJob(
+		Title $target,
+		string $base,
+		bool $isTranslatablePage,
+		User $performer,
+		string $reason
+	): self {
+		$params = [
+			'full' => $isTranslatablePage,
+			'base' => $base,
+			'performer' => $performer->getName(),
+			'reason' => $reason
+		];
 
-		return $job;
+		return new self( $target, $params );
 	}
 
 	/**
@@ -46,13 +35,11 @@ class TranslateDeleteJob extends Job {
 	}
 
 	public function run() {
-		// Initialization
 		$title = $this->title;
-		// Other stuff
-		$user = $this->getUser();
+		$user = FuzzyBot::getUser();
 		$summary = $this->getSummary();
 		$base = $this->getBase();
-		$doer = User::newFromName( $this->getPerformer() );
+		$performer = $this->getPerformer();
 		$reason = $this->getReason();
 
 		PageTranslationHooks::$allowTargetEdit = true;
@@ -79,9 +66,9 @@ class TranslateDeleteJob extends Job {
 				'errors' => $status->getErrorsArray(),
 			];
 
-			$type = $this->getFull() ? 'deletefnok' : 'deletelnok';
+			$type = $this->isTranslatablePage() ? 'deletefnok' : 'deletelnok';
 			$entry = new ManualLogEntry( 'pagetranslation', $type );
-			$entry->setPerformer( $doer );
+			$entry->setPerformer( $performer );
 			$entry->setComment( $reason );
 			$entry->setTarget( $title );
 			$entry->setParameters( $params );
@@ -98,9 +85,9 @@ class TranslateDeleteJob extends Job {
 		if ( $title->getPrefixedText() === $lastitem ) {
 			$cache->delete( $pageKey );
 
-			$type = $this->getFull() ? 'deletefok' : 'deletelok';
+			$type = $this->isTranslatablePage() ? 'deletefok' : 'deletelok';
 			$entry = new ManualLogEntry( 'pagetranslation', $type );
-			$entry->setPerformer( $doer );
+			$entry->setPerformer( $performer );
 			$entry->setComment( $reason );
 			$entry->setTarget( Title::newFromText( $base ) );
 			$logid = $entry->insert();
@@ -118,65 +105,31 @@ class TranslateDeleteJob extends Job {
 		return true;
 	}
 
-	public function setSummary( $summary ) {
-		$this->params['summary'] = $summary;
+	public function getSummary(): string {
+		$base = $this->getBase();
+		if ( $this->isTranslatablePage() ) {
+			$msg = wfMessage( 'pt-deletepage-full-logreason', $base )->inContentLanguage()->text();
+		} else {
+			$msg = wfMessage( 'pt-deletepage-lang-logreason', $base )->inContentLanguage()->text();
+		}
+
+		return $msg;
 	}
 
-	public function getSummary() {
-		return $this->params['summary'];
-	}
-
-	public function setReason( $reason ) {
-		$this->params['reason'] = $reason;
-	}
-
-	public function getReason() {
+	public function getReason(): string {
 		return $this->params['reason'];
 	}
 
-	public function setFull( $full ) {
-		$this->params['full'] = $full;
-	}
-
-	public function getFull() {
+	/** @return bool True if this job is for a translatable page, false if for a translation page */
+	public function isTranslatablePage(): bool {
 		return $this->params['full'];
 	}
 
-	/** @param User|string $performer */
-	public function setPerformer( $performer ) {
-		if ( is_object( $performer ) ) {
-			$this->params['performer'] = $performer->getName();
-		} else {
-			$this->params['performer'] = $performer;
-		}
+	public function getPerformer(): User {
+		return User::newFromName( $this->params['performer'] );
 	}
 
-	public function getPerformer() {
-		return $this->params['performer'];
-	}
-
-	/** @param User|string $user */
-	public function setUser( $user ) {
-		if ( is_object( $user ) ) {
-			$this->params['user'] = $user->getName();
-		} else {
-			$this->params['user'] = $user;
-		}
-	}
-
-	public function setBase( $base ) {
-		$this->params['base'] = $base;
-	}
-
-	public function getBase() {
+	public function getBase(): string {
 		return $this->params['base'];
-	}
-
-	/**
-	 * Get a user object for doing edits.
-	 * @return User
-	 */
-	public function getUser() {
-		return User::newFromName( $this->params['user'], false );
 	}
 }
