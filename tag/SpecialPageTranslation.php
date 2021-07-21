@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitIssue;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Languages\LanguageFactory;
@@ -245,7 +246,7 @@ class SpecialPageTranslation extends SpecialPage {
 			// If not, remove it from the list of sections
 			if ( !$request->getCheck( 'translatetitle' ) ) {
 				$sections = array_filter( $sections, static function ( $s ) {
-					return $s->id !== 'Page display title';
+					return $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID;
 				} );
 			}
 
@@ -274,7 +275,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	public function showSuccess( TranslatablePage $page, bool $firstMark = false ): void {
 		$titleText = $page->getTitle()->getPrefixedText();
-		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
+		$num = $this->getLanguage()->formatNum( $this->getParse( $page )->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( [
 			'group' => $page->getMessageGroupId(),
 			'action' => 'page',
@@ -585,7 +586,7 @@ class SpecialPageTranslation extends SpecialPage {
 	public function checkInput( TranslatablePage $page, bool &$error ): array {
 		$usedNames = [];
 		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
-		$parse = $page->getParse();
+		$parse = $this->getParse( $page );
 		$sections = $parse->getSectionsForSave( $highest );
 
 		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
@@ -652,7 +653,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		/** @var TranslationUnit[] $sections */
 		foreach ( $sections as $s ) {
-			if ( $s->id === 'Page display title' ) {
+			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
 				// Set section type as new if title previously unchecked
 				$s->type = $defaultChecked ? $s->type : 'new';
 
@@ -735,7 +736,8 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 		}
 
-		$deletedUnits = $page->getParse()->getDeletedUnits();
+		$parse = $this->getParse( $page );
+		$deletedUnits = $parse->getDeletedUnits();
 		if ( $deletedUnits ) {
 			$hasChanges = true;
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
@@ -755,12 +757,12 @@ class SpecialPageTranslation extends SpecialPage {
 		// Display template changes if applicable
 		if ( $page->getMarkedTag() !== false ) {
 			$hasChanges = true;
-			$newTemplate = $page->getParse()->getTemplatePretty();
+			$newTemplate = $parse->getTemplatePretty();
 			$oldPage = TranslatablePage::newFromRevision(
 				$page->getTitle(),
 				$page->getMarkedTag()
 			);
-			$oldTemplate = $oldPage->getParse()->getTemplatePretty();
+			$oldTemplate = $this->getParse( $oldPage )->getTemplatePretty();
 
 			if ( $oldTemplate !== $newTemplate ) {
 				$out->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
@@ -939,7 +941,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// Add the section markers to the source page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$content = ContentHandler::makeContent(
-			$page->getParse()->getSourcePageText(),
+			$this->getParse( $page )->getSourcePageText(),
 			$page->getTitle()
 		);
 
@@ -1138,5 +1140,26 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		return '<ol>' . implode( "", $items ) . '</ol>';
+	}
+
+	private function getParse( TranslatablePage $page ): TPParse {
+		$services = Services::getInstance();
+		$parser = $services->getTranslatablePageParser();
+		$placeholderFactory = $services->getParsingPlaceholderFactory();
+
+		$parserOutput = $parser->parse( $page->getText() );
+
+		// Add section to allow translating the page name
+		$displayTitle = new TranslationUnit(
+			$page->getTitle()->getPrefixedText(),
+			TranslatablePage::DISPLAY_TITLE_UNIT_ID
+		);
+
+		$parse = new TPParse( $page->getTitle() );
+		$parse->template = $parserOutput->sourcePageTemplate();
+		// Make it be the first section
+		$parse->sections = [ $placeholderFactory->make() => $displayTitle ] + $parserOutput->units();
+
+		return $parse;
 	}
 }

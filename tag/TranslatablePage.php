@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
@@ -30,6 +29,8 @@ class TranslatablePage {
 		'transclusion',
 		'version'
 	];
+	/** @var string Name of the section which contains the translated page title. */
+	public const DISPLAY_TITLE_UNIT_ID = 'Page display title';
 
 	/** @var Title */
 	protected $title;
@@ -39,12 +40,8 @@ class TranslatablePage {
 	protected $revision;
 	/** @var string From which source this object was constructed: text, revision or title */
 	protected $source;
-	/** @var string Name of the section which contains the translated page title. */
-	protected $displayTitle = 'Page display title';
 	/** @var ?bool Whether the title should be translated */
 	protected $pageDisplayTitle;
-	/** @var ?TPParse */
-	protected $cachedParse;
 	/** @var ?string */
 	private $targetLanguage;
 
@@ -215,7 +212,7 @@ class TranslatablePage {
 		// Check if title section exists in list of sections
 		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
 		$store = $factory->getReader( $this->getTitle() );
-		$this->pageDisplayTitle = in_array( $this->displayTitle, $store->getNames() );
+		$this->pageDisplayTitle = in_array( self::DISPLAY_TITLE_UNIT_ID, $store->getNames() );
 
 		return $this->pageDisplayTitle;
 	}
@@ -232,7 +229,7 @@ class TranslatablePage {
 		}
 
 		// Display title from DB
-		$section = str_replace( ' ', '_', $this->displayTitle );
+		$section = str_replace( ' ', '_', self::DISPLAY_TITLE_UNIT_ID );
 		$page = $this->getTitle()->getPrefixedDBkey();
 
 		$group = $this->getMessageGroup();
@@ -242,40 +239,6 @@ class TranslatablePage {
 		}
 
 		return $group->getMessage( "$page/$section", $code, $group::READ_NORMAL );
-	}
-
-	/**
-	 * Returns a TPParse object which represents the parsed page.
-	 *
-	 * @throws TPException
-	 * @return TPParse
-	 */
-	public function getParse() {
-		if ( isset( $this->cachedParse ) ) {
-			return $this->cachedParse;
-		}
-
-		$services = Services::getInstance();
-		$parser = $services->getTranslatablePageParser();
-		$placeholderFactory = $services->getParsingPlaceholderFactory();
-
-		$parserOutput = $parser->parse( $this->getText() );
-
-		// Add section to allow translating the page name
-		$displayTitle = new TranslationUnit(
-			$this->getTitle()->getPrefixedText(),
-			$this->displayTitle
-		);
-
-		$parse = new TPParse( $this->getTitle() );
-		$parse->template = $parserOutput->sourcePageTemplate();
-		// Make it be the first section
-		$parse->sections = [ $placeholderFactory->make() => $displayTitle ] + $parserOutput->units();
-
-		// Cache it
-		$this->cachedParse = $parse;
-
-		return $parse;
 	}
 
 	/**
