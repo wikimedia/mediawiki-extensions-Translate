@@ -1,24 +1,48 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use ContentHandler;
+use DifferenceEngine;
+use Html;
+use JobQueueGroup;
+use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
-use MediaWiki\Extension\Translate\PageTranslation\ParserOutput;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitIssue;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserIdentity;
+use MessageGroups;
+use MessageGroupStatsRebuildJob;
+use MessageIndex;
+use MessageWebImporter;
+use MWException;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
+use PermissionsError;
+use RevTag;
+use SpecialNotifyTranslators;
+use SpecialPage;
+use Title;
+use TranslatablePage;
+use TranslateMetadata;
+use TranslateUtils;
+use TranslationsUpdateJob;
+use WebRequest;
 use Wikimedia\Rdbms\IResultWrapper;
+use WikiPage;
+use Xml;
+use function count;
+use function wfEscapeWikiText;
+use function wfGetDB;
+use const EDIT_FORCE_BOT;
+use const EDIT_UPDATE;
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -31,7 +55,7 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
-class SpecialPageTranslation extends SpecialPage {
+class PageTranslationSpecialPage extends SpecialPage {
 	private const LATEST_SYNTAX_VERSION = '2';
 	private const DEFAULT_SYNTAX_VERSION = '1';
 	/** @var LanguageNameUtils */
@@ -318,7 +342,8 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
 		) {
 			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullURL(
-				[ 'tpage' => $page->getTitle()->getArticleID() ] );
+				[ 'tpage' => $page->getTitle()->getArticleID() ]
+			);
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}
 
@@ -747,7 +772,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			if ( $s->type === 'changed' ) {
 				$hasChanges = true;
-				$diff = new DifferenceEngine;
+				$diff = new DifferenceEngine();
 				$diff->setTextLanguage( $sourceLanguage );
 				$diff->setReducedLineNumbers();
 
@@ -833,7 +858,7 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $oldTemplate !== $newTemplate ) {
 				$out->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
-				$diff = new DifferenceEngine;
+				$diff = new DifferenceEngine();
 				$diff->setTextLanguage( $sourceLanguage );
 
 				$oldContent = ContentHandler::makeContent( $oldTemplate, $diff->getTitle() );
@@ -1189,7 +1214,6 @@ class SpecialPageTranslation extends SpecialPage {
 				if ( $page['transclusion'] !== '1' ) {
 					$tags[] = $tagNoTransclusionSupport;
 				}
-
 			}
 
 			$tagList = '';
@@ -1198,8 +1222,8 @@ class SpecialPageTranslation extends SpecialPage {
 					'span',
 					[ 'class' => 'mw-tpt-actions' ],
 					$this->msg( 'parentheses' )->rawParams(
-							$this->getLanguage()->pipeList( $tags )
-						)->escaped()
+						$this->getLanguage()->pipeList( $tags )
+					)->escaped()
 				);
 			}
 

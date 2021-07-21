@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
@@ -73,7 +74,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			// Special page and the right to use it
 			global $wgSpecialPages, $wgAvailableRights;
 			$wgSpecialPages['PageTranslation'] = [
-				'class' => SpecialPageTranslation::class,
+				'class' => PageTranslationSpecialPage::class,
 				'services' => [
 					'LanguageNameUtils',
 					'LanguageFactory',

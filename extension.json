@@ -184,7 +184,6 @@
 		"SpecialMessageGroupStats": "specials/SpecialMessageGroupStats.php",
 		"SpecialPageMigration": "tag/SpecialPageMigration.php",
 		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",
-		"SpecialPageTranslation": "tag/SpecialPageTranslation.php",
 		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
 		"SpecialPageTranslationMovePage": "tag/SpecialPageTranslationMovePage.php",
 		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
