@@ -81,6 +81,17 @@ class ParserOutput {
 		return $text;
 	}
 
+	/** Returns the page text with translation tags and unit placeholders for easy diffs */
+	public function sourcePageTemplateForDiffs(): string {
+		$text = $this->sourcePageTemplate();
+
+		foreach ( $this->unitMap as $ph => $s ) {
+			$text = str_replace( $ph, "<!--T:{$s->id}-->", $text );
+		}
+
+		return $text;
+	}
+
 	private function assertContainsOnlyInstancesOf(
 		string $expected,
 		string $name,

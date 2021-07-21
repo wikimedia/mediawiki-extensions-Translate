@@ -198,7 +198,6 @@
 		"ThinMessage": "Message.php",
 		"TMessage": "Message.php",
 		"TPException": "tag/TPException.php",
-		"TPParse": "tag/TPParse.php",
 		"TranslatablePage": "tag/TranslatablePage.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslatablePageMoveJob": "tag/TranslatablePageMoveJob.php",
