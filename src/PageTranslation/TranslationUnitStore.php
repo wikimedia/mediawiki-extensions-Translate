@@ -32,7 +32,7 @@ class TranslationUnitStore implements TranslationUnitReader {
 
 		$units = [];
 		foreach ( $res as $row ) {
-			$units[$row->trs_key] = new TranslationUnit( $row->trs_text );
+			$units[$row->trs_key] = new TranslationUnit( $row->trs_text, $row->trs_key );
 		}
 
 		return $units;
