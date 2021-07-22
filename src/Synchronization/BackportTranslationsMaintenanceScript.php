@@ -41,7 +41,18 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			self::REQUIRED,
 			self::HAS_ARG
 		);
-
+		$this->addOption(
+			'filter-path',
+			'Only export a group if its export path matches this prefix (relative to target-path)',
+			self::OPTIONAL,
+			self::HAS_ARG
+		);
+		$this->addOption(
+			'never-export-languages',
+			'Languages to not export',
+			self::OPTIONAL,
+			self::HAS_ARG
+		);
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -71,6 +82,11 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$this->fatalError( "Pattern $groupPattern did not match any message groups." );
 		}
 
+		$neverExportLanguages = $this->csv2array(
+			$this->getOption( 'never-export-languages' ) ?? ''
+		);
+		$supportedLanguages = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
+
 		foreach ( $groups as $group ) {
 			$groupId = $group->getId();
 			if ( !$group instanceof FileBasedMessageGroup ) {
@@ -83,13 +99,23 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				continue;
 			}
 
+			if ( $this->hasOption( 'filter-path' ) ) {
+				$filter = $this->getOption( 'filter-path' );
+				$exportPath = $group->getTargetFilename( '*' );
+				if ( !$this->matchPath( $filter, $exportPath ) ) {
+					continue;
+				}
+			}
+
 			/** @var FileBasedMessageGroup $group */
 			$sourceLanguage = $group->getSourceLanguage();
 			try {
 				$sourceDefinitions = $this->loadDefinitions( $group, $sourcePath, $sourceLanguage );
 				$targetDefinitions = $this->loadDefinitions( $group, $targetPath, $sourceLanguage );
 			} catch ( RuntimeException $e ) {
-				$this->output( "Skipping $groupId: Error while loading definitions: {$e->getMessage()}\n" );
+				$this->output(
+					"Skipping $groupId: Error while loading definitions: {$e->getMessage()}\n"
+				);
 				continue;
 			}
 
@@ -103,16 +129,54 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				continue;
 			}
 
-			$languages = $group->getTranslatableLanguages() ??
-				array_keys( TranslateUtils::getLanguageNames( 'en' ) );
-			foreach ( $languages as $language ) {
-				if ( $language === $sourceLanguage ) {
-					continue;
-				}
+			$summary = [];
+			$languages = $group->getTranslatableLanguages() ?? $supportedLanguages;
+			$languagesToSkip = $neverExportLanguages;
+			$languagesToSkip[] = $sourceLanguage;
+			$languages = array_diff( $languages, $languagesToSkip );
 
-				$this->backport( $group, $sourcePath, $targetPath, $compatibleKeys, $language );
+			foreach ( $languages as $language ) {
+				$status = $this->backport(
+					$group,
+					$sourcePath,
+					$targetPath,
+					$compatibleKeys,
+					$language
+				);
+
+				$summary[$status][] = $language;
+			}
+
+			$numUpdated = count( $summary[ 'updated' ] ?? [] );
+			$numAdded = count( $summary[ 'new' ] ?? [] );
+			if ( ( $numUpdated + $numAdded ) > 0 ) {
+				$this->output(
+					sprintf(
+						"%s: Compatible keys: %d. Updated %d languages, %d new (%s)\n",
+						$group->getId(),
+						count( $compatibleKeys ),
+						$numUpdated,
+						$numAdded,
+						implode( ', ', $summary[ 'new' ] ?? [] )
+					)
+				);
 			}
 		}
+	}
+
+	private function csv2array( string $input ): array {
+		return array_filter(
+			array_map( 'trim', explode( ',', $input ) ),
+			static function ( $v ) {
+				return $v !== '';
+			}
+		);
+	}
+
+	private function matchPath( string $prefix, string $full ): bool {
+		$prefix = "./$prefix";
+		$length = strlen( $prefix );
+		return substr( $full, 0, $length ) === $prefix;
 	}
 
 	private function loadDefinitions(
@@ -147,11 +211,11 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		string $targetPath,
 		array $compatibleKeys,
 		string $language
-	): void {
+	): string {
 		try {
 			$sourceTranslations = $this->loadDefinitions( $group, $source, $language );
 		} catch ( RuntimeException $e ) {
-			return;
+			return 'no definitions';
 		}
 
 		try {
@@ -188,7 +252,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		if ( !$hasUpdates ) {
-			return;
+			return 'no updates';
 		}
 
 		// Copy over all authors (we do not know per-message level)
@@ -212,9 +276,10 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			if ( $ffs->shouldOverwrite( $currentContent, $backportedContent ) ) {
 				file_put_contents( $targetFilename, $backportedContent );
 			}
+			return 'updated';
 		} else {
-			$this->output( "New language: $language\n" );
 			file_put_contents( $targetFilename, $backportedContent );
+			return 'new';
 		}
 	}
 }
