@@ -11,6 +11,6 @@
 		"grunt-eslint": "23.0.0",
 		"grunt-stylelint": "0.16.0",
 		"stylelint-config-wikimedia": "0.10.3",
-		"svgo": "2.3.0"
+		"svgo": "2.3.1"
 	}
 }
