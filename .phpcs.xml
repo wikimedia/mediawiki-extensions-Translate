@@ -54,12 +54,6 @@
 			<property name="maxLinesCountBeforeWithoutComment" value="0"/>
 		</properties>
 	</rule>
-	<!-- Remove once decision has been made on: https://phabricator.wikimedia.org/T220719 -->
-	<rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
-		<properties>
-			<property name="spacesCountBeforeColon" value="0"/>
-		</properties>
-	</rule>
 	<rule ref="SlevomatCodingStandard.Commenting.RequireOneLineDocComment" />
 	<rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces" />
 </ruleset>
