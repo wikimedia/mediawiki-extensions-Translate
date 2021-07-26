@@ -1,0 +1,36 @@
+== Translate 2021.07 ==
+Released at 2021-07-26.
+
+=== Noteworthy changes ===
+* '''BREAKING CHANGE''': Translate extension now requires MediaWiki 1.35 or above.
+* When translating in Page mode, modifying and publishing a message causes its
+to become empty ({{phab|T270819}})
+* '''SECURITY''': Enhance validation and logging for AggregateGroups API
+deletions ({{phab|T282932}})
+* Make Special:PageTranslation work with ONLY_FULL_GROUP_BY ({{gerrit|701871}})
+* '''BREAKING CHANGE''': Remove TranslateMessageGroupPathVariables hook
+({{gerrit|701678}})
+* GettextFFS: Only allow pot mode for source language ({{phab|T230361}})
+* Translation page deletion should not clear metadata ({{gerrit|694306}})
+* Added content model and handler for translatable modules ({{gerrit|638528}},
+{{phab|T271406}})
+* Allow showing yearly stats in Special:TranslationStats ({{phab|T281244}})
+* '''BREAKING CHANGE''': Remove Validator and LegacyValidatorAdapter
+({{gerrit|685438}})
+* Improve display of very long insertables ({{gerrit|685805}})
+* Fix "Translation units to be deleted appear with unit ID -1 on Special:PageTranslation" ({{phab|T283971}})
+* Localisation updates.
+
+=== Configuration variable changes ===
+To address voice and tone issues in the Translate extension ({{phab|T277965}})
+the following configuration variable names have been renamed: 
+* <code>TranslateBlacklist</code> → <code>TranslateDisabledTargetLanguages</code>
+* <code>TranslateAuthorBlacklist</code> → <code>TranslateAuthorExclusionList</code>
+* <code>TranslateCheckBlacklist</code> → <code>TranslateValidationExclusionFile</code>
+
+''The old variables will be supported for MLEB 2021.07 release but removed in
+the MLEB 2021.10 release.''
+
+If you have defined [[Help:Extension:Translate/Group_configuration|message groups]]
+defined with <code>LANGUAGE</code> attributes, <code>whitelist/blacklist</code>
+have been changed to <code>include/exclude</code>
