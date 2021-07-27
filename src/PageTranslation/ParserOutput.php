@@ -59,7 +59,7 @@ class ParserOutput {
 	}
 
 	/** Returns the source page wikitext used for rendering the page. */
-	public function sourcePageTextForRendering( Language $sourceLanguage ) {
+	public function sourcePageTextForRendering( Language $sourceLanguage ): string {
 		$text = $this->translationPageTemplate();
 
 		foreach ( $this->unitMap as $ph => $s ) {
@@ -71,7 +71,7 @@ class ParserOutput {
 	}
 
 	/** Returns the source page with translation unit markers. */
-	public function sourcePageTextForSaving() {
+	public function sourcePageTextForSaving(): string {
 		$text = $this->sourcePageTemplate();
 
 		foreach ( $this->unitMap as $ph => $s ) {

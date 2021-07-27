@@ -657,6 +657,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		return $error;
 	}
 
+	/** @return TranslationUnit[][] */
 	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parse ): array {
 		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 
