@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+
 /**
  * Translation aid that suggests insertables. Insertable is a string that
  * usually does not need translation and is difficult to type manually.

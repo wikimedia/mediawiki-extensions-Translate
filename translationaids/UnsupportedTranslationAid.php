@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+
 /**
  * Dummy translation aid that always errors
  * @author Harry Burt

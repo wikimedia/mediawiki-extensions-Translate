@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+
 /**
  * Multipurpose class for translation aids:
  *  - interface for translation aid classes

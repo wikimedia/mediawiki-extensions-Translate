@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+
 /**
  * Translation aid that provides an url where users can ask for help
  * @author Niklas Laxström

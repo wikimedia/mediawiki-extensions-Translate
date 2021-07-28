@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+
 /**
  * Translation aid that provides suggestion from machine translation services.
  * @author Niklas Laxström

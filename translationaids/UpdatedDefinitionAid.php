@@ -1,6 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 

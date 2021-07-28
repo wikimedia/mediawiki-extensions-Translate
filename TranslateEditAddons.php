@@ -21,18 +21,6 @@ use MediaWiki\User\UserIdentity;
  */
 class TranslateEditAddons {
 	/**
-	 * Do not show the usual introductory messages on edit page for messages.
-	 * Hook: AlternateEdit
-	 * @param EditPage $editPage
-	 */
-	public static function suppressIntro( EditPage $editPage ) {
-		$handle = new MessageHandle( $editPage->getTitle() );
-		if ( $handle->isValid() ) {
-			$editPage->suppressIntro = true;
-		}
-	}
-
-	/**
 	 * Prevent translations to non-translatable languages for the group
 	 * Hook: getUserPermissionsErrorsExpensive
 	 *
@@ -83,34 +71,6 @@ class TranslateEditAddons {
 		}
 
 		return true;
-	}
-
-	/**
-	 * Adds the translation aids and navigation to the normal edit page.
-	 * Hook: EditPage::showEditForm:initial
-	 *
-	 * @param EditPage $editPage
-	 */
-	public static function addTools( EditPage $editPage ): void {
-		$handle = new MessageHandle( $editPage->getTitle() );
-		if ( !$handle->isValid() ) {
-			return;
-		}
-
-		$context = $editPage->getArticle()->getContext();
-		$request = $context->getRequest();
-
-		if ( $editPage->firsttime &&
-			!$request->getCheck( 'oldid' ) &&
-			!$request->getCheck( 'undo' )
-		) {
-			if ( $handle->isFuzzy() ) {
-				$editPage->textbox1 = TRANSLATE_FUZZY . $editPage->textbox1;
-			}
-		}
-
-		$th = new TranslationHelpers( $handle, $context );
-		$editPage->editFormTextTop .= $th->getBoxes();
 	}
 
 	/**
@@ -330,22 +290,5 @@ class TranslateEditAddons {
 		}
 
 		return true;
-	}
-
-	/**
-	 * Hook: ArticleContentOnDiff
-	 * @param DifferenceEngine $de
-	 * @param OutputPage $out
-	 */
-	public static function displayOnDiff( DifferenceEngine $de, OutputPage $out ): void {
-		$title = $de->getTitle();
-		$handle = new MessageHandle( $title );
-
-		if ( !$handle->isValid() ) {
-			return;
-		}
-
-		$th = new TranslationHelpers( $handle, $de->getContext() );
-		$out->addHTML( $th->getBoxes() );
 	}
 }

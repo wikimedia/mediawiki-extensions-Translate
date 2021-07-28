@@ -8,6 +8,7 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
 
 /**
@@ -424,7 +425,7 @@ class ElasticSearchTTMServer
 	public function batchInsertTranslations( array $batch ) {
 		$docs = [];
 		foreach ( $batch as $data ) {
-			list( $handle, $sourceLanguage, $text ) = $data;
+			[ $handle, $sourceLanguage, $text ] = $data;
 			$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
 			$docs[] = $this->createDocument( $handle, $text, $revId );
 		}
@@ -653,7 +654,7 @@ class ElasticSearchTTMServer
 	public function createSearch( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
-		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
+		[ $searchQuery, $highlights ] = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
 		$language = new \Elastica\Aggregation\Terms( 'language' );
@@ -699,7 +700,7 @@ class ElasticSearchTTMServer
 			$query->setPostFilter( $filters );
 		}
 
-		list( $pre, $post ) = $highlight;
+		[ $pre, $post ] = $highlight;
 		$query->setHighlight( [
 			// The value must be an object
 			'pre_tags' => [ $pre ],

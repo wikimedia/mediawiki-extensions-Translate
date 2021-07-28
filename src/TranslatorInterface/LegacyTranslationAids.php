@@ -1,32 +1,43 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use Html;
+use IContextSource;
+use MediaWiki\Languages\LanguageFactory;
+use MessageDefinitionAid;
+use MessageGroup;
+use MessageHandle;
+use Title;
+use TranslateUtils;
+use TranslationAidDataProvider;
+
 /**
- * Contains helper class for interface parts that aid translations in doing
- * their thing.
- *
- * @file
+ * Provides minimal translation aids which integrate with the edit page and on diffs for
+ * translatable messages.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\MediaWikiServices;
-
-/**
- * Provides the nice boxes that aid the translators to do their job.
- * Boxes contain definition, documentation, other languages, translation memory
- * suggestions, highlighted changes etc.
- */
-class TranslationHelpers {
+class LegacyTranslationAids {
 	/** @var MessageHandle */
 	private $handle;
 	/** @var MessageGroup */
 	private $group;
 	/** @var IContextSource */
 	private $context;
+	/** @var LanguageFactory */
+	private $languageFactory;
 
-	public function __construct( MessageHandle $handle, IContextSource $context ) {
+	public function __construct(
+		MessageHandle $handle,
+		IContextSource $context,
+		LanguageFactory $languageFactory
+	) {
 		$this->handle = $handle;
 		$this->context = $context;
 		$this->group = $handle->getGroup();
+		$this->languageFactory = $languageFactory;
 	}
 
 	private function getDefinition(): ?string {
@@ -78,11 +89,10 @@ class TranslationHelpers {
 		$linkTag = self::ajaxEditLink( $this->handle->getTitle(), $this->group->getLabel() );
 		$label =
 			wfMessage( 'translate-edit-definition' )->escaped() .
-				wfMessage( 'word-separator' )->escaped() .
-				wfMessage( 'parentheses' )->rawParams( $linkTag )->escaped();
+			wfMessage( 'word-separator' )->escaped() .
+			wfMessage( 'parentheses' )->rawParams( $linkTag )->escaped();
 
-		$languageFactory = MediaWikiServices::getInstance()->getLanguageFactory();
-		$sl = $languageFactory->getLanguage( $this->group->getSourceLanguage() );
+		$sl = $this->languageFactory->getLanguage( $this->group->getSourceLanguage() );
 
 		$msg = Html::rawElement( 'div',
 			[
@@ -146,13 +156,4 @@ class TranslationHelpers {
 			$linkText
 		);
 	}
-}
-
-/**
- * Translation helpers can throw this exception when they cannot do
- * anything useful with the current message. This helps in debugging
- * why some fields are not shown.
- * @since 2012-01-04 (Renamed in 2012-07-24 to fix typo in name)
- */
-class TranslationHelperException extends MWException {
 }

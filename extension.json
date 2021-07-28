@@ -218,8 +218,6 @@
 		"TranslateYaml": "utils/TranslateYaml.php",
 		"TranslationAid": "translationaids/TranslationAid.php",
 		"TranslationAidDataProvider": "translationaids/TranslationAidDataProvider.php",
-		"TranslationHelperException": "utils/TranslationHelpers.php",
-		"TranslationHelpers": "utils/TranslationHelpers.php",
 		"TranslationQuery": "webservices/TranslationQuery.php",
 		"TranslationQueryResponse": "webservices/TranslationQueryResponse.php",
 		"TranslationStats": "utils/TranslationStats.php",
@@ -259,8 +257,8 @@
 		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
 		"ParserTestTables": "TranslateHooks::parserTestTables",
 		"PageContentLanguage": "TranslateHooks::onPageContentLanguage",
-		"EditPage::showEditForm:initial": "TranslateEditAddons::addTools",
-		"AlternateEdit": "TranslateEditAddons::suppressIntro",
+		"EditPage::showEditForm:initial": "legacyInterface",
+		"AlternateEdit": "legacyInterface",
 		"getUserPermissionsErrorsExpensive": "TranslateEditAddons::disallowLangTranslations",
 		"LanguageGetTranslatedLanguageNames": "TranslateHooks::translateMessageDocumentationLanguage",
 		"TranslateSupportedLanguages": "TranslateHooks::translateMessageDocumentationLanguage",
@@ -280,7 +278,7 @@
 		"AbortEmailNotification": "TranslateHooks::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "TTMServer::onDelete",
 		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
-		"ArticleContentOnDiff": "TranslateEditAddons::displayOnDiff",
+		"ArticleContentOnDiff": "legacyInterface",
 		"SpecialSearchProfiles": "TranslateHooks::searchProfile",
 		"SpecialSearchProfileForm": "TranslateHooks::searchProfileForm",
 		"SpecialSearchSetupEngine": "TranslateHooks::searchProfileSetupEngine",
@@ -319,6 +317,12 @@
 			"services": [
 				"RevisionLookup",
 				"DBLoadBalancer"
+			]
+		},
+		"legacyInterface": {
+			"class": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\LegacyInterfaceHookHandler",
+			"services": [
+				"LanguageFactory"
 			]
 		},
 		"messageBundle": {
