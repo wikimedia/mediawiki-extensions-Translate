@@ -443,5 +443,12 @@ class TranslatablePageMover {
 				);
 			}
 		}
+
+		// Move discouraged status
+		$priority = MessageGroups::getPriority( $oldGroupId );
+		if ( $priority !== '' ) {
+			MessageGroups::setPriority( $newGroupId, $priority );
+			MessageGroups::setPriority( $oldGroupId, '' );
+		}
 	}
 }
