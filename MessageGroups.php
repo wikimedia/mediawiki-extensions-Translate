@@ -26,7 +26,7 @@ class MessageGroups {
 	private $cache;
 
 	/**
-	 * Tracks the current cache verison. Update this when there are incompatible changes
+	 * Tracks the current cache version. Update this when there are incompatible changes
 	 * with the last version of the cache to force a new key to be used. The older cache
 	 * will automatically expire and be cleared off.
 	 * @var int
@@ -178,12 +178,7 @@ class MessageGroups {
 		self::$prioritycache = null;
 	}
 
-	/**
-	 * Returns a cacher object.
-	 *
-	 * @return WANObjectCache
-	 */
-	protected function getCache() {
+	protected function getCache(): WANObjectCache {
 		if ( $this->cache === null ) {
 			return MediaWikiServices::getInstance()->getMainWANObjectCache();
 		} else {
@@ -232,7 +227,7 @@ class MessageGroups {
 
 	/**
 	 * Loads and returns group loaders. Group loaders must implement MessageGroupLoader
-	 * and may additionaly implement CachedMessageGroupLoader
+	 * and may additionally implement CachedMessageGroupLoader
 	 * @return MessageGroupLoader[]
 	 */
 	protected function getGroupLoaders() {
@@ -259,7 +254,7 @@ class MessageGroups {
 		// @phan-suppress-next-line PhanEmptyForeach False positive
 		foreach ( $groupLoaderInstances as $loader ) {
 			if ( !$loader instanceof MessageGroupLoader ) {
-				throw new \InvalidArgumentException(
+				throw new InvalidArgumentException(
 					"MessageGroupLoader - $loader must implement the " .
 					"MessageGroupLoader interface."
 				);
@@ -349,7 +344,7 @@ class MessageGroups {
 			/** @var MessageGroup $g */
 			return $g->getLabel();
 		}, $groups );
-		return (bool)in_array( $name, $labels, true );
+		return in_array( $name, $labels, true );
 	}
 
 	/**
@@ -372,7 +367,7 @@ class MessageGroups {
 	public static function getPriority( $group ) {
 		if ( self::$prioritycache === null ) {
 			self::$prioritycache = [];
-			// Abusing this table originally intented for other purposes
+			// Abusing this table originally intended for other purposes
 			$db = wfGetDB( DB_REPLICA );
 			$table = 'translate_groupreviews';
 			$fields = [ 'tgr_group', 'tgr_state' ];
@@ -434,7 +429,7 @@ class MessageGroups {
 	public static function isDynamic( MessageGroup $group ) {
 		$id = $group->getId();
 
-		return (string)$id !== '' && $id[0] === '!';
+		return ( $id[0] ?? null ) === '!';
 	}
 
 	/**
@@ -499,7 +494,6 @@ class MessageGroups {
 		$pathFinder = static function ( &$paths, $group, $targetId, $prefix = '' )
 		use ( &$pathFinder ) {
 			if ( $group instanceof AggregateMessageGroup ) {
-				/** @var MessageGroup $subgroup */
 				foreach ( $group->getGroups() as $subgroup ) {
 					$subId = $subgroup->getId();
 					if ( $subId === $targetId ) {
@@ -642,7 +636,7 @@ class MessageGroups {
 	/**
 	 * Get only groups of specific type (class).
 	 * @param string $type Class name of wanted type
-	 * @return MessageGroupBase[] Map of (group ID => MessageGroupBase)
+	 * @return MessageGroup[] Map of (group ID => MessageGroupBase)
 	 * @since 2012-04-30
 	 */
 	public static function getGroupsByType( $type ) {
@@ -660,7 +654,7 @@ class MessageGroups {
 	 * Returns a tree of message groups. First group in each subgroup is
 	 * the aggregate group. Groups can be nested infinitely, though in practice
 	 * other code might not handle more than two (or even one) nesting levels.
-	 * One group can exist multiple times in differents parts of the tree.
+	 * One group can exist multiple times in different parts of the tree.
 	 * In other words: [Group1, Group2, [AggGroup, Group3, Group4]]
 	 *
 	 * @throws MWException If cyclic structure is detected.
@@ -679,7 +673,6 @@ class MessageGroups {
 			}
 
 			if ( $o instanceof AggregateMessageGroup ) {
-				/** @var AggregateMessageGroup $o */
 				foreach ( $o->getGroups() as $sid => $so ) {
 					unset( $tree[$sid] );
 				}
@@ -702,32 +695,26 @@ class MessageGroups {
 		 * other in the first loop. So now we check if there are groups left
 		 * over. */
 		$used = [];
-		// Hack to allow passing by reference
-		array_walk_recursive( $tree, [ __CLASS__, 'collectGroupIds' ], [ &$used ] );
-		$unused = array_diff( array_keys( $groups ), array_keys( $used ) );
-		if ( count( $unused ) ) {
-			foreach ( $unused as $index => $id ) {
-				if ( !$groups[$id] instanceof AggregateMessageGroup ) {
+		array_walk_recursive(
+			$tree,
+			static function ( MessageGroup $group ) use ( &$used ) {
+				$used[$group->getId()] = true;
+			}
+		);
+		$unused = array_diff_key( $groups, $used );
+		if ( $unused ) {
+			foreach ( $unused as $index => $group ) {
+				if ( !$group instanceof AggregateMessageGroup ) {
 					unset( $unused[$index] );
 				}
 			}
 
 			// Only list the aggregate groups, other groups cannot cause cycles
-			$participants = implode( ', ', $unused );
+			$participants = implode( ', ', array_keys( $unused ) );
 			throw new MWException( "Found cyclic aggregate message groups: $participants" );
 		}
 
 		return $tree;
-	}
-
-	/**
-	 * See getGroupStructure, just collects ids into array
-	 * @param MessageGroup $value
-	 * @param string $key
-	 * @param array $used
-	 */
-	public static function collectGroupIds( MessageGroup $value, $key, $used ) {
-		$used[0][$value->getId()] = true;
 	}
 
 	/**
