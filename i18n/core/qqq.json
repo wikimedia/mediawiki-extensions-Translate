@@ -86,7 +86,6 @@
 	"translate-edit-warnings": "Title of the warnings box when editing a message.\nThis box lists the problems found in the translation.",
 	"translate-edit-tmmatch-source": "Used as tooltip for the message {{msg-mw|translate-edit-tmmatch}} in the translation suggestions by the server.\n\nParameters:\n* $1 - translation source text",
 	"translate-edit-tmmatch": "This message is displayed in the translation interface when there is suggestions from translation memory.\n\nParameters:\n* $1 - number between 1 and 100\n{{Identical|Match}}",
-	"translate-use-suggestion": "Used as a tooltip for the \"down arrow\" to insert translation suggestions in the translation edit page.",
 	"translate-edit-nopermission": "Followed by link text {{msg-mw|Translate-edit-askpermission}}.",
 	"translate-edit-askpermission": "Used as link text.\n\nPreceded by {{msg-mw|Translate-edit-nopermission}}.",
 	"exporttranslations": "Title of [[Special:ExportTranslations]]",

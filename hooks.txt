@@ -58,11 +58,6 @@ Post processing step to format in wiki
 ;TranslateEventTranslationReview: Event triggered when a translation is proofread
  MessageHandle   $handle
 
-;TranslateGetBoxes: Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
- MessageGroup    $group: The message group being worked on
- MessageHandle   $handle: An object representing the translation page (e.g. 'MediaWiki:Example/qqq')
- array          &$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
-
 ;TranslateGetAPIMessageGroupsParameterList: Allows extra parameters to be added to the action=query&meta=messagegroups module
  array          &$params: An associative array of possible parameters (name => details; see ApiQueryMessageGroups.php for correct spacing)
 

@@ -88,43 +88,29 @@ class TranslateEditAddons {
 	/**
 	 * Adds the translation aids and navigation to the normal edit page.
 	 * Hook: EditPage::showEditForm:initial
-	 * @param EditPage $object
-	 * @return true
+	 *
+	 * @param EditPage $editPage
 	 */
-	public static function addTools( EditPage $object ) {
-		$handle = new MessageHandle( $object->getTitle() );
+	public static function addTools( EditPage $editPage ): void {
+		$handle = new MessageHandle( $editPage->getTitle() );
 		if ( !$handle->isValid() ) {
-			return true;
+			return;
 		}
 
-		$object->editFormTextTop .= self::editBoxes( $object );
-
-		return true;
-	}
-
-	/**
-	 * @param EditPage $editpage
-	 * @return string
-	 */
-	private static function editBoxes( EditPage $editpage ) {
-		$context = $editpage->getArticle()->getContext();
+		$context = $editPage->getArticle()->getContext();
 		$request = $context->getRequest();
 
-		$groupId = $request->getText( 'loadgroup', '' );
-		$th = new TranslationHelpers( $editpage->getTitle(), $groupId );
-
-		if ( $editpage->firsttime &&
+		if ( $editPage->firsttime &&
 			!$request->getCheck( 'oldid' ) &&
 			!$request->getCheck( 'undo' )
 		) {
-			$editpage->textbox1 = (string)$th->getTranslation();
-		} else {
-			$th->setTranslation( $editpage->textbox1 );
+			if ( $handle->isFuzzy() ) {
+				$editPage->textbox1 = TRANSLATE_FUZZY . $editPage->textbox1;
+			}
 		}
 
-		TranslationHelpers::addModules( $context->getOutput() );
-
-		return $th->getBoxes();
+		$th = new TranslationHelpers( $handle, $context );
+		$editPage->editFormTextTop .= $th->getBoxes();
 	}
 
 	/**
@@ -350,46 +336,16 @@ class TranslateEditAddons {
 	 * Hook: ArticleContentOnDiff
 	 * @param DifferenceEngine $de
 	 * @param OutputPage $out
-	 * @return true
 	 */
-	public static function displayOnDiff( DifferenceEngine $de, OutputPage $out ) {
+	public static function displayOnDiff( DifferenceEngine $de, OutputPage $out ): void {
 		$title = $de->getTitle();
 		$handle = new MessageHandle( $title );
 
 		if ( !$handle->isValid() ) {
-			return true;
+			return;
 		}
 
-		$th = new TranslationHelpers( $title, /*group*/false );
-		$th->setEditMode( false );
-
-		$de->loadNewText();
-		if ( is_callable( [ $de, 'getNewRevision' ] ) ) {
-			$newRevision = $de->getNewRevision();
-			$newContent = $newRevision ? $newRevision->getContent( 'main' ) : null;
-		} else {
-			$newContent = $de->mNewRev ? $de->mNewRev->getContent() : null;
-		}
-		if ( $newContent instanceof TextContent ) {
-			$th->setTranslation( $newContent->getText() );
-		} else {
-			// Screw you, not interested.
-			return true;
-		}
-		TranslationHelpers::addModules( $out );
-
-		$boxes = [];
-		$boxes[] = $th->callBox( 'documentation', [ $th, 'getDocumentationBox' ] );
-		$boxes[] = $th->callBox( 'definition', [ $th, 'getDefinitionBox' ] );
-
-		$output = implode( "\n", $boxes );
-		$output = Html::rawElement(
-			'div',
-			[ 'class' => 'mw-sp-translate-edit-fields' ],
-			$output
-		);
-		$out->addHTML( $output );
-
-		return true;
+		$th = new TranslationHelpers( $handle, $de->getContext() );
+		$out->addHTML( $th->getBoxes() );
 	}
 }
