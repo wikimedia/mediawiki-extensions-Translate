@@ -170,6 +170,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$languageExportActions = $this->getLanguageExportActions(
 					$groupId,
 					$requestedLanguages,
+					$alwaysExportLanguages,
 					(int)$exportThreshold,
 					(int)$removalThreshold
 				);
@@ -185,10 +186,10 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			} else {
 				// Convert list to an associative array
 				$languageExportActions = array_fill_keys( $requestedLanguages, self::ACTION_CREATE );
-			}
 
-			foreach ( $alwaysExportLanguages as $code ) {
-				$languageExportActions[ $code ] = self::ACTION_CREATE;
+				foreach ( $alwaysExportLanguages as $code ) {
+					$languageExportActions[ $code ] = self::ACTION_CREATE;
+				}
 			}
 
 			foreach ( $neverExportLanguages as $code ) {
@@ -353,6 +354,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	private function getLanguageExportActions(
 		string $groupId,
 		array $requestedLanguages,
+		array $alwaysExportLanguages,
 		int $exportThreshold = 0,
 		int $removalThreshold = 0
 	): array {
@@ -376,6 +378,14 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$languages[$code] = self::ACTION_CREATE;
 			} else {
 				$languages[$code] = self::ACTION_UPDATE;
+			}
+		}
+
+		foreach ( $alwaysExportLanguages as $code ) {
+			$languages[$code] = self::ACTION_CREATE;
+			// DWIM: Do not export languages with zero translations, even if requested
+			if ( ( $stats[$code][MessageGroupStats::TRANSLATED] ?? null ) === 0 ) {
+				$languages[$code] = self::ACTION_DELETE;
 			}
 		}
 
