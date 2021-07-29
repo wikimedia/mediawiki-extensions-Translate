@@ -22,7 +22,8 @@ class MessageBundleContent extends JsonContent {
 
 	public function isValid(): bool {
 		try {
-			return parent::isValid() && $this->validate();
+			$this->getMessages();
+			return parent::isValid();
 		} catch ( MalformedBundle $e ) {
 			return false;
 		}
@@ -33,7 +34,7 @@ class MessageBundleContent extends JsonContent {
 
 		// This will give an informative error message when trying to change the content model
 		try {
-			$this->validate();
+			$this->getMessages();
 			return Status::newGood();
 		} catch ( MalformedBundle $e ) {
 			// XXX: We have no context source nor is there Message::messageParam :(
@@ -42,7 +43,7 @@ class MessageBundleContent extends JsonContent {
 	}
 
 	/** @throws MalformedBundle */
-	public function validate(): bool {
+	public function getMessages(): array {
 		$data = json_decode( $this->getText(), true );
 
 		// Crude check that we have an associative array (or empty array)
@@ -87,6 +88,6 @@ class MessageBundleContent extends JsonContent {
 			}
 		}
 
-		return true;
+		return $data;
 	}
 }

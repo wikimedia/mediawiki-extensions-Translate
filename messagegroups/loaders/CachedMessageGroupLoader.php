@@ -13,7 +13,13 @@
  * @since 2019.05
  */
 interface CachedMessageGroupLoader {
+	/**
+	 * Clear and refill the cache with the latest values
+	 */
 	public function recache();
 
+	/**
+	 * Clear values from the cache
+	 */
 	public function clearCache();
 }

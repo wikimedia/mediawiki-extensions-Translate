@@ -420,5 +420,6 @@
 	"translate-messagebundle-error-key-too-long": "Key \"$1\" is too long",
 	"translate-messagebundle-error-key-invalid-characters": "Key \"$1\" contains disallowed characters",
 	"translate-messagebundle-error-invalid-value": "Key \"$1\" does not contain string value",
-	"translate-messagebundle-error-empty-value": "Key \"$1\" does not have a value"
+	"translate-messagebundle-error-empty-value": "Key \"$1\" does not have a value",
+	"translate-messagebundle-group-description": "Messages of a message bundle defined on page [[$2|$1]]."
 }

@@ -455,5 +455,6 @@
 	"translate-messagebundle-error-key-too-long": "Error message.\n* $1 - message key",
 	"translate-messagebundle-error-key-invalid-characters": "Error message.\n* $1 - message key",
 	"translate-messagebundle-error-invalid-value": "Error message.\n* $1 - message key",
-	"translate-messagebundle-error-empty-value": "Error message.\n* $1 - message key"
+	"translate-messagebundle-error-empty-value": "Error message.\n* $1 - message key",
+	"translate-messagebundle-group-description": "Group description for message bundle message groups.\n\nParameters:\n* $1 - the message bundle page title\n* $2 - the message bundle source page usable as link target"
 }

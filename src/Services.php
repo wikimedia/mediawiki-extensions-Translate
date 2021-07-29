@@ -25,7 +25,7 @@ use Psr\Container\ContainerInterface;
 /**
  * Minimal service container.
  *
- * Main purpose is to give type-hinted getters for services defined in this extensions.
+ * Main purpose is to give type-hinted getters for services defined in this extension.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

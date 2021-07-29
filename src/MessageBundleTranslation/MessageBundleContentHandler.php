@@ -19,11 +19,11 @@ class MessageBundleContentHandler extends TextContentHandler {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_JSON ] );
 	}
 
-	protected function getContentClass() {
+	protected function getContentClass(): string {
 		return MessageBundleContent::class;
 	}
 
-	public function makeEmptyContent() {
+	public function makeEmptyContent(): Content {
 		$class = $this->getContentClass();
 		return new $class( '{}' );
 	}
@@ -35,7 +35,7 @@ class MessageBundleContentHandler extends TextContentHandler {
 		'@phan-var MessageBundleContent $content';
 		// This will give an informative error message when trying to change the content model
 		try {
-			$content->validate();
+			$content->getMessages();
 			return StatusValue::newGood();
 		} catch ( MalformedBundle $e ) {
 			// XXX: We have no context source nor is there Message::messageParam :(

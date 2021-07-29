@@ -270,7 +270,8 @@
 			"TranslatablePageMessageGroupStore::registerLoader",
 			"WorkflowStatesMessageGroupLoader::registerLoader",
 			"AggregateMessageGroupLoader::registerLoader",
-			"FileBasedMessageGroupLoader::registerLoader"
+			"FileBasedMessageGroupLoader::registerLoader",
+			"MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::onTranslateInitGroupLoaders"
 		],
 		"AdminLinks": "TranslateHooks::onAdminLinks",
 		"MergeAccountFromTo": "TranslateHooks::onMergeAccountFromTo",
@@ -406,6 +407,7 @@
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
 		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
+		"UpdateMessageBundle": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\UpdateMessageBundleJob",
 		"UpdateTranslatorActivity": "\\MediaWiki\\Extension\\Translate\\Statistics\\UpdateTranslatorActivityJob"
 	},
 	"LogTypes": [
@@ -1302,6 +1304,11 @@
 		"TranslatePageMoveLimit": {
 			"value": 500,
 			"description": "If set, displays a warning and does not allow user to move translatable pages having more subpages than this value",
+			"public": true
+		},
+		"TranslateEnableMessageBundleIntegration": {
+			"value": false,
+			"description": "Enable experiment message bundle integration",
 			"public": true
 		}
 	},
