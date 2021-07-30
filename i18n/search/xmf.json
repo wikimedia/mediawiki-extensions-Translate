@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"searchtranslations": "ნათანგეფიშ გორუა",
+	"tux-sst-edit": "თანგუაშ რედაქტირაფა",
+	"tux-sst-view-foreign": "ქოძირით $1-ის",
+	"tux-sst-search": "გორუა",
+	"tux-sst-search-ph": "ნათანგეფიშ გორუა",
+	"tux-sst-count": "{{PLURAL:$1|ნაძირებუ რე ართი შედეგი|ნაძირებუ რე $1 შედეგი}}",
+	"tux-sst-facet-language": "ნინეფი",
+	"tux-sst-facet-group": "გინაფაშ ბუნეფი",
+	"tux-sst-nosolr-title": "გორუა ვა რე ხემიოჭირინაფუ",
+	"tux-sst-nosolr-body": "თე ვიკის ვა რე ნათანგეფიშ გორუაშ ნინალა.",
+	"tux-sst-solr-offline-title": "გორუა ვა რე ხემიოჭირინაფუ",
+	"tux-sst-solr-offline-body": "გორუაშ ნინალა ობორჯეთ ვა რე ხემიოჭირინაფუ.",
+	"tux-sst-next": "გეჸვენჯი ›",
+	"tux-sst-prev": "‹ კინოხიანი",
+	"tux-sst-default": "ნათანგეფი",
+	"tux-sst-translated": "$1-შე ნათანგეფი",
+	"tux-sst-outdated": "$1-შე მოჯვეშებული ნათანგეფი",
+	"tux-sst-ellipsis-untranslated": "ვა რე ნათანგა",
+	"tux-sst-ellipsis-outdated": "მოჯვეშებული ნათანგეფი"
+}
