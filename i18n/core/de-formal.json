@@ -11,7 +11,6 @@
 	},
 	"translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in Ihrer Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription von Eigennamen. $1",
 	"translate-edit-no-information": "''Zu dieser Nachricht ist keine Dokumentation vorhanden.''\nSofern Sie wissen, wo und in welchem Zusammenhang sie genutzt wird, können Sie anderen Übersetzern bei ihrer Arbeit helfen, indem Sie eine Dokumentation hinzufügen.",
-	"translate-use-suggestion": "Ersetzen Sie die aktuelle Übersetzung mit diesem Vorschlag.",
 	"translate-edit-nopermission": "Sie benötigen Übersetzerrechte, um Nachrichten übersetzen zu können.",
 	"translate-checks-fudforum-syntax": "Bitte benutzen Sie <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki> in diesem Projekt.",
 	"translate-statsf-intro": "Sie können einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.",

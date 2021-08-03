@@ -40,7 +40,6 @@
 	"translate-edit-warnings": "Lehlin famkim lo vaukhanna",
 	"translate-edit-tmmatch-source": "Lehlinna thu hnar: $1",
 	"translate-edit-tmmatch": "$1% inmil",
-	"translate-use-suggestion": "Tuna lehlinna awm hi he rawtna hian thlâk rawh",
 	"translate-edit-nopermission": "Thuthawn letling tùrin phalna i neih a ngai.",
 	"translate-edit-askpermission": "Phalna dilna",
 	"translate-checks-parameters": "{{PLURAL:$2|He thil hman ngei ngei ngai|Heng thil hman ngei ngei ngaite}} hi hman a la ni lo:\n<strong>$1</strong>",

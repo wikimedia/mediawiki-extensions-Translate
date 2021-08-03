@@ -67,7 +67,6 @@
 	"translate-edit-warnings": "Varoitukset virheellisestä käännöksestä",
 	"translate-edit-tmmatch-source": "Käännöksen lähdeteksti: $1",
 	"translate-edit-tmmatch": "Vastaavuus $1%",
-	"translate-use-suggestion": "Korvaa nykyinen käännös tällä ehdotuksella.",
 	"translate-edit-nopermission": "Viestien kääntämiseen tarvitaan käännösoikeudet.",
 	"translate-edit-askpermission": "Hanki lupa",
 	"exporttranslations": "Vie käännöksiä",

@@ -89,7 +89,6 @@
 	"translate-edit-warnings": "Предупреждения о неполных переводах",
 	"translate-edit-tmmatch-source": "Текст исходного сообщения для перевода: $1",
 	"translate-edit-tmmatch": "$1% соответствия",
-	"translate-use-suggestion": "Заменить текущий перевод на это предложение.",
 	"translate-edit-nopermission": "Для перевода сообщений вам требуется получить права переводчика.",
 	"translate-edit-askpermission": "Получить доступ",
 	"exporttranslations": "Экспорт переводов",

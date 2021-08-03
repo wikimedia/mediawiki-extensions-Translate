@@ -68,7 +68,6 @@
 	"translate-edit-warnings": "هشدار در مورد ترجمه‌های ناکامل",
 	"translate-edit-tmmatch-source": "متن منبع ترجمه: $1",
 	"translate-edit-tmmatch": "$1٪ مطابقت",
-	"translate-use-suggestion": "ترجمه فعلی را با این پیشنهاد جایگزین کن.",
 	"translate-edit-nopermission": "برای ترجمه پیغام‌ها نیازمند اختیارات ترجمه هستید.",
 	"translate-edit-askpermission": "دریافت دسترسی",
 	"exporttranslations": "برون‌بری ترجمه‌ها",

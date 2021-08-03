@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "Dagiti ballaag a maipanggep kadagiti saan a kompleto a patarus",
 	"translate-edit-tmmatch-source": "Teksto a taudan ti panagitarus: $1",
 	"translate-edit-tmmatch": "$1% a kapada",
-	"translate-use-suggestion": "Sukatan ti agdama panakaipatarus iti daytoy  a singasing.",
 	"translate-edit-nopermission": "Masapolmo ti karbengan ti panagipatarus tapno makaipatarus kadagiti mensahe.",
 	"translate-edit-askpermission": "Mangala ti pammalubos",
 	"translate-checks-parameters": "{{PLURAL:$2|Ti sumaganad a parametro|Dagiti sumaganad a parametro}} ket saan a nausar:\n<strong>$1</strong>",

@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "ଅସମ୍ପୂର୍ଣ୍ଣ ଅନୁବାଦ ବାବଦରେ ଚେତାବନୀ",
 	"translate-edit-tmmatch-source": "ସୋର୍ସ ଟେକ୍ସଟରୁ ଅନୁବାଦ: $1",
 	"translate-edit-tmmatch": "$1% ମେଳ",
-	"translate-use-suggestion": "ଏହି ପରାମର୍ଶରୁ ଏବେକାର ଅନୁବାଦକୁ ବଦଳାଇଦିଅନ୍ତୁ ।",
 	"translate-edit-nopermission": "ଅନୁବାଦ କରିବା ପାଇଁ ଆପଣଙ୍କୁ ଅନୁବାଦ ଅନୁମତି ଲୋଡ଼ା ।",
 	"translate-edit-askpermission": "ଅନୁମତି ପାଇବା ପାଇଁ ଅନୁରୋଧ କରନ୍ତୁ ।",
 	"translate-checks-parameters": "ଏହି {{PLURAL:$2|ପାରାମିଟର|ପାରାମିଟରମାନ}} ବ୍ୟ‌ବ‌ହାର ହୋଇନାହିଁ:\n<strong>$1</strong>",

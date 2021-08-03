@@ -44,7 +44,6 @@
 	"translate-edit-information": "ಸಂದೇಶದ ಬಗ್ಗೆ ಮಾಹಿತಿ ($1)",
 	"translate-edit-warnings": "ಅಸಂಪೂರ್ಣ ಭಾಷಾಂತರದ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆ",
 	"translate-edit-tmmatch": "$1% ಹೊ೦ದಿಸಿ",
-	"translate-use-suggestion": "ಈಗಿನ ಭಾಷಾಂತರವನ್ನು ಈ ಸಲಹೆಯೊಂದಿಗೆ ಬದಲಾಯಿಸಿ",
 	"translate-edit-nopermission": "ಭಾಷಾಂತರಿಸಲು ನಿಮಗೆ ಅನುಮತಿ ಬೇಕು",
 	"translate-edit-askpermission": "ಅನುಮತಿಗಾಗಿ ಕೋರಿಕೆ",
 	"translate-checks-parameters-unknown": "ಕೆಳಗಿನ {{PLURAL:$2|ಮಾನದಂಡವು|ಮಾನದಂಡಗಳು}} ಅಪರಿಚಿತ\n<strong>$1</strong>",

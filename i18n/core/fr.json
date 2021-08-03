@@ -87,7 +87,6 @@
 	"translate-edit-warnings": "Avertissements sur les traductions incomplètes",
 	"translate-edit-tmmatch-source": "Texte source de la traduction : $1",
 	"translate-edit-tmmatch": "$1 % de correspondance",
-	"translate-use-suggestion": "Remplacer la traduction actuelle par cette suggestion.",
 	"translate-edit-nopermission": "Vous devez obtenir les droits de traduction pour traduire des messages.",
 	"translate-edit-askpermission": "Obtenir la permission",
 	"exporttranslations": "Exporter des traductions",

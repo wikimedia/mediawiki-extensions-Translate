@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "Avertensa an sle tradussion incomplete",
 	"translate-edit-tmmatch-source": "Test sorgiss dla tradussion: $1",
 	"translate-edit-tmmatch": "corëspondensa ëd $1%",
-	"translate-use-suggestion": "Rampiassé la tradussion corenta con cost sugeriment.",
 	"translate-edit-nopermission": "It l'has dabzògn dij përmess për volté ij mëssagi.",
 	"translate-edit-askpermission": "Ciamé ël përmess",
 	"translate-checks-parameters": "{{PLURAL:$2|Ël paràmetr sì-sota a l'é|Ij paràmetr sì-sota a son}} pa dovrà:\n<strong>$1</strong>",

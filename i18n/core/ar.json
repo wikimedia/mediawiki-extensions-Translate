@@ -64,7 +64,6 @@
 	"translate-edit-warnings": "التحذيرات الخاصة بالترجمات غير المكتملة",
 	"translate-edit-tmmatch-source": "نص المصدر للترجمة: $1",
 	"translate-edit-tmmatch": "$1% مطابقة",
-	"translate-use-suggestion": "استبدال الترجمة الحالية بهذا الاقتراح.",
 	"translate-edit-nopermission": "تحتاج صلاحيات الترجمة لترجمة الرسائل.",
 	"translate-edit-askpermission": "احصل على الإذن",
 	"exporttranslations": "تصدير الترجمات",

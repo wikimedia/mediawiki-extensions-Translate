@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "تولۇق بولمىغان تەرجىمە ھەققىدىكى ئاگاھلاندۇرۇش",
 	"translate-edit-tmmatch-source": "تەرجىمە ئەسلى تېكىستى: $1",
 	"translate-edit-tmmatch": "$1% ماس كېلىدۇ",
-	"translate-use-suggestion": "نۆۋەتتىكى تەرجىمىنى بۇ تەكلىپ بىلەن ئالماشتۇر",
 	"translate-edit-nopermission": "ئۇچۇرلارنى تەرجىمە قىلىش ھوقۇقىغا ئېرىشىڭ.",
 	"translate-edit-askpermission": "ھوقۇق ئىلتىماسى",
 	"translate-checks-parameters": "تۆۋەندىكى {{PLURAL:$2|پارامېتىر|پارامېتىر}} ئىشلىتىلمىگەن:\n<strong>$1</strong>",

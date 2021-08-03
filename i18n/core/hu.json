@@ -57,7 +57,6 @@
 	"translate-edit-warnings": "Hiányosságok a fordításban",
 	"translate-edit-tmmatch-source": "Fordítási forrás szöveg: $1",
 	"translate-edit-tmmatch": "$1%-os egyezés",
-	"translate-use-suggestion": "A javasolt szöveg átmásolása a fordítási mezőbe, lecserélve annak aktuális tartalmát!",
 	"translate-edit-nopermission": "Az üzenetek fordításához fordítói jogok szükségesek.",
 	"translate-edit-askpermission": "Engedélyszerzés",
 	"exporttranslations": "Fordítások exportálása",

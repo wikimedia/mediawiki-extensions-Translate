@@ -44,7 +44,6 @@
 	"translate-edit-warnings": "ਊਣੇ ਤਰਜਮਿਆਂ ਬਾਰੇ ਚਿਤਾਵਨੀ",
 	"translate-edit-tmmatch-source": "ਅਨੁਵਾਦ ਦੀ ਸਰੋਤ ਲਿਖਤ:$1",
 	"translate-edit-tmmatch": "$1% ਮੇਲ",
-	"translate-use-suggestion": "ਮੌਜੂਦਾ ਤਰਜਮੇ ਦੀ ਥਾਂ ਇਹ ਸਲਾਹ ਲਿਆਉ",
 	"translate-edit-nopermission": "ਤੁਹਾਨੂੰ ਸੁਨੇਹਿਆਂ ਦਾ ਅਨੁਵਾਦ ਕਰਨ ਲਈ ਇਜਾਜ਼ਤ ਚਾਹੀਦੀ ਹੈ।",
 	"translate-edit-askpermission": "ਇਜਾਜ਼ਤ ਲਈ ਬੇਨਤੀ ਕਰੋ",
 	"translate-checks-parameters": "{{PLURAL:$2|ਹੇਠ ਲਿਖਿਆ ਮਾਪਦੰਡ ਵਰਤਿਆ ਨਹੀਂ ਗਿਆ|ਹੇਠ ਲਿਖੇ ਮਾਪਦੰਡ ਵਰਤੇ ਨਹੀਂ ਗਏ}}:\n<strong>$1</strong>",

@@ -62,7 +62,6 @@
 	"translate-edit-warnings": "Προειδοποιήσεις για ημιτελείς μεταφράσεις",
 	"translate-edit-tmmatch-source": "Πηγαίο κείμενο μετάφρασης: $1",
 	"translate-edit-tmmatch": "$1% αντιστοίχιση",
-	"translate-use-suggestion": "Αντικατάσταση τρέχουσας μετάφρασης με την πρόταση αυτή.",
 	"translate-edit-nopermission": "Χρειάζεστε μεταφραστικά δικαιώματα για να μεταφράσετε μηνύματα.",
 	"translate-edit-askpermission": "Πάρετε άδεια",
 	"exporttranslations": "Εξαγωγή μεταφράσεων",

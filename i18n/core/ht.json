@@ -36,7 +36,6 @@
 	"translate-edit-information": "Enfòmasyon sou mesaj \"$2\" ($1)",
 	"translate-edit-warnings": "Avètisman sou tradiksyon ki pa konplete yo",
 	"translate-edit-tmmatch": "$1% korespondans",
-	"translate-use-suggestion": "Mete sijesyon sa a nan zòn tradiksyon a. L ap ranplase tout kontni aktyèl.",
 	"translate-checks-parameters": "Paramèt {{PLURAL:$2|swivan|swivan yo}} pa itilize:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Nou pa konnen paramèt {{PLURAL:$2|swivan|swivan yo}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "Genyen yon kantite {{PLURAL:$2|parantèz|parantèz}} ki enpè:\n<strong><nowiki>$1</nowiki></strong>",

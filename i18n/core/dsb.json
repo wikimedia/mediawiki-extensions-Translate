@@ -47,7 +47,6 @@
 	"translate-edit-warnings": "Warnowanja wó njedopołnych pśełožkach",
 	"translate-edit-tmmatch-source": "Žrědłowy tekst pśełožka: $1",
 	"translate-edit-tmmatch": "$1 % makanja",
-	"translate-use-suggestion": "Aktualny pśełožk pśez toś to naraźenje wuměniś",
 	"translate-edit-nopermission": "Trjebaš pśełožowańske pšawa, aby mógał powěźeńki pśełožowaś.",
 	"translate-edit-askpermission": "Pšawo dostaś",
 	"translate-checks-parameters": "{{PLURAL:$2|Slědujucy parameter|Slědujucej parametra|Slědujuce parametry|Slědujucych parametrow}}  se {{PLURAL:$2|njewužywa|njewužywatej|njewužywaju|njwužywa}}: <strong>$1</strong>",

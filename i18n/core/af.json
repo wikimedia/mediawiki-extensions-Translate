@@ -48,7 +48,6 @@
 	"translate-edit-warnings": "Waarskuwings oor onvoltooide vertalings",
 	"translate-edit-tmmatch-source": "Bronteks vir vertaling: $1",
 	"translate-edit-tmmatch": "$1% ooreenkoms",
-	"translate-use-suggestion": "Vervang die huidige vertaling met hierdie voorstel.",
 	"translate-edit-nopermission": "U moet toestemming verkry alvorens u boodskappe kan vertaal.",
 	"translate-edit-askpermission": "Vra vir toestemming",
 	"translate-checks-parameters": "Die volgende {{PLURAL:$2|parameter word|parameters word}} nie gebruik nie:\n<strong>$1</strong>",

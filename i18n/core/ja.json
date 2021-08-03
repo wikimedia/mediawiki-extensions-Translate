@@ -71,7 +71,6 @@
 	"translate-edit-warnings": "不完全な翻訳に対する警告",
 	"translate-edit-tmmatch-source": "翻訳元の文章: $1",
 	"translate-edit-tmmatch": "$1%の一致",
-	"translate-use-suggestion": "この現在の翻訳を、この翻訳提案に置き換えます。",
 	"translate-edit-nopermission": "メッセージを翻訳する権限が必要です。",
 	"translate-edit-askpermission": "権限を取得",
 	"exporttranslations": "翻訳の書き出し",

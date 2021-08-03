@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "Rhybudd am gyfieithiad anghyflawn",
 	"translate-edit-tmmatch-source": "Y testun gwreiddiol i'w gyfieithu: $1",
 	"translate-edit-tmmatch": "yn cyd-fynd $1%",
-	"translate-use-suggestion": "Bydd y cynnig hwn yn disodli'r cyfieithiad cyfredol.",
 	"translate-edit-nopermission": "Mae angen galluoedd cyfieithu arnoch i gyfieithu negeseuon.",
 	"translate-edit-askpermission": "Cael caniatâd",
 	"translate-checks-parameters": "Ni ddefnyddir y {{PLURAL:$2|paramedr|paramedr|paramedrau}} canlynol:\n<strong>$1</strong>",

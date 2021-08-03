@@ -53,7 +53,6 @@
 	"translate-edit-warnings": "คำเตือนเกี่ยวกับคำแปลที่ยังไม่สมบูรณ์หรือมีปัญหา",
 	"translate-edit-tmmatch-source": "ข้อความต้นทางการแปล: $1",
 	"translate-edit-tmmatch": "ตรงกัน $1%",
-	"translate-use-suggestion": "แทนที่การแปลปัจจุบันด้วยคำแนะนํานี้",
 	"translate-edit-nopermission": "คุณต้องมีสิทธิในการแปลเพื่อทำการแปลข้อความ",
 	"translate-edit-askpermission": "ขอรับสิทธิ",
 	"exporttranslations": "ส่งออกการแปล",

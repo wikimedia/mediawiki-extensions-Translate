@@ -53,7 +53,6 @@
 	"translate-edit-warnings": "Åtvaringar om ufullstendige omsetjingar",
 	"translate-edit-tmmatch-source": "Kjeldetekst for omsetjing: $1",
 	"translate-edit-tmmatch": "$1% samsvar",
-	"translate-use-suggestion": "Byt ut den gjeldande omsetjinga med dette framlegget.",
 	"translate-edit-nopermission": "Du treng omsetjingsrettar for å setja om meldingar.",
 	"translate-edit-askpermission": "Få løyve",
 	"translate-checks-parameters": "{{PLURAL:$2|Denne parameteren|Dessse parametrane}} vert ikkje nytta:\n<strong>$1</strong>",

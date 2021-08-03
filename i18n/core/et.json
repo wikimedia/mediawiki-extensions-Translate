@@ -47,7 +47,6 @@
 	"translate-edit-warnings": "Hoiatused puuduliku tõlke kohta",
 	"translate-edit-tmmatch-source": "Tõlke alliktekst: $1",
 	"translate-edit-tmmatch": "Vastavus: $1%",
-	"translate-use-suggestion": "Asenda praegune tõlge selle pakkumusega.",
 	"translate-edit-nopermission": "Sõnumite tõlkimiseks on vaja tõlkeõigust.",
 	"translate-edit-askpermission": "Hangi luba",
 	"exporttranslations": "Tõlgete eksport",

@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "Chala tarjima qilinayotgani haqida ogohlantirishlar",
 	"translate-edit-tmmatch-source": "Tarjima uchun manba xabar matni: $1",
 	"translate-edit-tmmatch": "$1% moslik",
-	"translate-use-suggestion": "Joriy tarjima matnini mazkur taklifga almashtirish.",
 	"translate-edit-nopermission": "Xabarni tarjima qilish uchun ruxsat zarur.",
 	"translate-edit-askpermission": "Ruxsat soʻramoq",
 	"translate-checks-parameters": "Quyidagi {{PLURAL:$2|koʻrsatkich|koʻrsatkichlar}} qoʻllanilmayapti:\n<strong>$1</strong>",

@@ -59,7 +59,6 @@
 	"translate-edit-warnings": "אזהרות על תרגומים חלקיים",
 	"translate-edit-tmmatch-source": "טקסט המקור של התרגום: $1",
 	"translate-edit-tmmatch": "רמת התאמה: $1%",
-	"translate-use-suggestion": "החלפת התרגום הנוכחי בהצעה הזאת.",
 	"translate-edit-nopermission": "נדרשות הרשאות כדי לתרגם הודעות.",
 	"translate-edit-askpermission": "לקבל הרשאה",
 	"exporttranslations": "ייצוא תרגומים",

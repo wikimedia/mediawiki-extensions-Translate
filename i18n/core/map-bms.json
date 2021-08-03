@@ -37,7 +37,6 @@
 	"translate-edit-information": "Informasi bab pesen ($1)",
 	"translate-edit-tmmatch-source": "Tèks sumber pertalan: $1",
 	"translate-edit-tmmatch": "$1% cocog",
-	"translate-use-suggestion": "Ganti terjemahan sekiye nganggo saran kiye.",
 	"translate-edit-nopermission": "Rika perlu idin kanggo nerjemahna pesen.",
 	"translate-checks-parameters": "{{PLURAL:$2|parameter|}} kiye ora dienggo:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Parameter|Parameter-parameter}} kiye ora dikenal:\n<strong>$1</strong>",

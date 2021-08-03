@@ -70,7 +70,6 @@
 	"translate-edit-warnings": "Попередження про неповні переклади",
 	"translate-edit-tmmatch-source": "Текст для перекладу: $1",
 	"translate-edit-tmmatch": "$1% відповідність",
-	"translate-use-suggestion": "Замінити поточний переклад цією пропозицією.",
 	"translate-edit-nopermission": "Вам потрібні права перекладача для перекладу повідомлень.",
 	"translate-edit-askpermission": "Отримати дозвіл",
 	"exporttranslations": "Експорт перекладів",

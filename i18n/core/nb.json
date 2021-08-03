@@ -54,7 +54,6 @@
 	"translate-edit-warnings": "Advarsler om ufullstendige oversettelser",
 	"translate-edit-tmmatch-source": "Kildetekst for oversettelse: $1",
 	"translate-edit-tmmatch": "samsvarer $1 %",
-	"translate-use-suggestion": "Erstatt gjeldende oversettelse med dette forslaget.",
 	"translate-edit-nopermission": "Du må ha oversetterrettigheter for å oversette beskjeder.",
 	"translate-edit-askpermission": "Få tillatelse",
 	"exporttranslations": "Eksporter oversettelser",

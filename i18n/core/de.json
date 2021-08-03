@@ -66,7 +66,6 @@
 	"translate-edit-warnings": "Warnungen zu unvollständigen Übersetzungen",
 	"translate-edit-tmmatch-source": "Übersetzungsquelltext: $1",
 	"translate-edit-tmmatch": "$1 % Übereinstimmung",
-	"translate-use-suggestion": "Ersetze die aktuelle Übersetzung mit diesem Vorschlag.",
 	"translate-edit-nopermission": "Du benötigst Übersetzerrechte, um Nachrichten übersetzen zu können.",
 	"translate-edit-askpermission": "Berechtigung erhalten",
 	"exporttranslations": "Übersetzungen exportieren",

@@ -63,7 +63,6 @@
 	"translate-edit-warnings": "Waarschuwingen over onjuiste vertalingen",
 	"translate-edit-tmmatch-source": "Brontekst voor vertaling: $1",
 	"translate-edit-tmmatch": "$1% overeenkomst",
-	"translate-use-suggestion": "Huidige vertaling door deze suggestie vervangen.",
 	"translate-edit-nopermission": "U hebt vertaalrechten nodig om berichten te kunnen vertalen.",
 	"translate-edit-askpermission": "Vertaalrechten aanvragen",
 	"exporttranslations": "Vertalingen exporteren",

@@ -38,7 +38,6 @@
 	"translate-edit-information": "Яҙма тураһында мәғлүмәт ($1)",
 	"translate-edit-warnings": "Тулы булмаған тәржемәләр тураһында иҫкәртеү",
 	"translate-edit-tmmatch": "$1% тап килеү",
-	"translate-use-suggestion": "Әлеге тәржемәнең тексын ошо күрһәтелгән менән алмаштырырға.",
 	"translate-checks-parameters": "Түбәндәге {{PLURAL:$2|1=параметр|параметрҙар}} ҡулланылмай:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Түбәндәге {{PLURAL:$2|1=параметр|параметрҙар}} билдәһеҙ:\n<strong>$1</strong>",
 	"translate-checks-balance": "Уң һәм һул {{PLURAL:$2|1=йәйә|йәйә}} һаны парлы түгел:\n<strong><nowiki>$1</nowiki></strong>",

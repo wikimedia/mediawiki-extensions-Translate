@@ -69,7 +69,6 @@
 	"translate-edit-warnings": "Tamamlanmamış çeviriler hakkındaki uyarılar",
 	"translate-edit-tmmatch-source": "Çeviri kaynağı metin: $1",
 	"translate-edit-tmmatch": "%$1 benzer",
-	"translate-use-suggestion": "Mevcut çeviriyi bu öneri ile değiştirin.",
 	"translate-edit-nopermission": "İletileri çevirmek için çeviri hakkınız olmalı.",
 	"translate-edit-askpermission": "İzin al",
 	"exporttranslations": "Çevirileri dışa aktar",

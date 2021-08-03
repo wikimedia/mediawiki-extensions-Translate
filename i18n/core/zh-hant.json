@@ -68,7 +68,6 @@
 	"translate-edit-warnings": "未完成翻譯的警告",
 	"translate-edit-tmmatch-source": "翻譯原文：$1",
 	"translate-edit-tmmatch": "$1% 符合",
-	"translate-use-suggestion": "採納此建議取代目前的翻譯。",
 	"translate-edit-nopermission": "您需要翻譯權限以翻譯訊息。",
 	"translate-edit-askpermission": "取得權限",
 	"exporttranslations": "匯出翻譯",

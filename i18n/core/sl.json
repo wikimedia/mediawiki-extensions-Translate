@@ -49,7 +49,6 @@
 	"translate-edit-warnings": "Opozorila o nepopolnosti prevoda",
 	"translate-edit-tmmatch-source": "Izvorno besedilo prevoda: $1",
 	"translate-edit-tmmatch": "$1-% ujemanje",
-	"translate-use-suggestion": "Zamenjaj trenutni prevod s tem predlogom.",
 	"translate-edit-nopermission": "Za prevajanje sporočil potrebujete prevajalske pravice.",
 	"translate-edit-askpermission": "Pridobite dovoljenje",
 	"exporttranslations": "Izvozi prevode",

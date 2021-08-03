@@ -46,7 +46,6 @@
 	"translate-edit-warnings": "Толық аударылмаған аудармалар туралы ескертулер",
 	"translate-edit-tmmatch-source": "Аударма қайнар мәтіні: $1",
 	"translate-edit-tmmatch": "$1% сәйкес келеді",
-	"translate-use-suggestion": "Бұл ұсыныспен қазіргі аударманы алмастыру",
 	"translate-edit-nopermission": "Хабарламаларды аудару үшін сізге аудару құқығы қажет.",
 	"translate-edit-askpermission": "Рұқсат алу",
 	"translate-checks-parameters": "Келесі {{PLURAL:$2|параметр|параметрлер}} пайдаланылмаған: \n<strong>$1</strong>",

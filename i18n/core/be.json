@@ -51,7 +51,6 @@
 	"translate-edit-warnings": "Папярэджанні пра няпоўныя пераклады",
 	"translate-edit-tmmatch-source": "Тэкст зыходнага паведамлення для перакладу: $1",
 	"translate-edit-tmmatch": "$1% адпаведнасць",
-	"translate-use-suggestion": "Замяніць бягучы тэкст перакладу на гэту падказку.",
 	"translate-edit-nopermission": "Для перакладу паведамленняў вам трэба атрымаць дазвол.",
 	"translate-edit-askpermission": "Запытаць дазвол",
 	"translate-checks-parameters": "{{PLURAL:$2|Наступны параметр не выкарыстоўваецца|Наступныя параметры не выкарыстоўваюцца}}:\n<strong>$1</strong>",

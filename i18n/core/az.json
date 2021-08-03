@@ -48,7 +48,6 @@
 	"translate-edit-warnings": "Yarımçıq tərcümələr haqqında xəbərdarlıqlar",
 	"translate-edit-tmmatch-source": "Tərcümə mənbəsi mətni: $1",
 	"translate-edit-tmmatch": "$1% oxşar",
-	"translate-use-suggestion": "Cari tərcüməni bu təkliflə dəyişdir.",
 	"translate-edit-nopermission": "Mesajları tərcümə etmək üçün tərcüməçi hüquqlarınız olmalıdır.",
 	"translate-edit-askpermission": "İcazə al",
 	"translate-checks-parameters": "Aşağıdakı {{PLURAL:$2|parametrdən|parametrlərdən}} istifadə edilmir:\n<strong>$1</strong>",

@@ -42,7 +42,6 @@
 	"translate-edit-warnings": "Ávaring um ófullfíggjaðar týðingar",
 	"translate-edit-tmmatch-source": "Keldutekstur til týðingar: $1",
 	"translate-edit-tmmatch": "$1% samsvar",
-	"translate-use-suggestion": "Skift út verandi týðing við hetta uppskotið.",
 	"translate-edit-nopermission": "Tú skalt hava loyvi til at týða boð.",
 	"translate-edit-askpermission": "Bið um loyvi",
 	"translate-checks-parameters": "Fylgjandi {{PLURAL:$2|parametur er|parametur eru}} ikki brúkt:\n<strong>$1</strong>",

@@ -60,7 +60,6 @@
 	"translate-edit-warnings": "Упозорења о непотпуним преводима",
 	"translate-edit-tmmatch-source": "Изворни текст за превођење: $1",
 	"translate-edit-tmmatch": "$1% подударања",
-	"translate-use-suggestion": "Замените тренутни превод овим предлогом.",
 	"translate-edit-nopermission": "Потребна су вам преводилачка права да бисте преводили поруке.",
 	"translate-edit-askpermission": "Затражи дозволу",
 	"exporttranslations": "Извоз превода",

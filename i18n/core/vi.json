@@ -52,7 +52,6 @@
 	"translate-edit-warnings": "Các cảnh báo về các bản dịch chưa hoàn thành",
 	"translate-edit-tmmatch-source": "Văn bản gốc để dịch: $1",
 	"translate-edit-tmmatch": "trùng $1%",
-	"translate-use-suggestion": "Thay thế bản dịch hiện hành với đề nghị này.",
 	"translate-edit-nopermission": "Bạn cần xin phép biên dịch thông điệp.",
 	"translate-edit-askpermission": "Xin phép",
 	"exporttranslations": "Xuất bản dịch",

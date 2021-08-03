@@ -54,7 +54,6 @@
 	"translate-edit-warnings": "Avertizări în legătură cu traducerile incomplete",
 	"translate-edit-tmmatch-source": "Textul sursă al traducerii: $1",
 	"translate-edit-tmmatch": "Potrivire în proporție de $1%",
-	"translate-use-suggestion": "Înlocuiește traducerea curentă cu această sugestie.",
 	"translate-edit-nopermission": "Aveți nevoie de drepturi de traducere pentru a traduce mesaje.",
 	"translate-edit-askpermission": "Obțineți permisiunea",
 	"translate-checks-parameters": "{{PLURAL:$2|Următorul parametru nu este folosit|Următorii parametri nu sunt folosiți}}:\n<strong>$1</strong>",

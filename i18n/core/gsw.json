@@ -47,7 +47,6 @@
 	"translate-edit-warnings": "Warnig iber uuvollständigi Ibersetzige",
 	"translate-edit-tmmatch-source": "Ibersetzigsquälltext: $1",
 	"translate-edit-tmmatch": "$1% Ibereinstimmig",
-	"translate-use-suggestion": "Di aktuäll Ibersetzig mit däm Vorschlag ersetze:",
 	"translate-edit-nopermission": "Du bruchsch d Rächt zum Nochrichte ibersetze z chenne.",
 	"translate-edit-askpermission": "E Aatrag uf d Rächt stelle",
 	"translate-checks-parameters": "{{PLURAL:$2|Dää Parameter wird|Die Parameter wäre}} nit bruucht: <strong>$1</strong>",

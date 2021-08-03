@@ -76,7 +76,6 @@
 	"translate-edit-warnings": "Ostrzeżenia o niedokończonych tłumaczeniach",
 	"translate-edit-tmmatch-source": "Tekst źródłowy tłumaczenia: $1",
 	"translate-edit-tmmatch": "pasuje $1%",
-	"translate-use-suggestion": "Zastąp obecne tłumaczenie tą propozycją.",
 	"translate-edit-nopermission": "Nie masz uprawnień tłumacza do tłumaczenia komunikatów.",
 	"translate-edit-askpermission": "Uzyskaj uprawnienie",
 	"exporttranslations": "Eksport tłumaczeń",

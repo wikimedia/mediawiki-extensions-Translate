@@ -55,7 +55,6 @@
 	"translate-edit-warnings": "Advarsler om ufuldstændige oversættelser",
 	"translate-edit-tmmatch-source": "Kildetekst til oversættelse: $1",
 	"translate-edit-tmmatch": "$1 % overensstemmelse",
-	"translate-use-suggestion": "Erstat den nuværende oversættelse med dette forslag.",
 	"translate-edit-nopermission": "Du skal have oversættelsesrettigheder for at kunne oversætte besekeder.",
 	"translate-edit-askpermission": "Få tilladelse",
 	"exporttranslations": "Eksporter oversættelser",

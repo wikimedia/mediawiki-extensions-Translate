@@ -41,7 +41,6 @@
 	"translate-edit-information": "Information aneat message ($1)",
 	"translate-edit-warnings": "Warnishments aneat oncompleate owersets",
 	"translate-edit-tmmatch-source": "Owerset soorce tex: $1",
-	"translate-use-suggestion": "Replace the Nou owerset wi this suggestion.",
 	"translate-edit-nopermission": "Ye need owersetin richts tae owerset messages.",
 	"translate-edit-askpermission": "Get permeession",
 	"translate-checks-parameters": "Follaein {{PLURAL:$2|parameter is|parameters ar}} na uised:\n<strong>$1</strong>",

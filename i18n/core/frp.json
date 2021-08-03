@@ -45,7 +45,6 @@
 	"translate-edit-warnings": "Avèrtissements sur les traduccions encomplètes",
 	"translate-edit-tmmatch-source": "Tèxto sôrsa de la traduccion : $1",
 	"translate-edit-tmmatch": "$1 % de corrèspondance",
-	"translate-use-suggestion": "Remplaciér la traduccion d’ora per cet’idê.",
 	"translate-edit-nopermission": "Vos dête avêr la pèrmission de traduire los mèssâjos.",
 	"translate-edit-askpermission": "Demandar la pèrmission",
 	"translate-checks-parameters": "{{PLURAL:$2|Ceti paramètro est pas empleyê|Cetos paramètros sont pas empleyês}} :\n<strong>$1</strong>",

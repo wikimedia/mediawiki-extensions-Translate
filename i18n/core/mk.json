@@ -52,7 +52,6 @@
 	"translate-edit-warnings": "Предупредувања за нецелосни преводи",
 	"translate-edit-tmmatch-source": "Изворен текст за преводот: $1",
 	"translate-edit-tmmatch": "$1% совпаѓање",
-	"translate-use-suggestion": "Заменете го тековниот превод со овој предлог во полето за превод.",
 	"translate-edit-nopermission": "Ви требаат преведувачки права за да преведувате пораки.",
 	"translate-edit-askpermission": "Побарајте дозвола",
 	"exporttranslations": "Извези преводи",

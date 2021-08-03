@@ -84,7 +84,6 @@
 	"translate-edit-warnings": "关于不完整翻译的警告",
 	"translate-edit-tmmatch-source": "翻译原文：$1",
 	"translate-edit-tmmatch": "$1%匹配",
-	"translate-use-suggestion": "用该建议替代当前的翻译。",
 	"translate-edit-nopermission": "您需要有翻译权限才能翻译信息。",
 	"translate-edit-askpermission": "获取权限",
 	"exporttranslations": "导出翻译",

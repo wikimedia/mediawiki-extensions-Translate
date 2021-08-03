@@ -48,7 +48,6 @@
 	"translate-edit-warnings": "අසම්පුර්ණ පරිවර්තන පිලිබඳ අවවාද",
 	"translate-edit-tmmatch-source": "පරිවර්තන මූලාශ්‍ර පාඨය: $1",
 	"translate-edit-tmmatch": "$1% ගැලපේ",
-	"translate-use-suggestion": "මෙම යෝජනාව සමඟ වත්මන් පරිවර්තනය ප්‍රතිස්ථාපනය කරන්න.",
 	"translate-edit-nopermission": "පණිවුඩ පරිවර්තනයකිරීම සඳහා ඔබ අවසර ගත යුතුය.",
 	"translate-edit-askpermission": "අවසර ඉල්ලන්න",
 	"translate-checks-parameters": "පහත {{PLURAL:$2|පරාමිතිය|පරාමිතියන්}} භාවිතා නොවේ:\n<strong>$1</strong>",

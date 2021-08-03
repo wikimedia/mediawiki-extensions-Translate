@@ -48,7 +48,6 @@
 	"translate-edit-warnings": "Viðvaranir vegna ókláraðra þýðinga",
 	"translate-edit-tmmatch-source": "Uppruna texti þýðingarinnar: $1",
 	"translate-edit-tmmatch": "$1% samsvörun",
-	"translate-use-suggestion": "Skipta núverandi þýðingu út fyrir þessa uppástungu.",
 	"translate-edit-nopermission": "Þú þarft þýðenda réttindi til að þýða skilaboð.",
 	"translate-edit-askpermission": "Fá réttindi",
 	"exporttranslations": "Flytja út þýðingar",

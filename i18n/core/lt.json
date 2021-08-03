@@ -54,7 +54,6 @@
 	"translate-edit-warnings": "Įspėjimai apie nepilnus vertimus",
 	"translate-edit-tmmatch-source": "Vertimo šaltinio tekstas: $1",
 	"translate-edit-tmmatch": "$1% atitinka",
-	"translate-use-suggestion": "Pakeisti dabartinį vertimą su šiuo pasiūlymu.",
 	"translate-edit-nopermission": "Jums reikia vertimo teisių, kad galėtumėte versti pranešimus.",
 	"translate-edit-askpermission": "Gauti leidimą",
 	"exporttranslations": "Eksportuoti vertimus",

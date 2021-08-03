@@ -61,7 +61,6 @@
 	"translate-edit-warnings": "불완전한 번역에 대한 경고",
 	"translate-edit-tmmatch-source": "번역 원본 텍스트: $1",
 	"translate-edit-tmmatch": "$1% 일치",
-	"translate-use-suggestion": "현재 번역을 이 제안으로 변경합니다.",
 	"translate-edit-nopermission": "메시지를 번역할 수 있는 번역 권한이 필요합니다.",
 	"translate-edit-askpermission": "권한 얻기",
 	"exporttranslations": "번역 내보내기",

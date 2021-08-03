@@ -54,7 +54,6 @@
 	"translate-edit-warnings": "অসম্পূর্ণ অনুবাদের ওপর সতর্কবার্তা",
 	"translate-edit-tmmatch-source": "অনুবাদের জন্য উৎস পাঠ্য: $1",
 	"translate-edit-tmmatch": "{{formatnum:$1}}% মিল রয়েছে",
-	"translate-use-suggestion": "বর্তমান অনুবাদকে এই পরামর্শটি দ্বারা প্রতিস্থাপন করুন।",
 	"translate-edit-nopermission": "বার্তা অনুবাদ করতে আপনার অনুবাদ অধিকার প্রয়োজন।",
 	"translate-edit-askpermission": "অনুমতি পান",
 	"exporttranslations": "অনুবাদসমূহ আমদানি",

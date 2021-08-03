@@ -70,7 +70,6 @@
 	"translate-edit-warnings": "Varningar om fel i översättningen",
 	"translate-edit-tmmatch-source": "Källtext för översättning: $1",
 	"translate-edit-tmmatch": "$1&nbsp;% likhet",
-	"translate-use-suggestion": "Ersätt aktuell översättning med detta förslag.",
 	"translate-edit-nopermission": "Du behöver översättningsbehörighet för att översätta meddelanden.",
 	"translate-edit-askpermission": "Få behörighet",
 	"exporttranslations": "Exportera översättningar",

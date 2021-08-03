@@ -47,7 +47,6 @@
 	"translate-edit-warnings": "Mga babala hinggil sa hindi pa ganap na mga salinwika",
 	"translate-edit-tmmatch-source": "Teksto ng pinagmulan ng salinwika: $1",
 	"translate-edit-tmmatch": "$1% tumugma",
-	"translate-use-suggestion": "Palitan ang kasulukuyang salinwika ng ganitong mungkahi.",
 	"translate-edit-nopermission": "Kailangan mo ng pahintulot upang makapagsalinwika ng mga mensahe.",
 	"translate-edit-askpermission": "Humiling ng pahintulot",
 	"translate-checks-parameters": "Ang sumusunod na {{PLURAL:$2|parametro ay|mga parametro ay}} hindi ginagamit:\n<strong>$1</strong>",

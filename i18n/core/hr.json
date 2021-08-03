@@ -54,7 +54,6 @@
 	"translate-edit-warnings": "Upozorenja o nepotpunim prijevodima",
 	"translate-edit-tmmatch-source": "Izvorni tekst: $1",
 	"translate-edit-tmmatch": "$1% podudarnosti",
-	"translate-use-suggestion": "Zamijenite trenutačni prijevod ovim prijedlogom.",
 	"translate-edit-nopermission": "Da biste prevodili poruke, trebate imati prevoditeljska prava.",
 	"translate-edit-askpermission": "Zatraži dopuštenje",
 	"exporttranslations": "Izvoz prijevoda",

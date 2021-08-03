@@ -47,7 +47,6 @@
 	"translate-edit-warnings": "Warnowanja wo njedospołnych přełožkach",
 	"translate-edit-tmmatch-source": "Žórłowy tekst přełožka: $1",
 	"translate-edit-tmmatch": "$1 % wotpowědowanja",
-	"translate-use-suggestion": "Aktualny přełožk přez tutón namjet wuměnić",
 	"translate-edit-nopermission": "Trjebaš přełožowanske prawa, zo by móhł zdźělenki přełožować.",
 	"translate-edit-askpermission": "Prawo dóstać",
 	"translate-checks-parameters": "{{PLURAL:$2|Slědowacy parameter|Slědowacej parametraj|Slědowace parametry|Slědowacych parametrow}} so {{PLURAL:$2|njewužiwa|njewužiwatej|njewužiwaja|njewužiwa}}: <strong>$1</strong>",

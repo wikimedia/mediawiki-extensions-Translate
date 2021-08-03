@@ -59,7 +59,6 @@
 	"translate-edit-warnings": "Upozornění na neúplný překlad",
 	"translate-edit-tmmatch-source": "Zdrojový text překladu: $1",
 	"translate-edit-tmmatch": "$1% shoda",
-	"translate-use-suggestion": "Nahradit stávající překlad tímto návrhem.",
 	"translate-edit-nopermission": "K překládání zpráv potřebujete překladatelská práva.",
 	"translate-edit-askpermission": "Získat oprávnění",
 	"exporttranslations": "Exportovat překlady",
