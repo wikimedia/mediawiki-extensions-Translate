@@ -39,7 +39,8 @@
 			"Yfdyh000",
 			"Zazzzz",
 			"乌拉跨氪",
-			"列维劳德"
+			"列维劳德",
+			"铁桶"
 		]
 	},
 	"translate": "翻译",
@@ -53,7 +54,7 @@
 	"translate-taction-lstats": "语言统计",
 	"translate-taction-mstats": "信息组统计",
 	"translate-taction-export": "导出",
-	"translate-taction-disabled": "该操作在本维基停用。",
+	"translate-taction-disabled": "该操作在本wiki停用。",
 	"translate-page-no-such-language": "指定语言无效。",
 	"translate-page-no-such-group": "指定信息组无效。",
 	"translate-page-disabled": "本信息组该语言的翻译已经停用。原因：\n\n<em>$1</em>",
