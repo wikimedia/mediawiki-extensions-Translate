@@ -54,6 +54,11 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 			'Move subpages under the current page'
 		);
 
+		$this->addOption(
+			'skip-talkpages',
+			'Skip moving talk pages under pages being moved'
+		);
+
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -69,6 +74,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$username = $this->getArg( 2 );
 		$reason = $this->getOption( 'reason', '' );
 		$moveSubpages = $this->hasOption( 'move-subpages' );
+		$moveTalkpages = !$this->hasOption( 'skip-talkpages' );
 
 		$userFactory = $mwService->getUserFactory();
 		$user = $userFactory->newFromName( $username );
@@ -78,12 +84,17 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		$outputMsg = "Check if '$currentPagename' can be moved to '$newPagename'";
-		$subpageMsg = '(excluding subpages)';
+		$subpageMsg = 'excluding subpages';
 		if ( $moveSubpages ) {
-			$subpageMsg = '(including subpages)';
+			$subpageMsg = 'including subpages';
 		}
 
-		$this->output( "$outputMsg $subpageMsg\n" );
+		$talkpageMsg = 'excluding talkpages';
+		if ( $moveTalkpages ) {
+			$talkpageMsg = 'including talkpages';
+		}
+
+		$this->output( "$outputMsg ($subpageMsg; $talkpageMsg)\n" );
 
 		try {
 			$currentTitle = $this->getTitleFromInput( $currentPagename ?? '' );
@@ -102,7 +113,8 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 				$newTitle,
 				$user,
 				$reason,
-				$moveSubpages
+				$moveSubpages,
+				$moveTalkpages
 			);
 		} catch ( ImpossiblePageMove $e ) {
 			$fatalErrorMsg = $this->parseErrorMessage( $e->getBlockers() );
@@ -164,6 +176,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$infoMessage = "\nThe following pages will be moved:\n";
 		$count = 0;
 		$subpagesCount = 0;
+		$talkpagesCount = 0;
 
 		/** @var PageMoveOperation[][] */
 		$pagesToMove = [
@@ -195,7 +208,14 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 				$new = $pagePairs->getNewTitle();
 
 				if ( $new ) {
-					$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $new->getPrefixedText();
+					$line = '* ' . $old->getPrefixedText() . ' → ' . $new->getPrefixedText();
+					if ( $pagePairs->hasTalkpage() ) {
+						$count++;
+						$talkpagesCount++;
+						$line .= ' ' . $this->message( 'pt-movepage-talkpage-exists' )->text();
+					}
+
+					$lines[] = $line;
 				}
 			}
 
@@ -220,7 +240,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$this->logSeparator();
 		$this->output(
 			$this->message( 'pt-movepage-list-count' )
-				->numParams( $count, $subpagesCount )
+				->numParams( $count, $subpagesCount, $talkpagesCount )
 				->text() . "\n"
 		);
 		$this->logSeparator();

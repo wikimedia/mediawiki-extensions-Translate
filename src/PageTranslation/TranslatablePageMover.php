@@ -5,8 +5,9 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use AggregateMessageGroup;
 use JobQueueGroup;
-use LinkBatch;
+use LogicException;
 use ManualLogEntry;
+use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Page\MovePageFactory;
 use Message;
@@ -40,13 +41,21 @@ class TranslatablePageMover {
 	private $pageMoveLimit;
 	/** @var JobQueueGroup */
 	private $jobQueue;
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
 	/** @var bool */
 	private $pageMoveLimitEnabled = true;
 
-	public function __construct( MovePageFactory $movePageFactory, JobQueueGroup $jobQueue, ?int $pageMoveLimit ) {
+	public function __construct(
+		MovePageFactory $movePageFactory,
+		JobQueueGroup $jobQueue,
+		LinkBatchFactory $linkBatchFactory,
+		?int $pageMoveLimit
+	) {
 		$this->movePageFactory = $movePageFactory;
 		$this->jobQueue = $jobQueue;
 		$this->pageMoveLimit = $pageMoveLimit;
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function getPageMoveCollection(
@@ -54,7 +63,8 @@ class TranslatablePageMover {
 		?Title $target,
 		User $user,
 		string $reason,
-		bool $moveSubPages
+		bool $moveSubPages,
+		bool $moveTalkPages
 	): PageMoveCollection {
 		$blockers = new SplObjectStorage();
 
@@ -87,7 +97,7 @@ class TranslatablePageMover {
 		}
 
 		$pageCollection = $this->getPagesToMove(
-			$source, $target, $moveSubPages, self::FETCH_TRANSLATABLE_SUBPAGES
+			$source, $target, $moveSubPages, self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages
 		);
 
 		// Collect all the old and new titles for checks
@@ -99,7 +109,7 @@ class TranslatablePageMover {
 
 		// Check that all new titles are valid and count them. Add 1 for source page.
 		$moveCount = 1;
-		$lb = new LinkBatch();
+		$lb = $this->linkBatchFactory->newLinkBatch();
 		foreach ( $titles as $type => $list ) {
 			$moveCount += count( $list );
 			// Give grep a chance to find the usages:
@@ -110,10 +120,7 @@ class TranslatablePageMover {
 				$new = $pair->getNewTitle();
 
 				if ( $new === null ) {
-					$blockers[$old] = Status::newFatal(
-						"pt-movepage-block-$type-invalid",
-						$old->getPrefixedText()
-					);
+					$blockers[$old] = $this->getRenameMoveBlocker( $old, $type, $pair->getRenameErrorCode() );
 					continue;
 				}
 				$lb->addObj( $old );
@@ -136,7 +143,7 @@ class TranslatablePageMover {
 		}
 
 		// Check that there are no move blockers
-		$lb->execute();
+		$lb->setCaller( __METHOD__ )->execute();
 		foreach ( $titles as $type => $list ) {
 			// Give grep a chance to find the usages:
 			// pt-movepage-block-tp-exists, pt-movepage-block-section-exists,
@@ -186,10 +193,11 @@ class TranslatablePageMover {
 		Title $target,
 		bool $moveSubPages,
 		User $user,
-		string $summary
+		string $summary,
+		bool $moveTalkPages
 	): void {
 		$pageCollection = $this->getPagesToMove(
-			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES
+			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages
 		);
 		$pagesToMove = $pageCollection->getListOfPages();
 
@@ -252,46 +260,75 @@ class TranslatablePageMover {
 		Title $source,
 		Title $target,
 		bool $moveSubPages,
-		bool $fetchTranslatableSubpages
+		bool $fetchTranslatableSubpages,
+		bool $moveTalkPages
 	): PageMoveCollection {
 		$page = TranslatablePage::newFromTitle( $source );
-		$base = $source->getPrefixedText();
 		$translatableMovePage = new PageMoveOperation( $source, $target );
+		$pageTitleRenamer = new PageTitleRenamer( $source, $target );
 
-		$translationPages = [];
+		$translationPageList = [];
 		foreach ( $page->getTranslationPages() as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$translationPages[] = new PageMoveOperation( $from, $to );
+			$translationPageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
 		}
 
-		$translationUnitPages = [];
+		$translationUnitPageList = [];
 		foreach ( $page->getTranslationUnitPages( 'all' ) as $from ) {
-			$to = $this->newPageTitle( $base, $from, $target );
-			$translationUnitPages[] = new PageMoveOperation( $from, $to );
+			$translationUnitPageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
 		}
 
-		$subpages = [];
-		if ( TranslateUtils::allowsSubpages( $source ) && $moveSubPages ) {
+		$subpageList = [];
+		if ( $moveSubPages && TranslateUtils::allowsSubpages( $source ) ) {
 			$currentSubpages = $this->getNormalSubpages( $page );
 			foreach ( $currentSubpages as $from ) {
-				$to = $this->newPageTitle( $base, $from, $target );
-				$subpages[] = new PageMoveOperation( $from, $to );
+				$subpageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
 			}
 		}
 
-		$translatableSubpages = [];
+		$translatableTalkpageList = [];
+		// If the source page is a talk page itself, no point looking for more talk pages
+		if ( $moveTalkPages && !$source->isTalkPage() ) {
+			$possiblePagesToBeMoved = array_merge(
+				[ $translatableMovePage ],
+				$translationPageList,
+				$translationUnitPageList,
+				$subpageList
+			);
+
+			$talkPages = $this->getTalkPagesForMove( $possiblePagesToBeMoved );
+			foreach ( $possiblePagesToBeMoved as $index => $pageOperation ) {
+				$currentTalkPage = $talkPages[$index] ?? null;
+				if ( $currentTalkPage === null ) {
+					continue;
+				}
+
+				// If the talk page is translatable, we do not move it, and inform the user
+				// that this needs to be moved separately.
+				if ( TranslatablePage::isSourcePage( $currentTalkPage ) ) {
+					$translatableTalkpageList[] = $currentTalkPage;
+					continue;
+				}
+
+				$pageOperation->setTalkpage(
+					$currentTalkPage, $pageTitleRenamer->getNewTitle( $currentTalkPage )
+				);
+			}
+		}
+
+		$relatedTranslatablePageList = $translatableTalkpageList;
 		if ( $fetchTranslatableSubpages ) {
-			$translatableSubpages = $this->getTranslatableSubpages(
-				TranslatablePage::newFromTitle( $source )
+			$relatedTranslatablePageList = array_merge(
+				$relatedTranslatablePageList,
+				$this->getTranslatableSubpages( TranslatablePage::newFromTitle( $source ) )
 			);
 		}
 
 		return new PageMoveCollection(
 			$translatableMovePage,
-			$translationPages,
-			$translationUnitPages,
-			$subpages,
-			$translatableSubpages
+			$translationPageList,
+			$translationUnitPageList,
+			$subpageList,
+			$relatedTranslatablePageList
 		);
 	}
 
@@ -457,20 +494,64 @@ class TranslatablePageMover {
 		}
 	}
 
-	/** Makes old title into a new title by replacing $base part of old title with $target. */
-	private function newPageTitle( string $base, Title $old, Title $target ): ?Title {
-		$search = preg_quote( $base, '~' );
+	/**
+	 * To identify the talk pages, we first gather the possible talk pages into
+	 * and then check that they exist. Title::exists perform a database check so
+	 * we gather them into LinkBatch to reduce the performance impact.
+	 * @param PageMoveOperation[] $pageMoveOperations
+	 * @return Title[]
+	 */
+	private function getTalkPagesForMove( array $pageMoveOperations ): array {
+		$lb = $this->linkBatchFactory->newLinkBatch();
+		$talkPageList = [];
 
-		if ( $old->inNamespace( NS_TRANSLATIONS ) ) {
-			$new = $old->getText();
-			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
-
-			return Title::makeTitleSafe( NS_TRANSLATIONS, $new );
-		} else {
-			$new = $old->getPrefixedText();
-			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
-
-			return Title::newFromText( $new );
+		foreach ( $pageMoveOperations as $pageOperation ) {
+			$talkPage = $pageOperation->getOldTitle()->getTalkPageIfDefined();
+			$talkPageList[] = $talkPage;
+			if ( $talkPage ) {
+				$lb->addObj( $talkPage );
+			}
 		}
+
+		$lb->setCaller( __METHOD__ )->execute();
+		foreach ( $talkPageList as $index => $talkPage ) {
+			if ( !$talkPage || !$talkPage->exists() ) {
+				$talkPageList[$index] = null;
+			}
+		}
+
+		return $talkPageList;
+	}
+
+	private function createPageMoveOperation( PageTitleRenamer $renamer, Title $from ): PageMoveOperation {
+		try {
+			$to = $renamer->getNewTitle( $from );
+			$operation = new PageMoveOperation( $from, $to );
+		} catch ( InvalidPageTitleRename $e ) {
+			$operation = new PageMoveOperation( $from, null, $e );
+		}
+
+		return $operation;
+	}
+
+	private function getRenameMoveBlocker( Title $old, string $pageType, int $renameError ): Status {
+		if ( $renameError === PageTitleRenamer::NO_ERROR ) {
+			throw new LogicException(
+				'Trying to fetch MoveBlocker when there was no error during rename. Title: ' .
+				$old->getPrefixedText() . ', page type: ' . $pageType
+			);
+		}
+
+		if ( $renameError === PageTitleRenamer::UNKNOWN_PAGE ) {
+			$status = Status::newFatal( 'pt-movepage-block-unknown-page', $old->getPrefixedText() );
+		} elseif ( $renameError === PageTitleRenamer::NS_TALK_UNSUPPORTED ) {
+			$status = Status::newFatal( 'pt-movepage-block-ns-talk-unsupported', $old->getPrefixedText() );
+		} elseif ( $renameError === PageTitleRenamer::RENAME_FAILED ) {
+			$status = Status::newFatal( 'pt-movepage-block-rename-failed', $old->getPrefixedText() );
+		} else {
+			return Status::newFatal( "pt-movepage-block-$pageType-invalid", $old->getPrefixedText() );
+		}
+
+		return $status;
 	}
 }

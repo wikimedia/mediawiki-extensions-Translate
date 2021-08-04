@@ -20,6 +20,8 @@ class PageMoveCollection {
 	private $unitPagesPairs;
 	/** @var PageMoveOperation[] */
 	private $subpagesPairs;
+	/** @var PageMoveOperation[] */
+	private $talkpagesPairs;
 	/** @var Title[] */
 	private $translatableSubpages;
 
@@ -42,6 +44,11 @@ class PageMoveCollection {
 		$this->unitPagesPairs = $unitPagesPairs;
 		$this->subpagesPairs = $subpagesPairs;
 		$this->translatableSubpages = $translatableSubpages;
+
+		// Populate the talk pages from the various inputs.
+		$this->talkpagesPairs = $this->getTalkpages(
+			$this->translatablePage, ...$translationPagePairs, ...$unitPagesPairs, ...$subpagesPairs
+		);
 	}
 
 	public function getTranslatablePage(): PageMoveOperation {
@@ -87,11 +94,13 @@ class PageMoveCollection {
 	public function getListOfPages(): array {
 		$pageList = [
 			$this->translatablePage->getOldTitle()->getPrefixedText() =>
-				$this->translatablePage->getNewTitle()->getPrefixedText()
+				$this->translatablePage->getNewTitle() ?
+					$this->translatablePage->getNewTitle()->getPrefixedText() : null
 		];
 		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->translationPagePairs ) );
 		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->unitPagesPairs ) );
 		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->subpagesPairs ) );
+		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->talkpagesPairs ) );
 
 		return $pageList;
 	}
@@ -113,9 +122,23 @@ class PageMoveCollection {
 	private function getPagePairFromList( array $pagePairs ): array {
 		$pairs = [];
 		foreach ( $pagePairs as $pair ) {
-			$pairs[ $pair->getOldTitle()->getPrefixedText() ] = $pair->getNewTitle()->getPrefixedText();
+			$pairs[ $pair->getOldTitle()->getPrefixedText() ] =
+				$pair->getNewTitle() ? $pair->getNewTitle()->getPrefixedText() : null;
 		}
 
 		return $pairs;
+	}
+
+	/** @return PageMoveOperation[] */
+	private function getTalkpages( PageMoveOperation ...$allMoveOperations ): array {
+		$talkpagesPairs = [];
+		foreach ( $allMoveOperations as $moveOperation ) {
+			if ( $moveOperation->hasTalkpage() ) {
+				$talkpagesPairs[] = new PageMoveOperation(
+					$moveOperation->getOldTalkpage(), $moveOperation->getNewTalkpage()
+				);
+			}
+		}
+		return $talkpagesPairs;
 	}
 }

@@ -73,6 +73,7 @@ return [
 		return new TranslatablePageMover(
 			$services->getMovePageFactory(),
 			JobQueueGroup::singleton(),
+			$services->getLinkBatchFactory(),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},

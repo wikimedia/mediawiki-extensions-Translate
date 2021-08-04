@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\ImpossiblePageMove;
 use MediaWiki\Extension\Translate\PageTranslation\PageMoveCollection;
+use MediaWiki\Extension\Translate\PageTranslation\PageMoveOperation;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
@@ -26,6 +27,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	protected $page;
 	/** @var TranslatablePageMover */
 	protected $pageMover;
+	/** @var bool */
+	private $moveTalkpages;
 
 	public function __construct() {
 		parent::__construct();
@@ -83,15 +86,20 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			}
 
 			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
-				// When listing pages to display, default move subpages to true.
+				// When listing pages to display, default move subpages and talkpages to true.
 				$this->moveSubpages = true;
+				$this->moveTalkpages = true;
+				$request->setVal( 'subpages', $this->moveSubpages );
+				$request->setVal( 'talkpages', $this->moveTalkpages );
+
 				try {
 					$pageCollection = $this->pageMover->getPageMoveCollection(
 						$this->oldTitle,
 						$this->newTitle,
 						$user,
 						$this->reason,
-						$this->moveSubpages
+						$this->moveSubpages,
+						$this->moveTalkpages
 					);
 				} catch ( ImpossiblePageMove $e ) {
 					$this->showErrors( $e->getBlockers() );
@@ -102,12 +110,15 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				$this->showConfirmation( $pageCollection );
 			} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
 				$this->moveSubpages = $request->getBool( 'subpages' );
+				$this->moveTalkpages = $request->getBool( 'talkpages' );
+
 				$this->pageMover->moveAsynchronously(
 					$this->oldTitle,
 					$this->newTitle,
 					$this->moveSubpages,
 					$this->getUser(),
-					$this->msg( 'pt-movepage-logreason', $this->oldTitle )->inContentLanguage()->text()
+					$this->msg( 'pt-movepage-logreason', $this->oldTitle )->inContentLanguage()->text(),
+					$this->moveTalkpages
 				);
 				$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
 			} else {
@@ -236,7 +247,9 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 		$count = 0;
 		$subpagesCount = 0;
+		$talkpagesCount = 0;
 
+		/** @var PageMoveOperation[][] */
 		$pagesToMove = [
 			'pt-movepage-list-pages' => [ $pageCollection->getTranslatablePage() ],
 			'pt-movepage-list-translation' => $pageCollection->getTranslationPagesPair(),
@@ -267,7 +280,14 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 				$old = $pagePairs->getOldTitle();
 				$new = $pagePairs->getNewTitle();
-				$lines[] = '* ' . $old->getPrefixedText() . ' → ' . $new->getPrefixedText();
+				$line = '* ' . $old->getPrefixedText() . ' → ' . $new->getPrefixedText();
+				if ( $pagePairs->hasTalkpage() ) {
+					$count++;
+					$talkpagesCount++;
+					$line .= ' ' . $this->msg( 'pt-movepage-talkpage-exists' )->text();
+				}
+
+				$lines[] = $line;
 			}
 
 			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
@@ -289,7 +309,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$out->addWikiMsg(
 			'pt-movepage-list-count',
 			$this->getLanguage()->formatNum( $count ),
-			$this->getLanguage()->formatNum( $subpagesCount )
+			$this->getLanguage()->formatNum( $subpagesCount ),
+			$this->getLanguage()->formatNum( $talkpagesCount )
 		);
 
 		$formDescriptor = [
@@ -320,6 +341,13 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				'id' => 'mw-subpages',
 				'label-message' => 'pt-movepage-subpages',
 				'default' => $this->moveSubpages,
+			],
+			'talkpages' => [
+				'type' => 'check',
+				'name' => 'talkpages',
+				'id' => 'mw-talkpages',
+				'label-message' => 'pt-movepage-talkpages',
+				'default' => $this->moveTalkpages
 			]
 		];
 
