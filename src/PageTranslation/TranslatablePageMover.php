@@ -78,17 +78,11 @@ class TranslatablePageMover {
 			throw new ImpossiblePageMove( $blockers );
 		}
 
-		if ( $target->exists() ) {
-			$blockers[$source] = Status::newFatal(
-				'pt-movepage-block-base-exists', $target->getPrefixedText()
-			);
-		} else {
-			$movePage = $this->movePageFactory->newMovePage( $source, $target );
-			$status = $movePage->isValidMove();
-			$status->merge( $movePage->checkPermissions( $user, $reason ) );
-			if ( !$status->isOK() ) {
-				$blockers[$source] = $status;
-			}
+		$movePage = $this->movePageFactory->newMovePage( $source, $target );
+		$status = $movePage->isValidMove();
+		$status->merge( $movePage->checkPermissions( $user, $reason ) );
+		if ( !$status->isOK() ) {
+			$blockers[$source] = $status;
 		}
 
 		// Don't spam the same errors for all pages if base page fails
@@ -145,38 +139,27 @@ class TranslatablePageMover {
 		// Check that there are no move blockers
 		$lb->setCaller( __METHOD__ )->execute();
 		foreach ( $titles as $type => $list ) {
-			// Give grep a chance to find the usages:
-			// pt-movepage-block-tp-exists, pt-movepage-block-section-exists,
-			// pt-movepage-block-subpage-exists
 			foreach ( $list as $pair ) {
 				$old = $pair->getOldTitle();
 				$new = $pair->getNewTitle();
 
-				if ( $new->exists() ) {
-					$blockers[$old] = Status::newFatal(
-						"pt-movepage-block-$type-exists",
-						$old->getPrefixedText(),
-						$new->getPrefixedText()
-					);
-				} else {
-					/* This method has terrible performance:
-					 * - 2 queries by core
-					 * - 3 queries by lqt
-					 * - and no obvious way to preload the data! */
-					$movePage = $this->movePageFactory->newMovePage( $old, $new );
-					$status = $movePage->isValidMove();
-					// Do not check for permissions here, as these pages are not editable/movable
-					// in regular use
-					if ( !$status->isOK() ) {
-						$blockers[$old] = $status;
-					}
+				/* This method has terrible performance:
+				 * - 2 queries by core
+				 * - 3 queries by lqt
+				 * - and no obvious way to preload the data! */
+				$movePage = $this->movePageFactory->newMovePage( $old, $new );
+				$status = $movePage->isValidMove();
+				// Do not check for permissions here, as these pages are not editable/movable
+				// in regular use
+				if ( !$status->isOK() ) {
+					$blockers[$old] = $status;
+				}
 
-					/* Because of the poor performance, check only one of the possibly thousands
-					 * of section pages and assume rest are fine. This assumes section pages are
-					 * listed last in the array. */
-					if ( $type === 'section' ) {
-						break;
-					}
+				/* Because of the poor performance, check only one of the possibly thousands
+				 * of section pages and assume rest are fine. This assumes section pages are
+				 * listed last in the array. */
+				if ( $type === 'section' ) {
+					break;
 				}
 			}
 		}
