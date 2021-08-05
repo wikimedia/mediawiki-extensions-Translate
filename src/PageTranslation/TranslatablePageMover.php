@@ -176,7 +176,7 @@ class TranslatablePageMover {
 					 * - 2 queries by core
 					 * - 3 queries by lqt
 					 * - and no obvious way to preload the data! */
-					$movePage = $this->movePageFactory->newMovePage( $old, $target );
+					$movePage = $this->movePageFactory->newMovePage( $old, $new );
 					$status = $movePage->isValidMove();
 					// Do not check for permissions here, as these pages are not editable/movable
 					// in regular use
