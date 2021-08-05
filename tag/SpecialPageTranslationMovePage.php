@@ -202,30 +202,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	public function showForm( $err, $isPermError = false ): void {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
-		$formDescriptor = [
-			'wpOldTitle' => [
-				'type' => 'text',
-				'name' => 'wpOldTitle',
-				'label-message' => 'pt-movepage-current',
-				'default' => $this->oldText,
-				'readonly' => true,
-			],
-			'wpNewTitle' => [
-				'type' => 'text',
-				'name' => 'wpNewTitle',
-				'label-message' => 'pt-movepage-new',
-				'default' => $this->newText,
-			],
-			'reason' => [
-				'type' => 'text',
-				'name' => 'reason',
-				'label-message' => 'pt-movepage-reason',
-				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
-				'default' => $this->reason,
-			]
-		];
-
-		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
+		HTMLForm::factory( 'ooui', $this->getCommonFormFields(), $this->getContext() )
 			->setMethod( 'post' )
 			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
 			->setSubmitName( 'subaction' )
@@ -313,43 +290,25 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			$this->getLanguage()->formatNum( $talkpagesCount )
 		);
 
-		$formDescriptor = [
-			'wpOldTitle' => [
-				'type' => 'text',
-				'name' => 'wpOldTitle',
-				'label-message' => 'pt-movepage-current',
-				'default' => $this->oldText,
-				'readonly' => true,
-			],
-			'wpNewTitle' => [
-				'type' => 'text',
-				'name' => 'wpNewTitle',
-				'label-message' => 'pt-movepage-new',
-				'default' => $this->newText,
-				'readonly' => true,
-			],
-			'reason' => [
-				'type' => 'text',
-				'name' => 'reason',
-				'label-message' => 'pt-movepage-reason',
-				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
-				'default' => $this->reason,
-			],
-			'subpages' => [
-				'type' => 'check',
-				'name' => 'subpages',
-				'id' => 'mw-subpages',
-				'label-message' => 'pt-movepage-subpages',
-				'default' => $this->moveSubpages,
-			],
-			'talkpages' => [
-				'type' => 'check',
-				'name' => 'talkpages',
-				'id' => 'mw-talkpages',
-				'label-message' => 'pt-movepage-talkpages',
-				'default' => $this->moveTalkpages
+		$formDescriptor = array_merge(
+			$this->getCommonFormFields(),
+			[
+				'subpages' => [
+					'type' => 'check',
+					'name' => 'subpages',
+					'id' => 'mw-subpages',
+					'label-message' => 'pt-movepage-subpages',
+					'default' => $this->moveSubpages,
+				],
+				'talkpages' => [
+					'type' => 'check',
+					'name' => 'talkpages',
+					'id' => 'mw-talkpages',
+					'label-message' => 'pt-movepage-talkpages',
+					'default' => $this->moveTalkpages
+				]
 			]
-		];
+		);
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
@@ -373,5 +332,30 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		if ( !$pageCount ) {
 			$out->addWikiMsg( 'pt-movepage-list-no-pages' );
 		}
+	}
+
+	private function getCommonFormFields(): array {
+		return [
+			'wpOldTitle' => [
+				'type' => 'text',
+				'name' => 'wpOldTitle',
+				'label-message' => 'pt-movepage-current',
+				'default' => $this->oldText,
+				'readonly' => true,
+			],
+			'wpNewTitle' => [
+				'type' => 'text',
+				'name' => 'wpNewTitle',
+				'label-message' => 'pt-movepage-new',
+				'default' => $this->newText,
+			],
+			'reason' => [
+				'type' => 'text',
+				'name' => 'reason',
+				'label-message' => 'pt-movepage-reason',
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
+				'default' => $this->reason,
+			]
+		];
 	}
 }
