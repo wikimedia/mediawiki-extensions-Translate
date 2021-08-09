@@ -118,14 +118,6 @@ root:
     LANGUAGES:
       _type: array
       _children:
-        whitelist:
-          _type: prototype
-          _prototype:
-            _type: text
-        blacklist:
-          _type: prototype
-          _prototype:
-            _type: text
         include:
           _type: prototype
           _prototype:

@@ -17,33 +17,18 @@ namespace MediaWiki\Extension\Translate\Utilities;
 class ConfigHelper {
 	/** @return bool|string */
 	public function getValidationExclusionFile() {
-		global $wgTranslateCheckBlacklist, $wgTranslateValidationExclusionFile;
-
-		if ( $wgTranslateValidationExclusionFile !== false ) {
-			return $wgTranslateValidationExclusionFile;
-		}
-
-		return $wgTranslateCheckBlacklist;
+		global $wgTranslateValidationExclusionFile;
+		return $wgTranslateValidationExclusionFile;
 	}
 
 	public function getTranslateAuthorExclusionList(): array {
-		global $wgTranslateAuthorBlacklist, $wgTranslateAuthorExclusionList;
-
-		if ( $wgTranslateAuthorExclusionList !== [] ) {
-			return $wgTranslateAuthorExclusionList;
-		}
-
-		return $wgTranslateAuthorBlacklist;
+		global $wgTranslateAuthorExclusionList;
+		return $wgTranslateAuthorExclusionList;
 	}
 
 	public function getDisabledTargetLanguages(): array {
-		global $wgTranslateBlacklist, $wgTranslateDisabledTargetLanguages;
-
-		if ( $wgTranslateDisabledTargetLanguages !== [] ) {
-			return $wgTranslateDisabledTargetLanguages;
-		}
-
-		return $wgTranslateBlacklist;
+		global $wgTranslateDisabledTargetLanguages;
+		return $wgTranslateDisabledTargetLanguages;
 	}
 
 	public function isAuthorExcluded( string $groupId, string $languageCode, string $username ): bool {
@@ -55,7 +40,7 @@ class ConfigHelper {
 			list( $type, $regex ) = $rule;
 
 			if ( preg_match( $regex, $hash ) ) {
-				if ( $type === 'white' || $type === 'include' ) {
+				if ( $type === 'include' ) {
 					return false;
 				} else {
 					$excluded = true;

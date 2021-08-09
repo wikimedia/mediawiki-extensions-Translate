@@ -213,9 +213,6 @@ class ValidationRunner {
 		$list = PHPVariableLoader::loadVariableFromPHPFile(
 			$validationExclusionFile,
 			'validationExclusionList'
-		) ?? PHPVariableLoader::loadVariableFromPHPFile(
-			$validationExclusionFile,
-			'checkBlacklist'
 		);
 		$keys = [ 'group', 'check', 'subcheck', 'code', 'message' ];
 

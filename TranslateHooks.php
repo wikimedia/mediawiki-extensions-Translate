@@ -961,7 +961,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			return;
 		}
 
-		// Whitelist of tags that should be copied over when updating
+		// List of tags that should be copied over when updating
 		// tp:tag and tp:mark handling is in PageTranslationHooks::updateTranstagOnNullRevisions.
 		$tagsToCopy = [ 'fuzzy', 'tp:transver' ];
 
