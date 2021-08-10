@@ -31,6 +31,7 @@
 		]
 	},
 	"translate": "Переклад",
+	"translate-extensionname": "Перекласти",
 	"translate-desc": "[[Special:Translate|Спеціальна сторінка]] для перекладу MediaWiki та інших програм",
 	"translate-fuzzybot-desc": "Це — спеціальний системний обліковий запис, який використовується [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate розширенням перекладу] MediaWiki для обслуговування перекладів.\nЦей обліковий запис є частиною програмного забезпечення MediaWiki й не належить жодному користувачеві.",
 	"translate-taskui-export-to-file": "Експорт у  «рідному» форматі",
@@ -55,6 +56,7 @@
 	"translate-page-showing": "Показано повідомлення з $1 по $2 (із $3).",
 	"translate-page-showing-all": "Показано $1 {{PLURAL:$1|повідомлення|повідомлення|повідомлень}}.",
 	"translate-page-showing-none": "Нема повідомлень для відображення.",
+	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "наступна сторінка",
 	"translate-prev": "попередня сторінка",
 	"translate-page-description-legend": "Інформація про групу",
@@ -215,6 +217,7 @@
 	"supportedlanguages-summary": "На цій сторінці перелічено активні мови {{GRAMMAR:locative|{{SITENAME}}}},\nразом з іменами перекладачів, що працюють цими мовами.\nІм'я перекладача буде тим більшим, що більше редагувань він зробив.\nКолір підкреслення позначає як давно було вчинено останні дії.",
 	"supportedlanguages-colorlegend": "Кольорова легенда: останній переклад здійснено $1 днів тому.",
 	"supportedlanguages-portallink": "[$1] $2 — $3",
+	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLite не підтримується",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Перекладач|Перекладачка}}|Перекладачі}}: $1",
 	"supportedlanguages-recenttranslations": "останні переклади",
@@ -429,5 +432,13 @@
 	"translate-syntax-error": "У перекладі є синтаксичні помилки",
 	"tux-session-expired": "Зараз Ви не авторизовані. Будь ласка, увійдіть до системи на окремій вкладці. Або зробіть копію незбереженого перекладу, увійдіть, поверніться до цієї сторінки та введіть свої переклади знову.",
 	"tux-nojs": "Цей інструмент не працює без JavaScript. JavaScript вимкнено, не вдалося запустити, або ж цей браузер не підтримується.",
-	"specialpages-group-translation": "Переклад"
+	"specialpages-group-translation": "Переклад",
+	"content-model-translate-messagebundle": "Перекладний пакет повідомлень",
+	"translate-messagebundle-validation-error": "Недійсний пакет повідомлень: $1",
+	"translate-messagebundle-error-invalid-array": "Пакет повідомлень повинен бути об'єктом JSON. Отримав тип $1",
+	"translate-messagebundle-error-key-empty": "Пакет повідомлень не повинен містити порожній ключ",
+	"translate-messagebundle-error-key-too-long": "Клавіша \"$1\" задовга",
+	"translate-messagebundle-error-key-invalid-characters": "Ключ \"$1\" містить заборонені символи",
+	"translate-messagebundle-error-invalid-value": "Ключ \"$1\" не містить значення рядка",
+	"translate-messagebundle-error-empty-value": "Ключ \"$1\" не має значення"
 }
