@@ -105,7 +105,7 @@
 	"tpt-priority-languages": "Адміністратор перекладу визначив для цієї групи пріоритетні мови $1.",
 	"tpt-priority-languages-force": "Адміністратор перекладу встановив $1 як пріоритетні мови для цієї групи. Переклад іншими мовами не дозволений.",
 	"tpt-render-summary": "Оновлення для відповідності новій версії вихідної сторінки",
-	"aggregategroups": "Загальні групи",
+	"aggregategroups": "Агреговані групи",
 	"tpt-aggregategroup-add": "Додати",
 	"tpt-aggregategroup-save": "Зберегти",
 	"tpt-aggregategroup-add-new": "Додати нову загальну групу",

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Sarvaturi"
 		]
 	},
-	"searchtranslations": "Arricerca traduzzioni"
+	"searchtranslations": "Arricerca traduzzioni",
+	"tux-sst-facet-language": "Lingua"
 }
