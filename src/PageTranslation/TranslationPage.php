@@ -85,7 +85,7 @@ class TranslationPage {
 	/** @return TMessage[] */
 	public function extractMessages( MessageCollection $collection ): array {
 		$messages = [];
-		$prefix = $this->sourcePageTitle->getPrefixedText() . '/';
+		$prefix = $this->sourcePageTitle->getPrefixedDBkey() . '/';
 		foreach ( $this->output->units() as $unit ) {
 			$messages[$unit->id] = $collection[$prefix . $unit->id] ?? null;
 		}
