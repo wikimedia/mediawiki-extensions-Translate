@@ -23,7 +23,7 @@
 	},
 	"pagetranslation": "Переклад сторінок",
 	"right-pagetranslation": "Позначення версій сторінок для перекладу",
-	"action-pagetranslation": "керування сторінками, які можна перекладати",
+	"action-pagetranslation": "керування сторінками, які можна перекладати,",
 	"tps-edit-sourcepage-text": "Ви редагуєте джерело сторінки перекладу. Будь ласка, переконайтесь, що ви знайомі з документацією:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Редагування вихідного тексту] \n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Приклади використання розмітки]",
 	"tps-edit-sourcepage-ve-warning-title": "Попередження: Непідтримувана сторінка",
 	"tps-edit-sourcepage-ve-warning-text": "Ви редагуєте перекладабельну сторінку. Редагування таких сторінок в цьому редакторі ще не підтримується офіційно. Будь ласка, скористайтесь редактором коду.",
