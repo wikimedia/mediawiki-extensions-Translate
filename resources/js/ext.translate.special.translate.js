@@ -1,7 +1,9 @@
 ( function () {
 	'use strict';
 
-	var state = {
+	var state, hideOptionalMessages = '!optional';
+
+	state = {
 		group: null,
 		language: null,
 		messageList: null
@@ -114,7 +116,7 @@
 		realFilters = [ '!ignored' ];
 		uri = new mw.Uri( window.location.href );
 		if ( uri.query.optional !== '1' ) {
-			realFilters.push( '!optional' );
+			realFilters.push( hideOptionalMessages );
 		}
 		if ( filter ) {
 			realFilters.push( filter );
@@ -274,7 +276,7 @@
 
 	$( function () {
 		var $translateContainer, $hideTranslatedButton, $messageList,
-			filter, uri, position, offset, limit;
+			filter, uri, position, offset, limit, actualFilter;
 
 		$messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
@@ -314,13 +316,18 @@
 			} );
 
 			// Start loading messages
+			actualFilter = getActualFilter( filter );
 			state.messageList.changeSettings( {
 				group: state.group,
 				language: state.language,
 				offset: offset,
 				limit: limit,
-				filter: getActualFilter( filter )
+				filter: actualFilter
 			} );
+
+			if ( actualFilter.indexOf( hideOptionalMessages ) === -1 ) {
+				$( '#tux-option-optional' ).prop( 'checked', true );
+			}
 		}
 
 		if ( $( document.body ).hasClass( 'rtl' ) ) {
