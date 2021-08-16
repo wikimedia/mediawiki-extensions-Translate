@@ -333,6 +333,9 @@
 			);
 			this.saving = false;
 			this.markUnsavedFailure();
+
+			// Enable the save button again
+			this.$editor.find( '.tux-editor-save-button' ).prop( 'disabled', false );
 		},
 
 		/**
