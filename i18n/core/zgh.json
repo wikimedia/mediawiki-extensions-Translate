@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amara-Amaziɣ",
+			"Brahim-essaidi",
 			"Hakim1bal",
 			"Mdb897"
 		]
@@ -22,12 +23,20 @@
 	"right-translate": "ⵙⵏⴼⵍ ⵙ ⵓⵏⴳⵔⵓⴷⵎ ⵏ ⵓⵙⵓⵖⵍ",
 	"translate-statsf-count-registrations": "ⵉⵏⵙⵙⵎⵔⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ",
 	"translate-translations-project": "ⴰⵙⵏⴼⴰⵕ:",
+	"translate-language": "ⵜⵓⵜⵍⴰⵢⵜ",
+	"translate-ls-column-group": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
+	"translate-mgs-pagename": "ⵉⵙⵏⵎⴽⵜⴰⵏ ⵏ ⵜⵔⵓⴱⴱⴰ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
+	"translate-mgs-group": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ:",
+	"translate-mgs-column-language": "ⵜⵓⵜⵍⴰⵢⵜ",
+	"managemessagegroups": "ⴰⵙⵡⵓⴷⴷⵓ ⵏ ⵜⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
 	"translate-manage-import-new": "ⵜⵓⵣⵉⵏⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ $1",
 	"translate-manage-import-summary": "ⴰⵙⴽⵛⵎ ⵏ ⵜⵓⵏⵖⵉⵍⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵙⴳ ⵓⵙⴰⴳⵎ ⴰⴱⵔⵔⴰⵏⵉ",
 	"translate-documentation-language": "ⴰⵏⵜⴰⵎ ⵏ ⵜⵓⵣⵉⵏⵜ",
 	"translate-dynagroup-additions-desc": "ⵜⴰⴳⵔⴰⵡⵜ ⴰⴷ ⴰⵔ ⵜⵙⵎⴰⵍ ⵜⵉⵎⵢⴰⵣⴰⵏⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⴷ ⵜⵉⴷ ⵉⵜⵜⵡⴰⵙⵏⴼⵍⵏ",
+	"translate-msggroupselector-projects": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
 	"translate-msggroupselector-search-all": "ⴰⴽⴽⵯ",
 	"tux-languageselector": "ⵙⵙⵓⵖⵍ ⵙ",
+	"tux-empty-list-all": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ ⴰ ⵜⵔⵉⵡ",
 	"tux-empty-list-translated-action": "ⵙⵙⵓⵖⵍ",
 	"tux-empty-you-can-help-providing": "ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵡⵙⴷ ⴳ ⵓⵎⵔⵏⵉⵡ ⵏ ⵜⵙⵓⵖⴰⵍ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ"
 }
