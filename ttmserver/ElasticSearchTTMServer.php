@@ -8,6 +8,16 @@
  * @ingroup TTMServer
  */
 
+use Elastica\Aggregation\Terms;
+use Elastica\Client;
+use Elastica\Document;
+use Elastica\Exception\ExceptionInterface;
+use Elastica\Query;
+use Elastica\Query\BoolQuery;
+use Elastica\Query\FunctionScore;
+use Elastica\Query\MatchQuery;
+use Elastica\Query\Term;
+use Elastica\Type\Mapping;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
 
@@ -46,7 +56,7 @@ class ElasticSearchTTMServer
 	 */
 	protected const FROZEN_TYPE = 'frozen';
 
-	/** @var \Elastica\Client */
+	/** @var Client */
 	protected $client;
 	/**
 	 * Reference to the maintenance script to relay logging output.
@@ -91,7 +101,7 @@ class ElasticSearchTTMServer
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( [ 'content' ] );
 
-		$boostQuery = new \Elastica\Query\FunctionScore();
+		$boostQuery = new FunctionScore();
 		$boostQuery->addFunction(
 			'levenshtein_distance_score',
 			[
@@ -99,20 +109,20 @@ class ElasticSearchTTMServer
 				'field' => 'content'
 			]
 		);
-		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
+		$boostQuery->setBoostMode( FunctionScore::BOOST_MODE_REPLACE );
 
 		// Wrap the fuzzy query so it can be used as a filter.
 		// This is slightly faster, as ES can throw away the scores by this query.
-		$bool = new \Elastica\Query\BoolQuery();
+		$bool = new BoolQuery();
 		$bool->addFilter( $fuzzyQuery );
 		$bool->addMust( $boostQuery );
 
-		$languageFilter = new \Elastica\Query\Term();
+		$languageFilter = new Term();
 		$languageFilter->setTerm( 'language', $sourceLanguage );
 		$bool->addFilter( $languageFilter );
 
 		// The whole query
-		$query = new \Elastica\Query();
+		$query = new Query();
 		$query->setQuery( $bool );
 
 		// The interface usually displays three best candidates. These might
@@ -188,7 +198,7 @@ class ElasticSearchTTMServer
 			$idQuery = new \Elastica\Query\Terms();
 			$idQuery->setTerms( '_id', $terms );
 
-			$query = new \Elastica\Query( $idQuery );
+			$query = new Query( $idQuery );
 			$query->setSize( 25 );
 			$query->setParam( '_source', [ 'wiki', 'uri', 'content', 'localid' ] );
 			$resultset = $this->getType()->search( $query );
@@ -255,11 +265,11 @@ class ElasticSearchTTMServer
 		// Do not delete definitions, because the translations are attached to that
 		if ( $handle->getCode() !== $sourceLanguage ) {
 			$localid = $handle->getTitleForBase()->getPrefixedText();
-			$this->deleteByQuery( $this->getType(), Elastica\Query::create(
-				( new \Elastica\Query\BoolQuery() )
-				->addFilter( new Elastica\Query\Term( [ 'wiki' => wfWikiID() ] ) )
-				->addFilter( new Elastica\Query\Term( [ 'language' => $handle->getCode() ] ) )
-				->addFilter( new Elastica\Query\Term( [ 'localid' => $localid ] ) ) ) );
+			$this->deleteByQuery( $this->getType(), Query::create(
+				( new BoolQuery() )
+				->addFilter( new Term( [ 'wiki' => wfWikiID() ] ) )
+				->addFilter( new Term( [ 'language' => $handle->getCode() ] ) )
+				->addFilter( new Term( [ 'localid' => $localid ] ) ) ) );
 		}
 
 		// If translation was made fuzzy, we do not need to add anything
@@ -290,7 +300,7 @@ class ElasticSearchTTMServer
 	 * @param MessageHandle $handle
 	 * @param string $text
 	 * @param int $revId
-	 * @return \Elastica\Document
+	 * @return Document
 	 */
 	protected function createDocument( MessageHandle $handle, $text, $revId ) {
 		$language = $handle->getCode();
@@ -308,7 +318,7 @@ class ElasticSearchTTMServer
 			'group' => $handle->getGroupIds(),
 		];
 
-		return new \Elastica\Document( $globalid, $data );
+		return new Document( $globalid, $data );
 	}
 
 	/**
@@ -367,10 +377,10 @@ class ElasticSearchTTMServer
 		$settings = $type->getIndex()->getSettings();
 		$settings->setRefreshInterval( '-1' );
 
-		$this->deleteByQuery( $this->getType(), \Elastica\Query::create(
-			( new Elastica\Query\Term() )->setTerm( 'wiki', wfWikiID() ) ) );
+		$this->deleteByQuery( $this->getType(), Query::create(
+			( new Term() )->setTerm( 'wiki', wfWikiID() ) ) );
 
-		$mapping = new \Elastica\Type\Mapping();
+		$mapping = new Mapping();
 		$mapping->setType( $type );
 		$mapping->setProperties( [
 			'wiki' => [ 'type' => 'keyword' ],
@@ -457,9 +467,9 @@ class ElasticSearchTTMServer
 	public function getClient() {
 		if ( !$this->client ) {
 			if ( isset( $this->config['config'] ) ) {
-				$this->client = new \Elastica\Client( $this->config['config'] );
+				$this->client = new Client( $this->config['config'] );
 			} else {
-				$this->client = new \Elastica\Client();
+				$this->client = new Client();
 			}
 		}
 		return $this->client;
@@ -601,14 +611,14 @@ class ElasticSearchTTMServer
 
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
-		$searchQuery = new \Elastica\Query\BoolQuery();
+		$searchQuery = new BoolQuery();
 		foreach ( $fields as $analyzer => $words ) {
 			foreach ( $words as $word ) {
-				$boolQuery = new \Elastica\Query\BoolQuery();
-				$contentQuery = new \Elastica\Query\MatchQuery();
+				$boolQuery = new BoolQuery();
+				$contentQuery = new MatchQuery();
 				$contentQuery->setFieldQuery( $analyzer, $word );
 				$boolQuery->addShould( $contentQuery );
-				$messageQuery = new \Elastica\Query\Term();
+				$messageQuery = new Term();
 				$messageQuery->setTerm( 'localid', $word );
 				$boolQuery->addShould( $messageQuery );
 
@@ -632,8 +642,8 @@ class ElasticSearchTTMServer
 				$handle = new MessageHandle( $title );
 				if ( $handle->isValid() && $handle->getCode() !== '' ) {
 					$localid = $handle->getTitleForBase()->getPrefixedText();
-					$boolQuery = new \Elastica\Query\BoolQuery();
-					$messageId = new \Elastica\Query\Term();
+					$boolQuery = new BoolQuery();
+					$messageId = new Term();
 					$messageId->setTerm( 'localid', $localid );
 					$boolQuery->addMust( $messageId );
 					$searchQuery->addShould( $boolQuery );
@@ -652,17 +662,17 @@ class ElasticSearchTTMServer
 	 * @return \Elastica\Search
 	 */
 	public function createSearch( $queryString, $opts, $highlight ) {
-		$query = new \Elastica\Query();
+		$query = new Query();
 
 		[ $searchQuery, $highlights ] = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
-		$language = new \Elastica\Aggregation\Terms( 'language' );
+		$language = new Terms( 'language' );
 		$language->setField( 'language' );
 		$language->setSize( 500 );
 		$query->addAggregation( $language );
 
-		$group = new \Elastica\Aggregation\Terms( 'group' );
+		$group = new Terms( 'group' );
 		$group->setField( 'group' );
 		// Would like to prioritize the top level groups and not show subgroups
 		// if the top group has only few hits, but that doesn't seem to be possile.
@@ -676,18 +686,18 @@ class ElasticSearchTTMServer
 		// multiple must clauses are executed by converting each filter into a bit
 		// field then anding them together. The latter is normally faster if either
 		// of the subfilters are reused. May not make a difference in this context.
-		$filters = new \Elastica\Query\BoolQuery();
+		$filters = new BoolQuery();
 
 		$language = $opts['language'];
 		if ( $language !== '' ) {
-			$languageFilter = new \Elastica\Query\Term();
+			$languageFilter = new Term();
 			$languageFilter->setTerm( 'language', $language );
 			$filters->addFilter( $languageFilter );
 		}
 
 		$group = $opts['group'];
 		if ( $group !== '' ) {
-			$groupFilter = new \Elastica\Query\Term();
+			$groupFilter = new Term();
 			$groupFilter->setTerm( 'group', $group );
 			$filters->addFilter( $groupFilter );
 		}
@@ -724,7 +734,7 @@ class ElasticSearchTTMServer
 
 		try {
 			return $search->search();
-		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+		} catch ( ExceptionInterface $e ) {
 			throw new TTMServerException( $e->getMessage() );
 		}
 	}
@@ -787,10 +797,10 @@ class ElasticSearchTTMServer
 	 *  in 2.x and returned in 5.x.
 	 *
 	 * @param \Elastica\Type $type the source index
-	 * @param \Elastica\Query $query
+	 * @param Query $query
 	 * @throws \RuntimeException
 	 */
-	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
+	private function deleteByQuery( \Elastica\Type $type, Query $query ) {
 		try {
 			MWElasticUtils::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
 		} catch ( \Exception $e ) {
