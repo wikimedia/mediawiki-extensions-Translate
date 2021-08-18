@@ -624,7 +624,7 @@ class ElasticSearchTTMServer
 		foreach ( $fields as $analyzer => $words ) {
 			foreach ( $words as $word ) {
 				$boolQuery = new \Elastica\Query\BoolQuery();
-				$contentQuery = new \Elastica\Query\Match();
+				$contentQuery = new \Elastica\Query\MatchQuery();
 				$contentQuery->setFieldQuery( $analyzer, $word );
 				$boolQuery->addShould( $contentQuery );
 				$messageQuery = new \Elastica\Query\Term();
