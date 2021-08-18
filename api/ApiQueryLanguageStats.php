@@ -22,11 +22,9 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 
 	/** @inheritDoc */
 	protected function validateTargetParamater( array $params ) {
-		$all = TranslateUtils::getLanguageNames( null );
 		$requested = $params[ 'language' ];
-
-		if ( !isset( $all[ $requested ] ) ) {
-			$this->dieWithError( [ 'apierror-translate-invalidlanguage' ] );
+		if ( !TranslateUtils::isSupportedLanguageCode( $requested ) ) {
+			$this->dieWithError( [ 'apierror-translate-invalidlanguage', $requested ] );
 		}
 
 		return $requested;

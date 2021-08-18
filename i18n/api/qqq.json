@@ -149,7 +149,7 @@
 	"apierror-translate-invalidfilter": "{{notranslate}}\n{{doc-apierror}}\n\nParameters:\n* $1 - Filter provided",
 	"apierror-translate-invalidgroup": "{{doc-apierror}}",
 	"apierror-translate-invalidstate": "{{doc-apierror}}",
-	"apierror-translate-invalidlanguage": "{{doc-apierror}}",
+	"apierror-translate-invalidlanguage": "{{doc-apierror}}\n\nParameters:\n* $1 - language code",
 	"apierror-translate-invalidupdate": "{{doc-apierror}}",
 	"apierror-translate-language-disabled": "{{doc-apierror}}",
 	"apierror-translate-language-disabled-reason": "{{doc-apierror}}\n\nParameters:\n* $1 - language name\n* $2 - reason, probably in English",

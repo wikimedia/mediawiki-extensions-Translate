@@ -605,4 +605,15 @@ class TranslateUtils {
 		);
 	}
 
+	/**
+	 * Checks whether a language code is supported for translation at the wiki level.
+	 * Note that it is possible that message groups define other language codes which
+	 * are not supported by the wiki, in which case this function would return false
+	 * for those.
+	 */
+	public static function isSupportedLanguageCode( string $code ): bool {
+		$all = self::getLanguageNames( null );
+		return isset( $all[ $code ] );
+	}
+
 }

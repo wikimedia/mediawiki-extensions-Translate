@@ -39,9 +39,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$this->run( $resultPageSet );
 	}
 
-	private function validateLanguageCode( $code ) {
-		if ( !Language::isValidBuiltInCode( $code ) ) {
-			$this->dieWithError( [ 'apierror-translate-invalidlanguage' ] );
+	private function validateLanguageCode( string $code ): void {
+		if ( !TranslateUtils::isSupportedLanguageCode( $code ) ) {
+			$this->dieWithError( [ 'apierror-translate-invalidlanguage', $code ] );
 		}
 	}
 

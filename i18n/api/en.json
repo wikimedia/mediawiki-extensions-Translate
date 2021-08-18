@@ -141,7 +141,7 @@
 	"apierror-translate-invalidfilter": "$1",
 	"apierror-translate-invalidgroup": "Group does not exist or invalid",
 	"apierror-translate-invalidstate": "The requested state is invalid.",
-	"apierror-translate-invalidlanguage": "The requested language is invalid.",
+	"apierror-translate-invalidlanguage": "Language code $1 is not valid.",
 	"apierror-translate-invalidupdate": "Invalid update",
 	"apierror-translate-language-disabled": "Translation to $1 is disabled.",
 	"apierror-translate-language-disabled-reason": "Translation to $1 is disabled: $2",
