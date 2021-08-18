@@ -292,7 +292,11 @@
 
 					offset = $visibleIcon.offset();
 					tooltip.$element.appendTo( document.body );
-					tooltip.toggle( true ).toggleClipping( false ).togglePositioning( false );
+					tooltip
+						.toggle( true )
+						.toggleClipping( false )
+						.togglePositioning( false )
+						.setAnchorEdge( 'top' );
 					tooltip.$element.css( {
 						top: offset.top + $visibleIcon.outerHeight() + 5,
 						left: offset.left + $visibleIcon.outerWidth() - tooltip.$element.width() / 2 - 15
