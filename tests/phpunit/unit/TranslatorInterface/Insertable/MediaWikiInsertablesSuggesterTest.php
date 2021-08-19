@@ -33,6 +33,16 @@ class MediaWikiInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 			[ '{{GENDER:|he|she}}', [
 				new Insertable( 'GENDER:', '{{GENDER:|', '}}' ),
 			] ],
+			[
+				'Hello <a href="https://en.wikipedia.org">World!</a>',
+				[
+					new Insertable(
+						'<a href="https://en.wikipedia.org"></a>',
+						'<a href="https://en.wikipedia.org">',
+						'</a>'
+					)
+				]
+			]
 		];
 	}
 }
