@@ -14,7 +14,7 @@ class BaseValidatorTestCase extends MediaWikiUnitTestCase {
 		MessageValidator $validator,
 		string $type,
 		string $definition,
-		string $translation,
+		?string $translation,
 		array $subTypes,
 		string $msg
 	) {
