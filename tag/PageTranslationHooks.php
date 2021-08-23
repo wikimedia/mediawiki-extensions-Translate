@@ -1170,7 +1170,16 @@ class PageTranslationHooks {
 			$stats = MessageGroupStats::forItem( $groupId, $code );
 			if ( $stats[MessageGroupStats::FUZZY] ) {
 				// Only show if there is fuzzy messages
-				$wrap = '<div class="mw-pt-translate-header"><span class="mw-translate-fuzzy">$1</span></div>';
+				$wrap = Html::rawElement(
+					'div',
+					[
+						'class' => 'mw-pt-translate-header',
+						'dir' => $language->getDir(),
+						'lang' => $language->getHtmlCode()
+					],
+					'<span class="mw-translate-fuzzy">$1</span>'
+				);
+
 				$output->wrapWikiMsg( $wrap, [ 'tpt-translation-intro-fuzzy' ] );
 			}
 		}
