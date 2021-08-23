@@ -9,8 +9,10 @@
 	"translate-prev": "Ovddit siidu",
 	"translate-stats-users": "Jorgaleaddjit",
 	"translate-sidebar-alltrans": "Eará gielaide",
+	"translations": "Buot jorgalusat",
 	"translate-language": "Giella",
 	"translate-mgs-column-language": "Giella",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
-	"tux-editor-in-other-languages": "Eará gielaide"
+	"tux-editor-in-other-languages": "Eará gielaide",
+	"tux-editor-message-tools-translations": "Buot jorgalusat"
 }

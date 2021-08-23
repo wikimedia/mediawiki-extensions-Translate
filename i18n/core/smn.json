@@ -12,9 +12,11 @@
 	"translate-rcfilters-translations-filter-label": "Iä jurgâlusah",
 	"translate-stats-users": "Jurgâleijeeh",
 	"translate-sidebar-alltrans": "Eres kieláid",
+	"translations": "Puoh jurgâlusah",
 	"translate-language": "Kielâ",
 	"translate-mgs-column-language": "Kielâ",
 	"translate-documentation-language": "jurgâlemravvuuh",
 	"tux-languageselector": "Puátukielâ:",
-	"tux-editor-in-other-languages": "Eres kieláid"
+	"tux-editor-in-other-languages": "Eres kieláid",
+	"tux-editor-message-tools-translations": "Puoh jurgâlusah"
 }
