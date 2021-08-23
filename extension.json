@@ -843,6 +843,8 @@
 				"tpt-discouraged-language-force-content",
 				"tpt-discouraged-language-force-header",
 				"tpt-discouraged-language-header",
+				"tpt-discouraged-translation-header",
+				"tpt-discouraged-translation-content",
 				"tux-editor-proofreading-hide-own-translations",
 				"tux-editor-proofreading-show-own-translations",
 				"translate-workflow-set-doing",

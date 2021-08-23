@@ -182,6 +182,16 @@
 		var $preferredLanguages, headerMessage, languagesMessage,
 			$groupWarning = $( '.tux-editor-header .group-warning' );
 
+		if ( group.priority === 'discouraged' ) {
+			$groupWarning.append(
+				$( '<p>' ).append( $( '<strong>' )
+					.text( mw.message( 'tpt-discouraged-translation-header' ).text() )
+				),
+				$( '<p>' ).append( mw.message( 'tpt-discouraged-translation-content' ).parseDom() )
+			);
+			return;
+		}
+
 		if ( !group.prioritylangs || isPriorityLanguage( language, group.prioritylangs ) ) {
 			return;
 		}
