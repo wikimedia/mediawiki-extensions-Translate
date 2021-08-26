@@ -119,7 +119,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$title = Title::newFromText( $target );
 		if ( !$title ) {
-			$out->addWikiMsg( 'tpt-badtitle' );
+			$out->addWikiMsg( 'tpt-badtitle', $target );
 
 			return;
 		} elseif ( !$title->exists() ) {
