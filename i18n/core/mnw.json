@@ -5,11 +5,16 @@
 			"咽頭べさ"
 		]
 	},
+	"translate-taction-translate": "သွက်ကၠာဲဘာသာ",
 	"translate-rcfilters-translations": "ကၠာဲဘာသာဂမၠိုင်",
+	"translate-stats-users": "ညးတၠကၠာဲဘာသာဂမၠိုင်",
 	"translate-statsf-scale-years": "သၞာံဂမၠိုင်",
+	"translate-statsf-count-users": "ညးတၠသုင်စောဲ ကၠာဲဘာသာဂမၠိုင်",
 	"translate-sidebar-alltrans": "နကဵု အရေဝ်ဘာသာ တၞဟ်",
 	"supportedlanguages": "အရေဝ်ဘာသာ ထံက်ပၚ်လဝ်ဂမၠိုင်",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|ညးတၠကၠာဲဘာသာ}}|ညးတၠကၠာဲဘာသာဂမၠိုင်}}: $1",
 	"translate-documentation-language": "Message documentation",
 	"translate-searchprofile": "ကၠာဲဘာသာဂမၠိုင်",
+	"tux-tab-translated": "ကၠာဲလဝ်ဘာသာ",
 	"tux-editor-in-other-languages": "နကဵု အရေဝ်ဘာသာ တၞဟ်"
 }

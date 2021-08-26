@@ -124,6 +124,7 @@
 	"translate-checks-newline-extra-end": "Il y a $1 caractère{{PLURAL:$1||s}} de saut de ligne en trop à la fin de la traduction.",
 	"translate-checks-value-not-present": "La traduction doit être égale à {{PLURAL:$1|1=|l'une des valeurs suivantes :}} $1.",
 	"translate-checks-replacement": "Utiliser $2 au lieu de $1.",
+	"translate-checks-empty": "Une traduction sans contenu ou avec seulement des espaces n’est pas autorisée.",
 	"translate-pref-editassistlang": "Langues d’assistance :",
 	"prefs-translate": "Options de traduction",
 	"translate-pref-editassistlang-help": "Liste de codes de langues séparés par une virgule.\nLa traduction d’un message dans ces langues est affiché quand vous êtes en train de le traduire.\nLa liste par défaut des langues varie en fonction de votre langue.",

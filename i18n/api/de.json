@@ -110,7 +110,7 @@
 	"apierror-translate-invalidaggregategroupname": "Ungültiger zusammengefasster Nachrichtengruppenname",
 	"apierror-translate-invalidgroup": "Die Gruppe ist nicht vorhanden oder ist ungültig",
 	"apierror-translate-invalidstate": "Der angeforderte Status ist ungültig.",
-	"apierror-translate-invalidlanguage": "Die angeforderte Sprache ist ungültig.",
+	"apierror-translate-invalidlanguage": "Der Sprachcode $1 ist nicht gültig.",
 	"apierror-translate-invalidupdate": "Ungültige Aktualisierung",
 	"apierror-translate-language-disabled": "Übersetzungen nach $1 sind deaktiviert.",
 	"apierror-translate-language-disabled-reason": "Übersetzungen nach $1 sind deaktiviert: $2",

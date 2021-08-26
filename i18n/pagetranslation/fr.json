@@ -118,6 +118,8 @@
 	"tpt-discouraged-language-force": "<strong>Cette page ne peut pas être traduite en $2.</strong>\n\nUn administrateur des traductions a décidé que cette page ne peut être traduite qu’en $3.",
 	"tpt-priority-languages": "Un administrateur de traduction a défini les langues prioritaires suivantes pour ce groupe : $1.",
 	"tpt-priority-languages-force": "Un administrateur de traduction a fixé les langues prioritaires suivantes pour ce groupe : $1. La traduction dans d’autres langues n’est pas autorisée.",
+	"tpt-discouraged-translation-header": "Une traduction de cette page a été déconseillée",
+	"tpt-discouraged-translation-content": "Un administrateur de traduction a déconseillé la traduction de cette page. Vous pouvez toujours traduire la page, mais les traductions pourraient être inutiles.",
 	"tpt-render-summary": "Mise à jour pour être en accord avec la nouvelle version de la source de la page",
 	"aggregategroups": "Groupes d’agrégation",
 	"tpt-aggregategroup-add": "Ajouter",

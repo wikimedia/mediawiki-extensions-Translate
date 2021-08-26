@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"GuoPC",
 			"HERAN",
 			"LNDDYL",
 			"Lakejason0",
@@ -121,7 +122,7 @@
 	"apierror-translate-invalidaggregategroupname": "无效的聚合消息组名称",
 	"apierror-translate-invalidgroup": "组不存在或无效",
 	"apierror-translate-invalidstate": "请求的状态无效。",
-	"apierror-translate-invalidlanguage": "请求的语言无效。",
+	"apierror-translate-invalidlanguage": "语言代码$1无效。",
 	"apierror-translate-invalidupdate": "无效更新",
 	"apierror-translate-language-disabled": "至$1的翻译已禁用。",
 	"apierror-translate-language-disabled-reason": "至$1的翻译已禁用：$2",
