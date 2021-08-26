@@ -250,16 +250,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$revision = (int)$title->getLatestRevID();
 		}
 
-		$page = TranslatablePage::newFromRevision( $title, $revision );
-		if ( !$page instanceof TranslatablePage ) {
-			$out->wrapWikiMsg(
-				'<div class="errorbox">$1</div>',
-				[ 'tpt-notsuitable', $title->getPrefixedText(), $revision ]
-			);
-
-			return;
-		}
-
+		// This also catches the case where revision does not belong to the title
 		if ( $revision !== (int)$title->getLatestRevID() ) {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$target = $title->getFullURL( [ 'oldid' => $revision ] );
@@ -269,6 +260,18 @@ class PageTranslationSpecialPage extends SpecialPage {
 				[ 'tpt-oldrevision', $title->getPrefixedText(), $link ]
 			);
 			$this->listPages();
+
+			return;
+		}
+
+		// newFromRevision never fails, but getReadyTag might fail if revision does not belong
+		// to the page (checked above)
+		$page = TranslatablePage::newFromRevision( $title, $revision );
+		if ( $page->getReadyTag() !== $title->getLatestRevID() ) {
+			$out->wrapWikiMsg(
+				'<div class="errorbox">$1</div>',
+				[ 'tpt-notsuitable', $title->getPrefixedText() ]
+			);
 
 			return;
 		}
