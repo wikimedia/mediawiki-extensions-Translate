@@ -119,11 +119,16 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$title = Title::newFromText( $target );
 		if ( !$title ) {
-			$out->addWikiMsg( 'tpt-badtitle', $target );
+			$out->wrapWikiMsg( Html::errorBox( '$1' ), [ 'tpt-badtitle', $target ] );
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
 		} elseif ( !$title->exists() ) {
-			$out->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
+			$out->wrapWikiMsg(
+				Html::errorBox( '$1' ),
+				[ 'tpt-nosuchpage', $title->getPrefixedText() ]
+			);
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
 		}
@@ -210,9 +215,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 			if ( !$status->isOK() ) {
 				$out->wrapWikiMsg(
-					'<div class="errorbox">$1</div>',
+					Html::errorBox( '$1' ),
 					[ 'tpt-edit-failed', $status->getWikiText() ]
 				);
+				$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 				return;
 			}
@@ -220,10 +226,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$page = TranslatablePage::newFromTitle( $title );
 			$this->unmarkPage( $page, $user );
 			$out->wrapWikiMsg(
-				'<div class="successbox">$1</div>',
+				Html::successBox( '$1' ),
 				[ 'tpt-unmarked', $title->getPrefixedText() ]
 			);
-			$this->listPages();
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
 		}
@@ -232,10 +238,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$page = TranslatablePage::newFromTitle( $title );
 			$this->unmarkPage( $page, $user );
 			$out->wrapWikiMsg(
-				'<div class="successbox">$1</div>',
+				Html::successBox( '$1' ),
 				[ 'tpt-unmarked', $title->getPrefixedText() ]
 			);
-			$this->listPages();
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 		}
 	}
 
@@ -256,10 +262,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$target = $title->getFullURL( [ 'oldid' => $revision ] );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
 			$out->wrapWikiMsg(
-				'<div class="warningbox">$1</div>',
+				Html::warningBox( '$1' ),
 				[ 'tpt-oldrevision', $title->getPrefixedText(), $link ]
 			);
-			$this->listPages();
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
 		}
@@ -269,9 +275,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$page = TranslatablePage::newFromRevision( $title, $revision );
 		if ( $page->getReadyTag() !== $title->getLatestRevID() ) {
 			$out->wrapWikiMsg(
-				'<div class="errorbox">$1</div>',
+				Html::errorBox( '$1' ),
 				[ 'tpt-notsuitable', $title->getPrefixedText() ]
 			);
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
 		}
@@ -329,7 +336,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		] );
 
 		$this->getOutput()->wrapWikiMsg(
-			'<div class="successbox">$1</div>',
+			Html::successBox( '$1' ),
 			[ 'tpt-saveok', $titleText, $num, $link ]
 		);
 
@@ -882,7 +889,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		if ( !$hasChanges ) {
-			$out->wrapWikiMsg( '<div class="successbox">$1</div>', 'tpt-mark-nochanges' );
+			$out->wrapWikiMsg( Html::successBox( '$1' ), 'tpt-mark-nochanges' );
 		}
 
 		$this->priorityLanguagesForm( $page );
