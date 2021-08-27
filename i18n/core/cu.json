@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"NR Deblocked",
 			"ОйЛ"
 		]
 	},
 	"translate-page-language": "ѩꙁꙑкъ",
 	"translate-page-edit": "исправлѥниѥ",
 	"translate-edit-title": "исправлѥниѥ ⁖ $1 ⁖",
+	"translate-checks-empty": "​Переводъ​ ​безꙿ​ ​содержа́нїѧ​ ​и҆лѝ​ ​только​ съ пробелами ​не​ ​допꙋскаетсѧ​.",
 	"translate-stats-edits": "мѣнꙑ",
 	"translate-translations-messagename": "имѧ :",
 	"translate-language": "ѩꙁꙑкъ",

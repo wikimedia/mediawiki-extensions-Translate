@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"NehalDaveND",
-			"Sfic"
+			"Sfic",
+			"ThisIsACreeper0101"
 		]
 	},
 	"tux-sst-edit": "अनुवाद सम्पादित करें",
@@ -13,5 +14,6 @@
 	"tux-sst-facet-group": "संदेश-समूह",
 	"tux-sst-next": "अग्रिम ›",
 	"tux-sst-prev": "‹ पिछला",
-	"tux-sst-ellipsis-outdated": "पुराने अनुवाद"
+	"tux-sst-outdated": "$1 से कालग्रस्त अनुवाद",
+	"tux-sst-ellipsis-outdated": "कालग्रस्त अनुवाद"
 }
