@@ -25,6 +25,7 @@
 	"apihelp-searchtranslations-param-limit": "Rezultāta izmērs.",
 	"apihelp-searchtranslations-example-1": "Rādīt tulkojumus valodai.",
 	"apihelp-translationcheck-summary": "Validēt tulkojumus.",
+	"apierror-translate-invalidlanguage": "Valodas kods $1 ir nederīgs.",
 	"apierror-translate-owntranslation": "Savus tulkojumus nevar pārlasīt",
 	"apierror-translate-sandboxdisabled": "Smilšu kastes iespēja netiek izmantota",
 	"apierror-translate-sandbox-invalidppassword": "Nederīga parole"

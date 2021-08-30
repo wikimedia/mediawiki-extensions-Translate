@@ -6,14 +6,29 @@
 			"ThisIsACreeper0101"
 		]
 	},
+	"searchtranslations": "अनुवाद खोजें",
 	"tux-sst-edit": "अनुवाद सम्पादित करें",
 	"tux-sst-view-foreign": "$1 में देखें",
 	"tux-sst-search": "खोजें",
 	"tux-sst-search-ph": "अनुवाद ढूँढे",
+	"tux-sst-count": "{{PLURAL:$1|एक अंजाम मिला|$1 अंजाम मिले}}",
 	"tux-sst-facet-language": "भाषाएँ",
 	"tux-sst-facet-group": "संदेश-समूह",
+	"tux-sst-nosolr-title": "खोज अनुपलब्ध है",
+	"tux-sst-nosolr-body": "इस विकि पर अनुवाद खोजने की सेवा नहीं है।",
+	"tux-sst-solr-offline-title": "खोज अनुपलब्ध है",
+	"tux-sst-solr-offline-body": "खोज सेवा अस्थायी रूप से अनुपलब्ध है।",
 	"tux-sst-next": "अग्रिम ›",
 	"tux-sst-prev": "‹ पिछला",
+	"tux-sst-default": "अनुवाद",
+	"tux-sst-translated": "$1 से अनुवाद",
+	"tux-sst-untranslated": "$1 से कोई अनुवाद नहीं है",
 	"tux-sst-outdated": "$1 से कालग्रस्त अनुवाद",
-	"tux-sst-ellipsis-outdated": "कालग्रस्त अनुवाद"
+	"tux-sst-ellipsis-untranslated": "कोई अनुवाद नहीं है",
+	"tux-sst-ellipsis-outdated": "कालग्रस्त अनुवाद",
+	"tux-sst-link-all-match": "सभी खोज शब्दों को आवश्यक बनाएँ।",
+	"tux-sst-match-message": "किसी भी खोज शब्द से मेल खाने वाले अनुवाद दिखाए जा रहे हैं। $1",
+	"tux-sst-case-sensitive": "केस-संवेदनशील",
+	"tux-sst-error-offset": "और खोज अंजाम नहीं दिखाए जा सकते हैं। कृपया अपने दायरे को छोटा करें।",
+	"tux-sst-error-language": "इस भाषा को इस प्रकार के खोज में इस्तेमाल नहीं किया जा सकता।"
 }
