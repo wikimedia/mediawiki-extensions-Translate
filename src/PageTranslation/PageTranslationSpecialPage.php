@@ -534,28 +534,28 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$types = $this->classifyPages( $allPages );
 
 		$pages = $types['proposed'];
-		if ( count( $pages ) ) {
+		if ( $pages ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-new-pages-title' );
 			$out->addWikiMsg( 'tpt-new-pages', count( $pages ) );
 			$out->addHTML( $this->getPageList( $pages, 'proposed' ) );
 		}
 
 		$pages = $types['broken'];
-		if ( count( $pages ) ) {
+		if ( $pages ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-other-pages-title' );
 			$out->addWikiMsg( 'tpt-other-pages', count( $pages ) );
 			$out->addHTML( $this->getPageList( $pages, 'broken' ) );
 		}
 
 		$pages = $types['outdated'];
-		if ( count( $pages ) ) {
+		if ( $pages ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-outdated-pages-title' );
 			$out->addWikiMsg( 'tpt-outdated-pages', count( $pages ) );
 			$out->addHTML( $this->getPageList( $pages, 'outdated' ) );
 		}
 
 		$pages = $types['active'];
-		if ( count( $pages ) ) {
+		if ( $pages ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-old-pages-title' );
 			$out->addWikiMsg( 'tpt-old-pages', count( $pages ) );
 			$out->addHTML( $this->getPageList( $pages, 'active' ) );
@@ -563,6 +563,22 @@ class PageTranslationSpecialPage extends SpecialPage {
 	}
 
 	private function actionLinks( array $page, string $type ): string {
+		// Performance optimization to avoid calling $this->msg in a loop
+		static $messageCache = null;
+		if ( $messageCache === null ) {
+			$messageCache = [
+				'mark' => $this->msg( 'tpt-rev-mark' )->text(),
+				'mark-tooltip' => $this->msg( 'tpt-rev-mark-tooltip' )->text(),
+				'encourage' => $this->msg( 'tpt-rev-encourage' )->text(),
+				'encourage-tooltip' => $this->msg( 'tpt-rev-encourage-tooltip' )->text(),
+				'discourage' => $this->msg( 'tpt-rev-discourage' )->text(),
+				'discourage-tooltip' => $this->msg( 'tpt-rev-discourage-tooltip' )->text(),
+				'unmark' => $this->msg( 'tpt-rev-unmark' )->text(),
+				'unmark-tooltip' => $this->msg( 'tpt-rev-unmark-tooltip' )->text(),
+				'pipe-separator' => $this->msg( 'pipe-separator' )->escaped(),
+			];
+		}
+
 		$actions = [];
 		/** @var Title $title */
 		$title = $page['title'];
@@ -577,8 +593,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 			if ( $type !== 'broken' ) {
 				$actions[] = $this->getLinkRenderer()->makeKnownLink(
 					$this->getPageTitle(),
-					$this->msg( 'tpt-rev-mark' )->text(),
-					[ 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ],
+					$messageCache['mark'],
+					[ 'title' => $messageCache['mark-tooltip'] ],
 					[
 						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
@@ -591,8 +607,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 				if ( $page['discouraged'] ) {
 					$actions[] = $this->getLinkRenderer()->makeKnownLink(
 						$this->getPageTitle(),
-						$this->msg( 'tpt-rev-encourage' )->text(),
-						[ 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ] + $js,
+						$messageCache['encourage'],
+						[ 'title' => $messageCache['encourage-tooltip'] ] + $js,
 						[
 							'do' => 'encourage',
 							'target' => $title->getPrefixedText(),
@@ -602,8 +618,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 				} else {
 					$actions[] = $this->getLinkRenderer()->makeKnownLink(
 						$this->getPageTitle(),
-						$this->msg( 'tpt-rev-discourage' )->text(),
-						[ 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ] + $js,
+						$messageCache['discourage'],
+						[ 'title' => $messageCache['discourage-tooltip'] ] + $js,
 						[
 							'do' => 'discourage',
 							'target' => $title->getPrefixedText(),
@@ -614,8 +630,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 				$actions[] = $this->getLinkRenderer()->makeKnownLink(
 					$this->getPageTitle(),
-					$this->msg( 'tpt-rev-unmark' )->text(),
-					[ 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ],
+					$messageCache['unmark'],
+					[ 'title' => $messageCache['unmark-tooltip'] ],
 					[
 						'do' => $type === 'broken' ? 'unmark' : 'unlink',
 						'target' => $title->getPrefixedText(),
@@ -625,11 +641,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 			}
 		}
 
-		if ( !count( $actions ) ) {
+		if ( !$actions ) {
 			return '';
 		}
 
-		return '<div>' . $this->getLanguage()->pipeList( $actions ) . '</div>';
+		return '<div>' . implode( $messageCache['pipe-separator'], $actions ) . '</div>';
 	}
 
 	public function validateUnitIds( array $units ): bool {
@@ -1205,6 +1221,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 	private function getPageList( array $pages, string $type ): string {
 		$items = [];
+		$tagsTextCache = [];
 
 		$tagDiscouraged = $this->msg( 'tpt-tag-discouraged' )->escaped();
 		$tagOldSyntax = $this->msg( 'tpt-tag-oldsyntax' )->escaped();
@@ -1229,12 +1246,17 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 			$tagList = '';
 			if ( $tags ) {
+				// Performance optimization to avoid calling $this->msg in a loop
+				$tagsKey = implode( '', $tags );
+				$tagsTextCache[$tagsKey] = $tagsTextCache[$tagsKey] ??
+					$this->msg( 'parentheses' )
+						->rawParams( $this->getLanguage()->pipeList( $tags ) )
+						->escaped();
+
 				$tagList = Html::rawElement(
 					'span',
 					[ 'class' => 'mw-tpt-actions' ],
-					$this->msg( 'parentheses' )->rawParams(
-						$this->getLanguage()->pipeList( $tags )
-					)->escaped()
+					$tagsTextCache[$tagsKey]
 				);
 			}
 
