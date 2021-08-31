@@ -50,7 +50,7 @@
 	"apierror-translate-invalidaggregategroupname": "Nome del gruppo messaggi aggregati non valido",
 	"apierror-translate-invalidgroup": "Gruppo non esistente o non valido",
 	"apierror-translate-invalidstate": "Lo stato richiesto non è valido.",
-	"apierror-translate-invalidlanguage": "La lingua richiesta non è valida.",
+	"apierror-translate-invalidlanguage": "Il codice lingua $1 non è valido.",
 	"apierror-translate-invalidupdate": "Aggiornamento non valido",
 	"apierror-translate-language-disabled": "Le traduzioni in $1 sono disabilitate.",
 	"apierror-translate-nodynamicgroups": "I gruppi messaggi dinamici non sono supportati qui",
