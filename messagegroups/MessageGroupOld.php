@@ -102,10 +102,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->meta;
 	}
 
-	public function setMeta( $value ) {
-		$this->meta = $value;
-	}
-
 	public function getSourceLanguage() {
 		return 'en';
 	}
@@ -123,10 +119,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		}
 
 		return $this->mangler;
-	}
-
-	public function setMangler( $value ) {
-		$this->mangler = $value;
 	}
 
 	public function load( $code ) {
@@ -280,13 +272,6 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected function isSourceLanguage( $code ) {
 		return $code === $this->getSourceLanguage();
-	}
-
-	/**
-	 * Unsupported stuff, just to satisfy the new interface
-	 * @param array $conf
-	 */
-	public function setConfiguration( $conf ) {
 	}
 
 	public function getConfiguration() {
