@@ -213,13 +213,12 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$ffs->setOfflineMode( true );
 			} else {
 				$fileBasedGroup = $group;
-				$ffs = $group->getFFS();
-			}
-
-			// At this point $group should be an instance of FileBasedMessageGroup
-			// This is primarily to keep linting tools / IDE happy.
-			if ( !$fileBasedGroup instanceof FileBasedMessageGroup ) {
-				$this->fatalError( "EE2: Unexportable message group $groupId" );
+				// At this point $group should be an instance of FileBasedMessageGroup
+				// This is primarily to keep linting tools / IDE happy.
+				if ( !$fileBasedGroup instanceof FileBasedMessageGroup ) {
+					$this->fatalError( "EE2: Unexportable message group $groupId" );
+				}
+				$ffs = $fileBasedGroup->getFFS();
 			}
 
 			$ffs->setWritePath( $target );

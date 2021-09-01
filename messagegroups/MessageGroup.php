@@ -23,13 +23,6 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
  */
 interface MessageGroup {
 	/**
-	 * Returns the parsed YAML configuration.
-	 * @todo Remove from the interface. Only usage is in FFS. Figure out a better way.
-	 * @return array
-	 */
-	public function getConfiguration();
-
-	/**
 	 * Returns the unique identifier for this group.
 	 * @return string
 	 */
@@ -81,13 +74,6 @@ interface MessageGroup {
 	 * @return bool
 	 */
 	public function exists();
-
-	/**
-	 * Returns a FFS object that handles reading and writing messages to files.
-	 * May also return null if it doesn't make sense.
-	 * @return FFS|null
-	 */
-	public function getFFS();
 
 	/**
 	 * Returns a message validator object or null.

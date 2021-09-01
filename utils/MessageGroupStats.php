@@ -543,22 +543,20 @@ class MessageGroupStats {
 		// Calculate if missing and store in the db
 		$collection = $group->initCollection( $code );
 
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
-			$ffs = $group->getFFS();
-			if ( $ffs instanceof GettextFFS ) {
-				/** @var FileBasedMessageGroup $group */
-				'@phan-var FileBasedMessageGroup $group';
-				$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
-				if ( $cache->exists() ) {
-					$template = $cache->getExtra()['TEMPLATE'] ?? [];
-					$infile = [];
-					foreach ( $template as $key => $data ) {
-						if ( isset( $data['comments']['.'] ) ) {
-							$infile[$key] = '1';
-						}
+		if (
+			$code === $wgTranslateDocumentationLanguageCode
+			&& $group instanceof FileBasedMessageGroup
+		) {
+			$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
+			if ( $cache->exists() ) {
+				$template = $cache->getExtra()['TEMPLATE'] ?? [];
+				$infile = [];
+				foreach ( $template as $key => $data ) {
+					if ( isset( $data['comments']['.'] ) ) {
+						$infile[$key] = '1';
 					}
-					$collection->setInFile( $infile );
 				}
+				$collection->setInFile( $infile );
 			}
 		}
 

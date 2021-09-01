@@ -92,24 +92,6 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->conf[$section][$key] ?? null;
 	}
 
-	/**
-	 * @return FFS
-	 * @throws MWException
-	 */
-	public function getFFS() {
-		$class = $this->getFromConf( 'FILES', 'class' );
-
-		if ( $class === null ) {
-			return null;
-		}
-
-		if ( !class_exists( $class ) ) {
-			throw new MWException( "FFS class $class does not exist." );
-		}
-
-		return new $class( $this );
-	}
-
 	public function getValidator() {
 		$validatorConfigs = $this->getFromConf( 'VALIDATORS' );
 		if ( $validatorConfigs === null ) {

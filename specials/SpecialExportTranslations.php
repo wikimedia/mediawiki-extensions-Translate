@@ -189,7 +189,10 @@ class SpecialExportTranslations extends SpecialPage {
 				}
 
 				if ( !$ffs instanceof GettextFFS ) {
-					$group = FileBasedMessageGroup::newFromMessageGroup( $group );
+					if ( !$group instanceof FileBasedMessageGroup ) {
+						$group = FileBasedMessageGroup::newFromMessageGroup( $group );
+					}
+
 					$ffs = new GettextFFS( $group );
 				}
 

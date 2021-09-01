@@ -17,6 +17,9 @@
  * @ingroup MessageGroup
  */
 class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaExtender {
+	public const NO_FFS_CLASS = 1;
+	public const INVALID_FFS_CLASS = 2;
+
 	protected $reverseCodeMap;
 
 	/**
@@ -43,17 +46,35 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 			],
 		];
 
-		return MessageGroupBase::factory( $conf );
+		$group = MessageGroupBase::factory( $conf );
+		if ( !$group instanceof self ) {
+			$actual = get_class( $group );
+			throw new DomainException( "Expected FileBasedMessageGroup, got $actual" );
+		}
+
+		return $group;
+	}
+
+	public function getFFS(): SimpleFFS {
+		$class = $this->getFromConf( 'FILES', 'class' );
+
+		if ( $class === null ) {
+			throw new RuntimeException( 'FFS class is not set.', self::NO_FFS_CLASS );
+		}
+
+		if ( !class_exists( $class ) ) {
+			throw new RuntimeException( "FFS class $class does not exist.", self::INVALID_FFS_CLASS );
+		}
+
+		return new $class( $this );
 	}
 
 	public function exists() {
 		$ffs = $this->getFFS();
-		'@phan-var SimpleFFS $ffs';
 		return $ffs->exists();
 	}
 
 	public function load( $code ) {
-		/** @var $ffs FFS */
 		$ffs = $this->getFFS();
 		$data = $ffs->read( $code );
 

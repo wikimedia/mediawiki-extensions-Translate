@@ -274,14 +274,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $code === $this->getSourceLanguage();
 	}
 
-	public function getConfiguration() {
-		return [];
-	}
-
-	public function getFFS() {
-		return null;
-	}
-
 	/** @deprecated Use getMessageGroupStates */
 	public function getWorkflowConfiguration() {
 		global $wgTranslateWorkflowStates;
@@ -321,6 +313,16 @@ abstract class MessageGroupOld implements MessageGroup {
 		}
 
 		return $message;
+	}
+
+	/**
+	 * List of available message types mapped to the classes
+	 * implementing them. Default implementation (all).
+	 *
+	 * @return array
+	 */
+	public function getTranslationAids() {
+		return TranslationAid::getTypes();
 	}
 
 	public function getSupportConfig(): ?array {

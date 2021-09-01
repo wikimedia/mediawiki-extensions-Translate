@@ -95,6 +95,10 @@ class SimpleFFS implements FFS {
 	 * @throws MWException if the file is not readable or has bad encoding
 	 */
 	public function read( $code ) {
+		if ( !$this->isGroupFfsReadable() ) {
+			return [];
+		}
+
 		if ( !$this->exists( $code ) ) {
 			return false;
 		}
@@ -263,13 +267,7 @@ class SimpleFFS implements FFS {
 	 * @param MessageCollection $collection
 	 */
 	protected function tryReadSource( $filename, MessageCollection $collection ) {
-		$ffs = $this->group->getFFS();
-
-		if ( $ffs === null ) {
-			return;
-		}
-
-		if ( get_class( $ffs ) !== get_class( $this ) ) {
+		if ( !$this->isGroupFfsReadable() ) {
 			return;
 		}
 
@@ -357,5 +355,25 @@ class SimpleFFS implements FFS {
 
 	public function shouldOverwrite( $a, $b ) {
 		return true;
+	}
+
+	/**
+	 * Check if the file format of the current group is readable by the file
+	 * format system. This might happen if we are trying to export a JsonFFS
+	 * or WikiPageMessage group to a GettextFFS
+	 * @return bool
+	 */
+	public function isGroupFfsReadable(): bool {
+		try {
+			$ffs = $this->group->getFFS();
+		} catch ( RunTimeException $e ) {
+			if ( $e->getCode() === FileBasedMessageGroup::NO_FFS_CLASS ) {
+				return false;
+			}
+
+			throw $e;
+		}
+
+		return get_class( $ffs ) === get_class( $this );
 	}
 }
