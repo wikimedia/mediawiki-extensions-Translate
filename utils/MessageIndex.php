@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Cdb\Reader;
+use Cdb\Writer;
 use MediaWiki\Logger\LoggerFactory;
 
 /**
@@ -58,7 +60,7 @@ abstract class MessageIndex {
 	 * Retrieves a list of groups given MessageHandle belongs to.
 	 * @since 2012-01-04
 	 * @param MessageHandle $handle
-	 * @return array
+	 * @return string[]
 	 */
 	public static function getGroupIds( MessageHandle $handle ): array {
 		global $wgTranslateMessageNamespaces;
@@ -94,9 +96,9 @@ abstract class MessageIndex {
 	/**
 	 * @since 2012-01-04
 	 * @param MessageHandle $handle
-	 * @return MessageGroup|null
+	 * @return ?string
 	 */
-	public static function getPrimaryGroupId( MessageHandle $handle ) {
+	public static function getPrimaryGroupId( MessageHandle $handle ): ?string {
 		$groups = self::getGroupIds( $handle );
 
 		return count( $groups ) ? array_shift( $groups ) : null;
@@ -188,7 +190,7 @@ abstract class MessageIndex {
 
 		self::getCache()->clear();
 
-		$new = $old = [];
+		$new = [];
 		$old = $this->retrieve( 'rebuild' );
 		$postponed = [];
 
@@ -230,7 +232,7 @@ abstract class MessageIndex {
 			if ( $interimCacheValue['timestamp'] <= $timestamp ) {
 				$cache->delete( self::CACHEKEY );
 			} else {
-				// We got timestamp lower than newest front cache. This may be caused due to
+				// Cache has a later timestamp. This may be caused due to
 				// job deduplication. Just in case, spin off a new job to clean up the cache.
 				$job = MessageIndexRebuildJob::newJob();
 				JobQueueGroup::singleton()->push( $job );
@@ -286,7 +288,7 @@ abstract class MessageIndex {
 	 * $a = [ 'a' => '1', 'b' => '2', 'c' => '3' ];
 	 * $b = [ 'b' => '2', 'c' => [ '3', '2' ], 'd' => '4' ];
 	 *
-	 * self::getArrayDiff( $a, $b ) ) === [
+	 * self::getArrayDiff( $a, $b ) === [
 	 *   'keys' => [
 	 *     'add' => [ 'd' => [ [], [ '4' ] ] ],
 	 *     'del' => [ 'a' => [ [ '1' ], [] ] ],
@@ -472,7 +474,7 @@ class SerializedMessageIndex extends MessageIndex {
 /**
  * Storage on the database itself.
  *
- * This is likely to be the slowest backend. However it scales okay
+ * This is likely to be the slowest backend. However, it scales okay
  * and provides random access. It also doesn't need any special setup,
  * the database table is added with update.php together with other tables,
  * which is the reason this is the default backend. It also works well
@@ -641,14 +643,14 @@ class CachedMessageIndex extends MessageIndex {
  *
  * Loading the whole index is slower than serialized, but about the same
  * as for database. Suitable for single-server setups where
- * SerializedMessageIndex is too slow for sloading the whole index.
+ * SerializedMessageIndex is too slow for loading the whole index.
  *
  * @since 2012-04-10
  */
 class CDBMessageIndex extends MessageIndex {
 	/** @var array|null */
 	protected $index;
-	/** @var \Cdb\Reader|null */
+	/** @var Reader|null */
 	protected $reader;
 	/** @var string */
 	protected $filename = 'translate_messageindex.cdb';
@@ -707,7 +709,7 @@ class CDBMessageIndex extends MessageIndex {
 		$this->reader = null;
 
 		$file = TranslateUtils::cacheFile( $this->filename );
-		$cache = \Cdb\Writer::open( $file );
+		$cache = Writer::open( $file );
 
 		foreach ( $array as $key => $value ) {
 			$value = $this->serialize( $value );
@@ -731,7 +733,7 @@ class CDBMessageIndex extends MessageIndex {
 			$this->index = $this->rebuild();
 		}
 
-		$this->reader = \Cdb\Reader::open( $file );
+		$this->reader = Reader::open( $file );
 		return $this->reader;
 	}
 }
