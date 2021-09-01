@@ -170,14 +170,6 @@ interface MessageGroup {
 	public function getTranslatableLanguages();
 
 	/**
-	 * List of available message types mapped to the classes
-	 * implementing them.
-	 *
-	 * @return array
-	 */
-	public function getTranslationAids();
-
-	/**
 	 * Gets support URL defined for the group if any
 	 *
 	 * @return array|null

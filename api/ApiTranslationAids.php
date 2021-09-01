@@ -46,7 +46,7 @@ class ApiTranslationAids extends ApiBase {
 		$aggregator = new QueryAggregator();
 
 		// Figure out the intersection of supported and requested aids
-		$types = $group->getTranslationAids();
+		$types = TranslationAid::getTypes();
 		$props = array_intersect( $props, array_keys( $types ) );
 
 		$result = $this->getResult();
@@ -122,9 +122,8 @@ class ApiTranslationAids extends ApiBase {
 		$result->addValue( null, 'times', $times );
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		$props = array_keys( TranslationAid::getTypes() );
-		Hooks::run( 'TranslateTranslationAids', [ &$props ] );
 
 		return [
 			'title' => [
