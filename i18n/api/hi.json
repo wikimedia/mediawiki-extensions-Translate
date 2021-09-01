@@ -37,6 +37,8 @@
 	"apihelp-query+messagecollection-param-group": "संदेश-समूह।",
 	"apihelp-query+messagecollection-param-language": "भाषा कोड।",
 	"apihelp-query+messagecollection-param-limit": "कितने संदेश दिखाएँ (छाँटने के बाद)।",
+	"apihelp-query+messagecollection-param-offset": "शुरुआत के लिए इंटीजर या की ऑफ़सेट।",
+	"apihelp-query+messagecollection-param-filter": "संदेश-समूह फिल्टर। शर्त जोड़ने के लिए <kbd>!</kbd> का इस्तेमाल करें। उदाहरणस्वरूप, <kbd>!fuzzy</kbd> का मतलब है कि सिर्फ गैर-फज़ी संदेश। फिल्टर इस क्रम में जोड़े जाते हैं।\n;fuzzy:फज़ी टैग वाले संदेश।\n;optional:संदेश जिन्हें बदलाव की आवश्यकता होने पर ही अनुवादित किया जाना चाहिए।\n;ignored:संदेश जिन्हें अनुवादित नहीं किया जाता है।\n;hastranslation:संदेश जो अनुवादित हैं, चाहे वे फज़ी हो या ना हो।\n;translated:संदेश जो अनुलादित हैं, मगर फज़ी नहीं हैं।\n;changed:संदेश जिन्हें आखिरी एक्सपोर्ट के बाद अनुवादित किया या बदला गया है।\n;reviewer&#58;N:संदेश जहाँ सदस्य संख्या <kbd>N</kbd> जाँचकर्ताओं में से है।\n;last-translator&#58;N:संदेश जहाँ सदस्य संख्या <kbd>N</kbd> आखिरी अनुवादक है।",
 	"apihelp-query+messagegroups-param-root": "वृक्ष फॉर्मेट का इस्तेमाल करते समय ऊपर से शुरू करने के बजाय चुने गए संदेश-समूह से शुरुआत करें, जिसे एक स्थायी संदेश-समूह होना होगा। साधारण फॉर्मेट का इस्तेमाल करते समय सिर्फ निर्दिष्ट समूह ही लौटाया जाता है।",
 	"apihelp-translatesandbox-param-do": "क्या करें।",
 	"apihelp-translationreview-example-1": "अवलोकन अवतरण १।",

@@ -146,7 +146,7 @@
 	"apierror-translate-invalidaggregategroupname": "Недійсна назва загальної групи повідомлень",
 	"apierror-translate-invalidgroup": "Група не існує або є недійсною",
 	"apierror-translate-invalidstate": "Запитуваний стан недійсний.",
-	"apierror-translate-invalidlanguage": "Запитувана мова є недійсною.",
+	"apierror-translate-invalidlanguage": "Код мови $1 недійсний.",
 	"apierror-translate-invalidupdate": "Недійсне оновлення",
 	"apierror-translate-language-disabled": "Переклад мовою «$1» вимкнено",
 	"apierror-translate-language-disabled-reason": "Переклад мовою «$1» вимкнено: $2",
