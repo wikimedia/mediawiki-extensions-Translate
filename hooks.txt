@@ -68,7 +68,7 @@ Post processing step to format in wiki
  array          &$defaults: Associative array of default values
  array          &$nondefaults: Associative array of nondefault (override) values
 
-;Translate:GettextFFS:headerFields: Allows to customize headers of exported Gettext files per group. Certain X-headers nor Plural-Forms cannot be customized.
+;Translate:GettextFFS:headerFields: Allows customizing headers of exported Gettext files per group. Certain X-headers nor Plural-Forms cannot be customized.
  array          &$headers: List of prefilled headers. You can remove, change or add new headers.
  MessageGroup    $group: Message group instance
  string          $code: Language code
@@ -81,7 +81,7 @@ Post processing step to format in wiki
 
 ;TranslatePostInitGroups: Hook to register new message groups to Translate. Manual cache clear may be needed to have this hook executed.
  array          &$groups: Map of message group id to message group instance
- array          &$deps: List of dependencies as supported by DependecyWrapper class from MediaWiki
+ array          &$deps: List of dependencies as supported by DependencyWrapper class from MediaWiki
  array          &$autoload: List of autoloaded classes. Key is the name of the class and value is filename.
 
 ;TranslateInitGroupLoaders: Hook to register new message group loaders that can then load MessageGroups for translation purpose.
@@ -91,7 +91,7 @@ Post processing step to format in wiki
  string         &$translation: The translation string as it stands
  MessageHandle   $handle: The current MessageHandle object
 
-;TranslateProcessAPIMessageGroupsProperties: Allows exrra property requests to be acted upon, and the new new properties returned
+;TranslateProcessAPIMessageGroupsProperties: Allows extra property requests to be acted upon, and the new properties returned
  array          &$a: Associative array of the properties of $group that will be returned
  array           $props: Associative array ($name => true) of properties the user has specifically requested
  array           $params: Parameter input by the user (unprefixed name => value)
