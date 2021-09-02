@@ -107,6 +107,7 @@
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|Det finns}} $1 extra {{PLURAL:$1|radbrytningstecken}} på slutet av översättningen.",
 	"translate-checks-value-not-present": "Översättningen måste vara likadant som {{PLURAL:$1|1=|ett av följande värden:}} $1.",
 	"translate-checks-replacement": "Använd $2 istället för $1.",
+	"translate-checks-empty": "Översättningar utan innehåll eller med endast blanksteg tillåts inte.",
 	"translate-pref-editassistlang": "Hjälpspråk:",
 	"prefs-translate": "Översättningsalternativ",
 	"translate-pref-editassistlang-help": "Kommaseparerad lista med språkkoder.\nÖversättningar av ett meddelande på dessa språk visas när du översätter.\nStandardlistan på språk avgörs av ditt språk.",
