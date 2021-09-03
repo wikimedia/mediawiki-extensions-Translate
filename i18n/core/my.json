@@ -231,7 +231,7 @@
 	"tux-editor-outdated-notice": "ဤဘာသာပြန်သည် မွမ်းမံရန် လိုအပ်နိုင်သည်။",
 	"tux-editor-outdated-notice-diff-link": "ကွဲပြားမှုများကို ပြရန်",
 	"tux-editor-doc-editor-placeholder": "စာလွှာ စာရွက်စာတမ်း",
-	"tux-editor-doc-editor-save": "စာရွက်စာတမ်း သိမ်းရန်",
+	"tux-editor-doc-editor-save": "စာရွက်စာတမ်း လွှင့်တင်ရန်",
 	"tux-editor-doc-editor-cancel": "မလုပ်တော့ပါ",
 	"tux-messagetable-more-messages": "ပို၍ $1 {{PLURAL:$1|မက်ဆေ့|မက်ဆေ့များ}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|မက်ဆေ့|မက်ဆေ့များ}}ကို ခေါ်ယူနေသည်...",
