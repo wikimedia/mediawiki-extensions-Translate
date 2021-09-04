@@ -23,12 +23,24 @@
 	white-space: nowrap;
 }
 
-.mw-pt-languages-list {
+/* Increased specificity to override .mw-content-(rtl|ltr) ul { padding: 0; } */
+.mw-pt-languages .mw-pt-languages-list {
 	padding: 0.5em;
 }
 
-.mw-pt-languages-list a {
-	white-space: nowrap;
+.mw-pt-languages-list {
+	li {
+		display: inline-block;
+		margin: 0;
+	}
+
+	li:after {
+		content: '@{msg-tpt-languages-separator}';
+	}
+
+	li:last-child:after {
+		content: none;
+	}
 }
 
 .mw-pt-languages-selected,

@@ -395,6 +395,7 @@ class PageTranslationHooks {
 		$sourceLanguage = $pageTitle->getPageLanguage()->getCode();
 
 		$languages = [];
+		$langFactory = MediaWikiServices::getInstance()->getLanguageFactory();
 		foreach ( $status as $code => $percent ) {
 			// Get autonyms (null)
 			$name = TranslateUtils::getLanguageName( $code, null );
@@ -410,14 +411,17 @@ class PageTranslationHooks {
 			}
 
 			$linker = $parser->getLinkRenderer();
+			$lang = $langFactory->getLanguage( $code );
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
-				$element = Html::element(
-					'span',
-					[ 'class' => $classes , 'lang' => LanguageCode::bcp47( $code ) ],
-					$name
-				);
+				$attribs = [
+					'class' => $classes,
+					'lang' => $lang->getHtmlCode(),
+					'dir' => $lang->getDir(),
+				];
+
+				$contents = Html::Element( 'span', $attribs, $name );
 			} elseif ( $subpage->isKnown() ) {
 				$pagename = $page->getPageDisplayTitle( $code );
 				if ( !is_string( $pagename ) ) {
@@ -434,10 +438,11 @@ class PageTranslationHooks {
 				$attribs = [
 					'title' => $title,
 					'class' => $classes,
-					'lang' => LanguageCode::bcp47( $code ),
+					'lang' => $lang->getHtmlCode(),
+					'dir' => $lang->getDir(),
 				];
 
-				$element = $linker->makeKnownLink( $subpage, $name, $attribs );
+				$contents = $linker->makeKnownLink( $subpage, $name, $attribs );
 			} else {
 				/* When language is included because it is a priority language,
 				 * but translation does not yet exists, link directly to the
@@ -450,25 +455,22 @@ class PageTranslationHooks {
 				];
 
 				$classes[] = 'new'; // For red link color
+
 				$attribs = [
 					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage( $userLang )->text(),
 					'class' => $classes,
+					'lang' => $lang->getHtmlCode(),
+					'dir' => $lang->getDir(),
 				];
-				$element = $linker->makeKnownLink( $specialTranslateTitle, $name, $attribs, $params );
+				$contents = $linker->makeKnownLink( $specialTranslateTitle, $name, $attribs, $params );
 			}
-
-			$languages[ $name ] = $element;
+			$languages[ $name ] = Html::rawElement( 'li', [], $contents );
 		}
 
 		// Sort languages by autonym
 		ksort( $languages );
 		$languages = array_values( $languages );
-
-		// dirmark (rlm/lrm) is added, because languages with RTL names can
-		// mess the display
-		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $userLang )->escaped();
-		$sep .= $userLang->getDirMark();
-		$languages = implode( $sep, $languages );
+		$languages = implode( "\n", $languages );
 
 		$out = Html::openElement( 'div', [
 			'class' => 'mw-pt-languages noprint',
@@ -479,7 +481,7 @@ class PageTranslationHooks {
 			wfMessage( 'tpt-languages-legend' )->inLanguage( $userLang )->escaped()
 		);
 		$out .= Html::rawElement(
-			'div',
+			'ul',
 			[ 'class' => 'mw-pt-languages-list' ],
 			$languages
 		);
