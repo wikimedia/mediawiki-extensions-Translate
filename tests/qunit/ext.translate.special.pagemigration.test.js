@@ -74,6 +74,45 @@
 		} );
 	} );
 
+	QUnit.test( '-- Split headers', function ( assert ) {
+		var translationUnits, expected, result;
+		translationUnits = [
+			'== already split ==',
+			'some text\nwith a newline',
+			'==nospace l2==\nabc',
+			'===nospacel3===\ndef',
+			'== spaced l2 ==\nghi',
+			'=== spaced l3 ===\njkl',
+			'== bad spacing==\nmno',
+			'== multiple ==\n===headers===\nin\n===succession===\npqr',
+			'== header ==\nmore text\nwith a newline'
+		];
+		expected = [
+			'== already split ==',
+			'some text\nwith a newline',
+			'==nospace l2==',
+			'abc',
+			'===nospacel3===',
+			'def',
+			'== spaced l2 ==',
+			'ghi',
+			'=== spaced l3 ===',
+			'jkl',
+			'== bad spacing==',
+			'mno',
+			'== multiple ==',
+			'===headers===',
+			'in\n',
+			'===succession===',
+			'pqr',
+			'== header ==',
+			'more text\nwith a newline'
+		];
+		result = mw.translate.splitHeaders( translationUnits );
+		assert.deepEqual( result, expected, 'Headers split into separate units' );
+
+	} );
+
 	QUnit.test( '-- Align h2 headers', function ( assert ) {
 		var sourceUnits, translationUnits1, result1,
 			translationUnits2, result2;

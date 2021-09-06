@@ -263,7 +263,10 @@
 		return translations.map( function ( elem ) {
 			// Check https://regex101.com/r/oT7fZ2 for details
 			return elem.match( /(^==.+$|(?:(?!^==).+\n?)+)/gm );
-		} );
+		} ).reduce( function ( acc, val ) {
+			// This should be an Array.prototype.flatMap when ES2019 is supported
+			return acc.concat( val );
+		}, [] );
 	}
 
 	/**
@@ -520,6 +523,7 @@
 		getSourceUnits: getSourceUnits,
 		getFuzzyTimestamp: getFuzzyTimestamp,
 		splitTranslationPage: splitTranslationPage,
+		splitHeaders: splitHeaders,
 		alignHeaders: alignHeaders
 	} );
 
