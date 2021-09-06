@@ -130,7 +130,7 @@
 	"pm-langcode-missing": "Vypadá to, že za názvem stránky schází kód jazyka. Zadejte prosím název stránky ve tvaru <page-name>/<language-code>.",
 	"tpt-translate-title": "Umožnit překlad názvu stránky",
 	"pp-prepare-button-label": "Připravit",
-	"pp-save-button-label": "Uložit",
+	"pp-save-button-label": "Zveřejnit",
 	"pp-cancel-button-label": "Storno",
 	"pp-pagename-missing": "Zadejte prosím název stránky.",
 	"pp-diff-old-header": "Zdrojový text",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
+			"Nwme",
 			"Pyscowicz",
 			"Valtlait"
 		]
@@ -45,7 +46,7 @@
 	"apihelp-translationcheck-param-translation": "Vahvistettavat käännökset.",
 	"apierror-translate-duplicateaggregategroup": "Viestiryhmä on jo olemassa",
 	"apierror-translate-invalidgroup": "Ryhmä ei ole olemassa tai se on virheellinen",
-	"apierror-translate-invalidlanguage": "Pyydetty kieli ei kelpaa.",
+	"apierror-translate-invalidlanguage": "Kielikoodi $1 ei ole kelvollinen.",
 	"apierror-translate-invalidupdate": "Virheellinen päivitys",
 	"apierror-translate-language-disabled": "Kääntäminen kielelle $1 ei ole mahdollista.",
 	"apierror-translate-language-disabled-reason": "Kääntäminen kielelle $1 ei ole mahdollista: $2",
