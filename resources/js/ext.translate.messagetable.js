@@ -684,7 +684,7 @@
 					$actions.append( messageTable.otherActionButton(
 						'tux-empty-list-translated-action',
 						function () {
-							mw.translate.changeFilter( $( '.tux-tab-untranslated' ).trigger( 'click' ) );
+							$( '.tux-tab-untranslated' ).trigger( 'click' );
 						} )
 					);
 				} else {
