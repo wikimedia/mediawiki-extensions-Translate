@@ -146,7 +146,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		sort( $languages );
 		$this->filterPriorityLangs( $languages, $this->target, $stats );
 		foreach ( $languages as $code ) {
-			if ( $table->isExcluded( $this->target, $code ) !== null ) {
+			if ( $table->isExcluded( $this->target, $code ) ) {
 				continue;
 			}
 			$out .= $this->makeRow( $code, $stats );

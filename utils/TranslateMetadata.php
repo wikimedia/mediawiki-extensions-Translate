@@ -13,6 +13,8 @@
 class TranslateMetadata {
 	/** @var array Map of (group => key => value) */
 	private static $cache = [];
+	/** @var array */
+	private static $priorityCache;
 
 	/** @param string[] $groups List of translate groups */
 	public static function preloadGroups( array $groups ) {
@@ -86,6 +88,8 @@ class TranslateMetadata {
 			);
 			self::$cache[$group][$key] = $value;
 		}
+
+		self::$priorityCache = null;
 	}
 
 	/**
@@ -136,5 +140,48 @@ class TranslateMetadata {
 		$conds = [ 'tmd_group' => $groupId ];
 		$dbw->delete( 'translate_metadata', $conds, __METHOD__ );
 		self::$cache[$groupId] = null;
+		unset( self::$priorityCache[ $groupId ] );
+	}
+
+	public static function isExcluded( string $groupId, string $code ): bool {
+		if ( self::$priorityCache === null ) {
+			$db = TranslateUtils::getSafeReadDB();
+			$res = $db->select(
+				[
+					'a' => 'translate_metadata',
+					'b' => 'translate_metadata'
+				],
+				[
+					'group' => 'b.tmd_group',
+					'langs' => 'b.tmd_value',
+				],
+				[],
+				__METHOD__,
+				[],
+				[
+					'b' => [
+						'INNER JOIN',
+						[
+							'a.tmd_group = b.tmd_group',
+							'a.tmd_key' => 'priorityforce',
+							'a.tmd_value' => 'on',
+							'b.tmd_key' => 'prioritylangs',
+						]
+					]
+				]
+			);
+
+			self::$priorityCache = [];
+			foreach ( $res as $row ) {
+				self::$priorityCache[$row->group] =
+					array_flip( explode( ',', $row->langs ) );
+			}
+		}
+
+		$isDiscouraged = MessageGroups::getPriority( $groupId ) === 'discouraged';
+		$hasLimitedLanguages = isset( self::$priorityCache[$groupId] );
+		$isLanguageIncluded = isset( self::$priorityCache[$groupId][$code] );
+
+		return $isDiscouraged || ( $hasLimitedLanguages && !$isLanguageIncluded );
 	}
 }

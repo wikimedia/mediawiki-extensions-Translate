@@ -283,10 +283,6 @@
 		"SpecialSearchProfileForm": "TranslateHooks::searchProfileForm",
 		"SpecialSearchSetupEngine": "TranslateHooks::searchProfileSetupEngine",
 		"TitleIsAlwaysKnown": "TranslateHooks::onTitleIsAlwaysKnown",
-		"Translate:MessageGroupStats:isIncluded": [
-			"TranslateHooks::hideDiscouragedFromStats",
-			"TranslateHooks::hideRestrictedFromStats"
-		],
 		"MakeGlobalVariablesScript": "TranslateHooks::addConfig",
 		"TranslateEventTranslationReview": [
 			"MessageGroupStats::clear",
@@ -338,7 +334,12 @@
 				"Translate:TranslationStatsDataProvider"
 			]
 		},
-		"LanguageStats": "SpecialLanguageStats",
+		"LanguageStats": {
+			"class": "SpecialLanguageStats",
+			"services": [
+				"LinkBatchFactory"
+			]
+		},
 		"MessageGroupStats": "SpecialMessageGroupStats",
 		"ImportTranslations": "SpecialImportTranslations",
 		"ExportTranslations": "SpecialExportTranslations",

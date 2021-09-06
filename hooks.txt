@@ -37,10 +37,6 @@ Post processing step to format in wiki
 
 === PHP events ===
 
-;Translate:MessageGroupStats:isIncluded: Controls whether message group is shown for a given language in language or message group statistics. Mostly used internally by Translate to hide discouraged groups and groups restricted to certain languages.
- string          $groupId: Message group id
- string          $code: Language code
-
 ;TranslateBeforeAddModules: Provides an opportunity to load extra modules
  array          &$modules: List of resource loader module names
 

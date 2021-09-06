@@ -38,7 +38,7 @@ class MessageGroupStats {
 	/** @var array[] */
 	protected static $updates = [];
 	/** @var string[] */
-	 private static $languages;
+	private static $languages;
 
 	/**
 	 * Returns empty stats array. Useful because the number of elements
@@ -514,8 +514,7 @@ class MessageGroupStats {
 				$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code, $flags );
 			}
 
-			$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $sid, $code ] );
-			if ( $include ) {
+			if ( !TranslateMetadata::isExcluded( $sid, $code ) ) {
 				$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 			}
 		}

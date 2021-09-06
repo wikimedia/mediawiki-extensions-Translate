@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Cache\LinkBatchFactory;
+
 /**
  * Implements includable special page Special:LanguageStats which provides
  * translation statistics for all defined message groups.
@@ -67,12 +69,15 @@ class SpecialLanguageStats extends SpecialPage {
 	protected $statsCounted = [];
 	/** @var array */
 	protected $states;
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
 
-	public function __construct() {
+	public function __construct( LinkBatchFactory $linkBatchFactory ) {
 		parent::__construct( 'LanguageStats' );
 
 		$this->target = $this->getLanguage()->getCode();
 		$this->totals = MessageGroupStats::getEmptyStats();
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function isIncludable() {
@@ -398,7 +403,16 @@ class SpecialLanguageStats extends SpecialPage {
 		$this->addWorkflowStatesColumn();
 		$out = '';
 
-		TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllGroups() ) );
+		// This avoids a database query per translatable page, which would be caused by
+		// $group->getSourceLanguage() in $this->getWorkflowStateCell without preloading
+		$lb = $this->linkBatchFactory->newLinkBatch();
+		foreach ( MessageGroups::getAllGroups() as $group ) {
+			if ( $group instanceof WikiPageMessageGroup ) {
+				$lb->addObj( $group->getTitle() );
+			}
+		}
+		$lb->setCaller( __METHOD__ )->execute();
+
 		$structure = MessageGroups::getGroupStructure();
 		foreach ( $structure as $item ) {
 			$out .= $this->makeGroupGroup( $item, $stats );
@@ -467,7 +481,7 @@ class SpecialLanguageStats extends SpecialPage {
 	) {
 		$groupId = $group->getId();
 
-		if ( $this->table->isExcluded( $groupId, $this->target ) !== null ) {
+		if ( $this->table->isExcluded( $groupId, $this->target ) ) {
 			return '';
 		}
 

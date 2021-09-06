@@ -668,37 +668,6 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	}
 
 	/**
-	 * Hook: Translate:MessageGroupStats:isIncluded
-	 * @param int $id
-	 * @param string $code
-	 * @return bool
-	 */
-	public static function hideDiscouragedFromStats( $id, $code ) {
-		// Return true to keep, false to exclude
-		return MessageGroups::getPriority( $id ) !== 'discouraged';
-	}
-
-	/**
-	 * Hook: Translate:MessageGroupStats:isIncluded
-	 * @param int $id
-	 * @param string $code
-	 * @return false
-	 */
-	public static function hideRestrictedFromStats( $id, $code ) {
-		$filterLangs = TranslateMetadata::get( $id, 'prioritylangs' );
-		$hasPriorityForce = TranslateMetadata::get( $id, 'priorityforce' ) === 'on';
-		if ( strlen( $filterLangs ) === 0 || !$hasPriorityForce ) {
-			// No restrictions, keep everything
-			return true;
-		}
-
-		$filter = array_flip( explode( ',', $filterLangs ) );
-
-		// If the language is in the list, return true to not hide it
-		return isset( $filter[$code] );
-	}
-
-	/**
 	 * Hook: LinksUpdate
 	 * @param LinksUpdate $updater
 	 */

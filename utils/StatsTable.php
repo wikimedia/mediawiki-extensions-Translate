@@ -264,7 +264,7 @@ class StatsTable {
 	 * @param string $code Language code
 	 * @return bool
 	 */
-	public function isExcluded( $groupId, $code ) {
+	public function isExcluded( $groupId, $code ): bool {
 		$excluded = null;
 
 		$checks = [
@@ -291,11 +291,10 @@ class StatsTable {
 			$excluded = true;
 		}
 
-		$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $groupId, $code ] );
-		if ( !$include ) {
+		if ( TranslateMetadata::isExcluded( $groupId, $code ) ) {
 			$excluded = true;
 		}
 
-		return $excluded;
+		return (bool)$excluded;
 	}
 }
