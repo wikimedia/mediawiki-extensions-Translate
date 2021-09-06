@@ -15,7 +15,6 @@ class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 
 		$this->setMwGlobals( [
 			'wgTranslateTranslationServices' => [],
-			'wgTranslateDelayedMessageIndexRebuild' => false
 		] );
 
 		$mg = MessageGroups::singleton();
@@ -26,19 +25,7 @@ class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 		MessageIndex::singleton()->rebuild();
 	}
 
-	public function testInsertImmediate() {
-		global $wgTranslateDelayedMessageIndexRebuild;
-		$wgTranslateDelayedMessageIndexRebuild = false;
-		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
-		$this->assertFalse(
-			JobQueueGroup::singleton()->get( 'MessageIndexRebuildJob' )->pop(),
-			'There is no job in the JobQueue'
-		);
-	}
-
 	public function testInsertDelayed() {
-		global $wgTranslateDelayedMessageIndexRebuild;
-		$wgTranslateDelayedMessageIndexRebuild = true;
 		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
 		$job = JobQueueGroup::singleton()->get( 'MessageIndexRebuildJob' )->pop();
 		$this->assertInstanceOf(

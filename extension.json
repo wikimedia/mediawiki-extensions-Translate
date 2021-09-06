@@ -1214,11 +1214,6 @@
 			"description": "Configures how the message index is stored. Possible values are 'DatabaseMessageIndex', 'SerializedMessageIndex', and 'CDBMessageIndex'. The last two backends need $wgCacheDirectory to be functional.",
 			"public": true
 		},
-		"TranslateDelayedMessageIndexRebuild": {
-			"value": false,
-			"description": "If you have lots of message groups, especially file based ones, and the message index rebuilding gets slow, set this to true to delay the rebuilding via JobQueue. This only makes sense if you have configured jobs to be processed outside of requests via cron or similar.",
-			"public": true
-		},
 		"TranslateUseSandbox": {
 			"value": false,
 			"description": "Whether to allow users to sign up via a sandbox. Sandboxed users cannot do much until approved and thus they can be get rid of easily. This only works with MediaWiki 1.27 and newer, and only if registration is configured to not use account creation providers which give REDIRECT or UI responses or require any other field than the default username/password/email.",
