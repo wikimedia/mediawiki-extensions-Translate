@@ -221,6 +221,8 @@ class TranslatablePageMover {
 
 		$this->moveMetadata( $sourcePage->getMessageGroupId(), $targetPage->getMessageGroupId() );
 
+		TranslatablePage::clearSourcePageCache();
+
 		// Re-render the pages to get everything in sync
 		MessageGroups::singleton()->recache();
 		// Update message index now so that, when after this job the MoveTranslationUnits hook
