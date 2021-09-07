@@ -3,6 +3,7 @@
 		"authors": [
 			"Alison",
 			"BaRaN6161 TURK",
+			"MinecraftAustralia",
 			"Moilleadóir",
 			"පසිඳු කාවින්ද"
 		]
@@ -18,5 +19,6 @@
 	"translate-statsf-submit": "Réamhamharc",
 	"translate-translations-fieldset-title": "Teachtaireacht",
 	"translate-translations-messagename": "Ainm:",
-	"translate-language": "Teanga"
+	"translate-language": "Teanga",
+	"translate-documentation-language": "Doiciméadú teachtaireachta"
 }
