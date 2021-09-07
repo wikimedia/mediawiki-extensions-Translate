@@ -136,7 +136,7 @@ class TranslatablePage {
 			$this->revision = $revision;
 		}
 
-		$flags = TranslateUtils::shouldReadFromMaster()
+		$flags = TranslateUtils::shouldReadFromPrimary()
 			? RevisionLookup::READ_LATEST
 			: RevisionLookup::READ_NORMAL;
 		$rev = MediaWikiServices::getInstance()
