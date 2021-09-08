@@ -70,6 +70,7 @@
 		this.listen();
 		this.storage = this.options.storage || new mw.translate.TranslationApiStorage();
 		this.canDelete = mw.translate.canDelete();
+		this.editFontClass = 'mw-editfont-' + mw.user.options.get( 'editfont' );
 		this.delayValidation = delayer();
 		this.validating = null;
 	}
@@ -554,8 +555,12 @@
 			$messageList = $( '.tux-messagelist' );
 			originalTranslation = this.message.translation;
 			sourceString = this.message.definition;
+			// The following classes are used here:
+			// * mw-editfont-serif
+			// * mw-editfont-sans-serif
+			// * mw-editfont-monospace
 			$sourceString = $( '<span>' )
-				.addClass( 'twelve columns sourcemessage' )
+				.addClass( 'twelve columns sourcemessage ' + this.editFontClass )
 				.attr( {
 					lang: $messageList.data( 'sourcelangcode' ),
 					dir: $messageList.data( 'sourcelangdir' )
@@ -623,8 +628,12 @@
 				targetLangDir = $messageList.data( 'targetlangdir' );
 			}
 
+			// The following classes are used here:
+			// * mw-editfont-serif
+			// * mw-editfont-sans-serif
+			// * mw-editfont-monospace
 			$textarea = $( '<textarea>' )
-				.addClass( 'tux-textarea-translation' )
+				.addClass( 'tux-textarea-translation ' + this.editFontClass )
 				.attr( {
 					lang: targetLangAttrib,
 					dir: targetLangDir

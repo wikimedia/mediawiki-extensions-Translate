@@ -676,7 +676,9 @@
 				"mediawiki.jqueryMsg",
 				"mediawiki.language",
 				"mediawiki.user",
-				"mediawiki.util"
+				"mediawiki.util",
+				"mediawiki.editfont.styles",
+				"user.options"
 			],
 			"messages": [
 				"translate-edit-askpermission",
