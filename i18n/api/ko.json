@@ -30,7 +30,7 @@
 	"apihelp-translationcheck-param-translation": "확인할 번역입니다.",
 	"apierror-translate-duplicateaggregategroup": "메시지 그룹이 이미 존재합니다",
 	"apierror-translate-invalidgroup": "그룹이 존재하지 않거나 잘못되었습니다",
-	"apierror-translate-invalidlanguage": "요청한 언어는 유효하지 않습니다.",
+	"apierror-translate-invalidlanguage": "$1 언어 코드는 유효하지 않습니다.",
 	"apierror-translate-invalidupdate": "유효하지 않은 업데이트",
 	"apierror-translate-language-disabled": "$1로의 번역이 비활성화되어 있습니다.",
 	"apierror-translate-language-disabled-reason": "$1로의 번역이 비활성화되어 있습니다: $2",
