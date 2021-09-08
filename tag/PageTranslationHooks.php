@@ -717,7 +717,8 @@ class PageTranslationHooks {
 	 * @return TPException|null
 	 */
 	protected static function tpSyntaxError( $title, ?Content $content ): ?TPException {
-		if ( !$content instanceof TextContent || !$title ) {
+		// T163254: Ignore translation markup on non-wikitext pages
+		if ( !$content instanceof WikitextContent || !$title ) {
 			return null;
 		}
 
@@ -786,7 +787,8 @@ class PageTranslationHooks {
 	) {
 		$content = $wikiPage->getContent();
 
-		if ( $content instanceof TextContent ) {
+		// T163254: Disable page translation on non-wikitext pages
+		if ( $content instanceof WikitextContent ) {
 			$text = $content->getText();
 		} else {
 			// Not applicable
