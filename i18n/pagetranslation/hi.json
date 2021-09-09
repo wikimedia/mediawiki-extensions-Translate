@@ -63,9 +63,12 @@
 	"pm-pagetitle-missing": "कृपया पृष्ठ का नाम लिखें।",
 	"pp-save-button-label": "सहेजें",
 	"pp-cancel-button-label": "रद्द करें",
+	"pp-pagename-missing": "कृपया पृष्ठ का नाम दर्ज करें।",
 	"pp-diff-old-header": "स्रोत पाठ",
 	"pp-diff-new-header": "तैयार किया गया पाठ",
 	"tpt-unlink-confirm": "कृपया पुष्टि करें कि आप सच में इस पृष्ठ को अनुवाद सिस्टम से हटाना चाहते हैं।\nभाषा चयनकर्ता और अनुवादित पृष्ठों के नाम काम करना बंद कर देंगे।\nअनुवाद पृष्ठों को संपादित करना संभव हो जाएगा।",
 	"tpt-unlink-button": "अनुवाद से निकालें",
-	"tpt-unlink-summary": "पृष्ठ को अनुवाद से निकाला गया"
+	"tpt-unlink-summary": "पृष्ठ को अनुवाद से निकाला गया",
+	"tpt-generic-confirm": "कृपया कार्य को सुनिश्चित करें।",
+	"tpt-generic-button": "सुनिश्चित करें"
 }
