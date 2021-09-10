@@ -32,7 +32,7 @@ class ApiManageMessageGroups extends ApiBase {
 		$renameKey = null;
 
 		if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
-			return $this->dieWithError(
+			$this->dieWithError(
 				[ 'apierror-translate-invalid-changeset-name', wfEscapeWikiText( $name ) ],
 				'invalidchangeset'
 			);
@@ -41,24 +41,24 @@ class ApiManageMessageGroups extends ApiBase {
 
 		if ( !MessageChangeStorage::isModifiedSince( $cdbPath, $changesetModifiedTime ) ) {
 			// Changeset file has been modified since the time the page was generated.
-			return $this->dieWithError( [ 'apierror-translate-changeset-modified' ] );
+			$this->dieWithError( [ 'apierror-translate-changeset-modified' ] );
 		}
 
 		if ( $op === 'rename' ) {
 			if ( !isset( $params['renameMessageKey'] ) ) {
-				return $this->dieWithError( [ 'apierror-missingparam', 'renameMessageKey' ] );
+				$this->dieWithError( [ 'apierror-missingparam', 'renameMessageKey' ] );
 			}
 			$renameKey = $params['renameMessageKey'];
 		}
 
 		$sourceChanges = MessageChangeStorage::getGroupChanges( $cdbPath, $groupId );
 		if ( $sourceChanges->getAllModifications() === [] ) {
-			return $this->dieWithError( [ 'apierror-translate-smg-nochanges' ] );
+			$this->dieWithError( [ 'apierror-translate-smg-nochanges' ] );
 		}
 
 		$group = MessageGroups::getGroup( $groupId );
 		if ( $group === null ) {
-			return $this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
+			$this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
 		}
 
 		try {
@@ -69,7 +69,7 @@ class ApiManageMessageGroups extends ApiBase {
 			} elseif ( $op === 'new' ) {
 				$this->handleNew( $sourceChanges, $msgKey, $group->getSourceLanguage() );
 			} else {
-				return $this->dieWithError(
+				$this->dieWithError(
 					[ 'apierror-translate-invalid-operation', wfEscapeWikiText( $op ),
 						wfEscapeWikiText( implode( '/', [ 'new' , 'rename' ] ) ) ],
 					'invalidoperation'
@@ -223,21 +223,23 @@ class ApiManageMessageGroups extends ApiBase {
 		);
 
 		if ( $msg === null || $renameMsg === null ) {
-			return $this->dieWithError( 'apierror-translate-rename-key-invalid' );
+			$this->dieWithError( 'apierror-translate-rename-key-invalid' );
 		}
 
 		if ( $msgState === MessageSourceChange::RENAME ) {
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$msgState = $sourceChanges->breakRename( $code, $msg['key'] );
 		}
 
 		if ( $renameMsgState === MessageSourceChange::RENAME ) {
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$renameMsgState = $sourceChanges->breakRename( $code, $renameMsg['key'] );
 		}
 
 		// Ensure that one of them is an ADDITION, and one is DELETION
 		if ( $msgState !== MessageSourceChange::ADDITION ||
 			$renameMsgState !== MessageSourceChange::DELETION ) {
-			return $this->dieWithError( [
+			$this->dieWithError( [
 				'apierror-translate-rename-state-invalid',
 				wfEscapeWikiText( $msgState ), wfEscapeWikiText( $renameMsgState )
 			] );
@@ -250,7 +252,9 @@ class ApiManageMessageGroups extends ApiBase {
 		// Add as rename
 		$stringComparator = new SimpleStringComparator();
 		$similarity = $stringComparator->getSimilarity(
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$msg['content'],
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$renameMsg['content']
 		);
 		$sourceChanges->addRename( $code, $msg, $renameMsg, $similarity );

@@ -61,6 +61,7 @@ class QueryAggregator {
 		$clientOptions = [
 			'reqTimeout' => $this->timeout,
 			'connTimeout' => 3,
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			'userAgent' => "MediaWiki Translate extension $version for $wgSitename"
 		];
 

@@ -36,19 +36,19 @@ class ApiTranslationReview extends ApiBase {
 				break;
 			case 'permissiondenied':
 				$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
-				break; // Unreachable, but throws off code analyzer.
+				// dieWithError prevents continuation
 			case 'blocked':
 				$this->dieBlocked( $this->getUser()->getBlock() );
-				break; // Unreachable, but throws off code analyzer.
+				// dieBlocked prevents continuation
 			case 'unknownmessage':
 				$this->dieWithError( 'apierror-translate-unknownmessage', $error );
-				break; // Unreachable, but throws off code analyzer.
+				// dieWithError prevents continuation
 			case 'owntranslation':
 				$this->dieWithError( 'apierror-translate-owntranslation', $error );
-				break; // Unreachable, but throws off code analyzer.
+				// dieWithError prevents continuation
 			case 'fuzzymessage':
 				$this->dieWithError( 'apierror-translate-fuzzymessage', $error );
-				break; // Unreachable, but throws off code analyzer.
+				// dieWithError prevents continuation
 			default:
 				$this->dieWithError( [ 'apierror-unknownerror', $error ], $error );
 		}

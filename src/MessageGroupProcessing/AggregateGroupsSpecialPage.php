@@ -259,7 +259,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 			if ( $group ) {
 				$text = $this->getLinkRenderer()->makeKnownLink( $group->getTitle() );
-				$note = MessageGroups::getPriority( $id );
+				$note = htmlspecialchars( MessageGroups::getPriority( $id ) );
 			} else {
 				$text = htmlspecialchars( $id );
 				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escaped();

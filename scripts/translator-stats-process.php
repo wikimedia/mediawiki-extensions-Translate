@@ -44,6 +44,7 @@ class TSP extends Maintenance {
 	public function execute() {
 		$handle = fopen( $this->getArg( 0 ), 'r' );
 		// remove heading
+		// @phan-suppress-next-line PhanPluginUseReturnValueInternalKnown
 		fgets( $handle );
 
 		$data = [];

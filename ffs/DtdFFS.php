@@ -88,6 +88,7 @@ class DtdFFS extends SimpleFFS {
 		$native = TranslateUtils::getLanguageName( $code, $code );
 
 		$output = "# Messages for $name ($native)\n";
+		// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 		$output .= "# Exported from $wgSitename\n\n";
 
 		return $output;

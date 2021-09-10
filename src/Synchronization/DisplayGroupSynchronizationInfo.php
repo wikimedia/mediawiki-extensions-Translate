@@ -140,7 +140,7 @@ class DisplayGroupSynchronizationInfo {
 				'span',
 				[ 'class' => "{$wrapperClass}__sync-actions" ],
 				$this->localizer->msg( 'parentheses' )
-					->params( $groupResolveAction )->text()
+					->rawParams( $groupResolveAction )->escaped()
 
 			)
 		);
@@ -196,7 +196,7 @@ class DisplayGroupSynchronizationInfo {
 			'span',
 			[ 'class' => "{$wrapperClass}__sync-actions" ],
 			$this->localizer->msg( 'parentheses' )
-				->params( $language->pipeList( $actions ) )->text()
+				->rawParams( $language->pipeList( $actions ) )->escaped()
 		);
 
 		$output .= $this->getMessageInfoHtml( $message, $language );

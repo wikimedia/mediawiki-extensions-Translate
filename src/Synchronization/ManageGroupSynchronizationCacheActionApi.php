@@ -42,13 +42,13 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 
 		$group = MessageGroups::getGroup( $groupId );
 		if ( $group === null ) {
-			return $this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
+			$this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
 		}
 
 		try {
 			if ( $operation === 'resolveMessage' ) {
 				if ( $titleStr === null ) {
-					return $this->dieWithError( [ 'apierror-missingparam', 'title' ] );
+					$this->dieWithError( [ 'apierror-missingparam', 'title' ] );
 				}
 				$this->markAsResolved( $groupId, $titleStr );
 			} elseif ( $operation === 'resolveGroup' ) {

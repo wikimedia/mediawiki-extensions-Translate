@@ -41,8 +41,6 @@ class SpecialImportTranslations extends SpecialPage {
 		// Security and validity checks
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
-
-			return;
 		}
 
 		if ( !$this->getRequest()->wasPosted() ) {

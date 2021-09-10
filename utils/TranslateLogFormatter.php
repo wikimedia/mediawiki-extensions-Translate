@@ -35,6 +35,7 @@ class TranslateLogFormatter extends LogFormatter {
 			$uiLanguage = $this->context->getLanguage();
 			$language = $params[3];
 
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped Mixed plaintext/html mode
 			$targetPage = $this->makePageLinkWithText(
 				$this->entry->getTarget(),
 				$params[4],

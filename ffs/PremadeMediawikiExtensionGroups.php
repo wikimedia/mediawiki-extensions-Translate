@@ -187,6 +187,7 @@ class PremadeMediawikiExtensionGroups {
 			}
 		}
 
+		// @phan-suppress-next-line PhanTypeMismatchReturnSuperType
 		return MessageGroupBase::factory( $conf );
 	}
 

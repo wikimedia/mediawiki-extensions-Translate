@@ -41,8 +41,6 @@ class ApiAggregateGroups extends ApiBase {
 				// means the group does not exist or something has gone wrong.
 
 				$this->dieWithError( 'apierror-translate-invalidaggregategroup', 'invalidaggregategroup' );
-				// For static analysers
-				$subgroups = [];
 			}
 
 			$subgroupId = $params['group'];

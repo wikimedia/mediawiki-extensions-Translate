@@ -34,6 +34,7 @@ abstract class MessageIndex {
 	public static function singleton() {
 		if ( self::$instance === null ) {
 			global $wgTranslateMessageIndex;
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$params = $wgTranslateMessageIndex;
 			if ( is_string( $params ) ) {
 				$params = (array)$params;

@@ -635,8 +635,11 @@ class MessageGroups {
 
 	/**
 	 * Get only groups of specific type (class).
+	 * @phan-template T
 	 * @param string $type Class name of wanted type
+	 * @phan-param class-string<T> $type
 	 * @return MessageGroup[] Map of (group ID => MessageGroupBase)
+	 * @phan-return array<T&MessageGroup>
 	 * @since 2012-04-30
 	 */
 	public static function getGroupsByType( $type ) {
@@ -647,6 +650,7 @@ class MessageGroups {
 			}
 		}
 
+		// @phan-suppress-next-line PhanTypeMismatchReturn
 		return $groups;
 	}
 

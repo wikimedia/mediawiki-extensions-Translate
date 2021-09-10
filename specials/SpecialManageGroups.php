@@ -975,13 +975,12 @@ class SpecialManageGroups extends SpecialPage {
 			return [ false, $isCurrentKeyPresent ];
 		}
 
-		if ( $isSourceLang === false && $sourceChanges->isEqual( $language, $matchedKey ) ) {
-			// For non source language, if strings are equal, they are not shown on the UI
-			// and hence not submitted.
-			return [ false, $isCurrentKeyPresent ];
-		}
-
-		return [ true, $isCurrentKeyPresent ];
+		// For non source language, if strings are equal, they are not shown on the UI
+		// and hence not submitted.
+		return [
+			$isSourceLang || !$sourceChanges->isEqual( $language, $matchedKey ),
+			$isCurrentKeyPresent
+		];
 	}
 
 	private function getProcessingErrorMessage( array $errorGroups, int $totalGroupCount ): string {

@@ -57,6 +57,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		if ( $valid === null ) {
 			global $wgLegalTitleChars;
 			$valid = strtr(
+				// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 				$wgLegalTitleChars,
 				[
 					'=' => '', // equals sign, which is itself usef for escaping

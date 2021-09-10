@@ -291,7 +291,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$error = $this->validateUnitIds( $units );
 
 		// Non-fatal error which prevents saving
-		if ( $error === false && $request->wasPosted() ) {
+		if ( !$error && $request->wasPosted() ) {
 			// Check if user wants to translate title
 			// If not, remove it from the list of units
 			if ( !$request->getCheck( 'translatetitle' ) ) {

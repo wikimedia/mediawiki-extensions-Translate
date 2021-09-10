@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException
  * @license GPL-2.0-or-later
  * @since 2013-03-29
  * @ingroup TranslationAids
+ * @phan-file-suppress PhanPluginNeverReturnMethod
  */
 class UnsupportedTranslationAid extends TranslationAid {
 	public function getData(): array {

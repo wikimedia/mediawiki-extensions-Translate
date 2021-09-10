@@ -100,13 +100,15 @@ class ExportRenameLanguage extends Maintenance {
 	 * @return FileBasedMessageGroup[]
 	 */
 	private function filterGroups( array $groups ) {
+		$return = [];
 		foreach ( $groups as $groupId => $group ) {
 			if ( !$group instanceof FileBasedMessageGroup ) {
 				$this->output( "Skipping non-file based message group $groupId.\n" );
-				unset( $groups[$groupId] );
+				continue;
 			}
+			$return[$groupId] = $group;
 		}
-		return $groups;
+		return $return;
 	}
 
 	private function renameFile( $source, $target ) {

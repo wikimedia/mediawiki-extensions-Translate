@@ -938,11 +938,19 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Fail fast if trying to access unknown properties. @{
 	 * @param string $name
 	 * @throws MWException
+	 * @return never
 	 */
 	public function __get( $name ) {
 		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
 	}
 
+	/**
+	 * Fail fast if trying to access unknown properties.
+	 * @param string $name
+	 * @param mixed $value
+	 * @throws MWException
+	 * @return never
+	 */
 	public function __set( $name, $value ) {
 		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
@@ -970,7 +978,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function next() {
-		return next( $this->keys );
+		next( $this->keys );
 	}
 
 	public function valid() {

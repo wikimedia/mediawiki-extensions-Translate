@@ -334,6 +334,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		} else { // legacy
 			global $wgLegalTitleChars;
 			$snippet = $item['id'];
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
 			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
 			$snippet = preg_replace( '/ {2,}/', ' ', $snippet );

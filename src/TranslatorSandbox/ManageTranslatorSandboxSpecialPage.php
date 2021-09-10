@@ -150,7 +150,6 @@ HTML;
 		usort( $requests, [ $this, 'translatorRequestSort' ] );
 
 		foreach ( $requests as $request ) {
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$items[] = $this->makeRequestItem( $request );
 		}
 
