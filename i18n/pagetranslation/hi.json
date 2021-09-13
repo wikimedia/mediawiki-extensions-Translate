@@ -21,6 +21,7 @@
 	"tpt-rev-encourage": "पुनःस्थापित करें",
 	"translate-tag-translate-link-desc": "इस पृष्ठ को अनुवादित करें",
 	"translate-tag-markthis": "इस पृष्ठ को अनुवाद हेतु चिह्नित करें",
+	"tpt-translation-intro": "यह पृष्ठ [[$2]] पृष्ठ का एक <span class=\"plainlinks\">[$1 अनुवादित संस्करण]</span> है और इसे $3% तक पूरा किया गया है।",
 	"tpt-translation-intro-fuzzy": "कालग्रस्त अनुवादों को इस तरह से मार्क किया जाता है।",
 	"tpt-languages-legend": "अन्य भाषाएँ:",
 	"tpt-languages-zero": "इस भाषा के लिए अनुवाद करना शुरू करें",
