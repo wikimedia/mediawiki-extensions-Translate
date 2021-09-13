@@ -1060,7 +1060,7 @@ class PageTranslationHooks {
 
 		$actions = [];
 		if ( $marked && $context->getUser()->isAllowed( 'translate' ) ) {
-			$actions[] = self::getTranslateLink( $context, $page, $language->getCode() );
+			$actions[] = self::getTranslateLink( $context, $page, null );
 		}
 
 		$hasChanges = $ready === $latest && $marked !== $latest;
@@ -1103,8 +1103,10 @@ class PageTranslationHooks {
 	}
 
 	private static function getTranslateLink(
-		IContextSource $context, TranslatablePage $page, $langCode
-	) {
+		IContextSource $context,
+		TranslatablePage $page,
+		?string $langCode
+	): string {
 		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
 
 		return $linker->makeKnownLink(
