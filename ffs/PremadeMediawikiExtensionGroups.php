@@ -40,7 +40,7 @@ class PremadeMediawikiExtensionGroups {
 	 */
 	public function __construct( $def, $path ) {
 		$this->definitionFile = $def;
-		$this->path = $path;
+		$this->path = rtrim( $path, '/' );
 	}
 
 	/**
