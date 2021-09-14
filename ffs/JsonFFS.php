@@ -101,10 +101,16 @@ class JsonFFS extends SimpleFFS {
 			return '';
 		}
 
-		return $this->generateFile( $template, $authors, $messages );
+		$template['MESSAGES'] = $messages;
+		$template['AUTHORS'] = $authors;
+
+		return $this->generateFile( $template );
 	}
 
-	public function generateFile( array $template, array $authors, array $messages ): string {
+	public function generateFile( array $template ): string {
+		$messages = $template['MESSAGES'];
+		$authors = $template['AUTHORS'];
+
 		if ( $this->flattener ) {
 			$messages = $this->flattener->unflatten( $messages );
 		}

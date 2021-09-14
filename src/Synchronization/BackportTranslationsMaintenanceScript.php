@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
 use MessageGroups;
 use RuntimeException;
+use SimpleFFS;
 use TranslateUtils;
 
 /**
@@ -119,12 +120,13 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				continue;
 			}
 
-			$compatibleKeys = $this->getCompatibleKeys(
+			$keyCompatibilityMap = $this->getKeyCompatibilityMap(
 				$sourceDefinitions['MESSAGES'],
-				$targetDefinitions['MESSAGES']
+				$targetDefinitions['MESSAGES'],
+				$group->getFFS()
 			);
 
-			if ( $compatibleKeys === [] ) {
+			if ( array_filter( $keyCompatibilityMap ) === [] ) {
 				$this->output( "Skipping $groupId: No compatible keys found\n" );
 				continue;
 			}
@@ -140,7 +142,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 					$group,
 					$sourcePath,
 					$targetPath,
-					$compatibleKeys,
+					$keyCompatibilityMap,
 					$language
 				);
 
@@ -154,7 +156,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 					sprintf(
 						"%s: Compatible keys: %d. Updated %d languages, %d new (%s)\n",
 						$group->getId(),
-						count( $compatibleKeys ),
+						count( $keyCompatibilityMap ),
 						$numUpdated,
 						$numAdded,
 						implode( ', ', $summary[ 'new' ] ?? [] )
@@ -194,13 +196,19 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		return $group->getFFS()->readFromVariable( $contents );
 	}
 
-	/** @return string[] */
-	private function getCompatibleKeys( array $source, array $target ): array {
+	/**
+	 * Compares two arrays and returns a new array with keys from the target array with associated values
+	 * being a boolean indicating whether the source array value is compatible with the target array value.
+	 *
+	 * Target array key order was chosen because in backporting we want to use the order of keys in the
+	 * backport target (stable branch). Comparison is done with SimpleFFS::isContentEqual.
+	 *
+	 * @return array<string,bool> Keys in target order
+	 */
+	private function getKeyCompatibilityMap( array $source, array $target, SimpleFFS $ffs ): array {
 		$keys = [];
-		foreach ( $source as $key => $value ) {
-			if ( ( $target[ $key ] ?? null ) === $value ) {
-				$keys[] = $key;
-			}
+		foreach ( $target as $key => $value ) {
+			$keys[$key] = isset( $source[ $key ] ) && $ffs->isContentEqual( $source[ $key ], $value );
 		}
 		return $keys;
 	}
@@ -209,25 +217,25 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		FileBasedMessageGroup $group,
 		string $source,
 		string $targetPath,
-		array $compatibleKeys,
+		array $keyCompatibilityMap,
 		string $language
 	): string {
 		try {
-			$sourceTranslations = $this->loadDefinitions( $group, $source, $language );
+			$sourceTemplate = $this->loadDefinitions( $group, $source, $language );
 		} catch ( RuntimeException $e ) {
 			return 'no definitions';
 		}
 
 		try {
-			$targetTranslations = $this->loadDefinitions( $group, $targetPath, $language );
+			$targetTemplate = $this->loadDefinitions( $group, $targetPath, $language );
 		} catch ( RuntimeException $e ) {
-			$targetTranslations = [
+			$targetTemplate = [
 				'MESSAGES' => [],
 				'AUTHORS' => [],
 			];
 		}
 
-		// Amend target with compatible things from source
+		// Amend the target with compatible things from the source
 		$hasUpdates = false;
 
 		$ffs = $group->getFFS();
@@ -240,15 +248,27 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			);
 		}
 
-		foreach ( $compatibleKeys as $key ) {
-			$sourceValue = $sourceTranslations[ 'MESSAGES' ][ $key ] ?? null;
-			$targetValue = $targetTranslations[ 'MESSAGES' ][ $key ] ?? null;
-			if ( $sourceValue === null || $ffs->isContentEqual( $sourceValue, $targetValue ) ) {
-				continue;
+		$combinedMessages = [];
+		// $keyCompatibilityMap has the target (stable branch) source language key order
+		foreach ( $keyCompatibilityMap as $key => $isCompatible ) {
+			$sourceValue = $sourceTemplate['MESSAGES'][$key] ?? null;
+			$targetValue = $targetTemplate['MESSAGES'][$key] ?? null;
+
+			// Use existing translation value from the target (stable branch) as the default
+			if ( $targetValue !== null ) {
+				$combinedMessages[$key] = $targetValue;
 			}
 
-			$hasUpdates = true;
-			$targetTranslations[ 'MESSAGES' ][ $key ] = $sourceValue;
+			// If the source (development branch) has a different translation for a compatible key
+			// replace the target (stable branch) translation with it.
+			if ( !$isCompatible ) {
+				continue;
+			}
+			if ( $sourceValue !== null && !$ffs->isContentEqual( $sourceValue, $targetValue ) ) {
+				// Keep track if we actually overwrote any values, so we can report back stats
+				$hasUpdates = true;
+				$combinedMessages[$key] = $sourceValue;
+			}
 		}
 
 		if ( !$hasUpdates ) {
@@ -257,17 +277,16 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 		// Copy over all authors (we do not know per-message level)
 		$combinedAuthors = array_merge(
-			$targetTranslations[ 'AUTHORS' ] ?? [],
-			$sourceTranslations[ 'AUTHORS' ] ?? []
+			$targetTemplate[ 'AUTHORS' ] ?? [],
+			$sourceTemplate[ 'AUTHORS' ] ?? []
 		);
 		$combinedAuthors = array_unique( $combinedAuthors );
 		$combinedAuthors = $ffs->filterAuthors( $combinedAuthors, $language );
 
-		$backportedContent = $ffs->generateFile(
-			$targetTranslations,
-			$combinedAuthors,
-			$targetTranslations[ 'MESSAGES' ]
-		);
+		$targetTemplate['AUTHORS'] = $combinedAuthors;
+		$targetTemplate['MESSAGES'] = $combinedMessages;
+
+		$backportedContent = $ffs->generateFile( $targetTemplate );
 
 		$targetFilename = $targetPath . '/' . $group->getTargetFilename( $language );
 		if ( file_exists( $targetFilename ) ) {
