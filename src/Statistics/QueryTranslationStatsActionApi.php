@@ -50,7 +50,7 @@ class QueryTranslationStatsActionApi extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_DFLT => 30,
 				ApiBase::PARAM_MIN => 1,
-				ApiBase::PARAM_MAX => 1000,
+				ApiBase::PARAM_MAX => 10000,
 				ApiBase::PARAM_RANGE_ENFORCE => true
 			],
 			'group' => [
