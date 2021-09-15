@@ -39,7 +39,6 @@
 	"tpt-aggregategroup-new-name": "പേര്:",
 	"tpt-aggregategroup-new-description": "വിവരണം (ഐച്ഛികം):",
 	"log-name-pagetranslation": "താൾ പരിഭാഷാ രേഖ",
-	"pt-movepage-block-subpage-exists": "ലക്ഷ്യം വെച്ച ഉപതാൾ [[:$2]] നിലവിലുണ്ട്.",
 	"pt-movepage-list-pages": "മാറ്റേണ്ട താളുകളുടെ പട്ടിക",
 	"pt-movepage-list-translation": "പരിഭാഷാ{{PLURAL:$1|താൾ|താളുകൾ}}",
 	"pt-movepage-list-section": "ഉപവിഭാഗ താളുകൾ",
