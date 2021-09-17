@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Omotecho",
+			"RYOUMA1117",
 			"Shirayuki",
 			"Sujiniku"
 		]
@@ -89,7 +90,7 @@
 	"apierror-translate-invalidaggregategroupname": "無効なメッセージ群の集計の名前",
 	"apierror-translate-invalidgroup": "存在しないもしくは無効なグループ",
 	"apierror-translate-invalidstate": "要求された状態は無効です。",
-	"apierror-translate-invalidlanguage": "請求された言語は無効です。",
+	"apierror-translate-invalidlanguage": "言語コード$1は無効です。",
 	"apierror-translate-invalidupdate": "更新が無効です",
 	"apierror-translate-language-disabled": "$1への翻訳はできません。",
 	"apierror-translate-language-disabled-reason": "$1への翻訳はできません。$2",
