@@ -14,7 +14,9 @@ use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\MutableRevisionRecord;
+use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\EditResult;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\ScopedCallback;
@@ -709,7 +711,12 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	protected static function tpSyntaxError( ?Title $title, Content $content ): ?TPException {
+	/**
+	 * @param mixed|null $title Should be ?PageIdentity once the extension is MW 1.36+
+	 * @param Content|null $content
+	 * @return TPException|null
+	 */
+	protected static function tpSyntaxError( $title, ?Content $content ): ?TPException {
 		if ( !$content instanceof TextContent || !$title ) {
 			return null;
 		}
@@ -735,24 +742,22 @@ class PageTranslationHooks {
 	/**
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage.
-	 * Hook: PageContentSave
-	 * @param WikiPage $wikiPage
-	 * @param User $user
-	 * @param Content $content
-	 * @param string $summary
-	 * @param bool $minor
-	 * @param string $_1
-	 * @param bool $_2
+	 * Hook: MultiContentSave
+	 * @param RenderedRevision $renderedRevision
+	 * @param UserIdentity $user
+	 * @param CommentStoreComment $summary
 	 * @param int $flags
-	 * @param Status $status
+	 * @param Status $hookStatus
 	 * @return bool
 	 */
-	public static function tpSyntaxCheck( WikiPage $wikiPage, $user, $content, $summary,
-		$minor, $_1, $_2, $flags, $status
+	public static function tpSyntaxCheck(
+		RenderedRevision $renderedRevision, UserIdentity $user, CommentStoreComment $summary, $flags, Status $hookStatus
 	) {
-		$e = self::tpSyntaxError( $wikiPage->getTitle(), $content );
+		$content = $renderedRevision->getRevision()->getContent( SlotRecord::MAIN );
+
+		$e = self::tpSyntaxError( $renderedRevision->getRevision()->getPageAsLinkTarget(), $content );
 		if ( $e ) {
-			call_user_func_array( [ $status, 'fatal' ], $e->getMsg() );
+			call_user_func_array( [ $hookStatus, 'fatal' ], $e->getMsg() );
 
 			return false;
 		}
