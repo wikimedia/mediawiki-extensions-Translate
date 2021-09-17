@@ -185,7 +185,6 @@
 		"SpecialPageMigration": "tag/SpecialPageMigration.php",
 		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",
 		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
-		"SpecialPageTranslationMovePage": "tag/SpecialPageTranslationMovePage.php",
 		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
 		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"SpecialTranslations": "specials/SpecialTranslations.php",

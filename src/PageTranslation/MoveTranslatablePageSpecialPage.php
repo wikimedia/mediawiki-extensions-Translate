@@ -1,12 +1,21 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\PageTranslation\ImpossiblePageMove;
-use MediaWiki\Extension\Translate\PageTranslation\PageMoveCollection;
-use MediaWiki\Extension\Translate\PageTranslation\PageMoveOperation;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\MediaWikiServices;
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use CommentStore;
+use ErrorPageError;
+use Html;
+use HTMLForm;
+use MediaWiki\Permissions\PermissionManager;
+use MovePageForm;
+use OutputPage;
+use PermissionsError;
+use ReadOnlyError;
+use SplObjectStorage;
+use ThrottledError;
+use Title;
+use TranslatablePage;
 
 /**
  * Overrides Special:Movepage to to allow renaming a page translation page and
@@ -16,7 +25,7 @@ use MediaWiki\MediaWikiServices;
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationMovePage extends MovePageForm {
+class MoveTranslatablePageSpecialPage extends MovePageForm {
 	// Basic form parameters both as text and as titles
 	/** @var string|null */
 	protected $newText;
@@ -26,13 +35,19 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/** @var TranslatablePage instance. */
 	protected $page;
 	/** @var TranslatablePageMover */
-	protected $pageMover;
+	private $pageMover;
+	/** @var PermissionManager */
+	private $permissionManager;
 	/** @var bool */
 	private $moveTalkpages;
 
-	public function __construct() {
+	public function __construct(
+		PermissionManager $permissionManager,
+		TranslatablePageMover $pageMover
+	) {
 		parent::__construct();
-		$this->pageMover = Services::getInstance()->getTranslatablePageMover();
+		$this->permissionManager = $permissionManager;
+		$this->pageMover = $pageMover;
 	}
 
 	/**
@@ -152,7 +167,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		}
 
 		// Check rights
-		$permErrors = MediaWikiServices::getInstance()->getPermissionManager()
+		$permErrors = $this->permissionManager
 			->getPermissionErrors( 'move', $this->getUser(), $this->oldTitle );
 		if ( count( $permErrors ) ) {
 			throw new PermissionsError( 'move', $permErrors );

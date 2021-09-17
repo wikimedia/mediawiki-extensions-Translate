@@ -5,8 +5,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\Services;
 
 /**
- * Contains class with job for moving translation pages. Used together with
- * SpecialPageTranslationMovePage class.
+ * Contains class with job for moving translation pages.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
