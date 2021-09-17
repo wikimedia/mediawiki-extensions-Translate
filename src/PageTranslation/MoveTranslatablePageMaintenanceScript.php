@@ -50,8 +50,8 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		);
 
 		$this->addOption(
-			'move-subpages',
-			'Move subpages under the current page'
+			'skip-subpages',
+			'Skip moving subpages under the current page'
 		);
 
 		$this->addOption(
@@ -73,7 +73,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$newPagename = $this->getArg( 1 );
 		$username = $this->getArg( 2 );
 		$reason = $this->getOption( 'reason', '' );
-		$moveSubpages = $this->hasOption( 'move-subpages' );
+		$moveSubpages = !$this->hasOption( 'skip-subpages' );
 		$moveTalkpages = !$this->hasOption( 'skip-talkpages' );
 
 		$userFactory = $mwService->getUserFactory();
