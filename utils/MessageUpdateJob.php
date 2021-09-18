@@ -221,7 +221,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		unset( $languages[$wgTranslateDocumentationLanguageCode] );
 		$languages = array_keys( $languages );
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$fields = [ 'page_id', 'page_latest' ];
 		$conds = [ 'page_namespace' => $title->getNamespace() ];
 

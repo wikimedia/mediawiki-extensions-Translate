@@ -14,7 +14,7 @@ use User;
  */
 class TranslationStashStorageTest extends MediaWikiIntegrationTestCase {
 	public function testAdd() {
-		$storage = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$storage = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 
 		$translation1 = new StashedTranslation(
 			User::newFromId( 1 ),

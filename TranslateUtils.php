@@ -444,7 +444,7 @@ class TranslateUtils {
 	 */
 	public static function getSafeReadDB() {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$index = self::shouldReadFromPrimary() ? DB_MASTER : DB_REPLICA;
+		$index = self::shouldReadFromPrimary() ? DB_PRIMARY : DB_REPLICA;
 
 		return $lb->getConnectionRef( $index );
 	}

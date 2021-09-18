@@ -1117,7 +1117,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			];
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete(
 			'translate_sections',
 			[ 'trs_page' => $page->getTitle()->getArticleID() ],

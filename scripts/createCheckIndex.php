@@ -130,7 +130,7 @@ class CreateCheckIndex extends Maintenance {
 		}
 
 		$titleConditions = [];
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		foreach ( $problematic as $p ) {
 			// Normalize page key

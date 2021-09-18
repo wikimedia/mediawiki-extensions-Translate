@@ -78,7 +78,7 @@ class ApiTranslationReview extends ApiBase {
 	 * @return bool whether the action was recorded.
 	 */
 	public static function doReview( User $user, RevisionRecord $revRecord, $comment = null ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$table = 'translate_reviews';
 		$row = [
 			'trr_user' => $user->getId(),

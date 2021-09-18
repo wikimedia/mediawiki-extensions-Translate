@@ -53,7 +53,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$revisionRecord = $value['revision-record'];
 		$revisionId = $revisionRecord->getId();
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = [
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'fuzzy' ),

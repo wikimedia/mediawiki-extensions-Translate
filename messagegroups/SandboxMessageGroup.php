@@ -52,7 +52,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		$list = [];
 
 		// Ugly
-		$store = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$store = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 		$user = RequestContext::getMain()->getUser();
 		$translations = $store->getTranslations( $user );
 

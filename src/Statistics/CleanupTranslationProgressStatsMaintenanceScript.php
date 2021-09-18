@@ -8,7 +8,7 @@ use MediaWiki\MediaWikiServices;
 use MessageGroups;
 use RawMessage;
 use TranslateUtils;
-use const DB_MASTER;
+use const DB_PRIMARY;
 
 /**
  * @since 2021.03
@@ -24,7 +24,7 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 
 	public function execute() {
 		$services = MediaWikiServices::getInstance();
-		$db = $services->getDBLoadBalancer()->getConnectionRef( DB_MASTER );
+		$db = $services->getDBLoadBalancer()->getConnectionRef( DB_PRIMARY );
 
 		$dbGroupIds = $db->selectFieldValues(
 			'translate_groupstats',

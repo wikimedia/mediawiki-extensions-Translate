@@ -319,7 +319,7 @@ class TranslatablePage {
 	 * @throws MWException
 	 */
 	protected function addTag( $tag, $revision, $value = null ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$aid = $this->getTitle()->getArticleID();
 
@@ -366,7 +366,7 @@ class TranslatablePage {
 	public function unmarkTranslatablePage() {
 		$aid = $this->getTitle()->getArticleID();
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = [
 			'rt_page' => $aid,
 			'rt_type' => [
@@ -487,7 +487,7 @@ class TranslatablePage {
 	 * @since 2012-08-06
 	 */
 	public function getTranslationUnitPages( $set = 'active', $code = false ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$base = $this->getTitle()->getPrefixedDBkey();
 		// Including the / used as separator

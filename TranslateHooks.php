@@ -731,7 +731,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	 * @param User $newUser
 	 */
 	public static function onMergeAccountFromTo( User $oldUser, User $newUser ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		// Update the non-duplicate rows, we'll just delete
 		// the duplicate ones later
@@ -755,7 +755,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	 * @param User $oldUser
 	 */
 	public static function onDeleteAccount( User $oldUser ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		// Delete any remaining rows that didn't get merged
 		foreach ( self::$userMergeTables as $table => $field ) {
@@ -934,7 +934,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 		// tp:tag and tp:mark handling is in PageTranslationHooks::updateTranstagOnNullRevisions.
 		$tagsToCopy = [ 'fuzzy', 'tp:transver' ];
 
-		$db = $this->loadBalancer->getConnectionRef( DB_MASTER );
+		$db = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
 		$db->insertSelect(
 			'revtag',
 			'revtag',

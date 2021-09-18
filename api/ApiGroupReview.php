@@ -63,7 +63,7 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public static function getState( MessageGroup $group, $code ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$table = 'translate_groupreviews';
 
 		$field = 'tgr_state';
@@ -89,7 +89,7 @@ class ApiGroupReview extends ApiBase {
 			'tgr_state' => $newState,
 		];
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->replace( $table, [ $index ], $row, __METHOD__ );
 
 		$entry = new ManualLogEntry( 'translationreview', 'group' );

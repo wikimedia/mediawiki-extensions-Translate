@@ -404,7 +404,7 @@ class MessageGroups {
 		// FIXME: This assumes prioritycache has been populated
 		self::$prioritycache[$id] = $priority;
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$table = 'translate_groupreviews';
 		$row = [
 			'tgr_group' => $id,

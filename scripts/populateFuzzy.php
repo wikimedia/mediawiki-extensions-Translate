@@ -48,7 +48,7 @@ class PopulateFuzzy extends Maintenance {
 		}
 
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()
-			->getMaintenanceConnectionRef( DB_MASTER );
+			->getMaintenanceConnectionRef( DB_PRIMARY );
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
 

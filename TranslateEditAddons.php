@@ -211,7 +211,7 @@ class TranslateEditAddons {
 	 * @return bool Whether status changed
 	 */
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),
@@ -259,7 +259,7 @@ class TranslateEditAddons {
 
 		$definitionRevision = $definitionTitle->getLatestRevID();
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),

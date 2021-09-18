@@ -31,7 +31,7 @@ class RemoveOrphanedActors extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$orphanedActors = $dbw->select(
 			[ 'actor', 'user' ],

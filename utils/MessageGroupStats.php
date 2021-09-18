@@ -264,7 +264,7 @@ class MessageGroupStats {
 		if ( !count( $code ) ) {
 			return;
 		}
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = [ 'tgs_lang' => $code ];
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared ' . serialize( $conds ) );
@@ -276,7 +276,7 @@ class MessageGroupStats {
 	 * Mostly for testing purposes. Calling this in normal operation will cause performance issues.
 	 */
 	public static function clearAll() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete( self::TABLE, '*', __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared everything :(' );
 	}
@@ -596,7 +596,7 @@ class MessageGroupStats {
 		}
 
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$dbw = $lb->getLazyConnectionRef( DB_MASTER ); // avoid connecting yet
+		$dbw = $lb->getLazyConnectionRef( DB_PRIMARY ); // avoid connecting yet
 		$table = self::TABLE;
 		$callers = wfGetAllCallers( 50 );
 

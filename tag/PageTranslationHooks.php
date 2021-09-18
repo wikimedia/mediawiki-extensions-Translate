@@ -1444,7 +1444,7 @@ class PageTranslationHooks {
 		$queuedPages[ $targetPage ] = true;
 		$fname = __METHOD__;
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$callback = function () use (
 			$dbw, $queuedPages, $targetPage, $target, $handle, $langCode, $user, $reason, $fname
 		) {

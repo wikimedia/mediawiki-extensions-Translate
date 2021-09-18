@@ -73,7 +73,7 @@ class TranslateMetadata {
 	 * @param string $value Metadata value
 	 */
 	public static function set( $group, $key, $value ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$data = [ 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
@@ -136,7 +136,7 @@ class TranslateMetadata {
 	 * @since 2012-05-09
 	 */
 	public static function deleteGroup( $groupId ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = [ 'tmd_group' => $groupId ];
 		$dbw->delete( 'translate_metadata', $conds, __METHOD__ );
 		self::$cache[$groupId] = null;

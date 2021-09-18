@@ -59,7 +59,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$this->setHeaders();
 		$out = $this->getOutput();
 
-		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$this->stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 
 		if ( !$this->hasPermissionToUse() ) {
 			if ( $secondaryPermissionUrl && $this->getUser()->isRegistered() ) {

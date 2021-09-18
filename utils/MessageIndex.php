@@ -487,7 +487,7 @@ class DatabaseMessageIndex extends MessageIndex {
 	protected $index;
 
 	protected function lock() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		// Any transaction should be flushed after getting the lock to avoid
 		// stale pre-lock REPEATABLE-READ snapshot data.
@@ -501,7 +501,7 @@ class DatabaseMessageIndex extends MessageIndex {
 
 	protected function unlock() {
 		$fname = __METHOD__;
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		// Unlock once the rows are actually unlocked to avoid deadlocks
 		if ( !$dbw->trxLevel() ) {
 			$dbw->unlock( 'translate-messageindex', $fname );
@@ -527,7 +527,7 @@ class DatabaseMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		$dbr = wfGetDB( $forRebuild ? DB_MASTER : DB_REPLICA );
+		$dbr = wfGetDB( $forRebuild ? DB_PRIMARY : DB_REPLICA );
 		$res = $dbr->select( 'translate_messageindex', '*', [], __METHOD__ );
 		$this->index = [];
 		foreach ( $res as $row ) {
@@ -571,7 +571,7 @@ class DatabaseMessageIndex extends MessageIndex {
 		$index = [ 'tmi_key' ];
 		$deletions = array_keys( $diff['del'] );
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		if ( $updates !== [] ) {

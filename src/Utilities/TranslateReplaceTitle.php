@@ -57,7 +57,7 @@ class TranslateReplaceTitle {
 	 * @return TitleArrayFromResult
 	 */
 	private static function getMatchingTitles( MessageHandle $handle ) {
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = wfGetDB( DB_PRIMARY );
 
 		$tables = [ 'page' ];
 		$vars = [ 'page_title', 'page_namespace', 'page_id' ];

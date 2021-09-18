@@ -28,7 +28,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 		$mean = 15;
 		$stddev = 20;
 
-		$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 
 		$languages = array_keys( Language::fetchLanguageNames() );
 

@@ -33,7 +33,7 @@ class ApiTranslationStash extends ApiBase {
 			}
 		}
 
-		$stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
+		$stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 		$action = $params['subaction'];
 
 		if ( $action === 'add' ) {

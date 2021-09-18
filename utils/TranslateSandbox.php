@@ -99,7 +99,7 @@ class TranslateSandbox {
 		}
 
 		// Delete from database
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete( 'user', [ 'user_id' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );

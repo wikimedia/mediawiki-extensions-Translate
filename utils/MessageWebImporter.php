@@ -467,7 +467,7 @@ class MessageWebImporter {
 
 		$revStore = $services->getRevisionStore();
 		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
-		$dbw = $services->getDBLoadBalancer()->getConnectionRef( DB_MASTER );
+		$dbw = $services->getDBLoadBalancer()->getConnectionRef( DB_PRIMARY );
 		$rows = $dbw->select(
 			$queryInfo['tables'],
 			$queryInfo['fields'],
