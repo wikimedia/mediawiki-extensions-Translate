@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use IDatabase;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * @author Niklas Laxström
