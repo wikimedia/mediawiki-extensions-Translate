@@ -8,6 +8,7 @@
 	"translate-prev": "Oouʹdab seidd",
 	"translate-sidebar-alltrans": "Jeeʹres ǩiõlid",
 	"translations": "Puk jåårǥlâttmõõžž",
+	"translate-langstats-expand": "čuäʹjet",
 	"translate-language": "Ǩiõll",
 	"translate-mgs-column-language": "Ǩiõll",
 	"translate-msggroupselector-search-all": "Puk",
@@ -15,5 +16,6 @@
 	"tux-tab-all": "Puk",
 	"tux-editor-in-other-languages": "Jeeʹres ǩiõlid",
 	"tux-editor-page-mode": "Seidd",
+	"tux-editor-expand-tooltip": "Čuäʹjet",
 	"tux-editor-message-tools-translations": "Puk jåårǥlâttmõõžž"
 }
