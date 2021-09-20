@@ -189,4 +189,30 @@ class TranslateMetadata {
 
 		return $isDiscouraged || ( $hasLimitedLanguages && !$isLanguageIncluded );
 	}
+
+	/**
+	 * Do a query optimized for page list in Special:PageTranslation
+	 * @param string[] $groupIds
+	 * @param string[] $keys Which metadata keys to load
+	 * @return array<string,array<string,string>>
+	 */
+	public static function loadBasicMetadataForTranslatablePages( array $groupIds, array $keys ): array {
+		$db = TranslateUtils::getSafeReadDB();
+		$res = $db->select(
+			'translate_metadata',
+			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
+			[
+				'tmd_group' => $groupIds,
+				'tmd_key' => $keys,
+			],
+			__METHOD__
+		);
+
+		$ret = [];
+		foreach ( $res as $row ) {
+			$ret[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+		}
+
+		return $ret;
+	}
 }

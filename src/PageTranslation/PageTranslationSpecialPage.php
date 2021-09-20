@@ -474,7 +474,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$messageGroupIdsForPreload[] = $id;
 			$pages[$i]['groupid'] = $id;
 		}
-		TranslateMetadata::preloadGroups( $messageGroupIdsForPreload, __METHOD__ );
+		// Performance optimization: load only data we need to classify the pages
+		$metadata = TranslateMetadata::loadBasicMetadataForTranslatablePages(
+			$messageGroupIdsForPreload,
+			[ 'transclusion', 'version' ]
+		);
 
 		$out = [
 			// The ideal state for pages: marked and up to date
@@ -485,18 +489,17 @@ class PageTranslationSpecialPage extends SpecialPage {
 		];
 
 		foreach ( $pages as $page ) {
-			$group = MessageGroups::getGroup( $page['groupid'] );
+			$groupId = $page['groupid'];
+			$group = MessageGroups::getGroup( $groupId );
 			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
-			$page['version'] = TranslateMetadata::getWithDefaultValue(
-				$page['groupid'], 'version', self::DEFAULT_SYNTAX_VERSION
-			);
-			$page['transclusion'] = TranslateMetadata::get( $page['groupid'], 'transclusion' );
+			$page['version'] = $metadata[$groupId]['version'] ?? self::DEFAULT_SYNTAX_VERSION;
+			$page['transclusion'] = $metadata[$groupId]['transclusion'] ?? false;
 
 			if ( !isset( $page['tp:mark'] ) ) {
 				// Never marked, check that the latest version is ready
 				if ( $page['tp:tag'] === $page['latest'] ) {
 					$out['proposed'][] = $page;
-				} // Otherwise ignore such pages
+				} // Otherwise, ignore such pages
 			} elseif ( $page['tp:tag'] === $page['latest'] ) {
 				if ( $page['tp:mark'] === $page['tp:tag'] ) {
 					// Marked and latest version is fine
