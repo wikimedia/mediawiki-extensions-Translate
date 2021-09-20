@@ -33,7 +33,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 					$groups[$id] = $group;
 				}
 			}
-			TranslateMetadata::preloadGroups( array_keys( $groups ) );
+			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		} elseif ( $params['format'] === 'flat' ) {
 			if ( $params['root'] !== '' ) {
 				$group = MessageGroups::getGroup( $params['root'] );
@@ -44,7 +44,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				$groups = MessageGroups::getAllGroups();
 				usort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
 			}
-			TranslateMetadata::preloadGroups( array_keys( $groups ) );
+			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option
 			$group = MessageGroups::getGroup( $params['root'] );
@@ -53,11 +53,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				$groups = MessageGroups::subGroups( $group, $childIds );
 				// The parent group is the first, ignore it
 				array_shift( $groups );
-				TranslateMetadata::preloadGroups( $childIds );
+				TranslateMetadata::preloadGroups( $childIds, __METHOD__ );
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
-			TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllGroups() ) );
+			TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllGroups() ), __METHOD__ );
 		}
 
 		if ( $params['root'] === '' ) {

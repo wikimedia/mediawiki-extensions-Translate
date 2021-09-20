@@ -98,7 +98,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 		$field = 'tmd_group';
 		$conds = [ 'tmd_key' => 'subgroups' ];
 		$groupIds = $this->db->selectFieldValues( $tables, $field, $conds, __METHOD__ );
-		TranslateMetadata::preloadGroups( $groupIds );
+		TranslateMetadata::preloadGroups( $groupIds, __METHOD__ );
 
 		$groups = [];
 		foreach ( $groupIds as $id ) {

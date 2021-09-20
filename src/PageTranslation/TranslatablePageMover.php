@@ -438,7 +438,7 @@ class TranslatablePageMover {
 	}
 
 	private function moveMetadata( string $oldGroupId, string $newGroupId ): void {
-		TranslateMetadata::preloadGroups( [ $oldGroupId, $newGroupId ] );
+		TranslateMetadata::preloadGroups( [ $oldGroupId, $newGroupId ], __METHOD__ );
 		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
 			$value = TranslateMetadata::get( $oldGroupId, $type );
 			if ( $value !== false ) {
@@ -449,7 +449,7 @@ class TranslatablePageMover {
 
 		// Make the changes in aggregate groups metadata, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ) );
+		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
 
 		foreach ( $aggregateGroups as $id => $group ) {
 			$subgroups = TranslateMetadata::get( $id, 'subgroups' );

@@ -362,7 +362,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		}
 		// remove the page from aggregate groups, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ) );
+		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
 		foreach ( $aggregateGroups as $group ) {
 			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
 			if ( $subgroups !== false ) {

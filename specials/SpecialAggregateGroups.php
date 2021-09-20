@@ -37,7 +37,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			MessageGroups::getGroupsByType( WikiPageMessageGroup::class ),
 			MessageGroups::getGroupsByType( AggregateMessageGroup::class )
 		);
-		TranslateMetadata::preloadGroups( array_keys( $groupsPreload ) );
+		TranslateMetadata::preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
 
 		$groups = MessageGroups::getAllGroups();
 		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );

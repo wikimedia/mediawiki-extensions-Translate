@@ -16,12 +16,17 @@ class TranslateMetadata {
 	/** @var array */
 	private static $priorityCache;
 
-	/** @param string[] $groups List of translate groups */
-	public static function preloadGroups( array $groups ) {
+	/**
+	 * @param string[] $groups List of translate groups
+	 * @param string $caller
+	 */
+	public static function preloadGroups( array $groups, string $caller ) {
 		$missing = array_keys( array_diff_key( array_flip( $groups ), self::$cache ) );
 		if ( !$missing ) {
 			return;
 		}
+
+		$fname = __METHOD__ . " (for $caller)";
 
 		self::$cache += array_fill_keys( $missing, null ); // cache negatives
 
@@ -31,7 +36,7 @@ class TranslateMetadata {
 			'translate_metadata',
 			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
 			$conds,
-			__METHOD__
+			$fname
 		);
 		foreach ( $res as $row ) {
 			self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
@@ -45,7 +50,7 @@ class TranslateMetadata {
 	 * @return string|bool
 	 */
 	public static function get( $group, $key ) {
-		self::preloadGroups( [ $group ] );
+		self::preloadGroups( [ $group ], __METHOD__ );
 
 		return self::$cache[$group][$key] ?? false;
 	}

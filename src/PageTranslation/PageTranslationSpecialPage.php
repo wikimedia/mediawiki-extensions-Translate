@@ -474,7 +474,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$messageGroupIdsForPreload[] = $id;
 			$pages[$i]['groupid'] = $id;
 		}
-		TranslateMetadata::preloadGroups( $messageGroupIdsForPreload );
+		TranslateMetadata::preloadGroups( $messageGroupIdsForPreload, __METHOD__ );
 
 		$out = [
 			// The ideal state for pages: marked and up to date

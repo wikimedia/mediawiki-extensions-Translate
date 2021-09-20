@@ -112,7 +112,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 				$groupIdsPreload[] = $handle->getGroup()->getId();
 			}
 		}
-		TranslateMetadata::preloadGroups( $groupIdsPreload );
+		TranslateMetadata::preloadGroups( $groupIdsPreload, __METHOD__ );
 
 		$defs = [];
 		foreach ( $res as $row ) {
