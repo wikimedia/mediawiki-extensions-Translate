@@ -437,8 +437,9 @@
 				action: 'query',
 				meta: 'messagegroups',
 				mgformat: 'tree',
-				mgprop: 'id|label|icon|priority|prioritylangs|priorityforce',
-				mgiconsize: '32'
+				mgprop: 'id|label|icon',
+				mgiconsize: '32',
+				mglanguageFilter: this.options.language
 			};
 
 			groupsLoader = new mw.Api()
@@ -459,26 +460,13 @@
 		addGroupRows: function ( groups ) {
 			var groupSelector = this,
 				$msgGroupRows = [],
-				$parent,
-				targetLanguage = this.options.language;
+				$parent;
 
 			if ( !groups ) {
 				return;
 			}
 
 			groups.forEach( function ( group ) {
-				/* Hide from the selector:
-				 * - discouraged groups (the only priority value currently supported).
-				 * - groups that are recommended for other languages.
-				 */
-				if ( group.priority === 'discouraged' ||
-					( group.priorityforce &&
-						group.prioritylangs &&
-						group.prioritylangs.indexOf( targetLanguage ) === -1 )
-				) {
-					return;
-				}
-
 				$msgGroupRows.push( groupSelector.prepareMessageGroupRow( group ) );
 			} );
 
@@ -577,6 +565,16 @@
 			}
 
 			return isSupported;
+		},
+
+		/**
+		 * Only shows message groups translatable to given target language
+		 * @param {string} targetLanguage
+		 */
+		updateTargetLanguage: function ( targetLanguage ) {
+			this.options.language = targetLanguage;
+			groupsLoader = undefined;
+			this.firstShow = true;
 		}
 	};
 

@@ -24,6 +24,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$filter = $params['filter'];
 
 		$groups = [];
+		$props = array_flip( $params['prop'] );
+
+		$needsMetadata = isset( $props['prioritylangs'] ) || isset( $props['priorityforce'] );
 
 		// Parameter root as all for all pages subgroups
 		if ( $params['root'] === 'all' ) {
@@ -33,7 +36,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 					$groups[$id] = $group;
 				}
 			}
-			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		} elseif ( $params['format'] === 'flat' ) {
 			if ( $params['root'] !== '' ) {
 				$group = MessageGroups::getGroup( $params['root'] );
@@ -53,11 +55,13 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				$groups = MessageGroups::subGroups( $group, $childIds );
 				// The parent group is the first, ignore it
 				array_shift( $groups );
-				TranslateMetadata::preloadGroups( $childIds, __METHOD__ );
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
-			TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllGroups() ), __METHOD__ );
+		}
+
+		if ( $needsMetadata && $groups ) {
+			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		}
 
 		if ( $params['root'] === '' ) {
@@ -76,8 +80,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			unset( $groups['!sandbox'] );
 		}
 
-		$props = array_flip( $params['prop'] );
-
 		$result = $this->getResult();
 		$matcher = new StringMatcher( '', $filter );
 		/** @var MessageGroup|array $mixed */
@@ -85,6 +87,13 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			// array when Format = tree
 			$group = is_array( $mixed ) ? reset( $mixed ) : $mixed;
 			if ( $filter !== [] && !$matcher->matches( $group->getId() ) ) {
+				continue;
+			}
+
+			if (
+				$params['languageFilter'] !== '' &&
+				TranslateMetadata::isExcluded( $group->getId(), $params['languageFilter'] )
+			) {
 				continue;
 			}
 
@@ -272,6 +281,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 			],
+			'languageFilter' => [
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			]
 		];
 		Hooks::run( 'TranslateGetAPIMessageGroupsParameterList', [ &$allowedParams ] );
 

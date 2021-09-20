@@ -53,8 +53,8 @@
 			mw.translate.updateTabLinks( changes );
 			$( '.tux-editor-header .group-warning' ).empty();
 			state.messageList.changeSettings( changes );
+			state.groupSelector.updateTargetLanguage( language );
 			updateGroupInformation( state );
-
 		},
 
 		changeFilter: function ( filter ) {
@@ -342,6 +342,7 @@
 			position: position,
 			recent: mw.translate.recentGroups.get()
 		} );
+		state.groupSelector = $( '.tux-breadcrumb__item--aggregate' ).data( 'msggroupselector' );
 
 		updateGroupInformation( state );
 
