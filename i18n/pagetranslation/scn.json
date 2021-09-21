@@ -13,6 +13,7 @@
 	"tpt-translation-intro": "Sta pàggina è na <span class=\"plainlinks\">[$1 virsioni traduciuta]</span> dâ pàggina [[$2]]; la traduzzioni è cumpleta ô $3&nbsp;%.",
 	"tpt-languages-legend": "Àutri lingui",
 	"tpt-languages-nonzero": "$1 (traduciuta ô $2%)",
+	"tpt-aggregategroup-add": "Junci",
 	"tpt-aggregategroup-save": "Sarva",
 	"tpt-aggregategroup-new-name": "Nomu:",
 	"tpt-aggregategroup-new-description": "Discrizzioni (facultativu):",
