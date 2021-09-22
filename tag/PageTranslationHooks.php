@@ -1203,11 +1203,17 @@ class PageTranslationHooks {
 	 * @return true
 	 */
 	public static function replaceMovePage( &$list ) {
+		$movePageSpec = $list['Movepage'];
+
 		$list['Movepage'] = [
 			'class' => MoveTranslatablePageSpecialPage::class,
 			'services' => [
+				'ObjectFactory',
 				'PermissionManager',
 				'Translate:TranslatablePageMover'
+			],
+			'args' => [
+				$movePageSpec
 			]
 		];
 

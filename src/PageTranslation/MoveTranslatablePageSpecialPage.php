@@ -8,7 +8,6 @@ use ErrorPageError;
 use Html;
 use HTMLForm;
 use MediaWiki\Permissions\PermissionManager;
-use MovePageForm;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
@@ -16,57 +15,75 @@ use SplObjectStorage;
 use ThrottledError;
 use Title;
 use TranslatablePage;
+use UnlistedSpecialPage;
+use Wikimedia\ObjectFactory;
 
 /**
- * Overrides Special:Movepage to to allow renaming a page translation page and
- * all related translations and derivative pages.
+ * Replacement for Special:Movepage to allow renaming a translatable page and
+ * all pages associated with it.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
  */
-class MoveTranslatablePageSpecialPage extends MovePageForm {
-	// Basic form parameters both as text and as titles
-	/** @var string|null */
-	protected $newText;
-	/** @var string|null */
-	protected $oldText;
-	// Other form parameters
-	/** @var TranslatablePage instance. */
-	protected $page;
+class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
+	// Form parameters both as text and as titles
+	/** @var string */
+	private $oldText;
+	/** @var string */
+	private $reason;
+	/** @var bool */
+	private $moveTalkpages = true;
+	/** @var bool */
+	private $moveSubpages = true;
+	// Dependencies
+	/** @var ObjectFactory */
+	private $objectFactory;
 	/** @var TranslatablePageMover */
 	private $pageMover;
 	/** @var PermissionManager */
 	private $permissionManager;
-	/** @var bool */
-	private $moveTalkpages;
+	private $movePageSpec;
+	// Other
+	/** @var Title */
+	private $oldTitle;
 
 	public function __construct(
+		ObjectFactory $objectFactory,
 		PermissionManager $permissionManager,
-		TranslatablePageMover $pageMover
+		TranslatablePageMover $pageMover,
+		$movePageSpec
 	) {
-		parent::__construct();
+		parent::__construct( 'Movepage' );
+		$this->objectFactory = $objectFactory;
 		$this->permissionManager = $permissionManager;
 		$this->pageMover = $pageMover;
+		$this->movePageSpec = $movePageSpec;
 	}
 
-	/**
-	 * Partially copies from SpecialMovepage.php, because it cannot be
-	 * extended in other ways.
-	 * @param string|null $par null if subpage not provided, string otherwise
-	 * @throws PermissionsError
-	 */
+	public function doesWrites(): bool {
+		return true;
+	}
+
+	protected function getGroupName(): string {
+		return 'pagetools';
+	}
+
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$user = $this->getUser();
 		$this->addHelpLink( 'Help:Extension:Translate/Move_translatable_page' );
 
-		// Yes, the use of getVal() and getText() is wanted, see bug T22365
-		$this->oldText = $request->getVal( 'wpOldTitle', $request->getVal( 'target', $par ) );
-		$this->newText = $request->getText( 'wpNewTitle' );
+		$this->oldText = $request->getText( 'wpOldTitle', $request->getText( 'target', $par ) );
+		$newText = $request->getText( 'wpNewTitle' );
 
-		$this->oldTitle = Title::newFromText( $this->oldText ?? '' );
-		$this->newTitle = Title::newFromText( $this->newText );
+		$this->oldTitle = Title::newFromText( $this->oldText );
+		$newTitle = Title::newFromText( $newText );
+		// Normalize input
+		if ( $this->oldTitle ) {
+			$this->oldText = $this->oldTitle->getPrefixedText();
+		}
 
 		$this->reason = $request->getText( 'reason' );
 
@@ -76,9 +93,7 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 		// Real stuff starts here
 		$page = TranslatablePage::newFromTitle( $this->oldTitle );
 		if ( $page->getMarkedTag() !== false ) {
-			$this->page = $page;
-
-			$this->getOutput()->setPageTitle( $this->msg( 'pt-movepage-title', $this->oldText ) );
+				$this->getOutput()->setPageTitle( $this->msg( 'pt-movepage-title', $this->oldText ) );
 
 			if ( !$user->isAllowed( 'pagetranslation' ) ) {
 				throw new PermissionsError( 'pagetranslation' );
@@ -101,16 +116,10 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 			}
 
 			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
-				// When listing pages to display, default move subpages and talkpages to true.
-				$this->moveSubpages = true;
-				$this->moveTalkpages = true;
-				$request->setVal( 'subpages', $this->moveSubpages );
-				$request->setVal( 'talkpages', $this->moveTalkpages );
-
 				try {
 					$pageCollection = $this->pageMover->getPageMoveCollection(
 						$this->oldTitle,
-						$this->newTitle,
+						$newTitle,
 						$user,
 						$this->reason,
 						$this->moveSubpages,
@@ -129,7 +138,7 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 
 				$this->pageMover->moveAsynchronously(
 					$this->oldTitle,
-					$this->newTitle,
+					$newTitle,
 					$this->moveSubpages,
 					$this->getUser(),
 					$this->msg( 'pt-movepage-logreason', $this->oldTitle )->inContentLanguage()->text(),
@@ -141,7 +150,7 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 			}
 		} else {
 			// Delegate... don't want to reimplement this
-			$sp = new MovePageForm();
+			$sp = $this->objectFactory->createObject( $this->movePageSpec );
 			$sp->execute( $par );
 		}
 	}
@@ -175,8 +184,9 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 	}
 
 	/**
-	 * Checks token. Use before real actions happen. Have to use wpEditToken
-	 * for compatibility for SpecialMovepage.php.
+	 * Checks token to protect against CSRF.
+	 *
+	 * FIXME: make this a form special page instead of manually checking stuff?
 	 * @return bool
 	 */
 	protected function checkToken(): bool {
@@ -362,7 +372,6 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 				'type' => 'text',
 				'name' => 'wpNewTitle',
 				'label-message' => 'pt-movepage-new',
-				'default' => $this->newText,
 			],
 			'reason' => [
 				'type' => 'text',
@@ -370,6 +379,16 @@ class MoveTranslatablePageSpecialPage extends MovePageForm {
 				'label-message' => 'pt-movepage-reason',
 				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 				'default' => $this->reason,
+			],
+			'subpages' => [
+				'type' => 'hidden',
+				'name' => 'subpages',
+				'default' => $this->moveSubpages,
+			],
+			'talkpages' => [
+				'type' => 'hidden',
+				'name' => 'talkpages',
+				'default' => $this->moveTalkpages
 			]
 		];
 	}
