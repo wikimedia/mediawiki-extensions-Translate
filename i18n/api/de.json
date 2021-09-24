@@ -31,6 +31,7 @@
 	"apihelp-query+managemessagegroups-description": "Abrufen möglicher Umbenennungen für eine Nachricht in einer Gruppe während des Imports",
 	"apihelp-query+managemessagegroups-param-groupId": "Gruppen-ID",
 	"apihelp-query+managemessagegroups-param-messageKey": "Nachrichten-Schlüssel",
+	"apihelp-query+managemessagegroups-example-1": "Holt mögliche Umbenennungen für den angegebenen Schlüssel in der angegebenen Gruppe.",
 	"apihelp-query+messagecollection-summary": "Ruft MessageCollection über Übersetzungen ab.",
 	"apihelp-query+messagecollection-param-group": "Nachrichtengruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprachcode.",
@@ -41,8 +42,10 @@
 	"apihelp-query+messagecollection-example-3": "Listet optionale Nachrichten in Finnisch mit Markierungen für die Gruppe „page-Example“ auf",
 	"apihelp-query+messagecollection-example-4": "Weitere Informationen über die aktuellsten Übersetzungsversionen für die Gruppe „page-Example“",
 	"apihelp-query+messagegroups-summary": "Gibt Informationen über Nachrichtengruppen zurück.",
+	"apihelp-query+messagegroups-extended-description": "Beachten Sie, dass der uselang-Parameter die Ausgabe von sprachabhängigen Teilen beeinflusst.",
 	"apihelp-query+messagegroups-param-format": "Im Baumformat können Nachrichtengruppen an mehreren Orten im Baum vorhanden sein.",
 	"apihelp-query+messagegroups-param-iconsize": "Bevorzugte Größe des Rastergruppensymbols.",
+	"apihelp-query+messagegroups-param-languageFilter": "Gibt nur Nachrichtengruppen zurück, die in die angegebene Sprache übersetzt werden können.",
 	"apihelp-query+messagegroups-example-1": "Nachrichtengruppen anzeigen",
 	"apihelp-query+messagegroupstats-description": "Ruft Statistiken zu Nachrichtengruppen ab.",
 	"apihelp-query+messagegroupstats-summary": "Ruft Statistiken zu Nachrichtengruppen ab.",
@@ -55,6 +58,7 @@
 	"apihelp-managemessagegroups-description": "Hinzufügen einer Nachricht als Umbenennung einer vorhandenen Nachricht oder einer neuen Nachricht in der Gruppe während des Imports",
 	"apihelp-managemessagegroups-summary": "Hinzufügen einer Nachricht als Umbenennung einer vorhandenen Nachricht oder einer neuen Nachricht in der Gruppe während des Imports",
 	"apihelp-managemessagegroups-param-groupId": "Gruppen-ID",
+	"apihelp-managemessagegroups-param-operation": "Der auszuführende Vorgang. Mögliche Werte: rename / new",
 	"apihelp-translatesandbox-description": "Registriert und verwaltet Spielwiesenbenutzer.",
 	"apihelp-translatesandbox-summary": "Registriert und verwaltet Spielwiesen-Benutzer.",
 	"apihelp-translatesandbox-param-do": "Was ist zu tun?",
@@ -103,6 +107,8 @@
 	"apihelp-translationcheck-summary": "Validiert Übersetzungen.",
 	"apihelp-translationcheck-param-title": "Seitentitel mit Namensraum und Sprachcode.",
 	"apihelp-translationcheck-param-translation": "Die zu validierende Übersetzung.",
+	"apihelp-translationstats-example-1": "Anzahl der Bearbeitungen in den letzten 30 Tagen für alle Gruppen und Sprachen abrufen",
+	"apihelp-translationstats-example-2": "Abrufen der Anzahl der Bearbeitungen der letzten 30 Tage, für die Sprachen Englisch und Französisch.",
 	"apierror-translate-duplicateaggregategroup": "Die Nachrichtengruppe ist bereits vorhanden",
 	"apierror-translate-fuzzymessage": "Veraltete Übersetzungen können nicht überprüft werden",
 	"apierror-translate-groupreviewdisabled": "Die Nachrichtengruppenüberprüfung ist nicht in Verwendung.",
@@ -126,5 +132,6 @@
 	"apierror-translate-rename-key-invalid": "Die zur Umbenennung übergebenen Nachrichtenschlüssel wurden in der Liste der Änderungen für die Ausgangssprache nicht gefunden.",
 	"apierror-translate-rename-state-invalid": "Eine der zur Umbenennung übergebenen Nachrichten sollte neu hinzugefügt und die andere gelöscht werden. Aktuelle Zustände - Hinzufügen: $1 und Löschen: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert",
-	"apiwarn-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus."
+	"apiwarn-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus.",
+	"apierror-translate-operation-error": "Es ist ein Fehler bei der Verarbeitung der Anfrage aufgetreten. Fehler: $1"
 }
