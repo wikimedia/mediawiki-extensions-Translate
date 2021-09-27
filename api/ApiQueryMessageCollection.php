@@ -55,30 +55,33 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		$languageCode = $params[ 'language' ];
 		$this->validateLanguageCode( $languageCode );
+
+		// Even though translation to source language maybe disabled, we still want to
+		// fetch the message collections for the source language.
 		if ( $group->getSourceLanguage() === $languageCode ) {
 			$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
 			$this->addWarning( [ 'apiwarn-translate-language-disabled-source', wfEscapeWikiText( $name ) ] );
-		}
-		$languages = $group->getTranslatableLanguages();
-		if ( $languages !== null ) {
-			if ( !isset( $languages[ $languageCode ] ) ) {
+		} else {
+			$languages = $group->getTranslatableLanguages();
+			if ( $languages === null ) {
+				$checks = [
+					$group->getId(),
+					strtok( $group->getId(), '-' ),
+					'*'
+				];
+
+				$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
+				foreach ( $checks as $check ) {
+					if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
+						$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
+						$reason = $disabledLanguages[ $check ][ $languageCode ];
+						$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
+					}
+				}
+			} elseif ( !isset( $languages[ $languageCode ] ) ) {
+				// Not a translatable language
 				$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
 				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
-			}
-		} else {
-			$checks = [
-				$group->getId(),
-				strtok( $group->getId(), '-' ),
-				'*'
-			];
-
-			$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
-			foreach ( $checks as $check ) {
-				if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
-					$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
-					$reason = $disabledLanguages[ $check ][ $languageCode ];
-					$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
-				}
 			}
 		}
 
