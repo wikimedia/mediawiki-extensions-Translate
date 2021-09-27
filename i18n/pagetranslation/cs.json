@@ -97,7 +97,7 @@
 	"pt-movepage-list-translation": "Překlad {{PLURAL:$1|stránky|stránek}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Stránka s částí překladu|Stránky s částmi překladu}}",
 	"pt-movepage-list-other": "{{PLURAL:$1|Jiná podstránka|Jiné podstránky}}",
-	"pt-movepage-list-count": "Celkem $1 {{PLURAL:$1|stránka|stránky|stránek}} a $2 {{PLURAL:$2|podstránka|podstránky|podstránek}} k přesunutí.",
+	"pt-movepage-list-count": "Celkem $1 {{PLURAL:$1|stránka|stránky|stránek}} k přesunutí, včetně $2 {{PLURAL:$2|podstránky|podstránek}} a $3 {{PLURAL:$3|diskusní stránky|diskusních stránek}}.",
 	"pt-movepage-legend": "Přesunout přeložitelnou stránku",
 	"pt-movepage-current": "Současný název:",
 	"pt-movepage-new": "Nový název:",

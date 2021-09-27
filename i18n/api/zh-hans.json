@@ -6,6 +6,7 @@
 			"LNDDYL",
 			"Lakejason0",
 			"Liuxinyu970226",
+			"TsuyaMarisa",
 			"VulpesVulpes825",
 			"Yfdyh000"
 		]
@@ -54,6 +55,7 @@
 	"apihelp-query+messagegroups-param-iconsize": "栅格化群组图标的首选大小。",
 	"apihelp-query+messagegroups-param-prop": "要获得的有关翻译的信息：\n;id:包含组ID。\n;label:包含组标签。\n;description:包含组描述。\n;class:包含组分类名。\n;namespace:包含组名字空间。不是所有组都属于单一名字空间。\n;exists:包含自计算的组实际属性。\n;icon:包含至URL的组图标。\n;priority:包含优先状态，例如劝阻。\n;prioritylangs:包含首选语言。如果未设置，这将返回否。\n;priorityforce:包含优先状态——优先语言是否被强制设置。\n;workflowstates:包含用于消息组的工作流状态。",
 	"apihelp-query+messagegroups-param-root": "何时使用树形格式，而不是从来自指定信息组最高级开始，那样必须是一个聚合信息组。当使用单调格式时只有指定组被返回。",
+	"apihelp-query+messagegroups-param-languageFilter": "只能返回可以将其转换为给定语言的消息组。",
 	"apihelp-query+messagegroups-example-1": "显示信息组",
 	"apihelp-query+messagegroupstats-description": "查询信息组状态。",
 	"apihelp-query+messagegroupstats-summary": "查询信息组状态。",
