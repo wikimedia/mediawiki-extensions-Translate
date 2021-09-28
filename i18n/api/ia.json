@@ -41,6 +41,7 @@
 	"apihelp-query+messagegroups-param-filter": "Solmente retorna messages con IDs que corresponde a un o plus del entratas fornite (sin differentiar majusculas e minusculas, separate per barras vertical, * es metacharacter).",
 	"apihelp-query+messagegroups-param-format": "In le formato de arbore, gruppos de messages pote exister in plure locos in le arbore.",
 	"apihelp-query+messagegroups-param-iconsize": "Dimension preferite del icone de gruppo rasterisate.",
+	"apihelp-query+messagegroups-param-languageFilter": "Solmente restituer gruppos de messages que pote esser traducite in le lingua date.",
 	"apihelp-translatesandbox-param-username": "Nomine de usator al momento de creation del usator.",
 	"apihelp-translationaids-description": "Consultar tote le adjutas de traduction.",
 	"apihelp-translationstash-param-metadata": "Objecto JSON.",
