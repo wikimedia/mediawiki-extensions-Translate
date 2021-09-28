@@ -187,13 +187,13 @@ class MockMessageHandle extends MessageHandle {
 }
 
 class MessageGroupWithoutTransitions extends MockWikiMessageGroup {
-	public function getMessageGroupStates() {
+	public function getMessageGroupStates(): MessageGroupStates {
 		return new MessageGroupStates();
 	}
 }
 
 class MessageGroupWithTransitions extends MockWikiMessageGroup {
-	public function getMessageGroupStates() {
+	public function getMessageGroupStates(): MessageGroupStates {
 		return new MessageGroupStates( [
 			'state conditions' => [
 				[ 'ready', [ 'PROOFREAD' => 'MAX' ] ],

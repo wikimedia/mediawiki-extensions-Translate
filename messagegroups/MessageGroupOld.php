@@ -274,26 +274,13 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $code === $this->getSourceLanguage();
 	}
 
-	/** @deprecated Use getMessageGroupStates */
-	public function getWorkflowConfiguration() {
-		global $wgTranslateWorkflowStates;
-		if ( !$wgTranslateWorkflowStates ) {
-			// Not configured
-			$conf = [];
-		} else {
-			$conf = $wgTranslateWorkflowStates;
-		}
-
-		return $conf;
-	}
-
 	/**
 	 * Get the message group workflow state configuration.
 	 * @return MessageGroupStates
 	 */
-	public function getMessageGroupStates() {
-		// @todo Replace deprecated call.
-		$conf = $this->getWorkflowConfiguration();
+	public function getMessageGroupStates(): MessageGroupStates {
+		global $wgTranslateWorkflowStates;
+		$conf = $wgTranslateWorkflowStates ?: [];
 
 		Hooks::run( 'Translate:modifyMessageGroupStates', [ $this->getId(), &$conf ] );
 
