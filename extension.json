@@ -360,7 +360,12 @@
 				"Translate:ConfigHelper"
 			]
 		},
-		"AggregateGroups": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsSpecialPage",
+		"AggregateGroups": {
+			"class": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsSpecialPage",
+			"services": [
+				"LinkBatchFactory"
+			]
+		},
 		"SearchTranslations": "SpecialSearchTranslations"
 	},
 	"APIListModules": {
