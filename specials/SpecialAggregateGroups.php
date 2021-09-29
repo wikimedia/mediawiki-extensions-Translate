@@ -33,10 +33,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			$this->hasPermission = true;
 		}
 
-		$groupsPreload = array_merge(
-			MessageGroups::getGroupsByType( WikiPageMessageGroup::class ),
-			MessageGroups::getGroupsByType( AggregateMessageGroup::class )
-		);
+		$groupsPreload = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
 		TranslateMetadata::preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
 
 		$groups = MessageGroups::getAllGroups();
@@ -47,6 +44,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			if ( $group instanceof WikiPageMessageGroup ) {
 				$pages[] = $group;
 			} elseif ( $group instanceof AggregateMessageGroup ) {
+				// Filter out AggregateGroups configured in YAML
 				$subgroups = TranslateMetadata::getSubgroups( $group->getId() );
 				if ( $subgroups !== null ) {
 					$aggregates[] = $group;
