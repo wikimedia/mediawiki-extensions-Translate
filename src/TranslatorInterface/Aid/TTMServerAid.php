@@ -1,8 +1,20 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use Exception;
+use IContextSource;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
+use MessageGroup;
+use MessageHandle;
+use ReadableTTMServer;
+use RemoteTTMServerWebService;
+use Title;
+use TranslateUtils;
+use TranslationWebService;
+use TTMServer;
 
 /**
  * Translation aid that provides suggestion from translation memory.

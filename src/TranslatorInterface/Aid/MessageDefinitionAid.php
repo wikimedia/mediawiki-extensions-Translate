@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
 /**
  * Translation aid that provides the message definition.
  * This usually matches the content of the page ns:key/source_language.

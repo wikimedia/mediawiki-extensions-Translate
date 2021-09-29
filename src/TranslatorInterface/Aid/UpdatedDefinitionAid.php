@@ -1,9 +1,16 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use DifferenceEngine;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use RevTag;
+use Title;
+use TranslateUtils;
+use WikitextContent;
 
 /**
  * Translation aid that provides the message definition.

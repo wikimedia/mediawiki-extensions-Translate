@@ -1,6 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use QueryAggregator;
+use QueryAggregatorAware;
+use TranslationWebService;
+
 /**
  * Helper class for translation aids that use web services.
  * @ingroup TranslationAids

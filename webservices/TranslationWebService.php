@@ -119,7 +119,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/**
 	 * Returns the type of this web service.
-	 * @see TranslationAid::getTypes
+	 * @see \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid::getTypes
 	 * @return string
 	 */
 	abstract public function getType();

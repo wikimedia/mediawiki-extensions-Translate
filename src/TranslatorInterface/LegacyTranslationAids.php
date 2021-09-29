@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use Html;
 use IContextSource;
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\MessageDefinitionAid;
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
 use MediaWiki\Languages\LanguageFactory;
-use MessageDefinitionAid;
 use MessageGroup;
 use MessageHandle;
 use Title;
 use TranslateUtils;
-use TranslationAidDataProvider;
 
 /**
  * Provides minimal translation aids which integrate with the edit page and on diffs for

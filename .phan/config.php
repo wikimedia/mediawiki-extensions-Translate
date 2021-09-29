@@ -31,7 +31,6 @@ $cfg['directory_list'] = array_merge(
 		'src',
 		'stringmangler',
 		'tag',
-		'translationaids',
 		'ttmserver',
 		'utils',
 		'webservices',

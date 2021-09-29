@@ -11,6 +11,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid;
+
 /**
  * This is the interface and base implementation of unmanaged
  * message groups.

@@ -1,10 +1,17 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use Content;
+use ContentHandler;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MessageGroup;
+use MessageHandle;
+use TextContent;
 use Wikimedia\Rdbms\IDatabase;
 
 /**

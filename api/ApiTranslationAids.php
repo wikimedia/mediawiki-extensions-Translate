@@ -7,6 +7,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid;
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\UnsupportedTranslationAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
 
@@ -74,7 +77,7 @@ class ApiTranslationAids extends ApiBase {
 		foreach ( $props as $type ) {
 			// Do not proceed if translation aid is not supported for this message group
 			if ( !isset( $types[$type] ) ) {
-				$types[$type] = 'UnsupportedTranslationAid';
+				$types[$type] = UnsupportedTranslationAid::class;
 			}
 
 			$class = $types[$type];

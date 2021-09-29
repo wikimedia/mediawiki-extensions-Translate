@@ -1,6 +1,12 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use Hooks;
+use MessageHandle;
+use TranslateUtils;
+
 /**
  * Translation aid that provides the current saved translation.
  * @author Niklas Laxström

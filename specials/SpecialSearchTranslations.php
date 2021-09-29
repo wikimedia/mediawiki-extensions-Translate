@@ -7,6 +7,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
+use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
+
 /**
  * ...
  *

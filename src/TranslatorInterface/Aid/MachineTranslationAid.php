@@ -1,7 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+use TranslationWebService;
+use TranslationWebServiceConfigurationException;
 
 /**
  * Translation aid that provides suggestion from machine translation services.

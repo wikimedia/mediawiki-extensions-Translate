@@ -1,8 +1,20 @@
 <?php
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use HashMessageIndex;
+use MediaWikiIntegrationTestCase;
+use MessageGroups;
+use MessageHandle;
+use MessageIndex;
+use MockWikiMessageGroup;
+use ObjectCache;
+use Title;
+use WANObjectCache;
+
 /**
  * @group Database
- * @covers TranslationAidDataProvider
+ * @covers \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider
  */
 class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 
@@ -29,7 +41,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers TranslationAidDataProvider::getGoodTranslations
+	 * @covers \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider::getGoodTranslations
 	 * @throws MWException
 	 */
 	public function testGetGoodTranslations() {
