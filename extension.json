@@ -176,7 +176,6 @@
 		"SearchableTTMServer": "ttmserver/Interfaces.php",
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
-		"SpecialAggregateGroups": "specials/SpecialAggregateGroups.php",
 		"SpecialExportTranslations": "specials/SpecialExportTranslations.php",
 		"SpecialImportTranslations": "specials/SpecialImportTranslations.php",
 		"SpecialLanguageStats": "specials/SpecialLanguageStats.php",
@@ -361,7 +360,7 @@
 				"Translate:ConfigHelper"
 			]
 		},
-		"AggregateGroups": "SpecialAggregateGroups",
+		"AggregateGroups": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsSpecialPage",
 		"SearchTranslations": "SpecialSearchTranslations"
 	},
 	"APIListModules": {

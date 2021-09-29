@@ -1,4 +1,18 @@
 <?php
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use AggregateMessageGroup;
+use Html;
+use LinkBatch;
+use MessageGroup;
+use MessageGroups;
+use SpecialPage;
+use TranslateMetadata;
+use WikiPageMessageGroup;
+use Xml;
+use function count;
+
 /**
  * Contains logic for special page Special:AggregateGroups.
  *
@@ -9,8 +23,7 @@
  * @author Kunal Grover
  * @license GPL-2.0-or-later
  */
-
-class SpecialAggregateGroups extends SpecialPage {
+class AggregateGroupsSpecialPage extends SpecialPage {
 	protected $hasPermission = false;
 
 	public function __construct() {
