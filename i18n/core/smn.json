@@ -13,6 +13,7 @@
 	"translate-stats-users": "Jurgâleijeeh",
 	"translate-sidebar-alltrans": "Eres kieláid",
 	"translations": "Puoh jurgâlusah",
+	"translate-langstats-expand": "čääiti",
 	"translate-language": "Kielâ",
 	"translate-mgs-column-language": "Kielâ",
 	"translate-documentation-language": "jurgâlemravvuuh",
@@ -20,5 +21,6 @@
 	"tux-languageselector": "Puátukielâ:",
 	"tux-tab-all": "Puoh",
 	"tux-editor-in-other-languages": "Eres kieláid",
+	"tux-editor-expand-tooltip": "Styereed",
 	"tux-editor-message-tools-translations": "Puoh jurgâlusah"
 }

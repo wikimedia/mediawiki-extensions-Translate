@@ -6,5 +6,13 @@
 	},
 	"prefs-translate": "ပြန်ႏဘာႏသာႏ လွိုက်ရွေꩻခရာႏဖုံႏ",
 	"translate-sidebar-alltrans": "တွမ်ႏဘာႏသာႏလင်ဖုံႏအကို",
-	"tux-editor-in-other-languages": "တွမ်ႏဘာႏသာႏလင်ဖုံႏအကို"
+	"tux-editor-placeholder": "နာꩻဘာႏသာႏပြန်ႏ",
+	"tux-editor-editsummary-placeholder": "မိဥ်ႏမဲဥ်သော့ꩻတဲ့ သော့ꩻနွောင်ꩻဒျာႏ အအဲဥ်ႏ",
+	"tux-editor-paste-original-button-label": "ထူႏပွာꩻဗိုန် လိတ်ယာႏအရွီးခိုႏ",
+	"tux-editor-save-button-label": "သိမ်ꩻဘာႏသာႏပြန်ႏယို",
+	"tux-editor-skip-button-label": "ကာႏငါလွေꩻ ထဲင်းတဗာႏ",
+	"tux-editor-shortcut-info": "သိမ်ꩻတာႏ နျꩻသွော့ \"$1\" တဝ်းလဲ့ ကာႏငါထိုꩻ ထဲင်းတဗာႏ၊ နျꩻသွော့ \"$2\" တဝ်းလဲ့ အွဥ်ႏနယ်အအဲဥ်ႏတာႏ နျꩻသွော့ \"$4\" တဝ်းလဲ့ အမုဲင်ဒွောင်းအလင်တာႏ နျꩻသွော \"$3\"။",
+	"tux-editor-in-other-languages": "တွမ်ႏဘာႏသာႏလင်ဖုံႏအကို",
+	"tux-editor-need-more-help": "အဝ်ႏလိုႏထဲင်းယင်းနေ အကူႏညီႏ?",
+	"tux-editor-ask-help": "ရီထဲင်းယင်း အချက်လက်တာႏ"
 }
