@@ -27,11 +27,16 @@ class SupportAid extends TranslationAid {
 		$title = $handle->getTitle();
 		$config = self::getConfig( $handle );
 
+		$placeholders = [
+			'%MESSAGE%' => $title->getPrefixedText(),
+			'%MESSAGE_URL%' => TranslateUtils::getEditorUrl( $handle )
+		];
+
 		// Preprocess params
 		$params = [];
 		if ( isset( $config['params'] ) ) {
 			foreach ( $config['params'] as $key => $value ) {
-				$params[$key] = str_replace( '%MESSAGE%', $title->getPrefixedText(), $value );
+				$params[$key] = strtr( $value, $placeholders );
 			}
 		}
 
