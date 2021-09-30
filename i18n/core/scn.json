@@ -38,6 +38,7 @@
 	"translate-mgs-pagename": "Statìstichi dô gruppu di missaggi",
 	"translate-mgs-column-language": "Lingua",
 	"supportedlanguages": "Lingui mantinuti",
+	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|lingui}} n tutali.",
 	"translate-gs-continent": "Cuntinenti",
 	"translate-documentation-language": "Ducumintazzione dû missaggiu",
 	"tux-editor-message-tools-delete": "Cancella",
