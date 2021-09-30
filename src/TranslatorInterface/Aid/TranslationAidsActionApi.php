@@ -1,24 +1,24 @@
 <?php
-/**
- * Api module for querying message aids.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid;
-use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
-use MediaWiki\Extension\Translate\TranslatorInterface\Aid\UnsupportedTranslationAid;
+namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
+
+use ApiBase;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
+use MessageGroups;
+use MessageHandle;
+use QueryAggregator;
+use QueryAggregatorAware;
+use Title;
 
 /**
  * Api module for querying message aids.
- *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiTranslationAids extends ApiBase {
+class TranslationAidsActionApi extends ApiBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
 
