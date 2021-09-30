@@ -46,15 +46,4 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 
 		return $conds;
 	}
-
-	/**
-	 * Filters out messages that should not be displayed here
-	 * as they are not displayed in other places.
-	 *
-	 * @param MessageHandle $handle
-	 * @return bool
-	 */
-	protected function matchingMessage( MessageHandle $handle ) {
-		return MessageGroups::isTranslatableMessage( $handle );
-	}
 }

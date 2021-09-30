@@ -813,10 +813,11 @@ class MessageGroups {
 	 * conditions.
 	 *
 	 * @param MessageHandle $handle Handle for the translation target.
+	 * @param string $targetLanguage
 	 * @return bool
 	 * @since 2013.10
 	 */
-	public static function isTranslatableMessage( MessageHandle $handle ) {
+	public static function isTranslatableMessage( MessageHandle $handle, string $targetLanguage ): bool {
 		static $cache = [];
 
 		if ( !$handle->isValid() ) {
@@ -825,32 +826,17 @@ class MessageGroups {
 
 		$group = $handle->getGroup();
 		$groupId = $group->getId();
-		$language = $handle->getCode();
-		$cacheKey = "$groupId:$language";
+		$cacheKey = "$groupId:$targetLanguage";
 
 		if ( !isset( $cache[$cacheKey] ) ) {
-			$allowed = true;
-			$discouraged = false;
+			$supportedLanguages = TranslateUtils::getLanguageNames( 'en' );
+			$inclusionList = $group->getTranslatableLanguages() ?? $supportedLanguages;
 
-			$inclusionList = $group->getTranslatableLanguages();
-			if ( is_array( $inclusionList ) && !isset( $inclusionList[$language] ) ) {
-				$allowed = false;
-			}
-
-			if ( self::getPriority( $group ) === 'discouraged' ) {
-				$discouraged = true;
-			} else {
-				$priorityLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
-				if ( $priorityLanguages ) {
-					$map = array_flip( explode( ',', $priorityLanguages ) );
-					if ( !isset( $map[$language] ) ) {
-						$discouraged = true;
-					}
-				}
-			}
+			$included = isset( $inclusionList[$targetLanguage] );
+			$excluded = TranslateMetadata::isExcluded( $groupId, $targetLanguage );
 
 			$cache[$cacheKey] = [
-				'relevant' => $allowed && !$discouraged,
+				'relevant' => $included && !$excluded,
 				'tags' => [],
 			];
 

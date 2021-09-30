@@ -76,13 +76,14 @@ class RecentMessageGroup extends WikiMessageGroup {
 	}
 
 	/**
-	 * Allows subclasses to filter out more unwanted messages.
+	 * Filters out messages that should not be displayed here
+	 * as they are not displayed in other places.
 	 *
-	 * @param MessageHandle $msg
+	 * @param MessageHandle $handle
 	 * @return bool
 	 */
-	protected function matchingMessage( MessageHandle $msg ) {
-		return true;
+	protected function matchingMessage( MessageHandle $handle ): bool {
+		return MessageGroups::isTranslatableMessage( $handle, $this->language );
 	}
 
 	public function getDefinitions() {
@@ -104,22 +105,12 @@ class RecentMessageGroup extends WikiMessageGroup {
 		];
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
 
-		$groupIdsPreload = [];
-		foreach ( $res as $row ) {
-			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
-			$handle = new MessageHandle( $title );
-			if ( $handle->isValid() ) {
-				$groupIdsPreload[] = $handle->getGroup()->getId();
-			}
-		}
-		TranslateMetadata::preloadGroups( $groupIdsPreload, __METHOD__ );
-
 		$defs = [];
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
 			$handle = new MessageHandle( $title );
 
-			if ( !$handle->isValid() || !$this->matchingMessage( $handle ) ) {
+			if ( !$this->matchingMessage( $handle ) ) {
 				continue;
 			}
 
