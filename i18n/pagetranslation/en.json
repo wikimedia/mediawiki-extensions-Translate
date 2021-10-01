@@ -235,5 +235,11 @@
 	"tpt-generic-confirm": "Please confirm the action.",
 	"tpt-generic-button": "Confirm",
 	"tpt-validation-not-insertable": "Translation variable name \"$1\" does not work as an insertable in the translation interface. Avoid using special characters.",
-	"tpt-validation-name-reuse": "Translation variable \"$1\" is defined multiple times with different content. Change the variable names to be unique within the translation unit."
+	"tpt-validation-name-reuse": "Translation variable \"$1\" is defined multiple times with different content. Change the variable names to be unique within the translation unit.",
+	"visualeditor-annotations-translate-start": "Start of content to be translated",
+	"visualeditor-annotations-translate-end": "End of content to be translated",
+	"visualeditor-annotations-translate-description": "This range is marked as translatable. Please make sure you follow the guidelines of [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text].",
+	"visualeditor-annotations-tvar-start": "Start of the untranslatable content",
+	"visualeditor-annotations-tvar-end": "End of the untranslatable content",
+	"visualeditor-annotations-tvar-description": "This range is marked as untranslatable. Please refer to [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] for more information."
 }

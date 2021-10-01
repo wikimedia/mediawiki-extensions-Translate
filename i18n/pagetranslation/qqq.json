@@ -258,5 +258,11 @@
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
 	"tpt-generic-button": "Button text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}",
 	"tpt-validation-not-insertable": "Warning shown on Special:PageTranslation when translation variable names contain characters that do not work as an insertable in the translation interface",
-	"tpt-validation-name-reuse": "Error shown on Special:PageTranslation when translation variable is defined twice with same name but different content"
+	"tpt-validation-name-reuse": "Error shown on Special:PageTranslation when translation variable is defined twice with same name but different content",
+	"visualeditor-annotations-translate-start": "Label of the context item for an opening <translate> tag.",
+	"visualeditor-annotations-translate-end": "Label of the context item for a closing <translate> tag.",
+	"visualeditor-annotations-translate-description": "Additional explanation for a pair of <translate> tags.",
+	"visualeditor-annotations-tvar-start": "Label of the context item for an opening <tvar> tag.",
+	"visualeditor-annotations-tvar-end": "Label of the context item for a closing <tvar> tag.",
+	"visualeditor-annotations-tvar-description": "Additional explanation for a pair of <tvar> tags."
 }
