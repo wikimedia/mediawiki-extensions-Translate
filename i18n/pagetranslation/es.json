@@ -162,6 +162,7 @@
 	"pt-movepage-new": "Nuevo nombre:",
 	"pt-movepage-reason": "Razón:",
 	"pt-movepage-subpages": "Trasladar todas las subpáginas",
+	"pt-movepage-talkpages": "Mover páginas de discusión",
 	"pt-movepage-action-check": "Verificar si el traslado es posible",
 	"pt-movepage-action-perform": "Hacer el traslado",
 	"pt-movepage-action-other": "Cambiar destino",

@@ -84,7 +84,7 @@
 	"log-action-filter-pagetranslation-aggregategroups": "Cangiaminde a le gruppe aggregate",
 	"pt-movepage-title": "Spuèste 'a pàgene traducibbile \"$1\"",
 	"pt-movepage-list-pages": "Elenghe de le pàggene da spustà",
-	"pt-movepage-list-count": "In totale $1 {{PLURAL:$1|pàgene|pàggene}} e $2 $2 {{PLURAL:$2|sottepàgene|sottepàggene}} da spustà.",
+	"pt-movepage-list-count": "In totale $1 {{PLURAL:$1|pàgene|pàggene}} tènene $2 {{PLURAL:$2|sottepàgene|sottepàggene}} e $3 {{PLURAL:$3|pàgene de 'ngazzamiende|pàggene de 'ngazzamiende}} da spustà.",
 	"pt-movepage-list-no-pages": "Nisciuna pàgene acchiate.",
 	"pt-movepage-legend": "Spuèste 'a pàgene traducibbile",
 	"pt-movepage-current": "Nome de mò:",
