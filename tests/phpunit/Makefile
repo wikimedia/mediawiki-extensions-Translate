@@ -2,11 +2,11 @@ ifndef MW_INSTALL_PATH
 	MW_INSTALL_PATH=../../../..
 endif
 
-DIRS = api ffs messagegroups PageTranslation tag unit utils Validation
+TARGETS = api/ ffs/ messagegroups/ tag/ unit/ utils/ [A-Z]*/ *Test.php
 
 default:
 	php ${MW_INSTALL_PATH}/tests/phpunit/phpunit.php .
 
-.PHONY: *Test.php $(DIRS)
-*Test.php $(DIRS):
+.PHONY: $(TARGETS)
+$(TARGETS):
 	php ${MW_INSTALL_PATH}/tests/phpunit/phpunit.php $@
