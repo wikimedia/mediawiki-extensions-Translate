@@ -372,6 +372,12 @@
 		"groupreview": "ApiGroupReview",
 		"managemessagegroups": "ApiManageMessageGroups",
 		"translationaids": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\Aid\\TranslationAidsActionApi",
+		"translationentitysearch": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationEntitySearchActionApi",
+			"services": [
+				"Translate:EntitySearch"
+			]
+		},
 		"translationreview": "ApiTranslationReview",
 		"translationcheck": "ApiTranslationCheck",
 		"translationstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",

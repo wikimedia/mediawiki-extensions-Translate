@@ -171,5 +171,8 @@
 	"apierror-translate-rename-state-invalid": "'{{doc-apierror}}\n\nParameters:\n* $1 - State of the message being added as the replacement.\n$2 - State of the message being replaced.",
 	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}",
 	"apiwarn-translate-language-disabled-source": "{{doc-apierror}}\n\nParameters:\n* $1 - language name",
-	"apierror-translate-operation-error": "{{doc-apierror}}\n\nParameters:\n* $1 - exception message"
+	"apierror-translate-operation-error": "{{doc-apierror}}\n\nParameters:\n* $1 - exception message",
+	"apihelp-translationentitysearch-summary": "{{doc-apihelp-summary|translationentitysearch}}",
+	"apihelp-translationentitysearch-param-query": "{{doc-apihelp-param|translationentitysearch|query}}",
+	"apihelp-translationentitysearch-param-limit": "{{doc-apihelp-param|translationentitysearch|limit}}"
 }
