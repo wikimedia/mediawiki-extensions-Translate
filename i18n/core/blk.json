@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ninjastrikers",
 			"咽頭べさ"
 		]
 	},
@@ -15,7 +16,7 @@
 	"tux-tab-outdated": "ထဲ့ဆုဲင်ꩻထိုꩻခေတ်",
 	"tux-status-fuzzy": "ထဲ့ဆုဲင်ꩻထိုꩻခေတ်",
 	"tux-editor-placeholder": "နာꩻဘာႏသာႏပြန်ႏ",
-	"tux-editor-editsummary-placeholder": "မိဥ်ႏမဲဥ်သော့ꩻတဲ့ သော့ꩻနွောင်ꩻဒျာႏ အအဲဥ်ႏ",
+	"tux-editor-editsummary-placeholder": "မိဉ်ႏမဲဉ်သော့ꩻတဲ့ သော့ꩻနွောင်ꩻဒျာႏ အအဲဉ်ႏ",
 	"tux-editor-paste-original-button-label": "ထူႏပွာꩻဗိုန် လိတ်ယာႏအရွီးခိုႏ",
 	"tux-editor-save-button-label": "သိမ်ꩻဘာႏသာႏပြန်ႏယို",
 	"tux-editor-skip-button-label": "ကာႏငါလွေꩻ ထဲင်းတဗာႏ",
