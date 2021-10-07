@@ -3,6 +3,7 @@
 		"authors": [
 			"Alireza Ivaz",
 			"Huji",
+			"Jeeputer",
 			"Ladsgroup",
 			"Reza1615"
 		]
@@ -47,7 +48,7 @@
 	"apierror-translate-duplicateaggregategroup": "گروه پیام پیش از این وجود دارد.",
 	"apierror-translate-invalidgroup": "گروه وجود ندارد یا نامعتبر است.",
 	"apierror-translate-invalidstate": "وضعیت درخواستی نامعتبر است.",
-	"apierror-translate-invalidlanguage": "زبان درخواستی نامعتبر است.",
+	"apierror-translate-invalidlanguage": "شناسهٔ زبان $1 معتبر نیست.",
 	"apierror-translate-invalidupdate": "برورزسانی نامعتبر",
 	"apierror-translate-language-disabled": "ترجمه روی $1 غیرفعال شده‌است.",
 	"apierror-translate-language-disabled-reason": "ترجمه روی $1 غیرفعال شده‌است:$2",
