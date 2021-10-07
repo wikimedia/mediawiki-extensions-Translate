@@ -243,7 +243,7 @@ class SpecialTranslations extends SpecialAllPages {
 
 			$languageAttributes = [];
 			if ( Language::isKnownLanguageTag( $code ) ) {
-				$language = Language::factory( $code );
+				$language = $tHandle->getEffectiveLanguage();
 				$languageAttributes = [
 					'lang' => $language->getHtmlCode(),
 					'dir' => $language->getDir(),
