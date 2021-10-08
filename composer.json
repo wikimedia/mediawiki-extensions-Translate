@@ -73,9 +73,10 @@
 		],
 		"test": [
 			"parallel-lint . --exclude vendor --exclude node_modules --no-progress",
-			"phpcs -p -s --cache",
+			"@phpcs",
 			"minus-x check ."
 		],
-		"phan": "phan -d . --long-progress-bar"
+		"phan": "phan -d . --long-progress-bar",
+		"phpcs": "phpcs -p -s --cache"
 	}
 }
