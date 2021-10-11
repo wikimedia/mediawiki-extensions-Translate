@@ -590,7 +590,7 @@ class SpecialManageGroups extends SpecialPage {
 	): void {
 		$changes = $sourceChanges->getRenames( $language );
 		foreach ( $changes as $key => $params ) {
-			if ( !isset( $changes[$key] ) ) {
+			if ( $params === null ) {
 				continue;
 			}
 
@@ -785,7 +785,7 @@ class SpecialManageGroups extends SpecialPage {
 		$groupNamespace = $group->getNamespace();
 
 		foreach ( $renames as $key => $params ) {
-			if ( !isset( $renames[ $key] ) ) {
+			if ( $params === null ) {
 				continue;
 			}
 

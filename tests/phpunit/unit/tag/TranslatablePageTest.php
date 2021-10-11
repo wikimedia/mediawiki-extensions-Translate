@@ -8,7 +8,7 @@ use MediaWiki\Linker\LinkTarget;
  * @license GPL-2.0-or-later
  * @covers \TranslatablePage
  */
-class TranslatablePageTest extends \MediaWikiUnitTestCase {
+class TranslatablePageTest extends MediaWikiUnitTestCase {
 	/** @dataProvider provideTestParseTranslationUnit */
 	public function testParseTranslationUnit( LinkTarget $input, array $expected ) {
 		$output = TranslatablePage::parseTranslationUnit( $input );

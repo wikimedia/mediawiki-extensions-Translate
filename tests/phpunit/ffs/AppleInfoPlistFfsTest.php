@@ -50,7 +50,7 @@ class AppleInfoPlistFfsTest extends MediaWikiIntegrationTestCase {
 
 		$outfile = '';
 		foreach ( $parsed['MESSAGES'] as $key => $value ) {
-			$outfile .= AppleInfoPlistFfs::writeRow( $key, $value, true );
+			$outfile .= AppleInfoPlistFfs::writeRow( $key, $value );
 		}
 		$reparsed = $ffs->readFromVariable( $outfile );
 

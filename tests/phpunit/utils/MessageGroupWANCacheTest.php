@@ -11,7 +11,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testCacheKeyConfiguration() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'Invalid cache key' );
 
 		$this->mgCache->configure( [
@@ -22,7 +22,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testCacheRegeneratorConfig() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'Invalid regenerator' );
 
 		$this->mgCache->configure( [
@@ -32,7 +32,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testNoConfigureCall() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'configure function' );
 
 		$this->mgCache->setValue( [ 'abc' ] );
@@ -53,7 +53,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testTouchCallbackConfig() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'touchedCallback is not callable' );
 
 		$this->mgCache->configure( [

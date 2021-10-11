@@ -41,7 +41,7 @@ class MessageUpdateParameter implements JsonSerializable, JsonUnserializable {
 	}
 
 	public function isRename(): bool {
-		return boolval( $this->rename );
+		return $this->rename;
 	}
 
 	public function getReplacementValue(): string {

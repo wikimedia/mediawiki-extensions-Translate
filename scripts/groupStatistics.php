@@ -581,11 +581,7 @@ class GroupStatistics extends Maintenance {
 					// Multiple variants can be used for the same wiki.
 					// Store the scores in an array and output them later
 					// when they can be averaged.
-					if ( isset( $this->wikimediaCodeMap[$code] ) ) {
-						$wmfcode = $this->wikimediaCodeMap[$code];
-					} else {
-						$wmfcode = explode( '-', $code, 2 )[0];
-					}
+					$wmfcode = $this->wikimediaCodeMap[$code] ?? explode( '-', $code, 2 )[0];
 
 					if ( isset( $wmfscores[$wmfcode] ) ) {
 						$count = $wmfscores[$wmfcode]['count'] + 1;

@@ -73,11 +73,7 @@ class PluralCompare extends Maintenance {
 			$gtExp = false;
 		}
 
-		if ( isset( $clLanguages[$code] ) ) {
-			$cldrExp = $clLanguages[$code];
-		} else {
-			$cldrExp = false;
-		}
+		$cldrExp = $clLanguages[$code] ?? false;
 
 		for ( $i = 0; $i <= 250; $i++ ) {
 			$mw = $gt = $cl = '?';

@@ -87,7 +87,7 @@ class ElasticSearchTTMServer
 		if ( !$this->useWikimediaExtraPlugin() ) {
 			// ElasticTTM is currently not compatible with elasticsearch 2.x/5.x
 			// It needs FuzzyLikeThis ported via the wmf extra plugin
-			throw new \RuntimeException( 'The wikimedia extra plugin is mandatory.' );
+			throw new RuntimeException( 'The wikimedia extra plugin is mandatory.' );
 		}
 		/* Two query system:
 		 * 1) Find all strings in source language that match text
@@ -195,7 +195,7 @@ class ElasticSearchTTMServer
 		// Skip second query if first query found nothing. Keeping only one return
 		// statement in this method to avoid forgetting to reset connection timeout
 		if ( $terms !== [] ) {
-			$idQuery = new \Elastica\Query\Terms();
+			$idQuery = new Query\Terms();
 			$idQuery->setTerms( '_id', $terms );
 
 			$query = new Query( $idQuery );
@@ -242,8 +242,8 @@ class ElasticSearchTTMServer
 	 *
 	 * @param MessageHandle $handle
 	 * @param ?string $targetText
-	 * @throws \RuntimeException
 	 * @return bool
+	 * @throws RuntimeException
 	 */
 	public function update( MessageHandle $handle, $targetText ) {
 		if ( !$handle->isValid() || $handle->getCode() === '' ) {
@@ -363,7 +363,7 @@ class ElasticSearchTTMServer
 	/**
 	 * Begin the bootstrap process.
 	 *
-	 * @throws \RuntimeException
+	 * @throws RuntimeException
 	 */
 	public function beginBootstrap() {
 		$type = $this->getType();
@@ -511,7 +511,7 @@ class ElasticSearchTTMServer
 		$path = "_cluster/health/$indexName";
 		$response = $this->getClient()->request( $path );
 		if ( $response->hasError() ) {
-			throw new \Exception( "Error while fetching index health status: " . $response->getError() );
+			throw new Exception( "Error while fetching index health status: " . $response->getError() );
 		}
 		return $response->getData();
 	}
@@ -542,7 +542,7 @@ class ElasticSearchTTMServer
 				}
 				$this->logOutput( "\tIndex is $status retrying..." );
 				sleep( 5 );
-			} catch ( \Exception $e ) {
+			} catch ( Exception $e ) {
 				$this->logOutput( "Error while waiting for green ({$e->getMessage()}), retrying..." );
 			}
 		}
@@ -798,18 +798,18 @@ class ElasticSearchTTMServer
 	 *
 	 * @param \Elastica\Type $type the source index
 	 * @param Query $query
-	 * @throws \RuntimeException
+	 * @throws RuntimeException
 	 */
 	private function deleteByQuery( \Elastica\Type $type, Query $query ) {
 		try {
 			MWElasticUtils::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
-		} catch ( \Exception $e ) {
+		} catch ( Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
 				'Problem encountered during deletion.',
 				[ 'exception' => $e ]
 			);
 
-			throw new \RuntimeException( "Problem encountered during deletion.\n" . $e );
+			throw new RuntimeException( "Problem encountered during deletion.\n" . $e );
 		}
 	}
 
@@ -817,7 +817,7 @@ class ElasticSearchTTMServer
 	public function isFrozen() {
 		try {
 			return MWElasticUtils::isFrozen( $this->getClient() );
-		} catch ( \Exception $e ) {
+		} catch ( Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
 				'Problem encountered while checking the frozen index.',
 				[ 'exception' => $e ]

@@ -278,11 +278,7 @@ class PremadeMediawikiExtensionGroups {
 		foreach ( $groups as $g ) {
 			$name = $g['name'];
 
-			if ( isset( $g['id'] ) ) {
-				$id = $g['id'];
-			} else {
-				$id = $this->idPrefix . preg_replace( '/\s+/', '', strtolower( $name ) );
-			}
+			$id = $g['id'] ?? $this->idPrefix . preg_replace( '/\s+/', '', strtolower( $name ) );
 
 			if ( !isset( $g['file'] ) ) {
 				$file = preg_replace( '/\s+/', '', "$name/i18n/%CODE%.json" );
@@ -290,18 +286,10 @@ class PremadeMediawikiExtensionGroups {
 				$file = $g['file'];
 			}
 
-			if ( isset( $g['descmsg'] ) ) {
-				$descmsg = $g['descmsg'];
-			} else {
-				$descmsg = str_replace( $this->idPrefix, '', $id ) . '-desc';
-			}
+			$descmsg = $g['descmsg'] ?? str_replace( $this->idPrefix, '', $id ) . '-desc';
 
 			$configureId = self::foldId( $name );
-			if ( isset( $configureData[$configureId]['url'] ) ) {
-				$url = $configureData[$configureId]['url'];
-			} else {
-				$url = false;
-			}
+			$url = $configureData[$configureId]['url'] ?? false;
 
 			$newgroup = [
 				'name' => $name,

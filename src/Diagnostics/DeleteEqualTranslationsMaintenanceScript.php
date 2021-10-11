@@ -62,7 +62,7 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$equalMessageCount = count( $equalMessages );
 		if ( $equalMessageCount === 0 ) {
 			$this->output( "No translations equal to definition found\n" );
-			return true;
+			return;
 		}
 
 		$stats = $this->getUserStats( $equalMessages );

@@ -31,7 +31,7 @@ class MessageGroupWANCache {
 	/**
 	 * To be called when the cache is empty or expired to get the data
 	 * to repopulate the cache
-	 * @var \Closure
+	 * @var Closure
 	 */
 	protected $regenerator;
 	/**
@@ -46,7 +46,7 @@ class MessageGroupWANCache {
 	protected $checkKeys;
 	/**
 	 * @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html
-	 * @var \Closure
+	 * @var Closure
 	 */
 	protected $touchedCallback;
 	/**
@@ -152,17 +152,17 @@ class MessageGroupWANCache {
 	 */
 	protected function checkConfig() {
 		if ( $this->cacheKey === null ) {
-			throw new \InvalidArgumentException( "Invalid cache key set. " .
+			throw new InvalidArgumentException( "Invalid cache key set. " .
 				"Ensure you have called the configure function before get / setting values." );
 		}
 
 		if ( !is_callable( $this->regenerator ) ) {
-			throw new \InvalidArgumentException( "Invalid regenerator set. " .
+			throw new InvalidArgumentException( "Invalid regenerator set. " .
 				"Ensure you have called the configure function before get / setting values." );
 		}
 
 		if ( $this->touchedCallback && !is_callable( $this->touchedCallback ) ) {
-			throw new \InvalidArgumentException( "touchedCallback is not callable. " );
+			throw new InvalidArgumentException( "touchedCallback is not callable. " );
 		}
 	}
 }

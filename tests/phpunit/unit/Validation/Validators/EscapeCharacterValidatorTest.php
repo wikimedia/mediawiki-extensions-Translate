@@ -51,7 +51,7 @@ class EscapeCharacterValidatorTest extends BaseValidatorTestCase {
 	}
 
 	public function testEmptyValues() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessageMatches( '/no values provided/i' );
 		new EscapeCharacterValidator( [
 			'values' => [],
@@ -59,7 +59,7 @@ class EscapeCharacterValidatorTest extends BaseValidatorTestCase {
 	}
 
 	public function testInvalidEscape() {
-		$this->expectException( \InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessageMatches( '/invalid escape character/i' );
 		new EscapeCharacterValidator( [
 			'values' => [ '\c' ],

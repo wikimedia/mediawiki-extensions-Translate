@@ -852,7 +852,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	 * @param Content $content
 	 * @param Status $status
 	 * @param string $summary
-	 * @param \User $user
+	 * @param User $user
 	 * @return bool true if message is valid, false otherwise.
 	 */
 	public static function validateMessage( IContextSource $context, Content $content,
@@ -897,7 +897,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 
 			$validationResponse = $messageValidator->validateMessage( $message, $handle->getCode() );
 			if ( $validationResponse->hasErrors() ) {
-				$status->fatal( new \ApiRawMessage(
+				$status->fatal( new ApiRawMessage(
 					$context->msg( 'translate-syntax-error' )->parse(),
 					'translate-validation-failed',
 					[

@@ -44,10 +44,8 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		$logger->info( 'Group synchronization is in progress' );
 
 		$groupsInProgress = [];
-		$groupResponses = [];
 		foreach ( $groupsInSync as $groupId ) {
 			$groupResponse = $groupSyncCache->getSynchronizationStatus( $groupId );
-			$groupResponses[] = $groupResponse;
 
 			if ( $groupResponse->isDone() ) {
 				$groupSyncCache->endSync( $groupId );

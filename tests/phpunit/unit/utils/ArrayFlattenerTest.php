@@ -6,7 +6,7 @@
  */
 
 /** @coversDefaultClass \ArrayFlattener */
-class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
+class ArrayFlattenerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideTestFlatten
 	 * @covers ::flatten
@@ -201,7 +201,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 		$flattener = new ArrayFlattener( '.', true );
 
 		$this->assertTrue(
-			$flattener->compareContent( $input1, $input2, $flattener )
+			$flattener->compareContent( $input1, $input2 )
 		);
 	}
 
@@ -213,7 +213,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 		$flattener = new ArrayFlattener( '.', true );
 
 		$this->assertfalse(
-			$flattener->compareContent( $input1, $input2, $flattener )
+			$flattener->compareContent( $input1, $input2 )
 		);
 	}
 

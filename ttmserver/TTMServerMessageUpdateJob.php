@@ -154,7 +154,7 @@ class TTMServerMessageUpdateJob extends Job {
 			} else {
 				$this->runCommand( $ttmserver );
 			}
-		} catch ( \Exception $e ) {
+		} catch ( Exception $e ) {
 			$this->requeueError( $serviceName, $e );
 		}
 	}

@@ -25,31 +25,15 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			$name = $g['name'];
 			$sanitizedName = preg_replace( '/\s+/', '', strtolower( $name ) );
 
-			if ( isset( $g['id'] ) ) {
-				$id = $g['id'];
-			} else {
-				$id = $this->idPrefix . $sanitizedName;
-			}
+			$id = $g['id'] ?? $this->idPrefix . $sanitizedName;
 
-			if ( isset( $g['file'] ) ) {
-				$file = $g['file'];
-			} else {
-				// Canonical names for Intuition text-domains are lowercase
-				// eg. "MyTool" -> "mytool/en.json"
-				$file = "$sanitizedName/%CODE%.json";
-			}
+			// Canonical names for Intuition text-domains are lowercase
+			// eg. "MyTool" -> "mytool/en.json"
+			$file = $g['file'] ?? "$sanitizedName/%CODE%.json";
 
-			if ( isset( $g['descmsg'] ) ) {
-				$descmsg = $g['descmsg'];
-			} else {
-				$descmsg = "$id-desc";
-			}
+			$descmsg = $g['descmsg'] ?? "$id-desc";
 
-			if ( isset( $g['url'] ) ) {
-				$url = $g['url'];
-			} else {
-				$url = false;
-			}
+			$url = $g['url'] ?? false;
 
 			$newgroup = [
 				'name' => 'Intuition - ' . $name,

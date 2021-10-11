@@ -122,7 +122,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 
 		$title = Title::newFromText( 'MediaWiki:translated/fi' );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
-		$status = new \Status();
+		$status = new Status();
 
 		$requestContext = new RequestContext();
 		$requestContext->setLanguage( 'en-gb' );
@@ -135,7 +135,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertGreaterThan( 0, $status->getErrorsArray(),
 			'errors are specified when translation fails validation.' );
 
-		$newStatus = new \Status();
+		$newStatus = new Status();
 		$superUser = $this->getTestSysop()->getUser();
 
 		TranslateHooks::validateMessage( $requestContext, $content, $newStatus, '', $superUser );

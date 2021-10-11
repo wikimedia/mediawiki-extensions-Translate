@@ -73,7 +73,6 @@ class MediaWikiTimeListValidator implements MessageValidator {
 				);
 
 				$issues->add( $issue );
-				continue;
 			}
 		}
 
