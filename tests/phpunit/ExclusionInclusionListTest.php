@@ -6,7 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
-class ExclusionInclusionListTest extends MediaWikiTestCase {
+class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 
 	/** @var MessageGroup */
 	protected $group;

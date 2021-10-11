@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use FatMessage;
 use Language;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Title;
 use WikiPageMessageGroup;
 
@@ -14,7 +14,7 @@ use WikiPageMessageGroup;
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationPage
  */
-class TranslationPageTest extends MediaWikiTestCase {
+class TranslationPageTest extends MediaWikiIntegrationTestCase {
 	/** @dataProvider provideTestGenerateSourceFromTranslations */
 	public function testGenerateSourceFromTranslations(
 		bool $inline,
