@@ -96,6 +96,11 @@ root:
                  _type: text
           keymatch:
             _type: array
+            _description: 'Specify the message keys for which this validation should be run. *DEPRECATED*: Use "include" instead'
+            _children: []
+            _ignore_extra_keys: true
+          include:
+            _type: array
             _description: Specify the message keys for which this validation should be run
             _children: []
             _ignore_extra_keys: true

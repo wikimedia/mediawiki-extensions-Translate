@@ -220,7 +220,7 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testKeyMatching() {
+	public function testKeyInclusion() {
 		$group = MessageGroups::getGroup( 'test-group' );
 		$collection = $group->initCollection( 'en-gb' );
 		$collection->loadTranslations();

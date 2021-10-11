@@ -42,7 +42,7 @@ class MockWikiValidationMessageGroup extends MockWikiMessageGroup {
 			[
 				'class' => MockTranslateValidator::class,
 				'enforce' => true,
-				'keymatch' => [
+				'include' => [
 					'translated',
 					'untranslated',
 					[
