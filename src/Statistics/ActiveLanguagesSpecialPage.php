@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Config;
 use Html;
 use HtmlArmor;
+use Language;
 use LinkBatch;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
@@ -36,6 +37,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private $loadBalancer;
 	/** @var ConfigHelper */
 	private $configHelper;
+	/** @var Language */
+	private $contentLanguage;
 	/** @var int Cutoff time for inactivity in days */
 	private $period = 180;
 
@@ -48,7 +51,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		TranslatorActivity $translatorActivity,
 		LanguageNameUtils $langNameUtils,
 		ILoadBalancer $loadBalancer,
-		ConfigHelper $configHelper
+		ConfigHelper $configHelper,
+		Language $contentLanguage
 	) {
 		parent::__construct( 'SupportedLanguages' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -56,6 +60,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->langNameUtils = $langNameUtils;
 		$this->loadBalancer = $loadBalancer;
 		$this->configHelper = $configHelper;
+		$this->contentLanguage = $contentLanguage;
 	}
 
 	protected function getGroupName() {
@@ -221,19 +226,26 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	protected function outputLanguageCloud( array $languages, array $names ) {
+		global $wgTranslateDocumentationLanguageCode;
+
 		$out = $this->getOutput();
 
 		$out->addHTML( '<div class="tagcloud autonym">' );
 
 		foreach ( $languages as $k => $v ) {
 			$name = $names[$k];
+			$langAttribute = $k;
 			$size = round( log( $v ) * 20 ) + 10;
+
+			if ( $langAttribute === $wgTranslateDocumentationLanguageCode ) {
+				$langAttribute = $this->contentLanguage->getHtmlCode();
+			}
 
 			$params = [
 				'href' => $this->getPageTitle( $k )->getLocalURL(),
 				'class' => 'tag',
 				'style' => "font-size:$size%",
-				'lang' => $k,
+				'lang' => $langAttribute,
 			];
 
 			$tag = Html::element( 'a', $params, $name );

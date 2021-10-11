@@ -341,7 +341,8 @@
 				"Translate:TranslatorActivity",
 				"LanguageNameUtils",
 				"DBLoadBalancer",
-				"Translate:ConfigHelper"
+				"Translate:ConfigHelper",
+				"ContentLanguage"
 			]
 		},
 		"AggregateGroups": {
