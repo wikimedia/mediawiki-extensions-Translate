@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements support for cxserver proxied through RESTBase
  * @ingroup TranslationWebService
@@ -29,7 +31,7 @@ class RESTBaseWebService extends TranslationWebService {
 		$pairs = [];
 
 		$url = $this->config['host'] . '/rest_v1/transform/list/tool/mt/';
-		$json = Http::get(
+		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 			$url,
 			[ $this->config['timeout'] ],
 			__METHOD__

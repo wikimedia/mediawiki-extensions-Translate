@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements support for Yandex translation api v1.
  * @see https://tech.yandex.com/translate/
@@ -37,7 +39,7 @@ class YandexWebService extends TranslationWebService {
 		];
 
 		$url = $this->config['pairs'] . '?' . wfArrayToCgi( $params );
-		$json = Http::get(
+		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 			$url,
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__

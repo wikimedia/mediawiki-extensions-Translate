@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements support Apetrium translator api.
  * @see http://wiki.apertium.org/wiki/Apertium_web_service
@@ -24,7 +26,7 @@ class ApertiumWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		$pairs = [];
-		$json = Http::get(
+		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 			$this->config['pairs'],
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__

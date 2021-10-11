@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements support for Google Translate API
  * @see https://cloud.google.com/translate/docs/reference/rest
@@ -56,7 +58,7 @@ class GoogleTranslateWebService extends TranslationWebService {
 			'key' => $this->config['key'],
 		];
 
-		$json = Http::get(
+		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 			wfAppendQuery( $api, wfArrayToCgi( $params ) ),
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__
