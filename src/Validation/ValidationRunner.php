@@ -107,6 +107,7 @@ class ValidationRunner {
 			'insertable' => $isInsertable,
 			'enforce' => $validatorConfig['enforce'] ?? false,
 			'keymatch' => $validatorConfig['keymatch'] ?? false,
+			'exclude' => $validatorConfig['exclude'] ?? false
 		];
 	}
 
@@ -294,8 +295,7 @@ class ValidationRunner {
 
 	/**
 	 * Check if key matches validator's key patterns.
-	 *
-	 * Only relevant if the 'keymatch' option is specified in the validator.
+	 * Only relevant if the 'keymatch' or 'exclude' option is specified in the validator.
 	 *
 	 * @param string $key
 	 * @param string[] $keyMatches
@@ -361,6 +361,11 @@ class ValidationRunner {
 		try {
 			$keyMatches = $validatorData['keymatch'];
 			if ( $keyMatches !== false && !$this->doesKeyMatch( $message->key(), $keyMatches ) ) {
+				return;
+			}
+
+			$excludedKeys = $validatorData['exclude'];
+			if ( $excludedKeys !== false && $this->doesKeyMatch( $message->key(), $excludedKeys ) ) {
 				return;
 			}
 

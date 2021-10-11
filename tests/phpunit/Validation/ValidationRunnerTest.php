@@ -40,7 +40,10 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 			'untranslated' => 'fanny',
 			'testing-key' => 'test this!',
 			'regex-key-test' => 'regex test',
-			'non-matching-key' => 'non matching key'
+			'non-matching-key' => 'non matching key',
+			'key-excluded' => '',
+			'regex-exclude' => '',
+			'wildcard-exclude' => ''
 		];
 
 		$list['test-group'] = new MockWikiValidationMessageGroup( 'test-group', $messages );
@@ -243,5 +246,34 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 			$validationResult->getErrors(),
 			'errors are raised for a matching key matched via a direct match!'
 		);
+	}
+
+	public function testKeyExclusion() {
+		$group = MessageGroups::getGroup( 'test-group' );
+		$collection = $group->initCollection( 'en-gb' );
+		$collection->loadTranslations();
+		$msgValidator = $group->getValidator();
+
+		$validationResult = $msgValidator->validateMessage( $collection['regex-key-test'], 'en-gb' );
+		$this->assertGreaterThan(
+			0,
+			count( $validationResult->getErrors() ),
+			'errors are raised for a matching key matched via regex!'
+		);
+
+		$excludedKeys = [
+			'key-excluded',
+			'regex-exclude',
+			'wildcard-exclude'
+		];
+
+		foreach ( $excludedKeys as $key ) {
+			$validationResult = $msgValidator->validateMessage( $collection[$key], 'en-gb' );
+			$this->assertCount(
+				0,
+				$validationResult->getErrors(),
+				'errors are not raised for an excluded key: ' . $key
+			);
+		}
 	}
 }

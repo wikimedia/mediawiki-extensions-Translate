@@ -99,6 +99,11 @@ root:
             _description: Specify the message keys for which this validation should be run
             _children: []
             _ignore_extra_keys: true
+          exclude:
+            _type: array
+            _description: Specify the message keys for which this validation should not be run
+            _children: []
+            _ignore_extra_keys: true
     TAGS:
       _type: prototype
       _prototype:
