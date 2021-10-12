@@ -533,13 +533,7 @@
 			"messages": [
 				"tps-edit-sourcepage-ve-warning-title",
 				"tps-edit-sourcepage-ve-warning-text",
-				"tps-edit-sourcepage-ve-warning-button",
-				"visualeditor-annotations-translate-start",
-				"visualeditor-annotations-translate-end",
-				"visualeditor-annotations-translate-description",
-				"visualeditor-annotations-tvar-start",
-				"visualeditor-annotations-tvar-end",
-				"visualeditor-annotations-tvar-description"
+				"tps-edit-sourcepage-ve-warning-button"
 			],
 			"scripts": [
 				"resources/js/ext.translate.edit.documentation.js"
@@ -1085,6 +1079,28 @@
 				"desktop",
 				"mobile"
 			]
+		},
+		"ext.translate.ve": {
+			"messages": [
+				"visualeditor-annotations-translate-start",
+				"visualeditor-annotations-translate-end",
+				"visualeditor-annotations-translate-description",
+				"visualeditor-annotations-tvar-start",
+				"visualeditor-annotations-tvar-end",
+				"visualeditor-annotations-tvar-description"
+			],
+			"scripts": [
+				"resources/src/ve-translate/ve.ce.MWTranslateAnnotationNode.js",
+				"resources/src/ve-translate/ve.dm.MWTranslateAnnotationNode.js",
+				"resources/src/ve-translate/ve.ui.MWTranslateAnnotationContextItem.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
 		}
 	},
 	"QUnitTestModule": {
@@ -1288,6 +1304,13 @@
 	"GrantPermissions": {
 		"editpage": {
 			"translate": true
+		}
+	},
+	"attributes": {
+		"VisualEditor": {
+			"PluginModules": [
+				"ext.translate.ve"
+			]
 		}
 	}
 }
