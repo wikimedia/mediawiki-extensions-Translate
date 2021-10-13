@@ -83,12 +83,12 @@ class MessageGroups {
 		$cache = $this->getCache();
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $cache->getWithSetCallback(
-			self::getCacheKey(),
+			$this->getCacheKey(),
 			$cache::TTL_DAY,
 			$regenerator,
 			[
 				'lockTSE' => 30, // avoid stampedes (mutex)
-				'checkKeys' => [ self::getCacheKey() ],
+				'checkKeys' => [ $this->getCacheKey() ],
 				'touchedCallback' => static function ( $value ) {
 					return ( $value instanceof DependencyWrapper && $value->isExpired() )
 						? time() // treat value as if it just expired (for "lockTSE")
@@ -127,7 +127,7 @@ class MessageGroups {
 	public function recache() {
 		// Purge the value from all datacenters
 		$cache = $this->getCache();
-		$cache->touchCheckKey( self::getCacheKey() );
+		$cache->touchCheckKey( $this->getCacheKey() );
 
 		$this->clearProcessCache();
 
@@ -155,7 +155,7 @@ class MessageGroups {
 		$self = self::singleton();
 
 		$cache = $self->getCache();
-		$cache->delete( self::getCacheKey(), 1 );
+		$cache->delete( $self->getCacheKey(), 1 );
 
 		foreach ( $self->getCacheGroupLoaders() as $cacheLoader ) {
 			$cacheLoader->clearCache();
@@ -200,11 +200,8 @@ class MessageGroups {
 	 *
 	 * @return string
 	 */
-	protected static function getCacheKey() {
-		$self = self::singleton();
-		$cache = $self->getCache();
-
-		return $cache->makeKey( 'translate-groups', 'v' . self::CACHE_VERSION );
+	public function getCacheKey(): string {
+		return $this->getCache()->makeKey( 'translate-groups', 'v' . self::CACHE_VERSION );
 	}
 
 	/**

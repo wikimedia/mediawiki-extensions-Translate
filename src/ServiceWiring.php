@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
+use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
@@ -31,6 +32,21 @@ use MediaWiki\MediaWikiServices;
 return [
 	'Translate:ConfigHelper' => static function (): ConfigHelper {
 		return new ConfigHelper();
+	},
+
+	'Translate:EntitySearch' => static function ( MediaWikiServices $services ): EntitySearch {
+		// BC for MW <= 1.36
+		if ( method_exists( $services, 'getCollationFactory' ) ) {
+			$collation = $services->getCollationFactory()->makeCollation( 'uca-default-u-kn' );
+		} else {
+			$collation = Collation::factory( 'uca-default-u-kn' );
+		}
+
+		return new EntitySearch(
+			$services->getMainWANObjectCache(),
+			$collation,
+			MessageGroups::singleton()
+		);
 	},
 
 	'Translate:ExternalMessageSourceStateImporter' => static function (

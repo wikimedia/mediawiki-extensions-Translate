@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
+use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
@@ -52,6 +53,11 @@ class Services implements ContainerInterface {
 
 	public function getConfigHelper(): ConfigHelper {
 		return $this->get( 'Translate:ConfigHelper' );
+	}
+
+	/** @since 2021.10 */
+	public function getEntitySearch(): EntitySearch {
+		return $this->get( 'Translate:EntitySearch' );
 	}
 
 	public function getExternalMessageSourceStateImporter(): ExternalMessageSourceStateImporter {
