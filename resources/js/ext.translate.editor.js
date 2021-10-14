@@ -399,7 +399,6 @@
 						href: uri.toString(),
 						target: '_blank'
 					} )
-					// eslint-disable-next-line mediawiki/msg-doc
 					.text( mw.msg( message ) )
 				);
 		},

@@ -569,6 +569,7 @@
 
 		/**
 		 * Only shows message groups translatable to given target language
+		 *
 		 * @param {string} targetLanguage
 		 */
 		updateTargetLanguage: function ( targetLanguage ) {
