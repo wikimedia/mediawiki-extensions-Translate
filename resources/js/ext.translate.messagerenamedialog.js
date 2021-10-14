@@ -301,11 +301,14 @@ mw.translate.MessageRenameDialog.prototype.filterMessages = function ( searchVal
  * Method use to display a notice on the dialog box
  *
  * @param {string} msg
- * @param {string} type
+ * @param {string} type Type of notice to display.
  */
 mw.translate.MessageRenameDialog.prototype.displayNotice = function ( msg, type ) {
 	var possibleTypes = [ 'info', 'error', 'warning' ];
+	// `type` classes documented above. Will be one of "possibleTypes".
+	// eslint-disable-next-line mediawiki/class-doc
 	this.$notice.removeClass( possibleTypes.join( ' ' ) );
+	// eslint-disable-next-line mediawiki/class-doc
 	this.$notice.text( msg ).addClass( type ).removeClass( 'hide' );
 	this.updateSize();
 };

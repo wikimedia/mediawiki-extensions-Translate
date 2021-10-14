@@ -195,6 +195,9 @@
 
 			dir = $.uls.data.getDir( documentation.language );
 
+			// The following classes are used here:
+			// * mw-content-ltr
+			// * mw-content-rtl
 			this.$editor.find( '.uneditable-documentation' )
 				.attr( {
 					lang: documentation.language,

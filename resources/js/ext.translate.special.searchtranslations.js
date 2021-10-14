@@ -123,6 +123,9 @@
 				.addClass( 'row facet-item' )
 				.append(
 					$( '<span>' )
+						// The following classes are used here:
+						// * selected
+						// * or no class
 						.addClass( 'facet-name ' + selectedClasss )
 						.append( $( '<a>' )
 							.attr( 'href', result.url )
@@ -233,9 +236,15 @@
 			}
 
 			$groupRow = $( '<div>' )
+				// The following classes are used here:
+				// * facet-level-0
+				// * facet-level-1
+				// * facet-level-2
+				// * facet-level-3
 				.addClass( 'row facet-item facet-level-' + level )
 				.append(
 					$( '<span>' )
+						// Class name documented above
 						.addClass( 'facet-name ' + selectedClass )
 						.append( $( '<a>' )
 							.attr( 'href', uri.toString() )

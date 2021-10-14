@@ -62,6 +62,8 @@
 					that.message.translation = translation;
 					that.markSelfTranslation();
 
+					// `status` class is documented elsewhere
+					// eslint-disable-next-line mediawiki/class-doc
 					that.$message.find( '.tux-proofread-status' )
 						.removeClass( 'translated fuzzy proofread untranslated' )
 						.addClass( that.message.properties.status );
@@ -90,6 +92,8 @@
 
 			sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
 
+			// `status` class is documented elsewhere
+			// eslint-disable-next-line mediawiki/class-doc
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
 				.addClass(
@@ -117,10 +121,14 @@
 
 			targetLangDir = $.uls.data.getDir( targetLangAttrib );
 
+			// `status` class is documented elsewhere
+			// eslint-disable-next-line mediawiki/class-doc
 			this.$message.append(
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message' )
 					.append(
+						// `status` class is documented elsewhere
+						// eslint-disable-next-line mediawiki/class-doc
 						$( '<div>' )
 							.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
 						$( '<div>' )

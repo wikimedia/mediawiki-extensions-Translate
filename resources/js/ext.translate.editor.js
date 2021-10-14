@@ -131,6 +131,8 @@
 
 			$tuxListStatus.children( '.tux-status-unsaved' ).remove();
 			$tuxListStatus.children().addClass( 'hide' );
+			// `highlightClass` documented above
+			// eslint-disable-next-line mediawiki/class-doc
 			$( '<span>' )
 				.addClass( 'tux-status-unsaved ' + highlightClass )
 				.text( mw.msg( 'tux-status-unsaved' ) )
@@ -1082,6 +1084,8 @@
 			var noticeCount,
 				$notices = this.$editor.find( '.tux-notice' ),
 				$moreNoticesTab = this.$editor.find( '.tux-more-notices' ),
+				// `noticeTypes` documented above
+				// eslint-disable-next-line mediawiki/class-doc
 				$newNotice = $( '<div>' )
 					.addClass( 'tux-notice-message ' + type )
 					.html( notice );
