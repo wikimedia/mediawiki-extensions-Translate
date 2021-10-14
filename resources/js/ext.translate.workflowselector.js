@@ -58,10 +58,9 @@
 		 * @return {jQuery.Promise}
 		 */
 		changeState: function ( state ) {
-			var params,
-				api = new mw.Api();
+			var api = new mw.Api();
 
-			params = {
+			var params = {
 				action: 'groupreview',
 				group: this.groupId,
 				language: this.language,
@@ -85,18 +84,17 @@
 		 * Actually constructs the DOM and displays the selector.
 		 */
 		display: function () {
-			var instance = this,
-				$display, $list;
+			var instance = this;
 
 			instance.$container.empty();
 			if ( !instance.states ) {
 				return;
 			}
 
-			$list = $( '<ul>' )
+			var $list = $( '<ul>' )
 				.addClass( 'tux-dropdown-menu tux-workflow-status-selector hide' );
 
-			$display = $( '<div>' )
+			var $display = $( '<div>' )
 				.addClass( 'tux-workflow-status' )
 				.text( mw.msg( 'translate-workflow-state-' ) )
 				.on( 'click', function ( e ) {
@@ -130,10 +128,9 @@
 			} );
 
 			$list.find( '.changeable' ).on( 'click', function () {
-				var state,
-					$this = $( this );
+				var $this = $( this );
 
-				state = $this.data( 'state' ).id;
+				var state = $this.data( 'state' ).id;
 
 				$display.text( mw.msg( 'translate-workflow-set-doing' ) );
 				$display.append( $( '<span>' ).addClass( 'tux-workflow-status-triangle' ) );

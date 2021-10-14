@@ -41,12 +41,11 @@
 		 * Listen for the change events and update the statsbar
 		 */
 		listen: function () {
-			var i,
-				statsbar = this,
+			var statsbar = this,
 				languageStats = mw.translate.languagestats[ this.language ];
 
 			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
-				for ( i = 0; i < languageStats.length; i++ ) {
+				for ( var i = 0; i < languageStats.length; i++ ) {
 					if ( languageStats[ i ].group === statsbar.group ) {
 						// Changing a proofread message does not create a new translation
 						if ( to === 'translated' && from !== 'proofread' ) {
@@ -115,16 +114,15 @@
 		},
 
 		update: function () {
-			var proofread, translated, fuzzy, untranslated,
-				stats = this.getStatsForGroup( this.group );
+			var stats = this.getStatsForGroup( this.group );
 
-			proofread = 100 * stats.proofread / stats.total;
+			var proofread = 100 * stats.proofread / stats.total;
 			// Proofread messages are also translated, so remove those for
 			// the bar showing only translated count.
-			translated = stats.translated - stats.proofread;
+			var translated = stats.translated - stats.proofread;
 			translated = 100 * translated / stats.total;
-			fuzzy = 100 * stats.fuzzy / stats.total;
-			untranslated = 100 - proofread - translated - fuzzy;
+			var fuzzy = 100 * stats.fuzzy / stats.total;
+			var untranslated = 100 - proofread - translated - fuzzy;
 
 			this.elements.$proofread[ 0 ].style.width = proofread + '%';
 			this.elements.$translated[ 0 ].style.width = translated + '%';
@@ -147,10 +145,9 @@
 		},
 
 		getStatsForGroup: function ( group ) {
-			var i,
-				languageStats = mw.translate.languagestats[ this.language ];
+			var languageStats = mw.translate.languagestats[ this.language ];
 
-			for ( i = 0; i < languageStats.length; i++ ) {
+			for ( var i = 0; i < languageStats.length; i++ ) {
 				if ( languageStats[ i ].group === group ) {
 					return languageStats[ i ];
 				}

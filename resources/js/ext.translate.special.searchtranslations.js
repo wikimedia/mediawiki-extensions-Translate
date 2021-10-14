@@ -43,9 +43,8 @@
 	// Make other old browsers happy
 	if ( !Object.keys ) {
 		Object.keys = function ( obj ) {
-			var keys = [],
-				k;
-			for ( k in obj ) {
+			var keys = [];
+			for ( var k in obj ) {
 				if ( Object.prototype.hasOwnProperty.call( obj, k ) ) {
 					keys.push( k );
 				}
@@ -55,42 +54,31 @@
 	}
 
 	function showLanguages() {
-		var $languages,
-			languages,
-			ulslanguages = [],
-			currentLanguage,
-			resultCount,
-			$count,
-			result,
-			i,
+		var ulslanguages = [],
 			selectedClasss = '',
-			languageCode,
 			quickLanguageList = [],
-			unique = [],
-			$ulsTrigger,
-			uri;
+			unique = [];
 
-		$languages = $( '.facet.languages' );
-		languages = $languages.data( 'facets' );
-		currentLanguage = $languages.data( 'language' );
+		var $languages = $( '.facet.languages' );
+		var languages = $languages.data( 'facets' );
+		var currentLanguage = $languages.data( 'language' );
 		if ( !languages ) {
 			return;
 		}
 
 		if ( currentLanguage !== '' ) {
-			uri = new mw.Uri( location.href );
+			var uri = new mw.Uri( location.href );
 			uri.extend( { language: '', filter: '' } );
 			addToSelectedBox( getLanguageLabel( currentLanguage ), uri.toString() );
 		}
 
-		resultCount = Object.keys( languages ).length;
+		var resultCount = Object.keys( languages ).length;
 		quickLanguageList = quickLanguageList.concat( mw.uls.getFrequentLanguageList() )
 			.concat( Object.keys( languages ) );
 
 		// Remove duplicates from the language list
 		quickLanguageList.forEach( function ( lang ) {
-			result = languages[ lang ];
-			if ( result && unique.indexOf( lang ) === -1 ) {
+			if ( languages[ lang ] && unique.indexOf( lang ) === -1 ) {
 				unique.push( lang );
 			}
 		} );
@@ -106,9 +94,9 @@
 
 		quickLanguageList.sort( sortLanguages );
 
-		for ( i = 0; i <= quickLanguageList.length; i++ ) {
-			languageCode = quickLanguageList[ i ];
-			result = languages[ languageCode ];
+		for ( var i = 0; i <= quickLanguageList.length; i++ ) {
+			var languageCode = quickLanguageList[ i ];
+			var result = languages[ languageCode ];
 			if ( !result ) {
 				continue;
 			}
@@ -145,10 +133,10 @@
 		mw.translate.addExtraLanguagesToLanguageData( ulslanguages, [ 'SP' ] );
 
 		if ( resultCount > 6 ) {
-			$ulsTrigger = $( '<a>' )
+			var $ulsTrigger = $( '<a>' )
 				.text( '...' )
 				.addClass( 'translate-search-more-languages' );
-			$count = $( '<span>' )
+			var $count = $( '<span>' )
 				.addClass( 'translate-search-more-languages-info' )
 				.text( mw.msg( 'translate-search-more-languages-info', resultCount - quickLanguageList.length ) );
 			$languages.append( $ulsTrigger, $count );
@@ -167,42 +155,29 @@
 	}
 
 	function showMessageGroups() {
-		var currentGroup,
-			groupList,
-			$groups;
-
-		$groups = $( '.facet.groups' );
+		var $groups = $( '.facet.groups' );
 
 		if ( !resultGroups ) {
 			// No search results
 			return;
 		}
 
-		groupList = Object.keys( resultGroups );
-		listGroups( groupList, currentGroup, $groups );
+		var groupList = Object.keys( resultGroups );
+		listGroups( groupList, undefined, $groups );
 	}
 
 	function listGroups( groupList, parentGrouppath, $parent, level ) {
-		var i,
-			$grouSelectorTrigger,
-			selectedClass = '',
-			group,
-			groupId,
-			$groupRow,
-			uri,
+		var selectedClass = '',
 			maxListSize = 10,
 			currentGroup = $( '.facet.groups' ).data( 'group' ),
-			resultCount = groupList.length,
-			position,
-			options,
-			grouppath;
+			resultCount = groupList.length;
 
 		level = level || 0;
 		groupList.sort( sortGroups );
 		if ( level === 0 ) {
 			groupList = groupList.splice( 0, maxListSize );
 		}
-		grouppath = getParameterByName( 'grouppath' ).split( '|' )[ 0 ];
+		var grouppath = getParameterByName( 'grouppath' ).split( '|' )[ 0 ];
 		if ( currentGroup && resultGroups[ grouppath ] &&
 			groupList.indexOf( grouppath ) < 0 &&
 			level === 0
@@ -211,14 +186,14 @@
 			groupList = groupList.concat( grouppath );
 		}
 		groupList.sort( sortGroups );
-		for ( i = 0; i < groupList.length; i++ ) {
-			groupId = groupList[ i ];
-			group = findGroup( groupId, resultGroups );
+		for ( var i = 0; i < groupList.length; i++ ) {
+			var groupId = groupList[ i ];
+			var group = findGroup( groupId, resultGroups );
 			if ( !group ) {
 				continue;
 			}
 
-			uri = new mw.Uri( location.href );
+			var uri = new mw.Uri( location.href );
 			if ( parentGrouppath !== undefined ) {
 				grouppath = parentGrouppath + '|' + groupId;
 			} else {
@@ -235,7 +210,7 @@
 				uri.extend( { group: groupId, grouppath: grouppath } );
 			}
 
-			$groupRow = $( '<div>' )
+			var $groupRow = $( '<div>' )
 				// The following classes are used here:
 				// * facet-level-0
 				// * facet-level-1
@@ -261,7 +236,7 @@
 		}
 
 		if ( resultCount > maxListSize && resultCount - groupList.length > 0 && level === 0 ) {
-			$grouSelectorTrigger = $( '<div>' )
+			var $grouSelectorTrigger = $( '<div>' )
 				.addClass( 'rowfacet-item ' )
 				.append(
 					$( '<a>' )
@@ -274,6 +249,7 @@
 				);
 			$parent.append( $grouSelectorTrigger );
 
+			var position;
 			if ( $( document.body ).hasClass( 'rtl' ) ) {
 				position = {
 					my: 'right top',
@@ -287,7 +263,7 @@
 					collision: 'none'
 				};
 			}
-			options = {
+			var options = {
 				language: mw.config.get( 'wgUserLanguage' ),
 				position: position,
 				onSelect: function ( selectedGroup ) {
@@ -325,13 +301,13 @@
 	}
 
 	function matchOperators( str, callback ) {
-		var matches,
-			counter = false,
+		var counter = false,
 			// Add operators for different filters
 			operatorRegex = [ 'language', 'group', 'filter' ];
 
 		operatorRegex.forEach( function ( value ) {
 			var regex = new RegExp( value + ':(\\S+)', 'i' );
+			var matches;
 			if ( ( matches = regex.exec( str ) ) !== null ) {
 				counter = true;
 				callback( {

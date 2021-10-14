@@ -69,9 +69,9 @@ LanguagesMultiselectWidget.prototype.onInputChange = function () {
  * @return {OO.ui.MenuOptionWidget[]} Menu items
  */
 LanguagesMultiselectWidget.prototype.getOptionsFromData = function ( data ) {
-	var languageCode, options = [];
+	var options = [];
 
-	for ( languageCode in data ) {
+	for ( var languageCode in data ) {
 		if ( this.languages[ languageCode ] !== undefined ) {
 			options.push( new OO.ui.MenuOptionWidget( {
 				data: languageCode,
@@ -90,7 +90,6 @@ LanguagesMultiselectWidget.prototype.setValue = function ( valueObject ) {
 	this.clearItems();
 	valueObject.forEach( function ( obj ) {
 		var data;
-
 		if ( typeof obj === 'string' ) {
 			data = obj;
 		} else {

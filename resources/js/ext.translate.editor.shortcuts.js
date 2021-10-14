@@ -5,16 +5,14 @@
 	'use strict';
 	var translateEditorShortcuts = {
 		showShortcuts: function () {
-			var editorOffset, minTop, maxTop, maxLeft, middle, rtl;
-
 			// Any better way?
-			rtl = $( document.body ).is( '.rtl' );
+			var rtl = $( document.body ).is( '.rtl' );
 
-			editorOffset = this.$editor.offset();
-			minTop = editorOffset.top;
-			maxTop = minTop + this.$editor.outerHeight();
-			middle = minTop + ( maxTop - minTop ) / 2;
-			maxLeft = rtl ? editorOffset.left : editorOffset.left + this.$editor.outerWidth();
+			var editorOffset = this.$editor.offset();
+			var minTop = editorOffset.top;
+			var maxTop = minTop + this.$editor.outerHeight();
+			var middle = minTop + ( maxTop - minTop ) / 2;
+			var maxLeft = rtl ? editorOffset.left : editorOffset.left + this.$editor.outerWidth();
 
 			this.hideShortcuts();
 

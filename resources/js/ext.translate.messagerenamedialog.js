@@ -19,8 +19,6 @@ mw.translate = mw.translate || {};
  * @param {Function} [onRenameSelect] Function to call when the rename button is pressed
  */
 mw.translate.MessageRenameDialog = function ( config, onRenameSelect ) {
-	var errMsg;
-
 	// HTML Elements
 	this.messageSearch = null;
 	this.searchButton = null;
@@ -36,7 +34,7 @@ mw.translate.MessageRenameDialog = function ( config, onRenameSelect ) {
 	this.resetProperties();
 
 	if ( !onRenameSelect ) {
-		errMsg = 'Must provide the "onRenameSelect" callback function.';
+		var errMsg = 'Must provide the "onRenameSelect" callback function.';
 		mw.log.error( errMsg );
 		throw new Error( errMsg );
 	}
@@ -174,13 +172,12 @@ mw.translate.MessageRenameDialog.prototype.getTeardownProcess = function ( data 
  * @param {Array} messages
  */
 mw.translate.MessageRenameDialog.prototype.displayMessages = function ( messages ) {
-	var i;
 	if ( !messages.length ) {
 		this.displayNotice( mw.msg( 'translate-smg-rename-no-msg' ), 'info' );
 		return;
 	}
 
-	for ( i = 0; i < messages.length; i++ ) {
+	for ( var i = 0; i < messages.length; i++ ) {
 		this.displayMessage( messages[ i ] );
 	}
 };
@@ -191,9 +188,7 @@ mw.translate.MessageRenameDialog.prototype.displayMessages = function ( messages
  * @param {Object} message
  */
 mw.translate.MessageRenameDialog.prototype.displayMessage = function ( message ) {
-	var $title, $content, $container;
-
-	$title = $( '<div>' ).append(
+	var $title = $( '<div>' ).append(
 		$( '<a>' ).text( message.title ).addClass( 'smg-rename-msg-key' )
 			.prop( 'href', message.link )
 			.data( 'msg-key', message.key ),
@@ -202,9 +197,9 @@ mw.translate.MessageRenameDialog.prototype.displayMessage = function ( message )
 		).addClass( 'smg-rename-similarity' )
 	);
 
-	$content = $( '<div>' ).text( message.content ).addClass( 'smg-rename-msg-content' );
+	var $content = $( '<div>' ).text( message.content ).addClass( 'smg-rename-msg-content' );
 
-	$container = $( '<div>' ).addClass( 'smg-rename-list' );
+	var $container = $( '<div>' ).addClass( 'smg-rename-list' );
 
 	$container.append( $title, $content );
 
@@ -242,11 +237,10 @@ mw.translate.MessageRenameDialog.prototype.resetProperties = function () {
  * @return {jQuery.Promise} Resolves after making call to the onRenameSelect function.
  */
 mw.translate.MessageRenameDialog.prototype.rename = function () {
-	var deferred, promise, renameData;
-	deferred = $.Deferred();
-	promise = deferred.promise();
+	var deferred = $.Deferred();
+	var promise = deferred.promise();
 
-	renameData = {
+	var renameData = {
 		groupId: this.currentGroupId,
 		targetKey: this.targetKey,
 		selectedKey: this.selectedMessage

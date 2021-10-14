@@ -24,19 +24,18 @@
 	}
 
 	function helper( list, maxRetries ) {
-		var first, rest, retries, retrier,
-			deferred = $.Deferred();
+		var deferred = $.Deferred();
 
 		if ( list.length === 0 ) {
 			deferred.resolve( [] );
 			return deferred;
 		}
 
-		first = list.slice( 0, 1 )[ 0 ];
-		rest = list.slice( 1 );
+		var first = list.slice( 0, 1 )[ 0 ];
+		var rest = list.slice( 1 );
 
-		retries = 0;
-		retrier = function ( result, promise ) {
+		var retries = 0;
+		var retrier = function ( result, promise ) {
 			if ( !promise.state ) {
 				return;
 			}

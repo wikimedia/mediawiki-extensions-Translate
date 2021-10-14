@@ -92,20 +92,19 @@ var FormHandler = function () {
 };
 
 $( function () {
-	var widget, defaultValue, defaultDate,
-		$input = $( '#start' ),
+	var $input = $( '#start' ),
 		formHandler = new FormHandler(),
-		$graphContainer = $( '#translationStatsGraphContainer' ),
-		graphBuilder;
+		$graphContainer = $( '#translationStatsGraphContainer' );
 
-	defaultDate = new Date();
+	var defaultDate = new Date();
 	defaultDate.setDate( 1 );
 
+	var defaultValue;
 	if ( $input.val() ) {
 		defaultValue = new Date( $input.val() );
 	}
 
-	widget = new mw.widgets.datetime.DateTimeInputWidget( {
+	var widget = new mw.widgets.datetime.DateTimeInputWidget( {
 		formatter: {
 			format: '${year|0}-${month|0}-${day|0}',
 			defaultDate: defaultDate
@@ -122,7 +121,7 @@ $( function () {
 
 	// Check if the graph container has been loaded
 	if ( $graphContainer.length !== 0 ) {
-		graphBuilder = new mw.translate.TranslationStatsGraphBuilder( $graphContainer );
+		var graphBuilder = new mw.translate.TranslationStatsGraphBuilder( $graphContainer );
 		graphBuilder.display( formHandler.getAllOptions() );
 	}
 } );

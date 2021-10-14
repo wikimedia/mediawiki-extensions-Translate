@@ -73,34 +73,30 @@
 		},
 
 		render: function () {
-			var targetLangAttrib, targetLangDir, sourceLangDir;
-			var $proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
-				translatedBySelf, proofreadBySelf;
-
 			// List of all reviewers
-			reviewers = this.message.properties.reviewers || [];
+			var reviewers = this.message.properties.reviewers || [];
 			// The id of the current user, converted to string as the are in reviewers
-			userId = String( mw.config.get( 'wgUserId' ) );
+			var userId = String( mw.config.get( 'wgUserId' ) );
 			// List of all reviewers excluding the current user.
-			otherReviewers = reviewers.filter( function ( element ) {
+			var otherReviewers = reviewers.filter( function ( element ) {
 				return element !== userId;
 			} );
 			/* Whether the current user if the last translator of this message.
 			 * Accepting own translations is prohibited. */
-			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
-			proofreadBySelf = reviewers.indexOf( userId ) > -1;
+			var translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
+			var proofreadBySelf = reviewers.indexOf( userId ) > -1;
 
-			sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
+			var sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
 
 			// `status` class is documented elsewhere
 			// eslint-disable-next-line mediawiki/class-doc
-			$proofreadAction = $( '<div>' )
+			var $proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
 				.addClass(
 					'tux-proofread-action ' + this.message.properties.status + ' ' + ( proofreadBySelf ? 'accepted' : '' )
 				);
 
-			$proofreadEdit = $( '<div>' )
+			var $proofreadEdit = $( '<div>' )
 				.addClass( 'tux-proofread-edit' )
 				.append( $( '<span>' )
 					.addClass( 'tux-proofread-edit-label hide' )
@@ -113,13 +109,14 @@
 					$( this ).find( '.tux-proofread-edit-label' ).addClass( 'hide' );
 				} );
 
+			var targetLangAttrib;
 			if ( this.options.targetlangcode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 			} else {
 				targetLangAttrib = this.options.targetlangcode;
 			}
 
-			targetLangDir = $.uls.data.getDir( targetLangAttrib );
+			var targetLangDir = $.uls.data.getDir( targetLangAttrib );
 
 			// `status` class is documented elsewhere
 			// eslint-disable-next-line mediawiki/class-doc
@@ -202,12 +199,11 @@
 		 * Mark this message as proofread.
 		 */
 		proofread: function () {
-			var reviews, $counter, params,
-				message = this.message,
+			var message = this.message,
 				$message = this.$message,
 				api = new mw.Api();
 
-			params = {
+			var params = {
 				action: 'translationreview',
 				revision: this.message.properties.revision
 			};
@@ -221,8 +217,8 @@
 					.removeClass( 'tux-notice' ) // in case, it failed previously
 					.addClass( 'accepted' );
 
-				$counter = $message.find( '.tux-proofread-count' );
-				reviews = $counter.data( 'reviewCount' );
+				var $counter = $message.find( '.tux-proofread-count' );
+				var reviews = $counter.data( 'reviewCount' );
 				$counter.text( mw.language.convertNumber( reviews + 1 ) );
 
 				// Update stats

@@ -16,10 +16,9 @@
 		diff: 'diff',
 		fuzzy: 'fuzzy',
 		getAllClasses: function () {
-			var prop,
-				classes = [];
+			var classes = [];
 
-			for ( prop in this ) {
+			for ( var prop in this ) {
 				if ( typeof this[ prop ] === 'string' ) {
 					classes.push( this[ prop ] );
 				}
@@ -209,12 +208,11 @@
 		 * Save the translation
 		 */
 		save: function () {
-			var translation, editSummary,
-				translateEditor = this;
+			var translateEditor = this;
 
 			mw.hook( 'mw.translate.editor.beforeSubmit' ).fire( translateEditor.$editor );
-			translation = translateEditor.$editor.find( '.tux-textarea-translation' ).val();
-			editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
+			var translation = translateEditor.$editor.find( '.tux-textarea-translation' ).val();
+			var editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
 
 			translateEditor.saving = true;
 
@@ -412,9 +410,7 @@
 		 * @return {jQuery} The new message tools menu element
 		 */
 		createMessageTools: function () {
-			var $editItem, $historyItem, $deleteItem, $translationsItem, $linkToThisItem;
-
-			$editItem = this.createMessageToolsItem(
+			var $editItem = this.createMessageToolsItem(
 				'message-tools-edit',
 				{
 					title: this.message.title,
@@ -427,7 +423,7 @@
 				$editItem.addClass( 'hide' );
 			}
 
-			$historyItem = this.createMessageToolsItem(
+			var $historyItem = this.createMessageToolsItem(
 				'message-tools-history',
 				{
 					title: this.message.title,
@@ -436,7 +432,7 @@
 				'tux-editor-message-tools-history'
 			);
 
-			$deleteItem = this.createMessageToolsItem(
+			var $deleteItem = this.createMessageToolsItem(
 				'message-tools-delete',
 				{
 					title: this.message.title,
@@ -456,7 +452,7 @@
 
 			// A link to Special:Translations,
 			// with translations of this message to other languages
-			$translationsItem = this.createMessageToolsItem(
+			var $translationsItem = this.createMessageToolsItem(
 				'message-tools-translations',
 				{
 					title: 'Special:Translations',
@@ -465,7 +461,7 @@
 				'tux-editor-message-tools-translations'
 			);
 
-			$linkToThisItem = this.createMessageToolsItem(
+			var $linkToThisItem = this.createMessageToolsItem(
 				'message-tools-linktothis',
 				{
 					title: 'Special:Translate',
@@ -483,38 +479,15 @@
 
 		prepareEditorColumn: function () {
 			var translateEditor = this,
-				sourceString,
-				originalTranslation,
-				$editorColumn,
-				$messageKeyLabel,
-				$moreNoticesTab,
-				$notices,
-				$noticesBlock,
-				$editAreaBlock,
-				$textarea,
-				$controlButtonBlock,
-				$editingButtonBlock,
-				$pasteOriginalButton,
-				$editSummary,
-				$editSummaryBlock,
 				$discardChangesButton = $( [] ),
 				$saveButton = $( [] ),
-				$requestRight,
-				$skipButton,
-				$cancelButton,
-				$sourceString,
-				$closeIcon,
-				$layoutActions,
-				$infoToggleIcon,
-				$messageList,
-				targetLangAttrib, targetLangDir, targetLangCode, prefix,
 				$messageTools = translateEditor.createMessageTools(),
 				canTranslate = mw.translate.canTranslate();
 
-			$editorColumn = $( '<div>' )
+			var $editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
 
-			$messageKeyLabel = $( '<div>' )
+			var $messageKeyLabel = $( '<div>' )
 				.addClass( 'ten columns messagekey' )
 				.text( this.message.title )
 				.append(
@@ -526,7 +499,7 @@
 					e.stopPropagation();
 				} );
 
-			$closeIcon = $( '<span>' )
+			var $closeIcon = $( '<span>' )
 				.addClass( 'one column close' )
 				.attr( 'title', mw.msg( 'tux-editor-close-tooltip' ) )
 				.on( 'click', function ( e ) {
@@ -534,7 +507,7 @@
 					e.stopPropagation();
 				} );
 
-			$infoToggleIcon = $( '<span>' )
+			var $infoToggleIcon = $( '<span>' )
 				// Initially the editor column is contracted,
 				// so show the expand button first
 				.addClass( 'one column editor-info-toggle editor-expand' )
@@ -544,7 +517,7 @@
 					e.stopPropagation();
 				} );
 
-			$layoutActions = $( '<div>' )
+			var $layoutActions = $( '<div>' )
 				.addClass( 'two columns layout-actions' )
 				.append( $closeIcon, $infoToggleIcon );
 
@@ -553,14 +526,14 @@
 				.append( $messageKeyLabel, $layoutActions )
 			);
 
-			$messageList = $( '.tux-messagelist' );
-			originalTranslation = this.message.translation;
-			sourceString = this.message.definition;
+			var $messageList = $( '.tux-messagelist' );
+			var originalTranslation = this.message.translation;
+			var sourceString = this.message.definition;
 			// The following classes are used here:
 			// * mw-editfont-serif
 			// * mw-editfont-sans-serif
 			// * mw-editfont-monospace
-			$sourceString = $( '<span>' )
+			var $sourceString = $( '<span>' )
 				.addClass( 'twelve columns sourcemessage ' + this.editFontClass )
 				.attr( {
 					lang: $messageList.data( 'sourcelangcode' ),
@@ -582,10 +555,10 @@
 				.append( $sourceString )
 			);
 
-			$notices = $( '<div>' )
+			var $notices = $( '<div>' )
 				.addClass( 'tux-notice hide' );
 
-			$moreNoticesTab = $( '<div>' )
+			var $moreNoticesTab = $( '<div>' )
 				.addClass( 'tux-more-notices hide' )
 				.on( 'click', function () {
 					var $this = $( this ),
@@ -620,7 +593,8 @@
 					translateEditor.toggleMoreButtonClass();
 				} );
 
-			targetLangCode = this.message.targetLanguage;
+			var targetLangCode = this.message.targetLanguage;
+			var targetLangAttrib, targetLangDir;
 			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 				targetLangDir = $.uls.data.getDir( targetLangAttrib );
@@ -633,7 +607,7 @@
 			// * mw-editfont-serif
 			// * mw-editfont-sans-serif
 			// * mw-editfont-monospace
-			$textarea = $( '<textarea>' )
+			var $textarea = $( '<textarea>' )
 				.addClass( 'tux-textarea-translation ' + this.editFontClass )
 				.attr( {
 					lang: targetLangAttrib,
@@ -728,11 +702,11 @@
 				}, 500 );
 			} );
 
-			$noticesBlock = $( '<div>' )
+			var $noticesBlock = $( '<div>' )
 				.addClass( 'tux-notices-block' )
 				.append( $moreNoticesTab, $notices );
 
-			$editAreaBlock = $( '<div>' )
+			var $editAreaBlock = $( '<div>' )
 				.addClass( 'row tux-editor-editarea-block' )
 				.append( $( '<div>' )
 					.addClass( 'editarea twelve columns' )
@@ -741,8 +715,9 @@
 
 			$editorColumn.append( $editAreaBlock );
 
+			var $editingButtonBlock, $editSummaryBlock, $requestRight, $skipButton;
 			if ( canTranslate ) {
-				$pasteOriginalButton = $( '<button>' )
+				var $pasteOriginalButton = $( '<button>' )
 					.addClass( 'tux-editor-paste-original-button' )
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
 					.on( 'click', function () {
@@ -754,7 +729,7 @@
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
-				$editSummary = $( '<input>' )
+				var $editSummary = $( '<input>' )
 					.addClass( 'tux-input-editsummary' )
 					.attr( {
 						maxlength: 255,
@@ -884,7 +859,7 @@
 				} );
 
 			// This appears instead of "Skip" on the last message on the page
-			$cancelButton = $( '<button>' )
+			var $cancelButton = $( '<button>' )
 				.addClass( 'tux-editor-cancel-button mw-ui-button mw-ui-quiet' )
 				.text( mw.msg( 'tux-editor-cancel-button-label' ) )
 				.on( 'click', function ( e ) {
@@ -894,7 +869,7 @@
 					e.stopPropagation();
 				} );
 
-			$controlButtonBlock = $( '<div>' )
+			var $controlButtonBlock = $( '<div>' )
 				.addClass( 'twelve columns tux-editor-control-buttons' )
 				.append( $requestRight, $saveButton, $skipButton, $cancelButton );
 
@@ -911,7 +886,7 @@
 			);
 
 			if ( canTranslate ) {
-				prefix = $.fn.updateTooltipAccessKeys.getAccessKeyPrefix();
+				var prefix = $.fn.updateTooltipAccessKeys.getAccessKeyPrefix();
 				$editorColumn.append( $( '<div>' )
 					.addClass( 'row shortcutinfo' )
 					.text( mw.msg(
@@ -980,10 +955,9 @@
 		 */
 		validateTranslation: function () {
 			var translateEditor = this,
-				api,
 				$textarea = translateEditor.$editor.find( '.tux-textarea-translation' );
 
-			api = new mw.Api();
+			var api = new mw.Api();
 
 			this.validating = api.post( {
 				action: 'translationcheck',
@@ -1040,9 +1014,6 @@
 		removeNotices: function ( types ) {
 			var $tuxNotice = this.$editor.find( '.tux-notice' ),
 				stringTypes = [],
-				$currentNotices,
-				index,
-				errMsg,
 				allNoticeTypes = noticeTypes.getAllClasses();
 
 			if ( typeof types === 'string' ) {
@@ -1051,16 +1022,16 @@
 				stringTypes = types;
 			}
 
-			for ( index = 0; index < stringTypes.length; index++ ) {
+			for ( var index = 0; index < stringTypes.length; index++ ) {
 				if ( allNoticeTypes.indexOf( stringTypes[ index ] ) === -1 ) {
-					errMsg = 'tux: Invalid notice type removeNotice - ' + stringTypes[ index ];
+					var errMsg = 'tux: Invalid notice type removeNotice - ' + stringTypes[ index ];
 					mw.log.error( errMsg );
 					throw new Error( errMsg );
 				}
 				$tuxNotice.find( '.' + stringTypes[ index ] ).remove();
 			}
 
-			$currentNotices = $tuxNotice.children();
+			var $currentNotices = $tuxNotice.children();
 			// If a single notice is shown, we can hide the more notice button,
 			// and display the hidden notice.
 			if ( $currentNotices.length <= 1 ) {
@@ -1081,8 +1052,7 @@
 		 * @return {jQuery} the new notice element
 		 */
 		addNotice: function ( notice, type ) {
-			var noticeCount,
-				$notices = this.$editor.find( '.tux-notice' ),
+			var $notices = this.$editor.find( '.tux-notice' ),
 				$moreNoticesTab = this.$editor.find( '.tux-more-notices' ),
 				// `noticeTypes` documented above
 				// eslint-disable-next-line mediawiki/class-doc
@@ -1096,7 +1066,7 @@
 				.removeClass( 'hide' )
 				.prepend( $newNotice );
 
-			noticeCount = $notices.find( '.tux-notice-message' ).length;
+			var noticeCount = $notices.find( '.tux-notice-message' ).length;
 
 			if ( noticeCount > 1 ) {
 				$moreNoticesTab
@@ -1134,10 +1104,7 @@
 		},
 
 		prepareInfoColumn: function () {
-			var $messageDescEditor, $messageDescTextarea,
-				$messageDescSaveButton, $messageDescCancelButton,
-				$messageDescViewer,
-				$infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
+			var $infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
 				translateEditor = this;
 
 			$infoColumn.append( $( '<div>' )
@@ -1146,7 +1113,7 @@
 			);
 
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				$messageDescSaveButton = $( '<button>' )
+				var $messageDescSaveButton = $( '<button>' )
 					.addClass( 'tux-editor-savedoc-button mw-ui-button mw-ui-progressive' )
 					.prop( 'disabled', true )
 					.text( mw.msg( 'tux-editor-doc-editor-save' ) )
@@ -1158,14 +1125,14 @@
 							} );
 					} );
 
-				$messageDescCancelButton = $( '<button>' )
+				var $messageDescCancelButton = $( '<button>' )
 					.addClass( 'tux-editor-skipdoc-button mw-ui-button mw-ui-quiet' )
 					.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
 					.on( 'click', function () {
 						translateEditor.hideDocumentationEditor();
 					} );
 
-				$messageDescTextarea = $( '<textarea>' )
+				var $messageDescTextarea = $( '<textarea>' )
 					.addClass( 'tux-textarea-documentation' )
 					.on( 'input', function () {
 						$messageDescSaveButton.prop( 'disabled', false );
@@ -1175,7 +1142,7 @@
 					$messageDescTextarea.prop( 'placeholder', mw.msg( 'tux-editor-doc-editor-placeholder' ) );
 				}
 
-				$messageDescEditor = $( '<div>' )
+				var $messageDescEditor = $( '<div>' )
 					.addClass( 'row message-desc-editor hide' )
 					.append(
 						$messageDescTextarea,
@@ -1187,7 +1154,7 @@
 							)
 					);
 
-				$messageDescViewer = $( '<div>' )
+				var $messageDescViewer = $( '<div>' )
 					.addClass( 'message-desc-viewer hide' )
 					.append(
 						$( '<div>' )
@@ -1254,13 +1221,11 @@
 		},
 
 		show: function () {
-			var $next, $textarea;
-
 			if ( !this.$editor ) {
 				this.init();
 			}
 
-			$textarea = this.$editor.find( '.editcolumn textarea' );
+			var $textarea = this.$editor.find( '.editcolumn textarea' );
 			// Hide all other open editors in the page
 			$( '.tux-message.open' ).each( function () {
 				$( this ).data( 'translateeditor' ).hide();
@@ -1284,7 +1249,7 @@
 			this.$editTrigger.addClass( 'open' );
 
 			// don't waste time, get ready with next message
-			$next = this.$editTrigger.next( '.tux-message' );
+			var $next = this.$editTrigger.next( '.tux-message' );
 
 			if ( $next.length ) {
 				$next.data( 'translateeditor' ).init();
@@ -1354,8 +1319,6 @@
 		 * @param {Object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
-			var $trigger;
-
 			if ( !definitiondiff || definitiondiff.error ) {
 				mw.log( 'Error loading translation diff ' + definitiondiff && definitiondiff.error );
 				return;
@@ -1364,7 +1327,7 @@
 			// Load the diff styles
 			mw.loader.load( 'mediawiki.diff.styles' );
 
-			$trigger = $( '<span>' )
+			var $trigger = $( '<span>' )
 				.addClass( 'show-diff-link' )
 				.text( mw.msg( 'tux-editor-outdated-notice-diff-link' ) )
 				.on( 'click', function () {
@@ -1397,10 +1360,8 @@
 		 * @param {jQuery} $textarea Text area.
 		 */
 		resizeInsertables: function ( $textarea ) {
-			var $buttonArea, buttonAreaHeight;
-
-			$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' );
-			buttonAreaHeight = $buttonArea.height();
+			var $buttonArea = this.$editor.find( '.tux-editor-insert-buttons' );
+			var buttonAreaHeight = $buttonArea.height();
 			$textarea.css( 'padding-bottom', buttonAreaHeight + 5 );
 			$buttonArea.css( 'top', -buttonAreaHeight );
 			autosize.update( $textarea );
@@ -1413,8 +1374,7 @@
 		 * @param {string} noticeType
 		 */
 		displayNotices: function ( notices, noticeType ) {
-			var index;
-			for ( index = 0; index < notices.length; ++index ) {
+			for ( var index = 0; index < notices.length; ++index ) {
 				this.addNotice( notices[ index ], noticeType );
 			}
 		},

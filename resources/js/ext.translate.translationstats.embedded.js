@@ -57,11 +57,8 @@ $( function () {
 
 	// Create graph and options instances, then display loader
 	function initGraph( $graphContainer ) {
-		var graphBuilder,
-			graphOptions;
-
-		graphOptions = new EmbeddedHandler( $graphContainer );
-		graphBuilder = new mw.translate.TranslationStatsGraphBuilder(
+		var graphOptions = new EmbeddedHandler( $graphContainer );
+		var graphBuilder = new mw.translate.TranslationStatsGraphBuilder(
 			$graphContainer, graphOptions.getAllOptions()
 		);
 		graphBuilder.showLoading();

@@ -170,23 +170,23 @@
 		}
 
 		function getAxesLabelsAndData( jsonGraphData ) {
-			var labelProp, labels = [], graphData = [],
-				labelData, i, labelIndex = 0,
-				currentValue, maxValue = 0, minValue = 0;
+			var labels = [], graphData = [],
+				labelIndex = 0,
+				maxValue = 0, minValue = 0;
 
-			for ( labelProp in jsonGraphData ) {
+			for ( var labelProp in jsonGraphData ) {
 				if ( labels.indexOf( labelProp ) === -1 ) {
 					labels.push( labelProp );
 				}
 
-				labelData = jsonGraphData[ labelProp ];
+				var labelData = jsonGraphData[ labelProp ];
 
-				for ( i = 0; i < labelData.length; ++i ) {
+				for ( var i = 0; i < labelData.length; ++i ) {
 					if ( !graphData[ i ] ) {
 						graphData[ i ] = [];
 					}
 
-					currentValue = labelData[ i ];
+					var currentValue = labelData[ i ];
 					graphData[ i ][ labelIndex ] = currentValue;
 					if ( currentValue < minValue ) {
 						minValue = currentValue;
@@ -297,16 +297,14 @@
 		}
 
 		function getTableBody( graphData ) {
-			var $tbody = $( '<tbody>' ),
-				scaleIndex, datasetIndex, $tBodyRow,
-				columnValue;
+			var $tbody = $( '<tbody>' );
 
-			for ( scaleIndex = 0; scaleIndex < graphData.axesLabels.length; scaleIndex++ ) {
-				$tBodyRow = $( '<tr>' )
+			for ( var scaleIndex = 0; scaleIndex < graphData.axesLabels.length; scaleIndex++ ) {
+				var $tBodyRow = $( '<tr>' )
 					.append( $( '<td>' ).text( graphData.axesLabels[ scaleIndex ] ) );
 
-				for ( datasetIndex = 0; datasetIndex < graphData.data.length; datasetIndex++ ) {
-					columnValue = '';
+				for ( var datasetIndex = 0; datasetIndex < graphData.data.length; datasetIndex++ ) {
+					var columnValue = '';
 					if (
 						graphData.data[ datasetIndex ] &&
 						graphData.data[ datasetIndex ][ scaleIndex ] !== undefined

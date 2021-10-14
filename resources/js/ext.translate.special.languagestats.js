@@ -22,8 +22,7 @@
 	}
 
 	function addExpanders( $table ) {
-		var $allChildRows, $allTogglesCache, $toggleAllButton,
-			$metaRows = $( 'tr.AggregateMessageGroup', $table );
+		var $metaRows = $( 'tr.AggregateMessageGroup', $table );
 
 		// Quick return
 		if ( !$metaRows.length ) {
@@ -31,8 +30,7 @@
 		}
 
 		$metaRows.each( function () {
-			var $toggler,
-				$parent = $( this ),
+			var $parent = $( this ),
 				thisGroupId = $parent.attr( 'data-groupid' ),
 				$children = $( 'tr[data-parentgroup="' + thisGroupId + '"]', $table );
 
@@ -42,7 +40,7 @@
 			}
 
 			// Build toggle link
-			$toggler = $( '<span>' ).addClass( 'groupexpander collapsed' )
+			var $toggler = $( '<span>' ).addClass( 'groupexpander collapsed' )
 				.append(
 					'[',
 					$( '<a>' )
@@ -82,9 +80,9 @@
 		} );
 
 		// Create, bind and append the toggle-all button
-		$allChildRows = $( 'tr[data-parentgroup]', $table );
-		$allTogglesCache = null;
-		$toggleAllButton = $( '<span>' ).addClass( 'collapsed' )
+		var $allChildRows = $( 'tr[data-parentgroup]', $table );
+		var $allTogglesCache = null;
+		var $toggleAllButton = $( '<span>' ).addClass( 'collapsed' )
 			.append(
 				'[',
 				$( '<a>' )
@@ -123,13 +121,12 @@
 	}
 
 	function applySorting( $table ) {
-		var index,
-			sort = {},
+		var sort = {},
 			re = /#sortable:(\d+)=(asc|desc)/,
 			match = re.exec( location.hash );
 
 		if ( match ) {
-			index = parseInt( match[ 1 ], 10 );
+			var index = parseInt( match[ 1 ], 10 );
 			sort[ index ] = match[ 2 ];
 		}
 		$table.tablesorter( { sortList: [ sort ] } );
@@ -146,8 +143,7 @@
 	}
 
 	function narrowTable( $table, enable ) {
-		var $select,
-			labelColumnCount = 1,
+		var labelColumnCount = 1,
 			// 0-indexed
 			defaultValueColumn = 2;
 
@@ -157,7 +153,7 @@
 			} );
 		}
 
-		$select = makeValueColumnSelector( $columns, labelColumnCount, defaultValueColumn );
+		var $select = makeValueColumnSelector( $columns, labelColumnCount, defaultValueColumn );
 		// Prevent table sorter from making the select inaccessible
 		$select.on( 'mousedown click', function ( e ) {
 			e.stopPropagation();
@@ -178,9 +174,9 @@
 	}
 
 	function makeValueColumnSelector( headings, skip, def ) {
-		var i, $select = $( '<select>' );
+		var $select = $( '<select>' );
 
-		for ( i = skip; i < headings.length; i++ ) {
+		for ( var i = skip; i < headings.length; i++ ) {
 			$( '<option>' )
 				.text( headings[ i ] )
 				.val( i )
@@ -192,21 +188,18 @@
 	}
 
 	function showValueColumn( $table, $select, skip ) {
-		var i, index, cssQuery;
-
-		index = parseInt( $select.val(), 10 );
-		cssQuery = 'th:nth-child(_)'.replace( '_', index + 1 );
+		var index = parseInt( $select.val(), 10 );
+		var cssQuery = 'th:nth-child(_)'.replace( '_', index + 1 );
 		$table.find( cssQuery ).html( $select );
 
-		for ( i = 0; i < $select.children().length; i++ ) {
+		for ( var i = 0; i < $select.children().length; i++ ) {
 			cssQuery = 'tr > *:nth-child(_)'.replace( '_', i + skip + 1 );
 			$table.find( cssQuery ).toggleClass( 'statstable-hide', i + skip !== index );
 		}
 	}
 
 	$( function () {
-		var isNarrowMode, minimumTableWidth,
-			$table = $( '.statstable' );
+		var $table = $( '.statstable' );
 
 		// Sometimes the table is not present on the page
 		if ( !$table.length ) {
@@ -225,19 +218,20 @@
 			return;
 		}
 
+		var minimumTableWidth;
 		// Hopefully previous stuff have time to render by now to have accurate picture of the width
 		( window.requestAnimationFrame || setTimeout )( function () {
 			minimumTableWidth = $table.outerWidth();
 			$table.css( 'max-width', '' );
 		} );
 
+		var isNarrowMode;
 		new ResizeObserver( function ( entries ) {
-			var newMode, shouldCollapse, shouldExpand;
-
-			shouldCollapse = entries[ 0 ].contentRect.width < minimumTableWidth;
+			var shouldCollapse = entries[ 0 ].contentRect.width < minimumTableWidth;
 			// Some fudge to avoid flapping
-			shouldExpand = entries[ 0 ].contentRect.width - 20 > minimumTableWidth;
+			var shouldExpand = entries[ 0 ].contentRect.width - 20 > minimumTableWidth;
 
+			var newMode;
 			if ( isNarrowMode && shouldExpand ) {
 				newMode = false;
 			} else if ( !isNarrowMode && shouldCollapse ) {

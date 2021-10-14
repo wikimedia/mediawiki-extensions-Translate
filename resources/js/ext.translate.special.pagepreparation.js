@@ -39,12 +39,12 @@
 			titles: pageName,
 			rvdifftotext: pageContent
 		} ).then( function ( data ) {
-			var page, obj, diff;
-
-			for ( page in data.query.pages ) {
+			var obj;
+			for ( var page in data.query.pages ) {
 				obj = data.query.pages[ page ];
 			}
 
+			var diff;
 			if ( obj !== undefined ) {
 				diff = obj.revisions[ 0 ].diff[ '*' ];
 			}
@@ -89,16 +89,14 @@
 	 */
 	function doCategories( pageContent ) {
 		return getNamespaceAliases( 14 ).then( function ( aliases ) {
-			var i, aliasList, categoryRegex;
-
 			aliases.push( 'category' );
-			for ( i = 0; i < aliases.length; i++ ) {
+			for ( var i = 0; i < aliases.length; i++ ) {
 				aliases[ i ] = mw.util.escapeRegExp( aliases[ i ] );
 			}
 
-			aliasList = aliases.join( '|' );
+			var aliasList = aliases.join( '|' );
 			// Regex: https://regex101.com/r/sJ3gZ4/2
-			categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
+			var categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
 				':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
 			pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
 				'[[$1{{#translation:}}$3]]\n<translate>\n' );
@@ -140,15 +138,12 @@
 	 * @return {string}
 	 */
 	function addAnchor( headerText, pageContent ) {
-		var headerSearchRegex, anchorID, replaceAnchorRegex,
-			spanSearchRegex;
-
-		anchorID = headerText.replace( ' ', '-' ).toLowerCase();
+		var anchorID = headerText.replace( ' ', '-' ).toLowerCase();
 
 		headerText = mw.RegExp.escape( headerText );
 		// Search for the header having text as headerText
 		// Regex: https://regex101.com/r/fD6iL1
-		headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
+		var headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
 		// This is to ensure the tags and the anchor are added only once
 
 		if ( pageContent.indexOf( '<span id="' + mw.html.escape( anchorID ) + '"' ) === -1 ) {
@@ -158,13 +153,13 @@
 
 		// This is to add back the tags which were removed in cleanupTags()
 		if ( pageContent.indexOf( '</translate>\n<span id="' + anchorID + '"' ) === -1 ) {
-			spanSearchRegex = new RegExp( '(<span id="' + mw.RegExp.escape( anchorID ) + '"></span>)', 'gi' );
+			var spanSearchRegex = new RegExp( '(<span id="' + mw.RegExp.escape( anchorID ) + '"></span>)', 'gi' );
 			pageContent = pageContent.replace( spanSearchRegex, '\n</translate>\n$1\n</translate>\n' );
 		}
 
 		// Replace the link text with the anchorID defined above
 		// Regex: https://regex101.com/r/kB5bK3
-		replaceAnchorRegex = new RegExp( '(\\[\\[#)' + headerText + '(.*\\]\\])', 'gi' );
+		var replaceAnchorRegex = new RegExp( '(\\[\\[#)' + headerText + '(.*\\]\\])', 'gi' );
 		pageContent = pageContent.replace( replaceAnchorRegex, '$1' +
 			anchorID.replace( '$', '$$$' ) + '$2' );
 
@@ -180,29 +175,26 @@
 	 * @return {string}
 	 */
 	function fixInternalLinks( pageContent ) {
+		var searchText = pageContent;
 
-		var normalizeRegex, linkPrefixRegex, sectionLinksRegex,
-			match, searchText, namespaces, nsString;
-		searchText = pageContent;
-
-		normalizeRegex = new RegExp( /\[\[(?!Category)([^|]*?)\]\]/gi );
+		var normalizeRegex = new RegExp( /\[\[(?!Category)([^|]*?)\]\]/gi );
 		// First convert all links into two-party form. If a link is not having a pipe,
 		// add a pipe and duplicate the link text
 		// Regex: https://regex101.com/r/pO9nN2
 		pageContent = pageContent.replace( normalizeRegex, '[[$1|$1]]' );
 
-		namespaces = getNamespaces();
-		nsString = namespaces.join( '|' );
+		var namespaces = getNamespaces();
+		var nsString = namespaces.join( '|' );
 		// Finds all the links to sections on the same page.
 		// Regex: https://regex101.com/r/cX6jT3
-		sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?\]\]/gi );
-		match = sectionLinksRegex.exec( searchText );
+		var sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?\]\]/gi );
+		var match = sectionLinksRegex.exec( searchText );
 		while ( match !== null ) {
 			pageContent = addAnchor( match[ 1 ], pageContent );
 			match = sectionLinksRegex.exec( searchText );
 		}
 
-		linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
+		var linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
 			'):)?[^:]*?)\\]\\]', 'gi' );
 		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
 		// mainspace.
@@ -227,9 +219,9 @@
 			meta: 'siteinfo',
 			siprop: 'namespacealiases'
 		} ).then( function ( data ) {
-			var alias, aliases = [];
+			var aliases = [];
 
-			for ( alias in data.query.namespacealiases ) {
+			for ( var alias in data.query.namespacealiases ) {
 				if ( data.query.namespacealiases[ alias ].id === namespaceID ) {
 					aliases.push( data.query.namespacealiases[ alias ][ '*' ] );
 				}
@@ -248,23 +240,21 @@
 	 */
 	function doFiles( pageContent ) {
 		return getNamespaceAliases( 6 ).then( function ( aliases ) {
-			var i, aliasList, captionFilesRegex, fileRegex;
-
 			aliases.push( 'file' );
 
-			for ( i = 0; i < aliases.length; i++ ) {
+			for ( var i = 0; i < aliases.length; i++ ) {
 				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
 			}
 
-			aliasList = aliases.join( '|' );
+			var aliasList = aliases.join( '|' );
 
 			// Add translate tags for files with captions
-			captionFilesRegex = new RegExp( '\\[\\[(' + aliasList + ')(.*\\|)(.*?)\\]\\]', 'gi' );
+			var captionFilesRegex = new RegExp( '\\[\\[(' + aliasList + ')(.*\\|)(.*?)\\]\\]', 'gi' );
 			pageContent = pageContent.replace( captionFilesRegex,
 				'</translate>\n[[$1$2<translate>$3</translate>]]\n<translate>' );
 
 			// Add translate tags for files without captions
-			fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
+			var fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
 			pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
 
 			return pageContent;
@@ -279,9 +269,8 @@
 	 * @return {string} pageContent
 	 */
 	function doTemplates( pageContent ) {
-		var templateRegex;
 		// Regex: https://regex101.com/r/wA3iX0
-		templateRegex = new RegExp( /^({{[\s\S]*?}})/gm );
+		var templateRegex = new RegExp( /^({{[\s\S]*?}})/gm );
 
 		pageContent = pageContent.replace( templateRegex, '</translate>\n$1\n<translate>' );
 		return pageContent;
@@ -312,8 +301,7 @@
 	 * @return {string} return.done.value The current revision
 	 */
 	function getPageContent( pageName ) {
-		var obj,
-			api = new mw.Api();
+		var api = new mw.Api();
 
 		return api.get( {
 			action: 'query',
@@ -322,9 +310,9 @@
 			rvlimit: '1',
 			titles: pageName
 		} ).then( function ( data ) {
-			var page;
+			var obj;
 
-			for ( page in data.query.pages ) {
+			for ( var page in data.query.pages ) {
 				obj = data.query.pages[ page ];
 			}
 
@@ -339,11 +327,10 @@
 	 * @return {Array} Array of valid namespaces
 	 */
 	function getNamespaces() {
-		var key, namespacesObject, i,
-			namespaces = [];
+		var namespaces = [];
 
-		namespacesObject = mw.config.get( 'wgNamespaceIds' );
-		for ( key in namespacesObject ) {
+		var namespacesObject = mw.config.get( 'wgNamespaceIds' );
+		for ( var key in namespacesObject ) {
 			namespaces.push( key );
 		}
 
@@ -352,25 +339,24 @@
 			namespaces.splice( namespaces.indexOf( ns ), 1 );
 		} );
 
-		for ( i = 0; i < namespaces.length; i++ ) {
+		for ( var i = 0; i < namespaces.length; i++ ) {
 			namespaces[ i ] = mw.RegExp.escape( namespaces[ i ] );
 		}
 		return namespaces;
 	}
 
 	$( function () {
-		var pageContent,
-			$input = $( '#page' );
+		var $input = $( '#page' );
 
 		$( '#action-cancel' ).on( 'click', function () {
 			document.location.reload( true );
 		} );
 
+		var pageContent;
 		$( '#action-save' ).on( 'click', function () {
-			var pageName,
-				pageUrl = '';
+			var pageUrl = '';
 
-			pageName = $input.val().trim();
+			var pageName = $input.val().trim();
 			savePage( pageName, pageContent ).done( function () {
 				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
 				$( '.messageDiv' )
@@ -386,9 +372,9 @@
 		} );
 
 		$( '#action-prepare' ).on( 'click', function () {
-			var pageName, $messageDiv = $( '.messageDiv' );
+			var $messageDiv = $( '.messageDiv' );
 
-			pageName = $input.val().trim();
+			var pageName = $input.val().trim();
 			$messageDiv.addClass( 'hide' );
 			if ( pageName === '' ) {
 				// eslint-disable-next-line no-alert

@@ -3,17 +3,15 @@
 		GroupSynchronization;
 
 	$( function () {
-		var windowManager, renameDialog;
-
 		RenameDropdown.init();
 		GroupSynchronization.init();
 
 		// Create and append a window manager.
-		windowManager = new OO.ui.WindowManager();
+		var windowManager = new OO.ui.WindowManager();
 		windowManager.$element.appendTo( document.body );
 
 		// Create a new process dialog window.
-		renameDialog = new mw.translate.MessageRenameDialog( {
+		var renameDialog = new mw.translate.MessageRenameDialog( {
 			classes: [ 'smg-rename-dialog' ],
 			size: 'large'
 		}, function ( renameParams ) {
@@ -38,9 +36,8 @@
 		 * Attach the click handler to display the rename dropdown.
 		 */
 		$( '#mw-content-text' ).on( 'click', '.smg-rename-actions', function ( event ) {
-			var $target, $parentContainer;
-			$target = $( event.target );
-			$parentContainer = $target.parents( '.mw-translate-smg-change' );
+			var $target = $( event.target );
+			var $parentContainer = $target.parents( '.mw-translate-smg-change' );
 			RenameDropdown.appendTo( event.target, $parentContainer, {
 				groupId: $target.data( 'groupId' ),
 				msgKey: $target.data( 'msgkey' ),
@@ -142,8 +139,8 @@
 	 * @return {jQuery.Promise}
 	 */
 	function getRenames( groupId, msgKey ) {
-		var params, api = new mw.Api(), changesetName;
-		params = {
+		var api = new mw.Api();
+		var params = {
 			action: 'query',
 			meta: 'managemessagegroups',
 			formatversion: 2,
@@ -151,7 +148,7 @@
 			mmgmessageKey: msgKey
 		};
 
-		changesetName = getChangesetName();
+		var changesetName = getChangesetName();
 		if ( changesetName !== null ) {
 			params.mmgchangesetName = changesetName;
 		}
@@ -167,10 +164,9 @@
 	 * @return {string}
 	 */
 	function getChangesetName() {
-		var locationPaths, suffix, pageTitle;
-		locationPaths = window.location.pathname.split( '/' );
-		suffix = locationPaths.pop();
-		pageTitle = $( '#smgPageTitle' ).val();
+		var locationPaths = window.location.pathname.split( '/' );
+		var suffix = locationPaths.pop();
+		var pageTitle = $( '#smgPageTitle' ).val();
 
 		if ( suffix && suffix.indexOf( pageTitle ) === -1 ) {
 			return suffix;
@@ -199,9 +195,9 @@
 	 * @return {jQuery.Promise}
 	 */
 	function setRename( renameParams ) {
-		var params, api = new mw.Api(), changesetName;
+		var api = new mw.Api();
 
-		params = {
+		var params = {
 			action: 'managemessagegroups',
 			groupId: renameParams.groupId,
 			renameMessageKey: renameParams.selectedKey,
@@ -212,7 +208,7 @@
 			formatversion: 2
 		};
 
-		changesetName = getChangesetName();
+		var changesetName = getChangesetName();
 		if ( changesetName !== null ) {
 			params.changesetName = changesetName;
 		}
@@ -227,9 +223,9 @@
 	 * @return {jQuery.Promise}
 	 */
 	function setAsNew( groupId, msgKey ) {
-		var params, api = new mw.Api(), changesetName;
+		var api = new mw.Api();
 
-		params = {
+		var params = {
 			action: 'managemessagegroups',
 			groupId: groupId,
 			messageKey: msgKey,
@@ -239,7 +235,7 @@
 			formatversion: 2
 		};
 
-		changesetName = getChangesetName();
+		var changesetName = getChangesetName();
 		if ( changesetName !== null ) {
 			params.changesetName = changesetName;
 		}
@@ -406,9 +402,9 @@
 		}
 
 		function markAsResolved( operation, groupId, messageTitle ) {
-			var params, api = new mw.Api();
+			var api = new mw.Api();
 
-			params = {
+			var params = {
 				action: 'managegroupsynchronizationcache',
 				group: groupId,
 				operation: operation,

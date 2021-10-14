@@ -18,19 +18,17 @@
 	}
 
 	$( function () {
-		var $miniLogo, $toggle, rtl, delim;
-
-		rtl = $body.hasClass( 'rtl' );
-		delim = rtl ?
+		var rtl = $body.hasClass( 'rtl' );
+		var delim = rtl ?
 			$( '#mw-head-base' ).css( 'margin-right' ) :
 			$( '#mw-head-base' ).css( 'margin-left' );
 
-		$miniLogo = $( '#p-logo' )
+		var $miniLogo = $( '#p-logo' )
 			.clone()
 			.removeAttr( 'id' )
 			.addClass( 'tux-navi-minilogo' );
 
-		$toggle = $( '<div>' )
+		var $toggle = $( '<div>' )
 			.addClass( 'tux-navitoggle' )
 			.css( rtl ? 'right' : 'left', delim )
 			.on( 'click', function () {

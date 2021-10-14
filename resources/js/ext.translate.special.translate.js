@@ -20,15 +20,13 @@
 		 * @param {Object} group a message group object.
 		 */
 		changeGroup: function ( group ) {
-			var changes;
-
 			if ( !checkDirty() ) {
 				return;
 			}
 
 			state.group = group.id;
 
-			changes = {
+			var changes = {
 				group: group.id,
 				showMessage: null
 
@@ -100,10 +98,8 @@
 		 */
 		updateTabLinks: function ( params ) {
 			$( '.tux-tab a' ).each( function () {
-				var $a, uri;
-
-				$a = $( this );
-				uri = new mw.Uri( $a.prop( 'href' ) );
+				var $a = $( this );
+				var uri = new mw.Uri( $a.prop( 'href' ) );
 				uri.extend( params );
 				$a.prop( 'href', uri.toString() );
 			} );
@@ -111,10 +107,8 @@
 	} );
 
 	function getActualFilter( filter ) {
-		var realFilters, uri;
-
-		realFilters = [ '!ignored' ];
-		uri = new mw.Uri( window.location.href );
+		var realFilters = [ '!ignored' ];
+		var uri = new mw.Uri( window.location.href );
 		if ( uri.query.optional !== '1' ) {
 			realFilters.push( hideOptionalMessages );
 		}
@@ -181,8 +175,7 @@
 	}
 
 	function updateGroupWarning( group, language ) {
-		var $preferredLanguages, headerMessage, languagesMessage,
-			$groupWarning = $( '.tux-editor-header .group-warning' );
+		var $groupWarning = $( '.tux-editor-header .group-warning' );
 
 		if ( group.priority === 'discouraged' ) {
 			$groupWarning.append(
@@ -199,7 +192,7 @@
 		}
 
 		// Make a comma-separated list of preferred languages
-		$preferredLanguages = $( '<span>' );
+		var $preferredLanguages = $( '<span>' );
 		group.prioritylangs.forEach( function ( languageCode, index ) {
 			// bidi isolation for language names
 			$preferredLanguages.append(
@@ -212,6 +205,7 @@
 			}
 		} );
 
+		var headerMessage, languagesMessage;
 		if ( group.priorityforce ) {
 			headerMessage = mw.message(
 				'tpt-discouraged-language-force-header',
@@ -275,10 +269,7 @@
 	}
 
 	$( function () {
-		var $translateContainer, $hideTranslatedButton, $messageList,
-			filter, uri, position, offset, limit, actualFilter;
-
-		$messageList = $( '.tux-messagelist' );
+		var $messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
 		state.language = $messageList.data( 'targetlangcode' );
 
@@ -286,9 +277,10 @@
 			$messageList.messagetable();
 			state.messageList = $messageList.data( 'messagetable' );
 
-			uri = new mw.Uri( window.location.href );
-			filter = uri.query.filter;
-			offset = uri.query.showMessage;
+			var uri = new mw.Uri( window.location.href );
+			var filter = uri.query.filter;
+			var offset = uri.query.showMessage;
+			var limit;
 			if ( offset ) {
 				limit = uri.query.limit || 1;
 				// Default to no filters
@@ -316,7 +308,7 @@
 			} );
 
 			// Start loading messages
-			actualFilter = getActualFilter( filter );
+			var actualFilter = getActualFilter( filter );
 			state.messageList.changeSettings( {
 				group: state.group,
 				language: state.language,
@@ -330,6 +322,7 @@
 			}
 		}
 
+		var position;
 		if ( $( document.body ).hasClass( 'rtl' ) ) {
 			position = {
 				my: 'right top',
@@ -359,13 +352,13 @@
 			$( '.tux-message' ).translateeditor();
 		}
 
-		$translateContainer = $( '.ext-translate-container' );
+		var $translateContainer = $( '.ext-translate-container' );
 
 		if ( mw.translate.canProofread() ) {
 			$translateContainer.find( '.proofread-mode-button' ).removeClass( 'hide' );
 		}
 
-		$hideTranslatedButton = $translateContainer.find( '.tux-editor-clear-translated' );
+		var $hideTranslatedButton = $translateContainer.find( '.tux-editor-clear-translated' );
 		$hideTranslatedButton
 			.prop( 'disabled', !getTranslatedMessages( $translateContainer ).length )
 			.on( 'click', function () {
@@ -375,14 +368,13 @@
 
 		// Message filter click handler
 		$translateContainer.find( '.row.tux-message-selector > li' ).on( 'click', function () {
-			var newFilter,
-				$this = $( this );
+			var $this = $( this );
 
 			if ( $this.hasClass( 'more' ) ) {
 				return false;
 			}
 
-			newFilter = $this.data( 'filter' );
+			var newFilter = $this.data( 'filter' );
 
 			// Remove the 'selected' class from all the items.
 			// Some of them could have been moved to under the "more" menu,

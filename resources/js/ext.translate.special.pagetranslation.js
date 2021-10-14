@@ -13,12 +13,10 @@ var LanguagesMultiselectWidget = require( './LanguagesMultiselectWidget.js' );
 window.LanguagesMultiselectWidget = LanguagesMultiselectWidget;
 
 function configureLanguageInput( $form, $widget ) {
-	var widget, $input;
-
 	/** @type {LanguagesMultiselectWidget} */
-	widget = OO.ui.infuse( $widget, { api: new mw.Api() } );
+	var widget = OO.ui.infuse( $widget, { api: new mw.Api() } );
 
-	$input = $( '<input>' ).prop( {
+	var $input = $( '<input>' ).prop( {
 		type: 'hidden',
 		name: 'prioritylangs',
 		value: widget.getValue()
@@ -32,10 +30,9 @@ function configureLanguageInput( $form, $widget ) {
 
 function configurePostLinks( $container ) {
 	$container.on( 'click', '.mw-translate-jspost', function ( e ) {
-		var params,
-			uri = new mw.Uri( e.target.href );
+		var uri = new mw.Uri( e.target.href );
 
-		params = uri.query;
+		var params = uri.query;
 		params.token = mw.user.tokens.get( 'csrfToken' );
 		$.post( uri.path, params ).done( function () {
 			location.reload();

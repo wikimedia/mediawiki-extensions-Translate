@@ -54,15 +54,13 @@
 		 * @return {jQuery.Promise} Object containing the requested properties on success.
 		 */
 		getMessageGroup: function ( id, props ) {
-			var params, api;
-
 			if ( Array.isArray( props ) ) {
 				props = props.join( '|' );
 			} else if ( props === undefined ) {
 				props = 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates';
 			}
 
-			params = {
+			var params = {
 				meta: 'messagegroups',
 				mgformat: 'flat',
 				mgprop: props,
@@ -70,7 +68,7 @@
 				formatversion: 2
 			};
 
-			api = new mw.Api();
+			var api = new mw.Api();
 
 			return api.get( params ).then( function ( result ) {
 				return result.query.messagegroups[ 0 ];
@@ -86,12 +84,11 @@
 		 * @return {Object} Message group object
 		 */
 		findGroup: function ( id, groups ) {
-			var result;
-
 			if ( !id ) {
 				return groups;
 			}
 
+			var result;
 			groups.some( function ( group ) {
 				if ( group.id === id ) {
 					result = group;
@@ -156,8 +153,7 @@
 		 * @param {Array} regions Which regions to add the languages.
 		 */
 		addExtraLanguagesToLanguageData: function ( languages, regions ) {
-			var code;
-			for ( code in languages ) {
+			for ( var code in languages ) {
 				if ( code in $.uls.data.languages ) {
 					continue;
 				}

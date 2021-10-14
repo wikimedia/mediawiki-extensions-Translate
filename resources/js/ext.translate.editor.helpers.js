@@ -93,22 +93,13 @@
 		 * @param {Object} documentation A documentation object as returned by API.
 		 */
 		showMessageDocumentation: function ( documentation ) {
-			var $descEditLink,
-				documentationDir,
-				expand,
-				$messageDescViewer,
-				$messageDoc,
-				readMore,
-				langAttr,
-				$readMore = null;
-
 			if ( !mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				return;
 			}
 
-			$messageDescViewer = this.$editor.find( '.message-desc-viewer' );
-			$descEditLink = $messageDescViewer.find( '.message-desc-edit' );
-			$messageDoc = $messageDescViewer.find( '.message-desc' );
+			var $messageDescViewer = this.$editor.find( '.message-desc-viewer' );
+			var $descEditLink = $messageDescViewer.find( '.message-desc-edit' );
+			var $messageDoc = $messageDescViewer.find( '.message-desc' );
 
 			// Display the documentation only if it's not empty and
 			// documentation language is configured
@@ -117,13 +108,13 @@
 				// is heavily hinted at in the UI
 				return;
 			} else if ( documentation.value ) {
-				documentationDir = $.uls.data.getDir( documentation.language );
+				var documentationDir = $.uls.data.getDir( documentation.language );
 
 				// Show the documentation and set appropriate
 				// lang and dir attributes.
 				// The message documentation is assumed to be written
 				// in the content language of the wiki.
-				langAttr = {
+				var langAttr = {
 					lang: documentation.language,
 					dir: documentationDir
 				};
@@ -147,12 +138,12 @@
 				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 
 				if ( documentation.html.length > 500 ) {
-					expand = function () {
+					var expand = function () {
 						$messageDoc.removeClass( 'compact' );
 						$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
 					};
 
-					readMore = function () {
+					var readMore = function () {
 						if ( $messageDoc.hasClass( 'compact' ) ) {
 							expand();
 						} else {
@@ -161,7 +152,7 @@
 						}
 					};
 
-					$readMore = $( '<span>' )
+					var $readMore = $( '<span>' )
 						.addClass( 'read-more column' )
 						.text( mw.msg( 'tux-editor-message-desc-more' ) )
 						.on( 'click', readMore );
@@ -187,13 +178,11 @@
 		 * @param {Object} documentation A gettext object as returned by API.
 		 */
 		showUneditableDocumentation: function ( documentation ) {
-			var dir;
-
 			if ( documentation.error ) {
 				return;
 			}
 
-			dir = $.uls.data.getDir( documentation.language );
+			var dir = $.uls.data.getDir( documentation.language );
 
 			// The following classes are used here:
 			// * mw-content-ltr
@@ -214,8 +203,6 @@
 		 * @param {Array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
-			var $elements;
-
 			if ( translations.error ) {
 				return;
 			}
@@ -224,15 +211,13 @@
 				return;
 			}
 
-			$elements = translations.map( function ( translation ) {
-				var $element, langAttr;
-
-				langAttr = {
+			var $elements = translations.map( function ( translation ) {
+				var langAttr = {
 					lang: translation.language,
 					dir: $.uls.data.getDir( translation.language )
 				};
 
-				$element = $( '<div>' )
+				var $element = $( '<div>' )
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
@@ -261,26 +246,23 @@
 		 * @param {Array} translations A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( translations ) {
-			var $heading, $tmSuggestions, $messageList, lang, dir,
-				suggestions = {};
-
 			if ( !translations.length ) {
 				return;
 			}
 
 			// Container for the suggestions
-			$tmSuggestions = $( '<div>' ).addClass( 'tm-suggestions' );
+			var $tmSuggestions = $( '<div>' ).addClass( 'tm-suggestions' );
 
-			$heading = this.$editor.find( '.tm-suggestions-title' );
+			var $heading = this.$editor.find( '.tm-suggestions-title' );
 			$heading.after( $tmSuggestions );
 
-			$messageList = $( '.tux-messagelist' );
-			lang = $messageList.data( 'targetlangcode' );
-			dir = $messageList.data( 'targetlangdir' );
+			var $messageList = $( '.tux-messagelist' );
+			var lang = $messageList.data( 'targetlangcode' );
+			var dir = $messageList.data( 'targetlangdir' );
+
+			var suggestions = {};
 
 			translations.forEach( function ( translation ) {
-				var suggestion;
-
 				// Remove once formatversion=2
 				if ( translation.local === '' ) {
 					translation.local = true;
@@ -294,7 +276,7 @@
 				}
 
 				// Check if suggestion with this value already exists
-				suggestion = suggestions[ translation.target ];
+				var suggestion = suggestions[ translation.target ];
 				if ( suggestion ) {
 					suggestion.count++;
 					suggestion.sources.push( translation );
@@ -402,14 +384,13 @@
 		 * @param {Array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
-			var $mtSuggestions, $messageList, translationLang, translationDir,
-				translateEditor = this;
-
 			if ( !suggestions.length ) {
 				return;
 			}
 
-			$mtSuggestions = this.$editor.find( '.tm-suggestions' );
+			var translateEditor = this;
+
+			var $mtSuggestions = this.$editor.find( '.tm-suggestions' );
 
 			if ( !$mtSuggestions.length ) {
 				$mtSuggestions = $( '<div>' ).addClass( 'tm-suggestions' );
@@ -419,9 +400,9 @@
 				.removeClass( 'hide' )
 				.after( $mtSuggestions );
 
-			$messageList = $( '.tux-messagelist' );
-			translationLang = $messageList.data( 'targetlangcode' );
-			translationDir = $messageList.data( 'targetlangdir' );
+			var $messageList = $( '.tux-messagelist' );
+			var translationLang = $messageList.data( 'targetlangcode' );
+			var translationDir = $messageList.data( 'targetlangdir' );
 
 			suggestions.forEach( function ( translation ) {
 				var $translation;
@@ -455,10 +436,9 @@
 		 * @param {string} suggestion Text to add
 		 */
 		suggestionAdder: function ( $source, suggestion ) {
-			var inserter,
-				$target = this.$editor.find( '.tux-textarea-translation' );
+			var $target = this.$editor.find( '.tux-textarea-translation' );
 
-			inserter = function () {
+			var inserter = function () {
 				var selection;
 				if ( window.getSelection ) {
 					selection = window.getSelection().toString();
@@ -494,13 +474,12 @@
 		 * @param {Object} insertables A insertables object as returned by API.
 		 */
 		addInsertables: function ( insertables ) {
-			var i,
-				count = insertables.length,
+			var count = insertables.length,
 				$sourceMessage = this.$editor.find( '.sourcemessage' ),
 				$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' ),
 				$textarea = this.$editor.find( '.tux-textarea-translation' );
 
-			for ( i = 0; i < count; i++ ) {
+			for ( var i = 0; i < count; i++ ) {
 				// The dir and lang attributes must be set here,
 				// because the language of the insertables is the language
 				// of the source message and not of the translation.

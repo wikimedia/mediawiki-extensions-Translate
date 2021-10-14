@@ -2,9 +2,7 @@
 	'use strict';
 
 	mw.uls.changeLanguage = function ( language ) {
-		var page;
-
-		page = 'Special:MyLanguage/' + mw.config.get( 'wgPageName' );
+		var page = 'Special:MyLanguage/' + mw.config.get( 'wgPageName' );
 
 		if ( mw.config.get( 'wgTranslatePageTranslation' ) === 'translation' ) {
 			page = page.replace( /\/[^/]+$/, '' );

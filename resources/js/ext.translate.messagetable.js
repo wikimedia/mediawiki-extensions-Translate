@@ -142,9 +142,7 @@
 		 * @param {Object} message
 		 */
 		addTranslate: function ( message ) {
-			var $message,
-				targetLangDir, targetLangAttrib,
-				targetLangCode = this.$container.data( 'targetlangcode' ),
+			var targetLangCode = this.$container.data( 'targetlangcode' ),
 				sourceLangCode = this.$container.data( 'sourcelangcode' ),
 				sourceLangDir = $.uls.data.getDir( sourceLangCode ),
 				status = message.properties.status,
@@ -175,6 +173,7 @@
 				statusMsg = 'tux-status-' + status;
 			}
 
+			var targetLangDir, targetLangAttrib;
 			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 				targetLangDir = $.uls.data.getDir( targetLangAttrib );
@@ -183,7 +182,7 @@
 				targetLangDir = this.$container.data( 'targetlangdir' );
 			}
 
-			$message = $( '<div>' )
+			var $message = $( '<div>' )
 				.addClass( 'row message tux-message-item ' + status )
 				.append(
 					$( '<div>' )
@@ -251,9 +250,7 @@
 		 * @param {Object} message
 		 */
 		addProofread: function ( message ) {
-			var $message, $icon;
-
-			$message = $( '<div>' )
+			var $message = $( '<div>' )
 				.addClass( 'row tux-message tux-message-proofread' );
 
 			this.$container.append( $message );
@@ -263,7 +260,7 @@
 				targetlangcode: this.$container.data( 'targetlangcode' )
 			} );
 
-			$icon = $message.find( '.tux-proofread-action' );
+			var $icon = $message.find( '.tux-proofread-action' );
 			if ( $icon.length === 0 ) {
 				return;
 			}
@@ -285,12 +282,12 @@
 				} );
 
 				setTimeout( function () {
-					var offset, $visibleIcon = $( '.autotooltip:visible' );
+					var $visibleIcon = $( '.autotooltip:visible' );
 					if ( !$visibleIcon.length ) {
 						return;
 					}
 
-					offset = $visibleIcon.offset();
+					var offset = $visibleIcon.offset();
 					tooltip.$element.appendTo( document.body );
 					tooltip
 						.toggle( true )
@@ -315,9 +312,7 @@
 		 * @param {Object} message
 		 */
 		addPageModeMessage: function ( message ) {
-			var $message;
-
-			$message = $( '<div>' )
+			var $message = $( '<div>' )
 				.addClass( 'row tux-message tux-message-pagemode' );
 
 			this.$container.append( $message );
@@ -334,8 +329,7 @@
 		 * @param {string} query
 		 */
 		search: function ( query ) {
-			var $note, $button, $result,
-				resultCount = 0,
+			var resultCount = 0,
 				matcher = new RegExp( '(^|\\s|\\b)' + escapeRegex( query ), 'gi' );
 
 			this.$container.find( itemsClass[ this.mode ] ).each( function () {
@@ -352,12 +346,12 @@
 				}
 			} );
 
-			$result = this.$container.find( '.tux-message-filter-result' );
+			var $result = this.$container.find( '.tux-message-filter-result' );
 			if ( !$result.length ) {
-				$note = $( '<div>' )
+				var $note = $( '<div>' )
 					.addClass( 'advanced-search' );
 
-				$button = $( '<button>' )
+				var $button = $( '<button>' )
 					.addClass( 'mw-ui-button' )
 					.text( mw.msg( 'tux-message-filter-advanced-button' ) );
 
@@ -387,12 +381,13 @@
 		},
 
 		resize: function () {
-			var actualWidth = 0, $messageSelector = $( '.row.tux-message-selector' );
+			var $messageSelector = $( '.row.tux-message-selector' );
 
 			if ( $messageSelector.is( ':hidden' ) ) {
 				return;
 			}
 
+			var actualWidth = 0;
 			// Calculate the total width required for the filters
 			$messageSelector.children( 'li' ).each( function () {
 				actualWidth += $( this ).outerWidth( true );
@@ -462,9 +457,7 @@
 		 * @param {number} [limit] Only load this many messages and then stop even if there is more.
 		 */
 		load: function ( limit ) {
-			var remaining,
-				query,
-				self = this,
+			var self = this,
 				offset = this.$loader.data( 'offset' ),
 				pageSize = limit || this.$loader.data( 'pagesize' );
 
@@ -488,8 +481,7 @@
 				pageSize,
 				this.settings.filter
 			).done( function ( result ) {
-				var messages = result.query.messagecollection,
-					state, i;
+				var messages = result.query.messagecollection;
 
 				if ( !self.loading ) {
 					// reject. This was cancelled.
@@ -497,7 +489,7 @@
 				}
 
 				if ( result.warnings ) {
-					for ( i = 0; i !== result.warnings.length; i++ ) {
+					for ( var i = 0; i !== result.warnings.length; i++ ) {
 						if ( result.warnings[ i ].code === 'translate-language-disabled-source' ) {
 							self.handleLoadErrors( [ result.warnings[ i ] ] );
 							break;
@@ -523,7 +515,7 @@
 					}
 				} );
 
-				state = result.query.metadata && result.query.metadata.state;
+				var state = result.query.metadata && result.query.metadata.state;
 				$( '.tux-workflow' ).workflowselector(
 					self.settings.group,
 					self.settings.language,
@@ -531,7 +523,7 @@
 				).removeClass( 'hide' );
 
 				// Dynamically loaded messages should pass the search filter if present.
-				query = $( '.tux-message-filter-box' ).val();
+				var query = $( '.tux-message-filter-box' ).val();
 
 				if ( query ) {
 					self.search( query );
@@ -548,7 +540,7 @@
 				} else {
 					self.$loader.data( 'offset', result[ 'query-continue' ].messagecollection.mcoffset );
 
-					remaining = result.query.metadata.remaining;
+					var remaining = result.query.metadata.remaining;
 
 					self.$loaderInfo.text(
 						mw.msg( 'tux-messagetable-more-messages', remaining )
@@ -721,10 +713,7 @@
 		switchMode: function ( mode ) {
 			var messageTable = this,
 				filter = this.settings.filter,
-				userId = mw.config.get( 'wgUserId' ),
-				$tuxTabUntranslated,
-				$tuxTabUnproofread,
-				$hideTranslatedButton;
+				userId = mw.config.get( 'wgUserId' );
 
 			messageTable.$actionBar.find( '.tux-view-switcher .down' ).removeClass( 'down' );
 			if ( mode === 'translate' ) {
@@ -746,9 +735,9 @@
 			messageTable.$container.empty();
 			$( '.translate-tooltip' ).remove();
 
-			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
-			$tuxTabUnproofread = $( '.tux-message-selector > .tux-tab-unproofread' );
-			$hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
+			var $tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
+			var $tuxTabUnproofread = $( '.tux-message-selector > .tux-tab-unproofread' );
+			var $hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
 
 			if ( messageTable.mode === 'proofread' ) {
 				$tuxTabUntranslated.addClass( 'hide' );
@@ -802,30 +791,20 @@
 		 * The scroll handler
 		 */
 		scroll: function () {
-			var $window,
-				isActionBarFloating,
-				needsTableHeaderFloat, needsTableHeaderStick,
-				needsActionBarFloat, needsActionBarStick,
-				windowScrollTop, windowScrollBottom,
-				messageTableRelativePos,
-				messageListOffset,
-				messageListHeight, messageListWidth,
-				messageListTop, messageListBottom;
+			var $window = $( window );
 
-			$window = $( window );
-
-			windowScrollTop = $window.scrollTop();
-			windowScrollBottom = windowScrollTop + $window.height();
-			messageListOffset = this.$container.offset();
-			messageListHeight = this.$container.height();
-			messageListTop = messageListOffset.top;
-			messageListBottom = messageListTop + messageListHeight;
-			messageListWidth = this.$container.width();
+			var windowScrollTop = $window.scrollTop();
+			var windowScrollBottom = windowScrollTop + $window.height();
+			var messageListOffset = this.$container.offset();
+			var messageListHeight = this.$container.height();
+			var messageListTop = messageListOffset.top;
+			var messageListBottom = messageListTop + messageListHeight;
+			var messageListWidth = this.$container.width();
 
 			// Header:
-			messageTableRelativePos = messageListTop - this.$header.height() - windowScrollTop;
-			needsTableHeaderFloat = messageTableRelativePos + 10 < 0;
-			needsTableHeaderStick = messageTableRelativePos - 10 >= 0;
+			var messageTableRelativePos = messageListTop - this.$header.height() - windowScrollTop;
+			var needsTableHeaderFloat = messageTableRelativePos + 10 < 0;
+			var needsTableHeaderStick = messageTableRelativePos - 10 >= 0;
 			if ( needsTableHeaderFloat ) {
 				this.$header.addClass( 'floating' ).width( messageListWidth );
 			} else if ( needsTableHeaderStick ) {
@@ -834,9 +813,9 @@
 			}
 
 			// Action bar:
-			isActionBarFloating = this.$actionBar.hasClass( 'floating' );
-			needsActionBarFloat = windowScrollBottom < messageListBottom;
-			needsActionBarStick = windowScrollBottom > ( messageListBottom + this.$actionBar.height() );
+			var isActionBarFloating = this.$actionBar.hasClass( 'floating' );
+			var needsActionBarFloat = windowScrollBottom < messageListBottom;
+			var needsActionBarStick = windowScrollBottom > ( messageListBottom + this.$actionBar.height() );
 
 			if ( !isActionBarFloating && needsActionBarFloat ) {
 				this.$actionBar.addClass( 'floating' ).width( messageListWidth );
@@ -909,13 +888,12 @@
 	}
 
 	function isLoaderVisible( $loader ) {
-		var viewportBottom, elementTop,
-			$window = $( window );
+		var $window = $( window );
 
-		viewportBottom = ( window.innerHeight ? window.innerHeight : $window.height() ) +
+		var viewportBottom = ( window.innerHeight ? window.innerHeight : $window.height() ) +
 			$window.scrollTop();
 
-		elementTop = $loader.offset().top;
+		var elementTop = $loader.offset().top;
 
 		// Start already if user is reaching close to the bottom
 		return elementTop - viewportBottom < 200;

@@ -65,17 +65,16 @@
 		},
 
 		render: function () {
-			var targetLangAttrib, targetLangDir, sourceLangDir;
+			var sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
 
-			sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
-
+			var targetLangAttrib;
 			if ( this.options.targetlangcode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 			} else {
 				targetLangAttrib = this.options.targetlangcode;
 			}
 
-			targetLangDir = $.uls.data.getDir( targetLangAttrib );
+			var targetLangDir = $.uls.data.getDir( targetLangAttrib );
 
 			// `status` class is documented elsewhere
 			// eslint-disable-next-line mediawiki/class-doc

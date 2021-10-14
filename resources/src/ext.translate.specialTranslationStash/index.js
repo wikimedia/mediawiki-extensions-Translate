@@ -31,25 +31,24 @@ function getMessages( messageGroup, language, offset, limit ) {
 }
 
 function addMessage( message ) {
-	var $messageWrapper, $message,
-		$messageTable = $( '.tux-messagelist' ),
+	var $messageTable = $( '.tux-messagelist' ),
 		sourceLanguage = $messageTable.data( 'sourcelangcode' ),
 		sourceLanguageDir = $.uls.data.getDir( sourceLanguage ),
 		targetLanguage = $messageTable.data( 'targetlangcode' ),
 		targetLanguageDir = $.uls.data.getDir( targetLanguage ),
 		status = message.properties.status,
-		statusClass = 'tux-status-' + status,
-		statusMsg;
+		statusClass = 'tux-status-' + status;
 
+	var statusMsg;
 	if ( status === 'translated' ) {
 		// tux-status-translated
 		statusMsg = 'tux-status-' + status;
 	}
 
-	$messageWrapper = $( '<div>' )
+	var $messageWrapper = $( '<div>' )
 		.addClass( 'row tux-message' );
 
-	$message = $( '<div>' )
+	var $message = $( '<div>' )
 		.addClass( 'row message tux-message-item ' + status )
 		.append(
 			$( '<div>' )
@@ -137,10 +136,9 @@ function addMessage( message ) {
  * Relies on classes stash-stats and tux-status-translated.
  */
 function updateStats() {
-	var count,
-		$target = $( '.stash-stats' );
+	var $target = $( '.stash-stats' );
 
-	count = $( '.tux-status-translated' ).length;
+	var count = $( '.tux-status-translated' ).length;
 	if ( count === 0 ) {
 		return;
 	}
@@ -173,7 +171,7 @@ function loadMessages() {
 
 	getMessages( messagegroup, $messageTable.data( 'targetlangcode' ) )
 		.done( function ( result ) {
-			var $untranslated, messages = result.query.messagecollection;
+			var messages = result.query.messagecollection;
 
 			$messageTable.empty();
 			messages.forEach( function ( message ) {
@@ -190,7 +188,7 @@ function loadMessages() {
 			} );
 
 			// Show the editor for the first untranslated message.
-			$untranslated = $( '.tux-message' )
+			var $untranslated = $( '.tux-message' )
 				.has( '.tux-message-item.untranslated' )
 				.first();
 			if ( $untranslated.length ) {
