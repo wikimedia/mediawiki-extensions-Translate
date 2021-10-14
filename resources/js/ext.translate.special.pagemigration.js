@@ -124,18 +124,18 @@
 	/**
 	 * Get the translation units created by Translate extension.
 	 *
-	 * @param {string} pageName
+	 * @param {string} page Page name
 	 * @return {jQuery.Promise}
 	 * @return {Function} return.done
 	 * @return {Object[]} return.done.data Array of sUnit Objects
 	 */
-	function getSourceUnits( pageName ) {
+	function getSourceUnits( page ) {
 		var api = new mw.Api();
 
 		return api.get( {
 			action: 'query',
 			list: 'messagecollection',
-			mcgroup: 'page-' + pageName,
+			mcgroup: 'page-' + page,
 			mclanguage: 'en',
 			mcprop: 'definition'
 		} ).then( function ( data ) {
@@ -228,22 +228,22 @@
 	/**
 	 * Display the source and target units alongwith the action icons.
 	 *
-	 * @param {Array} sourceUnits
+	 * @param {Array} units
 	 * @param {Array} translations
 	 */
-	function displayUnits( sourceUnits, translations ) {
+	function displayUnits( units, translations ) {
 		var i, totalUnits, $newUnit, $unitListing,
 			sourceText, targetText;
 
-		noOfSourceUnits = sourceUnits.length;
+		noOfSourceUnits = units.length;
 		noOfTranslationUnits = translations.length;
 		totalUnits = noOfSourceUnits > noOfTranslationUnits ? noOfSourceUnits : noOfTranslationUnits;
 		$unitListing = $( '.mw-tpm-sp-unit-listing' );
 		$unitListing.html( '' );
 		for ( i = 0; i < totalUnits; i++ ) {
 			sourceText = targetText = '';
-			if ( sourceUnits[ i ] !== undefined ) {
-				sourceText = sourceUnits[ i ].definition;
+			if ( units[ i ] !== undefined ) {
+				sourceText = units[ i ].definition;
 			}
 			if ( translations[ i ] !== undefined ) {
 				targetText = translations[ i ];
@@ -292,17 +292,17 @@
 	 * Assumption: The source headers and translation headers appear in
 	 * the same order.
 	 *
-	 * @param {Object[]} sourceUnits
+	 * @param {Object[]} units
 	 * @param {string[]} translationUnits
 	 * @return {string[]}
 	 */
-	function alignHeaders( sourceUnits, translationUnits ) {
+	function alignHeaders( units, translationUnits ) {
 		var i, regex, tIndex = 0,
 			matchText, emptyCount, mergeText;
 
 		regex = new RegExp( /^==[^=]+==$/m );
-		for ( i = 0; i < sourceUnits.length; i++ ) {
-			if ( regex.test( sourceUnits[ i ].definition ) ) {
+		for ( i = 0; i < units.length; i++ ) {
+			if ( regex.test( units[ i ].definition ) ) {
 				tIndex = getHeaderUnit( tIndex, translationUnits );
 				mergeText = '';
 				// search is over
@@ -487,13 +487,13 @@
 		$errorBox.addClass( 'hide' );
 
 		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
-			.then( function ( sourceUnits, fuzzyTimestamp ) {
-				noOfSourceUnits = sourceUnits.length;
+			.then( function ( units, fuzzyTimestamp ) {
+				noOfSourceUnits = units.length;
 				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
 					var translationUnits = splitHeaders( translations );
-					translationUnits = alignHeaders( sourceUnits, translationUnits );
+					translationUnits = alignHeaders( units, translationUnits );
 					noOfTranslationUnits = translationUnits.length;
-					displayUnits( sourceUnits, translationUnits );
+					displayUnits( units, translationUnits );
 					$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					$( '#action-import' ).addClass( 'hide' );
 					$messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).removeClass( 'hide' );

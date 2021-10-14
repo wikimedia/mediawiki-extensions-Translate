@@ -135,8 +135,8 @@
 			);
 		}
 
-		Object.keys( languages ).forEach( function ( languageCode ) {
-			ulslanguages[ languageCode ] = mw.config.get( 'wgTranslateLanguages' )[ languageCode ];
+		Object.keys( languages ).forEach( function ( lang ) {
+			ulslanguages[ lang ] = mw.config.get( 'wgTranslateLanguages' )[ lang ];
 		} );
 
 		mw.translate.addExtraLanguagesToLanguageData( ulslanguages, [ 'SP' ] );
