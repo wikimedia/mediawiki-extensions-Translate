@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
@@ -308,7 +309,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	/**
 	 * Used for setting an AbuseFilter variable.
 	 *
-	 * @param AbuseFilterVariableHolder &$vars
+	 * @param VariableHolder &$vars
 	 * @param Title $title
 	 * @param User $user
 	 */
@@ -336,7 +337,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	/**
 	 * Computes the translate_source_text and translate_target_language AbuseFilter variables
 	 * @param string $method
-	 * @param AbuseFilterVariableHolder $vars
+	 * @param VariableHolder $vars
 	 * @param array $parameters
 	 * @param null &$result
 	 * @return bool
