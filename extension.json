@@ -619,16 +619,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.recentgroups": {
-			"scripts": "resources/js/ext.translate.recentgroups.js",
-			"dependencies": [
-				"mediawiki.storage"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.groupselector": {
 			"styles": "resources/css/ext.translate.groupselector.less",
 			"scripts": "resources/js/ext.translate.groupselector.js",
@@ -818,6 +808,7 @@
 		},
 		"ext.translate.special.translate": {
 			"scripts": [
+				"resources/js/ext.translate.recentgroups.js",
 				"resources/js/ext.translate.workflowselector.js",
 				"resources/js/ext.translate.special.translate.js"
 			],
@@ -834,11 +825,11 @@
 				"ext.translate.editor",
 				"ext.translate.groupselector",
 				"ext.translate.messagetable",
-				"ext.translate.recentgroups",
 				"jquery.uls.data",
 				"mediawiki.Uri",
 				"mediawiki.api",
-				"mediawiki.jqueryMsg"
+				"mediawiki.jqueryMsg",
+				"mediawiki.storage"
 			],
 			"messages": [
 				"tpt-discouraged-language-content",
