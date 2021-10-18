@@ -590,7 +590,9 @@ class SpecialManageGroups extends SpecialPage {
 	): void {
 		$changes = $sourceChanges->getRenames( $language );
 		foreach ( $changes as $key => $params ) {
-			if ( $params === null ) {
+			// Since we're removing items from the array within the loop add
+			// a check here to ensure that the current key is still set.
+			if ( !isset( $changes[ $key ] ) ) {
 				continue;
 			}
 
@@ -785,7 +787,9 @@ class SpecialManageGroups extends SpecialPage {
 		$groupNamespace = $group->getNamespace();
 
 		foreach ( $renames as $key => $params ) {
-			if ( $params === null ) {
+			// Since we're removing items from the array within the loop add
+			// a check here to ensure that the current key is still set.
+			if ( !isset( $renames[$key] ) ) {
 				continue;
 			}
 
