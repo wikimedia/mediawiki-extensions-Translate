@@ -167,6 +167,7 @@
 	"pt-movepage-new": "Novo nome:",
 	"pt-movepage-reason": "Motivo:",
 	"pt-movepage-subpages": "Mover todas as subpáginas",
+	"pt-movepage-talkpage-exists": "(Tem página de discussão)",
 	"pt-movepage-action-check": "Verificar se a movimentação é possível",
 	"pt-movepage-action-perform": "Realizar a movimentação",
 	"pt-movepage-action-other": "Alterar o destino",
@@ -237,5 +238,11 @@
 	"tpt-generic-confirm": "Por favor, confirme a ação.",
 	"tpt-generic-button": "Confirmar",
 	"tpt-validation-not-insertable": "Nome da variável de tradução \"$1\" não funciona como inserido na interface de tradução. Evite usar caracteres especiais.",
-	"tpt-validation-name-reuse": "Variável de tradução \"$1\" é definida várias vezes com conteúdo diferente. Altere os nomes de variáveis para ser exclusivo dentro da unidade de tradução."
+	"tpt-validation-name-reuse": "Variável de tradução \"$1\" é definida várias vezes com conteúdo diferente. Altere os nomes de variáveis para ser exclusivo dentro da unidade de tradução.",
+	"visualeditor-annotations-translate-start": "Início do conteúdo a ser traduzido",
+	"visualeditor-annotations-translate-end": "Fim do conteúdo a ser traduzido",
+	"visualeditor-annotations-translate-description": "Este intervalo é marcado como traduzível. Por favor, certifique-se de seguir as diretrizes de [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Changing_the_source_text alterando o texto de origem].",
+	"visualeditor-annotations-tvar-start": "Início do conteúdo não traduzível",
+	"visualeditor-annotations-tvar-end": "Fim do conteúdo não traduzível",
+	"visualeditor-annotations-tvar-description": "Esse intervalo é marcado como não traduzível. Por favor, consulte [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Segmentação segmentação do texto de origem] para maiores informações."
 }

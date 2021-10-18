@@ -239,5 +239,11 @@
 	"tpt-generic-confirm": "נא לאשר את הפעולה.",
 	"tpt-generic-button": "אישור",
 	"tpt-validation-not-insertable": "שם משתנה התרגום \"$1\" אינו פועל בתור טקסט בר־הוספה בממשק התרגום. נא להימנע משימוש בתווים מיוחדים.",
-	"tpt-validation-name-reuse": "משתנה התרגום \"$1\" מוגדר כמה פעמים עם תוכן שונה. נא לשנות את שמות המשתנים כדי שיהיו ייחודיים בתוך יחידת התרגום."
+	"tpt-validation-name-reuse": "משתנה התרגום \"$1\" מוגדר כמה פעמים עם תוכן שונה. נא לשנות את שמות המשתנים כדי שיהיו ייחודיים בתוך יחידת התרגום.",
+	"visualeditor-annotations-translate-start": "תחילת התוכן שצריך לתרגם",
+	"visualeditor-annotations-translate-end": "סוף התוכן שצריך לתרגם",
+	"visualeditor-annotations-translate-description": "הטווח הזה מסומן בתור \"לא לתרגום\". נא לוודא {{GENDER:|שאתה עוקב|שאת עוקבת}} אחר ההנחיות בנושא [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Changing_the_source_text שינוי טקסט המקור].",
+	"visualeditor-annotations-tvar-start": "תחילת תוכן לא לתרגום",
+	"visualeditor-annotations-tvar-end": "סוף תוכן לא לתרגום",
+	"visualeditor-annotations-tvar-description": "הטווח הזה סומן בתור \"לא לתרגום\". נא לקרוא על [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Segmentation חלוקת טקסט המקור למקטעים] למידע נוסף."
 }

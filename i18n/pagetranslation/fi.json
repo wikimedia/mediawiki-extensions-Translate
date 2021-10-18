@@ -11,6 +11,7 @@
 			"Olli",
 			"Pxos",
 			"Pyscowicz",
+			"Rönttönen",
 			"Silvonen",
 			"Valtlait",
 			"VezonThunder",
@@ -212,5 +213,10 @@
 	"tpt-unlink-button": "Poista käännettävistä sivuista",
 	"tpt-unlink-summary": "Poistettu käännettävistä sivuista",
 	"tpt-generic-confirm": "Vahvista toiminto.",
-	"tpt-generic-button": "Vahvista"
+	"tpt-generic-button": "Vahvista",
+	"visualeditor-annotations-translate-start": "Käännettävän sisällön alkukohta",
+	"visualeditor-annotations-translate-end": "Käännettävän sisällön päätepiste",
+	"visualeditor-annotations-tvar-start": "Sisältö, jota ei voi kääntää, alkaa tästä",
+	"visualeditor-annotations-tvar-end": "Sisältö, jota ei voi kääntää, päättyy tähän",
+	"visualeditor-annotations-tvar-description": "Tämä väli on merkitty mahdottomaksi kääntää. Katso lisätietoja sivulta [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text]"
 }

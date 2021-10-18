@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Antonla",
 			"Byrial",
 			"Christian List",
 			"Emilkris33",
@@ -229,7 +230,7 @@
 	"translate-gs-count": "Antal",
 	"translate-gs-total": "I alt",
 	"translate-gs-avgscore": "Gennemsnitlig point",
-	"translate-documentation-language": "Beskeddokumentation",
+	"translate-documentation-language": "oversættelsesrettesnor",
 	"translate-searchprofile": "Oversættelser",
 	"translate-searchprofile-tooltip": "Søg i alle oversættelser",
 	"translate-search-languagefilter": "Filtrer efter sprog:",

@@ -7,12 +7,20 @@
 			"Sarvaturi"
 		]
 	},
+	"translate": "Traduci",
+	"translate-extensionname": "Traduci",
+	"translate-taction-translate": "Traduci",
 	"translate-taction-lstats": "Statìstichi dâ lingua",
 	"translate-taction-mstats": "Statìstichi dô gruppu di missaggi",
 	"translate-page-no-such-group": "Lu gruppu spicificatu nun èni vàliddu.",
 	"translate-page-settings-legend": "Mpustazzioni",
+	"translate-page-group": "Gruppu",
 	"translate-page-language": "Lingua",
+	"translate-page-limit": "Lìmiti",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|missaggiu|missaggi}} pi pàggina",
 	"translate-next": "Pàggina appressu",
+	"translate-page-edit": "cancia",
+	"translate-edit-title": "Cancia \"$1\"",
 	"translate-edit-definition": "Difinizzioni dû missaggiu",
 	"translate-edit-contribute": "cuntribbuisci",
 	"translate-edit-information": "Nfurmazzioni supra lu missaggiu ($1)",
@@ -26,6 +34,7 @@
 	"translate-statsf-scale-weeks": "Simani",
 	"translate-statsf-scale-days": "Jorna",
 	"translate-statsf-scale-hours": "Uri",
+	"translate-statsf-count-edits": "Nùmmiru di canciamenti",
 	"translate-statsf-submit": "Antiprima",
 	"translate-sidebar-alltrans": "Nti àutri lìngui",
 	"translations": "Tutti li traduzzioni",
@@ -45,6 +54,12 @@
 	"translate-gs-code": "Còdici",
 	"translate-gs-continent": "Cuntinenti",
 	"translate-documentation-language": "Ducumintazzione dû missaggiu",
+	"tux-editor-page-mode": "Pàggina",
+	"tux-editor-doc-editor-cancel": "Annulla",
+	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|àutru missaggiu|àutri missaggi}}",
+	"tux-editor-message-tools-history": "Crunuluggìa",
 	"tux-editor-message-tools-delete": "Cancella",
-	"tux-editor-message-tools-translations": "Tutti li traduzzioni"
+	"tux-editor-message-tools-translations": "Tutti li traduzzioni",
+	"translate-search-more-languages-info": "$1 {{PLURAL:$1|àutra lingua|àutri lingua}}",
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|àutru grupp|àutri gruppa}}"
 }

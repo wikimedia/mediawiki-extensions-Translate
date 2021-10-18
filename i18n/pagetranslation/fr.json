@@ -7,6 +7,7 @@
 			"Cquoi",
 			"Crochet.david",
 			"DavidL",
+			"DreZhsh",
 			"Eihel",
 			"Element303",
 			"Frigory",
@@ -262,5 +263,11 @@
 	"tpt-generic-confirm": "Veuillez confirmer l’action.",
 	"tpt-generic-button": "Confirmer",
 	"tpt-validation-not-insertable": "Le nom de la variable de traduction « $1 » ne fonctionne pas comme pouvant être inséré dans l’interface de traduction. Éviter d’utiliser les caractères spéciaux.",
-	"tpt-validation-name-reuse": "La variable de traduction « $1 » est définie plusieurs fois avec un contenu différent. Modifier les noms de variable afin qu’ils soient uniques dans l’unité de traduction."
+	"tpt-validation-name-reuse": "La variable de traduction « $1 » est définie plusieurs fois avec un contenu différent. Modifier les noms de variable afin qu’ils soient uniques dans l’unité de traduction.",
+	"visualeditor-annotations-translate-start": "Début du contenu à traduire",
+	"visualeditor-annotations-translate-end": "Fin du contenu à traduire",
+	"visualeditor-annotations-translate-description": "Cette partie est marquée comme étant traduisible. Veuillez vous assurer que vous suivez les directives de [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Modifier le texte source].",
+	"visualeditor-annotations-tvar-start": "Début du contenu intraduisible",
+	"visualeditor-annotations-tvar-end": "Fin du contenu intraduisible",
+	"visualeditor-annotations-tvar-description": "Cette partie est marquée comme intraduisible. Veuillez vous référer à [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation du texte source] pour plus d'informations."
 }

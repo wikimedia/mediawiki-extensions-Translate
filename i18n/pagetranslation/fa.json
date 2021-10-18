@@ -211,5 +211,11 @@
 	"tpt-unlink-button": "حذف از ترجمه",
 	"tpt-unlink-summary": "حذف صفحه از ترجمه",
 	"tpt-generic-confirm": "لطفا این اقدام را تایید کنید.",
-	"tpt-generic-button": "تأیید"
+	"tpt-generic-button": "تأیید",
+	"visualeditor-annotations-translate-start": "ابتدای محتوا برای ترجمه",
+	"visualeditor-annotations-translate-end": "انتهای محتوا برای ترجمه",
+	"visualeditor-annotations-translate-description": "این بازه به‌عنوان بازهٔ قابل ترجمه علامت خورده‌است. لطفاً مطمئن شوید که از [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text رهنمودهای تغییر متن مبدأ] پیروی می‌کنید.",
+	"visualeditor-annotations-tvar-start": "آغاز محتوای غیرقابل ترجمه",
+	"visualeditor-annotations-tvar-end": "انتهای محتوای غیرقابل ترجمه",
+	"visualeditor-annotations-tvar-description": "این بازه به‌عنوان بازهٔ غیرقابل ترجمه علامت خورده‌است. لطفاً برای اطلاعات بیشتر به [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation تقسیم‌بندی متن مبدأ] مراجعه کنید."
 }

@@ -232,5 +232,11 @@
 	"tpt-generic-confirm": "Потврдете го дејството.",
 	"tpt-generic-button": "Потврди",
 	"tpt-validation-not-insertable": "Преводната променлива „$1“ не работи како вметлива во преводниот посредник. Избегнувајте употреба на посебни знаци.",
-	"tpt-validation-name-reuse": "Преводната променлива „$1“ е зададена повеќепати со различна содржина. Сменете ги имињата на променливите за да бидат различни, секоја за своја преводна единица."
+	"tpt-validation-name-reuse": "Преводната променлива „$1“ е зададена повеќепати со различна содржина. Сменете ги имињата на променливите за да бидат различни, секоја за своја преводна единица.",
+	"visualeditor-annotations-translate-start": "Почеток на содржината за преведување",
+	"visualeditor-annotations-translate-end": "Крај на содржината за преведување",
+	"visualeditor-annotations-translate-description": "Овој опсег е означен како преводлив. Следете ги правилата за [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text промена на изворен текст].",
+	"visualeditor-annotations-tvar-start": "Почеток на непреводливата содржина",
+	"visualeditor-annotations-tvar-end": "Крај на непреводливата содржина",
+	"visualeditor-annotations-tvar-description": "Овој опсег е означен како непреводлив. Повеќе информации ќе добиете на страницата [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Разделување на изворниот текст]."
 }

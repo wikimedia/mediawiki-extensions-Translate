@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier",
 			"Malafaya"
 		]
 	},
+	"right-pagetranslation": "Indikar versioni di pagini por tradukar",
+	"action-pagetranslation": "administrar tradukebla pagini",
 	"tpt-diff-old": "Antea texto",
 	"tpt-diff-new": "Nova texto",
 	"tpt-tag-oldsyntax": "anciena sintaxo",
@@ -15,6 +18,7 @@
 	"tpt-languages-legend": "Altra lingui:",
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"tpt-tab-translate": "Tradukar",
+	"tpt-translation-restricted-no-reason": "La traduko di ca pagino a ca idiomo impedesis da ula administranto di tradukuri.",
 	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
 	"tpt-aggregategroup-update-cancel": "Nuligar",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
@@ -22,5 +26,7 @@
 	"pt-deletepage-list-no-pages": "Nula pagino trovesis.",
 	"pm-cancel-button-label": "Nuligar",
 	"pp-cancel-button-label": "Nuligar",
-	"tpt-generic-button": "Konfirmez"
+	"tpt-generic-button": "Konfirmez",
+	"visualeditor-annotations-translate-end": "Fino di kontenajo a tradukar",
+	"visualeditor-annotations-tvar-end": "Fino di parto netradukebla"
 }

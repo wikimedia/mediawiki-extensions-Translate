@@ -1,9 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kambai Akau"
+			"Hamxo",
+			"Kambai Akau",
+			"Salihu aliyu",
+			"Umar-askirason"
 		]
 	},
 	"tpt-languages-nonzero": "$1 (an fassara $2%)",
-	"pt-movepage-reason": "Dalili:"
+	"pt-movepage-reason": "Dalili:",
+	"visualeditor-annotations-translate-start": "fara content din don fassara shi",
+	"visualeditor-annotations-translate-end": "karshen rubutun da za'a fassara",
+	"visualeditor-annotations-translate-description": "Wannan tsakanin an gudanar dashi akan zai iya fassaruwa. Don haka ku tabbata kun bi matakin koyar wa na [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text].",
+	"visualeditor-annotations-tvar-start": "Farin bayanan da bazasu fassaru ba",
+	"visualeditor-annotations-tvar-end": "Karshen rubutun da bai fassaruwa",
+	"visualeditor-annotations-tvar-description": "Tsakanin nan an tantancesu a matsayin wa'inda baza su fassaru ba [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] domin samun karin bayanai"
 }

@@ -12,6 +12,7 @@
 			"Mavrikant",
 			"McAang",
 			"Meelo",
+			"Melissadilara",
 			"MuratTheTurkish",
 			"Pols12",
 			"Rapsar",
@@ -177,6 +178,7 @@
 	"pt-movepage-new": "Yeni adı:",
 	"pt-movepage-reason": "Sebep:",
 	"pt-movepage-subpages": "Tüm alt sayfaları taşı",
+	"pt-movepage-talkpages": "Tartışma sayfasını taşı",
 	"pt-movepage-action-check": "Taşımanın mümkün olup olmadığını kontrol edin",
 	"pt-movepage-action-perform": "Taşımaya yap",
 	"pt-movepage-action-other": "Hedefi değiştir",
@@ -247,5 +249,9 @@
 	"tpt-generic-confirm": "Lütfen işlemi onaylayın.",
 	"tpt-generic-button": "Onayla",
 	"tpt-validation-not-insertable": "\"$1\" çeviri değişkeni ismi çeviri arayüzüne konulamaz. Özel karakter kullanmaktan sakının.",
-	"tpt-validation-name-reuse": "\"$1\" çeviri değişkeni farklı içerikle birden fazla kez tanımlanmış. Değişken isimlerini çeviri biriminde tek olacak şekilde değiştirin."
+	"tpt-validation-name-reuse": "\"$1\" çeviri değişkeni farklı içerikle birden fazla kez tanımlanmış. Değişken isimlerini çeviri biriminde tek olacak şekilde değiştirin.",
+	"visualeditor-annotations-translate-start": "Çevrilecek içerik başlangıcı",
+	"visualeditor-annotations-translate-end": "Çevrilecek içerik sonu",
+	"visualeditor-annotations-tvar-start": "Çevrilemeyecek içerik başlangıcı",
+	"visualeditor-annotations-tvar-end": "Çevrilemeyecek içerik sonu"
 }
