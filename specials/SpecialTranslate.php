@@ -272,7 +272,7 @@ class SpecialTranslate extends SpecialPage {
 					'class' => $groupClass,
 					'data-msggroupid' => $this->group->getId(),
 				],
-				$this->group->getLabel()
+				$this->group->getLabel( $this->getContext() )
 			) .
 			Html::closeElement( 'div' );
 
