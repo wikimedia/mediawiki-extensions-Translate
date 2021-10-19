@@ -5,9 +5,11 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use Generator;
 use HashBagOStuff;
+use HashMessageIndex;
 use MediaWikiIntegrationTestCase;
 use MessageGroup;
 use MessageGroups;
+use MessageIndex;
 use WANObjectCache;
 
 /**
@@ -15,20 +17,7 @@ use WANObjectCache;
  * @license GPL-2.0-or-later
  */
 class EntitySearchTest extends MediaWikiIntegrationTestCase {
-	/** @var EntitySearch */
-	private $entitySearch;
-
-	protected function setUp(): void {
-		parent::setUp();
-
-		$this->entitySearch = new EntitySearch(
-			new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ),
-			$this->getServiceContainer()->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
-			$this->getMessageGroupFactoryStub()
-		);
-	}
-
-	public function getTestData(): array {
+	public function getMessageGroupFactoryStub(): MessageGroups {
 		$data = <<<EOF
 Page
 Translatable page
@@ -40,12 +29,7 @@ Page 2
 Page Page Page Page
 page page page page
 EOF;
-
-		return explode( "\n", $data );
-	}
-
-	public function getMessageGroupFactoryStub(): MessageGroups {
-		$data = $this->getTestData();
+		$data = explode( "\n", $data );
 		$stubGroups = [];
 		foreach ( $data as $dataItem ) {
 			$stubGroup = $this->createStub( MessageGroup::class );
@@ -65,7 +49,18 @@ EOF;
 
 	/** @dataProvider provideTestSearchStaticMessageGroups */
 	public function testSearchStaticMessageGroups( string $query, int $maxResults, array $expected ) {
-		$actual = $this->entitySearch->searchStaticMessageGroups( $query, $maxResults );
+		$mediaWikiServices = $this->getServiceContainer();
+		$entitySearch = new EntitySearch(
+			new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ),
+			$mediaWikiServices->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
+			$this->getMessageGroupFactoryStub(),
+			$mediaWikiServices->getNamespaceInfo(),
+			new HashMessageIndex(),
+			$mediaWikiServices->getTitleFormatter(),
+			$mediaWikiServices->getTitleParser()
+		);
+
+		$actual = $entitySearch->searchStaticMessageGroups( $query, $maxResults );
 		$this->assertEquals( $expected, $actual );
 	}
 
@@ -134,6 +129,94 @@ EOF;
 
 		yield [
 			'Book',
+			10,
+			[]
+		];
+	}
+
+	public function getMessageIndexStub(): MessageIndex {
+		$data = <<<EOF
+8:title
+8:page title
+8:CAPITAL TITLE
+8:big_bunny
+8:prefix
+9:prefix-1
+9:prefix-2
+9:prefix-3
+EOF;
+		$data = explode( "\n", $data );
+		$stub = $this->createStub( MessageIndex::class );
+		$stub->method( 'getKeys' )->willReturn( $data );
+		return $stub;
+	}
+
+	/** @dataProvider provideTestSearchMessages */
+	public function testSearchMessages( string $query, int $maxResults, array $expected ) {
+		$mediaWikiServices = $this->getServiceContainer();
+		$entitySearch = new EntitySearch(
+			new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ),
+			$mediaWikiServices->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
+			$this->createStub( MessageGroups::class ),
+			$mediaWikiServices->getNamespaceInfo(),
+			$this->getMessageIndexStub(),
+			$mediaWikiServices->getTitleFormatter(),
+			$mediaWikiServices->getTitleParser()
+		);
+
+		$actual = $entitySearch->searchMessages( $query, $maxResults );
+		$this->assertEquals( $expected, $actual );
+	}
+
+	public function provideTestSearchMessages(): Generator {
+		yield 'prefix and infix case-insensitive matching at word boundaries' => [
+			'title',
+			10,
+			[
+				[
+					'pattern' => 'MediaWiki:CAPITAL TITLE',
+					'count' => 1,
+				],
+				[
+					'pattern' => 'MediaWiki:Page title',
+					'count' => 1,
+				],
+				[
+					'pattern' => 'MediaWiki:Title',
+					'count' => 1,
+				],
+			]
+		];
+
+		yield 'matching at underscore boundaries' => [
+			'bunny',
+			1,
+			[
+
+				[
+					'pattern' => 'MediaWiki:Big bunny',
+					'count' => 1,
+				],
+			]
+		];
+
+		yield 'prefix collapsing' => [
+			'prefix',
+			2,
+			[
+				[
+					'pattern' => 'MediaWiki talk:Prefix*',
+					'count' => 3,
+				],
+				[
+					'pattern' => 'MediaWiki:Prefix',
+					'count' => 1,
+				],
+			]
+		];
+
+		yield [
+			'No match',
 			10,
 			[]
 		];

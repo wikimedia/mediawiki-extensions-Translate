@@ -45,7 +45,11 @@ return [
 		return new EntitySearch(
 			$services->getMainWANObjectCache(),
 			$collation,
-			MessageGroups::singleton()
+			MessageGroups::singleton(),
+			$services->getNamespaceInfo(),
+			$services->get( 'Translate:MessageIndex' ),
+			$services->getTitleParser(),
+			$services->getTitleFormatter()
 		);
 	},
 
@@ -69,6 +73,17 @@ return [
 
 	'Translate:JsonCodec' => static function (): JsonCodec {
 		return new JsonCodec();
+	},
+
+	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {
+		$params = $services->getMainConfig()->get( 'TranslateMessageIndex' );
+		if ( is_string( $params ) ) {
+			$params = (array)$params;
+		}
+
+		$class = array_shift( $params );
+		// @phan-suppress-next-line PhanTypeExpectedObjectOrClassName
+		return new $class( $params );
 	},
 
 	'Translate:ParsingPlaceholderFactory' => static function (): ParsingPlaceholderFactory {

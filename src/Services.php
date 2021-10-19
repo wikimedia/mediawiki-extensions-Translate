@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
+use MessageIndex;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -71,6 +72,11 @@ class Services implements ContainerInterface {
 	/** @since 2020.12 */
 	public function getJsonCodec(): JsonCodec {
 		return $this->get( 'Translate:JsonCodec' );
+	}
+
+	/** @since 2020.10 */
+	public function getMessageIndex(): MessageIndex {
+		return $this->get( 'Translate:MessageIndex' );
 	}
 
 	/** @since 2020.07 */
