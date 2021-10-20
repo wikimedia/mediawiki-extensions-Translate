@@ -55,5 +55,8 @@
 	"apierror-translate-owntranslation": "نمی‌توانید پیام‌های خودتان را بازبینی کنید",
 	"apierror-translate-sandbox-invalidppassword": "گذرواژه نامعتبر",
 	"apierror-translate-unknownmessage": "پیام ناشناخته",
-	"apiwarn-translate-alreadyreviewedbyyou": "قبلا به عنوان بازبینی‌شده توسط شما علامت خورده است"
+	"apiwarn-translate-alreadyreviewedbyyou": "قبلا به عنوان بازبینی‌شده توسط شما علامت خورده است",
+	"apihelp-translationentitysearch-summary": "جستجوی پیام‌ها و گروه‌های پیام",
+	"apihelp-translationentitysearch-param-query": "عبارت جستجو",
+	"apihelp-translationentitysearch-param-limit": "حداکثر تعداد نتایج جستجو"
 }

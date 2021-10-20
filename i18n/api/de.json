@@ -4,7 +4,8 @@
 			"Colfin 96",
 			"Ljonka",
 			"Metalhead64",
-			"Predatorix"
+			"Predatorix",
+			"Seewolf"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -133,5 +134,6 @@
 	"apierror-translate-rename-state-invalid": "Eine der zur Umbenennung übergebenen Nachrichten sollte neu hinzugefügt und die andere gelöscht werden. Aktuelle Zustände - Hinzufügen: $1 und Löschen: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert",
 	"apiwarn-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus.",
-	"apierror-translate-operation-error": "Es ist ein Fehler bei der Verarbeitung der Anfrage aufgetreten. Fehler: $1"
+	"apierror-translate-operation-error": "Es ist ein Fehler bei der Verarbeitung der Anfrage aufgetreten. Fehler: $1",
+	"apihelp-translationentitysearch-param-query": "Suchanfrage"
 }

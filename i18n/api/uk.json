@@ -167,5 +167,8 @@
 	"apierror-translate-rename-state-invalid": "Одне з повідомлень, подане для перейменування, має бути доданим заново, а інше — вилученим. Поточні стани — додавання: $1 і вилучення: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Вже позначено Вами як перевірено",
 	"apiwarn-translate-language-disabled-source": "Вихідна мова цієї групи — $1. Будь ласка, виберіть іншу мову для перекладу.",
-	"apierror-translate-operation-error": "Під час обробки запиту сталася помилка. Помилка: $1"
+	"apierror-translate-operation-error": "Під час обробки запиту сталася помилка. Помилка: $1",
+	"apihelp-translationentitysearch-summary": "Пошук груп повідомлень і повідомлень",
+	"apihelp-translationentitysearch-param-query": "Пошуковий запит",
+	"apihelp-translationentitysearch-param-limit": "Максимальна кількість результатів пошуку"
 }

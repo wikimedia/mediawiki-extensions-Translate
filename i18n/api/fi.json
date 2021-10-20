@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"MITO",
 			"Nike",
 			"Nwme",
 			"Pyscowicz",
@@ -56,5 +57,6 @@
 	"apierror-translate-sandboxdisabled": "Hiekkalaatikko-ominaisuus ei ole käytössä",
 	"apierror-translate-sandbox-invalidppassword": "Virheellinen salasana",
 	"apierror-translate-unknownmessage": "Tuntematon viesti",
-	"apiwarn-translate-language-disabled-source": "Tämän ryhmän lähdekieli on $1. Valitse toinen kieli käännöksille."
+	"apiwarn-translate-language-disabled-source": "Tämän ryhmän lähdekieli on $1. Valitse toinen kieli käännöksille.",
+	"apihelp-translationentitysearch-param-limit": "Hakutulosten maksimimäärä"
 }

@@ -59,5 +59,6 @@
 	"apierror-translate-sandboxdisabled": "La funzione Sandbox non è in uso",
 	"apierror-translate-sandbox-invalidppassword": "Password non valida",
 	"apierror-translate-unknownmessage": "Messaggio sconosciuto",
-	"apiwarn-translate-alreadyreviewedbyyou": "Già contrassegnata come revisionata da te"
+	"apiwarn-translate-alreadyreviewedbyyou": "Già contrassegnata come revisionata da te",
+	"apihelp-translationentitysearch-param-limit": "Numero massimo di risultati della ricerca"
 }
