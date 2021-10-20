@@ -105,6 +105,36 @@ class PageTitleRenamerTest extends MediaWikiIntegrationTestCase {
 				'Translations talk:Help talk:Foo/1/en-gb' => 'Translations talk:Category talk:Bar/1/en-gb'
 			]
 		];
+
+		yield [
+			'Foo/done',
+			'Template:Foo/done',
+			[
+				// Translation page
+				'Foo/done/en' => 'Template:Foo/done/en',
+				// Translation page
+				'Foo/done/ko' => 'Template:Foo/done/ko',
+				// Talk page
+				'Talk:Foo/done/ko' => 'Template talk:Foo/done/ko',
+				// Translation
+				'Foo/done/1/ko' => 'Template:Foo/done/1/ko'
+			]
+		];
+
+		yield [
+			'Template:Foo/done',
+			'Foo/done',
+			[
+				// Translation page
+				'Template:Foo/done/en' => 'Foo/done/en',
+				// Translation page
+				'Template:Foo/done/ko' => 'Foo/done/ko',
+				// Talk page
+				'Template talk:Foo/done/ko' => 'Talk:Foo/done/ko',
+				// Translation
+				'Template:Foo/done/1/ko' => 'Foo/done/1/ko'
+			]
+		];
 	}
 
 	public function provideNewPageTitleException() {

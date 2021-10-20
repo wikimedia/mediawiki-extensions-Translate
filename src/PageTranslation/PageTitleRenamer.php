@@ -78,16 +78,21 @@ class PageTitleRenamer {
 			);
 		}
 
-		if ( $search === $replace ) {
+		$oldTitleText = $title->getText();
+
+		// Check if the old title matches the string being replaced, if so there is no
+		// need to run preg_replace. This will happen if the page is being moved from
+		// one namespace to another.
+		if ( $oldTitleText === $replace ) {
 			return Title::makeTitleSafe( $newNamespace, $replace );
 		}
 
-		$oldTitleText = $title->getText();
 		$searchQuoted = preg_quote( $search, '~' );
 		$newText = preg_replace( "~^$searchQuoted~", $replace, $oldTitleText, 1 );
 
-		if ( $oldTitleText === $newText ) {
-			throw new InvalidPageTitleRename( 'Renaming failed ', self::RENAME_FAILED );
+		// If old and new title + namespace are same, the renaming failed.
+		if ( $oldTitleText === $newText && $newNamespace === $title->getNamespace() ) {
+			throw new InvalidPageTitleRename( 'Renaming failed', self::RENAME_FAILED );
 		}
 
 		$title = Title::makeTitleSafe( $newNamespace, $newText );
