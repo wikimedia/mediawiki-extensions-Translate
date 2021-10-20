@@ -604,7 +604,7 @@ class CachedMessageIndex extends MessageIndex {
 	protected $index;
 
 	protected function __construct() {
-		$this->cache = wfGetCache( CACHE_ANYTHING );
+		$this->cache = ObjectCache::getInstance( CACHE_ANYTHING );
 	}
 
 	/**

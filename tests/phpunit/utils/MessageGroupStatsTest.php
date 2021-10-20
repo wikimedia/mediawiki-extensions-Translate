@@ -20,7 +20,7 @@ class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 	}
 

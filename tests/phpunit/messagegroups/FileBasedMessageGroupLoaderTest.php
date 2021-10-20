@@ -20,7 +20,7 @@ class FileBasedMessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 
 		$this->mgFileLoader = new FileBasedMessageGroupLoader(
 			new MessageGroupWANCache(
-				new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] )
+				new WANObjectCache( [ 'cache' => new HashBagOStuff() ] )
 			)
 		);
 	}

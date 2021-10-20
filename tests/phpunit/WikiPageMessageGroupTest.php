@@ -28,7 +28,7 @@ class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', [] );
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 	}
 

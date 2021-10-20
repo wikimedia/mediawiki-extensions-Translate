@@ -6,7 +6,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$this->mgCache = new MessageGroupWANCache(
-			new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] )
+			new WANObjectCache( [ 'cache' => new HashBagOStuff() ] )
 		);
 	}
 

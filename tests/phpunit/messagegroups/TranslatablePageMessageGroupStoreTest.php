@@ -17,7 +17,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 		$this->mgTranslateStore = new TranslatablePageMessageGroupStore(
 			TranslateUtils::getSafeReadDB(),
 			new MessageGroupWANCache(
-				new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] )
+				new WANObjectCache( [ 'cache' => new HashBagOStuff() ] )
 			)
 		);
 	}

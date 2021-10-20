@@ -18,7 +18,7 @@ class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
 		MessageIndex::setInstance( new HashMessageIndex() );
