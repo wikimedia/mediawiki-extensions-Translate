@@ -258,27 +258,33 @@ class MessageHandle {
 	 * @return string
 	 * @since 2017.10
 	 */
-	public function getInternalKey() {
-		$key = $this->getKey();
-
+	public function getInternalKey(): string {
 		$nsInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
-		if ( !$nsInfo->isCapitalized( $this->title->getNamespace() ) ) {
-			return $key;
-		}
+		$contentLanguage = MediaWikiServices::getInstance()->getContentLanguage();
 
+		$key = $this->getKey();
 		$group = $this->getGroup();
-		$keys = $group->getKeys();
-		// We cannot reliably map from the database key to the internal key if
-		// capital links setting is enabled for the namespace.
+		$groupKeys = $group->getKeys();
 
-		if ( in_array( $key, $keys, true ) ) {
+		if ( in_array( $key, $groupKeys, true ) ) {
 			return $key;
 		}
 
-		$lcKey = MediaWikiServices::getInstance()->getContentLanguage()
-			->lcfirst( $key );
-		if ( in_array( $lcKey, $keys, true ) ) {
-			return $lcKey;
+		$namespace = $this->title->getNamespace();
+		if ( !$nsInfo->isCapitalized( $namespace ) ) {
+			$lowercaseKey = $contentLanguage->lcfirst( $key );
+			if ( in_array( $lowercaseKey, $groupKeys, true ) ) {
+				return $lowercaseKey;
+			}
+		}
+
+		// Brute force all the keys to find the one. This one should always find a match
+		// if there is one.
+		foreach ( $groupKeys as $haystackKey ) {
+			$normalizedHaystackKey = Title::makeTitleSafe( $namespace, $haystackKey )->getDBkey();
+			if ( $normalizedHaystackKey === $key ) {
+				return $haystackKey;
+			}
 		}
 
 		return "BUG:$key";

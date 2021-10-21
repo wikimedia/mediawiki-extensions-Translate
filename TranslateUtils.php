@@ -486,9 +486,8 @@ class TranslateUtils {
 			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
 		}
 
-		$title = MediaWikiServices::getInstance()->getSpecialPageFactory()
-			->getPage( 'Translate' )->getPageTitle();
-
+		$title = MediaWikiServices::getInstance()
+			->getSpecialPageFactory()->getPage( 'Translate' )->getPageTitle();
 		return $title->getFullURL( [
 			'showMessage' => $handle->getInternalKey(),
 			'group' => $handle->getGroup()->getId(),
