@@ -5,6 +5,7 @@
 			"Csbotero",
 			"Dgstranz",
 			"Fitoschido",
+			"Jakeukalane",
 			"Lemondoge",
 			"Macofe",
 			"Tiberius1701"
@@ -48,7 +49,7 @@
 	"apihelp-query+messagetranslations-description": "Consultar todas las traducciones para un único mensaje.",
 	"apihelp-query+messagetranslations-summary": "Consulta todas las traducciones de un solo mensaje.",
 	"apihelp-query+messagetranslations-param-title": "Título completo de un mensaje conocido.",
-	"apihelp-query+messagetranslations-example-1": "Lista de traducciones en el wiki de \"MediaWiki:January\"",
+	"apihelp-query+messagetranslations-example-1": "Lista de traducciones en la wiki de \"MediaWiki:January\"",
 	"apihelp-managemessagegroups-param-groupId": "Identificador de grupo",
 	"apihelp-managemessagegroups-param-renameMessageKey": "Se está renombrando la clave de mensaje específica",
 	"apihelp-managemessagegroups-param-messageKey": "Clave de mensaje de reemplazo",

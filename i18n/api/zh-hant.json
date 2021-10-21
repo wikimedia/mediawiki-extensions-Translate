@@ -3,7 +3,8 @@
 		"authors": [
 			"Kly",
 			"LNDDYL",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Weather Top Wizard"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理集合訊息群組。\n\n您可以添加或移除集合訊息群組，以及從其中來關聯或取消關聯訊息群組（每一次一個）。",
@@ -164,5 +165,6 @@
 	"apierror-translate-rename-state-invalid": "傳遞用於重新命名的訊息裡其中一個得重新添加，而另一個應刪除。目前狀態 - 添加：$1，刪除：$2。",
 	"apiwarn-translate-alreadyreviewedbyyou": "已由您標記為已審查",
 	"apiwarn-translate-language-disabled-source": "此群組的來源語言是$1。請選擇其它的語言來翻譯。",
-	"apierror-translate-operation-error": "當處理請求時發生錯誤。錯誤：$1"
+	"apierror-translate-operation-error": "當處理請求時發生錯誤。錯誤：$1",
+	"apihelp-translationentitysearch-param-query": "搜尋query"
 }

@@ -166,5 +166,7 @@
 	"apierror-translate-rename-state-invalid": "Uma das mensagens passadas para renomear deve ser adicionada recentemente e a outra excluída. Estados atuais - adição: $1 e exclusão: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Já marcado como revisado por você",
 	"apiwarn-translate-language-disabled-source": "O idioma de origem deste grupo é $1. Selecione outro idioma, para a qual irá traduzir, por favor.",
-	"apierror-translate-operation-error": "Ocorreu um erro ao processar o pedido. Erro: $1"
+	"apierror-translate-operation-error": "Ocorreu um erro ao processar o pedido. Erro: $1",
+	"apihelp-translationentitysearch-summary": "Pesquise grupos de mensagens e mensagens",
+	"apihelp-translationentitysearch-param-query": "Consulta de pesquisa"
 }
