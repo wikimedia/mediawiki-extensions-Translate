@@ -140,11 +140,11 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 
 		$this->assertArrayHasKey( 'key', $deletedMsg, 'previously renamed message is ' .
 			' updated when an add as new operation is performed.' );
-		$this->assertEquals( $deletedMsg['key'], 'renameDeleted' );
+		$this->assertEquals( 'renameDeleted', $deletedMsg['key'] );
 
 		$this->assertArrayHasKey( 'key', $addedMsg, 'previously renamed message is ' .
 		' updated when an add as new operation is performed.' );
-		$this->assertEquals( $addedMsg['key'], 'renameAdded' );
+		$this->assertEquals( 'renameAdded', $addedMsg['key'] );
 
 		$deletedMsg = $sourceChanges->findMessage( 'en-gb', 'renameDeleted',
 			[ MessageSourceChange::DELETION ] );
