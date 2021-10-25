@@ -29,6 +29,7 @@
 	"translate-tag-translate-link-desc": "بۇ بەتنى تەرجىمە قىل",
 	"translate-tag-markthis": "تەرجىمە ئۈچۈن بۇ بەتكە بەلگە سال",
 	"tpt-languages-legend": "باشقا تىل",
+	"tpt-languages-nonzero": "$1 ($2% تەرجىمە قىلىنغان)",
 	"tpt-tab-translate": "تەرجىمە",
 	"tpt-discouraged-language-reason": "سەۋەپ: $1",
 	"tpt-priority-languages": "تەرجىمە باشقۇرغۇچى بۇ گۇرۇپپا ئالدىن تەرجىمە قىلىدىغان تىلنى $1 غا تەڭشىدى.",

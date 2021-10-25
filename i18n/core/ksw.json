@@ -1,8 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"SawJaemin"
+			"SawJaemin",
+			"Jaeminlovetaejoon"
 		]
 	},
-	"translate-documentation-language": "မဲဆ့ၣ် လံာ်တၢ်ကွဲးနီၣ်ကွဲးဃါ"
+	"translate-taction-translate": "ကျိာ်ထံ",
+	"translate-rcfilters-translations-site-desc": "မံဒံာ်ယၤဝံၣ်ကံၤ အမည်ညွှန်းရှိ ဆိုဒ်မက်ဆေ့များကို စိတ်ကြိုက်ပြုပြင်မှုများ။",
+	"translate-sidebar-alltrans": "လၢကျိာ်အဂၤ",
+	"translate-langstats-expand": "မၤလဲၢ်ထီၣ်",
+	"translate-langstats-collapse": "မၤလီၤပှီၢ်",
+	"translate-language-code": "ကျိာ်ခိၢ်",
+	"translate-documentation-language": "မဲဆ့ၣ် လံာ်တၢ်ကွဲးနီၣ်ကွဲးဃါ",
+	"tux-languageselector": "ကျိာ်ထံလၢ",
+	"tux-editor-in-other-languages": "လၢကျိာ်အဂၤ",
+	"tux-editor-need-more-help": "လိၣ်ဘၣ်အါထီၣ်တၢ်မၤစၢၤဧါ?",
+	"tux-editor-collapse-tooltip": "မၤလီၤပှီၢ်"
 }

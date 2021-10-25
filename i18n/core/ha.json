@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ammarpad"
+			"Ammarpad",
+			"Aliyu shaba",
+			"BaRaN6161 TURK",
+			"Gwanki"
 		]
 	},
-	"supportedlanguages-summary": "Wannan shine jerin dukkan harsunan dake akwai a {{SITENAME}}, tare da wanda suke aikin fassara akan harshen."
+	"translate-taction-translate": "Fassara",
+	"supportedlanguages-summary": "Wannan shine jerin dukkan harsunan dake akwai a {{SITENAME}}, tare da wanda suke aikin fassara akan harshen.",
+	"translate-documentation-language": "Takardar saƙon"
 }

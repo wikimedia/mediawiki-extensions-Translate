@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Сай"
+			"Сай",
+			"Kareyac"
 		]
 	},
 	"translate-next": "Вес лаштык",
-	"translate-prev": "Ончычсо лаштык"
+	"translate-prev": "Ончычсо лаштык",
+	"tux-editor-page-mode": "Лаштык"
 }

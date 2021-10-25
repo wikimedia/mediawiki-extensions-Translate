@@ -15,7 +15,8 @@
 			"Vitorvicentevalente",
 			"Waldir",
 			"Waldyrious",
-			555
+			555,
+			"Emma Franzen"
 		]
 	},
 	"translate": "Traduzir",
@@ -202,6 +203,7 @@
 	"supportedlanguages-recenttranslations": "traduções recentes",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|língua|línguas}} no total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edição|edições}} - a última edição foi há $3 {{PLURAL:$3|dia|dias}}",
+	"translate-supportedlanguages-cached": "Esta informação foi armazenada em cache há $1.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Texto de origem da unidade de tradução",
 	"abusefilter-edit-builder-vars-translate-target-language": "Língua alvo da tradução",
 	"translate-save": "Gravar ($1)",

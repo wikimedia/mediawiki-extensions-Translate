@@ -6,12 +6,13 @@
 			"Gırd",
 			"Kumkumuk",
 			"Marmase",
-			"Mirzali"
+			"Mirzali",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"tsb-request-count": "$1 {{PLURAL:$1|waştış|waştışi}}",
 	"tsb-all-languages-button-label": "Zıwani pêro",
-	"tsb-search-requests": "Telebê cıgeyrayışi",
+	"tsb-search-requests": "Telebê cıgeyrayışê pawıteyan",
 	"tsb-accept-button-label": "Qebul ke",
 	"tsb-reject-button-label": "Red ke",
 	"tsb-selected-count": "{{PLURAL:$1|$1 kerber weçineya|$1 karberi weçineyay}}",
@@ -23,5 +24,5 @@
 	"translationstash": "Xeyr amey",
 	"translate-translationstash-skip-button-label": "Yewbina bıcerrebne",
 	"tsb-limit-reached-title": "Çarnayışê to rê teşekur kenime",
-	"log-name-translatorsandbox": "Qumdora açarnayışi"
+	"log-name-translatorsandbox": "Roceka tadayışê qumdori"
 }

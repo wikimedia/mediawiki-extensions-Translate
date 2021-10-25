@@ -2,10 +2,33 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"PiefPafPier"
 		]
 	},
+	"searchtranslations": "Oersettings sykje",
 	"tux-sst-edit": "Oersetting bewurkje",
+	"tux-sst-view-foreign": "Op $1 besjen",
 	"tux-sst-search": "Sykje",
-	"tux-sst-facet-language": "Talen"
+	"tux-sst-search-ph": "Oersettings trochsykje",
+	"tux-sst-count": "{{PLURAL:$1|Ien treffer|$1 treffers}} fûn",
+	"tux-sst-facet-language": "Talen",
+	"tux-sst-facet-group": "Berjochtegroepen",
+	"tux-sst-nosolr-title": "Sykjen net beskikber",
+	"tux-sst-nosolr-body": "Dizze wiki hat gjin sykfunksje foar oersettings.",
+	"tux-sst-solr-offline-title": "Sykjen net beskikber",
+	"tux-sst-solr-offline-body": "De sykfunksje is tydlik net beskikber.",
+	"tux-sst-next": "Fierder ›",
+	"tux-sst-prev": "‹ Werom",
+	"tux-sst-default": "Oersettings",
+	"tux-sst-translated": "Oersettings fan $1",
+	"tux-sst-untranslated": "Gjin oersetting fan $1",
+	"tux-sst-outdated": "Ferâldere oersettings fan $1",
+	"tux-sst-ellipsis-untranslated": "Gjin oersetting",
+	"tux-sst-ellipsis-outdated": "Ferâldere oersettings",
+	"tux-sst-link-all-match": "Alle sykwurden fereaskje.",
+	"tux-sst-match-message": "Oersettings werjûn oerienkommend mei hokker sykwurd dan ek. $1",
+	"tux-sst-case-sensitive": "Haadlettergefoelich",
+	"tux-sst-error-offset": "Mear syktreffers kinne net werjûn wurde. Graach jo sykopdracht beheine.",
+	"tux-sst-error-language": "Dizze taal kin net brûkt wurde mei dit type fan sykopdracht."
 }

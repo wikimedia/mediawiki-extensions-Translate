@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"NGC 54"
+		]
+	},
+	"apihelp-query+messagecollection-example-1": "Lista limbilor suportate",
+	"apihelp-query+messagetranslations-example-1": "Lista traducerilor în wiki pentru „MediaWiki:January”",
+	"apihelp-searchtranslations-description": "Căutare traduceri.",
+	"apihelp-searchtranslations-summary": "Căutare traduceri.",
+	"apihelp-searchtranslations-param-limit": "Mărimea relutatului."
+}

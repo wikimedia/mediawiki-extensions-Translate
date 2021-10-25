@@ -3,7 +3,8 @@
 		"authors": [
 			"AnakngAraw",
 			"Jewel457",
-			"Sky Harbor"
+			"Sky Harbor",
+			"GinawaSaHapon"
 		]
 	},
 	"pagetranslation": "Salinwika ng pahina",
@@ -27,7 +28,6 @@
 	"tpt-mark-summary": "Tinatakan ang bersyong ito para isalinwika",
 	"tpt-edit-failed": "Hindi maisapanahon ang pahina:  $1",
 	"tpt-duplicate": "Ang pangalan ng yunit ng salinwika na $1 ay ginagamit nang mas marami kaysa sa isa.",
-	"tpt-already-marked": "Ang huling bersyon ng pahinang ito ay natatakan na para sa pagsasalinwika.",
 	"tpt-unmarked": "Ang pahinang $1 ay hindi na tinatakan para sa pagsasalinwika.",
 	"tpt-list-nopages": "Walang mga pahinang tinatakan para sa pagsasalinwika o nakahanda upang markahan para sa pagsasalinwika.",
 	"tpt-new-pages-title": "Mga pahinang ipinanukala para sa pagsasalinwika",
@@ -57,7 +57,7 @@
 	"tpt-languages-legend": "Iba pang mga wika:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Simulan ang pagsasalinwika para sa wikang ito",
-	"tpt-languages-nonzero": "$1 ($2% naisalin)",
+	"tpt-languages-nonzero": "$1 ($2% nasalin)",
 	"tpt-target-page": "Hindi maaaring kinakamay na maisapanahon ang pahinang ito.\nAng pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].",
 	"tpt-unknown-page": "Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.\nTila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.",
 	"tpt-translation-restricted": "Ang pagsasalinwika ng pahinang ito na papunta sa wikang ito ay pinigilan ng isang tagapangasiwa ng salinwika.\n\nDahilan: $1",

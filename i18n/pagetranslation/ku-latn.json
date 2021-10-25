@@ -36,7 +36,7 @@
 	"log-name-pagetranslation": "Têketina wergerandina rûpelan",
 	"log-action-filter-pagetranslation-delete": "Jêbirinên rûpelan",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Rûpel|Rûpelên}} wergerê",
-	"pt-movepage-list-other": "Bin{{PLURAL:$1|rûpela|rûpelên}} din",
+	"pt-movepage-list-other": "{{PLURAL:$1|Binrûpela|Binrûpelên}} din",
 	"pt-movepage-current": "Navê niha:",
 	"pt-movepage-new": "Navê nû:",
 	"pt-movepage-reason": "Sedem:",

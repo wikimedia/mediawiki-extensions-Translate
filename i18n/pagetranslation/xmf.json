@@ -1,8 +1,41 @@
 {
 	"@metadata": {
 		"authors": [
-			"Silovan"
+			"Silovan",
+			"Narazeni"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% თანგილი)"
+	"pagetranslation": "ხასჷლაშ თანგუა",
+	"tps-edit-sourcepage-ve-warning-button": "OK",
+	"tpt-section-deleted": "თანგუაშ ბლოკი $1",
+	"tpt-diff-old": "კინოხიანი ტექსტი",
+	"tpt-diff-new": "ახალი ტექსტი",
+	"tpt-sections-template": "თანგუაშ ხასჷლაშ თანგი",
+	"tpt-nosuchpage": "ხასჷლა $1 ვა რე",
+	"tpt-other-pages-title": "დაღამაკებული ხასჷლეფი",
+	"tpt-outdated-pages-title": "ხასჷლეფი, ნამუეფჷთ თირუეფს ელჷნან",
+	"tpt-tag-oldsyntax": "ჯვეში სინტაქსი",
+	"tpt-select-prioritylangs-reason": "სამანჯელი:",
+	"tpt-sections-prioritylangs": "პრიორიტეტული ნინეფი",
+	"tpt-sections-syntaxversion": "სინტაქსიშ ვერსია",
+	"tpt-rev-encourage": "ახალშო ეკონწყუალა",
+	"tpt-languages-legend": "შხვა ნინეფი:",
+	"tpt-languages-zero": "თე ნინაშა თანგუაშ დოჭყაფა",
+	"tpt-languages-nonzero": "$1 ($2% თანგილი)",
+	"tpt-tab-translate": "თანგუა",
+	"tpt-target-page": "ათე ხასჷლაშ ხეთ გოახალაფა ვაშილებე. თე ხასჷლა რე [[$1]] ხასჷლაშ ნათანგა დო თიში გოახალაფა შილებე [$2 თანგუაშ ხეჭკუდით].",
+	"tpt-discouraged-language-header": "ათე ხასჷლაშო $1-შა თანგუა პრიორიტეტული ვა რე.",
+	"tpt-aggregategroup-add": "გეძინა",
+	"tpt-aggregategroup-save": "ჩუალა",
+	"tpt-aggregategroup-new-name": "ჯოხო:",
+	"tpt-aggregategroup-new-description": "ეჭარუა (ვა რე უციო):",
+	"tpt-aggregategroup-invalid-group": "ბუნა ვა რე",
+	"tpt-aggregategroup-edit-name": "ჯოხო:",
+	"tpt-aggregategroup-edit-description": "ეჭარუა:",
+	"tpt-aggregategroup-update": "ჩუალა",
+	"tpt-aggregategroup-update-cancel": "გოუქვაფა",
+	"tpt-invalid-group": "ჩილათირი ბუნა",
+	"pt-parse-open": "უდუბალანსებუ &lt;translate> ხინტკი.\nთანგუაშ თანგი: <pre>$1</pre>",
+	"log-name-pagetranslation": "ხასჷლაშ თანგუაშ ჟურნალი",
+	"log-action-filter-pagetranslation": "ქიმინუაშ ტიპი:"
 }

@@ -3,14 +3,24 @@
 		"authors": [
 			"Aushulz",
 			"Pippinu",
-			"Sarvaturi"
+			"Sarvaturi",
+			"Ajeje Brazorf"
 		]
 	},
 	"pagetranslation": "Traduzzioni pàggini",
+	"tpt-select-prioritylangs-reason": "Mutivu:",
 	"translate-tag-translate-link-desc": "Traduci sta pàggina",
 	"tpt-translation-intro": "Sta pàggina è na <span class=\"plainlinks\">[$1 virsioni traduciuta]</span> dâ pàggina [[$2]]; la traduzzioni è cumpleta ô $3&nbsp;%.",
 	"tpt-languages-legend": "Àutri lingui",
 	"tpt-languages-nonzero": "$1 (traduciuta ô $2%)",
+	"tpt-aggregategroup-add": "Junci",
+	"tpt-aggregategroup-save": "Sarva",
+	"tpt-aggregategroup-new-name": "Nomu:",
+	"tpt-aggregategroup-new-description": "Discrizzioni (facultativu):",
+	"tpt-aggregategroup-edit-name": "Nomu:",
+	"tpt-aggregategroup-edit-description": "Discrizzioni:",
+	"tpt-aggregategroup-update": "Sarva",
 	"pt-movepage-reason": "Mutivu:",
-	"pt-deletepage-reason": "Mutivu:"
+	"pt-deletepage-reason": "Mutivu:",
+	"pm-savepages-button-label": "Sarva"
 }

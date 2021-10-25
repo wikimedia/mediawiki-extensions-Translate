@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"tsb-all-languages-button-label": "ทุกภาษา",
+	"tsb-accept-button-label": "ยอมรับ",
+	"tsb-reject-button-label": "ปฏิเสธ",
+	"tsb-accept-all-button-label": "ยอมรับทั้งหมด",
+	"tsb-reject-all-button-label": "ปฏิเสธทั้งหมด",
+	"tsb-user-posted-a-comment": "ไม่ใช่ผู้แปล",
+	"tsb-translations-source": "ต้นฉบับ",
+	"tsb-translations-current": "การแปลที่มีอยู่",
+	"translationstash": "ยินดีต้อนรับ",
+	"translate-translationstash-welcome": "ยินดีต้อนรับ {{GENDER:$1|$1}} คุณเป็นผู้แปลใหม่",
+	"translate-translationstash-skip-button-label": "ลองอันอื่น",
+	"tsb-limit-reached-title": "ขอบคุณที่ร่วมแปล"
+}

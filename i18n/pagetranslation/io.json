@@ -2,10 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Joao Xavier",
-			"Malafaya"
+			"Malafaya",
+			"JSantos"
 		]
 	},
+	"right-pagetranslation": "Indikar versioni di pagini por tradukar",
+	"action-pagetranslation": "administrar tradukebla pagini",
+	"tpt-diff-old": "Antea texto",
+	"tpt-diff-new": "Nova texto",
+	"tpt-tag-oldsyntax": "anciena sintaxo",
 	"tpt-select-prioritylangs-reason": "Motivo:",
+	"tpt-sections-syntaxversion": "Versiono di la sintaxo",
 	"tpt-rev-encourage": "restaurar",
 	"translate-tag-translate-link-desc": "Tradukar ca pagino",
 	"tpt-languages-legend": "Altra lingui:",

@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"translate-page-language": "Giella",
+	"translate-next": "Čuovvovaš siidu",
+	"translate-prev": "Ovddit siidu",
+	"translate-stats-users": "Jorgaleaddjit",
+	"translate-sidebar-alltrans": "Eará gielaide",
+	"translations": "Buot jorgalusat",
+	"translate-langstats-expand": "čájet",
+	"translate-language": "Giella",
+	"translate-mgs-column-language": "Giella",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
+	"translate-msggroupselector-search-all": "Buot",
+	"tux-tab-all": "Buot",
+	"tux-editor-in-other-languages": "Eará gielaide",
+	"tux-editor-expand-tooltip": "Stuorit",
+	"tux-editor-message-tools-translations": "Buot jorgalusat"
+}

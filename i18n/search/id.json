@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daud I.F. Argana"
+		]
+	},
+	"searchtranslations": "Cari terjemahan",
+	"tux-sst-edit": "Sunting terjemahan",
+	"tux-sst-view-foreign": "Lihat di $1",
+	"tux-sst-search": "Cari",
+	"tux-sst-search-ph": "Cari terjemahan",
+	"tux-sst-count": "{{PLURAL:$1|Satu hasil ditemukan|$1 hasil ditemukan}}",
+	"tux-sst-facet-language": "Bahasa",
+	"tux-sst-facet-group": "Kelompok pesan",
+	"tux-sst-nosolr-title": "Tidak bisa mencari",
+	"tux-sst-nosolr-body": "Wiki ini tidak memiliki layanan pencarian terjemahan.",
+	"tux-sst-solr-offline-title": "Tidak bisa mencari",
+	"tux-sst-solr-offline-body": "Layanan pencarian sedang tidak tersedia untuk sementara.",
+	"tux-sst-next": "Selanjutnya ›",
+	"tux-sst-prev": "‹ Sebelumnya",
+	"tux-sst-default": "Terjemahan",
+	"tux-sst-translated": "Terjemahan dari $1",
+	"tux-sst-untranslated": "Tidak ada terjemahan dari $1",
+	"tux-sst-outdated": "Terjemahan usang dari $1",
+	"tux-sst-ellipsis-untranslated": "Tidak ada terjemahan",
+	"tux-sst-ellipsis-outdated": "Terjemahan usang",
+	"tux-sst-link-all-match": "Haruskan semua kata pencarian.",
+	"tux-sst-match-message": "Tampilkan terjemahan yang cocok dengan kata-kata pencarian manapun. $1",
+	"tux-sst-case-sensitive": "Peka kapital",
+	"tux-sst-error-offset": "Tidak ada lagi hasil pencarian yang dapat ditampilkan. Tolong sempitkan pencarian Anda.",
+	"tux-sst-error-language": "Bahasa ini tidak bisa digunakan dengan jenis pencarian ini."
+}

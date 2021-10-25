@@ -23,7 +23,10 @@
 			"Siebrand",
 			"Slboat",
 			"Umherirrender",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Kizule",
+			"PiefPafPier",
+			"ThisIsACreeper0101"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -33,7 +36,7 @@
 	"tps-edit-sourcepage-text": "Help text shown while editing a source translation page. Contains links to various Translate extension documentation page. Appears below {{msg-mw|Tps-edit-sourcepage-title}}.",
 	"tps-edit-sourcepage-ve-warning-title": "Title for the warning dialog shown when user is editing the sourcepage using Visual Editor 'visual' mode",
 	"tps-edit-sourcepage-ve-warning-text": "Text shown in the warning dialog when user is editing the sourcepage using Visual Editor 'visual' mode",
-	"tps-edit-sourcepage-ve-warning-button": "Button in the warning dialog shown when user is editing the sourcepage using Visual Editor 'visual' mode",
+	"tps-edit-sourcepage-ve-warning-button": "Button in the warning dialog shown when user is editing the sourcepage using Visual Editor 'visual' mode\n{{identical|OK}}",
 	"tpt-section": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-new": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-deleted": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
@@ -47,7 +50,7 @@
 	"tpt-badtitle": "Parameters:\n* $1 - page title",
 	"tpt-nosuchpage": "Parameters:\n* $1 - page title",
 	"tpt-oldrevision": "Error message displayed when trying to mark an older page revision for translation. Parameters:\n* $1 is a page title.\n* $2 is a page link.",
-	"tpt-notsuitable": "{{doc-important|Do not translate <code><nowiki><nowiki><translate></nowiki>&lt;/nowiki></code>.}}\nParameters:\n* $1 - page title\n* $2 - (Unused) revision ID",
+	"tpt-notsuitable": "{{doc-important|Do not translate <code><nowiki><nowiki><translate></nowiki>&lt;/nowiki></code>.}}\nParameters:\n* $1 - page title",
 	"tpt-saveok": "Followed by {{msg-mw|Tpt-saveok-first}} if the page is being marked for translation for the first time and {{msg-mw|Tpt-offer-notify}} if the user is allowed to notify translators.\n\nParameters:\n* $1 - page title\n* $2 - number of sections, can be used with PLURAL\n* $3 - URL which points to [[Special:Translate]]",
 	"tpt-saveok-first": "Message displayed on [[Special:PageTranslation]] after marking a page for translation the very first time.\n\nParameters:\n* $1 - a URL to [[Special:PageMigration]]",
 	"tpt-offer-notify": "Message displayed on [[Special:PageTranslation]] after marking a page for translation when the marking user also has right to notify translators.\n\nParameters:\n* $1 - a URL to [[Special:NotifyTranslators]] with the marked page preselected",
@@ -98,7 +101,7 @@
 	"tpt-tab-translate": "Used as label for the tab.\n\nReplaces the edit tab with translation tab for translation pages.\n{{Identical|Translate}}",
 	"tpt-target-page": "Message displayed when trying to edit a translatable page directly. Parameters:\n* $1 is the translatable page\n* $2 is a link to the translation tool for the translatable page.",
 	"tpt-unknown-page": "See [[mw:Help:Extension:Translate/Translation example]] for context on page translation feature.",
-	"tpt-translation-restricted": "Error message shown to user when translation to a language which is restricted by translation admin.\n\nParameters:\n* $1 - reason",
+	"tpt-translation-restricted": "Error message shown to user when translating to a language which is restricted by translation admin, along with the reason for the restriction.\n\nParameters:\n* $1 - reason\nSee also:\n* {{msg-mw|Tpt-translation-restricted-no-reason}}",
 	"tpt-discouraged-language-force-header": "Header for error shown along with group description if the language is prevented from translation for the selected language.\n\nParameter:\n* $1 - the language to which the user asked to translate the page",
 	"tpt-discouraged-language-force-content": "Error shown along with group description if the language is prevented from translation for the selected language.\n\nParameters:\n* $1 - comma-separated names of the languages to which translation is encouraged",
 	"tpt-discouraged-language-header": "Header for warning shown along with group description if the language is discouraged from translation for the selected language.\n\nParameters:\n* $1 the language to which the user asked to translate the page",
@@ -155,7 +158,7 @@
 	"log-action-filter-pagetranslation-prioritylanguages": "{{doc-log-action-filter-action|pagetranslation|prioritylanguages}}",
 	"log-action-filter-pagetranslation-aggregategroups": "{{doc-log-action-filter-action|pagetranslation|aggregategroups}}",
 	"pt-movepage-title": "Used as page title.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - old page title",
-	"pt-movepage-blockers": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nFollowed by any of the following error messages:\n* {{msg-mw|Pt-movepage-block-base-exists}}\n* {{msg-mw|Pt-movepage-block-base-invalid}}\n* {{msg-mw|Pt-movepage-block-tp-exists}}\n* {{msg-mw|Pt-movepage-block-tp-invalid}}\n* {{msg-mw|Pt-movepage-block-section-exists}}\n* {{msg-mw|Pt-movepage-block-section-invalid}}\n* {{msg-mw|Pt-movepage-block-subpage-exists}}\n* {{msg-mw|Pt-movepage-block-subpage-invalid}}\n\nParameters:\n* $1 - number of error messages",
+	"pt-movepage-blockers": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nFollowed by any of the following error messages:\n* {{msg-mw|Pt-movepage-block-base-invalid}}\n* {{msg-mw|Pt-movepage-block-tp-invalid}}\n* {{msg-mw|Pt-movepage-block-section-invalid}}\n* {{msg-mw|Pt-movepage-block-subpage-invalid}}\n\nParameters:\n* $1 - number of error messages",
 	"pt-movepage-block-base-exists": "Error message to indicate a base page exists and a translatable page cannot be renamed. Parameters:\n* $1 is a pre-existing page name.",
 	"pt-movepage-block-base-invalid": "The \"target page\" is the new title of the translatable page, see definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"pt-movepage-block-tp-exists": "translation page is a translated version of a translatable page.\n\nParameters:\n* $1 - (Unused) old page title\n* $2 - new page title\n{{Related|Pt-movepage-block-exists}}",
@@ -205,7 +208,7 @@
 	"pt-deletepage-list-count": "Used to indicate how many pages will be deleted.\n\nParameters:\n* $1 - number of pages\n* $2 - Number of subpages\nSee also:\n* {{msg-mw|Pt-movepage-list-count}}",
 	"pt-deletepage-list-no-pages": "Message used to indicate that there are no pages under a given section. Appears below {{msg-mw|pt-deletepage-list-section}}",
 	"pt-deletepage-full-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title\nSee also:\n* {{msg-mw|Pt-deletepage-lang-logreason}}",
-	"pt-deletepage-lang-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title\nSee also:\n* {{msg-mw|Pt-deletepage-full-logreason}}",
+	"pt-deletepage-lang-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation-page title\nSee also:\n* {{msg-mw|Pt-deletepage-full-logreason}}",
 	"pt-deletepage-started": "Confirmation message after a deletion of a translatable page or a translation page has been started.",
 	"pt-deletepage-intro": "Help message when deleting a translatable page or a translation page.",
 	"pagemigration": "{{doc-special|PageMigration}}\nSee the [[mw:Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#migration|page migration help]] for more information.",
@@ -221,7 +224,7 @@
 	"pm-swap-icon-hover-text": "Hover text for the icon on Special:PageMigration which, when clicked, swaps a unit (text area) with the unit below.",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"pm-pagetitle-placeholder": "Placeholder for the page title input field.",
-	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered.\n{{doc-important|Do not translate \"<code><page-name>/<language-code></code>\".}}",
+	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered. You should translate format indication; you can localize brackets but you must keep the middle slash <code>/</code>.",
 	"pm-pagetitle-missing": "Error message given when page title field is blank",
 	"pm-langcode-missing": "Error message given when the page title field does not contain a language code.\n{{doc-important|Do not translate \"<code><page-name>/<language-code></code>\".}}",
 	"pm-summary-import": "Edit summary used while creating translation pages which were imported using [[Special:PageMigration]], see [[mw:Help:Extension:Translate/Page_translation_administration#Migrating to page translation]]",
@@ -245,5 +248,5 @@
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
-	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
+	"tpt-generic-button": "Button text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
 }

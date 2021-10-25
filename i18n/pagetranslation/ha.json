@@ -1,6 +1,12 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Hamxo",
+			"Kambai Akau",
+			"Salihu aliyu",
+			"Umar-askirason"
+		]
 	},
+	"tpt-languages-nonzero": "$1 (an fassara $2%)",
 	"pt-movepage-reason": "Dalili:"
 }

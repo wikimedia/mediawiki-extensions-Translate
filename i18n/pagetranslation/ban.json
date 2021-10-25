@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joseagush"
+			"Joseagush",
+			"Chinamoonroll"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% sampun salinin)"
+	"tpt-languages-nonzero": "$1 ($2% sampun kasalinin)"
 }

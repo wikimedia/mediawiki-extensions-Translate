@@ -3,15 +3,23 @@
 		"authors": [
 			"BadDog",
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"Kizule"
 		]
 	},
+	"managetranslatorsandbox": "Управљај песком преводиоца",
+	"tsb-filter-pending": "Захтеви на чекању",
+	"tsb-reminder-title-generic": "Довршите ваше представљање како би сте постали преводилац",
+	"tsb-reminder-sending": "Слање обавештења...",
 	"tsb-all-languages-button-label": "Сви језици",
 	"tsb-accept-button-label": "Прихвати",
 	"tsb-reject-button-label": "Одбиј",
 	"tsb-accept-all-button-label": "Прихвати све",
 	"tsb-reject-all-button-label": "Одбији све",
 	"tsb-translations-source": "Извор",
+	"translationstash": "Добро дошли!",
+	"translate-translationstash-welcome": "{{GENDER:$1|Добродошао $1|Добродошла $1}}, Ви сте нови преводилац",
+	"translate-translationstash-initialtranslation": "Ваш почетни превод",
 	"tsb-create-user-page": "Направљена основна корисничка страница",
 	"log-name-translatorsandbox": "Дневник превода у песку",
 	"logentry-translatorsandbox-promoted": "$1 је {{GENDER:$2|унапредио|унапредила}} $3 у {{GENDER:$4|преводиоца}}",

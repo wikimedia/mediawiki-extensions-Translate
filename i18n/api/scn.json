@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"apihelp-groupreview-param-language": "Còdici dâ lingua.",
+	"apihelp-query+languagestats-param-language": "Còdici dâ lingua.",
+	"apihelp-query+messagecollection-param-language": "Còdici dâ lingua.",
+	"apihelp-translationstash-param-subaction": "Azzioni."
+}

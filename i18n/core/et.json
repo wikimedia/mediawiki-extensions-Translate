@@ -325,5 +325,6 @@
 	"translate-statsbar-tooltip": "$1% tõlgitud, $2% ülevaadatud",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tõlgitud, $2% ülevaadatud, $3% iganenud",
 	"translate-search-more-groups-info": "Veel $1 {{PLURAL:$1|rühm|rühma}}",
-	"tux-nojs": "See tööriist ei tööta ilma JavaScriptita. JavaScript on keelatud, see ei toiminud või selle brauseri tugi puudub."
+	"tux-nojs": "See tööriist ei tööta ilma JavaScriptita. JavaScript on keelatud, see ei toiminud või selle brauseri tugi puudub.",
+	"specialpages-group-translation": "Tõlkimine"
 }

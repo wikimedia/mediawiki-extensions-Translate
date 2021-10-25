@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"pagetranslation": "ترجمهن لامن",
+	"tpt-rev-encourage": "ڤوليهکن",
+	"translate-tag-translate-link-desc": "ترجمه لامن اين",
+	"tpt-translation-intro": "لامن اين مروڤاکن <span class=\"plainlinks\">[$1 ۏرسي ترجمهن]</span> لامن [[$2]] ڤنترجمهنڽ $3% سياڤ.",
+	"tpt-languages-legend": "بهاس٢ لاءين:",
+	"tpt-languages-nonzero": "$1 ($2% دترجمه)",
+	"tpt-tab-translate": "ترجمه",
+	"tpt-aggregategroup-add": "تمبه",
+	"tpt-aggregategroup-save": "سيمڤن",
+	"tpt-aggregategroup-new-name": "نام:",
+	"tpt-aggregategroup-edit-name": "نام:",
+	"tpt-aggregategroup-edit-description": "کترڠن:",
+	"tpt-aggregategroup-update": "سيمڤن",
+	"tpt-aggregategroup-update-cancel": "بطل",
+	"pm-savepages-button-label": "سيمڤن",
+	"pm-cancel-button-label": "بطل",
+	"pp-save-button-label": "تربيت",
+	"pp-cancel-button-label": "بطل",
+	"tpt-generic-button": "صحکن"
+}

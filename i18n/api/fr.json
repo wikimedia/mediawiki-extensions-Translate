@@ -14,7 +14,8 @@
 			"TomT0m",
 			"Urhixidur",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"DreZhsh"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes de messages agrégés.\n\nVous pouvez ajouter et supprimer des groupes de messages agrégés, les associer les uns aux autres ou les dissocier les uns des autres (un à la fois).",
@@ -57,7 +58,7 @@
 	"apihelp-query+messagecollection-example-4": "Plus d’informations sur les dernières révisions de  traduction pour le groupe « page-Example »",
 	"apihelp-query+messagegroups-description": "Retourne des informations sur les groupes de messages.\n\nNotez que le paramètre <tt>uselang</tt> modifie la sortie des éléments qui dépendent de la langue.",
 	"apihelp-query+messagegroups-summary": "Renvoie des informations concernant les groupes de messages.",
-	"apihelp-query+messagegroups-extended-description": "Soyez conscient que le paramètre <tt>uselang</tt> modifie la sortie des éléments qui dépendent de la langue.",
+	"apihelp-query+messagegroups-extended-description": "Soyez conscient que le paramètre uselang modifie la sortie des éléments qui dépendent de la langue.",
 	"apihelp-query+messagegroups-param-depth": "Lors de l’utilisation sous forme d’arbre, limiter la profondeur à ces différents niveaux. La valeur 0 signifie qu’aucun des sous-groupes n’est présenté. Si la limite est atteinte, la sortie inclut une valeur « groupcount » qui indique le nombre d’enfants directs.",
 	"apihelp-query+messagegroups-param-filter": "Seuls seront retournés les messages avec un ID correspondant à l’une ou plusieurs des entrées fournies (insensibles à la casse, séparées par des barres verticale (<tt>|</tt>), caractère générique <tt>*</tt>).",
 	"apihelp-query+messagegroups-param-format": "Dans la présentation sous forme d’arbre, les groupes de messages peuvent exister en plusieurs endroits de l’arborescence.",

@@ -16,7 +16,8 @@
 			"ToePeu",
 			"Ykhwong",
 			"관인생략",
-			"아라"
+			"아라",
+			"Ellif"
 		]
 	},
 	"translate": "번역하기",
@@ -88,6 +89,7 @@
 	"translate-checks-parametersnotequal": "변수 개수는 {{PLURAL:$1|$1}}개이며 {{PLURAL:$2|$2}}개여야 합니다.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki>은(는) 잘못된 형식입니다.",
 	"translate-checks-fudforum-syntax": "이 프로젝트에는 <nowiki>$2</nowiki> 대신에 <nowiki>$1</nowiki>을(를) 사용하세요.",
+	"translate-checks-replacement": "$1 대신 $2 을(를) 사용하십시오.",
 	"translate-pref-editassistlang": "보조 언어:",
 	"prefs-translate": "번역 옵션",
 	"translate-pref-editassistlang-help": "쉼표로 언어 코드 목록을 구분하세요.\n번역할 때는 해당 언어로 메시지 번역이 보입니다.\n언어의 기본 목록은 내 언어에 따라 달라집니다.",

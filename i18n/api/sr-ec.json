@@ -2,8 +2,24 @@
 	"@metadata": {
 		"authors": [
 			"Acamicamacaraca",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
-	"apierror-translate-sandbox-invalidppassword": "Невалидна лозинка"
+	"apihelp-aggregategroups-param-group": "ID групе порука",
+	"apihelp-aggregategroups-param-groupname": "Име збирне групе порука",
+	"apihelp-aggregategroups-param-groupdescription": "Опис збирне групе порука",
+	"apihelp-aggregategroups-example-1": "Придруживање групи",
+	"apihelp-groupreview-param-group": "Група порука",
+	"apihelp-groupreview-param-language": "Кôд језика",
+	"apihelp-query+languagestats-description": "Статистика траженог језика",
+	"apihelp-query+languagestats-summary": "Статистика траженог језика",
+	"apihelp-query+languagestats-param-language": "Кôд језика",
+	"apihelp-managemessagegroups-param-groupId": "ID групе",
+	"apihelp-translationstash-param-subaction": "Радња",
+	"apierror-translate-sandbox-invalidppassword": "Невалидна лозинка",
+	"apierror-translate-smg-nochanges": "Нема измена за обраду.",
+	"apierror-translate-unknownmessage": "Непозната порука",
+	"apierror-translate-invalid-changeset-name": "Дато је неважеће име датотеке скупа измена — $1",
+	"apierror-translate-invalid-operation": "Неважећа вредност: $1. Важеће вредности: $2."
 }

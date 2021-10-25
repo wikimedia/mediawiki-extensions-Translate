@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Belkacem77",
-			"Mmistmurt"
+			"Mmistmurt",
+			"Bilalbill"
 		]
 	},
 	"translate": "Suqel",
@@ -111,7 +112,7 @@
 	"translate-total": "Iznan",
 	"translate-untranslated": "Ur yettwasuqel ara",
 	"translate-percentage-complete": "Afmiḍi",
-	"translate-percentage-fuzzy": "Ifat",
+	"translate-percentage-fuzzy": "Izri",
 	"translate-languagestats-overall": "Akk igrawen n yiznan i meṛṛa",
 	"translate-ls-submit": "Sken tidaddanin",
 	"translate-ls-column-group": "Agraw n yiznan",
@@ -163,7 +164,7 @@
 	"tux-languageselector": "Suqel ar",
 	"tux-tab-all": "Akk",
 	"tux-tab-untranslated": "Ur yettwasuqel ara",
-	"tux-tab-outdated": "Ifat",
+	"tux-tab-outdated": "Izri",
 	"tux-tab-translated": "Yettwasuqel",
 	"tux-edit": "Ẓreg",
 	"tux-status-fuzzy": "Ifat",
@@ -224,7 +225,7 @@
 	"tux-editor-loading": "Asali...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|tutlayt-nniḍen|tutlayin-nniḍen}}",
 	"translate-statsbar-tooltip": "$1% tasuqilt, $2% taɣuri",
-	"translate-statsbar-tooltip-with-fuzzy": "$1% asuqilt, $2% acegger, $3% ifat",
+	"translate-statsbar-tooltip-with-fuzzy": "$1% asuqilt, $2% acegger, $3% izri",
 	"translate-search-more-groups-info": "$1 n {{PLURAL:$1|ugraw|igrawen}}-nniden",
 	"tux-nojs": "Asebter-agi yesra JavaScript."
 }

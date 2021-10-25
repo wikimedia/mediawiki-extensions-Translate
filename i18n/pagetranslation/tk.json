@@ -4,5 +4,6 @@
 			"Hanberke"
 		]
 	},
-	"pagetranslation": "Terjime sahypasy"
+	"pagetranslation": "Terjime sahypasy",
+	"tpt-languages-nonzero": "$1 ($2% terjime edildi)"
 }

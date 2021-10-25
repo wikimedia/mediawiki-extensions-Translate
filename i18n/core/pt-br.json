@@ -17,7 +17,10 @@
 			"Luckas Blade",
 			"Opraco",
 			"TheEduGobi",
-			555
+			555,
+			"Eduardoaddad",
+			"Luan",
+			"Mariagarbin"
 		]
 	},
 	"translate": "Traduzir",
@@ -96,7 +99,7 @@
 	"translate-checks-escape": "{{PLURAL:$2|O seguinte carácter de escape pode ter sido acidental|Os seguintes caráteres de escape podem ter sido acidentais}}: <strong>$1</strong>. {{PLURAL:$4|Um carácter de escape válido seria|Entre os caráteres de escape válidos incluem-se os seguintes:}} $3.",
 	"translate-checks-parametersnotequal": "A contagem de parâmetros detectou {{PLURAL:$1|$1}}. É necessário que sejam {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> está formatado incorretamente.",
-	"translate-checks-fudforum-syntax": "Use, neste projeto, <nowiki>$1</nowiki> ao invés de <nowiki>$2</nowiki>.",
+	"translate-checks-fudforum-syntax": "Use, neste projeto, <nowiki>$1</nowiki> em vez de <nowiki>$2</nowiki>.",
 	"translate-checks-newline-missing-start": "{{PLURAL:$1|Falta $1 carácter|Faltam $1 caracteres}} de nova linha em falta no início da tradução.",
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|Falta $1 carácter|Faltam $1 caracteres}} de nova linha em falta no fim da tradução.",
 	"translate-checks-newline-extra-start": "Há $1 {{PLURAL:$1|carácter|caracteres}} de nova linha a mais no início da tradução.",

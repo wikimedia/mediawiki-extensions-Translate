@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Janezdrilc"
+			"Janezdrilc",
+			"Eleassar"
 		]
 	},
 	"searchtranslations": "Išči prevode",
@@ -9,7 +10,7 @@
 	"tux-sst-view-foreign": "Ogled na: $1",
 	"tux-sst-search": "Išči",
 	"tux-sst-search-ph": "Išči prevode",
-	"tux-sst-count": "{{PLURAL:$1|En najden zadetek|$1 najdena zadetka|$1 najdeni zadetki|$1 najdenih zadetkov}}",
+	"tux-sst-count": "{{PLURAL:$1|En najdeni zadetek|$1 najdena zadetka|$1 najdeni zadetki|$1 najdenih zadetkov}}",
 	"tux-sst-facet-language": "Jeziki",
 	"tux-sst-facet-group": "Skupine sporočil",
 	"tux-sst-nosolr-title": "Iskanje ni na voljo",
@@ -26,5 +27,5 @@
 	"tux-sst-ellipsis-outdated": "Zastareli prevodi",
 	"tux-sst-link-all-match": "Zahteva vse besede iskanja.",
 	"tux-sst-match-message": "Prikazuje prevode, ki se ujemajo s katerokoli od vpisanih besed. $1",
-	"tux-sst-case-sensitive": "Razlikuj velike in male črke"
+	"tux-sst-case-sensitive": "Razlikuj med velikimi in malimi črkami"
 }

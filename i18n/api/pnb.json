@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"apihelp-groupreview-param-language": "بولی کوڈ",
+	"apihelp-query+languagestats-description": "بولی کوڈ",
+	"apihelp-query+languagestats-param-language": "بولی کوڈ",
+	"apihelp-query+messagecollection-param-language": "بولی کوڈ"
+}

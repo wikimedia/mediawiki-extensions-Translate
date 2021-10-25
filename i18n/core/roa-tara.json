@@ -85,6 +85,7 @@
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|Ste|Stonne}} $1 {{PLURAL:$1|carattere}} de linèa nove de cchiù a l'inizie d'a traduzione.",
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|Ste|Stonne}} $1 {{PLURAL:$1|carattere}} de linèa nove de cchiù a fine d'a traduzione.",
 	"translate-checks-value-not-present": "'A traduzione adda essere uguale a {{PLURAL:$1|1=|une de ste valore:}} $1.",
+	"translate-checks-replacement": "Ause $2 invece de $1.",
 	"translate-pref-editassistlang": "Assistende de le lènghe:",
 	"prefs-translate": "Opziune de traduzione",
 	"translate-pref-editassistlang-help": "Codece de le lènghe separate da virgole.\nLe traduziune de 'nu messàgge jndr'à ste lènghe avènene fatte 'ndrucà duranne 'a traduzione.\nL'elenghe predefinite (default) de le lènghe depende da ìa probbia lènghe.",

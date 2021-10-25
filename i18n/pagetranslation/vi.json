@@ -3,7 +3,8 @@
 		"authors": [
 			"Minh Nguyen",
 			"Trần Nguyễn Minh Huy",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Pols12"
 		]
 	},
 	"pagetranslation": "Biên dịch trang",
@@ -30,7 +31,6 @@
 	"tpt-mark-nochanges": "Không có thay đổi nào để xem xét. Đánh dấu trang này để dịch sẽ không sửa đổi trang này hoặc bất kỳ mục dịch nào đang tồn tại.",
 	"tpt-edit-failed": "Không thể cập nhật trang: $1",
 	"tpt-duplicate": "Tên đơn vị dịch $1 được sử dụng hơn một lần.",
-	"tpt-already-marked": "Phiên bản mới nhất của trang này đã được đánh dấu cần dịch rồi.",
 	"tpt-unmarked": "Trang $1 không còn đánh dấu là cần dịch.",
 	"tpt-list-nopages": "Chưa có trang này được đánh dấu cần dịch hoặc chưa sẵn sàng để được đánh dấu cần dịch.",
 	"tpt-new-pages-title": "Các trang cần dịch",
@@ -182,7 +182,7 @@
 	"pm-pagetitle-placeholder": "Nhập tên trang",
 	"pm-pagetitle-invalid": "Xin vui lòng nhập một tên trang hợp lệ. Nên sử dụng định dạng <tên-trang>/<mã-ngôn-ngữ>.",
 	"pm-pagetitle-missing": "Vui lòng nhập tên trang.",
-	"pm-langcode-missing": "Hình như tên trang thiếu mã ngôn ngữ. Xin vui lòng nhập tên trang ở dạng <tên-trang>/<mã-ngôn-ngữ>.",
+	"pm-langcode-missing": "Hình như tên trang thiếu mã ngôn ngữ. Xin vui lòng nhập tên trang ở dạng <page-name>/<language-code>.",
 	"pm-summary-import": "Đã nhập bản dịch bằng cách [[Special:PageMigration|chuyển trang]]",
 	"pm-on-import-message-text": "Các bản dịch cũ đã được nhập. Sử dụng các nút thêm, đổi, và xóa để chỉnh sửa các đơn vị biên dịch và bấm nút “{{int:pm-savepages-button-label}}” để lưu chúng. Bấm nút “{{int:pm-cancel-button-label}}” để vứt bỏ.",
 	"pm-on-save-message-text": "Các đơn vị biên dịch đã được lưu. Bạn có thể điền tên của một trang dịch được để chuyển đổi nó hoặc thay đổi các đơn vị bên dưới và lưu phiên bản mới.",

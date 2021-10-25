@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amikeco",
-			"Bouron"
+			"Bouron",
+			"Arturgudiev"
 		]
 	},
 	"translate-page-group": "Къорд",
@@ -10,5 +11,6 @@
 	"translate-next": "Фæдылдзог фарс",
 	"translate-prev": "Раздæры фарс",
 	"translate-page-edit": "ивын",
-	"translate-statsf-submit": "Разæркаст"
+	"translate-statsf-submit": "Разæркаст",
+	"translate-documentation-language": "Уацы документаци"
 }

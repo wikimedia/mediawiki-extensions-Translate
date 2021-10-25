@@ -32,6 +32,8 @@
 	"tsb-translations-user": "Traductiones del {{GENDER:$1|usator}}",
 	"tsb-translations-current": "Traductiones existente",
 	"tsb-delete-userpage-summary": "Deletion del pagina de usator de un usator in cassa a sablo",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Usator|Usatores}} rejectate",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Usator|Usatores}} acceptate",
 	"translationstash": "Benvenite",
 	"translate-translationstash-welcome": "Benvenite {{GENDER:$1|$1}}, tu es un nove traductor",
 	"translate-translationstash-welcome-note": "Familiarisa te con le instrumentos de traduction. Traduce alcun messages e obtene le derectos complete de traduction pro participar a tu projectos favorite.",

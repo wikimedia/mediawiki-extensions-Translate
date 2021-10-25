@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Slaia"
+		]
+	},
+	"translate": "Ali ba li bö'ö",
+	"translate-extensionname": "Ali ba li bö'ö",
+	"translate-desc": "[[Special:Translate|Nga'örö spesial]] ba wangali MediaWiki ba tanö bö'önia",
+	"translate-fuzzybot-desc": "Da'a no akun sistem spesial ni'oguna'ö MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Ali ba li bö'ö Ekstensi wangali] ba wondrorogö ngawalö wangali.\nAkun andre tefaböbö khö software MediaWiki ba tenga ni'okhögö samösa sangoguna.",
+	"translate-taskui-export-to-file": "Ekspor ba format asli",
+	"translate-taskui-export-as-po": "Ekspor (mangali lö tefakhai ba Internet)",
+	"translate-taction-translate": "Ali ba li bö'ö",
+	"translate-taction-proofread": "Fareso",
+	"translate-taction-lstats": "Statistik li",
+	"translate-taction-mstats": "Statistik ngawa duria",
+	"translate-taction-export": "Ekspor",
+	"translate-taction-disabled": "No mubatogö da'a ba wiki andre",
+	"translate-page-no-such-language": "No fasala li nifili.",
+	"translate-page-no-such-group": "No fasala ngawa nifili",
+	"translate-page-disabled": "No tebatogö wangali ngawa duria da'a ba li andre.\nBörönia:\n\n<em>$1</em>",
+	"translate-language-disabled": "No teba'agö wangali ba li andre.",
+	"translate-page-settings-legend": "Setelan",
+	"translate-page-group": "Ngawa",
+	"translate-page-language": "Li",
+	"translate-page-limit": "Ndrege wa'oya",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|duria}} ero nga'örö",
+	"translate-submit": "Ae halö",
+	"translate-page-navigation-legend": "Lala wofanö",
+	"translate-page-showing": "Oroma'ö duria $1 irugi $2 moroi $3.",
+	"translate-page-showing-all": "Mangoroma'ö $1 {{PLURAL:$1|duria}}.",
+	"translate-page-showing-none": "Lö turia si tola mu'oroma'ö.",
+	"translate-page-paging-links": "[ $1 ] [ $2 ]",
+	"translate-next": "Nga'örö fönania",
+	"translate-prev": "Nga'örö furinia",
+	"translate-page-description-legend": "Informasi sanandrösa grup",
+	"translate-documentation-language": "Fanolo ba wo'ali zura"
+}

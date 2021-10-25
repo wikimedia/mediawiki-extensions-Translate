@@ -1,28 +1,29 @@
 {
 	"@metadata": {
 		"authors": [
-			"Belkacem77"
+			"Belkacem77",
+			"Bilalbill"
 		]
 	},
-	"tsb-all-languages-button-label": "Akk tutlayin",
-	"tsb-accept-all-button-label": "Qbel meṛṛa",
-	"tsb-reject-all-button-label": "Agwi meṛṛa",
-	"tsb-user-posted-a-comment": "Mačči d amsuqel",
+	"tsb-all-languages-button-label": "Tutlayin yakk",
+	"tsb-accept-all-button-label": "Ddeg yakk",
+	"tsb-reject-all-button-label": "Agwi yakk",
+	"tsb-user-posted-a-comment": "Mačči d amsuɣel",
 	"tsb-reminder-link-text": "Azen imayl n usmekti",
-	"tsb-didnt-make-any-translations": "Aseqdac-agi ur isuqel ara yakan.",
+	"tsb-didnt-make-any-translations": "Aseqdac-agi ur yettwasuɣel ara yakan.",
 	"tsb-translations-source": "Aɣbalu",
 	"tsb-translations-user": "Tisiqilin n{{GENDER:$1|useqdac|tseqdact}}",
 	"tsb-translations-current": "Tisuqilin yellan",
 	"tsb-reject-confirmation": "{{PLURAL:$1|n usqdac yettwagwin|n iseqdacen yettwagwin}}",
-	"tsb-accept-confirmation": "{{PLURAL:$1|n useqdac yettwaqeblen|n iseqdacen yettwaqeblen}}",
-	"translationstash": "Anṣuf",
-	"translate-translationstash-welcome": "Anṣuf {{GENDER:$1|$1}}, aqla-k d amsuqel amaynut",
-	"translate-translationstash-initialtranslation": "Tasuqilt-ik tamezwarut",
-	"translate-translationstash-translations": "Tfukeḍ $1 {{PLURAL:$1|n tsuqilt|n tsuqilin}}.",
-	"translate-translationstash-skip-button-label": "Ɛreḍ tayeḍ",
+	"tsb-accept-confirmation": "{{PLURAL:$1|n useqdac yettwaddgen|n iseqdacen yettwaqeblen}}",
+	"translationstash": "Ansuf",
+	"translate-translationstash-welcome": "Ansuf {{GENDER:$1|$1}}, aqla-k d amsuɣel amaynut",
+	"translate-translationstash-initialtranslation": "Tasuɣlt-ik tamezwarut",
+	"translate-translationstash-translations": "Tfukkeḍ $1 {{PLURAL:$1|n tsuqilt|n tsuqilin}}.",
+	"translate-translationstash-skip-button-label": "Arem tayeḍ",
 	"tsb-limit-reached-title": "Tanemmirt ɣef tsuqilin-ik",
 	"tsb-no-requests-from-new-users": "Ulac tuttriwin n iseqdacen imaynuten",
 	"tsb-create-user-page": "Rnu asebter aseqdac azadur",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|yessuli}} $3 ar {{GENDER:$4|umsuqel|tamsuqelt}}.",
-	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|yugwi|tugwi}} asuter n $3 akken ad yuɣal d amsuqel"
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|yugwi|tugwi}} asuter n $3 akken ad yuɣal d amsuɣel"
 }

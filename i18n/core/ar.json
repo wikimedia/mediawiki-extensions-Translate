@@ -19,7 +19,8 @@
 			"زكريا",
 			"لطرش أحمد الهاشمي",
 			"لطرش احمد الهاشمي",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Michel Bakni"
 		]
 	},
 	"translate": "ترجمة",
@@ -318,7 +319,7 @@
 	"tux-edit": "عدل",
 	"tux-status-optional": "اختيارية",
 	"tux-status-fuzzy": "غير محدثة",
-	"tux-status-proofread": "جرى مراجعتها",
+	"tux-status-proofread": "رُوجِعت",
 	"tux-status-translated": "تُرجمت",
 	"tux-status-saving": "...جاري النشر",
 	"tux-status-unsaved": "غير منشورة",

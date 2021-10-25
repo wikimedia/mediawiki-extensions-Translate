@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Ammartivari",
-			"Liridon"
+			"Liridon",
+			"Besnik b",
+			"Eraldkerciku",
+			"MuratTheTurkish",
+			"Olsi"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% i përkëthyer)",
+	"tpt-languages-legend": "Gjuhë të tjera:",
+	"tpt-languages-nonzero": "$1 ($2% i përkthyer)",
 	"pt-deletepage-reason": "Arsyeja:"
 }

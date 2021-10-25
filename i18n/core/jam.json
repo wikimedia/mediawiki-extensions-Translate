@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Katxis",
-			"Yocahuna"
+			"Yocahuna",
+			"Dentonius"
 		]
 	},
 	"translate": "Chransliet",
@@ -35,5 +36,5 @@
 	"translate-edit-warnings": "Waanin bout inkompliit chranslieshan",
 	"translate-edit-tmmatch": "$1% mach",
 	"translate-use-suggestion": "Insoert dis sojeshan ina di chranslieshan ieria. Dis riplies aal korant kantent.",
-	"translate-documentation-language": "Mechiz dakiumentieshan"
+	"translate-documentation-language": "Translation help"
 }

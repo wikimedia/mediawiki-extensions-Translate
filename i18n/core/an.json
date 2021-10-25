@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Juanpabl"
+			"Juanpabl",
+			"Willtron"
 		]
 	},
 	"translate": "Traducir",
@@ -24,5 +25,6 @@
 	"translate-optional": "(opcional)",
 	"translate-ignored": "(no considerato)",
 	"translate-translations-fieldset-title": "Mensache",
-	"translate-save": "Alzar($1)"
+	"translate-save": "Alzar($1)",
+	"translate-documentation-language": "Documentación d'o mensache"
 }

@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amara-Amaziɣ"
+			"Amara-Amaziɣ",
+			"Brahim-essaidi",
+			"Hakim1bal"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% ⵉⵜⵜⵓⵙⵓⵖⵍⵏ)"
+	"tpt-languages-nonzero": "$1 ($2% ⴰⴷ ⵉⵜⵜⵢⴰⵡⵙⵓⵖⵍⵏ)",
+	"tpt-aggregategroup-add": "ⵔⵏⵓ"
 }

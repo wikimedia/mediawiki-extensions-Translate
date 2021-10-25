@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teitei Para"
+			"Teitei Para",
+			"Kiathy"
 		]
 	},
+	"pagetranslation": "Châhmia reihpaleina",
+	"right-pagetranslation": "Reihpaleina châta châhmiazy vâsiezy âbina tao",
+	"action-pagetranslation": "reihpalei theipa châhmiazy kha tiehparaih teih",
 	"tpt-languages-nonzero": "$1 (reihpalei hawpa $2)"
 }

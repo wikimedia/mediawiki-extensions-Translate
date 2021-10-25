@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"tsb-email-promoted-subject": "ሕጂ ኣብ {{SITENAME}} ፍቓድ ተርጓሚ ኣሎካ",
+	"tsb-all-languages-button-label": "ኩሎም ቋንቋታት",
+	"tsb-user-posted-a-comment": "ተርጓሚ ኣይኮነን",
+	"translationstash": "እንቋዕ ብደሓን መጻእካ",
+	"translate-translationstash-welcome": "{{GENDER:$1|እንቋዕ ብደሓን መጻእካ|እንቋዕ ብደሓን መጻእኪ}}፣ $1። ሕጂ {{GENDER:$1|ተርጓሚ ኢኻ|ተርጓሚት ኢኺ}}"
+}

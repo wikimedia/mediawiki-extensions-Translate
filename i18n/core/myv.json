@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Botuzhaleny-sodamo"
+			"Botuzhaleny-sodamo",
+			"Rueter"
 		]
 	},
 	"translate": "Ютавтомонзо",
@@ -43,7 +44,7 @@
 	"translate-statsf-submit": "Васнянь неевтезэ",
 	"translate-tag-page-desc": "\"[[$2|$1]]\" вики лопась ютавтозь «$3 ($4)» лопасто.",
 	"translate-sidebar-alltrans": "Лия кельсэ",
-	"translations": "Весе йутавтовкст",
+	"translations": "Весе ютавтовкст",
 	"translate-translations-no-message": "\"$1\" пачтямнэсь а йутавтови",
 	"translate-translations-none": "\"$1\" пачтямнэнть арасть ютавтовксонзо",
 	"translate-translations-fieldset-title": "Пачтямнэ",

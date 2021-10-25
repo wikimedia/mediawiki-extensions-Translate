@@ -5,7 +5,11 @@
 			"LNDDYL",
 			"Liuxinyu970226",
 			"VulpesVulpes825",
-			"Yfdyh000"
+			"Yfdyh000",
+			"GuoPC",
+			"Lakejason0",
+			"TsuyaMarisa",
+			"Xiplus"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",
@@ -51,7 +55,7 @@
 	"apihelp-query+messagegroups-param-filter": "只返回匹配一个或更多输入内容的ID的消息（不区分大小写，以逗号分隔，* 通配符）。",
 	"apihelp-query+messagegroups-param-format": "在树格式信息组可以存在于树中的多个位置。",
 	"apihelp-query+messagegroups-param-iconsize": "栅格化群组图标的首选大小。",
-	"apihelp-query+messagegroups-param-prop": "要获得的有关翻译的信息：\n;id:包含组ID。\n;label:包含组标签。\n;description:包含组描述。\n;class:包含组分类名。\n;namespace:包含组名字空间。不是所有组都属于单一名字空间。\n;exists:包含自计算的组实际属性。\n;icon:包含至URL的组图标。\n;priority:包含优先状态，例如劝阻。\n;prioritylangs:包含首选语言。如果未设置，这将返回否。\n;priorityforce:包含优先状态——优先语言是否被强制设置。\n;workflowstates:包含用于消息组的工作流状态。",
+	"apihelp-query+messagegroups-param-prop": "要获得的有关翻译的信息：\n;id:包含组ID。\n;label:包含组标签。\n;description:包含组描述。\n;class:包含组分类名。\n;namespace:包含组命名空间。不是所有组都属于单一命名空间。\n;exists:包含自计算的组实际属性。\n;icon:包含至URL的组图标。\n;priority:包含优先状态，例如劝阻。\n;prioritylangs:包含首选语言。如果未设置，这将返回否。\n;priorityforce:包含优先状态——优先语言是否被强制设置。\n;workflowstates:包含用于消息组的工作流状态。",
 	"apihelp-query+messagegroups-param-root": "何时使用树形格式，而不是从来自指定信息组最高级开始，那样必须是一个聚合信息组。当使用单调格式时只有指定组被返回。",
 	"apihelp-query+messagegroups-example-1": "显示信息组",
 	"apihelp-query+messagegroupstats-description": "查询信息组状态。",
@@ -111,9 +115,9 @@
 	"apihelp-searchtranslations-param-limit": "结果的大小。",
 	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。",
 	"apihelp-searchtranslations-example-2": "显示在原始语言中匹配查询未翻译信息。",
-	"apihelp-translationcheck-description": "验证提供的翻译是否符合消息检查者的要求。",
+	"apihelp-translationcheck-description": "验证提供的翻译是否符合所设置的消息验证器的要求。",
 	"apihelp-translationcheck-summary": "验证翻译。",
-	"apihelp-translationcheck-param-title": "带名字空间和语言代码的页面标题。",
+	"apihelp-translationcheck-param-title": "带命名空间和语言代码的页面标题。",
 	"apihelp-translationcheck-param-translation": "要验证的翻译。",
 	"apierror-translate-duplicateaggregategroup": "消息组已存在",
 	"apierror-translate-fuzzymessage": "不能复核模糊翻译",

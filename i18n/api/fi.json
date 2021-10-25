@@ -3,7 +3,9 @@
 		"authors": [
 			"Nike",
 			"Pyscowicz",
-			"Valtlait"
+			"Valtlait",
+			"MITO",
+			"Nwme"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Viestiryhmän tunnus.",
@@ -18,6 +20,8 @@
 	"apihelp-query+languagestats-description": "Hakee kielitilastoja.",
 	"apihelp-query+languagestats-param-language": "Kielikoodi.",
 	"apihelp-query+languagestats-example-1": "Luettelo käännösten kattavuustilastoista suomeksi",
+	"apihelp-query+managemessagegroups-param-groupId": "Ryhmätunnus",
+	"apihelp-query+managemessagegroups-param-messageKey": "Viestin avain",
 	"apihelp-query+messagecollection-param-group": "Viestiryhmä.",
 	"apihelp-query+messagecollection-param-language": "Kielikoodi.",
 	"apihelp-query+messagecollection-param-limit": "Kuinka monta viestiä näytetään (suotimien jälkeen).",
@@ -38,7 +42,9 @@
 	"apihelp-searchtranslations-param-sourcelanguage": "Lähdetekstin kielikoodi.",
 	"apihelp-searchtranslations-param-limit": "Tuloksen koko.",
 	"apihelp-searchtranslations-example-1": "Näytä käännökset kielelle.",
+	"apihelp-translationcheck-summary": "Vahvista käännökset.",
 	"apihelp-translationcheck-param-title": "Sivun otsikko nimiavaruudella ja kielikoodilla.",
+	"apihelp-translationcheck-param-translation": "Vahvistettavat käännökset.",
 	"apierror-translate-duplicateaggregategroup": "Viestiryhmä on jo olemassa",
 	"apierror-translate-invalidgroup": "Ryhmä ei ole olemassa tai se on virheellinen",
 	"apierror-translate-invalidlanguage": "Pyydetty kieli ei kelpaa.",
