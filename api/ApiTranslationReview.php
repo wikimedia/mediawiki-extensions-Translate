@@ -123,7 +123,7 @@ class ApiTranslationReview extends ApiBase {
 			return 'permissiondenied';
 		}
 
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			return 'blocked';
 		}
 

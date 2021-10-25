@@ -31,7 +31,7 @@ class ApiGroupReview extends ApiBase {
 
 		$this->checkUserRightsAny( self::$right );
 
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			$this->dieBlocked( $user->getBlock() );
 		}
 
