@@ -93,7 +93,7 @@
 	"pt-movepage-list-translation": "{{PLURAL:$1|Pàgina|Pàgines}} de traducció",
 	"pt-movepage-list-section": "{{PLURAL:$1|Pàgina|Pàgines}} d'unitat de traducció",
 	"pt-movepage-list-other": "{{PLURAL:$1|Altra subpàgina|Altres subpàgines}}",
-	"pt-movepage-list-count": "En total, $1 {{PLURAL:$1|pàgina|pàgines}} a moure i $2 {{PLURAL:$2|subpàgina|subpàgines}}.",
+	"pt-movepage-list-count": "En total, $1 {{PLURAL:$1|pàgina|pàgines}}, incloent-hi $2 {{PLURAL:$2|subpàgina|subpàgines}} i $3 {{PLURAL:$3|pàgina|pàgines}} de discussió per moure.",
 	"pt-movepage-legend": "Mou la pàgina traduïble",
 	"pt-movepage-current": "Nom actual:",
 	"pt-movepage-new": "Nom nou:",

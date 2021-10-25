@@ -4,6 +4,19 @@
 			"Mehtab ahmed"
 		]
 	},
-	"apihelp-groupreview-param-group": "پيغام جو گروھ.",
-	"apihelp-query+messagecollection-param-group": "پيغام جو گروھ."
+	"apihelp-groupreview-param-group": "نياپو گروھ.",
+	"apihelp-groupreview-param-language": "ٻوليءَ جو ڪوڊ.",
+	"apihelp-query+managemessagegroups-param-messageKey": "نياپي جي ڪنجي",
+	"apihelp-query+messagecollection-param-group": "نياپو گروھ.",
+	"apihelp-query+messagecollection-param-language": "ٻوليءَ جو ڪوڊ.",
+	"apihelp-query+messagecollection-example-1": "سلھاڙيل ٻولين جي فھرست",
+	"apihelp-query+messagegroups-example-1": "نياپو گروھَ ڏيکاريو",
+	"apihelp-query+messagetranslations-param-title": "ڪنھن ڄاتل نياپي جو پورو عنوان.",
+	"apihelp-searchtranslations-description": "ترجما ڳوليو.",
+	"apihelp-searchtranslations-summary": "ترجما ڳوليو.",
+	"apihelp-searchtranslations-param-limit": "نتيجي جي ماپ.",
+	"apihelp-translationcheck-summary": "ترجمن جي پڪ ڪريو.",
+	"apihelp-translationcheck-param-translation": "پڪ ڪرڻ لاءِ ترجمو.",
+	"apierror-translate-unknownmessage": "اڻڄاتل نياپو",
+	"apihelp-translationentitysearch-param-limit": "ڳولا نتيجن جو وڌ ۾ وڌ انگ"
 }

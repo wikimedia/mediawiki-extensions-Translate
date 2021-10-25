@@ -6,6 +6,7 @@
 			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"Mordecool",
+			"Svjatysberega",
 			"TheEduGobi"
 		]
 	},
@@ -168,5 +169,6 @@
 	"apiwarn-translate-language-disabled-source": "O idioma de origem deste grupo é $1. Selecione outro idioma, para a qual irá traduzir, por favor.",
 	"apierror-translate-operation-error": "Ocorreu um erro ao processar o pedido. Erro: $1",
 	"apihelp-translationentitysearch-summary": "Pesquise grupos de mensagens e mensagens",
-	"apihelp-translationentitysearch-param-query": "Consulta de pesquisa"
+	"apihelp-translationentitysearch-param-query": "Consulta de pesquisa",
+	"apihelp-translationentitysearch-param-limit": "Número máximo de resultados da pesquisa"
 }
