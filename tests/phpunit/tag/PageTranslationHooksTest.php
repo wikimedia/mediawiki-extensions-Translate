@@ -9,6 +9,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group Database
@@ -163,14 +164,32 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$wikiPage = WikiPage::newFromID( $title->getArticleID() );
-		$nullRev = $wikiPage->insertNullProtectionRevision(
-			'test comment',
-			[ 'edit' => 'sysop' ],
-			[ 'edit' => '20200101040404' ],
-			false,
-			'Testing',
-			$this->getTestUser()->getUser()
-		);
+
+		if ( method_exists( MediaWikiServices::class, 'getProtectPageFactory' ) ) {
+			// MW 1.38+
+			$protectPage = TestingAccessWrapper::newFromObject(
+				$this->getServiceContainer()->getProtectPageFactory()
+					->newProtectPage( $wikiPage, $this->getTestUser()->getUser() )
+			);
+
+			$nullRev = $protectPage->insertNullProtectionRevision(
+				'test comment',
+				[ 'edit' => 'sysop' ],
+				[ 'edit' => '20200101040404' ],
+				false,
+				'Testing',
+				$this->getTestUser()->getUser()
+			);
+		} else {
+			$nullRev = $wikiPage->insertNullProtectionRevision(
+				'test comment',
+				[ 'edit' => 'sysop' ],
+				[ 'edit' => '20200101040404' ],
+				false,
+				'Testing',
+				$this->getTestUser()->getUser()
+			);
+		}
 
 		$this->assertNotNull( $nullRev, 'Sanity: must create null revision' );
 		$this->assertEquals(
