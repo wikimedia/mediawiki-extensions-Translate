@@ -28,6 +28,19 @@ class MessageBundleContent extends JsonContent {
 		}
 	}
 
+	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
+		// TODO: Should be removed when it is no longer needed for backwards compatibility.
+
+		// This will give an informative error message when trying to change the content model
+		try {
+			$this->validate();
+			return Status::newGood();
+		} catch ( MalformedBundle $e ) {
+			// XXX: We have no context source nor is there Message::messageParam :(
+			return Status::newFatal( 'translate-messagebundle-validation-error', wfMessage( $e ) );
+		}
+	}
+
 	/** @throws MalformedBundle */
 	public function validate(): bool {
 		$data = json_decode( $this->getText(), true );
@@ -75,16 +88,5 @@ class MessageBundleContent extends JsonContent {
 		}
 
 		return true;
-	}
-
-	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
-		// This will give an informative error message when trying to change the content model
-		try {
-			$this->validate();
-			return Status::newGood();
-		} catch ( MalformedBundle $e ) {
-			// XXX: We have no context source nor is there Message::messageParam :(
-			return Status::newFatal( 'translate-messagebundle-validation-error', wfMessage( $e ) );
-		}
 	}
 }
