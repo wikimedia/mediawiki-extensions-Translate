@@ -7,6 +7,7 @@
 		]
 	},
 	"tpt-diff-old": "پويون متن",
+	"tpt-diff-new": "نئون متن",
 	"tpt-mark-nochanges": "نظر ثاني لاءِ ڪي بہ تبديليون ناھن. ھن صفحي ترجمي لاءِ نشان ھڻڻ سان صفحو نہ سنواربو نہ ئي ڪو موجود ترجمي جو ايڪو.",
 	"tpt-languages-nonzero": "$1 ($2% ترجمو ٿيل)",
 	"tpt-aggregategroup-save": "سانڍيو",
@@ -16,6 +17,8 @@
 	"pm-cancel-button-label": "رد",
 	"pp-save-button-label": "سانڍيو",
 	"pp-cancel-button-label": "رد",
+	"pp-diff-old-header": "ذريعي جو متن",
+	"pp-diff-new-header": "تيارڪيل متن",
 	"tpt-unlink-summary": "ترجمي کان صفحو ھٽايو ويو",
 	"tpt-generic-button": "پڪ ڪريو"
 }

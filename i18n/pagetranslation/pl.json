@@ -9,6 +9,7 @@
 			"Jdx",
 			"Leinad",
 			"Matik7",
+			"Matma Rex",
 			"Mazab IZW",
 			"Olgak85",
 			"Py64",
@@ -63,6 +64,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|Ta strona ma|Te strony mają}} zmiany nieoznaczone do tłumaczenia.",
 	"tpt-tag-discouraged": "odradzona",
 	"tpt-tag-oldsyntax": "stara składnia",
+	"tpt-tag-no-transclusion-support": "nie wspiera załączania",
 	"tpt-select-prioritylangs": "Kody języków priorytetowych rozdzielone przecinkami:",
 	"tpt-select-prioritylangs-force": "Zapobieganie tłumaczeniom na języki inne niż priorytetowe",
 	"tpt-select-prioritylangs-reason": "Powód:",
@@ -70,6 +72,8 @@
 	"tpt-sections-syntaxversion": "Wersja składni",
 	"tpt-syntaxversion-text": "Ta strona obecnie korzysta z przestarzałej wersji znaczników tłumaczenia. Nowa wersja będzie obejmować nieprzetłumaczone sekcje znacznikami HTML, aby wskazywać właściwy język danych fragmentów tekstu. Przykład: $1. Możesz skorzystać z nowej składni $2 aby zapobiec obejmowaniu znacznikami w miejscach, gdzie jest to niepożądane, na przykład podczas tłumaczenia atrybutu <code>title</code> w elementach. Nie ma możliwości przejścia na starszą wersję składni.",
 	"tpt-syntaxversion-label": "Używaj najnowszej wersji składni dla tej strony",
+	"tpt-transclusion": "Załączanie szablonów",
+	"tpt-transclusion-label": "Włącz tryb załączania szablonów ze wsparciem dla tłumaczenia",
 	"tpt-rev-mark": "oznacz do tłumaczenia",
 	"tpt-rev-unmark": "usuń z tłumaczenia",
 	"tpt-rev-discourage": "zniechęć",
@@ -233,5 +237,10 @@
 	"tpt-generic-confirm": "Proszę potwierdzić akcję.",
 	"tpt-generic-button": "Potwierdź",
 	"tpt-validation-name-reuse": "Zmienna tłumaczeń „$1” została zdefiniowana wielokrotnie z różną zawartością. Zmień identyfikatory zmiennych tak, aby były unikalne wewnątrz jednej jednostki tłumaczeń.",
-	"visualeditor-annotations-translate-description": "Ten zakres został oznaczony jako możliwy do przetłumaczenia. Upewnij się, że przestrzegasz wytycznych [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text zmieniania tekstu źródłowego]."
+	"visualeditor-annotations-translate-start": "Początek treści do tłumaczenia",
+	"visualeditor-annotations-translate-end": "Koniec treści do tłumaczenia",
+	"visualeditor-annotations-translate-description": "Ten zakres został oznaczony jako możliwy do przetłumaczenia. Upewnij się, że przestrzegasz wytycznych [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text zmieniania tekstu źródłowego].",
+	"visualeditor-annotations-tvar-start": "Początek treści nie do tłumaczenia",
+	"visualeditor-annotations-tvar-end": "Koniec treści nie do tłumaczenia",
+	"visualeditor-annotations-tvar-description": "Ten fragment oznakowany jest jako nieprzeznaczony do tłumaczenia. Więcej informacji na ten temat dostępne jest na stronie [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pl#Segmentacja Segmentacja tekstu źródłowego]."
 }
