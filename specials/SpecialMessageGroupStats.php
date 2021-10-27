@@ -8,6 +8,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
+
 /**
  * Implements includable special page Special:MessageGroupStats which provides
  * translation statistics for all languages for a group.
@@ -26,9 +29,14 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	/** @var int */
 	private $numberOfShownLanguages;
 
-	public function __construct() {
+	public function __construct(
+		LinkBatchFactory $linkBatchFactory,
+		ProgressStatsTableFactory $progressStatsTableFactory
+	) {
+		// Somewhat ugly
+		parent::__construct( $linkBatchFactory, $progressStatsTableFactory );
 		SpecialPage::__construct( 'MessageGroupStats' );
-		$this->totals = MessageGroupStats::getEmptyStats();
+		$this->target = null;
 	}
 
 	/// Overwritten from SpecialPage

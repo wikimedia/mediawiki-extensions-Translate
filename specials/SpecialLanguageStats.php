@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 
 /**
  * Implements includable special page Special:LanguageStats which provides
@@ -71,13 +72,19 @@ class SpecialLanguageStats extends SpecialPage {
 	protected $states;
 	/** @var LinkBatchFactory */
 	private $linkBatchFactory;
+	/** @var ProgressStatsTableFactory */
+	private $progressStatsTableFactory;
 
-	public function __construct( LinkBatchFactory $linkBatchFactory ) {
+	public function __construct(
+		LinkBatchFactory $linkBatchFactory,
+		ProgressStatsTableFactory $progressStatsTableFactory
+	) {
 		parent::__construct( 'LanguageStats' );
 
 		$this->target = $this->getLanguage()->getCode();
 		$this->totals = MessageGroupStats::getEmptyStats();
 		$this->linkBatchFactory = $linkBatchFactory;
+		$this->progressStatsTableFactory = $progressStatsTableFactory;
 	}
 
 	public function isIncludable() {
@@ -97,7 +104,7 @@ class SpecialLanguageStats extends SpecialPage {
 			return;
 		}
 
-		$this->table = new StatsTable();
+		$this->table = $this->progressStatsTableFactory->newFromContext( $this->getContext() );
 
 		$this->setHeaders();
 		$this->outputHeader();

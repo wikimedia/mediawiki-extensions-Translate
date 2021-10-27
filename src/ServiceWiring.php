@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
+use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
@@ -97,6 +98,14 @@ return [
 			// from the core here if available
 			$services->get( 'Translate:JsonCodec' )
 		 );
+	},
+
+	'Translate:ProgressStatsTableFactory' => static function ( MediaWikiServices $services ): ProgressStatsTableFactory
+	{
+		return new ProgressStatsTableFactory(
+			$services->getLinkRenderer(),
+			$services->get( 'Translate:ConfigHelper' )
+		);
 	},
 
 	'Translate:TranslatablePageMover' => static function ( MediaWikiServices $services ): TranslatablePageMover

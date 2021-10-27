@@ -7,8 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Linker\LinkRenderer;
 
 /**
  * Implements generation of HTML stats table.
@@ -18,21 +18,32 @@ use MediaWiki\MediaWikiServices;
  * @ingroup Stats
  */
 class StatsTable {
-	/** @var Language */
-	protected $lang;
-	/** @var Title */
+	/** @var TitleValue */
 	protected $translate;
-	/** @var \MediaWiki\Extension\Translate\Utilities\ConfigHelper */
+	/** @var LinkRenderer */
+	private $linkRenderer;
+	/** @var ConfigHelper */
 	private $configHelper;
+	/** @var MessageLocalizer */
+	private $messageLocalizer;
+	/** @var Language */
+	protected $language;
 	/** @var string */
 	protected $mainColumnHeader;
 	/** @var Message[] */
 	protected $extraColumns = [];
 
-	public function __construct() {
-		$this->lang = RequestContext::getMain()->getLanguage();
-		$this->translate = SpecialPage::getTitleFor( 'Translate' );
-		$this->configHelper = Services::getInstance()->getConfigHelper();
+	public function __construct(
+		LinkRenderer $linkRenderer,
+		ConfigHelper $configHelper,
+		MessageLocalizer $messageLocalizer,
+		Language $language
+	) {
+		$this->translate = SpecialPage::getTitleValueFor( 'Translate' );
+		$this->linkRenderer = $linkRenderer;
+		$this->configHelper = $configHelper;
+		$this->messageLocalizer = $messageLocalizer;
+		$this->language = $language;
 	}
 
 	/**
@@ -108,11 +119,11 @@ class StatsTable {
 	/** @return Message[] */
 	public function getOtherColumnHeaders() {
 		return array_merge( [
-			wfMessage( 'translate-total' ),
-			wfMessage( 'translate-untranslated' ),
-			wfMessage( 'translate-percentage-complete' ),
-			wfMessage( 'translate-percentage-proofread' ),
-			wfMessage( 'translate-percentage-fuzzy' ),
+			$this->messageLocalizer->msg( 'translate-total' ),
+			$this->messageLocalizer->msg( 'translate-untranslated' ),
+			$this->messageLocalizer->msg( 'translate-percentage-complete' ),
+			$this->messageLocalizer->msg( 'translate-percentage-proofread' ),
+			$this->messageLocalizer->msg( 'translate-percentage-fuzzy' ),
 		], $this->extraColumns );
 	}
 
@@ -174,11 +185,11 @@ class StatsTable {
 
 		$out = "\n\t\t" . Html::element( 'td',
 			[ 'data-sort-value' => $total ],
-			$this->lang->formatNum( $total ) );
+			$this->language->formatNum( $total ) );
 
 		$out .= "\n\t\t" . Html::element( 'td',
 			[ 'data-sort-value' => $total - $translated ],
-			$this->lang->formatNum( $total - $translated ) );
+			$this->language->formatNum( $total - $translated ) );
 
 		if ( $total === 0 ) {
 			$transRatio = 0;
@@ -213,9 +224,9 @@ class StatsTable {
 	 */
 	public function formatPercentage( $num, $to = 'floor' ) {
 		$num = $to === 'floor' ? floor( 100 * $num ) : ceil( 100 * $num );
-		$fmt = $this->lang->formatNum( $num );
+		$fmt = $this->language->formatNum( $num );
 
-		return wfMessage( 'percent', $fmt )->text();
+		return $this->messageLocalizer->msg( 'percent', $fmt )->text();
 	}
 
 	/**
@@ -242,14 +253,12 @@ class StatsTable {
 	 * @return string Html
 	 */
 	public function makeGroupLink( MessageGroup $group, $code, $params ) {
-		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
-
 		$queryParameters = $params + [
 			'group' => $group->getId(),
 			'language' => $code
 		];
 
-		return $linker->makeLink(
+		return $this->linkRenderer->makeLink(
 			$this->translate,
 			new HtmlArmor( $this->getGroupLabel( $group ) ),
 			[],

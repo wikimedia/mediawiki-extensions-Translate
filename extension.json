@@ -319,10 +319,17 @@
 		"LanguageStats": {
 			"class": "SpecialLanguageStats",
 			"services": [
-				"LinkBatchFactory"
+				"LinkBatchFactory",
+				"Translate:ProgressStatsTableFactory"
 			]
 		},
-		"MessageGroupStats": "SpecialMessageGroupStats",
+		"MessageGroupStats": {
+			"class": "SpecialMessageGroupStats",
+			"services": [
+				"LinkBatchFactory",
+				"Translate:ProgressStatsTableFactory"
+			]
+		},
 		"ImportTranslations": "SpecialImportTranslations",
 		"ExportTranslations": "SpecialExportTranslations",
 		"ManageMessageGroups": {
@@ -342,7 +349,8 @@
 				"LanguageNameUtils",
 				"DBLoadBalancer",
 				"Translate:ConfigHelper",
-				"ContentLanguage"
+				"ContentLanguage",
+				"Translate:ProgressStatsTableFactory"
 			]
 		},
 		"AggregateGroups": {

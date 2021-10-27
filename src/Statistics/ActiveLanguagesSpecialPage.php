@@ -39,6 +39,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private $configHelper;
 	/** @var Language */
 	private $contentLanguage;
+	/** @var StatsTable */
+	private $progressStatsTable;
 	/** @var int Cutoff time for inactivity in days */
 	private $period = 180;
 
@@ -52,7 +54,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		LanguageNameUtils $langNameUtils,
 		ILoadBalancer $loadBalancer,
 		ConfigHelper $configHelper,
-		Language $contentLanguage
+		Language $contentLanguage,
+		ProgressStatsTableFactory $progressStatsTableFactory
 	) {
 		parent::__construct( 'SupportedLanguages' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -61,6 +64,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->loadBalancer = $loadBalancer;
 		$this->configHelper = $configHelper;
 		$this->contentLanguage = $contentLanguage;
+		$this->progressStatsTable = $progressStatsTableFactory->newFromContext( $this->getContext() );
 	}
 
 	protected function getGroupName() {
@@ -262,8 +266,6 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$period = $this->period;
 
 		$links = [];
-		$statsTable = new StatsTable();
-
 		// List users in descending order by number of translations in this language
 		usort( $userStats, static function ( $a, $b ) {
 			return -(
@@ -301,7 +303,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 					->text();
 			$last = max( 1, min( $period, $last ) );
 			$styles['border-bottom'] =
-				'3px solid #' . $statsTable->getBackgroundColor( ( $period - $last ) / $period );
+				'3px solid #' . $this->progressStatsTable->getBackgroundColor( ( $period - $last ) / $period );
 
 			$stylestr = $this->formatStyle( $styles );
 			if ( $stylestr ) {
@@ -352,12 +354,11 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	protected function getColorLegend() {
 		$legend = '';
 		$period = $this->period;
-		$statsTable = new StatsTable();
 
 		for ( $i = 0; $i <= $period; $i += 30 ) {
 			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
 			$legend .= '<span style="background-color:#' .
-				$statsTable->getBackgroundColor( ( $period - $i ) / $period ) .
+				$this->progressStatsTable->getBackgroundColor( ( $period - $i ) / $period ) .
 				"\"> $iFormatted</span>";
 		}
 

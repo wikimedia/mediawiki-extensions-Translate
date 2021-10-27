@@ -7,6 +7,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
+use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
@@ -87,6 +88,11 @@ class Services implements ContainerInterface {
 	/** @since 2020.12 */
 	public function getPersistentCache(): PersistentCache {
 		return $this->get( 'Translate:PersistentCache' );
+	}
+
+	/** @since 2020.12 */
+	public function getProgressStatsTableFactory(): ProgressStatsTableFactory {
+		return $this->get( 'Translate:ProgressStatsTableFactory' );
 	}
 
 	/** @since 2021.03 */
