@@ -1,0 +1,44 @@
+== Translate 2021.10 ==
+Released at 2021-10-28.
+
+=== Noteworthy changes ===
+* SpecialPageTranslation: Show correct number of units marked for translation ([[gerrit:c/mediawiki/extensions/Translate/+/705885|Gerrit]])
+* Fix translation of pages with custom content models ([[gerrit:c/mediawiki/extensions/Translate/+/693984|Gerrit]], [[phab:T258756|Phabricator]])
+* TranslatablePageMover: Fix incorrect target page validation ([[gerrit:c/mediawiki/extensions/Translate/+/710285|Gerrit]])
+* Extended export.php's capabilities to allow exporting everything with a single invocation ([[phab:T287476|Phabricator]])
+* Fix Discouraged translatable page is no longer discouraged after move ([[gerrit:c/mediawiki/extensions/Translate/+/708493|Gerrit]], [[phab:T287373|Phabricator]])
+* Special:PageTranslation: Display consistent success/warning/error messages ([[gerrit:c/mediawiki/extensions/Translate/+/714972|Gerrit]])
+* Fix Pages discouraged from translation should warn translators ([[gerrit:c/mediawiki/extensions/Translate/+/714215|Gerrit]], [[phab:T237590|Phabricator]]) 
+* Fix TUX should have try again button upon save failure ([[gerrit:c/mediawiki/extensions/Translate/+/713234|Gerrit]], [[phab:T272791|Phabricator]])
+* TUX: Ensure optional message is checked based on URL options ([[gerrit:c/mediawiki/extensions/Translate/+/713219|Gerrit]], [[phab:T264075|Phabricator]])
+* SpecialTranslate: Fix proofreading tooltip anchor ([[gerrit:c/mediawiki/extensions/Translate/+/713637|Gerrit]], [[phab:T281466|Phabricator]])
+* Fix Page display title no longer translatable by default ([[gerrit:c/mediawiki/extensions/Translate/+/709502|Gerrit]], [[phab:T287816|Phabricator]])
+* Fix TUX should not use a wrong uselang value as fallback ([[gerrit:c/mediawiki/extensions/Translate/+/713601|Gerrit]], [[phab:T279252|Phabricator]])
+* Add new validator NotEmptyValidator ([[gerrit:c/mediawiki/extensions/Translate/+/713880|Gerrit]], [[phab:T261305|Phabricator]])
+* Add dir/lang attribute for outdated translation header ([[gerrit:c/mediawiki/extensions/Translate/+/714323|Gerrit]], [[phab:T289440|Phabricator]])
+* Special:PageTranslation: Require <code><nowiki><translate></nowiki></code> tags on the latest version for marking ([[gerrit:c/mediawiki/extensions/Translate/+/714971|Gerrit]], [[phab:T289697|Phabricator]])
+* Special:PageTranslation: <code>tpt-badtitle</code> expects a parameter ([[gerrit:c/mediawiki/extensions/Translate/+/714970|Gerrit]])
+* Use user preferred edit font in sourcemessage & editor ([[gerrit:c/719641|Gerrit]], [[phab:T213658|Phabricator]])
+* Fix The page translation language list should use HTML list instead of literal bullet points ([[gerrit:c/mediawiki/extensions/Translate/+/718862|Gerrit]], [[phab:T280742|Phabricator]])
+* Remove language URL parameter in "Translate this page" link ([[gerrit:c/mediawiki/extensions/Translate/+/720664|Gerrit]], [[phab:T286110|Phabricator]])
+* Add support for moving talkpages when moving translatable pages ([[gerrit:c/mediawiki/extensions/Translate/+/709102|Gerrit]], [[phab:T41023|Phabricator]])
+* Redirect page should not block translation page ([[gerrit:c/mediawiki/extensions/Translate/+/710300|Gerrit]], [[phab:T284116|Phabricator]])
+* Prevent non-wikitext pages from being marked for translation ([[gerrit:c/mediawiki/extensions/Translate/+/718014|Gerrit]], [[phab:T163254|Phabricator]])
+* Update moveTranslatablePageScript.php to make moving sub pages the default ([[gerrit:c/mediawiki/extensions/Translate/+/721821|Gerrit]])
+* Fix Special:PageMigration - "query - messagecollection" API throws an error ([[gerrit:c/mediawiki/extensions/Translate/+/723813|Gerrit]])
+* Performance optimizations for Translate metadata ([[phab:T204026|Phabricator]])
+* Add <code>%MESSAGE_URL%</code> placeholder for support params ([[gerrit:c/mediawiki/extensions/Translate/+/724701|Gerrit]])
+* Avoid outputting invalid lang="qqq" on Special:Translations and Special:SupportedLanguages ([[phab:T259137|Phabricator]])
+* Allow excluding certain messages from validation ([[gerrit:c/mediawiki/extensions/Translate/+/730034|Gerrit]], [[phab:T289480|Phabricator]])
+* Special:Translate: Ensure translated name for the group appears ([[gerrit:c/mediawiki/extensions/Translate/+/731970|Gerrit]])
+* Localisation and maintenance updates
+
+=== Security ===
+* Allow revdel-related actions in translatable pages ([[gerrit:c/mediawiki/extensions/Translate/+/725385|Gerrit]])
+
+=== Breaking changes ===
+* Export script: remove <code>--hours</code> ([[gerrit:c/mediawiki/extensions/Translate/+/705677|Gerrit]]) 
+* Remove translation aids customization (Hook: <code>TranslateTranslationAids</code>) ([[gerrit:c/mediawiki/extensions/Translate/+/715939|Gerrit]]) 
+* Remove <code>$wgTranslateDelayedMessageIndexRebuild</code> ([[gerrit:c/mediawiki/extensions/Translate/+/719062|Gerrit]]) 
+* Remove <code>getConfiguration</code> and <code>getFFS</code> from MessageGroup ([[gerrit:c/mediawiki/extensions/Translate/+/715946|Gerrit]]) 
+* Group configuration: Rename validator keymatch option to include ([[gerrit:c/mediawiki/extensions/Translate/+/730035|Gerrit]])
