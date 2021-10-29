@@ -1,0 +1,395 @@
+[
+	{
+		"name": "translate_sections",
+		"columns": [
+			{
+				"name": "trs_page",
+				"comment": "Key to page_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "trs_key",
+				"comment": "Customizable section name",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "trs_text",
+				"comment": "Section contents",
+				"type": "blob",
+				"options": { "notnull": true, "length": 16777215 }
+			},
+			{
+				"name": "trs_order",
+				"comment": "Section order",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "trs_page_order",
+				"columns": [ "trs_page", "trs_order" ],
+				"unique": false
+			}
+		],
+		"pk": [ "trs_page", "trs_key" ]
+	},
+	{
+		"name": "revtag",
+		"comment": "Revision tags",
+		"columns": [
+			{
+				"name": "rt_type",
+				"type": "binary",
+				"options": { "notnull": true, "length": 60 }
+			},
+			{
+				"name": "rt_page",
+				"comment": "Link to page.page_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "rt_revision",
+				"comment": "Link to revision.rev_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "rt_value",
+				"type": "blob",
+				"options": { "length": 65530, "notnull": false }
+			}
+		],
+		"indexes": [
+			{
+				"name": "rt_type_page_revision",
+				"comment": "Index for finding all revisions in a page with a given tag",
+				"columns": [ "rt_type", "rt_page", "rt_revision" ],
+				"unique": true
+			},
+			{
+				"name": "rt_revision_type",
+				"comment": "Index for finding the tags on a given revision",
+				"columns": [ "rt_revision", "rt_type" ],
+				"unique": false
+			}
+		]
+	},
+	{
+		"name": "translate_groupstats",
+		"columns": [
+			{
+				"name": "tgs_group",
+				"type": "binary",
+				"options": { "notnull": true, "length": 100 }
+			},
+			{
+				"name": "tgs_lang",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tgs_total",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "tgs_translated",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "tgs_fuzzy",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "tgs_proofread",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "tgs_lang",
+				"columns": [ "tgs_lang" ],
+				"unique": false
+			}
+		],
+		"pk": [ "tgs_group", "tgs_lang" ]
+	},
+	{
+		"name": "translate_reviews",
+		"comment": "Translation reviews; to store reviews of a page revision by a user.",
+		"columns": [
+			{
+				"name": "trr_user",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "trr_page",
+				"comment": "Link to page.page_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "trr_revision",
+				"comment": "Link to revision.rev_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"pk": [ "trr_page", "trr_revision", "trr_user" ],
+		"indexes": []
+	},
+	{
+		"name": "translate_groupreviews",
+		"comment": "Message group workflow states",
+		"columns": [
+			{
+				"name": "tgr_group",
+				"comment": "The length we need to accommodate 'page-' + the full pagename including prefix. That could be 255 + prefix (length not limited), but page translation section pages limit that to shorter, because it needs to accommodate /sectionname/languagecode suffix to the page name.",
+				"type": "binary",
+				"options": { "notnull": true, "length": 200 }
+			},
+			{
+				"name": "tgr_lang",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tgr_state",
+				"comment": "Any of user configured values from $wgTranslateWorkflowStates",
+				"type": "binary",
+				"options": { "notnull": true, "length": 32 }
+			}
+		],
+		"pk": [ "tgr_group", "tgr_lang" ],
+		"indexes": []
+	},
+	{
+		"name": "translate_tms",
+		"columns": [
+			{
+				"name": "tms_sid",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true, "autoincrement": true }
+			},
+			{
+				"name": "tms_lang",
+				"comment": "Language code",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tms_len",
+				"comment": "Length of the string in characters",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "tms_text",
+				"comment": "The actual text",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			},
+			{
+				"name": "tms_context",
+				"comment": "Identifier where this text came from",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			}
+		],
+		"pk": [ "tms_sid" ],
+		"indexes": [
+			{
+				"name": "tms_lang_len",
+				"columns": [ "tms_lang", "tms_len" ],
+				"unique": false
+			}
+		]
+	},
+	{
+		"name": "translate_tmt",
+		"comment": "Stored translations",
+		"columns": [
+			{
+				"name": "tmt_sid",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "tmt_lang",
+				"comment": "Language code",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tmt_text",
+				"comment": "The actual text",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			}
+		],
+		"pk": [],
+		"indexes": [
+			{
+				"name": "tms_sid_lang",
+				"columns": [ "tmt_sid", "tmt_lang" ],
+				"unique": true
+			}
+		]
+	},
+	{
+		"name": "translate_tmf",
+		"comment": "Fulltext search index",
+		"columns": [
+			{
+				"name": "tmf_sid",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "tmf_text",
+				"type": "text",
+				"options": { "length": 65535 }
+			}
+		],
+		"pk": [],
+		"indexes": [
+			{
+				"name": "tmf_text",
+				"columns": [ "tmf_text" ],
+				"fulltext": true,
+				"unique": false,
+				"flags": [
+					"fulltext"
+				]
+			}
+		],
+		"table_options": [
+			"ENGINE=MyISAM",
+			"DEFAULT CHARSET=utf8mb4"
+		]
+	},
+	{
+		"name": "translate_metadata",
+		"comment": "Translate group metadata",
+		"columns": [
+			{
+				"name": "tmd_group",
+				"type": "binary",
+				"options": { "notnull": true, "length": 200 }
+			},
+			{
+				"name": "tmd_key",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tmd_value",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			}
+		],
+		"pk": [ "tmd_group", "tmd_key" ],
+		"indexes": []
+	},
+	{
+		"name": "translate_messageindex",
+		"columns": [
+			{
+				"name": "tmi_key",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "tmi_value",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			}
+		],
+		"pk": [],
+		"indexes": [
+			{
+				"name": "tmi_key",
+				"columns": [ "tmi_key" ],
+				"unique": true
+			}
+		]
+	},
+	{
+		"name": "translate_stash",
+		"columns": [
+			{
+				"name": "ts_user",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "ts_namespace",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "ts_title",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ts_value",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			},
+			{
+				"name": "ts_metadata",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			}
+		],
+		"pk": [ "ts_user", "ts_namespace", "ts_title" ],
+		"indexes": []
+	},
+	{
+		"name": "translate_cache",
+		"comment": "",
+		"columns": [
+			{
+				"name": "tc_key",
+				"comment": "Cache key",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "tc_value",
+				"comment": "Cache value",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": false }
+			},
+			{
+				"name": "tc_exptime",
+				"comment": "Key expiry time",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "tc_tag",
+				"comment": "Tag and group cache keys",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			}
+		],
+		"pk": [ "tc_key" ],
+		"indexes": [
+			{
+				"name": "tc_tag",
+				"columns": [ "tc_tag" ],
+				"unique": false
+			}
+		]
+	}
+]

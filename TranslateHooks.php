@@ -392,112 +392,110 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	 */
 	public static function schemaUpdates( DatabaseUpdater $updater ) {
 		$dir = __DIR__ . '/sql';
+		$dbType = $updater->getDB()->getType();
 
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_sections',
-			"$dir/translate_sections.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addField',
-			'translate_sections',
-			'trs_order',
-			"$dir/translate_sections-trs_order.patch.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'revtag', "$dir/revtag.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_groupstats',
-			"$dir/translate_groupstats.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addIndex',
-			'translate_sections',
-			'trs_page_order',
-			"$dir/translate_sections-indexchange.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'dropIndex',
-			'translate_sections',
-			'trs_page',
-			"$dir/translate_sections-indexchange2.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_reviews',
-			"$dir/translate_reviews.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_groupreviews',
-			"$dir/translate_groupreviews.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_tms',
-			"$dir/translate_tm.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_metadata',
-			"$dir/translate_metadata.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addTable', 'translate_messageindex',
-			"$dir/translate_messageindex.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addIndex',
-			'translate_groupstats',
-			'tgs_lang',
-			"$dir/translate_groupstats-indexchange.sql",
-			true
-		] );
-		$updater->addExtensionUpdate( [
-			'addField', 'translate_groupstats',
-			'tgs_proofread',
-			"$dir/translate_groupstats-proofread.sql",
-			true
-		] );
+		if ( $dbType === 'mysql' || $dbType === 'sqlite' ) {
+			$updater->addExtensionTable(
+				'translate_sections',
+				"{$dir}/{$dbType}/translate_sections.sql"
+			);
+			$updater->addExtensionUpdate( [
+				'addField',
+				'translate_sections',
+				'trs_order',
+				"$dir/translate_sections-trs_order.patch.sql",
+				true
+			] );
+			$updater->addExtensionUpdate( [
+				'addIndex',
+				'translate_sections',
+				'trs_page_order',
+				"$dir/translate_sections-indexchange.sql",
+				true
+			] );
+			$updater->addExtensionUpdate( [
+				'dropIndex',
+				'translate_sections',
+				'trs_page',
+				"$dir/translate_sections-indexchange2.sql",
+				true
+			] );
+			$updater->addExtensionTable(
+				'revtag',
+				"{$dir}/{$dbType}/revtag.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_groupstats',
+				"{$dir}/{$dbType}/translate_groupstats.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_reviews',
+				"{$dir}/{$dbType}/translate_reviews.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_groupreviews',
+				"{$dir}/{$dbType}/translate_groupreviews.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_tms',
+				"{$dir}/{$dbType}/translate_tm.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_metadata',
+				"{$dir}/{$dbType}/translate_metadata.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_messageindex',
+				"{$dir}/{$dbType}/translate_messageindex.sql"
+			);
+			$updater->addExtensionUpdate( [
+				'addIndex',
+				'translate_groupstats',
+				'tgs_lang',
+				"$dir/translate_groupstats-indexchange.sql",
+				true
+			] );
+			$updater->addExtensionUpdate( [
+				'addField', 'translate_groupstats',
+				'tgs_proofread',
+				"$dir/translate_groupstats-proofread.sql",
+				true
+			] );
 
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_stash',
-			"$dir/translate_stash.sql",
-			true
-		] );
+			$updater->addExtensionTable(
+				'translate_stash',
+				"{$dir}/{$dbType}/translate_stash.sql"
+			);
 
-		// This also adds a PRIMARY KEY
-		$updater->addExtensionUpdate( [
-			'renameIndex',
-			'translate_reviews',
-			'trr_user_page_revision',
-			'PRIMARY',
-			false,
-			"$dir/translate_reviews-patch-01-primary-key.sql",
-			true
-		] );
+			// This also adds a PRIMARY KEY
+			$updater->addExtensionUpdate( [
+				'renameIndex',
+				'translate_reviews',
+				'trr_user_page_revision',
+				'PRIMARY',
+				false,
+				"$dir/translate_reviews-patch-01-primary-key.sql",
+				true
+			] );
 
-		$updater->addExtensionUpdate( [
-			'addTable',
-			'translate_cache',
-			"$dir/translate_cache.sql",
-			true
-		] );
+			$updater->addExtensionTable(
+				'translate_cache',
+				"{$dir}/{$dbType}/translate_cache.sql"
+			);
+
+			if ( $dbType === 'mysql' ) {
+				$updater->modifyExtensionField(
+					'translate_cache',
+					'tc_key',
+					"{$dir}/{$dbType}/translate_cache-alter-varbinary.sql"
+				);
+			}
+		} elseif ( $dbType === 'postgres' ) {
+			$updater->addExtensionTable(
+				'translate_sections',
+				"{$dir}/{$dbType}/tables-generated.sql"
+			);
+		}
 	}
 
 	/**
