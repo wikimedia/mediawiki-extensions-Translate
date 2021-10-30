@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains logic for special page Special:Translations.
- *
- * @file
- * @author Siebrand Mazeland
- * @author Niklas Laxstörm
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\MediaWikiServices;
 
@@ -14,6 +7,9 @@ use MediaWiki\MediaWikiServices;
  * Implements a special page which shows all translations for a message.
  * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
  *
+ * @author Siebrand Mazeland
+ * @author Niklas Laxstörm
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslations extends SpecialAllPages {
@@ -87,7 +83,7 @@ class SpecialTranslations extends SpecialAllPages {
 	 *
 	 * @param Title|null $title (default: null)
 	 */
-	protected function namespaceMessageForm( Title $title = null ) {
+	protected function namespaceMessageForm( Title $title = null ): void {
 		$options = [];
 
 		foreach ( $this->getSortedNamespaces() as $text => $index ) {
@@ -129,7 +125,7 @@ class SpecialTranslations extends SpecialAllPages {
 	 *
 	 * @return array ( string => int )
 	 */
-	public function getSortedNamespaces() {
+	public function getSortedNamespaces(): array {
 		global $wgTranslateMessageNamespaces;
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
@@ -147,7 +143,7 @@ class SpecialTranslations extends SpecialAllPages {
 	 *
 	 * @param Title $title (default: null)
 	 */
-	protected function showTranslations( Title $title ) {
+	protected function showTranslations( Title $title ): void {
 		$handle = new MessageHandle( $title );
 		$namespace = $title->getNamespace();
 		$message = $handle->getKey();
@@ -211,6 +207,7 @@ class SpecialTranslations extends SpecialAllPages {
 		$separator = $this->msg( 'word-separator' )->plain();
 
 		$tools = [];
+		$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
@@ -242,7 +239,7 @@ class SpecialTranslations extends SpecialAllPages {
 			}
 
 			$languageAttributes = [];
-			if ( Language::isKnownLanguageTag( $code ) ) {
+			if ( $languageNameUtils->isKnownLanguageTag( $code ) ) {
 				$language = $tHandle->getEffectiveLanguage();
 				$languageAttributes = [
 					'lang' => $language->getHtmlCode(),
