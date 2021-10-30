@@ -1,7 +1,19 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\MediaWikiServices;
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use DerivativeContext;
+use Html;
+use HtmlArmor;
+use HTMLForm;
+use Language;
+use MediaWiki\Languages\LanguageNameUtils;
+use MessageHandle;
+use SpecialAllPages;
+use Title;
+use TranslateUtils;
+use Xml;
 
 /**
  * Implements a special page which shows all translations for a message.
@@ -12,10 +24,17 @@ use MediaWiki\MediaWikiServices;
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslations extends SpecialAllPages {
-	public function __construct() {
+class TranslationsSpecialPage extends SpecialAllPages {
+	/** @var Language */
+	private $contentLanguage;
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
+
+	public function __construct( Language $contentLanguage, LanguageNameUtils $languageNameUtils ) {
 		parent::__construct();
 		$this->mName = 'Translations';
+		$this->contentLanguage = $contentLanguage;
+		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	protected function getGroupName() {
@@ -127,11 +146,10 @@ class SpecialTranslations extends SpecialAllPages {
 	 */
 	public function getSortedNamespaces(): array {
 		global $wgTranslateMessageNamespaces;
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$nslist = [];
 		foreach ( $wgTranslateMessageNamespaces as $ns ) {
-			$nslist[$contLang->getFormattedNsText( $ns )] = $ns;
+			$nslist[$this->contentLanguage->getFormattedNsText( $ns )] = $ns;
 		}
 		ksort( $nslist );
 
@@ -207,7 +225,6 @@ class SpecialTranslations extends SpecialAllPages {
 		$separator = $this->msg( 'word-separator' )->plain();
 
 		$tools = [];
-		$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
@@ -239,7 +256,7 @@ class SpecialTranslations extends SpecialAllPages {
 			}
 
 			$languageAttributes = [];
-			if ( $languageNameUtils->isKnownLanguageTag( $code ) ) {
+			if ( $this->languageNameUtils->isKnownLanguageTag( $code ) ) {
 				$language = $tHandle->getEffectiveLanguage();
 				$languageAttributes = [
 					'lang' => $language->getHtmlCode(),

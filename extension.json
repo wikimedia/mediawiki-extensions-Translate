@@ -176,7 +176,6 @@
 		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
 		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
 		"SpecialTranslate": "specials/SpecialTranslate.php",
-		"SpecialTranslations": "specials/SpecialTranslations.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
 		"StringMangler": "stringmangler/StringMangler.php",
@@ -309,7 +308,13 @@
 	},
 	"SpecialPages": {
 		"Translate": "SpecialTranslate",
-		"Translations": "SpecialTranslations",
+		"Translations": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationsSpecialPage",
+			"services": [
+				"ContentLanguage",
+				"LanguageNameUtils"
+			]
+		},
 		"TranslationStats": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\TranslationStatsSpecialPage",
 			"services": [
