@@ -9,6 +9,7 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Logger\LoggerFactory;
 
@@ -94,7 +95,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public static function parseGettextData(
 		$data,
 		$useCtxtAsKey,
-		$mangler,
+		StringMangler $mangler,
 		$keyAlgorithm,
 		bool $allowPotMode
 	) {

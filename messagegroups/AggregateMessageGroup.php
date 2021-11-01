@@ -5,6 +5,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+
 /**
  * Groups multiple message groups together as one group.
  *

@@ -8,6 +8,7 @@
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
+use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\MediaWikiServices;
 
 /**

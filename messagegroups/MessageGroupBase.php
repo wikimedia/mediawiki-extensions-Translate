@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory;
@@ -118,21 +119,22 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getMangler() {
 		if ( !isset( $this->mangler ) ) {
-			$class = $this->getFromConf( 'MANGLER', 'class' );
+			$class = $this->getFromConf( 'MANGLER', 'class' ) ?? 'StringMatcher';
 
-			if ( $class === null ) {
+			if ( $class === 'StringMatcher' ) {
 				$this->mangler = new StringMatcher();
+				$manglerConfig = $this->conf['MANGLER'] ?? null;
+				if ( $manglerConfig ) {
+					$this->mangler->setConf( $manglerConfig );
+				}
 
 				return $this->mangler;
 			}
 
-			if ( !class_exists( $class ) ) {
-				throw new MWException( "Mangler class $class does not exist." );
-			}
-
-			/** @todo Branch handling, merge with upper branch keys */
-			$this->mangler = new $class();
-			$this->mangler->setConf( $this->conf['MANGLER'] );
+			throw new InvalidArgumentException(
+				'Unable to create StringMangler for group ' . $this->getId() . ': ' .
+				"Custom StringManglers ($class) are currently not supported."
+			);
 		}
 
 		return $this->mangler;

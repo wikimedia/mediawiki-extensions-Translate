@@ -196,6 +196,22 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 			"are configured using the array configuration."
 		);
 	}
+
+	public function testGetManglers() {
+		$conf = $this->groupConfiguration;
+		$conf['MANGLER'] = [
+			'class' => 'StringMatcher',
+			'prefix' => 'msg-prefix-',
+			'patterns' => [ '*' ]
+		];
+		$this->group = MessageGroupBase::factory( $conf );
+
+		$manglers = $this->group->getMangler();
+		$this->assertNotNull( $manglers );
+
+		$key = $manglers->mangle( 'key' );
+		$this->assertEquals( 'msg-prefix-key', $key, 'message should be mangled as per configuration' );
+	}
 }
 
 class FakeInsertablesSuggester implements InsertablesSuggester {

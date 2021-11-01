@@ -1,6 +1,10 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageProcessing;
+
+use MetaYamlSchemaExtender;
+
 /**
  * The versatile default implementation of StringMangler interface.
  * It supports exact matches and patterns with any-wildcard (*).
@@ -19,10 +23,6 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	/** @var string[] Patterns that contain wildcard anywhere else than in the end */
 	protected $aRegex = [];
 
-	/**
-	 * @param string $prefix
-	 * @param array $patterns
-	 */
 	public function __construct( string $prefix = '', array $patterns = [] ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );

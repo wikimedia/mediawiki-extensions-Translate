@@ -1,4 +1,10 @@
 <?php
+
+namespace MediaWiki\Extension\Translate\MessageProcessing;
+
+use MediaWikiIntegrationTestCase;
+use Title;
+
 /**
  * The StringMatcher class is responsible for making sure message keys
  * from external sources are valid titles in MediaWiki.

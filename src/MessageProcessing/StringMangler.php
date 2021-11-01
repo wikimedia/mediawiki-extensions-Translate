@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageProcessing;
+
 /**
  * Interface that key-mangling classes must implement. Mangling is done to:
  * - converting characters which would be invalid in titles to something valid
@@ -12,32 +14,19 @@ declare( strict_types = 1 );
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @since 2020.04 Interface was changed.
  */
 interface StringMangler {
-	/**
-	 * General way to pass configuration to the mangler.
-	 *
-	 * @param array $configuration
-	 */
+	/** General way to pass configuration to the mangler. */
 	public function setConf( array $configuration ): void;
 
 	/**
 	 * Match strings against a pattern.
 	 *
 	 * If string matches, mangle() prefixes the key.
-	 *
-	 * @param string $key Message key
-	 * @return bool
 	 */
 	public function matches( string $key ): bool;
 
-	/**
-	 * Mangle a string.
-	 *
-	 * @param string $key
-	 * @return string Mangled message key
-	 */
+	/** Mangle a string. */
 	public function mangle( string $key ): string;
 
 	/**
@@ -56,12 +45,7 @@ interface StringMangler {
 	 */
 	public function mangleArray( array $array ): array;
 
-	/**
-	 * Reverse mangling of a string.
-	 *
-	 * @param string $key Mangled message key
-	 * @return string $key Unmangled message key
-	 */
+	/** Reverse mangling of a string. */
 	public function unmangle( string $key ): string;
 
 	/**

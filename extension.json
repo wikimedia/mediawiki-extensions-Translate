@@ -178,8 +178,6 @@
 		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
-		"StringMangler": "stringmangler/StringMangler.php",
-		"StringMatcher": "stringmangler/StringMatcher.php",
 		"ThinMessage": "Message.php",
 		"TMessage": "Message.php",
 		"TPException": "tag/TPException.php",

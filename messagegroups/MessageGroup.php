@@ -84,7 +84,7 @@ interface MessageGroup {
 	/**
 	 * Return a message mangler or null.
 	 * @todo Make an interface for message manglers
-	 * @return StringMatcher|null
+	 * @return \MediaWiki\Extension\Translate\MessageProcessing\StringMatcher|null
 	 */
 	public function getMangler();
 
