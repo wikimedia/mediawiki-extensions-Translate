@@ -1,21 +1,20 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
  * The versatile default implementation of StringMangler interface.
  * It supports exact matches and patterns with any-wildcard (*).
  * All matching strings are prefixed with the same prefix.
+ *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	/** @var string Prefix for mangled message keys */
 	protected $sPrefix = '';
 	/** @var string[] Exact message keys */
 	protected $aExact = [];
-	/** @var string[] Patterns of type foo* */
+	/** @var int[] Patterns of type foo* */
 	protected $aPrefix = [];
 	/** @var string[] Patterns that contain wildcard anywhere else than in the end */
 	protected $aRegex = [];
@@ -135,7 +134,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	public function mangleArray( array $array ): array {
 		$out = [];
 		foreach ( $array as $key => $value ) {
-			$out[$this->mangle( $key )] = $value;
+			$out[$this->mangle( (string)$key )] = $value;
 		}
 
 		return $out;

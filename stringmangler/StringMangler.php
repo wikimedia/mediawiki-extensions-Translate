@@ -1,9 +1,5 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 /**
  * Interface that key-mangling classes must implement. Mangling is done to:
@@ -14,6 +10,8 @@
  * The operations have to be reversible so that
  * x equals unmangle( mangle( x ) ).
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2020.04 Interface was changed.
  */
 interface StringMangler {
