@@ -1317,12 +1317,5 @@
 		"editpage": {
 			"translate": true
 		}
-	},
-	"attributes": {
-		"VisualEditor": {
-			"PluginModules": [
-				"ext.translate.ve"
-			]
-		}
 	}
 }
