@@ -146,6 +146,19 @@
 				sourceUnits.push( sUnit );
 			}
 			return sourceUnits;
+		} ).fail( function ( code, result ) {
+			// Incase the group does not exist, just return an empty array.
+			if (
+				code === 'badparameter' &&
+				result.error && result.error.info.indexOf( 'mcgroup' ) !== -1
+			) {
+				return [];
+			}
+
+			$( '.mw-tpm-sp-error__message' )
+				.text( mw.msg( 'pm-translation-unit-fetch-failed' ) )
+				.removeClass( 'hide' );
+			$.Deferred().reject();
 		} );
 	}
 

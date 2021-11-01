@@ -237,6 +237,7 @@
 	"pm-summary-import": "Edit summary used while creating translation pages which were imported using [[Special:PageMigration]], see [[mw:Help:Extension:Translate/Page_translation_administration#Migrating to page translation]]",
 	"pm-on-import-message-text": "Message shown at Special:PageMigration after importing the translations",
 	"pm-on-save-message-text": "Message shown at Special:PageMigration after saving the translation units",
+	"pm-translation-unit-fetch-failed": "Error message shown at Special:PageMigration when fetching the translation unit fails",
 	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
 	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool",
 	"pagepreparation": "{{doc-special|PageMigration}}",

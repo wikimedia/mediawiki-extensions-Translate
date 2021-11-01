@@ -214,6 +214,7 @@
 	"pm-summary-import": "Imported translation using [[Special:PageMigration|page migration]]",
 	"pm-on-import-message-text": "The old translations have been imported. Use the add, swap and delete options to adjust the translation units and click the \"{{int:pm-savepages-button-label}}\" button to save them. Click the \"{{int:pm-cancel-button-label}}\" button to discard.",
 	"pm-on-save-message-text": "The translation units have been saved. You can now enter the title of a new translation page to migrate it, or make changes to the units below and save a new revision.",
+	"pm-translation-unit-fetch-failed": "There was an error while fetching the translation units for the page.",
 	"tpt-translate-title": "Allow translation of page title",
 	"pp-save-summary": "Prepared the page for translation",
 	"pagepreparation": "Prepare page for translation",
