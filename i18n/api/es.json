@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bruno44101",
 			"Canaan9801",
 			"Csbotero",
 			"Dgstranz",
@@ -122,5 +123,8 @@
 	"apierror-translate-unknownmessage": "Mensaje desconocido",
 	"apierror-translate-invalid-changeset-name": "Ha pasado un conjunto de cambios de nombre de archivo no válido - $1",
 	"apiwarn-translate-alreadyreviewedbyyou": "Ya la marcaste como revisada",
-	"apiwarn-translate-language-disabled-source": "El idioma original de este grupo es el $1. Selecciona otro idioma al cual traducir."
+	"apiwarn-translate-language-disabled-source": "El idioma original de este grupo es el $1. Selecciona otro idioma al cual traducir.",
+	"apihelp-translationentitysearch-summary": "Buscar mensajes y grupos de mensajes",
+	"apihelp-translationentitysearch-param-query": "Consulta de búsqueda",
+	"apihelp-translationentitysearch-param-limit": "Número máximo de resultados de búsqueda"
 }

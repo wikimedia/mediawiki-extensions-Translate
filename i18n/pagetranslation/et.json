@@ -120,7 +120,7 @@
 	"pt-movepage-list-translation": "{{PLURAL:$1|Tõlkelehekülg|Tõlkeleheküljed}}",
 	"pt-movepage-list-section": "Tõlkeüksuse {{PLURAL:$1|lehekülg|leheküljed}}",
 	"pt-movepage-list-other": "{{PLURAL:$1|Muu alamlehekülg|Muud alamleheküljed}}",
-	"pt-movepage-list-count": "Teisaldamisele kuuluvad kokku $1 {{PLURAL:$1|lehekülg|lehekülge}} ja $2 {{PLURAL:$2|alamlehekülg|alamlehekülge}}.",
+	"pt-movepage-list-count": "Teisaldamisele kuuluvad kokku $1 {{PLURAL:$1|lehekülg|lehekülge}}, sealhulgas $2 {{PLURAL:$2|alamlehekülg|alamlehekülge}} ja $3 {{PLURAL:$3|arutelulehekülg|arutelulehekülge}}.",
 	"pt-movepage-legend": "Tõlgitava lehekülje teisaldamine",
 	"pt-movepage-current": "Praegune nimi:",
 	"pt-movepage-new": "Uus nimi:",
