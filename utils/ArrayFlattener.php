@@ -1,18 +1,20 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * Flattens message arrays for further processing. Supports parsing CLDR
  * plural messages and converting them into MediaWiki's {{PLURAL}} syntax
  * in a single message.
  *
- * @file
  * @author Niklas Laxström
  * @author Erik Moeller
  * @license GPL-2.0-or-later
  * @since 2016.01
  */
-
 class ArrayFlattener {
+	/** @var string */
 	protected $sep;
+	/** @var bool */
 	protected $parseCLDRPlurals;
 	// For CLDR pluralization rules
 	protected static $pluralWords = [
@@ -24,7 +26,7 @@ class ArrayFlattener {
 		'two' => 1
 	];
 
-	public function __construct( $sep = '.', $parseCLDRPlurals = false ) {
+	public function __construct( string $sep = '.', bool $parseCLDRPlurals = false ) {
 		$this->sep = $sep;
 		$this->parseCLDRPlurals = $parseCLDRPlurals;
 	}
@@ -35,7 +37,7 @@ class ArrayFlattener {
 	 * @param array $unflat Array of messages
 	 * @return array
 	 */
-	public function flatten( array $unflat ) {
+	public function flatten( array $unflat ): array {
 		$flat = [];
 
 		foreach ( $unflat as $key => $value ) {
@@ -76,7 +78,7 @@ class ArrayFlattener {
 	 * @throws MWException
 	 * @return bool|string
 	 */
-	public function flattenCLDRPlurals( $messages ) {
+	public function flattenCLDRPlurals( array $messages ) {
 		$hasNonPluralKeys = false;
 		$pluralKeys = [];
 		foreach ( $messages as $key => $value ) {
@@ -131,7 +133,7 @@ class ArrayFlattener {
 	 * @param array $flat Array of messages
 	 * @return array
 	 */
-	public function unflatten( $flat ) {
+	public function unflatten( array $flat ): array {
 		$unflat = [];
 
 		if ( $this->parseCLDRPlurals ) {
@@ -159,19 +161,19 @@ class ArrayFlattener {
 
 			$pointer = &$unflat;
 			do {
-				/// Extract the level and make sure it exists.
+				// Extract the level and make sure it exists.
 				$level = array_shift( $path );
 				if ( !isset( $pointer[$level] ) ) {
 					$pointer[$level] = [];
 				}
 
-				/// Update the pointer to the new reference.
+				// Update the pointer to the new reference.
 				$tmpPointer = &$pointer[$level];
 				unset( $pointer );
 				$pointer = &$tmpPointer;
 				unset( $tmpPointer );
 
-				/// If next level is the last, add it into the array.
+				// If next level is the last, add it into the array.
 				if ( count( $path ) === 1 ) {
 					$lastKey = array_shift( $path );
 					$pointer[$lastKey] = $value;
@@ -190,7 +192,7 @@ class ArrayFlattener {
 	 *
 	 * @return bool|array
 	 */
-	public function unflattenCLDRPlurals( $key, $message ) {
+	public function unflattenCLDRPlurals( string $key, string $message ) {
 		// Quick escape.
 		if ( strpos( $message, '{{PLURAL' ) === false ) {
 			return false;
@@ -279,7 +281,7 @@ class ArrayFlattener {
 	 * @param string $b
 	 * @return bool Whether two strings are equal
 	 */
-	public function compareContent( $a, $b ) {
+	public function compareContent( string $a, string $b ): bool {
 		if ( !$this->parseCLDRPlurals ) {
 			return $a === $b;
 		}
