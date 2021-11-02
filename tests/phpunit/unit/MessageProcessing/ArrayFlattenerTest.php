@@ -1,11 +1,11 @@
 <?php
-/**
- * @author Niklas Laxström
- * @file
- * @license GPL-2.0-or-later
- */
 
-/** @coversDefaultClass \ArrayFlattener */
+namespace MediaWiki\Extension\Translate\MessageProcessing;
+
+use MediaWikiUnitTestCase;
+use MWException;
+
+/** @coversDefaultClass \MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener */
 class ArrayFlattenerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideTestFlatten

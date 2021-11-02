@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+
 /**
  * Implements support for message storage in YAML format.
  *

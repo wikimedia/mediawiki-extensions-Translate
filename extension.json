@@ -87,7 +87,6 @@
 		"ApiTTMServer": "api/ApiTTMServer.php",
 		"AppleFFS": "ffs/AppleFFS.php",
 		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
-		"ArrayFlattener": "utils/ArrayFlattener.php",
 		"BaseValidatorTestCase": "tests/phpunit/unit/Validation/Validators/BaseValidatorTestCase.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
 		"CachedMessageIndex": "utils/MessageIndex.php",

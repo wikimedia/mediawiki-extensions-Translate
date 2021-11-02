@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+
 /**
  * JsonFFS implements a message format where messages are encoded
  * as key-value pairs in JSON objects. The format is extended to

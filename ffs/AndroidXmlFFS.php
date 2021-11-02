@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+
 /**
  * Support for XML translation format used by Android.
  * @since 2012-08-19

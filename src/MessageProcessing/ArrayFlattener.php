@@ -1,6 +1,11 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageProcessing;
+
+use MWException;
+use TranslateUtils;
+
 /**
  * Flattens message arrays for further processing. Supports parsing CLDR
  * plural messages and converting them into MediaWiki's {{PLURAL}} syntax
@@ -33,9 +38,7 @@ class ArrayFlattener {
 
 	/**
 	 * Flattens multidimensional array.
-	 *
 	 * @param array $unflat Array of messages
-	 * @return array
 	 */
 	public function flatten( array $unflat ): array {
 		$flat = [];
@@ -72,9 +75,6 @@ class ArrayFlattener {
 	/**
 	 * Flattens arrays that contain CLDR plural keywords into single values using
 	 * MediaWiki's plural syntax.
-	 *
-	 * @param array $messages Array of messages
-	 *
 	 * @throws MWException
 	 * @return bool|string
 	 */
@@ -129,9 +129,7 @@ class ArrayFlattener {
 
 	/**
 	 * Performs the reverse operation of flatten.
-	 *
 	 * @param array $flat Array of messages
-	 * @return array
 	 */
 	public function unflatten( array $flat ): array {
 		$unflat = [];
@@ -186,10 +184,6 @@ class ArrayFlattener {
 
 	/**
 	 * Converts the plural syntax to array of CLDR style plurals
-	 *
-	 * @param string $key Message key prefix
-	 * @param string $message The plural string
-	 *
 	 * @return bool|array
 	 */
 	public function unflattenCLDRPlurals( string $key, string $message ) {
@@ -274,13 +268,7 @@ class ArrayFlattener {
 		return $alts;
 	}
 
-	/**
-	 * Compares two strings for equal content, taking PLURAL expansion into account.
-	 *
-	 * @param string $a
-	 * @param string $b
-	 * @return bool Whether two strings are equal
-	 */
+	/** Compares two strings for equal content, taking PLURAL expansion into account. */
 	public function compareContent( string $a, string $b ): bool {
 		if ( !$this->parseCLDRPlurals ) {
 			return $a === $b;
