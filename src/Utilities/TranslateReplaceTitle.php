@@ -1,34 +1,29 @@
 <?php
-/**
- * Contains a helper class to help replace titles.
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use MessageHandle;
 use Title;
 use TitleArray;
-use TitleArrayFromResult;
 use TranslateUtils;
 
 /**
  * Helper class that cotains utility methods to help with identifying and replace titles.
+ * @author Abijeet Patro
  * @since 2019.10
+ * @license GPL-2.0-or-later
  */
 class TranslateReplaceTitle {
-
 	/**
 	 * Returns two lists: a set of message handles that would be moved/renamed by
 	 * the current text replacement, and the set of message handles that would ordinarily
 	 * be moved but are not movable, due to permissions or any other reason.
-	 * @param MessageHandle $sourceMessageHandle
-	 * @param string $replacement
 	 * @return Title[][]
 	 */
 	public static function getTitlesForMove(
-		MessageHandle $sourceMessageHandle, $replacement
-	) {
+		MessageHandle $sourceMessageHandle, string $replacement
+	): array {
 		$titlesForMove = [];
 		$namespace = $sourceMessageHandle->getTitle()->getNamespace();
 
@@ -52,11 +47,7 @@ class TranslateReplaceTitle {
 		return $titlesForMove;
 	}
 
-	/**
-	 * @param MessageHandle $handle
-	 * @return TitleArrayFromResult
-	 */
-	private static function getMatchingTitles( MessageHandle $handle ) {
+	private static function getMatchingTitles( MessageHandle $handle ): TitleArray {
 		$dbr = wfGetDB( DB_PRIMARY );
 
 		$tables = [ 'page' ];
