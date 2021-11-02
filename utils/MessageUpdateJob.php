@@ -9,9 +9,9 @@
  */
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateReplaceTitle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
-use MediaWiki\Extension\Translate\Utilities\TranslateReplaceTitle;
 use MediaWiki\MediaWikiServices;
 
 /**

@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extension\Translate\Utilities;
+namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MessageHandle;
 use Title;
