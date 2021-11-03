@@ -5,6 +5,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+
 /**
  * Utility class to parse and validate message group configurations.
  * @since 2014.01
@@ -124,6 +126,13 @@ class MessageGroupConfigurationParser {
 			}
 
 			$class = $section['class'];
+
+			// FIXME: UGLY HACK: StringMatcher is now under a namespace so use the fully prefixed
+			// class to check if it has the getExtraSchema method
+			if ( $class === 'StringMatcher' ) {
+				$class = StringMatcher::class;
+			}
+
 			// There is no sane way to check whether *class* implements interface in PHP
 			if ( !is_callable( [ $class, 'getExtraSchema' ] ) ) {
 				continue;
