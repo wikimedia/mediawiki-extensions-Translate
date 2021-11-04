@@ -331,7 +331,7 @@ class MessageSourceChange {
 	 * statement.
 	 * @param string $language
 	 * @param array $keysToRemove
-	 * @param string $type - One of ADDITION, CHANGE, DELETION
+	 * @param string $type One of ADDITION, CHANGE, DELETION
 	 */
 	public function removeBasedOnType( $language, $keysToRemove, $type ) {
 		$callable = $this->removeFunctionMap[ $type ] ?? null;
