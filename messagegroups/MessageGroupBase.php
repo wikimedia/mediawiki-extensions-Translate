@@ -119,9 +119,9 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getMangler() {
 		if ( !isset( $this->mangler ) ) {
-			$class = $this->getFromConf( 'MANGLER', 'class' ) ?? 'StringMatcher';
+			$class = $this->getFromConf( 'MANGLER', 'class' ) ?? StringMatcher::class;
 
-			if ( $class === 'StringMatcher' ) {
+			if ( $class === 'StringMatcher' || $class === StringMatcher::class ) {
 				$this->mangler = new StringMatcher();
 				$manglerConfig = $this->conf['MANGLER'] ?? null;
 				if ( $manglerConfig ) {
