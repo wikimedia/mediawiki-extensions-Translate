@@ -328,7 +328,6 @@
 		"MessageGroupStats": {
 			"class": "SpecialMessageGroupStats",
 			"services": [
-				"LinkBatchFactory",
 				"Translate:ProgressStatsTableFactory"
 			]
 		},

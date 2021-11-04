@@ -216,6 +216,40 @@ class StatsTable {
 		return $out;
 	}
 
+	public function makeWorkflowStateCell( ?string $state, MessageGroup $group, string $language ): string {
+		if ( $state === null ) {
+			return "\n\t\t" . $this->element( '', '', -1 );
+		}
+
+		if ( $group->getSourceLanguage() === $language ) {
+			return "\n\t\t" . $this->element( '', '', -1 );
+		}
+
+		$stateConfig = $group->getMessageGroupStates()->getStates();
+		$sortValue = -1;
+		$stateColor = '';
+		if ( isset( $stateConfig[$state] ) ) {
+			$sortIndex = array_flip( array_keys( $stateConfig ) );
+			$sortValue = $sortIndex[$state] + 1;
+
+			if ( is_string( $stateConfig[$state] ) ) {
+				// BC for old configuration format
+				$stateColor = $stateConfig[$state];
+			} elseif ( isset( $stateConfig[$state]['color'] ) ) {
+				$stateColor = $stateConfig[$state]['color'];
+			}
+		}
+
+		$stateMessage = $this->messageLocalizer->msg( "translate-workflow-state-$state" );
+		$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
+
+		return "\n\t\t" . $this->element(
+				$stateText,
+				$stateColor,
+				$sortValue
+			);
+	}
+
 	/**
 	 * Makes a nice print from plain float.
 	 * @param int|float $num

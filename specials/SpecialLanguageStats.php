@@ -24,42 +24,42 @@ use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
  */
 class SpecialLanguageStats extends SpecialPage {
 	/** @var StatsTable */
-	protected $table;
+	private $table;
 	/** @var array */
-	protected $targetValueName = [ 'code', 'language' ];
+	private $targetValueName = [ 'code', 'language' ];
 	/**
 	 * Most of the displayed numbers added together at the bottom of the table.
 	 */
-	protected $totals;
+	private $totals;
 	/**
 	 * Flag to set if nothing to show.
 	 * @var bool
 	 */
-	protected $nothing = false;
+	private $nothing = false;
 	/**
 	 * Flag to set if not all numbers are available.
 	 * @var bool
 	 */
-	protected $incomplete = false;
+	private $incomplete = false;
 	/**
 	 * Whether to hide rows which are fully translated.
 	 * @var bool
 	 */
-	protected $noComplete = true;
+	private $noComplete = true;
 	/**
 	 * Whether to hide rows which are fully untranslated.
 	 * @var bool
 	 */
-	protected $noEmpty = false;
+	private $noEmpty = false;
 	/**
 	 * The target of stats, language code or group id.
 	 */
-	protected $target;
+	private $target;
 	/**
 	 * Whether to regenerate stats. Activated by action=purge in query params.
 	 * @var bool
 	 */
-	protected $purge;
+	private $purge;
 	/**
 	 * Helper variable to avoid overcounting message groups that appear
 	 * multiple times in the list with different parents. Aggregate message
@@ -67,9 +67,9 @@ class SpecialLanguageStats extends SpecialPage {
 	 *
 	 * @var array
 	 */
-	protected $statsCounted = [];
+	private $statsCounted = [];
 	/** @var array */
-	protected $states;
+	private $states;
 	/** @var LinkBatchFactory */
 	private $linkBatchFactory;
 	/** @var ProgressStatsTableFactory */
@@ -99,7 +99,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 		$this->purge = $request->getVal( 'action' ) === 'purge';
 		if ( $this->purge && !$request->wasPosted() ) {
-			$this->showPurgeForm();
+			self::showPurgeForm( $this->getContext() );
 			return;
 		}
 
@@ -195,11 +195,11 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @param int $flags See MessageGroupStats for possible flags
 	 * @return array[]
 	 */
-	protected function loadStatistics( $target, $flags = 0 ) {
+	private function loadStatistics( $target, $flags = 0 ) {
 		return MessageGroupStats::forLanguage( $target, $flags );
 	}
 
-	protected function getCacheRebuildJobParameters( $target ) {
+	private function getCacheRebuildJobParameters( $target ) {
 		return [ 'languagecode' => $target ];
 	}
 
@@ -208,7 +208,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @param string $value
 	 * @return bool
 	 */
-	protected function isValidValue( $value ) {
+	private function isValidValue( $value ) {
 		$langs = Language::fetchLanguageNames();
 
 		return isset( $langs[$value] );
@@ -217,27 +217,27 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * Called when the target is unknown.
 	 */
-	protected function invalidTarget() {
+	private function invalidTarget() {
 		$this->getOutput()->wrapWikiMsg(
 			"<div class='error'>$1</div>",
 			'translate-page-no-such-language'
 		);
 	}
 
-	protected function showPurgeForm() {
+	public static function showPurgeForm( IContextSource $context ): void {
 		$formDescriptor = [
 			'intro' => [
 				'type' => 'info',
 				'vertical-label' => true,
 				'raw' => true,
-				'default' => $this->msg( 'confirm-purge-top' )->parse()
+				'default' => $context->msg( 'confirm-purge-top' )->parse()
 			],
 		];
 
-		$context = new DerivativeContext( $this->getContext() );
-		$requestValues = $this->getRequest()->getQueryValues();
+		$derivativeContext = new DerivativeContext( $context );
+		$requestValues = $derivativeContext->getRequest()->getQueryValues();
 
-		HTMLForm::factory( 'ooui', $formDescriptor, $context )
+		HTMLForm::factory( 'ooui', $formDescriptor, $derivativeContext )
 			->setWrapperLegendMsg( 'confirm-purge-title' )
 			->setSubmitTextMsg( 'confirm_purge_button' )
 			->addHiddenFields( $requestValues )
@@ -247,7 +247,7 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * HTMLForm for the top form rendering.
 	 */
-	protected function addForm() {
+	private function addForm() {
 		$formDescriptor = [
 			'language' => [
 				'type' => 'text',
@@ -298,7 +298,7 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * Output something helpful to guide the confused user.
 	 */
-	protected function outputIntroduction() {
+	private function outputIntroduction() {
 		$languageName = TranslateUtils::getLanguageName(
 			$this->target,
 			$this->getLanguage()->getCode()
@@ -322,7 +322,7 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * If workflow states are configured, adds a workflow states column
 	 */
-	protected function addWorkflowStatesColumn() {
+	private function addWorkflowStatesColumn() {
 		global $wgTranslateWorkflowStates;
 
 		if ( $wgTranslateWorkflowStates ) {
@@ -333,68 +333,16 @@ class SpecialLanguageStats extends SpecialPage {
 		}
 	}
 
-	/**
-	 * Returns the value of the workflow state for the given target.
-	 * @param string $target Whose workflow state we want, either the language code or group id
-	 * @return string Workflow state value
-	 */
-	protected function getWorkflowStateValue( $target ) {
-		return $this->states[$target] ?? '';
-	}
-
-	/**
-	 * If workflow states are configured, adds a cell with the workflow state to the row,
-	 * @param string $target Whose workflow state do we want, such as language code or group id.
-	 * @param string $state The workflow state id
-	 * @return string Html
-	 */
-	protected function getWorkflowStateCell( $target, $state ) {
+	private function getWorkflowStateCell( string $messageGroupId ): string {
 		// This will be set by addWorkflowStatesColumn if needed
 		if ( !isset( $this->states ) ) {
 			return '';
 		}
 
-		if ( $state === '' ) {
-			return "\n\t\t" . $this->table->element( '', '', -1 );
-		}
-
-		if ( $this instanceof SpecialMessageGroupStats ) {
-			// Same for every language
-			$group = MessageGroups::getGroup( $this->target );
-			$stateConfig = $group->getMessageGroupStates()->getStates();
-			$languageCode = $target;
-		} else {
-			// The message group for this row
-			$group = MessageGroups::getGroup( $target );
-			$stateConfig = $group->getMessageGroupStates()->getStates();
-			$languageCode = $this->target;
-		}
-
-		if ( $group->getSourceLanguage() === $languageCode ) {
-			return "\n\t\t" . $this->table->element( '', '', -1 );
-		}
-
-		$sortValue = -1;
-		$stateColor = '';
-		if ( isset( $stateConfig[$state] ) ) {
-			$sortIndex = array_flip( array_keys( $stateConfig ) );
-			$sortValue = $sortIndex[$state] + 1;
-
-			if ( is_string( $stateConfig[$state] ) ) {
-				// BC for old configuration format
-				$stateColor = $stateConfig[$state];
-			} elseif ( isset( $stateConfig[$state]['color'] ) ) {
-				$stateColor = $stateConfig[$state]['color'];
-			}
-		}
-
-		$stateMessage = $this->msg( "translate-workflow-state-$state" );
-		$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
-
-		return "\n\t\t" . $this->table->element(
-			$stateText,
-			$stateColor,
-			$sortValue
+		return $this->table->makeWorkflowStateCell(
+			$this->states[$messageGroupId] ?? null,
+			MessageGroups::getGroup( $messageGroupId ),
+			$this->target
 		);
 	}
 
@@ -403,7 +351,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @param array $stats
 	 * @return string HTML
 	 */
-	protected function getTable( $stats ) {
+	private function getTable( $stats ) {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();
@@ -456,7 +404,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @param MessageGroup|null $parent MessageGroup (do not use, used internally only)
 	 * @return string
 	 */
-	protected function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ) {
+	private function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ) {
 		if ( !is_array( $item ) ) {
 			return $this->makeGroupRow( $item, $cache, $parent );
 		}
@@ -482,7 +430,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @param MessageGroup|null $parent
 	 * @return string
 	 */
-	protected function makeGroupRow( MessageGroup $group, array $cache,
+	private function makeGroupRow( MessageGroup $group, array $cache,
 		MessageGroup $parent = null
 	) {
 		$groupId = $group->getId();
@@ -516,11 +464,9 @@ class SpecialLanguageStats extends SpecialPage {
 			$this->statsCounted[$groupId] = true;
 		}
 
-		$state = $this->getWorkflowStateValue( $groupId );
-
 		// Place any state checks like $this->incomplete above this
 		$params = $stats;
-		$params[] = $state;
+		$params[] = $this->states[$groupId] ?? '';
 		$params[] = md5( $groupId );
 		$params[] = $this->getLanguage()->getCode();
 		$params[] = md5( $this->target );
@@ -531,7 +477,7 @@ class SpecialLanguageStats extends SpecialPage {
 		return $cache->getWithSetCallback(
 			$cache->makeKey( __METHOD__ . '-v3', implode( '-', $params ) ),
 			$cache::TTL_DAY,
-			function () use ( $translated, $total, $groupId, $group, $parent, $stats, $state ) {
+			function () use ( $translated, $total, $groupId, $group, $parent, $stats ) {
 				// Any data variable read below should be part of the cache key above
 				$extra = [];
 				if ( $translated === $total ) {
@@ -553,7 +499,7 @@ class SpecialLanguageStats extends SpecialPage {
 						 [],
 						$this->table->makeGroupLink( $group, $this->target, $extra )
 					) . $this->table->makeNumberColumns( $stats ) .
-					$this->getWorkflowStateCell( $groupId, $state ) .
+					$this->getWorkflowStateCell( $groupId ) .
 					"\n\t" .
 					Html::closeElement( 'tr' ) .
 					"\n";
@@ -561,18 +507,18 @@ class SpecialLanguageStats extends SpecialPage {
 		);
 	}
 
-	protected function getWorkflowStates( $field = 'tgr_group', $filter = 'tgr_lang' ) {
+	private function getWorkflowStates() {
 		$db = wfGetDB( DB_REPLICA );
 		$res = $db->select(
 			'translate_groupreviews',
-			[ 'tgr_state', $field ],
-			[ $filter => $this->target ],
+			[ 'tgr_state', 'tgr_group' ],
+			[ 'tgr_lang' => $this->target ],
 			__METHOD__
 		);
 
 		$states = [];
 		foreach ( $res as $row ) {
-			$states[$row->$field] = $row->tgr_state;
+			$states[$row->tgr_group] = $row->tgr_state;
 		}
 
 		return $states;
