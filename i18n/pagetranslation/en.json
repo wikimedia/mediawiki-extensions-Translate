@@ -239,7 +239,7 @@
 	"tpt-validation-name-reuse": "Translation variable \"$1\" is defined multiple times with different content. Change the variable names to be unique within the translation unit.",
 	"visualeditor-annotations-translate-start": "Start of content to be translated",
 	"visualeditor-annotations-translate-end": "End of content to be translated",
-	"visualeditor-annotations-translate-description": "This range is marked as translatable. Please make sure you follow the guidelines of [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text].",
+	"visualeditor-annotations-translate-description": "This range is marked as translatable. Please make sure you follow the guidelines given for [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text changing the source text].",
 	"visualeditor-annotations-tvar-start": "Start of the untranslatable content",
 	"visualeditor-annotations-tvar-end": "End of the untranslatable content",
 	"visualeditor-annotations-tvar-description": "This range is marked as untranslatable. Please refer to [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] for more information."
