@@ -107,6 +107,7 @@ class TranslateSandbox {
 		if ( version_compare( MW_VERSION, '1.37', '>=' ) ) {
 			MediaWikiServices::getInstance()->getActorStore()->deleteActor( $user, $dbw );
 		} else {
+			// MW < 1.37
 			$dbw->delete( 'actor', [ 'actor_user' => $uid ], __METHOD__ );
 			// In case we create an user with same name as was deleted during the same
 			// request, we must also reset this cache or the User class will try to load
@@ -116,6 +117,7 @@ class TranslateSandbox {
 			// inserting a new user fails because the mName properpty is set to null,
 			// which is then converted as the ip of the current user, and trying to
 			// add that twice results in a name conflict. It was fun to debug.
+			// @phan-suppress-next-line PhanUndeclaredStaticMethod
 			User::resetIdByNameCache();
 		}
 		// Assume no joins are needed for logging or recentchanges
