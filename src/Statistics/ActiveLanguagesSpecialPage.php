@@ -39,6 +39,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private $configHelper;
 	/** @var Language */
 	private $contentLanguage;
+	/** @var ProgressStatsTableFactory */
+	private $progressStatsTableFactory;
 	/** @var StatsTable */
 	private $progressStatsTable;
 	/** @var int Cutoff time for inactivity in days */
@@ -64,7 +66,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->loadBalancer = $loadBalancer;
 		$this->configHelper = $configHelper;
 		$this->contentLanguage = $contentLanguage;
-		$this->progressStatsTable = $progressStatsTableFactory->newFromContext( $this->getContext() );
+		$this->progressStatsTableFactory = $progressStatsTableFactory;
 	}
 
 	protected function getGroupName() {
@@ -78,6 +80,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
+		$this->progressStatsTable = $this->progressStatsTableFactory->newFromContext( $this->getContext() );
 
 		$this->setHeaders();
 		$out->addModuleStyles( 'ext.translate.specialpages.styles' );

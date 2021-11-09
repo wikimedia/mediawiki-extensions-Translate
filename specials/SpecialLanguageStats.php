@@ -80,8 +80,6 @@ class SpecialLanguageStats extends SpecialPage {
 		ProgressStatsTableFactory $progressStatsTableFactory
 	) {
 		parent::__construct( 'LanguageStats' );
-
-		$this->target = $this->getLanguage()->getCode();
 		$this->totals = MessageGroupStats::getEmptyStats();
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
@@ -96,6 +94,7 @@ class SpecialLanguageStats extends SpecialPage {
 	}
 
 	public function execute( $par ) {
+		$this->target = $this->getLanguage()->getCode();
 		$request = $this->getRequest();
 
 		$this->purge = $request->getVal( 'action' ) === 'purge';
