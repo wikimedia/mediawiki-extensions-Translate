@@ -123,15 +123,13 @@ class ExternalMessageSourceStateComparator {
 	protected function addMessageUpdateChanges(
 		FileBasedMessageGroup $group, $language, MessageSourceChange $changes, $reason, $cache
 	) {
-		/* This throws a warning if message definitions are not yet
-		 * cached and will read the file for definitions. */
-		// phpcs:disable Generic.PHP.NoSilencedErrors.Discouraged
-		$wiki = @$group->initCollection( $language );
+		// initCollection returns empty list before first import
+		$wiki = $group->initCollection( $language );
 		$wiki->filter( 'hastranslation', false );
 		$wiki->loadTranslations();
 		$wikiKeys = $wiki->getMessageKeys();
-		$sourceLanguage = $group->getSourceLanguage();
 
+		$sourceLanguage = $group->getSourceLanguage();
 		// By-pass cached message definitions
 		$ffs = $group->getFFS();
 		if ( $language === $sourceLanguage && !$ffs->exists( $language ) ) {

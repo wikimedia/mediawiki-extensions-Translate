@@ -69,9 +69,8 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		return new $class( $this );
 	}
 
-	public function exists() {
-		$ffs = $this->getFFS();
-		return $ffs->exists();
+	public function exists(): bool {
+		return $this->getMessageGroupCache( $this->getSourceLanguage() )->exists();
 	}
 
 	public function load( $code ) {
@@ -244,10 +243,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		$messages = [];
 
 		$cache = $this->getMessageGroupCache( $this->getSourceLanguage() );
-		if ( !$cache->exists() ) {
-			wfWarn( "By-passing message group cache for {$this->getId()}" );
-			$messages = $this->getDefinitions();
-		} else {
+		if ( $cache->exists() ) {
 			foreach ( $cache->getKeys() as $key ) {
 				$messages[$key] = $cache->get( $key );
 			}

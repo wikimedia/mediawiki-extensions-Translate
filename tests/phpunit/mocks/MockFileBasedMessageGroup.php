@@ -9,15 +9,15 @@
  */
 
 class MockFileBasedMessageGroup extends FileBasedMessageGroup {
-	public function load( $code ) {
+	public function load( $code ): array {
 		return [ $this->getId() . '-messagekey' => 'üga' ];
 	}
 
-	public function exists() {
+	public function exists(): bool {
 		return true;
 	}
 
-	public function getKeys() {
+	public function getKeys(): array {
 		return array_keys( $this->load( 'en' ) );
 	}
 }
