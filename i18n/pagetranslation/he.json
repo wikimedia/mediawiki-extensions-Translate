@@ -218,6 +218,7 @@
 	"pm-summary-import": "דף מיובא באמצעות [[Special:PageMigration|העברת דף מתורגם]]",
 	"pm-on-import-message-text": "התרגומים הישנים יובאו. יש להשתמש באפשרויות ההוספה, ההחלפה והמחיקה כדי להתאים את יחידות התרגום וללחוץ על כפתור \"{{int:pm-savepages-button-label}}\" כדי לשמור אותם. יש ללחוץ על כפתור \"{{int:pm-cancel-button-label}}\" כדי לזרוק.",
 	"pm-on-save-message-text": "יחידות התרגום נשמרו. עכשיו אפשר להזין את כותרת התרגום החדש כדי להעביר אותו, או לעשות שינויים ליחידות להלן ולשמור גרסה חדשה.",
+	"pm-translation-unit-fetch-failed": "אירעה שגיאה בעת אחזור יחידות תרגומים עבור הדף.",
 	"tpt-translate-title": "לאפשר תרגום של כותרת הדף",
 	"pp-save-summary": "הדף הוכן לתרגום",
 	"pagepreparation": "הכנת דף",

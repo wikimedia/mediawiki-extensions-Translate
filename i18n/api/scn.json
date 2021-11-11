@@ -6,6 +6,14 @@
 	},
 	"apihelp-groupreview-param-language": "Còdici dâ lingua.",
 	"apihelp-query+languagestats-param-language": "Còdici dâ lingua.",
+	"apihelp-query+messagecollection-param-group": "Gruppu di missaggi.",
 	"apihelp-query+messagecollection-param-language": "Còdici dâ lingua.",
-	"apihelp-translationstash-param-subaction": "Azzioni."
+	"apihelp-query+messagegroups-example-1": "Ammustra li gruppi di missaggi",
+	"apihelp-query+messagegroupstats-param-group": "ID gruppu di missaggi.",
+	"apihelp-managemessagegroups-param-groupId": "ID dû gruppu",
+	"apihelp-translationstash-param-subaction": "Azzioni.",
+	"apierror-translate-duplicateaggregategroup": "Lu gruppu di missaggi già esisti",
+	"apierror-translate-invalidlanguage": "Lu còdici lingua $1 nun è vàliddu.",
+	"apierror-translate-sandbox-invalidppassword": "Password nun vàlidda",
+	"apierror-translate-unknownmessage": "Missaggiu scanusciutu"
 }

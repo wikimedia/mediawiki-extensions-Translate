@@ -221,6 +221,7 @@
 	"pm-summary-import": "Übersetzung importiert mithilfe der [[Special:PageMigration|Seitenmigration]]",
 	"pm-on-import-message-text": "Die alten Übersetzungen wurden importiert. Verwende die Hinzufügungs-, Tausch- und Löschoptionen, um die Übersetzungseinheiten anzupassen und klicke auf die Schaltfläche „{{int:pm-savepages-button-label}}“, um sie zu speichern oder zum Verwerfen auf die Schaltfläche „{{int:pm-cancel-button-label}}“.",
 	"pm-on-save-message-text": "Die Übersetzungseinheiten wurden gespeichert. Du kannst jetzt zur Migration den Titel einer neuen Übersetzungsseite eingeben oder unten Änderungen an den Einheiten durchführen und eine neue Version speichern.",
+	"pm-translation-unit-fetch-failed": "Beim Abrufen der Übersetzungseinheiten für diese Seite ist ein Fehler aufgetreten.",
 	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben",
 	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor",
 	"pagepreparation": "Seite zur Übersetzung vorbereiten",
@@ -242,5 +243,11 @@
 	"tpt-generic-confirm": "Bitte bestätige die Aktion.",
 	"tpt-generic-button": "Bestätigen",
 	"tpt-validation-not-insertable": "Der Name der Übersetzungsvariablen „$1“ kann nicht in die Übersetzungsschnittstelle eingefügt werden. Vermeide die Verwendung von Sonderzeichen.",
-	"tpt-validation-name-reuse": "Die Übersetzungsvariable „$1“ ist mehrfach mit unterschiedlichem Inhalt definiert. Ändere die Variablennamen so, dass sie innerhalb der Übersetzungseinheit eindeutig sind."
+	"tpt-validation-name-reuse": "Die Übersetzungsvariable „$1“ ist mehrfach mit unterschiedlichem Inhalt definiert. Ändere die Variablennamen so, dass sie innerhalb der Übersetzungseinheit eindeutig sind.",
+	"visualeditor-annotations-translate-start": "Beginn des zu übersetzenden Inhalts",
+	"visualeditor-annotations-translate-end": "Ende des zu übersetzenden Inhalts",
+	"visualeditor-annotations-translate-description": "Dieser Bereich ist als übersetzbar gekennzeichnet. Bitte stelle sicher, dass du die Richtlinien für [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Änderung des Quelltextes] befolgst.",
+	"visualeditor-annotations-tvar-start": "Beginn des nicht übersetzbaren Inhalts",
+	"visualeditor-annotations-tvar-end": "Ende des nicht übersetzbaren Inhalts",
+	"visualeditor-annotations-tvar-description": "Dieser Bereich ist als nicht übersetzbar gekennzeichnet. Weitere Informationen findest du unter [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentierung des Ausgangstextes]."
 }
