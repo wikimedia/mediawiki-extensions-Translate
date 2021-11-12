@@ -11,6 +11,7 @@
 			"Priviet",
 			"Revi",
 			"Tyey",
+			"Underbaaar",
 			"Ykhwong",
 			"렌즈",
 			"아라"
@@ -202,5 +203,6 @@
 	"pp-pagename-missing": "문서 이름을 입력하세요.",
 	"pp-diff-old-header": "원래 텍스트",
 	"tpt-unlink-button": "번역에서 제거",
-	"tpt-unlink-summary": "번역에서 문서 제거"
+	"tpt-unlink-summary": "번역에서 문서 제거",
+	"visualeditor-annotations-translate-description": "이 항목은 번역이 가능하도록 분류되었습니다. [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text changing the source text]에서 편집방침을 확인해 주십시오."
 }

@@ -6,9 +6,11 @@
 			"咽頭べさ"
 		]
 	},
+	"translate-taction-proofread": "ထွားစဲစ်ချာ",
 	"prefs-translate": "ပြန်ႏဘာႏသာႏ လွိုက်ရွေꩻခရာႏဖုံႏ",
 	"translate-rcfilters-translations": "ဘာႏသာႏပြန်ႏဖုံႏ",
 	"translate-sidebar-alltrans": "တွမ်ႏဘာႏသာႏလင်ဖုံႏအကို",
+	"translate-total": "မဲက်သေ့ဖိုင်ႏ",
 	"translate-untranslated": "ပြန်ႏဗာႏဒွိုန်းဘာႏသာႏ",
 	"translate-percentage-fuzzy": "ထဲ့ဆုဲင်ꩻထိုꩻခေတ်",
 	"translate-smg-group-message-tag-outdated": "ထဲ့ဆုဲင်ꩻထိုꩻခေတ်",
@@ -16,14 +18,23 @@
 	"translate-searchprofile": "ဘာႏသာႏပြန်ႏဖုံႏ",
 	"tux-tab-untranslated": "ပြန်ႏဗာႏဒွိုန်းဘာႏသာႏ",
 	"tux-tab-outdated": "ထဲ့ဆုဲင်ꩻထိုꩻခေတ်",
+	"tux-tab-translated": "ပြန်ႏခါꩻဒါႏဘာႏသာႏ",
 	"tux-status-fuzzy": "ထဲ့ဆုဲင်ꩻထိုꩻခေတ်",
+	"tux-status-translated": "ပြန်ႏခါꩻဒါႏဘာႏသာႏ",
+	"tux-save-unknown-error": "သေတဝ်းအကျောင်ꩻခရာႏ အမာႏတဗာႏ ထွာထိုꩻသွူ။",
 	"tux-editor-placeholder": "နာꩻဘာႏသာႏပြန်ႏ",
 	"tux-editor-editsummary-placeholder": "မိဉ်ႏမဲဉ်သော့ꩻတဲ့ သော့ꩻနွောင်ꩻဒျာႏ အအဲဉ်ႏ",
 	"tux-editor-paste-original-button-label": "ထူႏပွာꩻဗိုန် လိတ်ယာႏအရွီးခိုႏ",
 	"tux-editor-save-button-label": "သိမ်ꩻဘာႏသာႏပြန်ႏယို",
 	"tux-editor-skip-button-label": "ကာႏငါလွေꩻ ထဲင်းတဗာႏ",
 	"tux-editor-shortcut-info": "သိမ်ꩻတာႏ နျꩻသွော့ \"$1\" တဝ်းလဲ့ ကာႏငါထိုꩻ ထဲင်းတဗာႏ၊ နျꩻသွော့ \"$2\" တဝ်းလဲ့ အွဥ်ႏနယ်အအဲဥ်ႏတာႏ နျꩻသွော့ \"$4\" တဝ်းလဲ့ အမုဲင်ဒွောင်းအလင်တာႏ နျꩻသွော \"$3\"။",
+	"tux-editor-edit-desc": "မွဉ်းဖျင် လိတ်စေးလာႏ",
 	"tux-editor-in-other-languages": "တွမ်ႏဘာႏသာႏလင်ဖုံႏအကို",
 	"tux-editor-need-more-help": "အဝ်ႏလိုႏထဲင်းယင်းနေ အကူႏညီႏ?",
-	"tux-editor-ask-help": "ရီထဲင်းယင်း အချက်လက်တာႏ"
+	"tux-editor-ask-help": "ရီထဲင်းယင်း အချက်လက်တာႏ",
+	"tux-editor-save-failed": "ဒင်ႏထင်ႏ ဘာႏသာႏပြန်ႏမုꩻ အောင်ႏမျင်ႏတဝ်း: $1",
+	"tux-editor-message-desc-more": "ထွားသမ်းထဲင်း",
+	"tux-editor-clear-translated": "ပလို့ꩻ ပြန်ႏထွူဒါႏဘာႏသာႏ",
+	"tux-editor-proofreading-mode": "ထွားစဲစ်ချာ",
+	"tux-message-filter-result": "\"$2\" အတာႏ {{PLURAL:$1|လꩻလဒ်|မော့ꩻလဲဉ်းဒျာႏ လꩻလဒ်}} $1 ဖိုင်ႏသွူ"
 }
