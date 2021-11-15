@@ -8,6 +8,7 @@
 			"Ex13",
 			"MaGa",
 			"Neptune, the Mystic",
+			"Ponor",
 			"Roberta F.",
 			"SpeedyGonsales",
 			"Tivek"
@@ -271,7 +272,7 @@
 	"tux-status-translated": "Prevedeno",
 	"tux-status-saving": "Objavljivanje...",
 	"tux-status-unsaved": "Neobjavljeno",
-	"tux-save-unknown-error": "Nepoznata se pogrješka dogodila.",
+	"tux-save-unknown-error": "Dogodila se nepoznata pogreška.",
 	"tux-editor-placeholder": "Vaš prijevod",
 	"tux-editor-editsummary-placeholder": "Neobvezan sažetak",
 	"tux-editor-paste-original-button-label": "Zalijepi izvorni tekst",
