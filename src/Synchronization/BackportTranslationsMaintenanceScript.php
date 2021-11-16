@@ -86,7 +86,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$neverExportLanguages = $this->csv2array(
 			$this->getOption( 'never-export-languages' ) ?? ''
 		);
-		$supportedLanguages = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
+		$supportedLanguages = TranslateUtils::getLanguageNames( 'en' );
 
 		foreach ( $groups as $group ) {
 			$groupId = $group->getId();
@@ -132,7 +132,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			}
 
 			$summary = [];
-			$languages = $group->getTranslatableLanguages() ?? $supportedLanguages;
+			$languages = array_keys( $group->getTranslatableLanguages() ?? $supportedLanguages );
 			$languagesToSkip = $neverExportLanguages;
 			$languagesToSkip[] = $sourceLanguage;
 			$languages = array_diff( $languages, $languagesToSkip );
