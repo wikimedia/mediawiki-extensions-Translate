@@ -91,7 +91,9 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		foreach ( $groups as $group ) {
 			$groupId = $group->getId();
 			if ( !$group instanceof FileBasedMessageGroup ) {
-				$this->error( "Skipping $groupId: Not instance of FileBasedMessageGroup" );
+				if ( !$this->hasOption( 'filter-path' ) ) {
+					$this->error( "Skipping $groupId: Not instance of FileBasedMessageGroup" );
+				}
 				continue;
 			}
 
