@@ -25,10 +25,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	protected $cache;
 	/** @var IDatabase */
 	protected $db;
-	/**
-	 * List of groups
-	 * @var array|null
-	 */
+	/** @var AggregateMessageGroup[]|null */
 	protected $groups;
 
 	public function __construct( IDatabase $db, MessageGroupWANCache $cache ) {

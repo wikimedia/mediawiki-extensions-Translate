@@ -85,6 +85,10 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		return $this->definitions;
 	}
 
+	/**
+	 * @param string[] $keys
+	 * @return string[]
+	 */
 	public function makeGroupKeys( array $keys ): array {
 		$prefix = $this->getTitle()->getPrefixedDBkey() . '/';
 		foreach ( $keys as $index => $key ) {
