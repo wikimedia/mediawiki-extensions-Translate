@@ -44,9 +44,10 @@
 	],
 	"support": {
 		"issues": "https://phabricator.wikimedia.org/tag/mediawiki-extensions-translate/",
-		"irc": "irc://irc.libera.chat/translatewiki",
+		"irc": "irc://irc.libera.chat/wikimedia-language",
 		"forum": "https://www.mediawiki.org/wiki/Extension_talk:Translate",
-		"wiki": "https://www.mediawiki.org/wiki/Extension:Translate"
+		"wiki": "https://www.mediawiki.org/wiki/Extension:Translate",
+		"docs": "https://www.mediawiki.org/wiki/Help:Extension:Translate"
 	},
 	"require": {
 		"php": ">=7.2",
