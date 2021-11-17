@@ -76,11 +76,9 @@ class YamlTests extends Maintenance {
 			}
 		}
 
-		foreach ( $groups as $i => $group ) {
-			$groups[$i] = MessageGroupConfigurationParser::mergeTemplate( $template, $group );
-		}
-
-		return $groups;
+		return array_map( static function ( array $group ) use ( $template ): array {
+			return MessageGroupConfigurationParser::mergeTemplate( $template, $group );
+		}, $groups );
 	}
 
 	public static function sortNestedArrayAssoc( &$a ) {

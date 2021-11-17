@@ -43,14 +43,14 @@ class PageTranslationLogFormatter extends LogFormatter {
 				$languages = $legacy['languages'];
 				if ( $languages !== false ) {
 					$lang = $this->context->getLanguage();
+					$inLanguage = $lang->getCode();
 
 					$languages = array_map(
-						'trim',
+						static function ( string $code ) use ( $inLanguage ): string {
+							return TranslateUtils::getLanguageName( trim( $code ), $inLanguage );
+						},
 						preg_split( '/,/', $languages, -1, PREG_SPLIT_NO_EMPTY )
 					);
-					$languages = array_map( static function ( $code ) use ( $lang ) {
-						return TranslateUtils::getLanguageName( $code, $lang->getCode() );
-					}, $languages );
 
 					$params[4] = $lang->listToText( $languages );
 				}

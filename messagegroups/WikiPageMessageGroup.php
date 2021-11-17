@@ -91,10 +91,9 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 	 */
 	public function makeGroupKeys( array $keys ): array {
 		$prefix = $this->getTitle()->getPrefixedDBkey() . '/';
-		foreach ( $keys as $index => $key ) {
-			$keys[$index] = $prefix . str_replace( ' ', '_', $key );
-		}
-		return $keys;
+		return array_map( static function ( string $key ) use ( $prefix ): string {
+			return $prefix . str_replace( ' ', '_', $key );
+		}, $keys );
 	}
 
 	/**

@@ -15,13 +15,9 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
  */
 class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 	public static function provideTestFiles() {
-		$dir = __DIR__;
-		$testFiles = glob( "$dir/pagetranslation/*.ptfile" );
-		foreach ( $testFiles as $i => $file ) {
-			$testFiles[$i] = [ basename( $file, '.ptfile' ), $file ];
+		foreach ( glob( __DIR__ . '/pagetranslation/*.ptfile' ) as $file ) {
+			yield [ basename( $file, '.ptfile' ), $file ];
 		}
-
-		return $testFiles;
 	}
 
 	/** @dataProvider provideTestFiles */

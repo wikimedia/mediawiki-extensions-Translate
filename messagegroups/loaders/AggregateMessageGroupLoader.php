@@ -48,8 +48,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 */
 	public function getGroups() {
 		if ( $this->groups === null ) {
-			$cacheData = $this->cache->getValue();
-			$this->groups = $this->initGroupsFromConf( $cacheData );
+			$this->groups = $this->initGroupsFromConf( $this->cache->getValue() );
 		}
 
 		return $this->groups;
@@ -88,9 +87,9 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	/**
 	 * Get all the aggregate messages groups defined in translate_metadata table
 	 * and return their configuration
-	 * @return array
+	 * @return array[]
 	 */
-	public function getCacheData() {
+	public function getCacheData(): array {
 		$tables = [ 'translate_metadata' ];
 		$field = 'tmd_group';
 		$conds = [ 'tmd_key' => 'subgroups' ];
@@ -120,18 +119,18 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 *
 	 * @return AggregateMessageGroup[]
 	 */
-	public function loadAggregateGroups() {
+	public function loadAggregateGroups(): array {
 		// get the data from the database everytime
-		$groupConf = $this->getCacheData();
-		return $this->initGroupsFromConf( $groupConf );
+		// @phan-suppress-next-line PhanTypeMismatchReturn type is guaranteed via getCacheData above
+		return $this->initGroupsFromConf( $this->getCacheData() );
 	}
 
-	protected function initGroupsFromConf( $groups ) {
-		foreach ( $groups as $id => $conf ) {
-			$groups[ $id ] = MessageGroupBase::factory( $conf );
-		}
-
-		return $groups;
+	/**
+	 * @param array[] $groups
+	 * @return MessageGroup[]
+	 */
+	protected function initGroupsFromConf( array $groups ): array {
+		return array_map( [ MessageGroupBase::class, 'factory' ], $groups );
 	}
 
 	/**

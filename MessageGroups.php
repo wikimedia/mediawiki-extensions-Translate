@@ -8,6 +8,7 @@
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
+
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\MediaWikiServices;
 
@@ -337,11 +338,9 @@ class MessageGroups {
 	 */
 	public static function labelExists( $name ) {
 		$loader = AggregateMessageGroupLoader::getInstance();
-		$groups = $loader->loadAggregateGroups();
-		$labels = array_map( static function ( $g ) {
-			/** @var MessageGroup $g */
+		$labels = array_map( static function ( MessageGroupBase $g ) {
 			return $g->getLabel();
-		}, $groups );
+		}, $loader->loadAggregateGroups() );
 		return in_array( $name, $labels, true );
 	}
 
@@ -525,11 +524,9 @@ class MessageGroups {
 		}
 
 		// And finally explode the strings
-		foreach ( $paths as $index => $pathString ) {
-			$paths[$index] = explode( '|', $pathString );
-		}
-
-		return $paths;
+		return array_map( static function ( string $pathString ): array {
+			return explode( '|', $pathString );
+		}, $paths );
 	}
 
 	/** @return self */
