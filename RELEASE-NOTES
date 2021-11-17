@@ -1,0 +1,6 @@
+== Translate 2021.11 ==
+Released at 2021-11-17.
+
+=== Noteworthy changes ===
+* * Fix compatibility with MediaWiki <= 1.37 when VisualEditor is installed.
+([[phab:T294605|Phab:T294605]])
