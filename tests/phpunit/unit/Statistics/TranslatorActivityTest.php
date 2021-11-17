@@ -47,7 +47,7 @@ class TranslatorActivityTest extends MediaWikiUnitTestCase {
 		$query
 			->method( 'inLanguage' )
 			->willReturn( $translators )
-			->with( $this->equalTo( $language ) );
+			->with( $language );
 		$jobQueue = $this->createMock( JobQueueGroup::class );
 		$jobQueue->expects( $this->never() )->method( 'push' );
 		$languageValidator = $this->createMock( LanguageNameUtils::class );
@@ -76,7 +76,7 @@ class TranslatorActivityTest extends MediaWikiUnitTestCase {
 		$query
 			->method( 'inLanguage' )
 			->willReturn( $translators )
-			->with( $this->equalTo( $language ) );
+			->with( $language );
 		$jobQueue = $this->createMock( JobQueueGroup::class );
 		$jobQueue->expects( $this->once() )->method( 'push' );
 		$languageValidator = $this->createMock( LanguageNameUtils::class );
@@ -110,7 +110,7 @@ class TranslatorActivityTest extends MediaWikiUnitTestCase {
 		$query
 			->method( 'inLanguage' )
 			->willReturn( $translators )
-			->with( $this->equalTo( $language ) );
+			->with( $language );
 		$jobQueue = $this->createMock( JobQueueGroup::class );
 		$jobQueue->expects( $this->never() )->method( 'push' );
 		$languageValidator = $this->createMock( LanguageNameUtils::class );
