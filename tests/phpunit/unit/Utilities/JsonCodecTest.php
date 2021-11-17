@@ -8,7 +8,6 @@ use JsonSerializable;
 use MediaWikiUnitTestCase;
 use MockJsonUnserializableSubClass;
 use MockJsonUnserializableSuperClass;
-use stdClass;
 use Wikimedia\Assert\PreconditionException;
 
 /**
@@ -30,9 +29,7 @@ class JsonCodecTest extends MediaWikiUnitTestCase {
 		yield 'Null' => [ null, json_encode( null ) ];
 		yield 'Array' => [ [ 1, 2, 3 ], json_encode( [ 1, 2, 3 ] ) ];
 		yield 'Assoc array' => [ [ 'a' => 'b' ], json_encode( [ 'a' => 'b' ] ) ];
-		$object = new stdClass();
-		$object->c = 'd';
-		yield 'Object' => [ (array)$object, json_encode( $object ) ];
+		yield 'Object' => [ [ 'c' => 'd' ], json_encode( (object)( [ 'c' => 'd' ] ) ) ];
 	}
 
 	/**
