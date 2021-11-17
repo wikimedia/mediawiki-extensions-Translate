@@ -472,7 +472,7 @@ class SpecialMessageGroupStats extends SpecialPage {
 	/**
 	 * Creates a simple message group options.
 	 *
-	 * @return array $options
+	 * @return array
 	 */
 	private function getGroupOptions() {
 		$options = [];

@@ -951,7 +951,7 @@ class SpecialManageGroups extends SpecialPage {
 	 * @param string $language
 	 * @param string $groupId
 	 * @param bool $isSourceLang
-	 * @return bool[] $response
+	 * @return bool[]
 	 * $response = [
 	 *   0 => (bool) True if rename is missing, false otherwise.
 	 *   1 => (bool) Was the current $id found?
