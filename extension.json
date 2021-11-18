@@ -988,6 +988,8 @@
 				"tpt-aggregategroup-remove-confirm",
 				"tpt-aggregategroup-update",
 				"tpt-aggregategroup-update-cancel",
+				"tpt-aggregategroup-expand-sub-group",
+				"tpt-aggregategroup-collapse-sub-group",
 				"tpt-invalid-group"
 			],
 			"targets": [

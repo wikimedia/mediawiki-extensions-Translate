@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use AggregateMessageGroup;
 use Html;
 use MediaWiki\Cache\LinkBatchFactory;
-use MessageGroup;
 use MessageGroups;
 use SpecialPage;
 use TranslateMetadata;
@@ -79,15 +78,9 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	}
 
 	protected function showAggregateGroup( AggregateMessageGroup $group ): string {
-		$out = '';
 		$id = $group->getId();
 		$label = $group->getLabel();
 		$desc = $group->getDescription( $this->getContext() );
-
-		$out .= Html::openElement(
-			'div',
-			[ 'class' => 'mw-tpa-group', 'data-groupid' => $id, 'data-id' => $this->htmlIdForGroup( $group ) ]
-		);
 
 		$edit = '';
 		$remove = '';
@@ -147,11 +140,16 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			);
 		}
 
+		// Not calling $parent->getGroups() because it has done filtering already
+		$subGroups = TranslateMetadata::getSubgroups( $id );
+		$shouldExpand = count( $subGroups ) <= 3;
+		$subGroupsId = $this->htmlIdForGroup( $group->getId(), 'tp-subgroup-' );
+
 		// Aggregate Group info div
 		$groupName = Html::rawElement(
 			'h2',
 			[ 'class' => 'tp-name' ],
-			htmlspecialchars( $label ) . $edit . $remove
+			$this->getGroupToggleIcon( $subGroupsId, $shouldExpand ) . htmlspecialchars( $label ) . $edit . $remove
 		);
 		$groupDesc = Html::element(
 			'p',
@@ -164,10 +162,20 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$groupName . $groupDesc
 		);
 
+		$out = Html::openElement(
+			'div',
+			[
+				'class' => 'mw-tpa-group js-mw-tpa-group' . ( $shouldExpand ? ' mw-tpa-group-open' : '' ),
+				'data-groupid' => $id,
+				'data-id' => $this->htmlIdForGroup( $group->getId() )
+			]
+		);
 		$out .= $groupInfo;
 		$out .= $editGroup;
-		$out .= $this->listSubgroups( $group );
+		$out .= Html::openElement( 'div', [ 'class' => 'tp-sub-groups', 'id' => $subGroupsId ] );
+		$out .= $this->listSubgroups( $id, $subGroups );
 		$out .= $select . $addButton;
+		$out .= Html::closeElement( 'div' );
 		$out .= '</div>';
 
 		return $out;
@@ -194,7 +202,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		// Add new group if user has permissions
 		if ( $this->hasPermission ) {
 			$out->addHTML(
-				"<br/><a class='tpt-add-new-group' href='#'>" .
+				"<a class='tpt-add-new-group' href='#'>" .
 					$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 					'</a>'
 			);
@@ -221,15 +229,12 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		}
 	}
 
-	private function listSubgroups( AggregateMessageGroup $parent ): string {
-		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-grouplist-' );
+	private function listSubgroups( string $groupId, array $subGroupIds ): string {
+		$id = $this->htmlIdForGroup( $groupId, 'mw-tpa-grouplist-' );
 		$out = Html::openElement( 'ol', [ 'id' => $id ] );
 
-		// Not calling $parent->getGroups() because it has done filtering already
-		$subgroupIds = TranslateMetadata::getSubgroups( $parent->getId() ) ?? [];
-
 		// Get the respective groups and sort them
-		$subgroups = MessageGroups::getGroupsById( $subgroupIds );
+		$subgroups = MessageGroups::getGroupsById( $subGroupIds );
 		'@phan-var WikiPageMessageGroup[] $subgroups';
 		uasort( $subgroups, [ MessageGroups::class, 'groupLabelSort' ] );
 
@@ -242,7 +247,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$lb->execute();
 
 		// Add missing invalid group ids back, not returned by getGroupsById
-		foreach ( $subgroupIds as $id ) {
+		foreach ( $subGroupIds as $id ) {
 			if ( !isset( $subgroups[$id] ) ) {
 				$subgroups[$id] = null;
 			}
@@ -272,10 +277,29 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		return $out;
 	}
 
-	private function htmlIdForGroup( MessageGroup $group, string $prefix = '' ): string {
-		$id = sha1( $group->getId() );
+	private function htmlIdForGroup( string $groupId, string $prefix = '' ): string {
+		$id = sha1( $groupId );
 		$id = substr( $id, 5, 8 );
 
 		return $prefix . $id;
+	}
+
+	private function getGroupToggleIcon( string $targetElementId, bool $shouldExpand ): string {
+		if ( $shouldExpand ) {
+			$title = $this->msg( 'tpt-aggregategroup-collapse-sub-group' );
+		} else {
+			$title = $this->msg( 'tpt-aggregategroup-expand-sub-group' );
+		}
+
+		return Html::linkButton(
+			'',
+			[
+				'title' => $title,
+				'class' => 'js-tp-toggle-groups tp-toggle-group-icon',
+				'role' => 'button',
+				'aria-expanded' => $shouldExpand ? 'true' : 'false',
+				'aria-controls' => $targetElementId
+			]
+		);
 	}
 }

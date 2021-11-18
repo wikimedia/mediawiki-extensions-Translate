@@ -18,6 +18,35 @@ a.tpt-add-new-group {
 	background: no-repeat scroll left center transparent;
 	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/add.svg );
 	padding-left: 20px;
+	display: inline-block;
+	margin-top: 1.5em;
+}
+
+span.tp-toggle-group {
+	font-size: 16px;
+	margin-right: 1em;
+	margin-left: 0.5em;
+}
+
+.tp-toggle-group-icon {
+	background: no-repeat scroll center center transparent;
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/expand.svg );
+	padding: 6px 16px;
+	background-size: 20px;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.mw-tpa-group.mw-tpa-group-open .tp-toggle-group-icon {
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/collapse.svg );
+}
+
+.mw-tpa-group .tp-sub-groups {
+	display: none;
+}
+
+.mw-tpa-group.mw-tpa-group-open .tp-sub-groups {
+	display: block;
 }
 
 input.tp-aggregategroup-add-name {
