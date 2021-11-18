@@ -242,6 +242,7 @@
 	"pm-summary-import": "Traduction importée en utilisant la [[Special:PageMigration|migration de page]]",
 	"pm-on-import-message-text": "Les anciennes traductions ont été importées. Utilisez les options ajouter, échanger et supprimer pour ajuster les unités de traduction et cliquez sur le bouton « {{int:pm-savepages-button-label}} » pour les enregistrer. Cliquez sur le bouton « {{int:pm-cancel-button-label}} » pour annuler.",
 	"pm-on-save-message-text": "Les unités de traduction ont été enregistrées. Vous pouvez maintenant entrer le titre d’une nouvelle page de traduction pour la faire migrer ou modifier les unités ci-dessous et enregistrer les changements dans une nouvelle version.",
+	"pm-translation-unit-fetch-failed": "Une erreur s'est produite lors de la récupération des modules de traduction de la page.",
 	"tpt-translate-title": "Autoriser la traduction du titre de la page",
 	"pp-save-summary": "Page préparée pour la traduction",
 	"pagepreparation": "Préparer la page pour sa traduction",
@@ -266,7 +267,7 @@
 	"tpt-validation-name-reuse": "La variable de traduction « $1 » est définie plusieurs fois avec un contenu différent. Changez les noms des variables afin qu’ils soient uniques au sein de l’unité de traduction.",
 	"visualeditor-annotations-translate-start": "Début du contenu à traduire",
 	"visualeditor-annotations-translate-end": "Fin du contenu à traduire",
-	"visualeditor-annotations-translate-description": "Cette partie est marquée comme étant traduisible. Assurez-vous que vous suivez les recommandations pour [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Changing_the_source_text Modifier le texte source].",
+	"visualeditor-annotations-translate-description": "Cette partie est marquée comme étant traduisible. Assurez-vous que vous suivez les recommandations données pour [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Changing_the_source_text modifier le texte source].",
 	"visualeditor-annotations-tvar-start": "Début du contenu intraduisible",
 	"visualeditor-annotations-tvar-end": "Fin du contenu intraduisible",
 	"visualeditor-annotations-tvar-description": "Cette partie est marquée comme intraduisible. Consultez la documentation sur la [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Segmentation Segmentation du texte source] pour plus d’informations."
