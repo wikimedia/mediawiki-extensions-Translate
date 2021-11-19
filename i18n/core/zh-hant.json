@@ -166,7 +166,7 @@
 	"translate-sidebar-alltrans": "其他翻譯",
 	"translations": "所有翻譯",
 	"translations-summary": "在下方輸入訊息名稱以顯示所有可用的翻譯。",
-	"translate-translations-no-message": "\"$1\" 不是可翻譯的訊息",
+	"translate-translations-no-message": "「$1」不是可翻譯的訊息",
 	"translate-translations-none": "沒有 \"$1\" 的翻譯",
 	"translate-translations-count": "找到 {{PLURAL:$1|1 筆翻譯|$1 筆翻譯}}。",
 	"translate-translations-fieldset-title": "訊息",

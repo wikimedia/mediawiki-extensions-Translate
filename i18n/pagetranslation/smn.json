@@ -8,7 +8,10 @@
 	"tpt-languages-legend": "Eres kielah:",
 	"tpt-languages-nonzero": "$1 ($2 % jurgâlum)",
 	"tpt-aggregategroup-add": "Lasseet",
+	"tpt-aggregategroup-save": "Vuorkkii",
+	"tpt-aggregategroup-update": "Vuorkkii",
 	"pt-movepage-subpages": "Sirde puoh vyelisiijđoid",
 	"pt-deletepage-subpages": "Siho puoh vyelisiijđoid",
-	"pt-deletepage-list-other": "Eres vyelisiijđoh"
+	"pt-deletepage-list-other": "Eres vyelisiijđoh",
+	"pm-savepages-button-label": "Vuorkkii"
 }
