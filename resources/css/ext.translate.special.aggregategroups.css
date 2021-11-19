@@ -61,6 +61,10 @@ div.hidden {
 	display: none;
 }
 
+.tp-edit-group {
+	margin-top: 1.5em;
+}
+
 .tp-aggregategroup-edit-name {
 	width: 250px;
 }
