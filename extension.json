@@ -762,6 +762,7 @@
 				"pm-on-save-message-text",
 				"pm-savepages-button-label",
 				"pm-cancel-button-label",
+				"pm-pagetitle-not-translatable",
 				"pm-translation-unit-fetch-failed",
 				"tpt-unknown-page"
 			],

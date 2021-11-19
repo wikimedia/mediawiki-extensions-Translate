@@ -102,6 +102,7 @@
 				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			}
+
 			// Page exists, but no edit by FuzzyBot
 			if ( obj.revisions === undefined ) {
 				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).removeClass( 'hide' );
@@ -148,15 +149,17 @@
 			return sourceUnits;
 		} ).fail( function ( code, result ) {
 			// Incase the group does not exist, just return an empty array.
+			var $errorContainer = $( '.mw-tpm-sp-error__message' );
+			var errorMessage = mw.msg( 'pm-translation-unit-fetch-failed' );
 			if (
 				code === 'badparameter' &&
 				result.error && result.error.info.indexOf( 'mcgroup' ) !== -1
 			) {
-				return [];
+				errorMessage = mw.msg( 'pm-pagetitle-not-translatable', page );
 			}
 
-			$( '.mw-tpm-sp-error__message' )
-				.text( mw.msg( 'pm-translation-unit-fetch-failed' ) )
+			$errorContainer
+				.text( errorMessage )
 				.removeClass( 'hide' );
 			$.Deferred().reject();
 		} );
@@ -479,18 +482,26 @@
 
 		$errorBox.addClass( 'hide' );
 
-		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
-			.then( function ( units, fuzzyTimestamp ) {
+		var fuzzyTimestamp = null;
+		var units = null;
+		getFuzzyTimestamp( pageTitle )
+			.then( function ( response ) {
+				fuzzyTimestamp = response;
+				return getSourceUnits( pageName );
+			} )
+			.then( function ( response ) {
+				units = response;
+				return splitTranslationPage( fuzzyTimestamp, pageTitle );
+			} )
+			.then( function ( translations ) {
 				noOfSourceUnits = units.length;
-				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-					var translationUnits = splitHeaders( translations );
-					translationUnits = alignHeaders( units, translationUnits );
-					noOfTranslationUnits = translationUnits.length;
-					displayUnits( units, translationUnits );
-					$( '#action-save, #action-cancel' ).removeClass( 'hide' );
-					$( '#action-import' ).addClass( 'hide' );
-					$messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).removeClass( 'hide' );
-				} );
+				var translationUnits = splitHeaders( translations );
+				translationUnits = alignHeaders( units, translationUnits );
+				noOfTranslationUnits = translationUnits.length;
+				displayUnits( units, translationUnits );
+				$( '#action-save, #action-cancel' ).removeClass( 'hide' );
+				$( '#action-import' ).addClass( 'hide' );
+				$messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).removeClass( 'hide' );
 			} );
 	}
 
