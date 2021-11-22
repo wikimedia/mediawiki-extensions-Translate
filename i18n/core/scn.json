@@ -67,6 +67,7 @@
 	"translate-mgs-column-language": "Lingua",
 	"translate-mgs-totals": "{{PLURAL:$1|Tutta la lingua|Tutti li lingui}} nzèmmula",
 	"supportedlanguages": "Lingui attivi",
+	"supportedlanguages-colorlegend": "Legenda dî culura: ùrtima traduzzioni $1 jorna fa.",
 	"supportedlanguages-recenttranslations": "ùrtimi traduzzioni",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|lingui}} n tutali.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|canciamentu|canciamenti}} - ùrtimu canciamentu $3 {{PLURAL:$3|jornu|jorna}} fa",
