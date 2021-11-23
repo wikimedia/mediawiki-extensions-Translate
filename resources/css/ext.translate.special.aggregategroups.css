@@ -19,7 +19,11 @@ a.tpt-add-new-group {
 	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/add.svg );
 	padding-left: 20px;
 	display: inline-block;
-	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+
+div.tpt-add-new-group {
+	margin-bottom: 1em;
 }
 
 span.tp-toggle-group {

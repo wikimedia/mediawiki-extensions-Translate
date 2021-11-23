@@ -194,11 +194,6 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 		$out->addHTML( $nojs );
 
-		/** @var AggregateMessageGroup $group */
-		foreach ( $aggregates as $group ) {
-			$out->addHTML( $this->showAggregateGroup( $group ) );
-		}
-
 		// Add new group if user has permissions
 		if ( $this->hasPermission ) {
 			$out->addHTML(
@@ -219,13 +214,26 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 					'class' => 'tp-aggregate-save-button'
 				]
 			);
+			$closeButton = Html::element(
+				'input',
+				[
+					'type' => 'button',
+					'value' => $this->msg( 'tpt-aggregategroup-close' )->text(),
+					'id' => 'tpt-aggregategroups-close'
+				]
+			);
 			$newGroupDiv = Html::rawElement(
 				'div',
 				[ 'class' => 'tpt-add-new-group hidden' ],
 				"$newGroupNameLabel $newGroupName<br />" .
-					"$newGroupDescriptionLabel $newGroupDescription<br />$saveButton"
+					"$newGroupDescriptionLabel $newGroupDescription<br />$saveButton $closeButton"
 			);
 			$out->addHTML( $newGroupDiv );
+		}
+
+		/** @var AggregateMessageGroup $group */
+		foreach ( $aggregates as $group ) {
+			$out->addHTML( $this->showAggregateGroup( $group ) );
 		}
 	}
 

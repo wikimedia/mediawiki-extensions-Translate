@@ -96,6 +96,7 @@
 	"aggregategroups": "Aggregate groups",
 	"tpt-aggregategroup-add": "Add",
 	"tpt-aggregategroup-save": "Save",
+	"tpt-aggregategroup-close": "Close",
 	"tpt-aggregategroup-add-new": "Add a new aggregate group",
 	"tpt-aggregategroup-new-name": "Name:",
 	"tpt-aggregategroup-new-description": "Description (optional):",

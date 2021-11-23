@@ -415,7 +415,7 @@
 				$cancelButton.on( 'click', cancelEditGroup );
 				$removeSpan.on( 'click', removeGroup );
 				$( 'div.tpt-add-new-group' ).addClass( 'hidden' );
-				$( 'a.tpt-add-new-group' ).before( $div );
+				$( 'div.mw-tpa-group' ).first().before( $div );
 			};
 
 			var params = {
@@ -431,6 +431,11 @@
 					// eslint-disable-next-line no-alert
 					alert( data.error && data.error.info );
 				} );
+		} );
+
+		$( '#tpt-aggregategroups-close' ).on( 'click', function ( event ) {
+			$( 'div.tpt-add-new-group' ).addClass( 'hidden' );
+			event.preventDefault();
 		} );
 
 		$( '#mw-content-text' ).on( 'click', '.js-tp-toggle-groups', function ( event ) {
