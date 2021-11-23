@@ -157,6 +157,61 @@
 		$parent.children( '.tp-edit-group' ).addClass( 'hidden' );
 	}
 
+	function getToggleAllGroupsLink() {
+		var $toggleLink = $( '<a>' )
+			.addClass( 'js-tp-toggle-all-groups' )
+			.attr( 'href', '#' )
+			.text( mw.msg( 'tpt-aggregategroup-expand-all-sub-groups' ) );
+
+		var $toggleLinkParent = $( '<div>' )
+			.append( '[', $toggleLink, ']' );
+
+		$toggleLink.on( 'click', function ( event ) {
+			var $target = $( event.target );
+			var isExpanded = $target.hasClass( 'expanded' );
+			var $groupContainers = $( '.js-mw-tpa-group' );
+
+			for ( var i = 0; i < $groupContainers.length; i++ ) {
+				var $groupContainer = $groupContainers.eq( i );
+				var isContainerOpen = $groupContainer.hasClass( 'mw-tpa-group-open' );
+				if ( isExpanded === isContainerOpen ) {
+					toggleGroupContainer( $groupContainer );
+				}
+			}
+
+			$target.toggleClass( 'expanded' );
+			$target.text(
+				isExpanded ?
+					mw.msg( 'tpt-aggregategroup-expand-all-sub-groups' ) :
+					mw.msg( 'tpt-aggregategroup-collapse-all-sub-groups' )
+
+			);
+
+			event.preventDefault();
+		} );
+
+		return $toggleLinkParent;
+	}
+
+	function toggleGroupContainer( $groupContainer ) {
+		var $toggleTrigger = $groupContainer.find( '.js-tp-toggle-groups' );
+		var isOpen = $groupContainer.hasClass( 'mw-tpa-group-open' );
+		changeGroupToggleIconState( $toggleTrigger, !isOpen );
+		$groupContainer.toggleClass( 'mw-tpa-group-open' );
+	}
+
+	function changeGroupToggleIconState( $icon, isOpen ) {
+		var title = mw.msg( 'tpt-aggregategroup-expand-sub-group' );
+		var ariaExpanded = 'false';
+		if ( isOpen ) {
+			title = mw.msg( 'tpt-aggregategroup-collapse-sub-group' );
+			ariaExpanded = 'true';
+		}
+
+		$icon.attr( 'title', title )
+			.attr( 'aria-expanded', ariaExpanded );
+	}
+
 	$( function () {
 		var api = new mw.Api(),
 			exclude = [],
@@ -381,22 +436,9 @@
 		$( '#mw-content-text' ).on( 'click', '.js-tp-toggle-groups', function ( event ) {
 			var $target = $( event.target );
 			var $groupContainer = $target.parents( '.js-mw-tpa-group' );
-			var isOpen = $groupContainer.hasClass( 'mw-tpa-group-open' );
-
-			changeGroupToggleIconState( $target, !isOpen );
-			$groupContainer.toggleClass( 'mw-tpa-group-open' );
+			toggleGroupContainer( $groupContainer );
 		} );
 
-		function changeGroupToggleIconState( $icon, isOpen ) {
-			var title = mw.msg( 'tpt-aggregategroup-expand-sub-group' );
-			var ariaExpanded = 'false';
-			if ( isOpen ) {
-				title = mw.msg( 'tpt-aggregategroup-collapse-sub-group' );
-				ariaExpanded = 'true';
-			}
-
-			$icon.attr( 'title', title )
-				.attr( 'aria-expanded', ariaExpanded );
-		}
+		$( 'div.mw-tpa-group' ).first().before( getToggleAllGroupsLink() );
 	} );
 }() );

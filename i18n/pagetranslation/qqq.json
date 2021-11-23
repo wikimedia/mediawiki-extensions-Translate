@@ -128,6 +128,8 @@
 	"tpt-aggregategroup-edit-description": "Label for the edit description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
 	"tpt-aggregategroup-update": "Label for button on [[Special:AggregateGroups]] to update.\n{{Identical|Save}}",
 	"tpt-aggregategroup-update-cancel": "Label for button on [[Special:AggregateGroups]] to cancel editing.\n{{Identical|Cancel}}",
+	"tpt-aggregategroup-expand-all-sub-groups": "Label for link to expand all sub group sections",
+	"tpt-aggregategroup-collapse-all-sub-groups": "Label for link to collapse all sub group sections",
 	"tpt-aggregategroup-expand-sub-group": "Tooltip for button on [[Special:AggregateGroups]] to expand sub groups",
 	"tpt-aggregategroup-collapse-sub-group": "Tooltip for button on [[Special:AggregateGroups]] to collapse sub groups",
 	"tpt-invalid-group": "Message when user tries to add an invalid group.\n\n\"group\" refers to \"aggregate group\".",
