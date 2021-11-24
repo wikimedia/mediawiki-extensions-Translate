@@ -33,7 +33,7 @@
 	"apihelp-searchtranslations-param-limit": "Rezultato dydis.",
 	"apihelp-searchtranslations-example-1": "Rodyti kalbos vertimus.",
 	"apierror-translate-duplicateaggregategroup": "Pranešimo grupė jau egzistuoja",
-	"apierror-translate-invalidlanguage": "Prašoma kalba negalima.",
+	"apierror-translate-invalidlanguage": "Kalbos kodas $1 yra neteisingas.",
 	"apierror-translate-invalidupdate": "Negalimas atnaujinimas",
 	"apierror-translate-language-disabled": "Vertimas į $1 yra išjungtas.",
 	"apierror-translate-owntranslation": "Negalima peržiūrėti savo paties vertimų",

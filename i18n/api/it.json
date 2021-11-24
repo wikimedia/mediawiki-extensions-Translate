@@ -5,7 +5,8 @@
 			"Beta16",
 			"F. Cosoleto",
 			"Ricordisamoa",
-			"Statix64"
+			"Statix64",
+			"Ajeje Brazorf"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gestisci gruppi di messaggi aggregati.\n\nPuoi aggiungere e rimuovere gruppi di messaggi aggregati e associare o dissociare i gruppi di messaggi l'uno dall'altro (uno alla volta).",
@@ -43,7 +44,7 @@
 	"apihelp-searchtranslations-summary": "Cerca traduzioni.",
 	"apihelp-searchtranslations-param-limit": "Dimensione del risultato.",
 	"apihelp-searchtranslations-example-1": "Mostra le traduzioni per la lingua.",
-	"apierror-translate-duplicateaggregategroup": "Il gruppo messaggi esiste già.",
+	"apierror-translate-duplicateaggregategroup": "Il gruppo messaggi esiste già",
 	"apierror-translate-fuzzymessage": "Non puoi revisionare traduzioni da aggiornare",
 	"apierror-translate-groupreviewdisabled": "Revisione gruppo messaggi non in uso.",
 	"apierror-translate-invalidaggregategroup": "Gruppo messaggi aggregati non valido",

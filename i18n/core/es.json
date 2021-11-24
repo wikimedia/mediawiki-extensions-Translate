@@ -34,7 +34,8 @@
 			"Tiberius1701",
 			"Translationista",
 			"Vivaelcelta",
-			"Wifidel"
+			"Wifidel",
+			"Jakeukalane"
 		]
 	},
 	"translate": "Traducir",
@@ -47,7 +48,7 @@
 	"translate-taction-lstats": "Estadísticas del idioma",
 	"translate-taction-mstats": "Estadísticas del grupo de mensajes",
 	"translate-taction-export": "Exportar",
-	"translate-taction-disabled": "Esta acción está desactivada en este wiki.",
+	"translate-taction-disabled": "Esta acción está desactivada en esta wiki.",
 	"translate-page-no-such-language": "No se especificó un idioma válido.",
 	"translate-page-no-such-group": "El grupo especificado no es válido.",
 	"translate-page-disabled": "Se han desactivado las traducciones a este idioma en este grupo.\nMotivo:\n\n<em>$1</em>",
@@ -217,7 +218,7 @@
 	"translate-smg-submit": "Enviar cambios para procesamiento",
 	"translate-smg-submitted": "Los mensajes originales han sido actualizados. Los cambios están siendo procesados en segundo plano.",
 	"translate-smg-more": "Habrá más cambios que procesar tras enviar estos cambios.",
-	"translate-smg-left": "Contenido del mensaje en el wiki",
+	"translate-smg-left": "Contenido del mensaje en la wiki",
 	"translate-smg-right": "Cambios entrantes",
 	"translate-smg-rename-select": "Seleccionar",
 	"translate-smg-rename-cancel": "Cancelar",

@@ -4,5 +4,11 @@
 			"Yupik"
 		]
 	},
-	"tux-sst-facet-language": "Ǩiõl"
+	"searchtranslations": "Ooʒʒ jåårǥlâttmõõžžid",
+	"tux-sst-edit": "Muuʹtt jåårǥlâttmõõžž",
+	"tux-sst-view-foreign": "Čuäʹjet seeidast $1",
+	"tux-sst-search": "Ooʒʒ",
+	"tux-sst-search-ph": "Ooʒʒ jåårǥlâttmõõžžid",
+	"tux-sst-facet-language": "Ǩiõl",
+	"tux-sst-default": "Jåårǥlâttmõõžž"
 }

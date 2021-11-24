@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Joao Xavier",
-			"Malafaya"
+			"Malafaya",
+			"JSantos"
 		]
 	},
+	"right-pagetranslation": "Indikar versioni di pagini por tradukar",
+	"action-pagetranslation": "administrar tradukebla pagini",
 	"tpt-diff-old": "Antea texto",
 	"tpt-diff-new": "Nova texto",
 	"tpt-tag-oldsyntax": "anciena sintaxo",
@@ -15,6 +18,7 @@
 	"tpt-languages-legend": "Altra lingui:",
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"tpt-tab-translate": "Tradukar",
+	"tpt-translation-restricted-no-reason": "La traduko di ca pagino a ca idiomo impedesis da ula administranto di tradukuri.",
 	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
 	"tpt-aggregategroup-update-cancel": "Nuligar",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",

@@ -4,7 +4,8 @@
 			"Alireza Ivaz",
 			"Huji",
 			"Ladsgroup",
-			"Reza1615"
+			"Reza1615",
+			"Jeeputer"
 		]
 	},
 	"apihelp-aggregategroups-description": "مدیریت گروه‌های پیغام دسته‌جمعی.\n\nشما می توانید گروه‌های پیغام دسته‌جمعی را بیفزایید یا حذف کنید یا گروه‌های پیغام را به آن‌ها متصل یا جدا کنید (در هر زمان یکی).",
@@ -47,7 +48,7 @@
 	"apierror-translate-duplicateaggregategroup": "گروه پیام پیش از این وجود دارد.",
 	"apierror-translate-invalidgroup": "گروه وجود ندارد یا نامعتبر است.",
 	"apierror-translate-invalidstate": "وضعیت درخواستی نامعتبر است.",
-	"apierror-translate-invalidlanguage": "زبان درخواستی نامعتبر است.",
+	"apierror-translate-invalidlanguage": "شناسهٔ زبان $1 معتبر نیست.",
 	"apierror-translate-invalidupdate": "برورزسانی نامعتبر",
 	"apierror-translate-language-disabled": "ترجمه روی $1 غیرفعال شده‌است.",
 	"apierror-translate-language-disabled-reason": "ترجمه روی $1 غیرفعال شده‌است:$2",

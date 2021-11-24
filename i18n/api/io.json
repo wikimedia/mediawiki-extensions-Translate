@@ -5,5 +5,7 @@
 		]
 	},
 	"apihelp-groupreview-param-language": "Linguala kodexo.",
+	"apihelp-translationstash-param-subaction": "Agado.",
+	"apihelp-translationstash-example-1": "Adjuntez tradukuro a rezervajo por [[MediaWiki:Jan/fi]]",
 	"apiwarn-translate-alreadyreviewedbyyou": "Vu ja indikis kom revizita"
 }

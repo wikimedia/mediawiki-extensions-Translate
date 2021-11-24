@@ -3,7 +3,8 @@
 		"authors": [
 			"Kly",
 			"LNDDYL",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Weather Top Wizard"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理集合訊息群組。\n\n您可以添加或移除集合訊息群組，以及從其中來關聯或取消關聯訊息群組（每一次一個）。",
@@ -66,9 +67,14 @@
 	"apihelp-managemessagegroups-param-groupId": "群組 ID",
 	"apihelp-managemessagegroups-param-renameMessageKey": "目標訊息鍵被重新命名",
 	"apihelp-managemessagegroups-param-messageKey": "更換訊息鍵",
-	"apihelp-managemessagegroups-param-operation": "要執行的操作。可能的值 - rename / new",
+	"apihelp-managemessagegroups-param-operation": "要執行的操作。可能的值：rename / new",
 	"apihelp-managemessagegroups-param-changesetName": "更改設定名稱 - 預設/未留意/Mediawiki 其它。",
 	"apihelp-managemessagegroups-param-changesetModified": "變更集在上一次變動的 Unix 時間戳記。若變更集是在此 API 之後修改，會拋出錯誤資訊。",
+	"apihelp-managegroupsynchronizationcache-description": "訊息群組同步快取。",
+	"apihelp-managegroupsynchronizationcache-summary": "訊息群組同步快取。",
+	"apihelp-managegroupsynchronizationcache-param-operation": "要執行的操作。可能的值：resolve",
+	"apihelp-managegroupsynchronizationcache-param-title": "訊息標題被標記成已解決",
+	"apihelp-managegroupsynchronizationcache-param-group": "訊息已解決的群組 ID",
 	"apihelp-translatesandbox-description": "註冊並管理沙盒使用者。",
 	"apihelp-translatesandbox-summary": "註冊並管理沙盒使用者。",
 	"apihelp-translatesandbox-param-do": "要做什麼。",
@@ -138,7 +144,7 @@
 	"apierror-translate-invalidaggregategroupname": "無效集合訊息群組名稱",
 	"apierror-translate-invalidgroup": "群組不存在或無效",
 	"apierror-translate-invalidstate": "請求的狀態無效。",
-	"apierror-translate-invalidlanguage": "請求的語言無效。",
+	"apierror-translate-invalidlanguage": "語言代碼 $1 無效。",
 	"apierror-translate-invalidupdate": "無效更新",
 	"apierror-translate-language-disabled": "對$1的翻譯已停用。",
 	"apierror-translate-language-disabled-reason": "對$1的翻譯已停用：$2",
@@ -157,5 +163,6 @@
 	"apierror-translate-rename-key-invalid": "在來源語言的更改清單裡找不到用於重新命名的傳遞訊息鍵。",
 	"apierror-translate-rename-state-invalid": "傳遞用於重新命名的訊息裡其中一個得重新添加，而另一個應刪除。目前狀態 - 添加：$1，刪除：$2。",
 	"apiwarn-translate-alreadyreviewedbyyou": "已由您標記為已審查",
-	"apiwarn-translate-language-disabled-source": "此群組的來源語言是$1。請選擇其它的語言來翻譯。"
+	"apiwarn-translate-language-disabled-source": "此群組的來源語言是$1。請選擇其它的語言來翻譯。",
+	"apierror-translate-operation-error": "當處理請求時發生錯誤。錯誤：$1"
 }

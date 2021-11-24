@@ -32,7 +32,8 @@
 			"Wyz",
 			"Y-M D",
 			"Yasten",
-			"Zetud"
+			"Zetud",
+			"DreZhsh"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -76,7 +77,7 @@
 	"tpt-old-pages": "La dernière version de {{PLURAL:$1|cette page|chacune de ces pages}} a été marquée à traduire.",
 	"tpt-other-pages": "Une ancienne version de {{PLURAL:$1|la page suivante|chacune des pages suivantes}} a été marquée pour être traduite, mais {{PLURAL:$1|sa dernière version|leur dernière version respective}} ne peut pas être marquée ainsi :",
 	"tpt-outdated-pages": "{{PLURAL:$1|Cette page a|Ces pages ont}} des modifications non marquées à traduire.",
-	"tpt-tag-discouraged": "dissuadé",
+	"tpt-tag-discouraged": "traduction dissuadée",
 	"tpt-tag-oldsyntax": "ancienne syntaxe",
 	"tpt-tag-no-transclusion-support": "transclusion non prise en charge",
 	"tpt-select-prioritylangs": "Liste de codes de langues prioritaires séparés par des virgules :",
@@ -118,7 +119,7 @@
 	"tpt-discouraged-language-force": "<strong>Cette page ne peut pas être traduite en $2.</strong>\n\nUn administrateur des traductions a décidé que cette page ne peut être traduite qu’en $3.",
 	"tpt-priority-languages": "Un administrateur de traduction a défini les langues prioritaires suivantes pour ce groupe : $1.",
 	"tpt-priority-languages-force": "Un administrateur de traduction a fixé les langues prioritaires suivantes pour ce groupe : $1. La traduction dans d’autres langues n’est pas autorisée.",
-	"tpt-discouraged-translation-header": "Une traduction de cette page a été déconseillée",
+	"tpt-discouraged-translation-header": "La traduction de cette page a été déconseillée",
 	"tpt-discouraged-translation-content": "Un administrateur de traduction a déconseillé la traduction de cette page. Vous pouvez toujours traduire la page, mais les traductions pourraient être inutiles.",
 	"tpt-render-summary": "Mise à jour pour être en accord avec la nouvelle version de la source de la page",
 	"aggregategroups": "Groupes d’agrégation",
@@ -136,7 +137,7 @@
 	"tpt-invalid-group": "Groupe non valide",
 	"pt-parse-open": "Balise &lt;translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-close": "Balise &lt;/translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
-	"pt-parse-nested": "L’imbrication des sections <tt>&lt;translate></tt> n’est pas autorisée.\nTexte de la balise : <pre>$1</pre>",
+	"pt-parse-nested": "L’imbrication de balises &lt;translate> n’est pas autorisée.\nContenu de la balise : <pre>$1</pre>",
 	"pt-shake-multiple": "Multiples marqueurs d’unité de traduction pour une même unité de traduction.\nAssurez-vous que les unités de traduction sont séparées par des lignes vides.\nTexte de l’unité de traduction : <pre>$1</pre>",
 	"pt-shake-position": "Marqueurs d’unité de traduction à une position inattendue.\nTexte de l’unité de traduction : <pre>$1</pre>",
 	"pt-shake-empty": "Unité de traduction vide pour le marqueur « $1 ».",
@@ -194,7 +195,7 @@
 	"pt-movepage-action-perform": "Effectuer le renommage",
 	"pt-movepage-action-other": "Changer la cible",
 	"pt-movepage-intro": "Cette page spéciale vous permet de renommer des pages qui sont marquées comme étant à traduire.\nL’action de renommage ne sera pas immédiate car de nombreuses pages devront être déplacées.\nTant que les pages seront en cours de déplacement, il ne sera pas possible d’interagir avec elles.\nLes échecs seront enregistrés dans le [[Special:Log/pagetranslation|journal de traduction]] et devront être corrigés manuellement.",
-	"pt-movepage-logreason": "Extrait de la page traduisible « $1 »",
+	"pt-movepage-logreason": "Partie de la page traduisible « $1 »",
 	"pt-movepage-started": "Veuillez ouvrir le [[Special:Log/pagetranslation|journal des traductions de pages]] dans quelques instants pour vérifier les erreurs éventuelles et lire le message de complétion.",
 	"pt-locked-page": "Cette page est verrouillée parce que la page traduisible est en cours de renommage.",
 	"pt-deletepage-lang-title": "Suppression de la page de traduction « $1 »",
@@ -216,7 +217,7 @@
 	"pt-deletepage-list-other": "Autres sous-pages",
 	"pt-deletepage-list-count": "$1 page{{PLURAL:$1||s}} en tout à supprimer et $2 sous-page{{PLURAL:$2||s}}.",
 	"pt-deletepage-list-no-pages": "Aucune page trouvée.",
-	"pt-deletepage-full-logreason": "Partie de la page à traduire « $1 »",
+	"pt-deletepage-full-logreason": "Partie de la page traduisible « $1 »",
 	"pt-deletepage-lang-logreason": "Partie de la page de traduction « $1 »",
 	"pt-deletepage-started": "Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour les erreurs et le message de la fin.",
 	"pt-deletepage-intro": "Cette page spéciale vous permet de supprimer entièrement une page traduisible ou une page d’une traduction dans une langue particulière.\nL’action de suppression n’est pas instantanée car plusieurs pages dépendantes de celle-ci seront aussi supprimées.\nLes échecs seront inscrits dans le [[Special:Log/pagetranslation|journal des traductions]] et ils doivent être corrigés à la main.",
@@ -242,7 +243,7 @@
 	"tpt-translate-title": "Autoriser la traduction du titre de la page",
 	"pp-save-summary": "Page préparée pour la traduction",
 	"pagepreparation": "Préparer la page pour sa traduction",
-	"pagepreparation-summary": "Spécifier un titre de page à préparer pour la traduction.",
+	"pagepreparation-summary": "Indiquez un titre de page à préparer pour la traduction.",
 	"pp-pagename-placeholder": "Entrer le nom de la page",
 	"pp-prepare-button-label": "Préparer",
 	"pp-save-button-label": "Publier",
@@ -259,6 +260,6 @@
 	"tpt-unlink-summary": "Possibilité retirée de traduire la page",
 	"tpt-generic-confirm": "Veuillez confirmer l’action.",
 	"tpt-generic-button": "Confirmer",
-	"tpt-validation-not-insertable": "Le nom de la variable de traduction « $1 » ne fonctionne pas comme pouvant être inséré dans l’interface de traduction. Éviter d’utiliser les caractères spéciaux.",
-	"tpt-validation-name-reuse": "La variable de traduction « $1 » est définie plusieurs fois avec un contenu différent. Modifier les noms de variable afin qu’ils soient uniques dans l’unité de traduction."
+	"tpt-validation-not-insertable": "Le nom de variable de traduction « $1 » ne peut pas être utilisé pour créer un insérable dans l’interface de traduction. Évitez d’utiliser des caractères spéciaux.",
+	"tpt-validation-name-reuse": "La variable de traduction « $1 » est définie plusieurs fois avec un contenu différent. Changez les noms des variables afin qu’ils soient uniques au sein de l’unité de traduction."
 }

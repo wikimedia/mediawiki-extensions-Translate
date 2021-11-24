@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"SawJaemin"
+		]
+	},
+	"searchtranslations": "ကွၢ်ဃုတၢ်ကျိာ်ထံတဖၣ်",
+	"tux-sst-search-ph": "ကွၢ်ဃုတၢ်ကျိာ်ထံတဖၣ်",
+	"tux-sst-default": "တၢ်ကျိာ်ထံတဖၣ်",
+	"tux-sst-translated": "တၢ်ကျိာ်ထံလၢ $1",
+	"tux-sst-untranslated": "တၢ်ကျိာ်ထံလၢ $1 တအိၣ်ဘၣ်",
+	"tux-sst-outdated": "တၢ်ကျိာ်ထံဒ့းလၢၤလၢ $1",
+	"tux-sst-ellipsis-untranslated": "တၢ်ကျိာ်ထံတအိၣ်ဘၣ်",
+	"tux-sst-ellipsis-outdated": "တၢ်ကျိာ်ထံတဖၣ်လၢအဒ့းလၢၤ"
+}

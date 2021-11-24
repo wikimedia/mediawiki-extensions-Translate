@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Ammarpad",
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"Aliyu shaba",
+			"Gwanki"
 		]
 	},
 	"translate-taction-translate": "Fassara",
-	"supportedlanguages-summary": "Wannan shine jerin dukkan harsunan dake akwai a {{SITENAME}}, tare da wanda suke aikin fassara akan harshen."
+	"supportedlanguages-summary": "Wannan shafin ya nuna harsunan da ke akwai a {{SITENAME}}, tare da sunayen masu fassara masu aiki a wannan harshen.\nSunan mai fassara zai fito babbakarin gyare-gyaren da mai fassara yayi. Kalar zanen ƙasa tana nuna iya lokacin da mai fassara ya kasance a nan.",
+	"translate-documentation-language": "Takardar saƙon"
 }

@@ -48,6 +48,10 @@
 	"apihelp-query+messagegroups-extended-description": "ध्यान रखें कि uselang पैरामीटर भाषा-अधीन हिस्सों के आउटपुट को बदल सकता है।",
 	"apihelp-query+messagegroups-param-depth": "वृक्ष फॉर्मेट का इस्तेमाल करते समय, गहराई को कई लेवलों तक ही रखें। वैल्यू 0 का मतलब है कि कोई उपसमूह नहीं दिखाया जाता है। अगर सीमा पर कर दी जाती है, आउटपुट में एक \"groupcount\" वेल्यू आ जाता है, जो कि सीधे चाइल्डों की संख्या का बोध कराता है।",
 	"apihelp-query+messagegroups-param-root": "वृक्ष फॉर्मेट का इस्तेमाल करते समय ऊपर से शुरू करने के बजाय चुने गए संदेश-समूह से शुरुआत करें, जिसे एक स्थायी संदेश-समूह होना होगा। साधारण फॉर्मेट का इस्तेमाल करते समय सिर्फ निर्दिष्ट समूह ही लौटाया जाता है।",
+	"apihelp-query+messagegroups-example-1": "संदेश-समूहों को क्वेरी करें",
+	"apihelp-query+messagegroupstats-description": "संदेश-समूहकों के आँकड़ों को क्वेरी करें।",
+	"apihelp-query+messagegroupstats-summary": "संदेश-समूहकों के आँकड़ों को क्वेरी करें।",
+	"apihelp-query+messagegroupstats-param-group": "संदेश-समूह की ID।",
 	"apihelp-translatesandbox-param-do": "क्या करें।",
 	"apihelp-translationreview-example-1": "अवलोकन अवतरण १।",
 	"apihelp-translationstash-param-subaction": "क्रिया।",
@@ -60,5 +64,6 @@
 	"apierror-translate-invalidaggregategroup": "अमान्य स्थायी संदेश-समूह",
 	"apierror-translate-invalidupdate": "अमान्य अद्यतन",
 	"apierror-translate-sandbox-invalidppassword": "अमान्य पासवर्ड",
-	"apierror-translate-unknownmessage": "अज्ञात संदेश"
+	"apierror-translate-unknownmessage": "अज्ञात संदेश",
+	"apierror-translate-operation-error": "अनुरोध को प्रोसेस करते समय एक त्रुटि आई। त्रुटि: $1"
 }
