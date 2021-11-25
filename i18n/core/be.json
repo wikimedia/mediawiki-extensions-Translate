@@ -12,6 +12,7 @@
 		]
 	},
 	"translate": "Пераклад",
+	"translate-extensionname": "Перакласці",
 	"translate-desc": "[[Special:Translate|Адмысловая старонка]] для перакладу MediaWiki і іншых праграм",
 	"translate-fuzzybot-desc": "Гэта спецыяльны сістэмны ўліковы запіс, які выкарыстоўваецца [https://www.mediawiki.org/wiki/Extension:Translate/be пашырэннем перакладу] MediaWiki для задач падтрымкі перакладаў.\nГэты ўліковы запіс з’яўляецца часткай праграмнага забеспячэння MediaWiki і не належыць ніякаму ўдзельніку.",
 	"translate-taskui-export-to-file": "Экспарт у родным фармаце",
@@ -116,6 +117,7 @@
 	"translate-tag-page-desc": "Пераклад вікі-старонкі [[$2|$1]] з $3 ($4).",
 	"translate-sidebar-alltrans": "На іншых мовах",
 	"translations": "Усе пераклады",
+	"translate-translations-no-message": "Паведамленне «$1» нельга перакласці",
 	"languagestats": "Моўная статыстыка",
 	"translate-suppress-complete": "Схаваць цалкам перакладзеныя групы паведамленняў",
 	"translate-language": "Мова",
@@ -133,6 +135,8 @@
 	"tux-tab-untranslated": "Неперакладзеныя",
 	"tux-editor-in-other-languages": "На іншых мовах",
 	"tux-message-filter-advanced-button": "Пашыраны пошук",
+	"tux-empty-list-translated-action": "Перакласці",
 	"tux-editor-close-tooltip": "Закрыць",
-	"tux-editor-message-tools-translations": "Усе пераклады"
+	"tux-editor-message-tools-translations": "Усе пераклады",
+	"content-model-translate-messagebundle": "Перакладны пакет паведамленняў"
 }
