@@ -198,8 +198,33 @@
 		}
 	}
 
+	function activateGroupEntitySelector( $group ) {
+		// hide the group selector, and get its value
+		$group.addClass( 'tes-entity-selector-hide' );
+		var groupName = $group.find( 'select option:selected' ).text();
+
+		// load the entity selector and set the value
+		var entitySelector = getEntitySelector( onEntitySelect );
+		entitySelector.setValue( groupName );
+
+		$group.after( entitySelector.$element );
+	}
+
+	function onEntitySelect( selectedItem ) {
+		$( 'select[name="group"]' ).val( selectedItem );
+	}
+
+	function getEntitySelector( onSelect ) {
+		var EntitySelector = require( './entity.selector.js' );
+		return new EntitySelector( {
+			onSelect: onSelect
+		} );
+	}
+
 	$( function () {
 		var $table = $( '.statstable' );
+
+		activateGroupEntitySelector( $( '#group' ) );
 
 		// Sometimes the table is not present on the page
 		if ( !$table.length ) {

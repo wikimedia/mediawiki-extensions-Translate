@@ -582,14 +582,24 @@
 			]
 		},
 		"ext.translate.special.languagestats": {
-			"scripts": "resources/js/ext.translate.special.languagestats.js",
+			"packageFiles": [
+				"resources/src/ext.translate.special.languagestats/index.js",
+				"resources/src/ext.translate.special.languagestats/entity.selector.js"
+			],
 			"messages": [
 				"translate-langstats-collapse",
 				"translate-langstats-collapseall",
 				"translate-langstats-expand",
-				"translate-langstats-expandall"
+				"translate-langstats-expandall",
+				"translate-tes-server-error",
+				"translate-tes-group-not-found"
 			],
-			"dependencies": "jquery.tablesorter",
+			"dependencies": [
+				"jquery.tablesorter",
+				"mediawiki.api",
+				"oojs-ui-widgets"
+			],
+			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.css",
 			"targets": [
 				"desktop"
 			]
