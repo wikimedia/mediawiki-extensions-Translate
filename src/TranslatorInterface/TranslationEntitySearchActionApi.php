@@ -26,8 +26,15 @@ class TranslationEntitySearchActionApi extends ApiBase {
 		$query = $this->getParameter( 'query' );
 		$maxResults = $this->getParameter( 'limit' );
 
-		$searchResults = $this->entitySearch->searchStaticMessageGroups( $query, $maxResults );
-		$this->getResult()->addValue( null, $this->getModuleName(), array_values( $searchResults ) );
+		$searchResults = [];
+		$searchResults[ 'groups' ] = $this->entitySearch->searchStaticMessageGroups( $query, $maxResults );
+
+		$remainingResults = count( $searchResults[ 'groups' ] ) - $maxResults;
+		if ( $remainingResults > 0 ) {
+			$searchResults[ 'messages' ] = $this->entitySearch->searchMessages( $query, $remainingResults );
+		}
+
+		$this->getResult()->addValue( null, $this->getModuleName(), $searchResults );
 	}
 
 	protected function getAllowedParams(): array {

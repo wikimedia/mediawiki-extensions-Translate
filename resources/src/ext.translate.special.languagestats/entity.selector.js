@@ -100,16 +100,17 @@ EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( respons
 		return finalResult;
 	}
 
-	if ( response.length === 0 ) {
+	var groups = response.groups;
+	if ( groups.length === 0 ) {
 		finalResult.push( this.groupNotFoundLabel );
 		return finalResult;
 	}
 
-	for ( var i = 0; i !== response.length; ++i ) {
+	for ( var i = 0; i !== groups.length; ++i ) {
 		finalResult.push(
 			new OO.ui.MenuOptionWidget( {
-				data: response[ i ].group,
-				label: response[ i ].label
+				data: groups[ i ].group,
+				label: groups[ i ].label
 			} )
 		);
 	}
