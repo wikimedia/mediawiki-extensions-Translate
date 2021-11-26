@@ -4,7 +4,9 @@
 			"Yupik"
 		]
 	},
+	"apihelp-groupreview-param-group": "Saakkjoukk.",
 	"apihelp-groupreview-param-language": "Ǩiõllkoodd.",
 	"apihelp-query+languagestats-param-language": "Ǩiõllkoodd.",
+	"apihelp-query+messagecollection-param-group": "Saakkjoukk.",
 	"apihelp-query+messagecollection-param-language": "Ǩiõllkoodd."
 }

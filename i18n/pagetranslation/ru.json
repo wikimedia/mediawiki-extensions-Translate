@@ -108,6 +108,7 @@
 	"aggregategroups": "Агрегированные группы",
 	"tpt-aggregategroup-add": "Добавить",
 	"tpt-aggregategroup-save": "Сохранить",
+	"tpt-aggregategroup-close": "Закрыть",
 	"tpt-aggregategroup-add-new": "Добавить новую агрегированную группу",
 	"tpt-aggregategroup-new-name": "Название:",
 	"tpt-aggregategroup-new-description": "Описание (необязательно):",

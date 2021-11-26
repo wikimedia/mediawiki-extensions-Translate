@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Amire80",
 			"BPositive",
 			"BaRaN6161 TURK",
@@ -119,7 +120,7 @@
 	"aggregategroups": "{{doc-special|AggregateGroups}}",
 	"tpt-aggregategroup-add": "Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].\n{{Identical|Add}}",
 	"tpt-aggregategroup-save": "Label for the button to save a new aggregate group in [[Special:AggregateGroups]].\n{{Identical|Save}}",
-	"tpt-aggregategroup-close": "Label for the button to close the new aggregate group form on [[Special:AggregateGroups]].\n{{Identical|Save}}",
+	"tpt-aggregategroup-close": "Label for the button to close the new aggregate group form on [[Special:AggregateGroups]].\n{{Identical|Close}}",
 	"tpt-aggregategroup-add-new": "Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-new-name": "Label for the name field in [[Special:AggregateGroups]].\n{{Identical|Name}}",
 	"tpt-aggregategroup-new-description": "Label for the description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
