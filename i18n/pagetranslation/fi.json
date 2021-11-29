@@ -90,6 +90,7 @@
 	"aggregategroups": "Kokoelmaryhmät",
 	"tpt-aggregategroup-add": "Lisää",
 	"tpt-aggregategroup-save": "Tallenna",
+	"tpt-aggregategroup-close": "Sulje",
 	"tpt-aggregategroup-add-new": "Lisää uusi kokoelmaryhmä",
 	"tpt-aggregategroup-new-name": "Nimi",
 	"tpt-aggregategroup-new-description": "Kuvaus (vapaaehtoinen):",
