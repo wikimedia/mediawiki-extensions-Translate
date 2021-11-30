@@ -8,6 +8,7 @@ use Html;
 use Language;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\User\UserOptionsLookup;
 use SpecialPage;
 use Title;
 use TranslateSandbox;
@@ -27,6 +28,8 @@ class TranslationStashSpecialPage extends SpecialPage {
 	private $options;
 	/** @var LanguageNameUtils */
 	private $languageNameUtils;
+	/** @var UserOptionsLookup */
+	private $userOptionsLookup;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateSandboxLimit',
@@ -36,10 +39,12 @@ class TranslationStashSpecialPage extends SpecialPage {
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
 		TranslationStashReader $stash,
+		UserOptionsLookup $userOptionsLookup,
 		ServiceOptions $options
 	) {
 		$this->languageNameUtils = $languageNameUtils;
 		$this->stash = $stash;
+		$this->userOptionsLookup = $userOptionsLookup;
 		$this->options = $options;
 		parent::__construct( 'TranslationStash' );
 	}
@@ -183,7 +188,10 @@ HTML
 			return $ui;
 		}
 
-		$options = FormatJson::decode( $this->getUser()->getOption( 'translate-sandbox' ), true );
+		$options = FormatJson::decode(
+			$this->userOptionsLookup->getOption( $this->getUser(), 'translate-sandbox' ),
+			true
+		);
 		$supported = TranslateUtils::getLanguageNames( 'en' );
 
 		if ( isset( $options['languages'] ) ) {

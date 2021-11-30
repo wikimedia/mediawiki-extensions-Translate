@@ -222,6 +222,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'class' => ManageTranslatorSandboxSpecialPage::class,
 				'services' => [
 					'Translate:TranslationStashReader',
+					'UserOptionsLookup'
 				],
 				'args' => [
 					static function () {
@@ -236,7 +237,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'class' => TranslationStashSpecialPage::class,
 				'services' => [
 					'LanguageNameUtils',
-					'Translate:TranslationStashReader'
+					'Translate:TranslationStashReader',
+					'UserOptionsLookup'
 				],
 				'args' => [
 					static function () {

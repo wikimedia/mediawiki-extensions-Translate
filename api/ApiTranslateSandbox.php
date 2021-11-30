@@ -178,7 +178,11 @@ class ApiTranslateSandbox extends ApiBase {
 			return;
 		}
 
-		$languagePrefs = FormatJson::decode( $user->getOption( 'translate-sandbox' ), true );
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		$languagePrefs = FormatJson::decode(
+			$userOptionsLookup->getOption( $user, 'translate-sandbox' ),
+			true
+		);
 		$languages = implode( '|', $languagePrefs[ 'languages' ] ?? [] );
 		$babeltext = "{{#babel:$languages}}";
 		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();

@@ -38,11 +38,12 @@ class TranslateSandboxEmailJob extends Job {
 		if ( $isOK && $this->params['emailType'] === 'reminder' ) {
 			$user = User::newFromId( $this->params['user'] );
 
-			$reminders = $user->getOption( 'translate-sandbox-reminders' );
+			$userOptionsManager = $services->getUserOptionsManager();
+
+			$reminders = $userOptionsManager->getOption( $user, 'translate-sandbox-reminders' );
 			$reminders = $reminders ? explode( '|', $reminders ) : [];
 			$reminders[] = wfTimestamp();
 
-			$userOptionsManager = $services->getUserOptionsManager();
 			$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', implode( '|', $reminders ) );
 			$userOptionsManager->saveOptions( $user );
 		}
