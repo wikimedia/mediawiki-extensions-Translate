@@ -271,7 +271,7 @@ class MessageHandle {
 		}
 
 		$namespace = $this->title->getNamespace();
-		if ( !$nsInfo->isCapitalized( $namespace ) ) {
+		if ( $nsInfo->isCapitalized( $namespace ) ) {
 			$lowercaseKey = $contentLanguage->lcfirst( $key );
 			if ( in_array( $lowercaseKey, $groupKeys, true ) ) {
 				return $lowercaseKey;
