@@ -1204,7 +1204,12 @@ class PageTranslationHooks {
 	 * @return true
 	 */
 	public static function replaceMovePage( &$list ) {
-		$movePageSpec = $list['Movepage'];
+		$movePageSpec = $list['Movepage'] ?? null;
+
+		// This should never happen, but apparently is happening? See: T296568
+		if ( $movePageSpec === null ) {
+			return true;
+		}
 
 		$list['Movepage'] = [
 			'class' => MoveTranslatablePageSpecialPage::class,
