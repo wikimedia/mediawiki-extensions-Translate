@@ -256,7 +256,8 @@
 			showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions ),
 			onSelect: function ( language ) {
 				mw.translate.changeLanguage( language );
-				$element.text( $.uls.data.getAutonym( language ) );
+				$element.find( '.ext-translate-target-language' )
+					.text( $.uls.data.getAutonym( language ) );
 			},
 			ulsPurpose: 'translate-special-translate',
 			quickList: function () {

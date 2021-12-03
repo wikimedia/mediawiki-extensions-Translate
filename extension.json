@@ -858,7 +858,10 @@
 			]
 		},
 		"ext.translate.special.translate.styles": {
-			"styles": "resources/css/ext.translate.special.translate.css",
+			"styles": [
+				"resources/css/ext.translate.special.translate.css",
+				"resources/css/ext.translate.language.selector.css"
+			],
 			"targets": [
 				"desktop",
 				"mobile"
@@ -869,7 +872,10 @@
 				"resources/src/ext.translate.specialTranslationStash/index.js",
 				"resources/src/ext.translate.specialTranslationStash/storage.js"
 			],
-			"styles": "resources/src/ext.translate.specialTranslationStash/index.css",
+			"styles": [
+				"resources/src/ext.translate.specialTranslationStash/index.css",
+				"resources/css/ext.translate.language.selector.css"
+			],
 			"dependencies": [
 				"ext.translate.editor",
 				"ext.translate.messagetable",

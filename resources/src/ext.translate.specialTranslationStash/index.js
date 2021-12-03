@@ -222,11 +222,8 @@ $( function () {
 				autonym = $.uls.data.getAutonym( language );
 
 			$ulsTrigger
-				.text( autonym )
-				.attr( {
-					lang: language,
-					dir: direction
-				} );
+				.find( '.ext-translate-target-language' )
+				.text( autonym );
 
 			$messageTable
 				.empty()
@@ -238,6 +235,7 @@ $( function () {
 			loadMessages();
 		}
 	} );
+
 	// Get the user translations if any(possibly from an early attempt)
 	// and new messages to try.
 	translationStorage.getUserTranslations()

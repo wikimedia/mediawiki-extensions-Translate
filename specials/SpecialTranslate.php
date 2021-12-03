@@ -289,15 +289,28 @@ class SpecialTranslate extends SpecialPage {
 			$targetLangName = Language::fetchLanguageName( $this->options['language'] );
 		}
 
-		$label = Html::element(
+		$label = Html::element( 'span', [], $this->msg( 'tux-languageselector' )->text() );
+
+		$languageIcon = Html::element(
 			'span',
-			[ 'class' => 'ext-translate-language-selector-label' ],
-			$this->msg( 'tux-languageselector' )->text()
+			[ 'class' => 'ext-translate-language-icon' ]
 		);
-		$value = Html::element(
+
+		$targetLanguageName = Html::element(
 			'span',
-			[ 'class' => 'uls' ],
+			[ 'class' => 'ext-translate-target-language' ],
 			$targetLangName
+		);
+
+		$expandIcon = Html::element(
+			'span',
+			[ 'class' => 'ext-translate-language-selector-expand' ]
+		);
+
+		$value = Html::rawElement(
+			'span',
+			[ 'class' => 'uls mw-ui-button' ],
+			$languageIcon . $targetLanguageName . $expandIcon
 		);
 
 		return Html::rawElement(

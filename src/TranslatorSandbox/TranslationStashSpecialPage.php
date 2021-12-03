@@ -120,7 +120,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		<div class="six columns stash-stats">
 			{$progress}
 		</div>
-		<div class="six columns ext-translate-language-selector right">
+		<div class="six columns ext-translate-language-selector">
 			{$this->tuxLanguageSelector()}
 		</div>
 	</div>
@@ -153,25 +153,35 @@ HTML
 		$language = $this->getTargetLanguage();
 		$targetLangName = $this->languageNameUtils->getLanguageName( $language->getCode() );
 
-		$label = Html::element(
+		$label = Html::element( 'span', [], $this->msg( 'tux-languageselector' )->text() );
+
+		$languageIcon = Html::element(
 			'span',
-			[ 'class' => 'ext-translate-language-selector-label' ],
-			$this->msg( 'tux-languageselector' )->text()
+			[ 'class' => 'ext-translate-language-icon' ]
 		);
 
-		$trigger = Html::element(
+		$targetLanguageName = Html::element(
 			'span',
-			[
-				'class' => 'uls',
-				'lang' => $language->getHtmlCode(),
-				'dir' => $language->getDir(),
-			],
+			[ 'class' => 'ext-translate-target-language' ],
 			$targetLangName
 		);
 
-		// No-break space is added for spacing after the label
-		// and to ensure separation of words (in Arabic, for example)
-		return "$label&#160;$trigger";
+		$expandIcon = Html::element(
+			'span',
+			[ 'class' => 'ext-translate-language-selector-expand' ]
+		);
+
+		$value = Html::rawElement(
+			'span',
+			[ 'class' => 'uls mw-ui-button' ],
+			$languageIcon . $targetLanguageName . $expandIcon
+		);
+
+		return Html::rawElement(
+			'div',
+			[ 'class' => 'columns ext-translate-language-selector' ],
+			"$label $value"
+		);
 	}
 
 	/** Returns the source language for messages. */

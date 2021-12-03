@@ -1,0 +1,24 @@
+.ext-translate-language-selector.ext-translate-language-selector {
+	float: right;
+	text-align: right;
+	border: medium none;
+	font-size: 13pt;
+}
+
+.ext-translate-language-selector .ext-translate-language-icon {
+	background: no-repeat scroll right center transparent;
+	background-image: linear-gradient( transparent, transparent ), url( ../images/language.svg );
+	background-size: 20px;
+	padding-right: 20px;
+}
+
+.ext-translate-language-selector .ext-translate-language-selector-expand {
+	background: no-repeat scroll right center transparent;
+	background-image: linear-gradient( transparent, transparent ), url( ../images/expand.svg );
+	background-size: 16px;
+	padding-right: 16px;
+}
+
+.ext-translate-language-selector .ext-translate-target-language {
+	padding: 0 0.5em;
+}
