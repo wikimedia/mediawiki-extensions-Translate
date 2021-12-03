@@ -593,28 +593,7 @@
 					translateEditor.toggleMoreButtonClass();
 				} );
 
-			var targetLangCode = this.message.targetLanguage;
-			var targetLangAttrib, targetLangDir;
-			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
-				targetLangDir = $.uls.data.getDir( targetLangAttrib );
-			} else {
-				targetLangAttrib = targetLangCode;
-				targetLangDir = $messageList.data( 'targetlangdir' );
-			}
-
-			// The following classes are used here:
-			// * mw-editfont-serif
-			// * mw-editfont-sans-serif
-			// * mw-editfont-monospace
-			var $textarea = $( '<textarea>' )
-				.addClass( 'tux-textarea-translation ' + this.editFontClass )
-				.attr( {
-					lang: targetLangAttrib,
-					dir: targetLangDir
-				} )
-				.val( this.message.translation || '' )
-				.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
+			var $textarea = this.getTranslationEditor( this.message.targetLanguage );
 
 			// Shortcuts for various insertable things
 			$textarea.on( 'keyup keydown', function ( e ) {
@@ -1383,6 +1362,38 @@
 			}
 
 			$moreNoticesTab.trigger( 'click' );
+		},
+
+		/**
+		 * Generates the translation editor element based on target language
+		 *
+		 * @param {string} targetLangCode
+		 * @return {Object} Returns translation editor element
+		 */
+		getTranslationEditor: function ( targetLangCode ) {
+			var targetLangAttrib, placeholder;
+			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
+				placeholder = mw.msg( 'tux-editor-placeholder-documentation' );
+			} else {
+				targetLangAttrib = targetLangCode;
+				placeholder = mw.msg( 'tux-editor-placeholder-language', $.uls.data.getAutonym( targetLangCode ) );
+			}
+
+			var targetLangDir = $.uls.data.getDir( targetLangAttrib );
+
+			// The following classes are used here:
+			// * mw-editfont-serif
+			// * mw-editfont-sans-serif
+			// * mw-editfont-monospace
+			return $( '<textarea>' )
+				.addClass( 'tux-textarea-translation ' + this.editFontClass )
+				.attr( {
+					lang: targetLangAttrib,
+					dir: targetLangDir
+				} )
+				.val( this.message.translation || '' )
+				.prop( 'placeholder', placeholder );
 		}
 	};
 
