@@ -1,0 +1,5 @@
+== Translate 2021.12 ==
+Released at 2021-12-03.
+
+=== Noteworthy changes ===
+* Fix broken SpecialMovePage on MediaWiki 1.35 ([[phab:T294605|Phab:T296450]])
