@@ -425,5 +425,6 @@
 	"translate-messagebundle-error-key-too-long": "המפתח \"$1\" ארוך מדי",
 	"translate-messagebundle-error-key-invalid-characters": "המפתח \"$1\" מכיל תווים בלתי־מורשים",
 	"translate-messagebundle-error-invalid-value": "המפתח \"$1\" אינו מכיל ערך מחרוזת",
-	"translate-messagebundle-error-empty-value": "במפתח \"$1\" אין ערך"
+	"translate-messagebundle-error-empty-value": "במפתח \"$1\" אין ערך",
+	"translate-messagebundle-group-description": "הודעות מתוך חבילת הודעות שמוגדרת בדף [[$2|$1]]."
 }

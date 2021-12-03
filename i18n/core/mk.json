@@ -420,5 +420,6 @@
 	"translate-messagebundle-error-key-too-long": "Клучот „$1“ е предолг",
 	"translate-messagebundle-error-key-invalid-characters": "Клучот „$1“ содржи недозволени знаци",
 	"translate-messagebundle-error-invalid-value": "Клучот „$1“ не содржи низна вредност",
-	"translate-messagebundle-error-empty-value": "Купчето „$1“ нема вредност"
+	"translate-messagebundle-error-empty-value": "Купчето „$1“ нема вредност",
+	"translate-messagebundle-group-description": "Пораки од купче дефинирани на страницата [[$2|$1]]."
 }

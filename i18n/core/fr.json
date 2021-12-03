@@ -9,6 +9,7 @@
 			"Crochet.david",
 			"Dereckson",
 			"Dr Brains",
+			"DreZhsh",
 			"Epok",
 			"Florian COLLIN",
 			"Gomoko",
@@ -455,5 +456,6 @@
 	"translate-messagebundle-error-key-too-long": "La clé « $1 » est trop long",
 	"translate-messagebundle-error-key-invalid-characters": "La clé « $1 » contient des caractères interdits",
 	"translate-messagebundle-error-invalid-value": "La clé « $1 » ne contient pas de valeur chaîne",
-	"translate-messagebundle-error-empty-value": "La clé « $1 » n’a pas de valeur"
+	"translate-messagebundle-error-empty-value": "La clé « $1 » n’a pas de valeur",
+	"translate-messagebundle-group-description": "Messages d'un faisceau de messages défini sur la page [[$2|$1]]."
 }
