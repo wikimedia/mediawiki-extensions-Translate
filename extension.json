@@ -243,7 +243,8 @@
 		"ArticlePrepareTextForEdit": "TranslateEditAddons::disablePreSaveTransform",
 		"ParserFirstCallInit": "TranslateHooks::setupTranslateParserFunction",
 		"UserGetReservedNames": "TranslateHooks::onUserGetReservedNames",
-		"LinksUpdate": "TranslateHooks::preventCategorization",
+		"ParserAfterTidy": "TranslateHooks::preventCategorization",
+		"OutputPageParserOutput": "TranslateHooks::showFakeCategories",
 		"Translate:newTranslation": "TranslateEditAddons::updateTransverTag",
 		"SkinTemplateNavigation::SpecialPage": [
 			"SpecialTranslate::tabify",

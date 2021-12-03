@@ -669,13 +669,33 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	}
 
 	/**
-	 * Hook: LinksUpdate
-	 * @param LinksUpdate $updater
+	 * Hook: ParserAfterTidy
+	 * @param Parser $parser
+	 * @param string &$html
 	 */
-	public static function preventCategorization( LinksUpdate $updater ) {
-		$handle = new MessageHandle( $updater->getTitle() );
+	public static function preventCategorization( Parser $parser, &$html ) {
+		$handle = new MessageHandle( $parser->getTitle() );
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
-			$updater->mCategories = [];
+			$parserOutput = $parser->getOutput();
+			$parserOutput->setExtensionData( 'translate-fake-categories',
+				$parserOutput->getCategories() );
+			if ( method_exists( $parserOutput, 'setCategories' ) ) { // 1.38+
+				$parserOutput->setCategories( [] );
+			} else {
+				$parserOutput->setCategoryLinks( [] );
+			}
+		}
+	}
+
+	/**
+	 * Hook: OutputPageParserOutput
+	 * @param OutputPage $outputPage
+	 * @param ParserOutput $parserOutput
+	 */
+	public static function showFakeCategories( OutputPage $outputPage, ParserOutput $parserOutput ) {
+		$fakeCategories = $parserOutput->getExtensionData( 'translate-fake-categories' );
+		if ( $fakeCategories ) {
+			$outputPage->setCategoryLinks( $fakeCategories );
 		}
 	}
 
