@@ -9,17 +9,6 @@
 		// indexed by language code
 		languagestats: {},
 
-		/**
-		 * Checks if the input placeholder attribute
-		 * is supported on this element in this browser.
-		 *
-		 * @param {jQuery} $element
-		 * @return {boolean}
-		 */
-		isPlaceholderSupported: function ( $element ) {
-			return ( 'placeholder' in $element[ 0 ] );
-		},
-
 		// Storage for language stats loader functions from API,
 		// indexed by language code
 		languageStatsLoader: {},

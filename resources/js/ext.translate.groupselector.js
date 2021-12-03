@@ -65,11 +65,8 @@
 
 			this.$search = $( '<input>' )
 				.prop( 'type', 'text' )
-				.addClass( 'tux-groupselector__filter__search__input' );
-
-			if ( mw.translate.isPlaceholderSupported( this.$search ) ) {
-				this.$search.prop( 'placeholder', mw.msg( 'translate-msggroupselector-search-placeholder' ) );
-			}
+				.addClass( 'tux-groupselector__filter__search__input' )
+				.prop( 'placeholder', mw.msg( 'translate-msggroupselector-search-placeholder' ) );
 
 			var $search = $( '<div>' )
 				.addClass( 'ten columns' )

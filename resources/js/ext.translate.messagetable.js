@@ -72,10 +72,6 @@
 				messageTable.scroll();
 			} ) );
 
-			if ( mw.translate.isPlaceholderSupported( $filterInput ) ) {
-				$filterInput.prop( 'placeholder', mw.msg( 'tux-message-filter-placeholder' ) );
-			}
-
 			$filterInput.on( 'input', $.debounce( 250, function () {
 				messageTable.search( $filterInput.val() );
 			} ) );

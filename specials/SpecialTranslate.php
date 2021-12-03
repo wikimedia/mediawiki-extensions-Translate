@@ -239,6 +239,7 @@ class SpecialTranslate extends SpecialPage {
 			Html::element( 'input', [
 				'class' => 'tux-message-filter-box',
 				'type' => 'search',
+				'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->text()
 			] )
 		);
 

@@ -613,11 +613,8 @@
 					lang: targetLangAttrib,
 					dir: targetLangDir
 				} )
-				.val( this.message.translation || '' );
-
-			if ( mw.translate.isPlaceholderSupported( $textarea ) ) {
-				$textarea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
-			}
+				.val( this.message.translation || '' )
+				.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
 
 			// Shortcuts for various insertable things
 			$textarea.on( 'keyup keydown', function ( e ) {
@@ -1136,11 +1133,8 @@
 					.addClass( 'tux-textarea-documentation' )
 					.on( 'input', function () {
 						$messageDescSaveButton.prop( 'disabled', false );
-					} );
-
-				if ( mw.translate.isPlaceholderSupported( $messageDescTextarea ) ) {
-					$messageDescTextarea.prop( 'placeholder', mw.msg( 'tux-editor-doc-editor-placeholder' ) );
-				}
+					} )
+					.prop( 'placeholder', mw.msg( 'tux-editor-doc-editor-placeholder' ) );
 
 				var $messageDescEditor = $( '<div>' )
 					.addClass( 'row message-desc-editor hide' )
