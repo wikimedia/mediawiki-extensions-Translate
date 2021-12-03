@@ -263,7 +263,7 @@ class PageTranslationHooks {
 				$out->addModules( 'ext.translate.pagetranslation.uls' );
 			}
 
-			if ( $isSource && TranslateUtils::isEditPage( $out->getContext()->getRequest() ) ) {
+			if ( $isSource ) {
 				// Adding a help notice
 				$out->addModuleStyles( 'ext.translate.edit.documentation.styles' );
 				$out->addModules( 'ext.translate.edit.documentation' );

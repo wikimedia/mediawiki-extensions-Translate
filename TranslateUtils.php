@@ -540,16 +540,6 @@ class TranslateUtils {
 		return $namespaceInfo->hasSubpages( $title->getNamespace() );
 	}
 
-	public static function isEditPage( WebRequest $request ): bool {
-		$veAction = $request->getVal( 'veaction' );
-		if ( $veAction ) {
-			return true;
-		}
-
-		$action = $request->getVal( 'action' );
-		return $action === 'edit';
-	}
-
 	/**
 	 * Wrapper around WikiPage::doEditContent() or WikiPage::doUserEditContent(),
 	 * depending on the version. The Translate extenion supports MediaWiki 1.35+
