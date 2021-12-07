@@ -25,7 +25,8 @@
 			"Whym",
 			"神樂坂秀吉",
 			"青子守歌",
-			"아라"
+			"아라",
+			"TKsdik8900"
 		]
 	},
 	"translate": "翻訳",
@@ -275,7 +276,7 @@
 	"translate-gs-total": "合計",
 	"translate-gs-avgscore": "平均点",
 	"translate-documentation-language": "メッセージについての説明文",
-	"translate-searchprofile": "訳文",
+	"translate-searchprofile": "翻訳",
 	"translate-searchprofile-tooltip": "すべての翻訳から検索",
 	"translate-searchprofile-note": "より多くの検索設定は、[$1 翻訳検索]を通して利用することができます。",
 	"translate-search-languagefilter": "言語で絞り込み:",

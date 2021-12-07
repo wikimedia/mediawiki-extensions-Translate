@@ -5,7 +5,8 @@
 			"Dars",
 			"Piramidion",
 			"Ypryima",
-			"Ата"
+			"Ата",
+			"DDPAT"
 		]
 	},
 	"apihelp-aggregategroups-description": "Керування агрегованими групами повідомлень.\n\nВи можете додавати або вилучати агреговані групи повідомлень та додавати чи вилучати повідомлення з них (одне за раз).",
@@ -32,7 +33,7 @@
 	"apihelp-query+managemessagegroups-description": "Отримати можливі перейменування для повідомлення в групі протягом імпортувань",
 	"apihelp-query+managemessagegroups-param-groupId": "Ідентифікатор групи",
 	"apihelp-query+managemessagegroups-param-messageKey": "Ключ повідомлення",
-	"apihelp-query+managemessagegroups-param-changesetName": "Назва набору змін — Стандартно / Без змін / Mediawiki тощо.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Назва набору змін — За замовчуванням/Без змін/Mediawiki тощо.",
 	"apihelp-query+managemessagegroups-example-1": "Отримати можливі перейменування для заданого ключа в заданій групі",
 	"apihelp-query+messagecollection-summary": "Запитати MessageCollection про переклади.",
 	"apihelp-query+messagecollection-param-group": "Група повідомлень.",
@@ -43,7 +44,7 @@
 	"apihelp-query+messagecollection-param-prop": "Які властивості отримати:\n;definition:Повідомлення.\n;translation:Поточний переклад (без рядка $1, якщо є, використати теґи для перевірки застарілих чи поламаних перекладів).\n;tags:Теґи повідомлення, наприклад optional, ignored чи fuzzy.\n;properties:Властивості повідомлення: status, revision, last-translator. Можуть відрізнятися у різних повідомлень.\n;revision:<span class=\"deprecated\">Застаріло!</span> Використати $2prop=properties.",
 	"apihelp-query+messagecollection-example-1": "Список підтримуваних мов",
 	"apihelp-query+messagecollection-example-2": "Список не додаткових повідомлень для групи «page-Example»",
-	"apihelp-query+messagecollection-example-3": "Список додаткових повідомлень фінською мовою з теґами для групи «page-Example»",
+	"apihelp-query+messagecollection-example-3": "Список додаткових повідомлень фінською мовою з тегами для групи «page-Example»",
 	"apihelp-query+messagecollection-example-4": "Більше інформації про останні версії перекладів для групи «page-Example»",
 	"apihelp-query+messagegroups-description": "Видати інформацію про групи повідомлень.\n\nЗверніть увагу, що параметр uselang впливає на результати частин, що залежать від мови.",
 	"apihelp-query+messagegroups-summary": "Вивести інформацію про групи повідомлень.",
@@ -69,8 +70,8 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "Ключ цільового повідомлення, перейменування якого здійснюється",
 	"apihelp-managemessagegroups-param-messageKey": "Заміна для ключа повідомлення",
 	"apihelp-managemessagegroups-param-operation": "Операція, яку слід виконати. Можливі значення — перейменування / нове",
-	"apihelp-managemessagegroups-param-changesetName": "Назва набору змін — Стандартно / Без змін / Mediawiki тощо.",
-	"apihelp-managemessagegroups-param-changesetModified": "Мітка часу Unix-формату, коли була остання модифікація набору змін. Якщо модифікація набору змін відбулася після цього, API видасть помилку.",
+	"apihelp-managemessagegroups-param-changesetName": "Назва набору змін — За замовчуванням/Без змін/Mediawiki тощо.",
+	"apihelp-managemessagegroups-param-changesetModified": "Мітка часу Unix-формату, коли була остання модифікація набору змін. Якщо модифікація набору змін сталася після цього, API видасть помилку.",
 	"apihelp-translatesandbox-description": "Зареєструватися й управляти користувачами в пісочниці.",
 	"apihelp-translatesandbox-summary": "Зареєструватися й управляти користувачами в пісочниці.",
 	"apihelp-translatesandbox-param-do": "Що робити.",

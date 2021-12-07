@@ -21,7 +21,8 @@
 			"VezonThunder",
 			"Vililikku",
 			"Yupik",
-			"ZeiP"
+			"ZeiP",
+			"MITO"
 		]
 	},
 	"translate": "Käännä",
@@ -221,6 +222,7 @@
 	"translate-smg-rename-cancel": "Peruuta",
 	"translate-smg-rename-no-msg": "Viestejä ei löytynyt.",
 	"translate-smg-rename-new": "Lisää uutena...",
+	"translate-smg-strong-sync-help": "Ohje",
 	"translate-smg-group-message-action-history": "Historia",
 	"translate-smg-group-message-tag-outdated": "Vanhentunut",
 	"translate-smg-group-message-tag-rename": "Nimeä uudelleen",
@@ -246,7 +248,7 @@
 	"translate-manage-intro-other": "Alla on luettelo kielen $1 käännösmuutoksista.\nTarkista muutokset ja valitse toiminto, jonka haluat tehdä jokaiselle käännökselle.\nJos valitset muutosten ohittamisen, toimintoa ei tallenneta.",
 	"translate-manage-import-ok": "Tuotu: $1",
 	"translate-manage-import-done": "Tuonti valmis.",
-	"translate-manage-source-message-not-found": "Viestin määritelmää ei löytnyt",
+	"translate-manage-source-message-not-found": "Viestin määritelmää ei löytynyt",
 	"importtranslations": "Käännösten tuonti",
 	"translate-import-from-local": "Paikallinen tiedosto",
 	"translate-import-load": "Tallenna tiedosto",

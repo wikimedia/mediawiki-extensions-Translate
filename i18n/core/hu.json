@@ -188,7 +188,7 @@
 	"translate-mgs-invalid-group": "A megadott $1 csoport nem létezik.",
 	"translate-mgs-nothing": "Nincs megjeleníthető statisztika.",
 	"supportedlanguages": "Aktív nyelvek",
-	"supportedlanguages-summary": "Ezen a lapon megtalálható a {{SITENAME}} által támogatott összes nyelv, a nyelven dolgozó fordítók neveivel együtt.\n\nEgy fordító minél többet fordított, a neve annál nagyobb betűkkel jelenik meg. Az aláhúzás színe jelzi, hogy az adott fordító legutóbb mikor volt aktív.",
+	"supportedlanguages-summary": "Ezen a lapon megtalálható a(z) {{SITENAME}} összes aktív nyelve, a nyelven dolgozó fordítók neveivel együtt.\n\nEgy fordító minél többet fordított, a neve annál nagyobb betűkkel jelenik meg. Az aláhúzás színe jelzi, hogy az adott fordító legutóbb mikor volt aktív.",
 	"supportedlanguages-colorlegend": "A színek jelentése: a legutóbbi fordítást $1 napja végezte.",
 	"supportedlanguages-sqlite-error": "Az SQLite nem támogatott",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Fordító}}|Fordítók}}: $1",

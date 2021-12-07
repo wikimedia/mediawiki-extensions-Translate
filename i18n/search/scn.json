@@ -1,8 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarvaturi"
+			"Sarvaturi",
+			"Ajeje Brazorf"
 		]
 	},
-	"searchtranslations": "Arricerca traduzzioni"
+	"searchtranslations": "Arricerca traduzzioni",
+	"tux-sst-edit": "Cancia traduzzioni",
+	"tux-sst-view-foreign": "Talìa supra $1",
+	"tux-sst-facet-language": "Lingua",
+	"tux-sst-default": "Traduzzioni",
+	"tux-sst-ellipsis-untranslated": "Nudda traduzzioni"
 }

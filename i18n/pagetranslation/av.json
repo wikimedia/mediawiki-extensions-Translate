@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Gazimagomedov",
-			"Аль-Гимравий"
+			"Аль-Гимравий",
+			"Omarov M."
 		]
 	},
 	"tpt-invalid-group": "Данде кколареб къокъа",
 	"pt-movepage-new": "ЦІияб цІар:",
 	"pt-deletepage-action-perform": "Нахъе бацІцІине",
 	"pp-prepare-button-label": "ХIадурабизе",
-	"pp-save-button-label": "ЦIунизе",
+	"pp-save-button-label": "Басмалъизабизе",
 	"pp-diff-old-header": "Бахчараб текст",
 	"pp-diff-new-header": "ХIадурараб текст"
 }

@@ -15,6 +15,7 @@
 	"tux-sst-translated": "Tradukuri de $1",
 	"tux-sst-untranslated": "Nula tradukuro de(l) $1",
 	"tux-sst-ellipsis-untranslated": "Nula tradukuro",
+	"tux-sst-link-all-match": "Demandez omna serchata vorti.",
 	"tux-sst-match-message": "Hike montresas tradukuri qui koincidas kun irga vorto ek la serchita. $1",
 	"tux-sst-case-sensitive": "''Case sensitive''"
 }

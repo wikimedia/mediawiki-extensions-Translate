@@ -25,7 +25,9 @@
 			"Siebrand",
 			"Slboat",
 			"Umherirrender",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Ajeje Brazorf",
+			"ThisIsACreeper0101"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -48,7 +50,7 @@
 	"tpt-badtitle": "Parameters:\n* $1 - page title",
 	"tpt-nosuchpage": "Parameters:\n* $1 - page title",
 	"tpt-oldrevision": "Error message displayed when trying to mark an older page revision for translation. Parameters:\n* $1 is a page title.\n* $2 is a page link.",
-	"tpt-notsuitable": "{{doc-important|Do not translate <code><nowiki><nowiki><translate></nowiki>&lt;/nowiki></code>.}}\nParameters:\n* $1 - page title\n* $2 - (Unused) revision ID",
+	"tpt-notsuitable": "{{doc-important|Do not translate <code><nowiki><nowiki><translate></nowiki>&lt;/nowiki></code>.}}\nParameters:\n* $1 - page title",
 	"tpt-saveok": "Followed by {{msg-mw|Tpt-saveok-first}} if the page is being marked for translation for the first time and {{msg-mw|Tpt-offer-notify}} if the user is allowed to notify translators.\n\nParameters:\n* $1 - page title\n* $2 - number of sections, can be used with PLURAL\n* $3 - URL which points to [[Special:Translate]]",
 	"tpt-saveok-first": "Message displayed on [[Special:PageTranslation]] after marking a page for translation the very first time.\n\nParameters:\n* $1 - a URL to [[Special:PageMigration]]",
 	"tpt-offer-notify": "Message displayed on [[Special:PageTranslation]] after marking a page for translation when the marking user also has right to notify translators.\n\nParameters:\n* $1 - a URL to [[Special:NotifyTranslators]] with the marked page preselected",
@@ -159,7 +161,7 @@
 	"log-action-filter-pagetranslation-prioritylanguages": "{{doc-log-action-filter-action|pagetranslation|prioritylanguages}}",
 	"log-action-filter-pagetranslation-aggregategroups": "{{doc-log-action-filter-action|pagetranslation|aggregategroups}}",
 	"pt-movepage-title": "Used as page title.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - old page title",
-	"pt-movepage-blockers": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nFollowed by any of the following error messages:\n* {{msg-mw|Pt-movepage-block-base-exists}}\n* {{msg-mw|Pt-movepage-block-base-invalid}}\n* {{msg-mw|Pt-movepage-block-tp-exists}}\n* {{msg-mw|Pt-movepage-block-tp-invalid}}\n* {{msg-mw|Pt-movepage-block-section-exists}}\n* {{msg-mw|Pt-movepage-block-section-invalid}}\n* {{msg-mw|Pt-movepage-block-subpage-exists}}\n* {{msg-mw|Pt-movepage-block-subpage-invalid}}\n\nParameters:\n* $1 - number of error messages",
+	"pt-movepage-blockers": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nFollowed by any of the following error messages:\n* {{msg-mw|Pt-movepage-block-base-invalid}}\n* {{msg-mw|Pt-movepage-block-tp-invalid}}\n* {{msg-mw|Pt-movepage-block-section-invalid}}\n* {{msg-mw|Pt-movepage-block-subpage-invalid}}\n\nParameters:\n* $1 - number of error messages",
 	"pt-movepage-block-base-exists": "Error message to indicate a base page exists and a translatable page cannot be renamed. Parameters:\n* $1 is a pre-existing page name.",
 	"pt-movepage-block-base-invalid": "The \"target page\" is the new title of the translatable page, see definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"pt-movepage-block-tp-exists": "translation page is a translated version of a translatable page.\n\nParameters:\n* $1 - (Unused) old page title\n* $2 - new page title\n{{Related|Pt-movepage-block-exists}}",
@@ -251,5 +253,5 @@
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
-	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
+	"tpt-generic-button": "Button text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
 }

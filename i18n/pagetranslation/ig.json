@@ -2,13 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Ukabia",
-			"Uzoma Ozurumba"
+			"Uzoma Ozurumba",
+			"Tochiprecious"
 		]
 	},
 	"pagetranslation": "Nsụgharị ihuakwukwọ",
 	"tpt-diff-new": "Mpkurụ edemede ọhuru",
 	"translate-tag-translate-link-desc": "Tugharia ihuakwụkwọ a",
 	"tpt-languages-legend": "Asụsụ ndị ọzọ:",
+	"tpt-languages-nonzero": "$1 ($2% atụgharirị)",
 	"tpt-aggregategroup-save": "Doma",
 	"tpt-aggregategroup-update": "Debe",
 	"tpt-aggregategroup-update-cancel": "Kagbụo",

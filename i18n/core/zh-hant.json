@@ -22,13 +22,14 @@
 			"Wehwei",
 			"Wrightbus",
 			"Xiplus",
-			"列维劳德"
+			"列维劳德",
+			"Winston Sung"
 		]
 	},
 	"translate": "翻譯",
-	"translate-extensionname": "翻譯",
+	"translate-extensionname": "翻譯（Translate）",
 	"translate-desc": "用來翻譯 MediaWiki 以及其他專案訊息的[[Special:Translate|特殊頁面]]",
-	"translate-fuzzybot-desc": "此用於維護翻譯的特殊系統帳號，是由 MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻譯擴充功能]所使用。\n此帳號為 MediaWiki 軟體裡的一部份，不可由其他任何使用者所持有。",
+	"translate-fuzzybot-desc": "此用於維護翻譯的特殊系統帳號，是由MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻譯擴充功能]所使用。\n此帳號為MediaWiki軟體裡的一部份，不可由其他任何使用者所持有。",
 	"translate-taskui-export-to-file": "以原始格式匯出",
 	"translate-taskui-export-as-po": "匯出做離線翻譯",
 	"translate-taction-translate": "翻譯",
@@ -166,7 +167,7 @@
 	"translate-sidebar-alltrans": "其他翻譯",
 	"translations": "所有翻譯",
 	"translations-summary": "在下方輸入訊息名稱以顯示所有可用的翻譯。",
-	"translate-translations-no-message": "\"$1\" 不是可翻譯的訊息",
+	"translate-translations-no-message": "「$1」不是可翻譯的訊息",
 	"translate-translations-none": "沒有 \"$1\" 的翻譯",
 	"translate-translations-count": "找到 {{PLURAL:$1|1 筆翻譯|$1 筆翻譯}}。",
 	"translate-translations-fieldset-title": "訊息",

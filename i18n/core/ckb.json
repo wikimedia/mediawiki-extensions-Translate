@@ -100,6 +100,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|زمان|زمانەکان}} بەگشتی.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|دەستکاری}} - دوایین دەستکاری $3 {{PLURAL:$3|ڕۆژ}} لەمە پێش",
 	"translate-jssti-add": "زیادکردن بۆ سەر لیست",
+	"translate-smg-group-message-message-other-langs": "زمانەکانی تر:",
 	"translate-manage-import-diff": "پەیام $1 | کردارەکان: $2",
 	"translate-manage-import-new": "پەیامی نوێ $1",
 	"translate-manage-action-import": "هاوردن",
@@ -154,5 +155,6 @@
 	"tux-editor-message-tools-delete": "سڕینەوە",
 	"tux-editor-message-tools-translations": "هەموو وەرگێرانەکان",
 	"tux-editor-loading": "باركردن‌ ...",
+	"translate-search-more-languages-info": "$1 زمانی تر",
 	"translate-statsbar-tooltip": "$1% وەرگێڕدراوە, $2% پێداجوونەوەی بۆ کراوە"
 }

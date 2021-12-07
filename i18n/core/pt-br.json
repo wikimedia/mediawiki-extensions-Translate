@@ -207,7 +207,7 @@
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
 	"supportedlanguages": "Idiomas ativos",
-	"supportedlanguages-summary": "Esta página apresenta uma lista de todas os idiomas suportados por {{SITENAME}},\njunto dos respectivos nomes dos tradutores de cada idioma.\nQuanto maior for exibido um nome, com mais traduções a pessoa terá contribuído.\nA cor do sublinhado é um indicativo de atividades recentes do usuário.",
+	"supportedlanguages-summary": "Esta página apresenta uma lista de idiomas ativos no {{SITENAME}},\njunto dos respectivos nomes dos tradutores de cada idioma.\nQuanto maior for exibido um nome, com mais traduções a pessoa terá contribuído.\nA cor do sublinhado é um indicativo de atividades recentes do usuário.",
 	"supportedlanguages-colorlegend": "Legenda: última tradução $1 dias atrás.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",

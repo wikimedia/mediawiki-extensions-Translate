@@ -81,7 +81,7 @@
 	"pt-parse-open": "Etiquetta &lt;translate> asymmetric.\nPatrono de traduction: <pre>$1</pre>",
 	"pt-parse-close": "Etiquetta &lt;/translate> asymmetric.\nPatrono de traduction: <pre>$1</pre>",
 	"pt-parse-nested": "Le unitates de traduction &lt;translate> annidate non es permittite.\nTexto del etiquetta: <pre>$1</pre>",
-	"pt-shake-multiple": "Il ha multiple marcatores de unitate de traduction pro un sol unitate de traduction.\nTexto del unitate de traduction: <pre>$1</pre>",
+	"pt-shake-multiple": "Il ha multiple marcatores de unitate de traduction pro un sol unitate de traduction.\nAssecura te que le unitates de traduction es separate per lineas vacue.\nTexto del unitate de traduction: <pre>$1</pre>",
 	"pt-shake-position": "Il ha marcatores de unitate de traduction in un position inexpectate.\nTexto del unitate de traduction: <pre>$1</pre>",
 	"pt-shake-empty": "Unitate de traduction vacue pro le marcator \"$1\".",
 	"log-description-pagetranslation": "Registro de actiones ligate al systema de traduction de paginas",

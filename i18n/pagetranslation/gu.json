@@ -35,5 +35,8 @@
 	"tpt-languages-legend": "અન્ય ભાષાઓ:",
 	"tpt-languages-nonzero": "$1 ($2% ભાષાંતરીત)",
 	"tpt-tab-translate": "ભાષાંતર કરો",
-	"tpt-invalid-group": "અયોગ્ય સમૂહ"
+	"tpt-aggregategroup-update-cancel": "રદ કરો",
+	"tpt-invalid-group": "અયોગ્ય સમૂહ",
+	"pm-cancel-button-label": "રદ કરો",
+	"pp-cancel-button-label": "રદ કરો"
 }

@@ -4,12 +4,12 @@
 			"Joanmp17"
 		]
 	},
-	"searchtranslations": "ትርጉማት ምድላይ",
+	"searchtranslations": "ኣብ ውሽጢ ትርጉማት ድለይ",
 	"tux-sst-edit": "ትርጉም ኣመዓራርይ",
 	"tux-sst-view-foreign": "ኣብ $1 ርኣይ",
-	"tux-sst-search": "ምድላይ",
-	"tux-sst-search-ph": "ትርጉማት ምድላይ",
-	"tux-sst-count": "{{PLURAL:$1|ሓደ ውጽኢት ዝተረኸበ|$1 ውጺኢታት ዝተረኸቡ}}",
+	"tux-sst-search": "ድለይ",
+	"tux-sst-search-ph": "ትርጉማት ድለይ",
+	"tux-sst-count": "{{PLURAL:$1|ሓደ ውጽኢት ተረኺቡ|$1 ውጺኢታት ተረኺቦም}}",
 	"tux-sst-facet-language": "ቋንቋታት",
 	"tux-sst-facet-group": "ጉጅለታት መልእኽትታት",
 	"tux-sst-nosolr-title": "ምድላይ ዘይርከብ",
@@ -17,7 +17,7 @@
 	"tux-sst-next": "ዝቕጽል ›",
 	"tux-sst-prev": "‹ ዝቐደመ",
 	"tux-sst-default": "ትርጉማት",
-	"tux-sst-translated": "ካብ $1 ትርጉማት",
+	"tux-sst-translated": "ትርጉማት ካብ $1",
 	"tux-sst-untranslated": "ካብ $1 ብዘይ ትርጉም",
 	"tux-sst-ellipsis-untranslated": "ብዘይ ትርጉም"
 }

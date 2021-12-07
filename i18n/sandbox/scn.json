@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarvaturi"
+			"Sarvaturi",
+			"Ajeje Brazorf"
 		]
 	},
+	"tsb-all-languages-button-label": "Tutti li lingui",
+	"tsb-user-posted-a-comment": "Nun n tradutturi",
 	"translationstash": "Bimminutu/a"
 }

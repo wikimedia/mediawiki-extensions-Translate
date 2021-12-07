@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"SawJaemin"
+		]
+	},
+	"tsb-all-languages-button-label": "ကျိာ်ခဲလၢာ်",
+	"tsb-translations-user": "{{GENDER:$1|ပှၤသူတၢ်ဖိ}} တၢ်ကျိာ်ထံ",
+	"tsb-translations-current": "တၢ်ကျိာ်ထံတဖၣ်လၢအိၣ်ပာ်",
+	"translate-translationstash-translations": "{{PLURAL:$1|တၢ်ကျိာ်ထံ|တၢ်ကျိာ်ထံတဖၣ်}} $1 ခါဝံၤလံ"
+}

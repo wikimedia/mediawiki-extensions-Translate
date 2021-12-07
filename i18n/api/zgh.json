@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Brahim-essaidi"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "ⴰⵎⵙⵢⵉⵙⵙⵏ ⵏ ⵜⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
+	"apihelp-groupreview-param-group": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ.",
+	"apihelp-query+messagecollection-param-group": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ.",
+	"apihelp-query+messagegroupstats-param-group": "ⴰⵎⵙⵢⵉⵙⵙⵏ ⵏ ⵜⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
+	"apierror-translate-duplicateaggregategroup": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ ⵜⵍⵍⴰ ⵢⴰⴷ"
+}

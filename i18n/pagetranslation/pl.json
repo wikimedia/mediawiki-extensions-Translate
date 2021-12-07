@@ -17,7 +17,8 @@
 			"Sp5uhe",
 			"ToSter",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Matma Rex"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -63,6 +64,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|Ta strona ma|Te strony mają}} zmiany nieoznaczone do tłumaczenia.",
 	"tpt-tag-discouraged": "odradzona",
 	"tpt-tag-oldsyntax": "stara składnia",
+	"tpt-tag-no-transclusion-support": "nie wspiera załączania",
 	"tpt-select-prioritylangs": "Kody języków priorytetowych rozdzielone przecinkami:",
 	"tpt-select-prioritylangs-force": "Zapobieganie tłumaczeniom na języki inne niż priorytetowe",
 	"tpt-select-prioritylangs-reason": "Powód:",
@@ -70,6 +72,8 @@
 	"tpt-sections-syntaxversion": "Wersja składni",
 	"tpt-syntaxversion-text": "Ta strona obecnie korzysta z przestarzałej wersji znaczników tłumaczenia. Nowa wersja będzie obejmować nieprzetłumaczone sekcje znacznikami HTML, aby wskazywać właściwy język danych fragmentów tekstu. Przykład: $1. Możesz skorzystać z nowej składni $2 aby zapobiec obejmowaniu znacznikami w miejscach, gdzie jest to niepożądane, na przykład podczas tłumaczenia atrybutu <code>title</code> w elementach. Nie ma możliwości przejścia na starszą wersję składni.",
 	"tpt-syntaxversion-label": "Używaj najnowszej wersji składni dla tej strony",
+	"tpt-transclusion": "Załączanie szablonów",
+	"tpt-transclusion-label": "Włącz tryb załączania szablonów ze wsparciem dla tłumaczenia",
 	"tpt-rev-mark": "oznacz do tłumaczenia",
 	"tpt-rev-unmark": "usuń z tłumaczenia",
 	"tpt-rev-discourage": "zniechęć",
@@ -134,7 +138,7 @@
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|usunął|usunęła}} języki priorytetowe ze strony przeznaczonej do tłumaczenia $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|ustawił|ustawiła}} języki priorytetowe dla strony przeznaczonej do tłumaczenia $3 na $5",
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|ograniczył|ograniczyła}} języki dla strony przeznaczonej do tłumaczenia $3 do $5",
-	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|dodał|dodała}} stronę przeznaczoną do tłumaczenia $3 do grupy zbiorczej $4",
+	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|dodał|dodała|dodał(a)}} stronę przeznaczoną do tłumaczenia $3 do grupy zbiorczej $4",
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|usunął|usunęła}} stronę przeznaczoną do tłumaczenia $3 z grupy zbiorczej $4",
 	"log-action-filter-pagetranslation": "Rodzaj działania:",
 	"log-action-filter-pagetranslation-mark": "Oznacz do tłumaczenia",

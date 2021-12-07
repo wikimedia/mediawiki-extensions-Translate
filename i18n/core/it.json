@@ -20,7 +20,8 @@
 			"Pietrodn",
 			"Shirayuki",
 			"VittGam",
-			"Vituzzu"
+			"Vituzzu",
+			"Ajeje Brazorf"
 		]
 	},
 	"translate": "Traduzione",
@@ -135,10 +136,10 @@
 	"translate-statsf-days": "Periodo di tempo in giorni:",
 	"translate-statsf-start": "Data di inizio:",
 	"translate-statsf-scale": "Un punto ogni:",
-	"translate-statsf-scale-months": "Mese",
+	"translate-statsf-scale-months": "Mesi",
 	"translate-statsf-scale-weeks": "Settimana",
-	"translate-statsf-scale-days": "Giorno",
-	"translate-statsf-scale-hours": "Ora",
+	"translate-statsf-scale-days": "Giorni",
+	"translate-statsf-scale-hours": "Ore",
 	"translate-statsf-count": "Misura:",
 	"translate-statsf-count-edits": "Numero di modifiche",
 	"translate-statsf-count-users": "Traduttori attivi",
@@ -204,6 +205,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|lingue}} in totale.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|modifica|modifiche}} - ultima modifica $3 {{PLURAL:$3|giorno|giorni}} fa",
 	"abusefilter-edit-builder-vars-translate-source-text": "Testo di origine di un'unità di traduzione",
+	"abusefilter-edit-builder-vars-translate-target-language": "Lingua di destinazione per la traduzione",
 	"translate-jssti-add": "Aggiungi all'elenco",
 	"managemessagegroups": "Gestione del gruppo di messaggi",
 	"translate-smg-notallowed": "Non sei autorizzato a eseguire questa azione.",
