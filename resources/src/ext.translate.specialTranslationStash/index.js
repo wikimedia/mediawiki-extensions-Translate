@@ -234,6 +234,8 @@ $( function () {
 
 			loadMessages();
 		}
+	} ).on( 'keypress', function () {
+		$( this ).trigger( 'click' );
 	} );
 
 	// Get the user translations if any(possibly from an early attempt)

@@ -346,6 +346,8 @@
 				setupLanguageSelector( $target );
 				$target.trigger( 'click' );
 			} );
+		} ).on( 'keypress', function () {
+			$( this ).trigger( 'click' );
 		} );
 
 		if ( $.fn.translateeditor ) {

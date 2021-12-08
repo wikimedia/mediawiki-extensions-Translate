@@ -173,7 +173,7 @@ HTML
 
 		$value = Html::rawElement(
 			'span',
-			[ 'class' => 'uls mw-ui-button' ],
+			[ 'class' => 'uls mw-ui-button', 'tabindex' => 0 ],
 			$languageIcon . $targetLanguageName . $expandIcon
 		);
 
