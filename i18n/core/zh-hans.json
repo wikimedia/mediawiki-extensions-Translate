@@ -41,11 +41,12 @@
 			"乌拉跨氪",
 			"列维劳德",
 			"铁桶",
-			"Xiplus"
+			"Xiplus",
+			"Winston Sung"
 		]
 	},
 	"translate": "翻译",
-	"translate-extensionname": "翻译",
+	"translate-extensionname": "翻译（Translate）",
 	"translate-desc": "用于翻译MediaWiki和其他软件界面信息的[[Special:Translate|特殊页面]]",
 	"translate-fuzzybot-desc": "这是由MediaWiki[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻译扩展]使用的特殊系统账户，用于维护翻译。此账户是MediaWiki软件的一部分，不由任何用户所拥有。",
 	"translate-taskui-export-to-file": "以原始格式导出",

@@ -27,7 +27,11 @@
 	"translate-tag-page-desc": "Traduzzion de la pagina wiki [[$2|$1]] de $3($4)",
 	"translate-sidebar-alltrans": "In alter lengov",
 	"translations": "Tute i traduzzion",
+	"translate-untranslated": "Minga tradot",
+	"translate-languagestats-overall": "Tucc i grup di messagg insema",
 	"supportedlanguages": "Lengue ative",
 	"translate-smg-strong-sync-help": "Aiut",
-	"translate-documentation-language": "Documentazzion del messagg"
+	"translate-documentation-language": "Documentazzion del messagg",
+	"translate-msggroupselector-projects": "Grup de messagg",
+	"tux-tab-untranslated": "Minga tradot"
 }
