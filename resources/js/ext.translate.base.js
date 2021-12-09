@@ -160,6 +160,25 @@
 			return mw.translate.dirty ||
 				// Previous editors has some unsaved edits
 				$( '.tux-status-unsaved' ).length;
+		},
+
+		/**
+		 * Return the language details for usage in HTML attributes
+		 *
+		 * @param {string} languageCode
+		 * @return {Object}
+		 */
+		getLanguageDetailsForHtml: function ( languageCode ) {
+			var languageCodeForHtml = languageCode;
+			if ( languageCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+				languageCodeForHtml = mw.config.get( 'wgContentLanguage' );
+			}
+
+			return {
+				code: languageCodeForHtml,
+				direction: $.uls.data.getDir( languageCodeForHtml ),
+				autonym: $.uls.data.getAutonym( languageCode )
+			};
 		}
 	} );
 

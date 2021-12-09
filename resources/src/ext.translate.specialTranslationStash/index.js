@@ -217,19 +217,22 @@ $( function () {
 
 	$ulsTrigger.uls( {
 		ulsPurpose: 'translate-special-translationstash',
-		onSelect: function ( language ) {
-			var direction = $.uls.data.getDir( language ),
-				autonym = $.uls.data.getAutonym( language );
+		onSelect: function ( languageCode ) {
+			var languageDetails = mw.translate.getLanguageDetailsForHtml( languageCode );
 
 			$ulsTrigger
 				.find( '.ext-translate-target-language' )
-				.text( autonym );
+				.text( languageDetails.autonym )
+				.prop( {
+					lang: languageDetails.code,
+					dir: languageDetails.direction
+				} );
 
 			$messageTable
 				.empty()
 				.data( {
-					targetlangcode: language,
-					targetlangdir: direction
+					targetlangcode: languageCode,
+					targetlangdir: languageDetails.direction
 				} );
 
 			loadMessages();

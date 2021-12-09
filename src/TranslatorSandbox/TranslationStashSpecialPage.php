@@ -162,7 +162,11 @@ HTML
 
 		$targetLanguageName = Html::element(
 			'span',
-			[ 'class' => 'ext-translate-target-language' ],
+			[
+				'class' => 'ext-translate-target-language',
+				'dir' => $language->getDir(),
+				'lang' => $language->getHtmlCode()
+			],
 			$targetLangName
 		);
 
@@ -173,7 +177,10 @@ HTML
 
 		$value = Html::rawElement(
 			'span',
-			[ 'class' => 'uls mw-ui-button', 'tabindex' => 0 ],
+			[
+				'class' => 'uls mw-ui-button',
+				'tabindex' => 0
+			],
 			$languageIcon . $targetLanguageName . $expandIcon
 		);
 

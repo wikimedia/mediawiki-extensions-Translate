@@ -254,10 +254,16 @@
 		var ulsOptions = {
 			languages: mw.config.get( 'wgTranslateLanguages' ),
 			showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions ),
-			onSelect: function ( language ) {
-				mw.translate.changeLanguage( language );
-				$element.find( '.ext-translate-target-language' )
-					.text( $.uls.data.getAutonym( language ) );
+			onSelect: function ( languageCode ) {
+				var languageDetails = mw.translate.getLanguageDetailsForHtml( languageCode );
+				mw.translate.changeLanguage( languageCode );
+				$element
+					.find( '.ext-translate-target-language' )
+					.text( languageDetails.autonym )
+					.prop( {
+						lang: languageDetails.code,
+						dir: languageDetails.direction
+					} );
 			},
 			ulsPurpose: 'translate-special-translate',
 			quickList: function () {

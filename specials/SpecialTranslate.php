@@ -283,10 +283,15 @@ class SpecialTranslate extends SpecialPage {
 	protected function tuxLanguageSelector() {
 		global $wgTranslateDocumentationLanguageCode;
 
+		$mwService = MediaWikiServices::getInstance();
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
 			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
+			$targetLanguage = $mwService->getContentLanguage();
 		} else {
-			$targetLangName = Language::fetchLanguageName( $this->options['language'] );
+
+			$targetLanguage = $mwService->getLanguageFactory()->getLanguage( $this->options['language'] );
+			$languageNameUtils = $mwService->getLanguageNameUtils();
+			$targetLangName = $languageNameUtils->getLanguageName( $this->options['language'] );
 		}
 
 		$label = Html::element( 'span', [], $this->msg( 'tux-languageselector' )->text() );
@@ -298,7 +303,11 @@ class SpecialTranslate extends SpecialPage {
 
 		$targetLanguageName = Html::element(
 			'span',
-			[ 'class' => 'ext-translate-target-language' ],
+			[
+				'class' => 'ext-translate-target-language',
+				'dir' => $targetLanguage->getDir(),
+				'lang' => $targetLanguage->getHtmlCode()
+			],
 			$targetLangName
 		);
 
@@ -309,7 +318,10 @@ class SpecialTranslate extends SpecialPage {
 
 		$value = Html::rawElement(
 			'span',
-			[ 'class' => 'uls mw-ui-button', 'tabindex' => 0 ],
+			[
+				'class' => 'uls mw-ui-button',
+				'tabindex' => 0
+			],
 			$languageIcon . $targetLanguageName . $expandIcon
 		);
 
