@@ -179,7 +179,8 @@ HTML
 			'span',
 			[
 				'class' => 'uls mw-ui-button',
-				'tabindex' => 0
+				'tabindex' => 0,
+				'title' => $this->msg( 'tux-select-target-language' )->text()
 			],
 			$languageIcon . $targetLanguageName . $expandIcon
 		);
