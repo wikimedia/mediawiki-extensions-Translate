@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MetaYamlSchemaExtender;
+use Title;
 
 /**
  * The versatile default implementation of StringMangler interface.
@@ -54,10 +55,8 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	protected static function getValidKeyChars(): string {
 		static $valid = null;
 		if ( $valid === null ) {
-			global $wgLegalTitleChars;
 			$valid = strtr(
-				// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
-				$wgLegalTitleChars,
+				Title::legalChars(),
 				[
 					'=' => '', // equals sign, which is itself usef for escaping
 					'&' => '', // ampersand, for entities
