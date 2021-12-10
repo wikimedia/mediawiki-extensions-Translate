@@ -161,7 +161,7 @@
 		var $toggleLink = $( '<a>' )
 			.addClass( 'js-tp-toggle-all-groups' )
 			.attr( 'href', '#' )
-			.text( mw.msg( 'tpt-aggregategroup-expand-all-sub-groups' ) );
+			.text( mw.msg( 'tpt-aggregategroup-expand-all-groups' ) );
 
 		var $toggleLinkParent = $( '<div>' )
 			.append( '[', $toggleLink, ']' );
@@ -182,8 +182,8 @@
 			$target.toggleClass( 'expanded' );
 			$target.text(
 				isExpanded ?
-					mw.msg( 'tpt-aggregategroup-expand-all-sub-groups' ) :
-					mw.msg( 'tpt-aggregategroup-collapse-all-sub-groups' )
+					mw.msg( 'tpt-aggregategroup-expand-all-groups' ) :
+					mw.msg( 'tpt-aggregategroup-collapse-all-groups' )
 
 			);
 
@@ -201,10 +201,10 @@
 	}
 
 	function changeGroupToggleIconState( $icon, isOpen ) {
-		var title = mw.msg( 'tpt-aggregategroup-expand-sub-group' );
+		var title = mw.msg( 'tpt-aggregategroup-expand-group' );
 		var ariaExpanded = 'false';
 		if ( isOpen ) {
-			title = mw.msg( 'tpt-aggregategroup-collapse-sub-group' );
+			title = mw.msg( 'tpt-aggregategroup-collapse-group' );
 			ariaExpanded = 'true';
 		}
 

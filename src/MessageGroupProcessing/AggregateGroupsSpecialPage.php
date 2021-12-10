@@ -294,9 +294,9 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 	private function getGroupToggleIcon( string $targetElementId, bool $shouldExpand ): string {
 		if ( $shouldExpand ) {
-			$title = $this->msg( 'tpt-aggregategroup-collapse-sub-group' )->plain();
+			$title = $this->msg( 'tpt-aggregategroup-collapse-group' )->plain();
 		} else {
-			$title = $this->msg( 'tpt-aggregategroup-expand-sub-group' )->plain();
+			$title = $this->msg( 'tpt-aggregategroup-expand-group' )->plain();
 		}
 
 		return Html::rawElement(
