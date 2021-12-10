@@ -343,7 +343,6 @@
 	"tux-status-saving": "Публикация…",
 	"tux-status-unsaved": "Не опубликовано",
 	"tux-save-unknown-error": "Произошла неизвестная ошибка.",
-	"tux-editor-placeholder": "Ваш перевод",
 	"tux-editor-editsummary-placeholder": "Необязательный комментарий",
 	"tux-editor-paste-original-button-label": "Вставить исходный текст",
 	"tux-editor-discard-changes-button-label": "Отменить изменения",

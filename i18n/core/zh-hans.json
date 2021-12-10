@@ -367,7 +367,6 @@
 	"tux-status-saving": "正在发布...",
 	"tux-status-unsaved": "未发布",
 	"tux-save-unknown-error": "发生未知错误。",
-	"tux-editor-placeholder": "您的翻译",
 	"tux-editor-editsummary-placeholder": "可选摘要",
 	"tux-editor-paste-original-button-label": "粘贴源文本",
 	"tux-editor-discard-changes-button-label": "放弃更改",

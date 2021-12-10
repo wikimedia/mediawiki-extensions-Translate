@@ -236,7 +236,6 @@
 	"tux-status-saving": "Publikuojama....",
 	"tux-status-unsaved": "Nepublikuota",
 	"tux-save-unknown-error": "Įvyko nežinoma klaida.",
-	"tux-editor-placeholder": "Jūsų vertimas",
 	"tux-editor-editsummary-placeholder": "Neprivaloma santrauka",
 	"tux-editor-paste-original-button-label": "Įklijuoti kodo tekstą",
 	"tux-editor-discard-changes-button-label": "Atsisakyti pakeitimų",

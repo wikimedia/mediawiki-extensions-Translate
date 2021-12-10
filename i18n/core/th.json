@@ -277,7 +277,6 @@
 	"tux-status-saving": "กำลังบันทึก...",
 	"tux-status-unsaved": "ยังไม่บันทึก",
 	"tux-save-unknown-error": "เกิดข้อผิดพลาดที่ไม่รู้จัก",
-	"tux-editor-placeholder": "การแปลของคุณ",
 	"tux-editor-editsummary-placeholder": "สรุปทางเลือก",
 	"tux-editor-paste-original-button-label": "วางข้อความต้นฉบับ",
 	"tux-editor-discard-changes-button-label": "ละทิ้งการเปลี่ยนแปลง",

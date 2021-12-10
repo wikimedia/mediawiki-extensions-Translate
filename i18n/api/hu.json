@@ -89,7 +89,7 @@
 	"apierror-translate-invalidaggregategroupname": "Érvénytelen név összesített üzenetcsoportnak",
 	"apierror-translate-invalidgroup": "A csoport nem létezik vagy érvénytelen",
 	"apierror-translate-invalidstate": "A kért állapot érvénytelen.",
-	"apierror-translate-invalidlanguage": "A kért nyelv érvénytelen.",
+	"apierror-translate-invalidlanguage": "A(z) $1 nyelvkód érvénytelen.",
 	"apierror-translate-invalidupdate": "Érvénytelen frissítés",
 	"apierror-translate-language-disabled": "$1 nyelvre a fordítás le van tiltva.",
 	"apierror-translate-language-disabled-reason": "$1 nyelvre a fordítás le van tiltva: $2",

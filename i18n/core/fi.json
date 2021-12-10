@@ -315,7 +315,7 @@
 	"tux-status-saving": "Julkaistaan...",
 	"tux-status-unsaved": "Julkaisematon",
 	"tux-save-unknown-error": "Tapahtui tuntematon virhe.",
-	"tux-editor-placeholder": "Käännös",
+	"tux-editor-placeholder-language": "Käännöksesi kielellä $1",
 	"tux-editor-editsummary-placeholder": "Valinnainen yhteenveto",
 	"tux-editor-paste-original-button-label": "Liitä lähdeteksti",
 	"tux-editor-discard-changes-button-label": "Hylkää muutokset",

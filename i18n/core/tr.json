@@ -351,7 +351,6 @@
 	"tux-status-saving": "Yayımlanıyor...",
 	"tux-status-unsaved": "Yayımlanmadı",
 	"tux-save-unknown-error": "Bilinmeyen hata oluştu.",
-	"tux-editor-placeholder": "Çeviriniz",
 	"tux-editor-editsummary-placeholder": "İsteğe bağlı özet",
 	"tux-editor-paste-original-button-label": "Kaynak metni yapıştır",
 	"tux-editor-discard-changes-button-label": "Değişiklikleri çıkar",

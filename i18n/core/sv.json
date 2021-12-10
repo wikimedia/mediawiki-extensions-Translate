@@ -352,7 +352,6 @@
 	"tux-status-saving": "Publicerar...",
 	"tux-status-unsaved": "Inte publicerad",
 	"tux-save-unknown-error": "Okänt fel uppstod.",
-	"tux-editor-placeholder": "Din översättning",
 	"tux-editor-editsummary-placeholder": "Valfri sammanfattning",
 	"tux-editor-paste-original-button-label": "Klistra in källtext",
 	"tux-editor-discard-changes-button-label": "Ta bort ändringar",

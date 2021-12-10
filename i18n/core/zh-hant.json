@@ -342,7 +342,6 @@
 	"tux-status-saving": "發布中…",
 	"tux-status-unsaved": "未發布",
 	"tux-save-unknown-error": "發生不明的錯誤。",
-	"tux-editor-placeholder": "您的翻譯",
 	"tux-editor-editsummary-placeholder": "選填摘要",
 	"tux-editor-paste-original-button-label": "貼上原文",
 	"tux-editor-discard-changes-button-label": "取消修改",

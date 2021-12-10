@@ -161,7 +161,6 @@
 	"tux-status-saving": "გამოქვეყნება...",
 	"tux-status-unsaved": "არ გამოქვეყნდა",
 	"tux-save-unknown-error": "დაფიქსირდა უცნობი შეცდომა.",
-	"tux-editor-placeholder": "თქვენი თარგმანები",
 	"tux-editor-paste-original-button-label": "საწყისი ტექსტის ჩასმა",
 	"tux-editor-discard-changes-button-label": "ცვლილებების გაუქმება",
 	"tux-editor-save-button-label": "თარგმანის გამოქვეყნება",

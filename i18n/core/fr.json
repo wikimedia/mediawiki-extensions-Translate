@@ -370,7 +370,6 @@
 	"tux-status-saving": "Publication en cours...",
 	"tux-status-unsaved": "Non publié",
 	"tux-save-unknown-error": "Une erreur inconnue s’est produite.",
-	"tux-editor-placeholder": "Votre traduction",
 	"tux-editor-editsummary-placeholder": "Résumé facultatif",
 	"tux-editor-paste-original-button-label": "Coller le texte source",
 	"tux-editor-discard-changes-button-label": "Annuler les modifications",

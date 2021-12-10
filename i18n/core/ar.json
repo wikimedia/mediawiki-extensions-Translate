@@ -315,7 +315,6 @@
 	"tux-status-saving": "...جاري النشر",
 	"tux-status-unsaved": "غير منشورة",
 	"tux-save-unknown-error": "خطأ غير معروف حدث.",
-	"tux-editor-placeholder": "ترجمتك",
 	"tux-editor-editsummary-placeholder": "ملخص اختياري",
 	"tux-editor-paste-original-button-label": "الصق النص المصدر",
 	"tux-editor-discard-changes-button-label": "تجاهل التغييرات",

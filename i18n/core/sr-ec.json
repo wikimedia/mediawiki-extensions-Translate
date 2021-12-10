@@ -304,7 +304,6 @@
 	"tux-status-saving": "Објављивање…",
 	"tux-status-unsaved": "Необјављено",
 	"tux-save-unknown-error": "Дошло је до непознате грешке.",
-	"tux-editor-placeholder": "Ваш превод",
 	"tux-editor-editsummary-placeholder": "Опис (пожељно)",
 	"tux-editor-paste-original-button-label": "Налепи изворни текст",
 	"tux-editor-discard-changes-button-label": "Одбаци измене",

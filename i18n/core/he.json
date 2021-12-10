@@ -339,7 +339,6 @@
 	"tux-status-saving": "מתפרסם...",
 	"tux-status-unsaved": "לא התפרסמה",
 	"tux-save-unknown-error": "אירעה שגיאה בלתי־ידועה.",
-	"tux-editor-placeholder": "התרגום שלך",
 	"tux-editor-editsummary-placeholder": "תקציר עריכה (לא חובה)",
 	"tux-editor-paste-original-button-label": "הדבקת טקסט המקור",
 	"tux-editor-discard-changes-button-label": "זריקת שינויים",

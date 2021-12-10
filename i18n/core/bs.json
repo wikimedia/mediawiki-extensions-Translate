@@ -261,7 +261,6 @@
 	"tux-status-saving": "Čuvanje...",
 	"tux-status-unsaved": "Nesačuvano",
 	"tux-save-unknown-error": "Desila se nepoznata greška.",
-	"tux-editor-placeholder": "Vaš prijevod",
 	"tux-editor-editsummary-placeholder": "Neobavezan sažetak",
 	"tux-editor-paste-original-button-label": "Zalijepi izvorni tekst",
 	"tux-editor-discard-changes-button-label": "Odbaci izmjene",

@@ -33,5 +33,7 @@
 	"translate-smg-strong-sync-help": "Aiut",
 	"translate-documentation-language": "Documentazzion del messagg",
 	"translate-msggroupselector-projects": "Grup de messagg",
-	"tux-tab-untranslated": "Minga tradot"
+	"tux-tab-untranslated": "Minga tradot",
+	"tux-editor-placeholder-documentation": "Sgionta la documentazzion del messagg",
+	"tux-editor-placeholder-language": "La toa traduzzion l'è $1"
 }
