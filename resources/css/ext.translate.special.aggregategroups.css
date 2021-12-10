@@ -26,6 +26,11 @@ div.tpt-add-new-group {
 	margin-bottom: 1em;
 }
 
+h2.tp-name {
+	/** Allows the outline for the toggle icon to be visible **/
+	overflow: visible;
+}
+
 span.tp-toggle-group {
 	font-size: 16px;
 	margin-right: 1em;
@@ -35,10 +40,18 @@ span.tp-toggle-group {
 .tp-toggle-group-icon {
 	background: no-repeat scroll center center transparent;
 	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/expand.svg );
-	padding: 6px 16px;
+	padding: 14px 18px;
+	margin: 0 2px;
+	/** Improve icon alignment with text **/
+	margin-top: -4px;
+	border: 0;
 	background-size: 20px;
-	text-decoration: none;
 	vertical-align: middle;
+	cursor: pointer;
+}
+
+.tp-toggle-group-icon:focus {
+	outline: 1px dotted;
 }
 
 .mw-tpa-group.mw-tpa-group-open .tp-toggle-group-icon {

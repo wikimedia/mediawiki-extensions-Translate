@@ -294,17 +294,17 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 	private function getGroupToggleIcon( string $targetElementId, bool $shouldExpand ): string {
 		if ( $shouldExpand ) {
-			$title = $this->msg( 'tpt-aggregategroup-collapse-sub-group' );
+			$title = $this->msg( 'tpt-aggregategroup-collapse-sub-group' )->plain();
 		} else {
-			$title = $this->msg( 'tpt-aggregategroup-expand-sub-group' );
+			$title = $this->msg( 'tpt-aggregategroup-expand-sub-group' )->plain();
 		}
 
-		return Html::linkButton(
-			'',
+		return Html::rawElement(
+			'button',
 			[
+				'type' => 'button',
 				'title' => $title,
 				'class' => 'js-tp-toggle-groups tp-toggle-group-icon',
-				'role' => 'button',
 				'aria-expanded' => $shouldExpand ? 'true' : 'false',
 				'aria-controls' => $targetElementId
 			]
