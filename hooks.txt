@@ -119,5 +119,8 @@ Post processing step to format in wiki
  object          result.helpers: JSON subset focusing on the helpers returned e.g. result.helpers.definition
  jQuery          translateEditor.$editor: The current translation-editing form
 
+;mw.translate.translationView.stateChange: Returns the new state of the group after the state changes (i.e. after the message group or target language changes)
+ object          stateInfo: The new state object, with info on message group, language and message list
+
 ;wikipage.content: See this hook in MediaWiki core. Fired for message documentation in the translation editor.
  jQuery          $content

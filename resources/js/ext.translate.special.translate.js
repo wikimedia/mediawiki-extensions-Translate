@@ -76,6 +76,8 @@
 				}
 			} );
 
+			mw.hook( 'mw.translate.translationView.stateChange' ).fire( state );
+
 			if ( uri.toString() === window.location.href ) {
 				return;
 			}
