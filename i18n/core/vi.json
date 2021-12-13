@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Keo010122",
 			"Leduyquang753",
 			"Minh Nguyen",
 			"Nghiemtrongdai VN",
@@ -282,6 +283,8 @@
 	"tux-status-saving": "Đang lưu…",
 	"tux-status-unsaved": "Chưa lưu",
 	"tux-save-unknown-error": "Đã xuất hiệu lỗi bất ngờ.",
+	"tux-editor-placeholder-documentation": "Thêm tài liệu thông điệp",
+	"tux-editor-placeholder-language": "Bản dịch của bạn có tại $1",
 	"tux-editor-editsummary-placeholder": "Tóm tắt tùy chọn",
 	"tux-editor-paste-original-button-label": "Dán văn bản gốc",
 	"tux-editor-discard-changes-button-label": "Hủy thay đổi",

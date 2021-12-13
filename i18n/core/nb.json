@@ -335,6 +335,7 @@
 	"tux-status-saving": "Publiserer …",
 	"tux-status-unsaved": "Upublisert",
 	"tux-save-unknown-error": "Ukjent feil oppsto.",
+	"tux-editor-placeholder-language": "Din oversettelse til $1",
 	"tux-editor-editsummary-placeholder": "Valgfri forklaring",
 	"tux-editor-paste-original-button-label": "Lim inn kildetekst",
 	"tux-editor-discard-changes-button-label": "Se bort i fra endringer",

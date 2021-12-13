@@ -170,5 +170,8 @@
 	"apierror-translate-rename-state-invalid": "Yeniden adlandırma için iletilen iletilerden biri yeni eklenmeli ve diğeri silinmelidir. Mevcut durumlar - ek: $1 ve silme: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Zaten sizin tarafınızdan incelenmiş olarak işaretlendi",
 	"apiwarn-translate-language-disabled-source": "Bu grubun kaynak dili $1. Lütfen çevrilecek başka bir dil seçin.",
-	"apierror-translate-operation-error": "İstek işlenirken bir hata oluştu. Hata: $1"
+	"apierror-translate-operation-error": "İstek işlenirken bir hata oluştu. Hata: $1",
+	"apihelp-translationentitysearch-summary": "Mesaj gruplarını ve mesajları arayın",
+	"apihelp-translationentitysearch-param-query": "Arama sorgusu",
+	"apihelp-translationentitysearch-param-limit": "Maksimum arama sonucu sayısı"
 }

@@ -97,6 +97,8 @@
 	"tux-languageselector": "Traduci n",
 	"tux-tab-all": "Tutti",
 	"tux-edit": "Cancia",
+	"tux-editor-placeholder-documentation": "Agghiunci na ducumintazzioni dû missaggiu",
+	"tux-editor-placeholder-language": "La tò traduzzioni n $1",
 	"tux-editor-cancel-button-label": "Annulla",
 	"tux-editor-confirm-button-label": "Cunferma traduzzioni",
 	"tux-editor-edit-desc": "Cancia ducumintazzioni",

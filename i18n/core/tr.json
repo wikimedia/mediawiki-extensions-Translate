@@ -351,6 +351,8 @@
 	"tux-status-saving": "Yayımlanıyor...",
 	"tux-status-unsaved": "Yayımlanmadı",
 	"tux-save-unknown-error": "Bilinmeyen hata oluştu.",
+	"tux-editor-placeholder-documentation": "Mesaj belgelemesini ekle",
+	"tux-editor-placeholder-language": "$1 dilinde çeviriniz",
 	"tux-editor-editsummary-placeholder": "İsteğe bağlı özet",
 	"tux-editor-paste-original-button-label": "Kaynak metni yapıştır",
 	"tux-editor-discard-changes-button-label": "Değişiklikleri çıkar",
@@ -436,5 +438,6 @@
 	"translate-messagebundle-error-key-too-long": "\"$1\" anahtarı çok uzun",
 	"translate-messagebundle-error-key-invalid-characters": "\"$1\" anahtarı, izin verilmeyen karakterler içeriyor",
 	"translate-messagebundle-error-invalid-value": "\"$1\" anahtarı dize değeri içermiyor",
-	"translate-messagebundle-error-empty-value": "\"$1\" anahtarının bir değeri yok"
+	"translate-messagebundle-error-empty-value": "\"$1\" anahtarının bir değeri yok",
+	"translate-messagebundle-group-description": "[[$2|$1]] sayfasında tanımlanan bir mesaj paketinin mesajları."
 }
