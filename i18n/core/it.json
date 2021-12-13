@@ -20,7 +20,8 @@
 			"Pietrodn",
 			"Shirayuki",
 			"VittGam",
-			"Vituzzu"
+			"Vituzzu",
+			"Ajeje Brazorf"
 		]
 	},
 	"translate": "Traduzione",
@@ -205,6 +206,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|lingue}} in totale.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|modifica|modifiche}} - ultima modifica $3 {{PLURAL:$3|giorno|giorni}} fa",
 	"abusefilter-edit-builder-vars-translate-source-text": "Testo di origine di un'unità di traduzione",
+	"abusefilter-edit-builder-vars-translate-target-language": "Lingua di destinazione per la traduzione",
 	"translate-save": "Pubblica ($1)",
 	"translate-jssti-add": "Aggiungi all'elenco",
 	"managemessagegroups": "Gestione del gruppo di messaggi",

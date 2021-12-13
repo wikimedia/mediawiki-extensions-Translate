@@ -7,17 +7,19 @@
 			"Mikalai Udodau",
 			"Nemo bis",
 			"Дзяніс Тутэйшы",
-			"Чаховіч Уладзіслаў"
+			"Чаховіч Уладзіслаў",
+			"ZlyiLev"
 		]
 	},
 	"translate": "Пераклад",
+	"translate-extensionname": "Перакласці",
 	"translate-desc": "[[Special:Translate|Адмысловая старонка]] для перакладу MediaWiki і іншых праграм",
-	"translate-fuzzybot-desc": "Гэта спецыяльны сістэмны ўліковы запіс, які выкарыстоўваецца [https://www.mediawiki.org/wiki/Extension:Translate/be пашырэннем перакладу] MediaWiki для задач падтрымкі перакладаў.\nГэты ўліковы запіс з'яўляецца часткай праграмнага забеспячэння MediaWiki і не належыць ніякаму ўдзельніку.",
+	"translate-fuzzybot-desc": "Гэта спецыяльны сістэмны ўліковы запіс, які выкарыстоўваецца [https://www.mediawiki.org/wiki/Extension:Translate/be пашырэннем перакладу] MediaWiki для задач падтрымкі перакладаў.\nГэты ўліковы запіс з’яўляецца часткай праграмнага забеспячэння MediaWiki і не належыць ніякаму ўдзельніку.",
 	"translate-taskui-export-to-file": "Экспарт у родным фармаце",
 	"translate-taskui-export-as-po": "Экспарт для афлайнавага перакладу",
 	"translate-taction-translate": "Пераклад",
 	"translate-taction-proofread": "Вычытка",
-	"translate-taction-lstats": "Статыстыка мовы",
+	"translate-taction-lstats": "Моўная статыстыка",
 	"translate-taction-mstats": "Статыстыкі групы паведамленняў",
 	"translate-taction-export": "Экспарт",
 	"translate-taction-disabled": "Гэта дзеянне адключана ў гэтай вікі.",
@@ -117,7 +119,11 @@
 	"translate-statsf-count-reviewers": "Рэцэнзенты",
 	"translate-tag-page-desc": "Пераклад вікі-старонкі [[$2|$1]] з $3 ($4).",
 	"translate-sidebar-alltrans": "На іншых мовах",
+	"translations": "Усе пераклады",
+	"translate-translations-no-message": "Паведамленне «$1» нельга перакласці",
+	"languagestats": "Моўная статыстыка",
 	"translate-suppress-complete": "Схаваць цалкам перакладзеныя групы паведамленняў",
+	"translate-ls-noempty": "Схаваць зусім не перакладзеныя групы паведамленняў",
 	"translate-language": "Мова",
 	"translate-total": "Паведамленні",
 	"translate-untranslated": "Неперакладзеныя",
@@ -135,5 +141,7 @@
 	"tux-tab-untranslated": "Неперакладзеныя",
 	"tux-editor-in-other-languages": "На іншых мовах",
 	"tux-message-filter-advanced-button": "Пашыраны пошук",
-	"tux-editor-close-tooltip": "Закрыць"
+	"tux-empty-list-translated-action": "Перакласці",
+	"tux-editor-close-tooltip": "Закрыць",
+	"tux-editor-message-tools-translations": "Усе пераклады"
 }

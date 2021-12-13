@@ -138,6 +138,8 @@
 	"apierror-translate-sandbox-invalidppassword": "无效密码",
 	"apierror-translate-smg-nochanges": "没有要处理的更改。",
 	"apierror-translate-unknownmessage": "未知消息",
+	"apierror-translate-invalid-changeset-name": "传入了无效的更改集文件名 - $1",
+	"apierror-translate-invalid-operation": "操作无效：$1。有效值 - $2。",
 	"apiwarn-translate-alreadyreviewedbyyou": "已被您标记为已复核",
 	"apiwarn-translate-language-disabled-source": "此组的原始语言是$1。请选择另一语言进行翻译。"
 }
