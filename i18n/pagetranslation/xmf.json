@@ -34,8 +34,6 @@
 	"tpt-aggregategroup-edit-description": "ეჭარუა:",
 	"tpt-aggregategroup-update": "ჩუალა",
 	"tpt-aggregategroup-update-cancel": "გოუქვაფა",
-	"tpt-aggregategroup-expand-all-sub-groups": "არძა გიმენბუნაშ გონწყუმა",
-	"tpt-aggregategroup-collapse-all-sub-groups": "არძა გიმენბუნაშ კილუა",
 	"tpt-invalid-group": "ჩილათირი ბუნა",
 	"pt-parse-open": "უდუბალანსებუ &lt;translate> ხინტკი.\nთანგუაშ თანგი: <pre>$1</pre>",
 	"log-name-pagetranslation": "ხასჷლაშ თანგუაშ ჟურნალი",

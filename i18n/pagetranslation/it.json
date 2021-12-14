@@ -101,8 +101,6 @@
 	"tpt-aggregategroup-edit-description": "Descrizione:",
 	"tpt-aggregategroup-update": "Salva",
 	"tpt-aggregategroup-update-cancel": "Annulla",
-	"tpt-aggregategroup-expand-all-sub-groups": "espandi tutti i sottogruppi",
-	"tpt-aggregategroup-collapse-all-sub-groups": "collassa tutti i sottogruppi",
 	"tpt-invalid-group": "Gruppo non valido",
 	"pt-parse-open": "Marcatore &lt;translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-close": "Marcatore &lt;/translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",

@@ -115,8 +115,6 @@
 	"tpt-aggregategroup-edit-description": "Descripción:",
 	"tpt-aggregategroup-update": "Guardar",
 	"tpt-aggregategroup-update-cancel": "Cancelar",
-	"tpt-aggregategroup-expand-sub-group": "expandir subgrupos",
-	"tpt-aggregategroup-collapse-sub-group": "colapsar subgrupos",
 	"tpt-invalid-group": "El grupo no es válido",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nPlantilla de traducción: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nPlantilla de traducción: <pre>$1</pre>",

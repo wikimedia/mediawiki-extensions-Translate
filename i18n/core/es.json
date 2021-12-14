@@ -317,6 +317,7 @@
 	"tux-status-saving": "Publicando...",
 	"tux-status-unsaved": "Sin publicar",
 	"tux-save-unknown-error": "Ocurrió un error desconocido.",
+	"tux-editor-placeholder-language": "Tu traducción en $1",
 	"tux-editor-editsummary-placeholder": "Resumen opcional",
 	"tux-editor-paste-original-button-label": "Pegar texto de origen",
 	"tux-editor-discard-changes-button-label": "Descartar los cambios",
