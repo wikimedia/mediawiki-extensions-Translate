@@ -6,7 +6,9 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Config;
 use Html;
 use HtmlArmor;
+use InvalidArgumentException;
 use Language;
+use LanguageCode;
 use LinkBatch;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
@@ -109,16 +111,23 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->outputLanguageCloud( $languages, $names );
 		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $languages ) ) );
 
-		if ( !$par || !$this->langNameUtils->isKnownLanguageTag( $par ) ) {
+		if ( !$par ) {
 			return;
 		}
 
-		$language = $par;
+		// Convert formatted language tag like zh-Hant to internal format like zh-hant
+		$language = strtolower( $par );
 		try {
 			$data = $this->translatorActivity->inLanguage( $language );
 		} catch ( StatisticsUnavailable $e ) {
 			// generic-pool-error is from MW core
-			$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
+			$out->addHTML( Html::errorBox( $this->msg( 'generic-pool-error' )->parse() ) );
+			return;
+		} catch ( InvalidArgumentException $e ) {
+			$errorMessageHtml = $this->msg( 'translate-activelanguages-invalid-code' )
+				->params( LanguageCode::bcp47( $language ) )
+				->parse();
+			$out->addHTML( Html::errorBox( $errorMessageHtml ) );
 			return;
 		}
 
@@ -131,6 +140,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private function showLanguage( string $code, array $users, int $cachedAt ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
+		$bcp47Code = LanguageCode::bcp47( $code );
 
 		// Information to be used inside the foreach loop.
 		$linkInfo = [];
@@ -143,12 +153,13 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$native = $this->langNameUtils->getLanguageName( $code, null, 'all' );
 
 		if ( $local !== $native ) {
+
 			$headerText = $this->msg( 'supportedlanguages-portallink' )
-				->params( $code, $local, $native )->escaped();
+				->params( $bcp47Code, $local, $native )->escaped();
 		} else {
 			// No CLDR, so a less localised header and link title.
 			$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )
-				->params( $code, $native )->escaped();
+				->params( $bcp47Code, $native )->escaped();
 		}
 
 		$out->addHTML( Html::rawElement( 'h2', [ 'id' => $code ], $headerText ) );

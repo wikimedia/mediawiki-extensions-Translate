@@ -239,6 +239,7 @@
 	"supportedlanguages-count": "On [[Special:ActiveLanguages]]\n*$1 is the total number of supported languages.",
 	"supportedlanguages-activity": "Used as tooltip text for username in users list, to show user's activity.\n\nSee [{{canonicalurl:Special:ActiveLanguages}}#fr example].\n\nParameters:\n* $1 - username\n* $2 - number of edits the user made\n* $3 - number of days",
 	"translate-supportedlanguages-cached": "Notice shown in [[Special:ActiveLanguages]].\n\nParameters:\n*$1 is formatted time, such as '5 minutes'",
+	"translate-activelanguages-invalid-code": "Error message shown on Special:ActiveLanguages.\nParameters:\n* $1 - language code",
 	"abusefilter-edit-builder-vars-translate-source-text": "Description for an [[mw:Extension:AbuseFilter|AbuseFilter]] variable. Used as an abuse filter syntax option in a dropdown from the group {{msg-mw|abusefilter-edit-builder-group-vars}}.",
 	"abusefilter-edit-builder-vars-translate-target-language": "Description for an [[mw:Extension:AbuseFilter|AbuseFilter]] variable. Used as an abuse filter syntax option in a dropdown from the group {{msg-mw|abusefilter-edit-builder-group-vars}}.",
 	"translate-jssti-add": "Name of button in [[Special:Preferences]], tab Editing.",

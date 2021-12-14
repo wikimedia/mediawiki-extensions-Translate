@@ -204,6 +204,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|language|languages}} in total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edit|edits}} - last edit $3 {{PLURAL:$3|day|days}} ago",
 	"translate-supportedlanguages-cached": "This information was cached $1 ago.",
+	"translate-activelanguages-invalid-code": "Language code \"$1\" is unknown or not enabled for translation.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Source text of translation unit",
 	"abusefilter-edit-builder-vars-translate-target-language": "Target language for translation",
 	"translate-jssti-add": "Add to list",

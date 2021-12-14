@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use BagOStuff;
 use InvalidArgumentException;
 use JobQueueGroup;
-use MediaWiki\Languages\LanguageNameUtils;
 use PoolCounterWorkViaCallback;
+use TranslateUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -24,18 +24,15 @@ class TranslatorActivity {
 	private $cache;
 	private $query;
 	private $jobQueue;
-	private $languageNameUtils;
 
 	public function __construct(
 		BagOStuff $cache,
 		TranslatorActivityQuery $query,
-		JobQueueGroup $jobQueue,
-		LanguageNameUtils $languageNameUtils
+		JobQueueGroup $jobQueue
 	) {
 		$this->cache = $cache;
 		$this->query = $query;
 		$this->jobQueue = $jobQueue;
-		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	/**
@@ -114,7 +111,15 @@ class TranslatorActivity {
 	/** Update cache for all languages, even if not stale. */
 	public function updateAllLanguages(): void {
 		$now = (int)ConvertibleTimestamp::now( TS_UNIX );
-		foreach ( $this->query->inAllLanguages() as $language => $users ) {
+
+		$data = $this->query->inAllLanguages();
+		// In case there is no activity for a supported languages, cache empty results
+		$validLanguages = TranslateUtils::getLanguageNames( null );
+		foreach ( $validLanguages as $language ) {
+			$data[$language] = $data[$language] ?? [];
+		}
+
+		foreach ( $data as $language => $users ) {
 			if ( !$this->isValidLanguage( $language ) ) {
 				continue;
 			}
@@ -140,6 +145,6 @@ class TranslatorActivity {
 	}
 
 	private function isValidLanguage( string $language ): bool {
-		return $this->languageNameUtils->isKnownLanguageTag( $language );
+		return TranslateUtils::isSupportedLanguageCode( $language );
 	}
 }

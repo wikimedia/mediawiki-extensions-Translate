@@ -8,7 +8,7 @@ use HashBagOStuff;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Languages\LanguageNameUtils;
-use MediaWikiUnitTestCase;
+use MediaWikiIntegrationTestCase;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -16,7 +16,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\Statistics\TranslatorActivity
  */
-class TranslatorActivityTest extends MediaWikiUnitTestCase {
+class TranslatorActivityTest extends MediaWikiIntegrationTestCase {
 	public function testInvalidLanguage() {
 		$cache = $this->createMock( EmptyBagOStuff::class );
 		$query = $this->createMock( TranslatorActivityQuery::class );

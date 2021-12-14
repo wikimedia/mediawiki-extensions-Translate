@@ -158,8 +158,7 @@ return [
 		return new TranslatorActivity(
 			$services->getMainObjectStash(),
 			$query,
-			JobQueueGroup::singleton(),
-			$services->getLanguageNameUtils()
+			JobQueueGroup::singleton()
 		);
 	},
 
