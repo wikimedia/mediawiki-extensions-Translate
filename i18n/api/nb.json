@@ -137,7 +137,7 @@
 	"apierror-translate-invalidaggregategroupname": "Ugyldig navn på aggregatmeldingsgruppe",
 	"apierror-translate-invalidgroup": "Gruppa finnes ikke eller er ugyldig",
 	"apierror-translate-invalidstate": "Den forespurte tilstanden er ugyldig.",
-	"apierror-translate-invalidlanguage": "Den etterspurte språket er ugyldig.",
+	"apierror-translate-invalidlanguage": "Språkkoden $1 er ugyldig.",
 	"apierror-translate-invalidupdate": "Ugyldig oppdatering",
 	"apierror-translate-language-disabled": "Oversettelse til $1 er slått av.",
 	"apierror-translate-language-disabled-reason": "Oversettelse til $1 er slått av: $2",

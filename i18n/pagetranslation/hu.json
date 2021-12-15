@@ -229,5 +229,6 @@
 	"tpt-unlink-button": "Eltávolítás a fordításból",
 	"tpt-unlink-summary": "Lap eltávolítva a fordításból",
 	"tpt-generic-confirm": "Kérjük, erősítsd meg a műveletet.",
-	"tpt-generic-button": "Megerősítés"
+	"tpt-generic-button": "Megerősítés",
+	"tpt-validation-name-reuse": "A(z) „$1” többször van definiálva eltérő tartalommal. Módosítsd a változóneveket úgy, hogy egy fordítási egységen belül egyediek legyenek."
 }
