@@ -102,6 +102,7 @@
 	"tpt-aggregategroup-edit-description": "설명:",
 	"tpt-aggregategroup-update": "저장",
 	"tpt-aggregategroup-update-cancel": "취소",
+	"tpt-aggregategroup-expand-all-groups": "모든 그룹 펼치기",
 	"tpt-invalid-group": "잘못된 그룹",
 	"pt-parse-open": "불균형한 &lt;translate> 태그입니다.\n번역 틀: <pre>$1</pre>",
 	"pt-parse-close": "불균형한 &lt;/translate> 태그입니다.\n번역 틀: <pre>$1</pre>",
