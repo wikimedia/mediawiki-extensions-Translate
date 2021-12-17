@@ -209,6 +209,7 @@
 	"supportedlanguages-count": "{{PLURAL:$1|שפה אחת|$1 שפות}} בסך הכול.",
 	"supportedlanguages-activity": "$1‏: {{PLURAL:$2|עריכה אחת|$2 עריכות}} - עריכה אחרונה לפני {{PLURAL:$3|יום אחד|$3 ימים}}",
 	"translate-supportedlanguages-cached": "המידע הזה נשמר במטמון לפני $1.",
+	"translate-activelanguages-invalid-code": "קוד השפה \"$1\" אינו ידוע או אינו מופעל לתרגום",
 	"abusefilter-edit-builder-vars-translate-source-text": "טקסט המקור של יחידת התרגום",
 	"abusefilter-edit-builder-vars-translate-target-language": "שפת היעד לתרגום",
 	"translate-jssti-add": "הוספה לרשימה",
