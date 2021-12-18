@@ -12,7 +12,6 @@ use Parser;
 use ParserOptions;
 use PPFrame;
 use TMessage;
-use User;
 
 /**
  * Handles plural validation for MediaWiki inline plural syntax.
@@ -116,7 +115,8 @@ class MediaWikiPluralValidator implements MessageValidator {
 		};
 
 		// Setup parser
-		$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
+		$services = MediaWikiServices::getInstance();
+		$parser = $services->getParserFactory()->create();
 		// Load the default magic words etc now.
 		$parser->firstCallInit();
 		// So that they don't overrider our own callback
@@ -124,7 +124,10 @@ class MediaWikiPluralValidator implements MessageValidator {
 
 		// Setup things needed for preprocess
 		$title = null;
-		$options = new ParserOptions( new User(), Language::factory( 'en' ) );
+		$options = ParserOptions::newFromUserAndLang(
+			$services->getUserFactory()->newAnonymous(),
+			$services->getLanguageFactory()->getLanguage( 'en' )
+		);
 
 		$parser->preprocess( $translation, $title, $options );
 
