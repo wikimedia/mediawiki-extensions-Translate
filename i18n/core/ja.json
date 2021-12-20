@@ -103,6 +103,7 @@
 	"translate-checks-malformed": "<nowiki>$1</nowiki> の形式に誤りがあります。",
 	"translate-checks-fudforum-syntax": "このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。",
 	"translate-checks-newline-missing-start": "翻訳の冒頭で新しい行の{{PLURAL:$1|文字列|文字列}}$1個{{PLURAL:$1|が|が}}不足しています。",
+	"translate-checks-replacement": "$1 の代わりに $2 を使用してください。",
 	"translate-pref-editassistlang": "補助言語:",
 	"prefs-translate": "翻訳設定",
 	"translate-pref-editassistlang-help": "言語コードをカンマ区切りで列挙します。\n翻訳中に、これらの言語での翻訳が表示されます。\n既定の言語一覧は、自身の言語により変化します。",

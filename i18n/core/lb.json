@@ -65,6 +65,8 @@
 	"translate-checks-plural-forms": "Fir <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|gouf eng Form|goufen $1 Formen}} uginn. Et {{PLURAL:$2|gëtt awer nëmmen eng Form|ginn awer nëmme(n) $2 Formen}} ënnerstëtzt (ausser de Formen 0= an 1= ).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> huet zweemol déiselwecht Zeechen um Schluss. <nowiki>{{PLURAL:$1|Schof|Schof}}</nowiki> soll sou geschriwwe ginn: <nowiki>{{PLURAL:$1|Schof}}</nowiki>.",
 	"translate-checks-smartformat-plural-missing": "Dës Iwwersetzung muss eng Méizuel fir d'Variabel $1 hunn.",
+	"translate-checks-unicode-plural-missing": "Dës Iwwersetzung brauch <nowiki>{{PLURAL|}}</nowiki>.",
+	"translate-checks-unicode-plural-unsupported": "Dëse Message ënnerstëtzt <nowiki>{{PLURAL|}}</nowiki> net.",
 	"translate-checks-pagename": "Nummraum geännert duerch d'Definitioun",
 	"translate-checks-format": "Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1",
 	"translate-checks-escape": "{{PLURAL:$2|Dëst Escape-Zeeche kann|Dës Escape-Zeeche kënnen}} ongewollt sinn: <strong>$1</strong>\n{{PLURAL:$4|E valabelt Escape-Zeechen ass |Vvalabelt Escape-Zeechen sinn (ënneraneren):}} $3.",

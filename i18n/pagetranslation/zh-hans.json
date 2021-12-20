@@ -36,7 +36,9 @@
 			"Shizhao",
 			"SomeyaMako",
 			"TsuyaMarisa",
-			"Xiplus"
+			"Xiplus",
+			"Lakejason0",
+			"Tranve"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -45,7 +47,7 @@
 	"tps-edit-sourcepage-title": "编辑一个可译的页面。",
 	"tps-edit-sourcepage-text": "你正在编辑一个源翻译页。请您确保对下面的文档非常熟悉：\n*\n[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text] \n*\n[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
 	"tps-edit-sourcepage-ve-warning-title": "警告：不支持的页面",
-	"tps-edit-sourcepage-ve-warning-text": "你正在编辑一个可译的界面。用这个编辑器编译这些还没有得到官方的支持。请用源编辑器编辑。",
+	"tps-edit-sourcepage-ve-warning-text": "你正在编辑一个可译的界面。用这个编辑器编译这些还没有得到官方的支持。请用源代码编辑器编辑。",
 	"tps-edit-sourcepage-ve-warning-button": "好",
 	"tpt-section": "翻译单元$1",
 	"tpt-section-new": "新翻译单元。\n名字：$1",
