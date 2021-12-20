@@ -341,7 +341,7 @@
 	"tux-status-unsaved": "לא התפרסמה",
 	"tux-save-unknown-error": "אירעה שגיאה בלתי־ידועה.",
 	"tux-editor-placeholder-documentation": "הוספת תיעוד הודעות",
-	"tux-editor-placeholder-language": "התרגום שלך ל$1",
+	"tux-editor-placeholder-language": "התרגום שלך ל{{GRAMMAR:תחילית|$1}}",
 	"tux-editor-editsummary-placeholder": "תקציר עריכה (לא חובה)",
 	"tux-editor-paste-original-button-label": "הדבקת טקסט המקור",
 	"tux-editor-discard-changes-button-label": "זריקת שינויים",

@@ -240,6 +240,7 @@
 	"supportedlanguages-count": "$1 langue{{PLURAL:$1||s}} en tout.",
 	"supportedlanguages-activity": "$1 : $2 modification{{PLURAL:$2||s}} – dernière modification il y a $3 jour{{PLURAL:$3||s}}",
 	"translate-supportedlanguages-cached": "Cette information a été mise en cache il y a $1.",
+	"translate-activelanguages-invalid-code": "Le code de langue « $1 » est inconnu ou non activé pour la traduction.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Texte source de l’unité de traduction",
 	"abusefilter-edit-builder-vars-translate-target-language": "Langue cible pour la traduction",
 	"translate-jssti-add": "Ajouter à la liste",

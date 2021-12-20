@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "Čuäʹjet seeidast $1",
 	"tux-sst-search": "Ooʒʒ",
 	"tux-sst-search-ph": "Ooʒʒ jåårǥlõõzzid",
+	"tux-sst-count": "{{PLURAL:$1|Õhtt ooccâmpuåđõs|$1 ooccâmpuåđõõzz|$1 ooccâmpuåđõssâd}}",
 	"tux-sst-facet-language": "Ǩiõl",
 	"tux-sst-facet-group": "Saakkjoouk",
 	"tux-sst-default": "Jåårǥlõõzz",
