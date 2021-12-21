@@ -81,6 +81,7 @@
 	"translate-manage-import-diff": "Missaggiu $1 | Azzioni:$2",
 	"translate-manage-import-new": "Missaggiu novu $1",
 	"translate-manage-import-deleted": "Cancillatu missaggiu $1",
+	"translate-manage-action-import": "Mporta",
 	"translate-import-load": "Càrrica lu file",
 	"translate-gs-code": "Còdici",
 	"translate-gs-continent": "Cuntinenti",

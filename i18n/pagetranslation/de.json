@@ -126,7 +126,7 @@
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|hatte}} ein Problem beim Verschieben der Seite von $3 nach $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|schloss}} die Löschung der übersetzbaren Seite $3 ab",
 	"logentry-pagetranslation-deletefnok": "$1 {{GENDER:$2|konnte}} die Seite $3 nicht löschen, die zur übersetzbaren Seite $4 gehört",
-	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|schloss}} die Löschung der Übersetzungsseite $3 ab",
+	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|schloss}} die Löschung der übersetzten Seite $3 ab",
 	"logentry-pagetranslation-deletelnok": "$1 {{GENDER:$2|konnte}} die Seite $3 nicht löschen, die zur Übersetzungsseite $4 gehört",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|empfahl}} die Übersetzung der Seite $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|riet}} von der Übersetzung der Seite $3 ab",
