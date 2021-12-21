@@ -130,7 +130,6 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 	/// Searches pages that match given patterns
 	private function getPagesForPattern( $pattern, $skipLanguages = [] ) {
-		global $wgTranslateMessageNamespaces;
 		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
 
 		$search = [];
@@ -146,7 +145,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$title_conds = [];
 		foreach ( $search as $ns => $names ) {
 			if ( $ns === NS_MAIN ) {
-				$ns = $wgTranslateMessageNamespaces;
+				$ns = $this->getConfig()->get( 'TranslateMessageNamespaces' );
 			}
 			$titles = $dbr->makeList( $names, LIST_OR );
 			$title_conds[] = $dbr->makeList( [ 'page_namespace' => $ns, $titles ], LIST_AND );
@@ -175,14 +174,13 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	private function getPagesForUser( User $user, $skipLanguages = [] ) {
-		global $wgTranslateMessageNamespaces;
 		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
 
 		$revWhere = $this->actorMigration->getWhere( $dbr, 'rev_user', $user );
 		$conds = [
 			'page_latest=rev_id',
 			$revWhere['conds'],
-			'page_namespace' => $wgTranslateMessageNamespaces,
+			'page_namespace' => $this->getConfig()->get( 'TranslateMessageNamespaces' ),
 			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 		];
 		if ( count( $skipLanguages ) ) {
@@ -211,8 +209,6 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * @param string|null $comment Edit summary.
 	 */
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
-		global $wgTranslateDocumentationLanguageCode;
-
 		$this->output( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
 			$this->output( 'INVALID TITLE!', $title );
@@ -220,8 +216,9 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			return;
 		}
 
+		$documentationLanguageCode = $this->getConfig()->get( 'TranslateDocumentationLanguageCode' );
 		$items = explode( '/', $title->getText(), 2 );
-		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
+		if ( isset( $items[1] ) && $items[1] === $documentationLanguageCode ) {
 			$this->output( 'IGNORED!', $title );
 
 			return;
