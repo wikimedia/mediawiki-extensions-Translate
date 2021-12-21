@@ -133,10 +133,8 @@ class FuzzyScript {
 		$count = count( $msgs );
 		$this->reportProgress( "Found $count pages to update.", 'pagecount' );
 
-		foreach ( $msgs as $phpIsStupid ) {
-			[ $title, $text ] = $phpIsStupid;
+		foreach ( $msgs as [ $title, $text ] ) {
 			$this->updateMessage( $title, TRANSLATE_FUZZY . $text, $this->dryrun, $this->comment );
-			unset( $phpIsStupid );
 		}
 	}
 
@@ -207,9 +205,7 @@ class FuzzyScript {
 			[],
 			$queryInfo['joins']
 		);
-		$messagesContents = self::getMessageContentsFromRows( $rows );
-		$rows->free();
-		return $messagesContents;
+		return self::getMessageContentsFromRows( $rows );
 	}
 
 	public static function getPagesForUser( User $user, $skipLanguages = [] ) {
@@ -239,9 +235,7 @@ class FuzzyScript {
 			$queryInfo['joins'] + $revWhere['joins']
 		);
 
-		$messagesContents = self::getMessageContentsFromRows( $rows );
-		$rows->free();
-		return $messagesContents;
+		return self::getMessageContentsFromRows( $rows );
 	}
 
 	/**
@@ -284,7 +278,7 @@ class FuzzyScript {
 			EDIT_FORCE_BOT | EDIT_UPDATE
 		);
 
-		$success = $status === true || ( is_object( $status ) && $status->isOK() );
+		$success = $status && $status->isOK();
 		$this->reportProgress( $success ? 'OK' : 'FAILED', $title );
 	}
 }
