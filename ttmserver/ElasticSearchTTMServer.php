@@ -68,7 +68,7 @@ class ElasticSearchTTMServer
 	protected $updateMapping = false;
 
 	public function isLocalSuggestion( array $suggestion ) {
-		return $suggestion['wiki'] === wfWikiID();
+		return $suggestion['wiki'] === WikiMap::getCurrentWikiId();
 	}
 
 	public function expandLocation( array $suggestion ) {
@@ -267,7 +267,7 @@ class ElasticSearchTTMServer
 			$localid = $handle->getTitleForBase()->getPrefixedText();
 			$this->deleteByQuery( $this->getType(), Query::create(
 				( new BoolQuery() )
-				->addFilter( new Term( [ 'wiki' => wfWikiID() ] ) )
+				->addFilter( new Term( [ 'wiki' => WikiMap::getCurrentWikiId() ] ) )
 				->addFilter( new Term( [ 'language' => $handle->getCode() ] ) )
 				->addFilter( new Term( [ 'localid' => $localid ] ) ) ) );
 		}
@@ -306,7 +306,7 @@ class ElasticSearchTTMServer
 		$language = $handle->getCode();
 
 		$localid = $handle->getTitleForBase()->getPrefixedText();
-		$wiki = wfWikiID();
+		$wiki = WikiMap::getCurrentWikiId();
 		$globalid = "$wiki-$localid-$revId/$language";
 
 		$data = [
@@ -378,7 +378,7 @@ class ElasticSearchTTMServer
 		$settings->setRefreshInterval( '-1' );
 
 		$this->deleteByQuery( $this->getType(), Query::create(
-			( new Term() )->setTerm( 'wiki', wfWikiID() ) ) );
+			( new Term() )->setTerm( 'wiki', WikiMap::getCurrentWikiId() ) ) );
 
 		$mapping = new Mapping();
 		$mapping->setType( $type );

@@ -164,7 +164,7 @@ class SpecialSearchTranslations extends SpecialPage {
 					$dataProvider
 				);
 				$document = [
-					'wiki' => wfWikiID(),
+					'wiki' => WikiMap::getCurrentWikiId(),
 					'localid' => $handle->getTitleForBase()->getPrefixedText(),
 					'content' => $aid->getData()['value'],
 					'language' => $handle->getCode(),
