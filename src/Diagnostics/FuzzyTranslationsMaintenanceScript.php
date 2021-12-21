@@ -9,10 +9,13 @@ use IDBAccessObject;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\UserFactory;
 use Title;
 use TranslateUtils;
 use User;
+use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 use WikiPage;
 
@@ -22,6 +25,15 @@ use WikiPage;
  * @author Niklas Laxström
  */
 class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
+	/** @var ActorMigration */
+	private $actorMigration;
+	/** @var UserFactory */
+	private $userFactory;
+	/** @var RevisionStore */
+	private $revisionStore;
+	/** @var ILoadBalancer */
+	private $DBLoadBalancer;
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Fuzzy bot command line script.' );
@@ -54,7 +66,17 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$this->requireExtension( 'Translate' );
 	}
 
+	private function initServices() {
+		$mwServices = MediaWikiServices::getInstance();
+		$this->actorMigration = $mwServices->getActorMigration();
+		$this->userFactory = $mwServices->getUserFactory();
+		$this->revisionStore = $mwServices->getRevisionStore();
+		$this->DBLoadBalancer = $mwServices->getDBLoadBalancer();
+	}
+
 	public function execute() {
+		$this->initServices();
+
 		$skipLanguages = [];
 		if ( $this->hasOption( 'skiplanguages' ) ) {
 			$skipLanguages = array_map(
@@ -64,7 +86,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		if ( $this->hasOption( 'user' ) ) {
-			$user = User::newFromName( $this->getArg( 0 ) );
+			$user = $this->userFactory->newFromName( $this->getArg( 0 ) );
 			$pages = $this->getPagesForUser( $user, $skipLanguages );
 		} else {
 			$pages = $this->getPagesForPattern( $this->getArg( 0 ), $skipLanguages );
@@ -90,15 +112,14 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * @return array containing page titles and the text content of the page
 	 */
 	private function getMessageContentsFromRows( $rows ) {
-		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$messagesContents = [];
-		$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
+		$slots = $this->revisionStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
 		foreach ( $rows as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 			if ( isset( $slots[$row->rev_id] ) ) {
 				$text = $slots[$row->rev_id][SlotRecord::MAIN]->blob_data;
 			} else {
-				$text = $revStore->newRevisionFromRow( $row, IDBAccessObject::READ_NORMAL, $title )
+				$text = $this->revisionStore->newRevisionFromRow( $row, IDBAccessObject::READ_NORMAL, $title )
 					->getContent( SlotRecord::MAIN )
 					->getNativeData();
 			}
@@ -110,7 +131,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	/// Searches pages that match given patterns
 	private function getPagesForPattern( $pattern, $skipLanguages = [] ) {
 		global $wgTranslateMessageNamespaces;
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
 
 		$search = [];
 		foreach ( (array)$pattern as $title ) {
@@ -141,8 +162,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
 		}
 
-		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
+		$queryInfo = $this->revisionStore->getQueryInfo( [ 'page' ] );
 		$rows = $dbr->select(
 			$queryInfo['tables'],
 			$queryInfo['fields'],
@@ -156,9 +176,9 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 	private function getPagesForUser( User $user, $skipLanguages = [] ) {
 		global $wgTranslateMessageNamespaces;
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
 
-		$revWhere = ActorMigration::newMigration()->getWhere( $dbr, 'rev_user', $user );
+		$revWhere = $this->actorMigration->getWhere( $dbr, 'rev_user', $user );
 		$conds = [
 			'page_latest=rev_id',
 			$revWhere['conds'],
@@ -170,8 +190,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
 		}
 
-		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$queryInfo = $revStore->getQueryInfo( [ 'page', 'user' ] );
+		$queryInfo = $this->revisionStore->getQueryInfo( [ 'page', 'user' ] );
 		$rows = $dbr->select(
 			$queryInfo['tables'],
 			$queryInfo['fields'],
