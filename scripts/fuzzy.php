@@ -70,71 +70,22 @@ class Fuzzy extends Maintenance {
 
 		if ( $this->hasOption( 'user' ) ) {
 			$user = User::newFromName( $this->getArg( 0 ) );
-			$pages = FuzzyScript::getPagesForUser( $user, $skipLanguages );
+			$pages = $this->getPagesForUser( $user, $skipLanguages );
 		} else {
-			$pages = FuzzyScript::getPagesForPattern( $this->getArg( 0 ), $skipLanguages );
+			$pages = $this->getPagesForPattern( $this->getArg( 0 ), $skipLanguages );
 		}
 
-		$bot = new FuzzyScript( $pages );
-		$bot->comment = $this->getOption( 'comment' );
-		$bot->dryrun = !$this->hasOption( 'really' );
-		$bot->setProgressCallback( [ $this, 'myOutput' ] );
-		$bot->execute();
+		$dryrun = !$this->hasOption( 'really' );
+		$comment = $this->getOption( 'comment' );
+		$this->fuzzyTranslations( $pages, $dryrun, $comment );
 	}
 
-	/**
-	 * Public alternative for protected Maintenance::output() as we need to get
-	 * messages from the ChangeSyncer class to the commandline.
-	 * @param string $text The text to show to the user
-	 * @param string|null $channel Unique identifier for the channel.
-	 */
-	public function myOutput( $text, $channel = null ) {
-		$this->output( $text, $channel );
-	}
-}
+	private function fuzzyTranslations( array $pages, bool $dryrun, $comment ) {
+		$count = count( $pages );
+		$this->output( "Found $count pages to update.", 'pagecount' );
 
-/**
- * Class for marking translation fuzzy.
- */
-class FuzzyScript {
-	/** @var bool Check for configuration problems. */
-	private $allclear = true;
-	/** @var callable Function to report progress updates */
-	protected $progressCallback;
-	/** @var bool Dont do anything unless confirmation is given */
-	public $dryrun = true;
-	/** @var string Edit summary. */
-	public $comment;
-	/** @var array[] */
-	public $pages;
-
-	/** @param array $pages */
-	public function __construct( $pages ) {
-		$this->pages = $pages;
-	}
-
-	public function setProgressCallback( $callback ) {
-		$this->progressCallback = $callback;
-	}
-
-	/// @see Maintenance::output for param docs
-	protected function reportProgress( $text, $channel ) {
-		if ( is_callable( $this->progressCallback ) ) {
-			call_user_func( $this->progressCallback, $text, $channel );
-		}
-	}
-
-	public function execute() {
-		if ( !$this->allclear ) {
-			return;
-		}
-
-		$msgs = $this->pages;
-		$count = count( $msgs );
-		$this->reportProgress( "Found $count pages to update.", 'pagecount' );
-
-		foreach ( $msgs as [ $title, $text ] ) {
-			$this->updateMessage( $title, TRANSLATE_FUZZY . $text, $this->dryrun, $this->comment );
+		foreach ( $pages as [ $title, $text ] ) {
+			$this->updateMessage( $title, TRANSLATE_FUZZY . $text, $dryrun, $comment );
 		}
 	}
 
@@ -143,7 +94,7 @@ class FuzzyScript {
 	 * @param IResultWrapper $rows
 	 * @return array containing page titles and the text content of the page
 	 */
-	private static function getMessageContentsFromRows( $rows ) {
+	private function getMessageContentsFromRows( $rows ) {
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$messagesContents = [];
 		$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
@@ -162,7 +113,7 @@ class FuzzyScript {
 	}
 
 	/// Searches pages that match given patterns
-	public static function getPagesForPattern( $pattern, $skipLanguages = [] ) {
+	private function getPagesForPattern( $pattern, $skipLanguages = [] ) {
 		global $wgTranslateMessageNamespaces;
 		$dbr = wfGetDB( DB_REPLICA );
 
@@ -205,10 +156,10 @@ class FuzzyScript {
 			[],
 			$queryInfo['joins']
 		);
-		return self::getMessageContentsFromRows( $rows );
+		return $this->getMessageContentsFromRows( $rows );
 	}
 
-	public static function getPagesForUser( User $user, $skipLanguages = [] ) {
+	private function getPagesForUser( User $user, $skipLanguages = [] ) {
 		global $wgTranslateMessageNamespaces;
 		$dbr = wfGetDB( DB_REPLICA );
 
@@ -235,7 +186,7 @@ class FuzzyScript {
 			$queryInfo['joins'] + $revWhere['joins']
 		);
 
-		return self::getMessageContentsFromRows( $rows );
+		return $this->getMessageContentsFromRows( $rows );
 	}
 
 	/**
@@ -248,22 +199,22 @@ class FuzzyScript {
 	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
 		global $wgTranslateDocumentationLanguageCode;
 
-		$this->reportProgress( "Updating {$title->getPrefixedText()}... ", $title );
+		$this->output( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
-			$this->reportProgress( 'INVALID TITLE!', $title );
+			$this->output( 'INVALID TITLE!', $title );
 
 			return;
 		}
 
 		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
-			$this->reportProgress( 'IGNORED!', $title );
+			$this->output( 'IGNORED!', $title );
 
 			return;
 		}
 
 		if ( $dryrun ) {
-			$this->reportProgress( 'DRY RUN!', $title );
+			$this->output( 'DRY RUN!', $title );
 
 			return;
 		}
@@ -279,7 +230,7 @@ class FuzzyScript {
 		);
 
 		$success = $status && $status->isOK();
-		$this->reportProgress( $success ? 'OK' : 'FAILED', $title );
+		$this->output( $success ? 'OK' : 'FAILED', $title );
 	}
 }
 
