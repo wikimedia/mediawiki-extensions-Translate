@@ -334,6 +334,7 @@
 	"translate-msggroupselector-search-recent": "Aktuell",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|Eine Untergruppe|$1 Untergruppen}}",
 	"tux-languageselector": "Übersetzen auf",
+	"tux-select-target-language": "Zielsprache für die Übersetzung",
 	"tux-tab-all": "Alle",
 	"tux-tab-untranslated": "Nicht übersetzt",
 	"tux-tab-outdated": "Veraltet",
