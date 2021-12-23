@@ -163,6 +163,7 @@
 	"translate-msggroupselector-search-recent": "Nesenās",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|apakšgrupas|apakšgrupa|apakšgrupas}}",
 	"tux-languageselector": "Tulkot uz",
+	"tux-select-target-language": "Tulkojuma mērķa valoda",
 	"tux-tab-all": "Visas",
 	"tux-tab-untranslated": "Neiztulkotās",
 	"tux-tab-outdated": "Novecojušās",
