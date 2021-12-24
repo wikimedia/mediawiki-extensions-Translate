@@ -298,6 +298,7 @@
 	"translate-msggroupselector-search-recent": "Recenti",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|sotto-gruppo|sotto-gruppi}}",
 	"tux-languageselector": "Traduci in",
+	"tux-select-target-language": "Lingua di destinazione per la traduzione",
 	"tux-tab-all": "Tutti",
 	"tux-tab-untranslated": "Non tradotti",
 	"tux-tab-outdated": "Da aggiornare",
