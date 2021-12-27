@@ -392,5 +392,5 @@
 	"tux-nojs": "Questo strumento non funziona senza JavaScript. JavaScript potrebbe essere disattivato, non ha funzionato o questo browser non è supportato.",
 	"specialpages-group-translation": "Traduzione",
 	"translate-messagebundle-error-key-too-long": "La chiave \"$1\" è troppo lunga",
-	"translate-messagebundle-error-empty-value": "LA chiave \"$1\" non ha un valore"
+	"translate-messagebundle-error-empty-value": "La chiave \"$1\" non ha un valore"
 }
