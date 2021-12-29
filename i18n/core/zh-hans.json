@@ -43,7 +43,8 @@
 			"铁桶",
 			"Xiplus",
 			"Winston Sung",
-			"Tranve"
+			"Tranve",
+			"Stang"
 		]
 	},
 	"translate": "翻译",
@@ -215,7 +216,7 @@
 	"translate-untranslated": "未翻译数",
 	"translate-percentage-complete": "完成度",
 	"translate-percentage-fuzzy": "已过时",
-	"translate-percentage-proofread": "已巡查",
+	"translate-percentage-proofread": "已复核",
 	"translate-languagestats-overall": "所有消息组总计",
 	"translate-ls-submit": "显示统计",
 	"translate-ls-column-group": "消息组",
