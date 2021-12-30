@@ -30,9 +30,11 @@
 	"translate-untranslated": "Minga tradot",
 	"translate-languagestats-overall": "Tucc i grup di messagg insema",
 	"supportedlanguages": "Lengue ative",
+	"translate-activelanguages-invalid-code": "El codes de la lengua \"$1\" l'è desconossud opur el gh'ha minga l'abilitazzion per i traduzzion.",
 	"translate-smg-strong-sync-help": "Aiut",
 	"translate-documentation-language": "Documentazzion del messagg",
 	"translate-msggroupselector-projects": "Grup de messagg",
+	"tux-select-target-language": "Lengua in la qual fà la traduzzion",
 	"tux-tab-untranslated": "Minga tradot",
 	"tux-editor-placeholder-documentation": "Sgionta la documentazzion del messagg",
 	"tux-editor-placeholder-language": "La toa traduzzion l'è $1"
