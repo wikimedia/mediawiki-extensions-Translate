@@ -357,6 +357,7 @@
 	"translate-msggroupselector-search-recent": "最近",
 	"translate-msggroupselector-view-subprojects": "$1{{PLURAL:$1|个子消息组}}",
 	"tux-languageselector": "翻译为",
+	"tux-select-target-language": "翻译目标语言",
 	"tux-tab-all": "所有",
 	"tux-tab-untranslated": "未翻译",
 	"tux-tab-outdated": "已过时",
