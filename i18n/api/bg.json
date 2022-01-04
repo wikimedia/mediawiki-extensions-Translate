@@ -37,7 +37,6 @@
 	"apihelp-query+messagecollection-param-language": "Езиков код.",
 	"apihelp-query+messagecollection-param-limit": "Колко съобщения да бъдат показани (след филтриране).",
 	"apihelp-query+messagecollection-param-offset": "Цяло число или ключ от който да се започне.",
-	"apihelp-query+messagecollection-param-filter": "{{delete|Completely wrong machine translation of technical text}}\nФилтри за събиране на съобщения. Използвайте <kbd>!</kbd>, за да отречете състоянието.  Например <kbd>!fuzzy</kbd> означава да се изброят само всички не-размити съобщения. Филтрите се прилагат в посочения ред.\n;fuzzy:Съобщения с размит етикет.\n;optional:Съобщения, които трябва да бъдат преведени само ако са необходими промени.\n;ignored:Съобщения, които никога не се превеждат.\n;hastranslation:Съобщения, които имат превод, независимо дали е размит или не.\n;translated:Съобщения, които имат превод, който не е размит.\n;changed:Съобщения, които са преведени или променени от последния износ.\n;reviewer&#58;N:Съобщения, където потребителският номер <kbd>N</kbd> е сред проверяващите.\n;last-translator&#58;N:Съобщения, където потребителският номер <kbd>N</kbd> е последният преводач.",
 	"apihelp-query+messagecollection-example-1": "Списък на поддържаните езици",
 	"apihelp-query+messagecollection-example-2": "Списък на задължителните дефиниции на съобщения за група „page-Example“",
 	"apihelp-query+messagecollection-example-4": "Повече информация за най-новите версии на превода за групата „page-Example“",
