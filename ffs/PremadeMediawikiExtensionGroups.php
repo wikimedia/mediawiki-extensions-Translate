@@ -14,8 +14,6 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsert
  * Class which handles special definition format for %MediaWiki extensions and skins.
  */
 class PremadeMediawikiExtensionGroups {
-	/** @var bool */
-	protected $useConfigure = true;
 	/** @var string */
 	protected $idPrefix = 'ext-';
 	/** @var int */
@@ -45,16 +43,6 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 	/**
-	 * Whether to use the Configure extension to load extension home pages.
-	 *
-	 * @since 2012-03-22
-	 * @param bool $value Whether Configure should be used.
-	 */
-	public function setUseConfigure( $value ) {
-		$this->useConfigure = $value;
-	}
-
-	/**
 	 * How to prefix message group ids.
 	 *
 	 * @since 2012-03-22
@@ -72,15 +60,6 @@ class PremadeMediawikiExtensionGroups {
 	 */
 	public function setNamespace( $value ) {
 		$this->namespace = $value;
-	}
-
-	/**
-	 * Makes an group id from extension name
-	 * @param string $name
-	 * @return string
-	 */
-	public static function foldId( $name ) {
-		return preg_replace( '/\s+/', '', strtolower( $name ) );
 	}
 
 	/**
@@ -118,7 +97,6 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['description'] = $info['desc'];
 		} else {
 			$conf['BASIC']['descriptionmsg'] = $info['descmsg'];
-			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
 		$conf['FILES']['class'] = JsonFFS::class;
@@ -274,7 +252,6 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 	protected function processGroups( $groups ) {
-		$configureData = $this->loadConfigureExtensionData();
 		$fixedGroups = [];
 		foreach ( $groups as $g ) {
 			$name = $g['name'];
@@ -289,14 +266,10 @@ class PremadeMediawikiExtensionGroups {
 
 			$descmsg = $g['descmsg'] ?? str_replace( $this->idPrefix, '', $id ) . '-desc';
 
-			$configureId = self::foldId( $name );
-			$url = $configureData[$configureId]['url'] ?? false;
-
 			$newgroup = [
 				'name' => $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
-				'url' => $url,
 			];
 
 			$copyvars = [
@@ -330,27 +303,5 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		return $fixedGroups;
-	}
-
-	protected function loadConfigureExtensionData() {
-		if ( !$this->useConfigure ) {
-			return [];
-		}
-
-		global $wgAutoloadClasses;
-
-		$postfix = 'Configure/load_txt_def/TxtDef.php';
-		if ( !file_exists( "{$this->path}/$postfix" ) ) {
-			return [];
-		}
-
-		$wgAutoloadClasses['TxtDef'] = "{$this->path}/$postfix";
-		// @phan-suppress-next-line PhanUndeclaredClassMethod Autoloaded above
-		$tmp = TxtDef::loadFromFile( "{$this->path}/Configure/settings/Settings-ext.txt" );
-
-		return array_combine(
-			array_map( [ __CLASS__, 'foldId' ], array_keys( $tmp ) ),
-			array_values( $tmp )
-		);
 	}
 }

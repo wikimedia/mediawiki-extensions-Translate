@@ -14,7 +14,6 @@
  * Support for tools using Intuition at the Toolserver and Wikimedia Labs.
  */
 class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
-	protected $useConfigure = false;
 	protected $groups;
 	protected $idPrefix = 'tsint-';
 	protected $namespace = NS_INTUITION;
@@ -33,13 +32,10 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 
 			$descmsg = $g['descmsg'] ?? "$id-desc";
 
-			$url = $g['url'] ?? false;
-
 			$newgroup = [
 				'name' => 'Intuition - ' . $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
-				'url' => $url,
 			];
 
 			// Prefix is required, if not customized use the sanitized name

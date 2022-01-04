@@ -35,11 +35,6 @@ class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 			$desc = parent::getDescription( $context );
 		}
 
-		$url = $this->getFromConf( 'BASIC', 'extensionurl' );
-		if ( $url ) {
-			$desc .= "\n\n$url";
-		}
-
 		return $desc;
 	}
 }
