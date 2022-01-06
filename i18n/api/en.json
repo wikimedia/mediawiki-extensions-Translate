@@ -54,6 +54,8 @@
 	"apihelp-query+messagegroupstats-description": "Query message group stats.",
 	"apihelp-query+messagegroupstats-summary": "Query message group stats.",
 	"apihelp-query+messagegroupstats-param-group": "Message group ID.",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "Do not display languages which have completed translation",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Do not display languages which do not have any translations",
 	"apihelp-query+messagegroupstats-example-1": "List of translation completion statistics for the group \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "Query all translations for a single message.",
 	"apihelp-query+messagetranslations-summary": "Query all translations for a single message.",

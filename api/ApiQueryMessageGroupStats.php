@@ -15,6 +15,18 @@
  * @ingroup API TranslateAPI
  */
 class ApiQueryMessageGroupStats extends ApiStatsQuery {
+
+	/**
+	 * Whether to hide rows which are fully translated.
+	 * @var bool
+	 */
+	private $noComplete = false;
+	/**
+	 * Whether to hide rows which are fully untranslated.
+	 * @var bool
+	 */
+	private $noEmpty = false;
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'mgs' );
 	}
@@ -39,8 +51,32 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
+	public function execute() {
+		$params = $this->extractRequestParams();
+
+		$this->noComplete = $params['suppresscomplete'];
+		$this->noEmpty = $params['suppressempty'];
+
+		parent::execute();
+	}
+
+	/** @inheritDoc */
 	protected function makeItem( $item, $stats ) {
 		$data = parent::makeItem( $item, $stats );
+
+		if ( $this->noComplete && $data['fuzzy'] === 0 && $data['translated'] === $data['total'] ) {
+			return null;
+		}
+
+		if ( $this->noEmpty && $data['translated'] === 0 && $data['fuzzy'] === 0 ) {
+			return null;
+		}
+
+		// Skip below 2% if "don't show without translations" is checked.
+		if ( $this->noEmpty && ( $data['translated'] / $data['total'] ) < 0.02 ) {
+			return null;
+		}
+
 		$data['code'] = $item; // For BC
 		$data['language'] = $item;
 
@@ -61,6 +97,9 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => true,
 		];
+
+		$params['suppresscomplete'] = false;
+		$params['suppressempty'] = false;
 
 		return $params;
 	}

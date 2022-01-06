@@ -55,6 +55,9 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 			}
 
 			$data = $this->makeItem( $item, $stats );
+			if ( $data === null ) {
+				continue;
+			}
 			$result->addValue( [ 'query', $this->getModuleName() ], null, $data );
 		}
 
