@@ -13,7 +13,6 @@ use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserFactory;
 use Title;
-use TranslateUtils;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -232,8 +231,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 		$wikipage = new WikiPage( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-		$status = TranslateUtils::doPageEdit(
-			$wikipage,
+		$status = $wikipage->doUserEditContent(
 			$content,
 			FuzzyBot::getUser(),
 			$comment ?: 'Marking as fuzzy',

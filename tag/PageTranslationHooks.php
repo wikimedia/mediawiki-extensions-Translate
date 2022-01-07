@@ -133,7 +133,6 @@ class PageTranslationHooks {
 	 * This sets &$revRecord to the revision of transcluded page translation if it exists,
 	 * or sets it to the source language if the page translation does not exist.
 	 * The page translation is chosen based on language of the source page.
-	 * Used in MW >= 1.36
 	 *
 	 * Hook: BeforeParserFetchTemplateRevisionRecord
 	 * @param LinkTarget|null $contextLink

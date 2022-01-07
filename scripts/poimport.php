@@ -302,8 +302,7 @@ class WikiWriter {
 
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-		$status = TranslateUtils::doPageEdit(
-			$page,
+		$status = $page->doUserEditContent(
 			$content,
 			$this->user,
 			'Updating translation from gettext import'

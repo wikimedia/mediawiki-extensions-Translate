@@ -58,14 +58,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 		$this->objectFactory = $objectFactory;
 		$this->permissionManager = $permissionManager;
 		$this->pageMover = $pageMover;
-		// SpecialMovepage started using service injection in
-		// I6d4fe09891a126d803fee90bc3bb4959e8b29eb9
-		// Needed for MW < 1.36
-		if ( is_string( $movePageSpec ) ) {
-			$this->movePageSpec = [ 'class' => $movePageSpec ];
-		} else {
-			$this->movePageSpec = $movePageSpec;
-		}
+		$this->movePageSpec = $movePageSpec;
 	}
 
 	public function doesWrites(): bool {

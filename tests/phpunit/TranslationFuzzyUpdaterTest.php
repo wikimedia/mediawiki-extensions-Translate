@@ -47,7 +47,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$title = Title::newFromText( 'MediaWiki:Ugakey/nl' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
-		$status = TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
+		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 		$value = $status->getValue();
 		/** @var RevisionRecord $revisionRecord */
 		$revisionRecord = $value['revision-record'];
@@ -68,16 +68,16 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after database fuzzying' );
 		// Update the translation without the fuzzy string
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
-		TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
+		$page->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 
 		$content = ContentHandler::makeContent( '!!FUZZY!!$1 van $2', $title );
-		TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
+		$page->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after manual fuzzying' );
 
 		// Update the translation without the fuzzy string
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
-		TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
+		$page->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 	}
 
@@ -86,7 +86,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$title = Title::newFromText( 'MediaWiki:nlkey/en-gb' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'Test message', $title );
-		TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
+		$page->doUserEditContent( $content, $user, __METHOD__ );
 
 		$handle = new MessageHandle( $title );
 		$this->assertTrue( $handle->isValid(), 'Message is known' );

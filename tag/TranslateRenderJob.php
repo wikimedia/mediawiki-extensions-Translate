@@ -70,8 +70,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 		$content = $tpPage->getPageContent();
-		$editStatus = TranslateUtils::doPageEdit(
-			$page,
+		$editStatus = $page->doUserEditContent(
 			$content,
 			$user,
 			$summary,

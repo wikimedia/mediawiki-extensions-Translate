@@ -12,6 +12,7 @@
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Storage\EditResult;
 use MediaWiki\User\UserIdentity;
 
 /**
@@ -82,8 +83,7 @@ class TranslateEditAddons {
 	 * @param string $summary
 	 * @param int $flags
 	 * @param RevisionRecord $revisionRecord
-	 * @param mixed $editResult documented as mixed because the EditResult class didn't exist
-	 *   before 1.35
+	 * @param EditResult $editResult
 	 * @return true
 	 */
 	public static function onSaveComplete(
@@ -92,7 +92,7 @@ class TranslateEditAddons {
 		string $summary,
 		int $flags,
 		RevisionRecord $revisionRecord,
-		$editResult
+		EditResult $editResult
 	) {
 		global $wgEnablePageTranslation;
 

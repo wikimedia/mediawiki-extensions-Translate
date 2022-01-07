@@ -918,6 +918,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 
 			$validationResponse = $messageValidator->validateMessage( $message, $handle->getCode() );
 			if ( $validationResponse->hasErrors() ) {
+				// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 				$status->fatal( new ApiRawMessage(
 					$context->msg( 'translate-syntax-error' )->parse(),
 					'translate-validation-failed',

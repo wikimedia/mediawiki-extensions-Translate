@@ -47,7 +47,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
 
-		TranslateUtils::doPageEdit( $wikipage, $content, $user, __METHOD__ );
+		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertEquals(
 			[],
 			$title->getParentCategories(),
@@ -58,7 +58,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbe]]', $title );
 
-		TranslateUtils::doPageEdit( $wikipage, $content, $user, __METHOD__ );
+		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertEquals(
 			[ 'Category:Shouldbe' => 'MediaWiki:Ugakey2/qqq' ],
 			$title->getParentCategories(),
@@ -69,7 +69,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
 
-		TranslateUtils::doPageEdit( $wikipage, $content, $user, __METHOD__ );
+		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertEquals( [], $title->getParentCategories(), 'unknown message' );
 	}
 

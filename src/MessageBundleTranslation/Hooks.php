@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
+use Content;
+use IContextSource;
 use JobQueueGroup;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Logger\LoggerFactory;
@@ -11,6 +13,8 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
+use Status;
+use User;
 use WANObjectCache;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -52,8 +56,6 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 	}
 
 	public static function getInstance(): self {
-		global $wgTranslateEnableMessageBundleIntegration;
-
 		$services = MediaWikiServices::getInstance();
 		self::$instance = self::$instance ??
 			new self(
@@ -62,21 +64,18 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 				$services->getMainWANObjectCache(),
 				// BC <= MW 1.36 (use service when it exists)
 				JobQueueGroup::singleton(),
-				// BC <= MW 1.35 (use ServiceOptions)
-				$wgTranslateEnableMessageBundleIntegration
+				$services->getMainConfig()->get( 'TranslateEnableMessageBundleIntegration' )
 			);
 		return self::$instance;
 	}
 
-	// Typehints skipped on-purpose to maintain support for MW 1.35
-
 	/** @inheritDoc */
 	public function onEditFilterMergedContent(
-		$context,
-		$content,
-		$status,
+		IContextSource $context,
+		Content $content,
+		Status $status,
 		$summary,
-		$user,
+		User $user,
 		$minoredit
 	): void {
 		if ( $content instanceof MessageBundleContent ) {

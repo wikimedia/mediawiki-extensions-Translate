@@ -34,8 +34,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'kissa', $title );
 
-		TranslateUtils::doPageEdit(
-			$page,
+		$page->doUserEditContent(
 			$content,
 			$this->getTestUser()->getUser(),
 			'Test case'
@@ -53,8 +52,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		$content = ContentHandler::makeContent( '<translate>kissa</translate>', $title );
-		$status = TranslateUtils::doPageEdit(
-			$page,
+		$status = $page->doUserEditContent(
 			$content,
 			$this->getTestUser()->getUser(),
 			'Test case'
@@ -73,8 +71,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		$content = ContentHandler::makeContent( '<translate>koira</translate>', $title );
-		$status = TranslateUtils::doPageEdit(
-			$page,
+		$status = $page->doUserEditContent(
 			$content,
 			$this->getTestUser()->getUser(),
 			'Test case'
@@ -116,8 +113,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '<translate>Hello</translate>', $title );
 
-		$status = TranslateUtils::doPageEdit(
-			$page,
+		$status = $page->doUserEditContent(
 			$content,
 			$superUser,
 			'New page'

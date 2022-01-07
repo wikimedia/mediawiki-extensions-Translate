@@ -111,8 +111,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
 		$content = ContentHandler::makeContent( $params['content'], $title );
-		$editStatus = TranslateUtils::doPageEdit(
-			$wikiPage,
+		$editStatus = $wikiPage->doUserEditContent(
 			$content,
 			$user,
 			$summary,
@@ -279,8 +278,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 			$title = Title::newFromText( $titleStr, $groupNamespace );
 			$wikiPage = WikiPage::factory( $title );
 			$content = ContentHandler::makeContent( $contentStr, $title );
-			$status = TranslateUtils::doPageEdit(
-				$wikiPage,
+			$status = $wikiPage->doUserEditContent(
 				$content,
 				$user,
 				$summary,

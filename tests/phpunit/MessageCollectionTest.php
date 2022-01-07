@@ -45,7 +45,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
 
-		$status = TranslateUtils::doPageEdit( $page, $content, $user, __METHOD__ );
+		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 
 		$value = $status->getValue();
 		$revisionRecord = $value['revision-record'];
