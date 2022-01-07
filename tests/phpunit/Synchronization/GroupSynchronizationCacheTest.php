@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use InvalidArgumentException;
 use LogicException;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
-use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
@@ -335,8 +334,9 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function getGroupSynchronizationCache( int $timeout = null ): GroupSynchronizationCache {
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$jsonCodec = Services::getInstance()->getJsonCodec();
+		$mwServices = MediaWikiServices::getInstance();
+		$lb = $mwServices->getDBLoadBalancer();
+		$jsonCodec = $mwServices->getJsonCodec();
 		$persistentCache = new PersistentDatabaseCache( $lb, $jsonCodec );
 		$persistentCache->clear();
 

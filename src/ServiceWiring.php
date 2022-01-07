@@ -24,7 +24,6 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
-use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -72,10 +71,6 @@ return [
 		return new GroupSynchronizationCache( $services->get( 'Translate:PersistentCache' ) );
 	},
 
-	'Translate:JsonCodec' => static function (): JsonCodec {
-		return new JsonCodec();
-	},
-
 	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {
 		$params = $services->getMainConfig()->get( 'TranslateMessageIndex' );
 		if ( is_string( $params ) ) {
@@ -94,9 +89,7 @@ return [
 	'Translate:PersistentCache' => static function ( MediaWikiServices $services ): PersistentCache {
 		return new PersistentDatabaseCache(
 			$services->getDBLoadBalancer(),
-			// TODO: Since we have a similar interface, see if we can load the JsonCodec
-			// from the core here if available
-			$services->get( 'Translate:JsonCodec' )
+			$services->getJsonCodec()
 		 );
 	},
 

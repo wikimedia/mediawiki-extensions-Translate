@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\Cache;
 use DateInterval;
 use DateTime;
 use InvalidArgumentException;
-use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
@@ -20,8 +19,9 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$jsonCodec = new JsonCodec();
+		$mwServices = MediaWikiServices::getInstance();
+		$lb = $mwServices->getDBLoadBalancer();
+		$jsonCodec = $mwServices->getJsonCodec();
 		$this->persistentCache = new PersistentDatabaseCache( $lb, $jsonCodec );
 	}
 

@@ -224,9 +224,7 @@
 		"MediaWiki\\Extension\\Translate\\": "src/"
 	},
 	"TestAutoloadClasses": {
-		"MockCustomInsertableSuggester": "tests/phpunit/mocks/MockCustomInsertableSuggester.php",
-		"MockJsonUnserializableSubClass": "tests/phpunit/mocks/json/MockJsonUnserializableSubClass.php",
-		"MockJsonUnserializableSuperClass": "tests/phpunit/mocks/json/MockJsonUnserializableSuperClass.php"
+		"MockCustomInsertableSuggester": "tests/phpunit/mocks/MockCustomInsertableSuggester.php"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\Translate\\": "tests/phpunit/unit/"

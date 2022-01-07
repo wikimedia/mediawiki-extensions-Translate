@@ -16,7 +16,6 @@ use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
-use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
 use MessageIndex;
@@ -68,11 +67,6 @@ class Services implements ContainerInterface {
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
 		return $this->get( 'Translate:GroupSynchronizationCache' );
-	}
-
-	/** @since 2020.12 */
-	public function getJsonCodec(): JsonCodec {
-		return $this->get( 'Translate:JsonCodec' );
 	}
 
 	/** @since 2020.10 */

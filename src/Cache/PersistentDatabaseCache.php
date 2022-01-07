@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\Cache;
 
 use ArrayIterator;
 use Iterator;
-use MediaWiki\Extension\Translate\Utilities\Json\JsonCodec;
+use MediaWiki\Json\JsonCodec;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

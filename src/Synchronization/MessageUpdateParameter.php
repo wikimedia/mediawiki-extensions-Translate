@@ -4,8 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use JsonSerializable;
-use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializable;
-use MediaWiki\Extension\Translate\Utilities\Json\JsonUnserializableTrait;
+use MediaWiki\Json\JsonUnserializable;
+use MediaWiki\Json\JsonUnserializableTrait;
+use MediaWiki\Json\JsonUnserializer;
 use MessageUpdateJob;
 
 /**
@@ -64,7 +65,7 @@ class MessageUpdateParameter implements JsonSerializable, JsonUnserializable {
 		return $this->otherLangs;
 	}
 
-	public static function newFromJsonArray( array $params ) {
+	public static function newFromJsonArray( JsonUnserializer $unserializer, array $params ) {
 		return new self( $params );
 	}
 
