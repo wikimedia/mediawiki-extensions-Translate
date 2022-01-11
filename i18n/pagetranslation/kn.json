@@ -4,7 +4,8 @@
 			"Nayvik",
 			"Omshivaprakash",
 			"Rakshika",
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
 		]
 	},
 	"pagetranslation": "ಪುಟ ಅನುವಾದ",
@@ -23,10 +24,12 @@
 	"tpt-aggregategroup-add": "ಸೇರಿಸಿ",
 	"tpt-aggregategroup-save": "ಉಳಿಸಿ",
 	"tpt-aggregategroup-new-name": "ಹೆಸರು:",
+	"tpt-aggregategroup-update": "ಉಳಿಸಿ",
 	"pt-movepage-current": "ಪ್ರಸಕ್ತ ಹೆಸರು:",
 	"pt-movepage-new": "ಹೊಸ ಹೆಸರು:",
 	"pt-movepage-reason": "ಕಾರಣ:",
 	"pt-deletepage-current": "ಪುಟದ ಹೆಸರು:",
 	"pt-deletepage-reason": "ಕಾರಣ :",
-	"pt-deletepage-list-translation": "ಭಾಷಾಂತರ ಪುಟಗಳು"
+	"pt-deletepage-list-translation": "ಭಾಷಾಂತರ ಪುಟಗಳು",
+	"pm-savepages-button-label": "ಉಳಿಸಿ"
 }
