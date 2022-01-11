@@ -109,5 +109,8 @@
 	"apierror-translate-unknownmessage": "Pesan tidak dikenal",
 	"apierror-translate-invalid-operation": "Operasi tidak valid: $1. Nilai-nilai yang valid - $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Sudah ditandai sebagai tertinjau oleh Anda",
-	"apiwarn-translate-language-disabled-source": "Bahasa sumber dari kelompok ini adalah $1. Tolong pilih bahasa lain sebagai tujuan terjemahan."
+	"apiwarn-translate-language-disabled-source": "Bahasa sumber dari kelompok ini adalah $1. Tolong pilih bahasa lain sebagai tujuan terjemahan.",
+	"apihelp-translationentitysearch-summary": "Mencari kelompok pesan dan pesan",
+	"apihelp-translationentitysearch-param-query": "Mencari kueri",
+	"apihelp-translationentitysearch-param-limit": "Banyak hasil pencarian maksimal"
 }
