@@ -60,7 +60,9 @@ class PageTranslationHooks {
 				$text = $parserOutput->sourcePageTextForRendering(
 					$wikitextParser->getTargetLanguage()
 				);
-				$wikitextParser->getOutput()->addModuleStyles( 'ext.translate' );
+				$wikitextParser->getOutput()->addModuleStyles( [
+					'ext.translate',
+				] );
 			} catch ( ParsingFailure $e ) {
 				wfDebug( 'ParsingFailure caught; expected' );
 			}
@@ -489,7 +491,9 @@ class PageTranslationHooks {
 		);
 		$out .= Html::closeElement( 'div' );
 
-		$parser->getOutput()->addModuleStyles( 'ext.translate.tag.languages' );
+		$parser->getOutput()->addModuleStyles( [
+			'ext.translate.tag.languages',
+		] );
 
 		return $out;
 	}
