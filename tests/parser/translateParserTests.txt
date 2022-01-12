@@ -34,3 +34,45 @@ title=[[Test/ugaaa]]
 !! html
 
 !! end
+
+!! test
+Old tvar syntax should not break too hard.
+!! options
+# html2wt and wt2wt are expected to break because we serialize to new syntax.
+# html2html breaks because the wtOffsets break.
+parsoid={
+	"modes": ["wt2html", "selser"]
+}
+!! wikitext
+<translate><tvar|plop>pouet</></translate>
+!! html/parsoid
+<p><meta typeof="mw:Annotation/translate" data-mw='{"rangeId":"mwa0","extendedRange":false,"wtOffsets":[0,11]}'/><meta typeof="mw:Annotation/tvar" data-mw='{"attrs":{"name":"plop"},"rangeId":"mwa1","extendedRange":false,"wtOffsets":[11,22]}'/>pouet<meta typeof="mw:Annotation/tvar/End" data-mw='{"wtOffsets":[27,30]}'/><meta typeof="mw:Annotation/translate/End" data-mw='{"wtOffsets":[30,42]}'/></p>
+!! end
+
+!! test
+Old tvar syntax should not pull content in cell attributes
+!! options
+# html2wt and wt2wt are expected to break because we serialize to new syntax.
+# html2html breaks because the wtOffsets break.
+parsoid={
+        "modes": ["wt2html", "selser"]
+}
+!! wikitext
+{|
+|<translate>hello <tvar|var>variable</></translate>
+|}
+!! html/parsoid
+<table>
+<tbody><tr data-parsoid='{"autoInsertedStart":true}'><td><meta typeof="mw:Annotation/translate" data-mw='{"rangeId":"mwa0","extendedRange":false,"wtOffsets":[4,15]}'/>hello <meta typeof="mw:Annotation/tvar" data-mw='{"attrs":{"name":"var"},"rangeId":"mwa1","extendedRange":false,"wtOffsets":[21,31]}'/>variable<meta typeof="mw:Annotation/tvar/End" data-mw='{"wtOffsets":[39,42]}'/><meta typeof="mw:Annotation/translate/End" data-mw='{"wtOffsets":[42,54]}'/></td></tr>
+</tbody></table>
+!! end
+
+!! test
+Annotation markers starting lines should neither insert pre nor merge ranges
+!! wikitext
+<translate><!--T:1--> translate 1</translate>
+<translate><!--T:2--> translate 2</translate>
+!! html/parsoid
+<p data-parsoid='{"dsr":[0,91,0,0]}'><meta typeof="mw:Annotation/translate" data-parsoid='{"dsr":[0,11,null,null]}' data-mw='{"rangeId":"mwa0","extendedRange":false,"wtOffsets":[0,11]}'/><!--T:1--> translate 1<meta typeof="mw:Annotation/translate/End" data-parsoid='{"dsr":[33,45,null,null]}' data-mw='{"wtOffsets":[33,45]}'/>
+<meta typeof="mw:Annotation/translate" data-parsoid='{"dsr":[46,57,null,null]}' data-mw='{"rangeId":"mwa1","extendedRange":false,"wtOffsets":[46,57]}'/><!--T:2--> translate 2<meta typeof="mw:Annotation/translate/End" data-parsoid='{"dsr":[79,91,null,null]}' data-mw='{"wtOffsets":[79,91]}'/></p>
+!! end
