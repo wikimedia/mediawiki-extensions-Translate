@@ -6,7 +6,8 @@
 			"Beta16",
 			"F. Cosoleto",
 			"Ricordisamoa",
-			"Statix64"
+			"Statix64",
+			"Valerio Bozzolan"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gestisci gruppi di messaggi aggregati.\n\nPuoi aggiungere e rimuovere gruppi di messaggi aggregati e associare o dissociare i gruppi di messaggi l'uno dall'altro (uno alla volta).",
@@ -29,6 +30,7 @@
 	"apihelp-query+messagegroups-summary": "Restituisce informazioni sui gruppi di messaggi.",
 	"apihelp-query+messagegroups-example-1": "Mostra gruppi di messaggi",
 	"apihelp-query+messagegroupstats-param-group": "ID gruppo messaggi.",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Non mostrare le lingue che non hanno alcuna traduzione",
 	"apihelp-query+messagetranslations-summary": "Interroga tutte le traduzioni per un singolo messaggio.",
 	"apihelp-query+messagetranslations-param-title": "Titolo completo di un messaggio conosciuto.",
 	"apihelp-translatesandbox-param-do": "Che cosa fare.",

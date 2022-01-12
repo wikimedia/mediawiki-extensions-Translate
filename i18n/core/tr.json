@@ -352,7 +352,7 @@
 	"tux-status-unsaved": "Yayımlanmadı",
 	"tux-save-unknown-error": "Bilinmeyen hata oluştu.",
 	"tux-editor-placeholder-documentation": "Mesaj belgelemesini ekle",
-	"tux-editor-placeholder-language": "$1 dilinde çeviriniz",
+	"tux-editor-placeholder-language": "{{#ifeq:$1|Türkçe|Türkçeye|$1 diline}} çevir",
 	"tux-editor-editsummary-placeholder": "İsteğe bağlı özet",
 	"tux-editor-paste-original-button-label": "Kaynak metni yapıştır",
 	"tux-editor-discard-changes-button-label": "Değişiklikleri çıkar",

@@ -56,6 +56,8 @@
 	"apihelp-query+messagegroupstats-description": "Побарај статистики за група пораки.",
 	"apihelp-query+messagegroupstats-summary": "Побарај статистики за група пораки.",
 	"apihelp-query+messagegroupstats-param-group": "Назнака на групата пораки.",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "Не прикажувај јазици со наполно завршен превод",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Не прикажувај јазици што немаат почнато со преведување",
 	"apihelp-query+messagegroupstats-example-1": "Список на статистики за потполност на преводите за групата „page-Example“",
 	"apihelp-query+messagetranslations-description": "Побарај ги сите преводи на една порака.",
 	"apihelp-query+messagetranslations-summary": "Побарај ги сите преводи на една порака.",

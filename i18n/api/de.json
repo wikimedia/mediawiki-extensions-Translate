@@ -5,7 +5,8 @@
 			"Ljonka",
 			"Metalhead64",
 			"Predatorix",
-			"Seewolf"
+			"Seewolf",
+			"SorkDE"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -51,8 +52,8 @@
 	"apihelp-query+messagegroupstats-description": "Ruft Statistiken zu Nachrichtengruppen ab.",
 	"apihelp-query+messagegroupstats-summary": "Ruft Statistiken zu Nachrichtengruppen ab.",
 	"apihelp-query+messagegroupstats-param-group": "Nachrichtengruppenkennung.",
-	"apihelp-query+messagegroupstats-param-suppresscomplete": "Nicht die Sprachen anzeigen, zu denen die Übersetzungen fertiggestellt wurden",
-	"apihelp-query+messagegroupstats-param-suppressempty": "Nicht die Sprachen anzeigen, zu denen noch keine Übersetzungen fertiggestellt wurden",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "Keine Sprachen anzeigen, zu denen die Übersetzungen fertiggestellt wurden",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Keine Sprachen anzeigen, zu denen noch keine Übersetzungen fertiggestellt wurden",
 	"apihelp-query+messagegroupstats-example-1": "Liste von Übersetzungs-Vollständigkeits-Statistiken für die Gruppe „page-Example“",
 	"apihelp-query+messagetranslations-description": "Ruft alle Übersetzungen für eine einzelne Nachricht ab.",
 	"apihelp-query+messagetranslations-summary": "Ruft alle Übersetzungen für eine einzelne Nachricht ab.",

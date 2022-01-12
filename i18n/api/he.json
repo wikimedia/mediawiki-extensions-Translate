@@ -57,6 +57,8 @@
 	"apihelp-query+messagegroupstats-description": "לעשות שאילתה של סטטיסטיקת קבוצת הודעות.",
 	"apihelp-query+messagegroupstats-summary": "לבצע שאילתה על סטטיסטיקות של קבוצת הודעות.",
 	"apihelp-query+messagegroupstats-param-group": "מזהה קבוצת הודעות.",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "לא להציג שפות עם תרגום מלא",
+	"apihelp-query+messagegroupstats-param-suppressempty": "לא להציג שפות ללא שום תרגום",
 	"apihelp-query+messagegroupstats-example-1": "רשימה של סטטיסטיקת השלמת תרגומים עבור הקבוצה \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "שאילתה של כל התרגומים של הודעה אחת.",
 	"apihelp-query+messagetranslations-summary": "שאילתה על כל התרגומים של הודעה אחת.",
