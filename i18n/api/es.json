@@ -9,6 +9,7 @@
 			"Jakeukalane",
 			"Lemondoge",
 			"Macofe",
+			"MarcoAurelio",
 			"Tiberius1701"
 		]
 	},
@@ -46,6 +47,7 @@
 	"apihelp-query+messagegroupstats-description": "Consultar estadísticas del grupo de mensajes.",
 	"apihelp-query+messagegroupstats-summary": "Consultar las estadísticas del grupo de mensajes.",
 	"apihelp-query+messagegroupstats-param-group": "Identificador del grupo de mensajes.",
+	"apihelp-query+messagegroupstats-param-suppressempty": "No mostrar los idiomas que no tienen ninguna traducción",
 	"apihelp-query+messagegroupstats-example-1": "Lista de estadísticas de finalización de traducciones para el grupo \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "Consultar todas las traducciones para un único mensaje.",
 	"apihelp-query+messagetranslations-summary": "Consulta todas las traducciones de un solo mensaje.",
