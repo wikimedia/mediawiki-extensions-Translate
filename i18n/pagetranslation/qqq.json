@@ -213,6 +213,8 @@
 	"pt-deletepage-any-legend": "See definitions on [[mw:Help:Extension:Translate/Glossary]].",
 	"pt-deletepage-current": "{{Identical|Page name}}",
 	"pt-deletepage-reason": "{{Identical|Reason}}",
+	"pt-deletepage-reason-details": "Used as a form text input header on the translatable page deletion from.",
+	"pt-deletepage-reason-other": "Used as a dropdown item on the translatable page deletion from.",
 	"pt-deletepage-subpages": "Checkbox label on special page 'Deleting translatable page'. see [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	"pt-deletepage-list-pages": "Heading for a list.",
 	"pt-deletepage-list-translation": "See definition on [[mw:Help:Extension:Translate/Glossary]].",

@@ -55,7 +55,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->text = $request->getVal( 'wpTitle', $par );
 		$this->title = Title::newFromText( $this->text );
-		$this->reason = $request->getText( 'wpReason' );
+		$this->reason = $this->getDeleteReason( $request );
 		$this->doSubpages = $request->getBool( 'subpages' );
 
 		$user = $this->getUser();
@@ -421,20 +421,34 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	}
 
 	protected function getCommonFormFields() {
+		$dropdownOptions = $this->msg( 'deletereason-dropdown' )->inContentLanguage()->plain();
+
+		$options = Xml::listDropDownOptions(
+			$dropdownOptions,
+			[
+				'other' => $this->msg( 'pt-deletepage-reason-other' )->inContentLanguage()->text()
+			]
+		);
+
 		return [
 			'wpTitle' => [
 				'type' => 'text',
 				'name' => 'wpTitle',
-				'label' => $this->msg( 'pt-deletepage-current' )->text(),
+				'label-message' => 'pt-deletepage-current',
 				'size' => 30,
 				'default' => $this->text,
 				'readonly' => true,
 			],
+			'wpDeleteReasonList' => [
+				'type' => 'select',
+				'name' => 'wpDeleteReasonList',
+				'label-message' => 'pt-deletepage-reason',
+				'options' => $options,
+			],
 			'wpReason' => [
 				'type' => 'text',
 				'name' => 'wpReason',
-				'label' => $this->msg( 'pt-deletepage-reason' )->text(),
-				'size' => 60,
+				'label-message' => 'pt-deletepage-reason-details',
 				'default' => $this->reason,
 			]
 		];
@@ -445,6 +459,25 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
 		} else {
 			$out->addWikiMsg( 'pt-deletepage-list-no-pages' );
+		}
+	}
+
+	/**
+	 * @param WebRequest $request
+	 * @return string
+	 */
+	private function getDeleteReason( WebRequest $request ): string {
+		$dropdownSelection = $request->getText( 'wpDeleteReasonList', 'other' );
+		$reasonInput = $request->getText( 'wpReason' );
+
+		if ( $dropdownSelection === 'other' ) {
+			return $reasonInput;
+		} elseif ( $reasonInput !== '' ) {
+			// Entry from drop down menu + additional comment
+			$separator = $this->msg( 'colon-separator' )->inContentLanguage()->text();
+			return "$dropdownSelection$separator$reasonInput";
+		} else {
+			return $dropdownSelection;
 		}
 	}
 }

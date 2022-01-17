@@ -189,6 +189,8 @@
 	"pt-deletepage-any-legend": "Delete translatable page or translation page",
 	"pt-deletepage-current": "Page name:",
 	"pt-deletepage-reason": "Reason:",
+	"pt-deletepage-reason-details": "Other/additional reason:",
+	"pt-deletepage-reason-other": "Other reason",
 	"pt-deletepage-subpages": "Delete all subpages",
 	"pt-deletepage-list-pages": "List of pages to delete",
 	"pt-deletepage-list-translation": "Translation pages",
