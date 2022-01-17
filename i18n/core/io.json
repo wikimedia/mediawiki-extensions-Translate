@@ -56,6 +56,7 @@
 	"translate-rc-translation-filter-only": "Montrez nur tradukuri",
 	"translate-stats-edits": "Redakturi",
 	"translate-stats-users": "Tradukeri",
+	"translate-stats-registrations": "Enrejistruri",
 	"translate-stats-reviews": "Revizuri",
 	"translate-statsf-scale": "Tempo-skalo:",
 	"translate-statsf-scale-months": "Monati",
@@ -182,5 +183,6 @@
 	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo",
 	"tux-editor-loading": "Karganta...",
 	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita",
+	"tux-session-expired": "Vu ne pluse esas enrejistrita. Voluntez rienirar, per altra pagino. Alternative, facez kopiuro di tradukuri ne enrejistrita, facez itere ''log in'', retrovenez a ca pagino, ed informez itere vua tradukuri.",
 	"tux-nojs": "Ca utensilo ne funcionas sen JavaScript. Sive JavaScript esas nekapabligata, sive ne funcionis, sive vua interreto-navigilo ('browser') ne suportas ol."
 }

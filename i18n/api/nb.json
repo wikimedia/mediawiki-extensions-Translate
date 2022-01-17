@@ -55,6 +55,8 @@
 	"apihelp-query+messagegroupstats-description": "Kjør spørring på meldingsgruppestatistikk.",
 	"apihelp-query+messagegroupstats-summary": "Kjør spørring på meldingsgruppestatistikk.",
 	"apihelp-query+messagegroupstats-param-group": "Meldingsgruppe-ID.",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "Ikke vis språk som har fullført denne oversettelsen",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Ikke vis språk som ikke har noen oversettelser",
 	"apihelp-query+messagegroupstats-example-1": "List opp oversettelsesfullføringsstatistikk for gruppa «page-Example»",
 	"apihelp-query+messagetranslations-description": "Spør om alle oversettelser av en enkelt beskjed.",
 	"apihelp-query+messagetranslations-summary": "Spør om alle oversettelser av en enkelt beskjed.",
