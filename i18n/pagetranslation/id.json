@@ -137,6 +137,8 @@
 	"log-action-filter-pagetranslation-unmark": "Singkirkan dari penerjemahan",
 	"log-action-filter-pagetranslation-move": "Pemindahan halaman",
 	"log-action-filter-pagetranslation-delete": "Penghapusan halaman",
+	"log-action-filter-pagetranslation-encourage": "Menyarankan penerjemahan",
+	"log-action-filter-pagetranslation-discourage": "Menyarankan untuk tidak menerjemahkan",
 	"log-action-filter-pagetranslation-prioritylanguages": "Pengubahan bahasa prioritas",
 	"log-action-filter-pagetranslation-aggregategroups": "Pengubahan kelompok agregat",
 	"pt-movepage-title": "Pindahkan halaman yang dapat diterjemahkan \"$1\"",
