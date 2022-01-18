@@ -194,6 +194,8 @@
 	"pt-deletepage-any-legend": "מחיקת דף ניתן לתרגום או תרגום של דף כזה",
 	"pt-deletepage-current": "שם הדף:",
 	"pt-deletepage-reason": "סיבה:",
+	"pt-deletepage-reason-details": "סיבה אחרת/נוספת:",
+	"pt-deletepage-reason-other": "סיבה אחרת",
 	"pt-deletepage-subpages": "מחיקת כל דפי המשנה",
 	"pt-deletepage-list-pages": "רשימת דפים למחיקה",
 	"pt-deletepage-list-translation": "דפי תרגום",

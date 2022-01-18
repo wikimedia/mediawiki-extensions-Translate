@@ -196,6 +196,8 @@
 	"pt-deletepage-any-legend": "Übersetzbare Seite oder Übersetzungsseite löschen",
 	"pt-deletepage-current": "Seitenname:",
 	"pt-deletepage-reason": "Grund:",
+	"pt-deletepage-reason-details": "Anderer/ergänzender Grund:",
+	"pt-deletepage-reason-other": "Anderer Grund",
 	"pt-deletepage-subpages": "Alle Unterseiten löschen",
 	"pt-deletepage-list-pages": "Liste der zu löschenden Seiten",
 	"pt-deletepage-list-translation": "Übersetzte Seiten",
