@@ -324,17 +324,18 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	): array {
 		$groupIds = MessageGroups::expandWildcards( explode( ',', trim( $groupPattern ) ) );
 		$groups = MessageGroups::getGroupsById( $groupIds );
+		if ( !$forOffline ) {
+			foreach ( $groups as $groupId => $group ) {
+				if ( $group->isMeta() ) {
+					$this->output( "Skipping meta message group $groupId.\n" );
+					unset( $groups[$groupId] );
+					continue;
+				}
 
-		foreach ( $groups as $groupId => $group ) {
-			if ( $group->isMeta() ) {
-				$this->output( "Skipping meta message group $groupId.\n" );
-				unset( $groups[$groupId] );
-				continue;
-			}
-
-			if ( !$forOffline && !$group instanceof FileBasedMessageGroup ) {
-				$this->output( "EE2: Unexportable message group $groupId.\n" );
-				unset( $groups[$groupId] );
+				if ( !$group instanceof FileBasedMessageGroup ) {
+					$this->output( "EE2: Unexportable message group $groupId.\n" );
+					unset( $groups[$groupId] );
+				}
 			}
 		}
 
