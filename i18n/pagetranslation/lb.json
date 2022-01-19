@@ -148,6 +148,8 @@
 	"pt-deletepage-any-legend": "Säit fir z'iwwersetzen oder Iwwersetzung vun enger Säit läschen",
 	"pt-deletepage-current": "Numm vun der Säit:",
 	"pt-deletepage-reason": "Grond:",
+	"pt-deletepage-reason-details": "Aneren/zousätzleche Grond:",
+	"pt-deletepage-reason-other": "Anere Grond",
 	"pt-deletepage-subpages": "All Ënnersäite läschen",
 	"pt-deletepage-list-pages": "Lëscht vun de Säite fir ze läschen",
 	"pt-deletepage-list-translation": "Iwwersetzungssäiten",

@@ -186,6 +186,8 @@
 	"pt-deletepage-any-legend": "Избриши преводлива страница или страница за превод",
 	"pt-deletepage-current": "Име на страницата:",
 	"pt-deletepage-reason": "Причина:",
+	"pt-deletepage-reason-details": "Друга/дополнителна причина:",
+	"pt-deletepage-reason-other": "Друга причина",
 	"pt-deletepage-subpages": "Избриши ги сите потстраници",
 	"pt-deletepage-list-pages": "Список на страници за бришење",
 	"pt-deletepage-list-translation": "Страници со превод",

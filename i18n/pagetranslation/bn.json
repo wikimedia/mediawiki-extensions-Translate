@@ -5,7 +5,8 @@
 			"Aftabuzzaman",
 			"Bellayet",
 			"Sibabrata Banerjee",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"খাত্তাব হাসান"
 		]
 	},
 	"pagetranslation": "পাতা অনুবাদ",
@@ -84,6 +85,8 @@
 	"pt-movepage-logreason": "অনুবাদযোগ্য পাতা \"$1\"-এর অংশ",
 	"pt-deletepage-current": "পাতার নাম:",
 	"pt-deletepage-reason": "কারণ:",
+	"pt-deletepage-reason-details": "অন্যান্য/অতিরিক্ত কারণ:",
+	"pt-deletepage-reason-other": "অন্য কারণ",
 	"pt-deletepage-full-logreason": "অনুবাদযোগ্য পাতা \"$1\"-এর অংশ",
 	"pt-deletepage-lang-logreason": "অনুবাদ পাতা \"$1\"-এর অংশ",
 	"pm-import-button-label": "আমদানি",

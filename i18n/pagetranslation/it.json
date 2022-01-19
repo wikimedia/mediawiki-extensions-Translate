@@ -172,6 +172,8 @@
 	"pt-deletepage-any-legend": "Cancella una pagina traducibile o una pagina di traduzione",
 	"pt-deletepage-current": "Nome della pagina:",
 	"pt-deletepage-reason": "Motivo:",
+	"pt-deletepage-reason-details": "Altri motivi/dettagli:",
+	"pt-deletepage-reason-other": "Altra motivazione",
 	"pt-deletepage-subpages": "Cancella tutte le sottopagine",
 	"pt-deletepage-list-pages": "Elenco di pagine da cancellare",
 	"pt-deletepage-list-translation": "Pagine di traduzione",
