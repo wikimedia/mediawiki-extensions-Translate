@@ -162,6 +162,7 @@
 	"pt-deletepage-any-legend": "حذف الصفحة القابلة للترجمة أو صفحة الترجمة",
 	"pt-deletepage-current": "اسم الصفحة:",
 	"pt-deletepage-reason": "السبب:",
+	"pt-deletepage-reason-other": "سبب آخر",
 	"pt-deletepage-subpages": "أحذف جميع الصفحات الفرعية",
 	"pt-deletepage-list-pages": "قائمة الصفحات للحذف",
 	"pt-deletepage-list-translation": "صفحات الترجمة",

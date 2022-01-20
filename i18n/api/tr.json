@@ -3,6 +3,7 @@
 		"authors": [
 			"Arystanbek",
 			"BaRaN6161 TURK",
+			"Can",
 			"Hedda",
 			"Joseph",
 			"MuratTheTurkish",
@@ -63,6 +64,8 @@
 	"apihelp-query+messagegroupstats-description": "Sorgu mesajı grup istatistikleri.",
 	"apihelp-query+messagegroupstats-summary": "Sorgu mesajı grup istatistikleri.",
 	"apihelp-query+messagegroupstats-param-group": "Mesaj grup kimliği.",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "Çevirisi tamamlanmış dilleri görüntüleme",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Hiç çevirisi olmayan dilleri görüntüleme",
 	"apihelp-query+messagegroupstats-example-1": "\"page-Example\" grubu için çeviri tamamlama istatistiklerinin listesi",
 	"apihelp-query+messagetranslations-description": "Tek bir mesaj için tüm çevirileri sorgulayın.",
 	"apihelp-query+messagetranslations-summary": "Tek bir mesaj için tüm çevirileri sorgulayın.",
