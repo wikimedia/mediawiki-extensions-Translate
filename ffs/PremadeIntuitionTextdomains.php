@@ -16,7 +16,10 @@
 class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $groups;
 	protected $idPrefix = 'tsint-';
-	protected $namespace = NS_INTUITION;
+
+	protected function getDefaultNamespace() {
+		return NS_INTUITION;
+	}
 
 	protected function processGroups( $groups ) {
 		$fixedGroups = [];

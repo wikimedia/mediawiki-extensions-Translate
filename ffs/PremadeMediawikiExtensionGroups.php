@@ -17,7 +17,7 @@ class PremadeMediawikiExtensionGroups {
 	/** @var string */
 	protected $idPrefix = 'ext-';
 	/** @var int */
-	protected $namespace = NS_MEDIAWIKI;
+	protected $namespace;
 	/**
 	 * @var string
 	 * @see __construct
@@ -40,6 +40,27 @@ class PremadeMediawikiExtensionGroups {
 	public function __construct( $def, $path ) {
 		$this->definitionFile = $def;
 		$this->path = rtrim( $path, '/' );
+	}
+
+	/**
+	 * Get the default namespace. Subclasses can override this.
+	 *
+	 * @return int
+	 */
+	protected function getDefaultNamespace() {
+		return NS_MEDIAWIKI;
+	}
+
+	/**
+	 * Get the namespace ID
+	 *
+	 * @return int
+	 */
+	protected function getNamespace() {
+		if ( $this->namespace === null ) {
+			$this->namespace = $this->getDefaultNamespace();
+		}
+		return $this->namespace;
 	}
 
 	/**
@@ -90,7 +111,7 @@ class PremadeMediawikiExtensionGroups {
 		$conf = [];
 		$conf['BASIC']['class'] = MediaWikiExtensionMessageGroup::class;
 		$conf['BASIC']['id'] = $id;
-		$conf['BASIC']['namespace'] = $this->namespace;
+		$conf['BASIC']['namespace'] = $this->getNamespace();
 		$conf['BASIC']['label'] = $info['name'];
 
 		if ( isset( $info['desc'] ) ) {

@@ -67,7 +67,6 @@
 		"AggregateMessageGroupLoader": "messagegroups/loaders/AggregateMessageGroupLoader.php",
 		"AmdFFS": "ffs/AmdFFS.php",
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
-		"AnotherMockTranslateValidator": "tests/phpunit/mocks/MockValidators.php",
 		"ApertiumWebService": "webservices/ApertiumWebService.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiGroupReview": "api/ApiGroupReview.php",
@@ -87,7 +86,6 @@
 		"ApiTTMServer": "api/ApiTTMServer.php",
 		"AppleFFS": "ffs/AppleFFS.php",
 		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
-		"BaseValidatorTestCase": "tests/phpunit/unit/Validation/Validators/BaseValidatorTestCase.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
 		"CachedMessageIndex": "utils/MessageIndex.php",
 		"CaighdeanWebService": "webservices/CaighdeanWebService.php",
@@ -141,12 +139,6 @@
 		"MessageWebImporter": "utils/MessageWebImporter.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
 		"MicrosoftWebService": "webservices/MicrosoftWebService.php",
-		"MockCacheMessageGroupLoader": "tests/phpunit/mocks/MockCacheMessageGroupLoader.php",
-		"MockFileBasedMessageGroup": "tests/phpunit/mocks/MockFileBasedMessageGroup.php",
-		"MockMessageCollectionForExport": "tests/phpunit/mocks/MockMessageCollectionForExport.php",
-		"MockTranslateValidator": "tests/phpunit/mocks/MockValidators.php",
-		"MockWikiMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
-		"MockWikiValidationMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
 		"PageTranslationHooks": "tag/PageTranslationHooks.php",
 		"PageTranslationLogFormatter": "tag/PageTranslationLogFormatter.php",
 		"PHPVariableLoader": "utils/PHPVariableLoader.php",
@@ -183,7 +175,6 @@
 		"TranslatablePage": "tag/TranslatablePage.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslatablePageMoveJob": "tag/TranslatablePageMoveJob.php",
-		"TranslatablePageTestTrait": "tests/phpunit/helpers/TranslatablePageTestTrait.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
 		"TranslateDeleteJob": "tag/TranslateDeleteJob.php",
 		"TranslateEditAddons": "TranslateEditAddons.php",
@@ -224,7 +215,16 @@
 		"MediaWiki\\Extension\\Translate\\": "src/"
 	},
 	"TestAutoloadClasses": {
-		"MockCustomInsertableSuggester": "tests/phpunit/mocks/MockCustomInsertableSuggester.php"
+		"AnotherMockTranslateValidator": "tests/phpunit/mocks/MockValidators.php",
+		"BaseValidatorTestCase": "tests/phpunit/unit/Validation/Validators/BaseValidatorTestCase.php",
+		"MockCacheMessageGroupLoader": "tests/phpunit/mocks/MockCacheMessageGroupLoader.php",
+		"MockCustomInsertableSuggester": "tests/phpunit/mocks/MockCustomInsertableSuggester.php",
+		"MockFileBasedMessageGroup": "tests/phpunit/mocks/MockFileBasedMessageGroup.php",
+		"MockMessageCollectionForExport": "tests/phpunit/mocks/MockMessageCollectionForExport.php",
+		"MockTranslateValidator": "tests/phpunit/mocks/MockValidators.php",
+		"MockWikiMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
+		"MockWikiValidationMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
+		"TranslatablePageTestTrait": "tests/phpunit/helpers/TranslatablePageTestTrait.php"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\Translate\\": "tests/phpunit/unit/"
