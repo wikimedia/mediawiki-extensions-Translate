@@ -471,6 +471,7 @@ class TranslateUtils {
 		// MW >=1.36
 		return PHP_SAPI === 'cli' ||
 			RequestContext::getMain()->getRequest()->wasPosted() ||
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$lb->hasOrMadeRecentMasterChanges();
 	}
 
