@@ -74,7 +74,10 @@ class ParserOutputTest extends MediaWikiUnitTestCase {
 		);
 
 		$language = $this->createStub( Language::class );
-		$language->method( 'getHtmlCode' )->willReturn( 'en-GB' );
+		$language->method( 'getHtmlCode' )
+			->willReturn( 'en-GB' );
+		$language->method( 'getCode' )
+			->willReturn( 'en-GB' );
 
 		$this->assertSame( 'AHelloB', $output->sourcePageTextForRendering( $language ) );
 	}
