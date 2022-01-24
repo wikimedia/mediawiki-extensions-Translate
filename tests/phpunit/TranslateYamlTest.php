@@ -54,11 +54,21 @@ class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 			'd' => "2.0"
 		];
 
+		global $wgTranslateYamlLibrary;
+		if ( $wgTranslateYamlLibrary === 'phpyaml'
+			&& version_compare( phpversion( 'yaml' ), '2.2.0', '>=' )
+		) {
+			// https://bugs.php.net/bug.php?id=79866
+			$c = '2';
+		} else {
+			$c = '2.000000';
+		}
+
 		$expected = <<<YAML
 ---
 a: "2."
 b: "22222222222222222222222222222222222222222222222222222222222222."
-c: 2.000000
+c: $c
 d: "2.0"
 ...
 
