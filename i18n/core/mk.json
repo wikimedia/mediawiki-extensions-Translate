@@ -309,7 +309,7 @@
 	"translate-workflowstatus": "Статус: $1",
 	"translate-workflow-set-doing": "Задавам...",
 	"translate-workflow-autocreated-summary": "Автоматско создавање на страница за работната состојба $1",
-	"translate-stats-workflow": "Статус",
+	"translate-stats-workflow": "Состојба",
 	"translate-workflowgroup-label": "Работни состојби",
 	"translate-workflowgroup-desc": "Оваа група пораки ја прикажува работната состојба на преводите.\nСостојбите се определуваат со променливата $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Скорешни преводи",

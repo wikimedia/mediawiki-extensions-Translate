@@ -3,6 +3,7 @@
 		"authors": [
 			"Artificial123",
 			"Artsiom91",
+			"Chadyka",
 			"Mikalai Udodau",
 			"Unomano",
 			"ZlyiLev",
@@ -10,6 +11,7 @@
 			"Чаховіч Уладзіслаў"
 		]
 	},
+	"tps-edit-sourcepage-ve-warning-button": "Добра",
 	"tpt-transclusion-label": "Дазволіць для гэтай старонкі ўключэнне перакладзеных шаблонаў",
 	"translate-tag-translate-link-desc": "Перакласці гэтую старонку",
 	"tpt-translation-intro": "Гэтая старонка — <span class=\"plainlinks\">[$1 перакладзеная версія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.",
