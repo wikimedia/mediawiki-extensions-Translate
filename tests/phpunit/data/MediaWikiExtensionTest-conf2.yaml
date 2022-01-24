@@ -21,10 +21,10 @@ VALIDATORS:
   - id: MediaWikiPlural
 
 INSERTABLES:
-  - class: MediaWikiInsertablesSuggester
+  - class: "MediaWiki\\Extension\\Translate\\TranslatorInterface\\Insertable\\MediaWikiInsertablesSuggester"
 
 MANGLER:
-  class: StringMatcher
+  class: "MediaWiki\\Extension\\Translate\\MessageProcessing\\StringMatcher"
   prefix: wmf-
   patterns:
     - sidebar

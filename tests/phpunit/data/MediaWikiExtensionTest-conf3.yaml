@@ -4,7 +4,6 @@ BASIC:
   namespace: 8
   label: Example JsonExtension
   descriptionmsg: examplejsonextension-desc
-  extensionurl: false
 
 FILES:
   class: JsonFFS
@@ -18,7 +17,7 @@ VALIDATORS:
   - id: MediaWikiPlural
 
 INSERTABLES:
-  - class: MediaWikiInsertablesSuggester
+  - class: "MediaWiki\\Extension\\Translate\\TranslatorInterface\\Insertable\\MediaWikiInsertablesSuggester"
 
 TAGS:
   optional:
