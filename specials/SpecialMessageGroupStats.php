@@ -159,7 +159,7 @@ class SpecialMessageGroupStats extends SpecialPage {
 					$jobParams = $this->getCacheRebuildJobParameters( $this->target );
 					$jobParams[ 'purge' ] = $this->purge;
 					$job = MessageGroupStatsRebuildJob::newJob( $jobParams );
-					JobQueueGroup::singleton()->push( $job );
+					TranslateUtils::getJobQueueGroup()->push( $job );
 
 					// $this->purge is only true if request was posted
 					if ( !$this->purge ) {

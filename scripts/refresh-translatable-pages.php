@@ -51,7 +51,7 @@ class RefreshTranslatablePages extends Maintenance {
 			$page = TranslatablePage::newFromTitle( $group->getTitle() );
 			$jobs = TranslationsUpdateJob::getRenderJobs( $page );
 			if ( $useJobQueue ) {
-				JobQueueGroup::singleton()->push( $jobs );
+				TranslateUtils::getJobQueueGroup()->push( $jobs );
 			} else {
 				foreach ( $jobs as $job ) {
 					$job->run();

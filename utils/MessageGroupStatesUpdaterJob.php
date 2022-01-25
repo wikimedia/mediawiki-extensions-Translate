@@ -35,7 +35,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 	 */
 	public static function onChange( MessageHandle $handle ) {
 		$job = self::newJob( $handle->getTitle() );
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 
 		return true;
 	}

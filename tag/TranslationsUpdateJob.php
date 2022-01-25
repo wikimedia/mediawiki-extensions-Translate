@@ -103,7 +103,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 
 		// These can be run independently and in parallel if possible
 		$renderJobs = self::getRenderJobs( $page );
-		JobQueueGroup::singleton()->push( $renderJobs );
+		TranslateUtils::getJobQueueGroup()->push( $renderJobs );
 		$this->logInfo( 'Added ' . count( $renderJobs ) . ' RenderJobs to the queue' );
 
 		// Schedule message index update. Thanks to front caching, it is okay if this takes
@@ -111,7 +111,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		// also allows de-duplication in case multiple translatable pages are being marked
 		// for translation in a short period of time.
 		$job = MessageIndexRebuildJob::newJob();
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 
 		$this->logInfo( 'Finished TranslationsUpdateJob' );
 

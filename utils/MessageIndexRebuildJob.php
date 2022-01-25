@@ -77,6 +77,6 @@ class MessageIndexRebuildJob extends GenericTranslateJob {
 
 	/** @deprecated Just push directly to the job queue */
 	public function insertIntoJobQueue(): void {
-		JobQueueGroup::singleton()->push( $this );
+		TranslateUtils::getJobQueueGroup()->push( $this );
 	}
 }

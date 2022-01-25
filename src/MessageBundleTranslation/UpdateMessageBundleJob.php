@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Job;
-use JobQueueGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -13,6 +12,7 @@ use MessageGroupStats;
 use MessageIndexRebuildJob;
 use MessageUpdateJob;
 use Title;
+use TranslateUtils;
 
 /**
  * @author Niklas Laxström
@@ -40,7 +40,7 @@ class UpdateMessageBundleJob extends Job {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$logger = LoggerFactory::getInstance( 'Translate.MessageBundle' );
 		$messageIndex = Services::getInstance()->getMessageIndex();
-		$jobQueue = JobQueueGroup::singleton();
+		$jobQueue = TranslateUtils::getJobQueueGroup();
 
 		// Not sure if this is necessary, but it should ensure that this job, which was created
 		// when a revision was saved, can read that revision from the replica. In addition, this

@@ -27,7 +27,7 @@ class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 
 	public function testInsertDelayed() {
 		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
-		$job = JobQueueGroup::singleton()->get( 'MessageIndexRebuildJob' )->pop();
+		$job = TranslateUtils::getJobQueueGroup()->get( 'MessageIndexRebuildJob' )->pop();
 		$this->assertInstanceOf(
 			'MessageIndexRebuildJob',
 			$job,

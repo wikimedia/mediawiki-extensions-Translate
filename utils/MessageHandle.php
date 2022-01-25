@@ -178,7 +178,7 @@ class MessageHandle {
 
 			// Schedule a job in the job queue (with deduplication)
 			$job = MessageIndexRebuildJob::newJob();
-			JobQueueGroup::singleton()->push( $job );
+			TranslateUtils::getJobQueueGroup()->push( $job );
 
 			return false;
 		}

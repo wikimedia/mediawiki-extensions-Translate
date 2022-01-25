@@ -14,6 +14,7 @@ use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
 use Status;
+use TranslateUtils;
 use User;
 use WANObjectCache;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -63,7 +64,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 				$services->getDBLoadBalancer(),
 				$services->getMainWANObjectCache(),
 				// BC <= MW 1.36 (use service when it exists)
-				JobQueueGroup::singleton(),
+				TranslateUtils::getJobQueueGroup(),
 				$services->getMainConfig()->get( 'TranslateEnableMessageBundleIntegration' )
 			);
 		return self::$instance;

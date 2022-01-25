@@ -130,7 +130,7 @@ abstract class TTMServer {
 	public static function onDelete( WikiPage $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'delete' );
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 	}
 
 	/**
@@ -139,7 +139,7 @@ abstract class TTMServer {
 	 */
 	public static function onChange( MessageHandle $handle ) {
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'refresh' );
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 	}
 
 	/**
@@ -153,7 +153,7 @@ abstract class TTMServer {
 		}
 
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'rebuild' );
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 	}
 
 	/** @return string[] */

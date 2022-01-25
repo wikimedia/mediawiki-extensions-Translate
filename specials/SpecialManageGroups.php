@@ -1034,7 +1034,7 @@ class SpecialManageGroups extends SpecialPage {
 		$renameGroupIds = array_keys( array_filter( $renameJobs ) );
 		$uniqueGroupIds = array_unique( array_merge( $modificationGroupIds, $renameGroupIds ) );
 		$messageIndexInstance = MessageIndex::singleton();
-		$jobQueueInstance = JobQueueGroup::singleton();
+		$jobQueueInstance = TranslateUtils::getJobQueueGroup();
 
 		foreach ( $uniqueGroupIds as $groupId ) {
 			$messages = [];

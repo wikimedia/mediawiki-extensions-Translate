@@ -4,12 +4,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use JobQueueGroup;
 use Maintenance;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MessageIndexRebuildJob;
+use TranslateUtils;
 
 /**
  * @author Abijeet Patro
@@ -79,7 +79,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		if ( !$groupsInProgress ) {
 			// No groups in progress.
 			$logger->info( 'All message groups are now in sync.' );
-			JobQueueGroup::singleton()->push( MessageIndexRebuildJob::newJob() );
+			TranslateUtils::getJobQueueGroup()->push( MessageIndexRebuildJob::newJob() );
 		}
 
 		$logger->info(

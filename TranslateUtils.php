@@ -554,4 +554,15 @@ class TranslateUtils {
 		return isset( $all[ $code ] );
 	}
 
+	/**
+	 * Helper class to provide backward compatibility
+	 * @return JobQueueGroup
+	 */
+	public static function getJobQueueGroup(): JobQueueGroup {
+		if ( method_exists( MediaWikiServices::class, 'getJobQueueGroup' ) ) {
+			// MW 1.37+
+			return MediaWikiServices::getInstance()->getJobQueueGroup();
+		}
+		return JobQueueGroup::singleton();
+	}
 }

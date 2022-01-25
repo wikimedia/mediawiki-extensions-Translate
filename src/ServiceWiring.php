@@ -59,7 +59,7 @@ return [
 		return new ExternalMessageSourceStateImporter(
 			$services->getMainConfig(),
 			$services->get( 'Translate:GroupSynchronizationCache' ),
-			JobQueueGroup::singleton(),
+			TranslateUtils::getJobQueueGroup(),
 			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
 			MessageIndex::singleton()
 		);
@@ -105,7 +105,7 @@ return [
 	{
 		return new TranslatablePageMover(
 			$services->getMovePageFactory(),
-			JobQueueGroup::singleton(),
+			TranslateUtils::getJobQueueGroup(),
 			$services->getLinkBatchFactory(),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
@@ -151,7 +151,7 @@ return [
 		return new TranslatorActivity(
 			$services->getMainObjectStash(),
 			$query,
-			JobQueueGroup::singleton()
+			TranslateUtils::getJobQueueGroup()
 		);
 	},
 

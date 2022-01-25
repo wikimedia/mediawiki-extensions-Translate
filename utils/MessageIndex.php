@@ -240,7 +240,7 @@ abstract class MessageIndex {
 				// Cache has a later timestamp. This may be caused due to
 				// job deduplication. Just in case, spin off a new job to clean up the cache.
 				$job = MessageIndexRebuildJob::newJob();
-				JobQueueGroup::singleton()->push( $job );
+				TranslateUtils::getJobQueueGroup()->push( $job );
 			}
 		}
 
@@ -365,7 +365,7 @@ abstract class MessageIndex {
 	 */
 	protected function clearMessageGroupStats( array $diff ) {
 		$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $diff['values'] );
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 
 		foreach ( $diff['keys'] as $keys ) {
 			foreach ( $keys as $key => $data ) {

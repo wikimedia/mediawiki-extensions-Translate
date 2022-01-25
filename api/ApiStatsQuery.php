@@ -65,7 +65,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 
 		if ( $incomplete ) {
 			DeferredUpdates::addCallableUpdate( function () use ( $target ): void {
-				$jobQueue = JobQueueGroup::singleton();
+				$jobQueue = TranslateUtils::getJobQueueGroup();
 				$jobQueue->push( $this->getCacheRebuildJob( $target ) );
 			} );
 		}

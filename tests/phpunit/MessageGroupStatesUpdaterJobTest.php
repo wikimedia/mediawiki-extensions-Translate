@@ -168,7 +168,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 
 	protected static function translateRunJobs() {
 		do {
-			$job = JobQueueGroup::singleton()->pop();
+			$job = TranslateUtils::getJobQueueGroup()->pop();
 			if ( !$job ) {
 				break;
 			}

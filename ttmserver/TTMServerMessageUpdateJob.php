@@ -244,7 +244,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @param self $job
 	 */
 	protected function resend( self $job ) {
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 	}
 
 	private function runCommand( WritableTTMServer $ttmserver ) {
@@ -318,7 +318,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @param int $delay seconds to delay this job if possible
 	 */
 	public function setDelay( $delay ) {
-		$jobQueue = JobQueueGroup::singleton()->get( $this->getType() );
+		$jobQueue = TranslateUtils::getJobQueueGroup()->get( $this->getType() );
 		if ( !$delay || !$jobQueue->delayedJobsEnabled() ) {
 			return;
 		}

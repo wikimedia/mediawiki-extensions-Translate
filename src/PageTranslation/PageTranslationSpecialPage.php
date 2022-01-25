@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use ContentHandler;
 use DifferenceEngine;
 use Html;
-use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
@@ -187,7 +186,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$sharedGroupIds = MessageGroups::getSharedGroups( $group );
 			if ( $sharedGroupIds !== [] ) {
 				$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $sharedGroupIds );
-				JobQueueGroup::singleton()->push( $job );
+				TranslateUtils::getJobQueueGroup()->push( $job );
 			}
 
 			// Show updated page with a notice
@@ -1134,7 +1133,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		MessageIndex::singleton()->storeInterim( $group, $newKeys );
 
 		$job = TranslationsUpdateJob::newFromPage( $page, $sections );
-		JobQueueGroup::singleton()->push( $job );
+		TranslateUtils::getJobQueueGroup()->push( $job );
 
 		$this->handlePriorityLanguages( $this->getRequest(), $page );
 

@@ -243,7 +243,7 @@ class TranslateSandbox {
 			'emailType' => $type,
 		];
 
-		JobQueueGroup::singleton()->push( TranslateSandboxEmailJob::newJob( $params ) );
+		TranslateUtils::getJobQueueGroup()->push( TranslateSandboxEmailJob::newJob( $params ) );
 	}
 
 	/**

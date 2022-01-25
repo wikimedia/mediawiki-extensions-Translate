@@ -334,7 +334,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			);
 		}
 
-		JobQueueGroup::singleton()->push( $jobs );
+		TranslateUtils::getJobQueueGroup()->push( $jobs );
 
 		$cache = ObjectCache::getInstance( CACHE_DB );
 		$cache->set(
