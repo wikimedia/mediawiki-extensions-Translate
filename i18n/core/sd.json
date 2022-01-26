@@ -246,6 +246,7 @@
 	"tux-status-saving": "ڇاپيندي...",
 	"tux-status-unsaved": "اڻ-ڇپيل",
 	"tux-save-unknown-error": "اڻڄاتل چُڪَ پيش آئي.",
+	"tux-editor-placeholder-language": "$1ءَ ۾ توھان جو ترجمو",
 	"tux-editor-editsummary-placeholder": "اختياري تَتُ",
 	"tux-editor-paste-original-button-label": "ذريعي جو متن ھڻو",
 	"tux-editor-discard-changes-button-label": "تبديليون ڦٽو ڪريو",

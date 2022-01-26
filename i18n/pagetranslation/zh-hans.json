@@ -51,7 +51,7 @@
 	"tps-edit-sourcepage-ve-warning-text": "你正在编辑一个可翻译页面。使用此编辑器编辑本页面尚未获得官方支持。请使用源代码编辑器编辑。",
 	"tps-edit-sourcepage-ve-warning-button": "好",
 	"tpt-section": "翻译单元$1",
-	"tpt-section-new": "新翻译单元。\n名字：$1",
+	"tpt-section-new": "新翻译单元。名字：$1",
 	"tpt-section-deleted": "翻译单元$1",
 	"tpt-diff-old": "上一版本文字",
 	"tpt-diff-new": "下一版本文字",
