@@ -1,0 +1,26 @@
+== Translate 2022.01 ==
+Released at 2022-01-27.
+
+=== Noteworthy changes ===
+* Fix Special:PageMigration - Page search suggestion does not work ({{phab|T217726}})
+* Fix UI issue: the page moves from bottom to top when new messages are loaded
+in List tab ({{phab|T295655}}, {{gerrit|738587}})
+* Migrate tables to an abstract schema ({{phab|T268576}}, {{gerrit|735613}})
+* Improve UX on Special:AggregateGroups and add collapsibility ({{phab|T90511}})
+* Feature: Special:Translate: Make the target language visible in the
+translation UI ({{phab|T296987}}, {{gerrit|743383}})
+* Feature: Special:Translate: Make the target language selector a bit more
+prominent ({{phab|T296986}}, {{gerrit|743397}})
+* Performance: Special:ActiveLanguages should not perform slow queries if
+results are cached ({{phab|T285314}}, {{gerrit|747122}})
+* Feature: Add a new Javascript hook, <code>mw.translate.translationView.stateChange</code>,
+fired when the state is updated ({{phab|T297129}}, {{gerrit|745997}})
+* Remove unused Configure extension integration ({{gerrit|751382}})
+* Feature: Add reason dropdown on PageTranslationDeletePage ({{phab|T153542}},
+{{gerrit|754490}})
+* Add filters to <code>meta=messagegroupstats</code> API ({{phab|T298736}},
+{{gerrit|752000}})
+* Allow exporting AggregateMessageGroups in offline format via CLI ({{phab|T299493}}, {{phab|T263268}}, {{gerrit|755356}})
+
+=== Breaking changes ===
+* Remove backward compatibility for MW <= 1.35 ({{phab|T298788}}, {{gerrit|752166}})
