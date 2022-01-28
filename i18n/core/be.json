@@ -146,7 +146,7 @@
 	"translate-statsf-group": "Падзелены коскамі спіс кодаў групаў:",
 	"translate-statsf-submit": "Перадпаказ",
 	"translate-statsf-unknown-error": "Адбылася невядомая памылка.",
-	"translate-statsf-error-message": "Адбылася памылка пад час загрузкі графіка: $1",
+	"translate-statsf-error-message": "Адбылася памылка падчас загрузкі графіка: $1",
 	"translate-statsf-graph-alt-text-info": "Тэкставая альтэрнатыва для статыстыкі перакладу знаходзіцца ў табліцы з дадзенымі ніжэй.",
 	"translate-statsf-alt-text": "Гэта тэкставая альтэрнатыва для статыстыкі перакладу.",
 	"translate-statsf-embed": "Код, каб уставіць графік статыстыкі перакладу на іншыя старонкі.",
