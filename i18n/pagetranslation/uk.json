@@ -252,7 +252,7 @@
 	"tpt-validation-name-reuse": "Змінна перекладу \"$1\" визначається кілька разів з різним змістом. Змініть назви змінних, щоб вони були унікальними наодинці перекладу.",
 	"visualeditor-annotations-translate-start": "Початок перекладу вмісту",
 	"visualeditor-annotations-translate-end": "Кінець змісту для перекладу",
-	"visualeditor-annotations-translate-description": "Цей діапазон позначений як перекладний. Переконайтеся, що ви дотримуєтесь вказівок щодо [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text зміни вихідного тексту].",
+	"visualeditor-annotations-translate-description": "Цей діапазон позначений як перекладний. Переконайтеся, що ви дотримуєтесь вказівок щодо [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/uk#Зміна_вихідного_тексту зміни вихідного тексту].",
 	"visualeditor-annotations-tvar-start": "Початок неперекладального вмісту",
 	"visualeditor-annotations-tvar-end": "Кінець неперекладального вмісту",
 	"visualeditor-annotations-tvar-description": "Цей діапазон позначений як неперекладний. Для отримання додаткової інформації зверніться до [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сегментації вихідного тексту]."

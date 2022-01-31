@@ -222,6 +222,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|språk}} totalt.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|redigering|redigeringar}} - senaste redigering $3 {{PLURAL:$3|dag|dagar}} sedan",
 	"translate-supportedlanguages-cached": "Denna information cachelagrades $1 sedan.",
+	"translate-activelanguages-invalid-code": "Språkkoden \"$1\" är okänd eller inte aktiverad för översättning.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Översättningsenhetens källtext",
 	"abusefilter-edit-builder-vars-translate-target-language": "Målspråk för översättning",
 	"translate-jssti-add": "Lägg till i listan",
@@ -339,6 +340,7 @@
 	"translate-msggroupselector-search-recent": "Senaste",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|undergrupp|undergrupper}}",
 	"tux-languageselector": "Översätt till",
+	"tux-select-target-language": "Målspråk för översättning",
 	"tux-tab-all": "Alla",
 	"tux-tab-untranslated": "Oöversatta",
 	"tux-tab-outdated": "Föråldrade",
@@ -352,6 +354,8 @@
 	"tux-status-saving": "Publicerar...",
 	"tux-status-unsaved": "Inte publicerad",
 	"tux-save-unknown-error": "Okänt fel uppstod.",
+	"tux-editor-placeholder-documentation": "Lägg till meddelandedokumentation",
+	"tux-editor-placeholder-language": "Din översättning på $1",
 	"tux-editor-editsummary-placeholder": "Valfri sammanfattning",
 	"tux-editor-paste-original-button-label": "Klistra in källtext",
 	"tux-editor-discard-changes-button-label": "Ta bort ändringar",
@@ -437,5 +441,6 @@
 	"translate-messagebundle-error-key-too-long": "Nyckeln \"$1\" är för lång",
 	"translate-messagebundle-error-key-invalid-characters": "Nyckeln \"$1\" innehåller otillåtna tecken",
 	"translate-messagebundle-error-invalid-value": "Nyckeln \"$1\" innehåller inget strängvärde",
-	"translate-messagebundle-error-empty-value": "Nyckeln \"$1\" har inget värde"
+	"translate-messagebundle-error-empty-value": "Nyckeln \"$1\" har inget värde",
+	"translate-messagebundle-group-description": "Meddelanden i meddelandebunt som definierats på sidan [[$2|$1]]."
 }
