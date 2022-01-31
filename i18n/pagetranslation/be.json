@@ -7,9 +7,11 @@
 			"Unomano",
 			"Тест",
 			"Чаховіч Уладзіслаў",
-			"ZlyiLev"
+			"ZlyiLev",
+			"Chadyka"
 		]
 	},
+	"tps-edit-sourcepage-ve-warning-button": "Добра",
 	"translate-tag-translate-link-desc": "Перакласці гэтую старонку",
 	"tpt-translation-intro": "Гэтая старонка — <span class=\"plainlinks\">[$1 перакладзеная версія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.",
 	"tpt-translation-intro-fuzzy": "Гэтак пазначаныя састарэлыя пераклады.",
