@@ -1,4 +1,6 @@
 <?php
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
@@ -7,6 +9,7 @@ use Html;
 use HTMLForm;
 use LogicException;
 use Message;
+use MessageCollection;
 use MessageGroup;
 use MessageGroups;
 use SpecialPage;
@@ -24,11 +27,8 @@ use WikiPageMessageGroup;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ExportTranslationsSpecialPage extends SpecialPage {
-	/**
-	 * Maximum size of a group until exporting is not allowed due to performance reasons.
-	 */
+	/** Maximum size of a group until exporting is not allowed due to performance reasons. */
 	public const MAX_EXPORT_SIZE = 10000;
-
 	/** @var string */
 	protected $language;
 	/** @var string */
@@ -70,7 +70,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		}
 	}
 
-	protected function outputForm() {
+	private function outputForm(): void {
 		$fields = [
 			'group' => [
 				'type' => 'select',
@@ -107,8 +107,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			->displayForm( false );
 	}
 
-	/** @return array */
-	protected function getGroupOptions() {
+	private function getGroupOptions(): array {
 		$selected = $this->groupId;
 		$groups = MessageGroups::getAllGroups();
 		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
@@ -127,8 +126,8 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		return $options;
 	}
 
-	/** @return array */
-	protected function getLanguageOptions() {
+	/** @return string[] */
+	private function getLanguageOptions(): array {
 		$languages = TranslateUtils::getLanguageNames( 'en' );
 		$options = [];
 		foreach ( $languages as $code => $name ) {
@@ -138,8 +137,8 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		return $options;
 	}
 
-	/** @return array */
-	protected function getFormatOptions() {
+	/** @return string[] */
+	private function getFormatOptions(): array {
 		$options = [];
 		foreach ( self::$validFormats as $format ) {
 			// translate-taskui-export-to-file, translate-taskui-export-as-po
@@ -148,8 +147,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		return $options;
 	}
 
-	/** @return Status */
-	protected function checkInput() {
+	private function checkInput(): Status {
 		$status = Status::newGood();
 
 		$msgGroup = MessageGroups::getGroup( $this->groupId );
@@ -193,7 +191,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		return $status;
 	}
 
-	protected function doExport() {
+	private function doExport(): void {
 		$out = $this->getOutput();
 		$group = MessageGroups::getGroup( $this->groupId );
 		$collection = $this->setupCollection( $group );
@@ -262,7 +260,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		}
 	}
 
-	private function setupCollection( MessageGroup $group ) {
+	private function setupCollection( MessageGroup $group ): MessageCollection {
 		$collection = $group->initCollection( $this->language );
 
 		// Don't export ignored, unless it is the source language or message documentation
@@ -278,12 +276,8 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		return $collection;
 	}
 
-	/**
-	 * Send the appropriate response headers for the export
-	 *
-	 * @param string $fileName
-	 */
-	protected function sendExportHeaders( $fileName ) {
+	/** Send the appropriate response headers for the export */
+	private function sendExportHeaders( string $fileName ): void {
 		$response = $this->getRequest()->response();
 		$response->header( 'Content-Type: text/plain; charset=UTF-8' );
 		$response->header( "Content-Disposition: attachment; filename=\"$fileName\"" );
