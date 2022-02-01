@@ -21,7 +21,8 @@
 			"Tbleher",
 			"The Evil IP address",
 			"Tobi 406",
-			"Umherirrender"
+			"Umherirrender",
+			"Brettchenweber"
 		]
 	},
 	"translate": "Übersetzen",
@@ -350,7 +351,7 @@
 	"tux-editor-cancel-button-label": "Abbrechen",
 	"tux-editor-confirm-button-label": "Übersetzung bestätigen",
 	"tux-editor-proofread-button-label": "Als überprüft markieren",
-	"tux-editor-shortcut-info": "Drücke „$1“ zum Bestätigen und gehe zur nächsten Nachricht, „$2“ zum Überspringen, „$4“, um eine Zusammenfassung anzugeben oder halte „$3“ gedrückt, um andere Tastaturkürzel anzusehen.",
+	"tux-editor-shortcut-info": "Drücke „$1“ zum Bestätigen und gehe zur nächsten Nachricht, „$2“ zum Überspringen, „$4“, um eine Zusammenfassung anzugeben, oder halte „$3“ gedrückt, um andere Tastaturkürzel anzusehen.",
 	"tux-editor-edit-desc": "Dokumentation bearbeiten",
 	"tux-editor-add-desc": "Dokumentation hinzufügen",
 	"tux-editor-suggestions-title": "Vorschläge",
