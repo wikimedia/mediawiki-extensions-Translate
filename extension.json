@@ -157,7 +157,6 @@
 		"SearchableTTMServer": "ttmserver/Interfaces.php",
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
-		"SpecialExportTranslations": "specials/SpecialExportTranslations.php",
 		"SpecialLanguageStats": "specials/SpecialLanguageStats.php",
 		"SpecialManageGroups": "specials/SpecialManageGroups.php",
 		"SpecialMessageGroupStats": "specials/SpecialMessageGroupStats.php",
@@ -331,7 +330,7 @@
 			]
 		},
 		"ImportTranslations": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ImportTranslationsSpecialPage",
-		"ExportTranslations": "SpecialExportTranslations",
+		"ExportTranslations": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ExportTranslationsSpecialPage",
 		"ManageMessageGroups": {
 			"class": "SpecialManageGroups",
 			"services": [

@@ -1,10 +1,29 @@
 <?php
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use FileBasedMessageGroup;
+use GettextFFS;
+use Html;
+use HTMLForm;
+use LogicException;
+use Message;
+use MessageGroup;
+use MessageGroups;
+use SpecialPage;
+use Status;
+use TranslatablePage;
+use TranslateUtils;
+use WikiPageMessageGroup;
 
 /**
+ * This special page allows exporting groups for offline translation.
+ *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialExportTranslations extends SpecialPage {
+class ExportTranslationsSpecialPage extends SpecialPage {
 	/**
 	 * Maximum size of a group until exporting is not allowed due to performance reasons.
 	 */
