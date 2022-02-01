@@ -11,8 +11,6 @@
 	},
 	"rules": {
 		"max-len": "off",
-		"no-use-before-define": "off",
-		"no-jquery/no-animate-toggle": "warn",
 		"no-jquery/no-class-state": "off",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-sizzle": "warn",

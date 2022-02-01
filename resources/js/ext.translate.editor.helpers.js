@@ -138,6 +138,10 @@
 				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 
 				if ( documentation.html.length > 500 ) {
+					var $readMore = $( '<span>' )
+						.addClass( 'read-more column' )
+						.text( mw.msg( 'tux-editor-message-desc-more' ) );
+
 					var expand = function () {
 						$messageDoc.removeClass( 'compact' );
 						$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
@@ -152,10 +156,7 @@
 						}
 					};
 
-					var $readMore = $( '<span>' )
-						.addClass( 'read-more column' )
-						.text( mw.msg( 'tux-editor-message-desc-more' ) )
-						.on( 'click', readMore );
+					$readMore.on( 'click', readMore );
 
 					$messageDescViewer.find( '.message-desc-control' )
 						.prepend( $readMore );

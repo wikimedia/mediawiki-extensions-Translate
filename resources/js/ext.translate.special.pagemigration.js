@@ -472,8 +472,8 @@
 			return;
 		}
 
-		pageName = pageTitle.substring( 0, slashPos );
-		langCode = pageTitle.substring( slashPos + 1 );
+		pageName = pageTitle.slice( 0, slashPos );
+		langCode = pageTitle.slice( slashPos + 1 );
 
 		if ( pageName === '' ) {
 			$errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).removeClass( 'hide' );

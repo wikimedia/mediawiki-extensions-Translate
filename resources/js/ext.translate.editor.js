@@ -1096,6 +1096,7 @@
 					.on( 'click', function () {
 						translateEditor.saveDocumentation()
 							.done( function () {
+								// eslint-disable-next-line no-use-before-define
 								var $descEditLink = $messageDescViewer.find( '.message-desc-edit' );
 								$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 							} );
