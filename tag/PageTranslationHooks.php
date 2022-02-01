@@ -296,6 +296,16 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Hook: onVisualEditorBeforeEditor
+	 * @param OutputPage $out
+	 * @param Skin $skin
+	 * @return bool
+	 */
+	public static function onVisualEditorBeforeEditor( OutputPage $out, Skin $skin ) {
+		return !TranslatablePage::isTranslationPage( $out->getTitle() );
+	}
+
+	/**
 	 * This is triggered after saves to translation unit pages
 	 * @param WikiPage $wikiPage
 	 * @param User $user

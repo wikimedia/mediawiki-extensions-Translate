@@ -162,6 +162,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			/// Register our CSS and metadata
 			$wgHooks['BeforePageDisplay'][] = 'PageTranslationHooks::onBeforePageDisplay';
 
+			// Disable VE
+			$wgHooks['VisualEditorBeforeEditor'][] = 'PageTranslationHooks::onVisualEditorBeforeEditor';
+
 			// Check syntax for \<translate>
 			$wgHooks['MultiContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 			$wgHooks['EditFilterMergedContent'][] =
