@@ -1,20 +1,27 @@
 <?php
-/**
- * Contains logic for special page Special:ImportTranslations.
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use FileBasedMessageGroup;
+use GettextFFS;
+use GettextParseException;
+use Html;
+use MessageGroupBase;
+use MessageGroups;
+use MessageWebImporter;
+use ObjectCache;
+use SpecialPage;
+use Xml;
 
 /**
  * Special page to import Gettext (.po) files exported using Translate extension.
  * Does not support generic Gettext files.
  *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialImportTranslations extends SpecialPage {
+class ImportTranslationsSpecialPage extends SpecialPage {
 	/**
 	 * Set up and fill some dependencies.
 	 */
@@ -33,7 +40,7 @@ class SpecialImportTranslations extends SpecialPage {
 	/**
 	 * Special page entry point.
 	 * @param null|string $parameters
-	 * @throws PermissionsError
+	 * @throws \PermissionsError
 	 */
 	public function execute( $parameters ) {
 		$this->setHeaders();

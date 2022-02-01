@@ -158,7 +158,6 @@
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"SpecialExportTranslations": "specials/SpecialExportTranslations.php",
-		"SpecialImportTranslations": "specials/SpecialImportTranslations.php",
 		"SpecialLanguageStats": "specials/SpecialLanguageStats.php",
 		"SpecialManageGroups": "specials/SpecialManageGroups.php",
 		"SpecialMessageGroupStats": "specials/SpecialMessageGroupStats.php",
@@ -331,7 +330,7 @@
 				"Translate:ProgressStatsTableFactory"
 			]
 		},
-		"ImportTranslations": "SpecialImportTranslations",
+		"ImportTranslations": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ImportTranslationsSpecialPage",
 		"ExportTranslations": "SpecialExportTranslations",
 		"ManageMessageGroups": {
 			"class": "SpecialManageGroups",
