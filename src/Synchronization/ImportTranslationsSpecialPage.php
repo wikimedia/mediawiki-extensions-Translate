@@ -1,6 +1,9 @@
 <?php
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use BagOStuff;
 use FileBasedMessageGroup;
 use GettextFFS;
 use GettextParseException;
@@ -22,9 +25,7 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ImportTranslationsSpecialPage extends SpecialPage {
-	/**
-	 * Set up and fill some dependencies.
-	 */
+	/** Set up and fill some dependencies. */
 	public function __construct() {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
 	}
@@ -115,10 +116,8 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 	 * Checks for error state from the return value of loadFile and parseFile
 	 * functions. Prints the error and the form and returns true if there is an
 	 * error. Returns false and does nothing if there is no error.
-	 * @param array $msg
-	 * @return bool
 	 */
-	protected function checkError( $msg ) {
+	private function checkError( array $msg ): bool {
 		// Give grep a chance to find the usages:
 		// translate-import-err-dl-failed, translate-import-err-ul-failed,
 		// translate-import-err-invalid-title, translate-import-err-no-such-file,
@@ -135,15 +134,11 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		return false;
 	}
 
-	/**
-	 * Constructs and outputs file input form with supported methods.
-	 */
-	protected function outputForm() {
+	/** Constructs and outputs file input form with supported methods. */
+	private function outputForm(): void {
 		$this->getOutput()->addModules( 'ext.translate.special.importtranslations' );
 		$this->getOutput()->addHelpLink( 'Help:Extension:Translate/Off-line_translation' );
-		/**
-		 * Ugly but necessary form building ahead, ohoy
-		 */
+		/** Ugly but necessary form building ahead, ohoy */
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', [
 				'action' => $this->getPageTitle()->getLocalURL(),
@@ -166,12 +161,8 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		);
 	}
 
-	/**
-	 * Try to get the file data from any of the supported methods.
-	 * @param string &$filedata
-	 * @return array
-	 */
-	protected function loadFile( &$filedata ) {
+	/** Try to get the file data from any of the supported methods. */
+	private function loadFile( ?string &$filedata ): array {
 		$filename = $this->getRequest()->getFileTempname( 'upload-local' );
 
 		if ( !is_uploaded_file( $filename ) ) {
@@ -183,12 +174,8 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		return [ 'ok' ];
 	}
 
-	/**
-	 * Try parsing file.
-	 * @param string $data
-	 * @return array
-	 */
-	protected function parseFile( string $data ): array {
+	/** Try parsing file. */
+	private function parseFile( string $data ): array {
 		/** Construct a dummy group for us...
 		 * @todo Time to rethink the interface again?
 		 * @var FileBasedMessageGroup $group
@@ -224,25 +211,25 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		return [ 'ok', $parseOutput ];
 	}
 
-	private function getCache() {
+	private function getCache(): BagOStuff {
 		return ObjectCache::getInstance( CACHE_DB );
 	}
 
-	protected function setCachedData( $data ) {
-		$cache = self::getCache();
+	private function setCachedData( $data ): void {
+		$cache = $this->getCache();
 		$key = $cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
 		$cache->set( $key, $data, 60 * 30 );
 	}
 
-	protected function getCachedData() {
-		$cache = self::getCache();
+	private function getCachedData() {
+		$cache = $this->getCache();
 		$key = $cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
 
 		return $cache->get( $key );
 	}
 
-	protected function deleteCachedData() {
-		$cache = self::getCache();
+	private function deleteCachedData(): bool {
+		$cache = $this->getCache();
 		$key = $cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
 
 		return $cache->delete( $key );
