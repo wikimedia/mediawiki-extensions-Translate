@@ -102,6 +102,7 @@
 	"translate-workflowstatus": "Statu: $1",
 	"translate-stats-workflow": "Statu",
 	"translate-dynagroup-recent-label": "Ùrtimi traduzzioni",
+	"translate-dynagroup-additions-desc": "Stu gruppu ammustra li missaggi novi o canciati.",
 	"translate-msggroupselector-projects": "Gruppu di missaggi",
 	"translate-msggroupselector-search-all": "Tutti",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|suttagruppu|suttagruppi}}",
