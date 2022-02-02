@@ -127,7 +127,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 					);
 				} catch ( ImpossiblePageMove $e ) {
 					$this->showErrors( $e->getBlockers() );
-					$this->showForm( [] );
+					$this->showForm();
 					return;
 				}
 
@@ -146,7 +146,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 				);
 				$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
 			} else {
-				$this->showForm( [] );
+				$this->showForm();
 			}
 		} else {
 			// Delegate... don't want to reimplement this
@@ -183,20 +183,12 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 		}
 	}
 
-	/**
-	 * Checks token to protect against CSRF.
-	 *
-	 * FIXME: make this a form special page instead of manually checking stuff?
-	 * @return bool
-	 */
+	/** Checks token to protect against CSRF. */
 	protected function checkToken(): bool {
 		return $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) );
 	}
 
-	/**
-	 * Pretty-print the list of errors.
-	 * @param SplObjectStorage $errors Array with message key and parameters
-	 */
+	/** Pretty-print the list of errors. */
 	protected function showErrors( SplObjectStorage $errors ): void {
 		$out = $this->getOutput();
 
@@ -219,12 +211,8 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
-	/**
-	 * The query form.
-	 * @param array $err Unused.
-	 * @param bool $isPermError Unused.
-	 */
-	public function showForm( $err, $isPermError = false ): void {
+	/** The query form. */
+	public function showForm(): void {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
 		HTMLForm::factory( 'ooui', $this->getCommonFormFields(), $this->getContext() )
@@ -240,7 +228,6 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 	/**
 	 * The second form, which still allows changing some things.
 	 * Lists all the action which would take place.
-	 * @param PageMoveCollection $pageCollection
 	 */
 	protected function showConfirmation( PageMoveCollection $pageCollection ): void {
 		$out = $this->getOutput();
