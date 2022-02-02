@@ -264,10 +264,9 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 		}
 
 		foreach ( $pagesToMove as $type => $pages ) {
-			$this->addSectionHeader( $out, $type, $pages );
+			$this->addSectionHeaderAndMessage( $out, $type, $pages );
 
 			if ( !$pages ) {
-				$out->addWikiMsg( 'pt-movepage-list-no-pages' );
 				continue;
 			}
 
@@ -297,7 +296,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 
 		$translatableSubpages = $pageCollection->getTranslatableSubpages();
 		$sectionType = 'pt-movepage-list-translatable';
-		$this->addSectionHeader( $out, $sectionType, $translatableSubpages );
+		$this->addSectionHeaderAndMessage( $out, $sectionType, $translatableSubpages );
 		if ( $translatableSubpages ) {
 			$lines = [];
 			$out->wrapWikiMsg( "'''$1'''", $this->msg( 'pt-movepage-list-translatable-note' ) );
@@ -350,7 +349,8 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 			->displayForm( false );
 	}
 
-	private function addSectionHeader( OutputPage $out, string $type, array $pages ): void {
+	/** Add section header and no page message if there are no pages */
+	private function addSectionHeaderAndMessage( OutputPage $out, string $type, array $pages ): void {
 		$pageCount = count( $pages );
 		$out->wrapWikiMsg( '=== $1 ===', [ $type, $pageCount ] );
 
