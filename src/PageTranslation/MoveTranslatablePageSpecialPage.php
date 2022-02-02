@@ -109,13 +109,14 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 					$subaction = 'perform';
 					break;
 				case $this->msg( 'pt-movepage-action-other' )->text():
-					$subaction = '';
+					$subaction = 'show-form';
 					break;
 				default:
-					$subaction = '';
+					$subaction = 'show-form';
 			}
 
-			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
+			$isValidPostRequest = $this->checkToken() && $request->wasPosted();
+			if ( $isValidPostRequest && $subaction === 'check' ) {
 				try {
 					$pageCollection = $this->pageMover->getPageMoveCollection(
 						$this->oldTitle,
@@ -132,7 +133,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 				}
 
 				$this->showConfirmation( $pageCollection );
-			} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
+			} elseif ( $isValidPostRequest && $subaction === 'perform' ) {
 				$this->moveSubpages = $request->getBool( 'subpages' );
 				$this->moveTalkpages = $request->getBool( 'talkpages' );
 
