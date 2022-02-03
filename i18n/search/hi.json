@@ -13,7 +13,7 @@
 	"tux-sst-search-ph": "अनुवाद ढूँढे",
 	"tux-sst-count": "{{PLURAL:$1|एक अंजाम मिला|$1 अंजाम मिले}}",
 	"tux-sst-facet-language": "भाषाएँ",
-	"tux-sst-facet-group": "संदेश-समूह",
+	"tux-sst-facet-group": "संदेश समूह",
 	"tux-sst-nosolr-title": "खोज अनुपलब्ध है",
 	"tux-sst-nosolr-body": "इस विकि पर अनुवाद खोजने की सेवा नहीं है।",
 	"tux-sst-solr-offline-title": "खोज अनुपलब्ध है",
