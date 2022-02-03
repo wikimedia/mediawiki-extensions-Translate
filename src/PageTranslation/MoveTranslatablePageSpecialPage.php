@@ -99,21 +99,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 				throw new PermissionsError( 'pagetranslation' );
 			}
 
-			// Is there really no better way to do this?
-			$subactionText = $request->getText( 'subaction' );
-			switch ( $subactionText ) {
-				case $this->msg( 'pt-movepage-action-check' )->text():
-					$subaction = 'check';
-					break;
-				case $this->msg( 'pt-movepage-action-perform' )->text():
-					$subaction = 'perform';
-					break;
-				case $this->msg( 'pt-movepage-action-other' )->text():
-					$subaction = 'show-form';
-					break;
-				default:
-					$subaction = 'show-form';
-			}
+			$subaction = $this->getSubactionFromRequest( $request->getText( 'subaction' ) );
 
 			$isValidPostRequest = $this->checkToken() && $request->wasPosted();
 			if ( $isValidPostRequest && $subaction === 'check' ) {
@@ -344,6 +330,19 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 
 		if ( !$pageCount ) {
 			$out->addWikiMsg( 'pt-movepage-list-no-pages' );
+		}
+	}
+
+	private function getSubactionFromRequest( string $subactionText ): string {
+		switch ( $subactionText ) {
+			case $this->msg( 'pt-movepage-action-check' )->text():
+				return 'check';
+			case $this->msg( 'pt-movepage-action-perform' )->text():
+				return 'perform';
+			case $this->msg( 'pt-movepage-action-other' )->text():
+				return 'show-form';
+			default:
+				return 'show-form';
 		}
 	}
 
