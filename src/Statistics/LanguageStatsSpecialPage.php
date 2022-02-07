@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains logic for special page Special:LanguageStats.
- *
- * @file
- * @author Siebrand Mazeland
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
@@ -37,6 +30,9 @@ use WikiPageMessageGroup;
  * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppress completely
  * translated groups.
  *
+ * @author Siebrand Mazeland
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class LanguageStatsSpecialPage extends SpecialPage {
@@ -44,9 +40,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private $table;
 	/** @var array */
 	private $targetValueName = [ 'code', 'language' ];
-	/**
-	 * Most of the displayed numbers added together at the bottom of the table.
-	 */
+	/** Most of the displayed numbers added together at the bottom of the table. */
 	private $totals;
 	/**
 	 * Flag to set if nothing to show.
@@ -68,9 +62,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 * @var bool
 	 */
 	private $noEmpty = false;
-	/**
-	 * The target of stats, language code or group id.
-	 */
+	/** The target of stats, language code or group id. */
 	private $target;
 	/**
 	 * Whether to regenerate stats. Activated by action=purge in query params.
@@ -81,7 +73,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 * Helper variable to avoid overcounting message groups that appear
 	 * multiple times in the list with different parents. Aggregate message
 	 * group stats are always excluded from totals.
-	 *
 	 * @var array
 	 */
 	private $statsCounted = [];
@@ -130,7 +121,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.languagestats' );
 		$out->addModuleStyles( 'ext.translate.statstable' );
 
-		$params = explode( '/', $par );
+		$params = $par ? explode( '/', $par ) : [];
 
 		if ( isset( $params[0] ) && trim( $params[0] ) ) {
 			$this->target = $params[0];
@@ -212,29 +203,23 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 * @param int $flags See MessageGroupStats for possible flags
 	 * @return array[]
 	 */
-	private function loadStatistics( $target, $flags = 0 ) {
+	private function loadStatistics( string $target, int $flags = 0 ): array {
 		return MessageGroupStats::forLanguage( $target, $flags );
 	}
 
-	private function getCacheRebuildJobParameters( $target ) {
+	private function getCacheRebuildJobParameters( $target ): array {
 		return [ 'languagecode' => $target ];
 	}
 
-	/**
-	 * Return true if language exist in the list of allowed languages or false otherwise.
-	 * @param string $value
-	 * @return bool
-	 */
-	private function isValidValue( $value ) {
+	/** Return true if language exist in the list of allowed languages or false otherwise. */
+	private function isValidValue( string $value ): bool {
 		$langs = Language::fetchLanguageNames();
 
 		return isset( $langs[$value] );
 	}
 
-	/**
-	 * Called when the target is unknown.
-	 */
-	private function invalidTarget() {
+	/** Called when the target is unknown. */
+	private function invalidTarget(): void {
 		$this->getOutput()->wrapWikiMsg(
 			"<div class='error'>$1</div>",
 			'translate-page-no-such-language'
@@ -261,10 +246,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 			->show();
 	}
 
-	/**
-	 * HTMLForm for the top form rendering.
-	 */
-	private function addForm() {
+	/** HTMLForm for the top form rendering. */
+	private function addForm(): void {
 		$formDescriptor = [
 			'language' => [
 				'type' => 'text',
@@ -312,10 +295,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 			->displayForm( false );
 	}
 
-	/**
-	 * Output something helpful to guide the confused user.
-	 */
-	private function outputIntroduction() {
+	/** Output something helpful to guide the confused user. */
+	private function outputIntroduction(): void {
 		$languageName = TranslateUtils::getLanguageName(
 			$this->target,
 			$this->getLanguage()->getCode()
@@ -336,10 +317,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->getOutput()->addHTML( $out );
 	}
 
-	/**
-	 * If workflow states are configured, adds a workflow states column
-	 */
-	private function addWorkflowStatesColumn() {
+	/** If workflow states are configured, adds a workflow states column */
+	private function addWorkflowStatesColumn(): void {
 		global $wgTranslateWorkflowStates;
 
 		if ( $wgTranslateWorkflowStates ) {
@@ -363,12 +342,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		);
 	}
 
-	/**
-	 * Returns the table itself.
-	 * @param array $stats
-	 * @return string HTML
-	 */
-	private function getTable( $stats ) {
+	private function getTable( array $stats ): string {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();
@@ -419,9 +393,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 * @param MessageGroup|MessageGroup[] $item
 	 * @param array $cache Cache as returned by MessageGroupStats::forLanguage
 	 * @param MessageGroup|null $parent MessageGroup (do not use, used internally only)
-	 * @return string
 	 */
-	private function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ) {
+	private function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ): string {
 		if ( !is_array( $item ) ) {
 			return $this->makeGroupRow( $item, $cache, $parent );
 		}
@@ -442,14 +415,12 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	/**
 	 * Actually creates the table for single message group, unless it
 	 * is in the exclusion list or hidden by filters.
-	 * @param MessageGroup $group
-	 * @param array $cache
-	 * @param MessageGroup|null $parent
-	 * @return string
 	 */
-	private function makeGroupRow( MessageGroup $group, array $cache,
+	private function makeGroupRow(
+		MessageGroup $group,
+		array $cache,
 		MessageGroup $parent = null
-	) {
+	): string {
 		$groupId = $group->getId();
 
 		if ( $this->table->isExcluded( $groupId, $this->target ) ) {
@@ -524,7 +495,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		);
 	}
 
-	private function getWorkflowStates() {
+	private function getWorkflowStates(): array {
 		$db = wfGetDB( DB_REPLICA );
 		$res = $db->select(
 			'translate_groupreviews',
