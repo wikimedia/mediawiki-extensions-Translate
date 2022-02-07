@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Statistics\LanguageStatsSpecialPage;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 
 /**
@@ -86,7 +87,7 @@ class SpecialMessageGroupStats extends SpecialPage {
 
 		$this->purge = $request->getVal( 'action' ) === 'purge';
 		if ( $this->purge && !$request->wasPosted() ) {
-			SpecialLanguageStats::showPurgeForm( $this->getContext() );
+			LanguageStatsSpecialPage::showPurgeForm( $this->getContext() );
 			return;
 		}
 

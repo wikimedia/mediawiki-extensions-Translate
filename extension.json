@@ -157,7 +157,6 @@
 		"SearchableTTMServer": "ttmserver/Interfaces.php",
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
-		"SpecialLanguageStats": "specials/SpecialLanguageStats.php",
 		"SpecialManageGroups": "specials/SpecialManageGroups.php",
 		"SpecialMessageGroupStats": "specials/SpecialMessageGroupStats.php",
 		"SpecialPageMigration": "tag/SpecialPageMigration.php",
@@ -317,7 +316,7 @@
 			]
 		},
 		"LanguageStats": {
-			"class": "SpecialLanguageStats",
+			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\LanguageStatsSpecialPage",
 			"services": [
 				"LinkBatchFactory",
 				"Translate:ProgressStatsTableFactory"

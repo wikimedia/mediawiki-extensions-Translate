@@ -8,8 +8,25 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use AggregateMessageGroup;
+use DeferredUpdates;
+use DerivativeContext;
+use Html;
+use HTMLForm;
+use IContextSource;
+use Language;
 use MediaWiki\Cache\LinkBatchFactory;
-use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
+use MessageGroup;
+use MessageGroups;
+use MessageGroupStats;
+use MessageGroupStatsRebuildJob;
+use ObjectCache;
+use SpecialPage;
+use StatsTable;
+use TranslateUtils;
+use WikiPageMessageGroup;
 
 /**
  * Implements includable special page Special:LanguageStats which provides
@@ -22,7 +39,7 @@ use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialLanguageStats extends SpecialPage {
+class LanguageStatsSpecialPage extends SpecialPage {
 	/** @var StatsTable */
 	private $table;
 	/** @var array */
@@ -276,7 +293,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
+		$htmlForm = HtmlForm::factory( 'ooui', $formDescriptor, $context );
 
 		/* Since these pages are in the tabgroup with Special:Translate,
 		* it makes sense to retain the selected group/language parameter
