@@ -1,15 +1,39 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use ContentHandler;
+use DeferredUpdates;
+use DifferenceEngine;
+use DisabledSpecialPage;
+use Exception;
+use FileBasedMessageGroup;
+use Html;
+use Language;
+use LinkBatch;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Extension\Translate\Synchronization\DisplayGroupSynchronizationInfo;
-use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
-use MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
+use MessageChangeStorage;
+use MessageGroup;
+use MessageGroups;
+use MessageHandle;
+use MessageIndex;
+use MessageUpdateJob;
+use NamespaceInfo;
 use OOUI\ButtonInputWidget;
+use OutputPage;
+use PermissionsError;
+use Skin;
+use SpecialPage;
+use TextContent;
+use Title;
+use TranslateUtils;
+use WebRequest;
+use Xml;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
@@ -22,7 +46,7 @@ use OOUI\ButtonInputWidget;
  * @ingroup SpecialPage TranslateSpecialPage
  * @license GPL-2.0-or-later
  */
-class SpecialManageGroups extends SpecialPage {
+class ManageGroupsSpecialPage extends SpecialPage {
 	private const GROUP_SYNC_INFO_WRAPPER_CLASS = 'smg-group-sync-cache-info';
 	private const RIGHT = 'translate-manage';
 	/** @var DifferenceEngine */
@@ -472,7 +496,7 @@ class SpecialManageGroups extends SpecialPage {
 				$renameJobData[$groupId] = $groupRenameJobData;
 			} catch ( Exception $e ) {
 				error_log(
-					"SpecialManageGroups: Error in processSubmit. Group: $groupId\n" .
+					"ManageGroupsSpecialPage: Error in processSubmit. Group: $groupId\n" .
 					"Exception: $e"
 				);
 
