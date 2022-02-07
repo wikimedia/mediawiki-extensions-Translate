@@ -147,10 +147,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->processSubmit();
 	}
 
-	/**
-	 * How many changes can be shown per page.
-	 * @return int
-	 */
+	/** How many changes can be shown per page. */
 	protected function getLimit(): int {
 		$limits = [
 			1000, // Default max
@@ -544,9 +541,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	/**
 	 * Adds the task-based tabs on Special:Translate and few other special pages.
 	 * Hook: SkinTemplateNavigation::SpecialPage
-	 * @since 2012-05-14
-	 * @param Skin $skin
-	 * @param array &$tabs
 	 */
 	public static function tabify( Skin $skin, array &$tabs ): void {
 		$title = $skin->getTitle();
@@ -583,12 +577,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	/**
 	 * Check if the message definition is present as an incoming addition
 	 * OR exists already on the wiki
-	 *
-	 * @internal - For internal use only
-	 * @param MessageGroup $group
-	 * @param MessageSourceChange $changes
-	 * @param string $msgKey
-	 * @return bool
 	 */
 	private static function isMessageDefinitionPresent(
 		MessageGroup $group,
@@ -921,10 +909,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		}
 	}
 
-	/**
-	 * @param array $jobParams
-	 * @return MessageUpdateJob[][]
-	 */
+	/** @return MessageUpdateJob[][] */
 	private function createRenameJobs( array $jobParams ): array {
 		$jobs = [];
 		foreach ( $jobParams as $groupId => $groupJobParams ) {
@@ -944,12 +929,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		return $jobs;
 	}
 
-	/**
-	 * Checks if a title still exists and can be processed.
-	 * @param Title $title
-	 * @param string $type
-	 * @return bool
-	 */
+	/** Checks if a title still exists and can be processed. */
 	private function isTitlePresent( Title $title, string $type ): bool {
 		// phpcs:ignore SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn
 		if (
@@ -968,13 +948,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	 * Checks the current key and the matched key. This is needed because as the
 	 * keys in the wiki are not submitted along with the request, only the incoming
 	 * modified keys are submitted.
-	 * @param WebRequest $req
-	 * @param MessageSourceChange $sourceChanges
-	 * @param string $id
-	 * @param string $key
-	 * @param string $language
-	 * @param string $groupId
-	 * @param bool $isSourceLang
 	 * @return bool[]
 	 * $response = [
 	 *   0 => (bool) True if rename is missing, false otherwise.
@@ -1032,10 +1005,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		return $errorMsg;
 	}
 
-	/**
-	 * @param \Cdb\Reader $reader
-	 * @return FileBasedMessageGroup[]
-	 */
+	/** @return FileBasedMessageGroup[] */
 	private function getGroupsFromCdb( \Cdb\Reader $reader ): array {
 		$groups = [];
 		$groupIds = TranslateUtils::deserialize( $reader->get( '#keys' ) );
@@ -1049,7 +1019,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	 * Add jobs to the queue, updates the interim cache, and start sync process for the group.
 	 * @param MessageUpdateJob[][] $modificationJobs
 	 * @param MessageUpdateJob[][] $renameJobs
-	 * @return void
 	 */
 	private function startSync( array $modificationJobs, array $renameJobs ): void {
 		// We are adding an empty array for groups that have no jobs. This is mainly done to
