@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Rishabhbhat",
-			"Teashae"
+			"Teashae",
+			"Iflaq"
 		]
 	},
 	"translate": "تَرجُمہٕ",
@@ -14,5 +15,6 @@
 	"translate-page-limit": "حَد",
 	"translate-prev": "پٔتِم صَفہٕ",
 	"translate-statsf-scale-hours": "گَنٛٹہٕ",
-	"translate-sidebar-alltrans": "باقؠن زَبانَن مَنٛز"
+	"translate-sidebar-alltrans": "باقؠن زَبانَن مَنٛز",
+	"translate-documentation-language": "پٲغامٕک دستاویز"
 }

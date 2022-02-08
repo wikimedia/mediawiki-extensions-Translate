@@ -30,6 +30,7 @@
 	"tpt-rev-unmark": "umuçaká sinimukanhẽẽgawa çui",
 	"translate-tag-translate-link-desc": "Usinimukanhẽẽga kuá sowa",
 	"translate-tag-markthis": "Umuçãgau kuá sowa sinimukanhẽẽgawa pirí",
+	"tpt-translation-intro": "Kuá sowa yepé <span class=\"plainlinks\">[$1 yuçẽnaçawa sinimukanhẽẽgawara]</span> sowa [[$2]] çui. '''Açui nesinimukanhẽẽgawa uikú $3% tereçẽmu'''.",
 	"tpt-languages-legend": "Amũ nhẽẽga'etá:",
 	"tpt-languages-zero": "Uyupirũ sinimukanhẽẽgawa kuá nhẽẽga çupé",
 	"tpt-languages-nonzero": "$1 ($2% sinimukanhẽẽgawara)",
