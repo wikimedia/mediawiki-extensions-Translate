@@ -163,7 +163,7 @@
 		"TPException": "tag/TPException.php",
 		"TranslatablePage": "tag/TranslatablePage.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
-		"TranslatablePageMoveJob": "tag/TranslatablePageMoveJob.php",
+		"TranslatableBundleMoveJob": "tag/TranslatableBundleMoveJob.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
 		"TranslateDeleteJob": "tag/TranslateDeleteJob.php",
 		"TranslateEditAddons": "TranslateEditAddons.php",

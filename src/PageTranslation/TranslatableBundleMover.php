@@ -18,8 +18,8 @@ use PageTranslationHooks;
 use SplObjectStorage;
 use Status;
 use Title;
+use TranslatableBundleMoveJob;
 use TranslatablePage;
-use TranslatablePageMoveJob;
 use TranslateMetadata;
 use TranslateUtils;
 use TranslationsUpdateJob;
@@ -184,7 +184,7 @@ class TranslatableBundleMover {
 		);
 		$pagesToMove = $pageCollection->getListOfPages();
 
-		$job = TranslatablePageMoveJob::newJob( $source, $target, $pagesToMove, $summary, $user );
+		$job = TranslatableBundleMoveJob::newJob( $source, $target, $pagesToMove, $summary, $user );
 		$this->lock( array_keys( $pagesToMove ) );
 		$this->lock( array_values( $pagesToMove ) );
 

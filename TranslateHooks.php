@@ -141,7 +141,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			global $wgJobClasses;
 			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
 			$wgJobClasses['RenderJob'] = 'TranslateRenderJob';
-			$wgJobClasses['TranslatablePageMoveJob'] = 'TranslatablePageMoveJob';
+			// Remove after MLEB 2022.04 release
+			$wgJobClasses['TranslatablePageMoveJob'] = 'TranslatableBundleMoveJob';
+			$wgJobClasses['TranslatableBundleMoveJob'] = 'TranslatableBundleMoveJob';
 			$wgJobClasses['TranslateDeleteJob'] = 'TranslateDeleteJob';
 			$wgJobClasses['DeleteJob'] = 'TranslateDeleteJob';
 			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';

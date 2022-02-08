@@ -11,7 +11,7 @@ use MediaWiki\Extension\Translate\Services;
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation JobQueue
  */
-class TranslatablePageMoveJob extends Job {
+class TranslatableBundleMoveJob extends Job {
 	/** @var TranslatableBundleMover */
 	private $bundleMover;
 
