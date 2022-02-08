@@ -27,12 +27,12 @@ use Traversable;
 use User;
 
 /**
- * Contains the core logic to validate and move translatable pages
+ * Contains the core logic to validate and move translatable bundles
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @since 2021.03
  */
-class TranslatablePageMover {
+class TranslatableBundleMover {
 	private const LOCK_TIMEOUT = 3600 * 2;
 	private const FETCH_TRANSLATABLE_SUBPAGES = true;
 	/** @var MovePageFactory */

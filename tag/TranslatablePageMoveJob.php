@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\Services;
 
 /**
@@ -12,8 +12,8 @@ use MediaWiki\Extension\Translate\Services;
  * @ingroup PageTranslation JobQueue
  */
 class TranslatablePageMoveJob extends Job {
-	/** @var TranslatablePageMover */
-	private $pageMover;
+	/** @var TranslatableBundleMover */
+	private $bundleMover;
 
 	public static function newJob(
 		Title $source,
@@ -37,7 +37,7 @@ class TranslatablePageMoveJob extends Job {
 
 	public function __construct( Title $title, array $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
-		$this->pageMover = Services::getInstance()->getTranslatablePageMover();
+		$this->bundleMover = Services::getInstance()->getTranslatableBundleMover();
 	}
 
 	public function run() {
@@ -45,7 +45,7 @@ class TranslatablePageMoveJob extends Job {
 		$targetTitle = Title::newFromText( $this->params['target'] );
 		$performer = User::newFromName( $this->params['performer'] );
 
-		$this->pageMover->moveSynchronously(
+		$this->bundleMover->moveSynchronously(
 			$sourceTitle,
 			$targetTitle,
 			$this->params['moves'],

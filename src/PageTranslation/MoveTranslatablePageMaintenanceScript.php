@@ -15,8 +15,8 @@ use Title;
 use TitleParser;
 
 class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
-	/** @var TranslatablePageMover */
-	private $pageMover;
+	/** @var TranslatableBundleMover */
+	private $bundleMover;
 	/** @var TitleParser */
 	private $titleParser;
 
@@ -64,7 +64,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 
 	/** @inheritDoc */
 	public function execute() {
-		$this->pageMover = Services::getInstance()->getTranslatablePageMover();
+		$this->bundleMover = Services::getInstance()->getTranslatableBundleMover();
 
 		$mwService = MediaWikiServices::getInstance();
 		$this->titleParser = $mwService->getTitleParser();
@@ -106,9 +106,9 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 
 		// When moving translatable pages from script, remove all limits on the number of
 		// pages that can be moved
-		$this->pageMover->disablePageMoveLimit();
+		$this->bundleMover->disablePageMoveLimit();
 		try {
-			$pageCollection = $this->pageMover->getPageMoveCollection(
+			$pageCollection = $this->bundleMover->getPageMoveCollection(
 				$currentTitle,
 				$newTitle,
 				$user,
@@ -133,7 +133,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 
 		$pagesToMove = $pageCollection->getListOfPages();
 
-		$this->pageMover->moveSynchronously(
+		$this->bundleMover->moveSynchronously(
 			$currentTitle,
 			$newTitle,
 			$pagesToMove,

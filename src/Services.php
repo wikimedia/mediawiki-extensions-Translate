@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
@@ -89,9 +89,9 @@ class Services implements ContainerInterface {
 		return $this->get( 'Translate:ProgressStatsTableFactory' );
 	}
 
-	/** @since 2021.03 */
-	public function getTranslatablePageMover(): TranslatablePageMover {
-		return $this->get( 'Translate:TranslatablePageMover' );
+	/** @since 2022.02 */
+	public function getTranslatableBundleMover(): TranslatableBundleMover {
+		return $this->get( 'Translate:TranslatableBundleMover' );
 	}
 
 	public function getTranslatablePageParser(): TranslatablePageParser {

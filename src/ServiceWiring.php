@@ -10,7 +10,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMover;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
@@ -101,9 +101,9 @@ return [
 		);
 	},
 
-	'Translate:TranslatablePageMover' => static function ( MediaWikiServices $services ): TranslatablePageMover
+	'Translate:TranslatableBundleMover' => static function ( MediaWikiServices $services ): TranslatableBundleMover
 	{
-		return new TranslatablePageMover(
+		return new TranslatableBundleMover(
 			$services->getMovePageFactory(),
 			TranslateUtils::getJobQueueGroup(),
 			$services->getLinkBatchFactory(),

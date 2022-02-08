@@ -39,8 +39,8 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 	// Dependencies
 	/** @var ObjectFactory */
 	private $objectFactory;
-	/** @var TranslatablePageMover */
-	private $pageMover;
+	/** @var TranslatableBundleMover */
+	private $bundleMover;
 	/** @var PermissionManager */
 	private $permissionManager;
 	private $movePageSpec;
@@ -51,13 +51,13 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 	public function __construct(
 		ObjectFactory $objectFactory,
 		PermissionManager $permissionManager,
-		TranslatablePageMover $pageMover,
+		TranslatableBundleMover $bundleMover,
 		$movePageSpec
 	) {
 		parent::__construct( 'Movepage' );
 		$this->objectFactory = $objectFactory;
 		$this->permissionManager = $permissionManager;
-		$this->pageMover = $pageMover;
+		$this->bundleMover = $bundleMover;
 		$this->movePageSpec = $movePageSpec;
 	}
 
@@ -104,7 +104,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 			$isValidPostRequest = $this->checkToken() && $request->wasPosted();
 			if ( $isValidPostRequest && $subaction === 'check' ) {
 				try {
-					$pageCollection = $this->pageMover->getPageMoveCollection(
+					$pageCollection = $this->bundleMover->getPageMoveCollection(
 						$this->oldTitle,
 						$newTitle,
 						$user,
@@ -123,7 +123,7 @@ class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
 				$this->moveSubpages = $request->getBool( 'subpages' );
 				$this->moveTalkpages = $request->getBool( 'talkpages' );
 
-				$this->pageMover->moveAsynchronously(
+				$this->bundleMover->moveAsynchronously(
 					$this->oldTitle,
 					$newTitle,
 					$this->moveSubpages,

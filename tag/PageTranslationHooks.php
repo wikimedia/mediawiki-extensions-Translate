@@ -1241,7 +1241,7 @@ class PageTranslationHooks {
 			'services' => [
 				'ObjectFactory',
 				'PermissionManager',
-				'Translate:TranslatablePageMover'
+				'Translate:TranslatableBundleMover'
 			],
 			'args' => [
 				$movePageSpec
