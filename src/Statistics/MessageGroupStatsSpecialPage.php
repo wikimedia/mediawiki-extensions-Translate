@@ -7,9 +7,18 @@
  * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
+namespace MediaWiki\Extension\Translate\Statistics;
 
-use MediaWiki\Extension\Translate\Statistics\LanguageStatsSpecialPage;
-use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
+use DeferredUpdates;
+use Html;
+use HTMLForm;
+use MessageGroups;
+use MessageGroupStats;
+use MessageGroupStatsRebuildJob;
+use SpecialPage;
+use StatsTable;
+use TranslateMetadata;
+use TranslateUtils;
 
 /**
  * Implements includable special page Special:MessageGroupStats which provides
@@ -17,7 +26,7 @@ use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialMessageGroupStats extends SpecialPage {
+class MessageGroupStatsSpecialPage extends SpecialPage {
 	/** @var StatsTable */
 	private $table;
 	/** @var array */
