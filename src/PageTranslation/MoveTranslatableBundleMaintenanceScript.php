@@ -14,7 +14,7 @@ use Status;
 use Title;
 use TitleParser;
 
-class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
+class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 	/** @var TranslatableBundleMover */
 	private $bundleMover;
 	/** @var TitleParser */
@@ -22,17 +22,17 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 
 	public function __construct() {
 		parent::__construct();
-		$this->addDescription( 'Review and move translatable pages including their subpages' );
+		$this->addDescription( 'Review and move translatable bundles including their subpages' );
 
 		$this->addArg(
 			'current-page',
-			'Current page name',
+			' Current name of the page representing a translatable bundle',
 			self::REQUIRED
 		);
 
 		$this->addArg(
 			'new-page',
-			'New page name',
+			'New translatable bundle name',
 			self::REQUIRED
 		);
 
@@ -44,7 +44,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 
 		$this->addOption(
 			'reason',
-			'Reason for moving the page',
+			'Reason for moving the translatable bundle',
 			self::OPTIONAL,
 			self::HAS_ARG
 		);
@@ -69,8 +69,8 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$mwService = MediaWikiServices::getInstance();
 		$this->titleParser = $mwService->getTitleParser();
 
-		$currentPagename = $this->getArg( 0 );
-		$newPagename = $this->getArg( 1 );
+		$currentBundleName = $this->getArg( 0 );
+		$newBundleName = $this->getArg( 1 );
 		$username = $this->getArg( 2 );
 		$reason = $this->getOption( 'reason', '' );
 		$moveSubpages = !$this->hasOption( 'skip-subpages' );
@@ -83,7 +83,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 			$this->fatalError( "User $username does not exist." );
 		}
 
-		$outputMsg = "Check if '$currentPagename' can be moved to '$newPagename'";
+		$outputMsg = "Check if '$currentBundleName' can be moved to '$newBundleName'";
 		$subpageMsg = 'excluding subpages';
 		if ( $moveSubpages ) {
 			$subpageMsg = 'including subpages';
@@ -97,14 +97,14 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		$this->output( "$outputMsg ($subpageMsg; $talkpageMsg)\n" );
 
 		try {
-			$currentTitle = $this->getTitleFromInput( $currentPagename ?? '' );
-			$newTitle = $this->getTitleFromInput( $newPagename ?? '' );
+			$currentTitle = $this->getTitleFromInput( $currentBundleName ?? '' );
+			$newTitle = $this->getTitleFromInput( $newBundleName ?? '' );
 		} catch ( MalformedTitleException $e ) {
-			$this->error( 'Invalid title: current-page or new-page' );
+			$this->error( 'Invalid title: current-bundle or new-bundle' );
 			$this->fatalError( $e->getMessageObject()->text() );
 		}
 
-		// When moving translatable pages from script, remove all limits on the number of
+		// When moving translatable bundles from script, remove all limits on the number of
 		// pages that can be moved
 		$this->bundleMover->disablePageMoveLimit();
 		try {
@@ -143,7 +143,7 @@ class MoveTranslatablePageMaintenanceScript extends BaseMaintenanceScript {
 		);
 
 		$this->logSeparator();
-		$this->output( "Finished moving '$currentPagename' to '$newPagename' $subpageMsg\n" );
+		$this->output( "Finished moving '$currentBundleName' to '$newBundleName' $subpageMsg\n" );
 	}
 
 	private function parseErrorMessage( SplObjectStorage $errors ): string {
