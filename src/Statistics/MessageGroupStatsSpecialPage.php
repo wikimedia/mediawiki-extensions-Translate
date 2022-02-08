@@ -1,12 +1,6 @@
 <?php
-/**
- * Contains logic for special page Special:MessageGroupStats.
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use DeferredUpdates;
@@ -24,6 +18,9 @@ use TranslateUtils;
  * Implements includable special page Special:MessageGroupStats which provides
  * translation statistics for all languages for a group.
  *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class MessageGroupStatsSpecialPage extends SpecialPage {
@@ -110,7 +107,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.languagestats' );
 		$out->addModuleStyles( 'ext.translate.statstable' );
 
-		$params = explode( '/', $par );
+		$params = $par ? explode( '/', $par ) : [];
 
 		if ( isset( $params[0] ) && trim( $params[0] ) ) {
 			$this->target = $params[0];
@@ -188,15 +185,19 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 	// endregion
 
-	private function loadStatistics( $target, $flags = 0 ) {
+	private function loadStatistics( string $target, int $flags = 0 ): array {
 		return MessageGroupStats::forGroup( $target, $flags );
 	}
 
-	private function getCacheRebuildJobParameters( $target ) {
+	private function getCacheRebuildJobParameters( string $target ): array {
 		return [ 'groupid' => $target ];
 	}
 
-	private function isValidValue( $value ) {
+	private function isValidValue( ?string $value ): bool {
+		if ( $value === null ) {
+			return false;
+		}
+
 		$group = MessageGroups::getGroup( $value );
 		if ( $group ) {
 			if ( MessageGroups::isDynamic( $group ) ) {
@@ -214,14 +215,14 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		return (bool)$group;
 	}
 
-	private function invalidTarget() {
+	private function invalidTarget(): void {
 		$this->getOutput()->wrapWikiMsg(
 			"<div class='error'>$1</div>",
 			[ 'translate-mgs-invalid-group', $this->target ]
 		);
 	}
 
-	private function outputIntroduction() {
+	private function outputIntroduction(): void {
 		$priorityLangs = TranslateMetadata::get( $this->target, 'prioritylangs' );
 		if ( $priorityLangs ) {
 			$hasPriorityForce = TranslateMetadata::get( $this->target, 'priorityforce' ) === 'on';
@@ -233,10 +234,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		}
 	}
 
-	/**
-	 * If workflow states are configured, adds a workflow states column
-	 */
-	private function addWorkflowStatesColumn() {
+	/** If workflow states are configured, adds a workflow states column */
+	private function addWorkflowStatesColumn(): void {
 		global $wgTranslateWorkflowStates;
 
 		if ( $wgTranslateWorkflowStates ) {
@@ -247,12 +246,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		}
 	}
 
-	/**
-	 * If workflow states are configured, adds a cell with the workflow state to the row,
-	 * @param string $language Language tag
-	 * @return string Html
-	 */
-	private function getWorkflowStateCell( string $language ) {
+	/** If workflow states are configured, adds a cell with the workflow state to the row */
+	private function getWorkflowStateCell( string $language ): string {
 		// This will be set by addWorkflowStatesColumn if needed
 		if ( !isset( $this->states ) ) {
 			return '';
@@ -265,7 +260,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		);
 	}
 
-	private function addForm() {
+	private function addForm(): void {
 		$formDescriptor = [
 			'select' => [
 				'type' => 'select',
@@ -310,7 +305,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			->displayForm( false );
 	}
 
-	private function getTable( $stats ) {
+	private function getTable( array $stats ): string {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();
@@ -356,13 +351,10 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	 * Filter an array of languages based on whether a priority set of
 	 * languages present for the passed group. If priority languages are
 	 * present, to that list add languages with more than 0% translation.
-	 * @param array &$languages Array of Languages to be filtered
-	 * @param string $group
-	 * @param array $cache
 	 */
-	private function filterPriorityLangs( &$languages, $group, $cache ) {
+	private function filterPriorityLangs( array &$languages, string $group, array $cache ): void {
 		$filterLangs = TranslateMetadata::get( $group, 'prioritylangs' );
-		if ( strlen( $filterLangs ) === 0 ) {
+		if ( $filterLangs === false || strlen( $filterLangs ) === 0 ) {
 			// No restrictions, keep everything
 			return;
 		}
@@ -378,12 +370,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		}
 	}
 
-	/**
-	 * @param string $code
-	 * @param array $cache
-	 * @return string
-	 */
-	private function makeRow( $code, $cache ) {
+	private function makeRow( string $code, array $cache ): string {
 		$stats = $cache[$code];
 		$total = $stats[MessageGroupStats::TOTAL];
 		$translated = $stats[MessageGroupStats::TRANSLATED];
@@ -430,12 +417,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		return $out;
 	}
 
-	/**
-	 * @param string $code
-	 * @param array $params
-	 * @return string
-	 */
-	private function getMainColumnCell( $code, $params ) {
+	private function getMainColumnCell( string $code, array $params ): string {
 		if ( !isset( $this->names ) ) {
 			$this->names = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
 			$this->translate = SpecialPage::getTitleFor( 'Translate' );
@@ -461,8 +443,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		return Html::rawElement( 'td', [], $link );
 	}
 
-	/** @return array */
-	private function getWorkflowStates() {
+	private function getWorkflowStates(): array {
 		$db = wfGetDB( DB_REPLICA );
 		$res = $db->select(
 			'translate_groupreviews',
@@ -479,12 +460,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		return $states;
 	}
 
-	/**
-	 * Creates a simple message group options.
-	 *
-	 * @return array
-	 */
-	private function getGroupOptions() {
+	/** Creates a simple message group options. */
+	private function getGroupOptions(): array {
 		$options = [];
 		$groups = MessageGroups::getAllGroups();
 
