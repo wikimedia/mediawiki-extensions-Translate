@@ -225,6 +225,7 @@
 	"supportedlanguages-count": "Всього $1 {{PLURAL:$1|мова|мови|мов}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|редагування|редагування|редагувань}} — останнє редагування $3 {{PLURAL:$3|день|дні|днів}} тому",
 	"translate-supportedlanguages-cached": "Ця інформація була кешована $1 тому.",
+	"translate-activelanguages-invalid-code": "Код мови «$1» невідомий або не увімкнений для перекладу.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Вихідний текст одиниці перекладу",
 	"abusefilter-edit-builder-vars-translate-target-language": "Цільова мова для перекладу",
 	"translate-jssti-add": "Додати в список",
@@ -342,6 +343,7 @@
 	"translate-msggroupselector-search-recent": "Останні",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|підгрупа|підгрупи|підгруп}}",
 	"tux-languageselector": "Переклад на",
+	"tux-select-target-language": "Цільова мова для перекладу",
 	"tux-tab-all": "Усі",
 	"tux-tab-untranslated": "Неперекладені",
 	"tux-tab-outdated": "Застарілі",
@@ -355,6 +357,8 @@
 	"tux-status-saving": "Публікація…",
 	"tux-status-unsaved": "Не опубліковано",
 	"tux-save-unknown-error": "Сталася невідома помилка.",
+	"tux-editor-placeholder-documentation": "Додати документацію повідомлення",
+	"tux-editor-placeholder-language": "Ваш переклад мовою «$1»",
 	"tux-editor-editsummary-placeholder": "Необов'язковий короткий опис",
 	"tux-editor-paste-original-button-label": "Вставити вихідний текст",
 	"tux-editor-discard-changes-button-label": "Скасувати зміни",
@@ -440,5 +444,6 @@
 	"translate-messagebundle-error-key-too-long": "Клавіша \"$1\" задовга",
 	"translate-messagebundle-error-key-invalid-characters": "Ключ \"$1\" містить заборонені символи",
 	"translate-messagebundle-error-invalid-value": "Ключ \"$1\" не містить значення рядка",
-	"translate-messagebundle-error-empty-value": "Ключ \"$1\" не має значення"
+	"translate-messagebundle-error-empty-value": "Ключ \"$1\" не має значення",
+	"translate-messagebundle-group-description": "Повідомлення з із пакету повідомлень, визначеного на сторінці [[$2|$1]]."
 }
