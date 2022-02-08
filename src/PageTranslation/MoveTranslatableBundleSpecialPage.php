@@ -19,14 +19,14 @@ use UnlistedSpecialPage;
 use Wikimedia\ObjectFactory;
 
 /**
- * Replacement for Special:Movepage to allow renaming a translatable page and
+ * Replacement for Special:Movepage to allow renaming a translatable bundle and
  * all pages associated with it.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
  */
-class MoveTranslatablePageSpecialPage extends UnlistedSpecialPage {
+class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	// Form parameters both as text and as titles
 	/** @var string */
 	private $oldText;

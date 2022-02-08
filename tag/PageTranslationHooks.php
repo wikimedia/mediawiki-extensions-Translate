@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\PageTranslation\MoveTranslatablePageSpecialPage;
+use MediaWiki\Extension\Translate\PageTranslation\MoveTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -1237,7 +1237,7 @@ class PageTranslationHooks {
 		}
 
 		$list['Movepage'] = [
-			'class' => MoveTranslatablePageSpecialPage::class,
+			'class' => MoveTranslatableBundleSpecialPage::class,
 			'services' => [
 				'ObjectFactory',
 				'PermissionManager',
