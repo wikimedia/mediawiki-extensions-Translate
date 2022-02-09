@@ -482,21 +482,21 @@ class TranslatablePage {
 	/**
 	 * Returns a list of translation unit pages.
 	 * @param string $set Can be either 'all', or 'active'
-	 * @param string|bool $code Only list unit pages in given language.
+	 * @param ?string $code Only list unit pages in given language.
 	 * @return Title[]
 	 * @since 2012-08-06
 	 */
-	public function getTranslationUnitPages( $set = 'active', $code = false ) {
+	public function getTranslationUnitPages( string $set = 'active', ?string $code = null ): array {
 		$dbw = wfGetDB( DB_PRIMARY );
 
 		$base = $this->getTitle()->getPrefixedDBkey();
 		// Including the / used as separator
 		$baseLength = strlen( $base ) + 1;
 
-		if ( $code !== false ) {
-			$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/$code" );
-		} else {
+		if ( $code === null ) {
 			$like = $dbw->buildLike( "$base/", $dbw->anyString() );
+		} else {
+			$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/$code" );
 		}
 
 		$fields = [ 'page_namespace', 'page_title' ];
