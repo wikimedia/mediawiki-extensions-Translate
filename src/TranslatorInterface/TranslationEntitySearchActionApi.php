@@ -29,7 +29,7 @@ class TranslationEntitySearchActionApi extends ApiBase {
 		$searchResults = [];
 		$searchResults[ 'groups' ] = $this->entitySearch->searchStaticMessageGroups( $query, $maxResults );
 
-		$remainingResults = count( $searchResults[ 'groups' ] ) - $maxResults;
+		$remainingResults = $maxResults - count( $searchResults[ 'groups' ] );
 		if ( $remainingResults > 0 ) {
 			$searchResults[ 'messages' ] = $this->entitySearch->searchMessages( $query, $remainingResults );
 		}
