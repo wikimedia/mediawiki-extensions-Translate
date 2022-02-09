@@ -70,7 +70,7 @@
 	"apihelp-query+messagegroupstats-summary": "Demander les statistiques des groupes de messages.",
 	"apihelp-query+messagegroupstats-param-group": "Identifiant du groupe de messages.",
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Ne pas afficher les langues qui ont achevé leur traduction",
-	"apihelp-query+messagegroupstats-param-suppressempty": "Ne pas afficher les langues qui n’ont pas de traductions",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Ne pas afficher les langues qui n’ont aucune traduction",
 	"apihelp-query+messagegroupstats-example-1": "Liste des statistiques d’achèvement des traductions pour le groupe « page-Example »",
 	"apihelp-query+messagetranslations-description": "Demande l’ensemble des traductions pour un seul message.",
 	"apihelp-query+messagetranslations-summary": "Recherche toutes les traductions d’un unique message.",
