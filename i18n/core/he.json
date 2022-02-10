@@ -200,6 +200,8 @@
 	"translate-mgs-totals": "{{PLURAL:$1|שפה אחת|כל $1 השפות ביחד}}",
 	"translate-mgs-invalid-group": "הקבוצה $1 אינה קיימת.",
 	"translate-mgs-nothing": "אין מה להראות עבור הסטטיסטיקות המבוקשות.",
+	"translate-tes-server-error": "אחזור הצעות חיפוש נכשל",
+	"translate-tes-group-not-found": "אין תוצאות תואמות",
 	"supportedlanguages": "שפות פעילות",
 	"supportedlanguages-summary": "הדף הזה מציג רשימה של השפות הפעילות בהאתר {{SITENAME}},\nעם שמות של מתרגמים שעובדים על אותן השפות.\nגודל שם המתרגם יחסי למספר העריכות שלו.\nצבע הקו התחתי מראה כמה זמן המתרגם פעיל כאן.",
 	"supportedlanguages-colorlegend": "מקרא לצבעים: תרגום אחרון לפני $1 ימים",

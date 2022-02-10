@@ -208,6 +208,8 @@
 	"translate-mgs-totals": "{{PLURAL:$1|Die gesamte Sprache|Alle $1 Sprachen zusammen}}",
 	"translate-mgs-invalid-group": "Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.",
 	"translate-mgs-nothing": "Zu den angeforderten Statistiken gibt es keine anzuzeigenden Daten.",
+	"translate-tes-server-error": "Suchvorschläge konnten nicht abgerufen werden",
+	"translate-tes-group-not-found": "Keine passenden Ergebnisse",
 	"supportedlanguages": "Aktive Sprachen",
 	"supportedlanguages-summary": "Diese Seite zeigt eine Liste aller auf {{SITENAME}} aktiven Sprachen, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.\nJe intensiver ein Übersetzer mitgearbeitet hat, desto größer wird sein Benutzername angezeigt.\nDie zur Unterstreichung des Benutzernamens genutzte Farbe zeigt an, wann der Übersetzer zuletzt aktiv mitgearbeitet hat.",
 	"supportedlanguages-colorlegend": "Legende zu den Farben: Letzte Übersetzung vor $1 Tagen.",
