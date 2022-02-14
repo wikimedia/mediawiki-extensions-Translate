@@ -297,6 +297,7 @@
 	"translate-manage-nochanges-other": "Message shown in Special:ImportTranslations.",
 	"translate-manage-inconsistent": "Parameters:\n* $1 - a string (key name?) e.g. action-changed-XXXX",
 	"translate-manage-toolong": "Parameters:\n* $1 - number of seconds, can be used for PLURAL",
+	"translate-manage-import-ignore": "Message shown in Special:ImportTranslations when a message translation change is ignored.",
 	"translate-manage-import-summary": "Used as edit summary.",
 	"translate-manage-import-rename-summary": "Used as page move summary.",
 	"translate-manage-conflict-summary": "An edit summary message when importing a message with conflicting changes.",

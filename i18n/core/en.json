@@ -263,6 +263,7 @@
 	"translate-manage-inconsistent": "Detected inconsistency in the request.\nPlease check for changes and try again.\nDetails: $1.",
 	"translate-manage-toolong": "The maximum processing time of $1 {{PLURAL:$1|second|seconds}} exceeded.\nPlease resubmit the form to continue processing.",
 	"translate-manage-import-summary": "Importing a new version from external source",
+	"translate-manage-import-ignore": "Skipping message $1.",
 	"translate-manage-import-rename-summary": "Renamed in external source",
 	"translate-manage-conflict-summary": "Importing a new version from external source.\nPlease check.",
 	"translate-manage-submit": "Execute",
