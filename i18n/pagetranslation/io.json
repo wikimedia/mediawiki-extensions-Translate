@@ -25,6 +25,8 @@
 	"log-action-filter-pagetranslation": "Tipo di agado:",
 	"log-action-filter-pagetranslation-unmark": "Supresar tradukuro",
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
+	"pt-movepage-reason": "Motivo:",
+	"pt-deletepage-reason": "Motivo:",
 	"pt-deletepage-list-no-pages": "Nula pagino trovesis.",
 	"pm-cancel-button-label": "Nuligar",
 	"pp-cancel-button-label": "Nuligar",

@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Akapochtli"
+			"Akapochtli",
+			"Languaeditor"
 		]
 	},
-	"tux-sst-search": "Tlatemoliztli",
-	"tux-sst-default": "Tlahtolcuepaliztli"
+	"tux-sst-search": "Xiktemo",
+	"tux-sst-default": "Tlahtolkwapalistli"
 }
