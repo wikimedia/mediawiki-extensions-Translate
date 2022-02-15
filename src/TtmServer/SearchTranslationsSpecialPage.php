@@ -7,15 +7,33 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\TtmServer;
+
+use CrossLanguageTranslationSearchQuery;
+use ErrorPageError;
+use FormatJson;
+use FormOptions;
+use Html;
+use Language;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
+use Message;
+use MessageGroups;
+use MessageHandle;
+use SearchableTTMServer;
+use SpecialPage;
+use Title;
+use TranslateUtils;
+use TTMServerException;
+use WikiMap;
+use Xml;
 
 /**
  * ...
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialSearchTranslations extends SpecialPage {
+class SearchTranslationsSpecialPage extends SpecialPage {
 	/** @var FormOptions */
 	protected $opts;
 	/**
@@ -31,13 +49,17 @@ class SpecialSearchTranslations extends SpecialPage {
 	 * @var int
 	 */
 	protected $limit = 25;
+	/** @var TtmServerFactory */
+	private $ttmServerFactory;
 
-	public function __construct() {
+	public function __construct( TtmServerFactory $ttmServerFactory ) {
 		parent::__construct( 'SearchTranslations' );
 		$this->hl = [
 			TranslateUtils::getPlaceholder(),
 			TranslateUtils::getPlaceholder(),
 		];
+
+		$this->ttmServerFactory = $ttmServerFactory;
 	}
 
 	public function execute( $par ) {
@@ -45,7 +67,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 
-		$server = TTMServer::primary();
+		$server = $this->ttmServerFactory->getDefault();
 		if ( !$server instanceof SearchableTTMServer ) {
 			throw new ErrorPageError( 'tux-sst-nosolr-title', 'tux-sst-nosolr-body' );
 		}
@@ -323,7 +345,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			} else {
 				$subgroups = [];
 			}
-			'@phan-var MessageGroup $group';
+			'@phan-var \MessageGroup $group';
 			$id = $group->getId();
 
 			if ( $id !== $selected && !isset( $counts[$id] ) ) {

@@ -159,7 +159,6 @@
 		"SpecialPageMigration": "tag/SpecialPageMigration.php",
 		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",
 		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
-		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
 		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
@@ -355,7 +354,12 @@
 				"LinkBatchFactory"
 			]
 		},
-		"SearchTranslations": "SpecialSearchTranslations"
+		"SearchTranslations": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TtmServer\\SearchTranslationsSpecialPage",
+			"services": [
+				"Translate:TtmServerFactory"
+			]
+		}
 	},
 	"APIListModules": {
 		"messagecollection": {
