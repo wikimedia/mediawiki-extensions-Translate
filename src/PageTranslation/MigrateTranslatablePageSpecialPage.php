@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains code for special page Special:PageMigration
- *
- * @file
- * @author Pratik Lahoti
- * @copyright Copyright © 2014-2015 Pratik Lahoti
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
@@ -14,6 +7,11 @@ use FormatJson;
 use Html;
 use SpecialPage;
 
+/**
+ * Contains code for Special:PageMigration to migrate to page transation
+ * @author Pratik Lahoti
+ * @license GPL-2.0-or-later
+ */
 class MigrateTranslatablePageSpecialPage extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'PageMigration', 'pagetranslation' );
