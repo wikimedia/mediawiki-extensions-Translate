@@ -595,7 +595,8 @@
 				"translate-langstats-expand",
 				"translate-langstats-expandall",
 				"translate-tes-server-error",
-				"translate-tes-group-not-found"
+				"translate-tes-group-not-found",
+				"translate-tes-type-to-search"
 			],
 			"dependencies": [
 				"jquery.tablesorter",
