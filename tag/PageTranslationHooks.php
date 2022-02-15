@@ -118,6 +118,32 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Hook: ParserBeforePreprocess
+	 *
+	 * @param Parser $wikitextParser
+	 * @param string &$text
+	 * @param-taint $text escapes_htmlnoent
+	 * @param string $state
+	 */
+	public static function preprocessTagPage( $wikitextParser, &$text, $state ): void {
+		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
+		if ( $translatablePageParser->containsMarkup( $text ) ) {
+			try {
+				$parserOutput = $translatablePageParser->parse( $text );
+				// If parsing succeeds, replace text and add styles
+				$text = $parserOutput->sourcePageTextForRendering(
+					$wikitextParser->getTargetLanguage()
+				);
+				$wikitextParser->getOutput()->addModuleStyles( [
+					'ext.translate',
+				] );
+			} catch ( ParsingFailure $e ) {
+				wfDebug( 'ParsingFailure caught; expected' );
+			}
+		}
+	}
+
+	/**
 	 * Hook: ParserOutputPostCacheTransform
 	 * @param ParserOutput $out
 	 * @param string &$text

@@ -171,6 +171,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 
 			// Strip \<translate> tags etc. from source pages when rendering
 			$wgHooks['ParserBeforeInternalParse'][] = 'PageTranslationHooks::renderTagPage';
+			// Strip \<translate> tags etc. from source pages when preprocessing
+			$wgHooks['ParserBeforePreprocess'][] = 'PageTranslationHooks::preprocessTagPage';
 			$wgHooks['ParserOutputPostCacheTransform'][] =
 				'PageTranslationHooks::onParserOutputPostCacheTransform';
 
