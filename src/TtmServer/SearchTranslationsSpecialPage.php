@@ -1,11 +1,5 @@
 <?php
-/**
- * Contains logic for special page ...
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
@@ -29,8 +23,10 @@ use WikiMap;
 use Xml;
 
 /**
- * ...
+ * Contains logic to search for translations
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SearchTranslationsSpecialPage extends SpecialPage {
@@ -293,7 +289,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml, $total );
 	}
 
-	protected function getLanguages( array $facet ) {
+	private function getLanguages( array $facet ): array {
 		$output = [];
 
 		$nondefaults = $this->opts->getChangedValues();
@@ -325,12 +321,17 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		return $output;
 	}
 
-	protected function getGroups( array $facet ) {
+	private function getGroups( array $facet ): array {
 		$structure = MessageGroups::getGroupStructure();
 		return $this->makeGroupFacetRows( $structure, $facet );
 	}
 
-	protected function makeGroupFacetRows( array $groups, $counts, $level = 0, $pathString = '' ) {
+	private function makeGroupFacetRows(
+		array $groups,
+		array $counts,
+		int $level = 0,
+		string $pathString = ''
+	): array {
 		$output = [];
 
 		$nondefaults = $this->opts->getChangedValues();
@@ -381,7 +382,13 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		return $output;
 	}
 
-	protected function showSearch( $search, $count, $facets, $results, $total ) {
+	private function showSearch(
+		string $search,
+		string $count,
+		string $facets,
+		string $results,
+		int $total
+	): void {
 		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHTML( <<<HTML
 <div class="grid tux-searchpage">
@@ -424,7 +431,7 @@ HTML
 		);
 	}
 
-	protected function showEmptySearch() {
+	private function showEmptySearch(): void {
 		$search = $this->getSearchInput( '' );
 		$this->getOutput()->addHTML( <<<HTML
 <div class="grid tux-searchpage">
@@ -436,7 +443,7 @@ HTML
 		);
 	}
 
-	protected function showSearchError( $search, Message $message ) {
+	private function showSearchError( string $search, Message $message ): void {
 		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHTML( <<<HTML
 <div class="grid tux-searchpage">
@@ -454,13 +461,8 @@ HTML
 		);
 	}
 
-	/**
-	 * Build ellipsis to select options
-	 * @param string $key
-	 * @param string $value
-	 * @return string
-	 */
-	protected function ellipsisSelector( $key, $value ) {
+	/** Build ellipsis to select options */
+	private function ellipsisSelector( string $key, string $value ): string {
 		$nondefaults = $this->opts->getChangedValues();
 		$taskParams = [ 'filter' => $value ] + $nondefaults;
 		ksort( $taskParams );
@@ -482,11 +484,8 @@ HTML
 		return $container;
 	}
 
-	/**
-	 * Design the tabs
-	 * @return string
-	 */
-	protected function messageSelector() {
+	/** Design the tabs */
+	private function messageSelector(): string {
 		$nondefaults = $this->opts->getChangedValues();
 		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header' ] );
 		$output .= Html::openElement( 'div', [ 'class' => 'nine columns' ] );
@@ -564,7 +563,7 @@ HTML
 		return $output;
 	}
 
-	protected function getSearchInput( $query ) {
+	private function getSearchInput( string $query ) {
 		$attribs = [
 			'placeholder' => $this->msg( 'tux-sst-search-ph' )->text(),
 			'class' => 'searchinputbox mw-ui-input',
