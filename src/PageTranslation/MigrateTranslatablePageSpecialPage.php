@@ -8,7 +8,13 @@
  * @license GPL-2.0-or-later
  */
 
-class SpecialPageMigration extends SpecialPage {
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use FormatJson;
+use Html;
+use SpecialPage;
+
+class MigrateTranslatablePageSpecialPage extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'PageMigration', 'pagetranslation' );
 	}
