@@ -46,31 +46,17 @@ class PageTranslationHooks {
 	 * @param string $state
 	 */
 	public static function renderTagPage( $wikitextParser, &$text, $state ): void {
-		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
-
 		if ( $text === null ) {
 			// SMW is unhelpfully sending null text if source contains section tags. Do not explode.
 			return;
 		}
 
-		if ( $translatablePageParser->containsMarkup( $text ) ) {
-			try {
-				$parserOutput = $translatablePageParser->parse( $text );
-				// If parsing succeeds, replace text and add styles
-				$text = $parserOutput->sourcePageTextForRendering(
-					$wikitextParser->getTargetLanguage()
-				);
-				$wikitextParser->getOutput()->addModuleStyles( [
-					'ext.translate',
-				] );
-			} catch ( ParsingFailure $e ) {
-				wfDebug( 'ParsingFailure caught; expected' );
-			}
-		}
+		self::preprocessTagPage( $wikitextParser, $text, $state );
 
 		// For section previews, perform additional clean-up, given tags are often
 		// unbalanced when we preview one section only.
 		if ( $wikitextParser->getOptions()->getIsSectionPreview() ) {
+			$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
 			$text = $translatablePageParser->cleanupTags( $text );
 		}
 
