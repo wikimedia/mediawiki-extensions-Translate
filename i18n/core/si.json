@@ -167,6 +167,7 @@
 	"translate-manage-nochanges": "මෙම කාණ්ඩය සඳහා පණිවුඩ නිර්වචනවල කිසිදු වෙනසක් නොමැත.",
 	"translate-manage-nochanges-other": "මෙම භාෂාව සඳහා වෙනස්කම් කිසිවක් නොතිබුණි.\nසමූහ විස්තර දසුන වෙත නැවත යාම සඳහා පහත සබැඳිය භාවිතා කරන්න.",
 	"translate-manage-import-summary": "බාහිර මූලාශ්‍රයකින් නව අනුවාදය ආයාත කරමින්",
+	"translate-manage-import-ignore": "$1 පණිවුඩය මඟහරිමින්.",
 	"translate-manage-conflict-summary": "බාහිර මූලාශ්‍රයක් වෙතින් නව අනුවාදය ආයාත කරමින්.\nකරුණාකර පිරික්සන්න.",
 	"translate-manage-submit": "සම්පාදනය කරන්න",
 	"translate-manage-import-ok": "$1 පිටුවෙහි නව අනුවාදයක් ආයාත කරන ලදී.",

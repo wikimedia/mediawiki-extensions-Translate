@@ -244,6 +244,7 @@
 	"translate-manage-inconsistent": "كشف عدم توافق في الطلب.\nمن فضلك تحقق من التغييرات وحاول مجددا.\nالتفاصيل: $1.",
 	"translate-manage-toolong": "زمن المعالجة الأقصى ل$1 {{PLURAL:$1|second|seconds}} تم تجاوزه.\nمن فضلك أعد تنفيذ التموذج لإكمال المعالجة.",
 	"translate-manage-import-summary": "استيراد نسخة جديدة من مصدر خارجي",
+	"translate-manage-import-ignore": "تجاوز الرسالة $1.",
 	"translate-manage-import-rename-summary": "إعادة تسمية في مصدر خارجي",
 	"translate-manage-conflict-summary": "استيراد نسخة جديدة من مصدر خارجي.\nمن فضلك تحقق.",
 	"translate-manage-submit": "نفّذ",

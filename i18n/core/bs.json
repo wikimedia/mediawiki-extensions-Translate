@@ -191,6 +191,7 @@
 	"translate-manage-inconsistent": "Otkrivene nedosljednosti u zahtjevu.\nProvjerite izmjene i pokušajte ponovo.\nDetalji: $1.",
 	"translate-manage-toolong": "Isteklo je maksimalno vrijeme za obradu od $1 {{PLURAL:$1|sekunde|sekunde|sekundi}}.\nMolimo ponovo pošaljite obrazac za nastavak obrade.",
 	"translate-manage-import-summary": "Uvozim novu verziju iz vanjskog izvora",
+	"translate-manage-import-ignore": "Preskaćem poruku $1.",
 	"translate-manage-conflict-summary": "Uvozi se nova verzija iz vanjskog izvora. Molimo provjerite.",
 	"translate-manage-submit": "Izvrši",
 	"translate-manage-intro-other": "Ispod je spisak izmjena prijevoda na $1 jezik.\nPregledajte izmjene i izaberite radnju koju želite poduzeti za svaki prijevod.\nAko izaberete zanemariti izmjene, ta će radnja biti samo privremena.",

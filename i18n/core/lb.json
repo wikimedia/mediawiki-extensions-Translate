@@ -218,6 +218,7 @@
 	"translate-manage-inconsistent": "Inkonsistenz an der Ufro fonnt.\nKuckt wgl. no fir Ännerungen a probéiert nach eng Kéier. Detailer: $1",
 	"translate-manage-toolong": "Déi maximal Zäit vun der Beaarbechtung vun $1 {{PLURAL:$1|Sekonn|Sekonne}} gouf iwwerschratt.\nSchéckt de Formulaire wgl. nach emol fir mat der Beaarbechtung weiderzefueren.",
 	"translate-manage-import-summary": "Eng nei Versioun vun enger externer Quell gëtt importéiert",
+	"translate-manage-import-ignore": "Message $1 iwwersprangen.",
 	"translate-manage-import-rename-summary": "An externer Quell ëmbenannt",
 	"translate-manage-conflict-summary": "En nei Versioun gëtt vun enger externer Quell imortéiert. Wgl. nokucken.",
 	"translate-manage-submit": "Maachen",

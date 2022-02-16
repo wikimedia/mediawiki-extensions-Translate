@@ -214,6 +214,7 @@
 	"translate-manage-inconsistent": "Có sự không nhất quán trong lời yêu cầu.\nXin hãy kiểm lại các thay đổi rồi thử lại.\nChi tiết: $1.",
 	"translate-manage-toolong": "Thời gian xử lý tối đa đã vượt quá $1 giây.\nXin hãy gửi lại mẫu này để tiếp tục xử lý.",
 	"translate-manage-import-summary": "Đang nhập một bản mới từ nguồn bên ngoài",
+	"translate-manage-import-ignore": "Bỏ qua thông điệp $1.",
 	"translate-manage-conflict-summary": "Đang nhập một phiên bản mới từ nguồn bên ngoài.\nXin kiểm lại.",
 	"translate-manage-submit": "Thực hiện",
 	"translate-manage-intro-other": "Dưới đây là danh sách các thay đổi bản dịch trong ngôn ngữ $1.\nXin hãy xem lại các thay đổi và chọn tác vụ bạn muốn làm đối với từng bản cập nhật.\nViệc bỏ qua thay đổi chỉ tạm thời.",

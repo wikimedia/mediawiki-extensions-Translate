@@ -299,6 +299,7 @@
 	"translate-manage-inconsistent": "Une inconsistance a été détectée dans la requête.\nVérifiez s’il y a eu des modifications et ressayez. Détails : $1.",
 	"translate-manage-toolong": "La durée maximale du temps de traitement de $1 seconde{{PLURAL:$1||s}} a été dépassée.\nRenvoyez le formulaire pour continuer le traitement.",
 	"translate-manage-import-summary": "Importation d’une nouvelle version depuis une source externe.",
+	"translate-manage-import-ignore": "Le message $1 a été sauté.",
 	"translate-manage-import-rename-summary": "Renommé dans la source externe",
 	"translate-manage-conflict-summary": "Importation d’une nouvelle version depuis une source externe. Vérifiez s’il vous plaît.",
 	"translate-manage-submit": "Exécuter",

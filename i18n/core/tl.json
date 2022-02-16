@@ -175,6 +175,7 @@
 	"translate-manage-inconsistent": "Nakapansin ng kataliwasan sa kahilingan.\nPakisuri para sa mga pagbabago at subukan uli.\nMga detalye: $1.",
 	"translate-manage-toolong": "Lumampas na sa pinakamataas na panahon ng pagsasagawa na $1 {{PLURAL:$1|segundo|mga segundo}}.\nMangyaring ipasang muli ang pormularyo upang magpatuloy sa pagsasagawa.",
 	"translate-manage-import-summary": "Nag-aangkat ng isang bagong bersyon mula sa pinagmumulang nasa labas",
+	"translate-manage-import-ignore": "Nilalaktawan ang mensaheng $1.",
 	"translate-manage-conflict-summary": "Nag-aangkat ng isang bagong bersyon mula sa pinagmumulang nasa labas.\nPakisuri.",
 	"translate-manage-submit": "Isakatuparan",
 	"translate-manage-intro-other": "Nasa ibaba ang talaan ng mga pagbabago sa salinwika sa wikang $1.\nPakisuri ang mga pagbabago at pumili ng galaw na nais mong gawin para sa bawat salinwika.\nKung pinili mong huwag pansinin ang mga pagbabago, pangingibabawan sila sa susunod na pagluluwas.",

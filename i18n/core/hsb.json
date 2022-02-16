@@ -179,6 +179,7 @@
 	"translate-manage-inconsistent": "W naprašowanju buchu inkonsistency zwěsćene.\nProšu pruwuj za změnami a spytaj hišće raz.\nPodrobnosće: $1",
 	"translate-manage-toolong": "Maksimalny předźěłowanski čas $1 {{PLURAL:$1|sekundy|sekundow|sekundow|sekundow}} je překročeny.\nProšu wotpósćel formular hišće raz, zo by z předźěłowanjom pokročował.",
 	"translate-manage-import-summary": "Nowa wersija so eksterneho žórła importuje",
+	"translate-manage-import-ignore": "Zdźělenka $1 so přeskakuje.",
 	"translate-manage-conflict-summary": "Nowa wersija so z eksterneho žórła importuje.\nProšu přepruwować.",
 	"translate-manage-submit": "Wuwjesć",
 	"translate-manage-intro-other": "Slěduje lisćina přełožowanskich změnow w rěči $1.\nProšu přepruwuj změny a wubjer akciju, kotruž chceš za kóždy přełožk wuwjesć.\nJeli změny ignoruješ, je tuta akcija jenož nachwilna.",

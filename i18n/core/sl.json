@@ -192,6 +192,7 @@
 	"translate-manage-inconsistent": "V zahtevi je bila odkrita nedoslednost.\nProsimo, preverite spremembe in poskusite znova.\nPodrobnosti: $1",
 	"translate-manage-toolong": "Najdaljši čas obdelave $1 {{PLURAL:$1|sekunde|sekund}} je presežen.\nProsimo, ponovno potrdite obrazec, da nadaljujete z obdelavo.",
 	"translate-manage-import-summary": "Uvažanje nove različice iz zunanjega vira",
+	"translate-manage-import-ignore": "Preskakovanje sporočila $1.",
 	"translate-manage-conflict-summary": "Uvažanje nove različice iz zunanjega vira.\nProsimo, preverite.",
 	"translate-manage-submit": "Izvedi",
 	"translate-manage-intro-other": "Spodaj se nahaja seznam sprememb prevodov v jeziku $1.\nProsimo, preglej spremembe in izberi dejanje, ki ga želiš storiti za vsako posodobitev.\nČe se odločiš prezreti spremembe, bo to dejanje samo začasno.",

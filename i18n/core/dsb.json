@@ -176,6 +176,7 @@
 	"translate-manage-inconsistent": "Nadejźona inkonsistenca w napšašowanju.\nPšosym pśeglědaj za změny a wopytaj hyšći raz.\nDrobnostki: $1",
 	"translate-manage-toolong": "Maksimalny pśeźěłowański cas $1 {{PLURAL:$1|sekundy|sekundowu|sekundow|sekundow}} jo pśebyty.\nPšosym wótpósćel formular znowego, aby z pśeźěłanim pókšacował.",
 	"translate-manage-import-summary": "Nowa wersija importěrujo se z eksternego žrědła",
+	"translate-manage-import-ignore": "Powěźeńka $1 se pśeskokujo.",
 	"translate-manage-conflict-summary": "Nowa wersija importěrujo se z eksternego žrědła.\nPšosym pśeglědaś.",
 	"translate-manage-submit": "Wuwjasć",
 	"translate-manage-intro-other": "Dołojce jo lisćina pśełožkowych změnow w rěcy $1.\nPšosym pśeglědaj změny a wubjeŕ akciju, kótaruž coš za kuždy pśełožk cyniś.\nJolic ignorěrujoš změny, jo toś ta akcija jano nachylna.",

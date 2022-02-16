@@ -253,6 +253,7 @@
 	"translate-manage-inconsistent": "リクエスト内で矛盾を検出しました。\n変更点を確認してから、再度試してください。\n詳細: $1",
 	"translate-manage-toolong": "処理時間の最大値である$1秒を超過しました。処理を続行するにはフォームを再投稿してください。",
 	"translate-manage-import-summary": "外部ソースから新しい版を取り込み",
+	"translate-manage-import-ignore": "メッセージ $1 をスキップします。",
 	"translate-manage-import-rename-summary": "外部のソースで改名済み",
 	"translate-manage-conflict-summary": "外部ソースから新しい版を取り込み中。\n確認してください。",
 	"translate-manage-submit": "実行",

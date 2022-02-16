@@ -189,6 +189,7 @@
 	"translate-manage-inconsistent": "Zistená nekonzistencia v požiadavku.\nProsím, skontrolujte zmeny a skúste to znova. Podrobnosti: $1.",
 	"translate-manage-toolong": "Maximálny čas spracovania $1 {{PLURAL:$1|sekunda|sekundy|sekúnd}} bol prekročený.\nV spracovaní môžete pokračovať opätovným odoslaním formulára.",
 	"translate-manage-import-summary": "Importuje sa nová verzia z externého zdroja",
+	"translate-manage-import-ignore": "Preskakuje sa správa $1.",
 	"translate-manage-conflict-summary": "Importuje sa nová verzia z externého zdroja. Prosím, skontrolujte ju.",
 	"translate-manage-submit": "Vykonať",
 	"translate-manage-intro-other": "Nižšie je zoznam zmien v prekladoch do jazyka $1.\nProsím, skontrolujte zmeny a vyberte, čo sa má s každou aktualizáciou vykonať.\nAk sa rozhodnete zmeny ignorovať, táto akcia je iba dočasná.",

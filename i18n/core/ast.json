@@ -213,6 +213,7 @@
 	"translate-manage-inconsistent": "Se detectó una inconsistencia na solicitú.\nPor favor revisa los cambios y vuelve a probar.\nDetalles: $1.",
 	"translate-manage-toolong": "Pasose'l tiempu máximu de procesamentu de $1 {{PLURAL:$1|segundu|segundos}}.\nVuelvi a unviar el formulariu pa continuar procesandolu.",
 	"translate-manage-import-summary": "Importando una versión nueva d'una fonte esterna",
+	"translate-manage-import-ignore": "Saltando'l mensaxe $1.",
 	"translate-manage-conflict-summary": "Importando una versión nueva d'una fonte esterna.\nPor favor, compruebala.",
 	"translate-manage-submit": "Executar",
 	"translate-manage-intro-other": "Debaxo ta la llista de cambios nes traducciones de la llingua $1.\nPor favor, revise los cambios y escueya l'aición que quier facer pa cada anovamientu.\nSi escueye inorar los cambios, esta aición ye sólo temporal.",

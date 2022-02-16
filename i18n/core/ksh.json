@@ -178,6 +178,7 @@
 	"translate-manage-inconsistent": "Doh paß jät nit zosamme. Bes esu joot un looer noh Änderunge,\ndann versöhke et noch ens. De Einzelheite: $1",
 	"translate-manage-toolong": "De hühßte müjjelesche Zick för et Beärbeide vun {{PLURAL:$1|ein Sekund|$1 Sekunde|nit ens en Sekund}} es afjeloufe.\nBes esu joot, un donn dat Fomulaa noch ens affschecke, för hee wigger ze maache.",
 	"translate-manage-import-summary": "Mer sin en neu Version vun Ußerhallef aam Empoteere",
+	"translate-manage-import-ignore": "Mer sin de Nohreesch $1 aam övverjonn.",
 	"translate-manage-conflict-summary": "Mer sin en neu Version vun Ußerhallef aam Empoteere. Beß esu joot, un donn se prööfe.",
 	"translate-manage-submit": "Lohß Jonn!",
 	"translate-manage-intro-other": "He noh kütt en Leß met Änderonge aan Övversäzunge en dä Schprohch $1.\nDonn se dorschjonn, un söhk Der för jehde en Akßjuhn uß, wat De domet jemaat han wells.\nWann De entscheids, Änderunge ze övverjonn, dann es dat nor för jäds_em_Momang.",

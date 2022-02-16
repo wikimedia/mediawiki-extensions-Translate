@@ -233,6 +233,7 @@
 	"translate-manage-inconsistent": "Откривена је недоследност у захтеву.\nПроверите измене па покушајте поново.\nДетаљи: $1.",
 	"translate-manage-toolong": "Највеће време извршавања од $1 {{PLURAL:$1|секунде|секунде|секунди}} је прекорачено.\nПоново пошаљите образац за наставак.",
 	"translate-manage-import-summary": "Увозим нову верзију из спољашњег извора",
+	"translate-manage-import-ignore": "Прескакање поруке $1.",
 	"translate-manage-import-rename-summary": "Преименовано у спољном извору",
 	"translate-manage-conflict-summary": "Увозим нову верзију из спољашњег извора.\nПроверите.",
 	"translate-manage-submit": "Изврши",

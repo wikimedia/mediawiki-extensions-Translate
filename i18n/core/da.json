@@ -206,6 +206,7 @@
 	"translate-manage-inconsistent": "Opdagede en inkonsistens i anmodningen.\nTjek venligst for ændringer og prøv igen.\nDetaljer: $1.",
 	"translate-manage-toolong": "Den maksimale udførelsestid på $1 {{PLURAL:$1|sekund|sekunder}} er overskredet.\nSend venligst formularen igen for at fortsætte behandlingen.",
 	"translate-manage-import-summary": "Importerer en ny version fra ekstern kilde",
+	"translate-manage-import-ignore": "Springer besked over $1.",
 	"translate-manage-conflict-summary": "Importerer en ny version fra en ekstern kilde.\nTjek venligst.",
 	"translate-manage-submit": "Udfør",
 	"translate-manage-intro-other": "Nedenfor er listen over ændringer af oversættelser for sproget $1.\nGennemgå venligst ændringerne og vælg en handling du ønsker at foretage for hver ændring.\nHvis du vælger at ignorere ændringer, er denne handling kun midlertidig.",

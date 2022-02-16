@@ -41,6 +41,7 @@
 	"translate-manage-inconsistent": "mospërputhje zbuluar në kërkesë. Ju lutem kontrolloni për ndryshime dhe të provoni përsëri. Details: $1.",
 	"translate-manage-toolong": "Përpunimit kohë maksimale prej $1 {{PLURAL:$1|sekonda|dytë}} tejkalohen. Ju lutemi të rikthejë formën për të vazhduar të përpunimit.",
 	"translate-manage-import-summary": "Importimi i një version të ri nga burimet e jashtme",
+	"translate-manage-import-ignore": "Skipping mesazh $1.",
 	"translate-manage-conflict-summary": "Importimi i një version të ri nga burimi i jashtëm. Ju lutem kontrolloni.",
 	"translate-manage-submit": "Kryej",
 	"translate-manage-intro-other": "Më poshtë është lista e ndryshimeve të përkthimit në gjuhën e $1. Ju lutemi të shqyrtuar ndryshimet dhe të zgjidhni një veprim që ju doni të bëni për çdo përkthim. Nëse ju vendosni të injorojë ndryshime, ata do të kapërcehet në eksportin e ardhshme.",

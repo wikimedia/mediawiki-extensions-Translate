@@ -279,6 +279,7 @@
 	"translate-manage-inconsistent": "Upptäckte inkonsekvens i begäran.\nLeta efter ändringar och försök igen.\nDetaljer: $1.",
 	"translate-manage-toolong": "Den maximala bearbetningstiden på $1 {{PLURAL:$1|sekund|sekunder}} har överskridits.\nVänligen aktivera formuläret igen för att fortsätta bearbeta det.",
 	"translate-manage-import-summary": "Importerar en ny version från extern källa",
+	"translate-manage-import-ignore": "Hoppar över meddelande $1.",
 	"translate-manage-import-rename-summary": "Döptes om i extern källa",
 	"translate-manage-conflict-summary": "Importerar ny version från extern källa.\nVänligen kontrollera.",
 	"translate-manage-submit": "Genomför",

@@ -177,6 +177,7 @@
 	"translate-manage-action-ignore": "Ignoruoti",
 	"translate-manage-action-fuzzy": "Importuoti ir naujinti vertimus",
 	"translate-manage-import-summary": "Importuojama nauja versite iš išorinio šaltinio",
+	"translate-manage-import-ignore": "Praleidžiama žinutę $1.",
 	"translate-manage-conflict-summary": "Importuojama nauja versite iš išorinio šaltinio.\nPrašome patikrinti.",
 	"translate-manage-submit": "Vykdyti",
 	"translate-manage-import-ok": "Importuota: $1",

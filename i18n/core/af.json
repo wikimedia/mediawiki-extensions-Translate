@@ -171,6 +171,7 @@
 	"translate-manage-inconsistent": "'n Teenstrydigheid is in die versoek bespeur.\nKontroleer die veranderinge en probeer weer.\nBesonderhede: $1.",
 	"translate-manage-toolong": "Die maksimum verwerkingstyd van $1 {{PLURAL:$1|sekonde|sekondes}} is oorskry.\nDien die opdrag asseblief weer in.",
 	"translate-manage-import-summary": "Besig met die importering van 'n nuwe weergawe vanuit 'n eksterne bron",
+	"translate-manage-import-ignore": "Slaan boodskap $1 oor.",
 	"translate-manage-conflict-summary": "Besig met die importering van 'n nuwe weergawe vanuit 'n eksterne bron.\nKontroleer die wysiging.",
 	"translate-manage-submit": "Voer uit",
 	"translate-manage-import-ok": "Nuwe weergawe van die bladsy $1 is gelaai.",

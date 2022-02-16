@@ -138,6 +138,7 @@
 	"translate-manage-action-fuzzy": "இறக்கு மற்றும் மயக்குறு மொழிபெயர்ப்புகள்",
 	"translate-manage-action-rename": "பெயர் மாற்றுக",
 	"translate-manage-import-summary": "வெளி மூலத்திலிருந்து ஒரு புதிய பதிப்பை உள்ளிடுகின்றது",
+	"translate-manage-import-ignore": "தகவல் $1 ஐத் விட்டுச்செல்",
 	"translate-manage-submit": "செயல்படுத்து",
 	"importtranslations": "மொழிபெயர்ப்புகளை இறக்கு",
 	"translate-import-from-local": "உள்ளகத்துக் கோப்பு ஏற்றல்:",

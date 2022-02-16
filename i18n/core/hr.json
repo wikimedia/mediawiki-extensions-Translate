@@ -209,6 +209,7 @@
 	"translate-manage-nochanges": "Nema promjena u definicijama poruka u ovoj skupini.",
 	"translate-manage-nochanges-other": "Nema promjena za ovaj jezik.\nUpotrijebite poveznicu (ispod) za povratak na pregled detalja skupine.",
 	"translate-manage-import-summary": "Uvoz nove inačice iz vanjskog izvora",
+	"translate-manage-import-ignore": "Preskačem poruku $1.",
 	"translate-manage-conflict-summary": "Uvoz nove inačice iz vanjskog izvora.\nMolimo provjerite.",
 	"translate-manage-submit": "Izvrši",
 	"translate-manage-intro-other": "Niže je popis promijenjenih prijevoda za $1 jezik.\nProvjerite promjene i izaberite radnju koju želite poduzeti za svaku promjenu.\nAko izaberete zanemariti promjene, ta će radnja biti samo privremena.",

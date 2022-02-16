@@ -175,6 +175,7 @@
 	"translate-manage-inconsistent": "Inskonsischtänz in dr Aafrog entdeckt.\nBitte iberprief d Änderige un versuech s nonemol. Detail: $1.",
 	"translate-manage-toolong": "Di maximal Arbetsablauf-Zyt vu $1 Sekunde isch iberschritte wore.\nBitte schick s Format nonemol ab go mit em Arbetsablauf wytermache.",
 	"translate-manage-import-summary": "Am Importiere vun ere neje Version us ere extärne Quälle",
+	"translate-manage-import-ignore": "Am Ibergumpe vu dr Nochricht $1.",
 	"translate-manage-conflict-summary": "Am Importiere vun ere neje Version us ere extärne Quälle. Bitte iberpriefe.",
 	"translate-manage-submit": "Uusfiere",
 	"translate-manage-intro-other": "Unte het s Lischt vu Ibersetzigsänderige in dr Sproch $1.\nBitte prief d Änderige un wehl e Aktion uus, wu Du witt uusfiere fir jedi Ibersetzig.\nWänn Du Änderige witt ignoriere, wäre si bim negschte Export ußer Chraft gsetzt.",

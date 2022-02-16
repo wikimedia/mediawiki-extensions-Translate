@@ -171,6 +171,7 @@
 	"translate-manage-inconsistent": "N’enconsistence est étâye dècelâye dedens la requéta.\nVolyéd controlar s’y at avu des changements et pués tornar èprovar.\nDètalys : $1.",
 	"translate-manage-toolong": "Lo temps maximon de trètament de $1 second{{PLURAL:$1|a|es}} est étâ dèpassâ.\nVolyéd remandar lo formulèro por continuar lo trètament.",
 	"translate-manage-import-summary": "Importacion d’una novèla vèrsion dês na sôrsa de defôr",
+	"translate-manage-import-ignore": "Lo mèssâjo $1 at étâ sôtâ.",
 	"translate-manage-conflict-summary": "Importacion d’una novèla vèrsion dês na sôrsa de defôr.\nControlâd se vos plét.",
 	"translate-manage-submit": "Ègzécutar",
 	"translate-manage-import-ok": "Una novèla vèrsion de la pâge $1 at étâ importâ.",

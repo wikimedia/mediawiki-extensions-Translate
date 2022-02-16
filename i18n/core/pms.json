@@ -175,6 +175,7 @@
 	"translate-manage-inconsistent": "Trovà d'anconsistense ant l'arcesta.\nPër piasì, ch'a contròla ij cangiament e ch'a preuva torna.\nDetaj: $1.",
 	"translate-manage-toolong": "Passà ël temp màssim ëd tratament ëd $1 {{PLURAL:$1|second|second}}.\nPër piasì, ch'a spedissa torna ël formolari për continué ël process.",
 	"translate-manage-import-summary": "Amportassion ëd na neuva version da na sorgiss esterna",
+	"translate-manage-import-ignore": "Sautà mëssagi $1.",
 	"translate-manage-conflict-summary": "Amportassion ëd na neuva version da na sorgiss esterna.\nPër piasì, ch'a controla.",
 	"translate-manage-submit": "Fé andé",
 	"translate-manage-intro-other": "Sota a-i é na lista ëd cangiament ëd le tradussion ant la lenga $1.\nPër piasì, ch'a revision-a ij cangiament e ch'a serna n'assion ch'a veul fé për minca tradussion.\nS'a sern d'ignoré ij cangiament, a saran coatà durant l'esportassion ch'a-i ven.",

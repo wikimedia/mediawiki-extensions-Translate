@@ -245,6 +245,7 @@
 	"translate-manage-inconsistent": "Er is een inconsistentie gedetecteerd in het verzoek.\nControleer de wijzigingen en probeer het nog eens.\nDetails: $1.",
 	"translate-manage-toolong": "De maximale verwerkingstijd van  $1 {{PLURAL:$1|seconde|seconden}} is overschreden.\nVerzend de opdracht opnieuw.",
 	"translate-manage-import-summary": "Bezig met het importeren van een nieuwe versie uit een externe bron",
+	"translate-manage-import-ignore": "Bericht $1 wordt overgeslagen.",
 	"translate-manage-import-rename-summary": "Hernoemd in externe bron",
 	"translate-manage-conflict-summary": "Bezig met het importeren van een nieuwe versie uit een externe bron.\nControleer de wijziging.",
 	"translate-manage-submit": "Uitvoeren",

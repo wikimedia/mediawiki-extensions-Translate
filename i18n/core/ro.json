@@ -185,6 +185,7 @@
 	"translate-manage-inconsistent": "S-a detectat o incoerență în cadrul cererii. Verificați dacă există modificări și încercați din nou. Detalii: $1.",
 	"translate-manage-toolong": "Timpul maxim de prelucrare care este de {{PLURAL:$1|o secundă|$1 secunde|$1 de secunde}} a fost depășit.\nVă rugăm să retrimiteți formularul pentru a continua prelucrarea.",
 	"translate-manage-import-summary": "Se importă o nouă versiune din sursă externă",
+	"translate-manage-import-ignore": "Sar mesajul $1.",
 	"translate-manage-conflict-summary": "Se importă o nouă versiune dintr-o sursă externă.\nVă rugăm să verificați.",
 	"translate-manage-submit": "Execută",
 	"translate-manage-import-ok": "Importată: $1",

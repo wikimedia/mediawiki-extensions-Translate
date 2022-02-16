@@ -198,6 +198,7 @@
 	"translate-manage-inconsistent": "Detectouse unha inconsistencia na solicitude.\nPor favor, comprobe os cambios e inténteo de novo. Detalles: $1.",
 	"translate-manage-toolong": "Excedeuse do máximo tempo de procesamento de $1 {{PLURAL:$1|segundo|segundos}}.\nPor favor, reenvíe o formulario para continuar procesando.",
 	"translate-manage-import-summary": "Importando unha nova versión desde unha fonte externa",
+	"translate-manage-import-ignore": "Saltando a mensaxe $1.",
 	"translate-manage-conflict-summary": "Importando unha nova versión desde unha fonte externa. Por favor, compróbea.",
 	"translate-manage-submit": "Executar",
 	"translate-manage-intro-other": "A continuación está a lista de cambios nas traducións en $1.\nPor favor, revise os cambios e escolla a acción que quere facer para cada actualización.\nSe opta por ignorar as modificacións, esta acción é unicamente temporal.",

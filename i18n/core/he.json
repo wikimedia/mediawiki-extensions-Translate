@@ -268,6 +268,7 @@
 	"translate-manage-inconsistent": "התגלה חוסר־עקביות בבקשה.\nנא לבדוק את השינויים ולנסות שוב.\nפרטים: $1",
 	"translate-manage-toolong": "זמן העיבוד המרבי של {{PLURAL:$1|שנייה אחת|$1 שניות}} תם.\nנא לשלוח מחדש את הטופס כדי להמשיך בעיבודו.",
 	"translate-manage-import-summary": "יבוא גרסה חדשה ממקור חיצוני",
+	"translate-manage-import-ignore": "מדלג על ההודעה $1.",
 	"translate-manage-import-rename-summary": "השם שוּנה במקור חיצוני",
 	"translate-manage-conflict-summary": "מייבא גרסה חדשה ממקור חיצוני.\nנא לבדוק.",
 	"translate-manage-submit": "הפעלה",

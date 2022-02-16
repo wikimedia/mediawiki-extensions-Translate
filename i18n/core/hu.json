@@ -236,6 +236,7 @@
 	"translate-manage-inconsistent": "A kérésben inkonzisztenciát észleltem.\nEllenőrizd a változtatásokat, majd próbáld újra.\nRészletek: $1.",
 	"translate-manage-toolong": "A maximális feldolgozási idő ({{PLURAL:$1|egy|$1}} másodperc) túl lett lépve.\nKüldd el újra az űrlapot a feldolgozás folytatásához.",
 	"translate-manage-import-summary": "Új változat importálása külső forrásból",
+	"translate-manage-import-ignore": "$1 üzenet átugrása.",
 	"translate-manage-import-rename-summary": "Átnevezve külső forrásban",
 	"translate-manage-conflict-summary": "Új változat importálása külső forrásból.\nEllenőrizd.",
 	"translate-manage-submit": "Végrehajtás",

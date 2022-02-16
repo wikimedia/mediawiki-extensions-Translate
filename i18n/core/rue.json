@@ -152,6 +152,7 @@
 	"translate-manage-action-import": "Імпортовати",
 	"translate-manage-action-conflict": "Імпортовати і позначіти як неперевірене",
 	"translate-manage-action-ignore": "Іґноровати",
+	"translate-manage-import-ignore": "Перескочіти повідомлїня $1.",
 	"translate-manage-submit": "Выконати",
 	"translate-manage-import-done": "Вшытко зроблено!",
 	"importtranslations": "Імпортовати переклады",

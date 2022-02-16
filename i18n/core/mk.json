@@ -263,6 +263,7 @@
 	"translate-manage-inconsistent": "Откриена е недоследност во барањето.\nПроверете дали има промени и обидете се повторно.\nПодробности : $1.",
 	"translate-manage-toolong": "Пречекорен е временскиот рок за обработка од {{PLURAL:$1|една секунда|$1 секунди}}.\nПоднесете го образецот одново за да продолжите со обработката.",
 	"translate-manage-import-summary": "Увезување на нова верзија од надворешен извор",
+	"translate-manage-import-ignore": "Ја прескокнувам пораката $1.",
 	"translate-manage-import-rename-summary": "Преименуван во надворешен извор",
 	"translate-manage-conflict-summary": "Увезување на нова верзија од надворешен извор.\nПроверете.",
 	"translate-manage-submit": "Изврши",

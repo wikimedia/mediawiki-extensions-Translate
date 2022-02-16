@@ -272,6 +272,7 @@
 	"translate-manage-inconsistent": "Ketidakkonsistenan terdeteksi pada permintaan.\nPeriksa ulang perubahan lalu coba kembali.\nRincian: $1.",
 	"translate-manage-toolong": "Waktu proses maksimum $1 {{PLURAL:$1|detik}} telah terlampaui.\nMohon kirimkan kembali formulir untuk melanjutkan proses.",
 	"translate-manage-import-summary": "Mengimpor versi baru dari sumber eksternal",
+	"translate-manage-import-ignore": "Lewati pesan $1",
 	"translate-manage-import-rename-summary": "Diubah namanya di sumber eksternal",
 	"translate-manage-conflict-summary": "Mengimpor versi baru dari sumber eksternal.\nTolong diperiksa.",
 	"translate-manage-submit": "Jalankan",

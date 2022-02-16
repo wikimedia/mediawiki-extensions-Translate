@@ -261,6 +261,7 @@
 	"translate-manage-inconsistent": "Fant inkonsistens i forespørselen.\nVennligst sjekk om det har vært endringer og prøv igjen.\nDetaljer: $1.",
 	"translate-manage-toolong": "Den maksimale behandlingstiden på {{PLURAL:$1|ett sekund|$1 sekund}} ble overskredet.\nVennligst send skjemaet på nytt for å fortsette behandlingen.",
 	"translate-manage-import-summary": "Importerer en ny versjon fra en ekstern kilde",
+	"translate-manage-import-ignore": "Hopper over melding $1.",
 	"translate-manage-import-rename-summary": "Døpt om i ekstern kilde",
 	"translate-manage-conflict-summary": "Importerer en ny versjon fra en ekstern kilde.\nVennligst sjekk.",
 	"translate-manage-submit": "Utfør",

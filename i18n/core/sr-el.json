@@ -206,6 +206,7 @@
 	"translate-manage-inconsistent": "Otkrivena je nedoslednost u zahtevu.\nProverite promene i pokušajte ponovo.\nDetalji: $1.",
 	"translate-manage-toolong": "Najveće vreme izvršavanja od $1 {{PLURAL:$1|sekunde|sekunde|sekundi}} je prekoračeno.\nPonovo pošaljite obrazac za nastavak.",
 	"translate-manage-import-summary": "Uvozim novu verziju iz spoljašnjeg izvora",
+	"translate-manage-import-ignore": "Preskakanje poruke $1.",
 	"translate-manage-conflict-summary": "Uvozim novu verziju iz spoljašnjeg izvora.\nProverite.",
 	"translate-manage-submit": "Izvrši",
 	"translate-manage-intro-other": "Ispod je spisak promena prevoda za $1 jezik.\nPregledajte promene i odaberite radnju koju želite da preduzmete za svako ažuriranje.\nAko odaberete da zanemarite promene, ova radnja će biti privremena.",

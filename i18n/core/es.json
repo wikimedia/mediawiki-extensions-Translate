@@ -246,6 +246,7 @@
 	"translate-manage-inconsistent": "Se detectaron inconsistencias en la solicitud.\nRevisa cambios y prueba nuevamente.\nDetalles: $1.",
 	"translate-manage-toolong": "Se excedió el tiempo máximo de procesamiento de $1 {{PLURAL:$1|segundo|segundos}}.\nPor favor reenvía el formulario para continuar procesando.",
 	"translate-manage-import-summary": "Importando una nueva versión desde fuente externa",
+	"translate-manage-import-ignore": "Omitiendo el mensaje $1.",
 	"translate-manage-import-rename-summary": "Nombre cambiado en fuente externa",
 	"translate-manage-conflict-summary": "Importando un nueva versión desde fuente externa.\nVerifica.",
 	"translate-manage-submit": "Ejecutar",

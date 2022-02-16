@@ -194,6 +194,7 @@
 	"translate-manage-inconsistent": "Merzet ez eus bet un disdalc'h er reked.\nGwiriit ha kemmoù zo bet ha klaskit en-dro.\nMunudoù : $1.",
 	"translate-manage-toolong": "Aet eur dreist d'an termen pellañ a $1 {{PLURAL:$1|eilenn|eilenn}}.\nAdkasit ar furmskrid evit kenderc'hel gant an tretiñ.",
 	"translate-manage-import-summary": "Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.",
+	"translate-manage-import-ignore": "Lezel ar gemennadenn $1 a-gostez.",
 	"translate-manage-conflict-summary": "Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.\nGwiriit mar plij.",
 	"translate-manage-submit": "Erounit",
 	"translate-manage-intro-other": "A-is emañ roll ar c'hemmoù treiñ e $1.\nGwiriit anezho ha dibabit ar pezh a fell deoc'h ober evit pep troidigezh.\nMa tibabit chom hep kemer ar c'hemmoù e kont e vint riñset-lip kentañ tro ma vo un ezporzhiadenn nevez.",

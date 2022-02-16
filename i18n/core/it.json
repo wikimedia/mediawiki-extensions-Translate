@@ -240,6 +240,7 @@
 	"translate-manage-inconsistent": "È stata rilevata un'incoerenza nella richiesta.\nCerca i cambiamenti e riprova.\nDettagli: $1",
 	"translate-manage-toolong": "Il tempo massimo di elaborazione di $1 {{PLURAL:$1|secondo|secondi}} si è esaurito.\nInviare nuovamente il modulo per proseguire nell'elaborazione.",
 	"translate-manage-import-summary": "Importazione di una nuova versione da una fonte esterna",
+	"translate-manage-import-ignore": "Salta messaggio $1.",
 	"translate-manage-conflict-summary": "Importazione di una nuova versione da una fonte esterna.\nDa controllare.",
 	"translate-manage-submit": "Esegui",
 	"translate-manage-intro-other": "Di seguito sono elencati i cambiamenti alle traduzioni nella lingua $1.\nControlla le modifiche e scegli l'azione da eseguire per ciascun messaggio.\nSe scegli di ignorare i cambiamenti, questa azione sarà solo temporanea.",

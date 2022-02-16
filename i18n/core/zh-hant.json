@@ -268,6 +268,7 @@
 	"translate-manage-inconsistent": "偵測不一致的請求。\n請檢查更動內容，然後再試。\n詳細資訊：$1。",
 	"translate-manage-toolong": "超出處理時間限制 $1 秒。\n請重新送出表單，以繼續進行處理。",
 	"translate-manage-import-summary": "正在從外部來源匯入新版",
+	"translate-manage-import-ignore": "跳過訊息 $1。",
 	"translate-manage-import-rename-summary": "在外部來源重新命名",
 	"translate-manage-conflict-summary": "正在從外部來源匯入新版。\n請檢查。",
 	"translate-manage-submit": "執行",

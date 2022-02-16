@@ -246,6 +246,7 @@
 	"translate-manage-inconsistent": "Pyynnön tiedot ovat epäjohdonmukaisia.\nTarkista muutokset ja yritä uudelleen.\nYksityiskohdat: $1.",
 	"translate-manage-toolong": "$1 {{PLURAL:$1|sekunnin}} enimmäiskäsittelyaika ylittyi.\nJatka käsittelyä lähettämällä lomake uudelleen.",
 	"translate-manage-import-summary": "Tuodaan uusi versio ulkoisesta lähteestä",
+	"translate-manage-import-ignore": "Ohitetaan viesti $1.",
 	"translate-manage-conflict-summary": "Tuodaan uusi versio ulkoisesta lähteestä.\nTarkistathan.",
 	"translate-manage-submit": "Suorita",
 	"translate-manage-intro-other": "Alla on luettelo kielen $1 käännösmuutoksista.\nTarkista muutokset ja valitse toiminto, jonka haluat tehdä jokaiselle käännökselle.\nJos valitset muutosten ohittamisen, toimintoa ei tallenneta.",

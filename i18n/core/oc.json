@@ -196,6 +196,7 @@
 	"translate-manage-inconsistent": "Una inconsisténcia es estada detectada dins la requèsta.\nVerificatz se i a agut de modificacions entre temps e tornatz ensajar. Detalhs : $1.",
 	"translate-manage-toolong": "La durada maximala del temps de tractament de $1 segonda{{PLURAL:$1||s}} es estat depassat.\nRenviatz lo formulari per contuhar lo tractament.",
 	"translate-manage-import-summary": "Importacion d'una version novèla dempuèi una font extèrna.",
+	"translate-manage-import-ignore": "Lo messatge $1 es estat sautat.",
 	"translate-manage-conflict-summary": "Importacion d'una version novèla dempuèi una font extèrna. Verificatz se vos plai.",
 	"translate-manage-submit": "Executar",
 	"translate-manage-intro-other": "Çaijós figura una lista de las modificacions dins la lenga $1.\nTornatz veire las modificacions e causissètz una accion d'efectuar per caduna.\nSe decidissètz d'ignorar las modificacions, aquesta accion serà pas que temporària.",

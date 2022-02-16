@@ -209,6 +209,7 @@
 	"translate-manage-inconsistent": "Malkoheraĵo estas trovita en ĉi tiu peto.\nBonvolu kontroli ŝanĝojn kaj provu denove.\nDetaloj : $1.",
 	"translate-manage-toolong": "La maksimuma procesdaŭro ($1 {{PLURAL:$1|sekundo|sekundoj}}) pasis.\nBonvolu resendi la formularon por plu procesigi.",
 	"translate-manage-import-summary": "Importado de nova versio el ekstera fonto",
+	"translate-manage-import-ignore": "Ignorante mesaĝon $1.",
 	"translate-manage-conflict-summary": "Importado de nova versio el ekstera fonto\nBonvolu kontroli.",
 	"translate-manage-submit": "Ekfunkcii",
 	"translate-manage-intro-other": "Sube estas listo de mesaĝŝanĝoj en la lingvo $1.\nBonvolu revizii la ŝanĝojn kaj elektu kion vi volas fari kun ĉiu traduko.\nSe vi decidas ignori ŝanĝojn, ĉi tiu ago estas nur portempa.",

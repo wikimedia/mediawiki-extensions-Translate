@@ -187,6 +187,7 @@
 	"translate-manage-inconsistent": "Ketakkonsistenan dikesan dalam permohonan.\nSila semak dan buat perubahan dan cuba lagi.\nButiran: $1.",
 	"translate-manage-toolong": "Tempoh pemprosesan maksimum $1 saat dilampaui.\nSila serahkan semula borang itu untuk terus memproses.",
 	"translate-manage-import-summary": "Mengimport versi baru dari sumber luaran",
+	"translate-manage-import-ignore": "Mesej $1 dilangkau.",
 	"translate-manage-conflict-summary": "Mengimport versi baru dari sumber luaran.\nSila semak.",
 	"translate-manage-submit": "Laksanakan",
 	"translate-manage-intro-other": "Berikut ialah senarai perubahan dalam bahasa $1.\nSila semak perubahan dan pilih tindakan yang anda hendak lakukan untuk setiap kemaskini.\nJika anda memilih untuk mengabaikan perubahan, maka tindakan ini hanya sementara.",

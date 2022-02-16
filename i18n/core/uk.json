@@ -282,6 +282,7 @@
 	"translate-manage-inconsistent": "Виявлено невідповідності в запиті.\nБудь ласка, перевірте зміни і спробуйте ще раз.\nДеталі: $1.",
 	"translate-manage-toolong": "Перевищено максимальний час обробки, що складає $1 {{PLURAL:$1|секунду|секунди|секунд}}.\nБудь ласка, відправте дані знову, щоб продовжити обробку.",
 	"translate-manage-import-summary": "Імпорт нової версії із зовнішнього джерела",
+	"translate-manage-import-ignore": "Пропуск повідомлення $1.",
 	"translate-manage-import-rename-summary": "Перейменовано у зовнішньому джерелі",
 	"translate-manage-conflict-summary": "Імпорт нової версії із зовнішнього джерела.\nБудь ласка, перевірте її.",
 	"translate-manage-submit": "Виконати",
