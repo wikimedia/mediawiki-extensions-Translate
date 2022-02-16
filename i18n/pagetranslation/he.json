@@ -10,7 +10,9 @@
 			"Rotemliss",
 			"YaronSh",
 			"דגש",
-			"דגש חזק"
+			"דגש חזק",
+			"HumansCanWinElves",
+			"לואיקה"
 		]
 	},
 	"pagetranslation": "תרגום דפים",
@@ -96,7 +98,7 @@
 	"tpt-priority-languages": "מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.",
 	"tpt-priority-languages-force": "מנהל התרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1. תרגום לשפות אחרות אסור.",
 	"tpt-discouraged-translation-header": "התרגום של הדף הזה לא מומלץ",
-	"tpt-discouraged-translation-content": "מנהל התרגום המליץ לא לתרגם את הדף הזה. {{GENDER:|אתה עדיין יכול|את עדיין יכולה}} לתרגם את הדך, אבל ייתכן שהתרגום לא יהיה שימושי.",
+	"tpt-discouraged-translation-content": "מנהל תרגום המליץ לא לתרגם את הדף הזה. {{GENDER:|אתה עדיין יכול|את עדיין יכולה|באפשרותך עדיין}} לתרגם את הדף, אבל ייתכן שהתרגום לא יהיה שימושי.",
 	"tpt-render-summary": "עדכון להתאמת הגרסה החדשה של דף המקור",
 	"aggregategroups": "קבוצות משולבות",
 	"tpt-aggregategroup-add": "הוספה",

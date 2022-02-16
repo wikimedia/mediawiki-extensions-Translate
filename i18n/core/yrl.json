@@ -356,7 +356,7 @@
 	"tux-editor-doc-editor-placeholder": "Pareçawa mukatiurupawa",
 	"tux-editor-doc-editor-save": "Umuyukuau dokumẽtopawa",
 	"tux-editor-doc-editor-cancel": "Umuamunika",
-	"tux-messagetable-more-messages": "$1 píri {{PLURAL:$1|pareçawa|pareçawa'etá}}",
+	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|pareçawa píri|pareçawa'etá píri}}",
 	"tux-messagetable-loading-messages": "Uyumũdi uikú {{PLURAL:$1|pareçawa|pareçawa'etá}}.",
 	"tux-message-filter-placeholder": "Yumuaçawa kamakaçawa",
 	"tux-message-filter-result": "Yawaçẽmu $1 {{PLURAL:$1|çuaxara|çuaxara'etá}}  \"$2\" reçé",
