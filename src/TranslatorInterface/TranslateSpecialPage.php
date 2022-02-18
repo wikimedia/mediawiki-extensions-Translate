@@ -15,6 +15,8 @@ use ErrorPageError;
 use Hooks;
 use Html;
 use Language;
+use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use MessageGroups;
@@ -37,9 +39,22 @@ class TranslateSpecialPage extends SpecialPage {
 	protected $defaults;
 	protected $nondefaults = [];
 	protected $options;
+	/** @var Language */
+	private $contentLanguage;
+	/** @var LanguageFactory */
+	private $languageFactory;
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
 
-	public function __construct() {
+	public function __construct(
+		Language $contentLanguage,
+		LanguageFactory $languageFactory,
+		LanguageNameUtils $languageNameUtils
+	) {
 		parent::__construct( 'Translate' );
+		$this->contentLanguage = $contentLanguage;
+		$this->languageFactory = $languageFactory;
+		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	public function doesWrites() {
@@ -298,15 +313,12 @@ class TranslateSpecialPage extends SpecialPage {
 	protected function tuxLanguageSelector() {
 		global $wgTranslateDocumentationLanguageCode;
 
-		$mwService = MediaWikiServices::getInstance();
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
 			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
-			$targetLanguage = $mwService->getContentLanguage();
+			$targetLanguage = $this->contentLanguage;
 		} else {
-
-			$targetLanguage = $mwService->getLanguageFactory()->getLanguage( $this->options['language'] );
-			$languageNameUtils = $mwService->getLanguageNameUtils();
-			$targetLangName = $languageNameUtils->getLanguageName( $this->options['language'] );
+			$targetLangName = $this->languageNameUtils->getLanguageName( $this->options['language'] );
+			$targetLanguage = $this->languageFactory->getLanguage( $this->options['language'] );
 		}
 
 		$label = Html::element( 'span', [], $this->msg( 'tux-languageselector' )->text() );

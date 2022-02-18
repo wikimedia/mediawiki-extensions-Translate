@@ -297,7 +297,12 @@
 	},
 	"SpecialPages": {
 		"Translate": {
-			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage"
+			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage",
+			"services": [
+				"ContentLanguage",
+				"LanguageFactory",
+				"LanguageNameUtils"
+			]
 		},
 		"Translations": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationsSpecialPage",
