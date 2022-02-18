@@ -17,7 +17,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			'api',
 			'ffs',
 			'messagegroups',
-			'specials',
+			'src/TranslatorInterface',
 			'tag',
 			'src/TranslatorInterface/Aid',
 			'ttmserver',

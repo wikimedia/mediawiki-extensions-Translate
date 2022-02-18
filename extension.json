@@ -158,7 +158,6 @@
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",
 		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
-		"SpecialTranslate": "specials/SpecialTranslate.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
 		"ThinMessage": "Message.php",
@@ -237,7 +236,7 @@
 		"OutputPageParserOutput": "TranslateHooks::showFakeCategories",
 		"Translate:newTranslation": "TranslateEditAddons::updateTransverTag",
 		"SkinTemplateNavigation::SpecialPage": [
-			"SpecialTranslate::tabify",
+			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage::tabify",
 			"MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage::tabify"
 		],
 		"GetPreferences": "TranslatePreferences::translationAssistLanguages",
@@ -297,7 +296,9 @@
 		}
 	},
 	"SpecialPages": {
-		"Translate": "SpecialTranslate",
+		"Translate": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage"
+		},
 		"Translations": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationsSpecialPage",
 			"services": [

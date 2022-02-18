@@ -8,7 +8,22 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use AggregateMessageGroup;
+use ErrorPageError;
+use Hooks;
+use Html;
+use Language;
 use MediaWiki\MediaWikiServices;
+use MessageGroup;
+use MessageGroups;
+use MWException;
+use Skin;
+use SpecialPage;
+use TranslateUtils;
+use TuxMessageTable;
+use Xml;
 
 /**
  * Implements the core of Translate extension - a special page which shows
@@ -16,7 +31,7 @@ use MediaWiki\MediaWikiServices;
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslate extends SpecialPage {
+class TranslateSpecialPage extends SpecialPage {
 	/** @var MessageGroup */
 	protected $group;
 	protected $defaults;

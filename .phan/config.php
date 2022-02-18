@@ -27,7 +27,6 @@ $cfg['directory_list'] = array_merge(
 		'ffs',
 		'messagegroups',
 		'scripts',
-		'specials',
 		'src',
 		'tag',
 		'ttmserver',
