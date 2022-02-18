@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains logic for special page Special:Translate.
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
@@ -31,6 +24,9 @@ use Xml;
  * Implements the core of Translate extension - a special page which shows
  * a list of messages in a format defined by Tasks.
  *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslateSpecialPage extends SpecialPage {
@@ -68,7 +64,7 @@ class TranslateSpecialPage extends SpecialPage {
 	/**
 	 * Access point for this special page.
 	 *
-	 * @param null|string $parameters
+	 * @param string|null $parameters
 	 * @throws ErrorPageError
 	 */
 	public function execute( $parameters ) {
@@ -106,7 +102,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
-	protected function setup( $parameters ) {
+	protected function setup( ?string $parameters ): void {
 		$request = $this->getRequest();
 
 		$defaults = [
@@ -117,7 +113,7 @@ class TranslateSpecialPage extends SpecialPage {
 		// Dump everything here
 		$nondefaults = [];
 
-		$parameters = array_map( 'trim', explode( ';', $parameters ) );
+		$parameters = $parameters !== null ? array_map( 'trim', explode( ';', $parameters ) ) : [];
 		$pars = [];
 
 		foreach ( $parameters as $_ ) {
@@ -126,7 +122,7 @@ class TranslateSpecialPage extends SpecialPage {
 			}
 
 			if ( strpos( $_, '=' ) !== false ) {
-				list( $key, $value ) = array_map( 'trim', explode( '=', $_, 2 ) );
+				[ $key, $value ] = array_map( 'trim', explode( '=', $_, 2 ) );
 			} else {
 				$key = 'group';
 				$value = $_;
@@ -178,7 +174,7 @@ class TranslateSpecialPage extends SpecialPage {
 		}
 	}
 
-	protected function tuxSettingsForm() {
+	protected function tuxSettingsForm(): string {
 		$nojs = Html::element(
 			'div',
 			[ 'class' => 'tux-nojs errorbox' ],
@@ -195,7 +191,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return Html::rawElement( 'div', $attrs, $selectors ) . $nojs;
 	}
 
-	protected function messageSelector() {
+	protected function messageSelector(): string {
 		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header hide' ] );
 		$output .= Html::openElement( 'div', [ 'class' => 'nine columns' ] );
 		$output .= Html::openElement( 'ul', [ 'class' => 'row tux-message-selector' ] );
@@ -279,7 +275,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return $output;
 	}
 
-	protected function tuxGroupSelector() {
+	protected function tuxGroupSelector(): string {
 		$groupClass = [ 'grouptitle', 'grouplink' ];
 		if ( $this->group instanceof AggregateMessageGroup ) {
 			$groupClass[] = 'tux-breadcrumb__item--aggregate';
@@ -310,7 +306,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return $output;
 	}
 
-	protected function tuxLanguageSelector() {
+	protected function tuxLanguageSelector(): string {
 		global $wgTranslateDocumentationLanguageCode;
 
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
@@ -360,7 +356,7 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function tuxGroupDescription() {
+	protected function tuxGroupDescription(): string {
 		// Initialize an empty warning box to be filled client-side.
 		return Html::rawElement(
 			'div',
@@ -369,13 +365,13 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function getGroupDescription( MessageGroup $group ) {
+	protected function getGroupDescription( MessageGroup $group ): string {
 		$description = $group->getDescription( $this->getContext() );
 		return $description === null ?
 			'' : $this->getOutput()->parseAsInterface( $description );
 	}
 
-	protected function tuxGroupWarning() {
+	protected function tuxGroupWarning(): string {
 		if ( $this->options['group'] === '' ) {
 			return Html::rawElement(
 				'div',
@@ -392,21 +388,17 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function tuxWorkflowSelector() {
+	protected function tuxWorkflowSelector(): string {
 		return Html::element( 'div', [ 'class' => 'tux-workflow twelve columns' ] );
 	}
 
 	/**
 	 * Adds the task-based tabs on Special:Translate and few other special pages.
 	 * Hook: SkinTemplateNavigation::SpecialPage
-	 * @since 2012-02-10
-	 * @param Skin $skin
-	 * @param array &$tabs
-	 * @return true
 	 */
-	public static function tabify( Skin $skin, array &$tabs ) {
+	public static function tabify( Skin $skin, array &$tabs ): bool {
 		$title = $skin->getTitle();
-		list( $alias, $sub ) = MediaWikiServices::getInstance()
+		[ $alias, $sub ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $title->getText() );
 
 		$pagesInGroup = [ 'Translate', 'LanguageStats', 'MessageGroupStats', 'ExportTranslations' ];
@@ -416,7 +408,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 		// Extract subpage syntax, otherwise the values are not passed forward
 		$params = [];
-		if ( trim( $sub ) !== '' ) {
+		if ( $sub !== null && trim( $sub ) !== '' ) {
 			if ( $alias === 'Translate' || $alias === 'MessageGroupStats' ) {
 				$params['group'] = $sub;
 			} elseif ( $alias === 'LanguageStats' ) {
