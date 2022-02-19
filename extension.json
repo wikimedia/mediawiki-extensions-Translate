@@ -1163,6 +1163,15 @@
 				"desktop",
 				"mobile"
 			]
+		},
+		"ext.translate.codemirror": {
+			"styles": [
+				"resources/css/ext.translate.codemirror.css"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
 		}
 	},
 	"QUnitTestModule": {
@@ -1349,6 +1358,17 @@
 			"value": false,
 			"description": "Enable experiment message bundle integration",
 			"public": true
+		}
+	},
+	"attributes": {
+		"CodeMirror": {
+			"TagModes": {
+				"translate": "text/mediawiki",
+				"tvar": "text/mediawiki"
+			},
+			"PluginModules": [
+				"ext.translate.codemirror"
+			]
 		}
 	},
 	"DefaultUserOptions": {

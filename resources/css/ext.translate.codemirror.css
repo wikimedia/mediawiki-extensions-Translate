@@ -1,0 +1,5 @@
+/* Do not highlight tvar tags outside translate tags */
+.cm-mw-ext-tvar:not( .cm-mw-tag-translate ) {
+	color: inherit;
+	font-weight: inherit;
+}
