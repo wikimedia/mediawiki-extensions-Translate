@@ -7,14 +7,33 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use AggregateMessageGroup;
+use ErrorPageError;
+use HTMLForm;
 use MediaWiki\MediaWikiServices;
+use MessageGroups;
+use MessageIndexRebuildJob;
+use OutputPage;
+use PermissionsError;
+use ReadOnlyError;
+use SpecialPage;
+use Title;
+use TitleArray;
+use TranslatablePage;
+use TranslateDeleteJob;
+use TranslateMetadata;
+use TranslateUtils;
+use WebRequest;
+use Xml;
 
 /**
  * Special page which enables deleting translations of translatable pages
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationDeletePage extends SpecialPage {
+class DeleteTranslatablePageSpecialPage extends SpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $text;
 	/** @var Title */

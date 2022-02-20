@@ -157,7 +157,6 @@
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",
-		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
 		"ThinMessage": "Message.php",

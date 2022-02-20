@@ -9,6 +9,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
+use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslateExt;
@@ -87,7 +88,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 					'LinkBatchFactory'
 				]
 			];
-			$wgSpecialPages['PageTranslationDeletePage'] = 'SpecialPageTranslationDeletePage';
+			$wgSpecialPages['PageTranslationDeletePage'] = DeleteTranslatablePageSpecialPage::class;
 
 			// right-pagetranslation action-pagetranslation
 			$wgAvailableRights[] = 'pagetranslation';
