@@ -88,7 +88,13 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 					'LinkBatchFactory'
 				]
 			];
-			$wgSpecialPages['PageTranslationDeletePage'] = DeleteTranslatablePageSpecialPage::class;
+			$wgSpecialPages['PageTranslationDeletePage'] = [
+				'class' => DeleteTranslatablePageSpecialPage::class,
+				'services' => [
+					'MainObjectStash',
+					'PermissionManager'
+				]
+			];
 
 			// right-pagetranslation action-pagetranslation
 			$wgAvailableRights[] = 'pagetranslation';
