@@ -35,7 +35,7 @@
 	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "Блок перевода $1",
 	"tpt-section-new": "Новый блок перевода. Название: $1",
-	"tpt-section-deleted": "Элемент перевода $1",
+	"tpt-section-deleted": "Блок перевода $1",
 	"tpt-diff-old": "Предыдущий текст",
 	"tpt-diff-new": "Новый текст",
 	"tpt-submit": "Отметить эту версию для перевода",

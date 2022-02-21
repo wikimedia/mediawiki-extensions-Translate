@@ -4,6 +4,12 @@
 			"Joanmp17"
 		]
 	},
+	"apihelp-groupreview-param-language": "ኮድ ቋንቋ።",
+	"apihelp-query+languagestats-param-language": "ኮድ ቋንቋ።",
+	"apihelp-query+messagecollection-param-language": "ኮድ ቋንቋ።",
 	"apierror-translate-language-disabled": "ትርጉም ናብ $1 ተሰንኪሉ ኣሎ።",
-	"apierror-translate-language-disabled-reason": "ትርጉም ናብ $1 ተሰንኪሉ ኣሎ፦ $2"
+	"apierror-translate-language-disabled-reason": "ትርጉም ናብ $1 ተሰንኪሉ ኣሎ፦ $2",
+	"apierror-translate-owntranslation": "ናይ ገዛእ ርእስኻ ትርጉማት ክግምግም ኣይክእልን እዩ",
+	"apierror-translate-unknownmessage": "ዘይተፈልጠ መልእኽቲ",
+	"apiwarn-translate-language-disabled-source": "እቲ መበቆላዊ ቋንቋ ናይዛ ጉጅለ $1 እዩ። ናብ ካልእ ክትርጎም ዝኽእል ካልእ ቋንቋ ምረጽ።"
 }
