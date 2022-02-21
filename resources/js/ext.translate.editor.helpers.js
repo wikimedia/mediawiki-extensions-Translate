@@ -438,7 +438,12 @@
 		 */
 		suggestionAdder: function ( $source, suggestion ) {
 			var $target = this.$editor.find( '.tux-textarea-translation' );
-
+			if ( $target.get( 0 ).readOnly ) {
+				// If the textarea is disabled, then disable the translation aid.
+				// Do not add the click handler.
+				$source.addClass( 'tux-translation-aid-disabled' );
+				return;
+			}
 			var inserter = function () {
 				var selection;
 				if ( window.getSelection ) {
