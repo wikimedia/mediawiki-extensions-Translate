@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Trondtr",
 			"Yupik"
 		]
 	},
+	"tpt-select-prioritylangs-reason": "Suijâ:",
 	"tpt-languages-legend": "Eres kielah:",
 	"tpt-languages-nonzero": "$1 ($2 % jurgâlum)",
 	"tpt-aggregategroup-add": "Lasseet",
@@ -12,8 +14,12 @@
 	"tpt-aggregategroup-new-name": "Nommâ:",
 	"tpt-aggregategroup-edit-name": "Nommâ:",
 	"tpt-aggregategroup-update": "Vuorkkii",
+	"pt-movepage-reason": "Suijâ:",
 	"pt-movepage-subpages": "Sirde puoh vyelisiijđoid",
+	"pt-deletepage-reason": "Suijâ:",
+	"pt-deletepage-reason-other": "Eres suijâ",
 	"pt-deletepage-subpages": "Siho puoh vyelisiijđoid",
 	"pt-deletepage-list-other": "Eres vyelisiijđoh",
-	"pm-savepages-button-label": "Vuorkkii"
+	"pm-savepages-button-label": "Vuorkkii",
+	"pp-save-button-label": "Almostit"
 }
