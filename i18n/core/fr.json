@@ -231,6 +231,7 @@
 	"translate-mgs-nothing": "Rien à afficher pour les statistiques demandées.",
 	"translate-tes-server-error": "Échec de récupération des suggestions de recherche",
 	"translate-tes-group-not-found": "Aucun résultat correspondant",
+	"translate-tes-type-to-search": "Taper pour commencer la recherche",
 	"supportedlanguages": "Langues actives",
 	"supportedlanguages-summary": "Cette page affiche une liste des langues actives sur {{SITENAME}}, avec les noms des traducteurs qui travaillent dans cette langue.\nLe nom d’un traducteur apparaît en plus gros en fonction du nombre de modifications auxquelles il a contribué.\nLa couleur du soulignement indique si le traducteur a été actif ici récemment.",
 	"supportedlanguages-colorlegend": "Légende pour la couleur : dernière traduction il y a $1 jours.",
