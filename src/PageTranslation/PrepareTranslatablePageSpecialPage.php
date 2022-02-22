@@ -8,7 +8,13 @@
  * @license GPL-2.0-or-later
  */
 
-class SpecialPagePreparation extends SpecialPage {
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use DifferenceEngine;
+use Html;
+use SpecialPage;
+
+class PrepareTranslatablePageSpecialPage extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'PagePreparation', 'pagetranslation' );
 	}

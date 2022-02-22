@@ -12,6 +12,7 @@ use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
+use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslateExt;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
@@ -100,7 +101,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgAvailableRights[] = 'pagetranslation';
 
 			$wgSpecialPages['PageMigration'] = MigrateTranslatablePageSpecialPage::class;
-			$wgSpecialPages['PagePreparation'] = 'SpecialPagePreparation';
+			$wgSpecialPages['PagePreparation'] = PrepareTranslatablePageSpecialPage::class;
 
 			global $wgActionFilteredLogs, $wgLogActionsHandlers, $wgLogTypes;
 
