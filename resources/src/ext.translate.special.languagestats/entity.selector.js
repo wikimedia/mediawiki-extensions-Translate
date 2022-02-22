@@ -10,6 +10,7 @@
  * @param {Object} [config] Configuration options
  * @cfg {Function} [onFail] Callback function triggered when an error occurs
  * @cfg {Function} [onSelect] Callback function triggered when an item is selected
+ * @cfg {Array} [entityType] Entity type to query for - "groups" and/or "messages"
  */
 var EntitySelectorWidget = function ( config ) {
 	// Parent constructor
@@ -39,6 +40,11 @@ var EntitySelectorWidget = function ( config ) {
 	var noop = function () {};
 	this.failureCallback = config.onFail || noop;
 	this.selectCallback = config.onSelect || noop;
+	this.entityTypeToFetch = config.entityType;
+	if ( this.entityTypeToFetch && !Array.isArray( this.entityTypeToFetch ) ) {
+		throw new Error( 'entityType must be an array.' );
+	}
+
 	this.selectedEntity = null;
 };
 
@@ -63,7 +69,7 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	var currentRequestTimeout = setTimeout(
 		function () {
 			currentRequestTimeout = null;
-			makeRequest( value, deferred, widget.failureCallback );
+			makeRequest( value, widget.entityTypeToFetch, deferred, widget.failureCallback );
 		},
 		250
 	);
@@ -78,11 +84,12 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	return deferred;
 };
 
-function makeRequest( value, deferred, cbFailure ) {
+function makeRequest( value, entityType, deferred, cbFailure ) {
 	var api = new mw.Api();
 	api.get( {
 		action: 'translationentitysearch',
-		query: value
+		query: value,
+		entitytype: entityType
 	} ).then( function ( result ) {
 		deferred.resolve( result.translationentitysearch );
 	}, function ( msg, error ) {

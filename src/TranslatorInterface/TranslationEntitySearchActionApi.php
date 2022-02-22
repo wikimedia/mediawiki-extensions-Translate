@@ -16,6 +16,8 @@ use Wikimedia\ParamValidator\TypeDef\NumericDef;
 class TranslationEntitySearchActionApi extends ApiBase {
 	/** @var EntitySearch */
 	private $entitySearch;
+	private const GROUPS = 'groups';
+	private const MESSAGES = 'messages';
 
 	public function __construct( ApiMain $mainModule, $moduleName, EntitySearch $entitySearch ) {
 		parent::__construct( $mainModule, $moduleName );
@@ -25,13 +27,20 @@ class TranslationEntitySearchActionApi extends ApiBase {
 	public function execute() {
 		$query = $this->getParameter( 'query' );
 		$maxResults = $this->getParameter( 'limit' );
+		$entityTypes = $this->getParameter( 'entitytype' );
 
 		$searchResults = [];
-		$searchResults[ 'groups' ] = $this->entitySearch->searchStaticMessageGroups( $query, $maxResults );
+		$remainingResults = $maxResults;
 
-		$remainingResults = $maxResults - count( $searchResults[ 'groups' ] );
-		if ( $remainingResults > 0 ) {
-			$searchResults[ 'messages' ] = $this->entitySearch->searchMessages( $query, $remainingResults );
+		if ( in_array( self::GROUPS, $entityTypes ) ) {
+			$searchResults[ self::GROUPS ] = $this->entitySearch
+				->searchStaticMessageGroups( $query, $maxResults );
+			$remainingResults = $maxResults - count( $searchResults[ self::GROUPS ] );
+		}
+
+		if ( in_array( self::MESSAGES, $entityTypes ) && $remainingResults > 0 ) {
+			$searchResults[ self::MESSAGES ] = $this->entitySearch
+				->searchMessages( $query, $remainingResults );
 		}
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $searchResults );
@@ -39,6 +48,11 @@ class TranslationEntitySearchActionApi extends ApiBase {
 
 	protected function getAllowedParams(): array {
 		return [
+			'entitytype' => [
+				ParamValidator::PARAM_TYPE => [ self::GROUPS, self::MESSAGES ],
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_DEFAULT => implode( '|', [ self::GROUPS, self::MESSAGES ] )
+			],
 			'query' => [
 				ParamValidator::PARAM_TYPE => 'string',
 				ParamValidator::PARAM_REQUIRED => true
@@ -46,8 +60,7 @@ class TranslationEntitySearchActionApi extends ApiBase {
 			'limit' => [
 				ParamValidator::PARAM_TYPE => 'limit',
 				ParamValidator::PARAM_DEFAULT => 10,
-				NumericDef::PARAM_MAX => ApiBase::LIMIT_SML1,
-				ParamValidator::PARAM_REQUIRED => false,
+				NumericDef::PARAM_MAX => ApiBase::LIMIT_SML1
 			],
 		];
 	}

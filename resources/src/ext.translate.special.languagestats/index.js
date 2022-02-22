@@ -217,7 +217,8 @@
 	function getEntitySelector( onSelect ) {
 		var EntitySelector = require( './entity.selector.js' );
 		return new EntitySelector( {
-			onSelect: onSelect
+			onSelect: onSelect,
+			entityType: [ 'groups' ]
 		} );
 	}
 
