@@ -8,8 +8,10 @@
 		]
 	},
 	"translate-page-settings-legend": "Eyari",
+	"translate-stats-users": "Çarnayoği",
 	"translate-tag-page-desc": "Açarnayışê pela da [[$2|$1]] wiki",
 	"translate-ls-submit": "İstatistikan bımocne",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Çarnayoğ}}|Çarnayoği}}: $1",
 	"translate-documentation-language": "Pelekerdışê mesacan",
 	"tux-editor-cancel-button-label": "Bıtexelne",
 	"tux-editor-page-mode": "Pele",
