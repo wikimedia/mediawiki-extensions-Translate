@@ -168,6 +168,7 @@
 	"apiwarn-translate-language-disabled-source": "שפת המקור של הקבוצה הזאת היא $1. נא לבחור שפה אחרת לתרגום.",
 	"apierror-translate-operation-error": "אירעה שגיאה בעת עיבוד הבקשה. שגיאה: $1",
 	"apihelp-translationentitysearch-summary": "חיפוש קבוצות הודעות והודעות",
+	"apihelp-translationentitysearch-param-entitytype": "סוג הישות שהשאילתה מתייחסת אליה",
 	"apihelp-translationentitysearch-param-query": "שאילתת חיפוש",
 	"apihelp-translationentitysearch-param-limit": "מספר מרבי של תוצאות חיפוש"
 }
