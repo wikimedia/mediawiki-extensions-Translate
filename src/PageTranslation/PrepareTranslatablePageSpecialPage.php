@@ -1,12 +1,5 @@
 <?php
-/**
- * Contains code for special page Special:PagePreparation
- *
- * @file
- * @author Pratik Lahoti
- * @copyright Copyright © 2014 Pratik Lahoti
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
@@ -14,6 +7,11 @@ use DifferenceEngine;
 use Html;
 use SpecialPage;
 
+/**
+ * Contains code to prepare a page for translation
+ * @author Pratik Lahoti
+ * @license GPL-2.0-or-later
+ */
 class PrepareTranslatablePageSpecialPage extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'PagePreparation', 'pagetranslation' );
