@@ -80,7 +80,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 			$this->logError(
 				'Error while editing content in page.',
 				[
-					'content' => $content,
+					'content' => $content->getTextForSummary(),
 					'errors' => $editStatus->getErrors()
 				]
 			);
