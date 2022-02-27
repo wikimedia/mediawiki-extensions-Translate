@@ -36,6 +36,37 @@
 		},
 
 		/**
+		 * Get language stats for a language and group from the API
+		 *
+		 * @param {string} language
+		 * @param {string} group
+		 * @return {jQuery.Deferred}
+		 */
+		loadLanguageStatsForGroup: function ( language, group ) {
+			var uniqueKey = group + '|' + language;
+			if ( !mw.translate.languageStatsLoader[ uniqueKey ] ) {
+				mw.translate.languageStatsLoader[ uniqueKey ] = new mw.Api().get( {
+					action: 'query',
+					meta: 'languagestats',
+					lslanguage: language,
+					lsgroup: group
+				} );
+			}
+
+			mw.translate.languageStatsLoader[ uniqueKey ]
+				.done( function ( result ) {
+					if ( result.query.languagestats && result.query.languagestats.length ) {
+						mw.translate.languagestats[ language ] = result.query.languagestats;
+					} else {
+						mw.translate.languagestats[ language ] = [];
+					}
+
+				} );
+
+			return mw.translate.languageStatsLoader[ uniqueKey ];
+		},
+
+		/**
 		 * Load message group information asynchronously.
 		 *
 		 * @param {string} id Message group id

@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * Api module for querying language stats.
  *
@@ -32,7 +34,17 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 
 	/** @inheritDoc */
 	protected function loadStatistics( $target, $flags = 0 ) {
-		return MessageGroupStats::forLanguage( $target, $flags );
+		$groupId = $this->getParameter( 'group' );
+		$group = $groupId !== null ? MessageGroups::getGroup( $groupId ) : null;
+		if ( $groupId ) {
+			if ( !$group ) {
+				$this->dieWithError( [ 'apierror-badparameter', 'group' ] );
+			}
+
+			return [ $groupId => MessageGroupStats::forItem( $group->getId(), $target, $flags ) ];
+		} else {
+			return MessageGroupStats::forLanguage( $target, $flags );
+		}
 	}
 
 	/** @inheritDoc */
@@ -54,8 +66,12 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['language'] = [
-			ApiBase::PARAM_TYPE => 'string',
-			ApiBase::PARAM_REQUIRED => true,
+			ParamValidator::PARAM_TYPE => 'string',
+			ParamValidator::PARAM_REQUIRED => true,
+		];
+
+		$params['group'] = [
+			ParamValidator::PARAM_TYPE => 'string',
 		];
 
 		return $params;
@@ -66,6 +82,8 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		return [
 			'action=query&meta=languagestats&lslanguage=fi'
 				=> 'apihelp-query+languagestats-example-1',
+			'action=query&meta=languagestats&lslanguage=fi&group=A'
+				=> 'apihelp-query+languagestats-example-2'
 		];
 	}
 }

@@ -428,7 +428,8 @@
 				.removeData()
 				.languagestatsbar( {
 					language: this.settings.language,
-					group: this.settings.group
+					group: this.settings.group,
+					onlyLoadCurrentGroupData: true
 				} );
 
 			this.initialized = true;
