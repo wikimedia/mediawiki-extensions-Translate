@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job for deleting translatable and translation pages.
@@ -78,7 +79,7 @@ class TranslateDeleteJob extends Job {
 
 		PageTranslationHooks::$allowTargetEdit = false;
 
-		$cache = ObjectCache::getInstance( CACHE_DB );
+		$cache = MediaWikiServices::getInstance()->getMainObjectStash();
 		$pageKey = $cache->makeKey( 'pt-base', $base );
 		$pages = (array)$cache->get( $pageKey );
 		$lastitem = array_pop( $pages );

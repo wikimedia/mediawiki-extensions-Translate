@@ -336,7 +336,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 		TranslateUtils::getJobQueueGroup()->push( $jobs );
 
-		$cache = ObjectCache::getInstance( CACHE_DB );
+		$cache = MediaWikiServices::getInstance()->getMainObjectStash();
 		$cache->set(
 			$cache->makeKey( 'pt-base', $target->getPrefixedText() ),
 			array_keys( $jobs ),

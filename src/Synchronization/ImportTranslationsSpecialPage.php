@@ -8,10 +8,10 @@ use FileBasedMessageGroup;
 use GettextFFS;
 use GettextParseException;
 use Html;
+use MediaWiki\MediaWikiServices;
 use MessageGroupBase;
 use MessageGroups;
 use MessageWebImporter;
-use ObjectCache;
 use SpecialPage;
 use Xml;
 
@@ -212,7 +212,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 	}
 
 	private function getCache(): BagOStuff {
-		return ObjectCache::getInstance( CACHE_DB );
+		return MediaWikiServices::getInstance()->getMainObjectStash();
 	}
 
 	private function setCachedData( $data ): void {
