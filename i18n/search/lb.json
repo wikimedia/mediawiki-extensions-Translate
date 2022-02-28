@@ -21,9 +21,9 @@
 	"tux-sst-default": "Iwwersetzungen",
 	"tux-sst-translated": "Iwwersetzunge vu(n) $1",
 	"tux-sst-untranslated": "Keng Iwwersetzung vu(n) $1",
-	"tux-sst-outdated": "Vereelst Iwwersetzung vu(n) $1",
+	"tux-sst-outdated": "Vereelzt Iwwersetzung vu(n) $1",
 	"tux-sst-ellipsis-untranslated": "Keng Iwwersetzung",
-	"tux-sst-ellipsis-outdated": " Vereelst Iwwersetzungen",
+	"tux-sst-ellipsis-outdated": "Vereelzt Iwwersetzungen",
 	"tux-sst-link-all-match": "All Sichwierder verlaangen.",
 	"tux-sst-match-message": "Iwwersetzunge weise mat engem vun de gesichte Wierder. $1",
 	"tux-sst-case-sensitive": "Ënnerscheed tëscht groussen a klenge Buschtawen"
