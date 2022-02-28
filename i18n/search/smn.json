@@ -16,5 +16,6 @@
 	"tux-sst-default": "Jurgâlusah",
 	"tux-sst-translated": "Jurgâlum kielâst $1",
 	"tux-sst-untranslated": "Jurgâlhánnáá kielâst $1",
-	"tux-sst-ellipsis-untranslated": "Ij jurgâlus"
+	"tux-sst-ellipsis-untranslated": "Ij jurgâlus",
+	"tux-sst-case-sensitive": "Puustavstuárudâh lii merhâšittee"
 }

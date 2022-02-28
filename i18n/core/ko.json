@@ -186,6 +186,8 @@
 	"translate-mgs-totals": "$1개의 모든 {{PLURAL:$1|언어}}",
 	"translate-mgs-invalid-group": "지정한 $1 그룹이 존재하지 않습니다.",
 	"translate-mgs-nothing": "요청된 통계에 대해 보여줄 것이 없습니다.",
+	"translate-tes-group-not-found": "일치하는 결과 없음",
+	"translate-tes-type-to-search": "검색을 시작하려면 입력하세요",
 	"supportedlanguages": "활성화된 언어",
 	"supportedlanguages-summary": "이 문서는 {{SITENAME}}에서 지원하는 모든 언어의 목록과 그 언어로 번역하는 번역자의 이름을 보여줍니다.\n번역자가 편집을 더 많이 할수록 이름이 크게 나타납니다.\n밑줄의 색깔은 번역자가 얼마나 최근에 활동했는지를 나타냅니다.",
 	"supportedlanguages-colorlegend": "색깔 범례: 마지막 번역을 한 날짜가 $1일 전.",
