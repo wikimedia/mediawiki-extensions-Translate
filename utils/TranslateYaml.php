@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Shell\Shell;
+
 /**
  * This class is a wrapper class to provide interface to parse
  * and generate YAML files with syck or spyc backend.
@@ -136,13 +138,9 @@ class TranslateYaml {
 			'open my $fh, ">", "$tf.serialized" or die qq[Can not open "$tf.serialized"];' .
 			'print $fh serialize($yaml);' .
 			'close($fh);' .
-			"' 2>&1";
+			"'";
 
-		$out = wfShellExec( $cmd, $ret );
-
-		if ( (int)$ret !== 0 ) {
-			throw new MWException( "The command '$cmd' died in execution with exit code '$ret': $out" );
-		}
+		self::runCommand( $cmd );
 
 		$serialized = file_get_contents( "$tf.serialized" );
 		$php_data = unserialize( $serialized );
@@ -181,17 +179,26 @@ class TranslateYaml {
 					'return $s;' .
 				'}' .
 			'}' .
-			"' 2>&1";
-		$out = wfShellExec( $cmd, $ret );
-		if ( (int)$ret !== 0 ) {
-			throw new MWException( "The command '$cmd' died in execution with exit code '$ret': $out" );
-		}
+			"'";
 
+		self::runCommand( $cmd );
 		$yaml = file_get_contents( "$tf.yaml" );
 
 		unlink( $tf );
 		unlink( "$tf.yaml" );
 
 		return $yaml;
+	}
+
+	private static function runCommand( string $cmd ): void {
+		$result = Shell::command( $cmd )->execute();
+		$exitCode = $result->getExitCode();
+		$stdOutput = $result->getStdout();
+		$stdError = $result->getStderr();
+		if ( $exitCode !== 0 ) {
+			throw new MWException(
+				"The command '$cmd' died in execution with exit code '$exitCode': Output: $stdOutput \nError: $stdError"
+			);
+		}
 	}
 }
