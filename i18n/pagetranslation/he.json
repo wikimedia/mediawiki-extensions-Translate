@@ -150,7 +150,7 @@
 	"log-action-filter-pagetranslation-discourage": "המלצות לא לתרגם",
 	"log-action-filter-pagetranslation-prioritylanguages": "שינויים בעדיפויות של שפות",
 	"log-action-filter-pagetranslation-aggregategroups": "שינויים בקבוצות משולבות",
-	"pt-movepage-title": "להעביר את הדף הניתן לתרגום \"$1\"",
+	"pt-movepage-title": "העברת הדף המתורגם \"$1\"",
 	"pt-movepage-blockers": "דף שניתן לתרגום אינו יכול להיות מועבר לשם חדש בגלל {{PLURAL:$1|השגיאה הבאה|השגיאות הבאות}}:",
 	"pt-movepage-block-base-invalid": "לדף התרגום המיועד אין כותרת תקינה.",
 	"pt-movepage-block-tp-invalid": "כותרת דף התרגום המיועד עבור \"[[:$1]]\" תהיה תקינה (אולי ארוכה מדי?).",
