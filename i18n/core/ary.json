@@ -3,10 +3,12 @@
 		"authors": [
 			"Enzoreg",
 			"Reda Benkhadra",
-			"SADIQUI"
+			"SADIQUI",
+			"Ideophagous"
 		]
 	},
 	"translate-langstats-collapse": "طوي",
+	"supportedlanguages": "تّوتيق",
 	"translate-manage-import-new": "Méṣaj jdid $1",
 	"translate-manage-import-deleted": "Méṣaj memḫi $1",
 	"translate-documentation-language": "توثيق الرسالة",

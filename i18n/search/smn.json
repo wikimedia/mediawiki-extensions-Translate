@@ -1,9 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Seipinne"
 		]
 	},
+	"searchtranslations": "Uusâ jurgâlusâid",
+	"tux-sst-edit": "Mute jurgâlus",
+	"tux-sst-view-foreign": "Čääiti siijđost $1",
 	"tux-sst-search": "Uusâ",
-	"tux-sst-facet-language": "Kielah"
+	"tux-sst-search-ph": "Uusâ jurgâlusâid",
+	"tux-sst-facet-language": "Kielah",
+	"tux-sst-next": "Čuávuvâš ›",
+	"tux-sst-prev": "‹ Oovdeb",
+	"tux-sst-default": "Jurgâlusah",
+	"tux-sst-translated": "Jurgâlum kielâst $1",
+	"tux-sst-untranslated": "Jurgâlhánnáá kielâst $1",
+	"tux-sst-ellipsis-untranslated": "Ij jurgâlus",
+	"tux-sst-case-sensitive": "Puustavstuárudâh lii merhâšittee"
 }

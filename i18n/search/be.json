@@ -1,8 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"Artsiom91"
+			"Artsiom91",
+			"Chadyka"
 		]
 	},
-	"tux-sst-default": "Пераклады"
+	"searchtranslations": "Пошук перакладаў",
+	"tux-sst-edit": "Змяніць пераклад",
+	"tux-sst-view-foreign": "Глядзець на $1",
+	"tux-sst-search": "Пошук",
+	"tux-sst-search-ph": "Пошук перакладаў",
+	"tux-sst-count": "{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}",
+	"tux-sst-facet-language": "Мовы",
+	"tux-sst-facet-group": "Групы паведамленняў",
+	"tux-sst-nosolr-title": "Пошук недаступны",
+	"tux-sst-nosolr-body": "Гэтая вікі не мае службы пошуку перакладаў.",
+	"tux-sst-solr-offline-title": "Пошук недаступны",
+	"tux-sst-solr-offline-body": "Служба пошуку часова недаступная.",
+	"tux-sst-next": "Наступныя ›",
+	"tux-sst-prev": "‹ Папярэднія",
+	"tux-sst-default": "Пераклады",
+	"tux-sst-translated": "Пераклады з $1",
+	"tux-sst-untranslated": "Няма перакладаў з $1",
+	"tux-sst-outdated": "Састарэлыя пераклады з $1",
+	"tux-sst-ellipsis-untranslated": "Няма перакладу",
+	"tux-sst-ellipsis-outdated": "Састарэлыя пераклады",
+	"tux-sst-link-all-match": "Патрабаваць усе словы для пошуку.",
+	"tux-sst-match-message": "Паказваюцца пераклады, якія адпавядаюць любому з пошукавых слоў. $1",
+	"tux-sst-case-sensitive": "З улікам рэгістра",
+	"tux-sst-error-offset": "Немагчыма паказаць больш вынікаў пошуку. Калі ласка, звузіце пошук.",
+	"tux-sst-error-language": "Гэтую мову нельга выкарыстоўваць з такім гатункам пошуку."
 }
