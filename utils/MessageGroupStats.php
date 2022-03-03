@@ -596,7 +596,7 @@ class MessageGroupStats {
 		}
 
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$dbw = $lb->getLazyConnectionRef( DB_PRIMARY ); // avoid connecting yet
+		$dbw = $lb->getConnectionRef( DB_PRIMARY ); // avoid connecting yet
 		$table = self::TABLE;
 		$callers = wfGetAllCallers( 50 );
 
