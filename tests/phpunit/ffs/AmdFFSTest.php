@@ -42,7 +42,7 @@ class AmdFFSTest extends MediaWikiIntegrationTestCase {
 			'AUTHORS' => $authors,
 			'METADATA' => [],
 		];
-		$this->assertEquals( $parsed, $expected );
+		$this->assertEquals( $expected, $parsed );
 	}
 
 	public function amdProvider() {
