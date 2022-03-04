@@ -414,7 +414,7 @@
 	"tux-editor-loading": "正在讀取...",
 	"tux-editor-loading-failed": "載入翻譯輔助失敗：$1",
 	"translate-search-more-languages-info": "還有 $1 種{{PLURAL:$1|語言|語言}}",
-	"translate-statsbar-tooltip": "$1% 已翻譯，$2% 已審查",
+	"translate-statsbar-tooltip": "已翻譯 $1%，已審核 $2%",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 已翻譯，$2% 已檢閱，$3% 已過時",
 	"translate-search-more-groups-info": "還有 $1 個{{PLURAL:$1|群組|群組}}",
 	"translate-syntax-error": "翻譯含有語法錯誤",
