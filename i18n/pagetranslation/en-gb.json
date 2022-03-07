@@ -8,11 +8,5 @@
 			"Thehelpfulone"
 		]
 	},
-	"tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators.",
-	"visualeditor-annotations-translate-start": "Fara abun ciki don a fassara",
-	"visualeditor-annotations-translate-end": "karshen abubuwan da za'a fassara",
-	"visualeditor-annotations-translate-description": "An yiwa wannan zangon alama azaman mai fassara. Da fatan za a tabbatar kun bi ƙa'idodin [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Canza rubutun tushe].",
-	"visualeditor-annotations-tvar-start": "Fara abubuwan da ba a iya fassara su ba",
-	"visualeditor-annotations-tvar-end": "karshen abubuwan da suke cikin wani abu wadanda ba'a fassara ba",
-	"visualeditor-annotations-tvar-description": "An yiwa wannan zangon alama azaman mara fassara. Da fatan za a koma zuwa [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] don ƙarin bayani."
+	"tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators."
 }
