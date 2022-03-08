@@ -10,6 +10,7 @@
  */
 
 // Standard boilerplate to define $IP
+use Mediawiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -42,7 +43,9 @@ class CreateCheckIndex extends Maintenance {
 	}
 
 	public function execute() {
-		$codes = Language::fetchLanguageNames( null, Language::ALL );
+		$codes = MediaWikiServices::getInstance()
+			->getLanguageNameUtils()
+			->getLanguageNames( null, LanguageNameUtils::ALL );
 
 		// Exclude the documentation language code
 		global $wgTranslateDocumentationLanguageCode;

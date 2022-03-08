@@ -6,6 +6,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Mediawiki\Languages\LanguageNameUtils;
+
 /**
  * API module for switching workflow states for message groups
  *
@@ -13,6 +15,17 @@
  */
 class ApiGroupReview extends ApiBase {
 	protected static $right = 'translate-groupreview';
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
+
+	public function __construct(
+		ApiMain $main,
+		$action,
+		LanguageNameUtils $languageNameUtils
+	) {
+		parent::__construct( $main, $action );
+		$this->languageNameUtils = $languageNameUtils;
+	}
 
 	public function execute() {
 		$user = $this->getUser();
@@ -35,7 +48,7 @@ class ApiGroupReview extends ApiBase {
 			$this->dieBlocked( $user->getBlock() );
 		}
 
-		$languages = Language::fetchLanguageNames();
+		$languages = $this->languageNameUtils->getLanguageNames();
 		if ( !isset( $languages[$code] ) ) {
 			$this->dieWithError( [ 'apierror-badparameter', 'language' ] );
 		}

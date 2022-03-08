@@ -9,8 +9,8 @@ use DerivativeContext;
 use Html;
 use HTMLForm;
 use IContextSource;
-use Language;
 use MediaWiki\Cache\LinkBatchFactory;
+use Mediawiki\Languages\LanguageNameUtils;
 use MessageGroup;
 use MessageGroups;
 use MessageGroupStats;
@@ -36,6 +36,8 @@ use WikiPageMessageGroup;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class LanguageStatsSpecialPage extends SpecialPage {
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
 	/** @var StatsTable */
 	private $table;
 	/** @var array */
@@ -85,12 +87,14 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 	public function __construct(
 		LinkBatchFactory $linkBatchFactory,
-		ProgressStatsTableFactory $progressStatsTableFactory
+		ProgressStatsTableFactory $progressStatsTableFactory,
+		LanguageNameUtils $languageNameUtils
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
+		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	public function isIncludable() {
@@ -213,7 +217,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 	/** Return true if language exist in the list of allowed languages or false otherwise. */
 	private function isValidValue( string $value ): bool {
-		$langs = Language::fetchLanguageNames();
+		$langs = $this->languageNameUtils->getLanguageNames();
 
 		return isset( $langs[$value] );
 	}

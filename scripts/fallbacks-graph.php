@@ -8,6 +8,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
@@ -42,7 +44,9 @@ $1
 
 XML;
 
-		$langs = Language::fetchLanguageNames( null, 'mw' );
+		$langs = MediaWikiServices::getInstance()
+			->getLanguageNameUtils()
+			->getLanguageNames();
 		$nodes = $edges = [];
 		foreach ( $langs as $code => $name ) {
 			$fallbacks = Language::getFallbacksFor( $code, Language::STRICT_FALLBACKS );

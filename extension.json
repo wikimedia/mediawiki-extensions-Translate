@@ -319,7 +319,8 @@
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\LanguageStatsSpecialPage",
 			"services": [
 				"LinkBatchFactory",
-				"Translate:ProgressStatsTableFactory"
+				"Translate:ProgressStatsTableFactory",
+				"LanguageNameUtils"
 			]
 		},
 		"MessageGroupStats": {
@@ -381,7 +382,12 @@
 	},
 	"APIModules": {
 		"aggregategroups": "ApiAggregateGroups",
-		"groupreview": "ApiGroupReview",
+		"groupreview": {
+			"class": "ApiGroupReview",
+			"services": [
+				"LanguageNameUtils"
+			]
+		},
 		"managemessagegroups": "ApiManageMessageGroups",
 		"translationaids": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\Aid\\TranslationAidsActionApi",
 		"translationentitysearch": {

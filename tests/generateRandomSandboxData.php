@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\MediaWikiServices;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -30,7 +31,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 
 		$stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 
-		$languages = array_keys( Language::fetchLanguageNames() );
+		$languages = array_keys( MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames() );
 
 		for ( $i = 0; $i < $users; $i++ ) {
 			$username = 'Pupu' . wfRandomString( 6 );

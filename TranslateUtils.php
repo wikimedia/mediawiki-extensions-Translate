@@ -273,7 +273,7 @@ class TranslateUtils {
 	 * @return array ( language code => language name )
 	 */
 	public static function getLanguageNames( $code ) {
-		$languageNames = Language::fetchLanguageNames( $code );
+		$languageNames = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames( $code );
 
 		$deprecatedCodes = LanguageCode::getDeprecatedCodeMapping();
 		foreach ( array_keys( $deprecatedCodes ) as $deprecatedCode ) {
