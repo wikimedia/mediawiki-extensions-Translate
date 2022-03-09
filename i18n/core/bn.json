@@ -11,7 +11,8 @@
 			"Tauhid16",
 			"Zaheen",
 			"আজিজ",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"Hirok Raja"
 		]
 	},
 	"translate": "অনুবাদ",
@@ -83,7 +84,7 @@
 	"right-translate-manage": "বার্তা দল ব্যবস্থাপনা",
 	"action-translate-manage": "বার্তা দল ব্যবস্থাপনা",
 	"right-translate-import": "অফলাইন অনুবাদ আমদানি",
-	"action-translate-import": "অফলাইন অনুবাদসমূহ আমদানি করুন",
+	"action-translate-import": "অফলাইন অনুবাদ আমদানি করার",
 	"right-translate-messagereview": "অনুবাদ পর্যালোচনা",
 	"action-translate-messagereview": "অনুবাদ পর্যালোচনা করার",
 	"translate-rcfilters-translations": "অনুবাদ",

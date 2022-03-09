@@ -26,7 +26,10 @@
 			"Slboat",
 			"ThisIsACreeper0101",
 			"Umherirrender",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Ajeje Brazorf",
+			"Saurmandal",
+			"Verdy p"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -91,10 +94,10 @@
 	"tpt-rev-discourage-tooltip": "Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
 	"tpt-rev-encourage-tooltip": "Tooltip for page action link text in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
 	"translate-edit-tag-warning": "{{notranslate}}\nShown when editing translatable pages. Default is empty.",
-	"translate-tag-translate-link-desc": "Link at the top of translatable pages, see [[mw:Help:Extension:Translate/Translation example]] for context.",
+	"translate-tag-translate-link-desc": "Link at the top of translatable pages, see [[mw:Help:Extension:Translate/Translation example]] for context.\n\nThis message may be optionally followed (on the same line) by {{Msg-mw|Translate-tag-hasnew}} (with a localized semicolon separator between them).",
 	"translate-tag-markthis": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"translate-tag-markthisagain": "\"has changes\" is to be understood as \"has been altered/edited\".\n\nParameters:\n* $1 - a link which points to the diff\n* $2 - a link which points to ...",
-	"translate-tag-hasnew": "\"has changes\" is to be understood as \"has been altered/edited\". $1 is a URL to view changes.",
+	"translate-tag-hasnew": "Link at the top of translatable pages, see [[mw:Help:Extension:Translate/Translation example]] for context.\n\nThe terms \"contains changes\" is to be understood as \"has been altered/edited\".\n* $1 is a URL to view changes.\n\nThis message appears conditionally in a banner line at top of translatable pages, after a semicolon separator, as a complement of the sentence started in {{Msg-mw|Translate-tag-translate-link-desc}}.",
 	"tpt-translation-intro": "Header of a translation page (see definition on [[mw:Help:Extension:Translate/Glossary]]).\n\nParameters:\n* $1 - URL\n* $2 - page title\n* $3 - translation percentage",
 	"tpt-translation-intro-fuzzy": "Example sentence styled as some content in the current page",
 	"tpt-languages-legend": "The caption of a language selector displayed using <code><nowiki><languages /></nowiki></code>. e.g. on [[mw:Project:About]].\n{{Identical|Otherlanguages}}",

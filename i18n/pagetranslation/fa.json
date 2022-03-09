@@ -16,7 +16,8 @@
 			"Reza1615",
 			"ZxxZxxZ",
 			"پاناروما",
-			"Jeeputer"
+			"Jeeputer",
+			"Beginneruser"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -58,7 +59,7 @@
 	"tpt-rev-mark": "علامت‌گذاری برای ترجمه",
 	"tpt-rev-unmark": "حذف از ترجمه",
 	"tpt-rev-discourage": "بازداشتن",
-	"tpt-rev-encourage": "احیا",
+	"tpt-rev-encourage": "بازیابی",
 	"tpt-rev-mark-tooltip": "علامت‌گذاری آخرین نسخهٔ این صفحه برای ترجمه.",
 	"tpt-rev-unmark-tooltip": "حذف این صفحه از ترجمه.",
 	"tpt-rev-discourage-tooltip": "بازاشتن از ترجمه‌های بیشتر در این صفحه.",
