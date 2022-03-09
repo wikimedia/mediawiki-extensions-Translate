@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
@@ -16,7 +17,7 @@ use Wikimedia\Rdbms\Database;
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation
  */
-class TranslatablePage {
+class TranslatablePage implements TranslatableBundle {
 	/**
 	 * List of keys in the metadata table that need to be handled for moves and deletions
 	 * @phpcs-require-sorted-array
@@ -107,11 +108,8 @@ class TranslatablePage {
 		return $obj;
 	}
 
-	/**
-	 * Returns the title for this translatable page.
-	 * @return Title
-	 */
-	public function getTitle() {
+	/** @inheritDoc */
+	public function getTitle(): Title {
 		return $this->title;
 	}
 
@@ -172,11 +170,8 @@ class TranslatablePage {
 		return $this->getTitle()->getPageLanguage()->getCode();
 	}
 
-	/**
-	 * Returns MessageGroup id (to be) used for translating this page.
-	 * @return string
-	 */
-	public function getMessageGroupId() {
+	/** @inheritDoc */
+	public function getMessageGroupId(): string {
 		return self::getMessageGroupIdFromTitle( $this->getTitle() );
 	}
 
@@ -442,11 +437,8 @@ class TranslatablePage {
 		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
 
-	/**
-	 * Fetch the available translation pages from database
-	 * @return Title[]
-	 */
-	public function getTranslationPages() {
+	/** @inheritDoc */
+	public function getTranslationPages(): array {
 		$dbr = TranslateUtils::getSafeReadDB();
 
 		$prefix = $this->getTitle()->getDBkey() . '/';
@@ -479,13 +471,7 @@ class TranslatablePage {
 		return $filtered;
 	}
 
-	/**
-	 * Returns a list of translation unit pages.
-	 * @param string $set Can be either 'all', or 'active'
-	 * @param ?string $code Only list unit pages in given language.
-	 * @return Title[]
-	 * @since 2012-08-06
-	 */
+	/** @inheritDoc */
 	public function getTranslationUnitPages( string $set = 'active', ?string $code = null ): array {
 		$dbw = wfGetDB( DB_PRIMARY );
 
