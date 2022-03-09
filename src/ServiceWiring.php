@@ -10,6 +10,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
@@ -107,6 +108,7 @@ return [
 			$services->getMovePageFactory(),
 			TranslateUtils::getJobQueueGroup(),
 			$services->getLinkBatchFactory(),
+			new TranslatableBundleFactory(),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},

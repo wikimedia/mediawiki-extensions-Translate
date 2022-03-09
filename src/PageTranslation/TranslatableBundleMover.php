@@ -8,6 +8,7 @@ use JobQueueGroup;
 use LogicException;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Page\MovePageFactory;
 use Message;
@@ -43,6 +44,8 @@ class TranslatableBundleMover {
 	private $jobQueue;
 	/** @var LinkBatchFactory */
 	private $linkBatchFactory;
+	/** @var TranslatableBundleFactory */
+	private $bundleFactory;
 	/** @var bool */
 	private $pageMoveLimitEnabled = true;
 
@@ -50,12 +53,14 @@ class TranslatableBundleMover {
 		MovePageFactory $movePageFactory,
 		JobQueueGroup $jobQueue,
 		LinkBatchFactory $linkBatchFactory,
+		TranslatableBundleFactory $bundleFactory,
 		?int $pageMoveLimit
 	) {
 		$this->movePageFactory = $movePageFactory;
 		$this->jobQueue = $jobQueue;
 		$this->pageMoveLimit = $pageMoveLimit;
 		$this->linkBatchFactory = $linkBatchFactory;
+		$this->bundleFactory = $bundleFactory;
 	}
 
 	public function getPageMoveCollection(
@@ -209,8 +214,8 @@ class TranslatableBundleMover {
 	): void {
 		$this->move( $source, $performer, $pagesToMove, $summary, $progressCallback );
 
-		$sourcePage = TranslatablePage::newFromTitle( $source );
-		$targetPage = TranslatablePage::newFromTitle( $target );
+		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
+		$targetBundle = $this->bundleFactory->getSameAsInstance( $sourceBundle, $target );
 
 		$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
 		$entry->setPerformer( $performer );
@@ -219,7 +224,7 @@ class TranslatableBundleMover {
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 
-		$this->moveMetadata( $sourcePage->getMessageGroupId(), $targetPage->getMessageGroupId() );
+		$this->moveMetadata( $sourceBundle->getMessageGroupId(), $targetBundle->getMessageGroupId() );
 
 		TranslatablePage::clearSourcePageCache();
 
@@ -229,8 +234,10 @@ class TranslatableBundleMover {
 		// runs in deferred updates, it will not run MessageIndexRebuildJob (T175834).
 		MessageIndex::singleton()->rebuild();
 
-		$job = TranslationsUpdateJob::newFromPage( $targetPage );
-		$this->jobQueue->push( $job );
+		if ( $targetBundle instanceof TranslatablePage ) {
+			$job = TranslationsUpdateJob::newFromPage( $targetBundle );
+			$this->jobQueue->push( $job );
+		}
 	}
 
 	public function disablePageMoveLimit(): void {
