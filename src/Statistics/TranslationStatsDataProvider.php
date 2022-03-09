@@ -7,7 +7,7 @@ use Language;
 use MediaWiki\Config\ServiceOptions;
 use MessageGroups;
 use TranslateUtils;
-use Wikimedia\ObjectFactory;
+use Wikimedia\ObjectFactory\ObjectFactory;
 use const TS_MW;
 
 /**

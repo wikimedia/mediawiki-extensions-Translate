@@ -16,7 +16,7 @@ use ThrottledError;
 use Title;
 use TranslatablePage;
 use UnlistedSpecialPage;
-use Wikimedia\ObjectFactory;
+use Wikimedia\ObjectFactory\ObjectFactory;
 
 /**
  * Replacement for Special:Movepage to allow renaming a translatable bundle and
