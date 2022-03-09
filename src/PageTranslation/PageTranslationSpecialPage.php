@@ -941,6 +941,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$storedLanguages = (string)TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$default = $storedLanguages !== '' ? explode( ',', $storedLanguages ) : [];
 
+		$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+		$priorityReason = $priorityReason !== false ? $priorityReason : '';
+
 		$form = new FieldsetLayout( [
 			'items' => [
 				new FieldLayout(
@@ -969,6 +972,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				new FieldLayout(
 					new TextInputWidget( [
 						'name' => 'priorityreason',
+						'value' => $priorityReason
 					] ),
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs-reason' )->text(),
