@@ -45,4 +45,12 @@ class TranslatableBundleFactory {
 			'Expected a class implementing TranslatableBundle, got ' . get_class( $instance )
 		);
 	}
+
+	public function getPageMoveLogger( TranslatableBundle $bundle ): PageMoveLogger {
+		if ( $bundle instanceof TranslatablePage ) {
+			return new PageMoveLogger( $bundle->getTitle(), 'pagetranslation' );
+		}
+
+		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );
+	}
 }

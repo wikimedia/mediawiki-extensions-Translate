@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use AggregateMessageGroup;
 use JobQueueGroup;
 use LogicException;
-use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Page\MovePageFactory;
@@ -212,17 +212,13 @@ class TranslatableBundleMover {
 		string $summary,
 		callable $progressCallback = null
 	): void {
-		$this->move( $source, $performer, $pagesToMove, $summary, $progressCallback );
-
 		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
 		$targetBundle = $this->bundleFactory->getSameAsInstance( $sourceBundle, $target );
 
-		$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
-		$entry->setPerformer( $performer );
-		$entry->setTarget( $source );
-		$entry->setParameters( [ 'target' => $target->getPrefixedText() ] );
-		$logid = $entry->insert();
-		$entry->publish( $logid );
+		$this->move( $sourceBundle, $performer, $pagesToMove, $summary, $progressCallback );
+
+		$this->bundleFactory->getPageMoveLogger( $sourceBundle )
+			->logSuccess( $performer, $target );
 
 		$this->moveMetadata( $sourceBundle->getMessageGroupId(), $targetBundle->getMessageGroupId() );
 
@@ -383,7 +379,7 @@ class TranslatableBundleMover {
 	}
 
 	/**
-	 * @param Title $baseSource
+	 * @param TranslatableBundle $sourceBundle
 	 * @param User $performer
 	 * @param string[] $pagesToMove
 	 * @param string $summary
@@ -391,7 +387,7 @@ class TranslatableBundleMover {
 	 * @return void
 	 */
 	private function move(
-		Title $baseSource,
+		TranslatableBundle $sourceBundle,
 		User $performer,
 		array $pagesToMove,
 		string $summary,
@@ -406,7 +402,7 @@ class TranslatableBundleMover {
 			$sourceTitle = Title::newFromText( $source );
 			$targetTitle = Title::newFromText( $target );
 
-			if ( $source === $baseSource->getPrefixedText() ) {
+			if ( $source === $sourceBundle->getTitle()->getPrefixedText() ) {
 				$user = $performer;
 			} else {
 				$user = $fuzzybot;
@@ -427,15 +423,8 @@ class TranslatableBundleMover {
 			}
 
 			if ( !$status->isOK() ) {
-				$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );
-				$entry->setPerformer( $performer );
-				$entry->setTarget( $sourceTitle );
-				$entry->setParameters( [
-					'target' => $target,
-					'error' => $status->getErrorsArray(),
-				] );
-				$logid = $entry->insert();
-				$entry->publish( $logid );
+				$this->bundleFactory->getPageMoveLogger( $sourceBundle )
+					->logError( $performer, $sourceTitle, $targetTitle, $status );
 			}
 
 			$this->unlock( [ $source, $target ] );
