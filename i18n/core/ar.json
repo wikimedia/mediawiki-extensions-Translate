@@ -197,6 +197,7 @@
 	"translate-mgs-totals": "كل $1 {{PLURAL:$1|لغة|لغات}} سويا",
 	"translate-mgs-invalid-group": "المجموعة المحددة $1 ليست موجودة.",
 	"translate-mgs-nothing": "لا يوجد شيء يعرض للإحصاءات المطلوبة.",
+	"translate-tes-type-to-search": "اكتب لبدء البحث",
 	"supportedlanguages": "اللغات المدعومة",
 	"supportedlanguages-summary": "تظهر هذه الصفحة قائمة بكل اللغات التي يدعمها {{SITENAME}}،\nمع أسماء المترجمين الذين يعملون على هذه اللغة.\nكلما ظهر اسم المترجم بخط أكبر، كان عدد تعديلاته أكثر.\nويشير لون الخط السفلي إلى حداثة نشاط المترجم هنا.",
 	"supportedlanguages-colorlegend": "مفتاح الألوان: آخر ترجمة منذ $1 يوم.",

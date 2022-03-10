@@ -155,5 +155,18 @@
 	"apierror-translate-sandboxdisabled": "Le function de cassa a sablo non es in uso.",
 	"apierror-translate-sandbox-invalidppassword": "Contrasigno invalide.",
 	"apierror-translate-smg-nochanges": "Il non ha cambiamentos a processar.",
-	"apierror-translate-unknownmessage": "Message incognite."
+	"apierror-translate-unknownmessage": "Message incognite.",
+	"apierror-translate-invalid-changeset-name": "Ha essite passate un nomine de file del gruppo de modificationes non valide: $1",
+	"apierror-translate-invalid-operation": "Operation non valide: $1. Valores valide: $2.",
+	"apierror-translate-addition-key-invalid": "Le clave de message passate pro addition non ha essite trovate in le lista de messages renominate pro le lingua de origine.",
+	"apierror-translate-rename-msg-new": "Solo messages renominate pote esser addite como nove messages.",
+	"apierror-translate-rename-key-invalid": "Le claves de message passate pro renomination non ha essite trovate in le lista de cambiamentos pro le lingua de origine.",
+	"apierror-translate-rename-state-invalid": "Un del messages passate pro renomination debe esser novemente addite e le altere debe esser delite. Statos actual: addition: $1 e deletion: $2.",
+	"apiwarn-translate-alreadyreviewedbyyou": "Ja marcate como revidite per te",
+	"apiwarn-translate-language-disabled-source": "Le lingua de origine de iste gruppo es $1. Per favor selige un altere lingua in le qual traducer.",
+	"apierror-translate-operation-error": "Occurreva un error durante le tractamento del requesta. Error: $1",
+	"apihelp-translationentitysearch-summary": "Cercar messages e gruppos de messages",
+	"apihelp-translationentitysearch-param-entitytype": "Le typo de entitate que se consulta",
+	"apihelp-translationentitysearch-param-query": "Consulta de recerca",
+	"apihelp-translationentitysearch-param-limit": "Numero maxime de resultatos del recerca"
 }
