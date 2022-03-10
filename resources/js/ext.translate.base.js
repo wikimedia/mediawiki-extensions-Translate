@@ -19,7 +19,7 @@
 		 * @param {string} language Language code.
 		 * @return {jQuery.Deferred}
 		 */
-		loadLanguageStats: function ( language ) {
+		loadMessageGroupStatsForLanguage: function ( language ) {
 			if ( !mw.translate.languageStatsLoader[ language ] ) {
 				mw.translate.languageStatsLoader[ language ] = new mw.Api().get( {
 					action: 'query',
@@ -42,7 +42,7 @@
 		 * @param {string} group
 		 * @return {jQuery.Deferred}
 		 */
-		loadLanguageStatsForGroup: function ( language, group ) {
+		loadMessageGroupStatsForItem: function ( language, group ) {
 			var uniqueKey = group + '|' + language;
 			if ( !mw.translate.languageStatsLoader[ uniqueKey ] ) {
 				mw.translate.languageStatsLoader[ uniqueKey ] = new mw.Api().get( {

@@ -149,9 +149,9 @@
 
 		loadStats: function () {
 			if ( this.onlyLoadCurrentGroupData ) {
-				return mw.translate.loadLanguageStatsForGroup( this.language, this.group );
+				return mw.translate.loadMessageGroupStatsForItem( this.language, this.group );
 			} else {
-				return mw.translate.loadLanguageStats( this.language );
+				return mw.translate.loadMessageGroupStatsForLanguage( this.language );
 			}
 		},
 
