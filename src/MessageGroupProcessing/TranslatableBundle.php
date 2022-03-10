@@ -38,10 +38,7 @@ interface TranslatableBundle {
 	/**
 	 * Return the available translation units for the bundle
 	 * @see Translation unit: https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary
-	 * @param string $set Can be either 'all', or 'active'
 	 * @return Title[]
 	 */
-	public function getTranslationUnitPages(
-		string $set = 'active', ?string $code = null
-	): array;
+	public function getTranslationUnitPages( ?string $code = null ): array;
 }

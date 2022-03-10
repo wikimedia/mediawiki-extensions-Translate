@@ -261,7 +261,7 @@ class TranslatableBundleMover {
 		}
 
 		$translationUnitPageList = [];
-		foreach ( $page->getTranslationUnitPages( 'all' ) as $from ) {
+		foreach ( $page->getTranslationUnitPages() as $from ) {
 			$translationUnitPageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
 		}
 

@@ -472,7 +472,7 @@ class TranslatablePage implements TranslatableBundle {
 	}
 
 	/** @inheritDoc */
-	public function getTranslationUnitPages( string $set = 'active', ?string $code = null ): array {
+	public function getTranslationUnitPages( ?string $code = null ): array {
 		$dbw = wfGetDB( DB_PRIMARY );
 
 		$base = $this->getTitle()->getPrefixedDBkey();
@@ -496,28 +496,16 @@ class TranslatablePage implements TranslatableBundle {
 		// Problematic cases are when pages Foo and Foo/bar are both
 		// translatable. Then when querying for Foo, we also get units
 		// belonging to Foo/bar.
-		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
-		// This method (getTranslationUnitPages) is only called when deleting or moving a
-		// translatable page. This should be low traffic, and since this method is already using
-		// the primary database for the other query, it seems safer to use the write here until
-		// this is refactored.
-		$store = $factory->getWriter( $this->getTitle() );
-		$sections = array_flip( $store->getNames() );
 		$units = [];
 		foreach ( $res as $row ) {
 			$title = Title::newFromRow( $row );
 
 			// Strip the language code and the name of the
-			// translatable to get plain section key
+			// translatable to get plain translation unit id
 			$handle = new MessageHandle( $title );
 			$key = substr( $handle->getKey(), $baseLength );
 			if ( strpos( $key, '/' ) !== false ) {
 				// Probably belongs to translatable subpage
-				continue;
-			}
-
-			// Check against list of sections if requested
-			if ( $set === 'active' && !isset( $sections[$key] ) ) {
 				continue;
 			}
 

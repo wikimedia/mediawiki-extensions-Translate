@@ -398,7 +398,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 	private function getSectionPages(): array {
 		$code = $this->singleLanguage() ? $this->code : null;
 
-		return $this->page->getTranslationUnitPages( 'all', $code );
+		return $this->page->getTranslationUnitPages( $code );
 	}
 
 	/**
