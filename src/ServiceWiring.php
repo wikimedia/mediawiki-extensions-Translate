@@ -11,6 +11,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
@@ -102,13 +103,18 @@ return [
 		);
 	},
 
+	'Translate:TranslatableBundleFactory' => static function ( MediaWikiServices $services ): TranslatableBundleFactory
+	{
+		return new TranslatableBundleFactory( $services->get( 'Translate:TranslatablePageStore' ) );
+	},
+
 	'Translate:TranslatableBundleMover' => static function ( MediaWikiServices $services ): TranslatableBundleMover
 	{
 		return new TranslatableBundleMover(
 			$services->getMovePageFactory(),
 			TranslateUtils::getJobQueueGroup(),
 			$services->getLinkBatchFactory(),
-			new TranslatableBundleFactory(),
+			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},
@@ -117,6 +123,14 @@ return [
 	{
 		return new TranslatablePageParser(
 			$services->get( 'Translate:ParsingPlaceholderFactory' )
+		);
+	},
+
+	'Translate:TranslatablePageStore' => static function ( MediaWikiServices $services ): TranslatablePageStore
+	{
+		return new TranslatablePageStore(
+			$services->get( 'Translate:MessageIndex' ),
+			TranslateUtils::getJobQueueGroup()
 		);
 	},
 

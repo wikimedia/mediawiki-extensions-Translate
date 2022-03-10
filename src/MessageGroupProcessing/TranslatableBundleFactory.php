@@ -15,6 +15,13 @@ use TranslatablePage;
  * @license GPL-2.0-or-later
  */
 class TranslatableBundleFactory {
+	/** @var TranslatablePageStore */
+	private $translatablePageStore;
+
+	public function __construct( TranslatablePageStore $translatablePageStore ) {
+		$this->translatablePageStore = $translatablePageStore;
+	}
+
 	/** Returns a TranslatableBundle if Title is a valid translatable bundle else returns null */
 	public function getBundle( Title $title ): ?TranslatableBundle {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
@@ -35,20 +42,17 @@ class TranslatableBundleFactory {
 		throw new InvalidArgumentException( "{$title->getPrefixedText()} is not a TranslatableBundle" );
 	}
 
-	/** From the title create a bundle of the same type as the other TranslatableBundle passed */
-	public function getSameAsInstance( TranslatableBundle $instance, Title $title ): TranslatableBundle {
-		if ( $instance instanceof TranslatablePage ) {
-			return TranslatablePage::newFromTitle( $title );
-		}
-
-		throw new InvalidArgumentException(
-			'Expected a class implementing TranslatableBundle, got ' . get_class( $instance )
-		);
-	}
-
 	public function getPageMoveLogger( TranslatableBundle $bundle ): PageMoveLogger {
 		if ( $bundle instanceof TranslatablePage ) {
 			return new PageMoveLogger( $bundle->getTitle(), 'pagetranslation' );
+		}
+
+		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );
+	}
+
+	public function getStore( TranslatableBundle $bundle ): TranslatableBundleStore {
+		if ( $bundle instanceof TranslatablePage ) {
+			return $this->translatablePageStore;
 		}
 
 		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );

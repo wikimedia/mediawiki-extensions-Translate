@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
@@ -89,6 +91,11 @@ class Services implements ContainerInterface {
 		return $this->get( 'Translate:ProgressStatsTableFactory' );
 	}
 
+	/** @since 2022.03 */
+	public function getTranslatableBundleFactory(): TranslatableBundleFactory {
+		return $this->get( 'Translate:TranslatableBundleFactory' );
+	}
+
 	/** @since 2022.02 */
 	public function getTranslatableBundleMover(): TranslatableBundleMover {
 		return $this->get( 'Translate:TranslatableBundleMover' );
@@ -96,6 +103,11 @@ class Services implements ContainerInterface {
 
 	public function getTranslatablePageParser(): TranslatablePageParser {
 		return $this->get( 'Translate:TranslatablePageParser' );
+	}
+
+	/** @since 2022.03 */
+	public function getTranslatablePageStore(): TranslatablePageStore {
+		return $this->get( 'Translate:TranslatablePageStore' );
 	}
 
 	/** @since 2020.11 */
