@@ -27,7 +27,9 @@
 	"apihelp-query+languagestats-description": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-summary": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-param-language": "Sprachcode.",
+	"apihelp-query+languagestats-param-group": "Nachrichtengruppen-ID.",
 	"apihelp-query+languagestats-example-1": "Listet Übersetzungsvervollständigungsstatistiken für Finnisch auf.",
+	"apihelp-query+languagestats-example-2": "Liste der Übersetzungsabschlussstatistiken für Finnisch für Gruppe A",
 	"apihelp-query+messagecollection-description": "Ruft die Nachrichtensammlung über Übersetzungen ab.",
 	"apihelp-query+managemessagegroups-summary": "Abrufen möglicher Umbenennungen für eine Nachricht in einer Gruppe während des Imports",
 	"apihelp-query+managemessagegroups-description": "Abrufen möglicher Umbenennungen für eine Nachricht in einer Gruppe während des Imports",
@@ -135,11 +137,14 @@
 	"apierror-translate-sandbox-invalidppassword": "Ungültiges Passwort",
 	"apierror-translate-smg-nochanges": "Es gibt keine zu verarbeitenden Änderungen.",
 	"apierror-translate-unknownmessage": "Unbekannte Nachricht",
+	"apierror-translate-invalid-operation": "Ungültige Operation: $1. Gültige Werte - $2.",
 	"apierror-translate-rename-msg-new": "Nur umbenannte Nachrichten können als neue Nachrichten hinzugefügt werden.",
 	"apierror-translate-rename-key-invalid": "Die zur Umbenennung übergebenen Nachrichtenschlüssel wurden in der Liste der Änderungen für die Ausgangssprache nicht gefunden.",
 	"apierror-translate-rename-state-invalid": "Eine der zur Umbenennung übergebenen Nachrichten sollte neu hinzugefügt und die andere gelöscht werden. Aktuelle Zustände - Hinzufügen: $1 und Löschen: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert",
 	"apiwarn-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus.",
 	"apierror-translate-operation-error": "Es ist ein Fehler bei der Verarbeitung der Anfrage aufgetreten. Fehler: $1",
-	"apihelp-translationentitysearch-param-query": "Suchanfrage"
+	"apihelp-translationentitysearch-summary": "Suche nach Nachrichtengruppen und Nachrichten",
+	"apihelp-translationentitysearch-param-query": "Suchanfrage",
+	"apihelp-translationentitysearch-param-limit": "Maximale Anzahl der Suchergebnisse"
 }

@@ -402,10 +402,22 @@
 	"tux-editor-message-tools-translations": "Tote le traductiones",
 	"tux-editor-message-tools-linktothis": "Ligamine verso iste message",
 	"tux-editor-loading": "Cargamento…",
+	"tux-editor-loading-failed": "Non poteva cargar le adjutas de traduction: $1",
 	"translate-search-more-languages-info": "$1 altere {{PLURAL:$1|lingua|linguas}}",
 	"translate-statsbar-tooltip": "$1% traducite, $2% revidite",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traducite, $2% revidite, $3% obsolete",
 	"translate-search-more-groups-info": "$1 altere {{PLURAL:$1|gruppo|gruppos}}",
+	"translate-syntax-error": "Le traduction contine errores de syntaxe",
 	"tux-session-expired": "Le session ha essite claudite. Per favor, re-aperi session in un fenestra o scheda separate del navigator. Alternativemente, face un copia del traductiones non salveguardate, aperi session, retorna a iste pagina e re-insere le traductiones.",
-	"tux-nojs": "Iste instrumento non functiona sin JavaScript. Pote esser que JavaScript es disactivate o non functiona, o que iste navigator non es supportate."
+	"tux-nojs": "Iste instrumento non functiona sin JavaScript. Pote esser que JavaScript es disactivate o non functiona, o que iste navigator non es supportate.",
+	"specialpages-group-translation": "Traduction",
+	"content-model-translate-messagebundle": "Pacchetto de messages a traducer",
+	"translate-messagebundle-validation-error": "Pacchetto de messages non valide: $1",
+	"translate-messagebundle-error-invalid-array": "Le pacchetto de messages debe esser un objecto JSON. Recipeva typo $1",
+	"translate-messagebundle-error-key-empty": "Le pacchetto de messages non debe continer un clave vacue",
+	"translate-messagebundle-error-key-too-long": "Le clave \"$1\" es troppo longe",
+	"translate-messagebundle-error-key-invalid-characters": "Le clave \"$1\" contine characteres non permittite",
+	"translate-messagebundle-error-invalid-value": "Le clave \"$1\" non contine un valor de catena",
+	"translate-messagebundle-error-empty-value": "Le clave \"$1\" non ha un valor",
+	"translate-messagebundle-group-description": "Messages de un pacchetto de messages definite sur le pagina [[$2|$1]]."
 }
