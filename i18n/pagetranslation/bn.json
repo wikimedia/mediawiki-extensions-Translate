@@ -10,6 +10,7 @@
 		]
 	},
 	"pagetranslation": "পাতা অনুবাদ",
+	"tps-edit-sourcepage-text": "আপনি একটি অনুবাদের উৎস পাতা সম্পাদনা করছেন। অনুগ্রহ করে নিশ্চিত করুন যে আপনি নিম্নলিখিত নথিপত্রের সাথে পরিচিত:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text উৎসের পাঠ্য পরিবর্তন করা]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples ব্যবহারের জন্য মার্কআপের উদাহরণ]",
 	"tps-edit-sourcepage-ve-warning-title": "সতর্কতা: অ-সমর্থিত পাতা",
 	"tps-edit-sourcepage-ve-warning-text": "আপনি একটি অনুবাদযোগ্য পাতা সম্পাদনা করছেন। এইগুলি এই সম্পাদকের মাধ্যমে সম্পাদনা করা এখনও আনুষ্ঠানিকভাবে সমর্থিত নয়। অনুগ্রহপূর্বক উৎস সম্পাদক ব্যবহার করুন।",
 	"tps-edit-sourcepage-ve-warning-button": "ঠিক আছে",
@@ -95,5 +96,6 @@
 	"tpt-translate-title": "পাতার শিরোনাম অনুবাদের অনুমোদন দিন",
 	"pp-save-button-label": "প্রকাশ করুন",
 	"pp-cancel-button-label": "বাতিল",
+	"pp-diff-old-header": "উত্স পাঠ্য",
 	"tpt-generic-button": "নিশ্চিত করুন"
 }

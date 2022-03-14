@@ -182,7 +182,7 @@
 	"apiwarn-translate-language-disabled-source": "La langue source de ce groupe est $1. Veuillez sélectionner une autre langue vers laquelle traduire.",
 	"apierror-translate-operation-error": "Une erreur est survenue lors du traitement de la requête. Erreur : $1",
 	"apihelp-translationentitysearch-summary": "Rechercher des groupes de message et des messages",
-	"apihelp-translationentitysearch-param-entitytype": "Type d’entité requêté",
+	"apihelp-translationentitysearch-param-entitytype": "Type d’entité demandé",
 	"apihelp-translationentitysearch-param-query": "Requête de recherche",
 	"apihelp-translationentitysearch-param-limit": "Nombre maximal de résultats de recherche"
 }

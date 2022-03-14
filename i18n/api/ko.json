@@ -11,6 +11,7 @@
 	"apihelp-groupreview-param-group": "메시지 그룹.",
 	"apihelp-groupreview-param-language": "언어 코드.",
 	"apihelp-query+languagestats-param-language": "언어 코드입니다.",
+	"apihelp-query+languagestats-param-group": "메시지 그룹 ID입니다.",
 	"apihelp-query+managemessagegroups-param-groupId": "그룹 Id",
 	"apihelp-query+managemessagegroups-param-messageKey": "메시지 키",
 	"apihelp-query+messagecollection-param-group": "메시지 그룹.",

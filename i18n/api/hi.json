@@ -26,7 +26,9 @@
 	"apihelp-query+languagestats-description": "भाषा सांख्यिकी क्वेरी करें।",
 	"apihelp-query+languagestats-summary": "भाषा सांख्यिकी क्वेरी करें।",
 	"apihelp-query+languagestats-param-language": "भाषा कोड।",
+	"apihelp-query+languagestats-param-group": "संदेश समूह ID।",
 	"apihelp-query+languagestats-example-1": "फ़िनिश के लिए अनुवाद समाप्ति की स्थिति",
+	"apihelp-query+languagestats-example-2": "समूह 'क' के लिए फ़िनिश भाषा की अनुवाद पूर्णता सांख्यिकी",
 	"apihelp-query+messagecollection-description": "अनुवादों के बारे में MessageCollection क्वेरी करें।",
 	"apihelp-query+managemessagegroups-summary": "आयात के समय संदेश के समूह में संदेश के संभव स्थानांतरणों को खोजें",
 	"apihelp-query+managemessagegroups-description": "आयात के समय संदेश के समूह में संदेश के संभव स्थानांतरणों को खोजें",
@@ -99,7 +101,7 @@
 	"apihelp-translationstash-description": "स्टैश पर अनुवाद जोड़ें।",
 	"apihelp-translationstash-summary": "स्टैश पर अनुवाद जोड़ें।",
 	"apihelp-translationstash-param-subaction": "क्रिया।",
-	"apihelp-translationstash-param-title": "अनुवाद यूनिट पृष्ठ का शीर्षक।",
+	"apihelp-translationstash-param-title": "अनुवाद इकाई पृष्ठ का शीर्षक।",
 	"apihelp-translationstash-param-translation": "सदस्य द्वारा किया गया अनुवाद।",
 	"apihelp-translationstash-param-metadata": "JSON ऑब्जेक्ट।",
 	"apihelp-translationstash-param-username": "वैकल्पिक रूप से, वह सदस्य जिसका स्टैश प्राप्त करना है। सिर्फ अधिकार वाले सदस्य ही यह कर सकते हैं।",
@@ -170,6 +172,7 @@
 	"apiwarn-translate-language-disabled-source": "इस समूह के स्रोत की भाषा $1 है। इसे अनुवादित करने के लिए कोई दूसरी भाषा चुनें।",
 	"apierror-translate-operation-error": "अनुरोध को प्रोसेस करते समय एक त्रुटि आई। त्रुटि: $1",
 	"apihelp-translationentitysearch-summary": "संदेश समूह और संदेश खोजें",
+	"apihelp-translationentitysearch-param-entitytype": "सत्ते के प्रकार को क्वेरी की जा रही है",
 	"apihelp-translationentitysearch-param-query": "खोज क्वेरी",
 	"apihelp-translationentitysearch-param-limit": "अधिकतम परिणाम संख्या"
 }
