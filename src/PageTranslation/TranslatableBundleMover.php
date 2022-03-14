@@ -17,9 +17,7 @@ use SplObjectStorage;
 use Status;
 use Title;
 use TranslatableBundleMoveJob;
-use TranslatablePage;
 use TranslateUtils;
-use Traversable;
 use User;
 
 /**
@@ -232,109 +230,143 @@ class TranslatableBundleMover {
 		bool $fetchTranslatableSubpages,
 		bool $moveTalkPages
 	): PageMoveCollection {
-		$page = TranslatablePage::newFromTitle( $source );
-		$translatableMovePage = new PageMoveOperation( $source, $target );
-		$pageTitleRenamer = new PageTitleRenamer( $source, $target );
+		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
 
-		$translationPageList = [];
-		foreach ( $page->getTranslationPages() as $from ) {
-			$translationPageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
-		}
+		$classifiedSubpages = $this->getSubpagesPerType( $sourceBundle, $moveTalkPages );
 
-		$translationUnitPageList = [];
-		foreach ( $page->getTranslationUnitPages() as $from ) {
-			$translationUnitPageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
-		}
-
-		$subpageList = [];
-		if ( $moveSubPages && TranslateUtils::allowsSubpages( $source ) ) {
-			$currentSubpages = $this->getNormalSubpages( $page );
-			foreach ( $currentSubpages as $from ) {
-				$subpageList[] = $this->createPageMoveOperation( $pageTitleRenamer, $from );
-			}
-		}
-
-		$translatableTalkpageList = [];
-		// If the source page is a talk page itself, no point looking for more talk pages
-		if ( $moveTalkPages && !$source->isTalkPage() ) {
-			$possiblePagesToBeMoved = array_merge(
-				[ $translatableMovePage ],
-				$translationPageList,
-				$translationUnitPageList,
-				$subpageList
-			);
-
-			$talkPages = $this->getTalkPagesForMove( $possiblePagesToBeMoved );
-			foreach ( $possiblePagesToBeMoved as $index => $pageOperation ) {
-				$currentTalkPage = $talkPages[$index] ?? null;
-				if ( $currentTalkPage === null ) {
-					continue;
-				}
-
-				// If the talk page is translatable, we do not move it, and inform the user
-				// that this needs to be moved separately.
-				if ( TranslatablePage::isSourcePage( $currentTalkPage ) ) {
-					$translatableTalkpageList[] = $currentTalkPage;
-					continue;
-				}
-
-				$pageOperation->setTalkpage(
-					$currentTalkPage, $pageTitleRenamer->getNewTitle( $currentTalkPage )
-				);
-			}
-		}
-
-		$relatedTranslatablePageList = $translatableTalkpageList;
+		$talkPages = $moveTalkPages ? $classifiedSubpages['talkPages'] : [];
+		$subpages = $moveSubPages ? $classifiedSubpages['normalSubpages'] : [];
+		$relatedTranslatablePageList = [];
 		if ( $fetchTranslatableSubpages ) {
 			$relatedTranslatablePageList = array_merge(
-				$relatedTranslatablePageList,
-				$this->getTranslatableSubpages( TranslatablePage::newFromTitle( $source ) )
+				$classifiedSubpages['translatableSubpages'],
+				$classifiedSubpages['translatableTalkPages']
 			);
 		}
 
+		$pageTitleRenamer = new PageTitleRenamer( $source, $target );
+		$createOps = static function ( array $pages ) use ( $pageTitleRenamer, $talkPages ) {
+			$ops = [];
+			foreach ( $pages as $from ) {
+				$to = $pageTitleRenamer->getNewTitle( $from );
+				$op = new PageMoveOperation( $from, $to );
+
+				$talkPage = $talkPages[ $from->getPrefixedDBkey() ] ?? null;
+				if ( $talkPage ) {
+					$op->setTalkpage( $talkPage, $pageTitleRenamer->getNewTitle( $talkPage ) );
+				}
+				$ops[] = $op;
+			}
+
+			return $ops;
+		};
+
 		return new PageMoveCollection(
-			$translatableMovePage,
-			$translationPageList,
-			$translationUnitPageList,
-			$subpageList,
+			$createOps( [ $source ] )[0],
+			$createOps( $classifiedSubpages['translationPages'] ),
+			$createOps( $classifiedSubpages['translationUnitPages'] ),
+			$createOps( $subpages ),
 			$relatedTranslatablePageList
 		);
 	}
 
-	/** @return Title[] */
-	private function getNormalSubpages( TranslatablePage $page ): array {
-		return array_filter(
-			$this->getSubpages( $page ),
-			static function ( $page ) {
-				return !(
-					TranslatablePage::isTranslationPage( $page ) ||
-					TranslatablePage::isSourcePage( $page )
-				);
-			}
-		);
-	}
+	private function getSubpagesPerType( TranslatableBundle $bundle, bool $fetchTalkPages ): array {
+		$classifiedSubPages = [
+			'translationPages' => [],
+			'translatableSubpages' => [],
+			'translationUnitPages' => [],
+			'normalSubpages' => [],
+			'talkPages' => [],
+			'translatableTalkPages' => []
+		];
 
-	/** @return Title[] */
-	private function getTranslatableSubpages( TranslatablePage $page ): array {
-		return array_filter(
-			$this->getSubpages( $page ),
-			static function ( $page ) {
-				return TranslatablePage::isSourcePage( $page );
+		$classifiedSubPages['translationPages'] = $bundle->getTranslationPages();
+		$classifiedSubPages['translationUnitPages'] = $bundle->getTranslationUnitPages();
+
+		$bundleTitle = $bundle->getTitle();
+		if ( !TranslateUtils::allowsSubpages( $bundleTitle ) ) {
+			return $classifiedSubPages;
+		}
+
+		$allSubpages = $bundle->getTitle()->getSubpages();
+
+		// Index the subpages
+		$allSubpagesIndexed = [];
+		foreach ( $allSubpages as $page ) {
+			$allSubpagesIndexed[ $page->getPrefixedDBkey() ] = $page;
+		}
+
+		// Remove translation pages from subpages
+		foreach ( $classifiedSubPages[ 'translationPages' ] as $translationPage ) {
+			if ( isset( $allSubpagesIndexed[ $translationPage->getPrefixedDBkey() ] ) ) {
+				unset( $allSubpagesIndexed[ $translationPage->getPrefixedDBkey() ] );
 			}
+		}
+
+		// Remove subpages that are translatable bundles
+		foreach ( $allSubpagesIndexed as $index => $subpage ) {
+			if ( $this->bundleFactory->getBundle( $subpage ) ) {
+				$classifiedSubPages['translatableSubpages'][] = $subpage;
+				unset( $allSubpagesIndexed[$index] );
+			}
+		}
+
+		// Remove translation pages for translatable pages found
+		$allSubpagesIndexed = $this->filterOtherTranslationPages(
+			$allSubpagesIndexed, $classifiedSubPages['translatableSubpages']
 		);
+
+		$classifiedSubPages['normalSubpages'] = $allSubpagesIndexed;
+
+		if ( $fetchTalkPages && !$bundle->getTitle()->isTalkPage() ) {
+			// We don't fetch talk pages for translatable subpages
+			$talkPages = $this->getTalkPages(
+				array_merge(
+					[ $bundle->getTitle() ],
+					$classifiedSubPages['translationPages'],
+					$classifiedSubPages['translationUnitPages'],
+					$classifiedSubPages['normalSubpages']
+				)
+			);
+
+			$translatableTalkPages = [];
+			foreach ( $talkPages as $key => $talkPage ) {
+				if ( $talkPage === null ) {
+					continue;
+				}
+
+				if ( $this->bundleFactory->getBundle( $talkPage ) ) {
+					$translatableTalkPages[] = $talkPage;
+					unset( $talkPages[$key] );
+				}
+			}
+
+			$classifiedSubPages['talkPages'] = $talkPages;
+			$classifiedSubPages['translatableTalkPages'] = $translatableTalkPages;
+		}
+
+		return $classifiedSubPages;
 	}
 
 	/**
-	 * Returns all subpages, if the namespace has them enabled.
-	 * @return Title[]
+	 * Remove translation pages for translatable pages from the list of all pages
+	 * @param Title[] $allPages
+	 * @param Title[] $translatablePages
 	 */
-	private function getSubpages( TranslatablePage $page ): array {
-		$pages = $page->getTitle()->getSubpages();
-		if ( $pages instanceof Traversable ) {
-			$pages = iterator_to_array( $pages );
+	private function filterOtherTranslationPages( array $allPages, array $translatablePages ): array {
+		$mappedTranslatablePages = [];
+		foreach ( $translatablePages as $index => $page ) {
+			$mappedTranslatablePages[ $page->getText() ] = $index;
 		}
 
-		return $pages;
+		foreach ( $allPages as $prefixedDbKeyTitle => $subpage ) {
+			[ $key, ] = TranslateUtils::figureMessage( $subpage->getText() );
+			if ( isset( $mappedTranslatablePages[ $key ] ) ) {
+				unset( $allPages[ $prefixedDbKeyTitle ] );
+			}
+		}
+
+		return $allPages;
 	}
 
 	/** @param string[] $titles */
@@ -418,16 +450,16 @@ class TranslatableBundleMover {
 	 * To identify the talk pages, we first gather the possible talk pages into
 	 * and then check that they exist. Title::exists perform a database check so
 	 * we gather them into LinkBatch to reduce the performance impact.
-	 * @param PageMoveOperation[] $pageMoveOperations
+	 * @param Title[] $pages
 	 * @return Title[]
 	 */
-	private function getTalkPagesForMove( array $pageMoveOperations ): array {
+	private function getTalkPages( array $pages ): array {
 		$lb = $this->linkBatchFactory->newLinkBatch();
 		$talkPageList = [];
 
-		foreach ( $pageMoveOperations as $pageOperation ) {
-			$talkPage = $pageOperation->getOldTitle()->getTalkPageIfDefined();
-			$talkPageList[] = $talkPage;
+		foreach ( $pages as $page ) {
+			$talkPage = $page->getTalkPageIfDefined();
+			$talkPageList[ $page->getPrefixedDBkey() ] = $talkPage;
 			if ( $talkPage ) {
 				$lb->addObj( $talkPage );
 			}
@@ -441,17 +473,6 @@ class TranslatableBundleMover {
 		}
 
 		return $talkPageList;
-	}
-
-	private function createPageMoveOperation( PageTitleRenamer $renamer, Title $from ): PageMoveOperation {
-		try {
-			$to = $renamer->getNewTitle( $from );
-			$operation = new PageMoveOperation( $from, $to );
-		} catch ( InvalidPageTitleRename $e ) {
-			$operation = new PageMoveOperation( $from, null, $e );
-		}
-
-		return $operation;
 	}
 
 	private function getRenameMoveBlocker( Title $old, string $pageType, int $renameError ): Status {
