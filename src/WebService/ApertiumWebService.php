@@ -7,7 +7,13 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use FormatJson;
+use LanguageCode;
 use MediaWiki\MediaWikiServices;
+use Sanitizer;
+use TranslateUtils;
 
 /**
  * Implements support Apetrium translator api.

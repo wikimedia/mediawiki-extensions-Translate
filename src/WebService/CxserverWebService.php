@@ -1,20 +1,22 @@
 <?php
 /**
- * Contains a class for querying external translation service.
- *
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use FormatJson;
 use MediaWiki\MediaWikiServices;
 
 /**
- * Implements support for cxserver proxied through RESTBase
+ * Contains a class for querying external translation service.
+ * Implements support for cxserver api
  * @ingroup TranslationWebService
- * @since 2017.10
+ * @since 2015.02
  */
-class RESTBaseWebService extends TranslationWebService {
+class CxserverWebService extends TranslationWebService {
 	public function getType() {
 		return 'mt';
 	}
@@ -25,12 +27,12 @@ class RESTBaseWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		if ( !isset( $this->config['host'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'RESTBase host not set' );
+			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
 
 		$pairs = [];
 
-		$url = $this->config['host'] . '/rest_v1/transform/list/tool/mt/';
+		$url = $this->config['host'] . '/v1/list/mt';
 		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 			$url,
 			[ $this->config['timeout'] ],
@@ -39,7 +41,7 @@ class RESTBaseWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json, true );
 
 		if ( !is_array( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . $url . ' ' . (string)$json;
+			$exception = 'Malformed reply from remote server: ' . (string)$json;
 			throw new TranslationWebServiceException( $exception );
 		}
 
@@ -54,12 +56,12 @@ class RESTBaseWebService extends TranslationWebService {
 
 	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['host'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'RESTBase host not set' );
+			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-		$url = $this->config['host'] . "/rest_v1/transform/html/from/$from/to/$to/Apertium";
+		$url = $this->config['host'] . "/v1/mt/$from/$to/Apertium";
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
@@ -68,13 +70,15 @@ class RESTBaseWebService extends TranslationWebService {
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
 		$body = $reply->getBody();
-
 		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
 
 		$text = $response->contents;
+		if ( preg_match( '~^<div>(.*)</div>$~', $text ) ) {
+			$text = preg_replace( '~^<div>(.*)</div>$~', '\1', $text );
+		}
 		$text = $this->unwrapUntranslatable( $text );
 
 		return trim( $text );

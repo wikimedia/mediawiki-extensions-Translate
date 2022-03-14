@@ -7,14 +7,17 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use FormatJson;
 use MediaWiki\MediaWikiServices;
 
 /**
- * Implements support for cxserver api
+ * Implements support for cxserver proxied through RESTBase
  * @ingroup TranslationWebService
- * @since 2015.02
+ * @since 2017.10
  */
-class CxserverWebService extends TranslationWebService {
+class RESTBaseWebService extends TranslationWebService {
 	public function getType() {
 		return 'mt';
 	}
@@ -25,12 +28,12 @@ class CxserverWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		if ( !isset( $this->config['host'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
+			throw new TranslationWebServiceConfigurationException( 'RESTBase host not set' );
 		}
 
 		$pairs = [];
 
-		$url = $this->config['host'] . '/v1/list/mt';
+		$url = $this->config['host'] . '/rest_v1/transform/list/tool/mt/';
 		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 			$url,
 			[ $this->config['timeout'] ],
@@ -39,7 +42,7 @@ class CxserverWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json, true );
 
 		if ( !is_array( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . (string)$json;
+			$exception = 'Malformed reply from remote server: ' . $url . ' ' . (string)$json;
 			throw new TranslationWebServiceException( $exception );
 		}
 
@@ -54,12 +57,12 @@ class CxserverWebService extends TranslationWebService {
 
 	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['host'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
+			throw new TranslationWebServiceConfigurationException( 'RESTBase host not set' );
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-		$url = $this->config['host'] . "/v1/mt/$from/$to/Apertium";
+		$url = $this->config['host'] . "/rest_v1/transform/html/from/$from/to/$to/Apertium";
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
@@ -68,15 +71,13 @@ class CxserverWebService extends TranslationWebService {
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
 		$body = $reply->getBody();
+
 		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
 
 		$text = $response->contents;
-		if ( preg_match( '~^<div>(.*)</div>$~', $text ) ) {
-			$text = preg_replace( '~^<div>(.*)</div>$~', '\1', $text );
-		}
 		$text = $this->unwrapUntranslatable( $text );
 
 		return trim( $text );

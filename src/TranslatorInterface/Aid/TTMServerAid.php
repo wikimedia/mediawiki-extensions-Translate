@@ -7,13 +7,13 @@ use Exception;
 use IContextSource;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
+use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
+use MediaWiki\Extension\Translate\WebService\TranslationWebService;
 use MessageGroup;
 use MessageHandle;
 use ReadableTTMServer;
-use RemoteTTMServerWebService;
 use Title;
 use TranslateUtils;
-use TranslationWebService;
 use TTMServer;
 
 /**

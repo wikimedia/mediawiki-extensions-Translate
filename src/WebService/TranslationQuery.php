@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
 /**
  * Mutable objects that represents a HTTP(S) query.
  * NB: Too lazy to make TranslationQueryFactory to make this class immutable.

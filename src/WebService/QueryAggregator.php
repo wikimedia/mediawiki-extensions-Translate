@@ -5,13 +5,16 @@
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * Runs multiple web service queries asynchronously to save time.
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
 use MediaWiki\MediaWikiServices;
+use RuntimeException;
+use TranslateUtils;
 
 /**
- * Runs multiple web service queries asynchronously to save time.
- *
  * @ingroup TranslationWebService
  * @since 2015.02
  */
@@ -61,7 +64,6 @@ class QueryAggregator {
 		$clientOptions = [
 			'reqTimeout' => $this->timeout,
 			'connTimeout' => 3,
-			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			'userAgent' => "MediaWiki Translate extension $version for $wgSitename"
 		];
 

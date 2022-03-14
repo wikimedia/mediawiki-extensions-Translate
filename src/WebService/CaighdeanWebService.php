@@ -7,6 +7,10 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use FormatJson;
+
 /**
  * Implements support Caighdean translator api.
  * @see https://github.com/kscanne/caighdean/blob/master/API.md

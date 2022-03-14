@@ -7,7 +7,11 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use FormatJson;
 use MediaWiki\MediaWikiServices;
+use Sanitizer;
 
 /**
  * Implements support for Google Translate API

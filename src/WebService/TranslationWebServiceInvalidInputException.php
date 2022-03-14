@@ -7,6 +7,10 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use Exception;
+
 /**
  * Used to signal that the requested input is rejected and cannot be used with
  * an external web service. This is in contrast to a failure in the web service

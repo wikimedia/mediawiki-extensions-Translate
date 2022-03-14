@@ -7,7 +7,11 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use Exception;
 use MediaWiki\Logger\LoggerFactory;
+use ObjectCache;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 
@@ -33,14 +37,14 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 */
 	public static function factory( $name, $config ) {
 		$handlers = [
-			'microsoft' => 'MicrosoftWebService',
-			'apertium' => 'ApertiumWebService',
-			'yandex' => 'YandexWebService',
-			'google' => 'GoogleTranslateWebService',
-			'remote-ttmserver' => 'RemoteTTMServerWebService',
-			'cxserver' => 'CxserverWebService',
-			'restbase' => 'RESTBaseWebService',
-			'caighdean' => 'CaighdeanWebService',
+			'microsoft' => MicrosoftWebService::class,
+			'apertium' => ApertiumWebService::class,
+			'yandex' => YandexWebService::class,
+			'google' => GoogleTranslateWebService::class,
+			'remote-ttmserver' => RemoteTTMServerWebService::class,
+			'cxserver' => CxserverWebService::class,
+			'restbase' => RESTBaseWebService::class,
+			'caighdean' => CaighdeanWebService::class,
 		];
 
 		if ( !isset( $config['timeout'] ) ) {

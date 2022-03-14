@@ -22,7 +22,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			'src/TranslatorInterface/Aid',
 			'ttmserver',
 			'utils',
-			'webservices',
+			'src/WebService',
 		],
 		'js' => [
 			'resources/js',

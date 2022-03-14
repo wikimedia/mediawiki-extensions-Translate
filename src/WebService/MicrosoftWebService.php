@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
 use MediaWiki\MediaWikiServices;
 
 /**

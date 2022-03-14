@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
-use QueryAggregator;
-use QueryAggregatorAware;
-use TranslationWebService;
+use MediaWiki\Extension\Translate\WebService\QueryAggregator;
+use MediaWiki\Extension\Translate\WebService\QueryAggregatorAware;
+use MediaWiki\Extension\Translate\WebService\TranslationWebService;
 
 /**
  * Helper class for translation aids that use web services.

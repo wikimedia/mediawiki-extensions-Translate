@@ -7,6 +7,10 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use Exception;
+
 /**
  * Used to signal a configuration mistake in an external web service. This is in
  * contrast to TranslationWebServiceException that signals a failure in the web

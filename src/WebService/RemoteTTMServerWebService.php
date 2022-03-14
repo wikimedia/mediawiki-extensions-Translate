@@ -8,6 +8,10 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\WebService;
+
+use FormatJson;
+
 /**
  * Implements support for ttmserver via MediaWiki API.
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories

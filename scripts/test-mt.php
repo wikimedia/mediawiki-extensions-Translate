@@ -7,6 +7,9 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\WebService\QueryAggregator;
+use MediaWiki\Extension\Translate\WebService\TranslationWebService;
+
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
