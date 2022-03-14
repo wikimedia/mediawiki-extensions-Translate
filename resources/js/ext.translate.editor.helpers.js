@@ -331,13 +331,28 @@
 				return;
 			}
 
+			var currentSuggestionsOrder = [];
 			Object.keys( suggestions ).forEach( function ( key ) {
-				var suggestion = suggestions[ key ];
+				currentSuggestionsOrder.push( {
+					key: key,
+					count: suggestions[ key ].count,
+					quality: suggestions[ key ].sources[ 0 ].quality
+				} );
+			} );
 
-				suggestion.$showSourcesElement.on( 'click', function ( e ) {
-					this.onShowTranslationMemorySources( e, suggestion );
+			currentSuggestionsOrder.sort( function ( a, b ) {
+				if ( a.quality === b.quality ) {
+					return b.count - a.count;
+				}
+				return a.quality < b.quality ? 1 : -1;
+			} );
+
+			currentSuggestionsOrder.forEach( function ( item ) {
+				var currentSuggestion = suggestions[ item.key ];
+				currentSuggestion.$showSourcesElement.on( 'click', function ( e ) {
+					this.onShowTranslationMemorySources( e, currentSuggestion );
 				}.bind( this ) );
-				$tmSuggestions.append( suggestion.$element );
+				$tmSuggestions.append( currentSuggestion.$element );
 			}, this );
 
 			$heading.removeClass( 'hide' );
