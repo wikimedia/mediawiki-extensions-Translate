@@ -5,7 +5,8 @@
 			"Ljonka",
 			"Metalhead64",
 			"Predatorix",
-			"Seewolf"
+			"Seewolf",
+			"SorkDE"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -127,6 +128,7 @@
 	"apierror-translate-sandbox-invalidppassword": "Ungültiges Passwort",
 	"apierror-translate-smg-nochanges": "Es gibt keine zu verarbeitenden Änderungen.",
 	"apierror-translate-unknownmessage": "Unbekannte Nachricht",
+	"apierror-translate-invalid-operation": "Ungültige Operation: $1. Gültige Werte - $2.",
 	"apierror-translate-rename-msg-new": "Nur umbenannte Nachrichten können als neue Nachrichten hinzugefügt werden.",
 	"apierror-translate-rename-key-invalid": "Die zur Umbenennung übergebenen Nachrichtenschlüssel wurden in der Liste der Änderungen für die Ausgangssprache nicht gefunden.",
 	"apierror-translate-rename-state-invalid": "Eine der zur Umbenennung übergebenen Nachrichten sollte neu hinzugefügt und die andere gelöscht werden. Aktuelle Zustände - Hinzufügen: $1 und Löschen: $2.",

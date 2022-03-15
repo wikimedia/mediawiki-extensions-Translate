@@ -4,7 +4,8 @@
 			"Danialbehzadi",
 			"Ebraminio",
 			"Huji",
-			"Reza1615"
+			"Reza1615",
+			"Beginneruser"
 		]
 	},
 	"searchtranslations": "جستجوی ترجمه‌ها",
@@ -14,7 +15,7 @@
 	"tux-sst-search-ph": "جستجوی ترجمه‌ها",
 	"tux-sst-count": "{{PLURAL:$1|0=هیچ نتیجه‌ای یافت نشد|یک نتیجه یافت شد|$1 نتیجه یافت شد}}",
 	"tux-sst-facet-language": "زبان‌ها",
-	"tux-sst-facet-group": "گروه‌های پیغام",
+	"tux-sst-facet-group": "گروه‌های پیام",
 	"tux-sst-nosolr-title": "جستجوی ناموجود است",
 	"tux-sst-nosolr-body": "این ویکی خدمات جستجوی ترجمه ندارد.",
 	"tux-sst-solr-offline-title": "جستجوی ناموجود است",

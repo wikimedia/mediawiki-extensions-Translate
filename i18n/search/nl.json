@@ -5,7 +5,8 @@
 			"Robin van der Vliet",
 			"Robin0van0der0vliet",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"McDutchie"
 		]
 	},
 	"searchtranslations": "Vertalingen zoeken",
@@ -23,7 +24,7 @@
 	"tux-sst-next": "Volgende ›",
 	"tux-sst-prev": "‹ Vorige",
 	"tux-sst-default": "Vertalingen",
-	"tux-sst-translated": "Vertaling voor $1",
+	"tux-sst-translated": "Vertalingen uit het $1",
 	"tux-sst-untranslated": "Geen vertalingen voor $1",
 	"tux-sst-outdated": "Verouderde vertalingen voor $1",
 	"tux-sst-ellipsis-untranslated": "Geen vertaling",

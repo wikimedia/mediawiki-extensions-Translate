@@ -13,7 +13,8 @@
 			"Sfic",
 			"Siddhartha Ghai",
 			"संजीव कुमार",
-			"ThisIsACreeper0101"
+			"ThisIsACreeper0101",
+			"Saurmandal"
 		]
 	},
 	"translate": "अनुवाद करें",
@@ -205,7 +206,7 @@
 	"supportedlanguages-count": "कुल $1 {{PLURAL:$1|भाषा|भाषाएँ}}।",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|सम्पादन}} - आखिरी सम्पादन $3 {{PLURAL:$3|दिन}} पहले",
 	"translate-supportedlanguages-cached": "इस जानकारी को $1 पहले कैश किया गया था।",
-	"abusefilter-edit-builder-vars-translate-source-text": "अनुवाद यूनिट का स्रोत पाठ",
+	"abusefilter-edit-builder-vars-translate-source-text": "अनुवाद इकाई का स्रोत पाठ",
 	"abusefilter-edit-builder-vars-translate-target-language": "अनुवाद का लक्ष्य भाषा",
 	"translate-jssti-add": "सूची में जोड़ें",
 	"managemessagegroups": "संदेश समूह प्रबंधक",
