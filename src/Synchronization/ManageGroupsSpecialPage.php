@@ -377,13 +377,16 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$wiki = TranslateUtils::getContentForTitle( $title, true );
 
 			$actions = '';
-			$importSelected = true;
 			$sourceLanguage = $group->getSourceLanguage();
 
+			// If a key is reused AND the content is the same, then select import and NOT
+			// import & fuzzy. Since content is same, it makes no sense to fuzzy the translations
+			$unsafeKeyReuse = $isReusedKey && $wiki !== $params['content'];
+			$shouldFuzzy = $sourceLanguage === $language && $unsafeKeyReuse;
+
 			if ( $sourceLanguage === $language ) {
-				$importSelected = false;
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
-				$actions .= Xml::radioLabel( $label, "msg/$id", "fuzzy", "f/$id", true );
+				$actions .= Xml::radioLabel( $label, "msg/$id", "fuzzy", "f/$id", $shouldFuzzy );
 			}
 
 			if (
@@ -401,7 +404,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$limit--;
 			} else {
 				$label = $this->msg( 'translate-manage-action-import' )->text();
-				$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", $importSelected );
+				$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", !$shouldFuzzy );
 
 				$label = $this->msg( 'translate-manage-action-ignore' )->text();
 				$actions .= Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
