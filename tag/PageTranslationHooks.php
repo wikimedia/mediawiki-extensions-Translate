@@ -67,18 +67,32 @@ class PageTranslationHooks {
 			return;
 		}
 
-		self::$renderingContext = true;
-		[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
-		$name = $page->getPageDisplayTitle( $code );
-		if ( $name ) {
-			$name = $wikitextParser->recursivePreprocess( $name );
+		try {
+			self::$renderingContext = true;
+			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
+			$name = $page->getPageDisplayTitle( $code );
+			if ( $name ) {
+				$name = $wikitextParser->recursivePreprocess( $name );
 
-			$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
-				->getLanguageConverter( $wikitextParser->getTargetLanguage() );
-			$name = $langConv->convert( $name );
-			$wikitextParser->getOutput()->setDisplayTitle( $name );
+				$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
+					->getLanguageConverter( $wikitextParser->getTargetLanguage() );
+				$name = $langConv->convert( $name );
+				$wikitextParser->getOutput()->setDisplayTitle( $name );
+			}
+			self::$renderingContext = false;
+		} catch ( Exception $e ) {
+			LoggerFactory::getInstance( 'Translate' )->error(
+				'T302754 Failed to set display title for page {title}',
+				[
+					'title' => $title->getPrefixedDBkey(),
+					'text' => $text,
+					'pageid' => $title->getId(),
+				]
+			);
+
+			// Re-throw to preserve behavior
+			throw $e;
 		}
-		self::$renderingContext = false;
 
 		$extensionData = [
 			'languagecode' => $code,
