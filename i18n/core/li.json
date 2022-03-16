@@ -88,5 +88,6 @@
 	"translate-tag-page-desc": "Euverzètting van de wikipagina [[$2|$1]] vanoet $3 ($4).",
 	"translate-sidebar-alltrans": "In anger spraoke",
 	"translations": "Alle euverzèttinge",
-	"translate-documentation-language": "Besjeidbesjrieving"
+	"translate-documentation-language": "Besjeidbesjrieving",
+	"tux-editor-message-tools-delete": "Sjaf eweg"
 }
