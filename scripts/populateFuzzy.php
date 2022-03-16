@@ -79,9 +79,9 @@ class PopulateFuzzy extends Maintenance {
 				if ( isset( $slots[$r->rev_id] ) ) {
 					$text = $slots[$r->rev_id][SlotRecord::MAIN]->blob_data;
 				} else {
-					$text = $revStore->newRevisionFromRow( $r )
-						->getContent( SlotRecord::MAIN )
-						->getNativeData();
+					$content = $revStore->newRevisionFromRow( $r )
+						->getContent( SlotRecord::MAIN );
+					$text = TranslateUtils::getTextFromTextContent( $content );
 				}
 				if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
 					$inserts[] = [

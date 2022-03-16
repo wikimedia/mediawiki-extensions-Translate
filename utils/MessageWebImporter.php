@@ -499,9 +499,10 @@ class MessageWebImporter {
 				$slot = $slots[$row->rev_id][SlotRecord::MAIN];
 				$text = self::makeTextFuzzy( $slot->blob_data );
 			} else {
-				$text = self::makeTextFuzzy( $revStore->newRevisionFromRow( $row )
-					->getContent( SlotRecord::MAIN )
-					->getNativeData()
+				$text = self::makeTextFuzzy(
+					TranslateUtils::getTextFromTextContent(
+						$revStore->newRevisionFromRow( $row )->getContent( SlotRecord::MAIN )
+					)
 				);
 			}
 

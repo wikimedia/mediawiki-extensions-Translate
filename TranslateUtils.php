@@ -565,4 +565,16 @@ class TranslateUtils {
 		}
 		return JobQueueGroup::singleton();
 	}
+
+	public static function getTextFromTextContent( ?Content $content ): string {
+		if ( !$content ) {
+			throw new UnexpectedValueException( 'Expected $content to be TextContent, got null instead.' );
+		}
+
+		if ( $content instanceof TextContent ) {
+			return $content->getText();
+		}
+
+		throw new UnexpectedValueException( 'Expected $content to be TextContent, but got ' . get_class( $content ) );
+	}
 }
