@@ -1,8 +1,11 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Robin van der Vliet"
+		]
 	},
 	"translate-page-language": "toki",
 	"translate-language": "toki",
-	"translate-mgs-column-language": "toki"
+	"translate-mgs-column-language": "toki",
+	"translate-smg-group-message-message-other-langs": "toki ante:"
 }
