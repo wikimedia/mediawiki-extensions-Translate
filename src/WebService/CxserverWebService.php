@@ -8,7 +8,7 @@
 namespace MediaWiki\Extension\Translate\WebService;
 
 use FormatJson;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * Contains a class for querying external translation service.
@@ -17,6 +17,18 @@ use MediaWiki\MediaWikiServices;
  * @since 2015.02
  */
 class CxserverWebService extends TranslationWebService {
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
+	public function __construct(
+		HttpRequestFactory $httpRequestFactory,
+		string $serviceName,
+		array $config
+	) {
+		parent::__construct( $serviceName, $config );
+		$this->httpRequestFactory = $httpRequestFactory;
+	}
+
 	public function getType() {
 		return 'mt';
 	}
@@ -33,11 +45,7 @@ class CxserverWebService extends TranslationWebService {
 		$pairs = [];
 
 		$url = $this->config['host'] . '/v1/list/mt';
-		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
-			$url,
-			[ $this->config['timeout'] ],
-			__METHOD__
-		);
+		$json = $this->httpRequestFactory->get( $url, [ $this->config['timeout'] ], __METHOD__ );
 		$response = FormatJson::decode( $json, true );
 
 		if ( !is_array( $response ) ) {

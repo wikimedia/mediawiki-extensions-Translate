@@ -10,7 +10,7 @@
 
 namespace MediaWiki\Extension\Translate\WebService;
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * Implements support for Microsoft translation api v3.
@@ -19,6 +19,18 @@ use MediaWiki\MediaWikiServices;
  * @since 2013-01-01
  */
 class MicrosoftWebService extends TranslationWebService {
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
+	public function __construct(
+		HttpRequestFactory $httpRequestFactory,
+		string $serviceName,
+		array $config
+	) {
+		parent::__construct( $serviceName, $config );
+		$this->httpRequestFactory = $httpRequestFactory;
+	}
+
 	public function getType() {
 		return 'mt';
 	}
@@ -49,8 +61,7 @@ class MicrosoftWebService extends TranslationWebService {
 
 		$url = $this->config['url'] . '/languages?api-version=3.0';
 
-		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
-			->create( $url, $options, __METHOD__ );
+		$req = $this->httpRequestFactory->create( $url, $options, __METHOD__ );
 		$req->setHeader( 'Ocp-Apim-Subscription-Key', $key );
 
 		$status = $req->execute();

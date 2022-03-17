@@ -10,7 +10,7 @@
 namespace MediaWiki\Extension\Translate\WebService;
 
 use FormatJson;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Http\HttpRequestFactory;
 use Sanitizer;
 
 /**
@@ -20,6 +20,18 @@ use Sanitizer;
  * @since 2013-01-01
  */
 class YandexWebService extends TranslationWebService {
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
+	public function __construct(
+		HttpRequestFactory $httpRequestFactory,
+		string $serviceName,
+		array $config
+	) {
+		parent::__construct( $serviceName, $config );
+		$this->httpRequestFactory = $httpRequestFactory;
+	}
+
 	public function getType() {
 		return 'mt';
 	}
@@ -43,11 +55,7 @@ class YandexWebService extends TranslationWebService {
 		];
 
 		$url = $this->config['pairs'] . '?' . wfArrayToCgi( $params );
-		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
-			$url,
-			[ 'timeout' => $this->config['timeout'] ],
-			__METHOD__
-		);
+		$json = $this->httpRequestFactory->get( $url, [ 'timeout' => $this->config['timeout'] ], __METHOD__ );
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {

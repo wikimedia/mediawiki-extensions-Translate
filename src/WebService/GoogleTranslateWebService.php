@@ -10,7 +10,7 @@
 namespace MediaWiki\Extension\Translate\WebService;
 
 use FormatJson;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Http\HttpRequestFactory;
 use Sanitizer;
 
 /**
@@ -21,6 +21,17 @@ use Sanitizer;
  */
 class GoogleTranslateWebService extends TranslationWebService {
 	private const PUBLIC_API = 'https://translation.googleapis.com/language/translate/v2';
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
+	public function __construct(
+		HttpRequestFactory $httpRequestFactory,
+		string $serviceName,
+		array $config
+	) {
+		parent::__construct( $serviceName, $config );
+		$this->httpRequestFactory = $httpRequestFactory;
+	}
 
 	/** @inheritDoc */
 	public function getType() {
@@ -62,7 +73,7 @@ class GoogleTranslateWebService extends TranslationWebService {
 			'key' => $this->config['key'],
 		];
 
-		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
+		$json = $this->httpRequestFactory->get(
 			wfAppendQuery( $api, wfArrayToCgi( $params ) ),
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__

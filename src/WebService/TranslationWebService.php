@@ -11,6 +11,7 @@ namespace MediaWiki\Extension\Translate\WebService;
 
 use Exception;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use ObjectCache;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
@@ -37,25 +38,56 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 */
 	public static function factory( $name, $config ) {
 		$handlers = [
-			'microsoft' => MicrosoftWebService::class,
-			'apertium' => ApertiumWebService::class,
-			'yandex' => YandexWebService::class,
-			'google' => GoogleTranslateWebService::class,
-			'remote-ttmserver' => RemoteTTMServerWebService::class,
-			'cxserver' => CxserverWebService::class,
-			'restbase' => RESTBaseWebService::class,
-			'caighdean' => CaighdeanWebService::class,
+			'microsoft' => [
+				'class' => MicrosoftWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			],
+			'apertium' => [
+				'class' => ApertiumWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			],
+			'yandex' => [
+				'class' => YandexWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			],
+			'google' => [
+				'class' => GoogleTranslateWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			],
+			'remote-ttmserver' => [
+				'class' => RemoteTTMServerWebService::class
+			],
+			'cxserver' => [
+				'class' => CxserverWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			],
+			'restbase' => [
+				'class' => RESTBaseWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			],
+			'caighdean' => [
+				'class' => CaighdeanWebService::class
+			],
 		];
 
 		if ( !isset( $config['timeout'] ) ) {
 			$config['timeout'] = 3;
 		}
 
-		$class = $handlers[$config['type']] ?? null;
-		if ( $class ) {
-			$obj = new $class( $name, $config );
-			$obj->setLogger( LoggerFactory::getInstance( 'translationservices' ) );
-			return $obj;
+		$serviceDetails = $handlers[$config['type']] ?? null;
+		if ( $serviceDetails ) {
+			$objectFactory = MediaWikiServices::getInstance()->getObjectFactory();
+			$spec = [
+				'class' => $serviceDetails['class'],
+				'args' => [ $name, $config ],
+				'services' => $serviceDetails['deps'] ?? [],
+			];
+
+			// @phan-suppress-next-line PhanTypeInvalidCallableArraySize due to annotations on createObject?
+			$serviceObject = $objectFactory->createObject( $spec );
+			if ( $serviceObject instanceof LoggerAwareInterface ) {
+				$serviceObject->setLogger( LoggerFactory::getInstance( 'translationservices' ) );
+			}
 		}
 
 		return null;
@@ -183,11 +215,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	/** @var LoggerInterface */
 	protected $logger;
 
-	/**
-	 * @param string $service Name of the webservice
-	 * @param array $config
-	 */
-	protected function __construct( $service, $config ) {
+	public function __construct( string $service, array $config ) {
 		$this->service = $service;
 		$this->config = $config;
 	}

@@ -11,7 +11,7 @@ namespace MediaWiki\Extension\Translate\WebService;
 
 use FormatJson;
 use LanguageCode;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Http\HttpRequestFactory;
 use Sanitizer;
 use TranslateUtils;
 
@@ -22,6 +22,18 @@ use TranslateUtils;
  * @since 2013-01-01
  */
 class ApertiumWebService extends TranslationWebService {
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
+	public function __construct(
+		HttpRequestFactory $httpRequestFactory,
+		string $serviceName,
+		array $config
+	) {
+		parent::__construct( $serviceName, $config );
+		$this->httpRequestFactory = $httpRequestFactory;
+	}
+
 	public function getType() {
 		return 'mt';
 	}
@@ -32,7 +44,7 @@ class ApertiumWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		$pairs = [];
-		$json = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
+		$json = $this->httpRequestFactory->get(
 			$this->config['pairs'],
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__
