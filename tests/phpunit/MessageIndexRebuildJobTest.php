@@ -29,7 +29,7 @@ class MessageIndexRebuildJobTest extends MediaWikiIntegrationTestCase {
 		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
 		$job = TranslateUtils::getJobQueueGroup()->get( 'MessageIndexRebuildJob' )->pop();
 		$this->assertInstanceOf(
-			'MessageIndexRebuildJob',
+			MessageIndexRebuildJob::class,
 			$job,
 			'There is a job in the JobQueue'
 		);
