@@ -187,8 +187,6 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		$formDescriptor = $this->getCommonFormFields();
 
 		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
-			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
-			->setMethod( 'post' )
 			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
 			->setSubmitName( 'subaction' )
 			->setSubmitTextMsg( 'pt-deletepage-action-check' )
@@ -276,8 +274,6 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		}
 
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
-			->setMethod( 'post' )
 			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
 			->setSubmitTextMsg( 'pt-deletepage-action-perform' )
 			->setSubmitName( 'subaction' )
