@@ -4,7 +4,8 @@
 			"NehalDaveND",
 			"Sfic",
 			"Abijeet Patro",
-			"ThisIsACreeper0101"
+			"ThisIsACreeper0101",
+			"Saurmandal"
 		]
 	},
 	"apihelp-aggregategroups-description": "स्थायी संदेश समूहों को प्रबंधित करें।\n\nआप स्थायी संदेश समूह जोड़ या हटा सकते हैं और उनसे संदेश समूह जोड़ या हटा सकते हैं (एक बार में एक)।",
@@ -89,7 +90,7 @@
 	"apihelp-translationstash-description": "स्टैश पर अनुवाद जोड़ें।",
 	"apihelp-translationstash-summary": "स्टैश पर अनुवाद जोड़ें।",
 	"apihelp-translationstash-param-subaction": "क्रिया।",
-	"apihelp-translationstash-param-title": "अनुवाद यूनिट पृष्ठ का शीर्षक।",
+	"apihelp-translationstash-param-title": "अनुवाद इकाई पृष्ठ का शीर्षक।",
 	"apihelp-translationstash-param-translation": "सदस्य द्वारा किया गया अनुवाद।",
 	"apihelp-translationstash-param-metadata": "JSON ऑब्जेक्ट।",
 	"apihelp-translationstash-param-username": "वैकल्पिक रूप से, वह सदस्य जिसका स्टैश प्राप्त करना है। सिर्फ अधिकार वाले सदस्य ही यह कर सकते हैं।",

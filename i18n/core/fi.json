@@ -22,7 +22,9 @@
 			"Joquliina",
 			"MITO",
 			"Mediawikitranslator",
-			"Yupik"
+			"Yupik",
+			"Moottori",
+			"Veikk0.ma"
 		]
 	},
 	"translate": "Käännä",
@@ -270,7 +272,7 @@
 	"translate-gs-count": "Määrä",
 	"translate-gs-total": "Yhteensä",
 	"translate-gs-avgscore": "Keskim. pisteet",
-	"translate-documentation-language": "käännösohjeet",
+	"translate-documentation-language": "Viestin dokumentaatio",
 	"translate-searchprofile": "Käännökset",
 	"translate-searchprofile-tooltip": "Hae kaikista käännöksistä",
 	"translate-searchprofile-note": "Lisää hakuvaihtoehtoja on saatavilla sivulla [$1 translation search].",

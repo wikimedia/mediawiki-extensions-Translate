@@ -3,7 +3,8 @@
 		"authors": [
 			"Trondtr",
 			"Yupik",
-			"Seipinne"
+			"Seipinne",
+			"Muotâ"
 		]
 	},
 	"translate": "Jurgâl",
@@ -45,8 +46,11 @@
 	"translate-rcfilters-translations-only-label": "Jurgâlusah",
 	"translate-rcfilters-translations-filter-label": "Iä jurgâlusah",
 	"translate-stats-users": "Jurgâleijeeh",
+	"translate-statsf-scale-days": "peivi",
 	"translate-statsf-count-edits": "hammiimeh",
 	"translate-statsf-count-users": "aktiivliih jurgâleijeeh",
+	"translate-statsf-count-reviews": "jurgâlusâi tuhhiitmeh",
+	"translate-statsf-count-reviewers": "njuálgulohheeh",
 	"translate-sidebar-alltrans": "Eres kieláid",
 	"translations": "Puoh jurgâlusah",
 	"translate-translations-fieldset-title": "Viestâ",
@@ -65,7 +69,7 @@
 	"translate-mgs-pagename": "Viestâjuávkkustatistiikeh",
 	"translate-mgs-group": "Viestâjuávkku:",
 	"translate-mgs-nocomplete": "Ele čääiti kielâid, moi jurgâlem lii vaalmâš",
-	"translate-mgs-submit": "Čääiti statistiikijd",
+	"translate-mgs-submit": "Čääiti lovottuvâid",
 	"translate-mgs-column-language": "Kielâ",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jurgâleijee}}|Jurgâleijeeh}}: $1",
 	"supportedlanguages-recenttranslations": "vorâs jurgâlusah",

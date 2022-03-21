@@ -5,7 +5,8 @@
 			"Aftabuzzaman",
 			"Bellayet",
 			"আফতাবুজ্জামান",
-			"Sibabrata Banerjee"
+			"Sibabrata Banerjee",
+			"খাত্তাব হাসান"
 		]
 	},
 	"pagetranslation": "পাতা অনুবাদ",
@@ -91,5 +92,6 @@
 	"tpt-translate-title": "পাতার শিরোনাম অনুবাদের অনুমোদন দিন",
 	"pp-save-button-label": "প্রকাশ করুন",
 	"pp-cancel-button-label": "বাতিল",
+	"pp-diff-old-header": "উত্স পাঠ্য",
 	"tpt-generic-button": "নিশ্চিত করুন"
 }
