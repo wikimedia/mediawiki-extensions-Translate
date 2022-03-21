@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\Revision\RevisionRecord;
 use Title;
 
 /**
@@ -14,4 +15,6 @@ use Title;
  */
 interface TranslatableBundleStore {
 	public function move( Title $oldName, Title $newName ): void;
+
+	public function handleNullRevisionInsert( TranslatableBundle $bundle, RevisionRecord $revision ): void;
 }

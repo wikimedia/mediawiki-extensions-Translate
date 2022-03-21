@@ -18,7 +18,7 @@ use Wikimedia\Rdbms\Database;
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation
  */
-class TranslatablePage implements TranslatableBundle {
+class TranslatablePage extends TranslatableBundle {
 	/**
 	 * List of keys in the metadata table that need to be handled for moves and deletions
 	 * @phpcs-require-sorted-array
@@ -307,7 +307,7 @@ class TranslatablePage implements TranslatableBundle {
 	 * ready for marking for translation.
 	 * @param int $revision
 	 */
-	public function addReadyTag( int $revision ) {
+	public function addReadyTag( int $revision ): void {
 		$this->revTagStore->addTag( $this->getTitle(), 'tp:tag', $revision );
 	}
 
@@ -323,7 +323,7 @@ class TranslatablePage implements TranslatableBundle {
 	 * Returns the latest revision which has ready tag, if any.
 	 * @return ?int
 	 */
-	public function getReadyTag() {
+	public function getReadyTag(): ?int {
 		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), 'tp:tag' );
 	}
 
@@ -408,47 +408,7 @@ class TranslatablePage implements TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTranslationUnitPages( ?string $code = null ): array {
-		$dbw = wfGetDB( DB_PRIMARY );
-
-		$base = $this->getTitle()->getPrefixedDBkey();
-		// Including the / used as separator
-		$baseLength = strlen( $base ) + 1;
-
-		if ( $code === null ) {
-			$like = $dbw->buildLike( "$base/", $dbw->anyString() );
-		} else {
-			$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/$code" );
-		}
-
-		$fields = [ 'page_namespace', 'page_title' ];
-		$conds = [
-			'page_namespace' => NS_TRANSLATIONS,
-			'page_title ' . $like
-		];
-		$res = $dbw->select( 'page', $fields, $conds, __METHOD__ );
-
-		// Only include pages which belong to this translatable page.
-		// Problematic cases are when pages Foo and Foo/bar are both
-		// translatable. Then when querying for Foo, we also get units
-		// belonging to Foo/bar.
-		$units = [];
-		foreach ( $res as $row ) {
-			$title = Title::newFromRow( $row );
-
-			// Strip the language code and the name of the
-			// translatable to get plain translation unit id
-			$handle = new MessageHandle( $title );
-			$key = substr( $handle->getKey(), $baseLength );
-			if ( strpos( $key, '/' ) !== false ) {
-				// Probably belongs to translatable subpage
-				continue;
-			}
-
-			// We have a match :)
-			$units[] = $title;
-		}
-
-		return $units;
+		return $this->getTranslationUnitPagesByTitle( $this->title, $code );
 	}
 
 	/** @return array */
@@ -528,6 +488,11 @@ class TranslatablePage implements TranslatableBundle {
 		return $store->getRevisionByTitle( $title->getSubpage( $sourceLanguage ) );
 	}
 
+	/** @inheritDoc */
+	public function isMoveable(): bool {
+		return $this->getMarkedTag() !== null;
+	}
+
 	/**
 	 * @param Title $title
 	 * @return bool|self
@@ -605,11 +570,13 @@ class TranslatablePage implements TranslatableBundle {
 		$translatablePageIds = $cache->getWithSetCallback(
 			$cacheKey,
 			$cache::TTL_HOUR * 2,
-			function ( $oldValue, &$ttl, array &$setOpts ) {
+			static function ( $oldValue, &$ttl, array &$setOpts ) {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return self::getTranslatablePages();
+				return RevTagStore::getTranslatableBundleIds(
+					RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' )
+				);
 			},
 			[
 				'checkKeys' => [ $cacheKey ],
@@ -627,30 +594,5 @@ class TranslatablePage implements TranslatableBundle {
 	public static function clearSourcePageCache(): void {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$cache->touchCheckKey( $cache->makeKey( 'pagetranslation', 'sourcepages' ) );
-	}
-
-	/**
-	 * Get a list of page ids where the latest revision is either tagged or marked
-	 * @return array
-	 */
-	public static function getTranslatablePages() {
-		$dbr = TranslateUtils::getSafeReadDB();
-
-		$tables = [ 'revtag', 'page' ];
-		$fields = 'rt_page';
-		$conds = [
-			'rt_page = page_id',
-			'rt_revision = page_latest',
-			'rt_type' => [ RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ],
-		];
-		$options = [ 'GROUP BY' => 'rt_page' ];
-
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
-		$results = [];
-		foreach ( $res as $row ) {
-			$results[] = $row->rt_page;
-		}
-
-		return $results;
 	}
 }

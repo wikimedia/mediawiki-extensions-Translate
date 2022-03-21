@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Page\PageIdentity;
+use TranslateUtils;
 
 /**
  * Class to manage revision tags for translatable bundles.
@@ -80,5 +81,27 @@ class RevTagStore {
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 
 		unset( self::$tagCache[$articleId] );
+	}
+
+	/** Get a list of page ids where the latest revision is either tagged or marked */
+	public static function getTranslatableBundleIds( string ...$revTags ): array {
+		$dbr = TranslateUtils::getSafeReadDB();
+
+		$tables = [ 'revtag', 'page' ];
+		$fields = 'rt_page';
+		$conds = [
+			'rt_page = page_id',
+			'rt_revision = page_latest',
+			'rt_type' => $revTags,
+		];
+		$options = [ 'GROUP BY' => 'rt_page' ];
+
+		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+		$results = [];
+		foreach ( $res as $row ) {
+			$results[] = (int)$row->rt_page;
+		}
+
+		return $results;
 	}
 }

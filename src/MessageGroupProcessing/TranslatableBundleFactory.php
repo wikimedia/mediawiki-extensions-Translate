@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use Title;
 use TranslatablePage;
 
@@ -17,16 +19,25 @@ use TranslatablePage;
 class TranslatableBundleFactory {
 	/** @var TranslatablePageStore */
 	private $translatablePageStore;
+	/** @var MessageBundleStore */
+	private $messageBundleStore;
 
-	public function __construct( TranslatablePageStore $translatablePageStore ) {
+	public function __construct(
+		TranslatablePageStore $translatablePageStore,
+		MessageBundleStore $messageBundleStore
+	) {
 		$this->translatablePageStore = $translatablePageStore;
+		$this->messageBundleStore = $messageBundleStore;
 	}
 
 	/** Returns a TranslatableBundle if Title is a valid translatable bundle else returns null */
 	public function getBundle( Title $title ): ?TranslatableBundle {
-		$translatablePage = TranslatablePage::newFromTitle( $title );
 		if ( TranslatablePage::isSourcePage( $title ) ) {
+			$translatablePage = TranslatablePage::newFromTitle( $title );
 			return $translatablePage;
+		} elseif ( MessageBundle::isSourcePage( $title ) ) {
+			$messageBundle = new MessageBundle( $title );
+			return $messageBundle;
 		}
 
 		return null;
@@ -45,6 +56,8 @@ class TranslatableBundleFactory {
 	public function getPageMoveLogger( TranslatableBundle $bundle ): PageMoveLogger {
 		if ( $bundle instanceof TranslatablePage ) {
 			return new PageMoveLogger( $bundle->getTitle(), 'pagetranslation' );
+		} elseif ( $bundle instanceof MessageBundle ) {
+			return new PageMoveLogger( $bundle->getTitle(), 'messagebundle' );
 		}
 
 		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );
@@ -53,6 +66,8 @@ class TranslatableBundleFactory {
 	public function getStore( TranslatableBundle $bundle ): TranslatableBundleStore {
 		if ( $bundle instanceof TranslatablePage ) {
 			return $this->translatablePageStore;
+		} elseif ( $bundle instanceof MessageBundle ) {
+			return $this->messageBundleStore;
 		}
 
 		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );

@@ -7,7 +7,12 @@ use CommentStore;
 use ErrorPageError;
 use Html;
 use HTMLForm;
+use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Permissions\PermissionManager;
+use Message;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
@@ -43,6 +48,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private $bundleMover;
 	/** @var PermissionManager */
 	private $permissionManager;
+	/** @var TranslatableBundleFactory */
+	private $bundleFactory;
 	private $movePageSpec;
 	// Other
 	/** @var Title */
@@ -52,12 +59,14 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		ObjectFactory $objectFactory,
 		PermissionManager $permissionManager,
 		TranslatableBundleMover $bundleMover,
+		TranslatableBundleFactory $bundleFactory,
 		$movePageSpec
 	) {
 		parent::__construct( 'Movepage' );
 		$this->objectFactory = $objectFactory;
 		$this->permissionManager = $permissionManager;
 		$this->bundleMover = $bundleMover;
+		$this->bundleFactory = $bundleFactory;
 		$this->movePageSpec = $movePageSpec;
 	}
 
@@ -91,9 +100,9 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$this->doBasicChecks();
 
 		// Real stuff starts here
-		$page = TranslatablePage::newFromTitle( $this->oldTitle );
-		if ( $page->getMarkedTag() !== null ) {
-				$this->getOutput()->setPageTitle( $this->msg( 'pt-movepage-title', $this->oldText ) );
+		$bundle = $this->bundleFactory->getBundle( $this->oldTitle );
+		if ( $bundle && $bundle->isMoveable() ) {
+			$this->getOutput()->setPageTitle( $this->getSpecialPageTitle( $bundle ) );
 
 			if ( !$user->isAllowed( 'pagetranslation' ) ) {
 				throw new PermissionsError( 'pagetranslation' );
@@ -114,11 +123,11 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					);
 				} catch ( ImpossiblePageMove $e ) {
 					$this->showErrors( $e->getBlockers() );
-					$this->showForm();
+					$this->showForm( $bundle );
 					return;
 				}
 
-				$this->showConfirmation( $pageCollection );
+				$this->showConfirmation( $pageCollection, $bundle );
 			} elseif ( $isValidPostRequest && $subaction === 'perform' ) {
 				$this->moveSubpages = $request->getBool( 'subpages' );
 				$this->moveTalkpages = $request->getBool( 'talkpages' );
@@ -131,9 +140,12 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					$this->msg( 'pt-movepage-logreason', $this->oldTitle )->inContentLanguage()->text(),
 					$this->moveTalkpages
 				);
-				$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
+				$this->getOutput()->addWikiMsg(
+					'pt-movepage-started',
+					$this->getLogPageWikiLink( $this->bundleFactory->getValidBundle( $this->oldTitle ) )
+				);
 			} else {
-				$this->showForm();
+				$this->showForm( $bundle );
 			}
 		} else {
 			// Delegate... don't want to reimplement this
@@ -199,15 +211,22 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	}
 
 	/** The query form. */
-	public function showForm(): void {
-		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
+	public function showForm( TranslatableBundle $bundle ) {
+		$this->getOutput()->addWikiMsg(
+			'pt-movepage-intro',
+			$this->getLogPageWikiLink(
+				$this->bundleFactory->getBundle( Title::newFromText( $this->oldText ) )
+			)
+		);
 
 		HTMLForm::factory( 'ooui', $this->getCommonFormFields(), $this->getContext() )
 			->setMethod( 'post' )
 			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
 			->setSubmitName( 'subaction' )
 			->setSubmitTextMsg( 'pt-movepage-action-check' )
-			->setWrapperLegendMsg( 'pt-movepage-legend' )
+			->setWrapperLegendMsg(
+				$bundle instanceof MessageBundle ? 'pt-movepage-messagebundle-legend' : 'pt-movepage-legend'
+			)
 			->prepareForm()
 			->displayForm( false );
 	}
@@ -216,10 +235,15 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	 * The second form, which still allows changing some things.
 	 * Lists all the action which would take place.
 	 */
-	protected function showConfirmation( PageMoveCollection $pageCollection ): void {
+	protected function showConfirmation( PageMoveCollection $pageCollection, TranslatableBundle $bundle ): void {
 		$out = $this->getOutput();
 
-		$out->addWikiMsg( 'pt-movepage-intro' );
+		$out->addWikiMsg(
+			'pt-movepage-intro',
+			$this->getLogPageWikiLink(
+				$this->bundleFactory->getBundle( Title::newFromText( $this->oldText ) )
+			)
+		);
 
 		$count = 0;
 		$subpagesCount = 0;
@@ -318,7 +342,9 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
 			->setSubmitName( 'subaction' )
 			->setSubmitTextMsg( 'pt-movepage-action-perform' )
-			->setWrapperLegendMsg( 'pt-movepage-legend' )
+			->setWrapperLegendMsg(
+				$bundle instanceof MessageBundle ? 'pt-movepage-messagebundle-legend' : 'pt-movepage-legend'
+			)
 			->prepareForm()
 			->displayForm( false );
 	}
@@ -378,5 +404,24 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 				'default' => $this->moveTalkpages
 			]
 		];
+	}
+
+	private function getSpecialPageTitle( TranslatableBundle $bundle ): Message {
+		if ( $bundle instanceof TranslatablePage ) {
+			return $this->msg( 'pt-movepage-title', $this->oldText );
+		} elseif ( $bundle instanceof MessageBundle ) {
+			return $this->msg( 'pt-movepage-messagebundle-title', $this->oldText );
+		}
+
+		throw new InvalidArgumentException( 'TranslatableBundle is neither a TranslatablePage or MessageBundle' );
+	}
+
+	private function getLogPageWikiLink( ?TranslatableBundle $bundle ): string {
+		if ( $bundle instanceof MessageBundle ) {
+			return 'Special:Log/messagebundle';
+		}
+
+		// Default to page translation log in case of errors
+		return 'Special:Log/pagetranslation';
 	}
 }

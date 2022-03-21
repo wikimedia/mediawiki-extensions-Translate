@@ -32,6 +32,8 @@ class PageTranslationLogFormatter extends LogFormatter {
 			case 'pagetranslation/movenok':
 			case 'pagetranslation/deletefnok':
 			case 'pagetranslation/deletelnok':
+			case 'messagebundle/moveok':
+			case 'messagebundle/movenok':
 				$target = $legacy['target'];
 
 				$moveTarget = $this->makePageLink( Title::newFromText( $target ) );

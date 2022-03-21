@@ -890,9 +890,12 @@ class PageTranslationHooks {
 		}
 
 		$title = Title::newFromLinkTarget( $rev->getPageAsLinkTarget() );
-		$page = TranslatablePage::newFromTitle( $title );
-		if ( $page->getReadyTag() === $parentId ) {
-			$page->addReadyTag( $rev->getId() );
+		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
+		$bundle = $bundleFactory->getBundle( $title );
+
+		if ( $bundle ) {
+			$bundleStore = $bundleFactory->getStore( $bundle );
+			$bundleStore->handleNullRevisionInsert( $bundle, $rev );
 		}
 	}
 
@@ -1268,7 +1271,8 @@ class PageTranslationHooks {
 			'services' => [
 				'ObjectFactory',
 				'PermissionManager',
-				'Translate:TranslatableBundleMover'
+				'Translate:TranslatableBundleMover',
+				'Translate:TranslatableBundleFactory'
 			],
 			'args' => [
 				$movePageSpec

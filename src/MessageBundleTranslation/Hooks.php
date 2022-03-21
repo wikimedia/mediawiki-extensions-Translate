@@ -128,7 +128,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 			return;
 		}
 
-		// Update mb:ready in revtag as appropriate (remove or change revision)
+		// Update mb:valid in revtag as appropriate (remove or change revision)
 		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
 
 		$previousRevisionId = $dbw->selectField(
@@ -136,7 +136,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 			'rt_revision',
 			[
 				'rt_page' => $wikiPage->getId(),
-				'rt_type' => 'mb:ready',
+				'rt_type' => 'mb:valid',
 			]
 		);
 		// Convert to correct type
@@ -144,7 +144,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 
 		$deleteConditions = [
 			'rt_page' => $wikiPage->getId(),
-			'rt_type' => 'mb:ready',
+			'rt_type' => 'mb:valid',
 		];
 		if ( $previousRevisionId !== null ) {
 			$dbw->delete( 'revtag', $deleteConditions, __METHOD__ );
@@ -155,6 +155,8 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 			$insertConditions = $deleteConditions;
 			$insertConditions['rt_revision'] = $revisionRecord->getId();
 			$dbw->insert( 'revtag', $insertConditions, __METHOD__ );
+			MessageBundle::clearSourcePageCache();
+
 			// Defer most of the heavy work to the job queue
 			$job = UpdateMessageBundleJob::newJob(
 				$wikiPage->getTitle(),

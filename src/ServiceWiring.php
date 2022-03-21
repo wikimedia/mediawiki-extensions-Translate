@@ -10,6 +10,8 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -105,7 +107,10 @@ return [
 
 	'Translate:TranslatableBundleFactory' => static function ( MediaWikiServices $services ): TranslatableBundleFactory
 	{
-		return new TranslatableBundleFactory( $services->get( 'Translate:TranslatablePageStore' ) );
+		return new TranslatableBundleFactory(
+			$services->get( 'Translate:TranslatablePageStore' ),
+			new MessageBundleStore( new RevTagStore() )
+		);
 	},
 
 	'Translate:TranslatableBundleMover' => static function ( MediaWikiServices $services ): TranslatableBundleMover
@@ -130,7 +135,8 @@ return [
 	{
 		return new TranslatablePageStore(
 			$services->get( 'Translate:MessageIndex' ),
-			TranslateUtils::getJobQueueGroup()
+			TranslateUtils::getJobQueueGroup(),
+			new RevTagStore()
 		);
 	},
 

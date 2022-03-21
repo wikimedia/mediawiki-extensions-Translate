@@ -4,7 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
+use InvalidArgumentException;
 use JobQueueGroup;
+use MediaWiki\Revision\RevisionRecord;
 use MessageGroups;
 use MessageIndex;
 use Title;
@@ -23,10 +25,13 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private $messageIndex;
 	/** @var JobQueueGroup */
 	private $jobQueue;
+	/** @var RevTagStore */
+	private $revTagStore;
 
-	public function __construct( MessageIndex $messageIndex, JobQueueGroup $jobQueue ) {
+	public function __construct( MessageIndex $messageIndex, JobQueueGroup $jobQueue, RevTagStore $revTagStore ) {
 		$this->messageIndex = $messageIndex;
 		$this->jobQueue = $jobQueue;
+		$this->revTagStore = $revTagStore;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
@@ -48,6 +53,17 @@ class TranslatablePageStore implements TranslatableBundleStore {
 
 		$job = TranslationsUpdateJob::newFromPage( TranslatablePage::newFromTitle( $newName ) );
 		$this->jobQueue->push( $job );
+	}
+
+	public function handleNullRevisionInsert( TranslatableBundle $bundle, RevisionRecord $revision ): void {
+		if ( !$bundle instanceof TranslatablePage ) {
+			throw new InvalidArgumentException(
+				'Expected $bundle to be of type TranslatablePage, got ' . get_class( $bundle )
+			);
+		}
+
+		$this->revTagStore->addTag( $bundle->getTitle(), 'tp:tag', $revision->getId() );
+		TranslatablePage::clearSourcePageCache();
 	}
 
 	private function moveMetadata( string $oldGroupId, string $newGroupId ): void {

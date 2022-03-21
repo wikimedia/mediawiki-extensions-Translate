@@ -136,6 +136,13 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'aggregategroups' => [ 'associate', 'dissociate' ],
 			];
 
+			$wgLogTypes[] = 'messagebundle';
+			$wgLogActionsHandlers['messagebundle/moveok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['messagebundle/movenok'] = 'PageTranslationLogFormatter';
+			$wgActionFilteredLogs['messagebundle'] = [
+				'move' => [ 'moveok', 'movenok' ],
+			];
+
 			global $wgJobClasses;
 			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
 			$wgJobClasses['RenderJob'] = 'TranslateRenderJob';
