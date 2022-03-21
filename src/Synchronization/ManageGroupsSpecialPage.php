@@ -509,10 +509,11 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		if ( $errorGroups ) {
 			$errorMsg = $this->getProcessingErrorMessage( $errorGroups, count( $groups ) );
-			$out->addElement(
-				'p',
-				[ 'class' => 'warningbox mw-translate-smg-submitted' ],
-				$errorMsg
+			$out->addHTML(
+				Html::warningBox(
+					$errorMsg,
+					'mw-translate-smg-submitted'
+				)
 			);
 		}
 

@@ -655,10 +655,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		foreach ( $units as $s ) {
 			if ( preg_match( "~[$ic]~", $s->id ) ) {
-				$this->getOutput()->addElement(
-					'p',
-					[ 'class' => 'errorbox' ],
-					$this->msg( 'tpt-invalid' )->params( $s->id )->text()
+				$this->getOutput()->addHTML(
+					Html::errorBox(
+						$this->msg( 'tpt-invalid' )->params( $s->id )->text()
+					)
 				);
 				$error = true;
 			}
@@ -671,10 +671,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 		foreach ( $usedNames as $name => $count ) {
 			if ( $count > 1 ) {
 				// Only show error once per duplicated translation unit
-				$this->getOutput()->addElement(
-					'p',
-					[ 'class' => 'errorbox' ],
-					$this->msg( 'tpt-duplicate' )->params( $name )->text()
+				$this->getOutput()->addHTML(
+					Html::errorBox(
+						$this->msg( 'tpt-duplicate' )->params( $name )->text()
+					)
 				);
 				$error = true;
 			}

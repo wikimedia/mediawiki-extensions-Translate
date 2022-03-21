@@ -175,10 +175,10 @@ class TranslateSpecialPage extends SpecialPage {
 	}
 
 	protected function tuxSettingsForm(): string {
-		$nojs = Html::element(
-			'div',
-			[ 'class' => 'tux-nojs errorbox' ],
-			$this->msg( 'tux-nojs' )->plain()
+		$nojs = Html::errorBox(
+			$this->msg( 'tux-nojs' )->plain(),
+			'',
+			'tux-nojs'
 		);
 
 		$attrs = [ 'class' => 'row tux-editor-header' ];

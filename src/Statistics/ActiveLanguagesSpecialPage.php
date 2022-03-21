@@ -94,9 +94,10 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->outputHeader( 'supportedlanguages-summary' );
 		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
 		if ( $dbr->getType() === 'sqlite' ) {
-			$out->wrapWikiMsg(
-				'<div class="errorbox">$1</div>',
-				'supportedlanguages-sqlite-error'
+			$out->addHTML(
+				Html::errorBox(
+					$out->msg( 'supportedlanguages-sqlite-error' )->parse()
+				)
 			);
 			return;
 		}

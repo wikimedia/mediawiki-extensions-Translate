@@ -177,14 +177,6 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 	/** Pretty-print the list of errors. */
 	protected function showErrors( SplObjectStorage $errors ): void {
-		$out = $this->getOutput();
-
-		$out->addHTML( Html::openElement( 'div', [ 'class' => 'errorbox' ] ) );
-		$out->addWikiMsg(
-			'pt-movepage-blockers',
-			$this->getLanguage()->formatNum( count( $errors ) )
-		);
-
 		// If there are many errors, for performance reasons we must parse them all at once
 		$s = '';
 		$context = 'pt-movepage-error-placeholder';
@@ -194,8 +186,16 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			$s .= $errors[ $title ]->getWikiText( false, $context );
 		}
 
-		$out->addWikiTextAsInterface( $s );
-		$out->addHTML( Html::closeElement( 'div' ) );
+		$out = $this->getOutput();
+		$out->addHTML(
+			Html::errorBox(
+				$out->msg(
+					'pt-movepage-blockers',
+					$this->getLanguage()->formatNum( count( $errors ) )
+				)->parseAsBlock() .
+				$out->parseAsContent( $s )
+			)
+		);
 	}
 
 	/** The query form. */

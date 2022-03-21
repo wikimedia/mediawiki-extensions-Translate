@@ -186,10 +186,10 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.aggregategroups' );
 
-		$nojs = Html::element(
-			'div',
-			[ 'class' => 'tux-nojs errorbox' ],
-			$this->msg( 'tux-nojs' )->plain()
+		$nojs = Html::errorBox(
+			$this->msg( 'tux-nojs' )->plain(),
+			'',
+			'tux-nojs'
 		);
 
 		$out->addHTML( $nojs );

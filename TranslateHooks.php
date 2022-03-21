@@ -617,10 +617,10 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 		if ( TTMServer::primary() instanceof SearchableTTMServer ) {
 			$href = SpecialPage::getTitleFor( 'SearchTranslations' )
 				->getFullUrl( [ 'query' => $term ] );
-			$wrapper = new RawMessage( '<div class="successbox plainlinks">$1</div>' );
-			$form = $wrapper
-				->params( $search->msg( 'translate-searchprofile-note', $href )->plain() )
-				->parse();
+			$form = Html::successBox(
+				$search->msg( 'translate-searchprofile-note', $href )->parse(),
+				'plainlinks'
+			);
 
 			return false;
 		}
