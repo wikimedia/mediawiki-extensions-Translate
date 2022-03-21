@@ -15,7 +15,5 @@
 	"apihelp-query+messagecollection-param-language": "Kód jazyka.",
 	"apihelp-query+messagegroups-example-1": "Zobrazit skupinu zpráv",
 	"apihelp-translationstash-param-subaction": "Akce.",
-	"apihelp-translationstash-param-metadata": "JSON objekt.",
-	"apihelp-translationentitysearch-param-query": "Hledaný výraz",
-	"apihelp-translationentitysearch-param-limit": "Maximální počet výsledků hledání"
+	"apihelp-translationstash-param-metadata": "JSON objekt."
 }
