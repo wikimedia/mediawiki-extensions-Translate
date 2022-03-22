@@ -1,16 +1,11 @@
 <?php
 /**
- * Class for formatting Translate page translation logs.
+ * Class for formatting translatable bundle logs.
  *
- * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-/**
- * Class for formatting Translate page translation logs.
- */
-class PageTranslationLogFormatter extends LogFormatter {
+class TranslatableBundleLogFormatter extends LogFormatter {
 	public function getMessageParameters() {
 		$params = parent::getMessageParameters();
 		$legacy = $this->entry->getParameters();

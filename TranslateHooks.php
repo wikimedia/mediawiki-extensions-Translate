@@ -111,20 +111,20 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			// logentry-pagetranslation-discourage logentry-pagetranslation-prioritylanguages
 			// logentry-pagetranslation-associate logentry-pagetranslation-dissociate
 			$wgLogTypes[] = 'pagetranslation';
-			$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/moveok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/movenok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletelok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletefok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/encourage'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/discourage'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/mark'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/unmark'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/moveok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/movenok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletelok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletefok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/encourage'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/discourage'] = 'TranslatableBundleLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] =
-				'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationLogFormatter';
+				'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/associate'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'TranslatableBundleLogFormatter';
 			$wgActionFilteredLogs['pagetranslation'] = [
 				'mark' => [ 'mark' ],
 				'unmark' => [ 'unmark' ],
@@ -137,8 +137,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			];
 
 			$wgLogTypes[] = 'messagebundle';
-			$wgLogActionsHandlers['messagebundle/moveok'] = 'PageTranslationLogFormatter';
-			$wgLogActionsHandlers['messagebundle/movenok'] = 'PageTranslationLogFormatter';
+			$wgLogActionsHandlers['messagebundle/moveok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['messagebundle/movenok'] = 'TranslatableBundleLogFormatter';
 			$wgActionFilteredLogs['messagebundle'] = [
 				'move' => [ 'moveok', 'movenok' ],
 			];

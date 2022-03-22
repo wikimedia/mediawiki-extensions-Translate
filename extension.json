@@ -134,7 +134,7 @@
 		"MessageWebImporter": "utils/MessageWebImporter.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
 		"PageTranslationHooks": "tag/PageTranslationHooks.php",
-		"PageTranslationLogFormatter": "tag/PageTranslationLogFormatter.php",
+		"TranslatableBundleLogFormatter": "tag/TranslatableBundleLogFormatter.php",
 		"PHPVariableLoader": "utils/PHPVariableLoader.php",
 		"PremadeIntuitionTextdomains": "ffs/PremadeIntuitionTextdomains.php",
 		"PremadeMediawikiExtensionGroups": "ffs/PremadeMediawikiExtensionGroups.php",
