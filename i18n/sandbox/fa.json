@@ -9,7 +9,8 @@
 			"Mjbmr",
 			"Physicsch",
 			"Reza1615",
-			"Jeeputer"
+			"Jeeputer",
+			"Beginneruser"
 		]
 	},
 	"managetranslatorsandbox": "مدیریت کاربران مترجم",
@@ -21,7 +22,7 @@
 	"tsb-reminder-sent-new": "فرستادن یک یادآوری",
 	"tsb-reminder-failed": "عدم موفقیت در فرستادن یادآوری",
 	"tsb-email-promoted-subject": "شما در حال حاضر یک مترجم در {{SITENAME}} هستید",
-	"tsb-email-promoted-body": "سلام {{GENDER:$1|$1}}،\n\nتبریکǃ من ترجمه‌های امتحانی که شما در {{SITENAME}} ایجاد کردید را بررسی کردم و به شما تمام حقوق مترجم را دادم.\n\nاکنون به {{SITENAME}} برای ادامه ترجمه بیایید، و هر روزː \n$2\n\nخوش‌‌آمدید، و از شما برای کمک تشکر می کنمǃ\n{{GENDER:$3|$3}}،\n{{SITENAME}} کارکنان",
+	"tsb-email-promoted-body": "سلام {{GENDER:$1|$1}}،\n\nتبریکǃ من ترجمه‌های امتحانی که شما در {{SITENAME}} ایجاد کردید را بررسی کردم و به شما تمام امتیاز مترجم را دادم.\n\nاکنون به {{SITENAME}} برای ادامه ترجمه بیایید، و هر روزː \n$2\n\nخوش‌‌آمدید، و از شما برای کمک تشکر می کنمǃ\n{{GENDER:$3|$3}}،\n{{SITENAME}} کارکنان",
 	"tsb-email-rejected-subject": "درخواست شما برای مترجم شدن در {{SITENAME}} رد شد",
 	"tsb-email-rejected-body": "سلام {{GENDER:$1|$1}}،\n\nتشکر از شما برای درخواست به عنوان مترجم در {{SITENAME}}. متأسفم که به شما اطلاع دادم که درخواست شما را رد کرده‌ام، زیرا کیفیت ترجمه‌های شما، نیازها را برآورد نکرد.\n\nاگر فکر می‌کنید که درخواست شما اشتباهاً رد شده‌است، لطفاً برای درخواست مجدد به عنوان مترجم در {{SITENAME}} درخواست دهید. شما می‌توانید اینجا ثبت‌نام کنیدː\n$2\n\n{{GENDER:$3|$3}}،\n{{SITENAME}} کارکنان",
 	"tsb-request-count": "$1 {{PLURAL:$1|درخواست|درخواست‌ها}}",
@@ -44,7 +45,7 @@
 	"tsb-accept-confirmation": "{{PLURAL:$1|کاربر|کاربران}} پذیرفته شدند",
 	"translationstash": "خوش آمدید",
 	"translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم تازه هستید",
-	"translate-translationstash-welcome-note": "با ابزارهای ترجمه آشنا شوید. چند پیام را ترجمه کنید و اختیارات کامل ترجمه را به دست بیاورید تا در پروژه‌های مورد علاقهٔ خود شرکت کنید.",
+	"translate-translationstash-welcome-note": "با ابزارهای ترجمه آشنا شوید. چند پیام را ترجمه کنید و امتیازات کامل ترجمه را به دست بیاورید تا در پروژه‌های مورد علاقهٔ خود شرکت کنید.",
 	"translate-translationstash-initialtranslation": "ترجمه‌های اولیهٔ شما",
 	"translate-translationstash-translations": "$1تکمیل شده {{PLURAL:$1|ترجمه|ترجمه‌ها}}",
 	"translate-translationstash-skip-button-label": "امتحان دیگری",

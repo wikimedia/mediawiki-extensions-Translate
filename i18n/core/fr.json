@@ -229,7 +229,7 @@
 	"translate-mgs-invalid-group": "Le groupe spécifié $1 n’existe pas.",
 	"translate-mgs-nothing": "Rien à afficher pour les statistiques demandées.",
 	"supportedlanguages": "Langues actives",
-	"supportedlanguages-summary": "Cette page affiche une liste des langues actives sur {{SITENAME}}, avec les noms des traducteurs qui travaillent dans cette langue.\nLe nom d’un traducteur apparaît en plus gros en fonction du nombre de modifications auxquelles il a contribué.\nLa couleur du soulignement indique si le traducteur a été actif ici récemment.",
+	"supportedlanguages-summary": "Cette page affiche une liste des langues actives sur {{SITENAME}}, avec les noms des traducteurs et traductrices qui travaillent dans cette langue.\nLe nom d’une langue, d’un traducteur ou d’une traductrice dans cette langue apparaît en plus gros en fonction du nombre de modifications contribuées dans cette langue.\nL’accentuation de la couleur du soulignement du nom d’un traducteur ou d’une traductrice indique si ce traducteur ou cette traductrice a été actif ou active ici récemment.",
 	"supportedlanguages-colorlegend": "Légende pour la couleur : dernière traduction il y a $1 jours.",
 	"supportedlanguages-portallink": "[$1] $2 – $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
