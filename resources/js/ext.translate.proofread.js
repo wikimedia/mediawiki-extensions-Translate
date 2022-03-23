@@ -56,9 +56,15 @@
 
 			this.$message.translateeditor( {
 				message: this.message,
+				beforeSave: function ( translation ) {
+					that.$message.find( '.tux-proofread-translation' )
+						.html( mw.translate.formatMessageGently( translation || '', that.message.key ) )
+						.addClass( 'highlight' );
+				},
 				onSave: function ( translation ) {
 					that.$message.find( '.tux-proofread-translation' )
-						.text( translation );
+						.text( translation )
+						.removeClass( 'highlight' );
 					that.message.translation = translation;
 					that.markSelfTranslation();
 
