@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -105,6 +106,14 @@ return [
 		);
 	},
 
+	'Translate:SubpageListBuilder' => static function ( MediaWikiServices $services ): SubpageListBuilder
+	{
+		return new SubpageListBuilder(
+			$services->get( 'Translate:TranslatableBundleFactory' ),
+			$services->getLinkBatchFactory()
+		);
+	},
+
 	'Translate:TranslatableBundleFactory' => static function ( MediaWikiServices $services ): TranslatableBundleFactory
 	{
 		return new TranslatableBundleFactory(
@@ -120,6 +129,7 @@ return [
 			TranslateUtils::getJobQueueGroup(),
 			$services->getLinkBatchFactory(),
 			$services->get( 'Translate:TranslatableBundleFactory' ),
+			$services->get( 'Translate:SubpageListBuilder' ),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},
