@@ -17,15 +17,15 @@ use PermissionsError;
 use ReadOnlyError;
 use SpecialPage;
 use Title;
+use TranslatableBundleDeleteJob;
 use TranslatablePage;
-use TranslateDeleteJob;
 use TranslateMetadata;
 use TranslateUtils;
 use WebRequest;
 use Xml;
 
 /**
- * Special page which enables deleting translations of translatable pages
+ * Special page which enables deleting translations of translatable bundles and translation pages
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
@@ -309,7 +309,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 
 		$user = $this->getUser();
 		foreach ( $subpageList[ 'translationPages' ] as $old ) {
-			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
+			$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
 				$old,
 				$base,
 				!$isSingleLanguage,
@@ -319,7 +319,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		}
 
 		foreach ( $subpageList[ 'translationUnitPages' ] as $old ) {
-			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
+			$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
 				$old,
 				$base,
 				!$isSingleLanguage,
@@ -330,7 +330,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 
 		if ( $this->doSubpages ) {
 			foreach ( $subpageList[ 'normalSubpages' ] as $old ) {
-				$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
+				$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
 					$old,
 					$base,
 					!$isSingleLanguage,
@@ -341,7 +341,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		}
 
 		if ( !$isSingleLanguage ) {
-			$jobs[$this->title->getPrefixedText()] = TranslateDeleteJob::newJob(
+			$jobs[$this->title->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
 				$this->title,
 				$base,
 				!$isSingleLanguage,

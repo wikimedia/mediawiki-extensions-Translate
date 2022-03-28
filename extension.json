@@ -156,7 +156,7 @@
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslatableBundleMoveJob": "tag/TranslatableBundleMoveJob.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
-		"TranslateDeleteJob": "tag/TranslateDeleteJob.php",
+		"TranslatableBundleDeleteJob": "tag/TranslatableBundleDeleteJob.php",
 		"TranslateEditAddons": "TranslateEditAddons.php",
 		"TranslateHooks": "TranslateHooks.php",
 		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",

@@ -151,8 +151,10 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			// Remove after MLEB 2022.04 release
 			$wgJobClasses['TranslatablePageMoveJob'] = 'TranslatableBundleMoveJob';
 			$wgJobClasses['TranslatableBundleMoveJob'] = 'TranslatableBundleMoveJob';
-			$wgJobClasses['TranslateDeleteJob'] = 'TranslateDeleteJob';
-			$wgJobClasses['DeleteJob'] = 'TranslateDeleteJob';
+			// Remove after MLEB 2022.04 release
+			$wgJobClasses['TranslateDeleteJob'] = 'TranslatableBundleDeleteJob';
+			$wgJobClasses['TranslatableBundleDeleteJob'] = 'TranslatableBundleDeleteJob';
+
 			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';
 
 			// Namespaces

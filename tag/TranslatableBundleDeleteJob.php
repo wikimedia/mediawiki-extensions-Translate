@@ -1,15 +1,16 @@
 <?php
+declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 
 /**
- * Job for deleting translatable and translation pages.
+ * Job for deleting translatable bundles and translation pages.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation JobQueue
  */
-class TranslateDeleteJob extends Job {
+class TranslatableBundleDeleteJob extends Job {
 	public static function newJob(
 		Title $target,
 		string $base,
@@ -27,11 +28,7 @@ class TranslateDeleteJob extends Job {
 		return new self( $target, $params );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params = [] ) {
+	public function __construct( Title $title, array $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
 	}
 
@@ -121,7 +118,6 @@ class TranslateDeleteJob extends Job {
 		return $this->params['reason'];
 	}
 
-	/** @return bool True if this job is for a translatable page, false if for a translation page */
 	public function isTranslatablePage(): bool {
 		return $this->params['full'];
 	}
