@@ -1,6 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\PageDeleteLogger;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 
@@ -58,20 +59,13 @@ class TranslatableBundleDeleteJob extends Job {
 			true
 		);
 
+		$logger = new PageDeleteLogger( $title, 'pagetranslation' );
 		if ( !$status->isGood() ) {
-			$params = [
-				'target' => $base,
-				'errors' => $status->getErrorsArray(),
-			];
-
-			$type = $this->isTranslatablePage() ? 'deletefnok' : 'deletelnok';
-			$entry = new ManualLogEntry( 'pagetranslation', $type );
-			$entry->setPerformer( $performer );
-			$entry->setComment( $reason );
-			$entry->setTarget( $title );
-			$entry->setParameters( $params );
-			$logid = $entry->insert();
-			$entry->publish( $logid );
+			if ( $this->isTranslatablePage() ) {
+				$logger->logBundleError( $performer, $reason, $status );
+			} else {
+				$logger->logPageError( $performer, $reason, $status );
+			}
 		}
 
 		PageTranslationHooks::$allowTargetEdit = false;
@@ -83,13 +77,11 @@ class TranslatableBundleDeleteJob extends Job {
 		if ( $title->getPrefixedText() === $lastitem ) {
 			$cache->delete( $pageKey );
 
-			$type = $this->isTranslatablePage() ? 'deletefok' : 'deletelok';
-			$entry = new ManualLogEntry( 'pagetranslation', $type );
-			$entry->setPerformer( $performer );
-			$entry->setComment( $reason );
-			$entry->setTarget( Title::newFromText( $base ) );
-			$logid = $entry->insert();
-			$entry->publish( $logid );
+			if ( $this->isTranslatablePage() ) {
+				$logger->logBundleSuccess( $performer, $reason );
+			} else {
+				$logger->logPageSuccess( $performer, $reason );
+			}
 
 			$tpage = TranslatablePage::newFromTitle( $title );
 			$tpage->getTranslationPercentages();
