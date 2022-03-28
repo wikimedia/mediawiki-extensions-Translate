@@ -7,6 +7,8 @@ use AggregateMessageGroup;
 use BagOStuff;
 use ErrorPageError;
 use HTMLForm;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MessageGroups;
 use MessageIndexRebuildJob;
@@ -15,7 +17,6 @@ use PermissionsError;
 use ReadOnlyError;
 use SpecialPage;
 use Title;
-use TitleArray;
 use TranslatablePage;
 use TranslateDeleteJob;
 use TranslateMetadata;
@@ -43,17 +44,26 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 	private $page;
 	/// Contains the language code if we are working with translation page
 	private $code;
-	/** @var Title[] */
-	private $translationPages;
 	/** @var BagOStuff */
 	private $mainCache;
 	/** @var PermissionManager */
 	private $permissionManager;
+	/** @var TranslatableBundleFactory */
+	private $bundleFactory;
+	/** @var SubpageListBuilder */
+	private $subpageBuilder;
 
-	public function __construct( BagOStuff $mainCache, PermissionManager $permissionManager ) {
+	public function __construct(
+		BagOStuff $mainCache,
+		PermissionManager $permissionManager,
+		TranslatableBundleFactory $bundleFactory,
+		SubpageListBuilder $subpageBuilder
+	) {
 		parent::__construct( 'PageTranslationDeletePage', 'pagetranslation' );
 		$this->mainCache = $mainCache;
 		$this->permissionManager = $permissionManager;
+		$this->bundleFactory = $bundleFactory;
+		$this->subpageBuilder = $subpageBuilder;
 	}
 
 	public function doesWrites() {
@@ -90,7 +100,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 			$title = $this->msg( 'pt-deletepage-full-title', $this->title->getPrefixedText() );
 			$out->setPageTitle( $title );
 
-			$this->code = '';
+			$this->code = null;
 			$this->page = TranslatablePage::newFromTitle( $this->title );
 		} else {
 			$page = TranslatablePage::isTranslationPage( $this->title );
@@ -98,7 +108,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 				$title = $this->msg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() );
 				$out->setPageTitle( $title );
 
-				list( , $this->code ) = TranslateUtils::figureMessage( $this->title->getText() );
+				[ , $this->code ] = TranslateUtils::figureMessage( $this->title->getText() );
 				$this->page = $page;
 			} else {
 				throw new ErrorPageError(
@@ -206,8 +216,12 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 
 		$out->addWikiMsg( 'pt-deletepage-intro' );
 
+		$subpages = $this->getPagesForDeletion();
+
 		$out->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
-		if ( !$this->singleLanguage() ) {
+
+		$isSingleLanguage = $this->singleLanguage();
+		if ( !$isSingleLanguage ) {
 			$count++;
 			$out->addWikiTextAsInterface(
 				$this->getChangeLine( $this->title )
@@ -215,18 +229,18 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		}
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-translation' );
-		$translationPages = $this->getTranslationPages();
+
 		$lines = [];
-		foreach ( $translationPages as $old ) {
+		foreach ( $subpages[ 'translationPages' ] as $old ) {
 			$count++;
 			$lines[] = $this->getChangeLine( $old );
 		}
 		$this->listPages( $out, $lines );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
-		$sectionPages = $this->getSectionPages();
+
 		$lines = [];
-		foreach ( $sectionPages as $old ) {
+		foreach ( $subpages[ 'translationUnitPages' ] as $old ) {
 			$count++;
 			$lines[] = $this->getChangeLine( $old );
 		}
@@ -234,13 +248,9 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 
 		if ( TranslateUtils::allowsSubpages( $this->title ) ) {
 			$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
-			$subpages = $this->getSubpages();
+			$subpages = $subpages[ 'normalSubpages' ];
 			$lines = [];
 			foreach ( $subpages as $old ) {
-				if ( TranslatablePage::isTranslationPage( $old ) ) {
-					continue;
-				}
-
 				$subpageCount++;
 				$lines[] = $this->getChangeLine( $old );
 			}
@@ -267,7 +277,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 
-		if ( $this->singleLanguage() ) {
+		if ( $isSingleLanguage ) {
 			$htmlForm->setWrapperLegendMsg( 'pt-deletepage-lang-legend' );
 		} else {
 			$htmlForm->setWrapperLegendMsg( 'pt-deletepage-full-legend' );
@@ -294,52 +304,47 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		$jobs = [];
 		$target = $this->title;
 		$base = $this->title->getPrefixedText();
+		$isSingleLanguage = $this->singleLanguage();
+		$subpageList = $this->getPagesForDeletion();
 
-		$translationPages = $this->getTranslationPages();
 		$user = $this->getUser();
-		foreach ( $translationPages as $old ) {
+		foreach ( $subpageList[ 'translationPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
 				$old,
 				$base,
-				!$this->singleLanguage(),
+				!$isSingleLanguage,
 				$user,
 				$this->reason
 			);
 		}
 
-		$sectionPages = $this->getSectionPages();
-		foreach ( $sectionPages as $old ) {
+		foreach ( $subpageList[ 'translationUnitPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
 				$old,
 				$base,
-				!$this->singleLanguage(),
+				!$isSingleLanguage,
 				$user,
 				$this->reason
 			);
 		}
 
 		if ( $this->doSubpages ) {
-			$subpages = $this->getSubpages();
-			foreach ( $subpages as $old ) {
-				if ( TranslatablePage::isTranslationPage( $old ) ) {
-					continue;
-				}
-
+			foreach ( $subpageList[ 'normalSubpages' ] as $old ) {
 				$jobs[$old->getPrefixedText()] = TranslateDeleteJob::newJob(
 					$old,
 					$base,
-					!$this->singleLanguage(),
+					!$isSingleLanguage,
 					$user,
 					$this->reason
 				);
 			}
 		}
 
-		if ( !$this->singleLanguage() ) {
+		if ( !$isSingleLanguage ) {
 			$jobs[$this->title->getPrefixedText()] = TranslateDeleteJob::newJob(
 				$this->title,
 				$base,
-				!$this->singleLanguage(),
+				!$isSingleLanguage,
 				$user,
 				$this->reason
 			);
@@ -353,7 +358,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 			6 * $this->mainCache::TTL_HOUR
 		);
 
-		if ( !$this->singleLanguage() ) {
+		if ( !$isSingleLanguage ) {
 			$this->page->unmarkTranslatablePage();
 			$this->clearMetadata();
 		}
@@ -391,42 +396,8 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		}
 	}
 
-	/**
-	 * Returns all section pages, including those which are currently not active.
-	 * @return Title[]
-	 */
-	private function getSectionPages(): array {
-		$code = $this->singleLanguage() ? $this->code : null;
-
-		return $this->page->getTranslationUnitPages( $code );
-	}
-
-	/**
-	 * Returns only translation subpages.
-	 * @return Title[]
-	 */
-	private function getTranslationPages(): array {
-		if ( $this->singleLanguage() ) {
-			return [ $this->title ];
-		}
-
-		if ( !isset( $this->translationPages ) ) {
-			$this->translationPages = $this->page->getTranslationPages();
-		}
-
-		return $this->translationPages;
-	}
-
-	/**
-	 * Returns all subpages, if the namespace has them enabled.
-	 * @return array|TitleArray Empty array or TitleArray.
-	 */
-	private function getSubpages() {
-		return $this->title->getSubpages();
-	}
-
 	private function singleLanguage(): bool {
-		return $this->code !== '';
+		return $this->code !== null;
 	}
 
 	private function getCommonFormFields(): array {
@@ -483,6 +454,22 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 			return "$dropdownSelection$separator$reasonInput";
 		} else {
 			return $dropdownSelection;
+		}
+	}
+
+	private function getPagesForDeletion(): array {
+		if ( $this->singleLanguage() ) {
+			$resultSet = $this->subpageBuilder->getEmptyResultSet();
+
+			[ $titleKey, ] = TranslateUtils::figureMessage( $this->title->getPrefixedDBkey() );
+			$translatablePage = TranslatablePage::newFromTitle( Title::newFromText( $titleKey ) );
+
+			$resultSet['translationPages'] = [ $this->title ];
+			$resultSet['translationUnitPages'] = $translatablePage->getTranslationUnitPages( $this->code );
+			return $resultSet;
+		} else {
+			$bundle = $this->bundleFactory->getValidBundle( $this->title );
+			return $this->subpageBuilder->getSubpagesPerType( $bundle, false );
 		}
 	}
 }

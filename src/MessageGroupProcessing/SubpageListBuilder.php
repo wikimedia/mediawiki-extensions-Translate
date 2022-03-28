@@ -29,14 +29,7 @@ class SubpageListBuilder {
 	}
 
 	public function getSubpagesPerType( TranslatableBundle $bundle, bool $fetchTalkPages ): array {
-		$classifiedSubPages = [
-			'translationPages' => [],
-			'translatableSubpages' => [],
-			'translationUnitPages' => [],
-			'normalSubpages' => [],
-			'talkPages' => [],
-			'translatableTalkPages' => []
-		];
+		$classifiedSubPages = $this->getEmptyResultSet();
 
 		$classifiedSubPages['translationPages'] = $bundle->getTranslationPages();
 		$classifiedSubPages['translationUnitPages'] = $bundle->getTranslationUnitPages();
@@ -101,6 +94,17 @@ class SubpageListBuilder {
 		}
 
 		return $classifiedSubPages;
+	}
+
+	public function getEmptyResultSet(): array {
+		return [
+			'translationPages' => [],
+			'translatableSubpages' => [],
+			'translationUnitPages' => [],
+			'normalSubpages' => [],
+			'talkPages' => [],
+			'translatableTalkPages' => []
+		];
 	}
 
 	/**

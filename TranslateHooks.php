@@ -91,7 +91,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'class' => DeleteTranslatablePageSpecialPage::class,
 				'services' => [
 					'MainObjectStash',
-					'PermissionManager'
+					'PermissionManager',
+					'Translate:TranslatableBundleFactory',
+					'Translate:SubpageListBuilder'
 				]
 			];
 
