@@ -41,6 +41,8 @@
 	"action-translate-messagereview": "ትርጉማት ክትግምግም",
 	"translate-rcfilters-translations": "ትርጉማት",
 	"translate-rcfilters-translations-only-label": "ትርጉማት",
+	"translate-rcfilters-translations-only-desc": "ናብ ዝተተርጎመ ገጻት ለውጥታት።",
+	"translate-rcfilters-translations-filter-desc": "ኩሎም ትርጉማት ዘይኮኑ ለውጥታት።",
 	"translate-rc-translation-filter": "ትርጉማት ኣጻርይ፦",
 	"translate-rc-translation-filter-no": "ዋላ ሓንቲ ኣይትግበር",
 	"translate-stats-edits": "ኣርትዖታት",
