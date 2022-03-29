@@ -51,6 +51,11 @@ class PageTranslationHooks {
 			return;
 		}
 
+		// Skip interface message parsing
+		if ( $wikitextParser->getOptions()->getInterfaceMessage() ) {
+			return;
+		}
+
 		self::preprocessTagPage( $wikitextParser, $text, $state );
 
 		// For section previews, perform additional clean-up, given tags are often
@@ -126,6 +131,11 @@ class PageTranslationHooks {
 	 * @param string $state
 	 */
 	public static function preprocessTagPage( $wikitextParser, &$text, $state ): void {
+		// Skip interface message parsing
+		if ( $wikitextParser->getOptions()->getInterfaceMessage() ) {
+			return;
+		}
+
 		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
 		if ( $translatablePageParser->containsMarkup( $text ) ) {
 			try {
