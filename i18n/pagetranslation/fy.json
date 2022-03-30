@@ -102,7 +102,7 @@
 	"pt-parse-open": "Wanwichtige &lt;translate>-oantsjutting.\nOersettingsberjocht: <pre>$1</pre>",
 	"pt-parse-close": "Wanwichtige &lt;/translate>-oantsjutting.\nOersettingsberjocht: <pre>$1</pre>",
 	"pt-parse-nested": "Neske &lt;translate>-oersetienheden binne net tastien.\nTekst fan 'e oantsjutting: <pre>$1</pre>",
-	"pt-shake-multiple": "Ferskate oersetienheid-markearders foar ien oersetienheid.\nTekst fan 'e oersetienheid: <pre>$1</pre>",
+	"pt-shake-multiple": "Ferskate oersetienheid-markearders foar ien oersetienheid.\nSoargje dat de oersetienheden skaat wurde troch wytrigels.\nTekst fan 'e oersetienheid: <pre>$1</pre>",
 	"pt-shake-position": "Oersetienheid-markearders op in nuver plak.\nTekst fan 'e oersetienheid: <pre>$1</pre>",
 	"pt-shake-empty": "Lege oersetienheid foar markearder \"$1\".",
 	"log-description-pagetranslation": "Loch foar hannelings oangeande it side-oersetsysteem",

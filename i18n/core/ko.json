@@ -17,7 +17,8 @@
 			"ToePeu",
 			"Ykhwong",
 			"관인생략",
-			"아라"
+			"아라",
+			"Twotwo2019"
 		]
 	},
 	"translate": "번역하기",
@@ -80,6 +81,7 @@
 	"translate-checks-gettext-plural-unsupported": "이 메시지는 <nowiki>{{PLURAL:GETTEXT|}}</nowiki>를 지원하지 않습니다.",
 	"translate-checks-smartformat-plural-missing": "이 번역은 $1 변수에 대해 복수형이어야 합니다.",
 	"translate-checks-smartformat-plural-unsupported": "이 메시지는 $1 변수에 대해 복수형을 지원하지 않습니다.",
+	"translate-checks-unicode-plural-invalid": "복수형은 $1로 정의하는 것이 좋습니다. 이 번역은 $2를 포함합니다.",
 	"translate-checks-pagename": "이름공간이 정의로부터 바뀌었습니다",
 	"translate-checks-format": "이 번역은 정의를 따르지 않거나 잘못된 구문입니다: $1",
 	"translate-checks-escape": "다음의 탈출은 실수였을 수 있습니다: <strong>$1</strong>",
@@ -187,7 +189,7 @@
 	"translate-mgs-invalid-group": "지정한 $1 그룹이 존재하지 않습니다.",
 	"translate-mgs-nothing": "요청된 통계에 대해 보여줄 것이 없습니다.",
 	"supportedlanguages": "활성화된 언어",
-	"supportedlanguages-summary": "이 문서는 {{SITENAME}}에서 지원하는 모든 언어의 목록과 그 언어로 번역하는 번역자의 이름을 보여줍니다.\n번역자가 편집을 더 많이 할수록 이름이 크게 나타납니다.\n밑줄의 색깔은 번역자가 얼마나 최근에 활동했는지를 나타냅니다.",
+	"supportedlanguages-summary": "이 문서는 {{SITENAME}}에서 지원하는 활성화된 언어의 목록과 그 언어로 번역하는 번역자의 이름을 보여줍니다.\n번역자가 편집을 더 많이 할수록 이름이 크게 나타납니다.\n밑줄의 색깔은 번역자가 얼마나 최근에 활동했는지를 나타냅니다.",
 	"supportedlanguages-colorlegend": "색깔 범례: 마지막 번역을 한 날짜가 $1일 전.",
 	"supportedlanguages-sqlite-error": "SQLite는 지원되지 않습니다",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|번역자}}|번역자}}: $1",
