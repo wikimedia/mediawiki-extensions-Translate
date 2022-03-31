@@ -379,10 +379,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$actions = '';
 			$sourceLanguage = $group->getSourceLanguage();
 
-			// If a key is reused AND the content is the same, then select import and NOT
-			// import & fuzzy. Since content is same, it makes no sense to fuzzy the translations
-			$unsafeKeyReuse = $isReusedKey && $wiki !== $params['content'];
-			$shouldFuzzy = $sourceLanguage === $language && $unsafeKeyReuse;
+			// Option to fuzzy is only available for source languages, and should be used
+			// if content has changed.
+			$shouldFuzzy = $sourceLanguage === $language && $wiki !== $params['content'];
 
 			if ( $sourceLanguage === $language ) {
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
