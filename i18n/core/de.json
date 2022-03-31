@@ -22,7 +22,8 @@
 			"Tbleher",
 			"The Evil IP address",
 			"Tobi 406",
-			"Umherirrender"
+			"Umherirrender",
+			"Tacsipacsi"
 		]
 	},
 	"translate": "Übersetzen",
@@ -309,7 +310,7 @@
 	"translate-documentation-language": "Nachrichtendokumentation",
 	"translate-searchprofile": "Übersetzungen",
 	"translate-searchprofile-tooltip": "Suche in allen Übersetzungen",
-	"translate-searchprofile-note": "Weitere Suchoptionen sind verfügbar mit der [$1 Übersetzungssuche].",
+	"translate-searchprofile-note": "Weitere Suchoptionen sind mit der [$1 Übersetzungssuche] verfügbar.",
 	"translate-search-languagefilter": "Nach Sprache filtern:",
 	"translate-search-nofilter": "Alle Sprachen",
 	"log-name-translationreview": "Übersetzungsprüfungs-Logbuch",

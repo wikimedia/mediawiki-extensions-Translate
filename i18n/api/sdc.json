@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jun Misugi"
+			"Jun Misugi",
+			"F Samaritani"
 		]
 	},
 	"apihelp-groupreview-param-group": "Gruppu d'imbasciaddi.",
 	"apihelp-groupreview-param-language": "Còditzi di linga.",
 	"apihelp-query+languagestats-param-language": "Còditzi di linga.",
+	"apihelp-query+languagestats-param-group": "Gruppu d'imbasciaddi.",
 	"apihelp-query+messagecollection-param-group": "Gruppu d'imbasciaddi.",
 	"apihelp-query+messagecollection-param-language": "Còditzi di linga.",
 	"apihelp-query+messagecollection-example-1": "Erencu di linghi susthiniddi",

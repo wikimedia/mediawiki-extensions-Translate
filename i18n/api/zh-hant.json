@@ -4,7 +4,8 @@
 			"Kly",
 			"LNDDYL",
 			"Liuxinyu970226",
-			"Weather Top Wizard"
+			"Weather Top Wizard",
+			"Winston Sung"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理集合訊息群組。\n\n您可以添加或移除集合訊息群組，以及從其中來關聯或取消關聯訊息群組（每一次一個）。",
@@ -25,6 +26,7 @@
 	"apihelp-query+languagestats-description": "查詢語言統計。",
 	"apihelp-query+languagestats-summary": "查詢語言統計。",
 	"apihelp-query+languagestats-param-language": "語言代碼。",
+	"apihelp-query+languagestats-param-group": "訊息群組 ID。",
 	"apihelp-query+languagestats-example-1": "芬蘭語的翻譯完成統計狀態清單",
 	"apihelp-query+messagecollection-description": "查詢有關翻譯的 MessageCollection。",
 	"apihelp-query+managemessagegroups-summary": "在導入過程中取得訊息群組裡可能的重新命名",
