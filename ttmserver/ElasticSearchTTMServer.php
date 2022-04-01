@@ -139,7 +139,7 @@ class ElasticSearchTTMServer
 		 */
 		$contents = $scores = $terms = [];
 		do {
-			$resultset = $this->getType()->search( $query );
+			$resultset = $this->getIndex()->search( $query );
 
 			if ( count( $resultset ) === 0 ) {
 				break;
@@ -190,7 +190,7 @@ class ElasticSearchTTMServer
 			$query = new Query( $idQuery );
 			$query->setSize( 25 );
 			$query->setParam( '_source', [ 'wiki', 'uri', 'content', 'localid' ] );
-			$resultset = $this->getType()->search( $query );
+			$resultset = $this->getIndex()->search( $query );
 
 			foreach ( $resultset->getResults() as $result ) {
 				$data = $result->getData();
@@ -254,7 +254,7 @@ class ElasticSearchTTMServer
 		// Do not delete definitions, because the translations are attached to that
 		if ( $handle->getCode() !== $sourceLanguage ) {
 			$localid = $handle->getTitleForBase()->getPrefixedText();
-			$this->deleteByQuery( $this->getType(), Query::create(
+			$this->deleteByQuery( $this->getIndex(), Query::create(
 				( new BoolQuery() )
 				->addFilter( new Term( [ 'wiki' => WikiMap::getCurrentWikiId() ] ) )
 				->addFilter( new Term( [ 'language' => $handle->getCode() ] ) )
@@ -273,7 +273,7 @@ class ElasticSearchTTMServer
 		$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
 		$mwElasticUtilsClass::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
 			function () use ( $doc ) {
-				$this->getType()->addDocument( $doc );
+				$this->getIndex()->getType( '_doc' )->addDocument( $doc );
 			},
 			static function ( $e, $errors ) use ( $fname ) {
 				$c = get_class( $e );
@@ -308,7 +308,7 @@ class ElasticSearchTTMServer
 			'group' => $handle->getGroupIds(),
 		];
 
-		return new Document( $globalid, $data );
+		return new Document( $globalid, $data, '_doc' );
 	}
 
 	/**
@@ -349,8 +349,7 @@ class ElasticSearchTTMServer
 			$indexSettings['settings']['index']['auto_expand_replicas'] = $replicas;
 		}
 
-		$type = $this->getType();
-		$type->getIndex()->create( $indexSettings, $rebuild );
+		$this->getIndex()->create( $indexSettings, $rebuild );
 	}
 
 	/**
@@ -359,22 +358,23 @@ class ElasticSearchTTMServer
 	 * @throws RuntimeException
 	 */
 	public function beginBootstrap() {
-		$type = $this->getType();
+		$this->checkElasticsearchVersion();
+		$index = $this->getIndex();
 		if ( $this->updateMapping ) {
 			$this->logOutput( 'Updating the index mappings...' );
 			$this->createIndex( true );
-		} elseif ( !$type->getIndex()->exists() ) {
+		} elseif ( !$index->exists() ) {
 			$this->createIndex( false );
 		}
 
-		$settings = $type->getIndex()->getSettings();
+		$settings = $index->getSettings();
 		$settings->setRefreshInterval( '-1' );
 
-		$this->deleteByQuery( $this->getType(), Query::create(
+		$this->deleteByQuery( $this->getIndex(), Query::create(
 			( new Term() )->setTerm( 'wiki', WikiMap::getCurrentWikiId() ) ) );
 
 		$mapping = new Mapping();
-		$mapping->setType( $type );
+		$mapping->setType( $index->getType( '_doc' ) );
 		$mapping->setProperties( [
 			'wiki' => [ 'type' => 'keyword' ],
 			'localid' => [ 'type' => 'keyword' ],
@@ -402,7 +402,7 @@ class ElasticSearchTTMServer
 				]
 			],
 		] );
-		$mapping->send();
+		$mapping->send( [ 'include_type_name' => 'true' ] );
 
 		$this->waitUntilReady();
 	}
@@ -436,7 +436,7 @@ class ElasticSearchTTMServer
 		$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
 		$mwElasticUtilsClass::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
 			function () use ( $docs ) {
-				$this->getType()->addDocuments( $docs );
+				$this->getIndex()->addDocuments( $docs );
 			},
 			function ( $e, $errors ) {
 				$c = get_class( $e );
@@ -452,7 +452,7 @@ class ElasticSearchTTMServer
 	}
 
 	public function endBootstrap() {
-		$index = $this->getType()->getIndex();
+		$index = $this->getIndex();
 		$index->refresh();
 		$index->forcemerge();
 		$index->getSettings()->setRefreshInterval( '5s' );
@@ -479,10 +479,9 @@ class ElasticSearchTTMServer
 		return $this->config['index'] ?? 'ttmserver';
 	}
 
-	public function getType() {
+	public function getIndex() {
 		return $this->getClient()
-			->getIndex( $this->getIndexName() )
-			->getType( 'message' );
+			->getIndex( $this->getIndexName() );
 	}
 
 	protected function getShardCount() {
@@ -713,7 +712,7 @@ class ElasticSearchTTMServer
 			'fields' => $highlights,
 		] );
 
-		return $this->getType()->getIndex()->createSearch( $query );
+		return $this->getIndex()->createSearch( $query );
 	}
 
 	/**
@@ -791,14 +790,14 @@ class ElasticSearchTTMServer
 	 * TODO: Elastica\Index::deleteByQuery() ? was removed
 	 *  in 2.x and returned in 5.x.
 	 *
-	 * @param \Elastica\Type $type the source index
+	 * @param \Elastica\Index $index the source index
 	 * @param Query $query
 	 * @throws RuntimeException
 	 */
-	private function deleteByQuery( \Elastica\Type $type, Query $query ) {
+	private function deleteByQuery( \Elastica\Index $index, Query $query ) {
 		try {
 			$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
-			$mwElasticUtilsClass::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
+			$mwElasticUtilsClass::deleteByQuery( $index, $query, /* $allowConflicts = */ true );
 		} catch ( Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
 				'Problem encountered during deletion.',
@@ -819,6 +818,28 @@ class ElasticSearchTTMServer
 			return MWElasticUtils::class;
 		} else {
 			return '\MWElasticUtils';
+		}
+	}
+
+	/* @throws RuntimeException */
+	private function getElasticsearchVersion(): string {
+		$response = $this->getClient()->request( '' );
+		if ( !$response->isOK() ) {
+			throw new \RuntimeException( "Cannot fetch elasticsearch version: " . $response->getError() );
+		}
+
+		$result = $response->getData();
+		if ( !isset( $result['version']['number'] ) ) {
+			throw new \RuntimeException( 'Unable to determine elasticsearch version, aborting.' );
+		}
+
+		return $result[ 'version' ][ 'number' ];
+	}
+
+	private function checkElasticsearchVersion() {
+		$version = $this->getElasticsearchVersion();
+		if ( strpos( $version, '6.8' ) !== 0 && strpos( $version, '7.' ) !== 0 ) {
+			throw new \RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
 		}
 	}
 }
