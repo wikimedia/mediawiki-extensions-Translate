@@ -13,7 +13,6 @@ use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatablePageSpecialP
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
-use MediaWiki\Extension\Translate\PageTranslation\TranslateExt;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
@@ -22,7 +21,6 @@ use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
-use Wikimedia\Parsoid\Config\SiteConfig;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -990,18 +988,5 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			],
 			__METHOD__
 		);
-	}
-
-	/**
-	 * This hook is run at the end of the Parsoid SiteConfig initialization and registers the
-	 * extension module. This hack is necessary because the Translate extension backward
-	 * compatibility policy requires the extension to be compatible with older versions of MediaWiki
-	 * in which a/ the extension is already declared b/ the extension declaration is broken.
-	 * @param SiteConfig $sc
-	 */
-	public static function onParsoidSiteConfigInit( SiteConfig $sc ) {
-		if ( version_compare( MW_VERSION, '1.38' ) >= 0 ) {
-			$sc->registerExtensionModule( TranslateExt::class );
-		}
 	}
 }
