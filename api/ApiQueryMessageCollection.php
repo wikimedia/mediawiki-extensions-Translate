@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 /**
@@ -238,40 +239,40 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	protected function getAllowedParams() {
 		return [
 			'group' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'language' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => 'en',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => 'en',
 			],
 			'limit' => [
-				ApiBase::PARAM_DFLT => 500,
-				ApiBase::PARAM_TYPE => 'limit',
+				ParamValidator::PARAM_DEFAULT => 500,
+				ParamValidator::PARAM_TYPE => 'limit',
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG2,
 				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2,
 			],
 			'offset' => [
-				ApiBase::PARAM_DFLT => '',
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
+				ParamValidator::PARAM_TYPE => 'string',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			],
 			'filter' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '!optional|!ignored',
-				ApiBase::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '!optional|!ignored',
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 			'prop' => [
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_TYPE => [
 					'definition',
 					'translation',
 					'tags',
 					'revision',
 					'properties'
 				],
-				ApiBase::PARAM_DFLT => 'definition|translation',
-				ApiBase::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_DEFAULT => 'definition|translation',
+				ParamValidator::PARAM_ISMULTI => true,
 				ApiBase::PARAM_HELP_MSG =>
 					[ 'apihelp-query+messagecollection-param-prop', TRANSLATE_FUZZY ],
 			],

@@ -1,5 +1,6 @@
 <?php
 
+use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 /**
@@ -72,43 +73,43 @@ class ApiSearchTranslations extends ApiBase {
 
 		$ret = [
 			'service' => [
-				ApiBase::PARAM_TYPE => $available,
+				ParamValidator::PARAM_TYPE => $available,
 			],
 			'query' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'sourcelanguage' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => $wgLanguageCode,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => $wgLanguageCode,
 			],
 			'language' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 			],
 			'group' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 			],
 			'filter' => [
-				ApiBase::PARAM_TYPE => $filters,
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => $filters,
+				ParamValidator::PARAM_DEFAULT => '',
 			],
 			'match' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 			],
 			'case' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '0',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '0',
 			],
 			'offset' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => 0,
 			],
 			'limit' => [
-				ApiBase::PARAM_DFLT => 25,
-				ApiBase::PARAM_TYPE => 'limit',
+				ParamValidator::PARAM_DEFAULT => 25,
+				ParamValidator::PARAM_TYPE => 'limit',
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => ApiBase::LIMIT_SML1,
 				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_SML2
@@ -118,7 +119,7 @@ class ApiSearchTranslations extends ApiBase {
 		if ( $available ) {
 			// Don't add this if no services are available, it makes
 			// ApiStructureTest unhappy
-			$ret['service'][ApiBase::PARAM_DFLT] = $wgTranslateTranslationDefaultService;
+			$ret['service'][ParamValidator::PARAM_DEFAULT] = $wgTranslateTranslationDefaultService;
 		}
 
 		return $ret;

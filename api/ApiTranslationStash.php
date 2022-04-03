@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * WebAPI module for storing translations for users who are in a sandbox.
@@ -106,24 +107,24 @@ class ApiTranslationStash extends ApiBase {
 	protected function getAllowedParams() {
 		return [
 			'subaction' => [
-				ApiBase::PARAM_TYPE => [ 'add', 'query' ],
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => [ 'add', 'query' ],
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'title' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'translation' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'metadata' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'token' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'username' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 		];
 	}

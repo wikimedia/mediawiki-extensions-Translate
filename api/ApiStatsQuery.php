@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * A base module for querying message group related stats.
  *
@@ -85,8 +87,8 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 	protected function getAllowedParams() {
 		return [
 			'offset' => [
-				ApiBase::PARAM_DFLT => '0',
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '0',
+				ParamValidator::PARAM_TYPE => 'string',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			],
 		];

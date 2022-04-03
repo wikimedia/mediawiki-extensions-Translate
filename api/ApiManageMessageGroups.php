@@ -8,6 +8,7 @@
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for managing message group changes.
@@ -296,29 +297,29 @@ class ApiManageMessageGroups extends ApiBase {
 	protected function getAllowedParams() {
 		return [
 			'groupId' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'renameMessageKey' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 			],
 			'messageKey' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'operation' => [
-				ApiBase::PARAM_TYPE => [ 'rename', 'new' ],
-				ApiBase::PARAM_ISMULTI => false,
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => [ 'rename', 'new' ],
+				ParamValidator::PARAM_ISMULTI => false,
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'changesetName' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => MessageChangeStorage::DEFAULT_NAME
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => MessageChangeStorage::DEFAULT_NAME
 			],
 			'changesetModified' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => true,
 			]
 		];
 	}

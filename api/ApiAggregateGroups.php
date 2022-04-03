@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Logger\LoggerFactory;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for managing aggregate message groups
@@ -206,25 +207,25 @@ class ApiAggregateGroups extends ApiBase {
 	protected function getAllowedParams() {
 		return [
 			'do' => [
-				ApiBase::PARAM_TYPE => [ 'associate', 'dissociate', 'remove', 'add', 'update' ],
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => [ 'associate', 'dissociate', 'remove', 'add', 'update' ],
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'aggregategroup' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'group' => [
 				// Not providing list of values, to allow dissociation of unknown groups
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'groupname' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'groupdescription' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'token' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 		];
 	}

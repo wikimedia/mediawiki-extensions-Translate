@@ -8,6 +8,7 @@
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for querying message group changes.
@@ -117,18 +118,18 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['groupId'] = [
-			ApiBase::PARAM_TYPE => 'string',
-			ApiBase::PARAM_REQUIRED => true,
+			ParamValidator::PARAM_TYPE => 'string',
+			ParamValidator::PARAM_REQUIRED => true,
 		];
 
 		$params['messageKey'] = [
-			ApiBase::PARAM_TYPE => 'string',
-			ApiBase::PARAM_REQUIRED => true,
+			ParamValidator::PARAM_TYPE => 'string',
+			ParamValidator::PARAM_REQUIRED => true,
 		];
 
 		$params['changesetName'] = [
-			ApiBase::PARAM_TYPE => 'string',
-			ApiBase::PARAM_DFLT => MessageChangeStorage::DEFAULT_NAME
+			ParamValidator::PARAM_TYPE => 'string',
+			ParamValidator::PARAM_DEFAULT => MessageChangeStorage::DEFAULT_NAME
 		];
 
 		return $params;

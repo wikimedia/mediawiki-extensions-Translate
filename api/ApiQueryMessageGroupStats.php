@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * Api module for querying message group stats.
  *
@@ -94,8 +96,8 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	protected function getAllowedParams() {
 		$params = parent::getAllowedParams();
 		$params['group'] = [
-			ApiBase::PARAM_TYPE => 'string',
-			ApiBase::PARAM_REQUIRED => true,
+			ParamValidator::PARAM_TYPE => 'string',
+			ParamValidator::PARAM_REQUIRED => true,
 		];
 
 		$params['suppresscomplete'] = false;

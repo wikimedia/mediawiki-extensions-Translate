@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * Api module for querying message translations.
  *
@@ -112,12 +114,12 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 	protected function getAllowedParams() {
 		return [
 			'title' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'offset' => [
-				ApiBase::PARAM_DFLT => 0,
-				ApiBase::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			],
 		];

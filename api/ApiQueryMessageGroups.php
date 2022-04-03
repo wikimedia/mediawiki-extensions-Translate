@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api module for querying MessageGroups.
@@ -258,34 +259,34 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	protected function getAllowedParams() {
 		$allowedParams = [
 			'depth' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => 100,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => 100,
 			],
 			'filter' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
-				ApiBase::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 			'format' => [
-				ApiBase::PARAM_TYPE => [ 'flat', 'tree' ],
-				ApiBase::PARAM_DFLT => 'flat',
+				ParamValidator::PARAM_TYPE => [ 'flat', 'tree' ],
+				ParamValidator::PARAM_DEFAULT => 'flat',
 			],
 			'iconsize' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => 64,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => 64,
 			],
 			'prop' => [
-				ApiBase::PARAM_TYPE => array_keys( self::getPropertyList() ),
-				ApiBase::PARAM_DFLT => 'id|label|description|class|exists',
-				ApiBase::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_TYPE => array_keys( self::getPropertyList() ),
+				ParamValidator::PARAM_DEFAULT => 'id|label|description|class|exists',
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 			'root' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 			],
 			'languageFilter' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 			]
 		];
 		Hooks::run( 'TranslateGetAPIMessageGroupsParameterList', [ &$allowedParams ] );

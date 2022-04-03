@@ -9,6 +9,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * WebAPI for the sandbox feature of Translate.
@@ -204,21 +205,21 @@ class ApiTranslateSandbox extends ApiBase {
 	protected function getAllowedParams() {
 		return [
 			'do' => [
-				ApiBase::PARAM_TYPE => [ 'create', 'delete', 'promote', 'remind' ],
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => [ 'create', 'delete', 'promote', 'remind' ],
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'userid' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => 0,
-				ApiBase::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEFAULT => 0,
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 			'token' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
-			'username' => [ ApiBase::PARAM_TYPE => 'string' ],
-			'password' => [ ApiBase::PARAM_TYPE => 'string' ],
-			'email' => [ ApiBase::PARAM_TYPE => 'string' ],
+			'username' => [ ParamValidator::PARAM_TYPE => 'string' ],
+			'password' => [ ParamValidator::PARAM_TYPE => 'string' ],
+			'email' => [ ParamValidator::PARAM_TYPE => 'string' ],
 		];
 	}
 }

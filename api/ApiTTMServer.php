@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * API module for TTMServer
  *
@@ -64,26 +66,26 @@ class ApiTTMServer extends ApiBase {
 
 		$ret = [
 			'service' => [
-				ApiBase::PARAM_TYPE => $available,
+				ParamValidator::PARAM_TYPE => $available,
 			],
 			'sourcelanguage' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'targetlanguage' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'text' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 		];
 
 		if ( $available ) {
 			// Don't add this if no services are available, it makes
 			// ApiStructureTest unhappy
-			$ret['service'][ApiBase::PARAM_DFLT] = $wgTranslateTranslationDefaultService;
+			$ret['service'][ParamValidator::PARAM_DEFAULT] = $wgTranslateTranslationDefaultService;
 		}
 
 		return $ret;

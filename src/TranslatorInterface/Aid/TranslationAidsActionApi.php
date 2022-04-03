@@ -11,6 +11,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MessageGroups;
 use MessageHandle;
 use Title;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api module for querying message aids.
@@ -130,16 +131,16 @@ class TranslationAidsActionApi extends ApiBase {
 
 		return [
 			'title' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'group' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'prop' => [
-				ApiBase::PARAM_DFLT => implode( '|', $props ),
-				ApiBase::PARAM_TYPE => $props,
-				ApiBase::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_DEFAULT => implode( '|', $props ),
+				ParamValidator::PARAM_TYPE => $props,
+				ParamValidator::PARAM_ISMULTI => true,
 			],
 		];
 	}
