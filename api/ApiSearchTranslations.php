@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+
 /**
  * API module for search translations
  * @since 2015.07
@@ -107,9 +109,9 @@ class ApiSearchTranslations extends ApiBase {
 			'limit' => [
 				ApiBase::PARAM_DFLT => 25,
 				ApiBase::PARAM_TYPE => 'limit',
-				ApiBase::PARAM_MIN => 1,
-				ApiBase::PARAM_MAX => ApiBase::LIMIT_SML1,
-				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_SML2
+				IntegerDef::PARAM_MIN => 1,
+				IntegerDef::PARAM_MAX => ApiBase::LIMIT_SML1,
+				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_SML2
 			],
 		];
 
