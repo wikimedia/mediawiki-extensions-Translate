@@ -1,11 +1,4 @@
 <?php
-/**
- * Contains a class for querying external translation service.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -13,9 +6,11 @@ use FormatJson;
 
 /**
  * Implements support Caighdean translator api.
- * @see https://github.com/kscanne/caighdean/blob/master/API.md
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup TranslationWebService
  * @since 2017.04
+ * @see https://github.com/kscanne/caighdean/blob/master/API.md
  */
 class CaighdeanWebService extends TranslationWebService {
 	public function getType() {

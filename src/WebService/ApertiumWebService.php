@@ -1,11 +1,4 @@
 <?php
-/**
- * Contains a class for querying external translation service.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -17,9 +10,11 @@ use TranslateUtils;
 
 /**
  * Implements support Apetrium translator api.
- * @see http://wiki.apertium.org/wiki/Apertium_web_service
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup TranslationWebService
  * @since 2013-01-01
+ * @see https://wiki.apertium.org/wiki/Apertium_web_service
  */
 class ApertiumWebService extends TranslationWebService {
 	/** @var HttpRequestFactory */

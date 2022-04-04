@@ -1,16 +1,11 @@
 <?php
-/**
- * Contains code related to web services support.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
 /**
  * Value object that represents a HTTP(S) query response.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2015.02
  */
 class TranslationQueryResponse {

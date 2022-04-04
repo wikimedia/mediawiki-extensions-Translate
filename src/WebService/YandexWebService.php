@@ -1,11 +1,4 @@
 <?php
-/**
- * Contains a class for querying external translation service.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -15,9 +8,11 @@ use Sanitizer;
 
 /**
  * Implements support for Yandex translation api v1.
- * @see https://tech.yandex.com/translate/
- * @ingroup TranslationWebService
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
+ * @ingroup TranslationWebService
+ * @see https://tech.yandex.com/translate/
  */
 class YandexWebService extends TranslationWebService {
 	/** @var HttpRequestFactory */

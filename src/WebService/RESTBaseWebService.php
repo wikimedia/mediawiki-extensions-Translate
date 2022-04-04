@@ -1,11 +1,4 @@
 <?php
-/**
- * Contains a class for querying external translation service.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -15,6 +8,8 @@ use MediaWiki\Http\HttpRequestFactory;
 /**
  * Implements support for cxserver proxied through RESTBase
  * @ingroup TranslationWebService
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2017.10
  */
 class RESTBaseWebService extends TranslationWebService {

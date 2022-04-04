@@ -1,17 +1,12 @@
 <?php
-/**
- * Contains code related to web services support.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
 /**
  * Mutable objects that represents a HTTP(S) query.
  * NB: Too lazy to make TranslationQueryFactory to make this class immutable.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2015.02
  */
 class TranslationQuery {

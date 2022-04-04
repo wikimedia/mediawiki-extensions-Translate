@@ -1,12 +1,4 @@
 <?php
-/**
- * Web service utility class.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- * Runs multiple web service queries asynchronously to save time.
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -15,8 +7,11 @@ use RuntimeException;
 use TranslateUtils;
 
 /**
- * @ingroup TranslationWebService
+ * Web service utility class. Runs multiple web service queries asynchronously to save time.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2015.02
+ * @ingroup TranslationWebService
  */
 class QueryAggregator {
 	protected $queries = [];

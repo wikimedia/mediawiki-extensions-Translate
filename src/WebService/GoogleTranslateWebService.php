@@ -1,11 +1,4 @@
 <?php
-/**
- * Contains a class for querying external translation service.
- *
- * @file
- * @author Carsten Schmitz / LimeSurvey GmbH
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -15,9 +8,11 @@ use Sanitizer;
 
 /**
  * Implements support for Google Translate API
- * @see https://cloud.google.com/translate/docs/reference/rest
- * @ingroup TranslationWebService
+ * @author Carsten Schmitz / LimeSurvey GmbH
+ * @license GPL-2.0-or-later
  * @since 2020.05
+ * @ingroup TranslationWebService
+ * @see https://cloud.google.com/translate/docs/reference/rest
  */
 class GoogleTranslateWebService extends TranslationWebService {
 	private const PUBLIC_API = 'https://translation.googleapis.com/language/translate/v2';

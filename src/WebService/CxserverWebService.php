@@ -1,9 +1,4 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -14,6 +9,8 @@ use MediaWiki\Http\HttpRequestFactory;
  * Contains a class for querying external translation service.
  * Implements support for cxserver api
  * @ingroup TranslationWebService
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2015.02
  */
 class CxserverWebService extends TranslationWebService {

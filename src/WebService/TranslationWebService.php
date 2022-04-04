@@ -1,11 +1,4 @@
 <?php
-/**
- * Contains code related to web service support.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -22,6 +15,8 @@ use Psr\Log\LoggerInterface;
  *  - 2) Source text picking logic.
  *  - 3) Factory class.
  *  - 4) Service failure tracking and suspending.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013-01-01
  * @defgroup TranslationWebService Translation Web Services
  */

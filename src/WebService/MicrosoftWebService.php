@@ -1,12 +1,4 @@
 <?php
-/**
- * Contains a class for querying external translation service.
- *
- * @file
- * @author Niklas Laxström
- * @author Ulrich Strauss
- * @license GPL-2.0-or-later
- */
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -14,9 +6,12 @@ use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * Implements support for Microsoft translation api v3.
+ * @author Niklas Laxström
+ * @author Ulrich Strauss
+ * @license GPL-2.0-or-later
+ * @since 2013-01-01
  * @see https://docs.microsoft.com/fi-fi/azure/cognitive-services/Translator/reference/v3-0-reference
  * @ingroup TranslationWebService
- * @since 2013-01-01
  */
 class MicrosoftWebService extends TranslationWebService {
 	/** @var HttpRequestFactory */
