@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -13,15 +14,18 @@ use FormatJson;
  * @see https://github.com/kscanne/caighdean/blob/master/API.md
  */
 class CaighdeanWebService extends TranslationWebService {
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'mt';
 	}
 
-	public function mapCode( $code ) {
+	/** @inheritDoc */
+	public function mapCode( string $code ): string {
 		return $code;
 	}
 
-	protected function doPairs() {
+	/** @inheritDoc */
+	protected function doPairs(): array {
 		$pairs = [
 			'gd' => [ 'ga' => true ],
 			'gv' => [ 'ga' => true ],
@@ -30,7 +34,8 @@ class CaighdeanWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['url'] ) ) {
 			throw new TranslationWebServiceConfigurationException( '`url` not set in configuration' );
 		}
@@ -41,7 +46,7 @@ class CaighdeanWebService extends TranslationWebService {
 		}
 
 		$data = wfArrayToCgi( [
-			'foinse' => $from,
+			'foinse' => $sourceLanguage,
 			'teacs' => $text,
 		] );
 
@@ -57,7 +62,8 @@ class CaighdeanWebService extends TranslationWebService {
 			->attachProcessingInstructions( $text );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 		$response = FormatJson::decode( $body );
 		if ( !is_array( $response ) ) {

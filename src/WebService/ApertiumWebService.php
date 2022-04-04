@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -29,15 +30,18 @@ class ApertiumWebService extends TranslationWebService {
 		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'mt';
 	}
 
-	protected function mapCode( $code ) {
+	/** @inheritDoc */
+	protected function mapCode( string $code ): string {
 		return str_replace( '-', '_', LanguageCode::bcp47( $code ) );
 	}
 
-	protected function doPairs() {
+	/** @inheritDoc */
+	protected function doPairs(): array {
 		$pairs = [];
 		$json = $this->httpRequestFactory->get(
 			$this->config['pairs'],
@@ -60,7 +64,8 @@ class ApertiumWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
@@ -70,7 +75,7 @@ class ApertiumWebService extends TranslationWebService {
 
 		$params = [
 			'q' => $text,
-			'langpair' => "$from|$to",
+			'langpair' => "$sourceLanguage|$targetLanguage",
 			'x-application' => 'MediaWiki Translate extension ' . TranslateUtils::getVersion(),
 		];
 
@@ -79,7 +84,8 @@ class ApertiumWebService extends TranslationWebService {
 			->queryParameters( $params );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {

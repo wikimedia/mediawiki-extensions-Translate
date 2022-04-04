@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -25,13 +26,9 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/**
 	 * Get a webservice handler.
-	 *
 	 * @see $wgTranslateTranslationServices
-	 * @param string $name Name of the service.
-	 * @param array $config
-	 * @return TranslationWebService|null
 	 */
-	public static function factory( $name, $config ) {
+	public static function factory( string $serviceName, array $config ): ?TranslationWebService {
 		$handlers = [
 			'microsoft' => [
 				'class' => MicrosoftWebService::class,
@@ -74,7 +71,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			$objectFactory = MediaWikiServices::getInstance()->getObjectFactory();
 			$spec = [
 				'class' => $serviceDetails['class'],
-				'args' => [ $name, $config ],
+				'args' => [ $serviceName, $config ],
 				'services' => $serviceDetails['deps'] ?? [],
 			];
 
@@ -90,28 +87,22 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/**
 	 * Gets the name of this service, for example to display it for the user.
-	 *
-	 * @return string Plain text name for this service.
 	 * @since 2014.02
 	 */
-	public function getName() {
+	public function getName(): string {
 		return $this->service;
 	}
 
 	/**
 	 * Get queries for this service. Queries from multiple services can be
 	 * collected and run asynchronously with QueryAggregator.
-	 *
-	 * @param string $text Source text
-	 * @param string $from Source language
-	 * @param string $to Target language
 	 * @return TranslationQuery[]
 	 * @since 2015.12
 	 * @throws TranslationWebServiceConfigurationException
 	 */
-	public function getQueries( $text, $from, $to ) {
-		$from = $this->mapCode( $from );
-		$to = $this->mapCode( $to );
+	public function getQueries( string $text, string $sourceLanguage, string $targetLanguage ): array {
+		$from = $this->mapCode( $sourceLanguage );
+		$to = $this->mapCode( $targetLanguage );
 
 		try {
 			return [ $this->getQuery( $text, $from, $to ) ];
@@ -126,8 +117,6 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/**
 	 * Get the web service specific response returned by QueryAggregator.
-	 *
-	 * @param TranslationQueryResponse $response
 	 * @return mixed|null Returns null on error.
 	 * @since 2015.12
 	 */
@@ -151,55 +140,47 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	/**
 	 * Returns the type of this web service.
 	 * @see \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid::getTypes
-	 * @return string
 	 */
-	abstract public function getType();
+	abstract public function getType(): string;
 
 	/* Service api */
 
 	/**
 	 * Map a MediaWiki (almost standard) language code to the code used by the
 	 * translation service.
-	 *
-	 * @param string $code MediaWiki language code.
-	 * @return string Translation service language code.
 	 */
-	abstract protected function mapCode( $code );
+	abstract protected function mapCode( string $code ): string;
 
 	/**
 	 * Get the list of supported language pairs for the web service. The codes
 	 * should be the ones used by the service. Caching is handled by the public
 	 * getSupportedLanguagePairs.
-	 *
 	 * @return array $list[source language][target language] = true
 	 * @throws TranslationWebServiceException
 	 * @throws TranslationWebServiceConfigurationException
 	 */
-	abstract protected function doPairs();
+	abstract protected function doPairs(): array;
 
 	/**
 	 * Get the query. See getQueries for the public method.
-	 *
 	 * @param string $text Text to translate.
-	 * @param string $from Language code of the text, as used by the service.
-	 * @param string $to Language code of the translation, as used by the service.
-	 * @return TranslationQuery
+	 * @param string $sourceLanguage Language code of the text, as used by the service.
+	 * @param string $targetLanguage Language code of the translation, as used by the service.
 	 * @since 2015.02
 	 * @throws TranslationWebServiceException
 	 * @throws TranslationWebServiceConfigurationException
 	 * @throws TranslationWebServiceInvalidInputException
 	 */
-	abstract protected function getQuery( $text, $from, $to );
+	abstract protected function getQuery(
+		string $text, string $sourceLanguage, string $targetLanguage
+	): TranslationQuery;
 
 	/**
 	 * Get the response. See getResultData for the public method.
-	 *
-	 * @param TranslationQueryResponse $response
-	 * @return string
 	 * @since 2015.02
 	 * @throws TranslationWebServiceException
 	 */
-	abstract protected function parseResponse( TranslationQueryResponse $response );
+	abstract protected function parseResponse( TranslationQueryResponse $response ): string;
 
 	/* Default implementation */
 
@@ -217,27 +198,22 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/**
 	 * Test whether given language pair is supported by the service.
-	 *
-	 * @param string $from Source language
-	 * @param string $to Target language
-	 * @return bool
 	 * @since 2015.12
 	 * @throws TranslationWebServiceConfigurationException
 	 */
-	public function isSupportedLanguagePair( $from, $to ) {
+	public function isSupportedLanguagePair( string $sourceLanguage, string $targetLanguage ): bool {
 		$pairs = $this->getSupportedLanguagePairs();
-		$from = $this->mapCode( $from );
-		$to = $this->mapCode( $to );
+		$from = $this->mapCode( $sourceLanguage );
+		$to = $this->mapCode( $targetLanguage );
 
-		return isset( $pairs[$from][$to] );
+		return isset( $pairs[$sourceLanguage][$targetLanguage] );
 	}
 
 	/**
 	 * @see self::doPairs
-	 * @return array
 	 * @throws TranslationWebServiceConfigurationException
 	 */
-	protected function getSupportedLanguagePairs() {
+	protected function getSupportedLanguagePairs(): array {
 		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 
 		return $cache->getWithSetCallback(
@@ -261,22 +237,16 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * Some mangling that tries to keep some parts of the message unmangled
 	 * by the translation service. Most of them support either class=notranslate
 	 * or translate=no.
-	 * @param string $text
-	 * @return string
 	 */
-	protected function wrapUntranslatable( $text ) {
+	protected function wrapUntranslatable( string $text ): string {
 		$text = str_replace( "\n", '!N!', $text );
 		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
 		$wrap = '<span class="notranslate" translate="no">\0</span>';
 		return preg_replace( $pattern, $wrap, $text );
 	}
 
-	/**
-	 * Undo the hopyfully untouched mangling done by wrapUntranslatable.
-	 * @param string $text
-	 * @return string
-	 */
-	protected function unwrapUntranslatable( $text ) {
+	/** Undo the hopyfully untouched mangling done by wrapUntranslatable. */
+	protected function unwrapUntranslatable( string $text ): string {
 		$text = str_replace( '!N!', "\n", $text );
 		$pattern = '~<span class="notranslate" translate="no">(.*?)</span>~';
 		return preg_replace( $pattern, '\1', $text );
@@ -284,7 +254,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/* Failure handling and suspending */
 
-	public function setLogger( LoggerInterface $logger ) {
+	public function setLogger( LoggerInterface $logger ): void {
 		$this->logger = $logger;
 	}
 
@@ -299,11 +269,8 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 */
 	protected $serviceFailurePeriod = 900;
 
-	/**
-	 * Checks whether the service has exceeded failure count
-	 * @return bool
-	 */
-	public function checkTranslationServiceFailure() {
+	/** Checks whether the service has exceeded failure count */
+	public function checkTranslationServiceFailure(): bool {
 		$service = $this->service;
 		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 
@@ -334,11 +301,8 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		return $count >= $this->serviceFailureCount;
 	}
 
-	/**
-	 * Increases the failure count for this service
-	 * @param string $msg
-	 */
-	protected function reportTranslationServiceFailure( $msg ) {
+	/** Increases the failure count for this service */
+	protected function reportTranslationServiceFailure( string $msg ): void {
 		$service = $this->service;
 		$this->logger->warning( "Translation service $service problem: $msg" );
 

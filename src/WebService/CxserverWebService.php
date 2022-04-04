@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -26,15 +27,18 @@ class CxserverWebService extends TranslationWebService {
 		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'mt';
 	}
 
-	protected function mapCode( $code ) {
+	/** @inheritDoc */
+	protected function mapCode( string $code ): string {
 		return $code;
 	}
 
-	protected function doPairs() {
+	/** @inheritDoc */
+	protected function doPairs(): array {
 		if ( !isset( $this->config['host'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
@@ -59,21 +63,23 @@ class CxserverWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['host'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-		$url = $this->config['host'] . "/v1/mt/$from/$to/Apertium";
+		$url = $this->config['host'] . "/v1/mt/$sourceLanguage/$targetLanguage/Apertium";
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
 			->postWithData( wfArrayToCgi( [ 'html' => $text ] ) );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {

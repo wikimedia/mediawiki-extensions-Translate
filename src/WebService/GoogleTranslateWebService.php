@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -29,12 +30,12 @@ class GoogleTranslateWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	public function getType() {
+	public function getType(): string {
 		return 'mt';
 	}
 
 	/** @inheritDoc */
-	protected function mapCode( $code ) {
+	protected function mapCode( string $code ): string {
 		/** @phpcs-require-sorted-array */
 		$map = [
 			'be-tarask' => 'be',
@@ -48,17 +49,17 @@ class GoogleTranslateWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	public function isSupportedLanguagePair( $from, $to ) {
+	public function isSupportedLanguagePair( string $sourceLanguage, string $targetLanguage ): bool {
 		$pairs = $this->getSupportedLanguagePairs();
-		$from = $this->mapCode( $from );
-		$to = $this->mapCode( $to );
+		$from = $this->mapCode( $sourceLanguage );
+		$to = $this->mapCode( $targetLanguage );
 
 		// As long as the source & target language exist at Google it is fine
 		return isset( $pairs[$from] ) && isset( $pairs[$to] ) && $from !== $to;
 	}
 
 	/** @inheritDoc */
-	protected function doPairs() {
+	protected function doPairs(): array {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
@@ -90,7 +91,7 @@ class GoogleTranslateWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	protected function getQuery( $text, $from, $to ) {
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
@@ -109,14 +110,14 @@ class GoogleTranslateWebService extends TranslationWebService {
 			->postWithData( wfArrayToCgi( [
 				'key' => $this->config['key'],
 				'q' => $text,
-				'target' => $to,
-				'source' => $from,
+				'target' => $targetLanguage,
+				'source' => $sourceLanguage,
 				'format' => 'html',
 			] ) );
 	}
 
 	/** @inheritDoc */
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {

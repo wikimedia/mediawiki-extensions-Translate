@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -27,18 +28,21 @@ class YandexWebService extends TranslationWebService {
 		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'mt';
 	}
 
-	protected function mapCode( $code ) {
+	/** @inheritDoc */
+	protected function mapCode( string $code ): string {
 		if ( $code === 'be-tarask' ) {
 			$code = 'be';
 		}
 		return $code;
 	}
 
-	protected function doPairs() {
+	/** @inheritDoc */
+	protected function doPairs(): array {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
@@ -66,7 +70,8 @@ class YandexWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
@@ -85,13 +90,14 @@ class YandexWebService extends TranslationWebService {
 				[
 					'key' => $this->config['key'],
 					'text' => $text,
-					'lang' => "$from-$to",
+					'lang' => "$sourceLanguage-$targetLanguage",
 					'format' => 'html',
 				]
 			) );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {

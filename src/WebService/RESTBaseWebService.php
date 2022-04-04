@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -25,15 +26,18 @@ class RESTBaseWebService extends TranslationWebService {
 		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'mt';
 	}
 
-	protected function mapCode( $code ) {
+	/** @inheritDoc */
+	protected function mapCode( string $code ): string {
 		return $code;
 	}
 
-	protected function doPairs() {
+	/** @inheritDoc */
+	protected function doPairs(): array {
 		if ( !isset( $this->config['host'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'RESTBase host not set' );
 		}
@@ -58,21 +62,23 @@ class RESTBaseWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['host'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'RESTBase host not set' );
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-		$url = $this->config['host'] . "/rest_v1/transform/html/from/$from/to/$to/Apertium";
+		$url = $this->config['host'] . "/rest_v1/transform/html/from/$sourceLanguage/to/$targetLanguage/Apertium";
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
 			->postWithData( wfArrayToCgi( [ 'html' => $text ] ) );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 
 		$response = FormatJson::decode( $body );

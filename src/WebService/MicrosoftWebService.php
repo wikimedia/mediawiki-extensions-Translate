@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -26,11 +27,13 @@ class MicrosoftWebService extends TranslationWebService {
 		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'mt';
 	}
 
-	protected function mapCode( $code ) {
+	/** @inheritDoc */
+	protected function mapCode( string $code ): string {
 		$map = [
 			'tl' => 'fil',
 			'zh-hant' => 'zh-Hant',
@@ -43,7 +46,8 @@ class MicrosoftWebService extends TranslationWebService {
 		return $map[$code] ?? $code;
 	}
 
-	protected function doPairs() {
+	/** @inheritDoc */
+	protected function doPairs(): array {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'key is not set' );
 		}
@@ -89,7 +93,8 @@ class MicrosoftWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'key is not set' );
 		}
@@ -101,8 +106,8 @@ class MicrosoftWebService extends TranslationWebService {
 		$url = $this->config['url'] . '/translate';
 		$params = [
 			'api-version' => '3.0',
-			'from' => $from,
-			'to' => $to,
+			'from' => $sourceLanguage,
+			'to' => $targetLanguage,
 			'textType' => 'html',
 		];
 		$headers = [
@@ -110,6 +115,10 @@ class MicrosoftWebService extends TranslationWebService {
 			'Content-Type' => 'application/json',
 		];
 		$body = json_encode( [ [ 'Text' => $text ] ] );
+
+		if ( $body === false ) {
+			throw new TranslationWebServiceInvalidInputException( 'Could not JSON encode source text' );
+		}
 
 		if ( strlen( $body ) > 5000 ) {
 			throw new TranslationWebServiceInvalidInputException( 'Source text too long' );
@@ -122,7 +131,8 @@ class MicrosoftWebService extends TranslationWebService {
 			->postWithData( $body );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 
 		$response = json_decode( $body, true );
@@ -138,15 +148,15 @@ class MicrosoftWebService extends TranslationWebService {
 		return $text;
 	}
 
-	/// Override from parent
-	protected function wrapUntranslatable( $text ) {
+	/** @inheritDoc */
+	protected function wrapUntranslatable( string $text ): string {
 		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
 		$wrap = '<span class="notranslate">\0</span>';
 		return preg_replace( $pattern, $wrap, $text );
 	}
 
-	/// Override from parent
-	protected function unwrapUntranslatable( $text ) {
+	/** @inheritDoc */
+	protected function unwrapUntranslatable( string $text ): string {
 		$pattern = '~<span class="notranslate">\s*(.*?)\s*</span>~';
 		return preg_replace( $pattern, '\1', $text );
 	}

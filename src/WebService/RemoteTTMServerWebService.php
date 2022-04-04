@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -13,24 +14,28 @@ use FormatJson;
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories
  */
 class RemoteTTMServerWebService extends TranslationWebService {
-	public function getType() {
+	/** @inheritDoc */
+	public function getType(): string {
 		return 'ttmserver';
 	}
 
-	protected function mapCode( $code ) {
+	/** @inheritDoc */
+	protected function mapCode( string $code ): string {
 		return $code; // Unused
 	}
 
-	protected function doPairs() {
-		return null; // Unused
+	/** @inheritDoc */
+	protected function doPairs(): array {
+		return []; // Unused
 	}
 
-	protected function getQuery( $text, $from, $to ) {
+	/** @inheritDoc */
+	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		$params = [
 			'format' => 'json',
 			'action' => 'ttmserver',
-			'sourcelanguage' => $from,
-			'targetlanguage' => $to,
+			'sourcelanguage' => $sourceLanguage,
+			'targetlanguage' => $targetLanguage,
 			'text' => $text
 		];
 
@@ -43,7 +48,8 @@ class RemoteTTMServerWebService extends TranslationWebService {
 			->queryParameters( $params );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $reply ) {
+	/** @inheritDoc */
+	protected function parseResponse( TranslationQueryResponse $reply ): string {
 		$body = $reply->getBody();
 		$parsed = FormatJson::decode( $body, true );
 		if ( !is_array( $parsed ) ) {
