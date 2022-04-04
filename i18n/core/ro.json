@@ -325,7 +325,7 @@
 	"tux-editor-message-tools-delete": "Șterge",
 	"tux-editor-message-tools-translations": "Toate traducerile",
 	"tux-editor-message-tools-linktothis": "Legătură către acest mesaj",
-	"tux-editor-loading": "Încărcare...",
+	"tux-editor-loading": "Se încarcă...",
 	"translate-search-more-languages-info": "Încă {{PLURAL:$1|o limbă|$1 limbi|$1 de limbi}}",
 	"translate-statsbar-tooltip": "$1% traduse, $2% revizuite",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduse, $2% revizuite, $3% învechite",

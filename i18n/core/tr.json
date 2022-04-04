@@ -126,7 +126,7 @@
 	"translate-rcfilters-translations": "Çeviriler",
 	"translate-rcfilters-translations-only-label": "Çeviriler",
 	"translate-rcfilters-translations-only-desc": "Çevrilmiş sayfalardaki değişiklikler.",
-	"translate-rcfilters-translations-filter-label": "Çeviriler değil",
+	"translate-rcfilters-translations-filter-label": "Çeviri olmayanlar",
 	"translate-rcfilters-translations-filter-desc": "Çeviri olmayan tüm değişiklikler.",
 	"translate-rcfilters-translations-site-label": "Site mesajları",
 	"translate-rcfilters-translations-site-desc": "MediaWiki ad alanındaki site mesajlarının özelleştirilmesi.",

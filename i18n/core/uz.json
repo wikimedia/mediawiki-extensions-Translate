@@ -146,7 +146,7 @@
 	"supportedlanguages-colorlegend": "Rang sharhi: oxirgi tarjima $1 kun oldin bo'lgan.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tarjimon}}|Tarjimonlar}}: $1",
 	"supportedlanguages-recenttranslations": "yaqin oradagi tarjimalar",
-	"supportedlanguages-count": "$1 jami {{PLURAL:$1|ta til|ta til}}.",
+	"supportedlanguages-count": "Jami $1 {{PLURAL:$1|ta til}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|ta tahrir}} - oxirgi tahrir $3 {{PLURAL:$3|kun}} oldin",
 	"translate-save": "Saqlash ($1)",
 	"translate-jssti-add": "Roʻyxatga qoʻshish",
