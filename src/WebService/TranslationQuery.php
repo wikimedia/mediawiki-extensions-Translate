@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -10,45 +11,40 @@ namespace MediaWiki\Extension\Translate\WebService;
  * @since 2015.02
  */
 class TranslationQuery {
-	protected $url;
-	protected $timeout = 0;
-	protected $method = 'GET';
-	protected $params = [];
-	protected $body;
-	protected $headers = [];
+	private $url;
+	private $timeout = 0;
+	private $method = 'GET';
+	private $params = [];
+	private $body;
+	private $headers = [];
 	/** @var mixed Arbitrary data that is returned with TranslationQueryResponse */
-	protected $instructions;
+	private $instructions;
 
 	// URL is mandatory, so using it here
-	public static function factory( $url ) {
+	public static function factory( string $url ): TranslationQuery {
 		$obj = new self();
 		$obj->url = $url;
 		return $obj;
 	}
 
-	/**
-	 * Make this a POST request with given data.
-	 *
-	 * @param string $data
-	 * @return $this
-	 */
-	public function postWithData( $data ) {
+	/** Make this a POST request with given data. */
+	public function postWithData( string $data ): TranslationQuery {
 		$this->method = 'POST';
 		$this->body = $data;
 		return $this;
 	}
 
-	public function queryParameters( array $params ) {
+	public function queryParameters( array $params ): TranslationQuery {
 		$this->params = $params;
 		return $this;
 	}
 
-	public function queryHeaders( array $headers ) {
+	public function queryHeaders( array $headers ): TranslationQuery {
 		$this->headers = $headers;
 		return $this;
 	}
 
-	public function timeout( $timeout ) {
+	public function timeout( int $timeout ): TranslationQuery {
 		$this->timeout = $timeout;
 		return $this;
 	}
@@ -56,35 +52,34 @@ class TranslationQuery {
 	/**
 	 * Attach arbitrary data that is necessary to process the results.
 	 * @param mixed $data
-	 * @return self
 	 * @since 2017.04
 	 */
-	public function attachProcessingInstructions( $data ) {
+	public function attachProcessingInstructions( $data ): TranslationQuery {
 		$this->instructions = $data;
 		return $this;
 	}
 
-	public function getTimeout() {
+	public function getTimeout(): int {
 		return $this->timeout;
 	}
 
-	public function getUrl() {
+	public function getUrl(): string {
 		return $this->url;
 	}
 
-	public function getMethod() {
+	public function getMethod(): string {
 		return $this->method;
 	}
 
-	public function getQueryParameters() {
+	public function getQueryParameters(): array {
 		return $this->params;
 	}
 
-	public function getBody() {
+	public function getBody(): string {
 		return $this->body;
 	}
 
-	public function getHeaders() {
+	public function getHeaders(): array {
 		return $this->headers;
 	}
 

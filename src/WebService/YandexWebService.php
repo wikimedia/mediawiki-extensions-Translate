@@ -85,7 +85,7 @@ class YandexWebService extends TranslationWebService {
 		$text = $this->wrapUntranslatable( $text );
 
 		return TranslationQuery::factory( $this->config['url'] )
-			->timeout( $this->config['timeout'] )
+			->timeout( intval( $this->config['timeout'] ) )
 			->postWithData( wfArrayToCgi(
 				[
 					'key' => $this->config['key'],

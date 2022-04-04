@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -9,18 +10,18 @@ namespace MediaWiki\Extension\Translate\WebService;
  * @since 2015.02
  */
 class TranslationQueryResponse {
-	protected $code;
-	protected $reason;
-	protected $headers;
-	protected $body;
-	protected $error;
+	private $code;
+	private $reason;
+	private $headers;
+	private $body;
+	private $error;
 	/** @var TranslationQuery */
-	protected $query;
+	private $query;
 
 	protected function __construct() {
 	}
 
-	public static function newFromMultiHttp( array $data, TranslationQuery $query ) {
+	public static function newFromMultiHttp( array $data, TranslationQuery $query ): self {
 		$response = $data['response'];
 		$obj = new self();
 		$obj->code = (int)$response['code'];
@@ -32,7 +33,7 @@ class TranslationQueryResponse {
 		return $obj;
 	}
 
-	public function getStatusCode() {
+	public function getStatusCode(): int {
 		return $this->code;
 	}
 
@@ -50,10 +51,9 @@ class TranslationQueryResponse {
 
 	/**
 	 * Get the TranslationQuery that was made for this request.
-	 * @return TranslationQuery
 	 * @since 2017.04
 	 */
-	public function getQuery() {
+	public function getQuery(): TranslationQuery {
 		return $this->query;
 	}
 }

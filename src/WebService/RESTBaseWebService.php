@@ -73,7 +73,7 @@ class RESTBaseWebService extends TranslationWebService {
 		$url = $this->config['host'] . "/rest_v1/transform/html/from/$sourceLanguage/to/$targetLanguage/Apertium";
 
 		return TranslationQuery::factory( $url )
-			->timeout( $this->config['timeout'] )
+			->timeout( intval( $this->config['timeout'] ) )
 			->postWithData( wfArrayToCgi( [ 'html' => $text ] ) );
 	}
 

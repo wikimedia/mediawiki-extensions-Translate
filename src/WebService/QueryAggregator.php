@@ -1,4 +1,5 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
@@ -21,7 +22,6 @@ class QueryAggregator {
 
 	/**
 	 * Register a query to be run.
-	 * @param TranslationQuery $query
 	 * @return mixed Query id that can be used to fetch results.
 	 */
 	public function addQuery( TranslationQuery $query ) {
@@ -34,10 +34,9 @@ class QueryAggregator {
 	/**
 	 * Returns a response for a query.
 	 * @param mixed $id Query id.
-	 * @return TranslationQueryResponse
 	 * @throws RuntimeException if called before run() has been called.
 	 */
-	public function getResponse( $id ) {
+	public function getResponse( $id ): TranslationQueryResponse {
 		if ( !$this->hasRun ) {
 			throw new RuntimeException( 'Tried to get response before queries ran' );
 		}
@@ -48,10 +47,8 @@ class QueryAggregator {
 		);
 	}
 
-	/**
-	 * Runs all the queries.
-	 */
-	public function run() {
+	/** Runs all the queries. */
+	public function run(): void {
 		global $wgSitename;
 
 		$version = TranslateUtils::getVersion();
@@ -77,7 +74,7 @@ class QueryAggregator {
 	 * @param TranslationQuery[] $queries
 	 * @return array[]
 	 */
-	protected function getMultiHttpQueries( $queries ) {
+	protected function getMultiHttpQueries( array $queries ): array {
 		$converter = static function ( TranslationQuery $q ) {
 			return [
 				'url' => $q->getUrl(),

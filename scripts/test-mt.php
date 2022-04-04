@@ -84,9 +84,6 @@ class TestMT extends Maintenance {
 		$id = $agg->addQuery( $query[ 0 ] );
 		$agg->run();
 		$res = $agg->getResponse( $id );
-		if ( $res === null ) {
-			$this->fatalError( "Service response error.\n" );
-		}
 
 		$this->output( $service->getResultData( $res ), 1 );
 	}

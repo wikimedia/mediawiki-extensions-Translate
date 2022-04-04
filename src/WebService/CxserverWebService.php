@@ -74,7 +74,7 @@ class CxserverWebService extends TranslationWebService {
 		$url = $this->config['host'] . "/v1/mt/$sourceLanguage/$targetLanguage/Apertium";
 
 		return TranslationQuery::factory( $url )
-			->timeout( $this->config['timeout'] )
+			->timeout( intval( $this->config['timeout'] ) )
 			->postWithData( wfArrayToCgi( [ 'html' => $text ] ) );
 	}
 
