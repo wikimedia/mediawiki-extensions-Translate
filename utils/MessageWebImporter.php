@@ -596,9 +596,6 @@ class MessageWebImporter {
 			'&' => '(AMP)',
 		];
 
-		/* How nice of you PHP. No way to split array into keys and values in one
-		 * function or have str_replace which takes one array? */
-
-		return str_replace( array_keys( $replacements ), array_values( $replacements ), $name );
+		return strtr( $name, $replacements );
 	}
 }
