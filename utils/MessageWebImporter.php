@@ -193,17 +193,18 @@ class MessageWebImporter {
 			if ( $old === null ) {
 				// We found a new translation for this message of the
 				// current group: import it.
-				$action = 'import';
-				self::doAction(
-					$action,
-					$group,
-					$key,
-					$code,
-					$value,
-					'',
-					$this->getUser()
-				);
-
+				if ( $process ) {
+					$action = 'import';
+					self::doAction(
+						$action,
+						$group,
+						$key,
+						$code,
+						$value,
+						'',
+						$this->getUser()
+					);
+				}
 				// Show the user that we imported the new translation
 				$para = '<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-new' )->rawParams( $para )
