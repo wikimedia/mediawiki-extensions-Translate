@@ -18,6 +18,7 @@ use Elastica\Query\FunctionScore;
 use Elastica\Query\MatchQuery;
 use Elastica\Query\Term;
 use Elastica\Type\Mapping;
+use MediaWiki\Extension\Elastica\MWElasticUtils;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
 
