@@ -53,6 +53,11 @@ class PageTranslationHooks {
 
 		self::preprocessTagPage( $wikitextParser, $text, $state );
 
+		// Skip further interface message parsing
+		if ( $wikitextParser->getOptions()->getInterfaceMessage() ) {
+			return;
+		}
+
 		// For section previews, perform additional clean-up, given tags are often
 		// unbalanced when we preview one section only.
 		if ( $wikitextParser->getOptions()->getIsSectionPreview() ) {
