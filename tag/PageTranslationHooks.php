@@ -578,11 +578,11 @@ class PageTranslationHooks {
 	private static function getTranslatablePageStatus( Title $title ) {
 		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $title );
-		if ( $page->getMarkedTag() === false ) {
+		if ( $page->getMarkedTag() === null ) {
 			$page = TranslatablePage::isTranslationPage( $title );
 		}
 
-		if ( $page === false || $page->getMarkedTag() === false ) {
+		if ( $page === false || $page->getMarkedTag() === null ) {
 			return null;
 		}
 
@@ -1069,7 +1069,7 @@ class PageTranslationHooks {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
 		if (
-			$translatablePage->getMarkedTag() !== false ||
+			$translatablePage->getMarkedTag() !== null ||
 			TranslatablePage::isTranslationPage( $title )
 		) {
 			$new = SpecialPage::getTitleFor(

@@ -92,7 +92,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 		// Real stuff starts here
 		$page = TranslatablePage::newFromTitle( $this->oldTitle );
-		if ( $page->getMarkedTag() !== false ) {
+		if ( $page->getMarkedTag() !== null ) {
 				$this->getOutput()->setPageTitle( $this->msg( 'pt-movepage-title', $this->oldText ) );
 
 			if ( !$user->isAllowed( 'pagetranslation' ) ) {

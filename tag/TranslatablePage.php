@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
 use MediaWiki\Extension\Translate\Services;
@@ -35,6 +36,8 @@ class TranslatablePage implements TranslatableBundle {
 
 	/** @var Title */
 	protected $title;
+	/** @var RevTagStore */
+	protected $revTagStore;
 	/** @var ?string Text contents of the page. */
 	protected $text;
 	/** @var ?int Revision of the page, if applicable. */
@@ -49,6 +52,7 @@ class TranslatablePage implements TranslatableBundle {
 	/** @param Title $title Title object for the page */
 	protected function __construct( Title $title ) {
 		$this->title = $title;
+		$this->revTagStore = new RevTagStore();
 	}
 
 	/**
@@ -293,8 +297,8 @@ class TranslatablePage implements TranslatableBundle {
 	 * @param int $revision
 	 * @param null|string $value
 	 */
-	public function addMarkedTag( $revision, $value = null ) {
-		$this->addTag( 'tp:mark', $revision, $value );
+	public function addMarkedTag( int $revision, $value = null ) {
+		$this->revTagStore->addTag( $this->getTitle(), 'tp:mark', $revision, $value );
 		self::clearSourcePageCache();
 	}
 
@@ -303,55 +307,24 @@ class TranslatablePage implements TranslatableBundle {
 	 * ready for marking for translation.
 	 * @param int $revision
 	 */
-	public function addReadyTag( $revision ) {
-		$this->addTag( 'tp:tag', $revision );
-	}
-
-	/**
-	 * @param string $tag Tag name
-	 * @param int $revision Revision ID to add tag for
-	 * @param mixed|null $value Optional. Value to be stored as serialized with | as separator
-	 * @throws MWException
-	 */
-	protected function addTag( $tag, $revision, $value = null ) {
-		$dbw = wfGetDB( DB_PRIMARY );
-
-		$aid = $this->getTitle()->getArticleID();
-
-		if ( is_object( $revision ) ) {
-			throw new MWException( 'Got object, expected id' );
-		}
-
-		$conds = [
-			'rt_page' => $aid,
-			'rt_type' => RevTag::getType( $tag ),
-			'rt_revision' => $revision
-		];
-		$dbw->delete( 'revtag', $conds, __METHOD__ );
-
-		if ( $value !== null ) {
-			$conds['rt_value'] = serialize( implode( '|', $value ) );
-		}
-
-		$dbw->insert( 'revtag', $conds, __METHOD__ );
-
-		self::$tagCache[$aid][$tag] = $revision;
+	public function addReadyTag( int $revision ) {
+		$this->revTagStore->addTag( $this->getTitle(), 'tp:tag', $revision );
 	}
 
 	/**
 	 * Returns the latest revision which has marked tag, if any.
-	 * @return int|bool false
+	 * @return ?int
 	 */
 	public function getMarkedTag() {
-		return $this->getTag( 'tp:mark' );
+		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), 'tp:mark' );
 	}
 
 	/**
 	 * Returns the latest revision which has ready tag, if any.
-	 * @return int|bool false
+	 * @return ?int
 	 */
 	public function getReadyTag() {
-		return $this->getTag( 'tp:tag' );
+		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), 'tp:tag' );
 	}
 
 	/**
@@ -360,50 +333,12 @@ class TranslatablePage implements TranslatableBundle {
 	 */
 	public function unmarkTranslatablePage() {
 		$aid = $this->getTitle()->getArticleID();
-
 		$dbw = wfGetDB( DB_PRIMARY );
-		$conds = [
-			'rt_page' => $aid,
-			'rt_type' => [
-				RevTag::getType( 'tp:mark' ),
-				RevTag::getType( 'tp:tag' ),
-			],
-		];
 
-		$dbw->delete( 'revtag', $conds, __METHOD__ );
+		$this->revTagStore->removeTags( $this->getTitle(), 'tp:mark', 'tp:tag' );
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $aid ], __METHOD__ );
-		unset( self::$tagCache[$aid] );
+
 		self::clearSourcePageCache();
-	}
-
-	/**
-	 * @param string $tag
-	 * @param int $dbt
-	 * @return int|bool False if tag is not found, else revision id
-	 */
-	protected function getTag( $tag, $dbt = DB_REPLICA ) {
-		if ( !$this->getTitle()->exists() ) {
-			return false;
-		}
-
-		$aid = $this->getTitle()->getArticleID();
-
-		// ATTENTION: Cache should only be updated on POST requests.
-		if ( isset( self::$tagCache[$aid][$tag] ) ) {
-			return self::$tagCache[$aid][$tag];
-		}
-
-		$db = wfGetDB( $dbt );
-
-		$conds = [
-			'rt_page' => $aid,
-			'rt_type' => RevTag::getType( $tag ),
-		];
-
-		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
-
-		$value = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
-		return $value === false ? $value : (int)$value;
 	}
 
 	/**
@@ -622,7 +557,7 @@ class TranslatablePage implements TranslatableBundle {
 
 		$page = self::newFromTitle( $newtitle );
 
-		if ( $page->getMarkedTag() === false ) {
+		if ( $page->getMarkedTag() === null ) {
 			return false;
 		}
 

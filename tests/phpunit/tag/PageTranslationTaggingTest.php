@@ -40,8 +40,8 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 			'Test case'
 		);
 
-		$this->assertFalse( $translatablePage->getReadyTag(), 'No ready tag was added' );
-		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
+		$this->assertNull( $translatablePage->getReadyTag(), 'No ready tag was added' );
+		$this->assertNull( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
 
 	public function testTranslatablePage() {
@@ -60,7 +60,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$latest = $status->value['revision-record']->getId();
 
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
-		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
+		$this->assertNull( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
 
 	public function testTranslatablePageWithMarked() {

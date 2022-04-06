@@ -282,7 +282,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$firstMark = $page->getMarkedTag() === false;
+		$firstMark = $page->getMarkedTag() === null;
 
 		$parse = $this->translatablePageParser->parse( $page->getText() );
 		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
@@ -877,7 +877,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		// Display template changes if applicable
-		if ( $page->getMarkedTag() !== false ) {
+		if ( $page->getMarkedTag() !== null ) {
 			$hasChanges = true;
 			$newTemplate = $parse->sourcePageTemplateForDiffs();
 			$oldPage = TranslatablePage::newFromRevision(
