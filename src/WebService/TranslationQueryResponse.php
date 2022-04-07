@@ -18,19 +18,15 @@ class TranslationQueryResponse {
 	/** @var TranslationQuery */
 	private $query;
 
-	protected function __construct() {
-	}
-
-	public static function newFromMultiHttp( array $data, TranslationQuery $query ): self {
+	public function __construct( array $data, TranslationQuery $query ) {
 		$response = $data['response'];
-		$obj = new self();
-		$obj->code = (int)$response['code'];
-		$obj->reason = $response['reason'];
-		$obj->headers = $response['headers'];
-		$obj->body = $response['body'];
-		$obj->error = $response['error'];
-		$obj->query = $query;
-		return $obj;
+
+		$this->code = (int)$response['code'];
+		$this->reason = $response['reason'];
+		$this->headers = $response['headers'];
+		$this->body = $response['body'];
+		$this->error = $response['error'];
+		$this->query = $query;
 	}
 
 	public function getStatusCode(): int {

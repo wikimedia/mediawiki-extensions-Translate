@@ -41,10 +41,7 @@ class QueryAggregator {
 			throw new RuntimeException( 'Tried to get response before queries ran' );
 		}
 
-		return TranslationQueryResponse::newFromMultiHttp(
-			$this->responses[$id],
-			$this->queries[$id]
-		);
+		return new TranslationQueryResponse( $this->responses[$id], $this->queries[$id] );
 	}
 
 	/** Runs all the queries. */
