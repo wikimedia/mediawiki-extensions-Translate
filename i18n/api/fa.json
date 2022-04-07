@@ -57,7 +57,7 @@
 	"apierror-translate-language-disabled": "ترجمه روی $1 غیرفعال شده‌است.",
 	"apierror-translate-language-disabled-reason": "ترجمه روی $1 غیرفعال شده‌است: $2",
 	"apierror-translate-owntranslation": "نمی‌توانید ترجمه‌های خودتان را بازبینی کنید",
-	"apierror-translate-sandbox-invalidppassword": "گذرواژه نامعتبر",
+	"apierror-translate-sandbox-invalidppassword": "رمز عبور نامعتبر",
 	"apierror-translate-unknownmessage": "پیام ناشناخته",
 	"apiwarn-translate-alreadyreviewedbyyou": "قبلاً به عنوان بازبینی‌شده توسط شما نشانه‌گذاری شده است",
 	"apihelp-translationentitysearch-summary": "جستجوی گروه‌های پیام و پیام‌ها",

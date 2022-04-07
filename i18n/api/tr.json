@@ -31,7 +31,9 @@
 	"apihelp-query+languagestats-description": "Sorgu dili istatistikleri.",
 	"apihelp-query+languagestats-summary": "Sorgu dili istatistikleri.",
 	"apihelp-query+languagestats-param-language": "Dil kodu.",
+	"apihelp-query+languagestats-param-group": "Mesaj grup kimliği.",
 	"apihelp-query+languagestats-example-1": "Fince çeviri tamamlama istatistikleri listesi",
+	"apihelp-query+languagestats-example-2": "A grubu için Fince için çeviri tamamlama istatistikleri listesi",
 	"apihelp-query+messagecollection-description": "Çevirilerle ilgili MessageCollection'ı sorgulayın.",
 	"apihelp-query+managemessagegroups-summary": "İçe aktarma sırasında bir gruptaki bir mesajın olası adlarını alın",
 	"apihelp-query+managemessagegroups-description": "İçe aktarma sırasında bir gruptaki bir mesajın olası adlarını alın",
@@ -175,6 +177,7 @@
 	"apiwarn-translate-language-disabled-source": "Bu grubun kaynak dili $1. Lütfen çevrilecek başka bir dil seçin.",
 	"apierror-translate-operation-error": "İstek işlenirken bir hata oluştu. Hata: $1",
 	"apihelp-translationentitysearch-summary": "Mesaj gruplarını ve mesajları arayın",
+	"apihelp-translationentitysearch-param-entitytype": "Varlık türü sorgulanıyor",
 	"apihelp-translationentitysearch-param-query": "Arama sorgusu",
 	"apihelp-translationentitysearch-param-limit": "Maksimum arama sonucu sayısı"
 }
