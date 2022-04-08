@@ -493,6 +493,11 @@ class TranslatablePage extends TranslatableBundle {
 		return $this->getMarkedTag() !== null;
 	}
 
+	/** @inheritDoc */
+	public function isDeletable(): bool {
+		return $this->getMarkedTag() !== null;
+	}
+
 	/**
 	 * @param Title $title
 	 * @return bool|self

@@ -46,6 +46,9 @@ abstract class TranslatableBundle {
 	/** Check if this translatable bundle is moveable */
 	abstract public function isMoveable(): bool;
 
+	/** Check if this is a deletable translatable bundle */
+	abstract public function isDeletable(): bool;
+
 	protected function getTranslationUnitPagesByTitle( Title $title, ?string $code = null ): array {
 		$dbw = wfGetDB( DB_PRIMARY );
 

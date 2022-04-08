@@ -141,8 +141,11 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgLogTypes[] = 'messagebundle';
 			$wgLogActionsHandlers['messagebundle/moveok'] = 'TranslatableBundleLogFormatter';
 			$wgLogActionsHandlers['messagebundle/movenok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['messagebundle/deletefok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['messagebundle/deletefnok'] = 'TranslatableBundleLogFormatter';
 			$wgActionFilteredLogs['messagebundle'] = [
 				'move' => [ 'moveok', 'movenok' ],
+				'delete' => [ 'deletefok', 'deletefnok' ],
 			];
 
 			global $wgJobClasses;

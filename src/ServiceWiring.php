@@ -146,7 +146,8 @@ return [
 		return new TranslatablePageStore(
 			$services->get( 'Translate:MessageIndex' ),
 			TranslateUtils::getJobQueueGroup(),
-			new RevTagStore()
+			new RevTagStore(),
+			$services->getDBLoadBalancer()
 		);
 	},
 

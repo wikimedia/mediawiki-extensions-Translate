@@ -63,6 +63,9 @@ class PageDeleteLogger {
 		$entry = new ManualLogEntry( $logType, $logKey );
 		$entry->setPerformer( $performer );
 		$entry->setTarget( $this->baseSourceTitle );
+		$entry->setParameters( [
+			'target' => $this->baseSourceTitle->getPrefixedText(),
+		] );
 		$entry->setComment( $reason );
 
 		return $entry;

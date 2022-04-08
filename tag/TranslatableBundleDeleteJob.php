@@ -1,7 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\MessageGroupProcessing\PageDeleteLogger;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 
@@ -15,13 +15,15 @@ class TranslatableBundleDeleteJob extends Job {
 	public static function newJob(
 		Title $target,
 		string $base,
-		bool $isTranslatablePage,
+		string $bundleType,
+		bool $isTranslatableBundle,
 		User $performer,
 		string $reason
 	): self {
 		$params = [
-			'full' => $isTranslatablePage,
+			'translation' => $isTranslatableBundle,
 			'base' => $base,
+			'bundleType' => $bundleType,
 			'performer' => $performer->getName(),
 			'reason' => $reason
 		];
@@ -59,12 +61,16 @@ class TranslatableBundleDeleteJob extends Job {
 			true
 		);
 
-		$logger = new PageDeleteLogger( $title, 'pagetranslation' );
+		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
+		// Since the page has been removed from cache, create a bundle from the class name.
+		$bundle = $bundleFactory->getBundleFromClass( Title::newFromText( $base ), $this->getBundleType() );
+		$logger = $bundleFactory->getPageDeleteLogger( $bundle );
+
 		if ( !$status->isGood() ) {
-			if ( $this->isTranslatablePage() ) {
-				$logger->logBundleError( $performer, $reason, $status );
-			} else {
+			if ( $this->isTranslation() ) {
 				$logger->logPageError( $performer, $reason, $status );
+			} else {
+				$logger->logBundleError( $performer, $reason, $status );
 			}
 		}
 
@@ -77,17 +83,12 @@ class TranslatableBundleDeleteJob extends Job {
 		if ( $title->getPrefixedText() === $lastitem ) {
 			$cache->delete( $pageKey );
 
-			if ( $this->isTranslatablePage() ) {
-				$logger->logBundleSuccess( $performer, $reason );
-			} else {
+			if ( $this->isTranslation() ) {
 				$logger->logPageSuccess( $performer, $reason );
+			} else {
+				$logger->logBundleSuccess( $performer, $reason );
 			}
 
-			$tpage = TranslatablePage::newFromTitle( $title );
-			$tpage->getTranslationPercentages();
-			foreach ( $tpage->getTranslationPages() as $page ) {
-				$page->invalidateCache();
-			}
 			$title->invalidateCache();
 			PageTranslationHooks::$jobQueueRunning = false;
 		}
@@ -97,10 +98,10 @@ class TranslatableBundleDeleteJob extends Job {
 
 	public function getSummary(): string {
 		$base = $this->getBase();
-		if ( $this->isTranslatablePage() ) {
-			$msg = wfMessage( 'pt-deletepage-full-logreason', $base )->inContentLanguage()->text();
-		} else {
+		if ( $this->isTranslation() ) {
 			$msg = wfMessage( 'pt-deletepage-lang-logreason', $base )->inContentLanguage()->text();
+		} else {
+			$msg = wfMessage( 'pt-deletepage-full-logreason', $base )->inContentLanguage()->text();
 		}
 
 		return $msg;
@@ -110,8 +111,11 @@ class TranslatableBundleDeleteJob extends Job {
 		return $this->params['reason'];
 	}
 
-	public function isTranslatablePage(): bool {
-		return $this->params['full'];
+	private function isTranslation(): bool {
+		// Use 'full' property if 'translation' is missing. This will happen
+		// if the job is added before param 'full' was changed to 'translation'
+		// Remove after MLEB 2022.07
+		return $this->params['translation'] ?? !$this->params['full'];
 	}
 
 	public function getPerformer(): User {
@@ -120,5 +124,10 @@ class TranslatableBundleDeleteJob extends Job {
 
 	public function getBase(): string {
 		return $this->params['base'];
+	}
+
+	private function getBundleType(): string {
+		// Default to TranslatablePage if param is not present
+		return $this->params['bundleType'] ?? TranslatablePage::class;
 	}
 }

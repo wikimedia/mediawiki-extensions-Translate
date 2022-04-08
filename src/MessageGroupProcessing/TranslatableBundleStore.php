@@ -17,4 +17,6 @@ interface TranslatableBundleStore {
 	public function move( Title $oldName, Title $newName ): void;
 
 	public function handleNullRevisionInsert( TranslatableBundle $bundle, RevisionRecord $revision ): void;
+
+	public function delete( Title $title ): void;
 }

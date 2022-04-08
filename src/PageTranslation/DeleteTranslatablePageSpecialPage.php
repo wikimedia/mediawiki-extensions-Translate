@@ -3,15 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use AggregateMessageGroup;
 use BagOStuff;
 use ErrorPageError;
 use HTMLForm;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Permissions\PermissionManager;
-use MessageGroups;
-use MessageIndexRebuildJob;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
@@ -19,7 +18,6 @@ use SpecialPage;
 use Title;
 use TranslatableBundleDeleteJob;
 use TranslatablePage;
-use TranslateMetadata;
 use TranslateUtils;
 use WebRequest;
 use Xml;
@@ -40,8 +38,6 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 	private $reason;
 	/// Allow skipping non-translation subpages.
 	private $doSubpages = false;
-	/** @var TranslatablePage */
-	private $page;
 	/// Contains the language code if we are working with translation page
 	private $code;
 	/** @var BagOStuff */
@@ -52,6 +48,23 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 	private $bundleFactory;
 	/** @var SubpageListBuilder */
 	private $subpageBuilder;
+	/** @var ?string */
+	private $entityType;
+	private const PAGE_TITLE_MSG = [
+		'messagebundle' => 'pt-deletepage-mb-title',
+		'translatablepage' => 'pt-deletepage-tp-title',
+		'translationpage' => 'pt-deletepage-lang-title'
+	];
+	private const WRAPPER_LEGEND_MSG = [
+		'messagebundle' => 'pt-deletepage-mb-legend',
+		'translatablepage' => 'pt-deletepage-tp-title',
+		'translationpage' => 'pt-deletepage-tp-legend'
+	];
+	private const LOG_PAGE = [
+		'messagebundle' => 'Special:Log/messagebundle',
+		'translatablepage' => 'Special:Log/pagetranslation',
+		'translationpage' => 'Special:Log/pagetranslation'
+	];
 
 	public function __construct(
 		BagOStuff $mainCache,
@@ -87,8 +100,6 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		$this->reason = $this->getDeleteReason( $request );
 		$this->doSubpages = $request->getBool( 'subpages' );
 
-		$user = $this->getUser();
-
 		if ( !$this->doBasicChecks() ) {
 			return;
 		}
@@ -96,29 +107,22 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 
 		// Real stuff starts here
-		if ( TranslatablePage::isSourcePage( $this->title ) ) {
-			$title = $this->msg( 'pt-deletepage-full-title', $this->title->getPrefixedText() );
-			$out->setPageTitle( $title );
-
-			$this->code = null;
-			$this->page = TranslatablePage::newFromTitle( $this->title );
-		} else {
-			$page = TranslatablePage::isTranslationPage( $this->title );
-			if ( $page ) {
-				$title = $this->msg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() );
-				$out->setPageTitle( $title );
-
-				[ , $this->code ] = TranslateUtils::figureMessage( $this->title->getText() );
-				$this->page = $page;
-			} else {
-				throw new ErrorPageError(
-					'pt-deletepage-invalid-title',
-					'pt-deletepage-invalid-text'
-				);
-			}
+		$this->entityType = $this->identifyEntityType();
+		if ( !$this->entityType ) {
+			throw new ErrorPageError( 'pt-deletepage-invalid-title', 'pt-deletepage-invalid-text' );
 		}
 
-		if ( !$user->isAllowed( 'pagetranslation' ) ) {
+		if ( $this->isTranslation() ) {
+			[ , $this->code ] = TranslateUtils::figureMessage( $this->title->getText() );
+		} else {
+			$this->code = null;
+		}
+
+		$out->setPageTitle(
+			$this->msg( self::PAGE_TITLE_MSG[ $this->entityType ], $this->title->getPrefixedText() )
+		);
+
+		if ( !$this->getUser()->isAllowed( 'pagetranslation' ) ) {
 			throw new PermissionsError( 'pagetranslation' );
 		}
 
@@ -192,7 +196,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 
 	/** The query form. */
 	private function showForm(): void {
-		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro' );
+		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro', self::LOG_PAGE[ $this->entityType ] );
 
 		$formDescriptor = $this->getCommonFormFields();
 
@@ -214,14 +218,13 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		$count = 0;
 		$subpageCount = 0;
 
-		$out->addWikiMsg( 'pt-deletepage-intro' );
+		$out->addWikiMsg( 'pt-deletepage-intro', self::LOG_PAGE[ $this->entityType ] );
 
 		$subpages = $this->getPagesForDeletion();
 
 		$out->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
 
-		$isSingleLanguage = $this->singleLanguage();
-		if ( !$isSingleLanguage ) {
+		if ( !$this->isTranslation() ) {
 			$count++;
 			$out->addWikiTextAsInterface(
 				$this->getChangeLine( $this->title )
@@ -229,7 +232,6 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		}
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-translation' );
-
 		$lines = [];
 		foreach ( $subpages[ 'translationPages' ] as $old ) {
 			$count++;
@@ -276,14 +278,8 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		];
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
-
-		if ( $isSingleLanguage ) {
-			$htmlForm->setWrapperLegendMsg( 'pt-deletepage-lang-legend' );
-		} else {
-			$htmlForm->setWrapperLegendMsg( 'pt-deletepage-full-legend' );
-		}
-
 		$htmlForm
+			->setWrapperLegendMsg( self::WRAPPER_LEGEND_MSG[ $this->entityType ] )
 			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
 			->setSubmitTextMsg( 'pt-deletepage-action-perform' )
 			->setSubmitName( 'subaction' )
@@ -304,49 +300,35 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 		$jobs = [];
 		$target = $this->title;
 		$base = $this->title->getPrefixedText();
-		$isSingleLanguage = $this->singleLanguage();
+		$isTranslation = $this->isTranslation();
 		$subpageList = $this->getPagesForDeletion();
+		$bundle = $this->getValidBundleFromTitle();
+		$bundleType = get_class( $bundle );
 
 		$user = $this->getUser();
 		foreach ( $subpageList[ 'translationPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
-				$old,
-				$base,
-				!$isSingleLanguage,
-				$user,
-				$this->reason
+				$old, $base, $bundleType, $isTranslation, $user, $this->reason
 			);
 		}
 
 		foreach ( $subpageList[ 'translationUnitPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
-				$old,
-				$base,
-				!$isSingleLanguage,
-				$user,
-				$this->reason
+				$old, $base, $bundleType, $isTranslation, $user, $this->reason
 			);
 		}
 
 		if ( $this->doSubpages ) {
 			foreach ( $subpageList[ 'normalSubpages' ] as $old ) {
 				$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
-					$old,
-					$base,
-					!$isSingleLanguage,
-					$user,
-					$this->reason
+					$old, $base, $bundleType, $isTranslation, $user, $this->reason
 				);
 			}
 		}
 
-		if ( !$isSingleLanguage ) {
+		if ( !$isTranslation ) {
 			$jobs[$this->title->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
-				$this->title,
-				$base,
-				!$isSingleLanguage,
-				$user,
-				$this->reason
+				$this->title, $base, $bundleType, $isTranslation, $user, $this->reason
 			);
 		}
 
@@ -358,46 +340,11 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 			6 * $this->mainCache::TTL_HOUR
 		);
 
-		if ( !$isSingleLanguage ) {
-			$this->page->unmarkTranslatablePage();
-			$this->clearMetadata();
+		if ( !$isTranslation ) {
+			$this->bundleFactory->getStore( $bundle )->delete( $this->title );
 		}
 
-		MessageGroups::singleton()->recache();
-		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
-
-		$this->getOutput()->addWikiMsg( 'pt-deletepage-started' );
-	}
-
-	private function clearMetadata(): void {
-		// remove the entries from metadata table.
-		$groupId = $this->page->getMessageGroupId();
-		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
-			TranslateMetadata::set( $groupId, $type, false );
-		}
-		// remove the page from aggregate groups, if present in any of them.
-		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
-		foreach ( $aggregateGroups as $group ) {
-			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
-			if ( $subgroups !== false ) {
-				$subgroups = explode( ',', $subgroups );
-				$subgroups = array_flip( $subgroups );
-				if ( isset( $subgroups[$groupId] ) ) {
-					unset( $subgroups[$groupId] );
-					$subgroups = array_flip( $subgroups );
-					TranslateMetadata::set(
-						$group->getId(),
-						'subgroups',
-						implode( ',', $subgroups )
-					);
-				}
-			}
-		}
-	}
-
-	private function singleLanguage(): bool {
-		return $this->code !== null;
+		$this->getOutput()->addWikiMsg( 'pt-deletepage-started', self::LOG_PAGE[ $this->entityType ] );
 	}
 
 	private function getCommonFormFields(): array {
@@ -458,7 +405,7 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 	}
 
 	private function getPagesForDeletion(): array {
-		if ( $this->singleLanguage() ) {
+		if ( $this->isTranslation() ) {
 			$resultSet = $this->subpageBuilder->getEmptyResultSet();
 
 			[ $titleKey, ] = TranslateUtils::figureMessage( $this->title->getPrefixedDBkey() );
@@ -471,5 +418,35 @@ class DeleteTranslatablePageSpecialPage extends SpecialPage {
 			$bundle = $this->bundleFactory->getValidBundle( $this->title );
 			return $this->subpageBuilder->getSubpagesPerType( $bundle, false );
 		}
+	}
+
+	private function getValidBundleFromTitle(): TranslatableBundle {
+		$bundleTitle = $this->title;
+		if ( $this->isTranslation() ) {
+			[ $key, ] = TranslateUtils::figureMessage( $this->title->getText() );
+			$bundleTitle = Title::newFromText( $key );
+		}
+
+		return $this->bundleFactory->getValidBundle( $bundleTitle );
+	}
+
+	/** Indentify type of entity being deleted: messagebundle, translatablepage, or translations */
+	private function identifyEntityType(): ?string {
+		$bundle = $this->bundleFactory->getBundle( $this->title );
+		if ( $bundle ) {
+			if ( $bundle instanceof MessageBundle ) {
+				return 'messagebundle';
+			} else {
+				return 'translatablepage';
+			}
+		} elseif ( TranslatablePage::isTranslationPage( $this->title ) ) {
+			return 'translationpage';
+		}
+
+		return null;
+	}
+
+	private function isTranslation(): bool {
+		return $this->entityType === 'translationpage';
 	}
 }

@@ -49,6 +49,11 @@ class MessageBundle extends TranslatableBundle {
 		return true;
 	}
 
+	/** @inheritDoc */
+	public function isDeletable(): bool {
+		return true;
+	}
+
 	public static function isSourcePage( Title $title ): bool {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$cacheKey = $cache->makeKey( 'messagebundle', 'source' );

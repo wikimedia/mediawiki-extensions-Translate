@@ -1069,12 +1069,9 @@ class PageTranslationHooks {
 	 */
 	public static function disableDelete( $article, $out, &$reason ) {
 		$title = $article->getTitle();
-		$translatablePage = TranslatablePage::newFromTitle( $title );
-
-		if (
-			$translatablePage->getMarkedTag() !== null ||
-			TranslatablePage::isTranslationPage( $title )
-		) {
+		$bundle = Services::getInstance()->getTranslatableBundleFactory()->getBundle( $title );
+		$isDeletableBundle = $bundle && $bundle->isDeletable();
+		if ( $isDeletableBundle || TranslatablePage::isTranslationPage( $title ) ) {
 			$new = SpecialPage::getTitleFor(
 				'PageTranslationDeletePage',
 				$title->getPrefixedText()

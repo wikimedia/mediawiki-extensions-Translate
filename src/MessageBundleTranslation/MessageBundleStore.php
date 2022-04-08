@@ -49,4 +49,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 		$this->revTagStore->addTag( $bundle->getTitle(), 'mb:valid', $revision->getId() );
 		MessageBundle::clearSourcePageCache();
 	}
+
+	public function delete( Title $title ): void {
+		$this->revTagStore->removeTags( $title, 'mb:ready' );
+		MessageBundle::clearSourcePageCache();
+	}
 }

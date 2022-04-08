@@ -53,11 +53,29 @@ class TranslatableBundleFactory {
 		throw new InvalidArgumentException( "{$title->getPrefixedText()} is not a TranslatableBundle" );
 	}
 
+	public function getBundleFromClass( Title $title, string $bundleType ): TranslatableBundle {
+		if ( $bundleType === MessageBundle::class ) {
+			return new MessageBundle( $title );
+		} else {
+			return TranslatablePage::newFromTitle( $title );
+		}
+	}
+
 	public function getPageMoveLogger( TranslatableBundle $bundle ): PageMoveLogger {
 		if ( $bundle instanceof TranslatablePage ) {
 			return new PageMoveLogger( $bundle->getTitle(), 'pagetranslation' );
 		} elseif ( $bundle instanceof MessageBundle ) {
 			return new PageMoveLogger( $bundle->getTitle(), 'messagebundle' );
+		}
+
+		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );
+	}
+
+	public function getPageDeleteLogger( TranslatableBundle $bundle ): PageDeleteLogger {
+		if ( $bundle instanceof TranslatablePage ) {
+			return new PageDeleteLogger( $bundle->getTitle(), 'pagetranslation' );
+		} elseif ( $bundle instanceof MessageBundle ) {
+			return new PageDeleteLogger( $bundle->getTitle(), 'messagebundle' );
 		}
 
 		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );

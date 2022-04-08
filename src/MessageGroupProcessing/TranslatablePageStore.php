@@ -13,6 +13,7 @@ use Title;
 use TranslatablePage;
 use TranslateMetadata;
 use TranslationsUpdateJob;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * @author Abijeet Patro
@@ -27,11 +28,19 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private $jobQueue;
 	/** @var RevTagStore */
 	private $revTagStore;
+	/** @var ILoadBalancer */
+	private $loadBalancer;
 
-	public function __construct( MessageIndex $messageIndex, JobQueueGroup $jobQueue, RevTagStore $revTagStore ) {
+	public function __construct(
+		MessageIndex $messageIndex,
+		JobQueueGroup $jobQueue,
+		RevTagStore $revTagStore,
+		ILoadBalancer $loadBalancer
+	) {
 		$this->messageIndex = $messageIndex;
 		$this->jobQueue = $jobQueue;
 		$this->revTagStore = $revTagStore;
+		$this->loadBalancer = $loadBalancer;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
@@ -63,6 +72,22 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		}
 
 		$this->revTagStore->addTag( $bundle->getTitle(), 'tp:tag', $revision->getId() );
+		TranslatablePage::clearSourcePageCache();
+	}
+
+	public function delete( Title $title ): void {
+		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+
+		$this->revTagStore->removeTags( $title, 'tp:mark', 'tp:tag' );
+		$dbw->delete( 'translate_sections', [ 'trs_page' => $title->getArticleID() ], __METHOD__ );
+
+		$translatablePage = TranslatablePage::newFromTitle( $title );
+		$translatablePage->getTranslationPercentages();
+		foreach ( $translatablePage->getTranslationPages() as $page ) {
+			$page->invalidateCache();
+		}
+
+		$this->clearMetadata( $translatablePage );
 		TranslatablePage::clearSourcePageCache();
 	}
 
@@ -105,6 +130,33 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		if ( $priority !== '' ) {
 			MessageGroups::setPriority( $newGroupId, $priority );
 			MessageGroups::setPriority( $oldGroupId, '' );
+		}
+	}
+
+	private function clearMetadata( TranslatablePage $translatablePage ): void {
+		// remove the entries from metadata table.
+		$groupId = $translatablePage->getMessageGroupId();
+		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
+			TranslateMetadata::set( $groupId, $type, false );
+		}
+		// remove the page from aggregate groups, if present in any of them.
+		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
+		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
+		foreach ( $aggregateGroups as $group ) {
+			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
+			if ( $subgroups !== false ) {
+				$subgroups = explode( ',', $subgroups );
+				$subgroups = array_flip( $subgroups );
+				if ( isset( $subgroups[$groupId] ) ) {
+					unset( $subgroups[$groupId] );
+					$subgroups = array_flip( $subgroups );
+					TranslateMetadata::set(
+						$group->getId(),
+						'subgroups',
+						implode( ',', $subgroups )
+					);
+				}
+			}
 		}
 	}
 }
