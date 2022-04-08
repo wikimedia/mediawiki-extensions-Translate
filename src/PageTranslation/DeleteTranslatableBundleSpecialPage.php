@@ -28,7 +28,7 @@ use Xml;
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
  */
-class DeleteTranslatablePageSpecialPage extends SpecialPage {
+class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	// Basic form parameters both as text and as titles
 	private $text;
 	/** @var Title */

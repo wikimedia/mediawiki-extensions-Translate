@@ -9,7 +9,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
-use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatablePageSpecialPage;
+use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
@@ -88,7 +88,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				]
 			];
 			$wgSpecialPages['PageTranslationDeletePage'] = [
-				'class' => DeleteTranslatablePageSpecialPage::class,
+				'class' => DeleteTranslatableBundleSpecialPage::class,
 				'services' => [
 					'MainObjectStash',
 					'PermissionManager',
