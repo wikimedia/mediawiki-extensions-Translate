@@ -14,6 +14,7 @@ use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserIdentity;
+use Message;
 use MessageGroups;
 use MessageGroupStatsRebuildJob;
 use MessageIndex;
@@ -274,7 +275,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		if ( $page->getReadyTag() !== $title->getLatestRevID() ) {
 			$out->wrapWikiMsg(
 				Html::errorBox( '$1' ),
-				[ 'tpt-notsuitable', $title->getPrefixedText() ]
+				[ 'tpt-notsuitable', $title->getPrefixedText(), Message::plaintextParam( '<translate>' ) ]
 			);
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 

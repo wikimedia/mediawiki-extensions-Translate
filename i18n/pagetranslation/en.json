@@ -27,7 +27,7 @@
 	"tpt-badtitle": "Page name given ($1) is not a valid title",
 	"tpt-nosuchpage": "Page $1 does not exist",
 	"tpt-oldrevision": "$2 is not the latest version of the page [[:$1]].\nOnly latest versions can be marked for translation.",
-	"tpt-notsuitable": "Page $1 is not suitable for translation.\nMake sure it has <nowiki><translate></nowiki> tags and has a valid syntax.",
+	"tpt-notsuitable": "Page $1 is not suitable for translation.\nMake sure it has $2 tags and has a valid syntax.",
 	"tpt-saveok": "The page [[:$1]] has been marked up for translation with $2 {{PLURAL:$2|translation unit|translation units}}.\nThe page can now be <span class=\"plainlinks\">[$3 translated]</span>.",
 	"tpt-saveok-first": "You can [[Special:PageMigration|import pre-existing translation]] for this page (if any).",
 	"tpt-offer-notify": "You can <span class=\"plainlinks\">[$1 notify translators]</span> about this page.",
