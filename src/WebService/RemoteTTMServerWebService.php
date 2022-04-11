@@ -49,7 +49,7 @@ class RemoteTTMServerWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	protected function parseResponse( TranslationQueryResponse $reply ): string {
+	protected function parseResponse( TranslationQueryResponse $reply ) {
 		$body = $reply->getBody();
 		$parsed = FormatJson::decode( $body, true );
 		if ( !is_array( $parsed ) ) {

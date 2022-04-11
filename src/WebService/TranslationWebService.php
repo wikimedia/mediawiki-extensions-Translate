@@ -182,7 +182,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * @since 2015.02
 	 * @throws TranslationWebServiceException
 	 */
-	abstract protected function parseResponse( TranslationQueryResponse $response ): string;
+	abstract protected function parseResponse( TranslationQueryResponse $response );
 
 	/* Default implementation */
 

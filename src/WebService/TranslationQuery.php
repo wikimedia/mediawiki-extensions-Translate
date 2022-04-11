@@ -75,7 +75,7 @@ class TranslationQuery {
 		return $this->params;
 	}
 
-	public function getBody(): string {
+	public function getBody(): ?string {
 		return $this->body;
 	}
 
