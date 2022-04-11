@@ -329,11 +329,10 @@ class ElasticSearchTTMServer
 					'prefix' => [
 						'type' => 'custom',
 						'tokenizer' => 'standard',
-						'filter' => [ 'standard', 'lowercase', 'prefix_filter' ]
+						'filter' => [ 'lowercase', 'prefix_filter' ]
 					],
 					'casesensitive' => [
-						'tokenizer' => 'standard',
-						'filter' => [ 'standard' ]
+						'tokenizer' => 'standard'
 					]
 				]
 			]
