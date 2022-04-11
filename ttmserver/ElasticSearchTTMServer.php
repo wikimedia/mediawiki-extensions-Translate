@@ -45,18 +45,6 @@ class ElasticSearchTTMServer
 	 */
 	private const WAIT_UNTIL_READY_TIMEOUT = 3600;
 
-	/**
-	 * Flag in the frozen index that indicates that all indices
-	 * are frozen (useful only when this service shares the cluster with
-	 * CirrusSearch)
-	 */
-	protected const ALL_INDEXES_FROZEN_NAME = 'freeze_everything';
-
-	/**
-	 * Type used in the frozen index
-	 */
-	protected const FROZEN_TYPE = 'frozen';
-
 	/** @var Client */
 	protected $client;
 	/**
@@ -811,19 +799,6 @@ class ElasticSearchTTMServer
 			);
 
 			throw new RuntimeException( "Problem encountered during deletion.\n" . $e );
-		}
-	}
-
-	/** @return bool */
-	public function isFrozen() {
-		try {
-			return MWElasticUtils::isFrozen( $this->getClient() );
-		} catch ( Exception $e ) {
-			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
-				'Problem encountered while checking the frozen index.',
-				[ 'exception' => $e ]
-			);
-			return false;
 		}
 	}
 }

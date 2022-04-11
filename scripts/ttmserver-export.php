@@ -169,10 +169,6 @@ class TTMServerBootstrap extends Maintenance {
 			$server->setLogger( $this );
 		}
 
-		if ( $server->isFrozen() ) {
-			$this->fatalError( "The service is frozen, giving up." );
-		}
-
 		if ( $this->getOption( 'reindex', false ) ) {
 			// This doesn't do the update, just sets a flag to do it
 			$server->setDoReIndex();

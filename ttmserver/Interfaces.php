@@ -113,6 +113,7 @@ interface WritableTTMServer {
 	 * a frozen service may lead to errors or unexpected behaviors.
 	 *
 	 * @since 2017.04
+	 * @deprecated since 2022.04
 	 * @return bool true if the service is frozen
 	 */
 	public function isFrozen();

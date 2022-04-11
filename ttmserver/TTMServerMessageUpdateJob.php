@@ -44,12 +44,6 @@ class TTMServerMessageUpdateJob extends Job {
 	protected const WRITE_BACKOFF_EXPONENT = 7;
 
 	/**
-	 * The maximum amount of time jobs delayed due to frozen services can remain
-	 * in the job queue.
-	 */
-	public const DROP_DELAYED_JOBS_AFTER = 86400; // 60 * 60 * 24 * 1;
-
-	/**
 	 * @param MessageHandle $handle
 	 * @param string $command
 	 * @return self
@@ -72,8 +66,6 @@ class TTMServerMessageUpdateJob extends Job {
 				'command' => 'rebuild',
 				'service' => null,
 				'errorCount' => 0,
-				'createdAt' => time(),
-				'retryCount' => 0,
 			]
 		);
 	}
@@ -149,11 +141,7 @@ class TTMServerMessageUpdateJob extends Job {
 		}
 
 		try {
-			if ( $ttmserver->isFrozen() ) {
-				$this->requeueRetry( $serviceName );
-			} else {
-				$this->runCommand( $ttmserver );
-			}
+			$this->runCommand( $ttmserver );
 		} catch ( Exception $e ) {
 			$this->requeueError( $serviceName, $e );
 		}
@@ -200,43 +188,6 @@ class TTMServerMessageUpdateJob extends Job {
 			]
 		);
 		$this->resend( $job );
-	}
-
-	/**
-	 * Re-queue job that is frozen, or drop the job if it has
-	 * been frozen for too long.
-	 *
-	 * @param string $serviceName
-	 */
-	private function requeueRetry( $serviceName ) {
-		$diff = time() - $this->params['createdAt'];
-		$dropTimeout = self::DROP_DELAYED_JOBS_AFTER;
-		if ( $diff > $dropTimeout ) {
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
-				'Dropping delayed job {command} for service {service} ' .
-				'after waiting {diff}s',
-				[
-					'command' => $this->params['command'],
-					'service' => $serviceName,
-					'diff' => $diff,
-				]
-			);
-		} else {
-			$delay = self::backoffDelay( $this->params['retryCount'] );
-			$job = clone $this;
-			$job->params['retryCount']++;
-			$job->params['service'] = $serviceName;
-			$job->setDelay( $delay );
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->debug(
-				'Service {service} reported frozen. ' .
-				'Requeueing job with delay of {delay}s',
-				[
-					'service' => $serviceName,
-					'delay' => $delay
-				]
-			);
-			$this->resend( $job );
-		}
 	}
 
 	/**
@@ -331,15 +282,15 @@ class TTMServerMessageUpdateJob extends Job {
 	}
 
 	/**
-	 * @param int $retryCount The number of times the job has errored out.
+	 * @param int $errorCount The number of times the job has errored out.
 	 * @return int Number of seconds to delay. With the default minimum exponent
 	 * of 6 the possible return values are 64, 128, 256, 512 and 1024 giving a
 	 * maximum delay of 17 minutes.
 	 */
-	public static function backoffDelay( $retryCount ) {
+	public static function backoffDelay( $errorCount ) {
 		return ceil( pow(
 			2,
-			static::WRITE_BACKOFF_EXPONENT + rand( 0, min( $retryCount, 4 ) )
+			static::WRITE_BACKOFF_EXPONENT + rand( 0, min( $errorCount, 4 ) )
 		) );
 	}
 }
