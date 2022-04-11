@@ -20,6 +20,7 @@
 	"tpt-tab-translate": "Tradukar",
 	"tpt-discouraged-language-reason": "Motivo: $1",
 	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
+	"tpt-aggregategroup-edit-description": "Deskripto:",
 	"tpt-aggregategroup-update-cancel": "Nuligar",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"log-action-filter-pagetranslation": "Tipo di agado:",
