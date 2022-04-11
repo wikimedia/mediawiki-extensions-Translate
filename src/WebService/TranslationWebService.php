@@ -80,6 +80,8 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			if ( $serviceObject instanceof LoggerAwareInterface ) {
 				$serviceObject->setLogger( LoggerFactory::getInstance( 'translationservices' ) );
 			}
+
+			return $serviceObject;
 		}
 
 		return null;
