@@ -4,12 +4,16 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use InvalidArgumentException;
+use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
 use MessageGroups;
 use MessageIndex;
+use RequestContext;
+use SpecialPageLanguage;
 use Title;
 
 /**
@@ -21,11 +25,22 @@ use Title;
 class MessageBundleStore implements TranslatableBundleStore {
 	/** @var RevTagStore */
 	private $revTagStore;
+	/** @var JobQueueGroup */
+	private $jobQueue;
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
 	/** @var MessageIndex */
 	private $messageIndex;
 
-	public function __construct( RevTagStore $revTagStore, MessageIndex $messageIndex ) {
+	public function __construct(
+		RevTagStore $revTagStore,
+		JobQueueGroup $jobQueue,
+		LanguageNameUtils $languageNameUtils,
+		MessageIndex $messageIndex
+	) {
 		$this->revTagStore = $revTagStore;
+		$this->jobQueue = $jobQueue;
+		$this->languageNameUtils = $languageNameUtils;
 		$this->messageIndex = $messageIndex;
 	}
 
@@ -51,7 +66,71 @@ class MessageBundleStore implements TranslatableBundleStore {
 	}
 
 	public function delete( Title $title ): void {
-		$this->revTagStore->removeTags( $title, 'mb:ready' );
+		$this->revTagStore->removeTags( $title, 'mb:valid' );
 		MessageBundle::clearSourcePageCache();
+	}
+
+	public function validate( Title $pageTitle, MessageBundleContent $content ): void {
+		$content->validate();
+		// Verify that the language code is valid
+		$metadata = $content->getMetadata();
+		$sourceLanguageCode = $metadata->getSourceLanguageCode();
+		if ( $sourceLanguageCode ) {
+			if ( !$this->languageNameUtils->isKnownLanguageTag( $sourceLanguageCode ) ) {
+				throw new MalformedBundle(
+					'translate-messagebundle-error-invalid-sourcelanguage', [ $sourceLanguageCode ]
+				);
+			}
+
+			$revisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, 'mb:valid' );
+			// If request wants the source language to be changed after creation, then throw an exception
+			if ( $revisionId !== null && $sourceLanguageCode !== $pageTitle->getPageLanguage()->getCode() ) {
+				throw new MalformedBundle( 'translate-messagebundle-sourcelanguage-changed' );
+			}
+
+		}
+	}
+
+	public function save(
+		Title $pageTitle,
+		RevisionRecord $revisionRecord,
+		MessageBundleContent $content
+	): void {
+		// Validate the content before saving
+		$this->validate( $pageTitle, $content );
+
+		$previousRevisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, 'mb:valid' );
+		if ( $previousRevisionId !== null ) {
+			$this->revTagStore->removeTags( $pageTitle, 'mb:valid' );
+		}
+
+		if ( $content->isValid() ) {
+			// Bundle is valid and contains translatable messages
+			$this->revTagStore->addTag( $pageTitle, 'mb:valid', $revisionRecord->getId() );
+			MessageBundle::clearSourcePageCache();
+
+			// Defer most of the heavy work to the job queue
+			$job = UpdateMessageBundleJob::newJob( $pageTitle, $revisionRecord->getId(), $previousRevisionId );
+
+			$this->jobQueue->push( $job );
+
+			// A new message bundle, set the source language.
+			$definedLanguageCode = $content->getMetadata()->getSourceLanguageCode();
+			$pageLanguageCode = $pageTitle->getPageLanguage()->getCode();
+			if ( $previousRevisionId === null ) {
+				if ( $definedLanguageCode !== $pageLanguageCode ) {
+					$context = RequestContext::getMain();
+					SpecialPageLanguage::changePageLanguage(
+						$context,
+						$pageTitle,
+						$definedLanguageCode,
+						wfMessage( 'translate-messagebundle-change-sourcelanguage' )->inContentLanguage()
+					);
+				}
+			}
+		}
+
+		// What should we do if there are no messages? Use the previous version? Remove the group?
+		// Currently, the bundle is removed from translation.
 	}
 }

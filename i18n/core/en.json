@@ -425,11 +425,16 @@
 	"specialpages-group-translation": "Translation",
 	"content-model-translate-messagebundle": "Translatable message bundle",
 	"translate-messagebundle-validation-error": "Invalid message bundle: $1",
+	"translate-messagebundle-error-parsing": "Error while parsing the JSON: $1",
 	"translate-messagebundle-error-invalid-array": "Message bundle must be a JSON object. Got type $1",
 	"translate-messagebundle-error-key-empty": "Message bundle must not contain an empty key",
 	"translate-messagebundle-error-key-too-long": "Key \"$1\" is too long",
 	"translate-messagebundle-error-key-invalid-characters": "Key \"$1\" contains disallowed characters",
 	"translate-messagebundle-error-invalid-value": "Key \"$1\" does not contain string value",
 	"translate-messagebundle-error-empty-value": "Key \"$1\" does not have a value",
-	"translate-messagebundle-group-description": "Messages of a message bundle defined on page [[$2|$1]]."
+	"translate-messagebundle-error-invalid-metadata": "Metadata section contains an unknown key: \"$1\". Supported keys are $2.",
+	"translate-messagebundle-error-invalid-sourcelanguage": "The source language code \"$1\" is not supported.",
+	"translate-messagebundle-group-description": "Messages of a message bundle defined on page [[$2|$1]].",
+	"translate-messagebundle-change-sourcelanguage": "Setting source language of the message bundle as per metadata.",
+	"translate-messagebundle-sourcelanguage-changed": "The source language of a message bundle cannot be changed once it has been created."
 }

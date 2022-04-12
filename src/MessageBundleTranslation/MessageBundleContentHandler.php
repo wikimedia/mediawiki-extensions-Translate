@@ -28,14 +28,12 @@ class MessageBundleContentHandler extends TextContentHandler {
 		return new $class( '{}' );
 	}
 
-	public function validateSave(
-		Content $content,
-		ValidationParams $validationParams
-	) {
-		'@phan-var MessageBundleContent $content';
+	public function validateSave( Content $content, ValidationParams $validationParams ) {
 		// This will give an informative error message when trying to change the content model
 		try {
-			$content->getMessages();
+			if ( $content instanceof MessageBundleContent ) {
+				$content->validate();
+			}
 			return StatusValue::newGood();
 		} catch ( MalformedBundle $e ) {
 			// XXX: We have no context source nor is there Message::messageParam :(

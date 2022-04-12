@@ -76,6 +76,15 @@ return [
 		return new GroupSynchronizationCache( $services->get( 'Translate:PersistentCache' ) );
 	},
 
+	'Translate:MessageBundleStore' => static function ( MediaWikiServices $services ): MessageBundleStore {
+		return new MessageBundleStore(
+			new RevTagStore(),
+			TranslateUtils::getJobQueueGroup(),
+			$services->getLanguageNameUtils(),
+			$services->get( 'Translate:MessageIndex' )
+		);
+	},
+
 	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {
 		$params = $services->getMainConfig()->get( 'TranslateMessageIndex' );
 		if ( is_string( $params ) ) {
@@ -118,7 +127,7 @@ return [
 	{
 		return new TranslatableBundleFactory(
 			$services->get( 'Translate:TranslatablePageStore' ),
-			new MessageBundleStore( new RevTagStore(), $services->get( 'Translate:MessageIndex' ) )
+			$services->get( 'Translate:MessageBundleStore' )
 		);
 	},
 

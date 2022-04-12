@@ -461,11 +461,16 @@
 	"specialpages-group-translation": "{{doc-special-group}}\n{{Identical|Translation}}",
 	"content-model-translate-messagebundle": "Name of a page content type",
 	"translate-messagebundle-validation-error": "Error message.\n* $1 - more details",
+	"translate-messagebundle-error-parsing": "Error message.\n* $1 - details about parsing error",
 	"translate-messagebundle-error-invalid-array": "Error message.\n* $1 - unlocalised PHP type",
 	"translate-messagebundle-error-key-empty": "Error message.",
 	"translate-messagebundle-error-key-too-long": "Error message.\n* $1 - message key",
 	"translate-messagebundle-error-key-invalid-characters": "Error message.\n* $1 - message key",
 	"translate-messagebundle-error-invalid-value": "Error message.\n* $1 - message key",
 	"translate-messagebundle-error-empty-value": "Error message.\n* $1 - message key",
-	"translate-messagebundle-group-description": "Group description for message bundle message groups.\n\nParameters:\n* $1 - the message bundle page title\n* $2 - the message bundle source page usable as link target"
+	"translate-messagebundle-error-invalid-metadata": "Error message.\n* $1 - metadata key \n* $2 - allowed metadata keys",
+	"translate-messagebundle-error-invalid-sourcelanguage": "Error message.\n\nParameters:\n* $1 - the invalid source language code",
+	"translate-messagebundle-group-description": "Group description for message bundle message groups.\n\nParameters:\n* $1 - the message bundle page title\n* $2 - the message bundle source page usable as link target",
+	"translate-messagebundle-change-sourcelanguage": "Reason when changing the source language of a message bundle.",
+	"translate-messagebundle-sourcelanguage-changed": "Error message if source language is changed after message bundle is created"
 }

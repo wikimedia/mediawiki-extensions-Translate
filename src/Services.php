@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -69,6 +70,11 @@ class Services implements ContainerInterface {
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
 		return $this->get( 'Translate:GroupSynchronizationCache' );
+	}
+
+	/** @since 2022.06 */
+	public function getMessageBundleStore(): MessageBundleStore {
+		return $this->get( 'Translate:MessageBundleStore' );
 	}
 
 	/** @since 2020.10 */
