@@ -269,6 +269,20 @@ class PageTranslationHooks {
 				wfMessage( 'tps-edit-sourcepage-text' )->parse(),
 				'translate-edit-documentation'
 			);
+			// TECHNICALLY this would only be necessary for 1.38+, but the way the message is
+			// written is also true for 1.37-; therefore it's reasonable to not add another version
+			// check here.
+			// The check is "we're using visual editor for WYSIWYG" (as opposed to "for wikitext
+			// edition") - the message will not be displayed in that case.
+			$request = RequestContext::getMain()->getRequest();
+			if ( $request->getVal( 'action' ) === 'visualeditor' &&
+				$request->getVal( 'paction' ) === 'parse'
+			) {
+				$notices[] = Html::warningBox(
+					wfMessage( 'tps-edit-sourcepage-ve-warning-limited-text' )->parse(),
+					'translate-edit-documentation'
+				);
+			}
 		}
 	}
 
