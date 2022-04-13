@@ -224,7 +224,14 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			case 'export-to-file':
 				$out->disable();
 
-				'@phan-var FileBasedMessageGroup $group';
+				// This will never happen since its checked previously but add the check to keep
+				// phan and IDE happy.
+				if ( !$group instanceof FileBasedMessageGroup ) {
+					throw new LogicException(
+						"'export-to-file' requested for a non FileBasedMessageGroup {$group->getId()}"
+					);
+				}
+
 				$filename = basename( $group->getSourceFilePath( $collection->getLanguage() ) );
 				$this->sendExportHeaders( $filename );
 
