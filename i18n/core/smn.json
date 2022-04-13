@@ -25,11 +25,11 @@
 	"translate-page-group": "Juávkku",
 	"translate-page-language": "Kielâ",
 	"translate-page-limit": "Raijiittâs",
-	"translate-page-limit-option": "$1 {{PLURAL:$1|viestâ|viestâd}} siijđost",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|viestâ|viestâ|viestâ|viestâd}} siijđost",
 	"translate-submit": "Viežâ",
 	"translate-page-navigation-legend": "Navigistem",
 	"translate-page-showing": "Viestah $1–$2; ohtsis $3.",
-	"translate-page-showing-all": "Čäittimnáál $1 {{PLURAL:$1|viestâ|viestâd}}.",
+	"translate-page-showing-all": "Čäittimnáál $1 {{PLURAL:$1|viestâ|viestâ|viestâ|viestâd}}.",
 	"translate-page-showing-none": "Iä viestah čäittimnáál.",
 	"translate-next": "Čuávuvâš sijđo",
 	"translate-prev": "Oovdeb sijđo",
@@ -124,7 +124,7 @@
 	"tux-editor-expand-tooltip": "Styereed",
 	"tux-editor-message-tools-history": "Historjá",
 	"tux-editor-message-tools-translations": "Puoh jurgâlusah",
-	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kielâ|kielâ|kiellâd}} lase",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|eres juávkku|eres juávhu|eres juávkkud}}",
+	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kielâ|kielâ|kielâ|kiellâd}} lase",
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|eres juávkku|eres juávhu|eres juávhu|eres juávkkud}}",
 	"specialpages-group-translation": "Jurgâlus"
 }
