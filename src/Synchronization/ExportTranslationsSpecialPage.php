@@ -56,7 +56,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		$this->outputForm();
 
-		if ( $this->groupId ) {
+		if ( $this->groupId && $this->format ) {
 			$status = $this->checkInput();
 			if ( !$status->isGood() ) {
 				$out->wrapWikiTextAsInterface(
