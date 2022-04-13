@@ -36,7 +36,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	/** @var string */
 	protected $groupId;
 	/** @var string[] */
-	public static $validFormats = [ 'export-as-po', 'export-to-file' ];
+	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file' ];
 
 	public function __construct() {
 		parent::__construct( 'ExportTranslations' );
@@ -140,7 +140,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	/** @return string[] */
 	private function getFormatOptions(): array {
 		$options = [];
-		foreach ( self::$validFormats as $format ) {
+		foreach ( self::VALID_FORMATS as $format ) {
 			// translate-taskui-export-to-file, translate-taskui-export-as-po
 			$options[ $this->msg( "translate-taskui-$format" )->escaped() ] = $format;
 		}
@@ -167,7 +167,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		// (however it's not currently supported for other groups).
 		if (
 			!$msgGroup instanceof WikiPageMessageGroup
-			&& !in_array( $this->format, self::$validFormats )
+			&& !in_array( $this->format, self::VALID_FORMATS )
 		) {
 			$status->fatal( 'translate-export-invalid-format' );
 		}
