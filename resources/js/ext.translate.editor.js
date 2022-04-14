@@ -1162,6 +1162,18 @@
 			);
 
 			$infoColumn.append( $( '<div>' )
+				.addClass( 'row edit-summaries-title hide' )
+				.text( mw.msg( 'tux-editor-latest-updates-title' ) )
+				.append( $( '<a>' )
+					.attr(
+						{
+							href: mw.util.getUrl( this.message.title, { action: 'history' } )
+						}
+					)
+					.text( mw.msg( 'tux-editor-all-changes' ) )
+					.addClass( 'edit-summaries-all-changes' ) ) );
+
+			$infoColumn.append( $( '<div>' )
 				.addClass( 'row tm-suggestions-title hide' )
 				.text( mw.msg( 'tux-editor-suggestions-title' ) )
 			);

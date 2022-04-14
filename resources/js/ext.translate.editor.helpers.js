@@ -4,6 +4,20 @@
 ( function () {
 	'use strict';
 
+	function getEditSummaryTimeWithDiff( pageTitle, comment ) {
+		var diffLink = mw.util.getUrl( pageTitle, {
+			oldid: comment.revisionId,
+			diff: 'prev'
+		} );
+
+		return $( '<a>' )
+			.addClass( 'three columns text-right edit-summary-time' )
+			.attr(
+				{ href: diffLink }
+			)
+			.text( comment.humanTimestamp );
+	}
+
 	var translateEditorHelpers = {
 		showDocumentationEditor: function () {
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
@@ -531,6 +545,70 @@
 		},
 
 		/**
+		 * Loads and shows edit summaries
+		 *
+		 * @param {Array} editsummaries An array of edit summaries as returned by the API
+		 */
+		showEditSummaries: function ( editsummaries ) {
+			if ( !editsummaries.length ) {
+				return;
+			}
+
+			var $editSummariesContainer = this.$editor.find( '.edit-summaries' );
+
+			if ( !$editSummariesContainer.length ) {
+				$editSummariesContainer = $( '<div>' ).addClass( 'edit-summaries' );
+			}
+			var $editSummariesTitle = this.$editor.find( '.edit-summaries-title' );
+			$editSummariesTitle.after( $editSummariesContainer );
+			var $summaryList = $( '<ul>' ).addClass( 'edit-summaries-list' );
+			var lastEmptySummaryCount = 0;
+			var pageTitle = this.message.title;
+			editsummaries.forEach( function ( comment ) {
+				var $summaryListItem = $( '<li>' );
+
+				if ( comment.summary === '' ) {
+					var $lastSummaryItem = $summaryList.find( 'li' ).last();
+
+					// Last item added was an empty summary and the current one is also empty,
+					// so update that instead of adding a new one.
+					if ( $lastSummaryItem.hasClass( 'update-without-summary' ) ) {
+						$lastSummaryItem.find( 'span' ).text(
+							mw.msg(
+								'tux-editor-changes-without-summary',
+								mw.language.convertNumber( ++lastEmptySummaryCount )
+							)
+						);
+						// Remove the timestamp link if there is more than one empty summary.
+						$lastSummaryItem.find( '.edit-summary-time' ).remove();
+					} else {
+						// Add a new empty summary list item
+						$summaryList.append( $summaryListItem
+							.addClass( 'update-without-summary' )
+							.append( $( '<span>' )
+								.addClass( 'nine columns' )
+								.text( mw.msg(
+									'tux-editor-changes-without-summary',
+									mw.language.convertNumber( ++lastEmptySummaryCount ) ) ) )
+							.append( getEditSummaryTimeWithDiff( pageTitle, comment ) )
+						);
+					}
+				} else {
+					lastEmptySummaryCount = 0;
+					$summaryList.append( $summaryListItem.append( $( '<bdi>' )
+						.prop( 'lang', '' )
+						.addClass( 'nine columns edit-summaries-message' )
+						.html( comment.summary ) )
+						.append( getEditSummaryTimeWithDiff( pageTitle, comment ) )
+					);
+				}
+			} );
+
+			$editSummariesContainer.append( $summaryList );
+			$editSummariesTitle.removeClass( 'hide' );
+		},
+
+		/**
 		 * Loads and shows the translation helpers.
 		 */
 		showTranslationHelpers: function () {
@@ -540,7 +618,8 @@
 
 			api.get( {
 				action: 'translationaids',
-				title: this.message.title
+				title: this.message.title,
+				uselang: mw.config.get( 'wgUserLanguage' )
 			} ).done( function ( result ) {
 				this.$editor.find( '.infocolumn .loading' ).remove();
 
@@ -557,6 +636,7 @@
 				this.showSupportOptions( result.helpers.support );
 				this.addDefinitionDiff( result.helpers.definitiondiff );
 				this.addInsertables( result.helpers.insertables );
+				this.showEditSummaries( result.helpers.editsummaries );
 
 				// Load the possible warnings as soon as possible, do not wait
 				// for the user to make changes. Otherwise users might try confirming

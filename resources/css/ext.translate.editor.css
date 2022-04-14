@@ -235,10 +235,45 @@
 }
 
 .tm-suggestions-title,
+.edit-summaries-title,
 .in-other-languages-title {
 	font-size: 16px;
 	font-weight: bold;
 	padding: 10px 0;
+}
+
+.edit-summaries {
+	font-size: 0.85em;
+}
+
+.edit-summaries ul {
+	margin: 0 0 0.9em 0.9em;
+}
+
+.edit-summaries li {
+	clear: both;
+}
+
+.edit-summaries-title > a {
+	margin: 0 9px 3px -5px;
+	font-size: 0.75em;
+	background: left center no-repeat;
+	background-image: url( ../images/history.svg );
+	background-size: 18px 18px;
+	padding-left: 23px;
+	float: right;
+}
+
+.edit-summaries-message,
+.update-without-summary > bdi {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.update-without-summary {
+	color: #54595d;
 }
 
 .tm-suggestion,
