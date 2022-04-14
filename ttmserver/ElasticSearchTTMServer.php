@@ -316,32 +316,36 @@ class ElasticSearchTTMServer
 	 */
 	public function createIndex( $rebuild ) {
 		$indexSettings = [
-			'number_of_shards' => $this->getShardCount(),
-			'analysis' => [
-				'filter' => [
-					'prefix_filter' => [
-						'type' => 'edge_ngram',
-						'min_gram' => 2,
-						'max_gram' => 20
+			'settings' => [
+				'index' => [
+					'number_of_shards' => $this->getShardCount(),
+					'analysis' => [
+						'filter' => [
+							'prefix_filter' => [
+								'type' => 'edge_ngram',
+								'min_gram' => 2,
+								'max_gram' => 20
+							]
+						],
+						'analyzer' => [
+							'prefix' => [
+								'type' => 'custom',
+								'tokenizer' => 'standard',
+								'filter' => [ 'lowercase', 'prefix_filter' ]
+							],
+							'casesensitive' => [
+								'tokenizer' => 'standard'
+							]
+						]
 					]
 				],
-				'analyzer' => [
-					'prefix' => [
-						'type' => 'custom',
-						'tokenizer' => 'standard',
-						'filter' => [ 'lowercase', 'prefix_filter' ]
-					],
-					'casesensitive' => [
-						'tokenizer' => 'standard'
-					]
-				]
-			]
+			],
 		];
 		$replicas = $this->getReplicaCount();
 		if ( strpos( $replicas, '-' ) === false ) {
-			$indexSettings['number_of_replicas'] = $replicas;
+			$indexSettings['settings']['index']['number_of_replicas'] = $replicas;
 		} else {
-			$indexSettings['auto_expand_replicas'] = $replicas;
+			$indexSettings['settings']['index']['auto_expand_replicas'] = $replicas;
 		}
 
 		$type = $this->getType();
