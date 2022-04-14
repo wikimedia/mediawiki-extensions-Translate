@@ -130,7 +130,7 @@ class ElasticSearchTTMServer
 		$query->setParam( '_source', [ 'content' ] );
 		$cutoff = $this->config['cutoff'] ?? 0.65;
 		$query->setParam( 'min_score', $cutoff );
-		$query->setSort( [ '_score', '_id' ] );
+		$query->setSort( [ '_score', 'wiki', 'localid' ] );
 
 		/* This query is doing two unrelated things:
 		 * 1) Collect the message contents and scores so that they can
