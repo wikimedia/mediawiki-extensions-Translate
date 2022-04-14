@@ -434,6 +434,8 @@
 	"translate-messagebundle-error-empty-value": "Key \"$1\" does not have a value",
 	"translate-messagebundle-error-invalid-metadata": "Metadata section contains an unknown key: \"$1\". Supported keys are $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "The source language code \"$1\" is not supported.",
+	"translate-messagebundle-error-invalid-prioritylanguage": "Invalid priority language {{PLURAL:$2|code|codes}} in metadata: $1",
+	"translate-messagebundle-error-invalid-prioritylanguage-format": "Invalid priority language format in metadata. Priority languages must be an array of strings.",
 	"translate-messagebundle-group-description": "Messages of a message bundle defined on page [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Setting source language of the message bundle as per metadata.",
 	"translate-messagebundle-sourcelanguage-changed": "The source language of a message bundle cannot be changed once it has been created."

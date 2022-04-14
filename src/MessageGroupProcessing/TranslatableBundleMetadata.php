@@ -12,12 +12,30 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 class TranslatableBundleMetadata {
 	/** @var string */
 	private $sourceLanguageCode;
+	/** @var array|null */
+	private $priorityLanguageCodes;
+	/** @var bool */
+	private $allowOnlyPriorityLanguages;
 
-	public function __construct( ?string $sourceLanguageCode ) {
+	public function __construct(
+		?string $sourceLanguageCode,
+		?array $priorityLanguageCodes,
+		bool $allowOnlyPriorityLanguages
+	) {
 		$this->sourceLanguageCode = $sourceLanguageCode;
+		$this->priorityLanguageCodes = $priorityLanguageCodes;
+		$this->allowOnlyPriorityLanguages = $allowOnlyPriorityLanguages;
 	}
 
 	public function getSourceLanguageCode(): ?string {
 		return $this->sourceLanguageCode;
+	}
+
+	public function getPriorityLanguages(): ?array {
+		return $this->priorityLanguageCodes;
+	}
+
+	public function areOnlyPriorityLanguagesAllowed(): bool {
+		return $this->allowOnlyPriorityLanguages;
 	}
 }

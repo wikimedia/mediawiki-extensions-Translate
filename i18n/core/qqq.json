@@ -470,6 +470,8 @@
 	"translate-messagebundle-error-empty-value": "Error message.\n* $1 - message key",
 	"translate-messagebundle-error-invalid-metadata": "Error message.\n* $1 - metadata key \n* $2 - allowed metadata keys",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Error message.\n\nParameters:\n* $1 - the invalid source language code",
+	"translate-messagebundle-error-invalid-prioritylanguage": "Error message. \n\nParameters:\n* $1 - invalid language code\n* $2 - number of invalid languages",
+	"translate-messagebundle-error-invalid-prioritylanguage-format": "Error message.",
 	"translate-messagebundle-group-description": "Group description for message bundle message groups.\n\nParameters:\n* $1 - the message bundle page title\n* $2 - the message bundle source page usable as link target",
 	"translate-messagebundle-change-sourcelanguage": "Reason when changing the source language of a message bundle.",
 	"translate-messagebundle-sourcelanguage-changed": "Error message if source language is changed after message bundle is created"

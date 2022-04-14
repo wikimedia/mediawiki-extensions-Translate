@@ -18,7 +18,12 @@ use WikiPage;
  */
 class MessageBundleContent extends JsonContent {
 	public const CONTENT_MODEL_ID = 'translate-messagebundle';
-	public const METADATA_KEYS = [ 'sourceLanguage' ];
+	/** @phpcs-require-sorted-array */
+	public const METADATA_KEYS = [
+		'allowOnlyPriorityLanguages',
+		'priorityLanguages',
+		'sourceLanguage'
+	];
 	/** @var array|null */
 	private $messages;
 	/** @var TranslatableBundleMetadata|null */
@@ -130,7 +135,20 @@ class MessageBundleContent extends JsonContent {
 			);
 		}
 
-		$this->metadata = new TranslatableBundleMetadata( $sourceLanguage );
+		$priorityLanguageCodes = $metadata['priorityLanguages'] ?? null;
+		if ( $priorityLanguageCodes ) {
+			if ( !is_array( $priorityLanguageCodes ) ) {
+				throw new MalformedBundle( 'translate-messagebundle-error-invalid-prioritylanguage-format' );
+			}
+
+			$priorityLanguageCodes = array_unique( $priorityLanguageCodes );
+		}
+
+		$this->metadata = new TranslatableBundleMetadata(
+			$sourceLanguage,
+			$priorityLanguageCodes,
+			(bool)( $metadata['allowOnlyPriorityLanguages'] ?? false )
+		);
 		return $this->metadata;
 	}
 

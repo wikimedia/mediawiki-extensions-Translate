@@ -10,11 +10,13 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
+use Message;
 use MessageGroups;
 use MessageIndex;
 use RequestContext;
 use SpecialPageLanguage;
 use Title;
+use TranslateMetadata;
 
 /**
  * @author Abijeet Patro
@@ -89,6 +91,27 @@ class MessageBundleStore implements TranslatableBundleStore {
 			}
 
 		}
+
+		$priorityLanguageCodes = $metadata->getPriorityLanguages();
+		if ( $priorityLanguageCodes ) {
+			$invalidLanguageCodes = [];
+			foreach ( $priorityLanguageCodes as $languageCode ) {
+				if ( !is_string( $languageCode ) ) {
+					throw new MalformedBundle( 'translate-messagebundle-error-invalid-prioritylanguage-format' );
+				}
+
+				if ( !$this->languageNameUtils->isKnownLanguageTag( $languageCode ) ) {
+					$invalidLanguageCodes[] = $languageCode;
+				}
+			}
+
+			if ( $invalidLanguageCodes ) {
+				throw new MalformedBundle(
+					'translate-messagebundle-error-invalid-prioritylanguage',
+					[ Message::listParam( $invalidLanguageCodes ), count( $invalidLanguageCodes ) ]
+				);
+			}
+		}
 	}
 
 	public function save(
@@ -128,6 +151,18 @@ class MessageBundleStore implements TranslatableBundleStore {
 					);
 				}
 			}
+
+			// Save the metadata
+			$messageBundle = new MessageBundle( $pageTitle );
+			$groupId = $messageBundle->getMessageGroupId();
+
+			$metadata = $content->getMetadata();
+			$priorityForce = $metadata->areOnlyPriorityLanguagesAllowed() ? 'on' : false;
+			$priorityLanguages = $metadata->getPriorityLanguages();
+			$priorityLanguages = $priorityLanguages ? implode( ',', $priorityLanguages ) : false;
+
+			TranslateMetadata::set( $groupId, 'prioritylangs', $priorityLanguages );
+			TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce );
 		}
 
 		// What should we do if there are no messages? Use the previous version? Remove the group?
