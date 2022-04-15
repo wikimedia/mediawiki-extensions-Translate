@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
+			"Ericliu1912",
 			"Hzy980512",
 			"Liuxinyu970226",
 			"Qiyue2001",
@@ -49,7 +50,7 @@
 	"translate-translationstash-translations": "$1完成了翻译",
 	"translate-translationstash-skip-button-label": "尝试其他",
 	"tsb-limit-reached-title": "感谢您的翻译",
-	"tsb-limit-reached-body": "您已达到新进译者的翻译限制。\n我们的团队将尽快核实和升级您的账户。\n那时您就可以无限制的参与翻译了。",
+	"tsb-limit-reached-body": "您已达到新进翻译人员翻译额度之上限。\n我们将尽快审核并升级您的账户，届时您便可不受限制地翻译。",
 	"tsb-no-requests-from-new-users": "没有新用户请求",
 	"tsb-create-user-page": "创建了基础用户页",
 	"log-name-translatorsandbox": "翻译沙盒日志",
