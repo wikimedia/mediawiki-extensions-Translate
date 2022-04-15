@@ -27,6 +27,7 @@ use OOUI\TextInputWidget;
 use PermissionsError;
 use RevTag;
 use SpecialPage;
+use Status;
 use Title;
 use TranslatablePage;
 use TranslateMetadata;
@@ -648,39 +649,43 @@ class PageTranslationSpecialPage extends SpecialPage {
 		return '<div>' . implode( $messageCache['pipe-separator'], $actions ) . '</div>';
 	}
 
-	public function validateUnitIds( array $units ): bool {
+	/**
+	 * Validate translation unit IDs.
+	 * @param TranslationUnit[] $units
+	 * @return bool Whether there were any errors
+	 */
+	private function validateUnitIds( array $units ): bool {
 		$usedNames = [];
-		$error = false;
+		$status = Status::newGood();
 
 		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		foreach ( $units as $s ) {
 			if ( preg_match( "~[$ic]~", $s->id ) ) {
-				$this->getOutput()->addHTML(
-					Html::errorBox(
-						$this->msg( 'tpt-invalid' )->params( $s->id )->text()
-					)
-				);
-				$error = true;
+				$status->fatal( 'tpt-invalid', $s->id );
 			}
 
 			// We need to do checks for both new and existing units.
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.
-			$usedNames[$s->id] = ( $usedNames[$s->id] ?? 0 ) + 1;
-		}
-		foreach ( $usedNames as $name => $count ) {
-			if ( $count > 1 ) {
-				// Only show error once per duplicated translation unit
-				$this->getOutput()->addHTML(
-					Html::errorBox(
-						$this->msg( 'tpt-duplicate' )->params( $name )->text()
-					)
-				);
-				$error = true;
+			if ( isset( $usedNames[$s->id] ) ) {
+				// If the same ID is used three or more times, the same
+				// error will be added more than once, but that's okay,
+				// Status::fatal will deduplicate
+				$status->fatal( 'tpt-duplicate', $s->id );
 			}
+			$usedNames[$s->id] = true;
 		}
 
-		return $error;
+		if ( $status->isOK() ) {
+			return false;
+		} else {
+			$this->getOutput()->addHTML(
+				Html::errorBox(
+					$status->getHTML( false, false, $this->getLanguage() )
+				)
+			);
+			return true;
+		}
 	}
 
 	/** @return TranslationUnit[][] */
