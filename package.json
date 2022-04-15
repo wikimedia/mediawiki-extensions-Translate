@@ -1,4 +1,5 @@
 {
+	"name": "Translate",
 	"private": true,
 	"scripts": {
 		"minify-svg": "svgo --config=.svgo.config.js -q -r -f resources/images/",
