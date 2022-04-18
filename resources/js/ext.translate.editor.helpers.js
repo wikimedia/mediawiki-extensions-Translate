@@ -579,7 +579,10 @@
 				this.$editor.find( '.infocolumn' ).append(
 					$( '<div>' )
 						.text( mw.msg( 'tux-editor-loading-failed', errorInfo ) )
-						.addClass( 'mw-message-box-warning mw-message-box tux-translation-aid-error' )
+						// Added warningbox for MW < 1.38
+						.addClass(
+							'mw-message-box-warning mw-message-box warningbox tux-translation-aid-error'
+						)
 				);
 				mw.log.error( 'Error loading translation aids:', errorCode, results );
 			}.bind( this ) );

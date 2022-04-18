@@ -78,7 +78,9 @@
 	display: none;
 }
 
-.mw-message-box-warning.mw-translate-smg-submitted {
+.mw-message-box-warning.mw-translate-smg-submitted,
+/** MW < 1.38 **/
+.warningbox.mw-translate-smg-submitted {
 	margin-top: 2.5em;
 }
 
