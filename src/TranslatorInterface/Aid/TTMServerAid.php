@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 use Exception;
 use IContextSource;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
@@ -66,6 +67,8 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		foreach ( $this->getInternalServices() as $name => $service ) {
 			try {
 				$queryData = $service->query( $from, $to, $text );
+			} catch ( TranslationHelperException $e ) {
+				throw $e;
 			} catch ( Exception $e ) {
 				// Not ideal to catch all exceptions
 				continue;
