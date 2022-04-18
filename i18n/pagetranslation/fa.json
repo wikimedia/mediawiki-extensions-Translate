@@ -97,7 +97,7 @@
 	"tpt-aggregategroup-edit-name": "نام:",
 	"tpt-aggregategroup-edit-description": "توضیحات:",
 	"tpt-aggregategroup-update": "ذخیره",
-	"tpt-aggregategroup-update-cancel": "انصراف",
+	"tpt-aggregategroup-update-cancel": "لغو",
 	"tpt-invalid-group": "گروه نامعتبر",
 	"pt-parse-open": "برچسب &lt;translate> نامتعادل.\nالگوی ترجمه: <pre>$1</pre>",
 	"pt-parse-close": "برچسب &lt;/translate> نامتعادل\nالگو ترجمه: <pre>$1</pre>",

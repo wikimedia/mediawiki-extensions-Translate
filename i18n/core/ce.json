@@ -193,7 +193,7 @@
 	"translate-searchprofile-tooltip": "Массо гочдарш чохь лахар",
 	"translate-search-languagefilter": "Меттаца луьттург:",
 	"translate-search-nofilter": "Литтар доцуш",
-	"logentry-translationreview-group": "$1 {{GENDER:$2|хийцина}} «$3» агӀонан гочдаран хьал $4 мотт «$6» → «$7»",
+	"logentry-translationreview-group": "$1 {{GENDER:$2|хийцина}} «$3» агӀонан гочдар $4 мотт «$6» → «$7»",
 	"group-translate-sandboxed": "ЧӀагӀбина гочдархой",
 	"translate-workflow-state-": "(яздина дац)",
 	"translate-workflowstatus": "Статус: $1",
