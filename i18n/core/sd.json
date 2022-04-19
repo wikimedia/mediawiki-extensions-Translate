@@ -181,6 +181,7 @@
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|ٽيگ}}",
 	"translate-smg-group-message-message-content": "مواد:",
 	"translate-smg-group-message-message-target": "ھدف:",
+	"translate-smg-group-message-message-replacement": "بدل:",
 	"translate-smg-group-message-message-other-langs": "ٻيون ٻوليون:",
 	"translate-manage-import-diff": "نياپو $1 | عمل: $2",
 	"translate-manage-import-new": "نئون نياپو $1",
