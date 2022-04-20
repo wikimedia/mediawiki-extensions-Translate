@@ -40,7 +40,7 @@
 	"apihelp-translationreview-example-1": "بازبینی نسخه ۱",
 	"apihelp-translationstash-param-subaction": "فعالیت.",
 	"apihelp-translationstash-param-metadata": "شی JSON.",
-	"apihelp-ttmserver-param-sourcelanguage": "کد زبان متن مبداء",
+	"apihelp-ttmserver-param-sourcelanguage": "کد زبان متن  مبدأ",
 	"apihelp-ttmserver-param-targetlanguage": "کد زبان پیشنهاد.",
 	"apihelp-ttmserver-param-text": "متن برای یافتن پیشنهادات",
 	"apihelp-searchtranslations-description": "جستجوی ترجمه‌ها.",
