@@ -40,6 +40,7 @@
 	"right-pagetranslation": "Marquer des versions de pages à traduire",
 	"action-pagetranslation": "gérer les pages traduisibles",
 	"tps-edit-sourcepage-text": "Vous modifiez une page de traduction source. Assurez-vous d’être familiarisé{{GENDER:||e}} avec la documentation suivante :\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Modifier le texte source]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Exemples de balisage à suivre]",
+	"tps-edit-sourcepage-ve-warning-limited-text": "Certains fragments traductibles peuvent ne pas être modifiables dans cet éditeur. Veuillez utiliser l’éditeur de wikicode source pour les modifier.",
 	"tps-edit-sourcepage-ve-warning-title": "Attention : page non prise en charge",
 	"tps-edit-sourcepage-ve-warning-text": "Vous modifiez une page traduisible. La modifier dans cet éditeur n’est pas encore officiellement pris en charge. Veuillez utiliser l’éditeur de wikicode.",
 	"tps-edit-sourcepage-ve-warning-button": "OK",
