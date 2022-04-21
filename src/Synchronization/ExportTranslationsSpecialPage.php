@@ -56,7 +56,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		$this->outputForm();
 
-		if ( $this->groupId && $this->format ) {
+		if ( $this->groupId ) {
 			$status = $this->checkInput();
 			if ( !$status->isGood() ) {
 				$out->wrapWikiTextAsInterface(
@@ -162,11 +162,12 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			$status->fatal( 'translate-page-no-such-language' );
 		}
 
-		// Do not show this error if no/invalid format is specified for translatable
-		// page groups as we can show a textarea box containing the translation page text
+		// Do not show this error if invalid format is specified for translatable page
+		// groups as we can show a textarea box containing the translation page text
 		// (however it's not currently supported for other groups).
 		if (
 			!$msgGroup instanceof WikiPageMessageGroup
+			&& $this->format
 			&& !in_array( $this->format, self::VALID_FORMATS )
 		) {
 			$status->fatal( 'translate-export-invalid-format' );
@@ -225,7 +226,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				$out->disable();
 
 				// This will never happen since its checked previously but add the check to keep
-				// phan and IDE happy.
+				// phan and IDE happy. See checkInput method
 				if ( !$group instanceof FileBasedMessageGroup ) {
 					throw new LogicException(
 						"'export-to-file' requested for a non FileBasedMessageGroup {$group->getId()}"
@@ -241,8 +242,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			default:
 				// @todo Add web viewing for groups other than WikiPageMessageGroup
 				if ( !$group instanceof WikiPageMessageGroup ) {
-					// This should have been prevented at validation. See checkInput().
-					throw new LogicException( 'Unexpected export format.' );
+					return;
 				}
 
 				$translatablePage = TranslatablePage::newFromTitle( $group->getTitle() );
