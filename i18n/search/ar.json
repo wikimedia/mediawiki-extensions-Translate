@@ -3,7 +3,8 @@
 		"authors": [
 			"Meno25",
 			"ديفيد",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"FiberAhmed"
 		]
 	},
 	"searchtranslations": "ابحث في الترجمات",
@@ -11,7 +12,7 @@
 	"tux-sst-view-foreign": "اعرض في $1",
 	"tux-sst-search": "ابحث",
 	"tux-sst-search-ph": "ابحث في الترجمات",
-	"tux-sst-count": "{{PLURAL:$1|نتيجة واحدة تم العثور عليها|$1 نتائج تم العثور عليها}}",
+	"tux-sst-count": "{{PLURAL:$1|نتيجة واحدة عُثِر عليها|$1 نتائج عُثِر عليهم}}",
 	"tux-sst-facet-language": "اللغات",
 	"tux-sst-facet-group": "مجموعات الرسائل",
 	"tux-sst-nosolr-title": "البحث غير متوفر",
