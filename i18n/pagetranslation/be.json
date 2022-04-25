@@ -252,5 +252,5 @@
 	"visualeditor-annotations-translate-description": "Гэты дыяпазон пазначаны для перакладу. Калі ласка, пераканайцеся, што вы выконваеце інструкцыі, дадзеныя для [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text змены зыходнага тэксту].",
 	"visualeditor-annotations-tvar-start": "Пачатак неперакладальнага зместу",
 	"visualeditor-annotations-tvar-end": "Канец неперакладальнага зместу",
-	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны як неперакладальны. Калі ласка, звярніцеся да старонки [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] для дадатковай інфармацыі."
+	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны як неперакладальны. Калі ласка, звярніцеся да старонкі [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] для дадатковай інфармацыі."
 }
