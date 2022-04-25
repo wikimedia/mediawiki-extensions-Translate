@@ -101,19 +101,13 @@ class PageTranslationHooks {
 
 		$extensionData = [
 			'languagecode' => $code,
-			'messagegroupid' => $page->getMessageGroupId()
-		];
-		// Backwards-compatibility. If SemanticMediaWiki is installed, write the whole
-		// Title object since prior to https://github.com/SemanticMediaWiki/SemanticMediaWiki/pull/4869
-		// SMW could only understand it. To be removed after SMW release.
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'SemanticMediaWiki' ) ) {
-			$extensionData['sourcepagetitle'] = $page->getTitle();
-		} else {
-			$extensionData['sourcepagetitle'] = [
+			'messagegroupid' => $page->getMessageGroupId(),
+			'sourcepagetitle' => [
 				'namespace' => $page->getTitle()->getNamespace(),
 				'dbkey' => $page->getTitle()->getDBkey()
-			];
-		}
+			]
+		];
+
 		$wikitextParser->getOutput()->setExtensionData(
 			'translate-translation-page', $extensionData
 		);
