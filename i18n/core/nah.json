@@ -9,9 +9,9 @@
 			"Languaeditor"
 		]
 	},
-	"translate": "Tictlahtolcuepaz",
-	"translate-taction-translate": "Tictlahtolcuepaz",
-	"translate-page-group": "Olōlli",
+	"translate": "Xitlahtolkwapa",
+	"translate-taction-translate": "Xitlahtolkwapa",
+	"translate-page-group": "Nechikolli",
 	"translate-page-language": "Tlahtolli",
 	"translate-page-navigation-legend": "Panoliztli",
 	"translate-page-showing": "Tiquintta tlahcuilōltzin īhuīcpa $1 oc $2 īmpan $3.",
@@ -34,13 +34,15 @@
 	"translate-sidebar-alltrans": "Itech occequintin tlahtoltin",
 	"translations": "Mochi tlahtōlcuepaliztli",
 	"translate-translations-none": "Ayāc tlahtōlcuepaliztli ic \"$1\"",
-	"translate-translations-fieldset-title": "Tlahtoltitlaniliztli",
+	"translate-translations-fieldset-title": "Ehekatlahkwilolli",
 	"translate-language": "Tlahtolli",
 	"translate-mgs-column-language": "Tlahtolli",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tlahtolcuepqui}}|Tlahtolcuepqueh}}: $1",
 	"translate-searchprofile": "Tlahtolkwapalistli",
-	"tux-languageselector": "Tictlahtolcuepaz ihuic",
-	"tux-editor-cancel-button-label": "Moxitiniz",
-	"tux-editor-doc-editor-cancel": "Moxitiniz",
-	"tux-empty-list-translated-action": "Tictlahtolcuepaz"
+	"tux-languageselector": "Xitlahtolkwapa ika",
+	"tux-editor-cancel-button-label": "Xikxolewa",
+	"tux-editor-doc-editor-cancel": "Xikxolewa",
+	"tux-empty-list-translated-action": "Xitlahtolkwapa",
+	"tux-editor-message-tools-history": "Tololli",
+	"tux-editor-message-tools-delete": "Xikixpolo"
 }
