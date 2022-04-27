@@ -275,7 +275,7 @@ class PageTranslationHooks {
 			// edition") - the message will not be displayed in that case.
 			$request = RequestContext::getMain()->getRequest();
 			if ( $request->getVal( 'action' ) === 'visualeditor' &&
-				$request->getVal( 'paction' ) === 'parse'
+				$request->getVal( 'paction' ) !== 'wikitext'
 			) {
 				$notices[] = Html::warningBox(
 					wfMessage( 'tps-edit-sourcepage-ve-warning-limited-text' )->parse(),
