@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Akapochtli",
-			"Fluence"
+			"Fluence",
+			"Languaeditor"
 		]
 	},
-	"translate-tag-translate-link-desc": "Tictlahtōlcuepāz inīn zāzanilli",
-	"tpt-tab-translate": "Tictlahtolcuepaz",
-	"tpt-aggregategroup-update-cancel": "Moxitiniz",
-	"pm-cancel-button-label": "Moxitiniz",
-	"pp-cancel-button-label": "Moxitiniz"
+	"translate-tag-translate-link-desc": "Xitlahtolkwapa",
+	"tpt-tab-translate": "Xitlahtolkwapa",
+	"tpt-aggregategroup-update-cancel": "Xikxolewa",
+	"pm-cancel-button-label": "Xikxolewa",
+	"pp-cancel-button-label": "Xikxolewa"
 }

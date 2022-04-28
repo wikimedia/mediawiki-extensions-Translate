@@ -199,6 +199,8 @@
 	"pt-deletepage-any-legend": "Hapus halaman yang dapat diterjemahkan atau halaman terjemahan",
 	"pt-deletepage-current": "Nama halaman:",
 	"pt-deletepage-reason": "Alasan:",
+	"pt-deletepage-reason-details": "Alasan lain/tambahan:",
+	"pt-deletepage-reason-other": "Alasan lain",
 	"pt-deletepage-subpages": "Hapus semua subhalaman",
 	"pt-deletepage-list-pages": "Daftar halaman yang akan dihapus",
 	"pt-deletepage-list-translation": "Halaman terjemahan",
