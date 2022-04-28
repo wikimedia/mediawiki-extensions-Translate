@@ -45,7 +45,7 @@
 	"tpt-badtitle": "Verilen sayfa adı ($1) geçerli bir başlık değil",
 	"tpt-nosuchpage": "$1 sayfası mevcut değil",
 	"tpt-oldrevision": "$2, [[:$1]] sayfasının en son sürümü değil.\nYalnızca en son sürümler çeviri için işaretlenebilir.",
-	"tpt-notsuitable": "$1 sayfası çevrilmeye uygun değil.\n&lt;translate> etiketine ve geçerli bir sözdizimine sahip olduğundan emin olun.",
+	"tpt-notsuitable": "$1 sayfası çevrilmeye uygun değil.\n$2 etiketine ve geçerli bir sözdizimine sahip olduğundan emin olun.",
 	"tpt-saveok": "[[:$1]] sayfası $2 çeviri birimi ile çeviri için işaretlenmiş.\nSayfa artık <span class=\"plainlinks\">[$3 çevrilebilir]</span>.",
 	"tpt-saveok-first": "Bu sayfa için (varsa) [[Special:PageMigration|önceden var olan çeviriyi içe aktarabilirsiniz]].",
 	"tpt-offer-notify": "Çevirmenleri bu sayfa hakkında <span class=\"plainlinks\">[$1 bilgilendirebilirsiniz]</span>.",

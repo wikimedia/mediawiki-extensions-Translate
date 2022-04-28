@@ -57,7 +57,7 @@
 	"tpt-badtitle": "Le nom de page donné ($1) n’est pas un titre valide",
 	"tpt-nosuchpage": "La page $1 n’existe pas",
 	"tpt-oldrevision": "$2 n’est pas la dernière version de la page [[:$1]].\nSeule la dernière version de la page peut être marquée à traduire.",
-	"tpt-notsuitable": "La page $1 ne convient pas pour la traduction.\nAssurez-vous qu’elle contient des balises <nowiki><translate></nowiki> et que sa syntaxe est correcte.",
+	"tpt-notsuitable": "La page $1 ne convient pas pour la traduction.\nAssurez-vous qu’elle contient des balises $2 et que sa syntaxe est correcte.",
 	"tpt-saveok": "La page [[:$1]] a été marquée à traduire avec $2 {{PLURAL:$2|unité|unités}} de traduction.\nLa page peut être <span class=\"plainlinks\">[$3 traduite]</span> dès maintenant.",
 	"tpt-saveok-first": "Vous pouvez [[Special:PageMigration|importer une traduction préexistante]] pour cette page (si elle existe).",
 	"tpt-offer-notify": "Vous pouvez <span class=\"plainlinks\">[$1 notifier les traducteurs]</span> au sujet de cette page.",
