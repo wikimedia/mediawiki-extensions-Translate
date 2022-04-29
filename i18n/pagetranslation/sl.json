@@ -24,7 +24,7 @@
 	"tpt-badtitle": "Dano ime strani ($1) ni veljaven naslov",
 	"tpt-nosuchpage": "Stran $1 ne obstaja",
 	"tpt-oldrevision": "$2 ni zadnja redakcija strani [[:$1]].\nZa prevod se lahko označijo samo zadnje redakcije.",
-	"tpt-notsuitable": "Stran $1 ni primerna za prevod.\nPrepričajte se, da ima značke <nowiki><translate></nowiki> in veljavno sintakso.",
+	"tpt-notsuitable": "Stran $1 ni primerna za prevod.\nPrepričajte se, da ima oznake $2 in veljavno skladnjo.",
 	"tpt-saveok": "Stran [[:$1]] je bila označena za prevod z $2 {{PLURAL:$2|prevajalsko enoto|prevajalskima enotama|prevajalskimi enotami}}.\nStran je sedaj mogoče <span class=\"plainlinks\">[$3 prevesti]</span>.",
 	"tpt-showpage-intro": "Spodaj so navedene nove, obstoječe in izbrisane prevajalne enote.\nPred označitvijo te redakcije za prevajanje preverite, da so spremembe prevajalnih enot čim manjše, saj tako prevajalcem prihranite nepotrebno delo.",
 	"tpt-mark-summary": "Označil to različico za prevajanje",

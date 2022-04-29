@@ -24,7 +24,7 @@
 	"tpt-badtitle": "Le nomine de pagina specificate ($1) non es un titulo valide",
 	"tpt-nosuchpage": "Le pagina $1 non existe",
 	"tpt-oldrevision": "$2 non es le version le plus recente del pagina [[:$1]].\nSolmente le versiones le plus recente pote esser marcate pro traduction.",
-	"tpt-notsuitable": "Le pagina $1 non es traducibile.\nAssecura que illo contine etiquettas <nowiki><translate></nowiki> e ha un syntaxe valide.",
+	"tpt-notsuitable": "Le pagina $1 non es traducibile.\nAssecura te que illo contine etiquettas $2 e ha un syntaxe valide.",
 	"tpt-saveok": "Le pagina [[:$1]] ha essite marcate pro traduction con $2 {{PLURAL:$2|unitate|unitates}} de traduction.\nLe pagina pote ora esser <span class=\"plainlinks\">[$3 traducite]</span>.",
 	"tpt-saveok-first": "Tu pote [[Special:PageMigration|importar le traduction pre-existente]] de iste pagina (si existe).",
 	"tpt-offer-notify": "Tu pote <span class=\"plainlinks\">[$1 notificar le traductores]</span> sur iste pagina.",

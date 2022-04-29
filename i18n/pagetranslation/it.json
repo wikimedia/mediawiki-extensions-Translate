@@ -37,7 +37,7 @@
 	"tpt-badtitle": "Il nome fornito per la pagina ($1) non è un titolo valido",
 	"tpt-nosuchpage": "La pagina $1 non esiste",
 	"tpt-oldrevision": "$2 non è l'ultima versione della pagina [[:$1]].\nSolo le ultime versioni possono essere segnate per la traduzione.",
-	"tpt-notsuitable": "La pagina $1 non è adatta per la traduzione.\nAssicurarsi che abbia i tag <nowiki><translate></nowiki> e una sintassi valida.",
+	"tpt-notsuitable": "La pagina $1 non è adatta per la traduzione.\nAssicurarsi che abbia i tag $2 e una sintassi valida.",
 	"tpt-saveok": "La pagina [[:$1]] è stata segnalata per la traduzione con $2 {{PLURAL:$2|elemento di traduzione|elementi di traduzione}}.\nLa pagina può ora essere <span class=\"plainlinks\">[$3 tradotta]</span>.",
 	"tpt-offer-notify": "Puoi <span class=\"plainlinks\">[$1 notificare questa pagina]</span> ai traduttori.",
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Vedi l'elenco delle pagine traducibili.]]",
