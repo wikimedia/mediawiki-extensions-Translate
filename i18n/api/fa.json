@@ -25,6 +25,7 @@
 	"apihelp-query+languagestats-description": "پرسمان آمار زبان.",
 	"apihelp-query+languagestats-summary": "پرسمان آمار زبان.",
 	"apihelp-query+languagestats-param-language": "کد زبان.",
+	"apihelp-query+managemessagegroups-summary": "واکشی تغییرنام‌های ممکن برای یک پیام در یک گروه درطی درون‌ریزی",
 	"apihelp-query+managemessagegroups-param-groupId": "شناسۀ گروه",
 	"apihelp-query+managemessagegroups-param-messageKey": "کلید پیام",
 	"apihelp-query+messagecollection-param-group": "گروه پیام‌.",
@@ -59,5 +60,5 @@
 	"apierror-translate-owntranslation": "نمی‌توانید ترجمه‌های خودتان را بازبینی کنید",
 	"apierror-translate-sandbox-invalidppassword": "رمز عبور نامعتبر",
 	"apierror-translate-unknownmessage": "پیام ناشناخته",
-	"apiwarn-translate-alreadyreviewedbyyou": "قبلاً به عنوان بازبینی‌شده توسط شما نشانه‌گذاری شده است"
+	"apiwarn-translate-alreadyreviewedbyyou": "ازقبل به عنوان بازبینی‌شده توسط شما علامت‌گذاری شده است"
 }
