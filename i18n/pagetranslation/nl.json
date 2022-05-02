@@ -38,7 +38,7 @@
 	"tpt-badtitle": "De opgegeven paginanaam ($1) is geen geldige paginanaam",
 	"tpt-nosuchpage": "Pagina \"$1\" bestaat niet",
 	"tpt-oldrevision": "$2 is niet de meest recente versie van de pagina \"[[:$1]]\".\nAlleen de meest recente versie kan voor vertaling gemarkeerd worden.",
-	"tpt-notsuitable": "De pagina \"$1\" kan niet voor vertaling gemarkeerd worden.\nZorg ervoor dat de labels <nowiki><translate></nowiki> geplaatst zijn en dat deze juist zijn toegevoegd.",
+	"tpt-notsuitable": "De pagina \"$1\" is niet geschikt voor vertaling.\nZorg ervoor dat de $2-labels geplaatst zijn en dat de syntaxis juist is.",
 	"tpt-saveok": "De pagina [[:$1]] is gemarkeerd voor vertaling met $2 te vertalen {{PLURAL:$2|vertaaleenheid|vertaaleenheden}}.\nDe pagina kan nu  <span class=\"plainlinks\">[$3 vertaald]</span> worden.",
 	"tpt-saveok-first": "U kunt [[Special:PageMigration|bestaande vertalingen]] voor deze pagina importeren (indien aanwezig).",
 	"tpt-offer-notify": "U kunt <span class=\"plainlinks\">[$1 vertalers op de hoogte stellen]</span> over deze pagina.",
