@@ -14,7 +14,8 @@
 			"렌즈",
 			"아라",
 			"Apzp79",
-			"Underbaaar"
+			"Underbaaar",
+			"Bluehill"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -105,7 +106,7 @@
 	"pt-parse-open": "불균형한 &lt;translate> 태그입니다.\n번역 틀: <pre>$1</pre>",
 	"pt-parse-close": "불균형한 &lt;/translate> 태그입니다.\n번역 틀: <pre>$1</pre>",
 	"pt-parse-nested": "중첩한 &lt;translate> 번역 단위는 허용하지 않습니다.\n태그 텍스트: <pre>$1</pre>",
-	"pt-shake-multiple": "한 번역 단위에 여러 번역 단위를 표시했습니다.\n번역 단위 텍스트: <pre>$1</pre>",
+	"pt-shake-multiple": "한 번역 단위에 여러 번역 단위를 표시했습니다.\n번역 단위는 빈 줄로 구분해야 합니다.\n번역 단위 텍스트: <pre>$1</pre>",
 	"pt-shake-position": "예상하지 않은 위치에 번역 단위를 표시했습니다.\n번역 단위 텍스트: <pre>$1</pre>",
 	"pt-shake-empty": "\"$1\" 표시에 대한 빈 번역 단위입니다.",
 	"log-description-pagetranslation": "문서 번역 시스템에 관련된 작업에 대한 기록",
@@ -175,7 +176,7 @@
 	"pt-deletepage-list-translation": "번역 문서",
 	"pt-deletepage-list-section": "번역 단위 문서",
 	"pt-deletepage-list-other": "다른 하위 문서",
-	"pt-deletepage-list-count": "삭제할 {{PLURAL:$1|문서}} 총 $1개입니다.",
+	"pt-deletepage-list-count": "삭제할 {{PLURAL:$1|문서}} 총 $1개와 {{PLURAL:$2|하위 문서}} 총 $2개 입니다.",
 	"pt-deletepage-list-no-pages": "문서를 찾을 수 없습니다.",
 	"pt-deletepage-full-logreason": "\"$1\" 번역 가능한 문서의 부분입니다",
 	"pt-deletepage-lang-logreason": "\"$1\" 번역 문서의 부분입니다",

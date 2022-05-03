@@ -15,6 +15,7 @@
 	"tpt-sections-syntaxversion": "Versiono di la sintaxo",
 	"tpt-rev-encourage": "restaurar",
 	"translate-tag-translate-link-desc": "Tradukar ca pagino",
+	"tpt-translation-intro": "Ca pagino esas <span class=\"plainlinks\">[$1 tradukita versiono]</span> de la pagino [[$2]], e la tradukuro esas $3% kompleta.",
 	"tpt-languages-legend": "Altra lingui:",
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"tpt-tab-translate": "Tradukar",

@@ -42,5 +42,7 @@
 	"tux-languageselector": "Xitlahtolkwapa ika",
 	"tux-editor-cancel-button-label": "Xikxolewa",
 	"tux-editor-doc-editor-cancel": "Xikxolewa",
-	"tux-empty-list-translated-action": "Xitlahtolkwapa"
+	"tux-empty-list-translated-action": "Xitlahtolkwapa",
+	"tux-editor-message-tools-history": "Tololli",
+	"tux-editor-message-tools-delete": "Xikixpolo"
 }

@@ -60,5 +60,5 @@
 	"apierror-translate-owntranslation": "نمی‌توانید ترجمه‌های خودتان را بازبینی کنید",
 	"apierror-translate-sandbox-invalidppassword": "رمز عبور نامعتبر",
 	"apierror-translate-unknownmessage": "پیام ناشناخته",
-	"apiwarn-translate-alreadyreviewedbyyou": "قبلاً به عنوان بازبینی‌شده توسط شما نشانه‌گذاری شده است"
+	"apiwarn-translate-alreadyreviewedbyyou": "ازقبل به عنوان بازبینی‌شده توسط شما علامت‌گذاری شده است"
 }
