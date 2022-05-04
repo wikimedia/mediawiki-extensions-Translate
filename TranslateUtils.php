@@ -367,7 +367,6 @@ class TranslateUtils {
 	 */
 	public static function assetPath( $path ) {
 		global $wgExtensionAssetsPath;
-		// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 		return "$wgExtensionAssetsPath/Translate/$path";
 	}
 
