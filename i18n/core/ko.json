@@ -18,12 +18,13 @@
 			"Ykhwong",
 			"관인생략",
 			"아라",
-			"Twotwo2019"
+			"Twotwo2019",
+			"Bluehill"
 		]
 	},
 	"translate": "번역하기",
 	"translate-desc": "미디어위키와 다른 것들을 번역하기 위한 [[Special:Translate|특수 문서]]",
-	"translate-fuzzybot-desc": "이 계정은 미디어위키 [https://www.mediawiki.org/wiki/Extension:Translate 번역 확장 기능]이 번역 문서를 관리하기 위해 사용되는 시스템 계정입니다.\n이 계정은 미디어위키 소프트웨어의 일부이며 특정 사용자에 의해 통제되지 않습니다.",
+	"translate-fuzzybot-desc": "이 계정은 미디어위키 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 번역 확장 기능]이 번역 문서를 관리하기 위해 사용되는 시스템 계정입니다.\n이 계정은 미디어위키 소프트웨어의 일부이며 특정 사용자에 의해 통제되지 않습니다.",
 	"translate-taskui-export-to-file": "네이티브 형식으로 내보내기",
 	"translate-taskui-export-as-po": "오프라인 번역용으로 내보내기",
 	"translate-taction-translate": "번역하기",
@@ -219,7 +220,7 @@
 	"translate-smg-groups-in-sync": "현재 동기화 중인 그룹",
 	"translate-smg-groups-in-sync-list": "현재 백그라운드에서 처리 중인 그룹 목록:",
 	"translate-smg-groups-with-error-title": "동기화 도중 오류가 발생한 그룹",
-	"translate-smg-groups-with-error-desc": "동기화 도중 오류가 발생한 그룹 목록:",
+	"translate-smg-groups-with-error-desc": "동기화 도중 오류가 발생한 그룹 및 해당 메시지 목록:",
 	"translate-smg-group-with-error-summary": "오류가 있는 {{PLURAL:$1|메시지}} $1개",
 	"translate-smg-group-message-action-history": "역사",
 	"translate-smg-group-message-tag-outdated": "오래됨",
