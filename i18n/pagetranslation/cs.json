@@ -33,7 +33,7 @@
 	"tpt-badtitle": "Zadaný název stránky ($1) je neplatný",
 	"tpt-nosuchpage": "Stránka $1 neexistuje",
 	"tpt-oldrevision": "$2 není nejnovější verze stránky [[:$1]].\nPro překlad je možné označit pouze nejnovější verze.",
-	"tpt-notsuitable": "Stránka $1 není vhodná pro překlad.\nUjistěte se, že obsahuje značky <code><nowiki><translate></nowiki></code> a má platnou syntaxi.",
+	"tpt-notsuitable": "Stránka $1 není vhodná pro překlad.\nUjistěte se, že obsahuje značky $2 a má platnou syntaxi.",
 	"tpt-saveok": "Stránka [[:$1]] byla označena pro překlad {{PLURAL:$2|s $2 částí překladu|se $2 částmi překladu|s $2 částmi překladu}}.\nTato stránka může být nyní <span class=\"plainlinks\">[$3 přeložena]</span>.",
 	"tpt-showpage-intro": "Níže jsou uvedeny nové, současné a smazané části.\nNež tuto verzi označíte pro překlad, zkontrolujte, že změny částí jsou minimální, abyste zabránili zbytečné práci překladatelů.",
 	"tpt-mark-summary": "Tato verze je označená pro překlad",
