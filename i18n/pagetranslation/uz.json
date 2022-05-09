@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"CoderSI",
+			"Malikxan",
 			"Sociologist"
 		]
 	},
 	"tpt-select-prioritylangs-reason": "Sabab:",
+	"translate-tag-translate-link-desc": "Bu sahifani tarjima qilish",
 	"aggregategroups": "Agregat guruhlar",
 	"log-name-pagetranslation": "Sahifalarni tarjima qilish qaydlari",
 	"pt-movepage-reason": "Sabab:",
