@@ -13,7 +13,9 @@
 			"Ykhwong",
 			"렌즈",
 			"아라",
-			"Apzp79"
+			"Apzp79",
+			"Bluehill",
+			"Underbaaar"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -172,7 +174,7 @@
 	"pt-deletepage-list-translation": "번역 문서",
 	"pt-deletepage-list-section": "번역 단위 문서",
 	"pt-deletepage-list-other": "다른 하위 문서",
-	"pt-deletepage-list-count": "삭제할 {{PLURAL:$1|문서}} 총 $1개입니다.",
+	"pt-deletepage-list-count": "삭제할 {{PLURAL:$1|문서}} 총 $1개와 {{PLURAL:$2|하위 문서}} 총 $2개 입니다.",
 	"pt-deletepage-list-no-pages": "문서를 찾을 수 없습니다.",
 	"pt-deletepage-full-logreason": "\"$1\" 번역 가능한 문서의 부분입니다",
 	"pt-deletepage-lang-logreason": "\"$1\" 번역 문서의 부분입니다",
