@@ -406,7 +406,7 @@
 	"tux-editor-doc-editor-cancel": "Отмена",
 	"tux-messagetable-more-messages": "Ещё $1 {{PLURAL:$1|сообщение|сообщения|сообщений}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|1=Сообщение загружается|Сообщения загружаются}}…",
-	"tux-message-filter-placeholder": "Фильтровать список",
+	"tux-message-filter-placeholder": "Отфильтровать список",
 	"tux-message-filter-result": "По запросу «$2» {{PLURAL:$1|найден|найдены|найдено}} $1 {{PLURAL:$1|результат|результата|результатов}}",
 	"tux-message-filter-advanced-button": "Расширенный поиск",
 	"tux-message-filter-optional-messages-label": "Необязательные сообщения",
