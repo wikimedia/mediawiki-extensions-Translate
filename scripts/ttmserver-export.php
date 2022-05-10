@@ -260,17 +260,18 @@ class TTMServerBootstrap extends Maintenance {
 		$times[ 'trans' ] += microtime( true );
 		$times[ 'total' ] += microtime( true );
 
-		$debug = sprintf(
-			"Total %.1f s for %d items >> stats/init/trans %%: %d/%d/%d >> %.1f ms/item",
-			$times[ 'total' ],
-			$countItems,
-			$times[ 'stats'] / $times[ 'total' ] * 100,
-			$times[ 'init'] / $times[ 'total' ] * 100,
-			$times[ 'trans'] / $times[ 'total' ] * 100,
-			$times[ 'total' ] / $countItems * 1000
-		);
-
-		$this->logInfo( "Finished exporting $id. $debug\n" );
+		if ( $countItems !== 0 ) {
+			$debug = sprintf(
+				"Total %.1f s for %d items >> stats/init/trans %%: %d/%d/%d >> %.1f ms/item",
+				$times[ 'total' ],
+				$countItems,
+				$times[ 'stats'] / $times[ 'total' ] * 100,
+				$times[ 'init'] / $times[ 'total' ] * 100,
+				$times[ 'trans'] / $times[ 'total' ] * 100,
+				$times[ 'total' ] / $countItems * 1000
+			);
+			$this->logInfo( "Finished exporting $id. $debug\n" );
+		}
 	}
 
 	private function logInfo( string $text ) {
