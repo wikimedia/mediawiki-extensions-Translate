@@ -45,7 +45,7 @@
 	"translate-page-language": "Lingua",
 	"translate-page-limit": "Limite",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|messaggio|messaggi}} per pagina",
-	"translate-submit": "Riporta",
+	"translate-submit": "Ottieni",
 	"translate-page-navigation-legend": "Navigazione",
 	"translate-page-showing": "Mostrati i messaggi da $1 a $2 di $3.",
 	"translate-page-showing-all": "{{PLURAL:$1|Mostrato un messaggio|Mostrati $1 messaggi}}.",
