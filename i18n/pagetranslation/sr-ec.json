@@ -125,7 +125,7 @@
 	"pt-movepage-action-perform": "Изврши премештање",
 	"pt-movepage-action-other": "Промени циљ",
 	"pt-movepage-logreason": "Део преводиве странице \"$1\"",
-	"pt-movepage-started": "У међувремену, проверите [[Special:Log/pagetranslation|дневник превођења странице]] да би се пронашле евентуалне грешке и поруке завршетка.",
+	"pt-movepage-started": "У међувремену, проверите [[$1|дневник превођења странице]] да би се пронашле евентуалне грешке и поруке завршетка.",
 	"pt-deletepage-lang-title": "Брисање преводиве странице \"$1\"",
 	"pt-deletepage-full-title": "Брисање преводиве странице \"$1\"",
 	"pt-deletepage-invalid-title": "Наведена страница није важећа.",

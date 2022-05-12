@@ -35,6 +35,7 @@
 	"log-name-pagetranslation": "Riggistru dî traduzzioni di pàggini",
 	"log-action-filter-pagetranslation": "Tipu d'azzioni:",
 	"log-action-filter-pagetranslation-delete": "Cancillazioni di pàggini",
+	"log-action-filter-messagebundle": "Tipu d'azzioni:",
 	"pt-movepage-current": "Nomu attuali:",
 	"pt-movepage-new": "Nomu novu:",
 	"pt-movepage-reason": "Mutivu:",
