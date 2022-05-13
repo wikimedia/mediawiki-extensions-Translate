@@ -137,7 +137,7 @@
 	"apihelp-translationstats-param-group": "רשימת הקבוצות שצריך לאחזר סטטיסטיקה עבורן.",
 	"apihelp-translationstats-param-language": "רשימת השפות שצריך לאחזר סטטיסטיקה עבורן.",
 	"apihelp-translationstats-param-scale": "סדר הגודל של סטטיסטיקות התרגום",
-	"apihelp-translationstats-param-start": "תאריך ההתחלה שאחזור סטטיסטיקות התרגום יתחיל ממנו. ברירת המחדל היא התאריך הנוכחי מינוס מספר ה־days.",
+	"apihelp-translationstats-param-start": "תאריך ההתחלה שאחזור סטטיסטיקות התרגום יתחיל ממנו. ברירת המחדל היא התאריך הנוכחי מינוס מספר ה־<var>days</var>.",
 	"apihelp-translationstats-example-1": "אחזור מניין העריכות עבור 30 הימים האחרונים, עבור כל הקבוצות והשפות",
 	"apihelp-translationstats-example-2": "אחזור מניין העריכות עבור 30 הימים האחרונים, עבור אנגלית וצרפתית.",
 	"apierror-translate-changeset-modified": "ערכת השינויים שונתה על־ידי משתמש או תהליך אחר. אי־אפשר לשמור את השינויים שלך כי הם יכולים לדרוס את השינויים שלהם. נא לרענן את הדף כדי לראות את השינויים האחרונים.",
