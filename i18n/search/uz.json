@@ -1,8 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"CoderSI"
+			"CoderSI",
+			"Malikxan"
 		]
 	},
-	"tux-sst-facet-language": "Tillar"
+	"searchtranslations": "Tarjimalardan qidirish",
+	"tux-sst-edit": "Tarjimani tahrirlash",
+	"tux-sst-search": "Qidiruv",
+	"tux-sst-search-ph": "Tarjimalardan qidirish",
+	"tux-sst-count": "{{PLURAL:$1|Bitta natija topildi|$1 ta natija topildi}}",
+	"tux-sst-facet-language": "Tillar",
+	"tux-sst-facet-group": "Xabar guruhlari",
+	"tux-sst-nosolr-body": "Bu vikida tarjima qidiruv xizmati yoʻq.",
+	"tux-sst-next": "Keyingisi ›",
+	"tux-sst-prev": "< Avvalgisi",
+	"tux-sst-default": "Tarjimalar",
+	"tux-sst-translated": "$1dan tarjima qilish",
+	"tux-sst-untranslated": "$1dan tarjima yoʻq",
+	"tux-sst-outdated": "$1dan eskirgan tarjimalar",
+	"tux-sst-ellipsis-untranslated": "Tarjima yoʻq",
+	"tux-sst-ellipsis-outdated": "Eskirgan tarjimalar",
+	"tux-sst-case-sensitive": "Registrni hisobga olish"
 }
