@@ -135,7 +135,7 @@
 	"apihelp-translationstats-param-group": "Lista del gruppos pro le quales obtener statisticas.",
 	"apihelp-translationstats-param-language": "Lista del linguas pro le quales obtener statisticas.",
 	"apihelp-translationstats-param-scale": "Scala del statisticas de traduction",
-	"apihelp-translationstats-param-start": "Data de initio a partir del qual obtener le statisticas de traduction. Predefinite al data actual minus le numero de 'days'.",
+	"apihelp-translationstats-param-start": "Data de initio a partir del qual obtener le statisticas de traduction. Predefinite al data actual minus le numero de <var>days</var>.",
 	"apihelp-translationstats-example-1": "Obtener le numero de modificationes pro le ultime 30 dies, pro tote le gruppos e linguas",
 	"apihelp-translationstats-example-2": "Obtener le numero de modificationes pro le ultime 30 dies, pro le linguas anglese e francese.",
 	"apierror-translate-changeset-modified": "Un altere usator o processo ha modificate le gruppo de modificationes. Tu cambiamentos non pote esser salveguardate perque illos pote supplantar le sues. Per favor refresca le pagina pro vider le ultime cambiamentos.",
