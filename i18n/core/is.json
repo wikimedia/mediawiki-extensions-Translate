@@ -3,6 +3,7 @@
 		"authors": [
 			"Bjarki S",
 			"Jóna Þórunn",
+			"LoveIceLang",
 			"S.Örvarr.S",
 			"Snævar",
 			"Spacebirdy",
@@ -168,6 +169,7 @@
 	"translate-manage-import-new": "Ný skilaboð $1",
 	"translate-manage-action-import": "Flytja inn",
 	"translate-manage-action-ignore": "Hunsa",
+	"translate-manage-import-summary": "Flytur inn nýja útgáfu úr ytri uppruna",
 	"translate-manage-submit": "Keyra",
 	"translate-manage-import-ok": "Innflutt: $1",
 	"translate-manage-import-done": "Innflutningi lokið",

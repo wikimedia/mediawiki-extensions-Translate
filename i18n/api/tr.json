@@ -144,7 +144,7 @@
 	"apihelp-translationstats-param-group": "İstatistiklerin alınacağı grupların listesi.",
 	"apihelp-translationstats-param-language": "İstatistiklerin alınacağı dillerin listesi.",
 	"apihelp-translationstats-param-scale": "Çeviri istatistiklerinin ölçeği",
-	"apihelp-translationstats-param-start": "Çeviri istatistiklerinin alınacağı başlangıç ​​tarihi. Mevcut tarih eksi 'gün' sayısıdır.",
+	"apihelp-translationstats-param-start": "Çeviri istatistiklerinin alınacağı başlangıç tarihi. Geçerli tarih eksi <var>days</var> sayısı için varsayılandır.",
 	"apihelp-translationstats-example-1": "Tüm gruplar ve diller için son 30 güne ait düzenleme sayısını getirin",
 	"apihelp-translationstats-example-2": "İngilizce ve Fransızca dilleri için son 30 güne ait düzenleme sayısını getir.",
 	"apierror-translate-changeset-modified": "Değişiklik kümesi başka bir kullanıcı veya işlem tarafından değiştirildi. Yaptığınız değişiklikler, değişikliklerini geçersiz kılabileceği için kaydedilemiyor. En son değişiklikleri görmek için lütfen sayfayı yenileyin.",
