@@ -343,7 +343,7 @@
 	"tux-save-unknown-error": "Адбылася невядомая памылка.",
 	"tux-editor-placeholder-documentation": "Дадаць дакументацыю паведамлення",
 	"tux-editor-placeholder-language": "Ваш пераклад ($1)",
-	"tux-editor-editsummary-placeholder": "Неабавязковы каментарый",
+	"tux-editor-editsummary-placeholder": "Растлумачце вашы змены (неабавязкова)",
 	"tux-editor-paste-original-button-label": "Уставіць крынічны тэкст",
 	"tux-editor-discard-changes-button-label": "Адмяніць змены",
 	"tux-editor-save-button-label": "Апублікаваць пераклад",

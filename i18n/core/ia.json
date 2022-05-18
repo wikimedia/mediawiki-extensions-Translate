@@ -333,7 +333,7 @@
 	"tux-save-unknown-error": "Un error incognite ha occurrite.",
 	"tux-editor-placeholder-documentation": "Adder documentation del message",
 	"tux-editor-placeholder-language": "Tu traduction in $1",
-	"tux-editor-editsummary-placeholder": "Summario facultative",
+	"tux-editor-editsummary-placeholder": "Explica tu modificationes (facultative)",
 	"tux-editor-paste-original-button-label": "Collar texto original",
 	"tux-editor-discard-changes-button-label": "Abandonar modificationes",
 	"tux-editor-save-button-label": "Publicar traduction",

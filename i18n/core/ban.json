@@ -3,6 +3,7 @@
 		"authors": [
 			"Carma citrawati",
 			"Chinamoonroll",
+			"Joseagush",
 			"NoiX180"
 		]
 	},
@@ -178,7 +179,7 @@
 	"tux-status-translated": "Kaalih basa",
 	"tux-status-saving": "Nyobyahang...",
 	"tux-status-unsaved": "Durung kasobyahang",
-	"tux-editor-editsummary-placeholder": "Ringkesan dadi-dadi",
+	"tux-editor-editsummary-placeholder": "Terangang uahan ragané (opsional)",
 	"tux-editor-paste-original-button-label": "Témplék wit téks",
 	"tux-editor-discard-changes-button-label": "Kutang uahan",
 	"tux-editor-save-button-label": "Sobyahang alih basa",
@@ -187,6 +188,8 @@
 	"tux-editor-confirm-button-label": "Konpirmasi alih basa",
 	"tux-editor-proofread-button-label": "Cihna dados katuréksa",
 	"tux-editor-edit-desc": "Uah dokuméntasi",
+	"tux-editor-latest-updates-title": "Uahan pinih untat",
+	"tux-editor-all-changes": "Makejang uahan",
 	"tux-editor-in-other-languages": "Ring basa lianan",
 	"tux-editor-need-more-help": "Ngarereh wantuan malih?",
 	"tux-editor-ask-help": "Matakén antuk inpormasi langkung",
