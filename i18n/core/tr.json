@@ -313,7 +313,7 @@
 	"translate-search-nofilter": "Filtre yok",
 	"log-name-translationreview": "Çeviri inceleme günlüğü",
 	"log-description-translationreview": "Tüm yorumların çevirilere ve mesaj gruplarına kaydedilmesi.",
-	"logentry-translationreview-message": "$1, $3 sayfasını {{GENDER:$2|inceledi}}",
+	"logentry-translationreview-message": "$1, $3 çevirisini {{GENDER:$2|inceledi}}",
 	"logentry-translationreview-group": "$1, $3 sayfasından $4 çevirileri $6 ile $7 {{GENDER:$2|değiştirdi}}",
 	"group-translate-sandboxed": "Onaylanmamış çevirmenler",
 	"group-translate-sandboxed-member": "{{GENDER:$1|onaylanmamış çevirmen}}",

@@ -420,7 +420,7 @@
 	"specialpages-group-translation": "תרגום",
 	"content-model-translate-messagebundle": "חבילת הודעות שאפשר לתרגם",
 	"translate-messagebundle-validation-error": "חבילת הודעות בלתי־תקינה: $1",
-	"translate-messagebundle-error-invalid-array": "חיבלת ההודעות חייבת להיות עצם JSON. הסוג שהתקבל הוא $1",
+	"translate-messagebundle-error-invalid-array": "חבילת ההודעות חייבת להיות עצם JSON. הסוג שהתקבל הוא $1",
 	"translate-messagebundle-error-key-empty": "חבילת ההודעות צריכה לא להכיל מפתח ריק",
 	"translate-messagebundle-error-key-too-long": "המפתח \"$1\" ארוך מדי",
 	"translate-messagebundle-error-key-invalid-characters": "המפתח \"$1\" מכיל תווים בלתי־מורשים",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Imre",
 			"Joystick",
-			"פוילישער"
+			"פוילישער",
+			"Pacha Tchernof"
 		]
 	},
 	"translate": "פֿארטײַטשן",
@@ -306,7 +307,7 @@
 	"tux-editor-expand-tooltip": "פֿאַרברייטערן",
 	"tux-editor-collapse-tooltip": "אײַנציען",
 	"tux-editor-message-tools-show-editor": "ווייזן אין וויקי־רעדאקטירער",
-	"tux-editor-message-tools-history": "היסטאריע",
+	"tux-editor-message-tools-history": "היסטאָריע",
 	"tux-editor-message-tools-delete": "אויסמעקן",
 	"tux-editor-message-tools-translations": "אַלע איבערזעצונגען",
 	"tux-editor-message-tools-linktothis": "לינקען צו דער דאזיגער מעלדונג",
