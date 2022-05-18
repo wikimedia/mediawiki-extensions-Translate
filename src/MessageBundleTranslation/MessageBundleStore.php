@@ -33,6 +33,10 @@ class MessageBundleStore implements TranslatableBundleStore {
 	private $languageNameUtils;
 	/** @var MessageIndex */
 	private $messageIndex;
+	private const METADATA_KEYS_DB = [
+		'priorityforce',
+		'prioritylangs'
+	];
 
 	public function __construct(
 		RevTagStore $revTagStore,
@@ -47,6 +51,15 @@ class MessageBundleStore implements TranslatableBundleStore {
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
+		$oldBundle = new MessageBundle( $oldName );
+		$newBundle = new MessageBundle( $newName );
+
+		TranslateMetadata::moveMetadata(
+			$oldBundle->getMessageGroupId(),
+			$newBundle->getMessageGroupId(),
+			self::METADATA_KEYS_DB
+		);
+
 		MessageBundle::clearSourcePageCache();
 
 		// Re-render the bundles to get everything in sync
@@ -69,6 +82,10 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 	public function delete( Title $title ): void {
 		$this->revTagStore->removeTags( $title, 'mb:valid' );
+
+		$bundle = new MessageBundle( $title );
+		TranslateMetadata::clearMetadata( $bundle->getMessageGroupId(), self::METADATA_KEYS_DB );
+
 		MessageBundle::clearSourcePageCache();
 	}
 

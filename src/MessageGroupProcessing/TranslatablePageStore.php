@@ -46,11 +46,12 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	public function move( Title $oldName, Title $newName ): void {
 		$oldTranslatablePage = TranslatablePage::newFromTitle( $oldName );
 		$newTranslatablePage = TranslatablePage::newFromTitle( $newName );
+		$oldGroupId = $oldTranslatablePage->getMessageGroupId();
+		$newGroupId = $newTranslatablePage->getMessageGroupId();
 
-		$this->moveMetadata(
-			$oldTranslatablePage->getMessageGroupId(),
-			$newTranslatablePage->getMessageGroupId()
-		);
+		TranslateMetadata::moveMetadata( $oldGroupId, $newGroupId, TranslatablePage::METADATA_KEYS );
+
+		$this->moveMetadata( $oldGroupId, $newGroupId );
 
 		TranslatablePage::clearSourcePageCache();
 
@@ -87,20 +88,13 @@ class TranslatablePageStore implements TranslatableBundleStore {
 			$page->invalidateCache();
 		}
 
-		$this->clearMetadata( $translatablePage );
+		$groupId = $translatablePage->getMessageGroupId();
+		TranslateMetadata::clearMetadata( $groupId, TranslatablePage::METADATA_KEYS );
+		$this->removeFromAggregateGroups( $groupId );
 		TranslatablePage::clearSourcePageCache();
 	}
 
 	private function moveMetadata( string $oldGroupId, string $newGroupId ): void {
-		TranslateMetadata::preloadGroups( [ $oldGroupId, $newGroupId ], __METHOD__ );
-		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
-			$value = TranslateMetadata::get( $oldGroupId, $type );
-			if ( $value !== false ) {
-				TranslateMetadata::set( $oldGroupId, $type, false );
-				TranslateMetadata::set( $newGroupId, $type, $value );
-			}
-		}
-
 		// Make the changes in aggregate groups metadata, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
 		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
@@ -133,12 +127,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		}
 	}
 
-	private function clearMetadata( TranslatablePage $translatablePage ): void {
-		// remove the entries from metadata table.
-		$groupId = $translatablePage->getMessageGroupId();
-		foreach ( TranslatablePage::METADATA_KEYS as $type ) {
-			TranslateMetadata::set( $groupId, $type, false );
-		}
+	private function removeFromAggregateGroups( string $groupId ): void {
 		// remove the page from aggregate groups, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
 		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );

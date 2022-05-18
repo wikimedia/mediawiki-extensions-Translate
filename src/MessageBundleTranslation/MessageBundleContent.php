@@ -18,6 +18,7 @@ use WikiPage;
  */
 class MessageBundleContent extends JsonContent {
 	public const CONTENT_MODEL_ID = 'translate-messagebundle';
+	// List of supported metadata keys
 	/** @phpcs-require-sorted-array */
 	public const METADATA_KEYS = [
 		'allowOnlyPriorityLanguages',
@@ -118,7 +119,6 @@ class MessageBundleContent extends JsonContent {
 
 		$data = $this->getRawData();
 		$metadata = $data['@metadata'] ?? [];
-
 		foreach ( $metadata as $key => $value ) {
 			if ( !in_array( $key, self::METADATA_KEYS ) ) {
 				throw new MalformedBundle(
