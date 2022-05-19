@@ -284,6 +284,11 @@ class TTMServerBootstrap extends Maintenance {
 		// Make sure all existing connections are dead,
 		// we can't use them in forked children.
 		MediaWiki\MediaWikiServices::resetChildProcessServices();
+		// Temporary workaround for https://phabricator.wikimedia.org/T258860.
+		// This script just moves data around, so skipping the message cache should not
+		// cause any major issues. Things like message documentation language name and
+		// main page name were being checked from the message cache and sometimes failing.
+		MediaWiki\MediaWikiServices::getInstance()->getMessageCache()->disable();
 	}
 
 	private function verifyChildStatus( int $pid, int $status ): bool {
