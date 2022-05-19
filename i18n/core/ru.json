@@ -382,7 +382,7 @@
 	"tux-save-unknown-error": "Произошла неизвестная ошибка.",
 	"tux-editor-placeholder-documentation": "Добавить документацию сообщения",
 	"tux-editor-placeholder-language": "Ваш перевод на $1",
-	"tux-editor-editsummary-placeholder": "Комментарий по желанию",
+	"tux-editor-editsummary-placeholder": "Объясните ваши изменения (по желанию)",
 	"tux-editor-paste-original-button-label": "Вставить исходный текст",
 	"tux-editor-discard-changes-button-label": "Отменить изменения",
 	"tux-editor-save-button-label": "Опубликовать перевод",

@@ -368,7 +368,7 @@
 	"tux-editor-edit-desc": "Dokumentation bearbeiten",
 	"tux-editor-add-desc": "Dokumentation hinzufügen",
 	"tux-editor-suggestions-title": "Vorschläge",
-	"tux-editor-latest-updates-title": "Letze Aktualisierungen",
+	"tux-editor-latest-updates-title": "Letzte Aktualisierungen",
 	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1|Aktualisierung|Aktualisierungen}} ohne Zusammenfassung",
 	"tux-editor-all-changes": "Alle Änderungen",
 	"tux-editor-in-other-languages": "In anderen Sprachen",
