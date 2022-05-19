@@ -9,7 +9,8 @@
 			"Nemo bis",
 			"ZlyiLev",
 			"Дзяніс Тутэйшы",
-			"Чаховіч Уладзіслаў"
+			"Чаховіч Уладзіслаў",
+			"No Sleep till Krupki"
 		]
 	},
 	"translate": "Пераклад",
@@ -228,7 +229,7 @@
 	"translate-smg-rename-no-msg": "Не ўдалося знайсці паведамленняў.",
 	"translate-smg-rename-new": "Дадаць як новае...",
 	"translate-smg-rename-rename": "Дадаць як перайменаванне...",
-	"translate-smg-rename-dialog-title": "Выбрать прыдатнае перайменаванне для $1",
+	"translate-smg-rename-dialog-title": "Выбраць прыдатнае перайменаванне для $1",
 	"translate-smg-changeset-modified": "Набор зменаў быў зменены іншым удзельнікам або працэсам. Вашы змены нельга апублікаваць, бо гэта можа перазапісаць іх змены. Калі ласка, перазагрузіце старонку, каб убачыць апошнія змены.",
 	"translate-smg-no-groups-in-sync": "Цяпер няма групаў у сінхранізацыі",
 	"translate-smg-strong-sync-help": "Даведка",
@@ -282,7 +283,7 @@
 	"translate-import-err-invalid-title": "Пададзеная назва файла <nowiki>$1</nowiki> — няслушная.",
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не існуе альбо не загружаны лакальна.",
 	"translate-import-err-stale-group": "Група паведамленняў, да якой належыць гэты файл, не існуе.",
-	"translate-import-err-no-headers": "Файл не з'яўляецца слушным файлам Gettext у фармаце пашырэння Translate:\nнемагчыма вызначыць групу паведамленняў і мову з загалоўку файла.",
+	"translate-import-err-no-headers": "Файл не з’яўляецца слушным файлам Gettext у фармаце пашырэння Translate:\nнемагчыма вызначыць групу паведамленняў і мову з загалоўку файла.",
 	"translate-js-support-unsaved-warning": "Вы маеце неапублікаваныя пераклады.",
 	"translate-gs-pos": "Пазіцыя",
 	"translate-gs-code": "Код",
@@ -422,7 +423,7 @@
 	"specialpages-group-translation": "Пераклад",
 	"content-model-translate-messagebundle": "Перакладны пакет паведамленняў",
 	"translate-messagebundle-validation-error": "Няслушны набор паведамленняў: $1",
-	"translate-messagebundle-error-invalid-array": "Набор паведамленняў павінен быць аб'ектам JSON. Атрыманы тып $1",
+	"translate-messagebundle-error-invalid-array": "Набор паведамленняў павінен быць аб’ектам JSON. Атрыманы тып $1",
 	"translate-messagebundle-error-key-empty": "Набор паведамленняў не можа змяшчаць пусты ключ",
 	"translate-messagebundle-error-key-too-long": "Ключ «$1» занадта доўгі",
 	"translate-messagebundle-error-key-invalid-characters": "Ключ «$1» змяшчае забароненыя сімвалы",
