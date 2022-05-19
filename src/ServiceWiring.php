@@ -118,7 +118,7 @@ return [
 	{
 		return new TranslatableBundleFactory(
 			$services->get( 'Translate:TranslatablePageStore' ),
-			new MessageBundleStore( new RevTagStore() )
+			new MessageBundleStore( new RevTagStore(), $services->get( 'Translate:MessageIndex' ) )
 		);
 	},
 

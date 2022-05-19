@@ -8,6 +8,8 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore;
 use MediaWiki\Revision\RevisionRecord;
+use MessageGroups;
+use MessageIndex;
 use Title;
 
 /**
@@ -19,13 +21,22 @@ use Title;
 class MessageBundleStore implements TranslatableBundleStore {
 	/** @var RevTagStore */
 	private $revTagStore;
+	/** @var MessageIndex */
+	private $messageIndex;
 
-	public function __construct( RevTagStore $revTagStore ) {
+	public function __construct( RevTagStore $revTagStore, MessageIndex $messageIndex ) {
 		$this->revTagStore = $revTagStore;
+		$this->messageIndex = $messageIndex;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
-		// No specific actions needed post move for MessageBundle
+		MessageBundle::clearSourcePageCache();
+
+		// Re-render the bundles to get everything in sync
+		MessageGroups::singleton()->recache();
+		// Update message index now so that, when after this job the MoveTranslationUnits hook
+		// runs in deferred updates, it will not run MessageIndexRebuildJob (T175834).
+		$this->messageIndex->rebuild();
 	}
 
 	public function handleNullRevisionInsert( TranslatableBundle $bundle, RevisionRecord $revision ): void {
