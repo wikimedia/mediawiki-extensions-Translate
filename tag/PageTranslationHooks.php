@@ -1135,7 +1135,7 @@ class PageTranslationHooks {
 				$pageTranslation = SpecialPage::getTitleFor( 'PageTranslation' );
 				$params = [ 'target' => $title->getPrefixedText(), 'do' => 'mark' ];
 
-				if ( $marked === false ) {
+				if ( $marked === null ) {
 					// This page has never been marked
 					$linkDesc = $context->msg( 'translate-tag-markthis' )->text();
 					$actions[] = $linker->makeKnownLink( $pageTranslation, $linkDesc, [], $params );
