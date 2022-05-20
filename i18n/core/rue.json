@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Gazeb",
+			"Gramo6",
 			"Tkalyn"
 		]
 	},
@@ -166,5 +167,6 @@
 	"translate-gs-count": "Рахунок",
 	"translate-gs-total": "Цілком",
 	"translate-gs-avgscore": "Сер. оцінка",
+	"translate-documentation-language": "Документація уповісток",
 	"translate-searchprofile": "Переклады"
 }
