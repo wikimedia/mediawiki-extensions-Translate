@@ -12,7 +12,8 @@
 			"Tauhid16",
 			"Zaheen",
 			"আজিজ",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"মোঃ মারুফ হাসান24"
 		]
 	},
 	"translate": "অনুবাদ",
@@ -245,7 +246,7 @@
 	"tux-save-unknown-error": "অজানা ত্রুটি দেখা দিয়েছে।",
 	"tux-editor-placeholder-documentation": "বার্তার নথি যোগ করুন",
 	"tux-editor-placeholder-language": "$1 ভাষায় আপনার অনুবাদ",
-	"tux-editor-editsummary-placeholder": "আপনার পরিবর্তনের ব্যাখ্যা দিন (ঐচ্ছিক)",
+	"tux-editor-editsummary-placeholder": "আপনার পরিবর্তনসমূহের ব্যাখ্যা দিন (ঐচ্ছিক)",
 	"tux-editor-paste-original-button-label": "মূল লেখা যোগ করো",
 	"tux-editor-discard-changes-button-label": "পরিবর্তন বাতিল",
 	"tux-editor-save-button-label": "অনুবাদ প্রকাশ করুন",
