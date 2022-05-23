@@ -9,7 +9,8 @@
 			"Дзяніс Тутэйшы",
 			"Чаховіч Уладзіслаў",
 			"ZlyiLev",
-			"Chadyka"
+			"Chadyka",
+			"No Sleep till Krupki"
 		]
 	},
 	"translate": "Пераклад",
@@ -220,7 +221,7 @@
 	"translate-smg-rename-no-msg": "Не ўдалося знайсці паведамленняў.",
 	"translate-smg-rename-new": "Дадаць як новае...",
 	"translate-smg-rename-rename": "Дадаць як перайменаванне...",
-	"translate-smg-rename-dialog-title": "Выбрать прыдатнае перайменаванне для $1",
+	"translate-smg-rename-dialog-title": "Выбраць прыдатнае перайменаванне для $1",
 	"translate-smg-changeset-modified": "Набор зменаў быў зменены іншым удзельнікам або працэсам. Вашы змены нельга апублікаваць, бо гэта можа перазапісаць іх змены. Калі ласка, перазагрузіце старонку, каб убачыць апошнія змены.",
 	"translate-manage-import-diff": "Паведамленне $1 | Дзеянні: $2",
 	"translate-manage-import-new": "Новае паведамленне $1",
