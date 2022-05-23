@@ -1,21 +1,28 @@
 <?php
-/**
- * @file
- * @author Siebrand Mazeland
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2013 Siebrand Mazeland, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types=1 );
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use Html;
+use HtmlArmor;
+use Language;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Linker\LinkRenderer;
+use Message;
+use MessageGroup;
+use MessageGroups;
+use MessageGroupStats;
+use MessageLocalizer;
+use SpecialPage;
+use TitleValue;
+use TranslateMetadata;
+use Xml;
 
 /**
  * Implements generation of HTML stats table.
- *
- * Loosely based on the statistics code in phase3/maintenance/language
- *
- * @ingroup Stats
+ * @author Siebrand Mazeland
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class StatsTable {
 	/** @var TitleValue */
@@ -48,13 +55,12 @@ class StatsTable {
 
 	/**
 	 * Statistics table element (heading or regular cell)
-	 *
 	 * @param string $in Element contents.
 	 * @param string $bgcolor Backround color in ABABAB format.
 	 * @param string $sort Value used for sorting.
 	 * @return string Html td element.
 	 */
-	public function element( $in, $bgcolor = '', $sort = '' ) {
+	public function element( string $in, string $bgcolor = '', string $sort = '' ): string {
 		$attributes = [];
 
 		if ( $sort ) {
@@ -70,7 +76,7 @@ class StatsTable {
 		return $element;
 	}
 
-	public function getBackgroundColor( $percentage, $fuzzy = false ) {
+	public function getBackgroundColor( float $percentage, bool $fuzzy = false ): string {
 		if ( $fuzzy ) {
 			// Steeper scale for fuzzy
 			// (0), [0-2), [2-4), ... [12-100)
@@ -94,30 +100,25 @@ class StatsTable {
 		return $colors[ $index ];
 	}
 
-	/** @return string */
-	public function getMainColumnHeader() {
+	private function getMainColumnHeader(): string {
 		return $this->mainColumnHeader;
 	}
 
-	/** @param Message $msg */
-	public function setMainColumnHeader( Message $msg ) {
+	public function setMainColumnHeader( Message $msg ): void {
 		$this->mainColumnHeader = $this->createColumnHeader( $msg );
 	}
 
-	/**
-	 * @param Message $msg
-	 * @return string HTML
-	 */
-	public function createColumnHeader( Message $msg ) {
+	/** @return string HTML */
+	private function createColumnHeader( Message $msg ): string {
 		return Html::element( 'th', [], $msg->text() );
 	}
 
-	public function addExtraColumn( Message $column ) {
+	public function addExtraColumn( Message $column ): void {
 		$this->extraColumns[] = $column;
 	}
 
 	/** @return Message[] */
-	public function getOtherColumnHeaders() {
+	private function getOtherColumnHeaders(): array {
 		return array_merge( [
 			$this->messageLocalizer->msg( 'translate-total' ),
 			$this->messageLocalizer->msg( 'translate-untranslated' ),
@@ -128,7 +129,7 @@ class StatsTable {
 	}
 
 	/** @return string HTML */
-	public function createHeader() {
+	public function createHeader(): string {
 		// Create table header
 		$out = Html::openElement(
 			'table',
@@ -153,9 +154,9 @@ class StatsTable {
 	 * Makes a row with aggregate numbers.
 	 * @param Message $message
 	 * @param array $stats ( total, translate, fuzzy )
-	 * @return string Html
+	 * @return string HTML
 	 */
-	public function makeTotalRow( Message $message, $stats ) {
+	public function makeTotalRow( Message $message, array $stats ): string {
 		$out = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', [], $message->text() );
 		$out .= $this->makeNumberColumns( $stats );
@@ -166,10 +167,9 @@ class StatsTable {
 
 	/**
 	 * Makes partial row from completion numbers
-	 * @param array $stats
-	 * @return string Html
+	 * @return string HTML
 	 */
-	public function makeNumberColumns( $stats ) {
+	public function makeNumberColumns( array $stats ): string {
 		$total = $stats[MessageGroupStats::TOTAL];
 		$translated = $stats[MessageGroupStats::TRANSLATED];
 		$fuzzy = $stats[MessageGroupStats::FUZZY];
@@ -177,7 +177,7 @@ class StatsTable {
 
 		if ( $total === null ) {
 			$na = "\n\t\t" . Html::element( 'td', [ 'data-sort-value' => -1 ], '...' );
-			$nap = "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
+			$nap = "\n\t\t" . $this->element( '...', 'AFAFAF', '-1' );
 			$out = $na . $na . $nap . $nap;
 
 			return $out;
@@ -218,15 +218,15 @@ class StatsTable {
 
 	public function makeWorkflowStateCell( ?string $state, MessageGroup $group, string $language ): string {
 		if ( $state === null ) {
-			return "\n\t\t" . $this->element( '', '', -1 );
+			return "\n\t\t" . $this->element( '', '', '-1' );
 		}
 
 		if ( $group->getSourceLanguage() === $language ) {
-			return "\n\t\t" . $this->element( '', '', -1 );
+			return "\n\t\t" . $this->element( '', '', '-1' );
 		}
 
 		$stateConfig = $group->getMessageGroupStates()->getStates();
-		$sortValue = -1;
+		$sortValue = '-1';
 		$stateColor = '';
 		if ( isset( $stateConfig[$state] ) ) {
 			$sortIndex = array_flip( array_keys( $stateConfig ) );
@@ -244,10 +244,10 @@ class StatsTable {
 		$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
 
 		return "\n\t\t" . $this->element(
-				$stateText,
-				$stateColor,
-				$sortValue
-			);
+			$stateText,
+			$stateColor,
+			(string)$sortValue
+		);
 	}
 
 	/**
@@ -256,7 +256,7 @@ class StatsTable {
 	 * @param string $to floor or ceil
 	 * @return string Plain text
 	 */
-	public function formatPercentage( $num, $to = 'floor' ) {
+	public function formatPercentage( $num, string $to = 'floor' ): string {
 		$num = $to === 'floor' ? floor( 100 * $num ) : ceil( 100 * $num );
 		$fmt = $this->language->formatNum( $num );
 
@@ -265,10 +265,9 @@ class StatsTable {
 
 	/**
 	 * Gets the name of group with some extra formatting.
-	 * @param MessageGroup $group
-	 * @return string Html
+	 * @return string HTML
 	 */
-	public function getGroupLabel( MessageGroup $group ) {
+	private function getGroupLabel( MessageGroup $group ): string {
 		$groupLabel = htmlspecialchars( $group->getLabel() );
 
 		// Bold for meta groups.
@@ -284,9 +283,9 @@ class StatsTable {
 	 * @param MessageGroup $group
 	 * @param string $code Language code
 	 * @param array $params Any extra query parameters.
-	 * @return string Html
+	 * @return string HTML
 	 */
-	public function makeGroupLink( MessageGroup $group, $code, $params ) {
+	public function makeGroupLink( MessageGroup $group, string $code, array $params ): string {
 		$queryParameters = $params + [
 			'group' => $group->getId(),
 			'language' => $code
@@ -305,9 +304,8 @@ class StatsTable {
 	 * has been disabled.
 	 * @param string $groupId Message group id
 	 * @param string $code Language code
-	 * @return bool
 	 */
-	public function isExcluded( $groupId, $code ): bool {
+	public function isExcluded( string $groupId, string $code ): bool {
 		$excluded = null;
 
 		$checks = [

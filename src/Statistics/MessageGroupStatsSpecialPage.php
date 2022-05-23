@@ -10,7 +10,6 @@ use MessageGroups;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use SpecialPage;
-use StatsTable;
 use TranslateMetadata;
 use TranslateUtils;
 

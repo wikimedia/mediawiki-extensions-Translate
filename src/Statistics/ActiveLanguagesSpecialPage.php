@@ -16,7 +16,6 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use ObjectCache;
 use SpecialPage;
-use StatsTable;
 use Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 

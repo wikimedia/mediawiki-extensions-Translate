@@ -17,7 +17,6 @@ use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use ObjectCache;
 use SpecialPage;
-use StatsTable;
 use TranslateUtils;
 use WikiPageMessageGroup;
 

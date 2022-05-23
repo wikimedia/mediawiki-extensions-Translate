@@ -148,7 +148,6 @@
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"StatsBar": "utils/StatsBar.php",
-		"StatsTable": "utils/StatsTable.php",
 		"ThinMessage": "Message.php",
 		"TMessage": "Message.php",
 		"TPException": "tag/TPException.php",
