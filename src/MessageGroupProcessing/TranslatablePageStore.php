@@ -72,7 +72,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 			);
 		}
 
-		$this->revTagStore->addTag( $bundle->getTitle(), 'tp:tag', $revision->getId() );
+		$this->revTagStore->replaceTag( $bundle->getTitle(), 'tp:tag', $revision->getId() );
 		TranslatablePage::clearSourcePageCache();
 	}
 

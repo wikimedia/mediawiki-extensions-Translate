@@ -76,7 +76,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 			);
 		}
 
-		$this->revTagStore->addTag( $bundle->getTitle(), 'mb:valid', $revision->getId() );
+		$this->revTagStore->replaceTag( $bundle->getTitle(), 'mb:valid', $revision->getId() );
 		MessageBundle::clearSourcePageCache();
 	}
 
@@ -146,7 +146,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 		if ( $content->isValid() ) {
 			// Bundle is valid and contains translatable messages
-			$this->revTagStore->addTag( $pageTitle, 'mb:valid', $revisionRecord->getId() );
+			$this->revTagStore->replaceTag( $pageTitle, 'mb:valid', $revisionRecord->getId() );
 			MessageBundle::clearSourcePageCache();
 
 			// Defer most of the heavy work to the job queue

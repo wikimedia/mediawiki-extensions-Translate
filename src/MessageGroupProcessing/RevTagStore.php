@@ -18,7 +18,13 @@ class RevTagStore {
 	/** @var array */
 	private static $tagCache = [];
 
-	public function addTag( PageIdentity $identity, string $tag, int $revisionId, ?array $value = null ): void {
+	/** Add tag for the given revisionId, while deleting it from others */
+	public function replaceTag(
+		PageIdentity $identity,
+		string $tag,
+		int $revisionId,
+		?array $value = null
+	): void {
 		if ( !$identity->exists() ) {
 			return;
 		}
@@ -28,8 +34,7 @@ class RevTagStore {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = [
 			'rt_page' => $articleId,
-			'rt_type' => $tag,
-			'rt_revision' => $revisionId
+			'rt_type' => $tag
 		];
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 
@@ -37,6 +42,7 @@ class RevTagStore {
 			$conds['rt_value'] = serialize( implode( '|', $value ) );
 		}
 
+		$conds['rt_revision'] = $revisionId;
 		$dbw->insert( 'revtag', $conds, __METHOD__ );
 
 		self::$tagCache[$articleId][$tag] = $revisionId;

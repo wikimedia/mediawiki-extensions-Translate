@@ -298,7 +298,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @param null|string $value
 	 */
 	public function addMarkedTag( int $revision, $value = null ) {
-		$this->revTagStore->addTag( $this->getTitle(), 'tp:mark', $revision, $value );
+		$this->revTagStore->replaceTag( $this->getTitle(), 'tp:mark', $revision, $value );
 		self::clearSourcePageCache();
 	}
 
@@ -308,7 +308,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @param int $revision
 	 */
 	public function addReadyTag( int $revision ): void {
-		$this->revTagStore->addTag( $this->getTitle(), 'tp:tag', $revision );
+		$this->revTagStore->replaceTag( $this->getTitle(), 'tp:tag', $revision );
 		if ( !self::isSourcePage( $this->getTitle() ) ) {
 			self::clearSourcePageCache();
 		}
