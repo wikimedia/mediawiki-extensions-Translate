@@ -377,36 +377,27 @@ class TranslatablePage extends TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTranslationPages(): array {
-		$dbr = TranslateUtils::getSafeReadDB();
+		$mwServices = MediaWikiServices::getInstance();
+		$knownLanguageCodes = $this->getMessageGroup()->getTranslatableLanguages()
+			?? TranslateUtils::getLanguageNames( null );
 
-		$prefix = $this->getTitle()->getDBkey() . '/';
-		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
-		$res = $dbr->select(
-			'page',
-			[ 'page_namespace', 'page_title' ],
-			[
-				'page_namespace' => $this->getTitle()->getNamespace(),
-				"page_title $likePattern"
-			],
-			__METHOD__
-		);
+		$prefixedDbTitleKey = $this->getTitle()->getDBkey() . '/';
+		$baseNamespace = $this->getTitle()->getNamespace();
 
-		$titles = TitleArray::newFromResult( $res );
-		$filtered = [];
-
-		// Make sure we only get translation subpages while ignoring others
-		$codes = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames();
-		$prefix = $this->getTitle()->getText();
-		/** @var Title $title */
-		foreach ( $titles as $title ) {
-			[ $name, $code ] = TranslateUtils::figureMessage( $title->getText() );
-			if ( !isset( $codes[$code] ) || $name !== $prefix ) {
-				continue;
-			}
-			$filtered[] = $title;
+		// Build a link batch query for all translation pages
+		$linkBatch = $mwServices->getLinkBatchFactory()->newLinkBatch();
+		foreach ( array_keys( $knownLanguageCodes ) as $code ) {
+			$linkBatch->add( $baseNamespace, $prefixedDbTitleKey . $code );
 		}
 
-		return $filtered;
+		$translationPages = [];
+		foreach ( $linkBatch->getPageIdentities() as $pageIdentity ) {
+			if ( $pageIdentity->exists() ) {
+				$translationPages[] = Title::castFromPageIdentity( $pageIdentity );
+			}
+		}
+
+		return $translationPages;
 	}
 
 	/** @inheritDoc */
