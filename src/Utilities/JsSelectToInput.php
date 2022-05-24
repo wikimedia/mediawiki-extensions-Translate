@@ -1,14 +1,17 @@
 <?php
-/**
- * Code for JavaScript enhanced \<option> selectors.
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2010 Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types=1 );
+
+namespace MediaWiki\Extension\Translate\Utilities;
+
+use MWException;
+use RequestContext;
+use Xml;
+use XmlSelect;
 
 /**
  * Code for JavaScript enhanced \<option> selectors.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class JsSelectToInput {
 	/// Id of the text field where stuff is appended
@@ -26,34 +29,25 @@ class JsSelectToInput {
 		$this->select = $select;
 	}
 
-	/** @return string */
-	public function getSourceId() {
+	public function getSourceId(): string {
 		return $this->sourceId;
 	}
 
-	/**
-	 * Set the id of the target text field
-	 * @param string $id
-	 */
-	public function setTargetId( $id ) {
+	public function setTargetId( string $id ) {
 		$this->targetId = $id;
 	}
 
-	/** @return string */
-	public function getTargetId() {
+	public function getTargetId(): string {
 		return $this->targetId;
 	}
 
-	/**
-	 * Set the message key.
-	 * @param string $message
-	 */
-	public function setMessage( $message ) {
+	/** Set the message key. */
+	public function setMessage( string $message ): void {
 		$this->msg = $message;
 	}
 
-	/** @return string Message key. */
-	public function getMessage() {
+	/** @return string a message key. */
+	public function getMessage(): string {
 		return $this->msg;
 	}
 
@@ -62,7 +56,7 @@ class JsSelectToInput {
 	 * @throws MWException
 	 * @return string Html code.
 	 */
-	public function getHtmlAndPrepareJS() {
+	public function getHtmlAndPrepareJS(): string {
 		$this->sourceId = $this->select->getAttribute( 'id' );
 
 		if ( !is_string( $this->sourceId ) ) {
@@ -83,7 +77,7 @@ class JsSelectToInput {
 	 * @param string $target Html id.
 	 * @return string
 	 */
-	protected function getButton( $msg, $source, $target ) {
+	protected function getButton( string $msg, string $source, string $target ): string {
 		$html = Xml::element( 'input', [
 			'type' => 'button',
 			'value' => wfMessage( $msg )->text(),
@@ -95,10 +89,8 @@ class JsSelectToInput {
 		return $html;
 	}
 
-	/**
-	 * Inject needed JavaScript in the page.
-	 */
-	public static function injectJs() {
+	/** Inject needed JavaScript in the page. */
+	public static function injectJs(): void {
 		static $done = false;
 		if ( $done ) {
 			return;

@@ -109,7 +109,6 @@
 		"JavaFFS": "ffs/JavaFFS.php",
 		"JavaScriptFFS": "ffs/JavaScriptFFS.php",
 		"JsonFFS": "ffs/JsonFFS.php",
-		"JsSelectToInput": "utils/JsSelectToInput.php",
 		"MediaWikiExtensionMessageGroup": "messagegroups/MediaWikiExtensionMessageGroup.php",
 		"MessageChangeStorage": "utils/MessageChangeStorage.php",
 		"MessageCollection": "MessageCollection.php",

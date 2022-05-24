@@ -9,6 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\MediaWikiServices;
 
 /**
