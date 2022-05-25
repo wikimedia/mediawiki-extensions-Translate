@@ -18,6 +18,10 @@ class EditSummariesAid extends TranslationAid {
 
 	public function getData(): array {
 		$pageTitle = $this->handle->getTitle();
+		if ( !$pageTitle->exists() ) {
+			return [];
+		}
+
 		$mwService = MediaWikiServices::getInstance();
 		$revisionFactory = $mwService->getRevisionFactory();
 
