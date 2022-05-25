@@ -19,13 +19,10 @@ use MediaWiki\User\UserIdentity;
  * @ingroup PageTranslation JobQueue
  */
 class TranslateRenderJob extends GenericTranslateJob {
+	public const ACTION_DELETE = 'delete';
 
-	/**
-	 * @param Title $target
-	 * @return self
-	 */
-	public static function newJob( Title $target ) {
-		$job = new self( $target );
+	public static function newJob( Title $target, ?string $triggerAction = null ): self {
+		$job = new self( $target, [ 'triggerAction' => $triggerAction ] );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setFlags( EDIT_FORCE_BOT );
 		$job->setSummary( wfMessage( 'tpt-render-summary' )->inContentLanguage()->text() );
@@ -65,6 +62,13 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$summary = $this->getSummary();
 		$flags = $this->getFlags();
 
+		// We should not re-create the translation page if a translation unit is being deleted
+		// because it is possible that the translation page may also be queued for deletion.
+		// Hence set the flag to EDIT_UPDATE and remove EDIT_NEW if its added
+		if ( $this->isDeleteTrigger() ) {
+			$flags = ( $flags | EDIT_UPDATE ) & ~EDIT_NEW;
+		}
+
 		$page = WikiPage::factory( $title );
 
 		// @todo FuzzyBot hack
@@ -77,13 +81,17 @@ class TranslateRenderJob extends GenericTranslateJob {
 			$flags
 		);
 		if ( !$editStatus->isOK() ) {
-			$this->logError(
-				'Error while editing content in page.',
-				[
-					'content' => $content->getTextForSummary(),
-					'errors' => $editStatus->getErrors()
-				]
-			);
+			if ( $this->isDeleteTrigger() && $editStatus->hasMessage( 'edit-gone-missing' ) ) {
+				$this->logInfo( 'Translation page missing with delete trigger' );
+			} else {
+				$this->logError(
+					'Error while editing content in page.',
+					[
+						'content' => $content->getTextForSummary(),
+						'errors' => $editStatus->getErrors()
+					]
+				);
+			}
 		}
 
 		$this->logInfo( 'Finished page edit operation' );
@@ -124,10 +132,14 @@ class TranslateRenderJob extends GenericTranslateJob {
 
 	/**
 	 * Get a user object for doing edits.
-	 *
 	 * @return Authority
 	 */
 	private function getUser() {
 		return User::newFromName( $this->params['user'], false );
+	}
+
+	private function isDeleteTrigger(): bool {
+		$triggerAction = $this->params['triggerAction'] ?? null;
+		return $triggerAction === self::ACTION_DELETE;
 	}
 }

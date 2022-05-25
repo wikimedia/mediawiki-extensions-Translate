@@ -379,9 +379,9 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	public static function updateTranslationPage(
-		TranslatablePage $page, $code, $user, $flags, $summary
-	) {
+	private static function updateTranslationPage(
+		TranslatablePage $page, $code, $user, $flags, $summary, ?string $triggerAction = null
+	): void {
 		$source = $page->getTitle();
 		$target = $source->getSubpage( $code );
 
@@ -389,7 +389,7 @@ class PageTranslationHooks {
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
 
 		// Update the target page
-		$job = TranslateRenderJob::newJob( $target );
+		$job = TranslateRenderJob::newJob( $target, $triggerAction );
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
@@ -1487,14 +1487,32 @@ class PageTranslationHooks {
 	 * @param Content $content
 	 * @param ManualLogEntry $logEntry
 	 */
-	public static function onDeleteTranslationUnit( WikiPage $unit, User $user, $reason,
-		$id, $content, $logEntry
+	public static function onDeleteTranslationUnit(
+		WikiPage $unit,
+		User $user,
+		$reason,
+		$id,
+		$content,
+		$logEntry
 	) {
 		// Do the update. In case job queue is doing the work, the update is not done here
 		if ( self::$jobQueueRunning ) {
 			return;
 		}
+
 		$title = $unit->getTitle();
+
+		static $dependentPagesQueued = [];
+		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
+		if ( $bundleFactory->getBundle( $title ) ) {
+			$dependentPagesQueued[ $title->getPrefixedText() ] = true;
+			return;
+		}
+
+		if ( TranslatablePage::isTranslationPage( $title ) ) {
+			$dependentPagesQueued[ $title->getPrefixedText() ] = true;
+			return;
+		}
 
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
@@ -1516,19 +1534,43 @@ class PageTranslationHooks {
 		static $queuedPages = [];
 		$target = $group->getTitle();
 		$langCode = $handle->getCode();
-		$targetPage = $target->getSubpage( $langCode )->getPrefixedText();
+		$targetTranslationPage = $target->getSubpage( $langCode )->getPrefixedText();
 
-		if ( isset( $queuedPages[ $targetPage ] ) ) {
+		// An update for this translation page is already queued
+		if ( isset( $queuedPages[ $targetTranslationPage ] ) ) {
 			return;
 		}
 
-		$queuedPages[ $targetPage ] = true;
+		$queuedPages[ $targetTranslationPage ] = true;
 		$fname = __METHOD__;
 
 		$dbw = wfGetDB( DB_PRIMARY );
 		$callback = function () use (
-			$dbw, $queuedPages, $targetPage, $target, $handle, $langCode, $user, $reason, $fname
+			$dbw,
+			$queuedPages,
+			$targetTranslationPage,
+			$target,
+			$handle,
+			$langCode,
+			$user,
+			$reason,
+			$fname,
+			$dependentPagesQueued
 		) {
+			// If the translation page or the translatable page that the translation unit belongs to has been
+			// deleted in this transaction, there is no need to update the translation pages. See: T291724
+			$translatableBundleDeleted = $dependentPagesQueued[ $target->getPrefixedText() ] ?? false;
+			$translationPageDeleted = $dependentPagesQueued[ $targetTranslationPage ] ?? false;
+			if ( $translatableBundleDeleted || $translationPageDeleted ) {
+				return;
+			}
+
+			// Do a more thorough check for the translation page in case the translation page is deleted in a
+			// different transaction.
+			if ( $target->getSubpage( $langCode )->exists() ) {
+				return;
+			}
+
 			$dbw->startAtomic( $fname );
 
 			$page = TranslatablePage::newFromTitle( $target );
@@ -1541,13 +1583,15 @@ class PageTranslationHooks {
 
 			if ( !$handle->isDoc() ) {
 				// Assume that $user and $reason for the first deletion is the same for all
-				self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
+				self::updateTranslationPage(
+					$page, $langCode, $user, 0, $reason, TranslateRenderJob::ACTION_DELETE
+				);
 			}
 
 			// If a unit was deleted after the edit here is done, this allows us
 			// to add the page back to the queue again and so we can make another
 			// edit here with the latest changes.
-			unset( $queuedPages[ $targetPage ] );
+			unset( $queuedPages[ $targetTranslationPage ] );
 
 			$dbw->endAtomic( $fname );
 		};
