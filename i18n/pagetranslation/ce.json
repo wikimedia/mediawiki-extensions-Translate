@@ -23,6 +23,8 @@
 	"tpt-aggregategroup-update-cancel": "Цаоьшу",
 	"tpt-invalid-group": "ТӀекхачарехь йоцу тоба",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|цӀе хийцина}} гочйан луш йолу агӀонан «$3» → «$4»",
+	"log-action-filter-pagetranslation": "Дечунна тайпа:",
+	"log-action-filter-pagetranslation-delete": "АгӀо дӀайаккхар",
 	"pt-movepage-current": "Карара цӀе:",
 	"pt-movepage-new": "Керла цӀе:",
 	"pt-movepage-reason": "Бахьана:",
