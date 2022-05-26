@@ -12,7 +12,8 @@
 			"Tauhid16",
 			"Zaheen",
 			"আজিজ",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"মোঃ মারুফ হাসান24"
 		]
 	},
 	"translate": "অনুবাদ",
@@ -173,6 +174,7 @@
 	"translate-smg-rename-select": "নির্বাচন করুন",
 	"translate-smg-rename-cancel": "বাতিল",
 	"translate-smg-rename-no-msg": "কোন বার্তা পাওয়া যায়নি।",
+	"translate-smg-rename-new": "নতুন হিসেবে যোগ করুন...",
 	"translate-smg-strong-sync-help": "সাহায্য",
 	"translate-smg-group-message-action-history": "ইতিহাস",
 	"translate-smg-group-message-tag-outdated": "পুরাতন",
