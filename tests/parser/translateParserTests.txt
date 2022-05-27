@@ -1,4 +1,8 @@
-!! Version 2
+!! options
+version=2
+parsoid-compatible
+!! end
+
 # Force the test runner to ensure the extension is loaded
 !! functionhooks
 translation
@@ -10,9 +14,11 @@ translation
 title=[[Test/mr]]
 !! wikitext
 {{#translation:}}
-!! html
+!! html/php
 <p>/mr
 </p>
+!! html/parsoid
+<p><span about="#mwt1" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":"#translation:","function":"translation"},"params":{},"i":0}}]}'>/mr</span></p>
 !! end
 
 !! test
@@ -21,8 +27,10 @@ title=[[Test/mr]]
 title=[[Test]]
 !! wikitext
 {{#translation:}}
-!! html
+!! html/php
 
+!! html/parsoid
+<span about="#mwt1" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":"#translation:","function":"translation"},"params":{},"i":0}}]}'></span>
 !! end
 
 !! test
@@ -33,6 +41,8 @@ title=[[Test/ugaaa]]
 {{#translation:}}
 !! html
 
+!! html/parsoid
+<span about="#mwt1" typeof="mw:Transclusion" data-parsoid='{"pi":[[]]}' data-mw='{"parts":[{"template":{"target":{"wt":"#translation:","function":"translation"},"params":{},"i":0}}]}'></span>
 !! end
 
 !! test
