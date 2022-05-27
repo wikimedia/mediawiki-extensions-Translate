@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\PageTranslation\MoveTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
@@ -126,6 +127,7 @@ class PageTranslationHooks {
 	 */
 	public static function preprocessTagPage( $wikitextParser, &$text, $state ): void {
 		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
+
 		if ( $translatablePageParser->containsMarkup( $text ) ) {
 			try {
 				$parserOutput = $translatablePageParser->parse( $text );
@@ -139,6 +141,11 @@ class PageTranslationHooks {
 			} catch ( ParsingFailure $e ) {
 				wfDebug( 'ParsingFailure caught; expected' );
 			}
+		} else {
+			// If the text doesn't contain <translate> markup, it can still contain <tvar> in the
+			// context of a Parsoid template expansion sub-pipeline. We strip these as well.
+			$unit = new TranslationUnit( $text );
+			$text = $unit->getTextForTrans();
 		}
 	}
 

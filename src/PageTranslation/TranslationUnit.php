@@ -18,6 +18,17 @@ use const PREG_SET_ORDER;
 class TranslationUnit {
 	public const UNIT_MARKER_INVALID_CHARS = "_/\n<>";
 	public const NEW_UNIT_ID = '-1';
+	// Deprecated syntax. Example: <tvar|1>...</>
+	public const TVAR_OLD_SYNTAX_REGEX = '~<tvar\|([^>]+)>(.*?)</>~us';
+	// Current syntax. Example: <tvar name=1>...</tvar>
+	public const TVAR_NEW_SYNTAX_REGEX = <<<'REGEXP'
+~
+<tvar \s+ name \s* = \s*
+( ( ' (?<key1> [^']* ) ' ) | ( " (?<key2> [^"]* ) " ) | (?<key3> [^"'\s>]* ) )
+\s* > (?<value>.*?) </tvar \s* >
+~xusi
+REGEXP;
+
 	/** @var string Unit name */
 	public $id;
 	/** @var string Unit text. */
@@ -121,24 +132,14 @@ class TranslationUnit {
 	public function getVariables(): array {
 		$vars = [];
 
-		// Deprecated syntax. Example: <tvar|1>...</>
-		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 		$matches = [];
-		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
+		preg_match_all( self::TVAR_OLD_SYNTAX_REGEX, $this->text, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $m ) {
 			$vars[] = new TranslationVariable( $m[0], '$' . $m[1], $m[2] );
 		}
 
-		// Current syntax. Example: <tvar name=1>...</tvar>
-		$re = <<<'REGEXP'
-~
-<tvar \s+ name \s* = \s*
-( ( ' (?<key1> [^']* ) ' ) | ( " (?<key2> [^"]* ) " ) | (?<key3> [^"'\s>]* ) )
-\s* > (?<value>.*?) </tvar \s* >
-~xusi
-REGEXP;
 		$matches = [];
-		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
+		preg_match_all( self::TVAR_NEW_SYNTAX_REGEX, $this->text, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $m ) {
 			$vars[] = new TranslationVariable(
 				$m[0],
