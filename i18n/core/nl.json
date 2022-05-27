@@ -317,7 +317,7 @@
 	"tux-status-saving": "Bezig met publiceren...",
 	"tux-status-unsaved": "Niet-gepubliceerd",
 	"tux-save-unknown-error": "Er is een onbekende fout opgetreden.",
-	"tux-editor-editsummary-placeholder": "Optionele bewerkingssamenvatting",
+	"tux-editor-editsummary-placeholder": "Leg uw wijzigingen uit (optioneel)",
 	"tux-editor-paste-original-button-label": "Brontekst invoegen",
 	"tux-editor-discard-changes-button-label": "Wijzigingen negeren",
 	"tux-editor-save-button-label": "Vertaling publiceren",
