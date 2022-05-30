@@ -1,5 +1,18 @@
 <?php
 
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use HashBagOStuff;
+use HashMessageIndex;
+use MediaWikiIntegrationTestCase;
+use MessageGroups;
+use MessageIndex;
+use MockWikiMessageGroup;
+use RequestContext;
+use Title;
+use WANObjectCache;
+use WikiPage;
+
 /** @group Database */
 class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 	private const PAGE = 'MediaWiki:' . __METHOD__ . '_translated';
@@ -25,7 +38,7 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	/** @covers MessageWebImporter::doFuzzy */
+	/** @covers \MediaWiki\Extension\Translate\Synchronization\MessageWebImporter::doFuzzy */
 	public function testDoFuzzy() {
 		$this->assertTrue(
 			$this->editPage( self::PAGE . '/en', 'English Original' )->isGood(),

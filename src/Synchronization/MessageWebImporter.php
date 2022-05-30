@@ -1,22 +1,36 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use ContentHandler;
+use DifferenceEngine;
+use Html;
+use Language;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+use MessageGroup;
+use MessageGroups;
+use MessageHandle;
+use MWException;
+use OutputPage;
+use RequestContext;
+use Sanitizer;
+use Title;
+use TranslateUtils;
+use User;
+use WikiPage;
+use Xml;
+
 /**
  * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
  * displays them in pretty way with diffs and finally executes the actions the user choices.
  *
- * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
- */
-
-use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
-use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\SlotRecord;
-
-/**
- * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
- * displays them in pretty way with diffs and finally executes the actions the user choices.
  */
 class MessageWebImporter {
 	/** @var Title */
@@ -45,40 +59,29 @@ class MessageWebImporter {
 		$this->setCode( $code );
 	}
 
-	/**
-	 * Wrapper for consistency with SpecialPage
-	 *
-	 * @return Title
-	 */
-	public function getTitle() {
+	/** Wrapper for consistency with SpecialPage */
+	public function getTitle(): Title {
 		return $this->title;
 	}
 
-	/** @param Title $title */
-	public function setTitle( Title $title ) {
+	public function setTitle( Title $title ): void {
 		$this->title = $title;
 	}
 
-	/** @return User */
-	public function getUser() {
+	public function getUser(): User {
 		return $this->user ?: RequestContext::getMain()->getUser();
 	}
 
-	/** @param User $user */
-	public function setUser( User $user ) {
+	public function setUser( User $user ): void {
 		$this->user = $user;
 	}
 
-	/** @return MessageGroup */
-	public function getGroup() {
+	public function getGroup(): MessageGroup {
 		return $this->group;
 	}
 
-	/**
-	 * Group is either MessageGroup object or group id.
-	 * @param MessageGroup|string $group
-	 */
-	public function setGroup( $group ) {
+	/** @param MessageGroup|string $group MessageGroup object or group ID */
+	public function setGroup( $group ): void {
 		if ( $group instanceof MessageGroup ) {
 			$this->group = $group;
 		} else {
@@ -86,13 +89,11 @@ class MessageWebImporter {
 		}
 	}
 
-	/** @return string */
-	public function getCode() {
+	public function getCode(): string {
 		return $this->code;
 	}
 
-	/** @param string $code */
-	public function setCode( $code = 'en' ) {
+	public function setCode( string $code = 'en' ): void {
 		$this->code = $code;
 	}
 
@@ -100,8 +101,7 @@ class MessageWebImporter {
 		return $this->getTitle()->getLocalURL();
 	}
 
-	/** @return string */
-	protected function doHeader() {
+	protected function doHeader(): string {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getAction(),
@@ -114,13 +114,11 @@ class MessageWebImporter {
 			Html::hidden( 'process', 1 );
 	}
 
-	/** @return string */
-	protected function doFooter() {
+	protected function doFooter(): string {
 		return '</form>';
 	}
 
-	/** @return bool */
-	protected function allowProcess() {
+	protected function allowProcess(): bool {
 		$request = RequestContext::getMain()->getRequest();
 
 		return $request->wasPosted()
@@ -128,8 +126,7 @@ class MessageWebImporter {
 			&& $this->getUser()->matchEditToken( $request->getVal( 'token' ) );
 	}
 
-	/** @return array */
-	protected function getActions() {
+	protected function getActions(): array {
 		if ( $this->code === 'en' ) {
 			return [ 'import', 'fuzzy', 'ignore' ];
 		}
@@ -137,12 +134,7 @@ class MessageWebImporter {
 		return [ 'import', 'conflict', 'ignore' ];
 	}
 
-	/**
-	 * @param bool $fuzzy
-	 * @param string $action
-	 * @return string
-	 */
-	protected function getDefaultAction( $fuzzy, $action ) {
+	protected function getDefaultAction( bool $fuzzy, ?string $action ): string {
 		if ( $action ) {
 			return $action;
 		}
@@ -150,12 +142,12 @@ class MessageWebImporter {
 		return $fuzzy ? 'conflict' : 'import';
 	}
 
-	public function execute( $messages ) {
+	public function execute( array $messages ): bool {
 		$context = RequestContext::getMain();
 		$this->out = $context->getOutput();
 
 		// Set up diff engine
-		$diff = new DifferenceEngine;
+		$diff = new DifferenceEngine();
 		$diff->showDiffStyle();
 		$diff->setReducedLineNumbers();
 
@@ -178,7 +170,8 @@ class MessageWebImporter {
 		$changed = [];
 
 		foreach ( $messages as $key => $value ) {
-			$fuzzy = $old = null;
+			$fuzzy = false;
+			$old = null;
 
 			if ( isset( $collection[$key] ) ) {
 				// This returns null if no existing translation is found
@@ -374,9 +367,16 @@ class MessageWebImporter {
 	 * @throws MWException
 	 * @return array Action result
 	 */
-	public static function doAction( $action, $group, $key, $code, $message, $comment = '',
-		$user = null, $editFlags = 0
-	) {
+	public static function doAction(
+		string $action,
+		MessageGroup $group,
+		string $key,
+		string $code,
+		string $message,
+		string $comment = '',
+		User $user = null,
+		int $editFlags = 0
+	): array {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$title = self::makeTranslationTitle( $group, $key, $code );
@@ -411,14 +411,15 @@ class MessageWebImporter {
 
 	/**
 	 * @throws MWException
-	 * @param Title $title
-	 * @param string $message
-	 * @param string $summary
-	 * @param User|null $user
-	 * @param int $editFlags
-	 * @return array
+	 * @return string[]
 	 */
-	public static function doImport( $title, $message, $summary, $user = null, $editFlags = 0 ) {
+	public static function doImport(
+		Title $title,
+		string $message,
+		string $summary,
+		?User $user,
+		int $editFlags = 0
+	): array {
 		$wikiPage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( $message, $title );
 		$status = $wikiPage->doUserEditContent(
@@ -440,15 +441,14 @@ class MessageWebImporter {
 		throw new MWException( $text );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param string $message
-	 * @param string $comment
-	 * @param User $user
-	 * @param int $editFlags
-	 * @return array
-	 */
-	public static function doFuzzy( $title, $message, $comment, $user, $editFlags = 0 ) {
+	/** @return string[] */
+	public static function doFuzzy(
+		Title $title,
+		string $message,
+		string $comment,
+		?User $user,
+		int $editFlags = 0
+	): array {
 		$context = RequestContext::getMain();
 		$services = MediaWikiServices::getInstance();
 
@@ -535,7 +535,7 @@ class MessageWebImporter {
 	 * @param string $code Language code
 	 * @return Title
 	 */
-	public static function makeTranslationTitle( $group, $key, $code ) {
+	public static function makeTranslationTitle( MessageGroup $group, string $key, string $code ): Title {
 		$ns = $group->getNamespace();
 
 		return Title::makeTitleSafe( $ns, "$key/$code" );
@@ -550,7 +550,12 @@ class MessageWebImporter {
 	 * @param Language|null $lang The language in which the text is written.
 	 * @return string Section element as html.
 	 */
-	public static function makeSectionElement( $legend, $type, $content, $lang = null ) {
+	public static function makeSectionElement(
+		string $legend,
+		string $type,
+		string $content,
+		Language $lang = null
+	): string {
 		$containerParams = [ 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" ];
 		$legendParams = [ 'class' => 'mw-tpt-sp-legend' ];
 		$contentParams = [ 'class' => 'mw-tpt-sp-content' ];
@@ -573,7 +578,7 @@ class MessageWebImporter {
 	 * @param string $message Message content
 	 * @return string Message prefixed with TRANSLATE_FUZZY tag
 	 */
-	public static function makeTextFuzzy( $message ) {
+	public static function makeTextFuzzy( string $message ): string {
 		$message = str_replace( TRANSLATE_FUZZY, '', $message );
 
 		return TRANSLATE_FUZZY . $message;
@@ -583,10 +588,8 @@ class MessageWebImporter {
 	 * Escape name such that it validates as name and id parameter in html, and
 	 * so that we can get it back with WebRequest::getVal(). Especially dot and
 	 * spaces are difficult for the latter.
-	 * @param string $name
-	 * @return string
 	 */
-	public static function escapeNameForPHP( $name ) {
+	public static function escapeNameForPHP( string $name ): string {
 		$replacements = [
 			'(' => '(OP)',
 			' ' => '(SP)',

@@ -11,7 +11,6 @@ use Html;
 use MediaWiki\MediaWikiServices;
 use MessageGroupBase;
 use MessageGroups;
-use MessageWebImporter;
 use SpecialPage;
 use Xml;
 
