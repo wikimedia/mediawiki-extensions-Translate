@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Avilena",
 			"Byrial",
 			"Danmichaelo",
 			"Harald Khan",
@@ -337,7 +338,7 @@
 	"tux-status-unsaved": "Upublisert",
 	"tux-save-unknown-error": "Ukjent feil oppsto.",
 	"tux-editor-placeholder-language": "Din oversettelse til $1",
-	"tux-editor-editsummary-placeholder": "Valgfri forklaring",
+	"tux-editor-editsummary-placeholder": "Forklar dine endringer (valgfritt)",
 	"tux-editor-paste-original-button-label": "Lim inn kildetekst",
 	"tux-editor-discard-changes-button-label": "Se bort i fra endringer",
 	"tux-editor-save-button-label": "Publiser oversettelse",

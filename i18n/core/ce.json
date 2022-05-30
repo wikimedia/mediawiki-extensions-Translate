@@ -215,6 +215,7 @@
 	"tux-status-translated": "Гочйина",
 	"tux-status-saving": "Публикаци…",
 	"tux-status-unsaved": "Ӏалашцайина",
+	"tux-editor-placeholder-language": "Хьан гочдар $1 маттахь",
 	"tux-editor-editsummary-placeholder": "ТӀехьйоцу коммент",
 	"tux-editor-paste-original-button-label": "Дилла дӀадолалун йоза",
 	"tux-editor-discard-changes-button-label": "Цаоьшу хийцамаш",
