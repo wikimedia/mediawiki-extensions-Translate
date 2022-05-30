@@ -147,7 +147,6 @@
 		"SearchableTTMServer": "ttmserver/Interfaces.php",
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
-		"StatsBar": "utils/StatsBar.php",
 		"ThinMessage": "Message.php",
 		"TMessage": "Message.php",
 		"TPException": "tag/TPException.php",
