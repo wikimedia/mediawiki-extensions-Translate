@@ -78,7 +78,7 @@
 	"tpt-discouraged-language-force-header": "Dizze side kin net yn it $1 oerset wurde.",
 	"tpt-discouraged-language-force-content": "In oersettingsbehearder hat besletten dat dizze side inkeld yn it $1 oerset wurde kin.",
 	"tpt-discouraged-language-header": "Oersetten yn it $1 hat gjin prioriteit foar dizze side.",
-	"tpt-discouraged-language-content": "In oersettingsbehearder hat besletten om 'e oersetynspanning te rjochtsjen op $1.",
+	"tpt-discouraged-language-content": "In oersettingsbehearder hat besletten en rjochtsje de oersetynspanning op $1.",
 	"tpt-discouraged-language-force": "<strong>Dizze side kin net yn it $2 oerset wurde.</strong>\n\nIn oersettingsbehearder hat besletten dat dizze side inkeld yn it $3 oerset wurde kin.",
 	"tpt-discouraged-language-reason": "Reden: $1",
 	"tpt-priority-languages": "In oersettingsbehearder hat de talen mei prioriteit foar dizze groep ynsteld op $1.",

@@ -226,7 +226,7 @@
 	"translate-manage-action-rename": "Omneame",
 	"translate-manage-action-ignore-change": "Oersettingswiziging negearje",
 	"translate-manage-nochanges": "Der binne gjin feroarings yn 'e grûnteksten foar dizze groep.",
-	"translate-manage-nochanges-other": "Der binne gjin feroarings foar dizze taal.\nBrûk de ferwizing hjirûnder en gean werom nei de werjefte fan groepsgegevens.",
+	"translate-manage-nochanges-other": "Der binne gjin feroarings foar dizze taal.\nBrûk de ferwizing hjirûnder om werom te gean nei de werjefte fan groepsgegevens.",
 	"translate-manage-inconsistent": "Ynkonsistinsje yn 'e oanfraach ûntdutsen.\nGraach neisjen ta ferbettering en nochris besykje.\nBysûnderheden: $1.",
 	"translate-manage-toolong": "Oer de maksimumferwurkingstiid fan $1 {{PLURAL:$1|sekonde|sekonden}} hinne.\nGraach it formulier op 'e nij yntsjinje om fierder te ferwurkjen.",
 	"translate-manage-import-summary": "Nije ferzje ymportearre fan boarne om utens",

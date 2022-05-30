@@ -5,5 +5,10 @@
 		]
 	},
 	"translate-sidebar-alltrans": "Na otus língua",
-	"translate-documentation-language": "Ajuda pa traduson"
+	"translate-documentation-language": "Ajuda pa traduson",
+	"translate-msggroupselector-search-all": "Tudu",
+	"tux-message-filter-result": "$1 rezultadu inkontradu pa \"$2\"",
+	"tux-message-filter-advanced-button": "Piskiza avansadu",
+	"tux-empty-list-other-link": "Mostra tudu mensajen",
+	"tux-editor-message-tools-translations": "Tudo tradusons"
 }

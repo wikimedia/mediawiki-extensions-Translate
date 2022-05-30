@@ -228,7 +228,7 @@
 	"supportedlanguages": "Langues prises en charge",
 	"supportedlanguages-summary": "Cette page affiche une liste de toutes les langues prises en charge par {{SITENAME}}, avec les noms des traducteurs qui travaillent dans cette langue.\nLe nom d’un traducteur apparaît en plus gros en fonction du nombre de modifications auxquelles il a contribué.\nLa couleur du soulignement indique si le traducteur a été actif ici récemment.",
 	"supportedlanguages-colorlegend": "Légende pour la couleur : dernière traduction il y a $1 jours.",
-	"supportedlanguages-portallink": "[$1] $2 – $3",
+	"supportedlanguages-portallink": "[$1] $2 – $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLite n’est pas pris en charge",
 	"supportedlanguages-translators": "Traduct{{PLURAL:$2|{{GENDER:$3|eur|rice}}|eurs}} : $1",
