@@ -172,7 +172,6 @@
 		"TTMServer": "ttmserver/TTMServer.php",
 		"TTMServerException": "ttmserver/Exceptions.php",
 		"TTMServerMessageUpdateJob": "ttmserver/TTMServerMessageUpdateJob.php",
-		"TuxMessageTable": "utils/TuxMessageTable.php",
 		"WikiMessageGroup": "messagegroups/WikiMessageGroup.php",
 		"WikiPageMessageGroup": "messagegroups/WikiPageMessageGroup.php",
 		"WorkflowStatesMessageGroup": "messagegroups/WorkflowStatesMessageGroup.php",

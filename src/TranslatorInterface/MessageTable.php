@@ -1,10 +1,25 @@
 <?php
+declare( strict_types = 1 );
 
-class TuxMessageTable extends ContextSource {
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use ContextSource;
+use Hooks;
+use Html;
+use IContextSource;
+use Language;
+use MessageGroup;
+
+/**
+ * Display messages for translation & review
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ */
+class MessageTable extends ContextSource {
 	protected $group;
 	protected $language;
 
-	public function __construct( IContextSource $context, MessageGroup $group, $language ) {
+	public function __construct( IContextSource $context, MessageGroup $group, string $language ) {
 		$this->setContext( $context );
 		$this->group = $group;
 		if ( Language::isKnownLanguageTag( $language ) ) {
@@ -14,7 +29,7 @@ class TuxMessageTable extends ContextSource {
 		}
 	}
 
-	public function fullTable() {
+	public function fullTable(): string {
 		$modules = [];
 		Hooks::run( 'TranslateBeforeAddModules', [ &$modules ] );
 		$this->getOutput()->addModules( $modules );

@@ -17,7 +17,6 @@ use MWException;
 use Skin;
 use SpecialPage;
 use TranslateUtils;
-use TuxMessageTable;
 use Xml;
 
 /**
@@ -95,7 +94,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addHTML( $this->tuxSettingsForm() );
 		$out->addHTML( $this->messageSelector() );
 
-		$table = new TuxMessageTable( $this->getContext(), $this->group, $this->options['language'] );
+		$table = new MessageTable( $this->getContext(), $this->group, $this->options['language'] );
 		$output = $table->fullTable();
 
 		$out->addHTML( $output );
