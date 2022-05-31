@@ -54,6 +54,7 @@
 	"right-translate-import": "Importacar tradukuri facita ''offline''.",
 	"translate-rcfilters-translations": "Tradukuri",
 	"translate-rcfilters-translations-only-label": "Tradukuri",
+	"translate-rcfilters-translations-only-desc": "Chanji en tradukita pagini.",
 	"translate-rc-translation-filter-only": "Montrez nur tradukuri",
 	"translate-stats-edits": "Redakturi",
 	"translate-stats-users": "Tradukeri",
@@ -189,6 +190,7 @@
 	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo",
 	"tux-editor-loading": "Karganta...",
 	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita",
+	"translate-statsbar-tooltip-with-fuzzy": "$1% tradukita, $2% revizita, $3% desaktualigita",
 	"tux-session-expired": "Vu ne pluse esas enrejistrita. Voluntez rienirar, per altra pagino. Alternative, facez kopiuro di tradukuri ne enrejistrita, facez itere ''log in'', retrovenez a ca pagino, ed informez itere vua tradukuri.",
 	"tux-nojs": "Ca utensilo ne funcionas sen JavaScript. Sive JavaScript esas nekapabligata, sive ne funcionis, sive vua interreto-navigilo ('browser') ne suportas ol."
 }
