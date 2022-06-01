@@ -22,7 +22,7 @@
 	"tpt-badtitle": "Pealkiri ($1) ei sobi.",
 	"tpt-nosuchpage": "Lehekülge $1 pole",
 	"tpt-oldrevision": "$2 pole lehekülje [[:$1]] uusim versioon.\nAinult uusimaid versioone saab märkida tõlkimiseks.",
-	"tpt-notsuitable": "Lehekülg $1 ei sobi tõlkimiseks.\nVeendu, et see sisaldab <nowiki><translate></nowiki>-silte ja selle süntaks on õige.",
+	"tpt-notsuitable": "Lehekülg $1 ei sobi tõlkimiseks.\nVeendu, et see sisaldab silti $2 ja selle süntaks on õige.",
 	"tpt-saveok": "{{PLURAL:$2|Ühe|$2}} tõlkeüksusega lehekülg [[:$1]] on märgitud tõlkimiseks.\nLehekülge saab nüüd <span class=\"plainlinks\">[$3 tõlkida]</span>.",
 	"tpt-showpage-intro": "Allpool on loetletud uued, olemasolevad ja kustutatud tõlkeüksused.\nEnne selle versiooni märkimist tõlkimiseks, veendu palun, et tõlkeüksustes tehtud muudatused on võimalikult väikesed, et tõlkijad ei peaks tegema tarbetut tööd.",
 	"tpt-mark-summary": "See versioon on märgitud tõlkimiseks",
@@ -129,9 +129,9 @@
 	"pt-movepage-action-check": "Kontrolli, kas teisaldamine on võimalik",
 	"pt-movepage-action-perform": "Teisalda",
 	"pt-movepage-action-other": "Muuda sihtkohta",
-	"pt-movepage-intro": "See erilehekülg võimaldab teisaldada lehekülgi, mis on märgitud tõlkimiseks.\nToiming pole kohene, sest teisaldada tuleb palju lehekülgi.\nTeisaldamise ajal pole võimalik kõnealustel lehekülgedel midagi teha.\nNurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.",
+	"pt-movepage-intro": "See erilehekülg võimaldab teisaldada lehekülgi, mis on märgitud tõlkimiseks.\nToiming pole kohene, sest teisaldada tuleb palju lehekülgi.\nTeisaldamise ajal pole võimalik kõnealustel lehekülgedel midagi teha.\nNurjumised logitakse [[$1|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.",
 	"pt-movepage-logreason": "Osa tõlgitavast leheküljest \"$1\"",
-	"pt-movepage-started": "Palun kontrolli natukese aja pärast, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on tõrkeid ja teade lõpulejõudmise kohta.",
+	"pt-movepage-started": "Palun kontrolli natukese aja pärast, kas [[$1|lehekülgede tõlkelogis]] on tõrkeid ja teade lõpulejõudmise kohta.",
 	"pt-locked-page": "See lehekülg on lukus, sest tõlgitavat lehekülge teisaldatakse parasjagu.",
 	"pt-deletepage-lang-title": "Tõlkelehekülje \"$1\" kustutamine",
 	"pt-deletepage-full-title": "Tõlgitava lehekülje \"$1\" kustutamine",
@@ -158,5 +158,5 @@
 	"pm-import-button-label": "Impordi",
 	"pm-savepages-button-label": "Salvesta",
 	"pm-cancel-button-label": "Loobu",
-	"pm-pagetitle-invalid": "Palun sisesta korrektne lehekülje pealkiri. See peaks olema kujul <lehekülje-pealkiri>/<keelekood>."
+	"pm-pagetitle-invalid": "Lehekülje siire toimib ainult tõlkelehekülgedel nagu \"Lehekülg/de\". Ette antud pealkiri pole korrektne."
 }
