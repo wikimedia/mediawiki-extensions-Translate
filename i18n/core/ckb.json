@@ -11,7 +11,8 @@
 			"Épine",
 			"ئارام بکر",
 			"رزگار",
-			"Roj im"
+			"Roj im",
+			"Aram"
 		]
 	},
 	"translate": "وەرگێڕان",
@@ -78,7 +79,7 @@
 	"translate-statsf-count-reviews": "پیاچوونەوەکانی وەرگێڕان",
 	"translate-statsf-count-reviewers": "پیاچوونەوەکارەکان",
 	"translate-statsf-submit": "پێشبینین",
-	"translate-sidebar-alltrans": "لە زمانەکانی دیکەدا",
+	"translate-sidebar-alltrans": "لە زمانەکانی تردا",
 	"translations": "هەموو وەرگێرانەکان",
 	"translate-translations-fieldset-title": "پەیام",
 	"translate-translations-messagename": "ناو:",
@@ -128,7 +129,7 @@
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|تاگ}}:",
 	"translate-smg-group-message-message-content": "ناوەڕۆک:",
 	"translate-smg-group-message-message-target": "مەبەست:",
-	"translate-smg-group-message-message-other-langs": "زمانەکانی دیکە:",
+	"translate-smg-group-message-message-other-langs": "زمانەکانی تر:",
 	"translate-smg-loading": "بارکردن...",
 	"translate-manage-import-diff": "پەیام $1 | کردارەکان: $2",
 	"translate-manage-import-new": "پەیامی نوێ $1",
@@ -194,7 +195,7 @@
 	"tux-editor-edit-desc": "بەڵگەنامە دەستکاری بکە",
 	"tux-editor-add-desc": "بەڵگەنامە زیاد بکە",
 	"tux-editor-suggestions-title": "پێشنیارەکان",
-	"tux-editor-in-other-languages": "بە زمانەکانی دیکە",
+	"tux-editor-in-other-languages": "بە زمانەکانی تر",
 	"tux-editor-need-more-help": "یارمەتیی زیاترت پێویستە؟",
 	"tux-editor-ask-help": "داوای زنیاریی زیاتر بکە",
 	"tux-editor-tm-match": "$1٪ دەگونجێ",
