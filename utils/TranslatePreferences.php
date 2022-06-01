@@ -52,15 +52,8 @@ class TranslatePreferences {
 	 * @return JsSelectToInput
 	 */
 	protected static function languageSelector() {
-		if ( is_callable( [ LanguageNames::class, 'getNames' ] ) ) {
-			$lang = RequestContext::getMain()->getLanguage();
-			$languages = LanguageNames::getNames( $lang->getCode(),
-				LanguageNames::FALLBACK_NORMAL
-			);
-		} else {
-			$languages = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames();
-		}
-
+		$lang = RequestContext::getMain()->getLanguage();
+		$languages = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames( $lang->getCode() );
 		ksort( $languages );
 
 		$selector = new XmlSelect( false, 'mw-language-selector' );
