@@ -309,6 +309,9 @@ class TranslatablePage extends TranslatableBundle {
 	 */
 	public function addReadyTag( int $revision ): void {
 		$this->revTagStore->addTag( $this->getTitle(), 'tp:tag', $revision );
+		if ( !self::isSourcePage( $this->getTitle() ) ) {
+			self::clearSourcePageCache();
+		}
 	}
 
 	/**
