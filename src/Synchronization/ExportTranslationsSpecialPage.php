@@ -8,6 +8,7 @@ use GettextFFS;
 use Html;
 use HTMLForm;
 use LogicException;
+use MediaWiki\MediaWikiServices;
 use Message;
 use MessageCollection;
 use MessageGroup;
@@ -36,7 +37,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	/** @var string */
 	protected $groupId;
 	/** @var string[] */
-	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file' ];
+	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
 
 	public function __construct() {
 		parent::__construct( 'ExportTranslations' );
@@ -239,6 +240,13 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				echo $group->getFFS()->writeIntoVariable( $collection );
 				break;
 
+			case 'export-as-csv':
+				$out->disable();
+				$filename = "{$group->getId()}_{$this->language}.csv";
+				$this->sendExportHeaders( $filename );
+				$this->exportCSV( $collection, $group->getSourceLanguage() );
+				break;
+
 			default:
 				// @todo Add web viewing for groups other than WikiPageMessageGroup
 				if ( !$group instanceof WikiPageMessageGroup ) {
@@ -288,6 +296,38 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		$response = $this->getRequest()->response();
 		$response->header( 'Content-Type: text/plain; charset=UTF-8' );
 		$response->header( "Content-Disposition: attachment; filename=\"$fileName\"" );
+	}
+
+	private function exportCSV( MessageCollection $collection, string $sourceLanguageCode ): void {
+		$fp = fopen( 'php://output', 'w' );
+		$exportingSourceLanguage = $sourceLanguageCode === $this->language;
+
+		$header = [
+			$this->msg( 'translate-export-csv-unit-title' )->text(),
+			$this->msg( 'translate-export-csv-definition' )->text()
+		];
+
+		if ( !$exportingSourceLanguage ) {
+			$header[] = $this->language;
+		}
+
+		fputcsv( $fp, $header );
+
+		$titleFormatter = MediaWikiServices::getInstance()->getTitleFormatter();
+
+		foreach ( $collection->keys() as $messageKey => $titleValue ) {
+			$message = $collection[ $messageKey ];
+			$prefixedTitleText = $titleFormatter->getPrefixedText( $titleValue );
+
+			$row = [ $prefixedTitleText, $message->definition() ];
+			if ( !$exportingSourceLanguage ) {
+				$row[] = $message->translation();
+			}
+
+			fputcsv( $fp, $row );
+		}
+
+		fclose( $fp );
 	}
 
 	protected function getGroupName() {
