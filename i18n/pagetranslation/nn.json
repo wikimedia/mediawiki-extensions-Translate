@@ -88,7 +88,7 @@
 	"pt-deletepage-action-perform": "Utfør slettinga",
 	"pt-deletepage-action-other": "Endra mål",
 	"pt-deletepage-lang-legend": "Sletta omsetbar side",
-	"pt-deletepage-full-legend": "Slett omsetjingsmerkt side",
+	"pt-deletepage-tp-legend": "Slett omsetjingsmerkt side",
 	"pt-deletepage-current": "Sidenamn:",
 	"pt-deletepage-reason": "Årsak:",
 	"pt-deletepage-subpages": "Sletta alle undersider",

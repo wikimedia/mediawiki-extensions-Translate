@@ -16,7 +16,7 @@
 	"pt-movepage-subpages": "Siirä kaikki alasivut",
 	"pt-movepage-intro": "Tällä spesiaalisivula voit siirtää käänettäväksi merkittyjä sivuja.\nSiirto ei tapahdu heti, koska useita sivuja häätyy siirthää.\nSivut ovat lukittuna siirron ajan.\nEpäonnistuneet siirrot säästetään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne häätyy korjata käsin.",
 	"pt-deletepage-lang-legend": "Ota poies käänössivu",
-	"pt-deletepage-full-legend": "Ota poies käännettävissä oleva sivu",
+	"pt-deletepage-tp-legend": "Ota poies käännettävissä oleva sivu",
 	"pt-deletepage-any-legend": "Ota poies käännettävissä oleva sivu tai sellaisen käänös",
 	"pt-deletepage-subpages": "Ota poies kaikki alasivut",
 	"pm-import-button-label": "Importeeraa",

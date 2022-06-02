@@ -114,7 +114,7 @@
 	"pt-deletepage-action-perform": "Izvrši brisanje",
 	"pt-deletepage-action-other": "Promeni cilj",
 	"pt-deletepage-lang-legend": "Izbriši stranicu prevoda",
-	"pt-deletepage-full-legend": "Izbriši prevodivu stranicu",
+	"pt-deletepage-tp-legend": "Izbriši prevodivu stranicu",
 	"pt-deletepage-any-legend": "Izbrišite prevodivu stranicu ili stranicu prevoda",
 	"pt-deletepage-current": "Ime stranice:",
 	"pt-deletepage-reason": "Razlog:",

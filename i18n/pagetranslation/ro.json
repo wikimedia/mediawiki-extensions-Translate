@@ -82,7 +82,7 @@
 	"pt-deletepage-action-perform": "Efectuați ștergerea",
 	"pt-deletepage-action-other": "Schimbați ținta",
 	"pt-deletepage-lang-legend": "Șterge pagina traducerii",
-	"pt-deletepage-full-legend": "Șterge pagina traductibilă",
+	"pt-deletepage-tp-legend": "Șterge pagina traductibilă",
 	"pt-deletepage-any-legend": "Șterge pagina traductibilă sau pagina de traducere",
 	"pt-deletepage-current": "Numele paginii:",
 	"pt-deletepage-reason": "Motiv:",

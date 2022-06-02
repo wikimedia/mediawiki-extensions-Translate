@@ -101,7 +101,7 @@
 	"pt-deletepage-action-perform": "Padaryti trynimą",
 	"pt-deletepage-action-other": "Pakeisti taikinį",
 	"pt-deletepage-lang-legend": "Ištrinti vertimo puslapį",
-	"pt-deletepage-full-legend": "Ištrinti išverčiama puslapį",
+	"pt-deletepage-tp-legend": "Ištrinti išverčiama puslapį",
 	"pt-deletepage-any-legend": "Ištrinti puslapį, kurį galima išversti, ar vertimų puslapį",
 	"pt-deletepage-current": "Puslapio pavadinimas:",
 	"pt-deletepage-reason": "Priežastis:",
