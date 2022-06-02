@@ -203,7 +203,7 @@
 	"translate-mgs-invalid-group": "El grupo especificado $1 no existe.",
 	"translate-mgs-nothing": "No hay nada que mostrar de las estadísticas solicitadas.",
 	"translate-tes-type-to-search": "Escribe para empezar a buscar",
-	"supportedlanguages": "Idiomas admitidos",
+	"supportedlanguages": "Idiomas activos",
 	"supportedlanguages-summary": "Esta página muestra una lista de todos los idiomas admitidos por {{SITENAME}},\njunto con los nombres de los traductores que trabajan en ese idioma.\nCuanto más haya traducido un traductor, más grande aparecerá su nombre.\nEl color del subrayado indica cuán activo es un traductor aquí.",
 	"supportedlanguages-colorlegend": "Leyenda del color: Última traducción hecha hace $1 días.",
 	"supportedlanguages-sqlite-error": "No se admite SQLite",
