@@ -11,6 +11,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -37,6 +38,10 @@ use MediaWiki\MediaWikiServices;
 return [
 	'Translate:ConfigHelper' => static function (): ConfigHelper {
 		return new ConfigHelper();
+	},
+
+	'Translate:CsvTranslationImporter' => static function ( MediaWikiServices $services ): CsvTranslationImporter {
+		return new CsvTranslationImporter( $services->getWikiPageFactory() );
 	},
 
 	'Translate:EntitySearch' => static function ( MediaWikiServices $services ): EntitySearch {

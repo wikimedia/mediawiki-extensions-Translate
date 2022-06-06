@@ -303,7 +303,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		$exportingSourceLanguage = $sourceLanguageCode === $this->language;
 
 		$header = [
-			$this->msg( 'translate-export-csv-unit-title' )->text(),
+			$this->msg( 'translate-export-csv-message-title' )->text(),
 			$this->msg( 'translate-export-csv-definition' )->text()
 		];
 

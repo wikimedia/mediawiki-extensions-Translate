@@ -15,7 +15,7 @@
 	"translate-taskui-export-to-file": "Export in native format",
 	"translate-taskui-export-as-po": "Export for off-line translation",
 	"translate-taskui-export-as-csv": "Export in CSV format",
-	"translate-export-csv-unit-title": "Translation unit title",
+	"translate-export-csv-message-title": "Translation message title",
 	"translate-export-csv-definition": "Message definition",
 	"translate-taction-translate": "Translate",
 	"translate-taction-proofread": "Review",

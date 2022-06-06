@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -57,6 +58,11 @@ class Services implements ContainerInterface {
 
 	public function getConfigHelper(): ConfigHelper {
 		return $this->get( 'Translate:ConfigHelper' );
+	}
+
+	/** @since 2022.06 */
+	public function getCsvTranslationImporter(): CsvTranslationImporter {
+		return $this->get( 'Translate:CsvTranslationImporter' );
 	}
 
 	/** @since 2021.10 */
