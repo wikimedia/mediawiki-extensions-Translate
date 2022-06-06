@@ -104,7 +104,6 @@
 		"GettextParseException": "ffs/GettextParseException.php",
 		"GettextPluralException": "ffs/GettextPluralException.php",
 		"HashMessageIndex": "utils/MessageIndex.php",
-		"HTMLJsSelectToInputField": "utils/HTMLJsSelectToInputField.php",
 		"IniFFS": "ffs/IniFFS.php",
 		"JavaFFS": "ffs/JavaFFS.php",
 		"JavaScriptFFS": "ffs/JavaScriptFFS.php",

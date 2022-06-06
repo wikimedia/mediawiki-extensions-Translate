@@ -1,21 +1,19 @@
 <?php
+declare( strict_types=1 );
+
+namespace MediaWiki\Extension\Translate\Utilities;
+
+use HTMLTextField;
+
 /**
- * Implementation of JsSelectToInput class which is compatible with MediaWiki's preferences system.
- * @file
+ * Implementation of JsSelectToInput class which is compatible with MediaWiki's preferences system
  * @author Niklas Laxström
  * @copyright Copyright © 2010 Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-/**
- * Implementation of JsSelectToInput class which is extends HTMLTextField.
- */
 class HTMLJsSelectToInputField extends HTMLTextField {
-	/**
-	 * @param string $value
-	 * @return string
-	 */
-	public function getInputHTML( $value ) {
+	/** @inheritDoc */
+	public function getInputHTML( $value ): string {
 		$input = parent::getInputHTML( $value );
 
 		if ( isset( $this->mParams['select'] ) ) {
@@ -27,22 +25,15 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 		return $input;
 	}
 
-	/**
-	 * @param string $value
-	 * @return array
-	 */
-	protected function tidy( $value ) {
+	/** @return string[] */
+	protected function tidy( string $value ): array {
 		$value = array_map( 'trim', explode( ',', $value ) );
 		$value = array_unique( array_filter( $value ) );
 
 		return $value;
 	}
 
-	/**
-	 * @param string $value
-	 * @param array $alldata
-	 * @return bool|string
-	 */
+	/** @inheritDoc */
 	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 
@@ -70,11 +61,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 		return true;
 	}
 
-	/**
-	 * @param string $value
-	 * @param array $alldata
-	 * @return string
-	 */
+	/** @inheritDoc */
 	public function filter( $value, $alldata ) {
 		$value = parent::filter( $value, $alldata );
 
