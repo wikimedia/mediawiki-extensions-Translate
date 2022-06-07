@@ -243,6 +243,16 @@ class TranslateSandbox {
 			'emailType' => $type,
 		];
 
+		$services = MediaWikiServices::getInstance();
+		$userOptionsManager = $services->getUserOptionsManager();
+
+		$reminders = $userOptionsManager->getOption( $target, 'translate-sandbox-reminders' );
+		$reminders = $reminders ? explode( '|', $reminders ) : [];
+		$reminders[] = wfTimestamp();
+
+		$userOptionsManager->setOption( $target, 'translate-sandbox-reminders', implode( '|', $reminders ) );
+		$userOptionsManager->saveOptions( $target );
+
 		TranslateUtils::getJobQueueGroup()->push( TranslateSandboxEmailJob::newJob( $params ) );
 	}
 

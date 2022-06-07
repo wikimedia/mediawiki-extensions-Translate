@@ -68,12 +68,12 @@
 	function displayRequestDetails( request ) {
 		var $reminderStatus = $( '<span>' ).addClass( 'reminder-status' ),
 			$detailsPane = $( '.details.pane' );
-
 		if ( request.reminderscount ) {
+			var agoText = moment.isMoment( request.lastreminder ) ? moment( request.lastreminder ).fromNow() : request.lastreminder;
 			$reminderStatus.text( mw.msg(
 				'tsb-reminder-sent',
 				request.reminderscount,
-				request.lastreminder
+				agoText
 			) );
 		}
 
@@ -101,6 +101,8 @@
 								do: 'remind',
 								userid: request.userid
 							} ).done( function () {
+								request.lastreminder = moment();
+								request.remindercount++;
 								$reminderStatus.text( mw.msg( 'tsb-reminder-sent-new' ) );
 							} ).fail( function () {
 								$reminderStatus.text( mw.msg( 'tsb-reminder-failed' ) );
