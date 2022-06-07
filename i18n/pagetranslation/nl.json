@@ -16,7 +16,8 @@
 			"Servien",
 			"Siebrand",
 			"Sjoerddebruin",
-			"Southparkfan"
+			"Southparkfan",
+			"Vistaus"
 		]
 	},
 	"pagetranslation": "Paginavertaling",
@@ -175,6 +176,7 @@
 	"pt-deletepage-action-other": "Doel wijzigen",
 	"pt-deletepage-lang-legend": "Vertaalde pagina verwijderen",
 	"pt-deletepage-tp-legend": "Vertaalbare pagina verwijderen",
+	"pt-deletepage-mb-legend": "Berichtenbundel verwijderen",
 	"pt-deletepage-any-legend": "De vertaalbare pagina, berichtenbundel of vertaalde pagina verwijderen",
 	"pt-deletepage-current": "Paginanaam:",
 	"pt-deletepage-reason": "Reden:",
