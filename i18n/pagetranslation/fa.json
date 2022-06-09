@@ -190,7 +190,7 @@
 	"pt-movepage-started": "لطفاً گاهی [[Special:Log/pagetranslation|سیاههٔ ترجمهٔ صفحه]] را برای خطاها و تکمیل پیام بررسی کنید.",
 	"pt-locked-page": "این صفحه قفل شده‌است زیرا هم‌اکنون صفحهٔ قابل‌ترجمه دارد منتقل می‌شود",
 	"pt-deletepage-lang-title": "درحال حذف صفحهٔ ترجمهٔ «$1»",
-	"pt-deletepage-tp-title": "درحال حذف صفحهٔ قابل‌ترجمهٔ «$1»",
+	"pt-deletepage-tp-title": "درحال حذف صفحهٔ قابل‌ترجمهٔ \"$1\"",
 	"pt-deletepage-invalid-title": "صفحهٔ مشخص‌شده معتبر نیست.",
 	"pt-deletepage-invalid-text": "صفحهٔ مشخص‌شده نه یک صفحهٔ قابل‌ترجمه است و نه یک صفحهٔ ترجمه.",
 	"pt-deletepage-action-check": "فهرست‌کردن صفحه‌هایی که باید حذف شوند",

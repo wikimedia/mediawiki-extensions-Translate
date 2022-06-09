@@ -2,12 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Aliyu shaba",
+			"Amire80",
 			"Ammarpad",
 			"BaRaN6161 TURK",
 			"Gwanki"
 		]
 	},
+	"translate": "Fassara",
 	"translate-taction-translate": "Fassara",
+	"translate-taction-proofread": "Dubawa",
+	"translate-page-language": "Yare",
+	"translate-page-limit": "Iyaka",
+	"translate-next": "Shafi na gaba",
+	"translate-prev": "Shafin baya",
+	"translate-page-description-legend": "Bayani game da Ƙungiya",
 	"supportedlanguages-summary": "Wannan shafin ya nuna harsunan da ke akwai a {{SITENAME}}, tare da sunayen masu fassara masu aiki a wannan harshen.\nSunan mai fassara zai fito babbakarin gyare-gyaren da mai fassara yayi. Kalar zanen ƙasa tana nuna iya lokacin da mai fassara ya kasance a nan.",
 	"translate-documentation-language": "Takardar saƙon"
 }
