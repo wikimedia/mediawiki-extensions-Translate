@@ -352,7 +352,7 @@
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|plia lingvo|pliaj lingvoj}}",
 	"translate-statsbar-tooltip": "$1% tradukitaj, $2% reviziitaj",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradukitaj, $2% reviziitaj, $3% malfreŝaj",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|plia grupo|pliaj grupoj}}",
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|plusa grupo|plusa grupi}}",
 	"translate-syntax-error": "Traduko enhavas sintaksajn erarojn",
 	"tux-session-expired": "Vi ne plu estas ensalutinta. Bonvolu reensaluti je alia langeton. Alternative, kopiu viajn nekonservitajn tradukojn, ensalutu, revenu ĉi tien, kaj reenigu viajn tradukojn.",
 	"tux-nojs": "Ĉi tiu ilo ne funkcias sen JavaScript. Aŭ JavaScript estas malŝaltita, aŭ Javascript misfunkciis, aŭ via TTT-legilo ne estas subtenata.",
