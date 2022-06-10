@@ -419,7 +419,7 @@
 	"tux-messagetable-more-messages": "Text showing number of messages to be loaded in translation message table\n* $1 - number of messages",
 	"tux-messagetable-loading-messages": "A progress text saying messages are being loaded\n* $1 - number of messages",
 	"tux-message-filter-placeholder": "Placeholder text for the message table filter search box. \"Filter\" is an imperative verb, so the message means \"Filter the list\", and not \"List of filters\".",
-	"tux-message-filter-result": "Search result for filtering the message table\n* $1 - number of results\n* $2 - query string",
+	"tux-message-filter-result": "Search result for filtering the message table\n* $1 - number of results\n* $2 - query string\n\n'''See also'''\n* [[Template:Identical/Result]]\n* {{msg-mw|Tux-sst-count}}",
 	"tux-message-filter-advanced-button": "Button label for searching the messages using [[Special:SearchTranslations]].\n{{Identical|Advanced search}}",
 	"tux-message-filter-optional-messages-label": "A label for a checkbox. Checking the box causes message editor to show optional messages.",
 	"tux-proofread-translated-by-self": "A small notification that appears in a review box, saying that the message was translated by the current user.\n\nSee also:\n* {{msg-mw|Translate-messagereview-reviewswithyou}}",
