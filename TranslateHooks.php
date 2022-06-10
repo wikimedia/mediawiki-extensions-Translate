@@ -431,27 +431,6 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'translate_sections',
 				"{$dir}/{$dbType}/translate_sections.sql"
 			);
-			$updater->addExtensionUpdate( [
-				'addField',
-				'translate_sections',
-				'trs_order',
-				"$dir/translate_sections-trs_order.patch.sql",
-				true
-			] );
-			$updater->addExtensionUpdate( [
-				'addIndex',
-				'translate_sections',
-				'trs_page_order',
-				"$dir/translate_sections-indexchange.sql",
-				true
-			] );
-			$updater->addExtensionUpdate( [
-				'dropIndex',
-				'translate_sections',
-				'trs_page',
-				"$dir/translate_sections-indexchange2.sql",
-				true
-			] );
 			$updater->addExtensionTable(
 				'revtag',
 				"{$dir}/{$dbType}/revtag.sql"
@@ -480,26 +459,12 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'translate_messageindex',
 				"{$dir}/{$dbType}/translate_messageindex.sql"
 			);
-			$updater->addExtensionUpdate( [
-				'addIndex',
-				'translate_groupstats',
-				'tgs_lang',
-				"$dir/translate_groupstats-indexchange.sql",
-				true
-			] );
-			$updater->addExtensionUpdate( [
-				'addField', 'translate_groupstats',
-				'tgs_proofread',
-				"$dir/translate_groupstats-proofread.sql",
-				true
-			] );
-
 			$updater->addExtensionTable(
 				'translate_stash',
 				"{$dir}/{$dbType}/translate_stash.sql"
 			);
 
-			// This also adds a PRIMARY KEY
+			// 1.32 - This also adds a PRIMARY KEY
 			$updater->addExtensionUpdate( [
 				'renameIndex',
 				'translate_reviews',
@@ -516,6 +481,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			);
 
 			if ( $dbType === 'mysql' ) {
+				// 1.38
 				$updater->modifyExtensionField(
 					'translate_cache',
 					'tc_key',
