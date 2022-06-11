@@ -31,7 +31,7 @@ class TranslateMetadata {
 		self::$cache += array_fill_keys( $missing, null ); // cache negatives
 
 		$dbr = TranslateUtils::getSafeReadDB();
-		$conds = count( $missing ) <= 500 ? [ 'tmd_group' => $missing ] : [];
+		$conds = count( $missing ) <= 500 ? [ 'tmd_group' => array_map( 'strval', $missing ) ] : [];
 		$res = $dbr->select(
 			'translate_metadata',
 			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
