@@ -13,5 +13,6 @@
 	"apihelp-query+messagecollection-param-language": "Taalkoade.",
 	"apihelp-translationstash-param-subaction": "Hanneling.",
 	"apierror-translate-language-disabled": "Oersetten yn it $1 is útskeakele.",
-	"apierror-translate-language-disabled-reason": "Oersetten yn it $1 is útskeakele: $2"
+	"apierror-translate-language-disabled-reason": "Oersetten yn it $1 is útskeakele: $2",
+	"apiwarn-translate-language-disabled-source": "De boarnetaal fan dizze groep is $1. Kies in oare taal om yn oer te setten."
 }

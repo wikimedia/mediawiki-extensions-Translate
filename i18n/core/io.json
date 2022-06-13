@@ -80,6 +80,7 @@
 	"translate-translations-count": "Trovita {{PLURAL:$1|1 tradukuro|$1 tradukuri}}.",
 	"translate-translations-fieldset-title": "Mesajo",
 	"translate-translations-messagename": "Nomo:",
+	"translate-translations-project": "Projeto:",
 	"languagestats": "Linguala statistiki",
 	"languagestats-summary": "Ica pagino montras statistiki pri tradukuri de omna mesajo-grupi por ula linguo specifika.",
 	"languagestats-stats-for": "Statistiki pri tradukuro $1 ($2).",

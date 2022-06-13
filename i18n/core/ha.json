@@ -4,10 +4,18 @@
 			"Ammarpad",
 			"Aliyu shaba",
 			"BaRaN6161 TURK",
-			"Gwanki"
+			"Gwanki",
+			"Amire80"
 		]
 	},
+	"translate": "Fassara",
 	"translate-taction-translate": "Fassara",
+	"translate-taction-proofread": "Dubawa",
+	"translate-page-language": "Yare",
+	"translate-page-limit": "Iyaka",
+	"translate-next": "Shafi na gaba",
+	"translate-prev": "Shafin baya",
+	"translate-page-description-legend": "Bayani game da Ƙungiya",
 	"supportedlanguages-summary": "Wannan shine jerin dukkan harsunan dake akwai a {{SITENAME}}, tare da wanda suke aikin fassara akan harshen.",
 	"translate-documentation-language": "Takardar saƙon"
 }

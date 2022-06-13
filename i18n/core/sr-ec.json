@@ -351,7 +351,7 @@
 	"tux-messagetable-more-messages": "још $1 {{PLURAL:$1|порука}}",
 	"tux-messagetable-loading-messages": "Учитавање {{PLURAL:$1|поруке|порука}}…",
 	"tux-message-filter-placeholder": "Филтрирајте списак",
-	"tux-message-filter-result": "{{PLURAL:$1|Пронађен је $1 резултат|Пронађена су $1 резултата|Пронађено је $1 резултата}} за ниску „$2”",
+	"tux-message-filter-result": "{{PLURAL:$1|Пронађен је $1 резултат|Пронађена су $1 резултата|Пронађено је $1 резултата}} за упит „$2”",
 	"tux-message-filter-advanced-button": "Напредна претрага",
 	"tux-message-filter-optional-messages-label": "Необавезне поруке",
 	"tux-proofread-translated-by-self": "Ваш превод",

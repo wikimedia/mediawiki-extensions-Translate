@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Waldyrious"
+		]
+	},
+	"tux-sst-count": "{{PLURAL:$1|$1 rezultadu inkontradu}}",
+	"tux-sst-error-offset": "Ka e pusivel mostra mas rezultadus. Bu ten ki limita bus termus di buska."
+}
