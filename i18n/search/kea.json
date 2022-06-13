@@ -4,6 +4,26 @@
 			"Waldyrious"
 		]
 	},
+	"searchtranslations": "Buska tradusons",
+	"tux-sst-edit": "Muda traduson",
+	"tux-sst-view-foreign": "Odja na $1",
+	"tux-sst-search": "Buska",
+	"tux-sst-search-ph": "Buska tradusons",
 	"tux-sst-count": "{{PLURAL:$1|$1 rezultadu inkontradu}}",
+	"tux-sst-facet-language": "Línguas",
+	"tux-sst-facet-group": "Grupus di mensajens",
+	"tux-sst-nosolr-title": "Buska indispunivel",
+	"tux-sst-nosolr-body": "Es wiki ka ten un sirvisu di buska di tradusons.",
+	"tux-sst-solr-offline-title": "Buska indispunivel",
+	"tux-sst-solr-offline-body": "Sirvisu di buska ka sta dispunível nes momentu.",
+	"tux-sst-next": "Pájina siginti →",
+	"tux-sst-prev": "← Pájina antirior",
+	"tux-sst-default": "Tradusons",
+	"tux-sst-translated": "Tradusons di $1",
+	"tux-sst-untranslated": "Ninhun traduson di $1",
+	"tux-sst-outdated": "Tradusons dizatualizadu di $1",
+	"tux-sst-ellipsis-untranslated": "Sen traduson",
+	"tux-sst-ellipsis-outdated": "Tradusons dizatualizadu",
+	"tux-sst-link-all-match": "Tradusons ku tudu palabras di buska.",
 	"tux-sst-error-offset": "Ka e pusivel mostra mas rezultadus. Bu ten ki limita bus termus di buska."
 }

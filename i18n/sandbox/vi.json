@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+			"NguoiDungKhongDinhDanh",
 			"Vinhtantran"
 		]
 	},
@@ -47,7 +48,7 @@
 	"tsb-create-user-page": "Đã tạo trang cá nhân cơ bản",
 	"log-name-translatorsandbox": "Nhật trình chỗ thử biên dịch",
 	"log-description-translatorsandbox": "Các tác vụ có liên quan đến người dùng chỗ thử biên dịch",
-	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2}}đã phong cấp $3 trở thành {{GENDER:$4}}biên dịch viên",
-	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2}}đã từ chối lời yêu cầu của “$3” để trở thành biên dịch viên",
+	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2}}đã cấp quyền {{GENDER:$4}}biên dịch viên cho $3",
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2}}đã từ chối yêu cầu cấp quyền biên dịch viên của “$3”",
 	"logentry-newusers-tsbpromoted": "Tài khoản người dùng $3 đã được {{GENDER:$2}}tạo ra cho người dùng chỗ thử biên dịch"
 }
