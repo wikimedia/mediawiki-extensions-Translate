@@ -423,7 +423,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	private function getValidBundleFromTitle(): TranslatableBundle {
 		$bundleTitle = $this->title;
 		if ( $this->isTranslation() ) {
-			[ $key, ] = TranslateUtils::figureMessage( $this->title->getText() );
+			[ $key, ] = TranslateUtils::figureMessage( $this->title->getPrefixedDBkey() );
 			$bundleTitle = Title::newFromText( $key );
 		}
 
