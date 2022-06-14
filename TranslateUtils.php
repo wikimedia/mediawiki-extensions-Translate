@@ -125,7 +125,7 @@ class TranslateUtils {
 	 * @param bool $addFuzzy Add the fuzzy tag if appropriate.
 	 * @return string|null
 	 */
-	public static function getContentForTitle( Title $title, $addFuzzy = false ) {
+	public static function getContentForTitle( Title $title, $addFuzzy = false ): ?string {
 		$store = MediaWikiServices::getInstance()->getRevisionStore();
 		$revision = $store->getRevisionByTitle( $title );
 
@@ -136,17 +136,16 @@ class TranslateUtils {
 		$content = $revision->getContent( SlotRecord::MAIN );
 		$wiki = ( $content instanceof TextContent ) ? $content->getText() : null;
 
-		if ( !$wiki ) {
+		// Either unexpected content type, or the revision content is hidden
+		if ( $wiki === null ) {
 			return null;
 		}
 
-		if ( !$addFuzzy ) {
-			return $wiki;
-		}
-
-		$handle = new MessageHandle( $title );
-		if ( $handle->isFuzzy() ) {
-			$wiki = TRANSLATE_FUZZY . str_replace( TRANSLATE_FUZZY, '', $wiki );
+		if ( $addFuzzy ) {
+			$handle = new MessageHandle( $title );
+			if ( $handle->isFuzzy() ) {
+				$wiki = TRANSLATE_FUZZY . str_replace( TRANSLATE_FUZZY, '', $wiki );
+			}
 		}
 
 		return $wiki;

@@ -330,7 +330,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				);
 			}
 
-			$oldContent = ContentHandler::makeContent( $wiki, $title );
+			$oldContent = ContentHandler::makeContent( (string)$wiki, $title );
 			$newContent = ContentHandler::makeContent( '', $title );
 			$this->diff->setContent( $oldContent, $newContent );
 			$text = $this->diff->getDiff( $titleLink, '', $noticeHtml );
@@ -370,7 +370,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			}
 
 			$oldContent = ContentHandler::makeContent( '', $title );
-			$newContent = ContentHandler::makeContent( $params['content'], $title );
+			$newContent = ContentHandler::makeContent( (string)$params['content'], $title );
 			$this->diff->setContent( $oldContent, $newContent );
 			$text = $this->diff->getDiff( '', $titleLink . $menu, $noticeHtml );
 		} elseif ( $type === 'change' ) {
@@ -410,8 +410,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$limit--;
 			}
 
-			$oldContent = ContentHandler::makeContent( $wiki, $title );
-			$newContent = ContentHandler::makeContent( $params['content'], $title );
+			$oldContent = ContentHandler::makeContent( (string)$wiki, $title );
+			$newContent = ContentHandler::makeContent( (string)$params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
 			$text .= $this->diff->getDiff( $titleLink, $actions, $noticeHtml );
@@ -700,8 +700,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		}
 		$limit--;
 
-		$addedContent = ContentHandler::makeContent( $addedMsg['content'], $addedTitle );
-		$deletedContent = ContentHandler::makeContent( $deletedMsg['content'], $deletedTitle );
+		$addedContent = ContentHandler::makeContent( (string)$addedMsg['content'], $addedTitle );
+		$deletedContent = ContentHandler::makeContent( (string)$deletedMsg['content'], $deletedTitle );
 		$this->diff->setContent( $deletedContent, $addedContent );
 
 		$menu = '';
