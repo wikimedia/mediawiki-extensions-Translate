@@ -461,11 +461,18 @@
 	"specialpages-group-translation": "Traduction",
 	"content-model-translate-messagebundle": "Paquet de message à traduire",
 	"translate-messagebundle-validation-error": "Paquet de message non valide : $1",
+	"translate-messagebundle-error-parsing": "Erreur lors de l’analyse du JSON : $1",
 	"translate-messagebundle-error-invalid-array": "Le paquet de message doit être un objet JSON. Type obtenu : $1.",
 	"translate-messagebundle-error-key-empty": "Le paquet de messages ne doit contenir aucune clé vide",
 	"translate-messagebundle-error-key-too-long": "La clé « $1 » est trop longue",
 	"translate-messagebundle-error-key-invalid-characters": "La clé « $1 » contient des caractères interdits",
 	"translate-messagebundle-error-invalid-value": "La clé « $1 » ne contient pas de valeur chaîne",
 	"translate-messagebundle-error-empty-value": "La clé « $1 » n’a pas de valeur",
-	"translate-messagebundle-group-description": "Messages d'un faisceau de messages défini sur la page [[$2|$1]]."
+	"translate-messagebundle-error-invalid-metadata": "La section de métadonnées contient une clé inconnue : « $1 ». Les clés prises en charge sont $2.",
+	"translate-messagebundle-error-invalid-sourcelanguage": "Le code de langue source « $1 » n’est pas pris en charge.",
+	"translate-messagebundle-error-invalid-prioritylanguage": "Code{{PLURAL:$2||s}} de langue prioritaire non valide{{PLURAL:$2||s}} dans les métadonnées : $1",
+	"translate-messagebundle-error-invalid-prioritylanguage-format": "Format de langue prioritaire non valide dans les métadonnées. Les langues prioritaires doivent être une table de chaînes.",
+	"translate-messagebundle-group-description": "Messages d'un faisceau de messages défini sur la page [[$2|$1]].",
+	"translate-messagebundle-change-sourcelanguage": "Configuration de la langue source du groupe de messages selon les métadonnées.",
+	"translate-messagebundle-sourcelanguage-changed": "La langue source d’un groupe de messages ne peut pas être changée une fois qu’il a été créé."
 }

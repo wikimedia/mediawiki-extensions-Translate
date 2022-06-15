@@ -439,11 +439,18 @@
 	"specialpages-group-translation": "Übersetzung",
 	"content-model-translate-messagebundle": "Übersetzbares Nachrichtenpaket",
 	"translate-messagebundle-validation-error": "Ungültiges Nachrichtenpaket: $1",
+	"translate-messagebundle-error-parsing": "Fehler beim Parsen des JSON: $1",
 	"translate-messagebundle-error-invalid-array": "Nachrichtenpaket muss ein JSON-Objekt sein. Hat Typ $1",
 	"translate-messagebundle-error-key-empty": "Nachrichtenpaket darf keinen leeren Schlüssel enthalten",
 	"translate-messagebundle-error-key-too-long": "Schlüssel „$1“ ist zu lang",
 	"translate-messagebundle-error-key-invalid-characters": "Schlüssel „$1“ enthält unzulässige Zeichen",
 	"translate-messagebundle-error-invalid-value": "Schlüssel „$1“ enthält keinen String-Wert",
 	"translate-messagebundle-error-empty-value": "Schlüssel „$1“ hat keinen Wert",
-	"translate-messagebundle-group-description": "Nachrichten eines auf Seite [[$2|$1]] definierten Nachrichtenbündels."
+	"translate-messagebundle-error-invalid-metadata": "Der Metadatenabschnitt enthält einen unbekannten Schlüssel: „$1“. Unterstützte Schlüssel sind $2.",
+	"translate-messagebundle-error-invalid-sourcelanguage": "Der Quellsprachencode „$1“ wird nicht unterstützt.",
+	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Ungültiger Code für Prioritätssprache|Ungültige Codes für Prioritätssprachen}} in den Metadaten: $1",
+	"translate-messagebundle-error-invalid-prioritylanguage-format": "Ungültiges Format der Prioritätssprache in den Metadaten. Prioritätssprachen müssen ein Array von Strings sein.",
+	"translate-messagebundle-group-description": "Nachrichten eines auf Seite [[$2|$1]] definierten Nachrichtenbündels.",
+	"translate-messagebundle-change-sourcelanguage": "Einstellung der Ausgangssprache des Nachrichtenbündels gemäß den Metadaten.",
+	"translate-messagebundle-sourcelanguage-changed": "Die Ausgangssprache eines Nachrichtenbündels kann nicht mehr geändert werden, sobald es erstellt worden ist."
 }
