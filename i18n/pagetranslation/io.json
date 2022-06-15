@@ -20,8 +20,10 @@
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"tpt-tab-translate": "Tradukar",
 	"tpt-translation-restricted-no-reason": "La traduko di ca pagino a ca idiomo impedesis da ula administranto di tradukuri.",
+	"tpt-aggregategroup-save": "Konservez",
 	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
 	"tpt-aggregategroup-edit-description": "Deskripto:",
+	"tpt-aggregategroup-update": "Konservez",
 	"tpt-aggregategroup-update-cancel": "Nuligar",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"log-action-filter-pagetranslation": "Tipo di agado:",
@@ -30,6 +32,7 @@
 	"pt-movepage-reason": "Motivo:",
 	"pt-deletepage-reason": "Motivo:",
 	"pt-deletepage-list-no-pages": "Nula pagino trovesis.",
+	"pm-savepages-button-label": "Konservez",
 	"pm-cancel-button-label": "Nuligar",
 	"pp-cancel-button-label": "Nuligar",
 	"tpt-generic-button": "Konfirmez"

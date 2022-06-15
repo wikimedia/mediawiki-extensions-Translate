@@ -68,7 +68,7 @@
 	"apierror-translate-duplicateaggregategroup": "Групата съобщения вече съществува",
 	"apierror-translate-invalidgroup": "Групата не съществува или е невалидна",
 	"apierror-translate-invalidstate": "Заявеното състояние е невалидно.",
-	"apierror-translate-invalidlanguage": "Заявеният език е невалиден.",
+	"apierror-translate-invalidlanguage": "Езиковият код $1 е невалиден.",
 	"apierror-translate-invalidupdate": "Невалидно обновяване",
 	"apierror-translate-language-disabled": "Превеждането на $1 е деактивирано.",
 	"apierror-translate-language-disabled-reason": "Превеждането на $1 е деактивирано: $2",
