@@ -425,11 +425,18 @@
 	"specialpages-group-translation": "Преведување",
 	"content-model-translate-messagebundle": "Купче преводливи пораки",
 	"translate-messagebundle-validation-error": "Неважечко купче пораки: $1",
+	"translate-messagebundle-error-parsing": "Грешка при расчленувањето на JSON: $1",
 	"translate-messagebundle-error-invalid-array": "Купчето пораки мора да биде JSON-објект. Го добив видот $1",
 	"translate-messagebundle-error-key-empty": "Купчето пораки не смее да содржи празен клуч",
 	"translate-messagebundle-error-key-too-long": "Клучот „$1“ е предолг",
 	"translate-messagebundle-error-key-invalid-characters": "Клучот „$1“ содржи недозволени знаци",
 	"translate-messagebundle-error-invalid-value": "Клучот „$1“ не содржи низна вредност",
 	"translate-messagebundle-error-empty-value": "Купчето „$1“ нема вредност",
-	"translate-messagebundle-group-description": "Пораки од купче дефинирани на страницата [[$2|$1]]."
+	"translate-messagebundle-error-invalid-metadata": "Одделот со метаподатоци содржи непознат клуч: „$1“. Поддржани се клучевите $2.",
+	"translate-messagebundle-error-invalid-sourcelanguage": "Изворниот јазичен код „$1“ не е поддржан.",
+	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Неважечки код на приоритетен јазик|Неважечки кодови на приоритетни јазици}} во метаподатоците: $1",
+	"translate-messagebundle-error-invalid-prioritylanguage-format": "Неважечки формат на приоритетен јазик во метаподатоците. Приоритетните јазици мора да бидат строј од низи.",
+	"translate-messagebundle-group-description": "Пораки од купче дефинирани на страницата [[$2|$1]].",
+	"translate-messagebundle-change-sourcelanguage": "Задавање на изворен јазик на купчето пораки согласно метаподатоците.",
+	"translate-messagebundle-sourcelanguage-changed": "Изворниот јазик на купчето пораки не може да се смени откако ќе се создаде."
 }

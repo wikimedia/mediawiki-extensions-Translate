@@ -68,7 +68,7 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "Målbeskjednøkkelen blir omdøpt",
 	"apihelp-managemessagegroups-param-messageKey": "Erstatningsbeskjednøkkel",
 	"apihelp-managemessagegroups-param-operation": "Operasjonen som skal utføres. Mulige verdier – rename / new",
-	"apihelp-managemessagegroups-param-changesetName": "Endre settnavn – Default / Unattended / Mediawiki osv.",
+	"apihelp-managemessagegroups-param-changesetName": "Endre settnavn – Default / Unattended / MediaWiki osv.",
 	"apihelp-managemessagegroups-param-changesetModified": "Unix-tidsstempel for når endringssettet sist ble endret. Hvis endringssettet har blitt endret etter dette vil API-et gi en feilmelding.",
 	"apihelp-translatesandbox-description": "Registrering og behandling av sandkassebrukere.",
 	"apihelp-translatesandbox-summary": "Registrering og behandling av sandkassebrukere.",
