@@ -3,7 +3,8 @@
 		"authors": [
 			"Hanberke",
 			"Nazarisgoal",
-			"Runningfridgesrule"
+			"Runningfridgesrule",
+			"TayfunEt."
 		]
 	},
 	"translate": "Terjime",
@@ -39,5 +40,6 @@
 	"translate-total": "Habarlaşyklar",
 	"translate-untranslated": "Terjime edilmedik",
 	"translate-percentage-complete": "Ýerine ýetirilen",
-	"translate-percentage-fuzzy": "Möwriti geçen"
+	"translate-percentage-fuzzy": "Möwriti geçen",
+	"translate-documentation-language": "Habar resminamalary"
 }

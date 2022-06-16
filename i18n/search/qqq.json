@@ -5,7 +5,8 @@
 			"Mormegil",
 			"Nike",
 			"Robby",
-			"Shirayuki"
+			"Shirayuki",
+			"Waldyrious"
 		]
 	},
 	"searchtranslations": "{{doc-special|SearchTranslations}}\n{{Identical|Search translation}}",
@@ -13,7 +14,7 @@
 	"tux-sst-view-foreign": "A link text. Parameters:\n* $1 - the domain/host name where the link points to.",
 	"tux-sst-search": "A button text.\n{{Identical|Search}}",
 	"tux-sst-search-ph": "Placeholder text in input field.\n{{Identical|Search translation}}",
-	"tux-sst-count": "Parameters:\n* $1 - the number of search results",
+	"tux-sst-count": "Parameters:\n* $1 - the number of search results\n\n'''See also'''\n* [[Template:Identical/Result]]\n* {{msg-mw|Tux-message-filter-result}}",
 	"tux-sst-facet-language": "Label for a facet in [[Special:SearchTranslations]].\n{{Identical|Language}}",
 	"tux-sst-facet-group": "Label for a facet in [[Special:SearchTranslations]].\n{{Identical|Message group}}",
 	"tux-sst-nosolr-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-nosolr-body}}.\n{{Identical|Search unavailable}}",
