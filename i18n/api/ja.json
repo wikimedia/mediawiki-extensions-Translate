@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Funa-enpitu",
 			"Omotecho",
 			"RYOUMA1117",
 			"Shirayuki",
@@ -27,6 +28,7 @@
 	"apihelp-query+languagestats-param-language": "言語コード。",
 	"apihelp-query+languagestats-example-1": "フィンランド語の翻訳完了の統計一覧",
 	"apihelp-query+messagecollection-description": "翻訳に関する MessageCollection のクエリを実行。",
+	"apihelp-query+managemessagegroups-param-changesetName": "セット名の変更 - 既定 / 無人 / MediaWiki など。",
 	"apihelp-query+messagecollection-summary": "翻訳に関する MessageCollection のクエリを実行。",
 	"apihelp-query+messagecollection-param-group": "メッセージ群。",
 	"apihelp-query+messagecollection-param-language": "言語コード。",
@@ -48,6 +50,7 @@
 	"apihelp-query+messagetranslations-description": "単一のメッセージに対するすべての翻訳をクエリする。",
 	"apihelp-query+messagetranslations-summary": "単一のメッセージに対するすべての翻訳をクエリする。",
 	"apihelp-query+messagetranslations-example-1": "\"MediaWiki:January\"に対するウィキ上の翻訳一覧",
+	"apihelp-managemessagegroups-param-changesetName": "セット名の変更 - 既定 / 無人 / MediaWiki など。",
 	"apihelp-translatesandbox-description": "サインアップしてサンドボックス利用者を管理。",
 	"apihelp-translatesandbox-summary": "サインアップしてサンドボックス利用者を管理。",
 	"apihelp-translatesandbox-param-userid": "管理対象の利用者の利用者ID。作成には「0」を使います。",

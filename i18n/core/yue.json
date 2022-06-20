@@ -7,6 +7,7 @@
 			"Obonggi",
 			"Roy17",
 			"Shinjiman",
+			"Sun8908",
 			"Yueman"
 		]
 	},
@@ -68,8 +69,10 @@
 	"tux-status-translated": "譯咗",
 	"tux-status-saving": "儲存緊……",
 	"tux-save-unknown-error": "發生未知嘅錯誤。",
+	"tux-editor-placeholder-language": "$1嘅翻譯",
 	"tux-editor-save-button-label": "儲存翻譯",
 	"tux-editor-skip-button-label": "跳去下個",
+	"tux-editor-add-desc": "加解",
 	"tux-editor-clear-translated": "收埋譯咗嘅",
 	"tux-editor-translate-mode": "一覽",
 	"tux-messagetable-more-messages": "重有$1句{{PLURAL:$1|訊息}}",

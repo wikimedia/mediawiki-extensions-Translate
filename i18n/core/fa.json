@@ -374,6 +374,9 @@
 	"tux-editor-edit-desc": "ویرایش مستندات",
 	"tux-editor-add-desc": "افزودن مستندات",
 	"tux-editor-suggestions-title": "پیشنهادها",
+	"tux-editor-latest-updates-title": "آخرین به‌روزرسانی‌ها",
+	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1|به‌روزرسانی}} بدون خلاصه",
+	"tux-editor-all-changes": "تمامی تغییرات",
 	"tux-editor-in-other-languages": "به زبان‌های دیگر",
 	"tux-editor-need-more-help": "کمک بیشتری نیاز دارید؟",
 	"tux-editor-ask-help": "درخواست برای اطلاعات بیشتر",
@@ -448,5 +451,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "کلید «$1» شامل نویسه‌های غیرمجاز است",
 	"translate-messagebundle-error-invalid-value": "کلید \"$1\" شامل مقدار رشته‌ای نیست",
 	"translate-messagebundle-error-empty-value": "کلید «$1» مقداری ندارد",
+	"translate-messagebundle-error-invalid-sourcelanguage": "شناسهٔ زبان مبدأ «$1» پشتیبانی نمی‌شود.",
+	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|شناسهٔ|شناسه‌های}} زبان اولویت‌دار نامعتبر در فراداده: $1",
 	"translate-messagebundle-group-description": "پیام‌های یک بستهٔ پیام روی صفحهٔ [[$2|$1]] تعریف شده است."
 }
