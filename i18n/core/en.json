@@ -432,6 +432,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "Key \"$1\" contains disallowed characters",
 	"translate-messagebundle-error-invalid-value": "Key \"$1\" does not contain string value",
 	"translate-messagebundle-error-empty-value": "Key \"$1\" does not have a value",
+	"translate-messagebundle-error-metadata-type": "Metadata must be an array.",
 	"translate-messagebundle-error-invalid-metadata": "Metadata section contains an unknown key: \"$1\". Supported keys are $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "The source language code \"$1\" is not supported.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "Invalid priority language {{PLURAL:$2|code|codes}} in metadata: $1",

@@ -119,6 +119,11 @@ class MessageBundleContent extends JsonContent {
 
 		$data = $this->getRawData();
 		$metadata = $data['@metadata'] ?? [];
+
+		if ( !is_array( $metadata ) ) {
+			throw new MalformedBundle( 'translate-messagebundle-error-metadata-type' );
+		}
+
 		foreach ( $metadata as $key => $value ) {
 			if ( !in_array( $key, self::METADATA_KEYS ) ) {
 				throw new MalformedBundle(
