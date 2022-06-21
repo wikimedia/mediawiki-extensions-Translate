@@ -137,7 +137,7 @@ class MessageHandle {
 	 * Get the primary MessageGroup this message belongs to.
 	 * You should check first that the handle is valid.
 	 * @throws MWException
-	 * @return MessageGroup
+	 * @return MessageGroup|null
 	 */
 	public function getGroup() {
 		$ids = $this->getGroupIds();

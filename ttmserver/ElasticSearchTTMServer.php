@@ -249,7 +249,14 @@ class ElasticSearchTTMServer
 		 * These only apply to known messages.
 		 */
 
-		$sourceLanguage = $handle->getGroup()->getSourceLanguage();
+		$group = $handle->getGroup();
+		// The group may be null if it has been deleleted but message index
+		// has not been updated.
+		if ( $group === null ) {
+			$sourceLanguage = null;
+		} else {
+			$sourceLanguage = $handle->getGroup()->getSourceLanguage();
+		}
 
 		// Do not delete definitions, because the translations are attached to that
 		if ( $handle->getCode() !== $sourceLanguage ) {
@@ -263,6 +270,11 @@ class ElasticSearchTTMServer
 
 		// If translation was made fuzzy, we do not need to add anything
 		if ( $targetText === null ) {
+			return true;
+		}
+
+		// source language is null, skip doing rest of the stuff
+		if ( $sourceLanguage === null ) {
 			return true;
 		}
 
