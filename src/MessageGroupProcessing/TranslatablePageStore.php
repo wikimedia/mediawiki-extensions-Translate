@@ -92,6 +92,9 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		TranslateMetadata::clearMetadata( $groupId, TranslatablePage::METADATA_KEYS );
 		$this->removeFromAggregateGroups( $groupId );
 		TranslatablePage::clearSourcePageCache();
+
+		MessageGroups::singleton()->recache();
+		$this->messageIndex->rebuild();
 	}
 
 	private function moveMetadata( string $oldGroupId, string $newGroupId ): void {

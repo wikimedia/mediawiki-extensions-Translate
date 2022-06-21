@@ -87,6 +87,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 		TranslateMetadata::clearMetadata( $bundle->getMessageGroupId(), self::METADATA_KEYS_DB );
 
 		MessageBundle::clearSourcePageCache();
+
+		MessageGroups::singleton()->recache();
+		$this->messageIndex->rebuild();
 	}
 
 	public function validate( Title $pageTitle, MessageBundleContent $content ): void {
