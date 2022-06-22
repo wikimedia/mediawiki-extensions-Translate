@@ -146,7 +146,7 @@
 	 * @param {string} stateInfo.language Language.
 	 */
 	function updateGroupInformation( stateInfo ) {
-		var props = 'id|priority|prioritylangs|priorityforce|description';
+		var props = 'id|priority|prioritylangs|priorityforce|description|label|sourcelanguage|class';
 
 		mw.translate.recentGroups.append( stateInfo.group );
 
@@ -165,8 +165,24 @@
 			$description.empty();
 			return;
 		}
+		var description = group.description;
+		if (
+			group.class === 'WikiPageMessageGroup' &&
+			group.sourcelanguage !== state.language &&
+			// Message documentation does not have a translation page
+			state.language !== mw.config.get( 'wgTranslateDocumentationLanguageCode' )
+		) {
+			description = mw.msg(
+				'translate-tag-page-wikipage-desc',
+				':' + group.label + '/' + state.language,
+				group.label,
+				$.uls.data.getAutonym( group.sourcelanguage ),
+				group.sourcelanguage,
+				$.uls.data.getAutonym( state.language ),
+				state.language );
+		}
 
-		api.parse( group.description ).done( function ( parsedDescription ) {
+		api.parse( description ).done( function ( parsedDescription ) {
 			// The parsed text is returned in a <p> tag,
 			// so it's removed here.
 			$description.html( parsedDescription );

@@ -189,6 +189,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['workflowstates'] = $this->getWorkflowStates( $g );
 		}
 
+		if ( isset( $props['sourcelanguage'] ) ) {
+			$a['sourcelanguage'] = $g->getSourceLanguage();
+		}
+
 		Hooks::run(
 			'TranslateProcessAPIMessageGroupsProperties',
 			[ &$a, $props, $params, $g ]
@@ -315,6 +319,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			'prioritylangs',
 			'priorityforce',
 			'workflowstates',
+			'sourcelanguage'
 		] );
 
 		Hooks::run( 'TranslateGetAPIMessageGroupsPropertyDescs', [ &$properties ] );

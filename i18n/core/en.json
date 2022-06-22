@@ -151,6 +151,7 @@
 	"translate-statsf-alt-text": "This is the text alternative for the translation statistics.",
 	"translate-statsf-embed": "Code to embed the translation stats graph on other pages.",
 	"translate-tag-page-desc": "Translation of the wiki page [[$2|$1]] from $3 ($4).",
+	"translate-tag-page-wikipage-desc": "[[$1|Translation]] of the wiki page [[$2]] from <bdi>$3</bdi> ($4) to <bdi>$5</bdi> ($6)",
 	"translate-sidebar-alltrans": "In other languages",
 	"translations": "All translations",
 	"translations-summary": "Enter a message name below to show all available translations.",

@@ -847,7 +847,8 @@
 				"tux-editor-proofreading-show-own-translations",
 				"translate-workflow-set-doing",
 				"translate-workflow-state-",
-				"translate-workflowstatus"
+				"translate-workflowstatus",
+				"translate-tag-page-wikipage-desc"
 			],
 			"targets": [
 				"desktop",
