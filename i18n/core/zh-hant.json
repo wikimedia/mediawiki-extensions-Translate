@@ -23,7 +23,8 @@
 			"Winston Sung",
 			"Wrightbus",
 			"Xiplus",
-			"列维劳德"
+			"列维劳德",
+			"Sun8908"
 		]
 	},
 	"translate": "翻譯",
@@ -105,6 +106,7 @@
 	"translate-checks-newline-extra-end": "在翻譯的結尾{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
 	"translate-checks-value-not-present": "此翻譯應相同於{{PLURAL:$1|1=|以下值之一：}}$1。",
 	"translate-checks-replacement": "使用$2替代$1。",
+	"translate-checks-empty": "不允許沒有內容或只有空格的翻譯。",
 	"translate-pref-editassistlang": "輔助語言：",
 	"prefs-translate": "翻譯選項",
 	"translate-pref-editassistlang-help": "以逗號分隔語言代碼。\n當您翻譯的時，會隨著顯示這些語言的訊息。\n預設會使用您的語言。",
@@ -144,6 +146,7 @@
 	"translate-statsf-days": "期間 (天)：",
 	"translate-statsf-start": "開始日期：",
 	"translate-statsf-scale": "間隔頻率：",
+	"translate-statsf-scale-years": "年",
 	"translate-statsf-scale-months": "月",
 	"translate-statsf-scale-weeks": "周",
 	"translate-statsf-scale-days": "日",
@@ -243,9 +246,10 @@
 	"translate-smg-groups-in-sync": "目前正在同步的群組",
 	"translate-smg-groups-in-sync-list": "目前在背景處理的群組清單：",
 	"translate-smg-groups-with-error-title": "同步時出現錯誤的群組",
-	"translate-smg-groups-with-error-desc": "在同步時出現錯誤的群組清單：",
+	"translate-smg-groups-with-error-desc": "在同步時出現錯誤的群組清單及其訊息：",
 	"translate-smg-group-with-error-summary": "帶有錯誤的 $1 個{{PLURAL:$1|訊息}}：",
 	"translate-smg-group-message-action-history": "歷史",
+	"translate-smg-group-action-resolve": "標記為已解決",
 	"translate-smg-group-message-tag-outdated": "過時",
 	"translate-smg-group-message-tag-rename": "重新命名",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|標籤}}：",
