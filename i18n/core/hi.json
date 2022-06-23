@@ -436,5 +436,12 @@
 	"translate-messagebundle-error-key-invalid-characters": "कुँजी \"$1\" में अस्वीकृत अक्षर हैं",
 	"translate-messagebundle-error-invalid-value": "कुँजी \"$1\" में स्ट्रिंग वैल्यू नहीं है",
 	"translate-messagebundle-error-empty-value": "कुँजी \"$1\" में  वैल्यू नहीं है",
-	"translate-messagebundle-group-description": "संदेश बंडल के संदेशों को पृष्ठ [[$2|$1]] पर परिभाषित किया गया है।"
+	"translate-messagebundle-error-metadata-type": "मेटाडेटा को एक ऐरे होना पड़ेगा।",
+	"translate-messagebundle-error-invalid-metadata": "मेटाडेटा अनुभाग में एक अनजान कुँजी \"$1\" है। समर्थित कुँजियाँ हैं $2।",
+	"translate-messagebundle-error-invalid-sourcelanguage": "स्रोत भाषा कोड \"$1\" समर्थित नहीं है।",
+	"translate-messagebundle-error-invalid-prioritylanguage": "मेटाडेटा में अमान्य प्राथमिक भाषा कोड {{PLURAL:$2|है|हैं}}: $1",
+	"translate-messagebundle-error-invalid-prioritylanguage-format": "मेटाडेटा में प्राथमिक भाषा का अमान्य प्रारूप है। प्राथमिक भाषाओं को स्ट्रिंग्स का एक ऐरे होना पड़ेगा।",
+	"translate-messagebundle-group-description": "संदेश बंडल के संदेशों को पृष्ठ [[$2|$1]] पर परिभाषित किया गया है।",
+	"translate-messagebundle-change-sourcelanguage": "मेटाडेटा के अनुसार संदेश बंडल का स्रोत भाषा सेट किया जा रहा है।",
+	"translate-messagebundle-sourcelanguage-changed": "संदेश बंडल के बनने के बाद इसके स्रोत भाषा को बदला नहीं जा सकता।"
 }

@@ -446,6 +446,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "Schlüssel „$1“ enthält unzulässige Zeichen",
 	"translate-messagebundle-error-invalid-value": "Schlüssel „$1“ enthält keinen String-Wert",
 	"translate-messagebundle-error-empty-value": "Schlüssel „$1“ hat keinen Wert",
+	"translate-messagebundle-error-metadata-type": "Die Metadaten müssen ein Array sein.",
 	"translate-messagebundle-error-invalid-metadata": "Der Metadatenabschnitt enthält einen unbekannten Schlüssel: „$1“. Unterstützte Schlüssel sind $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Der Quellsprachencode „$1“ wird nicht unterstützt.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Ungültiger Code für Prioritätssprache|Ungültige Codes für Prioritätssprachen}} in den Metadaten: $1",

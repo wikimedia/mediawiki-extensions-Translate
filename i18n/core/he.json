@@ -437,6 +437,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "המפתח \"$1\" מכיל תווים בלתי־מורשים",
 	"translate-messagebundle-error-invalid-value": "המפתח \"$1\" אינו מכיל ערך מחרוזת",
 	"translate-messagebundle-error-empty-value": "במפתח \"$1\" אין ערך",
+	"translate-messagebundle-error-metadata-type": "המטא־נתונים צריכים להיות מערך.",
 	"translate-messagebundle-error-invalid-metadata": "חלק המטא־נתונים מכיל מפתח לא ידוע: \"$1\". מפתחות נתמכים הם $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "קוד שפת המקור \"$1\" אינו נתמך.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|קוד שפה מועדפת בלתי־תקין|קודי שפות מועדפות בלתי־תקינים}} במטא־נתונים: $1",

@@ -468,6 +468,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "La clé « $1 » contient des caractères interdits",
 	"translate-messagebundle-error-invalid-value": "La clé « $1 » ne contient pas de valeur chaîne",
 	"translate-messagebundle-error-empty-value": "La clé « $1 » n’a pas de valeur",
+	"translate-messagebundle-error-metadata-type": "Les métadonnées doivent être un tableau.",
 	"translate-messagebundle-error-invalid-metadata": "La section de métadonnées contient une clé inconnue : « $1 ». Les clés prises en charge sont $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Le code de langue source « $1 » n’est pas pris en charge.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "Code{{PLURAL:$2||s}} de langue prioritaire non valide{{PLURAL:$2||s}} dans les métadonnées : $1",
