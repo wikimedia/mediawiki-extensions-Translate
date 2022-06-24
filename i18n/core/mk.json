@@ -432,6 +432,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "Клучот „$1“ содржи недозволени знаци",
 	"translate-messagebundle-error-invalid-value": "Клучот „$1“ не содржи низна вредност",
 	"translate-messagebundle-error-empty-value": "Купчето „$1“ нема вредност",
+	"translate-messagebundle-error-metadata-type": "Метаподатоците мора да бидат строј.",
 	"translate-messagebundle-error-invalid-metadata": "Одделот со метаподатоци содржи непознат клуч: „$1“. Поддржани се клучевите $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Изворниот јазичен код „$1“ не е поддржан.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Неважечки код на приоритетен јазик|Неважечки кодови на приоритетни јазици}} во метаподатоците: $1",
