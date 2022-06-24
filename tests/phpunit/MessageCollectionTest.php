@@ -42,7 +42,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 	public function testMessage() {
 		$user = $this->getTestSysop()->getUser();
 		$title = Title::newFromText( 'MediaWiki:Translated/fi' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
 
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );

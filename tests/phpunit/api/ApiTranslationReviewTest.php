@@ -51,7 +51,7 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
 		$content = ContentHandler::makeContent( 'trans1', $title );
 
-		WikiPage::factory( $title )->doUserEditContent(
+		$this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
 			$content,
 			$superUser1,
 			__METHOD__
@@ -60,7 +60,7 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/fi' );
 		$content = ContentHandler::makeContent( '!!FUZZY!!trans2', $title );
 
-		WikiPage::factory( $title )->doUserEditContent(
+		$this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
 			$content,
 			$superUser2,
 			__METHOD__
@@ -68,7 +68,7 @@ class ApiTranslationReviewTest extends MediaWikiIntegrationTestCase {
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey3/fi' );
 		$content = ContentHandler::makeContent( 'unknown message', $title );
-		WikiPage::factory( $title )->doUserEditContent(
+		$this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
 			$content,
 			$superUser1,
 			__METHOD__

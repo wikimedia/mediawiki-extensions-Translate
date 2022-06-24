@@ -47,7 +47,7 @@ class TranslatableBundleDeleteJob extends Job {
 		PageTranslationHooks::$jobQueueRunning = true;
 
 		$error = '';
-		$wikipage = new WikiPage( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 
 		$status = $wikipage->doDeleteArticleReal(
 			"{$summary}: $reason",

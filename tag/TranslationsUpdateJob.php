@@ -97,7 +97,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		$this->logInfo( 'Updated the message group stats' );
 
 		// Try to avoid stale statistics on the base page
-		$wikiPage = WikiPage::factory( $page->getTitle() );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page->getTitle() );
 		$wikiPage->doPurge();
 		$this->logInfo( 'Finished purging' );
 

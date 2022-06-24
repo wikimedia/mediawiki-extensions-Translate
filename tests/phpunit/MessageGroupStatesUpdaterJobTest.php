@@ -112,7 +112,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 
 		// First translation
 		$title = Title::newFromText( 'MediaWiki:key1/fi' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'trans1', $title );
 
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
@@ -129,7 +129,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 
 		// Second translation
 		$title = Title::newFromText( 'MediaWiki:key2/fi' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'trans2', $title );
 
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
@@ -146,7 +146,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 
 		// Change to translation
 		$title = Title::newFromText( 'MediaWiki:key1/fi' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'trans1 updated', $title );
 
 		$page->doUserEditContent( $content, $user, __METHOD__ );

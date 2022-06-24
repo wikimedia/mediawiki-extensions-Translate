@@ -29,7 +29,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	public function testNormalPage() {
 		$title = Title::newFromText( 'Fréttinga' );
 		$this->assertNotNull( $title, 'Title is valid' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'kissa', $title );
@@ -47,7 +47,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	public function testTranslatablePage() {
 		$title = Title::newFromText( 'Fréttinga' );
 		$this->assertNotNull( $title, 'Title is valid' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
@@ -66,7 +66,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	public function testTranslatablePageWithMarked() {
 		$title = Title::newFromText( 'Fréttinga' );
 		$this->assertNotNull( $title, 'Title is valid' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
@@ -110,7 +110,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	public function testTranslationPageRestrictions() {
 		$superUser = $this->getTestSysop()->getUser();
 		$title = Title::newFromText( 'Translatable page' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '<translate>Hello</translate>', $title );
 
 		$status = $page->doUserEditContent(

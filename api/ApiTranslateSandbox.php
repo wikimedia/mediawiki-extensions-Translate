@@ -188,7 +188,7 @@ class ApiTranslateSandbox extends ApiBase {
 		$babeltext = "{{#babel:$languages}}";
 		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();
 
-		$page = WikiPage::factory( $userpage );
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $userpage );
 		$content = ContentHandler::makeContent( $babeltext, $userpage );
 
 		$page->doUserEditContent( $content, $user, $summary, EDIT_NEW );

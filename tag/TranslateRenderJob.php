@@ -69,7 +69,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 			$flags = ( $flags | EDIT_UPDATE ) & ~EDIT_NEW;
 		}
 
-		$page = WikiPage::factory( $title );
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;

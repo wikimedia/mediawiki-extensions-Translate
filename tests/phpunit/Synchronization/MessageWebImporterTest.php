@@ -11,7 +11,6 @@ use MockWikiMessageGroup;
 use RequestContext;
 use Title;
 use WANObjectCache;
-use WikiPage;
 
 /** @group Database */
 class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
@@ -56,12 +55,14 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'translate-manage-import-fuzzy', $result[0] );
 		$this->assertEquals(
 			'English Changed',
-			WikiPage::factory( Title::newFromText( self::PAGE . '/en' ) )->getContent()->serialize(),
+			$this->getServiceContainer()->getWikiPageFactory()
+				->newFromTitle( Title::newFromText( self::PAGE . '/en' ) )->getContent()->serialize(),
 			'Must change the content of the English translation'
 		);
 		$this->assertEquals(
 			TRANSLATE_FUZZY . 'Finnish Original',
-			WikiPage::factory( Title::newFromText( self::PAGE . '/fi' ) )->getContent()->serialize(),
+			$this->getServiceContainer()->getWikiPageFactory()
+				->newFromTitle( Title::newFromText( self::PAGE . '/fi' ) )->getContent()->serialize(),
 			'Must change the content of the Finnish translation'
 		);
 	}

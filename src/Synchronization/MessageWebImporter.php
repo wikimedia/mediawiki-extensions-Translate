@@ -20,7 +20,6 @@ use Sanitizer;
 use Title;
 use TranslateUtils;
 use User;
-use WikiPage;
 use Xml;
 
 /**
@@ -420,7 +419,7 @@ class MessageWebImporter {
 		?User $user,
 		int $editFlags = 0
 	): array {
-		$wikiPage = WikiPage::factory( $title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $message, $title );
 		$status = $wikiPage->doUserEditContent(
 			$content,

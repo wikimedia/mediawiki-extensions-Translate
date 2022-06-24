@@ -44,7 +44,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 	public function testPreventCategorization() {
 		$user = $this->getTestSysop()->getUser();
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
 
 		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
@@ -55,7 +55,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		);
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/qqq' );
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbe]]', $title );
 
 		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
@@ -66,7 +66,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		);
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey3/no' );
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
 
 		$wikipage->doUserEditContent( $content, $user, __METHOD__ );

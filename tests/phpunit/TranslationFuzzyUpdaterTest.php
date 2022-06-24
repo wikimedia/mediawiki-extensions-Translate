@@ -6,6 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 
 /**
@@ -45,7 +46,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	public function testParsing() {
 		$user = $this->getTestUser()->getUser();
 		$title = Title::newFromText( 'MediaWiki:Ugakey/nl' );
-		$page = WikiPage::factory( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 		$value = $status->getValue();
@@ -84,7 +85,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	public function testValidationFuzzy() {
 		$user = $this->getTestUser()->getUser();
 		$title = Title::newFromText( 'MediaWiki:nlkey/en-gb' );
-		$page = WikiPage::factory( $title );
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'Test message', $title );
 		$page->doUserEditContent( $content, $user, __METHOD__ );
 

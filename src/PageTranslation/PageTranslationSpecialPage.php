@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserIdentity;
 use Message;
@@ -36,7 +37,6 @@ use TranslateUtils;
 use TranslationsUpdateJob;
 use WebRequest;
 use Wikimedia\Rdbms\IResultWrapper;
-use WikiPage;
 use Xml;
 use function count;
 use function wfEscapeWikiText;
@@ -205,7 +205,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$title
 			);
 
-			$status = WikiPage::factory( $title )->doUserEditContent(
+			$status = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
 				$content,
 				$this->getUser(),
 				$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
@@ -1062,7 +1062,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		bool $transclusion
 	) {
 		// Add the section markers to the source page
-		$wikiPage = WikiPage::factory( $page->getTitle() );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page->getTitle() );
 		$content = ContentHandler::makeContent(
 			$parse->sourcePageTextForSaving(),
 			$page->getTitle()

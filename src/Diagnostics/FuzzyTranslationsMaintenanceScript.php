@@ -17,7 +17,6 @@ use TranslateUtils;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
-use WikiPage;
 
 /**
  * @since 2022.01
@@ -231,7 +230,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			return;
 		}
 
-		$wikipage = new WikiPage( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $title );
 		$status = $wikipage->doUserEditContent(
 			$content,

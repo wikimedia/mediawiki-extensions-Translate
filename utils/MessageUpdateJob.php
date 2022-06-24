@@ -107,7 +107,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		}
 
 		$title = $this->title;
-		$wikiPage = WikiPage::factory( $title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
 		$content = ContentHandler::makeContent( $params['content'], $title );
@@ -273,10 +273,11 @@ class MessageUpdateJob extends GenericTranslateJob {
 	private function processTranslationChanges(
 		array $langChanges, $baseTitle, $groupNamespace, $summary, $flags, User $user
 	) {
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $langChanges as $code => $contentStr ) {
 			$titleStr = TranslateUtils::title( $baseTitle, $code, $groupNamespace );
 			$title = Title::newFromText( $titleStr, $groupNamespace );
-			$wikiPage = WikiPage::factory( $title );
+			$wikiPage = $wikiPageFactory->newFromTitle( $title );
 			$content = ContentHandler::makeContent( $contentStr, $title );
 			$status = $wikiPage->doUserEditContent(
 				$content,

@@ -5,6 +5,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @group medium
@@ -41,7 +42,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		$title = Title::makeTitle( $group->getNamespace(),
 			TranslateUtils::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
 		$content = ContentHandler::makeContent( 'world 23', $title );
-		WikiPage::factory( $title )->doUserEditContent(
+		MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
 			$content,
 			self::getTestSysop()->getUser(),
 			__METHOD__

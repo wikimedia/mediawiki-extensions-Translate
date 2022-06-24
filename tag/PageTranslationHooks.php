@@ -397,16 +397,17 @@ class PageTranslationHooks {
 
 		// Invalidate caches so that language bar is up-to-date
 		$pages = $page->getTranslationPages();
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $pages as $title ) {
 			if ( $title->equals( $target ) ) {
 				// Handled by the TranslateRenderJob
 				continue;
 			}
 
-			$wikiPage = WikiPage::factory( $title );
+			$wikiPage = $wikiPageFactory->newFromTitle( $title );
 			$wikiPage->doPurge();
 		}
-		$sourceWikiPage = WikiPage::factory( $source );
+		$sourceWikiPage = $wikiPageFactory->newFromTitle( $source );
 		$sourceWikiPage->doPurge();
 	}
 
