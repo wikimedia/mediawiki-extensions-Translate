@@ -7,7 +7,8 @@
 			"Shinjiman",
 			"Yueman",
 			"Moon0319",
-			"Roy17"
+			"Roy17",
+			"Sun8908"
 		]
 	},
 	"translate": "翻譯",
@@ -72,6 +73,7 @@
 	"tux-editor-placeholder": "你嘅譯文",
 	"tux-editor-save-button-label": "儲存翻譯",
 	"tux-editor-skip-button-label": "跳去下個",
+	"tux-editor-add-desc": "加解",
 	"tux-editor-clear-translated": "收埋譯咗嘅",
 	"tux-editor-translate-mode": "一覽",
 	"tux-messagetable-more-messages": "重有$1句{{PLURAL:$1|訊息}}",
