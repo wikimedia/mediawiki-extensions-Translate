@@ -413,5 +413,6 @@
 	"translate-messagebundle-error-key-invalid-characters": "\"$1\" 키에 허용되지 않은 문자가 있습니다",
 	"translate-messagebundle-error-invalid-value": "\"$1\" 키에 문자열 값을 포함해서는 안 됩니다",
 	"translate-messagebundle-error-empty-value": "\"$1\" 키에 값이 없습니다",
+	"translate-messagebundle-error-metadata-type": "메타데이터는 배열이어야 합니다.",
 	"translate-messagebundle-group-description": "문서 [[$2|$1]]에 정의된 메시지 번들의 메시지입니다."
 }
