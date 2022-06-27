@@ -235,7 +235,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgHooks['SkinSubPageSubtitle'][] = 'PageTranslationHooks::replaceSubtitle';
 
 			// Replaced edit tab with translation tab for translation pages
-			$wgHooks['SkinTemplateNavigation'][] = 'PageTranslationHooks::translateTab';
+			$wgHooks['SkinTemplateNavigation::Universal'][] = 'PageTranslationHooks::translateTab';
 
 			// Update translated page when translation unit is moved
 			$wgHooks['PageMoveComplete'][] = 'PageTranslationHooks::onMovePageTranslationUnits';

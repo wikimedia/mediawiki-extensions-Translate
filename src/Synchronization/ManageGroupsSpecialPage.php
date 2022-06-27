@@ -543,10 +543,13 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 	/**
 	 * Adds the task-based tabs on Special:Translate and few other special pages.
-	 * Hook: SkinTemplateNavigation::SpecialPage
+	 * Hook: SkinTemplateNavigation::Universal
 	 */
 	public static function tabify( Skin $skin, array &$tabs ): void {
 		$title = $skin->getTitle();
+		if ( !$title->isSpecialPage() ) {
+			return;
+		}
 		$specialPageFactory = MediaWikiServices::getInstance()->getSpecialPageFactory();
 		[ $alias, ] = $specialPageFactory->resolveAlias( $title->getText() );
 

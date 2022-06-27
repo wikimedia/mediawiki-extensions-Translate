@@ -1384,7 +1384,7 @@ class PageTranslationHooks {
 
 	/**
 	 * Converts the edit tab (if exists) for translation pages to translate tab.
-	 * Hook: SkinTemplateNavigation
+	 * Hook: SkinTemplateNavigation::Universal
 	 * @since 2013.06
 	 * @param Skin $skin
 	 * @param array &$tabs

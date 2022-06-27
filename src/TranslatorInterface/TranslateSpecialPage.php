@@ -393,10 +393,13 @@ class TranslateSpecialPage extends SpecialPage {
 
 	/**
 	 * Adds the task-based tabs on Special:Translate and few other special pages.
-	 * Hook: SkinTemplateNavigation::SpecialPage
+	 * Hook: SkinTemplateNavigation::Universal
 	 */
 	public static function tabify( Skin $skin, array &$tabs ): bool {
 		$title = $skin->getTitle();
+		if ( !$title->isSpecialPage() ) {
+			return true;
+		}
 		[ $alias, $sub ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $title->getText() );
 

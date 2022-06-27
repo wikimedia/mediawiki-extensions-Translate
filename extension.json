@@ -211,7 +211,7 @@
 		"ParserAfterTidy": "TranslateHooks::preventCategorization",
 		"OutputPageParserOutput": "TranslateHooks::showFakeCategories",
 		"Translate:newTranslation": "TranslateEditAddons::updateTransverTag",
-		"SkinTemplateNavigation::SpecialPage": [
+		"SkinTemplateNavigation::Universal": [
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage::tabify",
 			"MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage::tabify"
 		],
