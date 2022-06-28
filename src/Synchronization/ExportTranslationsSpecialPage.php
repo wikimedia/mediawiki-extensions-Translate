@@ -13,8 +13,10 @@ use Message;
 use MessageCollection;
 use MessageGroup;
 use MessageGroups;
+use MessageHandle;
 use SpecialPage;
 use Status;
+use Title;
 use TranslatablePage;
 use TranslateUtils;
 use WikiPageMessageGroup;
@@ -319,7 +321,11 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			$message = $collection[ $messageKey ];
 			$prefixedTitleText = $titleFormatter->getPrefixedText( $titleValue );
 
-			$row = [ $prefixedTitleText, $message->definition() ];
+			$handle = new MessageHandle( Title::newFromText( $prefixedTitleText ) );
+			$sourceLanguageTitle = $handle->getTitleForLanguage( $sourceLanguageCode );
+
+			$row = [ $sourceLanguageTitle->getPrefixedText(), $message->definition() ];
+
 			if ( !$exportingSourceLanguage ) {
 				$row[] = $message->translation();
 			}
