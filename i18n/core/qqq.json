@@ -187,7 +187,7 @@
 	"translate-statsf-alt-text": "Used as the text for the summary attribute displayed on the table which is the text alternative to the data displayed on the graph.",
 	"translate-statsf-embed": "Used as aria-label for the <code><nowiki><pre></nowiki></code> tag that contains the code to embed the translation stats graph on other pages",
 	"translate-tag-page-desc": "Used as description for the message group in [[Special:Translate]].\n\nParameters:\n* $1 - the page title\n* $2 - link to the translation page <code>Special:MyLanguage/$1</code>, not the source page\n* $3 - source language name\n* $4 - source language code",
-	"translate-tag-page-wikipage-desc": "Used as description for the WikiPage based message group in [[Special:Translate]]. \n\nParameters:\n* $1 - link to translated page\n* $2 - link to the source page <code>Special:MyLanguage/$1</code>\n* $3 - source language name\n* $4 - source language code\n $5 - target language name \n* $6 - taget language code",
+	"translate-tag-page-wikipage-desc": "Used as description for the WikiPage based message group in [[Special:Translate]]. \n\nParameters:\n* $1 - link to translated page\n* $2 - link to the source page <code>Special:MyLanguage/$1</code>\n* $3 - source language name\n* $4 - source language code\n* $5 - target language name \n* $6 - taget language code",
 	"translate-sidebar-alltrans": "{{Identical|Otherlanguages}}",
 	"translations": "{{doc-special|Translations}}\n{{Identical|All translations}}",
 	"translations-summary": "Used in [[Special:Translations]].",
