@@ -30,6 +30,7 @@
 	"translate-desc": "[[Special:Translate|Pagina speciale]] per tradurre MediaWiki e non solo",
 	"translate-taskui-export-to-file": "Esporta nel formato nativo",
 	"translate-taskui-export-as-po": "Esporta per la traduzione off-line",
+	"translate-taskui-export-as-csv": "Esporta in formato CSV",
 	"translate-taction-translate": "Traduci",
 	"translate-taction-proofread": "Revisiona",
 	"translate-taction-lstats": "Statistiche della lingua",
