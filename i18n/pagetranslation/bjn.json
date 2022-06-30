@@ -4,5 +4,13 @@
 			"Ezagren"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% tarjamahan)"
+	"pagetranslation": "Panarjamahan laman",
+	"tpt-section": "Unit panarjamahan $1",
+	"tpt-section-deleted": "Unit panarjamahan $1",
+	"tpt-action-nofuzzy": "Jangan maupauakan tarjamahan",
+	"tpt-rev-unmark": "pinggirakan matan panarjamahan",
+	"tpt-languages-nonzero": "$1 ($2% tarjamahan)",
+	"log-name-pagetranslation": "Log panarjamahan laman",
+	"pagemigration": "Pamindahan laman tarjamahan",
+	"tpt-unlink-button": "Pinggirakan matan panarjamahan"
 }
