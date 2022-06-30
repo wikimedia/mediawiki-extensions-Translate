@@ -362,7 +362,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	protected function showGenericConfirmation( array $params ): void {
 		$formParams = [
 			'method' => 'post',
-			'action' => $this->getPageTitle()->getFullURL(),
+			'action' => $this->getPageTitle()->getLocalURL(),
 		];
 
 		$params['title'] = $this->getPageTitle()->getPrefixedText();
@@ -388,7 +388,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	protected function showUnlinkConfirmation( Title $target ): void {
 		$formParams = [
 			'method' => 'post',
-			'action' => $this->getPageTitle()->getFullURL(),
+			'action' => $this->getPageTitle()->getLocalURL(),
 		];
 
 		$this->getOutput()->addHTML(
@@ -751,7 +751,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$formParams = [
 			'method' => 'post',
-			'action' => $this->getPageTitle()->getFullURL(),
+			'action' => $this->getPageTitle()->getLocalURL(),
 			'class' => 'mw-tpt-sp-markform',
 		];
 
