@@ -12,7 +12,6 @@ use MessageGroupStats;
 use MessageIndexRebuildJob;
 use MessageUpdateJob;
 use Title;
-use TranslateUtils;
 
 /**
  * @author Niklas Laxström
@@ -37,10 +36,12 @@ class UpdateMessageBundleJob extends Job {
 
 	/** @inheritDoc */
 	public function run(): void {
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$mwInstance = MediaWikiServices::getInstance();
+		$lb = $mwInstance->getDBLoadBalancerFactory();
+		$jobQueue = $mwInstance->getJobQueueGroup();
 		$logger = LoggerFactory::getInstance( 'Translate.MessageBundle' );
 		$messageIndex = Services::getInstance()->getMessageIndex();
-		$jobQueue = TranslateUtils::getJobQueueGroup();
+
 		$logger->info( 'UpdateMessageBundleJob: Starting job for: ' . $this->getTitle()->getPrefixedText() );
 
 		// Not sure if this is necessary, but it should ensure that this job, which was created

@@ -5,13 +5,14 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
 use ApiBase;
+use ApiMain;
+use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Logger\LoggerFactory;
 use MessageGroups;
 use MessageIndexRebuildJob;
 use Title;
 use TranslateMetadata;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use WikiPageMessageGroup;
 
@@ -26,7 +27,19 @@ use WikiPageMessageGroup;
  * @ingroup API TranslateAPI
  */
 class AggregateGroupsActionApi extends ApiBase {
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
+	/** @var string */
 	protected static $right = 'translate-manage';
+
+	public function __construct(
+		ApiMain $main,
+		string $action,
+		JobQueueGroup $jobQueueGroup
+	) {
+		parent::__construct( $main, $action );
+		$this->jobQueueGroup = $jobQueueGroup;
+	}
 
 	public function execute(): void {
 		$this->checkUserRightsAny( self::$right );
@@ -190,7 +203,7 @@ class AggregateGroupsActionApi extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::singleton()->recache();
-		TranslateUtils::getJobQueueGroup()->push( MessageIndexRebuildJob::newJob() );
+		$this->jobQueueGroup->push( MessageIndexRebuildJob::newJob() );
 	}
 
 	protected function generateAggregateGroupId( string $aggregateGroupName, string $prefix = 'agg-' ): string {

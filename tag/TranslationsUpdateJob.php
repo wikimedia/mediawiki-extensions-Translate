@@ -71,8 +71,8 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 			. count( $sections ) . ' sections'
 		);
 		// END: This section does not care about replication lag
-
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$mwServices = MediaWikiServices::getInstance();
+		$lb = $mwServices->getDBLoadBalancerFactory();
 		if ( !$lb->waitForReplication() ) {
 			$this->logWarning( 'Continuing despite replication lag' );
 		}
@@ -97,13 +97,14 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		$this->logInfo( 'Updated the message group stats' );
 
 		// Try to avoid stale statistics on the base page
-		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page->getTitle() );
+		$wikiPage = $mwServices->getWikiPageFactory()->newFromTitle( $page->getTitle() );
 		$wikiPage->doPurge();
 		$this->logInfo( 'Finished purging' );
 
 		// These can be run independently and in parallel if possible
+		$jobQueueGroup = $mwServices->getJobQueueGroup();
 		$renderJobs = self::getRenderJobs( $page );
-		TranslateUtils::getJobQueueGroup()->push( $renderJobs );
+		$jobQueueGroup->push( $renderJobs );
 		$this->logInfo( 'Added ' . count( $renderJobs ) . ' RenderJobs to the queue' );
 
 		// Schedule message index update. Thanks to front caching, it is okay if this takes
@@ -111,7 +112,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		// also allows de-duplication in case multiple translatable pages are being marked
 		// for translation in a short period of time.
 		$job = MessageIndexRebuildJob::newJob();
-		TranslateUtils::getJobQueueGroup()->push( $job );
+		$jobQueueGroup->push( $job );
 
 		$this->logInfo( 'Finished TranslationsUpdateJob' );
 

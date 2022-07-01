@@ -280,13 +280,15 @@
 			"services": [
 				"LinkBatchFactory",
 				"Translate:ProgressStatsTableFactory",
-				"LanguageNameUtils"
+				"LanguageNameUtils",
+				"JobQueueGroup"
 			]
 		},
 		"MessageGroupStats": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\MessageGroupStatsSpecialPage",
 			"services": [
-				"Translate:ProgressStatsTableFactory"
+				"Translate:ProgressStatsTableFactory",
+				"JobQueueGroup"
 			]
 		},
 		"ImportTranslations": {
@@ -302,7 +304,8 @@
 				"ContentLanguage",
 				"NamespaceInfo",
 				"RevisionLookup",
-				"Translate:GroupSynchronizationCache"
+				"Translate:GroupSynchronizationCache",
+				"JobQueueGroup"
 			]
 		},
 		"SupportedLanguages": {
@@ -341,7 +344,12 @@
 		}
 	},
 	"APIMetaModules": {
-		"languagestats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryLanguageStatsActionApi",
+		"languagestats": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryLanguageStatsActionApi",
+			"services": [
+				"JobQueueGroup"
+			]
+		},
 		"managemessagegroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryManageMessageGroupsActionApi",
 		"messagegroups": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupsActionApi",
@@ -349,11 +357,21 @@
 				"HookContainer"
 			]
 		},
-		"messagegroupstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryMessageGroupStatsActionApi",
+		"messagegroupstats": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryMessageGroupStatsActionApi",
+			"services": [
+				"JobQueueGroup"
+			]
+		},
 		"messagetranslations": "MediaWiki\\Extension\\Translate\\MessageLoading\\QueryMessageTranslationsActionApi"
 	},
 	"APIModules": {
-		"aggregategroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsActionApi",
+		"aggregategroups": {
+			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsActionApi",
+			"services": [
+				"JobQueueGroup"
+			]
+		},
 		"groupreview": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\GroupReviewActionApi",
 			"services": [

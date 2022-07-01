@@ -178,7 +178,7 @@ class MessageHandle {
 
 			// Schedule a job in the job queue (with deduplication)
 			$job = MessageIndexRebuildJob::newJob();
-			TranslateUtils::getJobQueueGroup()->push( $job );
+			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 
 			return false;
 		}

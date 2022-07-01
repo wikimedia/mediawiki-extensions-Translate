@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use BagOStuff;
 use ErrorPageError;
 use HTMLForm;
+use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
@@ -48,6 +49,8 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	private $bundleFactory;
 	/** @var SubpageListBuilder */
 	private $subpageBuilder;
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
 	/** @var ?string */
 	private $entityType;
 	private const PAGE_TITLE_MSG = [
@@ -70,13 +73,15 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		BagOStuff $mainCache,
 		PermissionManager $permissionManager,
 		TranslatableBundleFactory $bundleFactory,
-		SubpageListBuilder $subpageBuilder
+		SubpageListBuilder $subpageBuilder,
+		JobQueueGroup $jobQueueGroup
 	) {
 		parent::__construct( 'PageTranslationDeletePage', 'pagetranslation' );
 		$this->mainCache = $mainCache;
 		$this->permissionManager = $permissionManager;
 		$this->bundleFactory = $bundleFactory;
 		$this->subpageBuilder = $subpageBuilder;
+		$this->jobQueueGroup = $jobQueueGroup;
 	}
 
 	public function doesWrites() {
@@ -332,7 +337,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 			);
 		}
 
-		TranslateUtils::getJobQueueGroup()->push( $jobs );
+		$this->jobQueueGroup->push( $jobs );
 
 		$this->mainCache->set(
 			$this->mainCache->makeKey( 'pt-base', $target->getPrefixedText() ),

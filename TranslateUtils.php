@@ -459,18 +459,9 @@ class TranslateUtils {
 			return false;
 		}
 
-		if ( method_exists( $lb, 'hasOrMadeRecentPrimaryChanges' ) ) {
-			// MW 1.37+
-			return PHP_SAPI === 'cli' ||
-				RequestContext::getMain()->getRequest()->wasPosted() ||
-				$lb->hasOrMadeRecentPrimaryChanges();
-		}
-
-		// MW >=1.36
 		return PHP_SAPI === 'cli' ||
 			RequestContext::getMain()->getRequest()->wasPosted() ||
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$lb->hasOrMadeRecentMasterChanges();
+			$lb->hasOrMadeRecentPrimaryChanges();
 	}
 
 	/**
@@ -550,18 +541,6 @@ class TranslateUtils {
 	public static function isSupportedLanguageCode( string $code ): bool {
 		$all = self::getLanguageNames( null );
 		return isset( $all[ $code ] );
-	}
-
-	/**
-	 * Helper class to provide backward compatibility
-	 * @return JobQueueGroup
-	 */
-	public static function getJobQueueGroup(): JobQueueGroup {
-		if ( method_exists( MediaWikiServices::class, 'getJobQueueGroup' ) ) {
-			// MW 1.37+
-			return MediaWikiServices::getInstance()->getJobQueueGroup();
-		}
-		return JobQueueGroup::singleton();
 	}
 
 	public static function getTextFromTextContent( ?Content $content ): string {

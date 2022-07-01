@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job for updating translation memory.
@@ -42,6 +43,8 @@ class TTMServerMessageUpdateJob extends Job {
 	 * between 8 and 33 minutes.
 	 */
 	protected const WRITE_BACKOFF_EXPONENT = 7;
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
 
 	/**
 	 * @param MessageHandle $handle
@@ -68,6 +71,8 @@ class TTMServerMessageUpdateJob extends Job {
 				'errorCount' => 0,
 			]
 		);
+
+		$this->jobQueueGroup = MediaWikiServices::getInstance()->getJobQueueGroup();
 	}
 
 	/**
@@ -195,7 +200,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @param self $job
 	 */
 	protected function resend( self $job ) {
-		TranslateUtils::getJobQueueGroup()->push( $job );
+		$this->jobQueueGroup->push( $job );
 	}
 
 	private function runCommand( WritableTTMServer $ttmserver ) {
@@ -269,7 +274,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @param int $delay seconds to delay this job if possible
 	 */
 	public function setDelay( $delay ) {
-		$jobQueue = TranslateUtils::getJobQueueGroup()->get( $this->getType() );
+		$jobQueue = $this->jobQueueGroup->get( $this->getType() );
 		if ( !$delay || !$jobQueue->delayedJobsEnabled() ) {
 			return;
 		}

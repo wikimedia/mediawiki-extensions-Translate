@@ -36,7 +36,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 	 */
 	public static function onChange( MessageHandle $handle ) {
 		$job = self::newJob( $handle->getTitle() );
-		TranslateUtils::getJobQueueGroup()->push( $job );
+		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 
 		return true;
 	}

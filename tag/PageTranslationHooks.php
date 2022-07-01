@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\RevisionRecord;
@@ -384,6 +385,7 @@ class PageTranslationHooks {
 	): void {
 		$source = $page->getTitle();
 		$target = $source->getSubpage( $code );
+		$mwInstance = MediaWikiServices::getInstance();
 
 		// We don't know and don't care
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
@@ -393,11 +395,11 @@ class PageTranslationHooks {
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
-		TranslateUtils::getJobQueueGroup()->push( $job );
+		$mwInstance->getJobQueueGroup()->push( $job );
 
 		// Invalidate caches so that language bar is up-to-date
 		$pages = $page->getTranslationPages();
-		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
+		$wikiPageFactory = $mwInstance->getWikiPageFactory();
 		foreach ( $pages as $title ) {
 			if ( $title->equals( $target ) ) {
 				// Handled by the TranslateRenderJob
@@ -764,22 +766,15 @@ class PageTranslationHooks {
 			// @todo Use Message object instead.
 
 			call_user_func_array( [ $status, 'fatal' ], $msg );
-			// @todo Remove this line after this extension do not support mediawiki version 1.36 and before
-			$status->value = EditPage::AS_HOOK_ERROR_EXPECTED;
 			return false;
 		}
 
 		return true;
 	}
 
-	/**
-	 * @param mixed|null $title Should be ?PageIdentity once the extension is MW 1.36+
-	 * @param Content|null $content
-	 * @return TPException|null
-	 */
-	protected static function tpSyntaxError( $title, ?Content $content ): ?TPException {
+	protected static function tpSyntaxError( ?PageIdentity $page, ?Content $content ): ?TPException {
 		// T163254: Ignore translation markup on non-wikitext pages
-		if ( !$content instanceof WikitextContent || !$title ) {
+		if ( !$content instanceof WikitextContent || !$page ) {
 			return null;
 		}
 
@@ -817,7 +812,10 @@ class PageTranslationHooks {
 	) {
 		$content = $renderedRevision->getRevision()->getContent( SlotRecord::MAIN );
 
-		$e = self::tpSyntaxError( $renderedRevision->getRevision()->getPageAsLinkTarget(), $content );
+		$e = self::tpSyntaxError(
+			$renderedRevision->getRevision()->getPage(),
+			$content
+		);
 		if ( $e ) {
 			call_user_func_array( [ $hookStatus, 'fatal' ], $e->getMsg() );
 

@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use DeferredUpdates;
 use Html;
 use HTMLForm;
+use JobQueueGroup;
 use MessageGroups;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
@@ -64,14 +65,18 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	private $translate;
 	/** @var int */
 	private $numberOfShownLanguages;
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
 
 	// region SpecialPage overrides
 
 	public function __construct(
-		ProgressStatsTableFactory $progressStatsTableFactory
+		ProgressStatsTableFactory $progressStatsTableFactory,
+		JobQueueGroup $jobQueueGroup
 	) {
 		parent::__construct( 'MessageGroupStats' );
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
+		$this->jobQueueGroup = $jobQueueGroup;
 		$this->totals = MessageGroupStats::getEmptyStats();
 	}
 
@@ -165,7 +170,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 					$jobParams = $this->getCacheRebuildJobParameters( $this->target );
 					$jobParams[ 'purge' ] = $this->purge;
 					$job = MessageGroupStatsRebuildJob::newJob( $jobParams );
-					TranslateUtils::getJobQueueGroup()->push( $job );
+					$this->jobQueueGroup->push( $job );
 
 					// $this->purge is only true if request was posted
 					if ( !$this->purge ) {

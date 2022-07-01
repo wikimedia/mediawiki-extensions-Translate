@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use ContentHandler;
 use DifferenceEngine;
 use Html;
+use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
@@ -68,13 +69,16 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private $translatablePageParser;
 	/** @var LinkBatchFactory */
 	private $linkBatchFactory;
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
 		LanguageFactory $languageFactory,
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		TranslatablePageParser $translatablePageParser,
-		LinkBatchFactory $linkBatchFactory
+		LinkBatchFactory $linkBatchFactory,
+		JobQueueGroup $jobQueueGroup
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageNameUtils = $languageNameUtils;
@@ -82,6 +86,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->linkBatchFactory = $linkBatchFactory;
+		$this->jobQueueGroup = $jobQueueGroup;
 	}
 
 	public function doesWrites(): bool {
@@ -189,7 +194,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$sharedGroupIds = MessageGroups::getSharedGroups( $group );
 			if ( $sharedGroupIds !== [] ) {
 				$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $sharedGroupIds );
-				TranslateUtils::getJobQueueGroup()->push( $job );
+				$this->jobQueueGroup->push( $job );
 			}
 
 			// Show updated page with a notice
@@ -1144,7 +1149,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		MessageIndex::singleton()->storeInterim( $group, $newKeys );
 
 		$job = TranslationsUpdateJob::newFromPage( $page, $sections );
-		TranslateUtils::getJobQueueGroup()->push( $job );
+		$this->jobQueueGroup->push( $job );
 
 		$this->handlePriorityLanguages( $this->getRequest(), $page );
 

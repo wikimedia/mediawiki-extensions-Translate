@@ -46,16 +46,9 @@ return [
 	},
 
 	'Translate:EntitySearch' => static function ( MediaWikiServices $services ): EntitySearch {
-		// BC for MW <= 1.36
-		if ( method_exists( $services, 'getCollationFactory' ) ) {
-			$collation = $services->getCollationFactory()->makeCollation( 'uca-default-u-kn' );
-		} else {
-			$collation = Collation::factory( 'uca-default-u-kn' );
-		}
-
 		return new EntitySearch(
 			$services->getMainWANObjectCache(),
-			$collation,
+			$services->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
 			MessageGroups::singleton(),
 			$services->getNamespaceInfo(),
 			$services->get( 'Translate:MessageIndex' ),
@@ -70,7 +63,7 @@ return [
 		return new ExternalMessageSourceStateImporter(
 			$services->getMainConfig(),
 			$services->get( 'Translate:GroupSynchronizationCache' ),
-			TranslateUtils::getJobQueueGroup(),
+			$services->getJobQueueGroup(),
 			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
 			MessageIndex::singleton()
 		);
@@ -85,7 +78,7 @@ return [
 	'Translate:MessageBundleStore' => static function ( MediaWikiServices $services ): MessageBundleStore {
 		return new MessageBundleStore(
 			new RevTagStore(),
-			TranslateUtils::getJobQueueGroup(),
+			$services->getJobQueueGroup(),
 			$services->getLanguageNameUtils(),
 			$services->get( 'Translate:MessageIndex' )
 		);
@@ -148,7 +141,7 @@ return [
 	{
 		return new TranslatableBundleMover(
 			$services->getMovePageFactory(),
-			TranslateUtils::getJobQueueGroup(),
+			$services->getJobQueueGroup(),
 			$services->getLinkBatchFactory(),
 			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->get( 'Translate:SubpageListBuilder' ),
@@ -167,7 +160,7 @@ return [
 	{
 		return new TranslatablePageStore(
 			$services->get( 'Translate:MessageIndex' ),
-			TranslateUtils::getJobQueueGroup(),
+			$services->getJobQueueGroup(),
 			new RevTagStore(),
 			$services->getDBLoadBalancer()
 		);
@@ -206,7 +199,7 @@ return [
 		return new TranslatorActivity(
 			$services->getMainObjectStash(),
 			$query,
-			TranslateUtils::getJobQueueGroup()
+			$services->getJobQueueGroup()
 		);
 	},
 

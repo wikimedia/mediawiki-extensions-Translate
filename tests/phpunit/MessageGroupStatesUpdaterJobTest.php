@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @group Database
@@ -176,8 +177,9 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 	}
 
 	protected static function translateRunJobs() {
+		$jobQueueGroup = MediaWikiServices::getInstance()->getJobQueueGroup();
 		do {
-			$job = TranslateUtils::getJobQueueGroup()->pop();
+			$job = $jobQueueGroup->pop();
 			if ( !$job ) {
 				break;
 			}

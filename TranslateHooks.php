@@ -20,7 +20,6 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpeci
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
-use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
@@ -87,7 +86,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 					'LanguageFactory',
 					'Translate:TranslationUnitStoreFactory',
 					'Translate:TranslatablePageParser',
-					'LinkBatchFactory'
+					'LinkBatchFactory',
+					'JobQueueGroup',
 				]
 			];
 			$wgSpecialPages['PageTranslationDeletePage'] = [
@@ -96,7 +96,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 					'MainObjectStash',
 					'PermissionManager',
 					'Translate:TranslatableBundleFactory',
-					'Translate:SubpageListBuilder'
+					'Translate:SubpageListBuilder',
+					'JobQueueGroup',
 				]
 			];
 
@@ -205,10 +206,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgHooks['ParserOutputPostCacheTransform'][] =
 				'PageTranslationHooks::onParserOutputPostCacheTransform';
 
-			if ( interface_exists( BeforeParserFetchTemplateRevisionRecordHook::class ) ) {
-				$wgHooks['BeforeParserFetchTemplateRevisionRecord'][] =
-					'PageTranslationHooks::fetchTranslatableTemplateAndTitle';
-			}
+			$wgHooks['BeforeParserFetchTemplateRevisionRecord'][] =
+				'PageTranslationHooks::fetchTranslatableTemplateAndTitle';
 
 			// Set the page content language
 			$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';
@@ -950,8 +949,6 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 						]
 					]
 				) );
-				// @todo Remove this line after this extension do not support mediawiki version 1.36 and before
-				$status->value = EditPage::AS_HOOK_ERROR_EXPECTED;
 				return false;
 			}
 		}

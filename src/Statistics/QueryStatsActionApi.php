@@ -4,11 +4,12 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use ApiBase;
+use ApiQuery;
 use ApiQueryBase;
 use DeferredUpdates;
 use IJobSpecification;
+use JobQueueGroup;
 use MessageGroupStats;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -20,6 +21,19 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @since 2012-11-30
  */
 abstract class QueryStatsActionApi extends ApiQueryBase {
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
+
+	public function __construct(
+		ApiQuery $queryModule,
+		string $moduleName,
+		string $paramPrefix,
+		JobQueueGroup $jobQueueGroup
+	) {
+		parent::__construct( $queryModule, $moduleName, $paramPrefix );
+		$this->jobQueueGroup = $jobQueueGroup;
+	}
+
 	public function getCacheMode( $params ): string {
 		return 'public';
 	}
@@ -72,8 +86,7 @@ abstract class QueryStatsActionApi extends ApiQueryBase {
 
 		if ( $incomplete ) {
 			DeferredUpdates::addCallableUpdate( function () use ( $target ): void {
-				$jobQueue = TranslateUtils::getJobQueueGroup();
-				$jobQueue->push( $this->getCacheRebuildJob( $target ) );
+				$this->jobQueueGroup->push( $this->getCacheRebuildJob( $target ) );
 			} );
 		}
 	}

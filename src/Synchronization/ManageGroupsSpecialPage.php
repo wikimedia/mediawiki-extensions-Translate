@@ -10,6 +10,7 @@ use DisabledSpecialPage;
 use Exception;
 use FileBasedMessageGroup;
 use Html;
+use JobQueueGroup;
 use Language;
 use LinkBatch;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
@@ -65,12 +66,15 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	private $synchronizationCache;
 	/** @var DisplayGroupSynchronizationInfo */
 	private $displayGroupSyncInfo;
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
 
 	public function __construct(
 		Language $contLang,
 		NamespaceInfo $nsInfo,
 		RevisionLookup $revLookup,
-		GroupSynchronizationCache $synchronizationCache
+		GroupSynchronizationCache $synchronizationCache,
+		JobQueueGroup $jobQueueGroup
 	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
@@ -79,6 +83,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->revLookup = $revLookup;
 		$this->synchronizationCache = $synchronizationCache;
 		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this, $this->getLinkRenderer() );
+		$this->jobQueueGroup = $jobQueueGroup;
 	}
 
 	public function doesWrites() {
@@ -1033,7 +1038,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$renameGroupIds = array_keys( array_filter( $renameJobs ) );
 		$uniqueGroupIds = array_unique( array_merge( $modificationGroupIds, $renameGroupIds ) );
 		$messageIndexInstance = MessageIndex::singleton();
-		$jobQueueInstance = TranslateUtils::getJobQueueGroup();
+		$jobQueueInstance = $this->jobQueueGroup;
 
 		foreach ( $uniqueGroupIds as $groupId ) {
 			$messages = [];

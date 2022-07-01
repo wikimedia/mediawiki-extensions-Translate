@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use ApiQuery;
 use IJobSpecification;
+use JobQueueGroup;
 use MessageGroups;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
@@ -18,8 +19,12 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @license GPL-2.0-or-later
  */
 class QueryLanguageStatsActionApi extends QueryStatsActionApi {
-	public function __construct( ApiQuery $query, string $moduleName ) {
-		parent::__construct( $query, $moduleName, 'ls' );
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		JobQueueGroup $jobQueueGroup
+	) {
+		parent::__construct( $query, $moduleName, 'ls', $jobQueueGroup );
 	}
 
 	// ApiStatsQuery methods
