@@ -33,6 +33,7 @@
 	"translate-fuzzybot-desc": "Detta är ett speciellt systemkonto som används av MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] för att underhålla översättningar.\nDetta konto är en del av MediaWiki-programvaran och ägs inte av någon användare.",
 	"translate-taskui-export-to-file": "Exportera i ursprungligt format",
 	"translate-taskui-export-as-po": "Exportera för översättning offline",
+	"translate-export-csv-message-title": "Titel på översättningsmeddelande",
 	"translate-taction-translate": "Översätt",
 	"translate-taction-proofread": "Granska",
 	"translate-taction-lstats": "Språkstatistik",

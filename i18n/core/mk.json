@@ -16,7 +16,7 @@
 	"translate-taskui-export-to-file": "Извези во матичен формат",
 	"translate-taskui-export-as-po": "Извези за вонмрежно преведување",
 	"translate-taskui-export-as-csv": "Извези во CSV-формат",
-	"translate-export-csv-unit-title": "Наслов на преводната единица",
+	"translate-export-csv-message-title": "Наслов на поракта за преведување",
 	"translate-export-csv-definition": "Одредба на пораката",
 	"translate-taction-translate": "Преведи",
 	"translate-taction-proofread": "Провери",

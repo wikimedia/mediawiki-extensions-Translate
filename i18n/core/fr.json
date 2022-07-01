@@ -52,7 +52,7 @@
 	"translate-taskui-export-to-file": "Exporter au format natif",
 	"translate-taskui-export-as-po": "Exporter pour une traduction hors-ligne",
 	"translate-taskui-export-as-csv": "Exporter au format CSV",
-	"translate-export-csv-unit-title": "Titre de l’unité de traduction",
+	"translate-export-csv-message-title": "Titre du message de traduction",
 	"translate-export-csv-definition": "Définition du message",
 	"translate-taction-translate": "Traduire",
 	"translate-taction-proofread": "Relecture",
