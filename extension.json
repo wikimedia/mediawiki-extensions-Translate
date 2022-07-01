@@ -401,6 +401,12 @@
 		"translationreview/message": "TranslateLogFormatter",
 		"translationreview/group": "TranslateLogFormatter"
 	},
+	"ActionFilteredLogs": {
+		"translationreview": {
+			"message": [ "message" ],
+			"group": [ "group" ]
+		}
+	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "Translate"

@@ -443,5 +443,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Invalid priority language format in metadata. Priority languages must be an array of strings.",
 	"translate-messagebundle-group-description": "Messages of a message bundle defined on page [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Setting source language of the message bundle as per metadata.",
-	"translate-messagebundle-sourcelanguage-changed": "The source language of a message bundle cannot be changed once it has been created."
+	"translate-messagebundle-sourcelanguage-changed": "The source language of a message bundle cannot be changed once it has been created.",
+	"log-action-filter-translationreview": "Type of action",
+	"log-action-filter-translationreview-message": "Review of individual translation messages",
+	"log-action-filter-translationreview-group": "Changes in the status of the progress of translations"
 }
