@@ -134,7 +134,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		// Check token for all POST actions here
-		if ( $request->wasPosted() && !$user->matchEditToken( $request->getText( 'token' ) ) ) {
+		$csrfTokenSet = $this->getContext()->getCsrfTokenSet();
+		if ( $request->wasPosted() && !$csrfTokenSet->matchTokenField( 'token' ) ) {
 			throw new PermissionsError( 'pagetranslation' );
 		}
 
@@ -366,7 +367,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		];
 
 		$params['title'] = $this->getPageTitle()->getPrefixedText();
-		$params['token'] = $this->getUser()->getEditToken();
+		$params['token'] = $this->getContext()->getCsrfTokenSet()->getToken();
 
 		$hidden = '';
 		foreach ( $params as $key => $value ) {
@@ -396,7 +397,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			Html::hidden( 'do', 'unlink' ) .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'target', $target->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
 			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedText() )->parseAsBlock() .
 			Xml::submitButton(
 				$this->msg( 'tpt-unlink-button' )->text(),
@@ -761,7 +762,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'revision', $page->getRevision() ) .
 			Html::hidden( 'target', $page->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() )
+			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() )
 		);
 
 		$out->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );

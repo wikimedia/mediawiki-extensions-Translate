@@ -107,9 +107,10 @@ class MessageWebImporter {
 			'class' => 'mw-translate-manage'
 		];
 
+		$csrfTokenSet = RequestContext::getMain()->getCsrfTokenSet();
 		return Xml::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+			Html::hidden( 'token', $csrfTokenSet->getToken() ) .
 			Html::hidden( 'process', 1 );
 	}
 
@@ -118,11 +119,13 @@ class MessageWebImporter {
 	}
 
 	protected function allowProcess(): bool {
-		$request = RequestContext::getMain()->getRequest();
+		$context = RequestContext::getMain();
+		$request = $context->getRequest();
+		$csrfTokenSet = $context->getCsrfTokenSet();
 
 		return $request->wasPosted()
 			&& $request->getBool( 'process', false )
-			&& $this->getUser()->matchEditToken( $request->getVal( 'token' ) );
+			&& $csrfTokenSet->matchTokenField( 'token' );
 	}
 
 	protected function getActions(): array {

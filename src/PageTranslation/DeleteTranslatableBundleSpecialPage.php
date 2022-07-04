@@ -191,7 +191,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	 * @return bool
 	 */
 	private function checkToken(): bool {
-		return $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) );
+		return $this->getContext()->getCsrfTokenSet()->matchTokenField( 'wpEditToken' );
 	}
 
 	/** The query form. */

@@ -139,8 +139,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$token = $req->getVal( 'token' );
-		if ( !$this->hasRight || !$user->matchEditToken( $token ) ) {
+		$csrfTokenSet = $this->getContext()->getCsrfTokenSet();
+		if ( !$this->hasRight || !$csrfTokenSet->matchTokenField( 'token' ) ) {
 			throw new PermissionsError( self::RIGHT );
 		}
 
@@ -183,7 +183,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText(), [
 				'id' => 'smgPageTitle'
 			] ) .
-			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
 			Html::hidden( 'changesetModifiedTime',
 				MessageChangeStorage::getLastModifiedTime( $this->cdb ) ) .
 			$this->getLegend()

@@ -58,7 +58,8 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 			return;
 		}
 
-		if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'token' ) ) ) {
+		$csrfTokenSet = $this->getContext()->getCsrfTokenSet();
+		if ( !$csrfTokenSet->matchTokenField( 'token' ) ) {
 			$this->getOutput()->addWikiMsg( 'session_fail_preview' );
 			$this->outputForm();
 
@@ -147,7 +148,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			] ) .
-				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+				Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::inputLabel(
 					$this->msg( 'translate-import-from-local' )->text(),
