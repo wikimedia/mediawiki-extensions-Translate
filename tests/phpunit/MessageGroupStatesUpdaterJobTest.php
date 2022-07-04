@@ -6,7 +6,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
  * @group Database
  * @group medium
  */
-class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
+class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$this->setMwGlobals( [
@@ -124,7 +124,11 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'inprogress', $currentState, 'in progress after first translation' );
 
 		// First review
-		ApiTranslationReview::doReview( $user, self::getRevisionRecord( $status ), __METHOD__ );
+		$this->doApiRequestWithToken( [
+			'action' => 'translationreview',
+			'revision' => self::getRevisionRecordId( $status )
+		], null, $user );
+
 		self::translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress while untranslated messages' );
@@ -141,7 +145,10 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( 'proofreading', $currentState, 'proofreading after second translation' );
 
 		// Second review
-		ApiTranslationReview::doReview( $user, self::getRevisionRecord( $status ), __METHOD__ );
+		$this->doApiRequestWithToken( [
+			'action' => 'translationreview',
+			'revision' => self::getRevisionRecordId( $status )
+		], null, $user );
 		self::translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'ready', $currentState, 'ready when all proofread' );
@@ -162,10 +169,10 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	protected static function getRevisionRecord( Status $s ) {
+	protected static function getRevisionRecordId( Status $s ) {
 		$value = $s->getValue();
 
-		return $value['revision-record'];
+		return $value['revision-record']->getId();
 	}
 
 	protected static function translateRunJobs() {

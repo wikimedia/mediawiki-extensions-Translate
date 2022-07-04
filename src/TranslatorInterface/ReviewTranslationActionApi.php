@@ -1,67 +1,73 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use ApiBase;
+use ApiMain;
+use ManualLogEntry;
+use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
+use MessageHandle;
+use Status;
+use TitleFormatter;
+use User;
+use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\ILoadBalancer;
+
 /**
  * API module for marking translations as reviewed
- * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- */
-
-use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
-use Wikimedia\ParamValidator\ParamValidator;
-
-/**
- * API module for marking translations as reviewed
- *
  * @ingroup API TranslateAPI
  */
-class ApiTranslationReview extends ApiBase {
+class ReviewTranslationActionApi extends ApiBase {
 	protected static $right = 'translate-messagereview';
+	/** @var RevisionLookup */
+	private $revisionLookup;
+	/** @var TitleFormatter */
+	private $titleFormatter;
+	/** @var ILoadBalancer */
+	private $loadBalancer;
+
+	public function __construct(
+		ApiMain $main,
+		string $moduleName,
+		RevisionLookup $revisionLookup,
+		TitleFormatter $titleFormatter,
+		ILoadBalancer $loadBalancer
+	) {
+		parent::__construct( $main, $moduleName );
+		$this->revisionLookup = $revisionLookup;
+		$this->titleFormatter = $titleFormatter;
+		$this->loadBalancer = $loadBalancer;
+	}
 
 	public function execute() {
 		$this->checkUserRightsAny( self::$right );
 
 		$params = $this->extractRequestParams();
 
-		$revRecord = MediaWikiServices::getInstance()
-			->getRevisionLookup()
-			->getRevisionById( $params['revision'] );
+		$revRecord = $this->revisionLookup->getRevisionById( $params['revision'] );
 		if ( !$revRecord ) {
 			$this->dieWithError( [ 'apierror-nosuchrevid', $params['revision'] ], 'invalidrevision' );
 		}
 
-		$error = self::getReviewBlockers( $this->getUser(), $revRecord );
-		switch ( $error ) {
-			case '':
-				// Everything is okay
-				break;
-			case 'permissiondenied':
-				$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
-				// dieWithError prevents continuation
-			case 'blocked':
+		$status = $this->getReviewBlockers( $this->getUser(), $revRecord );
+		if ( !$status->isGood() ) {
+			if ( $status->hasMessage( 'blocked' ) ) {
 				$this->dieBlocked( $this->getUser()->getBlock() );
-				// dieBlocked prevents continuation
-			case 'unknownmessage':
-				$this->dieWithError( 'apierror-translate-unknownmessage', $error );
-				// dieWithError prevents continuation
-			case 'owntranslation':
-				$this->dieWithError( 'apierror-translate-owntranslation', $error );
-				// dieWithError prevents continuation
-			case 'fuzzymessage':
-				$this->dieWithError( 'apierror-translate-fuzzymessage', $error );
-				// dieWithError prevents continuation
-			default:
-				$this->dieWithError( [ 'apierror-unknownerror', $error ], $error );
+			} else {
+				$this->dieStatus( $status );
+			}
 		}
 
-		$ok = self::doReview( $this->getUser(), $revRecord );
+		$ok = $this->doReview( $this->getUser(), $revRecord );
 		if ( !$ok ) {
 			$this->addWarning( 'apiwarn-translate-alreadyreviewedbyyou' );
 		}
 
-		$prefixedText = MediaWikiServices::getInstance()
-			->getTitleFormatter()
-			->getPrefixedText( $revRecord->getPageAsLinkTarget() );
+		$prefixedText = $this->titleFormatter->getPrefixedText( $revRecord->getPageAsLinkTarget() );
 		$output = [ 'review' => [
 			'title' => $prefixedText,
 			'pageid' => $revRecord->getPageId(),
@@ -73,13 +79,10 @@ class ApiTranslationReview extends ApiBase {
 
 	/**
 	 * Executes the real stuff. No checks done!
-	 * @param User $user
-	 * @param RevisionRecord $revRecord
-	 * @param null|string $comment
 	 * @return bool whether the action was recorded.
 	 */
-	public static function doReview( User $user, RevisionRecord $revRecord, $comment = null ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+	private function doReview( User $user, RevisionRecord $revRecord ): bool {
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$table = 'translate_reviews';
 		$row = [
 			'trr_user' => $user->getId(),
@@ -98,7 +101,6 @@ class ApiTranslationReview extends ApiBase {
 		$entry = new ManualLogEntry( 'translationreview', 'message' );
 		$entry->setPerformer( $user );
 		$entry->setTarget( $title );
-		$entry->setComment( $comment );
 		$entry->setParameters( [
 			'4::revision' => $revRecord->getId(),
 		] );
@@ -107,53 +109,50 @@ class ApiTranslationReview extends ApiBase {
 		$entry->publish( $logid );
 
 		$handle = new MessageHandle( $title );
-		Hooks::run( 'TranslateEventTranslationReview', [ $handle ] );
+		$this->getHookContainer()->run( 'TranslateEventTranslationReview', [ $handle ] );
 
 		return true;
 	}
 
 	/**
 	 * Validates review action by checking permissions and other things.
-	 * @param User $user
-	 * @param RevisionRecord $revRecord
-	 * @return string Error key or empty string if review is allowed.
-	 * @since 2012-09-24
+	 * @return Status Contains error key that describes the review blocker.
 	 */
-	public static function getReviewBlockers( User $user, RevisionRecord $revRecord ) {
+	private function getReviewBlockers( User $user, RevisionRecord $revRecord ): Status {
 		if ( !$user->isAllowed( self::$right ) ) {
-			return 'permissiondenied';
+			return Status::newFatal( 'apierror-permissiondenied-generic' );
 		}
 
 		if ( $user->getBlock() ) {
-			return 'blocked';
+			return Status::newFatal( 'blocked' );
 		}
 
 		$title = $revRecord->getPageAsLinkTarget();
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			return 'unknownmessage';
+			return Status::newFatal( 'apierror-translate-unknownmessage' );
 		}
 
 		if ( $user->equals( $revRecord->getUser() ) ) {
-			return 'owntranslation';
+			return Status::newFatal( 'apierror-translate-owntranslation' );
 		}
 
 		if ( $handle->isFuzzy() ) {
-			return 'fuzzymessage';
+			return Status::newFatal( 'apierror-translate-fuzzymessage' );
 		}
 
-		return '';
+		return Status::newGood();
 	}
 
-	public function isWriteMode() {
+	public function isWriteMode(): bool {
 		return true;
 	}
 
-	public function needsToken() {
+	public function needsToken(): string {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'revision' => [
 				ParamValidator::PARAM_TYPE => 'integer',
@@ -166,7 +165,7 @@ class ApiTranslationReview extends ApiBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=translationreview&revision=1&token=foo'
 				=> 'apihelp-translationreview-example-1',
