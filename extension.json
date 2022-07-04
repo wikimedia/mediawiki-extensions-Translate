@@ -76,7 +76,6 @@
 		"ApiStatsQuery": "api/ApiStatsQuery.php",
 		"ApiTranslateSandbox": "api/ApiTranslateSandbox.php",
 		"ApiTranslationCheck": "api/ApiTranslationCheck.php",
-		"ApiTranslationReview": "api/ApiTranslationReview.php",
 		"ApiTranslationStash": "api/ApiTranslationStash.php",
 		"ApiTTMServer": "api/ApiTTMServer.php",
 		"AppleFFS": "ffs/AppleFFS.php",
@@ -371,7 +370,14 @@
 				"Translate:EntitySearch"
 			]
 		},
-		"translationreview": "ApiTranslationReview",
+		"translationreview": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\ReviewTranslationActionApi",
+			"services": [
+				"RevisionLookup",
+				"TitleFormatter",
+				"DBLoadBalancer"
+			]
+		},
 		"translationcheck": "ApiTranslationCheck",
 		"translationstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",
 		"managegroupsynchronizationcache": {
