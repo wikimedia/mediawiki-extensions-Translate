@@ -8,7 +8,6 @@ use FileBasedMessageGroup;
 use GettextFFS;
 use GettextParseException;
 use Html;
-use MediaWiki\MediaWikiServices;
 use MessageGroupBase;
 use MessageGroups;
 use SpecialPage;
@@ -24,9 +23,12 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ImportTranslationsSpecialPage extends SpecialPage {
-	/** Set up and fill some dependencies. */
-	public function __construct() {
+	/** @var BagOStuff */
+	private $cache;
+
+	public function __construct( BagOStuff $cache ) {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
+		$this->cache = $cache;
 	}
 
 	public function doesWrites() {
@@ -210,27 +212,20 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		return [ 'ok', $parseOutput ];
 	}
 
-	private function getCache(): BagOStuff {
-		return MediaWikiServices::getInstance()->getMainObjectStash();
-	}
-
 	private function setCachedData( $data ): void {
-		$cache = $this->getCache();
-		$key = $cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
-		$cache->set( $key, $data, 60 * 30 );
+		$key = $this->cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
+		$this->cache->set( $key, $data, 60 * 30 );
 	}
 
 	private function getCachedData() {
-		$cache = $this->getCache();
-		$key = $cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
+		$key = $this->cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
 
-		return $cache->get( $key );
+		return $this->cache->get( $key );
 	}
 
 	private function deleteCachedData(): bool {
-		$cache = $this->getCache();
-		$key = $cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
+		$key = $this->cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
 
-		return $cache->delete( $key );
+		return $this->cache->delete( $key );
 	}
 }

@@ -289,7 +289,12 @@
 				"Translate:ProgressStatsTableFactory"
 			]
 		},
-		"ImportTranslations": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ImportTranslationsSpecialPage",
+		"ImportTranslations": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ImportTranslationsSpecialPage",
+			"services": [
+				"MainObjectStash"
+			]
+		},
 		"ExportTranslations": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ExportTranslationsSpecialPage",
 		"ManageMessageGroups": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage",
