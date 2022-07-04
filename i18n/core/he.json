@@ -24,6 +24,7 @@
 	"translate-taskui-export-to-file": "לייצא בתסדיר ילידי",
 	"translate-taskui-export-as-po": "לייצא לתרגום בלתי־מקוון",
 	"translate-taskui-export-as-csv": "יצוא בתסדיר CSV",
+	"translate-export-csv-message-title": "כותרת הודעת תרגום",
 	"translate-export-csv-definition": "הגדרת ההודעה",
 	"translate-taction-translate": "תרגום",
 	"translate-taction-proofread": "סקירה",
@@ -447,5 +448,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "תסדיר שפה מועדפת בלתי־תקין במטא־נתונים. שפות מועדפות צריכות להיות מערך של מחרוזות.",
 	"translate-messagebundle-group-description": "הודעות מתוך חבילת הודעות שמוגדרת בדף [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "הגדרת שפת המקור של חבילת ההודעות לפי המטא־נתונים.",
-	"translate-messagebundle-sourcelanguage-changed": "לא ניתן לשנות את שפת המקור של חבילת הודעות אחרי שהיא נוצרה."
+	"translate-messagebundle-sourcelanguage-changed": "לא ניתן לשנות את שפת המקור של חבילת הודעות אחרי שהיא נוצרה.",
+	"log-action-filter-translationreview": "סוג הפעולה",
+	"log-action-filter-translationreview-message": "סקירה של הודעות תרגום בודדות",
+	"log-action-filter-translationreview-group": "שינויים במצב התקדמות התרגומים"
 }

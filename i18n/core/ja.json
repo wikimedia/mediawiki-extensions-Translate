@@ -156,6 +156,7 @@
 	"translate-statsf-submit": "プレビュー",
 	"translate-statsf-unknown-error": "不明なエラーが発生しました。",
 	"translate-tag-page-desc": "ウィキページ [[$2|$1]] に対する $3 ($4) からの翻訳です。",
+	"translate-tag-page-wikipage-desc": "ウィキページ [[$2]] に対する <bdi>$3</bdi> ($4) から <bdi>$5</bdi> ($6) への[[$1|翻訳]]",
 	"translate-sidebar-alltrans": "他言語での翻訳",
 	"translations": "全翻訳結果",
 	"translations-summary": "既存のすべての翻訳を表示するには下欄にメッセージ名を入力してください。",

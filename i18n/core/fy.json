@@ -437,5 +437,7 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "De taalkoade fan 'e boarne \"$1\" wurdt net stipe.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "Unjildige {{PLURAL:$2|koade fan taal|koades fan talen}} mei prioriteit yn 'e metadata: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Unjildige opmaak fan talen mei prioriteit yn 'e metadata. Talen mei prioriteit moatte in groepsrige fan tekenrigen wêze.",
-	"translate-messagebundle-group-description": "Berjochten fan in berjochtebondel definiearre op 'e side [[$2|$1]]."
+	"translate-messagebundle-group-description": "Berjochten fan in berjochtebondel definiearre op 'e side [[$2|$1]].",
+	"translate-messagebundle-change-sourcelanguage": "Boarnetaal fan 'e berjochtebondel ynsteld neffens metadata.",
+	"translate-messagebundle-sourcelanguage-changed": "De boarnetaal fan in berjochtebondel kin net wizige wurde nei't er al oanmakke is."
 }
