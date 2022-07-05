@@ -1,27 +1,55 @@
 <?php
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TtmServer;
+
+use ApiBase;
+use ApiMain;
+use Config;
+use CrossLanguageTranslationSearchQuery;
+use MediaWiki\Config\ServiceOptions;
+use SearchableTTMServer;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 /**
  * API module for search translations
- * @since 2015.07
  * @license GPL-2.0-or-later
  */
-class ApiSearchTranslations extends ApiBase {
-	public function execute() {
-		global $wgTranslateTranslationServices;
+class SearchTranslationsActionApi extends ApiBase {
+	/** @var TtmServerFactory */
+	private $ttmServerFactory;
+	/** @var ServiceOptions */
+	private $options;
 
+	private const CONSTRUCTOR_OPTIONS = [
+		'LanguageCode',
+		'TranslateTranslationDefaultService',
+		'TranslateTranslationServices',
+	];
+
+	public function __construct(
+		ApiMain $main,
+		string $moduleName,
+		Config $config,
+		TtmServerFactory $ttmServerFactory
+	) {
+		parent::__construct( $main, $moduleName );
+		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
+		$this->ttmServerFactory = $ttmServerFactory;
+	}
+
+	public function execute(): void {
 		if ( !$this->getAvailableTranslationServices() ) {
 			$this->dieWithError( 'apierror-translate-notranslationservices' );
 		}
 
 		$params = $this->extractRequestParams();
 
-		$config = $wgTranslateTranslationServices[$params['service']];
-		/** @var SearchableTTMServer $server */
-		$server = TTMServer::factory( $config );
-		'@phan-var SearchableTTMServer $server';
+		$server = $this->ttmServerFactory->create( $params[ 'service' ] );
+		if ( !$server instanceof SearchableTTMServer ) {
+			$this->dieWithError( 'apierror-translate-notranslationservices' );
+		}
 
 		$result = $this->getResult();
 
@@ -42,20 +70,21 @@ class ApiSearchTranslations extends ApiBase {
 		$result->addValue( 'search', 'translations', $documents );
 	}
 
-	protected function getAvailableTranslationServices() {
-		global $wgTranslateTranslationServices;
+	private function getAvailableTranslationServices(): array {
+		$translationServices = $this->options->get( 'TranslateTranslationServices' );
 
 		$good = [];
-		foreach ( $wgTranslateTranslationServices as $id => $config ) {
-			if ( TTMServer::factory( $config ) instanceof SearchableTTMServer ) {
-				$good[] = $id;
+		foreach ( array_keys( $translationServices ) as $serviceId ) {
+			$ttmServer = $this->ttmServerFactory->create( $serviceId );
+			if ( $ttmServer instanceof SearchableTTMServer ) {
+				$good[] = $serviceId;
 			}
 		}
 
 		return $good;
 	}
 
-	protected function getAllowedFilters() {
+	protected function getAllowedFilters(): array {
 		return [
 			'',
 			'translated',
@@ -64,9 +93,7 @@ class ApiSearchTranslations extends ApiBase {
 		];
 	}
 
-	protected function getAllowedParams() {
-		global $wgLanguageCode,
-			$wgTranslateTranslationDefaultService;
+	protected function getAllowedParams(): array {
 		$available = $this->getAvailableTranslationServices();
 
 		$filters = $this->getAllowedFilters();
@@ -81,7 +108,7 @@ class ApiSearchTranslations extends ApiBase {
 			],
 			'sourcelanguage' => [
 				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_DEFAULT => $wgLanguageCode,
+				ParamValidator::PARAM_DEFAULT => $this->options->get( 'LanguageCode' ),
 			],
 			'language' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -119,13 +146,14 @@ class ApiSearchTranslations extends ApiBase {
 		if ( $available ) {
 			// Don't add this if no services are available, it makes
 			// ApiStructureTest unhappy
-			$ret['service'][ParamValidator::PARAM_DEFAULT] = $wgTranslateTranslationDefaultService;
+			$ret['service'][ParamValidator::PARAM_DEFAULT] =
+				$this->options->get( 'TranslateTranslationDefaultService' );
 		}
 
 		return $ret;
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=searchtranslations&language=fr&query=aide'
 				=> 'apihelp-searchtranslations-example-1',

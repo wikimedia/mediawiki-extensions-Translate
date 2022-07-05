@@ -71,7 +71,6 @@
 		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
 		"ApiQueryMessageTranslations": "api/ApiQueryMessageTranslations.php",
-		"ApiSearchTranslations": "api/ApiSearchTranslations.php",
 		"ApiStatsQuery": "api/ApiStatsQuery.php",
 		"ApiTranslateSandbox": "api/ApiTranslateSandbox.php",
 		"ApiTranslationCheck": "api/ApiTranslationCheck.php",
@@ -388,7 +387,13 @@
 			]
 		},
 		"ttmserver": "ApiTTMServer",
-		"searchtranslations": "ApiSearchTranslations"
+		"searchtranslations": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TtmServer\\SearchTranslationsActionApi",
+			"services": [
+				"MainConfig",
+				"Translate:TtmServerFactory"
+			]
+		}
 	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
