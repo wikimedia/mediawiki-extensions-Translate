@@ -443,5 +443,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Неважечки формат на приоритетен јазик во метаподатоците. Приоритетните јазици мора да бидат строј од низи.",
 	"translate-messagebundle-group-description": "Пораки од купче дефинирани на страницата [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Задавање на изворен јазик на купчето пораки согласно метаподатоците.",
-	"translate-messagebundle-sourcelanguage-changed": "Изворниот јазик на купчето пораки не може да се смени откако ќе се создаде."
+	"translate-messagebundle-sourcelanguage-changed": "Изворниот јазик на купчето пораки не може да се смени откако ќе се создаде.",
+	"log-action-filter-translationreview": "Вид дејство",
+	"log-action-filter-translationreview-message": "Проверка на поединечни пораки за превод",
+	"log-action-filter-translationreview-group": "Промени во напредокот на преведувањата"
 }

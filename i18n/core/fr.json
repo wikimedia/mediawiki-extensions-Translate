@@ -479,5 +479,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Format de langue prioritaire non valide dans les métadonnées. Les langues prioritaires doivent être une table de chaînes.",
 	"translate-messagebundle-group-description": "Messages d'un faisceau de messages défini sur la page [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Configuration de la langue source du groupe de messages conformément aux métadonnées.",
-	"translate-messagebundle-sourcelanguage-changed": "La langue source d’un groupe de messages ne peut pas être changée une fois qu’il a été créé."
+	"translate-messagebundle-sourcelanguage-changed": "La langue source d’un groupe de messages ne peut pas être changée une fois qu’il a été créé.",
+	"log-action-filter-translationreview": "Type d’action",
+	"log-action-filter-translationreview-message": "Revue des messages de traduction individuels",
+	"log-action-filter-translationreview-group": "Modifications d’état de la progression des traductions"
 }

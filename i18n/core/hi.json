@@ -24,6 +24,7 @@
 	"translate-taskui-export-to-file": "असली फॉर्मेट में निर्यात करें",
 	"translate-taskui-export-as-po": "ऑफलाइन अनुवाद के लिए निर्यात करें",
 	"translate-taskui-export-as-csv": "CSV प्रारूप में निर्यात करें",
+	"translate-export-csv-message-title": "अनुवाद संदेश का शीर्षक",
 	"translate-export-csv-definition": "संदेश की व्याख्या",
 	"translate-taction-translate": "अनुवाद करें",
 	"translate-taction-proofread": "जाँचें",
@@ -80,7 +81,7 @@
 	"translate-checks-gettext-plural-missing": "इस अनुवाद में <nowiki>{{PLURAL:GETTEXT|}}</nowiki> होना चाहिए।",
 	"translate-checks-gettext-plural-unsupported": "यह संदेश <nowiki>{{PLURAL:GETTEXT|}}</nowiki> का समर्थन नहीं करता है।",
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> बिलकुल $1 {{PLURAL:$1|plural form|plural forms}} स्वीकार करता है। वर्तमान में $2 बहुवचन {{PLURAL:$2|दिया गया है|दिए गए हैं}}।",
-	"translate-checks-smartformat-plural-missing": "अनुवाद के वेरिएबल $1 में बहुवचम होना होगा।",
+	"translate-checks-smartformat-plural-missing": "अनुवाद के वेरिएबल $1 में बहुवचन होना होगा।",
 	"translate-checks-smartformat-plural-unsupported": "अनुवाद के वेरिएबल $1 में बहुवचन समर्थित नहीं है।",
 	"translate-checks-smartformat-plural-count": "<strong>$3</strong> में बहुवचनों की गलत संख्या। इसमें $1 बहुवचन {{PLURAL:$1|होना|होने}} चाहिए। वर्तमान $2 बहुवचन दर्ज {{PLURAL:$2|किया गया है|किए गए हैं}}।",
 	"translate-checks-unicode-plural-missing": "इस अनुवाद में <nowiki>{{PLURAL|}}</nowiki> होना चाहिए।",
@@ -420,7 +421,7 @@
 	"tux-editor-message-tools-history": "इतिहास",
 	"tux-editor-message-tools-delete": "हटाएँ",
 	"tux-editor-message-tools-translations": "सभी अनुवाद",
-	"tux-editor-message-tools-linktothis": "इस संदेश का लिंक",
+	"tux-editor-message-tools-linktothis": "इस संदेश की कड़ी",
 	"tux-editor-loading": "लोड हो रहा है...",
 	"tux-editor-loading-failed": "अनुवाद सहायताओं को लोड न किया जा सका: $1",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|भाषा|भाषाएँ}} और",
@@ -447,5 +448,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "मेटाडेटा में प्राथमिक भाषा का अमान्य प्रारूप है। प्राथमिक भाषाओं को स्ट्रिंग्स का एक ऐरे होना पड़ेगा।",
 	"translate-messagebundle-group-description": "संदेश बंडल के संदेशों को पृष्ठ [[$2|$1]] पर परिभाषित किया गया है।",
 	"translate-messagebundle-change-sourcelanguage": "मेटाडेटा के अनुसार संदेश बंडल का स्रोत भाषा सेट किया जा रहा है।",
-	"translate-messagebundle-sourcelanguage-changed": "संदेश बंडल के बनने के बाद इसके स्रोत भाषा को बदला नहीं जा सकता।"
+	"translate-messagebundle-sourcelanguage-changed": "संदेश बंडल के बनने के बाद इसके स्रोत भाषा को बदला नहीं जा सकता।",
+	"log-action-filter-translationreview": "कार्य का प्रकार",
+	"log-action-filter-translationreview-message": "अनुवाद संदेशों का निरीक्षण",
+	"log-action-filter-translationreview-group": "अनुवादों की प्रगति की स्थिति में बदलाव"
 }

@@ -439,5 +439,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Unjildige opmaak fan talen mei prioriteit yn 'e metadata. Talen mei prioriteit moatte in groepsrige fan tekenrigen wêze.",
 	"translate-messagebundle-group-description": "Berjochten fan in berjochtebondel definiearre op 'e side [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Boarnetaal fan 'e berjochtebondel ynsteld neffens metadata.",
-	"translate-messagebundle-sourcelanguage-changed": "De boarnetaal fan in berjochtebondel kin net wizige wurde nei't er al oanmakke is."
+	"translate-messagebundle-sourcelanguage-changed": "De boarnetaal fan in berjochtebondel kin net wizige wurde nei't er al oanmakke is.",
+	"log-action-filter-translationreview": "Type fan hanneling",
+	"log-action-filter-translationreview-message": "Hifkjen fan ôfsûnderlike oersetberjochten",
+	"log-action-filter-translationreview-group": "Statuswizigings fan 'e oersettingsfuortgong"
 }
