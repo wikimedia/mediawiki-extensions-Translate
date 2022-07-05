@@ -102,7 +102,7 @@
 								userid: request.userid
 							} ).done( function () {
 								request.lastreminder = moment();
-								request.remindercount++;
+								request.reminderscount++;
 								$reminderStatus.text( mw.msg( 'tsb-reminder-sent-new' ) );
 							} ).fail( function () {
 								$reminderStatus.text( mw.msg( 'tsb-reminder-failed' ) );
