@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 
@@ -70,7 +71,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 			$stats = MessageGroupStats::forItem( $id, $code, MessageGroupStats::FLAG_IMMEDIATE_WRITES );
 			$state = self::getNewState( $stats, $transitions );
 			if ( $state ) {
-				ApiGroupReview::changeState( $group, $code, $state, FuzzyBot::getUser() );
+				GroupReviewActionApi::changeState( $group, $code, $state, FuzzyBot::getUser() );
 			}
 		}
 

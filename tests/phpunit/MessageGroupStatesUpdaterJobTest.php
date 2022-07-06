@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
+
 /**
  * @group Database
  * @group medium
@@ -107,7 +109,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$group = MessageGroups::getGroup( 'group-trans' );
 
 		// In the beginning...
-		$currentState = ApiGroupReview::getState( $group, 'fi' );
+		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertFalse( $currentState, 'groups start from unset state' );
 
 		// First translation
@@ -118,13 +120,13 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 
 		self::translateRunJobs();
-		$currentState = ApiGroupReview::getState( $group, 'fi' );
+		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress after first translation' );
 
 		// First review
 		ApiTranslationReview::doReview( $user, self::getRevisionRecord( $status ), __METHOD__ );
 		self::translateRunJobs();
-		$currentState = ApiGroupReview::getState( $group, 'fi' );
+		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress while untranslated messages' );
 
 		// Second translation
@@ -135,13 +137,13 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 
 		self::translateRunJobs();
-		$currentState = ApiGroupReview::getState( $group, 'fi' );
+		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'proofreading', $currentState, 'proofreading after second translation' );
 
 		// Second review
 		ApiTranslationReview::doReview( $user, self::getRevisionRecord( $status ), __METHOD__ );
 		self::translateRunJobs();
-		$currentState = ApiGroupReview::getState( $group, 'fi' );
+		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'ready', $currentState, 'ready when all proofread' );
 
 		// Change to translation
@@ -152,7 +154,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiIntegrationTestCase {
 		$page->doUserEditContent( $content, $user, __METHOD__ );
 
 		self::translateRunJobs();
-		$currentState = ApiGroupReview::getState( $group, 'fi' );
+		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals(
 			'proofreading',
 			$currentState,

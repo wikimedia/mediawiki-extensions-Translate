@@ -1,29 +1,31 @@
 <?php
-/**
- * API module for switching workflow states for message groups
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ApiBase;
+use ApiMain;
+use ManualLogEntry;
 use Mediawiki\Languages\LanguageNameUtils;
+use MediaWiki\MediaWikiServices;
+use MessageGroup;
+use MessageGroups;
+use SpecialPage;
+use User;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for switching workflow states for message groups
- *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiGroupReview extends ApiBase {
+class GroupReviewActionApi extends ApiBase {
 	protected static $right = 'translate-groupreview';
 	/** @var LanguageNameUtils */
 	private $languageNameUtils;
 
-	public function __construct(
-		ApiMain $main,
-		$action,
-		LanguageNameUtils $languageNameUtils
-	) {
+	public function __construct( ApiMain $main, string $action, LanguageNameUtils $languageNameUtils ) {
 		parent::__construct( $main, $action );
 		$this->languageNameUtils = $languageNameUtils;
 	}
@@ -76,8 +78,9 @@ class ApiGroupReview extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
-	public static function getState( MessageGroup $group, $code ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+	/** @return mixed|false — The value from the field, or false if nothing was found */
+	public static function getState( MessageGroup $group, string $code ) {
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 		$table = 'translate_groupreviews';
 
 		$field = 'tgr_state';
@@ -89,7 +92,7 @@ class ApiGroupReview extends ApiBase {
 		return $dbw->selectField( $table, $field, $conds, __METHOD__ );
 	}
 
-	public static function changeState( MessageGroup $group, $code, $newState, User $user ) {
+	public static function changeState( MessageGroup $group, string $code, string $newState, User $user ): bool {
 		$currentState = self::getState( $group, $code );
 		if ( $currentState === $newState ) {
 			return false;
@@ -102,8 +105,8 @@ class ApiGroupReview extends ApiBase {
 			'tgr_lang' => $code,
 			'tgr_state' => $newState,
 		];
-
-		$dbw = wfGetDB( DB_PRIMARY );
+		$mwServices = MediaWikiServices::getInstance();
+		$dbw = $mwServices->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 		$dbw->replace( $table, [ $index ], $row, __METHOD__ );
 
 		$entry = new ManualLogEntry( 'translationreview', 'group' );
@@ -121,21 +124,21 @@ class ApiGroupReview extends ApiBase {
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 
-		Hooks::run( 'TranslateEventMessageGroupStateChange',
+		$mwServices->getHookContainer()->run( 'TranslateEventMessageGroupStateChange',
 			[ $group, $code, $currentState, $newState ] );
 
 		return true;
 	}
 
-	public function isWriteMode() {
+	public function isWriteMode(): bool {
 		return true;
 	}
 
-	public function needsToken() {
+	public function needsToken(): string {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'group' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -156,7 +159,7 @@ class ApiGroupReview extends ApiBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=groupreview&group=page-Example&language=de&state=ready&token=foo'
 				=> 'apihelp-groupreview-example-1',

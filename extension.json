@@ -67,7 +67,6 @@
 		"AmdFFS": "ffs/AmdFFS.php",
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
-		"ApiGroupReview": "api/ApiGroupReview.php",
 		"ApiManageMessageGroups": "api/ApiManageMessageGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
 		"ApiQueryManageMessageGroups": "api/ApiQueryManageMessageGroups.php",
@@ -360,7 +359,7 @@
 	"APIModules": {
 		"aggregategroups": "ApiAggregateGroups",
 		"groupreview": {
-			"class": "ApiGroupReview",
+			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\GroupReviewActionApi",
 			"services": [
 				"LanguageNameUtils"
 			]

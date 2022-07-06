@@ -18,6 +18,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			'ffs',
 			'messagegroups',
 			'src/TranslatorInterface',
+			'src/MessageGroupProcessing',
 			'tag',
 			'src/TranslatorInterface/Aid',
 			'ttmserver',
@@ -85,8 +86,15 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 	protected static function getPHPHooksFromFile( $file ) {
 		$content = file_get_contents( $file );
 		$m = [];
+		// Match Hooks::run( ... )
 		preg_match_all( '/\bHooks::run\(\s*[\'"]([^\'"]+)/', $content, $m );
 		$hooks = [];
+		foreach ( $m[1] as $hook ) {
+			$hooks[$hook] = [];
+		}
+
+		// Match hookContainer->run( ... )
+		preg_match_all( '/->run\(\s*[\'"]([^\'"]+)/', $content, $m );
 		foreach ( $m[1] as $hook ) {
 			$hooks[$hook] = [];
 		}
