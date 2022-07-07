@@ -1568,7 +1568,7 @@ class PageTranslationHooks {
 
 			// Do a more thorough check for the translation page in case the translation page is deleted in a
 			// different transaction.
-			if ( $target->getSubpage( $langCode )->exists() ) {
+			if ( !$target->getSubpage( $langCode )->exists() ) {
 				return;
 			}
 
