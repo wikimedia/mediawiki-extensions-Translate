@@ -397,5 +397,5 @@
 	"specialpages-group-translation": "Traduzione",
 	"translate-messagebundle-error-key-too-long": "La chiave \"$1\" è troppo lunga",
 	"translate-messagebundle-error-empty-value": "La chiave \"$1\" non ha un valore",
-	"log-action-filter-translationreview": "Tipo di azione"
+	"log-action-filter-translationreview": "Tipo di azione:"
 }

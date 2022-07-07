@@ -449,7 +449,7 @@
 	"translate-messagebundle-group-description": "הודעות מתוך חבילת הודעות שמוגדרת בדף [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "הגדרת שפת המקור של חבילת ההודעות לפי המטא־נתונים.",
 	"translate-messagebundle-sourcelanguage-changed": "לא ניתן לשנות את שפת המקור של חבילת הודעות אחרי שהיא נוצרה.",
-	"log-action-filter-translationreview": "סוג הפעולה",
+	"log-action-filter-translationreview": "סוג הפעולה:",
 	"log-action-filter-translationreview-message": "סקירה של הודעות תרגום בודדות",
 	"log-action-filter-translationreview-group": "שינויים במצב התקדמות התרגומים"
 }
