@@ -73,7 +73,6 @@
 		"ApiQueryMessageTranslations": "api/ApiQueryMessageTranslations.php",
 		"ApiStatsQuery": "api/ApiStatsQuery.php",
 		"ApiTranslateSandbox": "api/ApiTranslateSandbox.php",
-		"ApiTranslationCheck": "api/ApiTranslationCheck.php",
 		"ApiTranslationStash": "api/ApiTranslationStash.php",
 		"ApiTTMServer": "api/ApiTTMServer.php",
 		"AppleFFS": "ffs/AppleFFS.php",
@@ -378,7 +377,7 @@
 				"DBLoadBalancer"
 			]
 		},
-		"translationcheck": "ApiTranslationCheck",
+		"translationcheck": "\\MediaWiki\\Extension\\Translate\\Validation\\CheckTranslationActionApi",
 		"translationstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",
 		"managegroupsynchronizationcache": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupSynchronizationCacheActionApi",

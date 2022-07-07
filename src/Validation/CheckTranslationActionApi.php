@@ -1,13 +1,17 @@
 <?php
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Validation;
+
+use ApiBase;
+use FatMessage;
+use MessageHandle;
+use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
-/**
- * @since 2017.10
- * @license GPL-2.0-or-later
- */
-class ApiTranslationCheck extends ApiBase {
-	public function execute() {
+/** @license GPL-2.0-or-later */
+class CheckTranslationActionApi extends ApiBase {
+	public function execute(): void {
 		$params = $this->extractRequestParams();
 
 		$title = Title::newFromText( $params[ 'title' ] );
@@ -30,7 +34,7 @@ class ApiTranslationCheck extends ApiBase {
 		$this->getResult()->addValue( null, 'validation', $validationOutput );
 	}
 
-	private function validateTranslation( MessageHandle $handle, $translation ) {
+	private function validateTranslation( MessageHandle $handle, string $translation ): ?ValidationResult {
 		if ( $handle->isDoc() || !$handle->isValid() ) {
 			return null;
 		}
@@ -41,6 +45,11 @@ class ApiTranslationCheck extends ApiBase {
 		}
 
 		$definition = $this->getDefinition( $handle );
+		if ( $definition === null ) {
+			// Very unlikely to happen since the handle is already found to be valid
+			return null;
+		}
+
 		$message = new FatMessage( $handle->getKey(), $definition );
 		$message->setTranslation( $translation );
 
@@ -49,7 +58,7 @@ class ApiTranslationCheck extends ApiBase {
 		return $validationResult;
 	}
 
-	private function getDefinition( MessageHandle $handle ) {
+	private function getDefinition( MessageHandle $handle ): ?string {
 		$group = $handle->getGroup();
 		if ( is_callable( [ $group, 'getMessageContent' ] ) ) {
 			// @phan-suppress-next-line PhanUndeclaredMethod
@@ -59,7 +68,7 @@ class ApiTranslationCheck extends ApiBase {
 		}
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'title' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -72,7 +81,7 @@ class ApiTranslationCheck extends ApiBase {
 		];
 	}
 
-	public function isInternal() {
+	public function isInternal(): bool {
 		return true;
 	}
 }
