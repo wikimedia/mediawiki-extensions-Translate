@@ -9,6 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Statistics\QueryStatsActionApi;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -16,7 +17,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  *
  * @ingroup API TranslateAPI
  */
-class ApiQueryMessageGroupStats extends ApiStatsQuery {
+class ApiQueryMessageGroupStats extends QueryStatsActionApi {
 
 	/**
 	 * Whether to hide rows which are fully translated.
@@ -36,7 +37,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	// ApiStatsQuery methods
 
 	/** @inheritDoc */
-	protected function validateTargetParamater( array $params ) {
+	protected function validateTargetParamater( array $params ): string {
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
 			$this->dieWithError( [ 'apierror-badparameter', 'mgsgroup' ] );
@@ -48,7 +49,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
-	protected function loadStatistics( $target, $flags = 0 ) {
+	protected function loadStatistics( string $target, int $flags = 0 ): array {
 		return MessageGroupStats::forGroup( $target, $flags );
 	}
 
@@ -63,8 +64,8 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
-	protected function makeItem( $item, $stats ) {
-		$data = parent::makeItem( $item, $stats );
+	protected function makeStatsItem( string $item, array $stats ): ?array {
+		$data = $this->makeItem( $stats );
 
 		if ( $this->noComplete && $data['fuzzy'] === 0 && $data['translated'] === $data['total'] ) {
 			return null;
@@ -93,7 +94,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	// Api methods
 
 	/** @inheritDoc */
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		$params = parent::getAllowedParams();
 		$params['group'] = [
 			ParamValidator::PARAM_TYPE => 'string',
@@ -107,7 +108,7 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=messagegroupstats&mgsgroup=page-Example'
 				=> 'apihelp-query+messagegroupstats-example-1',

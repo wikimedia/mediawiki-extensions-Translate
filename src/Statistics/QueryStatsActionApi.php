@@ -1,32 +1,34 @@
 <?php
-/**
- * A base module for querying message group related stats.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use ApiBase;
+use ApiQueryBase;
+use DeferredUpdates;
+use IJobSpecification;
+use MessageGroupStats;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * A base module for querying message group related stats.
  *
  * @ingroup API TranslateAPI
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2012-11-30
  */
-abstract class ApiStatsQuery extends ApiQueryBase {
-	public function getCacheMode( $params ) {
+abstract class QueryStatsActionApi extends ApiQueryBase {
+	public function getCacheMode( $params ): string {
 		return 'public';
 	}
 
 	/**
 	 * Implement this to implement input validation and return the name of the target that
 	 * is then given to loadStats.
-	 * @param array $params
-	 * @return string
 	 */
-	abstract protected function validateTargetParamater( array $params );
+	abstract protected function validateTargetParamater( array $params ): string;
 
 	/**
 	 * Implement this to load stats.
@@ -34,7 +36,10 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 	 * @param int $flags See MessageGroupStats for possible flags
 	 * @return array[]
 	 */
-	abstract protected function loadStatistics( $target, $flags = 0 );
+	abstract protected function loadStatistics( string $target, int $flags = 0 ): array;
+
+	/** Implement this to load each individual stat item */
+	abstract protected function makeStatsItem( string $item, array $stats ): ?array;
 
 	public function execute() {
 		$params = $this->extractRequestParams();
@@ -56,7 +61,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 				break;
 			}
 
-			$data = $this->makeItem( $item, $stats );
+			$data = $this->makeStatsItem( $item, $stats );
 			if ( $data === null ) {
 				continue;
 			}
@@ -73,7 +78,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 		}
 	}
 
-	protected function makeItem( $item, $stats ) {
+	protected function makeItem( array $stats ): array {
 		return [
 			'total' => $stats[MessageGroupStats::TOTAL],
 			'translated' => $stats[MessageGroupStats::TRANSLATED],
@@ -84,7 +89,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 
 	abstract protected function getCacheRebuildJob( string $target ): IJobSpecification;
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'offset' => [
 				ParamValidator::PARAM_DEFAULT => '0',

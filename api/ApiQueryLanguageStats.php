@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Statistics\QueryStatsActionApi;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -15,7 +16,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  * @since 2012-11-30
  */
-class ApiQueryLanguageStats extends ApiStatsQuery {
+class ApiQueryLanguageStats extends QueryStatsActionApi {
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'ls' );
 	}
@@ -23,7 +24,7 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 	// ApiStatsQuery methods
 
 	/** @inheritDoc */
-	protected function validateTargetParamater( array $params ) {
+	protected function validateTargetParamater( array $params ): string {
 		$requested = $params[ 'language' ];
 		if ( !TranslateUtils::isSupportedLanguageCode( $requested ) ) {
 			$this->dieWithError( [ 'apierror-translate-invalidlanguage', $requested ] );
@@ -33,7 +34,7 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
-	protected function loadStatistics( $target, $flags = 0 ) {
+	protected function loadStatistics( string $target, int $flags = 0 ): array {
 		$groupId = $this->getParameter( 'group' );
 		$group = $groupId !== null ? MessageGroups::getGroup( $groupId ) : null;
 		if ( $groupId ) {
@@ -48,8 +49,8 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
-	protected function makeItem( $item, $stats ) {
-		$data = parent::makeItem( $item, $stats );
+	protected function makeStatsItem( string $item, array $stats ): array {
+		$data = $this->makeItem( $stats );
 		$data['group'] = $item;
 
 		return $data;
@@ -63,7 +64,7 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 	// Api methods
 
 	/** @inheritDoc */
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		$params = parent::getAllowedParams();
 		$params['language'] = [
 			ParamValidator::PARAM_TYPE => 'string',
@@ -78,7 +79,7 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 	}
 
 	/** @inheritDoc */
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=languagestats&lslanguage=fi'
 				=> 'apihelp-query+languagestats-example-1',

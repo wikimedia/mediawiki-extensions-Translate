@@ -68,7 +68,6 @@
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
-		"ApiStatsQuery": "api/ApiStatsQuery.php",
 		"AppleFFS": "ffs/AppleFFS.php",
 		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
