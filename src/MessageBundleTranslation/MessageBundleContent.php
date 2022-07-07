@@ -21,6 +21,7 @@ class MessageBundleContent extends JsonContent {
 	/** @phpcs-require-sorted-array */
 	public const METADATA_KEYS = [
 		'allowOnlyPriorityLanguages',
+		'description',
 		'priorityLanguages',
 		'sourceLanguage'
 	];
@@ -148,10 +149,22 @@ class MessageBundleContent extends JsonContent {
 			$priorityLanguageCodes = array_unique( $priorityLanguageCodes );
 		}
 
+		$description = $metadata['description'] ?? null;
+		if ( $description !== null ) {
+			if ( !is_string( $description ) ) {
+				throw new MalformedBundle(
+					'translate-messagebundle-error-invalid-description'
+				);
+			}
+
+			$description = trim( $description ) === '' ? null : trim( $description );
+		}
+
 		$this->metadata = new MessageBundleMetadata(
 			$sourceLanguage,
 			$priorityLanguageCodes,
-			(bool)( $metadata['allowOnlyPriorityLanguages'] ?? false )
+			(bool)( $metadata['allowOnlyPriorityLanguages'] ?? false ),
+			$description
 		);
 		return $this->metadata;
 	}

@@ -142,6 +142,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 		// Validate the content before saving
 		$this->validate( $pageTitle, $content );
 
+		$messageBundle = new MessageBundle( $pageTitle );
+		$groupId = $messageBundle->getMessageGroupId();
+
 		$previousRevisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, 'mb:valid' );
 		if ( $previousRevisionId !== null ) {
 			$this->revTagStore->removeTags( $pageTitle, 'mb:valid' );
@@ -173,9 +176,6 @@ class MessageBundleStore implements TranslatableBundleStore {
 			}
 
 			// Save the metadata
-			$messageBundle = new MessageBundle( $pageTitle );
-			$groupId = $messageBundle->getMessageGroupId();
-
 			$metadata = $content->getMetadata();
 			$priorityForce = $metadata->areOnlyPriorityLanguagesAllowed() ? 'on' : false;
 			$priorityLanguages = $metadata->getPriorityLanguages();
@@ -183,6 +183,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 			TranslateMetadata::set( $groupId, 'prioritylangs', $priorityLanguages );
 			TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce );
+
+			$description = $metadata->getDescription();
+			TranslateMetadata::set( $groupId, 'description', $description ?? false );
 		}
 
 		// What should we do if there are no messages? Use the previous version? Remove the group?

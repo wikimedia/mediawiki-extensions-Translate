@@ -7,6 +7,7 @@ use CachedMessageGroupLoader;
 use MessageGroupLoader;
 use MessageGroupWANCache;
 use Title;
+use TranslateMetadata;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -74,9 +75,22 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 	/** @return MessageBundleMessageGroup[] */
 	private function initGroupsFromConf( array $cacheData ): array {
 		$groups = [];
+		$groupIds = [];
+
+		// First get all the group ids
 		foreach ( $cacheData as $conf ) {
-			$groupId = MessageBundleMessageGroup::getGroupId( $conf[0] );
-			$groups[$groupId] = new MessageBundleMessageGroup( $groupId, $conf[0], $conf[1], $conf[2] );
+			$groupIds[] = MessageBundleMessageGroup::getGroupId( $conf[0] );
+		}
+
+		// Preload all the metadata
+		TranslateMetadata::preloadGroups( $groupIds, __METHOD__ );
+
+		// Loop over all the group ids and create the MessageBundleMessageGroup
+		foreach ( $groupIds as $index => $groupId ) {
+			$conf = $cacheData[$index];
+			$description = TranslateMetadata::get( $groupId, 'description' );
+			$description = $description !== false ? $description : null;
+			$groups[$groupId] = new MessageBundleMessageGroup( $groupId, $conf[0], $conf[1], $conf[2], $description );
 		}
 
 		return $groups;

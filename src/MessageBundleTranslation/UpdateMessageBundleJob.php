@@ -57,12 +57,13 @@ class UpdateMessageBundleJob extends Job {
 		$pageId = $bundlePageTitle->getId();
 		$groupId = MessageBundleMessageGroup::getGroupId( $name );
 		$params = $this->getParams();
-		$group = new MessageBundleMessageGroup( $groupId, $name, $pageId, $params['revisionId'] );
+		// We don't care about the group description, so no need to pass it through
+		$group = new MessageBundleMessageGroup( $groupId, $name, $pageId, $params['revisionId'], null );
 		$messages = $group->getDefinitions();
 		$previousMessages = [];
 		if ( $params['previousRevisionId'] ) {
 			$groupPreviousVersion = new MessageBundleMessageGroup(
-				$groupId, $name, $pageId, $params['previousRevisionId']
+				$groupId, $name, $pageId, $params['previousRevisionId'], null
 			);
 			$previousMessages = $groupPreviousVersion->getDefinitions();
 		}

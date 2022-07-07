@@ -34,12 +34,21 @@ class MessageBundleMessageGroup implements MessageGroup {
 	private $revisionId;
 	/** @var array */
 	private $data;
+	/** @var string */
+	private $description;
 
-	public function __construct( string $groupId, string $name, int $pageId, int $revisionId ) {
+	public function __construct(
+		string $groupId,
+		string $name,
+		int $pageId,
+		int $revisionId,
+		?string $description
+	) {
 		$this->groupId = $groupId;
 		$this->name = $name;
 		$this->pageId = $pageId;
 		$this->revisionId = $revisionId;
+		$this->description = $description;
 	}
 
 	/** Suggested default naming pattern */
@@ -98,7 +107,6 @@ class MessageBundleMessageGroup implements MessageGroup {
 	public function getDescription( IContextSource $context = null ): string {
 		$titleText = Title::newFromID( $this->pageId )->getPrefixedText();
 		$linkTargetText = ":$titleText";
-
 		if ( $context ) {
 			$message = $context->msg( 'translate-messagebundle-group-description' );
 		} else {
@@ -106,7 +114,13 @@ class MessageBundleMessageGroup implements MessageGroup {
 				->inContentLanguage();
 		}
 
-		return $message->params( $titleText, $linkTargetText )->plain();
+		$plainMessage = $message->params( $titleText, $linkTargetText )->plain();
+
+		if ( $this->description === null ) {
+			return $plainMessage;
+		}
+
+		return $plainMessage . ' ' . $this->description;
 	}
 
 	/** @inheritDoc */

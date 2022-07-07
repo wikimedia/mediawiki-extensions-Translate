@@ -124,6 +124,18 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 			false,
 			'error-invalid-prioritylanguage'
 		];
+
+		yield [
+			json_encode( [
+				'@metadata' => [
+					'description' => true
+				],
+				'k1' => 'a',
+				'k2' => 'b',
+			] ),
+			false,
+			'translate-messagebundle-error-invalid-description'
+		];
 	}
 
 	public function provideValidJsonStructure() {
@@ -132,7 +144,8 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 			json_encode( [
 				'@metadata' => [
 					'sourceLanguage' => 'fr',
-					'priorityLanguages' => [ 'en', 'es' ]
+					'priorityLanguages' => [ 'en', 'es' ],
+					'description' => 'Hello World!'
 				],
 				'k1' => 'a',
 				'k2' => 'b',

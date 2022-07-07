@@ -10,21 +10,25 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
  * @license GPL-2.0-or-later
  */
 class MessageBundleMetadata {
-	/** @var string */
+	/** @var string|null */
 	private $sourceLanguageCode;
 	/** @var array|null */
 	private $priorityLanguageCodes;
 	/** @var bool */
 	private $allowOnlyPriorityLanguages;
+	/** @var string|null */
+	private $description;
 
 	public function __construct(
 		?string $sourceLanguageCode,
 		?array $priorityLanguageCodes,
-		bool $allowOnlyPriorityLanguages
+		bool $allowOnlyPriorityLanguages,
+		?string $description
 	) {
 		$this->sourceLanguageCode = $sourceLanguageCode;
 		$this->priorityLanguageCodes = $priorityLanguageCodes;
 		$this->allowOnlyPriorityLanguages = $allowOnlyPriorityLanguages;
+		$this->description = $description;
 	}
 
 	public function getSourceLanguageCode(): ?string {
@@ -37,5 +41,9 @@ class MessageBundleMetadata {
 
 	public function areOnlyPriorityLanguagesAllowed(): bool {
 		return $this->allowOnlyPriorityLanguages;
+	}
+
+	public function getDescription(): ?string {
+		return $this->description;
 	}
 }
