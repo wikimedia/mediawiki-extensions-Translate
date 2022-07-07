@@ -1,15 +1,15 @@
 <?php
 declare( strict_types = 1 );
 
-namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 /**
- * Represents metadata for a translatable bundle
+ * Represents metadata for a message bundle
  * @author Abijeet Patro
  * @since 2022.05
  * @license GPL-2.0-or-later
  */
-class TranslatableBundleMetadata {
+class MessageBundleMetadata {
 	/** @var string */
 	private $sourceLanguageCode;
 	/** @var array|null */

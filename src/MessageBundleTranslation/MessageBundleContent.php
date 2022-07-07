@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use FormatJson;
 use JsonContent;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleMetadata;
 use Message;
 use Status;
 use User;
@@ -27,7 +26,7 @@ class MessageBundleContent extends JsonContent {
 	];
 	/** @var array|null */
 	private $messages;
-	/** @var TranslatableBundleMetadata|null */
+	/** @var MessageBundleMetadata|null */
 	private $metadata;
 
 	public function __construct( $text, $modelId = self::CONTENT_MODEL_ID ) {
@@ -112,7 +111,7 @@ class MessageBundleContent extends JsonContent {
 		return $this->messages;
 	}
 
-	public function getMetadata(): TranslatableBundleMetadata {
+	public function getMetadata(): MessageBundleMetadata {
 		if ( $this->metadata ) {
 			return $this->metadata;
 		}
@@ -149,7 +148,7 @@ class MessageBundleContent extends JsonContent {
 			$priorityLanguageCodes = array_unique( $priorityLanguageCodes );
 		}
 
-		$this->metadata = new TranslatableBundleMetadata(
+		$this->metadata = new MessageBundleMetadata(
 			$sourceLanguage,
 			$priorityLanguageCodes,
 			(bool)( $metadata['allowOnlyPriorityLanguages'] ?? false )

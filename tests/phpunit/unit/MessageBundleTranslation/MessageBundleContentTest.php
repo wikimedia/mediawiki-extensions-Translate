@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MalformedBundle;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleContent;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleMetadata;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMetadata;
 
 /** @coversDefaultClass \MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleContent */
 class MessageBundleContentTest extends MediaWikiUnitTestCase {
@@ -174,7 +174,7 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 		$content = new MessageBundleContent( $json );
 		$metadata = $content->getMetadata();
 
-		$this->assertInstanceOf( TranslatableBundleMetadata::class, $metadata );
+		$this->assertInstanceOf( MessageBundleMetadata::class, $metadata );
 		$this->assertEquals( $sourceLanguageCode, $metadata->getSourceLanguageCode() );
 		$this->assertEquals( $priorityLanguageCodes, $metadata->getPriorityLanguages() );
 		$this->assertEquals( $allowPriorityLanguagesOnly, $metadata->areOnlyPriorityLanguagesAllowed() );
