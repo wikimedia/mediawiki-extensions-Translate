@@ -66,7 +66,6 @@
 		"AggregateMessageGroupLoader": "messagegroups/loaders/AggregateMessageGroupLoader.php",
 		"AmdFFS": "ffs/AmdFFS.php",
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
-		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
 		"AppleFFS": "ffs/AppleFFS.php",
 		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
@@ -339,7 +338,7 @@
 		}
 	},
 	"APIMetaModules": {
-		"languagestats": "ApiQueryLanguageStats",
+		"languagestats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryLanguageStatsActionApi",
 		"managemessagegroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryManageMessageGroupsActionApi",
 		"messagegroups": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupsActionApi",

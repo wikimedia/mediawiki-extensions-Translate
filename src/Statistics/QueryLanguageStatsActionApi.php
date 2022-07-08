@@ -1,23 +1,24 @@
 <?php
-/**
- * Api module for language group stats.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\Statistics\QueryStatsActionApi;
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use ApiQuery;
+use IJobSpecification;
+use MessageGroups;
+use MessageGroupStats;
+use MessageGroupStatsRebuildJob;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api module for querying language stats.
- *
  * @ingroup API TranslateAPI
- * @since 2012-11-30
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
-class ApiQueryLanguageStats extends QueryStatsActionApi {
-	public function __construct( $query, $moduleName ) {
+class QueryLanguageStatsActionApi extends QueryStatsActionApi {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, 'ls' );
 	}
 
