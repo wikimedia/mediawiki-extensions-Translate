@@ -1,24 +1,24 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use ApiQuery;
+use IJobSpecification;
+use MessageGroups;
+use MessageGroupStats;
+use MessageGroupStatsRebuildJob;
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * Api module for querying message group stats.
- *
- * @file
+ * @ingroup API TranslateAPI
  * @author Tim Gerundt
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Tim Gerundt
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Extension\Translate\Statistics\QueryStatsActionApi;
-use Wikimedia\ParamValidator\ParamValidator;
-
-/**
- * Api module for querying message group stats.
- *
- * @ingroup API TranslateAPI
- */
-class ApiQueryMessageGroupStats extends QueryStatsActionApi {
-
+class QueryMessageGroupStatsActionApi extends QueryStatsActionApi {
 	/**
 	 * Whether to hide rows which are fully translated.
 	 * @var bool
@@ -30,7 +30,7 @@ class ApiQueryMessageGroupStats extends QueryStatsActionApi {
 	 */
 	private $noEmpty = false;
 
-	public function __construct( $query, $moduleName ) {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, 'mgs' );
 	}
 

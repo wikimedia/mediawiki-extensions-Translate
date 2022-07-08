@@ -14,7 +14,6 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 	protected $paths = [
 		'php' => [
 			'',
-			'api',
 			'ffs',
 			'messagegroups',
 			'src/TranslatorInterface',
