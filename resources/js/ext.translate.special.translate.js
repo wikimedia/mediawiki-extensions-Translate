@@ -175,7 +175,7 @@
 			description = mw.msg(
 				'translate-tag-page-wikipage-desc',
 				':' + group.label + '/' + state.language,
-				group.label,
+				':' + group.label,
 				$.uls.data.getAutonym( group.sourcelanguage ),
 				group.sourcelanguage,
 				$.uls.data.getAutonym( state.language ),
