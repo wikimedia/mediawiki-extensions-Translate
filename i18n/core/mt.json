@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrisportelli",
 			"Leli Forte",
-			"Roderick Mallia"
+			"Roderick Mallia",
+			"ToniSant"
 		]
 	},
 	"translate": "Traduzzjoni",
@@ -163,8 +164,10 @@
 	"translate-search-languagefilter": "Filtru skont il-lingwa:",
 	"translate-search-nofilter": "L-ebda filtru",
 	"translate-workflowstatus": "Stat: $1",
+	"tux-editor-in-other-languages": "F'lingwi oħra",
 	"tux-empty-list-all-guide": "Agħżel gruppi ta' messaġġi ieħor biex tittraduċi",
 	"tux-empty-list-other-guide": "Tista' tgħin tirrevedi traduzzjonijiet eżistenti",
 	"tux-empty-list-other-action": "Irrevedi t-traduzzjonijiet",
-	"tux-empty-list-other-link": "Uri l-messaġġi kollha"
+	"tux-empty-list-other-link": "Uri l-messaġġi kollha",
+	"translate-search-more-languages-info": "$1 {{PLURAL:$1|lingwa|lingwi}} oħra"
 }

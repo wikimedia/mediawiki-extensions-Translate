@@ -128,6 +128,8 @@
 	"translate-searchprofile": "Tradukuri",
 	"translate-searchprofile-tooltip": "Serchez de omna tradukuri",
 	"log-description-translationreview": "Registro di omna tradukuro-revizuri e mesajo-grupi.",
+	"translate-workflowstatus": "Stando: $1",
+	"translate-stats-workflow": "Stando",
 	"translate-dynagroup-recent-label": "recenta tradukuri",
 	"translate-dynagroup-recent-desc": "Ica grupo di mesaji montras omna recenta tradukuri ad ica linguo.\nTo esas utila precipue por la revizo-taski.",
 	"translate-dynagroup-additions-label": "Recenta adjuntaji",

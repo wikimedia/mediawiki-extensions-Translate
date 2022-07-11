@@ -3,7 +3,9 @@
 		"authors": [
 			"Omotecho",
 			"Shirayuki",
-			"Sujiniku"
+			"Sujiniku",
+			"Funa-enpitu",
+			"RYOUMA1117"
 		]
 	},
 	"apihelp-aggregategroups-description": "メッセージ群の集計は追加もしくは削除の対象で、メッセージ群を関連付けまたは分離できます（処理は一度に1件ずつ）。",
@@ -101,5 +103,5 @@
 	"apierror-translate-smg-nochanges": "処理する変更はありません。",
 	"apierror-translate-invalid-operation": "無効な操作：$1。有効な値 - $2。",
 	"apiwarn-translate-alreadyreviewedbyyou": "あなたの査読済みと記録があります",
-	"apiwarn-translate-language-disabled-source": "このメッセージ群の翻訳原文の言語コードは$1です。翻訳するには異なる言語を選択してください。"
+	"apiwarn-translate-language-disabled-source": "このメッセージ群の翻訳原文の言語は$1です。翻訳するには別の言語を選択してください。"
 }

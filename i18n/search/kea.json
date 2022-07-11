@@ -25,5 +25,8 @@
 	"tux-sst-ellipsis-untranslated": "Sen traduson",
 	"tux-sst-ellipsis-outdated": "Tradusons dizatualizadu",
 	"tux-sst-link-all-match": "Tradusons ku tudu palabras di buska.",
-	"tux-sst-error-offset": "Ka e pusivel mostra mas rezultadus. Bu ten ki limita bus termus di buska."
+	"tux-sst-match-message": "Ta mostra tradusons ki ta inklui kualker un di kes palavra di piskiza. $1",
+	"tux-sst-case-sensitive": "Distingi letras maiúskulas di minúskulas",
+	"tux-sst-error-offset": "Ka e pusivel mostra mas rezultadus. Bu ten ki limita bus termus di buska.",
+	"tux-sst-error-language": "Es língua ka podi ser uzadu ku es tipu di piskiza."
 }

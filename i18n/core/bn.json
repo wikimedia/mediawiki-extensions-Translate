@@ -12,12 +12,14 @@
 			"আজিজ",
 			"আফতাবুজ্জামান",
 			"R4356th",
-			"Hirok Raja"
+			"Hirok Raja",
+			"মোঃ মারুফ হাসান24"
 		]
 	},
 	"translate": "অনুবাদ",
 	"translate-extensionname": "অনুবাদ",
 	"translate-desc": "মিডিয়াউইকি এবং এর বাইরের অনুবাদের জন্য [[Special:Translate|বিশেষ পাতা]]",
+	"translate-fuzzybot-desc": "অনুবাদ রক্ষণাবেক্ষণের জন্য, এটি মিডিয়াউইকির [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate অনুবাদ এক্সটেনশন] দ্বারা ব্যবহৃত একটি বিশেষ সিস্টেম অ্যাকাউন্ট।\nএই অ্যাকাউন্টটি মিডিয়াউইকি সফটওয়্যারের অংশ এবং এটি কোনো ব্যবহারকারীর মালিকানাধীন নয়।",
 	"translate-taskui-export-to-file": "স্থানীয় ফরম্যাটে আমদানী করুন।",
 	"translate-taskui-export-as-po": "অফলাইন অনুবাদের জন্য আমদানি করুন",
 	"translate-taction-translate": "অনুবাদ",
@@ -107,6 +109,8 @@
 	"translate-stats-reviews": "পর্যালোচনাসমূহ",
 	"translate-stats-reviewers": "নিরীক্ষকগণ",
 	"translate-statsf-options": "গ্রাফ অপশন",
+	"translate-statsf-width": "পিক্সেলে প্রস্থ:",
+	"translate-statsf-height": "পিক্সেলে উচ্চতা:",
 	"translate-statsf-start": "শুরুর তারিখ:",
 	"translate-statsf-scale-months": "মাস",
 	"translate-statsf-scale-weeks": "সপ্তাহ",
@@ -161,6 +165,7 @@
 	"translate-mgs-column-language": "ভাষা",
 	"translate-mgs-totals": "একসাথে $1টি {{PLURAL:$1|ভাষায়}}।",
 	"translate-mgs-invalid-group": "নির্দিষ্টকৃত $1 দলটি বিদ্যমান নেই।",
+	"translate-mgs-nothing": "অনুরোধকৃত পরিসংখ্যানের জন্য দেখানোর মতো কিছুই নেই।",
 	"supportedlanguages": "সমর্থিত ভাষাসমূহ",
 	"supportedlanguages-colorlegend": "রঙের ব্যাখ্যা: সর্বশেষ অনুবাদ $1 দিন আগে।",
 	"supportedlanguages-sqlite-error": "SQLite সমর্থিত নয়",
