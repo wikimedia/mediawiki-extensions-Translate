@@ -1,25 +1,29 @@
 <?php
-/**
- * API module for querying for changes to message group
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ApiQuery;
+use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MessageChangeStorage;
+use MessageGroups;
+use Title;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for querying message group changes.
+ * @author Abijeet Patro
  * @since 2019.10
  * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiQueryManageMessageGroups extends ApiQueryBase {
+class QueryManageMessageGroupsActionApi extends ApiQueryBase {
 	private const RIGHT = 'translate-manage';
 
-	public function __construct( $query, $moduleName ) {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, 'mmg' );
 	}
 
@@ -63,17 +67,13 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 		$result->addValue( [ 'query', $this->getModuleName() ], null, $messages );
 	}
 
-	/**
-	 * Fetches the messages that can be used as possible renames for a given message.
-	 * @param MessageSourceChange $sourceChanges
-	 * @param int $groupNamespace Group namespace
-	 * @param string $msgKey
-	 * @param string $languageCode Language code
-	 * @return array
-	 */
-	protected function getPossibleRenames( MessageSourceChange $sourceChanges, $groupNamespace,
-		$msgKey, $languageCode
-	) {
+	/** Fetches the messages that can be used as possible renames for a given message. */
+	protected function getPossibleRenames(
+		MessageSourceChange $sourceChanges,
+		int $groupNamespace,
+		string $msgKey,
+		string $languageCode
+	): array {
 		$deletions = $sourceChanges->getDeletions( $languageCode );
 		$targetMsg = $sourceChanges->findMessage(
 			$languageCode, $msgKey, [ MessageSourceChange::ADDITION, MessageSourceChange::RENAME ]
@@ -115,7 +115,7 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 		return $renameList;
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		$params = parent::getAllowedParams();
 		$params['groupId'] = [
 			ParamValidator::PARAM_TYPE => 'string',
@@ -135,7 +135,7 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 		return $params;
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=managemessagegroup&mmggroupId=hello
 				&mmgchangesetName=default&mmgmessageKey=world' => 'apihelp-query+managemessagegroups-example-1',

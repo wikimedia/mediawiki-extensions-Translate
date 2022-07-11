@@ -1,16 +1,23 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ApiTestCase;
+use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MessageChangeStorage;
+use MessageGroups;
+use MockWikiMessageGroup;
+use User;
+use WANObjectCache;
 
 /**
  * @group medium
- * @covers ApiQueryManageMessageGroups
+ * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\QueryManageMessageGroupsActionApi
+ * @license GPL-2.0-or-later
  */
-class ApiQueryManageMessageGroupsTest extends ApiTestCase {
+class QueryManageMessageGroupsActionApiTest extends ApiTestCase {
 	/** @var User */
 	protected $user;
 
@@ -32,14 +39,14 @@ class ApiQueryManageMessageGroupsTest extends ApiTestCase {
 		$mg->recache();
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups( array &$list ): bool {
 		$group = new MockWikiMessageGroup( 'testgroup-api', [] );
 		$list['testgroup-api'] = $group;
 
 		return false;
 	}
 
-	public function testGetRenames() {
+	public function testGetRenames(): void {
 		$data = $this->doApiRequest(
 			[
 				'action' => 'query',
@@ -67,7 +74,7 @@ class ApiQueryManageMessageGroupsTest extends ApiTestCase {
 		}
 	}
 
-	public function getRenameMessages() {
+	public function getRenameMessages(): array {
 		return [
 			[
 				'keyDeleted1',
@@ -87,11 +94,11 @@ class ApiQueryManageMessageGroupsTest extends ApiTestCase {
 		];
 	}
 
-	private static function getStoragePath() {
+	private static function getStoragePath(): string {
 		return MessageChangeStorage::getCdbPath( MessageChangeStorage::DEFAULT_NAME );
 	}
 
-	private function setupTestData() {
+	private function setupTestData(): void {
 		$sourceChanges = new MessageSourceChange();
 
 		$renameData = $this->getRenameMessages();

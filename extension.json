@@ -69,7 +69,6 @@
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiManageMessageGroups": "api/ApiManageMessageGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
-		"ApiQueryManageMessageGroups": "api/ApiQueryManageMessageGroups.php",
 		"ApiQueryMessageCollection": "api/ApiQueryMessageCollection.php",
 		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
@@ -351,7 +350,7 @@
 	},
 	"APIMetaModules": {
 		"languagestats": "ApiQueryLanguageStats",
-		"managemessagegroups": "ApiQueryManageMessageGroups",
+		"managemessagegroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryManageMessageGroupsActionApi",
 		"messagegroups": "ApiQueryMessageGroups",
 		"messagegroupstats": "ApiQueryMessageGroupStats",
 		"messagetranslations": "ApiQueryMessageTranslations"
