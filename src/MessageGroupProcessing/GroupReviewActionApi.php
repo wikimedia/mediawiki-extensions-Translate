@@ -5,13 +5,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ApiBase;
 use ApiMain;
-use ManualLogEntry;
 use Mediawiki\Languages\LanguageNameUtils;
-use MediaWiki\MediaWikiServices;
-use MessageGroup;
 use MessageGroups;
-use SpecialPage;
-use User;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -24,10 +19,18 @@ class GroupReviewActionApi extends ApiBase {
 	protected static $right = 'translate-groupreview';
 	/** @var LanguageNameUtils */
 	private $languageNameUtils;
+	/** @var MessageGroupReview */
+	private $messageGroupReview;
 
-	public function __construct( ApiMain $main, string $action, LanguageNameUtils $languageNameUtils ) {
+	public function __construct(
+		ApiMain $main,
+		string $action,
+		LanguageNameUtils $languageNameUtils,
+		MessageGroupReview $messageGroupReview
+	) {
 		parent::__construct( $main, $action );
 		$this->languageNameUtils = $languageNameUtils;
+		$this->messageGroupReview = $messageGroupReview;
 	}
 
 	public function execute() {
@@ -67,7 +70,7 @@ class GroupReviewActionApi extends ApiBase {
 			$this->checkUserRightsAny( $stateConfig[$targetState]['right'] );
 		}
 
-		self::changeState( $group, $code, $targetState, $user );
+		$this->messageGroupReview->changeState( $group, $code, $targetState, $user );
 
 		$output = [ 'review' => [
 			'group' => $group->getId(),
@@ -76,58 +79,6 @@ class GroupReviewActionApi extends ApiBase {
 		] ];
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
-	}
-
-	/** @return mixed|false — The value from the field, or false if nothing was found */
-	public static function getState( MessageGroup $group, string $code ) {
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
-		$table = 'translate_groupreviews';
-
-		$field = 'tgr_state';
-		$conds = [
-			'tgr_group' => $group->getId(),
-			'tgr_lang' => $code
-		];
-
-		return $dbw->selectField( $table, $field, $conds, __METHOD__ );
-	}
-
-	public static function changeState( MessageGroup $group, string $code, string $newState, User $user ): bool {
-		$currentState = self::getState( $group, $code );
-		if ( $currentState === $newState ) {
-			return false;
-		}
-
-		$table = 'translate_groupreviews';
-		$index = [ 'tgr_group', 'tgr_lang' ];
-		$row = [
-			'tgr_group' => $group->getId(),
-			'tgr_lang' => $code,
-			'tgr_state' => $newState,
-		];
-		$mwServices = MediaWikiServices::getInstance();
-		$dbw = $mwServices->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
-		$dbw->replace( $table, [ $index ], $row, __METHOD__ );
-
-		$entry = new ManualLogEntry( 'translationreview', 'group' );
-		$entry->setPerformer( $user );
-		$entry->setTarget( SpecialPage::getTitleFor( 'Translate', $group->getId() ) );
-		// @todo
-		// $entry->setComment( $comment );
-		$entry->setParameters( [
-			'4::language' => $code,
-			'5::group-label' => $group->getLabel(),
-			'6::old-state' => $currentState,
-			'7::new-state' => $newState,
-		] );
-
-		$logid = $entry->insert();
-		$entry->publish( $logid );
-
-		$mwServices->getHookContainer()->run( 'TranslateEventMessageGroupStateChange',
-			[ $group, $code, $currentState, $newState ] );
-
-		return true;
 	}
 
 	public function isWriteMode(): bool {

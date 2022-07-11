@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -86,6 +87,11 @@ class Services implements ContainerInterface {
 	/** @since 2020.10 */
 	public function getMessageIndex(): MessageIndex {
 		return $this->get( 'Translate:MessageIndex' );
+	}
+
+	/** @since 2022.07 */
+	public function getMessageGroupReview(): MessageGroupReview {
+		return $this->get( 'Translate:MessageGroupReview' );
 	}
 
 	/** @since 2020.07 */

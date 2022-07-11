@@ -360,7 +360,8 @@
 		"groupreview": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\GroupReviewActionApi",
 			"services": [
-				"LanguageNameUtils"
+				"LanguageNameUtils",
+				"Translate:MessageGroupReview"
 			]
 		},
 		"managemessagegroups": "ApiManageMessageGroups",
