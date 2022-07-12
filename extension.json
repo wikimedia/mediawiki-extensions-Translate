@@ -67,7 +67,6 @@
 		"AmdFFS": "ffs/AmdFFS.php",
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
-		"ApiManageMessageGroups": "api/ApiManageMessageGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
 		"ApiQueryMessageCollection": "api/ApiQueryMessageCollection.php",
 		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
@@ -364,7 +363,7 @@
 				"Translate:MessageGroupReview"
 			]
 		},
-		"managemessagegroups": "ApiManageMessageGroups",
+		"managemessagegroups": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\ManageMessageGroupsActionApi",
 		"translationaids": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\Aid\\TranslationAidsActionApi",
 		"translationentitysearch": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationEntitySearchActionApi",

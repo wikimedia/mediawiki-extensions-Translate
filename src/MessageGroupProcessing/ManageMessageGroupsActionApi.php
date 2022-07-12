@@ -1,27 +1,33 @@
 <?php
-/**
- * API module for managing message group changes
- * @file
- * @author Abijeet Patro
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ApiBase;
+use Exception;
+use FormatJson;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MessageChangeStorage;
+use MessageGroup;
+use MessageGroups;
+use Title;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for managing message group changes.
  * Marks message as a rename of another message or as a new message.
  * Updates the cdb file.
+ * @author Abijeet Patro
  * @since 2019.10
  * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiManageMessageGroups extends ApiBase {
+class ManageMessageGroupsActionApi extends ApiBase {
 	private const RIGHT = 'translate-manage';
 
-	public function execute() {
+	public function execute(): void {
 		$this->checkUserRightsAny( self::RIGHT );
 		$params = $this->extractRequestParams();
 
@@ -30,7 +36,7 @@ class ApiManageMessageGroups extends ApiBase {
 		$msgKey = $params['messageKey'];
 		$name = $params['changesetName'] ?? MessageChangeStorage::DEFAULT_NAME;
 		$changesetModifiedTime = $params['changesetModified'];
-		$renameKey = null;
+		$keyToRename = null;
 
 		if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
 			$this->dieWithError(
@@ -49,7 +55,7 @@ class ApiManageMessageGroups extends ApiBase {
 			if ( !isset( $params['renameMessageKey'] ) ) {
 				$this->dieWithError( [ 'apierror-missingparam', 'renameMessageKey' ] );
 			}
-			$renameKey = $params['renameMessageKey'];
+			$keyToRename = $params['renameMessageKey'];
 		}
 
 		$sourceChanges = MessageChangeStorage::getGroupChanges( $cdbPath, $groupId );
@@ -65,7 +71,7 @@ class ApiManageMessageGroups extends ApiBase {
 		try {
 			if ( $op === 'rename' ) {
 				$this->handleRename(
-					$group, $sourceChanges, $msgKey, $renameKey, $group->getSourceLanguage()
+					$group, $sourceChanges, $msgKey, $keyToRename, $group->getSourceLanguage()
 				);
 			} elseif ( $op === 'new' ) {
 				$this->handleNew( $sourceChanges, $msgKey, $group->getSourceLanguage() );
@@ -80,8 +86,8 @@ class ApiManageMessageGroups extends ApiBase {
 			// Log necessary parameters and rethrow.
 			$data = [
 				'op' => $op,
-				'msgKey' => $msgKey,
-				'renameKey' => $renameKey,
+				'newMsgKey' => $msgKey,
+				'msgKey' => $keyToRename,
 				'groupId' => $group->getId(),
 				'group' => $group->getLabel(),
 				'groupSourceLang' => $group->getSourceLanguage(),
@@ -89,7 +95,7 @@ class ApiManageMessageGroups extends ApiBase {
 			];
 
 			error_log(
-				"Error while running: ApiManageMessageGroups::execute. Inputs: \n" .
+				"Error while running: ManageMessageGroupsActionApi::execute. Inputs: \n" .
 				FormatJson::encode( $data, true )
 			);
 
@@ -104,17 +110,14 @@ class ApiManageMessageGroups extends ApiBase {
 		] );
 	}
 
-	/**
-	 * Handles rename requests
-	 * @param MessageGroup $group
-	 * @param MessageSourceChange $sourceChanges
-	 * @param string $msgKey New rename key
-	 * @param string $renameKey Target key being renamed
-	 * @param string $sourceLanguage
-	 */
-	protected function handleRename( MessageGroup $group, MessageSourceChange $sourceChanges,
-		$msgKey, $renameKey, $sourceLanguage
-	) {
+	/** Handles rename requests */
+	protected function handleRename(
+		MessageGroup $group,
+		MessageSourceChange $sourceChanges,
+		string $msgKey,
+		string $keyToRename,
+		string $sourceLanguage
+	): void {
 		$languages = $sourceChanges->getLanguages();
 
 		foreach ( $languages as $code ) {
@@ -122,7 +125,7 @@ class ApiManageMessageGroups extends ApiBase {
 
 			$isSourceLang = $sourceLanguage === $code;
 			if ( $isSourceLang ) {
-				$this->handleSourceRename( $sourceChanges, $code, $msgKey, $renameKey );
+				$this->handleSourceRename( $sourceChanges, $code, $msgKey, $keyToRename );
 				continue;
 			}
 
@@ -140,7 +143,7 @@ class ApiManageMessageGroups extends ApiBase {
 			// language key is renamed, but one of the non source language keys is removed,
 			// renaming it will not remove the translation, but only rename it. This
 			// scenario is highly unlikely though.
-			$msg = $msg ?? $sourceChanges->findMessage( $code, $renameKey, [
+			$msg = $msg ?? $sourceChanges->findMessage( $code, $keyToRename, [
 				MessageSourceChange::DELETION,
 				MessageSourceChange::CHANGE,
 				MessageSourceChange::RENAME
@@ -152,7 +155,7 @@ class ApiManageMessageGroups extends ApiBase {
 
 			// Check for the renamed message in the rename list, and deleted list.
 			$renameMsg = $sourceChanges->findMessage(
-				$code, $renameKey, [ MessageSourceChange::RENAME, MessageSourceChange::DELETION ],
+				$code, $keyToRename, [ MessageSourceChange::RENAME, MessageSourceChange::DELETION ],
 				$renameMsgState
 			);
 
@@ -161,14 +164,14 @@ class ApiManageMessageGroups extends ApiBase {
 			// to try and load it here again from the database. Very rare chance of this happening.
 			if ( $renameMsg === null || !isset( $renameMsg['content'] ) ) {
 				$title = Title::newFromText(
-					TranslateUtils::title( $renameKey, $code, $group->getNamespace() ),
+					TranslateUtils::title( $keyToRename, $code, $group->getNamespace() ),
 					$group->getNamespace()
 				);
 
 				$renameContent = TranslateUtils::getContentForTitle( $title, true ) ?? '';
 
 				$renameMsg = [
-					'key' => $renameKey,
+					'key' => $keyToRename,
 					'content' => $renameContent
 				];
 
@@ -189,7 +192,7 @@ class ApiManageMessageGroups extends ApiBase {
 			if ( $renameMsgState === MessageSourceChange::RENAME ) {
 				$renameMsgState = $sourceChanges->breakRename( $code, $renameMsg['key'] );
 			} elseif ( $renameMsgState !== MessageSourceChange::NONE ) {
-				$sourceChanges->removeBasedOnType( $code, [ $renameKey ], $renameMsgState );
+				$sourceChanges->removeBasedOnType( $code, [ $keyToRename ], $renameMsgState );
 			}
 
 			// This is done in case the key has not been renamed in the non-source language.
@@ -203,13 +206,16 @@ class ApiManageMessageGroups extends ApiBase {
 			);
 			$sourceChanges->addRename( $code, $msg, $renameMsg, $similarity );
 			$sourceChanges->setRenameState( $code, $msgKey, $msgState );
-			$sourceChanges->setRenameState( $code, $renameKey, $renameMsgState );
+			$sourceChanges->setRenameState( $code, $keyToRename, $renameMsgState );
 		}
 	}
 
-	protected function handleSourceRename( MessageSourceChange $sourceChanges, $code,
-		$msgKey, $renameKey
-	) {
+	protected function handleSourceRename(
+		MessageSourceChange $sourceChanges,
+		string $code,
+		string $msgKey,
+		string $keyToRename
+	): void {
 		$msgState = $renameMsgState = null;
 
 		$msg = $sourceChanges->findMessage(
@@ -218,7 +224,7 @@ class ApiManageMessageGroups extends ApiBase {
 
 		$renameMsg = $sourceChanges->findMessage(
 			$code,
-			$renameKey,
+			$keyToRename,
 			[ MessageSourceChange::DELETION, MessageSourceChange::RENAME ],
 			$renameMsgState
 		);
@@ -248,7 +254,7 @@ class ApiManageMessageGroups extends ApiBase {
 
 		// Remove previous states
 		$sourceChanges->removeAdditions( $code, [ $msgKey ] );
-		$sourceChanges->removeDeletions( $code, [ $renameKey ] );
+		$sourceChanges->removeDeletions( $code, [ $keyToRename ] );
 
 		// Add as rename
 		$stringComparator = new SimpleStringComparator();
@@ -261,13 +267,12 @@ class ApiManageMessageGroups extends ApiBase {
 		$sourceChanges->addRename( $code, $msg, $renameMsg, $similarity );
 	}
 
-	/**
-	 * Handles add message as new request
-	 * @param MessageSourceChange $sourceChanges
-	 * @param string $msgKey
-	 * @param string $sourceLang
-	 */
-	protected function handleNew( MessageSourceChange $sourceChanges, $msgKey, $sourceLang ) {
+	/** Handles add message as new request */
+	protected function handleNew(
+		MessageSourceChange $sourceChanges,
+		string $msgKey,
+		string $sourceLang
+	): void {
 		$msgState = null;
 		$languages = $sourceChanges->getLanguages();
 
@@ -294,7 +299,7 @@ class ApiManageMessageGroups extends ApiBase {
 		}
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'groupId' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -324,11 +329,11 @@ class ApiManageMessageGroups extends ApiBase {
 		];
 	}
 
-	public function isInternal() {
+	public function isInternal(): bool {
 		return true;
 	}
 
-	public function needsToken() {
+	public function needsToken(): string {
 		return 'csrf';
 	}
 }

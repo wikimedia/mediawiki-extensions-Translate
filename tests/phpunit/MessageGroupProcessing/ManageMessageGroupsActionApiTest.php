@@ -1,17 +1,30 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ApiTestCase;
+use ApiUsageException;
+use CommentStoreComment;
+use ContentHandler;
+use DateInterval;
+use DateTime;
+use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\MediaWikiServices;
+use MessageChangeStorage;
+use MessageGroups;
+use MockWikiMessageGroup;
+use Title;
+use TranslateUtils;
+use User;
+use WANObjectCache;
 
 /**
  * @group medium
- * @covers ApiManageMessageGroups
+ * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\ManageMessageGroupsActionApi
  */
-class ApiManageMessageGroupsTest extends ApiTestCase {
+class ManageMessageGroupsActionApiTest extends ApiTestCase {
 	/** @var User */
 	protected $user;
 
@@ -33,7 +46,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		$mg->recache();
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups( array &$list ): bool {
 		$group = new MockWikiMessageGroup( 'testgroup-api', [] );
 		$list['testgroup-api'] = $group;
 
@@ -42,16 +55,17 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		$title = Title::makeTitle( $group->getNamespace(),
 			TranslateUtils::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
 		$content = ContentHandler::makeContent( 'world 23', $title );
-		MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
-			$content,
-			self::getTestSysop()->getUser(),
-			__METHOD__
-		);
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
+		$updater = $page
+			->newPageUpdater( self::getTestSysop()->getUser() )
+			->setContent( 'main', $content );
+
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
 
 		return false;
 	}
 
-	public function testRename() {
+	public function testRename(): void {
 		$filePath = self::getStoragePath();
 
 		$this->doApiRequestWithToken(
@@ -89,7 +103,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 			'also updated as per the source language changes.' );
 	}
 
-	public function testRenameWithPreviousRename() {
+	public function testRenameWithPreviousRename(): void {
 		$filePath = self::getStoragePath();
 
 		$this->doApiRequestWithToken(
@@ -118,7 +132,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 			'added to the renamed state.' );
 	}
 
-	public function testAddAsNew() {
+	public function testAddAsNew(): void {
 		$filePath = self::getStoragePath();
 
 		$this->doApiRequestWithToken(
@@ -157,7 +171,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 			'non-source language is updated when an add as new operation is performed.' );
 	}
 
-	public function testAjaxAtomicity() {
+	public function testAjaxAtomicity(): void {
 		$date = new DateTime();
 		// subtract period of 1 day
 		$date->sub( new DateInterval( 'P1D' ) );
@@ -175,11 +189,11 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		);
 	}
 
-	private static function getStoragePath() {
+	private static function getStoragePath(): string {
 		return MessageChangeStorage::getCdbPath( MessageChangeStorage::DEFAULT_NAME );
 	}
 
-	private function setupTestData() {
+	private function setupTestData(): void {
 		$sourceChanges = new MessageSourceChange();
 
 		$sourceChanges->addAddition( 'en', 'keyAdded', 'world 12' );
