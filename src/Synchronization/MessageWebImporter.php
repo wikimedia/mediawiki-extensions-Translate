@@ -486,7 +486,7 @@ class MessageWebImporter {
 		foreach ( $rows as $row ) {
 			global $wgTranslateDocumentationLanguageCode;
 
-			$ttitle = Title::makeTitle( $row->page_namespace, $row->page_title );
+			$ttitle = Title::makeTitle( (int)$row->page_namespace, $row->page_title );
 
 			// No fuzzy for English original or documentation language code.
 			if ( $ttitle->getSubpageText() === 'en' ||

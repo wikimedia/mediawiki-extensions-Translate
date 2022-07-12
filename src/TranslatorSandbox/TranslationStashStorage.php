@@ -35,7 +35,7 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 		foreach ( $res as $row ) {
 			$objects[] = new StashedTranslation(
 				$user,
-				Title::makeTitle( $row->ts_namespace, $row->ts_title ),
+				Title::makeTitle( (int)$row->ts_namespace, $row->ts_title ),
 				$row->ts_value,
 				unserialize( $row->ts_metadata )
 			);
