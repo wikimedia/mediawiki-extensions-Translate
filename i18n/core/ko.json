@@ -28,6 +28,7 @@
 	"translate-taskui-export-to-file": "네이티브 형식으로 내보내기",
 	"translate-taskui-export-as-po": "오프라인 번역용으로 내보내기",
 	"translate-taskui-export-as-csv": "CSV 포맷으로 내보내기",
+	"translate-export-csv-definition": "메시지 정의",
 	"translate-taction-translate": "번역하기",
 	"translate-taction-proofread": "검토하기",
 	"translate-taction-lstats": "언어 통계",
@@ -415,5 +416,6 @@
 	"translate-messagebundle-error-invalid-value": "\"$1\" 키에 문자열 값을 포함해서는 안 됩니다",
 	"translate-messagebundle-error-empty-value": "\"$1\" 키에 값이 없습니다",
 	"translate-messagebundle-error-metadata-type": "메타데이터는 배열이어야 합니다.",
-	"translate-messagebundle-group-description": "문서 [[$2|$1]]에 정의된 메시지 번들의 메시지입니다."
+	"translate-messagebundle-group-description": "문서 [[$2|$1]]에 정의된 메시지 번들의 메시지입니다.",
+	"log-action-filter-translationreview": "조치 유형:"
 }
