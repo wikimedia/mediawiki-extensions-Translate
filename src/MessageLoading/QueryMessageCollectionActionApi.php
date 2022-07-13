@@ -1,43 +1,63 @@
 <?php
-/**
- * Api module for querying MessageCollection.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use ApiBase;
+use ApiPageSet;
+use ApiQuery;
+use ApiQueryGeneratorBase;
+use ApiResult;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Languages\LanguageNameUtils;
+use MessageGroups;
+use MessageHandle;
+use MWException;
+use Title;
+use TMessage;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Api module for querying MessageCollection.
- *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
+class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 	/** @var ConfigHelper */
 	private $configHelper;
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
+	/** @var ILoadBalancer */
+	private $loadBalancer;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		ConfigHelper $configHelper
+		ConfigHelper $configHelper,
+		LanguageNameUtils $languageNameUtils,
+		ILoadBalancer $loadBalancer
 	) {
 		parent::__construct( $query, $moduleName, 'mc' );
 		$this->configHelper = $configHelper;
+		$this->languageNameUtils = $languageNameUtils;
+		$this->loadBalancer = $loadBalancer;
 	}
 
-	public function execute() {
+	public function execute(): void {
 		$this->run();
 	}
 
-	public function getCacheMode( $params ) {
+	/** @inheritDoc */
+	public function getCacheMode( $params ): string {
 		return 'public';
 	}
 
-	public function executeGenerator( $resultPageSet ) {
+	/** @inheritDoc */
+	public function executeGenerator( $resultPageSet ): void {
 		$this->run( $resultPageSet );
 	}
 
@@ -47,7 +67,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 	}
 
-	private function run( ApiPageSet $resultPageSet = null ) {
+	private function run( ApiPageSet $resultPageSet = null ): void {
 		$params = $this->extractRequestParams();
 
 		$group = MessageGroups::getGroup( $params['group'] );
@@ -61,7 +81,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		// Even though translation to source language maybe disabled, we still want to
 		// fetch the message collections for the source language.
 		if ( $group->getSourceLanguage() === $languageCode ) {
-			$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
+			$name = $this->getLanguageName( $languageCode );
 			$this->addWarning( [ 'apiwarn-translate-language-disabled-source', wfEscapeWikiText( $name ) ] );
 		} else {
 			$languages = $group->getTranslatableLanguages();
@@ -75,14 +95,14 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
 				foreach ( $checks as $check ) {
 					if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
-						$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
+						$name = $this->getLanguageName( $languageCode );
 						$reason = $disabledLanguages[ $check ][ $languageCode ];
 						$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
 					}
 				}
 			} elseif ( !isset( $languages[ $languageCode ] ) ) {
 				// Not a translatable language
-				$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
+				$name = $this->getLanguageName( $languageCode );
 				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
 			}
 		}
@@ -177,13 +197,17 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 	}
 
-	/**
-	 * @param ApiResult $result
-	 * @param array $props
-	 * @param TMessage $message
-	 * @return array
-	 */
-	public function extractMessageData( $result, $props, $message ) {
+	private function getLanguageName( string $languageCode ): string {
+		return $this
+			->languageNameUtils
+			->getLanguageName( $languageCode, $this->getLanguage()->getCode() );
+	}
+
+	private function extractMessageData(
+		ApiResult $result,
+		array $props,
+		TMessage $message
+	): array {
 		$data = [ 'key' => $message->key() ];
 
 		if ( isset( $props['definition'] ) ) {
@@ -217,26 +241,23 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 	/**
 	 * Get the current workflow state for the message group for the given language
-	 *
-	 * @param string $groupId Group id.
-	 * @param string $language Language tag.
 	 * @return string|bool State id or false.
 	 */
-	protected static function getWorkflowState( $groupId, $language ) {
-		$dbr = wfGetDB( DB_REPLICA );
-
-		return $dbr->selectField(
-			'translate_groupreviews',
-			'tgr_state',
-			[
+	private function getWorkflowState( string $groupId, string $language ) {
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		return $dbr->newSelectQueryBuilder()
+			->select( 'tgr_state' )
+			->from( 'translate_groupreviews' )
+			->where( [
 				'tgr_group' => $groupId,
 				'tgr_lang' => $language
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 
-	protected function getAllowedParams() {
+	/** @inheritDoc */
+	protected function getAllowedParams(): array {
 		return [
 			'group' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -279,7 +300,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	/** @inheritDoc */
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=siteinfo&siprop=languages'
 				=> 'apihelp-query+messagecollection-example-1',

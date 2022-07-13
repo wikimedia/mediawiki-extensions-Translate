@@ -1,12 +1,20 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use ApiTestCase;
+use HashBagOStuff;
+use MessageGroups;
+use WANObjectCache;
+use WikiMessageGroup;
+
 /**
- * @file
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
+ * @group medium
  */
-
-/** @group medium */
-class ApiQueryMessageCollectionTest extends ApiTestCase {
+class QueryMessageCollectionActionApiTest extends ApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -32,7 +40,7 @@ class ApiQueryMessageCollectionTest extends ApiTestCase {
 		$mg->recache();
 	}
 
-	public function testSameAsSourceLanguage() {
+	public function testSameAsSourceLanguage(): void {
 		global $wgLanguageCode;
 
 		$groups = MessageGroups::getAllGroups();
