@@ -1,13 +1,21 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ApiTestCase;
+use HashBagOStuff;
+use MessageGroups;
+use WANObjectCache;
+use WikiMessageGroup;
+
 /**
- * @file
  * @author Harry Burt
  * @copyright Copyright © 2012-2013, Harry Burt
  * @license GPL-2.0-or-later
+ * @group medium
  */
-
-/** @group medium */
-class ApiQueryMessageGroupsTest extends ApiTestCase {
+class QueryMessageGroupsActionApiTest extends ApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -23,7 +31,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$mg->recache();
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups( array &$list ): bool {
 		$exampleMessageGroup = new WikiMessageGroup( 'theid', 'thesource' );
 		$exampleMessageGroup->setLabel( 'thelabel' ); // Example
 		$exampleMessageGroup->setNamespace( 5 ); // Example
@@ -37,7 +45,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		return false;
 	}
 
-	public function testAPIAccuracy() {
+	public function testAPIAccuracy(): void {
 		list( $data ) = $this->doApiRequest(
 			[
 				'action' => 'query',
@@ -80,7 +88,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$this->assertSame( WikiMessageGroup::class, $items[1]['class'] );
 	}
 
-	public function testAPIFilterAccuracy() {
+	public function testAPIFilterAccuracy(): void {
 		$ids = [ 'MadeUpGroup' ];
 		$ids += array_keys( MessageGroups::getAllGroups() );
 
@@ -126,7 +134,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		}
 	}
 
-	public function testBadProperty() {
+	public function testBadProperty(): void {
 		list( $data ) = $this->doApiRequest(
 			[
 				'action' => 'query',

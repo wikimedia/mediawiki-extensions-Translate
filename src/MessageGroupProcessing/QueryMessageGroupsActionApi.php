@@ -1,28 +1,42 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use AggregateMessageGroup;
+use ApiQuery;
+use ApiQueryBase;
+use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\HookContainer\HookContainer;
+use MessageGroup;
+use MessageGroups;
+use TranslateMetadata;
+use TranslateUtils;
+use Wikimedia\ParamValidator\ParamValidator;
+use WikiPageMessageGroup;
+
 /**
  * Api module for querying MessageGroups.
- *
- * @file
  * @author Niklas Laxström
  * @author Harry Burt
  * @copyright Copyright © 2012-2013, Harry Burt
  * @license GPL-2.0-or-later
- */
-
-use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
-use Wikimedia\ParamValidator\ParamValidator;
-
-/**
- * Api module for querying MessageGroups.
- *
  * @ingroup API TranslateAPI
  */
-class ApiQueryMessageGroups extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+class QueryMessageGroupsActionApi extends ApiQueryBase {
+	/** @var HookContainer */
+	private $hookContainer;
+
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		HookContainer $hookContainer
+	) {
 		parent::__construct( $query, $moduleName, 'mg' );
+		$this->hookContainer = $hookContainer;
 	}
 
-	public function execute() {
+	public function execute(): void {
 		$params = $this->extractRequestParams();
 		$filter = $params['filter'];
 
@@ -119,10 +133,8 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	/**
 	 * @param array|MessageGroup $mixed
 	 * @param array $props List of props as the array keys
-	 * @param int $depth
-	 * @return array
 	 */
-	protected function formatGroup( $mixed, $props, $depth = 0 ) {
+	protected function formatGroup( $mixed, array $props, int $depth = 0 ): array {
 		$params = $this->extractRequestParams();
 		$context = $this->getContext();
 
@@ -193,7 +205,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$a['sourcelanguage'] = $g->getSourceLanguage();
 		}
 
-		Hooks::run(
+		$this->hookContainer->run(
 			'TranslateProcessAPIMessageGroupsProperties',
 			[ &$a, $props, $params, $g ]
 		);
@@ -221,12 +233,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 	/**
 	 * Get the workflow states applicable to the given message group
-	 *
-	 * @param MessageGroup $group
 	 * @return bool|array Associative array with states as key and localized state
 	 * labels as values
 	 */
-	protected function getWorkflowStates( MessageGroup $group ) {
+	private function getWorkflowStates( MessageGroup $group ) {
 		if ( MessageGroups::isDynamic( $group ) ) {
 			return false;
 		}
@@ -260,7 +270,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		return $stateConfig;
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		$allowedParams = [
 			'depth' => [
 				ParamValidator::PARAM_TYPE => 'integer',
@@ -280,7 +290,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ParamValidator::PARAM_DEFAULT => 64,
 			],
 			'prop' => [
-				ParamValidator::PARAM_TYPE => array_keys( self::getPropertyList() ),
+				ParamValidator::PARAM_TYPE => array_keys( $this->getPropertyList() ),
 				ParamValidator::PARAM_DEFAULT => 'id|label|description|class|exists',
 				ParamValidator::PARAM_ISMULTI => true,
 			],
@@ -293,20 +303,17 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ParamValidator::PARAM_DEFAULT => '',
 			]
 		];
-		Hooks::run( 'TranslateGetAPIMessageGroupsParameterList', [ &$allowedParams ] );
+		$this->hookContainer->run( 'TranslateGetAPIMessageGroupsParameterList', [ &$allowedParams ] );
 
 		return $allowedParams;
 	}
 
 	/**
 	 * Returns an array of properties and their descriptions. Descriptions are ignored.
-	 *
 	 * Descriptions come from apihelp-query+messagegroups-param-prop and that is not
 	 * extensible.
-	 *
-	 * @return array
 	 */
-	protected static function getPropertyList() {
+	private function getPropertyList(): array {
 		$properties = array_flip( [
 			'id',
 			'label',
@@ -322,12 +329,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			'sourcelanguage'
 		] );
 
-		Hooks::run( 'TranslateGetAPIMessageGroupsPropertyDescs', [ &$properties ] );
+		$this->hookContainer->run( 'TranslateGetAPIMessageGroupsPropertyDescs', [ &$properties ] );
 
 		return $properties;
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=messagegroups' => 'apihelp-query+messagegroups-example-1',
 		];

@@ -68,7 +68,6 @@
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
-		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
 		"ApiQueryMessageTranslations": "api/ApiQueryMessageTranslations.php",
 		"ApiStatsQuery": "api/ApiStatsQuery.php",
@@ -348,7 +347,12 @@
 	"APIMetaModules": {
 		"languagestats": "ApiQueryLanguageStats",
 		"managemessagegroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryManageMessageGroupsActionApi",
-		"messagegroups": "ApiQueryMessageGroups",
+		"messagegroups": {
+			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupsActionApi",
+			"services": [
+				"HookContainer"
+			]
+		},
 		"messagegroupstats": "ApiQueryMessageGroupStats",
 		"messagetranslations": "ApiQueryMessageTranslations"
 	},
