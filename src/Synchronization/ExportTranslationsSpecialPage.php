@@ -53,7 +53,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		$this->setHeaders();
 
-		$this->groupId = $request->getText( 'group', $par );
+		$this->groupId = $request->getText( 'group', $par ?? '' );
 		$this->language = $request->getVal( 'language', $lang->getCode() );
 		$this->format = $request->getText( 'format' );
 
