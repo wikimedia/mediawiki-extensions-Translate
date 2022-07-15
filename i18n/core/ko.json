@@ -28,6 +28,7 @@
 	"translate-taskui-export-to-file": "네이티브 형식으로 내보내기",
 	"translate-taskui-export-as-po": "오프라인 번역용으로 내보내기",
 	"translate-taskui-export-as-csv": "CSV 포맷으로 내보내기",
+	"translate-export-csv-message-title": "번역 메시지 제목",
 	"translate-export-csv-definition": "메시지 정의",
 	"translate-taction-translate": "번역하기",
 	"translate-taction-proofread": "검토하기",
