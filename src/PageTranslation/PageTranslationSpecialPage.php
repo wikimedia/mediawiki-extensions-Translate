@@ -98,7 +98,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$user = $this->getUser();
 		$request = $this->getRequest();
 
-		$target = $request->getText( 'target', $parameters );
+		$target = $request->getText( 'target', $parameters ?? '' );
 		$revision = $request->getInt( 'revision', 0 );
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
