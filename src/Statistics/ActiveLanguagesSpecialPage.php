@@ -212,8 +212,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$fields = [ 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' ];
 		$timestamp = $dbr->timestamp( wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
 		$conds = [
-			# Without the quotes the rc_timestamp index isn't used and this query is much slower
-			"rc_timestamp > '$timestamp'",
+			'rc_timestamp > ' . $dbr->addQuotes( $timestamp ),
 			'rc_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 		];

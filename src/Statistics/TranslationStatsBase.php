@@ -48,10 +48,10 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 
 		$conds = [];
 		if ( $start !== null ) {
-			$conds[] = "$field >= '{$db->timestamp( $start )}'";
+			$conds[] = "$field >= " . $db->addQuotes( $db->timestamp( $start ) );
 		}
 		if ( $end !== null ) {
-			$conds[] = "$field <= '{$db->timestamp( $end )}'";
+			$conds[] = "$field <= " . $db->addQuotes( $db->timestamp( $end ) );
 		}
 
 		return $conds;
