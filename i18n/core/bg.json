@@ -243,7 +243,7 @@
 	"tux-status-saving": "Публикуване...",
 	"tux-status-unsaved": "Непубликувано",
 	"tux-save-unknown-error": "Възникна неизвестна грешка.",
-	"tux-editor-editsummary-placeholder": "Незадължително резюме",
+	"tux-editor-editsummary-placeholder": "Обяснете направените от Вас промени (незадължително)",
 	"tux-editor-discard-changes-button-label": "Отхвърляне на промени",
 	"tux-editor-save-button-label": "Публикуване на превода",
 	"tux-editor-skip-button-label": "Направо към следващото",

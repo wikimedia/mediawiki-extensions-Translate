@@ -37,6 +37,8 @@
 	"translate-fuzzybot-desc": "این یک حساب سامانه‌ای ویژه به‌کارگرفته شده توسط [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate افزونهٔ ترجمه] مدیاویکی است که برای نگهداری ترجمه‌ها استفاده می‌شود.\nاین حساب بخشی از نرم‌افزار مدیاویکی است و متعلق به هیچ کاربری نیست.",
 	"translate-taskui-export-to-file": "برون‌بری در قالب بومی",
 	"translate-taskui-export-as-po": "برون‌بری برای ترجمهٔ برون‌خط",
+	"translate-export-csv-message-title": "عنوان پیام ترجمه",
+	"translate-export-csv-definition": "تعریف پیام",
 	"translate-taction-translate": "ترجمه",
 	"translate-taction-proofread": "بازبینی",
 	"translate-taction-lstats": "آمار زبان",
@@ -171,6 +173,7 @@
 	"translate-statsf-alt-text": "این جایگزینی متنی برای آمارهای ترجمه است.",
 	"translate-statsf-embed": "کدی برای جاسازی نمودار آمار ترجمه روی صفحه‌های دیگر.",
 	"translate-tag-page-desc": "ترجمهٔ صفحهٔ ویکی [[$2|$1]] از $3 ($4).",
+	"translate-tag-page-wikipage-desc": "[[$1|ترجمهٔ]] صفحهٔ ویکی [[$2]] از زبان <bdi>$3</bdi> ($4) به زبان <bdi>$5</bdi> ($6)",
 	"translate-sidebar-alltrans": "در زبان‌های دیگر",
 	"translations": "همهٔ ترجمه‌ها",
 	"translations-summary": "نام یک پیام را در زیر وارد کنید تا تمام ترجمه‌های موجود را ببینید.",
@@ -453,5 +456,6 @@
 	"translate-messagebundle-error-empty-value": "کلید «$1» مقداری ندارد",
 	"translate-messagebundle-error-invalid-sourcelanguage": "شناسهٔ زبان مبدأ «$1» پشتیبانی نمی‌شود.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|شناسهٔ|شناسه‌های}} زبان اولویت‌دار نامعتبر در فراداده: $1",
-	"translate-messagebundle-group-description": "پیام‌های یک بستهٔ پیام روی صفحهٔ [[$2|$1]] تعریف شده است."
+	"translate-messagebundle-group-description": "پیام‌های یک بستهٔ پیام روی صفحهٔ [[$2|$1]] تعریف شده است.",
+	"log-action-filter-translationreview": "نوع عمل:"
 }
