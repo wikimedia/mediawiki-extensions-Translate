@@ -3,7 +3,9 @@
 		"authors": [
 			"Kwisha",
 			"Lloffiwr",
-			"Stephenwanjau"
+			"Stephenwanjau",
+			"Edwingudfriend",
+			"Hussein m mmbaga"
 		]
 	},
 	"translate": "Kutafsiri",
@@ -84,6 +86,7 @@
 	"translate-gs-count": "Hesabu",
 	"translate-gs-total": "Jumla",
 	"translate-gs-avgscore": "Alama ya wastani",
+	"translate-documentation-language": "Nyaraka za ujumbe",
 	"translate-searchprofile": "Tafsiri",
 	"translate-workflowstatus": "Hali: $1",
 	"translate-stats-workflow": "Hali",
