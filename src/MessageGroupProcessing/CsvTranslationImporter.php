@@ -94,6 +94,7 @@ class CsvTranslationImporter {
 				if ( $sourceLanguage === $languageCode ) {
 					continue;
 				}
+
 				$rowData['translations'][$languageCode] = $csvRow[$index] ?? null;
 			}
 			$importData[] = $rowData;
@@ -209,10 +210,11 @@ class CsvTranslationImporter {
 		// First two columns are message title and definition
 		$originalLanguageIndex = 2;
 		foreach ( $languageCodesInHeader as $languageCode ) {
-			if ( !TranslateUtils::isSupportedLanguageCode( $languageCode ) ) {
+			if ( !TranslateUtils::isSupportedLanguageCode( strtolower( $languageCode ) ) ) {
 				$invalidLanguageCodes[] = $languageCode;
 			} else {
-				$indexedLanguageCodes[$languageCode] = $originalLanguageIndex;
+				// Language codes maybe in upper case, convert to lower case for further use.
+				$indexedLanguageCodes[ strtolower( $languageCode ) ] = $originalLanguageIndex;
 			}
 			++$originalLanguageIndex;
 		}
