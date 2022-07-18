@@ -92,10 +92,12 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 		$this->outputHeader( 'supportedlanguages-summary' );
 		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
-		if ( $dbr->getType() === 'sqlite' ) {
+		$dbType = $dbr->getType();
+		if ( $dbType === 'sqlite' || $dbType === 'postgres' ) {
 			$out->addHTML(
 				Html::errorBox(
-					$out->msg( 'supportedlanguages-sqlite-error' )->parse()
+					// Messages used: supportedlanguages-sqlite-error, supportedlanguages-postgres-error
+					$out->msg( 'supportedlanguages-' . $dbType . '-error' )->parse()
 				)
 			);
 			return;
