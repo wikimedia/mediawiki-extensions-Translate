@@ -134,7 +134,6 @@
 		"TranslatablePage": "tag/TranslatablePage.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
-		"TranslatableBundleDeleteJob": "tag/TranslatableBundleDeleteJob.php",
 		"TranslateEditAddons": "TranslateEditAddons.php",
 		"TranslateHooks": "TranslateHooks.php",
 		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",

@@ -9,6 +9,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
@@ -158,9 +159,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			// Remove after MLEB 2022.07 release
 			$wgJobClasses['TranslatableBundleMoveJob'] = MoveTranslatableBundleJob::class;
 			$wgJobClasses['MoveTranslatableBundleJob'] = MoveTranslatableBundleJob::class;
-			// Remove after MLEB 2022.04 release
-			$wgJobClasses['TranslateDeleteJob'] = 'TranslatableBundleDeleteJob';
-			$wgJobClasses['TranslatableBundleDeleteJob'] = 'TranslatableBundleDeleteJob';
+			// Remove after MLEB 2022.07 release
+			$wgJobClasses['TranslatableBundleDeleteJob'] = DeleteTranslatableBundleJob::class;
+			$wgJobClasses['DeleteTranslatableBundleJob'] = DeleteTranslatableBundleJob::class;
 
 			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';
 

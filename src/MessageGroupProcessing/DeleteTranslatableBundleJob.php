@@ -1,9 +1,15 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use Job;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
+use PageTranslationHooks;
+use Title;
+use TranslatablePage;
+use User;
 
 /**
  * Job for deleting translatable bundles and translation pages.
@@ -11,7 +17,7 @@ use MediaWiki\MediaWikiServices;
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation JobQueue
  */
-class TranslatableBundleDeleteJob extends Job {
+class DeleteTranslatableBundleJob extends Job {
 	public static function newJob(
 		Title $target,
 		string $base,
@@ -32,34 +38,25 @@ class TranslatableBundleDeleteJob extends Job {
 	}
 
 	public function __construct( Title $title, array $params = [] ) {
-		parent::__construct( __CLASS__, $title, $params );
+		parent::__construct( 'DeleteTranslatableBundleJob', $title, $params );
 	}
 
 	public function run() {
 		$title = $this->title;
-		$user = FuzzyBot::getUser();
 		$summary = $this->getSummary();
 		$base = $this->getBase();
 		$performer = $this->getPerformer();
 		$reason = $this->getReason();
+		$mwInstance = MediaWikiServices::getInstance();
 
 		PageTranslationHooks::$allowTargetEdit = true;
 		PageTranslationHooks::$jobQueueRunning = true;
 
-		$error = '';
-		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
-
-		$status = $wikipage->doDeleteArticleReal(
-			"{$summary}: $reason",
-			$user,
-			false,
-			null,
-			$error,
-			null,
-			[],
-			'delete',
-			true
-		);
+		$wikipage = $mwInstance->getWikiPageFactory()->newFromTitle( $title );
+		$deletePage = $mwInstance->getDeletePageFactory()->newDeletePage( $wikipage, $performer );
+		$status = $deletePage->setSuppress( false )
+			->forceImmediate( true )
+			->deleteUnsafe( "{$summary}: $reason" );
 
 		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
 		// Since the page has been removed from cache, create a bundle from the class name.
@@ -76,7 +73,7 @@ class TranslatableBundleDeleteJob extends Job {
 
 		PageTranslationHooks::$allowTargetEdit = false;
 
-		$cache = MediaWikiServices::getInstance()->getMainObjectStash();
+		$cache = $mwInstance->getMainObjectStash();
 		$pageKey = $cache->makeKey( 'pt-base', $base );
 		$pages = (array)$cache->get( $pageKey );
 		$lastitem = array_pop( $pages );
@@ -119,7 +116,8 @@ class TranslatableBundleDeleteJob extends Job {
 	}
 
 	public function getPerformer(): User {
-		return User::newFromName( $this->params['performer'] );
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		return $userFactory->newFromName( $this->params['performer'] );
 	}
 
 	public function getBase(): string {

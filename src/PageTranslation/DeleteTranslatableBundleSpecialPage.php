@@ -8,6 +8,7 @@ use ErrorPageError;
 use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -17,7 +18,6 @@ use PermissionsError;
 use ReadOnlyError;
 use SpecialPage;
 use Title;
-use TranslatableBundleDeleteJob;
 use TranslatablePage;
 use TranslateUtils;
 use WebRequest;
@@ -312,27 +312,27 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 
 		$user = $this->getUser();
 		foreach ( $subpageList[ 'translationPages' ] as $old ) {
-			$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
+			$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
 				$old, $base, $bundleType, $isTranslation, $user, $this->reason
 			);
 		}
 
 		foreach ( $subpageList[ 'translationUnitPages' ] as $old ) {
-			$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
+			$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
 				$old, $base, $bundleType, $isTranslation, $user, $this->reason
 			);
 		}
 
 		if ( $this->doSubpages ) {
 			foreach ( $subpageList[ 'normalSubpages' ] as $old ) {
-				$jobs[$old->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
+				$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
 					$old, $base, $bundleType, $isTranslation, $user, $this->reason
 				);
 			}
 		}
 
 		if ( !$isTranslation ) {
-			$jobs[$this->title->getPrefixedText()] = TranslatableBundleDeleteJob::newJob(
+			$jobs[$this->title->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
 				$this->title, $base, $bundleType, $isTranslation, $user, $this->reason
 			);
 		}
