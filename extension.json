@@ -66,7 +66,6 @@
 		"AggregateMessageGroupLoader": "messagegroups/loaders/AggregateMessageGroupLoader.php",
 		"AmdFFS": "ffs/AmdFFS.php",
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
-		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
 		"ApiStatsQuery": "api/ApiStatsQuery.php",
@@ -356,7 +355,7 @@
 		"messagetranslations": "MediaWiki\\Extension\\Translate\\MessageLoading\\QueryMessageTranslationsActionApi"
 	},
 	"APIModules": {
-		"aggregategroups": "ApiAggregateGroups",
+		"aggregategroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsActionApi",
 		"groupreview": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\GroupReviewActionApi",
 			"services": [

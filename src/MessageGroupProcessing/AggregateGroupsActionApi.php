@@ -1,27 +1,34 @@
 <?php
-/**
- * API module for managing aggregate message groups
- * @file
- * @author Santhosh Thottingal
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Santhosh Thottingal
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use AggregateMessageGroup;
+use ApiBase;
+use ManualLogEntry;
 use MediaWiki\Logger\LoggerFactory;
+use MessageGroups;
+use MessageIndexRebuildJob;
+use Title;
+use TranslateMetadata;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
+use WikiPageMessageGroup;
 
 /**
  * API module for managing aggregate message groups
  * Only supports aggregate message groups defined inside the wiki.
  * Aggregate message group defined in YAML configuration cannot be altered.
- *
+ * @author Santhosh Thottingal
+ * @author Niklas Laxström
+ * @copyright Copyright © 2012-2013, Santhosh Thottingal
+ * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiAggregateGroups extends ApiBase {
+class AggregateGroupsActionApi extends ApiBase {
 	protected static $right = 'translate-manage';
 
-	public function execute() {
+	public function execute(): void {
 		$this->checkUserRightsAny( self::$right );
 
 		$params = $this->extractRequestParams();
@@ -73,7 +80,7 @@ class ApiAggregateGroups extends ApiBase {
 			 * aggregate message groups, the message group object $group
 			 * might not always be available. In this case we need to fake
 			 * some title. */
-			$title = $group ?
+			$title = $group instanceof WikiPageMessageGroup ?
 				$group->getTitle() :
 				Title::newFromText( "Special:Translate/$subgroupId" );
 
@@ -183,10 +190,10 @@ class ApiAggregateGroups extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::singleton()->recache();
-		MessageIndexRebuildJob::newJob()->insertIntoJobQueue();
+		TranslateUtils::getJobQueueGroup()->push( MessageIndexRebuildJob::newJob() );
 	}
 
-	protected function generateAggregateGroupId( $aggregateGroupName, $prefix = 'agg-' ) {
+	protected function generateAggregateGroupId( string $aggregateGroupName, string $prefix = 'agg-' ): string {
 		// The database field has maximum limit of 200 bytes
 		if ( strlen( $aggregateGroupName ) + strlen( $prefix ) >= 200 ) {
 			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );
@@ -196,15 +203,15 @@ class ApiAggregateGroups extends ApiBase {
 		}
 	}
 
-	public function isWriteMode() {
+	public function isWriteMode(): bool {
 		return true;
 	}
 
-	public function needsToken() {
+	public function needsToken(): string {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'do' => [
 				ParamValidator::PARAM_TYPE => [ 'associate', 'dissociate', 'remove', 'add', 'update' ],
@@ -230,14 +237,14 @@ class ApiAggregateGroups extends ApiBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=aggregategroups&do=associate&group=groupId&aggregategroup=aggregateGroupId'
 				=> 'apihelp-aggregategroups-example-1',
 		];
 	}
 
-	public static function getAllPages() {
+	public static function getAllPages(): array {
 		$groups = MessageGroups::getAllGroups();
 		$pages = [];
 		foreach ( $groups as $group ) {
