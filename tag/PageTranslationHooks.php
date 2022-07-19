@@ -1433,7 +1433,7 @@ class PageTranslationHooks {
 		RevisionRecord $revisionRecord
 	) {
 		$user = User::newFromIdentity( $userIdentity );
-		// TranslatableBundleMoveJob takes care of handling updates because it performs
+		// MoveTranslatableBundleJob takes care of handling updates because it performs
 		// a lot of moves at once. As a performance optimization, skip this hook if
 		// we detect moves from that job. As there isn't a good way to pass information
 		// to this hook what originated the move, we use some heuristics.

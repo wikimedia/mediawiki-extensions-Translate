@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use JobQueueGroup;
 use LogicException;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -17,7 +18,6 @@ use PageTranslationHooks;
 use SplObjectStorage;
 use Status;
 use Title;
-use TranslatableBundleMoveJob;
 use User;
 
 /**
@@ -186,7 +186,7 @@ class TranslatableBundleMover {
 		);
 		$pagesToMove = $pageCollection->getListOfPages();
 
-		$job = TranslatableBundleMoveJob::newJob( $source, $target, $pagesToMove, $summary, $user );
+		$job = MoveTranslatableBundleJob::newJob( $source, $target, $pagesToMove, $summary, $user );
 		$this->lock( array_keys( $pagesToMove ) );
 		$this->lock( array_values( $pagesToMove ) );
 

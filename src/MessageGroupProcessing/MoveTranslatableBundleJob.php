@@ -1,8 +1,14 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use Job;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\MediaWikiServices;
+use Title;
+use User;
 
 /**
  * Contains class with job for moving translation pages.
@@ -11,7 +17,7 @@ use MediaWiki\Extension\Translate\Services;
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation JobQueue
  */
-class TranslatableBundleMoveJob extends Job {
+class MoveTranslatableBundleJob extends Job {
 	/** @var TranslatableBundleMover */
 	private $bundleMover;
 
@@ -36,14 +42,16 @@ class TranslatableBundleMoveJob extends Job {
 	}
 
 	public function __construct( Title $title, array $params = [] ) {
-		parent::__construct( __CLASS__, $title, $params );
+		parent::__construct( 'MoveTranslatableBundleJob', $title, $params );
 		$this->bundleMover = Services::getInstance()->getTranslatableBundleMover();
 	}
 
 	public function run() {
 		$sourceTitle = Title::newFromText( $this->params['source'] );
 		$targetTitle = Title::newFromText( $this->params['target'] );
-		$performer = User::newFromName( $this->params['performer'] );
+
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$performer = $userFactory->newFromName( $this->params['performer'] );
 
 		$this->bundleMover->moveSynchronously(
 			$sourceTitle,
