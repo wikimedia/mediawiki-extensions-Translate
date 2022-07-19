@@ -575,4 +575,39 @@ class TranslateUtils {
 
 		throw new UnexpectedValueException( 'Expected $content to be TextContent, but got ' . get_class( $content ) );
 	}
+
+	/**
+	 * Returns all translations of a given message.
+	 * @param MessageHandle $handle Language code is ignored.
+	 * @return array ( string => array ( string, string ) ) Tuples of page
+	 * text and last author indexed by page name.
+	 * @since 2012-12-18
+	 */
+	public static function getTranslations( MessageHandle $handle ): array {
+		$namespace = $handle->getTitle()->getNamespace();
+		$base = $handle->getKey();
+
+		$dbr = MediaWikiServices::getInstance()
+			->getDBLoadBalancer()
+			->getConnection( DB_REPLICA );
+
+		$titles = $dbr->newSelectQueryBuilder()
+			->select( 'page_title' )
+			->from( 'page' )
+			->where( [
+				'page_namespace' => $namespace,
+				'page_title ' . $dbr->buildLike( "$base/", $dbr->anyString() ),
+			] )
+			->caller( __METHOD__ )
+			->orderBy( 'page_title' )
+			->fetchFieldValues();
+
+		if ( $titles === [] ) {
+			return [];
+		}
+
+		$pageInfo = self::getContents( $titles, $namespace );
+
+		return $pageInfo;
+	}
 }

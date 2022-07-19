@@ -236,7 +236,7 @@ class TTMServerMessageUpdateJob extends Job {
 
 	private function updateMessage( WritableTTMServer $ttmserver, MessageHandle $handle ) {
 		// Base page update, e.g. group change. Update everything.
-		$translations = ApiQueryMessageTranslations::getTranslations( $handle );
+		$translations = TranslateUtils::getTranslations( $handle );
 		foreach ( $translations as $page => $data ) {
 			$tTitle = Title::makeTitle( $this->title->getNamespace(), $page );
 			$tHandle = new MessageHandle( $tTitle );

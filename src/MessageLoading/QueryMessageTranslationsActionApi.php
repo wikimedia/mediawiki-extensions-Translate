@@ -1,21 +1,25 @@
 <?php
-/**
- * Api module for querying message translations.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use ApiBase;
+use ApiQuery;
+use ApiQueryBase;
+use ApiResult;
+use MessageHandle;
+use Title;
+use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api module for querying message translations.
- *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiQueryMessageTranslations extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+class QueryMessageTranslationsActionApi extends ApiQueryBase {
+	public function __construct( ApiQuery $query, string $moduleName ) {
 		parent::__construct( $query, $moduleName, 'mt' );
 	}
 
@@ -23,43 +27,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		return 'public';
 	}
 
-	/**
-	 * Returns all translations of a given message.
-	 * @param MessageHandle $handle Language code is ignored.
-	 * @return array[]
-	 * @since 2012-12-18
-	 */
-	public static function getTranslations( MessageHandle $handle ) {
-		$namespace = $handle->getTitle()->getNamespace();
-		$base = $handle->getKey();
-
-		$dbr = wfGetDB( DB_REPLICA );
-
-		$res = $dbr->select( 'page',
-			[ 'page_namespace', 'page_title' ],
-			[
-				'page_namespace' => $namespace,
-				'page_title ' . $dbr->buildLike( "$base/", $dbr->anyString() ),
-			],
-			__METHOD__,
-			[ 'ORDER BY' => 'page_title', ]
-		);
-
-		$titles = [];
-		foreach ( $res as $row ) {
-			$titles[] = $row->page_title;
-		}
-
-		if ( $titles === [] ) {
-			return [];
-		}
-
-		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
-
-		return $pageInfo;
-	}
-
-	public function execute() {
+	public function execute(): void {
 		$params = $this->extractRequestParams();
 
 		$title = Title::newFromText( $params['title'] );
@@ -73,7 +41,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		}
 
 		$namespace = $title->getNamespace();
-		$pageInfo = self::getTranslations( $handle );
+		$pageInfo = TranslateUtils::getTranslations( $handle );
 
 		$result = $this->getResult();
 		$count = 0;
@@ -111,7 +79,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		$result->addIndexedTagName( [ 'query', $this->getModuleName() ], 'message' );
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'title' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -125,7 +93,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=messagetranslations&mttitle=MediaWiki:January'
 				=> 'apihelp-query+messagetranslations-example-1',
