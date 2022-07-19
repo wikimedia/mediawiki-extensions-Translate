@@ -391,7 +391,7 @@
 	"tux-editor-doc-editor-cancel": "रद्द करें",
 	"tux-messagetable-more-messages": "$1 संदेश और {{PLURAL:$1|हैं}}",
 	"tux-messagetable-loading-messages": "संदेश लोड हो {{PLURAL:$1|रहा है|रहे हैं}}...",
-	"tux-message-filter-placeholder": "सूची को फिल्टर करें",
+	"tux-message-filter-placeholder": "सूची को छानें",
 	"tux-message-filter-result": "\"$2\" के लिए {{PLURAL:$1|$1 अंजाम मिला|$1 अंजाम मिले}}",
 	"tux-message-filter-advanced-button": "उन्नत खोज",
 	"tux-message-filter-optional-messages-label": "वैकल्पिक संदेश",
@@ -449,7 +449,7 @@
 	"translate-messagebundle-group-description": "संदेश बंडल के संदेशों को पृष्ठ [[$2|$1]] पर परिभाषित किया गया है।",
 	"translate-messagebundle-change-sourcelanguage": "मेटाडेटा के अनुसार संदेश बंडल का स्रोत भाषा सेट किया जा रहा है।",
 	"translate-messagebundle-sourcelanguage-changed": "संदेश बंडल के बनने के बाद इसके स्रोत भाषा को बदला नहीं जा सकता।",
-	"log-action-filter-translationreview": "कार्य का प्रकार",
+	"log-action-filter-translationreview": "कार्य का प्रकार:",
 	"log-action-filter-translationreview-message": "अनुवाद संदेशों का निरीक्षण",
 	"log-action-filter-translationreview-group": "अनुवादों की प्रगति की स्थिति में बदलाव"
 }
