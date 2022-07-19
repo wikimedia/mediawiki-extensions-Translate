@@ -27,7 +27,8 @@
 			"Test",
 			"Vlad5250",
 			"Ата",
-			"Тест"
+			"Тест",
+			"Ice bulldog"
 		]
 	},
 	"translate": "Переклад",
@@ -434,9 +435,9 @@
 	"tux-session-expired": "Зараз Ви не авторизовані. Будь ласка, увійдіть до системи на окремій вкладці. Або зробіть копію незбереженого перекладу, увійдіть, поверніться до цієї сторінки та введіть свої переклади знову.",
 	"tux-nojs": "Цей інструмент не працює без JavaScript. JavaScript вимкнено, не вдалося запустити, або ж цей браузер не підтримується.",
 	"specialpages-group-translation": "Переклад",
-	"content-model-translate-messagebundle": "Перекладний пакет повідомлень",
+	"content-model-translate-messagebundle": "Набір перекладних повідомлень",
 	"translate-messagebundle-validation-error": "Недійсний пакет повідомлень: $1",
-	"translate-messagebundle-error-invalid-array": "Пакет повідомлень повинен бути об'єктом JSON. Отримав тип $1",
+	"translate-messagebundle-error-invalid-array": "Набір повідомлень повинен бути об'єктом JSON. Отримано тип $1",
 	"translate-messagebundle-error-key-empty": "Пакет повідомлень не повинен містити порожній ключ",
 	"translate-messagebundle-error-key-too-long": "Клавіша \"$1\" задовга",
 	"translate-messagebundle-error-key-invalid-characters": "Ключ \"$1\" містить заборонені символи",
