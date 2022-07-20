@@ -17,6 +17,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
@@ -303,7 +304,24 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 
 			global $wgAPIModules;
 			$wgAPIModules['translationstash'] = 'ApiTranslationStash';
-			$wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
+			$wgAPIModules['translatesandbox'] = [
+				'class' => TranslatorSandboxActionApi::class,
+				'services' => [
+						'UserFactory',
+						'UserNameUtils',
+						'UserOptionsManager',
+						'WikiPageFactory',
+						'UserOptionsLookup'
+				],
+				'args' => [
+					static function () {
+						return new ServiceOptions(
+							TranslatorSandboxActionApi::CONSTRUCTOR_OPTIONS,
+							MediaWikiServices::getInstance()->getMainConfig()
+						);
+					}
+				]
+			];
 		}
 
 		global $wgNamespaceRobotPolicies;

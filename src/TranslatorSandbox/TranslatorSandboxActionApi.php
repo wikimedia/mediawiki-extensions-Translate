@@ -1,24 +1,72 @@
 <?php
-/**
- * WebAPI for the sandbox feature of Translate.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\MediaWikiServices;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
+
+use ApiBase;
+use ApiMain;
+use CommentStoreComment;
+use ContentHandler;
+use FormatJson;
+use ManualLogEntry;
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Page\WikiPageFactory;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\UserOptionsManager;
+use MWException;
+use Sanitizer;
+use TranslateSandbox;
+use User;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * WebAPI for the sandbox feature of Translate.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup API TranslateAPI
  */
-class ApiTranslateSandbox extends ApiBase {
-	public function execute() {
-		global $wgTranslateUseSandbox;
-		if ( !$wgTranslateUseSandbox ) {
+class TranslatorSandboxActionApi extends ApiBase {
+	/** @var UserFactory */
+	private $userFactory;
+	/** @var UserNameUtils */
+	private $userNameUtils;
+	/** @var UserOptionsManager */
+	private $userOptionsManager;
+	/** @var WikiPageFactory */
+	private $wikiPageFactory;
+	/** @var UserOptionsLookup */
+	private $userOptionsLookup;
+	/** @var ServiceOptions */
+	private $options;
+
+	public const CONSTRUCTOR_OPTIONS = [
+		'TranslateUseSandbox',
+	];
+
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		UserFactory $userFactory,
+		UserNameUtils $userNameUtils,
+		UserOptionsManager $userOptionsManager,
+		WikiPageFactory $wikiPageFactory,
+		UserOptionsLookup $userOptionsLookup,
+		ServiceOptions $options
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->userFactory = $userFactory;
+		$this->userNameUtils = $userNameUtils;
+		$this->userOptionsManager = $userOptionsManager;
+		$this->wikiPageFactory = $wikiPageFactory;
+		$this->userOptionsLookup = $userOptionsLookup;
+		$this->options = $options;
+	}
+
+	public function execute(): void {
+		if ( !$this->options->get( 'TranslateUseSandbox' ) ) {
 			$this->dieWithError( 'apierror-translate-sandboxdisabled', 'sandboxdisabled' );
 		}
 
@@ -41,7 +89,7 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 	}
 
-	protected function doCreate() {
+	private function doCreate(): void {
 		$params = $this->extractRequestParams();
 
 		// Do validations
@@ -52,16 +100,14 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$username = $params['username'];
-		$services = MediaWikiServices::getInstance();
 
-		$userNameUtils = $services->getUserNameUtils();
-		$canonicalName = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_CREATABLE );
+		$canonicalName = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_CREATABLE );
 
 		if ( $canonicalName === false ) {
 			$this->dieWithError( 'noname', 'invalidusername' );
 		}
 
-		$user = User::newFromName( $username );
+		$user = $this->userFactory->newFromName( $username );
 		if ( $user->getId() !== 0 ) {
 			$this->dieWithError( 'userexists', 'nonfreeusername' );
 		}
@@ -82,20 +128,19 @@ class ApiTranslateSandbox extends ApiBase {
 			'id' => $user->getId(),
 		] ];
 
-		$userOptionsManager = $services->getUserOptionsManager();
-		$userOptionsManager->setOption( $user, 'language', $this->getContext()->getLanguage()->getCode() );
-		$userOptionsManager->saveOptions( $user );
+		$this->userOptionsManager->setOption( $user, 'language', $this->getContext()->getLanguage()->getCode() );
+		$this->userOptionsManager->saveOptions( $user );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
-	protected function doDelete() {
+	private function doDelete(): void {
 		$this->checkUserRightsAny( 'translate-sandboxmanage' );
 
 		$params = $this->extractRequestParams();
 
 		foreach ( $params['userid'] as $user ) {
-			$user = User::newFromId( $user );
+			$user = $this->userFactory->newFromId( $user );
 			$userpage = $user->getUserPage();
 
 			TranslateSandbox::sendEmail( $this->getUser(), $user, 'rejection' );
@@ -117,13 +162,13 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 	}
 
-	protected function doPromote() {
+	private function doPromote(): void {
 		$this->checkUserRightsAny( 'translate-sandboxmanage' );
 
 		$params = $this->extractRequestParams();
 
 		foreach ( $params['userid'] as $user ) {
-			$user = User::newFromId( $user );
+			$user = $this->userFactory->newFromId( $user );
 
 			try {
 				TranslateSandbox::promoteUser( $user );
@@ -149,11 +194,11 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 	}
 
-	protected function doRemind() {
+	private function doRemind(): void {
 		$params = $this->extractRequestParams();
 
 		foreach ( $params['userid'] as $user ) {
-			$user = User::newFromId( $user );
+			$this->userFactory->newFromId( $user );
 
 			try {
 				TranslateSandbox::sendEmail( $this->getUser(), $user, 'reminder' );
@@ -166,43 +211,39 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 	}
 
-	/**
-	 * Create a user page for a user with a babel template based on the signup
-	 * preferences.
-	 *
-	 * @param User $user
-	 */
-	private function createUserPage( User $user ) {
+	/** Create a user page for a user with a babel template based on the signup preferences. */
+	private function createUserPage( User $user ): void {
 		$userpage = $user->getUserPage();
 
 		if ( $userpage->exists() ) {
 			return;
 		}
 
-		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		$languagePrefs = FormatJson::decode(
-			$userOptionsLookup->getOption( $user, 'translate-sandbox' ),
+			$this->userOptionsLookup->getOption( $user, 'translate-sandbox' ),
 			true
 		);
 		$languages = implode( '|', $languagePrefs[ 'languages' ] ?? [] );
 		$babeltext = "{{#babel:$languages}}";
 		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();
 
-		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $userpage );
+		$page = $this->wikiPageFactory->newFromTitle( $userpage );
 		$content = ContentHandler::makeContent( $babeltext, $userpage );
 
-		$page->doUserEditContent( $content, $user, $summary, EDIT_NEW );
+		$page->newPageUpdater( $user )
+			->setContent( SlotRecord::MAIN, $content )
+			->saveRevision( CommentStoreComment::newUnsavedComment( trim( $summary ) ), EDIT_NEW );
 	}
 
-	public function isWriteMode() {
+	public function isWriteMode(): bool {
 		return true;
 	}
 
-	public function needsToken() {
+	public function needsToken(): string {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'do' => [
 				ParamValidator::PARAM_TYPE => [ 'create', 'delete', 'promote', 'remind' ],
