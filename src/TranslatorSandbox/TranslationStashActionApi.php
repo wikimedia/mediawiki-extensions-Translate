@@ -1,23 +1,45 @@
 <?php
-/**
- * WebAPI module for stashing translations.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
-use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
+
+use ApiBase;
+use ApiMain;
+use FormatJson;
+use MediaWiki\User\UserFactory;
+use MessageGroups;
+use MessageHandle;
+use MessageIndex;
+use Title;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * WebAPI module for storing translations for users who are in a sandbox.
  * Access is controlled by hooks in TranslateSandbox class.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2013.06
  */
-class ApiTranslationStash extends ApiBase {
-	public function execute() {
+class TranslationStashActionApi extends ApiBase {
+	/** @var ILoadBalancer */
+	private $loadBalancer;
+	/** @var UserFactory */
+	private $userFactory;
+
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		string $modulePrefix,
+		ILoadBalancer $loadBalancer,
+		UserFactory $userFactory
+	) {
+		parent::__construct( $mainModule, $moduleName, $modulePrefix );
+		$this->loadBalancer = $loadBalancer;
+		$this->userFactory = $userFactory;
+	}
+
+	public function execute(): void {
 		$params = $this->extractRequestParams();
 
 		// The user we are operating on, not necessarly the user making the request
@@ -25,7 +47,7 @@ class ApiTranslationStash extends ApiBase {
 
 		if ( isset( $params['username'] ) ) {
 			if ( $this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
-				$user = User::newFromName( $params['username'] );
+				$user = $this->userFactory->newFromName( $params['username'] );
 				if ( !$user ) {
 					$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
 				}
@@ -34,7 +56,7 @@ class ApiTranslationStash extends ApiBase {
 			}
 		}
 
-		$stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
+		$stash = new TranslationStashStorage( $this->loadBalancer->getConnection( DB_PRIMARY ) );
 		$action = $params['subaction'];
 
 		if ( $action === 'add' ) {
@@ -70,7 +92,7 @@ class ApiTranslationStash extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
-	protected function formatTranslation( StashedTranslation $translation ) {
+	private function formatTranslation( StashedTranslation $translation ): array {
 		$title = $translation->getTitle();
 		$handle = new MessageHandle( $title );
 
@@ -96,15 +118,15 @@ class ApiTranslationStash extends ApiBase {
 		];
 	}
 
-	public function isWriteMode() {
+	public function isWriteMode(): bool {
 		return true;
 	}
 
-	public function needsToken() {
+	public function needsToken(): string {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'subaction' => [
 				ParamValidator::PARAM_TYPE => [ 'add', 'query' ],
@@ -129,7 +151,7 @@ class ApiTranslationStash extends ApiBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=translationstash&subaction=add&title=MediaWiki:Jan/fi&translation=tammikuu&metadata={}'
 				=> 'apihelp-translationstash-example-1',

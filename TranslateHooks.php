@@ -16,6 +16,7 @@ use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecial
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
@@ -303,7 +304,13 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
 
 			global $wgAPIModules;
-			$wgAPIModules['translationstash'] = 'ApiTranslationStash';
+			$wgAPIModules['translationstash'] = [
+				'class' => TranslationStashActionApi::class,
+				'services' => [
+					'UserFactory',
+					'LoadBalancer'
+				]
+			];
 			$wgAPIModules['translatesandbox'] = [
 				'class' => TranslatorSandboxActionApi::class,
 				'services' => [
