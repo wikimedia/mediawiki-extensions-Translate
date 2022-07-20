@@ -115,7 +115,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 				'local' => $local,
 			] );
 
-			// ApiTTMServer expands this... need to fix it again to be the bare name
+			// TtmServerActionApi expands this... need to fix it again to be the bare name
 			if ( $local ) {
 				$pagename = urldecode( substr( $item['location'], $localPrefixLength ) );
 				$item['location'] = $pagename;

@@ -1,34 +1,56 @@
 <?php
-/**
- * API module for TTMServer
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TtmServer;
+
+use ApiBase;
+use ApiMain;
+use Config;
+use MediaWiki\Config\ServiceOptions;
+use ReadableTTMServer;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module for TTMServer
- *
  * @ingroup API TranslateAPI TTMServer
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @since 2012-01-26
  */
-class ApiTTMServer extends ApiBase {
+class TtmServerActionApi extends ApiBase {
+	/** @var TtmServerFactory */
+	private $ttmServerFactory;
+	/** @var ServiceOptions */
+	private $options;
 
-	public function execute() {
-		global $wgTranslateTranslationServices;
+	private const CONSTRUCTOR_OPTIONS = [
+		'LanguageCode',
+		'TranslateTranslationDefaultService',
+		'TranslateTranslationServices',
+	];
 
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		TtmServerFactory $ttmServerFactory,
+		Config $config
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->ttmServerFactory = $ttmServerFactory;
+		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
+	}
+
+	public function execute(): void {
 		if ( !$this->getAvailableTranslationServices() ) {
 			$this->dieWithError( 'apierror-translate-notranslationservices' );
 		}
 
 		$params = $this->extractRequestParams();
 
-		$config = $wgTranslateTranslationServices[$params['service']];
-		$server = TTMServer::factory( $config );
-		'@phan-var ReadableTTMServer $server';
+		$server = $this->ttmServerFactory->create( $params[ 'service' ] );
+		if ( !$server instanceof ReadableTTMServer ) {
+			$this->dieWithError( 'apierror-translate-notranslationservices' );
+		}
 
 		$suggestions = $server->query(
 			$params['sourcelanguage'],
@@ -46,11 +68,11 @@ class ApiTTMServer extends ApiBase {
 		$result->addIndexedTagName( $this->getModuleName(), 'suggestion' );
 	}
 
-	protected function getAvailableTranslationServices() {
-		global $wgTranslateTranslationServices;
+	private function getAvailableTranslationServices(): array {
+		$translationServices = $this->options->get( 'TranslateTranslationServices' );
 
 		$good = [];
-		foreach ( $wgTranslateTranslationServices as $id => $config ) {
+		foreach ( $translationServices as $id => $config ) {
 			$public = $config['public'] ?? false;
 			if ( $config['type'] === 'ttmserver' && $public ) {
 				$good[] = $id;
@@ -60,8 +82,7 @@ class ApiTTMServer extends ApiBase {
 		return $good;
 	}
 
-	protected function getAllowedParams() {
-		global $wgTranslateTranslationDefaultService;
+	protected function getAllowedParams(): array {
 		$available = $this->getAvailableTranslationServices();
 
 		$ret = [
@@ -85,13 +106,14 @@ class ApiTTMServer extends ApiBase {
 		if ( $available ) {
 			// Don't add this if no services are available, it makes
 			// ApiStructureTest unhappy
-			$ret['service'][ParamValidator::PARAM_DEFAULT] = $wgTranslateTranslationDefaultService;
+			$ret['service'][ParamValidator::PARAM_DEFAULT] =
+				$this->options->get( 'TranslateTranslationDefaultService' );
 		}
 
 		return $ret;
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=ttmserver&sourcelanguage=en&targetlanguage=fi&text=Help'
 				=> 'apihelp-ttmserver-example-1',

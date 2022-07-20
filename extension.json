@@ -71,7 +71,6 @@
 		"ApiStatsQuery": "api/ApiStatsQuery.php",
 		"ApiTranslateSandbox": "api/ApiTranslateSandbox.php",
 		"ApiTranslationStash": "api/ApiTranslationStash.php",
-		"ApiTTMServer": "api/ApiTTMServer.php",
 		"AppleFFS": "ffs/AppleFFS.php",
 		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
@@ -387,7 +386,13 @@
 				"Translate:GroupSynchronizationCache"
 			]
 		},
-		"ttmserver": "ApiTTMServer",
+		"ttmserver": {
+			"class": "\\MediaWiki\\Extension\\Translate\\TtmServer\\TtmServerActionApi",
+			"services": [
+				"Translate:TtmServerFactory",
+				"MainConfig"
+			]
+		},
 		"searchtranslations": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TtmServer\\SearchTranslationsActionApi",
 			"services": [
