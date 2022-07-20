@@ -9,7 +9,8 @@
 			"TsuyaMarisa",
 			"VulpesVulpes825",
 			"Xiplus",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Tr jason"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",
@@ -30,6 +31,7 @@
 	"apihelp-query+languagestats-description": "查询语言状态。",
 	"apihelp-query+languagestats-summary": "查询语言状态。",
 	"apihelp-query+languagestats-param-language": "语言代码。",
+	"apihelp-query+languagestats-param-group": "消息组 ID。",
 	"apihelp-query+languagestats-example-1": "芬兰语的翻译完成统计列表",
 	"apihelp-query+messagecollection-description": "查询有关翻译的MessageCollection。",
 	"apihelp-query+managemessagegroups-summary": "在导入期间为组中的消息获取可能的重命名",

@@ -44,7 +44,9 @@
 			"Zazzzz",
 			"乌拉跨氪",
 			"列维劳德",
-			"铁桶"
+			"铁桶",
+			"Diskdance",
+			"Tr jason"
 		]
 	},
 	"translate": "翻译",
@@ -230,6 +232,9 @@
 	"translate-mgs-totals": "所有$1种{{PLURAL:$1|语言}}总计",
 	"translate-mgs-invalid-group": "指定的组$1不存在。",
 	"translate-mgs-nothing": "请求的统计没有内容显示。",
+	"translate-tes-server-error": "无法获取搜索建议",
+	"translate-tes-group-not-found": "没有匹配的结果",
+	"translate-tes-type-to-search": "键入以开始搜索",
 	"supportedlanguages": "活跃的语言",
 	"supportedlanguages-summary": "本页面显示{{SITENAME}}的活跃语言的列表以及工作于每种语言的译者的名称。译者的名称越大，其编辑越多。下划线的颜色表明译者最后活跃距现在的时间。",
 	"supportedlanguages-colorlegend": "颜色说明：最后翻译于$1天前。",

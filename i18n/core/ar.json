@@ -20,7 +20,9 @@
 			"زكريا",
 			"لطرش أحمد الهاشمي",
 			"لطرش احمد الهاشمي",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Asma",
+			"BAB ZAA"
 		]
 	},
 	"translate": "ترجمة",
@@ -317,6 +319,7 @@
 	"tux-status-saving": "...جاري النشر",
 	"tux-status-unsaved": "غير منشورة",
 	"tux-save-unknown-error": "خطأ غير معروف حدث.",
+	"tux-editor-placeholder-language": "ترجمتك في $1",
 	"tux-editor-editsummary-placeholder": "ملخص اختياري",
 	"tux-editor-paste-original-button-label": "الصق النص المصدر",
 	"tux-editor-discard-changes-button-label": "تجاهل التغييرات",
