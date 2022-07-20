@@ -208,6 +208,7 @@
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLiteはサポートされていません",
+	"supportedlanguages-postgres-error": "PostgreSQLはサポートされていません",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|翻訳者}}|翻訳者}}: $1",
 	"supportedlanguages-recenttranslations": "最近の翻訳",
 	"supportedlanguages-count": "合計 $1 {{PLURAL:$1|言語}}",

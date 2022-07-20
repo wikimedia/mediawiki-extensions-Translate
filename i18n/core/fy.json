@@ -202,6 +202,7 @@
 	"supportedlanguages-summary": "Dizze side lit in list fan alle talen sjen dy't yn bewurking binne op {{GRAMMAR:l|{{SITENAME}}}},\ntegearre mei de nammen fan 'e oersetters foar in beskate taal (nei de klik).\nHoe grutter de namme derút springt, hoe mear bydragen de oersetter levere hat.\nDe kleur fan 'e ûnderstreking jout oan, hoe lang lyn de oersetter warber west hat.",
 	"supportedlanguages-colorlegend": "Leginda foar de kleur: Lêste oersetting $1 dagen lyn.",
 	"supportedlanguages-sqlite-error": "SQLite wurdt net stipe",
+	"supportedlanguages-postgres-error": "PostgreSQL wurdt net stipe",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Oersetter|Oersetster}}|Oersetters}}: $1",
 	"supportedlanguages-recenttranslations": "koartlyn oerset",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|taal|talen}} yn totaal.",
@@ -440,7 +441,7 @@
 	"translate-messagebundle-group-description": "Berjochten fan in berjochtebondel definiearre op 'e side [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Boarnetaal fan 'e berjochtebondel ynsteld neffens metadata.",
 	"translate-messagebundle-sourcelanguage-changed": "De boarnetaal fan in berjochtebondel kin net wizige wurde nei't er al oanmakke is.",
-	"log-action-filter-translationreview": "Type fan hanneling",
+	"log-action-filter-translationreview": "Type fan hanneling:",
 	"log-action-filter-translationreview-message": "Hifkjen fan ôfsûnderlike oersetberjochten",
 	"log-action-filter-translationreview-group": "Statuswizigings fan 'e oersettingsfuortgong"
 }
