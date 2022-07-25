@@ -179,3 +179,8 @@
 .mw-special-Translate #firstHeading {
 	display: none;
 }
+
+/** Vector 2022 specific fix for CSS grid layouts. See: T313671 */
+.mw-special-Translate .vector-layout-grid .mw-content-container {
+	overflow-x: auto;
+}
