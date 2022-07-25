@@ -355,7 +355,7 @@
 	"tux-editor-doc-editor-cancel": "रद्द करें",
 	"tux-messagetable-more-messages": "$1 संदेश और {{PLURAL:$1|हैं}}",
 	"tux-messagetable-loading-messages": "संदेश लोड हो {{PLURAL:$1|रहा है|रहे हैं}}...",
-	"tux-message-filter-placeholder": "सूची को फिल्टर करें",
+	"tux-message-filter-placeholder": "सूची को छानें",
 	"tux-message-filter-result": "\"$2\" के लिए {{PLURAL:$1|$1 अंजाम मिला|$1 अंजाम मिले}}",
 	"tux-message-filter-advanced-button": "उन्नत खोज",
 	"tux-message-filter-optional-messages-label": "वैकल्पिक संदेश",

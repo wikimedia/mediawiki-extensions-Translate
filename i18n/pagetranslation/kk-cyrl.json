@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"U.ayaao.p"
 		]
 	},
 	"pagetranslation": "Бет аудармасы",
 	"right-pagetranslation": "Аударма үшін беттердің нұсқаларын белгілеу",
 	"action-pagetranslation": "аударуға келетін беттерді басқару",
+	"tps-edit-sourcepage-ve-warning-title": "Ескерту: Қолдау көрсейтілмейтін бет",
+	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "$1 аударма бірлігі",
 	"tpt-section-new": "Жаңа аударма бірлігі.\nАтауы: $1",
 	"tpt-section-deleted": "$1 аударма бірлігі",
@@ -21,7 +24,6 @@
 	"tpt-mark-summary": "Аударма үшін бұл нұсқа белгіленді",
 	"tpt-mark-nochanges": "Мұнда соңғы белгіленген нұсқада жәнебұл нұсқа арасында айырмашылық жоқ.",
 	"tpt-edit-failed": "Келесі бет жаңартылмады: $1",
-	"tpt-already-marked": "Аударма үшін әлдеқашан бұл беттің ең соңғы нұсқасы белгіленген.",
 	"tpt-old-pages-title": "Аудару беті",
 	"tpt-other-pages-title": "Бүлінген беттер",
 	"tpt-old-pages": "{{PLURAL:$1|Бұл беттің|Бұл беттердің}} кейбір нұсқалары аударылсын деп белгіленді.",
