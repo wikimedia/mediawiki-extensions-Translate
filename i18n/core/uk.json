@@ -228,6 +228,7 @@
 	"supportedlanguages-portallink": "[$1] $2 — $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLite не підтримується",
+	"supportedlanguages-postgres-error": "PostgreSQL не підтримується",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Перекладач|Перекладачка}}|Перекладачі}}: $1",
 	"supportedlanguages-recenttranslations": "останні переклади",
 	"supportedlanguages-count": "Всього $1 {{PLURAL:$1|мова|мови|мов}}.",
