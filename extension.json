@@ -9,13 +9,13 @@
 		"Abijeet Patro",
 		"..."
 	],
-	"version": "2022-04-26",
+	"version": "2022-07-28",
 	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
 	"descriptionmsg": "translate-desc",
 	"namemsg": "translate-extensionname",
 	"license-name": "GPL-2.0-or-later",
 	"requires": {
-		"MediaWiki": ">= 1.36.4 < 1.37 || >= 1.37.2",
+		"MediaWiki": ">= 1.37.2",
 		"extensions": {
 			"UniversalLanguageSelector": "*"
 		}
