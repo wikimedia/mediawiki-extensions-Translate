@@ -1,12 +1,22 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use Linker;
+use LogFormatter;
+use MediaWiki\MediaWikiServices;
+use Message;
+use Title;
+use TranslateUtils;
+
 /**
  * Class for formatting translatable bundle logs.
- *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 class TranslatableBundleLogFormatter extends LogFormatter {
-	public function getMessageParameters() {
+	public function getMessageParameters(): array {
 		$params = parent::getMessageParameters();
 		$legacy = $this->entry->getParameters();
 
@@ -62,10 +72,16 @@ class TranslatableBundleLogFormatter extends LogFormatter {
 		return $params;
 	}
 
-	public function getComment() {
+	public function getComment(): string {
 		$legacy = $this->entry->getParameters();
 		if ( isset( $legacy['reason'] ) ) {
-			$comment = Linker::commentBlock( $legacy['reason'] );
+			if ( method_exists( MediaWikiServices::class, 'getCommentFormatter' ) ) {
+				$commentFormatter = MediaWikiServices::getInstance()->getCommentFormatter();
+				$comment = $commentFormatter->formatBlock( $legacy['reason'] );
+			} else {
+				// < MW 1.38
+				$comment = Linker::commentBlock( $legacy['reason'] );
+			}
 
 			// No hard coded spaces thanx
 			return ltrim( $comment );
@@ -74,7 +90,7 @@ class TranslatableBundleLogFormatter extends LogFormatter {
 		return parent::getComment();
 	}
 
-	protected function getMessageKey() {
+	protected function getMessageKey(): string {
 		$key = parent::getMessageKey();
 		$type = $this->entry->getFullType();
 

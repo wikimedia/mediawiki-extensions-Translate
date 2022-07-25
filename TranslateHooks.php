@@ -11,6 +11,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
@@ -118,20 +119,19 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			// logentry-pagetranslation-discourage logentry-pagetranslation-prioritylanguages
 			// logentry-pagetranslation-associate logentry-pagetranslation-dissociate
 			$wgLogTypes[] = 'pagetranslation';
-			$wgLogActionsHandlers['pagetranslation/mark'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/unmark'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/moveok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/movenok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletelok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletefok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletelnok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/deletefnok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/encourage'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/discourage'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] =
-				'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/associate'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['pagetranslation/mark'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/unmark'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/moveok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/movenok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/deletelok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/deletefok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/deletelnok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/deletefnok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/encourage'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/discourage'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/prioritylanguages'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/associate'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['pagetranslation/dissociate'] = TranslatableBundleLogFormatter::class;
 			$wgActionFilteredLogs['pagetranslation'] = [
 				'mark' => [ 'mark' ],
 				'unmark' => [ 'unmark' ],
@@ -144,10 +144,10 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			];
 
 			$wgLogTypes[] = 'messagebundle';
-			$wgLogActionsHandlers['messagebundle/moveok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['messagebundle/movenok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['messagebundle/deletefok'] = 'TranslatableBundleLogFormatter';
-			$wgLogActionsHandlers['messagebundle/deletefnok'] = 'TranslatableBundleLogFormatter';
+			$wgLogActionsHandlers['messagebundle/moveok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['messagebundle/movenok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['messagebundle/deletefok'] = TranslatableBundleLogFormatter::class;
+			$wgLogActionsHandlers['messagebundle/deletefnok'] = TranslatableBundleLogFormatter::class;
 			$wgActionFilteredLogs['messagebundle'] = [
 				'move' => [ 'moveok', 'movenok' ],
 				'delete' => [ 'deletefok', 'deletefnok' ],
