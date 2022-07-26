@@ -5,6 +5,9 @@
 		]
 	},
 	"translate": "Traduzi",
+	"translate-desc": "[[Special:Translate|Pájina spesial]] pa traduzi MediaWiki i otus projetus",
+	"translate-fuzzybot-desc": "Kel li e un konta spesial di sistema ki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate extenson Translate] di MediaWiki ta uza pa manti tradusons. Es konta ta fazi parti di ''software'' MediaWiki i el ka sta asosiadu a ninhun uzuáriu.",
+	"translate-taskui-export-to-file": "Isporta na formatu nativu",
 	"translate-taction-translate": "Traduzi",
 	"translate-taction-proofread": "Konfirma",
 	"translate-taction-lstats": "Statístikas di traduson",
