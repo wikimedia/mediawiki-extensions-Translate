@@ -79,5 +79,11 @@
 		],
 		"phan": "phan -d . --long-progress-bar",
 		"phpcs": "phpcs -p -s --cache"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
 }
