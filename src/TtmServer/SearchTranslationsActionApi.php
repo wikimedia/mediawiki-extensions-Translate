@@ -40,7 +40,7 @@ class SearchTranslationsActionApi extends ApiBase {
 	}
 
 	public function execute(): void {
-		if ( !$this->getAvailableTranslationServices() ) {
+		if ( !$this->getSearchableTtmServers() ) {
 			$this->dieWithError( 'apierror-translate-notranslationservices' );
 		}
 
@@ -70,11 +70,12 @@ class SearchTranslationsActionApi extends ApiBase {
 		$result->addValue( 'search', 'translations', $documents );
 	}
 
-	private function getAvailableTranslationServices(): array {
-		$translationServices = $this->options->get( 'TranslateTranslationServices' );
+	/** @return string[] */
+	private function getSearchableTtmServers(): array {
+		$ttmServiceIds = $this->ttmServerFactory->getNames();
 
 		$good = [];
-		foreach ( array_keys( $translationServices ) as $serviceId ) {
+		foreach ( $ttmServiceIds as $serviceId ) {
 			$ttmServer = $this->ttmServerFactory->create( $serviceId );
 			if ( $ttmServer instanceof SearchableTTMServer ) {
 				$good[] = $serviceId;
@@ -94,7 +95,7 @@ class SearchTranslationsActionApi extends ApiBase {
 	}
 
 	protected function getAllowedParams(): array {
-		$available = $this->getAvailableTranslationServices();
+		$available = $this->getSearchableTtmServers();
 
 		$filters = $this->getAllowedFilters();
 
