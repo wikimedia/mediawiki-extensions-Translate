@@ -307,8 +307,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgAPIModules['translationstash'] = [
 				'class' => TranslationStashActionApi::class,
 				'services' => [
-					'UserFactory',
-					'LoadBalancer'
+					'DBLoadBalancer',
+					'UserFactory'
 				]
 			];
 			$wgAPIModules['translatesandbox'] = [

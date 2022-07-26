@@ -30,11 +30,10 @@ class TranslationStashActionApi extends ApiBase {
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		string $modulePrefix,
 		ILoadBalancer $loadBalancer,
 		UserFactory $userFactory
 	) {
-		parent::__construct( $mainModule, $moduleName, $modulePrefix );
+		parent::__construct( $mainModule, $moduleName );
 		$this->loadBalancer = $loadBalancer;
 		$this->userFactory = $userFactory;
 	}
