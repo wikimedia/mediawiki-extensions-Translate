@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"Ganesh Paudel",
 			"NehalDaveND",
 			"Nirajan pant",
@@ -18,12 +19,12 @@
 	"tpt-aggregategroup-edit-name": "नाम :",
 	"tpt-aggregategroup-edit-description": "वर्णन :",
 	"tpt-aggregategroup-update": "संग्रह गुर्ने",
-	"tpt-aggregategroup-update-cancel": "रद्द गुर्ने",
+	"tpt-aggregategroup-update-cancel": "रद्द गर्नुहोस्",
 	"pt-movepage-reason": "कारण :",
 	"pt-deletepage-reason": "कारण :",
 	"pm-import-button-label": "आयात",
 	"pm-savepages-button-label": "संग्रह गर्ने",
-	"pm-cancel-button-label": "रद्द",
+	"pm-cancel-button-label": "रद्द गर्नुहोस्",
 	"pp-save-button-label": "प्रकाशन",
-	"pp-cancel-button-label": "रद्द गर्नु"
+	"pp-cancel-button-label": "रद्द गर्नुहोस्"
 }
