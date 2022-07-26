@@ -107,7 +107,7 @@ CREATE TABLE translate_stash (
 CREATE TABLE translate_cache (
   tc_key TEXT NOT NULL,
   tc_value TEXT DEFAULT NULL,
-  tc_exptime TEXT DEFAULT NULL,
+  tc_exptime TIMESTAMPTZ DEFAULT NULL,
   tc_tag TEXT DEFAULT NULL,
   PRIMARY KEY(tc_key)
 );

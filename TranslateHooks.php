@@ -519,6 +519,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'translate_sections',
 				"{$dir}/{$dbType}/tables-generated.sql"
 			);
+			$updater->addExtensionUpdate( [
+				'changeField', 'translate_cache', 'tc_exptime', 'TIMESTAMPTZ', 'th_timestamp::timestamp with time zone'
+			] );
 		}
 
 		// 1.39

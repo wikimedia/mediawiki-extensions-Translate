@@ -258,7 +258,6 @@
 			{
 				"name": "tmf_text",
 				"columns": [ "tmf_text" ],
-				"fulltext": true,
 				"unique": false,
 				"flags": [
 					"fulltext"
