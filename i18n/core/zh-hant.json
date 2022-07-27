@@ -24,7 +24,8 @@
 			"Wrightbus",
 			"Xiplus",
 			"列维劳德",
-			"Sun8908"
+			"Sun8908",
+			"LuciferianThomas"
 		]
 	},
 	"translate": "翻譯",
@@ -428,5 +429,6 @@
 	"translate-syntax-error": "翻譯含有語法錯誤",
 	"tux-session-expired": "您已不在登入狀態，請使用另一個頁籤登入。或者備份您尚未儲存的翻譯，登入返回此頁然後再輸入您的翻譯一次。",
 	"tux-nojs": "此工具在沒有 JavaScript 時無法運作。JavaScript 已停用、運作失敗，或者此瀏覽器不受支援。",
-	"specialpages-group-translation": "翻譯"
+	"specialpages-group-translation": "翻譯",
+	"content-model-translate-messagebundle": "可翻譯的訊息集"
 }
