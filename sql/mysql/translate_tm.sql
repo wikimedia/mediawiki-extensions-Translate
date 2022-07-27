@@ -13,7 +13,7 @@ CREATE TABLE /*_*/translate_tmt (
   tmt_sid INT UNSIGNED NOT NULL,
   tmt_lang VARBINARY(20) NOT NULL,
   tmt_text MEDIUMBLOB NOT NULL,
-  UNIQUE INDEX tms_sid_lang (tmt_sid, tmt_lang)
+  PRIMARY KEY(tmt_sid, tmt_lang)
 ) /*$wgDBTableOptions*/;
 
 

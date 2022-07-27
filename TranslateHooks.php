@@ -527,6 +527,11 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			'tmi_key',
 			"{$dir}/{$dbType}/patch-translate_messageindex-unique-to-pk.sql"
 		);
+		$updater->dropExtensionIndex(
+			'translate_tmt',
+			'tms_sid_lang',
+			"{$dir}/{$dbType}/patch-translate_tmt-unique-to-pk.sql"
+		);
 	}
 
 	/**

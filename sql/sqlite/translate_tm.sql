@@ -8,11 +8,11 @@ CREATE INDEX tms_lang_len ON /*_*/translate_tms (tms_lang, tms_len);
 
 
 CREATE TABLE /*_*/translate_tmt (
-  tmt_sid INTEGER UNSIGNED NOT NULL, tmt_lang BLOB NOT NULL,
-  tmt_text BLOB NOT NULL
+  tmt_sid INTEGER UNSIGNED NOT NULL,
+  tmt_lang BLOB NOT NULL,
+  tmt_text BLOB NOT NULL,
+  PRIMARY KEY(tmt_sid, tmt_lang)
 );
-
-CREATE UNIQUE INDEX tms_sid_lang ON /*_*/translate_tmt (tmt_sid, tmt_lang);
 
 
 CREATE TABLE /*_*/translate_tmf (

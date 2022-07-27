@@ -65,11 +65,11 @@ CREATE INDEX tms_lang_len ON translate_tms (tms_lang, tms_len);
 
 
 CREATE TABLE translate_tmt (
-  tmt_sid INT NOT NULL, tmt_lang TEXT NOT NULL,
-  tmt_text TEXT NOT NULL
+  tmt_sid INT NOT NULL,
+  tmt_lang TEXT NOT NULL,
+  tmt_text TEXT NOT NULL,
+  PRIMARY KEY(tmt_sid, tmt_lang)
 );
-
-CREATE UNIQUE INDEX tms_sid_lang ON translate_tmt (tmt_sid, tmt_lang);
 
 
 CREATE TABLE translate_tmf (

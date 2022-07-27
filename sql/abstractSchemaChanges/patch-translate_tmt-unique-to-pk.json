@@ -1,0 +1,59 @@
+{
+	"comment": "Convert unique index to primary key (T312260)",
+	"before": {
+		"name": "translate_tmt",
+		"comment": "Stored translations",
+		"columns": [
+			{
+				"name": "tmt_sid",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "tmt_lang",
+				"comment": "Language code",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tmt_text",
+				"comment": "The actual text",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			}
+		],
+		"pk": [],
+		"indexes": [
+			{
+				"name": "tms_sid_lang",
+				"columns": [ "tmt_sid", "tmt_lang" ],
+				"unique": true
+			}
+		]
+	},
+	"after": {
+		"name": "translate_tmt",
+		"comment": "Stored translations",
+		"columns": [
+			{
+				"name": "tmt_sid",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "tmt_lang",
+				"comment": "Language code",
+				"type": "binary",
+				"options": { "notnull": true, "length": 20 }
+			},
+			{
+				"name": "tmt_text",
+				"comment": "The actual text",
+				"type": "blob",
+				"options": { "length": 16777215, "notnull": true }
+			}
+		],
+		"pk": [ "tmt_sid", "tmt_lang" ],
+		"indexes": []
+	}
+}

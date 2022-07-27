@@ -235,14 +235,8 @@
 				"options": { "length": 16777215, "notnull": true }
 			}
 		],
-		"pk": [],
-		"indexes": [
-			{
-				"name": "tms_sid_lang",
-				"columns": [ "tmt_sid", "tmt_lang" ],
-				"unique": true
-			}
-		]
+		"pk": [ "tmt_sid", "tmt_lang" ],
+		"indexes": []
 	},
 	{
 		"name": "translate_tmf",
