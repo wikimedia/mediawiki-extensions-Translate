@@ -9,7 +9,7 @@ use RuntimeException;
  * Represents any kind of failure to parse a translatable page source code.
  *
  * This is an internal exception that includes information to produce translated error messages, but
- * actually displaying them to users is handlded by TPException and MediaWiki core.
+ * actually displaying them to users is handlded by Status and MediaWiki core.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

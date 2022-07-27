@@ -766,21 +766,17 @@ class PageTranslationHooks {
 	 * @return true
 	 */
 	public static function tpSyntaxCheckForEditContent( $context, $content, $status, $summary ) {
-		$e = self::tpSyntaxError( $context->getTitle(), $content );
+		$syntaxErrorStatus = self::tpSyntaxError( $context->getTitle(), $content );
 
-		if ( $e ) {
-			$msg = $e->getMsg();
-			// $msg is an array containing a message key followed by any parameters.
-			// @todo Use Message object instead.
-
-			call_user_func_array( [ $status, 'fatal' ], $msg );
-			return false;
+		if ( $syntaxErrorStatus ) {
+			$status->merge( $syntaxErrorStatus );
+			return $syntaxErrorStatus->isGood();
 		}
 
 		return true;
 	}
 
-	protected static function tpSyntaxError( ?PageIdentity $page, ?Content $content ): ?TPException {
+	protected static function tpSyntaxError( ?PageIdentity $page, ?Content $content ): ?Status {
 		// T163254: Ignore translation markup on non-wikitext pages
 		if ( !$content instanceof WikitextContent || !$page ) {
 			return null;
@@ -790,18 +786,17 @@ class PageTranslationHooks {
 
 		// See T154500
 		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
-
-		$exception = null;
+		$status = Status::newGood();
 		$parser = Services::getInstance()->getTranslatablePageParser();
 		if ( $parser->containsMarkup( $text ) ) {
 			try {
 				$parser->parse( $text );
 			} catch ( ParsingFailure $e ) {
-				$exception = new TPException( $e->getMessageSpecification() );
+				$status->fatal( ...( $e->getMessageSpecification() ) );
 			}
 		}
 
-		return $exception;
+		return $status;
 	}
 
 	/**
@@ -820,14 +815,14 @@ class PageTranslationHooks {
 	) {
 		$content = $renderedRevision->getRevision()->getContent( SlotRecord::MAIN );
 
-		$e = self::tpSyntaxError(
+		$status = self::tpSyntaxError(
 			$renderedRevision->getRevision()->getPage(),
 			$content
 		);
-		if ( $e ) {
-			call_user_func_array( [ $hookStatus, 'fatal' ], $e->getMsg() );
 
-			return false;
+		if ( $status ) {
+			$hookStatus->merge( $status );
+			return $status->isGood();
 		}
 
 		return true;

@@ -129,7 +129,6 @@
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"ThinMessage": "Message.php",
 		"TMessage": "Message.php",
-		"TPException": "tag/TPException.php",
 		"TranslatablePage": "tag/TranslatablePage.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
