@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Job;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use PageTranslationHooks;
 use Title;
@@ -43,6 +44,7 @@ class DeleteTranslatableBundleJob extends Job {
 
 	public function run() {
 		$title = $this->title;
+		$fuzzyBot = FuzzyBot::getUser();
 		$summary = $this->getSummary();
 		$base = $this->getBase();
 		$performer = $this->getPerformer();
@@ -53,7 +55,7 @@ class DeleteTranslatableBundleJob extends Job {
 		PageTranslationHooks::$jobQueueRunning = true;
 
 		$wikipage = $mwInstance->getWikiPageFactory()->newFromTitle( $title );
-		$deletePage = $mwInstance->getDeletePageFactory()->newDeletePage( $wikipage, $performer );
+		$deletePage = $mwInstance->getDeletePageFactory()->newDeletePage( $wikipage, $fuzzyBot );
 		$status = $deletePage->setSuppress( false )
 			->forceImmediate( true )
 			->deleteUnsafe( "{$summary}: $reason" );
