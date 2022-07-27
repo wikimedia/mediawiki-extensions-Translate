@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use Title;
-use TranslatablePage;
 
 /**
  * Create instances of various classes based on the type of TranslatableBundle

@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\MediaWikiServices;
 

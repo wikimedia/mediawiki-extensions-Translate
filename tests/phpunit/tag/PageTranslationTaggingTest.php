@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MediaWikiServices;
 
 /**

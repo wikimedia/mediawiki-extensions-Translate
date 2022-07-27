@@ -8,6 +8,8 @@
  */
 
 // Standard boilerplate to define $IP
+
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MediaWikiServices;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {

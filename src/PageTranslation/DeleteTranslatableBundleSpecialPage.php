@@ -18,7 +18,6 @@ use PermissionsError;
 use ReadOnlyError;
 use SpecialPage;
 use Title;
-use TranslatablePage;
 use TranslateUtils;
 use WebRequest;
 use Xml;

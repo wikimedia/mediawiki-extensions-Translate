@@ -1,12 +1,16 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
 use MediaWiki\Linker\LinkTarget;
+use MediaWikiUnitTestCase;
+use TitleValue;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \TranslatablePage
+ * @covers MediaWiki\Extension\Translate\PageTranslation\TranslatablePage
  */
 class TranslatablePageTest extends MediaWikiUnitTestCase {
 	/** @dataProvider provideTestParseTranslationUnit */

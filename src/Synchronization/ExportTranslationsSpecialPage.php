@@ -8,6 +8,7 @@ use GettextFFS;
 use Html;
 use HTMLForm;
 use LogicException;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MediaWikiServices;
 use Message;
 use MessageCollection;
@@ -17,7 +18,6 @@ use MessageHandle;
 use SpecialPage;
 use Status;
 use Title;
-use TranslatablePage;
 use TranslateUtils;
 use WikiPageMessageGroup;
 

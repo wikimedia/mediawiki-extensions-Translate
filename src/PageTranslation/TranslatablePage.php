@@ -1,19 +1,33 @@
 <?php
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MessageGroups;
+use MessageGroupStats;
+use MessageHandle;
+use MWException;
+use RuntimeException;
+use SpecialPage;
+use TextContent;
+use Title;
+use TranslateMetadata;
+use TranslateUtils;
 use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IResultWrapper;
+use WikiPageMessageGroup;
 
 /**
  * Mixed bag of methods related to translatable pages.
- *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup PageTranslation
@@ -59,13 +73,8 @@ class TranslatablePage extends TranslatableBundle {
 	 * Constructs a translatable page from given text.
 	 * Some functions will fail unless you set revision
 	 * parameter manually.
-	 *
-	 * @param Title $title
-	 * @param string $text
-	 *
-	 * @return self
 	 */
-	public static function newFromText( Title $title, $text ) {
+	public static function newFromText( Title $title, string $text ): self {
 		$obj = new self( $title );
 		$obj->text = $text;
 		$obj->source = 'text';
@@ -77,13 +86,9 @@ class TranslatablePage extends TranslatableBundle {
 	 * Constructs a translatable page from given revision.
 	 * The revision must belong to the title given or unspecified
 	 * behavior will happen.
-	 *
-	 * @param Title $title
-	 * @param int $revision Revision number
 	 * @throws MWException
-	 * @return self
 	 */
-	public static function newFromRevision( Title $title, int $revision ) {
+	public static function newFromRevision( Title $title, int $revision ): self {
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
 			->getRevisionByTitle( $title, $revision );
@@ -101,11 +106,8 @@ class TranslatablePage extends TranslatableBundle {
 	/**
 	 * Constructs a translatable page from title.
 	 * The text of last marked revision is loaded when needed.
-	 *
-	 * @param Title $title
-	 * @return self
 	 */
-	public static function newFromTitle( Title $title ) {
+	public static function newFromTitle( Title $title ): self {
 		$obj = new self( $title );
 		$obj->source = 'title';
 
@@ -117,10 +119,7 @@ class TranslatablePage extends TranslatableBundle {
 		return $this->title;
 	}
 
-	/**
-	 * Returns the text for this translatable page.
-	 * @return string
-	 */
+	/** Returns the text for this translatable page. */
 	public function getText(): string {
 		if ( $this->text !== null ) {
 			return $this->text;
@@ -167,10 +166,9 @@ class TranslatablePage extends TranslatableBundle {
 	/**
 	 * Returns the source language of this translatable page. In other words
 	 * the language in which the page without language code is written.
-	 * @return string
 	 * @since 2013-01-28
 	 */
-	public function getSourceLanguageCode() {
+	public function getSourceLanguageCode(): string {
 		return $this->getTitle()->getPageLanguage()->getCode();
 	}
 
@@ -179,30 +177,30 @@ class TranslatablePage extends TranslatableBundle {
 		return self::getMessageGroupIdFromTitle( $this->getTitle() );
 	}
 
-	/**
-	 * Constructs MessageGroup id for any title.
-	 * @param Title $title
-	 * @return string
-	 */
-	public static function getMessageGroupIdFromTitle( Title $title ) {
+	/** Constructs MessageGroup id for any title. */
+	public static function getMessageGroupIdFromTitle( Title $title ): string {
 		return 'page-' . $title->getPrefixedText();
 	}
 
 	/**
 	 * Returns MessageGroup used for translating this page. It may still be empty
 	 * if the page has not been ever marked.
-	 * @return WikiPageMessageGroup
 	 */
-	public function getMessageGroup() {
-		return MessageGroups::getGroup( $this->getMessageGroupId() );
+	public function getMessageGroup(): ?WikiPageMessageGroup {
+		$groupId = $this->getMessageGroupId();
+		$group = MessageGroups::getGroup( $groupId );
+		if ( !$group || $group instanceof WikiPageMessageGroup ) {
+			return $group;
+		}
+
+		throw new RuntimeException(
+			"Expected $groupId to be of type WikiPageMessageGroup; got " .
+			get_class( $group )
+		);
 	}
 
-	/**
-	 * Check whether title is marked for translation
-	 * @return bool
-	 * @since 2014.06
-	 */
-	public function hasPageDisplayTitle() {
+	/** Check whether title is marked for translation */
+	public function hasPageDisplayTitle(): bool {
 		// Cached value
 		if ( $this->pageDisplayTitle !== null ) {
 			return $this->pageDisplayTitle;
@@ -216,12 +214,8 @@ class TranslatablePage extends TranslatableBundle {
 		return $this->pageDisplayTitle;
 	}
 
-	/**
-	 * Get translated page title.
-	 * @param string $code Language code.
-	 * @return string|null
-	 */
-	public function getPageDisplayTitle( $code ) {
+	/** Get translated page title. */
+	public function getPageDisplayTitle( string $languageCode ): ?string {
 		// Return null if title not marked for translation
 		if ( !$this->hasPageDisplayTitle() ) {
 			return null;
@@ -231,19 +225,20 @@ class TranslatablePage extends TranslatableBundle {
 		$section = str_replace( ' ', '_', self::DISPLAY_TITLE_UNIT_ID );
 		$page = $this->getTitle()->getPrefixedDBkey();
 
-		$group = $this->getMessageGroup();
-		// Sanity check, seems to happen during moves
-		if ( !$group instanceof WikiPageMessageGroup ) {
+		try {
+			$group = $this->getMessageGroup();
+		} catch ( RuntimeException $e ) {
 			return null;
 		}
 
-		return $group->getMessage( "$page/$section", $code, $group::READ_NORMAL );
+		// Sanity check, seems to happen during moves
+		if ( !$group ) {
+			return null;
+		}
+
+		return $group->getMessage( "$page/$section", $languageCode, $group::READ_NORMAL );
 	}
 
-	/**
-	 * @return string
-	 * @since 2020.07
-	 */
 	public function getStrippedSourcePageText(): string {
 		$parser = Services::getInstance()->getTranslatablePageParser();
 		$text = $parser->cleanupTags( $this->getText() );
@@ -252,11 +247,6 @@ class TranslatablePage extends TranslatableBundle {
 		return $text;
 	}
 
-	/**
-	 * @param Title $title
-	 * @return ?TranslationPage
-	 * @since 2020.07
-	 */
 	public static function getTranslationPageFromTitle( Title $title ): ?TranslationPage {
 		$self = self::isTranslationPage( $title );
 		if ( !$self ) {
@@ -266,23 +256,20 @@ class TranslatablePage extends TranslatableBundle {
 		return $self->getTranslationPage( $self->targetLanguage );
 	}
 
-	/**
-	 * @param string $targetLanguage
-	 * @return TranslationPage
-	 * @since 2020.07
-	 */
 	public function getTranslationPage( string $targetLanguage ): TranslationPage {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$mwServices = MediaWikiServices::getInstance();
+		$config = $mwServices->getMainConfig();
 		$parser = Services::getInstance()->getTranslatablePageParser();
 		$parserOutput = $parser->parse( $this->getText() );
 		$pageVersion = (int)TranslateMetadata::get( $this->getMessageGroupId(), 'version' );
 		$wrapUntranslated = $pageVersion >= 2;
+		$languageFactory = $mwServices->getLanguageFactory();
 
 		return new TranslationPage(
 			$parserOutput,
 			$this->getMessageGroup(),
-			Language::factory( $targetLanguage ),
-			Language::factory( $this->getSourceLanguageCode() ),
+			$languageFactory->getLanguage( $targetLanguage ),
+			$languageFactory->getLanguage( $this->getSourceLanguageCode() ),
 			$config->get( 'TranslateKeepOutdatedTranslations' ),
 			$wrapUntranslated,
 			$this->getTitle()
@@ -291,22 +278,13 @@ class TranslatablePage extends TranslatableBundle {
 
 	protected static $tagCache = [];
 
-	/**
-	 * Adds a tag which indicates that this page is
-	 * suitable for translation.
-	 * @param int $revision
-	 * @param null|string $value
-	 */
-	public function addMarkedTag( int $revision, $value = null ) {
+	/** Adds a tag which indicates that this page is suitable for translation. */
+	public function addMarkedTag( int $revision, array $value = null ) {
 		$this->revTagStore->replaceTag( $this->getTitle(), RevTagStore::TP_MARK_TAG, $revision, $value );
 		self::clearSourcePageCache();
 	}
 
-	/**
-	 * Adds a tag which indicates that this page source is
-	 * ready for marking for translation.
-	 * @param int $revision
-	 */
+	/** Adds a tag which indicates that this page source is ready for marking for translation. */
 	public function addReadyTag( int $revision ): void {
 		$this->revTagStore->replaceTag( $this->getTitle(), RevTagStore::TP_READY_TAG, $revision );
 		if ( !self::isSourcePage( $this->getTitle() ) ) {
@@ -314,18 +292,12 @@ class TranslatablePage extends TranslatableBundle {
 		}
 	}
 
-	/**
-	 * Returns the latest revision which has marked tag, if any.
-	 * @return ?int
-	 */
-	public function getMarkedTag() {
+	/** Returns the latest revision which has marked tag, if any. */
+	public function getMarkedTag(): ?int {
 		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), RevTagStore::TP_MARK_TAG );
 	}
 
-	/**
-	 * Returns the latest revision which has ready tag, if any.
-	 * @return ?int
-	 */
+	/** Returns the latest revision which has ready tag, if any. */
 	public function getReadyTag(): ?int {
 		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), RevTagStore::TP_READY_TAG );
 	}
@@ -334,10 +306,9 @@ class TranslatablePage extends TranslatableBundle {
 	 * Removes all page translation feature data from the database.
 	 * Does not remove translated sections or translation pages.
 	 */
-	public function unmarkTranslatablePage() {
+	public function unmarkTranslatablePage(): void {
 		$aid = $this->getTitle()->getArticleID();
-		$dbw = wfGetDB( DB_PRIMARY );
-
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$this->revTagStore->removeTags( $this->getTitle(), RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $aid ], __METHOD__ );
 
@@ -349,7 +320,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @param string|bool $code MediaWiki language code. Default: false.
 	 * @return string Relative url
 	 */
-	public function getTranslationUrl( $code = false ) {
+	public function getTranslationUrl( $code = false ): string {
 		$params = [
 			'group' => $this->getMessageGroupId(),
 			'action' => 'page',
@@ -362,7 +333,7 @@ class TranslatablePage extends TranslatableBundle {
 		return $translate->getLocalURL( $params );
 	}
 
-	public function getMarkedRevs() {
+	public function getMarkedRevs(): IResultWrapper {
 		$db = TranslateUtils::getSafeReadDB();
 
 		$fields = [ 'rt_revision', 'rt_value' ];
@@ -405,11 +376,15 @@ class TranslatablePage extends TranslatableBundle {
 		return $this->getTranslationUnitPagesByTitle( $this->title, $code );
 	}
 
-	/** @return array */
-	public function getTranslationPercentages() {
+	public function getTranslationPercentages(): array {
 		// Calculate percentages for the available translations
-		$group = $this->getMessageGroup();
-		if ( !$group instanceof WikiPageMessageGroup ) {
+		try {
+			$group = $this->getMessageGroup();
+		} catch ( RuntimeException $e ) {
+			return [];
+		}
+
+		if ( !$group ) {
 			return [];
 		}
 
@@ -438,7 +413,7 @@ class TranslatablePage extends TranslatableBundle {
 		return $stats;
 	}
 
-	public function getTransRev( $suffix ) {
+	public function getTransRev( string $suffix ) {
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
 		$db = TranslateUtils::getSafeReadDB();
@@ -492,10 +467,7 @@ class TranslatablePage extends TranslatableBundle {
 		return $this->getMarkedTag() !== null;
 	}
 
-	/**
-	 * @param Title $title
-	 * @return bool|self
-	 */
+	/** @return bool|self */
 	public static function isTranslationPage( Title $title ) {
 		$handle = new MessageHandle( $title );
 		$key = $handle->getKey();
@@ -530,17 +502,11 @@ class TranslatablePage extends TranslatableBundle {
 		return $page;
 	}
 
-	protected static function changeTitleText( Title $title, $text ) {
+	private static function changeTitleText( Title $title, string $text ): ?Title {
 		return Title::makeTitleSafe( $title->getNamespace(), $text );
 	}
 
-	/**
-	 * Helper to guess translation page from translation unit.
-	 *
-	 * @param LinkTarget $translationUnit
-	 * @return array
-	 * @since 2019.10
-	 */
+	/** Helper to guess translation page from translation unit. */
 	public static function parseTranslationUnit( LinkTarget $translationUnit ): array {
 		// Format is Translations:SourcePageNamespace:SourcePageName/SectionName/LanguageCode.
 		// We will drop the namespace immediately here.
@@ -558,11 +524,7 @@ class TranslatablePage extends TranslatableBundle {
 		];
 	}
 
-	/**
-	 * @param Title $title
-	 * @return bool
-	 */
-	public static function isSourcePage( Title $title ) {
+	public static function isSourcePage( Title $title ): bool {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$cacheKey = $cache->makeKey( 'pagetranslation', 'sourcepages' );
 
@@ -570,7 +532,7 @@ class TranslatablePage extends TranslatableBundle {
 			$cacheKey,
 			$cache::TTL_HOUR * 2,
 			static function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return RevTagStore::getTranslatableBundleIds(
@@ -587,11 +549,11 @@ class TranslatablePage extends TranslatableBundle {
 		return in_array( $title->getArticleID(), $translatablePageIds );
 	}
 
-	/**
-	 * Clears the source page cache
-	 */
+	/** Clears the source page cache */
 	public static function clearSourcePageCache(): void {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$cache->touchCheckKey( $cache->makeKey( 'pagetranslation', 'sourcepages' ) );
 	}
 }
+
+class_alias( TranslatablePage::class, 'TranslatablePage' );

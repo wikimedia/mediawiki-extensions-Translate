@@ -19,7 +19,6 @@ use ReadOnlyError;
 use SplObjectStorage;
 use ThrottledError;
 use Title;
-use TranslatablePage;
 use UnlistedSpecialPage;
 use Wikimedia\ObjectFactory\ObjectFactory;
 

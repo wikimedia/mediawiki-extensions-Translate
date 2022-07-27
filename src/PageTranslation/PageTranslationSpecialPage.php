@@ -32,7 +32,6 @@ use PermissionsError;
 use SpecialPage;
 use Status;
 use Title;
-use TranslatablePage;
 use TranslateMetadata;
 use TranslateUtils;
 use TranslationsUpdateJob;
