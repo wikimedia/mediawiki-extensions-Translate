@@ -139,8 +139,8 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 		$params = $this->extractRequestParams();
 
-		foreach ( $params['userid'] as $user ) {
-			$user = $this->userFactory->newFromId( $user );
+		foreach ( $params['userid'] as $userId ) {
+			$user = $this->userFactory->newFromId( $userId );
 			$userpage = $user->getUserPage();
 
 			TranslateSandbox::sendEmail( $this->getUser(), $user, 'rejection' );
@@ -167,8 +167,8 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 		$params = $this->extractRequestParams();
 
-		foreach ( $params['userid'] as $user ) {
-			$user = $this->userFactory->newFromId( $user );
+		foreach ( $params['userid'] as $userId ) {
+			$user = $this->userFactory->newFromId( $userId );
 
 			try {
 				TranslateSandbox::promoteUser( $user );
@@ -197,11 +197,11 @@ class TranslatorSandboxActionApi extends ApiBase {
 	private function doRemind(): void {
 		$params = $this->extractRequestParams();
 
-		foreach ( $params['userid'] as $user ) {
-			$this->userFactory->newFromId( $user );
+		foreach ( $params['userid'] as $userId ) {
+			$target = $this->userFactory->newFromId( $userId );
 
 			try {
-				TranslateSandbox::sendEmail( $this->getUser(), $user, 'reminder' );
+				TranslateSandbox::sendEmail( $this->getUser(), $target, 'reminder' );
 			} catch ( MWException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
