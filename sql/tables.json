@@ -65,18 +65,13 @@
 		],
 		"indexes": [
 			{
-				"name": "rt_type_page_revision",
-				"comment": "Index for finding all revisions in a page with a given tag",
-				"columns": [ "rt_type", "rt_page", "rt_revision" ],
-				"unique": true
-			},
-			{
 				"name": "rt_revision_type",
 				"comment": "Index for finding the tags on a given revision",
 				"columns": [ "rt_revision", "rt_type" ],
 				"unique": false
 			}
-		]
+		],
+		"pk": [ "rt_type", "rt_page", "rt_revision" ]
 	},
 	{
 		"name": "translate_groupstats",

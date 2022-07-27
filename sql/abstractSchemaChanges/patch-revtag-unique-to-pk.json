@@ -1,0 +1,82 @@
+{
+	"comment": "Convert unique index to primary key (T243985)",
+	"before": {
+		"name": "revtag",
+		"comment": "Revision tags",
+		"columns": [
+			{
+				"name": "rt_type",
+				"type": "binary",
+				"options": { "notnull": true, "length": 60 }
+			},
+			{
+				"name": "rt_page",
+				"comment": "Link to page.page_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "rt_revision",
+				"comment": "Link to revision.rev_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "rt_value",
+				"type": "blob",
+				"options": { "length": 65530, "notnull": false }
+			}
+		],
+		"indexes": [
+			{
+				"name": "rt_type_page_revision",
+				"comment": "Index for finding all revisions in a page with a given tag",
+				"columns": [ "rt_type", "rt_page", "rt_revision" ],
+				"unique": true
+			},
+			{
+				"name": "rt_revision_type",
+				"comment": "Index for finding the tags on a given revision",
+				"columns": [ "rt_revision", "rt_type" ],
+				"unique": false
+			}
+		]
+	},
+	"after": {
+		"name": "revtag",
+		"comment": "Revision tags",
+		"columns": [
+			{
+				"name": "rt_type",
+				"type": "binary",
+				"options": { "notnull": true, "length": 60 }
+			},
+			{
+				"name": "rt_page",
+				"comment": "Link to page.page_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "rt_revision",
+				"comment": "Link to revision.rev_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "rt_value",
+				"type": "blob",
+				"options": { "length": 65530, "notnull": false }
+			}
+		],
+		"indexes": [
+			{
+				"name": "rt_revision_type",
+				"comment": "Index for finding the tags on a given revision",
+				"columns": [ "rt_revision", "rt_type" ],
+				"unique": false
+			}
+		],
+		"pk": [ "rt_type", "rt_page", "rt_revision" ]
+	}
+}

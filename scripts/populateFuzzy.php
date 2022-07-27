@@ -95,7 +95,7 @@ class PopulateFuzzy extends Maintenance {
 			$offset += $limit;
 
 			if ( $inserts ) {
-				$dbw->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
+				$dbw->replace( 'revtag', [ [ 'rt_type', 'rt_page', 'rt_revision' ] ], $inserts, __METHOD__ );
 			}
 		}
 	}
