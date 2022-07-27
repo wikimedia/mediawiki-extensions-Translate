@@ -88,10 +88,10 @@ CREATE TABLE translate_metadata (
 
 
 CREATE TABLE translate_messageindex (
-  tmi_key TEXT NOT NULL, tmi_value TEXT NOT NULL
+  tmi_key TEXT NOT NULL,
+  tmi_value TEXT NOT NULL,
+  PRIMARY KEY(tmi_key)
 );
-
-CREATE UNIQUE INDEX tmi_key ON translate_messageindex (tmi_key);
 
 
 CREATE TABLE translate_stash (

@@ -1,0 +1,43 @@
+{
+	"comment": "Convert unique index to primary key (T312258)",
+	"before": {
+		"name": "translate_messageindex",
+		"columns": [
+			{
+				"name": "tmi_key",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "tmi_value",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			}
+		],
+		"pk": [],
+		"indexes": [
+			{
+				"name": "tmi_key",
+				"columns": [ "tmi_key" ],
+				"unique": true
+			}
+		]
+	},
+	"after": {
+		"name": "translate_messageindex",
+		"columns": [
+			{
+				"name": "tmi_key",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "tmi_value",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			}
+		],
+		"pk": [ "tmi_key" ],
+		"indexes": []
+	}
+}

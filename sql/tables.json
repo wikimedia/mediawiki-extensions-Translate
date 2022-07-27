@@ -313,14 +313,8 @@
 				"options": { "notnull": true, "length": 255 }
 			}
 		],
-		"pk": [],
-		"indexes": [
-			{
-				"name": "tmi_key",
-				"columns": [ "tmi_key" ],
-				"unique": true
-			}
-		]
+		"pk": [ "tmi_key" ],
+		"indexes": []
 	},
 	{
 		"name": "translate_stash",
