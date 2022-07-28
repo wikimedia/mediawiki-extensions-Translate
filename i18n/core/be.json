@@ -21,6 +21,7 @@
 	"translate-taskui-export-to-file": "Экспарт у родным фармаце",
 	"translate-taskui-export-as-po": "Экспарт для афлайнавага перакладу",
 	"translate-taskui-export-as-csv": "Экспарт у фармаце CSV",
+	"translate-export-csv-message-title": "Назва перакладнага паведамлення",
 	"translate-export-csv-definition": "Фармулёўка паведамлення",
 	"translate-taction-translate": "Пераклад",
 	"translate-taction-proofread": "Вычытка",
@@ -207,6 +208,7 @@
 	"supportedlanguages-summary": "На старонцы паказаны спіс падтрымваных праектам {{SITENAME}} моў\nразам з імёнамі тых, хто тут працуе над перакладамі на гэтыя мовы.\nІмя перакладчыка адлюстроўваецца тым буйней, чым болей правак ён зрабіў.\nКолер падкрэслення дае зразумець як даўно перакладчык здзяйсняў тут што-небудзь.",
 	"supportedlanguages-colorlegend": "Значэнне колеру: апошні пераклад выкананы $1 дзён таму.",
 	"supportedlanguages-sqlite-error": "SQLite не падтрымліваецца",
+	"supportedlanguages-postgres-error": "PostgreSQL не падтрымліваецца",
 	"supportedlanguages-translators": "{{PLURAL:$2|1={{GENDER:$3|Перакладчык|Перакладчыца}}|Перакладчыкі}}: $1",
 	"supportedlanguages-recenttranslations": "апошнія пераклады",
 	"supportedlanguages-count": "Усяго $1 {{PLURAL:$1|мова|мовы|моў}}.",
@@ -444,5 +446,8 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Няслушны фармат прыярытэтнай мовы ў метададзеных. Прыярытэтныя мовы павінны быць масівам радкоў.",
 	"translate-messagebundle-group-description": "Паведамленні з набору паведамленняў, вызначанага на старонцы [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Устанаўліваецца зыходная мова набору паведамленняў у адпаведнасці з метададзенымі.",
-	"translate-messagebundle-sourcelanguage-changed": "Зыходную мову набору паведамленняў нельга змяніць пасля яго стварэння."
+	"translate-messagebundle-sourcelanguage-changed": "Зыходную мову набору паведамленняў нельга змяніць пасля яго стварэння.",
+	"log-action-filter-translationreview": "Від дзеяння:",
+	"log-action-filter-translationreview-message": "Агляд асобных перакладных паведамленняў",
+	"log-action-filter-translationreview-group": "Змены ў стане ходу перакладаў"
 }
