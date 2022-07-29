@@ -371,8 +371,9 @@ class PageTranslationHooks {
 		if ( !$handle->isDoc() ) {
 			$code = $handle->getCode();
 			DeferredUpdates::addCallableUpdate(
-				function () use ( $page, $code, $user, $flags, $summary ) {
-					self::updateTranslationPage( $page, $code, $user, $flags, $summary );
+				function () use ( $page, $code, $user, $flags, $summary, $handle ) {
+					$unitTitle = $handle->getTitle();
+					self::updateTranslationPage( $page, $code, $user, $flags, $summary, null, $unitTitle );
 				}
 			);
 		}
@@ -381,7 +382,13 @@ class PageTranslationHooks {
 	}
 
 	private static function updateTranslationPage(
-		TranslatablePage $page, $code, $user, $flags, $summary, ?string $triggerAction = null
+		TranslatablePage $page,
+		string $code,
+		User $user,
+		int $flags,
+		string $summary,
+		?string $triggerAction = null,
+		?Title $unitTitle = null
 	): void {
 		$source = $page->getTitle();
 		$target = $source->getSubpage( $code );
@@ -391,7 +398,8 @@ class PageTranslationHooks {
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
 
 		// Update the target page
-		$job = TranslateRenderJob::newJob( $target, $triggerAction );
+		$unitTitleText = $unitTitle ? $unitTitle->getPrefixedText() : null;
+		$job = TranslateRenderJob::newJob( $target, $triggerAction, $unitTitleText );
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
@@ -1501,18 +1509,6 @@ class PageTranslationHooks {
 
 		$title = $unit->getTitle();
 
-		static $dependentPagesQueued = [];
-		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
-		if ( $bundleFactory->getBundle( $title ) ) {
-			$dependentPagesQueued[ $title->getPrefixedText() ] = true;
-			return;
-		}
-
-		if ( TranslatablePage::isTranslationPage( $title ) ) {
-			$dependentPagesQueued[ $title->getPrefixedText() ] = true;
-			return;
-		}
-
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
 			return;
@@ -1523,50 +1519,24 @@ class PageTranslationHooks {
 			return;
 		}
 
-		// There could be interfaces which may allow mass deletion (eg. Nuke). Since they could
-		// delete many units in one request, it may do several unnecessary edits and cause several
-		// other unnecessary updates to be done slowing down the user. To avoid that, we push this
-		// to a queue that is run after the current transaction is committed so that we can see the
-		// version that is after all the deletions has been done. This allows us to do just one edit
-		// per translation page after the current deletions has been done. This is sort of hackish
-		// but this is better user experience and is also more efficent.
-		static $queuedPages = [];
 		$target = $group->getTitle();
 		$langCode = $handle->getCode();
-		$targetTranslationPage = $target->getSubpage( $langCode )->getPrefixedText();
-
-		// An update for this translation page is already queued
-		if ( isset( $queuedPages[ $targetTranslationPage ] ) ) {
-			return;
-		}
-
-		$queuedPages[ $targetTranslationPage ] = true;
 		$fname = __METHOD__;
 
 		$dbw = wfGetDB( DB_PRIMARY );
 		$callback = function () use (
 			$dbw,
-			$queuedPages,
-			$targetTranslationPage,
 			$target,
 			$handle,
 			$langCode,
 			$user,
 			$reason,
-			$fname,
-			$dependentPagesQueued
+			$fname
 		) {
-			// If the translation page or the translatable page that the translation unit belongs to has been
-			// deleted in this transaction, there is no need to update the translation pages. See: T291724
-			$translatableBundleDeleted = $dependentPagesQueued[ $target->getPrefixedText() ] ?? false;
-			$translationPageDeleted = $dependentPagesQueued[ $targetTranslationPage ] ?? false;
-			if ( $translatableBundleDeleted || $translationPageDeleted ) {
-				return;
-			}
-
+			$translationPageTitle = $target->getSubpage( $langCode );
 			// Do a more thorough check for the translation page in case the translation page is deleted in a
 			// different transaction.
-			if ( !$target->getSubpage( $langCode )->exists() ) {
+			if ( !$translationPageTitle || !$translationPageTitle->exists( Title::READ_LATEST ) ) {
 				return;
 			}
 
@@ -1581,16 +1551,12 @@ class PageTranslationHooks {
 			);
 
 			if ( !$handle->isDoc() ) {
+				$unitTitle = $handle->getTitle();
 				// Assume that $user and $reason for the first deletion is the same for all
 				self::updateTranslationPage(
-					$page, $langCode, $user, 0, $reason, TranslateRenderJob::ACTION_DELETE
+					$page, $langCode, $user, 0, $reason, TranslateRenderJob::ACTION_DELETE, $unitTitle
 				);
 			}
-
-			// If a unit was deleted after the edit here is done, this allows us
-			// to add the page back to the queue again and so we can make another
-			// edit here with the latest changes.
-			unset( $queuedPages[ $targetTranslationPage ] );
 
 			$dbw->endAtomic( $fname );
 		};

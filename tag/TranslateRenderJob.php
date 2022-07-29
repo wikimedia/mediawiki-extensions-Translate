@@ -21,8 +21,12 @@ use MediaWiki\User\UserIdentity;
 class TranslateRenderJob extends GenericTranslateJob {
 	public const ACTION_DELETE = 'delete';
 
-	public static function newJob( Title $target, ?string $triggerAction = null ): self {
-		$job = new self( $target, [ 'triggerAction' => $triggerAction ] );
+	public static function newJob(
+		Title $target,
+		?string $triggerAction = null,
+		?string $unitTitleText = null
+	): self {
+		$job = new self( $target, [ 'triggerAction' => $triggerAction, 'unitTitle' => $unitTitleText ] );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setFlags( EDIT_FORCE_BOT );
 		$job->setSummary( wfMessage( 'tpt-render-summary' )->inContentLanguage()->text() );
@@ -40,7 +44,7 @@ class TranslateRenderJob extends GenericTranslateJob {
 	}
 
 	public function run(): bool {
-		$this->logInfo( 'Starting TranslateRenderJob' );
+		$this->logJobStart();
 
 		// We may be doing double wait here if this job was spawned by TranslationUpdateJob
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
@@ -116,6 +120,14 @@ class TranslateRenderJob extends GenericTranslateJob {
 		$this->params['summary'] = $summary;
 	}
 
+	/** @inheritDoc */
+	public function getDeduplicationInfo(): array {
+		$info = parent::getDeduplicationInfo();
+		// Unit title is only passed for logging and should not be used for de-duplication
+		unset( $info['params']['unitTitle'] );
+		return $info;
+	}
+
 	/** @return string */
 	private function getSummary() {
 		return $this->params['summary'];
@@ -141,5 +153,19 @@ class TranslateRenderJob extends GenericTranslateJob {
 	private function isDeleteTrigger(): bool {
 		$triggerAction = $this->params['triggerAction'] ?? null;
 		return $triggerAction === self::ACTION_DELETE;
+	}
+
+	private function logJobStart(): void {
+		$unitTitleText = $this->params['unitTitle'] ?? null;
+		$logMessage = 'Starting TranslateRenderJob ';
+		if ( $unitTitleText ) {
+			$logMessage .= "trigged by $unitTitleText ";
+		}
+
+		if ( $this->isDeleteTrigger() ) {
+			$logMessage .= '- [deletion] ';
+		}
+
+		$this->logInfo( trim( $logMessage ) );
 	}
 }
