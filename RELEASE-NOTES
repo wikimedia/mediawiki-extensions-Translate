@@ -1,0 +1,19 @@
+== Translate 2022.07 ==
+Released at 2022-07-29.
+
+=== Noteworthy changes ===
+* Support for MediaWiki 1.36 has been dropped.
+* Localisation and maintenance updates.
+* Display previous edit summaries when translating content. ({{phab|T240364}},
+{{gerrit|780684}}, {{gerrit|779829}})
+* Avoid recreation of translation pages on bulk deletion of pages, for example
+when using the Nuke extension. ({{phab|T291724}}, {{gerrit|799383}})
+* Allow CSV export for message groups. ({{phab|T309517}}, {{gerrit|802130}})
+* Add a script to import translations from a CSV file. ({{phab|T309517}},
+{{gerrit|803294}})
+* Fix "Impossible to mark pages for translation using the mobile site".
+({{phab|T311631}}, {{gerrit|809970}})
+* Allow filtering the translation review log by sub-action. ({{phab|T216335}},
+{{gerrit|810311}})
+* Make it easy to go to source page and the translation page on
+Special:Translate. ({{phab|T270025}}, {{gerrit|807480}})
