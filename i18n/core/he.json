@@ -155,7 +155,7 @@
 	"translate-sidebar-alltrans": "בשפות אחרות",
 	"translations": "כל התרגומים",
 	"translations-summary": "הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.",
-	"translate-translations-no-message": "\"$1\" אינה הודעה הניתנת לתרגום",
+	"translate-translations-no-message": "\"$1\" אינה הודעה לתרגום",
 	"translate-translations-none": "לא קיימים תרגומים עבור \"$1\"",
 	"translate-translations-count": "{{PLURAL:$1|נמצא תרגום אחד|נמצאו $1 תרגומים}}.",
 	"translate-translations-fieldset-title": "הודעה",
