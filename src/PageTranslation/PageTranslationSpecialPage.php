@@ -9,6 +9,7 @@ use Html;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
@@ -28,7 +29,6 @@ use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
 use PermissionsError;
-use RevTag;
 use SpecialPage;
 use Status;
 use Title;
@@ -436,7 +436,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		];
 		$conds = [
 			'page_id=rt_page',
-			'rt_type' => [ RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ],
+			'rt_type' => [ RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG ],
 		];
 		$options = [
 			'ORDER BY' => 'page_namespace, page_title',
@@ -457,7 +457,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$pages[$r->page_id]['latest'] = (int)$title->getLatestRevID();
 			}
 
-			$tag = RevTag::typeToTag( $r->rt_type );
+			$tag = $r->rt_type;
 			$pages[$r->page_id][$tag] = (int)$r->rt_revision;
 		}
 
@@ -500,13 +500,13 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$page['version'] = $metadata[$groupId]['version'] ?? self::DEFAULT_SYNTAX_VERSION;
 			$page['transclusion'] = $metadata[$groupId]['transclusion'] ?? false;
 
-			if ( !isset( $page['tp:mark'] ) ) {
+			if ( !isset( $page[RevTagStore::TP_MARK_TAG] ) ) {
 				// Never marked, check that the latest version is ready
-				if ( $page['tp:tag'] === $page['latest'] ) {
+				if ( $page[RevTagStore::TP_READY_TAG] === $page['latest'] ) {
 					$out['proposed'][] = $page;
 				} // Otherwise, ignore such pages
-			} elseif ( $page['tp:tag'] === $page['latest'] ) {
-				if ( $page['tp:mark'] === $page['tp:tag'] ) {
+			} elseif ( $page[RevTagStore::TP_READY_TAG] === $page['latest'] ) {
+				if ( $page[RevTagStore::TP_MARK_TAG] === $page[RevTagStore::TP_READY_TAG] ) {
 					// Marked and latest version is fine
 					$out['active'][] = $page;
 				} else {

@@ -72,14 +72,14 @@ class TranslatablePageStore implements TranslatableBundleStore {
 			);
 		}
 
-		$this->revTagStore->replaceTag( $bundle->getTitle(), 'tp:tag', $revision->getId() );
+		$this->revTagStore->replaceTag( $bundle->getTitle(), RevTagStore::TP_READY_TAG, $revision->getId() );
 		TranslatablePage::clearSourcePageCache();
 	}
 
 	public function delete( Title $title ): void {
 		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
 
-		$this->revTagStore->removeTags( $title, 'tp:mark', 'tp:tag' );
+		$this->revTagStore->removeTags( $title, RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $title->getArticleID() ], __METHOD__ );
 
 		$translatablePage = TranslatablePage::newFromTitle( $title );

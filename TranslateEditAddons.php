@@ -9,6 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Revision\RevisionRecord;
@@ -215,7 +216,7 @@ class TranslateEditAddons {
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTag::getType( 'fuzzy' ),
+			'rt_type' => RevTagStore::FUZZY_TAG,
 			'rt_revision' => $revision
 		];
 
@@ -263,7 +264,7 @@ class TranslateEditAddons {
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTag::getType( 'tp:transver' ),
+			'rt_type' => RevTagStore::TRANSVER_PROP,
 			'rt_revision' => $revision,
 			'rt_value' => $definitionRevision,
 		];

@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -636,7 +637,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$joins = [ 'revtag' =>
 		[
 			'LEFT JOIN',
-			[ 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTag::getType( 'fuzzy' ) ]
+			[ 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTagStore::FUZZY_TAG ]
 		]
 		];
 

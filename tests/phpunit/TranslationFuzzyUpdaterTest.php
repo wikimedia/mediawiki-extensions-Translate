@@ -6,6 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 
@@ -57,7 +58,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = [
 			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTag::getType( 'fuzzy' ),
+			'rt_type' => RevTagStore::FUZZY_TAG,
 			'rt_revision' => $revisionId
 		];
 

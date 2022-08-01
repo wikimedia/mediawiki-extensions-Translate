@@ -65,7 +65,7 @@ class MessageBundle extends TranslatableBundle {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return RevTagStore::getTranslatableBundleIds( 'mb:valid' );
+				return RevTagStore::getTranslatableBundleIds( RevTagStore::MB_VALID_TAG );
 			},
 			[
 				'checkKeys' => [ $cacheKey ],

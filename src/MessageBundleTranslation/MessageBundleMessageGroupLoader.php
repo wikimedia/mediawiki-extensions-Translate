@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use CachedMessageGroupLoader;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MessageGroupLoader;
 use MessageGroupWANCache;
 use Title;
@@ -54,7 +55,7 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 		$cacheData = [];
 		$tables = [ 'page', 'revtag' ];
 		$vars = [ 'page_id', 'page_namespace', 'page_title', 'rt_revision' => 'MAX(rt_revision)' ];
-		$conds = [ 'page_id=rt_page', 'rt_type' => 'mb:valid' ];
+		$conds = [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ];
 		$options = [
 			'GROUP BY' => 'page_id,page_namespace,page_title'
 		];

@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use DifferenceEngine;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use RevTag;
 use Title;
 use TranslateUtils;
 use WikitextContent;
@@ -25,7 +25,7 @@ class UpdatedDefinitionAid extends TranslationAid {
 		$db = TranslateUtils::getSafeReadDB();
 		$conds = [
 			'rt_page' => $this->handle->getTitle()->getArticleID(),
-			'rt_type' => RevTag::getType( 'tp:transver' ),
+			'rt_type' => RevTagStore::TRANSVER_PROP,
 		];
 		$options = [
 			'ORDER BY' => 'rt_revision DESC',

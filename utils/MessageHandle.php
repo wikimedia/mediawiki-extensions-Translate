@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -241,7 +242,7 @@ class MessageHandle {
 		$conds = [
 			'page_namespace' => $this->title->getNamespace(),
 			'page_title' => $this->title->getDBkey(),
-			'rt_type' => RevTag::getType( 'fuzzy' ),
+			'rt_type' => RevTagStore::FUZZY_TAG,
 			'page_id=rt_page',
 			'page_latest=rt_revision'
 		];

@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use Content;
 use ContentHandler;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -127,7 +128,7 @@ class TranslationAidDataProvider {
 		$conds[ 'rt_type' ] = null;
 		$joins[ 'revtag' ] = [
 			'LEFT JOIN',
-			[ 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => 'fuzzy' ]
+			[ 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTagStore::FUZZY_TAG ]
 		];
 
 		$rows = $db->select( $tables, $fields, $conds, __METHOD__, $options, $joins );

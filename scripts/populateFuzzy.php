@@ -9,6 +9,8 @@
  */
 
 // Standard boilerplate to define $IP
+
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
@@ -87,7 +89,7 @@ class PopulateFuzzy extends Maintenance {
 					$inserts[] = [
 						'rt_page' => $r->page_id,
 						'rt_revision' => $r->rev_id,
-						'rt_type' => RevTag::getType( 'fuzzy' ),
+						'rt_type' => RevTagStore::FUZZY_TAG
 					];
 				}
 			}

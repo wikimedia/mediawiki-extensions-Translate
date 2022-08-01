@@ -6,9 +6,9 @@
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
 /**
  * Abstraction for revtag table to handle new and old schemas during migration.
+ * TODO: Remove class after I3315009bb86196fd5f8652f8fcaef1ebab0a89d8 is merged & deployed
  */
 class RevTag {
 	/**
@@ -17,15 +17,6 @@ class RevTag {
 	 * @return string
 	 */
 	public static function getType( $tag ) {
-		return $tag;
-	}
-
-	/**
-	 * Converts rt_type field back to the tag name.
-	 * @param int $tag rt_type value
-	 * @return string
-	 */
-	public static function typeToTag( $tag ) {
 		return $tag;
 	}
 }

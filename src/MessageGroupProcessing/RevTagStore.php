@@ -14,6 +14,19 @@ use TranslateUtils;
  * @license GPL-2.0-or-later
  */
 class RevTagStore {
+	/** Indicates that a translation is fuzzy (outdated or not passing validation). */
+	public const FUZZY_TAG = 'fuzzy';
+	/** Stores the revision id of the source text which was translated. Used for showing
+	 * diffs for outdated messages.
+	 */
+	public const TRANSVER_PROP = 'tp:transver';
+	/** Indicates a revision of a page that can be marked for translation. */
+	public const TP_MARK_TAG = 'tp:mark';
+	/** Indicates a revision of a translatable page that is marked for translation. */
+	public const TP_READY_TAG = 'tp:tag';
+	/** Indicates a revision of a page that is a valid message bundle. */
+	public const MB_VALID_TAG = 'mb:valid';
+
 	// TODO: Convert to a normal member variable once RevTagStore is a service.
 	/** @var array */
 	private static $tagCache = [];

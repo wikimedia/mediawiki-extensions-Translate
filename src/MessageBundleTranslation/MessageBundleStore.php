@@ -76,12 +76,12 @@ class MessageBundleStore implements TranslatableBundleStore {
 			);
 		}
 
-		$this->revTagStore->replaceTag( $bundle->getTitle(), 'mb:valid', $revision->getId() );
+		$this->revTagStore->replaceTag( $bundle->getTitle(), RevTagStore::MB_VALID_TAG, $revision->getId() );
 		MessageBundle::clearSourcePageCache();
 	}
 
 	public function delete( Title $title ): void {
-		$this->revTagStore->removeTags( $title, 'mb:valid' );
+		$this->revTagStore->removeTags( $title, RevTagStore::MB_VALID_TAG );
 
 		$bundle = new MessageBundle( $title );
 		TranslateMetadata::clearMetadata( $bundle->getMessageGroupId(), self::METADATA_KEYS_DB );
@@ -104,7 +104,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 				);
 			}
 
-			$revisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, 'mb:valid' );
+			$revisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, RevTagStore::MB_VALID_TAG );
 			// If request wants the source language to be changed after creation, then throw an exception
 			if ( $revisionId !== null && $sourceLanguageCode !== $pageTitle->getPageLanguage()->getCode() ) {
 				throw new MalformedBundle( 'translate-messagebundle-sourcelanguage-changed' );
@@ -142,14 +142,14 @@ class MessageBundleStore implements TranslatableBundleStore {
 		// Validate the content before saving
 		$this->validate( $pageTitle, $content );
 
-		$previousRevisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, 'mb:valid' );
+		$previousRevisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, RevTagStore::MB_VALID_TAG );
 		if ( $previousRevisionId !== null ) {
-			$this->revTagStore->removeTags( $pageTitle, 'mb:valid' );
+			$this->revTagStore->removeTags( $pageTitle, RevTagStore::MB_VALID_TAG );
 		}
 
 		if ( $content->isValid() ) {
 			// Bundle is valid and contains translatable messages
-			$this->revTagStore->replaceTag( $pageTitle, 'mb:valid', $revisionRecord->getId() );
+			$this->revTagStore->replaceTag( $pageTitle, RevTagStore::MB_VALID_TAG, $revisionRecord->getId() );
 			MessageBundle::clearSourcePageCache();
 
 			// Defer most of the heavy work to the job queue

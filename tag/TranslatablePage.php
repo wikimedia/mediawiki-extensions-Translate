@@ -298,7 +298,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @param null|string $value
 	 */
 	public function addMarkedTag( int $revision, $value = null ) {
-		$this->revTagStore->replaceTag( $this->getTitle(), 'tp:mark', $revision, $value );
+		$this->revTagStore->replaceTag( $this->getTitle(), RevTagStore::TP_MARK_TAG, $revision, $value );
 		self::clearSourcePageCache();
 	}
 
@@ -308,7 +308,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @param int $revision
 	 */
 	public function addReadyTag( int $revision ): void {
-		$this->revTagStore->replaceTag( $this->getTitle(), 'tp:tag', $revision );
+		$this->revTagStore->replaceTag( $this->getTitle(), RevTagStore::TP_READY_TAG, $revision );
 		if ( !self::isSourcePage( $this->getTitle() ) ) {
 			self::clearSourcePageCache();
 		}
@@ -319,7 +319,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @return ?int
 	 */
 	public function getMarkedTag() {
-		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), 'tp:mark' );
+		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), RevTagStore::TP_MARK_TAG );
 	}
 
 	/**
@@ -327,7 +327,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @return ?int
 	 */
 	public function getReadyTag(): ?int {
-		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), 'tp:tag' );
+		return $this->revTagStore->getLatestRevisionWithTag( $this->getTitle(), RevTagStore::TP_READY_TAG );
 	}
 
 	/**
@@ -338,7 +338,7 @@ class TranslatablePage extends TranslatableBundle {
 		$aid = $this->getTitle()->getArticleID();
 		$dbw = wfGetDB( DB_PRIMARY );
 
-		$this->revTagStore->removeTags( $this->getTitle(), 'tp:mark', 'tp:tag' );
+		$this->revTagStore->removeTags( $this->getTitle(), RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $aid ], __METHOD__ );
 
 		self::clearSourcePageCache();
@@ -368,7 +368,7 @@ class TranslatablePage extends TranslatableBundle {
 		$fields = [ 'rt_revision', 'rt_value' ];
 		$conds = [
 			'rt_page' => $this->getTitle()->getArticleID(),
-			'rt_type' => RevTag::getType( 'tp:mark' ),
+			'rt_type' => RevTagStore::TP_MARK_TAG,
 		];
 		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
@@ -445,7 +445,7 @@ class TranslatablePage extends TranslatableBundle {
 		$fields = 'rt_value';
 		$conds = [
 			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTag::getType( 'tp:transver' ),
+			'rt_type' => RevTagStore::TRANSVER_PROP,
 		];
 		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
@@ -574,7 +574,7 @@ class TranslatablePage extends TranslatableBundle {
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return RevTagStore::getTranslatableBundleIds(
-					RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' )
+					RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
 				);
 			},
 			[

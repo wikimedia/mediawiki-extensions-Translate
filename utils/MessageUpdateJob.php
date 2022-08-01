@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateReplaceTitle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -243,7 +244,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$inserts = [];
 		foreach ( $res as $row ) {
 			$inserts[] = [
-				'rt_type' => RevTag::getType( 'fuzzy' ),
+				'rt_type' => RevTagStore::FUZZY_TAG,
 				'rt_page' => $row->page_id,
 				'rt_revision' => $row->page_latest,
 			];

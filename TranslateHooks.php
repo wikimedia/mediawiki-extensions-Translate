@@ -11,6 +11,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
@@ -993,7 +994,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 
 		// List of tags that should be copied over when updating
 		// tp:tag and tp:mark handling is in PageTranslationHooks::updateTranstagOnNullRevisions.
-		$tagsToCopy = [ 'fuzzy', 'tp:transver' ];
+		$tagsToCopy = [ RevTagStore::FUZZY_TAG, RevTagStore::TRANSVER_PROP ];
 
 		$db = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
 		$db->insertSelect(
