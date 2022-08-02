@@ -142,9 +142,6 @@ class MessageBundleStore implements TranslatableBundleStore {
 		// Validate the content before saving
 		$this->validate( $pageTitle, $content );
 
-		$messageBundle = new MessageBundle( $pageTitle );
-		$groupId = $messageBundle->getMessageGroupId();
-
 		$previousRevisionId = $this->revTagStore->getLatestRevisionWithTag( $pageTitle, 'mb:valid' );
 		if ( $previousRevisionId !== null ) {
 			$this->revTagStore->removeTags( $pageTitle, 'mb:valid' );
@@ -176,6 +173,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 			}
 
 			// Save the metadata
+			$messageBundle = new MessageBundle( $pageTitle );
+			$groupId = $messageBundle->getMessageGroupId();
+
 			$metadata = $content->getMetadata();
 			$priorityForce = $metadata->areOnlyPriorityLanguagesAllowed() ? 'on' : false;
 			$priorityLanguages = $metadata->getPriorityLanguages();
