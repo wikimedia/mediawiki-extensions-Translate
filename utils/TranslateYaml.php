@@ -103,25 +103,7 @@ class TranslateYaml {
 	}
 
 	protected static function phpyamlDump( $data ) {
-		if ( !is_array( $data ) ) {
-			return yaml_emit( $data, YAML_UTF8_ENCODING );
-		}
-
-		// Fix decimal-less floats strings such as "2."
-		// https://bugs.php.net/bug.php?id=76309
-		$random = MWCryptRand::generateHex( 8 );
-		// Ensure our random does not look like a number
-		$random = "X$random";
-		$mangler = static function ( &$item ) use ( $random ) {
-			if ( preg_match( '/^[0-9]+\.$/', $item ) ) {
-				$item = "$random$item$random";
-			}
-		};
-
-		array_walk_recursive( $data, $mangler );
-		$yaml = yaml_emit( $data, YAML_UTF8_ENCODING );
-		$yaml = str_replace( $random, '"', $yaml );
-		return $yaml;
+		return yaml_emit( $data, YAML_UTF8_ENCODING );
 	}
 
 	protected static function syckLoad( $data ) {
