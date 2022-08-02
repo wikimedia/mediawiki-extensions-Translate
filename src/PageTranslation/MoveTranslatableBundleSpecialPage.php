@@ -84,7 +84,10 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$user = $this->getUser();
 		$this->addHelpLink( 'Help:Extension:Translate/Move_translatable_page' );
 
-		$this->oldText = $request->getText( 'wpOldTitle', $request->getText( 'target', $par ) );
+		$this->oldText = $request->getText(
+			'wpOldTitle',
+			$request->getText( 'target', $par ?? '' )
+		);
 		$newText = $request->getText( 'wpNewTitle' );
 
 		$this->oldTitle = Title::newFromText( $this->oldText );
