@@ -148,7 +148,7 @@
 	"apierror-translate-language-disabled": "התרגום לשפה $1 מבוטל.",
 	"apierror-translate-language-disabled-reason": "התרגום לשפה $1 מבוטל: $2",
 	"apierror-translate-nodynamicgroups": "קבוצת הודעות דינמיות אינן נתמכות כאן",
-	"apierror-translate-nomessagefortitle": "הכותרת אינה מתאימה לשום הודעה בת־תרגום",
+	"apierror-translate-nomessagefortitle": "הכותרת אינה מתאימה לשום לתרגום",
 	"apierror-translate-notranslationservices": "לא הוגדרו שירותי תרגום ציבוריים. מנהל אתר הוויקי צריך להגדיר את <var dir=\"ltr\">$wgTranslateTranslationServices</var> באופן תקין כדי שניתן יהיה להשתמש בתכונה זו.",
 	"apierror-translate-owntranslation": "לא ניתן לסקור את ההודעות של עצמך",
 	"apierror-translate-sandboxdisabled": "ארגז החול אינו בשימוש",

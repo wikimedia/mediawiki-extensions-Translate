@@ -227,6 +227,7 @@
 	"tpt-translate-title": "允許翻譯頁面標題",
 	"pp-save-summary": "已準備好等候翻譯的頁面",
 	"pagepreparation": "準備翻譯用頁面",
+	"pagepreparation-summary": "指定準備翻譯的頁面標題。",
 	"pp-pagename-placeholder": "輸入頁面名稱",
 	"pp-prepare-button-label": "準備",
 	"pp-save-button-label": "發布",
