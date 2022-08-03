@@ -137,7 +137,6 @@
 		"TranslateMetadata": "utils/TranslateMetadata.php",
 		"TranslatePreferences": "utils/TranslatePreferences.php",
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
-		"TranslateRenderJob": "tag/TranslateRenderJob.php",
 		"TranslateSandbox": "utils/TranslateSandbox.php",
 		"TranslateSandboxEmailJob": "utils/TranslateSandboxEmailJob.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",

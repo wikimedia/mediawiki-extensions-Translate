@@ -1,25 +1,25 @@
 <?php
-/**
- * Job for updating translation pages.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use CommentStoreComment;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Permissions\Authority;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
+use PageTranslationHooks;
+use Title;
+use User;
 
 /**
  * Job for updating translation pages when translation or template changes.
- *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup PageTranslation JobQueue
  */
-class TranslateRenderJob extends GenericTranslateJob {
+class RenderTranslationPageJob extends GenericTranslateJob {
 	public const ACTION_DELETE = 'delete';
 
 	public static function newJob(
@@ -35,20 +35,16 @@ class TranslateRenderJob extends GenericTranslateJob {
 		return $job;
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params = [] ) {
-		parent::__construct( __CLASS__, $title, $params );
+	public function __construct( Title $title, array $params = [] ) {
+		parent::__construct( 'RenderTranslationPageJob', $title, $params );
 		$this->removeDuplicates = true;
 	}
 
 	public function run(): bool {
 		$this->logJobStart();
-
+		$mwServices = MediaWikiServices::getInstance();
 		// We may be doing double wait here if this job was spawned by TranslationUpdateJob
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $mwServices->getDBLoadBalancerFactory();
 		if ( !$lb->waitForReplication() ) {
 			$this->logWarning( 'Continuing despite replication lag' );
 		}
@@ -74,26 +70,27 @@ class TranslateRenderJob extends GenericTranslateJob {
 			$flags = ( $flags | EDIT_UPDATE ) & ~EDIT_NEW;
 		}
 
-		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
-
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
+		$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
 		$content = $tpPage->getPageContent();
-		$editStatus = $page->doUserEditContent(
-			$content,
-			$user,
-			$summary,
-			$flags
-		);
-		if ( !$editStatus->isOK() ) {
-			if ( $this->isDeleteTrigger() && $editStatus->hasMessage( 'edit-gone-missing' ) ) {
+
+		$pageUpdater = $mwServices->getWikiPageFactory()
+			->newFromTitle( $title )
+			->newPageUpdater( $user );
+		$pageUpdater->setContent( SlotRecord::MAIN, $content );
+		$pageUpdater->saveRevision( $commentStoreComment, $flags );
+		$status = $pageUpdater->getStatus();
+
+		if ( !$status->isGood() ) {
+			if ( $this->isDeleteTrigger() && $status->hasMessage( 'edit-gone-missing' ) ) {
 				$this->logInfo( 'Translation page missing with delete trigger' );
 			} else {
 				$this->logError(
 					'Error while editing content in page.',
 					[
 						'content' => $content->getTextForSummary(),
-						'errors' => $editStatus->getErrors()
+						'errors' => $status->getErrors()
 					]
 				);
 			}
@@ -106,18 +103,15 @@ class TranslateRenderJob extends GenericTranslateJob {
 		return true;
 	}
 
-	/** @param int $flags */
-	public function setFlags( $flags ) {
+	public function setFlags( int $flags ): void {
 		$this->params['flags'] = $flags;
 	}
 
-	/** @return int */
-	private function getFlags() {
+	private function getFlags(): int {
 		return $this->params['flags'];
 	}
 
-	/** @param string $summary */
-	public function setSummary( $summary ) {
+	public function setSummary( string $summary ): void {
 		$this->params['summary'] = $summary;
 	}
 
@@ -129,13 +123,12 @@ class TranslateRenderJob extends GenericTranslateJob {
 		return $info;
 	}
 
-	/** @return string */
-	private function getSummary() {
+	private function getSummary(): string {
 		return $this->params['summary'];
 	}
 
 	/** @param UserIdentity|string $user */
-	public function setUser( $user ) {
+	public function setUser( $user ): void {
 		if ( $user instanceof UserIdentity ) {
 			$this->params['user'] = $user->getName();
 		} else {
@@ -143,12 +136,10 @@ class TranslateRenderJob extends GenericTranslateJob {
 		}
 	}
 
-	/**
-	 * Get a user object for doing edits.
-	 * @return Authority
-	 */
-	private function getUser() {
-		return User::newFromName( $this->params['user'], false );
+	/** Get a user object for doing edits. */
+	private function getUser(): User {
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		return $userFactory->newFromName( $this->params['user'] );
 	}
 
 	private function isDeleteTrigger(): bool {

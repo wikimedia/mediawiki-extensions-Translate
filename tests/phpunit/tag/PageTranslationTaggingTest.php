@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MediaWikiServices;
 
@@ -127,7 +128,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 
 		$translationPage = Title::newFromText( 'Translatable page/fi' );
 		$pm = MediaWikiServices::getInstance()->getPermissionManager();
-		TranslateRenderJob::newJob( $translationPage )->run();
+		RenderTranslationPageJob::newJob( $translationPage )->run();
 		$this->assertTrue( $pm->userCan( 'read', $superUser, $translationPage ),
 			'Users can read existing translation pages' );
 		$this->assertFalse( $pm->userCan( 'edit', $superUser, $translationPage ),

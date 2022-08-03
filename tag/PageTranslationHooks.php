@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\PageTranslation\MoveTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
+use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Services;
@@ -400,7 +401,7 @@ class PageTranslationHooks {
 
 		// Update the target page
 		$unitTitleText = $unitTitle ? $unitTitle->getPrefixedText() : null;
-		$job = TranslateRenderJob::newJob( $target, $triggerAction, $unitTitleText );
+		$job = RenderTranslationPageJob::newJob( $target, $triggerAction, $unitTitleText );
 		$job->setUser( $user );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
@@ -411,7 +412,7 @@ class PageTranslationHooks {
 		$wikiPageFactory = $mwInstance->getWikiPageFactory();
 		foreach ( $pages as $title ) {
 			if ( $title->equals( $target ) ) {
-				// Handled by the TranslateRenderJob
+				// Handled by the RenderTranslationPageJob
 				continue;
 			}
 
@@ -1550,7 +1551,7 @@ class PageTranslationHooks {
 				$unitTitle = $handle->getTitle();
 				// Assume that $user and $reason for the first deletion is the same for all
 				self::updateTranslationPage(
-					$page, $langCode, $user, 0, $reason, TranslateRenderJob::ACTION_DELETE, $unitTitle
+					$page, $langCode, $user, 0, $reason, RenderTranslationPageJob::ACTION_DELETE, $unitTitle
 				);
 			}
 

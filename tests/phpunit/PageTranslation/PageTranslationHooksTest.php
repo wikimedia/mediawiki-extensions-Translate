@@ -1,18 +1,30 @@
 <?php
-/**
- * Test for various code using hooks.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use CommentStoreComment;
+use ContentHandler;
+use HashBagOStuff;
+use HashMessageIndex;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use Wikimedia\TestingAccessWrapper;
+use MediaWiki\Revision\SlotRecord;
+use MediaWikiIntegrationTestCase;
+use MessageGroups;
+use MessageIndex;
+use MockWikiValidationMessageGroup;
+use ParserOptions;
+use RequestContext;
+use Status;
+use Title;
+use TranslateHooks;
+use WANObjectCache;
 
 /**
+ * Test for various code using hooks.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @group Database
  * @group medium
  */
@@ -63,16 +75,23 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		// Setup objects
 		$superUser = $this->getTestSysop()->getUser();
 		$translatablePageTitle = Title::newFromText( 'Vuosaari' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $translatablePageTitle );
+		$pageUpdater = $this->getServiceContainer()
+			->getWikiPageFactory()
+			->newFromTitle( $translatablePageTitle )
+			->newPageUpdater( $superUser );
 		$text = '<translate>pupu</translate>';
 		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
-		$parser = MediaWikiServices::getInstance()->getParser()->getFreshParser();
+		$parser = MediaWikiServices::getInstance()->getParserFactory()->getInstance();
 		$options = ParserOptions::newFromUser( $superUser );
 		$messageGroups = MessageGroups::singleton();
 
 		// Create the page
-		$editStatus = $page->doUserEditContent( $content, $superUser, __METHOD__ );
+		$commentStoreComment = CommentStoreComment::newUnsavedComment( __METHOD__ );
+		$pageUpdater->setContent( SlotRecord::MAIN, $content );
+		$pageUpdater->saveRevision( $commentStoreComment );
+		$editStatus = $pageUpdater->getStatus();
+
 		$messageGroups->recache();
 
 		// Check that we don't interfere with non-translatable pages at all
@@ -86,7 +105,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$translatablePage->addMarkedTag( $latestRevisionId );
 		$messageGroups->recache();
 		$translationPageTitle = Title::newFromText( 'Vuosaari/fi' );
-		TranslateRenderJob::newJob( $translationPageTitle )->run();
+		RenderTranslationPageJob::newJob( $translationPageTitle )->run();
 
 		// Check that we don't add data to translatable pages
 		$parserOutput = $parser->parse( $text, $translatablePageTitle, $options );
