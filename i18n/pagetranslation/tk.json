@@ -1,9 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hanberke"
+			"Hanberke",
+			"TayfunEt."
 		]
 	},
 	"pagetranslation": "Terjime sahypasy",
-	"tpt-languages-nonzero": "$1 ($2% terjime edildi)"
+	"right-pagetranslation": "Terjime üçin sahypalaryň wersiýalaryny belläň",
+	"action-pagetranslation": "terjime edilýän sahypalary dolandyrmak",
+	"tps-edit-sourcepage-ve-warning-title": "Duýduryş: Goldanmaýan sahypa",
+	"tps-edit-sourcepage-ve-warning-text": "Terjime edilýän sahypany redaktirleýärsiňiz. Bu redaktorda redaktirlemek entek resmi taýdan goldanylmaýar. Çeşme redaktoryny ulanyň.",
+	"tps-edit-sourcepage-ve-warning-button": "OK",
+	"tpt-section": "Terjime bölümi $1",
+	"tpt-section-new": "Täze terjime bölümi.\nAdy: $1",
+	"tpt-section-deleted": "Terjime bölümi $1",
+	"tpt-diff-old": "Öňki tekst",
+	"tpt-diff-new": "Täze tekst",
+	"tpt-submit": "Terjime üçin bu wersiýany belläň",
+	"tpt-sections-oldnew": "Täze we bar bolan terjime bölümleri",
+	"tpt-sections-template": "Terjime sahypasynyň şablony",
+	"tpt-action-nofuzzy": "Terjimeleri ýatyrmaň",
+	"tpt-badtitle": "Berlen sahypa ady ($1) dogry at däl",
+	"translate-tag-translate-link-desc": "Bu sahypany terjime ediň",
+	"tpt-languages-zero": "Bu dil üçin terjime edip başlaň",
+	"tpt-languages-nonzero": "$1 ($2% terjime edildi)",
+	"tpt-tab-translate": "Terjime et",
+	"tpt-aggregategroup-add": "Goş",
+	"tpt-aggregategroup-save": "Ýazdyr",
+	"tpt-aggregategroup-close": "Ýap"
 }
