@@ -161,6 +161,7 @@ class CsvTranslationImporter {
 					->newPageUpdater( $authority );
 				$content = ContentHandler::makeContent( $translation, $translationTitle );
 				$updater->setContent( SlotRecord::MAIN, $content );
+				$updater->setFlags( EDIT_FORCE_BOT );
 				$updater->saveRevision( $commentStoreComment );
 
 				$status = $updater->getStatus();
