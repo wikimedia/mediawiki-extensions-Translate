@@ -284,7 +284,9 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
-			->setWrapperLegendMsg( self::WRAPPER_LEGEND_MSG[ $this->entityType ] )
+			->setWrapperLegendMsg(
+				$this->msg( self::WRAPPER_LEGEND_MSG[ $this->entityType ], $this->title->getPrefixedText() )
+			)
 			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
 			->setSubmitTextMsg( 'pt-deletepage-action-perform' )
 			->setSubmitName( 'subaction' )
