@@ -144,7 +144,6 @@
 		"TranslateUtils": "TranslateUtils.php",
 		"TranslateYaml": "utils/TranslateYaml.php",
 		"TranslationStats": "utils/TranslationStats.php",
-		"TranslationsUpdateJob": "tag/TranslationsUpdateJob.php",
 		"TTMServer": "ttmserver/TTMServer.php",
 		"TTMServerException": "ttmserver/Exceptions.php",
 		"TTMServerMessageUpdateJob": "ttmserver/TTMServerMessageUpdateJob.php",

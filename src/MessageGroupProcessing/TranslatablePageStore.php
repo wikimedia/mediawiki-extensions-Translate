@@ -7,12 +7,12 @@ use AggregateMessageGroup;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\Revision\RevisionRecord;
 use MessageGroups;
 use MessageIndex;
 use Title;
 use TranslateMetadata;
-use TranslationsUpdateJob;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -61,7 +61,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		// runs in deferred updates, it will not run MessageIndexRebuildJob (T175834).
 		$this->messageIndex->rebuild();
 
-		$job = TranslationsUpdateJob::newFromPage( TranslatablePage::newFromTitle( $newName ) );
+		$job = UpdateTranslatablePageJob::newFromPage( TranslatablePage::newFromTitle( $newName ) );
 		$this->jobQueue->push( $job );
 	}
 

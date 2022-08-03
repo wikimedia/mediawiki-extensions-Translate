@@ -34,7 +34,6 @@ use Status;
 use Title;
 use TranslateMetadata;
 use TranslateUtils;
-use TranslationsUpdateJob;
 use WebRequest;
 use Wikimedia\Rdbms\IResultWrapper;
 use Xml;
@@ -1113,7 +1112,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$changed[] = $s->id;
 
 			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
-				// TranslationsUpdateJob will only fuzzy when type is changed
+				// UpdateTranslatablePageJob will only fuzzy when type is changed
 				$s->type = 'old';
 			}
 
@@ -1147,7 +1146,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$newKeys = $group->makeGroupKeys( $changed );
 		MessageIndex::singleton()->storeInterim( $group, $newKeys );
 
-		$job = TranslationsUpdateJob::newFromPage( $page, $sections );
+		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
 		$this->jobQueueGroup->push( $job );
 
 		$this->handlePriorityLanguages( $this->getRequest(), $page );

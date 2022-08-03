@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecial
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
+use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
@@ -166,7 +167,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgJobClasses['TranslatableBundleDeleteJob'] = DeleteTranslatableBundleJob::class;
 			$wgJobClasses['DeleteTranslatableBundleJob'] = DeleteTranslatableBundleJob::class;
 
-			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';
+			$wgJobClasses['UpdateTranslatablePageJob'] = UpdateTranslatablePageJob::class;
+			// Remove after MLEB 2022.10 release
+			$wgJobClasses['TranslationsUpdateJob'] = UpdateTranslatablePageJob::class;
 
 			// Namespaces
 			global $wgNamespacesWithSubpages, $wgNamespaceProtection;

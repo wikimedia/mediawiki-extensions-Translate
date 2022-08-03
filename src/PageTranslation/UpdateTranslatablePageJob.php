@@ -1,25 +1,25 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\MediaWikiServices;
+use MessageGroups;
+use MessageGroupStats;
+use MessageIndexRebuildJob;
+use MessageUpdateJob;
+use RunnableJob;
+use Title;
 
 /**
  * Job for updating translation units and translation pages when
  * a translatable page is marked for translation.
- *
- * @note MessageUpdateJobs from getTranslationUnitJobs() should be run
- * before the RenderTranslationPageJobs are run so that the latest changes can
- * take effect on the translation pages.
- *
- * @since 2016.03
  */
-class TranslationsUpdateJob extends GenericTranslateJob {
+class UpdateTranslatablePageJob extends GenericTranslateJob {
 	/** @inheritDoc */
-	public function __construct( Title $title, $params = [] ) {
-		parent::__construct( __CLASS__, $title, $params );
+	public function __construct( Title $title, array $params = [] ) {
+		parent::__construct( 'UpdateTranslatablePageJob', $title, $params );
 	}
 
 	/**
@@ -30,10 +30,8 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 	 *
 	 * @param TranslatablePage $page
 	 * @param TranslationUnit[] $sections
-	 * @return TranslationsUpdateJob
-	 * @since 2018.07
 	 */
-	public static function newFromPage( TranslatablePage $page, array $sections = [] ) {
+	public static function newFromPage( TranslatablePage $page, array $sections = [] ): self {
 		$params = [];
 		$params[ 'sections' ] = [];
 		foreach ( $sections as $section ) {
@@ -43,13 +41,13 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		return new self( $page->getTitle(), $params );
 	}
 
-	public function run() {
+	public function run(): bool {
 		// WARNING: Nothing here must not depend on message index being up to date.
 		// For performance reasons, message index rebuild is run a separate job after
 		// everything else is updated.
 
 		// START: This section does not care about replication lag
-		$this->logInfo( 'Starting TranslationsUpdateJob' );
+		$this->logInfo( 'Starting UpdateTranslatablePageJob' );
 
 		$sections = $this->params[ 'sections' ];
 		foreach ( $sections as $index => $section ) {
@@ -61,7 +59,10 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 			}
 		}
 
-		// Units should be updated before the render jobs are run
+		/**
+		 * Units should be updated before the render jobs are run so that the
+		 * latest changes can take effect on the translation pages.
+		 */
 		$page = TranslatablePage::newFromTitle( $this->title );
 		$unitJobs = self::getTranslationUnitJobs( $page, $sections );
 		foreach ( $unitJobs as $job ) {
@@ -116,18 +117,16 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 		$job = MessageIndexRebuildJob::newJob();
 		$jobQueueGroup->push( $job );
 
-		$this->logInfo( 'Finished TranslationsUpdateJob' );
+		$this->logInfo( 'Finished UpdateTranslatablePageJob' );
 
 		return true;
 	}
 
 	/**
-	 * Creates jobs needed to create or update all translation page definitions.
-	 *
+	 * Creates jobs needed to create or update all translation unit definition pages.
 	 * @param TranslatablePage $page
 	 * @param TranslationUnit[] $units
 	 * @return RunnableJob[]
-	 * @since 2013-01-28
 	 */
 	private static function getTranslationUnitJobs( TranslatablePage $page, array $units ): array {
 		$jobs = [];
@@ -148,9 +147,7 @@ class TranslationsUpdateJob extends GenericTranslateJob {
 
 	/**
 	 * Creates jobs needed to create or update all translation pages.
-	 * @param TranslatablePage $page
 	 * @return RunnableJob[]
-	 * @since 2013-01-28
 	 */
 	public static function getRenderJobs( TranslatablePage $page ): array {
 		$jobs = [];

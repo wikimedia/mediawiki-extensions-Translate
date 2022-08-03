@@ -10,6 +10,7 @@
 // Standard boilerplate to define $IP
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\MediaWikiServices;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -54,7 +55,7 @@ class RefreshTranslatablePages extends Maintenance {
 			}
 
 			$page = TranslatablePage::newFromTitle( $group->getTitle() );
-			$jobs = TranslationsUpdateJob::getRenderJobs( $page );
+			$jobs = UpdateTranslatablePageJob::getRenderJobs( $page );
 			if ( $useJobQueue ) {
 				$jobQueueGroup->push( $jobs );
 			} else {
