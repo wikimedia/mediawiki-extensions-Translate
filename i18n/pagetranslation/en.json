@@ -45,7 +45,7 @@
 	"tpt-other-pages-title": "Broken pages",
 	"tpt-outdated-pages-title": "Pages with pending changes",
 	"tpt-new-pages": "{{PLURAL:$1|This page contains|These pages contain}} text with translation tags,\nbut no version of {{PLURAL:$1|this page is|these pages are}} currently marked for translation.",
-	"tpt-old-pages": "The latest version of {{PLURAL:$1|this page has|these pages have}} been marked for translation.",
+	"tpt-old-pages": "The latest version of {{PLURAL:$1|this page|each of these pages}} has been marked for translation.",
 	"tpt-other-pages": "{{PLURAL:$1|An old version of this page is|Older versions of these pages are}} marked for translation,\nbut the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.",
 	"tpt-outdated-pages": "{{PLURAL:$1|This page has|These pages have}} changes not marked for translation.",
 	"tpt-tag-discouraged": "discouraged",
