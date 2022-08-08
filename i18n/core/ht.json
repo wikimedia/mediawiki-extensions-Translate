@@ -5,7 +5,8 @@
 			"Jvm",
 			"Kaganer",
 			"Masterches",
-			"Sociologist"
+			"Sociologist",
+			"Amire80"
 		]
 	},
 	"translate": "Tradui",
@@ -32,8 +33,8 @@
 	"translate-edit-title": "Modifye \"$1\"",
 	"translate-edit-definition": "Definisyon pou mesaj sa",
 	"translate-edit-contribute": "kontribiye",
-	"translate-edit-no-information": "''Mesaj sa pa dokimante.\nSi w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.''",
-	"translate-edit-information": "Enfòmasyon sou mesaj \"$2\" ($1)",
+	"translate-edit-no-information": "<em>Mesaj sa pa dokimante.\nSi w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.</em>",
+	"translate-edit-information": "Enfòmasyon sou mesaj ($1)",
 	"translate-edit-in-other-languages": "Mesaj nan lòt lang yo",
 	"translate-edit-warnings": "Avètisman sou tradiksyon ki pa konplete yo",
 	"translate-edit-tmmatch": "$1% korespondans",
@@ -53,7 +54,7 @@
 	"translate-pref-editassistlang-help": "Lis kòd lang yo ki separe pa vigil.\nTradiksyon pou yon mesaj nan lang sa yo parèt lè w ap tradui.\nLis lang pa defo depann de lang ou an.",
 	"translate-pref-editassistlang-bad": "Kòd pou lang ki pa bon nan lis:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Itilize fenèt tradiksyon pou fè modifikasyon yo",
-	"right-translate-manage": "Jere gwoup tradiksyon yo",
+	"right-translate-manage": "Jere gwoup mesaj yo",
 	"right-translate-import": "Chaje tradiksyon ki te fèt andeyò.",
 	"translate-rc-translation-filter": "Filtre tradiksyon yo:",
 	"translate-rc-translation-filter-no": "Pa fè anyen",

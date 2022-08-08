@@ -12,7 +12,7 @@
 	"translate-page-settings-legend": "Nizamon",
 	"translate-page-language": "Zıvon",
 	"translate-next": "Peşonə səhifə",
-	"translate-page-edit": "dəqiş karde",
+	"translate-page-edit": "redaktə kardə",
 	"translate-edit-title": "Dəqiş karde \"$1\"",
 	"translate-edit-translation": "Пегордыније",
 	"translate-stats-edits": "Dəqişion karde",
@@ -33,9 +33,9 @@
 	"translate-documentation-language": "Номә документасијә",
 	"translate-msggroupselector-search-all": "Həmə",
 	"tux-tab-all": "Həmə",
-	"tux-edit": "Dəqiş karde",
+	"tux-edit": "Redaktə kardə",
 	"tux-editor-cancel-button-label": "Ləğv karde",
-	"tux-proofread-edit-label": "Dəqiş karde",
+	"tux-proofread-edit-label": "Redaktə kardə",
 	"tux-editor-doc-editor-placeholder": "Nomə dokumentasiyə",
 	"tux-editor-doc-editor-cancel": "Ləğv karde"
 }

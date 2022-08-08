@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Boukman",
-			"Tisave"
+			"Tisave",
+			"Amire80"
 		]
 	},
 	"pagetranslation": "Tradiksyon paj yo",
@@ -25,13 +26,12 @@
 	"tpt-showpage-intro": "Anba, gen yon lis tout sèksyon ki nouvo, sa ki egzsite ak sa ki te efase yo.\nAnvan ou make vèsyon sa pou yo tradui, verifye ki chanjman nan seksyon yo pa anpil, yon fason pou pa bay tradiktè yo travay ki pa nesesè.",
 	"tpt-mark-summary": "Make vèsyon sa pou tradui",
 	"tpt-edit-failed": "Pa t kapab mete paj sa ajou: $1",
-	"tpt-already-marked": "Dènye vèsyon paj sa te make pou yo tradui l deja.",
 	"tpt-unmarked": "Paj $1 pa make pou tradui ankò.",
 	"tpt-list-nopages": "Pa gen okenn paj ki make pou tradui oubyen ki pare pou sa.",
 	"tpt-new-pages": "{{PLURAL:$1|Paj sa genyen|Paj sa yo genyen}} teks ak baliz tradiksyon, men pa gen okenn vèsyon {{PLURAL:$1|paj sa|paj sa yo}} ki make pou tradui.",
 	"tpt-old-pages": "Kèk nan vèsyon {{PLURAL:$1|paj sa|paj sa yo}} te make pou tradui.",
 	"tpt-other-pages": "{{PLURAL:$1|Yon ansyen vèsyon paj sa a|Ansyen vèsyon paj sa yo}} make pou tradui,\nmen dènye {{PLURAL:$1|vèsyon|vèsyon yo}} pa ka make pou tradui.",
-	"tpt-rev-unmark": "Retire paj sa nan tradiksyon",
+	"tpt-rev-unmark": "retire nan tradiksyon",
 	"translate-tag-translate-link-desc": "Tradui paj sa a",
 	"translate-tag-markthis": "Make paj sa pou tradui",
 	"translate-tag-markthisagain": "Paj sa te <span class=\"plainlinks\">[$1 chanje]</span> depi li te <span class=\"plainlinks\">[$2 make pou tradui]</span>.",
@@ -47,7 +47,7 @@
 	"pt-parse-close": "Baliz &lt;/translate> pa balanse.\nModèle tradiksyon: <pre>$1</pre>",
 	"pt-parse-nested": "Seksyon enbrike &lt;translate> pa otorize.\nTeks baliz la: <pre>$1</pre>",
 	"pt-movepage-list-pages": "Lis paj yo pou deplase",
-	"pt-movepage-list-translation": "Paj tradiksyon",
+	"pt-movepage-list-translation": "{{PLURAL:$1|Paj tradiksyon}}",
 	"pt-movepage-list-section": "Paj seksyon",
 	"pt-movepage-list-other": "Lòt sou-paj",
 	"pt-movepage-list-count": "$1 {{PLURAL:$1|paj|paj}} total pou deplase.",
@@ -58,5 +58,5 @@
 	"pt-movepage-subpages": "Deplase tout sou-paj yo",
 	"pt-movepage-action-check": "Gade si deplasman an posib",
 	"pt-movepage-action-perform": "Fè deplasman an",
-	"pt-movepage-action-other": "Chanje sib"
+	"pt-movepage-action-other": "Chanje sib la"
 }
