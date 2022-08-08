@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"NehalDaveND",
 			"Nirajan pant",
 			"हिमाल सुबेदी"
 		]
 	},
-	"tux-sst-search": "खोज",
+	"tux-sst-search": "खोज्नुहोस्",
 	"tux-sst-facet-language": "भाषाहरू",
 	"tux-sst-facet-group": "सन्देश समूहहरू",
 	"tux-sst-next": "अर्को ›",
