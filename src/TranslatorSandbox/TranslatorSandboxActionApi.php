@@ -113,8 +113,9 @@ class TranslatorSandboxActionApi extends ApiBase {
 		}
 
 		$password = $params['password'];
-		if ( !$user->isValidPassword( $password ) ) {
-			$this->dieWithError( 'apierror-translate-sandbox-invalidpassword', 'invalidpassword' );
+		$passwordValidityStatus = $user->checkPasswordValidity( $password );
+		if ( !$passwordValidityStatus->isGood() ) {
+			$this->dieStatus( $passwordValidityStatus );
 		}
 
 		$email = $params['email'];
