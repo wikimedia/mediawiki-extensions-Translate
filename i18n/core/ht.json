@@ -5,7 +5,8 @@
 			"Jvm",
 			"Kaganer",
 			"Masterches",
-			"Sociologist"
+			"Sociologist",
+			"Amire80"
 		]
 	},
 	"translate": "Tradui",
@@ -32,8 +33,8 @@
 	"translate-edit-title": "Modifye \"$1\"",
 	"translate-edit-definition": "Definisyon pou mesaj sa",
 	"translate-edit-contribute": "kontribiye",
-	"translate-edit-no-information": "''Mesaj sa pa dokimante.\nSi w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.''",
-	"translate-edit-information": "Enfòmasyon sou mesaj \"$2\" ($1)",
+	"translate-edit-no-information": "<em>Mesaj sa pa dokimante.\nSi w konnen ki kote mesaj sa itilize, ou kapab ede lòt tradiktè lè ou ajoute dokimantasyon pou mesaj sa.</em>",
+	"translate-edit-information": "Enfòmasyon sou mesaj ($1)",
 	"translate-edit-warnings": "Avètisman sou tradiksyon ki pa konplete yo",
 	"translate-edit-tmmatch": "$1% korespondans",
 	"translate-checks-parameters": "Paramèt {{PLURAL:$2|swivan|swivan yo}} pa itilize:\n<strong>$1</strong>",
@@ -51,7 +52,7 @@
 	"translate-pref-editassistlang-help": "Lis kòd lang yo ki separe pa vigil.\nTradiksyon pou yon mesaj nan lang sa yo parèt lè w ap tradui.\nLis lang pa defo depann de lang ou an.",
 	"translate-pref-editassistlang-bad": "Kòd pou lang ki pa bon nan lis:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Itilize fenèt tradiksyon pou fè modifikasyon yo",
-	"right-translate-manage": "Jere gwoup tradiksyon yo",
+	"right-translate-manage": "Jere gwoup mesaj yo",
 	"right-translate-import": "Chaje tradiksyon ki te fèt andeyò.",
 	"translate-rc-translation-filter": "Filtre tradiksyon yo:",
 	"translate-rc-translation-filter-no": "Pa fè anyen",
@@ -108,7 +109,7 @@
 	"translate-untranslated": "Pa tradui",
 	"translate-percentage-complete": "Konplete",
 	"translate-percentage-fuzzy": "Ansyen",
-	"supportedlanguages": "Lang ki sipòte yo",
+	"supportedlanguages": "Lang aktif yo",
 	"supportedlanguages-summary": "Paj sa a montre yon lis tout lang ki sipòte pa {{SITENAME}}, ansanm ak non tradiktè yo ki ap travay nan lang sa yo.\nSi nou ta renmen konn pi plis sou yon lang, klike sou lyen pou paj prensipal lang sa a.\nSi ou klike sou non yon tradiktè, w ap jwenn paj itilizatè li.\n\nSi yon lang pa parèt nan lis, ou kapab gade \"[[Translating:Process|nouvèl lang]]\" pou ou konnen ki jan ou fè pou komanse yon pwojè lokalizasyon pou li.\n\nSi ou tradui vè yon lang epi non ou pa nan lis tradiktè pou lang sa, tanpri ajoute l nan [[:Category:Languages|paj prensipal]].\nGade meni a pou jwenn lyen pou paj prensipal lang ou prefere a.",
 	"supportedlanguages-translators": "{{PLURAL:$2|Tradiktè|Tradiktè yo}}: $1",
 	"supportedlanguages-recenttranslations": "dènye tradiksyon yo",

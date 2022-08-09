@@ -20,7 +20,9 @@
 			"زكريا",
 			"لطرش أحمد الهاشمي",
 			"لطرش احمد الهاشمي",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Asma",
+			"BAB ZAA"
 		]
 	},
 	"translate": "ترجمة",
@@ -100,7 +102,7 @@
 	"translate-checks-newline-extra-start": "هناك {{PLURAL:$1|سطر إضافي يفتقد|سطور إضافية تفتقد}} $1 {{PLURAL:$1|حرف|أحرف}} في بداية الترجمة.",
 	"translate-checks-newline-extra-end": "هناك {{PLURAL:$1|سطر إضافي يفتقد|سطور إضافية تفتقد}} $1 {{PLURAL:$1|حرف|أحرف}} في نهاية الترجمة.",
 	"translate-checks-value-not-present": "يجب أن تكون الترجمة مساوية {{PLURAL:$1|1=|لإحدى القيم التالية:}} $1.",
-	"translate-pref-editassistlang": "لغات المساعد:",
+	"translate-pref-editassistlang": "لغات المساعدة:",
 	"prefs-translate": "خيارات الترجمة",
 	"translate-pref-editassistlang-help": "قائمة برموز اللغات مفصولة بفواصل.\nتُعرض ترجمة الرسالة بهذه اللغات عندما تترجم.\nقائمة اللغات المبدئية تعتمد على لغتك.",
 	"translate-pref-editassistlang-bad": "رمز لغة غير صالح في القائمة:\n<nowiki>$1</nowiki>.",

@@ -14,7 +14,9 @@
 			"Yusuke1109",
 			"そらたこ",
 			"ネイ",
-			"青子守歌"
+			"青子守歌",
+			"MathXplore",
+			"Yamagata Yusuke"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -98,6 +100,8 @@
 	"tpt-discouraged-language-force": "<strong>このページは $2 に翻訳できません。</strong>\n\n翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。",
 	"tpt-priority-languages": "翻訳管理者が、このメッセージ群の優先言語を $1 に設定しました。",
 	"tpt-priority-languages-force": "翻訳管理者によって優先すべき言語が$1に指定されました。その他の言語への翻訳は認められていません。",
+	"tpt-discouraged-translation-header": "このページの翻訳は推奨されていません",
+	"tpt-discouraged-translation-content": "翻訳管理者は、このページの翻訳を推奨していません。ページを翻訳することはできますが、役に立たない可能性があります。",
 	"tpt-render-summary": "翻訳元ページの新版に適合するように更新",
 	"aggregategroups": "集約群",
 	"tpt-aggregategroup-add": "追加",
