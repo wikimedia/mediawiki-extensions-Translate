@@ -11,11 +11,15 @@
 		} );
 
 		return $( '<a>' )
-			.addClass( 'three columns text-right edit-summary-time' )
+			.addClass( 'edit-summary-time' )
 			.attr(
 				{ href: diffLink }
 			)
 			.text( comment.humanTimestamp );
+	}
+
+	function getSpacer() {
+		return '<span class="edit-summary-spacer">·</span>';
 	}
 
 	var translateEditorHelpers = {
@@ -565,11 +569,14 @@
 			}
 			var $editSummariesTitle = this.$editor.find( '.edit-summaries-title' );
 			$editSummariesTitle.after( $editSummariesContainer );
-			var $summaryList = $( '<ul>' ).addClass( 'edit-summaries-list' );
+			var $summaryList = $( '<ul>' );
 			var lastEmptySummaryCount = 0;
 			var pageTitle = this.message.title;
 			editsummaries.forEach( function ( comment ) {
 				var $summaryListItem = $( '<li>' );
+				// An additional tag is added so that display: list-item can be retained
+				// for the <li> tag
+				var $summaryItem = $( '<span>' );
 
 				if ( comment.summary === '' ) {
 					var $lastSummaryItem = $summaryList.find( 'li' ).last();
@@ -585,26 +592,39 @@
 						);
 						// Remove the timestamp link if there is more than one empty summary.
 						$lastSummaryItem.find( '.edit-summary-time' ).remove();
+						// Remove the spacer since we no longer have a timestamp
+						$lastSummaryItem.find( '.edit-summary-spacer' ).remove();
 					} else {
 						// Add a new empty summary list item
-						$summaryList.append( $summaryListItem
-							.addClass( 'update-without-summary' )
-							.append( $( '<span>' )
-								.addClass( 'nine columns' )
-								.text( mw.msg(
+						$summaryItem.append(
+							$( '<span>' ).text(
+								mw.msg(
 									'tux-editor-changes-without-summary',
-									mw.language.convertNumber( ++lastEmptySummaryCount ) ) ) )
-							.append( getEditSummaryTimeWithDiff( pageTitle, comment ) )
+									mw.language.convertNumber( ++lastEmptySummaryCount )
+								)
+							),
+							getSpacer(),
+							getEditSummaryTimeWithDiff( pageTitle, comment )
+						);
+
+						$summaryList.append(
+							$summaryListItem
+								.addClass( 'update-without-summary' )
+								.append( $summaryItem )
 						);
 					}
 				} else {
 					lastEmptySummaryCount = 0;
-					$summaryList.append( $summaryListItem.append( $( '<bdi>' )
-						.prop( 'lang', '' )
-						.addClass( 'nine columns edit-summaries-message' )
-						.html( comment.summary ) )
-						.append( getEditSummaryTimeWithDiff( pageTitle, comment ) )
+					$summaryItem.append(
+						$( '<bdi>' )
+							.prop( 'lang', '' )
+							.addClass( 'edit-summary-message' )
+							.html( comment.summary ),
+						getSpacer(),
+						getEditSummaryTimeWithDiff( pageTitle, comment )
 					);
+
+					$summaryList.append( $summaryListItem.append( $summaryItem ) );
 				}
 			} );
 

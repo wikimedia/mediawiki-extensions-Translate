@@ -242,19 +242,27 @@
 	padding: 10px 0;
 }
 
-.edit-summaries {
-	font-size: 0.85em;
-}
-
 .edit-summaries ul {
-	margin: 0 0 0.9em 0.9em;
+	margin: 0 0.2em 0.3em 0.4em;
 }
 
-.edit-summaries li {
-	clear: both;
+.edit-summary-spacer {
+	font-weight: bold;
+	padding: 0 3px;
 }
 
-.edit-summaries-title > a {
+.edit-summaries li > span {
+	display: flex;
+	white-space: nowrap;
+	font-size: 13px;
+}
+
+.edit-summary-message {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.edit-summaries-title a {
 	margin: 0 9px 3px -5px;
 	font-size: 0.75em;
 	background: left center no-repeat;
@@ -264,16 +272,9 @@
 	float: right;
 }
 
-.edit-summaries-message,
-.update-without-summary > bdi {
-	display: inline-block;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
 .update-without-summary {
 	color: #54595d;
+	font-size: 13px;
 }
 
 .tm-suggestion,
