@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Atabek"
+			"Atabek",
+			"Nurlan"
 		]
 	},
 	"translate": "Awdarıw",
@@ -32,5 +33,6 @@
 	"translate-checks-balance": "Qawıslardın' sanı jup emes: <strong>$1</strong>",
 	"translate-checks-links": "To'mendegi siltewler jaramsız: <strong>$1</strong>",
 	"translate-checks-plural": "Anıqlamada <nowiki>{{PLURAL:}}</nowiki> paydalanılg'an, biraq awdarmada bul joq.",
-	"right-translate": "Awdarma interfeysi ja'rdeminde o'zgertiw"
+	"right-translate": "Awdarma interfeysi ja'rdeminde o'zgertiw",
+	"translate-documentation-language": "Xabar hújjetleri"
 }
