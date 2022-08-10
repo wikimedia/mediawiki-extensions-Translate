@@ -180,6 +180,7 @@
 	"translate-smg-more": "Po potrditvi teh sprememb bo treba obdelati več sprememb.",
 	"translate-smg-left": "Vsebina sporočila v wikiju",
 	"translate-smg-right": "Prihajajoče spremembe",
+	"translate-smg-rename-select-err": "Prosimo, izberite sporočilo, ki ga želite preimenovati",
 	"translate-manage-import-diff": "Sporočilo $1 | Dejanja: $2",
 	"translate-manage-import-new": "Novo sporočilo $1",
 	"translate-manage-import-deleted": "Izbriši sporočilo $1",
