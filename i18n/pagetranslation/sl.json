@@ -64,6 +64,7 @@
 	"tpt-render-summary": "Posodabljanje za ujemanje nove različice izvorne strani",
 	"tpt-aggregategroup-add": "Dodaj",
 	"tpt-aggregategroup-save": "Shrani",
+	"tpt-aggregategroup-close": "Zapri",
 	"tpt-aggregategroup-new-name": "Ime:",
 	"tpt-aggregategroup-new-description": "Opis (neobvezno):",
 	"tpt-aggregategroup-invalid-group": "Skupina ne obstaja",
