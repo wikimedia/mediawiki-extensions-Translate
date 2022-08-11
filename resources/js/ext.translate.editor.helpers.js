@@ -534,10 +534,14 @@
 
 			$buttonArea.on( 'click', '.insertable', function () {
 				var data = insertables[ $( this ).data( 'iid' ) ];
-				$textarea.textSelection( 'encapsulateSelection', {
-					pre: data.pre,
-					post: data.post
-				} );
+				if ( data.post === '' ) { // 1-piece insertables
+					$textarea.textSelection( 'replaceSelection', data.pre );
+				} else {
+					$textarea.textSelection( 'encapsulateSelection', {
+						pre: data.pre,
+						post: data.post
+					} );
+				}
 				$textarea.trigger( 'focus' ).trigger( 'input' );
 			} );
 
