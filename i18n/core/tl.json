@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"AnakngAraw",
+			"GinawaSaHapon",
 			"Jewel457",
 			"Jojit fb"
 		]
@@ -200,7 +201,7 @@
 	"translate-gs-count": "Bilang",
 	"translate-gs-total": "Kabuoan",
 	"translate-gs-avgscore": "Karaniwang puntos",
-	"translate-documentation-language": "Dokumentasyon ng mensahe",
+	"translate-documentation-language": "Dokumentasyon sa mensahe",
 	"translate-searchprofile": "Mga salinwika",
 	"translate-searchprofile-tooltip": "Maghanap mula sa lahat ng mga salinwika",
 	"translate-search-languagefilter": "Salain ayon sa wika:",
