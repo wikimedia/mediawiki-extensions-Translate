@@ -415,7 +415,7 @@
 				$cancelButton.on( 'click', cancelEditGroup );
 				$removeSpan.on( 'click', removeGroup );
 				$( 'div.tpt-add-new-group' ).addClass( 'hidden' );
-				$( 'div.mw-tpa-group' ).first().before( $div );
+				$( 'div.mw-tpa-groups' ).prepend( $div );
 			};
 
 			var params = {

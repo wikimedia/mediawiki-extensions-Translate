@@ -231,10 +231,12 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$out->addHTML( $newGroupDiv );
 		}
 
+		$out->addHTML( Html::openElement( 'div', [ 'class' => 'mw-tpa-groups' ] ) );
 		/** @var AggregateMessageGroup $group */
 		foreach ( $aggregates as $group ) {
 			$out->addHTML( $this->showAggregateGroup( $group ) );
 		}
+		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
 	private function listSubgroups( string $groupId, array $subGroupIds ): string {
