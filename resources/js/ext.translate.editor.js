@@ -675,7 +675,7 @@
 
 				translateEditor.delayValidation( function () {
 					translateEditor.validateTranslation();
-				}, 500 );
+				}, 2000 );
 			} );
 
 			var $noticesBlock = $( '<div>' )
