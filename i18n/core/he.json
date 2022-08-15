@@ -157,7 +157,7 @@
 	"translate-statsf-error-message": "אירעה שגיאה בעת טעינת התרשים: $1",
 	"translate-statsf-graph-alt-text-info": "טקסט חלופי לסטטיסטיקת התרגום בטבלת הנתונים להלן.",
 	"translate-statsf-alt-text": "זה הטקסט החלופי לסטטיסטיקות התרגום.",
-	"translate-statsf-embed": "קוד לשיבוץ בתרשים סטטיסטיקות התרגום בדפים אחרים.",
+	"translate-statsf-embed": "קוד להטבעת תרשים סטטיסטיקות התרגום בדפים אחרים.",
 	"translate-tag-page-desc": "תרגום של דף הוויקי [[$2|$1]] מ{{GRAMMAR:תחילית|$3}} ($4).",
 	"translate-tag-page-wikipage-desc": "[[$1|תרגום]] דף הוויקי [[$2]] מ{{GRAMMAR:תחילית|$3}} (<bdi>$4</bdi>) ל{{GRAMMAR:תחילית|$5}} (<bdi>$6</bdi>)",
 	"translate-sidebar-alltrans": "בשפות אחרות",
