@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ideophagous"
+		]
+	},
+	"searchtranslations": "قلب ف طّرجامات",
+	"tux-sst-edit": "بدّل طّرجامة",
+	"tux-sst-view-foreign": "شوف ف $1",
+	"tux-sst-search": "قلّب",
+	"tux-sst-search-ph": "قلب ف طّرجامات",
+	"tux-sst-count": "{{PLURAL:$1|نتيجة وحدة لي تّلقات|$1 نتائج لي تّلقاو}}",
+	"tux-sst-facet-language": "لوغات",
+	"tux-sst-facet-group": "ڭروپات د لميساجات",
+	"tux-sst-nosolr-title": "لبحت مامتوفّرش",
+	"tux-sst-nosolr-body": "هاد لويكي ماعندهاش سربيس ديال لبحت ف طّرجامات",
+	"tux-sst-solr-offline-title": "لبحت مامتوفّرش",
+	"tux-sst-solr-offline-body": "سّربيس د لبحت مامتوفّرش مؤقتاً",
+	"tux-sst-next": "جّاي",
+	"tux-sst-prev": "لفايت",
+	"tux-sst-default": "طرجامات",
+	"tux-sst-translated": "طرجامات من $1",
+	"tux-sst-untranslated": "تا طرجامة من $1",
+	"tux-sst-outdated": "طرجامة متقادمين د $1",
+	"tux-sst-ellipsis-untranslated": "تا طرجامة",
+	"tux-sst-ellipsis-outdated": "طرجامات متقادمين",
+	"tux-sst-link-all-match": "فرض جميع لكلمات د لبحت",
+	"tux-sst-match-message": "تبيان جميع طّرجامات لي كيطابقو لكلمات د لبحت. $1",
+	"tux-sst-case-sensitive": "حضي معا لمينيسكيل/لماجيسكيل",
+	"tux-sst-error-offset": "تا نتايج د لبحت ما يقدرو يزيد يتعرضو. عافاك ضيّق لبحت ديالك.",
+	"tux-sst-error-language": "هاد لّوغة مايمكنش ليها تّخدم ب هاد نّوع د لبحت."
+}

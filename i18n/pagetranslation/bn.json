@@ -6,10 +6,12 @@
 			"Bellayet",
 			"আফতাবুজ্জামান",
 			"Sibabrata Banerjee",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"আজিজ"
 		]
 	},
 	"pagetranslation": "পাতা অনুবাদ",
+	"right-pagetranslation": "অনুবাদের জন্য পাতাসমূহের সংস্করণ চিহ্নিত করুন",
 	"action-pagetranslation": "অনুবাদযোগ্য পাতা পরিচালনা করার",
 	"tps-edit-sourcepage-ve-warning-title": "সতর্কতা: অ-সমর্থিত পাতা",
 	"tps-edit-sourcepage-ve-warning-text": "আপনি একটি অনুবাদযোগ্য পাতা সম্পাদনা করছেন। এইগুলি এই সম্পাদকের মাধ্যমে সম্পাদনা করা এখনও আনুষ্ঠানিকভাবে সমর্থিত নয়। অনুগ্রহপূর্বক উৎস সম্পাদক ব্যবহার করুন।",
@@ -24,6 +26,7 @@
 	"tpt-sections-deleted": "অপসারিত অনুবাদের উপাদান",
 	"tpt-sections-template": "অনুবাদ পাতার টেমপ্লেট",
 	"tpt-action-nofuzzy": "অনুবাদগুলি অকার্যকর করবেন না",
+	"tpt-badtitle": "প্রদত্ত পাতার নাম ($1) কোনও বৈধ শিরোনাম নয়",
 	"tpt-nosuchpage": "$1 পাতাটির অস্তিত্ব নেই",
 	"tpt-saveok": "$2টি {{PLURAL:$2|অনুবাদের উপাদানসহ}} [[:$1]] পাতাটি অনুবাদের জন্য চিহ্নিত করা হয়েছে। পাতাটি এখন <span class=\"plainlinks\">[$3 অনুবাদ করা]</span> যাবে।",
 	"tpt-mark-summary": "এই সংস্করণ অনুবাদের জন্য চিহ্নিত করা হয়েছে",
@@ -32,6 +35,7 @@
 	"tpt-outdated-pages-title": "অমীমাংসিত পরিবর্তনসহ পাতাসমূহ",
 	"tpt-old-pages": "{{PLURAL:$1|এই পাতাটির|এই পাতাগুলির}} সর্বশেষ সংস্করণ অনুবাদের জন্য চিহ্নিত করা হয়েছে।",
 	"tpt-tag-discouraged": "নিরুৎসাহিত করা হচ্ছে",
+	"tpt-tag-oldsyntax": "পুরানো শব্দবিন্যাস",
 	"tpt-select-prioritylangs-reason": "কারণ:",
 	"tpt-sections-prioritylangs": "অগ্রাধিকারের ভাষাগুলি",
 	"tpt-rev-mark": "অনুবাদের জন্য চিহ্নিত করুন",
@@ -43,7 +47,7 @@
 	"translate-tag-translate-link-desc": "এই পাতাটি অনুবাদ করুন",
 	"translate-tag-markthis": "অনুবাদের জন্য এই পাতা চিহ্নিত করুন",
 	"translate-tag-markthisagain": "<span class=\"plainlinks\">[$2 অনুবাদের জন্য সর্বশেষ চিহ্নিত করার]</span> পর থেকে এই পাতাটিতে <span class=\"plainlinks\">[$1 পরিবর্তন ঘটেছে]</span>।",
-	"translate-tag-hasnew": "এই পাতায় <span class=\"plainlinks\">[$1 পরিবর্তন]</span> রয়েছে যা অনুবাদ করার জন্য চিহ্নিত করা হয় নি।",
+	"translate-tag-hasnew": "এই পাতায় <span class=\"plainlinks\">[$1 পরিবর্তন]</span> রয়েছে যা অনুবাদ করার জন্য চিহ্নিত করা হয়নি।",
 	"tpt-translation-intro": "এই পাতাটি [[$2]] পাতার একটি <span class=\"plainlinks\">[$1 অনূদিত সংস্করণ]</span> এবং অনুবাদ $3% সম্পূর্ণ হয়েছে।",
 	"tpt-translation-intro-fuzzy": "পুরাতন অনুবাদ এটির মত চিহ্নিত করা হয়েছে।",
 	"tpt-languages-legend": "অন্য ভাষা:",
