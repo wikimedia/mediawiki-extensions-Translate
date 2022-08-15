@@ -24,6 +24,9 @@ class CurrentTranslationAid extends TranslationAid {
 		);
 
 		Hooks::run( 'TranslatePrefillTranslation', [ &$translation, $this->handle ] );
+		// If we have still no translation, use the empty string so that
+		// string handler functions don't error out on PHP 8.1+
+		$translation = $translation ?? '';
 		$fuzzy = MessageHandle::hasFuzzyString( $translation ) || $this->handle->isFuzzy();
 		$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 

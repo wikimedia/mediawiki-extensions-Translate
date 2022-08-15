@@ -84,7 +84,7 @@ Post processing step to format in wiki
  array          &$groupLoader: List of message group loader class names that implement the MessageGroupLoader
 
 ;TranslatePrefillTranslation: Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
- string         &$translation: The translation string as it stands
+ string|null    &$translation: The translation string as it stands, or null for new translations
  MessageHandle   $handle: The current MessageHandle object
 
 ;TranslateProcessAPIMessageGroupsProperties: Allows extra property requests to be acted upon, and the new properties returned
