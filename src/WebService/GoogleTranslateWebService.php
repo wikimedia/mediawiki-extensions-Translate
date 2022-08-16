@@ -106,7 +106,7 @@ class GoogleTranslateWebService extends TranslationWebService {
 		$text = $this->wrapUntranslatable( $text );
 
 		return TranslationQuery::factory( $url )
-			->timeout( intval( $this->config['timeout'] ) ?? 3 )
+			->timeout( intval( $this->config['timeout'] ?? 3 ) )
 			->postWithData( wfArrayToCgi( [
 				'key' => $this->config['key'],
 				'q' => $text,
