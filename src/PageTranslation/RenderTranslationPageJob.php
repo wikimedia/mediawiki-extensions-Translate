@@ -10,7 +10,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
-use PageTranslationHooks;
 use RecentChange;
 use Title;
 use User;
@@ -73,7 +72,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		}
 
 		// @todo FuzzyBot hack
-		PageTranslationHooks::$allowTargetEdit = true;
+		Hooks::$allowTargetEdit = true;
 		$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
 		$content = $tpPage->getPageContent();
 
@@ -104,7 +103,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		}
 
 		$this->logInfo( 'Finished page edit operation' );
-		PageTranslationHooks::$allowTargetEdit = false;
+		Hooks::$allowTargetEdit = false;
 
 		$this->logInfo( 'Finished TranslateRenderJob' );
 		return true;

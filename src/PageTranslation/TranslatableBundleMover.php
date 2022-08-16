@@ -14,7 +14,6 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Page\MovePageFactory;
 use Message;
 use ObjectCache;
-use PageTranslationHooks;
 use SplObjectStorage;
 use Status;
 use Title;
@@ -313,7 +312,7 @@ class TranslatableBundleMover {
 	): void {
 		$fuzzybot = FuzzyBot::getUser();
 
-		PageTranslationHooks::$allowTargetEdit = true;
+		Hooks::$allowTargetEdit = true;
 
 		$processed = 0;
 		foreach ( $pagesToMove as $source => $target ) {
@@ -348,7 +347,7 @@ class TranslatableBundleMover {
 			$this->unlock( [ $source, $target ] );
 		}
 
-		PageTranslationHooks::$allowTargetEdit = false;
+		Hooks::$allowTargetEdit = false;
 	}
 
 	private function getRenameMoveBlocker( Title $old, string $pageType, int $renameError ): Status {

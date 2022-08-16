@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
@@ -149,7 +150,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		}
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
-		if ( PageTranslationHooks::$renderingContext ) {
+		if ( Hooks::$renderingContext ) {
 			$revFlags = IDBAccessObject::READ_NORMAL; // bug T95753
 		} else {
 			$revFlags = ( $flags & self::READ_LATEST ) == self::READ_LATEST

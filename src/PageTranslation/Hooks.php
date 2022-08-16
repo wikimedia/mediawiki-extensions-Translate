@@ -1,17 +1,18 @@
 <?php
-/**
- * Contains class with page translation feature hooks.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
 
-use MediaWiki\Extension\Translate\PageTranslation\MoveTranslatableBundleSpecialPage;
-use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
-use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
-use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+namespace MediaWiki\Extension\Translate\PageTranslation;
+
+use Article;
+use CommentStoreComment;
+use Content;
+use DeferredUpdates;
+use Exception;
+use Html;
+use IContextSource;
+use Language;
+use LanguageCode;
+use LinkBatch;
+use ManualLogEntry;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
@@ -24,14 +25,34 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\EditResult;
 use MediaWiki\User\UserIdentity;
+use MessageGroupStats;
+use MessageHandle;
+use ObjectCache;
+use OutputPage;
+use Parser;
+use ParserOutput;
+use RequestContext;
+use Skin;
+use SpecialPage;
+use Status;
+use StubUserLang;
+use TextContent;
+use Title;
+use TranslateMetadata;
+use TranslateUtils;
+use User;
 use Wikimedia\ScopedCallback;
+use WikiPage;
+use WikiPageMessageGroup;
+use WikitextContent;
 
 /**
  * Hooks for page translation.
- *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup PageTranslation
  */
-class PageTranslationHooks {
+class Hooks {
 	// Uuugly hacks
 	public static $allowTargetEdit = false;
 	// Check if job queue is running
@@ -43,11 +64,10 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ParserBeforeInternalParse
-	 *
 	 * @param Parser $wikitextParser
-	 * @param string &$text
+	 * @param null|string &$text
 	 * @param-taint $text escapes_htmlnoent
-	 * @param string $state
+	 * @param mixed $state
 	 */
 	public static function renderTagPage( $wikitextParser, &$text, $state ): void {
 		if ( $text === null ) {
@@ -70,7 +90,14 @@ class PageTranslationHooks {
 		}
 
 		// Set display title
-		$title = $wikitextParser->getTitle();
+		$title = MediaWikiServices::getInstance()
+			->getTitleFactory()
+			->castFromPageReference( $wikitextParser->getPage() );
+
+		if ( !$title ) {
+			return;
+		}
+
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
 			return;
@@ -122,11 +149,10 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ParserBeforePreprocess
-	 *
 	 * @param Parser $wikitextParser
 	 * @param string &$text
 	 * @param-taint $text escapes_htmlnoent
-	 * @param string $state
+	 * @param mixed $state
 	 */
 	public static function preprocessTagPage( $wikitextParser, &$text, $state ): void {
 		$translatablePageParser = Services::getInstance()->getTranslatablePageParser();
@@ -159,7 +185,9 @@ class PageTranslationHooks {
 	 * @param array &$options
 	 */
 	public static function onParserOutputPostCacheTransform(
-		ParserOutput $out, &$text, array &$options
+		ParserOutput $out,
+		&$text,
+		array &$options
 	) {
 		if ( $out->getExtensionData( 'Translate-noeditsection' ) ) {
 			$options['enableSectionEditLinks'] = false;
@@ -243,26 +271,21 @@ class PageTranslationHooks {
 	/**
 	 * Set the right page content language for translated pages ("Page/xx").
 	 * Hook: PageContentLanguage
-	 *
 	 * @param Title $title
 	 * @param Language|StubUserLang|string &$pageLang
-	 * @return true
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		// For translation pages, parse plural, grammar etc with correct language,
 		// and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
 			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
-			$pageLang = Language::factory( $code );
+			$pageLang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $code );
 		}
-
-		return true;
 	}
 
 	/**
 	 * Display an edit notice for translatable source pages if it's enabled
 	 * Hook: TitleGetEditNotices
-	 *
 	 * @param Title $title
 	 * @param int $oldid
 	 * @param array &$notices
@@ -343,7 +366,7 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * This is triggered after saves to translation unit pages
+	 * This is triggered after an edit to translation unit page
 	 * @param WikiPage $wikiPage
 	 * @param User $user
 	 * @param TextContent $content
@@ -353,8 +376,14 @@ class PageTranslationHooks {
 	 * @param MessageHandle $handle
 	 * @return true
 	 */
-	public static function onSectionSave( WikiPage $wikiPage, User $user, TextContent $content,
-		$summary, $minor, $flags, MessageHandle $handle
+	public static function onSectionSave(
+		WikiPage $wikiPage,
+		User $user,
+		TextContent $content,
+		$summary,
+		$minor,
+		$flags,
+		MessageHandle $handle
 	) {
 		// FuzzyBot may do some duplicate work already worked on by other jobs
 		if ( $user->equals( FuzzyBot::getUser() ) ) {
@@ -487,7 +516,7 @@ class PageTranslationHooks {
 			$lang = $langFactory->getLanguage( $code );
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
-				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
+				$classes = array_merge( $classes, self::tpProgressIcon( (float)$percent ) );
 				$attribs = [
 					'class' => $classes,
 					'lang' => $lang->getHtmlCode(),
@@ -501,7 +530,7 @@ class PageTranslationHooks {
 					$pagename = $subpage->getPrefixedText();
 				}
 
-				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
+				$classes = array_merge( $classes, self::tpProgressIcon( (float)$percent ) );
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
 					->inLanguage( $userLang )
@@ -573,7 +602,7 @@ class PageTranslationHooks {
 	 * @param float $percent
 	 * @return string[]
 	 */
-	protected static function tpProgressIcon( $percent ) {
+	private static function tpProgressIcon( float $percent ) {
 		$classes = [ 'mw-pt-progress' ];
 		$percent *= 100;
 		if ( $percent < 20 ) {
@@ -615,7 +644,7 @@ class PageTranslationHooks {
 		$priorityLangs = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
 		$priorityForce = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
 		$filter = null;
-		if ( strlen( $priorityLangs ) > 0 ) {
+		if ( (string)$priorityLangs !== '' ) {
 			$filter = array_flip( explode( ',', $priorityLangs ) );
 		}
 		if ( $filter !== null ) {
@@ -677,7 +706,8 @@ class PageTranslationHooks {
 
 		$page = $status[ 'page' ];
 		$languages = $status[ 'languages' ];
-		$en = Language::factory( 'en' );
+		$mwServices = MediaWikiServices::getInstance();
+		$en = $mwServices->getLanguageFactory()->getLanguage( 'en' );
 
 		$newLanguageLinks = [];
 
@@ -688,7 +718,7 @@ class PageTranslationHooks {
 			$lb->addObj( $title );
 		}
 		$lb->execute();
-
+		$languageNameUtils = $mwServices->getLanguageNameUtils();
 		foreach ( $languages as $code => $percentage ) {
 			$title = $page->getTitle()->getSubpage( $code );
 			$key = "x-pagetranslation:{$title->getPrefixedText()}";
@@ -696,7 +726,7 @@ class PageTranslationHooks {
 
 			if ( $title->exists() ) {
 				$href = $title->getLocalURL();
-				$classes = self::tpProgressIcon( $percentage );
+				$classes = self::tpProgressIcon( (float)$percentage );
 				$title = wfMessage( 'tpt-languages-nonzero' )
 					->params( $translatedName )
 					->numParams( 100 * $percentage );
@@ -714,7 +744,7 @@ class PageTranslationHooks {
 				'language' => $code,
 				'percentage' => $percentage,
 				'classes' => $classes,
-				'autonym' => $en->ucfirst( Language::fetchLanguageName( $code ) ),
+				'autonym' => $en->ucfirst( $languageNameUtils->getLanguageName( $code ) ),
 				'title' => $title,
 			];
 
@@ -767,7 +797,12 @@ class PageTranslationHooks {
 	 * @param string $summary
 	 * @return true
 	 */
-	public static function tpSyntaxCheckForEditContent( $context, $content, $status, $summary ) {
+	public static function tpSyntaxCheckForEditContent(
+		$context,
+		$content,
+		$status,
+		$summary
+	) {
 		$syntaxErrorStatus = self::tpSyntaxError( $context->getTitle(), $content );
 
 		if ( $syntaxErrorStatus ) {
@@ -778,7 +813,7 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	protected static function tpSyntaxError( ?PageIdentity $page, ?Content $content ): ?Status {
+	private static function tpSyntaxError( ?PageIdentity $page, ?Content $content ): ?Status {
 		// T163254: Ignore translation markup on non-wikitext pages
 		if ( !$content instanceof WikitextContent || !$page ) {
 			return null;
@@ -813,7 +848,11 @@ class PageTranslationHooks {
 	 * @return bool
 	 */
 	public static function tpSyntaxCheck(
-		RenderedRevision $renderedRevision, UserIdentity $user, CommentStoreComment $summary, $flags, Status $hookStatus
+		RenderedRevision $renderedRevision,
+		UserIdentity $user,
+		CommentStoreComment $summary,
+		$flags,
+		Status $hookStatus
 	) {
 		$content = $renderedRevision->getRevision()->getContent( SlotRecord::MAIN );
 
@@ -882,7 +921,6 @@ class PageTranslationHooks {
 	 * re-mark the translations of the page title as outdated (if enabled
 	 * for translation).
 	 * Hook: RevisionRecordInserted
-	 * @since 2012-05-08
 	 * @param RevisionRecord $rev
 	 */
 	public static function updateTranstagOnNullRevisions( RevisionRecord $rev ) {
@@ -892,7 +930,8 @@ class PageTranslationHooks {
 			return;
 		}
 
-		$prevRev = MediaWikiServices::getInstance()->getRevisionLookup()
+		$prevRev = MediaWikiServices::getInstance()
+			->getRevisionLookup()
 			->getRevisionById( $parentId );
 
 		if ( !$prevRev || !$rev->hasSameContent( $prevRev ) ) {
@@ -921,7 +960,10 @@ class PageTranslationHooks {
 	 * @return bool
 	 */
 	public static function onGetUserPermissionsErrorsExpensive(
-		Title $title, User $user, $action, &$result
+		Title $title,
+		User $user,
+		$action,
+		&$result
 	) {
 		$handle = new MessageHandle( $title );
 
@@ -1055,11 +1097,22 @@ class PageTranslationHooks {
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false && $page->getMarkedTag() ) {
 			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
+			$mwService = MediaWikiServices::getInstance();
+
+			if ( method_exists( $mwService, 'getUrlUtils' ) ) {
+				$translationUrl = $mwService->getUrlUtils()->expand(
+					$page->getTranslationUrl( $code ), PROTO_RELATIVE
+				);
+			} else {
+				// < MW 1.39
+				$translationUrl = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
+			}
+
 			$result = [
 				'tpt-target-page',
 				':' . $page->getTitle()->getPrefixedText(),
 				// This url shouldn't get cached
-				wfExpandUrl( $page->getTranslationUrl( $code ) )
+				$translationUrl
 			];
 
 			return false;
@@ -1118,7 +1171,7 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	protected static function sourcePageHeader( IContextSource $context ) {
+	private static function sourcePageHeader( IContextSource $context ) {
 		$linker = MediaWikiServices::getInstance()->getLinkRenderer();
 
 		$language = $context->getLanguage();
@@ -1194,9 +1247,7 @@ class PageTranslationHooks {
 			);
 	}
 
-	protected static function translationPageHeader(
-		IContextSource $context, TranslatablePage $page
-	) {
+	private static function translationPageHeader( IContextSource $context, TranslatablePage $page ) {
 		global $wgTranslateKeepOutdatedTranslations;
 
 		$title = $context->getTitle();
@@ -1220,9 +1271,19 @@ class PageTranslationHooks {
 			// If we are on the source language page, link to translate for user's language
 			$msg = self::getTranslateLink( $context, $page, $language->getCode() );
 		} else {
-			$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
+			$mwService = MediaWikiServices::getInstance();
+
+			if ( method_exists( $mwService, 'getUrlUtils' ) ) {
+				$translationUrl = $mwService->getUrlUtils()->expand(
+					$page->getTranslationUrl( $code ), PROTO_RELATIVE
+				);
+			} else {
+				// < MW 1.39
+				$translationUrl = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
+			}
+
 			$msg = $context->msg( 'tpt-translation-intro',
-				$url,
+				$translationUrl,
 				':' . $page->getTitle()->getPrefixedText(),
 				$language->formatNum( $per )
 			)->parse();
@@ -1295,7 +1356,7 @@ class PageTranslationHooks {
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
-	 * @param array &$result
+	 * @param mixed &$result
 	 * @return bool
 	 */
 	public static function lockedPagesCheck( Title $title, User $user, $action, &$result ) {
@@ -1388,7 +1449,6 @@ class PageTranslationHooks {
 	/**
 	 * Converts the edit tab (if exists) for translation pages to translate tab.
 	 * Hook: SkinTemplateNavigation::Universal
-	 * @since 2013.06
 	 * @param Skin $skin
 	 * @param array &$tabs
 	 * @return true
@@ -1435,7 +1495,7 @@ class PageTranslationHooks {
 		string $reason,
 		RevisionRecord $revisionRecord
 	) {
-		$user = User::newFromIdentity( $userIdentity );
+		$user = MediaWikiServices::getInstance()->getUserFactory()->newFromUserIdentity( $userIdentity );
 		// MoveTranslatableBundleJob takes care of handling updates because it performs
 		// a lot of moves at once. As a performance optimization, skip this hook if
 		// we detect moves from that job. As there isn't a good way to pass information
@@ -1483,7 +1543,6 @@ class PageTranslationHooks {
 	/**
 	 * Hook to update translation page on deleting a translation unit
 	 * Hook: ArticleDeleteComplete
-	 * @since 2016.05
 	 * @param WikiPage $unit
 	 * @param User $user
 	 * @param string $reason
@@ -1520,7 +1579,7 @@ class PageTranslationHooks {
 		$langCode = $handle->getCode();
 		$fname = __METHOD__;
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$callback = function () use (
 			$dbw,
 			$target,

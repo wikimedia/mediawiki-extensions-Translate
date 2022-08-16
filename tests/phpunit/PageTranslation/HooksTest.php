@@ -20,6 +20,7 @@ use Status;
 use Title;
 use TranslateHooks;
 use WANObjectCache;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * Test for various code using hooks.
@@ -28,7 +29,7 @@ use WANObjectCache;
  * @group Database
  * @group medium
  */
-class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
+class HooksTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -57,8 +58,9 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		$hashIndex = new HashMessageIndex();
+		MessageIndex::setInstance( $hashIndex );
+		$hashIndex->rebuild();
 	}
 
 	public function getTestGroups( array &$groups, array &$deps, array &$autoload ) {
@@ -82,7 +84,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 		$text = '<translate>pupu</translate>';
 		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
-		$parser = MediaWikiServices::getInstance()->getParserFactory()->getInstance();
+		$parser = $this->getServiceContainer()->getParserFactory()->getInstance();
 		$options = ParserOptions::newFromUser( $superUser );
 		$messageGroups = MessageGroups::singleton();
 
@@ -153,7 +155,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertFalse( $status->isOK(),
 			'translation with errors is not saved if a normal user is translating.' );
-		$this->assertGreaterThan( 0, $status->getErrorsArray(),
+		$this->assertGreaterThan( 0, $status->getErrors(),
 			'errors are specified when translation fails validation.' );
 
 		$newStatus = new Status();
@@ -165,7 +167,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 			"translation with errors is saved if user with 'translate-manage' permission is translating." );
 	}
 
-	/** @covers PageTranslationHooks::updateTranstagOnNullRevisions */
+	/** @covers MediaWiki\Extension\Translate\PageTranslation\Hooks::updateTranstagOnNullRevisions */
 	public function testTagNullRevision() {
 		$title = Title::newFromText( 'translated' );
 		$status = $this->editPage(
@@ -183,7 +185,7 @@ class PageTranslationHooksTest extends MediaWikiIntegrationTestCase {
 			'Sanity: must tag revision 1 ready for translate'
 		);
 
-		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromID( $title->getArticleID() );
+		$wikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromID( $title->getArticleID() );
 
 		if ( method_exists( MediaWikiServices::class, 'getProtectPageFactory' ) ) {
 			// MW 1.38+

@@ -4,11 +4,11 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Job;
+use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
-use PageTranslationHooks;
 use Title;
 use User;
 
@@ -51,8 +51,8 @@ class DeleteTranslatableBundleJob extends Job {
 		$reason = $this->getReason();
 		$mwInstance = MediaWikiServices::getInstance();
 
-		PageTranslationHooks::$allowTargetEdit = true;
-		PageTranslationHooks::$jobQueueRunning = true;
+		Hooks::$allowTargetEdit = true;
+		Hooks::$jobQueueRunning = true;
 
 		$wikipage = $mwInstance->getWikiPageFactory()->newFromTitle( $title );
 		$deletePage = $mwInstance->getDeletePageFactory()->newDeletePage( $wikipage, $fuzzyBot );
@@ -73,7 +73,7 @@ class DeleteTranslatableBundleJob extends Job {
 			}
 		}
 
-		PageTranslationHooks::$allowTargetEdit = false;
+		Hooks::$allowTargetEdit = false;
 
 		$cache = $mwInstance->getMainObjectStash();
 		$pageKey = $cache->makeKey( 'pt-base', $base );
@@ -89,7 +89,7 @@ class DeleteTranslatableBundleJob extends Job {
 			}
 
 			$title->invalidateCache();
-			PageTranslationHooks::$jobQueueRunning = false;
+			Hooks::$jobQueueRunning = false;
 		}
 
 		return true;

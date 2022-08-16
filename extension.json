@@ -114,7 +114,6 @@
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
-		"PageTranslationHooks": "tag/PageTranslationHooks.php",
 		"PHPVariableLoader": "utils/PHPVariableLoader.php",
 		"PremadeIntuitionTextdomains": "ffs/PremadeIntuitionTextdomains.php",
 		"PremadeMediawikiExtensionGroups": "ffs/PremadeMediawikiExtensionGroups.php",
