@@ -7,7 +7,7 @@
 	},
 	"searchtranslations": "Išči prevode",
 	"tux-sst-edit": "Uredi prevod",
-	"tux-sst-view-foreign": "Ogled na: $1",
+	"tux-sst-view-foreign": "Ogled v: $1",
 	"tux-sst-search": "Išči",
 	"tux-sst-search-ph": "Išči prevode",
 	"tux-sst-count": "{{PLURAL:$1|En najdeni zadetek|$1 najdena zadetka|$1 najdeni zadetki|$1 najdenih zadetkov}}",

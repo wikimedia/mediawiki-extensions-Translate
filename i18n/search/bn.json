@@ -4,7 +4,8 @@
 			"Aftab1995",
 			"Aftabuzzaman",
 			"Nasir8891",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"আজিজ"
 		]
 	},
 	"searchtranslations": "অনুবাদ অনুসন্ধান",
@@ -12,7 +13,7 @@
 	"tux-sst-view-foreign": "$1-এ দেখুন",
 	"tux-sst-search": "অনুসন্ধান",
 	"tux-sst-search-ph": "অনুবাদ অনুসন্ধান",
-	"tux-sst-count": "{{PLURAL:$1|একটি ফলাফল পাওয়া গিয়েছে|$1টি ফলাফল পাওয়া গিয়েছে}}",
+	"tux-sst-count": "{{PLURAL:$1|একটি ফলাফল পাওয়া গেছে|$1টি ফলাফল পাওয়া গেছে}}",
 	"tux-sst-facet-language": "ভাষাসমূহ",
 	"tux-sst-facet-group": "বার্তা সংকলন",
 	"tux-sst-nosolr-title": "অনুসন্ধান সম্ভব নয়",
@@ -27,7 +28,9 @@
 	"tux-sst-outdated": "$1 থেকে পুরাতন অনুবাদ",
 	"tux-sst-ellipsis-untranslated": "কোন অনুবাদ নেই",
 	"tux-sst-ellipsis-outdated": "পুরাতন অনুবাদ",
-	"tux-sst-link-all-match": "সমস্ত অনুসন্ধানের শব্দ দরকার।",
-	"tux-sst-match-message": "অনুবাদ দেখানো হচ্ছে যা যে কোন একটি অনুসন্ধানের শব্দের সাথে মিলেছে। $1",
-	"tux-sst-case-sensitive": "কেস সংবেদনশীল"
+	"tux-sst-link-all-match": "সমস্ত অনুসন্ধান শব্দ প্রয়োজন।",
+	"tux-sst-match-message": "যে কোনও অনুসন্ধান শব্দের সাথে মেলে এমন অনুবাদ দেখানো হচ্ছে। $1",
+	"tux-sst-case-sensitive": "অক্ষর সংবেদনশীল",
+	"tux-sst-error-offset": "আর কোন অনুসন্ধান ফলাফল দেখানো যাবে না। আপনার অনুসন্ধান সংকীর্ণ করুন।",
+	"tux-sst-error-language": "এই ধরনের অনুসন্ধানে এই ভাষা ব্যবহার করা যাবে না।"
 }
