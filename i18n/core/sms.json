@@ -142,7 +142,7 @@
 	"tux-editor-page-mode": "Seidd",
 	"tux-editor-outdated-notice-diff-link": "Čuäʹjet muttsid",
 	"tux-message-filter-placeholder": "Siʹlle liist",
-	"tux-message-filter-result": "{{PLURAL:$1|Õhtt puåđõs käunnʼji|$1 puåđõõzz käunnʼje|$1 puåđõssâd käunnʼje}} ooccâmsänna $2",
+	"tux-message-filter-result": "{{PLURAL:$1|Õhtt puåđõs käunnʼji|$1 puåđõõzz käunnʼje|$1 puåđõssâd käunnʼje}} ooccâmsänna leʹbe -saaʹnid $2",
 	"tux-empty-list-translated-action": "Jåårǥlââʹtt",
 	"tux-empty-show-optional-messages": "Čuäʹjet vaʹlljeemnallšem saaǥǥid.",
 	"tux-empty-list-other-link": "Čuäʹjet puk saaǥǥid",

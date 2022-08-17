@@ -3,7 +3,8 @@
 		"authors": [
 			"Fohanno",
 			"Fulup",
-			"Y-M D"
+			"Y-M D",
+			"Huñvreüs"
 		]
 	},
 	"pagetranslation": "Troidigezh ur bajenn",
@@ -121,5 +122,5 @@
 	"pt-deletepage-lang-logreason": "Rann eus ar bajenn da dreiñ $1.",
 	"pm-page-does-not-exist": "N'eus ket eus $1.",
 	"pp-prepare-button-label": "Prientiñ",
-	"pp-save-button-label": "Enrollañ"
+	"pp-save-button-label": "Embann"
 }
