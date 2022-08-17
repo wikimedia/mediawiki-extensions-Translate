@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserRigorOptions;
 use PageTranslationHooks;
 use Title;
 use User;
@@ -139,7 +140,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 	/** Get a user object for doing edits. */
 	private function getUser(): User {
 		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
-		return $userFactory->newFromName( $this->params['user'] );
+		return $userFactory->newFromName( $this->params['user'], UserRigorOptions::RIGOR_NONE );
 	}
 
 	private function isDeleteTrigger(): bool {
