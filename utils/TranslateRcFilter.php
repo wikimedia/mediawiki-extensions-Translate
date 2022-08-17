@@ -184,8 +184,7 @@ class TranslateRcFilter {
 				'queryCallable' => function ( $specialClassName, $ctx, $dbr, &$tables,
 					&$fields, &$conds, &$query_options, &$join_conds, $selectedValues
 				) {
-					$fields[] = 'rc_title';
-					$fields[] = 'rc_namespace';
+					$fields = array_merge( $fields, [ 'rc_title', 'rc_namespace' ] );
 
 					$namespaces = self::getTranslateNamespaces();
 					$inNamespaceCond = 'rc_namespace IN (' .
