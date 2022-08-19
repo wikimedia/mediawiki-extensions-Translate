@@ -77,10 +77,10 @@ class TranslatableBundleLogFormatter extends LogFormatter {
 		if ( isset( $legacy['reason'] ) ) {
 			if ( method_exists( MediaWikiServices::class, 'getCommentFormatter' ) ) {
 				$commentFormatter = MediaWikiServices::getInstance()->getCommentFormatter();
-				$comment = $commentFormatter->formatBlock( $legacy['reason'] );
+				$comment = $commentFormatter->formatBlock( (string)$legacy['reason'] );
 			} else {
 				// < MW 1.38
-				$comment = Linker::commentBlock( $legacy['reason'] );
+				$comment = Linker::commentBlock( (string)$legacy['reason'] );
 			}
 
 			// No hard coded spaces thanx
