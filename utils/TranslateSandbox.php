@@ -11,6 +11,7 @@ use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
 
@@ -304,7 +305,7 @@ class TranslateSandbox {
 	public static function onApiCheckCanExecute( ApiBase $module, User $user, &$message ) {
 		$inclusionList = [
 			// Obviously this is needed to get out of the sandbox
-			'ApiTranslationStash',
+			TranslationStashActionApi::class,
 			// Used by UniversalLanguageSelector for example
 			'ApiOptions'
 		];
