@@ -135,6 +135,8 @@
 		"TranslateHooks": "TranslateHooks.php",
 		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",
 		"TranslateMetadata": "utils/TranslateMetadata.php",
+		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
+		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslatePreferences": "utils/TranslatePreferences.php",
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
 		"TranslateSandbox": "utils/TranslateSandbox.php",
