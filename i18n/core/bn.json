@@ -153,7 +153,7 @@
 	"translate-translations-project": "প্রকল্প:",
 	"translate-translations-history-short": "ই",
 	"languagestats": "ভাষার পরিসংখ্যান",
-	"languagestats-summary": "এই পাতাটি একটি ভাষার জন্য সমস্ত বার্তা গোষ্ঠীর অনুবাদ পরিসংখ্যান দেখায়।",
+	"languagestats-summary": "এই পাতাটিতে একটি ভাষার সমস্ত বার্তা দলের অনুবাদ পরিসংখ্যান দেখানো হয়।",
 	"messagegroupstats-summary": "এই পাতাটি বার্তা গোষ্ঠীর পরিসংখ্যান দেখায়।",
 	"languagestats-stats-for": "$1 অনুবাদের পরিসংখ্যান ($2)।",
 	"languagestats-recenttranslations": "সাম্প্রতিক অনুবাদ",

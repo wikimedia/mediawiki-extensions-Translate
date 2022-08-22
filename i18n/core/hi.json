@@ -197,7 +197,7 @@
 	"translate-mgs-nothing": "अनुरोध किए गए आँकड़ों में दिखाने के लिए कुछ नहीं है।",
 	"supportedlanguages": "समर्थित भाषाएँ",
 	"supportedlanguages-colorlegend": "रंग का चिह्न: $1 दिन पहले आखिरी अनुवाद।",
-	"supportedlanguages-sqlite-error": "SQLite समर्थित नहीं है",
+	"supportedlanguages-sqlite-error": "SQLite का समर्थन नहीं है",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|अनुवादक}}}}: $1",
 	"supportedlanguages-recenttranslations": "हाल में हुए अनुवाद",
 	"supportedlanguages-count": "कुल $1 {{PLURAL:$1|भाषा|भाषाएँ}}।",

@@ -3,13 +3,15 @@
 		"authors": [
 			"Haqmar",
 			"Kaganer",
-			"Рустам Нурыев"
+			"Рустам Нурыев",
+			"Kareyac"
 		]
 	},
 	"translate-tag-translate-link-desc": "Был битте тәржемә итергә",
 	"tpt-translation-intro": "Был бит — [[$2]] бите <span class=\"plainlinks\">[$1 тәржемәһе]</span>. Тәржемә $3% үтәлгән",
 	"tpt-languages-legend": "Башҡа телдәр:",
 	"tpt-languages-nonzero": "$1 ($2% тәржемә ителгән)",
+	"tpt-aggregategroup-add": "Өҫтәргә",
 	"pt-movepage-list-other": "Башҡа эске биттәр",
 	"pt-movepage-legend": "Тәржемә итеп булған биттәрҙең исемен үҙгәртергә",
 	"pt-movepage-current": "Хәҙерге исеме:",
