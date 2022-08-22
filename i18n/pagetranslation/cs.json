@@ -44,7 +44,7 @@
 	"tpt-old-pages-title": "Překládané stránky",
 	"tpt-other-pages-title": "Rozbité stránky",
 	"tpt-new-pages": "{{PLURAL:$1|Tato stránka obsahuje|Tyto stránky obsahují}} text se značkami pro překlad, ale žádná verze {{PLURAL:$1|této stránky|těchto stránek}} není aktuálně označena pro překlad.",
-	"tpt-old-pages": "Nejnovější verze {{PLURAL:$1|této stránky byla označena|těchto stránek byly označeny}} pro překlad.",
+	"tpt-old-pages": "Nejnovější verze {{PLURAL:$1|této stránky|každé z těchto stránek}} byla označena pro překlad.",
 	"tpt-other-pages": "Starší verze {{PLURAL:$1|této stránky je označena|těchto stránek jsou označeny}} pro překlad,\nale nejnovější verze {{PLURAL:$1|nemůže být k překladu označena|nemohou být k překladu označeny}}.",
 	"tpt-outdated-pages": "{{PLURAL:$1|Na této stránce|Na těchto stránkách}} jsou změny, které nebyly označeny pro překlad.",
 	"tpt-select-prioritylangs": "Čárkou oddělený seznam kódů prioritních jazyků:",
