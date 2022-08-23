@@ -11,6 +11,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
 use PageTranslationHooks;
+use RecentChange;
 use Title;
 use User;
 
@@ -80,6 +81,11 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 			->newFromTitle( $title )
 			->newPageUpdater( $user );
 		$pageUpdater->setContent( SlotRecord::MAIN, $content );
+
+		if ( $user->authorizeWrite( 'autopatrol', $title ) ) {
+			$pageUpdater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+		}
+
 		$pageUpdater->saveRevision( $commentStoreComment, $flags );
 		$status = $pageUpdater->getStatus();
 
