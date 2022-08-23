@@ -65,9 +65,14 @@
 	"apihelp-managemessagegroups-param-groupId": "Gruppe-ID",
 	"apihelp-managemessagegroups-param-renameMessageKey": "Målbeskjednøkkelen blir omdøpt",
 	"apihelp-managemessagegroups-param-messageKey": "Erstatningsbeskjednøkkel",
-	"apihelp-managemessagegroups-param-operation": "Operasjonen som skal utføres. Mulige verdier – rename / new",
+	"apihelp-managemessagegroups-param-operation": "Operasjonen som skal utføres. Mulige verdier: rename / new",
 	"apihelp-managemessagegroups-param-changesetName": "Endre settnavn – Default / Unattended / Mediawiki osv.",
 	"apihelp-managemessagegroups-param-changesetModified": "Unix-tidsstempel for når endringssettet sist ble endret. Hvis endringssettet har blitt endret etter dette vil API-et gi en feilmelding.",
+	"apihelp-managegroupsynchronizationcache-description": "Behandle mellomlager for gruppersynkronisering.",
+	"apihelp-managegroupsynchronizationcache-summary": "Behandle mellomlager for gruppesynkronisering.",
+	"apihelp-managegroupsynchronizationcache-param-operation": "Operasjonen som skal utføres. Mulige verdier: resolve",
+	"apihelp-managegroupsynchronizationcache-param-title": "Meldingstittel som markeres som løst",
+	"apihelp-managegroupsynchronizationcache-param-group": "Gruppe-ID for meldingen som løses",
 	"apihelp-translatesandbox-description": "Registrering og behandling av sandkassebrukere.",
 	"apihelp-translatesandbox-summary": "Registrering og behandling av sandkassebrukere.",
 	"apihelp-translatesandbox-param-do": "Hva som skal gjøres.",
@@ -156,5 +161,6 @@
 	"apierror-translate-rename-key-invalid": "Beskjednøkler gitt for omdøping ble ikke funnet i listen over endringer for kildespråket.",
 	"apierror-translate-rename-state-invalid": "En av beskjedene som ble gitt for omdøping bør være lagt til som ny, og den andre slettet. Nåværende statuser – tillegg: $1 og sletting: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Allerede merket som vurdert av deg",
-	"apiwarn-translate-language-disabled-source": "Kildespråket for denne gruppa er $1. Velg et annet språk å oversette til."
+	"apiwarn-translate-language-disabled-source": "Kildespråket for denne gruppa er $1. Velg et annet språk å oversette til.",
+	"apierror-translate-operation-error": "En feil oppsto under prosesseringen av forespørselen. Feil: $1"
 }

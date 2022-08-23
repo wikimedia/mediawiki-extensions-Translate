@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"СеніңШешең"
 		]
 	},
 	"searchtranslations": "Аудармаларды іздеу",
 	"tux-sst-edit": "Аударманы өңдеу",
-	"tux-sst-view-foreign": "$1 дегеннен қарау",
+	"tux-sst-view-foreign": "$1 дегеннен көру",
 	"tux-sst-search": "Іздеу",
 	"tux-sst-search-ph": "Аудармаларды іздеу",
 	"tux-sst-count": "{{PLURAL:$1|Бір нәтиже табылды|$1 нәтиже табылды}}",

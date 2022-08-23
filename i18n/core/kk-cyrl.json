@@ -5,7 +5,9 @@
 			"Arystanbek",
 			"GaiJin",
 			"Marat",
-			"U.ayaao.p"
+			"U.ayaao.p",
+			"Nurlan",
+			"СеніңШешең"
 		]
 	},
 	"translate": "Аудару",
@@ -166,7 +168,7 @@
 	"translate-gs-score": "Есеп",
 	"translate-gs-multiple": "Көбейту",
 	"translate-gs-count": "Санау",
-	"translate-gs-total": "Барлығы",
+	"translate-gs-total": "Hámmesi",
 	"translate-gs-avgscore": "Орташа есеп",
 	"translate-documentation-language": "Хабарлама құжаттамасы",
 	"translate-searchprofile": "Аудармалар",
@@ -221,8 +223,8 @@
 	"tux-notices-hide": "жасыру",
 	"tux-editor-save-failed": "Аударманы жариялау сәтсіз болды: $1",
 	"tux-editor-n-uses": " $1 {{PLURAL:$1|рет|рет}} қолданған",
-	"tux-editor-message-desc-more": "Көбірек қарау",
-	"tux-editor-message-desc-less": "Азырақ қарау",
+	"tux-editor-message-desc-more": "Көбірек көру",
+	"tux-editor-message-desc-less": "Азырақ көру",
 	"tux-editor-clear-translated": "Аударылғандарды жасыру",
 	"tux-editor-proofreading-mode": "Тексеру",
 	"tux-editor-translate-mode": "Тізім",
