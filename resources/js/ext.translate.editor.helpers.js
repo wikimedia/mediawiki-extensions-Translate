@@ -12,9 +12,8 @@
 
 		return $( '<a>' )
 			.addClass( 'edit-summary-time' )
-			.attr(
-				{ href: diffLink }
-			)
+			.attr( { href: diffLink } )
+			.data( 'commentTimestamp', comment.timestamp )
 			.text( comment.humanTimestamp );
 	}
 
@@ -632,6 +631,42 @@
 			$editSummariesTitle.removeClass( 'hide' );
 		},
 
+		updateEditSummaryTimestamp: function () {
+			// If the editor is hidden, don't bother updating anything or setting up another timeout
+			if ( this.$editor.hasClass( 'hide' ) ) {
+				return;
+			}
+
+			var $dateEntries = this.$editor.find( '.edit-summary-time' );
+			// Edit summaries may not be loaded yet, retry again
+			// It is also possible that there are no date entries.
+			if ( $dateEntries.length !== 0 ) {
+				// There are some date entries, load moment.js and update them.
+				mw.loader.using( 'moment' ).done(
+					function () {
+						// Update the time for the edit summaries if a user leaves their browser open and
+						// comes back later.
+						$dateEntries.each( function () {
+							var $entry = $( this );
+							var timeago = moment
+								.utc( $entry.data( 'commentTimestamp' ), 'YYYYMMDDhhmmss' )
+								.fromNow();
+							$entry.text( timeago );
+						} );
+					}
+				);
+			}
+
+			setTimeout( this.updateEditSummaryTimestamp.bind( this ), 20000 );
+		},
+
+		/**
+		 * Handles any necessary updates to translation helpers when an editor is reopened.
+		 */
+		updateTranslationHelpers: function () {
+			this.updateEditSummaryTimestamp();
+		},
+
 		/**
 		 * Loads and shows the translation helpers.
 		 */
@@ -689,6 +724,11 @@
 						)
 				);
 				mw.log.error( 'Error loading translation aids:', errorCode, results );
+			}.bind( this ) );
+
+			mw.hook( 'mw.translate.editor.afterEditorShown' ).add( function () {
+				// Take care of updating any helpers when the editor is opened
+				this.updateTranslationHelpers();
 			}.bind( this ) );
 		}
 	};
