@@ -121,7 +121,6 @@
 		"RecentAdditionsMessageGroup": "messagegroups/RecentAdditionsMessageGroup.php",
 		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
 		"RemoteTTMServer": "ttmserver/RemoteTTMServer.php",
-		"RevTag": "utils/RevTag.php",
 		"SandboxMessageGroup": "messagegroups/SandboxMessageGroup.php",
 		"SearchableTTMServer": "ttmserver/Interfaces.php",
 		"SerializedMessageIndex": "utils/MessageIndex.php",
