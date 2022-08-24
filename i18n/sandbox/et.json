@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pikne"
+			"Pikne",
+			"Kareyac"
 		]
 	},
+	"tsb-accept-button-label": "Nõustu",
 	"translationstash": "Tere tulemast"
 }
