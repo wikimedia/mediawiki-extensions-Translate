@@ -153,11 +153,21 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		$jobs = [];
 
 		$jobTitles = $page->getTranslationPages();
-		// $jobTitles may have the source language title already but duplicate RenderTranslationPageJobs
-		// are not executed so it's not run twice for the source language page present. This is
-		// added to ensure that we create the source language page from the very beginning.
-		$sourceLangTitle = $page->getTitle()->getSubpage( $page->getSourceLanguageCode() );
-		$jobTitles[] = $sourceLangTitle;
+		// Ensure that we create the source language page when page is marked for translation.
+		$jobTitles[] = $page->getTitle()->getSubpage( $page->getSourceLanguageCode() );
+		// In some cases translation page may be missing even though translations exist. One such case
+		// is when FuzzyBot makes edits, which supresses render jobs. There may also be bugs with the
+		// render jobs failing. Add jobs based on message group stats to create self-healing process.
+		$stats = MessageGroupStats::forGroup( $page->getMessageGroupId() );
+		foreach ( $stats as $languageCode => $languageStats ) {
+			if ( $languageStats[MessageGroupStats::TRANSLATED] > 0 ) {
+				$jobTitles[] = $page->getTitle()->getSubpage( $languageCode );
+			}
+		}
+
+		// These jobs can be deduplicated by the job queue as well, but it's simple to do it here ourselves.
+		// Titles have __toString method that returns the prefixed text so array_unique should work.
+		$jobTitles = array_unique( $jobTitles );
 		foreach ( $jobTitles as $t ) {
 			$jobs[] = RenderTranslationPageJob::newJob( $t );
 		}
