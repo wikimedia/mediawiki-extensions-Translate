@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use InvalidArgumentException;
 use Language;
 use MediaWikiUnitTestCase;
+use Parser;
 
 /**
  * @author Niklas Laxström
@@ -74,6 +75,7 @@ class ParserOutputTest extends MediaWikiUnitTestCase {
 		);
 
 		$language = $this->createStub( Language::class );
+		$parser = $this->createStub( Parser::class );
 		$language->method( 'getHtmlCode' )
 			->willReturn( 'en-GB' );
 		$language->method( 'getCode' )

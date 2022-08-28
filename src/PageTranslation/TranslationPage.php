@@ -7,6 +7,7 @@ use Content;
 use ContentHandler;
 use Language;
 use MessageCollection;
+use Parser;
 use Title;
 use TMessage;
 use WikiPageMessageGroup;
@@ -54,17 +55,9 @@ class TranslationPage {
 		$this->sourcePageTitle = $sourcePageTitle;
 	}
 
-	/** Generate translation page source using default options. */
-	public function generateSource(): string {
-		$collection = $this->getMessageCollection();
-		$this->filterMessageCollection( $collection );
-		$messages = $this->extractMessages( $collection );
-		return $this->generateSourceFromTranslations( $messages );
-	}
-
 	/** @since 2021.07 */
-	public function getPageContent(): Content {
-		$text = $this->generateSource();
+	public function getPageContent( Parser $parser ): Content {
+		$text = $this->generateSource( $parser );
 		$model = $this->sourcePageTitle->getContentModel();
 		return ContentHandler::makeContent( $text, null, $model );
 	}
@@ -93,8 +86,11 @@ class TranslationPage {
 		return $messages;
 	}
 
-	/** @param TMessage[] $messages */
-	public function generateSourceFromTranslations( array $messages ): string {
+	/**
+	 * @param Parser $parser
+	 * @param TMessage[] $messages
+	 */
+	public function generateSourceFromTranslations( Parser $parser, array $messages ): string {
 		$replacements = [];
 		foreach ( $this->output->units() as $placeholder => $unit ) {
 			/** @var TMessage $msg */
@@ -103,11 +99,20 @@ class TranslationPage {
 				$msg,
 				$this->sourceLanguage,
 				$this->targetLanguage,
-				$this->wrapUntranslated
+				$this->wrapUntranslated,
+				$parser
 			);
 		}
 
 		$template = $this->output->translationPageTemplate();
 		return strtr( $template, $replacements );
+	}
+
+	/** Generate translation page source using default options. */
+	private function generateSource( Parser $parser ): string {
+		$collection = $this->getMessageCollection();
+		$this->filterMessageCollection( $collection );
+		$messages = $this->extractMessages( $collection );
+		return $this->generateSourceFromTranslations( $parser, $messages );
 	}
 }

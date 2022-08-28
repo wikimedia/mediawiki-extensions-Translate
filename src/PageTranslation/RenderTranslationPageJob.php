@@ -74,7 +74,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		// @todo FuzzyBot hack
 		Hooks::$allowTargetEdit = true;
 		$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
-		$content = $tpPage->getPageContent();
+		$content = $tpPage->getPageContent( $mwServices->getParser() );
 
 		$pageUpdater = $mwServices->getWikiPageFactory()
 			->newFromTitle( $title )

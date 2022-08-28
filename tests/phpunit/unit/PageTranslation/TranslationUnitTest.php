@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use FatMessage;
 use Language;
 use MediaWikiUnitTestCase;
+use Parser;
 
 /**
  * @author Niklas Laxström
@@ -136,22 +137,19 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			}
 		}
 
-		$sourceLanguage = $this->createStub( Language::class );
-		$sourceLanguage->method( 'getHtmlCode' )->willReturn( 'en-GB' );
-		$sourceLanguage->method( 'getCode' )->willReturn( 'en-gb' );
-		$sourceLanguage->method( 'getDir' )->willReturn( 'ltr' );
+		$sourceLanguage = $this->getLanguageStub( 'en-GB', 'en-gb', 'ltr' );
+		$targetLanguage = $this->getLanguageStub( 'ar', 'ar', 'rtl' );
 
-		$targetLanguage = $this->createStub( Language::class );
-		$targetLanguage->method( 'getHtmlCode' )->willReturn( 'ar' );
-		$targetLanguage->method( 'getCode' )->willReturn( 'ar' );
-		$targetLanguage->method( 'getDir' )->willReturn( 'rtl' );
+		$parser = $this->createStub( Parser::class );
+		$parser->method( 'guessSectionNameFromWikiText' )->willReturn( '#headingId' );
 
 		$wrapUntranslated = true;
 		$actual = $unit->getTextForRendering(
 			$msg,
 			$sourceLanguage,
 			$targetLanguage,
-			$wrapUntranslated
+			$wrapUntranslated,
+			$parser
 		);
 		$this->assertEquals( $expected, $actual );
 	}
@@ -280,6 +278,54 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			$inline,
 			'Lang: ar'
 		];
+
+		yield 'anchor for heading with translation' => [
+			'== Hello World ==',
+			'== Hello World - ES ==',
+			!$fuzzy,
+			!$inline,
+			"<span id=\"headingId\"></span>\n== Hello World - ES =="
+		];
+
+		yield 'anchor for heading with fuzzy translation' => [
+			'== Hello World ==',
+			'== Hello World - ES ==',
+			$fuzzy,
+			!$inline,
+			"<span id=\"headingId\"></span>\n<div class=\"mw-translate-fuzzy\">\n== Hello World - ES ==\n</div>"
+		];
+
+		yield 'no anchor for heading without translation' => [
+			'== Hello World ==',
+			null,
+			!$fuzzy,
+			!$inline,
+			"<div lang=\"en-GB\" dir=\"ltr\" class=\"mw-content-ltr\">\n== Hello World ==\n</div>"
+		];
+
+		yield 'anchor is added when source string contains heading even if translation does not' => [
+			'== Hello world ==',
+			'This is not a heading',
+			!$fuzzy,
+			!$inline,
+			"<span id=\"headingId\"></span>\nThis is not a heading"
+		];
+
+		yield 'anchor is not added when translation contains heading but source string does not' => [
+			'This has no heading',
+			'== Hello world ==',
+			!$fuzzy,
+			!$inline,
+			"== Hello world =="
+		];
+
+		yield 'anchor is not added for inline translate tags containing "="' => [
+			'== Hello world ==',
+			'== Hello world ==',
+			!$fuzzy,
+			$inline,
+			"== Hello world =="
+		];
 	}
 
 	/** @dataProvider providerTestGetIssues */
@@ -335,5 +381,73 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 				'When using <tvar name=1>cobra</tvar> you may hear a hissing sound.',
 			[ 'tpt-validation-name-reuse' ],
 		];
+	}
+
+	/** @dataProvider provideTestHeadingParsing */
+	public function testHeadingParsing( string $source, string $translation, ?string $expectedHeadingText ) {
+		$unit = new TranslationUnit( $source );
+		$msg = new FatMessage( '', $unit->getTextWithVariables() );
+		$msg->setTranslation( $translation );
+
+		$parser = $this->createMock( Parser::class );
+
+		if ( $expectedHeadingText === null ) {
+			$parser->expects( $this->never() )
+				->method( 'guessSectionNameFromWikiText' );
+		} else {
+			$parser->expects( $this->once() )
+				->method( 'guessSectionNameFromWikiText' )
+				->willReturn( '#headingId' )
+				->with( $expectedHeadingText );
+		}
+
+		$wrapUntranslated = true;
+		$unit->getTextForRendering(
+			$msg,
+			$this->getLanguageStub( 'en-GB', 'en-gb', 'ltr' ),
+			$this->getLanguageStub( 'ar', 'ar', 'rtl' ),
+			$wrapUntranslated,
+			$parser
+		);
+	}
+
+	public function provideTestHeadingParsing() {
+		yield 'parsing of heading text with balanced "="' => [
+			'== Hello ==',
+			'== Hello - Translated ==',
+			'Hello'
+		];
+
+		yield 'parsing of heading text unbalanced "="' => [
+			'===Hello ==',
+			'=== Hello translated ==',
+			'=Hello'
+		];
+
+		yield 'parsing of text with = but also newline' => [
+			"== Heading\n ==",
+			"Heading translated",
+			null
+		];
+
+		yield 'parsing of normal text' => [
+			'Heading',
+			'Heading',
+			null
+		];
+
+		yield 'parsing of heading with more than 7 "="' => [
+			'======== Heading =======',
+			'======== Heading Translate =======',
+			'== Heading ='
+		];
+	}
+
+	private function getLanguageStub( string $htmlCode, string $langCode, string $dir ) {
+		$language = $this->createStub( Language::class );
+		$language->method( 'getHtmlCode' )->willReturn( $htmlCode );
+		$language->method( 'getCode' )->willReturn( $langCode );
+		$language->method( 'getDir' )->willReturn( $dir );
+		return $language;
 	}
 }

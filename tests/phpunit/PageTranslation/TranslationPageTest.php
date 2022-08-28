@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use FatMessage;
 use Language;
 use MediaWikiIntegrationTestCase;
+use Parser;
 use Title;
 use WikiPageMessageGroup;
 
@@ -43,7 +44,7 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 
 		$translationPage = new TranslationPage(
 			$output,
-			$this->createMock( WikiPageMessageGroup::class ),
+			$this->createStub( WikiPageMessageGroup::class ),
 			Language::factory( 'ar' ),
 			Language::factory( 'en' ),
 			true /*$showOutdated*/,
@@ -51,7 +52,9 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 			Title::newFromText( __METHOD__ )
 		);
 
-		$actual = $translationPage->generateSourceFromTranslations( $messages );
+		$actual = $translationPage->generateSourceFromTranslations(
+			$this->createStub( Parser::class ), $messages
+		);
 		$this->assertSame( $expected, $actual );
 	}
 

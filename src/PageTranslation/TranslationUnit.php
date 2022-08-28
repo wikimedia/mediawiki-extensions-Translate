@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Html;
 use Language;
+use Parser;
 use TMessage;
 use const PREG_SET_ORDER;
 
@@ -106,13 +107,10 @@ REGEXP;
 	public function getMarkedText(): string {
 		$id = $this->id;
 		$header = "<!--T:$id-->";
-		$re = '~^(=+.*?=+\s*?$)~m';
-		$rep = "\\1 $header";
-		$count = 0;
 
-		$text = preg_replace( $re, $rep, $this->text, 1, $count );
-
-		if ( $count === 0 ) {
+		if ( $this->getHeading( $this->text ) !== null ) {
+			$text = $this->text . ' ' . $header;
+		} else {
 			if ( $this->inline ) {
 				$text = $header . ' ' . $this->text;
 			} else {
@@ -178,12 +176,16 @@ REGEXP;
 		?TMessage $msg,
 		Language $sourceLanguage,
 		Language $targetLanguage,
-		bool $wrapUntranslated
+		bool $wrapUntranslated,
+		?Parser $parser = null
 	): string {
 		$attributes = [];
+		$headingText = null;
 
 		if ( $msg && $msg->translation() !== null ) {
 			$content = $msg->translation();
+			$headingText = $this->getHeading( $msg->definition() );
+
 			if ( $msg->hasTag( 'fuzzy' ) ) {
 				// We do not ever want to show explicit fuzzy marks in the rendered pages
 				$content = str_replace( TRANSLATE_FUZZY, '', $content );
@@ -209,6 +211,20 @@ REGEXP;
 		$variableReplacements = [];
 		foreach ( $this->getVariables() as $variable ) {
 			$variableReplacements[$variable->getName()] = $variable->getValue();
+		}
+
+		if (
+			$parser &&
+			$this->shouldAddAnchor(
+				$sourceLanguage,
+				$targetLanguage,
+				$headingText,
+				$this->isInline()
+			)
+		) {
+			$sectionName = ltrim( $parser->guessSectionNameFromWikiText( $headingText ), '#' );
+			$attributes = [ 'id' => $sectionName ];
+			$content = Html::rawElement( 'span', $attributes, '' ) . "\n$content";
 		}
 
 		$content = strtr( $content, $variableReplacements );
@@ -253,5 +269,33 @@ REGEXP;
 		}
 
 		return array_values( $issues );
+	}
+
+	/** Mimic the behavior of how Parser handles headings including handling of unbalanced "=" signs */
+	private function getHeading( string $text ): ?string {
+		$match = [];
+		preg_match( '/^(={1,6})[ \t]*(.+?)[ \t]*\1\s*$/', $text, $match );
+		return $match[2] ?? null;
+	}
+
+	private function shouldAddAnchor(
+		Language $sourceLanguage,
+		Language $targetLanguage,
+		?string $headingText,
+		bool $isInline
+	): bool {
+		// If its not a heading, don't bother adding an anchor
+		if ( $headingText === null ) {
+			return false;
+		}
+
+		// We only add an anchor for a translation. See: https://phabricator.wikimedia.org/T62544
+		if ( $sourceLanguage->getCode() === $targetLanguage->getCode() ) {
+			return false;
+		}
+
+		// We don't add anchors for inline translate tags to avoid breaking input like this:
+		// Text here <translate>== not a heading ==</translate>
+		return !$isInline;
 	}
 }

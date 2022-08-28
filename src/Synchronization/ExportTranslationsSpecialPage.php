@@ -260,7 +260,9 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 				$translationPage->filterMessageCollection( $collection );
 				$messages = $translationPage->extractMessages( $collection );
-				$text = $translationPage->generateSourceFromTranslations( $messages );
+				$text = $translationPage->generateSourceFromTranslations(
+					MediaWikiServices::getInstance()->getParser(), $messages
+				);
 
 				$displayTitle = $translatablePage->getPageDisplayTitle( $this->language );
 				if ( $displayTitle ) {

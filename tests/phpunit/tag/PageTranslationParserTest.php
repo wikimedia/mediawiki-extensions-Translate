@@ -52,7 +52,9 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 
 		if ( file_exists( "$pattern.pttarget" ) ) {
 			$translationPage = $this->getTranslationPage( $title, $parserOutput );
-			$target = $translationPage->generateSourceFromTranslations( [] );
+			$target = $translationPage->generateSourceFromTranslations(
+				$this->createStub( Parser::class ), []
+			);
 			$this->assertEquals(
 				file_get_contents( "$pattern.pttarget" ),
 				$target,
