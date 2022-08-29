@@ -8,8 +8,8 @@
 			"Vitorvicentevalente"
 		]
 	},
-	"apihelp-aggregategroups-description": "Gerir grupos de mensagens agregadas.\n\nPode adicionar e remover grupos de mensagens agregadas e associar-lhes ou desassociar-lhes grupos de mensagens (um de cada vez).",
-	"apihelp-aggregategroups-summary": "Gerir grupos de mensagens agregadas.",
+	"apihelp-aggregategroups-description": "Administrar grupos de mensagens agregadas.\n\nPode adicionar e remover grupos de mensagens agregadas e associar-lhes ou desassociar-lhes grupos de mensagens (um de cada vez).",
+	"apihelp-aggregategroups-summary": "Administrar grupos de mensagens agregadas.",
 	"apihelp-aggregategroups-extended-description": "Pode adicionar e remover grupos de mensagens agregadas e associar-lhes ou desassociar-lhes grupos de mensagens (um de cada vez).",
 	"apihelp-aggregategroups-param-do": "O que fazer com o grupo de mensagens agregadas.",
 	"apihelp-aggregategroups-param-aggregategroup": "Identificador do grupo de mensagens agregadas.",
@@ -27,19 +27,19 @@
 	"apihelp-query+languagestats-summary": "Consultar estatísticas de línguas.",
 	"apihelp-query+languagestats-param-timelimit": "Máximo de tempo a usar para calcular estatísticas em falta. Se zero, só são devolvidos os resultados armazenados na ''cache'' desde o início.",
 	"apihelp-query+languagestats-param-language": "Código de língua.",
-	"apihelp-query+languagestats-example-1": "Lista das estatísticas de finalização das traduções para finlandês",
-	"apihelp-query+messagecollection-description": "Consultar MessageCollection sobre as traduções.",
+	"apihelp-query+languagestats-example-1": "Lista das estatísticas de finalização de traduções para finlandês",
+	"apihelp-query+messagecollection-description": "Consultar MessageCollection sobre traduções.",
 	"apihelp-query+managemessagegroups-param-groupId": "Identificador de grupo",
 	"apihelp-query+managemessagegroups-param-messageKey": "Chave de mensagem",
 	"apihelp-query+managemessagegroups-param-changesetName": "Alterar nome do conjunto - Padrão / Não vigiado / MediaWiki, etc.",
 	"apihelp-query+messagecollection-summary": "Consultar MessageCollection sobre traduções.",
 	"apihelp-query+messagecollection-param-group": "Grupo de mensagens.",
-	"apihelp-query+messagecollection-param-language": "Código de idioma.",
+	"apihelp-query+messagecollection-param-language": "Código de língua.",
 	"apihelp-query+messagecollection-param-limit": "Número de mensagens a serem mostradas (após filtragem).",
 	"apihelp-query+messagecollection-param-offset": "Número inteiro ou posição da chave de início.",
 	"apihelp-query+messagecollection-param-filter": "Filtros de recolha de mensagens. Use <kbd>!</kbd> para negar uma condição. Por exemplo, <kbd>!fuzzy</kbd> significa listar só as mensagens não sinalizadas com FUZZY. Os filtros são aplicados na ordem fornecida.\n;fuzzy:Mensagens com a etiqueta FUZZY.\n;optional:Mensagens que só devem ser traduzidas se forem necessárias mudanças.\n;ignored:Mensagens que nunca são traduzidas.\n;hastranslation:Mensagens que têm uma tradução, sinalizada ou não com a etiqueta FUZZY.\n;translated:Mensagens que têm uma tradução não sinalizada com a etiqueta FUZZY.\n;changed:Mensagens que foram traduzidas ou alteradas desde a última exportação.\n;reviewer&#58;N:Mensagens onde o utilizador nº <kbd>N</kbd> está entre os revisores.\n;last-translator&#58;N:Mensagens onde o utilizador nº <kbd>N</kbd> é o último tradutor.",
 	"apihelp-query+messagecollection-param-prop": "As propriedades que serão obtidas:\n;definition:Definição da mensagem.\n;translation:Tradução atual (sem o texto $1, se existir, usar as etiquetas para verificar se as traduções são antigas ou incorretas).\n;tags:Etiquetas da mensagem, como \"optional\" (opcional), \"ignored\" (ignorada) e \"fuzzy\".\n;properties:Propriedades da mensagem, como \"status\" (estado), \"revision\" (revisão), \"last-translator\" (último tradutor). Pode variar entre mensagens.\n;revision:<span class=\"deprecated\">Obsoleto!</span> Usar $2prop=properties.",
-	"apihelp-query+messagecollection-example-1": "Lista dos idiomas suportados.",
+	"apihelp-query+messagecollection-example-1": "Lista de línguas suportadas.",
 	"apihelp-query+messagecollection-example-2": "Lista de definições obrigatórias de mensagens do grupo \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "Lista de mensagens opcionais em finlandês com etiquetas para o grupo \"page-Example\"",
 	"apihelp-query+messagecollection-example-4": "Mais informação sobre as últimas revisões de traduções para o grupo \"page-Example\"",
@@ -133,5 +133,5 @@
 	"apierror-translate-sandbox-invalidppassword": "Palavra-passe inválida",
 	"apierror-translate-unknownmessage": "Mensagem desconhecida",
 	"apiwarn-translate-alreadyreviewedbyyou": "Já marcada como revista por si",
-	"apiwarn-translate-language-disabled-source": "O idioma fonte deste grupo é $1. Por favor, selecione outro idioma, para o qual irá traduzir."
+	"apiwarn-translate-language-disabled-source": "A língua de origem deste grupo é $1. Selecione outra língua, para a qual irá traduzir, por favor."
 }

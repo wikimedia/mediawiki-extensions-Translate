@@ -10,7 +10,8 @@
 			"Laaknor",
 			"Nghtwlkr",
 			"Njardarlogar",
-			"Simny"
+			"Simny",
+			"Avilena"
 		]
 	},
 	"translate": "Oversett",
@@ -188,7 +189,7 @@
 	"translate-mgs-noempty": "Ikke vis språk som ikke har noen oversettelser",
 	"translate-mgs-submit": "Vis statistikk",
 	"translate-mgs-column-language": "Språk",
-	"translate-mgs-totals": "Alle {{PLURAL:$1|språk}} sammen",
+	"translate-mgs-totals": "{{PLURAL:$1|2=Begge|Alle}} {{PLURAL:$1|språk}} til sammen",
 	"translate-mgs-invalid-group": "Den angitte gruppen $1 finnes ikke.",
 	"translate-mgs-nothing": "Ingen av den ønskede statistikken kan vises.",
 	"supportedlanguages": "Støttede språk",
