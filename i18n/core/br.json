@@ -206,7 +206,7 @@
 	"translate-import-err-dl-failed": "Dibosupl kerc'hat ar restr :\n$1",
 	"translate-import-err-ul-failed": "C'hwitet eo bet enporzhiañ ar restr",
 	"translate-import-err-invalid-title": "Direizh e oa anv ar restr spisaet <nowiki>$1</nowiki>.",
-	"translate-import-err-no-such-file": "N'eus ket eus ar restr <nowiki>$1</nowiki> pe neuze n'eo ket bet enporzhiet ent lec'hel.",
+	"translate-import-err-no-such-file": "N'eus ket eus ar restr <nowiki>$1</nowiki> pe neuze n'eo ket bet pellgaset ent lec'hel.",
 	"translate-import-err-stale-group": "Ar restr-mañ zo en ur strollad kemennadennoù n'eus ket anezhañ.",
 	"translate-import-err-no-headers": "N'eo ket ar restr ur restr ''Gettext'' stummet mat er furmad gortozet gant an astenn ''Translate'' :\nDibosupl eo didermeniñ ar strollad hag ar yezh adalek talbennoù ar restr.",
 	"translate-js-support-unsaved-warning": "Chom a ra troidigezhioù n'int ket bet embannet ganeoc'h.",
