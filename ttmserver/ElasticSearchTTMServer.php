@@ -17,7 +17,6 @@ use Elastica\Query\BoolQuery;
 use Elastica\Query\FunctionScore;
 use Elastica\Query\MatchQuery;
 use Elastica\Query\Term;
-use Elastica\Type\Mapping;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
@@ -184,8 +183,7 @@ class ElasticSearchTTMServer
 		// Skip second query if first query found nothing. Keeping only one return
 		// statement in this method to avoid forgetting to reset connection timeout
 		if ( $terms !== [] ) {
-			$idQuery = new Query\Terms();
-			$idQuery->setTerms( '_id', $terms );
+			$idQuery = new Query\Terms( '_id', $terms );
 
 			$query = new Query( $idQuery );
 			$query->setSize( 25 );
@@ -278,7 +276,7 @@ class ElasticSearchTTMServer
 		$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
 		$mwElasticUtilsClass::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
 			function () use ( $doc ) {
-				$this->getIndex()->getType( '_doc' )->addDocument( $doc );
+				$this->getIndex()->addDocuments( [ $doc ] );
 			},
 			static function ( $e, $errors ) use ( $fname ) {
 				$c = get_class( $e );
@@ -378,9 +376,7 @@ class ElasticSearchTTMServer
 		$this->deleteByQuery( $this->getIndex(), Query::create(
 			( new Term() )->setTerm( 'wiki', WikiMap::getCurrentWikiId() ) ) );
 
-		$mapping = new Mapping();
-		$mapping->setType( $index->getType( '_doc' ) );
-		$mapping->setProperties( [
+		$properties = [
 			'wiki' => [ 'type' => 'keyword' ],
 			'localid' => [ 'type' => 'keyword' ],
 			'uri' => [ 'type' => 'keyword' ],
@@ -406,8 +402,22 @@ class ElasticSearchTTMServer
 					]
 				]
 			],
-		] );
-		$mapping->send( [ 'include_type_name' => 'true' ] );
+		];
+		if ( $this->useElastica6() ) {
+			// Elastica 6 support
+			// @phan-suppress-next-line PhanUndeclaredClassMethod
+			$mapping = new \Elastica\Type\Mapping();
+			// @phan-suppress-next-line PhanUndeclaredMethod, PhanUndeclaredClassMethod
+			$mapping->setType( $index->getType( '_doc' ) );
+			// @phan-suppress-next-line PhanUndeclaredClassMethod
+			$mapping->setProperties( $properties );
+			// @phan-suppress-next-line PhanUndeclaredClassMethod
+			$mapping->send( [ 'include_type_name' => 'true' ] );
+		} else {
+			// Elastica 7
+			$mapping = new \Elastica\Mapping( $properties );
+			$mapping->send( $index, [ 'include_type_name' => 'false' ] );
+		}
 
 		$this->waitUntilReady();
 	}
@@ -846,5 +856,9 @@ class ElasticSearchTTMServer
 		if ( strpos( $version, '6.8' ) !== 0 && strpos( $version, '7.' ) !== 0 ) {
 			throw new \RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
 		}
+	}
+
+	private function useElastica6(): bool {
+		return class_exists( '\Elastica\Type' );
 	}
 }
