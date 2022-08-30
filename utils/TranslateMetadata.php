@@ -75,7 +75,7 @@ class TranslateMetadata {
 	 * value if already existing.
 	 * @param string $group The group id
 	 * @param string $key Metadata key
-	 * @param string $value Metadata value
+	 * @param string|false $value Metadata value, false deletes from cache
 	 */
 	public static function set( $group, $key, $value ) {
 		$dbw = wfGetDB( DB_PRIMARY );
