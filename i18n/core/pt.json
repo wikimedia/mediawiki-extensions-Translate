@@ -152,7 +152,7 @@
 	"translate-statsf-group": "Lista de códigos de grupo, separados por vírgulas:",
 	"translate-statsf-submit": "Gerar gráfico",
 	"translate-statsf-unknown-error": "Ocorreu um erro desconhecido.",
-	"translate-statsf-error-message": "Ocorreu um erro ao carregar o gráfico: 1",
+	"translate-statsf-error-message": "Ocorreu um erro ao carregar o gráfico: $1",
 	"translate-statsf-graph-alt-text-info": "A alternativa de texto para as estatísticas de tradução está na tabela de dados abaixo.",
 	"translate-statsf-alt-text": "Esta é a alternativa em texto das estatísticas de tradução.",
 	"translate-statsf-embed": "Código para incorporar o gráfico das estatísticas de tradução noutras páginas.",

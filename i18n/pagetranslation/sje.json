@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bidumsábme"
+			"Bidumsábme",
+			"Olve Utne"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% jårrgåluvvum)"
+	"tps-edit-sourcepage-ve-warning-button": "Miededav",
+	"tpt-languages-nonzero": "$1 ($2% jårrgåluvvum)",
+	"tpt-aggregategroup-edit-description": "Gåvådibme:"
 }
