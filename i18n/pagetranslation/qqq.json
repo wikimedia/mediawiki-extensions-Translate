@@ -33,6 +33,7 @@
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
+	"nstab-translations": "Tab label for pages in the Translations namespace.",
 	"right-pagetranslation": "{{doc-right|pagetranslation}}",
 	"action-pagetranslation": "{{doc-action|pagetranslation}}",
 	"tps-edit-sourcepage-text": "Help text shown while editing a source translation page. Contains links to various Translate extension documentation page. Appears below {{msg-mw|Tps-edit-sourcepage-title}}.",
