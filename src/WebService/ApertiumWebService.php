@@ -18,6 +18,9 @@ use TranslateUtils;
  * @see https://wiki.apertium.org/wiki/Apertium_web_service
  */
 class ApertiumWebService extends TranslationWebService {
+	// Exclusions per https://phabricator.wikimedia.org/T177434
+	private const EXCLUDED_TARGET_LANGUAGES = [ 'fr', 'es', 'nl' ];
+
 	/** @var HttpRequestFactory */
 	private $httpRequestFactory;
 
@@ -58,7 +61,9 @@ class ApertiumWebService extends TranslationWebService {
 		foreach ( $response->responseData as $pair ) {
 			$source = $pair->sourceLanguage;
 			$target = $pair->targetLanguage;
-			$pairs[$source][$target] = true;
+			if ( !in_array( $target, self::EXCLUDED_TARGET_LANGUAGES ) ) {
+				$pairs[$source][$target] = true;
+			}
 		}
 
 		return $pairs;

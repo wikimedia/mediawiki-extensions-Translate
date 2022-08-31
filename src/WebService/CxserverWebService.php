@@ -15,6 +15,8 @@ use MediaWiki\Http\HttpRequestFactory;
  * @since 2015.02
  */
 class CxserverWebService extends TranslationWebService {
+	// Exclusions per https://phabricator.wikimedia.org/T177434
+	private const EXCLUDED_APERTIUM_TARGET_LANGUAGES = [ 'fr', 'es', 'nl' ];
 	/** @var HttpRequestFactory */
 	private $httpRequestFactory;
 
@@ -55,7 +57,8 @@ class CxserverWebService extends TranslationWebService {
 		}
 
 		foreach ( $response['Apertium'] as $source => $targets ) {
-			foreach ( $targets as $target ) {
+			$filteredTargets = array_diff( $targets, self::EXCLUDED_APERTIUM_TARGET_LANGUAGES );
+			foreach ( $filteredTargets as $target ) {
 				$pairs[$source][$target] = true;
 			}
 		}
