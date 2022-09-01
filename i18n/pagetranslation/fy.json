@@ -56,7 +56,7 @@
 	"tpt-select-prioritylangs-reason": "Reden:",
 	"tpt-sections-prioritylangs": "Talen mei prioriteit",
 	"tpt-sections-syntaxversion": "Syntaksferzje",
-	"tpt-syntaxversion-text": "Dizze side brûkt noch in âlde ferzje fan 'e boarnesyntaks foar oersetbere siden. De nije ferzje set ûnoersette seksjes tusken HTML-oantsjuttings, om 'e krekte taal fan 'e tekst oan te jaan. Foarbyld: $1. Jo kinne de nije opmaaksyntaks $2 brûke, om beskate foarmen fan ynsluten op plakken der't it net gaadlik is tefoaren te kommen, lykas mei it oersetten fan 'e <code>title</code>-eigenskip fan in elemint. It is net mooglik en gean werom nei in âlde syntaksferzje.",
+	"tpt-syntaxversion-text": "Dizze side brûkt noch in âlde ferzje fan 'e boarnesyntaks foar oersetbere siden. De nije ferzje set ûnoersette seksjes tusken HTML-oantsjuttings, om 'e krekte taal fan 'e tekst oan te jaan. Foarbyld: $1. Jo kinne de nije opmaaksyntaks $2 brûke, om beskate foarmen fan ynsluten op plakken dêr't it net gaadlik is tefoaren te kommen, lykas mei it oersetten fan 'e <code>title</code>-eigenskip fan in elemint. It is net mooglik en gean werom nei in âlde syntaksferzje.",
 	"tpt-syntaxversion-label": "De nijste syntaksferzje foar dizze side brûke",
 	"tpt-transclusion": "Transklúzje fan berjochten",
 	"tpt-transclusion-label": "Oersetfeardige transklúzje foar dizze side ynskeakelje",
