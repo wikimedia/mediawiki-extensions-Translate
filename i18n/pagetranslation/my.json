@@ -30,6 +30,7 @@
 	"tpt-rev-encourage-tooltip": "ဤစာမျက်နှာကို ပုံမှန်ဘာသာပြန်ခြင်းသို့ ပြန်ထားရန်။",
 	"translate-tag-translate-link-desc": "ဤစာမျက်နှာကို ဘာသာပြန်ပါ",
 	"translate-tag-markthis": "ဘာသာပြန်ခြင်းအတွက် ဤစာမျက်နှာကို မှတ်သားရန်",
+	"tpt-translation-intro": "ဤစာမျက်နှာသည် [[$2]] စာမျက်နှာ၏ <span class=\"plainlinks\">[$1 ဘာသာပြန်ဗားရှင်း]</span>တခုဖြစ်ပြီး ဘာသာပြန်မှုမှာ $3% ပြီးပါပြီ။",
 	"tpt-translation-intro-fuzzy": "ခေတ်နောက်ကျသော ဘာသာပြန်များကို ဤကဲ့သို့ မှတ်သားထားသည်။",
 	"tpt-languages-legend": "အခြားဘာသာစကားများ:",
 	"tpt-languages-zero": "ဤဘာသာစကားအတွက် ဘာသာပြန်ခြင်း စတင်ရန်",
