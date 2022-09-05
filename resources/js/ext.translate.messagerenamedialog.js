@@ -301,7 +301,7 @@ mw.translate.MessageRenameDialog.prototype.displayNotice = function ( msg, type 
 	var possibleTypes = [ 'info', 'error', 'warning' ];
 	// `type` classes documented above. Will be one of "possibleTypes".
 	// eslint-disable-next-line mediawiki/class-doc
-	this.$notice.removeClass( possibleTypes.join( ' ' ) );
+	this.$notice.removeClass( possibleTypes );
 	// eslint-disable-next-line mediawiki/class-doc
 	this.$notice.text( msg ).addClass( type ).removeClass( 'hide' );
 	this.updateSize();
