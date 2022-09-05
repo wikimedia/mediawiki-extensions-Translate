@@ -242,13 +242,18 @@
 	padding: 10px 0;
 }
 
-.edit-summaries ul {
-	margin: 0 0.2em 0.3em 0.4em;
+.edit-summaries-title a {
+	margin: 0 9px 3px -5px;
+	font-size: 0.75em;
+	background: left center no-repeat;
+	background-image: url( ../images/history.svg );
+	background-size: 18px 18px;
+	padding-left: 23px;
+	float: right;
 }
 
-.edit-summary-spacer {
-	font-weight: bold;
-	padding: 0 3px;
+.edit-summaries ul {
+	margin: 0 0.2em 0.3em 0.4em;
 }
 
 .edit-summaries li > span {
@@ -262,14 +267,9 @@
 	text-overflow: ellipsis;
 }
 
-.edit-summaries-title a {
-	margin: 0 9px 3px -5px;
-	font-size: 0.75em;
-	background: left center no-repeat;
-	background-image: url( ../images/history.svg );
-	background-size: 18px 18px;
-	padding-left: 23px;
-	float: right;
+.edit-summary-spacer {
+	font-weight: bold;
+	padding: 0 3px;
 }
 
 .update-without-summary {
