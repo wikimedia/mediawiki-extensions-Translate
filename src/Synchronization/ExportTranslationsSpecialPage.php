@@ -9,15 +9,16 @@ use Html;
 use HTMLForm;
 use LogicException;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use MediaWiki\MediaWikiServices;
 use Message;
 use MessageCollection;
 use MessageGroup;
 use MessageGroups;
 use MessageHandle;
+use Parser;
 use SpecialPage;
 use Status;
 use Title;
+use TitleFormatter;
 use TranslateUtils;
 use WikiPageMessageGroup;
 
@@ -38,11 +39,17 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	protected $format;
 	/** @var string */
 	protected $groupId;
+	/** @var TitleFormatter */
+	private $titleFormatter;
+	/** @var Parser */
+	private $parser;
 	/** @var string[] */
 	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
 
-	public function __construct() {
+	public function __construct( TitleFormatter $titleFormatter, Parser $parser ) {
 		parent::__construct( 'ExportTranslations' );
+		$this->titleFormatter = $titleFormatter;
+		$this->parser = $parser;
 	}
 
 	/** @param null|string $par */
@@ -260,9 +267,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 				$translationPage->filterMessageCollection( $collection );
 				$messages = $translationPage->extractMessages( $collection );
-				$text = $translationPage->generateSourceFromTranslations(
-					MediaWikiServices::getInstance()->getParser(), $messages
-				);
+				$text = $translationPage->generateSourceFromTranslations( $this->parser, $messages );
 
 				$displayTitle = $translatablePage->getPageDisplayTitle( $this->language );
 				if ( $displayTitle ) {
@@ -317,11 +322,9 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		fputcsv( $fp, $header );
 
-		$titleFormatter = MediaWikiServices::getInstance()->getTitleFormatter();
-
 		foreach ( $collection->keys() as $messageKey => $titleValue ) {
 			$message = $collection[ $messageKey ];
-			$prefixedTitleText = $titleFormatter->getPrefixedText( $titleValue );
+			$prefixedTitleText = $this->titleFormatter->getPrefixedText( $titleValue );
 
 			$handle = new MessageHandle( Title::newFromText( $prefixedTitleText ) );
 			$sourceLanguageTitle = $handle->getTitleForLanguage( $sourceLanguageCode );

@@ -292,7 +292,13 @@
 				"MainObjectStash"
 			]
 		},
-		"ExportTranslations": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ExportTranslationsSpecialPage",
+		"ExportTranslations": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ExportTranslationsSpecialPage",
+			"services": [
+				"TitleFormatter",
+				"Parser"
+			]
+		},
 		"ManageMessageGroups": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage",
 			"services": [
