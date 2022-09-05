@@ -44,6 +44,7 @@
 		]
 	},
 	"pagetranslation": "页面翻译",
+	"nstab-translations": "翻译单元",
 	"right-pagetranslation": "标记翻译的页面版本",
 	"action-pagetranslation": "管理可翻译页面",
 	"tps-edit-sourcepage-text": "你正在编辑一个翻译原文页。请您确保对下面的文档非常熟悉：\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 更改源文本]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples 标记使用示例]",

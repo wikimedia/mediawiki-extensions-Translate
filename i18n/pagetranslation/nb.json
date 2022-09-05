@@ -3,6 +3,7 @@
 		"authors": [
 			"Audun",
 			"Danmichaelo",
+			"Gabriel Kielland",
 			"Jon Harald Søby",
 			"Laaknor",
 			"Nghtwlkr",
@@ -12,6 +13,7 @@
 		]
 	},
 	"pagetranslation": "Sideoversetting",
+	"nstab-translations": "Oversettelsesenhet",
 	"right-pagetranslation": "Merk versjoner av sider for oversettelse",
 	"action-pagetranslation": "behandle oversettbare sider",
 	"tps-edit-sourcepage-text": "Du redigerer kilden til en oversettbar side. Sørg for at du er kjent med følgende dokumentasjon:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Endring av kildeteksten]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Eksempler på oppmerking som kan brukes]",

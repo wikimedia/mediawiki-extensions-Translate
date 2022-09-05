@@ -30,6 +30,7 @@
 		]
 	},
 	"pagetranslation": "Перевод страниц",
+	"nstab-translations": "Единица перевода",
 	"right-pagetranslation": "Отметка версий страниц для перевода",
 	"action-pagetranslation": "управлять переводимыми страницами",
 	"tps-edit-sourcepage-text": "Вы редактируете исходный код переводимой страницы. Пожалуйста, предварительно ознакомьтесь со следующей документацией:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Правка исходного кода]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Пример используемой разметки]",

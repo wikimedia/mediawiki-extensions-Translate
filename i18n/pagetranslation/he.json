@@ -16,6 +16,7 @@
 		]
 	},
 	"pagetranslation": "תרגום דפים",
+	"nstab-translations": "יחידת תרגום",
 	"right-pagetranslation": "סימון גרסאות של דפים כגרסאות שצריך לתרגם",
 	"action-pagetranslation": "לנהל דפים לתרגום",
 	"tps-edit-sourcepage-text": "{{GENDER:|אתה עורך|את עורכת}} את המקור של דף שאפשר לתרגם. נא לוודא {{GENDER:|שאתה מכיר|שאת מכירה}} את המסמכים הבאים:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text שינוי טקסט המקור]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples דוגמה לשימוש בשפת עיצוב]",

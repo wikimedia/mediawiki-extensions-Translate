@@ -37,6 +37,7 @@
 		]
 	},
 	"pagetranslation": "Traduction de pages",
+	"nstab-translations": "Unité de traduction",
 	"right-pagetranslation": "Marquer des versions de pages à traduire",
 	"action-pagetranslation": "gérer les pages traduisibles",
 	"tps-edit-sourcepage-text": "Vous modifiez une page de traduction source. Assurez-vous d’être familiarisé{{GENDER:||e}} avec la documentation suivante :\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Modifier le texte source]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Exemples de balisage à suivre]",

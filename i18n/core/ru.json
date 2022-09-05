@@ -55,6 +55,9 @@
 	"translate-fuzzybot-desc": "Это специальная системная учётная запись, используемая [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate/ru расширением перевода] MediaWiki для задач поддержки переводов.\nЭта учётная запись является частью программного обеспечения MediaWiki и не принадлежит никакому участнику.",
 	"translate-taskui-export-to-file": "Экспорт в родном формате",
 	"translate-taskui-export-as-po": "Экспорт для оффлайнового перевода",
+	"translate-taskui-export-as-csv": "Экспорт в формате CSV",
+	"translate-export-csv-message-title": "Заголовок сообщения перевода",
+	"translate-export-csv-definition": "Определение сообщения",
 	"translate-taction-translate": "Перевести",
 	"translate-taction-proofread": "Вычитать",
 	"translate-taction-lstats": "Статистика по языкам",
@@ -189,6 +192,7 @@
 	"translate-statsf-alt-text": "Это текстовая альтернатива для статистики переводов.",
 	"translate-statsf-embed": "Код для вставки графика со статистикой переводов на другие страницы.",
 	"translate-tag-page-desc": "Перевод вики-страницы [[$2|$1]] с $3 ($4).",
+	"translate-tag-page-wikipage-desc": "[[$1|Перевод]] вики-страницы [[$2]] с <bdi>{{GRAMMAR:genitive|$3}}</bdi> ($4) на <bdi>$5</bdi> ($6)",
 	"translate-sidebar-alltrans": "На других языках",
 	"translations": "Все переводы",
 	"translations-summary": "Введите имя сообщения для показа всех доступных переводов.",
@@ -242,6 +246,7 @@
 	"supportedlanguages-portallink": "[$1] $2 — $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLite не поддерживается",
+	"supportedlanguages-postgres-error": "PostgreSQL не поддерживается",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Переводчик|Переводчица}}|Переводчики}}: $1",
 	"supportedlanguages-recenttranslations": "недавние переводы",
 	"supportedlanguages-count": "Всего $1 {{PLURAL:$1|язык|языка|языков}}.",
@@ -474,5 +479,7 @@
 	"translate-messagebundle-error-empty-value": "Ключ «$1» не имеет значения",
 	"translate-messagebundle-error-invalid-metadata": "Раздел с метаданными содержит неизвестный ключ: «$1». Поддерживаемые ключи: $2.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Исходный языковой код «$1» не поддерживается.",
-	"translate-messagebundle-group-description": "Сообщения набора сообщений определены на странице [[$2|$1]]."
+	"translate-messagebundle-group-description": "Сообщения набора сообщений определены на странице [[$2|$1]].",
+	"log-action-filter-translationreview": "Тип действия:",
+	"log-action-filter-translationreview-message": "Проверка отдельных переведённых сообщений"
 }
