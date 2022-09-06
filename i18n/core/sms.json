@@ -116,6 +116,8 @@
 	"translate-gs-total": "Õhttsa",
 	"translate-searchprofile": "Jåårǥlõõzz",
 	"translate-searchprofile-tooltip": "Ooʒʒ puk jåårǥlõõzzin",
+	"translate-workflowstatus": "Status: $1",
+	"translate-stats-workflow": "Status",
 	"translate-dynagroup-recent-label": "Ođđsumus jåårǥlõõzz",
 	"translate-dynagroup-additions-desc": "Tän saakkjooukâst lie ođđ da muttum saaǥǥ.",
 	"translate-msggroupselector-projects": "Saakkjoukk",
@@ -154,5 +156,6 @@
 	"tux-editor-message-tools-delete": "Jaukkâd",
 	"tux-editor-message-tools-translations": "Puk jåårǥlõõzz",
 	"tux-editor-message-tools-linktothis": "Liŋkk tän saʹǩǩe",
+	"tux-editor-loading-failed": "Jåårǥlâʹttemneävvai laaddmõš ij oʹnnstam: $1",
 	"specialpages-group-translation": "Jåårǥlõs"
 }
