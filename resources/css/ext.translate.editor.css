@@ -242,14 +242,23 @@
 	padding: 10px 0;
 }
 
+.edit-summaries-title {
+	display: flex;
+}
+
+.edit-summaries-title span {
+	flex: 1;
+}
+
 .edit-summaries-title a {
-	margin: 0 9px 3px -5px;
+	margin-right: 10px;
 	font-size: 0.75em;
 	background: left center no-repeat;
 	background-image: url( ../images/history.svg );
 	background-size: 18px 18px;
 	padding-left: 23px;
-	float: right;
+	display: inline-flex;
+	align-items: center;
 }
 
 .edit-summaries ul {

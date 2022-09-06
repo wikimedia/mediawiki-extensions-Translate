@@ -1163,7 +1163,9 @@
 
 			$infoColumn.append( $( '<div>' )
 				.addClass( 'row edit-summaries-title hide' )
-				.text( mw.msg( 'tux-editor-latest-updates-title' ) )
+				.append(
+					$( '<span>' ).text( mw.msg( 'tux-editor-latest-updates-title' ) )
+				)
 				.append( $( '<a>' )
 					.attr(
 						{
