@@ -11,6 +11,7 @@
 		]
 	},
 	"pagetranslation": "पृष्ठ का अनुवाद",
+	"nstab-translations": "अनुवाद इकाई",
 	"right-pagetranslation": "पृष्ठ के संस्करणों को अनुवाद के लिए चिह्नित करें",
 	"action-pagetranslation": "अनुवाद-योग्य पृष्ठों को प्रबंधित करें",
 	"tps-edit-sourcepage-text": "आप एक स्रोत अनुवाद पृष्ठ को संपादित कर रहे हैं। कृपया ऐसा न करें अगर आप इन प्रलेखों से अनुकूल नहीं हैं:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text स्रोत पाठ को बदलना]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples उपयुक्त मार्कअप का उदाहरण]",
