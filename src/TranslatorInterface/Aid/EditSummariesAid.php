@@ -15,7 +15,7 @@ use MWTimestamp;
  * @since 2022.04
  */
 class EditSummariesAid extends TranslationAid {
-	private const COMMENT_COUNT = 5;
+	private const COMMENT_COUNT = 3;
 
 	public function getData(): array {
 		$pageTitle = $this->handle->getTitle();
