@@ -112,20 +112,20 @@
 .tux-editor-header {
 	color: #222;
 	font-size: 14px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 .tux-editor-header .description {
 	margin: 5px 0;
 }
 
-.group-warning {
-	background: #fff5aa;
-	padding: 5px;
-	margin: 5px 0;
+.tux-editor-header .mw-message-box,
+/** MW < 1.38 **/
+.tux-editor-header .warningbox {
+	margin-bottom: 5px;
 }
 
-.group-warning:empty {
+.tux-group-warning:empty {
 	display: none;
 }
 

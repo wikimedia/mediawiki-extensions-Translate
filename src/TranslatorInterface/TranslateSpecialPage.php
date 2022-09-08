@@ -372,19 +372,14 @@ class TranslateSpecialPage extends SpecialPage {
 
 	protected function tuxGroupWarning(): string {
 		if ( $this->options['group'] === '' ) {
-			return Html::rawElement(
-				'div',
-				[ 'class' => 'twelve columns group-warning' ],
-				$this->msg( 'tux-translate-page-no-such-group' )->parse()
+			return Html::warningBox(
+				$this->msg( 'tux-translate-page-no-such-group' )->parse(),
+				'tux-group-warning'
 			);
 		}
 
 		// Initialize an empty warning box to be filled client-side.
-		return Html::element(
-			'div',
-			[ 'class' => 'twelve columns group-warning' ],
-			''
-		);
+		return Html::warningBox( '', 'tux-group-warning' );
 	}
 
 	protected function tuxWorkflowSelector(): string {

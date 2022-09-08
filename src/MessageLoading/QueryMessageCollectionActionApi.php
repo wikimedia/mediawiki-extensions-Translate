@@ -77,10 +77,11 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 
 		$languageCode = $params[ 'language' ];
 		$this->validateLanguageCode( $languageCode );
+		$sourceLanguageCode = $group->getSourceLanguage();
 
 		// Even though translation to source language maybe disabled, we still want to
 		// fetch the message collections for the source language.
-		if ( $group->getSourceLanguage() === $languageCode ) {
+		if ( $sourceLanguageCode === $languageCode ) {
 			$name = $this->getLanguageName( $languageCode );
 			$this->addWarning( [ 'apiwarn-translate-language-disabled-source', wfEscapeWikiText( $name ) ] );
 		} else {
@@ -104,6 +105,18 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 				// Not a translatable language
 				$name = $this->getLanguageName( $languageCode );
 				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
+			}
+
+			// A check for cases where the source language of group messages
+			// is a variant of the target language being translated into.
+			if ( strtok( $sourceLanguageCode, '-' ) === strtok( $languageCode, '-' ) ) {
+				$sourceLaguageName = $this->getLanguageName( $sourceLanguageCode );
+				$targetLaguageName = $this->getLanguageName( $languageCode );
+				$this->addWarning( [
+					'apiwarn-translate-language-targetlang-variant-of-source',
+					wfEscapeWikiText( $targetLaguageName ),
+					wfEscapeWikiText( $sourceLaguageName ) ]
+				);
 			}
 		}
 

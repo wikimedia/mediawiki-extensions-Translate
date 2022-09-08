@@ -487,12 +487,18 @@
 
 				if ( result.warnings ) {
 					for ( var i = 0; i !== result.warnings.length; i++ ) {
-						if ( result.warnings[ i ].code === 'translate-language-disabled-source' ) {
-							self.handleLoadErrors( [ result.warnings[ i ] ] );
+						var currentWarning = result.warnings[ i ];
+						if ( currentWarning.code === 'translate-language-disabled-source' ) {
+							self.handleLoadErrors( [ currentWarning ] );
+							// Since translation to source language is disabled, do not display any messages
+							return;
+						}
+						if ( currentWarning.code === 'translate-language-targetlang-variant-of-source'
+						) {
+							self.displayLoadErrors( [ currentWarning ] );
 							break;
 						}
 					}
-					return;
 				}
 
 				if ( messages.length === 0 ) {
@@ -828,14 +834,13 @@
 		},
 
 		/**
-		 * Handles errors encountered during the loading state.
-		 * Displays the errors and updates the state of the table.
+		 * Display errors encountered during the loading state.
 		 *
 		 * @param {Array} errors
 		 * @param {string} errorCode
 		 */
-		handleLoadErrors: function ( errors, errorCode ) {
-			var $warningContainer = $( '.tux-editor-header .group-warning' );
+		displayLoadErrors: function ( errors, errorCode ) {
+			var $warningContainer = $( '.tux-editor-header .tux-group-warning' );
 
 			if ( errors ) {
 				errors.forEach( function ( error ) {
@@ -844,6 +849,16 @@
 			} else {
 				$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
 			}
+		},
+
+		/**
+		 * Displays the errors and updates the state of the table.
+		 *
+		 * @param {Array} errors
+		 * @param {string} errorCode
+		 */
+		handleLoadErrors: function ( errors, errorCode ) {
+			this.displayLoadErrors( errors, errorCode );
 
 			$( '.tux-workflow' ).addClass( 'hide' );
 			this.$loader.data( 'offset', -1 ).addClass( 'hide' );

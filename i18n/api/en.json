@@ -166,6 +166,7 @@
 	"apierror-translate-rename-state-invalid": "One of the message passed for rename should be newly added, and the other one deleted. Current states - addition: $1 and deletion: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Already marked as reviewed by you",
 	"apiwarn-translate-language-disabled-source": "The source language of this group is $1. Please select another language to translate into.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>You are translating into <bdi>$1</bdi>.</strong> It is a variant of <bdi>$2</bdi>, which is already the source language of these messages. Make sure the selected language is correct, and consider the differences across the language variants to provide a good translation.",
 	"apierror-translate-operation-error": "There was an error while processing the request. Error: $1",
 	"apihelp-translationentitysearch-summary": "Search for message groups and messages",
 	"apihelp-translationentitysearch-param-entitytype": "Entity type being queried",

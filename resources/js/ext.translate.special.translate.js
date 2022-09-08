@@ -34,7 +34,7 @@
 
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
-			$( '.tux-editor-header .group-warning' ).empty();
+			removeGroupWarnings();
 			state.messageList.changeSettings( changes );
 			updateGroupInformation( state );
 		},
@@ -49,7 +49,7 @@
 
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
-			$( '.tux-editor-header .group-warning' ).empty();
+			removeGroupWarnings();
 			state.messageList.changeSettings( changes );
 			state.groupSelector.updateTargetLanguage( language );
 			updateGroupInformation( state );
@@ -152,7 +152,7 @@
 
 		mw.translate.getMessageGroup( stateInfo.group, props ).done( function ( group ) {
 			updateDescription( group );
-			updateGroupWarning( group, stateInfo.language );
+			updateGroupPriorityWarnings( group, stateInfo.language );
 		} );
 	}
 
@@ -192,8 +192,8 @@
 		} );
 	}
 
-	function updateGroupWarning( group, language ) {
-		var $groupWarning = $( '.tux-editor-header .group-warning' );
+	function updateGroupPriorityWarnings( group, language ) {
+		var $groupWarning = $( '.tux-editor-header .tux-group-warning' );
 
 		if ( group.priority === 'discouraged' ) {
 			$groupWarning.append(
@@ -248,6 +248,11 @@
 			$( '<p>' ).append( $( '<strong>' ).text( headerMessage.text() ) ),
 			$( '<p>' ).append( languagesMessage.parseDom() )
 		);
+	}
+
+	function removeGroupWarnings() {
+		var $tuxHeader = $( '.tux-editor-header' );
+		$tuxHeader.find( '.tux-group-warning' ).empty();
 	}
 
 	function isPriorityLanguage( language, priorityLanguages ) {
