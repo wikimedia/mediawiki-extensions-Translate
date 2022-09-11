@@ -221,10 +221,6 @@ class MessageUpdateJob extends GenericTranslateJob {
 		unset( $languages[$wgTranslateDocumentationLanguageCode] );
 		$languages = array_keys( $languages );
 
-		$dbw = wfGetDB( DB_PRIMARY );
-		$fields = [ 'page_id', 'page_latest' ];
-		$conds = [ 'page_namespace' => $title->getNamespace() ];
-
 		$pages = [];
 		foreach ( $languages as $code ) {
 			$otherTitle = $handle->getTitleForLanguage( $code );
@@ -238,6 +234,11 @@ class MessageUpdateJob extends GenericTranslateJob {
 			return;
 		}
 
+		$dbw = MediaWikiServices::getInstance()
+			->getDBLoadBalancer()
+			->getMaintenanceConnectionRef( DB_PRIMARY );
+		$fields = [ 'page_id', 'page_latest' ];
+		$conds = [ 'page_namespace' => $title->getNamespace() ];
 		$conds['page_title'] = array_keys( $pages );
 
 		$res = $dbw->select( 'page', $fields, $conds, __METHOD__ );
