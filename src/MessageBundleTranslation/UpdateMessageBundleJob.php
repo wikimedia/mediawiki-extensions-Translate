@@ -84,8 +84,7 @@ class UpdateMessageBundleJob extends Job {
 		$code = $group->getSourceLanguage();
 		foreach ( $messages as $key => $value ) {
 			$title = Title::makeTitle( $namespace, "$key/$code" );
-			$previousValue = $previousMessages[$key] ?? null;
-			$fuzzy = $previousMessages !== null && $previousValue !== $value;
+			$fuzzy = $this->shouldFuzzy( $previousMessages, $newKeys, $key, $value );
 			$jobs[] = MessageUpdateJob::newJob( $title, $value, $fuzzy );
 		}
 		$jobQueue->push( $jobs );
@@ -123,5 +122,20 @@ class UpdateMessageBundleJob extends Job {
 			$groupId,
 			MessageGroupStats::FLAG_NO_CACHE | MessageGroupStats::FLAG_IMMEDIATE_WRITES
 		);
+	}
+
+	private function shouldFuzzy(
+		?array $previousMessages,
+		array $newKeys,
+		string $key,
+		string $value
+	): bool {
+		// Mark new keys as fuzzy
+		if ( in_array( $key, $newKeys ) ) {
+			return true;
+		}
+
+		$previousValue = $previousMessages[$key] ?? null;
+		return $previousMessages !== null && $previousValue !== $value;
 	}
 }
