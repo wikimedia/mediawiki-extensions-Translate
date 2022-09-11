@@ -85,10 +85,10 @@ class MessageBundleMessageGroup implements MessageGroup {
 		return $this->data;
 	}
 
-	private function prefixKeys( array $keys ): array {
+	private function makeGroupKeys( array $keys ): array {
 		$result = [];
 		foreach ( $keys as $key ) {
-			$result[] = "$this->name/$key";
+			$result[] = str_replace( ' ', '_', "$this->name/$key" );
 		}
 		return $result;
 	}
@@ -176,7 +176,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 		unset( $data['@metadata'] );
 
 		return array_combine(
-			$this->prefixKeys( array_keys( $data ) ),
+			$this->makeGroupKeys( array_keys( $data ) ),
 			array_values( $data )
 		);
 	}
@@ -194,7 +194,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 	/** @inheritDoc */
 	public function getMessage( $key, $code ): ?string {
 		if ( $code === $this->getSourceLanguage() ) {
-			return $this->getData()[$key] ?? null;
+			return $this->getDefinitions()[$key] ?? null;
 		}
 
 		return null;
