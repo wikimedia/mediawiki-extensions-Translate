@@ -35,6 +35,10 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 
 	public function execute() {
 		$this->checkUserRightsAny( self::RIGHT );
+		$block = $this->getUser()->getBlock();
+		if ( $block && $block->isSitewide() ) {
+			$this->dieBlocked( $block );
+		}
 
 		$params = $this->extractRequestParams();
 		$operation = $params['operation'];

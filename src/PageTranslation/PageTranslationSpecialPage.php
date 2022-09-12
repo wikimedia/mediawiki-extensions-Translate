@@ -34,6 +34,7 @@ use Status;
 use Title;
 use TranslateMetadata;
 use TranslateUtils;
+use UserBlockedError;
 use WebRequest;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -142,6 +143,23 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
+		}
+
+		// Check for blocks
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		if ( $permissionManager->isBlockedFrom( $user, $title, !$request->wasPosted() ) ) {
+			$block = $user->getBlock();
+			if ( $block ) {
+				throw new UserBlockedError(
+					$block,
+					$user,
+					$this->getLanguage(),
+					$request->getIP()
+				);
+			}
+
+			throw new PermissionsError( 'pagetranslation', [ 'badaccess-group0' ] );
+
 		}
 
 		// Check token for all POST actions here

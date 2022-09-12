@@ -43,6 +43,10 @@ class AggregateGroupsActionApi extends ApiBase {
 
 	public function execute(): void {
 		$this->checkUserRightsAny( self::$right );
+		$block = $this->getUser()->getBlock();
+		if ( $block && $block->isSitewide() ) {
+			$this->dieBlocked( $block );
+		}
 
 		$params = $this->extractRequestParams();
 		$action = $params['do'];
