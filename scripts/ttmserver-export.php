@@ -52,6 +52,10 @@ class TTMServerBootstrap extends Maintenance {
 			'verbose',
 			'Output more status information.'
 		);
+		$this->addOption(
+			'clean',
+			'Only run setup and and cleanup. Skip inserting content.'
+		);
 		$this->setBatchSize( 500 );
 		$this->requireExtension( 'Translate' );
 		$this->start = microtime( true );
@@ -109,7 +113,11 @@ class TTMServerBootstrap extends Maintenance {
 		$threads = $this->getOption( 'threads', 1 );
 		$pids = [];
 
-		$groups = MessageGroups::singleton()->getGroups();
+		if ( $this->hasOption( 'clean' ) ) {
+			$groups = [];
+		} else {
+			$groups = MessageGroups::singleton()->getGroups();
+		}
 		foreach ( $groups as $id => $group ) {
 			/** @var MessageGroup $group */
 			if ( $group->isMeta() ) {
