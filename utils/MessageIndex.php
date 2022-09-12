@@ -25,6 +25,8 @@ use MediaWiki\MediaWikiServices;
 abstract class MessageIndex {
 	private const CACHEKEY = 'Translate-MessageIndex-interim';
 
+	private const READ_LATEST = true;
+
 	/** @var self */
 	protected static $instance;
 	/** @var MapCacheLRU|null */
@@ -134,11 +136,7 @@ abstract class MessageIndex {
 		return $mi[$key] ?? null;
 	}
 
-	/**
-	 * @param bool $forRebuild
-	 * @return array
-	 */
-	abstract public function retrieve( $forRebuild = false );
+	abstract public function retrieve( bool $readLatest = false ): array;
 
 	/**
 	 * @since 2018.01
@@ -200,7 +198,7 @@ abstract class MessageIndex {
 		self::getCache()->clear();
 
 		$new = [];
-		$old = $this->retrieve( 'rebuild' );
+		$old = $this->retrieve( self::READ_LATEST );
 		$postponed = [];
 
 		/** @var MessageGroup $g */
@@ -374,7 +372,7 @@ abstract class MessageIndex {
 		foreach ( $diff['keys'] as $keys ) {
 			foreach ( $keys as $key => $data ) {
 				[ $ns, $pagename ] = explode( ':', $key, 2 );
-				$title = Title::makeTitle( $ns, $pagename );
+				$title = Title::makeTitle( (int)$ns, $pagename );
 				$handle = new MessageHandle( $title );
 				[ $oldGroups, $newGroups ] = $data;
 				Hooks::run( 'TranslateEventMessageMembershipChange',
@@ -465,11 +463,7 @@ class SerializedMessageIndex extends MessageIndex {
 	protected $index;
 	protected $filename = 'translate_messageindex.ser';
 
-	/**
-	 * @param bool $forRebuild
-	 * @return array
-	 */
-	public function retrieve( $forRebuild = false ) {
+	public function retrieve( bool $readLatest = false ): array {
 		if ( $this->index !== null ) {
 			return $this->index;
 		}
@@ -538,16 +532,12 @@ class DatabaseMessageIndex extends MessageIndex {
 		return true;
 	}
 
-	/**
-	 * @param bool $forRebuild
-	 * @return array
-	 */
-	public function retrieve( $forRebuild = false ) {
-		if ( $this->index !== null && !$forRebuild ) {
+	public function retrieve( bool $readLatest = false ): array {
+		if ( $this->index !== null && !$readLatest ) {
 			return $this->index;
 		}
 
-		$dbr = wfGetDB( $forRebuild ? DB_PRIMARY : DB_REPLICA );
+		$dbr = wfGetDB( $readLatest ? DB_PRIMARY : DB_REPLICA );
 		$res = $dbr->select( 'translate_messageindex', '*', [], __METHOD__ );
 		$this->index = [];
 		foreach ( $res as $row ) {
@@ -627,11 +617,7 @@ class CachedMessageIndex extends MessageIndex {
 		$this->cache = ObjectCache::getInstance( CACHE_ANYTHING );
 	}
 
-	/**
-	 * @param bool $forRebuild
-	 * @return array
-	 */
-	public function retrieve( $forRebuild = false ) {
+	public function retrieve( bool $readLatest = false ): array {
 		if ( $this->index !== null ) {
 			return $this->index;
 		}
@@ -677,10 +663,10 @@ class CDBMessageIndex extends MessageIndex {
 	protected $filename = 'translate_messageindex.cdb';
 
 	/**
-	 * @param bool $forRebuild
+	 * @param bool $readLatest
 	 * @return array
 	 */
-	public function retrieve( $forRebuild = false ) {
+	public function retrieve( bool $readLatest = false ): array {
 		$reader = $this->getReader();
 		// This must be below the line above, which may fill the index
 		if ( $this->index !== null ) {
@@ -770,17 +756,12 @@ class HashMessageIndex extends MessageIndex {
 	/** @var array */
 	protected $index = [];
 
-	/**
-	 * @param bool $forRebuild
-	 * @return array
-	 */
-	public function retrieve( $forRebuild = false ) {
+	public function retrieve( bool $readLatest = false ): array {
 		return $this->index;
 	}
 
 	/**
 	 * @param string $key
-	 *
 	 * @return mixed
 	 */
 	protected function get( $key ) {

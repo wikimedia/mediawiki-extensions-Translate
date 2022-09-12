@@ -254,13 +254,8 @@ class TranslateSandbox {
 		return in_array( 'translate-sandboxed', $userGroupManager->getUserGroups( $user ), true );
 	}
 
-	/**
-	 * Hook: UserGetRights
-	 * @param User $user
-	 * @param array &$rights
-	 * @return true
-	 */
-	public static function enforcePermissions( User $user, array &$rights ) {
+	/** Hook: UserGetRights */
+	public static function enforcePermissions( User $user, array &$rights ): bool {
 		global $wgTranslateUseSandbox;
 
 		if ( !$wgTranslateUseSandbox ) {
