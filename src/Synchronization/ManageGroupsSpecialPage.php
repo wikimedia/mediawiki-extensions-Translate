@@ -33,6 +33,7 @@ use SpecialPage;
 use TextContent;
 use Title;
 use TranslateUtils;
+use UserBlockedError;
 use WebRequest;
 use Xml;
 
@@ -142,6 +143,16 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$this->showChanges( $this->getLimit() );
 
 			return;
+		}
+
+		$block = $user->getBlock();
+		if ( $block && $block->isSitewide() ) {
+			throw new UserBlockedError(
+				$block,
+				$user,
+				$this->getLanguage(),
+				$req->getIP()
+			);
 		}
 
 		$csrfTokenSet = $this->getContext()->getCsrfTokenSet();
