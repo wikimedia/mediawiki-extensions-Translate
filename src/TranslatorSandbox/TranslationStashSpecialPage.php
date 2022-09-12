@@ -33,7 +33,6 @@ class TranslationStashSpecialPage extends SpecialPage {
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateSandboxLimit',
-		'TranslateSecondaryPermissionUrl'
 	];
 
 	public function __construct(
@@ -59,7 +58,6 @@ class TranslationStashSpecialPage extends SpecialPage {
 
 	public function execute( $params ) {
 		$limit = $this->options->get( 'TranslateSandboxLimit' );
-		$secondaryPermissionUrl = $this->options->get( 'TranslateSecondaryPermissionUrl' );
 
 		$this->setHeaders();
 		$out = $this->getOutput();
@@ -67,14 +65,6 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 
 		if ( !$this->hasPermissionToUse() ) {
-			if ( $secondaryPermissionUrl && $this->getUser()->isRegistered() ) {
-				$out->redirect(
-					Title::newFromText( $secondaryPermissionUrl )->getLocalURL()
-				);
-
-				return;
-			}
-
 			$out->redirect( Title::newMainPage()->getLocalURL() );
 
 			return;

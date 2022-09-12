@@ -1220,11 +1220,6 @@
 			"description": "When unprivileged users open a translation editor, they will see a message stating that a special permission is needed for translating messages. If this variable is defined, there is a button which will take the user to that page to ask for permission. The target needs to be reiterated with the second variable to have the same result with sandbox enabled where users can't enter the sandbox.",
 			"public": true
 		},
-		"TranslateSecondaryPermissionUrl": {
-			"value": "Project:Translator",
-			"description": "…",
-			"public": true
-		},
 		"EnablePageTranslation": {
 			"value": true,
 			"description": "Enable page translation feature.\n\nPage translation feature allows structured translation of wiki pages with simple markup and automatic tracking of changes. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration",
