@@ -13,6 +13,7 @@ use Language;
 use LanguageCode;
 use LinkBatch;
 use ManualLogEntry;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Linker\LinkTarget;
@@ -41,6 +42,7 @@ use Title;
 use TranslateMetadata;
 use TranslateUtils;
 use User;
+use UserBlockedError;
 use Wikimedia\ScopedCallback;
 use WikiPage;
 use WikiPageMessageGroup;
@@ -967,10 +969,7 @@ class Hooks {
 	) {
 		$handle = new MessageHandle( $title );
 
-		// Check only when someone tries to create translation units.
-		// Allow editing units that become orphaned in regular use, so that
-		// people can delete them or fix links or other issues in them.
-		if ( $action !== 'create' || !$handle->isPageTranslation() ) {
+		if ( !$handle->isPageTranslation() ) {
 			return true;
 		}
 
@@ -978,8 +977,40 @@ class Hooks {
 		$groupId = null;
 
 		if ( $handle->isValid() ) {
-			$groupId = $handle->getGroup()->getId();
-		} else {
+			$group = $handle->getGroup();
+			$groupId = $group->getId();
+			$permissionTitleCheck = null;
+
+			if ( $group instanceof WikiPageMessageGroup ) {
+				$permissionTitleCheck = $group->getTitle();
+			} elseif ( $group instanceof MessageBundleMessageGroup ) {
+				// TODO: This check for MessageBundle related permission should be in
+				// the MessageBundleTranslation/Hook
+				$permissionTitleCheck = Title::newFromID( $group->getBundlePageId() );
+			}
+
+			if ( $permissionTitleCheck ) {
+				// Check for blocks
+				$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+				if ( $permissionManager->isBlockedFrom( $user, $permissionTitleCheck ) ) {
+					$block = $user->getBlock();
+					if ( $block ) {
+						$error = new UserBlockedError( $block, $user );
+						$result = $error->getMessageObject()->parseAsBlock();
+						return false;
+					}
+				}
+			}
+		}
+
+		// Allow editing units that become orphaned in regular use, so that
+		// people can delete them or fix links or other issues in them.
+		if ( $action !== 'create' ) {
+			return true;
+		}
+
+		if ( !$handle->isValid() ) {
+			// TODO: These checks may no longer be needed
 			// Sometimes the message index can be out of date. Either the rebuild job failed or
 			// it just hasn't finished yet. Do a secondary check to make sure we are not
 			// inconveniencing translators for no good reason.

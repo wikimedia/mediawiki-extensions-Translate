@@ -56,6 +56,10 @@ class MessageBundleMessageGroup implements MessageGroup {
 		return "messagebundle-$name";
 	}
 
+	public function getBundlePageId(): int {
+		return $this->pageId;
+	}
+
 	private function getData(): array {
 		if ( !$this->data ) {
 			$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
