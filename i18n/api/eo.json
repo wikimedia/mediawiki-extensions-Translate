@@ -27,7 +27,6 @@
 	"apihelp-searchtranslations-param-limit": "Grando de la rezulto.",
 	"apihelp-searchtranslations-example-1": "Montri tradukojn por la lingvo.",
 	"apierror-translate-invalidupdate": "Ne valida ĝisdatigo",
-	"apierror-translate-sandbox-invalidppassword": "Ne valida pasvorto",
 	"apierror-translate-unknownmessage": "Nekonata mesaĝo",
 	"apiwarn-translate-alreadyreviewedbyyou": "Jam markita kiel reviziita de vi"
 }

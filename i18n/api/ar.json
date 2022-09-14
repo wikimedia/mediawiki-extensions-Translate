@@ -137,7 +137,6 @@
 	"apierror-translate-notranslationservices": "لم يتم تكوين أية خدمات ترجمة عامة; يحتاج إداري الويكي إلى تعيين <var>$wgTranslateTranslationServices</var> بشكل مناسب قبل استخدام هذه الميزة.",
 	"apierror-translate-owntranslation": "لا يمكن مراجعة الترجمات الخاصة",
 	"apierror-translate-sandboxdisabled": "ميزة الملعب ليست قيد الاستخدام",
-	"apierror-translate-sandbox-invalidppassword": "كلمة سر خاطئة",
 	"apierror-translate-smg-nochanges": "لا توجد تغييرات لمعالجتها.",
 	"apierror-translate-unknownmessage": "رسالة غير معروفة",
 	"apierror-translate-invalid-changeset-name": "تم تمرير اسم ملف مجموعة التغييرات غير صالح - $1",

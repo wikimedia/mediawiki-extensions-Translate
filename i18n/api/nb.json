@@ -156,7 +156,6 @@
 	"apierror-translate-notranslationservices": "Ingen offentlige oversettelsestjenester har blitt satt opp. Wikiadministratoren må sette <var>$wgTranslateTranslationServices</var> før denne funksjonen kan brukes.",
 	"apierror-translate-owntranslation": "Kan ikke vurdere egne oversettelser",
 	"apierror-translate-sandboxdisabled": "Sandkassefunksjonen er ikke i bruk",
-	"apierror-translate-sandbox-invalidppassword": "Ugyldig passord",
 	"apierror-translate-smg-nochanges": "Det er ingen endringer å prosessere.",
 	"apierror-translate-unknownmessage": "Ukjent melding",
 	"apierror-translate-invalid-changeset-name": "Ugyldig endringssettfilnavn gitt – $1",

@@ -169,7 +169,6 @@
 	"apierror-translate-notranslationservices": "Aucun service de traduction public n’a été configuré. L’administrateur du wiki doit convenablement positionner <var>$wgTranslateTranslationServices</var> avant que cette fonctionnalité puisse être utilisée.",
 	"apierror-translate-owntranslation": "Impossible de relire ses propres traductions",
 	"apierror-translate-sandboxdisabled": "Les fonctions du bac à sable ne sont pas utilisées",
-	"apierror-translate-sandbox-invalidppassword": "Mot de passe non-valide",
 	"apierror-translate-smg-nochanges": "Il n’y a aucune modification à effectuer.",
 	"apierror-translate-unknownmessage": "Message inconnu",
 	"apierror-translate-invalid-changeset-name": "Nom du fichier d’ensemble de changements passé non valide : $1",

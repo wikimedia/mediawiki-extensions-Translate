@@ -94,7 +94,6 @@
 	"apierror-translate-nomessagefortitle": "Заголовок не соответствует переводимому сообщению.",
 	"apierror-translate-owntranslation": "Не может проверять собственные переводы",
 	"apierror-translate-sandboxdisabled": "Функция песочницы не используется.",
-	"apierror-translate-sandbox-invalidppassword": "Неверный пароль",
 	"apierror-translate-unknownmessage": "Неизвестное сообщение",
 	"apiwarn-translate-alreadyreviewedbyyou": "Уже отмечены как просмотренные Вами"
 }

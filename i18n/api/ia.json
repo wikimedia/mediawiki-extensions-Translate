@@ -155,7 +155,6 @@
 	"apierror-translate-notranslationservices": "Nulle servicios de traduction public ha essite configurate. Le administrator del wiki debe configurar <var>$wgTranslateTranslationServices</var> correctemente ante que iste function pote esser usate.",
 	"apierror-translate-owntranslation": "Impossibile revider proprie traductiones.",
 	"apierror-translate-sandboxdisabled": "Le function de cassa a sablo non es in uso.",
-	"apierror-translate-sandbox-invalidppassword": "Contrasigno invalide.",
 	"apierror-translate-smg-nochanges": "Il non ha cambiamentos a processar.",
 	"apierror-translate-unknownmessage": "Message incognite.",
 	"apierror-translate-invalid-changeset-name": "Ha essite passate un nomine de file del gruppo de modificationes non valide: $1",

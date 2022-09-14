@@ -130,7 +130,6 @@
 	"apierror-translate-notranslationservices": "Não foram configurados serviços públicos de tradução. O administrador da wiki precisa de definir <var>$wgTranslateTranslationServices</var> devidamente para esta funcionalidade poder ser usada.",
 	"apierror-translate-owntranslation": "Não pode rever as suas traduções",
 	"apierror-translate-sandboxdisabled": "A função de utilizadores em teste não está a ser usada",
-	"apierror-translate-sandbox-invalidppassword": "Palavra-passe inválida",
 	"apierror-translate-unknownmessage": "Mensagem desconhecida",
 	"apiwarn-translate-alreadyreviewedbyyou": "Já marcada como revista por si",
 	"apiwarn-translate-language-disabled-source": "A língua de origem deste grupo é $1. Selecione outra língua, para a qual irá traduzir, por favor."

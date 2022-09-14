@@ -136,7 +136,6 @@
 	"apierror-translate-notranslationservices": "未配置公开翻译服务。在此功能可以使用前，wiki管理员需要适当设置<var>$wgTranslateTranslationServices</var>。",
 	"apierror-translate-owntranslation": "不能复核自己的翻译",
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
-	"apierror-translate-sandbox-invalidppassword": "无效密码",
 	"apierror-translate-smg-nochanges": "没有要处理的更改。",
 	"apierror-translate-unknownmessage": "未知消息",
 	"apierror-translate-invalid-changeset-name": "传入了无效的更改集文件名 - $1",

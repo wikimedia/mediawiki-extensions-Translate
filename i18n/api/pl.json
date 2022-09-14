@@ -46,7 +46,6 @@
 	"apierror-translate-nomessagefortitle": "Tytuł nie odpowiada komunikatowi do tłumaczenia",
 	"apierror-translate-owntranslation": "Nie można przeglądać własnych tłumaczeń",
 	"apierror-translate-sandboxdisabled": "Funkcja brudnopisu nie jest używana",
-	"apierror-translate-sandbox-invalidppassword": "Nieprawidłowe hasło",
 	"apierror-translate-unknownmessage": "Nieznany komunikat",
 	"apiwarn-translate-alreadyreviewedbyyou": "Już oznaczono jako przejrzane przez ciebie",
 	"apiwarn-translate-language-disabled-source": "Językiem źródłowym tej grupy jest $1. Wybierz inny język, na który chcesz tłumaczyć."

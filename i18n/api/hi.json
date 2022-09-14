@@ -159,7 +159,6 @@
 	"apierror-translate-notranslationservices": "किसी सार्वजनिक अनुवाद सेवा को कॉन्फिगर नहीं किया गया है। इस सुविधा का उपयोग करने से पहले विकि के प्रबंधक को ठीक से <var>$wgTranslateTranslationServices</var> को सेट करना होगा।",
 	"apierror-translate-owntranslation": "अपने अनुवादों को निरीक्षित नहीं कर सकते",
 	"apierror-translate-sandboxdisabled": "प्रयोगपृष्ठ सुविधा का उपयोग नहीं किया जा रहा है",
-	"apierror-translate-sandbox-invalidppassword": "अमान्य पासवर्ड",
 	"apierror-translate-smg-nochanges": "प्रोसेस करने के लिए कोई बदलाव नहीं है।",
 	"apierror-translate-unknownmessage": "अज्ञात संदेश",
 	"apierror-translate-invalid-changeset-name": "बदलाव सेट के फाइल का अमान्य नाम पास किया गया - $1",

@@ -161,7 +161,6 @@
 	"apierror-translate-notranslationservices": "Не налаштовано ще жодного публічного сервісу перекладу. Адміністратор цієї вікі повинен належним чином налаштувати <var>$wgTranslateTranslationServices</var>, перш ніж цю функцію можна буде використовувати.",
 	"apierror-translate-owntranslation": "Не вдалося перевірити власні переклади",
 	"apierror-translate-sandboxdisabled": "Функція пісочниці не використовується",
-	"apierror-translate-sandbox-invalidppassword": "Недійсний пароль",
 	"apierror-translate-smg-nochanges": "Немає змін процесу.",
 	"apierror-translate-unknownmessage": "Невідоме повідомлення",
 	"apierror-translate-invalid-changeset-name": "Подано недійсну назву файлу набору змін — $1",

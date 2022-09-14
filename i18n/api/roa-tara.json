@@ -64,7 +64,6 @@
 	"apierror-translate-nomessagefortitle": "Quiste non ge corresponne a 'nu messàgge traducibbile",
 	"apierror-translate-owntranslation": "Non ge puè revisionà le traduziune tune",
 	"apierror-translate-sandboxdisabled": "'A funzione Sandbox non ge s'ause",
-	"apierror-translate-sandbox-invalidppassword": "Password invalide",
 	"apierror-translate-unknownmessage": "Messàgge scanusciute",
 	"apiwarn-translate-alreadyreviewedbyyou": "Già signate cumme revisionate da te"
 }

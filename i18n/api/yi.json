@@ -16,6 +16,5 @@
 	"apihelp-searchtranslations-param-sourcelanguage": "שפראך-קאד פון דעם קוואלטעקסט.",
 	"apihelp-searchtranslations-example-1": "ווייזן איבערזעצונגען פאר דער שפראך.",
 	"apihelp-searchtranslations-example-2": "ווייז נישט-איבערגעזעצטע מעלדונגען וואס פאסן צו דער פֿראגע אין דער קוואלשפראך.",
-	"apierror-translate-sandbox-invalidppassword": "אומגילטיק פאסווארט",
 	"apiwarn-translate-language-disabled-source": "די קוואלשפראך פֿאר דער דאזיקער גרופע איז $1. זייט אזוי גוט און וויילט אן אנדער שפראך איבערצוזעצן דערצו."
 }

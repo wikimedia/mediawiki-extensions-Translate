@@ -121,7 +121,6 @@
 	"apierror-translate-notranslationservices": "Nun se configuró nengún serviciu públicu de traducciones. L'alministrador de la wiki tien de configurar <var>$wgTranslateTranslationServices</var> afechiscamente pa poder utilizar esta función.",
 	"apierror-translate-owntranslation": "Nun pueden revisase les traducciones propies",
 	"apierror-translate-sandboxdisabled": "La función de zona de pruebes nun ta n'usu",
-	"apierror-translate-sandbox-invalidppassword": "Contraseña inválida",
 	"apierror-translate-unknownmessage": "Mensaxe desconocíu",
 	"apiwarn-translate-alreadyreviewedbyyou": "Yá ta marcada como revisada por ti",
 	"apiwarn-translate-language-disabled-source": "L'idioma orixinal d'esti grupu ye $1. Escueye otru idioma al que traducir."

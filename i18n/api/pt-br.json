@@ -156,7 +156,6 @@
 	"apierror-translate-notranslationservices": "Não foram configurados serviços públicos de tradução. O administrador da wiki precisa de definir <var>$wgTranslateTranslationServices</var> devidamente para esta funcionalidade poder ser usada.",
 	"apierror-translate-owntranslation": "Não é possível revisar as próprias traduções",
 	"apierror-translate-sandboxdisabled": "O recurso sandbox não está em uso",
-	"apierror-translate-sandbox-invalidppassword": "Senha inválida",
 	"apierror-translate-smg-nochanges": "Não há alterações a processar.",
 	"apierror-translate-unknownmessage": "Mensagem desconhecida",
 	"apierror-translate-invalid-changeset-name": "Nome do arquivo do conjunto de alterações inválido passado - $1",

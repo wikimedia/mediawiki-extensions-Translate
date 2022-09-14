@@ -101,7 +101,6 @@
 	"apierror-translate-nomessagefortitle": "題名が翻訳可能なメッセージと対応しません",
 	"apierror-translate-owntranslation": "自分の翻訳の査読はできません",
 	"apierror-translate-sandboxdisabled": "サンドボックスの機能は使用できません",
-	"apierror-translate-sandbox-invalidppassword": "無効なパスワード",
 	"apierror-translate-smg-nochanges": "処理する変更はありません。",
 	"apierror-translate-invalid-operation": "無効な操作：$1。有効な値 - $2。",
 	"apiwarn-translate-alreadyreviewedbyyou": "あなたの査読済みと記録があります",

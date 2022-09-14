@@ -164,7 +164,6 @@
 	"apierror-translate-notranslationservices": "Hiçbir genel çeviri hizmeti yapılandırılmadı. Viki hizmetlisi, bu özelliğin kullanılabilmesi için önce <var>$wgTranslateTranslationServices</var> ayarını doğru yapması gerekir.",
 	"apierror-translate-owntranslation": "Kendi çevirileri incelemiyor",
 	"apierror-translate-sandboxdisabled": "Deneme tahtası özelliği kullanımda değil",
-	"apierror-translate-sandbox-invalidppassword": "Geçersiz parola",
 	"apierror-translate-smg-nochanges": "İşlenecek değişiklik yok.",
 	"apierror-translate-unknownmessage": "Bilinmeyen mesaj",
 	"apierror-translate-invalid-changeset-name": "Geçersiz değişiklik kümesi dosya adı geçti - $1",

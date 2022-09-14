@@ -38,7 +38,6 @@
 	"apierror-translate-language-disabled": "Vertimas į $1 yra išjungtas.",
 	"apierror-translate-owntranslation": "Negalima peržiūrėti savo paties vertimų",
 	"apierror-translate-sandboxdisabled": "Smėlio dėžės funkcija nenaudojama",
-	"apierror-translate-sandbox-invalidppassword": "Neteisingas slaptažodis",
 	"apierror-translate-unknownmessage": "Nežinomas pranešimas",
 	"apiwarn-translate-alreadyreviewedbyyou": "Jau pažymėtas kaip peržiūrėtas jūsų"
 }

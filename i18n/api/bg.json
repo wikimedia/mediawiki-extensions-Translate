@@ -72,6 +72,5 @@
 	"apierror-translate-language-disabled": "Превеждането на $1 е деактивирано.",
 	"apierror-translate-language-disabled-reason": "Превеждането на $1 е деактивирано: $2",
 	"apierror-translate-owntranslation": "Не можете да проверявате свои преводи",
-	"apierror-translate-sandbox-invalidppassword": "Невалидна парола",
 	"apierror-translate-unknownmessage": "Неизвестно съобщение"
 }

@@ -44,7 +44,6 @@
 	"apierror-translate-language-disabled-reason": "Vertalen naar $1 is uitgeschakeld: $2",
 	"apierror-translate-notranslationservices": "Er is geen vertaaldienst ingesteld. De wikibeheerder moet <var>$wgTranslateTranslationServices</var> instellen voor dat deze functie kan worden gebruikt.",
 	"apierror-translate-sandboxdisabled": "De zandboxfunctionaliteit wordt niet gebruikt",
-	"apierror-translate-sandbox-invalidppassword": "Ongeldig wachtwoord",
 	"apierror-translate-unknownmessage": "Onbekend bericht",
 	"apiwarn-translate-alreadyreviewedbyyou": "Al door uw als gecontroleerd gemarkeerd",
 	"apiwarn-translate-language-disabled-source": "De brontaal van deze groep is $1. Kies een andere taal om naar te vertalen."

@@ -21,6 +21,5 @@
 	"apihelp-translationstash-param-subaction": "Aðgerð.",
 	"apihelp-searchtranslations-description": "Leita í þýðingum",
 	"apihelp-searchtranslations-summary": "Leita í þýðingum",
-	"apierror-translate-sandbox-invalidppassword": "Ógilt lykilorð",
 	"apierror-translate-unknownmessage": "Ókunn skilaboð"
 }
