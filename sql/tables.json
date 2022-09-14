@@ -373,5 +373,43 @@
 				"unique": false
 			}
 		]
+	},
+	{
+		"name": "translate_translatable_bundles",
+		"comment": "Translatable bundles with their current status.",
+		"columns": [
+			{
+				"name": "ttb_page_id",
+				"comment": "Key to page.page_id",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "ttb_type",
+				"comment": "Type of the translatable bundle",
+				"type": "smallint",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "ttb_status",
+				"comment": "Current status of the translatable bundle",
+				"type": "smallint",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "ttb_sortkey",
+				"comment": "Sortkey for the translatable bundle.",
+				"type": "binary",
+				"options": { "length": 255, "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "ttb_type_sortkey_status",
+				"columns": [ "ttb_type", "ttb_sortkey", "ttb_status" ],
+				"unique": true
+			}
+		],
+		"pk": [ "ttb_page_id" ]
 	}
 ]
