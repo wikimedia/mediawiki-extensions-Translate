@@ -3,6 +3,7 @@
 		"authors": [
 			"Audun",
 			"Danmichaelo",
+			"EdoAug",
 			"Gabriel Kielland",
 			"Jon Harald Søby",
 			"Laaknor",
@@ -155,7 +156,7 @@
 	"logentry-messagebundle-movenok": "$1 {{GENDER:$2|støtte}} på et problem under flytting av meldingsknippet $3 til $4",
 	"logentry-messagebundle-deletefok": "$1 {{GENDER:$2|fullførte}} slettingen av meldingsknippet $3",
 	"logentry-messagebundle-deletefnok": "$1 {{GENDER:$2|mislyktes}} i å slette $3, som tilhører meldingsknippet $4",
-	"log-action-filter-messagebundle": "Type handling:",
+	"log-action-filter-messagebundle": "Handlingstype:",
 	"log-action-filter-messagebundle-move": "Flytting av meldingsknipper",
 	"log-action-filter-messagebundle-delete": "Sletting av meldingsknipper",
 	"pt-movepage-title": "Flytt oversettbar side $1",

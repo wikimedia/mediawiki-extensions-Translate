@@ -448,7 +448,7 @@
 	"translate-messagebundle-group-description": "Beskjeder i en beskjedbunt definert på siden [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Setter kildespråk for meldingsknippet i samsvar med metadataene.",
 	"translate-messagebundle-sourcelanguage-changed": "Kildespråket til et meldingsknippe kan ikke endres etter at det har blitt opprettet.",
-	"log-action-filter-translationreview": "Type handling:",
+	"log-action-filter-translationreview": "Handlingstype:",
 	"log-action-filter-translationreview-message": "Gjennomgang av individuelle oversettelsesmeldinger",
 	"log-action-filter-translationreview-group": "Endringer i framgangsstatusen til oversettelser"
 }
