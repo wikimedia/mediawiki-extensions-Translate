@@ -219,6 +219,7 @@ REGEXP;
 				$sourceLanguage,
 				$targetLanguage,
 				$headingText,
+				$msg,
 				$this->isInline()
 			)
 		) {
@@ -282,6 +283,7 @@ REGEXP;
 		Language $sourceLanguage,
 		Language $targetLanguage,
 		?string $headingText,
+		?TMessage $msg,
 		bool $isInline
 	): bool {
 		// If its not a heading, don't bother adding an anchor
@@ -291,6 +293,12 @@ REGEXP;
 
 		// We only add an anchor for a translation. See: https://phabricator.wikimedia.org/T62544
 		if ( $sourceLanguage->getCode() === $targetLanguage->getCode() ) {
+			return false;
+		}
+
+		// Translation and the source text are same, avoid adding an anchor that would create
+		// an id attribute with duplicate value
+		if ( $msg && $msg->translation() === $msg->definition() ) {
 			return false;
 		}
 

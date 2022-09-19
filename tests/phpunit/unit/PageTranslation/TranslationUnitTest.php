@@ -441,6 +441,12 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'======== Heading Translate =======',
 			'== Heading ='
 		];
+
+		yield 'anchor is skipped when translation and definition are same' => [
+			'= Heading =',
+			'= Heading =',
+			null
+		];
 	}
 
 	private function getLanguageStub( string $htmlCode, string $langCode, string $dir ) {
