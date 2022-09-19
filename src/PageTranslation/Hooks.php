@@ -907,6 +907,10 @@ class Hooks {
 			$page->addReadyTag( $revisionRecord->getId() );
 		}
 
+		// Schedule a deferred status update for the translatable page.
+		$tpStatusUpdater = Services::getInstance()->getTranslatablePageStore();
+		$tpStatusUpdater->performStatusUpdate( $wikiPage->getTitle() );
+
 		return true;
 	}
 

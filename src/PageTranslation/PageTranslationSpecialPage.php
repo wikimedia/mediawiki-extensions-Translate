@@ -7,6 +7,7 @@ use ContentHandler;
 use DifferenceEngine;
 use Html;
 use JobQueueGroup;
+use LogicException;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -58,6 +59,12 @@ use const EDIT_UPDATE;
 class PageTranslationSpecialPage extends SpecialPage {
 	private const LATEST_SYNTAX_VERSION = '2';
 	private const DEFAULT_SYNTAX_VERSION = '1';
+	private const DISPLAY_STATUS_MAPPING = [
+		TranslatablePageStatus::PROPOSED => 'proposed',
+		TranslatablePageStatus::ACTIVE => 'active',
+		TranslatablePageStatus::OUTDATED => 'outdated',
+		TranslatablePageStatus::BROKEN => 'broken'
+	];
 	/** @var LanguageNameUtils */
 	private $languageNameUtils;
 	/** @var LanguageFactory */
@@ -524,22 +531,18 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$page['version'] = $metadata[$groupId]['version'] ?? self::DEFAULT_SYNTAX_VERSION;
 			$page['transclusion'] = $metadata[$groupId]['transclusion'] ?? false;
 
-			if ( !isset( $page[RevTagStore::TP_MARK_TAG] ) ) {
-				// Never marked, check that the latest version is ready
-				if ( $page[RevTagStore::TP_READY_TAG] === $page['latest'] ) {
-					$out['proposed'][] = $page;
-				} // Otherwise, ignore such pages
-			} elseif ( $page[RevTagStore::TP_READY_TAG] === $page['latest'] ) {
-				if ( $page[RevTagStore::TP_MARK_TAG] === $page[RevTagStore::TP_READY_TAG] ) {
-					// Marked and latest version is fine
-					$out['active'][] = $page;
-				} else {
-					$out['outdated'][] = $page;
-				}
-			} else {
-				// Marked but latest version is not fine
-				$out['broken'][] = $page;
+			// TODO: Eventually we should query the status directly from the TranslatableBundleStore
+			$tpStatus = TranslatablePage::determineStatus(
+				$page[RevTagStore::TP_READY_TAG] ?? null,
+				$page[RevTagStore::TP_MARK_TAG] ?? null,
+				$page['latest']
+			);
+
+			if ( !$tpStatus ) {
+				throw new LogicException( "Unable to determine status for translatable page: $groupId " );
 			}
+
+			$out[self::DISPLAY_STATUS_MAPPING[$tpStatus->getId()]][] = $page;
 		}
 
 		return $out;

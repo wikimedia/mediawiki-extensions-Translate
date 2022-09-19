@@ -554,6 +554,36 @@ class TranslatablePage extends TranslatableBundle {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$cache->touchCheckKey( $cache->makeKey( 'pagetranslation', 'sourcepages' ) );
 	}
+
+	public static function determineStatus(
+		?int $readyRevisionId,
+		?int $markRevisionId,
+		int $latestRevisionId
+	): ?TranslatablePageStatus {
+		$status = null;
+		if ( $markRevisionId === null ) {
+			// Never marked, check that the latest version is ready
+			if ( $readyRevisionId === $latestRevisionId ) {
+				$status = TranslatablePageStatus::PROPOSED;
+			} // Otherwise, ignore such pages
+		} elseif ( $readyRevisionId === $latestRevisionId ) {
+			if ( $markRevisionId === $readyRevisionId ) {
+				// Marked and latest version is fine
+				$status = TranslatablePageStatus::ACTIVE;
+			} else {
+				$status = TranslatablePageStatus::OUTDATED;
+			}
+		} else {
+			// Marked but latest version is not fine
+			$status = TranslatablePageStatus::BROKEN;
+		}
+
+		if ( $status ) {
+			return new TranslatablePageStatus( $status );
+		}
+
+		return null;
+	}
 }
 
 class_alias( TranslatablePage::class, 'TranslatablePage' );

@@ -16,6 +16,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
@@ -149,6 +150,15 @@ return [
 		);
 	},
 
+	'Translate:TranslatableBundleStatusStore' =>
+		static function ( MediaWikiServices $services ): TranslatableBundleStatusStore {
+		return new TranslatableBundleStatusStore(
+			$services->getDBLoadBalancer()->getConnection( DB_PRIMARY ),
+			$services->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
+			$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
+		);
+		},
+
 	'Translate:TranslatablePageParser' => static function ( MediaWikiServices $services ): TranslatablePageParser
 	{
 		return new TranslatablePageParser(
@@ -162,7 +172,8 @@ return [
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getJobQueueGroup(),
 			new RevTagStore(),
-			$services->getDBLoadBalancer()
+			$services->getDBLoadBalancer(),
+			$services->get( 'Translate:TranslatableBundleStatusStore' )
 		);
 	},
 

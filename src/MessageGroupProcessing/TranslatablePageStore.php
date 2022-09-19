@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
+use DeferredUpdates;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -30,17 +31,21 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private $revTagStore;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
+	/** @var TranslatableBundleStatusStore */
+	private $translatableBundleStatusStore;
 
 	public function __construct(
 		MessageIndex $messageIndex,
 		JobQueueGroup $jobQueue,
 		RevTagStore $revTagStore,
-		ILoadBalancer $loadBalancer
+		ILoadBalancer $loadBalancer,
+		TranslatableBundleStatusStore $translatableBundleStatusStore
 	) {
 		$this->messageIndex = $messageIndex;
 		$this->jobQueue = $jobQueue;
 		$this->revTagStore = $revTagStore;
 		$this->loadBalancer = $loadBalancer;
+		$this->translatableBundleStatusStore = $translatableBundleStatusStore;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
@@ -95,6 +100,38 @@ class TranslatablePageStore implements TranslatableBundleStore {
 
 		MessageGroups::singleton()->recache();
 		$this->messageIndex->rebuild();
+	}
+
+	/** Queues an update for the status of the translatable page. Update is not done immediately. */
+	public function performStatusUpdate( Title $title ): void {
+		DeferredUpdates::addCallableUpdate(
+			function () use ( $title ) {
+				$this->updateStatus( $title );
+			}
+		);
+	}
+
+	/** @internal public only for testing. Use ::performStatusUpdate instead */
+	public function updateStatus( Title $title ): ?TranslatableBundleStatus {
+		$revTags = $this->revTagStore->getLatestRevisionsForTags(
+			$title,
+			RevTagStore::TP_MARK_TAG,
+			RevTagStore::TP_READY_TAG
+		);
+
+		$status = TranslatablePage::determineStatus(
+			$revTags[RevTagStore::TP_READY_TAG] ?? null,
+			$revTags[RevTagStore::TP_MARK_TAG] ?? null,
+			$title->getLatestRevID( Title::READ_LATEST )
+		);
+
+		if ( $status ) {
+			$this->translatableBundleStatusStore->setStatus(
+				$title, $status, TranslatablePage::class
+			);
+		}
+
+		return $status;
 	}
 
 	private function moveMetadata( string $oldGroupId, string $newGroupId ): void {

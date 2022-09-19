@@ -85,6 +85,48 @@ class RevTagStore {
 		return $value === false ? null : (int)$value;
 	}
 
+	/** @return null|int[] */
+	public function getLatestRevisionsForTags( PageIdentity $identity, string ...$tags ): ?array {
+		if ( !$identity->exists() ) {
+			return null;
+		}
+
+		$articleId = $identity->getId();
+
+		$response = [];
+		$remainingTags = [];
+
+		// ATTENTION: Cache should only be updated on POST requests.
+		foreach ( $tags as $tag ) {
+			if ( isset( self::$tagCache[$articleId][$tag] ) ) {
+				$response[$tag] = self::$tagCache[$articleId][$tag];
+			} else {
+				$remainingTags[] = $tag;
+			}
+		}
+
+		if ( !$remainingTags ) {
+			// All tags were available in the cache, no need to run any queries.
+			return $response;
+		}
+
+		$dbr = TranslateUtils::getSafeReadDB();
+		$vars = [ 'MAX(rt_revision) AS rt_revision', 'rt_type' ];
+		$conds = [
+			'rt_page' => $articleId,
+			'rt_type' => $remainingTags
+		];
+
+		$options = [ 'GROUP BY' => [ 'rt_type' ] ];
+		$results = $dbr->select( 'revtag', $vars, $conds, __METHOD__, $options );
+
+		foreach ( $results as $row ) {
+			$response[$row->rt_type] = (int)$row->rt_revision;
+		}
+
+		return $response;
+	}
+
 	public function removeTags( PageIdentity $identity, string ...$tag ): void {
 		if ( !$identity->exists() ) {
 			return;
