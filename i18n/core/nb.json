@@ -11,7 +11,8 @@
 			"Nghtwlkr",
 			"Njardarlogar",
 			"Simny",
-			"Avilena"
+			"Avilena",
+			"EdoAug"
 		]
 	},
 	"translate": "Oversett",
@@ -321,7 +322,7 @@
 	"tux-editor-placeholder": "Din oversettelse",
 	"tux-editor-editsummary-placeholder": "Valgfri forklaring",
 	"tux-editor-paste-original-button-label": "Lim inn kildetekst",
-	"tux-editor-discard-changes-button-label": "Se bort i fra endringer",
+	"tux-editor-discard-changes-button-label": "Tilbakestill endringer",
 	"tux-editor-save-button-label": "Publiser oversettelse",
 	"tux-editor-skip-button-label": "Hopp over til neste",
 	"tux-editor-cancel-button-label": "Avbryt",
