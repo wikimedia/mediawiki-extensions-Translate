@@ -11,6 +11,7 @@
 		]
 	},
 	"translate": "Аудару",
+	"translate-extensionname": "Аудару",
 	"translate-desc": "MediaWiki және бұнан тыстарды аударуға арналған [[Special:Translate|арнайы бет]]",
 	"translate-taskui-export-to-file": "Негізгі форматын экспорттау",
 	"translate-taskui-export-as-po": "Оффлайн аударма үшін экспорттау",
@@ -202,6 +203,7 @@
 	"tux-status-saving": "Жариялануда...",
 	"tux-status-unsaved": "Жарияланбады",
 	"tux-save-unknown-error": "Белгісіз қате кездесті.",
+	"tux-editor-placeholder-language": "$1 аудармаңыз",
 	"tux-editor-editsummary-placeholder": "Түйіндемесін жазыңыз (міндетті емес)",
 	"tux-editor-paste-original-button-label": "Қайнар мәтінін қою",
 	"tux-editor-discard-changes-button-label": "Өзгерістерді болдырмау",

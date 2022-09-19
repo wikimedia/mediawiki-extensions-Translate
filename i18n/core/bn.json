@@ -321,7 +321,7 @@
 	"tux-editor-placeholder-documentation": "বার্তার নথি যোগ করুন",
 	"tux-editor-placeholder-language": "$1 ভাষায় আপনার অনুবাদ",
 	"tux-editor-editsummary-placeholder": "আপনার পরিবর্তনসমূহের ব্যাখ্যা দিন (ঐচ্ছিক)",
-	"tux-editor-paste-original-button-label": "উৎস পাঠ্য পেস্ট করুন",
+	"tux-editor-paste-original-button-label": "উৎস পাঠ্য যোগ করুন",
 	"tux-editor-discard-changes-button-label": "পরিবর্তন বাতিল করুন",
 	"tux-editor-save-button-label": "অনুবাদ প্রকাশ করুন",
 	"tux-editor-skip-button-label": "এড়িয়ে পরবর্তীতে যান",
