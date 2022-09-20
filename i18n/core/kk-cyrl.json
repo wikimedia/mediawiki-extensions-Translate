@@ -11,6 +11,7 @@
 		]
 	},
 	"translate": "Аудару",
+	"translate-extensionname": "Аудару",
 	"translate-desc": "MediaWiki және бұнан тыстарды аударуға арналған [[Special:Translate|арнайы бет]]",
 	"translate-taskui-export-to-file": "Негізгі форматын экспорттау",
 	"translate-taskui-export-as-po": "Оффлайн аударма үшін экспорттау",
