@@ -236,6 +236,8 @@
 					.removeClass( 'hide' );
 			}
 
+			// Hide translation related to saving failure before saving again.
+			translateEditor.removeNotices( noticeTypes.translateFail );
 			this.storage.save(
 				translateEditor.message.title,
 				translation,
@@ -250,8 +252,6 @@
 					mw.log( response, xhr );
 				}
 			} ).fail( function ( errorCode, response ) {
-				translateEditor.removeNotices( noticeTypes.translateFail );
-
 				if ( errorCode === 'assertuserfailed' ) {
 					// eslint-disable-next-line no-alert
 					alert( mw.msg( 'tux-session-expired' ) );
@@ -943,11 +943,7 @@
 				var warnings = data.validation.warnings,
 					errors = data.validation.errors;
 
-				translateEditor.removeNotices( [
-					noticeTypes.error,
-					noticeTypes.warning,
-					noticeTypes.translateFail
-				] );
+				translateEditor.removeNotices( [ noticeTypes.error, noticeTypes.warning ] );
 
 				if ( ( !warnings || !warnings.length ) &&
 					( !errors || !errors.length ) ) {
