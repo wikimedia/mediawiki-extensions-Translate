@@ -20,6 +20,7 @@
 		]
 	},
 	"pagetranslation": "ページ翻訳",
+	"nstab-translations": "翻訳単位",
 	"right-pagetranslation": "ページの版を翻訳対象に指定",
 	"action-pagetranslation": "翻訳対象ページの管理",
 	"tps-edit-sourcepage-text": "翻訳元ページを編集しています。以下の説明文書の内容を理解していることを確認してください:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 翻訳元テキストの変更]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples マークアップの使用例]",
@@ -153,6 +154,7 @@
 	"log-action-filter-pagetranslation-encourage": "翻訳のおすすめ",
 	"log-action-filter-pagetranslation-prioritylanguages": "優先言語の変更",
 	"log-action-filter-pagetranslation-aggregategroups": "集約群の変更",
+	"log-action-filter-messagebundle": "操作の種類:",
 	"pt-movepage-title": "翻訳対象ページ「$1」の移動",
 	"pt-movepage-blockers": "以下の{{PLURAL:$1|エラー}}が発生したため、翻訳対象ページを新しいページ名に移動できません:",
 	"pt-movepage-block-base-invalid": "移動先の翻訳対象ページの名前が無効です。",

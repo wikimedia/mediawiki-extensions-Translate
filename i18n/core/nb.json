@@ -11,7 +11,8 @@
 			"Laaknor",
 			"Nghtwlkr",
 			"Njardarlogar",
-			"Simny"
+			"Simny",
+			"EdoAug"
 		]
 	},
 	"translate": "Oversett",
@@ -351,7 +352,7 @@
 	"tux-editor-placeholder-language": "Din oversettelse til $1",
 	"tux-editor-editsummary-placeholder": "Forklar dine endringer (valgfritt)",
 	"tux-editor-paste-original-button-label": "Lim inn kildetekst",
-	"tux-editor-discard-changes-button-label": "Se bort i fra endringer",
+	"tux-editor-discard-changes-button-label": "Tilbakestill endringer",
 	"tux-editor-save-button-label": "Publiser oversettelse",
 	"tux-editor-skip-button-label": "Hopp over til neste",
 	"tux-editor-cancel-button-label": "Avbryt",
@@ -447,7 +448,7 @@
 	"translate-messagebundle-group-description": "Beskjeder i en beskjedbunt definert på siden [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Setter kildespråk for meldingsknippet i samsvar med metadataene.",
 	"translate-messagebundle-sourcelanguage-changed": "Kildespråket til et meldingsknippe kan ikke endres etter at det har blitt opprettet.",
-	"log-action-filter-translationreview": "Type handling:",
+	"log-action-filter-translationreview": "Handlingstype:",
 	"log-action-filter-translationreview-message": "Gjennomgang av individuelle oversettelsesmeldinger",
 	"log-action-filter-translationreview-group": "Endringer i framgangsstatusen til oversettelser"
 }

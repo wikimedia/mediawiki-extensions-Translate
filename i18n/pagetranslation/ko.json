@@ -19,6 +19,7 @@
 		]
 	},
 	"pagetranslation": "문서 번역",
+	"nstab-translations": "번역 단위",
 	"right-pagetranslation": "문서의 판을 번역하도록 표시",
 	"action-pagetranslation": "번역 가능한 문서 관리",
 	"tps-edit-sourcepage-text": "번역의 원본 문서를 편집하고 있습니다. 다음 문서를 숙지하십시오.\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 원본 글귀를 수정하기]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples 사용할 마크업 예제]",
