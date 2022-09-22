@@ -448,5 +448,10 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "O código da língua de origem \"$1\" não é suportado.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Código|Códigos}} de língua prioritária {{PLURAL:$2|inválido|inválidos}} nos metadados: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Formato de língua prioritária inválido nos metadados. As línguas prioritárias têm de ser uma matriz de texto.",
-	"translate-messagebundle-group-description": "Mensagens de um pacote de mensagens definido na página [[$2|$1]]."
+	"translate-messagebundle-group-description": "Mensagens de um pacote de mensagens definido na página [[$2|$1]].",
+	"translate-messagebundle-change-sourcelanguage": "Definir a língua de origem do pacote de mensagens de acordo com os metadados.",
+	"translate-messagebundle-sourcelanguage-changed": "A língua de origem de um pacote de mensagens não pode ser alterada depois de ele ter sido criado.",
+	"log-action-filter-translationreview": "Tipo de operação:",
+	"log-action-filter-translationreview-message": "Revisão de mensagens de tradução individuais",
+	"log-action-filter-translationreview-group": "Alterações do estado de progresso das traduções"
 }
