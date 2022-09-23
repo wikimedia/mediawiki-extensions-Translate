@@ -13,7 +13,7 @@
 	"translate-desc": "[[Special:Translate|Paj espesyal]] pou tradui MediaWiki e plis ankò.",
 	"translate-page-no-such-language": "Lang ki endike a pa bon.",
 	"translate-page-no-such-group": "Gwoup ki endike a pa bon",
-	"translate-page-disabled": "Tradiksyon nan lang sa a te deaktive pou gwoup sa.\nRezon:\n\n<em>$1</em>",
+	"translate-page-disabled": "Tradiksyon nan lang sa a te dezaktive pou gwoup sa.\nRezon :\n\n<em>$1</em>",
 	"translate-page-settings-legend": "Konfigirasyon, preferans",
 	"translate-page-group": "Gwoup",
 	"translate-page-language": "Lang",
