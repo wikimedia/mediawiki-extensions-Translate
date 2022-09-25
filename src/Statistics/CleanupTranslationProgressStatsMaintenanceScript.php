@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Maintenance;
 use MediaWiki\MediaWikiServices;
 use MessageGroups;
+use MessageGroupStats;
 use RawMessage;
 use TranslateUtils;
 use const DB_PRIMARY;
@@ -33,7 +34,7 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			__METHOD__
 		);
 		$knownGroupIds = array_map(
-			'MessageGroupStats::getDatabaseIdForGroupId',
+			[ MessageGroupStats::class, 'getDatabaseIdForGroupId' ],
 			array_keys( MessageGroups::singleton()->getGroups() )
 		);
 		$unknownGroupIds = array_diff( $dbGroupIds, $knownGroupIds );

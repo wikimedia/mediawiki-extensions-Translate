@@ -78,7 +78,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 		}
 
-		$wgHooks['PageSaveComplete'][] = 'TranslateEditAddons::onSaveComplete';
+		$wgHooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
 
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
@@ -202,7 +202,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$wgHooks['RevisionRecordInserted'][] = [ Hooks::class, 'updateTranstagOnNullRevisions' ];
 
 			// Register different ways to show language links
-			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';
+			$wgHooks['ParserFirstCallInit'][] = [ self::class, 'setupParserHooks' ];
 			$wgHooks['LanguageLinks'][] = [ Hooks::class, 'addLanguageLinks' ];
 			$wgHooks['SkinTemplateGetLanguageLink'][] = [ Hooks::class, 'formatLanguageLink' ];
 
@@ -292,9 +292,9 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			// right-translate-sandboxmanage action-translate-sandboxmanage
 			$wgAvailableRights[] = 'translate-sandboxmanage';
 
-			$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
-			$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
-			$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
+			$wgHooks['GetPreferences'][] = [ TranslateSandbox::class, 'onGetPreferences' ];
+			$wgHooks['UserGetRights'][] = [ TranslateSandbox::class, 'enforcePermissions' ];
+			$wgHooks['ApiCheckCanExecute'][] = [ TranslateSandbox::class, 'onApiCheckCanExecute' ];
 
 			global $wgLogTypes, $wgLogActionsHandlers;
 			// log-name-translatorsandbox log-description-translatorsandbox
@@ -356,7 +356,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			}
 		}
 
-		$wgHooks['SidebarBeforeOutput'][] = 'TranslateToolbox::toolboxAllTranslations';
+		$wgHooks['SidebarBeforeOutput'][] = [ TranslateToolbox::class, 'toolboxAllTranslations' ];
 	}
 
 	/**
@@ -896,7 +896,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	 * @param Parser $parser
 	 */
 	public static function setupTranslateParserFunction( Parser $parser ) {
-		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
+		$parser->setFunctionHook( 'translation', [ self::class, 'translateRenderParserFunction' ] );
 	}
 
 	/**

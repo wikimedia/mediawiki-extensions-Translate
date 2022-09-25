@@ -292,7 +292,7 @@ class MessageGroupStats {
 	 */
 	protected static function extractResults( $res, array $ids, array $stats = [] ) {
 		// Map the internal ids back to real ids
-		$idmap = array_combine( array_map( 'self::getDatabaseIdForGroupId', $ids ), $ids );
+		$idmap = array_combine( array_map( [ self::class, 'getDatabaseIdForGroupId' ], $ids ), $ids );
 
 		foreach ( $res as $row ) {
 			if ( !isset( $idmap[$row->tgs_group] ) ) {
@@ -408,7 +408,7 @@ class MessageGroupStats {
 
 		$conds = [];
 		if ( $ids !== null ) {
-			$dbids = array_map( 'self::getDatabaseIdForGroupId', $ids );
+			$dbids = array_map( [ self::class, 'getDatabaseIdForGroupId' ], $ids );
 			$conds['tgs_group'] = $dbids;
 		}
 

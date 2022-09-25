@@ -55,7 +55,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 		$prefix = __DIR__ . '/../..';
 		foreach ( $this->paths['php'] as $path ) {
 			$path = "$prefix/$path/";
-			$hooks = self::getHooksFromPath( $path, 'self::getPHPHooksFromFile' );
+			$hooks = self::getHooksFromPath( $path, [ self::class, 'getPHPHooksFromFile' ] );
 			foreach ( $hooks as $name => $params ) {
 				$this->used['php'][$name] = $params;
 			}
@@ -63,7 +63,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 
 		foreach ( $this->paths['js'] as $path ) {
 			$path = "$prefix/$path/";
-			$hooks = self::getHooksFromPath( $path, 'self::getJSHooksFromFile' );
+			$hooks = self::getHooksFromPath( $path, [ self::class, 'getJSHooksFromFile' ] );
 			foreach ( $hooks as $name => $params ) {
 				$this->used['js'][$name] = $params;
 			}

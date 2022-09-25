@@ -678,7 +678,7 @@ class MessageGroups {
 			}
 		}
 
-		usort( $tree, [ __CLASS__, 'groupLabelSort' ] );
+		usort( $tree, [ self::class, 'groupLabelSort' ] );
 
 		/* Now we have two things left in $tree array:
 		 * - solitaries: top-level non-aggregate message groups
@@ -762,7 +762,7 @@ class MessageGroups {
 
 		// We don't care about the ids.
 		$tree = array_values( $parent->getGroups() );
-		usort( $tree, [ __CLASS__, 'groupLabelSort' ] );
+		usort( $tree, [ self::class, 'groupLabelSort' ] );
 		// Expand aggregate groups (if any left) after sorting to form a tree
 		foreach ( $tree as $index => $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {

@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\MediaWikiServices;
+use MessageGroups;
 use TranslateUtils;
 
 /**
@@ -43,7 +44,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		$options = [ 'ORDER BY' => 'rc_timestamp' ];
 
-		$this->groups = array_map( 'MessageGroups::normalizeId', $this->opts->getGroups() );
+		$this->groups = array_map( [ MessageGroups::class, 'normalizeId' ], $this->opts->getGroups() );
 
 		$namespaces = self::namespacesFromGroups( $this->groups );
 		if ( count( $namespaces ) ) {
