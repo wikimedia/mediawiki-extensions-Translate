@@ -81,12 +81,16 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		TranslatablePage::clearSourcePageCache();
 	}
 
+	/** Delete a translatable page */
 	public function delete( Title $title ): void {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
-
-		$this->revTagStore->removeTags( $title, RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $title->getArticleID() ], __METHOD__ );
 
+		$this->unmark( $title );
+	}
+
+	/** Unmark a translatable page */
+	public function unmark( Title $title ): void {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$translatablePage->getTranslationPercentages();
 		foreach ( $translatablePage->getTranslationPages() as $page ) {
@@ -96,10 +100,16 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$groupId = $translatablePage->getMessageGroupId();
 		TranslateMetadata::clearMetadata( $groupId, TranslatablePage::METADATA_KEYS );
 		$this->removeFromAggregateGroups( $groupId );
-		TranslatablePage::clearSourcePageCache();
+
+		// Remove tags after all group related work is done in order to avoid breaking calls to
+		// TranslatablePage::getMessageGroup incase the group cache is not populated
+		$this->revTagStore->removeTags( $title, RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
+		$this->translatableBundleStatusStore->removeStatus( $title->getArticleID() );
 
 		MessageGroups::singleton()->recache();
 		$this->messageIndex->rebuild();
+
+		TranslatablePage::clearSourcePageCache();
 	}
 
 	/** Queues an update for the status of the translatable page. Update is not done immediately. */

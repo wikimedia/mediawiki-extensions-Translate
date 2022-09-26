@@ -307,12 +307,8 @@ class TranslatablePage extends TranslatableBundle {
 	 * Does not remove translated sections or translation pages.
 	 */
 	public function unmarkTranslatablePage(): void {
-		$aid = $this->getTitle()->getArticleID();
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
-		$this->revTagStore->removeTags( $this->getTitle(), RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
-		$dbw->delete( 'translate_sections', [ 'trs_page' => $aid ], __METHOD__ );
-
-		self::clearSourcePageCache();
+		$tpPageStore = Services::getInstance()->getTranslatablePageStore();
+		$tpPageStore->unmark( $this->getTitle() );
 	}
 
 	/**
@@ -349,8 +345,10 @@ class TranslatablePage extends TranslatableBundle {
 	/** @inheritDoc */
 	public function getTranslationPages(): array {
 		$mwServices = MediaWikiServices::getInstance();
-		$knownLanguageCodes = $this->getMessageGroup()->getTranslatableLanguages()
-			?? TranslateUtils::getLanguageNames( null );
+
+		$messageGroup = $this->getMessageGroup();
+		$knownLanguageCodes = $messageGroup ? $messageGroup->getTranslatableLanguages() : null;
+		$knownLanguageCodes = $knownLanguageCodes ?? TranslateUtils::getLanguageNames( null );
 
 		$prefixedDbTitleKey = $this->getTitle()->getDBkey() . '/';
 		$baseNamespace = $this->getTitle()->getNamespace();

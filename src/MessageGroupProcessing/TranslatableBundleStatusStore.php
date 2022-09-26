@@ -58,6 +58,18 @@ class TranslatableBundleStatusStore {
 		);
 	}
 
+	public function removeStatus( int ...$pageIds ): void {
+		if ( !$this->doesTableExist() ) {
+			return;
+		}
+
+		$this->database->delete(
+			self::TABLE_NAME,
+			[ 'ttb_page_id' => $pageIds ],
+			__METHOD__
+		);
+	}
+
 	private function getBundleTypeId( string $bundle ): int {
 		if ( $bundle === TranslatablePage::class ) {
 			return 1;
@@ -70,11 +82,10 @@ class TranslatableBundleStatusStore {
 
 	/** TODO: Remove this check once table is available on Wikimedia sites that use Translate */
 	private function doesTableExist(): bool {
-		if ( $this->tableExists !== null ) {
-			return $this->tableExists;
+		if ( $this->tableExists === null ) {
+			$this->tableExists = $this->dbMaintainance->tableExists( self::TABLE_NAME, __METHOD__ );
 		}
 
-		$this->tableExists = $this->dbMaintainance->tableExists( self::TABLE_NAME, __METHOD__ );
 		return $this->tableExists;
 	}
 }
