@@ -62,27 +62,8 @@ class RevTagStore {
 	}
 
 	public function getLatestRevisionWithTag( PageIdentity $identity, string $tag ): ?int {
-		if ( !$identity->exists() ) {
-			return null;
-		}
-
-		$articleId = $identity->getId();
-
-		// ATTENTION: Cache should only be updated on POST requests.
-		if ( isset( self::$tagCache[$articleId][$tag] ) ) {
-			return self::$tagCache[$articleId][$tag];
-		}
-
-		$db = wfGetDB( DB_REPLICA );
-		$conds = [
-			'rt_page' => $articleId,
-			'rt_type' => $tag
-		];
-
-		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
-		$value = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
-
-		return $value === false ? null : (int)$value;
+		$response = $this->getLatestRevisionsForTags( $identity, $tag );
+		return $response[$tag] ?? null;
 	}
 
 	/** @return null|int[] */
