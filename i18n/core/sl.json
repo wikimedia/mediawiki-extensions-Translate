@@ -293,7 +293,7 @@
 	"tux-editor-tm-match": "$1-% ujemanje",
 	"tux-notices-more": "{{PLURAL:$1|$1 več}}",
 	"tux-notices-hide": "skrij",
-	"tux-editor-save-failed": "Objavljanje prevoda ni uspelo: $1",
+	"tux-editor-save-failed": "Objava prevoda ni uspela: $1",
 	"tux-editor-n-uses": "uporabljeno {{PLURAL:$1|$1-krat}}",
 	"tux-editor-message-desc-more": "Pokaži več",
 	"tux-editor-message-desc-less": "Pokaži manj",
