@@ -22,5 +22,6 @@
 	"apihelp-query+languagestats-description": "Upit jezičkih statistika.",
 	"apihelp-query+languagestats-summary": "Ispitaj jezičke statistike.",
 	"apihelp-query+languagestats-param-language": "Kod jezika.",
+	"apihelp-query+languagestats-example-1": "Spisak statistika dovršenosti prijevoda na finski",
 	"apihelp-managemessagegroups-param-changesetModified": "Unix vremenska oznaka kada je promjena posljednji put modificirana. Ako nakon toga je izmijenjena, izvršnik će izbaciti pogrešku."
 }
