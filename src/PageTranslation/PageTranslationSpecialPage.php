@@ -454,7 +454,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$entry->publish( $logid );
 	}
 
-	public function loadPagesFromDB(): IResultWrapper {
+	/**
+	 * TODO: Move this function to SyncTranslatableBundleStatusMaintenanceScript once we
+	 * start using the translatable_bundles table for fetching the translatabale pages
+	 */
+	public static function loadPagesFromDB(): IResultWrapper {
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = [ 'page', 'revtag' ];
 		$vars = [
@@ -477,7 +481,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 	}
 
-	protected function buildPageArray( IResultWrapper $res ): array {
+	/**
+	 * TODO: Move this function to SyncTranslatableBundleStatusMaintenanceScript once we
+	 * start using the translatable_bundles table for fetching the translatabale pages
+	 */
+	public static function buildPageArray( IResultWrapper $res ): array {
 		$pages = [];
 		foreach ( $res as $r ) {
 			// We have multiple rows for same page, because of different tags
@@ -551,8 +559,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 	public function listPages(): void {
 		$out = $this->getOutput();
 
-		$res = $this->loadPagesFromDB();
-		$allPages = $this->buildPageArray( $res );
+		$res = self::loadPagesFromDB();
+		$allPages = self::buildPageArray( $res );
 		if ( !count( $allPages ) ) {
 			$out->addWikiMsg( 'tpt-list-nopages' );
 

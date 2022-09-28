@@ -58,6 +58,25 @@ class TranslatableBundleStatusStore {
 		);
 	}
 
+	/** Return all bundles in an array with key being page id, value being status */
+	public function getAllWithStatus(): array {
+		if ( !$this->doesTableExist() ) {
+			return [];
+		}
+
+		$resultSet = $this->database->newSelectQueryBuilder()
+			->select( [ 'ttb_page_id' , 'ttb_status' ] )
+			->from( self::TABLE_NAME )
+			->fetchResultSet();
+
+		$result = [];
+		foreach ( $resultSet as $row ) {
+			$result[$row->ttb_page_id] = (int)$row->ttb_status;
+		}
+
+		return $result;
+	}
+
 	public function removeStatus( int ...$pageIds ): void {
 		if ( !$this->doesTableExist() ) {
 			return;
