@@ -638,14 +638,14 @@
 			}
 
 			var $dateEntries = this.$editor.find( '.edit-summary-time' );
-			// Edit summaries may not be loaded yet, retry again
-			// It is also possible that there are no date entries.
+			// Edit summaries may not be loaded yet.
+			// It is also possible that there are no summary or date entries.
 			if ( $dateEntries.length !== 0 ) {
 				// There are some date entries, load moment.js and update them.
 				mw.loader.using( 'moment' ).done(
 					function () {
-						// Update the time for the edit summaries if a user leaves their browser open and
-						// comes back later.
+						// Update the time for the edit summaries if a user leaves their
+						// browser open and comes back later.
 						$dateEntries.each( function () {
 							var $entry = $( this );
 							var timeago = moment
