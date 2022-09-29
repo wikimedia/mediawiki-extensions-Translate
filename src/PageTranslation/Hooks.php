@@ -824,7 +824,7 @@ class Hooks {
 		$text = $content->getText();
 
 		// See T154500
-		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
+		$text = TextContent::normalizeLineEndings( $text );
 		$status = Status::newGood();
 		$parser = Services::getInstance()->getTranslatablePageParser();
 		if ( $parser->containsMarkup( $text ) ) {

@@ -136,7 +136,7 @@ class PoImporter {
 	 */
 	public function parse() {
 		$data = file_get_contents( $this->file );
-		$data = str_replace( "\r\n", "\n", $data );
+		$data = TextContent::normalizeLineEndings( $data );
 
 		$matches = [];
 		if ( preg_match( '/X-Language-Code:\s+(.*)\\\n/', $data, $matches ) ) {
@@ -231,7 +231,7 @@ class WikiWriter {
 
 	/**
 	 * @param string[] $changes Array of key/langcode => translation.
-	 * @param string $groupId Group ID.
+	 * @param string $groupId
 	 * @param string $user User who makes the edits in wiki.
 	 * @param bool $dryrun Do not do anything that affects the database.
 	 */

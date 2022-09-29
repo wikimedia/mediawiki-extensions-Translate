@@ -56,7 +56,7 @@ class MessageChangeStorage {
 	/**
 	 * Fetches changes for a group from the message change file.
 	 * @param string $cdbPath Path of the cdb file.
-	 * @param string $groupId Group Id
+	 * @param string $groupId
 	 * @return MessageSourceChange
 	 */
 	public static function getGroupChanges( $cdbPath, $groupId ) {
@@ -81,7 +81,7 @@ class MessageChangeStorage {
 	 * Writes changes for a group. Has to read the changes first from the file,
 	 * and then re-write them to the file.
 	 * @param MessageSourceChange $changes
-	 * @param string $groupId Group Id
+	 * @param string $groupId
 	 * @param string $cdbPath Path of the cdb file.
 	 */
 	public static function writeGroupChanges( MessageSourceChange $changes, $groupId, $cdbPath ) {

@@ -122,7 +122,7 @@ class TTMServerMessageUpdateJob extends Job {
 	/**
 	 * Run the update on the specified service name.
 	 *
-	 * @param string $serviceName the service name
+	 * @param string $serviceName
 	 */
 	private function runCommandWithRetry( $serviceName ) {
 		global $wgTranslateTranslationServices;

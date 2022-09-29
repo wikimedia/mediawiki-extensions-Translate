@@ -26,11 +26,11 @@ class PageMoveCollection {
 	private $translatableSubpages;
 
 	/**
-	 * @param PageMoveOperation $translatablePage Translatable page
+	 * @param PageMoveOperation $translatablePage
 	 * @param PageMoveOperation[] $translationPagePairs Translation pages
 	 * @param PageMoveOperation[] $unitPagesPairs Translation unit pages
 	 * @param PageMoveOperation[] $subpagesPairs Non translatable sub pages
-	 * @param array $translatableSubpages Translatable sub pages
+	 * @param array $translatableSubpages
 	 */
 	public function __construct(
 		PageMoveOperation $translatablePage,

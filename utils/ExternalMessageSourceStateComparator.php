@@ -297,7 +297,7 @@ class ExternalMessageSourceStateComparator {
 			// language the key has not been removed.
 			if ( $deletedMsg === null ) {
 				$content = '';
-				if ( array_search( $deletedMsgKey, $wikiKeys ) !== false ) {
+				if ( in_array( $deletedMsgKey, $wikiKeys ) ) {
 					$content = $wiki[ $deletedMsgKey ]->translation();
 				}
 				$deletedMsg = [

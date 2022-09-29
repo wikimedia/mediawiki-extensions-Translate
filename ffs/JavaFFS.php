@@ -35,7 +35,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @throws MWException
 	 */
 	public function readFromVariable( $data ) {
-		$data = self::fixNewLines( $data );
+		$data = TextContent::normalizeLineEndings( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
 		$authors = $messages = [];
 		$linecontinuation = false;

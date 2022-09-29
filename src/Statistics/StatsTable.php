@@ -198,7 +198,7 @@ class StatsTable {
 		} else {
 			$transRatio = $translated / $total;
 			$fuzzyRatio = $fuzzy / $total;
-			$proofRatio = $translated === 0 ? 0 : $proofread / $translated;
+			$proofRatio = $translated ? $proofread / $translated : 0;
 		}
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $transRatio, 'floor' ),

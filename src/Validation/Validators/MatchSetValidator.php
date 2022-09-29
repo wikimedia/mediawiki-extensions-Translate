@@ -45,7 +45,7 @@ class MatchSetValidator implements MessageValidator {
 			$translation = strtolower( $translation );
 		}
 
-		if ( array_search( $translation, $this->normalizedValues, true ) === false ) {
+		if ( !in_array( $translation, $this->normalizedValues, true ) ) {
 			$issue = new ValidationIssue(
 				'value-not-present',
 				'invalid',

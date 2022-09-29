@@ -335,20 +335,6 @@ class SimpleFFS implements FFS {
 		return array_values( $authors );
 	}
 
-	/**
-	 * Replaces all Windows and Mac line endings with Unix line endings.
-	 * This is needed in some file types.
-	 *
-	 * @param string $data
-	 * @return string
-	 */
-	public static function fixNewLines( $data ) {
-		$data = str_replace( "\r\n", "\n", $data );
-		$data = str_replace( "\r", "\n", $data );
-
-		return $data;
-	}
-
 	public function isContentEqual( $a, $b ) {
 		return $a === $b;
 	}

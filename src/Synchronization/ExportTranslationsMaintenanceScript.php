@@ -370,7 +370,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			$total = $stats[$code][MessageGroupStats::TOTAL];
 			$translated = $stats[$code][MessageGroupStats::TRANSLATED];
-			$percentage = $total === 0 ? 0 : $translated / $total * 100;
+			$percentage = $total ? $translated / $total * 100 : 0;
 
 			if ( $percentage === 0 || $percentage < $removalThreshold ) {
 				$languages[$code] = self::ACTION_DELETE;

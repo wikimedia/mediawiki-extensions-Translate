@@ -14,7 +14,7 @@ use Parser;
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationUnit
  */
 class TranslationUnitTest extends MediaWikiUnitTestCase {
-	public function setUp(): void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		if ( !defined( 'TRANSLATE_FUZZY' ) ) {

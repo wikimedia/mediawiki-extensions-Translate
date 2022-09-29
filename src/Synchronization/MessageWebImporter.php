@@ -439,7 +439,7 @@ class MessageWebImporter {
 		}
 
 		$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
-		$text .= "{$status->getWikiText()}";
+		$text .= $status->getWikiText();
 		throw new MWException( $text );
 	}
 

@@ -117,12 +117,7 @@ class ValidationRunner {
 	 * @return MessageValidator[] List of validators
 	 */
 	public function getValidators(): array {
-		return array_map(
-			static function ( $validator ) {
-				return $validator['instance'];
-			},
-			$this->validators
-		);
+		return array_column( $this->validators, 'instance' );
 	}
 
 	/**
