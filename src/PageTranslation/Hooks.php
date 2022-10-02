@@ -1116,17 +1116,25 @@ class Hooks {
 		}
 
 		$inclusionList = [
-			'read', 'delete', 'undelete', 'deletedtext', 'deletedhistory',
+			'read', 'deletedtext', 'deletedhistory',
 			'deleterevision', 'suppressrevision', 'viewsuppressed', // T286884
 			'review', // FlaggedRevs
 			'patrol', // T151172
 		];
-		if ( in_array( $action, $inclusionList ) ) {
+		$needsPageTranslationRight = in_array( $action, [ 'delete', 'undelete' ] );
+		if ( in_array( $action, $inclusionList ) ||
+			$needsPageTranslationRight && $user->isAllowed( 'pagetranslation' )
+		) {
 			return true;
 		}
 
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false && $page->getMarkedTag() ) {
+			if ( $needsPageTranslationRight ) {
+				$result = User::newFatalPermissionDeniedStatus( 'pagetranslation' )->getMessage();
+				return false;
+			}
+
 			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
 			$mwService = MediaWikiServices::getInstance();
 
