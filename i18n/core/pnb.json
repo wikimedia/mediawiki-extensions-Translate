@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Abbas dhothar",
+			"Bgo eiu",
 			"Khalid Mahmood"
 		]
 	},
@@ -36,12 +37,14 @@
 	"translate-mgs-column-language": "بولی",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|ترمیم|ترمیماں}} - آخری ترمیم $3 {{PLURAL:$3|دن|دناں}} پہلے",
 	"translate-smg-rename-cancel": "رد کرو",
+	"translate-smg-group-message-message-other-langs": "ہور بولیاں:",
 	"translate-documentation-language": "سنیہا دستاویز",
 	"translate-searchprofile": "ترجمے",
 	"tux-languageselector": "وچ ترجمہ",
 	"tux-tab-translated": "ترجمہ شدہ",
 	"tux-status-translated": "ترجمہ شدہ",
 	"tux-editor-cancel-button-label": "رد کرو",
+	"tux-editor-in-other-languages": "ہور بولیاں وچ",
 	"tux-notices-more": "{{PLURAL:$1|$1 ہور}}",
 	"tux-notices-hide": "لُکاؤ",
 	"tux-editor-message-desc-more": "ہور دیکھو",
