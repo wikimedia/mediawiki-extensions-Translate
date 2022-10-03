@@ -4,12 +4,33 @@
 			"NehalDaveND",
 			"Nirajan pant",
 			"हिमाल सुबेदी",
-			"Bada Kaji"
+			"Bada Kaji",
+			"बडा काजी"
 		]
 	},
+	"searchtranslations": "अनुवादहरू खोज्नुहोस्",
+	"tux-sst-edit": "अनुवाद सम्पादन गर्नुहोस्",
+	"tux-sst-view-foreign": "$1मा हेर्नुहोस्",
 	"tux-sst-search": "खोज्नुहोस्",
+	"tux-sst-search-ph": "अनुवादहरू खोज्नुहोस्",
+	"tux-sst-count": "{{PLURAL:$1|एउटा नतिजा भेटियो|$1 नतिजाहरू फेला पर्यो}}",
 	"tux-sst-facet-language": "भाषाहरू",
 	"tux-sst-facet-group": "सन्देश समूहहरू",
+	"tux-sst-nosolr-title": "खोजी उपलब्ध छैन",
+	"tux-sst-nosolr-body": "यो विकिमा अनुवाद खोज सेवा छैन।",
+	"tux-sst-solr-offline-title": "खोजी उपलब्ध छैन",
+	"tux-sst-solr-offline-body": "खोजी सेवा अस्थायी रूपमा उपलब्ध छैन।",
 	"tux-sst-next": "अर्को ›",
-	"tux-sst-prev": "‹ पछिल्लो"
+	"tux-sst-prev": "‹ पछिल्लो",
+	"tux-sst-default": "अनुवादहरू",
+	"tux-sst-translated": "$1बाट अनुवादहरू",
+	"tux-sst-untranslated": "$1बाट कुनै अनुवाद छैन",
+	"tux-sst-outdated": "$1बाट पुरानो अनुवादहरू",
+	"tux-sst-ellipsis-untranslated": "कुनै अनुवाद छैन",
+	"tux-sst-ellipsis-outdated": "पुराना अनुवादहरू",
+	"tux-sst-link-all-match": "सबै खोज शब्दहरू चाहिन्छ।",
+	"tux-sst-match-message": "कुनै पनि खोज शब्दहरूसँग मेल खाने अनुवादहरू देखाउँदै। $1",
+	"tux-sst-case-sensitive": "केस संवेदनशील",
+	"tux-sst-error-offset": "थप खोज परिणामहरू देखाउन सकिँदैन। कृपया आफ्नो खोज संकुचित गर्नुहोस्।",
+	"tux-sst-error-language": "यस प्रकारको खोजमा यो भाषा प्रयोग गर्न सकिँदैन।"
 }
