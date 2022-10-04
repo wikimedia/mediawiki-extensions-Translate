@@ -49,13 +49,13 @@ class AmdFFSTest extends MediaWikiIntegrationTestCase {
 		$values = [];
 
 		$file1 =
-			<<<JS
-define({
-	"one": "jeden",
-	"two": "dwa",
-	"three": "trzy"
-});
-JS;
+			<<<'JS'
+			define({
+				"one": "jeden",
+				"two": "dwa",
+				"three": "trzy"
+			});
+			JS;
 
 		$values[] = [
 			[
@@ -68,18 +68,18 @@ JS;
 		];
 
 		$file2 =
-			<<<JS
-/**
- * Translators:
- *  - Matthias
- *  - Hannes
- */
-define({
-   "root": {
-      "word": "слово"
-   }
-});
-JS;
+			<<<'JS'
+			/**
+			 * Translators:
+			 *  - Matthias
+			 *  - Hannes
+			 */
+			define({
+			   "root": {
+			      "word": "слово"
+			   }
+			});
+			JS;
 
 		$values[] = [
 			[ 'word' => 'слово' ],

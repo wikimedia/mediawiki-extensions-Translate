@@ -83,26 +83,26 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 
 		$out->addHTML(
 			<<<HTML
-<div class="grid tsb-container">
-	<div class="row">
-		<div class="nine columns pane filter">{$this->makeFilter()}</div>
-		<div class="three columns pane search">{$this->makeSearchBox()}</div>
-	</div>
-	<div class="row tsb-body">
-		<div class="four columns pane requests">
-			{$this->makeList()}
-			<div class="request-footer">
-				<span class="selected-counter">
-					{$this->msg( 'tsb-selected-count' )->numParams( 0 )->escaped()}
-				</span>
-				&nbsp;
-				<a href="#" class="older-requests-indicator"></a>
-			</div>
-		</div>
-		<div class="eight columns pane details"></div>
-	</div>
-</div>
-HTML
+				<div class="grid tsb-container">
+					<div class="row">
+						<div class="nine columns pane filter">{$this->makeFilter()}</div>
+						<div class="three columns pane search">{$this->makeSearchBox()}</div>
+					</div>
+					<div class="row tsb-body">
+						<div class="four columns pane requests">
+							{$this->makeList()}
+							<div class="request-footer">
+								<span class="selected-counter">
+									{$this->msg( 'tsb-selected-count' )->numParams( 0 )->escaped()}
+								</span>
+								&nbsp;
+								<a href="#" class="older-requests-indicator"></a>
+							</div>
+						</div>
+						<div class="eight columns pane details"></div>
+					</div>
+				</div>
+				HTML
 		);
 	}
 
@@ -112,9 +112,9 @@ HTML
 
 	private function makeSearchBox(): string {
 		return <<<HTML
-<input class="request-filter-box right"
-	placeholder="{$this->msg( 'tsb-search-requests' )->escaped()}" type="search" />
-HTML;
+			<input class="request-filter-box right"
+				placeholder="{$this->msg( 'tsb-search-requests' )->escaped()}" type="search" />
+			HTML;
 	}
 
 	private function makeList(): string {
@@ -161,21 +161,21 @@ HTML;
 		$requestsList = implode( "\n", $items );
 
 		return <<<HTML
-<div class="row request-header">
-	<div class="four columns">
-		<button class="language-selector unselected">
-			{$this->msg( 'tsb-all-languages-button-label' )->escaped()}
-		</button>
-	</div>
-	<div class="five columns request-count"></div>
-	<div class="three columns text-center">
-		<input class="request-selector-all" name="request" type="checkbox" />
-	</div>
-</div>
-<div class="requests-list">
-	{$requestsList}
-</div>
-HTML;
+			<div class="row request-header">
+				<div class="four columns">
+					<button class="language-selector unselected">
+						{$this->msg( 'tsb-all-languages-button-label' )->escaped()}
+					</button>
+				</div>
+				<div class="five columns request-count"></div>
+				<div class="three columns text-center">
+					<input class="request-selector-all" name="request" type="checkbox" />
+				</div>
+			</div>
+			<div class="requests-list">
+				{$requestsList}
+			</div>
+			HTML;
 	}
 
 	private function makeRequestItem( array $request ): string {
@@ -191,20 +191,20 @@ HTML;
 		$agoEnc = htmlspecialchars( $this->getHumanTimestamp( $timestamp ) );
 
 		return <<<HTML
-<div class="row request" data-data="$requestdataEnc" id="$nameEncForId">
-	<div class="two columns amount">
-		<div class="translation-count">$countEnc</div>
-	</div>
-	<div class="seven columns request-info">
-		<div class="row username">$nameEnc</div>
-		<div class="row email" dir="ltr">$emailEnc</div>
-	</div>
-	<div class="three columns approval text-center">
-		<input class="row request-selector" name="request" type="checkbox" />
-		<div class="row signup-age">$agoEnc</div>
-	</div>
-</div>
-HTML;
+			<div class="row request" data-data="$requestdataEnc" id="$nameEncForId">
+				<div class="two columns amount">
+					<div class="translation-count">$countEnc</div>
+				</div>
+				<div class="seven columns request-info">
+					<div class="row username">$nameEnc</div>
+					<div class="row email" dir="ltr">$emailEnc</div>
+				</div>
+				<div class="three columns approval text-center">
+					<input class="row request-selector" name="request" type="checkbox" />
+					<div class="row signup-age">$agoEnc</div>
+				</div>
+			</div>
+			HTML;
 	}
 
 	private function getHumanTimestamp( MWTimestamp $ts ): string {

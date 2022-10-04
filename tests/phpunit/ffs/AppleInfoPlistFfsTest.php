@@ -59,16 +59,18 @@ class AppleInfoPlistFfsTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function stringProvider() {
-		$input = <<<STRINGS
-website = "<nowiki>http://en.wikipedia.org/</nowiki>";
-"language" = "English";
-STRINGS;
+		$input =
+			<<<'STRINGS'
+			website = "<nowiki>http://en.wikipedia.org/</nowiki>";
+			"language" = "English";
+			STRINGS;
 		yield [ $input, 'Empty or invalid key in line: "language" = "English"' ];
 
-		$input = <<<STRINGS
-website = "<nowiki>http://en.wikipedia.org/</nowiki>";
-language key = "English";
-STRINGS;
+		$input =
+			<<<'STRINGS'
+			website = "<nowiki>http://en.wikipedia.org/</nowiki>";
+			language key = "English";
+			STRINGS;
 		yield [ $input, 'Key with space found in line: language key = "English"' ];
 	}
 }

@@ -113,21 +113,23 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 		$pot = [];
 		$pluralCount = 0;
 
-		$results = <<<GETTEXT
-#
-msgid "definition"
-msgstr "translation"
+		$results =
+			/** @lang Locale */
+			<<<'GETTEXT'
+			#
+			msgid "definition"
+			msgstr "translation"
 
-#
-msgctxt ""
-msgid "definition"
-msgstr "translation"
+			#
+			msgctxt ""
+			msgid "definition"
+			msgstr "translation"
 
-#
-msgctxt "context"
-msgid "definition"
-msgstr "translation"
-GETTEXT;
+			#
+			msgctxt "context"
+			msgid "definition"
+			msgstr "translation"
+			GETTEXT;
 
 		$results = preg_split( '/\n\n/', $results );
 
@@ -153,99 +155,93 @@ GETTEXT;
 	}
 
 	/** @dataProvider provideShouldOverwrite */
-	public function testShouldOverwrite( $a, $b, $expected, $comment ) {
+	public function testShouldOverwrite( $a, $b, $expected ) {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new GettextFFS( $group );
 		$actual = $ffs->shouldOverwrite( $a, $b );
-		$this->assertEquals( $expected, $actual, $comment );
+		$this->assertEquals( $expected, $actual );
 	}
 
 	public function provideShouldOverwrite() {
-		$cases = [];
+		yield 'Date only change should not override' => [
+			/** @lang Locale */
+			<<<'GETTEXT'
+			#
+			msgid ""
+			msgstr ""
+			""
+			"PO-Revision-Date: 2017-02-09 07:24:07+0000\n"
+			"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+			"Content-Type: text/plain; charset=UTF-8\n"
+			"Content-Transfer-Encoding: 8bit\n"
+			"Language: azb\n"
+			"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\n"
+			"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-		$cases[] = [
-<<<GETTEXT
-#
-msgid ""
-msgstr ""
-""
-"PO-Revision-Date: 2017-02-09 07:24:07+0000\\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\\n"
-"Content-Type: text/plain; charset=UTF-8\\n"
-"Content-Transfer-Encoding: 8bit\\n"
-"Language: azb\\n"
-"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\n"
+			#: frontend/templates/index.html:38
+			msgid "About the map"
+			msgstr ""
+			GETTEXT,
+			/** @lang Locale */
+			<<<'GETTEXT'
+			#
+			msgid ""
+			msgstr ""
+			""
+			"PO-Revision-Date: 2017-02-06 07:07:03+0000\n"
+			"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+			"Content-Type: text/plain; charset=UTF-8\n"
+			"Content-Transfer-Encoding: 8bit\n"
+			"Language: azb\n"
+			"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\n"
+			"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/index.html:38
-msgid "About the map"
-msgstr ""
-GETTEXT
-			,
-<<<GETTEXT
-#
-msgid ""
-msgstr ""
-""
-"PO-Revision-Date: 2017-02-06 07:07:03+0000\\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\\n"
-"Content-Type: text/plain; charset=UTF-8\\n"
-"Content-Transfer-Encoding: 8bit\\n"
-"Language: azb\\n"
-"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\n"
-
-#: frontend/templates/index.html:38
-msgid "About the map"
-msgstr ""
-GETTEXT
-			,
-			false,
-			"Only date has changed"
+			#: frontend/templates/index.html:38
+			msgid "About the map"
+			msgstr ""
+			GETTEXT,
+			false
 		];
 
-		$cases[] = [
-<<<GETTEXT
-#
-msgid ""
-msgstr ""
-""
-"PO-Revision-Date: 2017-02-09 07:24:07+0000\\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\\n"
-"Content-Type: text/plain; charset=UTF-8\\n"
-"Content-Transfer-Encoding: 8bit\\n"
-"Language: azb\\n"
-"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\n"
+		yield 'Content change should override' => [
+			/** @lang Locale */
+			<<<'GETTEXT'
+			#
+			msgid ""
+			msgstr ""
+			""
+			"PO-Revision-Date: 2017-02-09 07:24:07+0000\n"
+			"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+			"Content-Type: text/plain; charset=UTF-8\n"
+			"Content-Transfer-Encoding: 8bit\n"
+			"Language: azb\n"
+			"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\n"
+			"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/index.html:38
-msgid "About the map"
-msgstr ""
-GETTEXT
-			,
-<<<GETTEXT
-#
-msgid ""
-msgstr ""
-""
-"PO-Revision-Date: 2017-02-06 07:07:03+0000\\n"
-"X-POT-Import-Date: 2016-08-11 04:53:15+0000\\n"
-"Content-Type: text/plain; charset=UTF-8\\n"
-"Content-Transfer-Encoding: 8bit\\n"
-"Language: fi\\n"
-"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\n"
+			#: frontend/templates/index.html:38
+			msgid "About the map"
+			msgstr ""
+			GETTEXT,
+			/** @lang Locale */
+			<<<'GETTEXT'
+			#
+			msgid ""
+			msgstr ""
+			""
+			"PO-Revision-Date: 2017-02-06 07:07:03+0000\n"
+			"X-POT-Import-Date: 2016-08-11 04:53:15+0000\n"
+			"Content-Type: text/plain; charset=UTF-8\n"
+			"Content-Transfer-Encoding: 8bit\n"
+			"Language: fi\n"
+			"X-Generator: MediaWiki 1.29.0-alpha; Translate 2017-01-24\n"
+			"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/index.html:38
-msgid "About the map"
-msgstr "Tietoja kartasta"
-GETTEXT
-			,
-			true,
-			"Content has changed"
+			#: frontend/templates/index.html:38
+			msgid "About the map"
+			msgstr "Tietoja kartasta"
+			GETTEXT,
+			true
 		];
-
-		return $cases;
 	}
 
 	public function testIsContentEqual() {

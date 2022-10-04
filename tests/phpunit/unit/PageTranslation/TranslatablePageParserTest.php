@@ -159,41 +159,40 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 		$s4->setIsInline( true );
 
 		yield [
-			<<<INPUT
-<languages/>
-<translate>
-== Unit tests ==
+			<<<'INPUT'
+			<languages/>
+			<translate>
+			== Unit tests ==
 
-Introduction to unit tests.
+			Introduction to unit tests.
 
-They are fun.
-</translate>
+			They are fun.
+			</translate>
 
-<abbr title="<translate nowrap>Smilie</translate>">:)</abbr>
-INPUT
-			, <<<TRANSLATION_TEMPLATE
-<languages/>
-<1>
+			<abbr title="<translate nowrap>Smilie</translate>">:)</abbr>
+			INPUT,
+			<<<'TRANSLATION_TEMPLATE'
+			<languages/>
+			<1>
 
-<2>
+			<2>
 
-<3>
+			<3>
 
-<abbr title="<5>">:)</abbr>
-TRANSLATION_TEMPLATE
-			, <<<SOURCE_TEMPLATE
-<languages/>
-<translate>
-<1>
+			<abbr title="<5>">:)</abbr>
+			TRANSLATION_TEMPLATE,
+			<<<'SOURCE_TEMPLATE'
+			<languages/>
+			<translate>
+			<1>
 
-<2>
+			<2>
 
-<3>
-</translate>
+			<3>
+			</translate>
 
-<abbr title="<translate nowrap><5></translate>">:)</abbr>
-SOURCE_TEMPLATE
-			,
+			<abbr title="<translate nowrap><5></translate>">:)</abbr>
+			SOURCE_TEMPLATE,
 			[
 				'<1>' => $s1,
 				'<2>' => $s2,
@@ -212,43 +211,42 @@ SOURCE_TEMPLATE
 		$s4->setIsInline( true );
 
 		yield [
-			<<<INPUT
-<languages/>
-<translate>
-== Unit tests == <!--T:11-->
+			<<<'INPUT'
+			<languages/>
+			<translate>
+			== Unit tests == <!--T:11-->
 
-<!--T:22-->
-Introduction to unit tests.
+			<!--T:22-->
+			Introduction to unit tests.
 
-<!--T:33-->
-They are fun.
-</translate>
+			<!--T:33-->
+			They are fun.
+			</translate>
 
-<abbr title="<translate nowrap><!--T:44--> Smilie</translate>">:)</abbr>
-INPUT
-			, <<<TRANSLATION_TEMPLATE
-<languages/>
-<1>
+			<abbr title="<translate nowrap><!--T:44--> Smilie</translate>">:)</abbr>
+			INPUT,
+			<<<'TRANSLATION_TEMPLATE'
+			<languages/>
+			<1>
 
-<2>
+			<2>
 
-<3>
+			<3>
 
-<abbr title="<5>">:)</abbr>
-TRANSLATION_TEMPLATE
-			, <<<SOURCE_TEMPLATE
-<languages/>
-<translate>
-<1>
+			<abbr title="<5>">:)</abbr>
+			TRANSLATION_TEMPLATE,
+			<<<'SOURCE_TEMPLATE'
+			<languages/>
+			<translate>
+			<1>
 
-<2>
+			<2>
 
-<3>
-</translate>
+			<3>
+			</translate>
 
-<abbr title="<translate nowrap><5></translate>">:)</abbr>
-SOURCE_TEMPLATE
-			,
+			<abbr title="<translate nowrap><5></translate>">:)</abbr>
+			SOURCE_TEMPLATE,
 			[
 				'<1>' => $s1,
 				'<2>' => $s2,

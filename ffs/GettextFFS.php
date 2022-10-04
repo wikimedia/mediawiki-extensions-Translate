@@ -428,12 +428,13 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$extra = '';
 		}
 
-		$output = <<<PHP
-# Translation of {$this->group->getLabel()} to $name ($native)
-# Exported from $wgSitename
-#
-$authors$extra
-PHP;
+		$output =
+			<<<EOT
+			# Translation of {$this->group->getLabel()} to $name ($native)
+			# Exported from $wgSitename
+			#
+			$authors$extra
+			EOT;
 
 		// Make sure there is no empty line before msgid
 		$output = trim( $output ) . "\n";

@@ -27,17 +27,17 @@ class DtdFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function testParsing() {
 		$file =
-			<<<DTD
+			<<<'DTD'
 			<!--
-# Messages for Interlingua (interlingua)
-# Exported from translatewiki.net
+			# Messages for Interlingua (interlingua)
+			# Exported from translatewiki.net
 
-# Author: McDutchie
--->
-<!ENTITY okawix.title "Okawix &okawix.vernum; - Navigator de Wikipedia">
-<!ENTITY okawix.back
-"Retro">
-DTD;
+			# Author: McDutchie
+			-->
+			<!ENTITY okawix.title "Okawix &okawix.vernum; - Navigator de Wikipedia">
+			<!ENTITY okawix.back
+			"Retro">
+			DTD;
 
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );

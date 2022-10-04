@@ -26,19 +26,19 @@ class JavaFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function testParsing() {
 		$file =
-			<<<PROPERTIES
+			<<<'PROPERTIES'
 			# You are reading the ".properties" entry.
-! The exclamation mark can also mark text as comments.
-website = <nowiki>http://en.wikipedia.org/</nowiki>
-language = English
-# The backslash below tells the application to continue reading
-# the value onto the next line.
-message = Welcome to \
-          Wikipedia!
-# Add spaces to the key
-key\ with\ spaces = Value that can be looked up with "key with spaces".
-key-with-{curlies} = Value that can be looked up with "key-with-{curlies}".
-PROPERTIES;
+			! The exclamation mark can also mark text as comments.
+			website = <nowiki>http://en.wikipedia.org/</nowiki>
+			language = English
+			# The backslash below tells the application to continue reading
+			# the value onto the next line.
+			message = Welcome to \
+			          Wikipedia!
+			# Add spaces to the key
+			key\ with\ spaces = Value that can be looked up with "key with spaces".
+			key-with-{curlies} = Value that can be looked up with "key-with-{curlies}".
+			PROPERTIES;
 
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );

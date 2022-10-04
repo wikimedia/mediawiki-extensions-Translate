@@ -44,25 +44,26 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		$diffHeader = $diff->addHeader( ' ', $this->msg( 'pp-diff-old-header' )->escaped(),
 			$this->msg( 'pp-diff-new-header' )->escaped() );
 
-		$out = <<<HTML
-<div class="mw-tpp-sp-container grid">
-	<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form" action="">
-		<input id="pp-summary" type="hidden" value="{$summaryValue}" />
-		<input name="page" id="page" class="mw-searchInput mw-ui-input"
-			placeholder="{$pagenamePlaceholder}" value="{$inputValue}"/>
-		<button id="action-prepare" class="mw-ui-button mw-ui-progressive" type="button">
-			{$prepareButtonValue}</button>
-		<button id="action-save" class="mw-ui-button mw-ui-progressive hide" type="button">
-			{$saveButtonValue}</button>
-		<button id="action-cancel" class="mw-ui-button mw-ui-quiet hide" type="button">
-			{$cancelButtonValue}</button>
-	</form>
-	<div class="messageDiv hide"></div>
-	<div class="divDiff hide">
-		{$diffHeader}
-	</div>
-</div>
-HTML;
+		$out =
+			<<<HTML
+			<div class="mw-tpp-sp-container grid">
+				<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form" action="">
+					<input id="pp-summary" type="hidden" value="{$summaryValue}" />
+					<input name="page" id="page" class="mw-searchInput mw-ui-input"
+						placeholder="{$pagenamePlaceholder}" value="{$inputValue}"/>
+					<button id="action-prepare" class="mw-ui-button mw-ui-progressive" type="button">
+						{$prepareButtonValue}</button>
+					<button id="action-save" class="mw-ui-button mw-ui-progressive hide" type="button">
+						{$saveButtonValue}</button>
+					<button id="action-cancel" class="mw-ui-button mw-ui-quiet hide" type="button">
+						{$cancelButtonValue}</button>
+				</form>
+				<div class="messageDiv hide"></div>
+				<div class="divDiff hide">
+					{$diffHeader}
+				</div>
+			</div>
+			HTML;
 		$output->addHTML( $out );
 		$output->addHTML(
 			Html::errorBox(

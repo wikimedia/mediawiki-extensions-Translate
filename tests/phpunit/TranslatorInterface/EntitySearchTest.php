@@ -18,17 +18,18 @@ use WANObjectCache;
  */
 class EntitySearchTest extends MediaWikiIntegrationTestCase {
 	public function getMessageGroupFactoryStub(): MessageGroups {
-		$data = <<<EOF
-Page
-Translatable page
-Pägë
-Translatable pägë
-Page 1
-Page 10
-Page 2
-Page Page Page Page
-page page page page
-EOF;
+		$data =
+			<<<'EOF'
+			Page
+			Translatable page
+			Pägë
+			Translatable pägë
+			Page 1
+			Page 10
+			Page 2
+			Page Page Page Page
+			page page page page
+			EOF;
 		$data = explode( "\n", $data );
 		$stubGroups = [];
 		foreach ( $data as $dataItem ) {
@@ -135,16 +136,17 @@ EOF;
 	}
 
 	public function getMessageIndexStub(): MessageIndex {
-		$data = <<<EOF
-8:title
-8:page title
-8:CAPITAL TITLE
-8:big_bunny
-8:prefix
-9:prefix-1
-9:prefix-2
-9:prefix-3
-EOF;
+		$data =
+			<<<'EOF'
+			8:title
+			8:page title
+			8:CAPITAL TITLE
+			8:big_bunny
+			8:prefix
+			9:prefix-1
+			9:prefix-2
+			9:prefix-3
+			EOF;
 		$data = explode( "\n", $data );
 		$stub = $this->createStub( MessageIndex::class );
 		$stub->method( 'getKeys' )->willReturn( $data );

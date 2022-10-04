@@ -95,18 +95,19 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		$authors = $this->doAuthors( $collection );
 
-		$output = <<<PHP
-/** $name ($native)
- * $docu
- * To improve a translation please visit $wgServer
- *
- * @ingroup Language
- * @file
- *
-$authors */
+		$output =
+			<<<PHP
+			/** $name ($native)
+			 * $docu
+			 * To improve a translation please visit $wgServer
+			 *
+			 * @ingroup Language
+			 * @file
+			 *
+			$authors */
 
 
-PHP;
+			PHP;
 
 		return $output;
 	}

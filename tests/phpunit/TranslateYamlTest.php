@@ -65,15 +65,16 @@ class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 			$c = '2.000000';
 		}
 
-		$expected = <<<YAML
----
-a: "2."
-b: "22222222222222222222222222222222222222222222222222222222222222."
-c: $c
-d: "2.0"
-...
+		$expected =
+			<<<YAML
+			---
+			a: "2."
+			b: "22222222222222222222222222222222222222222222222222222222222222."
+			c: $c
+			d: "2.0"
+			...
 
-YAML;
+			YAML;
 
 		$output = TranslateYaml::dump( $input );
 		$this->assertEquals( $expected, $output, "Floaty strings outputted as strings" );

@@ -148,14 +148,14 @@ class AmdFFS extends SimpleFFS {
 		$authorsList = $this->authorsList( $authors );
 
 		return <<<EOT
-/**
- * Messages for $name
- * Exported from $wgSitename
- *
-{$authorsList}
- */
-define(
-EOT;
+			/**
+			 * Messages for $name
+			 * Exported from $wgSitename
+			 *
+			{$authorsList}
+			 */
+			define(
+			EOT;
 	}
 
 	/**

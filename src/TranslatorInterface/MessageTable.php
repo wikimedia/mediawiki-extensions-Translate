@@ -52,12 +52,13 @@ class MessageTable extends ContextSource {
 			->numParams( $batchSize )
 			->escaped();
 
-		$loader = <<<HTML
-<div class="tux-messagetable-loader hide" data-messagegroup="$groupId" data-pagesize="$batchSize">
-	<span class="tux-loading-indicator"></span>
-	<div class="tux-messagetable-loader-info">$msg</div>
-</div>
-HTML;
+		$loader =
+			<<<HTML
+			<div class="tux-messagetable-loader hide" data-messagegroup="$groupId" data-pagesize="$batchSize">
+				<span class="tux-loading-indicator"></span>
+				<div class="tux-messagetable-loader-info">$msg</div>
+			</div>
+			HTML;
 
 		$hideOwn = $this->msg( 'tux-editor-proofreading-hide-own-translations' )->escaped();
 		$clearTranslated = $this->msg( 'tux-editor-clear-translated' )->escaped();
@@ -65,23 +66,24 @@ HTML;
 		$modePage = $this->msg( 'tux-editor-page-mode' )->escaped();
 		$modeProofread = $this->msg( 'tux-editor-proofreading-mode' )->escaped();
 
-		$actionbar = <<<HTML
-<div class="tux-action-bar hide row">
-	<div class="three columns tux-message-list-statsbar" data-messagegroup="$groupId"></div>
-	<div class="three columns text-center">
-		<button class="toggle button tux-proofread-own-translations-button hide">
-			$hideOwn
-		</button>
-		<button class="toggle button tux-editor-clear-translated hide">$clearTranslated</button>
-	</div>
-	<div class="six columns tux-view-switcher text-center">
-		<button class="toggle down translate-mode-button">$modeTranslate
-		</button><button class="toggle down page-mode-button">$modePage
-		</button><button class="toggle hide proofread-mode-button">$modeProofread
-		</button>
-	</div>
-</div>
-HTML;
+		$actionbar =
+			<<<HTML
+			<div class="tux-action-bar hide row">
+				<div class="three columns tux-message-list-statsbar" data-messagegroup="$groupId"></div>
+				<div class="three columns text-center">
+					<button class="toggle button tux-proofread-own-translations-button hide">
+						$hideOwn
+					</button>
+					<button class="toggle button tux-editor-clear-translated hide">$clearTranslated</button>
+				</div>
+				<div class="six columns tux-view-switcher text-center">
+					<button class="toggle down translate-mode-button">$modeTranslate
+					</button><button class="toggle down page-mode-button">$modePage
+					</button><button class="toggle hide proofread-mode-button">$modeProofread
+					</button>
+				</div>
+			</div>
+			HTML;
 
 		// Actual message table is fetched and rendered at client side. This just provides
 		// the loader and action bar.

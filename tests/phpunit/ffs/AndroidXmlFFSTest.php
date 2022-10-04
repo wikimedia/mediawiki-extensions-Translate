@@ -29,27 +29,27 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function testParsing() {
 		$file =
-<<<'XML'
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Authors:
-* Imaginary translator
--->
-<resources>
-	<string name="wpt_voicerec">Voice recording</string>
-	<string name="wpt_stillimage" fuzzy="true">Picture</string>
-	<plurals name="alot">
-		<item quantity="one">bunny</item>
-		<item quantity="other">bunnies</item>
-	</plurals>
-	<string name="has_quotes">Go to \"Wikipedia\"</string>
-	<string name="starts_with_at">\@Wikipedia</string>
-	<string name="has_ampersand">1&amp;nbsp;000</string>
-	<string name="has_newline">first\nsecond</string>
-	<string name="has_slashes">first \\ second</string>
-	<string name="utf8_symbols">Hello World: \\u1234 \u1234 \\\u1234</string>
-	<string name="quote_double_slash">Hello World: \' \\\'</string>
-</resources>
-XML;
+			<<<'XML'
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Authors:
+			* Imaginary translator
+			-->
+			<resources>
+				<string name="wpt_voicerec">Voice recording</string>
+				<string name="wpt_stillimage" fuzzy="true">Picture</string>
+				<plurals name="alot">
+					<item quantity="one">bunny</item>
+					<item quantity="other">bunnies</item>
+				</plurals>
+				<string name="has_quotes">Go to \"Wikipedia\"</string>
+				<string name="starts_with_at">\@Wikipedia</string>
+				<string name="has_ampersand">1&amp;nbsp;000</string>
+				<string name="has_newline">first\nsecond</string>
+				<string name="has_slashes">first \\ second</string>
+				<string name="utf8_symbols">Hello World: \\u1234 \u1234 \\\u1234</string>
+				<string name="quote_double_slash">Hello World: \' \\\'</string>
+			</resources>
+			XML;
 
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
@@ -119,13 +119,14 @@ XML;
 		$collection = new MockMessageCollection( $messages, self::DOCLANG );
 
 		$actual = $ffs->writeIntoVariable( $collection );
-		$expected = <<<'XML'
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="all">
-  <string name="a">b</string>
-</resources>
+		$expected =
+			<<<'XML'
+			<?xml version="1.0" encoding="utf-8"?>
+			<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="all">
+			  <string name="a">b</string>
+			</resources>
 
-XML;
+			XML;
 		$this->assertEquals( $expected, $actual );
 	}
 }

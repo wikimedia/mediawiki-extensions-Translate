@@ -390,18 +390,19 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		int $total
 	): void {
 		$messageSelector = $this->messageSelector();
-		$this->getOutput()->addHTML( <<<HTML
-<div class="grid tux-searchpage">
-	<div class="row tux-searchboxform">
-		<div class="tux-search-tabs offset-by-three">$messageSelector</div>
-		<div class="row tux-search-options">
-			<div class="offset-by-three nine columns tux-search-inputs">
-				<div class="row searchinput">$search</div>
-				<div class="row count">$count</div>
-			</div>
-		</div>
-	</div>
-HTML
+		$this->getOutput()->addHTML(
+			<<<HTML
+			<div class="grid tux-searchpage">
+				<div class="row tux-searchboxform">
+					<div class="tux-search-tabs offset-by-three">$messageSelector</div>
+					<div class="row tux-search-options">
+						<div class="offset-by-three nine columns tux-search-inputs">
+							<div class="row searchinput">$search</div>
+							<div class="row count">$count</div>
+						</div>
+					</div>
+				</div>
+			HTML
 		);
 
 		$query = trim( $this->opts->getValue( 'query' ) );
@@ -423,25 +424,27 @@ HTML
 			);
 		}
 
-		$this->getOutput()->addHTML( <<<HTML
-	<div class="row searchcontent">
-		<div class="three columns facets">$facets</div>
-		<div class="nine columns results">$results</div>
-	</div>
-</div>
-HTML
+		$this->getOutput()->addHTML(
+			<<<HTML
+				<div class="row searchcontent">
+					<div class="three columns facets">$facets</div>
+					<div class="nine columns results">$results</div>
+				</div>
+			</div>
+			HTML
 		);
 	}
 
 	private function showEmptySearch(): void {
 		$search = $this->getSearchInput( '' );
-		$this->getOutput()->addHTML( <<<HTML
-<div class="grid tux-searchpage">
-	<div class="row searchinput">
-		<div class="nine columns offset-by-three">$search</div>
-	</div>
-</div>
-HTML
+		$this->getOutput()->addHTML(
+			<<<HTML
+			<div class="grid tux-searchpage">
+				<div class="row searchinput">
+					<div class="nine columns offset-by-three">$search</div>
+				</div>
+			</div>
+			HTML
 		);
 	}
 
@@ -452,19 +455,20 @@ HTML
 			'',
 			'row'
 		);
-		$this->getOutput()->addHTML( <<<HTML
-<div class="grid tux-searchpage">
-	<div class="row tux-searchboxform">
-		<div class="tux-search-tabs offset-by-three">$messageSelector</div>
-		<div class="row tux-search-options">
-			<div class="offset-by-three nine columns tux-search-inputs">
-				<div class="row searchinput">$search</div>
-				$messageHTML
+		$this->getOutput()->addHTML(
+			<<<HTML
+			<div class="grid tux-searchpage">
+				<div class="row tux-searchboxform">
+					<div class="tux-search-tabs offset-by-three">$messageSelector</div>
+					<div class="row tux-search-options">
+						<div class="offset-by-three nine columns tux-search-inputs">
+							<div class="row searchinput">$search</div>
+							$messageHTML
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-</div>
-HTML
+			HTML
 		);
 	}
 

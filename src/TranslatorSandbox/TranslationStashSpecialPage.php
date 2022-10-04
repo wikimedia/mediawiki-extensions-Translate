@@ -100,27 +100,27 @@ class TranslationStashSpecialPage extends SpecialPage {
 
 		$out->addHTML(
 			<<<HTML
-<div class="grid">
-	<div class="row translate-welcome-header">
-		<h1>
-			{$this->msg( 'translate-translationstash-welcome', $user->getName() )->parse()}
-		</h1>
-		<p>
-			{$this->msg( 'translate-translationstash-welcome-note' )->parse()}
-		</p>
-	</div>
-	<div class="row translate-stash-control">
-		<div class="six columns stash-stats">
-			{$progress}
-		</div>
-		<div class="six columns ext-translate-language-selector">
-			{$this->tuxLanguageSelector()}
-		</div>
-	</div>
-	{$this->getMessageTable()}
-	<div class="row limit-reached hide"></div>
-</div>
-HTML
+			<div class="grid">
+				<div class="row translate-welcome-header">
+					<h1>
+						{$this->msg( 'translate-translationstash-welcome', $user->getName() )->parse()}
+					</h1>
+					<p>
+						{$this->msg( 'translate-translationstash-welcome-note' )->parse()}
+					</p>
+				</div>
+				<div class="row translate-stash-control">
+					<div class="six columns stash-stats">
+						{$progress}
+					</div>
+					<div class="six columns ext-translate-language-selector">
+						{$this->tuxLanguageSelector()}
+					</div>
+				</div>
+				{$this->getMessageTable()}
+				<div class="row limit-reached hide"></div>
+			</div>
+			HTML
 		);
 	}
 

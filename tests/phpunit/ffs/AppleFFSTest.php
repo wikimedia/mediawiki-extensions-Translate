@@ -27,21 +27,21 @@ class AppleFFSTest extends MediaWikiIntegrationTestCase {
 
 	public function testParsing() {
 		$file =
-			<<<STRINGS
-// aslkfjlkasdfjklfsj
-/* You are reading the ".strings" entry. */
-/* It's all for fun and fun for all.
-On two lines! */
- /* This is a
-    Multiline comment
-	  test */
-// Author: Testy McTesterson
-"website" = "<nowiki>http://en.wikipedia.org/</nowiki>";
-"language" = "English";
-// Add spaces to the key
-"key with spaces" = "Value that can be looked up with \"key with spaces\".";
-"key-with-{curlies}" = "Value that can be looked up with \"key-with-{curlies}\".";
-STRINGS;
+			<<<'STRINGS'
+			// aslkfjlkasdfjklfsj
+			/* You are reading the ".strings" entry. */
+			/* It's all for fun and fun for all.
+			On two lines! */
+			 /* This is a
+			    Multiline comment
+				  test */
+			// Author: Testy McTesterson
+			"website" = "<nowiki>http://en.wikipedia.org/</nowiki>";
+			"language" = "English";
+			// Add spaces to the key
+			"key with spaces" = "Value that can be looked up with \"key with spaces\".";
+			"key-with-{curlies}" = "Value that can be looked up with \"key-with-{curlies}\".";
+			STRINGS;
 
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );

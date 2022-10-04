@@ -54,15 +54,6 @@ class JsonFFSTest extends MediaWikiIntegrationTestCase {
 	public function jsonProvider() {
 		$values = [];
 
-		$file1 =
-			<<<JSON
-			{
-	"one": "jeden",
-	"two": "dwa",
-	"three": "trzy"
-}
-JSON;
-
 		$values[] = [
 			[
 				'one' => 'jeden',
@@ -70,35 +61,35 @@ JSON;
 				'three' => 'trzy',
 			],
 			[],
-			$file1,
-		];
-
-		$file2 =
-			<<<JSON
+			<<<'JSON'
 			{
-	"@metadata": {
-		"authors": ["Niklas", "Amir"]
-	},
-	"word": "слово"
-}
-JSON;
+				"one": "jeden",
+				"two": "dwa",
+				"three": "trzy"
+			}
+			JSON
+		];
 
 		$values[] = [
 			[ 'word' => 'слово' ],
 			[ 'Niklas', 'Amir' ],
-			$file2,
+			<<<'JSON'
+			{
+				"@metadata": {
+					"authors": ["Niklas", "Amir"]
+				},
+				"word": "слово"
+			}
+			JSON
 		];
-
-		$file3 =
-			<<<JSON
-			<This is not
-Json!>@£0 file
-JSON;
 
 		$values[] = [
 			[],
 			[],
-			$file3,
+			<<<'JSON'
+			<This is not
+			Json!>@£0 file
+			JSON
 		];
 
 		return $values;

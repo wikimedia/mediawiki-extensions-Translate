@@ -27,22 +27,23 @@ class FallbacksCompare extends Maintenance {
 	}
 
 	public function execute() {
-		$template = <<<XML
-<?xml version="1.0" encoding="UTF-8"?>
-<graphml
-	xmlns="http://graphml.graphdrawing.org/xmlns"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
-		http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"
-	xmlns:y="http://www.yworks.com/xml/graphml">
+		$template =
+			<<<'XML'
+			<?xml version="1.0" encoding="UTF-8"?>
+			<graphml
+				xmlns="http://graphml.graphdrawing.org/xmlns"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+					http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"
+				xmlns:y="http://www.yworks.com/xml/graphml">
 
-	<key id="code" for="node" yfiles.type="nodegraphics"/>
-	<graph id="G" edgedefault="directed">
-$1
-	</graph>
-</graphml>
+				<key id="code" for="node" yfiles.type="nodegraphics"/>
+				<graph id="G" edgedefault="directed">
+			$1
+				</graph>
+			</graphml>
 
-XML;
+			XML;
 
 		$langs = MediaWikiServices::getInstance()
 			->getLanguageNameUtils()
