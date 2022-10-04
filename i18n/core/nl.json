@@ -205,7 +205,7 @@
 	"abusefilter-edit-builder-vars-translate-target-language": "Doeltaal voor de vertaling",
 	"translate-jssti-add": "Aan lijst toevoegen",
 	"managemessagegroups": "Berichtengroepen beheren",
-	"translate-smg-notallowed": "U mag deze handeling niet uitvoeren.",
+	"translate-smg-notallowed": "U mag deze handeling niet verrichten.",
 	"translate-smg-nochanges": "Er zijn geen veranderingen te verwerken.",
 	"translate-smg-submit": "Wijzigingen opslaan voor verwerking",
 	"translate-smg-submitted": "De berichtendefinities zijn bijgewerkt. De wijzigingen worden in de achtergrond verwerkt.",
