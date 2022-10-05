@@ -65,7 +65,7 @@ return [
 			$services->get( 'Translate:GroupSynchronizationCache' ),
 			$services->getJobQueueGroup(),
 			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
-			MessageIndex::singleton()
+			$services->get( 'Translate:MessageIndex' )
 		);
 	},
 
