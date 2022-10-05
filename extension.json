@@ -306,7 +306,8 @@
 				"NamespaceInfo",
 				"RevisionLookup",
 				"Translate:GroupSynchronizationCache",
-				"JobQueueGroup"
+				"JobQueueGroup",
+				"Translate:MessageIndex"
 			]
 		},
 		"SupportedLanguages": {

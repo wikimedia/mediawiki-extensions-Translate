@@ -68,13 +68,16 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	private $displayGroupSyncInfo;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
+	/** @var MessageIndex */
+	private $messageIndex;
 
 	public function __construct(
 		Language $contLang,
 		NamespaceInfo $nsInfo,
 		RevisionLookup $revLookup,
 		GroupSynchronizationCache $synchronizationCache,
-		JobQueueGroup $jobQueueGroup
+		JobQueueGroup $jobQueueGroup,
+		MessageIndex $messageIndex
 	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
@@ -84,6 +87,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->synchronizationCache = $synchronizationCache;
 		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this, $this->getLinkRenderer() );
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->messageIndex = $messageIndex;
 	}
 
 	public function doesWrites() {
@@ -1037,7 +1041,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$modificationGroupIds = array_keys( array_filter( $modificationJobs ) );
 		$renameGroupIds = array_keys( array_filter( $renameJobs ) );
 		$uniqueGroupIds = array_unique( array_merge( $modificationGroupIds, $renameGroupIds ) );
-		$messageIndexInstance = MessageIndex::singleton();
 		$jobQueueInstance = $this->jobQueueGroup;
 
 		foreach ( $uniqueGroupIds as $groupId ) {
@@ -1071,7 +1074,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			// Store all message keys in the interim cache - we're particularly interested in new
 			// and renamed messages, but it's cleaner to just store everything.
 			$group = MessageGroups::getGroup( $groupId );
-			$messageIndexInstance->storeInterim( $group, $messageKeys );
+			$this->messageIndex->storeInterim( $group, $messageKeys );
 
 			if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
 				$this->synchronizationCache->addMessages( $groupId, ...$messages );
