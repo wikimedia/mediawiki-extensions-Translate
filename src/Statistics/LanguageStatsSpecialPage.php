@@ -19,6 +19,7 @@ use MessageGroupStatsRebuildJob;
 use ObjectCache;
 use SpecialPage;
 use TranslateUtils;
+use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 
 /**
@@ -86,12 +87,15 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private $progressStatsTableFactory;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
+	/** @var ILoadBalancer */
+	private $loadBalancer;
 
 	public function __construct(
 		LinkBatchFactory $linkBatchFactory,
 		ProgressStatsTableFactory $progressStatsTableFactory,
 		LanguageNameUtils $languageNameUtils,
-		JobQueueGroup $jobQueueGroup
+		JobQueueGroup $jobQueueGroup,
+		ILoadBalancer $loadBalancer
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
@@ -99,6 +103,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->loadBalancer = $loadBalancer;
 	}
 
 	public function isIncludable() {
@@ -503,7 +508,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	}
 
 	private function getWorkflowStates(): array {
-		$db = wfGetDB( DB_REPLICA );
+		$db = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $db->select(
 			'translate_groupreviews',
 			[ 'tgr_state', 'tgr_group' ],

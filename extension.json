@@ -275,7 +275,8 @@
 				"LinkBatchFactory",
 				"Translate:ProgressStatsTableFactory",
 				"LanguageNameUtils",
-				"JobQueueGroup"
+				"JobQueueGroup",
+				"DBLoadBalancer"
 			]
 		},
 		"MessageGroupStats": {
