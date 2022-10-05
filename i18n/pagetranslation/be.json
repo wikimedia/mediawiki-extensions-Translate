@@ -9,7 +9,8 @@
 			"ZlyiLev",
 			"Тест",
 			"Чаховіч Уладзіслаў",
-			"No Sleep till Krupki"
+			"No Sleep till Krupki",
+			"Maksim L."
 		]
 	},
 	"pagetranslation": "Пераклад старонкі",
@@ -105,7 +106,7 @@
 	"tpt-aggregategroup-new-name": "Назва:",
 	"tpt-aggregategroup-new-description": "Апісанне (неабавязкова):",
 	"tpt-aggregategroup-remove-confirm": "Вы ўпэўненыя, што жадаеце выдаліць гэтую абагульняльную групу?",
-	"tpt-aggregategroup-invalid-group": "Група не існуе",
+	"tpt-aggregategroup-invalid-group": "Такой групы няма",
 	"tpt-aggregategroup-edit-name": "Назва:",
 	"tpt-aggregategroup-edit-description": "Апісанне:",
 	"tpt-aggregategroup-update": "Запісаць",
@@ -210,7 +211,7 @@
 	"pm-import-button-label": "Імпартаваць",
 	"pm-savepages-button-label": "Запісаць",
 	"pm-cancel-button-label": "Адмяніць",
-	"pm-page-does-not-exist": "$1 не існуе.",
+	"pm-page-does-not-exist": "Старонкі $1 няма.",
 	"pm-old-translations-missing": "$1 не мае старых перакладаў.",
 	"pm-extra-units-warning": "Могуць прысутнічаць дадатковыя адзінкі. Калі ласка, правільна супастаўце адзінкі крыніцы і перакладу.",
 	"pm-pagename-missing": "Калі ласка, увядзіце назву старонкі.",
