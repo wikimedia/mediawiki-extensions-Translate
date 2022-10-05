@@ -279,7 +279,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 				'services' => [
 					'LanguageNameUtils',
 					'Translate:TranslationStashReader',
-					'UserOptionsLookup'
+					'UserOptionsLookup',
+					'LanguageFactory',
 				],
 				'args' => [
 					static function () {

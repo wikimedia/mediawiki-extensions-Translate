@@ -7,6 +7,7 @@ use FormatJson;
 use Html;
 use Language;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\User\UserOptionsLookup;
 use SpecialPage;
@@ -30,6 +31,8 @@ class TranslationStashSpecialPage extends SpecialPage {
 	private $languageNameUtils;
 	/** @var UserOptionsLookup */
 	private $userOptionsLookup;
+	/** @var LanguageFactory */
+	private $languageFactory;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateSandboxLimit',
@@ -39,13 +42,15 @@ class TranslationStashSpecialPage extends SpecialPage {
 		LanguageNameUtils $languageNameUtils,
 		TranslationStashReader $stash,
 		UserOptionsLookup $userOptionsLookup,
+		LanguageFactory $languageFactory,
 		ServiceOptions $options
 	) {
+		parent::__construct( 'TranslationStash' );
 		$this->languageNameUtils = $languageNameUtils;
 		$this->stash = $stash;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->languageFactory = $languageFactory;
 		$this->options = $options;
-		parent::__construct( 'TranslationStash' );
 	}
 
 	public function doesWrites() {
@@ -61,8 +66,6 @@ class TranslationStashSpecialPage extends SpecialPage {
 
 		$this->setHeaders();
 		$out = $this->getOutput();
-
-		$this->stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
 
 		if ( !$this->hasPermissionToUse() ) {
 			$out->redirect( Title::newMainPage()->getLocalURL() );
@@ -185,7 +188,7 @@ HTML
 	/** Returns the source language for messages. */
 	protected function getSourceLanguage(): Language {
 		// Bad
-		return Language::factory( 'en' );
+		return $this->languageFactory->getLanguage( 'en' );
 	}
 
 	/** Returns the default target language for messages. */
@@ -209,12 +212,12 @@ HTML
 				}
 
 				if ( $code !== $source->getCode() ) {
-					return Language::factory( $code );
+					return $this->languageFactory->getLanguage( $code );
 				}
 			}
 		}
 
 		// User has not chosen any valid language. Pick the source.
-		return Language::factory( $source->getCode() );
+		return $this->languageFactory->getLanguage( $source->getCode() );
 	}
 }
