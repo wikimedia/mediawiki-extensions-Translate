@@ -8,10 +8,20 @@ use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPluralValidator
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPluralValidator
  */
-class MediaWikiPluralValidatorTest extends PHPUnit\Framework\TestCase {
+class MediaWikiPluralValidatorTest extends MediaWikiIntegrationTestCase {
+	private function getTestInstance(): MediaWikiPluralValidator {
+		$services = $this->getServiceContainer();
+		return new MediaWikiPluralValidator(
+			$services->getLanguageFactory(),
+			$services->getParserFactory(),
+			$services->getUserFactory()
+		);
+	}
+
 	/** @dataProvider getPluralFormCountProvider */
 	public function testGetPluralFormCount( $expected, $code, $comment ) {
-		$provided = MediaWikiPluralValidator::getPluralFormCount( $code );
+		$validator = $this->getTestInstance();
+		$provided = $validator->getPluralFormCount( $code );
 		$this->assertEquals( $expected, $provided, $comment );
 	}
 
@@ -23,7 +33,8 @@ class MediaWikiPluralValidatorTest extends PHPUnit\Framework\TestCase {
 
 	/** @dataProvider getPluralFormsProvider */
 	public function testGetPluralForms( $expected, $string, $comment ) {
-		$provided = MediaWikiPluralValidator::getPluralForms( $string );
+		$validator = $this->getTestInstance();
+		$provided = $validator->getPluralForms( $string );
 		$this->assertSame( $expected, $provided, $comment );
 	}
 

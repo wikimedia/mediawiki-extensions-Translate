@@ -3,12 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
-use Language;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\User\UserFactory;
 use Parser;
+use ParserFactory;
 use ParserOptions;
 use PPFrame;
 use TMessage;
@@ -20,6 +21,23 @@ use TMessage;
  * @since 2019.06
  */
 class MediaWikiPluralValidator implements MessageValidator {
+	/** @var LanguageFactory */
+	private $languageFactory;
+	/** @var ParserFactory */
+	private $parserFactory;
+	/** @var UserFactory */
+	private $userFactory;
+
+	public function __construct(
+		LanguageFactory $languageFactory,
+		ParserFactory $parserFactory,
+		UserFactory $userFactory
+	) {
+		$this->languageFactory = $languageFactory;
+		$this->parserFactory = $parserFactory;
+		$this->userFactory = $userFactory;
+	}
+
 	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 		$this->pluralCheck( $message, $issues );
@@ -50,8 +68,8 @@ class MediaWikiPluralValidator implements MessageValidator {
 			return;
 		}
 
-		$plurals = self::getPluralForms( $translation );
-		$allowed = self::getPluralFormCount( $code );
+		$plurals = $this->getPluralForms( $translation );
+		$allowed = $this->getPluralFormCount( $code );
 
 		foreach ( $plurals as $forms ) {
 			$forms = self::removeExplicitPluralForms( $forms );
@@ -80,8 +98,8 @@ class MediaWikiPluralValidator implements MessageValidator {
 	}
 
 	/** Returns the number of plural forms %MediaWiki supports for a language. */
-	public static function getPluralFormCount( string $code ): int {
-		$forms = Language::factory( $code )->getPluralRules();
+	public function getPluralFormCount( string $code ): int {
+		$forms = $this->languageFactory->getLanguage( $code )->getPluralRules();
 
 		// +1 for the 'other' form
 		return count( $forms ) + 1;
@@ -93,7 +111,7 @@ class MediaWikiPluralValidator implements MessageValidator {
 	 *
 	 * @return array[]
 	 */
-	public static function getPluralForms( string $translation ): array {
+	public function getPluralForms( string $translation ): array {
 		// Stores the forms from plural invocations
 		$plurals = [];
 
@@ -115,15 +133,14 @@ class MediaWikiPluralValidator implements MessageValidator {
 		};
 
 		// Setup parser
-		$services = MediaWikiServices::getInstance();
-		$parser = $services->getParserFactory()->create();
+		$parser = $this->parserFactory->create();
 		$parser->setFunctionHook( 'plural', $cb, Parser::SFH_NO_HASH | Parser::SFH_OBJECT_ARGS );
 
 		// Setup things needed for preprocess
 		$title = null;
 		$options = ParserOptions::newFromUserAndLang(
-			$services->getUserFactory()->newAnonymous(),
-			$services->getLanguageFactory()->getLanguage( 'en' )
+			$this->userFactory->newAnonymous(),
+			$this->languageFactory->getLanguage( 'en' )
 		);
 
 		$parser->preprocess( $translation, $title, $options );

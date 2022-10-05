@@ -25,7 +25,7 @@ use MediaWiki\Extension\Translate\Validation\Validators\PythonInterpolationValid
 use MediaWiki\Extension\Translate\Validation\Validators\ReplacementValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\UnicodePluralValidator;
-use RuntimeException;
+use MediaWiki\MediaWikiServices;
 
 /**
  * A factory class used to instantiate instances of pre-provided Validators
@@ -36,7 +36,7 @@ use RuntimeException;
  */
 class ValidatorFactory {
 	/** @var string[] */
-	protected static $validators = [
+	private static $validators = [
 		'BraceBalance' => BraceBalanceValidator::class,
 		'EscapeCharacter' => EscapeCharacterValidator::class,
 		'GettextNewline' => GettextNewlineValidator::class,
@@ -48,7 +48,14 @@ class ValidatorFactory {
 		'MediaWikiLink' => MediaWikiLinkValidator::class,
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
 		'MediaWikiParameter' => MediaWikiParameterValidator::class,
-		'MediaWikiPlural' => MediaWikiPluralValidator::class,
+		'MediaWikiPlural' => [
+			'class' => MediaWikiPluralValidator::class,
+			'services' => [
+				'LanguageFactory',
+				'ParserFactory',
+				'UserFactory'
+			]
+		],
 		'MediaWikiTimeList' => MediaWikiTimeListValidator::class,
 		'Newline' => NewlineValidator::class,
 		'NotEmpty' => NotEmptyValidator::class,
@@ -73,7 +80,19 @@ class ValidatorFactory {
 			throw new InvalidArgumentException( "Could not find validator with id - '$id'. " );
 		}
 
-		return self::loadInstance( self::$validators[ $id ], $params );
+		$spec = self::$validators[ $id ];
+		if ( is_string( $spec ) ) {
+			$spec = [ 'class' => $spec ];
+		}
+
+		if ( $params ) {
+			// Pass the given params as one item, instead of expanding
+			$spec['args'] = [ $params ];
+		}
+
+		// Phan seems to misunderstand the param type as callable instead of an array
+		// @phan-suppress-next-line PhanTypeInvalidCallableArraySize
+		return MediaWikiServices::getInstance()->getObjectFactory()->createObject( $spec );
 	}
 
 	/**
@@ -90,19 +109,5 @@ class ValidatorFactory {
 		}
 
 		return new $class( $params );
-	}
-
-	/**
-	 * Adds / Updates available list of validators
-	 * @param string $id Id of the validator
-	 * @param string $validator Validator class name
-	 * @param string $ns
-	 */
-	public static function set( $id, $validator, $ns = '\\' ) {
-		if ( !class_exists( $ns . $validator ) ) {
-			throw new RuntimeException( 'Could not find validator class - ' . $ns . $validator );
-		}
-
-		self::$validators[ $id ] = $ns . $validator;
 	}
 }
