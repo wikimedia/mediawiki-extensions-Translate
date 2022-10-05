@@ -58,10 +58,6 @@ class ValidatorFactory {
 		'Replacement' => ReplacementValidator::class,
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
-		// BC: remove when unused
-		'WikiLink' => MediaWikiLinkValidator::class,
-		// BC: remove when unused
-		'WikiParameter' => MediaWikiParameterValidator::class,
 	];
 
 	/**
