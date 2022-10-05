@@ -265,7 +265,7 @@
 	"tux-status-unsaved": "Neobjavljeno",
 	"tux-save-unknown-error": "Prišlo je do neznane napake.",
 	"tux-editor-placeholder-language": "Vaš prevod v $1",
-	"tux-editor-editsummary-placeholder": "Pojasni svoje spremembe (neobvezno)",
+	"tux-editor-editsummary-placeholder": "Pojasnite svoje spremembe (neobvezno)",
 	"tux-editor-paste-original-button-label": "Prilepi izvorno besedilo",
 	"tux-editor-discard-changes-button-label": "Zavrzi spremembe",
 	"tux-editor-save-button-label": "Objavi prevod",
