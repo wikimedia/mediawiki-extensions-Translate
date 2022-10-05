@@ -94,6 +94,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 					'Translate:TranslatablePageParser',
 					'LinkBatchFactory',
 					'JobQueueGroup',
+					'DBLoadBalancer',
+					'Translate:MessageIndex'
 				]
 			];
 			$wgSpecialPages['PageTranslationDeletePage'] = [

@@ -35,11 +35,11 @@ use Title;
 use TranslateMetadata;
 use TranslateUtils;
 use WebRequest;
+use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 use Xml;
 use function count;
 use function wfEscapeWikiText;
-use function wfGetDB;
 use const EDIT_FORCE_BOT;
 use const EDIT_UPDATE;
 
@@ -69,6 +69,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private $linkBatchFactory;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
+	/** @var ILoadBalancer */
+	private $loadBalancer;
+	/** @var MessageIndex */
+	private $messageIndex;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
@@ -76,7 +80,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		TranslatablePageParser $translatablePageParser,
 		LinkBatchFactory $linkBatchFactory,
-		JobQueueGroup $jobQueueGroup
+		JobQueueGroup $jobQueueGroup,
+		ILoadBalancer $loadBalancer,
+		MessageIndex $messageIndex
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageNameUtils = $languageNameUtils;
@@ -85,6 +91,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->translatablePageParser = $translatablePageParser;
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->loadBalancer = $loadBalancer;
+		$this->messageIndex = $messageIndex;
 	}
 
 	public function doesWrites(): bool {
@@ -1124,7 +1132,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			];
 		}
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->delete(
 			'translate_sections',
 			[ 'trs_page' => $page->getTitle()->getArticleID() ],
@@ -1144,7 +1152,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		// Store interim cache
 		$group = $page->getMessageGroup();
 		$newKeys = $group->makeGroupKeys( $changed );
-		MessageIndex::singleton()->storeInterim( $group, $newKeys );
+		$this->messageIndex->storeInterim( $group, $newKeys );
 
 		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
 		$this->jobQueueGroup->push( $job );
