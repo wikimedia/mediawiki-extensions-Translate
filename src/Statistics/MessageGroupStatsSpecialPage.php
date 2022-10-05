@@ -13,6 +13,7 @@ use MessageGroupStatsRebuildJob;
 use SpecialPage;
 use TranslateMetadata;
 use TranslateUtils;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Implements includable special page Special:MessageGroupStats which provides
@@ -67,16 +68,18 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	private $numberOfShownLanguages;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
-
-	// region SpecialPage overrides
+	/** @var ILoadBalancer */
+	private $loadBalancer;
 
 	public function __construct(
 		ProgressStatsTableFactory $progressStatsTableFactory,
-		JobQueueGroup $jobQueueGroup
+		JobQueueGroup $jobQueueGroup,
+		ILoadBalancer $loadBalancer
 	) {
 		parent::__construct( 'MessageGroupStats' );
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->loadBalancer = $loadBalancer;
 		$this->totals = MessageGroupStats::getEmptyStats();
 	}
 
@@ -448,7 +451,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	}
 
 	private function getWorkflowStates(): array {
-		$db = wfGetDB( DB_REPLICA );
+		$db = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $db->select(
 			'translate_groupreviews',
 			[ 'tgr_state', 'tgr_lang' ],

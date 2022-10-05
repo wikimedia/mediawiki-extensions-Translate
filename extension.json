@@ -283,7 +283,8 @@
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\MessageGroupStatsSpecialPage",
 			"services": [
 				"Translate:ProgressStatsTableFactory",
-				"JobQueueGroup"
+				"JobQueueGroup",
+				"DBLoadBalancer"
 			]
 		},
 		"ImportTranslations": {
