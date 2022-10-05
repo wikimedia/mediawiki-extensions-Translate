@@ -10,13 +10,17 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideJsonStructures
 	 * @dataProvider provideValidJsonStructure
+	 * @covers ::isValid
 	 */
 	public function testIsValid( string $json, bool $isValid ): void {
 		$content = new MessageBundleContent( $json );
 		$this->assertEquals( $isValid, $content->isValid() );
 	}
 
-	/** @dataProvider provideJsonStructures */
+	/**
+	 * @dataProvider provideJsonStructures
+	 * @covers ::validate
+	 */
 	public function testValidate( string $json, bool $isValid, ?string $exceptionMessage ): void {
 		$content = new MessageBundleContent( $json );
 
@@ -154,6 +158,7 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 		];
 	}
 
+	/** @covers ::getMessages */
 	public function testGetMessages(): void {
 		$json = json_encode(
 			[
@@ -177,7 +182,10 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 		);
 	}
 
-	/** @dataProvider provideGetMetadata */
+	/**
+	 * @dataProvider provideGetMetadata
+	 * @covers ::getMetadata
+	 */
 	public function testGetMetadata(
 		string $json,
 		?string $sourceLanguageCode,
