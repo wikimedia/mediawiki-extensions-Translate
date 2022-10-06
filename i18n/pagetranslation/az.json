@@ -4,7 +4,8 @@
 			"Cekli829",
 			"Khan27",
 			"Vesely35",
-			"Wertuose"
+			"Wertuose",
+			"Toghrul Rahimli"
 		]
 	},
 	"pagetranslation": "Səhifə tərcüməsi",
@@ -52,7 +53,7 @@
 	"tpt-rev-unmark-tooltip": "Bu səhifəni tərcümədən çıxarın.",
 	"tpt-rev-discourage-tooltip": "Bu səhifədəki tərcümələri imtina edin.",
 	"tpt-rev-encourage-tooltip": "Bu səhifəni normal tərcüməyə bərpa edin.",
-	"translate-tag-translate-link-desc": "Bu layihəni tərcümə et",
+	"translate-tag-translate-link-desc": "Bu səhifəni tərcümə et",
 	"translate-tag-markthis": "Bu versiyanı tərcümə üçün işarələ",
 	"tpt-languages-nonzero": "$1 ($2% tərcümə edilib)",
 	"aggregategroups": "Aqreqat qrupları",
