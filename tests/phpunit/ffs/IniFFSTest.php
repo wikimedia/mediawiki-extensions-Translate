@@ -8,6 +8,7 @@
  * @file
  */
 
+/** @covers IniFFS */
 class IniFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration = [

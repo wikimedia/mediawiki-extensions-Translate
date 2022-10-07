@@ -14,6 +14,7 @@ use WikiMessageGroup;
  * @copyright Copyright © 2012-2013, Harry Burt
  * @license GPL-2.0-or-later
  * @group medium
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\QueryMessageGroupsActionApi
  */
 class QueryMessageGroupsActionApiTest extends ApiTestCase {
 

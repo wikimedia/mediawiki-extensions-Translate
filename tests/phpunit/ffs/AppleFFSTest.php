@@ -9,6 +9,7 @@
  * @file
  */
 
+/** @covers AppleFFS */
 class AppleFFSTest extends MediaWikiIntegrationTestCase {
 
 	protected $groupConfiguration = [

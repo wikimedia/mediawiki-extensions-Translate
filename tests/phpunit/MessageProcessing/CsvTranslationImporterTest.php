@@ -13,7 +13,7 @@ use MessageIndex;
 use MockWikiMessageGroup;
 use WANObjectCache;
 
-/** @coversDefaultClass \MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter */
+/** @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter */
 class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();

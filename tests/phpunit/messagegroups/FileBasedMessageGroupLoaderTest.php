@@ -1,5 +1,6 @@
 <?php
 
+/** @covers FileBasedMessageGroupLoader */
 class FileBasedMessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 	/** @var FileBasedMessageGroupLoader */
 	protected $mgFileLoader;

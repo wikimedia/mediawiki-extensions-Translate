@@ -5,6 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
+/** @covers MessageGroupStats */
 class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();

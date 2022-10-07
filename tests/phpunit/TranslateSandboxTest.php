@@ -9,7 +9,10 @@
 
 use MediaWiki\MediaWikiServices;
 
-/** @group Database */
+/**
+ * @group Database
+ * @covers TranslateSandbox
+ */
 class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();

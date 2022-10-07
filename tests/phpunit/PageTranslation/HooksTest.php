@@ -28,6 +28,7 @@ use Wikimedia\TestingAccessWrapper;
  * @license GPL-2.0-or-later
  * @group Database
  * @group medium
+ * @covers TranslateHooks
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

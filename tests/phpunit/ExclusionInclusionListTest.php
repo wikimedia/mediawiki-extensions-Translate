@@ -6,6 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
+/** @covers FileBasedMessageGroup */
 class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 
 	/** @var MessageGroup */

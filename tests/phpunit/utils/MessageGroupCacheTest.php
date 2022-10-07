@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-/** @coversDefaultClass \MessageGroupCache */
+/** @covers MessageGroupCache */
 class MessageGroupCacheTest extends MediaWikiIntegrationTestCase {
 	public function testCacheRoundtrip() {
 		$parseOutput = [

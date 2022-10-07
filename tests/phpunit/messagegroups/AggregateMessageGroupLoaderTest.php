@@ -1,6 +1,9 @@
 <?php
 
-/** @group Database */
+/**
+ * @group Database
+ * @covers AggregateMessageGroupLoader
+ */
 class AggregateMessageGroupLoaderTest extends PHPUnit\Framework\TestCase {
 	public function testCacheCalls() {
 		/** @var MessageGroupWANCache $mockMgWANCache */

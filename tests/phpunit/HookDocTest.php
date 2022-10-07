@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+/** @coversNothing */
 class HookDocTest extends MediaWikiIntegrationTestCase {
 	protected $documented = [];
 	protected $used = [];

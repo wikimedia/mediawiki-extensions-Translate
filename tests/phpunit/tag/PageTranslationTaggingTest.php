@@ -7,6 +7,7 @@ use MediaWiki\MediaWikiServices;
 /**
  * @group Database
  * @group medium
+ * @covers TranslatablePage
  */
 class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

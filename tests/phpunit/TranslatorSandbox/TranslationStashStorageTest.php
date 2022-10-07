@@ -11,6 +11,7 @@ use User;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @group Database
+ * @covers \MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage
  */
 class TranslationStashStorageTest extends MediaWikiIntegrationTestCase {
 	public function testAdd() {

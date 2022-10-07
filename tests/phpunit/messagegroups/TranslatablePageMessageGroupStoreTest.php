@@ -1,6 +1,9 @@
 <?php
 
-/** @group Database */
+/**
+ * @group Database
+ * @covers TranslatablePageMessageGroupStore
+ */
 class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase {
 	use TranslatablePageTestTrait;
 

@@ -12,6 +12,7 @@ use Wikimedia\TestingAccessWrapper;
 /**
  * @group Database
  * @group large
+ * @covers MessageIndex
  */
 class MessageIndexTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

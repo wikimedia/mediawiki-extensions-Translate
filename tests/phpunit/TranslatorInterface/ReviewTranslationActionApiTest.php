@@ -20,6 +20,7 @@ use WANObjectCache;
 /**
  * @group Database
  * @group medium
+ * @covers \MediaWiki\Extension\Translate\TranslatorInterface\ReviewTranslationActionApi
  */
 class ReviewTranslationActionApiTest extends ApiTestCase {
 	protected function setUp(): void {

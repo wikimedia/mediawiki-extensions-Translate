@@ -7,6 +7,7 @@
 
 /**
  * Mostly test mirroring and failure modes.
+ * @covers TTMServerMessageUpdateJob
  */
 class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	/**

@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
  * @ingroup PageTranslation
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser
  */
 class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 	public static function provideTestFiles() {

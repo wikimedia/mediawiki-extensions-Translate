@@ -12,7 +12,7 @@ use WikiMessageGroup;
  * Unit tests for message group state change api.
  * @author Niklas Laxström
  * @group Database
- * @coversDefaultClass \namespace MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview
  */
 class MessageGroupReviewTest extends MediaWikiIntegrationTestCase {
 	public function testGetSetState(): void {

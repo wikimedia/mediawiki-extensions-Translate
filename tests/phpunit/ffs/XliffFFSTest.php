@@ -5,6 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
+/** @covers XliffFFS */
 class XliffFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration = [
 		'BASIC' => [

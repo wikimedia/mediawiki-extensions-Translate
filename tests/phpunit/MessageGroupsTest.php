@@ -8,6 +8,7 @@
 /**
  * @group Database
  * ^ See AggregateMessageGroup::getGroups -> MessageGroups::getPriority
+ * @covers MessageGroups
  */
 class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

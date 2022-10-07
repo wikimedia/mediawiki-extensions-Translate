@@ -7,7 +7,10 @@
 
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
-/** @group medium */
+/**
+ * @group medium
+ * @covers WikiPageMessageGroup
+ */
 class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();

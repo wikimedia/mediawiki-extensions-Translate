@@ -5,6 +5,7 @@
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @covers TranslateYaml
  */
 class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

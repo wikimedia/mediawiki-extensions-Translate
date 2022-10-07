@@ -13,6 +13,7 @@ use WikiMessageGroup;
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @group medium
+ * @covers \MediaWiki\Extension\Translate\MessageLoading\QueryMessageCollectionActionApi
  */
 class QueryMessageCollectionActionApiTest extends ApiTestCase {
 	protected function setUp(): void {

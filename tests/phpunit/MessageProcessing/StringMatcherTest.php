@@ -12,6 +12,7 @@ use Title;
  * @file
  */
 
+/** @covers \MediaWiki\Extension\Translate\MessageProcessing\StringMatcher */
 class StringMatcherTest extends MediaWikiIntegrationTestCase {
 	/** @dataProvider messageKeyProvider */
 	public function testKeyPrefixing(

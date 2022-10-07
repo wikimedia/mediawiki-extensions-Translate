@@ -6,6 +6,7 @@ use MediaWiki\MediaWikiServices;
 /**
  * @group Database
  * @group medium
+ * @covers MessageGroupStatesUpdaterJob
  */
 class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 	protected function setUp(): void {
