@@ -45,7 +45,7 @@ class TranslationAidDataProvider {
 		}
 
 		// Optional performance optimization
-		if ( is_callable( [ $this->group, 'getMessageContent' ] ) ) {
+		if ( method_exists( $this->group, 'getMessageContent' ) ) {
 			// @phan-suppress-next-line PhanUndeclaredMethod
 			$this->definition = $this->group->getMessageContent( $this->handle );
 		} else {

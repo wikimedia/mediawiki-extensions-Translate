@@ -16,13 +16,26 @@ use RuntimeException;
  * @since 2020.08
  */
 class ParsingFailure extends RuntimeException {
+	/**
+	 * @var array
+	 * @phan-var non-empty-array
+	 */
 	private $messageSpec;
 
+	/**
+	 * @param string $message
+	 * @param array $messageSpec
+	 * @phan-param non-empty-array $messageSpec
+	 */
 	public function __construct( string $message, array $messageSpec ) {
 		parent::__construct( $message );
 		$this->messageSpec = $messageSpec;
 	}
 
+	/**
+	 * @return array
+	 * @phan-return non-empty-array
+	 */
 	public function getMessageSpecification(): array {
 		return $this->messageSpec;
 	}

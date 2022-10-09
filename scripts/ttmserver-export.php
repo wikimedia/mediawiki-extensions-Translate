@@ -171,8 +171,7 @@ class TTMServerBootstrap extends Maintenance {
 			$this->fatalError( "Service must implement WritableTTMServer" );
 		}
 
-		if ( is_callable( [ $server, 'setLogger' ] ) ) {
-			// Phan, why you so strict?
+		if ( method_exists( $server, 'setLogger' ) ) {
 			// @phan-suppress-next-line PhanUndeclaredMethod
 			$server->setLogger( $this );
 		}

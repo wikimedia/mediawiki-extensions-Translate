@@ -22,7 +22,7 @@ class InsertablesAid extends TranslationAid {
 		// This was added later, so not all classes have it. In addition
 		// the message group class hierarchy doesn't lend itself easily
 		// to the user of interfaces for this purpose.
-		if ( !is_callable( [ $group, 'getInsertablesSuggester' ] ) ) {
+		if ( !method_exists( $group, 'getInsertablesSuggester' ) ) {
 			throw new TranslationHelperException( 'Group does not have insertable suggesters' );
 		}
 

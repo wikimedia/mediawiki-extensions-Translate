@@ -221,7 +221,6 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$name = TranslateUtils::getLanguageName( $code );
 			$native = TranslateUtils::getLanguageName( $code, $code );
 			$output = "# Messages for $name ($native)\n";
-			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$output .= "# Exported from $wgSitename\n";
 		}
 

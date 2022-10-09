@@ -952,7 +952,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$group = $handle->getGroup();
 
-			if ( is_callable( [ $group, 'getMessageContent' ] ) ) {
+			if ( method_exists( $group, 'getMessageContent' ) ) {
 				// @phan-suppress-next-line PhanUndeclaredMethod
 				$definition = $group->getMessageContent( $handle );
 			} else {
