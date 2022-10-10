@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Maro21",
 			"Matma Rex",
 			"Rail",
 			"Railfail536",
@@ -24,7 +25,7 @@
 	"tux-sst-prev": "‹ Poprzednie",
 	"tux-sst-default": "Tłumaczenia",
 	"tux-sst-translated": "Tłumaczenia z języka $1",
-	"tux-sst-untranslated": "Nie przetłumaczone na język $1",
+	"tux-sst-untranslated": "Nieprzetłumaczone na język $1",
 	"tux-sst-outdated": "Przestarzałe tłumaczenia z $1",
 	"tux-sst-ellipsis-untranslated": "Brak tłumaczeń",
 	"tux-sst-ellipsis-outdated": "Przestarzałe tłumaczenia",
