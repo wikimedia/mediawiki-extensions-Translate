@@ -260,7 +260,7 @@
 	"tux-editor-tm-match": "Zey $1%",
 	"tux-notices-more": "{{PLURAL:$1|$1 zêde}}",
 	"tux-notices-hide": "bınımne",
-	"tux-editor-save-failed": "Qeyd kerdışa açarnayışi nêbi:$1",
+	"tux-editor-save-failed": "Qeydkerdışê çarnayışi nêbi:$1",
 	"tux-editor-n-uses": "$1 {{PLURAL:$1|raye gureno|reyi gurenê}}",
 	"tux-editor-message-desc-more": "Zêde bıvêne",
 	"tux-editor-message-desc-less": "Şenık bıvêne",

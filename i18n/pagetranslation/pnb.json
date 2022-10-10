@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Khalid Mahmood",
-			"Abbas dhothar"
+			"Abbas dhothar",
+			"Bgo eiu"
 		]
 	},
 	"tpt-select-prioritylangs-reason": "وجہ:",
+	"tpt-languages-legend": "ہور بولیاں:",
 	"tpt-languages-nonzero": "$1 ($2% بولی پلٹی گئی)",
 	"tpt-translation-restricted": "وجہ: $1",
 	"tpt-aggregategroup-edit-description": "تفصیل:",
