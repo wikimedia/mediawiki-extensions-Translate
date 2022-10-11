@@ -1,6 +1,6 @@
 !! options
 version=2
-parsoid-compatible
+parsoid-compatible=wt2html,wt2wt
 !! end
 
 # Force the test runner to ensure the extension is loaded
@@ -103,4 +103,16 @@ parsoid={
 <translate>{{1x|<tvar|var>hello</>}}</translate>
 !! html/parsoid
 <p><meta typeof="mw:Annotation/translate" data-mw='{"rangeId":"mwa0","extendedRange":false,"wtOffsets":[0,11]}'/><span about="#mwt1" typeof="mw:Transclusion" data-parsoid='{"pi":[[{"k":"1"}]]}' data-mw='{"parts":[{"template":{"target":{"wt":"1x","href":"./Template:1x"},"params":{"1":{"wt":"&lt;tvar|var>hello&lt;/>"}},"i":0}}]}'>hello</span><meta typeof="mw:Annotation/translate/End" data-mw='{"wtOffsets":[36,48]}'/></p>
+!! end
+
+!! test
+tvar with old syntax containing template markup should not break
+!! options
+parsoid={
+	"modes": ["wt2html"]
+}
+!! wikitext
+<translate>hello <tvar|code>{{1x|</>world<tvar|code2>}}</></translate>
+!! html/parsoid
+<p><meta typeof="mw:Annotation/translate" data-mw='{"rangeId":"mwa0","extendedRange":false,"wtOffsets":[0,11]}'/>hello <meta typeof="mw:Annotation/tvar" data-mw='{"attrs":{"name":"code"},"rangeId":"mwa1","extendedRange":false,"wtOffsets":[17,28]}'/><span typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"1x","href":"./Template:1x"},"params":{"1":{"wt":"&lt;/>world&lt;tvar|code2>"}},"i":0}}]}'>world&lt;tvar</span><meta typeof="mw:Annotation/tvar/End" data-mw='{"wtOffsets":[55,58]}'/><meta typeof="mw:Annotation/translate/End" data-mw='{"wtOffsets":[58,70]}'/></p>
 !! end
