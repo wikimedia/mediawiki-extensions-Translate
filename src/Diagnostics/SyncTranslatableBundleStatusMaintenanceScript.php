@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
-use Maintenance;
+use LoggedUpdateMaintenance;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -20,12 +20,19 @@ use Title;
  * Script to identify the status of the translatable bundles in the rev_tag table
  * and update them in the translatable_bundles page.
  */
-class SyncTranslatableBundleStatusMaintenanceScript extends Maintenance {
+class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintenance {
 	private const INDENT_SPACER = '  ';
 
-	private $statusNameMapping = [];
+	private const STATUS_NAME_MAPPING = [
+		TranslatablePageStatus::PROPOSED => 'Proposed',
+		TranslatablePageStatus::ACTIVE => 'Active',
+		TranslatablePageStatus::OUTDATED => 'Outdated',
+		TranslatablePageStatus::BROKEN => 'Broken'
+	];
 
 	private const SYNC_BATCH_STATUS = 15;
+
+	private const SCRIPT_VERSION = 1;
 
 	public function __construct() {
 		parent::__construct();
@@ -33,13 +40,12 @@ class SyncTranslatableBundleStatusMaintenanceScript extends Maintenance {
 		$this->requireExtension( 'Translate' );
 	}
 
-	public function execute() {
-		$this->statusNameMapping = [
-			TranslatablePageStatus::PROPOSED => 'Proposed',
-			TranslatablePageStatus::ACTIVE => 'Active',
-			TranslatablePageStatus::OUTDATED => 'Outdated',
-			TranslatablePageStatus::BROKEN => 'Broken'
-		];
+	protected function getUpdateKey() {
+		return __CLASS__ . '_v' . self::SCRIPT_VERSION;
+	}
+
+	protected function doDBUpdates() {
+		$this->output( "... Syncing translatable bundle status ...\n\n" );
 
 		$this->output( "Fetching translatable bundles and their statues\n\n" );
 		$translatableBundles = $this->fetchTranslatableBundles();
@@ -58,6 +64,10 @@ class SyncTranslatableBundleStatusMaintenanceScript extends Maintenance {
 		$this->syncStatus( $differences['missing'], 'Missing' );
 		$this->syncStatus( $differences['incorrect'], 'Incorrect' );
 		$this->removeStatus( $differences['extra'] );
+
+		$this->output( "\n...Done syncing translatable status...\n" );
+
+		return true;
 	}
 
 	private function fetchTranslatableBundles(): array {
@@ -234,7 +244,7 @@ class SyncTranslatableBundleStatusMaintenanceScript extends Maintenance {
 		$titlePrefixedDbKey = $bundle['title'] instanceof Title ?
 			$bundle['title']->getPrefixedDBkey() : '<Title not available>';
 		$id = str_pad( (string)$bundle['page_id'], 7, ' ', STR_PAD_LEFT );
-		$status = $this->statusNameMapping[ $bundle['status']->getId() ];
+		$status = self::STATUS_NAME_MAPPING[ $bundle['status']->getId() ];
 		$this->output( self::INDENT_SPACER . "* [Id: $id] $titlePrefixedDbKey: $status\n" );
 	}
 }

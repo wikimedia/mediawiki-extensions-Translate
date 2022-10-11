@@ -9,6 +9,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
+use MediaWiki\Extension\Translate\Diagnostics\SyncTranslatableBundleStatusMaintenanceScript;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -553,6 +554,8 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			'rt_type_page_revision',
 			"{$dir}/{$dbType}/patch-revtag-unique-to-pk.sql"
 		);
+
+		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 	}
 
 	/**
