@@ -969,7 +969,7 @@ class Hooks {
 	) {
 		$handle = new MessageHandle( $title );
 
-		if ( !$handle->isPageTranslation() ) {
+		if ( !$handle->isPageTranslation() || $action === 'read' ) {
 			return true;
 		}
 
