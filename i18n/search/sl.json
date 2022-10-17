@@ -25,7 +25,7 @@
 	"tux-sst-outdated": "Zastareli prevodi iz jezika: $1",
 	"tux-sst-ellipsis-untranslated": "Brez prevoda",
 	"tux-sst-ellipsis-outdated": "Zastareli prevodi",
-	"tux-sst-link-all-match": "Zahteva vse besede iskanja.",
-	"tux-sst-match-message": "Prikazuje prevode, ki se ujemajo s katerokoli od vpisanih besed. $1",
+	"tux-sst-link-all-match": "Zahteva vse iskane besede.",
+	"tux-sst-match-message": "Prikazuje prevode, ki se ujemajo s katero koli od iskanih besed. $1",
 	"tux-sst-case-sensitive": "Razlikuj med velikimi in malimi črkami"
 }
