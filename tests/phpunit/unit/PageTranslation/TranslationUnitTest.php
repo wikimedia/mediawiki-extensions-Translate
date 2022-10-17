@@ -123,10 +123,12 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		?string $translation,
 		bool $fuzzy,
 		bool $inline,
+		bool $canWrap,
 		string $expected
 	 ) {
 		$unit = new TranslationUnit( $source );
 		$unit->setIsInline( $inline );
+		$unit->setCanWrap( $canWrap );
 
 		$msg = null;
 		if ( $translation !== null ) {
@@ -158,12 +160,14 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		$fuzzy = true;
 		$inline = true;
 		$block = false;
+		$wrap = true;
 
 		yield 'language wrapping' => [
 			'Hello <tvar|abc>peter</>!',
 			null,
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'<span lang="en-GB" dir="ltr" class="mw-content-ltr">Hello peter!</span>'
 		];
 
@@ -172,6 +176,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -180,6 +185,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -188,6 +194,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -196,6 +203,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -204,6 +212,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -212,6 +221,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $1 and $2!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter and peter!'
 		];
 
@@ -220,6 +230,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc_123-АБВ$!',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -228,6 +239,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			$fuzzy,
 			$inline,
+			$wrap,
 			'<span class="mw-translate-fuzzy">Hejsan peter!</span>'
 		];
 
@@ -236,6 +248,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			null,
 			!$fuzzy,
 			$block,
+			$wrap,
 			"<div lang=\"en-GB\" dir=\"ltr\" class=\"mw-content-ltr\">\nHello peter!\n</div>"
 		];
 
@@ -244,6 +257,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			!$fuzzy,
 			$block,
+			$wrap,
 			'Hejsan peter!'
 		];
 
@@ -252,6 +266,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Hejsan $abc!',
 			$fuzzy,
 			$block,
+			$wrap,
 			"<div class=\"mw-translate-fuzzy\">\nHejsan peter!\n</div>"
 		];
 
@@ -260,6 +275,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			null,
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'<span lang="en-GB" dir="ltr" class="mw-content-ltr">en-gb</span>'
 		];
 
@@ -268,6 +284,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'{{TRANSLATIONLANGUAGE}}',
 			$fuzzy,
 			$inline,
+			$wrap,
 			'<span class="mw-translate-fuzzy">ar</span>'
 		];
 
@@ -276,6 +293,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'Lang: $code',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			'Lang: ar'
 		];
 
@@ -284,6 +302,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'== Hello World - ES ==',
 			!$fuzzy,
 			!$inline,
+			$wrap,
 			"<span id=\"headingId\"></span>\n== Hello World - ES =="
 		];
 
@@ -292,6 +311,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'== Hello World - ES ==',
 			$fuzzy,
 			!$inline,
+			$wrap,
 			"<span id=\"headingId\"></span>\n<div class=\"mw-translate-fuzzy\">\n== Hello World - ES ==\n</div>"
 		];
 
@@ -300,6 +320,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			null,
 			!$fuzzy,
 			!$inline,
+			$wrap,
 			"<div lang=\"en-GB\" dir=\"ltr\" class=\"mw-content-ltr\">\n== Hello World ==\n</div>"
 		];
 
@@ -308,6 +329,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'This is not a heading',
 			!$fuzzy,
 			!$inline,
+			$wrap,
 			"<span id=\"headingId\"></span>\nThis is not a heading"
 		];
 
@@ -316,6 +338,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'== Hello world ==',
 			!$fuzzy,
 			!$inline,
+			$wrap,
 			"== Hello world =="
 		];
 
@@ -324,7 +347,17 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			'== Hello world ==',
 			!$fuzzy,
 			$inline,
+			$wrap,
 			"== Hello world =="
+		];
+
+		yield 'anchor is not added when nowrap is set' => [
+			'== Hello world ==',
+			'This is not a heading',
+			!$fuzzy,
+			!$inline,
+			!$wrap,
+			"This is not a heading"
 		];
 	}
 

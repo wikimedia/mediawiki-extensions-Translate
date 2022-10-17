@@ -302,6 +302,11 @@ REGEXP;
 			return false;
 		}
 
+		// If nowrap attribute is set, do not add the anchor
+		if ( !$this->canWrap() ) {
+			return false;
+		}
+
 		// We don't add anchors for inline translate tags to avoid breaking input like this:
 		// Text here <translate>== not a heading ==</translate>
 		return !$isInline;
