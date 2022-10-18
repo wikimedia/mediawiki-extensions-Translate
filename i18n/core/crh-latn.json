@@ -4,5 +4,11 @@
 			"TayfunEt."
 		]
 	},
-	"translate-documentation-language": "Beyanat belgeleri"
+	"translate-page-settings-legend": "Sazlamalar",
+	"translate-page-language": "Til",
+	"translate-next": "Soñraki saife",
+	"translate-prev": "Evelki saife",
+	"translate-documentation-language": "Beyanat belgeleri",
+	"tux-editor-translate-mode": "Cedvel",
+	"tux-editor-page-mode": "Saife"
 }

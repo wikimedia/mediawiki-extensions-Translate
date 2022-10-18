@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"TayfunEt."
+		]
+	},
+	"tpt-select-prioritylangs-reason": "Sebep:",
+	"tpt-languages-legend": "Başqa tiller:",
+	"tpt-aggregategroup-save": "Saqla",
+	"tpt-aggregategroup-close": "Qapat",
+	"tpt-aggregategroup-new-name": "İsim:",
+	"tpt-aggregategroup-edit-name": "İsim:",
+	"tpt-aggregategroup-edit-description": "Tasvir:",
+	"tpt-aggregategroup-update": "Saqla",
+	"tpt-aggregategroup-update-cancel": "Lâğu",
+	"pm-savepages-button-label": "Saqla",
+	"pm-cancel-button-label": "Lâğu",
+	"pp-save-button-label": "Yayınla",
+	"pp-cancel-button-label": "Lâğu",
+	"tpt-generic-button": "Tasdıqla"
+}
