@@ -223,7 +223,7 @@ REGEXP;
 				$this->isInline()
 			)
 		) {
-			$sectionName = ltrim( $parser->guessSectionNameFromWikiText( $headingText ), '#' );
+			$sectionName = substr( $parser->guessSectionNameFromWikiText( $headingText ), 1 );
 			$attributes = [ 'id' => $sectionName ];
 			$content = Html::rawElement( 'span', $attributes, '' ) . "\n$content";
 		}

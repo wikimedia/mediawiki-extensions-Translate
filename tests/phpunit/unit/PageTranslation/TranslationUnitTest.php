@@ -143,7 +143,15 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		$targetLanguage = $this->getLanguageStub( 'ar', 'ar', 'rtl' );
 
 		$parser = $this->createStub( Parser::class );
-		$parser->method( 'guessSectionNameFromWikiText' )->willReturn( '#headingId' );
+		$parser->method( 'guessSectionNameFromWikiText' )->willReturnCallback(
+			static function ( string $headingText ) {
+				if ( $headingText && $headingText[0] === '#' ) {
+					return '##headingId';
+				}
+
+				return '#headingId';
+			}
+		);
 
 		$wrapUntranslated = true;
 		$actual = $unit->getTextForRendering(
@@ -358,6 +366,15 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 			!$inline,
 			!$wrap,
 			"This is not a heading"
+		];
+
+		yield 'anchor id has # when definition has it' => [
+			'== #Hello world ==',
+			'# Hello',
+			!$fuzzy,
+			!$inline,
+			$wrap,
+			"<span id=\"#headingId\"></span>\n# Hello"
 		];
 	}
 
