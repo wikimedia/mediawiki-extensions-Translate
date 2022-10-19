@@ -7,7 +7,6 @@ use ContentHandler;
 use DifferenceEngine;
 use Html;
 use JobQueueGroup;
-use LogicException;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -547,7 +546,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 			);
 
 			if ( !$tpStatus ) {
-				throw new LogicException( "Unable to determine status for translatable page: $groupId " );
+				// Ignore pages for which status could not be determined.
+				continue;
 			}
 
 			$out[self::DISPLAY_STATUS_MAPPING[$tpStatus->getId()]][] = $page;

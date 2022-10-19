@@ -91,6 +91,11 @@ class SyncTranslatableBundleStatusMaintenanceScript extends Maintenance {
 			$bundle = $this->getTranslatableBundle( $bundleFactory, $title );
 			$bundleStatus = $this->determineStatus( $bundle, $bundleInfo );
 
+			if ( !$bundleStatus ) {
+				// Ignore pages for which status could not be determined.
+				continue;
+			}
+
 			if ( !isset( $translatableBundleStatuses[$bundleId] ) ) {
 				// Identify missing records in translatable_bundles
 				$response = [

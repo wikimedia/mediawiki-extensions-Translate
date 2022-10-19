@@ -563,7 +563,10 @@ class TranslatablePage extends TranslatableBundle {
 			// Never marked, check that the latest version is ready
 			if ( $readyRevisionId === $latestRevisionId ) {
 				$status = TranslatablePageStatus::PROPOSED;
-			} // Otherwise, ignore such pages
+			} else {
+				// Otherwise, ignore such pages
+				return null;
+			}
 		} elseif ( $readyRevisionId === $latestRevisionId ) {
 			if ( $markRevisionId === $readyRevisionId ) {
 				// Marked and latest version is fine
@@ -576,11 +579,7 @@ class TranslatablePage extends TranslatableBundle {
 			$status = TranslatablePageStatus::BROKEN;
 		}
 
-		if ( $status ) {
-			return new TranslatablePageStatus( $status );
-		}
-
-		return null;
+		return new TranslatablePageStatus( $status );
 	}
 }
 
