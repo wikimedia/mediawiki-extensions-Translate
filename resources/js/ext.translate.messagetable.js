@@ -485,6 +485,7 @@
 					return;
 				}
 
+				self.clearLoadErrors();
 				if ( result.warnings ) {
 					for ( var i = 0; i !== result.warnings.length; i++ ) {
 						var currentWarning = result.warnings[ i ];
@@ -834,6 +835,13 @@
 		},
 
 		/**
+		 * Clear errors encountered during the loading state
+		 */
+		clearLoadErrors: function () {
+			$( '.tux-editor-header .tux-group-warning .tux-api-load-error' ).remove();
+		},
+
+		/**
 		 * Display errors encountered during the loading state.
 		 *
 		 * @param {Array} errors
@@ -844,10 +852,18 @@
 
 			if ( errors ) {
 				errors.forEach( function ( error ) {
-					$warningContainer.append( error.html );
+					$warningContainer.append(
+						$( '<p>' )
+							.addClass( 'tux-api-load-error' )
+							.html( error.html )
+					);
 				} );
 			} else {
-				$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
+				$warningContainer.append(
+					$( '<p>' )
+						.addClass( 'tux-api-load-error' )
+						.text( mw.msg( 'api-error-unknownerror', errorCode ) )
+				);
 			}
 		},
 
