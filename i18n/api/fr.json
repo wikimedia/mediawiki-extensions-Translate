@@ -179,6 +179,7 @@
 	"apierror-translate-rename-state-invalid": "Un des messages passés pour renommage devrait être nouvellement ajouté et l’autre supprimé. États actuels – ajout de : $1 et suppression de : $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Déjà marqué comme ayant été relu par vous",
 	"apiwarn-translate-language-disabled-source": "La langue source de ce groupe est $1. Veuillez sélectionner une autre langue vers laquelle traduire.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Vous traduisez en <bdi>$1</bdi>.</strong> C’est une variante des messages en <bdi> $2</bdi>, qui est déjà la langue source de tels messages. Assurez-vous que la langue sélectionnée est correcte et tenez compte des différences entre les variantes linguistiques pour fournir une bonne traduction.",
 	"apierror-translate-operation-error": "Une erreur est survenue lors du traitement de la requête. Erreur : $1",
 	"apihelp-translationentitysearch-summary": "Rechercher des groupes de message et des messages",
 	"apihelp-translationentitysearch-param-entitytype": "Type d’entité demandé",

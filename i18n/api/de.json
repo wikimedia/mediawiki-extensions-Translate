@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Colfin 96",
 			"Ljonka",
 			"Metalhead64",
@@ -143,6 +144,7 @@
 	"apierror-translate-rename-state-invalid": "Eine der zur Umbenennung übergebenen Nachrichten sollte neu hinzugefügt und die andere gelöscht werden. Aktuelle Zustände - Hinzufügen: $1 und Löschen: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert",
 	"apiwarn-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Du übersetzt in <bdi>$1</bdi>.</strong> Es ist eine Variante von <bdi>$2</bdi>, die bereits die Ausgangssprache dieser Nachrichten ist. Stelle sicher, dass die ausgewählte Sprache richtig ist, und berücksichtige die Unterschiede zwischen den Sprachvarianten, um eine gute Übersetzung zu erzielen.",
 	"apierror-translate-operation-error": "Es ist ein Fehler bei der Verarbeitung der Anfrage aufgetreten. Fehler: $1",
 	"apihelp-translationentitysearch-summary": "Suche nach Nachrichtengruppen und Nachrichten",
 	"apihelp-translationentitysearch-param-query": "Suchanfrage",

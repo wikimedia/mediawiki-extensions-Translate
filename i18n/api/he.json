@@ -167,6 +167,7 @@
 	"apierror-translate-rename-state-invalid": "אחת מההודעות שהועברו לשינוי שם אמורה להתווסף מחדש, והאחרת צריכה להימחק. מצבים נוכחיים – הוספה: $1 ומחיקה: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך",
 	"apiwarn-translate-language-disabled-source": "שפת המקור של הקבוצה הזאת היא $1. נא לבחור שפה אחרת לתרגום.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>ניסית לתרגם לשפה <bdi>$1</bdi>.</strong> זהו הגוון של השפה <bdi>$2</bdi>, שהיא כבר שפת המקור של ההודעות האלו. נא לוודא שהשפה שנבחרה נכונה, ולשקול את ההבדלים בין הגווני השפה כדי לספק תרגום טוב.",
 	"apierror-translate-operation-error": "אירעה שגיאה בעת עיבוד הבקשה. שגיאה: $1",
 	"apihelp-translationentitysearch-summary": "חיפוש קבוצות הודעות והודעות",
 	"apihelp-translationentitysearch-param-entitytype": "סוג הישות שהשאילתה מתייחסת אליה",
