@@ -9,6 +9,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\NameTableAccessException;
+
 /**
  * Adds a new filter to Special:RecentChanges which makes it possible to filter
  * translations away or show them only.
@@ -180,11 +183,42 @@ class TranslateRcFilter {
 							return !in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces );
 						}
 					],
+					[
+						'name' => 'filter-translation-pages',
+						'label' => 'translate-rcfilters-translations-filter-translation-pages-label',
+						'description' => 'translate-rcfilters-translations-filter-translation-pages-desc',
+						'cssClassSuffix' => 'filter-translation-pages',
+						'isRowApplicableCallable' => static function ( $ctx, $rc ) {
+							$tags = explode( ', ', $rc->getAttribute( 'ts_tags' ) ?? '' );
+							return !in_array( 'translate-filter-translation-pages', $tags );
+						}
+					],
+
 				],
 				'queryCallable' => function ( $specialClassName, $ctx, $dbr, &$tables,
 					&$fields, &$conds, &$query_options, &$join_conds, $selectedValues
 				) {
 					$fields = array_merge( $fields, [ 'rc_title', 'rc_namespace' ] );
+
+					// Handle changes to translation pages separately
+					$filterRenderedIndex = array_search( 'filter-translation-pages', $selectedValues );
+					if ( $filterRenderedIndex !== false ) {
+						unset( $selectedValues[$filterRenderedIndex] );
+						$selectedValues = array_values( $selectedValues );
+
+						$changeTagDefStore = MediaWikiServices::getInstance()->getChangeTagDefStore();
+						try {
+							$renderedPage = $changeTagDefStore->getId( 'translate-translation-pages' );
+							$tables['translatetags'] = ChangeTags::getDisplayTableName();
+							$join_conds['translatetags'] = [
+								'LEFT JOIN',
+								[ 'ct_rc_id=rc_id', 'ct_tag_id' => $renderedPage ]
+							];
+							$conds['translatetags.ct_tag_id'] = null;
+						} catch ( NameTableAccessException $exception ) {
+							// Tag name does not yet exist in DB.
+						}
+					}
 
 					$namespaces = self::getTranslateNamespaces();
 					$inNamespaceCond = 'rc_namespace IN (' .
