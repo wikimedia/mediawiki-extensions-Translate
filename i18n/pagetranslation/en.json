@@ -261,5 +261,7 @@
 	"visualeditor-annotations-translate-description": "This range is marked as translatable. Please make sure you follow the guidelines given for [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text changing the source text].",
 	"visualeditor-annotations-tvar-start": "Start of the untranslatable content",
 	"visualeditor-annotations-tvar-end": "End of the untranslatable content",
-	"visualeditor-annotations-tvar-description": "This range is marked as untranslatable. Please refer to [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] for more information."
+	"visualeditor-annotations-tvar-description": "This range is marked as untranslatable. Please refer to [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] for more information.",
+	"tag-translate-translation-pages": "-",
+	"tag-translate-translation-pages-description": "Automatic edits to translation pages by Translate extension"
 }

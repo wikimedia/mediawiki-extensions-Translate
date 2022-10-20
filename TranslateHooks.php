@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
+use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\Diagnostics\SyncTranslatableBundleStatusMaintenanceScript;
@@ -40,7 +42,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * Most of the hooks on this class are still old style static functions, but new new hooks should
  * use the new style hook handlers with interfaces.
  */
-class TranslateHooks implements RevisionRecordInsertedHook {
+class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook, ChangeTagsListActiveHook {
 	/**
 	 * Any user of this list should make sure that the tables
 	 * actually exist, since they may be optional
@@ -55,10 +57,17 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 	private $revisionLookup;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
+	/** @var Config */
+	private $config;
 
-	public function __construct( RevisionLookup $revisionLookup, ILoadBalancer $loadBalancer ) {
+	public function __construct(
+		RevisionLookup $revisionLookup,
+		ILoadBalancer $loadBalancer,
+		Config $config
+	) {
 		$this->revisionLookup = $revisionLookup;
 		$this->loadBalancer = $loadBalancer;
+		$this->config = $config;
 	}
 
 	/**
@@ -1024,5 +1033,17 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			],
 			__METHOD__
 		);
+	}
+
+	/** @inheritDoc */
+	public function onListDefinedTags( &$tags ) {
+		$tags[] = 'translate-translation-pages';
+	}
+
+	/** @inheritDoc */
+	public function onChangeTagsListActive( &$tags ) {
+		if ( $this->config->get( 'EnablePageTranslation' ) ) {
+			$tags[] = 'translate-translation-pages';
+		}
 	}
 }

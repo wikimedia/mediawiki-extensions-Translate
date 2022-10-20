@@ -226,14 +226,17 @@
 		],
 		"PageSaveComplete": "messageBundle",
 		"CodeEditorGetPageLanguage": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::onCodeEditorGetPageLanguage",
-		"RevisionRecordInserted": "main"
+		"RevisionRecordInserted": "main",
+		"ListDefinedTags": "main",
+		"ChangeTagsListActive": "main"
 	},
 	"HookHandlers": {
 		"main": {
 			"class": "TranslateHooks",
 			"services": [
 				"RevisionLookup",
-				"DBLoadBalancer"
+				"DBLoadBalancer",
+				"MainConfig"
 			]
 		},
 		"legacyInterface": {

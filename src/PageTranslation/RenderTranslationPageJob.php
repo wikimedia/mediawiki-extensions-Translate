@@ -85,6 +85,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 			$pageUpdater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
 		}
 
+		$pageUpdater->addTag( 'translate-translation-pages' );
 		$pageUpdater->saveRevision( $commentStoreComment, $flags );
 		$status = $pageUpdater->getStatus();
 

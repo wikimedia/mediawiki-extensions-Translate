@@ -287,5 +287,7 @@
 	"visualeditor-annotations-translate-description": "Additional explanation for a pair of <nowiki><translate></nowiki> tags.",
 	"visualeditor-annotations-tvar-start": "Label of the context item for an opening <nowiki><tvar></nowiki> tag.",
 	"visualeditor-annotations-tvar-end": "Label of the context item for a closing <nowiki><tvar></nowiki> tag.",
-	"visualeditor-annotations-tvar-description": "Additional explanation for a pair of <nowiki><tvar></nowiki> tags."
+	"visualeditor-annotations-tvar-description": "Additional explanation for a pair of <nowiki><tvar></nowiki> tags.",
+	"tag-translate-translation-pages": "{{notranslate}}\nChange tag for translations pages. Set to \"-\" to mean disabled and do not display in interface.",
+	"tag-translate-translation-pages-description": "Description for the tag-translate-translation-pages tag. Shown on Special:Tags."
 }
