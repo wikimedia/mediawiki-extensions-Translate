@@ -83,7 +83,7 @@
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> מקבל {{PLURAL:$1|צורת רבים אחת|$1 צורות רבים}} בדיוק. כרגע {{PLURAL:$2|ניתנה צורת קבים|ניתנו $2 צורות רבים}}.",
 	"translate-checks-smartformat-plural-missing": "בתרגום הזה צריך להיות plural במשתנה $1.",
 	"translate-checks-smartformat-plural-unsupported": "ההודעה הזאת לא תומכת ב־plural במשתנה $1.",
-	"translate-checks-smartformat-plural-count": "מספר שגוי של צורות plural בקטע <strong>$3</strong>. {{PLURAL:$1|צריכה להיות שם צורת plural אחת|צריכות להיות שם $1 צורות plural}}. כרגע יש {{PLURAL:$2|צורת plural אחת|$1 צורות plural}}.",
+	"translate-checks-smartformat-plural-count": "מספר שגוי של צורות plural בקטע <strong>$3</strong>. {{PLURAL:$1|צריכה להיות שם צורת plural אחת|צריכות להיות שם $1 צורות plural}}. כרגע יש {{PLURAL:$2|צורת plural אחת|$2 צורות plural}}.",
 	"translate-checks-unicode-plural-missing": "התרגום הזה חייב לכלול <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-unsupported": "ההודעה הזאת אינה תומכת ב־<nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-invalid": "צורות רבים אמורות להיות מוגדרות בתור $1. התרגום הזה מכיל $2.",
