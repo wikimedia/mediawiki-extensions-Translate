@@ -169,6 +169,7 @@
 	"apierror-translate-rename-state-invalid": "Uma das mensagens passadas para alteração de nome deve ser adicionada de raiz e a outra eliminada. Estados atuais - adição: $1 e eliminação: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Já marcada como revista por si",
 	"apiwarn-translate-language-disabled-source": "A língua de origem deste grupo é $1. Selecione outra língua, para a qual irá traduzir, por favor.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Está a traduzir para <bdi>$1</bdi>.</strong> É uma variante de <bdi>$2</bdi>, que já é a língua de origem destas mensagens. Verifique que a língua selecionada está correta e considere as diferenças entre as variantes da língua para fornecer uma boa tradução.",
 	"apierror-translate-operation-error": "Ocorreu um erro ao processar o pedido. Erro: $1",
 	"apihelp-translationentitysearch-summary": "Pesquisar grupos de mensagens e mensagens",
 	"apihelp-translationentitysearch-param-entitytype": "Tipo de entidade que está a ser consultado",
