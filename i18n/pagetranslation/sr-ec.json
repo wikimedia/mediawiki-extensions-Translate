@@ -18,6 +18,7 @@
 	"pagetranslation": "Превођење странице",
 	"right-pagetranslation": "означавање верзија страница за превођење",
 	"action-pagetranslation": "управљате преводивим страницама",
+	"tps-edit-sourcepage-text": "Уређујете изворну (оригиналну) страницу. Прво се упознајте са следећом документацијом:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Мењање изворног текста]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
 	"tps-edit-sourcepage-ve-warning-title": "Упозорење: Неподржана страница",
 	"tps-edit-sourcepage-ve-warning-button": "У реду",
 	"tpt-section": "Јединица превода $1",
