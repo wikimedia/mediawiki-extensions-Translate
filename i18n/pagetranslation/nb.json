@@ -35,7 +35,7 @@
 	"tpt-badtitle": "Det angitte sidenavnet ($1) er ikke en gyldig tittel",
 	"tpt-nosuchpage": "Siden $1 finnes ikke",
 	"tpt-oldrevision": "$2 er ikke den siste versjonen av siden [[:$1]].\nKun siste versjoner kan bli markert for oversettelse.",
-	"tpt-notsuitable": "Siden $1 er ikke egnet for oversettelse.\nSjekk at siden har <nowiki><translate></nowiki>-merker og gyldig syntaks.",
+	"tpt-notsuitable": "Siden $1 er ikke egnet for oversettelse.\nSjekk at siden har $2-tagger og gyldig syntaks.",
 	"tpt-saveok": "Siden [[:$1]] har blitt markert for oversettelse med {{PLURAL:$2|én oversettelsesenhet|$2 oversettelsesenheter}}.\nDen kan nå <span class=\"plainlinks\">[$3 oversettes]</span>.",
 	"tpt-saveok-first": "Du kan [[Special:PageMigration|importere en eksisterende oversettelse]] for denne siden (hvis det fins).",
 	"tpt-offer-notify": "Du kan <span class=\"plainlinks\">[$1 varsle oversettere]</span> om denne siden.",

@@ -166,6 +166,7 @@
 	"apierror-translate-rename-state-invalid": "En av beskjedene som ble gitt for omdøping bør være lagt til som ny, og den andre slettet. Nåværende statuser – tillegg: $1 og sletting: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Allerede merket som vurdert av deg",
 	"apiwarn-translate-language-disabled-source": "Kildespråket for denne gruppa er $1. Velg et annet språk å oversette til.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Du oversetter til <bdi>$1</bdi>.</strong> Det er en variant av <bdi>$2</bdi>, som allerede er kildespråket for disse beskjedene. Sørg for at det valgte språket er riktig, og vurder forskjellene mellom disse språkvariantene for å gjøre en god oversettelse.",
 	"apierror-translate-operation-error": "En feil oppsto under prosesseringen av forespørselen. Feil: $1",
 	"apihelp-translationentitysearch-summary": "Søk etter meldingsgrupper og meldinger",
 	"apihelp-translationentitysearch-param-entitytype": "Entitetstype det spørres etter",
