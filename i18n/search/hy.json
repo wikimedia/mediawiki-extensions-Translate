@@ -4,6 +4,8 @@
 			"Սերգեյ Սաֆարյան"
 		]
 	},
+	"tux-sst-edit": "Խմբագրել թարգմանությունը",
+	"tux-sst-facet-language": "Լեզուներ",
 	"tux-sst-default": "Թարգմանություններ",
 	"tux-sst-translated": "Թարգմանություններ $1ից",
 	"tux-sst-case-sensitive": "հաշվի առնել տառաչափը"
