@@ -1000,7 +1000,8 @@ class Hooks {
 					$block = $user->getBlock();
 					if ( $block ) {
 						$error = new UserBlockedError( $block, $user );
-						$result = $error->getMessageObject()->parseAsBlock();
+						$errorMessage = $error->getMessageObject();
+						$result = array_merge( [ $errorMessage->getKey() ], $errorMessage->getParams() );
 						return false;
 					}
 				}
