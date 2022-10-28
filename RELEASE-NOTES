@@ -1,0 +1,32 @@
+== Translate 2022.10 ==
+Released at 2022-10-28.
+
+=== Noteworthy changes ===
+* ['''SECURITY'''] Adds missing block checks to various pages and API
+({{phab|T302479}}, {{gerrit|838940}}) 
+* Prevent deletion of translated pages through the API. ({{phab|T319135}},
+{{gerrit|837234}})
+* Do not hide errors during translation save, when displaying validation errors
+({{gerrit|833346}})
+* Periodically update edit summary time displayed in translation user interface
+({{phab|T308719}}, {{gerrit|826301}})
+* Block translations from user blocked from editing translatable bundle
+({{phab|T317594}}, {{gerrit|831651}})
+* Ensure first group is visible immediately on Special:AggregateGroups
+({{phab|T315174}}, {{gerrit|822723}})
+* Mark new keys added to a MessageBundle as fuzzy ({{phab|T317038}}, {{gerrit|831226}})
+* Edit summaries: Reduce number of edit summaries on translation user interface
+to 3 ({{phab|T308720}}, {{gerrit|830878}})
+* Add anchor for source version of heading on translation pages
+({{phab|T62544}}, {{gerrit|826995}})
+* Wrap summary text on previous edit summaries ({{phab|T308720}}, {{gerrit|822035}})
+* Make Insertable without post content to replace selection
+({{phab|T114101}}, {{gerrit|822193}})
+* Add support for Elastica extension 7.1.5 ({{phab|T309581}}, {{gerrit|828050}})
+* Fix title not appearing in fieldset legend when deleting translatable bundles
+({{phab|T314447}}, {{gerrit|820011}}) 
+* Add feature to save description for a message bundle
+({{phab|T311503}}, {{gerrit|811878}})
+* Tux: Decrease time to display validation warnings to 1 second
+({{phab|T164306}}, {{gerrit|843405}})
+* Improve the way we store statuses for translatable bundles. ({{phab|T141961}})
