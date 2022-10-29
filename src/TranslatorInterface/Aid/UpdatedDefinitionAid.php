@@ -36,9 +36,10 @@ class UpdatedDefinitionAid extends TranslationAid {
 			throw new TranslationHelperException( 'No definition revision recorded' );
 		}
 
+		$sourceLanguage = $this->group->getSourceLanguage();
 		$definitionTitle = Title::makeTitleSafe(
 			$this->handle->getTitle()->getNamespace(),
-			$this->handle->getKey() . '/' . $this->group->getSourceLanguage()
+			$this->handle->getKey() . '/' . $sourceLanguage
 		);
 
 		if ( !$definitionTitle || !$definitionTitle->exists() ) {
@@ -46,9 +47,8 @@ class UpdatedDefinitionAid extends TranslationAid {
 		}
 
 		// Using getRevisionById instead of byTitle, because the page might have been renamed
-		$oldRevRecord = MediaWikiServices::getInstance()
-			->getRevisionLookup()
-			->getRevisionById( $translationRevision );
+		$mwInstance = MediaWikiServices::getInstance();
+		$oldRevRecord = $mwInstance->getRevisionLookup()->getRevisionById( $translationRevision );
 		if ( !$oldRevRecord ) {
 			throw new TranslationHelperException( 'Old definition version does not exist anymore' );
 		}
@@ -69,7 +69,9 @@ class UpdatedDefinitionAid extends TranslationAid {
 		}
 
 		$diff = new DifferenceEngine( $this->context );
-		$diff->setTextLanguage( wfGetLangObj( $this->group->getSourceLanguage() ) );
+		$diff->setTextLanguage(
+			$mwInstance->getLanguageFactory()->getLanguage( $sourceLanguage )
+		);
 		$diff->setContent( $oldContent, $newContent );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();

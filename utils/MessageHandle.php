@@ -93,11 +93,14 @@ class MessageHandle {
 	 */
 	public function getEffectiveLanguage() {
 		$code = $this->getCode();
-		if ( $code === '' || $this->isDoc() ) {
-			return MediaWikiServices::getInstance()->getContentLanguage();
+		$mwInstance = MediaWikiServices::getInstance();
+		if ( !$mwInstance->getLanguageNameUtils()->isKnownLanguageTag( $code ) ||
+			$this->isDoc()
+		) {
+			return $mwInstance->getContentLanguage();
 		}
 
-		return wfGetLangObj( $code );
+		return $mwInstance->getLanguageFactory()->getLanguage( $code );
 	}
 
 	/**
