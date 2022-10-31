@@ -6,13 +6,15 @@
 			"Kareyac",
 			"Vadgt",
 			"Դավիթ Սարոյան",
-			"23artashes"
+			"23artashes",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"translate": "Թարգմանություն",
 	"translate-taction-translate": "Թարգմանություն",
 	"translate-taction-proofread": "Սրբագրել",
 	"translate-taction-lstats": "Լեզվի վիճակագրություն",
+	"translate-taction-mstats": "Հաղորդագրությունների խմբի վիճակագրություն",
 	"translate-taction-export": "Արտահանել",
 	"translate-page-settings-legend": "Կարգավորումներ",
 	"translate-page-group": "Խումբ",
@@ -44,6 +46,7 @@
 	"translate-language-code": "Լեզվի կոդը",
 	"translate-language": "Լեզու",
 	"translate-total": "Հաղորդագրություններ",
+	"translate-mgs-pagename": "Հաղորդագրությունների խմբի վիճակագրություն",
 	"translate-mgs-column-language": "Լեզու",
 	"translate-smg-rename-select": "Ընտրել",
 	"translate-smg-rename-cancel": "Չեղարկել",
@@ -52,13 +55,22 @@
 	"translate-js-save": "Հրապարակել",
 	"translate-documentation-language": "Հաղորդագրության փաստաթղթեր",
 	"translate-searchprofile": "Թարգմանություններ",
+	"tux-tab-translated": "Թարգմանված",
 	"tux-edit": "Խմբագրել",
+	"tux-status-translated": "Թարգմանված է",
+	"tux-editor-save-button-label": "Հրատարակել թարգմանությունը",
 	"tux-editor-cancel-button-label": "Չեղարկել",
+	"tux-editor-edit-desc": "Խմբագրել փաստաթղթերը",
+	"tux-editor-suggestions-title": "Առաջարկություններ",
 	"tux-notices-hide": "թաքցնել",
+	"tux-editor-message-desc-less": "Ցուցադրել ավելի սեղմ",
 	"tux-editor-translate-mode": "Ցանկ",
 	"tux-proofread-edit-label": "Խմբագրել",
 	"tux-editor-page-mode": "Էջ",
 	"tux-editor-doc-editor-cancel": "Չեղարկել",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|Հաղորդագրության|Հաղորդագրությունների}} բեռնում...",
+	"tux-message-filter-placeholder": "Զտել ցուցակը",
 	"tux-empty-list-translated-action": "Թարգմանել",
-	"tux-editor-close-tooltip": "Փակել"
+	"tux-editor-close-tooltip": "Փակել",
+	"specialpages-group-translation": "Թարգմանություն"
 }
