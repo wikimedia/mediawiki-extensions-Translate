@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
+
 /**
  * Cross Language Translation Search.
  * @since 2015.08

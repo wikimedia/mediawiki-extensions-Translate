@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -992,62 +993,4 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/** @} */
-}
-
-/**
- * Wrapper for message definitions, just to beauty the code.
- *
- * API totally changed in 2011-12-28
- */
-class MessageDefinitions {
-	/** @var int|false */
-	private $namespace;
-	/** @var string[] */
-	private $messages;
-	/** @var Title[] */
-	private $pages;
-
-	/**
-	 * @param string[] $messages
-	 * @param int|false $namespace
-	 */
-	public function __construct( array $messages, $namespace = false ) {
-		$this->namespace = $namespace;
-		$this->messages = $messages;
-	}
-
-	/** @return string[] */
-	public function getDefinitions() {
-		return $this->messages;
-	}
-
-	/** @return Title[] List of title indexed by message key. */
-	public function getPages() {
-		$namespace = $this->namespace;
-		if ( $this->pages !== null ) {
-			return $this->pages;
-		}
-
-		$pages = [];
-		foreach ( array_keys( $this->messages ) as $key ) {
-			if ( $namespace === false ) {
-				// pages are in format ex. "8:jan"
-				[ $tns, $tkey ] = explode( ':', $key, 2 );
-				$title = Title::makeTitleSafe( $tns, $tkey );
-			} else {
-				$title = Title::makeTitleSafe( $namespace, $key );
-			}
-
-			if ( !$title ) {
-				wfWarn( "Invalid title ($namespace:)$key" );
-				continue;
-			}
-
-			$pages[$key] = $title;
-		}
-
-		$this->pages = $pages;
-
-		return $this->pages;
-	}
 }

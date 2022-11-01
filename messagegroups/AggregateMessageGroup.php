@@ -5,6 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 
 /**

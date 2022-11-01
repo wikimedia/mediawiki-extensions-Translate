@@ -95,7 +95,6 @@
 		"MediaWikiExtensionMessageGroup": "messagegroups/MediaWikiExtensionMessageGroup.php",
 		"MessageChangeStorage": "utils/MessageChangeStorage.php",
 		"MessageCollection": "MessageCollection.php",
-		"MessageDefinitions": "MessageCollection.php",
 		"MessageGroup": "messagegroups/MessageGroup.php",
 		"MessageGroupBase": "messagegroups/MessageGroupBase.php",
 		"MessageGroupCache": "utils/MessageGroupCache.php",
