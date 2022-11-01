@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
@@ -146,9 +148,9 @@ class MockMessageCollection extends MessageCollection {
 		}
 	}
 
-	public function filter( $type, $condition = true, $value = null ) {
+	public function filter( string $type, bool $condition = true, $value = null ): void {
 	}
 
-	public function loadTranslations() {
+	public function loadTranslations(): void {
 	}
 }

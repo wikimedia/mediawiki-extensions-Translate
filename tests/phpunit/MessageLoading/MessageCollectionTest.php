@@ -1,14 +1,27 @@
 <?php
-/**
- * @author Niklas Laxström
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use CommentStoreComment;
+use ContentHandler;
+use HashBagOStuff;
+use HashMessageIndex;
+use MediaWiki\Revision\SlotRecord;
+use MediaWikiIntegrationTestCase;
+use MessageGroups;
+use MessageIndex;
+use MockWikiMessageGroup;
+use Title;
+use TMessage;
+use WANObjectCache;
 
 /**
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @group Database
  * @group medium
- * @covers MessageCollection
+ * @covers MediaWiki\Extension\Translate\MessageLoading\MessageCollection
  */
 class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
@@ -23,11 +36,12 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		$hashIndex = new HashMessageIndex();
+		MessageIndex::setInstance( $hashIndex );
+		$hashIndex->rebuild();
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups( &$list ): bool {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
@@ -39,13 +53,20 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	public function testMessage() {
+	public function testMessage(): void {
 		$user = $this->getTestSysop()->getUser();
 		$title = Title::newFromText( 'MediaWiki:Translated/fi' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
+		$pageUpdater = $this->getServiceContainer()
+			->getWikiPageFactory()
+			->newFromTitle( $title )
+			->newPageUpdater( $user );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
 
-		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
+		// Create the page
+		$commentStoreComment = CommentStoreComment::newUnsavedComment( __METHOD__ );
+		$pageUpdater->setContent( SlotRecord::MAIN, $content );
+		$pageUpdater->saveRevision( $commentStoreComment );
+		$status = $pageUpdater->getStatus();
 
 		$value = $status->getValue();
 		$revisionRecord = $value['revision-record'];
@@ -84,8 +105,8 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$this->assertNull( $untranslated->getProperty( 'revision' ) );
 	}
 
-	/** @covers MessageCollection::filterChanged */
-	public function testFilterChanged() {
+	/** @covers MediaWiki\Extension\Translate\MessageLoading\MessageCollection::filterChanged */
+	public function testFilterChanged(): void {
 		$this->assertTrue(
 			$this->editPage( 'MediaWiki:Changedtranslated_1/fi', 'pupuliini_1' )->isGood()
 		);

@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * IniFFS currently parses and generates flat ini files with language
  * code as header key.

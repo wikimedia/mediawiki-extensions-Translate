@@ -9,6 +9,7 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Logger\LoggerFactory;

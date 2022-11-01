@@ -9,6 +9,7 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\MediaWikiServices;
 
 // Standard boilerplate to define $IP

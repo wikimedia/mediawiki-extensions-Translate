@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * AppleFFS class implements support for Apple .strings files.
  * This class reads and writes only UTF-8 files.

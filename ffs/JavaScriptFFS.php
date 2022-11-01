@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * Generic file format support for JavaScript formatted files.
  * @ingroup FFS

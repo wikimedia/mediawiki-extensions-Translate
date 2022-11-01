@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * JavaFFS class implements support for Java properties files.
  * This class reads and writes only utf-8 files. Java projects

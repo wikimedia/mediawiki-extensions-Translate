@@ -13,6 +13,7 @@
  * @ingroup FFS
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use UtfNormal\Validator;
 

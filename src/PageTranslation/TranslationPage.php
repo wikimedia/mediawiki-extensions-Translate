@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use Content;
 use ContentHandler;
 use Language;
-use MessageCollection;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use Parser;
 use Title;
 use TMessage;

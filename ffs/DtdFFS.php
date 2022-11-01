@@ -10,6 +10,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * File format support for DTD.
  *

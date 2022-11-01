@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * Implements file format support for PHP files which consist of multiple
  * variable assignments.

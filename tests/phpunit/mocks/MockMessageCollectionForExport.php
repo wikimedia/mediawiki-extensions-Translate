@@ -7,9 +7,9 @@
  * @license GPL-2.0-or-later
  */
 
-/**
- * This class can be used to test exporting of message groups.
- */
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
+/** This class can be used to test exporting of message groups. */
 class MockMessageCollectionForExport extends MessageCollection {
 	public function __construct() {
 		$msg = new FatMessage( 'translatedmsg', 'definition' );
@@ -31,11 +31,11 @@ class MockMessageCollectionForExport extends MessageCollection {
 		$this->keys = array_flip( array_keys( $this->messages ) );
 	}
 
-	public function getAuthors() {
+	public function getAuthors(): array {
 		return [ 'Nike the bunny' ];
 	}
 
-	public function getLanguage() {
+	public function getLanguage(): string {
 		return 'fi';
 	}
 }

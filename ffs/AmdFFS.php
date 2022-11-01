@@ -37,6 +37,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * AmdFFS implements a message format where messages are encoded
  * as key-value pairs in JSON objects wrapped in a define call.

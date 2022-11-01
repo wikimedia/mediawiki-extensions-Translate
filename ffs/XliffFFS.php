@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
  * Partial support for the Xliff translation format.
  * @since 2013-04

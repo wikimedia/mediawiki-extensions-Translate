@@ -16,7 +16,7 @@
 class RecentMessageGroup extends WikiMessageGroup {
 	/*
 	 * Yes this is very ugly hack and should not be removed.
-	 * @see MessageCollection::getPages()
+	 * @see \MediaWiki\Extension\Translate\MessageLoading\MessageCollection::getPages()
 	 */
 	protected $namespace = false;
 	protected $language;
