@@ -76,7 +76,7 @@
 	"translate-tag-markthisagain": "इस पृष्ठ के आखिरी बार <span class=\"plainlinks\">[$2 अनुवाद के लिए चिह्नित किए]</span> जाने के बाद से इसपर <span class=\"plainlinks\">[$1 बदलाव]</span> आए हैं।",
 	"translate-tag-hasnew": "इस पृष्ठ पर <span class=\"plainlinks\">[$1 बदलाव]</span> हैं जिन्हें अनुवाद के लिए चिह्नित नहीं किया गया है।",
 	"tpt-translation-intro": "यह [[$2]] पृष्ठ का एक <span class=\"plainlinks\">[$1 अनुवादित संस्करण]</span> है और इसे $3% तक पूरा किया गया है।",
-	"tpt-translation-intro-fuzzy": "कालग्रस्त अनुवादों को इस तरह से मार्क किया जाता है।",
+	"tpt-translation-intro-fuzzy": "कालग्रस्त अनुवादों को इस तरह से चिह्नित किया जाता है।",
 	"tpt-languages-legend": "अन्य भाषाएँ:",
 	"tpt-languages-zero": "इस भाषा के लिए अनुवाद करना शुरू करें",
 	"tpt-languages-nonzero": "$1 ($2% अनुवादित)",

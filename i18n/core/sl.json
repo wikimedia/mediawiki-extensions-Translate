@@ -67,6 +67,8 @@
 	"translate-checks-plural": "Opredelitev uporablja <nowiki>{{PLURAL:}}</nowiki>, prevod pa ne.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> ima {{PLURAL:$1|določeno eno obliko|določeni dve obliki|določene $1 oblike|določenih $1 oblik}}, vendar {{PLURAL:$2|je podprta samo ena oblika|sta podprti samo dve obliki|so podprte samo $2 oblike|je podprtih samo $2 oblik}} (brez oblik 0= in 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ima na koncu podvojeni obliki. <nowiki>{{PLURAL:$1|ovca|ovca}}</nowiki> naj bo napisano kot <nowiki>{{PLURAL:$1|ovca}}</nowiki>.",
+	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> sprejme točno $1 {{PLURAL:$1|množinsko obliko|množinski obliki|množinske oblike|množinskih oblik}}. Trenutno {{PLURAL:$2|je navedena $2 množinska oblika|sta navedeni $2 množinski obliki|so navedene $2 množinske oblike|je navedenih $2 množinskih oblik}}.",
+	"translate-checks-smartformat-plural-count": "Nepravilno število množinskih oblik v <strong>$3</strong>. Vsebovati mora $1 {{PLURAL:$1|množinsko obliko|množinski obliki|množinske oblike|množinskih oblik}}. Trenutno {{PLURAL:$2|je navedena $2 množinska oblika|sta navedeni $2 množinski obliki|so navedene $2 množinske oblike|je navedenih $2 množinskih oblik}}.",
 	"translate-checks-pagename": "Imenski prostor je drugačen kot v opredelitvi",
 	"translate-checks-format": "Ta prevod ne sledi opredelitvi ali ima neveljavno skladnjo: $1",
 	"translate-checks-escape": "{{PLURAL:$2|Naslednji ubežni znak je morda naključen|Naslednja ubežna znaka sta morda naključna|Naslednji ubežni znaki so morda naključni}}: <strong>$1</strong>. {{PLURAL:$4|Veljavni ubežni znak je|Veljavna ubežna znaka sta:|Veljavni ubežni znaki so:}} $3.",
