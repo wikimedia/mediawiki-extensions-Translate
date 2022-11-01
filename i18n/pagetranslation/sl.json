@@ -192,7 +192,7 @@
 	"pt-locked-page": "Stran je zaklenjena, ker se prevedljiva stran trenutno prestavlja.",
 	"pt-deletepage-lang-title": "Brisanje strani prevoda »$1«",
 	"pt-deletepage-tp-title": "Brisanje prevedljive strani »$1«",
-	"pt-deletepage-mb-title": "Brisanje skupine sporočil »$1«",
+	"pt-deletepage-mb-title": "Brisanje svežnja sporočil »$1«",
 	"pt-deletepage-invalid-title": "Določena stran ni veljavna.",
 	"pt-deletepage-invalid-text": "Izbrana stran ni niti prevedljiva stran niti stran s prevodom.",
 	"pt-deletepage-action-check": "Navedi strani za izbris",
