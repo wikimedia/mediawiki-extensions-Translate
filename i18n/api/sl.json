@@ -7,6 +7,6 @@
 	"apihelp-groupreview-param-language": "Oznaka jezika.",
 	"apihelp-query+languagestats-param-language": "Oznaka jezika.",
 	"apihelp-query+messagecollection-param-language": "Oznaka jezika.",
-	"apiwarn-translate-language-disabled-source": "Izvirni jezik te skupine je $1. Izberite drugi jezik, v katerega želite prevesti.",
+	"apiwarn-translate-language-disabled-source": "Izvorni jezik te skupine je $1. Izberite drug jezik, v katerega želite prevajati.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Prevajate v <bdi>$1</bdi>.</strong> To je različica <bdi>$2</bdi>, ki je že izvorni jezik teh sporočil. Prepričajte se, da je izbrani jezik pravilen, in upoštevajte razlike med jezikovnimi različicami, da zagotovite dober prevod."
 }

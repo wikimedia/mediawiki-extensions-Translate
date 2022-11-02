@@ -128,7 +128,7 @@
 	"apierror-translate-invalidaggregategroupname": "اسم مجموعة رسائل مجمعة غير صالح",
 	"apierror-translate-invalidgroup": "المجموعة غير موجودة أو غير صالحة",
 	"apierror-translate-invalidstate": "الحالة المطلوبة غير صالحة.",
-	"apierror-translate-invalidlanguage": "اللغة المطلوبة غير صالحة.",
+	"apierror-translate-invalidlanguage": "اللغة المطلوبة $1 غير صالحة.",
 	"apierror-translate-invalidupdate": "تحديث غير صالح",
 	"apierror-translate-language-disabled": "الترجمة إلى $1 معطلة.",
 	"apierror-translate-language-disabled-reason": "الترجمة إلى $1 معطلة:$2",
