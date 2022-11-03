@@ -7,7 +7,7 @@ use MediaWiki\Extension\Translate\Validation\Validators\InsertableRubyVariableVa
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\Validation\Validators\InsertableRubyVariableValidator
  */
-class InsertableRubyValidatorTest extends BaseValidatorTestCase {
+class InsertableRubyVariableValidatorTest extends BaseValidatorTestCase {
 	/** @dataProvider provideTestCases */
 	public function test( ...$params ) {
 		$this->runValidatorTests( new InsertableRubyVariableValidator(), 'variable', ...$params );
