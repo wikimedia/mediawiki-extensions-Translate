@@ -60,7 +60,10 @@
 	"translate-manage-action-rename": "Վերանվանել",
 	"translate-documentation-language": "Հաղորդագրության փաստաթղթեր",
 	"translate-searchprofile": "Թարգմանություններ",
+	"tux-tab-translated": "Թարգմանված",
 	"tux-edit": "Խմբագրել",
+	"tux-status-translated": "Թարգմանված է",
+	"tux-editor-save-button-label": "Հրատարակել թարգմանությունը",
 	"tux-editor-cancel-button-label": "Չեղարկել",
 	"tux-editor-edit-desc": "Խմբագրել փաստաթղթերը",
 	"tux-editor-suggestions-title": "Առաջարկություններ",
@@ -70,8 +73,10 @@
 	"tux-proofread-edit-label": "Խմբագրել",
 	"tux-editor-page-mode": "Էջ",
 	"tux-editor-doc-editor-cancel": "Չեղարկել",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|Հաղորդագրության|Հաղորդագրությունների}} բեռնում...",
 	"tux-message-filter-placeholder": "Զտել ցուցակը",
 	"tux-empty-list-translated-action": "Թարգմանել",
 	"tux-editor-close-tooltip": "Փակել",
+	"specialpages-group-translation": "Թարգմանություն",
 	"log-action-filter-translationreview": "Գործողության տեսակը."
 }

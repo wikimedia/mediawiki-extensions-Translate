@@ -4,7 +4,13 @@
 			"Սերգեյ Սաֆարյան"
 		]
 	},
+	"tux-sst-edit": "Խմբագրել թարգմանությունը",
+	"tux-sst-count": "{{PLURAL:$1|Գտնվեց մեկ արդյունք|Գտնվեց $1 արդյունք}}",
+	"tux-sst-facet-language": "Լեզուներ",
 	"tux-sst-default": "Թարգմանություններ",
 	"tux-sst-translated": "Թարգմանություններ $1ից",
+	"tux-sst-untranslated": "Չկա թարգմանություն $1ից",
+	"tux-sst-outdated": "Հնացած թարգմանություններ $1ից",
+	"tux-sst-ellipsis-outdated": "Հնացած թարգմանություններ",
 	"tux-sst-case-sensitive": "հաշվի առնել տառաչափը"
 }

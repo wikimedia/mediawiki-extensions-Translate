@@ -154,7 +154,7 @@
 	"log-action-filter-pagetranslation-prioritylanguages": "Modificação das línguas prioritárias",
 	"log-action-filter-pagetranslation-aggregategroups": "Modificação de grupos agregadores",
 	"log-description-messagebundle": "Registo para operações relacionadas com o sistema de pacotes de mensagens",
-	"log-name-messagebundle": "Registo dos pacotes de mensagens",
+	"log-name-messagebundle": "Registo de pacotes de mensagens",
 	"logentry-messagebundle-moveok": "$1 concluiu a alteração do nome do pacote de mensagens $3 para $4{{GENDER:$2|}}",
 	"logentry-messagebundle-movenok": "$1 encontrou um problema ao mover o pacote de mensagens $3 para $4{{GENDER:$2|}}",
 	"logentry-messagebundle-deletefok": "$1 concluiu a eliminação do pacote de mensagens $3{{GENDER:$2|}}",
