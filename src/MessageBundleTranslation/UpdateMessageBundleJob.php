@@ -35,7 +35,7 @@ class UpdateMessageBundleJob extends Job {
 	}
 
 	/** @inheritDoc */
-	public function run(): void {
+	public function run(): bool {
 		$mwInstance = MediaWikiServices::getInstance();
 		$lb = $mwInstance->getDBLoadBalancerFactory();
 		$jobQueue = $mwInstance->getJobQueueGroup();
@@ -122,6 +122,8 @@ class UpdateMessageBundleJob extends Job {
 			$groupId,
 			MessageGroupStats::FLAG_NO_CACHE | MessageGroupStats::FLAG_IMMEDIATE_WRITES
 		);
+
+		return true;
 	}
 
 	private function shouldFuzzy(
