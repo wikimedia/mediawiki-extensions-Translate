@@ -58,9 +58,7 @@ class FileBasedMessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 		], [] );
 
 		/** @var MessageGroupWANCache $mockMgWANCache */
-		$mockMgWANCache = $this->getMockBuilder( MessageGroupWANCache::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$mockMgWANCache = $this->createMock( MessageGroupWANCache::class );
 
 		$fileBasedLoader = new FileBasedMessageGroupLoader( $mockMgWANCache );
 

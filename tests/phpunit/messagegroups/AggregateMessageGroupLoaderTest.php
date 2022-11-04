@@ -7,9 +7,7 @@
 class AggregateMessageGroupLoaderTest extends PHPUnit\Framework\TestCase {
 	public function testCacheCalls() {
 		/** @var MessageGroupWANCache $mockMgWANCache */
-		$mockMgWANCache = $this->getMockBuilder( MessageGroupWANCache::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$mockMgWANCache = $this->createMock( MessageGroupWANCache::class );
 
 		$aggregateLoader = new AggregateMessageGroupLoader(
 			TranslateUtils::getSafeReadDB(),

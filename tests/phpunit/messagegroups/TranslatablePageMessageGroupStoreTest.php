@@ -60,9 +60,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 		$dummy = new DependencyWrapper( [], [] );
 
 		/** @var MessageGroupWANCache $mockMgWANCache */
-		$mockMgWANCache = $this->getMockBuilder( MessageGroupWANCache::class )
-			->disableOriginalConstructor()
-			->getMock();
+		$mockMgWANCache = $this->createMock( MessageGroupWANCache::class );
 
 		$translateStore = new TranslatablePageMessageGroupStore(
 			TranslateUtils::getSafeReadDB(),

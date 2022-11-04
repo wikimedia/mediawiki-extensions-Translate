@@ -47,13 +47,11 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * jobs
 	 */
 	public function testReplication() {
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
@@ -61,9 +59,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		$job = new TestableTTMServerMessageUpdateJob(
 			Title::makeTitle( NS_MAIN, 'Main Page' ),
 			[ 'command' => 'refresh' ],
-			$this->getMockBuilder( MessageHandle::class )
-				->disableOriginalConstructor()
-				->getMock()
+			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
 		$this->assertEmpty( $job->getResentJobs() );
@@ -74,13 +70,11 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * with the appropriate params.
 	 */
 	public function testReplicationError() {
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
@@ -89,9 +83,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		$job = new TestableTTMServerMessageUpdateJob(
 			Title::makeTitle( NS_MAIN, 'Main Page' ),
 			[ 'command' => 'refresh' ],
-			$this->getMockBuilder( MessageHandle::class )
-				->disableOriginalConstructor()
-				->getMock()
+			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
 		$this->assertCount( 1, $job->getResentJobs() );
@@ -112,14 +104,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * each services
 	 */
 	public function testAllServicesInError() {
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
@@ -128,9 +118,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		$job = new TestableTTMServerMessageUpdateJob(
 			Title::makeTitle( NS_MAIN, 'Main Page' ),
 			[ 'command' => 'refresh' ],
-			$this->getMockBuilder( MessageHandle::class )
-				->disableOriginalConstructor()
-				->getMock()
+			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
 		$this->assertCount( 2, $job->getResentJobs() );
@@ -162,13 +150,11 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * ensure that we do not replicate the write to its mirror
 	 */
 	public function testJobOnSingleService() {
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->never() )
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
@@ -180,9 +166,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				'service' => 'primary',
 				'command' => 'refresh'
 			],
-			$this->getMockBuilder( MessageHandle::class )
-				->disableOriginalConstructor()
-				->getMock()
+			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
 		$this->assertEmpty( $job->getResentJobs() );
@@ -193,14 +177,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * the job by not resending it to queue
 	 */
 	public function testAbandonedJob() {
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->getMockBuilder( WritableTTMServer::class )
-			->getMock();
+		$mock = $this->createMock( WritableTTMServer::class );
 		$mock->expects( $this->never() )
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
@@ -212,9 +194,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 				'service' => 'primary',
 				'command' => 'refresh'
 			],
-			$this->getMockBuilder( MessageHandle::class )
-				->disableOriginalConstructor()
-				->getMock()
+			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
 		$this->assertEmpty( $job->getResentJobs() );
