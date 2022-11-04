@@ -34,6 +34,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Settings\SettingsBuilder;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -76,7 +77,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	 * Do late setup that depends on configuration.
 	 */
 	public static function setupTranslate() {
-		global $wgHooks, $wgTranslateYamlLibrary;
+		global $wgTranslateYamlLibrary;
+		$hooks = [];
 
 		/*
 		 * Text that will be shown in translations if the translation is outdated.
@@ -90,7 +92,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 		}
 
-		$wgHooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
+		$hooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
 
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
@@ -200,71 +202,71 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			/// Page translation hooks
 
 			/// Register our CSS and metadata
-			$wgHooks['BeforePageDisplay'][] = [ Hooks::class, 'onBeforePageDisplay' ];
+			$hooks['BeforePageDisplay'][] = [ Hooks::class, 'onBeforePageDisplay' ];
 
 			// Disable VE
-			$wgHooks['VisualEditorBeforeEditor'][] = [ Hooks::class, 'onVisualEditorBeforeEditor' ];
+			$hooks['VisualEditorBeforeEditor'][] = [ Hooks::class, 'onVisualEditorBeforeEditor' ];
 
 			// Check syntax for \<translate>
-			$wgHooks['MultiContentSave'][] = [ Hooks::class, 'tpSyntaxCheck' ];
-			$wgHooks['EditFilterMergedContent'][] =
+			$hooks['MultiContentSave'][] = [ Hooks::class, 'tpSyntaxCheck' ];
+			$hooks['EditFilterMergedContent'][] =
 				[ Hooks::class, 'tpSyntaxCheckForEditContent' ];
 
 			// Add transtag to page props for discovery
-			$wgHooks['PageSaveComplete'][] = [ Hooks::class, 'addTranstagAfterSave' ];
+			$hooks['PageSaveComplete'][] = [ Hooks::class, 'addTranstagAfterSave' ];
 
-			$wgHooks['RevisionRecordInserted'][] = [ Hooks::class, 'updateTranstagOnNullRevisions' ];
+			$hooks['RevisionRecordInserted'][] = [ Hooks::class, 'updateTranstagOnNullRevisions' ];
 
 			// Register different ways to show language links
-			$wgHooks['ParserFirstCallInit'][] = [ self::class, 'setupParserHooks' ];
-			$wgHooks['LanguageLinks'][] = [ Hooks::class, 'addLanguageLinks' ];
-			$wgHooks['SkinTemplateGetLanguageLink'][] = [ Hooks::class, 'formatLanguageLink' ];
+			$hooks['ParserFirstCallInit'][] = [ self::class, 'setupParserHooks' ];
+			$hooks['LanguageLinks'][] = [ Hooks::class, 'addLanguageLinks' ];
+			$hooks['SkinTemplateGetLanguageLink'][] = [ Hooks::class, 'formatLanguageLink' ];
 
 			// Strip \<translate> tags etc. from source pages when rendering
-			$wgHooks['ParserBeforeInternalParse'][] = [ Hooks::class, 'renderTagPage' ];
+			$hooks['ParserBeforeInternalParse'][] = [ Hooks::class, 'renderTagPage' ];
 			// Strip \<translate> tags etc. from source pages when preprocessing
-			$wgHooks['ParserBeforePreprocess'][] = [ Hooks::class, 'preprocessTagPage' ];
-			$wgHooks['ParserOutputPostCacheTransform'][] =
+			$hooks['ParserBeforePreprocess'][] = [ Hooks::class, 'preprocessTagPage' ];
+			$hooks['ParserOutputPostCacheTransform'][] =
 				[ Hooks::class, 'onParserOutputPostCacheTransform' ];
 
-			$wgHooks['BeforeParserFetchTemplateRevisionRecord'][] =
+			$hooks['BeforeParserFetchTemplateRevisionRecord'][] =
 				[ Hooks::class, 'fetchTranslatableTemplateAndTitle' ];
 
 			// Set the page content language
-			$wgHooks['PageContentLanguage'][] = [ Hooks::class, 'onPageContentLanguage' ];
+			$hooks['PageContentLanguage'][] = [ Hooks::class, 'onPageContentLanguage' ];
 
 			// Prevent editing of certain pages in translations namespace
-			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+			$hooks['getUserPermissionsErrorsExpensive'][] =
 				[ Hooks::class, 'onGetUserPermissionsErrorsExpensive' ];
 			// Prevent editing of translation pages directly
-			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+			$hooks['getUserPermissionsErrorsExpensive'][] =
 				[ Hooks::class, 'preventDirectEditing' ];
 
 			// Our custom header for translation pages
-			$wgHooks['ArticleViewHeader'][] = [ Hooks::class, 'translatablePageHeader' ];
+			$hooks['ArticleViewHeader'][] = [ Hooks::class, 'translatablePageHeader' ];
 
 			// Edit notice shown on translatable pages
-			$wgHooks['TitleGetEditNotices'][] = [ Hooks::class, 'onTitleGetEditNotices' ];
+			$hooks['TitleGetEditNotices'][] = [ Hooks::class, 'onTitleGetEditNotices' ];
 
 			// Custom move page that can move all the associated pages too
-			$wgHooks['SpecialPage_initList'][] = [ Hooks::class, 'replaceMovePage' ];
+			$hooks['SpecialPage_initList'][] = [ Hooks::class, 'replaceMovePage' ];
 			// Locking during page moves
-			$wgHooks['getUserPermissionsErrorsExpensive'][] =
+			$hooks['getUserPermissionsErrorsExpensive'][] =
 				[ Hooks::class, 'lockedPagesCheck' ];
 			// Disable action=delete
-			$wgHooks['ArticleConfirmDelete'][] = [ Hooks::class, 'disableDelete' ];
+			$hooks['ArticleConfirmDelete'][] = [ Hooks::class, 'disableDelete' ];
 
 			// Replace subpage logic behavior
-			$wgHooks['SkinSubPageSubtitle'][] = [ Hooks::class, 'replaceSubtitle' ];
+			$hooks['SkinSubPageSubtitle'][] = [ Hooks::class, 'replaceSubtitle' ];
 
 			// Replaced edit tab with translation tab for translation pages
-			$wgHooks['SkinTemplateNavigation::Universal'][] = [ Hooks::class, 'translateTab' ];
+			$hooks['SkinTemplateNavigation::Universal'][] = [ Hooks::class, 'translateTab' ];
 
 			// Update translated page when translation unit is moved
-			$wgHooks['PageMoveComplete'][] = [ Hooks::class, 'onMovePageTranslationUnits' ];
+			$hooks['PageMoveComplete'][] = [ Hooks::class, 'onMovePageTranslationUnits' ];
 
 			// Update translated page when translation unit is deleted
-			$wgHooks['ArticleDeleteComplete'][] = [ Hooks::class, 'onDeleteTranslationUnit' ];
+			$hooks['ArticleDeleteComplete'][] = [ Hooks::class, 'onDeleteTranslationUnit' ];
 		}
 
 		global $wgTranslateUseSandbox;
@@ -307,9 +309,9 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			// right-translate-sandboxmanage action-translate-sandboxmanage
 			$wgAvailableRights[] = 'translate-sandboxmanage';
 
-			$wgHooks['GetPreferences'][] = [ TranslateSandbox::class, 'onGetPreferences' ];
-			$wgHooks['UserGetRights'][] = [ TranslateSandbox::class, 'enforcePermissions' ];
-			$wgHooks['ApiCheckCanExecute'][] = [ TranslateSandbox::class, 'onApiCheckCanExecute' ];
+			$hooks['GetPreferences'][] = [ TranslateSandbox::class, 'onGetPreferences' ];
+			$hooks['UserGetRights'][] = [ TranslateSandbox::class, 'enforcePermissions' ];
+			$hooks['ApiCheckCanExecute'][] = [ TranslateSandbox::class, 'onApiCheckCanExecute' ];
 
 			global $wgLogTypes, $wgLogActionsHandlers;
 			// log-name-translatorsandbox log-description-translatorsandbox
@@ -336,11 +338,11 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			$wgAPIModules['translatesandbox'] = [
 				'class' => TranslatorSandboxActionApi::class,
 				'services' => [
-						'UserFactory',
-						'UserNameUtils',
-						'UserOptionsManager',
-						'WikiPageFactory',
-						'UserOptionsLookup'
+					'UserFactory',
+					'UserNameUtils',
+					'UserOptionsManager',
+					'WikiPageFactory',
+					'UserOptionsLookup'
 				],
 				'args' => [
 					static function () {
@@ -358,7 +360,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 
 		// If no service has been configured, we use a built-in fallback.
 		global $wgTranslateTranslationDefaultService,
-			$wgTranslateTranslationServices;
+			   $wgTranslateTranslationServices;
 		if ( $wgTranslateTranslationDefaultService === true ) {
 			$wgTranslateTranslationDefaultService = 'TTMServer';
 			if ( !isset( $wgTranslateTranslationServices['TTMServer'] ) ) {
@@ -371,7 +373,35 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			}
 		}
 
-		$wgHooks['SidebarBeforeOutput'][] = [ TranslateToolbox::class, 'toolboxAllTranslations' ];
+		$hooks['SidebarBeforeOutput'][] = [ TranslateToolbox::class, 'toolboxAllTranslations' ];
+
+		static::registerHookHandlers( $hooks );
+	}
+
+	private static function registerHookHandlers( array $hooks ) {
+		if ( defined( 'MW_PHPUNIT_TEST' ) && MediaWikiServices::hasInstance() ) {
+			// When called from a test case's setUp() method,
+			// we can use HookContainer, but we cannot use SettingsBuilder.
+			$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
+			foreach ( $hooks as $name => $handlers ) {
+				foreach ( $handlers as $h ) {
+					$hookContainer->register( $name, $h );
+				}
+			}
+		} elseif ( method_exists( SettingsBuilder::class, 'registerHookHandlers' ) ) {
+			// Since 1.40: Use SettingsBuilder to register hooks during initialization.
+			// HookContainer is not available at this time.
+			$settingsBuilder = SettingsBuilder::getInstance();
+			$settingsBuilder->registerHookHandlers( $hooks );
+		} else {
+			// For MW < 1.40: Directly manipulate $wgHooks during initialization.
+			foreach ( $hooks as $name => $handlers ) {
+				$GLOBALS['wgHooks'][$name] = array_merge(
+					$GLOBALS['wgHooks'][$name],
+					$handlers
+				);
+			}
+		}
 	}
 
 	/**
