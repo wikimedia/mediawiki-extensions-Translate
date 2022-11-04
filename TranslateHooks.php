@@ -501,7 +501,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			);
 			$updater->addExtensionTable(
 				'translate_translatable_bundles',
-				"{$dir}/${dbType}/translate_translatable_bundles.sql"
+				"{$dir}/{$dbType}/translate_translatable_bundles.sql"
 			);
 
 			// 1.32 - This also adds a PRIMARY KEY
