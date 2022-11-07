@@ -9,7 +9,8 @@
 			"ترجمان05",
 			"ديفيد",
 			"روخو",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Asma"
 		]
 	},
 	"pagetranslation": "ترجمة صفحة",
@@ -38,7 +39,6 @@
 	"tpt-edit-failed": "تعذّر تحديث الصفحة: $1",
 	"tpt-duplicate": "اسم وحدة الترجمة $1 مستخدم أكثر من مرة.",
 	"tpt-invalid": "يجب ألا يحتوي اسم وحدة الترجمة $1 على شرطة سفلية أو شرطة مائلة.",
-	"tpt-already-marked": "آخر نسخة من هذه الصفحة مُعلّمة بالفعل للترجمة.",
 	"tpt-unmarked": "الصفحة [[:$1]] لم تعد مُعلمة للترجمة.",
 	"tpt-list-nopages": "لا صفحات مُعلّمة للترجمة أو جاهزة للتعليم للترجمة.",
 	"tpt-new-pages-title": "صفحات مقترحة للترجمة",
@@ -174,7 +174,7 @@
 	"pt-deletepage-list-translation": "صفحات الترجمة",
 	"pt-deletepage-list-section": "صفحات وحدة الترجمة",
 	"pt-deletepage-list-other": "صفحات فرعية أخرى",
-	"pt-deletepage-list-count": "إجمالا $1 {{PLURAL:$1|صفحة|صفحات}} للحذف.",
+	"pt-deletepage-list-count": "إجمالي $1 {{PLURAL:$1| صفحة | صفحات}} للحذف و $2 {{PLURAL:$2| subpages | الصفحات الفرعية}}.",
 	"pt-deletepage-full-logreason": "جزء من الصفحة القابلة للترجمة \"$1\"",
 	"pt-deletepage-lang-logreason": "جزء من صفحة الترجمة \"$1\"",
 	"pt-deletepage-started": "من فضلك تحقق من [[Special:Log/pagetranslation|سجل ترجمة الصفحات]] للأخطاء ورسائل الإكمال.",
