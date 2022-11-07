@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Lookruk",
 			"Passawuth"
 		]
 	},
 	"translate": "ແປ",
 	"translate-desc": "[[Special:Translate|ໜ້າພິເສດ]]ສຳຫຼັບແປມີເດຍວິກິແລະອື່ນ າ",
-	"translate-taction-translate": "ແປ"
+	"translate-taction-translate": "ແປ",
+	"translate-documentation-language": "ເອກະສານຂໍ້ຄວາມ"
 }
