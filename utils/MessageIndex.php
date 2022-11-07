@@ -684,12 +684,10 @@ class CDBMessageIndex extends MessageIndex {
 	public function getKeys() {
 		$reader = $this->getReader();
 		$keys = [];
-		while ( true ) {
-			$key = $keys === [] ? $reader->firstkey() : $reader->nextkey();
-			if ( $key === false ) {
-				break;
-			}
+		$key = $reader->firstkey();
+		while ( $key !== false ) {
 			$keys[] = $key;
+			$key = $reader->nextkey();
 		}
 
 		return $keys;
