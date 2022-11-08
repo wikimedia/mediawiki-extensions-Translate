@@ -45,7 +45,7 @@
 	"translate-checks-plural": "التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمه لا.",
 	"translate-checks-pagename": "النطاق تغير من التعريف",
 	"translate-checks-format": "هذه الترجمه لا تتبع التعريف أو لديها صياغه خاطئة: $1",
-	"translate-checks-escape": "عمليات الهروب التاليه ربما تكون حدثت بالصدفة: <strong>$1</strong>",
+	"translate-checks-escape": "{{PLURAL:$2|الحرف|الحروف}} التالية ربما تكون حدثت بالصدفة: <strong>$1</strong>. {{PLURAL:$4|حرف الهروب الصحيح هو|حروف الهروب الصحيحة تتضمن:}} $3.",
 	"translate-checks-fudforum-syntax": "استخدم <nowiki>$1</nowiki> بدلًا من <nowiki>$2</nowiki> فى هذا المشروع.",
 	"translate-pref-editassistlang": "لغات المساعد:",
 	"prefs-translate": "خيارات الترجمة",

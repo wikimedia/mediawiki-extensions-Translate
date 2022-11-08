@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"tsb-all-languages-button-label": "Բոլոր լեզուները",
-	"tsb-accept-button-label": "Ընդունել"
+	"tsb-accept-button-label": "Ընդունել",
+	"tsb-create-user-page": "Ստեղծվել է մասնակցի հիմնական էջը"
 }

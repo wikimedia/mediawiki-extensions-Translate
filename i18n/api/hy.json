@@ -4,5 +4,6 @@
 			"Սերգեյ Սաֆարյան"
 		]
 	},
-	"apihelp-groupreview-param-group": "Հաղորդագրությունների խումբ։"
+	"apihelp-groupreview-param-group": "Հաղորդագրությունների խումբ։",
+	"apihelp-query+messagecollection-param-group": "Հաղորդագրությունների խումբ։"
 }

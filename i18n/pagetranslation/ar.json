@@ -9,7 +9,8 @@
 			"ترجمان05",
 			"ديفيد",
 			"روخو",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Asma"
 		]
 	},
 	"pagetranslation": "ترجمة صفحة",
@@ -171,7 +172,7 @@
 	"pt-deletepage-list-translation": "صفحات الترجمة",
 	"pt-deletepage-list-section": "صفحات وحدة الترجمة",
 	"pt-deletepage-list-other": "صفحات فرعية أخرى",
-	"pt-deletepage-list-count": "إجمالا $1 {{PLURAL:$1|صفحة|صفحات}} للحذف.",
+	"pt-deletepage-list-count": "إجمالي $1 {{PLURAL:$1| صفحة | صفحات}} للحذف و $2 {{PLURAL:$2| subpages | الصفحات الفرعية}}.",
 	"pt-deletepage-full-logreason": "جزء من الصفحة القابلة للترجمة \"$1\"",
 	"pt-deletepage-lang-logreason": "جزء من صفحة الترجمة \"$1\"",
 	"pt-deletepage-started": "من فضلك تحقق من [[Special:Log/pagetranslation|سجل ترجمة الصفحات]] للأخطاء ورسائل الإكمال.",
