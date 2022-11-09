@@ -327,10 +327,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 *    (INFILE, TRANSLATIONS)
 	 * @param bool $condition Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
-	 * @param mixed|null $value Value for properties filtering.
+	 * @param int|null $value Value for properties filtering.
 	 * @throws MWException If given invalid filter name.
 	 */
-	public function filter( string $type, bool $condition = true, $value = null ): void {
+	public function filter( string $type, bool $condition = true, ?int $value = null ): void {
 		if ( !in_array( $type, self::getAvailableFilters(), true ) ) {
 			throw new MWException( "Unknown filter $type" );
 		}
@@ -354,11 +354,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Really apply a filter. Some filters need multiple conditions.
 	 * @param string $filter Filter name.
 	 * @param bool $condition Whether to return messages which do not satisfy
-	 * @param mixed $value Value for properties filtering.
+	 * @param int|null $value Value for properties filtering.
 	 * the given filter condition (true), or only which do (false).
 	 * @throws MWException
 	 */
-	private function applyFilter( string $filter, bool $condition, $value ): void {
+	private function applyFilter( string $filter, bool $condition, ?int $value ): void {
 		$keys = $this->keys;
 		if ( $filter === 'fuzzy' ) {
 			$keys = $this->filterFuzzy( $keys, $condition );
@@ -584,10 +584,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * false to get only last translations done by others.
 	 * @return string[] Filtered keys.
 	 */
-	private function filterLastTranslator( array $keys, bool $condition, int $userId ): array {
+	private function filterLastTranslator( array $keys, bool $condition, ?int $userId ): array {
 		$this->loadData( $keys );
 		$origKeys = $keys;
 
+		$userId = $userId ?? 0;
 		foreach ( $this->dbData as $row ) {
 			if ( (int)$row->rev_user === $userId ) {
 				unset( $keys[$this->rowToKey( $row )] );

@@ -137,6 +137,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			 * There (fuzzy) means do not show fuzzy, which is the same as !fuzzy
 			 * here and fuzzy here means (fuzzy, false) there. */
 			try {
+				$value = $value === null ? $value : (int)$value;
 				if ( $filter[0] === '!' ) {
 					$messages->filter( substr( $filter, 1 ), true, $value );
 				} else {
