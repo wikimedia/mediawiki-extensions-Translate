@@ -9,7 +9,8 @@
 			"ترجمان05",
 			"ديفيد",
 			"روخو",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Asma"
 		]
 	},
 	"pagetranslation": "ترجمة صفحة",
@@ -136,7 +137,7 @@
 	"pt-movepage-list-translatable": "{{PLURAL:$1|صفحة|صفحات}} معلم عليها للترجمة",
 	"pt-movepage-list-translatable-note": "هذه الصفحات يجب أن يتم نقلها بشكل منفصل.",
 	"pt-movepage-list-other": "{{PLURAL:$1|صفحة|صفحات}} فرعية أخرى",
-	"pt-movepage-list-count": "كإجمالي $1 {{PLURAL:$1|صفحة|صفحات}} للنقل.",
+	"pt-movepage-list-count": "إجمالي $1 {{PLURAL:$1| الصفحة | الصفحات}} بما في ذلك $2 {{PLURAL:$2| الصفحة الفرعية | الصفحات الفرعية}} و $3 {{PLURAL:$3| صفحة الحديث | صفحات الحديث}} للتحرك.",
 	"pt-movepage-list-no-pages": "لم يتم العثور على صفحات.",
 	"pt-movepage-legend": "نقل الصفحة القابلة للترجمة",
 	"pt-movepage-current": "الاسم الحالي:",
@@ -168,7 +169,7 @@
 	"pt-deletepage-list-translation": "صفحات الترجمة",
 	"pt-deletepage-list-section": "صفحات وحدة الترجمة",
 	"pt-deletepage-list-other": "صفحات فرعية أخرى",
-	"pt-deletepage-list-count": "إجمالا $1 {{PLURAL:$1|صفحة|صفحات}} للحذف.",
+	"pt-deletepage-list-count": "إجمالي $1 {{PLURAL:$1| صفحة | صفحات}} للحذف و $2 {{PLURAL:$2| subpages | الصفحات الفرعية}}.",
 	"pt-deletepage-full-logreason": "جزء من الصفحة القابلة للترجمة \"$1\"",
 	"pt-deletepage-lang-logreason": "جزء من صفحة الترجمة \"$1\"",
 	"pt-deletepage-started": "من فضلك تحقق من [[Special:Log/pagetranslation|سجل ترجمة الصفحات]] للأخطاء ورسائل الإكمال.",
