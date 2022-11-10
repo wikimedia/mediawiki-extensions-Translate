@@ -13,6 +13,7 @@ use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
 use Status;
+use Title;
 use User;
 use WANObjectCache;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -132,6 +133,13 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 	/** Hook: TranslateInitGroupLoaders */
 	public static function onTranslateInitGroupLoaders( array &$groupLoader ): void {
 		self::getInstance()->onTranslateInitGroupLoadersImpl( $groupLoader );
+	}
+
+	/** Hook: CodeEditorGetPageLanguage */
+	public static function onCodeEditorGetPageLanguage( Title $title, ?string &$lang, string $model ) {
+		if ( $model === MessageBundleContent::CONTENT_MODEL_ID ) {
+			$lang = 'json';
+		}
 	}
 
 	public function onTranslateInitGroupLoadersImpl( array &$groupLoader ): void {

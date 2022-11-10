@@ -225,6 +225,7 @@
 			"messageBundle"
 		],
 		"PageSaveComplete": "messageBundle",
+		"CodeEditorGetPageLanguage": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::onCodeEditorGetPageLanguage",
 		"RevisionRecordInserted": "main"
 	},
 	"HookHandlers": {
