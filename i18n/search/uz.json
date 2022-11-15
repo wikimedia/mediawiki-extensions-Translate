@@ -2,17 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"CoderSI",
-			"Malikxan"
+			"Malikxan",
+			"Zafar Shamsiddinov"
 		]
 	},
 	"searchtranslations": "Tarjimalardan qidirish",
 	"tux-sst-edit": "Tarjimani tahrirlash",
+	"tux-sst-view-foreign": "$1ʼda koʻrish",
 	"tux-sst-search": "Qidiruv",
 	"tux-sst-search-ph": "Tarjimalardan qidirish",
 	"tux-sst-count": "{{PLURAL:$1|Bitta natija topildi|$1 ta natija topildi}}",
 	"tux-sst-facet-language": "Tillar",
 	"tux-sst-facet-group": "Xabar guruhlari",
+	"tux-sst-nosolr-title": "Qidiruv mavjud emas",
 	"tux-sst-nosolr-body": "Bu vikida tarjima qidiruv xizmati yoʻq.",
+	"tux-sst-solr-offline-title": "Qidiruv mavjud emas",
+	"tux-sst-solr-offline-body": "Qidiruv xizmati vaqtincha mavjud emas.",
 	"tux-sst-next": "Keyingisi ›",
 	"tux-sst-prev": "< Avvalgisi",
 	"tux-sst-default": "Tarjimalar",
@@ -21,5 +26,9 @@
 	"tux-sst-outdated": "$1dan eskirgan tarjimalar",
 	"tux-sst-ellipsis-untranslated": "Tarjima yoʻq",
 	"tux-sst-ellipsis-outdated": "Eskirgan tarjimalar",
-	"tux-sst-case-sensitive": "Registrni hisobga olish"
+	"tux-sst-link-all-match": "Barcha qidiruv soʻzlarini talab qiling.",
+	"tux-sst-match-message": "Qidiruv soʻzlaridan biriga mos keladigan tarjimalar koʻrsatilmoqda: $1",
+	"tux-sst-case-sensitive": "Registrni hisobga olish",
+	"tux-sst-error-offset": "Boshqa qidiruv natijalarini ko‘rsatib bo‘lmaydi. Qidiruvingizni qisqartirish soʻraladi.",
+	"tux-sst-error-language": "Bu tilni bu turdagi qidiruv bilan ishlatib bo‘lmaydi."
 }
