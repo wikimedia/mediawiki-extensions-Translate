@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
 use MediaWiki\MediaWikiServices;
 
 /**

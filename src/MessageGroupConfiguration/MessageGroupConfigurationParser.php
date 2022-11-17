@@ -1,22 +1,25 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
+
+use AggregateMessageGroup;
+use Exception;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use RomaricDrigon\MetaYaml\MetaYaml;
+use TranslateYaml;
 
 /**
  * Utility class to parse and validate message group configurations.
- * @since 2014.01
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class MessageGroupConfigurationParser {
 	private $baseSchema;
 
 	public function __construct() {
 		// Don't perform validations if library not available
-		if ( class_exists( RomaricDrigon\MetaYaml\MetaYaml::class ) ) {
+		if ( class_exists( MetaYaml::class ) ) {
 			$this->baseSchema = $this->getBaseSchema();
 		}
 	}
@@ -27,10 +30,10 @@ class MessageGroupConfigurationParser {
 	 *
 	 * @param string $data Yaml
 	 * @param callable|null $callback Optional callback which is called on errors. Parameters are
-	 *   document index, processed configuration and error message.
+	 * document index, processed configuration and error message.
 	 * @return array Group configurations indexed by message group id.
 	 */
-	public function getHopefullyValidConfigurations( $data, $callback = null ) {
+	public function getHopefullyValidConfigurations( string $data, ?callable $callback = null ): array {
 		if ( !is_callable( $callback ) ) {
 			$callback = static function ( $unused1, $unused2, $unused3 ) {
 				/*noop*/
@@ -65,11 +68,9 @@ class MessageGroupConfigurationParser {
 
 	/**
 	 * Given a Yaml string, returns the non-empty documents as an array.
-	 *
-	 * @param string $data
 	 * @return string[]
 	 */
-	public function getDocumentsFromYaml( $data ) {
+	public function getDocumentsFromYaml( string $data ): array {
 		return preg_split( "/^---$/m", $data, -1, PREG_SPLIT_NO_EMPTY );
 	}
 
@@ -77,10 +78,9 @@ class MessageGroupConfigurationParser {
 	 * Returns group configurations from YAML documents. If there is document containing template,
 	 * it will be merged with other configurations.
 	 *
-	 * @param array $documents
 	 * @return array[][] Unvalidated group configurations
 	 */
-	public function parseDocuments( array $documents ) {
+	public function parseDocuments( array $documents ): array {
 		$groups = [];
 		$template = [];
 
@@ -107,17 +107,15 @@ class MessageGroupConfigurationParser {
 		return $groups;
 	}
 
-	public function getBaseSchema() {
+	public function getBaseSchema(): array {
 		return TranslateYaml::load( __DIR__ . '/data/group-yaml-schema.yaml' );
 	}
 
 	/**
 	 * Validates group configuration against schema.
-	 *
-	 * @param array $config
 	 * @throws Exception If configuration is not valid.
 	 */
-	public function validate( array $config ) {
+	public function validate( array $config ): void {
 		$schema = $this->baseSchema;
 
 		foreach ( $config as $section ) {
@@ -142,17 +140,12 @@ class MessageGroupConfigurationParser {
 			$schema = array_replace_recursive( $schema, $extra );
 		}
 
-		$schema = new RomaricDrigon\MetaYaml\MetaYaml( $schema );
+		$schema = new MetaYaml( $schema );
 		$schema->validate( $config );
 	}
 
-	/**
-	 * Merges a document template (base) to actual definition (specific)
-	 * @param array $base
-	 * @param array $specific
-	 * @return array
-	 */
-	public static function mergeTemplate( array $base, array $specific ) {
+	/** Merges a document template (base) to actual definition (specific) */
+	public static function mergeTemplate( array $base, array $specific ): array {
 		foreach ( $specific as $key => $value ) {
 			if ( is_array( $value ) && isset( $base[$key] ) && is_array( $base[$key] ) ) {
 				$base[$key] = self::mergeTemplate( $base[$key], $value );
