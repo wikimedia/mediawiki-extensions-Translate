@@ -14,6 +14,7 @@ use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
 use Status;
 use Title;
+use TranslateUtils;
 use User;
 use WANObjectCache;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -148,7 +149,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 		}
 
 		$groupLoader[] = new MessageBundleMessageGroupLoader(
-			$this->loadBalancer->getConnectionRef( DB_REPLICA ),
+			TranslateUtils::getSafeReadDB(),
 			new MessageGroupWANCache( $this->WANObjectCache )
 		);
 	}
