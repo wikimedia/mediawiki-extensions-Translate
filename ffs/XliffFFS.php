@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use Wikimedia\Zest\Zest;
 
 /**
  * Partial support for the Xliff translation format.
@@ -146,7 +147,7 @@ class XliffFFS extends SimpleFFS {
 			$template->load( __DIR__ . '/../data/xliff-template.xml' );
 		}
 
-		$list = $template->getElementsByTagName( 'body' )->item( 0 );
+		$list = Zest::getElementsByTagName( $template, 'body' )[0];
 		$list->nodeValue = null;
 
 		/** @var TMessage $m */
