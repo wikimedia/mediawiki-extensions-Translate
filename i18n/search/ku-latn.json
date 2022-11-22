@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"Bikarhêner",
 			"George Animal"
 		]
 	},
 	"searchtranslations": "Li wergeran bigere",
-	"tux-sst-edit": "Wergerê biguherîne",
+	"tux-sst-edit": "Wergerê biguhêre",
 	"tux-sst-search": "Lêgerîn",
 	"tux-sst-search-ph": "Li wergeran bigere",
 	"tux-sst-count": "{{PLURAL:$1|Encamek hat dîtin|$1 encam hatin dîtin}}",
