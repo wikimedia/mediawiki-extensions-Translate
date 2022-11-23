@@ -8,7 +8,9 @@
 			"Nghtwlkr",
 			"Njardarlogar",
 			"Pols12",
-			"Purodha"
+			"Purodha",
+			"EdoAug",
+			"Gabriel Kielland"
 		]
 	},
 	"pagetranslation": "Sideoversetting",
@@ -249,6 +251,8 @@
 	"tpt-validation-name-reuse": "Oversettelsesvariabelen «$1» defineres flere ganger med forskjellig innhold. Endre variabelnavnene så de er unike innenfor oversettelsesenheten.",
 	"visualeditor-annotations-translate-start": "Begynnelsen av innholdet som skal oversettes",
 	"visualeditor-annotations-translate-end": "Slutten av innholdet som skal oversettes",
+	"visualeditor-annotations-translate-description": "Dette området er markert som oversettbart. Sørg for at du følger retningslinjene for [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text endring av kildetekst].",
 	"visualeditor-annotations-tvar-start": "Begynnelsen av det uoversettbare innholdet",
-	"visualeditor-annotations-tvar-end": "Slutten på det uoversettbare innholdet"
+	"visualeditor-annotations-tvar-end": "Slutten på det uoversettbare innholdet",
+	"visualeditor-annotations-tvar-description": "Dette området er markert som uoversettbart. Se [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation segmentering av kildetekst] for mer informasjon."
 }
