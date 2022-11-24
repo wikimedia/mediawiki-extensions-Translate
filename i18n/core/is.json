@@ -14,6 +14,8 @@
 	"translate-extensionname": "Þýða",
 	"translate-desc": "[[Special:Translate|Kerfissíða]] til að þýða MediaWiki og önnur verkefni",
 	"translate-taskui-export-to-file": "Flytja út á innbyggðu sniði",
+	"translate-taskui-export-as-po": "Flytja út fyrir þýðingu án nettengingar",
+	"translate-taskui-export-as-csv": "Flytja út á CSV-sniði",
 	"translate-taction-translate": "Þýða",
 	"translate-taction-proofread": "Yfirferð",
 	"translate-taction-lstats": "Tölfræði tungumáls",
