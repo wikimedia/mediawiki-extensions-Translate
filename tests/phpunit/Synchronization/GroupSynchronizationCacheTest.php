@@ -117,7 +117,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->groupSyncCache->forceEndSync( $groupId );
 
 		$messages = $this->groupSyncCache->getGroupMessages( $groupId );
-		$this->assertEmpty( $messages, 'forceEndSync should remove group messages' );
+		$this->assertSame( [], $messages, 'forceEndSync should remove group messages' );
 		$this->assertNull(
 			$this->groupSyncCache->getSyncEndTime( $groupId ),
 			'forceEndSync should remove the group key'
@@ -169,7 +169,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testAddGroupErrors() {
-		$this->assertEmpty( $this->groupSyncCache->getGroupsWithErrors() );
+		$this->assertSame( [], $this->groupSyncCache->getGroupsWithErrors() );
 
 		$groupId = 'test-group';
 		$groupSyncResponse = $this->addTestGroupError( $groupId );

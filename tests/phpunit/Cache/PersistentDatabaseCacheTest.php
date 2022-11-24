@@ -135,7 +135,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		$this->persistentCache->delete( 'hello', 'hello2' );
 
 		$getEntries = $this->persistentCache->getByTag( $testTag );
-		$this->assertEmpty( $getEntries );
+		$this->assertSame( [], $getEntries );
 	}
 
 	public function testDeleteEntriesWithTag() {
@@ -152,7 +152,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		$this->persistentCache->deleteEntriesWithTag( $testTag );
 
 		$testTagEntries = $this->persistentCache->getByTag( $testTag );
-		$this->assertEmpty( $testTagEntries );
+		$this->assertSame( [], $testTagEntries );
 
 		$anotherTagEntries = $this->persistentCache->getByTag( $anotherTestTag );
 		$this->assertNotEmpty( $anotherTagEntries );

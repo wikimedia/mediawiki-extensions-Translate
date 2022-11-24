@@ -62,7 +62,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
-		$this->assertEmpty( $job->getResentJobs() );
+		$this->assertSame( [], $job->getResentJobs() );
 	}
 
 	/**
@@ -169,7 +169,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
-		$this->assertEmpty( $job->getResentJobs() );
+		$this->assertSame( [], $job->getResentJobs() );
 	}
 
 	/**
@@ -197,7 +197,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			$this->createMock( MessageHandle::class )
 		);
 		$job->run();
-		$this->assertEmpty( $job->getResentJobs() );
+		$this->assertSame( [], $job->getResentJobs() );
 	}
 
 }
