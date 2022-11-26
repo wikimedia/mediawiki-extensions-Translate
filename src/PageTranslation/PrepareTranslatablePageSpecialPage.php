@@ -27,7 +27,7 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$this->outputHeader();
-		$inputValue = htmlspecialchars( $request->getText( 'page', $par ) );
+		$inputValue = htmlspecialchars( $request->getText( 'page', $par ?? '' ) );
 		$pagenamePlaceholder = $this->msg( 'pp-pagename-placeholder' )->escaped();
 		$prepareButtonValue = $this->msg( 'pp-prepare-button-label' )->escaped();
 		$saveButtonValue = $this->msg( 'pp-save-button-label' )->escaped();
