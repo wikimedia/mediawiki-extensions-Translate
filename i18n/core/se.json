@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
@@ -12,6 +13,7 @@
 	"translate-sidebar-alltrans": "Eará gielaide",
 	"translations": "Buot jorgalusat",
 	"translate-langstats-expand": "čájet",
+	"translate-langstats-collapse": "čiega",
 	"translate-language": "Giella",
 	"translate-mgs-column-language": "Giella",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
@@ -19,6 +21,9 @@
 	"tux-tab-all": "Buot",
 	"tux-editor-suggestions-title": "Evttohusat",
 	"tux-editor-in-other-languages": "Eará gielaide",
+	"tux-notices-hide": "čiega",
 	"tux-editor-expand-tooltip": "Stuorit",
+	"tux-editor-collapse-tooltip": "Čiega",
+	"tux-editor-message-tools-delete": "Sihko",
 	"tux-editor-message-tools-translations": "Buot jorgalusat"
 }

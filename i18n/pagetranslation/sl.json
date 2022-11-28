@@ -31,7 +31,7 @@
 	"tpt-nosuchpage": "Stran $1 ne obstaja",
 	"tpt-oldrevision": "$2 ni zadnja redakcija strani [[:$1]].\nZa prevod se lahko označijo samo zadnje redakcije.",
 	"tpt-notsuitable": "Stran $1 ni primerna za prevod.\nPrepričajte se, da ima oznake $2 in veljavno skladnjo.",
-	"tpt-saveok": "Stran [[:$1]] je bila označena za prevod z $2 {{PLURAL:$2|prevajalsko enoto|prevajalskima enotama|prevajalskimi enotami}}.\nStran je sedaj mogoče <span class=\"plainlinks\">[$3 prevesti]</span>.",
+	"tpt-saveok": "Stran [[:$1]] je bila označena za prevod s $2 {{PLURAL:$2|prevodno enoto|prevodnima enotama|prevodnimi enotami}}.\nStran je zdaj mogoče <span class=\"plainlinks\">[$3 prevesti]</span>.",
 	"tpt-saveok-first": "Za to stran lahko [[Special:PageMigration|uvozite že obstoječi prevod]] (če obstaja).",
 	"tpt-offer-notify": "O tej strani lahko <span class=\"plainlinks\">[ $1 obvestite prevajalce]</span>.",
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Prikaz seznama prevedljivih strani]]",
