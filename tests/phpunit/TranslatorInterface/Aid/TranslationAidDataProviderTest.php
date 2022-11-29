@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use HashMessageIndex;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWikiIntegrationTestCase;
-use MessageGroups;
 use MessageHandle;
 use MessageIndex;
 use MockWikiMessageGroup;

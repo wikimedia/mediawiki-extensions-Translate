@@ -8,7 +8,6 @@ use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MessageChangeStorage;
-use MessageGroups;
 use Title;
 use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;

@@ -6,6 +6,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;

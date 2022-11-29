@@ -5,11 +5,11 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use FormatJson;
 use Language;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\ParallelExecutor;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
-use MessageGroups;
 use MessageGroupStats;
 use MessageHandle;
 use TMessage;

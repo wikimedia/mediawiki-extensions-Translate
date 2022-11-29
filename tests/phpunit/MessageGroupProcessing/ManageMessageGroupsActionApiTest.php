@@ -12,7 +12,6 @@ use DateTime;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MessageChangeStorage;
-use MessageGroups;
 use MockWikiMessageGroup;
 use Title;
 use TranslateUtils;

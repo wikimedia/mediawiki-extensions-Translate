@@ -10,7 +10,6 @@ use JobQueueGroup;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\Revision\RevisionRecord;
-use MessageGroups;
 use MessageIndex;
 use Title;
 use TranslateMetadata;

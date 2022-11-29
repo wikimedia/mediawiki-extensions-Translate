@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+
 /**
  * Contains methods that provide statistics for message groups.
  *

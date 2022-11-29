@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use Maintenance;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
-use MessageGroups;
 use MessageGroupStats;
 use RawMessage;
 use TranslateUtils;

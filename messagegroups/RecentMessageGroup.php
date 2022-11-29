@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+
 /**
  * @since 2011-11-28
  * @ingroup MessageGroup

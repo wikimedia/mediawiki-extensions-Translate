@@ -5,6 +5,7 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**

@@ -9,7 +9,6 @@ use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\HookContainer\HookContainer;
 use MessageGroup;
-use MessageGroups;
 use TranslateMetadata;
 use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -61,7 +60,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				}
 			} else {
 				$groups = MessageGroups::getAllGroups();
-				usort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
+				usort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
 			}
 			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		} elseif ( $params['root'] !== '' ) {

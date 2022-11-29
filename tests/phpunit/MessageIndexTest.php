@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use Wikimedia\TestingAccessWrapper;
 
 /**

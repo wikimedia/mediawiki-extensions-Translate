@@ -10,7 +10,6 @@ use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MessageChangeStorage;
 use MessageGroup;
-use MessageGroups;
 use Title;
 use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;

@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use ApiQuery;
 use IJobSpecification;
 use JobQueueGroup;
-use MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use TranslateUtils;

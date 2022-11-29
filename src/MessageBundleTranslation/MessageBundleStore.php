@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use InvalidArgumentException;
 use JobQueueGroup;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
-use MessageGroups;
 use MessageIndex;
 use RequestContext;
 use SpecialPageLanguage;

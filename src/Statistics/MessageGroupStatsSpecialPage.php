@@ -7,7 +7,7 @@ use DeferredUpdates;
 use Html;
 use HTMLForm;
 use JobQueueGroup;
-use MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use SpecialPage;

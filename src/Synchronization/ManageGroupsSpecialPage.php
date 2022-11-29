@@ -13,6 +13,7 @@ use Html;
 use JobQueueGroup;
 use Language;
 use LinkBatch;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -20,7 +21,6 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MessageChangeStorage;
 use MessageGroup;
-use MessageGroups;
 use MessageHandle;
 use MessageIndex;
 use MessageUpdateJob;
@@ -28,6 +28,7 @@ use NamespaceInfo;
 use OOUI\ButtonInputWidget;
 use OutputPage;
 use PermissionsError;
+use RuntimeException;
 use Skin;
 use SpecialPage;
 use TextContent;
@@ -470,6 +471,12 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		foreach ( $groups as $groupId => $group ) {
 			try {
+				if ( !$group instanceof FileBasedMessageGroup ) {
+					throw new RuntimeException( "Expected $groupId to be FileBasedMessageGroup, got "
+						. get_class( $group )
+						. " instead."
+					);
+				}
 				$changes = TranslateUtils::deserialize( $reader->get( $groupId ) );
 				if ( $groupSyncCacheEnabled && $this->synchronizationCache->groupHasErrors( $groupId ) ) {
 					$postponed[$groupId] = $changes;
@@ -1031,7 +1038,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		return $errorMsg;
 	}
 
-	/** @return FileBasedMessageGroup[] */
+	/** @return associative-array<int|string,\MessageGroup> */
 	private function getGroupsFromCdb( \Cdb\Reader $reader ): array {
 		$groups = [];
 		$groupIds = TranslateUtils::deserialize( $reader->get( '#keys' ) );

@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;

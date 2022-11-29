@@ -1,22 +1,28 @@
 <?php
-/**
- * @author Niklas Laxström
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use HashBagOStuff;
+use HashMessageIndex;
+use MediaWikiIntegrationTestCase;
+use MessageIndex;
+use WANObjectCache;
 
 /**
+ * @author Niklas Laxström
  * @group Database
  * ^ See AggregateMessageGroup::getGroups -> MessageGroups::getPriority
- * @covers MessageGroups
+ * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups
+ * @license GPL-2.0-or-later
  */
 class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
 		$conf = [
-			__DIR__ . '/data/ParentGroups.yaml',
-			__DIR__ . '/data/ValidatorGroup.yaml'
+			__DIR__ . '../../data/ParentGroups.yaml',
+			__DIR__ . '../../data/ValidatorGroup.yaml'
 		];
 
 		$this->setMwGlobals( [
@@ -32,8 +38,9 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		$hashIndex = new HashMessageIndex();
+		MessageIndex::setInstance( $hashIndex );
+		$hashIndex->rebuild();
 	}
 
 	/** @dataProvider provideGroups */
@@ -43,7 +50,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $got );
 	}
 
-	public static function provideGroups() {
+	public static function provideGroups(): array {
 		$cases = [];
 		$cases[] = [
 			[ [ 'root1' ], [ 'root2' ] ],
@@ -68,9 +75,9 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		return $cases;
 	}
 
-	public function testHaveSingleSourceLanguage() {
+	public function testHaveSingleSourceLanguage(): void {
 		$this->setMwGlobals( [
-			'wgTranslateGroupFiles' => [ __DIR__ . '/data/MixedSourceLanguageGroups.yaml' ],
+			'wgTranslateGroupFiles' => [ __DIR__ . '../../data/MixedSourceLanguageGroups.yaml' ],
 		] );
 		MessageGroups::singleton()->recache();
 
@@ -86,7 +93,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testGroupYAMLParsing() {
+	public function testGroupYAMLParsing(): void {
 		$group = MessageGroups::getGroup( 'test-validator-group' );
 		$msgValidator = $group->getValidator();
 		$suggester = $group->getInsertablesSuggester();

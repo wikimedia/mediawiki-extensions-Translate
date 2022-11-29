@@ -5,6 +5,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+
 /** @covers MessageGroupStats */
 class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

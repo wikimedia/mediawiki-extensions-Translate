@@ -10,7 +10,6 @@ $cfg['file_list'] = array_merge(
 	$cfg['file_list'],
 	[
 		'Message.php',
-		'MessageGroups.php',
 		'MetaYamlSchemaExtender.php',
 		'TranslateEditAddons.php',
 		'TranslateHooks.php',

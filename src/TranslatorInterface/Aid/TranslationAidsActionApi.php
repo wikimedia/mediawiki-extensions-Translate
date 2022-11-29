@@ -4,11 +4,11 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use ApiBase;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\WebService\QueryAggregator;
 use MediaWiki\Extension\Translate\WebService\QueryAggregatorAware;
 use MediaWiki\Logger\LoggerFactory;
-use MessageGroups;
 use MessageHandle;
 use Title;
 use Wikimedia\ParamValidator\ParamValidator;

@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use HashBagOStuff;
 use HashMessageIndex;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWikiIntegrationTestCase;
-use MessageGroups;
 use MessageIndex;
 use MockWikiMessageGroup;
 use RequestContext;

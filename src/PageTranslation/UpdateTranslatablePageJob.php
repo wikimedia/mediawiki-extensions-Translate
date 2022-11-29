@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
-use MessageGroups;
 use MessageGroupStats;
 use MessageIndexRebuildJob;
 use MessageUpdateJob;

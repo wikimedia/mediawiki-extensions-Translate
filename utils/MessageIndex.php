@@ -10,6 +10,7 @@
 
 use Cdb\Reader;
 use Cdb\Writer;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;

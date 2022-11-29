@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+
 /**
  * Contains class which offers functionality for reading and updating Translate group
  * related metadata

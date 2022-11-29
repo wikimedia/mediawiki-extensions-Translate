@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+
 /** @covers MessageGroupLoader */
 class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 

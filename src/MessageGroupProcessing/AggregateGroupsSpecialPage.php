@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use AggregateMessageGroup;
 use Html;
 use MediaWiki\Cache\LinkBatchFactory;
-use MessageGroups;
 use SpecialPage;
 use TranslateMetadata;
 use WikiPageMessageGroup;

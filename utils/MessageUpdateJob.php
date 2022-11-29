@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateReplaceTitle;
 use MediaWiki\Extension\Translate\Services;

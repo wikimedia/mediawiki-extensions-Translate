@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use ApiBase;
 use ApiMain;
 use Mediawiki\Languages\LanguageNameUtils;
-use MessageGroups;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

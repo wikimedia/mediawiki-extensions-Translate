@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
 use GettextFFS;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
-use MessageGroups;
 use MessageGroupStats;
 
 /**

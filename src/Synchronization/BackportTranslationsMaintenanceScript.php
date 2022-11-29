@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
 use JsonFFS;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
-use MessageGroups;
 use RuntimeException;
 use SimpleFFS;
 use TranslateUtils;

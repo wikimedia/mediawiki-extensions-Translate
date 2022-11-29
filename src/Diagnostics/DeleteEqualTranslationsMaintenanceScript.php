@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
-use MessageGroups;
 use SplObjectStorage;
 use Title;
 use TitleValue;

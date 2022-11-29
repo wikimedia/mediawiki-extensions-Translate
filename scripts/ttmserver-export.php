@@ -7,6 +7,8 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );

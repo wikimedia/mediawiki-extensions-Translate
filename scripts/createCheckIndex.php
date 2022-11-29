@@ -11,6 +11,7 @@
 
 // Standard boilerplate to define $IP
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use Mediawiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;

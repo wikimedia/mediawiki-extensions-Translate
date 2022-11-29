@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Job;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use MessageGroups;
 use MessageGroupStats;
 use MessageIndexRebuildJob;
 use MessageUpdateJob;

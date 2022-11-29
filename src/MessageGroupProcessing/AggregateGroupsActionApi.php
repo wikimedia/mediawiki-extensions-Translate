@@ -9,7 +9,6 @@ use ApiMain;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Logger\LoggerFactory;
-use MessageGroups;
 use MessageIndexRebuildJob;
 use Title;
 use TranslateMetadata;

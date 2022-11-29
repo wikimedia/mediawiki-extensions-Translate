@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use Collation;
 use MalformedTitleException;
-use MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageIndex;
 use NamespaceInfo;
 use SplMinHeap;

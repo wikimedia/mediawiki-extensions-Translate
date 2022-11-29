@@ -7,8 +7,8 @@ use ApiBase;
 use ApiMain;
 use Exception;
 use FormatJson;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Logger\LoggerFactory;
-use MessageGroups;
 use Psr\Log\LoggerInterface;
 use Wikimedia\ParamValidator\ParamValidator;
 

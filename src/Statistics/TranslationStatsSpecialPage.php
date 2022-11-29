@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use FormOptions;
 use Html;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MessageGroup;
-use MessageGroups;
 use SpecialPage;
 use TranslateUtils;
 use Xml;

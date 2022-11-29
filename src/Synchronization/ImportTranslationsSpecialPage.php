@@ -8,8 +8,8 @@ use FileBasedMessageGroup;
 use GettextFFS;
 use GettextParseException;
 use Html;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageGroupBase;
-use MessageGroups;
 use SpecialPage;
 use Xml;
 

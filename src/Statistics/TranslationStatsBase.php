@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 
 /**
  * Provides some hand default implementations for TranslationStatsInterface.

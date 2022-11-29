@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ApiTestCase;
 use HashBagOStuff;
-use MessageGroups;
 use WANObjectCache;
 use WikiMessageGroup;
 

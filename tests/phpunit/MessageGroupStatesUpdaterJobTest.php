@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
 
 /**
