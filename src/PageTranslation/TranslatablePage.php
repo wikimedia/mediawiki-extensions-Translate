@@ -451,7 +451,12 @@ class TranslatablePage extends TranslatableBundle {
 		}
 
 		// Fetch the source fallback
-		$sourceLanguage = $this->getMessageGroup()->getSourceLanguage();
+		$messageGroup = $this->getMessageGroup();
+		if ( !$messageGroup ) {
+			return null;
+		}
+
+		$sourceLanguage = $messageGroup->getSourceLanguage();
 		return $store->getRevisionByTitle( $title->getSubpage( $sourceLanguage ) );
 	}
 

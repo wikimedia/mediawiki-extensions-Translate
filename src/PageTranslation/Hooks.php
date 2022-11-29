@@ -222,8 +222,20 @@ class Hooks {
 		$templateTranslationPage = TranslatablePage::isTranslationPage( $templateTitle );
 		if ( $templateTranslationPage ) {
 			// Template is referring to a translation page, fetch it and incase it doesn't
-			// exist, fetch the source fallback
+			// exist, fetch the source fallback.
 			$revRecord = $templateTranslationPage->getRevisionRecordWithFallback();
+			if ( !$revRecord ) {
+				// In very rare cases, fetching of the source fallback also seems to be failing in
+				// which case null will be returned. See: T323863
+				// This should not happen because TranslatablePage::isTranslationPage already checks
+				// the message index, and checks if the translatable page has the marked tag.
+				LoggerFactory::getInstance( 'Translate' )->warning(
+					"T323863: Did not find message group for '{groupid}'",
+					[ 'groupid' => $templateTranslationPage->getMessageGroupId() ]
+				);
+				return;
+
+			}
 			return;
 		}
 
