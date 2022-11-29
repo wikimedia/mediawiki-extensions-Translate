@@ -16,7 +16,8 @@
 			"Pols12",
 			"Rodrigo codignoli",
 			"Shirayuki",
-			555
+			555,
+			"Fúlvio"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -102,6 +103,8 @@
 	"tpt-discouraged-language-force": "<strong>Esta página não pode ser traduzida para $2.</strong>\n\nUm administrador de traduções decidiu que a página só pode ser traduzida para $3.",
 	"tpt-priority-languages": "Um coordenador de traduções definiu como idiomas prioritários para este grupo $1.",
 	"tpt-priority-languages-force": "Um administrador de traduções definiu as línguas prioritárias para este grupo como $1. Não é permitido traduzir para outras línguas.",
+	"tpt-discouraged-translation-header": "A tradução desta página foi desencorajada",
+	"tpt-discouraged-translation-content": "Um administrador de traduções desencorajou a tradução desta página. Você ainda pode traduzir a página, mas as traduções podem não ser úteis.",
 	"tpt-render-summary": "Atualizando para corresponder à nova versão da página de origem",
 	"aggregategroups": "Grupos agregadores",
 	"tpt-aggregategroup-add": "Adicionar",
@@ -165,6 +168,7 @@
 	"pt-movepage-list-translatable-note": "Essas páginas devem ser movidas separadamente.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Outra subpágina|Outras subpáginas}}",
 	"pt-movepage-list-count": "Há, no total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}} e $2 {{PLURAL:$2|subpágina|subpáginas}}.",
+	"pt-movepage-page-count-limit": "Esta página traduzível consiste em mais de $1 {{PLURAL:$1|página|páginas}}. Mover tantas páginas não é confiável. Entre em contato com um administrador do sistema para fazer isso por meio de um script de manutenção.",
 	"pt-movepage-list-no-pages": "Não foi encontrada nenhuma página.",
 	"pt-movepage-legend": "Mover página traduzível",
 	"pt-movepage-current": "Nome atual:",
@@ -177,7 +181,7 @@
 	"pt-movepage-intro": "Esta página especial permite mover páginas que estão marcadas para tradução.\nA operação de movimentação não é instantânea, porque será necessário mover muitas páginas.\nEnquanto estiverem sendo movidas, não será possível interagir com as páginas em questão.\nAs falhas serão registradas no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser reparadas manualmente.",
 	"pt-movepage-logreason": "Parte da página traduzível \"$1\"",
 	"pt-movepage-started": "Por favor, em um momento verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] por erros e mensagem de conclusão.",
-	"pt-locked-page": "Está página está bloqueada porque a página traduzível está sendo movida.",
+	"pt-locked-page": "Está página está bloqueada porque a página traduzível está sendo movida no momento.",
 	"pt-deletepage-lang-title": "Eliminando a página de tradução \"$1\"",
 	"pt-deletepage-full-title": "Eliminando a página traduzível \"$1\"",
 	"pt-deletepage-invalid-title": "A página especificada não é valida.",
