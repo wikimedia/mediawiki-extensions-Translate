@@ -1247,6 +1247,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		TranslateMetadata::set( $groupId, 'priorityreason', $npReason );
 
 		if ( $opLangs !== $npLangs || $opForce !== $npForce || $opReason !== $npReason ) {
+			$logComment = $npReason === false ? '' : $npReason;
 			$params = [
 				'languages' => $npLangs,
 				'force' => $npForce,
@@ -1257,7 +1258,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$entry->setPerformer( $this->getUser() );
 			$entry->setTarget( $page->getTitle() );
 			$entry->setParameters( $params );
-			$entry->setComment( $npReason );
+			$entry->setComment( $logComment );
 			$logid = $entry->insert();
 			$entry->publish( $logid );
 		}
