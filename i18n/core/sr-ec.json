@@ -89,7 +89,7 @@
 	"translate-checks-newline-missing-start": "{{PLURAL:$1|Недостаје $1 знак|Недостају $1 знака|Недостају $1 знакова}} за нови ред на почетку превода.",
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|Недостаје $1 знак|Недостају $1 знака|Недостају $1 знакова}} за нови ред на крају превода.",
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|Недостаје $1 додатни знак|Недостају $1 додатна знака|Недостају $1 додатних знакова}} за нови ред на почетку превода.",
-	"translate-checks-newline-extra-end": "{{PLURAL:$1|Недостаје $1 додатни знак|Недостају $1 додатна знака|Недостају $1 додатних знакова}} за нови ред на крају превода.",
+	"translate-checks-newline-extra-end": "Недостајe {{PLURAL:$1|$1}} додатних знакова за нови ред на крају превода.",
 	"translate-checks-replacement": "Користи $2 уместо $1.",
 	"translate-pref-editassistlang": "Помоћни језици:",
 	"prefs-translate": "Опције превођења",

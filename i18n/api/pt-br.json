@@ -7,7 +7,8 @@
 			"Felipe L. Ewald",
 			"Mordecool",
 			"Svjatysberega",
-			"TheEduGobi"
+			"TheEduGobi",
+			"Fúlvio"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gerencie grupos de mensagens agregadas.\n\nVocê pode adicionar e remover grupos de mensagens agregadas e associar ou dissociar grupos de mensagens deles (um de cada vez).",
@@ -28,7 +29,9 @@
 	"apihelp-query+languagestats-description": "Consultar estatísticas de idioma.",
 	"apihelp-query+languagestats-summary": "Consultar estatísticas de idioma.",
 	"apihelp-query+languagestats-param-language": "Código da linguagem.",
+	"apihelp-query+languagestats-param-group": "ID do grupo de mensagens.",
 	"apihelp-query+languagestats-example-1": "Lista de estatísticas de conclusão de tradução para finlandês",
+	"apihelp-query+languagestats-example-2": "Lista de estatísticas de conclusão de tradução para o finlandês para o grupo A",
 	"apihelp-query+messagecollection-description": "Consultar MessageCollection sobre traduções.",
 	"apihelp-query+managemessagegroups-summary": "Buscar possíveis renomeados para uma mensagem em um grupo durante as importações",
 	"apihelp-query+managemessagegroups-description": "Buscar possíveis renomeados para uma mensagem em um grupo durante as importações",
@@ -56,10 +59,13 @@
 	"apihelp-query+messagegroups-param-iconsize": "Tamanho preferido do ícone do grupo rasterizado.",
 	"apihelp-query+messagegroups-param-prop": "Qual informação relacionada à tradução para obter:\n;id:Incluir ID do grupo.\n;rótulo:Incluir rótulo do grupo.\n;descrição:Incluir descrição do grupo.\n;classe:Incluir nome da classe do grupo.\n;namespace:Incluir espaço nominal do grupo. Nem todos os grupos pertencem a um único espaço nominal.\n;existe:Incluir propriedade de existência auto-calculada do grupo.\n;ícone:Incluir URLs para o ícone do grupo.\n;prioridade:incluir status de prioridade como desencorajado.\n;prioritylangs:Incluir idiomas preferenciais. Se não for definido, isso retorna false.\n;priorityforce:Incluir status de prioridade - é a configuração de idioma de prioridade forçada.\n;workflowstates:Inclua os estados de fluxo de trabalho para o grupo de mensagens.",
 	"apihelp-query+messagegroups-param-root": "Ao usar o formato da árvore, em vez de começar do início do nível superior do grupo de mensagens fornecido, que deve ser um grupo de mensagens agregado. Ao usar apenas o formato plano, o grupo especificado é retornado.",
+	"apihelp-query+messagegroups-param-languageFilter": "Retornar apenas grupos de mensagens que possam ser traduzidos para o idioma fornecido.",
 	"apihelp-query+messagegroups-example-1": "Mostrar grupos de mensagens",
 	"apihelp-query+messagegroupstats-description": "Consultar estatísticas do grupo de mensagens.",
 	"apihelp-query+messagegroupstats-summary": "Consultar estatísticas do grupo de mensagens.",
 	"apihelp-query+messagegroupstats-param-group": "ID do grupo de mensagens.",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "Não exibir idiomas com tradução completa",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Não exibir os idiomas que não tenham traduções",
 	"apihelp-query+messagegroupstats-example-1": "Lista de estatísticas de conclusão de tradução para o grupo  \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "Consultar todas as traduções para uma única mensagem.",
 	"apihelp-query+messagetranslations-summary": "Consultar todas as traduções para uma única mensagem.",
@@ -169,6 +175,7 @@
 	"apiwarn-translate-language-disabled-source": "O idioma de origem deste grupo é $1. Selecione outro idioma, para a qual irá traduzir, por favor.",
 	"apierror-translate-operation-error": "Ocorreu um erro ao processar o pedido. Erro: $1",
 	"apihelp-translationentitysearch-summary": "Pesquise grupos de mensagens e mensagens",
+	"apihelp-translationentitysearch-param-entitytype": "Tipo de entidade que está sendo consultada",
 	"apihelp-translationentitysearch-param-query": "Consulta de pesquisa",
 	"apihelp-translationentitysearch-param-limit": "Número máximo de resultados da pesquisa"
 }

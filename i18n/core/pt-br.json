@@ -20,7 +20,8 @@
 			"Mariagarbin",
 			"Opraco",
 			"TheEduGobi",
-			555
+			555,
+			"Fúlvio"
 		]
 	},
 	"translate": "Traduzir",
@@ -207,6 +208,9 @@
 	"translate-mgs-totals": "{{PLURAL:$1|A língua em conjunto|Todas as $1 línguas em conjunto}}",
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
+	"translate-tes-server-error": "Falha ao buscar sugestões de pesquisa",
+	"translate-tes-group-not-found": "Nenhum resultado correspondente",
+	"translate-tes-type-to-search": "Digite para começar a pesquisar",
 	"supportedlanguages": "Idiomas ativos",
 	"supportedlanguages-summary": "Esta página apresenta uma lista de idiomas ativos no {{SITENAME}},\njunto dos respectivos nomes dos tradutores de cada idioma.\nQuanto maior for exibido um nome, com mais traduções a pessoa terá contribuído.\nA cor do sublinhado é um indicativo de atividades recentes do usuário.",
 	"supportedlanguages-colorlegend": "Legenda: última tradução $1 dias atrás.",
@@ -218,6 +222,7 @@
 	"supportedlanguages-count": "$1 {{PLURAL:$1|idioma|idiomas}} ao todo.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edição|edições}} - a última edição foi há $3 {{PLURAL:$3|dia|dias}}",
 	"translate-supportedlanguages-cached": "Esta informação foi armazenada em cache em $1 atrás.",
+	"translate-activelanguages-invalid-code": "O código de idioma \"$1\" é desconhecido ou não está habilitado para tradução.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Texto original da unidade de tradução",
 	"abusefilter-edit-builder-vars-translate-target-language": "Idioma alvo para tradução",
 	"translate-jssti-add": "Adicionar à lista",
@@ -274,7 +279,7 @@
 	"translate-manage-inconsistent": "Detectada inconsistência na solicitação.\nConfira as alterações e tente novamente.\nDetalhes: $1.",
 	"translate-manage-toolong": "Foi excedido o tempo máximo de $1 {{PLURAL:$1|segundo|segundos}} de processamento.\nReenvie o formulário para continuar processando.",
 	"translate-manage-import-summary": "Importando uma nova versão a partir de fonte externa",
-	"translate-manage-import-ignore": "Pulando menssagem $1.",
+	"translate-manage-import-ignore": "Pulando mensagem $1.",
 	"translate-manage-import-rename-summary": "Renomeado na fonte externa",
 	"translate-manage-conflict-summary": "Importando uma nova versão a partir de fonte externa.\nVerifique-a, por favor.",
 	"translate-manage-submit": "Executar",
@@ -317,8 +322,8 @@
 	"group-translate-sandboxed-member": "{{GENDER:$1|tradutor reprovado}}",
 	"right-translate-sandboxmanage": "Gerenciar usuários em área restrita",
 	"action-translate-sandboxmanage": "gerenciar usuários em área restrita",
-	"right-translate-sandboxaction": "Executar ações da lista de permissões para usuários da área de testes",
-	"action-translate-sandboxaction": "executar ações da lista de permissões para usuários da área de testes",
+	"right-translate-sandboxaction": "Executar ações permitidas para usuários da área de testes",
+	"action-translate-sandboxaction": "executar ações permitidas para usuários da área de testes",
 	"translate-workflow-state-": "(indefinida)",
 	"translate-workflowstatus": "Status: $1",
 	"translate-workflow-set-doing": "Definindo...",
@@ -336,6 +341,7 @@
 	"translate-msggroupselector-search-recent": "Recentes",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgrupo|subgrupos}}",
 	"tux-languageselector": "Traduzir para",
+	"tux-select-target-language": "Idioma de destino para tradução",
 	"tux-tab-all": "Todas",
 	"tux-tab-untranslated": "Não traduzidas",
 	"tux-tab-outdated": "Desatualizadas",
@@ -349,6 +355,8 @@
 	"tux-status-saving": "Publicando…",
 	"tux-status-unsaved": "Não publicado",
 	"tux-save-unknown-error": "Ocorreu um erro desconhecido.",
+	"tux-editor-placeholder-documentation": "Adicionar documentação da mensagem",
+	"tux-editor-placeholder-language": "Sua tradução em $1",
 	"tux-editor-editsummary-placeholder": "Resumo opcional",
 	"tux-editor-paste-original-button-label": "Colar texto da fonte",
 	"tux-editor-discard-changes-button-label": "Descartar alterações",
@@ -434,5 +442,6 @@
 	"translate-messagebundle-error-key-too-long": "A chave \"$1\" é muito longa",
 	"translate-messagebundle-error-key-invalid-characters": "Chave \"$1\" contém caracteres não permitidos",
 	"translate-messagebundle-error-invalid-value": "Chave \"$1\" não contém valor de string",
-	"translate-messagebundle-error-empty-value": "Chave \"$1\" não tem valor"
+	"translate-messagebundle-error-empty-value": "Chave \"$1\" não tem valor",
+	"translate-messagebundle-group-description": "Mensagens de um pacote de mensagens definido na página [[$2|$1]]."
 }
