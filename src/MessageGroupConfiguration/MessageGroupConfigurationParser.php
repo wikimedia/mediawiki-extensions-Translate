@@ -108,7 +108,7 @@ class MessageGroupConfigurationParser {
 	}
 
 	public function getBaseSchema(): array {
-		return TranslateYaml::load( __DIR__ . '/data/group-yaml-schema.yaml' );
+		return TranslateYaml::load( __DIR__ . '/../../data/group-yaml-schema.yaml' );
 	}
 
 	/**
