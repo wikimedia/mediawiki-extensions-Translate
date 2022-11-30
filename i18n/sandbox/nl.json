@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Arent",
+			"HanV",
 			"Jeroen N",
 			"Mainframe98",
 			"Mar(c)",
@@ -10,7 +11,7 @@
 			"Sjoerddebruin"
 		]
 	},
-	"managetranslatorsandbox": "Vertalersszandbak beheren",
+	"managetranslatorsandbox": "Vertalerszandbak beheren",
 	"tsb-filter-pending": "Aanvragen in behandeling",
 	"tsb-reminder-title-generic": "Voltooi uw introductie om vertaler te worden",
 	"tsb-reminder-content-generic": "Hallo $1,\n\nBedankt voor het registreren bij {{SITENAME}}.\n\nAls u uw testvertalingen afrondt, kunnen de beheerders u snel volledige vertaaltoegang geven.\n\nMaak alstublieft nog wat meer vertalingen:\n$2\n\n$3,\nMedewerker van {{SITENAME}}",
