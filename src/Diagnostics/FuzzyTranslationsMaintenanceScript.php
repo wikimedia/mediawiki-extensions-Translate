@@ -239,7 +239,6 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			EDIT_FORCE_BOT | EDIT_UPDATE
 		);
 
-		$success = $status && $status->isOK();
-		$this->output( $success ? 'OK' : 'FAILED', $title );
+		$this->output( $status->isOK() ? 'OK' : 'FAILED', $title );
 	}
 }

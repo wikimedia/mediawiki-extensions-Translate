@@ -311,7 +311,7 @@ class WikiWriter {
 			'Updating translation from gettext import'
 		);
 
-		if ( $status === true || ( is_object( $status ) && $status->isOK() ) ) {
+		if ( $status->isOK() ) {
 			$this->reportProgress( 'OK!', $title );
 		} else {
 			$this->reportProgress( 'Failed!', $title );
