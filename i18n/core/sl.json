@@ -387,7 +387,7 @@
 	"tux-editor-doc-editor-cancel": "Prekliči",
 	"tux-messagetable-more-messages": "še $1 {{PLURAL:$1|sporočilo|sporočili|sporočila|sporočil}}",
 	"tux-messagetable-loading-messages": "Nalaganje {{PLURAL:$1|sporočila|sporočil}} ...",
-	"tux-message-filter-placeholder": "Filtriraj seznam",
+	"tux-message-filter-placeholder": "Filtrirajte seznam",
 	"tux-message-filter-result": "Za »$2« {{PLURAL:$1|je bil najden $1 zadetek|sta bila najdena $1 zadetka|so bili najdeni $1 zadetki|je bilo najdenih $1 zadetkov}}",
 	"tux-message-filter-advanced-button": "Napredno iskanje",
 	"tux-message-filter-optional-messages-label": "Izbirna sporočila",
