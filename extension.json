@@ -992,14 +992,10 @@
 			]
 		},
 		"ext.translate.tag.languages": {
-			"class": "ResourceLoaderLessVarFileModule",
 			"styles": "resources/css/ext.translate.tag.languages.less",
 			"targets": [
 				"desktop",
 				"mobile"
-			],
-			"lessMessages": [
-				"tpt-languages-separator"
 			]
 		},
 		"ext.translate.special.aggregategroups": {

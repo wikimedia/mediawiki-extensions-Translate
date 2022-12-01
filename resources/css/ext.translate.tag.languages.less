@@ -3,7 +3,7 @@
 .mw-pt-languages {
 	background-color: #f8f9fa;
 	display: table;
-	border: 1px solid #a2a9b1;
+	border-bottom: 1px solid #a2a9b1;
 	box-sizing: border-box;
 	line-height: 1.2;
 	width: 100%;
@@ -17,7 +17,6 @@
 }
 
 .mw-pt-languages-label {
-	background-color: #eaecf0;
 	padding: 0.5em;
 	font-weight: bold;
 	white-space: nowrap;
@@ -28,19 +27,9 @@
 	padding: 0.5em;
 }
 
-.mw-pt-languages-list {
-	li {
-		display: inline-block;
-		margin: 0;
-	}
-
-	li:after {
-		content: '@{msg-tpt-languages-separator}';
-	}
-
-	li:last-child:after {
-		content: none;
-	}
+.mw-pt-languages-list li {
+	display: inline-block;
+	margin: 0 0.4em 0 0;
 }
 
 .mw-pt-languages-selected,
