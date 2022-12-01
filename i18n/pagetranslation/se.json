@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
 	"tpt-languages-legend": "Eará gielat:",
+	"tpt-languages-nonzero": "$1 ($2% jorgaluvvon)",
+	"tpt-tab-translate": "Jorgal",
 	"tpt-aggregategroup-save": "Vurke",
 	"tpt-aggregategroup-update": "Vurke",
 	"pt-deletepage-current": "Siidonamma:",

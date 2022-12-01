@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
 	"tux-sst-search": "Oza",
-	"tux-sst-facet-language": "Gielat"
+	"tux-sst-facet-language": "Gielat",
+	"tux-sst-default": "Jorgalusat"
 }
