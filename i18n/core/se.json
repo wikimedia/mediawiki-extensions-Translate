@@ -1,24 +1,41 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
+	"translate": "Jorgal",
+	"translate-taction-translate": "Jorgal",
 	"translate-page-language": "Giella",
 	"translate-next": "Čuovvovaš siidu",
 	"translate-prev": "Ovddit siidu",
+	"translate-rcfilters-translations": "Jorgalusat",
+	"translate-rcfilters-translations-only-label": "Jorgalusat",
 	"translate-stats-users": "Jorgaleaddjit",
 	"translate-statsf-count-registrations": "ođđa geavaheaddjit",
 	"translate-sidebar-alltrans": "Eará gielaide",
 	"translations": "Buot jorgalusat",
 	"translate-langstats-expand": "čájet",
+	"translate-langstats-collapse": "čiega",
 	"translate-language": "Giella",
+	"translate-untranslated": "Jorgalkeahttá",
 	"translate-mgs-column-language": "Giella",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
+	"translate-searchprofile": "Jorgalusat",
 	"translate-msggroupselector-search-all": "Buot",
+	"tux-languageselector": "Čuozáhatgiella:",
 	"tux-tab-all": "Buot",
+	"tux-tab-untranslated": "Jorgalkeahttá",
+	"tux-tab-translated": "Jorgaluvvon",
+	"tux-status-translated": "Jorgaluvvon",
 	"tux-editor-suggestions-title": "Evttohusat",
 	"tux-editor-in-other-languages": "Eará gielaide",
+	"tux-notices-hide": "čiega",
+	"tux-proofread-translated-by-self": "Du jorgalus",
+	"tux-empty-list-translated-action": "Jorgal",
 	"tux-editor-expand-tooltip": "Stuorit",
+	"tux-editor-collapse-tooltip": "Čiega",
+	"tux-editor-message-tools-delete": "Sihko",
 	"tux-editor-message-tools-translations": "Buot jorgalusat"
 }

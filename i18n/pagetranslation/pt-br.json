@@ -16,7 +16,8 @@
 			555,
 			"Eduardoaddad",
 			"Pols12",
-			"Shirayuki"
+			"Shirayuki",
+			"Fúlvio"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -173,7 +174,7 @@
 	"pt-movepage-intro": "Esta página especial permite mover páginas que estão marcadas para tradução.\nA operação de movimentação não é instantânea, porque será necessário mover muitas páginas.\nEnquanto estiverem sendo movidas, não será possível interagir com as páginas em questão.\nAs falhas serão registradas no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser reparadas manualmente.",
 	"pt-movepage-logreason": "Parte da página traduzível \"$1\"",
 	"pt-movepage-started": "Por favor, em um momento verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] por erros e mensagem de conclusão.",
-	"pt-locked-page": "Está página está bloqueada porque a página traduzível está sendo movida.",
+	"pt-locked-page": "Está página está bloqueada porque a página traduzível está sendo movida no momento.",
 	"pt-deletepage-lang-title": "Eliminando a página de tradução \"$1\"",
 	"pt-deletepage-full-title": "Eliminando a página traduzível \"$1\"",
 	"pt-deletepage-invalid-title": "A página especificada não é valida.",

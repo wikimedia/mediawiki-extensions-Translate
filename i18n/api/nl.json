@@ -7,7 +7,9 @@
 			"Robin van der Vliet",
 			"Robin0van0der0vliet",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"HanV",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-description": "Samengestelde berichtgroepen beheren.\n\nJe kunt samengestelde berichtgroepen toevoegen en verwijderen. Verder kun je berichtgroepen eraan koppelen of ontkoppelen (één per keer).",
@@ -42,7 +44,7 @@
 	"apierror-translate-language-disabled": "Vertalen naar $1 is uitgeschakeld",
 	"apierror-translate-language-disabled-reason": "Vertalen naar $1 is uitgeschakeld: $2",
 	"apierror-translate-notranslationservices": "Er is geen vertaaldienst ingesteld. De wikibeheerder moet <var>$wgTranslateTranslationServices</var> instellen voor dat deze functie kan worden gebruikt.",
-	"apierror-translate-sandboxdisabled": "De zandboxfunctionaliteit wordt niet gebruikt",
+	"apierror-translate-sandboxdisabled": "De zandbakfunctionaliteit wordt niet gebruikt",
 	"apierror-translate-sandbox-invalidppassword": "Ongeldig wachtwoord",
 	"apierror-translate-unknownmessage": "Onbekend bericht",
 	"apiwarn-translate-alreadyreviewedbyyou": "Al door uw als gecontroleerd gemarkeerd",

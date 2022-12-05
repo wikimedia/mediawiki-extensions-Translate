@@ -85,6 +85,7 @@
 	"translate-checks-gettext-plural-unsupported": "이 메시지는 <nowiki>{{PLURAL:GETTEXT|}}</nowiki>를 지원하지 않습니다.",
 	"translate-checks-smartformat-plural-missing": "이 번역은 $1 변수에 대해 복수형이어야 합니다.",
 	"translate-checks-smartformat-plural-unsupported": "이 메시지는 $1 변수에 대해 복수형을 지원하지 않습니다.",
+	"translate-checks-unicode-plural-missing": "이 번역에는 <nowiki>{{PLURAL|}}</nowiki>이 필수입니다.",
 	"translate-checks-unicode-plural-invalid": "복수형은 $1로 정의하는 것이 좋습니다. 이 번역은 $2를 포함합니다.",
 	"translate-checks-pagename": "이름공간이 정의로부터 바뀌었습니다",
 	"translate-checks-format": "이 번역은 정의를 따르지 않거나 잘못된 구문입니다: $1",
