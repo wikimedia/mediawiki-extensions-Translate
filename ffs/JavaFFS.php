@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * JavaFFS class implements support for Java properties files.
@@ -220,8 +221,8 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			global $wgSitename;
 
 			$code = $collection->code;
-			$name = TranslateUtils::getLanguageName( $code );
-			$native = TranslateUtils::getLanguageName( $code, $code );
+			$name = Utilities::getLanguageName( $code );
+			$native = Utilities::getLanguageName( $code, $code );
 			$output = "# Messages for $name ($native)\n";
 			$output .= "# Exported from $wgSitename\n";
 		}

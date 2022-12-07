@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
@@ -253,7 +254,7 @@ class MessageGroupStats {
 	 */
 	private static function getLanguages() {
 		if ( self::$languages === null ) {
-			$languages = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
+			$languages = array_keys( Utilities::getLanguageNames( 'en' ) );
 			sort( $languages );
 			self::$languages = $languages;
 		}
@@ -417,7 +418,7 @@ class MessageGroupStats {
 			$conds['tgs_lang'] = $codes;
 		}
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
 
 		return $res;

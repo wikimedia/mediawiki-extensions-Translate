@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
-use TranslateUtils;
 
 /**
  * Graph which provides statistics on active users and number of translations.
@@ -94,7 +94,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		// The key-building needs to be in sync with ::labels().
-		[ $key, $code ] = TranslateUtils::figureMessage( $row->rc_title );
+		[ $key, $code ] = Utilities::figureMessage( $row->rc_title );
 
 		$groups = [];
 		$codes = [];
@@ -104,7 +104,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			 * Get list of keys that the message belongs to, and filter
 			 * out those which are not requested.
 			 */
-			$groups = TranslateUtils::messageKeyToGroups( $row->rc_namespace, $key );
+			$groups = Utilities::messageKeyToGroups( $row->rc_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
 

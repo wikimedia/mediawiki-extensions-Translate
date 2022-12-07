@@ -12,6 +12,7 @@ use Cdb\Reader;
 use Cdb\Writer;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -85,7 +86,7 @@ abstract class MessageIndex {
 
 		$namespace = $title->getNamespace();
 		$key = $handle->getKey();
-		$normkey = TranslateUtils::normaliseKey( $namespace, $key );
+		$normkey = Utilities::normaliseKey( $namespace, $key );
 
 		$cache = self::getCache();
 		$value = $cache->get( $normkey );
@@ -275,7 +276,7 @@ abstract class MessageIndex {
 
 		$normalizedNewKeys = [];
 		foreach ( $newKeys as $key ) {
-			$normalizedNewKeys[TranslateUtils::normaliseKey( $namespace, $key )] = $id;
+			$normalizedNewKeys[Utilities::normaliseKey( $namespace, $key )] = $id;
 		}
 
 		$cache = $this->getInterimCache();
@@ -396,7 +397,7 @@ abstract class MessageIndex {
 			# Force all keys to lower case, because the case doesn't matter and it is
 			# easier to do comparing when the case of first letter is unknown, because
 			# mediawiki forces it to upper case
-			$key = TranslateUtils::normaliseKey( $namespace, $key );
+			$key = Utilities::normaliseKey( $namespace, $key );
 			if ( isset( $hugearray[$key] ) ) {
 				if ( !$ignore ) {
 					$to = implode( ', ', (array)$hugearray[$key] );
@@ -469,7 +470,7 @@ class SerializedMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		$file = TranslateUtils::cacheFile( $this->filename );
+		$file = Utilities::cacheFile( $this->filename );
 		if ( file_exists( $file ) ) {
 			$this->index = unserialize( file_get_contents( $file ) );
 		} else {
@@ -480,7 +481,7 @@ class SerializedMessageIndex extends MessageIndex {
 	}
 
 	protected function store( array $array, array $diff ) {
-		$file = TranslateUtils::cacheFile( $this->filename );
+		$file = Utilities::cacheFile( $this->filename );
 		file_put_contents( $file, serialize( $array ) );
 		$this->index = $array;
 	}
@@ -714,7 +715,7 @@ class CDBMessageIndex extends MessageIndex {
 	protected function store( array $array, array $diff ) {
 		$this->reader = null;
 
-		$file = TranslateUtils::cacheFile( $this->filename );
+		$file = Utilities::cacheFile( $this->filename );
 		$cache = Writer::open( $file );
 
 		foreach ( $array as $key => $value ) {
@@ -732,7 +733,7 @@ class CDBMessageIndex extends MessageIndex {
 			return $this->reader;
 		}
 
-		$file = TranslateUtils::cacheFile( $this->filename );
+		$file = Utilities::cacheFile( $this->filename );
 		if ( !file_exists( $file ) ) {
 			// Create an empty index to allow rebuild
 			$this->store( [], [] );

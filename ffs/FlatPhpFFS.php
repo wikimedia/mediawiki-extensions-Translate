@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * Implements file format support for PHP files which consist of multiple
@@ -85,8 +86,8 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		global $wgServer, $wgTranslateDocumentationLanguageCode;
 
 		$code = $collection->code;
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, $code );
+		$name = Utilities::getLanguageName( $code );
+		$native = Utilities::getLanguageName( $code, $code );
 
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			$docu = "\n * See the $wgTranslateDocumentationLanguageCode 'language' for " .

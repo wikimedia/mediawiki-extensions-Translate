@@ -12,6 +12,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
 
@@ -129,7 +130,7 @@ class TranslateSandbox {
 	 * @return UserArray List of users.
 	 */
 	public static function getUsers() {
-		$dbw = TranslateUtils::getSafeReadDB();
+		$dbw = Utilities::getSafeReadDB();
 		$userQuery = User::getQueryInfo();
 		$tables = array_merge( $userQuery['tables'], [ 'user_groups' ] );
 		$fields = $userQuery['fields'];

@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
-use TranslateUtils;
 
 /**
  * Translation aid that provides the message documentation.
@@ -24,7 +24,7 @@ class DocumentationAid extends TranslationAid {
 		$page = $this->handle->getKey();
 		$ns = $this->handle->getTitle()->getNamespace();
 
-		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
+		$info = Utilities::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		return [
 			'language' => MediaWikiServices::getInstance()->getContentLanguage()->getCode(),

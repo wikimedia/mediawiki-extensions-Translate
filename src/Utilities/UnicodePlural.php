@@ -7,7 +7,6 @@
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use RuntimeException;
-use TranslateUtils;
 
 /** @since 2019.09 */
 class UnicodePlural {
@@ -120,7 +119,7 @@ class UnicodePlural {
 		$instanceMap = [];
 
 		foreach ( $m[0] as $instanceIndex => $instanceText ) {
-			$ph = TranslateUtils::getPlaceholder();
+			$ph = Utilities::getPlaceholder();
 
 			// Using preg_replace instead of str_replace because of the limit parameter
 			$pattern = '/' . preg_quote( $instanceText, '/' ) . '/';

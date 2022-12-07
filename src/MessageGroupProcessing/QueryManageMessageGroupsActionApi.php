@@ -7,9 +7,9 @@ use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageChangeStorage;
 use Title;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -94,7 +94,7 @@ class QueryManageMessageGroupsActionApi extends ApiQueryBase {
 
 			$title = Title::makeTitle(
 				$groupNamespace,
-				TranslateUtils::title( $deletion['key'], $languageCode, $groupNamespace )
+				Utilities::title( $deletion['key'], $languageCode, $groupNamespace )
 			);
 
 			$renameList[] = [

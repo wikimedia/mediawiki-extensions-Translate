@@ -9,6 +9,7 @@ use CachedMessageGroupLoader;
 use DependencyWrapper;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use MessageGroupBase;
@@ -17,7 +18,6 @@ use MessageHandle;
 use MWException;
 use Title;
 use TranslateMetadata;
-use TranslateUtils;
 use WANObjectCache;
 
 /**
@@ -237,7 +237,7 @@ class MessageGroups {
 
 		// Initialize the dependencies
 		$deps = [
-			'database' => TranslateUtils::getSafeReadDB(),
+			'database' => Utilities::getSafeReadDB(),
 			'cache' => $cache
 		];
 
@@ -796,7 +796,7 @@ class MessageGroups {
 		$cacheKey = "$groupId:$targetLanguage";
 
 		if ( !isset( $cache[$cacheKey] ) ) {
-			$supportedLanguages = TranslateUtils::getLanguageNames( 'en' );
+			$supportedLanguages = Utilities::getLanguageNames( 'en' );
 			$inclusionList = $group->getTranslatableLanguages() ?? $supportedLanguages;
 
 			$included = isset( $inclusionList[$targetLanguage] );

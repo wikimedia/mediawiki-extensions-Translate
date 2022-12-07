@@ -8,7 +8,6 @@ namespace MediaWiki\Extension\Translate\Utilities;
 
 use GettextPluralException;
 use InvalidArgumentException;
-use TranslateUtils;
 
 /** @since 2019.09 */
 class GettextPlural {
@@ -105,12 +104,12 @@ class GettextPlural {
 		// |/| is commonly used in KDE to support inflections. It needs to be escaped
 		// to avoid it messing up the plural markup.
 		$replacements = [
-			'|/|' => TranslateUtils::getPlaceholder(),
+			'|/|' => Utilities::getPlaceholder(),
 		];
 		// {0} is a common variable format
 		preg_match_all( '/\{\d+\}/', $text, $matches );
 		foreach ( $matches[0] as $m ) {
-			$replacements[$m] = TranslateUtils::getPlaceholder();
+			$replacements[$m] = Utilities::getPlaceholder();
 		}
 
 		$text = strtr( $text, $replacements );
@@ -152,7 +151,7 @@ class GettextPlural {
 		$instanceMap = [];
 
 		foreach ( $m[0] as $instanceIndex => $instanceText ) {
-			$ph = TranslateUtils::getPlaceholder();
+			$ph = Utilities::getPlaceholder();
 
 			// Using preg_replace instead of str_replace because of the limit parameter
 			$pattern = '/' . preg_quote( $instanceText, '/' ) . '/';

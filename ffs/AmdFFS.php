@@ -38,6 +38,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * AmdFFS implements a message format where messages are encoded
@@ -146,7 +147,7 @@ class AmdFFS extends SimpleFFS {
 	private function header( $code, $authors ) {
 		global $wgSitename;
 
-		$name = TranslateUtils::getLanguageName( $code );
+		$name = Utilities::getLanguageName( $code );
 		$authorsList = $this->authorsList( $authors );
 
 		return <<<EOT

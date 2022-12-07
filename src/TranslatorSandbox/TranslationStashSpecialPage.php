@@ -7,13 +7,13 @@ use FormatJson;
 use Html;
 use Language;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\User\UserOptionsLookup;
 use SpecialPage;
 use Title;
 use TranslateSandbox;
-use TranslateUtils;
 
 /**
  * Special page for new users to translate example messages.
@@ -203,7 +203,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 			$this->userOptionsLookup->getOption( $this->getUser(), 'translate-sandbox' ),
 			true
 		);
-		$supported = TranslateUtils::getLanguageNames( 'en' );
+		$supported = Utilities::getLanguageNames( 'en' );
 
 		if ( isset( $options['languages'] ) ) {
 			foreach ( $options['languages'] as $code ) {

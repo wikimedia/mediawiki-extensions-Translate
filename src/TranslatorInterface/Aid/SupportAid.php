@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageHandle;
 use Title;
-use TranslateUtils;
 
 /**
  * Translation aid that provides an url where users can ask for help
@@ -34,7 +34,7 @@ class SupportAid extends TranslationAid {
 
 		$placeholders = [
 			'%MESSAGE%' => $title->getPrefixedText(),
-			'%MESSAGE_URL%' => TranslateUtils::getEditorUrl( $handle )
+			'%MESSAGE_URL%' => Utilities::getEditorUrl( $handle )
 		];
 
 		// Preprocess params

@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -77,7 +78,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 */
 	public static function getInstance( IDatabase $db = null, WANObjectCache $cache = null ) {
 		return new self(
-			$db ?? TranslateUtils::getSafeReadDB(),
+			$db ?? Utilities::getSafeReadDB(),
 			new MessageGroupWANCache(
 				$cache ?? MediaWikiServices::getInstance()->getMainWANObjectCache()
 			)

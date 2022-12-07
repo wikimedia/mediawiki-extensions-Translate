@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
@@ -22,7 +23,6 @@ use SpecialPage;
 use TextContent;
 use Title;
 use TranslateMetadata;
-use TranslateUtils;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IResultWrapper;
 use WikiPageMessageGroup;
@@ -138,7 +138,7 @@ class TranslatablePage extends TranslatableBundle {
 			$this->revision = $revision;
 		}
 
-		$flags = TranslateUtils::shouldReadFromPrimary()
+		$flags = Utilities::shouldReadFromPrimary()
 			? RevisionLookup::READ_LATEST
 			: RevisionLookup::READ_NORMAL;
 		$rev = MediaWikiServices::getInstance()
@@ -331,7 +331,7 @@ class TranslatablePage extends TranslatableBundle {
 	}
 
 	public function getMarkedRevs(): IResultWrapper {
-		$db = TranslateUtils::getSafeReadDB();
+		$db = Utilities::getSafeReadDB();
 
 		$fields = [ 'rt_revision', 'rt_value' ];
 		$conds = [
@@ -349,7 +349,7 @@ class TranslatablePage extends TranslatableBundle {
 
 		$messageGroup = $this->getMessageGroup();
 		$knownLanguageCodes = $messageGroup ? $messageGroup->getTranslatableLanguages() : null;
-		$knownLanguageCodes = $knownLanguageCodes ?? TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS );
+		$knownLanguageCodes = $knownLanguageCodes ?? Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 
 		$prefixedDbTitleKey = $this->getTitle()->getDBkey() . '/';
 		$baseNamespace = $this->getTitle()->getNamespace();
@@ -415,7 +415,7 @@ class TranslatablePage extends TranslatableBundle {
 	public function getTransRev( string $suffix ) {
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
-		$db = TranslateUtils::getSafeReadDB();
+		$db = Utilities::getSafeReadDB();
 		$fields = 'rt_value';
 		$conds = [
 			'rt_page' => $title->getArticleID(),

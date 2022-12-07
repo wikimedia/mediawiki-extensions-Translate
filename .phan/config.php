@@ -13,7 +13,6 @@ $cfg['file_list'] = array_merge(
 		'MetaYamlSchemaExtender.php',
 		'TranslateEditAddons.php',
 		'TranslateHooks.php',
-		'TranslateUtils.php',
 	]
 );
 

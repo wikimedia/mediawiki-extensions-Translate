@@ -15,6 +15,7 @@ use Language;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
@@ -33,7 +34,6 @@ use Skin;
 use SpecialPage;
 use TextContent;
 use Title;
-use TranslateUtils;
 use UserBlockedError;
 use WebRequest;
 use Xml;
@@ -239,7 +239,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$groups = $this->getGroupsFromCdb( $reader );
 		foreach ( $groups as $id => $group ) {
 			$sourceChanges = MessageSourceChange::loadModifications(
-				TranslateUtils::deserialize( $reader->get( $id ) )
+				Utilities::deserialize( $reader->get( $id ) )
 			);
 			$out->addHTML( Html::element( 'h2', [], $group->getLabel() ) );
 
@@ -399,7 +399,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$this->diff->setContent( $oldContent, $newContent );
 			$text = $this->diff->getDiff( '', $titleLink . $menu, $noticeHtml );
 		} elseif ( $type === 'change' ) {
-			$wiki = TranslateUtils::getContentForTitle( $title, true );
+			$wiki = Utilities::getContentForTitle( $title, true );
 
 			$actions = '';
 			$sourceLanguage = $group->getSourceLanguage();
@@ -481,7 +481,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 						. " instead."
 					);
 				}
-				$changes = TranslateUtils::deserialize( $reader->get( $groupId ) );
+				$changes = Utilities::deserialize( $reader->get( $groupId ) );
 				if ( $groupSyncCacheEnabled && $this->synchronizationCache->groupHasErrors( $groupId ) ) {
 					$postponed[$groupId] = $changes;
 					continue;
@@ -812,7 +812,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		if ( $isSourceLang ) {
 			$params['targetTitle'] = Title::newFromText(
-				TranslateUtils::title( $params['target'], $languageCode, $groupNamespace ),
+				Utilities::title( $params['target'], $languageCode, $groupNamespace ),
 				$groupNamespace
 			);
 			$params['others'] = [];
@@ -892,7 +892,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				// the source was probably ignored, we should add this as a modification instead,
 				// since the source is not going to be renamed.
 				$title = Title::newFromText(
-					TranslateUtils::title( $targetStr, $language, $groupNamespace ),
+					Utilities::title( $targetStr, $language, $groupNamespace ),
 					$groupNamespace
 				);
 				$modificationJobs[] = MessageUpdateJob::newJob( $title, $jobParams['content'] );
@@ -1045,7 +1045,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	/** @return associative-array<int|string,\MessageGroup> */
 	private function getGroupsFromCdb( \Cdb\Reader $reader ): array {
 		$groups = [];
-		$groupIds = TranslateUtils::deserialize( $reader->get( '#keys' ) );
+		$groupIds = Utilities::deserialize( $reader->get( '#keys' ) );
 		foreach ( $groupIds as $id ) {
 			$groups[$id] = MessageGroups::getGroup( $id );
 		}

@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use CommentStoreComment;
 use ContentHandler;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
@@ -12,7 +13,6 @@ use MessageHandle;
 use SplFileObject;
 use Status;
 use Title;
-use TranslateUtils;
 
 /**
  * Parse, validate and import translations from a CSV file
@@ -211,7 +211,7 @@ class CsvTranslationImporter {
 		// First two columns are message title and definition
 		$originalLanguageIndex = 2;
 		foreach ( $languageCodesInHeader as $languageCode ) {
-			if ( !TranslateUtils::isSupportedLanguageCode( strtolower( $languageCode ) ) ) {
+			if ( !Utilities::isSupportedLanguageCode( strtolower( $languageCode ) ) ) {
 				$invalidLanguageCodes[] = $languageCode;
 			} else {
 				// Language codes maybe in upper case, convert to lower case for further use.

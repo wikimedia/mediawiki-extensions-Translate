@@ -12,13 +12,13 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundl
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Permissions\PermissionManager;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
 use SpecialPage;
 use Title;
-use TranslateUtils;
 use WebRequest;
 use Xml;
 
@@ -117,7 +117,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		}
 
 		if ( $this->isTranslation() ) {
-			[ , $this->code ] = TranslateUtils::figureMessage( $this->title->getText() );
+			[ , $this->code ] = Utilities::figureMessage( $this->title->getText() );
 		} else {
 			$this->code = null;
 		}
@@ -252,7 +252,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		}
 		$this->listPages( $out, $lines );
 
-		if ( TranslateUtils::allowsSubpages( $this->title ) ) {
+		if ( Utilities::allowsSubpages( $this->title ) ) {
 			$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
 			$subpages = $subpages[ 'normalSubpages' ];
 			$lines = [];
@@ -414,7 +414,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		if ( $this->isTranslation() ) {
 			$resultSet = $this->subpageBuilder->getEmptyResultSet();
 
-			[ $titleKey, ] = TranslateUtils::figureMessage( $this->title->getPrefixedDBkey() );
+			[ $titleKey, ] = Utilities::figureMessage( $this->title->getPrefixedDBkey() );
 			$translatablePage = TranslatablePage::newFromTitle( Title::newFromText( $titleKey ) );
 
 			$resultSet['translationPages'] = [ $this->title ];
@@ -429,7 +429,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	private function getValidBundleFromTitle(): TranslatableBundle {
 		$bundleTitle = $this->title;
 		if ( $this->isTranslation() ) {
-			[ $key, ] = TranslateUtils::figureMessage( $this->title->getPrefixedDBkey() );
+			[ $key, ] = Utilities::figureMessage( $this->title->getPrefixedDBkey() );
 			$bundleTitle = Title::newFromText( $key );
 		}
 

@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+
 /**
  * @group Database
  * @covers TranslatablePageMessageGroupStore
@@ -18,7 +20,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 		] );
 
 		$this->mgTranslateStore = new TranslatablePageMessageGroupStore(
-			TranslateUtils::getSafeReadDB(),
+			Utilities::getSafeReadDB(),
 			new MessageGroupWANCache(
 				new WANObjectCache( [ 'cache' => new HashBagOStuff() ] )
 			)
@@ -63,7 +65,7 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiIntegrationTestCase
 		$mockMgWANCache = $this->createMock( MessageGroupWANCache::class );
 
 		$translateStore = new TranslatablePageMessageGroupStore(
-			TranslateUtils::getSafeReadDB(),
+			Utilities::getSafeReadDB(),
 			$mockMgWANCache
 		);
 

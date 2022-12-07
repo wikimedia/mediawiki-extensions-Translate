@@ -7,9 +7,9 @@ use ApiQuery;
 use IJobSpecification;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -32,7 +32,7 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 	/** @inheritDoc */
 	protected function validateTargetParamater( array $params ): string {
 		$requested = $params[ 'language' ];
-		if ( !TranslateUtils::isSupportedLanguageCode( $requested ) ) {
+		if ( !Utilities::isSupportedLanguageCode( $requested ) ) {
 			$this->dieWithError( [ 'apierror-translate-invalidlanguage', $requested ] );
 		}
 

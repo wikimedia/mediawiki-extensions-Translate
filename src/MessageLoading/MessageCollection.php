@@ -10,6 +10,7 @@ use EmptyIterator;
 use Iterator;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
@@ -18,7 +19,6 @@ use stdClass;
 use ThinMessage;
 use TitleValue;
 use TMessage;
-use TranslateUtils;
 use Traversable;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -226,7 +226,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function loadTranslations(): void {
 		// Performance optimization: Instead of building conditions based on key in every
 		// method, build them once and pass it on to each of them.
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$titleConds = $this->getTitleConds( $dbr );
 
 		$this->loadData( $this->keys, $titleConds );
@@ -635,7 +635,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$tables = [ 'page', 'revtag' ];
 		$fields = [ 'page_namespace', 'page_title', 'rt_type' ];
 		$joins = [ 'revtag' =>
@@ -674,7 +674,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$tables = [ 'page', 'translate_reviews' ];
 		$fields = [ 'page_namespace', 'page_title', 'trr_user' ];
 		$joins = [ 'translate_reviews' =>
@@ -713,7 +713,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$revQuery = $revisionStore->getQueryInfo( [ 'page' ] );
 		$tables = $revQuery['tables'];
@@ -813,7 +813,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$messages = [];
 		$definitions = $this->definitions->getDefinitions();
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$queryFlags = TranslateUtils::shouldReadFromPrimary() ? $revStore::READ_LATEST : 0;
+		$queryFlags = Utilities::shouldReadFromPrimary() ? $revStore::READ_LATEST : 0;
 		foreach ( array_keys( $this->keys ) as $mkey ) {
 			$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 		}

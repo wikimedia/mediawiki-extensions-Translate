@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+
 /**
  * Class for formatting Translate logs.
  */
@@ -44,7 +46,7 @@ class TranslateLogFormatter extends LogFormatter {
 
 			// @phan-suppress-next-line SecurityCheck-XSS Unlikely. Positive only if language code & mg label are bad
 			$params[2] = Message::rawParam( $targetPage );
-			$params[3] = TranslateUtils::getLanguageName( $language, $uiLanguage->getCode() );
+			$params[3] = Utilities::getLanguageName( $language, $uiLanguage->getCode() );
 			$params[5] = $this->formatStateMessage( $params[5] );
 			$params[6] = $this->formatStateMessage( $params[6] );
 		} elseif ( $type === 'translatorsandbox/rejected' ) {

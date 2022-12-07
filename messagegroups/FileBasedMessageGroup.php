@@ -10,6 +10,7 @@
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * This class implements default behavior for file based message groups.
@@ -286,7 +287,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	}
 
 	public function getMessageGroupCache( string $code ): MessageGroupCache {
-		$cacheFilePath = TranslateUtils::cacheFile(
+		$cacheFilePath = Utilities::cacheFile(
 			"translate_groupcache-{$this->getId()}/{$code}.cdb"
 		);
 

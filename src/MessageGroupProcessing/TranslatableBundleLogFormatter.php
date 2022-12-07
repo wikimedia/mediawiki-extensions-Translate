@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use LogFormatter;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Message;
 use Title;
-use TranslateUtils;
 
 /**
  * Class for formatting translatable bundle logs.
@@ -53,7 +53,7 @@ class TranslatableBundleLogFormatter extends LogFormatter {
 
 					$languages = array_map(
 						static function ( string $code ) use ( $inLanguage ): string {
-							return TranslateUtils::getLanguageName( trim( $code ), $inLanguage );
+							return Utilities::getLanguageName( trim( $code ), $inLanguage );
 						},
 						preg_split( '/,/', $languages, -1, PREG_SPLIT_NO_EMPTY )
 					);

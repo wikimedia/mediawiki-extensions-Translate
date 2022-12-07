@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * Contains class which offers functionality for reading and updating Translate group
@@ -33,7 +34,7 @@ class TranslateMetadata {
 
 		self::$cache += array_fill_keys( $missing, null ); // cache negatives
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$conds = count( $missing ) <= 500 ? [ 'tmd_group' => array_map( 'strval', $missing ) ] : [];
 		$res = $dbr->select(
 			'translate_metadata',
@@ -153,7 +154,7 @@ class TranslateMetadata {
 
 	public static function isExcluded( string $groupId, string $code ): bool {
 		if ( self::$priorityCache === null ) {
-			$db = TranslateUtils::getSafeReadDB();
+			$db = Utilities::getSafeReadDB();
 			$res = $db->select(
 				[
 					'a' => 'translate_metadata',
@@ -200,7 +201,7 @@ class TranslateMetadata {
 	 * @return array<string,array<string,string>>
 	 */
 	public static function loadBasicMetadataForTranslatablePages( array $groupIds, array $keys ): array {
-		$db = TranslateUtils::getSafeReadDB();
+		$db = Utilities::getSafeReadDB();
 		$res = $db->select(
 			'translate_metadata',
 			[ 'tmd_group', 'tmd_key', 'tmd_value' ],

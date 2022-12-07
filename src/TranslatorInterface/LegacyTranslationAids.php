@@ -7,11 +7,11 @@ use Html;
 use IContextSource;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\MessageDefinitionAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MessageGroup;
 use MessageHandle;
 use Title;
-use TranslateUtils;
 
 /**
  * Provides minimal translation aids which integrate with the edit page and on diffs for
@@ -100,12 +100,12 @@ class LegacyTranslationAids {
 				'dir' => $sl->getDir(),
 				'lang' => $sl->getHtmlCode(),
 			],
-			TranslateUtils::convertWhiteSpaceToHTML( $definition )
+			Utilities::convertWhiteSpaceToHTML( $definition )
 		);
 
 		$class = [ 'class' => 'mw-sp-translate-edit-definition' ];
 
-		return TranslateUtils::fieldset( $label, $msg, $class );
+		return Utilities::fieldset( $label, $msg, $class );
 	}
 
 	private function getDocumentationBox(): string {
@@ -123,7 +123,7 @@ class LegacyTranslationAids {
 			$title,
 			$this->context->msg( 'translate-edit-contribute' )->text()
 		);
-		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
+		$info = Utilities::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		$class = 'mw-sp-translate-edit-info';
 
@@ -141,7 +141,7 @@ class LegacyTranslationAids {
 
 		$contents = $this->context->getOutput()->parseInlineAsInterface( $info );
 
-		return TranslateUtils::fieldset(
+		return Utilities::fieldset(
 			$this->context->msg( 'translate-edit-information' )->rawParams( $edit )->escaped(),
 			Html::rawElement( 'div', $divAttribs, $contents ), [ 'class' => $class ]
 		);
@@ -149,7 +149,7 @@ class LegacyTranslationAids {
 
 	private function ajaxEditLink( Title $target, string $linkText ): string {
 		$handle = new MessageHandle( $target );
-		$uri = TranslateUtils::getEditorUrl( $handle );
+		$uri = Utilities::getEditorUrl( $handle );
 		return Html::element(
 			'a',
 			[ 'href' => $uri ],

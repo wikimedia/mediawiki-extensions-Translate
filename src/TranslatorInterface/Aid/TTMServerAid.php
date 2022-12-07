@@ -8,13 +8,13 @@ use IContextSource;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
 use MessageGroup;
 use MessageHandle;
 use ReadableTTMServer;
 use Title;
-use TranslateUtils;
 use TTMServer;
 
 /**
@@ -120,7 +120,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 				$pagename = urldecode( substr( $item['location'], $localPrefixLength ) );
 				$item['location'] = $pagename;
 				$handle = new MessageHandle( Title::newfromText( $pagename ) );
-				$item['editorUrl'] = TranslateUtils::getEditorUrl( $handle );
+				$item['editorUrl'] = Utilities::getEditorUrl( $handle );
 			}
 		}
 		return $items;
@@ -144,7 +144,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			$item['uri'] = $item['uri'] ?? $s->expandLocation( $item );
 			if ( $local ) {
 				$handle = new MessageHandle( Title::newfromText( $item[ 'location' ] ) );
-				$item['editorUrl'] = TranslateUtils::getEditorUrl( $handle );
+				$item['editorUrl'] = Utilities::getEditorUrl( $handle );
 			}
 			$items[] = $item;
 		}

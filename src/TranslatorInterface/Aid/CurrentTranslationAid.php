@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use Hooks;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageHandle;
-use TranslateUtils;
 
 /**
  * Translation aid that provides the current saved translation.
@@ -17,7 +17,7 @@ use TranslateUtils;
 class CurrentTranslationAid extends TranslationAid {
 	public function getData(): array {
 		$title = $this->handle->getTitle();
-		$translation = TranslateUtils::getMessageContent(
+		$translation = Utilities::getMessageContent(
 			$this->handle->getKey(),
 			$this->handle->getCode(),
 			$title->getNamespace()

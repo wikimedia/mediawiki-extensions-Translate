@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+
 /**
  * @group Database
  * @covers AggregateMessageGroupLoader
@@ -10,7 +12,7 @@ class AggregateMessageGroupLoaderTest extends PHPUnit\Framework\TestCase {
 		$mockMgWANCache = $this->createMock( MessageGroupWANCache::class );
 
 		$aggregateLoader = new AggregateMessageGroupLoader(
-			TranslateUtils::getSafeReadDB(),
+			Utilities::getSafeReadDB(),
 			$mockMgWANCache
 		);
 

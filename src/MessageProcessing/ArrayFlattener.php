@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MWException;
-use TranslateUtils;
 
 /**
  * Flattens message arrays for further processing. Supports parsing CLDR
@@ -201,7 +201,7 @@ class ArrayFlattener {
 		$match = [];
 
 		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = TranslateUtils::getPlaceholder();
+			$uniqkey = Utilities::getPlaceholder();
 			$placeholders[$uniqkey] = $match[0];
 			$search = preg_quote( $match[0], '~' );
 			$message = preg_replace( "~$search~", $uniqkey, $message );
@@ -213,7 +213,7 @@ class ArrayFlattener {
 		$match = [];
 
 		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = TranslateUtils::getPlaceholder();
+			$uniqkey = Utilities::getPlaceholder();
 			$matches[$uniqkey] = $match;
 			$message = preg_replace( $regex, $uniqkey, $message, 1 );
 		}

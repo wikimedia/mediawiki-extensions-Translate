@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Language;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use TranslateUtils;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use const TS_MW;
 
@@ -135,12 +135,12 @@ class TranslationStatsDataProvider {
 			}
 			[ $groupId, $code ] = explode( '@', $label, 2 );
 			if ( $code && $groupId ) {
-				$code = TranslateUtils::getLanguageName( $code, $language->getCode() ) . " ($code)";
+				$code = Utilities::getLanguageName( $code, $language->getCode() ) . " ($code)";
 				$group = MessageGroups::getGroup( $groupId );
 				$group = $group ? $group->getLabel() : $groupId;
 				$label = "$group @ $code";
 			} elseif ( $code ) {
-				$label = TranslateUtils::getLanguageName( $code, $language->getCode() ) . " ($code)";
+				$label = Utilities::getLanguageName( $code, $language->getCode() ) . " ($code)";
 			} elseif ( $groupId ) {
 				$group = MessageGroups::getGroup( $groupId );
 				$label = $group ? $group->getLabel() : $groupId;

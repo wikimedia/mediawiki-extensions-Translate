@@ -9,6 +9,7 @@ use Hooks;
 use Html;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
@@ -16,7 +17,6 @@ use MessageGroup;
 use MWException;
 use Skin;
 use SpecialPage;
-use TranslateUtils;
 use Xml;
 
 /**
@@ -87,7 +87,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.translate' );
 		$out->addJsConfigVars(
 			'wgTranslateLanguages',
-			TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS )
+			Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS )
 		);
 
 		$out->addHTML( Html::openElement( 'div', [

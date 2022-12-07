@@ -12,6 +12,8 @@
 
 // Standard boilerplate to define $IP
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\MediaWikiServices;
 
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
@@ -69,7 +71,7 @@ class Languageeditstats extends Maintenance {
 		/**
 		 * Select set of edits to report on
 		 */
-		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
+		$rows = $this->translationChanges( $hours, $bots, $namespaces );
 
 		/**
 		 * Get counts for edits per language code after filtering out edits by FuzzyBot
@@ -81,7 +83,7 @@ class Languageeditstats extends Maintenance {
 				continue;
 			}
 
-			[ , $code ] = TranslateUtils::figureMessage( $_->rc_title );
+			[ , $code ] = Utilities::figureMessage( $_->rc_title );
 
 			if ( !isset( $codes[$code] ) ) {
 				$codes[$code] = 0;
@@ -102,6 +104,66 @@ class Languageeditstats extends Maintenance {
 
 			$this->output( "$code\t$num\n" );
 		}
+	}
+
+	/**
+	 * Fetches recent changes for titles in given namespaces
+	 *
+	 * @param int $hours Number of hours.
+	 * @param bool $bots Should bot edits be included.
+	 * @param int[] $ns List of namespace IDs.
+	 * @return \stdClass[] List of recent changes.
+	 */
+	private function translationChanges( int $hours, bool $bots, array $ns ): array {
+		global $wgTranslateMessageNamespaces;
+
+		$mwServices = MediaWikiServices::getInstance();
+		$dbr = $mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA );
+
+		$cutoff_unixtime = time() - ( $hours * 3600 );
+		$cutoff = $dbr->timestamp( $cutoff_unixtime );
+
+		$conds = [
+			'rc_timestamp >= ' . $dbr->addQuotes( $cutoff ),
+			'rc_namespace' => $ns ?: $wgTranslateMessageNamespaces,
+		];
+		if ( $bots ) {
+			$conds['rc_bot'] = 0;
+		}
+
+		$res = $dbr->select(
+			[ 'recentchanges', 'actor' ],
+			[
+				'rc_namespace', 'rc_title', 'rc_timestamp',
+				'rc_user_text' => 'actor_name',
+			],
+			$conds,
+			__METHOD__,
+			[],
+			[ 'actor' => [ 'JOIN', 'actor_id=rc_actor' ] ]
+		);
+		$rows = iterator_to_array( $res );
+
+		// Calculate 'lang', then sort by it and rc_timestamp
+		foreach ( $rows as &$row ) {
+			$pos = strrpos( $row->rc_title, '/' );
+			$row->lang = $pos === false ? $row->rc_title : substr( $row->rc_title, $pos + 1 );
+		}
+		unset( $row );
+
+		usort( $rows, static function ( $a, $b ) {
+			$x = strcmp( $a->lang, $b->lang );
+			if ( !$x ) {
+				// descending order
+				$x = strcmp(
+					wfTimestamp( TS_MW, $b->rc_timestamp ),
+					wfTimestamp( TS_MW, $a->rc_timestamp )
+				);
+			}
+			return $x;
+		} );
+
+		return $rows;
 	}
 }
 

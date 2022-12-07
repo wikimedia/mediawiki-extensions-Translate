@@ -29,6 +29,7 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpeci
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
@@ -687,7 +688,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		$code = $context->getLanguage()->getCode();
 		$selected = $context->getRequest()->getVal( 'languagefilter' );
 
-		$languages = TranslateUtils::getLanguageNames( $code );
+		$languages = Utilities::getLanguageNames( $code );
 		ksort( $languages );
 
 		$selector = new XmlSelect( 'languagefilter', 'languagefilter' );

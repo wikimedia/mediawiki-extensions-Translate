@@ -7,10 +7,10 @@ use FileBasedMessageGroup;
 use JsonFFS;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use RuntimeException;
 use SimpleFFS;
-use TranslateUtils;
 
 /**
  * Script to backport translations from one branch to another.
@@ -86,7 +86,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$neverExportLanguages = $this->csv2array(
 			$this->getOption( 'never-export-languages' ) ?? ''
 		);
-		$supportedLanguages = TranslateUtils::getLanguageNames( 'en' );
+		$supportedLanguages = Utilities::getLanguageNames( 'en' );
 
 		foreach ( $groups as $group ) {
 			$groupId = $group->getId();

@@ -12,6 +12,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 
 // Standard boilerplate to define $IP
@@ -361,7 +362,7 @@ class GroupStatistics extends Maintenance {
 		}
 
 		// List of all languages.
-		$languages = TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS );
+		$languages = Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 		// Default sorting order by language code, users can sort wiki output.
 		ksort( $languages );
 

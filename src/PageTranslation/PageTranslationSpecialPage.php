@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -33,7 +34,6 @@ use SpecialPage;
 use Status;
 use Title;
 use TranslateMetadata;
-use TranslateUtils;
 use UserBlockedError;
 use WebRequest;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -458,7 +458,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	 * start using the translatable_bundles table for fetching the translatabale pages
 	 */
 	public static function loadPagesFromDB(): IResultWrapper {
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$tables = [ 'page', 'revtag' ];
 		$vars = [
 			'page_id',
@@ -873,7 +873,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				);
 				$text = $checkLabel->toString() . $text;
 			} else {
-				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
+				$text = Utilities::convertWhiteSpaceToHTML( $s->getText() );
 			}
 
 			# For changed text, the language is set by $diff->setTextLanguage()
@@ -907,7 +907,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 			foreach ( $deletedUnits as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
-				$text = TranslateUtils::convertWhiteSpaceToHTML( $s->getText() );
+				$text = Utilities::convertWhiteSpaceToHTML( $s->getText() );
 				$out->addHTML( MessageWebImporter::makeSectionElement(
 					$name,
 					'deleted',
@@ -998,7 +998,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 						'infusable' => true,
 						'name' => 'prioritylangs',
 						'id' => 'mw-translate-SpecialPageTranslation-prioritylangs',
-						'languages' => TranslateUtils::getLanguageNames( $interfaceLanguage ),
+						'languages' => Utilities::getLanguageNames( $interfaceLanguage ),
 						'default' => $default,
 					] ),
 					[

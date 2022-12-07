@@ -8,10 +8,10 @@ use Exception;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageChangeStorage;
 use MessageGroup;
 use Title;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -163,11 +163,11 @@ class ManageMessageGroupsActionApi extends ApiBase {
 			// to try and load it here again from the database. Very rare chance of this happening.
 			if ( $renameMsg === null || !isset( $renameMsg['content'] ) ) {
 				$title = Title::newFromText(
-					TranslateUtils::title( $keyToRename, $code, $group->getNamespace() ),
+					Utilities::title( $keyToRename, $code, $group->getNamespace() ),
 					$group->getNamespace()
 				);
 
-				$renameContent = TranslateUtils::getContentForTitle( $title, true ) ?? '';
+				$renameContent = Utilities::getContentForTitle( $title, true ) ?? '';
 
 				$renameMsg = [
 					'key' => $keyToRename,

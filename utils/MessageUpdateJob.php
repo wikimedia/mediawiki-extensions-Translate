@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateReplaceTitle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -189,7 +190,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 				);
 			}
 
-			[ , $targetCode ] = TranslateUtils::figureMessage( $replacementTitle->getText() );
+			[ , $targetCode ] = Utilities::figureMessage( $replacementTitle->getText() );
 			if ( !$newSourceTitle && $sourceMessageHandle->getCode() === $targetCode ) {
 				$newSourceTitle = $replacementTitle;
 			}
@@ -216,7 +217,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		global $wgTranslateDocumentationLanguageCode;
 		$handle = new MessageHandle( $title );
 
-		$languages = TranslateUtils::getLanguageNames( 'en' );
+		$languages = Utilities::getLanguageNames( 'en' );
 
 		// Don't fuzzy the message documentation
 		unset( $languages[$wgTranslateDocumentationLanguageCode] );
@@ -278,7 +279,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 	) {
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $langChanges as $code => $contentStr ) {
-			$titleStr = TranslateUtils::title( $baseTitle, $code, $groupNamespace );
+			$titleStr = Utilities::title( $baseTitle, $code, $groupNamespace );
 			$title = Title::newFromText( $titleStr, $groupNamespace );
 			$wikiPage = $wikiPageFactory->newFromTitle( $title );
 			$content = ContentHandler::makeContent( $contentStr, $title );

@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageHandle;
 use Title;
 use TitleArray;
-use TranslateUtils;
 
 /**
  * Helper class that cotains utility methods to help with identifying and replace titles.
@@ -39,7 +39,7 @@ class TranslateReplaceTitle {
 			}
 			$targetTitle = Title::makeTitle(
 				$namespace,
-				TranslateUtils::title( $replacement, $handle->getCode(), $namespace )
+				Utilities::title( $replacement, $handle->getCode(), $namespace )
 			);
 			$titlesForMove[] = [ $title, $targetTitle ];
 		}

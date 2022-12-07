@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Content;
 use IContextSource;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -14,7 +15,6 @@ use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
 use Status;
 use Title;
-use TranslateUtils;
 use User;
 use WANObjectCache;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -149,7 +149,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 		}
 
 		$groupLoader[] = new MessageBundleMessageGroupLoader(
-			TranslateUtils::getSafeReadDB(),
+			Utilities::getSafeReadDB(),
 			new MessageGroupWANCache( $this->WANObjectCache )
 		);
 	}

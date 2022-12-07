@@ -29,6 +29,7 @@ class MockMessageCollectionForExport extends MessageCollection {
 		];
 
 		$this->keys = array_flip( array_keys( $this->messages ) );
+		$this->code = 'fi';
 	}
 
 	public function getAuthors(): array {
@@ -36,6 +37,6 @@ class MockMessageCollectionForExport extends MessageCollection {
 	}
 
 	public function getLanguage(): string {
-		return 'fi';
+		return $this->code;
 	}
 }

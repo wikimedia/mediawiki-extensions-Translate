@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * Implements support for message storage in YAML format.
@@ -105,8 +106,8 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		global $wgTranslateYamlLibrary;
 
 		$code = $collection->code;
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, $code );
+		$name = Utilities::getLanguageName( $code );
+		$native = Utilities::getLanguageName( $code, $code );
 		$output = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
 

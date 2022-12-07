@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use TranslateUtils;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * Graph which provides statistics on number of reviews and reviewers.
@@ -81,7 +81,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		// The key-building needs to be in sync with ::labels().
-		list( $key, $code ) = TranslateUtils::figureMessage( $row->log_title );
+		list( $key, $code ) = Utilities::figureMessage( $row->log_title );
 
 		$groups = [];
 		$codes = [];
@@ -89,7 +89,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		if ( $this->groups ) {
 			/* Get list of keys that the message belongs to, and filter
 			 * out those which are not requested. */
-			$groups = TranslateUtils::messageKeyToGroups( $row->log_namespace, $key );
+			$groups = Utilities::messageKeyToGroups( $row->log_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
 

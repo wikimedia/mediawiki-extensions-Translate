@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+
 /**
  * Group for messages that can be controlled via a page in %MediaWiki namespace.
  *
@@ -78,9 +80,9 @@ class WikiMessageGroup extends MessageGroupOld {
 	 */
 	public function getMessage( $key, $code ) {
 		if ( $code && $this->getSourceLanguage() !== $code ) {
-			return TranslateUtils::getMessageContent( $key, $code );
+			return Utilities::getMessageContent( $key, $code );
 		} else {
-			return TranslateUtils::getMessageContent( $key, false );
+			return Utilities::getMessageContent( $key, false );
 		}
 	}
 }

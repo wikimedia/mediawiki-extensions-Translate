@@ -8,12 +8,12 @@ use ContentHandler;
 use IDBAccessObject;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserFactory;
 use Title;
-use TranslateUtils;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -121,7 +121,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$content = $this->revisionStore
 					->newRevisionFromRow( $row, IDBAccessObject::READ_NORMAL, $title )
 					->getContent( SlotRecord::MAIN );
-				$text = TranslateUtils::getTextFromTextContent( $content );
+				$text = Utilities::getTextFromTextContent( $content );
 			}
 			$messagesContents[] = [ $title, $text ];
 		}

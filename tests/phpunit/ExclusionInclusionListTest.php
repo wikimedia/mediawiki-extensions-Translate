@@ -6,6 +6,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+
 /** @covers FileBasedMessageGroup */
 class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 
@@ -28,7 +30,7 @@ class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$this->group = MessageGroupBase::factory( $this->groupConfiguration );
-		$this->codes = array_flip( array_keys( TranslateUtils::getLanguageNames( 'en' ) ) );
+		$this->codes = array_flip( array_keys( Utilities::getLanguageNames( 'en' ) ) );
 	}
 
 	protected function tearDown(): void {

@@ -11,6 +11,7 @@
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
@@ -61,7 +62,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 
 		$title = $this->getTitle();
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$tables = [ 'page', 'translate_sections' ];
 		$vars = [ 'trs_key', 'trs_text' ];
 		$conds = [

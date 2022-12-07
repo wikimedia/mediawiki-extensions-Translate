@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use BagOStuff;
 use InvalidArgumentException;
 use JobQueueGroup;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use PoolCounterWorkViaCallback;
-use TranslateUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -115,7 +115,7 @@ class TranslatorActivity {
 
 		$data = $this->query->inAllLanguages();
 		// In case there is no activity for a supported languages, cache empty results
-		$validLanguages = TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS );
+		$validLanguages = Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 		foreach ( $validLanguages as $language ) {
 			$data[$language] = $data[$language] ?? [];
 		}
@@ -146,6 +146,6 @@ class TranslatorActivity {
 	}
 
 	private function isValidLanguage( string $language ): bool {
-		return TranslateUtils::isSupportedLanguageCode( $language );
+		return Utilities::isSupportedLanguageCode( $language );
 	}
 }

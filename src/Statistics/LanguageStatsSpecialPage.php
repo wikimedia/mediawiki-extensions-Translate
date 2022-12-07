@@ -12,13 +12,13 @@ use IContextSource;
 use JobQueueGroup;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Mediawiki\Languages\LanguageNameUtils;
 use MessageGroup;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use ObjectCache;
 use SpecialPage;
-use TranslateUtils;
 use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 
@@ -309,7 +309,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 	/** Output something helpful to guide the confused user. */
 	private function outputIntroduction(): void {
-		$languageName = TranslateUtils::getLanguageName(
+		$languageName = Utilities::getLanguageName(
 			$this->target,
 			$this->getLanguage()->getCode()
 		);

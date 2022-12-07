@@ -11,6 +11,7 @@
 // Standard boilerplate to define $IP
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
@@ -83,7 +84,7 @@ class PopulateFuzzy extends Maintenance {
 				} else {
 					$content = $revStore->newRevisionFromRow( $r )
 						->getContent( SlotRecord::MAIN );
-					$text = TranslateUtils::getTextFromTextContent( $content );
+					$text = Utilities::getTextFromTextContent( $content );
 				}
 				if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
 					$inserts[] = [

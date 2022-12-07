@@ -7,9 +7,9 @@ use FormOptions;
 use Html;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroup;
 use SpecialPage;
-use TranslateUtils;
 use Xml;
 use XmlSelect;
 use function wfEscapeWikiText;
@@ -197,7 +197,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 
 	/// Construct a JavaScript enhanced language selector.
 	private function languageSelector(): JsSelectToInput {
-		$languages = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
+		$languages = Utilities::getLanguageNames( $this->getLanguage()->getCode() );
 		ksort( $languages );
 		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector' );
 		foreach ( $languages as $code => $name ) {

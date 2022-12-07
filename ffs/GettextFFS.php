@@ -12,6 +12,7 @@
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -421,8 +422,8 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		global $wgSitename;
 
 		$code = $collection->code;
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, $code );
+		$name = Utilities::getLanguageName( $code );
+		$native = Utilities::getLanguageName( $code, $code );
 		$authors = $this->doAuthors( $collection );
 		if ( isset( $this->extra['header'] ) ) {
 			$extra = "# --\n" . $this->extra['header'];
@@ -585,7 +586,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 	protected function getGenerator() {
 		return 'MediaWiki ' . SpecialVersion::getVersion() .
-			'; Translate ' . TranslateUtils::getVersion();
+			'; Translate ' . Utilities::getVersion();
 	}
 
 	protected function formatDocumentation( $key ) {
@@ -600,7 +601,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			return '';
 		}
 
-		$documentation = TranslateUtils::getMessageContent( $key, $code, $this->group->getNamespace() );
+		$documentation = Utilities::getMessageContent( $key, $code, $this->group->getNamespace() );
 		if ( !is_string( $documentation ) ) {
 			return '';
 		}

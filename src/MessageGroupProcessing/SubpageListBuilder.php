@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Title;
-use TranslateUtils;
 
 /**
  * Generates list of subpages for the translatable bundle that can be
@@ -119,7 +119,7 @@ class SubpageListBuilder {
 		}
 
 		foreach ( $allPages as $prefixedDbKeyTitle => $subpage ) {
-			[ $key, ] = TranslateUtils::figureMessage( $subpage->getText() );
+			[ $key, ] = Utilities::figureMessage( $subpage->getText() );
 			if ( isset( $mappedTranslatablePages[ $key ] ) ) {
 				unset( $allPages[ $prefixedDbKeyTitle ] );
 			}

@@ -11,6 +11,7 @@ use Html;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use Message;
@@ -18,7 +19,6 @@ use MessageHandle;
 use SearchableTTMServer;
 use SpecialPage;
 use Title;
-use TranslateUtils;
 use TTMServerException;
 use WikiMap;
 use Xml;
@@ -57,8 +57,8 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	) {
 		parent::__construct( 'SearchTranslations' );
 		$this->hl = [
-			TranslateUtils::getPlaceholder(),
-			TranslateUtils::getPlaceholder(),
+			Utilities::getPlaceholder(),
+			Utilities::getPlaceholder(),
 		];
 
 		$this->ttmServerFactory = $ttmServerFactory;
@@ -85,7 +85,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
 		$out->addJsConfigVars(
 			'wgTranslateLanguages',
-			TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS )
+			Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS )
 		);
 
 		$this->opts = $opts = new FormOptions();
@@ -204,7 +204,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
-			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
+			$text = Utilities::convertWhiteSpaceToHTML( $text );
 
 			list( $pre, $post ) = $this->hl;
 			$text = str_replace( $pre, '<strong class="tux-search-highlight">', $text );
@@ -225,7 +225,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			$handle = new MessageHandle( $title );
 
 			if ( $handle->isValid() ) {
-				$uri = TranslateUtils::getEditorUrl( $handle );
+				$uri = Utilities::getEditorUrl( $handle );
 				$link = Html::element(
 					'a',
 					[ 'href' => $uri ],
@@ -538,7 +538,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		}
 
 		$sourcelanguage = $this->opts->getValue( 'sourcelanguage' );
-		$sourcelanguage = TranslateUtils::getLanguageName( $sourcelanguage );
+		$sourcelanguage = Utilities::getLanguageName( $sourcelanguage );
 		foreach ( $tabs as $tab => $filter ) {
 			// Messages for grepping:
 			// tux-sst-default

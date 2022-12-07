@@ -8,11 +8,11 @@ use Html;
 use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use SpecialPage;
 use TranslateMetadata;
-use TranslateUtils;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -320,7 +320,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 		$this->numberOfShownLanguages = 0;
 		$languages = array_keys(
-			TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() )
+			Utilities::getLanguageNames( $this->getLanguage()->getCode() )
 		);
 		sort( $languages );
 		$this->filterPriorityLangs( $languages, $this->target, $stats );
@@ -426,7 +426,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 	private function getMainColumnCell( string $code, array $params ): string {
 		if ( !isset( $this->names ) ) {
-			$this->names = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
+			$this->names = Utilities::getLanguageNames( $this->getLanguage()->getCode() );
 			$this->translate = SpecialPage::getTitleFor( 'Translate' );
 		}
 

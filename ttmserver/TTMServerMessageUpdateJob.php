@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -232,7 +233,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @return string
 	 */
 	protected function getTranslation( MessageHandle $handle ) {
-		return TranslateUtils::getMessageContent(
+		return Utilities::getMessageContent(
 			$handle->getKey(),
 			$handle->getCode(),
 			$handle->getTitle()->getNamespace()
@@ -241,7 +242,7 @@ class TTMServerMessageUpdateJob extends Job {
 
 	private function updateMessage( WritableTTMServer $ttmserver, MessageHandle $handle ) {
 		// Base page update, e.g. group change. Update everything.
-		$translations = TranslateUtils::getTranslations( $handle );
+		$translations = Utilities::getTranslations( $handle );
 		foreach ( $translations as $page => $data ) {
 			$tTitle = Title::makeTitle( $this->title->getNamespace(), $page );
 			$tHandle = new MessageHandle( $tTitle );

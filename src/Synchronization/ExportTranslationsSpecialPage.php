@@ -11,6 +11,7 @@ use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Message;
 use MessageGroup;
 use MessageHandle;
@@ -19,7 +20,6 @@ use SpecialPage;
 use Status;
 use Title;
 use TitleFormatter;
-use TranslateUtils;
 use WikiPageMessageGroup;
 
 /**
@@ -138,7 +138,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 	/** @return string[] */
 	private function getLanguageOptions(): array {
-		$languages = TranslateUtils::getLanguageNames( 'en' );
+		$languages = Utilities::getLanguageNames( 'en' );
 		$options = [];
 		foreach ( $languages as $code => $name ) {
 			$options["$code - $name"] = $code;
@@ -167,7 +167,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			$status->fatal( 'translate-export-not-supported' );
 		}
 
-		$langNames = TranslateUtils::getLanguageNames( 'en' );
+		$langNames = Utilities::getLanguageNames( 'en' );
 		if ( !isset( $langNames[$this->language] ) ) {
 			$status->fatal( 'translate-page-no-such-language' );
 		}

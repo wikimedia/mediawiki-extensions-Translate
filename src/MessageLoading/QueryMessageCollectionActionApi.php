@@ -10,12 +10,12 @@ use ApiQueryGeneratorBase;
 use ApiResult;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageHandle;
 use MWException;
 use Title;
 use TMessage;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -62,7 +62,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 	}
 
 	private function validateLanguageCode( string $code ): void {
-		if ( !TranslateUtils::isSupportedLanguageCode( $code ) ) {
+		if ( !Utilities::isSupportedLanguageCode( $code ) ) {
 			$this->dieWithError( [ 'apierror-translate-invalidlanguage', $code ] );
 		}
 	}

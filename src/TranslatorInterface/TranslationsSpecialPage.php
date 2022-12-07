@@ -8,11 +8,11 @@ use Html;
 use HtmlArmor;
 use HTMLForm;
 use Language;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageHandle;
 use SpecialAllPages;
 use Title;
-use TranslateUtils;
 use Xml;
 
 /**
@@ -205,7 +205,7 @@ class TranslationsSpecialPage extends SpecialAllPages {
 			$titles[] = $s->page_title;
 		}
 
-		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
+		$pageInfo = Utilities::getContents( $titles, $namespace );
 
 		$tableheader = Xml::openElement( 'table', [
 			'class' => 'mw-sp-translate-table sortable wikitable'
@@ -216,7 +216,7 @@ class TranslationsSpecialPage extends SpecialAllPages {
 		$tableheader .= Xml::element( 'th', null, $this->msg( 'allmessagescurrent' )->text() );
 		$tableheader .= Xml::closeElement( 'tr' );
 
-		// Adapted version of TranslateUtils:makeListing() by Nikerabbit.
+		// Adapted version of Utilities:makeListing() by Nikerabbit.
 		$out = $tableheader;
 
 		$historyText = '&#160;<sup>' .
@@ -232,12 +232,12 @@ class TranslationsSpecialPage extends SpecialAllPages {
 
 			$code = $tHandle->getCode();
 
-			$text = TranslateUtils::getLanguageName( $code, $this->getLanguage()->getCode() );
+			$text = Utilities::getLanguageName( $code, $this->getLanguage()->getCode() );
 			$text .= $separator;
 			$text .= $this->msg( 'parentheses' )->params( $code )->plain();
 			$tools['edit'] = Html::element(
 				'a',
-				[ 'href' => TranslateUtils::getEditorUrl( $tHandle ) ],
+				[ 'href' => Utilities::getEditorUrl( $tHandle ) ],
 				$text
 			);
 
@@ -264,7 +264,7 @@ class TranslationsSpecialPage extends SpecialAllPages {
 				];
 			}
 
-			$formattedContent = TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] );
+			$formattedContent = Utilities::convertWhiteSpaceToHTML( $pageInfo[$key][0] );
 
 			$leftColumn = $tools['history'] . $tools['edit'];
 			$out .= Xml::tags( 'tr', [ 'class' => $class ],

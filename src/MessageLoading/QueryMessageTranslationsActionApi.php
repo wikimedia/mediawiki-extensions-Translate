@@ -7,9 +7,9 @@ use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageHandle;
 use Title;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -41,7 +41,7 @@ class QueryMessageTranslationsActionApi extends ApiQueryBase {
 		}
 
 		$namespace = $title->getNamespace();
-		$pageInfo = TranslateUtils::getTranslations( $handle );
+		$pageInfo = Utilities::getTranslations( $handle );
 
 		$result = $this->getResult();
 		$count = 0;

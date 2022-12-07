@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 class MessageChangeStorage {
 	public const DEFAULT_NAME = 'default';
@@ -23,11 +24,11 @@ class MessageChangeStorage {
 	public static function writeChanges( array $changes, $file ) {
 		$cache = \Cdb\Writer::open( $file );
 		$keys = array_keys( $changes );
-		$cache->set( '#keys', TranslateUtils::serialize( $keys ) );
+		$cache->set( '#keys', Utilities::serialize( $keys ) );
 
 		/** @var MessageSourceChange $change */
 		foreach ( $changes as $key => $change ) {
-			$value = TranslateUtils::serialize( $change->getAllModifications() );
+			$value = Utilities::serialize( $change->getAllModifications() );
 			$cache->set( $key, $value );
 		}
 		$cache->close();
@@ -50,7 +51,7 @@ class MessageChangeStorage {
 	 * @return string
 	 */
 	public static function getCdbPath( $name ) {
-		return TranslateUtils::cacheFile( "messagechanges.$name.cdb" );
+		return Utilities::cacheFile( "messagechanges.$name.cdb" );
 	}
 
 	/**
@@ -65,7 +66,7 @@ class MessageChangeStorage {
 			return MessageSourceChange::loadModifications( [] );
 		}
 
-		$groups = TranslateUtils::deserialize( $reader->get( '#keys' ) );
+		$groups = Utilities::deserialize( $reader->get( '#keys' ) );
 
 		if ( !in_array( $groupId, $groups, true ) ) {
 			throw new InvalidArgumentException( "Group Id - '$groupId' not found in cdb file " .
@@ -73,7 +74,7 @@ class MessageChangeStorage {
 		}
 
 		return MessageSourceChange::loadModifications(
-			TranslateUtils::deserialize( $reader->get( $groupId ) )
+			Utilities::deserialize( $reader->get( $groupId ) )
 		);
 	}
 
@@ -90,12 +91,12 @@ class MessageChangeStorage {
 			return;
 		}
 
-		$groups = TranslateUtils::deserialize( $reader->get( '#keys' ) );
+		$groups = Utilities::deserialize( $reader->get( '#keys' ) );
 
 		$allChanges = [];
 		foreach ( $groups as $id ) {
 			$allChanges[$id] = MessageSourceChange::loadModifications(
-				TranslateUtils::deserialize( $reader->get( $id ) )
+				Utilities::deserialize( $reader->get( $id ) )
 			);
 		}
 		$allChanges[$groupId] = $changes;

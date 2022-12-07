@@ -15,6 +15,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
@@ -40,7 +41,6 @@ use StubUserLang;
 use TextContent;
 use Title;
 use TranslateMetadata;
-use TranslateUtils;
 use User;
 use UserBlockedError;
 use Wikimedia\ScopedCallback;
@@ -107,7 +107,7 @@ class Hooks {
 
 		try {
 			self::$renderingContext = true;
-			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
+			[ , $code ] = Utilities::figureMessage( $title->getText() );
 			$name = $page->getPageDisplayTitle( $code );
 			if ( $name ) {
 				$name = $wikitextParser->recursivePreprocess( $name );
@@ -292,7 +292,7 @@ class Hooks {
 		// For translation pages, parse plural, grammar etc with correct language,
 		// and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
-			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
+			[ , $code ] = Utilities::figureMessage( $title->getText() );
 			$pageLang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $code );
 		}
 	}
@@ -511,7 +511,7 @@ class Hooks {
 		$langFactory = MediaWikiServices::getInstance()->getLanguageFactory();
 		foreach ( $status as $code => $percent ) {
 			// Get autonyms (null)
-			$name = TranslateUtils::getLanguageName( $code, LanguageNameUtils::AUTONYMS );
+			$name = Utilities::getLanguageName( $code, LanguageNameUtils::AUTONYMS );
 
 			// Add links to other languages
 			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
@@ -1150,7 +1150,7 @@ class Hooks {
 				return false;
 			}
 
-			[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
+			[ , $code ] = Utilities::figureMessage( $title->getText() );
 			$mwService = MediaWikiServices::getInstance();
 
 			if ( method_exists( $mwService, 'getUrlUtils' ) ) {
@@ -1309,7 +1309,7 @@ class Hooks {
 			return;
 		}
 
-		[ , $code ] = TranslateUtils::figureMessage( $title->getText() );
+		[ , $code ] = Utilities::figureMessage( $title->getText() );
 
 		// Get the translation percentage
 		$pers = $page->getTranslationPercentages();

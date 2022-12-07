@@ -1,28 +1,30 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\Revision\RevisionRecord;
+use MediaWikiIntegrationTestCase;
+use User;
 
 /**
  * @group Database
- * @covers TranslateUtils
+ * @covers MediaWiki\Extension\Translate\Utilities\Utilities
  */
-class TranslateUtilsTest extends MediaWikiIntegrationTestCase {
+class UtilitiesTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * Creates a new page with name and text, returns a revision
-	 * @param string $name
-	 * @param string $text
-	 * @return RevisionRecord
 	 * @throws MWException
 	 */
-	private function createPageWithNameAndText( $name, $text, $user ) {
+	private function createPageWithNameAndText( string $name, string $text, User $user ): RevisionRecord {
 		$status = $this->editPage( $name, $text, '', NS_MAIN, $user );
 		$this->assertTrue( $status->isOK() );
 		return $status->getValue()['revision-record'];
 	}
 
 	/**
-	 * @covers TranslateUtils::getContents
+	 * @covers MediaWiki\Extension\Translate\Utilities\Utilities::getContents
 	 * @throws MWException
 	 */
 	public function testGetContents() {
@@ -31,7 +33,7 @@ class TranslateUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->createPageWithNameAndText( $title1, $title1 . 'TEXT', $user );
 		$title2 = __METHOD__ . '_Page2';
 		$this->createPageWithNameAndText( $title2, $title2 . 'TEXT', $user );
-		$result = TranslateUtils::getContents( [ $title1, $title2, 'Does_Not_Exist' ], NS_MAIN );
+		$result = Utilities::getContents( [ $title1, $title2, 'Does_Not_Exist' ], NS_MAIN );
 		$this->assertEquals( [
 			$title1 => [
 				$title1 . 'TEXT',

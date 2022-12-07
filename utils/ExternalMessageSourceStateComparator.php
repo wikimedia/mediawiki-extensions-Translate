@@ -11,6 +11,7 @@
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 class ExternalMessageSourceStateComparator {
 	/** Process all languages supported by the message group */
@@ -57,7 +58,7 @@ class ExternalMessageSourceStateComparator {
 
 			// This means all languages
 			if ( $languages === null ) {
-				$languages = TranslateUtils::getLanguageNames( 'en' );
+				$languages = Utilities::getLanguageNames( 'en' );
 			}
 
 			$languages = array_keys( $languages );

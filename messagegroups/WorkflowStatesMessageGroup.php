@@ -11,6 +11,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 
 /** @ingroup MessageGroup */
@@ -49,7 +50,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 			}
 		}
 
-		$defs = TranslateUtils::getContents( array_keys( $keys ), $this->getNamespace() );
+		$defs = Utilities::getContents( array_keys( $keys ), $this->getNamespace() );
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $keys as $key => $state ) {
 			if ( !isset( $defs[$key] ) ) {

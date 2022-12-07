@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
-use TranslateUtils;
 
 /**
  * Class to manage revision tags for translatable bundles.
@@ -91,7 +91,7 @@ class RevTagStore {
 			return $response;
 		}
 
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 		$vars = [ 'MAX(rt_revision) AS rt_revision', 'rt_type' ];
 		$conds = [
 			'rt_page' => $articleId,
@@ -127,7 +127,7 @@ class RevTagStore {
 
 	/** Get a list of page ids where the latest revision is either tagged or marked */
 	public static function getTranslatableBundleIds( string ...$revTags ): array {
-		$dbr = TranslateUtils::getSafeReadDB();
+		$dbr = Utilities::getSafeReadDB();
 
 		$tables = [ 'revtag', 'page' ];
 		$fields = 'rt_page';

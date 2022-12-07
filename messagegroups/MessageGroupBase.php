@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\CombinedInsertablesSuggester;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
@@ -296,7 +297,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			return null;
 		}
 
-		$codes = array_flip( array_keys( TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS ) ) );
+		$codes = array_flip( array_keys( Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS ) ) );
 
 		$lists = $groupConfiguration['LANGUAGES'];
 		$exclusionList = $lists['exclude'] ?? null;

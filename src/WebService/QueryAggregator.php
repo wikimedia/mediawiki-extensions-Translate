@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use RuntimeException;
-use TranslateUtils;
 
 /**
  * Web service utility class. Runs multiple web service queries asynchronously to save time.
@@ -48,7 +48,7 @@ class QueryAggregator {
 	public function run(): void {
 		global $wgSitename;
 
-		$version = TranslateUtils::getVersion();
+		$version = Utilities::getVersion();
 
 		$clientOptions = [
 			'reqTimeout' => $this->timeout,

@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use Maintenance;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MessageGroupStats;
 use RawMessage;
-use TranslateUtils;
 use const DB_PRIMARY;
 
 /**
@@ -61,7 +61,7 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			'*',
 			__METHOD__
 		);
-		$knownLanguages = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
+		$knownLanguages = array_keys( Utilities::getLanguageNames( 'en' ) );
 		$unknownLanguages = array_diff( $dbLanguages, $knownLanguages );
 
 		if ( $unknownLanguages !== [] ) {

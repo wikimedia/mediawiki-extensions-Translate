@@ -11,11 +11,11 @@ use DateInterval;
 use DateTime;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Revision\SlotRecord;
 use MessageChangeStorage;
 use MockWikiMessageGroup;
 use Title;
-use TranslateUtils;
 use User;
 use WANObjectCache;
 
@@ -53,7 +53,7 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 		// Adding this manually, since this will not be present in the list of changes
 		// and will be fetched manually from the database.
 		$title = Title::makeTitle( $group->getNamespace(),
-			TranslateUtils::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
+			Utilities::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
 		$content = ContentHandler::makeContent( 'world 23', $title );
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$updater = $page

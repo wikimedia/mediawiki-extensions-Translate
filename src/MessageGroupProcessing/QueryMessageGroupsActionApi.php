@@ -7,10 +7,10 @@ use AggregateMessageGroup;
 use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\HookContainer\HookContainer;
 use MessageGroup;
 use TranslateMetadata;
-use TranslateUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use WikiPageMessageGroup;
 
@@ -176,7 +176,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 		}
 
 		if ( isset( $props['icon'] ) ) {
-			$formats = TranslateUtils::getIcon( $g, $params['iconsize'] );
+			$formats = Utilities::getIcon( $g, $params['iconsize'] );
 			if ( $formats ) {
 				$a['icon'] = $formats;
 			}

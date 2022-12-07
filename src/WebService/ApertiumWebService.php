@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\WebService;
 
 use FormatJson;
 use LanguageCode;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Http\HttpRequestFactory;
 use Sanitizer;
-use TranslateUtils;
 
 /**
  * Implements support Apetrium translator api.
@@ -81,7 +81,7 @@ class ApertiumWebService extends TranslationWebService {
 		$params = [
 			'q' => $text,
 			'langpair' => "$sourceLanguage|$targetLanguage",
-			'x-application' => 'MediaWiki Translate extension ' . TranslateUtils::getVersion(),
+			'x-application' => 'MediaWiki Translate extension ' . Utilities::getVersion(),
 		];
 
 		return TranslationQuery::factory( $this->config['url'] )

@@ -6,10 +6,10 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 use DifferenceEngine;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use Title;
-use TranslateUtils;
 use WikitextContent;
 
 /**
@@ -22,7 +22,7 @@ use WikitextContent;
  */
 class UpdatedDefinitionAid extends TranslationAid {
 	public function getData(): array {
-		$db = TranslateUtils::getSafeReadDB();
+		$db = Utilities::getSafeReadDB();
 		$conds = [
 			'rt_page' => $this->handle->getTitle()->getArticleID(),
 			'rt_type' => RevTagStore::TRANSVER_PROP,

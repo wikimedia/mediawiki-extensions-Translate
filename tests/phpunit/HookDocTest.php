@@ -21,6 +21,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			'src/MessageGroupProcessing',
 			'src/TranslatorInterface/Aid',
 			'src/PageTranslation',
+			'src/Utilities',
 			'ttmserver',
 			'utils',
 			'src/WebService',

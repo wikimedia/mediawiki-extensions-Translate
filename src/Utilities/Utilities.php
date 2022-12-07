@@ -1,22 +1,33 @@
 <?php
-/**
- * This file contains classes with static helper functions for other classes.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Utilities;
+
+use Content;
+use LanguageCode;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MessageGroup;
+use MessageHandle;
+use MWException;
+use RequestContext;
+use TextContent;
+use Title;
+use UnexpectedValueException;
+use Wikimedia\Rdbms\IDatabase;
+use Xml;
+use XmlSelect;
 
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
-class TranslateUtils {
+class Utilities {
 	/**
 	 * Does quick normalisation of message name so that in can be looked from the
 	 * database.
@@ -25,7 +36,7 @@ class TranslateUtils {
 	 * @param int $ns Namespace constant
 	 * @return string The normalised title as a string.
 	 */
-	public static function title( $message, $code, $ns = NS_MEDIAWIKI ) {
+	public static function title( string $message, string $code, int $ns = NS_MEDIAWIKI ): string {
 		// Cache some amount of titles for speed.
 		static $cache = [];
 		$key = $ns . ':' . $message;
@@ -47,7 +58,7 @@ class TranslateUtils {
 	 * @return array ( string, string ) Key and language code.
 	 * @todo Handle names without slash.
 	 */
-	public static function figureMessage( $text ) {
+	public static function figureMessage( string $text ): array {
 		$pos = strrpos( $text, '/' );
 		$code = substr( $text, $pos + 1 );
 		$key = substr( $text, 0, $pos );
@@ -62,7 +73,7 @@ class TranslateUtils {
 	 * @param int $namespace Namespace number.
 	 * @return string|null The contents or null.
 	 */
-	public static function getMessageContent( $key, $language, $namespace = NS_MEDIAWIKI ) {
+	public static function getMessageContent( string $key, string $language, int $namespace = NS_MEDIAWIKI ): ?string {
 		$title = self::title( $key, $language, $namespace );
 		$data = self::getContents( [ $title ], $namespace );
 
@@ -77,9 +88,10 @@ class TranslateUtils {
 	 * @return array ( string => array ( string, string ) ) Tuples of page
 	 * text and last author indexed by page name.
 	 */
-	public static function getContents( $titles, $namespace ) {
-		$dbr = wfGetDB( DB_REPLICA );
-		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
+	public static function getContents( $titles, int $namespace ): array {
+		$mwServices = MediaWikiServices::getInstance();
+		$dbr = $mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$revStore = $mwServices->getRevisionStore();
 		$titleContents = [];
 
 		$query = $revStore->getQueryInfo( [ 'page', 'user' ] );
@@ -127,7 +139,7 @@ class TranslateUtils {
 	 * @param bool $addFuzzy Add the fuzzy tag if appropriate.
 	 * @return string|null
 	 */
-	public static function getContentForTitle( Title $title, $addFuzzy = false ): ?string {
+	public static function getContentForTitle( Title $title, bool $addFuzzy = false ): ?string {
 		$store = MediaWikiServices::getInstance()->getRevisionStore();
 		$revision = $store->getRevisionByTitle( $title );
 
@@ -153,69 +165,6 @@ class TranslateUtils {
 		return $wiki;
 	}
 
-	/**
-	 * Fetches recent changes for titles in given namespaces
-	 *
-	 * @param int $hours Number of hours.
-	 * @param bool $bots Should bot edits be included.
-	 * @param null|int[] $ns List of namespace IDs.
-	 * @param string[] $extraFields List of extra columns to fetch.
-	 * @return array List of recent changes.
-	 */
-	public static function translationChanges(
-		$hours = 24, $bots = false, $ns = null, array $extraFields = []
-	) {
-		global $wgTranslateMessageNamespaces;
-
-		$dbr = wfGetDB( DB_REPLICA );
-
-		$hours = (int)$hours;
-		$cutoff_unixtime = time() - ( $hours * 3600 );
-		$cutoff = $dbr->timestamp( $cutoff_unixtime );
-
-		$conds = [
-			'rc_timestamp >= ' . $dbr->addQuotes( $cutoff ),
-			'rc_namespace' => $ns ?: $wgTranslateMessageNamespaces,
-		];
-		if ( $bots ) {
-			$conds['rc_bot'] = 0;
-		}
-
-		$res = $dbr->select(
-			[ 'recentchanges', 'actor' ],
-			array_merge( [
-				'rc_namespace', 'rc_title', 'rc_timestamp',
-				'rc_user_text' => 'actor_name',
-			], $extraFields ),
-			$conds,
-			__METHOD__,
-			[],
-			[ 'actor' => [ 'JOIN', 'actor_id=rc_actor' ] ]
-		);
-		$rows = iterator_to_array( $res );
-
-		// Calculate 'lang', then sort by it and rc_timestamp
-		foreach ( $rows as &$row ) {
-			$pos = strrpos( $row->rc_title, '/' );
-			$row->lang = $pos === false ? $row->rc_title : substr( $row->rc_title, $pos + 1 );
-		}
-		unset( $row );
-
-		usort( $rows, static function ( $a, $b ) {
-			$x = strcmp( $a->lang, $b->lang );
-			if ( !$x ) {
-				// descending order
-				$x = strcmp(
-					wfTimestamp( TS_MW, $b->rc_timestamp ),
-					wfTimestamp( TS_MW, $a->rc_timestamp )
-				);
-			}
-			return $x;
-		} );
-
-		return $rows;
-	}
-
 	/* Some other helpers for output */
 
 	/**
@@ -224,10 +173,12 @@ class TranslateUtils {
 	 * @param null|string $language Language code of the language that the name should be in.
 	 * @return string Best-effort localisation of wanted language name.
 	 */
-	public static function getLanguageName( $code, $language = 'en' ) {
+	public static function getLanguageName( string $code, ?string $language = 'en' ): string {
 		$languages = self::getLanguageNames( $language );
 		return $languages[$code] ?? $code;
 	}
+
+	// TODO remove languageSelector() after Sunsetting of TranslateSvg extension
 
 	/**
 	 * Returns a language selector.
@@ -243,6 +194,8 @@ class TranslateUtils {
 
 		return $selector->getHTML();
 	}
+
+	// TODO remove getLanguageSelector() after Sunsetting of TranslateSvg extension
 
 	/**
 	 * Standard language selector in Translate extension.
@@ -273,15 +226,15 @@ class TranslateUtils {
 	 * @param null|string $code
 	 * @return array ( language code => language name )
 	 */
-	public static function getLanguageNames( $code ) {
-		$languageNames = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames( $code );
+	public static function getLanguageNames( ?string $code ): array {
+		$mwServices = MediaWikiServices::getInstance();
+		$languageNames = $mwServices->getLanguageNameUtils()->getLanguageNames( $code );
 
 		$deprecatedCodes = LanguageCode::getDeprecatedCodeMapping();
 		foreach ( array_keys( $deprecatedCodes ) as $deprecatedCode ) {
 			unset( $languageNames[ $deprecatedCode ] );
 		}
-
-		Hooks::run( 'TranslateSupportedLanguages', [ &$languageNames, $code ] );
+		$mwServices->getHookContainer()->run( 'TranslateSupportedLanguages', [ &$languageNames, $code ] );
 
 		return $languageNames;
 	}
@@ -300,12 +253,10 @@ class TranslateUtils {
 
 	/**
 	 * Returns the all the groups message belongs to.
-	 * @param int $namespace
-	 * @param string $key
 	 * @return string[] Possibly empty list of group ids.
 	 */
-	public static function messageKeyToGroups( $namespace, $key ) {
-		$mi = MessageIndex::singleton()->retrieve();
+	public static function messageKeyToGroups( int $namespace, string $key ): array {
+		$mi = Services::getInstance()->getMessageIndex()->retrieve();
 		$normkey = self::normaliseKey( $namespace, $key );
 
 		if ( isset( $mi[$normkey] ) ) {
@@ -315,13 +266,8 @@ class TranslateUtils {
 		}
 	}
 
-	/**
-	 * Converts page name and namespace to message index format.
-	 * @param int $namespace
-	 * @param string $key
-	 * @return string
-	 */
-	public static function normaliseKey( $namespace, $key ) {
+	/** Converts page name and namespace to message index format. */
+	public static function normaliseKey( int $namespace, string $key ): string {
 		$key = lcfirst( $key );
 
 		return strtr( "$namespace:$key", ' ', '_' );
@@ -334,7 +280,7 @@ class TranslateUtils {
 	 * @param array $attributes Html attributes for the fieldset.
 	 * @return string Html.
 	 */
-	public static function fieldset( $legend, $contents, array $attributes = [] ) {
+	public static function fieldset( string $legend, string $contents, array $attributes = [] ): string {
 		return Xml::openElement( 'fieldset', $attributes ) .
 			Xml::tags( 'legend', null, $legend ) . $contents .
 			Xml::closeElement( 'fieldset' );
@@ -351,7 +297,7 @@ class TranslateUtils {
 	 * @param string $message Plain text string.
 	 * @return string Text string that is ready for outputting.
 	 */
-	public static function convertWhiteSpaceToHTML( $message ) {
+	public static function convertWhiteSpaceToHTML( string $message ): string {
 		$msg = htmlspecialchars( $message );
 		$msg = preg_replace( '/^ /m', '&#160;', $msg );
 		$msg = preg_replace( '/ $/m', '&#160;', $msg );
@@ -362,22 +308,12 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Construct the web address to given asset.
-	 * @param string $path Path to the resource relative to extensions root directory.
-	 * @return string Full or partial web path.
-	 */
-	public static function assetPath( $path ) {
-		global $wgExtensionAssetsPath;
-		return "$wgExtensionAssetsPath/Translate/$path";
-	}
-
-	/**
 	 * Gets the path for cache files
 	 * @param string $filename
 	 * @return string Full path.
 	 * @throws MWException If cache directory is not configured.
 	 */
-	public static function cacheFile( $filename ) {
+	public static function cacheFile( string $filename ): string {
 		global $wgTranslateCacheDirectory, $wgCacheDirectory;
 
 		if ( $wgTranslateCacheDirectory !== false ) {
@@ -391,12 +327,8 @@ class TranslateUtils {
 		return "$dir/$filename";
 	}
 
-	/**
-	 * Returns a random string that can be used as placeholder in strings.
-	 * @return string
-	 * @since 2012-07-31
-	 */
-	public static function getPlaceholder() {
+	/** Returns a random string that can be used as placeholder in strings. */
+	public static function getPlaceholder(): string {
 		static $i = 0;
 
 		return "\x7fUNIQ" . dechex( mt_rand( 0, 0x7fffffff ) ) .
@@ -408,11 +340,10 @@ class TranslateUtils {
 	 * @param MessageGroup $g
 	 * @param int $size Length of the edge of a bounding box to fit the icon.
 	 * @return null|array
-	 * @since 2013-04-01
 	 */
-	public static function getIcon( MessageGroup $g, $size ) {
+	public static function getIcon( MessageGroup $g, int $size ): ?array {
 		$icon = $g->getIcon();
-		if ( substr( $icon, 0, 7 ) !== 'wiki://' ) {
+		if ( !$icon || substr( $icon, 0, 7 ) !== 'wiki://' ) {
 			return null;
 		}
 
@@ -438,22 +369,18 @@ class TranslateUtils {
 	/**
 	 * Get a DB handle suitable for read and read-for-write cases
 	 *
-	 * @return \Wikimedia\Rdbms\IDatabase Primary for HTTP POST, CLI, DB already changed;
-	 *  replica otherwise
+	 * @return IDatabase Primary for HTTP POST, CLI, DB already changed;
+	 * replica otherwise
 	 */
-	public static function getSafeReadDB() {
+	public static function getSafeReadDB(): IDatabase {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		$index = self::shouldReadFromPrimary() ? DB_PRIMARY : DB_REPLICA;
 
-		return $lb->getConnectionRef( $index );
+		return $lb->getConnection( $index );
 	}
 
-	/**
-	 * Check whether primary should be used for reads to avoid reading stale data.
-	 *
-	 * @return bool
-	 */
-	public static function shouldReadFromPrimary() {
+	/** Check whether primary should be used for reads to avoid reading stale data. */
+	public static function shouldReadFromPrimary(): bool {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		// Parsing APIs need POST for payloads but are read-only, so avoid spamming
 		// the primary then. No good way to check this at the moment...
@@ -470,9 +397,8 @@ class TranslateUtils {
 	 * Get an URL that points to an editor for this message handle.
 	 * @param MessageHandle $handle
 	 * @return string Domain relative URL
-	 * @since 2017.10
 	 */
-	public static function getEditorUrl( MessageHandle $handle ) {
+	public static function getEditorUrl( MessageHandle $handle ): string {
 		if ( !$handle->isValid() ) {
 			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
 		}
@@ -489,31 +415,24 @@ class TranslateUtils {
 	/**
 	 * Serialize the given value
 	 * @param mixed $value
-	 * @return string
 	 */
-	public static function serialize( $value ) {
+	public static function serialize( $value ): string {
 		return serialize( $value );
 	}
 
 	/**
 	 * Deserialize the given string
-	 * @param string $str
-	 * @param array|null $opts
 	 * @return mixed
 	 */
-	public static function deserialize( $str, $opts = [ 'allowed_classes' => false ] ) {
+	public static function deserialize( string $str, ?array $opts = [ 'allowed_classes' => false ] ) {
 		return unserialize( $str, $opts );
 	}
 
-	/**
-	 * @return string
-	 * @since 2020.05
-	 */
 	public static function getVersion(): string {
 		// Avoid parsing JSON multiple time per request
 		static $version = null;
 		if ( $version === null ) {
-			$version = json_decode( file_get_contents( __DIR__ . '/extension.json' ) )->version;
+			$version = json_decode( file_get_contents( __DIR__ . '../../../extension.json' ) )->version;
 		}
 		return $version;
 	}
@@ -536,9 +455,6 @@ class TranslateUtils {
 	 * Note that it is possible that message groups define other language codes which
 	 * are not supported by the wiki, in which case this function would return false
 	 * for those.
-	 *
-	 * @param string $code
-	 * @return bool
 	 */
 	public static function isSupportedLanguageCode( string $code ): bool {
 		$all = self::getLanguageNames( LanguageNameUtils::AUTONYMS );
@@ -562,7 +478,6 @@ class TranslateUtils {
 	 * @param MessageHandle $handle Language code is ignored.
 	 * @return array ( string => array ( string, string ) ) Tuples of page
 	 * text and last author indexed by page name.
-	 * @since 2012-12-18
 	 */
 	public static function getTranslations( MessageHandle $handle ): array {
 		$namespace = $handle->getTitle()->getNamespace();
@@ -592,3 +507,5 @@ class TranslateUtils {
 		return $pageInfo;
 	}
 }
+
+class_alias( Utilities::class, 'TranslateUtils' );

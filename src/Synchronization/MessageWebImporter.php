@@ -9,6 +9,7 @@ use Html;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
@@ -18,7 +19,6 @@ use OutputPage;
 use RequestContext;
 use Sanitizer;
 use Title;
-use TranslateUtils;
 use User;
 use Xml;
 
@@ -204,7 +204,7 @@ class MessageWebImporter {
 				$para = '<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-new' )->rawParams( $para )
 					->escaped();
-				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
+				$text = Utilities::convertWhiteSpaceToHTML( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
 				$oldContent = ContentHandler::makeContent( $old, $diff->getTitle() );
@@ -312,7 +312,7 @@ class MessageWebImporter {
 			foreach ( $diff as $s ) {
 				$para = '<code class="mw-tmi-deleted">' . htmlspecialchars( $s ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-deleted' )->rawParams( $para )->escaped();
-				$text = TranslateUtils::convertWhiteSpaceToHTML( $collection[$s]->translation() );
+				$text = Utilities::convertWhiteSpaceToHTML( $collection[$s]->translation() );
 				$changed[] = self::makeSectionElement( $name, 'deleted', $text );
 			}
 		}
@@ -335,7 +335,7 @@ class MessageWebImporter {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
 				} else {
-					$lang = TranslateUtils::getLanguageName(
+					$lang = Utilities::getLanguageName(
 						$code,
 						$context->getLanguage()->getCode()
 					);
@@ -502,7 +502,7 @@ class MessageWebImporter {
 				$text = self::makeTextFuzzy( $slot->blob_data );
 			} else {
 				$text = self::makeTextFuzzy(
-					TranslateUtils::getTextFromTextContent(
+					Utilities::getTextFromTextContent(
 						$revStore->newRevisionFromRow( $row )->getContent( SlotRecord::MAIN )
 					)
 				);

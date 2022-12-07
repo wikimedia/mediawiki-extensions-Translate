@@ -11,6 +11,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
  * File format support for DTD.
@@ -86,8 +87,8 @@ class DtdFFS extends SimpleFFS {
 		global $wgSitename;
 
 		$code = $collection->code;
-		$name = TranslateUtils::getLanguageName( $code );
-		$native = TranslateUtils::getLanguageName( $code, $code );
+		$name = Utilities::getLanguageName( $code );
+		$native = Utilities::getLanguageName( $code, $code );
 
 		$output = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n\n";
