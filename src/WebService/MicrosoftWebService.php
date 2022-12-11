@@ -68,7 +68,7 @@ class MicrosoftWebService extends TranslationWebService {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
 			throw new TranslationWebServiceException(
-				'Http::get failed:' . serialize( $error ) . serialize( $status )
+				'HttpRequestFactory::get failed:' . serialize( $error ) . serialize( $status )
 			);
 		}
 
