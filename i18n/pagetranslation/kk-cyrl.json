@@ -8,8 +8,6 @@
 	"pagetranslation": "Бет аудармасы",
 	"right-pagetranslation": "Аударма үшін беттердің нұсқаларын белгілеу",
 	"action-pagetranslation": "аударуға келетін беттерді басқару",
-	"tps-edit-sourcepage-ve-warning-title": "Ескерту: Қолдау көрсейтілмейтін бет",
-	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "$1 аударма бірлігі",
 	"tpt-section-new": "Жаңа аударма бірлігі.\nАтауы: $1",
 	"tpt-section-deleted": "$1 аударма бірлігі",
