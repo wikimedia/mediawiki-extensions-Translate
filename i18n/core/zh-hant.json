@@ -25,7 +25,8 @@
 			"Winston Sung",
 			"Wrightbus",
 			"Xiplus",
-			"列维劳德"
+			"列维劳德",
+			"捍粵者"
 		]
 	},
 	"translate": "翻譯",
@@ -101,10 +102,10 @@
 	"translate-checks-parametersnotequal": "共有 {{PLURAL:$1|$1}} 個參數，應有{{PLURAL:$2|$2}} 個。",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> 格式不正確。",
 	"translate-checks-fudforum-syntax": "在此專案中使用 <nowiki>$1</nowiki> 替代 <nowiki>$2</nowiki>。",
-	"translate-checks-newline-missing-start": "在翻譯的開頭{{PLURAL:$1|有}}缺少著 $1 個換行{{PLURAL:$1|字元}}。",
-	"translate-checks-newline-missing-end": "在翻譯的結尾{{PLURAL:$1|有}}缺少著 $1 個換行{{PLURAL:$1|字元}}。",
-	"translate-checks-newline-extra-start": "在翻譯的開頭{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
-	"translate-checks-newline-extra-end": "在翻譯的結尾{{PLURAL:$1|有}}多出 $1 個換行{{PLURAL:$1|字元}}。",
+	"translate-checks-newline-missing-start": "翻譯開頭{{PLURAL:$1|少了}}$1粒換行{{PLURAL:$1|字元}}。",
+	"translate-checks-newline-missing-end": "翻譯結尾{{PLURAL:$1|少了}}$1粒換行{{PLURAL:$1|字元}}。",
+	"translate-checks-newline-extra-start": "翻譯開頭{{PLURAL:$1|多出}}$1粒換行{{PLURAL:$1|字元}}。",
+	"translate-checks-newline-extra-end": "翻譯結尾{{PLURAL:$1|多出}}$1粒換行{{PLURAL:$1|字元}}。",
 	"translate-checks-value-not-present": "此翻譯應相同於{{PLURAL:$1|1=|以下值之一：}}$1。",
 	"translate-checks-replacement": "使用$2替代$1。",
 	"translate-checks-empty": "不允許沒有內容或只有空格的翻譯。",
@@ -274,7 +275,7 @@
 	"translate-manage-nochanges": "此群組中的訊息原文並未做任何變更。",
 	"translate-manage-nochanges-other": "此語言並未做任何更改。\n使用下方連結返回群組的詳細資料檢視頁面。",
 	"translate-manage-inconsistent": "偵測不一致的請求。\n請檢查更動內容，然後再試。\n詳細資訊：$1。",
-	"translate-manage-toolong": "超出處理時間限制 $1 秒。\n請重新送出表單，以繼續進行處理。",
+	"translate-manage-toolong": "超出處理時間限制$1秒，\n請重新送出表單以繼續處理。",
 	"translate-manage-import-summary": "正在從外部來源匯入新版",
 	"translate-manage-import-ignore": "跳過訊息 $1。",
 	"translate-manage-import-rename-summary": "在外部來源重新命名",
