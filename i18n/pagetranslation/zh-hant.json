@@ -21,7 +21,8 @@
 			"Wrightbus",
 			"Wwycheuk",
 			"Xiplus",
-			"Zhxy 519"
+			"Zhxy 519",
+			"捍粵者"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -31,7 +32,7 @@
 	"tpt-section": "翻譯單元 $1",
 	"tpt-section-new": "新翻譯單元。\n名稱：$1",
 	"tpt-section-deleted": "翻譯單元 $1",
-	"tpt-diff-old": "上個文字",
+	"tpt-diff-old": "舊版文字",
 	"tpt-diff-new": "新的文字",
 	"tpt-submit": "標記此版本需要翻譯",
 	"tpt-sections-oldnew": "新的和現有的翻譯單元",

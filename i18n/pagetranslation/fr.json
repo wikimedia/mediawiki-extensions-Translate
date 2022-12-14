@@ -103,7 +103,6 @@
 	"tpt-translation-intro": "Cette page est une <span class=\"plainlinks\">[$1 version traduite]</span> de la page [[$2]] et la traduction est terminée à $3 %.",
 	"tpt-translation-intro-fuzzy": "Les traductions désuètes sont identifiées ainsi.",
 	"tpt-languages-legend": "Autres langues :",
-	"tpt-languages-separator": "&#160;·&#32;",
 	"tpt-languages-zero": "Commencer la traduction dans cette langue",
 	"tpt-languages-nonzero": "$1 ($2 % traduit{{PLURAL:$2||s}})",
 	"tpt-tab-translate": "Traduire",

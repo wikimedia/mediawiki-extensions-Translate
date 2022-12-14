@@ -20,7 +20,6 @@
 	"translate-tag-hasnew": "Šī lapa satur <span class=\"plainlinks\">[$1 izmaiņas]</span>, kuras nav atzīmētas tulkošanai.",
 	"tpt-translation-intro": "Šī lapa ir <span class=\"plainlinks\">[$1 tulkota versija]</span> no lapas [[$2]] un tulkojums ir pabeigts par $3%.",
 	"tpt-languages-legend": "Citas valodas:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-nonzero": "$1 ($2% iztulkots)",
 	"tpt-tab-translate": "Tulkot",
 	"tpt-aggregategroup-add": "Pievienot",

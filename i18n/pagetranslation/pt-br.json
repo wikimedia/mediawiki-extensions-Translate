@@ -87,7 +87,6 @@
 	"tpt-translation-intro": "Esta página é uma <span class=\"plainlinks\">[$1 versão traduzida]</span> da página [[$2]]. Sua tradução está $3% completa.",
 	"tpt-translation-intro-fuzzy": "Traduções desatualizadas estão marcadas desta forma.",
 	"tpt-languages-legend": "Outros idiomas:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Iniciar a tradução para este idioma",
 	"tpt-languages-nonzero": "$1 ($2% traduzido)",
 	"tpt-tab-translate": "Traduzir",

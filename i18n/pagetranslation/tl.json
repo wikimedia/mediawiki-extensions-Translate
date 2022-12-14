@@ -55,7 +55,6 @@
 	"tpt-translation-intro": "Ang pahinang ito ay isang <span class=\"plainlinks\">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3% kumpleto na.",
 	"tpt-translation-intro-fuzzy": "Tinatakan ng ganito ang mga pagsasalinwikang lipas na sa panahon.",
 	"tpt-languages-legend": "Iba pang mga wika:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Simulan ang pagsasalinwika para sa wikang ito",
 	"tpt-languages-nonzero": "$1 ($2% nasalin)",
 	"tpt-target-page": "Hindi maaaring kinakamay na maisapanahon ang pahinang ito.\nAng pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].",

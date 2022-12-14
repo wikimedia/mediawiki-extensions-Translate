@@ -56,7 +56,6 @@
 	"tpt-translation-intro": "Hee di Sigg es en <span class=\"plainlinks\">[$1 övversaz Version]</span> vun dä Sigg „[[$2]]“ un es zoh $3% jedonn.",
 	"tpt-translation-intro-fuzzy": "Övverhollte Övversäzunge wäde su makeet, wi hee dä Täx.",
 	"tpt-languages-legend": "Ander Schprohche:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Donn ens loßlääje mem Övversäze en heh di Schprohch",
 	"tpt-languages-nonzero": "$1 ($2% övversaz)",
 	"tpt-tab-translate": "Övversäze",

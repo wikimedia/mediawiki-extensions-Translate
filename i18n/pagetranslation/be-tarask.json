@@ -72,7 +72,6 @@
 	"tpt-translation-intro": "Гэтая старонка — <span class=\"plainlinks\">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.",
 	"tpt-translation-intro-fuzzy": "Гэтак пазначаныя састарэлыя пераклады.",
 	"tpt-languages-legend": "Іншыя мовы:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Пачаць пераклад на гэтую мову",
 	"tpt-languages-nonzero": "$1 ($2% перакладзена)",
 	"tpt-tab-translate": "Перакладаць",

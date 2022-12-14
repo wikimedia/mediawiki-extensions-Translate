@@ -59,7 +59,6 @@
 	"tpt-translation-intro": "Laman ini merupakan <span class=\"plainlinks\">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3% siap.",
 	"tpt-translation-intro-fuzzy": "Terjemahan yang lapuk ditandai sebegini.",
 	"tpt-languages-legend": "Bahasa lain:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Mulakan terjemahan dalam bahasa ini",
 	"tpt-languages-nonzero": "$1 ($2% diterjemah)",
 	"tpt-tab-translate": "Terjemah",

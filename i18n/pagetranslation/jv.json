@@ -54,7 +54,6 @@
 	"tpt-translation-intro": "Kaca iki minangka <span class=\"plainlinks\">[$1 vèrsi pertalan]</span> saka kaca [[$2]] lan pertalané wis $3% rampung.",
 	"tpt-translation-intro-fuzzy": "Pertalan lawas tinengeran mangkéné.",
 	"tpt-languages-legend": "Basa liyané:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Wiwiti pertalan tumrap basa iki",
 	"tpt-languages-nonzero": "$1 ($2% kapertal)",
 	"tpt-tab-translate": "Pertal",

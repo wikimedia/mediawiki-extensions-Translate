@@ -44,7 +44,6 @@
 	"translate-tag-markthis": "Marki ĉi tiun paĝon por tradukado",
 	"tpt-translation-intro": "Ĉi tiu paĝo estas <span class=\"plainlinks\">[$1 tradukita versio]</span> de la paĝo [[$2]] kaj la traduko estas kompleta por $3%.",
 	"tpt-languages-legend": "Aliaj lingvoj:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Ektraduki por ĉi tiu lingvo",
 	"tpt-languages-nonzero": "$1 ($2% {{PLURAL:$2|tradukita|tradukitaj}})",
 	"tpt-tab-translate": "Traduki",

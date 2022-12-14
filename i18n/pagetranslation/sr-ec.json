@@ -67,7 +67,6 @@
 	"tpt-translation-intro": "Ово је <span class=\"plainlinks\">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3% завршен.",
 	"tpt-translation-intro-fuzzy": "Застарели преводи су означени овако.",
 	"tpt-languages-legend": "Други језици:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Започните превођење на овом језику",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
 	"tpt-tab-translate": "Преведи",

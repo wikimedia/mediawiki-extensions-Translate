@@ -82,7 +82,6 @@
 	"tpt-translation-intro": "Det här är en <span class=\"plainlinks\">[$1 översatt version]</span> av sidan [[$2]]. Översättningen är till $3 % färdig och uppdaterad.",
 	"tpt-translation-intro-fuzzy": "Föråldrade översättningar markeras på det här sättet.",
 	"tpt-languages-legend": "Andra språk:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Påbörja översättning för detta språk",
 	"tpt-languages-nonzero": "$1 ($2 % översatt)",
 	"tpt-tab-translate": "Översätt",

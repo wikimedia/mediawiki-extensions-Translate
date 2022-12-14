@@ -88,7 +88,6 @@
 	"tpt-translation-intro": "Ця сторінка є <span class=\"plainlinks\">[$1 перекладом]</span> сторінки [[$2]]. Переклад виконано на $3%.",
 	"tpt-translation-intro-fuzzy": "Застарілі переклади позначені так.",
 	"tpt-languages-legend": "Інші мови:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Розпочати переклад цією мовою",
 	"tpt-languages-nonzero": "$1 ($2% перекладено)",
 	"tpt-tab-translate": "Перекласти",

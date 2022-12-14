@@ -96,7 +96,6 @@
 	"tpt-translation-intro": "Это <span class=\"plainlinks\">[$1 перевод]</span> страницы [[$2]], он готов на $3%.",
 	"tpt-translation-intro-fuzzy": "Таким образом помечены устаревшие переводы.",
 	"tpt-languages-legend": "Другие языки:",
-	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Начать перевод на этот язык",
 	"tpt-languages-nonzero": "$1 ($2% переведено)",
 	"tpt-tab-translate": "Перевести",
