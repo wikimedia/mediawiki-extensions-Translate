@@ -737,11 +737,7 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			$parserOutput = $parser->getOutput();
 			$parserOutput->setExtensionData( 'translate-fake-categories',
 				$parserOutput->getCategories() );
-			if ( method_exists( $parserOutput, 'setCategories' ) ) { // 1.38+
-				$parserOutput->setCategories( [] );
-			} else {
-				$parserOutput->setCategoryLinks( [] );
-			}
+			$parserOutput->setCategories( [] );
 		}
 	}
 

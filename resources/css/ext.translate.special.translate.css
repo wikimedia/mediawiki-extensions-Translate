@@ -119,9 +119,7 @@
 	margin: 5px 0;
 }
 
-.tux-editor-header .mw-message-box,
-/** MW < 1.38 **/
-.tux-editor-header .warningbox {
+.tux-editor-header .mw-message-box {
 	margin-bottom: 5px;
 }
 

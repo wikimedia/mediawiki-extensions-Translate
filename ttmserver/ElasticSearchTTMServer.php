@@ -273,8 +273,7 @@ class ElasticSearchTTMServer
 		$doc = $this->createDocument( $handle, $targetText, $revId );
 		$fname = __METHOD__;
 
-		$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
-		$mwElasticUtilsClass::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
+		MWElasticUtils::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
 			function () use ( $doc ) {
 				$this->getIndex()->addDocuments( [ $doc ] );
 			},
@@ -448,8 +447,7 @@ class ElasticSearchTTMServer
 			$docs[] = $this->createDocument( $handle, $text, $revId );
 		}
 
-		$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
-		$mwElasticUtilsClass::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
+		MWElasticUtils::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
 			function () use ( $docs ) {
 				$this->getIndex()->addDocuments( $docs );
 			},
@@ -558,8 +556,7 @@ class ElasticSearchTTMServer
 	}
 
 	protected function waitUntilReady() {
-		$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
-		$statuses = $mwElasticUtilsClass::waitForGreen(
+		$statuses = MWElasticUtils::waitForGreen(
 			$this->getClient(),
 			$this->getIndexName(),
 			self::WAIT_UNTIL_READY_TIMEOUT );
@@ -811,8 +808,7 @@ class ElasticSearchTTMServer
 	 */
 	private function deleteByQuery( \Elastica\Index $index, Query $query ) {
 		try {
-			$mwElasticUtilsClass = $this->getMWElasticUtilsClass();
-			$mwElasticUtilsClass::deleteByQuery( $index, $query, /* $allowConflicts = */ true );
+			MWElasticUtils::deleteByQuery( $index, $query, /* $allowConflicts = */ true );
 		} catch ( Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
 				'Problem encountered during deletion.',
@@ -820,19 +816,6 @@ class ElasticSearchTTMServer
 			);
 
 			throw new RuntimeException( "Problem encountered during deletion.\n" . $e );
-		}
-	}
-
-	/**
-	 * For MW < 1.38 MWElasticUtils was not namespaced in the Elastica extension
-	 * Changed in Id29047c67a7d0bedc9a7e7ebd3879f21f82b2742
-	 * @return string
-	 */
-	private function getMWElasticUtilsClass(): string {
-		if ( class_exists( MWElasticUtils::class ) ) {
-			return MWElasticUtils::class;
-		} else {
-			return '\MWElasticUtils';
 		}
 	}
 

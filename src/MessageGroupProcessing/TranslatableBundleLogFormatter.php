@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use Linker;
 use LogFormatter;
 use MediaWiki\MediaWikiServices;
 use Message;
@@ -75,13 +74,8 @@ class TranslatableBundleLogFormatter extends LogFormatter {
 	public function getComment(): string {
 		$legacy = $this->entry->getParameters();
 		if ( isset( $legacy['reason'] ) ) {
-			if ( method_exists( MediaWikiServices::class, 'getCommentFormatter' ) ) {
-				$commentFormatter = MediaWikiServices::getInstance()->getCommentFormatter();
-				$comment = $commentFormatter->formatBlock( (string)$legacy['reason'] );
-			} else {
-				// < MW 1.38
-				$comment = Linker::commentBlock( (string)$legacy['reason'] );
-			}
+			$commentFormatter = MediaWikiServices::getInstance()->getCommentFormatter();
+			$comment = $commentFormatter->formatBlock( (string)$legacy['reason'] );
 
 			// No hard coded spaces thanx
 			return ltrim( $comment );

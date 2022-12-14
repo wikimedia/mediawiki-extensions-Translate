@@ -189,7 +189,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$wikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromID( $title->getArticleID() );
 
 		if ( method_exists( MediaWikiServices::class, 'getProtectPageFactory' ) ) {
-			// MW 1.38+
+			// Planned future change (T292683)
 			$protectPage = TestingAccessWrapper::newFromObject(
 				$this->getServiceContainer()->getProtectPageFactory()
 					->newProtectPage( $wikiPage, $this->getTestUser()->getUser() )

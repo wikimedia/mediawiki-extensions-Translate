@@ -156,9 +156,7 @@
 	white-space: pre-wrap;
 }
 
-.tux-searchpage .mw-message-box-success,
-/** MW < 1.38 **/
-.tux-searchpage .successbox {
+.tux-searchpage .mw-message-box-success {
 	margin-left: 25%;
 }
 

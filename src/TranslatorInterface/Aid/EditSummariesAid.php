@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
-use Linker;
 use MediaWiki\MediaWikiServices;
 use MWTimestamp;
 
@@ -42,8 +41,7 @@ class EditSummariesAid extends TranslationAid {
 		);
 
 		$editSummaries = [];
-		$commentFormatter = method_exists( $mwService, 'getCommentFormatter' )
-			? $mwService->getCommentFormatter() : null;
+		$commentFormatter = $mwService->getCommentFormatter();
 		foreach ( $result as $row ) {
 			$revision = $revisionFactory->newRevisionFromRow( $row );
 			$comment = $revision->getComment();
@@ -54,12 +52,7 @@ class EditSummariesAid extends TranslationAid {
 				continue;
 			}
 
-			if ( $commentFormatter ) {
-				$message = $commentFormatter->format( $comment->message->text() );
-			} else {
-				// <= MW 1.37
-				$message = Linker::formatComment( $comment->message->text() );
-			}
+			$message = $commentFormatter->format( $comment->message->text() );
 
 			$editSummaries[] = [
 				'humanTimestamp' => $this->context->getLanguage()
