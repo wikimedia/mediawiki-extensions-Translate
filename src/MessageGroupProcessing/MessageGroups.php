@@ -300,9 +300,11 @@ class MessageGroups {
 	}
 
 	/** Fixes the id and resolves aliases. */
-	public static function normalizeId( string $id ): string {
+	public static function normalizeId( ?string $id ): string {
 		/* Translatable pages use spaces, but MW occasionally likes to
 		 * normalize spaces to underscores */
+		$id = (string)$id;
+
 		if ( strpos( $id, 'page-' ) === 0 ) {
 			$id = strtr( $id, '_', ' ' );
 		}
