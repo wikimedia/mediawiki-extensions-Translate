@@ -224,7 +224,7 @@
 	"pagepreparation-summary": "指定準備翻譯的頁面標題。",
 	"pp-pagename-placeholder": "輸入頁面名稱",
 	"pp-prepare-button-label": "準備",
-	"pp-save-button-label": "發布",
+	"pp-save-button-label": "發佈",
 	"pp-cancel-button-label": "取消",
 	"pp-save-message": "頁面已發布。 您可 [$1] 編輯該頁面。",
 	"pp-prepare-message": "該頁面已準備好等候翻譯。 請參考下方差異。 點選 \"{{int:pp-save-button-label}}\" 確認!",
