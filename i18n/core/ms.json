@@ -198,7 +198,7 @@
 	"translate-import-from-local": "Muat naik fail setempat:",
 	"translate-import-load": "Muatkan fail",
 	"translate-import-err-dl-failed": "Fail tidak dapat diambil:\n$1",
-	"translate-import-err-ul-failed": "Muat naik fail tidak berjaya",
+	"translate-import-err-ul-failed": "Muat naik fail gagal",
 	"translate-import-err-invalid-title": "Nama fail yang diberikan, <nowiki>$1</nowiki> tidak sah.",
 	"translate-import-err-no-such-file": "Fail <nowiki>$1</nowiki> tidak wujud atau telah dimuat naik secara setempat.",
 	"translate-import-err-stale-group": "Kumpulan mesej bagi fail ini tidak wujud.",
