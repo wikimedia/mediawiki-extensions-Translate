@@ -180,7 +180,7 @@ class TranslateSandbox {
 	 * @since 2013.12
 	 */
 	public static function sendEmail( User $sender, User $target, $type ) {
-		global $wgNoReplyAddress;
+		global $wgEmergencyContact;
 
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		$targetLang = $userOptionsLookup->getOption( $target, 'language' );
@@ -223,8 +223,7 @@ class TranslateSandbox {
 		$params = [
 			'user' => $target->getId(),
 			'to' => MailAddress::newFromUser( $target ),
-			'from' => MailAddress::newFromUser( $sender ),
-			'replyto' => new MailAddress( $wgNoReplyAddress ),
+			'from' => new MailAddress( $wgEmergencyContact ),
 			'subj' => $subject,
 			'body' => $body,
 			'emailType' => $type,
