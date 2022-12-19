@@ -20,6 +20,7 @@ use Elastica\Query\Term;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * TTMServer backed based on ElasticSearch. Depends on Elastica.
@@ -430,7 +431,7 @@ class ElasticSearchTTMServer
 	 * @phan-param array<int,array{0:MessageHandle,1:string,2:string}> $batch
 	 */
 	public function batchInsertDefinitions( array $batch ) {
-		$lb = new LinkBatch();
+		$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 		foreach ( $batch as $data ) {
 			$lb->addObj( $data[0]->getTitle() );
 		}

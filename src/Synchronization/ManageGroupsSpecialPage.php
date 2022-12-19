@@ -12,7 +12,7 @@ use FileBasedMessageGroup;
 use Html;
 use JobQueueGroup;
 use Language;
-use LinkBatch;
+use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Logger\LoggerFactory;
@@ -72,6 +72,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	private $jobQueueGroup;
 	/** @var MessageIndex */
 	private $messageIndex;
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
 
 	public function __construct(
 		Language $contLang,
@@ -79,7 +81,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		RevisionLookup $revLookup,
 		GroupSynchronizationCache $synchronizationCache,
 		JobQueueGroup $jobQueueGroup,
-		MessageIndex $messageIndex
+		MessageIndex $messageIndex,
+		LinkBatchFactory $linkBatchFactory
 	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
@@ -90,6 +93,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this, $this->getLinkRenderer() );
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->messageIndex = $messageIndex;
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function doesWrites() {
@@ -246,7 +250,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			}
 
 			// Reduce page existance queries to one per group
-			$lb = new LinkBatch();
+			$lb = $this->linkBatchFactory->newLinkBatch();
 			$ns = $group->getNamespace();
 			$isCap = $this->nsInfo->isCapitalized( $ns );
 			$languages = $sourceChanges->getLanguages();

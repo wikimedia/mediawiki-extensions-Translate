@@ -307,7 +307,8 @@
 				"RevisionLookup",
 				"Translate:GroupSynchronizationCache",
 				"JobQueueGroup",
-				"Translate:MessageIndex"
+				"Translate:MessageIndex",
+				"LinkBatchFactory"
 			]
 		},
 		"SupportedLanguages": {
@@ -319,7 +320,8 @@
 				"DBLoadBalancer",
 				"Translate:ConfigHelper",
 				"ContentLanguage",
-				"Translate:ProgressStatsTableFactory"
+				"Translate:ProgressStatsTableFactory",
+				"LinkBatchFactory"
 			]
 		},
 		"AggregateGroups": {

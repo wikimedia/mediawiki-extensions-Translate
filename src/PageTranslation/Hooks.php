@@ -11,7 +11,6 @@ use Html;
 use IContextSource;
 use Language;
 use LanguageCode;
-use LinkBatch;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\Services;
@@ -723,7 +722,7 @@ class Hooks {
 		$newLanguageLinks = [];
 
 		// Batch the Title::exists queries used below
-		$lb = new LinkBatch();
+		$lb = $mwServices->getLinkBatchFactory()->newLinkBatch();
 		foreach ( array_keys( $languages ) as $code ) {
 			$title = $page->getTitle()->getSubpage( $code );
 			$lb->addObj( $title );

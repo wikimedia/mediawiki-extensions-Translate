@@ -9,7 +9,7 @@ use HtmlArmor;
 use InvalidArgumentException;
 use Language;
 use LanguageCode;
-use LinkBatch;
+use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -44,6 +44,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private $progressStatsTableFactory;
 	/** @var StatsTable */
 	private $progressStatsTable;
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
 	/** @var int Cutoff time for inactivity in days */
 	private $period = 180;
 
@@ -58,7 +60,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		ILoadBalancer $loadBalancer,
 		ConfigHelper $configHelper,
 		Language $contentLanguage,
-		ProgressStatsTableFactory $progressStatsTableFactory
+		ProgressStatsTableFactory $progressStatsTableFactory,
+		LinkBatchFactory $linkBatchFactory
 	) {
 		parent::__construct( 'SupportedLanguages' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -68,6 +71,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->configHelper = $configHelper;
 		$this->contentLanguage = $contentLanguage;
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	protected function getGroupName() {
@@ -356,7 +360,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	protected function preQueryUsers( array $users ): void {
-		$lb = new LinkBatch();
+		$lb = $this->linkBatchFactory->newLinkBatch();
 		foreach ( $users as $data ) {
 			$username = $data[TranslatorActivityQuery::USER_NAME];
 			$user = Title::capitalize( $username, NS_USER );
