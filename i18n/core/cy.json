@@ -3,7 +3,8 @@
 		"authors": [
 			"Cymrodor",
 			"Lloffiwr",
-			"Robin Owain"
+			"Robin Owain",
+			"Afalau"
 		]
 	},
 	"translate": "Cyfieithu",
@@ -150,7 +151,7 @@
 	"translate-import-from-local": "Ffeil lleol i'w llwytho:",
 	"translate-import-load": "Llwyther y ffeil",
 	"translate-import-err-dl-failed": "Heb allu nôl y ffeil:\n$1",
-	"translate-import-err-ul-failed": "Ni lwyddodd llwytho'r ffeil",
+	"translate-import-err-ul-failed": "Methwyd uwchlwytho ffeil",
 	"translate-js-support-unsaved-warning": "Mae gennych gyfieithiadau heb eu cadw",
 	"translate-gs-pos": "Safle",
 	"translate-gs-code": "Cod",
@@ -189,7 +190,7 @@
 	"tux-status-unsaved": "Heb ei gadw",
 	"tux-editor-paste-original-button-label": "Gluder y testun gwreiddiol",
 	"tux-editor-discard-changes-button-label": "Rhoi'r newidiadau heibio",
-	"tux-editor-save-button-label": "Cadwer y cyfieithiad",
+	"tux-editor-save-button-label": "Cadw'r cyfieithiad",
 	"tux-editor-skip-button-label": "Neidio i'r nesaf",
 	"tux-editor-cancel-button-label": "Canslo",
 	"tux-editor-confirm-button-label": "Cadarnheuer y cyfieithiad",
