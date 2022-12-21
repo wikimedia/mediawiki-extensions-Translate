@@ -224,6 +224,7 @@ class TranslateSandbox {
 			'user' => $target->getId(),
 			'to' => MailAddress::newFromUser( $target ),
 			'from' => new MailAddress( $wgEmergencyContact ),
+			'replyto' => new MailAddress( $wgEmergencyContact ),
 			'subj' => $subject,
 			'body' => $body,
 			'emailType' => $type,
