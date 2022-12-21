@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"apihelp-aggregategroups-param-group": "ID grupe poruka",
+	"apihelp-aggregategroups-param-groupname": "Ime zbirne grupe poruka",
+	"apihelp-aggregategroups-param-groupdescription": "Opis zbirne grupe poruka",
+	"apihelp-aggregategroups-example-1": "Pridruživanje grupi",
+	"apihelp-groupreview-param-group": "Grupa poruka",
+	"apihelp-groupreview-param-language": "Jezički kod.",
+	"apihelp-query+languagestats-description": "Statistika traženog jezika",
+	"apihelp-query+languagestats-summary": "Statistika traženog jezika",
+	"apihelp-query+languagestats-param-language": "Jezički kod.",
+	"apihelp-query+messagecollection-param-group": "Grupa poruka.",
+	"apihelp-query+messagecollection-param-language": "Jezički kod.",
+	"apihelp-query+messagecollection-example-1": "Spisak podržanih jezika",
+	"apihelp-managemessagegroups-param-groupId": "ID grupe",
+	"apihelp-translationstash-param-subaction": "Radnja",
+	"apierror-translate-smg-nochanges": "Nema izmena za obradu.",
+	"apierror-translate-unknownmessage": "Nepoznata poruka",
+	"apierror-translate-invalid-changeset-name": "Dato je nevažeće ime datoteke skupa izmena — $1",
+	"apierror-translate-invalid-operation": "Nevažeća vrednost: $1. Važeće vrednosti: $2.",
+	"apiwarn-translate-language-disabled-source": "Izvorni jezik ove grupe je $1. Izaberite drugi za prevođenje.",
+	"apihelp-translationentitysearch-param-limit": "Maksimalni broj rezultata pretrage"
+}
