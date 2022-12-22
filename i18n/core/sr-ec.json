@@ -86,7 +86,7 @@
 	"translate-checks-escape": "{{PLURAL:$2|Следећи излаз карактера може бити случајан|Следећи излази карактера могу бити случајни}}: <strong>$1</strong>. {{PLURAL:$4|Коректан излаз карактера је|Коректни излази карактера садрже:}} $3.",
 	"translate-checks-parametersnotequal": "Број параметара је {{PLURAL:$1|$1}}; требало би бити {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> је погрешно уобличен.",
-	"translate-checks-fudforum-syntax": "На овом пројекту, користите <nowiki>$1</nowiki> уместо <nowiki>$2</nowiki.",
+	"translate-checks-fudforum-syntax": "На овом пројекту, користите <nowiki>$1</nowiki> уместо <nowiki>$2</nowiki>.",
 	"translate-checks-newline-missing-start": "{{PLURAL:$1|Недостаје $1 знак|Недостају $1 знака|Недостају $1 знакова}} за нови ред на почетку превода.",
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|Недостаје $1 знак|Недостају $1 знака|Недостају $1 знакова}} за нови ред на крају превода.",
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|Недостаје $1 додатни знак|Недостају $1 додатна знака|Недостају $1 додатних знакова}} за нови ред на почетку превода.",
