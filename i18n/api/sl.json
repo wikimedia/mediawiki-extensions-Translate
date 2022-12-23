@@ -7,6 +7,15 @@
 	"apihelp-groupreview-param-language": "Oznaka jezika.",
 	"apihelp-query+languagestats-param-language": "Oznaka jezika.",
 	"apihelp-query+messagecollection-param-language": "Oznaka jezika.",
+	"apihelp-translationaids-description": "Poizvedba po vseh prevajalskih pripomočkih.",
+	"apihelp-translationaids-summary": "Poizvedba po vseh prevajalskih pripomočkih.",
+	"apihelp-translationaids-param-prop": "Kateri pripomočki za prevajanje naj bodo vključeni.",
+	"apihelp-ttmserver-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
+	"apihelp-searchtranslations-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
+	"apihelp-translationcheck-param-translation": "Prevod za potrditev.",
+	"apihelp-translationstats-description": "Pridobite statistične podatke o prevajanju, povezane z urejanjem prevodov, aktivnimi prevodi, novimi uporabniki, pregledi prevodov in pregledovalci.",
+	"apierror-translate-language-disabled": "Prevajanje v $1 je onemogočeno.",
+	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",
 	"apiwarn-translate-language-disabled-source": "Izvorni jezik te skupine je $1. Izberite drug jezik, v katerega želite prevajati.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Prevajate v <bdi>$1</bdi>.</strong> To je različica <bdi>$2</bdi>, ki je že izvorni jezik teh sporočil. Prepričajte se, da je izbrani jezik pravilen, in upoštevajte razlike med jezikovnimi različicami, da zagotovite dober prevod."
 }

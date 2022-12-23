@@ -289,5 +289,7 @@
 	"visualeditor-annotations-translate-description": "Cette partie est marquée comme étant traductible. Assurez-vous de suivre les recommandations données pour [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Changing_the_source_text modifier le texte source].",
 	"visualeditor-annotations-tvar-start": "Début du contenu intraductible",
 	"visualeditor-annotations-tvar-end": "Fin du contenu intraductible",
-	"visualeditor-annotations-tvar-description": "Cette partie est marquée comme intraductible. Consultez la documentation sur la [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Segmentation Segmentation du texte source] pour plus d’informations."
+	"visualeditor-annotations-tvar-description": "Cette partie est marquée comme intraductible. Consultez la documentation sur la [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Segmentation Segmentation du texte source] pour plus d’informations.",
+	"tag-translate-translation-pages": "-",
+	"tag-translate-translation-pages-description": "Modifications automatiques aux pages de traduction par l’extension Traduction"
 }
