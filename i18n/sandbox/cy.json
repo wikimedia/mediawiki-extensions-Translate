@@ -1,17 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lloffiwr"
+			"Lloffiwr",
+			"Afalau"
 		]
 	},
 	"tsb-filter-pending": "Ceisiadau dan ystyriaeth",
 	"tsb-reminder-title-generic": "Cwblhewch eich cyflwyniad er mwyn cael bod yn gyfieithydd",
 	"tsb-email-promoted-subject": "Rydych nawr yn gyfieithydd ar {{SITENAME}}",
 	"tsb-all-languages-button-label": "Pob iaith",
-	"tsb-accept-button-label": "Derbynier",
-	"tsb-reject-button-label": "Gwrthoder",
-	"tsb-accept-all-button-label": "Derbynier y cwbl",
-	"tsb-reject-all-button-label": "Gwrthoder y cwbl",
+	"tsb-accept-button-label": "Derbyn",
+	"tsb-reject-button-label": "Gwrthod",
+	"tsb-accept-all-button-label": "Derbyn y cwbl",
+	"tsb-reject-all-button-label": "Gwrthod y cwbl",
 	"tsb-user-posted-a-comment": "Ddim yn gyfieithydd",
 	"tsb-translations-source": "Ffynhonell",
 	"tsb-translations-user": "Cyfieithiadau'r defnyddiwr",

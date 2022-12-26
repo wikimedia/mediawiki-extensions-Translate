@@ -46,7 +46,8 @@
 			"Tranve",
 			"Stang",
 			"Diskdance",
-			"Tr jason"
+			"Tr jason",
+			"LittlePaw365"
 		]
 	},
 	"translate": "翻译",
@@ -73,7 +74,7 @@
 	"translate-submit": "获取",
 	"translate-page-navigation-legend": "导航",
 	"translate-page-showing": "显示第$1条至第$2条消息，共$3个消息。",
-	"translate-page-showing-all": "显示$1{{PLURAL:$1|条消息}}。",
+	"translate-page-showing-all": "正在显示$1{{PLURAL:$1|条消息}}。",
 	"translate-page-showing-none": "没有可以显示的消息。",
 	"translate-next": "下一页",
 	"translate-prev": "上一页",

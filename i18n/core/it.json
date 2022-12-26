@@ -122,7 +122,7 @@
 	"translate-rcfilters-translations-site-label": "Messaggi di sistema",
 	"translate-rcfilters-translations-site-desc": "Personalizzazione di messaggi di sistema nel namespace MediaWiki.",
 	"translate-rc-translation-filter": "Filtra le traduzioni:",
-	"translate-rc-translation-filter-no": "Non fare niente",
+	"translate-rc-translation-filter-no": "Non fare nulla",
 	"translate-rc-translation-filter-only": "Mostra solo le traduzioni",
 	"translate-rc-translation-filter-filter": "Non mostrare le traduzioni",
 	"translate-rc-translation-filter-site": "Solo i cambiamenti ai messaggi del sito",

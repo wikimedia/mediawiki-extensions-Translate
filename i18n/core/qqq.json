@@ -147,7 +147,7 @@
 	"translate-rcfilters-translations-only-desc": "Description for the filter for showing changes to translated pages only.",
 	"translate-rcfilters-translations-filter-label": "Label for the filter for showing changes to pages that aren't translations.",
 	"translate-rcfilters-translations-filter-desc": "Description for the filter for showing changes to pages that aren't translations.",
-	"translate-rcfilters-translations-site-label": "Label for the filter for showing customizations of site messages.",
+	"translate-rcfilters-translations-site-label": "Label for the filter for showing changes to messages in site language.",
 	"translate-rcfilters-translations-site-desc": "Description for the filter for showing customizations of site messages.",
 	"translate-rc-translation-filter": "Name of filter in [[Special:RecentChanges]]. Gives a user the option to filter out translations, show translations only, or do nothing (default).",
 	"translate-rc-translation-filter-no": "Option for filter in [[Special:RecentChanges]]. Selecting this option results in the filter not doing anything. It is the default value.",
