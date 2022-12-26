@@ -269,5 +269,6 @@
 	"visualeditor-annotations-translate-description": "Este intervalo é marcado como traduzível. Certifique-se de que segue as diretrizes de [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text alteração do texto fonte].",
 	"visualeditor-annotations-tvar-start": "Início do conteúdo a não traduzir",
 	"visualeditor-annotations-tvar-end": "Fim do conteúdo a não traduzir",
-	"visualeditor-annotations-tvar-description": "Este intervalo está marcado como não traduzível. Consulte [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentação do texto fonte] para obter mais informações, por favor."
+	"visualeditor-annotations-tvar-description": "Este intervalo está marcado como não traduzível. Consulte [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentação do texto fonte] para obter mais informações, por favor.",
+	"tag-translate-translation-pages-description": "Edições automáticas de páginas de tradução pela extensão Traduzir"
 }

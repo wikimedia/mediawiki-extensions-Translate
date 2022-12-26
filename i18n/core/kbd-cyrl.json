@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Rhdtranslate",
 			"Тамэ Балъкъэрхэ"
 		]
 	},
@@ -10,5 +11,6 @@
 	"translate-page-limit": "ФIимыхуу",
 	"translate-submit": "Къэгъэлъэгъуэн",
 	"translate-optional": "(Iэмалыншэкъым)",
-	"translate-ignored": "(щхьэщыгъэцIэфтауэ)"
+	"translate-ignored": "(щхьэщыгъэцIэфтауэ)",
+	"translate-documentation-language": "Сообщенэхэм я документациер"
 }

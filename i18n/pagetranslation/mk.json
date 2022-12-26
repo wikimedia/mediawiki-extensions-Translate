@@ -259,5 +259,6 @@
 	"visualeditor-annotations-translate-description": "Овој опсег е означен како преводлив. Следете ги правилата за [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text промена на изворен текст].",
 	"visualeditor-annotations-tvar-start": "Почеток на непреводливата содржина",
 	"visualeditor-annotations-tvar-end": "Крај на непреводливата содржина",
-	"visualeditor-annotations-tvar-description": "Овој опсег е означен како непреводлив. Повеќе информации ќе добиете на страницата [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Разделување на изворниот текст]."
+	"visualeditor-annotations-tvar-description": "Овој опсег е означен како непреводлив. Повеќе информации ќе добиете на страницата [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Разделување на изворниот текст].",
+	"tag-translate-translation-pages-description": "Автоматски уредувања на преводни страници со додатокот „Преведување“"
 }

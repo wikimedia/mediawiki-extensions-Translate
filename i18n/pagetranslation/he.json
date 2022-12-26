@@ -268,5 +268,6 @@
 	"visualeditor-annotations-translate-description": "הטווח הזה מסומן \"לתרגום\". נא לוודא {{GENDER:|שאתה עוקב|שאת עוקבת}} אחר ההנחיות בנושא [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Changing_the_source_text שינוי טקסט המקור].",
 	"visualeditor-annotations-tvar-start": "תחילת תוכן לא לתרגום",
 	"visualeditor-annotations-tvar-end": "סוף תוכן לא לתרגום",
-	"visualeditor-annotations-tvar-description": "הטווח הזה סומן \"לא לתרגום\". נא לקרוא על [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Segmentation חלוקת טקסט המקור למקטעים] למידע נוסף."
+	"visualeditor-annotations-tvar-description": "הטווח הזה סומן \"לא לתרגום\". נא לקרוא על [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Segmentation חלוקת טקסט המקור למקטעים] למידע נוסף.",
+	"tag-translate-translation-pages-description": "עריכות אוטומטיות של דפי תרגום על ידי ההרחבה Translate"
 }

@@ -262,6 +262,5 @@
 	"visualeditor-annotations-tvar-start": "Začetek neprevedljive vsebine",
 	"visualeditor-annotations-tvar-end": "Konec neprevedljive vsebine",
 	"visualeditor-annotations-tvar-description": "Ta obseg je označen kot neprevedljiv. Za več informacij glejte stran [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentacija izvornega besedila] (v angleščini).",
-	"tag-translate-translation-pages": "-",
 	"tag-translate-translation-pages-description": "Samodejna urejanja prevodnih strani z razširitvijo Prevajalnik"
 }

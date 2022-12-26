@@ -134,7 +134,7 @@
 	"translate-rc-translation-filter-no": "無",
 	"translate-rc-translation-filter-only": "只顯示翻譯",
 	"translate-rc-translation-filter-filter": "篩選掉翻譯",
-	"translate-rc-translation-filter-site": "只顯示有更動的網站訊息",
+	"translate-rc-translation-filter-site": "顯示與網站語言相同的訊息的變更",
 	"translationstats": "翻譯統計",
 	"translate-stats-edits": "編輯",
 	"translate-stats-users": "翻譯人員",

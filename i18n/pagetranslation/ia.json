@@ -257,5 +257,6 @@
 	"visualeditor-annotations-translate-description": "Iste parte es marcate como traducibile. Per favor assecura te de sequer le directivas date pro [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text cambiar le texto fonte].",
 	"visualeditor-annotations-tvar-start": "Initio del contento non traducibile",
 	"visualeditor-annotations-tvar-end": "Fin del contento non traducibile",
-	"visualeditor-annotations-tvar-description": "Iste parte es marcate como non traducibile. Consulta [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation del texto fonte] pro plus information."
+	"visualeditor-annotations-tvar-description": "Iste parte es marcate como non traducibile. Consulta [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation del texto fonte] pro plus information.",
+	"tag-translate-translation-pages-description": "Modificationes automatic de paginas de traduction effectuate per le extension Translate"
 }
