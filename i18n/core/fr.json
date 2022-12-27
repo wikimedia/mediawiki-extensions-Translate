@@ -342,7 +342,7 @@
 	"translate-search-nofilter": "Aucun filtrage",
 	"log-name-translationreview": "Journal des relectures de traduction",
 	"log-description-translationreview": "Journal de toutes les relectures des traductions et des groupes de messages.",
-	"logentry-translationreview-message": "$1{{GENDER:$2|}} a relu la traduction $3",
+	"logentry-translationreview-message": "{{GENDER:$2|}}$1 a relu la traduction $3",
 	"logentry-translationreview-group": "$1{{GENDER:$2|}} a modifié l’état des traductions en $4 de $3 de $6 à $7",
 	"group-translate-sandboxed": "Traducteurs non approuvés",
 	"group-translate-sandboxed-member": "traduct{{GENDER:$1|eur|rice}} non approuvé{{GENDER:$1||e}}",
