@@ -189,7 +189,8 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		$target = ":$title";
 		$pageLanguageCode = $this->getSourceLanguage();
 		$inLanguageCode = $context ? $context->getLanguage()->getCode() : null;
-		$languageName = Language::fetchLanguageName( $pageLanguageCode, $inLanguageCode );
+		$languageName = MediaWikiServices::getInstance()->getLanguageNameUtils()
+			->getLanguageName( $pageLanguageCode, $inLanguageCode );
 
 		// Allow for adding a custom group description by using
 		// "MediaWiki:Tp-custom-<group ID>".

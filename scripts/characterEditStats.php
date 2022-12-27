@@ -94,11 +94,12 @@ class CharacterEditStats extends Maintenance {
 		$this->output( "Character edit stats for last $days days in $wgSitename\n" );
 		$this->output( "code\tname\tedit\n" );
 		$this->output( "-----------------------\n" );
+		$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
 		foreach ( $codes as $code => $num ) {
 			if ( $i++ === $top ) {
 				break;
 			}
-			$language = Language::fetchLanguageName( $code );
+			$language = $languageNameUtils->getLanguageName( $code );
 			if ( !$language ) {
 				// this will be very rare, but avoid division by zero in next line
 				continue;
