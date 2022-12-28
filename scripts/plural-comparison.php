@@ -66,7 +66,7 @@ class PluralCompare extends Maintenance {
 	protected function tryMatch( $code, $mws, $gtLanguages, $clLanguages ) {
 		if ( $mws !== '' ) {
 			$mwExp = true;
-			$lang = Language::factory( $code );
+			$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $code );
 		} else {
 			$mwExp = false;
 		}

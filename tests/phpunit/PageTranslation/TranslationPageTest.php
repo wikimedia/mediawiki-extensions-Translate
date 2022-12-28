@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use FatMessage;
-use Language;
 use MediaWikiIntegrationTestCase;
 use Parser;
 use Title;
@@ -42,11 +41,12 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 		$sectionMap = [ '<S>' => new Section( '', implode( ' | ', array_keys( $unitMap ) ), '' ) ];
 		$output = new ParserOutput( $template, $sectionMap, $unitMap );
 
+		$languageFactory = $this->getServiceContainer()->getLanguageFactory();
 		$translationPage = new TranslationPage(
 			$output,
 			$this->createStub( WikiPageMessageGroup::class ),
-			Language::factory( 'ar' ),
-			Language::factory( 'en' ),
+			$languageFactory->getLanguage( 'ar' ),
+			$languageFactory->getLanguage( 'en' ),
 			true /*$showOutdated*/,
 			$wrapUntranslated,
 			Title::newFromText( __METHOD__ )

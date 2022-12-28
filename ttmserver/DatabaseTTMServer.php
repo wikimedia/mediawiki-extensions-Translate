@@ -119,7 +119,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	 * @return array
 	 */
 	protected function filterForFulltext( $language, $input ) {
-		$lang = Language::factory( $language );
+		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $language );
 
 		$text = preg_replace( '/[^[:alnum:]]/u', ' ', $input );
 		$text = $lang->segmentByWord( $text );

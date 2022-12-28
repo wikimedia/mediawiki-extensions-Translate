@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * New-style FFS class that implements support for gettext file format.
@@ -318,7 +319,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @return string
 	 */
 	public static function generateKeyFromItem( array $item, $algorithm = 'simple' ) {
-		$lang = Language::factory( 'en' );
+		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
 
 		if ( $item['ctxt'] === '' ) {
 			/* Messages with msgctxt as empty string should be different
@@ -571,7 +572,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	protected static function formatTime( $time ) {
-		$lang = Language::factory( 'en' );
+		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
 
 		return $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $time );
 	}

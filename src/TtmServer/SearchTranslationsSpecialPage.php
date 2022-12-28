@@ -8,10 +8,10 @@ use ErrorPageError;
 use FormatJson;
 use FormOptions;
 use Html;
-use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
+use MediaWiki\Languages\LanguageFactory;
 use Message;
 use MessageHandle;
 use SearchableTTMServer;
@@ -47,8 +47,13 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	protected $limit = 25;
 	/** @var TtmServerFactory */
 	private $ttmServerFactory;
+	/** @var LanguageFactory */
+	private $languageFactory;
 
-	public function __construct( TtmServerFactory $ttmServerFactory ) {
+	public function __construct(
+		TtmServerFactory $ttmServerFactory,
+		LanguageFactory $languageFactory
+	) {
 		parent::__construct( 'SearchTranslations' );
 		$this->hl = [
 			TranslateUtils::getPlaceholder(),
@@ -56,6 +61,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		];
 
 		$this->ttmServerFactory = $ttmServerFactory;
+		$this->languageFactory = $languageFactory;
 	}
 
 	public function execute( $par ) {
@@ -243,7 +249,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				'dir' => 'ltr',
 			];
 
-			$language = Language::factory( $document['language'] );
+			$language = $this->languageFactory->getLanguage( $document['language'] );
 			$textAttribs = [
 				'class' => 'row tux-text',
 				'lang' => $language->getHtmlCode(),

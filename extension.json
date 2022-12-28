@@ -336,7 +336,8 @@
 		"SearchTranslations": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TtmServer\\SearchTranslationsSpecialPage",
 			"services": [
-				"Translate:TtmServerFactory"
+				"Translate:TtmServerFactory",
+				"LanguageFactory"
 			]
 		}
 	},

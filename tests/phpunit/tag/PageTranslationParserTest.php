@@ -77,11 +77,12 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 		$showOutdated = false;
 		$wrapUntranslated = false;
 
+		$languageFactory = $this->getServiceContainer()->getLanguageFactory();
 		return new TranslationPage(
 			$parserOutput,
 			$this->createMock( WikiPageMessageGroup::class ),
-			Language::factory( 'en' ),
-			Language::factory( 'en' ),
+			$languageFactory->getLanguage( 'en' ),
+			$languageFactory->getLanguage( 'en' ),
 			$showOutdated,
 			$wrapUntranslated,
 			$title

@@ -8,6 +8,7 @@ use Hooks;
 use Html;
 use IContextSource;
 use Language;
+use MediaWiki\MediaWikiServices;
 use MessageGroup;
 
 /**
@@ -34,8 +35,9 @@ class MessageTable extends ContextSource {
 		Hooks::run( 'TranslateBeforeAddModules', [ &$modules ] );
 		$this->getOutput()->addModules( $modules );
 
-		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
-		$targetLang = Language::factory( $this->language );
+		$languageFactory = MediaWikiServices::getInstance()->getLanguageFactory();
+		$sourceLang = $languageFactory->getLanguage( $this->group->getSourceLanguage() );
+		$targetLang = $languageFactory->getLanguage( $this->language );
 		$batchSize = 100;
 
 		$list = Html::element( 'div', [
