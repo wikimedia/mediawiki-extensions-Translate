@@ -8,6 +8,7 @@
  * @file
  */
 
+use MediaWiki\Languages\LanguageFallback;
 use MediaWiki\MediaWikiServices;
 
 // Standard boilerplate to define $IP
@@ -45,12 +46,14 @@ class FallbacksCompare extends Maintenance {
 
 			XML;
 
-		$langs = MediaWikiServices::getInstance()
+		$services = MediaWikiServices::getInstance();
+		$langs = $services
 			->getLanguageNameUtils()
 			->getLanguageNames();
+		$languageFallback = $services->getLanguageFallback();
 		$nodes = $edges = [];
 		foreach ( $langs as $code => $name ) {
-			$fallbacks = Language::getFallbacksFor( $code, Language::STRICT_FALLBACKS );
+			$fallbacks = $languageFallback->getAll( $code, LanguageFallback::STRICT );
 			if ( $fallbacks === [] ) {
 				continue;
 			}

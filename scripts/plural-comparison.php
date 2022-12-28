@@ -33,11 +33,13 @@ class PluralCompare extends Maintenance {
 		$gtLanguages = $this->loadGettext();
 		$clLanguages = $this->loadCLDR();
 
-		$all = MediaWikiServices::getInstance()
+		$services = MediaWikiServices::getInstance();
+		$all = $services
 			->getLanguageNameUtils()
 			->getLanguageNames( null, LanguageNameUtils::ALL );
 		$allkeys = array_keys( $all + $mwLanguages + $gtLanguages + $clLanguages );
 		sort( $allkeys );
+		$languageFallback = $services->getLanguageFallback();
 
 		$this->output( sprintf( "%12s %3s %3s %4s\n", 'Code', 'MW', 'Get', 'CLDR' ) );
 		foreach ( $allkeys as $code ) {
@@ -46,7 +48,7 @@ class PluralCompare extends Maintenance {
 			$cl = isset( $clLanguages[$code] ) ? '+' : '';
 
 			if ( $mw === '' ) {
-				$fallbacks = Language::getFallbacksFor( $code );
+				$fallbacks = $languageFallback->getAll( $code );
 				foreach ( $fallbacks as $fcode ) {
 					if ( $fcode !== 'en' && isset( $mwLanguages[$fcode] ) ) {
 						$mw = '.';
