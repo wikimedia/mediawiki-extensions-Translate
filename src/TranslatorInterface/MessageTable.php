@@ -7,7 +7,6 @@ use ContextSource;
 use Hooks;
 use Html;
 use IContextSource;
-use Language;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 
@@ -23,7 +22,7 @@ class MessageTable extends ContextSource {
 	public function __construct( IContextSource $context, MessageGroup $group, string $language ) {
 		$this->setContext( $context );
 		$this->group = $group;
-		if ( Language::isKnownLanguageTag( $language ) ) {
+		if ( MediaWikiServices::getInstance()->getLanguageNameUtils()->isKnownLanguageTag( $language ) ) {
 			$this->language = $language;
 		} else {
 			$this->language = $context->getLanguage()->getCode();

@@ -923,7 +923,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 
 		$handle = new MessageHandle( $pageTitle );
 		$code = $handle->getCode();
-		if ( Language::isKnownLanguageTag( $code ) ) {
+		if ( MediaWikiServices::getInstance()->getLanguageNameUtils()->isKnownLanguageTag( $code ) ) {
 			return '/' . $code;
 		}
 		return '';
