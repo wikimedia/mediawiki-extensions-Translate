@@ -149,7 +149,7 @@
 	"tux-editor-doc-editor-cancel": "Չեղարկել",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|Հաղորդագրության|Հաղորդագրությունների}} բեռնում...",
 	"tux-message-filter-placeholder": "Զտել ցուցակը",
-	"tux-message-filter-result": "«$2» հայտով գտնվեց {{PLURAL:$1|արյունք}}",
+	"tux-message-filter-result": "«$2» որոնմամբ գտնվեց $1 {{PLURAL:$1|արդյունք}}",
 	"tux-message-filter-advanced-button": "Ընդլայնված որոնում",
 	"tux-message-filter-optional-messages-label": "Ոչ պարտադիր հաղորդագրություններ",
 	"tux-empty-list-translated-action": "Թարգմանել",

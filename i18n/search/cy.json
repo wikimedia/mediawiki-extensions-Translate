@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Afalau"
+		]
+	},
+	"searchtranslations": "Chwilio cyfieithiadau",
+	"tux-sst-edit": "Golygu cyfieithiad",
+	"tux-sst-view-foreign": "Gweld ar $1",
+	"tux-sst-search": "Chwilio",
+	"tux-sst-search-ph": "Chwilio cyfieithiadau",
+	"tux-sst-count": "{{PLURAL:$1|Un canlyniad|$1 o ganlyniadau}}",
+	"tux-sst-facet-language": "Ieithoedd",
+	"tux-sst-facet-group": "Grwpiau negeseuon",
+	"tux-sst-nosolr-title": "Nid yw chwilio ar gael",
+	"tux-sst-next": "Nesaf ›",
+	"tux-sst-prev": "‹ Blaenorol",
+	"tux-sst-default": "Cyfieithiadau",
+	"tux-sst-translated": "Cyfieithiadau o $1",
+	"tux-sst-untranslated": "Dim cyfieithiad o $1",
+	"tux-sst-ellipsis-untranslated": "Dim cyfieithiad",
+	"tux-sst-case-sensitive": "Ystyried llythyrennau"
+}
