@@ -151,7 +151,7 @@
 	"translate-rcfilters-translations-filter-translation-pages-label": "Aucune des pages de traduction",
 	"translate-rcfilters-translations-filter-translation-pages-desc": "Tout sauf les modifications aux pages de traduction.",
 	"translate-rcfilters-translations-site-label": "Messages système",
-	"translate-rcfilters-translations-site-desc": "Modifications aux messages dans la langue du site.",
+	"translate-rcfilters-translations-site-desc": "Modifications des messages dans la langue du site.",
 	"translate-rc-translation-filter": "Filtrer les traductions :",
 	"translate-rc-translation-filter-no": "Ne rien faire",
 	"translate-rc-translation-filter-only": "Afficher uniquement les traductions",

@@ -103,7 +103,7 @@
 	"translate-rc-translation-filter-no": "Nijak nefiltrovat",
 	"translate-rc-translation-filter-only": "Zobrazit jen překlady",
 	"translate-rc-translation-filter-filter": "Nezobrazovat překlady",
-	"translate-rc-translation-filter-site": "Pouze změny zdejších místních hlášení",
+	"translate-rc-translation-filter-site": "Pouze změny hlášení v jazyce wiki",
 	"translationstats": "Statistika překladů",
 	"translate-stats-edits": "Úpravy",
 	"translate-stats-users": "Překladatelé",

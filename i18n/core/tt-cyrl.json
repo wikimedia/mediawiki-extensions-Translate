@@ -5,6 +5,7 @@
 			"Himiq Dzyu",
 			"Timming",
 			"Ерней",
+			"Ильгиз",
 			"Ильнар"
 		]
 	},
@@ -48,7 +49,9 @@
 	"right-translate-messagereview": "Тәрҗемәләрне тикшерү",
 	"translate-rcfilters-translations": "Тәрҗемәләр",
 	"translate-rcfilters-translations-only-label": "Тәрҗемәләр",
+	"translate-rcfilters-translations-only-desc": "Хәбәр төркемнәренә тәрҗемә.",
 	"translate-rcfilters-translations-filter-label": "Тәрҗемәләр түгел",
+	"translate-rcfilters-translations-filter-translation-pages-label": "Тәрҗемәләр түгел",
 	"translate-rcfilters-translations-site-label": "Сайт хәбәрләре",
 	"translate-rc-translation-filter": "Тәрҗемәләрне сөзү:",
 	"translationstats": "Тәрҗемәләр статистикасы",

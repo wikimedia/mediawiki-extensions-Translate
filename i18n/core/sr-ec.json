@@ -111,6 +111,7 @@
 	"translate-rcfilters-translations-only-desc": "Измене преведених страница",
 	"translate-rcfilters-translations-filter-label": "Нису преводи",
 	"translate-rcfilters-translations-filter-desc": "Све измене које нису преводи",
+	"translate-rcfilters-translations-filter-translation-pages-label": "Нису странице за превођење",
 	"translate-rcfilters-translations-filter-translation-pages-desc": "Све осим измена страница за превођење.",
 	"translate-rcfilters-translations-site-label": "Системске поруке",
 	"translate-rcfilters-translations-site-desc": "Измена порука главног језика сајта.",
