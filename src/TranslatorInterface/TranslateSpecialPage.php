@@ -163,9 +163,7 @@ class TranslateSpecialPage extends SpecialPage {
 			$this->group = MessageGroups::getGroup( $this->defaults['group'] );
 		}
 
-		if ( !MediaWikiServices::getInstance()->getLanguageNameUtils()
-				->isKnownLanguageTag( $this->options['language'] )
-		) {
+		if ( !$this->languageNameUtils->isKnownLanguageTag( $this->options['language'] ) ) {
 			$this->options['language'] = $this->defaults['language'];
 		}
 
