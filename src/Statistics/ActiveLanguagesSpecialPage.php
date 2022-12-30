@@ -109,7 +109,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 		$out->addWikiMsg( 'supportedlanguages-localsummary' );
 
-		$names = $this->langNameUtils->getLanguageNames( null, 'all' );
+		$names = $this->langNameUtils->getLanguageNames( LanguageNameUtils::AUTONYMS, LanguageNameUtils::ALL );
 		$languages = $this->languageCloud();
 		// There might be all sorts of subpages which are not languages
 		$languages = array_intersect_key( $languages, $names );
@@ -155,8 +155,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
 		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->text();
 
-		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode(), 'all' );
-		$native = $this->langNameUtils->getLanguageName( $code, null, 'all' );
+		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode(), LanguageNameUtils::ALL );
+		$native = $this->langNameUtils->getLanguageName( $code, LanguageNameUtils::AUTONYMS, LanguageNameUtils::ALL );
 
 		if ( $local !== $native ) {
 

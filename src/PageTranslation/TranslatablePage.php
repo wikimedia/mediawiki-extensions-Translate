@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
@@ -348,7 +349,7 @@ class TranslatablePage extends TranslatableBundle {
 
 		$messageGroup = $this->getMessageGroup();
 		$knownLanguageCodes = $messageGroup ? $messageGroup->getTranslatableLanguages() : null;
-		$knownLanguageCodes = $knownLanguageCodes ?? TranslateUtils::getLanguageNames( null );
+		$knownLanguageCodes = $knownLanguageCodes ?? TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS );
 
 		$prefixedDbTitleKey = $this->getTitle()->getDBkey() . '/';
 		$baseNamespace = $this->getTitle()->getNamespace();

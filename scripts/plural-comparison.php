@@ -36,7 +36,7 @@ class PluralCompare extends Maintenance {
 		$services = MediaWikiServices::getInstance();
 		$all = $services
 			->getLanguageNameUtils()
-			->getLanguageNames( null, LanguageNameUtils::ALL );
+			->getLanguageNames( LanguageNameUtils::AUTONYMS, LanguageNameUtils::ALL );
 		$allkeys = array_keys( $all + $mwLanguages + $gtLanguages + $clLanguages );
 		sort( $allkeys );
 		$languageFallback = $services->getLanguageFallback();

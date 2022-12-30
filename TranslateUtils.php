@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
@@ -540,7 +541,7 @@ class TranslateUtils {
 	 * @return bool
 	 */
 	public static function isSupportedLanguageCode( string $code ): bool {
-		$all = self::getLanguageNames( null );
+		$all = self::getLanguageNames( LanguageNameUtils::AUTONYMS );
 		return isset( $all[ $code ] );
 	}
 

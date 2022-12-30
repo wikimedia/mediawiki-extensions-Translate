@@ -85,7 +85,10 @@ class TranslateSpecialPage extends SpecialPage {
 		}
 
 		$out->addModules( 'ext.translate.special.translate' );
-		$out->addJsConfigVars( 'wgTranslateLanguages', TranslateUtils::getLanguageNames( null ) );
+		$out->addJsConfigVars(
+			'wgTranslateLanguages',
+			TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS )
+		);
 
 		$out->addHTML( Html::openElement( 'div', [
 			'class' => 'grid ext-translate-container',

@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
 use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Languages\LanguageNameUtils;
 use Message;
 use MessageHandle;
 use SearchableTTMServer;
@@ -82,7 +83,10 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addModules( 'ext.translate.special.searchtranslations.operatorsuggest' );
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
-		$out->addJsConfigVars( 'wgTranslateLanguages', TranslateUtils::getLanguageNames( null ) );
+		$out->addJsConfigVars(
+			'wgTranslateLanguages',
+			TranslateUtils::getLanguageNames( LanguageNameUtils::AUTONYMS )
+		);
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );

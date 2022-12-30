@@ -15,6 +15,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -510,7 +511,7 @@ class Hooks {
 		$langFactory = MediaWikiServices::getInstance()->getLanguageFactory();
 		foreach ( $status as $code => $percent ) {
 			// Get autonyms (null)
-			$name = TranslateUtils::getLanguageName( $code, null );
+			$name = TranslateUtils::getLanguageName( $code, LanguageNameUtils::AUTONYMS );
 
 			// Add links to other languages
 			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";

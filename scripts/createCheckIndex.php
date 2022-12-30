@@ -48,7 +48,7 @@ class CreateCheckIndex extends Maintenance {
 	public function execute() {
 		$codes = MediaWikiServices::getInstance()
 			->getLanguageNameUtils()
-			->getLanguageNames( null, LanguageNameUtils::ALL );
+			->getLanguageNames( LanguageNameUtils::AUTONYMS, LanguageNameUtils::ALL );
 
 		// Exclude the documentation language code
 		global $wgTranslateDocumentationLanguageCode;
