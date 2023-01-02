@@ -49,12 +49,12 @@ class Services implements ContainerInterface {
 	}
 
 	/** @inheritDoc */
-	public function get( $id ) {
+	public function get( string $id ) {
 		return $this->container->get( $id );
 	}
 
 	/** @inheritDoc */
-	public function has( $id ) {
+	public function has( string $id ): bool {
 		return $this->container->has( $id );
 	}
 
