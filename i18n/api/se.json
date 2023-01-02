@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
+			"Yupik"
+		]
+	},
+	"apihelp-groupreview-param-language": "Giellakoda.",
+	"apihelp-query+languagestats-param-language": "Giellakoda.",
+	"apihelp-query+messagecollection-param-language": "Giellakoda.",
+	"apihelp-searchtranslations-description": "Oza jorgalusaid.",
+	"apihelp-searchtranslations-summary": "Oza jorgalusaid."
+}

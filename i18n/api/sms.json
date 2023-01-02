@@ -14,5 +14,6 @@
 	"apihelp-searchtranslations-description": "Ooʒʒ jåårǥlõõzzid.",
 	"apihelp-searchtranslations-summary": "Ooʒʒ jåårǥlõõzzid.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Käivvteeʹkst ǩiõllkoodd.",
-	"apihelp-translationstats-summary": "Ooʒʒ jåårǥlâʹttemstatistiikkid"
+	"apihelp-translationstats-summary": "Ooʒʒ jåårǥlâʹttemstatistiikkid",
+	"apierror-translate-unknownmessage": "Toobdteʹmes saakk"
 }
