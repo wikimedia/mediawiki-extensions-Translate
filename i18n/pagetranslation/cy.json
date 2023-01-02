@@ -20,8 +20,11 @@
 	"tpt-other-pages-title": "Tudalennau toredig",
 	"tpt-select-prioritylangs-reason": "Rheswm:",
 	"tpt-sections-prioritylangs": "Blaenoriaethau ymhlith yr ieithoedd",
+	"tpt-rev-encourage": "adfer",
+	"translate-tag-translate-link-desc": "Cyfieithu'r dudalen hon",
 	"tpt-languages-legend": "Ieithoedd eraill:",
 	"tpt-languages-nonzero": "$1 ($2% wedi'i gyfieithu)",
+	"tpt-tab-translate": "Cyfieithu",
 	"tpt-discouraged-language-reason": "Rheswm: $1",
 	"tpt-aggregategroup-add": "Ychwanegu",
 	"tpt-aggregategroup-save": "Cadw",
@@ -50,5 +53,7 @@
 	"pt-deletepage-list-translation": "Tudalennau cyfieithu",
 	"pt-deletepage-list-section": "Tudalennau uned gyfieithu",
 	"pt-deletepage-list-other": "Isdudalennau eraill",
-	"pt-deletepage-list-count": "Cyfanswm y tudalennau i'w dileu yw {{PLURAL:$1|$1}}."
+	"pt-deletepage-list-count": "Cyfanswm y tudalennau i'w dileu yw {{PLURAL:$1|$1}}.",
+	"pp-save-button-label": "Cyhoeddi",
+	"pp-cancel-button-label": "Canslo"
 }
