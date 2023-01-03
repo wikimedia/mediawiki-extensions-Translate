@@ -11,6 +11,7 @@ use DateInterval;
 use DateTime;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Revision\SlotRecord;
 use MessageChangeStorage;
 use MockWikiMessageGroup;
 use Title;
@@ -57,7 +58,7 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$updater = $page
 			->newPageUpdater( self::getTestSysop()->getUser() )
-			->setContent( 'main', $content );
+			->setContent( SlotRecord::MAIN, $content );
 
 		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
 
