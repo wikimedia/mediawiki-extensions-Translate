@@ -51,6 +51,11 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 				'was an error during synchronization. See: ' .
 				'https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_management#Strong_synchronization'
 		);
+		$this->addOption(
+			'import-non-renames',
+			'(optional) Import non renames: if a language in a group has only additions and changes to existing ' .
+			' strings, then the additions are imported'
+		);
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -64,7 +69,7 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 		$changes = [];
 		$comparator = new ExternalMessageSourceStateComparator( new SimpleStringComparator() );
 
-		$scripted = $this->hasOption( 'safe-import' );
+		$importStrategy = $this->getImportStrategy();
 		$skipGroupSyncCache = $this->hasOption( 'skip-group-sync-check' );
 
 		$services = Services::getInstance();
@@ -92,7 +97,7 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 				}
 			}
 
-			if ( !$scripted ) {
+			if ( $importStrategy === ExternalMessageSourceStateImporter::IMPORT_NONE ) {
 				$this->output( "Processing $id\n" );
 			}
 
@@ -111,16 +116,16 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 		} );
 
 		if ( $changes === [] ) {
-			if ( !$scripted ) {
+			if ( $importStrategy === ExternalMessageSourceStateImporter::IMPORT_NONE ) {
 				$this->output( "No changes found\n" );
 			}
 
 			return;
 		}
 
-		if ( $scripted ) {
+		if ( $importStrategy !== ExternalMessageSourceStateImporter::IMPORT_NONE ) {
 			$importer = $services->getExternalMessageSourceStateImporter();
-			$info = $importer->importSafe( $changes, $name );
+			$info = $importer->import( $changes, $name, $importStrategy );
 			$this->printChangeInfo( $info );
 
 			return;
@@ -181,5 +186,18 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $info['name'] )->getFullURL();
 			$this->output( "You can process them at $url\n" );
 		}
+	}
+
+	private function getImportStrategy(): int {
+		$importStrategy = ExternalMessageSourceStateImporter::IMPORT_NONE;
+		if ( $this->hasOption( 'safe-import' ) ) {
+			$importStrategy = ExternalMessageSourceStateImporter::IMPORT_SAFE;
+		}
+
+		if ( $this->hasOption( 'import-non-renames' ) ) {
+			$importStrategy = ExternalMessageSourceStateImporter::IMPORT_NON_RENAMES;
+		}
+
+		return $importStrategy;
 	}
 }

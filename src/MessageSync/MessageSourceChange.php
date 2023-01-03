@@ -361,6 +361,7 @@ class MessageSourceChange {
 
 		if ( $keysToRemove === null ) {
 			unset( $this->changes[$language][$type] );
+			return;
 		}
 
 		if ( $keysToRemove === [] ) {

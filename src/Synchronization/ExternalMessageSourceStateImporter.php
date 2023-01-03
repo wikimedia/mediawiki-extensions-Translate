@@ -35,6 +35,13 @@ class ExternalMessageSourceStateImporter {
 	private $logger;
 	/** @var MessageIndex */
 	private $messageIndex;
+	// Do not perform any import
+	public const IMPORT_NONE = 1;
+	// Import changes in a language for a group if it only has additions
+	public const IMPORT_SAFE = 2;
+	// Import changes in a language for a group if it only has additions or changes, but
+	// not deletions as it may be a rename of an addition
+	public const IMPORT_NON_RENAMES = 3;
 
 	public function __construct(
 		Config $config,
@@ -53,9 +60,10 @@ class ExternalMessageSourceStateImporter {
 	/**
 	 * @param MessageSourceChange[] $changeData
 	 * @param string $name
+	 * @param int $importStrategy
 	 * @return array
 	 */
-	public function importSafe( array $changeData, string $name ): array {
+	public function import( array $changeData, string $name, int $importStrategy ): array {
 		$processed = [];
 		$skipped = [];
 		$jobs = [];
@@ -86,7 +94,7 @@ class ExternalMessageSourceStateImporter {
 			$languages = $changesForGroup->getLanguages();
 			$groupJobs = [];
 
-			$groupSafeLanguages = self::identifySafeLanguages( $group, $changesForGroup );
+			$groupSafeLanguages = self::identifySafeLanguages( $group, $changesForGroup, $importStrategy );
 
 			foreach ( $languages as $language ) {
 				if ( !$groupSafeLanguages[ $language ] ) {
@@ -106,7 +114,9 @@ class ExternalMessageSourceStateImporter {
 				$groupJobs = array_merge( $groupJobs, $groupLanguageJobs );
 				$processed[$groupId][$language] = $groupProcessed;
 
-				$changesForGroup->removeChangesForLanguage( $language );
+				// We only remove additions since if less-safe-import option is used, then
+				// changes to existing messages might still need to be processed manually.
+				$changesForGroup->removeAdditions( $language, null );
 				$group->getMessageGroupCache( $language )->create();
 			}
 
@@ -205,7 +215,8 @@ class ExternalMessageSourceStateImporter {
 	 */
 	private static function identifySafeLanguages(
 		FileBasedMessageGroup $group,
-		MessageSourceChange $changesForGroup
+		MessageSourceChange $changesForGroup,
+		int $importStrategy
 	): array {
 		$sourceLanguage = $group->getSourceLanguage();
 		$safeLanguagesMap = [];
@@ -217,7 +228,7 @@ class ExternalMessageSourceStateImporter {
 			$safeLanguagesMap[ $language ] = false;
 		}
 
-		if ( !$changesForGroup->hasOnly( $sourceLanguage, MessageSourceChange::ADDITION ) ) {
+		if ( !self::isLanguageSafe( $changesForGroup, $sourceLanguage, $importStrategy ) ) {
 			return $safeLanguagesMap;
 		}
 
@@ -241,7 +252,7 @@ class ExternalMessageSourceStateImporter {
 		}
 
 		foreach ( $modifiedLanguages as $language ) {
-			if ( !$changesForGroup->hasOnly( $language, MessageSourceChange::ADDITION ) ) {
+			if ( !self::isLanguageSafe( $changesForGroup, $sourceLanguage, $importStrategy ) ) {
 				continue;
 			}
 
@@ -269,5 +280,19 @@ class ExternalMessageSourceStateImporter {
 		}
 
 		return $safeLanguagesMap;
+	}
+
+	private static function isLanguageSafe(
+		MessageSourceChange $changesForGroup,
+		string $languageCode,
+		int $importStrategy
+	): bool {
+		if ( $importStrategy === self::IMPORT_SAFE ) {
+			return $changesForGroup->hasOnly( $languageCode, MessageSourceChange::ADDITION );
+		}
+
+		// If language has deletions, we consider additions also unsafe because deletions
+		// maybe renames of messages that have been added, so they have to be reviewed.
+		return $changesForGroup->getDeletions( $languageCode ) === [];
 	}
 }
