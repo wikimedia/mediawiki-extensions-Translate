@@ -1,9 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Seipinne"
+			"Seipinne",
+			"Yupik"
 		]
 	},
 	"apihelp-groupreview-param-group": "Viestâjuávkku.",
-	"apihelp-query+messagecollection-param-group": "Viestâjuávkku."
+	"apihelp-groupreview-param-language": "Kielâkoodi.",
+	"apihelp-query+languagestats-param-language": "Kielâkoodi.",
+	"apihelp-query+messagecollection-param-group": "Viestâjuávkku.",
+	"apihelp-query+messagecollection-param-language": "Kielâkoodi.",
+	"apihelp-searchtranslations-description": "Uusâ jurgâlusâid.",
+	"apihelp-searchtranslations-summary": "Uusâ jurgâlusâid.",
+	"apierror-translate-unknownmessage": "Tubdâmettum viestâ"
 }
