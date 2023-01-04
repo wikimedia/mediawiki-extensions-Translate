@@ -4,5 +4,7 @@
 			"Afalau"
 		]
 	},
-	"apihelp-groupreview-param-language": "Cod iaith."
+	"apihelp-groupreview-param-language": "Cod iaith.",
+	"apihelp-query+messagecollection-param-language": "Cod iaith.",
+	"apihelp-translationstash-param-metadata": "gwrthrych JSON."
 }
