@@ -253,7 +253,11 @@
 				$( '<div>' )
 					.addClass( 'four columns translation' )
 					.append(
-						$( '<div>' ).text( translation.translation ),
+						$( '<div>' ).text( translation.translation )
+							.prop( {
+								dir: $.uls.data.getDir( translationLang ),
+								lang: translationLang
+							} ),
 						$( '<div>' )
 							.addClass( 'info autonym' )
 							.prop( {

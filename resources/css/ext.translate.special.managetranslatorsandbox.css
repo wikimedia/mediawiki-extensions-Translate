@@ -273,12 +273,6 @@ textarea.body {
 .translations .info {
 	font-size: 12px;
 	color: #6c6d70;
-	/*
-	 * Align autonyms consistently.
-	 * The direction is set according to the language on the frontend
-	 * and the alignment is flipped according to the user language.
-	 */
-	text-align: left;
 }
 
 .client-nojs .grid {
