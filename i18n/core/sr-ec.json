@@ -108,7 +108,7 @@
 	"action-translate-groupreview": "мењате стање тока рада за групе порука",
 	"translate-rcfilters-translations": "Преводи",
 	"translate-rcfilters-translations-only-label": "Превод именски простори",
-	"translate-rcfilters-translations-only-desc": "Измене преведених страница",
+	"translate-rcfilters-translations-only-desc": "Измене превода у групама порука.",
 	"translate-rcfilters-translations-filter-label": "Нису преводи",
 	"translate-rcfilters-translations-filter-desc": "Све измене које нису преводи",
 	"translate-rcfilters-translations-filter-translation-pages-label": "Нису странице за превођење",
