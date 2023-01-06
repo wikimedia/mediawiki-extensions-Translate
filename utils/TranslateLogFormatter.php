@@ -42,6 +42,7 @@ class TranslateLogFormatter extends LogFormatter {
 				[ 'language' => $language ]
 			);
 
+			// @phan-suppress-next-line SecurityCheck-XSS Unlikely. Positive only if language code & mg label are bad
 			$params[2] = Message::rawParam( $targetPage );
 			$params[3] = TranslateUtils::getLanguageName( $language, $uiLanguage->getCode() );
 			$params[5] = $this->formatStateMessage( $params[5] );
