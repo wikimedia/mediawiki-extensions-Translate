@@ -212,7 +212,7 @@ class TranslateRcFilter {
 							$tables['translatetags'] = ChangeTags::getDisplayTableName();
 							$join_conds['translatetags'] = [
 								'LEFT JOIN',
-								[ 'ct_rc_id=rc_id', 'ct_tag_id' => $renderedPage ]
+								[ 'translatetags.ct_rc_id=rc_id', 'translatetags.ct_tag_id' => $renderedPage ]
 							];
 							$conds['translatetags.ct_tag_id'] = null;
 						} catch ( NameTableAccessException $exception ) {
