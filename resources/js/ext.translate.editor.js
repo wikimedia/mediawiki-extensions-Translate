@@ -1215,8 +1215,6 @@
 				$( this ).data( 'translateeditor' ).hide();
 			} );
 
-			// The access keys need to be shifted to the editor currently active
-			$( '.tux-editor-save-button, .tux-editor-save-button' ).removeAttr( 'accesskey' );
 			this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
 			this.$editor.find( '.tux-editor-skip-button' ).attr( 'accesskey', 'd' );
 			this.$editor.find( '.tux-input-editsummary' ).attr( 'accesskey', 'b' );
@@ -1257,6 +1255,11 @@
 
 			if ( this.$editor ) {
 				this.$editor.addClass( 'hide' );
+
+				// Remove access keys to avoid duplicates in DOM (T306141)
+				this.$editor.find( '.tux-editor-save-button' ).removeAttr( 'accesskey' );
+				this.$editor.find( '.tux-editor-skip-button' ).removeAttr( 'accesskey' );
+				this.$editor.find( '.tux-input-editsummary' ).removeAttr( 'accesskey' );
 			}
 
 			this.hideShortcuts();
