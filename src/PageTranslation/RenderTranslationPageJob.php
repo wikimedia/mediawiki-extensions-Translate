@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use CommentStoreComment;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
@@ -73,7 +73,14 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 
 		// @todo FuzzyBot hack
 		Hooks::$allowTargetEdit = true;
-		$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
+
+		if ( class_exists( CommentStoreComment::class ) ) {
+			$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
+		} else {
+			// MW < 1.40
+			$commentStoreComment = \CommentStoreComment::newUnsavedComment( $summary );
+		}
+
 		$content = $tpPage->getPageContent( $mwServices->getParser() );
 
 		$pageUpdater = $mwServices->getWikiPageFactory()
