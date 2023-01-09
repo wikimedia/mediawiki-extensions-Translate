@@ -3,6 +3,7 @@
 		"authors": [
 			"Aefgh39622",
 			"Ans",
+			"Geonuch",
 			"Horus",
 			"Octahedron80",
 			"Passawuth",
@@ -66,6 +67,7 @@
 	"pt-deletepage-action-check": "แสดงรายชื่อหน้าที่จะถูกลบ",
 	"pt-deletepage-current": "ชื่อหน้า:",
 	"pt-deletepage-reason": "เหตุผล:",
+	"pt-deletepage-reason-other": "เหตุผลอื่น",
 	"pt-deletepage-subpages": "ลบหน้าย่อยทั้งหมด",
 	"pt-deletepage-list-pages": "รายชื่อหน้าที่จะลบ",
 	"pm-import-button-label": "นำเข้า",

@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-groupreview-param-language": "Oznaka jezika.",
+	"apihelp-groupreview-param-state": "Novo stanje za skupino.",
 	"apihelp-query+languagestats-param-language": "Oznaka jezika.",
 	"apihelp-query+managemessagegroups-param-messageKey": "Ključ sporočila",
 	"apihelp-query+messagecollection-param-language": "Oznaka jezika.",
@@ -17,6 +18,7 @@
 	"apihelp-translationstash-summary": "Doda prevode v shrambo.",
 	"apihelp-translationstash-param-title": "Naslov strani prevodne enote.",
 	"apihelp-ttmserver-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
+	"apihelp-ttmserver-param-targetlanguage": "Oznaka jezika predloga.",
 	"apihelp-searchtranslations-description": "Išči prevode.",
 	"apihelp-searchtranslations-summary": "Išči prevode.",
 	"apihelp-searchtranslations-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
@@ -29,5 +31,6 @@
 	"apierror-translate-sandboxdisabled": "Možnost peskovnika ni v uporabi",
 	"apiwarn-translate-language-disabled-source": "Izvorni jezik te skupine je $1. Izberite drug jezik, v katerega želite prevajati.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Prevajate v <bdi>$1</bdi>.</strong> To je različica <bdi>$2</bdi>, ki je že izvorni jezik teh sporočil. Prepričajte se, da je izbrani jezik pravilen, in upoštevajte razlike med jezikovnimi različicami, da zagotovite dober prevod.",
+	"apierror-translate-operation-error": "Pri obdelavi zahtevka je prišlo do napake. Napaka: $1",
 	"apihelp-translationentitysearch-param-query": "Iskalna poizvedba"
 }

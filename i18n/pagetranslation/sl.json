@@ -51,7 +51,7 @@
 	"tpt-tag-discouraged": "odsvetovano",
 	"tpt-tag-oldsyntax": "stara skladnja",
 	"tpt-tag-no-transclusion-support": "brez podpore za prevključitev",
-	"tpt-select-prioritylangs": "Z vejico ločen seznam kod prednostnih jezikov:",
+	"tpt-select-prioritylangs": "Seznam oznak prednostnih jezikov, ločenih z vejicami:",
 	"tpt-select-prioritylangs-force": "Prepreči prevajanje v jezike, ki niso prednostni jeziki",
 	"tpt-select-prioritylangs-reason": "Razlog:",
 	"tpt-sections-prioritylangs": "Prednostni jeziki",
