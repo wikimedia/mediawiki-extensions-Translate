@@ -76,11 +76,14 @@ class TranslationPage {
 	}
 
 	/** @return TMessage[] */
-	public function extractMessages( MessageCollection $collection ): array {
+	private function extractMessages( MessageCollection $collection ): array {
 		$messages = [];
 		$prefix = $this->sourcePageTitle->getPrefixedDBkey() . '/';
 		foreach ( $this->output->units() as $unit ) {
-			$messages[$unit->id] = $collection[$prefix . $unit->id] ?? null;
+			// Even if a unit id has spaces, the message collection will have the
+			// key as spaces replaced with underscore. See: T326516
+			$normalizedUnitId = str_replace( ' ', '_', $unit->id );
+			$messages[$unit->id] = $collection[$prefix . $normalizedUnitId] ?? null;
 		}
 
 		return $messages;
@@ -106,6 +109,14 @@ class TranslationPage {
 
 		$template = $this->output->translationPageTemplate();
 		return strtr( $template, $replacements );
+	}
+
+	public function generateSourceFromMessageCollection(
+		Parser $parser,
+		MessageCollection $collection
+	): string {
+		$messages = $this->extractMessages( $collection );
+		return $this->generateSourceFromTranslations( $parser, $messages );
 	}
 
 	/** Generate translation page source using default options. */

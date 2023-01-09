@@ -266,8 +266,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				$translationPage = $translatablePage->getTranslationPage( $collection->getLanguage() );
 
 				$translationPage->filterMessageCollection( $collection );
-				$messages = $translationPage->extractMessages( $collection );
-				$text = $translationPage->generateSourceFromTranslations( $this->parser, $messages );
+				$text = $translationPage->generateSourceFromMessageCollection( $this->parser, $collection );
 
 				$displayTitle = $translatablePage->getPageDisplayTitle( $this->language );
 				if ( $displayTitle ) {
