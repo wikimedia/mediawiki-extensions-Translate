@@ -5,5 +5,7 @@
 		]
 	},
 	"tsb-request-count": "$1 {{PLURAL:$1|zahtevek|zahtevka|zahtevki|zahtevkov}}",
+	"tsb-search-requests": "Preišči čakajoče zahtevke",
+	"tsb-reject-button-label": "Zavrni",
 	"translationstash": "Pozdravljeni"
 }

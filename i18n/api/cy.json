@@ -6,5 +6,8 @@
 	},
 	"apihelp-groupreview-param-language": "Cod iaith.",
 	"apihelp-query+messagecollection-param-language": "Cod iaith.",
-	"apihelp-translationstash-param-metadata": "gwrthrych JSON."
+	"apihelp-translationstash-param-metadata": "gwrthrych JSON.",
+	"apihelp-searchtranslations-description": "Chwilio cyfieithiadau.",
+	"apihelp-searchtranslations-summary": "Chwilio cyfieithiadau.",
+	"apierror-translate-unknownmessage": "Neges anhysbys"
 }

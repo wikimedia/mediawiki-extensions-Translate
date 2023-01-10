@@ -5,7 +5,8 @@
 			"ShockD",
 			"StanProg",
 			"Termininja",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Ted Masters"
 		]
 	},
 	"pagetranslation": "Превод на страници",
@@ -36,6 +37,7 @@
 	"pt-movepage-subpages": "Преместване на всички подстраници",
 	"pt-deletepage-action-perform": "Извършване на изтриването",
 	"pt-deletepage-reason": "Причина:",
+	"pt-deletepage-reason-details": "Друга/допълнителна причина:",
 	"pt-deletepage-subpages": "Изтриване на всички подстраници",
 	"pt-deletepage-list-other": "Други подстраници",
 	"pm-import-button-label": "Внасяне",

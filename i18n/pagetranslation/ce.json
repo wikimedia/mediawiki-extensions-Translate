@@ -34,6 +34,8 @@
 	"pt-deletepage-action-other": "Хийца Ӏалашо",
 	"pt-deletepage-current": "АгӀонан цӀе:",
 	"pt-deletepage-reason": "Бахьана:",
+	"pt-deletepage-reason-details": "Кхидолу/кхин бахьана:",
+	"pt-deletepage-reason-other": "Кхин бахьана",
 	"pagemigration": "АгӀонийн миграци",
 	"pm-import-button-label": "Импорт йан",
 	"pm-savepages-button-label": "Ӏалашдан",

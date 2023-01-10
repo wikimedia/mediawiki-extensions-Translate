@@ -178,6 +178,8 @@
 	"pt-deletepage-any-legend": "번역 가능한 문서 또는 번역 문서 삭제",
 	"pt-deletepage-current": "문서 이름:",
 	"pt-deletepage-reason": "이유:",
+	"pt-deletepage-reason-details": "다른 이유/추가적인 이유:",
+	"pt-deletepage-reason-other": "다른 이유",
 	"pt-deletepage-subpages": "모든 하위 문서 삭제",
 	"pt-deletepage-list-pages": "삭제할 문서 목록",
 	"pt-deletepage-list-translation": "번역 문서",

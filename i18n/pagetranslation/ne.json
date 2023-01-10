@@ -24,6 +24,8 @@
 	"tpt-aggregategroup-update-cancel": "रद्द गर्नुहोस्",
 	"pt-movepage-reason": "कारण :",
 	"pt-deletepage-reason": "कारण :",
+	"pt-deletepage-reason-details": "अरू/थप कारण:",
+	"pt-deletepage-reason-other": "अन्य कारण",
 	"pm-import-button-label": "आयात",
 	"pm-savepages-button-label": "संग्रह गर्ने",
 	"pm-cancel-button-label": "रद्द गर्नुहोस्",

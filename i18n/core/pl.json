@@ -41,6 +41,8 @@
 	"translate-taskui-export-to-file": "Eksportuj w formacie macierzystym",
 	"translate-taskui-export-as-po": "Eksportuj do tłumaczenia off-line",
 	"translate-taskui-export-as-csv": "Eksportuj w formacie CSV",
+	"translate-export-csv-message-title": "Tytuł komunikatu",
+	"translate-export-csv-definition": "Tekst źródłowy komunikatu",
 	"translate-taction-translate": "Przetłumacz",
 	"translate-taction-proofread": "Przejrzano",
 	"translate-taction-lstats": "Statystyka języka",
@@ -114,6 +116,7 @@
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|Jest|Są}} $1 {{PLURAL:$1|nadmiarowy znak|nadmiarowe znaki}} nowej linii na końcu tłumaczenia.",
 	"translate-checks-value-not-present": "Tłumaczenie musi {{PLURAL:$1|1=brzmieć|być jedna z podanych wartości:}}: $1.",
 	"translate-checks-replacement": "Użyj $2 zamiast $1.",
+	"translate-checks-empty": "Tłumaczenie bez treści lub zawierające tylko spacje jest niedozwolone.",
 	"translate-pref-editassistlang": "Języki pomocnicze:",
 	"prefs-translate": "Opcje tłumaczenia",
 	"translate-pref-editassistlang-help": "Lista kodów językowych rozdzielonych przecinkami.\nKomunikat w tych językach będzie widoczny podczas wykonywania tłumaczenia.\nDomyślna lista języków zależy od Twojego języka.",
@@ -218,6 +221,7 @@
 	"translate-mgs-totals": "Razem {{PLURAL:$1|we wszystkich $1 językach|w jednym języku}}",
 	"translate-mgs-invalid-group": "Nie istnieje grupa „$1“.",
 	"translate-mgs-nothing": "Brak czegokolwiek do wyświetlenia dla żądanych statystyk.",
+	"translate-tes-server-error": "Nie udało się pobrać podpowiedzi wyszukiwania",
 	"supportedlanguages": "Aktywne języki",
 	"supportedlanguages-summary": "Na tej stronie znajduje się lista aktywnych języków w {{GRAMMAR:MS.lp|{{SITENAME}}}}, razem z pseudonimami tłumaczy, pracującymi w danym języku.\nWiększa czcionka świadczy o większej liczbie edycji wykonanych przez tłumacza.\nKolorem podkreślenia wyróżniono jak dawno tłumacz był aktywny.",
 	"supportedlanguages-colorlegend": "Znaczenie koloru – ostatnie tłumaczenie $1 dni temu.",
@@ -426,5 +430,7 @@
 	"tux-session-expired": "Nie jesteś już zalogowany. Zaloguj się w osobnej karcie. Alternatywnie, możesz wykonać kopię niezapisanych tłumaczeń, zalogować się i powrócić do tej strony, a następnie ponownie wprowadzić tłumaczenia.",
 	"tux-nojs": "To narzędzie nie działa, jeżeli nie działa obsługa JavaScript. Jest u ciebie wyłączona, nie działa lub ta przeglądarka nie jest wspierana.",
 	"specialpages-group-translation": "Tłumaczenie",
-	"log-action-filter-translationreview": "Rodzaj działania:"
+	"log-action-filter-translationreview": "Rodzaj działania:",
+	"log-action-filter-translationreview-message": "Oznaczanie jako przejrzane pojedynczych przetłumaczonych komunikatów",
+	"log-action-filter-translationreview-group": "Zmiany statusu postępu tłumaczeń"
 }
