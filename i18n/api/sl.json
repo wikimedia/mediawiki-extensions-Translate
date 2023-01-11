@@ -4,10 +4,12 @@
 			"Eleassar"
 		]
 	},
+	"apihelp-groupreview-param-group": "Skupina sporočil.",
 	"apihelp-groupreview-param-language": "Oznaka jezika.",
 	"apihelp-groupreview-param-state": "Novo stanje za skupino.",
 	"apihelp-query+languagestats-param-language": "Oznaka jezika.",
 	"apihelp-query+managemessagegroups-param-messageKey": "Ključ sporočila",
+	"apihelp-query+messagecollection-param-group": "Skupina sporočil.",
 	"apihelp-query+messagecollection-param-language": "Oznaka jezika.",
 	"apihelp-query+messagegroups-example-1": "Prikaži skupine sporočil",
 	"apihelp-managemessagegroups-param-messageKey": "Nadomestni ključ sporočila",
