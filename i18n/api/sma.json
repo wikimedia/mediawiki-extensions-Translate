@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"apihelp-groupreview-param-language": "Gïelekoode.",
+	"apihelp-query+languagestats-param-language": "Gïelekoode.",
+	"apihelp-query+messagecollection-param-language": "Gïelekoode."
+}
