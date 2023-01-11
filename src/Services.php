@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
+use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
@@ -93,6 +94,11 @@ class Services implements ContainerInterface {
 	/** @since 2022.07 */
 	public function getMessageGroupReview(): MessageGroupReview {
 		return $this->get( 'Translate:MessageGroupReview' );
+	}
+
+	/** @since 2023.02 */
+	public function getMessageGroupStatsTableFactory(): MessageGroupStatsTableFactory {
+		return $this->get( 'Translate:MessageGroupStatsTableFactory' );
 	}
 
 	/** @since 2020.07 */

@@ -4,16 +4,13 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use DeferredUpdates;
-use Html;
 use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use SpecialPage;
 use TranslateMetadata;
-use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Implements includable special page Special:MessageGroupStats which provides
@@ -25,22 +22,8 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class MessageGroupStatsSpecialPage extends SpecialPage {
-	/** @var StatsTable */
-	private $table;
 	/** @var array */
 	private $targetValueName = [ 'group' ];
-	/** Most of the displayed numbers added together at the bottom of the table. */
-	private $totals;
-	/**
-	 * Flag to set if nothing to show.
-	 * @var bool
-	 */
-	private $nothing = false;
-	/**
-	 * Flag to set if not all numbers are available.
-	 * @var bool
-	 */
-	private $incomplete = false;
 	/**
 	 * Whether to hide rows which are fully translated.
 	 * @var bool
@@ -53,34 +36,18 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	private $noEmpty = false;
 	/** The target of stats: group id. */
 	private $target;
-	/**
-	 * Whether to regenerate stats. Activated by action=purge in query params.
-	 * @var bool
-	 */
-	private $purge;
-	/** @var array */
-	private $states;
-	/** @var ProgressStatsTableFactory */
-	private $progressStatsTableFactory;
-	private $names;
-	private $translate;
-	/** @var int */
-	private $numberOfShownLanguages;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	/** @var MessageGroupStatsTableFactory */
+	private $messageGroupStatsTableFactory;
 
 	public function __construct(
-		ProgressStatsTableFactory $progressStatsTableFactory,
 		JobQueueGroup $jobQueueGroup,
-		ILoadBalancer $loadBalancer
+		MessageGroupStatsTableFactory $messageGroupStatsTableFactory
 	) {
 		parent::__construct( 'MessageGroupStats' );
-		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->jobQueueGroup = $jobQueueGroup;
-		$this->loadBalancer = $loadBalancer;
-		$this->totals = MessageGroupStats::getEmptyStats();
+		$this->messageGroupStatsTableFactory = $messageGroupStatsTableFactory;
 	}
 
 	public function getDescription() {
@@ -98,13 +65,11 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	public function execute( $par ) {
 		$request = $this->getRequest();
 
-		$this->purge = $request->getVal( 'action' ) === 'purge';
-		if ( $this->purge && !$request->wasPosted() ) {
+		$purge = $request->getVal( 'action' ) === 'purge';
+		if ( $purge && !$request->wasPosted() ) {
 			LanguageStatsSpecialPage::showPurgeForm( $this->getContext() );
 			return;
 		}
-
-		$this->table = $this->progressStatsTableFactory->newFromContext( $this->getContext() );
 
 		$this->setHeaders();
 		$this->outputHeader();
@@ -150,16 +115,25 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			$this->outputIntroduction();
 
 			$stats = $this->loadStatistics( $this->target, MessageGroupStats::FLAG_CACHE_ONLY );
-			$output = $this->getTable( $stats );
-			if ( $this->incomplete ) {
+
+			$messageGroupStatsTable = $this->messageGroupStatsTableFactory->newFromContext( $this->getContext() );
+			$output = $messageGroupStatsTable->get(
+				$stats,
+				MessageGroups::getGroup( $this->target ),
+				$this->noComplete,
+				$this->noEmpty
+			);
+
+			$incomplete = $messageGroupStatsTable->areStatsIncomplete();
+			if ( $incomplete ) {
 				$out->wrapWikiMsg(
 					"<div class='error'>$1</div>",
 					'translate-langstats-incomplete'
 				);
 			}
 
-			if ( $this->incomplete || $this->purge ) {
-				DeferredUpdates::addCallableUpdate( function () {
+			if ( $incomplete || $purge ) {
+				DeferredUpdates::addCallableUpdate( function () use ( $purge ) {
 					// Attempt to recache on the fly the missing stats, unless a
 					// purge was requested, because that is likely to time out.
 					// Even though this is executed inside a deferred update, it
@@ -171,17 +145,17 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 					// regular case (no purge), the job sees that the stats are
 					// already updated, so it is not much of an overhead.
 					$jobParams = $this->getCacheRebuildJobParameters( $this->target );
-					$jobParams[ 'purge' ] = $this->purge;
+					$jobParams[ 'purge' ] = $purge;
 					$job = MessageGroupStatsRebuildJob::newJob( $jobParams );
 					$this->jobQueueGroup->push( $job );
 
-					// $this->purge is only true if request was posted
-					if ( !$this->purge ) {
+					// $purge is only true if request was posted
+					if ( !$purge ) {
 						$this->loadStatistics( $this->target );
 					}
 				} );
 			}
-			if ( $this->nothing ) {
+			if ( !$output ) {
 				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
 			}
 			$out->addHTML( $output );
@@ -189,8 +163,6 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			$this->invalidTarget();
 		}
 	}
-
-	// endregion
 
 	private function loadStatistics( string $target, int $flags = 0 ): array {
 		return MessageGroupStats::forGroup( $target, $flags );
@@ -241,32 +213,6 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		}
 	}
 
-	/** If workflow states are configured, adds a workflow states column */
-	private function addWorkflowStatesColumn(): void {
-		global $wgTranslateWorkflowStates;
-
-		if ( $wgTranslateWorkflowStates ) {
-			$this->states = $this->getWorkflowStates();
-
-			// An array where keys are state names and values are numbers
-			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
-		}
-	}
-
-	/** If workflow states are configured, adds a cell with the workflow state to the row */
-	private function getWorkflowStateCell( string $language ): string {
-		// This will be set by addWorkflowStatesColumn if needed
-		if ( !isset( $this->states ) ) {
-			return '';
-		}
-
-		return $this->table->makeWorkflowStateCell(
-			$this->states[$language] ?? null,
-			MessageGroups::getGroup( $this->target ),
-			$language
-		);
-	}
-
 	private function addForm(): void {
 		$formDescriptor = [
 			'select' => [
@@ -310,161 +256,6 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			->setWrapperLegendMsg( 'translate-mgs-fieldset' )
 			->prepareForm()
 			->displayForm( false );
-	}
-
-	private function getTable( array $stats ): string {
-		$table = $this->table;
-
-		$this->addWorkflowStatesColumn();
-		$out = '';
-
-		$this->numberOfShownLanguages = 0;
-		$languages = array_keys(
-			Utilities::getLanguageNames( $this->getLanguage()->getCode() )
-		);
-		sort( $languages );
-		$this->filterPriorityLangs( $languages, $this->target, $stats );
-		foreach ( $languages as $code ) {
-			if ( $table->isExcluded( $this->target, $code ) ) {
-				continue;
-			}
-			$out .= $this->makeRow( $code, $stats );
-		}
-
-		if ( $out ) {
-			$table->setMainColumnHeader( $this->msg( 'translate-mgs-column-language' ) );
-			$out = $table->createHeader() . "\n" . $out;
-			$out .= Html::closeElement( 'tbody' );
-
-			$out .= Html::openElement( 'tfoot' );
-			$out .= $table->makeTotalRow(
-				$this->msg( 'translate-mgs-totals' )
-					->numParams( $this->numberOfShownLanguages ),
-				$this->totals
-			);
-			$out .= Html::closeElement( 'tfoot' );
-
-			$out .= Html::closeElement( 'table' );
-
-			return $out;
-		} else {
-			$this->nothing = true;
-
-			return '';
-		}
-	}
-
-	/**
-	 * Filter an array of languages based on whether a priority set of
-	 * languages present for the passed group. If priority languages are
-	 * present, to that list add languages with more than 0% translation.
-	 */
-	private function filterPriorityLangs( array &$languages, string $group, array $cache ): void {
-		$filterLangs = TranslateMetadata::get( $group, 'prioritylangs' );
-		if ( $filterLangs === false || strlen( $filterLangs ) === 0 ) {
-			// No restrictions, keep everything
-			return;
-		}
-		$filter = array_flip( explode( ',', $filterLangs ) );
-		foreach ( $languages as $id => $code ) {
-			if ( isset( $filter[$code] ) ) {
-				continue;
-			}
-			$translated = $cache[$code][1];
-			if ( $translated === 0 ) {
-				unset( $languages[$id] );
-			}
-		}
-	}
-
-	private function makeRow( string $code, array $cache ): string {
-		$stats = $cache[$code];
-		$total = $stats[MessageGroupStats::TOTAL];
-		$translated = $stats[MessageGroupStats::TRANSLATED];
-		$fuzzy = $stats[MessageGroupStats::FUZZY];
-
-		if ( $total === null ) {
-			$this->incomplete = true;
-			$extra = [];
-		} else {
-			if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
-				return '';
-			}
-
-			if ( $this->noEmpty && $translated === 0 && $fuzzy === 0 ) {
-				return '';
-			}
-
-			// Skip below 2% if "don't show without translations" is checked.
-			if ( $this->noEmpty && ( $translated / $total ) < 0.02 ) {
-				return '';
-			}
-
-			if ( $translated === $total ) {
-				$extra = [ 'action' => 'proofread' ];
-			} else {
-				$extra = [];
-			}
-		}
-		$this->numberOfShownLanguages += 1;
-		$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
-
-		$rowParams = [];
-		if ( $this->numberOfShownLanguages % 2 === 0 ) {
-			$rowParams[ 'class' ] = 'tux-statstable-even';
-		}
-
-		$out = "\t" . Html::openElement( 'tr', $rowParams );
-		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
-		$out .= $this->table->makeNumberColumns( $stats );
-		$out .= $this->getWorkflowStateCell( $code );
-
-		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
-
-		return $out;
-	}
-
-	private function getMainColumnCell( string $code, array $params ): string {
-		if ( !isset( $this->names ) ) {
-			$this->names = Utilities::getLanguageNames( $this->getLanguage()->getCode() );
-			$this->translate = SpecialPage::getTitleFor( 'Translate' );
-		}
-
-		$queryParameters = $params + [
-			'group' => $this->target,
-			'language' => $code
-		];
-
-		if ( isset( $this->names[$code] ) ) {
-			$text = "$code: {$this->names[$code]}";
-		} else {
-			$text = $code;
-		}
-		$link = $this->getLinkRenderer()->makeKnownLink(
-			$this->translate,
-			$text,
-			[],
-			$queryParameters
-		);
-
-		return Html::rawElement( 'td', [], $link );
-	}
-
-	private function getWorkflowStates(): array {
-		$db = $this->loadBalancer->getConnection( DB_REPLICA );
-		$res = $db->select(
-			'translate_groupreviews',
-			[ 'tgr_state', 'tgr_lang' ],
-			[ 'tgr_group' => $this->target ],
-			__METHOD__
-		);
-
-		$states = [];
-		foreach ( $res as $row ) {
-			$states[$row->tgr_lang] = $row->tgr_state;
-		}
-
-		return $states;
 	}
 
 	/** Creates a simple message group options. */

@@ -22,6 +22,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
+use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
@@ -90,6 +91,17 @@ return [
 		return new MessageGroupReview(
 			$services->getDBLoadBalancer(),
 			$services->getHookContainer()
+		);
+	},
+
+	'Translate:MessageGroupStatsTableFactory' => static function (
+		MediaWikiServices $services
+	): MessageGroupStatsTableFactory {
+		return new MessageGroupStatsTableFactory(
+			$services->get( 'Translate:ProgressStatsTableFactory' ),
+			$services->getDBLoadBalancer(),
+			$services->getLinkRenderer(),
+			$services->getMainConfig()->get( 'TranslateWorkflowStates' ) !== false
 		);
 	},
 
