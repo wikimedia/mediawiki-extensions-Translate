@@ -23,6 +23,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
+use MediaWiki\Extension\Translate\Statistics\MessagePrefixStats;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
@@ -114,6 +115,10 @@ return [
 		$class = array_shift( $params );
 		// @phan-suppress-next-line PhanTypeExpectedObjectOrClassName
 		return new $class( $params );
+	},
+
+	'Translate:MessagePrefixStats' => static function ( MediaWikiServices $services ): MessagePrefixStats {
+		return new MessagePrefixStats( $services->getTitleParser() );
 	},
 
 	'Translate:ParsingPlaceholderFactory' => static function (): ParsingPlaceholderFactory {

@@ -77,7 +77,7 @@ class MessageGroupStatsTable {
 		}
 
 		foreach ( $languages as $code ) {
-			if ( $this->table->isExcluded( $groupId, $code ) ) {
+			if ( $this->table->isExcluded( $group, $code ) ) {
 				continue;
 			}
 
@@ -190,16 +190,23 @@ class MessageGroupStatsTable {
 	}
 
 	private function getMainColumnCell( string $code, array $params, string $groupId ): string {
-		$queryParameters = $params + [
-			'group' => $groupId,
-			'language' => $code
-		];
-
 		if ( isset( $this->languageNames[$code] ) ) {
 			$text = "$code: {$this->languageNames[$code]}";
 		} else {
 			$text = $code;
 		}
+
+		// Do not render links when generating table for MessagePrefixMessageGroup
+		// as this is a dynamic group whose contents are based on user input
+		if ( $groupId === '!prefix' ) {
+			return Html::rawElement( 'td', [], $text );
+		}
+
+		$queryParameters = $params + [
+			'group' => $groupId,
+			'language' => $code
+		];
+
 		$link = $this->linkRenderer->makeKnownLink(
 			$this->translateTitle,
 			$text,

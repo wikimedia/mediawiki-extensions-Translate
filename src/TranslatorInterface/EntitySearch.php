@@ -123,38 +123,9 @@ class EntitySearch {
 		// * Match at any point in the message
 		// * Return full keys of prefixes that match multiple messages
 
-		$cache = $this->cache;
-		$key = $cache->makeKey( 'Translate', 'EntitySearch', 'messages' );
-		$haystack = $cache->getWithSetCallback(
-			$key,
-			ExpirationAwareness::TTL_WEEK,
-			function (): string {
-				// This can get rather large. On translatewiki.net it is multiple megabytes
-				// uncompressed. With compression (assumed to happen implicitly in the
-				// caching layer) it's under a megabyte.
-				return $this->getMessagesHaystack();
-			},
-			[
-				// Calling touchCheckKey() on this key purges the cache
-				'checkKeys' => [ $this->messageIndex->getStatusCacheKey() ],
-				// Avoid querying cache servers multiple times in a web request
-				'pcTTL' => ExpirationAwareness::TTL_PROC_LONG
-			]
-		);
+		$matches = $this->getMessageMatches( $query );
 
-		// Algorithm: Construct one big string with one entity per line. Then run
-		// preg_match_all over it. Because we will have many more matches than search
-		// results, this may be more efficient than calling preg_match iteratively.
-		// On the other hand, it can use a lot of memory to construct the array for
-		// all the matches.
 		$results = [];
-		$rowDelimiter = self::ROW_DELIMITER;
-		$anything = "[^$rowDelimiter]";
-		$query = preg_quote( $query, '/' );
-
-		// Word match
-		$pattern = "/^($anything*\b$query)$anything*$/miu";
-		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
 		$previousPrefixMatch = null;
 		foreach ( $matches as [ $full, $prefixMatch ] ) {
 			// This is a bit tricky. If we are at the maximum results, continue processing
@@ -196,6 +167,16 @@ class EntitySearch {
 		}
 
 		return array_values( $results );
+	}
+
+	public function getMessagesWithPrefix( string $query ): array {
+		$matches = $this->getMessageMatches( $query );
+		return array_column( $matches, 0 );
+	}
+
+	public function isKnownMessagePrefix( string $query ): bool {
+		$matches = $this->getMessagesWithPrefix( $query );
+		return $matches !== [];
 	}
 
 	private function getStaticMessageGroupsHaystack(): string {
@@ -245,5 +226,42 @@ class EntitySearch {
 		}
 
 		return $haystack;
+	}
+
+	private function getMessageMatches( string $query ): array {
+		$cache = $this->cache;
+		$key = $cache->makeKey( 'Translate', 'EntitySearch', 'messages' );
+		$haystack = $cache->getWithSetCallback(
+			$key,
+			ExpirationAwareness::TTL_WEEK,
+			function (): string {
+				// This can get rather large. On translatewiki.net it is multiple megabytes
+				// uncompressed. With compression (assumed to happen implicitly in the
+				// caching layer) it's under a megabyte.
+				return $this->getMessagesHaystack();
+			},
+			[
+				// Calling touchCheckKey() on this key purges the cache
+				'checkKeys' => [ $this->messageIndex->getStatusCacheKey() ],
+				// Avoid querying cache servers multiple times in a web request
+				'pcTTL' => ExpirationAwareness::TTL_PROC_LONG
+			]
+		);
+
+		// Algorithm: Construct one big string with one entity per line. Then run
+		// preg_match_all over it. Because we will have many more matches than search
+		// results, this may be more efficient than calling preg_match iteratively.
+		// On the other hand, it can use a lot of memory to construct the array for
+		// all the matches.
+		$results = [];
+		$rowDelimiter = self::ROW_DELIMITER;
+		$anything = "[^$rowDelimiter]";
+		$query = preg_quote( $query, '/' );
+
+		// Word match
+		$pattern = "/^($anything*\b$query)$anything*$/miu";
+		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
+
+		return $matches;
 	}
 }

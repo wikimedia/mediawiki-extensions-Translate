@@ -435,7 +435,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	): string {
 		$groupId = $group->getId();
 
-		if ( $this->table->isExcluded( $groupId, $this->target ) ) {
+		if ( $this->table->isExcluded( $group, $this->target ) ) {
 			return '';
 		}
 

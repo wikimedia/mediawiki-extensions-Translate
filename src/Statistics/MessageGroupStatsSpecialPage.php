@@ -3,12 +3,17 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
+use Config;
 use DeferredUpdates;
+use Html;
 use HTMLForm;
 use JobQueueGroup;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
+use MessagePrefixMessageGroup;
 use SpecialPage;
 use TranslateMetadata;
 
@@ -22,32 +27,45 @@ use TranslateMetadata;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class MessageGroupStatsSpecialPage extends SpecialPage {
-	/** @var array */
-	private $targetValueName = [ 'group' ];
-	/**
-	 * Whether to hide rows which are fully translated.
-	 * @var bool
-	 */
+	/** @var bool Whether to hide rows which are fully translated. */
 	private $noComplete = true;
-	/**
-	 * Whether to hide rows which are fully untranslated.
-	 * @var bool
-	 */
+	/** @var bool Whether to hide rows which are fully untranslated. */
 	private $noEmpty = false;
-	/** The target of stats: group id. */
+	/** @var ?string The target of stats: group id or message prefix. */
 	private $target;
+	/** @var ?string The target type of stats requested: */
+	private $targetType;
+	/** @var ServiceOptions */
+	private $options;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
 	/** @var MessageGroupStatsTableFactory */
 	private $messageGroupStatsTableFactory;
+	/** @var EntitySearch */
+	private $entitySearch;
+	/** @var MessagePrefixStats */
+	private $messagePrefixStats;
+
+	private const GROUPS = 'group';
+	private const MESSAGES = 'messages';
+
+	private const CONSTRUCTOR_OPTIONS = [
+		'TranslateMessagePrefixStatsLimit',
+	];
 
 	public function __construct(
+		Config $config,
 		JobQueueGroup $jobQueueGroup,
-		MessageGroupStatsTableFactory $messageGroupStatsTableFactory
+		MessageGroupStatsTableFactory $messageGroupStatsTableFactory,
+		EntitySearch $entitySearch,
+		MessagePrefixStats $messagePrefixStats
 	) {
 		parent::__construct( 'MessageGroupStats' );
+		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->messageGroupStatsTableFactory = $messageGroupStatsTableFactory;
+		$this->entitySearch = $entitySearch;
+		$this->messagePrefixStats = $messagePrefixStats;
 	}
 
 	public function getDescription() {
@@ -78,6 +96,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 		$out->addModules( 'ext.translate.special.languagestats' );
 		$out->addModuleStyles( 'ext.translate.statstable' );
+		$out->addModuleStyles( 'ext.translate.special.groupstats' );
 
 		$params = $par ? explode( '/', $par ) : [];
 
@@ -96,10 +115,18 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		// Whether the form has been submitted, only relevant if not including
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
-		// Default booleans to false if the form was submitted
-		foreach ( $this->targetValueName as $key ) {
-			$this->target = $request->getVal( $key, $this->target );
+		$this->target = $request->getVal( self::GROUPS, $this->target ?? '' );
+		if ( $this->target !== '' ) {
+			$this->targetType = self::GROUPS;
+		} else {
+			$this->target = $request->getVal( self::MESSAGES, '' );
+			if ( $this->target !== '' ) {
+				$this->target = rtrim( $this->target, '*' );
+				$this->targetType = self::MESSAGES;
+			}
 		}
+
+		// Default booleans to false if the form was submitted
 		$this->noComplete = $request->getBool(
 			'suppresscomplete',
 			$this->noComplete && !$submitted
@@ -111,7 +138,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			$this->addForm();
 		}
 
-		if ( $this->isValidValue( $this->target ) ) {
+		$stats = $output = null;
+		if ( $this->targetType === self::GROUPS && $this->isValidGroup( $this->target ) ) {
 			$this->outputIntroduction();
 
 			$stats = $this->loadStatistics( $this->target, MessageGroupStats::FLAG_CACHE_ONLY );
@@ -155,10 +183,38 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 					}
 				} );
 			}
-			if ( !$output ) {
-				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
+		} elseif (
+			$this->targetType === self::MESSAGES && $this->entitySearch->isKnownMessagePrefix( $this->target )
+		) {
+			$messagesWithPrefix = $this->entitySearch->getMessagesWithPrefix( $this->target );
+			$messageWithPrefixLimit = $this->options->get( 'TranslateMessagePrefixStatsLimit' );
+			if ( count( $messagesWithPrefix ) > $messageWithPrefixLimit ) {
+				$out->addHTML(
+					Html::errorBox(
+						$this->msg( 'translate-mgs-message-prefix-limit' )
+							->params( $messageWithPrefixLimit )
+							->parse()
+					)
+				);
+				return;
 			}
+
+			$stats = $this->messagePrefixStats->forAll( ...$messagesWithPrefix );
+			$messageGroupStatsTable = $this->messageGroupStatsTableFactory->newFromContext( $this->getContext() );
+			$output = $messageGroupStatsTable->get(
+				$stats,
+				new MessagePrefixMessageGroup(),
+				$this->noComplete,
+				$this->noEmpty
+			);
+		}
+
+		if ( $output ) {
+			// If output is present, put it on the page
 			$out->addHTML( $output );
+		} elseif ( $stats !== null ) {
+			// Output not present, but stats are present. Probably an issue?
+			$out->addHTML( Html::warningBox( $this->msg( 'translate-mgs-nothing' )->parse() ) );
 		} elseif ( $submitted ) {
 			$this->invalidTarget();
 		}
@@ -172,7 +228,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		return [ 'groupid' => $target ];
 	}
 
-	private function isValidValue( ?string $value ): bool {
+	private function isValidGroup( ?string $value ): bool {
 		if ( $value === null ) {
 			return false;
 		}
@@ -217,11 +273,20 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$formDescriptor = [
 			'select' => [
 				'type' => 'select',
-				'name' => 'group',
-				'id' => 'group',
+				'name' => self::GROUPS,
+				'id' => self::GROUPS,
 				'label' => $this->msg( 'translate-mgs-group' )->text(),
 				'options' => $this->getGroupOptions(),
-				'default' => $this->target
+				'default' => $this->targetType === self::GROUPS ? $this->target : null,
+				'cssclass' => 'message-group-selector'
+			],
+			'input' => [
+				'type' => 'text',
+				'name' => self::MESSAGES,
+				'id' => self::MESSAGES,
+				'label' => $this->msg( 'translate-mgs-prefix' )->text(),
+				'default' => $this->targetType === self::MESSAGES ? $this->target : null,
+				'cssclass' => 'message-prefix-selector'
 			],
 			'nocomplete-check' => [
 				'type' => 'check',
@@ -260,7 +325,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 	/** Creates a simple message group options. */
 	private function getGroupOptions(): array {
-		$options = [];
+		$options = [ '' => null ];
 		$groups = MessageGroups::getAllGroups();
 
 		foreach ( $groups as $id => $class ) {

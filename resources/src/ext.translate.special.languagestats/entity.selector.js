@@ -29,6 +29,22 @@ var EntitySelectorWidget = function ( config ) {
 		classes: [ 'tes-optgroup-label' ]
 	} );
 
+	this.messageLabel = new OO.ui.MenuOptionWidget( {
+		label: mw.msg( 'translate-tes-optgroup-message' ),
+		disabled: true,
+		highlightable: false,
+		pressable: false,
+		classes: [ 'tes-optgroup-label' ]
+	} );
+
+	this.groupLabel = new OO.ui.MenuOptionWidget( {
+		label: mw.msg( 'translate-tes-optgroup-group' ),
+		disabled: true,
+		highlightable: false,
+		pressable: false,
+		classes: [ 'tes-optgroup-label' ]
+	} );
+
 	this.errorLabel = new OO.ui.MenuOptionWidget( {
 		disabled: true,
 		highlightable: false,
@@ -100,7 +116,10 @@ function makeRequest( value, entityType, deferred, cbFailure ) {
 }
 
 EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( response ) {
+	var groups = response.groups || [];
+	var messages = response.messages || [];
 	var finalResult = [];
+	var i = 0;
 
 	if ( response && response.error ) {
 		this.errorLabel.setLabel( mw.msg( 'translate-tes-server-error' ) );
@@ -108,19 +127,39 @@ EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( respons
 		return finalResult;
 	}
 
-	var groups = response.groups;
-	if ( groups.length === 0 ) {
-		finalResult.push( this.groupNotFoundLabel );
-		return finalResult;
+	if ( groups.length ) {
+		finalResult.push( this.groupLabel );
+		for ( ; i < groups.length; ++i ) {
+			finalResult.push(
+				new OO.ui.MenuOptionWidget( {
+					data: {
+						type: 'group',
+						data: groups[ i ].group
+					},
+					label: groups[ i ].label
+				} )
+			);
+		}
 	}
-
-	for ( var i = 0; i !== groups.length; ++i ) {
-		finalResult.push(
-			new OO.ui.MenuOptionWidget( {
-				data: groups[ i ].group,
-				label: groups[ i ].label
-			} )
-		);
+	if ( messages.length ) {
+		finalResult.push( this.messageLabel );
+		for ( i = 0; i < messages.length; ++i ) {
+			var messageOption = new OO.ui.MenuOptionWidget( {
+				data: {
+					type: 'message',
+					data: messages[ i ].pattern
+				},
+				label: messages[ i ].pattern
+			} );
+			if ( messages[ i ].count > 1 ) {
+				messageOption.$element.append(
+					$( '<span>' )
+						.text( mw.msg( 'translate-tes-message-prefix', messages[ i ].count ) )
+						.addClass( 'tes-message-subtext' )
+				);
+			}
+			finalResult.push( messageOption );
+		}
 	}
 
 	return finalResult;

@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Html;
 use HtmlArmor;
 use Language;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Linker\LinkRenderer;
 use Message;
@@ -302,11 +301,12 @@ class StatsTable {
 	/**
 	 * Check whether translations in given group in given language
 	 * has been disabled.
-	 * @param string $groupId Message group id
+	 * @param MessageGroup $group Message group
 	 * @param string $code Language code
 	 */
-	public function isExcluded( string $groupId, string $code ): bool {
+	public function isExcluded( MessageGroup $group, string $code ): bool {
 		$excluded = null;
+		$groupId = $group->getId();
 
 		$checks = [
 			$groupId,
@@ -326,7 +326,6 @@ class StatsTable {
 			}
 		}
 
-		$group = MessageGroups::getGroup( $groupId );
 		$languages = $group->getTranslatableLanguages();
 		if ( $languages !== null && !isset( $languages[$code] ) ) {
 			$excluded = true;

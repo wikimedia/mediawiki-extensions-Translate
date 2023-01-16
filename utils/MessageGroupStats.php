@@ -9,9 +9,11 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -22,8 +24,10 @@ use Wikimedia\Rdbms\IDatabase;
  * @ingroup Stats MessageGroups
  */
 class MessageGroupStats {
-	/// Name of the database table
+	/** Name of the database table */
 	private const TABLE = 'translate_groupstats';
+	/** Cache key for storage of all language stats */
+	private const LANGUAGE_STATS_KEY = 'translate-all-language-stats';
 
 	public const TOTAL = 0; ///< Array index
 	public const TRANSLATED = 1; ///< Array index
@@ -215,6 +219,61 @@ class MessageGroupStats {
 	}
 
 	/**
+	 * Fetch aggregated statistics for all languages across groups. The stats are cached
+	 * in the WANObjectCache, and recalculated on the fly if the values are stale.
+	 * The statistics may lag behind the actuals due to extra and missing values
+	 * @return array[] ( Language Code => Language Stats )
+	 */
+	public static function getApproximateLanguageStats(): array {
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		return $cache->getWithSetCallback(
+			self::LANGUAGE_STATS_KEY,
+			WANObjectCache::TTL_INDEFINITE,
+			function ( $oldValue, &$ttl, array &$setOpts ) {
+				$dbr = Utilities::getSafeReadDB();
+				$setOpts += Database::getCacheSetOptions( $dbr );
+
+				return self::getAllLanguageStats();
+			},
+			[
+				'checkKeys' => [ self::LANGUAGE_STATS_KEY ],
+				'pcTTL' => $cache::TTL_PROC_SHORT,
+			]
+		);
+	}
+
+	private static function getAllLanguageStats(): array {
+		$dbr = Utilities::getSafeReadDB();
+		$res = $dbr->newSelectQueryBuilder()
+			->table( self::TABLE )
+			->select( [
+				'tgs_lang',
+				'SUM(tgs_translated) AS tgs_translated',
+				'SUM(tgs_fuzzy) AS tgs_fuzzy',
+				'SUM(tgs_total) AS tgs_total',
+				'SUM(tgs_proofread) AS tgs_proofread'
+			] )
+			->groupBy( 'tgs_lang' )
+			->fetchResultSet();
+
+		$allLanguages = self::getLanguages();
+		$languagesCodes = array_flip( $allLanguages );
+
+		$allStats = [];
+		foreach ( $res as $row ) {
+			$allStats[ $row->tgs_lang ] = self::extractNumbers( $row );
+			unset( $languagesCodes[ $row->tgs_lang ] );
+		}
+
+		// Fill empty stats for missing language codes
+		foreach ( array_keys( $languagesCodes ) as $code ) {
+			$allStats[ $code ] = self::getEmptyStats();
+		}
+
+		return $allStats;
+	}
+
+	/**
 	 * Helper for clear and clearGroup that caches already loaded statistics.
 	 *
 	 * @param string $code
@@ -264,7 +323,7 @@ class MessageGroupStats {
 	 *
 	 * @return string[]
 	 */
-	private static function getLanguages() {
+	public static function getLanguages() {
 		if ( self::$languages === null ) {
 			$languages = array_keys( Utilities::getLanguageNames( 'en' ) );
 			sort( $languages );
@@ -574,34 +633,12 @@ class MessageGroupStats {
 			}
 		}
 
-		$collection->filter( 'ignored' );
-		$collection->filterUntranslatedOptional();
-		// Store the count of real messages for later calculation.
-		$total = count( $collection );
-
-		// Count fuzzy first.
-		$collection->filter( 'fuzzy' );
-		$fuzzy = $total - count( $collection );
-
-		// Count the completed translations.
-		$collection->filter( 'hastranslation', false );
-		$translated = count( $collection );
-
-		// Count how many of the completed translations
-		// have been proofread
-		$collection->filter( 'reviewer', false );
-		$proofread = count( $collection );
-
-		return [
-			self::TOTAL => $total,
-			self::TRANSLATED => $translated,
-			self::FUZZY => $fuzzy,
-			self::PROOFREAD => $proofread,
-		];
+		return self::getStatsForCollection( $collection );
 	}
 
 	protected static function queueUpdates( $flags ) {
-		if ( MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
+		$mwInstance = MediaWikiServices::getInstance();
+		if ( $mwInstance->getReadOnlyMode()->isReadOnly() ) {
 			return;
 		}
 
@@ -609,7 +646,7 @@ class MessageGroupStats {
 			return;
 		}
 
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
+		$lb = $mwInstance->getDBLoadBalancer();
 		$dbw = $lb->getConnectionRef( DB_PRIMARY ); // avoid connecting yet
 		$table = self::TABLE;
 		$callers = wfGetAllCallers( 50 );
@@ -618,7 +655,7 @@ class MessageGroupStats {
 			$dbw,
 			'updates',
 			__METHOD__,
-			static function ( IDatabase $dbw, $method ) use ( $table, $callers ) {
+			static function ( IDatabase $dbw, $method ) use ( $table, $callers, $mwInstance ) {
 				// Maybe another deferred update already processed these
 				if ( self::$updates === [] ) {
 					return;
@@ -640,6 +677,8 @@ class MessageGroupStats {
 				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
 				$dbw->replace( $table, [ $primaryKey ], array_values( self::$updates ), $method );
 				self::$updates = [];
+
+				$mwInstance->getMainWANObjectCache()->touchCheckKey( self::LANGUAGE_STATS_KEY );
 			}
 		);
 
@@ -675,5 +714,32 @@ class MessageGroupStats {
 		$hash = hash( 'sha256', $id, /*asHex*/false );
 		$dbid = substr( $id, 0, 50 ) . '||' . substr( $hash, 0, 20 );
 		return $dbid;
+	}
+
+	public static function getStatsForCollection( MessageCollection $collection ): array {
+		$collection->filter( 'ignored' );
+		$collection->filterUntranslatedOptional();
+		// Store the count of real messages for later calculation.
+		$total = count( $collection );
+
+		// Count fuzzy first.
+		$collection->filter( 'fuzzy' );
+		$fuzzy = $total - count( $collection );
+
+		// Count the completed translations.
+		$collection->filter( 'hastranslation', false );
+		$translated = count( $collection );
+
+		// Count how many of the completed translations
+		// have been proofread
+		$collection->filter( 'reviewer', false );
+		$proofread = count( $collection );
+
+		return [
+			self::TOTAL => $total,
+			self::TRANSLATED => $translated,
+			self::FUZZY => $fuzzy,
+			self::PROOFREAD => $proofread,
+		];
 	}
 }

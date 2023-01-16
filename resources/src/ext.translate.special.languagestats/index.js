@@ -198,34 +198,55 @@
 		}
 	}
 
-	function activateGroupEntitySelector( $group ) {
-		// hide the group selector, and get its value
-		$group.addClass( 'tes-entity-selector-hide' );
-		var groupName = $group.find( 'select option:selected' ).text();
+	function activateEntitySelector( $group, $messagePrefix ) {
+		// hide the message group and prefix selector
+		var $groupContainer = $( '.message-group-selector' );
+
+		// Change the label, and remove the for attribute
+		$groupContainer.find( 'label' )
+			.text( mw.msg( 'translate-mgs-group-or-prefix' ) )
+			.attr( 'for', '' );
+
+		// Determine what value was set, and set it on the entity selector
+		var selectedGroup = $group.find( 'select option:selected' ).text();
 
 		// load the entity selector and set the value
 		var entitySelector = getEntitySelector( onEntitySelect );
-		entitySelector.setValue( groupName );
+		if ( selectedGroup ) {
+			entitySelector.setValue( selectedGroup );
+		} else {
+			var selectedMessage = $messagePrefix.val();
+			if ( selectedMessage ) {
+				entitySelector.setValue( selectedMessage );
+			}
+		}
 
+		$group.addClass( 'hidden' );
 		$group.after( entitySelector.$element );
 	}
 
 	function onEntitySelect( selectedItem ) {
-		$( 'select[name="group"]' ).val( selectedItem );
+		if ( selectedItem.type === 'group' ) {
+			$( 'select[name="group"]' ).val( selectedItem.data );
+			$( 'input[name="messages"]' ).val( '' );
+		} else {
+			$( 'input[name="messages"]' ).val( selectedItem.data );
+			$( 'select[name="group"]' ).val( '' );
+		}
 	}
 
 	function getEntitySelector( onSelect ) {
 		var EntitySelector = require( './entity.selector.js' );
 		return new EntitySelector( {
 			onSelect: onSelect,
-			entityType: [ 'groups' ]
+			entityType: [ 'groups', 'messages' ]
 		} );
 	}
 
 	$( function () {
 		var $table = $( '.statstable' );
 
-		activateGroupEntitySelector( $( '#group' ) );
+		activateEntitySelector( $( '#group' ), $( 'input[name="messages"]' ) );
 
 		// Sometimes the table is not present on the page
 		if ( !$table.length ) {
