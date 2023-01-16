@@ -4,9 +4,12 @@
 			"Eleassar"
 		]
 	},
+	"apihelp-groupreview-param-group": "Skupina sporočil.",
 	"apihelp-groupreview-param-language": "Oznaka jezika.",
+	"apihelp-groupreview-param-state": "Novo stanje za skupino.",
 	"apihelp-query+languagestats-param-language": "Oznaka jezika.",
 	"apihelp-query+managemessagegroups-param-messageKey": "Ključ sporočila",
+	"apihelp-query+messagecollection-param-group": "Skupina sporočil.",
 	"apihelp-query+messagecollection-param-language": "Oznaka jezika.",
 	"apihelp-query+messagegroups-example-1": "Prikaži skupine sporočil",
 	"apihelp-managemessagegroups-param-messageKey": "Nadomestni ključ sporočila",
@@ -17,6 +20,7 @@
 	"apihelp-translationstash-summary": "Doda prevode v shrambo.",
 	"apihelp-translationstash-param-title": "Naslov strani prevodne enote.",
 	"apihelp-ttmserver-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
+	"apihelp-ttmserver-param-targetlanguage": "Oznaka jezika predloga.",
 	"apihelp-searchtranslations-description": "Išči prevode.",
 	"apihelp-searchtranslations-summary": "Išči prevode.",
 	"apihelp-searchtranslations-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",

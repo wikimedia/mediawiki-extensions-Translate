@@ -13,11 +13,14 @@
 	"tux-sst-facet-language": "Ieithoedd",
 	"tux-sst-facet-group": "Grwpiau negeseuon",
 	"tux-sst-nosolr-title": "Nid yw chwilio ar gael",
+	"tux-sst-solr-offline-title": "Nid yw chwilio ar gael",
 	"tux-sst-next": "Nesaf ›",
 	"tux-sst-prev": "‹ Blaenorol",
 	"tux-sst-default": "Cyfieithiadau",
 	"tux-sst-translated": "Cyfieithiadau o $1",
 	"tux-sst-untranslated": "Dim cyfieithiad o $1",
+	"tux-sst-outdated": "Cyfieithiadau hen o $1",
 	"tux-sst-ellipsis-untranslated": "Dim cyfieithiad",
+	"tux-sst-ellipsis-outdated": "Cyfieithiadau hen",
 	"tux-sst-case-sensitive": "Ystyried llythyrennau"
 }

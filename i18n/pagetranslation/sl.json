@@ -49,7 +49,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|Ta stran ima|Ti strani imata|Te strani imajo}} spremembe, ki niso označene za prevod.",
 	"tpt-tag-discouraged": "odsvetovano",
 	"tpt-tag-oldsyntax": "stara skladnja",
-	"tpt-select-prioritylangs": "Z vejico ločen seznam kod prednostnih jezikov:",
+	"tpt-select-prioritylangs": "Seznam oznak prednostnih jezikov, ločenih z vejicami:",
 	"tpt-select-prioritylangs-force": "Prepreči prevajanje v jezike, ki niso prednostni jeziki",
 	"tpt-select-prioritylangs-reason": "Razlog:",
 	"tpt-sections-prioritylangs": "Prednostni jeziki",
