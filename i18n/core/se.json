@@ -46,6 +46,7 @@
 	"tux-message-filter-result": "{{PLURAL:$1|Okta boađus gávdnui|$1 bohtosa gávdnojedje}} ohcamii \"$2\"",
 	"tux-proofread-translated-by-self": "Du jorgalus",
 	"tux-empty-list-translated-action": "Jorgal",
+	"tux-editor-close-tooltip": "Gidde",
 	"tux-editor-expand-tooltip": "Stuorit",
 	"tux-editor-collapse-tooltip": "Čiega",
 	"tux-editor-message-tools-delete": "Sihko",
