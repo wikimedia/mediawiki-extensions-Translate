@@ -252,6 +252,8 @@
 	"tux-editor-edit-desc": "Endra dokumentasjon",
 	"tux-editor-add-desc": "Legg til dokumentasjon",
 	"tux-editor-suggestions-title": "Framlegg",
+	"tux-editor-latest-updates-title": "Siste oppdateringane",
+	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1|oppdatering|oppdateringar}} utan samandrag",
 	"tux-editor-in-other-languages": "På andre språk",
 	"tux-editor-need-more-help": "Treng du meir hjelp?",
 	"tux-editor-ask-help": "Spør etter meir informasjon",

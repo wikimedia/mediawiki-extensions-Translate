@@ -32,6 +32,7 @@
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
 	"pt-movepage-reason": "Motivo:",
 	"pt-deletepage-reason": "Motivo:",
+	"pt-deletepage-reason-details": "Altra/suplementala motivo:",
 	"pt-deletepage-list-no-pages": "Nula pagino trovesis.",
 	"pm-import-button-label": "Importacar",
 	"pm-savepages-button-label": "Konservez",
