@@ -104,7 +104,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			 * Get list of keys that the message belongs to, and filter
 			 * out those which are not requested.
 			 */
-			$groups = Utilities::messageKeyToGroups( $row->rc_namespace, $key );
+			$groups = Utilities::messageKeyToGroups( (int)$row->rc_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
 

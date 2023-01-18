@@ -245,7 +245,7 @@ class Utilities {
 	 * @param string $key
 	 * @return string|null Group id or null.
 	 */
-	public static function messageKeyToGroup( $namespace, $key ) {
+	public static function messageKeyToGroup( int $namespace, string $key ): ?string {
 		$groups = self::messageKeyToGroups( $namespace, $key );
 
 		return count( $groups ) ? $groups[0] : null;
