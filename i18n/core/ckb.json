@@ -281,6 +281,7 @@
 	"tux-editor-message-tools-history": "مێژوو",
 	"tux-editor-message-tools-delete": "سڕینەوە",
 	"tux-editor-message-tools-translations": "هەموو وەرگێرانەکان",
+	"tux-editor-message-tools-linktothis": "بەستەری ئەم پەیامە",
 	"tux-editor-loading": "باركردن‌ ...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|زمان}}ی تر",
 	"translate-statsbar-tooltip": "$1% وەرگێڕدراوە, $2% پێداجوونەوەی بۆ کراوە",

@@ -180,7 +180,7 @@
 	"pt-deletepage-lang-title": "Brisanje strani prevoda »$1«",
 	"pt-deletepage-full-title": "Brisanje prevedljive strani »$1«",
 	"pt-deletepage-invalid-title": "Določena stran ni veljavna.",
-	"pt-deletepage-invalid-text": "Izbrana stran ni niti prevedljiva stran niti stran s prevodom.",
+	"pt-deletepage-invalid-text": "Izbrana stran ni niti prevedljiva stran niti stran prevoda.",
 	"pt-deletepage-action-check": "Navedi strani za izbris",
 	"pt-deletepage-action-perform": "Izvedi izbris",
 	"pt-deletepage-action-other": "Spremeni cilj",
