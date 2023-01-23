@@ -54,5 +54,7 @@
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.Commenting.RequireOneLineDocComment" />
+	<rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment" />
+	<rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing" />
 	<rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces" />
 </ruleset>
