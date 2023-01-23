@@ -4,6 +4,7 @@
 			"Brettchenweber",
 			"ChrisiPK",
 			"Imre",
+			"Justman10000",
 			"Kghbln",
 			"MF-Warburg",
 			"McDutchie",
@@ -270,5 +271,6 @@
 	"visualeditor-annotations-translate-description": "Dieser Bereich ist als übersetzbar gekennzeichnet. Bitte stelle sicher, dass du die Richtlinien für [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Änderung des Quelltextes] befolgst.",
 	"visualeditor-annotations-tvar-start": "Beginn des nicht übersetzbaren Inhalts",
 	"visualeditor-annotations-tvar-end": "Ende des nicht übersetzbaren Inhalts",
-	"visualeditor-annotations-tvar-description": "Dieser Bereich ist als nicht übersetzbar gekennzeichnet. Weitere Informationen findest du unter [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentierung des Ausgangstextes]."
+	"visualeditor-annotations-tvar-description": "Dieser Bereich ist als nicht übersetzbar gekennzeichnet. Weitere Informationen findest du unter [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentierung des Ausgangstextes].",
+	"tag-translate-translation-pages-description": "Automatische Bearbeitungen von Übersetzungsseiten durch die Translate-Erweiterung"
 }
