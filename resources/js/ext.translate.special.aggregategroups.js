@@ -298,8 +298,10 @@
 		$( '#tpt-aggregategroups-save' ).on( 'click', function () {
 			var $aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
 				$aggGroupNameInputDesc = $( 'input.tp-aggregategroup-add-description' ),
+				$aggGroupNameInputLanguage = $( 'select.tp-aggregategroup-add-source-language' ),
 				aggregateGroupName = $aggGroupNameInputName.val(),
-				aggregateGroupDesc = $aggGroupNameInputDesc.val();
+				aggregateGroupDesc = $aggGroupNameInputDesc.val(),
+				aggregateGroupLanguage = $aggGroupNameInputLanguage.val();
 
 			// Empty the fields. If they are not emptied, then when another group
 			// is added, the values will appear again.
@@ -342,6 +344,7 @@
 						class: 'tp-aggregategroup-update-cancel'
 					} )
 					.val( mw.msg( 'tpt-aggregategroup-update-cancel' ) );
+				var $sourceLanguages = $( '.tp-aggregategroup-add-source-language' ).clone();
 				var $divEdit = $( '<div>' )
 					.addClass( 'tp-edit-group hidden' )
 					.append( $( '<label>' )
@@ -365,6 +368,17 @@
 						} )
 						.val( aggregateGroupDesc )
 					)
+					.append(
+						$( '<br>' ),
+						$( '<label>' )
+							.text( mw.msg( 'tpt-aggregategroup-select-source-language' ) )
+					)
+					.append( $sourceLanguages
+						.removeClass( 'tp-aggregategroup-add-source-language' )
+						.addClass( 'tp-aggregategroup-edit-source-language' )
+						.val( aggregateGroupLanguage )
+					)
+					.append( $( '<br>' ) )
 					.append( $saveButton, $cancelButton );
 
 				var $div = $( '<div>' )

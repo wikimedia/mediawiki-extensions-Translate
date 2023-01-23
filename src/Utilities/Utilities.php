@@ -195,20 +195,18 @@ class Utilities {
 		return $selector->getHTML();
 	}
 
-	// TODO remove getLanguageSelector() after Sunsetting of TranslateSvg extension
-
 	/**
 	 * Standard language selector in Translate extension.
 	 * @param string $language Language code of the language the names should be localised to.
-	 * @param bool $labelOption
+	 * @param ?string $labelOption
 	 * @return XmlSelect
 	 */
-	public static function getLanguageSelector( $language, $labelOption = false ) {
+	public static function getLanguageSelector( $language, ?string $labelOption = null ) {
 		$languages = self::getLanguageNames( $language );
 		ksort( $languages );
 
 		$selector = new XmlSelect();
-		if ( $labelOption !== false ) {
+		if ( $labelOption !== null ) {
 			$selector->addOption( $labelOption, '-' );
 		}
 

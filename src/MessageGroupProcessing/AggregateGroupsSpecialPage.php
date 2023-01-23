@@ -6,10 +6,12 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use AggregateMessageGroup;
 use Html;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use SpecialPage;
 use TranslateMetadata;
 use WikiPageMessageGroup;
 use Xml;
+use XmlSelect;
 
 /**
  * Contains logic for special page Special:AggregateGroups.
@@ -25,6 +27,8 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	private $hasPermission = false;
 	/** @var LinkBatchFactory */
 	private $linkBatchFactory;
+	/** @var XmlSelect */
+	private $languageSelector;
 
 	public function __construct( LinkBatchFactory $linkBatchFactory ) {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
@@ -80,6 +84,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$id = $group->getId();
 		$label = $group->getLabel();
 		$desc = $group->getDescription( $this->getContext() );
+		$sourceLanguage = $group->getSourceLanguage();
 
 		$edit = '';
 		$remove = '';
@@ -94,6 +99,8 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$remove = Html::element( 'span', [ 'class' => 'tp-aggregate-remove-ag-button' ] );
 
 			// Edit group div
+			$languageSelector = $this->getLanguageSelector( 'edit', $sourceLanguage );
+
 			$editGroupNameLabel = $this->msg( 'tpt-aggregategroup-edit-name' )->escaped();
 			$editGroupName = Html::input(
 				'tp-agg-name',
@@ -124,6 +131,9 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				'<br />' .
 				$editGroupDescriptionLabel .
 				$editGroupDescription .
+				'<br />' .
+				$languageSelector .
+				'<br />' .
 				$saveButton .
 				$cancelButton
 			);
@@ -200,6 +210,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 					$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 					'</a>'
 			);
+			$languageSelector = $this->getLanguageSelector( 'add', '-' );
 			$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
 			$newGroupName = Html::element( 'input', [ 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' ] );
 			$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
@@ -225,7 +236,10 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				'div',
 				[ 'class' => 'tpt-add-new-group hidden' ],
 				"$newGroupNameLabel $newGroupName<br />" .
-					"$newGroupDescriptionLabel $newGroupDescription<br />$saveButton $closeButton"
+				"$newGroupDescriptionLabel $newGroupDescription<br />" .
+				"$languageSelector <br />"
+				. $saveButton
+				. $closeButton
 			);
 			$out->addHTML( $newGroupDiv );
 		}
@@ -309,5 +323,21 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				'aria-controls' => $targetElementId
 			]
 		);
+	}
+
+	private function getLanguageSelector( string $action, string $languageToSelect ): string {
+		if ( $this->languageSelector == null ) {
+			// This should be set according to UI language
+			$this->languageSelector = Utilities::getLanguageSelector(
+				$this->getContext()->getLanguage()->getCode(), '-'
+			);
+		}
+
+		$this->languageSelector->setAttribute( 'class', "tp-aggregategroup-$action-source-language" );
+		$this->languageSelector->setDefault( $languageToSelect );
+		$selector = $this->languageSelector->getHTML();
+
+		$languageSelectorLabel = $this->msg( 'tpt-aggregategroup-select-source-language' )->escaped();
+		return $languageSelectorLabel . $selector;
 	}
 }
