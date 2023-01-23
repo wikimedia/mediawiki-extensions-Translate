@@ -161,9 +161,21 @@ class MessageGroupStats {
 	 */
 	public static function forEverything( $flags = 0 ) {
 		$groups = MessageGroups::singleton()->getGroups();
+		$groupIds = array_keys( $groups );
+		$languages = self::getLanguages();
+
+		// Pre-load cached values
+		$res = self::selectRowsIdLang( $groupIds, $languages, $flags );
+
 		$stats = [];
-		foreach ( $groups as $g ) {
-			$stats = self::forGroupInternal( $g, $stats, $flags );
+		// Go over each group and language filling missing entries
+		foreach ( $groups as $groupId => $group ) {
+			$stats = self::extractResults( $res, $groupIds, $stats );
+			foreach ( $languages as $code ) {
+				$stats[$groupId][$code] ??= self::forItemInternal( $stats, $group, $code, $flags );
+			}
+			// This is for sorting the values added later in correct order
+			ksort( $stats[$groupId] );
 		}
 
 		self::queueUpdates( $flags );
