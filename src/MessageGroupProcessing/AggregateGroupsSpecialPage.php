@@ -84,7 +84,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$id = $group->getId();
 		$label = $group->getLabel();
 		$desc = $group->getDescription( $this->getContext() );
-		$sourceLanguage = $group->getSourceLanguage();
+		$sourceLanguage = TranslateMetadata::get( $id, 'sourcelanguagecode' );
 
 		$edit = '';
 		$remove = '';
@@ -99,7 +99,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$remove = Html::element( 'span', [ 'class' => 'tp-aggregate-remove-ag-button' ] );
 
 			// Edit group div
-			$languageSelector = $this->getLanguageSelector( 'edit', $sourceLanguage );
+			$languageSelector = $this->getLanguageSelector( 'edit', $sourceLanguage ?: '-' );
 
 			$editGroupNameLabel = $this->msg( 'tpt-aggregategroup-edit-name' )->escaped();
 			$editGroupName = Html::input(

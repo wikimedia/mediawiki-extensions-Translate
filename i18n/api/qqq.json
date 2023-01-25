@@ -149,6 +149,8 @@
 	"apierror-translate-duplicateaggregategroup": "{{doc-apierror}}",
 	"apierror-translate-fuzzymessage": "{{doc-apierror}}",
 	"apierror-translate-groupreviewdisabled": "{{doc-apierror}}",
+	"apierror-translate-grouplanguagemismatch": "{{doc-apierror}}\nParameters:\n* $1 - Message group language code\n* $2 - Aggregate group language",
+	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "{{doc-apierror}}\nParameters:\n* $1 - List of message groups\n* $2 - Aggregate group language",
 	"apierror-translate-invalidaggregategroup": "{{doc-apierror}}",
 	"apierror-translate-invalidaggregategroupname": "{{doc-apierror}}",
 	"apierror-translate-invalidfilter": "{{notranslate}}\n{{doc-apierror}}\n\nParameters:\n* $1 - Filter provided",

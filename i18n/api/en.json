@@ -141,6 +141,8 @@
 	"apierror-translate-duplicateaggregategroup": "Message group already exists",
 	"apierror-translate-fuzzymessage": "Cannot review fuzzy translations",
 	"apierror-translate-groupreviewdisabled": "Message group review not in use.",
+	"apierror-translate-grouplanguagemismatch": "The language ($1) of the group you have selected doesn't match the language ($2) of the aggregate group.",
+	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "The {{PLURAL:$3|group|groups}}: $1, {{PLURAL:$3|does|do}} not have the same source language ($2) as the aggregate group.",
 	"apierror-translate-invalidaggregategroup": "Invalid aggregate message group",
 	"apierror-translate-invalidaggregategroupname": "Invalid aggregate message group name",
 	"apierror-translate-invalidfilter": "$1",

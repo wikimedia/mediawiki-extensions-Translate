@@ -30,6 +30,7 @@ class AggregateGroupsActionApi extends ApiBase {
 	private $jobQueueGroup;
 	/** @var string */
 	protected static $right = 'translate-manage';
+	private const NO_LANGUAGE_CODE = '-';
 
 	public function __construct(
 		ApiMain $main,
@@ -76,6 +77,16 @@ class AggregateGroupsActionApi extends ApiBase {
 					$this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
 				}
 
+				$messageGroupLanguage = $group->getSourceLanguage();
+				$aggregateGroupLanguage = TranslateMetadata::get( $aggregateGroup, 'sourcelanguagecode' );
+				// If source language is not set, user shouldn't be prevented from associating a message group
+				if ( $aggregateGroupLanguage !== false && $messageGroupLanguage !== $aggregateGroupLanguage ) {
+					$this->dieWithError( [
+						'apierror-translate-grouplanguagemismatch',
+						$messageGroupLanguage,
+						$aggregateGroupLanguage
+					] );
+				}
 				$subgroups[] = $subgroupId;
 				$subgroups = array_unique( $subgroups );
 			} elseif ( $action === 'dissociate' ) {
@@ -163,9 +174,13 @@ class AggregateGroupsActionApi extends ApiBase {
 				} while ( $idExists );
 				$aggregateGroupId = $tempId;
 			}
+			$sourceLanguageCode = trim( $params['groupsourcelanguagecode'] );
 
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
 			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
+			if ( $sourceLanguageCode !== self::NO_LANGUAGE_CODE ) {
+				TranslateMetadata::set( $aggregateGroupId, 'sourcelanguagecode', $sourceLanguageCode );
+			}
 			TranslateMetadata::setSubgroups( $aggregateGroupId, [] );
 
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
@@ -184,9 +199,25 @@ class AggregateGroupsActionApi extends ApiBase {
 			}
 			$desc = trim( $params['groupdescription'] );
 			$aggregateGroupId = $params['aggregategroup'];
+			$newLanguageCode = trim( $params['groupsourcelanguagecode'] );
 
 			$oldName = TranslateMetadata::get( $aggregateGroupId, 'name' );
 			$oldDesc = TranslateMetadata::get( $aggregateGroupId, 'description' );
+			$currentLanguageCode = TranslateMetadata::get( $aggregateGroupId, 'sourcelanguagecode' );
+
+			if ( $newLanguageCode !== self::NO_LANGUAGE_CODE && $newLanguageCode !== $currentLanguageCode ) {
+				$groupsWithDifferentLanguage =
+					$this->getGroupsWithDifferentLanguage( $aggregateGroupId, $newLanguageCode );
+
+				if ( count( $groupsWithDifferentLanguage ) ) {
+					$this->dieWithError( [
+						'apierror-translate-messagegroup-aggregategrouplanguagemismatch',
+						implode( ", ", $groupsWithDifferentLanguage ),
+						$newLanguageCode,
+						count( $groupsWithDifferentLanguage )
+					] );
+				}
+			}
 
 			// Error if the label exists already
 			$exists = MessageGroups::labelExists( $name );
@@ -194,11 +225,18 @@ class AggregateGroupsActionApi extends ApiBase {
 				$this->dieWithError( 'apierror-translate-duplicateaggregategroup', 'duplicateaggregategroup' );
 			}
 
-			if ( $oldName === $name && $oldDesc === $desc ) {
+			if (
+				$oldName === $name
+				&& $oldDesc === $desc
+				&& $newLanguageCode === $currentLanguageCode
+			) {
 				$this->dieWithError( 'apierror-translate-invalidupdate', 'invalidupdate' );
 			}
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
 			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
+			if ( $newLanguageCode !== self::NO_LANGUAGE_CODE ) {
+				TranslateMetadata::set( $aggregateGroupId, 'sourcelanguagecode', $newLanguageCode );
+			}
 		}
 
 		// If we got this far, nothing has failed
@@ -207,6 +245,31 @@ class AggregateGroupsActionApi extends ApiBase {
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::singleton()->recache();
 		$this->jobQueueGroup->push( MessageIndexRebuildJob::newJob() );
+	}
+
+	/**
+	 * Aggregate groups have an explicit source language that should match with
+	 * the associated message group source language. Thus, we check which of the subgroups
+	 * of an aggregate group don't have a matching source language.
+	 */
+	private function getGroupsWithDifferentLanguage(
+		string $aggregateGroupId,
+		string $sourceLanguageCode
+	): array {
+			$groupsWithDifferentLanguage = [];
+			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroupId );
+			foreach ( $subgroups as $group ) {
+				$messageGroup = MessageGroups::getGroup( $group );
+				$messageGroupLabel = $messageGroup instanceof WikiPageMessageGroup ?
+					$messageGroup->getTitle() :
+					$messageGroup->getLabel();
+				$messageGroupLanguage = $messageGroup->getSourceLanguage();
+				if ( $messageGroupLanguage !== $sourceLanguageCode ) {
+					$groupsWithDifferentLanguage[] = $messageGroupLabel->getBaseText();
+				}
+			}
+
+			return $groupsWithDifferentLanguage;
 	}
 
 	protected function generateAggregateGroupId( string $aggregateGroupName, string $prefix = 'agg-' ): string {
@@ -244,6 +307,9 @@ class AggregateGroupsActionApi extends ApiBase {
 				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'groupdescription' => [
+				ParamValidator::PARAM_TYPE => 'string',
+			],
+			'groupsourcelanguagecode' => [
 				ParamValidator::PARAM_TYPE => 'string',
 			],
 			'token' => [

@@ -120,8 +120,10 @@
 			$editGroup = $parent.children( '.tp-edit-group' ),
 			$aggGroupNameInputName = $editGroup.children( 'input.tp-aggregategroup-edit-name' ),
 			$aggGroupNameInputDesc = $editGroup.children( 'input.tp-aggregategroup-edit-description' ),
+			$aggGroupNameInputLanguage = $editGroup.children( 'select.tp-aggregategroup-edit-source-language' ),
 			aggregateGroupName = $aggGroupNameInputName.val(),
 			aggregateGroupDesc = $aggGroupNameInputDesc.val(),
+			aggregateGroupLanguage = $aggGroupNameInputLanguage.val(),
 			api = new mw.Api();
 
 		var successFunction = function () {
@@ -139,7 +141,8 @@
 			do: 'update',
 			groupname: aggregateGroupName,
 			groupdescription: aggregateGroupDesc,
-			aggregategroup: aggregateGroupId
+			aggregategroup: aggregateGroupId,
+			groupsourcelanguagecode: aggregateGroupLanguage
 		};
 
 		api.postWithToken( 'csrf', params )
@@ -307,6 +310,7 @@
 			// is added, the values will appear again.
 			$aggGroupNameInputName.val( '' );
 			$aggGroupNameInputDesc.val( '' );
+			$aggGroupNameInputLanguage.val( '-' );
 
 			var successFunction = function ( data ) {
 				var aggregateGroupId = data.aggregategroups.aggregategroupId;
@@ -436,7 +440,8 @@
 				action: 'aggregategroups',
 				do: 'add',
 				groupname: aggregateGroupName,
-				groupdescription: aggregateGroupDesc
+				groupdescription: aggregateGroupDesc,
+				groupsourcelanguagecode: aggregateGroupLanguage
 			};
 
 			api.postWithToken( 'csrf', params )
