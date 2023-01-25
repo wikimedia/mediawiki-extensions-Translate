@@ -25,7 +25,8 @@
 			"TmY e12",
 			"ToprakM",
 			"Vito Genovese",
-			"LisafBia"
+			"LisafBia",
+			"Hedda"
 		]
 	},
 	"translate": "Çevir",
@@ -59,7 +60,7 @@
 	"translate-page-description-legend": "Grup hakkında bilgi",
 	"translate-page-description-hasoptional": "Bu mesaj grubu isteğe bağlı mesajlar içerir.\nİsteğe bağlı mesajlar yalnızca dilinizin özel gereksinimleri olduğunda çevrilmelidir,\nboşluk kullanmamak veya özel isimleri çevirmek gibi. $1",
 	"translate-page-description-hasoptional-open": "İsteğe bağlı iletileri göster.",
-	"translate-page-edit": "düzenle",
+	"translate-page-edit": "değiştir",
 	"translate-optional": "(isteğe bağlı)",
 	"translate-ignored": "(yoksayıldı)",
 	"translate-edit-title": "\"$1\" sayfayı düzenle",
@@ -350,7 +351,7 @@
 	"tux-tab-outdated": "Eski",
 	"tux-tab-translated": "Çevrildi",
 	"tux-tab-unproofread": "İncelenmemiş",
-	"tux-edit": "Düzenle",
+	"tux-edit": "Değiştir",
 	"tux-status-optional": "İsteğe bağlı",
 	"tux-status-fuzzy": "Eski",
 	"tux-status-proofread": "İncelenmiş",
