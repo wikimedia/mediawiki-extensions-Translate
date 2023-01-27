@@ -10,14 +10,10 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
  * @license GPL-2.0-or-later
  */
 class MessageBundleMetadata {
-	/** @var string|null */
-	private $sourceLanguageCode;
-	/** @var array|null */
-	private $priorityLanguageCodes;
-	/** @var bool */
-	private $allowOnlyPriorityLanguages;
-	/** @var string|null */
-	private $description;
+	private ?string $sourceLanguageCode;
+	private ?array $priorityLanguageCodes;
+	private bool $allowOnlyPriorityLanguages;
+	private ?string $description;
 
 	public function __construct(
 		?string $sourceLanguageCode,

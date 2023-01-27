@@ -20,12 +20,10 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 	private const CACHE_KEY = 'messageBundle';
 	private const CACHE_VERSION = 1;
 
-	/** @var MessageGroupWANCache */
-	protected $cache;
-	/** @var IDatabase */
-	protected $db;
-	/** @var ?array List of groups */
-	protected $groups;
+	protected MessageGroupWANCache $cache;
+	protected IDatabase $db;
+	/** List of groups */
+	protected ?array $groups = null;
 
 	public function __construct( IDatabase $db, MessageGroupWANCache $cache ) {
 		$this->db = $db;
@@ -43,7 +41,7 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 
 	/** @return MessageBundleMessageGroup[] */
 	public function getGroups(): array {
-		if ( $this->groups === null ) {
+		if ( !isset( $this->groups ) ) {
 			$cacheData = $this->cache->getValue();
 			$this->groups = $this->initGroupsFromConf( $cacheData );
 		}

@@ -25,10 +25,8 @@ class MessageBundleContent extends JsonContent {
 		'priorityLanguages',
 		'sourceLanguage'
 	];
-	/** @var array|null */
-	private $messages;
-	/** @var MessageBundleMetadata|null */
-	private $metadata;
+	private ?array $messages = null;
+	private ?MessageBundleMetadata $metadata = null;
 
 	public function __construct( $text, $modelId = self::CONTENT_MODEL_ID ) {
 		parent::__construct( $text, $modelId );
@@ -66,7 +64,7 @@ class MessageBundleContent extends JsonContent {
 
 	/** @throws MalformedBundle */
 	public function getMessages(): array {
-		if ( $this->messages ) {
+		if ( isset( $this->messages ) ) {
 			return $this->messages;
 		}
 
@@ -113,7 +111,7 @@ class MessageBundleContent extends JsonContent {
 	}
 
 	public function getMetadata(): MessageBundleMetadata {
-		if ( $this->metadata ) {
+		if ( isset( $this->metadata ) ) {
 			return $this->metadata;
 		}
 

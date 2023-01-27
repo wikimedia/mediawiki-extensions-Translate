@@ -25,14 +25,10 @@ use TranslateMetadata;
  * @license GPL-2.0-or-later
  */
 class MessageBundleStore implements TranslatableBundleStore {
-	/** @var RevTagStore */
-	private $revTagStore;
-	/** @var JobQueueGroup */
-	private $jobQueue;
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var MessageIndex */
-	private $messageIndex;
+	private RevTagStore $revTagStore;
+	private JobQueueGroup $jobQueue;
+	private LanguageNameUtils $languageNameUtils;
+	private MessageIndex $messageIndex;
 	private const METADATA_KEYS_DB = [
 		'priorityforce',
 		'prioritylangs'

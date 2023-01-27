@@ -24,18 +24,13 @@ use const NS_TRANSLATIONS;
  * @since 2021.12
  */
 class MessageBundleMessageGroup implements MessageGroup {
-	/** @var string Name of the bundle (prefixed text of the bundle page) */
-	private $name;
-	/** @var string */
-	private $groupId;
-	/** @var int */
-	private $pageId;
-	/** @var int */
-	private $revisionId;
-	/** @var array */
-	private $data;
-	/** @var string */
-	private $description;
+	/** Name of the bundle (prefixed text of the bundle page) */
+	private string $name;
+	private string $groupId;
+	private int $pageId;
+	private int $revisionId;
+	private ?array $data = null;
+	private ?string $description;
 
 	public function __construct(
 		string $groupId,
@@ -61,31 +56,32 @@ class MessageBundleMessageGroup implements MessageGroup {
 	}
 
 	private function getData(): array {
-		if ( !$this->data ) {
-			$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
-			$revision = $revisionStore->getRevisionById( $this->revisionId );
-
-			if ( $revision === null ) {
-				throw new LogicException( "Could not find revision id $this->revisionId" );
-			}
-
-			$content = $revision->getContent( SlotRecord::MAIN );
-			if ( !$content instanceof MessageBundleContent ) {
-				throw new LogicException(
-					"Content with revision id $this->revisionId has wrong content format"
-				);
-			}
-
-			$data = json_decode( $content->getText(), true );
-			if ( !$data ) {
-				throw new LogicException(
-					"Content with revision id $this->revisionId is not valid JSON"
-				);
-			}
-
-			$this->data = $data;
+		if ( isset( $this->data ) ) {
+			return $this->data;
 		}
 
+		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
+		$revision = $revisionStore->getRevisionById( $this->revisionId );
+
+		if ( $revision === null ) {
+			throw new LogicException( "Could not find revision id $this->revisionId" );
+		}
+
+		$content = $revision->getContent( SlotRecord::MAIN );
+		if ( !$content instanceof MessageBundleContent ) {
+			throw new LogicException(
+				"Content with revision id $this->revisionId has wrong content format"
+			);
+		}
+
+		$data = json_decode( $content->getText(), true );
+		if ( !$data ) {
+			throw new LogicException(
+				"Content with revision id $this->revisionId is not valid JSON"
+			);
+		}
+
+		$this->data = $data;
 		return $this->data;
 	}
 

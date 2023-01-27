@@ -17,7 +17,6 @@ use Status;
 use Title;
 use User;
 use WANObjectCache;
-use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * @author Niklas Laxström
@@ -29,28 +28,19 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 		'TranslateEnableMessageBundleIntegration',
 	];
 
-	/** @var ?self */
-	private static $instance;
-	/** @var LoggerInterface */
-	private $logger;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var MessageBundleStore */
-	private $messageBundleStore;
-	/** @var WANObjectCache */
-	private $WANObjectCache;
-	/** @var bool */
-	private $enableIntegration;
+	private static self $instance;
+	private LoggerInterface $logger;
+	private MessageBundleStore $messageBundleStore;
+	private WANObjectCache $WANObjectCache;
+	private bool $enableIntegration;
 
 	public function __construct(
 		LoggerInterface $logger,
-		ILoadBalancer $loadBalancer,
 		WANObjectCache $WANObjectCache,
 		MessageBundleStore $messageBundleStore,
 		bool $enableIntegration
 	) {
 		$this->logger = $logger;
-		$this->loadBalancer = $loadBalancer;
 		$this->WANObjectCache = $WANObjectCache;
 		$this->messageBundleStore = $messageBundleStore;
 		$this->enableIntegration = $enableIntegration;
@@ -58,14 +48,12 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 
 	public static function getInstance(): self {
 		$services = MediaWikiServices::getInstance();
-		self::$instance = self::$instance ??
-			new self(
-				LoggerFactory::getInstance( 'Translate.MessageBundle' ),
-				$services->getDBLoadBalancer(),
-				$services->getMainWANObjectCache(),
-				$services->get( 'Translate:MessageBundleStore' ),
-				$services->getMainConfig()->get( 'TranslateEnableMessageBundleIntegration' )
-			);
+		self::$instance ??= new self(
+			LoggerFactory::getInstance( 'Translate.MessageBundle' ),
+			$services->getMainWANObjectCache(),
+			$services->get( 'Translate:MessageBundleStore' ),
+			$services->getMainConfig()->get( 'TranslateEnableMessageBundleIntegration' )
+		);
 		return self::$instance;
 	}
 

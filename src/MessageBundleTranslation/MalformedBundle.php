@@ -13,10 +13,8 @@ use Throwable;
  * @since 2021.05
  */
 class MalformedBundle extends Exception implements MessageSpecifier {
-	/** @var string */
-	private $key;
-	/** @var array */
-	private $params;
+	private string $key;
+	private array $params;
 
 	public function __construct(
 		string $key,

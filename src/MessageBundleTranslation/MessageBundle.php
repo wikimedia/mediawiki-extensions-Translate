@@ -16,8 +16,7 @@ use Wikimedia\Rdbms\Database;
  * @license GPL-2.0-or-later
  */
 class MessageBundle extends TranslatableBundle {
-	/** @var Title */
-	private $title;
+	private Title $title;
 
 	public function __construct( Title $title ) {
 		$this->title = $title;
