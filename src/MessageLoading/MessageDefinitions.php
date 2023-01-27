@@ -12,12 +12,11 @@ use Title;
  * @license GPL-2.0-or-later
  */
 class MessageDefinitions {
-	/** @var int|false */
-	private $namespace;
+	private ?int $namespace;
 	/** @var string[] */
-	private $messages;
-	/** @var Title[] */
-	private $pages;
+	private array $messages;
+	/** @var Title[]|null */
+	private ?array $pages;
 
 	/**
 	 * @param string[] $messages
@@ -25,7 +24,7 @@ class MessageDefinitions {
 	 */
 	public function __construct( array $messages, $namespace = false ) {
 		$this->messages = $messages;
-		$this->namespace = $namespace;
+		$this->namespace = $namespace === false ? null : $namespace;
 	}
 
 	/** @return string[] */
@@ -36,13 +35,13 @@ class MessageDefinitions {
 	/** @return Title[] List of title indexed by message key. */
 	public function getPages(): array {
 		$namespace = $this->namespace;
-		if ( $this->pages !== null ) {
+		if ( isset( $this->pages ) ) {
 			return $this->pages;
 		}
 
 		$pages = [];
 		foreach ( array_keys( $this->messages ) as $key ) {
-			if ( $namespace === false ) {
+			if ( $namespace === null ) {
 				// pages are in format ex. "8:jan"
 				[ $tns, $tkey ] = explode( ':', $key, 2 );
 				$title = Title::makeTitleSafe( $tns, $tkey );

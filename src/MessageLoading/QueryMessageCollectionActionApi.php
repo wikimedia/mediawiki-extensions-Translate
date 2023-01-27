@@ -28,12 +28,9 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup API TranslateAPI
  */
 class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
-	/** @var ConfigHelper */
-	private $configHelper;
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	private ConfigHelper $configHelper;
+	private LanguageNameUtils $languageNameUtils;
+	private ILoadBalancer $loadBalancer;
 
 	public function __construct(
 		ApiQuery $query,

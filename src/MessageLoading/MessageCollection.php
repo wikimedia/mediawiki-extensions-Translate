@@ -44,41 +44,39 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	private const MAX_ITEMS_PER_QUERY = 2000;
 
-	/** @var string Language code. */
-	public $code;
-	/** @var MessageDefinitions */
-	private $definitions = null;
-	/** @var array array( %Message key => translation, ... ) */
-	private $infile = [];
+	/** Language code. */
+	public string $code;
+	private MessageDefinitions $definitions;
+	/** array( %Message key => translation, ... ) */
+	private array $infile = [];
 	// Keys and messages.
 
-	/** @var array array( %Message display key => database key, ... ) */
-	protected $keys = [];
-	/** @var array array( %Message String => TMessage, ... ) */
-	protected $messages = [];
-	/** @var array */
-	private $reverseMap;
+	/** array( %Message display key => database key, ... ) */
+	protected array $keys = [];
+	/** array( %Message String => TMessage, ... ) */
+	protected ?array $messages = [];
+	private ?array $reverseMap;
 	// Database resources
 
-	/** @var ?Traversable Stored message existence and fuzzy state. */
-	private $dbInfo;
-	/** @var ?Traversable Stored translations in database. */
-	private $dbData;
-	/** @var ?Traversable Stored reviews in database. */
-	private $dbReviewData;
+	/** Stored message existence and fuzzy state. */
+	private Traversable $dbInfo;
+	/** Stored translations in database. */
+	private Traversable $dbData;
+	/** Stored reviews in database. */
+	private Traversable $dbReviewData;
 	/**
 	 * Tags, copied to thin messages
 	 * tagtype => keys
 	 * @var array[]
 	 */
-	protected $tags = [];
+	protected array $tags = [];
 	/**
 	 * Properties, copied to thin messages
 	 * @var array[]
 	 */
-	private $properties = [];
+	private array $properties = [];
 	/** @var string[] Authors. */
-	private $authors = [];
+	private array $authors = [];
 
 	/**
 	 * Constructors. Use newFromDefinitions() instead.
@@ -243,9 +241,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function resetForNewLanguage( string $code ): void {
 		$this->code = $code;
 		$this->keys = $this->fixKeys();
-		$this->dbInfo = [];
-		$this->dbData = [];
-		$this->dbReviewData = [];
+		$this->dbInfo = new EmptyIterator();
+		$this->dbData = new EmptyIterator();
+		$this->dbReviewData = new EmptyIterator();
 		$this->messages = null;
 		$this->infile = [];
 		$this->authors = [];
@@ -627,7 +625,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	private function loadInfo( array $keys, ?array $titleConds = null ): void {
-		if ( $this->dbInfo !== [] ) {
+		if ( !$this->dbInfo instanceof EmptyIterator ) {
 			return;
 		}
 
@@ -666,7 +664,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	private function loadReviewInfo( array $keys, ?array $titleConds = null ): void {
-		if ( $this->dbReviewData !== [] ) {
+		if ( !$this->dbReviewData instanceof EmptyIterator ) {
 			return;
 		}
 
@@ -705,7 +703,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	private function loadData( array $keys, ?array $titleConds = null ): void {
-		if ( $this->dbData !== [] ) {
+		if ( !$this->dbData instanceof EmptyIterator ) {
 			return;
 		}
 
@@ -819,7 +817,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 		}
 
-		if ( $this->dbData !== null ) {
+		if ( !$this->dbData instanceof EmptyIterator ) {
 			$slotRows = $revStore->getContentBlobsForBatch(
 				$this->dbData, [ SlotRecord::MAIN ], $queryFlags
 			)->getValue();
@@ -839,16 +837,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		if ( $this->dbInfo !== null ) {
-			$fuzzy = [];
-			foreach ( $this->dbInfo as $row ) {
-				if ( $row->rt_type !== null ) {
-					$fuzzy[] = $this->rowToKey( $row );
-				}
+		$fuzzy = [];
+		foreach ( $this->dbInfo as $row ) {
+			if ( $row->rt_type !== null ) {
+				$fuzzy[] = $this->rowToKey( $row );
 			}
-
-			$this->setTags( 'fuzzy', $fuzzy );
 		}
+
+		$this->setTags( 'fuzzy', $fuzzy );
 
 		// Copy tags if any.
 		foreach ( $this->tags as $type => $keys ) {
