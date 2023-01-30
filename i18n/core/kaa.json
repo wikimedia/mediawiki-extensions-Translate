@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajiniyaz Nurniyazov",
 			"Atabek",
 			"Nurlan"
 		]
@@ -65,6 +66,8 @@
 	"translate-mgs-pagename": "Xabarlamalar toparı statistikası",
 	"translate-mgs-column-language": "Til",
 	"supportedlanguages": "Aktiv tiller",
+	"supportedlanguages-recenttranslations": "eń aqırǵı awdarmalar",
+	"supportedlanguages-count": "Barlıǵı bolıp $1 {{PLURAL:$1|til|til}}.",
 	"translate-jssti-add": "Dizimge qosıw",
 	"translate-smg-rename-cancel": "Biykar etiw",
 	"translate-smg-group-message-tag-outdated": "Jańalawdı talap etedi",
