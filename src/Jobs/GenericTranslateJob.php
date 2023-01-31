@@ -14,8 +14,7 @@ use Psr\Log\LoggerInterface;
  * @since 2019.08
  */
 abstract class GenericTranslateJob extends Job {
-	/** @var LoggerInterface */
-	private $logger;
+	private LoggerInterface $logger;
 
 	/** @var string Channel name to be used during logging */
 	private const CHANNEL_NAME = 'Translate.Jobs';
@@ -25,11 +24,7 @@ abstract class GenericTranslateJob extends Job {
 	 * channel per job, so once instantiated, the same instance is returned.
 	 */
 	private function getLogger(): LoggerInterface {
-		if ( $this->logger ) {
-			return $this->logger;
-		}
-
-		$this->logger = LoggerFactory::getInstance( self::CHANNEL_NAME );
+		$this->logger ??= LoggerFactory::getInstance( self::CHANNEL_NAME );
 		return $this->logger;
 	}
 
