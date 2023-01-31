@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageHandle;
 use MWException;
+use RecentMessageGroup;
 use Title;
 use TMessage;
 use Wikimedia\ParamValidator\ParamValidator;

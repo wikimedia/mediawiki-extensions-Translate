@@ -16,6 +16,7 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MWException;
 use stdClass;
+use TextContent;
 use ThinMessage;
 use TitleValue;
 use TMessage;
