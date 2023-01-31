@@ -92,7 +92,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		$this->addhelpLink( 'Help:Deletion_and_undeletion' );
+		$this->addHelpLink( 'Help:Deletion_and_undeletion' );
 
 		$request = $this->getRequest();
 

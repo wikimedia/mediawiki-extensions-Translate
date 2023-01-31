@@ -534,7 +534,7 @@ class Hooks {
 					'dir' => $lang->getDir(),
 				];
 
-				$contents = Html::Element( 'span', $attribs, $name );
+				$contents = Html::element( 'span', $attribs, $name );
 			} elseif ( $subpage->isKnown() ) {
 				$pagename = $page->getPageDisplayTitle( $code );
 				if ( !is_string( $pagename ) ) {

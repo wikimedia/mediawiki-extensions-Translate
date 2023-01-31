@@ -89,7 +89,7 @@ class TranslationAidDataProvider {
 
 		$data = self::loadTranslationData( wfGetDB( DB_REPLICA ), $this->handle );
 		$translations = [];
-		$prefixLength = strlen( $this->handle->getTitleForBase()->getDBKey() . '/' );
+		$prefixLength = strlen( $this->handle->getTitleForBase()->getDBkey() . '/' );
 		$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
 
 		foreach ( $data as $page => $translation ) {

@@ -288,7 +288,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$htmlForm = HtmlForm::factory( 'ooui', $formDescriptor, $context );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
 
 		/* Since these pages are in the tabgroup with Special:Translate,
 		* it makes sense to retain the selected group/language parameter

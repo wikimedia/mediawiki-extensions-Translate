@@ -119,7 +119,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			if ( $local ) {
 				$pagename = urldecode( substr( $item['location'], $localPrefixLength ) );
 				$item['location'] = $pagename;
-				$handle = new MessageHandle( Title::newfromText( $pagename ) );
+				$handle = new MessageHandle( Title::newFromText( $pagename ) );
 				$item['editorUrl'] = Utilities::getEditorUrl( $handle );
 			}
 		}
@@ -143,7 +143,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			// Likely only needed for non-public DatabaseTTMServer
 			$item['uri'] = $item['uri'] ?? $s->expandLocation( $item );
 			if ( $local ) {
-				$handle = new MessageHandle( Title::newfromText( $item[ 'location' ] ) );
+				$handle = new MessageHandle( Title::newFromText( $item[ 'location' ] ) );
 				$item['editorUrl'] = Utilities::getEditorUrl( $handle );
 			}
 			$items[] = $item;
