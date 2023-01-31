@@ -237,7 +237,7 @@ class ValidationRunner {
 		self::$ignorePatterns = $list;
 	}
 
-	/** Filter validations based on a ignore list. */
+	/** Filter validations based on an ignore list. */
 	private function filterValidations(
 		string $messageKey,
 		ValidationIssues $issues,
@@ -272,7 +272,7 @@ class ValidationRunner {
 	}
 
 	/**
-	 * Match validation information against a ignore pattern.
+	 * Match validation information against an ignore pattern.
 	 *
 	 * @param string|string[] $pattern
 	 * @param string $value The actual value in the validation produced by the validator

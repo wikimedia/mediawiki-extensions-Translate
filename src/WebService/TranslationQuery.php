@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\WebService;
 
 /**
- * Mutable objects that represents a HTTP(S) query.
+ * Mutable objects that represents an HTTP(S) query.
  * NB: Too lazy to make TranslationQueryFactory to make this class immutable.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

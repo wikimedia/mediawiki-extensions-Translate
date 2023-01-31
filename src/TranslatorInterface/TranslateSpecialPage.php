@@ -230,8 +230,8 @@ class TranslateSpecialPage extends SpecialPage {
 		// Check boxes for the "more" tab.
 		// The array keys are used as the name attribute of the checkbox.
 		// in the id attribute as tux-option-KEY,
-		// and and also for the data-filter attribute.
-		// The message is shown as the check box's label.
+		// and also for the data-filter attribute.
+		// The message is shown as the checkbox's label.
 		$options = [
 			'optional' => $this->msg( 'tux-message-filter-optional-messages-label' )->text(),
 		];

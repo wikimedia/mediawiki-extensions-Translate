@@ -94,7 +94,7 @@ class TranslationAidDataProvider {
 
 		foreach ( $data as $page => $translation ) {
 			// Could use MessageHandle here, but that queries the message index.
-			// Instead we can get away with simple string manipulation.
+			// Instead, we can get away with simple string manipulation.
 			$code = substr( $page, $prefixLength );
 			if ( !$languageNameUtils->isKnownLanguageTag( $code ) ) {
 				continue;

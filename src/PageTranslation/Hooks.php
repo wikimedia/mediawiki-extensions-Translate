@@ -289,7 +289,7 @@ class Hooks {
 	 * @param Language|StubUserLang|string &$pageLang
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
-		// For translation pages, parse plural, grammar etc with correct language,
+		// For translation pages, parse plural, grammar etc. with correct language,
 		// and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
 			[ , $code ] = Utilities::figureMessage( $title->getText() );
@@ -558,7 +558,7 @@ class Hooks {
 				$contents = $linker->makeKnownLink( $subpage, $name, $attribs );
 			} else {
 				/* When language is included because it is a priority language,
-				 * but translation does not yet exists, link directly to the
+				 * but translations don't exist link directly to the
 				 * translation view. */
 				$specialTranslateTitle = SpecialPage::getTitleFor( 'Translate' );
 				$params = [
@@ -651,7 +651,7 @@ class Hooks {
 			return null;
 		}
 
-		// If priority languages have been set always show those languages
+		// If priority languages have been set, always show those languages
 		$priorityLangs = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
 		$priorityForce = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
 		$filter = null;

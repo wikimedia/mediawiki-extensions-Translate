@@ -856,7 +856,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			if ( $renameMissing ) {
 				// we probably hit the limit with number of post parameters since neither
-				// addition or deletion key is present.
+				// addition nor deletion key is present.
 				$postponed[$groupId][$language][MessageSourceChange::RENAME][$key] = $params;
 				continue;
 			}

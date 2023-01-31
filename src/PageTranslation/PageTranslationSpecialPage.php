@@ -1122,7 +1122,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 		$newRevisionRecord = $status->value['revision-record'];
-		// In theory it is either null or RevisionRecord object,
+		// In theory, it is either null or RevisionRecord object,
 		// not a RevisionRecord object with null id, but who knows
 		if ( $newRevisionRecord instanceof RevisionRecord ) {
 			$newRevisionId = $newRevisionRecord->getId();

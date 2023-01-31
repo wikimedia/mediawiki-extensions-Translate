@@ -22,7 +22,7 @@ use WANObjectCache;
 
 /**
  * Factory class for accessing message groups individually by id or
- * all of them as an list.
+ * all of them as a list.
  * @todo Clean up the mixed static/member method interface.
  *
  * @author Niklas Laxström

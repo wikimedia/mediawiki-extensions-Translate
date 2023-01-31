@@ -62,7 +62,7 @@ class TranslatorActivityQuery {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			// Warning: user names may be numbers that get casted to ints in array keys
+			// Warning: user names may be numbers that get cast to ints in array keys
 			$data[] = [
 				self::USER_NAME => $row->rev_user_text,
 				self::USER_TRANSLATIONS => (int)$row->count,
@@ -110,7 +110,7 @@ class TranslatorActivityQuery {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			// Warning: user names may be numbers that get casted to ints in array keys
+			// Warning: user names may be numbers that get cast to ints in array keys
 			$data[$row->lang][] = [
 				self::USER_NAME => $row->rev_user_text,
 				self::USER_TRANSLATIONS => (int)$row->count,

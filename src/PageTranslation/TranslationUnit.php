@@ -287,7 +287,7 @@ class TranslationUnit {
 		?TMessage $msg,
 		bool $isInline
 	): bool {
-		// If its not a heading, don't bother adding an anchor
+		// If it's not a heading, don't bother adding an anchor
 		if ( $headingText === null ) {
 			return false;
 		}

@@ -394,7 +394,7 @@ class Utilities {
 	}
 
 	/**
-	 * Get an URL that points to an editor for this message handle.
+	 * Get a URL that points to an editor for this message handle.
 	 * @param MessageHandle $handle
 	 * @return string Domain relative URL
 	 */

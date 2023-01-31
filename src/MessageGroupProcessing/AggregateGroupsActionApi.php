@@ -152,7 +152,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				$this->dieWithError( 'apierror-translate-duplicateaggregategroup', 'duplicateaggregategroup' );
 			}
 
-			// ID already exists- Generate a new ID by adding a number to it.
+			// ID already exists: Generate a new ID by adding a number to it.
 			$idExists = MessageGroups::getGroup( $aggregateGroupId );
 			if ( $idExists ) {
 				$i = 1;
@@ -210,7 +210,7 @@ class AggregateGroupsActionApi extends ApiBase {
 	}
 
 	protected function generateAggregateGroupId( string $aggregateGroupName, string $prefix = 'agg-' ): string {
-		// The database field has maximum limit of 200 bytes
+		// The database field has a maximum limit of 200 bytes
 		if ( strlen( $aggregateGroupName ) + strlen( $prefix ) >= 200 ) {
 			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );
 		} else {

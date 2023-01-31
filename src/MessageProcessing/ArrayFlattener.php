@@ -102,7 +102,7 @@ class ArrayFlattener {
 
 		// Mixed plural keys with other keys, should not happen
 		if ( $hasNonPluralKeys ) {
-			 // Allow `other` with other keys, as long it is is only one of the reserved ones
+			 // Allow `other` with other keys, as long it is only one of the reserved ones
 			if ( $pluralKeys === [ 'other' ] ) {
 				return false;
 			}

@@ -288,7 +288,7 @@ class ManageMessageGroupsActionApi extends ApiBase {
 				$this->dieWithError( 'apierror-translate-rename-msg-new' );
 			}
 
-			// For any other language, its possible for the message to be not found.
+			// For any other language, it's possible for the message to be not found.
 			if ( $msg === null ) {
 				continue;
 			}
