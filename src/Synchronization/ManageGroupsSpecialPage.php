@@ -203,7 +203,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->addHTML(
-			'' .
 			Html::openElement( 'form', [ 'method' => 'post' ] ) .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText(), [
 				'id' => 'smgPageTitle'
