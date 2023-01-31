@@ -110,7 +110,6 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				}
 			}
 
-			/** @var FileBasedMessageGroup $group */
 			$sourceLanguage = $group->getSourceLanguage();
 			try {
 				$sourceDefinitions = $this->loadDefinitions( $group, $sourcePath, $sourceLanguage );

@@ -8,7 +8,6 @@ use Html;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageGroup;
 use SpecialPage;
 use Xml;
 use XmlSelect;
@@ -219,7 +218,6 @@ class TranslationStatsSpecialPage extends SpecialPage {
 	/// Construct a JavaScript enhanced group selector.
 	private function groupSelector(): JsSelectToInput {
 		$groups = MessageGroups::singleton()->getGroups();
-		/** @var MessageGroup $group */
 		foreach ( $groups as $key => $group ) {
 			if ( !$group->exists() ) {
 				unset( $groups[$key] );
@@ -227,7 +225,6 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		}
 		ksort( $groups );
 		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector' );
-		/** @var MessageGroup $name */
 		foreach ( $groups as $code => $name ) {
 			$selector->addOption( $name->getLabel(), $code );
 		}

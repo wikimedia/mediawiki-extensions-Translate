@@ -640,7 +640,6 @@ class MessageGroups {
 
 		// Determine the top level groups of the tree
 		$tree = $groups;
-		/** @var MessageGroup $o */
 		foreach ( $groups as $id => $o ) {
 			if ( !$o->exists() ) {
 				unset( $groups[$id], $tree[$id] );

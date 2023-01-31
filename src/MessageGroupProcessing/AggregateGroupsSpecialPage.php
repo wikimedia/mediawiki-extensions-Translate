@@ -231,7 +231,6 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		}
 
 		$out->addHTML( Html::openElement( 'div', [ 'class' => 'mw-tpa-groups' ] ) );
-		/** @var AggregateMessageGroup $group */
 		foreach ( $aggregates as $group ) {
 			$out->addHTML( $this->showAggregateGroup( $group ) );
 		}
