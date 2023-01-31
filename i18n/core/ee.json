@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Natsubee"
+			"Natsubee",
+			"Amuzujoe"
 		]
 	},
 	"translate": "Ɖe egɔme",
@@ -40,5 +41,6 @@
 	"supportedlanguages-recenttranslations": "gɔmeɖeɖe yeyewo",
 	"translate-manage-import-new": "Du yeye $1",
 	"translate-manage-submit": "Wɔe",
-	"translate-manage-import-done": "Wo wɔ wokatã vɔ!"
+	"translate-manage-import-done": "Wo wɔ wokatã vɔ!",
+	"translate-documentation-language": "Gbedasɛwo ŋuti nuŋlɔɖiwo"
 }
