@@ -116,7 +116,7 @@ class AggregateGroupsActionApi extends ApiBase {
 
 			$aggregateGroupId = $params['aggregategroup'];
 			$group = MessageGroups::getGroup( $aggregateGroupId );
-			if ( !$group || !( $group instanceof AggregateMessageGroup ) ) {
+			if ( !( $group instanceof AggregateMessageGroup ) ) {
 				$this->dieWithError(
 					'apierror-translate-invalidaggregategroupname', 'invalidaggregategroupname'
 				);
