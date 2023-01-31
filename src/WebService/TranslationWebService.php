@@ -208,7 +208,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		$from = $this->mapCode( $sourceLanguage );
 		$to = $this->mapCode( $targetLanguage );
 
-		return isset( $pairs[$sourceLanguage][$targetLanguage] );
+		return isset( $pairs[$from][$to] );
 	}
 
 	/**
