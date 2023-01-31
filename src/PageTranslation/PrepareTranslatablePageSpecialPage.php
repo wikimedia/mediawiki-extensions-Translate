@@ -39,12 +39,11 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 			'jquery.uls.grid'
 		] );
 
-		$out = '';
 		$diff = new DifferenceEngine( $this->getContext() );
 		$diffHeader = $diff->addHeader( ' ', $this->msg( 'pp-diff-old-header' )->escaped(),
 			$this->msg( 'pp-diff-new-header' )->escaped() );
 
-		$out =
+		$output->addHTML(
 			<<<HTML
 			<div class="mw-tpp-sp-container grid">
 				<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form" action="">
@@ -63,8 +62,8 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 					{$diffHeader}
 				</div>
 			</div>
-			HTML;
-		$output->addHTML( $out );
+			HTML
+		);
 		$output->addHTML(
 			Html::errorBox(
 				$this->msg( 'tux-nojs' )->plain(),
