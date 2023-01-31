@@ -15,7 +15,7 @@ use Title;
  * @license GPL-2.0-or-later
  */
 class TranslatableBundleLogFormatter extends LogFormatter {
-	public function getMessageParameters(): array {
+	protected function getMessageParameters(): array {
 		$params = parent::getMessageParameters();
 		$legacy = $this->entry->getParameters();
 

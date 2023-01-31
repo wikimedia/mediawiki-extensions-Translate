@@ -20,7 +20,7 @@ class CaighdeanWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	public function mapCode( string $code ): string {
+	protected function mapCode( string $code ): string {
 		return $code;
 	}
 
