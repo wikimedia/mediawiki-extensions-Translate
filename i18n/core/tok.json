@@ -1,11 +1,43 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Tbodt"
 		]
 	},
+	"translate": "ante toki",
+	"translate-desc": "[[Special:Translate|lipu ilo ni]] la jan li ante toki e ilo MediaWiki e ijo ante mute a",
 	"translate-page-language": "toki",
+	"translate-edit-title": "o ante e toki \"$1\"",
+	"translate-edit-no-information": "<em>toki ni la sona ala li lon. sona ni o lon: ilo li kepeken toki ni lon seme sama seme? sina sona e ni la o pona tawa jan pali ante o pana e sona.</em>",
+	"translate-checks-unicode-plural-missing": "toki ni li wile e toki ilo <nowiki>{{PLURAL|}}</nowiki>.",
+	"translate-checks-unicode-plural-unsupported": "toki ni la toki ilo <nowiki>{{PLURAL|}}</nowiki> li ken ala.",
+	"translate-statsf-count-edits": "nanpa pi mute ante",
 	"translate-language": "toki",
 	"translate-mgs-column-language": "toki",
-	"translate-smg-group-message-message-other-langs": "toki ante:"
+	"translate-smg-group-message-message-other-langs": "toki ante:",
+	"translate-msggroupselector-search-all": "ale",
+	"tux-languageselector": "o ante tawa toki",
+	"tux-tab-all": "ale",
+	"tux-tab-untranslated": "pini ala",
+	"tux-tab-translated": "pini",
+	"tux-edit": "o ante",
+	"tux-status-saving": "ilo li pana...",
+	"tux-editor-save-button-label": "o pana e toki ante",
+	"tux-editor-cancel-button-label": "o ala",
+	"tux-editor-edit-desc": "o ante e sona pi toki ni",
+	"tux-editor-suggestions-title": "ken",
+	"tux-editor-need-more-help": "sina awen sona ala toki ante e ni la",
+	"tux-editor-ask-help": "o wile e sona tan jan pali ilo",
+	"tux-editor-save-failed": "ilo li pana e toki la pakala: $1",
+	"tux-editor-clear-translated": "o weka lukin e pali pini",
+	"tux-editor-doc-editor-cancel": "o ala",
+	"tux-messagetable-more-messages": "toki $1 li kama",
+	"tux-messagetable-loading-messages": "ilo li kama e toki...",
+	"tux-message-filter-placeholder": "o alasa",
+	"tux-message-filter-result": "alasa \"$2\" la toki $1 li lon",
+	"tux-proofread-translated-by-self": "tan sina",
+	"tux-editor-expand-tooltip": "o suli",
+	"tux-editor-collapse-tooltip": "o lili",
+	"tux-editor-loading": "ilo li pali..."
 }

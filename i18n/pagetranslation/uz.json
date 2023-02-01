@@ -11,5 +11,6 @@
 	"aggregategroups": "Agregat guruhlar",
 	"log-name-pagetranslation": "Sahifalarni tarjima qilish qaydlari",
 	"pt-movepage-reason": "Sabab:",
-	"pt-deletepage-reason": "Sabab:"
+	"pt-deletepage-reason": "Sabab:",
+	"pt-deletepage-reason-other": "Boshqa sabab"
 }
