@@ -632,7 +632,7 @@
 				"mediawiki.api",
 				"oojs-ui-widgets"
 			],
-			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.css",
+			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.less",
 			"targets": [
 				"desktop"
 			]
