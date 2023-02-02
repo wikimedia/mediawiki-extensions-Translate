@@ -125,6 +125,7 @@
 	"tpt-aggregategroup-save": "Enregistrer",
 	"tpt-aggregategroup-close": "Fermer",
 	"tpt-aggregategroup-add-new": "Ajouter un nouveau groupe d’agrégation",
+	"tpt-aggregategroup-select-source-language": "Langue source personnalisée (facultatif) :",
 	"tpt-aggregategroup-new-name": "Nom :",
 	"tpt-aggregategroup-new-description": "Description (facultative) :",
 	"tpt-aggregategroup-remove-confirm": "Êtes-vous {{GENDER:|sûr|sure}} de vouloir supprimer ce groupe d’agrégation ?",

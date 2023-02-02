@@ -107,6 +107,7 @@
 	"tpt-aggregategroup-save": "Speichern",
 	"tpt-aggregategroup-close": "Schließen",
 	"tpt-aggregategroup-add-new": "Eine neue Hauptnachrichtengruppe hinzufügen",
+	"tpt-aggregategroup-select-source-language": "Benutzerdefinierte Ausgangssprache (optional):",
 	"tpt-aggregategroup-new-name": "Name:",
 	"tpt-aggregategroup-new-description": "Beschreibung (optional):",
 	"tpt-aggregategroup-remove-confirm": "Bist Du sicher, dass Du diese Gruppe löschen möchtest?",
