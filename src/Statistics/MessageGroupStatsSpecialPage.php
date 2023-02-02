@@ -27,24 +27,19 @@ use TranslateMetadata;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class MessageGroupStatsSpecialPage extends SpecialPage {
-	/** @var bool Whether to hide rows which are fully translated. */
-	private $noComplete = true;
-	/** @var bool Whether to hide rows which are fully untranslated. */
-	private $noEmpty = false;
-	/** @var ?string The target of stats: group id or message prefix. */
-	private $target;
-	/** @var ?string The target type of stats requested: */
-	private $targetType;
-	/** @var ServiceOptions */
-	private $options;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var MessageGroupStatsTableFactory */
-	private $messageGroupStatsTableFactory;
-	/** @var EntitySearch */
-	private $entitySearch;
-	/** @var MessagePrefixStats */
-	private $messagePrefixStats;
+	/** Whether to hide rows which are fully translated. */
+	private bool $noComplete = true;
+	/** Whether to hide rows which are fully untranslated. */
+	private bool $noEmpty = false;
+	/** The target of stats: group id or message prefix. */
+	private string $target;
+	/** The target type of stats requested: */
+	private ?string $targetType = null;
+	private ServiceOptions $options;
+	private JobQueueGroup $jobQueueGroup;
+	private MessageGroupStatsTableFactory $messageGroupStatsTableFactory;
+	private EntitySearch $entitySearch;
+	private MessagePrefixStats $messagePrefixStats;
 
 	private const GROUPS = 'group';
 	private const MESSAGES = 'messages';
@@ -115,6 +110,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		// Whether the form has been submitted, only relevant if not including
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
+		// @phan-suppress-next-line PhanCoalescingNeverNull Need to check if the property is initialized
 		$this->target = $request->getVal( self::GROUPS, $this->target ?? '' );
 		if ( $this->target !== '' ) {
 			$this->targetType = self::GROUPS;
