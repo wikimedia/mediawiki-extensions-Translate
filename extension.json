@@ -981,7 +981,7 @@
 			]
 		},
 		"ext.translate.statsbar": {
-			"styles": "resources/css/ext.translate.statsbar.css",
+			"styles": "resources/css/ext.translate.statsbar.less",
 			"scripts": "resources/js/ext.translate.statsbar.js",
 			"messages": [
 				"translate-statsbar-tooltip",
