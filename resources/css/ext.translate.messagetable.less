@@ -147,7 +147,12 @@
 
 .tux-action-bar .tux-statsbar {
 	position: relative;
-	top: 30px;
+	/**
+	 * Center the statsbar. The center is calculated based on the parent
+	 * height (50px) and subtracting the height of the statsbar (5px) and
+	 * then taking the half of that value.
+	 */
+	top: 22px;
 }
 
 .tux-action-bar .tux-view-switcher {
