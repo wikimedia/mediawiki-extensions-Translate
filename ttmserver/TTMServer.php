@@ -27,33 +27,6 @@ abstract class TTMServer {
 	}
 
 	/**
-	 * @param array $config
-	 * @return TTMServer|null
-	 * @throws MWException
-	 * @deprecated Use Services::getInstance()->getTtmServerFactory()->create()
-	 */
-	public static function factory( array $config ) {
-		// Cannot call factory directly because we don't have the name.
-		if ( isset( $config['class'] ) ) {
-			$class = $config['class'];
-
-			return new $class( $config );
-		} elseif ( isset( $config['type'] ) ) {
-			$type = $config['type'];
-			switch ( $type ) {
-				case 'ttmserver':
-					return new DatabaseTTMServer( $config );
-				case 'remote-ttmserver':
-					return new RemoteTTMServer( $config );
-				default:
-					return null;
-			}
-		}
-
-		throw new MWException( 'TTMServer with no type' );
-	}
-
-	/**
 	 * Returns the primary server instance, useful for chaining.
 	 * Primary instance is defined by $wgTranslateTranslationDefaultService
 	 * which is a key to $wgTranslateTranslationServices.

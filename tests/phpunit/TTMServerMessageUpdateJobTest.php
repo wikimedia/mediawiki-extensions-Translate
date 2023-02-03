@@ -27,10 +27,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 					// mock to the newly created TestableTTMServer instance
 					'name' => 'primary',
 					'mirrors' => [ 'secondary' ],
+					'type' => 'ttmserver'
 				],
 				'secondary' => [
 					'class' => TestableTTMServer::class,
 					'name' => 'secondary',
+					'type' => 'ttmserver'
 				]
 			],
 			'wgTranslateTranslationDefaultService' => 'primary'

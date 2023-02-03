@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -81,35 +83,32 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @return bool
 	 */
 	public function run() {
-		global $wgTranslateTranslationServices,
-			$wgTranslateTranslationDefaultService;
+		global $wgTranslateTranslationDefaultService;
 
 		$service = $this->params['service'];
 		$writeToMirrors = false;
+		$logger = LoggerFactory::getInstance( 'TTMServerUpdates' );
 
 		if ( $service === null ) {
 			$service = $wgTranslateTranslationDefaultService;
 			$writeToMirrors = true;
 		}
 
-		if ( !isset( $wgTranslateTranslationServices[$service] ) ) {
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
-				'Received update job for a an unknown service {service}.',
-				[ 'service' => $service ]
-			);
-			return true;
-		}
-
 		$services = [ $service ];
 		if ( $writeToMirrors ) {
-			$config = $wgTranslateTranslationServices[$service];
-			$server = TTMServer::factory( $config );
-			$services = array_unique(
-				array_merge( $services, $server->getMirrors() )
-			);
+			try {
+				$server = Services::getInstance()->getTtmServerFactory()->create( $service );
+				$services = array_unique( array_merge( $services, $server->getMirrors() ) );
+			} catch ( ServiceCreationFailure $e ) {
+				$logger->error( "Error when creating service: $service" );
+			}
 		}
 
 		foreach ( $services as $service ) {
+			if ( $service === null ) {
+				$logger->warning( 'Empty service Id received' );
+				continue;
+			}
 			$this->runCommandWithRetry( $service );
 		}
 		return true;
@@ -122,22 +121,21 @@ class TTMServerMessageUpdateJob extends Job {
 
 	/**
 	 * Run the update on the specified service name.
-	 *
 	 * @param string $serviceName
 	 */
-	private function runCommandWithRetry( $serviceName ) {
-		global $wgTranslateTranslationServices;
-
-		if ( !isset( $wgTranslateTranslationServices[$serviceName] ) ) {
+	private function runCommandWithRetry( string $serviceName ): void {
+		$ttmServer = null;
+		try {
+			$ttmServer = Services::getInstance()->getTtmServerFactory()->create( $serviceName );
+		} catch ( ServiceCreationFailure $e ) {
 			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
-				'Cannot write to {service}: service is unknown.',
+				'Error when creating TTMServer service instance: {service}',
 				[ 'service' => $serviceName ]
 			);
 			return;
 		}
-		$ttmserver = TTMServer::factory( $wgTranslateTranslationServices[$serviceName] );
 
-		if ( $serviceName === null || !( $ttmserver instanceof WritableTTMServer ) ) {
+		if ( !$ttmServer instanceof WritableTTMServer ) {
 			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
 				'Received update job for a service that does not implement ' .
 				'WritableTTMServer, please check config for {service}.',
@@ -147,7 +145,7 @@ class TTMServerMessageUpdateJob extends Job {
 		}
 
 		try {
-			$this->runCommand( $ttmserver );
+			$this->runCommand( $ttmServer );
 		} catch ( Exception $e ) {
 			$this->requeueError( $serviceName, $e );
 		}

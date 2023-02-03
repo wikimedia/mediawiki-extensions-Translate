@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -71,22 +72,9 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgTranslateTranslationServices,
-			$wgTranslateTranslationDefaultService;
+		$dryRun = $this->hasOption( 'dry-run' );
 
-		$configKey = $this->getOption( 'ttmserver', $wgTranslateTranslationDefaultService );
-		if ( !isset( $wgTranslateTranslationServices[$configKey] ) ) {
-			$this->fatalError( 'Translation memory is not configured properly' );
-		}
-
-		$dryRun = $this->getOption( 'dry-run' );
-		if ( $dryRun ) {
-			$config = [ 'class' => FakeTTMServer::class ];
-		} else {
-			$config = $wgTranslateTranslationServices[$configKey];
-		}
-
-		$server = $this->getServer( $config );
+		$server = $this->getServer( $dryRun );
 		$this->logInfo( "Implementation: " . get_class( $server ) . "\n" );
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
@@ -94,7 +82,7 @@ class TTMServerBootstrap extends Maintenance {
 		$pid = pcntl_fork();
 		if ( $pid === 0 ) {
 			$this->resetStateForFork();
-			$server = $this->getServer( $config );
+			$server = $this->getServer( $dryRun );
 			$this->beginBootstrap( $server );
 			exit();
 		} elseif ( $pid === -1 ) {
@@ -131,7 +119,7 @@ class TTMServerBootstrap extends Maintenance {
 
 			if ( $pid === 0 ) {
 				$this->resetStateForFork();
-				$server = $this->getServer( $config );
+				$server = $this->getServer( $dryRun );
 				$this->exportGroup( $group, $server );
 				exit();
 			} elseif ( $pid === -1 ) {
@@ -167,8 +155,20 @@ class TTMServerBootstrap extends Maintenance {
 		}
 	}
 
-	private function getServer( array $config ): WritableTTMServer {
-		$server = TTMServer::factory( $config );
+	private function getServer( bool $isDryRun ): WritableTTMServer {
+		global $wgTranslateTranslationDefaultService;
+
+		if ( $isDryRun ) {
+			$server = new FakeTTMServer();
+		} else {
+			$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
+			$configKey = $this->getOption( 'ttmserver', $wgTranslateTranslationDefaultService );
+			if ( !$ttmServerFactory->has( $configKey ) ) {
+				$this->fatalError( 'Translation memory is not configured properly' );
+			}
+			$server = $ttmServerFactory->create( $configKey );
+		}
+
 		if ( !$server instanceof WritableTTMServer ) {
 			$this->fatalError( "Service must implement WritableTTMServer" );
 		}

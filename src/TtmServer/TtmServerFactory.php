@@ -5,7 +5,9 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use DatabaseTTMServer;
 use FakeTTMServer;
+use ReadableTTMServer;
 use RemoteTTMServer;
+use SearchableTTMServer;
 use TTMServer;
 use WritableTTMServer;
 
@@ -19,6 +21,11 @@ class TtmServerFactory {
 	private $configs;
 	/** @var ?string */
 	private $default;
+	private const TTMSERVER_CLASSES = [
+		ReadableTTMServer::class,
+		WritableTTMServer::class,
+		SearchableTTMServer::class
+	];
 
 	/** @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories#Configuration */
 	public function __construct( array $configs, ?string $default = null ) {
@@ -33,6 +40,19 @@ class TtmServerFactory {
 			$type = $config['type'] ?? '';
 			if ( $type === 'ttmserver' || $type === 'remote-ttmserver' ) {
 				$ttmServersIds[] = $serviceId;
+			}
+
+			// Translation memory configuration may not define a type, in such
+			// cases we determine whether the service is a TTM server using the
+			// interfaces it implements.
+			$serviceClass = $config['class'] ?? null;
+			if ( $serviceClass !== null ) {
+				foreach ( self::TTMSERVER_CLASSES as $ttmClass ) {
+					if ( $serviceClass instanceof $ttmClass ) {
+						$ttmServersIds[] = $serviceId;
+						break;
+					}
+				}
 			}
 		}
 		return $ttmServersIds;
