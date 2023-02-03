@@ -38,6 +38,8 @@
 	"apihelp-translationcheck-summary": "Vertalingen controleren.",
 	"apihelp-translationcheck-param-translation": "Te controleren vertaling.",
 	"apierror-translate-duplicateaggregategroup": "Berichtgroep bestaat al",
+	"apierror-translate-grouplanguagemismatch": "De taal van de geselecteerde groep ($1) komt niet overeen met die van de geaggregeerde groep ($2).",
+	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "De {{PLURAL:$3|groep $1 heeft|groepen $1 hebben}} niet dezelfde brontaal ($2) als de geaggregeerde groep.",
 	"apierror-translate-invalidgroup": "Groep bestaat niet of is ongeldig",
 	"apierror-translate-invalidlanguage": "De taalcode $1 is ongeldig.",
 	"apierror-translate-invalidupdate": "Ongeldige vernieuwing",

@@ -95,6 +95,7 @@
 	"tpt-aggregategroup-save": "Зачувај",
 	"tpt-aggregategroup-close": "Затвори",
 	"tpt-aggregategroup-add-new": "Додај нова збирна група",
+	"tpt-aggregategroup-select-source-language": "Кориснички зададен изворен јазик (незадолжително):",
 	"tpt-aggregategroup-new-name": "Назив:",
 	"tpt-aggregategroup-new-description": "Опис (незадолжително):",
 	"tpt-aggregategroup-remove-confirm": "Дали сте сигурни дека сакате да ја избришете оваа збирна група?",

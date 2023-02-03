@@ -27,6 +27,8 @@
 	"apihelp-searchtranslations-param-case": "Iskanje brez razlikovanja velikih in malih črk.",
 	"apihelp-translationcheck-param-translation": "Prevod za potrditev.",
 	"apihelp-translationstats-description": "Pridobite statistične podatke o prevajanju, povezane z urejanjem prevodov, aktivnimi prevodi, novimi uporabniki, pregledi prevodov in pregledovalci.",
+	"apierror-translate-grouplanguagemismatch": "Jezik ($1) skupine, ki ste jo izbrali, se ne ujema z jezikom ($2) združene skupine.",
+	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "{{PLURAL:$3|Skupina|Skupine}}: $1, {{PLURAL:$3|nima|nimajo}} istega izvornega jezika ($2) kot združena skupina.",
 	"apierror-translate-invalidlanguage": "Oznaka jezika $1 ni veljavna.",
 	"apierror-translate-language-disabled": "Prevajanje v $1 je onemogočeno.",
 	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",

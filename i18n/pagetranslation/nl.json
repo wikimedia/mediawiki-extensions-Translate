@@ -97,6 +97,7 @@
 	"tpt-aggregategroup-add": "Toevoegen",
 	"tpt-aggregategroup-save": "Opslaan",
 	"tpt-aggregategroup-add-new": "Nieuwe samengevoegde groep toevoegen",
+	"tpt-aggregategroup-select-source-language": "Aangepaste brontaal (optioneel):",
 	"tpt-aggregategroup-new-name": "Naam:",
 	"tpt-aggregategroup-new-description": "Beschrijving (optioneel):",
 	"tpt-aggregategroup-remove-confirm": "Weet u zeker dat u deze samengestelde groep wilt verwijderen?",

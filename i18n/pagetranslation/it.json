@@ -91,6 +91,7 @@
 	"tpt-aggregategroup-save": "Salva",
 	"tpt-aggregategroup-close": "Chiudi",
 	"tpt-aggregategroup-add-new": "Aggiungi un nuovo gruppo aggregato",
+	"tpt-aggregategroup-select-source-language": "Lingua di origine personalizzata (facoltativo):",
 	"tpt-aggregategroup-new-name": "Nome:",
 	"tpt-aggregategroup-new-description": "Descrizione (opzionale):",
 	"tpt-aggregategroup-remove-confirm": "Sei sicuro di voler cancellare questo gruppo aggregato?",
