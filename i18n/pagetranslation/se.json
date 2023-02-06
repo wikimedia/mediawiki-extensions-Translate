@@ -12,6 +12,7 @@
 	"tpt-aggregategroup-save": "Vurke",
 	"tpt-aggregategroup-close": "Gidde",
 	"tpt-aggregategroup-update": "Vurke",
+	"pt-movepage-list-other": "Eará {{PLURAL:$1|oalgesiidu|oalgesiiddut}}",
 	"pt-deletepage-current": "Siidonamma:",
 	"pm-savepages-button-label": "Vurke"
 }

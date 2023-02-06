@@ -15,6 +15,7 @@
 			"Jhonnatanricardo",
 			"Luckas",
 			"Pols12",
+			"Robertpontes",
 			"Rodrigo codignoli",
 			"Shirayuki",
 			555
@@ -109,6 +110,7 @@
 	"tpt-aggregategroup-save": "Salvar",
 	"tpt-aggregategroup-close": "Fechar",
 	"tpt-aggregategroup-add-new": "Adiciona um novo grupo agregador",
+	"tpt-aggregategroup-select-source-language": "Idioma de origem personalizado (opcional):",
 	"tpt-aggregategroup-new-name": "Nome:",
 	"tpt-aggregategroup-new-description": "Descrição (opcional):",
 	"tpt-aggregategroup-remove-confirm": "Tem certeza que deseja remover este grupo agregador?",

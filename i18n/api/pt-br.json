@@ -8,6 +8,7 @@
 			"Fúlvio",
 			"Mello25",
 			"Mordecool",
+			"Robertpontes",
 			"Svjatysberega",
 			"TheEduGobi"
 		]
@@ -150,6 +151,7 @@
 	"apierror-translate-duplicateaggregategroup": "Grupo de mensagens já existe",
 	"apierror-translate-fuzzymessage": "Não é possível revisar as traduções imprecisas",
 	"apierror-translate-groupreviewdisabled": "Revisão do grupo de mensagens não está em uso.",
+	"apierror-translate-grouplanguagemismatch": "A língua ($1) do grupo selecionado não corresponde à língua ($2) do grupo de mensagens agregadas.",
 	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "{{PLURAL:$3|O|Os}} {{PLURAL:$3|grupo|grupos}}: $1, não têm o mesmo idioma de origem ($2) que o grupo agregado.",
 	"apierror-translate-invalidaggregategroup": "Grupo de mensagens agregadas inválido",
 	"apierror-translate-invalidaggregategroupname": "Nome do grupo de mensagens agregado inválido",
