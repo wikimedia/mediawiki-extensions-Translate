@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Atabek",
-			"Nurlan"
+			"Nurlan",
+			"Ajiniyaz Nurniyazov"
 		]
 	},
 	"translate": "Awdarıw",
@@ -65,6 +66,8 @@
 	"translate-percentage-fuzzy": "Jańalawdı talap etedi",
 	"translate-mgs-pagename": "Xabarlamalar toparı statistikası",
 	"translate-mgs-column-language": "Til",
+	"supportedlanguages-recenttranslations": "eń aqırǵı awdarmalar",
+	"supportedlanguages-count": "Barlıǵı bolıp $1 {{PLURAL:$1|til|til}}.",
 	"translate-jssti-add": "Dizimge qosıw",
 	"translate-smg-rename-cancel": "Biykar etiw",
 	"translate-documentation-language": "Xabar hújjetleri",
