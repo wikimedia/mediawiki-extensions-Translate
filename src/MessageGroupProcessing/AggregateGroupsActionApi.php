@@ -234,7 +234,9 @@ class AggregateGroupsActionApi extends ApiBase {
 			}
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
 			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
-			if ( $newLanguageCode !== self::NO_LANGUAGE_CODE ) {
+			if ( $newLanguageCode === self::NO_LANGUAGE_CODE ) {
+				TranslateMetadata::clearMetadata( $aggregateGroupId, [ 'sourcelanguagecode' ] );
+			} else {
 				TranslateMetadata::set( $aggregateGroupId, 'sourcelanguagecode', $newLanguageCode );
 			}
 		}
@@ -260,12 +262,9 @@ class AggregateGroupsActionApi extends ApiBase {
 			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroupId );
 			foreach ( $subgroups as $group ) {
 				$messageGroup = MessageGroups::getGroup( $group );
-				$messageGroupLabel = $messageGroup instanceof WikiPageMessageGroup ?
-					$messageGroup->getTitle() :
-					$messageGroup->getLabel();
 				$messageGroupLanguage = $messageGroup->getSourceLanguage();
 				if ( $messageGroupLanguage !== $sourceLanguageCode ) {
-					$groupsWithDifferentLanguage[] = $messageGroupLabel->getBaseText();
+					$groupsWithDifferentLanguage[] = $messageGroup->getLabel();
 				}
 			}
 
