@@ -318,5 +318,8 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tõlgitud, $2% ülevaadatud, $3% iganenud",
 	"translate-search-more-groups-info": "Veel $1 {{PLURAL:$1|rühm|rühma}}",
 	"tux-nojs": "See tööriist ei tööta ilma JavaScriptita. JavaScript on keelatud, see ei toiminud või selle brauseri tugi puudub.",
-	"specialpages-group-translation": "Tõlkimine"
+	"specialpages-group-translation": "Tõlkimine",
+	"log-action-filter-translationreview": "Toimingu tüüp:",
+	"log-action-filter-translationreview-message": "Üksiku tõlgitud sõnumi ülevaatus",
+	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused"
 }
