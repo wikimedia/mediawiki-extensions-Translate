@@ -18,7 +18,8 @@
  */
 function wfAddNamespace( $id, $name, $constant = null ) {
 	global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
-		$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
+		$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault,
+		$wgVisualEditorAvailableNamespaces;
 
 	if ( $constant === null ) {
 		$constant = strtoupper( "NS_$name" );
@@ -39,4 +40,6 @@ function wfAddNamespace( $id, $name, $constant = null ) {
 	$wgNamespaceProtection[$id] = [ 'translate' ];
 
 	$wgNamespacesToBeSearchedDefault[$id] = true;
+
+	$wgVisualEditorAvailableNamespaces[$id] = false;
 }
