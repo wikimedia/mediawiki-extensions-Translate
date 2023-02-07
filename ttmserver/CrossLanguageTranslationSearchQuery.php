@@ -2,13 +2,14 @@
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
+use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 
 /**
  * Cross Language Translation Search.
  * @since 2015.08
  */
 class CrossLanguageTranslationSearchQuery {
-	/** @var SearchableTTMServer */
+	/** @var SearchableTtmServer */
 	protected $server;
 	/** @var array */
 	protected $params;
@@ -18,7 +19,7 @@ class CrossLanguageTranslationSearchQuery {
 	protected $total = 0;
 	protected $hl = [ '', '' ];
 
-	public function __construct( array $params, SearchableTTMServer $server ) {
+	public function __construct( array $params, SearchableTtmServer $server ) {
 		$this->params = $params;
 		$this->server = $server;
 	}

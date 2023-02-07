@@ -9,6 +9,9 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+
 /**
  * NO-OP version of TTMServer when it is disabled.
  * Keeps other code simpler when they can just do
@@ -16,48 +19,49 @@
  * @since 2012-01-28
  * @ingroup TTMServer
  */
-class FakeTTMServer implements ReadableTTMServer, WritableTTMServer {
-	public function query( $sourceLanguage, $targetLanguage, $text ) {
+class FakeTTMServer implements ReadableTtmServer, WritableTtmServer {
+	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		return [];
 	}
 
-	public function isLocalSuggestion( array $suggestion ) {
+	public function isLocalSuggestion( array $suggestion ): bool {
 		return false;
 	}
 
-	public function expandLocation( array $suggestion ) {
+	public function expandLocation( array $suggestion ): string {
 		return '';
 	}
 
-	public function update( MessageHandle $handle, $targetText ) {
+	public function update( MessageHandle $handle, ?string $targetText ): bool {
+		return true;
 	}
 
-	public function beginBootstrap() {
+	public function beginBootstrap(): void {
 	}
 
-	public function beginBatch() {
+	public function beginBatch(): void {
 	}
 
-	public function batchInsertDefinitions( array $batch ) {
+	public function batchInsertDefinitions( array $batch ): void {
 	}
 
-	public function batchInsertTranslations( array $batch ) {
+	public function batchInsertTranslations( array $batch ): void {
 	}
 
-	public function endBatch() {
+	public function endBatch(): void {
 	}
 
-	public function endBootstrap() {
+	public function endBootstrap(): void {
 	}
 
-	public function getMirrors() {
+	public function getMirrors(): array {
 		return [];
 	}
 
-	public function isFrozen() {
+	public function isFrozen(): bool {
 		return false;
 	}
 
-	public function setDoReIndex() {
+	public function setDoReIndex(): void {
 	}
 }

@@ -16,7 +16,6 @@ use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use Message;
 use MessageHandle;
-use SearchableTTMServer;
 use SpecialPage;
 use Title;
 use TTMServerException;
@@ -71,7 +70,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$this->checkPermissions();
 
 		$server = $this->ttmServerFactory->getDefault();
-		if ( !$server instanceof SearchableTTMServer ) {
+		if ( !$server instanceof SearchableTtmServer ) {
 			throw new ErrorPageError( 'tux-sst-nosolr-title', 'tux-sst-nosolr-body' );
 		}
 

@@ -5,13 +5,15 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+
 /**
  * Mostly test mirroring and failure modes.
  * @covers TTMServerMessageUpdateJob
  */
 class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	/**
-	 * @var WritableTTMServer[] used to link our mocks with TestableTTMServer built by the
+	 * @var WritableTtmServer[] used to link our mocks with TestableTTMServer built by the
 	 * factory
 	 */
 	public static $mockups = [];
@@ -49,11 +51,11 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * jobs
 	 */
 	public function testReplication() {
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
@@ -72,11 +74,11 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * with the appropriate params.
 	 */
 	public function testReplicationError() {
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
@@ -106,12 +108,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * each services
 	 */
 	public function testAllServicesInError() {
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
@@ -152,11 +154,11 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * ensure that we do not replicate the write to its mirror
 	 */
 	public function testJobOnSingleService() {
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->never() )
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
@@ -179,12 +181,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	 * the job by not resending it to queue
 	 */
 	public function testAbandonedJob() {
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
 			->will( $this->throwException( new TTMServerException ) );
 		static::$mockups['primary'] = $mock;
-		$mock = $this->createMock( WritableTTMServer::class );
+		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->never() )
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
@@ -242,7 +244,7 @@ class TestableTTMServerMessageUpdateJob extends TTMServerMessageUpdateJob {
  * - attach our mocks to the Test static context, this is needed because
  *   the factory always creates a new instance of the service
  */
-class TestableTTMServer extends TTMServer implements WritableTTMServer {
+class TestableTTMServer extends TTMServer implements WritableTtmServer {
 	private $delegate;
 
 	public function __construct( array $config ) {
@@ -250,35 +252,36 @@ class TestableTTMServer extends TTMServer implements WritableTTMServer {
 		$this->delegate = TTMServerMessageUpdateJobTest::$mockups[$config['name']];
 	}
 
-	public function update( MessageHandle $handle, $targetText ) {
+	public function update( MessageHandle $handle, ?string $targetText ): bool {
 		$this->delegate->update( $handle, $targetText );
+		return true;
 	}
 
-	public function beginBootstrap() {
+	public function beginBootstrap(): void {
 		$this->delegate->beginBootstrap();
 	}
 
-	public function beginBatch() {
+	public function beginBatch(): void {
 		$this->delegate->beginBatch();
 	}
 
-	public function batchInsertDefinitions( array $batch ) {
+	public function batchInsertDefinitions( array $batch ): void {
 		$this->delegate->batchInsertDefinitions( $batch );
 	}
 
-	public function batchInsertTranslations( array $batch ) {
+	public function batchInsertTranslations( array $batch ): void {
 		$this->delegate->batchInsertTranslations( $batch );
 	}
 
-	public function endBatch() {
+	public function endBatch(): void {
 		$this->delegate->endBatch();
 	}
 
-	public function endBootstrap() {
+	public function endBootstrap(): void {
 		$this->delegate->endBootstrap();
 	}
 
-	public function setDoReIndex() {
-		return $this->delegate->setDoReIndex();
+	public function setDoReIndex(): void {
+		$this->delegate->setDoReIndex();
 	}
 }

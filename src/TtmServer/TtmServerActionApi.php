@@ -7,7 +7,6 @@ use ApiBase;
 use ApiMain;
 use Config;
 use MediaWiki\Config\ServiceOptions;
-use ReadableTTMServer;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -48,7 +47,7 @@ class TtmServerActionApi extends ApiBase {
 		$params = $this->extractRequestParams();
 
 		$server = $this->ttmServerFactory->create( $params[ 'service' ] );
-		if ( !$server instanceof ReadableTTMServer ) {
+		if ( !$server instanceof ReadableTtmServer ) {
 			$this->dieWithError( 'apierror-translate-notranslationservices' );
 		}
 

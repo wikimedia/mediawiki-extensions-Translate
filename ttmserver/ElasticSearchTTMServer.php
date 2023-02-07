@@ -17,8 +17,12 @@ use Elastica\Query\BoolQuery;
 use Elastica\Query\FunctionScore;
 use Elastica\Query\MatchQuery;
 use Elastica\Query\Term;
+use Elastica\ResultSet;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
+use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -29,7 +33,7 @@ use MediaWiki\MediaWikiServices;
  */
 class ElasticSearchTTMServer
 	extends TTMServer
-	implements ReadableTTMServer, WritableTTMServer, SearchableTTMServer
+	implements ReadableTtmServer, WritableTtmServer, SearchableTtmServer
 {
 	/**
 	 * @const int in case a write operation fails during a batch process
@@ -56,15 +60,15 @@ class ElasticSearchTTMServer
 	 */
 	protected $updateMapping = false;
 
-	public function isLocalSuggestion( array $suggestion ) {
+	public function isLocalSuggestion( array $suggestion ): bool {
 		return $suggestion['wiki'] === WikiMap::getCurrentWikiId();
 	}
 
-	public function expandLocation( array $suggestion ) {
+	public function expandLocation( array $suggestion ): string {
 		return $suggestion['uri'];
 	}
 
-	public function query( $sourceLanguage, $targetLanguage, $text ) {
+	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		try {
 			return $this->doQuery( $sourceLanguage, $targetLanguage, $text );
 		} catch ( Exception $e ) {
@@ -225,15 +229,7 @@ class ElasticSearchTTMServer
 
 	/* Write functions */
 
-	/**
-	 * Add / update translations.
-	 *
-	 * @param MessageHandle $handle
-	 * @param ?string $targetText
-	 * @return bool
-	 * @throws RuntimeException
-	 */
-	public function update( MessageHandle $handle, $targetText ) {
+	public function update( MessageHandle $handle, ?string $targetText ): bool {
 		if ( !$handle->isValid() || $handle->getCode() === '' ) {
 			return false;
 		}
@@ -360,7 +356,7 @@ class ElasticSearchTTMServer
 	 *
 	 * @throws RuntimeException
 	 */
-	public function beginBootstrap() {
+	public function beginBootstrap(): void {
 		$this->checkElasticsearchVersion();
 		$index = $this->getIndex();
 		if ( $this->updateMapping ) {
@@ -422,15 +418,14 @@ class ElasticSearchTTMServer
 		$this->waitUntilReady();
 	}
 
-	public function beginBatch() {
-		// I hate the rule that forbids {}
+	public function beginBatch(): void {
 	}
 
 	/**
 	 * @param array[] $batch
 	 * @phan-param array<int,array{0:MessageHandle,1:string,2:string}> $batch
 	 */
-	public function batchInsertDefinitions( array $batch ) {
+	public function batchInsertDefinitions( array $batch ): void {
 		$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 		foreach ( $batch as $data ) {
 			$lb->addObj( $data[0]->getTitle() );
@@ -440,7 +435,7 @@ class ElasticSearchTTMServer
 		$this->batchInsertTranslations( $batch );
 	}
 
-	public function batchInsertTranslations( array $batch ) {
+	public function batchInsertTranslations( array $batch ): void {
 		$docs = [];
 		foreach ( $batch as $data ) {
 			[ $handle, $sourceLanguage, $text ] = $data;
@@ -461,11 +456,10 @@ class ElasticSearchTTMServer
 		);
 	}
 
-	public function endBatch() {
-		// I hate the rule that forbids {}
+	public function endBatch(): void {
 	}
 
-	public function endBootstrap() {
+	public function endBootstrap(): void {
 		$index = $this->getIndex();
 		$index->refresh();
 		$index->forcemerge();
@@ -582,11 +576,7 @@ class ElasticSearchTTMServer
 		}
 	}
 
-	/**
-	 * Force the update of index mappings
-	 * @inheritDoc
-	 */
-	public function setDoReIndex() {
+	public function setDoReIndex(): void {
 		$this->updateMapping = true;
 	}
 
@@ -734,7 +724,7 @@ class ElasticSearchTTMServer
 	 * @param array $opts
 	 * @param array $highlight
 	 * @throws TTMServerException
-	 * @return \Elastica\ResultSet
+	 * @return ResultSet
 	 */
 	public function search( $queryString, $opts, $highlight ) {
 		$search = $this->createSearch( $queryString, $opts, $highlight );
@@ -746,11 +736,9 @@ class ElasticSearchTTMServer
 		}
 	}
 
-	/**
-	 * @param \Elastica\ResultSet $resultset
-	 * @return array
-	 */
-	public function getFacets( $resultset ) {
+	/** @inheritDoc */
+	public function getFacets( $resultset ): array {
+		$this->assertResultSetInstance( $resultset );
 		$aggs = $resultset->getAggregations();
 		'@phan-var array[][][] $aggs';
 
@@ -768,19 +756,15 @@ class ElasticSearchTTMServer
 		return $ret;
 	}
 
-	/**
-	 * @param \Elastica\ResultSet $resultset
-	 * @return int
-	 */
-	public function getTotalHits( $resultset ) {
+	/** @inheritDoc */
+	public function getTotalHits( $resultset ): int {
+		$this->assertResultSetInstance( $resultset );
 		return $resultset->getTotalHits();
 	}
 
-	/**
-	 * @param \Elastica\ResultSet $resultset
-	 * @return array
-	 */
-	public function getDocuments( $resultset ) {
+	/** @inheritDoc */
+	public function getDocuments( $resultset ): array {
+		$this->assertResultSetInstance( $resultset );
 		$ret = [];
 		foreach ( $resultset->getResults() as $document ) {
 			$data = $document->getData();
@@ -844,5 +828,15 @@ class ElasticSearchTTMServer
 
 	private function useElastica6(): bool {
 		return class_exists( '\Elastica\Type' );
+	}
+
+	private function assertResultSetInstance( $resultset ): void {
+		if ( $resultset instanceof ResultSet ) {
+			return;
+		}
+
+		throw new RuntimeException(
+			"Expected resultset to be an instance of " . ResultSet::class
+		);
 	}
 }

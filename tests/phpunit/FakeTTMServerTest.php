@@ -18,7 +18,7 @@ class FakeTTMServerTest extends MediaWikiIntegrationTestCase {
 		$title = $this->createMock( Title::class );
 		$handle = new MessageHandle( $title );
 
-		$this->assertNull(
+		$this->assertTrue(
 			$server->update( $handle, 'text' ),
 			'FakeTTMServer update is no-op and always succeeds'
 		);

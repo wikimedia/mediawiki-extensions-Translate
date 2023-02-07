@@ -5,11 +5,8 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use DatabaseTTMServer;
 use FakeTTMServer;
-use ReadableTTMServer;
 use RemoteTTMServer;
-use SearchableTTMServer;
 use TTMServer;
-use WritableTTMServer;
 
 /**
  * @since 2021.01
@@ -20,9 +17,9 @@ class TtmServerFactory {
 	private array $configs;
 	private ?string $default;
 	private const TTMSERVER_CLASSES = [
-		ReadableTTMServer::class,
-		WritableTTMServer::class,
-		SearchableTTMServer::class
+		ReadableTtmServer::class,
+		WritableTtmServer::class,
+		SearchableTtmServer::class
 	];
 
 	/** @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories#Configuration */
@@ -90,7 +87,7 @@ class TtmServerFactory {
 	}
 
 	/** Return the primary service or a no-op fallback if primary cannot be constructed. */
-	public function getDefault(): WritableTTMServer {
+	public function getDefault(): WritableTtmServer {
 		$service = null;
 
 		try {
@@ -100,7 +97,7 @@ class TtmServerFactory {
 		} catch ( ServiceCreationFailure $e ) {
 		}
 
-		if ( $service instanceof WritableTTMServer ) {
+		if ( $service instanceof WritableTtmServer ) {
 			return $service;
 		}
 

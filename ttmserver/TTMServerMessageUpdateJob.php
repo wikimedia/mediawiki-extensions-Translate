@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -135,10 +136,10 @@ class TTMServerMessageUpdateJob extends Job {
 			return;
 		}
 
-		if ( !$ttmServer instanceof WritableTTMServer ) {
+		if ( !$ttmServer instanceof WritableTtmServer ) {
 			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
 				'Received update job for a service that does not implement ' .
-				'WritableTTMServer, please check config for {service}.',
+				'WritableTtmServer, please check config for {service}.',
 				[ 'service' => $serviceName ]
 			);
 			return;
@@ -202,7 +203,7 @@ class TTMServerMessageUpdateJob extends Job {
 		$this->jobQueueGroup->push( $job );
 	}
 
-	private function runCommand( WritableTTMServer $ttmserver ) {
+	private function runCommand( WritableTtmServer $ttmserver ) {
 		$handle = $this->getHandle();
 		$command = $this->params['command'];
 
@@ -238,7 +239,7 @@ class TTMServerMessageUpdateJob extends Job {
 		);
 	}
 
-	private function updateMessage( WritableTTMServer $ttmserver, MessageHandle $handle ) {
+	private function updateMessage( WritableTtmServer $ttmserver, MessageHandle $handle ) {
 		// Base page update, e.g. group change. Update everything.
 		$translations = Utilities::getTranslations( $handle );
 		foreach ( $translations as $page => $data ) {
@@ -248,13 +249,13 @@ class TTMServerMessageUpdateJob extends Job {
 		}
 	}
 
-	private function updateTranslation( WritableTTMServer $ttmserver, MessageHandle $handle ) {
+	private function updateTranslation( WritableTtmServer $ttmserver, MessageHandle $handle ) {
 		// Update only this translation
 		$translation = $this->getTranslation( $handle );
 		$this->updateItem( $ttmserver, $handle, $translation, $handle->isFuzzy() );
 	}
 
-	private function updateItem( WritableTTMServer $ttmserver, MessageHandle $handle, $text, $fuzzy ) {
+	private function updateItem( WritableTtmServer $ttmserver, MessageHandle $handle, $text, $fuzzy ) {
 		if ( $fuzzy ) {
 			$text = null;
 		}

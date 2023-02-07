@@ -9,6 +9,8 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBQueryError;
 
@@ -17,7 +19,7 @@ use Wikimedia\Rdbms\DBQueryError;
  * @ingroup TTMServer
  * @since 2012-06-27
  */
-class DatabaseTTMServer extends TTMServer implements WritableTTMServer, ReadableTTMServer {
+class DatabaseTTMServer extends TTMServer implements WritableTtmServer, ReadableTtmServer {
 	protected $sids;
 
 	/**
@@ -28,7 +30,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		return wfGetDB( $mode, 'ttmserver', $this->config['database'] );
 	}
 
-	public function update( MessageHandle $handle, $targetText ) {
+	public function update( MessageHandle $handle, ?string $targetText ): bool {
 		if ( !$handle->isValid() || $handle->getCode() === '' ) {
 			return false;
 		}
@@ -143,7 +145,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		return $segments;
 	}
 
-	public function beginBootstrap() {
+	public function beginBootstrap(): void {
 		$dbw = $this->getDB( DB_PRIMARY );
 		$dbw->delete( 'translate_tms', '*', __METHOD__ );
 		$dbw->delete( 'translate_tmt', '*', __METHOD__ );
@@ -157,11 +159,11 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		}
 	}
 
-	public function beginBatch() {
+	public function beginBatch(): void {
 		$this->sids = [];
 	}
 
-	public function batchInsertDefinitions( array $batch ) {
+	public function batchInsertDefinitions( array $batch ): void {
 		foreach ( $batch as $key => $item ) {
 			list( $title, $language, $text ) = $item;
 			$handle = new MessageHandle( $title );
@@ -172,7 +174,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$lbFactory->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
-	public function batchInsertTranslations( array $batch ) {
+	public function batchInsertTranslations( array $batch ): void {
 		$rows = [];
 		foreach ( $batch as $key => $data ) {
 			list( , $language, $text ) = $data;
@@ -189,10 +191,10 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$lbFactory->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
-	public function endBatch() {
+	public function endBatch(): void {
 	}
 
-	public function endBootstrap() {
+	public function endBootstrap(): void {
 		$dbw = $this->getDB( DB_PRIMARY );
 		$table = $dbw->tableName( 'translate_tmf' );
 		$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)", __METHOD__ );
@@ -200,17 +202,17 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 	/* Reading interface */
 
-	public function isLocalSuggestion( array $suggestion ) {
+	public function isLocalSuggestion( array $suggestion ): bool {
 		return true;
 	}
 
-	public function expandLocation( array $suggestion ) {
+	public function expandLocation( array $suggestion ): string {
 		$title = Title::newFromText( $suggestion['location'] );
 
 		return $title->getCanonicalURL();
 	}
 
-	public function query( $sourceLanguage, $targetLanguage, $text ) {
+	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		// Calculate the bounds of the string length which are able
 		// to satisfy the cutoff percentage in edit distance.
 		$len = mb_strlen( $text );
@@ -283,6 +285,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		return $results;
 	}
 
-	public function setDoReIndex() {
+	public function setDoReIndex(): void {
 	}
 }

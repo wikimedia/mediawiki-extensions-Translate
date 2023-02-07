@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -30,7 +31,7 @@ abstract class TTMServer {
 	 * Returns the primary server instance, useful for chaining.
 	 * Primary instance is defined by $wgTranslateTranslationDefaultService
 	 * which is a key to $wgTranslateTranslationServices.
-	 * @return WritableTTMServer
+	 * @return WritableTtmServer
 	 * @deprecated Use Services::getInstance()->getTtmServerFactory()->getDefault()
 	 */
 	public static function primary() {
@@ -131,7 +132,7 @@ abstract class TTMServer {
 	}
 
 	/** @return string[] */
-	public function getMirrors() {
+	public function getMirrors(): array {
 		global $wgTranslateTranslationServices;
 		if ( isset( $this->config['mirrors'] ) ) {
 			$mirrors = [];
@@ -152,7 +153,7 @@ abstract class TTMServer {
 	}
 
 	/** @return bool */
-	public function isFrozen() {
+	public function isFrozen(): bool {
 		return false;
 	}
 }

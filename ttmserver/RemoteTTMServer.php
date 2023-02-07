@@ -9,6 +9,8 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
+
 /**
  * Class for handling remote TTMServers over MediaWiki API.
  * Currently querying is done in TranslationHelpers, and
@@ -16,17 +18,17 @@
  * @since 2012-06-27
  * @ingroup TTMServer
  */
-class RemoteTTMServer extends TTMServer implements ReadableTTMServer {
-	public function query( $sourceLanguage, $targetLanguage, $text ) {
+class RemoteTTMServer extends TTMServer implements ReadableTtmServer {
+	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		// @todo Implement some day perhaps?
 		return [];
 	}
 
-	public function isLocalSuggestion( array $suggestion ) {
+	public function isLocalSuggestion( array $suggestion ): bool {
 		return false;
 	}
 
-	public function expandLocation( array $suggestion ) {
+	public function expandLocation( array $suggestion ): string {
 		return $suggestion['location'];
 	}
 }

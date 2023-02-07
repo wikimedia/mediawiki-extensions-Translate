@@ -8,7 +8,6 @@ use ApiMain;
 use Config;
 use CrossLanguageTranslationSearchQuery;
 use MediaWiki\Config\ServiceOptions;
-use SearchableTTMServer;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
@@ -47,7 +46,7 @@ class SearchTranslationsActionApi extends ApiBase {
 		$params = $this->extractRequestParams();
 
 		$server = $this->ttmServerFactory->create( $params[ 'service' ] );
-		if ( !$server instanceof SearchableTTMServer ) {
+		if ( !$server instanceof SearchableTtmServer ) {
 			$this->dieWithError( 'apierror-translate-notranslationservices' );
 		}
 
@@ -77,7 +76,7 @@ class SearchTranslationsActionApi extends ApiBase {
 		$good = [];
 		foreach ( $ttmServiceIds as $serviceId ) {
 			$ttmServer = $this->ttmServerFactory->create( $serviceId );
-			if ( $ttmServer instanceof SearchableTTMServer ) {
+			if ( $ttmServer instanceof SearchableTtmServer ) {
 				$good[] = $serviceId;
 			}
 		}

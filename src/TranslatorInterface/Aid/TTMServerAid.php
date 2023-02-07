@@ -7,13 +7,13 @@ use Exception;
 use IContextSource;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
+use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
 use MessageGroup;
 use MessageHandle;
-use ReadableTTMServer;
 use Title;
 use TTMServer;
 
@@ -128,7 +128,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 
 	protected function formatInternalSuggestions(
 		array $queryData,
-		ReadableTTMServer $s,
+		ReadableTtmServer $s,
 		string $serviceName,
 		string $sourceLanguage
 	): array {
@@ -152,7 +152,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		return $items;
 	}
 
-	/** @return ReadableTTMServer[] */
+	/** @return ReadableTtmServer[] */
 	private function getInternalServices(): array {
 		$services = $this->getQueryableServices();
 		foreach ( $services as $name => $config ) {

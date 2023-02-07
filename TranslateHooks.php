@@ -31,6 +31,7 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpeci
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
+use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
@@ -696,7 +697,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			return true;
 		}
 
-		if ( TTMServer::primary() instanceof SearchableTTMServer ) {
+		if ( TTMServer::primary() instanceof SearchableTtmServer ) {
 			$href = SpecialPage::getTitleFor( 'SearchTranslations' )
 				->getFullUrl( [ 'query' => $term ] );
 			$form = Html::successBox(

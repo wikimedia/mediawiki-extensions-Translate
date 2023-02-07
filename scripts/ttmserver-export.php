@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -73,8 +74,10 @@ class TTMServerBootstrap extends Maintenance {
 
 	public function execute() {
 		$dryRun = $this->hasOption( 'dry-run' );
+		$ttmServerId = $this->getOption( 'ttmserver' );
+		$shouldReindex = $this->getOption( 'reindex', false );
 
-		$server = $this->getServer( $dryRun );
+		$server = $this->getServer( $dryRun, $shouldReindex, $ttmServerId );
 		$this->logInfo( "Implementation: " . get_class( $server ) . "\n" );
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
@@ -82,7 +85,7 @@ class TTMServerBootstrap extends Maintenance {
 		$pid = pcntl_fork();
 		if ( $pid === 0 ) {
 			$this->resetStateForFork();
-			$server = $this->getServer( $dryRun );
+			$server = $this->getServer( $dryRun, $shouldReindex, $ttmServerId );
 			$this->beginBootstrap( $server );
 			exit();
 		} elseif ( $pid === -1 ) {
@@ -119,7 +122,7 @@ class TTMServerBootstrap extends Maintenance {
 
 			if ( $pid === 0 ) {
 				$this->resetStateForFork();
-				$server = $this->getServer( $dryRun );
+				$server = $this->getServer( $dryRun, $shouldReindex, $ttmServerId );
 				$this->exportGroup( $group, $server );
 				exit();
 			} elseif ( $pid === -1 ) {
@@ -155,22 +158,26 @@ class TTMServerBootstrap extends Maintenance {
 		}
 	}
 
-	private function getServer( bool $isDryRun ): WritableTTMServer {
+	private function getServer(
+		bool $isDryRun,
+		bool $shouldReindex,
+		?string $ttmServerId = null
+	): WritableTTMServer {
 		global $wgTranslateTranslationDefaultService;
 
 		if ( $isDryRun ) {
 			$server = new FakeTTMServer();
 		} else {
 			$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
-			$configKey = $this->getOption( 'ttmserver', $wgTranslateTranslationDefaultService );
+			$configKey = $ttmServerId ?? $wgTranslateTranslationDefaultService;
 			if ( !$ttmServerFactory->has( $configKey ) ) {
 				$this->fatalError( 'Translation memory is not configured properly' );
 			}
 			$server = $ttmServerFactory->create( $configKey );
 		}
 
-		if ( !$server instanceof WritableTTMServer ) {
-			$this->fatalError( "Service must implement WritableTTMServer" );
+		if ( !$server instanceof WritableTtmServer ) {
+			$this->fatalError( "Service must implement WritableTtmServer" );
 		}
 
 		if ( method_exists( $server, 'setLogger' ) ) {
@@ -178,7 +185,7 @@ class TTMServerBootstrap extends Maintenance {
 			$server->setLogger( $this );
 		}
 
-		if ( $this->getOption( 'reindex', false ) ) {
+		if ( $shouldReindex ) {
 			// This doesn't do the update, just sets a flag to do it
 			$server->setDoReIndex();
 		}
@@ -186,17 +193,17 @@ class TTMServerBootstrap extends Maintenance {
 		return $server;
 	}
 
-	protected function beginBootstrap( WritableTTMServer $server ) {
+	protected function beginBootstrap( WritableTtmServer $server ) {
 		$this->statusLine( "Cleaning up old entries...\n" );
 		$server->beginBootstrap();
 	}
 
-	protected function endBootstrap( WritableTTMServer $server ) {
+	protected function endBootstrap( WritableTtmServer $server ) {
 		$this->statusLine( "Optimizing...\n" );
 		$server->endBootstrap();
 	}
 
-	protected function exportGroup( MessageGroup $group, WritableTTMServer $server ) {
+	protected function exportGroup( MessageGroup $group, WritableTtmServer $server ) {
 		$times = [
 			'total' => -microtime( true ),
 			'stats' => 0,
