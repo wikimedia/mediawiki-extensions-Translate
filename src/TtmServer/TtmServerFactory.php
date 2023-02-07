@@ -17,10 +17,8 @@ use WritableTTMServer;
  * @author Niklas Laxström
  */
 class TtmServerFactory {
-	/** @var array */
-	private $configs;
-	/** @var ?string */
-	private $default;
+	private array $configs;
+	private ?string $default;
 	private const TTMSERVER_CLASSES = [
 		ReadableTTMServer::class,
 		WritableTTMServer::class,
