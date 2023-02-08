@@ -15,7 +15,7 @@ use MediaWiki\Revision\RevisionRecord;
  * Tests for fuzzy flag change on edits.
  * @group Database
  * @group medium
- * @covers TranslateEditAddons
+ * @covers MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
  */
 class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

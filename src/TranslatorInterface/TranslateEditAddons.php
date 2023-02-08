@@ -1,26 +1,35 @@
 <?php
-/**
- * Tools for edit page view to aid translators. This implements the so called
- * old style editing, which extends the normal edit page.
- *
- * @file
- * @author Niklas Laxström
- * @author Siebrand Mazeland
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use DeferredUpdates;
+use FatMessage;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Storage\EditResult;
 use MediaWiki\User\UserIdentity;
+use MessageGroupStatesUpdaterJob;
+use MessageGroupStats;
+use MessageHandle;
+use ParserOptions;
+use TextContent;
+use Title;
+use TTMServer;
+use User;
+use WikiPage;
 
 /**
  * Various editing enhancements to the edit page interface.
  * Partly succeeded by the new ajax-enhanced editor but kept for compatibility.
  * Also has code that is still relevant, like the hooks on save.
+ *
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @license GPL-2.0-or-later
  */
 class TranslateEditAddons {
 	/**
@@ -31,11 +40,13 @@ class TranslateEditAddons {
 	 * @param User $user
 	 * @param string $action
 	 * @param mixed &$result
-	 * @return bool
 	 */
-	public static function disallowLangTranslations( Title $title, User $user,
-		$action, &$result
-	) {
+	public static function disallowLangTranslations(
+		Title $title,
+		User $user,
+		string $action,
+		&$result
+	): bool {
 		if ( $action !== 'edit' ) {
 			return true;
 		}
@@ -78,31 +89,22 @@ class TranslateEditAddons {
 
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
-	 *
 	 * Hook: PageSaveComplete
-	 * @param WikiPage $wikiPage
-	 * @param UserIdentity $userIdentity
-	 * @param string $summary
-	 * @param int $flags
-	 * @param RevisionRecord $revisionRecord
-	 * @param EditResult $editResult
-	 * @return true
 	 */
 	public static function onSaveComplete(
 		WikiPage $wikiPage,
 		UserIdentity $userIdentity,
 		string $summary,
 		int $flags,
-		RevisionRecord $revisionRecord,
-		EditResult $editResult
-	) {
+		RevisionRecord $revisionRecord
+	): void {
 		global $wgEnablePageTranslation;
 
 		$content = $wikiPage->getContent();
 
 		if ( !$content instanceof TextContent ) {
 			// Screw it, not interested
-			return true;
+			return;
 		}
 
 		$text = $content->getText();
@@ -110,7 +112,7 @@ class TranslateEditAddons {
 		$handle = new MessageHandle( $title );
 
 		if ( !$handle->isValid() ) {
-			return true;
+			return;
 		}
 
 		// Update it.
@@ -137,11 +139,13 @@ class TranslateEditAddons {
 				MessageGroupStatesUpdaterJob::onChange( $handle );
 			}
 		);
+		$mwServices = MediaWikiServices::getInstance();
+		$user = $mwServices->getUserFactory()
+			->newFromId( $userIdentity->getId() );
 
-		$user = User::newFromIdentity( $userIdentity );
-
-		if ( $fuzzy === false ) {
-			Hooks::run( 'Translate:newTranslation', [ $handle, $revId, $text, $user ] );
+		if ( !$fuzzy ) {
+			$mwServices->getHookContainer()
+			->run( 'Translate:newTranslation', [ $handle, $revId, $text, $user ] );
 		}
 
 		TTMServer::onChange( $handle );
@@ -152,17 +156,10 @@ class TranslateEditAddons {
 			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
 				$summary, $minor, $flags, $handle );
 		}
-
-		return true;
 	}
 
-	/**
-	 * Returns true if message is fuzzy, OR fails checks OR fails validations (error OR warning).
-	 * @param MessageHandle $handle
-	 * @param string $text
-	 * @return bool
-	 */
-	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
+	/** Returns true if message is fuzzy, OR fails checks OR fails validations (error OR warning). */
+	private static function checkNeedsFuzzy( MessageHandle $handle, string $text ): bool {
 		// Docs are exempt for checks
 		if ( $handle->isDoc() ) {
 			return false;
@@ -210,10 +207,9 @@ class TranslateEditAddons {
 	 * @param Title $title
 	 * @param int $revision
 	 * @param bool $fuzzy Whether to fuzzy or not
-	 * @return bool Whether status changed
 	 */
-	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+	private static function updateFuzzyTag( Title $title, int $revision, bool $fuzzy ): void {
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),
@@ -222,14 +218,12 @@ class TranslateEditAddons {
 		];
 
 		// Replace the existing fuzzy tag, if any
-		if ( $fuzzy !== false ) {
+		if ( $fuzzy ) {
 			$index = array_keys( $conds );
 			$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
 		} else {
 			$dbw->delete( 'revtag', $conds, __METHOD__ );
 		}
-
-		return (bool)$dbw->affectedRows();
 	}
 
 	/**
@@ -237,15 +231,13 @@ class TranslateEditAddons {
 	 * This is used to show diff against current version of source message
 	 * when updating a translation.
 	 * Hook: Translate:newTranslation
-	 * @param MessageHandle $handle
-	 * @param int $revision
-	 * @param string $text
-	 * @param User $user
-	 * @return bool
 	 */
-	public static function updateTransverTag( MessageHandle $handle, $revision,
-		$text, User $user
-	) {
+	public static function updateTransverTag(
+		MessageHandle $handle,
+		int $revision,
+		string $text,
+		User $user
+	): bool {
 		if ( $user->isAllowed( 'bot' ) ) {
 			return false;
 		}
@@ -260,8 +252,9 @@ class TranslateEditAddons {
 		}
 
 		$definitionRevision = $definitionTitle->getLatestRevID();
-
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()
+			->getDBLoadBalancer()
+			->getConnection( DB_PRIMARY );
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),
@@ -275,13 +268,11 @@ class TranslateEditAddons {
 		return true;
 	}
 
-	/**
-	 * Hook: ArticlePrepareTextForEdit
-	 * @param WikiPage $wikiPage
-	 * @param ParserOptions $popts
-	 * @return bool
-	 */
-	public static function disablePreSaveTransform( WikiPage $wikiPage, ParserOptions $popts ) {
+	/** Hook: ArticlePrepareTextForEdit */
+	public static function disablePreSaveTransform(
+		WikiPage $wikiPage,
+		ParserOptions $popts
+	): void {
 		global $wgTranslateUsePreSaveTransform;
 
 		if ( !$wgTranslateUsePreSaveTransform ) {
@@ -290,7 +281,5 @@ class TranslateEditAddons {
 				$popts->setPreSaveTransform( false );
 			}
 		}
-
-		return true;
 	}
 }
