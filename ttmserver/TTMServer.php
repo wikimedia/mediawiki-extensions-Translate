@@ -8,8 +8,6 @@
  * @defgroup TTMServer The Translate extension translation memory interface
  */
 
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -25,17 +23,6 @@ abstract class TTMServer {
 	/** @param array $config */
 	public function __construct( array $config ) {
 		$this->config = $config;
-	}
-
-	/**
-	 * Returns the primary server instance, useful for chaining.
-	 * Primary instance is defined by $wgTranslateTranslationDefaultService
-	 * which is a key to $wgTranslateTranslationServices.
-	 * @return WritableTtmServer
-	 * @deprecated Use Services::getInstance()->getTtmServerFactory()->getDefault()
-	 */
-	public static function primary() {
-		return Services::getInstance()->getTtmServerFactory()->getDefault();
 	}
 
 	/**

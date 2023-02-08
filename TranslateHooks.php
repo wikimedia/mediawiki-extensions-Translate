@@ -24,6 +24,7 @@ use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons;
@@ -697,7 +698,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 			return true;
 		}
 
-		if ( TTMServer::primary() instanceof SearchableTtmServer ) {
+		if ( Services::getInstance()->getTtmServerFactory()->getDefault() instanceof SearchableTtmServer ) {
 			$href = SpecialPage::getTitleFor( 'SearchTranslations' )
 				->getFullUrl( [ 'query' => $term ] );
 			$form = Html::successBox(
