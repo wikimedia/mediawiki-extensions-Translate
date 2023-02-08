@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
-			"Chadyka"
+			"Chadyka",
+			"Plaga med"
 		]
 	},
 	"managetranslatorsandbox": "Упраўленне пясочніцай перакладу",
@@ -42,12 +43,12 @@
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|выкананы пераклад|выкананыя пераклады|выкананых перакладаў}}",
 	"translate-translationstash-skip-button-label": "Паспрабуйце іншае",
 	"tsb-limit-reached-title": "Дзякуй за вашыя пераклады",
-	"tsb-limit-reached-body": "Вы дасягнулі межы перакладаў для новых перакладчыкаў.\nНаша каманда хутка пацвердзіць і павысіць ваш рахунак.\nТады вы зможаце перакладаць без абмежаванняў.",
+	"tsb-limit-reached-body": "Вы дасягнулі межы перакладаў для новых перакладчыкаў.\nНаша каманда хутка пацвердзіць і павысіць ваш уліковы запіс.\nТады вы зможаце перакладаць без абмежаванняў.",
 	"tsb-no-requests-from-new-users": "Няма запытаў ад новых удзельнікаў",
 	"tsb-create-user-page": "Створаная простая старонка ўдзельніка",
 	"log-name-translatorsandbox": "Журнал пясочніцы перакладу",
 	"log-description-translatorsandbox": "Журнал дзеянняў з удзельнікамі пясочніцы перакладаў",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|павысіў|павысіла}} $3 да {{GENDER:$4|перакладчыка|перакладчыцы}}.",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|адхіліў|адхіліла}} запыт удзельніка «$3» стаць перакладчыкам",
-	"logentry-newusers-tsbpromoted": "Рахунак $3 быў {{GENDER:$2|створаны}} павышэннем з пясочніцы"
+	"logentry-newusers-tsbpromoted": "Уліковы запіс $3 быў {{GENDER:$2|створаны}} павышэннем з пясочніцы"
 }
