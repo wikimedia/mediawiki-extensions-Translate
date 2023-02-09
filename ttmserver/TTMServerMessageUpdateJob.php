@@ -8,7 +8,6 @@
  */
 
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
@@ -84,33 +83,9 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @return bool
 	 */
 	public function run() {
-		global $wgTranslateTranslationDefaultService;
-
-		$service = $this->params['service'];
-		$writeToMirrors = false;
-		$logger = LoggerFactory::getInstance( 'TTMServerUpdates' );
-
-		if ( $service === null ) {
-			$service = $wgTranslateTranslationDefaultService;
-			$writeToMirrors = true;
-		}
-
-		$services = [ $service ];
-		if ( $writeToMirrors ) {
-			try {
-				$server = Services::getInstance()->getTtmServerFactory()->create( $service );
-				$services = array_unique( array_merge( $services, $server->getMirrors() ) );
-			} catch ( ServiceCreationFailure $e ) {
-				$logger->error( "Error when creating service: $service" );
-			}
-		}
-
-		foreach ( $services as $service ) {
-			if ( $service === null ) {
-				$logger->warning( 'Empty service Id received' );
-				continue;
-			}
-			$this->runCommandWithRetry( $service );
+		$services = $this->getServersToUpdate( $this->params['service'] );
+		foreach ( $services as $serviceId => $service ) {
+			$this->runCommandWithRetry( $service, $serviceId );
 		}
 		return true;
 	}
@@ -122,29 +97,10 @@ class TTMServerMessageUpdateJob extends Job {
 
 	/**
 	 * Run the update on the specified service name.
+	 * @param WritableTtmServer $ttmServer
 	 * @param string $serviceName
 	 */
-	private function runCommandWithRetry( string $serviceName ): void {
-		$ttmServer = null;
-		try {
-			$ttmServer = Services::getInstance()->getTtmServerFactory()->create( $serviceName );
-		} catch ( ServiceCreationFailure $e ) {
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
-				'Error when creating TTMServer service instance: {service}',
-				[ 'service' => $serviceName ]
-			);
-			return;
-		}
-
-		if ( !$ttmServer instanceof WritableTtmServer ) {
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
-				'Received update job for a service that does not implement ' .
-				'WritableTtmServer, please check config for {service}.',
-				[ 'service' => $serviceName ]
-			);
-			return;
-		}
-
+	private function runCommandWithRetry( WritableTtmServer $ttmServer, string $serviceName ): void {
 		try {
 			$this->runCommand( $ttmServer );
 		} catch ( Exception $e ) {
@@ -203,16 +159,16 @@ class TTMServerMessageUpdateJob extends Job {
 		$this->jobQueueGroup->push( $job );
 	}
 
-	private function runCommand( WritableTtmServer $ttmserver ) {
+	private function runCommand( WritableTtmServer $ttmServer ) {
 		$handle = $this->getHandle();
 		$command = $this->params['command'];
 
 		if ( $command === 'delete' ) {
-			$this->updateItem( $ttmserver, $handle, null, false );
+			$this->updateItem( $ttmServer, $handle, null, false );
 		} elseif ( $command === 'rebuild' ) {
-			$this->updateMessage( $ttmserver, $handle );
+			$this->updateMessage( $ttmServer, $handle );
 		} elseif ( $command === 'refresh' ) {
-			$this->updateTranslation( $ttmserver, $handle );
+			$this->updateTranslation( $ttmServer, $handle );
 		}
 	}
 
@@ -260,6 +216,32 @@ class TTMServerMessageUpdateJob extends Job {
 			$text = null;
 		}
 		$ttmserver->update( $handle, $text );
+	}
+
+	private function getServersToUpdate( ?string $requestedServiceId ): array {
+		$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
+		if ( $requestedServiceId ) {
+			if ( !$ttmServerFactory->has( $requestedServiceId ) ) {
+				LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
+					'Received update job for a an unknown service {service}.',
+					[ 'service' => $requestedServiceId ]
+				);
+				return [];
+			}
+
+			return [ $requestedServiceId => $ttmServerFactory->create( $requestedServiceId ) ];
+		}
+
+		try {
+			return $ttmServerFactory->getWritable();
+		} catch ( Exception $e ) {
+			LoggerFactory::getInstance( 'TTMServerUpdates' )->error(
+				'There was an error while fetching writable TTM services. Error: {error}',
+				[ 'error' => $e->getMessage() ]
+			);
+		}
+
+		return [];
 	}
 
 	/**

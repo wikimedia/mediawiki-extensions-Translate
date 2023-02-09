@@ -19,7 +19,11 @@ use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
  * @since 2012-01-28
  * @ingroup TTMServer
  */
-class FakeTTMServer implements ReadableTtmServer, WritableTtmServer {
+class FakeTTMServer extends TTMServer implements ReadableTtmServer, WritableTtmServer {
+	public function __construct() {
+		parent::__construct( [] );
+	}
+
 	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		return [];
 	}
