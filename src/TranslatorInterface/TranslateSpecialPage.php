@@ -419,8 +419,13 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$request = $skin->getRequest();
 		// However, query string params take precedence
-		$params['language'] = $request->getVal( 'language' );
-		$params['group'] = $request->getVal( 'group' );
+		$params['language'] = $request->getRawVal( 'language' ) ?? '';
+		$params['group'] = $request->getRawVal( 'group' ) ?? '';
+
+		// Remove empty values from params
+		$params = array_filter( $params, static function ( string $param ) {
+			return $param !== '';
+		} );
 
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 		$languagestats = SpecialPage::getTitleFor( 'LanguageStats' );
