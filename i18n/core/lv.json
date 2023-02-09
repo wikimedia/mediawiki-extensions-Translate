@@ -116,6 +116,7 @@
 	"translate-mgs-submit": "Rādīt statistiku",
 	"translate-mgs-column-language": "Valoda",
 	"translate-mgs-totals": "Visas $1 {{PLURAL:$1|valodas|valoda|valodas}} kopā",
+	"translate-tes-optgroup-group": "Grupas",
 	"supportedlanguages": "Atbalstītās valodas",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLite nav atbaltīts",

@@ -79,6 +79,8 @@
 	"translate-mgs-group": "Հաղորդագրությունների խումբ՝",
 	"translate-mgs-column-language": "Լեզու",
 	"translate-mgs-totals": "Բոլոր $1 {{PLURAL:$1|լեզուները}} միասին",
+	"translate-tes-optgroup-group": "Խմբեր",
+	"translate-tes-optgroup-message": "Հաղորդագրություններ",
 	"supportedlanguages": "Ակտիվ լեզուներ",
 	"supportedlanguages-recenttranslations": "վերջին թարգմանությունները",
 	"translate-smg-rename-select": "Ընտրել",

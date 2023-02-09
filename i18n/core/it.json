@@ -198,6 +198,7 @@
 	"translate-mgs-totals": "Tutte le $1 {{PLURAL:$1|lingua|lingue}} insieme",
 	"translate-mgs-invalid-group": "Il gruppo indicato $1 non esiste.",
 	"translate-mgs-nothing": "Nulla da mostrare per le statistiche richieste.",
+	"translate-tes-optgroup-group": "Gruppi",
 	"supportedlanguages": "Lingue attive",
 	"supportedlanguages-summary": "Questa pagina mostra un elenco di tutte le lingue attive in {{SITENAME}}, insieme ai nomi dei traduttori che hanno lavorato su quella lingua. Il nome di un traduttore appare di dimensioni maggiori in proporzione al numero di modifiche che ha apportato, mentre il colore della sottolineatura indica quanto tempo è passato dalla sua ultima attività.",
 	"supportedlanguages-colorlegend": "Legenda dei colori: ultima traduzione $1 giorni fa.",

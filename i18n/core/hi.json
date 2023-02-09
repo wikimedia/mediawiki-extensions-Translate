@@ -204,6 +204,7 @@
 	"translate-mgs-totals": "सभी $1 {{PLURAL:$1|भाषा|भाषाएँ}} साथ में",
 	"translate-mgs-invalid-group": "निर्दिष्ट समूह $1 मौजूद नहीं है।",
 	"translate-mgs-nothing": "अनुरोध किए गए आँकड़ों में दिखाने के लिए कुछ नहीं है।",
+	"translate-tes-optgroup-group": "समूह",
 	"translate-tes-server-error": "खोज के सुझाव लाए न जा सके",
 	"translate-tes-group-not-found": "कोई मेल खाता परिणाम नहीं है",
 	"translate-tes-type-to-search": "खोज शुरू करने के लिए लिखें",
