@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use DatabaseTTMServer;
 use FakeTTMServer;
+use InvalidArgumentException;
 use RemoteTTMServer;
 use TTMServer;
 
@@ -102,5 +103,76 @@ class TtmServerFactory {
 		}
 
 		return new FakeTTMServer();
+	}
+
+	/**
+	 * Returns writable servers if configured, else returns the default TtmServer with its mirrors,
+	 * else returns null.
+	 * @return array [ serverId => WritableTtmServer ]
+	 */
+	public function getWritable(): array {
+		$writableServers = $readOnlyServers = [];
+		$ttmServerIds = $this->getNames();
+
+		foreach ( $ttmServerIds as $serverId ) {
+			$isWritable = $this->configs[ $serverId ][ 'writable' ] ?? null;
+			$mirrors = $this->configs[ $serverId ][ 'mirrors' ] ?? null;
+
+			if ( $mirrors !== null ) {
+				if ( $isWritable !== null || $writableServers !== [] ) {
+					throw new InvalidArgumentException(
+						"TTM server configurations cannot use both writable and mirrors parameter."
+					);
+				}
+			}
+
+			if ( $isWritable ) {
+				if ( $serverId === $this->default ) {
+					throw new InvalidArgumentException(
+						"Default TTM server {$this->default} cannot be writable"
+					);
+				}
+
+				$server = $this->create( $serverId );
+				if ( !$server instanceof WritableTtmServer ) {
+					throw new InvalidArgumentException(
+						"Server '$serverId' marked writable does not implement WritableTtmServer interface"
+					);
+				}
+				$writableServers[ $serverId ] = $server;
+			} elseif ( $isWritable === false ) {
+				$readOnlyServers[] = $serverId;
+			}
+		}
+
+		if ( $writableServers ) {
+			return $writableServers;
+		}
+
+		// If there are no writable server, check and use the default server and its mirrors
+		if ( $this->default ) {
+			$mirrorIds = [];
+			$defaultTtmServer = $this->create( $this->default );
+
+			if ( $defaultTtmServer instanceof WritableTtmServer ) {
+				if ( !in_array( $this->default, $readOnlyServers ) ) {
+					$writableServers[ $this->default ] = $defaultTtmServer;
+				}
+				$mirrorIds = $defaultTtmServer->getMirrors();
+			}
+
+			foreach ( $mirrorIds as $id ) {
+				if ( !in_array( $id, $readOnlyServers ) ) {
+					$writableServers[ $id ] = $writableServers[ $id ] ?? $this->create( $id );
+				}
+			}
+
+			if ( $writableServers ) {
+				return $writableServers;
+			}
+		}
+
+		// Did not find any writable servers.
+		return [];
 	}
 }

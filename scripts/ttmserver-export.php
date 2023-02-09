@@ -8,8 +8,11 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+use Wikimedia\Assert\Assert;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -26,6 +29,7 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class TTMServerBootstrap extends Maintenance {
 	private float $start;
+	private const FAKE_TTM = 'dry-run';
 
 	public function __construct() {
 		parent::__construct();
@@ -76,28 +80,35 @@ class TTMServerBootstrap extends Maintenance {
 		$ttmServerId = $this->getOption( 'ttmserver' );
 		$shouldReindex = $this->getOption( 'reindex', false );
 
-		$server = $this->getServer( $dryRun, $shouldReindex, $ttmServerId );
-		$this->logInfo( "Implementation: " . get_class( $server ) . "\n" );
+		if ( $this->mBatchSize !== null && $this->mBatchSize < 1 ) {
+			$this->fatalError( 'Invalid value for option: "batch-size"' );
+		}
+
+		$servers = $this->getServers( $dryRun, $shouldReindex, $ttmServerId );
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
 		// See also #resetStateForFork.
-		$pid = pcntl_fork();
-		if ( $pid === 0 ) {
-			$this->resetStateForFork();
-			$server = $this->getServer( $dryRun, $shouldReindex, $ttmServerId );
-			$this->beginBootstrap( $server );
-			exit();
-		} elseif ( $pid === -1 ) {
-			// Fork failed do it serialized
-			$this->beginBootstrap( $server );
-		} else {
-			// Main thread
-			$this->statusLine( "Forked thread $pid to handle bootstrapping\n" );
-			$status = 0;
-			pcntl_waitpid( $pid, $status );
-			// beginBootstrap probably failed, give up.
-			if ( !$this->verifyChildStatus( $pid, $status ) ) {
-				$this->fatalError( 'Bootstrap failed.' );
+		foreach ( array_keys( $servers ) as $serverId ) {
+			$pid = pcntl_fork();
+
+			if ( $pid === 0 ) {
+				$server = $this->getWritableServer( $serverId );
+				$this->resetStateForFork();
+				$this->beginBootstrap( $server, $serverId );
+				exit();
+			} elseif ( $pid === -1 ) {
+				// Fork failed do it serialized
+				$server = $this->getWritableServer( $serverId );
+				$this->beginBootstrap( $server, $serverId );
+			} else {
+				// Main thread
+				$this->statusLine( "Forked thread $pid to handle bootstrapping for '$serverId'\n" );
+				$status = 0;
+				pcntl_waitpid( $pid, $status );
+				// beginBootstrap probably failed, give up.
+				if ( !$this->verifyChildStatus( $pid, $status ) ) {
+					$this->fatalError( "Bootstrap failed for '$serverId'." );
+				}
 			}
 		}
 
@@ -110,6 +121,7 @@ class TTMServerBootstrap extends Maintenance {
 		} else {
 			$groups = MessageGroups::singleton()->getGroups();
 		}
+
 		foreach ( $groups as $id => $group ) {
 			/** @var MessageGroup $group */
 			if ( $group->isMeta() ) {
@@ -118,15 +130,12 @@ class TTMServerBootstrap extends Maintenance {
 
 			// Fork to increase speed with parallelism. Also helps with memory usage if there are leaks.
 			$pid = pcntl_fork();
-
 			if ( $pid === 0 ) {
 				$this->resetStateForFork();
-				$server = $this->getServer( $dryRun, $shouldReindex, $ttmServerId );
-				$this->exportGroup( $group, $server );
+				$this->exportGroup( $group, $servers );
 				exit();
 			} elseif ( $pid === -1 ) {
-				// Fork failed do it serialized
-				$this->exportGroup( $group, $server );
+				$this->exportGroup( $group, $servers );
 			} else {
 				// Main thread
 				$this->statusLine( "Forked thread $pid to handle $id\n" );
@@ -150,147 +159,198 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		// It's okay to do this in the main thread as it is the last thing
-		$this->endBootstrap( $server );
+		$this->endBootstrap( $servers );
 
 		if ( $hasErrors ) {
 			$this->fatalError( '!!! Some threads failed. Review the script output !!!' );
 		}
 	}
 
-	private function getServer(
+	/**
+	 * @param bool $isDryRun
+	 * @param bool $shouldReindex
+	 * @param string|null $ttmServerId
+	 * @return WritableTtmServer[]
+	 */
+	private function getServers(
 		bool $isDryRun,
 		bool $shouldReindex,
 		?string $ttmServerId = null
-	): WritableTTMServer {
-		global $wgTranslateTranslationDefaultService;
-
+	): array {
+		$servers = [];
+		$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
 		if ( $isDryRun ) {
-			$server = new FakeTTMServer();
+			$servers = [ self::FAKE_TTM => new FakeTTMServer() ];
 		} else {
-			$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
-			$configKey = $ttmServerId ?? $wgTranslateTranslationDefaultService;
-			if ( !$ttmServerFactory->has( $configKey ) ) {
-				$this->fatalError( 'Translation memory is not configured properly' );
+			if ( $ttmServerId !== null ) {
+				try {
+					$servers[ $ttmServerId ] = $ttmServerFactory->create( $ttmServerId );
+				} catch ( ServiceCreationFailure $e ) {
+					$this->fatalError( "Error while creating TtmServer $ttmServerId: " . $e->getMessage() );
+				}
+			} else {
+				$servers = $ttmServerFactory->getWritable();
 			}
-			$server = $ttmServerFactory->create( $configKey );
 		}
 
-		if ( !$server instanceof WritableTtmServer ) {
-			$this->fatalError( "Service must implement WritableTtmServer" );
+		if ( !$servers ) {
+			$this->fatalError( "No writable TtmServers found." );
 		}
 
-		if ( method_exists( $server, 'setLogger' ) ) {
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$server->setLogger( $this );
+		foreach ( $servers as $server ) {
+			Assert::parameterType( WritableTtmServer::class, $server, '$server' );
+
+			if ( method_exists( $server, 'setLogger' ) ) {
+				// @phan-suppress-next-line PhanUndeclaredMethod
+				$server->setLogger( $this );
+			}
+
+			if ( $shouldReindex ) {
+				// This doesn't do the update, just sets a flag to do it
+				$server->setDoReIndex();
+			}
 		}
 
-		if ( $shouldReindex ) {
-			// This doesn't do the update, just sets a flag to do it
-			$server->setDoReIndex();
-		}
-
-		return $server;
+		return $servers;
 	}
 
-	protected function beginBootstrap( WritableTtmServer $server ) {
-		$this->statusLine( "Cleaning up old entries...\n" );
+	protected function beginBootstrap( WritableTtmServer $server, string $serverId ) {
+		$this->statusLine( "Cleaning up old entries in '$serverId'...\n" );
 		$server->beginBootstrap();
 	}
 
-	protected function endBootstrap( WritableTtmServer $server ) {
-		$this->statusLine( "Optimizing...\n" );
-		$server->endBootstrap();
+	protected function endBootstrap( array $servers ) {
+		foreach ( $servers as $serverId => $server ) {
+			$this->statusLine( "Optimizing '$serverId'...\n" );
+			$server->endBootstrap();
+		}
 	}
 
-	protected function exportGroup( MessageGroup $group, WritableTtmServer $server ) {
+	/**
+	 * @param MessageGroup $group
+	 * @param WritableTtmServer[] $servers
+	 * @return void
+	 */
+	private function exportGroup( MessageGroup $group, array $servers ): void {
 		$times = [
 			'total' => -microtime( true ),
 			'stats' => 0,
 			'init' => 0,
 			'trans' => 0,
+			'writes' => 0
 		];
-		$countItems = 0;
+		$transWrites = 0;
 
-		$id = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();
 
-		$times[ 'stats' ] -= microtime( true );
-		$stats = MessageGroupStats::forGroup( $id );
-		$times[ 'stats' ] += microtime( true );
-
 		$times[ 'init' ] -= microtime( true );
-		$collection = $group->initCollection( $sourceLanguage );
-		$collection->filter( 'ignored' );
-		$collection->initMessages();
-
-		$server->beginBatch();
-		$inserts = [];
-		foreach ( $collection->keys() as $mkey => $titleValue ) {
-			$title = Title::newFromLinkTarget( $titleValue );
-			$handle = new MessageHandle( $title );
-			$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->definition() ];
-			$countItems++;
-		}
-
-		while ( $inserts !== [] ) {
-			$batch = array_splice( $inserts, 0, $this->mBatchSize );
-			$server->batchInsertDefinitions( $batch );
-		}
-		$inserts = [];
+		$collection = $this->getCollection( $group, $sourceLanguage );
 		$times[ 'init' ] += microtime( true );
+
+		$times[ 'stats' ] -= microtime( true );
+		$stats = MessageGroupStats::forGroup( $group->getId() );
+		$times[ 'stats' ] += microtime( true );
+		unset( $stats[ $sourceLanguage ] );
+
+		$translationCount = $definitionCount = 0;
+
+		foreach ( $servers as $server ) {
+			$server->beginBatch();
+		}
+
+		foreach ( $this->getDefinitions( $collection, $sourceLanguage ) as $batch ) {
+			$definitionCount += count( $batch );
+			foreach ( $servers as $server ) {
+				$times[ 'writes' ] -= microtime( true );
+				$server->batchInsertDefinitions( $batch );
+				$times[ 'writes' ] += microtime( true );
+			}
+		}
 
 		$times[ 'trans' ] -= microtime( true );
 		foreach ( $stats as $targetLanguage => $numbers ) {
-			if ( $targetLanguage === $sourceLanguage ) {
-				continue;
-			}
 			if ( $numbers[MessageGroupStats::TRANSLATED] === 0 ) {
 				continue;
 			}
 
-			$collection->resetForNewLanguage( $targetLanguage );
-			$collection->filter( 'ignored' );
-			$collection->filter( 'translated', false );
-			$collection->loadTranslations();
-
-			foreach ( $collection->keys() as $mkey => $titleValue ) {
-				$title = Title::newFromLinkTarget( $titleValue );
-				$handle = new MessageHandle( $title );
-				$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->translation() ];
-				$countItems++;
-			}
-
-			while ( count( $inserts ) >= $this->mBatchSize ) {
-				$batch = array_splice( $inserts, 0, $this->mBatchSize );
-				$server->batchInsertTranslations( $batch );
+			foreach ( $this->getTranslations( $collection, $targetLanguage ) as $batch ) {
+				$translationCount += count( $batch );
+				foreach ( $servers as $server ) {
+					$transWrites -= microtime( true );
+					$server->batchInsertTranslations( $batch );
+					$transWrites += microtime( true );
+				}
 			}
 		}
 
-		while ( $inserts !== [] ) {
-			$batch = array_splice( $inserts, 0, $this->mBatchSize );
-			$server->batchInsertTranslations( $batch );
+		$times[ 'trans' ] += ( microtime( true ) - $transWrites );
+		$times[ 'writes' ] += $transWrites;
+
+		foreach ( $servers as $server ) {
+			$server->endBatch();
 		}
 
-		$server->endBatch();
-		$times[ 'trans' ] += microtime( true );
 		$times[ 'total' ] += microtime( true );
+		$countItems = $translationCount + $definitionCount;
 
 		if ( $countItems !== 0 ) {
 			$debug = sprintf(
-				"Total %.1f s for %d items >> stats/init/trans %%: %d/%d/%d >> %.1f ms/item",
-				$times[ 'total' ],
+				"Total %.1f s for %d items on %d server(s) >> stats/init/trans/writes %%: %d/%d/%d/%d >> %.1f ms/item",
+				$times['total'],
 				$countItems,
-				$times[ 'stats'] / $times[ 'total' ] * 100,
-				$times[ 'init'] / $times[ 'total' ] * 100,
-				$times[ 'trans'] / $times[ 'total' ] * 100,
-				$times[ 'total' ] / $countItems * 1000
+				count( $servers ),
+				$times['stats'] / $times['total'] * 100,
+				$times['init'] / $times['total'] * 100,
+				$times['trans'] / $times['total'] * 100,
+				$times['writes'] / $times['total'] * 100,
+				$times['total'] / $countItems * 1000
 			);
-			$this->logInfo( "Finished exporting $id. $debug\n" );
+			$this->logInfo( "Finished exporting {$group->getId()}. $debug\n" );
+		}
+	}
+
+	private function getDefinitions( MessageCollection $collection, string $sourceLanguage ): Generator {
+		$definitions = [];
+		foreach ( $collection->keys() as $mKey => $titleValue ) {
+			$title = Title::newFromLinkTarget( $titleValue );
+			$handle = new MessageHandle( $title );
+			$definition = [ $handle, $sourceLanguage, $collection[$mKey]->definition() ];
+			$definitions[] = $definition;
+			if ( $this->mBatchSize && count( $definitions ) === $this->mBatchSize ) {
+					yield $definitions;
+					$definitions = [];
+			}
+		}
+
+		if ( $definitions ) {
+			yield $definitions;
+		}
+	}
+
+	private function getTranslations( MessageCollection $collection, string $targetLanguage ): Generator {
+		$collection->resetForNewLanguage( $targetLanguage );
+		$collection->filter( 'ignored' );
+		$collection->filter( 'translated', false );
+		$collection->loadTranslations();
+		$translations = [];
+
+		foreach ( $collection->keys() as $mkey => $titleValue ) {
+			$title = Title::newFromLinkTarget( $titleValue );
+			$handle = new MessageHandle( $title );
+			$translations[] = [ $handle, $targetLanguage, $collection[$mkey]->translation() ];
+			if ( $this->mBatchSize && count( $translations ) === $this->mBatchSize ) {
+				yield $translations;
+				$translations = [];
+			}
+		}
+
+		if ( $translations ) {
+			yield $translations;
 		}
 	}
 
 	private function logInfo( string $text ) {
-		if ( $this->getOption( 'verbose', false ) ) {
+		if ( $this->hasOption( 'verbose' ) ) {
 			$this->statusLine( $text );
 		}
 	}
@@ -320,6 +380,28 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		return true;
+	}
+
+	private function getWritableServer( string $serverId ): WritableTtmServer {
+		if ( $serverId === self::FAKE_TTM ) {
+			return new FakeTTMServer();
+		}
+
+		$server = Services::getInstance()->getTtmServerFactory()->create( $serverId );
+		if ( !$server instanceof WritableTtmServer ) {
+			throw new InvalidArgumentException(
+				"$serverId TTM server does not implement WritableTtmServer interface "
+			);
+		}
+
+		return $server;
+	}
+
+	private function getCollection( MessageGroup $group, string $sourceLanguage ): MessageCollection {
+		$collection = $group->initCollection( $sourceLanguage );
+		$collection->filter( 'ignored' );
+		$collection->initMessages();
+		return $collection;
 	}
 }
 
