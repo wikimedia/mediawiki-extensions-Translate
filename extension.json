@@ -620,12 +620,13 @@
 				"translate-langstats-expand",
 				"translate-langstats-expandall",
 				"translate-tes-server-error",
-				"translate-tes-group-not-found",
+				"translate-tes-entity-not-found",
 				"translate-tes-type-to-search",
 				"translate-tes-optgroup-group",
 				"translate-tes-optgroup-message",
 				"translate-tes-message-prefix",
-				"translate-mgs-group-or-prefix"
+				"translate-mgs-group-or-prefix",
+				"translate-mgs-invalid-entity"
 			],
 			"dependencies": [
 				"jquery.tablesorter",

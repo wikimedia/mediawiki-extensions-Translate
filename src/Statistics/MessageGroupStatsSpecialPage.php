@@ -313,6 +313,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$htmlForm
 			->addHiddenField( 'x', 'D' ) // To detect submission
 			->setMethod( 'get' )
+			->setId( 'mw-message-group-stats-form' )
 			->setSubmitTextMsg( 'translate-mgs-submit' )
 			->setWrapperLegendMsg( 'translate-mgs-fieldset' )
 			->prepareForm()

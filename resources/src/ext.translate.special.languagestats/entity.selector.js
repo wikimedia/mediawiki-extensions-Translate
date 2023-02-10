@@ -21,11 +21,12 @@ var EntitySelectorWidget = function ( config ) {
 	// Mixin constructors
 	OO.ui.mixin.LookupElement.call( this );
 
-	this.groupNotFoundLabel = new OO.ui.MenuOptionWidget( {
-		label: mw.msg( 'translate-tes-group-not-found' ),
+	this.entityNotFound = new OO.ui.MenuOptionWidget( {
+		label: mw.msg( 'translate-tes-entity-not-found' ),
 		disabled: true,
 		highlightable: false,
 		pressable: false,
+		icon: 'info',
 		classes: [ 'tes-optgroup-label' ]
 	} );
 
@@ -160,6 +161,10 @@ EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( respons
 			}
 			finalResult.push( messageOption );
 		}
+	}
+
+	if ( !finalResult.length ) {
+		finalResult.push( this.entityNotFound );
 	}
 
 	return finalResult;

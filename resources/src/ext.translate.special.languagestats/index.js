@@ -235,6 +235,24 @@
 		}
 	}
 
+	function onSubmit() {
+		var selectedGroupName = $( 'select[name="group"]' ).find( 'option:selected' ).text();
+		var selectedMessagePrefix = $( 'input[name="messages"]' ).val();
+		var currentVal = $( '.tes-entity-selector' ).find( 'input[type="text"]' ).val();
+
+		// Check if the user has selected an invalid entity.
+		if ( currentVal !== selectedGroupName && currentVal !== selectedMessagePrefix ) {
+			mw.notify(
+				mw.msg( 'translate-mgs-invalid-entity' ),
+				{
+					type: 'error',
+					tag: 'invalid-selection'
+				}
+			);
+			return false;
+		}
+	}
+
 	function getEntitySelector( onSelect ) {
 		var EntitySelector = require( './entity.selector.js' );
 		return new EntitySelector( {
@@ -260,6 +278,8 @@
 
 		applySorting( $table );
 		addExpanders( $table );
+
+		$( '#mw-message-group-stats-form' ).submit( onSubmit );
 
 		if ( !window.ResizeObserver ) {
 			return;
