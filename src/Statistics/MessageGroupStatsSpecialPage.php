@@ -117,7 +117,6 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		} else {
 			$this->target = $request->getVal( self::MESSAGES, '' );
 			if ( $this->target !== '' ) {
-				$this->target = rtrim( $this->target, '*' );
 				$this->targetType = self::MESSAGES;
 			}
 		}
@@ -179,30 +178,33 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 					}
 				} );
 			}
-		} elseif (
-			$this->targetType === self::MESSAGES && $this->entitySearch->isKnownMessagePrefix( $this->target )
-		) {
-			$messagesWithPrefix = $this->entitySearch->getMessagesWithPrefix( $this->target );
-			$messageWithPrefixLimit = $this->options->get( 'TranslateMessagePrefixStatsLimit' );
-			if ( count( $messagesWithPrefix ) > $messageWithPrefixLimit ) {
-				$out->addHTML(
-					Html::errorBox(
-						$this->msg( 'translate-mgs-message-prefix-limit' )
-							->params( $messageWithPrefixLimit )
-							->parse()
-					)
-				);
-				return;
-			}
-
-			$stats = $this->messagePrefixStats->forAll( ...$messagesWithPrefix );
-			$messageGroupStatsTable = $this->messageGroupStatsTableFactory->newFromContext( $this->getContext() );
-			$output = $messageGroupStatsTable->get(
-				$stats,
-				new MessagePrefixMessageGroup(),
-				$this->noComplete,
-				$this->noEmpty
+		} elseif ( $this->targetType === self::MESSAGES ) {
+			$messagesWithPrefix = $this->entitySearch->getMessagesWithPrefix(
+				rtrim( $this->target, '*' ), str_ends_with( $this->target, '*' )
 			);
+			if ( $messagesWithPrefix ) {
+				$messageWithPrefixLimit = $this->options->get( 'TranslateMessagePrefixStatsLimit' );
+				if ( count( $messagesWithPrefix ) > $messageWithPrefixLimit ) {
+					$out->addHTML(
+						Html::errorBox(
+							$this->msg( 'translate-mgs-message-prefix-limit' )
+								->params( $messageWithPrefixLimit )
+								->parse()
+						)
+					);
+					return;
+				}
+
+				$stats = $this->messagePrefixStats->forAll( ...$messagesWithPrefix );
+				$messageGroupStatsTable = $this->messageGroupStatsTableFactory
+					->newFromContext( $this->getContext() );
+				$output = $messageGroupStatsTable->get(
+					$stats,
+					new MessagePrefixMessageGroup(),
+					$this->noComplete,
+					$this->noEmpty
+				);
+			}
 		}
 
 		if ( $output ) {

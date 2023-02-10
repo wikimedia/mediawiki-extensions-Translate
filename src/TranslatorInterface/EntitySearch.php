@@ -23,6 +23,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 class EntitySearch {
 	private const FIELD_DELIMITER = "\x7F";
 	private const ROW_DELIMITER = "\n";
+	private const CONTAINS_SEARCH = true;
 
 	/** @var WANObjectCache */
 	private $cache;
@@ -123,7 +124,7 @@ class EntitySearch {
 		// * Match at any point in the message
 		// * Return full keys of prefixes that match multiple messages
 
-		$matches = $this->getMessageMatches( $query );
+		$matches = $this->getMessageMatches( $query, self::CONTAINS_SEARCH );
 
 		$results = [];
 		$previousPrefixMatch = null;
@@ -169,14 +170,9 @@ class EntitySearch {
 		return array_values( $results );
 	}
 
-	public function getMessagesWithPrefix( string $query ): array {
-		$matches = $this->getMessageMatches( $query );
+	public function getMessagesWithPrefix( string $query, bool $containsSearch = self::CONTAINS_SEARCH ): array {
+		$matches = $this->getMessageMatches( $query, $containsSearch );
 		return array_column( $matches, 0 );
-	}
-
-	public function isKnownMessagePrefix( string $query ): bool {
-		$matches = $this->getMessagesWithPrefix( $query );
-		return $matches !== [];
 	}
 
 	private function getStaticMessageGroupsHaystack(): string {
@@ -200,7 +196,7 @@ class EntitySearch {
 		return $haystack;
 	}
 
-	private function getMessagesHaystack(): string {
+	private function getMessageHaystackUncached(): string {
 		$namespaceMap = [];
 		$data = new SplMinHeap();
 		$keys = $this->messageIndex->getKeys();
@@ -228,7 +224,7 @@ class EntitySearch {
 		return $haystack;
 	}
 
-	private function getMessageMatches( string $query ): array {
+	private function getMessageMatches( string $query, bool $searchContains ): array {
 		$cache = $this->cache;
 		$key = $cache->makeKey( 'Translate', 'EntitySearch', 'messages' );
 		$haystack = $cache->getWithSetCallback(
@@ -238,7 +234,7 @@ class EntitySearch {
 				// This can get rather large. On translatewiki.net it is multiple megabytes
 				// uncompressed. With compression (assumed to happen implicitly in the
 				// caching layer) it's under a megabyte.
-				return $this->getMessagesHaystack();
+				return $this->getMessageHaystackUncached();
 			},
 			[
 				// Calling touchCheckKey() on this key purges the cache
@@ -253,9 +249,8 @@ class EntitySearch {
 		// results, this may be more efficient than calling preg_match iteratively.
 		// On the other hand, it can use a lot of memory to construct the array for
 		// all the matches.
-		$results = [];
 		$rowDelimiter = self::ROW_DELIMITER;
-		$anything = "[^$rowDelimiter]";
+		$anything = $searchContains ? "[^$rowDelimiter]" : $rowDelimiter;
 		$query = preg_quote( $query, '/' );
 
 		// Word match
