@@ -43,7 +43,7 @@
 	"translate-next": "Sljedeća stranica",
 	"translate-prev": "Prethodna stranica",
 	"translate-page-description-legend": "Podaci o grupi",
-	"translate-page-description-hasoptional": "Ova skupina sadržava neobvezne poruke.\nNeobvezne poruke treba prevoditi samo ukoliko Vaš jezik ima posebne potrebe;\nna primjer, ukoliko ne treba rabiti bjeline ili ukoliko treba preslovljavati imena. $1",
+	"translate-page-description-hasoptional": "Ova skupina sadržava neobvezne poruke.\nNeobvezne poruke treba prevoditi samo ako vaš jezik ima posebne potrebe, na primjer ako se ne rabe bjeline ili ako se preslovljavaju imena. $1",
 	"translate-page-description-hasoptional-open": "Prikaži dodatne poruke.",
 	"translate-page-edit": "uredi",
 	"translate-optional": "(neobvezno)",

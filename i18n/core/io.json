@@ -120,6 +120,7 @@
 	"translate-import-err-stale-group": "Ne existas la mesajo-grupo a quo ica arkivo apartenas.",
 	"translate-js-skip": "Saltez a la sequanta",
 	"translate-js-support": "Questionar",
+	"translate-js-support-unsaved-warning": "Existas tradukuri sen publikigo.",
 	"translate-gs-code": "Kodexo",
 	"translate-gs-speakers": "Parolanti",
 	"translate-gs-multiple": "Multopla",

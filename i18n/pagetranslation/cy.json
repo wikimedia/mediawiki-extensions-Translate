@@ -19,6 +19,7 @@
 	"tpt-sections-template": "Nodyn cyfieithu tudalen",
 	"tpt-nosuchpage": "Nid yw'r dudalen $1 yn bodoli.",
 	"tpt-other-pages-title": "Tudalennau toredig",
+	"tpt-tag-oldsyntax": "hen gystrawen",
 	"tpt-select-prioritylangs-reason": "Rheswm:",
 	"tpt-sections-prioritylangs": "Blaenoriaethau ymhlith yr ieithoedd",
 	"tpt-rev-encourage": "adfer",
@@ -65,5 +66,6 @@
 	"pm-cancel-button-label": "Canslo",
 	"pp-save-button-label": "Cyhoeddi",
 	"pp-cancel-button-label": "Canslo",
-	"pp-diff-old-header": "Testun ffynhonnell"
+	"pp-diff-old-header": "Testun ffynhonnell",
+	"tpt-generic-button": "Cadarnhau"
 }
