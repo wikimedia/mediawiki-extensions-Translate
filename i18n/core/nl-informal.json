@@ -4,5 +4,6 @@
 			"McDutchie"
 		]
 	},
+	"translate-mgs-message-prefix-limit": "Er zijn meer dan $1 bericht{{PLURAL:$1||en}} met het gekozen berichtenvoorvoegsel. Zo'n groot aantal berichten zoeken is te langzaam. Verfijn je zoekopdracht verder.",
 	"tux-editor-editsummary-placeholder": "Leg je wijzigingen uit (niet verplicht)"
 }

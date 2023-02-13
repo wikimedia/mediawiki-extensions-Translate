@@ -21,6 +21,7 @@
 	"translate-fuzzybot-desc": "Ovo je poseban sistemski nalog koji koristi [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate dodatak „Prevođenje”] Medijavikija. Koristi se za održavanje prevoda.\nNalog je deo softvera Medijaviki i nije u vlasništvu nijednog korisnika.",
 	"translate-taskui-export-to-file": "izvezi u izvornom obliku",
 	"translate-taskui-export-as-po": "izvezi za prevođenje van mreže",
+	"translate-taskui-export-as-csv": "izvezi u CSV formatu",
 	"translate-export-csv-definition": "Definicija poruke",
 	"translate-taction-translate": "Prevođenje",
 	"translate-taction-proofread": "Provera",
