@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"TayfunEt."
+		]
+	},
+	"apihelp-groupreview-param-group": "Beyanat grupu.",
+	"apihelp-groupreview-param-language": "Til kodu.",
+	"apierror-translate-unknownmessage": "Bilinmegen beyanat"
+}
