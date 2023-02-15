@@ -166,6 +166,8 @@
 	"translate-mgs-column-language": "Език",
 	"translate-mgs-totals": "{{PLURAL:$1|Всеки език|Всички $1 езици заедно}}",
 	"translate-mgs-invalid-group": "Посочената група $1 не съществува.",
+	"translate-tes-optgroup-group": "Групи",
+	"translate-tes-optgroup-message": "Съобщения",
 	"supportedlanguages": "Активни езици",
 	"supportedlanguages-sqlite-error": "SQLite не е поддържан",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Преводач|Преводачка}}|Преводачи}}: $1",

@@ -239,6 +239,8 @@
 	"translate-mgs-totals": "Все $1 {{PLURAL:$1|язык|языка|языков}} вместе",
 	"translate-mgs-invalid-group": "Указанная группа $1 не существует.",
 	"translate-mgs-nothing": "Нет данных для отображения.",
+	"translate-tes-optgroup-group": "Группы",
+	"translate-tes-optgroup-message": "Сообщения",
 	"translate-tes-server-error": "Не удалось получить предложения для поиска",
 	"translate-tes-group-not-found": "Нет подходящих результатов",
 	"translate-tes-type-to-search": "Начните печатать, чтобы начать поиск",
