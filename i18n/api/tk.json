@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"TayfunEt."
+		]
+	},
+	"apihelp-groupreview-param-group": "Habar topary.",
+	"apihelp-groupreview-param-language": "Dil kody.",
+	"apihelp-groupreview-param-state": "Topar üçin täze ýagdaý.",
+	"apihelp-groupreview-example-1": "\"Topar-Mysal\" habar topary üçin nemes terjimesiniň ýagdaýyny taýýar diýip belläň",
+	"apihelp-query+messagecollection-param-group": "Habar topary.",
+	"apierror-translate-unknownmessage": "Näbelli habar",
+	"apihelp-translationentitysearch-param-limit": "Gözleg netijeleriniň iň köp sany"
+}

@@ -12,7 +12,8 @@
 			"Чаховіч Уладзіслаў",
 			"No Sleep till Krupki",
 			"Plaga med",
-			"Tomato Cream"
+			"Tomato Cream",
+			"Kareyac"
 		]
 	},
 	"translate": "Пераклад",
@@ -201,7 +202,7 @@
 	"translate-tes-server-error": "Не ўдалося атрымаць пошукавыя прапановы",
 	"translate-tes-group-not-found": "Няма адпаведных вынікаў",
 	"translate-tes-type-to-search": "Напішыце, каб пачаць пошук",
-	"supportedlanguages": "Падтрымваныя мовы",
+	"supportedlanguages": "Актыўныя мовы",
 	"supportedlanguages-summary": "На старонцы паказаны спіс падтрымваных праектам {{SITENAME}} моў\nразам з імёнамі тых, хто тут працуе над перакладамі на гэтыя мовы.\nІмя перакладчыка адлюстроўваецца тым буйней, чым болей правак ён зрабіў.\nКолер падкрэслення дае зразумець як даўно перакладчык здзяйсняў тут што-небудзь.",
 	"supportedlanguages-colorlegend": "Значэнне колеру: апошні пераклад выкананы $1 дзён таму.",
 	"supportedlanguages-sqlite-error": "SQLite не падтрымліваецца",
@@ -281,7 +282,7 @@
 	"translate-import-from-local": "Загрузіць лакальны файл:",
 	"translate-import-load": "Загрузіць файл",
 	"translate-import-err-dl-failed": "Немагчыма падцягнуць файл:\n$1",
-	"translate-import-err-ul-failed": "Не атрымалася загрузіць файл",
+	"translate-import-err-ul-failed": "Не атрымалася запампаваць файл",
 	"translate-import-err-invalid-title": "Пададзеная назва файла <nowiki>$1</nowiki> — няслушная.",
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не існуе альбо не загружаны лакальна.",
 	"translate-import-err-stale-group": "Група паведамленняў, да якой належыць гэты файл, не існуе.",

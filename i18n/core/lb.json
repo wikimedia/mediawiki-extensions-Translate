@@ -270,7 +270,7 @@
 	"translate-workflowgroup-desc": "Dës Grupp vu Message weist de Status am Iwwersetzungsoflaf.\nDe Status ass sou wéi an der Konfiguratiounslëscht $wgTranslateWorkflowStates definéiert.",
 	"translate-dynagroup-recent-label": "Rezent Iwwersetzungen",
 	"translate-dynagroup-recent-desc": "Dës Grupp vu Message weist all rezent Iwwersetzungen an dëser Sprooch.\nDëst ass ganz nëtzlech fir d'Aufgabe vum Nokucken.",
-	"translate-dynagroup-additions-label": "Rezent nei Message",
+	"translate-dynagroup-additions-label": "Rezent nei Messagen",
 	"translate-dynagroup-additions-desc": "Dës Grupp vu Message weist nei oder geännert Messagen.",
 	"translate-msggroupselector-projects": "Grupp vu Messagen",
 	"translate-msggroupselector-search-placeholder": "An de Gruppe sichen",

@@ -12,5 +12,6 @@
 	"log-name-pagetranslation": "Sahifalarni tarjima qilish qaydlari",
 	"pt-movepage-reason": "Sabab:",
 	"pt-deletepage-reason": "Sabab:",
+	"pt-deletepage-reason-details": "Boshqa/qoʻshimcha sabab:",
 	"pt-deletepage-reason-other": "Boshqa sabab"
 }
