@@ -81,6 +81,11 @@ class Services implements ContainerInterface {
 		return $this->get( 'Translate:GroupSynchronizationCache' );
 	}
 
+	/** @since 2023.03 */
+	public function getHookRunner(): HookRunner {
+		return $this->get( 'Translate:HookRunner' );
+	}
+
 	/** @since 2022.06 */
 	public function getMessageBundleStore(): MessageBundleStore {
 		return $this->get( 'Translate:MessageBundleStore' );

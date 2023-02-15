@@ -101,6 +101,9 @@ Post processing step to format in wiki
  string         $groupId: ID of the current message group.
  array          &$conf: Workflow states, can be modified.
 
+;Translate:TranslatorSandbox:UserPromoted: Event generated when an account inside the translator sandbox is approved.
+ UserIdentity   $user
+
 === JavaScript events ===
 
 ;mw.translate.editor.afterSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted

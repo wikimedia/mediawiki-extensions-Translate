@@ -17,6 +17,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			'',
 			'ffs',
 			'messagegroups',
+			'src/HookRunner.php',
 			'src/TranslatorInterface',
 			'src/MessageGroupProcessing',
 			'src/TranslatorInterface/Aid',
@@ -56,8 +57,13 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 
 		$prefix = __DIR__ . '/../..';
 		foreach ( $this->paths['php'] as $path ) {
-			$path = "$prefix/$path/";
-			$hooks = self::getHooksFromPath( $path, [ self::class, 'getPHPHooksFromFile' ] );
+			if ( str_ends_with( $path, '.php' ) ) {
+				$hooks = self::getPHPHooksFromFile( $prefix . '/' . $path );
+			} else {
+				$path = "$prefix/$path/";
+				$hooks = self::getHooksFromPath( $path, [ self::class, 'getPHPHooksFromFile' ] );
+			}
+
 			foreach ( $hooks as $name => $params ) {
 				$this->used['php'][$name] = $params;
 			}

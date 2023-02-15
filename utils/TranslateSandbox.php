@@ -10,6 +10,7 @@
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -158,18 +159,21 @@ class TranslateSandbox {
 			throw new MWException( 'Not a sandboxed user' );
 		}
 
-		$services = MediaWikiServices::getInstance();
+		$mwServices = MediaWikiServices::getInstance();
 
-		$userGroupManager = $services->getUserGroupManager();
+		$userGroupManager = $mwServices->getUserGroupManager();
 		$userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
 
 		if ( $wgTranslateSandboxPromotedGroup ) {
 			$userGroupManager->addUserToGroup( $user, $wgTranslateSandboxPromotedGroup );
 		}
 
-		$userOptionsManager = $services->getUserOptionsManager();
+		$userOptionsManager = $mwServices->getUserOptionsManager();
 		$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
 		$userOptionsManager->saveOptions( $user );
+
+		$hookRunner = Services::getInstance()->getHookRunner();
+		$hookRunner->onTranslateTranslatorSandboxUserPromoted( $user );
 	}
 
 	/**

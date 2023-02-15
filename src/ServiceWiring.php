@@ -10,6 +10,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
@@ -77,6 +78,12 @@ return [
 		MediaWikiServices $services
 	): GroupSynchronizationCache {
 		return new GroupSynchronizationCache( $services->get( 'Translate:PersistentCache' ) );
+	},
+
+	'Translate:HookRunner' => static function (
+		MediaWikiServices $services
+	): HookRunner {
+		return new HookRunner( $services->getHookContainer() );
 	},
 
 	'Translate:MessageBundleStore' => static function ( MediaWikiServices $services ): MessageBundleStore {
