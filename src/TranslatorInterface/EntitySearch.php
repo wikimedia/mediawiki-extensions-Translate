@@ -23,7 +23,6 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 class EntitySearch {
 	private const FIELD_DELIMITER = "\x7F";
 	private const ROW_DELIMITER = "\n";
-	private const CONTAINS_SEARCH = true;
 
 	/** @var WANObjectCache */
 	private $cache;
@@ -117,6 +116,7 @@ class EntitySearch {
 		return array_values( $results );
 	}
 
+	/** Search message prefixes. Results are collapsed into prefix patterns when possible. */
 	public function searchMessages( string $query, int $maxResults ): array {
 		// Optimized based on requirements:
 		// * "Natural" sorting of results
@@ -124,7 +124,19 @@ class EntitySearch {
 		// * Match at any point in the message
 		// * Return full keys of prefixes that match multiple messages
 
-		$matches = $this->getMessageMatches( $query, self::CONTAINS_SEARCH );
+		// Algorithm: Construct one big string (haystack) with one entity per line.
+		// Then run preg_match_all over it. Because we will have many more matches
+		// than search results, this may be more efficient than calling preg_match
+		// repeatedly in a loop.  On the other hand, it can use a lot of memory to
+		// construct the array for all the matches.
+		$haystack = $this->getMessagesHaystack();
+		$rowDelimiter = self::ROW_DELIMITER;
+		$anything = "[^$rowDelimiter]";
+		$query = preg_quote( $query, '/' );
+
+		// Word match
+		$pattern = "/^($anything*\b$query)$anything*$/miu";
+		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
 
 		$results = [];
 		$previousPrefixMatch = null;
@@ -170,8 +182,20 @@ class EntitySearch {
 		return array_values( $results );
 	}
 
-	public function getMessagesWithPrefix( string $query, bool $containsSearch = self::CONTAINS_SEARCH ): array {
-		$matches = $this->getMessageMatches( $query, $containsSearch );
+	/** Match messages matching a pattern. '*' is the wildcard for anything. */
+	public function matchMessages( string $query ): array {
+		$haystack = $this->getMessagesHaystack();
+		$rowDelimiter = self::ROW_DELIMITER;
+		$anything = "[^$rowDelimiter]*";
+
+		// Need something that's not affected by preg_quote and cannot be guessed
+		$placeholder = bin2hex( random_bytes( 16 ) );
+		$query = str_replace( '*', $placeholder, $query );
+		$query = preg_quote( $query, '/' );
+		$query = str_replace( $placeholder, $anything, $query );
+
+		$pattern = "/^$query/miu";
+		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
 		return array_column( $matches, 0 );
 	}
 
@@ -224,10 +248,10 @@ class EntitySearch {
 		return $haystack;
 	}
 
-	private function getMessageMatches( string $query, bool $searchContains ): array {
+	private function getMessagesHaystack(): string {
 		$cache = $this->cache;
 		$key = $cache->makeKey( 'Translate', 'EntitySearch', 'messages' );
-		$haystack = $cache->getWithSetCallback(
+		return $cache->getWithSetCallback(
 			$key,
 			ExpirationAwareness::TTL_WEEK,
 			function (): string {
@@ -243,20 +267,5 @@ class EntitySearch {
 				'pcTTL' => ExpirationAwareness::TTL_PROC_LONG
 			]
 		);
-
-		// Algorithm: Construct one big string with one entity per line. Then run
-		// preg_match_all over it. Because we will have many more matches than search
-		// results, this may be more efficient than calling preg_match iteratively.
-		// On the other hand, it can use a lot of memory to construct the array for
-		// all the matches.
-		$rowDelimiter = self::ROW_DELIMITER;
-		$anything = $searchContains ? "[^$rowDelimiter]" : $rowDelimiter;
-		$query = preg_quote( $query, '/' );
-
-		// Word match
-		$pattern = "/^($anything*\b$query)$anything*$/miu";
-		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
-
-		return $matches;
 	}
 }

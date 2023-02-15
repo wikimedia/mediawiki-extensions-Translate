@@ -179,9 +179,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 				} );
 			}
 		} elseif ( $this->targetType === self::MESSAGES ) {
-			$messagesWithPrefix = $this->entitySearch->getMessagesWithPrefix(
-				rtrim( $this->target, '*' ), str_ends_with( $this->target, '*' )
-			);
+			$messagesWithPrefix = $this->entitySearch->matchMessages( $this->target );
 			if ( $messagesWithPrefix ) {
 				$messageWithPrefixLimit = $this->options->get( 'TranslateMessagePrefixStatsLimit' );
 				if ( count( $messagesWithPrefix ) > $messageWithPrefixLimit ) {
