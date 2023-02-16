@@ -58,11 +58,15 @@ var EntitySelectorWidget = function ( config ) {
 	this.failureCallback = config.onFail || noop;
 	this.selectCallback = config.onSelect || noop;
 	this.entityTypeToFetch = config.entityType;
+	this.inputId = config.inputId || null;
 	if ( this.entityTypeToFetch && !Array.isArray( this.entityTypeToFetch ) ) {
 		throw new Error( 'entityType must be an array.' );
 	}
 
 	this.selectedEntity = null;
+	if ( this.inputId ) {
+		this.$input.attr( 'id', this.inputId );
+	}
 };
 
 OO.inheritClass( EntitySelectorWidget, OO.ui.TextInputWidget );

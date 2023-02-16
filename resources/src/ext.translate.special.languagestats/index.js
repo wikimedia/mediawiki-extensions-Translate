@@ -202,10 +202,13 @@
 		// hide the message group and prefix selector
 		var $groupContainer = $( '.message-group-selector' );
 
-		// Change the label, and remove the for attribute
-		$groupContainer.find( 'label' )
+		// Change the label, and update the for attribute, and remove the click handler
+		// which causes the entity selector to become un-responsive when triggered
+		$groupContainer
+			.find( 'label' )
 			.text( mw.msg( 'translate-mgs-group-or-prefix' ) )
-			.attr( 'for', '' );
+			.attr( 'for', 'mw-entity-selector-input' )
+			.off( 'click' );
 
 		// Determine what value was set, and set it on the entity selector
 		var selectedGroup = $group.find( 'select option:selected' ).text();
@@ -257,7 +260,8 @@
 		var EntitySelector = require( './entity.selector.js' );
 		return new EntitySelector( {
 			onSelect: onSelect,
-			entityType: [ 'groups', 'messages' ]
+			entityType: [ 'groups', 'messages' ],
+			inputId: 'mw-entity-selector-input'
 		} );
 	}
 
