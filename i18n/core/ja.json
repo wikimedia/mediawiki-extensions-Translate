@@ -203,7 +203,7 @@
 	"translate-mgs-nothing": "要求された統計には表示するものがありません。",
 	"translate-tes-optgroup-group": "グループ",
 	"translate-tes-optgroup-message": "メッセージ",
-	"translate-tes-group-not-found": "一致する結果がありません",
+	"translate-tes-entity-not-found": "一致する結果がありません",
 	"supportedlanguages": "サポートしている言語",
 	"supportedlanguages-summary": "このページには、{{SITENAME}}が対応している全言語の一覧と、\nその言語で活動している翻訳者の名前を表示しています。\n翻訳者の名前は翻訳編集の数が多いほど大きく表示されます。\n下線の色はその翻訳者の最近の活動度を表しています。",
 	"supportedlanguages-colorlegend": "色の凡例: 最後の翻訳が $1 日前",

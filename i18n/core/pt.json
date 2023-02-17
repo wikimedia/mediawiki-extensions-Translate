@@ -216,7 +216,7 @@
 	"translate-tes-optgroup-message": "Mensagens",
 	"translate-tes-message-prefix": "Prefixo - $1",
 	"translate-tes-server-error": "Não foi possível obter sugestões de pesquisa",
-	"translate-tes-group-not-found": "Não há resultados correspondentes",
+	"translate-tes-entity-not-found": "Não há resultados correspondentes",
 	"translate-tes-type-to-search": "Escrever para começar a procurar",
 	"supportedlanguages": "Línguas ativas",
 	"supportedlanguages-summary": "Esta página mostra uma lista das línguas ativas na wiki {{SITENAME}},\ncom os nomes dos tradutores de cada língua.\nQuanto mais traduções feitas por um tradutor, maior será o seu nome.\nA cor do sublinhado indica o quanto recentemente o tradutor esteve ativo aqui.",

@@ -239,7 +239,7 @@
 	"translate-mgs-invalid-group": "Used as error message. Parameters:\n* $1 - target message group name",
 	"translate-mgs-message-prefix-limit": "Error message shown on Special:MessageGroupStats. \n* $1 - number of messages with the selected message prefix",
 	"translate-mgs-nothing": "Error message shown on Special:LanguageStats and Special:MessageGroupStats.",
-	"translate-mgs-invalid-entity": "Message shown if an invalid entity has been selected when user submits Special:MessageGroupStats ",
+	"translate-mgs-invalid-entity": "Message shown if an invalid entity has been selected when user submits Special:MessageGroupStats",
 	"translate-tes-optgroup-group": "Heading label for groups displayed in the entity selector on Special:MessageGroupStats",
 	"translate-tes-optgroup-message": "Heading label for messages displayed in the entity selector on Special:MessageGroupStats",
 	"translate-tes-message-prefix": "Label for items displayed under messages section that are prefixes in the entity selector on Special:MessageGroupStats.\nParameters:\n* $1 - number of messages with this prefix",

@@ -206,7 +206,7 @@
 	"translate-mgs-invalid-group": "Kelompok $1 yang dimaksud tidak ditemukan.",
 	"translate-mgs-nothing": "Tidak ada statistik yang dapat ditampilkan.",
 	"translate-tes-server-error": "Gagal memperoleh saranan pencarian",
-	"translate-tes-group-not-found": "Tidak ada hasil yang cocok",
+	"translate-tes-entity-not-found": "Tidak ada hasil yang cocok",
 	"translate-tes-type-to-search": "Ketik untuk mulai mencari",
 	"supportedlanguages": "Bahasa aktif",
 	"supportedlanguages-summary": "Halaman ini menampilkan daftar bahasa yang aktif di {{SITENAME}}, beserta nama penerjemah yang mengerjakan bahasa tersebut. Nama penerjemah nampak semakin besar jika mereka telah semakin banyak memberikan kontribusi. Warna garis bawah menandakan apakah seorang penerjemah baru saja aktif di sini.",

@@ -184,7 +184,7 @@
 	"translate-mgs-invalid-group": "O grupo especificado, \"$1\", non existe.",
 	"translate-mgs-nothing": "Non hai nada que amosar para as estatísticas solicitadas.",
 	"translate-tes-server-error": "Produciuse un erro ao recuperar as suxestións de busca",
-	"translate-tes-group-not-found": "Non hai resultados que coincidan",
+	"translate-tes-entity-not-found": "Non hai resultados que coincidan",
 	"translate-tes-type-to-search": "Escriba para comezar a buscar",
 	"supportedlanguages": "Linguas activas",
 	"supportedlanguages-summary": "Esta páxina amosa unha lista de todas as linguas activas en {{SITENAME}},\ncanda os nomes dos tradutores que traballan nelas.\nCantas máis contribucións fixese un usuario, máis grande aparecerá o seu nome.\nA cor do subliñado indica como de activo estivo o tradutor recentemente.",

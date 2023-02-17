@@ -220,7 +220,7 @@
 	"translate-mgs-invalid-group": "Зазначеної групи $1 не існує.",
 	"translate-mgs-nothing": "Немає статистики за Вашим запитом.",
 	"translate-tes-server-error": "Не вдалося отримати підказки пошуку",
-	"translate-tes-group-not-found": "Не знайдено збігів",
+	"translate-tes-entity-not-found": "Не знайдено збігів",
 	"translate-tes-type-to-search": "Введіть, щоб почати пошук",
 	"supportedlanguages": "Активні мови",
 	"supportedlanguages-summary": "На цій сторінці перелічено активні мови {{GRAMMAR:locative|{{SITENAME}}}},\nразом з іменами перекладачів, що працюють цими мовами.\nІм'я перекладача буде тим більшим, що більше редагувань він зробив.\nКолір підкреслення позначає як давно було вчинено останні дії.",

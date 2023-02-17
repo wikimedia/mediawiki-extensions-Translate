@@ -196,7 +196,7 @@
 	"translate-mgs-invalid-group": "De opjûne groep $1 bestiet net.",
 	"translate-mgs-nothing": "Neat wer te jaan foar de opfrege statistiken.",
 	"translate-tes-server-error": "Syksuggestjes opheljen mislearre",
-	"translate-tes-group-not-found": "Gjin oerienkommende resultaten",
+	"translate-tes-entity-not-found": "Gjin oerienkommende resultaten",
 	"translate-tes-type-to-search": "Typ om it sykjen te starten",
 	"supportedlanguages": "Talen yn bewurking",
 	"supportedlanguages-summary": "Dizze side lit in list fan alle talen sjen dy't yn bewurking binne op {{GRAMMAR:l|{{SITENAME}}}},\ntegearre mei de nammen fan 'e oersetters foar in beskate taal (nei de klik).\nHoe grutter de namme derút springt, hoe mear bydragen de oersetter levere hat.\nDe kleur fan 'e ûnderstreking jout oan, hoe lang lyn de oersetter warber west hat.",

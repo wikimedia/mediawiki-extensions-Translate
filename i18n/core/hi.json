@@ -206,7 +206,7 @@
 	"translate-mgs-nothing": "अनुरोध किए गए आँकड़ों में दिखाने के लिए कुछ नहीं है।",
 	"translate-tes-optgroup-group": "समूह",
 	"translate-tes-server-error": "खोज के सुझाव लाए न जा सके",
-	"translate-tes-group-not-found": "कोई मेल खाता परिणाम नहीं है",
+	"translate-tes-entity-not-found": "कोई मेल खाता परिणाम नहीं है",
 	"translate-tes-type-to-search": "खोज शुरू करने के लिए लिखें",
 	"supportedlanguages": "सक्रिय भाषाएँ",
 	"supportedlanguages-summary": "यह पृष्ठ {{SITENAME}} पर सक्रिय भाषाओं की सूची दिखाता है,\nऔर साथ में उन अनुवादकों का नाम जो इस भाषा पर काम कर रहे हैं।\nजितने संपादन अनुवादक ने किए हैं, उसका नाम उतना ही बड़ा दिखता है।\nनिम्नरेखा के रंग से पता लगता है कि अनुवादक ने आखिरी बार कब यहाँ अनुवाद किया था।",

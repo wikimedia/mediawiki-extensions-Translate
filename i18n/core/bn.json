@@ -194,7 +194,7 @@
 	"translate-tes-optgroup-message": "বার্তা",
 	"translate-tes-message-prefix": "উপসর্গ - $1",
 	"translate-tes-server-error": "অনুসন্ধান পরামর্শ আনয়ন ব্যর্থ হয়েছে",
-	"translate-tes-group-not-found": "কোনও সাদৃশ্যপূর্ণ ফলাফল নেই",
+	"translate-tes-entity-not-found": "কোনও সাদৃশ্যপূর্ণ ফলাফল নেই",
 	"translate-tes-type-to-search": "অনুসন্ধান শুরু করতে কিছু লিখুন",
 	"supportedlanguages": "সক্রিয় ভাষাসমূহ",
 	"supportedlanguages-colorlegend": "রঙের ব্যাখ্যা: সর্বশেষ অনুবাদ $1 দিন আগে।",

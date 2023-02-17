@@ -200,7 +200,7 @@
 	"translate-tes-optgroup-message": "Messages",
 	"translate-tes-message-prefix": "Prefixo – $1",
 	"translate-tes-server-error": "Error obtenente suggestiones de recerca",
-	"translate-tes-group-not-found": "Nulle resultato correspondente",
+	"translate-tes-entity-not-found": "Nulle resultato correspondente",
 	"translate-tes-type-to-search": "Digita pro comenciar a cercar",
 	"supportedlanguages": "Linguas active",
 	"supportedlanguages-summary": "Iste pagina presenta un lista de linguas active in {{SITENAME}}, con le nomines del traductores laborante a iste lingua.\nLe nomine de un traductor appare tanto plus grande, quanto plus modificationes le traductor ha contribuite.\nLe color de un tracto de sublineamento indica quante tempore ha passate post le ultime activitate de un traductor.",

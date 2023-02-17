@@ -213,7 +213,7 @@
 	"translate-mgs-invalid-group": "Belirtilen $1 grubu yok.",
 	"translate-mgs-nothing": "İstenen istatistikler için gösterilecek bir şey yok.",
 	"translate-tes-server-error": "Arama önerileri getirilemedi",
-	"translate-tes-group-not-found": "Eşleşen sonuç yok",
+	"translate-tes-entity-not-found": "Eşleşen sonuç yok",
 	"translate-tes-type-to-search": "Aramaya başlamak için yazın",
 	"supportedlanguages": "Aktif diller",
 	"supportedlanguages-summary": "Bu sayfa, {{SITENAME}} dilinde aktif dillerin bir listesini ve o dil üzerinde çalışan çevirmenlerin isimleriyle birlikte gösterir.\nBir çevirmenin adı daha büyük görünür, çevirmenin daha fazla düzenlemesi katkıda bulunur.\nBir alt çizginin rengi, çevirmenin ne kadar süre önce aktif olduğunu gösterir.",

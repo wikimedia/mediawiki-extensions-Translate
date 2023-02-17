@@ -212,7 +212,7 @@
 	"translate-mgs-totals": "所有$1種{{PLURAL:$1|語言}}合計",
 	"translate-mgs-invalid-group": "指定的群組 $1 不存在。",
 	"translate-mgs-nothing": "所請求的統計資訊沒有任何內容可以顯示。",
-	"translate-tes-group-not-found": "沒有符合的結果",
+	"translate-tes-entity-not-found": "沒有符合的結果",
 	"translate-tes-type-to-search": "輸入以開始搜尋",
 	"supportedlanguages": "有效語言",
 	"supportedlanguages-summary": "本頁顯示在{{SITENAME}}上所有有效語言清單，\n連同翻譯該語言的翻譯人員姓名，\n翻譯人員的姓名越大，代表翻譯人員的編輯貢獻越多，\n底線的顏色用來表示翻譯人員最近活動的狀況。",

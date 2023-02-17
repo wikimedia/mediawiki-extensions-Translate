@@ -161,7 +161,7 @@
 	"translate-mgs-submit": "Dangos ystadegau",
 	"translate-mgs-column-language": "Iaith",
 	"translate-mgs-totals": "Yr holl ieithoedd gyda'i gilydd",
-	"translate-tes-group-not-found": "Dim canlyniadau cyfatebol",
+	"translate-tes-entity-not-found": "Dim canlyniadau cyfatebol",
 	"translate-tes-type-to-search": "Teipiwch i ddechrau chwilio",
 	"supportedlanguages": "Ieithoedd a gynhelir",
 	"supportedlanguages-summary": "Mae'r dudalen hon yn dangos rhestr o ieithoedd a gynhelir ar {{SITENAME}},\nynghyd ag enwau'r cyfieithwyr sy'n gweithio ar yr iaith honno.\nMae enw cyfieithydd yn ymddangos yn fwy yn ôl nifer ei gyfraniadau.\nMae lliw tanlinell yn dangos pa mor ddiweddar mae cyfieithydd wedi bod yn gweithio yma.",

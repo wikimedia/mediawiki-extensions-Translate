@@ -199,7 +199,7 @@
 	"translate-mgs-nothing": "Нема ничега да се прикаже за захтеване статистике.",
 	"translate-tes-optgroup-group": "Групе",
 	"translate-tes-optgroup-message": "Поруке",
-	"translate-tes-group-not-found": "Нема подударних резултата",
+	"translate-tes-entity-not-found": "Нема подударних резултата",
 	"supportedlanguages": "Активни језици",
 	"supportedlanguages-summary": "Ова страница приказује списак активних језика које подржава {{SITENAME}},\nзаједно са именима преводилаца који раде на том језику.\nИме преводиоца је веће што је више превода допринео.\nБоја линије подвлачења указује колико скоро је преводилац овде био присутан.",
 	"supportedlanguages-colorlegend": "Легенда за боју: последњи превод извршен пре $1 дана.",

@@ -133,7 +133,7 @@
 	"translate-mgs-submit": "ئامارەکان پیشانبدە",
 	"translate-mgs-column-language": "زمان",
 	"translate-mgs-totals": "ھەر $1 {{PLURAL:$1|زمانەکە}} بەیەکەوە",
-	"translate-tes-group-not-found": "ھیچ ئەنجامێکی ھاوشێوە نییە",
+	"translate-tes-entity-not-found": "ھیچ ئەنجامێکی ھاوشێوە نییە",
 	"translate-tes-type-to-search": "بنووسە تا گەڕان دەست پێ بکات",
 	"supportedlanguages": "زمانە چالاکەکان",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|وەرگێڕ}}|وەرگێڕەکان}}: $1",

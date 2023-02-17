@@ -196,7 +196,7 @@
 	"translate-mgs-invalid-group": "Nhóm thông điệp chỉ định, “$1”, không tồn tại.",
 	"translate-mgs-nothing": "Không có thống kê để hiển thị.",
 	"translate-tes-server-error": "Thất bại khi lấy gợi ý tìm kiếm",
-	"translate-tes-group-not-found": "Không có kết quả trùng khớp",
+	"translate-tes-entity-not-found": "Không có kết quả trùng khớp",
 	"translate-tes-type-to-search": "Gõ để bắt đầu tìm kiếm",
 	"supportedlanguages": "Ngôn ngữ được kích hoạt",
 	"supportedlanguages-summary": "Trang này liệt kê tất cả các ngôn ngữ tích cực của {{SITENAME}}, cùng với tên các biên dịch viên đang làm việc trên ngôn ngữ đó.\nBiên dịch viên càng đóng góp nhiều thì tên của họ càng lớn hơn.\nMàu đường gạch dưới cho biết biên dịch viên đã tích cực tại đây cách đây bao lâu.",

@@ -206,7 +206,7 @@
 	"translate-tes-optgroup-group": "Групы",
 	"translate-tes-optgroup-message": "Паведамленні",
 	"translate-tes-server-error": "Не ўдалося атрымаць пошукавыя прапановы",
-	"translate-tes-group-not-found": "Няма адпаведных вынікаў",
+	"translate-tes-entity-not-found": "Няма адпаведных вынікаў",
 	"translate-tes-type-to-search": "Напішыце, каб пачаць пошук",
 	"supportedlanguages": "Актыўныя мовы",
 	"supportedlanguages-summary": "На старонцы паказаны спіс падтрымваных праектам {{SITENAME}} моў\nразам з імёнамі тых, хто тут працуе над перакладамі на гэтыя мовы.\nІмя перакладчыка адлюстроўваецца тым буйней, чым болей правак ён зрабіў.\nКолер падкрэслення дае зразумець як даўно перакладчык здзяйсняў тут што-небудзь.",

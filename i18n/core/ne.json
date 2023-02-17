@@ -127,7 +127,7 @@
 	"translate-mgs-noempty": "कुनैपनि अनुवाद नभएका भाषाहरू प्रदर्शन नगर्नुहोस्",
 	"translate-mgs-submit": "तथ्याङ्कहरू देखाउनुहाेस्",
 	"translate-mgs-column-language": "भाषा",
-	"translate-tes-group-not-found": "कुनै मिल्दो परिणामहरू छैनन्",
+	"translate-tes-entity-not-found": "कुनै मिल्दो परिणामहरू छैनन्",
 	"supportedlanguages": "समर्थित भाषाहरू",
 	"supportedlanguages-summary": "यस पृष्ठले {{SITENAME}}मा सक्रिय भाषाहरूको सूची देखाउँदछ,\nत्यो भाषामा काम गर्ने अनुवादकहरूको नामहरूसँगै।\nअनुवादकको नाम ठुलो देखिन्छ, अनुवादकले जति धेरै सम्पादनहरू योगदान गरेको हुन्छ।\nएउटा रेखाचित्रको रङ्गले यहाँ अनुवादक हालै कति सक्रिय भएको देखाउँछ।",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
