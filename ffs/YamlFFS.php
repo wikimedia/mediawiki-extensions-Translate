@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -176,7 +177,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $this->flattener->compareContent( $a, $b );
 	}
 
-	public static function getExtraSchema() {
+	public static function getExtraSchema(): array {
 		$schema = [
 			'root' => [
 				'_type' => 'array',

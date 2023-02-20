@@ -1,4 +1,7 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 /**
  * Message groups are usually configured in YAML, though the actual storage format does not matter,
@@ -13,13 +16,11 @@
  *
  * @see https://github.com/romaricdrigon/MetaYaml
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
- * @since 2014.01
  */
 interface MetaYamlSchemaExtender {
 	/**
 	 * Return a data structure that will be merged with the base schema. It is not possible to remove
 	 * things.
-	 * @return array
 	 */
-	public static function getExtraSchema();
+	public static function getExtraSchema(): array;
 }

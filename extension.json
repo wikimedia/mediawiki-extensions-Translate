@@ -112,7 +112,6 @@
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessagePrefixMessageGroup": "messagegroups/MessagePrefixMessageGroup.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
-		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
 		"PHPVariableLoader": "utils/PHPVariableLoader.php",
 		"PremadeIntuitionTextdomains": "ffs/PremadeIntuitionTextdomains.php",
 		"PremadeMediawikiExtensionGroups": "ffs/PremadeMediawikiExtensionGroups.php",

@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -195,7 +196,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		}
 	}
 
-	public static function getExtraSchema() {
+	public static function getExtraSchema(): array {
 		$schema = [
 			'root' => [
 				'_type' => 'array',

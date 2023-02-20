@@ -9,6 +9,7 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
@@ -634,7 +635,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $a !== $b;
 	}
 
-	public static function getExtraSchema() {
+	public static function getExtraSchema(): array {
 		$schema = [
 			'root' => [
 				'_type' => 'array',
