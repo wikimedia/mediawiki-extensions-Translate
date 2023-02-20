@@ -3,18 +3,18 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
-use TMessage;
 
 /**
  * @license GPL-2.0-or-later
  * @since 2019.09
  */
 class GettextPluralValidator implements MessageValidator {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
 		$pluralRule = GettextPlural::getPluralRule( $targetLanguage );

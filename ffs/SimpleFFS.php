@@ -13,6 +13,7 @@
  * @ingroup FFS
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use UtfNormal\Validator;
@@ -248,7 +249,7 @@ class SimpleFFS implements FFS {
 
 		$mangler = $this->group->getMangler();
 
-		/** @var TMessage $m */
+		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();

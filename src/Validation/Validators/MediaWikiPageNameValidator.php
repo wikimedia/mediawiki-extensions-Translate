@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
-use TMessage;
 
 /**
  * Ensures that translations do not translate namespaces.
@@ -15,7 +15,7 @@ use TMessage;
  * @since 2020.02
  */
 class MediaWikiPageNameValidator implements MessageValidator {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
 		$definition = $message->definition();

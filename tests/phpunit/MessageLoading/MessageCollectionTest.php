@@ -13,7 +13,6 @@ use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use MockWikiMessageGroup;
 use Title;
-use TMessage;
 use WANObjectCache;
 
 /**
@@ -76,9 +75,9 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$collection = $group->initCollection( 'fi' );
 		$collection->loadTranslations();
 
-		/** @var TMessage $translated */
+		/** @var Message $translated */
 		$translated = $collection['translated'];
-		$this->assertInstanceOf( TMessage::class, $translated );
+		$this->assertInstanceOf( Message::class, $translated );
 		$this->assertEquals( 'translated', $translated->key() );
 		$this->assertEquals( 'bunny', $translated->definition() );
 		$this->assertEquals( 'pupuliini', $translated->translation() );
@@ -91,9 +90,9 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		);
 		$this->assertEquals( $revisionId, $translated->getProperty( 'revision' ) );
 
-		/** @var TMessage $untranslated */
+		/** @var Message $untranslated */
 		$untranslated = $collection['untranslated'];
-		$this->assertInstanceOf( TMessage::class, $untranslated );
+		$this->assertInstanceOf( Message::class, $untranslated );
 		$this->assertNull( $untranslated->translation(), 'no translation is null' );
 		$this->assertNull( $untranslated->getProperty( 'last-translator-text' ) );
 		$this->assertNull( $untranslated->getProperty( 'last-translator-id' ) );

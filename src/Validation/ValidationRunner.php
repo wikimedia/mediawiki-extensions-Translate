@@ -14,11 +14,11 @@ namespace MediaWiki\Extension\Translate\Validation;
 use Exception;
 use FormatJson;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use PHPVariableLoader;
 use RuntimeException;
-use TMessage;
 
 /**
  * Message validator is used to run validators to find common mistakes so that
@@ -143,7 +143,7 @@ class ValidationRunner {
 	 * Returns a ValidationResult that contains methods to print the issues.
 	 */
 	public function validateMessage(
-		TMessage $message,
+		Message $message,
 		string $code,
 		bool $ignoreWarnings = false
 	): ValidationResult {
@@ -169,7 +169,7 @@ class ValidationRunner {
 
 	/** Validate a message, and return as soon as any validation fails. */
 	public function quickValidate(
-		TMessage $message,
+		Message $message,
 		string $code,
 		bool $ignoreWarnings = false
 	): ValidationResult {
@@ -336,7 +336,7 @@ class ValidationRunner {
 	 */
 	private function runValidation(
 		array $validatorData,
-		TMessage $message,
+		Message $message,
 		string $targetLanguage,
 		ValidationIssues $errors,
 		ValidationIssues $warnings,

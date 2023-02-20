@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
@@ -408,7 +409,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		}
 		$pluralCount = GettextPlural::getPluralCount( $pluralRule );
 
-		/** @var TMessage $m */
+		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$transTemplate = $template['EXTRA']['TEMPLATE'][$key] ?? [];
 			$potTemplate = $pot['EXTRA']['TEMPLATE'][$key] ?? [];
@@ -493,7 +494,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 	/**
 	 * @param string $key
-	 * @param TMessage $m
+	 * @param Message $m
 	 * @param array $trans
 	 * @param array $pot
 	 * @param int $pluralCount

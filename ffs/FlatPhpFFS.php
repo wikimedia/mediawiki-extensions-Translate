@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
@@ -64,7 +65,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		$mangler = $this->group->getMangler();
 
-		/** @var TMessage $item */
+		/** @var Message $item */
 		foreach ( $collection as $item ) {
 			$key = $mangler->unmangle( $item->key() );
 			$key = stripcslashes( $key );

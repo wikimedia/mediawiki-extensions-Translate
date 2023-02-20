@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
-use TMessage;
 
 /**
  * Ensures that the translation has the same number of newlines as the source
@@ -16,7 +16,7 @@ use TMessage;
  * @since 2019.09
  */
 class NewlineValidator implements MessageValidator {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$translation = $message->translation();
 		$definition = $message->definition();
 

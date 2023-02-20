@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use Wikimedia\Zest\Zest;
 
@@ -150,7 +151,7 @@ class XliffFFS extends SimpleFFS {
 		$list = Zest::getElementsByTagName( $template, 'body' )[0];
 		$list->nodeValue = null;
 
-		/** @var TMessage $m */
+		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 

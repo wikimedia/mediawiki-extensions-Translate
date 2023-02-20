@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
@@ -108,7 +109,7 @@ class AppleFFS extends SimpleFFS {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
-		/** @var TMessage $m */
+		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );

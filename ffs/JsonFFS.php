@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 
@@ -82,7 +83,7 @@ class JsonFFS extends SimpleFFS {
 		$authors = $this->filterAuthors( $collection->getAuthors(), $collection->getLanguage() );
 		$messages = [];
 
-		/** @var TMessage $m */
+		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( $value === null ) {

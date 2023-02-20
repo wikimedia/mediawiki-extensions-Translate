@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
-use TMessage;
 
 /**
  * Ensures that the translation for a message matches a value from a list.
@@ -37,7 +37,7 @@ class MatchSetValidator implements MessageValidator {
 		}
 	}
 
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
 		$translation = $message->translation();

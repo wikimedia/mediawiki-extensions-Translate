@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Utilities\UnicodePlural;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
-use TMessage;
 
 /**
  * This is a very strict validator class for Unicode CLDR based plural markup.
@@ -18,7 +18,7 @@ use TMessage;
  * @license GPL-2.0-or-later
  */
 class UnicodePluralValidator implements MessageValidator {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
 		$expectedKeywords = UnicodePlural::getPluralKeywords( $targetLanguage );

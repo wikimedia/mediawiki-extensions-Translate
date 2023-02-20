@@ -6,13 +6,13 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 use FormatJson;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\ParallelExecutor;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use MessageGroupStats;
 use MessageHandle;
-use TMessage;
 use WikiMap;
 
 /**
@@ -167,7 +167,7 @@ class ExportTtmServerDumpMaintenanceScript extends BaseMaintenanceScript {
 
 			foreach ( $collection->keys() as $mkey => $titleValue ) {
 				$handle = new MessageHandle( $titleValue );
-				/** @var TMessage $message */
+				/** @var Message $message */
 				$message = $collection[$mkey];
 
 				if ( !isset( $out[$mkey] ) ) {

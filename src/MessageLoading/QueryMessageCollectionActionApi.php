@@ -16,7 +16,6 @@ use MessageHandle;
 use MWException;
 use RecentMessageGroup;
 use Title;
-use TMessage;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -218,7 +217,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 	private function extractMessageData(
 		ApiResult $result,
 		array $props,
-		TMessage $message
+		Message $message
 	): array {
 		$data = [ 'key' => $message->key() ];
 

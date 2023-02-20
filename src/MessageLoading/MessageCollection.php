@@ -19,7 +19,6 @@ use stdClass;
 use TextContent;
 use ThinMessage;
 use TitleValue;
-use TMessage;
 use Traversable;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -53,7 +52,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/** array( %Message display key => database key, ... ) */
 	protected array $keys = [];
-	/** array( %Message String => TMessage, ... ) */
+	/** array( %Message String => Message, ... ) */
 	protected ?array $messages = [];
 	private ?array $reverseMap;
 	// Database resources
@@ -169,7 +168,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		foreach ( $this->messages as $m ) {
 			// Check if there are authors
-			/** @var TMessage $m */
+			/** @var Message $m */
 			$author = $m->getProperty( 'last-translator-text' );
 
 			if ( $author === null ) {
@@ -801,7 +800,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
-	 * Constructs all TMessages from the data accumulated so far.
+	 * Constructs all Messages (ThinMessage) from the data accumulated so far.
 	 * Usually there is no need to call this method directly.
 	 */
 	public function initMessages(): void {
@@ -904,7 +903,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/** @param mixed $offset */
-	public function offsetGet( $offset ): ?TMessage {
+	public function offsetGet( $offset ): ?Message {
 		return $this->messages[$offset] ?? null;
 	}
 

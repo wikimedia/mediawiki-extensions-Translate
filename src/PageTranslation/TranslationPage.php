@@ -6,10 +6,10 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use Content;
 use ContentHandler;
 use Language;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use Parser;
 use Title;
-use TMessage;
 use WikiPageMessageGroup;
 
 /**
@@ -75,7 +75,7 @@ class TranslationPage {
 		}
 	}
 
-	/** @return TMessage[] */
+	/** @return Message[] */
 	private function extractMessages( MessageCollection $collection ): array {
 		$messages = [];
 		$prefix = $this->sourcePageTitle->getPrefixedDBkey() . '/';
@@ -91,12 +91,12 @@ class TranslationPage {
 
 	/**
 	 * @param Parser $parser
-	 * @param TMessage[] $messages
+	 * @param Message[] $messages
 	 */
 	public function generateSourceFromTranslations( Parser $parser, array $messages ): string {
 		$replacements = [];
 		foreach ( $this->output->units() as $placeholder => $unit ) {
-			/** @var TMessage $msg */
+			/** @var Message $msg */
 			$msg = $messages[$unit->id] ?? null;
 			$replacements[$placeholder] = $unit->getTextForRendering(
 				$msg,

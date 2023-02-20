@@ -8,6 +8,7 @@
  * @since 2013.12
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
@@ -165,7 +166,7 @@ class ExternalMessageSourceStateComparator {
 
 		foreach ( $common as $key ) {
 			$sourceContent = $file['MESSAGES'][$key];
-			/** @var TMessage $wikiMessage */
+			/** @var Message $wikiMessage */
 			$wikiMessage = $wiki[$key];
 			$wikiContent = $wikiMessage->translation();
 

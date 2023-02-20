@@ -124,7 +124,6 @@
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"ThinMessage": "Message.php",
-		"TMessage": "Message.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
 		"TranslateHooks": "TranslateHooks.php",

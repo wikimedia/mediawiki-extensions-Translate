@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
@@ -12,7 +13,6 @@ use Parser;
 use ParserFactory;
 use ParserOptions;
 use PPFrame;
-use TMessage;
 
 /**
  * Handles plural validation for MediaWiki inline plural syntax.
@@ -38,7 +38,7 @@ class MediaWikiPluralValidator implements MessageValidator {
 		$this->userFactory = $userFactory;
 	}
 
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 		$this->pluralCheck( $message, $issues );
 		$this->pluralFormsCheck( $message, $targetLanguage, $issues );
@@ -46,7 +46,7 @@ class MediaWikiPluralValidator implements MessageValidator {
 		return $issues;
 	}
 
-	private function pluralCheck( TMessage $message, ValidationIssues $issues ): void {
+	private function pluralCheck( Message $message, ValidationIssues $issues ): void {
 		$definition = $message->definition();
 		$translation = $message->translation();
 
@@ -60,7 +60,7 @@ class MediaWikiPluralValidator implements MessageValidator {
 	}
 
 	protected function pluralFormsCheck(
-		TMessage $message, string $code, ValidationIssues $issues
+		Message $message, string $code, ValidationIssues $issues
 	): void {
 		$translation = $message->translation();
 		// Are there any plural forms for this language in this message?

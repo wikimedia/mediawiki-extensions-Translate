@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Html;
 use Language;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use Parser;
-use TMessage;
 use const PREG_SET_ORDER;
 
 /**
@@ -174,7 +174,7 @@ class TranslationUnit {
 	}
 
 	public function getTextForRendering(
-		?TMessage $msg,
+		?Message $msg,
 		Language $sourceLanguage,
 		Language $targetLanguage,
 		bool $wrapUntranslated,
@@ -284,7 +284,7 @@ class TranslationUnit {
 		Language $sourceLanguage,
 		Language $targetLanguage,
 		?string $headingText,
-		?TMessage $msg,
+		?Message $msg,
 		bool $isInline
 	): bool {
 		// If it's not a heading, don't bother adding an anchor

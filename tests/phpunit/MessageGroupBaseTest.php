@@ -1,6 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
@@ -227,7 +228,7 @@ class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
 }
 
 class FakeInsertableValidator implements MessageValidator, InsertablesSuggester {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		return new ValidationIssues();
 	}
 
@@ -237,7 +238,7 @@ class FakeInsertableValidator implements MessageValidator, InsertablesSuggester 
 }
 
 class AnotherFakeInsertableValidator implements MessageValidator, InsertablesSuggester {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues {
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		return new ValidationIssues();
 	}
 

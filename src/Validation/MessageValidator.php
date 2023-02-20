@@ -9,7 +9,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation;
 
-use TMessage;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 
 /**
  * Interim interface for message validators.
@@ -20,5 +20,5 @@ use TMessage;
  * @since 2020.06
  */
 interface MessageValidator {
-	public function getIssues( TMessage $message, string $targetLanguage ): ValidationIssues;
+	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues;
 }

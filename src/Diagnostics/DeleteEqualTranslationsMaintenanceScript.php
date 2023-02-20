@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
@@ -11,7 +12,6 @@ use MediaWiki\MediaWikiServices;
 use SplObjectStorage;
 use Title;
 use TitleValue;
-use TMessage;
 use const SORT_NUMERIC;
 
 /**
@@ -84,7 +84,7 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 		$messages = new SplObjectStorage();
 		foreach ( $collection->keys() as $key => $titleValue ) {
-			/** @var TMessage $message */
+			/** @var Message $message */
 			$message = $collection[$key];
 
 			if ( $message->definition() === $message->translation() ) {
@@ -98,7 +98,7 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	private function getUserStats( SplObjectStorage $messages ): array {
 		$stats = [];
 		foreach ( $messages as $key ) {
-			/** @var TMessage $message */
+			/** @var Message $message */
 			$message = $messages[$key];
 			$index = $message->getProperty( 'last-translator-text' );
 			$stats[$index] = ( $stats[$index] ?? 0 ) + 1;
@@ -118,7 +118,7 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	private function printMessages( SplObjectStorage $messages ): void {
 		/** @var TitleValue $key */
 		foreach ( $messages as $key ) {
-			/** @var TMessage $message */
+			/** @var Message $message */
 			$message = $messages[$key];
 			$title = Title::newFromLinkTarget( $key );
 			$this->output(
