@@ -9,7 +9,6 @@ $cfg['scalar_implicit_cast'] = true;
 $cfg['file_list'] = array_merge(
 	$cfg['file_list'],
 	[
-		'Message.php',
 		'TranslateHooks.php',
 	]
 );

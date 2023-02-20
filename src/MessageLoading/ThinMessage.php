@@ -1,44 +1,40 @@
 <?php
+declare( strict_types=1 );
+
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use stdClass;
+
 /**
- * Classes for message objects ThinMessage
+ * Message object which is based on database result row. Hence the name thin.
+ * Needs fields rev_user_text and those that are needed for loading revision
+ * text.
  *
- * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Extension\Translate\MessageLoading\Message;
-
-/**
- * %Message object which is based on database result row. Hence the name thin.
- * Needs fields rev_user_text and those that are needed for loading revision
- * text.
- */
 class ThinMessage extends Message {
-	// This maps properties to fields in the database result row
-	protected static $propertyMap = [
+	/** This maps properties to fields in the database result row */
+	protected static array $propertyMap = [
 		'last-translator-text' => 'rev_user_text',
 		'last-translator-id' => 'rev_user',
 	];
-	/** @var stdClass Database Result Row */
-	protected $row;
-	/** @var string Stored translation. */
-	protected $translation;
+	/** Database Result Row */
+	protected ?stdClass $row = null;
+	/** Stored translation. */
+	protected ?string $translation = null;
 
 	/**
 	 * Set the database row this message is based on.
 	 * @param stdClass $row Database Result Row
 	 */
-	public function setRow( $row ) {
+	public function setRow( stdClass $row ): void {
 		$this->row = $row;
 	}
 
-	/**
-	 * Set the current translation of this message.
-	 * @param string $text
-	 */
-	public function setTranslation( $text ) {
+	/** Set the current translation of this message. */
+	public function setTranslation( string $text ): void {
 		$this->translation = $text;
 	}
 
@@ -47,7 +43,6 @@ class ThinMessage extends Message {
 		if ( !isset( $this->row ) ) {
 			return $this->infile();
 		}
-
 		return $this->translation;
 	}
 
@@ -56,9 +51,7 @@ class ThinMessage extends Message {
 		if ( !isset( self::$propertyMap[$key] ) ) {
 			return parent::getProperty( $key );
 		}
-
 		$field = self::$propertyMap[$key];
-
 		return $this->row->$field ?? null;
 	}
 
