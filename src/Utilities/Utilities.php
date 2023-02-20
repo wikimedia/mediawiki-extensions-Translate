@@ -500,9 +500,7 @@ class Utilities {
 			return [];
 		}
 
-		$pageInfo = self::getContents( $titles, $namespace );
-
-		return $pageInfo;
+		return self::getContents( $titles, $namespace );
 	}
 }
 
