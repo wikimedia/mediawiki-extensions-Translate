@@ -188,4 +188,23 @@ class TtmServerFactory {
 		// Did not find any writable servers.
 		return [];
 	}
+
+	/** Get servers marked as writable */
+	public function getWriteOnly(): array {
+		$ttmServerIds = $this->getNames();
+		$writableServers = [];
+		foreach ( $ttmServerIds as $serverId ) {
+			if ( $this->configs[ $serverId ][ 'writable' ] ?? false ) {
+				$server = $this->create( $serverId );
+				if ( !$server instanceof WritableTtmServer ) {
+					throw new \InvalidArgumentException(
+						"Server '$serverId' marked writable does not implement WritableTtmServer interface"
+					);
+				}
+				$writableServers[ $serverId ] = $server;
+			}
+		}
+
+		return $writableServers;
+	}
 }

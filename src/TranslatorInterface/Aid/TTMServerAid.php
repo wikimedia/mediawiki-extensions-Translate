@@ -201,6 +201,12 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			}
 		}
 
+		// Remove writable services
+		$writableServices = $this->ttmServerFactory->getWriteOnly();
+		foreach ( array_keys( $writableServices ) as $serviceId ) {
+			unset( $services[ $serviceId ] );
+		}
+
 		// Then remove non-ttmservers
 		foreach ( $services as $name => $config ) {
 			$type = $config['type'];

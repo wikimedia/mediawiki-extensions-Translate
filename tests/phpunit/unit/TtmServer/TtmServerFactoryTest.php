@@ -244,4 +244,37 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			$this->assertNotNull( $ttmServer );
 		}
 	}
+
+	/** @dataProvider provideTestGetWriteOnly */
+	public function testGetWriteOnly( array $servers, array $expectedKeys ) {
+		$ttmFactory = new TtmServerFactory( $servers );
+		$serverInstances = $ttmFactory->getWriteOnly();
+		foreach ( $expectedKeys as $key ) {
+			$this->assertArrayHasKey( $key, $serverInstances );
+		}
+	}
+
+	public function provideTestGetWriteOnly(): Generator {
+		$writableServer = [
+			'type' => 'ttmserver',
+			'class' => FakeTTMServer::class,
+			'writable' => true,
+			'mirror' => true
+		];
+
+		$normalServer = [
+			'type' => 'ttmserver',
+			'class' => FakeTTMServer::class,
+			'writable' => true,
+			'mirror' => true
+		];
+
+		yield 'only writable server are returned' => [
+			[
+				'writable' => $writableServer,
+				'ttm' => $normalServer
+			],
+			[ 'writable' ]
+		];
+	}
 }
