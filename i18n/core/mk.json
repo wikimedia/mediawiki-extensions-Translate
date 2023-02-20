@@ -203,6 +203,7 @@
 	"translate-mgs-invalid-group": "Наведената група $1 не постои.",
 	"translate-mgs-message-prefix-limit": "Избраната претставка има преку $1 {{PLURAL:$1|порака|пораки}}. Барањето на голем број пораки е бавно. Дополнително уточнете го.",
 	"translate-mgs-nothing": "Нема што да се прикаже за побараните статистики.",
+	"translate-mgs-invalid-entity": "Не ја најдов избраната група пораки или претставка",
 	"translate-tes-optgroup-group": "Групи",
 	"translate-tes-optgroup-message": "Пораки",
 	"translate-tes-message-prefix": "Претставка — $1",

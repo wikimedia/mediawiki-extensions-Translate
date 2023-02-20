@@ -195,6 +195,7 @@
 	"translate-mgs-invalid-group": "De opgegeven groep \"$1\" bestaat niet.",
 	"translate-mgs-message-prefix-limit": "Er zijn meer dan $1 bericht{{PLURAL:$1||en}} met het geselecteerde berichtenvoorvoegsel. Het zoeken naar een groot aantal berichten is traag. Gelieve uw zoekopdracht verder te verfijnen.",
 	"translate-mgs-nothing": "Er is niets weer te geven voor de opgegeven statistieken.",
+	"translate-mgs-invalid-entity": "De geselecteerde berichtengroep of het geselecteerde berichtenvoorvoegsel is niet gevonden",
 	"translate-tes-optgroup-group": "Groepen",
 	"translate-tes-optgroup-message": "Berichten",
 	"translate-tes-message-prefix": "Voorvoegsel – $1",

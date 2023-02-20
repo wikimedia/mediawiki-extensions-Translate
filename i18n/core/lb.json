@@ -3,7 +3,8 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"translate": "Iwwersetzt",
@@ -172,6 +173,7 @@
 	"translate-mgs-totals": "All $1 {{PLURAL:$1|Sprooch|Sproochen}} zesummen",
 	"translate-mgs-invalid-group": "De spezifizéierte Grupp $1 gëtt et net.",
 	"translate-mgs-nothing": "Fir déi gefrote Statistike gëtt et näischt fir ze weisen.",
+	"translate-tes-optgroup-message": "Messagen",
 	"translate-tes-type-to-search": "Tippt fir unzefänke mat sichen",
 	"supportedlanguages": "Aktiv Sproochen",
 	"supportedlanguages-summary": "Op dëser Säit steet eng Lëscht vun den aktive Sproochen op {{SITENAME}}, zesumme mam Numm vun den Iwwersetzer déi un där Sprooch schaffen.\nDen Numm vum Iwwersetzer ass méi grouss desto méi Iwwersetzungen de Benotzer gemaach huet.\nD'Faarf mat där den Numm vum Benotzer ënnerstrach ass weist wéi rezent dee Benotzer hei aktiv war.",
