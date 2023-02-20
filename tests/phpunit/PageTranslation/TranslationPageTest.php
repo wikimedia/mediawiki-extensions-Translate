@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use FatMessage;
+use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWikiIntegrationTestCase;
 use Parser;
 use Title;

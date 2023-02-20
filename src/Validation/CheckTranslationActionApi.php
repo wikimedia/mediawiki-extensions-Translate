@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Validation;
 
 use ApiBase;
-use FatMessage;
+use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MessageHandle;
 use Title;
 use Wikimedia\ParamValidator\ParamValidator;

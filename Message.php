@@ -1,6 +1,6 @@
 <?php
 /**
- * Classes for message objects ThinMessage and FatMessage.
+ * Classes for message objects ThinMessage
  *
  * @file
  * @author Niklas Laxström
@@ -65,30 +65,5 @@ class ThinMessage extends Message {
 	// Re-implemented
 	public function getPropertyNames(): array {
 		return array_merge( parent::getPropertyNames(), array_keys( self::$propertyMap ) );
-	}
-}
-
-/**
- * %Message object where you can directly set the translation.
- * Hence the name fat. Authors are not supported.
- */
-class FatMessage extends Message {
-	/** @var string Stored translation. */
-	protected $translation;
-
-	/**
-	 * Set the current translation of this message.
-	 * @param string $text
-	 */
-	public function setTranslation( $text ) {
-		$this->translation = $text;
-	}
-
-	public function translation(): ?string {
-		if ( $this->translation === null ) {
-			return $this->infile;
-		}
-
-		return $this->translation;
 	}
 }

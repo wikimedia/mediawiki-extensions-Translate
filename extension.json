@@ -78,7 +78,6 @@
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
 		"ExternalMessageSourceStateComparator": "utils/ExternalMessageSourceStateComparator.php",
 		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
-		"FatMessage": "Message.php",
 		"FFS": "ffs/FFS.php",
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FileBasedMessageGroupLoader": "messagegroups/loaders/FileBasedMessageGroupLoader.php",

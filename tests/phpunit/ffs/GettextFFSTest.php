@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+
 /** @covers \GettextFFS */
 class GettextFFSTest extends MediaWikiIntegrationTestCase {
 	protected $groupConfiguration;
