@@ -18,7 +18,8 @@
 			"Uchup19",
 			"William Surya Permana",
 			"WillsonEP09",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Rachmat04"
 		]
 	},
 	"translate": "Terjemahkan",
@@ -353,7 +354,7 @@
 	"tux-save-unknown-error": "Terjadi galat tak dikenal.",
 	"tux-editor-placeholder-documentation": "Tambahkan dokumentasi pesan",
 	"tux-editor-placeholder-language": "Terjemahan Anda dalam $1",
-	"tux-editor-editsummary-placeholder": "Ringkasan opsional",
+	"tux-editor-editsummary-placeholder": "Jelaskan perubahan Anda (opsional)",
 	"tux-editor-paste-original-button-label": "Tempel teks sumber",
 	"tux-editor-discard-changes-button-label": "Buang perubahan",
 	"tux-editor-save-button-label": "Terbitkan terjemahan",
