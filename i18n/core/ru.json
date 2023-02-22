@@ -149,7 +149,7 @@
 	"right-translate-groupreview": "Изменять состояние обработки групп сообщений",
 	"action-translate-groupreview": "изменение состояния групп сообщений",
 	"translate-rcfilters-translations": "Переводы",
-	"translate-rcfilters-translations-only-label": "Переводы",
+	"translate-rcfilters-translations-only-label": "Пространства имён переводов",
 	"translate-rcfilters-translations-only-desc": "Изменения в переведенных страницах.",
 	"translate-rcfilters-translations-filter-label": "Не в пространствах имен перевода",
 	"translate-rcfilters-translations-filter-desc": "Все изменения, которые не являются переводами.",

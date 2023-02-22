@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
 	"tsb-all-languages-button-label": "Buot gielat",
+	"tsb-accept-button-label": "Dohkket",
 	"translationstash": "Bures boahtin"
 }
