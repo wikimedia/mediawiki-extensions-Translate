@@ -138,9 +138,4 @@ abstract class TTMServer {
 		}
 		return [];
 	}
-
-	/** @return bool */
-	public function isFrozen(): bool {
-		return false;
-	}
 }

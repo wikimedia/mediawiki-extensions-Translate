@@ -50,14 +50,6 @@ interface WritableTtmServer {
 	 */
 	public function getMirrors(): array;
 
-	/**
-	 * Check if the service is frozen, attempting to write to
-	 * a frozen service may lead to errors or unexpected behaviors.
-	 * @deprecated since 2022.04
-	 * @return bool true if the service is frozen
-	 */
-	public function isFrozen(): bool;
-
 	/** Instruct the service to fully wipe the index and start from scratch. */
 	public function setDoReIndex(): void;
 }

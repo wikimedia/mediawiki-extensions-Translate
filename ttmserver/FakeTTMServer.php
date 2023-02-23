@@ -62,10 +62,6 @@ class FakeTTMServer extends TTMServer implements ReadableTtmServer, WritableTtmS
 		return [];
 	}
 
-	public function isFrozen(): bool {
-		return false;
-	}
-
 	public function setDoReIndex(): void {
 	}
 }
