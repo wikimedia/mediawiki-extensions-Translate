@@ -235,7 +235,7 @@
 	"translate-import-load": "Fichier lueden",
 	"translate-import-err-dl-failed": "De Fichier kann net erreescht ginn:\n$1",
 	"translate-import-err-ul-failed": "D'Eropluede vum Fichier huet net geklappt",
-	"translate-import-err-invalid-title": "Den Numm vum Fichier <nowiki>$1</nowiki> deen ugi gouf ass net valabel.",
+	"translate-import-err-invalid-title": "Den Numm vum Fichier <nowiki>$1</nowiki>,deen ugi gouf, ass net valabel.",
 	"translate-import-err-no-such-file": "De Fichier <nowiki>$1</nowiki> gëtt et net oder gouf lokal net eropgelueden.",
 	"translate-import-err-stale-group": "De Grupp vu Messagen zu deem dëse Fichier gehéiert gëtt et net.",
 	"translate-import-err-no-headers": "De Fichier ass net am Format \"Gettext\" deen d'Erweiderung \"Translate\" brauch:\nDe Grupp an d'Sprooch konnte vun der Entête vum Fichier net bestëmmt ginn.",
