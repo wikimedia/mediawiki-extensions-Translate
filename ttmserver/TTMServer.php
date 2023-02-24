@@ -118,7 +118,10 @@ abstract class TTMServer {
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 	}
 
-	/** @return string[] */
+	/**
+	 * @deprecated Since MLEB 2023.04
+	 * @return string[]
+	 */
 	public function getMirrors(): array {
 		global $wgTranslateTranslationServices;
 		if ( isset( $this->config['mirrors'] ) ) {
