@@ -48,9 +48,17 @@ class UpdatedDefinitionAid extends TranslationAid {
 
 		// Using getRevisionById instead of byTitle, because the page might have been renamed
 		$mwInstance = MediaWikiServices::getInstance();
-		$oldRevRecord = $mwInstance->getRevisionLookup()->getRevisionById( $translationRevision );
+		$revisionLookup = $mwInstance->getRevisionLookup();
+		$oldRevRecord = $revisionLookup->getRevisionById( $translationRevision );
 		if ( !$oldRevRecord ) {
 			throw new TranslationHelperException( 'Old definition version does not exist anymore' );
+		}
+
+		// Escaping legacy issue (T330453)
+		$curTranslationId = $revisionLookup->getRevisionByTitle( $this->handle->getTitle() )->getId();
+
+		if ( $oldRevRecord->getId() > $curTranslationId ) {
+			throw new TranslationHelperException( 'Translation unit is older than first version of source unit.' );
 		}
 
 		$oldContent = $oldRevRecord->getContent( SlotRecord::MAIN );
