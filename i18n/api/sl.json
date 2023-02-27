@@ -29,5 +29,6 @@
 	"apierror-translate-language-disabled": "Prevajanje v $1 je onemogočeno.",
 	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",
 	"apierror-translate-sandboxdisabled": "Možnost peskovnika ni v uporabi",
+	"apierror-translate-smg-nochanges": "Ni nobenih sprememb za obdelavo.",
 	"apiwarn-translate-language-disabled-source": "Izvorni jezik te skupine je $1. Izberite drug jezik, v katerega želite prevajati."
 }

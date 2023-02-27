@@ -11,7 +11,10 @@
 	"tpt-tab-translate": "Jorgal",
 	"tpt-aggregategroup-save": "Vurke",
 	"tpt-aggregategroup-update": "Vurke",
+	"tpt-aggregategroup-update-cancel": "Šluhtte",
 	"pt-movepage-list-other": "Eará {{PLURAL:$1|oalgesiidu|oalgesiiddut}}",
 	"pt-deletepage-current": "Siidonamma:",
-	"pm-savepages-button-label": "Vurke"
+	"pm-savepages-button-label": "Vurke",
+	"pm-cancel-button-label": "Šluhtte",
+	"pp-cancel-button-label": "Šluhtte"
 }
