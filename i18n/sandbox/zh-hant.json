@@ -9,7 +9,8 @@
 			"Sean",
 			"Simon Shek",
 			"Xiplus",
-			"和平奮鬥救地球"
+			"和平奮鬥救地球",
+			"列维劳德"
 		]
 	},
 	"managetranslatorsandbox": "管理翻譯人員沙盒",
@@ -46,7 +47,7 @@
 	"translate-translationstash-welcome": "歡迎光臨 {{GENDER:$1|$1}}，您是一名新進的翻譯人員",
 	"translate-translationstash-welcome-note": "為了要熟悉翻譯工具，請先試著翻譯部份訊息，再取得完整的翻譯人員權限以加入您想翻譯的專案。",
 	"translate-translationstash-initialtranslation": "您的第一次翻譯",
-	"translate-translationstash-translations": "已完成 $1 筆翻譯",
+	"translate-translationstash-translations": "已完成 $1 筆{{PLURAL:$1|翻譯}}",
 	"translate-translationstash-skip-button-label": "嘗試其他",
 	"tsb-limit-reached-title": "感謝您的翻譯",
 	"tsb-limit-reached-body": "您已達到新進翻譯人員翻譯額度之上限。\n我們將儘快審核並升級您的帳號，屆時您便可不受限制地翻譯。",
