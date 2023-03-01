@@ -256,7 +256,7 @@
 	"translate-manage-action-conflict": "Uvozi in označi kot ohlapno",
 	"translate-manage-action-ignore": "Prezri",
 	"translate-manage-action-fuzzy": "Uvozi in prevode označi kot ohlapne",
-	"translate-manage-action-rename-fuzzy": "Preimenuj in označi prevode kot meglene",
+	"translate-manage-action-rename-fuzzy": "Preimenuj in označi prevode kot ohlapne",
 	"translate-manage-action-rename": "Preimenovanje",
 	"translate-manage-action-ignore-change": "Prezri spremembo prevoda",
 	"translate-manage-nochanges": "Ni sprememb v opredelitvi sporočil za to skupino.",
