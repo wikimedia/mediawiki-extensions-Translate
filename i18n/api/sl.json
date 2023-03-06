@@ -26,8 +26,10 @@
 	"apihelp-searchtranslations-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
 	"apihelp-searchtranslations-param-case": "Iskanje brez razlikovanja velikih in malih črk.",
 	"apihelp-translationcheck-param-translation": "Prevod za potrditev.",
+	"apierror-translate-fuzzymessage": "Ohlapnih prevodov ni mogoče pregledovati",
 	"apierror-translate-language-disabled": "Prevajanje v $1 je onemogočeno.",
 	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",
+	"apierror-translate-owntranslation": "Lastnih prevodov ni mogoče pregledovati",
 	"apierror-translate-sandboxdisabled": "Možnost peskovnika ni v uporabi",
 	"apierror-translate-smg-nochanges": "Ni nobenih sprememb za obdelavo.",
 	"apiwarn-translate-language-disabled-source": "Izvorni jezik te skupine je $1. Izberite drug jezik, v katerega želite prevajati."

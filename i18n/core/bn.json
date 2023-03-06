@@ -277,7 +277,7 @@
 	"translate-workflowgroup-label": "কর্মপ্রবাহ অবস্থা",
 	"translate-workflowgroup-desc": "এই বার্তা দলটি অনুবাদের কর্মপ্রবাহ অবস্থা প্রদর্শন করে।\nঅবস্থাগুলো কনফিগারেশন ভেরিয়েবল $wgTranslateWorkflowStates-এ সংজ্ঞায়িত করা হয়েছে।",
 	"translate-dynagroup-recent-label": "সাম্প্রতিক অনুবাদ",
-	"translate-dynagroup-recent-desc": "এই বার্তা দলটি এই ভাষায় সাম্প্রতিক সমস্ত অনুবাদ প্রদর্শন করে৷",
+	"translate-dynagroup-recent-desc": "এই বার্তা দলটি এই ভাষায় সাম্প্রতিক সমস্ত অনুবাদ প্রদর্শন করে।",
 	"translate-dynagroup-additions-label": "সাম্প্রতিক সংযোজন",
 	"translate-dynagroup-additions-desc": "এই বার্তার দল নতুন এবং পরিবর্তিত বার্তাগুলি দেখায়।",
 	"translate-msggroupselector-projects": "বার্তা দল",

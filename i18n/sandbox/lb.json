@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"managetranslatorsandbox": "Iwwersetzer-Sandkëscht geréieren",
@@ -29,7 +30,7 @@
 	"tsb-didnt-make-any-translations": "Dëse Benotzer huet nach keng Iwwersetzunge gemaach.",
 	"tsb-translations-source": "Quell",
 	"tsb-translations-user": "{{GENDER:$1|Benotzer}} Iwwersetzungen",
-	"tsb-translations-current": "Iwwersetzungen déi et gëtt",
+	"tsb-translations-current": "Iwwersetzungen, déi et gëtt",
 	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandbox-Benotzer läschen",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Benotzer}} refuséiert",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Benotzer}} akzeptéiert",
