@@ -155,6 +155,7 @@
 	"translate-mgs-totals": "Semua $1 {{PLURAL:$1|bahasa}} sekali",
 	"translate-mgs-invalid-group": "Kumpulan yang dinyatakan, $1 tidak wujud.",
 	"translate-mgs-nothing": "Statistik yang diminta itu tiada apa untuk ditunjukkan.",
+	"translate-tes-optgroup-message": "Pesanan",
 	"supportedlanguages": "Bahasa aktif",
 	"supportedlanguages-summary": "Laman ini menunjukkan senarai semua bahasa yang disokong oleh {{SITENAME}},\nbersama dengan nama-nama para penterjemah yang mengusahakan bahasa itu.\nSemakin besar nama penterjemah, semakin banyak suntingan yang disumbangkannya.\nWarna garis bawah menunjukkan betapa barunya seseorang penterjemah giat di sini.",
 	"supportedlanguages-colorlegend": "Petunjuk untuk warna: Terjemahan terakhir pada $1 hari yang lalu.",

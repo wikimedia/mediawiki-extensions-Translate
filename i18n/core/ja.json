@@ -25,6 +25,7 @@
 			"TKsdik8900",
 			"Tamaki Wakita",
 			"Whym",
+			"もなー(偽物)",
 			"神樂坂秀吉",
 			"青子守歌",
 			"아라"
@@ -194,6 +195,7 @@
 	"translate-mgs-pagename": "メッセージ群別の翻訳状況",
 	"translate-mgs-fieldset": "表示設定",
 	"translate-mgs-group": "メッセージ群:",
+	"translate-mgs-prefix": "メッセージのプレフィックス:",
 	"translate-mgs-nocomplete": "翻訳が完了した言語を表示しない",
 	"translate-mgs-noempty": "翻訳が1つもない言語を表示しない",
 	"translate-mgs-submit": "統計を表示",
