@@ -94,7 +94,7 @@
 	"tpt-priority-languages": "Administrator prevajanja je prednostne jezike za to skupino nastavil na $1 .",
 	"tpt-priority-languages-force": "Administrator prevajanja je prednostne jezike za to skupino nastavil na $1. Prevajanje v druge jezike ni dovoljeno.",
 	"tpt-discouraged-translation-header": "Prevod te strani je odsvetovan",
-	"tpt-discouraged-translation-content": "Administrator prevajanja je odsvetoval prevod te strani. Stran lahko še vedno prevedete, vendar prevodi morda ne bodo uporabni.",
+	"tpt-discouraged-translation-content": "Administrator prevajanja je odsvetoval prevod te strani. Stran lahko še vedno prevedete, vendar prevodi mogoče ne bodo uporabni.",
 	"tpt-render-summary": "Posodabljanje za ujemanje nove različice izvorne strani",
 	"aggregategroups": "Združene skupine",
 	"tpt-aggregategroup-add": "Dodaj",
