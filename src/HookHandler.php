@@ -293,6 +293,9 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 
 			// Update translated page when translation unit is deleted
 			$hooks['ArticleDeleteComplete'][] = [ Hooks::class, 'onDeleteTranslationUnit' ];
+
+			// Prevent editing of translation pages.
+			$hooks['ReplaceTextFilterPageTitlesForEdit'][] = [ Hooks::class, 'onReplaceTextFilterPageTitlesForEdit' ];
 		}
 
 		global $wgTranslateUseSandbox;

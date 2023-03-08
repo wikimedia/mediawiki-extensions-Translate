@@ -7,6 +7,7 @@ use ConfigException;
 use Content;
 use LanguageCode;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
@@ -500,6 +501,30 @@ class Utilities {
 		}
 
 		return self::getContents( $titles, $namespace );
+	}
+
+	public static function isTranslationPage( MessageHandle $handle ): bool {
+		// FIXME: A lot of this code is similar to TranslatablePage::isTranslationPage.
+		// See if they can be merged
+		// The major difference is that this method does not run a database query to check if
+		// the page is marked.
+		$key = $handle->getKey();
+		$languageCode = $handle->getCode();
+		if ( $key === '' || $languageCode === '' ) {
+			return false;
+		}
+
+		$baseTitle = Title::makeTitle( $handle->getTitle()->getNamespace(), $key );
+		if ( !TranslatablePage::isSourcePage( $baseTitle ) ) {
+			return false;
+		}
+
+		static $codes = null;
+		if ( $codes === null ) {
+			$codes = self::getLanguageNames( LanguageNameUtils::AUTONYMS );
+		}
+
+		return !$handle->isDoc() && isset( $codes[ $languageCode ] );
 	}
 }
 

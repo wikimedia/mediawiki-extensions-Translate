@@ -1674,4 +1674,17 @@ class Hooks {
 
 		$dbw->onTransactionCommitOrIdle( $callback, __METHOD__ );
 	}
+
+	/**
+	 * Removes translation pages from the list of page titles to be edited
+	 * Hook: ReplaceTextFilterPageTitlesForEdit
+	 */
+	public static function onReplaceTextFilterPageTitlesForEdit( array &$titles ): void {
+		foreach ( $titles as $index => $title ) {
+			$handle = new MessageHandle( $title );
+			if ( Utilities::isTranslationPage( $handle ) ) {
+				unset( $titles[ $index ] );
+			}
+		}
+	}
 }
