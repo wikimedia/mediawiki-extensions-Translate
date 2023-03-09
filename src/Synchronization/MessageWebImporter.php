@@ -193,7 +193,6 @@ class MessageWebImporter {
 						$key,
 						$code,
 						$value,
-						'',
 						$this->getUser()
 					);
 				}
@@ -260,7 +259,6 @@ class MessageWebImporter {
 							$key,
 							$code,
 							$value,
-							'',
 							$this->getUser()
 						);
 
@@ -371,25 +369,24 @@ class MessageWebImporter {
 	 * @param string $key Message key
 	 * @param string $code Language code
 	 * @param string $message Contents for the $key/code combination
-	 * @param string $comment Edit summary (default: empty) - see Article::doEdit
 	 * @param User|null $user User that will make the edit (default: null - RequestContext user).
 	 *        See Article::doEdit.
 	 * @param int $editFlags Integer bitfield: see Article::doEdit
 	 * @throws MWException
 	 * @return array Action result
 	 */
-	public static function doAction(
+	private static function doAction(
 		string $action,
 		MessageGroup $group,
 		string $key,
 		string $code,
 		string $message,
-		string $comment = '',
 		User $user = null,
 		int $editFlags = 0
 	): array {
 		global $wgTranslateDocumentationLanguageCode;
 
+		$comment = '';
 		$title = self::makeTranslationTitle( $group, $key, $code );
 
 		if ( $action === 'import' || $action === 'conflict' ) {
