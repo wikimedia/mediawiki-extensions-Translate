@@ -370,7 +370,6 @@ class MessageWebImporter {
 	 * @param string $message Contents for the $key/code combination
 	 * @param User|null $user User that will make the edit (default: null - RequestContext user).
 	 *        See Article::doEdit.
-	 * @param int $editFlags Integer bitfield: see Article::doEdit
 	 * @throws MWException
 	 * @return array Action result
 	 */
@@ -380,8 +379,7 @@ class MessageWebImporter {
 		string $key,
 		string $code,
 		string $message,
-		User $user = null,
-		int $editFlags = 0
+		User $user = null
 	): array {
 		global $wgTranslateDocumentationLanguageCode;
 
@@ -396,7 +394,7 @@ class MessageWebImporter {
 				$message = self::makeTextFuzzy( $message );
 			}
 
-			return self::doImport( $title, $message, $comment, $user, $editFlags );
+			return self::doImport( $title, $message, $comment, $user );
 		} elseif ( $action === 'ignore' ) {
 			return [ 'translate-manage-import-ignore', $key ];
 		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
@@ -404,9 +402,9 @@ class MessageWebImporter {
 		) {
 			$message = self::makeTextFuzzy( $message );
 
-			return self::doImport( $title, $message, $comment, $user, $editFlags );
+			return self::doImport( $title, $message, $comment, $user );
 		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
-			return self::doFuzzy( $title, $message, $comment, $user, $editFlags );
+			return self::doFuzzy( $title, $message, $comment, $user );
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -424,16 +422,14 @@ class MessageWebImporter {
 		Title $title,
 		string $message,
 		string $summary,
-		?User $user,
-		int $editFlags = 0
+		?User $user
 	): array {
 		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $message, $title );
 		$status = $wikiPage->doUserEditContent(
 			$content,
 			$user,
-			$summary,
-			$editFlags
+			$summary
 		);
 		$success = $status->isOK();
 
@@ -453,8 +449,7 @@ class MessageWebImporter {
 		Title $title,
 		string $message,
 		string $comment,
-		?User $user,
-		int $editFlags = 0
+		?User $user
 	): array {
 		$context = RequestContext::getMain();
 		$services = MediaWikiServices::getInstance();
@@ -518,8 +513,7 @@ class MessageWebImporter {
 				$ttitle,
 				$text,
 				$comment,
-				$user,
-				$editFlags
+				$user
 			);
 		}
 
