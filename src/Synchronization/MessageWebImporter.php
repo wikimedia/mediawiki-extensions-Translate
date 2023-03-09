@@ -174,15 +174,12 @@ class MessageWebImporter {
 		foreach ( $messages as $key => $value ) {
 			$fuzzy = false;
 			$old = null;
+			$isExistingMessageFuzzy = false;
 
 			if ( isset( $collection[$key] ) ) {
 				// This returns null if no existing translation is found
 				$old = $collection[$key]->translation();
-			}
-
-			// No changes at all, ignore
-			if ( (string)$old === (string)$value ) {
-				continue;
+				$isExistingMessageFuzzy = $collection[$key]->hasTag( 'fuzzy' );
 			}
 
 			if ( $old === null ) {
@@ -207,6 +204,18 @@ class MessageWebImporter {
 				$text = Utilities::convertWhiteSpaceToHTML( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
+				// No changes at all, ignore
+				if ( (string)$old === (string)$value ) {
+					continue;
+				}
+
+				// Check if the message is already fuzzy in the system, and then determine if there are changes
+				if ( $isExistingMessageFuzzy ) {
+					if ( self::makeTextFuzzy( (string)$old ) === (string)$value ) {
+						continue;
+					}
+				}
+
 				$oldContent = ContentHandler::makeContent( $old, $diff->getTitle() );
 				$newContent = ContentHandler::makeContent( $value, $diff->getTitle() );
 				$diff->setContent( $oldContent, $newContent );
