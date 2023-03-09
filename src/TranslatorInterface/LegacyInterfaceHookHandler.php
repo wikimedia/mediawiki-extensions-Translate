@@ -57,7 +57,7 @@ class LegacyInterfaceHookHandler
 		if ( $editPage->firsttime && !$request->getCheck( 'oldid' ) &&
 			!$request->getCheck( 'undo' ) ) {
 			if ( $handle->isFuzzy() ) {
-				$editPage->textbox1 = TRANSLATE_FUZZY . $editPage->textbox1;
+				$editPage->textbox1 = MessageHandle::makeFuzzyString( $editPage->textbox1 );
 			}
 		}
 

@@ -234,6 +234,15 @@ class MessageHandle {
 		return strpos( $text, TRANSLATE_FUZZY ) !== false;
 	}
 
+	/** Check if a string has fuzzy string and if not, add it */
+	public static function makeFuzzyString( string $text ): string {
+		if ( self::hasFuzzyString( $text ) ) {
+			return $text;
+		}
+
+		return TRANSLATE_FUZZY . $text;
+	}
+
 	/**
 	 * Check if a title is marked as fuzzy.
 	 * @return bool If title is marked fuzzy.
