@@ -105,8 +105,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$importer = new MessageWebImporter( $this->getPageTitle(), $group, $code );
-		$importer->setUser( $this->getUser() );
+		$importer = new MessageWebImporter( $this->getPageTitle(), $this->getUser(), $group, $code );
 		$alldone = $importer->execute( $messages );
 
 		if ( $alldone ) {

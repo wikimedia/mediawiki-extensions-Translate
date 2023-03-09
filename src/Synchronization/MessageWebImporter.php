@@ -15,7 +15,6 @@ use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
 use MessageHandle;
 use MWException;
-use OutputPage;
 use RequestContext;
 use Sanitizer;
 use Title;
@@ -32,28 +31,23 @@ use Xml;
  * @license GPL-2.0-or-later
  */
 class MessageWebImporter {
-	/** @var Title */
-	protected $title;
-	/** @var User */
-	protected $user;
-	/** @var MessageGroup */
-	protected $group;
-	protected $code;
-	protected $time;
-	/** @var OutputPage */
-	protected $out;
-	/**
-	 * Maximum processing time in seconds.
-	 */
-	protected $processingTime = 43;
+	private Title $title;
+	private User $user;
+	private MessageGroup $group;
+	private string $code;
+	private $time;
+	/** Maximum processing time in seconds. */
+	private const MAX_PROCESSING_TIME = 43;
 
 	/**
-	 * @param Title|null $title
+	 * @param Title $title
+	 * @param User $user
 	 * @param MessageGroup|string|null $group
 	 * @param string $code
 	 */
-	public function __construct( Title $title = null, $group = null, $code = 'en' ) {
+	public function __construct( Title $title, User $user, $group = null, string $code = 'en' ) {
 		$this->setTitle( $title );
+		$this->setUser( $user );
 		$this->setGroup( $group );
 		$this->setCode( $code );
 	}
@@ -68,7 +62,7 @@ class MessageWebImporter {
 	}
 
 	public function getUser(): User {
-		return $this->user ?: RequestContext::getMain()->getUser();
+		return $this->user;
 	}
 
 	public function setUser( User $user ): void {
@@ -124,7 +118,7 @@ class MessageWebImporter {
 		$csrfTokenSet = $context->getCsrfTokenSet();
 
 		return $request->wasPosted()
-			&& $request->getBool( 'process', false )
+			&& $request->getBool( 'process' )
 			&& $csrfTokenSet->matchTokenField( 'token' );
 	}
 
@@ -146,7 +140,7 @@ class MessageWebImporter {
 
 	public function execute( array $messages ): bool {
 		$context = RequestContext::getMain();
-		$this->out = $context->getOutput();
+		$output = $context->getOutput();
 
 		// Set up diff engine
 		$diff = new DifferenceEngine();
@@ -162,7 +156,7 @@ class MessageWebImporter {
 		$collection = $group->initCollection( $code );
 		$collection->loadTranslations();
 
-		$this->out->addHTML( $this->doHeader() );
+		$output->addHTML( $this->doHeader() );
 
 		// Initialise variable to keep track whether all changes were imported
 		// or not. If we're allowed to process, initially assume they were.
@@ -204,14 +198,14 @@ class MessageWebImporter {
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
 				// No changes at all, ignore
-				if ( (string)$old === (string)$value ) {
+				if ( $old === (string)$value ) {
 					continue;
 				}
 
 				// Check if the message is already fuzzy in the system, and then determine if there are changes
 				$oldTextForDiff = $old;
 				if ( $isExistingMessageFuzzy ) {
-					if ( self::makeTextFuzzy( (string)$old ) === (string)$value ) {
+					if ( self::makeTextFuzzy( $old ) === (string)$value ) {
 						continue;
 					}
 
@@ -278,7 +272,7 @@ class MessageWebImporter {
 						if ( $this->checkProcessTime() ) {
 							$process = false;
 							$message = $context->msg( 'translate-manage-toolong' )
-								->numParams( $this->processingTime )->parse();
+								->numParams( self::MAX_PROCESSING_TIME )->parse();
 							$changed[] = "<li>$message</li></ul>";
 						}
 
@@ -331,7 +325,7 @@ class MessageWebImporter {
 
 		if ( $process || ( $changed === [] && $code !== 'en' ) ) {
 			if ( $changed === [] ) {
-				$this->out->addWikiMsg( 'translate-manage-nochanges-other' );
+				$output->addWikiMsg( 'translate-manage-nochanges-other' );
 			}
 
 			if ( $changed === [] || strpos( end( $changed ), '<li>' ) !== 0 ) {
@@ -340,28 +334,28 @@ class MessageWebImporter {
 
 			$message = $context->msg( 'translate-manage-import-done' )->parse();
 			$changed[] = "<li>$message</li></ul>";
-			$this->out->addHTML( implode( "\n", $changed ) );
+			$output->addHTML( implode( "\n", $changed ) );
 		} else {
 			// END
 			if ( $changed !== [] ) {
 				if ( $code === 'en' ) {
-					$this->out->addWikiMsg( 'translate-manage-intro-en' );
+					$output->addWikiMsg( 'translate-manage-intro-en' );
 				} else {
 					$lang = Utilities::getLanguageName(
 						$code,
 						$context->getLanguage()->getCode()
 					);
-					$this->out->addWikiMsg( 'translate-manage-intro-other', $lang );
+					$output->addWikiMsg( 'translate-manage-intro-other', $lang );
 				}
-				$this->out->addHTML( Html::hidden( 'language', $code ) );
-				$this->out->addHTML( implode( "\n", $changed ) );
-				$this->out->addHTML( Xml::submitButton( $context->msg( 'translate-manage-submit' )->text() ) );
+				$output->addHTML( Html::hidden( 'language', $code ) );
+				$output->addHTML( implode( "\n", $changed ) );
+				$output->addHTML( Xml::submitButton( $context->msg( 'translate-manage-submit' )->text() ) );
 			} else {
-				$this->out->addWikiMsg( 'translate-manage-nochanges' );
+				$output->addWikiMsg( 'translate-manage-nochanges' );
 			}
 		}
 
-		$this->out->addHTML( $this->doFooter() );
+		$output->addHTML( $this->doFooter() );
 
 		return $alldone;
 	}
@@ -419,14 +413,14 @@ class MessageWebImporter {
 	}
 
 	protected function checkProcessTime() {
-		return wfTimestamp() - $this->time >= $this->processingTime;
+		return wfTimestamp() - $this->time >= self::MAX_PROCESSING_TIME;
 	}
 
 	/**
 	 * @throws MWException
 	 * @return string[]
 	 */
-	public static function doImport(
+	private static function doImport(
 		Title $title,
 		string $message,
 		string $summary,
@@ -548,7 +542,7 @@ class MessageWebImporter {
 	 * @param string $code Language code
 	 * @return Title
 	 */
-	public static function makeTranslationTitle( MessageGroup $group, string $key, string $code ): Title {
+	private static function makeTranslationTitle( MessageGroup $group, string $key, string $code ): Title {
 		$ns = $group->getNamespace();
 
 		return Title::makeTitleSafe( $ns, "$key/$code" );
@@ -577,12 +571,10 @@ class MessageWebImporter {
 			$contentParams['lang'] = $lang->getCode();
 		}
 
-		$output = Html::rawElement( 'div', $containerParams,
+		return Html::rawElement( 'div', $containerParams,
 			Html::rawElement( 'div', $legendParams, $legend ) .
 				Html::rawElement( 'div', $contentParams, $content )
 		);
-
-		return $output;
 	}
 
 	/**
@@ -591,7 +583,7 @@ class MessageWebImporter {
 	 * @param string $message Message content
 	 * @return string Message prefixed with TRANSLATE_FUZZY tag
 	 */
-	public static function makeTextFuzzy( string $message ): string {
+	private static function makeTextFuzzy( string $message ): string {
 		$message = str_replace( TRANSLATE_FUZZY, '', $message );
 
 		return TRANSLATE_FUZZY . $message;
@@ -602,7 +594,7 @@ class MessageWebImporter {
 	 * so that we can get it back with WebRequest::getVal(). Especially dot and
 	 * spaces are difficult for the latter.
 	 */
-	public static function escapeNameForPHP( string $name ): string {
+	private static function escapeNameForPHP( string $name ): string {
 		$replacements = [
 			'(' => '(OP)',
 			' ' => '(SP)',
