@@ -160,7 +160,7 @@ class MessageWebImporter {
 
 		// Initialise variable to keep track whether all changes were imported
 		// or not. If we're allowed to process, initially assume they were.
-		$alldone = $process;
+		$allDone = $process;
 
 		// Determine changes for each message.
 		$changed = [];
@@ -281,12 +281,12 @@ class MessageWebImporter {
 				}
 
 				// We are not processing messages, or no longer, or this was an
-				// unactionable translation. We will eventually return false
-				$alldone = false;
+				// un-actionable translation. We will eventually return false
+				$allDone = false;
 
 				// Prepare to ask the user what to do with this message
 				$actions = $this->getActions();
-				$defaction = $this->getDefaultAction( $fuzzy, $action );
+				$defaultAction = $this->getDefaultAction( $fuzzy, $action );
 
 				$act = [];
 
@@ -297,7 +297,7 @@ class MessageWebImporter {
 					$label = $context->msg( "translate-manage-action-$action" )->text();
 					$name = self::escapeNameForPHP( "action-$type-$key" );
 					$id = Sanitizer::escapeIdForAttribute( "action-$key-$action" );
-					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
+					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaultAction );
 				}
 
 				$param = '<code class="mw-tmi-diff">' . htmlspecialchars( $key ) . '</code>';
@@ -357,7 +357,7 @@ class MessageWebImporter {
 
 		$output->addHTML( $this->doFooter() );
 
-		return $alldone;
+		return $allDone;
 	}
 
 	/**
@@ -489,11 +489,11 @@ class MessageWebImporter {
 		foreach ( $rows as $row ) {
 			global $wgTranslateDocumentationLanguageCode;
 
-			$ttitle = Title::makeTitle( (int)$row->page_namespace, $row->page_title );
+			$translationTitle = Title::makeTitle( (int)$row->page_namespace, $row->page_title );
 
 			// No fuzzy for English original or documentation language code.
-			if ( $ttitle->getSubpageText() === 'en' ||
-				$ttitle->getSubpageText() === $wgTranslateDocumentationLanguageCode
+			if ( $translationTitle->getSubpageText() === 'en' ||
+				$translationTitle->getSubpageText() === $wgTranslateDocumentationLanguageCode
 			) {
 				// Use imported text, not database text.
 				$text = $message;
@@ -510,7 +510,7 @@ class MessageWebImporter {
 
 			// Do actual import
 			$changed[] = self::doImport(
-				$ttitle,
+				$translationTitle,
 				$text,
 				$comment,
 				$user
