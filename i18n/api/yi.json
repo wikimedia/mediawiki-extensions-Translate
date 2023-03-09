@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
-	"apihelp-groupreview-param-group": "מעלדונג גרופע",
+	"apihelp-groupreview-param-group": "מעלדונג גרופּע",
 	"apihelp-groupreview-param-language": "שפראַך קאד.",
 	"apihelp-query+languagestats-param-language": "שפראַך קאד.",
 	"apihelp-query+messagecollection-param-language": "שפראַך-קאד.",
