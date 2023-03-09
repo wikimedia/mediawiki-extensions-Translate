@@ -209,13 +209,18 @@ class MessageWebImporter {
 				}
 
 				// Check if the message is already fuzzy in the system, and then determine if there are changes
+				$oldTextForDiff = $old;
 				if ( $isExistingMessageFuzzy ) {
 					if ( self::makeTextFuzzy( (string)$old ) === (string)$value ) {
 						continue;
 					}
+
+					// Normalize the display of FUZZY message diffs so that if an old message has
+					// a fuzzy tag, then that is added to the text used in the diff.
+					$oldTextForDiff = MessageHandle::makeFuzzyString( $old );
 				}
 
-				$oldContent = ContentHandler::makeContent( $old, $diff->getTitle() );
+				$oldContent = ContentHandler::makeContent( $oldTextForDiff, $diff->getTitle() );
 				$newContent = ContentHandler::makeContent( $value, $diff->getTitle() );
 				$diff->setContent( $oldContent, $newContent );
 				$text = $diff->getDiff( '', '' );
