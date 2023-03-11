@@ -50,7 +50,7 @@ class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
-		$this->assertEquals( count( $translatableLanguages ), 0 );
+		$this->assertCount( 0, $translatableLanguages );
 	}
 
 	public function testAllInclusionList() {

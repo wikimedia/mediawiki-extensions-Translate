@@ -65,7 +65,7 @@ class MessageSourceChangeTest extends MediaWikiUnitTestCase {
 			'key', $modificationAdded,
 			'findMessage returns added message correctly when checking multiple types.'
 		);
-		$this->assertEquals( $modificationType, MessageSourceChange::ADDITION );
+		$this->assertEquals( MessageSourceChange::ADDITION, $modificationType );
 
 		$this->change->removeAdditions( 'en', [ 'added' ] );
 		$this->change->removeChanges( 'en', [ 'changed' ] );
