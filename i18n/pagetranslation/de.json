@@ -13,7 +13,9 @@
 			"The Evil IP address",
 			"Umherirrender",
 			"Vogone",
-			"Pols12"
+			"Pols12",
+			"Brettchenweber",
+			"Justman10000"
 		]
 	},
 	"pagetranslation": "Seiten übersetzen",
@@ -143,7 +145,7 @@
 	"log-action-filter-pagetranslation-prioritylanguages": "Veränderung der priorisierten Sprachen",
 	"log-action-filter-pagetranslation-aggregategroups": "Veränderung der zusammengefassten Gruppen",
 	"pt-movepage-title": "Die Übersetzungsseite $1 verschieben",
-	"pt-movepage-blockers": "Die zum Übersetzen vorgesehene Seite konnte aufgrund {{PLURAL:$1|folgendes Fehlers|folgender Fehler}} nicht zur neuen Bezeichnung verschoben werden:",
+	"pt-movepage-blockers": "Die zum Übersetzen vorgesehene Seite konnte aufgrund {{PLURAL:$1|des folgenden Fehlers|folgender Fehler}} nicht zur neuen Bezeichnung verschoben werden:",
 	"pt-movepage-block-base-exists": "Die übersetzbare Zielseite „[[:$1]]“ existiert bereits.",
 	"pt-movepage-block-base-invalid": "Der Name der übersetzbaren Zielseite hat keine gültige Bezeichnung.",
 	"pt-movepage-block-tp-exists": "Die Übersetzungsseite [[:$2]] existiert bereits.",
@@ -212,7 +214,7 @@
 	"pm-pagetitle-missing": "Bitte gib den Seitentitel ein.",
 	"pm-langcode-missing": "Es scheint, als ob der Sprachcode im Titel fehlt. Bitte gib den Seitentitel im Format <page-name>/<language-code> ein.",
 	"pm-summary-import": "Übersetzung importiert mithilfe der [[Special:PageMigration|Seitenmigration]]",
-	"pm-on-import-message-text": "Die alten Übersetzungen wurden importiert. Verwende die Hinzufügungs-, Tausch- und Löschoptionen, um die Übersetzungseinheiten anzupassen und klicke auf die Schaltfläche „{{int:pm-savepages-button-label}}“, um sie zu speichern oder zum Verwerfen auf die Schaltfläche „{{int:pm-cancel-button-label}}“.",
+	"pm-on-import-message-text": "Die alten Übersetzungen wurden importiert. Verwende die Hinzufügungs-, Tausch- und Löschoptionen, um die Übersetzungseinheiten anzupassen, und klicke auf die Schaltfläche „{{int:pm-savepages-button-label}}“, um sie zu speichern, oder zum Verwerfen auf die Schaltfläche „{{int:pm-cancel-button-label}}“.",
 	"pm-on-save-message-text": "Die Übersetzungseinheiten wurden gespeichert. Du kannst jetzt zur Migration den Titel einer neuen Übersetzungsseite eingeben oder unten Änderungen an den Einheiten durchführen und eine neue Version speichern.",
 	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben",
 	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor",
