@@ -55,6 +55,7 @@
 	"tpt-rev-encourage-tooltip": "Bu səhifəni normal tərcüməyə bərpa edin.",
 	"translate-tag-translate-link-desc": "Bu səhifəni tərcümə et",
 	"translate-tag-markthis": "Bu versiyanı tərcümə üçün işarələ",
+	"tpt-translation-intro": "Bu səhifə [[$2]] səhifəsinin <span class=\"plainlinks\">[$1 tərcümə edilmiş versiyasıdır]</span> və tərcümə $3% tamamlanıb.",
 	"tpt-languages-nonzero": "$1 ($2% tərcümə edilib)",
 	"aggregategroups": "Aqreqat qrupları",
 	"tpt-aggregategroup-add": "Əlavə et",
