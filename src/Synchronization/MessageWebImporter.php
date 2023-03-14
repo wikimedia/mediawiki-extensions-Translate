@@ -181,13 +181,11 @@ class MessageWebImporter {
 				// current group: import it.
 				if ( $process ) {
 					$action = 'import';
-					self::doAction(
+					$this->doAction(
 						$action,
 						$group,
 						$key,
-						$code,
-						$value,
-						$this->getUser()
+						$code
 					);
 				}
 				// Show the user that we imported the new translation
@@ -252,13 +250,11 @@ class MessageWebImporter {
 
 						// We have all the necessary information on this changed
 						// translation: actually process the message
-						$messageKeyAndParams = self::doAction(
+						$messageKeyAndParams = $this->doAction(
 							$action,
 							$group,
 							$key,
-							$code,
-							$value,
-							$this->getUser()
+							$code
 						);
 
 						// Show what we just did, adding to the list of changes
@@ -366,25 +362,21 @@ class MessageWebImporter {
 	 * @param string $action Options: 'import', 'conflict' or 'ignore'
 	 * @param MessageGroup $group
 	 * @param string $key Message key
-	 * @param string $code Language code
 	 * @param string $message Contents for the $key/code combination
-	 * @param User|null $user User that will make the edit (default: null - RequestContext user).
-	 *        See Article::doEdit.
 	 * @throws MWException
 	 * @return array Action result
 	 */
-	private static function doAction(
+	private function doAction(
 		string $action,
 		MessageGroup $group,
 		string $key,
-		string $code,
-		string $message,
-		User $user = null
+		string $message
 	): array {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$comment = '';
-		$title = self::makeTranslationTitle( $group, $key, $code );
+		$code = $this->getCode();
+		$title = $this->makeTranslationTitle( $group, $key, $code );
 
 		if ( $action === 'import' || $action === 'conflict' ) {
 			if ( $action === 'import' ) {
@@ -394,7 +386,7 @@ class MessageWebImporter {
 				$message = self::makeTextFuzzy( $message );
 			}
 
-			return self::doImport( $title, $message, $comment, $user );
+			return self::doImport( $title, $message, $comment, $this->getUser() );
 		} elseif ( $action === 'ignore' ) {
 			return [ 'translate-manage-import-ignore', $key ];
 		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
@@ -402,9 +394,9 @@ class MessageWebImporter {
 		) {
 			$message = self::makeTextFuzzy( $message );
 
-			return self::doImport( $title, $message, $comment, $user );
+			return self::doImport( $title, $message, $comment, $this->getUser() );
 		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
-			return self::doFuzzy( $title, $message, $comment, $user );
+			return self::doFuzzy( $title, $message, $comment, $this->getUser() );
 		} else {
 			throw new MWException( "Unhandled action $action" );
 		}
@@ -536,7 +528,7 @@ class MessageWebImporter {
 	 * @param string $code Language code
 	 * @return Title
 	 */
-	private static function makeTranslationTitle( MessageGroup $group, string $key, string $code ): Title {
+	private function makeTranslationTitle( MessageGroup $group, string $key, string $code ): Title {
 		$ns = $group->getNamespace();
 
 		return Title::makeTitleSafe( $ns, "$key/$code" );
