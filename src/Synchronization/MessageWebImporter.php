@@ -203,7 +203,7 @@ class MessageWebImporter {
 				// Check if the message is already fuzzy in the system, and then determine if there are changes
 				$oldTextForDiff = $old;
 				if ( $isExistingMessageFuzzy ) {
-					if ( self::makeTextFuzzy( $old ) === (string)$value ) {
+					if ( MessageHandle::makeFuzzyString( $old ) === (string)$value ) {
 						continue;
 					}
 
@@ -383,7 +383,7 @@ class MessageWebImporter {
 				$comment = wfMessage( 'translate-manage-import-summary' )->inContentLanguage()->plain();
 			} else {
 				$comment = wfMessage( 'translate-manage-conflict-summary' )->inContentLanguage()->plain();
-				$message = self::makeTextFuzzy( $message );
+				$message = MessageHandle::makeFuzzyString( $message );
 			}
 
 			return self::doImport( $title, $message, $comment, $this->getUser() );
@@ -392,7 +392,7 @@ class MessageWebImporter {
 		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
 			$code !== $wgTranslateDocumentationLanguageCode
 		) {
-			$message = self::makeTextFuzzy( $message );
+			$message = MessageHandle::makeFuzzyString( $message );
 
 			return self::doImport( $title, $message, $comment, $this->getUser() );
 		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
@@ -491,9 +491,9 @@ class MessageWebImporter {
 				$text = $message;
 			} elseif ( isset( $slots[$row->rev_id] ) ) {
 				$slot = $slots[$row->rev_id][SlotRecord::MAIN];
-				$text = self::makeTextFuzzy( $slot->blob_data );
+				$text = MessageHandle::makeFuzzyString( $slot->blob_data );
 			} else {
-				$text = self::makeTextFuzzy(
+				$text = MessageHandle::makeFuzzyString(
 					Utilities::getTextFromTextContent(
 						$revStore->newRevisionFromRow( $row )->getContent( SlotRecord::MAIN )
 					)
@@ -561,18 +561,6 @@ class MessageWebImporter {
 			Html::rawElement( 'div', $legendParams, $legend ) .
 				Html::rawElement( 'div', $contentParams, $content )
 		);
-	}
-
-	/**
-	 * Prepends translation with fuzzy tag and ensures there is only one of them.
-	 *
-	 * @param string $message Message content
-	 * @return string Message prefixed with TRANSLATE_FUZZY tag
-	 */
-	private static function makeTextFuzzy( string $message ): string {
-		$message = str_replace( TRANSLATE_FUZZY, '', $message );
-
-		return TRANSLATE_FUZZY . $message;
 	}
 
 	/**
