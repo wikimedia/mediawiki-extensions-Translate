@@ -31,7 +31,8 @@
 			"Sanbec",
 			"Translationista",
 			"Vivaelcelta",
-			"Josuert"
+			"Josuert",
+			"DarkGames26"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
@@ -71,6 +72,7 @@
 	"tpt-old-pages": "La última versión de {{PLURAL:$1|esta página ha sido marcada|estas páginas han sido marcadas}} para traducción.",
 	"tpt-other-pages": "{{PLURAL:$1|Una versión antigua de esta página se marcó|Versiones antiguas de estas páginas se marcaron}} para traducirse,\npero {{PLURAL:$1|la última versión no se puede|las últimas versiones no se pueden}} marcar para traducirse.",
 	"tpt-outdated-pages": "{{PLURAL:$1|Esta página tiene|Estas páginas tienen}} cambios que no han sido marcados para traducción.",
+	"tpt-tag-discouraged": "no se aconseja traducir",
 	"tpt-tag-oldsyntax": "sintaxis antigua",
 	"tpt-select-prioritylangs": "Lista de códigos de idioma prioritarios separados por comas:",
 	"tpt-select-prioritylangs-force": "Impedir las traducciones a otros idiomas distintos de los prioritarios",
@@ -167,6 +169,7 @@
 	"pt-movepage-reason": "Razón:",
 	"pt-movepage-subpages": "Trasladar todas las subpáginas",
 	"pt-movepage-talkpages": "Mover páginas de discusión",
+	"pt-movepage-talkpage-exists": "(Tiene página de discusión)",
 	"pt-movepage-action-check": "Verificar si el traslado es posible",
 	"pt-movepage-action-perform": "Hacer el traslado",
 	"pt-movepage-action-other": "Cambiar destino",
@@ -186,6 +189,8 @@
 	"pt-deletepage-any-legend": "Eliminar la página traducible o la traducción de la página",
 	"pt-deletepage-current": "Nombre de la página:",
 	"pt-deletepage-reason": "Motivo:",
+	"pt-deletepage-reason-details": "Otros motivos:",
+	"pt-deletepage-reason-other": "Otro motivo",
 	"pt-deletepage-subpages": "Eliminar todas las subpáginas",
 	"pt-deletepage-list-pages": "Lista de páginas para eliminar",
 	"pt-deletepage-list-translation": "Páginas de traducción",
