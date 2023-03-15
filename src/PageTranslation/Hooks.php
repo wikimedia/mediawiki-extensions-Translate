@@ -225,16 +225,12 @@ class Hooks {
 			// exist, fetch the source fallback.
 			$revRecord = $templateTranslationPage->getRevisionRecordWithFallback();
 			if ( !$revRecord ) {
-				// In very rare cases, fetching of the source fallback also seems to be failing in
-				// which case null will be returned. See: T323863
-				// This should not happen because TranslatablePage::isTranslationPage already checks
-				// the message index, and checks if the translatable page has the marked tag.
+				// In rare cases fetching of the source fallback might fail. See: T323863
 				LoggerFactory::getInstance( 'Translate' )->warning(
-					"T323863: Did not find message group for '{groupid}'",
+					"T323863: Could not fetch any revision record for '{groupid}'",
 					[ 'groupid' => $templateTranslationPage->getMessageGroupId() ]
 				);
 				return;
-
 			}
 			return;
 		}

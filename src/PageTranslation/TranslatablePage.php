@@ -452,13 +452,7 @@ class TranslatablePage extends TranslatableBundle {
 		}
 
 		// Fetch the source fallback
-		$messageGroup = $this->getMessageGroup();
-		if ( !$messageGroup ) {
-			return null;
-		}
-
-		$sourceLanguage = $messageGroup->getSourceLanguage();
-		return $store->getRevisionByTitle( $title->getSubpage( $sourceLanguage ) );
+		return $store->getRevisionByTitle( $title->getSubpage( $this->getSourceLanguageCode() ) );
 	}
 
 	/** @inheritDoc */
