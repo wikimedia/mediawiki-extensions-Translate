@@ -283,7 +283,7 @@
 		applySorting( $table );
 		addExpanders( $table );
 
-		$( '#mw-message-group-stats-form' ).submit( onSubmit );
+		$( '#mw-message-group-stats-form' ).on( 'submit', onSubmit );
 
 		if ( !window.ResizeObserver ) {
 			return;
