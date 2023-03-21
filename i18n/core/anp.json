@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Angpradesh"
+			"Angpradesh",
+			"Proabscorp!"
 		]
 	},
-	"translate-documentation-language": "सन्देश दस्तावेज़ीकरण"
+	"translate-documentation-language": "सन्देश क प्रलेखीकरण",
+	"tux-notices-hide": "नुकाबौ"
 }

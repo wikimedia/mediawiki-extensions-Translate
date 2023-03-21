@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"TayfunEt."
+		]
+	},
+	"translate-taction-lstats": "Тил статистиклери",
+	"translate-page-settings-legend": "Параметрлер",
+	"translate-page-language": "Тил",
+	"translate-next": "Келеси бет",
+	"translate-prev": "Аркадакы бет",
+	"translate-page-edit": "туьрлентуьв",
+	"translate-statsf-scale-years": "Джыллар",
+	"translate-statsf-scale-months": "Айлар",
+	"translate-statsf-scale-weeks": "Апталар",
+	"translate-statsf-scale-days": "Куьнлер",
+	"translate-statsf-scale-hours": "Саатлар",
+	"translate-sidebar-alltrans": "Баска тиллерде",
+	"translate-translations-messagename": "Ат:",
+	"translate-translations-project": "Лейха:",
+	"translate-translations-history-short": "тарих",
+	"languagestats": "Тил статистиклери",
+	"translate-language-code": "Тил коды",
+	"translate-language-code-field-name": "Тил коды:",
+	"translate-language": "Тил",
+	"translate-total": "Каберлер",
+	"translate-mgs-column-language": "Тил",
+	"supportedlanguages": "Актив тиллер",
+	"translate-smg-rename-cancel": "Бас тартув",
+	"translate-smg-strong-sync-help": "Ярдам",
+	"translate-smg-group-message-action-history": "Тарих",
+	"translate-smg-group-message-message-other-langs": "Баска тиллер:"
+}
