@@ -25,7 +25,7 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		$insertables = parent::getInsertables( $text );
 
 		$matches = [];
-		$pattern = '/' . self::NAME_PATTERN . '/';
+		$pattern = '/' . self::NAME_PATTERN . '/u';
 		preg_match_all( $pattern, $text, $matches, PREG_SET_ORDER );
 
 		$new = array_map( static function ( $match ) {
