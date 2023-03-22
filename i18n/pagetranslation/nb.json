@@ -148,7 +148,7 @@
 	"log-action-filter-pagetranslation-discourage": "Fraråding fra å oversette",
 	"log-action-filter-pagetranslation-prioritylanguages": "Endring av prioriterne språk",
 	"log-action-filter-pagetranslation-aggregategroups": "Endring av aggregatgrupper",
-	"pt-movepage-title": "Flytt oversettbar side $1",
+	"pt-movepage-title": "Flytt den oversettbare siden «$1»",
 	"pt-movepage-blockers": "Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil}}:",
 	"pt-movepage-block-base-invalid": "Navnet på den oversettbare målsiden er ikke en gyldig tittel.",
 	"pt-movepage-block-tp-invalid": "Måloversettelsessidetittelen for [[:$1]] ville vært ugyldig (for lang?).",
