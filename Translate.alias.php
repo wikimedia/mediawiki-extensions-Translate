@@ -1112,12 +1112,7 @@ $specialPageAliases['yue'] = [
 	'Translate' => [ '譯' ],
 ];
 
-/** Chinese (中文) */
-$specialPageAliases['zh'] = [
-	'Translate' => [ '翻译', '翻譯' ],
-];
-
-/** Simplified Chinese (中文（简体)) */
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'AggregateGroups' => [ '信息组总计' ],
 	'ImportTranslations' => [ '导入翻译' ],
@@ -1137,7 +1132,7 @@ $specialPageAliases['zh-hans'] = [
 	'PagePreparation' => [ '页面预备' ],
 ];
 
-/** Traditional Chinese (中文（繁體)) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'AggregateGroups' => [ '集合群組' ],
 	'ImportTranslations' => [ '匯入翻譯' ],
