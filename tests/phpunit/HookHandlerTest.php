@@ -1,20 +1,29 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate;
+
+use ContentHandler;
+use HashBagOStuff;
+use HashMessageIndex;
+use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Revision\SlotRecord;
+use MediaWikiLangTestCase;
+use MessageIndex;
+use MockWikiMessageGroup;
+use Title;
+use WANObjectCache;
+
 /**
  * Test for various code using hooks.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
-
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-
-/**
  * @group Database
  * @group medium
- * @covers TranslateHooks
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ * @covers MediaWiki\Extension\Translate\HookHandler
  */
-class TranslateHooksTest extends MediaWikiLangTestCase {
+class HookHandlerTest extends MediaWikiLangTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -30,7 +39,8 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$mg->recache();
 
 		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		$index = Services::getInstance()->getMessageIndex();
+		$index->rebuild();
 	}
 
 	public function getTestGroups( &$list ) {
@@ -50,7 +60,11 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
 
-		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
+		$updater = $wikipage
+			->newPageUpdater( self::getTestSysop()->getUser() )
+			->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
+
 		$this->assertEquals(
 			[],
 			$title->getParentCategories(),
@@ -60,8 +74,11 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/qqq' );
 		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbe]]', $title );
+		$updater = $wikipage
+			->newPageUpdater( self::getTestSysop()->getUser() )
+			->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
 
-		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
 		$this->assertEquals(
 			[ 'Category:Shouldbe' => 'MediaWiki:Ugakey2/qqq' ],
 			$title->getParentCategories(),
@@ -72,7 +89,10 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
 
-		$wikipage->doUserEditContent( $content, $user, __METHOD__ );
+		$updater = $wikipage
+			->newPageUpdater( self::getTestSysop()->getUser() )
+			->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
 		$this->assertEquals( [], $title->getParentCategories(), 'unknown message' );
 	}
 
@@ -85,7 +105,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 
 		$expected = [ 'files', 'translation', 'all', 'advanced' ];
 
-		TranslateHooks::searchProfile( $profiles );
+		HookHandler::searchProfile( $profiles );
 
 		$this->assertEquals( $expected, array_keys( $profiles ) );
 	}

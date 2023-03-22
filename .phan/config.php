@@ -6,13 +6,6 @@ $cfg = require __DIR__ . '/../vendor/mediawiki/mediawiki-phan-config/src/config.
 $cfg['null_casts_as_any_type'] = true;
 $cfg['scalar_implicit_cast'] = true;
 
-$cfg['file_list'] = array_merge(
-	$cfg['file_list'],
-	[
-		'TranslateHooks.php',
-	]
-);
-
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],
 	[

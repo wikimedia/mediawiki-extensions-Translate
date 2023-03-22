@@ -20,7 +20,7 @@
 			"UniversalLanguageSelector": "*"
 		}
 	},
-	"callback": "TranslateHooks::setupTranslate",
+	"callback": "MediaWiki\\Extension\\Translate\\HookHandler::setupTranslate",
 	"load_composer_autoloader": true,
 	"ServiceWiringFiles": [
 		"src/ServiceWiring.php"
@@ -122,7 +122,6 @@
 		"SimpleFFS": "ffs/SimpleFFS.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
-		"TranslateHooks": "TranslateHooks.php",
 		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",
 		"TranslateMetadata": "utils/TranslateMetadata.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
@@ -166,19 +165,19 @@
 		"MediaWiki\\Extension\\Translate\\": "tests/phpunit/unit/"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
-		"ParserTestTables": "TranslateHooks::parserTestTables",
-		"PageContentLanguage": "TranslateHooks::onPageContentLanguage",
+		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\Translate\\HookHandler::schemaUpdates",
+		"ParserTestTables": "MediaWiki\\Extension\\Translate\\HookHandler::parserTestTables",
+		"PageContentLanguage": "MediaWiki\\Extension\\Translate\\HookHandler::onPageContentLanguage",
 		"EditPage::showEditForm:initial": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
 		"getUserPermissionsErrorsExpensive": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disallowLangTranslations",
-		"LanguageGetTranslatedLanguageNames": "TranslateHooks::translateMessageDocumentationLanguage",
-		"TranslateSupportedLanguages": "TranslateHooks::translateMessageDocumentationLanguage",
+		"LanguageGetTranslatedLanguageNames": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
+		"TranslateSupportedLanguages": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"ArticlePrepareTextForEdit": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disablePreSaveTransform",
-		"ParserFirstCallInit": "TranslateHooks::setupTranslateParserFunction",
-		"UserGetReservedNames": "TranslateHooks::onUserGetReservedNames",
-		"ParserAfterTidy": "TranslateHooks::preventCategorization",
-		"OutputPageParserOutput": "TranslateHooks::showFakeCategories",
+		"ParserFirstCallInit": "MediaWiki\\Extension\\Translate\\HookHandler::setupTranslateParserFunction",
+		"UserGetReservedNames": "MediaWiki\\Extension\\Translate\\HookHandler::onUserGetReservedNames",
+		"ParserAfterTidy": "MediaWiki\\Extension\\Translate\\HookHandler::preventCategorization",
+		"OutputPageParserOutput": "MediaWiki\\Extension\\Translate\\HookHandler::showFakeCategories",
 		"Translate:newTranslation": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::updateTransverTag",
 		"SkinTemplateNavigation::Universal": [
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage::tabify",
@@ -188,15 +187,15 @@
 		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
 		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
 		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
-		"AbortEmailNotification": "TranslateHooks::onAbortEmailNotificationReview",
+		"AbortEmailNotification": "MediaWiki\\Extension\\Translate\\HookHandler::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "TTMServer::onDelete",
 		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
 		"ArticleContentOnDiff": "legacyInterface",
-		"SpecialSearchProfiles": "TranslateHooks::searchProfile",
-		"SpecialSearchProfileForm": "TranslateHooks::searchProfileForm",
-		"SpecialSearchSetupEngine": "TranslateHooks::searchProfileSetupEngine",
-		"TitleIsAlwaysKnown": "TranslateHooks::onTitleIsAlwaysKnown",
-		"MakeGlobalVariablesScript": "TranslateHooks::addConfig",
+		"SpecialSearchProfiles": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfile",
+		"SpecialSearchProfileForm": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfileForm",
+		"SpecialSearchSetupEngine": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfileSetupEngine",
+		"TitleIsAlwaysKnown": "MediaWiki\\Extension\\Translate\\HookHandler::onTitleIsAlwaysKnown",
+		"MakeGlobalVariablesScript": "MediaWiki\\Extension\\Translate\\HookHandler::addConfig",
 		"TranslateEventTranslationReview": [
 			"MessageGroupStats::clear",
 			"MessageGroupStatesUpdaterJob::onChange"
@@ -208,14 +207,14 @@
 			"FileBasedMessageGroupLoader::registerLoader",
 			"MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::onTranslateInitGroupLoaders"
 		],
-		"AdminLinks": "TranslateHooks::onAdminLinks",
-		"MergeAccountFromTo": "TranslateHooks::onMergeAccountFromTo",
-		"DeleteAccount": "TranslateHooks::onDeleteAccount",
-		"AbuseFilterAlterVariables": "TranslateHooks::onAbuseFilterAlterVariables",
-		"AbuseFilter-computeVariable": "TranslateHooks::onAbuseFilterComputeVariable",
-		"AbuseFilter-builder": "TranslateHooks::onAbuseFilterBuilder",
+		"AdminLinks": "MediaWiki\\Extension\\Translate\\HookHandler::onAdminLinks",
+		"MergeAccountFromTo": "MediaWiki\\Extension\\Translate\\HookHandler::onMergeAccountFromTo",
+		"DeleteAccount": "MediaWiki\\Extension\\Translate\\HookHandler::onDeleteAccount",
+		"AbuseFilterAlterVariables": "MediaWiki\\Extension\\Translate\\HookHandler::onAbuseFilterAlterVariables",
+		"AbuseFilter-computeVariable": "MediaWiki\\Extension\\Translate\\HookHandler::onAbuseFilterComputeVariable",
+		"AbuseFilter-builder": "MediaWiki\\Extension\\Translate\\HookHandler::onAbuseFilterBuilder",
 		"EditFilterMergedContent": [
-			"TranslateHooks::validateMessage",
+			"MediaWiki\\Extension\\Translate\\HookHandler::validateMessage",
 			"messageBundle"
 		],
 		"PageSaveComplete": "messageBundle",
@@ -226,7 +225,7 @@
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "TranslateHooks",
+			"class": "MediaWiki\\Extension\\Translate\\HookHandler",
 			"services": [
 				"RevisionLookup",
 				"DBLoadBalancer",

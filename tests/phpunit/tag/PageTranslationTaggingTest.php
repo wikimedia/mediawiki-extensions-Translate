@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -18,7 +19,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 			'wgEnablePageTranslation' => true,
 			'wgTranslateTranslationServices' => [],
 		] );
-		TranslateHooks::setupTranslate();
+		HookHandler::setupTranslate();
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
 			[ 'TranslatablePageMessageGroupStore::registerLoader' ] );
 

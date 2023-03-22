@@ -3,10 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use CommentStoreComment;
 use ContentHandler;
 use HashBagOStuff;
 use HashMessageIndex;
+use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -18,7 +19,6 @@ use ParserOptions;
 use RequestContext;
 use Status;
 use Title;
-use TranslateHooks;
 use WANObjectCache;
 use Wikimedia\TestingAccessWrapper;
 
@@ -28,7 +28,7 @@ use Wikimedia\TestingAccessWrapper;
  * @license GPL-2.0-or-later
  * @group Database
  * @group medium
- * @covers TranslateHooks
+ * @covers MediaWiki\Extension\Translate\HookHandler
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
@@ -46,7 +46,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			],
 		] );
 
-		TranslateHooks::setupTranslate();
+		HookHandler::setupTranslate();
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
 			[ 'TranslatablePageMessageGroupStore::registerLoader' ] );
 
@@ -152,7 +152,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$requestContext->setLanguage( 'en-gb' );
 		$requestContext->setTitle( $title );
 
-		TranslateHooks::validateMessage( $requestContext, $content, $status, '', $plainUser );
+		HookHandler::validateMessage( $requestContext, $content, $status, '', $plainUser );
 
 		$this->assertFalse( $status->isOK(),
 			'translation with errors is not saved if a normal user is translating.' );
@@ -162,7 +162,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$newStatus = new Status();
 		$superUser = $this->getTestSysop()->getUser();
 
-		TranslateHooks::validateMessage( $requestContext, $content, $newStatus, '', $superUser );
+		HookHandler::validateMessage( $requestContext, $content, $newStatus, '', $superUser );
 
 		$this->assertTrue( $newStatus->isOK(),
 			"translation with errors is saved if user with 'translate-manage' permission is translating." );

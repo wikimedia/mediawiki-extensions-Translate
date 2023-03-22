@@ -1,12 +1,16 @@
 <?php
-/**
- * Contains class with basic non-feature specific hooks.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types=1 );
 
+namespace MediaWiki\Extension\Translate;
+
+use ALItem;
+use ALTree;
+use ApiRawMessage;
+use Config;
+use Content;
+use DatabaseUpdater;
+use IContextSource;
+use Language;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Config\ServiceOptions;
@@ -24,7 +28,6 @@ use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
-use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons;
@@ -34,37 +37,53 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
 use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
+use MediaWiki\StubObject\StubUserLang;
+use MediaWiki\Title\Title;
+use MessageHandle;
+use OutputPage;
+use Parser;
+use ParserOutput;
+use RecentChange;
+use SearchEngine;
+use SpecialPage;
+use SpecialSearch;
+use Status;
+use TextContent;
+use TitleValue;
+use TranslateSandbox;
+use TranslateToolbox;
+use User;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Xml;
+use XmlSelect;
 
 /**
  * Hooks for Translate extension.
- *
- * Main subsystems, like page translation, should have their own hook handler.
- *
+ * Contains class with basic non-feature specific hooks.
+ * Main subsystems, like page translation, should have their own hook handler. *
  * Most of the hooks on this class are still old style static functions, but new new hooks should
  * use the new style hook handlers with interfaces.
+ *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
-class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook, ChangeTagsListActiveHook {
+class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, ChangeTagsListActiveHook {
 	/**
 	 * Any user of this list should make sure that the tables
 	 * actually exist, since they may be optional
-	 *
-	 * @var array
 	 */
-	private static $userMergeTables = [
+	private const USER_MERGE_TABLES = [
 		'translate_stash' => 'ts_user',
 		'translate_reviews' => 'trr_user',
 	];
-	/** @var RevisionLookup */
-	private $revisionLookup;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var Config */
-	private $config;
+	private RevisionLookup $revisionLookup;
+	private ILoadBalancer $loadBalancer;
+	private Config $config;
 
 	public function __construct(
 		RevisionLookup $revisionLookup,
@@ -76,10 +95,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		$this->config = $config;
 	}
 
-	/**
-	 * Do late setup that depends on configuration.
-	 */
-	public static function setupTranslate() {
+	/** Do late setup that depends on configuration. */
+	public static function setupTranslate(): void {
 		global $wgTranslateYamlLibrary;
 		$hooks = [];
 
@@ -381,7 +398,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		static::registerHookHandlers( $hooks );
 	}
 
-	private static function registerHookHandlers( array $hooks ) {
+	private static function registerHookHandlers( array $hooks ): void {
 		if ( defined( 'MW_PHPUNIT_TEST' ) && MediaWikiServices::hasInstance() ) {
 			// When called from a test case's setUp() method,
 			// we can use HookContainer, but we cannot use SettingsBuilder.
@@ -410,24 +427,16 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Hook: UserGetReservedNames
 	 * Prevents anyone from registering or logging in as FuzzyBot
-	 *
-	 * @param array &$names
 	 */
-	public static function onUserGetReservedNames( array &$names ) {
+	public static function onUserGetReservedNames( array &$names ): void {
 		$names[] = FuzzyBot::getName();
 		$names[] = TranslateUserManager::getName();
 	}
 
-	/**
-	 * Used for setting an AbuseFilter variable.
-	 *
-	 * @param VariableHolder &$vars
-	 * @param Title $title
-	 * @param User $user
-	 */
+	/** Used for setting an AbuseFilter variable. */
 	public static function onAbuseFilterAlterVariables(
-		&$vars, Title $title, User $user
-	) {
+		VariableHolder &$vars, Title $title, User $user
+	): void {
 		$handle = new MessageHandle( $title );
 
 		// Only set this variable if we are in a proper namespace to avoid
@@ -446,15 +455,13 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		}
 	}
 
-	/**
-	 * Computes the translate_source_text and translate_target_language AbuseFilter variables
-	 * @param string $method
-	 * @param VariableHolder $vars
-	 * @param array $parameters
-	 * @param null &$result
-	 * @return bool
-	 */
-	public static function onAbuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
+	/** Computes the translate_source_text and translate_target_language AbuseFilter variables */
+	public static function onAbuseFilterComputeVariable(
+		string $method,
+		VariableHolder $vars,
+		array $parameters,
+		?string &$result
+	): bool {
 		if ( $method !== 'translate-get-source' && $method !== 'translate-get-target-language' ) {
 			return true;
 		}
@@ -475,11 +482,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		return false;
 	}
 
-	/**
-	 * Register AbuseFilter variables provided by Translate.
-	 * @param array &$builderValues
-	 */
-	public static function onAbuseFilterBuilder( array &$builderValues ) {
+	/** Register AbuseFilter variables provided by Translate. */
+	public static function onAbuseFilterBuilder( array &$builderValues ): void {
 		// Uses: 'abusefilter-edit-builder-vars-translate-source-text'
 		// and 'abusefilter-edit-builder-vars-translate-target-language'
 		$builderValues['vars']['translate_source_text'] = 'translate-source-text';
@@ -489,21 +493,15 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Hook: ParserFirstCallInit
 	 * Registers \<languages> tag with the parser.
-	 *
-	 * @param Parser $parser
 	 */
-	public static function setupParserHooks( Parser $parser ) {
+	public static function setupParserHooks( Parser $parser ): void {
 		// For nice language list in-page
 		$parser->setHook( 'languages', [ Hooks::class, 'languages' ] );
 	}
 
-	/**
-	 * Hook: LoadExtensionSchemaUpdates
-	 *
-	 * @param DatabaseUpdater $updater
-	 */
-	public static function schemaUpdates( DatabaseUpdater $updater ) {
-		$dir = __DIR__ . '/sql';
+	/** Hook: LoadExtensionSchemaUpdates */
+	public static function schemaUpdates( DatabaseUpdater $updater ): void {
+		$dir = dirname( __DIR__, 1 ) . '/sql';
 		$dbType = $updater->getDB()->getType();
 
 		if ( $dbType === 'mysql' || $dbType === 'sqlite' ) {
@@ -602,11 +600,9 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 	}
 
-	/**
-	 * Hook: ParserTestTables
-	 * @param array &$tables
+	/** Hook: ParserTestTables
 	 */
-	public static function parserTestTables( array &$tables ) {
+	public static function parserTestTables( array &$tables ): void {
 		$tables[] = 'revtag';
 		$tables[] = 'translate_groupstats';
 		$tables[] = 'translate_messageindex';
@@ -616,11 +612,10 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Hook: PageContentLanguage
 	 * Set the correct page content language for translation units.
-	 *
 	 * @param Title $title
 	 * @param Language|StubUserLang|string &$pageLang
 	 */
-	public static function onPageContentLanguage( Title $title, &$pageLang ) {
+	public static function onPageContentLanguage( Title $title, &$pageLang ): void {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isMessageNamespace() ) {
 			$pageLang = $handle->getEffectiveLanguage();
@@ -630,10 +625,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Hook: LanguageGetTranslatedLanguageNames
 	 * Hook: TranslateSupportedLanguages
-	 * @param array &$names
-	 * @param string $code
 	 */
-	public static function translateMessageDocumentationLanguage( array &$names, $code ) {
+	public static function translateMessageDocumentationLanguage( array &$names, ?string $code ): void {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			// Special case the autonyms
@@ -649,11 +642,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		}
 	}
 
-	/**
-	 * Hook: SpecialSearchProfiles
-	 * @param array &$profiles
-	 */
-	public static function searchProfile( array &$profiles ) {
+	/** Hook: SpecialSearchProfiles */
+	public static function searchProfile( array &$profiles ): void {
 		global $wgTranslateMessageNamespaces;
 		$insert = [];
 		$insert['translation'] = [
@@ -678,22 +668,14 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		);
 	}
 
-	/**
-	 * Hook: SpecialSearchProfileForm
-	 * @param SpecialSearch $search
-	 * @param string &$form
-	 * @param string $profile
-	 * @param string $term
-	 * @param array $opts
-	 * @return bool
-	 */
+	/** Hook: SpecialSearchProfileForm */
 	public static function searchProfileForm(
 		SpecialSearch $search,
-		&$form,
-		$profile,
-		$term,
+		string &$form,
+		string $profile,
+		string $term,
 		array $opts
-	) {
+	): bool {
 		if ( $profile !== 'translation' ) {
 			return true;
 		}
@@ -747,17 +729,12 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		return false;
 	}
 
-	/**
-	 * Hook: SpecialSearchSetupEngine
-	 * @param SpecialSearch $search
-	 * @param string $profile
-	 * @param SearchEngine $engine
-	 */
+	/** Hook: SpecialSearchSetupEngine */
 	public static function searchProfileSetupEngine(
 		SpecialSearch $search,
-		$profile,
+		string $profile,
 		SearchEngine $engine
-	) {
+	): void {
 		if ( $profile !== 'translation' ) {
 			return;
 		}
@@ -770,13 +747,15 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		}
 	}
 
-	/**
-	 * Hook: ParserAfterTidy
-	 * @param Parser $parser
-	 * @param string &$html
-	 */
-	public static function preventCategorization( Parser $parser, &$html ) {
-		$handle = new MessageHandle( $parser->getTitle() );
+	/** Hook: ParserAfterTidy */
+	public static function preventCategorization( Parser $parser, string &$html ): void {
+		$pageReference = $parser->getPage();
+		if ( !$pageReference ) {
+			return;
+		}
+
+		$linkTarget = TitleValue::newFromPage( $pageReference );
+		$handle = new MessageHandle( $linkTarget );
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$parserOutput = $parser->getOutput();
 			$parserOutput->setExtensionData( 'translate-fake-categories',
@@ -785,12 +764,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		}
 	}
 
-	/**
-	 * Hook: OutputPageParserOutput
-	 * @param OutputPage $outputPage
-	 * @param ParserOutput $parserOutput
-	 */
-	public static function showFakeCategories( OutputPage $outputPage, ParserOutput $parserOutput ) {
+	/** Hook: OutputPageParserOutput */
+	public static function showFakeCategories( OutputPage $outputPage, ParserOutput $parserOutput ): void {
 		$fakeCategories = $parserOutput->getExtensionData( 'translate-fake-categories' );
 		if ( $fakeCategories ) {
 			$outputPage->setCategoryLinks( $fakeCategories );
@@ -799,13 +774,10 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 
 	/**
 	 * Hook: MakeGlobalVariablesScript
-	 *
 	 * Adds $wgTranslateDocumentationLanguageCode to ResourceLoader configuration
 	 * when Special:Translate is shown.
-	 * @param array &$vars
-	 * @param OutputPage $out
 	 */
-	public static function addConfig( array &$vars, OutputPage $out ) {
+	public static function addConfig( array &$vars, OutputPage $out ): void {
 		$title = $out->getTitle();
 		[ $alias, ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $title->getText() );
@@ -828,11 +800,8 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		}
 	}
 
-	/**
-	 * Hook: AdminLinks
-	 * @param ALTree $tree
-	 */
-	public static function onAdminLinks( ALTree $tree ) {
+	/** Hook: AdminLinks */
+	public static function onAdminLinks( ALTree $tree ): void {
 		global $wgTranslateUseSandbox;
 
 		if ( $wgTranslateUseSandbox ) {
@@ -845,16 +814,13 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Hook: MergeAccountFromTo
 	 * For UserMerge extension.
-	 *
-	 * @param User $oldUser
-	 * @param User $newUser
 	 */
-	public static function onMergeAccountFromTo( User $oldUser, User $newUser ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+	public static function onMergeAccountFromTo( User $oldUser, User $newUser ): void {
+		$dbw = MediawikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 
 		// Update the non-duplicate rows, we'll just delete
 		// the duplicate ones later
-		foreach ( self::$userMergeTables as $table => $field ) {
+		foreach ( self::USER_MERGE_TABLES as $table => $field ) {
 			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
 				$dbw->update(
 					$table,
@@ -870,14 +836,12 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Hook: DeleteAccount
 	 * For UserMerge extension.
-	 *
-	 * @param User $oldUser
 	 */
-	public static function onDeleteAccount( User $oldUser ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+	public static function onDeleteAccount( User $oldUser ): void {
+		$dbw = MediawikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 
 		// Delete any remaining rows that didn't get merged
-		foreach ( self::$userMergeTables as $table => $field ) {
+		foreach ( self::USER_MERGE_TABLES as $table => $field ) {
 			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
 				$dbw->delete(
 					$table,
@@ -888,35 +852,21 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		}
 	}
 
-	/**
-	 * Hook: AbortEmailNotification
-	 *
-	 * False aborts the email.
-	 * @param User $editor
-	 * @param Title $title
-	 * @param RecentChange $rc
-	 * @return bool
-	 */
+	/** Hook: AbortEmailNotification */
 	public static function onAbortEmailNotificationReview(
 		User $editor,
 		Title $title,
 		RecentChange $rc
-	) {
-		if ( $rc->getAttribute( 'rc_log_type' ) === 'translationreview' ) {
-			return false;
-		}
+	): bool {
+		return $rc->getAttribute( 'rc_log_type' ) !== 'translationreview';
 	}
 
 	/**
 	 * Hook: TitleIsAlwaysKnown
 	 * Make Special:MyLanguage links red if the target page doesn't exist.
 	 * A bit hacky because the core code is not so flexible.
-	 *
-	 * @param Title $target
-	 * @param bool &$isKnown
-	 * @return bool
 	 */
-	public static function onTitleIsAlwaysKnown( Title $target, &$isKnown ) {
+	public static function onTitleIsAlwaysKnown( Title $target, ?bool &$isKnown ): bool {
 		if ( !$target->inNamespace( NS_SPECIAL ) ) {
 			return true;
 		}
@@ -941,22 +891,18 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		return true;
 	}
 
-	/**
-	 * Hook: ParserFirstCallInit
-	 * @param Parser $parser
-	 */
-	public static function setupTranslateParserFunction( Parser $parser ) {
+	/** Hook: ParserFirstCallInit */
+	public static function setupTranslateParserFunction( Parser $parser ): void {
 		$parser->setFunctionHook( 'translation', [ self::class, 'translateRenderParserFunction' ] );
 	}
 
-	/**
-	 * @param Parser $parser
-	 * @return string
-	 */
-	public static function translateRenderParserFunction( Parser $parser ) {
-		$pageTitle = $parser->getTitle();
-
-		$handle = new MessageHandle( $pageTitle );
+	public static function translateRenderParserFunction( Parser $parser ): string {
+		$pageReference = $parser->getPage();
+		if ( !$pageReference ) {
+			return '';
+		}
+		$linkTarget = TitleValue::newFromPage( $pageReference );
+		$handle = new MessageHandle( $linkTarget );
 		$code = $handle->getCode();
 		if ( MediaWikiServices::getInstance()->getLanguageNameUtils()->isKnownLanguageTag( $code ) ) {
 			return '/' . $code;
@@ -967,16 +913,15 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	/**
 	 * Runs the configured validator to ensure that the message meets the required criteria.
 	 * Hook: EditFilterMergedContent
-	 * @param IContextSource $context
-	 * @param Content $content
-	 * @param Status $status
-	 * @param string $summary
-	 * @param User $user
 	 * @return bool true if message is valid, false otherwise.
 	 */
-	public static function validateMessage( IContextSource $context, Content $content,
-		Status $status, $summary, User $user
-	) {
+	public static function validateMessage(
+		IContextSource $context,
+		Content $content,
+		Status $status,
+		string $summary,
+		User $user
+	): bool {
 		if ( !$content instanceof TextContent ) {
 			// Not interested
 			return true;
@@ -1051,7 +996,7 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 		// tp:tag and tp:mark handling is in Hooks::updateTranstagOnNullRevisions.
 		$tagsToCopy = [ RevTagStore::FUZZY_TAG, RevTagStore::TRANSVER_PROP ];
 
-		$db = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$db->insertSelect(
 			'revtag',
 			'revtag',
@@ -1071,12 +1016,12 @@ class TranslateHooks implements RevisionRecordInsertedHook, ListDefinedTagsHook,
 	}
 
 	/** @inheritDoc */
-	public function onListDefinedTags( &$tags ) {
+	public function onListDefinedTags( &$tags ): void {
 		$tags[] = 'translate-translation-pages';
 	}
 
 	/** @inheritDoc */
-	public function onChangeTagsListActive( &$tags ) {
+	public function onChangeTagsListActive( &$tags ): void {
 		if ( $this->config->get( 'EnablePageTranslation' ) ) {
 			$tags[] = 'translate-translation-pages';
 		}

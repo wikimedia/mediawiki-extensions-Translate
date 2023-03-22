@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -22,7 +23,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		// Make sure the hooks are installed even if $wgTranslateUseSandbox is false.
-		TranslateHooks::setupTranslate();
+		HookHandler::setupTranslate();
 		$this->tablesUsed[] = 'user';
 	}
 
