@@ -84,7 +84,7 @@
 	"apihelp-translatesandbox-param-userid": "Bruker-ID-ene til brukerne som behandles. Bruk 0 for opprettelser.",
 	"apihelp-translatesandbox-param-username": "Brukernavn når ny bruker opprettes.",
 	"apihelp-translatesandbox-param-password": "Passord når ny bruker opprettes.",
-	"apihelp-translatesandbox-param-email": "Epost når ny bruker opprettes.",
+	"apihelp-translatesandbox-param-email": "E-post når ny bruker opprettes.",
 	"apihelp-translationaids-description": "Spør mot alle oversettelseshjelpemilder.",
 	"apihelp-translationaids-summary": "Spør mot alle oversettelseshjelpemidler.",
 	"apihelp-translationaids-param-title": "Den hele tittelen til en kjent beskjed.",
