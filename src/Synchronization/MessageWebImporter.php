@@ -185,7 +185,7 @@ class MessageWebImporter {
 						$action,
 						$group,
 						$key,
-						$code
+						$value
 					);
 				}
 				// Show the user that we imported the new translation
@@ -254,7 +254,7 @@ class MessageWebImporter {
 							$action,
 							$group,
 							$key,
-							$code
+							$value
 						);
 
 						// Show what we just did, adding to the list of changes
