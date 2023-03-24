@@ -417,5 +417,7 @@
 	"tux-nojs": "Tämä työkalu ei toimi ilman JavaScriptiä. JavaScript on poistettu käytöstä, se ei toimi, tai tätä selainta ei tueta.",
 	"specialpages-group-translation": "Käännös",
 	"content-model-translate-messagebundle": "Käännettävä viestinippu",
+	"translate-messagebundle-error-key-too-long": "Avain \"$1\" on liian pitkä",
+	"translate-messagebundle-error-empty-value": "Avaimella \"$1\" ei ole arvoa",
 	"translate-messagebundle-change-sourcelanguage": "Viestinipun lähdekieli asetettu metatietojen perusteella."
 }
