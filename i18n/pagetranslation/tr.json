@@ -21,7 +21,8 @@
 			"MuratTheTurkish",
 			"Pols12",
 			"SaldırganSincap",
-			"Sezgin İbiş"
+			"Sezgin İbiş",
+			"Can"
 		]
 	},
 	"pagetranslation": "Çeviri sayfası",
@@ -86,7 +87,7 @@
 	"translate-tag-markthis": "Bu sayfayı çeviri için işaretle",
 	"translate-tag-markthisagain": "Bu sayfada en son <span class=\"plainlinks\">[$2 çeviri için işaretlendiğinden]</span> beri <span class=\"plainlinks\">[$1 değişiklikler]</span> var",
 	"translate-tag-hasnew": "Bu sayfa, çeviri için işaretlenmemiş <span class=\"plainlinks\">[$1 değişiklik]</span> içeriyor.",
-	"tpt-translation-intro": "Bu sayfa [[$2]] sayfasının <span class=\"plainlinks\">[$1 çevrilmiş sürüm]</span> ve çeviri %$3 tamamlandı.",
+	"tpt-translation-intro": "Bu sayfa [[$2]] sayfasının <span class=\"plainlinks\">[$1 çevrilmiş sürümü]</span> ve çeviri %$3 tamamlandı.",
 	"tpt-translation-intro-fuzzy": "Eski çeviriler bu şekilde işaretlenir.",
 	"tpt-languages-legend": "Diğer diller:",
 	"tpt-languages-zero": "Bu dili için çeviriyi başlatın",

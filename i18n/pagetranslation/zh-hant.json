@@ -142,7 +142,7 @@
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|限制}}可翻譯頁面 $3 的語言為 $5",
 	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|已增加}}可翻譯頁面 $3 到集合群組 $4",
 	"logentry-pagetranslation-dissociate": "$1 已從集合群組 $4 中{{GENDER:$2|移除}}可翻譯頁面 $3",
-	"log-action-filter-pagetranslation": "動作類型：",
+	"log-action-filter-pagetranslation": "操作類型：",
 	"log-action-filter-pagetranslation-mark": "標記需要翻譯",
 	"log-action-filter-pagetranslation-unmark": "從翻譯中移除",
 	"log-action-filter-pagetranslation-move": "頁面移動",

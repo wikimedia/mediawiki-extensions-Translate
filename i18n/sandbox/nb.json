@@ -27,7 +27,7 @@
 	"tsb-accept-all-button-label": "Godkjenn alle",
 	"tsb-reject-all-button-label": "Avslå alle",
 	"tsb-user-posted-a-comment": "Ikke en oversetter",
-	"tsb-reminder-link-text": "Send påminnelse på epost",
+	"tsb-reminder-link-text": "Send påminnelse på e-post",
 	"tsb-didnt-make-any-translations": "Brukeren har ikke gjort noen oversettelser.",
 	"tsb-translations-source": "Kilde",
 	"tsb-translations-user": "{{GENDER:$1|Brukeroversettelser}}",
