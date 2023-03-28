@@ -787,7 +787,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		bool $firstMark
 	): void {
 		$out = $this->getOutput();
-		$out->setSubtitle( $this->getLinkRenderer()->makeKnownLink( $page->getTitle() ) );
+		$out->addBacklinkSubtitle( $page->getTitle() );
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
 		$formParams = [
