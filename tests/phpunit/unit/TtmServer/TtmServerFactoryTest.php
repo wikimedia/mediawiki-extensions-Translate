@@ -180,7 +180,68 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			[ 'writable' => $writableServer ],
 			'writable',
 			InvalidArgumentException::class,
-			'/cannot be writable/i'
+			'/cannot be write only/i'
 		];
+	}
+
+	public function provideGetDefaultForRead(): Generator {
+		$readableTtmServer = [
+			'type' => 'ttmserver',
+			'class' => FakeReadableTtmServer::class
+		];
+
+		$writableServer = [
+			'type' => 'ttmserver',
+			'class' => FakeTTMServer::class,
+			'writable' => true
+		];
+
+		$writeOnlyServer = [
+			'type' => 'ttmserver',
+			'class' => FakeWritableTtmServer::class
+		];
+
+		yield 'default server cannot be write only' => [
+			[ 'writable' => $writableServer ],
+			'writable',
+			InvalidArgumentException::class,
+			'/cannot be write only/i'
+		];
+
+		yield 'default readable server' => [
+			[ 'readable' => $readableTtmServer ],
+			'readable',
+			null,
+			null
+		];
+
+		yield 'writable default server without "write" configuration' => [
+			[ 'write-only' => $writeOnlyServer ],
+			'write-only',
+			InvalidArgumentException::class,
+			'/must implement ReadableTtmServer/i'
+		];
+	}
+
+	/** @dataProvider provideGetDefaultForRead */
+	public function testGetDefaultForRead(
+		array $servers,
+		string $default,
+		?string $exceptionClass,
+		?string $exceptionMessage
+	): void {
+		$ttmFactory = new TtmServerFactory( $servers, $default );
+		if ( $exceptionClass ) {
+			$this->expectException( $exceptionClass );
+		}
+
+		if ( $exceptionMessage ) {
+			$this->expectExceptionMessageMatches( $exceptionMessage );
+		}
+
+		$ttmServer = $ttmFactory->getDefaultForQuerying();
+		if ( !$exceptionClass ) {
+			$this->assertNotNull( $ttmServer );
+		}
 	}
 }

@@ -69,7 +69,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 
-		$server = $this->ttmServerFactory->getDefault();
+		$server = $this->ttmServerFactory->getDefaultForQuerying();
 		if ( !$server instanceof SearchableTtmServer ) {
 			throw new ErrorPageError( 'tux-sst-nosolr-title', 'tux-sst-nosolr-body' );
 		}

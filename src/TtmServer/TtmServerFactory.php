@@ -87,19 +87,32 @@ class TtmServerFactory {
 		throw new ServiceCreationFailure( "Invalid configuration for name '$name': type not specified" );
 	}
 
-	/** Return the primary service or a no-op fallback if primary cannot be constructed. */
-	public function getDefault(): WritableTtmServer {
+	public function getDefaultForQuerying(): ReadableTtmServer {
 		$service = null;
 
+		if ( $this->default === null ) {
+			return new FakeTTMServer();
+		}
+
 		try {
-			if ( $this->default !== null ) {
+				if ( $this->configs[ $this->default ][ 'writable' ] ?? false ) {
+					throw new InvalidArgumentException(
+						"Default TTM service {$this->default} cannot be write only"
+					);
+				}
+
 				$service = $this->create( $this->default );
-			}
 		} catch ( ServiceCreationFailure $e ) {
 		}
 
-		if ( $service instanceof WritableTtmServer ) {
-			return $service;
+		if ( $service ) {
+			if ( $service instanceof ReadableTtmServer ) {
+				return $service;
+			}
+
+			throw new InvalidArgumentException(
+				"Default TTM service {$this->default} must implement ReadableTtmServer."
+			);
 		}
 
 		return new FakeTTMServer();
@@ -129,7 +142,7 @@ class TtmServerFactory {
 			if ( $isWritable ) {
 				if ( $serverId === $this->default ) {
 					throw new InvalidArgumentException(
-						"Default TTM server {$this->default} cannot be writable"
+						"Default TTM server {$this->default} cannot be write only"
 					);
 				}
 

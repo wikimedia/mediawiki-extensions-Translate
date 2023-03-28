@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
+use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
@@ -191,11 +192,13 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	}
 
 	private function getQueryableServicesUncached( array $services ): array {
-		// First remove mirrors of the primary service
-		$primary = $this->ttmServerFactory->getDefault();
-		$mirrors = $primary->getMirrors();
-		foreach ( $mirrors as $mirrorName ) {
-			unset( $services[$mirrorName] );
+		// First remove mirrors of the default service
+		$primary = $this->ttmServerFactory->getDefaultForQuerying();
+		if ( $primary instanceof WritableTtmServer ) {
+			$mirrors = $primary->getMirrors();
+			foreach ( $mirrors as $mirrorName ) {
+				unset( $services[$mirrorName] );
+			}
 		}
 
 		// Then remove non-ttmservers

@@ -680,7 +680,7 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			return true;
 		}
 
-		if ( Services::getInstance()->getTtmServerFactory()->getDefault() instanceof SearchableTtmServer ) {
+		if ( Services::getInstance()->getTtmServerFactory()->getDefaultForQuerying() instanceof SearchableTtmServer ) {
 			$href = SpecialPage::getTitleFor( 'SearchTranslations' )
 				->getFullUrl( [ 'query' => $term ] );
 			$form = Html::successBox(
