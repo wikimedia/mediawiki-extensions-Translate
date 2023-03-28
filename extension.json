@@ -627,10 +627,7 @@
 				"mediawiki.api",
 				"oojs-ui-widgets"
 			],
-			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.less",
-			"targets": [
-				"desktop"
-			]
+			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.less"
 		},
 		"ext.translate.special.exporttranslations": {
 			"packageFiles": [
@@ -651,9 +648,6 @@
 			"styles": [
 				"resources/src/ext.translate.special.languagestats/entity.selector.less",
 				"resources/src/ext.translate.special.exporttranslations/export.translations.less"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.translate.messagerenamedialog": {
@@ -1136,9 +1130,6 @@
 				"mediawiki.widgets",
 				"oojs-ui-widgets",
 				"user.options"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"ext.translate.special.managegroups": {
