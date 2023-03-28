@@ -421,7 +421,7 @@
 	"tux-editor-message-tools-delete": "Slett",
 	"tux-editor-message-tools-translations": "Alle oversettelser",
 	"tux-editor-message-tools-linktothis": "Lenke til denne beskjeden",
-	"tux-editor-loading": "Laster...",
+	"tux-editor-loading": "Laster ...",
 	"tux-editor-loading-failed": "Kunne ikke laste oversettelseshjelpemidler: $1",
 	"translate-search-more-languages-info": "$1 flere {{PLURAL:$1|språk}}",
 	"translate-statsbar-tooltip": "$1% oversatt, $2% korrekturlest",

@@ -4,5 +4,9 @@
 			"محک"
 		]
 	},
-	"translate-documentation-language": "پیغوم ِمستندات"
+	"translate-langstats-expand": "دیار",
+	"translate-langstats-collapse": "پیتی",
+	"translate-documentation-language": "پیغوم ِمستندات",
+	"tux-editor-expand-tooltip": "دیار",
+	"tux-editor-collapse-tooltip": "پیتی"
 }

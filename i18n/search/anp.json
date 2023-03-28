@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Proabscorp!"
+		]
+	},
+	"searchtranslations": "अनुवाद खोजौ",
+	"tux-sst-edit": "अनुवाद सम्पादित करौ",
+	"tux-sst-view-foreign": "$1 प देखौ",
+	"tux-sst-search": "खोजौ",
+	"tux-sst-search-ph": "अनुवाद खोजौ",
+	"tux-sst-count": "{{PLURAL:$1|एगो परिणाम मिललहौं|$1 परिणाम मिललहौं}}",
+	"tux-sst-facet-language": "भाषा सिनी",
+	"tux-sst-facet-group": "संदेश समूह",
+	"tux-sst-nosolr-title": "खोज अनुपलब्ध छौं",
+	"tux-sst-nosolr-body": "हैय विकि प अनुवाद खोजै क सेवा नाय छै।",
+	"tux-sst-solr-offline-title": "खोज अनुपलब्ध छौं",
+	"tux-sst-solr-offline-body": "खोज सेवा अस्थायी रूप सँ अनुपलब्ध छौं।",
+	"tux-sst-next": "अगला ›",
+	"tux-sst-prev": "‹ पिछला",
+	"tux-sst-default": "अनुवाद सिनी",
+	"tux-sst-translated": "$1 सँ अनुवाद",
+	"tux-sst-untranslated": "$1 से कोय्यो अनुवाद नाय छौं",
+	"tux-sst-outdated": "$1 सँ कालग्रस्त अनुवाद",
+	"tux-sst-ellipsis-untranslated": "कोय्यो अनुवाद नाय छौं",
+	"tux-sst-ellipsis-outdated": "कालग्रस्त अनुवाद",
+	"tux-sst-link-all-match": "सब्भे खोज शब्दौ सिनी क आवश्यक बनाबौ।",
+	"tux-sst-match-message": "कोय्यो खोज शब्द सँ मेल खाय वाला अनुवाद देखैलौ जाय रहलौ छै। $1",
+	"tux-sst-case-sensitive": "केस-संवेदनशील",
+	"tux-sst-error-offset": "आरो खोज परिणाम नाय देखैलौ जाबै सकै छौं। कृपया अपनौ खोज घेरा क कटीगो करौ।",
+	"tux-sst-error-language": "हैय भाषा क इ प्रकार केरौ खोज मँ उपयोग नाय करलौ जाबै सकै छौं।"
+}
