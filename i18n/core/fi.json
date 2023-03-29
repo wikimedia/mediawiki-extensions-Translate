@@ -103,6 +103,7 @@
 	"translate-checks-newline-extra-start": "Käännöksen alussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-newline-extra-end": "Käännöksen lopussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-value-not-present": "Käännöksen täytyy olla {{PLURAL:$1|1=|yksi seuraavista vaihtoehdoista:}} $1.",
+	"translate-checks-replacement": "Käytä $2 $1 sijasta.",
 	"translate-pref-editassistlang": "Apukielet:",
 	"prefs-translate": "Käännösasetukset",
 	"translate-pref-editassistlang-help": "Pilkuin eroteltu lista kielikoodeista.\nViestin käännökset näillä kielillä näkyvät kääntäessäsi.\nAsetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä.",
@@ -406,5 +407,7 @@
 	"tux-session-expired": "Et ole enää kirjautunut sisään. Kirjaudu sisään toisessä välilehdessä. Vaihtoehtoisesti voit kopioida tallentamattomat käännökset, kirjautua sisään ja palata tälle sivulle tallentamaan käännökset uudestaan.",
 	"tux-nojs": "Tämä työkalu ei toimi ilman JavaScriptiä. JavaScript on poistettu käytöstä, se ei toimi, tai tätä selainta ei tueta.",
 	"specialpages-group-translation": "Käännös",
-	"content-model-translate-messagebundle": "Käännettävä viestinippu"
+	"content-model-translate-messagebundle": "Käännettävä viestinippu",
+	"translate-messagebundle-error-key-too-long": "Avain \"$1\" on liian pitkä",
+	"translate-messagebundle-error-empty-value": "Avaimella \"$1\" ei ole arvoa"
 }
