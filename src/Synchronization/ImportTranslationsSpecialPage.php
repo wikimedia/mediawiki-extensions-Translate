@@ -106,11 +106,17 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		}
 
 		$importer = new MessageWebImporter( $this->getPageTitle(), $this->getUser(), $group, $code );
-		$alldone = $importer->execute( $messages );
+		$allDone = $importer->execute( $messages );
 
-		if ( $alldone ) {
+		$out = $this->getOutput();
+		$pageTitle = $this->getPageTitle();
+
+		if ( $allDone ) {
 			$this->deleteCachedData();
+			$out->addReturnTo( $pageTitle );
 		}
+
+		$out->addBacklinkSubtitle( $pageTitle );
 	}
 
 	/**
