@@ -200,7 +200,9 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 
 	/** The query form. */
 	private function showForm(): void {
-		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro', self::LOG_PAGE[ $this->entityType ] );
+		$out = $this->getOutput();
+		$out->addBacklinkSubtitle( $this->title );
+		$out->addWikiMsg( 'pt-deletepage-intro', self::LOG_PAGE[ $this->entityType ] );
 
 		$formDescriptor = $this->getCommonFormFields();
 
@@ -222,6 +224,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		$count = 0;
 		$subpageCount = 0;
 
+		$out->addBacklinkSubtitle( $this->title );
 		$out->addWikiMsg( 'pt-deletepage-intro', self::LOG_PAGE[ $this->entityType ] );
 
 		$subpages = $this->getPagesForDeletion();
