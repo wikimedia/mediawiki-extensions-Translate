@@ -758,8 +758,18 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 		$handle = new MessageHandle( $linkTarget );
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$parserOutput = $parser->getOutput();
-			$parserOutput->setExtensionData( 'translate-fake-categories',
-				$parserOutput->getCategories() );
+			// MW >= 1.40
+			if ( method_exists( $parserOutput, 'getCategorySortKey' ) ) {
+				$names = $parserOutput->getCategoryNames();
+				$parserCategories = [];
+				foreach ( $names as $name ) {
+					$parserCategories[$name] = $parserOutput->getCategorySortKey( $name );
+				}
+				$parserOutput->setExtensionData( 'translate-fake-categories', $parserCategories );
+			} else {
+				$parserOutput->setExtensionData( 'translate-fake-categories',
+					$parserOutput->getCategories() );
+			}
 			$parserOutput->setCategories( [] );
 		}
 	}
