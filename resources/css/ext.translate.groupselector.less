@@ -22,7 +22,7 @@
 }
 
 /* The triangle shaped callout */
-.tux-groupselector:before {
+.tux-groupselector::before {
 	border-bottom: 7px solid #a2a9b1;
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
@@ -33,7 +33,7 @@
 	top: -7px;
 }
 
-.tux-groupselector:after {
+.tux-groupselector::after {
 	border-bottom: 6px solid #f0f0f0;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
@@ -45,8 +45,8 @@
 }
 
 /* Remove the triangle shaped callout */
-.tux-groupselector.removecallout:before,
-.tux-groupselector.removecallout:after {
+.tux-groupselector.removecallout::before,
+.tux-groupselector.removecallout::after {
 	content: none;
 }
 

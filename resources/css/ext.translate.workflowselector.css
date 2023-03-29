@@ -18,7 +18,7 @@
 	float: right;
 }
 
-.tux-workflow-status-triangle:after {
+.tux-workflow-status-triangle::after {
 	margin: 3px;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;

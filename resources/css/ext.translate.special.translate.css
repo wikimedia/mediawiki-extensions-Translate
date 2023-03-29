@@ -9,7 +9,7 @@
 }
 
 /* Arrow between breadcrumb items */
-.tux-breadcrumb .grouplink + .grouplink:before {
+.tux-breadcrumb .grouplink + .grouplink::before {
 	border-left: 4px solid #777;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;

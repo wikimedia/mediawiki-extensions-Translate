@@ -163,8 +163,8 @@
 	transition: width 0.5s;
 }
 
-.tux-message-editor__caret:before,
-.tux-message-editor__caret:after {
+.tux-message-editor__caret::before,
+.tux-message-editor__caret::after {
 	border-top: 20px solid transparent;
 	border-right: 20px solid #aaa;
 	border-bottom: 20px solid transparent;
@@ -177,13 +177,13 @@
 	transition: visibility 0s 0.5s;
 }
 
-.tux-message-editor__caret:after {
+.tux-message-editor__caret::after {
 	border-right: 20px solid #fcfcfc;
 	left: -20px;
 }
 
-.tux-message-editor--expanded .tux-message-editor__caret:before,
-.tux-message-editor--expanded .tux-message-editor__caret:after {
+.tux-message-editor--expanded .tux-message-editor__caret::before,
+.tux-message-editor--expanded .tux-message-editor__caret::after {
 	visibility: hidden;
 	transition: visibility 0s 0s;
 }
@@ -411,7 +411,7 @@
 	padding: 0;
 }
 
-.editarea .tux-more-notices:before {
+.editarea .tux-more-notices::before {
 	content: '';
 	border-bottom: 1em solid #fbf6ad;
 	border-top: 1em solid transparent;
@@ -427,7 +427,7 @@
 	background-color: #fbb;
 }
 
-.editarea .tux-more-notices.tux-has-errors:before {
+.editarea .tux-more-notices.tux-has-errors::before {
 	border-bottom-color: #fbb;
 	border-right-color: #fbb;
 }

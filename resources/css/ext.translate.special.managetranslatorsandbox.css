@@ -243,7 +243,7 @@
 	border-color: #aaa;
 }
 
-.language-selector.unselected:after {
+.language-selector.unselected::after {
 	content: '';
 	border-top: 4px solid #aaa;
 	border-left: 4px solid transparent;

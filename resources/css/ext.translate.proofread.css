@@ -168,7 +168,7 @@
 	text-align: right;
 }
 
-.tux-proofread-count:before {
+.tux-proofread-count::before {
 	content: '';
 	display: inline-block;
 	background: left bottom no-repeat;
