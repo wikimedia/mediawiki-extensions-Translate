@@ -214,6 +214,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 	/** The query form. */
 	public function showForm( TranslatableBundle $bundle ) {
+		$this->getOutput()->addBacklinkSubtitle( $this->oldTitle );
 		$this->getOutput()->addWikiMsg(
 			'pt-movepage-intro',
 			$this->getLogPageWikiLink(
@@ -239,7 +240,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	 */
 	protected function showConfirmation( PageMoveCollection $pageCollection, TranslatableBundle $bundle ): void {
 		$out = $this->getOutput();
-
+		$out->addBacklinkSubtitle( $this->oldTitle );
 		$out->addWikiMsg(
 			'pt-movepage-intro',
 			$this->getLogPageWikiLink(
