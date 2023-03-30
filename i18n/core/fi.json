@@ -123,7 +123,7 @@
 	"translate-rcfilters-translations-only-label": "Käännösnimiavaruudet",
 	"translate-rcfilters-translations-only-desc": "Muutokset käännettyihin sivuihin.",
 	"translate-rcfilters-translations-filter-label": "Ei käännöksiä",
-	"translate-rcfilters-translations-filter-desc": "Kaikki muutokset jotka eivät ole käännöksiä.",
+	"translate-rcfilters-translations-filter-desc": "Kaikki paitsi viestiryhmiin lähetetyt käännökset.",
 	"translate-rcfilters-translations-filter-translation-pages-label": "Ei käännössivuja",
 	"translate-rcfilters-translations-filter-translation-pages-desc": "Kaikki paitsi muutokset käännössivuihin.",
 	"translate-rcfilters-translations-site-label": "Sivuston viestit",

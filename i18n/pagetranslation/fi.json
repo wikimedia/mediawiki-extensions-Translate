@@ -179,7 +179,7 @@
 	"pt-deletepage-lang-legend": "Poista käännössivu",
 	"pt-deletepage-tp-legend": "Poista käännettävissä oleva sivu",
 	"pt-deletepage-mb-legend": "Poista viestinippu",
-	"pt-deletepage-any-legend": "Poista käännettävissä oleva sivu tai sellaisen käännös",
+	"pt-deletepage-any-legend": "Poista käännettävissä oleva sivu, viestinippu tai käännössivu",
 	"pt-deletepage-current": "Sivun nimi",
 	"pt-deletepage-reason": "Syy:",
 	"pt-deletepage-reason-details": "Muu syy tai tarkennus:",

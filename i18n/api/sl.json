@@ -15,6 +15,7 @@
 	"apihelp-managemessagegroups-param-messageKey": "Nadomestni ključ sporočila",
 	"apihelp-translationaids-description": "Poizvedba po vseh prevajalskih pripomočkih.",
 	"apihelp-translationaids-summary": "Poizvedba po vseh prevajalskih pripomočkih.",
+	"apihelp-translationaids-param-group": "Skupina sporočil, ki ji pripada sporočilo. Če je prazno, se uporabi osnovna skupina.",
 	"apihelp-translationaids-param-prop": "Kateri pripomočki za prevajanje naj bodo vključeni.",
 	"apihelp-translationstash-description": "Doda prevode v shrambo.",
 	"apihelp-translationstash-summary": "Doda prevode v shrambo.",
