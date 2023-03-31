@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmedadeljaff"
+			"Ahmedadeljaff",
+			"MRidhaAJ"
 		]
 	},
+	"supportedlanguages": "اللغات المدعومه",
+	"supportedlanguages-summary": "تطلع هاي الصفحة قائمة بكل اللغات التي يدعمها {{SITENAME}}، وي أسماء المترجمين اللي يشتغلون على هاي اللغة.\nكلما طلع اسم المترجم بخط أكبر، جان عدد تعديلاته أكثر.\nويشير لون الخط الموجود جواها إلى حداثة نشاط المترجم هنا.",
 	"translate-documentation-language": "وثق الرساله"
 }
