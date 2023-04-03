@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"MRidhaAJ"
+		]
+	},
+	"managetranslatorsandbox": "إدارة ملعب المترجم",
+	"tsb-reminder-title-generic": "كمل مقدمتك حتى تصير مترجم",
+	"tsb-email-promoted-subject": "انته هسه مترجم جديد في {{SITENAME}}",
+	"tsb-email-promoted-body": "مرحبا {{GENDER:$1|$1}}،\n\nمبروك! أنا تحققت من ترجمات التجربة اللي سويتها في  {{SITENAME}} وانطيتك صلاحيات مترجم كاملة.\n\nتعال إلى {{SITENAME}} للمتابعة في الترجمة هسه، وكل يوم:\n$2\n\nمرحبا، وشكرا الك لمساهماتك!\n\n{{GENDER:$3|$3}}،\nطاقم {{SITENAME}}",
+	"tsb-email-rejected-body": "مرحبا {{GENDER:$1|$1}}،\n\nشكرا الك للتقدم كمترجم في {{SITENAME}}. أنا اجيت اكلك أني رفضت طلبك، لأن جودة ترجماتك ما تستوفي المتطلبات.\n\nلو أنك تعتقد طلبك انرفض بالغلط، من فضلك حاول التقدم مرة ثانية كمترجم في {{SITENAME}}. تكدر تسجل الدخول هنا:\n$2\n\n{{GENDER:$3|$3}}،\nطاقم {{SITENAME}}",
+	"tsb-user-posted-a-comment": "مو مترجم",
+	"tsb-limit-reached-title": "مشكور على ترجماتك"
+}
