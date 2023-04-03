@@ -106,6 +106,7 @@
 	"translate-checks-newline-extra-start": "Käännöksen alussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-newline-extra-end": "Käännöksen lopussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-value-not-present": "Käännöksen täytyy olla {{PLURAL:$1|1=|yksi seuraavista vaihtoehdoista:}} $1.",
+	"translate-checks-replacement": "Käytä $2 $1 sijasta.",
 	"translate-pref-editassistlang": "Apukielet:",
 	"prefs-translate": "Käännösasetukset",
 	"translate-pref-editassistlang-help": "Pilkuin eroteltu lista kielikoodeista.\nViestin käännökset näillä kielillä näkyvät kääntäessäsi.\nAsetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä.",
