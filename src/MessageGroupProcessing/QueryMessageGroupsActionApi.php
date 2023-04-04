@@ -132,6 +132,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 	/**
 	 * @param array|MessageGroup $mixed
 	 * @param array $props List of props as the array keys
+	 * @param int $depth
 	 */
 	protected function formatGroup( $mixed, array $props, int $depth = 0 ): array {
 		$params = $this->extractRequestParams();

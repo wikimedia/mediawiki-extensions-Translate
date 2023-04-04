@@ -408,7 +408,7 @@ class GroupSynchronizationCache {
 	}
 
 	/** @internal - Internal; For testing use only */
-	public function getGroupExpiryTime( $groupId ): int {
+	public function getGroupExpiryTime( string $groupId ): int {
 		$groupKey = $this->getGroupKey( $groupId );
 		$groupEntry = $this->cache->get( $groupKey );
 		if ( $groupEntry === [] ) {
