@@ -93,34 +93,25 @@ class TtmServerFactory {
 	}
 
 	public function getDefaultForQuerying(): ReadableTtmServer {
-		$service = null;
-
 		if ( $this->default === null ) {
 			return new FakeTTMServer();
 		}
 
-		try {
-				if ( $this->configs[ $this->default ][ 'writable' ] ?? false ) {
-					throw new InvalidArgumentException(
-						"Default TTM service {$this->default} cannot be write only"
-					);
-				}
-
-				$service = $this->create( $this->default );
-		} catch ( ServiceCreationFailure $e ) {
-		}
-
-		if ( $service ) {
-			if ( $service instanceof ReadableTtmServer ) {
-				return $service;
-			}
-
+		if ( $this->configs[ $this->default ][ 'writable' ] ?? false ) {
 			throw new InvalidArgumentException(
-				"Default TTM service {$this->default} must implement ReadableTtmServer."
+				"Default TTM service {$this->default} cannot be write only"
 			);
 		}
 
-		return new FakeTTMServer();
+		$service = $this->create( $this->default );
+
+		if ( $service instanceof ReadableTtmServer ) {
+			return $service;
+		}
+
+		throw new InvalidArgumentException(
+			"Default TTM service {$this->default} must implement ReadableTtmServer."
+		);
 	}
 
 	/**
