@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"MRidhaAJ"
+		]
+	},
+	"pagetranslation": "ترجمة صفحه",
+	"nstab-translations": "وحدة الترجمه",
+	"tpt-mark-nochanges": "ماكو تغييرات للمراجعة. التعليم على هاي الصفحة للترجمة ما راح يعدل الصفحة ولا أي وحدة ترجمة موجودة.",
+	"translate-tag-translate-link-desc": "ترجم هاي الصفحه",
+	"tpt-translation-intro": "هاي الصفحة هي <span class=\"plainlinks\">[$1 نسخة مترجمة]</span> من صفحة [[$2]] والترجمة مكتملة بنسبة $3%.",
+	"tpt-translation-intro-fuzzy": "الترجمات مو المُحدّثة مُعلّمة باللي يشبه هذني",
+	"tpt-languages-nonzero": "$1 (يمكن تُترجمت بنسبة $2%)",
+	"tpt-unknown-page": "هاذ النطاق محجوز لترجمات صفحات المحتوى.\nالصفحة التي تحاول تعدلها لا يبدو أنها تطابق أية صفحة معلمة للترجمة.",
+	"tpt-discouraged-language-force-header": "هاي الصفحة ما تكدر تترجمها لـ $1.",
+	"tpt-discouraged-language-force-content": "قرر إداري ترجمة أن هاي الصفحة تكدر تترجمتها بس إلى $1.",
+	"tpt-aggregategroup-add": "حط",
+	"tpt-aggregategroup-add-new": "حط مجموعة مجمعة جديدة",
+	"pp-save-message": "الصفحة انشرت. انته تكدر [$1 تعدلها].",
+	"tpt-unlink-confirm": "من فضلك تأكد من أنك تريد فعلا إزالة هذه الصفحة من نظام الترجمة.\nأداة اختيار اللغة وأسماء الصفحة المترجمة راح يوكفون عن العمل.\nصفحات الترجمة راح تصير قابلة للتعديل."
+}

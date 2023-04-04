@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Proabscorp!"
+			"Proabscorp!",
+			"Angpradesh"
 		]
 	},
 	"searchtranslations": "अनुवाद खोजौ",
@@ -19,7 +20,7 @@
 	"tux-sst-next": "अगला ›",
 	"tux-sst-prev": "‹ पिछला",
 	"tux-sst-default": "अनुवाद सिनी",
-	"tux-sst-translated": "$1 सँ अनुवाद",
+	"tux-sst-translated": "$1 सँ अनुवाद सब",
 	"tux-sst-untranslated": "$1 से कोय्यो अनुवाद नाय छौं",
 	"tux-sst-outdated": "$1 सँ कालग्रस्त अनुवाद",
 	"tux-sst-ellipsis-untranslated": "कोय्यो अनुवाद नाय छौं",
