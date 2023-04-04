@@ -232,5 +232,7 @@
 	"tux-editor-message-tools-delete": "मेटाउन",
 	"tux-editor-message-tools-translations": "सबै अनुवादहरू",
 	"tux-editor-loading": "खुल्दै छ…",
+	"translate-statsbar-tooltip": "$1% अनुवादित, $2% समीक्षा",
+	"translate-statsbar-tooltip-with-fuzzy": "$1% अनुवादित, $2% समीक्षा गरिएको, $3% पुरानो",
 	"specialpages-group-translation": "अनुवाद"
 }
