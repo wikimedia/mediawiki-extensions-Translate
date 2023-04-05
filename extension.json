@@ -629,6 +629,30 @@
 				"desktop"
 			]
 		},
+		"ext.translate.special.exporttranslations": {
+			"packageFiles": [
+				"resources/src/ext.translate.special.exporttranslations/index.js",
+				"resources/src/ext.translate.special.languagestats/entity.selector.js"
+			],
+			"messages": [
+				"translate-tes-server-error",
+				"translate-tes-entity-not-found",
+				"translate-tes-type-to-search",
+				"translate-tes-optgroup-group",
+				"translate-mgs-invalid-group"
+			],
+			"dependencies": [
+				"mediawiki.api",
+				"oojs-ui-widgets"
+			],
+			"styles": [
+				"resources/src/ext.translate.special.languagestats/entity.selector.less",
+				"resources/src/ext.translate.special.exporttranslations/export.translations.less"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
 		"ext.translate.messagerenamedialog": {
 			"dependencies": [
 				"oojs-ui-core",

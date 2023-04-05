@@ -65,6 +65,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		$this->format = $request->getText( 'format' );
 
 		$this->outputForm();
+		$out->addModules( 'ext.translate.special.exporttranslations' );
 
 		if ( $this->groupId ) {
 			$status = $this->checkInput();
@@ -89,6 +90,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				'label-message' => 'translate-page-group',
 				'options' => $this->getGroupOptions(),
 				'default' => $this->groupId,
+				'cssclass' => 'mw-special-ExportTranslations'
 			],
 			'language' => [
 				// @todo Apply ULS to this field
@@ -111,6 +113,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		];
 		HTMLForm::factory( 'ooui', $fields, $this->getContext() )
 			->setMethod( 'get' )
+			->setId( 'mw-export-message-group-form' )
 			->setWrapperLegendMsg( 'translate-page-settings-legend' )
 			->setSubmitTextMsg( 'translate-submit' )
 			->prepareForm()
