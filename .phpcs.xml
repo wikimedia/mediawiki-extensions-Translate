@@ -25,7 +25,7 @@
 		</properties>
 	</rule>
 	<rule ref="MediaWiki.Files.ClassMatchesFilename.NotMatch">
-		<exclude-pattern>tests/|ttmserver/|scripts/|Message\.php</exclude-pattern>
+		<exclude-pattern>tests/|ttmserver/|scripts/</exclude-pattern>
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php"/>
