@@ -102,6 +102,7 @@
 	"tpt-aggregategroup-save": "Lagre",
 	"tpt-aggregategroup-close": "Lukk",
 	"tpt-aggregategroup-add-new": "Legg til en ny samlet gruppe",
+	"tpt-aggregategroup-select-source-language": "Egendefinert kildespråk (valgfritt):",
 	"tpt-aggregategroup-new-name": "Navn:",
 	"tpt-aggregategroup-new-description": "Beskrivelse (valgfri):",
 	"tpt-aggregategroup-remove-confirm": "Er du sikker på at du ønsker å slette denne gruppa?",
@@ -156,7 +157,7 @@
 	"log-action-filter-messagebundle": "Handlingstype:",
 	"log-action-filter-messagebundle-move": "Flytting av meldingsknipper",
 	"log-action-filter-messagebundle-delete": "Sletting av meldingsknipper",
-	"pt-movepage-title": "Flytt oversettbar side $1",
+	"pt-movepage-title": "Flytt den oversettbare siden «$1»",
 	"pt-movepage-messagebundle-title": "Flytt meldingsknippet «$1»",
 	"pt-movepage-blockers": "Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil}}:",
 	"pt-movepage-block-base-invalid": "Navnet på den oversettbare målsiden er ikke en gyldig tittel.",
@@ -266,5 +267,6 @@
 	"visualeditor-annotations-translate-description": "Dette området er markert som oversettbart. Sørg for at du følger retningslinjene for [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text endring av kildetekst].",
 	"visualeditor-annotations-tvar-start": "Begynnelsen av det uoversettbare innholdet",
 	"visualeditor-annotations-tvar-end": "Slutten på det uoversettbare innholdet",
-	"visualeditor-annotations-tvar-description": "Dette området er markert som uoversettbart. Se [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation segmentering av kildetekst] for mer informasjon."
+	"visualeditor-annotations-tvar-description": "Dette området er markert som uoversettbart. Se [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation segmentering av kildetekst] for mer informasjon.",
+	"tag-translate-translation-pages-description": "Automatiske redigeringer på oversatte sider av Translate-utvidelsen"
 }

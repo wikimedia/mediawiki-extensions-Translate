@@ -28,6 +28,7 @@
 	"apihelp-query+languagestats-description": "Statistik för sökfrågespråk.",
 	"apihelp-query+languagestats-summary": "Statistik för sökfrågespråk.",
 	"apihelp-query+languagestats-param-language": "Språkkod.",
+	"apihelp-query+languagestats-param-group": "Meddelandegrupp-ID.",
 	"apihelp-query+languagestats-example-1": "Lista över statistik över slutförda översättningar till finska",
 	"apihelp-query+messagecollection-description": "Fråga MessageCollection om översättningar.",
 	"apihelp-query+managemessagegroups-summary": "Hämta möjliga namnbyten för ett meddelande i en grupp under importering",
@@ -43,11 +44,13 @@
 	"apihelp-query+messagecollection-param-offset": "Heltal eller nyckelförskjutning för att starta.",
 	"apihelp-query+messagecollection-example-1": "Lista över språk som stöds",
 	"apihelp-query+messagecollection-example-3": "List över valfria meddelanden på finska med märken i gruppen \"page-Example\"",
+	"apihelp-query+messagegroups-summary": "Returnera information om meddelandegrupper.",
 	"apihelp-query+messagegroups-param-prop": "Vilken översättningsrelaterad information som ska hämtas:\n;id:Inkluderar gruppens ID.\n;label:Inkluderar gruppens etikett.\n;description:Inkluderar gruppens beskrivning.\n;class:Inkluderar gruppens klassnamn.\n;namespace:Inkluderar gruppens namnrymd. Inte alla grupper tillhör samma namnrymd.\n;exists:Inkluderar gruppens egenuträknade existensegenskap.\n;icon:Inkluderar URL:er till gruppens ikoner.\n;priority:Inkluderar prioriteringsgrupper som avrådd.\n;prioritylangs:Inkluderar föredragna språk. Har den inte angetts returneras false.\n;priorityforce:Inkluderar prioriteringsstatus - är prioriteringsspråken inställning framtvingad.\n;workflowstates:Inkluderar meddelandegruppens arbetsflödesstatus.",
 	"apihelp-query+messagegroups-example-1": "Visa meddelandegrupper",
 	"apihelp-query+messagegroupstats-description": "Statistik för att fråga meddelandegrupp.",
 	"apihelp-query+messagegroupstats-summary": "Statistik för att fråga meddelandegrupp.",
 	"apihelp-query+messagegroupstats-param-group": "Meddelandegrupp-ID.",
+	"apihelp-query+messagetranslations-param-title": "Fullständig titel på ett känt meddelande.",
 	"apihelp-query+messagetranslations-example-1": "Lista över översättningar i wikin för \"MediaWiki:January\"",
 	"apihelp-managemessagegroups-param-groupId": "Grupp-ID",
 	"apihelp-managemessagegroups-param-changesetName": "Ändra uppsättningsnamn - Standard / Oövervakad /MediaWiki osv.",
@@ -107,5 +110,7 @@
 	"apierror-translate-unknownmessage": "Okänt meddelande",
 	"apiwarn-translate-alreadyreviewedbyyou": "Har redan markerats som granskad av dig",
 	"apiwarn-translate-language-disabled-source": "Den här gruppens källspråk är $1. Välj ett annat språk att översätta till.",
-	"apierror-translate-operation-error": "Ett fel uppstod när begäran bearbetades. Fel: $1"
+	"apierror-translate-operation-error": "Ett fel uppstod när begäran bearbetades. Fel: $1",
+	"apihelp-translationentitysearch-summary": "Sök efter meddelandegrupper och meddelanden",
+	"apihelp-translationentitysearch-param-limit": "Maximalt antal sökresultat"
 }

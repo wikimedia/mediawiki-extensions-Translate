@@ -65,6 +65,7 @@
 	"tux-editor-in-other-languages": "Eará gielaide",
 	"tux-notices-hide": "čiega",
 	"tux-proofread-edit-label": "Rievdat",
+	"tux-editor-page-mode": "Siidu",
 	"tux-editor-doc-editor-cancel": "Šluhtte",
 	"tux-message-filter-placeholder": "Sille listtu",
 	"tux-message-filter-result": "{{PLURAL:$1|Okta boađus gávdnui|$1 bohtosa gávdnojedje}} ohcamii \"$2\"",

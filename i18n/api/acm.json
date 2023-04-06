@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"MRidhaAJ"
+		]
+	},
+	"apihelp-query+messagecollection-param-filter": "فلاتر مجموعات الرسايل. استخدم <kbd>!</kbd> حتى تنفي الشرط. على سبيل المثال <kbd>!fuzzy</kbd> يعني اعرض بس كل الرسايل ال non-fuzzy. الفلاتر يتم تطبيقها بالترتيب المعطى.\n;fuzzy:الرسايل بالوسم fuzzy.\n;optional:الرسايل اللي ينبغي أن تتم ترجمتها بس لو أن التغييرات ضرورية.\n;ignored:الرسايل التي ما ينبغي أن تتم ترجمتها أبدا.\n;hastranslation:الرسايل اللي عدها ترجمة بغض النظر عما إذا كانت fuzzy لو لا.\n;translated:الرسايل التي عدها ترجمة مو fuzzy.\n;changed:الرسايل اللي تمت ترجمتها لو تغييرها منذ آخر تصدير.\n;reviewer&#58;N:الرسايل حيث رقم المستخدم <kbd>N</kbd> ضمن المراجعين.\n;last-translator&#58;N:الرسايل حيث رقم المستخدم <kbd>N</kbd> هو آخر مترجم.",
+	"apihelp-translationreview-description": "علم على الترجمات كمراجعة.",
+	"apihelp-translationreview-param-revision": "رقم المراجعة لمراجعتها.",
+	"apihelp-translationstash-description": "حط الترجمات للستاش.",
+	"apierror-translate-fuzzymessage": "ما تكدر تراجع ترجمات fuzzy",
+	"apierror-translate-groupreviewdisabled": "مراجعة مجموعة الرسايل مو مستخدمة.",
+	"apiwarn-translate-language-disabled-source": "لغة المصدر لهاي المجموعة هي $1; يُرجَى تحديد لغة ثانية للترجمة إلها."
+}
