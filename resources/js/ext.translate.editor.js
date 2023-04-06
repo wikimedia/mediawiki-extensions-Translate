@@ -370,11 +370,14 @@
 
 			// Scroll the page a little bit up, slowly.
 			if ( $( document ).height() -
-				( $( window ).height() + window.pageYOffset + $next.height() ) > 0
+				( document.documentElement.clientHeight + window.scrollY ) > 0
 			) {
-				$( 'html, body' ).stop().animate( {
-					scrollTop: $( '.tux-message-editor:visible' ).offset().top - 85
-				}, 500 );
+				var scrollTop = window.scrollY + $next.get( 0 ).getBoundingClientRect().top - 85;
+				window.scrollTo( {
+					top: scrollTop,
+					left: 0,
+					behavior: 'smooth'
+				} );
 			}
 		},
 
