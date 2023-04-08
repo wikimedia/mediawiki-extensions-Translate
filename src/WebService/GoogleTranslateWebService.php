@@ -39,6 +39,8 @@ class GoogleTranslateWebService extends TranslationWebService {
 		/** @phpcs-require-sorted-array */
 		$map = [
 			'be-tarask' => 'be',
+			'nb' => 'no',
+			'tw' => 'ak',
 			'zh-cn' => 'zh-CN',
 			'zh-hans' => 'zh-CN',
 			'zh-hant' => 'zh-TW',
