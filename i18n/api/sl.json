@@ -28,6 +28,7 @@
 	"apihelp-searchtranslations-param-case": "Iskanje brez razlikovanja velikih in malih črk.",
 	"apihelp-translationcheck-param-translation": "Prevod za potrditev.",
 	"apierror-translate-fuzzymessage": "Ohlapnih prevodov ni mogoče pregledovati",
+	"apierror-translate-invalidgroup": "Skupina ne obstaja ali je neveljavna",
 	"apierror-translate-language-disabled": "Prevajanje v $1 je onemogočeno.",
 	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",
 	"apierror-translate-owntranslation": "Lastnih prevodov ni mogoče pregledovati",
