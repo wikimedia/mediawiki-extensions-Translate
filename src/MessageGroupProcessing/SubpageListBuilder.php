@@ -15,10 +15,8 @@ use Title;
  * @since 2022.04
  */
 class SubpageListBuilder {
-	/** @var TranslatableBundleFactory */
-	private $bundleFactory;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
+	private TranslatableBundleFactory $bundleFactory;
+	private LinkBatchFactory $linkBatchFactory;
 
 	public function __construct(
 		TranslatableBundleFactory $bundleFactory,
