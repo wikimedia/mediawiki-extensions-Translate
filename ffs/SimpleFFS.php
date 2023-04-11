@@ -10,20 +10,21 @@
  * A very basic FFS module that implements some basic functionality and
  * a simple binary based file format.
  * Other FFS classes can extend SimpleFFS and override suitable methods.
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatSupport;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use UtfNormal\Validator;
 
-class SimpleFFS implements FFS {
-	public function supportsFuzzy() {
+class SimpleFFS implements FileFormatSupport {
+	public function supportsFuzzy(): string {
 		return 'no';
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [];
 	}
 
@@ -61,7 +62,7 @@ class SimpleFFS implements FFS {
 	}
 
 	/** @return string */
-	public function getWritePath() {
+	public function getWritePath(): string {
 		return $this->writePath;
 	}
 
@@ -135,7 +136,7 @@ class SimpleFFS implements FFS {
 	 * @return array Parsed data.
 	 * @throws MWException
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( string $data ): array {
 		$parts = explode( self::PART_SEPARATOR, $data );
 
 		if ( count( $parts ) !== 2 ) {
@@ -227,7 +228,7 @@ class SimpleFFS implements FFS {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	public function writeIntoVariable( MessageCollection $collection ) {
+	public function writeIntoVariable( MessageCollection $collection ): string {
 		$sourceFile = $this->group->getSourceFilePath( $collection->code );
 		$this->tryReadSource( $sourceFile, $collection );
 
@@ -337,11 +338,11 @@ class SimpleFFS implements FFS {
 		return array_values( $authors );
 	}
 
-	public function isContentEqual( $a, $b ) {
+	public function isContentEqual( string $a, string $b ): bool {
 		return $a === $b;
 	}
 
-	public function shouldOverwrite( $a, $b ) {
+	public function shouldOverwrite( string $a, string $b ): bool {
 		return true;
 	}
 

@@ -1,37 +1,32 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+
 /**
- * File format support classes.
+ * Interface for file format support classes. These classes handle parsing and generating
+ * various different file formats where translation messages are stored.
  *
- * These classes handle parsing and generating various different
- * file formats where translation messages are stored.
- *
- * @file
- * @defgroup FFS File format support
+ * @ingroup FileFormatSupport
+ * @defgroup FileFormatSupport File format support
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-
-/**
- * Interface for file system support classes.
- * @ingroup FFS
- */
-interface FFS {
+interface FileFormatSupport {
 	public function __construct( FileBasedMessageGroup $group );
 
 	/**
 	 * Set the file's location in the system
 	 * @param string $target Filesystem path for exported files.
 	 */
-	public function setWritePath( $target );
+	public function setWritePath( string $target );
 
-	/**
-	 * Get the file's location in the system
-	 * @return string
-	 */
-	public function getWritePath();
+	/** Get the file's location in the system */
+	public function getWritePath(): string;
 
 	/**
 	 * Will parse messages, authors, and any custom data from the file
@@ -40,7 +35,7 @@ interface FFS {
 	 * @param string $code Language code.
 	 * @return array|bool Parsed data or false on failure.
 	 */
-	public function read( $code );
+	public function read( string $code );
 
 	/**
 	 * Same as read(), but takes the data as a parameter. The caller
@@ -48,13 +43,12 @@ interface FFS {
 	 * @param string $data Formatted messages.
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data );
+	public function readFromVariable( string $data ): array;
 
 	/**
 	 * Writes to the location provided with setWritePath and group specific
 	 * directory structure. Exports translations included in the given
 	 * collection with any special handling needed.
-	 * @param MessageCollection $collection
 	 */
 	public function write( MessageCollection $collection );
 
@@ -62,32 +56,23 @@ interface FFS {
 	 * Quick shortcut for getting the plain exported data.
 	 * Same as write(), but returns the output instead of writing it into
 	 * a file.
-	 * @param MessageCollection $collection
-	 * @return string
 	 */
-	public function writeIntoVariable( MessageCollection $collection );
+	public function writeIntoVariable( MessageCollection $collection ): string;
 
 	/**
 	 * Query the capabilities of this FFS. Allowed values are:
 	 *  - yes
 	 *  - write (ignored on read)
 	 *  - no (stripped on write)
-	 * @return string
-	 * @since 2013-03-05
 	 */
-	public function supportsFuzzy();
+	public function supportsFuzzy(): string;
 
 	/**
 	 * Checks whether two strings are equal. Sometimes same content might
 	 * have multiple representations. The main case are inline plurals,
 	 * which in some formats require expansion at export time.
-	 *
-	 * @param string $a
-	 * @param string $b
-	 * @return bool
-	 * @since 2016.11
 	 */
-	public function isContentEqual( $a, $b );
+	public function isContentEqual( string $a, string $b ): bool;
 
 	/**
 	 * Return the commonly used file extensions for these formats.
@@ -95,7 +80,7 @@ interface FFS {
 	 * @return string[]
 	 * @since 2013-04
 	 */
-	public function getFileExtensions();
+	public function getFileExtensions(): array;
 
 	/**
 	 * Allows to skip writing the export output into a file. This is useful
@@ -107,5 +92,5 @@ interface FFS {
 	 * @return bool
 	 * @since 2017.04
 	 */
-	public function shouldOverwrite( $a, $b );
+	public function shouldOverwrite( string $a, string $b ): bool;
 }

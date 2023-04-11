@@ -11,7 +11,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  *
  * This class adds new key into FILES section: \c codeAsRoot.
  * If it is set to true, all messages will under language code.
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	/** @var ArrayFlattener */
@@ -23,7 +23,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$this->flattener = $this->getFlattener();
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.yaml', '.yml' ];
 	}
 
@@ -174,7 +174,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $this->flattener->unflatten( $messages );
 	}
 
-	public function isContentEqual( $a, $b ) {
+	public function isContentEqual( string $a, string $b ): bool {
 		return $this->flattener->compareContent( $a, $b );
 	}
 

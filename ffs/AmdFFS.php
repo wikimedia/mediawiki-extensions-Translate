@@ -45,7 +45,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * AmdFFS implements a message format where messages are encoded
  * as key-value pairs in JSON objects wrapped in a define call.
  *
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  * @since 2015.02
  */
 class AmdFFS extends SimpleFFS {
@@ -59,7 +59,7 @@ class AmdFFS extends SimpleFFS {
 		return is_array( FormatJson::decode( $data, /*as array*/true ) );
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.js' ];
 	}
 
@@ -67,7 +67,7 @@ class AmdFFS extends SimpleFFS {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		$authors = self::extractAuthors( $data );
 		$data = self::extractMessagePart( $data );
 		$messages = (array)FormatJson::decode( $data, /*as array*/true );

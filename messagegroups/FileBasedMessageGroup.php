@@ -64,11 +64,11 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		$class = $this->getFromConf( 'FILES', 'class' );
 
 		if ( $class === null ) {
-			throw new RuntimeException( 'FFS class is not set.', self::NO_FFS_CLASS );
+			throw new RuntimeException( 'FileFormatSupport class is not set.', self::NO_FFS_CLASS );
 		}
 
 		if ( !class_exists( $class ) ) {
-			throw new RuntimeException( "FFS class $class does not exist.", self::INVALID_FFS_CLASS );
+			throw new RuntimeException( "FileFormatSupport class $class does not exist.", self::INVALID_FFS_CLASS );
 		}
 
 		return new $class( $this );

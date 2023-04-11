@@ -5,10 +5,10 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 
 /**
  * Generic file format support for JavaScript formatted files.
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 abstract class JavaScriptFFS extends SimpleFFS {
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.js' ];
 	}
 
@@ -38,7 +38,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		/* Parse authors list */
 		$authors = preg_replace( "#/\* Translators\:\n(.*?)\n \*/(.*)#s", '$1', $data );
 		if ( $authors === $data ) {

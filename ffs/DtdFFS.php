@@ -17,10 +17,10 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 /**
  * File format support for DTD.
  *
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 class DtdFFS extends SimpleFFS {
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.dtd' ];
 	}
 
@@ -28,7 +28,7 @@ class DtdFFS extends SimpleFFS {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		preg_match_all( ',# Author: ([^\n]+)\n,', $data, $matches );
 		$authors = $matches[1];
 

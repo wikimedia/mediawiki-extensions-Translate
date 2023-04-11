@@ -15,7 +15,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
  * IniFFS currently parses and generates flat ini files with language
  * code as header key.
  *
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  * @since 2012-11-19
  */
 class IniFFS extends SimpleFFS {
@@ -34,11 +34,11 @@ class IniFFS extends SimpleFFS {
 		return (bool)count( $parsed['MESSAGES'] );
 	}
 
-	public function supportsFuzzy() {
+	public function supportsFuzzy(): string {
 		return 'write';
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.ini' ];
 	}
 
@@ -46,7 +46,7 @@ class IniFFS extends SimpleFFS {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		$authors = [];
 		preg_match_all( '/^; Author: (.*)$/m', $data, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $match ) {

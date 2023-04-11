@@ -12,14 +12,14 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  *
  * This class adds a new item into FILES section of group configuration:
  * \c keySeparator which defaults to '='.
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
-	public function supportsFuzzy() {
+	public function supportsFuzzy(): string {
 		return 'write';
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.properties' ];
 	}
 
@@ -39,7 +39,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @return array Parsed data.
 	 * @throws MWException
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		$data = TextContent::normalizeLineEndings( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
 		$authors = $messages = [];

@@ -14,7 +14,7 @@ use Wikimedia\Zest\Zest;
 /**
  * Partial support for the Xliff translation format.
  * @since 2013-04
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 class XliffFFS extends SimpleFFS {
 	public static function isValid( $data ) {
@@ -36,7 +36,7 @@ class XliffFFS extends SimpleFFS {
 		return true;
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.xlf', '.xliff', '.xml' ];
 	}
 
@@ -45,7 +45,7 @@ class XliffFFS extends SimpleFFS {
 	 * @param string $element
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data, $element = 'target' ) {
+	public function readFromVariable( string $data, $element = 'target' ): array {
 		$messages = [];
 		$mangler = $this->group->getMangler();
 
@@ -190,7 +190,7 @@ class XliffFFS extends SimpleFFS {
 		return $template->saveXML();
 	}
 
-	public function supportsFuzzy() {
+	public function supportsFuzzy(): string {
 		return 'yes';
 	}
 }

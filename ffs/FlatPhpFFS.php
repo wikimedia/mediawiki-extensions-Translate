@@ -19,7 +19,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * variable assignments.
  */
 class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.php' ];
 	}
 
@@ -27,7 +27,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		# Authors first
 		$matches = [];
 		preg_match_all( '/^ \* @author\s+(.+)$/m', $data, $matches );

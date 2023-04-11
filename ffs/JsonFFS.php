@@ -16,7 +16,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
  * as key-value pairs in JSON objects. The format is extended to
  * support author information under the special @metadata key.
  *
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  * @since 2012-09-21
  */
 class JsonFFS extends SimpleFFS {
@@ -37,7 +37,7 @@ class JsonFFS extends SimpleFFS {
 		$this->flattener = $this->getFlattener();
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.json' ];
 	}
 
@@ -45,7 +45,7 @@ class JsonFFS extends SimpleFFS {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		$messages = (array)FormatJson::decode( $data, /*as array*/true );
 		$authors = [];
 		$metadata = [];
@@ -140,7 +140,7 @@ class JsonFFS extends SimpleFFS {
 		return $flattener;
 	}
 
-	public function isContentEqual( $a, $b ) {
+	public function isContentEqual( string $a, string $b ): bool {
 		if ( $this->flattener ) {
 			return $this->flattener->compareContent( $a, $b );
 		} else {

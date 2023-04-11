@@ -14,7 +14,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 /**
  * Support for XML translation format used by Android.
  * @since 2012-08-19
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 class AndroidXmlFFS extends SimpleFFS {
 	/** @var ArrayFlattener */
@@ -25,11 +25,11 @@ class AndroidXmlFFS extends SimpleFFS {
 		$this->flattener = $this->getFlattener();
 	}
 
-	public function supportsFuzzy() {
+	public function supportsFuzzy(): string {
 		return 'yes';
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.xml' ];
 	}
 
@@ -37,7 +37,7 @@ class AndroidXmlFFS extends SimpleFFS {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		$reader = new SimpleXMLElement( $data );
 
 		$messages = [];
@@ -208,7 +208,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		return $flattener;
 	}
 
-	public function isContentEqual( $a, $b ) {
+	public function isContentEqual( string $a, string $b ): bool {
 		return $this->flattener->compareContent( $a, $b );
 	}
 }

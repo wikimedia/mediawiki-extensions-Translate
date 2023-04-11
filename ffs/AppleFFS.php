@@ -12,15 +12,15 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  *
  * @author Brion Vibber <bvibber@wikimedia.org>
  *
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  * @since 2014.02
  */
 class AppleFFS extends SimpleFFS {
-	public function supportsFuzzy() {
+	public function supportsFuzzy(): string {
 		return 'write';
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.strings' ];
 	}
 
@@ -29,7 +29,7 @@ class AppleFFS extends SimpleFFS {
 	 * @return array Parsed data.
 	 * @throws MWException
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		$lines = explode( "\n", $data );
 		$authors = $messages = [];
 		$linecontinuation = false;

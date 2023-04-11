@@ -6,7 +6,7 @@
  *
  * This class reads and writes only UTF-8 files.
  *
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  * @since 2020.03
  */
 class AppleInfoPlistFfs extends AppleFFS {

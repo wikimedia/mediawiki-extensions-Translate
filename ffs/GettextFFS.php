@@ -20,17 +20,17 @@ use MediaWiki\MediaWikiServices;
 
 /**
  * New-style FFS class that implements support for gettext file format.
- * @ingroup FFS
+ * @ingroup FileFormatSupport
  */
 class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	private $allowPotMode = false;
 	protected $offlineMode = false;
 
-	public function supportsFuzzy() {
+	public function supportsFuzzy(): string {
 		return 'yes';
 	}
 
-	public function getFileExtensions() {
+	public function getFileExtensions(): array {
 		return [ '.pot', '.po' ];
 	}
 
@@ -56,7 +56,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @param string $data
 	 * @return array
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( $data ): array {
 		# Authors first
 		$matches = [];
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
@@ -627,7 +627,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $line;
 	}
 
-	public function shouldOverwrite( $a, $b ) {
+	public function shouldOverwrite( string $a, string $b ): bool {
 		$regex = '/^"(.+)-Date: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\+\d\d\d\d\\\\n"$/m';
 
 		$a = preg_replace( $regex, '', $a );
@@ -663,7 +663,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $schema;
 	}
 
-	public function isContentEqual( $a, $b ) {
+	public function isContentEqual( string $a, string $b ): bool {
 		if ( $a === $b ) {
 			return true;
 		}
