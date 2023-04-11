@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
@@ -157,6 +158,16 @@ return [
 		return new SubpageListBuilder(
 			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->getLinkBatchFactory()
+		);
+	},
+
+	'Translate:TranslatableBundleExporter' => static function (
+		MediaWikiServices $services
+	): TranslatableBundleExporter {
+		return new TranslatableBundleExporter(
+			$services->get( 'Translate:SubpageListBuilder' ),
+			$services->getWikiExporterFactory(),
+			$services->getDBLoadBalancer()
 		);
 	},
 
