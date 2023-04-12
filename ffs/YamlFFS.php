@@ -31,7 +31,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @param string $data
 	 * @return array Parsed data.
 	 */
-	public function readFromVariable( $data ) {
+	public function readFromVariable( string $data ): array {
 		// Authors first.
 		$matches = [];
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
