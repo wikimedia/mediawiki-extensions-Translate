@@ -160,7 +160,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		}
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
-			->getRevisionByTitle( $title, false, $revFlags );
+			->getRevisionByTitle( $title, 0, $revFlags );
 
 		if ( !$rev ) {
 			return null;

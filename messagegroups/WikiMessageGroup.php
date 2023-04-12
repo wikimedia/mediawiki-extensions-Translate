@@ -82,7 +82,7 @@ class WikiMessageGroup extends MessageGroupOld {
 		if ( $code && $this->getSourceLanguage() !== $code ) {
 			return Utilities::getMessageContent( $key, $code );
 		} else {
-			return Utilities::getMessageContent( $key, false );
+			return Utilities::getMessageContent( $key, '' );
 		}
 	}
 }
