@@ -95,17 +95,17 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		}
 
 		$messages = $data['MESSAGES'];
-		$group = $data['EXTRA']['METADATA']['group'];
+		$groupId = $data['EXTRA']['METADATA']['group'];
 		$code = $data['EXTRA']['METADATA']['code'];
 
-		if ( !MessageGroups::exists( $group ) ) {
+		if ( !MessageGroups::exists( $groupId ) ) {
 			$errorWrap = "<div class='error'>\n$1\n</div>";
 			$this->getOutput()->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
 
 			return;
 		}
 
-		$importer = new MessageWebImporter( $this->getPageTitle(), $this->getUser(), $group, $code );
+		$importer = new MessageWebImporter( $this->getPageTitle(), $this->getUser(), $groupId, $code );
 		$allDone = $importer->execute( $messages );
 
 		$out = $this->getOutput();

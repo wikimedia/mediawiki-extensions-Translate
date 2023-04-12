@@ -328,8 +328,13 @@ class MessageWebImporter {
 				$changed[] = '<ul>';
 			}
 
-			$message = $context->msg( 'translate-manage-import-done' )->parse();
-			$changed[] = "<li>$message</li></ul>";
+			$changed[] = '</ul>';
+
+			$languageName = Utilities::getLanguageName(	$code, $context->getLanguage()->getCode() );
+			$message = $context
+				->msg( 'translate-manage-import-done', $group->getId(), $group->getLabel(), $languageName )
+				->parse();
+			$changed[] = Html::successBox( $message );
 			$output->addHTML( implode( "\n", $changed ) );
 		} else {
 			// END

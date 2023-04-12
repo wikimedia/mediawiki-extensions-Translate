@@ -322,7 +322,7 @@
 	"translate-manage-submit": "Used in the group management interface.\n{{doc-screenshot|Manage-3.png|twn}}\n{{Identical|Execute}}",
 	"translate-manage-intro-other": "[[File:Manage-2.png|150px|right|Group management interface]]\nIntroduction to special page. See screenshot. Parameters:\n* $1 is a language name.",
 	"translate-manage-import-ok": "Message given when a translation has been imported on Special:ImportTranslations. Parameters:\n* $1 is the target page name for the translation.",
-	"translate-manage-import-done": "Message given when actions on SpeciaL:ImportTranslations have completed.",
+	"translate-manage-import-done": "Message given when actions on SpeciaL:ImportTranslations have completed. Parameters:\n* $1 - Imported group Id\n* $2 - Imported group label\n* $3 - Imported language name",
 	"translate-manage-empty-content": "Shown in Special:ManageGroups when an external source has added or removed a definition or a translation which has no content (is empty string).",
 	"translate-manage-key-reused": "Shown in Special:ManageGroups when an external source has added a message for which the definition or translation page already exists.",
 	"translate-manage-source-message-not-found": "Shown on Special:ManageGroups when an external source has added a message for which the definition does not exist.",

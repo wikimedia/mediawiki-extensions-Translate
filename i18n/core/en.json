@@ -285,7 +285,7 @@
 	"translate-manage-submit": "Execute",
 	"translate-manage-intro-other": "Below is list of translation changes in the language $1.\nPlease review the changes and choose an action you want to take for each update.\nIf you choose to ignore changes, this action is only temporary.",
 	"translate-manage-import-ok": "Imported: $1",
-	"translate-manage-import-done": "Import complete!",
+	"translate-manage-import-done": "Completed import of $3 translations for group [[Special:Translate/$1|$2]]!",
 	"translate-manage-empty-content": "Content is empty",
 	"translate-manage-key-reused": "This message already exists in the wiki. Check for an accidental re-use of an old key.",
 	"translate-manage-source-message-not-found": "Message definition not found",
