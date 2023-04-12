@@ -113,7 +113,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 
 		if ( $allDone ) {
 			$this->deleteCachedData();
-			$out->addReturnTo( $pageTitle );
+			$this->outputForm();
 		}
 
 		$out->addBacklinkSubtitle( $pageTitle );
