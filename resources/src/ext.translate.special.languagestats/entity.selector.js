@@ -133,7 +133,11 @@ EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( respons
 	}
 
 	if ( groups.length ) {
-		finalResult.push( this.groupLabel );
+		// Only add the label if both entities: groups and messages are to be fetched
+		if ( this.entityTypeToFetch.length !== 1 ) {
+			finalResult.push( this.groupLabel );
+		}
+
 		for ( ; i < groups.length; ++i ) {
 			finalResult.push(
 				new OO.ui.MenuOptionWidget( {
@@ -147,7 +151,11 @@ EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( respons
 		}
 	}
 	if ( messages.length ) {
-		finalResult.push( this.messageLabel );
+		// Only add the label if both entities: groups and messages are to be fetched
+		if ( this.entityTypeToFetch.length !== 1 ) {
+			finalResult.push( this.messageLabel );
+		}
+
 		for ( i = 0; i < messages.length; ++i ) {
 			var messageOption = new OO.ui.MenuOptionWidget( {
 				data: {
