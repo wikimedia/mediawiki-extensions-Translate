@@ -30,7 +30,7 @@ interface TranslationStatsInterface {
 	 * @param array &$options Empty array. Append extra query options.
 	 * @param array &$joins Empty array. Append extra join conditions.
 	 * @param string $start Precalculated start cutoff timestamp
-	 * @param string $end Precalculated end cutoff timestamp
+	 * @param string|null $end Precalculated end cutoff timestamp
 	 */
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end );
 

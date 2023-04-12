@@ -201,7 +201,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * Returns path to the file where translation of language code $code are.
 	 *
 	 * @param string $code
-	 * @return string Path to the file or false if not applicable.
+	 * @return string|false Path to the file or false if not applicable.
 	 */
 	public function getMessageFile( $code ) {
 		return false;

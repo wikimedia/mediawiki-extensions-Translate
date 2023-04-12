@@ -15,7 +15,7 @@ use MediaWiki\MediaWikiServices;
  * @author Niklas Laxström
  */
 class ParallelExecutor {
-	/** @var int[] */
+	/** @var true[] */
 	private $pids = [];
 	/** @var int */
 	private $threads;

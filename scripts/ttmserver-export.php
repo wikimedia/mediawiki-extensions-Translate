@@ -25,8 +25,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * @since 2012-01-26
  */
 class TTMServerBootstrap extends Maintenance {
-	/** @var int */
-	private $start;
+	private float $start;
 
 	public function __construct() {
 		parent::__construct();

@@ -63,7 +63,7 @@ class MessageGroups {
 		$this->initGroupsFromDefinitions( $groups );
 	}
 
-	/** @param bool|string $recache Either "recache" or false */
+	/** @param string|false $recache Either "recache" or false */
 	protected function getCachedGroupDefinitions( $recache = false ): array {
 		global $wgAutoloadClasses;
 

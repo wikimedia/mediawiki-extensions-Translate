@@ -68,7 +68,7 @@ class MessageGroupWANCache {
 	/**
 	 * Fetches value from cache for a message group.
 	 *
-	 * @param bool $recache
+	 * @param string|false $recache Either "recache" or false
 	 * @return mixed
 	 */
 	public function getValue( $recache = false ) {
