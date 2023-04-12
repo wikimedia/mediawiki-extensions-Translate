@@ -77,7 +77,16 @@ class TranslationStatsDataProvider {
 		$options = [];
 		$joins = [];
 
-		$so->preQuery( $tables, $fields, $conds, $type, $options, $joins, $start, $end );
+		$so->preQuery(
+			$tables,
+			$fields,
+			$conds,
+			$type,
+			$options,
+			$joins,
+			wfTimestamp( TS_MW, $start ),
+			wfTimestampOrNull( TS_MW, $end )
+		);
 		$res = $dbr->select( $tables, $fields, $conds, $type, $options, $joins );
 		wfDebug( __METHOD__ . "-queryend\n" );
 
