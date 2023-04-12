@@ -1519,6 +1519,15 @@ class Hooks {
 		if ( isset( $tabs['views']['edit'] ) ) {
 			$tabs['views']['edit']['text'] = $skin->msg( 'tpt-tab-translate' )->text();
 			$tabs['views']['edit']['href'] = $page->getTranslationUrl( $code );
+		} else {
+			$canTranslate = MediaWikiServices::getInstance()->getPermissionManager()->userCan(
+				'translate', $skin->getUser(), $page->getTitle()
+			);
+
+			if ( $canTranslate ) {
+				$tabs['views']['translate']['text'] = $skin->msg( 'tpt-tab-translate' )->text();
+				$tabs['views']['translate']['href'] = $page->getTranslationUrl( $code );
+			}
 		}
 
 		return true;
