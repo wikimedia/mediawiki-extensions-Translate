@@ -152,7 +152,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		}
 
 		if ( strlen( $body ) === 0 ) {
-			return false;
+			return '';
 		}
 
 		/**

@@ -83,7 +83,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		}
 
 		if ( !count( $messages ) ) {
-			return false;
+			return '';
 		}
 
 		$messages = $this->unflatten( $messages );

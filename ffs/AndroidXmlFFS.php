@@ -200,7 +200,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		$dom->formatOutput = true;
 		$dom->loadXML( $writer->asXML() );
 
-		return $dom->saveXML();
+		return $dom->saveXML() ?: '';
 	}
 
 	protected function getFlattener() {

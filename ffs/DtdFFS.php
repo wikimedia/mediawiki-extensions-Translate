@@ -81,7 +81,7 @@ class DtdFFS extends SimpleFFS {
 			return $header . $output;
 		}
 
-		return false;
+		return '';
 	}
 
 	protected function doHeader( MessageCollection $collection ) {

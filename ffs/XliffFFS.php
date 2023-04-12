@@ -187,7 +187,7 @@ class XliffFFS extends SimpleFFS {
 
 		$template->encoding = 'UTF-8';
 
-		return $template->saveXML();
+		return $template->saveXML() ?: '';
 	}
 
 	public function supportsFuzzy(): string {
