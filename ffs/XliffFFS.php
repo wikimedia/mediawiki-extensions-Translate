@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use Wikimedia\Zest\Zest;
@@ -16,7 +17,7 @@ use Wikimedia\Zest\Zest;
  * @since 2013-04
  * @ingroup FileFormatSupport
  */
-class XliffFFS extends SimpleFFS {
+class XliffFFS extends SimpleFormat {
 	public static function isValid( $data ) {
 		$doc = new DomDocument( '1.0' );
 		$doc->loadXML( $data );
@@ -131,7 +132,7 @@ class XliffFFS extends SimpleFFS {
 		return $text;
 	}
 
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$mangler = $this->group->getMangler();
 
 		$template = new DomDocument( '1.0' );

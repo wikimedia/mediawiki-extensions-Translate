@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
@@ -16,7 +17,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
  * @since 2012-08-19
  * @ingroup FileFormatSupport
  */
-class AndroidXmlFFS extends SimpleFFS {
+class AndroidXmlFFS extends SimpleFormat {
 	/** @var ArrayFlattener */
 	private $flattener;
 
@@ -147,7 +148,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		return $output;
 	}
 
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$collection->filter( 'hastranslation', false );

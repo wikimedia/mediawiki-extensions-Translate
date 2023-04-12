@@ -9,6 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -18,7 +19,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * Implements file format support for PHP files which consist of multiple
  * variable assignments.
  */
-class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+class FlatPhpFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	public function getFileExtensions(): array {
 		return [ '.php' ];
 	}
@@ -59,7 +60,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		];
 	}
 
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$output = $this->extra['header'] ?? "<?php\n";
 		$output .= $this->doHeader( $collection );
 

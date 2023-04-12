@@ -10,6 +10,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -19,7 +20,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  *
  * @ingroup FileFormatSupport
  */
-class DtdFFS extends SimpleFFS {
+class DtdFFS extends SimpleFormat {
 	public function getFileExtensions(): array {
 		return [ '.dtd' ];
 	}
@@ -52,7 +53,7 @@ class DtdFFS extends SimpleFFS {
 		];
 	}
 
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$collection->loadTranslations();
 
 		$header = "<!--\n";

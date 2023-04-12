@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
@@ -19,7 +20,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
  * @ingroup FileFormatSupport
  * @since 2012-09-21
  */
-class JsonFFS extends SimpleFFS {
+class JsonFFS extends SimpleFormat {
 	/** @var ArrayFlattener */
 	private $flattener;
 
@@ -78,7 +79,7 @@ class JsonFFS extends SimpleFFS {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$template = $this->read( $collection->getLanguage() ) ?: [];
 		$authors = $this->filterAuthors( $collection->getAuthors(), $collection->getLanguage() );
 		$messages = [];

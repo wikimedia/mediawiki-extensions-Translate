@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
 use JsonFFS;
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use RuntimeException;
-use SimpleFFS;
 
 /**
  * Script to backport translations from one branch to another.
@@ -202,11 +202,11 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * being a boolean indicating whether the source array value is compatible with the target array value.
 	 *
 	 * Target array key order was chosen because in backporting we want to use the order of keys in the
-	 * backport target (stable branch). Comparison is done with SimpleFFS::isContentEqual.
+	 * backport target (stable branch). Comparison is done with SimpleFormat::isContentEqual.
 	 *
 	 * @return array<string,bool> Keys in target order
 	 */
-	private function getKeyCompatibilityMap( array $source, array $target, SimpleFFS $ffs ): array {
+	private function getKeyCompatibilityMap( array $source, array $target, SimpleFormat $ffs ): array {
 		$keys = [];
 		foreach ( $target as $key => $value ) {
 			$keys[$key] = isset( $source[ $key ] ) && $ffs->isContentEqual( $source[ $key ], $value );

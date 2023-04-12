@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 
@@ -7,7 +8,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
  * Generic file format support for JavaScript formatted files.
  * @ingroup FileFormatSupport
  */
-abstract class JavaScriptFFS extends SimpleFFS {
+abstract class JavaScriptFFS extends SimpleFormat {
 	public function getFileExtensions(): array {
 		return [ '.js' ];
 	}
@@ -128,7 +129,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	public function writeReal( MessageCollection $collection ) {
+	public function writeReal( MessageCollection $collection ): string {
 		$header = $this->header( $collection->code, $collection->getAuthors() );
 
 		$mangler = $this->group->getMangler();

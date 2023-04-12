@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -13,7 +14,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * If it is set to true, all messages will under language code.
  * @ingroup FileFormatSupport
  */
-class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	/** @var ArrayFlattener */
 	private $flattener;
 
@@ -61,7 +62,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$output = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
 

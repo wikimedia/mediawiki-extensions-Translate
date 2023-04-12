@@ -37,6 +37,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -48,7 +49,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * @ingroup FileFormatSupport
  * @since 2015.02
  */
-class AmdFFS extends SimpleFFS {
+class AmdFFS extends SimpleFormat {
 
 	/**
 	 * @param string $data
@@ -91,7 +92,7 @@ class AmdFFS extends SimpleFFS {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$messages = [];
 		$mangler = $this->group->getMangler();
 

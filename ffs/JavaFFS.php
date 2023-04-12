@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -14,7 +15,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * \c keySeparator which defaults to '='.
  * @ingroup FileFormatSupport
  */
-class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	public function supportsFuzzy(): string {
 		return 'write';
 	}
@@ -100,7 +101,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$header = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
 		$header .= "\n";

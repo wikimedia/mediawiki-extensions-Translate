@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
@@ -60,7 +61,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		return $group;
 	}
 
-	public function getFFS(): SimpleFFS {
+	public function getFFS(): SimpleFormat {
 		$class = $this->getFromConf( 'FILES', 'class' );
 
 		if ( $class === null ) {

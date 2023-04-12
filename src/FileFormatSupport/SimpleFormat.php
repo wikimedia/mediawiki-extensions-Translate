@@ -1,25 +1,28 @@
 <?php
-/**
- * File format support classes.
- *
- * @file
- * @author Niklas Laxström
- */
+declare( strict_types = 1 );
 
-/**
- * A very basic FFS module that implements some basic functionality and
- * a simple binary based file format.
- * Other FFS classes can extend SimpleFFS and override suitable methods.
- * @ingroup FileFormatSupport
- */
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatSupport;
+use Exception;
+use FileBasedMessageGroup;
+use InvalidArgumentException;
+use LogicException;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
+use RuntimeException;
+use StringUtils;
 use UtfNormal\Validator;
 
-class SimpleFFS implements FileFormatSupport {
+/**
+ * A very basic FileFormatSupport module that implements some basic functionality and
+ * a simple binary based file format. Other FFS classes can extend SimpleFormat and
+ * override suitable methods.
+ * @ingroup FileFormatSupport
+ * @author Niklas Laxström
+ */
+class SimpleFormat implements FileFormatSupport {
+
 	public function supportsFuzzy(): string {
 		return 'no';
 	}
@@ -28,12 +31,12 @@ class SimpleFFS implements FileFormatSupport {
 		return [];
 	}
 
-	/** @var FileBasedMessageGroup */
-	protected $group;
-	protected $writePath;
+	protected FileBasedMessageGroup $group;
+	protected ?string $writePath = null;
 	/**
 	 * Stores the FILES section of the YAML configuration,
 	 * which can be accessed for extra FFS class specific options.
+	 * @var mixed
 	 */
 	protected $extra;
 
@@ -46,22 +49,18 @@ class SimpleFFS implements FileFormatSupport {
 		$this->extra = $conf['FILES'];
 	}
 
-	/** @param FileBasedMessageGroup $group */
-	public function setGroup( FileBasedMessageGroup $group ) {
+	public function setGroup( FileBasedMessageGroup $group ): void {
 		$this->group = $group;
 	}
 
-	/** @return FileBasedMessageGroup */
-	public function getGroup() {
+	public function getGroup(): FileBasedMessageGroup {
 		return $this->group;
 	}
 
-	/** @param string $writePath */
-	public function setWritePath( $writePath ) {
-		$this->writePath = $writePath;
+	public function setWritePath( string $target ): void {
+		$this->writePath = $target;
 	}
 
-	/** @return string */
 	public function getWritePath(): string {
 		return $this->writePath;
 	}
@@ -74,9 +73,8 @@ class SimpleFFS implements FileFormatSupport {
 	 * language.
 	 *
 	 * @param string|bool $code
-	 * @return bool
 	 */
-	public function exists( $code = false ) {
+	public function exists( $code = false ): bool {
 		if ( $code === false ) {
 			$code = $this->group->getSourceLanguage();
 		}
@@ -93,27 +91,26 @@ class SimpleFFS implements FileFormatSupport {
 	 * Reads messages from the file in a given language and returns an array
 	 * of AUTHORS, MESSAGES and possibly other properties.
 	 *
-	 * @param string $code Language code.
 	 * @return array|bool False if the file does not exist
-	 * @throws MWException if the file is not readable or has bad encoding
+	 * @throws RuntimeException if the file is not readable or has bad encoding
 	 */
-	public function read( $code ) {
+	public function read( string $languageCode ) {
 		if ( !$this->isGroupFfsReadable() ) {
 			return [];
 		}
 
-		if ( !$this->exists( $code ) ) {
+		if ( !$this->exists( $languageCode ) ) {
 			return false;
 		}
 
-		$filename = $this->group->getSourceFilePath( $code );
+		$filename = $this->group->getSourceFilePath( $languageCode );
 		$input = file_get_contents( $filename );
 		if ( $input === false ) {
-			throw new MWException( "Unable to read file $filename." );
+			throw new RuntimeException( "Unable to read file $filename." );
 		}
 
 		if ( !StringUtils::isUtf8( $input ) ) {
-			throw new MWException( "Contents of $filename are not valid utf-8." );
+			throw new RuntimeException( "Contents of $filename are not valid utf-8." );
 		}
 
 		$input = Validator::cleanUp( $input );
@@ -124,23 +121,21 @@ class SimpleFFS implements FileFormatSupport {
 		try {
 			return $this->readFromVariable( $input );
 		} catch ( Exception $e ) {
-			throw new MWException( "Parsing $filename failed: " . $e->getMessage() );
+			throw new RuntimeException( "Parsing $filename failed: " . $e->getMessage() );
 		}
 	}
 
 	/**
-	 * Parse the message data given as a string in the SimpleFFS format
+	 * Parse the message data given as a string in the SimpleFormat format
 	 * and return it as an array of AUTHORS and MESSAGES.
 	 *
-	 * @param string $data
-	 * @return array Parsed data.
-	 * @throws MWException
+	 * @throws InvalidArgumentException
 	 */
 	public function readFromVariable( string $data ): array {
 		$parts = explode( self::PART_SEPARATOR, $data );
 
 		if ( count( $parts ) !== 2 ) {
-			throw new MWException( 'Wrong number of parts.' );
+			throw new InvalidArgumentException( 'Wrong number of parts.' );
 		}
 
 		list( $authorsPart, $messagesPart ) = $parts;
@@ -155,7 +150,7 @@ class SimpleFFS implements FileFormatSupport {
 			$lineParts = explode( '=', $line, 2 );
 
 			if ( count( $lineParts ) !== 2 ) {
-				throw new MWException( "Wrong number of parts in line $line." );
+				throw new InvalidArgumentException( "Wrong number of parts in line $line." );
 			}
 
 			list( $key, $message ) = $lineParts;
@@ -173,23 +168,22 @@ class SimpleFFS implements FileFormatSupport {
 
 	/**
 	 * Write the collection to file.
-	 *
-	 * @param MessageCollection $collection
-	 * @throws MWException
+	 * @throws LogicException
+	 * @throws InvalidArgumentException
 	 */
-	public function write( MessageCollection $collection ) {
+	public function write( MessageCollection $collection ): void {
 		$writePath = $this->writePath;
 
 		if ( $writePath === null ) {
-			throw new MWException( 'Write path is not set.' );
+			throw new LogicException( 'Write path is not set. Set write path before calling write()' );
 		}
 
 		if ( !file_exists( $writePath ) ) {
-			throw new MWException( "Write path '$writePath' does not exist." );
+			throw new InvalidArgumentException( "Write path '$writePath' does not exist." );
 		}
 
 		if ( !is_writable( $writePath ) ) {
-			throw new MWException( "Write path '$writePath' is not writable." );
+			throw new InvalidArgumentException( "Write path '$writePath' is not writable." );
 		}
 
 		$targetFile = $writePath . '/' . $this->group->getTargetFilename( $collection->code );
@@ -222,12 +216,7 @@ class SimpleFFS implements FileFormatSupport {
 		file_put_contents( $targetFile, $output );
 	}
 
-	/**
-	 * Read a collection and return it as a SimpleFFS formatted string.
-	 *
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
+	/** Read a collection and return it as a SimpleFormat formatted string. */
 	public function writeIntoVariable( MessageCollection $collection ): string {
 		$sourceFile = $this->group->getSourceFilePath( $collection->code );
 		$this->tryReadSource( $sourceFile, $collection );
@@ -235,11 +224,7 @@ class SimpleFFS implements FileFormatSupport {
 		return $this->writeReal( $collection );
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$output = '';
 
 		$authors = $collection->getAuthors();
@@ -266,17 +251,15 @@ class SimpleFFS implements FileFormatSupport {
 	 * the wiki.
 	 *
 	 * @todo Get rid of this
-	 * @param string $filename
-	 * @param MessageCollection $collection
 	 */
-	protected function tryReadSource( $filename, MessageCollection $collection ) {
+	protected function tryReadSource( string $filename, MessageCollection $collection ): void {
 		if ( !$this->isGroupFfsReadable() ) {
 			return;
 		}
 
 		$sourceText = $this->tryReadFile( $filename );
 
-		// No need to do anything in SimpleFFS if it's false,
+		// No need to do anything in SimpleFormat if it's false,
 		// it only reads author data from it.
 		if ( $sourceText !== false ) {
 			$sourceData = $this->readFromVariable( $sourceText );
@@ -292,12 +275,10 @@ class SimpleFFS implements FileFormatSupport {
 	 * Return false if the file doesn't exist.
 	 * Throw an exception if the file isn't readable
 	 * or if the reading fails strangely.
-	 *
-	 * @param string $filename
 	 * @return bool|string
-	 * @throws MWException
+	 * @throws InvalidArgumentException
 	 */
-	protected function tryReadFile( $filename ) {
+	protected function tryReadFile( string $filename ) {
 		if ( !$filename ) {
 			return false;
 		}
@@ -307,25 +288,19 @@ class SimpleFFS implements FileFormatSupport {
 		}
 
 		if ( !is_readable( $filename ) ) {
-			throw new MWException( "File $filename is not readable." );
+			throw new InvalidArgumentException( "File $filename is not readable." );
 		}
 
 		$data = file_get_contents( $filename );
 		if ( $data === false ) {
-			throw new MWException( "Unable to read file $filename." );
+			throw new InvalidArgumentException( "Unable to read file $filename." );
 		}
 
 		return $data;
 	}
 
-	/**
-	 * Remove excluded authors.
-	 *
-	 * @param array $authors
-	 * @param string $code
-	 * @return array
-	 */
-	public function filterAuthors( array $authors, $code ) {
+	/** Remove excluded authors. */
+	public function filterAuthors( array $authors, string $code ): array {
 		$groupId = $this->group->getId();
 		$configHelper = Services::getInstance()->getConfigHelper();
 
@@ -350,12 +325,11 @@ class SimpleFFS implements FileFormatSupport {
 	 * Check if the file format of the current group is readable by the file
 	 * format system. This might happen if we are trying to export a JsonFFS
 	 * or WikiPageMessage group to a GettextFFS
-	 * @return bool
 	 */
 	public function isGroupFfsReadable(): bool {
 		try {
 			$ffs = $this->group->getFFS();
-		} catch ( RunTimeException $e ) {
+		} catch ( RuntimeException $e ) {
 			if ( $e->getCode() === FileBasedMessageGroup::NO_FFS_CLASS ) {
 				return false;
 			}
@@ -366,3 +340,5 @@ class SimpleFFS implements FileFormatSupport {
 		return get_class( $ffs ) === get_class( $this );
 	}
 }
+
+class_alias( SimpleFormat::class, 'SimpleFFS' );

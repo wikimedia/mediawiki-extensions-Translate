@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -15,7 +16,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * @ingroup FileFormatSupport
  * @since 2014.02
  */
-class AppleFFS extends SimpleFFS {
+class AppleFFS extends SimpleFormat {
 	public function supportsFuzzy(): string {
 		return 'write';
 	}
@@ -101,7 +102,7 @@ class AppleFFS extends SimpleFFS {
 	 * @param MessageCollection $collection
 	 * @return string
 	 */
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$header = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
 		$header .= "\n";

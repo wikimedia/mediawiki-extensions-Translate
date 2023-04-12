@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 
@@ -18,7 +19,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
  * @ingroup FileFormatSupport
  * @since 2012-11-19
  */
-class IniFFS extends SimpleFFS {
+class IniFFS extends SimpleFormat {
 	public static function isValid( $data ) {
 		$conf = [
 			'BASIC' => [ 'class' => FileBasedMessageGroup::class, 'namespace' => 8 ],
@@ -71,7 +72,7 @@ class IniFFS extends SimpleFFS {
 		];
 	}
 
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		$output = '';
 		$mangler = $this->group->getMangler();
 

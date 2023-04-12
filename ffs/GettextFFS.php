@@ -9,6 +9,7 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -22,7 +23,7 @@ use MediaWiki\MediaWikiServices;
  * New-style FFS class that implements support for gettext file format.
  * @ingroup FileFormatSupport
  */
-class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	private $allowPotMode = false;
 	protected $offlineMode = false;
 
@@ -392,7 +393,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $tags;
 	}
 
-	protected function writeReal( MessageCollection $collection ) {
+	protected function writeReal( MessageCollection $collection ): string {
 		// FIXME: this should be the source language
 		$pot = $this->read( 'en' ) ?? [];
 		$code = $collection->code;
@@ -433,9 +434,10 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$extra = '';
 		}
 
+		$group = $this->getGroup();
 		$output =
 			<<<EOT
-			# Translation of {$this->group->getLabel()} to $name ($native)
+			# Translation of {$group->getLabel()} to $name ($native)
 			# Exported from $wgSitename
 			#
 			$authors$extra
@@ -450,7 +452,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$specs['PO-Revision-Date'] = self::formatTime( $timestamp );
 		if ( $this->offlineMode ) {
 			$specs['POT-Creation-Date'] = self::formatTime( $timestamp );
-		} elseif ( $this->group instanceof MessageGroupBase ) {
+		} else {
 			$specs['X-POT-Import-Date'] = self::formatTime( wfTimestamp( TS_MW, $this->getPotTime() ) );
 		}
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
@@ -462,7 +464,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		if ( $this->offlineMode ) {
 			$specs['X-Language-Code'] = $code;
-			$specs['X-Message-Group'] = $this->group->getId();
+			$specs['X-Message-Group'] = $group->getId();
 		}
 
 		$specs['Plural-Forms'] = GettextPlural::getPluralRule( $code )
