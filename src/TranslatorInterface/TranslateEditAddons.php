@@ -152,7 +152,7 @@ class TranslateEditAddons {
 
 		if ( $wgEnablePageTranslation && $handle->isPageTranslation() ) {
 			// Updates for translatable pages only
-			$minor = $flags & EDIT_MINOR;
+			$minor = (bool)( $flags & EDIT_MINOR );
 			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
 				$summary, $minor, $flags, $handle );
 		}

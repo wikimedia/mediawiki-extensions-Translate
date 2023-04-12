@@ -37,7 +37,7 @@ class TSP extends Maintenance {
 		} elseif ( $len % 2 === 0 ) {
 			return $a[$len / 2];
 		} else {
-			return ( $a[floor( $len / 2 )] + $a[ceil( $len / 2 )] ) / 2;
+			return ( $a[(int)floor( $len / 2 )] + $a[(int)ceil( $len / 2 )] ) / 2;
 		}
 	}
 
@@ -87,7 +87,7 @@ class TSP extends Maintenance {
 				}
 
 				if ( $promtime ) {
-					$delay[] = wfTimestamp( TS_UNIX, $promtime ) - wfTimestamp( TS_UNIX, $reg );
+					$delay[] = (int)wfTimestamp( TS_UNIX, $promtime ) - (int)wfTimestamp( TS_UNIX, $reg );
 				}
 
 				if ( $method === 'sandbox' ) {

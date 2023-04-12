@@ -25,6 +25,7 @@ class TranslateYaml {
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
 				// Harden: do not support unserializing objects.
+				// @phan-suppress-next-line PhanTypeMismatchArgumentInternal Scalar okay with php8.1
 				$previousValue = ini_set( 'yaml.decode_php', false );
 				$ret = yaml_parse( $text );
 				ini_set( 'yaml.decode_php', $previousValue );

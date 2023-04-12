@@ -283,15 +283,18 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		}
 
 		list( $count, $failed ) = explode( '|', $value, 2 );
+		$count = (int)$count;
+		$failed = (int)$failed;
+		$now = (int)wfTimestamp();
 
-		if ( $failed + ( 2 * $this->serviceFailurePeriod ) < wfTimestamp() ) {
+		if ( $failed + ( 2 * $this->serviceFailurePeriod ) < $now ) {
 			if ( $count >= $this->serviceFailureCount ) {
 				$this->logger->warning( "Translation service $service (was) restored" );
 			}
 			$cache->delete( $key );
 
 			return false;
-		} elseif ( $failed + $this->serviceFailurePeriod < wfTimestamp() ) {
+		} elseif ( $failed + $this->serviceFailurePeriod < $now ) {
 			/* We are in suspicious mode and one failure is enough to update
 			 * failed timestamp. If the service works however, let's use it.
 			 * Previous failures are forgotten after another failure period

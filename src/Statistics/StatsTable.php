@@ -89,7 +89,7 @@ class StatsTable {
 
 		// https://gka.github.io/palettes/#colors=#36c,#eaf3ff|steps=20|bez=1|coL=1
 		// Color groups for (0-10], (10-20], ... (90-100], (100)
-		$index = floor( $percentage * 10 );
+		$index = (int)floor( $percentage * 10 );
 		$colors = [
 			'eaf3ff', 'e2ebfc', 'dae3fa', 'd2dbf7', 'c9d4f5',
 			'c1ccf2', 'b8c4ef', 'b1bced', 'a8b4ea', '9fade8',

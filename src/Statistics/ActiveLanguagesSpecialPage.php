@@ -216,7 +216,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' ];
-		$timestamp = $dbr->timestamp( wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
+		$timestamp = $dbr->timestamp( (int)wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
 		$conds = [
 			'rc_timestamp > ' . $dbr->addQuotes( $timestamp ),
 			'rc_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
@@ -314,7 +314,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			$styles = [];
 			$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
-			$last = wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $lastTranslationTimestamp );
+			$last = (int)wfTimestamp( TS_UNIX ) - (int)wfTimestamp( TS_UNIX, $lastTranslationTimestamp );
 			$last = round( $last / $day );
 			$attribs['title'] =
 				$this->msg( 'supportedlanguages-activity', $username )

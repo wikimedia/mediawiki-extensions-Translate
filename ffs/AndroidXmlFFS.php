@@ -44,6 +44,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		$regexBacktrackLimit = ini_get( 'pcre.backtrack_limit' );
+		// @phan-suppress-next-line PhanTypeMismatchArgumentInternal Scalar okay with php8.1
 		ini_set( 'pcre.backtrack_limit', 10 );
 
 		/** @var SimpleXMLElement $element */

@@ -245,7 +245,7 @@ class MessageWebImporter {
 					} else {
 						// Check processing time
 						if ( !isset( $this->time ) ) {
-							$this->time = wfTimestamp();
+							$this->time = (int)wfTimestamp();
 						}
 
 						// We have all the necessary information on this changed
@@ -408,7 +408,7 @@ class MessageWebImporter {
 	}
 
 	protected function checkProcessTime() {
-		return wfTimestamp() - $this->time >= self::MAX_PROCESSING_TIME;
+		return (int)wfTimestamp() - $this->time >= self::MAX_PROCESSING_TIME;
 	}
 
 	/**

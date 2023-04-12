@@ -44,7 +44,7 @@ class MessageDefinitions {
 			if ( $namespace === null ) {
 				// pages are in format ex. "8:jan"
 				[ $tns, $tkey ] = explode( ':', $key, 2 );
-				$title = Title::makeTitleSafe( $tns, $tkey );
+				$title = Title::makeTitleSafe( (int)$tns, $tkey );
 			} else {
 				$title = Title::makeTitleSafe( $namespace, $key );
 			}

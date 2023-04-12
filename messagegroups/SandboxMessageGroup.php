@@ -89,7 +89,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 		foreach ( $list as $index => &$translation ) {
 			[ $ns, $page ] = explode( ':', $index, 2 );
-			$title = Title::makeTitle( $ns, "$page/{$this->language}" );
+			$title = Title::makeTitle( (int)$ns, "$page/{$this->language}" );
 			$handle = new MessageHandle( $title );
 
 			if ( MessageGroups::isTranslatableMessage( $handle, $this->language ) ) {
