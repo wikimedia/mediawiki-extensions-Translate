@@ -43,7 +43,7 @@ class PopulateFuzzy extends Maintenance {
 
 		$namespace = $this->getOption( 'namespace', $wgTranslateMessageNamespaces );
 		$nsInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
-		if ( is_string( $namespace ) && !$nsInfo->exists( $namespace ) ) {
+		if ( is_string( $namespace ) && ( !is_numeric( $namespace ) || !$nsInfo->exists( (int)$namespace ) ) ) {
 			$namespace = $nsInfo->getCanonicalIndex( $namespace );
 			if ( $namespace === null ) {
 				$this->fatalError( 'Bad namespace' );
