@@ -75,10 +75,8 @@ interface FileFormatSupport {
 	public function isContentEqual( ?string $a, ?string $b ): bool;
 
 	/**
-	 * Return the commonly used file extensions for these formats.
-	 * Include the dot.
+	 * Return the commonly used file extensions for these formats. Include the dot.
 	 * @return string[]
-	 * @since 2013-04
 	 */
 	public function getFileExtensions(): array;
 
@@ -89,8 +87,6 @@ interface FileFormatSupport {
 	 *
 	 * @param string $a The existing content.
 	 * @param string $b The new export content.
-	 * @return bool
-	 * @since 2017.04
 	 */
 	public function shouldOverwrite( string $a, string $b ): bool;
 }
