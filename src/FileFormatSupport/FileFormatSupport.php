@@ -72,7 +72,7 @@ interface FileFormatSupport {
 	 * have multiple representations. The main case are inline plurals,
 	 * which in some formats require expansion at export time.
 	 */
-	public function isContentEqual( string $a, string $b ): bool;
+	public function isContentEqual( ?string $a, ?string $b ): bool;
 
 	/**
 	 * Return the commonly used file extensions for these formats.

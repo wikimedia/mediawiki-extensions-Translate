@@ -174,7 +174,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $this->flattener->unflatten( $messages );
 	}
 
-	public function isContentEqual( string $a, string $b ): bool {
+	public function isContentEqual( ?string $a, ?string $b ): bool {
 		return $this->flattener->compareContent( $a, $b );
 	}
 

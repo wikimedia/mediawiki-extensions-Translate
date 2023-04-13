@@ -208,7 +208,7 @@ class AndroidXmlFFS extends SimpleFFS {
 		return $flattener;
 	}
 
-	public function isContentEqual( string $a, string $b ): bool {
+	public function isContentEqual( ?string $a, ?string $b ): bool {
 		return $this->flattener->compareContent( $a, $b );
 	}
 }

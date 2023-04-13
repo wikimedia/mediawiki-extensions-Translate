@@ -663,9 +663,13 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $schema;
 	}
 
-	public function isContentEqual( string $a, string $b ): bool {
+	public function isContentEqual( ?string $a, ?string $b ): bool {
 		if ( $a === $b ) {
 			return true;
+		}
+
+		if ( $a === null || $b === null ) {
+			return false;
 		}
 
 		try {

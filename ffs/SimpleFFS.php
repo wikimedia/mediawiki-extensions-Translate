@@ -338,7 +338,7 @@ class SimpleFFS implements FileFormatSupport {
 		return array_values( $authors );
 	}
 
-	public function isContentEqual( string $a, string $b ): bool {
+	public function isContentEqual( ?string $a, ?string $b ): bool {
 		return $a === $b;
 	}
 
