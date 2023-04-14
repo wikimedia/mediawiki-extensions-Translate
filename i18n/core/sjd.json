@@ -4,5 +4,7 @@
 			"Merrahtar"
 		]
 	},
-	"translate": "Ёарркэ"
+	"translate": "Ёарркэ",
+	"supportedlanguages": "Активнэ кӣл",
+	"translate-smg-group-message-message-other-langs": "Мудта кӣл:"
 }
