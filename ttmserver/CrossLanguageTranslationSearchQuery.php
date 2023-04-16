@@ -13,7 +13,7 @@ class CrossLanguageTranslationSearchQuery {
 	protected $server;
 	/** @var array */
 	protected $params;
-	/** @var \Elastica\ResultSet */
+	/** @var \Elastica\ResultSet|null */
 	protected $resultset;
 	/** @var int */
 	protected $total = 0;

@@ -107,7 +107,7 @@ class MessageChangeStorage {
 	/**
 	 * Validate and return a reader reference to the CDB file
 	 * @param string $cdbPath
-	 * @return \Cdb\Reader
+	 * @return \Cdb\Reader|null
 	 */
 	private static function getCdbReader( $cdbPath ) {
 		// File not found, probably no changes.

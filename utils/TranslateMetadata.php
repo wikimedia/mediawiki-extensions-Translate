@@ -17,7 +17,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 class TranslateMetadata {
 	/** @var array Map of (group => key => value) */
 	private static $cache = [];
-	/** @var array */
+	/** @var array|null */
 	private static $priorityCache;
 
 	/**

@@ -41,7 +41,7 @@ class ValidationRunner {
 	protected $validators = [];
 	/** @var string Message group id */
 	protected $groupId;
-	/** @var string[][] */
+	/** @var string[][]|null */
 	private static $ignorePatterns;
 
 	public function __construct( string $groupId ) {

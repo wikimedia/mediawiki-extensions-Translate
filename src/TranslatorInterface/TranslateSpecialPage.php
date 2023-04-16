@@ -29,7 +29,7 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslateSpecialPage extends SpecialPage {
-	/** @var MessageGroup */
+	/** @var MessageGroup|null */
 	protected $group;
 	protected $defaults;
 	protected $nondefaults = [];

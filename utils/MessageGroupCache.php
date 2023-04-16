@@ -24,7 +24,7 @@ class MessageGroupCache {
 	private const VERSION = '4';
 	/** @var FileBasedMessageGroup */
 	protected $group;
-	/** @var Reader */
+	/** @var Reader|null */
 	protected $cache;
 	/** @var string */
 	protected $code;
