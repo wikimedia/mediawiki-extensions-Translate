@@ -212,6 +212,7 @@
 	"translate-tes-optgroup-group": "Ryhmät",
 	"translate-tes-optgroup-message": "Viestit",
 	"translate-tes-message-prefix": "Etuliite - $1",
+	"translate-tes-entity-not-found": "Ei vastaavia tuloksia",
 	"translate-tes-type-to-search": "Kirjoita aloittaaksesi haun",
 	"supportedlanguages": "Aktiiviset kielet",
 	"supportedlanguages-summary": "Tällä sivulla luetellaan aktiiviset kielet {{GRAMMAR:inessive|{{SITENAME}}}}, sekä kaikki näillä kielillä työskentelevät kääntäjät.\nKääntäjän nimi on sitä suurempi, mitä enemmän hän on tehnyt käännöksiä.\nAlleviivauksen väri kertoo, milloin kääntäjä on viimeksi kääntänyt täällä.",
@@ -225,6 +226,7 @@
 	"translate-supportedlanguages-cached": "Nämä tiedot ovat välimuistista, joka luotiin $1 sitten.",
 	"translate-activelanguages-invalid-code": "Kielikoodia \"$1\" ei tunnistettu tai sen kääntämistä ei ole otettu käyttöön.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Käännösyksikön lähdeteksti",
+	"abusefilter-edit-builder-vars-translate-target-language": "Kohdekieli käännöstä varten",
 	"translate-jssti-add": "Lisää listaan",
 	"managemessagegroups": "Viestiryhmien hallinta",
 	"translate-smg-notallowed": "Sinulla ei ole oikeuksia suorittaa tätä toimintoa.",
@@ -422,5 +424,7 @@
 	"content-model-translate-messagebundle": "Käännettävä viestinippu",
 	"translate-messagebundle-error-key-too-long": "Avain \"$1\" on liian pitkä",
 	"translate-messagebundle-error-empty-value": "Avaimella \"$1\" ei ole arvoa",
+	"translate-messagebundle-error-metadata-type": "Metatietojen on oltava taulukko.",
+	"translate-messagebundle-error-invalid-sourcelanguage": "Lähteen kielikoodia \"$1\" ei tueta.",
 	"translate-messagebundle-change-sourcelanguage": "Viestinipun lähdekieli asetettu metatietojen perusteella."
 }
