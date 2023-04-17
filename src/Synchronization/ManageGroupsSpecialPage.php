@@ -653,8 +653,11 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			// Determine added key, and corresponding removed key.
 			$firstMsg = $params;
-			$secondKey = $sourceChanges->getMatchedKey( $language, $key );
+			$secondKey = $sourceChanges->getMatchedKey( $language, $key ) ?? '';
 			$secondMsg = $sourceChanges->getMatchedMessage( $language, $key );
+			if ( $secondMsg === null ) {
+				throw new RuntimeException( "Could not find matched message for $key" );
+			}
 
 			if (
 				$sourceChanges->isPreviousState(
@@ -787,6 +790,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$replacementContent = '';
 		$currentMsgKey = $currentMsg['key'];
 		$matchedMsg = $sourceChanges->getMatchedMessage( $languageCode, $currentMsgKey );
+		if ( $matchedMsg === null ) {
+			throw new RuntimeException( "Could not find matched message for $currentMsgKey." );
+		}
 		$matchedMsgKey = $matchedMsg['key'];
 
 		if (

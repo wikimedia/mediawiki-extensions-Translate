@@ -478,7 +478,7 @@ class MessageSourceChange {
 	 * Get matched rename message for a given key
 	 * @param string $languageCode
 	 * @param string $key
-	 * @return array Matched message if found, else null
+	 * @return array|null Matched message if found, else null
 	 */
 	public function getMatchedMessage( $languageCode, $key ) {
 		$matchedKey = $this->getMatchedKey( $languageCode, $key );

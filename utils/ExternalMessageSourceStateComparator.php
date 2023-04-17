@@ -290,6 +290,9 @@ class ExternalMessageSourceStateComparator {
 			// Since this key is new, and is present in the renames for the source language,
 			// we will add it as a rename.
 			$deletedSource = $changes->getMatchedMessage( $sourceLanguage, $renamedSourceMsg['key'] );
+			if ( $deletedSource === null ) {
+				continue;
+			}
 			$deletedMsgKey = $deletedSource['key'];
 			$deletedMsg = $changes->findMessage(
 				$targetLanguage, $deletedMsgKey, [ MessageSourceChange::DELETION ]
