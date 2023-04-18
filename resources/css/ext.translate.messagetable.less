@@ -1,9 +1,11 @@
+// TODO: Replace with @import 'mediawiki.skin.variables.less'; with MW core LTS v1.42 dependency.
+@import '../lib/codex-design-tokens/theme-wikimedia-ui-legacy.less';
 @import 'mediawiki.mixins';
 
 /* Default colors */
 .tux-messagelist {
-	background-color: #f8f8f8;
-	color: #222;
+	background-color: #f8f9fa;
+	color: @color-base;
 	max-width: 800px;
 }
 
@@ -41,8 +43,8 @@
 	margin-right: 5px !important;
 	margin-left: 5px !important;
 	vertical-align: middle;
-	border-bottom: 1px solid #c9c9c9;
-	background: #fff;
+	border-bottom: @border-subtle;
+	background: @background-color-base;
 }
 
 .tux-message-item.translated,
@@ -81,7 +83,7 @@
 }
 
 .tux-list-translation {
-	color: #54595d;
+	color: @color-subtle;
 	white-space: nowrap;
 	padding-left: 5px;
 	text-overflow: ellipsis;
@@ -117,7 +119,7 @@
 }
 
 .tux-messagetable-loader {
-	color: #54595d;
+	color: @color-subtle;
 	padding: 15px;
 	top: 0;
 	background: #f0f0f0 16px 50%;
@@ -131,7 +133,7 @@
 
 .tux-action-bar {
 	background-color: #f0f0f0;
-	color: #222;
+	color: @color-base;
 	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.3 );
 	transition: width 250ms;
 }
@@ -168,7 +170,7 @@
 	font-weight: bold;
 	line-height: 1;
 	background-image: linear-gradient( #f0f0f0, #e6e6e6 );
-	border: 1px #c9c9c9 solid;
+	border: @border-subtle;
 }
 
 .tux-action-bar button:hover {
@@ -179,7 +181,7 @@
 .tux-action-bar button:active,
 .tux-action-bar button.down {
 	background: #222;
-	color: #fff;
+	color: @color-inverted;
 }
 
 .tux-action-bar button.disabled,
@@ -249,11 +251,11 @@
 }
 
 .tux-message-filter-result {
-	color: #222;
+	color: @color-base;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid #c9c9c9;
+	border-bottom: @border-subtle;
 	background: #fff5aa;
 	padding: 5px;
 
@@ -272,7 +274,7 @@
 }
 
 .tux-empty-list-guide {
-	color: #54595d;
+	color: @color-subtle;
 	font-size: 15px;
 	padding: 5px 0;
 }

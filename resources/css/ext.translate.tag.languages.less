@@ -1,9 +1,10 @@
-@import 'mediawiki.ui/variables.less';
+// TODO: Replace with @import 'mediawiki.skin.variables.less'; with MW core LTS v1.42 dependency.
+@import '../lib/codex-design-tokens/theme-wikimedia-ui-legacy.less';
 
 .mw-pt-languages {
 	background-color: #f8f9fa;
 	display: table;
-	border-bottom: 1px solid #a2a9b1;
+	border-bottom: @border-base;
 	box-sizing: border-box;
 	line-height: 1.2;
 	width: 100%;
