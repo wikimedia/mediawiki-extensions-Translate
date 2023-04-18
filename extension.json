@@ -15,7 +15,7 @@
 	"namemsg": "translate-extensionname",
 	"license-name": "GPL-2.0-or-later",
 	"requires": {
-		"MediaWiki": ">= 1.40.0",
+		"MediaWiki": ">= 1.38",
 		"extensions": {
 			"UniversalLanguageSelector": "*"
 		}
@@ -438,12 +438,8 @@
 	},
 	"ActionFilteredLogs": {
 		"translationreview": {
-			"message": [
-				"message"
-			],
-			"group": [
-				"group"
-			]
+			"message": [ "message" ],
+			"group": [ "group" ]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -1409,8 +1405,6 @@
 			"translate": true
 		}
 	},
-	"ParsoidModules": [
-		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateExt"
-	],
+	"ParsoidModules": [ "MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateExt" ],
 	"manifest_version": 2
 }
