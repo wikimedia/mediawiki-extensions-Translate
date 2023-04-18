@@ -288,7 +288,7 @@
 	"translate-manage-submit": "Utfør",
 	"translate-manage-intro-other": "Nedenfor er en liste over endringer i oversettelsen til språket $1.\nGå gjennom endringene og velg hva du vil gjøre med hver oppdatering.\nOm du velger å ignorere endringene vil denne handlingen kun være midlertidig.",
 	"translate-manage-import-ok": "Importert: $1",
-	"translate-manage-import-done": "Importering fullført.",
+	"translate-manage-import-done": "Fullførte importering av oversettelser til $3 for gruppa [[Special:Translate/$1|$2]]!",
 	"translate-manage-empty-content": "Innholdet er tomt",
 	"translate-manage-key-reused": "Denne beskjeden finnes allerede på wikien. Sjekk om et gammelt nøkkelnavn har blitt brukt ved en feil.",
 	"translate-manage-source-message-not-found": "Beskjeddefinisjon ikke funnet",

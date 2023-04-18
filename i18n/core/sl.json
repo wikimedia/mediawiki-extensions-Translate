@@ -285,7 +285,7 @@
 	"translate-manage-submit": "Izvedi",
 	"translate-manage-intro-other": "Tu je prikazan seznam sprememb prevodov v jeziku $1.\nPri vsaki posodobitvi preglejte spremembe in izberite želeno dejanje.\nČe se boste odločili prezreti spremembe, bo to dejanje samo začasno.",
 	"translate-manage-import-ok": "Uvoženo: $1.",
-	"translate-manage-import-done": "Uvoz je dokončan!",
+	"translate-manage-import-done": "Uvoz $3 prevodov za skupino [[Special:Translate/$1|$2]] je končan!",
 	"translate-manage-empty-content": "Vsebina je prazna",
 	"translate-manage-key-reused": "To sporočilo v tem vikiju že obstaja. Preverite, ali gre za nehoteno ponovno uporabo starega ključa.",
 	"translate-manage-source-message-not-found": "Opredelitev sporočila ni najdena",

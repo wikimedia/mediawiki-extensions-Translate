@@ -276,7 +276,7 @@
 	"translate-manage-submit": "Executar",
 	"translate-manage-intro-other": "Ci infra es un lista de modificationes de traductiones in lingua $1.\nPer favor, revide le modificationes e selige un action a prender pro cata actualisation.\nSi tu opta pro ignorar le modificationes, iste action es solmente temporari.",
 	"translate-manage-import-ok": "Importate: $1",
-	"translate-manage-import-done": "Importation complete!",
+	"translate-manage-import-done": "Le importation de traductiones in $3 pro le gruppo [[Special:Translate/$1|$2]] ha succedite!",
 	"translate-manage-empty-content": "Contento es vacue",
 	"translate-manage-key-reused": "Iste message ja existe in le wiki. Verifica que il non ha un re-uso accidental de un clave ancian.",
 	"translate-manage-source-message-not-found": "Definition del message non trovate",

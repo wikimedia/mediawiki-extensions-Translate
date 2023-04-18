@@ -299,7 +299,7 @@
 	"translate-manage-submit": "Ausführen",
 	"translate-manage-intro-other": "Hier ist eine Liste von Übersetzungsänderungen der Sprache $1.\nBitte kontrolliere die Änderungen und wähle je eine Aktion, die du auf die Aktualisierungen anwenden möchtest.\nWenn du dich entscheidest, Änderungen zu ignorieren, ist diese Aktion nur vorübergehend.",
 	"translate-manage-import-ok": "Importiert: $1",
-	"translate-manage-import-done": "Import abgeschlossen!",
+	"translate-manage-import-done": "Import von Übersetzungen in $3 für die Gruppe [[Special:Translate/$1|$2]]!",
 	"translate-manage-empty-content": "Der Inhalt ist leer",
 	"translate-manage-key-reused": "Diese Systemnachricht existiert bereits im Wiki. Prüfe auf eine versehentliche Wiederverwendung eines alten Schlüssels.",
 	"translate-manage-source-message-not-found": "Nachrichten-Definition nicht gefunden",
