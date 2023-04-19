@@ -90,7 +90,6 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				'label-message' => 'translate-page-group',
 				'options' => $this->getGroupOptions(),
 				'default' => $this->groupId,
-				'cssclass' => 'mw-special-ExportTranslations'
 			],
 			'language' => [
 				// @todo Apply ULS to this field
