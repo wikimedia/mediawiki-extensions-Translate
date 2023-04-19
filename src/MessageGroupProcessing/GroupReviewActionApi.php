@@ -49,8 +49,9 @@ class GroupReviewActionApi extends ApiBase {
 
 		$this->checkUserRightsAny( self::$right );
 
-		if ( $user->getBlock() ) {
-			$this->dieBlocked( $user->getBlock() );
+		$block = $user->getBlock();
+		if ( $block ) {
+			$this->dieBlocked( $block );
 		}
 
 		$languages = $this->languageNameUtils->getLanguageNames();
