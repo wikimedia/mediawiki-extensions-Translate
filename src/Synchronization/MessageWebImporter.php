@@ -419,7 +419,7 @@ class MessageWebImporter {
 		Title $title,
 		string $message,
 		string $summary,
-		?User $user
+		User $user
 	): array {
 		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $message, $title );
