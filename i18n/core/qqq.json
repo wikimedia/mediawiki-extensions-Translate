@@ -98,6 +98,7 @@
 	"translate-export-invalid-format": "Validation error shown on [[Special:ExportTranslations]].",
 	"translate-export-not-supported": "Validation error shown on [[Special:ExportTranslations]]",
 	"translate-export-format-notsupported": "Validation error shown on [[Special:ExportTranslations]]",
+	"translate-export-format-file-empty": "Error shown when the export file is empty on [[Special:ExportTranslations]]",
 	"translate-export-group-too-large": "Validation error shown on [[Special:ExportTranslations]]",
 	"translate-checks-parameters": "Notice message from automated syntax check for translators.\n* $1 - parameters\n* $2 - number of parameters\n{{Related|Translate-checks}}",
 	"translate-checks-parameters-unknown": "Notice message from automated syntax check for translators.\n* $1 - parameters\n* $2 - number of parameters\n{{Related|Translate-checks}}",

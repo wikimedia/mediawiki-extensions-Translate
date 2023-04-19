@@ -77,7 +77,12 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				return;
 			}
 
-			$this->doExport();
+			$status = $this->doExport();
+			if ( !$status->isGood() ) {
+				$out->addHTML(
+					Html::errorBox( $status->getHTML( false, false, $lang ) )
+				);
+			}
 		}
 	}
 
@@ -204,7 +209,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		return $status;
 	}
 
-	private function doExport(): void {
+	private function doExport(): Status {
 		$out = $this->getOutput();
 		$group = MessageGroups::getGroup( $this->groupId );
 		$collection = $this->setupCollection( $group );
@@ -235,8 +240,6 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				break;
 
 			case 'export-to-file':
-				$out->disable();
-
 				// This will never happen since its checked previously but add the check to keep
 				// phan and IDE happy. See checkInput method
 				if ( !$group instanceof FileBasedMessageGroup ) {
@@ -245,10 +248,16 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 					);
 				}
 
+				$messages = $group->getFFS()->writeIntoVariable( $collection );
+
+				if ( $messages === '' ) {
+					return Status::newFatal( 'translate-export-format-file-empty' );
+				}
+
+				$out->disable();
 				$filename = basename( $group->getSourceFilePath( $collection->getLanguage() ) );
 				$this->sendExportHeaders( $filename );
-
-				echo $group->getFFS()->writeIntoVariable( $collection );
+				echo $messages;
 				break;
 
 			case 'export-as-csv':
@@ -261,7 +270,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			default:
 				// @todo Add web viewing for groups other than WikiPageMessageGroup
 				if ( !$group instanceof WikiPageMessageGroup ) {
-					return;
+					return Status::newFatal( 'translate-export-format-notsupported' );
 				}
 
 				$translatablePage = TranslatablePage::newFromTitle( $group->getTitle() );
@@ -283,6 +292,8 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				$out->addHTML( $box );
 
 		}
+
+		return Status::newGood();
 	}
 
 	private function setupCollection( MessageGroup $group ): MessageCollection {
