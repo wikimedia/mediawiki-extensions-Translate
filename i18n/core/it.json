@@ -252,7 +252,7 @@
 	"translate-manage-submit": "Esegui",
 	"translate-manage-intro-other": "Di seguito sono elencati i cambiamenti alle traduzioni nella lingua $1.\nControlla le modifiche e scegli l'azione da eseguire per ciascun messaggio.\nSe scegli di ignorare i cambiamenti, questa azione sarà solo temporanea.",
 	"translate-manage-import-ok": "Importato: $1",
-	"translate-manage-import-done": "Importazione completa!",
+	"translate-manage-import-done": "Importazione completata di $3 traduzioni per il gruppo [[Special:Translate/$1|$2]]!",
 	"translate-manage-source-message-not-found": "Definizione messaggio non trovata",
 	"importtranslations": "Importa traduzioni",
 	"translate-import-from-local": "Carica file locale:",

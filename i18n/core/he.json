@@ -291,7 +291,7 @@
 	"translate-manage-submit": "הפעלה",
 	"translate-manage-intro-other": "להלן רשימה של שינויי תרגום ב$1.\nנא לסקור את השינויים ולבחור את הפעולה שברצונך לעשות עבור כל עדכון.\nהתעלמות מהשינויים תגרום לכך שהפעולה הזאת תהיה רק זמנית.",
 	"translate-manage-import-ok": "יובא: $1",
-	"translate-manage-import-done": "היבוא בוצע!",
+	"translate-manage-import-done": "הושלם יבוא $3 תרגומים לקבוצה [[Special:Translate/$1|$2]]!",
 	"translate-manage-empty-content": "התוכן ריק",
 	"translate-manage-key-reused": "ההודעה הזאת כבר קיימת בוויקי. נא לבדוק אם נעשה שימוש חוזר במפתח ישן.",
 	"translate-manage-source-message-not-found": "הגדרת ההודעה לא נמצאה",

@@ -321,7 +321,7 @@
 	"translate-manage-submit": "Exécuter",
 	"translate-manage-intro-other": "Ci-dessous figure une liste des modifications dans la langue $1.\nRelisez les modifications et choisissez une action à effectuer pour chacune.\nSi vous décidez d’ignorer les modifications, cette action ne sera que temporaire.",
 	"translate-manage-import-ok": "Importé : $1",
-	"translate-manage-import-done": "Import terminé !",
+	"translate-manage-import-done": "Importation terminée de $3 traductions pour le groupe [[Special:Translate/$1|$2]] !",
 	"translate-manage-empty-content": "Le contenu est vide",
 	"translate-manage-key-reused": "Ce message existe déjà dans le wiki. Recherchez une réutilisation accidentelle d’une ancienne clé.",
 	"translate-manage-source-message-not-found": "Définition du message non trouvée",
