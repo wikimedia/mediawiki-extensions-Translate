@@ -37,6 +37,7 @@
 	"translate-mgs-column-language": "زبان",
 	"translate-tes-optgroup-group": "گروپس",
 	"translate-tes-optgroup-message": "سنیہے",
+	"supportedlanguages": "فعال زباناں",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|تبدیلی|تبدیلیاں}} ــ چھیکڑی تبدیلی $3 ݙین٘ہ پہلے",
 	"translate-supportedlanguages-cached": "ایہ معلومات $1 پہلے کٹھی تھئی ہائی۔",
 	"translate-smg-group-message-action-history": "تاریخ",
