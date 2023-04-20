@@ -229,6 +229,7 @@
 	"tux-editor-suggestions-title": "ДӀаалар",
 	"tux-editor-latest-updates-title": "ТӀаьххьара карлайаккхар",
 	"tux-editor-changes-without-summary": "хийцамах лаьцна хаам боцуш $1 {{PLURAL:$1|карлайаккхар}}",
+	"tux-editor-all-changes": "Берриге хийцамаш",
 	"tux-editor-in-other-languages": "Кхечу меттанашкахь",
 	"tux-editor-need-more-help": "ГӀо оьшу?",
 	"tux-editor-ask-help": "Деха кхин тӀедиллинарг",

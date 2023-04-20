@@ -125,6 +125,7 @@
 	"translate-tag-page-desc": "وڪي صفحي [[$2|$1]] جو $3 ($4) مان ترجمو",
 	"translate-sidebar-alltrans": "ٻيون ٻوليون",
 	"translations": "سڀ ترجما",
+	"translations-summary": "سڀ موجود ترجما ڏيکارڻ لاءِ ھيٺ نياپي جو نالو داخل ڪريو.",
 	"translate-translations-no-message": "\"$1\" ترجمو ڪرڻ جوڳو نياپو نہ آھي",
 	"translate-translations-none": "\"$1\" لاءِ ڪي بہ ترجما ناھن",
 	"translate-translations-count": "{{PLURAL:$1|ھڪ ترجمو|$1 ترجما}} لڌا.",
