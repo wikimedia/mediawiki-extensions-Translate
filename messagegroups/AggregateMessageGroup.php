@@ -132,6 +132,10 @@ class AggregateMessageGroup extends MessageGroupBase {
 		$title = Title::makeTitle( $this->getNamespace(), $key );
 		$handle = new MessageHandle( $title );
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		if ( $groupId === null ) {
+			error_log( "Could not determine groupId for MessageHandle of key $key" );
+			return null;
+		}
 		if ( $groupId === $this->getId() ) {
 			// Message key owned by aggregate group.
 			// Should not ever happen, but it does.

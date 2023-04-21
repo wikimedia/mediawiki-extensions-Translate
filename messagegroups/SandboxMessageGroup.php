@@ -134,6 +134,9 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		if ( $groupId === null ) {
+			return null;
+		}
 		$group = MessageGroups::getGroup( $groupId );
 		$key = $handle->getKey();
 

@@ -147,9 +147,11 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
-		$group = MessageGroups::getGroup( $groupId );
-		if ( $group ) {
-			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+		if ( $groupId ) {
+			$group = MessageGroups::getGroup( $groupId );
+			if ( $group ) {
+				return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+			}
 		}
 
 		throw new MWException( 'Could not find group for ' . $handle->getKey() );
