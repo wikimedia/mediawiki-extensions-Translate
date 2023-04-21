@@ -330,7 +330,7 @@ class MessageWebImporter {
 
 			$changed[] = '</ul>';
 
-			$languageName = Utilities::getLanguageName(	$code, $context->getLanguage()->getCode() );
+			$languageName = Utilities::getLanguageName( $code, $context->getLanguage()->getCode() );
 			$message = $context
 				->msg( 'translate-manage-import-done', $group->getId(), $group->getLabel(), $languageName )
 				->parse();
