@@ -311,7 +311,7 @@
 	"translate-manage-submit": "执行",
 	"translate-manage-intro-other": "下面是$1翻译更改列表。请复查更改并选择您想要为每个更新执行的操作。如果您选择忽略更改，该操作只是暂时的。",
 	"translate-manage-import-ok": "已导入：$1",
-	"translate-manage-import-done": "导入完成！",
+	"translate-manage-import-done": "组[[Special:Translate/$1|$2]]的翻译$3导入完成！",
 	"translate-manage-empty-content": "内容为空",
 	"translate-manage-key-reused": "此消息已存在于wiki中。检查是否意外重复使用旧密钥。",
 	"translate-manage-source-message-not-found": "未找到消息定义",

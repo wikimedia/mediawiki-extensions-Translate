@@ -258,7 +258,7 @@
 	"translate-manage-submit": "Uitvoeren",
 	"translate-manage-intro-other": "Hieronder wordt een lijst weergegeven van wijzigingen in de vertalingen voor de taal $1.\nControleer de wijzigingen en kies een uit te voeren handeling voor iedere vertaling.\nAls u wijzigingen negeert, worden deze bij de volgende export overschreven.",
 	"translate-manage-import-ok": "Geïmporteerd: $1",
-	"translate-manage-import-done": "Import afgerond!",
+	"translate-manage-import-done": "Importeren van $3 vertalingen in de groep [[Special:Translate/$1|$2]] afgerond!",
 	"importtranslations": "Vertalingen importeren",
 	"translate-import-from-local": "Lokaal bestand uploaden:",
 	"translate-import-load": "Bestand laden",
