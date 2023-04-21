@@ -50,7 +50,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	private $subpageBuilder;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
-	/** @var ?string */
+	/** @var string */
 	private $entityType;
 	private const PAGE_TITLE_MSG = [
 		'messagebundle' => 'pt-deletepage-mb-title',
@@ -111,10 +111,11 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 
 		// Real stuff starts here
-		$this->entityType = $this->identifyEntityType();
-		if ( !$this->entityType ) {
+		$entityType = $this->identifyEntityType();
+		if ( !$entityType ) {
 			throw new ErrorPageError( 'pt-deletepage-invalid-title', 'pt-deletepage-invalid-text' );
 		}
+		$this->entityType = $entityType;
 
 		if ( $this->isTranslation() ) {
 			[ , $this->code ] = Utilities::figureMessage( $this->title->getText() );
