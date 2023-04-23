@@ -354,18 +354,15 @@
 	padding: 2px 13% 2px 5px;
 	/* 24px space for icon */
 	padding-left: 24px;
-	background-position: left;
+	background-position: left 4px center;
 	background-repeat: no-repeat;
-	/* 16 (size) + 4 + 4 = 24 (padding) */
-	background-position-x: 4px;
 	background-size: 16px 16px;
 }
 
 .tux-notice .diff {
 	/** Uses an older version of the clock */
 	background-size: 14px;
-	/* 14 (size) + 5 + 5 = 24 (padding) */
-	background-position-x: 5px;
+	background-position: left 5px center;
 }
 
 .tux-notice .diff-deletedline,
