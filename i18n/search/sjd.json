@@ -4,8 +4,13 @@
 			"Merrahtar"
 		]
 	},
+	"searchtranslations": "О̄дзэ ёарркмужэтҍ",
+	"tux-sst-edit": "Вуайхэ ёарркмуж",
+	"tux-sst-search": "О̄дзэ",
+	"tux-sst-search-ph": "О̄дзэ ёарркмужэтҍ",
 	"tux-sst-facet-language": "Кӣл",
 	"tux-sst-facet-group": "Соа̄гэ группа",
 	"tux-sst-default": "Ёарркмуж",
+	"tux-sst-ellipsis-untranslated": "Элля ёарркмуж",
 	"tux-sst-ellipsis-outdated": "Вуэмма ёарркмуж"
 }
