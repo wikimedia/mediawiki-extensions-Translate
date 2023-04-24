@@ -214,6 +214,7 @@
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|muokkaus|muokkausta}} - viimeinen muokkaus $3 {{PLURAL:$3|päivä|päivää}} sitten",
 	"translate-supportedlanguages-cached": "Nämä tiedot ovat välimuistista, joka luotiin $1 sitten.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Käännösyksikön lähdeteksti",
+	"abusefilter-edit-builder-vars-translate-target-language": "Kohdekieli käännöstä varten",
 	"translate-save": "Tallenna ($1)",
 	"translate-jssti-add": "Lisää listaan",
 	"managemessagegroups": "Viestiryhmien hallinta",

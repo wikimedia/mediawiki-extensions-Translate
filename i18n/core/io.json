@@ -111,6 +111,7 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tradukero}}|Tradukeri}}: $1",
 	"supportedlanguages-recenttranslations": "recenta tradukuri",
 	"supportedlanguages-count": "Entote $1 {{PLURAL:$1|linguo|lingui}}.",
+	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|redakturo|redakturi}} - lasta redakturo $3 {{PLURAL:$3|dio|dii}} ante nun",
 	"translate-supportedlanguages-cached": "Ca informo konservesis $1 ante nun.",
 	"translate-save": "Registragar ($1)",
 	"managemessagegroups": "Administrado di mesajo-grupi",

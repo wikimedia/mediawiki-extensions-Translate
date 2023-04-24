@@ -3,7 +3,8 @@
 		"authors": [
 			"Joachim Mos",
 			"Servien",
-			"Slomox"
+			"Slomox",
+			"Wikiundeplattsnacker"
 		]
 	},
 	"translate": "Översetten",
@@ -23,6 +24,7 @@
 	"translate-edit-tmmatch-source": "Översettenborntext: $1",
 	"translate-language-code": "Spraak-Code",
 	"translate-language-code-field-name": "Spraak-Code:",
+	"translate-documentation-language": "Narichtenopteeknung",
 	"tux-notices-hide": "versteken",
 	"tux-proofread-edit-label": "Ännern"
 }
