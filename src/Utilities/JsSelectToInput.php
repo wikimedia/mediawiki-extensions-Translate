@@ -25,7 +25,7 @@ class JsSelectToInput {
 	/** @var string Text for the append button */
 	protected $msg = 'translate-jssti-add';
 
-	public function __construct( XmlSelect $select = null ) {
+	public function __construct( XmlSelect $select ) {
 		$this->select = $select;
 	}
 
