@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use MediaWiki\Extension\Translate\Utilities\StringComparators\EditDistanceStringComparator;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use MessageHandle;
 use Title;
 use TTMServer;
-use WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;

@@ -15,12 +15,12 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Utils\UrlUtils;
+use MediaWiki\WikiMap\WikiMap;
 use Message;
 use MessageHandle;
 use SpecialPage;
 use Title;
 use TTMServerException;
-use WikiMap;
 use Xml;
 
 /**

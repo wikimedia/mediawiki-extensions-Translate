@@ -10,10 +10,10 @@ use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\ParallelExecutor;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use MessageGroup;
 use MessageGroupStats;
 use MessageHandle;
-use WikiMap;
 
 /**
  * @since 2020.11
