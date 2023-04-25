@@ -155,8 +155,7 @@ class DatabaseTtmServer extends TTMServer implements WritableTtmServer, Readable
 		$mwInstance = MediaWikiServices::getInstance();
 		$titleFactory = $mwInstance->getTitleFactory();
 		foreach ( $batch as $key => $item ) {
-			[ $title, $language, $text ] = $item;
-			$handle = new MessageHandle( $title );
+			[ $handle, $language, $text ] = $item;
 			$context = $titleFactory->makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
 			$this->sids[$key] = $this->insertSource( $context, $language, $text );
 		}
