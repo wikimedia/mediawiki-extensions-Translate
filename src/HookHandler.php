@@ -43,7 +43,6 @@ use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
 use MediaWiki\StubObject\StubUserLang;
-use MediaWiki\Title\Title;
 use MessageHandle;
 use OutputPage;
 use Parser;
@@ -54,6 +53,7 @@ use SpecialPage;
 use SpecialSearch;
 use Status;
 use TextContent;
+use Title;
 use TitleValue;
 use TranslateSandbox;
 use TranslateToolbox;
@@ -875,8 +875,11 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 	 * Hook: TitleIsAlwaysKnown
 	 * Make Special:MyLanguage links red if the target page doesn't exist.
 	 * A bit hacky because the core code is not so flexible.
+	 * @param Title $target Title object that is being checked
+	 * @param bool|null &$isKnown Whether MediaWiki currently thinks this page is known
+	 * @return bool True or no return value to continue or false to abort
 	 */
-	public static function onTitleIsAlwaysKnown( Title $target, ?bool &$isKnown ): bool {
+	public static function onTitleIsAlwaysKnown( $target, &$isKnown ): bool {
 		if ( !$target->inNamespace( NS_SPECIAL ) ) {
 			return true;
 		}
