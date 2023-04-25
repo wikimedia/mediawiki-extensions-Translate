@@ -417,7 +417,7 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			// For MW < 1.40: Directly manipulate $wgHooks during initialization.
 			foreach ( $hooks as $name => $handlers ) {
 				$GLOBALS['wgHooks'][$name] = array_merge(
-					$GLOBALS['wgHooks'][$name],
+					$GLOBALS['wgHooks'][$name] ?? [],
 					$handlers
 				);
 			}
