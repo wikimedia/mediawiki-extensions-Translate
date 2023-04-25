@@ -141,7 +141,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			$item['service'] = $serviceName;
 			$item['source_language'] = $sourceLanguage;
 			$item['local'] = $local;
-			// Likely only needed for non-public DatabaseTTMServer
+			// Likely only needed for non-public DatabaseTtmServer
 			$item['uri'] = $item['uri'] ?? $s->expandLocation( $item );
 			if ( $local ) {
 				$handle = new MessageHandle( Title::newFromText( $item[ 'location' ] ) );

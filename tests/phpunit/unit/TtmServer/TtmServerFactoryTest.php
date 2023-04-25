@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use DatabaseTTMServer;
 use FakeTTMServer;
 use Generator;
 use InvalidArgumentException;
@@ -57,7 +56,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		);
 
 		$actual = $factory->create( $name );
-		$this->assertInstanceOf( DatabaseTTMServer::class, $actual );
+		$this->assertInstanceOf( DatabaseTtmServer::class, $actual );
 	}
 
 	/** @dataProvider provideCreateFailure */

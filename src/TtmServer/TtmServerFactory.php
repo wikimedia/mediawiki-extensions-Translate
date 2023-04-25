@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use DatabaseTTMServer;
 use FakeTTMServer;
 use InvalidArgumentException;
 use RemoteTTMServer;
@@ -71,12 +70,18 @@ class TtmServerFactory {
 
 		if ( isset( $config['class'] ) ) {
 			$class = $config['class'];
+
+			// TODO: Add a factory to create TTM server instances
+			if ( in_array( $class, [ DatabaseTtmServer::class, 'DatabaseTTMServer', 'DatabaseTtmServer' ] ) ) {
+				return new DatabaseTtmServer( $config );
+			}
+
 			return new $class( $config );
 		} elseif ( isset( $config['type'] ) ) {
 			$type = $config['type'];
 			switch ( $type ) {
 				case 'ttmserver':
-					return new DatabaseTTMServer( $config );
+					return new DatabaseTtmServer( $config );
 				case 'remote-ttmserver':
 					return new RemoteTTMServer( $config );
 				default:

@@ -1,33 +1,31 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\TtmServer;
+
+use MediaWiki\MediaWikiServices;
+use MessageHandle;
+use Title;
+use TTMServer;
+use WikiMap;
+use Wikimedia\Rdbms\DBQueryError;
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IResultWrapper;
+
 /**
- * TTMServer - The Translate extension translation memory interface
- *
- * @file
+ * MySQL/MariaDB-based based backend for translation memory.
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup TTMServer
  */
+class DatabaseTtmServer extends TTMServer implements WritableTtmServer, ReadableTtmServer {
+	private array $sids;
 
-use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
-use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
-use MediaWiki\MediaWikiServices;
-use Wikimedia\Rdbms\DBQueryError;
-
-/**
- * Mysql based backend.
- * @ingroup TTMServer
- * @since 2012-06-27
- */
-class DatabaseTTMServer extends TTMServer implements WritableTtmServer, ReadableTtmServer {
-	protected $sids;
-
-	/**
-	 * @param int $mode DB_REPLICA|DB_PRIMARY
-	 * @return \Wikimedia\Rdbms\IDatabase
-	 */
-	protected function getDB( $mode = DB_REPLICA ) {
-		return wfGetDB( $mode, 'ttmserver', $this->config['database'] );
+	private function getDB( int $mode = DB_REPLICA ): IDatabase {
+		return MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection(
+			$mode, 'ttmserver', $this->config['database']
+		);
 	}
 
 	public function update( MessageHandle $handle, ?string $targetText ): bool {
@@ -35,7 +33,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 			return false;
 		}
 
-		$mkey = $handle->getKey();
+		$mKey = $handle->getKey();
 		$group = $handle->getGroup();
 		$targetLanguage = $handle->getCode();
 		$sourceLanguage = $group->getSourceLanguage();
@@ -46,12 +44,12 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 			return false;
 		}
 
-		$definition = $group->getMessage( $mkey, $sourceLanguage );
+		$definition = $group->getMessage( $mKey, $sourceLanguage );
 		if ( !is_string( $definition ) || !strlen( trim( $definition ) ) ) {
 			return false;
 		}
 
-		$context = Title::makeTitle( $handle->getTitle()->getNamespace(), $mkey );
+		$context = Title::makeTitle( $handle->getTitle()->getNamespace(), $mKey );
 		$dbw = $this->getDB( DB_PRIMARY );
 		/* Check that the definition exists and fetch the sid. If not, add
 		 * the definition and retrieve the sid. If the definition changes,
@@ -59,26 +57,26 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 		 * get suggestions which do not match the original definition any
 		 * longer. The old translations are still kept until purged by
 		 * rerunning the bootstrap script. */
-		$conds = [
+		$conditions = [
 			'tms_context' => $context->getPrefixedText(),
 			'tms_text' => $definition,
 		];
 
-		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conds, __METHOD__ );
+		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conditions, __METHOD__ );
 		if ( $sid === false ) {
 			$sid = $this->insertSource( $context, $sourceLanguage, $definition );
 		}
 
 		// Delete old translations for this message if any. Could also use replace
-		$deleteConds = [
+		$deleteConditions = [
 			'tmt_sid' => $sid,
 			'tmt_lang' => $targetLanguage,
 		];
-		$dbw->delete( 'translate_tmt', $deleteConds, __METHOD__ );
+		$dbw->delete( 'translate_tmt', $deleteConditions, __METHOD__ );
 
 		// Insert the new translation
 		if ( $targetText !== null ) {
-			$row = $deleteConds + [
+			$row = $deleteConditions + [
 				'tmt_text' => $targetText,
 			];
 
@@ -88,7 +86,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 		return true;
 	}
 
-	protected function insertSource( Title $context, $sourceLanguage, $text ) {
+	private function insertSource( Title $context, string $sourceLanguage, string $text ): int {
 		$row = [
 			'tms_lang' => $sourceLanguage,
 			'tms_len' => mb_strlen( $text ),
@@ -112,16 +110,9 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 		return $sid;
 	}
 
-	/**
-	 * Tokenizes the text for fulltext search.
-	 * Tries to find the most useful tokens.
-	 *
-	 * @param string $language Language code
-	 * @param string $input
-	 * @return array
-	 */
-	protected function filterForFulltext( $language, $input ) {
-		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $language );
+	/** Tokenizes the text for fulltext search. Tries to find the most useful tokens. */
+	protected function filterForFulltext( string $languageCode, string $input ): array {
+		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $languageCode );
 
 		$text = preg_replace( '/[^[:alnum:]]/u', ' ', $input );
 		$text = $lang->segmentByWord( $text );
@@ -139,10 +130,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 			}
 		}
 
-		$segments = array_unique( $segments );
-		$segments = array_slice( $segments, 0, 10 );
-
-		return $segments;
+		return array_slice( array_unique( $segments ), 0, 10 );
 	}
 
 	public function beginBootstrap(): void {
@@ -164,20 +152,22 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 	}
 
 	public function batchInsertDefinitions( array $batch ): void {
+		$mwInstance = MediaWikiServices::getInstance();
+		$titleFactory = $mwInstance->getTitleFactory();
 		foreach ( $batch as $key => $item ) {
-			list( $title, $language, $text ) = $item;
+			[ $title, $language, $text ] = $item;
 			$handle = new MessageHandle( $title );
-			$context = Title::makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
+			$context = $titleFactory->makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
 			$this->sids[$key] = $this->insertSource( $context, $language, $text );
 		}
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lbFactory->waitForReplication( [ 'ifWritesSince' => 10 ] );
+
+		$mwInstance->getDBLoadBalancerFactory()->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
 	public function batchInsertTranslations( array $batch ): void {
 		$rows = [];
 		foreach ( $batch as $key => $data ) {
-			list( , $language, $text ) = $data;
+			[ , $language, $text ] = $data;
 			$rows[] = [
 				'tmt_sid' => $this->sids[$key],
 				'tmt_lang' => $language,
@@ -187,8 +177,10 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 
 		$dbw = $this->getDB( DB_PRIMARY );
 		$dbw->insert( 'translate_tmt', $rows, __METHOD__ );
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lbFactory->waitForReplication( [ 'ifWritesSince' => 10 ] );
+
+		MediaWikiServices::getInstance()
+			->getDBLoadBalancerFactory()
+			->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
 	public function endBatch(): void {
@@ -207,9 +199,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 	}
 
 	public function expandLocation( array $suggestion ): string {
-		$title = Title::newFromText( $suggestion['location'] );
-
-		return $title->getCanonicalURL();
+		return Title::newFromText( $suggestion['location'] )->getCanonicalURL();
 	}
 
 	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
@@ -220,11 +210,11 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 		$max = floor( $len / $this->config['cutoff'] );
 
 		// We could use fulltext index to narrow the results further
-		$dbr = $this->getDB( DB_REPLICA );
+		$dbr = $this->getDB();
 		$tables = [ 'translate_tmt', 'translate_tms' ];
 		$fields = [ 'tms_context', 'tms_text', 'tmt_lang', 'tmt_text' ];
 
-		$conds = [
+		$conditions = [
 			'tms_lang' => $sourceLanguage,
 			'tmt_lang' => $targetLanguage,
 			"tms_len BETWEEN $min AND $max",
@@ -235,16 +225,21 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 		if ( $fulltext ) {
 			$tables[] = 'translate_tmf';
 			$list = implode( ' ', $fulltext );
-			$conds[] = 'tmf_sid = tmt_sid';
-			$conds[] = "MATCH(tmf_text) AGAINST( '$list' )";
+			$conditions[] = 'tmf_sid = tmt_sid';
+			$conditions[] = "MATCH(tmf_text) AGAINST( '$list' )";
 		}
 
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
+		$res = $dbr->newSelectQueryBuilder()
+			->tables( $tables )
+			->select( $fields )
+			->where( $conditions )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return $this->processQueryResults( $res, $text, $targetLanguage );
 	}
 
-	protected function processQueryResults( $res, $text, $targetLanguage ) {
+	private function processQueryResults( IResultWrapper $res, string $text, string $targetLanguage ): array {
 		$timeLimit = microtime( true ) + 5;
 
 		$lenA = mb_strlen( $text );
@@ -280,9 +275,8 @@ class DatabaseTTMServer extends TTMServer implements WritableTtmServer, Readable
 				];
 			}
 		}
-		$results = TTMServer::sortSuggestions( $results );
 
-		return $results;
+		return TTMServer::sortSuggestions( $results );
 	}
 
 	public function setDoReIndex(): void {

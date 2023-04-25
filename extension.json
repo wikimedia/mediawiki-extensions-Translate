@@ -73,7 +73,6 @@
 		"CDBMessageIndex": "utils/MessageIndex.php",
 		"CrossLanguageTranslationSearchQuery": "ttmserver/CrossLanguageTranslationSearchQuery.php",
 		"DatabaseMessageIndex": "utils/MessageIndex.php",
-		"DatabaseTTMServer": "ttmserver/DatabaseTTMServer.php",
 		"DtdFFS": "ffs/DtdFFS.php",
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
 		"ExternalMessageSourceStateComparator": "utils/ExternalMessageSourceStateComparator.php",
