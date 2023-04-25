@@ -263,7 +263,7 @@
 	"translate-manage-submit": "Изврши",
 	"translate-manage-intro-other": "Испод је списак измена превода за $1 језик.\nПроверите их и изаберите радњу коју желите да предузмете за свако ажурирање.\nАко изаберете да занемарите измене, ова радња ће бити привремена.",
 	"translate-manage-import-ok": "Увезено: $1.",
-	"translate-manage-import-done": "Увоз је завршен.",
+	"translate-manage-import-done": "Завршен увоз превода $3 за групу [[Special:Translate/$1|$2]]!",
 	"translate-manage-empty-content": "Садржај је празан",
 	"translate-manage-key-reused": "Ова порука већ постоји на овом викију. Проверите да ли постоји случајна поновна употреба старог кључа.",
 	"translate-manage-source-message-not-found": "Дефиниција поруке није пронађена",
