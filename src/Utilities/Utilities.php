@@ -422,7 +422,7 @@ class Utilities {
 	 * Deserialize the given string
 	 * @return mixed
 	 */
-	public static function deserialize( string $str, ?array $opts = [ 'allowed_classes' => false ] ) {
+	public static function deserialize( string $str, array $opts = [ 'allowed_classes' => false ] ) {
 		return unserialize( $str, $opts );
 	}
 
