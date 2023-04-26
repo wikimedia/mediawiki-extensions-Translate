@@ -62,6 +62,7 @@
 	"translate-export-invalid-format": "Prosimo, izberi veljaven format.",
 	"translate-export-not-supported": "Izvoz prevoda ni podprt.",
 	"translate-export-format-notsupported": "Izbranega formata za izvoz skupina za obveščanje ne podpira.",
+	"translate-export-format-file-empty": "Ni sporočil za izvoz.",
 	"translate-export-group-too-large": "Izbrana skupina sporočil je prevelika. Izberite skupino, ki ima manj kot $ {{PLURAL:$1|sporočilo|sporočili|sporočila|sporočil}} ali se posvetujte z administratorjem prevajanja.",
 	"translate-checks-parameters": "{{PLURAL:$2|Naslednji parameter ni uporabljen|Naslednja parametra nista uporabljena|Naslednji parametri niso uporabljeni}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Naslednji parameter je neznan|Naslednja parametra sta neznana|Naslednji parametri so neznani}}:\n<strong>$1</strong>",

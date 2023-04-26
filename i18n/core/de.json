@@ -78,6 +78,7 @@
 	"translate-export-invalid-format": "Bitte ein gültiges Format angeben.",
 	"translate-export-not-supported": "Das Exportieren von Übersetzungen wird nicht unterstützt.",
 	"translate-export-format-notsupported": "Das angegebene Exportformat wird von der Nachrichtengruppe nicht unterstützt.",
+	"translate-export-format-file-empty": "Keine Nachrichten zum Exportieren.",
 	"translate-export-group-too-large": "Die gewählte Nachrichtengruppe ist zu groß. Wähle eine Nachrichtengruppe, die weniger als $1 {{PLURAL:$1|Nachricht|Nachrichten}} enthält, oder bitte einen Übersetzungsadministrator um Rat.",
 	"translate-checks-parameters": "{{PLURAL:$2|Der folgende Parameter wird|Die folgenden Parameter werden}} nicht benutzt:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Der folgende Parameter ist|Die folgenden Parameter sind}} unbekannt:\n<strong>$1</strong>",

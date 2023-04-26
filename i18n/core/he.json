@@ -70,6 +70,7 @@
 	"translate-export-invalid-format": "נא לציין תסדיר תקין.",
 	"translate-export-not-supported": "יצוא תרגומים אינו נתמך.",
 	"translate-export-format-notsupported": "תסדיר היצוא שצוין אינו נתמך על־ידי קבוצת ההודעות.",
+	"translate-export-format-file-empty": "אין הודעות ליצוא.",
 	"translate-export-group-too-large": "קבוצת ההודעות שנבחרה גדולה מדי. נא לבחור קבוצת הודעות עם פחות {{PLURAL:$1|מהודעה אחת|מ־$1 הודעות}} או ליצור קשר עם מנהל תרגום לייעוץ.",
 	"translate-checks-parameters": "{{PLURAL:$2|הפרמטר הבא אינו|הפרמטרים הבאים אינם}} בשימוש:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|הפרמטר הבא אינו ידוע|הפרמטרים הבאים אינם ידועים}}:\n<strong>$1</strong>",

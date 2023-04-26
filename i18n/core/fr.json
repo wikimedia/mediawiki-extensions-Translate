@@ -98,6 +98,7 @@
 	"translate-export-invalid-format": "Veuillez fournir un format valide.",
 	"translate-export-not-supported": "L’exportation des traductions n’est pas prise en charge.",
 	"translate-export-format-notsupported": "Le format d’exportation spécifié n’est pas pris en charge par le groupe de messages.",
+	"translate-export-format-file-empty": "Aucun message à exporter.",
 	"translate-export-group-too-large": "Le groupe de message choisi est trop gros. Choisir un groupe de message qui a moins de $1 {{PLURAL:$1|message|messages}} ou contacter l'administrateur de traduction pour avoir son conseil.",
 	"translate-checks-parameters": "{{PLURAL:$2|Le paramètre suivant n’est pas utilisé|Les paramètres suivants ne sont pas utilisés}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Le paramètre suivant est inconnu|Les paramètres suivants sont inconnus}} :\n<strong><nowiki>$1</nowiki></strong>",
