@@ -1,0 +1,13 @@
+== Translate 2023.04 ==
+Released at 2023-04-26.
+
+=== Highlights ===
+* Optionally allow setting a source language for aggregate groups ({{phab|T281073}})
+* Allow fetching translation statistics for messages with similar prefix ({{phab|T298966}})
+* Fix bug with importing fuzzy translations from .po files ({{phab|T323430}})
+* Add back-links in various special pages in the Translate extension
+* Use a text-based group selector in Special:ExportTranslations in order to improve usability when a large number of message groups are present ({{phab|T331843}})
+* Show error message if group being exported has no translations for selected language ({{phab|T331824}})
+* Display "Translate" tab if a user has permission to translate irrespective of whether public editing is enabled ({{phab|T334330}})
+* Add support to configure readable and writable translation memory services separately ({{phab|T322284}})
+** Support for the <code>mirrors</code> configuration parameter will be dropped in the next MLEB release.
