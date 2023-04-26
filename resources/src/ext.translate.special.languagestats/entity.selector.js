@@ -16,7 +16,8 @@ var EntitySelectorWidget = function ( config ) {
 	// Parent constructor
 	OO.ui.TextInputWidget.call( this, {
 		classes: [ 'tes-entity-selector' ],
-		placeholder: mw.msg( 'translate-tes-type-to-search' )
+		placeholder: mw.msg( 'translate-tes-type-to-search' ),
+		autocomplete: config.autocomplete || false
 	} );
 	// Mixin constructors
 	OO.ui.mixin.LookupElement.call( this );
