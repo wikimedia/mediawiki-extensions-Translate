@@ -364,6 +364,9 @@ class TTMServerBootstrap extends Maintenance {
 		// cause any major issues. Things like message documentation language name and
 		// main page name were being checked from the message cache and sometimes failing.
 		MediaWiki\MediaWikiServices::getInstance()->getMessageCache()->disable();
+		// Address issues with ObjectCache holding a reference to the MediaWikiServices instance.
+		// MW < 1.39
+		ObjectCache::clear();
 	}
 
 	private function verifyChildStatus( int $pid, int $status ): bool {
