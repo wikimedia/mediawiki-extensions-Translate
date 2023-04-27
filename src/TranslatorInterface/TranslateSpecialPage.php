@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use AggregateMessageGroup;
 use ErrorPageError;
-use Hooks;
 use Html;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -156,7 +155,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$this->defaults = $defaults;
 		$this->nondefaults = $nondefaults;
-		Hooks::run( 'TranslateGetSpecialTranslateOptions', [ &$defaults, &$nondefaults ] );
+		$this->getHookContainer()->run( 'TranslateGetSpecialTranslateOptions', [ &$defaults, &$nondefaults ] );
 
 		$this->options = $nondefaults + $defaults;
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
