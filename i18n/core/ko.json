@@ -74,6 +74,7 @@
 	"translate-export-invalid-format": "유효한 형식을 지정해 주십시오.",
 	"translate-export-not-supported": "번역 내보내기는 지원하지 않습니다.",
 	"translate-export-format-notsupported": "지정된 내보내기 형식은 메시지 그룹에 의해 지원되지 않습니다.",
+	"translate-export-format-file-empty": "내보낼 메시지가 없습니다.",
 	"translate-checks-parameters": "다음 {{PLURAL:$2|변수가}} 사용되지 않았습니다:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "다음 {{PLURAL:$2|변수를}} 알 수 없습니다:\n<strong>$1</strong>",
 	"translate-checks-balance": "열고 닫는 {{PLURAL:$2|괄호}}의 수가 일치하지 않습니다:\n<strong><nowiki>$1</nowiki></strong>",

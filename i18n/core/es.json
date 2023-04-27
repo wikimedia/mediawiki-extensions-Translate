@@ -88,6 +88,7 @@
 	"translate-export-invalid-format": "Especifica un formato válido.",
 	"translate-export-not-supported": "No se admite la exportación de traducción.",
 	"translate-export-format-notsupported": "El formato de exportación especificado no se admite por el grupo de mensajes.",
+	"translate-export-format-file-empty": "No hay ningún mensaje para exportar.",
 	"translate-checks-parameters": "{{PLURAL:$2|Falta el parámetro siguiente|Faltan los parámetros siguientes}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Se desconoce el parámetro siguiente|Se desconocen los parámetros siguientes}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "Hay algún signo de agrupación de {{PLURAL:$2|la siguiente clase|las siguientes clases}} sin emparejar:\n<strong><nowiki>$1</nowiki></strong>",
