@@ -55,6 +55,7 @@
 	"translate-export-invalid-format": "Specifica un formato valide.",
 	"translate-export-not-supported": "Le exportation de traductiones non es supportate.",
 	"translate-export-format-notsupported": "Le formato de exportation specificate non es supportate per le gruppo de messages.",
+	"translate-export-format-file-empty": "Il non ha messages a exportar.",
 	"translate-export-group-too-large": "Le gruppo de messages seligite es troppo grande. Selige un gruppo de messages que ha minus de $1 message{{PLURAL:$1||s}} o contacta le administrator de traduction pro obtener consilio.",
 	"translate-checks-parameters": "Le sequente {{PLURAL:$2|parametro|parametros}} non es usate:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Le sequente {{PLURAL:$2|parametro|parametros}} es incognite:\n<strong>$1</strong>",
