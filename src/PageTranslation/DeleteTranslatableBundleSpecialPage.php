@@ -284,6 +284,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
 			->setSubmitTextMsg( 'pt-deletepage-action-perform' )
 			->setSubmitName( 'subaction' )
+			->setSubmitDestructive()
 			->addButton( [
 				'name' => 'subaction',
 				'value' => $this->msg( 'pt-deletepage-action-other' )->text(),
