@@ -365,7 +365,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 				'name' => 'wpTitle',
 				'label-message' => 'pt-deletepage-current',
 				'size' => 30,
-				'default' => $this->text,
+				'default' => $this->title->getPrefixedText(),
 				'readonly' => true,
 			],
 			'wpDeleteReasonList' => [
