@@ -30,28 +30,21 @@ use Xml;
  */
 class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	// Basic form parameters both as text and as titles
-	private $text;
-	/** @var Title */
-	private $title;
+	private string $text;
+	private ?Title $title;
 	// Other form parameters
-	/// There must be reason for everything.
-	private $reason;
-	/// Allow skipping non-translation subpages.
-	private $doSubpages = false;
-	/// Contains the language code if we are working with translation page
-	private $code;
-	/** @var BagOStuff */
-	private $mainCache;
-	/** @var PermissionManager */
-	private $permissionManager;
-	/** @var TranslatableBundleFactory */
-	private $bundleFactory;
-	/** @var SubpageListBuilder */
-	private $subpageBuilder;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var string */
-	private $entityType;
+	/** There must be reason for everything. */
+	private string $reason;
+	/** Allow skipping non-translation subpages. */
+	private bool $doSubpages = false;
+	/** Contains the language code if we are working with translation page */
+	private ?string $code;
+	private BagOStuff $mainCache;
+	private PermissionManager $permissionManager;
+	private TranslatableBundleFactory $bundleFactory;
+	private SubpageListBuilder $subpageBuilder;
+	private JobQueueGroup $jobQueueGroup;
+	private string $entityType;
 	private const PAGE_TITLE_MSG = [
 		'messagebundle' => 'pt-deletepage-mb-title',
 		'translatablepage' => 'pt-deletepage-tp-title',
@@ -160,7 +153,6 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	 * Do the basic checks whether moving is possible and whether
 	 * the input looks anywhere near sane.
 	 * @throws PermissionsError|ErrorPageError|ReadOnlyError
-	 * @return bool
 	 */
 	private function doBasicChecks(): bool {
 		// Check rights
@@ -193,7 +185,6 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	/**
 	 * Checks token. Use before real actions happen. Have to use wpEditToken
 	 * for compatibility for SpecialMovepage.php.
-	 * @return bool
 	 */
 	private function checkToken(): bool {
 		return $this->getContext()->getCsrfTokenSet()->matchTokenField( 'wpEditToken' );
