@@ -33,6 +33,7 @@ use ObjectCache;
 use OutputPage;
 use Parser;
 use ParserOutput;
+use PPFrame;
 use RequestContext;
 use Skin;
 use SpecialPage;
@@ -460,6 +461,34 @@ class Hooks {
 	}
 
 	/**
+	 * Hook: GetMagicVariableIDs
+	 * @param string[] &$variableIDs
+	 */
+	public static function onGetMagicVariableIDs( &$variableIDs ): void {
+		$variableIDs[] = 'translatablepage';
+	}
+
+	/**
+	 * Hook: ParserGetVariableValueSwitch
+	 */
+	public static function onParserGetVariableValueSwitch(
+		Parser $parser,
+		array &$variableCache,
+		string $magicWordId,
+		?string &$ret,
+		PPFrame $frame
+	): void {
+		switch ( $magicWordId ) {
+			case 'translatablepage':
+				$title = Title::castFromPageReference( $parser->getPage() );
+				$pageStatus = self::getTranslatablePageStatus( $title );
+				$ret = $pageStatus !== null ? $pageStatus['page']->getTitle()->getPrefixedText() : '';
+				$variableCache[$magicWordId] = $ret;
+				break;
+		}
+	}
+
+	/**
 	 * @param string $data
 	 * @param array $params
 	 * @param Parser $parser
@@ -628,10 +657,12 @@ class Hooks {
 
 	/**
 	 * Returns translatable page and language stats for given title.
-	 * @param Title $title
-	 * @return array|null Returns null if not a translatable page.
+	 * @return array{page:TranslatablePage,languages:array}|null Returns null if not a translatable page.
 	 */
-	private static function getTranslatablePageStatus( Title $title ) {
+	private static function getTranslatablePageStatus( ?Title $title ): ?array {
+		if ( $title === null ) {
+			return null;
+		}
 		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $title );
 		if ( $page->getMarkedTag() === null ) {

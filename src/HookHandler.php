@@ -242,6 +242,10 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			$hooks['LanguageLinks'][] = [ Hooks::class, 'addLanguageLinks' ];
 			$hooks['SkinTemplateGetLanguageLink'][] = [ Hooks::class, 'formatLanguageLink' ];
 
+			// Allow templates to query whether they are transcluded in a translatable/translated page
+			$hooks['GetMagicVariableIDs'][] = [ Hooks::class, 'onGetMagicVariableIDs' ];
+			$hooks['ParserGetVariableValueSwitch'][] = [ Hooks::class, 'onParserGetVariableValueSwitch' ];
+
 			// Strip \<translate> tags etc. from source pages when rendering
 			$hooks['ParserBeforeInternalParse'][] = [ Hooks::class, 'renderTagPage' ];
 			// Strip \<translate> tags etc. from source pages when preprocessing

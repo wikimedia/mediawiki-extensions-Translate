@@ -6,12 +6,10 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use ContentHandler;
 use HashBagOStuff;
 use HashMessageIndex;
-use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Revision\SlotRecord;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use MockWikiValidationMessageGroup;
@@ -29,6 +27,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group Database
  * @group medium
  * @covers MediaWiki\Extension\Translate\HookHandler
+ * @covers MediaWiki\Extension\Translate\PageTranslation\Hooks
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
@@ -76,25 +75,15 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 	public function testRenderTagPage() {
 		// Setup objects
-		$superUser = $this->getTestSysop()->getUser();
 		$translatablePageTitle = Title::newFromText( 'Vuosaari' );
-		$pageUpdater = $this->getServiceContainer()
-			->getWikiPageFactory()
-			->newFromTitle( $translatablePageTitle )
-			->newPageUpdater( $superUser );
 		$text = '<translate>pupu</translate>';
-		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
 		$parser = $this->getServiceContainer()->getParserFactory()->getInstance();
-		$options = ParserOptions::newFromUser( $superUser );
+		$options = ParserOptions::newFromAnon();
 		$messageGroups = MessageGroups::singleton();
 
 		// Create the page
-		$commentStoreComment = CommentStoreComment::newUnsavedComment( __METHOD__ );
-		$pageUpdater->setContent( SlotRecord::MAIN, $content );
-		$pageUpdater->saveRevision( $commentStoreComment );
-		$editStatus = $pageUpdater->getStatus();
-
+		$latestRevisionId = $this->editPage( $translatablePageTitle, $text )->getNewRevision()->getId();
 		$messageGroups->recache();
 
 		// Check that we don't interfere with non-translatable pages at all
@@ -104,7 +93,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $actual, 'Extension data is not set on unmarked source page' );
 
 		// Mark the page for translation
-		$latestRevisionId = $editStatus->value['revision-record']->getId();
 		$translatablePage->addMarkedTag( $latestRevisionId );
 		$messageGroups->recache();
 		$translationPageTitle = Title::newFromText( 'Vuosaari/fi' );
@@ -138,6 +126,47 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			'page-Vuosaari',
 			$actual[ 'messagegroupid' ],
 			'Message group id is correct'
+		);
+	}
+
+	public function testTRANSLATABLEPAGE() {
+		// Setup objects
+		$translatablePageTitle = Title::newFromText( 'TRANSLATABLEPAGE test' );
+		$text = '<translate>pupu</translate>';
+		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
+		$parser = $this->getServiceContainer()->getParserFactory()->getInstance();
+		$options = ParserOptions::newFromAnon();
+		$messageGroups = MessageGroups::singleton();
+
+		// Create the page
+		$latestRevisionId = $this->editPage( $translatablePageTitle, $text )->getNewRevision()->getId();
+		$messageGroups->recache();
+
+		// Check unmarked source page
+		$this->assertSame(
+			'',
+			$parser->preprocess( '{{TRANSLATABLEPAGE}}', $translatablePageTitle, $options ),
+			'TRANSLATABLEPAGE returns empty string on unmarked source page'
+		);
+
+		// Mark the page for translation
+		$translatablePage->addMarkedTag( $latestRevisionId );
+		$messageGroups->recache();
+		$translationPageTitle = Title::newFromText( 'TRANSLATABLEPAGE test/fi' );
+		RenderTranslationPageJob::newJob( $translationPageTitle )->run();
+
+		// Check marked source page
+		$this->assertSame(
+			'TRANSLATABLEPAGE test',
+			$parser->preprocess( '{{TRANSLATABLEPAGE}}', $translatablePageTitle, $options ),
+			'TRANSLATABLEPAGE returns the page title on marked source page'
+		);
+
+		// Check translation page
+		$this->assertSame(
+			'TRANSLATABLEPAGE test',
+			$parser->preprocess( '{{TRANSLATABLEPAGE}}', $translationPageTitle, $options ),
+			'TRANSLATABLEPAGE returns the source page title on translation page'
 		);
 	}
 
