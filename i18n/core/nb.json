@@ -66,6 +66,7 @@
 	"translate-export-invalid-format": "Oppgi et gyldig format.",
 	"translate-export-not-supported": "Eksportering av oversettelser støttes ikke.",
 	"translate-export-format-notsupported": "Det oppgitte eksporteringsformatet støttes ikke av meldingsgruppen.",
+	"translate-export-format-file-empty": "Ingen beskjeder som kan eksporteres.",
 	"translate-export-group-too-large": "Den valgte beskjedgruppa er for stor. Velg en beskjedgruppe som har færre enn $1 {{PLURAL:$1|beskjed|beskjeder}} eller kontakt en oversettelsesadministrator for råd.",
 	"translate-checks-parameters": "Følgende {{PLURAL:$2|parameter|parametre}} brukes ikke:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Følgende {{PLURAL:$2|parameter er ukjent|parametre er ukjente}}:\n<strong>$1</strong>",
