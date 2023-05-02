@@ -214,7 +214,7 @@
 	"translate-manage-submit": "Изпълняване",
 	"translate-manage-intro-other": "По-долу е даден списък на промените по превода на $1.\nМоля, прегледайте промените и изберете желаното действие за всяка промяна.\nАко изберете да игнорирате промените, то това ще бъде временно действие.",
 	"translate-manage-import-ok": "Внесено: $1",
-	"translate-manage-import-done": "Внасянето завърши!",
+	"translate-manage-import-done": "Внасянето на $3 превода за група [[Special:Translate/$1|$2]] завърши!",
 	"translate-manage-source-message-not-found": "Не е намерена дефиницията на съобщението",
 	"importtranslations": "Внасяне на преводи",
 	"translate-import-from-local": "Локално качване на файл:",
