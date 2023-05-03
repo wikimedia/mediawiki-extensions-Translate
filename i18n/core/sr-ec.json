@@ -71,6 +71,7 @@
 	"translate-export-invalid-format": "Наведите важећи формат.",
 	"translate-export-not-supported": "Извоз превода није подржан.",
 	"translate-export-format-notsupported": "Група порука не подржава наведени формат извоза.",
+	"translate-export-format-file-empty": "Нема порука за извоз.",
 	"translate-export-group-too-large": "Изабрана група порука је превелика. Изаберите групу порука која има мање од $1 {{PLURAL:$1|поруке|порука}} или се посаветујте с администраторем превода.",
 	"translate-checks-parameters": "Следећи {{PLURAL:$2|параметар се не користи|параметри се не користе}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Следећи {{PLURAL:$2|параметар је непознат|параметри су непознати}}:\n<strong>$1</strong>",
