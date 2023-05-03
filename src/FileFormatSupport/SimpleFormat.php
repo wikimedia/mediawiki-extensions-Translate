@@ -207,6 +207,10 @@ class SimpleFormat implements FileFormatSupport {
 		// the timestamp would change.
 		if ( $targetFileExists ) {
 			$oldContent = $this->tryReadFile( $targetFile );
+			if ( $oldContent === null ) {
+				return;
+			}
+
 			if ( !$this->shouldOverwrite( $oldContent, $output ) ) {
 				return;
 			}
@@ -259,9 +263,9 @@ class SimpleFormat implements FileFormatSupport {
 
 		$sourceText = $this->tryReadFile( $filename );
 
-		// No need to do anything in SimpleFormat if it's false,
+		// No need to do anything in SimpleFormat if it's null,
 		// it only reads author data from it.
-		if ( $sourceText !== false ) {
+		if ( $sourceText !== null ) {
 			$sourceData = $this->readFromVariable( $sourceText );
 
 			if ( isset( $sourceData['AUTHORS'] ) ) {
@@ -272,19 +276,18 @@ class SimpleFormat implements FileFormatSupport {
 
 	/**
 	 * Read the contents of $filename and return it as a string.
-	 * Return false if the file doesn't exist.
+	 * Return null if the file doesn't exist.
 	 * Throw an exception if the file isn't readable
 	 * or if the reading fails strangely.
-	 * @return bool|string
 	 * @throws InvalidArgumentException
 	 */
-	protected function tryReadFile( string $filename ) {
-		if ( !$filename ) {
-			return false;
+	protected function tryReadFile( string $filename ): ?string {
+		if ( $filename === '' ) {
+			return null;
 		}
 
 		if ( !file_exists( $filename ) ) {
-			return false;
+			return null;
 		}
 
 		if ( !is_readable( $filename ) ) {
