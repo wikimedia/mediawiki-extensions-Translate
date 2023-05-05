@@ -28,7 +28,7 @@ module.exports = function ( grunt ) {
 				'!resources/lib/**'
 			]
 		},
-		// eslint-disable-next-line compat/compat
+
 		banana: Object.assign( conf.MessagesDirs, {
 			options: {
 				requireLowerCase: 'initial'
