@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use FormOptions;
+use MediaWiki\Html\FormOptions;
 
 /**
  * Encapsulates graph options
