@@ -20,6 +20,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -176,6 +177,16 @@ return [
 		return new TranslatableBundleFactory(
 			$services->get( 'Translate:TranslatablePageStore' ),
 			$services->get( 'Translate:MessageBundleStore' )
+		);
+	},
+
+	'Translate:TranslatableBundleImporter' => static function (
+		MediaWikiServices $services
+	): TranslatableBundleImporter {
+		return new TranslatableBundleImporter(
+			$services->getWikiImporterFactory(),
+			$services->get( 'Translate:TranslatablePageParser' ),
+			$services->getRevisionLookup()
 		);
 	},
 

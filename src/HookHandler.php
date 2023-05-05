@@ -193,6 +193,8 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 				'delete' => [ 'deletefok', 'deletefnok' ],
 			];
 
+			$wgLogActionsHandlers['import/translatable-bundle'] = TranslatableBundleLogFormatter::class;
+
 			global $wgJobClasses;
 			$wgJobClasses['RenderTranslationPageJob'] = RenderTranslationPageJob::class;
 			// Remove after MLEB 2022.10 release

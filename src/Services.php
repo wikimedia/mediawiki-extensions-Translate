@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -130,6 +131,11 @@ class Services implements ContainerInterface {
 	/** @since 2023.05 */
 	public function getTranslatableBundleExporter(): TranslatableBundleExporter {
 		return $this->get( 'Translate:TranslatableBundleExporter' );
+	}
+
+	/** @since 2023.05 */
+	public function getTranslatableBundleImporter(): TranslatableBundleImporter {
+		return $this->get( 'Translate:TranslatableBundleImporter' );
 	}
 
 	/** @since 2022.03 */

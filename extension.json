@@ -447,6 +447,9 @@
 		"translationreview": {
 			"message": [ "message" ],
 			"group": [ "group" ]
+		},
+		"import": {
+			"translatable-bundle": [ "translatable-bundle" ]
 		}
 	},
 	"ResourceFileModulePaths": {
