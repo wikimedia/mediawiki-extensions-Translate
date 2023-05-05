@@ -13,7 +13,7 @@ use JobQueueGroup;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use Mediawiki\Languages\LanguageNameUtils;
+use MediaWiki\Languages\LanguageNameUtils;
 use MessageGroup;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
