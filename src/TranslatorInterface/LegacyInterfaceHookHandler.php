@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use DifferenceEngine;
-use EditPage;
 use MediaWiki\Diff\Hook\ArticleContentOnDiffHook;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_initialHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
