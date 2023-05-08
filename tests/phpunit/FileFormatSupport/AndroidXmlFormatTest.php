@@ -1,22 +1,27 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \AndroidXmlFFS
+ * @covers MediaWiki\Extension\Translate\FileFormatSupport\AndroidXmlFormat
  */
-class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
+class AndroidXmlFormatTest extends MediaWikiIntegrationTestCase {
 	private const DOCLANG = 'qqq';
 
 	protected function setUp(): void {
 		$this->setMwGlobals( 'wgTranslateDocumentationLanguageCode', self::DOCLANG );
 	}
 
-	protected $groupConfiguration = [
+	private array $groupConfiguration = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
@@ -25,12 +30,12 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 			'description' => 'Test description',
 		],
 		'FILES' => [
-			'class' => AndroidXmlFFS::class,
+			'format' => 'AndroidXml',
 			'sourcePattern' => '',
 		],
 	];
 
-	public function testParsing() {
+	public function testParsing(): void {
 		$file =
 			<<<'XML'
 			<?xml version="1.0" encoding="utf-8"?>
@@ -56,8 +61,8 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AndroidXmlFFS( $group );
-		$parsed = $ffs->readFromVariable( $file );
+		$androidFormat = new AndroidXmlFormat( $group );
+		$parsed = $androidFormat->readFromVariable( $file );
 		$expected = [
 			'MESSAGES' => [
 				'wpt_voicerec' => 'Voice recording',
@@ -79,10 +84,10 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $parsed );
 	}
 
-	public function testWrite() {
+	public function testWrite(): void {
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AndroidXmlFFS( $group );
+		$androidFormat = new AndroidXmlFormat( $group );
 
 		$messages = [
 			'ko=26ra' => 'wawe',
@@ -101,8 +106,8 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 		$collection = new MockMessageCollection( $messages );
 		$collection->addCollectionAuthors( $authors, 'set' );
 
-		$xml = $ffs->writeIntoVariable( $collection );
-		$parsed = $ffs->readFromVariable( $xml );
+		$xml = $androidFormat->writeIntoVariable( $collection );
+		$parsed = $androidFormat->readFromVariable( $xml );
 		$expected = [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
@@ -110,10 +115,11 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $parsed );
 	}
 
-	public function testWriteDoc() {
+	public function testWriteDoc(): void {
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AndroidXmlFFS( $group );
+
+		$androidFormat = new AndroidXmlFormat( $group );
 
 		$messages = [
 			'a' => 'b',
@@ -121,7 +127,7 @@ class AndroidXmlFFSTest extends MediaWikiIntegrationTestCase {
 
 		$collection = new MockMessageCollection( $messages, self::DOCLANG );
 
-		$actual = $ffs->writeIntoVariable( $collection );
+		$actual = $androidFormat->writeIntoVariable( $collection );
 		$expected =
 			<<<'XML'
 			<?xml version="1.0" encoding="utf-8"?>

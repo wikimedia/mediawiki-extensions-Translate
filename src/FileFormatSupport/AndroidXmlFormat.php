@@ -1,29 +1,28 @@
 <?php
-/**
- * Support for XML translation format used by Android.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use DOMDocument;
+use FileBasedMessageGroup;
+use IntlChar;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+use SimpleXMLElement;
 
 /**
  * Support for XML translation format used by Android.
- * @since 2012-08-19
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup FileFormatSupport
  */
-class AndroidXmlFFS extends SimpleFormat {
-	/** @var ArrayFlattener */
-	private $flattener;
+class AndroidXmlFormat extends SimpleFormat {
+	private ArrayFlattener $flattener;
 
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
-		$this->flattener = $this->getFlattener();
+		$this->flattener = new ArrayFlattener( '', true );
 	}
 
 	public function supportsFuzzy(): string {
@@ -34,19 +33,14 @@ class AndroidXmlFFS extends SimpleFormat {
 		return [ '.xml' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 */
-	public function readFromVariable( $data ): array {
+	public function readFromVariable( string $data ): array {
 		$reader = new SimpleXMLElement( $data );
 
 		$messages = [];
 		$mangler = $this->group->getMangler();
 
 		$regexBacktrackLimit = ini_get( 'pcre.backtrack_limit' );
-		// @phan-suppress-next-line PhanTypeMismatchArgumentInternal Scalar okay with php8.1
-		ini_set( 'pcre.backtrack_limit', 10 );
+		ini_set( 'pcre.backtrack_limit', '10' );
 
 		/** @var SimpleXMLElement $element */
 		foreach ( $reader as $element ) {
@@ -80,7 +74,7 @@ class AndroidXmlFFS extends SimpleFormat {
 		];
 	}
 
-	protected function scrapeAuthors( $string ) {
+	private function scrapeAuthors( $string ): array {
 		if ( !preg_match( '~<!-- Authors:\n((?:\* .*\n)*)-->~', $string, $match ) ) {
 			return [];
 		}
@@ -88,28 +82,23 @@ class AndroidXmlFFS extends SimpleFormat {
 		$authors = $matches = [];
 		preg_match_all( '~\* (.*)~', $match[ 1 ], $matches );
 		foreach ( $matches[1] as $author ) {
-			// PHP7: \u{2011}
-			$authors[] = str_replace( "\xE2\x80\x91\xE2\x80\x91", '--', $author );
+			$authors[] = str_replace( "\u{2011}\u{2011}", '--', $author );
 		}
 		return $authors;
 	}
 
-	protected function readElementContents( $element ): string {
-		$elementStr = (string)$element;
-
+	private function readElementContents( SimpleXMLElement $element ): string {
 		// Convert string of format \uNNNN (eg: \u1234) to symbols
 		$converted = preg_replace_callback(
 			'/(?<!\\\\)(?:\\\\{2})*+\\K\\\\u([0-9A-Fa-f]{4,6})+/',
-			static function ( array $matches ) {
-				return IntlChar::chr( hexdec( $matches[1] ) );
-			},
-			$elementStr
+			static fn( array $matches ) => IntlChar::chr( hexdec( $matches[1] ) ),
+			(string)$element
 		);
 
 		return stripcslashes( $converted );
 	}
 
-	protected function formatElementContents( $contents ) {
+	private function formatElementContents( string $contents ): string {
 		// Kudos to the brilliant person who invented this braindead file format
 		$escaped = addcslashes( $contents, '"\'\\' );
 		if ( substr( $escaped, 0, 1 ) === '@' ) {
@@ -122,11 +111,10 @@ class AndroidXmlFFS extends SimpleFormat {
 		$escaped = str_replace( '&', '&amp;', $escaped );
 
 		// Newlines must be escaped
-		$escaped = str_replace( "\n", '\n', $escaped );
-		return $escaped;
+		return str_replace( "\n", '\n', $escaped );
 	}
 
-	protected function doAuthors( MessageCollection $collection ) {
+	protected function doAuthors( MessageCollection $collection ): string {
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
 
@@ -138,8 +126,8 @@ class AndroidXmlFFS extends SimpleFormat {
 
 		foreach ( $authors as $author ) {
 			// Since -- is not allowed in XML comments, we rewrite them to
-			// U+2011 (non-breaking hyphen). PHP7: \u{2011}
-			$author = str_replace( '--', "\xE2\x80\x91\xE2\x80\x91", $author );
+			// U+2011 (non-breaking hyphen).
+			$author = str_replace( '--', "\u{2011}\u{2011}", $author );
 			$output .= "* $author\n";
 		}
 
@@ -205,12 +193,9 @@ class AndroidXmlFFS extends SimpleFormat {
 		return $dom->saveXML() ?: '';
 	}
 
-	protected function getFlattener() {
-		$flattener = new ArrayFlattener( '', true );
-		return $flattener;
-	}
-
 	public function isContentEqual( ?string $a, ?string $b ): bool {
 		return $this->flattener->compareContent( $a, $b );
 	}
 }
+
+class_alias( AndroidXmlFormat::class, 'AndroidXmlFFS' );

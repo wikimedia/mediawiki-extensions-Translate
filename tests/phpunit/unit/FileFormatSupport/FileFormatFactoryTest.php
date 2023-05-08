@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use AndroidXmlFFS;
 use FileBasedMessageGroup;
 use Generator;
 use InvalidArgumentException;
@@ -53,7 +52,7 @@ class FileFormatFactoryTest extends MediaWikiUnitTestCase {
 
 	public function provideTestGetFileFormat(): Generator {
 		yield [ 'Json', JsonFormat::class ];
-		yield [ 'AndroidXml', AndroidXmlFFS::class ];
+		yield [ 'AndroidXml', AndroidXmlFormat::class ];
 	}
 
 	public function provideTestGetFileFormatException(): Generator {
