@@ -7,7 +7,6 @@ use AndroidXmlFFS;
 use FileBasedMessageGroup;
 use Generator;
 use InvalidArgumentException;
-use JsonFFS;
 use MediaWikiUnitTestCase;
 use Wikimedia\ObjectFactory\ObjectFactory;
 
@@ -53,12 +52,12 @@ class FileFormatFactoryTest extends MediaWikiUnitTestCase {
 	}
 
 	public function provideTestGetFileFormat(): Generator {
-		yield [ 'Json', JsonFFS::class ];
+		yield [ 'Json', JsonFormat::class ];
 		yield [ 'AndroidXml', AndroidXmlFFS::class ];
 	}
 
 	public function provideTestGetFileFormatException(): Generator {
-		yield [ 'JsonFFS-x', JsonFFS::class ];
+		yield [ 'JsonFFS-x', JsonFormat::class ];
 	}
 
 	private function getObjectFactoryMock( array $fileFormatClass, $fileFormatObject ) {

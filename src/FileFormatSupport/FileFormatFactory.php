@@ -15,7 +15,6 @@ use IniFFS;
 use InvalidArgumentException;
 use JavaFFS;
 use JavaScriptFFS;
-use JsonFFS;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use XliffFFS;
 use YamlFFS;
@@ -44,7 +43,7 @@ class FileFormatFactory {
 		'Ini' => IniFFS::class,
 		'Java' => JavaFFS::class,
 		'JavaScript' => JavaScriptFFS::class,
-		'Json' => JsonFFS::class,
+		'Json' => JsonFormat::class,
 		'Xliff' => XliffFFS::class,
 		'Yaml' => YamlFFS::class
 	];

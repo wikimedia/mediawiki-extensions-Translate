@@ -1,13 +1,10 @@
 <?php
-/**
- * Support for JSON message file format.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use FormatJson;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
@@ -17,22 +14,17 @@ use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
  * as key-value pairs in JSON objects. The format is extended to
  * support author information under the special @metadata key.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup FileFormatSupport
- * @since 2012-09-21
  */
-class JsonFFS extends SimpleFormat {
-	/** @var ArrayFlattener */
-	private $flattener;
+class JsonFormat extends SimpleFormat {
+	private ?ArrayFlattener $flattener;
 
-	/**
-	 * @param string $data
-	 * @return bool
-	 */
-	public static function isValid( $data ) {
+	public static function isValid( string $data ): bool {
 		return is_array( FormatJson::decode( $data, /*as array*/true ) );
 	}
 
-	/** @param FileBasedMessageGroup $group */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
 		$this->flattener = $this->getFlattener();
@@ -42,11 +34,8 @@ class JsonFFS extends SimpleFormat {
 		return [ '.json' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 */
-	public function readFromVariable( $data ): array {
+	/** @return array Parsed data. */
+	public function readFromVariable( string $data ): array {
 		$messages = (array)FormatJson::decode( $data, /*as array*/true );
 		$authors = [];
 		$metadata = [];
@@ -75,10 +64,6 @@ class JsonFFS extends SimpleFormat {
 		];
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
 	protected function writeReal( MessageCollection $collection ): string {
 		$template = $this->read( $collection->getLanguage() ) ?: [];
 		$authors = $this->filterAuthors( $collection->getAuthors(), $collection->getLanguage() );
@@ -130,15 +115,14 @@ class JsonFFS extends SimpleFormat {
 		return FormatJson::encode( $messages, "\t", FormatJson::ALL_OK ) . "\n";
 	}
 
-	protected function getFlattener() {
+	private function getFlattener(): ?ArrayFlattener {
 		if ( !isset( $this->extra['nestingSeparator'] ) ) {
 			return null;
 		}
 
 		$parseCLDRPlurals = $this->extra['parseCLDRPlurals'] ?? false;
-		$flattener = new ArrayFlattener( $this->extra['nestingSeparator'], $parseCLDRPlurals );
 
-		return $flattener;
+		return new ArrayFlattener( $this->extra['nestingSeparator'], $parseCLDRPlurals );
 	}
 
 	public function isContentEqual( ?string $a, ?string $b ): bool {
@@ -149,8 +133,8 @@ class JsonFFS extends SimpleFormat {
 		}
 	}
 
-	public static function getExtraSchema() {
-		$schema = [
+	public static function getExtraSchema(): array {
+		return [
 			'root' => [
 				'_type' => 'array',
 				'_children' => [
@@ -171,7 +155,6 @@ class JsonFFS extends SimpleFormat {
 				]
 			]
 		];
-
-		return $schema;
 	}
 }
+class_alias( JsonFormat::class, 'JsonFFS' );

@@ -1,15 +1,23 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
+use MockMessageCollectionForExport;
+
 /**
  * Tests for JSON message file format.
  *
- * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
-/** @covers \JsonFFS */
-class JsonFFSTest extends MediaWikiIntegrationTestCase {
+/** @covers MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat */
+class JsonFormatTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -22,21 +30,22 @@ class JsonFFSTest extends MediaWikiIntegrationTestCase {
 				'description' => 'Test description',
 			],
 			'FILES' => [
-				'class' => JsonFFS::class,
+				'format' => 'Json',
 				'sourcePattern' => __DIR__ . '/../data/jsontest_%CODE%.json',
 				'targetPattern' => 'jsontest_%CODE%.json',
 			],
 		];
 	}
 
-	protected $groupConfiguration;
+	private array $groupConfiguration;
 
 	/** @dataProvider jsonProvider */
-	public function testParsing( $messages, $authors, $file ) {
+	public function testParsing( array $messages, array $authors, string $file ): void {
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new JsonFFS( $group );
-		$parsed = $ffs->readFromVariable( $file );
+		$jsonFormat = new JsonFormat( $group );
+
+		$parsed = $jsonFormat->readFromVariable( $file );
 		$expected = [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
@@ -45,13 +54,13 @@ class JsonFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $parsed );
 
 		if ( $messages === [] ) {
-			$this->assertFalse( JsonFFS::isValid( $file ) );
+			$this->assertFalse( JsonFormat::isValid( $file ) );
 		} else {
-			$this->assertTrue( JsonFFS::isValid( $file ) );
+			$this->assertTrue( JsonFormat::isValid( $file ) );
 		}
 	}
 
-	public function jsonProvider() {
+	public function jsonProvider(): array {
 		$values = [];
 
 		$values[] = [
@@ -95,13 +104,13 @@ class JsonFFSTest extends MediaWikiIntegrationTestCase {
 		return $values;
 	}
 
-	public function testExport() {
+	public function testExport(): void {
 		$collection = new MockMessageCollectionForExport();
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new JsonFFS( $group );
-		$data = $ffs->writeIntoVariable( $collection );
-		$parsed = $ffs->readFromVariable( $data );
+		$jsonFormat = new JsonFormat( $group );
+		$data = $jsonFormat->writeIntoVariable( $collection );
+		$parsed = $jsonFormat->readFromVariable( $data );
 
 		$this->assertEquals(
 			[ 'Nike the bunny' ],

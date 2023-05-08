@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
-use JsonFFS;
+use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
@@ -97,7 +97,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				continue;
 			}
 
-			if ( !$group->getFFS() instanceof JsonFFS ) {
+			if ( !$group->getFFS() instanceof JsonFormat ) {
 				$this->error( "Skipping $groupId: Only JSON format is supported" );
 				continue;
 			}
@@ -206,10 +206,10 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 *
 	 * @return array<string,bool> Keys in target order
 	 */
-	private function getKeyCompatibilityMap( array $source, array $target, SimpleFormat $ffs ): array {
+	private function getKeyCompatibilityMap( array $source, array $target, SimpleFormat $fileFormat ): array {
 		$keys = [];
 		foreach ( $target as $key => $value ) {
-			$keys[$key] = isset( $source[ $key ] ) && $ffs->isContentEqual( $source[ $key ], $value );
+			$keys[$key] = isset( $source[ $key ] ) && $fileFormat->isContentEqual( $source[ $key ], $value );
 		}
 		return $keys;
 	}
@@ -239,13 +239,13 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		// Amend the target with compatible things from the source
 		$hasUpdates = false;
 
-		$ffs = $group->getFFS();
+		$fileFormat = $group->getFFS();
 
 		// This has been checked before, but checking again to keep Phan and IDEs happy.
-		// Remove once support for other FFS are added.
-		if ( !$ffs instanceof JsonFFS ) {
+		// Remove once support for other file formats are added.
+		if ( !$fileFormat instanceof JsonFormat ) {
 			throw new RuntimeException(
-				"Expected FFS type: " . JsonFFS::class . '; got: ' . get_class( $ffs )
+				"Expected file format type: " . JsonFormat::class . '; got: ' . get_class( $fileFormat )
 			);
 		}
 
@@ -265,7 +265,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			if ( !$isCompatible ) {
 				continue;
 			}
-			if ( $sourceValue !== null && !$ffs->isContentEqual( $sourceValue, $targetValue ) ) {
+			if ( $sourceValue !== null && !$fileFormat->isContentEqual( $sourceValue, $targetValue ) ) {
 				// Keep track if we actually overwrote any values, so we can report back stats
 				$hasUpdates = true;
 				$combinedMessages[$key] = $sourceValue;
@@ -282,18 +282,18 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$sourceTemplate[ 'AUTHORS' ] ?? []
 		);
 		$combinedAuthors = array_unique( $combinedAuthors );
-		$combinedAuthors = $ffs->filterAuthors( $combinedAuthors, $language );
+		$combinedAuthors = $fileFormat->filterAuthors( $combinedAuthors, $language );
 
 		$targetTemplate['AUTHORS'] = $combinedAuthors;
 		$targetTemplate['MESSAGES'] = $combinedMessages;
 
-		$backportedContent = $ffs->generateFile( $targetTemplate );
+		$backportedContent = $fileFormat->generateFile( $targetTemplate );
 
 		$targetFilename = $targetPath . '/' . $group->getTargetFilename( $language );
 		if ( file_exists( $targetFilename ) ) {
 			$currentContent = file_get_contents( $targetFilename );
 
-			if ( $ffs->shouldOverwrite( $currentContent, $backportedContent ) ) {
+			if ( $fileFormat->shouldOverwrite( $currentContent, $backportedContent ) ) {
 				file_put_contents( $targetFilename, $backportedContent );
 			}
 			return 'updated';

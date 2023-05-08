@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 
@@ -120,7 +121,7 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['descriptionmsg'] = $info['descmsg'];
 		}
 
-		$conf['FILES']['class'] = JsonFFS::class;
+		$conf['FILES']['class'] = JsonFormat::class;
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
 
 		// @todo Find a better way
