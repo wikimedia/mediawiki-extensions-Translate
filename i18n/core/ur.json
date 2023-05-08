@@ -13,6 +13,7 @@
 		]
 	},
 	"translate": "ترجمہ",
+	"translate-extensionname": "ترجمہ",
 	"translate-desc": "میڈیاویکی وغیرہ کا ترجمہ کرنے کے لیے [[Special:Translate|خصوصی صفحہ]]",
 	"translate-taskui-export-to-file": "مقامی کی شکل میں برآمد",
 	"translate-taskui-export-as-po": "آف لائن ترجمہ کے لئے برآمد",
