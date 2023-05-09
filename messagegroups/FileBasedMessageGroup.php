@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
@@ -23,8 +24,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * @ingroup MessageGroup
  */
 class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaExtender {
-	public const NO_FFS_CLASS = 1;
-	public const INVALID_FFS_CLASS = 2;
+	public const NO_FILE_FORMAT = 1;
 
 	protected $reverseCodeMap;
 
@@ -63,16 +63,18 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 
 	public function getFFS(): SimpleFormat {
 		$class = $this->getFromConf( 'FILES', 'class' );
+		$format = $this->getFromConf( 'FILES', 'format' );
 
-		if ( $class === null ) {
-			throw new RuntimeException( 'FileFormatSupport class is not set.', self::NO_FFS_CLASS );
+		if ( $format !== null ) {
+			return Services::getInstance()->getFileFormatFactory()->create( $format, $this );
+		} elseif ( $class !== null ) {
+			return Services::getInstance()->getFileFormatFactory()->loadInstance( $class, $this );
+		} else {
+			throw new RuntimeException(
+				'FileFormatSupport class/format is not set for "' . $this->getId() . '".',
+				self::NO_FILE_FORMAT
+			);
 		}
-
-		if ( !class_exists( $class ) ) {
-			throw new RuntimeException( "FileFormatSupport class $class does not exist.", self::INVALID_FFS_CLASS );
-		}
-
-		return new $class( $this );
 	}
 
 	public function exists(): bool {

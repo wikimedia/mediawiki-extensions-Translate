@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
+use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
@@ -75,6 +76,10 @@ class Services implements ContainerInterface {
 
 	public function getExternalMessageSourceStateImporter(): ExternalMessageSourceStateImporter {
 		return $this->get( 'Translate:ExternalMessageSourceStateImporter' );
+	}
+
+	public function getFileFormatFactory(): FileFormatFactory {
+		return $this->get( 'Translate:FileFormatFactory' );
 	}
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {

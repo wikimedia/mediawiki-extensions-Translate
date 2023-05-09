@@ -10,6 +10,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
+use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
@@ -72,6 +73,10 @@ return [
 			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
 			$services->get( 'Translate:MessageIndex' )
 		);
+	},
+
+	'Translate:FileFormatFactory' => static function ( MediaWikiServices $services ): FileFormatFactory {
+		return new FileFormatFactory( $services->getObjectFactory() );
 	},
 
 	'Translate:GroupSynchronizationCache' => static function (

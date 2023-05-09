@@ -332,7 +332,7 @@ class SimpleFormat implements FileFormatSupport {
 		try {
 			$ffs = $this->group->getFFS();
 		} catch ( RuntimeException $e ) {
-			if ( $e->getCode() === FileBasedMessageGroup::NO_FFS_CLASS ) {
+			if ( $e->getCode() === FileBasedMessageGroup::NO_FILE_FORMAT ) {
 				return false;
 			}
 
