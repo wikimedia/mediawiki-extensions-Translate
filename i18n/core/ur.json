@@ -13,6 +13,7 @@
 		]
 	},
 	"translate": "ترجمہ",
+	"translate-extensionname": "ترجمہ",
 	"translate-desc": "میڈیاویکی وغیرہ کا ترجمہ کرنے کے لیے [[Special:Translate|خصوصی صفحہ]]",
 	"translate-taskui-export-to-file": "مقامی کی شکل میں برآمد",
 	"translate-taskui-export-as-po": "آف لائن ترجمہ کے لئے برآمد",
@@ -84,6 +85,7 @@
 	"translate-statsf-height": "لمبائی پکسل میں:",
 	"translate-statsf-days": "وقت کا دورانیہ دنوں میں:",
 	"translate-statsf-start": "تاریخ شروع ہو رہا ہے:",
+	"translate-statsf-scale-years": "سال",
 	"translate-statsf-scale-months": "ماہ",
 	"translate-statsf-scale-weeks": "ہفتے",
 	"translate-statsf-scale-days": "دن",
@@ -183,6 +185,7 @@
 	"tux-status-saving": "محفوظ ہورہا ہے...",
 	"tux-status-unsaved": "غیر محفوظ",
 	"tux-save-unknown-error": "نامعلوم نقص واقع ہوا ہے۔",
+	"tux-editor-placeholder-language": "$1 میں اپنا ترجمہ درج کریں",
 	"tux-editor-editsummary-placeholder": "اختیاری خلاصہ",
 	"tux-editor-paste-original-button-label": "ماخذی متن چسپاں کریں",
 	"tux-editor-discard-changes-button-label": "تبدیلیاں مسترد کریں",
