@@ -45,7 +45,7 @@
 	"translate-edit-contribute": "contribuer",
 	"translate-edit-no-information": "<em>Iste message non ha documentation.\nSi tu sape ubi o como iste message es usate, tu pote adjutar le altere traductores per adder documentation a iste message.</em>",
 	"translate-edit-information": "Information sur le message ($1)",
-	"translate-edit-warnings": "Advertimentos super traductiones incomplete",
+	"translate-edit-warnings": "Advertimentos sur traductiones incomplete",
 	"translate-edit-tmmatch-source": "Texto fonte pro traduction: $1",
 	"translate-edit-tmmatch": "$1% de correspondentia",
 	"translate-edit-nopermission": "Tu debe obtener derectos de traduction pro poter traducer messages.",
