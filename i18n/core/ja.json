@@ -27,7 +27,8 @@
 			"Whym",
 			"神樂坂秀吉",
 			"青子守歌",
-			"아라"
+			"아라",
+			"もなー(偽物)"
 		]
 	},
 	"translate": "翻訳",
@@ -141,6 +142,7 @@
 	"translate-statsf-days": "日数:",
 	"translate-statsf-start": "開始日時:",
 	"translate-statsf-scale": "粒度:",
+	"translate-statsf-scale-years": "年",
 	"translate-statsf-scale-months": "月",
 	"translate-statsf-scale-weeks": "週",
 	"translate-statsf-scale-days": "日",
