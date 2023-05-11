@@ -320,7 +320,8 @@
 				"Translate:ConfigHelper",
 				"ContentLanguage",
 				"Translate:ProgressStatsTableFactory",
-				"LinkBatchFactory"
+				"LinkBatchFactory",
+				"LanguageFactory"
 			]
 		},
 		"AggregateGroups": {

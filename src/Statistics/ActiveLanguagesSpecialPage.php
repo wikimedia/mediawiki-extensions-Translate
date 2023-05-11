@@ -12,6 +12,7 @@ use LanguageCode;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use ObjectCache;
@@ -34,6 +35,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private $translatorActivity;
 	/** @var LanguageNameUtils */
 	private $langNameUtils;
+	private LanguageFactory $languageFactory;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
 	/** @var ConfigHelper */
@@ -61,7 +63,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		ConfigHelper $configHelper,
 		Language $contentLanguage,
 		ProgressStatsTableFactory $progressStatsTableFactory,
-		LinkBatchFactory $linkBatchFactory
+		LinkBatchFactory $linkBatchFactory,
+		LanguageFactory $languageFactory
 	) {
 		parent::__construct( 'SupportedLanguages' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -72,6 +75,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->contentLanguage = $contentLanguage;
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->linkBatchFactory = $linkBatchFactory;
+		$this->languageFactory = $languageFactory;
 	}
 
 	protected function getGroupName() {
@@ -146,7 +150,6 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private function showLanguage( string $code, array $users, int $cachedAt ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
-		$bcp47Code = LanguageCode::bcp47( $code );
 
 		// Information to be used inside the foreach loop.
 		$linkInfo = [];
@@ -157,15 +160,19 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode(), LanguageNameUtils::ALL );
 		$native = $this->langNameUtils->getLanguageName( $code, LanguageNameUtils::AUTONYMS, LanguageNameUtils::ALL );
+		$statLanguage = $this->languageFactory->getLanguage( $code );
+		$bcp47Code = $statLanguage->getHtmlCode();
+
+		$span = Html::rawElement( 'span', [ 'lang' => $bcp47Code, 'dir' => $statLanguage->getDir() ], $native );
 
 		if ( $local !== $native ) {
 
 			$headerText = $this->msg( 'supportedlanguages-portallink' )
-				->params( $bcp47Code, $local, $native )->escaped();
+				->params( $bcp47Code, $local, $span )->parse();
 		} else {
 			// No CLDR, so a less localised header and link title.
 			$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )
-				->params( $bcp47Code, $native )->escaped();
+				->params( $bcp47Code, $span )->parse();
 		}
 
 		$out->addHTML( Html::rawElement( 'h2', [ 'id' => $code ], $headerText ) );
