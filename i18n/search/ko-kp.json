@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Delim",
+			"Nuevo Paso"
+		]
+	},
+	"searchtranslations": "번역 검색",
+	"tux-sst-edit": "번역 편집",
+	"tux-sst-view-foreign": "$1에서 보기",
+	"tux-sst-search": "검색",
+	"tux-sst-search-ph": "번역 검색",
+	"tux-sst-count": "{{PLURAL:$1|결과 한 개를 찾았습니다|결과 $1개를 찾았습니다}}",
+	"tux-sst-facet-language": "언어",
+	"tux-sst-facet-group": "통보문집단",
+	"tux-sst-nosolr-title": "검색을 사용할수 없음",
+	"tux-sst-nosolr-body": "이 위키는 번역 검색 서비스가 없습니다.",
+	"tux-sst-solr-offline-title": "검색을 사용할수 없음",
+	"tux-sst-solr-offline-body": "검색 봉사를 일시적으로 사용할수 없습니다.",
+	"tux-sst-next": "다음 ›",
+	"tux-sst-prev": "‹ 이전",
+	"tux-sst-default": "번역",
+	"tux-sst-translated": "$1에서 번역",
+	"tux-sst-untranslated": "$1에서의 번역 없음",
+	"tux-sst-outdated": "$1에서 옮긴 오래된 번역",
+	"tux-sst-ellipsis-untranslated": "번역 없음",
+	"tux-sst-ellipsis-outdated": "오래된 번역",
+	"tux-sst-link-all-match": "모든 검색 낱말이 필요합니다.",
+	"tux-sst-match-message": "검색 낱말과 일치하는 번역을 보여줍니다. $1",
+	"tux-sst-case-sensitive": "대소문자 구분"
+}

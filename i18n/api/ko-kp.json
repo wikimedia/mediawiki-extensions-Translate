@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Delim"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "통보문집단 ID.",
+	"apihelp-groupreview-param-group": "통보문집단.",
+	"apihelp-groupreview-param-language": "언어 부호.",
+	"apihelp-query+languagestats-param-language": "언어 부호.",
+	"apihelp-query+messagecollection-param-group": "통보문집단.",
+	"apihelp-query+messagecollection-param-language": "언어 부호.",
+	"apihelp-query+messagecollection-example-1": "지원하는 언어 목록",
+	"apihelp-query+messagegroups-summary": "통보문짐단에 관한 정보를 반환합니다.",
+	"apihelp-query+messagegroupstats-param-group": "통보문집단 ID.",
+	"apihelp-translationreview-description": "이 번역을 검토한것으로 표시합니다.",
+	"apihelp-translationreview-summary": "번역을 검토한것으로 표시합니다.",
+	"apihelp-ttmserver-param-sourcelanguage": "원천 본문의 언어 부호입니다.",
+	"apihelp-ttmserver-param-targetlanguage": "제안의 언어 부호입니다.",
+	"apihelp-searchtranslations-description": "번역 검색.",
+	"apihelp-searchtranslations-summary": "번역 검색.",
+	"apihelp-searchtranslations-param-query": "검색할 문자렬입니다.",
+	"apihelp-searchtranslations-param-sourcelanguage": "원문 언어부호입니다.",
+	"apihelp-searchtranslations-param-match": "임의/모든 검색어와 대조.",
+	"apihelp-searchtranslations-example-1": "이 언어에 대한 번역 보이기",
+	"apihelp-translationcheck-summary": "번역을 확인합니다.",
+	"apierror-translate-duplicateaggregategroup": "통보문 집단이 이미 존재합니다",
+	"apierror-translate-invalidgroup": "집단이 존재하지 않거나 잘못되였습니다",
+	"apierror-translate-language-disabled": "이 언어로의 번역이 비활성화되여있습니다",
+	"apierror-translate-nomessagefortitle": "제목이 번역 가능한 통보문과 일치하지 않습니다",
+	"apierror-translate-notranslationservices": "공용 번역 봉사가 구성되지 않았습니다. 위키 관리자는 <var>$wgTranslateTranslationServices</var>를 적절하게 설정해야 이 기능을 사용할수 있습니다.",
+	"apierror-translate-sandboxdisabled": "련습장 기능을 사용하고있지 않습니다",
+	"apierror-translate-unknownmessage": "알수 없는 통보문"
+}
