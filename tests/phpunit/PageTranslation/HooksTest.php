@@ -34,7 +34,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 
 		$this->setMwGlobals( [
-			'wgHooks' => [],
 			'wgEnablePageTranslation' => true,
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
@@ -44,6 +43,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 				],
 			],
 		] );
+
+		$this->clearHooks();
 
 		HookHandler::setupTranslate();
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
