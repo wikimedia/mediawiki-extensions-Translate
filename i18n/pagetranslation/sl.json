@@ -71,7 +71,7 @@
 	"tpt-rev-unmark-tooltip": "Odstranite stran iz prevajanja.",
 	"tpt-rev-discourage-tooltip": "Odsvetuj nadaljnje prevajanje te strani.",
 	"tpt-rev-encourage-tooltip": "Obnovite stran na običajni prevod.",
-	"translate-tag-translate-link-desc": "Prevedi to stran",
+	"translate-tag-translate-link-desc": "Prevedite to stran",
 	"translate-tag-markthis": "Označi to stran za prevajanje",
 	"translate-tag-markthisagain": "Ta stran ima <span class=\"plainlinks\">[$1 sprememb]</span> odkar je bila nazadnje <span class=\"plainlinks\">[$2 označena za prevajanje]</span>.",
 	"translate-tag-hasnew": "Stran vsebuje <span class=\"plainlinks\">[$1 spremembe]</span>, ki niso označene za prevajanje.",
