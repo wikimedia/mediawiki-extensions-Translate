@@ -208,8 +208,10 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 						'_type' => 'array',
 						'_children' => [
 							'class' => [
-								'_type' => 'text',
-								'_not_empty' => true,
+								'_type' => 'text'
+							],
+							'format' => [
+								'_type' => 'text'
 							],
 							'codeMap' => [
 								'_type' => 'array',
