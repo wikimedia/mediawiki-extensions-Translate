@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use Config;
-use Html;
 use HtmlArmor;
 use InvalidArgumentException;
 use Language;
@@ -12,12 +11,13 @@ use LanguageCode;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Title\Title;
 use ObjectCache;
 use SpecialPage;
-use Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -29,27 +29,18 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class ActiveLanguagesSpecialPage extends SpecialPage {
-	/** @var ServiceOptions */
-	private $options;
-	/** @var TranslatorActivity */
-	private $translatorActivity;
-	/** @var LanguageNameUtils */
-	private $langNameUtils;
+	private ServiceOptions $options;
+	private TranslatorActivity $translatorActivity;
+	private LanguageNameUtils $langNameUtils;
+	private ILoadBalancer $loadBalancer;
+	private ConfigHelper $configHelper;
+	private Language $contentLanguage;
+	private ProgressStatsTableFactory $progressStatsTableFactory;
+	private StatsTable $progressStatsTable;
+	private LinkBatchFactory $linkBatchFactory;
 	private LanguageFactory $languageFactory;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var ConfigHelper */
-	private $configHelper;
-	/** @var Language */
-	private $contentLanguage;
-	/** @var ProgressStatsTableFactory */
-	private $progressStatsTableFactory;
-	/** @var StatsTable */
-	private $progressStatsTable;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-	/** @var int Cutoff time for inactivity in days */
-	private $period = 180;
+	/** Cutoff time for inactivity in days */
+	private int $period = 180;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateMessageNamespaces',
@@ -86,7 +77,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		return $this->msg( 'supportedlanguages' )->text();
 	}
 
-	public function execute( $par ) {
+	public function execute( $par ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 		$this->progressStatsTable = $this->progressStatsTableFactory->newFromContext( $this->getContext() );
@@ -99,7 +90,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		);
 
 		$this->outputHeader( 'supportedlanguages-summary' );
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$dbType = $dbr->getType();
 		if ( $dbType === 'sqlite' || $dbType === 'postgres' ) {
 			$out->addHTML(
@@ -158,8 +149,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
 		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->text();
 
-		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode(), LanguageNameUtils::ALL );
-		$native = $this->langNameUtils->getLanguageName( $code, LanguageNameUtils::AUTONYMS, LanguageNameUtils::ALL );
+		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode() );
+		$native = $this->langNameUtils->getLanguageName( $code );
 		$statLanguage = $this->languageFactory->getLanguage( $code );
 		$bcp47Code = $statLanguage->getHtmlCode();
 
@@ -220,10 +211,10 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			return $data;
 		}
 
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' ];
-		$timestamp = $dbr->timestamp( (int)wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
+		$timestamp = $dbr->timestamp( (int)wfTimestamp() - 60 * 60 * 24 * $this->period );
 		$conds = [
 			'rc_timestamp > ' . $dbr->addQuotes( $timestamp ),
 			'rc_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
@@ -321,7 +312,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			$styles = [];
 			$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
-			$last = (int)wfTimestamp( TS_UNIX ) - (int)wfTimestamp( TS_UNIX, $lastTranslationTimestamp );
+			$last = (int)wfTimestamp() - (int)wfTimestamp( TS_UNIX, $lastTranslationTimestamp );
 			$last = round( $last / $day );
 			$attribs['title'] =
 				$this->msg( 'supportedlanguages-activity', $username )
