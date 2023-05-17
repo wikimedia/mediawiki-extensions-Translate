@@ -20,6 +20,7 @@
 		]
 	},
 	"translate": "Překládání",
+	"translate-extensionname": "Překlad",
 	"translate-desc": "[[Special:Translate|Speciální stránka]] zjednodušující překládání systémových hlášení MediaWiki",
 	"translate-fuzzybot-desc": "Toto je speciální systémový účet používaný [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate rozšířením MediaWiki pro překlady], používaný pro údržbu překladů.\nTento účet je součástí softwaru MediaWiki a nepatří žádnému uživateli.",
 	"translate-taskui-export-to-file": "Exportovat v nativním formátu",
