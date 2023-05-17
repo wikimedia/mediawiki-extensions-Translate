@@ -10,7 +10,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 
 /**
- * JsonFFS implements a message format where messages are encoded
+ * JsonFormat implements a message format where messages are encoded
  * as key-value pairs in JSON objects. The format is extended to
  * support author information under the special @metadata key.
  *
