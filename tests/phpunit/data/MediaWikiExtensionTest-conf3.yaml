@@ -6,7 +6,7 @@ BASIC:
   descriptionmsg: examplejsonextension-desc
 
 FILES:
-  class: JsonFFS
+  format: Json
   sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/ExampleJsonExtension/i18n/%CODE%.json"
 
 VALIDATORS:

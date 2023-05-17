@@ -6,7 +6,7 @@ BASIC:
   description: Plop
 
 FILES:
-  class: JsonFFS
+  format: Json
   sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/WikimediaMessages/i18n/%CODE%.json"
   aliasFile: FooBar.alias.php
   magicFile: FooBar.magic.php
