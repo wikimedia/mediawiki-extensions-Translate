@@ -1,6 +1,9 @@
 <?php
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -12,11 +15,9 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * This class has not yet been battle-tested, so beware.
  *
  * @author Brion Vibber <bvibber@wikimedia.org>
- *
  * @ingroup FileFormatSupport
- * @since 2014.02
  */
-class AppleFFS extends SimpleFormat {
+class AppleFormat extends SimpleFormat {
 	public function supportsFuzzy(): string {
 		return 'write';
 	}
@@ -25,12 +26,8 @@ class AppleFFS extends SimpleFormat {
 		return [ '.strings' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 * @throws MWException
-	 */
-	public function readFromVariable( $data ): array {
+	/** @inheritDoc */
+	public function readFromVariable( string $data ): array {
 		$lines = explode( "\n", $data );
 		$authors = $messages = [];
 		$linecontinuation = false;
@@ -63,7 +60,7 @@ class AppleFFS extends SimpleFormat {
 					continue;
 				}
 
-				list( $key, $value ) = static::readRow( $line );
+				[ $key, $value ] = $this->readRow( $line );
 				$messages[$key] = $value;
 			}
 		}
@@ -79,28 +76,23 @@ class AppleFFS extends SimpleFormat {
 	/**
 	 * Parses non-empty strings file row to key and value.
 	 * Can be overridden by child classes.
-	 * @param string $line
-	 * @throws MWException
+	 * @throws InvalidArgumentException
 	 * @return array array( string $key, string $val )
 	 */
-	public static function readRow( $line ) {
+	public function readRow( string $line ): array {
 		$match = [];
 		if ( preg_match( '/^"((?:\\\"|[^"])*)"\s*=\s*"((?:\\\"|[^"])*)"\s*;\s*$/', $line, $match ) ) {
 			$key = self::unescapeString( $match[1] );
 			$value = self::unescapeString( $match[2] );
 			if ( $key === '' ) {
-				throw new MWException( "Empty key in line $line" );
+				throw new InvalidArgumentException( "Empty key in line $line" );
 			}
 			return [ $key, $value ];
 		} else {
-			throw new MWException( "Unrecognized line format: $line" );
+			throw new InvalidArgumentException( "Unrecognized line format: $line" );
 		}
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
 	protected function writeReal( MessageCollection $collection ): string {
 		$header = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
@@ -124,7 +116,7 @@ class AppleFFS extends SimpleFormat {
 			}
 
 			$key = $mangler->unmangle( $key );
-			$output .= static::writeRow( $key, $value );
+			$output .= $this->writeRow( $key, $value );
 		}
 
 		if ( $output ) {
@@ -139,31 +131,18 @@ class AppleFFS extends SimpleFormat {
 	/**
 	 * Writes well-formed properties file row with key and value.
 	 * Can be overridden by child classes.
-	 * @param string $key
-	 * @param string $value
-	 * @return string
 	 */
-	public static function writeRow( $key, $value ) {
+	public function writeRow( string $key, string $value ): string {
 		return self::quoteString( $key ) . ' = ' . self::quoteString( $value ) . ';' . "\n";
 	}
 
-	/**
-	 * Quote and escape Obj-C-style strings for .strings format.
-	 *
-	 * @param string $str
-	 * @return string
-	 */
-	protected static function quoteString( $str ) {
+	/** Quote and escape Obj-C-style strings for .strings format. */
+	protected static function quoteString( string $str ): string {
 		return '"' . self::escapeString( $str ) . '"';
 	}
 
-	/**
-	 * Escape Obj-C-style strings; use backslash-escapes etc.
-	 *
-	 * @param string $str
-	 * @return string
-	 */
-	protected static function escapeString( $str ) {
+	/** Escape Obj-C-style strings; use backslash-escapes etc. */
+	private static function escapeString( string $str ): string {
 		$str = addcslashes( $str, '\\"' );
 		$str = str_replace( "\n", '\\n', $str );
 		return $str;
@@ -173,19 +152,12 @@ class AppleFFS extends SimpleFormat {
 	 * Unescape Obj-C-style strings; can include backslash-escapes
 	 *
 	 * @todo support \UXXXX
-	 *
-	 * @param string $str
-	 * @return string
 	 */
-	protected static function unescapeString( $str ) {
+	protected static function unescapeString( string $str ): string {
 		return stripcslashes( $str );
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function doHeader( MessageCollection $collection ) {
+	private function doHeader( MessageCollection $collection ): string {
 		if ( isset( $this->extra['header'] ) ) {
 			$output = $this->extra['header'];
 		} else {
@@ -201,11 +173,7 @@ class AppleFFS extends SimpleFormat {
 		return $output;
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function doAuthors( MessageCollection $collection ) {
+	private function doAuthors( MessageCollection $collection ): string {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
@@ -217,8 +185,8 @@ class AppleFFS extends SimpleFormat {
 		return $output;
 	}
 
-	public static function getExtraSchema() {
-		$schema = [
+	public static function getExtraSchema(): array {
+		return [
 			'root' => [
 				'_type' => 'array',
 				'_children' => [
@@ -233,7 +201,7 @@ class AppleFFS extends SimpleFormat {
 				]
 			]
 		];
-
-		return $schema;
 	}
 }
+
+class_alias( AppleFormat::class, 'AppleFFS' );

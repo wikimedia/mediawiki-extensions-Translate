@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use AmdFFS;
-use AppleFFS;
 use AppleInfoPlistFfs;
 use DtdFFS;
 use FileBasedMessageGroup;
@@ -32,7 +31,7 @@ class FileFormatFactory {
 	private const FORMATS = [
 		'Amd' => AmdFFS::class,
 		'AndroidXml' => AndroidXmlFormat::class,
-		'Apple' => AppleFFS::class,
+		'Apple' => AppleFormat::class,
 		'AppleInfoPlist' => AppleInfoPlistFfs::class,
 		'Dtd' => DtdFFS::class,
 		'FlatPhp' => FlatPhpFFS::class,

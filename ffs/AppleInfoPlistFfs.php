@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\FileFormatSupport\AppleFormat;
+
 /**
  * AppleInfoPlistFfs extends the AppleFFS class and implements support for
  * Apple InfoPlist .strings files.
@@ -9,14 +11,12 @@
  * @ingroup FileFormatSupport
  * @since 2020.03
  */
-class AppleInfoPlistFfs extends AppleFFS {
+class AppleInfoPlistFfs extends AppleFormat {
 	/**
-	 * Parses non-empty strings file row to key and value.
-	 * @param string $line
 	 * @throws RuntimeException
-	 * @return array array( string $key, string $val )
+	 * @inheritDoc
 	 */
-	public static function readRow( $line ) {
+	public function readRow( string $line ): array {
 		$match = [];
 		// InfoPList file does not use quoted keys, allows only basic characters without spaces
 		// as keys.
@@ -42,11 +42,9 @@ class AppleInfoPlistFfs extends AppleFFS {
 
 	/**
 	 * Writes well-formed properties file row with key and value.
-	 * @param string $key
-	 * @param string $value
-	 * @return string
+	 * @inheritDoc
 	 */
-	public static function writeRow( $key, $value ) {
+	public function writeRow( string $key, string $value ): string {
 		return $key . ' = ' . parent::quoteString( $value ) . ';' . "\n";
 	}
 }

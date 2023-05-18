@@ -1,18 +1,24 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
+
 /**
- * The AppleFFS class is responsible for loading messages from .strings
- * files, which are used in many iOS and Mac OS X projects.
+ * The AppleFormat class is responsible for loading messages from .strings
+ * files, which are used in many iOS and macOS projects.
  * These tests check that the message keys are loaded, mangled and unmangled
  * correctly.
  * @author Brion Vibber
  * @author Niklas Laxström
- * @file
+ * @covers MediaWiki\Extension\Translate\FileFormatSupport\AppleFormat
  */
+class AppleFormatTest extends MediaWikiIntegrationTestCase {
 
-/** @covers AppleFFS */
-class AppleFFSTest extends MediaWikiIntegrationTestCase {
-
-	protected $groupConfiguration = [
+	private array $groupConfiguration = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
@@ -21,20 +27,20 @@ class AppleFFSTest extends MediaWikiIntegrationTestCase {
 			'description' => 'Test description',
 		],
 		'FILES' => [
-			'class' => AppleFFS::class,
+			'format' => 'Apple',
 		],
 	];
 
-	public function testParsing() {
+	public function testParsing(): void {
 		$file =
 			<<<'STRINGS'
 			// aslkfjlkasdfjklfsj
 			/* You are reading the ".strings" entry. */
 			/* It's all for fun and fun for all.
 			On two lines! */
-			 /* This is a
-			    Multiline comment
-				  test */
+			/* This is a
+			  Multiline comment
+				test */
 			// Author: Testy McTesterson
 			"website" = "<nowiki>http://en.wikipedia.org/</nowiki>";
 			"language" = "English";
@@ -45,8 +51,8 @@ class AppleFFSTest extends MediaWikiIntegrationTestCase {
 
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AppleFFS( $group );
-		$parsed = $ffs->readFromVariable( $file );
+		$appleFormat = new AppleFormat( $group );
+		$parsed = $appleFormat->readFromVariable( $file );
 		$expected = [
 			'website' => '<nowiki>http://en.wikipedia.org/</nowiki>',
 			'language' => 'English',
@@ -62,34 +68,37 @@ class AppleFFSTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider rowValuesProvider */
-	public function testRowRoundtrip( $key, $value, $comment ) {
-		$write = AppleFFS::writeRow( $key, $value );
+	public function testRowRoundtrip( string $key, string $value, string $comment ): void {
+		/** @var FileBasedMessageGroup $group */
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		$appleFormat = new AppleFormat( $group );
+		$write = $appleFormat->writeRow( $key, $value );
 		// Trim the trailing newline
 		$write = rtrim( $write );
-		list( $newkey, $newvalue ) = AppleFFS::readRow( $write );
+		[ $newkey, $newvalue ] = $appleFormat->readRow( $write );
 
 		$this->assertSame( $key, $newkey, "Key survives roundtrip in testdata: $comment" );
 		$this->assertSame( $value, $newvalue, "Value survives roundtrip in testdata: $comment" );
 	}
 
-	public function testFileRoundtrip() {
-		$infile = file_get_contents( __DIR__ . '/../data/AppleFFSTest1.strings' );
+	public function testFileRoundtrip(): void {
+		$infile = file_get_contents( __DIR__ . '/../data/AppleFormatTest1.strings' );
 		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AppleFFS( $group );
-		$parsed = $ffs->readFromVariable( $infile );
+		$appleFormat = new AppleFormat( $group );
+		$parsed = $appleFormat->readFromVariable( $infile );
 
 		$outfile = '';
 		foreach ( $parsed['MESSAGES'] as $key => $value ) {
-			$outfile .= AppleFFS::writeRow( $key, $value );
+			$outfile .= $appleFormat->writeRow( $key, $value );
 		}
-		$reparsed = $ffs->readFromVariable( $outfile );
+		$reparsed = $appleFormat->readFromVariable( $outfile );
 
 		$this->assertSame( $parsed['MESSAGES'], $reparsed['MESSAGES'],
 			'Messages survive roundtrip through write and read' );
 	}
 
-	public static function rowValuesProvider() {
+	public function rowValuesProvider(): array {
 		return [
 			[ 'key', 'value', 'simple row' ],
 			[ 'key', 'value', 'row with different sep' ],
