@@ -12,7 +12,6 @@ use JavaFFS;
 use JavaScriptFFS;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use XliffFFS;
-use YamlFFS;
 
 /**
  * A factory class used to instantiate instances of pre-provided File formats
@@ -40,7 +39,7 @@ class FileFormatFactory {
 		'JavaScript' => JavaScriptFFS::class,
 		'Json' => JsonFormat::class,
 		'Xliff' => XliffFFS::class,
-		'Yaml' => YamlFFS::class
+		'Yaml' => YamlFormat::class
 	];
 	private ObjectFactory $objectFactory;
 

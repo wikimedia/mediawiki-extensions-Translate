@@ -1,11 +1,15 @@
 <?php
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use TranslateYaml;
 
 /**
  * Implements support for message storage in YAML format.
@@ -14,24 +18,25 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * If it is set to true, all messages will under language code.
  * @ingroup FileFormatSupport
  */
-class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
-	/** @var ArrayFlattener */
-	private $flattener;
+class YamlFormat extends SimpleFormat implements MetaYamlSchemaExtender {
+	private ArrayFlattener $flattener;
 
-	/** @param FileBasedMessageGroup $group */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
-		$this->flattener = $this->getFlattener();
+
+		// Obtains object used to flatten and unflatten arrays. In this implementation
+		// we use the ArrayFlattener class which also supports CLDR pluralization rules.
+		$this->flattener = new ArrayFlattener(
+			$this->extra['nestingSeparator'] ?? '.',
+			$this->extra['parseCLDRPlurals'] ?? false
+		);
 	}
 
 	public function getFileExtensions(): array {
 		return [ '.yaml', '.yml' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 */
+	/** @inheritDoc */
 	public function readFromVariable( string $data ): array {
 		// Authors first.
 		$matches = [];
@@ -46,7 +51,7 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 			$messages = array_shift( $messages ) ?? [];
 		}
 
-		$messages = $this->flatten( $messages );
+		$messages = $this->flattener->flatten( $messages );
 		$messages = $this->group->getMangler()->mangleArray( $messages );
 		foreach ( $messages as &$value ) {
 			$value = rtrim( $value, "\n" );
@@ -58,10 +63,6 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		];
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
 	protected function writeReal( MessageCollection $collection ): string {
 		$output = $this->doHeader( $collection );
 		$output .= $this->doAuthors( $collection );
@@ -86,8 +87,7 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		if ( !count( $messages ) ) {
 			return '';
 		}
-
-		$messages = $this->unflatten( $messages );
+		$messages = $this->flattener->unflatten( $messages );
 
 		// Some groups have messages under language code.
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
@@ -100,11 +100,7 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function doHeader( MessageCollection $collection ) {
+	private function doHeader( MessageCollection $collection ): string {
 		global $wgSitename;
 		global $wgTranslateYamlLibrary;
 
@@ -121,11 +117,7 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function doAuthors( MessageCollection $collection ) {
+	private function doAuthors( MessageCollection $collection ): string {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
@@ -137,50 +129,12 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	/**
-	 * Obtains object used to flatten and unflatten arrays. In this implementation
-	 * we use the ArrayFlattener class which also supports CLDR pluralization rules.
-	 *
-	 * @return ArrayFlattener with flatten, unflatten methods
-	 */
-	protected function getFlattener() {
-		$nestingSeparator = $this->extra['nestingSeparator'] ?? '.';
-		$parseCLDRPlurals = $this->extra['parseCLDRPlurals'] ?? false;
-
-		// Instantiate helper class for flattening and unflattening nested arrays
-		return new ArrayFlattener( $nestingSeparator, $parseCLDRPlurals );
-	}
-
-	/**
-	 * Flattens multidimensional array by using the path to the value as key
-	 * with each individual key separated by a dot.
-	 *
-	 * @param array $messages
-	 *
-	 * @return array
-	 */
-	protected function flatten( $messages ) {
-		return $this->flattener->flatten( $messages );
-	}
-
-	/**
-	 * Performs the reverse operation of flatten. Each dot (or custom separator)
-	 * in the key starts a new subarray in the final array.
-	 *
-	 * @param array $messages
-	 *
-	 * @return array
-	 */
-	protected function unflatten( $messages ) {
-		return $this->flattener->unflatten( $messages );
-	}
-
 	public function isContentEqual( ?string $a, ?string $b ): bool {
 		return $this->flattener->compareContent( $a, $b );
 	}
 
 	public static function getExtraSchema(): array {
-		$schema = [
+		return [
 			'root' => [
 				'_type' => 'array',
 				'_children' => [
@@ -201,7 +155,7 @@ class YamlFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				]
 			]
 		];
-
-		return $schema;
 	}
 }
+
+class_alias( YamlFormat::class, 'YamlFFS' );

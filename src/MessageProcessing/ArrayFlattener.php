@@ -37,7 +37,8 @@ class ArrayFlattener {
 	}
 
 	/**
-	 * Flattens multidimensional array.
+	 * Flattens multidimensional array by using the path to the value as key
+	 * with each individual key separated by a dot.
 	 * @param array $unflat Array of messages
 	 */
 	public function flatten( array $unflat ): array {
@@ -128,7 +129,8 @@ class ArrayFlattener {
 	}
 
 	/**
-	 * Performs the reverse operation of flatten.
+	 * Performs the reverse operation of flatten. Each dot (or custom separator)
+	 * in the key starts a new subarray in the final array.
 	 * @param array $flat Array of messages
 	 */
 	public function unflatten( array $flat ): array {
