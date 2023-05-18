@@ -7,7 +7,6 @@ use AppleInfoPlistFfs;
 use FileBasedMessageGroup;
 use FlatPhpFFS;
 use InvalidArgumentException;
-use JavaFFS;
 use JavaScriptFFS;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use XliffFFS;
@@ -34,7 +33,7 @@ class FileFormatFactory {
 		'FlatPhp' => FlatPhpFFS::class,
 		'Gettext' => GettextFormat::class,
 		'Ini' => IniFormat::class,
-		'Java' => JavaFFS::class,
+		'Java' => JavaFormat::class,
 		'JavaScript' => JavaScriptFFS::class,
 		'Json' => JsonFormat::class,
 		'Xliff' => XliffFFS::class,

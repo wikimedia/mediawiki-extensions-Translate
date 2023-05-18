@@ -1,17 +1,24 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
+
 /**
- * The JavaFFS class is responsible for loading messages from .properties
+ * The JavaFormat class is responsible for loading messages from .properties
  * files, which are used in many JavaScript and Java projects.
  * These tests check that the message keys are loaded, mangled and unmangled
  * correctly.
+ *
  * @author Niklas Laxström
- * @file
+ * @covers MediaWiki\Extension\Translate\FileFormatSupport\JavaFormat
  */
+class JavaFormatTest extends MediaWikiIntegrationTestCase {
 
-/** @covers JavaFFS */
-class JavaFFSTest extends MediaWikiIntegrationTestCase {
-
-	protected $groupConfiguration = [
+	private const GROUP_CONFIGURATION = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
@@ -20,11 +27,11 @@ class JavaFFSTest extends MediaWikiIntegrationTestCase {
 			'description' => 'Test description',
 		],
 		'FILES' => [
-			'class' => JavaFFS::class,
+			'format' => 'Java',
 		],
 	];
 
-	public function testParsing() {
+	public function testParsing(): void {
 		$file =
 			<<<'PROPERTIES'
 			# You are reading the ".properties" entry.
@@ -41,9 +48,9 @@ class JavaFFSTest extends MediaWikiIntegrationTestCase {
 			PROPERTIES;
 
 		/** @var FileBasedMessageGroup $group */
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new JavaFFS( $group );
-		$parsed = $ffs->readFromVariable( $file );
+		$group = MessageGroupBase::factory( self::GROUP_CONFIGURATION );
+		$javaFormat = new JavaFormat( $group );
+		$parsed = $javaFormat->readFromVariable( $file );
 		$expected = [
 			'website' => '<nowiki>http://en.wikipedia.org/</nowiki>',
 			'language' => 'English',
@@ -57,17 +64,22 @@ class JavaFFSTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider rowValuesProvider */
-	public function testRowRoundtrip( $key, $sep, $value, $comment ) {
-		$write = JavaFFS::writeRow( $key, $sep, $value );
+	public function testRowRoundtrip( string $key, string $sep, string $value, string $comment ): void {
+		$groupConfiguration = self::GROUP_CONFIGURATION;
+		$groupConfiguration['FILES']['keySeparator'] = $sep;
+		$group = MessageGroupBase::factory( $groupConfiguration );
+
+		$javaFormat = new JavaFormat( $group );
+		$write = $javaFormat->writeRow( $key, $value );
 		// Trim the trailing newline
 		$write = rtrim( $write );
-		list( $newkey, $newvalue ) = JavaFFS::readRow( $write, $sep );
+		[ $newkey, $newvalue ] = $javaFormat->readRow( $write, $sep );
 
 		$this->assertSame( $key, $newkey, "Key survives roundtrip in testdata: $comment" );
 		$this->assertSame( $value, $newvalue, "Value survives roundtrip in testdata: $comment" );
 	}
 
-	public static function rowValuesProvider() {
+	public static function rowValuesProvider(): array {
 		return [
 			[ 'key', '=', 'value', 'simple row' ],
 			[ 'key', ':', 'value', 'row with different sep' ],

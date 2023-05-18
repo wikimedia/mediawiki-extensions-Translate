@@ -1,13 +1,18 @@
 <?php
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use RuntimeException;
+use TextContent;
 
 /**
- * JavaFFS class implements support for Java properties files.
+ * JavaFormat class implements support for Java properties files.
  * This class reads and writes only utf-8 files. Java projects
  * need to run native2ascii on them before using them.
  *
@@ -15,7 +20,15 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * \c keySeparator which defaults to '='.
  * @ingroup FileFormatSupport
  */
-class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
+class JavaFormat extends SimpleFormat implements MetaYamlSchemaExtender {
+
+	private string $keySeparator;
+
+	public function __construct( FileBasedMessageGroup $group ) {
+		parent::__construct( $group );
+		$this->keySeparator = $this->extra['keySeparator'] ?? '=';
+	}
+
 	public function supportsFuzzy(): string {
 		return 'write';
 	}
@@ -24,33 +37,18 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return [ '.properties' ];
 	}
 
-	protected $keySeparator = '=';
-
-	/** @param FileBasedMessageGroup $group */
-	public function __construct( FileBasedMessageGroup $group ) {
-		parent::__construct( $group );
-
-		if ( isset( $this->extra['keySeparator'] ) ) {
-			$this->keySeparator = $this->extra['keySeparator'];
-		}
-	}
-
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 * @throws MWException
-	 */
-	public function readFromVariable( $data ): array {
+	/** @throws RuntimeException */
+	public function readFromVariable( string $data ): array {
 		$data = TextContent::normalizeLineEndings( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
 		$authors = $messages = [];
-		$linecontinuation = false;
+		$lineContinuation = false;
 
 		$key = '';
 		$value = '';
 		foreach ( $lines as $line ) {
-			if ( $linecontinuation ) {
-				$linecontinuation = false;
+			if ( $lineContinuation ) {
+				$lineContinuation = false;
 				$valuecont = $line;
 				$valuecont = str_replace( '\n', "\n", $valuecont );
 				$value .= $valuecont;
@@ -71,19 +69,19 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				}
 
 				if ( !str_contains( $line, $this->keySeparator ) ) {
-					throw new MWException( "Line without separator '{$this->keySeparator}': $line." );
+					throw new RuntimeException( "Line without separator '{$this->keySeparator}': $line." );
 				}
 
-				list( $key, $value ) = self::readRow( $line, $this->keySeparator );
+				[ $key, $value ] = $this->readRow( $line, $this->keySeparator );
 				if ( $key === '' ) {
-					throw new MWException( "Empty key in line $line." );
+					throw new RuntimeException( "Empty key in line $line." );
 				}
 			}
 
 			// @todo This doesn't handle the pathological case of even number of trailing \
 			if ( strlen( $value ) && $value[strlen( $value ) - 1] === "\\" ) {
 				$value = substr( $value, 0, strlen( $value ) - 1 );
-				$linecontinuation = true;
+				$lineContinuation = true;
 			} else {
 				$messages[$key] = ltrim( $value );
 			}
@@ -97,10 +95,6 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		];
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
 	protected function writeReal( MessageCollection $collection ): string {
 		$header = $this->doHeader( $collection );
 		$header .= $this->doAuthors( $collection );
@@ -109,22 +103,22 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
-		/** @var Message $m */
-		foreach ( $collection as $key => $m ) {
-			$value = $m->translation();
-			$value = str_replace( TRANSLATE_FUZZY, '', $value );
-
+		/** @var Message $message */
+		foreach ( $collection as $key => $message ) {
+			$value = $message->translation() ?? '';
 			if ( $value === '' ) {
 				continue;
 			}
 
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
+
 			// Just to give an overview of translation quality.
-			if ( $m->hasTag( 'fuzzy' ) ) {
+			if ( $message->hasTag( 'fuzzy' ) ) {
 				$output .= "# Fuzzy\n";
 			}
 
 			$key = $mangler->unmangle( $key );
-			$output .= self::writeRow( $key, $this->keySeparator, $value );
+			$output .= $this->writeRow( $key, $value );
 		}
 
 		if ( $output ) {
@@ -134,37 +128,27 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return '';
 	}
 
-	/**
-	 * Writes well-formed properties file row with key and value.
-	 * @param string $key
-	 * @param string $sep
-	 * @param string $value
-	 * @return string
-	 * @since 2012-03-28
-	 */
-	public static function writeRow( $key, $sep, $value ) {
+	/** Writes well-formed properties file row with key and value. */
+	public function writeRow( string $key, string $value ): string {
 		/* Keys containing the separator need escaping. Also escape comment
 		 * characters, though strictly they would only need escaping when
 		 * they are the first character. Plus the escape character itself. */
-		$key = addcslashes( $key, "#!$sep\\" );
+		$key = addcslashes( $key, "#!{$this->keySeparator}\\" );
 		// Make sure we do not slip newlines trough... it would be fatal.
 		$value = str_replace( "\n", '\\n', $value );
 
-		return "$key$sep$value\n";
+		return "$key{$this->keySeparator}$value\n";
 	}
 
 	/**
 	 * Parses non-empty properties file row to key and value.
-	 * @param string $line
-	 * @param string $sep
 	 * @return string[]
-	 * @since 2012-03-28
 	 */
-	public static function readRow( $line, $sep ) {
+	public function readRow( string $line, string $sep ): array {
 		if ( !str_contains( $line, '\\' ) ) {
 			/* Nothing appears to be escaped in this line.
 			 * Just read the key and the value. */
-			list( $key, $value ) = explode( $sep, $line, 2 );
+			[ $key, $value ] = explode( $sep, $line, 2 );
 		} else {
 			/* There might be escaped separators in the key.
 			 * Using slower method to find the separator. */
@@ -213,11 +197,7 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return [ $key, $value ];
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function doHeader( MessageCollection $collection ) {
+	private function doHeader( MessageCollection $collection ): string {
 		if ( isset( $this->extra['header'] ) ) {
 			$output = $this->extra['header'];
 		} else {
@@ -233,11 +213,7 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
-	protected function doAuthors( MessageCollection $collection ) {
+	private function doAuthors( MessageCollection $collection ): string {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
@@ -250,7 +226,7 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 
 	public static function getExtraSchema(): array {
-		$schema = [
+		return [
 			'root' => [
 				'_type' => 'array',
 				'_children' => [
@@ -268,7 +244,7 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				]
 			]
 		];
-
-		return $schema;
 	}
 }
+
+class_alias( JavaFormat::class, 'JavaFFS' );
