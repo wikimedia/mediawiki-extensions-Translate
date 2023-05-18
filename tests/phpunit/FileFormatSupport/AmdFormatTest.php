@@ -1,42 +1,45 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
+use MockMessageCollectionForExport;
+
 /**
  * Tests for the AMD i18n message file format (used by require.js and Dojo).
  *
- * @file
  * @author Matthias Palmer
  * @copyright Copyright © 2011-2015, MetaSolutions AB
  * @license GPL-2.0-or-later
+ *
+ * @covers MediaWiki\Extension\Translate\FileFormatSupport\AmdFormat
  */
+class AmdFormatTest extends MediaWikiIntegrationTestCase {
 
-/** @covers \AmdFFS */
-class AmdFFSTest extends MediaWikiIntegrationTestCase {
-
-	protected function setUp(): void {
-		parent::setUp();
-		$this->groupConfiguration = [
-			'BASIC' => [
-				'class' => FileBasedMessageGroup::class,
-				'id' => 'test-id',
-				'label' => 'Test Label',
-				'namespace' => 'NS_MEDIAWIKI',
-				'description' => 'Test description',
-			],
-			'FILES' => [
-				'class' => AmdFFS::class,
-				'sourcePattern' => 'fake_reference_not_used_in_practise',
-				'targetPattern' => 'fake_reference_not_used_in_practise',
-			],
-		];
-	}
-
-	protected $groupConfiguration;
+	private const GROUP_CONFIGURATION = [
+		'BASIC' => [
+			'class' => FileBasedMessageGroup::class,
+			'id' => 'test-id',
+			'label' => 'Test Label',
+			'namespace' => 'NS_MEDIAWIKI',
+			'description' => 'Test description',
+		],
+		'FILES' => [
+			'format' => 'Amd',
+			'sourcePattern' => 'fake_reference_not_used_in_practise',
+			'targetPattern' => 'fake_reference_not_used_in_practise',
+		],
+	];
 
 	/** @dataProvider amdProvider */
-	public function testParsing( $messages, $authors, $file ) {
+	public function testParsing( array $messages, array $authors, string $file ): void {
 		/** @var FileBasedMessageGroup $group */
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AmdFFS( $group );
-		$parsed = $ffs->readFromVariable( $file );
+		$group = MessageGroupBase::factory( self::GROUP_CONFIGURATION );
+		$amdFormat = new AmdFormat( $group );
+		$parsed = $amdFormat->readFromVariable( $file );
 		$expected = [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
@@ -45,7 +48,7 @@ class AmdFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $parsed );
 	}
 
-	public static function amdProvider() {
+	public static function amdProvider(): array {
 		$values = [];
 
 		$file1 =
@@ -90,13 +93,13 @@ class AmdFFSTest extends MediaWikiIntegrationTestCase {
 		return $values;
 	}
 
-	public function testExport() {
+	public function testExport(): void {
 		$collection = new MockMessageCollectionForExport();
 		/** @var FileBasedMessageGroup $group */
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new AmdFFS( $group );
-		$data = $ffs->writeIntoVariable( $collection );
-		$parsed = $ffs->readFromVariable( $data );
+		$group = MessageGroupBase::factory( self::GROUP_CONFIGURATION );
+		$amdFormat = new AmdFormat( $group );
+		$data = $amdFormat->writeIntoVariable( $collection );
+		$parsed = $amdFormat->readFromVariable( $data );
 
 		$this->assertEquals(
 			[ 'Nike the bunny' ],

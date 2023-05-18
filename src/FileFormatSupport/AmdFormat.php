@@ -1,4 +1,13 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FormatJson;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+
 /**
  * Support for the AMD i18n message file format (used by require.js and Dojo). See:
  * http://requirejs.org/docs/api.html#i18n
@@ -31,46 +40,24 @@
  * for reading it. However, this is not a serious limitation as Translatewiki doesn't export
  * the base language.
  *
- * @file
+ * AmdFormat implements a message format where messages are encoded
+ * as key-value pairs in JSON objects wrapped in a define call.
+ *
  * @author Matthias Palmér
  * @copyright Copyright © 2011-2015, MetaSolutions AB
  * @license GPL-2.0-or-later
- */
-
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
-use MediaWiki\Extension\Translate\MessageLoading\Message;
-use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
-
-/**
- * AmdFFS implements a message format where messages are encoded
- * as key-value pairs in JSON objects wrapped in a define call.
- *
  * @ingroup FileFormatSupport
- * @since 2015.02
  */
-class AmdFFS extends SimpleFormat {
-
-	/**
-	 * @param string $data
-	 * @return bool
-	 */
-	public static function isValid( $data ) {
-		$data = self::extractMessagePart( $data );
-		return is_array( FormatJson::decode( $data, /*as array*/true ) );
-	}
+class AmdFormat extends SimpleFormat {
 
 	public function getFileExtensions(): array {
 		return [ '.js' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 */
-	public function readFromVariable( $data ): array {
-		$authors = self::extractAuthors( $data );
-		$data = self::extractMessagePart( $data );
+	/** @inheritDoc */
+	public function readFromVariable( string $data ): array {
+		$authors = $this->extractAuthors( $data );
+		$data = $this->extractMessagePart( $data );
 		$messages = (array)FormatJson::decode( $data, /*as array*/true );
 		$metadata = [];
 
@@ -88,10 +75,6 @@ class AmdFFS extends SimpleFormat {
 		];
 	}
 
-	/**
-	 * @param MessageCollection $collection
-	 * @return string
-	 */
 	protected function writeReal( MessageCollection $collection ): string {
 		$messages = [];
 		$mangler = $this->group->getMangler();
@@ -119,11 +102,7 @@ class AmdFFS extends SimpleFormat {
 		return $header . FormatJson::encode( $messages, "\t", FormatJson::UTF8_OK ) . ");\n";
 	}
 
-	/**
-	 * @param string $data
-	 * @return string of JSON
-	 */
-	private static function extractMessagePart( $data ) {
+	private function extractMessagePart( string $data ): string {
 		// Find the start and end of the data section (enclosed in the define function call).
 		$dataStart = strpos( $data, 'define(' ) + 6;
 		$dataEnd = strrpos( $data, ')' );
@@ -132,21 +111,12 @@ class AmdFFS extends SimpleFormat {
 		return substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1 );
 	}
 
-	/**
-	 * @param string $data
-	 * @return array
-	 */
-	private static function extractAuthors( $data ) {
+	private function extractAuthors( string $data ): array {
 		preg_match_all( '~\n \*  - (.+)~', $data, $result );
 		return $result[1];
 	}
 
-	/**
-	 * @param string $code
-	 * @param array $authors
-	 * @return string
-	 */
-	private function header( $code, $authors ) {
+	private function header( string $code, array $authors ): string {
 		global $wgSitename;
 
 		$name = Utilities::getLanguageName( $code );
@@ -163,11 +133,8 @@ class AmdFFS extends SimpleFormat {
 			EOT;
 	}
 
-	/**
-	 * @param string[] $authors
-	 * @return string
-	 */
-	private function authorsList( array $authors ) {
+	/** @param string[] $authors */
+	private function authorsList( array $authors ): string {
 		if ( $authors === [] ) {
 			return '';
 		}
@@ -177,3 +144,5 @@ class AmdFFS extends SimpleFormat {
 		return " * Translators:\n$prefix$authorList";
 	}
 }
+
+class_alias( AmdFormat::class, 'AmdFFS' );

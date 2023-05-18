@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use AmdFFS;
 use AppleInfoPlistFfs;
 use DtdFFS;
 use FileBasedMessageGroup;
@@ -29,7 +28,7 @@ class FileFormatFactory {
 	 * @phpcs-require-sorted-array
 	 */
 	private const FORMATS = [
-		'Amd' => AmdFFS::class,
+		'Amd' => AmdFormat::class,
 		'AndroidXml' => AndroidXmlFormat::class,
 		'Apple' => AppleFormat::class,
 		'AppleInfoPlist' => AppleInfoPlistFfs::class,

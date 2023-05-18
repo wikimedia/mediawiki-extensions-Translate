@@ -64,7 +64,8 @@
 	"AutoloadClasses": {
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
 		"AggregateMessageGroupLoader": "messagegroups/loaders/AggregateMessageGroupLoader.php",
-		"AmdFFS": "ffs/AmdFFS.php",
+		"AmdFFS": "src/FileFormatSupport/AmdFormat.php",
+		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\AmdFormat": "src/FileFormatSupport/AmdFormat.php",
 		"AndroidXmlFFS": "src/FileFormatSupport/AndroidXmlFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\AndroidXmlFormat": "src/FileFormatSupport/AndroidXmlFormat.php",
 		"AppleFFS": "src/FileFormatSupport/AppleFormat.php",
