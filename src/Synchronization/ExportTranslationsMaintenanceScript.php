@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
-use GettextFFS;
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
@@ -209,8 +209,8 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			if ( $forOffline ) {
 				$fileBasedGroup = FileBasedMessageGroup::newFromMessageGroup( $group, $offlineTargetPattern );
-				$ffs = new GettextFFS( $fileBasedGroup );
-				$ffs->setOfflineMode( true );
+				$fileFormat = new GettextFormat( $fileBasedGroup );
+				$fileFormat->setOfflineMode( true );
 			} else {
 				$fileBasedGroup = $group;
 				// At this point $group should be an instance of FileBasedMessageGroup
@@ -218,10 +218,10 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				if ( !$fileBasedGroup instanceof FileBasedMessageGroup ) {
 					$this->fatalError( "EE2: Unexportable message group $groupId" );
 				}
-				$ffs = $fileBasedGroup->getFFS();
+				$fileFormat = $fileBasedGroup->getFFS();
 			}
 
-			$ffs->setWritePath( $target );
+			$fileFormat->setWritePath( $target );
 			$sourceLanguage = $group->getSourceLanguage();
 			$collection = $group->initCollection( $sourceLanguage );
 
@@ -279,7 +279,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$langExportTimes['collection'] += ( $endTime - $startTime );
 
 				$startTime = microtime( true );
-				$ffs->write( $collection );
+				$fileFormat->write( $collection );
 				$endTime = microtime( true );
 				$langExportTimes['ffs'] += ( $endTime - $startTime );
 			}

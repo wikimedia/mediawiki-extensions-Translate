@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use BagOStuff;
 use FileBasedMessageGroup;
-use GettextFFS;
 use GettextParseException;
 use Html;
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageGroupBase;
 use SpecialPage;
@@ -189,7 +189,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		 */
 		$group = MessageGroupBase::factory( [
 			'FILES' => [
-				'class' => GettextFFS::class,
+				'format' => 'Gettext',
 				'CtxtAsKey' => true,
 			],
 			'BASIC' => [
@@ -199,7 +199,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		] );
 		'@phan-var FileBasedMessageGroup $group';
 
-		$ffs = new GettextFFS( $group );
+		$ffs = new GettextFormat( $group );
 
 		try {
 			$parseOutput = $ffs->readFromVariable( $data );
@@ -207,7 +207,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 			return [ 'no-headers' ];
 		}
 
-		// Special data added by GettextFFS
+		// Special data added by GettextFormat
 		$metadata = $parseOutput['EXTRA']['METADATA'];
 
 		// This should catch everything that is not a Gettext file exported from us

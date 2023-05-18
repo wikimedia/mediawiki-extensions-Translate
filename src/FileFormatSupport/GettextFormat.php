@@ -1,31 +1,35 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use GettextParseException;
+use GettextPluralException;
+use InvalidArgumentException;
+use LanguageCode;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\GettextPlural;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
+use RuntimeException;
+use SpecialVersion;
+
 /**
- * Gettext file format handler for both old and new style message groups.
+ * FileFormat class that implements support for gettext file format.
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
- * @file
- */
-
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
-use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
-use MediaWiki\Extension\Translate\MessageLoading\Message;
-use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-use MediaWiki\Extension\Translate\MessageProcessing\StringMangler;
-use MediaWiki\Extension\Translate\Utilities\GettextPlural;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
-
-/**
- * New-style FFS class that implements support for gettext file format.
  * @ingroup FileFormatSupport
  */
-class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
-	private $allowPotMode = false;
-	protected $offlineMode = false;
+class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
+	private bool $allowPotMode = false;
+	private bool $offlineMode = false;
 
 	public function supportsFuzzy(): string {
 		return 'yes';
@@ -35,29 +39,24 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return [ '.pot', '.po' ];
 	}
 
-	/** @param bool $value */
-	public function setOfflineMode( $value ) {
+	public function setOfflineMode( bool $value ): void {
 		$this->offlineMode = $value;
 	}
 
 	/** @inheritDoc */
-	public function read( $code ) {
+	public function read( $languageCode ) {
 		// This is somewhat hacky, but pot mode should only ever be used for the source language.
 		// See https://phabricator.wikimedia.org/T230361
-		$this->allowPotMode = $this->getGroup()->getSourceLanguage() === $code;
+		$this->allowPotMode = $this->getGroup()->getSourceLanguage() === $languageCode;
 
 		try {
-			return parent::read( $code );
+			return parent::read( $languageCode );
 		} finally {
 			$this->allowPotMode = false;
 		}
 	}
 
-	/**
-	 * @param string $data
-	 * @return array
-	 */
-	public function readFromVariable( $data ): array {
+	public function readFromVariable( string $data ): array {
 		# Authors first
 		$matches = [];
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
@@ -76,7 +75,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $parsedData;
 	}
 
-	public function parseGettext( $data ) {
+	private function parseGettext( string $data ): array {
 		$mangler = $this->group->getMangler();
 		$useCtxtAsKey = $this->extra['CtxtAsKey'] ?? false;
 		$keyAlgorithm = 'simple';
@@ -84,27 +83,6 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 			$keyAlgorithm = $this->extra['keyAlgorithm'];
 		}
 
-		return self::parseGettextData( $data, $useCtxtAsKey, $mangler, $keyAlgorithm, $this->allowPotMode );
-	}
-
-	/**
-	 * Parses gettext file as string into internal representation.
-	 * @param string $data
-	 * @param bool $useCtxtAsKey Whether to create message keys from the context
-	 * or use msgctxt (non-standard po-files)
-	 * @param StringMangler $mangler
-	 * @param string $keyAlgorithm Key generation algorithm, see generateKeyFromItem
-	 * @param bool $allowPotMode
-	 * @throws MWException
-	 * @return array
-	 */
-	public static function parseGettextData(
-		$data,
-		$useCtxtAsKey,
-		StringMangler $mangler,
-		$keyAlgorithm,
-		bool $allowPotMode
-	) {
 		$potmode = false;
 
 		// Normalise newlines, to make processing easier
@@ -120,15 +98,15 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		/* Since this is the header section, we are only interested in the tags
 		 * and msgid is empty. Somewhere we should extract the header comments
 		 * too */
-		$match = self::expectKeyword( 'msgstr', $headerSection );
+		$match = $this->expectKeyword( 'msgstr', $headerSection );
 		if ( $match !== null ) {
-			$headerBlock = self::formatForWiki( $match, 'trim' );
-			$headers = self::parseHeaderTags( $headerBlock );
+			$headerBlock = $this->formatForWiki( $match, 'trim' );
+			$headers = $this->parseHeaderTags( $headerBlock );
 
 			// Check for pot-mode by checking if the header is fuzzy
-			$flags = self::parseFlags( $headerSection );
+			$flags = $this->parseFlags( $headerSection );
 			if ( in_array( 'fuzzy', $flags, true ) ) {
-				$potmode = $allowPotMode;
+				$potmode = $this->allowPotMode;
 			}
 		} else {
 			$message = "Gettext file header was not found:\n\n$data";
@@ -150,7 +128,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		/* At this stage we are only interested how many plurals forms we should
 		 * be expecting when parsing the rest of this file. */
-		$pluralCount = false;
+		$pluralCount = null;
 		if ( $potmode ) {
 			$pluralCount = 2;
 		} elseif ( isset( $headers['Plural-Forms'] ) ) {
@@ -161,8 +139,8 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
-			$item = self::parseGettextSection( $section, $pluralCount );
-			if ( $item === false ) {
+			$item = $this->parseGettextSection( $section, $pluralCount );
+			if ( $item === null ) {
 				continue;
 			}
 
@@ -173,7 +151,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				}
 				$key = $item['ctxt'];
 			} else {
-				$key = self::generateKeyFromItem( $item, $keyAlgorithm );
+				$key = $this->generateKeyFromItem( $item, $keyAlgorithm );
 			}
 
 			$key = $mangler->mangle( $key );
@@ -191,9 +169,9 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		];
 	}
 
-	public static function parseGettextSection( $section, $pluralCount ) {
+	private function parseGettextSection( string $section, ?int $pluralCount ): ?array {
 		if ( trim( $section ) === '' ) {
-			return false;
+			return null;
 		}
 
 		/* These inactive sections are of no interest to us. Multiline mode
@@ -201,7 +179,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		 * before the commented out sections.
 		 */
 		if ( preg_match( '/^#~/m', $section ) ) {
-			return false;
+			return null;
 		}
 
 		$item = [
@@ -212,44 +190,44 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 			'comments' => [],
 		];
 
-		$match = self::expectKeyword( 'msgid', $section );
+		$match = $this->expectKeyword( 'msgid', $section );
 		if ( $match !== null ) {
-			$item['id'] = self::formatForWiki( $match );
+			$item['id'] = $this->formatForWiki( $match );
 		} else {
-			throw new MWException( "Unable to parse msgid:\n\n$section" );
+			throw new RuntimeException( "Unable to parse msgid:\n\n$section" );
 		}
 
-		$match = self::expectKeyword( 'msgctxt', $section );
+		$match = $this->expectKeyword( 'msgctxt', $section );
 		if ( $match !== null ) {
-			$item['ctxt'] = self::formatForWiki( $match );
+			$item['ctxt'] = $this->formatForWiki( $match );
 		}
 
 		$pluralMessage = false;
-		$match = self::expectKeyword( 'msgid_plural', $section );
+		$match = $this->expectKeyword( 'msgid_plural', $section );
 		if ( $match !== null ) {
 			$pluralMessage = true;
-			$plural = self::formatForWiki( $match );
+			$plural = $this->formatForWiki( $match );
 			$item['id'] = GettextPlural::flatten( [ $item['id'], $plural ] );
 		}
 
 		if ( $pluralMessage ) {
-			$pluralMessageText = self::processGettextPluralMessage( $pluralCount, $section );
+			$pluralMessageText = $this->processGettextPluralMessage( $pluralCount, $section );
 
 			// Keep the translation empty if no form has translation
 			if ( $pluralMessageText !== '' ) {
 				$item['str'] = $pluralMessageText;
 			}
 		} else {
-			$match = self::expectKeyword( 'msgstr', $section );
+			$match = $this->expectKeyword( 'msgstr', $section );
 			if ( $match !== null ) {
-				$item['str'] = self::formatForWiki( $match );
+				$item['str'] = $this->formatForWiki( $match );
 			} else {
-				throw new MWException( "Unable to parse msgstr:\n\n$section" );
+				throw new RuntimeException( "Unable to parse msgstr:\n\n$section" );
 			}
 		}
 
 		// Parse flags
-		$flags = self::parseFlags( $section );
+		$flags = $this->parseFlags( $section );
 		foreach ( $flags as $key => $flag ) {
 			if ( $flag === 'fuzzy' ) {
 				$item['str'] = TRANSLATE_FUZZY . $item['str'];
@@ -271,14 +249,14 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $item;
 	}
 
-	public static function processGettextPluralMessage( $pluralCount, $section ) {
+	private function processGettextPluralMessage( ?int $pluralCount, string $section ): string {
 		$actualForms = [];
 
 		for ( $i = 0; $i < $pluralCount; $i++ ) {
-			$match = self::expectKeyword( "msgstr\\[$i\\]", $section );
+			$match = $this->expectKeyword( "msgstr\\[$i\\]", $section );
 
 			if ( $match !== null ) {
-				$actualForms[] = self::formatForWiki( $match );
+				$actualForms[] = $this->formatForWiki( $match );
 			} else {
 				$actualForms[] = '';
 				error_log( "Plural $i not found, expecting total of $pluralCount for $section" );
@@ -292,7 +270,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		}
 	}
 
-	public static function parseFlags( $section ) {
+	private function parseFlags( string $section ): array {
 		$matches = [];
 		if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
 			return array_map( 'trim', explode( ',', $matches[1] ) );
@@ -301,7 +279,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		}
 	}
 
-	public static function expectKeyword( $name, $section ) {
+	private function expectKeyword( string $name, string $section ): ?string {
 		/* Catches the multiline textblock that comes after keywords msgid,
 		 * msgstr, msgid_plural, msgctxt.
 		 */
@@ -320,9 +298,8 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	 * existing pages!
 	 * @param array $item As returned by parseGettextSection
 	 * @param string $algorithm Algorithm used to generate message keys: simple or legacy
-	 * @return string
 	 */
-	public static function generateKeyFromItem( array $item, $algorithm = 'simple' ) {
+	public function generateKeyFromItem( array $item, string $algorithm = 'simple' ): string {
 		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
 
 		if ( $item['ctxt'] === '' ) {
@@ -352,35 +329,45 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * This parses the Gettext text block format. Since trailing whitespace is
-	 * not allowed in MediaWiki pages, the default action is to append
-	 * \-character at the end of the message. You can also choose to ignore it
-	 * and use the trim action instead.
-	 * @param string $data
-	 * @param string $whitespace
-	 * @throws MWException
-	 * @return string
+	 * This method processes the gettext text block format.
 	 */
-	public static function formatForWiki( $data, $whitespace = 'mark' ) {
+	private function processData( string $data ): string {
 		$quotePattern = '/(^"|"$\n?)/m';
 		$data = preg_replace( $quotePattern, '', $data );
-		$data = stripcslashes( $data );
+		return stripcslashes( $data );
+	}
 
+	/**
+	 * This method handles the whitespace at the end of the data.
+	 * @throws InvalidArgumentException
+	 */
+	private function handleWhitespace( string $data, string $whitespace ): string {
 		if ( preg_match( '/\s$/', $data ) ) {
 			if ( $whitespace === 'mark' ) {
 				$data .= '\\';
 			} elseif ( $whitespace === 'trim' ) {
 				$data = rtrim( $data );
 			} else {
-				// @todo Only triggered if there is trailing whitespace
-				throw new MWException( 'Unknown action for whitespace' );
+				// This condition will never happen as long as $whitespace is 'mark' or 'trim'
+				throw new InvalidArgumentException( "Unknown action for whitespace: $whitespace" );
 			}
 		}
 
 		return $data;
 	}
 
-	public static function parseHeaderTags( $headers ) {
+	/**
+	 * This parses the Gettext text block format. Since trailing whitespace is
+	 * not allowed in MediaWiki pages, the default action is to append
+	 * \-character at the end of the message. You can also choose to ignore it
+	 * and use the trim action instead.
+	 */
+	private function formatForWiki( string $data, string $whitespace = 'mark' ): string {
+		$data = $this->processData( $data );
+		return $this->handleWhitespace( $data, $whitespace );
+	}
+
+	private function parseHeaderTags( string $headers ): array {
 		$tags = [];
 		foreach ( explode( "\n", $headers ) as $line ) {
 			if ( !str_contains( $line, ':' ) ) {
@@ -421,7 +408,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	protected function doGettextHeader( MessageCollection $collection, $template ) {
+	private function doGettextHeader( MessageCollection $collection, array $template ): string {
 		global $wgSitename;
 
 		$code = $collection->code;
@@ -449,18 +436,22 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		$specs = $template['HEADERS'] ?? [];
 
 		$timestamp = wfTimestampNow();
-		$specs['PO-Revision-Date'] = self::formatTime( $timestamp );
+		$specs['PO-Revision-Date'] = $this->formatTime( $timestamp );
 		if ( $this->offlineMode ) {
-			$specs['POT-Creation-Date'] = self::formatTime( $timestamp );
+			$specs['POT-Creation-Date'] = $this->formatTime( $timestamp );
 		} else {
-			$specs['X-POT-Import-Date'] = self::formatTime( wfTimestamp( TS_MW, $this->getPotTime() ) );
+			$specs['X-POT-Import-Date'] = $this->formatTime( wfTimestamp( TS_MW, $this->getPotTime() ) );
 		}
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
+
 		$specs['Language'] = LanguageCode::bcp47( $this->group->mapCode( $code ) );
 		MediaWikiServices::getInstance()->getHookContainer()
 			->run( 'Translate:GettextFFS:headerFields', [ &$specs, $this->group, $code ] );
-		$specs['X-Generator'] = $this->getGenerator();
+		$specs['X-Generator'] = 'MediaWiki '
+			. SpecialVersion::getVersion()
+			. '; Translate '
+			. Utilities::getVersion();
 
 		if ( $this->offlineMode ) {
 			$specs['X-Language-Code'] = $code;
@@ -475,7 +466,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		$output .= '""' . "\n";
 
 		foreach ( $specs as $k => $v ) {
-			$output .= self::escape( "$k: $v\n" ) . "\n";
+			$output .= $this->escape( "$k: $v\n" ) . "\n";
 		}
 
 		$output .= "\n";
@@ -483,7 +474,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	protected function doAuthors( MessageCollection $collection ) {
+	private function doAuthors( MessageCollection $collection ): string {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
@@ -495,54 +486,52 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	/**
-	 * @param string $key
-	 * @param Message $m
-	 * @param array $trans
-	 * @param array $pot
-	 * @param int $pluralCount
-	 * @return string
-	 */
-	protected function formatMessageBlock( $key, $m, $trans, $pot, $pluralCount ) {
+	private function formatMessageBlock(
+		string $key,
+		Message $message,
+		array $trans,
+		array $pot,
+		int $pluralCount
+	): string {
 		$header = $this->formatDocumentation( $key );
 		$content = '';
 
-		$comments = self::chainGetter( 'comments', $pot, $trans, [] );
+		$comments = $pot['comments'] ?? $trans['comments'] ?? [];
 		foreach ( $comments as $type => $typecomments ) {
 			foreach ( $typecomments as $comment ) {
 				$header .= "#$type $comment\n";
 			}
 		}
 
-		$flags = self::chainGetter( 'flags', $pot, $trans, [] );
-		$flags = array_merge( $m->getTags(), $flags );
+		$flags = $pot['flags'] ?? $trans['flags'] ?? [];
+		$flags = array_merge( $message->getTags(), $flags );
 
 		if ( $this->offlineMode ) {
-			$content .= 'msgctxt ' . self::escape( $key ) . "\n";
+			$content .= 'msgctxt ' . $this->escape( $key ) . "\n";
 		} else {
-			$ctxt = self::chainGetter( 'ctxt', $pot, $trans, false );
+			$ctxt = $pot['ctxt'] ?? $trans['ctxt'] ?? false;
 			if ( $ctxt !== false ) {
-				$content .= 'msgctxt ' . self::escape( $ctxt ) . "\n";
+				$content .= 'msgctxt ' . $this->escape( $ctxt ) . "\n";
 			}
 		}
 
-		$msgid = $m->definition();
-		$msgstr = $m->translation();
-		if ( str_contains( $msgstr, TRANSLATE_FUZZY ) ) {
+		$msgid = $message->definition();
+		$msgstr = $message->translation() ?? '';
+		if ( strpos( $msgstr, TRANSLATE_FUZZY ) !== false ) {
 			$msgstr = str_replace( TRANSLATE_FUZZY, '', $msgstr );
-			// Might by fuzzy infile
+			// Might be fuzzy infile
 			$flags[] = 'fuzzy';
 		}
 
 		if ( GettextPlural::hasPlural( $msgid ) ) {
 			$forms = GettextPlural::unflatten( $msgid, 2 );
-			$content .= 'msgid ' . self::escape( $forms[0] ) . "\n";
-			$content .= 'msgid_plural ' . self::escape( $forms[1] ) . "\n";
+			$content .= 'msgid ' . $this->escape( $forms[0] ) . "\n";
+			$content .= 'msgid_plural ' . $this->escape( $forms[1] ) . "\n";
 
 			try {
 				$forms = GettextPlural::unflatten( $msgstr, $pluralCount );
 				foreach ( $forms as $index => $form ) {
-					$content .= "msgstr[$index] " . self::escape( $form ) . "\n";
+					$content .= "msgstr[$index] " . $this->escape( $form ) . "\n";
 				}
 			} catch ( GettextPluralException $e ) {
 				$flags[] = 'invalid-plural';
@@ -551,8 +540,8 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				}
 			}
 		} else {
-			$content .= 'msgid ' . self::escape( $msgid ) . "\n";
-			$content .= 'msgstr ' . self::escape( $msgstr ) . "\n";
+			$content .= 'msgid ' . $this->escape( $msgid ) . "\n";
+			$content .= 'msgstr ' . $this->escape( $msgstr ) . "\n";
 		}
 
 		if ( $flags ) {
@@ -566,35 +555,19 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	/**
-	 * @param string $key
-	 * @param array $a
-	 * @param array $b
-	 * @param mixed $default
-	 * @return mixed
-	 */
-	protected static function chainGetter( $key, $a, $b, $default ) {
-		return $a[$key] ?? $b[$key] ?? $default;
-	}
-
-	protected static function formatTime( $time ) {
+	private function formatTime( string $time ): string {
 		$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' );
 
 		return $lang->sprintfDate( 'xnY-xnm-xnd xnH:xni:xns+0000', $time );
 	}
 
-	protected function getPotTime() {
+	private function getPotTime(): string {
 		$cache = $this->group->getMessageGroupCache( $this->group->getSourceLanguage() );
 
 		return $cache->exists() ? $cache->getTimestamp() : wfTimestampNow();
 	}
 
-	protected function getGenerator() {
-		return 'MediaWiki ' . SpecialVersion::getVersion() .
-			'; Translate ' . Utilities::getVersion();
-	}
-
-	protected function formatDocumentation( $key ) {
+	private function formatDocumentation( string $key ): string {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$code = $wgTranslateDocumentationLanguageCode;
@@ -616,14 +589,12 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $out;
 	}
 
-	protected static function escape( $line ) {
+	private function escape( string $line ): string {
 		// There may be \ as a last character, for keeping trailing whitespace
 		$line = preg_replace( '/(\s)\\\\$/', '\1', $line );
 		$line = addcslashes( $line, '\\"' );
 		$line = str_replace( "\n", '\n', $line );
-		$line = '"' . $line . '"';
-
-		return $line;
+		return '"' . $line . '"';
 	}
 
 	public function shouldOverwrite( string $a, string $b ): bool {
@@ -636,7 +607,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 
 	public static function getExtraSchema(): array {
-		$schema = [
+		return [
 			'root' => [
 				'_type' => 'array',
 				'_children' => [
@@ -658,8 +629,6 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				]
 			]
 		];
-
-		return $schema;
 	}
 
 	public function isContentEqual( ?string $a, ?string $b ): bool {
@@ -697,3 +666,5 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 			=== GettextPlural::unflatten( $b, $expectedPluralCount );
 	}
 }
+
+class_alias( GettextFormat::class, 'GettextFFS' );

@@ -9,7 +9,7 @@ use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 /**
  * Ensures that the translation has the same number of newlines as the source
  * message at the beginning and end of the string. This works specifically
- * for GettextFFS.
+ * for GettextFormat.
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @since 2019.09

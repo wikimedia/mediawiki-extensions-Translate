@@ -314,7 +314,7 @@ class SimpleFormat implements FileFormatSupport {
 	/**
 	 * Check if the file format of the current group is readable by the file
 	 * format system. This might happen if we are trying to export a JsonFormat
-	 * or WikiPageMessage group to a GettextFFS
+	 * or WikiPageMessage group to a GettextFormat.
 	 */
 	public function isGroupFfsReadable(): bool {
 		try {

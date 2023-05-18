@@ -1,18 +1,25 @@
 <?php
+declare( strict_types=1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use Generator;
+use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
+use ReflectionObject;
+
 /**
  * Tests for Gettext message file format.
  *
- * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
+ * @covers MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat
  */
-
-use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
-
-/** @covers \GettextFFS */
-class GettextFFSTest extends MediaWikiIntegrationTestCase {
-	protected $groupConfiguration;
+class GettextFormatTest extends MediaWikiIntegrationTestCase {
+	private array $groupConfiguration;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -25,18 +32,19 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 				'description' => 'Test description',
 			],
 			'FILES' => [
-				'class' => GettextFFS::class,
+				'format' => 'Gettext',
 				'sourcePattern' => __DIR__ . '/../data/gettext.po',
 			],
 		];
 	}
 
 	/** @dataProvider provideMangling */
-	public function testMangling( $expected, $item, $algo ) {
-		$this->assertEquals( $expected, GettextFFS::generateKeyFromItem( $item, $algo ) );
+	public function testMangling( string $expected, array $item, string $algo ): void {
+		$gettextFormat = $this->getGettextInstance();
+		$this->assertEquals( $expected, $gettextFormat->generateKeyFromItem( $item, $algo ) );
 	}
 
-	public static function provideMangling() {
+	public static function provideMangling(): array {
 		return [
 			[
 				'3f9999051ce0bc6e98f43224fe6ee1c220e34e49-Hello!_world_loooooooooooooooo',
@@ -63,7 +71,7 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function testHashing() {
+	public function testHashing(): void {
 		$item1 = [
 			'id' => 'a',
 			'str' => 'b',
@@ -75,36 +83,34 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 			'str' => 'b',
 			'ctxt' => '',
 		];
+		$gettextFormat = $this->getGettextInstance();
 
 		$this->assertNotEquals(
-			GettextFFS::generateKeyFromItem( $item1, 'legacy' ),
-			GettextFFS::generateKeyFromItem( $item2, 'legacy' ),
+			$gettextFormat->generateKeyFromItem( $item1, 'legacy' ),
+			$gettextFormat->generateKeyFromItem( $item2, 'legacy' ),
 			'Empty msgctxt is different from no msgctxt'
 		);
 
 		$this->assertNotEquals(
-			GettextFFS::generateKeyFromItem( $item1, 'simple' ),
-			GettextFFS::generateKeyFromItem( $item2, 'simple' ),
+			$gettextFormat->generateKeyFromItem( $item1, 'simple' ),
+			$gettextFormat->generateKeyFromItem( $item2, 'simple' ),
 			'Empty msgctxt is different from no msgctxt'
 		);
 
 		$this->assertEquals(
 			sha1( $item1['id'] ) . '-' . $item1['id'],
-			GettextFFS::generateKeyFromItem( $item1, 'legacy' )
+			$gettextFormat->generateKeyFromItem( $item1, 'legacy' )
 		);
 
 		$this->assertEquals(
 			substr( sha1( $item1['id'] ), 0, 6 ) . '-' . $item1['id'],
-			GettextFFS::generateKeyFromItem( $item1, 'simple' )
+			$gettextFormat->generateKeyFromItem( $item1, 'simple' )
 		);
 	}
 
-	public function testMsgctxtExport() {
-		/** @var FileBasedMessageGroup $group */
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new GettextFFS( $group );
-
-		$object = new ReflectionObject( $ffs );
+	public function testMsgctxtExport(): void {
+		$gettextFormat = $this->getGettextInstance();
+		$object = new ReflectionObject( $gettextFormat );
 		$method = $object->getMethod( 'formatMessageBlock' );
 		$method->setAccessible( true );
 
@@ -138,33 +144,32 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 		// Case 1: no context
 		$this->assertEquals(
 			$results[0],
-			trim( $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount ) )
 		);
 
 		// Case 2: empty context
 		$pot['ctxt'] = '';
 		$this->assertEquals(
 			$results[1],
-			trim( $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount ) )
 		);
 
 		// Case 3: context
 		$pot['ctxt'] = 'context';
 		$this->assertEquals(
 			$results[2],
-			trim( $method->invoke( $ffs, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount ) )
 		);
 	}
 
 	/** @dataProvider provideShouldOverwrite */
-	public function testShouldOverwrite( $a, $b, $expected ) {
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new GettextFFS( $group );
-		$actual = $ffs->shouldOverwrite( $a, $b );
+	public function testShouldOverwrite( string $a, string $b, bool $expected ): void {
+		$gettextFormat = $this->getGettextInstance();
+		$actual = $gettextFormat->shouldOverwrite( $a, $b );
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public static function provideShouldOverwrite() {
+	public static function provideShouldOverwrite(): Generator {
 		yield 'Date only change should not override' => [
 			/** @lang Locale */
 			<<<'GETTEXT'
@@ -246,18 +251,22 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function testIsContentEqual() {
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new GettextFFS( $group );
+	public function testIsContentEqual(): void {
+		$gettextFormat = $this->getGettextInstance();
 
-		$this->assertTrue( $ffs->isContentEqual( 'Foo bar', 'Foo bar' ) );
-		$this->assertTrue( $ffs->isContentEqual(
+		$this->assertTrue( $gettextFormat->isContentEqual( 'Foo bar', 'Foo bar' ) );
+		$this->assertTrue( $gettextFormat->isContentEqual(
 			'The bunnies stole {{PLURAL:GETTEXT|one carrot|%{count} carrots}}.',
 			'{{PLURAL:GETTEXT|The bunnies stole one carrot.|The bunnies stole %{count} carrots.}}' ) );
 
-		$this->assertFalse( $ffs->isContentEqual( 'Foo bar', 'Foo baz' ) );
-		$this->assertFalse( $ffs->isContentEqual(
+		$this->assertFalse( $gettextFormat->isContentEqual( 'Foo bar', 'Foo baz' ) );
+		$this->assertFalse( $gettextFormat->isContentEqual(
 			'The bunnies stole {{PLURAL:GETTEXT|one banana|%{count} carrots}}.',
 			'{{PLURAL:GETTEXT|The bunnies stole one carrot.|The bunnies stole %{count} carrots.}}' ) );
+	}
+
+	private function getGettextInstance(): GettextFormat {
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		return new GettextFormat( $group );
 	}
 }

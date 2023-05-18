@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
-use GettextFFS;
 use Html;
 use HTMLForm;
 use LogicException;
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -218,25 +218,25 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			case 'export-as-po':
 				$out->disable();
 
-				$ffs = null;
+				$fileFormat = null;
 				if ( $group instanceof FileBasedMessageGroup ) {
-					$ffs = $group->getFFS();
+					$fileFormat = $group->getFFS();
 				}
 
-				if ( !$ffs instanceof GettextFFS ) {
+				if ( !$fileFormat instanceof GettextFormat ) {
 					if ( !$group instanceof FileBasedMessageGroup ) {
 						$group = FileBasedMessageGroup::newFromMessageGroup( $group );
 					}
 
-					$ffs = new GettextFFS( $group );
+					$fileFormat = new GettextFormat( $group );
 				}
 
-				$ffs->setOfflineMode( true );
+				$fileFormat->setOfflineMode( true );
 
 				$filename = "{$group->getId()}_{$this->language}.po";
 				$this->sendExportHeaders( $filename );
 
-				echo $ffs->writeIntoVariable( $collection );
+				echo $fileFormat->writeIntoVariable( $collection );
 				break;
 
 			case 'export-to-file':

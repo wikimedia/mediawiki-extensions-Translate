@@ -9,7 +9,6 @@ use AppleInfoPlistFfs;
 use DtdFFS;
 use FileBasedMessageGroup;
 use FlatPhpFFS;
-use GettextFFS;
 use IniFFS;
 use InvalidArgumentException;
 use JavaFFS;
@@ -38,7 +37,7 @@ class FileFormatFactory {
 		'AppleInfoPlist' => AppleInfoPlistFfs::class,
 		'Dtd' => DtdFFS::class,
 		'FlatPhp' => FlatPhpFFS::class,
-		'Gettext' => GettextFFS::class,
+		'Gettext' => GettextFormat::class,
 		'Ini' => IniFFS::class,
 		'Java' => JavaFFS::class,
 		'JavaScript' => JavaScriptFFS::class,

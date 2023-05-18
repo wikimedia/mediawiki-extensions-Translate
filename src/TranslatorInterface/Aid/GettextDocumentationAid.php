@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use FileBasedMessageGroup;
-use GettextFFS;
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 
@@ -24,9 +24,9 @@ class GettextDocumentationAid extends TranslationAid {
 			throw new TranslationHelperException( 'Not a FileBasedMessageGroup group' );
 		}
 
-		$ffs = $group->getFFS();
-		if ( !$ffs instanceof GettextFFS ) {
-			throw new TranslationHelperException( 'Group is not using GettextFFS' );
+		$fileFormat = $group->getFFS();
+		if ( !$fileFormat instanceof GettextFormat ) {
+			throw new TranslationHelperException( 'Group is not using GettextFormat' );
 		}
 
 		$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
