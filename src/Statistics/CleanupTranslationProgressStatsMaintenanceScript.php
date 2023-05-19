@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Maintenance;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
 use MessageGroupStats;
-use RawMessage;
 use const DB_PRIMARY;
 
 /**
