@@ -27,7 +27,7 @@ class StringMatcherTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $mangled, 'Message is prefixed correctly' );
 	}
 
-	public function messageKeyProvider(): array {
+	public static function messageKeyProvider(): array {
 		// The fourth parameter causes the key to be prefixed or unprefixed
 		$keys = [
 			[ 'key', 'p-key', 'p-', [ 'key' ], 'Exact match' ],
@@ -81,7 +81,7 @@ class StringMatcherTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $key, $unmangled, 'Mangling is reversible' );
 	}
 
-	public function problematicMessageKeyProvider(): array {
+	public static function problematicMessageKeyProvider(): array {
 		$keys = [
 			[ 'key', 'simple string' ],
 			[ 'key[]', 'string with brackets' ],

@@ -10,8 +10,8 @@ use MockTranslateValidator;
 /** @covers \MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory */
 class InsertableFactoryTest extends MediaWikiUnitTestCase {
 	/**
-	 * @dataProvider getPreProvidedInsertables
-	 * @dataProvider getCustomInsertables
+	 * @dataProvider providePreProvidedInsertables
+	 * @dataProvider provideCustomInsertables
 	 */
 	public function testValidLoadInstance( string $className, $params = null ) {
 		$instance = InsertableFactory::make( $className, $params );
@@ -34,7 +34,7 @@ class InsertableFactoryTest extends MediaWikiUnitTestCase {
 		InsertableFactory::make( MockTranslateValidator::class, '' );
 	}
 
-	public function getPreprovidedInsertables() {
+	public static function providePreProvidedInsertables() {
 		yield [ HtmlTagInsertablesSuggester::class ];
 
 		yield [
@@ -50,7 +50,7 @@ class InsertableFactoryTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	public function getCustomInsertables() {
+	public static function provideCustomInsertables() {
 		yield [ \MockCustomInsertableSuggester::class ];
 	}
 }

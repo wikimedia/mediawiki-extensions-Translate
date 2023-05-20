@@ -31,7 +31,7 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 		$content->validate();
 	}
 
-	public function provideJsonStructures() {
+	public static function provideJsonStructures() {
 		// Message validation
 		yield [
 			json_encode( [
@@ -142,7 +142,7 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	public function provideValidJsonStructure() {
+	public static function provideValidJsonStructure() {
 		// Valid value
 		yield [
 			json_encode( [
@@ -201,7 +201,7 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $allowPriorityLanguagesOnly, $metadata->areOnlyPriorityLanguagesAllowed() );
 	}
 
-	public function provideGetMetadata() {
+	public static function provideGetMetadata() {
 		yield [
 			json_encode(
 				[

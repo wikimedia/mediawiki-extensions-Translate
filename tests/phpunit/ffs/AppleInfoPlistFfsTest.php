@@ -58,7 +58,7 @@ class AppleInfoPlistFfsTest extends MediaWikiIntegrationTestCase {
 			'Messages survive roundtrip through write and read' );
 	}
 
-	public function stringProvider() {
+	public static function stringProvider() {
 		$input =
 			<<<'STRINGS'
 			website = "<nowiki>http://en.wikipedia.org/</nowiki>";

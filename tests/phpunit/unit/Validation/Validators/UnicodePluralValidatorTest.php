@@ -13,7 +13,7 @@ class UnicodePluralValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new UnicodePluralValidator(), 'plural', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'{{PLURAL|one=a|b}}',
 			'a',

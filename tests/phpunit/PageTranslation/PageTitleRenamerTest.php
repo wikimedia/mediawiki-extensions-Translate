@@ -54,7 +54,7 @@ class PageTitleRenamerTest extends MediaWikiIntegrationTestCase {
 		$pageTitleRenamer->getNewTitle( Title::newFromText( $titleToRename ) );
 	}
 
-	public function provideNewPageTitle() {
+	public static function provideNewPageTitle() {
 		yield [
 			'Main Page',
 			'New Main Page',
@@ -137,7 +137,7 @@ class PageTitleRenamerTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function provideNewPageTitleException() {
+	public static function provideNewPageTitleException() {
 		yield 'Moving a page not part of translatable page' => [
 			'Main Page',
 			'New Main Page',

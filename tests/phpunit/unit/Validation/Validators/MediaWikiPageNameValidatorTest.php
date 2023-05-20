@@ -13,7 +13,7 @@ class MediaWikiPageNameValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new MediaWikiPageNameValidator(), 'pagename', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'{{ns:project}}:hello',
 			'{{ns:hello}}:hello',

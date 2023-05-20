@@ -190,7 +190,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $incrementedTime, $cacheEntry[0]->exptime() );
 	}
 
-	public function provideTestSet() {
+	public static function provideTestSet() {
 		yield [
 			'keyname' => 'hello',
 			'value' => 'World',
@@ -213,7 +213,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function provideTestSetMulti() {
+	public static function provideTestSetMulti() {
 		yield [
 			'inputs' => [
 				'key' => 'value',
@@ -233,7 +233,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function provideTestHasEntryWithTag() {
+	public static function provideTestHasEntryWithTag() {
 		$testTag = 'test';
 		$today = new DateTime();
 		$tomorrow = ( new DateTime() )->add( new DateInterval( 'P1D' ) );
@@ -276,7 +276,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function provideTestHasExpired() {
+	public static function provideTestHasExpired() {
 		$tomorrow = ( new DateTime() )->add( new DateInterval( 'P1D' ) );
 		$yesterday = ( new DateTime() )->sub( new DateInterval( 'P1D' ) );
 
@@ -301,7 +301,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function provideTestGetByTag() {
+	public static function provideTestGetByTag() {
 		$testTag = 'test';
 		yield [
 			'inputs' => [

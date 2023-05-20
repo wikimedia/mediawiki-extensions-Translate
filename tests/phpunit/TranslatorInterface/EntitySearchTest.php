@@ -65,7 +65,7 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public function provideTestSearchStaticMessageGroups(): Generator {
+	public static function provideTestSearchStaticMessageGroups(): Generator {
 		yield [
 			'Page',
 			10,
@@ -170,7 +170,7 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public function provideTestSearchMessages(): Generator {
+	public static function provideTestSearchMessages(): Generator {
 		yield 'prefix and infix case-insensitive matching at word boundaries' => [
 			'title',
 			10,

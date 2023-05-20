@@ -58,7 +58,7 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
-	public function provideTestGenerateSourceFromTranslations() {
+	public static function provideTestGenerateSourceFromTranslations() {
 		$inline = true;
 		$block = false;
 

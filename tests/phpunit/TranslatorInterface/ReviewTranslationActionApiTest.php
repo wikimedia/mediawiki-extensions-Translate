@@ -95,7 +95,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		}
 	}
 
-	public function provideTestGetReviewBlockers() {
+	public static function provideTestGetReviewBlockers() {
 		yield [
 			"don't have permission",
 			'plainUser',

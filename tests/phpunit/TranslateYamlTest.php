@@ -26,7 +26,7 @@ class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $output, $comment );
 	}
 
-	public function provideTestLoadString() {
+	public static function provideTestLoadString() {
 		$tests = [];
 		$tests[] = [
 			'a: b',

@@ -50,12 +50,12 @@ class FileFormatFactoryTest extends MediaWikiUnitTestCase {
 		$fileFormatFactory->create( $fileFormatId, $messageGroupMock );
 	}
 
-	public function provideTestGetFileFormat(): Generator {
+	public static function provideTestGetFileFormat(): Generator {
 		yield [ 'Json', JsonFormat::class ];
 		yield [ 'AndroidXml', AndroidXmlFormat::class ];
 	}
 
-	public function provideTestGetFileFormatException(): Generator {
+	public static function provideTestGetFileFormatException(): Generator {
 		yield [ 'JsonFFS-x', JsonFormat::class ];
 	}
 

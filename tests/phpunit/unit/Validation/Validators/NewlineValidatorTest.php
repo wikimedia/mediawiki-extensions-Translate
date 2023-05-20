@@ -13,7 +13,7 @@ class NewlineValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new NewlineValidator(), 'newline', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'Hello',
 			'Hello World',

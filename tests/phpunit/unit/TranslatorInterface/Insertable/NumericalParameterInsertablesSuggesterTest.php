@@ -17,7 +17,7 @@ class NumericalParameterInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $suggester->getInsertables( $input ) );
 	}
 
-	public function getInsertablesProvider() {
+	public static function getInsertablesProvider() {
 		return [
 			[ '$1 $2 $3', [
 				new Insertable( '$1', '$1', '' ),

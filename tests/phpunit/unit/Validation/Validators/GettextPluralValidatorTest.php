@@ -14,7 +14,7 @@ class GettextPluralValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new GettextPluralValidator(), 'plural', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		// Note that BaseValidatorTestCase uses 'fr' as target language
 		yield [
 			'{{PLURAL:GETTEXT|meter|meters}}',

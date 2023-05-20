@@ -77,7 +77,7 @@ class MessageUpdateParameterTest extends MediaWikiUnitTestCase {
 		return $job;
 	}
 
-	public function provideSerializable() {
+	public static function provideSerializable() {
 		yield [
 			'Normal_Job/en',
 			'Hello World!',

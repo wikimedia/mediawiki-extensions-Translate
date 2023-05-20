@@ -14,7 +14,7 @@ class InsertableRegexValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( $validator, 'variable', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'/\$[a-z0-9]+/',
 			'$contacts is $diff less than that.',

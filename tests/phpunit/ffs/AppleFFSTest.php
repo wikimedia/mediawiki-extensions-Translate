@@ -89,7 +89,7 @@ class AppleFFSTest extends MediaWikiIntegrationTestCase {
 			'Messages survive roundtrip through write and read' );
 	}
 
-	public function rowValuesProvider() {
+	public static function rowValuesProvider() {
 		return [
 			[ 'key', 'value', 'simple row' ],
 			[ 'key', 'value', 'row with different sep' ],

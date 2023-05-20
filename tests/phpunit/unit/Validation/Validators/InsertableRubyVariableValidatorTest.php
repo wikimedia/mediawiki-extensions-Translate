@@ -13,7 +13,7 @@ class InsertableRubyVariableValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new InsertableRubyVariableValidator(), 'variable', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'Test variable - %{ruby} %{ruby2}',
 			'%{hello} - Testing translation',

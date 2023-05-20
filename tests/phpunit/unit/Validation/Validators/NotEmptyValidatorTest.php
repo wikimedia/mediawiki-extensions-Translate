@@ -13,7 +13,7 @@ class NotEmptyValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new NotEmptyValidator(), 'empty', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'Hello',
 			'',

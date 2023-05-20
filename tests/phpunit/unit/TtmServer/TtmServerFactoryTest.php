@@ -66,7 +66,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		$factory->create( '' );
 	}
 
-	public function provideCreateFailure() {
+	public static function provideCreateFailure() {
 		yield 'unknown' => [ [] ];
 		yield 'malformed' => [ [ '' => 'gibberish' ] ];
 		yield 'incomplete config' => [ [ '' => [ 'someoption' => 'somevalue' ] ] ];
@@ -82,7 +82,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function provideGetWritable(): Generator {
+	public static function provideGetWritable(): Generator {
 		$dummyTtm = [
 			'database' => false,
 			// Passed to wfGetDB
@@ -141,7 +141,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		$ttmFactory->getWritable();
 	}
 
-	public function provideGetWritableError(): Generator {
+	public static function provideGetWritableError(): Generator {
 		$readableTtmServer = [
 			'type' => 'ttmserver',
 			'class' => FakeReadableTtmServer::class,
@@ -183,7 +183,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	public function provideGetDefaultForRead(): Generator {
+	public static function provideGetDefaultForRead(): Generator {
 		$readableTtmServer = [
 			'type' => 'ttmserver',
 			'class' => FakeReadableTtmServer::class
@@ -253,7 +253,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function provideTestGetWriteOnly(): Generator {
+	public static function provideTestGetWriteOnly(): Generator {
 		$writableServer = [
 			'type' => 'ttmserver',
 			'class' => FakeTTMServer::class,

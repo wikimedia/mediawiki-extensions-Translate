@@ -42,7 +42,7 @@ class UrlInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function getTestUrlInsertablesSuggesterProvider() {
+	public static function getTestUrlInsertablesSuggesterProvider() {
 		yield [
 			'Visit http://wikipedia.org',
 			[

@@ -67,7 +67,7 @@ class JavaFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $value, $newvalue, "Value survives roundtrip in testdata: $comment" );
 	}
 
-	public function rowValuesProvider() {
+	public static function rowValuesProvider() {
 		return [
 			[ 'key', '=', 'value', 'simple row' ],
 			[ 'key', ':', 'value', 'row with different sep' ],

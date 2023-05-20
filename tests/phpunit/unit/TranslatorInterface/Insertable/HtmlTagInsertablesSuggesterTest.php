@@ -41,7 +41,7 @@ class HtmlTagInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function getTestHtmlTagInsertablesSuggesterProvider() {
+	public static function getTestHtmlTagInsertablesSuggesterProvider() {
 		yield [
 			'Hello <b>World</b>',
 			[

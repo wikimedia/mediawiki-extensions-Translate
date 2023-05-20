@@ -13,7 +13,7 @@ class MediaWikiLinkValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new MediaWikiLinkValidator(), 'links', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'[[$3|Hello]] [[#Hello|Hello World]]',
 			'Hello world',

@@ -18,7 +18,7 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 		 $this->assertSame( $expected, $parser->containsMarkup( $input ) );
 	}
 
-	public function provideTestContainsMarkup() {
+	public static function provideTestContainsMarkup() {
 		yield [ 'Plain page', false ];
 
 		yield [ '<languages/>', false ];
@@ -40,7 +40,7 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 		$this->assertSame( $expected, $parser->cleanupTags( $input ) );
 	}
 
-	public function provideTestCleanupTags() {
+	public static function provideTestCleanupTags() {
 		yield 'Unbalanced tag in a section preview' => [
 			"== Hello ==\n</translate>",
 			'== Hello ==',
@@ -148,7 +148,7 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expectedUnits, $output->units() );
 	}
 
-	public function provideTestParse() {
+	public static function provideTestParse() {
 		// Test case 1 //
 		$s1 = new TranslationUnit( '== Unit tests ==' );
 		$s2 = new TranslationUnit( 'Introduction to unit tests.' );

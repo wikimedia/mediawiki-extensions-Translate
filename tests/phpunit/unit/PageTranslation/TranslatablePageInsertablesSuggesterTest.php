@@ -18,7 +18,7 @@ class TranslatablePageInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $suggester->getInsertables( $input ) );
 	}
 
-	public function getInsertablesProvider() {
+	public static function getInsertablesProvider() {
 		return [
 			[
 				'Hi $1, I am $myname $myLastName.',

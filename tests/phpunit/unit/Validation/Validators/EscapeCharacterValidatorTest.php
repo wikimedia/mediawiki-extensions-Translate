@@ -15,7 +15,7 @@ class EscapeCharacterValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( $validator, 'escape', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		$message = new FatMessage( 'key', 'Hello' );
 
 		yield [

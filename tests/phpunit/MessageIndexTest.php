@@ -44,7 +44,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	public function provideTranslateMessageIndexConfig() {
+	public static function provideTranslateMessageIndexConfig() {
 		yield [ 'DatabaseMessageIndex', DatabaseMessageIndex::class ];
 		yield [ [ 'DatabaseMessageIndex' ], DatabaseMessageIndex::class ];
 		yield [ [ 'SerializedMessageIndex' ], SerializedMessageIndex::class ];
@@ -70,7 +70,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected['values'], $actual['values'], 'value diff' );
 	}
 
-	public function provideTestGetArrayDiff() {
+	public static function provideTestGetArrayDiff() {
 		$tests = [];
 
 		// Addition

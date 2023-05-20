@@ -64,7 +64,7 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	public function provideTestParseFile() {
+	public static function provideTestParseFile() {
 		yield [
 			'filenotexists.csv',
 			[ 'not exist, is not readable or is not a file' ],

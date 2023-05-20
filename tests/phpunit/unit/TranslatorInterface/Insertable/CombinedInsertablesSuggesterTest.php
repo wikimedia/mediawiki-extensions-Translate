@@ -17,7 +17,7 @@ class CombinedInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$this->assertArrayEquals( $expected, $suggester->getInsertables( $input ) );
 	}
 
-	public function getInsertablesProvider() {
+	public static function getInsertablesProvider() {
 		return [
 			// Test basic combination of multiple InsertablesSuggesters
 			[

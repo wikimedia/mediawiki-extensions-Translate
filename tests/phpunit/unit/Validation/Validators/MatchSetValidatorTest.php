@@ -14,7 +14,7 @@ class MatchSetValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( $validator, 'value-not-present', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			[ 'values' => [ 'rtl', 'Ltr' ] ],
 			'rtl',

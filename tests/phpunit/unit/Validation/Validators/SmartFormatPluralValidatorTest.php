@@ -13,7 +13,7 @@ class SmartFormatPluralValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new SmartFormatPluralValidator(), 'plural', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'{0:message|messages}',
 			'{1:test|tests}{0:message|messages}',

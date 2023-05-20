@@ -17,7 +17,7 @@ class MediaWikiInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $suggester->getInsertables( $input ) );
 	}
 
-	public function getInsertablesProvider() {
+	public static function getInsertablesProvider() {
 		return [
 			[ 'Hi $1', [
 				new Insertable( '$1', '$1', '' )

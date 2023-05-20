@@ -164,7 +164,7 @@ class GettextFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public function provideShouldOverwrite() {
+	public static function provideShouldOverwrite() {
 		yield 'Date only change should not override' => [
 			/** @lang Locale */
 			<<<'GETTEXT'

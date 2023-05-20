@@ -60,7 +60,7 @@ class JsonFormatTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	public function jsonProvider(): array {
+	public static function jsonProvider(): array {
 		$values = [];
 
 		$values[] = [

@@ -45,7 +45,7 @@ class AmdFFSTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $parsed );
 	}
 
-	public function amdProvider() {
+	public static function amdProvider() {
 		$values = [];
 
 		$file1 =

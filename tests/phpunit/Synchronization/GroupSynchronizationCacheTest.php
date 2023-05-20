@@ -18,7 +18,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->groupSyncCache = $this->getGroupSynchronizationCache();
+		$this->groupSyncCache = self::getGroupSynchronizationCache();
 	}
 
 	public function testIsGroupBeingProcessed() {
@@ -244,7 +244,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 	/** @dataProvider provideExtendGroupExpiryTime */
 	public function testExtendGroupExpiryTime( int $initialExpiryTime, string $expectedCondition ) {
 		$groupId = 'test-group-id';
-		$this->groupSyncCache = $this->getGroupSynchronizationCache( $initialExpiryTime );
+		$this->groupSyncCache = self::getGroupSynchronizationCache( $initialExpiryTime );
 
 		$this->startGroupSync( $groupId, 'hello' );
 
@@ -265,7 +265,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testExtendTimedOutGroupExpiryTime() {
-		$groupSyncCache = $this->getGroupSynchronizationCache( -1 );
+		$groupSyncCache = self::getGroupSynchronizationCache( -1 );
 		$this->groupSyncCache = $groupSyncCache;
 
 		$this->expectException( LogicException::class );
@@ -276,11 +276,11 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->groupSyncCache->extendGroupExpiryTime( $groupId );
 	}
 
-	public function provideGetSynchronizationStatus() {
+	public static function provideGetSynchronizationStatus() {
 		$groupId = 'hello';
 
 		yield [
-			$this->getGroupSynchronizationCache(),
+			self::getGroupSynchronizationCache(),
 			$groupId,
 			[ 'Title', 'Title1' ],
 			[ 'Title' ],
@@ -288,7 +288,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		];
 
 		yield [
-			$this->getGroupSynchronizationCache(),
+			self::getGroupSynchronizationCache(),
 			$groupId,
 			[ 'Hello' ],
 			[ 'Hello' ],
@@ -296,7 +296,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		];
 
 		yield [
-			$this->getGroupSynchronizationCache( -1 ),
+			self::getGroupSynchronizationCache( -1 ),
 			$groupId,
 			[ 'Hello' ],
 			[ 'Hello' ],
@@ -304,7 +304,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		];
 
 		yield [
-			$this->getGroupSynchronizationCache( -1 ),
+			self::getGroupSynchronizationCache( -1 ),
 			$groupId,
 			[ 'Hello', 'Title' ],
 			[ 'Hello' ],
@@ -312,7 +312,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	public function provideExtendGroupExpiryTime() {
+	public static function provideExtendGroupExpiryTime() {
 		yield 'group expiry time is extended when it is about to expire' => [
 			10,
 			'assertGreaterThan'
@@ -333,7 +333,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		] );
 	}
 
-	private function getGroupSynchronizationCache( int $timeout = null ): GroupSynchronizationCache {
+	private static function getGroupSynchronizationCache( int $timeout = null ): GroupSynchronizationCache {
 		$mwServices = MediaWikiServices::getInstance();
 		$lb = $mwServices->getDBLoadBalancer();
 		$jsonCodec = $mwServices->getJsonCodec();

@@ -13,7 +13,7 @@ class BraceBalanceValidatorTest extends BaseValidatorTestCase {
 		$this->runValidatorTests( new BraceBalanceValidator(), 'balance', ...$params );
 	}
 
-	public function provideTestCases() {
+	public static function provideTestCases() {
 		yield [
 			'{{ Hello }}',
 			'{{ Hello }}}',

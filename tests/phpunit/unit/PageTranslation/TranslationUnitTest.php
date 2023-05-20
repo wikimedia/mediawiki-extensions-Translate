@@ -164,7 +164,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public function provideTestGetTextForRendering() {
+	public static function provideTestGetTextForRendering() {
 		$fuzzy = true;
 		$inline = true;
 		$block = false;
@@ -392,7 +392,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		$this->assertArrayEquals( $expected, $actual );
 	}
 
-	public function providerTestGetIssues() {
+	public static function providerTestGetIssues() {
 		// We are testing the message keys here to document the checks.
 		// Severity is left untested to allow changing them easily.
 		yield 'no variables - no issues' => [
@@ -461,7 +461,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		);
 	}
 
-	public function provideTestHeadingParsing() {
+	public static function provideTestHeadingParsing() {
 		yield 'parsing of heading text with balanced "="' => [
 			'== Hello ==',
 			'== Hello - Translated ==',

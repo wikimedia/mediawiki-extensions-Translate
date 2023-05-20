@@ -25,7 +25,7 @@ class MediaWikiPluralValidatorTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $provided, $comment );
 	}
 
-	public function getPluralFormCountProvider() {
+	public static function getPluralFormCountProvider() {
 		yield [ 2, 'en', 'English has two plural forms' ];
 		yield [ 3, 'ro', 'Romanian has three plural forms' ];
 		yield [ 5, 'br', 'Breton has five plural forms' ];
@@ -38,7 +38,7 @@ class MediaWikiPluralValidatorTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $provided, $comment );
 	}
 
-	public function getPluralFormsProvider() {
+	public static function getPluralFormsProvider() {
 		yield [
 			[ [ '1', '2' ] ],
 			'a{{PLURAL:#|1|2}}b',
@@ -98,7 +98,7 @@ class MediaWikiPluralValidatorTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expected, $provided, $comment );
 	}
 
-	public function removeExplicitPluralFormsProvider() {
+	public static function removeExplicitPluralFormsProvider() {
 		yield [
 			[ '1', '2' ],
 			[ '1', '2' ],

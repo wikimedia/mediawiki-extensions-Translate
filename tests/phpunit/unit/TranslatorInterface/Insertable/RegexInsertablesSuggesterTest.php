@@ -29,7 +29,7 @@ class RegexInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	public function getTestRegexInsertableProvider() {
+	public static function getTestRegexInsertableProvider() {
 		yield [
 			'Hello $name! I\'m $myname',
 			[
