@@ -203,7 +203,8 @@ return [
 			$services->getJobQueueGroup(),
 			new RevTagStore(),
 			$services->getDBLoadBalancer(),
-			$services->get( 'Translate:TranslatableBundleStatusStore' )
+			$services->get( 'Translate:TranslatableBundleStatusStore' ),
+			$services->get( 'Translate:TranslatablePageParser' ),
 		);
 	},
 

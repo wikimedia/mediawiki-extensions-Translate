@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use JobQueueGroup;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStatus;
 use MediaWikiUnitTestCase;
 use MessageIndex;
@@ -30,7 +31,8 @@ class TranslatablePageStoreTest extends MediaWikiUnitTestCase {
 			$this->createStub( JobQueueGroup::class ),
 			$this->getRevTagStoreStub( $readyRevisionId, $markRevisionId ),
 			$this->createStub( LoadBalancer::class ),
-			$this->getTranslatableBundleStatusStoreMock( $shouldSetStatusBeCalled, $title, $expectedStatus )
+			$this->getTranslatableBundleStatusStoreMock( $shouldSetStatusBeCalled, $title, $expectedStatus ),
+			$this->createStub( TranslatablePageParser::class ),
 		);
 
 		$status = $tpPageStore->updateStatus( $title );

@@ -8,9 +8,13 @@ use DeferredUpdates;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 use MessageIndex;
+use RuntimeException;
+use TextContent;
 use Title;
 use TranslateMetadata;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -22,29 +26,27 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @license GPL-2.0-or-later
  */
 class TranslatablePageStore implements TranslatableBundleStore {
-	/** @var MessageIndex */
-	private $messageIndex;
-	/** @var JobQueueGroup */
-	private $jobQueue;
-	/** @var RevTagStore */
-	private $revTagStore;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var TranslatableBundleStatusStore */
-	private $translatableBundleStatusStore;
+	private MessageIndex $messageIndex;
+	private JobQueueGroup $jobQueue;
+	private RevTagStore $revTagStore;
+	private ILoadBalancer $loadBalancer;
+	private TranslatableBundleStatusStore $translatableBundleStatusStore;
+	private TranslatablePageParser $translatablePageParser;
 
 	public function __construct(
 		MessageIndex $messageIndex,
 		JobQueueGroup $jobQueue,
 		RevTagStore $revTagStore,
 		ILoadBalancer $loadBalancer,
-		TranslatableBundleStatusStore $translatableBundleStatusStore
+		TranslatableBundleStatusStore $translatableBundleStatusStore,
+		TranslatablePageParser $translatablePageParser
 	) {
 		$this->messageIndex = $messageIndex;
 		$this->jobQueue = $jobQueue;
 		$this->revTagStore = $revTagStore;
 		$this->loadBalancer = $loadBalancer;
 		$this->translatableBundleStatusStore = $translatableBundleStatusStore;
+		$this->translatablePageParser = $translatablePageParser;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
@@ -76,8 +78,17 @@ class TranslatablePageStore implements TranslatableBundleStore {
 			);
 		}
 
-		$this->revTagStore->replaceTag( $bundle->getTitle(), RevTagStore::TP_READY_TAG, $revision->getId() );
-		TranslatablePage::clearSourcePageCache();
+		$pageContent = $revision->getContent( SlotRecord::MAIN );
+		if ( !$pageContent instanceof TextContent ) {
+			throw new RuntimeException( "Translatable page {$bundle->getTitle()} has non-textual content." );
+		}
+
+		// Check if the revision still has the <translate> tag
+		$pageText = $pageContent->getText();
+		if ( $this->translatablePageParser->containsMarkup( $pageText ) ) {
+			$this->revTagStore->replaceTag( $bundle->getTitle(), RevTagStore::TP_READY_TAG, $revision->getId() );
+			TranslatablePage::clearSourcePageCache();
+		}
 	}
 
 	/** Delete a translatable page */
