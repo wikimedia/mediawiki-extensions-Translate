@@ -1,34 +1,29 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Title\Title;
+
 /**
- * PHP variables file format handler.
+ * Implements file format support for PHP files which consist of multiple
+ * variable assignments.
  *
- * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2008-2010, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
-use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
-use MediaWiki\Extension\Translate\MessageLoading\Message;
-use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
-
-/**
- * Implements file format support for PHP files which consist of multiple
- * variable assignments.
- */
-class FlatPhpFFS extends SimpleFormat implements MetaYamlSchemaExtender {
+class FlatPhpFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 	public function getFileExtensions(): array {
 		return [ '.php' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 */
-	public function readFromVariable( $data ): array {
+	public function readFromVariable( string $data ): array {
 		# Authors first
 		$matches = [];
 		preg_match_all( '/^ \* @author\s+(.+)$/m', $data, $matches );
@@ -85,7 +80,7 @@ class FlatPhpFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	protected function doHeader( MessageCollection $collection ) {
+	private function doHeader( MessageCollection $collection ): string {
 		global $wgServer, $wgTranslateDocumentationLanguageCode;
 
 		$code = $collection->code;
@@ -118,7 +113,7 @@ class FlatPhpFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	protected function doAuthors( MessageCollection $collection ) {
+	private function doAuthors( MessageCollection $collection ): string {
 		$output = '';
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
@@ -131,7 +126,7 @@ class FlatPhpFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 
 	public static function getExtraSchema(): array {
-		$schema = [
+		return [
 			'root' => [
 				'_type' => 'array',
 				'_children' => [
@@ -146,7 +141,7 @@ class FlatPhpFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 				]
 			]
 		];
-
-		return $schema;
 	}
 }
+
+class_alias( FlatPhpFormat::class, 'FlatPhpFFS' );
