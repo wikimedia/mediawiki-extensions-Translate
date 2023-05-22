@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use AppleInfoPlistFfs;
-use DtdFFS;
 use FileBasedMessageGroup;
 use FlatPhpFFS;
 use InvalidArgumentException;
@@ -31,7 +30,7 @@ class FileFormatFactory {
 		'AndroidXml' => AndroidXmlFormat::class,
 		'Apple' => AppleFormat::class,
 		'AppleInfoPlist' => AppleInfoPlistFfs::class,
-		'Dtd' => DtdFFS::class,
+		'Dtd' => DtdFormat::class,
 		'FlatPhp' => FlatPhpFFS::class,
 		'Gettext' => GettextFormat::class,
 		'Ini' => IniFormat::class,

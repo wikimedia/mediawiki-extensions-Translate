@@ -1,18 +1,25 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
+use FileBasedMessageGroup;
+use MediaWikiIntegrationTestCase;
+use MessageGroupBase;
+
 /**
- * The DtdFFS class is responsible for loading messages from .dtd
+ * The DtdFormat class is responsible for loading messages from .dtd
  * files.
  * These tests check that the message keys are loaded and saved correctly.
  * @author Niklas Laxström
  * @author Amir E. Aharoni
- * @file
  * @license GPL-2.0-or-later
  */
 
-/** @covers DtdFFS */
-class DtdFFSTest extends MediaWikiIntegrationTestCase {
+/** @covers MediaWiki\Extension\Translate\FileFormatSupport\DtdFormat */
+class DtdFormatTest extends MediaWikiIntegrationTestCase {
 
-	protected $groupConfiguration = [
+	private const GROUP_CONFIGURATION = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
@@ -21,11 +28,11 @@ class DtdFFSTest extends MediaWikiIntegrationTestCase {
 			'description' => 'Test description',
 		],
 		'FILES' => [
-			'class' => DtdFFS::class,
+			'format' => 'Dtd',
 		],
 	];
 
-	public function testParsing() {
+	public function testParsing(): void {
 		$file =
 			<<<'DTD'
 			<!--
@@ -40,9 +47,9 @@ class DtdFFSTest extends MediaWikiIntegrationTestCase {
 			DTD;
 
 		/** @var FileBasedMessageGroup $group */
-		$group = MessageGroupBase::factory( $this->groupConfiguration );
-		$ffs = new DtdFFS( $group );
-		$parsed = $ffs->readFromVariable( $file );
+		$group = MessageGroupBase::factory( self::GROUP_CONFIGURATION );
+		$dtdFormat = new DtdFormat( $group );
+		$parsed = $dtdFormat->readFromVariable( $file );
 		$expected = [
 			'okawix.title' => 'Okawix &okawix.vernum; - Navigator de Wikipedia',
 			'okawix.back' => 'Retro',
