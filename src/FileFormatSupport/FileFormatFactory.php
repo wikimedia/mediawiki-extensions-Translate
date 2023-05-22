@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\FileFormatSupport;
 use AppleInfoPlistFfs;
 use FileBasedMessageGroup;
 use InvalidArgumentException;
-use JavaScriptFFS;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use XliffFFS;
 
@@ -33,7 +32,6 @@ class FileFormatFactory {
 		'Gettext' => GettextFormat::class,
 		'Ini' => IniFormat::class,
 		'Java' => JavaFormat::class,
-		'JavaScript' => JavaScriptFFS::class,
 		'Json' => JsonFormat::class,
 		'Xliff' => XliffFFS::class,
 		'Yaml' => YamlFormat::class

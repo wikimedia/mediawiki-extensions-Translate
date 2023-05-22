@@ -95,7 +95,6 @@
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\IniFormat": "src/FileFormatSupport/IniFormat.php",
 		"JavaFFS": "src/FileFormatSupport/JavaFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\JavaFormat": "src/FileFormatSupport/JavaFormat.php",
-		"JavaScriptFFS": "ffs/JavaScriptFFS.php",
 		"JsonFFS": "src/FileFormatSupport/JsonFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\JsonFormat": "src/FileFormatSupport/JsonFormat.php",
 		"MediaWikiExtensionMessageGroup": "messagegroups/MediaWikiExtensionMessageGroup.php",
