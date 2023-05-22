@@ -1,40 +1,21 @@
 <?php
-/**
- * Support for ini message file format.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+namespace MediaWiki\Extension\Translate\FileFormatSupport;
+
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 
 /**
- * IniFFS currently parses and generates flat ini files with language
+ * IniFormat currently parses and generates flat ini files with language
  * code as header key.
  *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup FileFormatSupport
- * @since 2012-11-19
  */
-class IniFFS extends SimpleFormat {
-	public static function isValid( $data ) {
-		$conf = [
-			'BASIC' => [ 'class' => FileBasedMessageGroup::class, 'namespace' => 8 ],
-			'FILES' => []
-		];
-		/** @var FileBasedMessageGroup $group */
-		$group = MessageGroupBase::factory( $conf );
-		'@phan-var FileBasedMessageGroup $group';
-
-		$ffs = new self( $group );
-		$parsed = $ffs->readFromVariable( $data );
-
-		return (bool)count( $parsed['MESSAGES'] );
-	}
-
+class IniFormat extends SimpleFormat {
 	public function supportsFuzzy(): string {
 		return 'write';
 	}
@@ -43,11 +24,7 @@ class IniFFS extends SimpleFormat {
 		return [ '.ini' ];
 	}
 
-	/**
-	 * @param string $data
-	 * @return array Parsed data.
-	 */
-	public function readFromVariable( $data ): array {
+	public function readFromVariable( string $data ): array {
 		$authors = [];
 		preg_match_all( '/^; Author: (.*)$/m', $data, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $match ) {
@@ -114,3 +91,5 @@ class IniFFS extends SimpleFormat {
 		return $header . $output;
 	}
 }
+
+class_alias( IniFormat::class, 'IniFFS' );
