@@ -88,4 +88,12 @@ class FileFormatFactory {
 
 		return new $class( $group );
 	}
+
+	public function getClassname( string $format ): string {
+		if ( !isset( self::FORMATS[ $format ] ) ) {
+			throw new InvalidArgumentException( "Unknown format $format" );
+		}
+
+		return self::FORMATS[ $format ];
+	}
 }

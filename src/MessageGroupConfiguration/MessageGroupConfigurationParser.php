@@ -5,7 +5,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 use AggregateMessageGroup;
 use Exception;
+use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Services;
 use RomaricDrigon\MetaYaml\MetaYaml;
 use TranslateYaml;
 
@@ -15,13 +17,16 @@ use TranslateYaml;
  * @license GPL-2.0-or-later
  */
 class MessageGroupConfigurationParser {
-	private $baseSchema;
+	private ?array $baseSchema = null;
+	private FileFormatFactory $fileFormatFactory;
 
 	public function __construct() {
 		// Don't perform validations if library not available
 		if ( class_exists( MetaYaml::class ) ) {
 			$this->baseSchema = $this->getBaseSchema();
 		}
+
+		$this->fileFormatFactory = Services::getInstance()->getFileFormatFactory();
 	}
 
 	/**
@@ -118,25 +123,19 @@ class MessageGroupConfigurationParser {
 	public function validate( array $config ): void {
 		$schema = $this->baseSchema;
 
-		foreach ( $config as $section ) {
-			if ( !isset( $section['class'] ) ) {
-				continue;
+		foreach ( $config as $key => $section ) {
+			$extra = [];
+			if ( $key === 'FILES' ) {
+				$extra = $this->getFilesSchemaExtra( $section );
+			} elseif ( $key === 'MANGLER' ) {
+				$class = $section[ 'class' ] ?? null;
+				// FIXME: UGLY HACK: StringMatcher is now under a namespace so use the fully prefixed
+				// class to check if it has the getExtraSchema method
+				if ( $class === 'StringMatcher' ) {
+					$extra = StringMatcher::getExtraSchema();
+				}
 			}
 
-			$class = $section['class'];
-
-			// FIXME: UGLY HACK: StringMatcher is now under a namespace so use the fully prefixed
-			// class to check if it has the getExtraSchema method
-			if ( $class === 'StringMatcher' ) {
-				$class = StringMatcher::class;
-			}
-
-			// There is no sane way to check whether *class* implements interface in PHP
-			if ( !is_callable( [ $class, 'getExtraSchema' ] ) ) {
-				continue;
-			}
-
-			$extra = call_user_func( [ $class, 'getExtraSchema' ] );
 			$schema = array_replace_recursive( $schema, $extra );
 		}
 
@@ -155,5 +154,24 @@ class MessageGroupConfigurationParser {
 		}
 
 		return $base;
+	}
+
+	private function getFilesSchemaExtra( array $section ): array {
+		$class = $section['class'] ?? null;
+		$format = $section['format'] ?? null;
+		$className = null;
+		$extra = [];
+
+		if ( $format ) {
+			$className = $this->fileFormatFactory->getClassname( $format );
+		} elseif ( $class ) {
+			$className = $class;
+		}
+
+		if ( $className && is_callable( [ $className, 'getExtraSchema' ] ) ) {
+			$extra = call_user_func( [ $className, 'getExtraSchema' ] );
+		}
+
+		return $extra;
 	}
 }
