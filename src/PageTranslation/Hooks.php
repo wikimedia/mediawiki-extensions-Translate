@@ -1687,4 +1687,20 @@ class Hooks {
 			}
 		}
 	}
+
+	/**
+	 * Removes translatable and translation pages from the list of titles to be renamed
+	 * Hook: ReplaceTextFilterPageTitlesForRename
+	 */
+	public static function onReplaceTextFilterPageTitlesForRename( array &$titles ): void {
+		foreach ( $titles as $index => $title ) {
+			$handle = new MessageHandle( $title );
+			if (
+				TranslatablePage::isSourcePage( $title ) ||
+				Utilities::isTranslationPage( $handle )
+			) {
+				unset( $titles[ $index ] );
+			}
+		}
+	}
 }

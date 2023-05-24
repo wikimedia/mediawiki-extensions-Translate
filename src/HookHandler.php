@@ -296,6 +296,9 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 
 			// Prevent editing of translation pages.
 			$hooks['ReplaceTextFilterPageTitlesForEdit'][] = [ Hooks::class, 'onReplaceTextFilterPageTitlesForEdit' ];
+			// Prevent renaming of translatable pages and their translation and translation units
+			$hooks['ReplaceTextFilterPageTitlesForRename'][] =
+				[ Hooks::class, 'onReplaceTextFilterPageTitlesForRename' ];
 		}
 
 		global $wgTranslateUseSandbox;
