@@ -126,6 +126,10 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		$messages = $group->initCollection( $params['language'] );
 
 		foreach ( $params['filter'] as $filter ) {
+			if ( $filter === '' || $filter === null ) {
+				continue;
+			}
+
 			$value = null;
 			if ( strpos( $filter, ':' ) !== false ) {
 				list( $filter, $value ) = explode( ':', $filter, 2 );
