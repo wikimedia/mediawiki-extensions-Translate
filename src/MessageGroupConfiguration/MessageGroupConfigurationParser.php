@@ -134,6 +134,8 @@ class MessageGroupConfigurationParser {
 				if ( $class === 'StringMatcher' ) {
 					$extra = StringMatcher::getExtraSchema();
 				}
+			} else {
+				$extra = $this->callGetExtraSchema( $section[ 'class' ] ?? null );
 			}
 
 			$schema = array_replace_recursive( $schema, $extra );
@@ -160,7 +162,6 @@ class MessageGroupConfigurationParser {
 		$class = $section['class'] ?? null;
 		$format = $section['format'] ?? null;
 		$className = null;
-		$extra = [];
 
 		if ( $format ) {
 			$className = $this->fileFormatFactory->getClassname( $format );
@@ -168,10 +169,14 @@ class MessageGroupConfigurationParser {
 			$className = $class;
 		}
 
+		return $this->callGetExtraSchema( $className );
+	}
+
+	private function callGetExtraSchema( ?string $className ): array {
 		if ( $className && is_callable( [ $className, 'getExtraSchema' ] ) ) {
-			$extra = call_user_func( [ $className, 'getExtraSchema' ] );
+			return call_user_func( [ $className, 'getExtraSchema' ] );
 		}
 
-		return $extra;
+		return [];
 	}
 }
