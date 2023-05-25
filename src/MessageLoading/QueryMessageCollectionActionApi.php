@@ -107,12 +107,12 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			// A check for cases where the source language of group messages
 			// is a variant of the target language being translated into.
 			if ( strtok( $sourceLanguageCode, '-' ) === strtok( $languageCode, '-' ) ) {
-				$sourceLaguageName = $this->getLanguageName( $sourceLanguageCode );
-				$targetLaguageName = $this->getLanguageName( $languageCode );
+				$sourceLanguageName = $this->getLanguageName( $sourceLanguageCode );
+				$targetLanguageName = $this->getLanguageName( $languageCode );
 				$this->addWarning( [
 					'apiwarn-translate-language-targetlang-variant-of-source',
-					wfEscapeWikiText( $targetLaguageName ),
-					wfEscapeWikiText( $sourceLaguageName ) ]
+					wfEscapeWikiText( $targetLanguageName ),
+					wfEscapeWikiText( $sourceLanguageName ) ]
 				);
 			}
 		}
@@ -132,7 +132,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 
 			$value = null;
 			if ( strpos( $filter, ':' ) !== false ) {
-				list( $filter, $value ) = explode( ':', $filter, 2 );
+				[ $filter, $value ] = explode( ':', $filter, 2 );
 			}
 			/* The filtering params here are swapped wrt MessageCollection.
 			 * There (fuzzy) means do not show fuzzy, which is the same as !fuzzy
@@ -155,7 +155,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		$resultSize = count( $messages );
 		$offsets = $messages->slice( $params['offset'], $params['limit'] );
 		$batchSize = count( $messages );
-		list( /*$backwardsOffset*/, $forwardsOffset, $startOffset ) = $offsets;
+		[ /*$backwardsOffset*/, $forwardsOffset, $startOffset ] = $offsets;
 
 		$result = $this->getResult();
 		$result->addValue(
