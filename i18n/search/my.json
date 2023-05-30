@@ -23,9 +23,11 @@
 	"tux-sst-translated": "$1 မှ ဘာသာပြန်များ",
 	"tux-sst-untranslated": "$1 မှ ဘာသာပြန်များ မရှိပါ",
 	"tux-sst-outdated": "$1 မှ ခေတ်နောက်ကျသော ဘာသာပြန်များ",
-	"tux-sst-ellipsis-untranslated": "ဘာသာပြန်များ မရှိပါ",
+	"tux-sst-ellipsis-untranslated": "ဘာသာပြန်များ မဟုတ်",
 	"tux-sst-ellipsis-outdated": "ခေတ်နောက်ကျသော ဘာသာပြန်များ",
 	"tux-sst-link-all-match": "ရှာဖွေစကားလုံးများအားလုံး လိုအပ်သည်။",
 	"tux-sst-match-message": "ရှာဖွေစကားလုံးများ၏ ကိုက်ညီသော မည်သည့်ဘာသာပြန်များကိုမဆို ပြသနေသည်။ $1",
-	"tux-sst-case-sensitive": "စာလုံးအကြီးအသေး အတိမ်းစောင်းမခံ"
+	"tux-sst-case-sensitive": "စာလုံးအကြီးအသေး အတိမ်းစောင်းမခံ",
+	"tux-sst-error-offset": "ရှာဖွေမှုရလဒ်များကို မပြသနိုင်တော့ပါ။ သင်၏ရှာဖွေမှုကို ကျဉ်းမြောင်းစေပါ။",
+	"tux-sst-error-language": "ဤရှာဖွေမှုအမျိုးအစားတွင် ဤဘာသာစကားကို အသုံးမပြုနိုင်ပါ။"
 }
