@@ -189,7 +189,7 @@
 	"translate-manage-submit": "Täida",
 	"translate-manage-intro-other": "Allpool on $1 keele tõlkemuudatuste loetelu.\nPalun vaata muudatused üle ja vali iga sõnumi jaoks sobiv toiming.\nKui eirad muudatusi, on see toiming vaid ajutine.",
 	"translate-manage-import-ok": "Imporditud: $1",
-	"translate-manage-import-done": "Imporditud!",
+	"translate-manage-import-done": "Keele $3 tõlgete importimine rühma [[Special:Translate/$1|$2]] jõudis lõpule!",
 	"importtranslations": "Tõlgete importimine",
 	"translate-import-from-local": "Kohaliku faili üleslaadimine:",
 	"translate-import-load": "Laadi fail",
