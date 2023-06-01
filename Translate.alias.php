@@ -994,7 +994,7 @@ $specialPageAliases['sv'] = [
 $specialPageAliases['sw'] = [
 	'Translate' => [ 'Tafsiri' ],
 	'TranslationStats' => [ 'TakwimuzaTafsiri' ],
-	'Translations' => [ 'Tafsiri' ],
+	'Translations' => [ 'Utafsiri' ],
 ];
 
 /** Telugu (తెలుగు) */
