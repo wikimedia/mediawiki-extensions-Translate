@@ -42,6 +42,7 @@
 	"apihelp-query+messagegroups-extended-description": "利用者言語のパラメーターは言語依存の部分の出力に影響を与えますのでご注意ください。",
 	"apihelp-query+messagegroups-param-format": "ツリー形式の場合、メッセージ群はツリーの複数の場所に存在できます。",
 	"apihelp-query+messagegroups-param-iconsize": "ラスター化したメッセージ群アイコンの最適なサイズ。",
+	"apihelp-query+messagegroups-param-prop": "取得する翻訳関連情報:\n;id:メッセージ群 ID を含める。\n;label:メッセージ群のラベルを含める。\n;description:メッセージ群の説明を含める。\n;class:メッセージ群のクラス名を含める。\n;namespace:メッセージ群の名前空間を含める。すべてのメッセージ群が単一の名前空間に属しているわけではありません。\n;exists:メッセージ群の自己計算された存在プロパティを含める。\n;icon:メッセージ群のアイコンの URL を含める。\n;priority:優先状態を含める (例: 非推奨)\n;prioritylangs:優先言語を含める。設定されていない場合は false を返します。\n;priorityforce:優先状態を含める - 優先言語設定が強制されているかどうか。\n;workflowstates:メッセージ群のワークフロー状態を含める",
 	"apihelp-query+messagegroups-example-1": "メッセージ群の表示",
 	"apihelp-query+messagegroupstats-description": "メッセージ群の統計クエリを実行。",
 	"apihelp-query+messagegroupstats-summary": "クエリメッセージ群の統計。",

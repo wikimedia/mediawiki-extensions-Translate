@@ -32,7 +32,8 @@
 			"Rodney Araujo",
 			"Sanbec",
 			"Translationista",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"No se"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
@@ -149,6 +150,7 @@
 	"log-action-filter-pagetranslation-delete": "Eliminación de páginas",
 	"log-action-filter-pagetranslation-prioritylanguages": "Modificación de idiomas prioritarios",
 	"log-action-filter-pagetranslation-aggregategroups": "Modificación de grupos del agregado",
+	"log-name-messagebundle": "Registro de paquetes de mensajes",
 	"logentry-messagebundle-moveok": "$1 {{GENDER:$2|completó}} el cambio de nombre del paquete de mensajes $3 a $4",
 	"logentry-messagebundle-movenok": "$1 {{GENDER:$2|tuvo}} un problema al trasladar el paquete de mensajes $3 a $4",
 	"logentry-messagebundle-deletefok": "$1 {{GENDER:$2|completó}} la eliminación del paquete de mensajes $3",
