@@ -106,7 +106,7 @@ class TS extends Maintenance {
 					$data = @unserialize( $log->log_params );
 					if ( $data === false ) {
 						$lines = explode( "\n", $log->log_params, 3 );
-						if ( strpos( $lines[1], 'translator' ) !== false ) {
+						if ( str_contains( $lines[1], 'translator' ) ) {
 							$promoted = $log->log_timestamp;
 							break;
 						}

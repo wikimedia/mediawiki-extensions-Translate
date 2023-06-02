@@ -102,7 +102,7 @@ class TranslatablePageParser {
 				'Unmatched opening tag',
 				[ 'pt-parse-open', $prettyTemplate ]
 			);
-		} elseif ( strpos( $text, '</translate>' ) !== false ) {
+		} elseif ( str_contains( $text, '</translate>' ) ) {
 			throw new ParsingFailure(
 				"Unmatched closing tag",
 				[ 'pt-parse-close', $prettyTemplate ]

@@ -139,7 +139,7 @@ class TranslationStatsDataProvider {
 		}
 
 		foreach ( $labels as &$label ) {
-			if ( strpos( $label, '@' ) === false ) {
+			if ( !str_contains( $label, '@' ) ) {
 				continue;
 			}
 			[ $groupId, $code ] = explode( '@', $label, 2 );

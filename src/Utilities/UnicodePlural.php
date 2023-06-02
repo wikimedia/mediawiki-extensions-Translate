@@ -43,7 +43,7 @@ class UnicodePlural {
 	 * @return bool
 	 */
 	public static function hasPlural( $text ) {
-		return strpos( $text, self::PRE ) !== false;
+		return str_contains( $text, self::PRE );
 	}
 
 	/**

@@ -33,7 +33,7 @@ class ReplacementValidator implements MessageValidator {
 	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
-		if ( strpos( $message->translation(), $this->search ) !== false ) {
+		if ( str_contains( $message->translation(), $this->search ) ) {
 			$issue = new ValidationIssue(
 				'replacement',
 				'replacement',

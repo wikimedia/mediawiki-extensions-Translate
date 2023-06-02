@@ -342,11 +342,8 @@ class ElasticSearchTTMServer
 			],
 		];
 		$replicas = $this->getReplicaCount();
-		if ( strpos( $replicas, '-' ) === false ) {
-			$indexSettings['settings']['index']['number_of_replicas'] = $replicas;
-		} else {
-			$indexSettings['settings']['index']['auto_expand_replicas'] = $replicas;
-		}
+		$key = str_contains( $replicas, '-' ) ? 'auto_expand_replicas' : 'number_of_replicas';
+		$indexSettings['settings']['index'][$key] = $replicas;
 
 		$this->getIndex()->create( $indexSettings, $rebuild );
 	}
@@ -821,7 +818,7 @@ class ElasticSearchTTMServer
 
 	private function checkElasticsearchVersion() {
 		$version = $this->getElasticsearchVersion();
-		if ( strpos( $version, '6.8' ) !== 0 && strpos( $version, '7.' ) !== 0 ) {
+		if ( !str_starts_with( $version, '6.8' ) && !str_starts_with( $version, '7.' ) ) {
 			throw new \RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
 		}
 	}

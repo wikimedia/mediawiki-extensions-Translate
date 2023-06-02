@@ -129,7 +129,7 @@ class ExportRenameLanguage extends Maintenance {
 	private function needsCleanup( $pathPattern, $sourceLanguage, &$pathToRemove ) {
 		do {
 			$currentComponent = basename( $pathPattern );
-			if ( strpos( $currentComponent, self::MARKER ) === false ) {
+			if ( !str_contains( $currentComponent, self::MARKER ) ) {
 				$pathPattern = dirname( $pathPattern );
 				continue;
 			}

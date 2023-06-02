@@ -27,7 +27,7 @@ class XliffFFS extends SimpleFormat {
 			return false;
 		}
 
-		if ( strpos( $data, 'version="1.2">' ) !== false ) {
+		if ( str_contains( $data, 'version="1.2">' ) ) {
 			$schema = __DIR__ . '/../data/xliff-core-1.2-transitional.xsd';
 			if ( !$doc->schemaValidate( $schema ) ) {
 				return false;

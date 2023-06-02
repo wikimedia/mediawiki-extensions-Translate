@@ -30,7 +30,7 @@ class AppleInfoPlistFfs extends AppleFFS {
 				throw new RuntimeException( "Empty or invalid key in line: $line" );
 			}
 
-			if ( strpos( $key, ' ' ) !== false ) {
+			if ( str_contains( $key, ' ' ) ) {
 				throw new RuntimeException( "Key with space found in line: $line" );
 			}
 

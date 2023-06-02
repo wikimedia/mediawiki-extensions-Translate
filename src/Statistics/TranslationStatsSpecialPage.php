@@ -49,7 +49,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 
 		$pars = explode( ';', (string)$par );
 		foreach ( $pars as $item ) {
-			if ( strpos( $item, '=' ) === false ) {
+			if ( !str_contains( $item, '=' ) ) {
 				continue;
 			}
 

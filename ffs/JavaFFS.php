@@ -70,7 +70,7 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 					continue;
 				}
 
-				if ( strpos( $line, $this->keySeparator ) === false ) {
+				if ( !str_contains( $line, $this->keySeparator ) ) {
 					throw new MWException( "Line without separator '{$this->keySeparator}': $line." );
 				}
 
@@ -161,7 +161,7 @@ class JavaFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	 * @since 2012-03-28
 	 */
 	public static function readRow( $line, $sep ) {
-		if ( strpos( $line, '\\' ) === false ) {
+		if ( !str_contains( $line, '\\' ) ) {
 			/* Nothing appears to be escaped in this line.
 			 * Just read the key and the value. */
 			list( $key, $value ) = explode( $sep, $line, 2 );

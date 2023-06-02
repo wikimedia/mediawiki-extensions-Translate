@@ -86,7 +86,7 @@ class PopulateFuzzy extends Maintenance {
 						->getContent( SlotRecord::MAIN );
 					$text = Utilities::getTextFromTextContent( $content );
 				}
-				if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
+				if ( str_contains( $text, TRANSLATE_FUZZY ) ) {
 					$inserts[] = [
 						'rt_page' => $r->page_id,
 						'rt_revision' => $r->rev_id,

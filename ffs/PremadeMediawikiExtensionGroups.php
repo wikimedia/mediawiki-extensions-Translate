@@ -210,7 +210,7 @@ class PremadeMediawikiExtensionGroups {
 					continue;
 				}
 
-				if ( strpos( $line, '=' ) === false ) {
+				if ( !str_contains( $line, '=' ) ) {
 					if ( empty( $newgroup['name'] ) ) {
 						$newgroup['name'] = $line;
 					} else {

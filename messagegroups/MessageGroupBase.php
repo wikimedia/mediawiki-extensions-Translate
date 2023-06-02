@@ -207,7 +207,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		 * Collect exact keys, no point running them trough string matcher
 		 */
 		foreach ( $patterns as $index => $pattern ) {
-			if ( strpos( $pattern, '*' ) === false ) {
+			if ( !str_contains( $pattern, '*' ) ) {
 				$matches[] = $pattern;
 				unset( $patterns[$index] );
 			}

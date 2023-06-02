@@ -1212,7 +1212,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		// We've to do some extra work here because if JS is disabled, we will be getting
 		// the values split by newline.
 		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs', '' ) ), ',' );
-		$npLangs = implode( ',', explode( "\n", $npLangs ) );
+		$npLangs = str_replace( "\n", ',', $npLangs );
 		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
 		$npLangs = array_unique( $npLangs );
 

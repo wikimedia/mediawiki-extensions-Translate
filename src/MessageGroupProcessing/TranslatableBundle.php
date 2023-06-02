@@ -81,7 +81,7 @@ abstract class TranslatableBundle {
 			// translatable to get plain translation unit id
 			$handle = new MessageHandle( $title );
 			$key = substr( $handle->getKey(), $baseLength );
-			if ( strpos( $key, '/' ) !== false ) {
+			if ( str_contains( $key, '/' ) ) {
 				// Probably belongs to translatable subpage
 				continue;
 			}

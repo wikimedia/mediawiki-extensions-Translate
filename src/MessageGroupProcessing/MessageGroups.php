@@ -305,7 +305,7 @@ class MessageGroups {
 		 * normalize spaces to underscores */
 		$id = (string)$id;
 
-		if ( strpos( $id, 'page-' ) === 0 ) {
+		if ( str_starts_with( $id, 'page-' ) ) {
 			$id = strtr( $id, '_', ' ' );
 		}
 

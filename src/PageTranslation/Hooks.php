@@ -1460,8 +1460,8 @@ class Hooks {
 			$nsInfo->hasSubpages( $out->getTitle()->getNamespace() )
 		) {
 			$ptext = $out->getTitle()->getPrefixedText();
-			if ( strpos( $ptext, '/' ) !== false ) {
-				$links = explode( '/', $ptext );
+			$links = explode( '/', $ptext );
+			if ( count( $links ) > 1 ) {
 				array_pop( $links );
 				if ( $isTranslationPage ) {
 					// Also remove language code page

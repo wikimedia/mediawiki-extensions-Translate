@@ -38,7 +38,7 @@ class AppleFFS extends SimpleFormat {
 		foreach ( $lines as $line ) {
 			$line = trim( $line );
 			if ( $linecontinuation ) {
-				if ( strpos( $line, '*/' ) !== false ) {
+				if ( str_contains( $line, '*/' ) ) {
 					$linecontinuation = false;
 				}
 			} else {

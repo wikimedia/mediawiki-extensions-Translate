@@ -262,7 +262,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 		$matches = [];
 		if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
 			foreach ( $matches as $match ) {
-				if ( $match[1] !== ',' && strpos( $match[1], '[Wiki]' ) !== 0 ) {
+				if ( $match[1] !== ',' && !str_starts_with( $match[1], '[Wiki]' ) ) {
 					$item['comments'][$match[1]][] = $match[2];
 				}
 			}
@@ -383,7 +383,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	public static function parseHeaderTags( $headers ) {
 		$tags = [];
 		foreach ( explode( "\n", $headers ) as $line ) {
-			if ( strpos( $line, ':' ) === false ) {
+			if ( !str_contains( $line, ':' ) ) {
 				error_log( __METHOD__ . ": $line" );
 			}
 			[ $key, $value ] = explode( ':', $line, 2 );
@@ -528,7 +528,7 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		$msgid = $m->definition();
 		$msgstr = $m->translation();
-		if ( strpos( $msgstr, TRANSLATE_FUZZY ) !== false ) {
+		if ( str_contains( $msgstr, TRANSLATE_FUZZY ) ) {
 			$msgstr = str_replace( TRANSLATE_FUZZY, '', $msgstr );
 			// Might by fuzzy infile
 			$flags[] = 'fuzzy';

@@ -157,7 +157,7 @@ class TranslateRcFilter {
 							$namespaces = self::getTranslateNamespaces();
 
 							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
-								strpos( $rc->getAttribute( 'rc_title' ), '/' ) !== false;
+								!str_contains( $rc->getAttribute( 'rc_title' ), '/' );
 						}
 					],
 					[
@@ -169,7 +169,7 @@ class TranslateRcFilter {
 							$namespaces = self::getTranslateNamespaces();
 
 							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
-								strpos( $rc->getAttribute( 'rc_title' ), '/' ) === false;
+								!str_contains( $rc->getAttribute( 'rc_title' ), '/' );
 						}
 					],
 					[

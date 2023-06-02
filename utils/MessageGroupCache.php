@@ -173,7 +173,7 @@ class MessageGroupCache {
 		// If the file pattern is not dependent on the language, we will assume
 		// that all translations are stored in one file. This means we need to
 		// actually parse the file to know if a language is present.
-		if ( strpos( $pattern, '*' ) === false ) {
+		if ( !str_contains( $pattern, '*' ) ) {
 			$parseOutput = $group->parseExternal( $this->code );
 			$source = $parseOutput['MESSAGES'] !== [];
 		} else {

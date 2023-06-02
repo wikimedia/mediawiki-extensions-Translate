@@ -316,7 +316,7 @@ class MessageWebImporter {
 				$output->addWikiMsg( 'translate-manage-nochanges-other' );
 			}
 
-			if ( $changed === [] || strpos( end( $changed ), '<li>' ) !== 0 ) {
+			if ( $changed === [] || !str_starts_with( end( $changed ), '<li>' ) ) {
 				$changed[] = '<ul>';
 			}
 

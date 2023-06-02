@@ -188,7 +188,7 @@ class ArrayFlattener {
 	 */
 	public function unflattenCLDRPlurals( string $key, string $message ) {
 		// Quick escape.
-		if ( strpos( $message, '{{PLURAL' ) === false ) {
+		if ( !str_contains( $message, '{{PLURAL' ) ) {
 			return false;
 		}
 

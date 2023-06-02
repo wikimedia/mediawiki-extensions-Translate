@@ -27,7 +27,7 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 			$this->markTestSkipped( 'Extended validation not yet implemented' );
 		}
 
-		if ( strpos( $name, 'Fail' ) === 0 ) {
+		if ( str_starts_with( $name, 'Fail' ) ) {
 			$this->expectException( ParsingFailure::class );
 		}
 

@@ -84,7 +84,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		// Do not consider language-less pages.
-		if ( strpos( $row->rc_title, '/' ) === false ) {
+		if ( !str_contains( $row->rc_title, '/' ) ) {
 			return false;
 		}
 

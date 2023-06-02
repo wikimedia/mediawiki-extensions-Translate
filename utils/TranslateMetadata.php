@@ -110,7 +110,7 @@ class TranslateMetadata {
 	public static function getSubgroups( string $groupId ): ?array {
 		$groups = self::get( $groupId, 'subgroups' );
 		if ( is_string( $groups ) ) {
-			if ( strpos( $groups, '|' ) !== false ) {
+			if ( str_contains( $groups, '|' ) ) {
 				$groups = explode( '|', $groups );
 			} else {
 				$groups = array_map( 'trim', explode( ',', $groups ) );

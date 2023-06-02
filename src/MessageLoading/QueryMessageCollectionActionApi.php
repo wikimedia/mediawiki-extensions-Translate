@@ -130,7 +130,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			}
 
 			$value = null;
-			if ( strpos( $filter, ':' ) !== false ) {
+			if ( str_contains( $filter, ':' ) ) {
 				[ $filter, $value ] = explode( ':', $filter, 2 );
 			}
 			/* The filtering params here are swapped wrt MessageCollection.
@@ -138,7 +138,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			 * here and fuzzy here means (fuzzy, false) there. */
 			try {
 				$value = $value === null ? $value : (int)$value;
-				if ( $filter[0] === '!' ) {
+				if ( str_starts_with( $filter, '!' ) ) {
 					$messages->filter( substr( $filter, 1 ), true, $value );
 				} else {
 					$messages->filter( $filter, false, $value );

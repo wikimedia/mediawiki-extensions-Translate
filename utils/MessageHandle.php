@@ -231,7 +231,7 @@ class MessageHandle {
 	 * @return bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
-		return strpos( $text, TRANSLATE_FUZZY ) !== false;
+		return str_contains( $text, TRANSLATE_FUZZY );
 	}
 
 	/** Check if a string has fuzzy string and if not, add it */

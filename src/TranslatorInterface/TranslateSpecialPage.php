@@ -122,7 +122,7 @@ class TranslateSpecialPage extends SpecialPage {
 				continue;
 			}
 
-			if ( strpos( $_, '=' ) !== false ) {
+			if ( str_contains( $_, '=' ) ) {
 				[ $key, $value ] = array_map( 'trim', explode( '=', $_, 2 ) );
 			} else {
 				$key = 'group';
