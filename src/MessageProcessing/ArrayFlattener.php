@@ -270,11 +270,7 @@ class ArrayFlattener {
 
 	/** Compares two strings for equal content, taking PLURAL expansion into account. */
 	public function compareContent( ?string $a, ?string $b ): bool {
-		if ( !$this->parseCLDRPlurals ) {
-			return $a === $b;
-		}
-
-		if ( $a === null || $b === null ) {
+		if ( !$this->parseCLDRPlurals || $a === null || $b === null ) {
 			return $a === $b;
 		}
 

@@ -25,11 +25,7 @@ class InOtherLanguagesAid extends TranslationAid {
 		$sourceLanguage = $this->handle->getGroup()->getSourceLanguage();
 
 		foreach ( $this->getFallbacks( $code ) as $fallbackCode ) {
-			if ( !isset( $translations[$fallbackCode] ) ) {
-				continue;
-			}
-
-			if ( $fallbackCode === $sourceLanguage ) {
+			if ( !isset( $translations[$fallbackCode] ) || $fallbackCode === $sourceLanguage ) {
 				continue;
 			}
 

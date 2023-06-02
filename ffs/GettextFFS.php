@@ -597,12 +597,8 @@ class GettextFFS extends SimpleFormat implements MetaYamlSchemaExtender {
 	protected function formatDocumentation( $key ) {
 		global $wgTranslateDocumentationLanguageCode;
 
-		if ( !$this->offlineMode ) {
-			return '';
-		}
-
 		$code = $wgTranslateDocumentationLanguageCode;
-		if ( !$code ) {
+		if ( !$this->offlineMode || !$code ) {
 			return '';
 		}
 

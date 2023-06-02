@@ -236,11 +236,7 @@ class MessageHandle {
 
 	/** Check if a string has fuzzy string and if not, add it */
 	public static function makeFuzzyString( string $text ): string {
-		if ( self::hasFuzzyString( $text ) ) {
-			return $text;
-		}
-
-		return TRANSLATE_FUZZY . $text;
+		return self::hasFuzzyString( $text ) ? $text : TRANSLATE_FUZZY . $text;
 	}
 
 	/**

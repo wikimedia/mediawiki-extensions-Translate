@@ -355,16 +355,12 @@ class MessageSourceChange {
 	}
 
 	protected function removeModification( $language, $type, $keysToRemove = null ) {
-		if ( !isset( $this->changes[$language][$type] ) ) {
+		if ( !isset( $this->changes[$language][$type] ) || $keysToRemove === [] ) {
 			return;
 		}
 
 		if ( $keysToRemove === null ) {
 			unset( $this->changes[$language][$type] );
-			return;
-		}
-
-		if ( $keysToRemove === [] ) {
 			return;
 		}
 

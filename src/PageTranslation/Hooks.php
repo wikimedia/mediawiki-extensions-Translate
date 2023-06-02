@@ -96,7 +96,6 @@ class Hooks {
 		$title = MediaWikiServices::getInstance()
 			->getTitleFactory()
 			->castFromPageReference( $wikitextParser->getPage() );
-
 		if ( !$title ) {
 			return;
 		}
@@ -231,7 +230,6 @@ class Hooks {
 					"T323863: Could not fetch any revision record for '{groupid}'",
 					[ 'groupid' => $templateTranslationPage->getMessageGroupId() ]
 				);
-				return;
 			}
 			return;
 		}
@@ -331,7 +329,6 @@ class Hooks {
 	 * Hook: BeforePageDisplay
 	 * @param OutputPage $out
 	 * @param Skin $skin
-	 * @return true
 	 */
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		global $wgTranslatePageTranslationULS;
@@ -354,13 +351,10 @@ class Hooks {
 				// Source pages get this module via <translate>, but for translation
 				// pages we need to add it manually.
 				$out->addModuleStyles( 'ext.translate' );
-				$out->addJsConfigVars( 'wgTranslatePageTranslation', 'translation' );
-			} else {
-				$out->addJsConfigVars( 'wgTranslatePageTranslation', 'source' );
 			}
-		}
 
-		return true;
+			$out->addJsConfigVars( 'wgTranslatePageTranslation', $isTranslation ? 'translation' : 'source' );
+		}
 	}
 
 	/**
@@ -382,7 +376,6 @@ class Hooks {
 	 * @param bool $minor
 	 * @param int $flags
 	 * @param MessageHandle $handle
-	 * @return true
 	 */
 	public static function onSectionSave(
 		WikiPage $wikiPage,
@@ -395,12 +388,12 @@ class Hooks {
 	) {
 		// FuzzyBot may do some duplicate work already worked on by other jobs
 		if ( $user->equals( FuzzyBot::getUser() ) ) {
-			return true;
+			return;
 		}
 
 		$group = $handle->getGroup();
 		if ( !$group instanceof WikiPageMessageGroup ) {
-			return true;
+			return;
 		}
 
 		// Finally we know the title and can construct a Translatable page
@@ -416,8 +409,6 @@ class Hooks {
 				}
 			);
 		}
-
-		return true;
 	}
 
 	private static function updateTranslationPage(
@@ -806,11 +797,9 @@ class Hooks {
 		Title $pageTitle,
 		OutputPage $out
 	) {
-		if ( substr( $link[ 'text' ], 0, 18 ) !== 'x-pagetranslation:' ) {
-			return;
-		}
-
-		if ( !isset( self::$languageLinkData[ $link[ 'text' ] ] ) ) {
+		if ( !str_starts_with( $link['text'], 'x-pagetranslation:' ) ||
+			!isset( self::$languageLinkData[ $link['text'] ] )
+		) {
 			return;
 		}
 
@@ -833,7 +822,7 @@ class Hooks {
 	 * @param Content $content
 	 * @param Status $status
 	 * @param string $summary
-	 * @return true
+	 * @return bool
 	 */
 	public static function tpSyntaxCheckForEditContent(
 		$context,
@@ -916,7 +905,6 @@ class Hooks {
 	 * @param int $flags
 	 * @param RevisionRecord $revisionRecord
 	 * @param EditResult $editResult
-	 * @return true
 	 */
 	public static function addTranstagAfterSave(
 		WikiPage $wikiPage,
@@ -933,7 +921,7 @@ class Hooks {
 			$text = $content->getText();
 		} else {
 			// Not applicable
-			return true;
+			return;
 		}
 
 		$parser = Services::getInstance()->getTranslatablePageParser();
@@ -946,8 +934,6 @@ class Hooks {
 		// Schedule a deferred status update for the translatable page.
 		$tpStatusUpdater = Services::getInstance()->getTranslatablePageStore();
 		$tpStatusUpdater->performStatusUpdate( $wikiPage->getTitle() );
-
-		return true;
 	}
 
 	/**
@@ -1233,11 +1219,10 @@ class Hooks {
 	 * @param Article $article
 	 * @param bool|ParserOutput|null &$outputDone
 	 * @param bool &$pcache
-	 * @return bool
 	 */
 	public static function translatablePageHeader( $article, &$outputDone, &$pcache ) {
 		if ( $article->getOldID() ) {
-			return true;
+			return;
 		}
 
 		$transPage = TranslatablePage::isTranslationPage( $article->getTitle() );
@@ -1248,8 +1233,6 @@ class Hooks {
 			// Check for pages that are tagged or marked
 			self::sourcePageHeader( $context );
 		}
-
-		return true;
 	}
 
 	private static function sourcePageHeader( IContextSource $context ) {
@@ -1406,14 +1389,13 @@ class Hooks {
 	/**
 	 * Hook: SpecialPage_initList
 	 * @param array &$list
-	 * @return true
 	 */
 	public static function replaceMovePage( &$list ) {
 		$movePageSpec = $list['Movepage'] ?? null;
 
 		// This should never happen, but apparently is happening? See: T296568
 		if ( $movePageSpec === null ) {
-			return true;
+			return;
 		}
 
 		$list['Movepage'] = [
@@ -1428,8 +1410,6 @@ class Hooks {
 				$movePageSpec
 			]
 		];
-
-		return true;
 	}
 
 	/**
@@ -1497,7 +1477,7 @@ class Hooks {
 					$display .= $link;
 					$linkObj = Title::newFromText( $growinglink );
 
-					if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
+					if ( $linkObj && $linkObj->isKnown() ) {
 						$getlink = $linker->makeKnownLink(
 							SpecialPage::getTitleFor( 'MyLanguage', $growinglink ),
 							$display
@@ -1532,36 +1512,27 @@ class Hooks {
 	 * Hook: SkinTemplateNavigation::Universal
 	 * @param Skin $skin
 	 * @param array &$tabs
-	 * @return true
 	 */
 	public static function translateTab( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
 		$handle = new MessageHandle( $title );
 		$code = $handle->getCode();
 		$page = TranslatablePage::isTranslationPage( $title );
-		if ( !$page ) {
-			return true;
-		}
 		// The source language has a subpage too, but cannot be translated
-		if ( $page->getSourceLanguageCode() === $code ) {
-			return true;
+		if ( !$page || $page->getSourceLanguageCode() === $code ) {
+			return;
 		}
 
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( isset( $tabs['views']['edit'] ) ) {
-			$tabs['views']['edit']['text'] = $skin->msg( 'tpt-tab-translate' )->text();
-			$tabs['views']['edit']['href'] = $page->getTranslationUrl( $code );
+			$action = 'edit';
+		} elseif ( $permissionManager->userCan( 'translate', $skin->getUser(), $page->getTitle() ) ) {
+			$action = 'translate';
 		} else {
-			$canTranslate = MediaWikiServices::getInstance()->getPermissionManager()->userCan(
-				'translate', $skin->getUser(), $page->getTitle()
-			);
-
-			if ( $canTranslate ) {
-				$tabs['views']['translate']['text'] = $skin->msg( 'tpt-tab-translate' )->text();
-				$tabs['views']['translate']['href'] = $page->getTranslationUrl( $code );
-			}
+			return;
 		}
-
-		return true;
+		$tabs['views'][$action]['text'] = $skin->msg( 'tpt-tab-translate' )->text();
+		$tabs['views'][$action]['href'] = $page->getTranslationUrl( $code );
 	}
 
 	/**
@@ -1599,12 +1570,8 @@ class Hooks {
 		$groupLast = null;
 		foreach ( [ $oldTitle, $newTitle ] as $title ) {
 			$handle = new MessageHandle( $title );
-			if ( !$handle->isValid() ) {
-				continue;
-			}
-
 			// Documentation pages are never translation pages
-			if ( $handle->isDoc() ) {
+			if ( !$handle->isValid() || $handle->isDoc() ) {
 				continue;
 			}
 
@@ -1654,7 +1621,6 @@ class Hooks {
 		}
 
 		$title = $unit->getTitle();
-
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
 			return;

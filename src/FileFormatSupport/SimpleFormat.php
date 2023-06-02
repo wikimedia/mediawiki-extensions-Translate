@@ -207,11 +207,7 @@ class SimpleFormat implements FileFormatSupport {
 		// the timestamp would change.
 		if ( $targetFileExists ) {
 			$oldContent = $this->tryReadFile( $targetFile );
-			if ( $oldContent === null ) {
-				return;
-			}
-
-			if ( !$this->shouldOverwrite( $oldContent, $output ) ) {
+			if ( $oldContent === null || !$this->shouldOverwrite( $oldContent, $output ) ) {
 				return;
 			}
 		}
@@ -282,11 +278,7 @@ class SimpleFormat implements FileFormatSupport {
 	 * @throws InvalidArgumentException
 	 */
 	protected function tryReadFile( string $filename ): ?string {
-		if ( $filename === '' ) {
-			return null;
-		}
-
-		if ( !file_exists( $filename ) ) {
+		if ( $filename === '' || !file_exists( $filename ) ) {
 			return null;
 		}
 

@@ -638,11 +638,7 @@ class MessageGroupStats {
 
 	protected static function queueUpdates( $flags ) {
 		$mwInstance = MediaWikiServices::getInstance();
-		if ( $mwInstance->getReadOnlyMode()->isReadOnly() ) {
-			return;
-		}
-
-		if ( self::$updates === [] ) {
+		if ( self::$updates === [] || $mwInstance->getReadOnlyMode()->isReadOnly() ) {
 			return;
 		}
 

@@ -23,10 +23,6 @@ class PageTranslationParserTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideTestFiles */
 	public function testParsing( string $name, string $file ) {
-		if ( $name === 'FailNotAtomic' ) {
-			$this->markTestSkipped( 'Extended validation not yet implemented' );
-		}
-
 		if ( $name !== 'Whitespace' ) {
 			$this->markTestSkipped( 'Extended validation not yet implemented' );
 		}

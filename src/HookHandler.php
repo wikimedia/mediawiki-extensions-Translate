@@ -890,11 +890,7 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 
 		[ $name, $subpage ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $target->getDBkey() );
-		if ( $name !== 'MyLanguage' ) {
-			return true;
-		}
-
-		if ( (string)$subpage === '' ) {
+		if ( $name !== 'MyLanguage' || (string)$subpage === '' ) {
 			return true;
 		}
 

@@ -216,11 +216,7 @@ class StatsTable {
 	}
 
 	public function makeWorkflowStateCell( ?string $state, MessageGroup $group, string $language ): string {
-		if ( $state === null ) {
-			return "\n\t\t" . $this->element( '', '', '-1' );
-		}
-
-		if ( $group->getSourceLanguage() === $language ) {
+		if ( $state === null || $group->getSourceLanguage() === $language ) {
 			return "\n\t\t" . $this->element( '', '', '-1' );
 		}
 
