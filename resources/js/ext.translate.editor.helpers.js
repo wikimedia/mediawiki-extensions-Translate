@@ -489,8 +489,8 @@
 				}
 			};
 
-			$source.on( 'click', inserter );
-			$source.addClass( 'shortcut-activated' );
+			$source.on( 'click', inserter )
+				.addClass( 'shortcut-activated' );
 		},
 
 		/**

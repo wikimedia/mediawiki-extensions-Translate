@@ -501,11 +501,7 @@
 		// Uncheck the rows that were selected by clicking the row
 		$requestCheckboxes.filter( ':disabled' ).prop( 'disabled', false );
 
-		if ( request.checked ) {
-			$thisRequestRow.addClass( 'selected' );
-		} else {
-			$thisRequestRow.removeClass( 'selected' );
-		}
+		$thisRequestRow.toggleClass( 'selected', request.checked );
 
 		var $checkedBoxes = $requestCheckboxes.filter( ':checked' );
 		var checkedCount = $checkedBoxes.length;

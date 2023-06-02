@@ -182,13 +182,11 @@
 				}
 			}
 
-			$target.toggleClass( 'expanded' );
-			$target.text(
-				isExpanded ?
-					mw.msg( 'tpt-aggregategroup-expand-all-groups' ) :
-					mw.msg( 'tpt-aggregategroup-collapse-all-groups' )
-
-			);
+			$target.toggleClass( 'expanded' )
+				.text( mw.msg( isExpanded ?
+					'tpt-aggregategroup-expand-all-groups' :
+					'tpt-aggregategroup-collapse-all-groups'
+				) );
 
 			event.preventDefault();
 		} );
@@ -387,14 +385,12 @@
 
 				var $div = $( '<div>' )
 					.addClass( 'mw-tpa-group js-mw-tpa-group mw-tpa-group-open' )
-					.append( $divDisplay, $divEdit );
+					.append( $divDisplay, $divEdit )
+					.data( { groupid: aggregateGroupId, id: aggregateGroupId } );
 
 				var $subGroupContents = $( '<div>' ).addClass( 'tp-sub-groups' )
 					.attr( 'id', subGroupId )
 					.append( $( '<ol id=\'mw-tpa-grouplist-' + aggregateGroupId + '\'>' ) );
-
-				$div.data( 'groupid', aggregateGroupId );
-				$div.data( 'id', aggregateGroupId );
 
 				var $groupSelector = $( '<input>' ).attr( {
 					type: 'text',

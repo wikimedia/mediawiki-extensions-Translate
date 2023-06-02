@@ -416,24 +416,17 @@
 			mw.translate.changeFilter( newFilter );
 			$this.addClass( 'selected' );
 
+			var translated = newFilter !== '!translated';
 			// TODO: this could should be in messagetable
-			if ( newFilter === '!translated' ) {
-				$hideTranslatedButton
-					.removeClass( 'hide' )
-					.prop( 'disabled', !getTranslatedMessages( $translateContainer ).length );
-			} else {
-				$hideTranslatedButton.addClass( 'hide' );
-			}
+			$hideTranslatedButton.toggleClass( 'hide', translated )
+				.prop( 'disabled', !translated && !getTranslatedMessages( $translateContainer ).length );
 
 			return false;
 		} );
 
 		// TODO: this could should be in messagetable
-		if ( $( '.tux-messagetable-loader' ).data( 'filter' ) === '!translated' ) {
-			$hideTranslatedButton.removeClass( 'hide' );
-		} else {
-			$hideTranslatedButton.addClass( 'hide' );
-		}
+		$hideTranslatedButton
+			.toggleClass( 'hide', $( '.tux-messagetable-loader' ).data( 'filter' ) !== '!translated' );
 
 		// Don't let clicking the items in the "more" menu
 		// affect the rest of it.

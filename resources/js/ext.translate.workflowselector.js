@@ -119,8 +119,8 @@
 				}
 
 				if ( data.id === instance.currentState ) {
-					$display.text( instance.getStateDisplay( data.name ) );
-					$display.append( $( '<span>' ).addClass( 'tux-workflow-status-triangle' ) );
+					$display.text( instance.getStateDisplay( data.name ) )
+						.append( $( '<span>' ).addClass( 'tux-workflow-status-triangle' ) );
 					$state.addClass( 'selected' );
 				}
 
@@ -132,8 +132,8 @@
 
 				var state = $this.data( 'state' ).id;
 
-				$display.text( mw.msg( 'translate-workflow-set-doing' ) );
-				$display.append( $( '<span>' ).addClass( 'tux-workflow-status-triangle' ) );
+				$display.text( mw.msg( 'translate-workflow-set-doing' ) )
+					.append( $( '<span>' ).addClass( 'tux-workflow-status-triangle' ) );
 				instance.changeState( state )
 					.done( function () {
 						instance.receiveState( instance.groupId, instance.language, state );

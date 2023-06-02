@@ -90,16 +90,11 @@
 
 			this.$proofreadOwnTranslations.on( 'click', function () {
 				var $this = $( this ),
-					hideMessage = mw.msg( 'tux-editor-proofreading-hide-own-translations' ),
-					showMessage = mw.msg( 'tux-editor-proofreading-show-own-translations' );
-
-				if ( $this.hasClass( 'down' ) ) {
-					messageTable.setHideOwnInProofreading( false );
-					$this.removeClass( 'down' ).text( hideMessage );
-				} else {
-					messageTable.setHideOwnInProofreading( true );
-					$this.addClass( 'down' ).text( showMessage );
-				}
+					enable = !$this.hasClass( 'down' );
+				messageTable.$container.toggleClass( 'tux-hide-own', enable );
+				$this.toggleClass( 'down', enable ).text( mw.msg( enable ?
+					'tux-editor-proofreading-show-own-translations' :
+					'tux-editor-proofreading-hide-own-translations' ) );
 			} );
 		},
 
@@ -595,25 +590,9 @@
 				.on( 'click', callback );
 		},
 
-		/**
-		 * Enables own message hiding in proofread mode.
-		 *
-		 * @param {boolean} enabled
-		 */
-		setHideOwnInProofreading: function ( enabled ) {
-			if ( enabled ) {
-				this.$container.addClass( 'tux-hide-own' );
-			} else {
-				this.$container.removeClass( 'tux-hide-own' );
-			}
-		},
-
 		updateHideOwnInProofreadingToggleVisibility: function () {
-			if ( this.$container.find( '.tux-message-proofread.own-translation' ).length ) {
-				this.$proofreadOwnTranslations.removeClass( 'hide' );
-			} else {
-				this.$proofreadOwnTranslations.addClass( 'hide' );
-			}
+			var ownTranslations = this.$container.find( '.tux-message-proofread.own-translation' ).length;
+			this.$proofreadOwnTranslations.toggleClass( 'hide', !ownTranslations );
 		},
 
 		/**

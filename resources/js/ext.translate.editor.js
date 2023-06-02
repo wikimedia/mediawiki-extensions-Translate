@@ -666,13 +666,9 @@
 
 				// When there is content in the editor enable the button.
 				// But do not enable when some saving is not finished yet.
-				if ( current.trim() && !translateEditor.saving ) {
-					$pasteSourceButton.addClass( 'hide' );
-					$saveButton.prop( 'disabled', false );
-				} else {
-					$saveButton.prop( 'disabled', true );
-					$pasteSourceButton.removeClass( 'hide' );
-				}
+				var enabled = current.trim() && !translateEditor.saving;
+				$saveButton.prop( 'disabled', !enabled );
+				$pasteSourceButton.toggleClass( 'hide', enabled );
 
 				translateEditor.resizeInsertables( $textarea );
 
@@ -852,16 +848,14 @@
 				.addClass( 'twelve columns tux-editor-control-buttons' )
 				.append( $requestRight, $saveButton, $skipButton, $cancelButton );
 
-			$editorColumn.append( $( '<div>' )
-				.addClass( 'row tux-editor-actions-block' )
-				.append( $editingButtonBlock )
-			);
-
-			$editorColumn.append( $editSummaryBlock );
-
-			$editorColumn.append( $( '<div>' )
-				.addClass( 'row tux-editor-actions-block' )
-				.append( $controlButtonBlock )
+			$editorColumn.append(
+				$( '<div>' )
+					.addClass( 'row tux-editor-actions-block' )
+					.append( $editingButtonBlock ),
+				$editSummaryBlock,
+				$( '<div>' )
+					.addClass( 'row tux-editor-actions-block' )
+					.append( $controlButtonBlock )
 			);
 
 			if ( canTranslate ) {
@@ -891,23 +885,23 @@
 			var self = this;
 
 			if ( this.message.properties.status === 'fuzzy' ) {
-				$button.prop( 'disabled', false );
-				$button.text( mw.msg( 'tux-editor-confirm-button-label' ) );
-				$button.off( 'click' );
-				$button.on( 'click', function ( e ) {
-					self.save();
-					e.stopPropagation();
-				} );
+				$button.prop( 'disabled', false )
+					.text( mw.msg( 'tux-editor-confirm-button-label' ) )
+					.off( 'click' )
+					.on( 'click', function ( e ) {
+						self.save();
+						e.stopPropagation();
+					} );
 			} else if ( this.message.proofreadable ) {
-				$button.prop( 'disabled', false );
-				$button.text( mw.msg( 'tux-editor-proofread-button-label' ) );
-				$button.off( 'click' );
-				$button.on( 'click', function ( e ) {
-					$button.prop( 'disabled', true );
-					self.message.proofreadAction();
-					self.next();
-					e.stopPropagation();
-				} );
+				$button.prop( 'disabled', false )
+					.text( mw.msg( 'tux-editor-proofread-button-label' ) )
+					.off( 'click' )
+					.on( 'click', function ( e ) {
+						$button.prop( 'disabled', true );
+						self.message.proofreadAction();
+						self.next();
+						e.stopPropagation();
+					} );
 			}
 		},
 
@@ -920,12 +914,12 @@
 		makeSaveButtonJustSave: function ( $button ) {
 			var self = this;
 
-			$button.text( mw.msg( 'tux-editor-save-button-label' ) );
-			$button.off( 'click' );
-			$button.on( 'click', function ( e ) {
-				self.save();
-				e.stopPropagation();
-			} );
+			$button.text( mw.msg( 'tux-editor-save-button-label' ) )
+				.off( 'click' )
+				.on( 'click', function ( e ) {
+					self.save();
+					e.stopPropagation();
+				} );
 		},
 
 		/**
@@ -1067,15 +1061,9 @@
 				otherErrorsCount = $allNotices.length - errorCount,
 				$moreButton = this.$editor.find( '.tux-more-notices' );
 
-			if ( errorCount === 0 ) {
-				// if no error, no classes needed.
-				$moreButton.removeClass( 'tux-has-errors' );
-			} else if ( otherErrorsCount > 0 && $moreButton.hasClass( 'open' ) ) {
-				// there are other notices, and more section is expanded.
-				$moreButton.removeClass( 'tux-has-errors' );
-			} else {
-				$moreButton.addClass( 'tux-has-errors' );
-			}
+			// there are other notices, and more section is expanded.
+			var expanded = otherErrorsCount > 0 && $moreButton.hasClass( 'open' );
+			$moreButton.toggleClass( 'tux-has-errors', errorCount > 0 && !expanded );
 		},
 
 		prepareInfoColumn: function () {
