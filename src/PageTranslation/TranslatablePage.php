@@ -250,11 +250,7 @@ class TranslatablePage extends TranslatableBundle {
 
 	public static function getTranslationPageFromTitle( Title $title ): ?TranslationPage {
 		$self = self::isTranslationPage( $title );
-		if ( !$self ) {
-			return null;
-		}
-
-		return $self->getTranslationPage( $self->targetLanguage );
+		return $self ? $self->getTranslationPage( $self->targetLanguage ) : null;
 	}
 
 	public function getTranslationPage( string $targetLanguage ): TranslationPage {
@@ -347,7 +343,7 @@ class TranslatablePage extends TranslatableBundle {
 
 		$messageGroup = $this->getMessageGroup();
 		$knownLanguageCodes = $messageGroup ? $messageGroup->getTranslatableLanguages() : null;
-		$knownLanguageCodes = $knownLanguageCodes ?? Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
+		$knownLanguageCodes ??= Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 
 		$prefixedDbTitleKey = $this->getTitle()->getDBkey() . '/';
 		$baseNamespace = $this->getTitle()->getNamespace();

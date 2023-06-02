@@ -1125,18 +1125,14 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$newRevisionRecord = $status->value['revision-record'];
 		// In theory, it is either null or RevisionRecord object,
 		// not a RevisionRecord object with null id, but who knows
-		if ( $newRevisionRecord instanceof RevisionRecord ) {
-			$newRevisionId = $newRevisionRecord->getId();
-		} else {
-			$newRevisionId = null;
-		}
+		$newRevisionId = $newRevisionRecord instanceof RevisionRecord
+			? $newRevisionRecord->getId()
+			: null;
 
 		// Probably a no-change edit, so no new revision was assigned.
 		// Get the latest revision manually
 		// Could also occur on the off chance $newRevisionRecord->getId() returns null
-		if ( $newRevisionId === null ) {
-			$newRevisionId = $page->getTitle()->getLatestRevID();
-		}
+		$newRevisionId ??= $page->getTitle()->getLatestRevID();
 
 		$inserts = [];
 		$changed = [];

@@ -51,16 +51,12 @@ class ExternalMessageSourceStateComparator {
 	 */
 	public function processGroup( FileBasedMessageGroup $group, $languages ) {
 		$changes = new MessageSourceChange();
-		$processAll = false;
+		$processAll = $languages === self::ALL_LANGUAGES;
 
-		if ( $languages === self::ALL_LANGUAGES ) {
-			$processAll = true;
-			$languages = $group->getTranslatableLanguages();
-
-			// This means all languages
-			if ( $languages === null ) {
-				$languages = Utilities::getLanguageNames( 'en' );
-			}
+		if ( $processAll ) {
+			$languages = $group->getTranslatableLanguages() ??
+				// This means all languages
+				Utilities::getLanguageNames( 'en' );
 
 			$languages = array_keys( $languages );
 		} elseif ( !is_array( $languages ) ) {

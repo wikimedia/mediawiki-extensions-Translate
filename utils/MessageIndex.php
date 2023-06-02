@@ -240,8 +240,8 @@ abstract class MessageIndex {
 
 		$cache = $this->getInterimCache();
 		$interimCacheValue = $cache->get( self::CACHEKEY );
-		$timestamp = $timestamp ?? microtime( true );
 		if ( $interimCacheValue ) {
+			$timestamp ??= microtime( true );
 			if ( $interimCacheValue['timestamp'] <= $timestamp ) {
 				$cache->delete( self::CACHEKEY );
 			} else {
@@ -434,19 +434,12 @@ abstract class MessageIndex {
 	 * @return mixed
 	 */
 	protected function serialize( $data ) {
-		if ( is_array( $data ) ) {
-			return implode( '|', $data );
-		} else {
-			return $data;
-		}
+		return is_array( $data ) ? implode( '|', $data ) : $data;
 	}
 
 	protected function unserialize( $data ) {
-		if ( strpos( $data, '|' ) !== false ) {
-			return explode( '|', $data );
-		}
-
-		return $data;
+		$array = explode( '|', $data );
+		return count( $array ) > 1 ? $array : $data;
 	}
 }
 
@@ -562,13 +555,7 @@ class DatabaseMessageIndex extends MessageIndex {
 			__METHOD__
 		);
 
-		if ( is_string( $value ) ) {
-			$value = $this->unserialize( $value );
-		} else {
-			$value = null;
-		}
-
-		return $value;
+		return is_string( $value ) ? $this->unserialize( $value ) : null;
 	}
 
 	protected function store( array $array, array $diff ) {
@@ -707,13 +694,7 @@ class CDBMessageIndex extends MessageIndex {
 		}
 
 		$value = $reader->get( $key );
-		if ( !is_string( $value ) ) {
-			$value = null;
-		} else {
-			$value = $this->unserialize( $value );
-		}
-
-		return $value;
+		return is_string( $value ) ? $this->unserialize( $value ) : null;
 	}
 
 	protected function store( array $array, array $diff ) {

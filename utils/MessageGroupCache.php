@@ -223,7 +223,7 @@ class MessageGroupCache {
 		}
 
 		// Parse output hash check
-		$parseOutput = $parseOutput ?? $group->parseExternal( $this->code );
+		$parseOutput ??= $group->parseExternal( $this->code );
 		if ( $this->get( '#msghash' ) === md5( serialize( $parseOutput ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
 			$this->create( $created );

@@ -142,7 +142,7 @@ class ManageMessageGroupsActionApi extends ApiBase {
 			// language key is renamed, but one of the non source language keys is removed,
 			// renaming it will not remove the translation, but only rename it. This
 			// scenario is highly unlikely though.
-			$msg = $msg ?? $sourceChanges->findMessage( $code, $keyToRename, [
+			$msg ??= $sourceChanges->findMessage( $code, $keyToRename, [
 				MessageSourceChange::DELETION,
 				MessageSourceChange::CHANGE,
 				MessageSourceChange::RENAME

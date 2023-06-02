@@ -123,19 +123,11 @@ class MessageWebImporter {
 	}
 
 	protected function getActions(): array {
-		if ( $this->code === 'en' ) {
-			return [ 'import', 'fuzzy', 'ignore' ];
-		}
-
-		return [ 'import', 'conflict', 'ignore' ];
-	}
-
-	protected function getDefaultAction( bool $fuzzy, ?string $action ): string {
-		if ( $action ) {
-			return $action;
-		}
-
-		return $fuzzy ? 'conflict' : 'import';
+		return [
+			'import',
+			$this->code === 'en' ? 'fuzzy' : 'conflict',
+			'ignore',
+		];
 	}
 
 	public function execute( array $messages ): bool {
@@ -166,7 +158,6 @@ class MessageWebImporter {
 		$changed = [];
 
 		foreach ( $messages as $key => $value ) {
-			$fuzzy = false;
 			$old = null;
 			$isExistingMessageFuzzy = false;
 
@@ -282,7 +273,7 @@ class MessageWebImporter {
 
 				// Prepare to ask the user what to do with this message
 				$actions = $this->getActions();
-				$defaultAction = $this->getDefaultAction( $fuzzy, $action );
+				$defaultAction = $action ?: 'import';
 
 				$act = [];
 
