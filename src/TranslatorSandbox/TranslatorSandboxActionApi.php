@@ -16,7 +16,6 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\User\UserOptionsManager;
-use MWException;
 use Sanitizer;
 use TranslateSandbox;
 use User;
@@ -148,7 +147,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 			try {
 				TranslateSandbox::deleteUser( $user );
-			} catch ( MWException $e ) {
+			} catch ( UserNotSandboxedException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
 					'invalidparam'
@@ -173,7 +172,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 			try {
 				TranslateSandbox::promoteUser( $user );
-			} catch ( MWException $e ) {
+			} catch ( UserNotSandboxedException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
 					'invalidparam'
@@ -203,7 +202,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 			try {
 				TranslateSandbox::sendEmail( $this->getUser(), $target, 'reminder' );
-			} catch ( MWException $e ) {
+			} catch ( UserNotSandboxedException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
 					'invalidparam'

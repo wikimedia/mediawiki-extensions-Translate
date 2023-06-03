@@ -13,6 +13,7 @@ use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
+use MediaWiki\Extension\Translate\TranslatorSandbox\UserNotSandboxedException;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
@@ -29,13 +30,12 @@ class TranslateSandbox {
 	 * @param string $email Email address.
 	 * @param string $password User provided password.
 	 * @return User
-	 * @throws MWException
 	 */
 	public static function addUser( $name, $email, $password ) {
 		$user = User::newFromName( $name, 'creatable' );
 
 		if ( !$user ) {
-			throw new MWException( 'Invalid user name' );
+			throw new InvalidArgumentException( 'Invalid user name' );
 		}
 
 		$data = [
@@ -67,7 +67,7 @@ class TranslateSandbox {
 				// invalid user name or too short password. The WebAPI is prechecking these to
 				// provide nicer error messages.
 				$reason = $res->message->inLanguage( 'en' )->useDatabase( false )->text();
-				throw new MWException( "Account creation failed: $reason" );
+				throw new RuntimeException( "Account creation failed: $reason" );
 			default:
 				// A provider requested further user input. Abort but clean up first if it was a
 				// secondary provider (in which case the user was created).
@@ -75,7 +75,7 @@ class TranslateSandbox {
 					self::deleteUser( $user, 'force' );
 				}
 
-				throw new MWException(
+				throw new RuntimeException(
 					'AuthManager does not support such simplified account creation'
 				);
 		}
@@ -91,14 +91,14 @@ class TranslateSandbox {
 	 *
 	 * @param User $user
 	 * @param string $force If set to 'force' will skip the little validation we have.
-	 * @throws MWException
+	 * @throws UserNotSandboxedException
 	 */
 	public static function deleteUser( User $user, $force = '' ) {
 		$uid = $user->getId();
 		$actorId = $user->getActorId();
 
 		if ( $force !== 'force' && !self::isSandboxed( $user ) ) {
-			throw new MWException( 'Not a sandboxed user' );
+			throw new UserNotSandboxedException();
 		}
 
 		// Delete from database
@@ -150,13 +150,13 @@ class TranslateSandbox {
 	/**
 	 * Removes the user from the sandbox.
 	 * @param User $user
-	 * @throws MWException
+	 * @throws UserNotSandboxedException
 	 */
 	public static function promoteUser( User $user ) {
 		global $wgTranslateSandboxPromotedGroup;
 
 		if ( !self::isSandboxed( $user ) ) {
-			throw new MWException( 'Not a sandboxed user' );
+			throw new UserNotSandboxedException();
 		}
 
 		$mwServices = MediaWikiServices::getInstance();
@@ -181,7 +181,7 @@ class TranslateSandbox {
 	 * @param User $sender
 	 * @param User $target
 	 * @param string $type 'reminder' or 'promotion'
-	 * @throws MWException
+	 * @throws UserNotSandboxedException
 	 * @since 2013.12
 	 */
 	public static function sendEmail( User $sender, User $target, $type ) {
@@ -193,7 +193,7 @@ class TranslateSandbox {
 		switch ( $type ) {
 			case 'reminder':
 				if ( !self::isSandboxed( $target ) ) {
-					throw new MWException( 'Not a sandboxed user' );
+					throw new UserNotSandboxedException();
 				}
 
 				$subjectMsg = 'tsb-reminder-title-generic';
@@ -214,7 +214,7 @@ class TranslateSandbox {
 
 				break;
 			default:
-				throw new MWException( "'$type' is an invalid type of translate sandbox email" );
+				throw new UnexpectedValueException( "'$type' is an invalid type of translate sandbox email" );
 		}
 
 		$subject = wfMessage( $subjectMsg )->inLanguage( $targetLang )->text();

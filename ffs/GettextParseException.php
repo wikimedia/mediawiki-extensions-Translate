@@ -8,5 +8,5 @@
 /**
  * Exception thrown when a Gettext file could not be parsed, such as when missing required headers.
  */
-class GettextParseException extends MWException {
+class GettextParseException extends Exception {
 }

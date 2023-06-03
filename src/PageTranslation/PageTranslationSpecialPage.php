@@ -23,7 +23,6 @@ use MediaWiki\User\UserIdentity;
 use Message;
 use MessageGroupStatsRebuildJob;
 use MessageIndex;
-use MWException;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
@@ -34,6 +33,7 @@ use SpecialPage;
 use Status;
 use Title;
 use TranslateMetadata;
+use UnexpectedValueException;
 use UserBlockedError;
 use WebRequest;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -892,7 +892,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				} elseif ( $severity === TranslationUnitIssue::ERROR ) {
 					$box = Html::errorBox( $this->msg( $issue )->escaped() );
 				} else {
-					throw new MWException(
+					throw new UnexpectedValueException(
 						"Unknown severity: $severity for key: {$issue->getKey()}"
 					);
 				}

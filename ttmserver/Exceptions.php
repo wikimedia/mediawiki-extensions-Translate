@@ -1,4 +1,4 @@
 <?php
 
-class TTMServerException extends MWException {
+class TTMServerException extends Exception {
 }

@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use ContentHandler;
 use DifferenceEngine;
 use Html;
+use InvalidArgumentException;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -14,8 +15,8 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
 use MessageHandle;
-use MWException;
 use RequestContext;
+use RuntimeException;
 use Sanitizer;
 use Title;
 use User;
@@ -359,7 +360,6 @@ class MessageWebImporter {
 	 * @param MessageGroup $group
 	 * @param string $key Message key
 	 * @param string $message Contents for the $key/code combination
-	 * @throws MWException
 	 * @return array Action result
 	 */
 	private function doAction(
@@ -394,7 +394,7 @@ class MessageWebImporter {
 		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
 			return self::doFuzzy( $title, $message, $comment, $this->getUser() );
 		} else {
-			throw new MWException( "Unhandled action $action" );
+			throw new InvalidArgumentException( "Unhandled action $action" );
 		}
 	}
 
@@ -402,10 +402,7 @@ class MessageWebImporter {
 		return (int)wfTimestamp() - $this->time >= self::MAX_PROCESSING_TIME;
 	}
 
-	/**
-	 * @throws MWException
-	 * @return string[]
-	 */
+	/** @return string[] */
 	private static function doImport(
 		Title $title,
 		string $message,
@@ -429,7 +426,7 @@ class MessageWebImporter {
 
 		$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
 		$text .= $status->getWikiText();
-		throw new MWException( $text );
+		throw new RuntimeException( $text );
 	}
 
 	/** @return string[] */

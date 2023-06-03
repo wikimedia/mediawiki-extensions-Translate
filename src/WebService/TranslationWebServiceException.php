@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
-use MWException;
+use Exception;
 
 /**
  * Used to signal a failure in an external web service. If the web service has
@@ -13,5 +13,5 @@ use MWException;
  * @since 2013-01-01
  * @ingroup TranslationWebService
  */
-class TranslationWebServiceException extends MWException {
+class TranslationWebServiceException extends Exception {
 }

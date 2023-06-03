@@ -35,7 +35,6 @@ class AppleFFS extends SimpleFormat {
 		$authors = $messages = [];
 		$linecontinuation = false;
 
-		$value = '';
 		foreach ( $lines as $line ) {
 			$line = trim( $line );
 			if ( $linecontinuation ) {

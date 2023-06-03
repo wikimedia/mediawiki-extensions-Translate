@@ -115,7 +115,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 			case 'PROOFREAD':
 				return $proofread;
 			default:
-				throw new MWException( "Unknown condition $type" );
+				throw new InvalidArgumentException( "Unknown condition $type" );
 		}
 	}
 
@@ -128,7 +128,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 			case 'MAX':
 				return $value === $max;
 			default:
-				throw new MWException( "Unknown condition value $condition" );
+				throw new InvalidArgumentException( "Unknown condition value $condition" );
 		}
 	}
 

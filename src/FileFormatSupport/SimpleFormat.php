@@ -166,11 +166,7 @@ class SimpleFormat implements FileFormatSupport {
 		];
 	}
 
-	/**
-	 * Write the collection to file.
-	 * @throws LogicException
-	 * @throws InvalidArgumentException
-	 */
+	/** Write the collection to file. */
 	public function write( MessageCollection $collection ): void {
 		$writePath = $this->writePath;
 

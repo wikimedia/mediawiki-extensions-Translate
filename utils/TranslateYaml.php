@@ -17,7 +17,6 @@ class TranslateYaml {
 	/**
 	 * @param string $text
 	 * @return array
-	 * @throws MWException
 	 */
 	public static function loadString( $text ) {
 		global $wgTranslateYamlLibrary;
@@ -40,7 +39,7 @@ class TranslateYaml {
 
 				return self::fixSpycSpaces( $yaml );
 			default:
-				throw new MWException( 'Unknown Yaml library' );
+				throw new RuntimeException( 'Unknown Yaml library' );
 		}
 	}
 
@@ -75,7 +74,7 @@ class TranslateYaml {
 			case 'spyc':
 				return Spyc::YAMLDump( $text );
 			default:
-				throw new MWException( 'Unknown Yaml library' );
+				throw new RuntimeException( 'Unknown Yaml library' );
 		}
 	}
 

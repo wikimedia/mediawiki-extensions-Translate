@@ -7,13 +7,13 @@ use AggregateMessageGroup;
 use ErrorPageError;
 use Html;
 use Language;
+use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
-use MWException;
 use Skin;
 use SpecialPage;
 use Xml;
@@ -145,7 +145,7 @@ class TranslateSpecialPage extends SpecialPage {
 			}
 
 			if ( !isset( $r ) ) {
-				throw new MWException( '$r was not set' );
+				throw new LogicException( '$r was not set' );
 			}
 
 			if ( $defaults[$v] !== $r ) {

@@ -7,14 +7,16 @@ use AppendIterator;
 use ArrayAccess;
 use Countable;
 use EmptyIterator;
+use InvalidArgumentException;
 use Iterator;
+use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
-use MWException;
+use RuntimeException;
 use stdClass;
 use TextContent;
 use TitleValue;
@@ -198,7 +200,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Add external authors (usually from the file).
 	 * @param string[] $authors List of authors.
 	 * @param string $mode Either append or set authors.
-	 * @throws MWException If invalid $mode given.
 	 */
 	public function addCollectionAuthors( array $authors, string $mode = 'append' ): void {
 		switch ( $mode ) {
@@ -208,7 +209,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			case 'set':
 				break;
 			default:
-				throw new MWException( "Invalid mode $mode" );
+				throw new InvalidArgumentException( "Invalid mode $mode" );
 		}
 
 		$this->authors = array_unique( $authors );
@@ -325,11 +326,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param bool $condition Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
 	 * @param int|null $value Value for properties filtering.
-	 * @throws MWException If given invalid filter name.
+	 * @throws InvalidFilterException If given invalid filter name.
 	 */
 	public function filter( string $type, bool $condition = true, ?int $value = null ): void {
 		if ( !in_array( $type, self::getAvailableFilters(), true ) ) {
-			throw new MWException( "Unknown filter $type" );
+			throw new InvalidFilterException( $type );
 		}
 		$this->applyFilter( $type, $condition, $value );
 	}
@@ -353,7 +354,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param bool $condition Whether to return messages which do not satisfy
 	 * @param int|null $value Value for properties filtering.
 	 * the given filter condition (true), or only which do (false).
-	 * @throws MWException
 	 */
 	private function applyFilter( string $filter, bool $condition, ?int $value ): void {
 		$keys = $this->keys;
@@ -377,7 +377,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			// Filter based on tags.
 			if ( !isset( $this->tags[$filter] ) ) {
 				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
-					throw new MWException( "No tagged messages for custom filter $filter" );
+					throw new RuntimeException( "No tagged messages for custom filter $filter" );
 				}
 				$keys = $this->filterOnCondition( $keys, [], $condition );
 			} else {
@@ -924,20 +924,18 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Fail fast if trying to access unknown properties. @{
 	 * @return never
-	 * @throws MWException
 	 */
 	public function __get( string $name ): void {
-		throw new MWException( __METHOD__ . ": Trying to access unknown property $name" );
+		throw new LogicException( __METHOD__ . ": Trying to access unknown property $name" );
 	}
 
 	/**
 	 * Fail fast if trying to access unknown properties.
 	 * @param mixed $value
 	 * @return never
-	 * @throws MWException
 	 */
 	public function __set( string $name, $value ): void {
-		throw new MWException( __METHOD__ . ": Trying to modify unknown property $name" );
+		throw new LogicException( __METHOD__ . ": Trying to modify unknown property $name" );
 	}
 
 	/** @} */

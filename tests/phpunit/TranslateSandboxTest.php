@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\HookHandler;
+use MediaWiki\Extension\Translate\TranslatorSandbox\UserNotSandboxedException;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -56,8 +57,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 	public function testDeleteUserPromoted() {
 		$user = TranslateSandbox::addUser( 'Test user3', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::promoteUser( $user );
-		$this->expectException( MWException::class );
-		$this->expectExceptionMessage( 'Not a sandboxed user' );
+		$this->expectException( UserNotSandboxedException::class );
 		TranslateSandbox::deleteUser( $user );
 	}
 

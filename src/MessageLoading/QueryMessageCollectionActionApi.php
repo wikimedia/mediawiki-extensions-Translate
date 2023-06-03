@@ -13,7 +13,6 @@ use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageHandle;
-use MWException;
 use RecentMessageGroup;
 use Title;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -144,7 +143,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 				} else {
 					$messages->filter( $filter, false, $value );
 				}
-			} catch ( MWException $e ) {
+			} catch ( InvalidFilterException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-invalidfilter', wfEscapeWikiText( $e->getMessage() ) ],
 					'invalidfilter'

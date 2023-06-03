@@ -3,8 +3,8 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use MWException;
 use RequestContext;
+use RuntimeException;
 use Xml;
 use XmlSelect;
 
@@ -53,14 +53,13 @@ class JsSelectToInput {
 
 	/**
 	 * Returns the whole input element and injects needed JavaScript
-	 * @throws MWException
 	 * @return string Html code.
 	 */
 	public function getHtmlAndPrepareJS(): string {
 		$this->sourceId = $this->select->getAttribute( 'id' );
 
 		if ( !is_string( $this->sourceId ) ) {
-			throw new MWException( 'ID needs to be specified for the selector' );
+			throw new RuntimeException( 'ID needs to be specified for the selector' );
 		}
 
 		self::injectJs();

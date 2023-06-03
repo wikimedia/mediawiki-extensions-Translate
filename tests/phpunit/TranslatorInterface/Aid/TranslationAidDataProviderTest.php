@@ -40,10 +40,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	/**
-	 * @covers \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider::getGoodTranslations
-	 * @throws MWException
-	 */
+	/** @covers \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider::getGoodTranslations */
 	public function testGetGoodTranslations() {
 		$title = 'MediaWiki:TestPage';
 		// Create some translations

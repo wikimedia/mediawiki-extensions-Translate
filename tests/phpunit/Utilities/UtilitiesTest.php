@@ -9,13 +9,12 @@ use User;
 
 /**
  * @group Database
- * @covers MediaWiki\Extension\Translate\Utilities\Utilities
+ * @coversDefaultClass \MediaWiki\Extension\Translate\Utilities\Utilities
  */
 class UtilitiesTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * Creates a new page with name and text, returns a revision
-	 * @throws MWException
 	 */
 	private function createPageWithNameAndText( string $name, string $text, User $user ): RevisionRecord {
 		$status = $this->editPage( $name, $text, '', NS_MAIN, $user );
@@ -23,10 +22,7 @@ class UtilitiesTest extends MediaWikiIntegrationTestCase {
 		return $status->getValue()['revision-record'];
 	}
 
-	/**
-	 * @covers MediaWiki\Extension\Translate\Utilities\Utilities::getContents
-	 * @throws MWException
-	 */
+	/** @covers ::getContents */
 	public function testGetContents() {
 		$user = $this->getTestUser()->getUser();
 		$title1 = __METHOD__ . '_Page1';

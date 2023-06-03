@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use MWException;
+use Exception;
 
 /**
  * Translation helpers can throw this exception when they cannot do
@@ -13,5 +13,5 @@ use MWException;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-class TranslationHelperException extends MWException {
+class TranslationHelperException extends Exception {
 }

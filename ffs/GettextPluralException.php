@@ -8,5 +8,5 @@
 /**
  * Identifies Gettext plural exceptions.
  */
-class GettextPluralException extends MWException {
+class GettextPluralException extends Exception {
 }
