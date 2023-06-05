@@ -1523,10 +1523,9 @@ class Hooks {
 			return;
 		}
 
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( isset( $tabs['views']['edit'] ) ) {
 			$action = 'edit';
-		} elseif ( $permissionManager->userCan( 'translate', $skin->getUser(), $page->getTitle() ) ) {
+		} elseif ( $skin->getUser()->isAllowed( 'translate' ) ) {
 			$action = 'translate';
 		} else {
 			return;
