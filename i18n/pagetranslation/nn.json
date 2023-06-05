@@ -6,7 +6,8 @@
 			"Gunnernett",
 			"Harald Khan",
 			"Jon Harald Søby",
-			"Njardarlogar"
+			"Njardarlogar",
+			"Pyscowicz"
 		]
 	},
 	"pagetranslation": "Sideomsetjing",
@@ -28,7 +29,6 @@
 	"tpt-saveok": "Sida [[:$1]] er vorten merkt for omsetjing med {{PLURAL:$2|éi omsetjingseining|$2 omsetjingseiningar}}. Ho kan no verta <span class=\"plainlinks\">[$3 sett om]</span>.",
 	"tpt-mark-summary": "Markerte denne versjonen for omsetjing",
 	"tpt-edit-failed": "Kunne ikkje oppdatera sida: $1",
-	"tpt-already-marked": "Den siste versjonen av denne sida har allereie vorte markert for omsetjing.",
 	"tpt-list-nopages": "Ingen sider er markerte for omsetjing, eller klar til å verta markert for omsetjing.",
 	"tpt-new-pages": "{{PLURAL:$1|Sida|Sidene}} inneheld tekst med omsetjingsmerke, men ingen versjon av {{PLURAL:$1|henne|dei}} er for tida merkt for omsetjing.",
 	"tpt-old-pages": "Ein versjon av {{PLURAL:$1|denne sida|desse sidene}} er vorten merkt for omsetjing.",
@@ -60,6 +60,10 @@
 	"tpt-aggregategroup-add": "Legg til",
 	"tpt-aggregategroup-save": "Lagra",
 	"tpt-aggregategroup-new-name": "Namn:",
+	"tpt-aggregategroup-edit-name": "Namn:",
+	"tpt-aggregategroup-edit-description": "Skildring:",
+	"tpt-aggregategroup-update": "Lagra",
+	"tpt-aggregategroup-update-cancel": "Avbryt",
 	"log-description-pagetranslation": "Logg over handlingar i sideomsetjingssystemet",
 	"log-name-pagetranslation": "Sideomsetjingslogg",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|merkte}} $3 for omsetjing",
@@ -97,6 +101,11 @@
 	"pt-deletepage-list-pages": "Liste over sider som skal slettast",
 	"pt-deletepage-list-other": "Andre undersider",
 	"pt-deletepage-full-logreason": "Del av den omsetjingsmerkte sida «$1»",
+	"pm-import-button-label": "Importer",
+	"pm-savepages-button-label": "Lagra",
+	"pm-cancel-button-label": "Avbryt",
+	"pp-save-button-label": "Publiser",
+	"pp-cancel-button-label": "Avbryt",
 	"tpt-unlink-button": "Fjern frå omsetjing",
 	"tpt-unlink-summary": "Fjerna side frå omsetjing",
 	"tpt-generic-button": "Stadfest"
