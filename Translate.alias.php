@@ -992,9 +992,9 @@ $specialPageAliases['sv'] = [
 
 /** Swahili (Kiswahili) */
 $specialPageAliases['sw'] = [
-	'Translate' => [ 'Tafsiri' ],
+	'Translate' => [ 'Utafsiri' ],
 	'TranslationStats' => [ 'TakwimuzaTafsiri' ],
-	'Translations' => [ 'Utafsiri' ],
+	'Translations' => [ 'Tafsiri' ],
 ];
 
 /** Telugu (తెలుగు) */
