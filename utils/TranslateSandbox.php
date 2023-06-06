@@ -173,7 +173,7 @@ class TranslateSandbox {
 		$userOptionsManager->saveOptions( $user );
 
 		$hookRunner = Services::getInstance()->getHookRunner();
-		$hookRunner->onTranslateTranslatorSandboxUserPromoted( $user );
+		$hookRunner->onTranslate_TranslatorSandbox_UserPromoted( $user );
 	}
 
 	/**

@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserPromotedHook;
@@ -23,7 +25,7 @@ class HookRunner implements UserPromotedHook {
 		$this->hookContainer = $hookContainer;
 	}
 
-	public function onTranslateTranslatorSandboxUserPromoted( UserIdentity $user ): void {
+	public function onTranslate_TranslatorSandbox_UserPromoted( UserIdentity $user ): void {
 		$this->hookContainer->run( 'Translate:TranslatorSandbox:UserPromoted', [ $user ], [ 'abortable' => false ] );
 	}
 }

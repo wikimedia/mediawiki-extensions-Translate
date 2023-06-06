@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use MediaWiki\User\UserIdentity;
@@ -12,5 +14,5 @@ use MediaWiki\User\UserIdentity;
  */
 interface UserPromotedHook {
 	/** Event generated when an account inside the translator sandbox is approved. */
-	public function onTranslateTranslatorSandboxUserPromoted( UserIdentity $user ): void;
+	public function onTranslate_TranslatorSandbox_UserPromoted( UserIdentity $user ): void;
 }
