@@ -15,7 +15,9 @@
 			"דגש חזק",
 			"חיים",
 			"ערן",
-			"פוילישער"
+			"פוילישער",
+			"Pacha Tchernof",
+			"Shoko"
 		]
 	},
 	"translate": "תרגום",
@@ -204,7 +206,7 @@
 	"translate-tes-group-not-found": "אין תוצאות תואמות",
 	"translate-tes-type-to-search": "יש להקליד כדי להתחיל לחפש",
 	"supportedlanguages": "שפות פעילות",
-	"supportedlanguages-summary": "הדף הזה מציג רשימה של השפות הפעילות בהאתר {{SITENAME}},\nעם שמות של מתרגמים שעובדים על אותן השפות.\nגודל שם המתרגם יחסי למספר העריכות שלו.\nצבע הקו התחתי מראה כמה זמן המתרגם פעיל כאן.",
+	"supportedlanguages-summary": "הדף הזה מציג רשימה של השפות הפעילות באתר {{SITENAME}},\nעם שמות של מתרגמים שעובדים על אותן השפות.\nגודל שם המתרגם יחסי למספר העריכות שלו.\nצבע הקו התחתי מראה כמה זמן המתרגם פעיל כאן.",
 	"supportedlanguages-colorlegend": "מקרא לצבעים: תרגום אחרון לפני $1 ימים",
 	"supportedlanguages-sqlite-error": "אין תמיכה ב־SQLite",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|מתרגם|מתרגמת}}|מתרגמים}}: $1",

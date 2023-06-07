@@ -8,7 +8,8 @@
 			"Roy17",
 			"Shinjiman",
 			"Yueman",
-			"Sun8908"
+			"Sun8908",
+			"捍粵者"
 		]
 	},
 	"translate": "翻譯",
@@ -17,7 +18,7 @@
 	"translate-taction-proofread": "複審",
 	"translate-taction-lstats": "話嘅統計",
 	"translate-taction-export": "匯出",
-	"translate-taction-disabled": "呢個wiki唔畀做呢個動作。",
+	"translate-taction-disabled": "爾座wiki唔畀爾步動作。",
 	"translate-page-no-such-language": "所指定嘅語言唔正確。",
 	"translate-page-no-such-group": "所指定嘅組唔正確。",
 	"translate-page-settings-legend": "自定喜好",
