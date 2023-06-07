@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use Psr\Log\LoggerInterface;
 
 /**
  * Job for updating translation memory.
@@ -48,6 +49,8 @@ class TTMServerMessageUpdateJob extends Job {
 	protected const WRITE_BACKOFF_EXPONENT = 7;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
+	private const CHANNEL_NAME = 'Translate.TtmServerUpdates';
+	private LoggerInterface $logger;
 
 	/**
 	 * @param MessageHandle $handle
@@ -76,6 +79,7 @@ class TTMServerMessageUpdateJob extends Job {
 		);
 
 		$this->jobQueueGroup = MediaWikiServices::getInstance()->getJobQueueGroup();
+		$this->logger = LoggerFactory::getInstance( self::CHANNEL_NAME );
 	}
 
 	/**
@@ -102,7 +106,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 */
 	private function runCommandWithRetry( WritableTtmServer $ttmServer, string $serviceName ): void {
 		try {
-			$this->runCommand( $ttmServer );
+			$this->runCommand( $ttmServer, $serviceName );
 		} catch ( Exception $e ) {
 			$this->requeueError( $serviceName, $e );
 		}
@@ -113,7 +117,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 * @param Exception $e the error
 	 */
 	private function requeueError( $serviceName, $e ) {
-		LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
+		$this->logger->warning(
 			'Exception thrown while running {command} on ' .
 			'service {service}: {errorMessage}',
 			[
@@ -124,7 +128,7 @@ class TTMServerMessageUpdateJob extends Job {
 			]
 		);
 		if ( $this->params['errorCount'] >= self::MAX_ERROR_RETRY ) {
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
+			$this->logger->warning(
 				'Dropping failing job {command} for service {service} ' .
 				'after repeated failure',
 				[
@@ -140,7 +144,7 @@ class TTMServerMessageUpdateJob extends Job {
 		$job->params['errorCount']++;
 		$job->params['service'] = $serviceName;
 		$job->setDelay( $delay );
-		LoggerFactory::getInstance( 'TTMServerUpdates' )->info(
+		$this->logger->info(
 			'Update job reported failure on service {service}. ' .
 			'Requeueing job with delay of {delay}.',
 			[
@@ -159,7 +163,7 @@ class TTMServerMessageUpdateJob extends Job {
 		$this->jobQueueGroup->push( $job );
 	}
 
-	private function runCommand( WritableTtmServer $ttmServer ) {
+	private function runCommand( WritableTtmServer $ttmServer, string $serverName ) {
 		$handle = $this->getHandle();
 		$command = $this->params['command'];
 
@@ -170,6 +174,15 @@ class TTMServerMessageUpdateJob extends Job {
 		} elseif ( $command === 'refresh' ) {
 			$this->updateTranslation( $ttmServer, $handle );
 		}
+
+		$this->logger->info(
+			"{command} command completed on {server} for {handle}",
+			[
+				'command' => $command,
+				'server' => $serverName,
+				'handle' => $handle->getTitle()->getPrefixedText()
+			]
+		);
 	}
 
 	/**
@@ -222,7 +235,7 @@ class TTMServerMessageUpdateJob extends Job {
 		$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
 		if ( $requestedServiceId ) {
 			if ( !$ttmServerFactory->has( $requestedServiceId ) ) {
-				LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
+				$this->logger->warning(
 					'Received update job for a an unknown service {service}.',
 					[ 'service' => $requestedServiceId ]
 				);
@@ -235,7 +248,7 @@ class TTMServerMessageUpdateJob extends Job {
 		try {
 			return $ttmServerFactory->getWritable();
 		} catch ( Exception $e ) {
-			LoggerFactory::getInstance( 'TTMServerUpdates' )->error(
+			$this->logger->error(
 				'There was an error while fetching writable TTM services. Error: {error}',
 				[ 'error' => $e->getMessage() ]
 			);

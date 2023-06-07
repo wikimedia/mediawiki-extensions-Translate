@@ -60,10 +60,9 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
 
+		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
 		$job = new TestableTTMServerMessageUpdateJob(
-			Title::makeTitle( NS_MAIN, 'Main Page' ),
-			[ 'command' => 'refresh' ],
-			$this->createMock( MessageHandle::class )
+			$title, [ 'command' => 'refresh' ], $this->createMessageHandleMock( $title )
 		);
 		$job->run();
 		$this->assertSame( [], $job->getResentJobs() );
@@ -84,10 +83,9 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			->will( $this->throwException( new TTMServerException ) );
 		static::$mockups['secondary'] = $mock;
 
+		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
 		$job = new TestableTTMServerMessageUpdateJob(
-			Title::makeTitle( NS_MAIN, 'Main Page' ),
-			[ 'command' => 'refresh' ],
-			$this->createMock( MessageHandle::class )
+			$title, [ 'command' => 'refresh' ], $this->createMessageHandleMock( $title )
 		);
 		$job->run();
 		$this->assertCount( 1, $job->getResentJobs() );
@@ -119,10 +117,9 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			->will( $this->throwException( new TTMServerException ) );
 		static::$mockups['secondary'] = $mock;
 
+		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
 		$job = new TestableTTMServerMessageUpdateJob(
-			Title::makeTitle( NS_MAIN, 'Main Page' ),
-			[ 'command' => 'refresh' ],
-			$this->createMock( MessageHandle::class )
+			$title, [ 'command' => 'refresh' ], $this->createMessageHandleMock( $title )
 		);
 		$job->run();
 		$this->assertCount( 2, $job->getResentJobs() );
@@ -163,14 +160,15 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
 
+		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
 		$job = new TestableTTMServerMessageUpdateJob(
-			Title::makeTitle( NS_MAIN, 'Main Page' ),
+			$title,
 			[
 				'errorCount' => 1,
 				'service' => 'primary',
 				'command' => 'refresh'
 			],
-			$this->createMock( MessageHandle::class )
+			$this->createMessageHandleMock( $title )
 		);
 		$job->run();
 		$this->assertSame( [], $job->getResentJobs() );
@@ -191,17 +189,24 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 			->method( 'update' );
 		static::$mockups['secondary'] = $mock;
 
+		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
 		$job = new TestableTTMServerMessageUpdateJob(
-			Title::makeTitle( NS_MAIN, 'Main Page' ),
+			$title,
 			[
 				'errorCount' => 4,
 				'service' => 'primary',
 				'command' => 'refresh'
 			],
-			$this->createMock( MessageHandle::class )
+			$this->createMessageHandleMock( $title )
 		);
 		$job->run();
 		$this->assertSame( [], $job->getResentJobs() );
+	}
+
+	private function createMessageHandleMock( Title $title ) {
+		$mock = $this->createMock( MessageHandle::class );
+		$mock->method( 'getTitle' )->willReturn( $title );
+		return $mock;
 	}
 
 }
