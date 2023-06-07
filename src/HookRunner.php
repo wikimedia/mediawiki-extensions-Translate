@@ -29,8 +29,8 @@ use User;
 /**
  * Hook runner for the Translate extension.
  *
- * Some legacy style hooks have not been converted to interfaces yet.
- *
+ * This is a hook runner class, see docs/Hooks.md in core.
+ * @internal
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @since 2023.03

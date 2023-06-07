@@ -13,20 +13,6 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 	protected $documented = [];
 	protected $used = [];
 	protected $paths = [
-		'php' => [
-			'',
-			'messagegroups',
-			'src/HookRunner.php',
-			'src/TranslatorInterface',
-			'src/MessageGroupProcessing',
-			'src/TranslatorInterface/Aid',
-			'src/PageTranslation',
-			'src/FileFormatSupport',
-			'src/Utilities',
-			'ttmserver',
-			'utils',
-			'src/WebService',
-		],
 		'js' => [
 			'resources/js',
 		],
@@ -39,10 +25,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 		$type = false;
 
 		foreach ( $blocks as $block ) {
-			if ( $block === '=== PHP events ===' ) {
-				$type = 'php';
-				continue;
-			} elseif ( $block === '=== JavaScript events ===' ) {
+			if ( $block === '=== JavaScript events ===' ) {
 				$type = 'js';
 				continue;
 			} elseif ( !$type ) {
@@ -56,19 +39,6 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 		}
 
 		$prefix = __DIR__ . '/../..';
-		foreach ( $this->paths['php'] as $path ) {
-			if ( str_ends_with( $path, '.php' ) ) {
-				$hooks = self::getPHPHooksFromFile( $prefix . '/' . $path );
-			} else {
-				$path = "$prefix/$path/";
-				$hooks = self::getHooksFromPath( $path, [ self::class, 'getPHPHooksFromFile' ] );
-			}
-
-			foreach ( $hooks as $name => $params ) {
-				$this->used['php'][$name] = $params;
-			}
-		}
-
 		foreach ( $this->paths['js'] as $path ) {
 			$path = "$prefix/$path/";
 			$hooks = self::getHooksFromPath( $path, [ self::class, 'getJSHooksFromFile' ] );
@@ -83,19 +53,6 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 		$m = [];
 		preg_match_all( '/\bmw\.hook\(\s*[\'"]([^\'"]+)[\'"]\s*\).fire\(/', $content, $m );
 		$hooks = [];
-		foreach ( $m[1] as $hook ) {
-			$hooks[$hook] = [];
-		}
-
-		return $hooks;
-	}
-
-	protected static function getPHPHooksFromFile( $file ) {
-		$content = file_get_contents( $file );
-
-		$hooks = [];
-		// Match hookContainer->run( ... )
-		preg_match_all( '/->run\(\s*[\'"]([^\'"]+)/', $content, $m );
 		foreach ( $m[1] as $hook ) {
 			$hooks[$hook] = [];
 		}
@@ -130,18 +87,6 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 		}
 
 		return [ $name, $params ];
-	}
-
-	public function testHookIsDocumentedPHP() {
-		foreach ( $this->used['php'] as $hook => $params ) {
-			$this->assertArrayHasKey( $hook, $this->documented['php'], "PHP hook $hook is documented" );
-		}
-	}
-
-	public function testHookExistsPHP() {
-		foreach ( $this->documented['php'] as $hook => $params ) {
-			$this->assertArrayHasKey( $hook, $this->used['php'], "Documented php hook $hook exists" );
-		}
 	}
 
 	public function testHookIsDocumentedJS() {
