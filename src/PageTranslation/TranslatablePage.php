@@ -460,40 +460,26 @@ class TranslatablePage extends TranslatableBundle {
 	/** @return bool|self */
 	public static function isTranslationPage( Title $title ) {
 		$handle = new MessageHandle( $title );
-		$key = $handle->getKey();
-		$code = $handle->getCode();
-
-		if ( $key === '' || $code === '' ) {
+		if ( !Utilities::isTranslationPage( $handle ) ) {
 			return false;
 		}
 
-		$codes = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames();
-		global $wgTranslateDocumentationLanguageCode;
-		unset( $codes[$wgTranslateDocumentationLanguageCode] );
+		$languageCode = $handle->getCode();
+		$newTitle = $handle->getTitleForBase();
 
-		if ( !isset( $codes[$code] ) ) {
+		if ( !$newTitle ) {
 			return false;
 		}
 
-		$newtitle = self::changeTitleText( $title, $key );
-
-		if ( !$newtitle ) {
-			return false;
-		}
-
-		$page = self::newFromTitle( $newtitle );
+		$page = self::newFromTitle( $newTitle );
 
 		if ( $page->getMarkedTag() === null ) {
 			return false;
 		}
 
-		$page->targetLanguage = $code;
+		$page->targetLanguage = $languageCode;
 
 		return $page;
-	}
-
-	private static function changeTitleText( Title $title, string $text ): ?Title {
-		return Title::makeTitleSafe( $title->getNamespace(), $text );
 	}
 
 	/** Helper to guess translation page from translation unit. */
