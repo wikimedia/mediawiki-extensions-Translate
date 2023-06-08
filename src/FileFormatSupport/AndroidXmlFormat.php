@@ -74,7 +74,7 @@ class AndroidXmlFormat extends SimpleFormat {
 		];
 	}
 
-	private function scrapeAuthors( $string ): array {
+	private function scrapeAuthors( string $string ): array {
 		if ( !preg_match( '~<!-- Authors:\n((?:\* .*\n)*)-->~', $string, $match ) ) {
 			return [];
 		}
@@ -114,7 +114,7 @@ class AndroidXmlFormat extends SimpleFormat {
 		return str_replace( "\n", '\n', $escaped );
 	}
 
-	protected function doAuthors( MessageCollection $collection ): string {
+	private function doAuthors( MessageCollection $collection ): string {
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
 
