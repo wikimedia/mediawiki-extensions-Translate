@@ -121,7 +121,7 @@
 	"action-translate-groupreview": "muuttaa viestiryhmien tilaa",
 	"translate-rcfilters-translations": "Käännökset",
 	"translate-rcfilters-translations-only-label": "Käännösnimiavaruudet",
-	"translate-rcfilters-translations-only-desc": "Muutokset käännettyihin sivuihin.",
+	"translate-rcfilters-translations-only-desc": "Viestiryhmiin lähetetyt käännökset.",
 	"translate-rcfilters-translations-filter-label": "Ei käännöksiä",
 	"translate-rcfilters-translations-filter-desc": "Kaikki paitsi viestiryhmiin lähetetyt käännökset.",
 	"translate-rcfilters-translations-filter-translation-pages-label": "Ei käännössivuja",
