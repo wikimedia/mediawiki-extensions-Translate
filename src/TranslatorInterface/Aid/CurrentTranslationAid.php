@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\MediaWikiServices;
 use MessageHandle;
 
 /**
@@ -23,8 +23,8 @@ class CurrentTranslationAid extends TranslationAid {
 			$title->getNamespace()
 		);
 
-		MediaWikiServices::getInstance()->getHookContainer()
-			->run( 'TranslatePrefillTranslation', [ &$translation, $this->handle ] );
+		Services::getInstance()->getHookRunner()
+			->onTranslatePrefillTranslation( $translation, $this->handle );
 		// If we have still no translation, use the empty string so that
 		// string handler functions don't error out on PHP 8.1+
 		$translation ??= '';

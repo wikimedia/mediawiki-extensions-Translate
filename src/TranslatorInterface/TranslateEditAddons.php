@@ -144,8 +144,8 @@ class TranslateEditAddons {
 			->newFromId( $userIdentity->getId() );
 
 		if ( !$fuzzy ) {
-			$mwServices->getHookContainer()
-			->run( 'Translate:newTranslation', [ $handle, $revId, $text, $user ] );
+			Services::getInstance()->getHookRunner()
+				->onTranslate_newTranslation( $handle, $revId, $text, $user );
 		}
 
 		TTMServer::onChange( $handle );

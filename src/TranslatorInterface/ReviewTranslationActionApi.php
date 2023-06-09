@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use ApiBase;
 use ApiMain;
 use ManualLogEntry;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MessageHandle;
@@ -29,18 +30,22 @@ class ReviewTranslationActionApi extends ApiBase {
 	private $titleFormatter;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
+	/** @var HookRunner */
+	private $hookRunner;
 
 	public function __construct(
 		ApiMain $main,
 		string $moduleName,
 		RevisionLookup $revisionLookup,
 		TitleFormatter $titleFormatter,
-		ILoadBalancer $loadBalancer
+		ILoadBalancer $loadBalancer,
+		HookRunner $hookRunner
 	) {
 		parent::__construct( $main, $moduleName );
 		$this->revisionLookup = $revisionLookup;
 		$this->titleFormatter = $titleFormatter;
 		$this->loadBalancer = $loadBalancer;
+		$this->hookRunner = $hookRunner;
 	}
 
 	public function execute() {
@@ -109,7 +114,7 @@ class ReviewTranslationActionApi extends ApiBase {
 		$entry->publish( $logid );
 
 		$handle = new MessageHandle( $title );
-		$this->getHookContainer()->run( 'TranslateEventTranslationReview', [ $handle ] );
+		$this->hookRunner->onTranslateEventTranslationReview( $handle );
 
 		return true;
 	}

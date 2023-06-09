@@ -257,7 +257,8 @@
 			"services": [
 				"ContentLanguage",
 				"LanguageFactory",
-				"LanguageNameUtils"
+				"LanguageNameUtils",
+				"Translate:HookRunner"
 			]
 		},
 		"Translations": {
@@ -405,7 +406,8 @@
 			"services": [
 				"RevisionLookup",
 				"TitleFormatter",
-				"DBLoadBalancer"
+				"DBLoadBalancer",
+				"Translate:HookRunner"
 			]
 		},
 		"translationcheck": "\\MediaWiki\\Extension\\Translate\\Validation\\CheckTranslationActionApi",

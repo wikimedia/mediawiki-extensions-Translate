@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use ContextSource;
 use Html;
 use IContextSource;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 
@@ -30,8 +31,7 @@ class MessageTable extends ContextSource {
 
 	public function fullTable(): string {
 		$modules = [];
-		MediaWikiServices::getInstance()->getHookContainer()
-			->run( 'TranslateBeforeAddModules', [ &$modules ] );
+		Services::getInstance()->getHookRunner()->onTranslateBeforeAddModules( $modules );
 		$this->getOutput()->addModules( $modules );
 
 		$languageFactory = MediaWikiServices::getInstance()->getLanguageFactory();

@@ -8,6 +8,7 @@ use ErrorPageError;
 use Html;
 use Language;
 use LogicException;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
@@ -39,16 +40,20 @@ class TranslateSpecialPage extends SpecialPage {
 	private $languageFactory;
 	/** @var LanguageNameUtils */
 	private $languageNameUtils;
+	/** @var HookRunner */
+	private $hookRunner;
 
 	public function __construct(
 		Language $contentLanguage,
 		LanguageFactory $languageFactory,
-		LanguageNameUtils $languageNameUtils
+		LanguageNameUtils $languageNameUtils,
+		HookRunner $hookRunner
 	) {
 		parent::__construct( 'Translate' );
 		$this->contentLanguage = $contentLanguage;
 		$this->languageFactory = $languageFactory;
 		$this->languageNameUtils = $languageNameUtils;
+		$this->hookRunner = $hookRunner;
 	}
 
 	public function doesWrites() {
@@ -155,7 +160,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$this->defaults = $defaults;
 		$this->nondefaults = $nondefaults;
-		$this->getHookContainer()->run( 'TranslateGetSpecialTranslateOptions', [ &$defaults, &$nondefaults ] );
+		$this->hookRunner->onTranslateGetSpecialTranslateOptions( $defaults, $nondefaults );
 
 		$this->options = $nondefaults + $defaults;
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
