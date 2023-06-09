@@ -343,9 +343,11 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$titleLink = $this->getLinkRenderer()->makeLink( $title );
 
 		if ( $type === 'deletion' ) {
-			$content = $this->revLookup
-				->getRevisionByTitle( $title )
-				->getContent( SlotRecord::MAIN );
+			$revTitle = $this->revLookup->getRevisionByTitle( $title );
+			if ( !$revTitle ) {
+				wfWarn( "[ManageGroupSpecialPage] No revision associated with {$title->getPrefixedText()}" );
+			}
+			$content = $revTitle ? $revTitle->getContent( SlotRecord::MAIN ) : null;
 			$wiki = ( $content instanceof TextContent ) ? $content->getText() : '';
 
 			if ( $wiki === '' ) {
