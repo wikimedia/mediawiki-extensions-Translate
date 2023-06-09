@@ -99,7 +99,6 @@ class XliffFFS extends SimpleFormat {
 	/**
 	 * @param string $code Language code.
 	 * @return array|bool
-	 * @throws MWException
 	 */
 	public function read( $code ) {
 		if ( !$this->exists( $code ) ) {
@@ -109,7 +108,7 @@ class XliffFFS extends SimpleFormat {
 		$filename = $this->group->getSourceFilePath( $code );
 		$input = file_get_contents( $filename );
 		if ( $input === false ) {
-			throw new MWException( "Unable to read file $filename." );
+			throw new RuntimeException( "Unable to read file $filename." );
 		}
 
 		$element = $code === $this->group->getSourceLanguage() ? 'source' : 'target';

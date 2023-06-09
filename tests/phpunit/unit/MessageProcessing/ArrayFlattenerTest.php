@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
+use InvalidArgumentException;
 use MediaWikiUnitTestCase;
-use MWException;
 
 /** @coversDefaultClass \MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener */
 class ArrayFlattenerTest extends MediaWikiUnitTestCase {
@@ -54,7 +54,7 @@ class ArrayFlattenerTest extends MediaWikiUnitTestCase {
 	 */
 	public function testFlattenMixedCLDRPlurals( $input ) {
 		$flattener = new ArrayFlattener( '.', true );
-		$this->expectException( MWException::class );
+		$this->expectException( InvalidArgumentException::class );
 		$flattener->flatten( $input );
 	}
 

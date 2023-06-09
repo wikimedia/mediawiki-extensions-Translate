@@ -214,7 +214,7 @@ class PremadeMediawikiExtensionGroups {
 					if ( empty( $newgroup['name'] ) ) {
 						$newgroup['name'] = $line;
 					} else {
-						throw new MWException( 'Trying to define name twice: ' . $line );
+						throw new RuntimeException( 'Trying to define name twice: ' . $line );
 					}
 				} else {
 					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
@@ -243,7 +243,7 @@ class PremadeMediawikiExtensionGroups {
 								explode( '|', $value, 2 )
 							);
 							if ( isset( $newgroup['prefix'] ) && $newgroup['prefix'] !== $prefix ) {
-								throw new MWException(
+								throw new RuntimeException(
 									"Only one prefix supported: {$newgroup['prefix']} !== $prefix"
 								);
 							}
@@ -257,14 +257,14 @@ class PremadeMediawikiExtensionGroups {
 							$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
 							break;
 						default:
-							throw new MWException( 'Unknown key:' . $key );
+							throw new UnexpectedValueException( 'Unknown key:' . $key );
 					}
 				}
 			}
 
 			if ( count( $newgroup ) ) {
 				if ( empty( $newgroup['name'] ) ) {
-					throw new MWException( "Name missing\n" . print_r( $newgroup, true ) );
+					throw new RuntimeException( "Name missing\n" . print_r( $newgroup, true ) );
 				}
 				$groups[] = $newgroup;
 			}

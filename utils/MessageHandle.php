@@ -141,13 +141,12 @@ class MessageHandle {
 	/**
 	 * Get the primary MessageGroup this message belongs to.
 	 * You should check first that the handle is valid.
-	 * @throws MWException
 	 * @return MessageGroup|null
 	 */
 	public function getGroup() {
 		$ids = $this->getGroupIds();
 		if ( !isset( $ids[0] ) ) {
-			throw new MWException( 'called before isValid' );
+			throw new BadMethodCallException( 'called before isValid' );
 		}
 
 		return MessageGroups::getGroup( $ids[0] );

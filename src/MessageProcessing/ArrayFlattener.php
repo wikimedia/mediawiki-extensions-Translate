@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MWException;
 
 /**
  * Flattens message arrays for further processing. Supports parsing CLDR
@@ -76,7 +76,6 @@ class ArrayFlattener {
 	/**
 	 * Flattens arrays that contain CLDR plural keywords into single values using
 	 * MediaWiki's plural syntax.
-	 * @throws MWException
 	 * @return bool|string
 	 */
 	public function flattenCLDRPlurals( array $messages ) {
@@ -109,7 +108,7 @@ class ArrayFlattener {
 			}
 
 			$keys = implode( ', ', array_keys( $messages ) );
-			throw new MWException( "Reserved plural keywords mixed with other keys: $keys." );
+			throw new InvalidArgumentException( "Reserved plural keywords mixed with other keys: $keys." );
 		}
 
 		$pls = '{{PLURAL';

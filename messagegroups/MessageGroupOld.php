@@ -135,13 +135,12 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * This function returns array of type key => definition of all messages
 	 * this message group handles.
 	 *
-	 * @throws MWException
 	 * @return string[] List of message definitions indexed by key.
 	 */
 	public function getDefinitions() {
 		$defs = $this->load( $this->getSourceLanguage() );
 		if ( !is_array( $defs ) ) {
-			throw new MWException( 'Unable to load definitions for ' . $this->getLabel() );
+			throw new RuntimeException( 'Unable to load definitions for ' . $this->getLabel() );
 		}
 
 		return $defs;

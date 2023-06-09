@@ -266,7 +266,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			->getNsIndex( $ns );
 
 		if ( !$index ) {
-			throw new MWException( "No valid namespace defined, got $ns." );
+			throw new RuntimeException( "No valid namespace defined, got $ns." );
 		}
 
 		return $index;

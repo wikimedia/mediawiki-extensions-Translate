@@ -110,7 +110,6 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	/**
 	 * @param string $code Language code.
 	 * @return string
-	 * @throws MWException
 	 */
 	public function getSourceFilePath( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
@@ -122,7 +121,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 
 		$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
 		if ( $pattern === null ) {
-			throw new MWException( 'No source file pattern defined.' );
+			throw new RuntimeException( 'No source file pattern defined.' );
 		}
 
 		return $this->replaceVariables( $pattern, $code );
@@ -146,7 +145,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		}
 
 		if ( $pattern === null ) {
-			throw new MWException( 'No source file pattern defined.' );
+			throw new RuntimeException( 'No source file pattern defined.' );
 		}
 
 		// For exports, the scripts take output directory. We want to

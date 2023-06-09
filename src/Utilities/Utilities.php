@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
+use ConfigException;
 use Content;
 use LanguageCode;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
@@ -13,7 +14,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
 use MessageHandle;
-use MWException;
 use RequestContext;
 use TextContent;
 use Title;
@@ -306,10 +306,9 @@ class Utilities {
 	}
 
 	/**
-	 * Gets the path for cache files
+	 * Gets the path for cache files. The cache directory must be configured to use this method.
 	 * @param string $filename
 	 * @return string Full path.
-	 * @throws MWException If cache directory is not configured.
 	 */
 	public static function cacheFile( string $filename ): string {
 		global $wgTranslateCacheDirectory, $wgCacheDirectory;
@@ -319,7 +318,7 @@ class Utilities {
 		} elseif ( $wgCacheDirectory !== false ) {
 			$dir = $wgCacheDirectory;
 		} else {
-			throw new MWException( "\$wgCacheDirectory must be configured" );
+			throw new ConfigException( "\$wgCacheDirectory must be configured" );
 		}
 
 		return "$dir/$filename";

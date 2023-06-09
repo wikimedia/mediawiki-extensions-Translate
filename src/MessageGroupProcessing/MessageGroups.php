@@ -15,7 +15,7 @@ use MessageGroup;
 use MessageGroupBase;
 use MessageGroupLoader;
 use MessageHandle;
-use MWException;
+use RuntimeException;
 use Title;
 use TranslateMetadata;
 use WANObjectCache;
@@ -632,7 +632,6 @@ class MessageGroups {
 	 * One group can exist multiple times in different parts of the tree.
 	 * In other words: [Group1, Group2, [AggGroup, Group3, Group4]]
 	 *
-	 * @throws MWException If cyclic structure is detected.
 	 * @return array Map of (group ID => MessageGroup or recursive array)
 	 */
 	public static function getGroupStructure(): array {
@@ -685,7 +684,7 @@ class MessageGroups {
 
 			// Only list the aggregate groups, other groups cannot cause cycles
 			$participants = implode( ', ', array_keys( $unused ) );
-			throw new MWException( "Found cyclic aggregate message groups: $participants" );
+			throw new RuntimeException( "Found cyclic aggregate message groups: $participants" );
 		}
 
 		return $tree;
@@ -706,7 +705,6 @@ class MessageGroups {
 	 * @param AggregateMessageGroup $parent
 	 * @param string[] &$childIds Flat list of child group IDs [returned]
 	 * @param string $fname Calling method name; used to identify recursion [optional]
-	 * @throws MWException
 	 * @return array
 	 */
 	public static function subGroups(
@@ -726,7 +724,7 @@ class MessageGroups {
 				// Until we have gone full cycle
 			} while ( $tid !== $pid );
 			$path = implode( ' > ', $path );
-			throw new MWException( "Found cyclic aggregate message groups: $path" );
+			throw new RuntimeException( "Found cyclic aggregate message groups: $path" );
 		}
 
 		// We don't care about the ids.

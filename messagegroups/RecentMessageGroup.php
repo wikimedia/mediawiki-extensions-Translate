@@ -90,7 +90,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 	public function getDefinitions() {
 		if ( !$this->language ) {
-				throw new MWException( 'Language not set' );
+				throw new BadMethodCallException( 'Language not set' );
 		}
 
 		$db = wfGetDB( DB_REPLICA );
@@ -143,7 +143,6 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 * Subpage language code, if any in the title, is ignored.
 	 * @param MessageHandle $handle
 	 * @return null|string
-	 * @throws MWException
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
@@ -154,6 +153,6 @@ class RecentMessageGroup extends WikiMessageGroup {
 			}
 		}
 
-		throw new MWException( 'Could not find group for ' . $handle->getKey() );
+		throw new InvalidArgumentException( 'Could not find group for ' . $handle->getKey() );
 	}
 }

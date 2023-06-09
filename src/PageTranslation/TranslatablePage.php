@@ -17,7 +17,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroupStats;
 use MessageHandle;
-use MWException;
 use RuntimeException;
 use SpecialPage;
 use TextContent;
@@ -87,14 +86,13 @@ class TranslatablePage extends TranslatableBundle {
 	 * Constructs a translatable page from given revision.
 	 * The revision must belong to the title given or unspecified
 	 * behavior will happen.
-	 * @throws MWException
 	 */
 	public static function newFromRevision( Title $title, int $revision ): self {
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
 			->getRevisionByTitle( $title, $revision );
 		if ( $rev === null ) {
-			throw new MWException( 'Revision is null' );
+			throw new RuntimeException( 'Revision is null' );
 		}
 
 		$obj = new self( $title );
