@@ -19,6 +19,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\Revision\MutableRevisionRecord;
@@ -1523,9 +1524,23 @@ class Hooks {
 			return;
 		}
 
+		$user = $skin->getUser();
 		if ( isset( $tabs['views']['edit'] ) ) {
 			$action = 'edit';
-		} elseif ( $skin->getUser()->isAllowed( 'translate' ) ) {
+		} elseif ( $user->isAllowed( 'translate' ) ) {
+			$mwInstance = MediaWikiServices::getInstance();
+			$namespaceProtection = $mwInstance->getMainConfig()->get( MainConfigNames::NamespaceProtection );
+			$permissionManager = $mwInstance->getPermissionManager();
+			if (
+				!$permissionManager->userHasAllRights(
+					$user, ...(array)( $namespaceProtection[ NS_TRANSLATIONS ] ?? [] )
+				)
+			) {
+				return;
+			}
+
+			// Remove the viewsource link that says that the page is protected.
+			unset( $tabs['views']['viewsource'] );
 			$action = 'translate';
 		} else {
 			return;
