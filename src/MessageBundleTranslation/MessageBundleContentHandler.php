@@ -62,6 +62,11 @@ class MessageBundleContentHandler extends TextContentHandler {
 			);
 		}
 
+		$label = $content->getMetadata()->getLabel();
+		if ( $label !== null ) {
+			$parserOutput->setDisplayTitle( $label );
+		}
+
 		if ( $cpoParams->getGenerateHtml() && $content->isValid() ) {
 			$parserOutput->setText( $content->rootValueTable( $content->getData()->getValue() ) );
 			$parserOutput->addModuleStyles( [ 'mediawiki.content.json' ] );

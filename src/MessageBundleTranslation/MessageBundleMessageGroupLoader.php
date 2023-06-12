@@ -87,9 +87,16 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 		// Loop over all the group ids and create the MessageBundleMessageGroup
 		foreach ( $groupIds as $index => $groupId ) {
 			$conf = $cacheData[$index];
-			$description = TranslateMetadata::get( $groupId, 'description' );
-			$description = $description !== false ? $description : null;
-			$groups[$groupId] = new MessageBundleMessageGroup( $groupId, $conf[0], $conf[1], $conf[2], $description );
+			$description = $this->getMetadata( $groupId, 'description' );
+			$label = $this->getMetadata( $groupId, 'label' );
+			$groups[$groupId] = new MessageBundleMessageGroup(
+				$groupId,
+				$conf[0],
+				$conf[1],
+				$conf[2],
+				$description,
+				$label
+			);
 		}
 
 		return $groups;
@@ -108,5 +115,10 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 	public function clearCache(): void {
 		$this->groups = null;
 		$this->cache->delete();
+	}
+
+	private function getMetadata( string $groupId, string $key ): ?string {
+		$metadata = TranslateMetadata::get( $groupId, $key );
+		return $metadata !== false ? $metadata : null;
 	}
 }

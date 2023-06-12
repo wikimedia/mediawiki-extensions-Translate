@@ -149,7 +149,8 @@ class MessageBundleContentTest extends MediaWikiUnitTestCase {
 				'@metadata' => [
 					'sourceLanguage' => 'fr',
 					'priorityLanguages' => [ 'en', 'es' ],
-					'description' => 'Hello World!'
+					'description' => 'Hello World!',
+					'label' => 'Hello!'
 				],
 				'k1' => 'a',
 				'k2' => 'b',

@@ -22,6 +22,7 @@ class MessageBundleContent extends JsonContent {
 	public const METADATA_KEYS = [
 		'allowOnlyPriorityLanguages',
 		'description',
+		'label',
 		'priorityLanguages',
 		'sourceLanguage'
 	];
@@ -158,11 +159,23 @@ class MessageBundleContent extends JsonContent {
 			$description = trim( $description ) === '' ? null : trim( $description );
 		}
 
+		$label = $metadata['label'] ?? null;
+		if ( $label !== null ) {
+			if ( !is_string( $label ) ) {
+				throw new MalformedBundle(
+					'translate-messagebundle-error-invalid-label'
+				);
+			}
+
+			$label = trim( $label ) === '' ? null : trim( $label );
+		}
+
 		$this->metadata = new MessageBundleMetadata(
 			$sourceLanguage,
 			$priorityLanguageCodes,
 			(bool)( $metadata['allowOnlyPriorityLanguages'] ?? false ),
-			$description
+			$description,
+			$label
 		);
 		return $this->metadata;
 	}

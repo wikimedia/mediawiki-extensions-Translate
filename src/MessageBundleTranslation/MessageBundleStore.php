@@ -182,6 +182,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 			$description = $metadata->getDescription();
 			TranslateMetadata::set( $groupId, 'description', $description ?? false );
+
+			$label = $metadata->getLabel();
+			TranslateMetadata::set( $groupId, 'label', $label ?? false );
 		}
 
 		// What should we do if there are no messages? Use the previous version? Remove the group?

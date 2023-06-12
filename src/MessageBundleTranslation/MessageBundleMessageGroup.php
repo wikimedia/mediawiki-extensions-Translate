@@ -31,19 +31,22 @@ class MessageBundleMessageGroup implements MessageGroup {
 	private int $revisionId;
 	private ?array $data = null;
 	private ?string $description;
+	private ?string $label;
 
 	public function __construct(
 		string $groupId,
 		string $name,
 		int $pageId,
 		int $revisionId,
-		?string $description
+		?string $description,
+		?string $label
 	) {
 		$this->groupId = $groupId;
 		$this->name = $name;
 		$this->pageId = $pageId;
 		$this->revisionId = $revisionId;
 		$this->description = $description;
+		$this->label = $label;
 	}
 
 	/** Suggested default naming pattern */
@@ -100,7 +103,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 
 	/** @inheritDoc */
 	public function getLabel( IContextSource $context = null ): string {
-		return $this->name;
+		return $this->label ?? $this->name;
 	}
 
 	/** @inheritDoc */

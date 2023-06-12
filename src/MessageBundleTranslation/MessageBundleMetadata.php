@@ -14,17 +14,20 @@ class MessageBundleMetadata {
 	private ?array $priorityLanguageCodes;
 	private bool $allowOnlyPriorityLanguages;
 	private ?string $description;
+	private ?string $label;
 
 	public function __construct(
 		?string $sourceLanguageCode,
 		?array $priorityLanguageCodes,
 		bool $allowOnlyPriorityLanguages,
-		?string $description
+		?string $description,
+		?string $label
 	) {
 		$this->sourceLanguageCode = $sourceLanguageCode;
 		$this->priorityLanguageCodes = $priorityLanguageCodes;
 		$this->allowOnlyPriorityLanguages = $allowOnlyPriorityLanguages;
 		$this->description = $description;
+		$this->label = $label;
 	}
 
 	public function getSourceLanguageCode(): ?string {
@@ -41,5 +44,9 @@ class MessageBundleMetadata {
 
 	public function getDescription(): ?string {
 		return $this->description;
+	}
+
+	public function getLabel(): ?string {
+		return $this->label;
 	}
 }
