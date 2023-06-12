@@ -465,5 +465,7 @@
 	"translate-messagebundle-sourcelanguage-changed": "לא ניתן לשנות את שפת המקור של חבילת הודעות אחרי שהיא נוצרה.",
 	"log-action-filter-translationreview": "סוג הפעולה:",
 	"log-action-filter-translationreview-message": "סקירה של הודעות תרגום בודדות",
-	"log-action-filter-translationreview-group": "שינויים במצב התקדמות התרגומים"
+	"log-action-filter-translationreview-group": "שינויים במצב התקדמות התרגומים",
+	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|ייבא|ייבאה}} חבילה ההודעות לתרגום $3",
+	"log-action-filter-import-translatable-bundle": "יבוא חבילת הודעות לתרגום"
 }

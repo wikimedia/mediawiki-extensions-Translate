@@ -458,5 +458,7 @@
 	"translate-messagebundle-sourcelanguage-changed": "Izvornega jezika svežnja sporočil ni več mogoče spremeniti, ko je ta ustvarjen.",
 	"log-action-filter-translationreview": "Vrsta dejanja:",
 	"log-action-filter-translationreview-message": "Pregled posameznih prevodnih sporočil",
-	"log-action-filter-translationreview-group": "Spremembe stanja napredka prevodov"
+	"log-action-filter-translationreview-group": "Spremembe stanja napredka prevodov",
+	"logentry-import-translatable-bundle": "$1 je {{GENDER:$2|uvozil|uvozila|uvozil_a}} prevodni sveženj $3",
+	"log-action-filter-import-translatable-bundle": "Uvoz prevodnega svežnja"
 }

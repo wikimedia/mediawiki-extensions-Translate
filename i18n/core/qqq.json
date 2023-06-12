@@ -498,5 +498,4 @@
 	"log-action-filter-translationreview-group": "{{doc-log-action-filter-action|translationreview|group}}",
 	"logentry-import-translatable-bundle": "{{logentry|[[Special:Log/import]]}}",
 	"log-action-filter-import-translatable-bundle": "{{doc-log-action-filter-action|import|translatable-bundle}}"
-
 }
