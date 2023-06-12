@@ -50,6 +50,7 @@
 	"tpt-new-pages-title": "Käännettäväksi ehdotetut sivut",
 	"tpt-old-pages-title": "Käännettävät sivut",
 	"tpt-other-pages-title": "Rikkoutuneet sivut",
+	"tpt-outdated-pages-title": "Sivut, joilla on arviointia odottavia muutoksia",
 	"tpt-new-pages": "{{PLURAL:$1|Tämä sivu sisältää|Nämä sivut sisältävät}} tekstiä, joka on valmis merkittäväksi kääntämistä varten,\nmutta mikään versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} ei ole tällä hetkellä merkitty käännettäväksi.",
 	"tpt-old-pages": "Viimeisin versio {{PLURAL:$1|tästä sivusta on|näistä sivuista on}} merkitty käännettäväksi.",
 	"tpt-other-pages": "Vanha versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} on merkitty käännettäväksi,\nmutta viimeisintä versiota ei voi merkitä käännettäväksi.",

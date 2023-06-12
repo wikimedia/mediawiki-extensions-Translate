@@ -78,5 +78,6 @@
 	"tux-editor-expand-tooltip": "Stuorit",
 	"tux-editor-collapse-tooltip": "Čiega",
 	"tux-editor-message-tools-delete": "Sihko",
-	"tux-editor-message-tools-translations": "Buot jorgalusat"
+	"tux-editor-message-tools-translations": "Buot jorgalusat",
+	"tux-editor-loading": "Viežžamin..."
 }
