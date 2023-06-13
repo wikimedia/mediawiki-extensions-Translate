@@ -290,5 +290,6 @@
 	"translate-search-more-languages-info": "кхин $1 {{PLURAL:$1|мотт|меттанаш}}",
 	"translate-statsbar-tooltip": "$1% гочйинарш, $2% хьаьжнаш",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% гочйинарш, $2% хьаьжнаш, $3% шираеларш",
-	"translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}"
+	"translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}",
+	"translate-syntax-error": "Гочдар йукъахь синтаксин гӀалаташ ду."
 }
