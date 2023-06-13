@@ -284,8 +284,8 @@ abstract class MessageGroupBase implements MessageGroup {
 		global $wgTranslateWorkflowStates;
 		$conf = $wgTranslateWorkflowStates ?: [];
 
-		MediaWikiServices::getInstance()
-			->getHookContainer()->run( 'Translate:modifyMessageGroupStates', [ $this->getId(), &$conf ] );
+		Services::getInstance()->getHookRunner()
+			->onTranslate_modifyMessageGroupStates( $this->getId(), $conf );
 
 		return new MessageGroupStates( $conf );
 	}

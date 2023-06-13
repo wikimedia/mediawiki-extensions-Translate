@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate;
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\ModifyMessageGroupStatesHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\PrefillTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\BeforeAddModulesHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\EventTranslationReviewHook;
@@ -31,7 +32,8 @@ class HookRunner implements
 	BeforeAddModulesHook,
 	EventTranslationReviewHook,
 	GetSpecialTranslateOptionsHook,
-	NewTranslationHook
+	NewTranslationHook,
+	ModifyMessageGroupStatesHook
 {
 	private HookContainer $hookContainer;
 
@@ -61,5 +63,9 @@ class HookRunner implements
 
 	public function onTranslate_newTranslation( MessageHandle $handle, int $revisionId, string $text, User $user ) {
 		return $this->hookContainer->run( 'Translate:newTranslation', [ $handle, $revisionId, $text, $user ] );
+	}
+
+	public function onTranslate_modifyMessageGroupStates( string $groupId, array &$conf ) {
+		return $this->hookContainer->run( 'Translate:modifyMessageGroupStates', [ $groupId, &$conf ] );
 	}
 }

@@ -14,8 +14,8 @@
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid;
-use MediaWiki\MediaWikiServices;
 
 /**
  * This is the interface and base implementation of unmanaged
@@ -287,8 +287,8 @@ abstract class MessageGroupOld implements MessageGroup {
 		global $wgTranslateWorkflowStates;
 		$conf = $wgTranslateWorkflowStates ?: [];
 
-		MediaWikiServices::getInstance()
-			->getHookContainer()->run( 'Translate:modifyMessageGroupStates', [ $this->getId(), &$conf ] );
+		Services::getInstance()->getHookRunner()
+			->onTranslate_modifyMessageGroupStates( $this->getId(), $conf );
 
 		return new MessageGroupStates( $conf );
 	}
