@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="32" height="32" viewBox="0 0 32 32">
 	<g transform="translate(-355.875 -530.201)">
 		<path d="M373.173 532.792h13.336v6.495h-13.336z" style="fill:#fff;fill-opacity:.675;stroke:#c9c9c9;stroke-width:.2572;stroke-linecap:round"/>
 		<linearGradient id="a" x1="716.994" x2="716.994" y1="-394.297" y2="-422.532" gradientTransform="matrix(1.0287 0 0 -1.0287 -365.699 126.767)" gradientUnits="userSpaceOnUse">
