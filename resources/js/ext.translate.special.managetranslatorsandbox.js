@@ -353,8 +353,13 @@
 	 */
 	function getOlderRequests() {
 		var $lastSelectedRequest = $( '.row.request.selected' ).last(),
-			currentTranslationCount = $lastSelectedRequest.data( 'data' ).translations;
+			currentTranslationCount;
 
+		if ( $lastSelectedRequest.length === 0 ) {
+			return [];
+		}
+
+		currentTranslationCount = $lastSelectedRequest.data( 'data' ).translations;
 		return $lastSelectedRequest.nextAll( ':not(.hide)' ).filter( function () {
 			return ( $( this ).data( 'data' ).translations === currentTranslationCount );
 		} );
