@@ -1072,9 +1072,6 @@
 		},
 		"ext.translate.special.importtranslations": {
 			"scripts": "resources/js/ext.translate.special.importtranslations.js",
-			"dependencies": [
-				"jquery.ui"
-			],
 			"targets": [
 				"desktop",
 				"mobile"
