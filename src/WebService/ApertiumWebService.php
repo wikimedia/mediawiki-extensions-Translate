@@ -10,19 +10,17 @@ use MediaWiki\Http\HttpRequestFactory;
 use Sanitizer;
 
 /**
- * Implements support Apetrium translator api.
+ * Implements support Apertium translator API.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @ingroup TranslationWebService
- * @since 2013-01-01
+ * @since 2013.01
  * @see https://wiki.apertium.org/wiki/Apertium_web_service
  */
 class ApertiumWebService extends TranslationWebService {
 	// Exclusions per https://phabricator.wikimedia.org/T177434
 	private const EXCLUDED_TARGET_LANGUAGES = [ 'fr', 'es', 'nl' ];
-
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
+	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,
@@ -45,19 +43,21 @@ class ApertiumWebService extends TranslationWebService {
 
 	/** @inheritDoc */
 	protected function doPairs(): array {
-		$pairs = [];
 		$json = $this->httpRequestFactory->get(
 			$this->config['pairs'],
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__
 		);
-		$response = FormatJson::decode( $json );
-
-		if ( !is_object( $response ) ) {
-			$error = 'Malformed reply from remote server: ' . (string)$json;
-			throw new TranslationWebServiceException( $error );
+		if ( $json === null ) {
+			throw new TranslationWebServiceException( 'Failure encountered when contacting remote server' );
 		}
 
+		$response = FormatJson::decode( $json );
+		if ( !is_object( $response ) ) {
+			throw new TranslationWebServiceException( 'Malformed reply from remote server: ' . $json );
+		}
+
+		$pairs = [];
 		foreach ( $response->responseData as $pair ) {
 			$source = $pair->sourceLanguage;
 			$target = $pair->targetLanguage;
@@ -90,16 +90,16 @@ class ApertiumWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	protected function parseResponse( TranslationQueryResponse $reply ): string {
-		$body = $reply->getBody();
-		$response = FormatJson::decode( $body );
-		if ( !is_object( $response ) ) {
+	protected function parseResponse( TranslationQueryResponse $response ): string {
+		$body = $response->getBody();
+		$responseBody = FormatJson::decode( $body );
+		if ( !is_object( $responseBody ) ) {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
-		} elseif ( $response->responseStatus !== 200 ) {
-			throw new TranslationWebServiceException( $response->responseDetails );
+		} elseif ( $responseBody->responseStatus !== 200 ) {
+			throw new TranslationWebServiceException( $responseBody->responseDetails );
 		}
 
-		$text = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
+		$text = Sanitizer::decodeCharReferences( $responseBody->responseData->translatedText );
 		$text = $this->unwrapUntranslatable( $text );
 
 		return trim( $text );
