@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ApiTestCase;
 use HashBagOStuff;
+use MediaWiki\HookContainer\HookContainer;
 use WANObjectCache;
 use WikiMessageGroup;
 
@@ -23,7 +24,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 		$this->setMwGlobals( [
 			'wgTranslateTranslationServices' => [],
 		] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', [] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();
@@ -46,7 +47,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 	}
 
 	public function testAPIAccuracy(): void {
-		list( $data ) = $this->doApiRequest(
+		[ $data ] = $this->doApiRequest(
 			[
 				'action' => 'query',
 				'meta' => 'messagegroups',
@@ -93,7 +94,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 		$ids += array_keys( MessageGroups::getAllGroups() );
 
 		foreach ( $ids as $id ) {
-			list( $data ) = $this->doApiRequest(
+			[ $data ] = $this->doApiRequest(
 				[
 					'action' => 'query',
 					'meta' => 'messagegroups',
@@ -135,7 +136,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 	}
 
 	public function testBadProperty(): void {
-		list( $data ) = $this->doApiRequest(
+		[ $data ] = $this->doApiRequest(
 			[
 				'action' => 'query',
 				'meta' => 'messagegroups',

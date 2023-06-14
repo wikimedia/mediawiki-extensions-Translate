@@ -12,6 +12,7 @@ use DateTime;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MessageChangeStorage;
 use MockWikiMessageGroup;
@@ -37,7 +38,7 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 		$this->setGroupPermissions( 'translate-admin', 'translate-manage', true );
 		$this->user = $this->getTestUser( 'translate-admin' )->getUser();
 
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', [] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 		$this->setupTestData();
 

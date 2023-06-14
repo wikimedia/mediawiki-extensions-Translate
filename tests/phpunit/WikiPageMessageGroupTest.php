@@ -7,6 +7,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
+use MediaWiki\HookContainer\HookContainer;
 
 /**
  * @group medium
@@ -29,7 +30,7 @@ class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 			}
 		);
 
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', [] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
