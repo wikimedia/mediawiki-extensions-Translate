@@ -4,5 +4,7 @@
 			"Merrahtar"
 		]
 	},
-	"tpt-languages-legend": "Мудта кӣл:"
+	"tpt-translation-intro": "Тэдта лӣ [[$2]] лыст <span class=\"plainlinks\">[$1 ёарркмушш]</span> я со̄нн лӣ воа̄лмаш $3% э̄л.",
+	"tpt-languages-legend": "Мудта кӣл:",
+	"tpt-tab-translate": "Ёарркэ"
 }
