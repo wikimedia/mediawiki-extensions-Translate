@@ -8,16 +8,15 @@ use MediaWiki\Http\HttpRequestFactory;
 use Sanitizer;
 
 /**
- * Implements support for Yandex translation api v1.
+ * Implements support for Yandex translation API v1.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @since 2013-01-01
+ * @since 2013.01
  * @ingroup TranslationWebService
  * @see https://tech.yandex.com/translate/
  */
 class YandexWebService extends TranslationWebService {
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
+	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,
@@ -26,6 +25,10 @@ class YandexWebService extends TranslationWebService {
 	) {
 		parent::__construct( $serviceName, $config );
 		$this->httpRequestFactory = $httpRequestFactory;
+
+		if ( !isset( $this->config['key'] ) ) {
+			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
+		}
 	}
 
 	/** @inheritDoc */
@@ -43,27 +46,20 @@ class YandexWebService extends TranslationWebService {
 
 	/** @inheritDoc */
 	protected function doPairs(): array {
-		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
+		$url = $this->config['pairs'] . '?' . wfArrayToCgi( [ 'key' => $this->config['key'] ] );
+		$json = $this->httpRequestFactory->get( $url, [ 'timeout' => $this->config['timeout'] ], __METHOD__ );
+		if ( $json === null ) {
+			throw new TranslationWebServiceException( 'Failure encountered when contacting remote server' );
+		}
+
+		$response = FormatJson::decode( $json );
+		if ( !is_object( $response ) ) {
+			throw new TranslationWebServiceException( 'Malformed reply from remote server: ' . $json );
 		}
 
 		$pairs = [];
-
-		$params = [
-			'key' => $this->config['key'],
-		];
-
-		$url = $this->config['pairs'] . '?' . wfArrayToCgi( $params );
-		$json = $this->httpRequestFactory->get( $url, [ 'timeout' => $this->config['timeout'] ], __METHOD__ );
-		$response = FormatJson::decode( $json );
-
-		if ( !is_object( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . (string)$json;
-			throw new TranslationWebServiceException( $exception );
-		}
-
 		foreach ( $response->dirs as $pair ) {
-			list( $source, $target ) = explode( '-', $pair );
+			[ $source, $target ] = explode( '-', $pair );
 			$pairs[$source][$target] = true;
 		}
 
@@ -72,17 +68,12 @@ class YandexWebService extends TranslationWebService {
 
 	/** @inheritDoc */
 	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
-		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
-		}
-
 		# https://tech.yandex.com/translate/doc/dg/reference/translate-docpage/
 		if ( strlen( $text ) > 10000 ) {
 			throw new TranslationWebServiceInvalidInputException( 'Source text too long' );
 		}
 
-		$text = trim( $text );
-		$text = $this->wrapUntranslatable( $text );
+		$text = $this->wrapUntranslatable( trim( $text ) );
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( intval( $this->config['timeout'] ) )
@@ -97,16 +88,16 @@ class YandexWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	protected function parseResponse( TranslationQueryResponse $reply ): string {
-		$body = $reply->getBody();
-		$response = FormatJson::decode( $body );
-		if ( !is_object( $response ) ) {
+	protected function parseResponse( TranslationQueryResponse $response ): string {
+		$body = $response->getBody();
+		$responseBody = FormatJson::decode( $body );
+		if ( !is_object( $responseBody ) ) {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
-		} elseif ( $response->code !== 200 ) {
-			throw new TranslationWebServiceException( $response->message );
+		} elseif ( $responseBody->code !== 200 ) {
+			throw new TranslationWebServiceException( $responseBody->message );
 		}
 
-		$text = Sanitizer::decodeCharReferences( $response->text[0] );
+		$text = Sanitizer::decodeCharReferences( $responseBody->text[0] );
 		$text = $this->unwrapUntranslatable( $text );
 
 		return trim( $text );
