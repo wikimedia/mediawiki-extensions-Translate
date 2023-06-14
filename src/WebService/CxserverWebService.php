@@ -8,7 +8,7 @@ use MediaWiki\Http\HttpRequestFactory;
 
 /**
  * Contains a class for querying external translation service.
- * Implements support for cxserver api
+ * Implements support for CXServer api
  * @ingroup TranslationWebService
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
@@ -17,8 +17,7 @@ use MediaWiki\Http\HttpRequestFactory;
 class CxserverWebService extends TranslationWebService {
 	// Exclusions per https://phabricator.wikimedia.org/T177434
 	private const EXCLUDED_APERTIUM_TARGET_LANGUAGES = [ 'fr', 'es', 'nl' ];
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
+	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,
@@ -45,17 +44,18 @@ class CxserverWebService extends TranslationWebService {
 			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
 
-		$pairs = [];
-
 		$url = $this->config['host'] . '/v1/list/mt';
 		$json = $this->httpRequestFactory->get( $url, [ $this->config['timeout'] ], __METHOD__ );
-		$response = FormatJson::decode( $json, true );
-
-		if ( !is_array( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . (string)$json;
-			throw new TranslationWebServiceException( $exception );
+		if ( $json === null ) {
+			throw new TranslationWebServiceException( 'Failure encountered when contacting remote server' );
 		}
 
+		$response = FormatJson::decode( $json, true );
+		if ( !is_array( $response ) ) {
+			throw new TranslationWebServiceException( 'Malformed reply from remote server: ' . $json );
+		}
+
+		$pairs = [];
 		foreach ( $response['Apertium'] as $source => $targets ) {
 			$filteredTargets = array_diff( $targets, self::EXCLUDED_APERTIUM_TARGET_LANGUAGES );
 			foreach ( $filteredTargets as $target ) {
@@ -82,14 +82,14 @@ class CxserverWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	protected function parseResponse( TranslationQueryResponse $reply ): string {
-		$body = $reply->getBody();
-		$response = FormatJson::decode( $body );
-		if ( !is_object( $response ) ) {
+	protected function parseResponse( TranslationQueryResponse $response ): string {
+		$body = $response->getBody();
+		$responseBody = FormatJson::decode( $body );
+		if ( !is_object( $responseBody ) ) {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
 
-		$text = $response->contents;
+		$text = $responseBody->contents;
 		if ( preg_match( '~^<div>(.*)</div>$~', $text ) ) {
 			$text = preg_replace( '~^<div>(.*)</div>$~', '\1', $text );
 		}
