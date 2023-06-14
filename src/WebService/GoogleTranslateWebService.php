@@ -17,8 +17,7 @@ use Sanitizer;
  */
 class GoogleTranslateWebService extends TranslationWebService {
 	private const PUBLIC_API = 'https://translation.googleapis.com/language/translate/v2';
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
+	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,
@@ -67,20 +66,18 @@ class GoogleTranslateWebService extends TranslationWebService {
 		}
 
 		$api = $this->config['pairs'] ?? self::PUBLIC_API . '/languages';
-		$params = [
-			'key' => $this->config['key'],
-		];
-
 		$json = $this->httpRequestFactory->get(
-			wfAppendQuery( $api, wfArrayToCgi( $params ) ),
+			wfAppendQuery( $api, [ 'key' => $this->config['key'], ] ),
 			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__
 		);
-		$response = FormatJson::decode( $json );
+		if ( $json === null ) {
+			throw new TranslationWebServiceException( 'Failure encountered when contacting remote server' );
+		}
 
+		$response = FormatJson::decode( $json );
 		if ( !is_object( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . (string)$json;
-			throw new TranslationWebServiceException( $exception );
+			throw new TranslationWebServiceException( 'Malformed reply from remote server: ' . $json );
 		}
 
 		$pairs = [];
@@ -119,13 +116,13 @@ class GoogleTranslateWebService extends TranslationWebService {
 	}
 
 	/** @inheritDoc */
-	protected function parseResponse( TranslationQueryResponse $reply ): string {
-		$body = $reply->getBody();
-		$response = FormatJson::decode( $body );
-		if ( !is_object( $response ) ) {
+	protected function parseResponse( TranslationQueryResponse $response ): string {
+		$body = $response->getBody();
+		$responseBody = FormatJson::decode( $body );
+		if ( !is_object( $responseBody ) ) {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
-		$text = Sanitizer::decodeCharReferences( $response->data->translations[0]->translatedText );
+		$text = Sanitizer::decodeCharReferences( $responseBody->data->translations[0]->translatedText );
 		$text = $this->unwrapUntranslatable( $text );
 
 		return trim( $text );
