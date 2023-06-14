@@ -1082,7 +1082,6 @@
 			"dependencies": [
 				"ext.translate.loader",
 				"ext.uls.mediawiki",
-				"jquery.ui",
 				"mediawiki.api",
 				"mediawiki.jqueryMsg",
 				"mediawiki.language",
