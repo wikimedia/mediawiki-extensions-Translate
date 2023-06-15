@@ -139,7 +139,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					$newTitle,
 					$this->moveSubpages,
 					$this->getUser(),
-					$this->msg( 'pt-movepage-logreason', $this->oldTitle )->inContentLanguage()->text(),
+					$this->reason,
 					$this->moveTalkpages
 				);
 				$this->getOutput()->addWikiMsg(

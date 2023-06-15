@@ -177,7 +177,7 @@ class TranslatableBundleMover {
 		Title $target,
 		bool $moveSubPages,
 		User $user,
-		string $summary,
+		string $moveReason,
 		bool $moveTalkPages
 	): void {
 		$pageCollection = $this->getPagesToMove(
@@ -185,7 +185,7 @@ class TranslatableBundleMover {
 		);
 		$pagesToMove = $pageCollection->getListOfPages();
 
-		$job = MoveTranslatableBundleJob::newJob( $source, $target, $pagesToMove, $summary, $user );
+		$job = MoveTranslatableBundleJob::newJob( $source, $target, $pagesToMove, $moveReason, $user );
 		$this->lock( array_keys( $pagesToMove ) );
 		$this->lock( array_values( $pagesToMove ) );
 
@@ -197,25 +197,25 @@ class TranslatableBundleMover {
 	 * @param Title $target
 	 * @param string[] $pagesToMove
 	 * @param User $performer
-	 * @param string $summary
-	 * @return void
+	 * @param string $moveReason
+	 * @param ?callable $progressCallback
 	 */
 	public function moveSynchronously(
 		Title $source,
 		Title $target,
 		array $pagesToMove,
 		User $performer,
-		string $summary,
-		callable $progressCallback = null
+		string $moveReason,
+		?callable $progressCallback = null
 	): void {
 		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
 
-		$this->move( $sourceBundle, $performer, $pagesToMove, $summary, $progressCallback );
+		$this->move( $sourceBundle, $performer, $pagesToMove, $moveReason, $progressCallback );
 
 		$this->bundleFactory->getStore( $sourceBundle )->move( $source, $target );
 
 		$this->bundleFactory->getPageMoveLogger( $sourceBundle )
-			->logSuccess( $performer, $target );
+			->logSuccess( $performer, $target, $moveReason );
 	}
 
 	public function disablePageMoveLimit(): void {
@@ -299,18 +299,17 @@ class TranslatableBundleMover {
 	 * @param TranslatableBundle $sourceBundle
 	 * @param User $performer
 	 * @param string[] $pagesToMove
-	 * @param string $summary
-	 * @param callable|null $progressCallback
-	 * @return void
+	 * @param string $reason
+	 * @param ?callable $progressCallback
 	 */
 	private function move(
 		TranslatableBundle $sourceBundle,
 		User $performer,
 		array $pagesToMove,
-		string $summary,
-		callable $progressCallback = null
+		string $reason,
+		?callable $progressCallback = null
 	): void {
-		$fuzzybot = FuzzyBot::getUser();
+		$fuzzyBot = FuzzyBot::getUser();
 
 		Hooks::$allowTargetEdit = true;
 
@@ -321,12 +320,14 @@ class TranslatableBundleMover {
 
 			if ( $source === $sourceBundle->getTitle()->getPrefixedText() ) {
 				$user = $performer;
+				$moveSummary = $reason;
 			} else {
-				$user = $fuzzybot;
+				$user = $fuzzyBot;
+				$moveSummary = wfMessage( 'pt-movepage-logreason', $sourceTitle )->text();
 			}
 
 			$mover = $this->movePageFactory->newMovePage( $sourceTitle, $targetTitle );
-			$status = $mover->move( $user, $summary, false );
+			$status = $mover->move( $user, $moveSummary, false );
 			$processed++;
 
 			if ( $progressCallback ) {

@@ -18,27 +18,24 @@ use User;
  * @ingroup PageTranslation JobQueue
  */
 class MoveTranslatableBundleJob extends Job {
-	/** @var TranslatableBundleMover */
-	private $bundleMover;
+	private TranslatableBundleMover $bundleMover;
 
 	public static function newJob(
 		Title $source,
 		Title $target,
 		array $moves,
-		string $summary,
+		string $reason,
 		User $performer
 	): self {
 		$params = [
 			'source' => $source->getPrefixedText(),
 			'target' => $target->getPrefixedText(),
 			'moves' => $moves,
-			'summary' => $summary,
+			'summary' => $reason,
 			'performer' => $performer->getName(),
 		];
 
-		$self = new self( $target, $params );
-
-		return $self;
+		return new self( $target, $params );
 	}
 
 	public function __construct( Title $title, array $params = [] ) {

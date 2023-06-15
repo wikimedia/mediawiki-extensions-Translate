@@ -26,10 +26,11 @@ class PageMoveLogger {
 		$this->logType = $logType;
 	}
 
-	public function logSuccess( User $performer, Title $target ): void {
+	public function logSuccess( User $performer, Title $target, string $reason ): void {
 		$entry = new ManualLogEntry( $this->logType, 'moveok' );
 		$entry->setPerformer( $performer );
 		$entry->setTarget( $this->baseSourceTitle );
+		$entry->setComment( $reason );
 		$entry->setParameters( [ 'target' => $target->getPrefixedText() ] );
 		$logid = $entry->insert();
 		$entry->publish( $logid );
