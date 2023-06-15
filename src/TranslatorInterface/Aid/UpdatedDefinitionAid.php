@@ -55,10 +55,10 @@ class UpdatedDefinitionAid extends TranslationAid {
 		}
 
 		// Escaping legacy issue (T330453)
-		$curTranslationId = $revisionLookup->getRevisionByTitle( $this->handle->getTitle() )->getId();
-
-		if ( $oldRevRecord->getId() > $curTranslationId ) {
-			throw new TranslationHelperException( 'Translation unit is older than first version of source unit.' );
+		if ( $oldRevRecord->getPageId() !== $definitionTitle->getArticleID() ) {
+			throw new TranslationHelperException(
+				'Translation unit definition id does not match old revision definition id'
+			);
 		}
 
 		$oldContent = $oldRevRecord->getContent( SlotRecord::MAIN );
