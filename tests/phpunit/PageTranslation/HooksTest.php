@@ -48,7 +48,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		HookHandler::setupTranslate();
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
-			[ 'TranslatablePageMessageGroupStore::registerLoader' ] );
+			'TranslatablePageMessageGroupStore::registerLoader' );
 
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',

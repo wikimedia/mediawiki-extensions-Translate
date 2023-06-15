@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use ApiTestCase;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\HookContainer\HookContainer;
 use MessageChangeStorage;
 use MockWikiMessageGroup;
 use User;
@@ -29,7 +30,7 @@ class QueryManageMessageGroupsActionApiTest extends ApiTestCase {
 		$this->setGroupPermissions( 'translate-admin', 'translate-manage', true );
 		$this->user = $this->getTestUser( 'translate-admin' )->getUser();
 
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', [] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 		$this->setupTestData();
 
