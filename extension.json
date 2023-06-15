@@ -367,7 +367,7 @@
 		"messagegroups": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupsActionApi",
 			"services": [
-				"HookContainer"
+				"Translate:HookRunner"
 			]
 		},
 		"messagegroupstats": {

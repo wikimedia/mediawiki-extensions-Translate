@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ManualLogEntry;
-use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Extension\Translate\HookRunner;
 use MessageGroup;
 use SpecialPage;
 use User;
@@ -18,14 +18,14 @@ use Wikimedia\Rdbms\ILoadBalancer;
  */
 class MessageGroupReview {
 
-	/** @var HookContainer */
-	protected $hookContainer;
+	/** @var HookRunner */
+	protected $hookRunner;
 	/** @var ILoadBalancer */
 	protected $loadBalancer;
 
-	public function __construct( ILoadBalancer $loadBalancer, HookContainer $hookContainer ) {
+	public function __construct( ILoadBalancer $loadBalancer, HookRunner $hookRunner ) {
 		$this->loadBalancer = $loadBalancer;
-		$this->hookContainer = $hookContainer;
+		$this->hookRunner = $hookRunner;
 	}
 
 	/** @return mixed|false — The value from the field, or false if nothing was found */
@@ -73,8 +73,8 @@ class MessageGroupReview {
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 
-		$this->hookContainer->run( 'TranslateEventMessageGroupStateChange',
-			[ $group, $code, $currentState, $newState ] );
+		$this->hookRunner->onTranslateEventMessageGroupStateChange(
+			$group, $code, $currentState, $newState );
 
 		return true;
 	}

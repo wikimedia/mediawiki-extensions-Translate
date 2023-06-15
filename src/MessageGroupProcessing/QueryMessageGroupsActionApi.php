@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use AggregateMessageGroup;
 use ApiQuery;
 use ApiQueryBase;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\HookContainer\HookContainer;
 use MessageGroup;
 use TranslateMetadata;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -23,16 +23,16 @@ use WikiPageMessageGroup;
  * @ingroup API TranslateAPI
  */
 class QueryMessageGroupsActionApi extends ApiQueryBase {
-	/** @var HookContainer */
-	private $hookContainer;
+	/** @var HookRunner */
+	private $hookRunner;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		HookContainer $hookContainer
+		HookRunner $hookRunner
 	) {
 		parent::__construct( $query, $moduleName, 'mg' );
-		$this->hookContainer = $hookContainer;
+		$this->hookRunner = $hookRunner;
 	}
 
 	public function execute(): void {
@@ -205,9 +205,8 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			$a['sourcelanguage'] = $g->getSourceLanguage();
 		}
 
-		$this->hookContainer->run(
-			'TranslateProcessAPIMessageGroupsProperties',
-			[ &$a, $props, $params, $g ]
+		$this->hookRunner->onTranslateProcessAPIMessageGroupsProperties(
+			$a, $props, $params, $g
 		);
 
 		// Depth only applies to tree format
@@ -302,7 +301,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				ParamValidator::PARAM_DEFAULT => '',
 			]
 		];
-		$this->hookContainer->run( 'TranslateGetAPIMessageGroupsParameterList', [ &$allowedParams ] );
+		$this->hookRunner->onTranslateGetAPIMessageGroupsParameterList( $allowedParams );
 
 		return $allowedParams;
 	}
@@ -328,7 +327,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			'sourcelanguage'
 		] );
 
-		$this->hookContainer->run( 'TranslateGetAPIMessageGroupsPropertyDescs', [ &$properties ] );
+		$this->hookRunner->onTranslateGetAPIMessageGroupsPropertyDescs( $properties );
 
 		return $properties;
 	}

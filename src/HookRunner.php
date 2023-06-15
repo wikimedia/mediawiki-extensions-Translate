@@ -5,7 +5,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate;
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageGroupStateChangeHook;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsParameterListHook;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsPropertyDescsHook;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\InitGroupLoadersHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ModifyMessageGroupStatesHook;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\PostInitGroupsHook;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\ProcessAPIMessageGroupsPropertiesHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\PrefillTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\BeforeAddModulesHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\EventTranslationReviewHook;
@@ -14,6 +20,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\NewTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserPromotedHook;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\User\UserIdentity;
+use MessageGroup;
 use MessageHandle;
 use User;
 
@@ -33,7 +40,13 @@ class HookRunner implements
 	EventTranslationReviewHook,
 	GetSpecialTranslateOptionsHook,
 	NewTranslationHook,
-	ModifyMessageGroupStatesHook
+	ModifyMessageGroupStatesHook,
+	EventMessageGroupStateChangeHook,
+	GetAPIMessageGroupsParameterListHook,
+	GetAPIMessageGroupsPropertyDescsHook,
+	InitGroupLoadersHook,
+	PostInitGroupsHook,
+	ProcessAPIMessageGroupsPropertiesHook
 {
 	private HookContainer $hookContainer;
 
@@ -67,5 +80,40 @@ class HookRunner implements
 
 	public function onTranslate_modifyMessageGroupStates( string $groupId, array &$conf ) {
 		return $this->hookContainer->run( 'Translate:modifyMessageGroupStates', [ $groupId, &$conf ] );
+	}
+
+	public function onTranslateEventMessageGroupStateChange(
+		MessageGroup $group,
+		string $code,
+		$oldState,
+		string $newState
+	) {
+		return $this->hookContainer->run( 'TranslateEventMessageGroupStateChange',
+			[ $group, $code, $oldState, $newState ] );
+	}
+
+	public function onTranslateGetAPIMessageGroupsParameterList( array &$params ) {
+		return $this->hookContainer->run( 'TranslateGetAPIMessageGroupsParameterList', [ &$params ] );
+	}
+
+	public function onTranslateGetAPIMessageGroupsPropertyDescs( array &$properties ) {
+		return $this->hookContainer->run( 'TranslateGetAPIMessageGroupsPropertyDescs', [ &$properties ] );
+	}
+
+	public function onTranslateInitGroupLoaders( array &$groupLoader, array $deps ) {
+		return $this->hookContainer->run( 'TranslateInitGroupLoaders', [ &$groupLoader, $deps ] );
+	}
+
+	public function onTranslatePostInitGroups( array &$groups, array &$deps, array &$autoload ) {
+		return $this->hookContainer->run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
+	}
+
+	public function onTranslateProcessAPIMessageGroupsProperties(
+		array &$a,
+		array $props,
+		array $params,
+		MessageGroup $g
+	) {
+		return $this->hookContainer->run( 'TranslateProcessAPIMessageGroupsProperties', [ &$a, $props, $params, $g ] );
 	}
 }

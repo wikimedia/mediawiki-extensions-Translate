@@ -9,6 +9,7 @@ use CachedMessageGroupLoader;
 use DependencyWrapper;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
@@ -75,9 +76,8 @@ class MessageGroups {
 			// When possible, a cache dependency is created to automatically recreate
 			// the cache when configuration changes. Currently used by other extensions
 			// such as Banner Messages and test cases to load message groups.
-			MediaWikiServices::getInstance()
-				->getHookContainer()
-				->run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
+			Services::getInstance()->getHookRunner()
+				->onTranslatePostInitGroups( $groups, $deps, $autoload );
 			// Register autoloaders for this request, both values modified by reference
 			self::appendAutoloader( $autoload, $wgAutoloadClasses );
 
@@ -241,9 +241,8 @@ class MessageGroups {
 			'cache' => $cache
 		];
 
-		MediaWikiServices::getInstance()
-				->getHookContainer()
-				->run( 'TranslateInitGroupLoaders', [ &$groupLoaderInstances, $deps ] );
+		Services::getInstance()->getHookRunner()
+			->onTranslateInitGroupLoaders( $groupLoaderInstances, $deps );
 
 		if ( $groupLoaderInstances === [] ) {
 			return $this->groupLoaders;

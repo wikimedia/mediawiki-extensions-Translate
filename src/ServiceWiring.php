@@ -105,7 +105,7 @@ return [
 	'Translate:MessageGroupReview' => static function ( MediaWikiServices $services ): MessageGroupReview {
 		return new MessageGroupReview(
 			$services->getDBLoadBalancer(),
-			$services->getHookContainer()
+			$services->get( 'Translate:HookRunner' )
 		);
 	},
 
