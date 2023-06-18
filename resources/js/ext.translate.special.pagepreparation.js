@@ -140,7 +140,7 @@
 	function addAnchor( headerText, pageContent ) {
 		var anchorID = headerText.replace( ' ', '-' ).toLowerCase();
 
-		headerText = mw.RegExp.escape( headerText );
+		headerText = mw.util.escapeRegExp( headerText );
 		// Search for the header having text as headerText
 		// Regex: https://regex101.com/r/fD6iL1
 		var headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
@@ -153,7 +153,7 @@
 
 		// This is to add back the tags which were removed in cleanupTags()
 		if ( pageContent.indexOf( '</translate>\n<span id="' + anchorID + '"' ) === -1 ) {
-			var spanSearchRegex = new RegExp( '(<span id="' + mw.RegExp.escape( anchorID ) + '"></span>)', 'gi' );
+			var spanSearchRegex = new RegExp( '(<span id="' + mw.util.escapeRegExp( anchorID ) + '"></span>)', 'gi' );
 			pageContent = pageContent.replace( spanSearchRegex, '\n</translate>\n$1\n</translate>\n' );
 		}
 
@@ -243,7 +243,7 @@
 			aliases.push( 'file' );
 
 			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
+				aliases[ i ] = mw.util.escapeRegExp( aliases[ i ] );
 			}
 
 			var aliasList = aliases.join( '|' );
@@ -340,7 +340,7 @@
 		} );
 
 		for ( var i = 0; i < namespaces.length; i++ ) {
-			namespaces[ i ] = mw.RegExp.escape( namespaces[ i ] );
+			namespaces[ i ] = mw.util.escapeRegExp( namespaces[ i ] );
 		}
 		return namespaces;
 	}
