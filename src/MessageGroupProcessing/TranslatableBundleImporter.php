@@ -45,7 +45,6 @@ class TranslatableBundleImporter {
 		string $interwikiPrefix,
 		bool $assignKnownUsers,
 		UserIdentity $user,
-		?string $rootPage,
 		?string $comment
 	): Title {
 		$importSource = ImportStreamSource::newFromFile( $importFilePath );
@@ -58,16 +57,6 @@ class TranslatableBundleImporter {
 		$wikiImporter = $this->wikiImporterFactory->getWikiImporter( $importSource->value );
 		$wikiImporter->setUsernamePrefix( $interwikiPrefix, $assignKnownUsers );
 		$wikiImporter->setPageOutCallback( [ $this, 'pageCallback' ] );
-
-		if ( $rootPage ) {
-			$rootPageStatus = $wikiImporter->setTargetRootPage( $rootPage );
-			if ( !$rootPageStatus->isOK() ) {
-				throw new TranslatableBundleImportException(
-					"Error while setting the target root page '$rootPage' for import: " .
-					$rootPageStatus->getMessage()->text()
-				);
-			}
-		}
 
 		try {
 			// Reset the currently set title which might have been set during the previous import process

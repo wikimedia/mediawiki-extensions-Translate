@@ -46,12 +46,6 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			'Whether to apply the prefix to usernames that exist locally',
 			self::OPTIONAL
 		);
-		$this->addOption(
-			'root-page',
-			'Set a target root page under which all pages are imported',
-			self::OPTIONAL,
-			self::HAS_ARG
-		);
 
 		$this->requireExtension( 'Translate' );
 	}
@@ -62,7 +56,6 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		$importUser = $this->getImportUser();
 		$comment = $this->getOption( 'comment' );
 		$interwikiPrefix = $this->getInterwikiPrefix();
-		$rootPage = $this->getOption( 'root-page' );
 		$assignKnownUsers = $this->hasOption( 'assign-known-users' );
 
 		try {
@@ -73,7 +66,6 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 				$interwikiPrefix,
 				$assignKnownUsers,
 				$importUser,
-				$rootPage,
 				$comment
 			);
 		} catch ( TranslatableBundleImportException $e ) {
