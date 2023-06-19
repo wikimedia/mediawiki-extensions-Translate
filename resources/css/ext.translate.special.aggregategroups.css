@@ -90,6 +90,11 @@ div.hidden {
 	width: 500px;
 }
 
+.mw-tpa-groups .tes-entity-selector {
+	display: inline-block;
+	width: 500px;
+}
+
 .client-nojs .tpt-add-new-group,
 .client-nojs .tp-aggregate-edit-ag-button,
 .client-nojs .tp-aggregate-remove-button,

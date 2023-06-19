@@ -1,6 +1,8 @@
 ( function () {
 	'use strict';
 
+	var wikiPageMessageGroups = null;
+
 	function getApiParams( $target ) {
 		return {
 			action: 'aggregategroups',
@@ -29,14 +31,16 @@
 			} );
 	}
 
-	function associate( event, resp ) {
+	function associate( event, subGroupId ) {
 		var $target = $( event.target ),
 			$parent = $target.parents( '.mw-tpa-group' ),
 			parentId = $parent.data( 'id' ),
-			subgroupName = $parent.find( '.tp-group-input' ).val(),
+			subgroupName = $parent
+				.find( '.tes-entity-selector' )
+				.find( 'input[type="text"]' )
+				.val(),
 			api = new mw.Api();
 
-		var subgroupId;
 		var successFunction = function () {
 			var aAttr, $a, spanAttr, $span, $ol;
 
@@ -49,7 +53,7 @@
 
 			spanAttr = {
 				class: 'tp-aggregate-remove-button',
-				'data-groupid': subgroupId
+				'data-groupid': subGroupId
 			};
 
 			$span = $( '<span>', spanAttr );
@@ -57,22 +61,15 @@
 			$ol = $( '#mw-tpa-grouplist-' + parentId );
 			$ol.append( $( '<li>' ).append( $a, $span ) );
 			$span.on( 'click', dissociate );
-			$parent.find( '.tp-group-input' ).val( '' );
+			$parent.find( '.tes-entity-selector' ).find( 'input[type="text"]' ).val( '' );
 		};
 
 		// Get the label for the value and make API request if valid
-		subgroupId = '';
-		for ( var i = 0; i < resp.length; ++i ) {
-			if ( subgroupName === resp[ i ].label ) {
-				subgroupId = resp[ i ].id;
-				break;
-			}
-		}
 
-		if ( subgroupId ) {
+		if ( subGroupId ) {
 			var params = $.extend( getApiParams( $target ), {
 				do: 'associate',
-				group: subgroupId
+				group: subGroupId
 			} );
 
 			api.postWithToken( 'csrf', params )
@@ -215,68 +212,30 @@
 
 	$( function () {
 		var api = new mw.Api(),
-			exclude = [],
-			groups = [],
-			$input = $( '.tp-group-input' );
+			lastSelectedGroup = null;
 
-		var excludeFunction = function ( event ) {
-			exclude = [];
+		function onEntityItemSelect( selectedItem ) {
+			// Remove selections made in other entity selectors on the page
+			$( '.tes-entity-selector' )
+				.not( this.$element )
+				.find( 'input[type="text"]' )
+				.val( '' );
+			lastSelectedGroup = selectedItem;
+			// Clear the request cache so that the entity selector requests for data again
+			// This way the recently selected group can be removed from the menu items displayed
+			this.requestCache = {};
+		}
 
-			if ( groups.length === 0 ) {
-				// Get list of subgroups using API
-				api.get( {
-					action: 'query',
-					meta: 'messagegroups',
-					mgformat: 'tree',
-					mgroot: 'all',
-					mgprop: 'label|id'
-				} ).done( function ( result ) {
-					groups = result.query.messagegroups;
-				} );
-			}
-
-			// Exclude groups already present
-			$( event.target ).closest( '.mw-tpa-group' ).find( 'li' ).each(
-				function ( key, data ) {
-					// Need to trim to remove the trailing whitespace
-					// Can't use innerText not supported by Firefox
-					var groupName = $( data ).text();
-					groupName = groupName.trim();
-					exclude.push( groupName );
-				}
-			);
-		};
-
-		var resp;
-		var autocompleteFunction = function ( request, response ) {
-			// Allow case insensitive search
-			var inp = new RegExp( request.term, 'i' );
-
-			resp = [];
-
-			Object.keys( groups ).forEach( function ( key ) {
-				if (
-					groups[ key ].label.match( inp ) &&
-					exclude.indexOf( groups[ key ].label ) === -1
-				) {
-					resp.push( groups[ key ] );
-				}
-			} );
-
-			response( resp );
-		};
-
-		$input.on( 'focus', excludeFunction );
-		$input.autocomplete( {
-			source: autocompleteFunction,
-			minLength: 0
-		} ).focus( function () {
-			// Enable showing all groups when nothing is entered
-			$( this ).autocomplete( 'search', $( this ).val() );
+		var $subGroups = $( '.tp-sub-groups' ), $button;
+		$subGroups.each( function () {
+			$button = $( '<button>' )
+				.addClass( 'tp-aggregate-add-button' )
+				.text( mw.msg( 'tpt-aggregategroup-add' ) );
+			$( this ).append( getEntitySelector( onEntityItemSelect ).$element, $button );
 		} );
 
 		$( '.tp-aggregate-add-button' ).on( 'click', function ( event ) {
-			associate( event, resp );
+			associate( event, lastSelectedGroup.data );
 		} );
 		$( '.tp-aggregate-remove-button' ).on( 'click', dissociate );
 		$( '.tp-aggregate-remove-ag-button' ).on( 'click', removeGroup );
@@ -392,18 +351,6 @@
 					.attr( 'id', subGroupId )
 					.append( $( '<ol id=\'mw-tpa-grouplist-' + aggregateGroupId + '\'>' ) );
 
-				var $groupSelector = $( '<input>' ).attr( {
-					type: 'text',
-					class: 'tp-group-input'
-				} );
-				$groupSelector.on( 'focus', excludeFunction );
-				$groupSelector.autocomplete( {
-					source: autocompleteFunction,
-					minLength: 0
-				} ).focus( function () {
-					// Enable showing all groups when nothing is entered
-					$( this ).autocomplete( 'search', $( this ).val() );
-				} );
 				var $addButton = $( '<input>' )
 					.attr( {
 						type: 'button',
@@ -413,10 +360,11 @@
 					.val( mw.msg( 'tpt-aggregategroup-add' ) );
 
 				$addButton.on( 'click', function ( event ) {
-					associate( event, resp );
+					associate( event, lastSelectedGroup.data );
 				} );
 
-				$subGroupContents.append( $groupSelector, $addButton );
+				var entitySelector = getEntitySelector( onEntityItemSelect );
+				$subGroupContents.append( entitySelector.$element, $addButton );
 				$div.append( $subGroupContents );
 
 				$editSpan.on( 'click', function ( event ) {
@@ -461,4 +409,72 @@
 
 		$( 'div.mw-tpa-group' ).first().before( getToggleAllGroupsLink() );
 	} );
+
+	function fetchWikiPageMessageGroups( searchValue, _entityTypeToFetch, deferred, failureCallback ) {
+		var alreadySelectedGroups = getSelectedGroups( this.$element );
+		if ( wikiPageMessageGroups ) {
+			deferred.resolve( { groups: getGroupsToDisplay( wikiPageMessageGroups, searchValue, alreadySelectedGroups ) } );
+			return;
+		}
+
+		var api = new mw.Api();
+		api.get( {
+			action: 'query',
+			meta: 'messagegroups',
+			mgformat: 'tree',
+			mgroot: 'all',
+			mgprop: 'label|id'
+		} ).then( function ( result ) {
+			wikiPageMessageGroups = normalizeGroups( result.query.messagegroups );
+			deferred.resolve( { groups: getGroupsToDisplay( wikiPageMessageGroups, searchValue, alreadySelectedGroups ) } );
+		}, function ( _msg, error ) {
+			mw.log.error( error );
+			failureCallback( error, mw.msg( 'translate-tes-server-error' ) );
+			deferred.resolve( error );
+		} );
+	}
+
+	function getGroupsToDisplay( groups, searchValue, alreadySelectedGroups ) {
+		var lowerSearchValue = searchValue.toLowerCase();
+		return groups.filter( function ( group ) {
+			return alreadySelectedGroups.indexOf( group.label ) === -1 &&
+				group.label.toLowerCase().indexOf( lowerSearchValue ) > -1;
+		} );
+	}
+
+	function normalizeGroups( groups ) {
+		var normalizedGroups = [], i = 0;
+		for ( ; i < groups.length; ++i ) {
+			normalizedGroups.push( {
+				label: groups[ i ].label,
+				group: groups[ i ].id
+			} );
+		}
+
+		return normalizedGroups;
+	}
+
+	function getEntitySelector( onSelect ) {
+		var EntitySelector = require( '../src/ext.translate.special.languagestats/entity.selector.js' );
+		return new EntitySelector( {
+			onSelect: onSelect,
+			entityType: [ 'groups' ],
+			apiRequestHook: fetchWikiPageMessageGroups
+		} );
+	}
+
+	function getSelectedGroups( $entitySelector ) {
+		var exclude = [];
+		$entitySelector.closest( '.mw-tpa-group' ).find( 'li' ).each(
+			function ( key, data ) {
+				// Need to trim to remove the trailing whitespace
+				// Can't use innerText not supported by Firefox
+				var groupName = $( data ).text();
+				groupName = groupName.trim();
+				exclude.push( groupName );
+			}
+		);
+
+		return exclude;
+	}
 }() );

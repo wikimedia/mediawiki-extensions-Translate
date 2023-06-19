@@ -1045,11 +1045,14 @@
 			]
 		},
 		"ext.translate.special.aggregategroups": {
-			"scripts": "resources/js/ext.translate.special.aggregategroups.js",
+			"packageFiles": [
+				"resources/js/ext.translate.special.aggregategroups.js",
+				"resources/src/ext.translate.special.languagestats/entity.selector.js"
+			],
 			"dependencies": [
-				"jquery.ui",
 				"mediawiki.api",
-				"mediawiki.util"
+				"mediawiki.util",
+				"oojs-ui-widgets"
 			],
 			"messages": [
 				"tpt-aggregategroup-add",
@@ -1063,12 +1066,16 @@
 				"tpt-aggregategroup-collapse-all-groups",
 				"tpt-aggregategroup-expand-group",
 				"tpt-aggregategroup-collapse-group",
-				"tpt-invalid-group"
+				"tpt-invalid-group",
+				"translate-tes-server-error",
+				"translate-tes-entity-not-found",
+				"translate-tes-type-to-search"
 			],
 			"targets": [
 				"desktop",
 				"mobile"
-			]
+			],
+			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.less"
 		},
 		"ext.translate.special.importtranslations": {
 			"scripts": "resources/js/ext.translate.special.importtranslations.js",

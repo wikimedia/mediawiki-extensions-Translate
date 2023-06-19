@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @class
  * @extends OO.ui.TextInputWidget
@@ -59,7 +61,10 @@ var EntitySelectorWidget = function ( config ) {
 	this.failureCallback = config.onFail || noop;
 	this.selectCallback = config.onSelect || noop;
 	this.entityTypeToFetch = config.entityType;
+	this.apiRequestHook = config.apiRequestHook || null;
+	this.apiRequestTimeoutMilliseconds = config.apiRequestTimeoutMilliseconds || 250;
 	this.inputId = config.inputId || null;
+
 	if ( this.entityTypeToFetch && !Array.isArray( this.entityTypeToFetch ) ) {
 		throw new Error( 'entityType must be an array.' );
 	}
@@ -91,9 +96,14 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	var currentRequestTimeout = setTimeout(
 		function () {
 			currentRequestTimeout = null;
-			makeRequest( value, widget.entityTypeToFetch, deferred, widget.failureCallback );
+			if ( widget.apiRequestHook ) {
+				widget.apiRequestHook( value, widget.entityTypeToFetch, deferred, widget.failureCallback );
+			} else {
+				makeRequest( value, widget.entityTypeToFetch, deferred, widget.failureCallback );
+			}
+
 		},
-		250
+		this.apiRequestTimeoutMilliseconds
 	);
 
 	deferred.abort = function () {

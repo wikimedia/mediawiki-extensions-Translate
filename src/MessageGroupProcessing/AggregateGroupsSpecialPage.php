@@ -89,8 +89,6 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$edit = '';
 		$remove = '';
 		$editGroup = '';
-		$select = '';
-		$addButton = '';
 
 		// Add divs for editing Aggregate Groups
 		if ( $this->hasPermission ) {
@@ -137,16 +135,6 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				$saveButton .
 				$cancelButton
 			);
-
-			// Subgroups selector
-			$select = Html::input( 'tp-subgroups-input', '', 'text', [ 'class' => 'tp-group-input' ] );
-			$addButton = Html::element( 'input',
-				[
-					'type' => 'button',
-					'value' => $this->msg( 'tpt-aggregategroup-add' )->text(),
-					'class' => 'tp-aggregate-add-button'
-				]
-			);
 		}
 
 		// Not calling $parent->getGroups() because it has done filtering already
@@ -183,7 +171,6 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$out .= $editGroup;
 		$out .= Html::openElement( 'div', [ 'class' => 'tp-sub-groups', 'id' => $subGroupsId ] );
 		$out .= $this->listSubgroups( $id, $subGroups );
-		$out .= $select . $addButton;
 		$out .= Html::closeElement( 'div' );
 		$out .= '</div>';
 
