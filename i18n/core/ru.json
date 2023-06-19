@@ -46,7 +46,9 @@
 			"MuratTheTurkish",
 			"Rivka Silinsky",
 			"WindEwriX",
-			"Ice bulldog"
+			"Ice bulldog",
+			"Merrahtar",
+			"Pvwww"
 		]
 	},
 	"translate": "Перевести",
@@ -410,7 +412,7 @@
 	"tux-empty-show-optional-messages": "Показать необязательные сообщения",
 	"tux-empty-no-outdated-messages": "Нет устаревших сообщений",
 	"tux-empty-nothing-to-proofread": "Нет ничего для проверки",
-	"tux-empty-you-can-help-providing": "Вы можете помочь новыми переводами",
+	"tux-empty-you-can-help-providing": "Вы можете помочь новыми переводами.",
 	"tux-empty-nothing-new-to-proofread": "Нет ничего нового для проверки",
 	"tux-empty-you-can-review-already-proofread": "Вы&nbsp;можете&nbsp;перепроверить уже&nbsp;проверенные&nbsp;переводы.",
 	"tux-empty-list-other": "Нечего переводить",
