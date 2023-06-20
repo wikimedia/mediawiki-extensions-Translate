@@ -461,5 +461,7 @@
 	"translate-messagebundle-sourcelanguage-changed": "Kildespråket til et meldingsknippe kan ikke endres etter at det har blitt opprettet.",
 	"log-action-filter-translationreview": "Handlingstype:",
 	"log-action-filter-translationreview-message": "Gjennomgang av individuelle oversettelsesmeldinger",
-	"log-action-filter-translationreview-group": "Endringer i framgangsstatusen til oversettelser"
+	"log-action-filter-translationreview-group": "Endringer i framgangsstatusen til oversettelser",
+	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importerte}} et oversettbart knippe $3",
+	"log-action-filter-import-translatable-bundle": "Importering av oversettbart knippe"
 }
