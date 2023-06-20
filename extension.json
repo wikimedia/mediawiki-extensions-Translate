@@ -150,7 +150,6 @@
 		"WikiPageMessageGroup": "messagegroups/WikiPageMessageGroup.php",
 		"WorkflowStatesMessageGroup": "messagegroups/WorkflowStatesMessageGroup.php",
 		"WorkflowStatesMessageGroupLoader": "messagegroups/loaders/WorkflowStatesMessageGroupLoader.php",
-		"XliffFFS": "ffs/XliffFFS.php",
 		"YamlFFS": "src/FileFormatSupport/YamlFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\YamlFormat": "src/FileFormatSupport/YamlFormat.php"
 	},

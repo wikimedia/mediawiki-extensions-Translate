@@ -7,7 +7,6 @@ use AppleInfoPlistFfs;
 use FileBasedMessageGroup;
 use InvalidArgumentException;
 use Wikimedia\ObjectFactory\ObjectFactory;
-use XliffFFS;
 
 /**
  * A factory class used to instantiate instances of pre-provided File formats
@@ -33,7 +32,6 @@ class FileFormatFactory {
 		'Ini' => IniFormat::class,
 		'Java' => JavaFormat::class,
 		'Json' => JsonFormat::class,
-		'Xliff' => XliffFFS::class,
 		'Yaml' => YamlFormat::class
 	];
 	private ObjectFactory $objectFactory;
