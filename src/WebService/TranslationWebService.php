@@ -50,7 +50,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 				'class' => RemoteTTMServerWebService::class
 			],
 			'cxserver' => [
-				'class' => CxserverWebService::class,
+				'class' => ApertiumCxserverWebService::class,
 				'deps' => [ 'HttpRequestFactory' ]
 			],
 			'restbase' => [
@@ -60,6 +60,10 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			'caighdean' => [
 				'class' => CaighdeanWebService::class
 			],
+			'mint' => [
+				'class' => MintCxserverWebService::class,
+				'deps' => [ 'HttpRequestFactory' ]
+			]
 		];
 
 		if ( !isset( $config['timeout'] ) ) {
