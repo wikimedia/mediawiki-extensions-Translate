@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use GettextParseException;
 use GettextPluralException;
 use InvalidArgumentException;
 use LanguageCode;

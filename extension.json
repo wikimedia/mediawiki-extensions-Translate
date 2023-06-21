@@ -87,7 +87,6 @@
 		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
 		"GettextFFS": "src/FileFormatSupport/GettextFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\GettextFormat": "src/FileFormatSupport/GettextFormat.php",
-		"GettextParseException": "ffs/GettextParseException.php",
 		"GettextPluralException": "ffs/GettextPluralException.php",
 		"HashMessageIndex": "utils/MessageIndex.php",
 		"IniFFS": "src/FileFormatSupport/IniFormat.php",

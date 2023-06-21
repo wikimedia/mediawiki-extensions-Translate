@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use BagOStuff;
 use FileBasedMessageGroup;
-use GettextParseException;
 use Html;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextParseException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageGroupBase;
 use SpecialPage;
