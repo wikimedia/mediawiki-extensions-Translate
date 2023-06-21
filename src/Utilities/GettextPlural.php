@@ -6,8 +6,8 @@
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use GettextPluralException;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextPluralException;
 
 /** @since 2019.09 */
 class GettextPlural {

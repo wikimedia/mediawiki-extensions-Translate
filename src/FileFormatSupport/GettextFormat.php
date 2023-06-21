@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use GettextPluralException;
 use InvalidArgumentException;
 use LanguageCode;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
