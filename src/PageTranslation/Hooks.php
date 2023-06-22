@@ -1526,7 +1526,9 @@ class Hooks {
 
 		$user = $skin->getUser();
 		if ( isset( $tabs['views']['edit'] ) ) {
-			$action = 'edit';
+			// There is an edit tab, just replace its text and URL with ours, keeping the tooltip and access key
+			$tabs['views']['edit']['text'] = $skin->msg( 'tpt-tab-translate' )->text();
+			$tabs['views']['edit']['href'] = $page->getTranslationUrl( $code );
 		} elseif ( $user->isAllowed( 'translate' ) ) {
 			$mwInstance = MediaWikiServices::getInstance();
 			$namespaceProtection = $mwInstance->getMainConfig()->get( MainConfigNames::NamespaceProtection );
@@ -1539,14 +1541,24 @@ class Hooks {
 				return;
 			}
 
-			// Remove the viewsource link that says that the page is protected.
-			unset( $tabs['views']['viewsource'] );
-			$action = 'translate';
-		} else {
-			return;
+			$tab = [
+				'text' => $skin->msg( 'tpt-tab-translate' )->text(),
+				'href' => $page->getTranslationUrl( $code ),
+			];
+
+			// Get the position of the viewsource tab within the array (if any)
+			$viewsourcePos = array_keys( array_keys( $tabs['views'] ), 'viewsource', true )[0] ?? null;
+
+			if ( $viewsourcePos !== null ) {
+				// Remove the viewsource tab and insert the translate tab at its place. Showing the tooltip
+				// of the viewsource tab for the translate tab would be confusing.
+				array_splice( $tabs['views'], $viewsourcePos, 1, [ 'translate' => $tab ] );
+			} else {
+				// We have neither an edit tab nor a viewsource tab to replace with the translate tab,
+				// put the translate tab at the end
+				$tabs['views']['translate'] = $tab;
+			}
 		}
-		$tabs['views'][$action]['text'] = $skin->msg( 'tpt-tab-translate' )->text();
-		$tabs['views'][$action]['href'] = $page->getTranslationUrl( $code );
 	}
 
 	/**
