@@ -1,34 +1,30 @@
 <?php
-/**
- * Classes for %MediaWiki extension translation.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
+
+use FileDependency;
 use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
+use MediaWikiExtensionMessageGroup;
+use MessageGroup;
+use MessageGroupBase;
+use RuntimeException;
+use UnexpectedValueException;
 
 /**
  * Class which handles special definition format for %MediaWiki extensions and skins.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class PremadeMediawikiExtensionGroups {
-	/** @var string */
-	protected $idPrefix = 'ext-';
-	/** @var int */
-	protected $namespace;
-	/**
-	 * @var string
-	 * @see __construct
-	 */
-	protected $path;
-	/**
-	 * @var string
-	 * @see __construct
-	 */
-	protected $definitionFile;
+	protected string $idPrefix = 'ext-';
+	protected ?int $namespace = null;
+	/** @see __construct */
+	protected string $path;
+	/** @see __construct */
+	protected string $definitionFile;
 
 	/**
 	 * @param string $def Absolute path to the definition file. See
@@ -38,59 +34,36 @@ class PremadeMediawikiExtensionGroups {
 	 *   otherwise export path will be wrong. The export path is
 	 *   constructed by replacing %GROUPROOT%/ with target directory.
 	 */
-	public function __construct( $def, $path ) {
+	public function __construct( string $def, string $path ) {
 		$this->definitionFile = $def;
 		$this->path = rtrim( $path, '/' );
 	}
 
-	/**
-	 * Get the default namespace. Subclasses can override this.
-	 *
-	 * @return int
-	 */
-	protected function getDefaultNamespace() {
+	/** Get the default namespace. Subclasses can override this. */
+	protected function getDefaultNamespace(): int {
 		return NS_MEDIAWIKI;
 	}
 
-	/**
-	 * Get the namespace ID
-	 *
-	 * @return int
-	 */
-	protected function getNamespace() {
+	/** Get the namespace ID */
+	protected function getNamespace(): int {
 		if ( $this->namespace === null ) {
 			$this->namespace = $this->getDefaultNamespace();
 		}
 		return $this->namespace;
 	}
 
-	/**
-	 * How to prefix message group ids.
-	 *
-	 * @since 2012-03-22
-	 * @param string $value
-	 */
-	public function setGroupPrefix( $value ) {
+	/** How to prefix message group ids. */
+	public function setGroupPrefix( string $value ): void {
 		$this->idPrefix = $value;
 	}
 
-	/**
-	 * Which namespace holds the messages.
-	 *
-	 * @since 2012-03-22
-	 * @param int $value
-	 */
-	public function setNamespace( $value ) {
+	/** Which namespace holds the messages. */
+	public function setNamespace( int $value ): void {
 		$this->namespace = $value;
 	}
 
-	/**
-	 * Hook: TranslatePostInitGroups
-	 * @param array &$list
-	 * @param array &$deps
-	 * @return true
-	 */
-	public function register( array &$list, array &$deps ) {
+	/** Hook: TranslatePostInitGroups */
+	public function register( array &$list, array &$deps ): void {
 		$groups = $this->parseFile();
 		$groups = $this->processGroups( $groups );
 		foreach ( $groups as $id => $g ) {
@@ -98,17 +71,14 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$deps[] = new FileDependency( $this->definitionFile );
-
-		return true;
 	}
 
 	/**
 	 * Creates MediaWikiExtensionMessageGroup objects from parsed data.
 	 * @param string $id unique group id already prefixed
 	 * @param array $info array of group info
-	 * @return MediaWikiExtensionMessageGroup
 	 */
-	protected function createMessageGroup( $id, $info ) {
+	protected function createMessageGroup( string $id, array $info ): MessageGroup {
 		$conf = [];
 		$conf['BASIC']['class'] = MediaWikiExtensionMessageGroup::class;
 		$conf['BASIC']['id'] = $id;
@@ -188,11 +158,10 @@ class PremadeMediawikiExtensionGroups {
 			}
 		}
 
-		// @phan-suppress-next-line PhanTypeMismatchReturnSuperType
 		return MessageGroupBase::factory( $conf );
 	}
 
-	protected function parseFile() {
+	protected function parseFile(): array {
 		$defines = file_get_contents( $this->definitionFile );
 		$linefeed = '(\r\n|\n)';
 		$sections = array_map(
@@ -203,7 +172,7 @@ class PremadeMediawikiExtensionGroups {
 
 		foreach ( $sections as $section ) {
 			$lines = array_map( 'trim', preg_split( "/$linefeed/", $section ) );
-			$newgroup = [];
+			$newGroup = [];
 
 			foreach ( $lines as $line ) {
 				if ( $line === '' || $line[0] === '#' ) {
@@ -211,8 +180,8 @@ class PremadeMediawikiExtensionGroups {
 				}
 
 				if ( !str_contains( $line, '=' ) ) {
-					if ( empty( $newgroup['name'] ) ) {
-						$newgroup['name'] = $line;
+					if ( empty( $newGroup['name'] ) ) {
+						$newGroup['name'] = $line;
 					} else {
 						throw new RuntimeException( 'Trying to define name twice: ' . $line );
 					}
@@ -226,35 +195,35 @@ class PremadeMediawikiExtensionGroups {
 						case 'id':
 						case 'magicfile':
 						case 'var':
-							$newgroup[$key] = $value;
+							$newGroup[$key] = $value;
 							break;
 						case 'optional':
 						case 'ignored':
 						case 'languages':
 							$values = array_map( 'trim', explode( ',', $value ) );
-							if ( !isset( $newgroup[$key] ) ) {
-								$newgroup[$key] = [];
+							if ( !isset( $newGroup[$key] ) ) {
+								$newGroup[$key] = [];
 							}
-							$newgroup[$key] = array_merge( $newgroup[$key], $values );
+							$newGroup[$key] = array_merge( $newGroup[$key], $values );
 							break;
 						case 'prefix':
 							list( $prefix, $messages ) = array_map(
 								'trim',
 								explode( '|', $value, 2 )
 							);
-							if ( isset( $newgroup['prefix'] ) && $newgroup['prefix'] !== $prefix ) {
+							if ( isset( $newGroup['prefix'] ) && $newGroup['prefix'] !== $prefix ) {
 								throw new RuntimeException(
-									"Only one prefix supported: {$newgroup['prefix']} !== $prefix"
+									"Only one prefix supported: {$newGroup['prefix']} !== $prefix"
 								);
 							}
-							$newgroup['prefix'] = $prefix;
+							$newGroup['prefix'] = $prefix;
 
-							if ( !isset( $newgroup['mangle'] ) ) {
-								$newgroup['mangle'] = [];
+							if ( !isset( $newGroup['mangle'] ) ) {
+								$newGroup['mangle'] = [];
 							}
 
 							$messages = array_map( 'trim', explode( ',', $messages ) );
-							$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
+							$newGroup['mangle'] = array_merge( $newGroup['mangle'], $messages );
 							break;
 						default:
 							throw new UnexpectedValueException( 'Unknown key:' . $key );
@@ -262,18 +231,18 @@ class PremadeMediawikiExtensionGroups {
 				}
 			}
 
-			if ( count( $newgroup ) ) {
-				if ( empty( $newgroup['name'] ) ) {
-					throw new RuntimeException( "Name missing\n" . print_r( $newgroup, true ) );
+			if ( count( $newGroup ) ) {
+				if ( empty( $newGroup['name'] ) ) {
+					throw new RuntimeException( "Name missing\n" . print_r( $newGroup, true ) );
 				}
-				$groups[] = $newgroup;
+				$groups[] = $newGroup;
 			}
 		}
 
 		return $groups;
 	}
 
-	protected function processGroups( $groups ) {
+	protected function processGroups( array $groups ): array {
 		$fixedGroups = [];
 		foreach ( $groups as $g ) {
 			$name = $g['name'];
@@ -286,15 +255,15 @@ class PremadeMediawikiExtensionGroups {
 				$file = $g['file'];
 			}
 
-			$descmsg = $g['descmsg'] ?? str_replace( $this->idPrefix, '', $id ) . '-desc';
+			$descMsg = $g['descmsg'] ?? str_replace( $this->idPrefix, '', $id ) . '-desc';
 
-			$newgroup = [
+			$newGroup = [
 				'name' => $name,
 				'file' => $file,
-				'descmsg' => $descmsg,
+				'descmsg' => $descMsg,
 			];
 
-			$copyvars = [
+			$copyVars = [
 				'aliasfile',
 				'desc',
 				'ignored',
@@ -306,24 +275,26 @@ class PremadeMediawikiExtensionGroups {
 				'var',
 			];
 
-			foreach ( $copyvars as $var ) {
+			foreach ( $copyVars as $var ) {
 				if ( isset( $g[$var] ) ) {
-					$newgroup[$var] = $g[$var];
+					$newGroup[$var] = $g[$var];
 				}
 			}
 
 			// Mark some fixed form optional messages automatically
-			if ( !isset( $newgroup['optional' ] ) ) {
-				$newgroup['optional'] = [];
+			if ( !isset( $newGroup['optional' ] ) ) {
+				$newGroup['optional'] = [];
 			}
 
 			// Mark extension name and skin names optional.
-			$newgroup['optional'][] = '*-extensionname';
-			$newgroup['optional'][] = 'skinname-*';
+			$newGroup['optional'][] = '*-extensionname';
+			$newGroup['optional'][] = 'skinname-*';
 
-			$fixedGroups[$id] = $newgroup;
+			$fixedGroups[$id] = $newGroup;
 		}
 
 		return $fixedGroups;
 	}
 }
+
+class_alias( PremadeMediawikiExtensionGroups::class, 'PremadeMediawikiExtensionGroups' );

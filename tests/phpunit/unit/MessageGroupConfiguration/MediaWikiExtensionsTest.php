@@ -1,17 +1,21 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
+
+use MediaWikiUnitTestCase;
+use TranslateYaml;
 
 /**
  * Test for parsing the special definition file for mediawiki-extensions
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @covers \MediaWiki\Extension\Translate\MessageGroupConfiguration\PremadeMediawikiExtensionGroups
  */
-class MediaWikiExtensionsTest extends PHPUnit\Framework\TestCase {
-	/**
-	 * @requires function yaml_parse
-	 * @covers PremadeMediawikiExtensionGroups
-	 */
-	public function testParsing() {
-		$defs = __DIR__ . '/../data/mediawiki-extensions.txt';
+class MediaWikiExtensionsTest extends MediaWikiUnitTestCase {
+	/** @requires function yaml_parse */
+	public function testParsing(): void {
+		$defs = __DIR__ . '/../../data/mediawiki-extensions.txt';
 		$path = '%GROUPROOT%/mediawiki-extensions/extensions';
 		$foo = new PremadeMediawikiExtensionGroups( $defs, $path );
 		$list = $deps = $autoload = [];
@@ -21,15 +25,15 @@ class MediaWikiExtensionsTest extends PHPUnit\Framework\TestCase {
 		$this->assertCount( 5, $list, 'Right number of groups were created' );
 
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/../data/MediaWikiExtensionTest-conf2.yaml' );
+		$expected = TranslateYaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf2.yaml' );
 		$this->assertEquals( $expected, $list['ext-wikimediamessages']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-examplejsonextension', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/../data/MediaWikiExtensionTest-conf3.yaml' );
+		$expected = TranslateYaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf3.yaml' );
 		$this->assertEquals( $expected, $list['ext-examplejsonextension']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-exampleextension2', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/../data/MediaWikiExtensionTest-conf4.yaml' );
+		$expected = TranslateYaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf4.yaml' );
 		$this->assertEquals( $expected, $list['ext-exampleextension2']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-languagesmodified', $list );

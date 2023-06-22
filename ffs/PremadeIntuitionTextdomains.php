@@ -15,13 +15,13 @@
  */
 class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $groups;
-	protected $idPrefix = 'tsint-';
+	protected string $idPrefix = 'tsint-';
 
-	protected function getDefaultNamespace() {
+	protected function getDefaultNamespace(): int {
 		return NS_INTUITION;
 	}
 
-	protected function processGroups( $groups ) {
+	protected function processGroups( array $groups ): array {
 		$fixedGroups = [];
 		foreach ( $groups as $g ) {
 			$name = $g['name'];
