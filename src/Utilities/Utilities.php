@@ -233,7 +233,7 @@ class Utilities {
 		foreach ( array_keys( $deprecatedCodes ) as $deprecatedCode ) {
 			unset( $languageNames[ $deprecatedCode ] );
 		}
-		$mwServices->getHookContainer()->run( 'TranslateSupportedLanguages', [ &$languageNames, $code ] );
+		Services::getInstance()->getHookRunner()->onTranslateSupportedLanguages( $languageNames, $code );
 
 		return $languageNames;
 	}

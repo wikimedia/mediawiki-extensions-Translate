@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\EventTranslationReviewHook
 use MediaWiki\Extension\Translate\TranslatorInterface\GetSpecialTranslateOptionsHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\NewTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserPromotedHook;
+use MediaWiki\Extension\Translate\Utilities\SupportedLanguagesHook;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\User\UserIdentity;
 use MessageGroup;
@@ -46,7 +47,8 @@ class HookRunner implements
 	GetAPIMessageGroupsPropertyDescsHook,
 	InitGroupLoadersHook,
 	PostInitGroupsHook,
-	ProcessAPIMessageGroupsPropertiesHook
+	ProcessAPIMessageGroupsPropertiesHook,
+	SupportedLanguagesHook
 {
 	private HookContainer $hookContainer;
 
@@ -115,5 +117,9 @@ class HookRunner implements
 		MessageGroup $g
 	) {
 		return $this->hookContainer->run( 'TranslateProcessAPIMessageGroupsProperties', [ &$a, $props, $params, $g ] );
+	}
+
+	public function onTranslateSupportedLanguages( array &$list, ?string $language ) {
+		return $this->hookContainer->run( 'TranslateSupportedLanguages', [ &$list, $language ] );
 	}
 }
