@@ -70,7 +70,6 @@
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\AndroidXmlFormat": "src/FileFormatSupport/AndroidXmlFormat.php",
 		"AppleFFS": "src/FileFormatSupport/AppleFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\AppleFormat": "src/FileFormatSupport/AppleFormat.php",
-		"AppleInfoPlistFfs": "ffs/AppleInfoPlistFfs.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
 		"CachedMessageIndex": "utils/MessageIndex.php",
 		"CDBMessageIndex": "utils/MessageIndex.php",

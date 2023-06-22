@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use AppleInfoPlistFfs;
 use FileBasedMessageGroup;
 use InvalidArgumentException;
 use Wikimedia\ObjectFactory\ObjectFactory;
@@ -25,7 +24,6 @@ class FileFormatFactory {
 		'Amd' => AmdFormat::class,
 		'AndroidXml' => AndroidXmlFormat::class,
 		'Apple' => AppleFormat::class,
-		'AppleInfoPlist' => AppleInfoPlistFfs::class,
 		'Dtd' => DtdFormat::class,
 		'FlatPhp' => FlatPhpFormat::class,
 		'Gettext' => GettextFormat::class,

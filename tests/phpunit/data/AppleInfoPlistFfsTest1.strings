@@ -1,6 +1,0 @@
-/*
-  InfoPlist.strings
-*/
-
-NSPhotoLibraryUsageDescription = "Test Message!";
-NSFaceIDUsageDescription = "Hello World";
