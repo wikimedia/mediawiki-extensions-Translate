@@ -298,6 +298,16 @@
 		$element.uls( ulsOptions );
 	}
 
+	function addTuxGroupWarningContainer() {
+		var $tuxEditorHeader = $( '.tux-editor-header' );
+		var $tuxWarning = $tuxEditorHeader.find( 'tux-group-warning' );
+		if ( !$tuxWarning.length ) {
+			$tuxWarning = $( '<div>' )
+				.addClass( 'mw-message-box-warning mw-message-box tux-group-warning twelve column' );
+			$tuxEditorHeader.append( $tuxWarning );
+		}
+	}
+
 	$( function () {
 		var $messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
@@ -351,6 +361,8 @@
 				$( '#tux-option-optional' ).prop( 'checked', true );
 			}
 		}
+
+		addTuxGroupWarningContainer();
 
 		var position;
 		if ( $( document.body ).hasClass( 'rtl' ) ) {

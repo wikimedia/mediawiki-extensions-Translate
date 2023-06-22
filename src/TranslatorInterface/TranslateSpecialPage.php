@@ -385,8 +385,7 @@ class TranslateSpecialPage extends SpecialPage {
 			);
 		}
 
-		// Initialize an empty warning box to be filled client-side.
-		return Html::warningBox( '', 'tux-group-warning twelve column' );
+		return '';
 	}
 
 	protected function tuxWorkflowSelector(): string {
