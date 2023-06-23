@@ -10,10 +10,10 @@
 
 use Cdb\Reader;
 use Cdb\Writer;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -40,15 +40,15 @@ abstract class MessageIndex {
 	private $statusCache;
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
-	/** @var HookContainer */
-	private $hookContainer;
+	/** @var HookRunner */
+	private $hookRunner;
 
 	public function __construct() {
 		// TODO: Use dependency injection
 		$mwInstance = MediaWikiServices::getInstance();
 		$this->statusCache = $mwInstance->getMainWANObjectCache();
 		$this->jobQueueGroup = $mwInstance->getJobQueueGroup();
-		$this->hookContainer = $mwInstance->getHookContainer();
+		$this->hookRunner = Services::getInstance()->getHookRunner();
 	}
 
 	/**
@@ -381,8 +381,8 @@ abstract class MessageIndex {
 				$title = Title::makeTitle( (int)$ns, $pagename );
 				$handle = new MessageHandle( $title );
 				[ $oldGroups, $newGroups ] = $data;
-				$this->hookContainer->run( 'TranslateEventMessageMembershipChange',
-					[ $handle, $oldGroups, $newGroups ] );
+				$this->hookRunner->onTranslateEventMessageMembershipChange(
+					$handle, $oldGroups, $newGroups );
 			}
 		}
 	}

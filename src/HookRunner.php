@@ -6,6 +6,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageGroupStateChangeHook;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageMembershipChangeHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsParameterListHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsPropertyDescsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\InitGroupLoadersHook;
@@ -48,7 +49,8 @@ class HookRunner implements
 	InitGroupLoadersHook,
 	PostInitGroupsHook,
 	ProcessAPIMessageGroupsPropertiesHook,
-	SupportedLanguagesHook
+	SupportedLanguagesHook,
+	EventMessageMembershipChangeHook
 {
 	private HookContainer $hookContainer;
 
@@ -121,5 +123,9 @@ class HookRunner implements
 
 	public function onTranslateSupportedLanguages( array &$list, ?string $language ) {
 		return $this->hookContainer->run( 'TranslateSupportedLanguages', [ &$list, $language ] );
+	}
+
+	public function onTranslateEventMessageMembershipChange( MessageHandle $handle, array $old, array $new ) {
+		return $this->hookContainer->run( 'TranslateEventMessageMembershipChange', [ $handle, $old, $new ] );
 	}
 }
