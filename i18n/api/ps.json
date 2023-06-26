@@ -20,7 +20,6 @@
 	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند.",
 	"apihelp-translatesandbox-param-do": "څه کولی شم.",
 	"apihelp-translationstash-param-subaction": "کړنه.",
-	"apihelp-searchtranslations-description": "ژباړې پلټل.",
 	"apihelp-searchtranslations-param-limit": "د پايلې کچه.",
 	"apihelp-searchtranslations-example-1": "د ټاکلې ژبې ژباړې ښکاره کول."
 }

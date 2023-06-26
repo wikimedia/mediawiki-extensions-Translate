@@ -19,7 +19,6 @@
 	"apihelp-translatesandbox-param-email": "Netfang við sköpun notanda.",
 	"apihelp-translationaids-param-title": "Heildartitill á þekktum skilaboðum.",
 	"apihelp-translationstash-param-subaction": "Aðgerð.",
-	"apihelp-searchtranslations-description": "Leita í þýðingum",
 	"apihelp-searchtranslations-summary": "Leita í þýðingum",
 	"apierror-translate-unknownmessage": "Ókunn skilaboð"
 }

@@ -7,13 +7,15 @@
 	"apihelp-groupreview-param-group": "Saakkjoukk.",
 	"apihelp-groupreview-param-language": "Ǩiõllkoodd.",
 	"apihelp-query+languagestats-param-language": "Ǩiõllkoodd.",
+	"apihelp-query+languagestats-param-group": "Saakkjoouk ǩeâlǥal.",
 	"apihelp-query+messagecollection-param-group": "Saakkjoukk.",
 	"apihelp-query+messagecollection-param-language": "Ǩiõllkoodd.",
 	"apihelp-query+messagecollection-example-1": "Listt tuärjjuum ǩiõlin",
+	"apihelp-query+messagegroups-example-1": "Čuäʹjet saakkjooukid",
 	"apihelp-ttmserver-param-sourcelanguage": "Käivvteeʹkst ǩiõllkoodd.",
-	"apihelp-searchtranslations-description": "Ooʒʒ jåårǥlõõzzid.",
 	"apihelp-searchtranslations-summary": "Ooʒʒ jåårǥlõõzzid.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Käivvteeʹkst ǩiõllkoodd.",
 	"apihelp-translationstats-summary": "Ooʒʒ jåårǥlâʹttemstatistiikkid",
-	"apierror-translate-unknownmessage": "Toobdteʹmes saakk"
+	"apierror-translate-unknownmessage": "Toobdteʹmes saakk",
+	"apihelp-translationentitysearch-summary": "Ooʒʒ saakkjooukid da saaǥǥid"
 }

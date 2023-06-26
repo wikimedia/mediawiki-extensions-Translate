@@ -12,6 +12,5 @@
 	"apihelp-query+messagecollection-param-language": "รหัสภาษา",
 	"apihelp-query+messagecollection-example-1": "รายชื่อภาษาที่รองรับ",
 	"apihelp-query+messagegroups-example-1": "แสดงกลุ่มข้อความ",
-	"apihelp-query+messagegroupstats-param-group": "ไอดีกลุ่มข้อความ",
-	"apihelp-searchtranslations-description": "ค้นหาการแปล"
+	"apihelp-query+messagegroupstats-param-group": "ไอดีกลุ่มข้อความ"
 }

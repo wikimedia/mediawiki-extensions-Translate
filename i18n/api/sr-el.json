@@ -8,7 +8,6 @@
 	"apihelp-aggregategroups-example-1": "Pridruživanje grupi",
 	"apihelp-groupreview-param-group": "Grupa poruka",
 	"apihelp-groupreview-param-language": "Jezički kod.",
-	"apihelp-query+languagestats-description": "Statistika traženog jezika",
 	"apihelp-query+languagestats-summary": "Statistika traženog jezika",
 	"apihelp-query+languagestats-param-language": "Jezički kod.",
 	"apihelp-query+messagecollection-param-group": "Grupa poruka.",

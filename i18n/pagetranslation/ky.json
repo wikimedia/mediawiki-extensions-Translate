@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bosogo",
 			"Викиней"
 		]
 	},
@@ -12,12 +13,16 @@
 	"translate-tag-markthis": "Бул баракты которуу үчүн белгилөө",
 	"tpt-languages-legend": "Башка тилдер:",
 	"tpt-languages-zero": "Ушул тилге которууну баштоо",
+	"tpt-tab-translate": "Которуу",
 	"tpt-aggregategroup-save": "Сактоо",
 	"tpt-aggregategroup-new-name": "Аталышы:",
 	"tpt-aggregategroup-new-description": "Баяндамасы (милдеттүү эмес):",
+	"tpt-aggregategroup-update-cancel": "Жокко чыгаруу",
 	"pt-movepage-current": "Азыркы аты:",
 	"pt-movepage-new": "Жаңы аты:",
 	"pt-movepage-reason": "Себеби:",
 	"pt-deletepage-current": "Барактын аты:",
-	"pt-deletepage-reason": "Себеп:"
+	"pt-deletepage-reason": "Себеп:",
+	"pm-cancel-button-label": "Жокко чыгаруу",
+	"pp-cancel-button-label": "Жокко чыгаруу"
 }

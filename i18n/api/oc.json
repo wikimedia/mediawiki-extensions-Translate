@@ -6,15 +6,9 @@
 	},
 	"apihelp-groupreview-param-language": "Còdi de lenga.",
 	"apihelp-query+languagestats-param-language": "Còdi de lenga.",
-	"apihelp-query+messagecollection-description": "Requèsta MessageCollection sus las traduccions.",
 	"apihelp-query+messagecollection-param-language": "Còdi de lenga.",
-	"apihelp-query+messagetranslations-description": "Demanda l'ensemble de las traduccions per un sol messatge.",
 	"apihelp-query+messagetranslations-example-1": "Lista de las traduccions del wiki per «MediaWiki:genièr»",
-	"apihelp-translationaids-description": "Recèrca totas las ajudas a la traduccion.",
-	"apihelp-translationreview-description": "Marcar las traduccions coma repassadas.",
-	"apihelp-translationstash-description": "Apondre de traduccions a la resèrva.",
 	"apihelp-ttmserver-example-1": "Obténer de suggestions per traduire \"Ajuda\" de l'anglés cap al finés",
-	"apihelp-searchtranslations-description": "Recercar de traduccions.",
 	"apihelp-searchtranslations-param-offset": "Decalatge per las traduccions.",
 	"apihelp-searchtranslations-example-1": "Afichar las traduccions per la lenga."
 }

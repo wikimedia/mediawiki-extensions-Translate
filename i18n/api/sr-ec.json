@@ -13,7 +13,6 @@
 	"apihelp-aggregategroups-example-1": "Придруживање групи",
 	"apihelp-groupreview-param-group": "Група порука",
 	"apihelp-groupreview-param-language": "Језички код.",
-	"apihelp-query+languagestats-description": "Статистика траженог језика",
 	"apihelp-query+languagestats-summary": "Статистика траженог језика",
 	"apihelp-query+languagestats-param-language": "Језички код.",
 	"apihelp-query+messagecollection-param-group": "Група порука.",

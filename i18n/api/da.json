@@ -20,7 +20,6 @@
 	"apihelp-translationaids-param-title": "Den fulde titel af en kendt besked.",
 	"apihelp-translationstash-param-subaction": "Handling.",
 	"apihelp-translationstash-param-metadata": "JSON-objekt.",
-	"apihelp-searchtranslations-description": "Søg i oversættelser.",
 	"apihelp-searchtranslations-summary": "Søg i oversættelser.",
 	"apihelp-searchtranslations-param-query": "Strengen der skal søges efter.",
 	"apihelp-searchtranslations-param-limit": "Resultatets størrelse.",

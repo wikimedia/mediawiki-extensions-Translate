@@ -15,6 +15,5 @@
 	"apihelp-translationstash-param-subaction": "Ekintza.",
 	"apihelp-translationstash-param-translation": "Erabiltzaileak egindako itzulpena.",
 	"apihelp-translationstash-param-metadata": "JSON objektua.",
-	"apihelp-searchtranslations-description": "Itzulpenak bilatu",
 	"apierror-translate-unknownmessage": "Mezu ezezaguna"
 }
