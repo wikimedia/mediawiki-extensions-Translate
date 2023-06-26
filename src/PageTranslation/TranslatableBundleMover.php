@@ -323,7 +323,9 @@ class TranslatableBundleMover {
 				$moveSummary = $reason;
 			} else {
 				$user = $fuzzyBot;
-				$moveSummary = wfMessage( 'pt-movepage-logreason', $sourceTitle )->text();
+				$moveSummary = wfMessage(
+					'pt-movepage-logreason', $sourceBundle->getTitle()->getPrefixedText()
+				)->text();
 			}
 
 			$mover = $this->movePageFactory->newMovePage( $sourceTitle, $targetTitle );
