@@ -8,7 +8,6 @@ $cfg['null_casts_as_any_type'] = true;
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],
 	[
-		'ffs',
 		'messagegroups',
 		'scripts',
 		'src',

@@ -1,21 +1,24 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
+
 /**
- * Class for Intuition for Translatewiki.net
- *
- * @file
+ * Support for tools using Intuition at the Toolserver and Wikimedia Labs. Used on translatewiki.net
  * @author Niklas Laxström
  * @author Krinkle
  * @copyright Copyright © 2008-2013, Niklas Laxström
  * @copyright Copyright © 2011, Krinkle
  * @license GPL-2.0-or-later
  */
-
-/**
- * Support for tools using Intuition at the Toolserver and Wikimedia Labs.
- */
 class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
-	protected $groups;
-	protected string $idPrefix = 'tsint-';
+	protected array $groups;
+
+	/** @inheritDoc */
+	public function __construct( string $def, string $path ) {
+		parent::__construct( $def, $path );
+		$this->idPrefix = 'tsint-';
+	}
 
 	protected function getDefaultNamespace(): int {
 		return NS_INTUITION;
@@ -30,15 +33,15 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			$id = $g['id'] ?? $this->idPrefix . $sanitizedName;
 
 			// Canonical names for Intuition text-domains are lowercase
-			// eg. "MyTool" -> "mytool/en.json"
+			// e.g. "MyTool" -> "mytool/en.json"
 			$file = $g['file'] ?? "$sanitizedName/%CODE%.json";
 
-			$descmsg = $g['descmsg'] ?? "$id-desc";
+			$descMsg = $g['descmsg'] ?? "$id-desc";
 
-			$newgroup = [
+			$newGroup = [
 				'name' => 'Intuition - ' . $name,
 				'file' => $file,
-				'descmsg' => $descmsg,
+				'descmsg' => $descMsg,
 			];
 
 			// Prefix is required, if not customized use the sanitized name
@@ -61,7 +64,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 
 			$g['format'] = 'json';
 
-			$copyvars = [
+			$copyVars = [
 				'aliasfile',
 				'desc',
 				'format',
@@ -73,15 +76,17 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				'var',
 			];
 
-			foreach ( $copyvars as $var ) {
+			foreach ( $copyVars as $var ) {
 				if ( isset( $g[$var] ) ) {
-					$newgroup[$var] = $g[$var];
+					$newGroup[$var] = $g[$var];
 				}
 			}
 
-			$fixedGroups[$id] = $newgroup;
+			$fixedGroups[$id] = $newGroup;
 		}
 
 		return $fixedGroups;
 	}
 }
+
+class_alias( PremadeIntuitionTextdomains::class, 'PremadeIntuitionTextdomains' );
