@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Growingup"
+			"Growingup",
+			"Bosogo"
 		]
 	},
+	"translate": "Которуу",
+	"translate-extensionname": "Которуу",
 	"translate-taction-translate": "Которуу",
 	"translate-taction-proofread": "Окуп текшерүү",
 	"translate-taction-lstats": "Тил статистикасы",
@@ -15,6 +18,10 @@
 	"translate-page-navigation-legend": "Навигация",
 	"translate-next": "кийинки барак",
 	"translate-prev": "мурунку барак",
+	"translate-edit-title": "«$1» түзөтүү",
+	"translate-edit-information": "Билдирүү тууралуу маалымат ($1)",
+	"translate-rcfilters-translations": "Котормолор",
+	"translate-rcfilters-translations-site-label": "Сайт билдирүүлөрү",
 	"translate-sidebar-alltrans": "Башка тилдерде",
 	"translations": "Бүт котормолор",
 	"translate-translations-count": "{{PLURAL:$1|$1 котормо}} табылды.",
@@ -49,6 +56,7 @@
 	"supportedlanguages-recenttranslations": "жакындагы котормолор",
 	"translate-save": "Сактоо ($1)",
 	"translate-jssti-add": "Тизмеге кошуу",
+	"translate-smg-rename-cancel": "Жокко чыгаруу",
 	"translate-manage-import-new": "Жаңы билдирүү $1",
 	"translate-manage-action-import": "Импорт",
 	"importtranslations": "Котормолорду импорттоо",
@@ -59,5 +67,11 @@
 	"translate-msggroupselector-search-all": "Баары",
 	"tux-languageselector": "Тил",
 	"tux-tab-all": "Баары",
-	"tux-edit": "Оңдоо"
+	"tux-edit": "Оңдоо",
+	"tux-status-saving": "Жарыяланууда...",
+	"tux-editor-save-button-label": "Котормосун жарыялоо",
+	"tux-editor-skip-button-label": "Кийинки",
+	"tux-editor-translate-mode": "Тизме",
+	"tux-editor-page-mode": "Барак",
+	"tux-empty-list-translated-action": "Которуу"
 }
