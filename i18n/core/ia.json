@@ -444,6 +444,7 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Le lingua de origine \"$1\" non es supportate.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "Codice{{PLURAL:$2||s}} de lingua prioritari non valide in metadatos: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Formato de lingua prioritari non valide in le metadatos. Le linguas prioritari debe esser un matrice de catenas.",
+	"translate-messagebundle-error-invalid-label": "Pacchetto de messages non valide in metadatos. Etiquetta debe esser un catena de characteres",
 	"translate-messagebundle-group-description": "Messages de un pacchetto de messages definite sur le pagina [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Definiente le lingua de origine del message secundo le metadatos.",
 	"translate-messagebundle-sourcelanguage-changed": "Le lingua de origine de un pacchetto de messages non pote esser cambiate post creation.",
