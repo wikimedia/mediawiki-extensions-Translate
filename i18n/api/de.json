@@ -6,7 +6,8 @@
 			"Metalhead64",
 			"Predatorix",
 			"Seewolf",
-			"SorkDE"
+			"SorkDE",
+			"Brettchenweber"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -116,6 +117,11 @@
 	"apihelp-translationcheck-summary": "Validiert Übersetzungen.",
 	"apihelp-translationcheck-param-title": "Seitentitel mit Namensraum und Sprachcode.",
 	"apihelp-translationcheck-param-translation": "Die zu validierende Übersetzung.",
+	"apihelp-translationstats-param-count": "Art der angeforderten Statistik",
+	"apihelp-translationstats-param-days": "Anzahl der Tage, für die Statistiken abgerufen werden sollen",
+	"apihelp-translationstats-param-group": "Liste der Gruppen, für die Statistiken abgerufen werden sollen.",
+	"apihelp-translationstats-param-language": "Liste der Sprachen, für die Statistiken abgerufen werden sollen.",
+	"apihelp-translationstats-param-scale": "Maßstab der Übersetzungsstatistik",
 	"apihelp-translationstats-example-1": "Anzahl der Bearbeitungen in den letzten 30 Tagen für alle Gruppen und Sprachen abrufen",
 	"apihelp-translationstats-example-2": "Abrufen der Anzahl der Bearbeitungen der letzten 30 Tage, für die Sprachen Englisch und Französisch.",
 	"apierror-translate-duplicateaggregategroup": "Die Nachrichtengruppe ist bereits vorhanden",
