@@ -467,6 +467,7 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Der Quellsprachencode „$1“ wird nicht unterstützt.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Ungültiger Code für Prioritätssprache|Ungültige Codes für Prioritätssprachen}} in den Metadaten: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Ungültiges Format der Prioritätssprache in den Metadaten. Prioritätssprachen müssen ein Array von Strings sein.",
+	"translate-messagebundle-error-invalid-description": "Ungültige Beschreibung des Nachrichtenpakets in den Metadaten. Beschreibung muss eine Zeichenfolge sein",
 	"translate-messagebundle-error-invalid-label": "Ungültige Beschreibung des Message-Bundles in den Metadaten. Beschreibung muss eine Zeichenkette sein",
 	"translate-messagebundle-group-description": "Nachrichten eines auf Seite [[$2|$1]] definierten Nachrichtenbündels.",
 	"translate-messagebundle-change-sourcelanguage": "Einstellung der Ausgangssprache des Nachrichtenbündels gemäß den Metadaten.",

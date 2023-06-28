@@ -453,6 +453,7 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Oznaka izvornega jezika »$1« ni podprta.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Neveljavna oznaka prednostnega jezika|Neveljavni oznaki prednostnih jezikov|Neveljavne oznake prednostnih jezikov}} v metapodatkih: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Neveljaven format prednostnega jezika v metapodatkih. Prednostni jeziki morajo biti matrika nizov.",
+	"translate-messagebundle-error-invalid-description": "Neveljaven opis svežnja sporočil v metapodatkih. Opis mora biti niz.",
 	"translate-messagebundle-error-invalid-label": "Neveljavna oznaka svežnja sporočil v metapodatkih. Oznaka mora biti niz.",
 	"translate-messagebundle-group-description": "Sporočila svežnja sporočil, opredeljenega na strani »[[$2|$1]]«.",
 	"translate-messagebundle-change-sourcelanguage": "Nastavitev izvornega jezika svežnja sporočil skladno z metapodatki.",
