@@ -7,6 +7,8 @@
 	},
 	"tsb-filter-pending": "Ceisiadau dan ystyriaeth",
 	"tsb-reminder-title-generic": "Cwblhewch eich cyflwyniad er mwyn cael bod yn gyfieithydd",
+	"tsb-reminder-sending": "Wrthi'n anfon y nodyn atgoffa...",
+	"tsb-reminder-sent-new": "Wedi anfon nodyn atgoffa",
 	"tsb-email-promoted-subject": "Rydych nawr yn gyfieithydd ar {{SITENAME}}",
 	"tsb-all-languages-button-label": "Pob iaith",
 	"tsb-accept-button-label": "Derbyn",
@@ -15,7 +17,7 @@
 	"tsb-reject-all-button-label": "Gwrthod y cwbl",
 	"tsb-user-posted-a-comment": "Ddim yn gyfieithydd",
 	"tsb-translations-source": "Ffynhonell",
-	"tsb-translations-user": "Cyfieithiadau'r defnyddiwr",
+	"tsb-translations-user": "Cyfieithiadau'r {{GENDER:$1|defnyddiwr}}",
 	"tsb-translations-current": "Cyfieithiadau presennol",
 	"translationstash": "Croeso",
 	"translate-translationstash-welcome": "Croeso {{GENDER:$1|$1}}, rydych nawr yn gyw-gyfieithydd",
@@ -26,6 +28,6 @@
 	"tsb-limit-reached-title": "Diolch am eich cyfieithiadau",
 	"tsb-limit-reached-body": "Rydych wedi cyrraedd y terfyn cyfieithu i gyw-gyfieithwyr. Fe fydd ein tîm yn gwirio eich cyfrif a'i uwchraddio'n fuan. Yna fe gewch gyfieithu'n ddi-derfyn.",
 	"tsb-no-requests-from-new-users": "Dim ceisiadau gan ddefnyddwyr newydd",
-	"tsb-create-user-page": "Dechrau tudalen sylfaenol i'r defnyddiwr",
+	"tsb-create-user-page": "Creu tudalen defnyddiwr sylfaenol",
 	"log-name-translatorsandbox": "Log blwch tywod cyfieithu"
 }
