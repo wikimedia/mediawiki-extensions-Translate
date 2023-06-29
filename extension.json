@@ -728,6 +728,7 @@
 				"mediawiki.api",
 				"mediawiki.jqueryMsg",
 				"mediawiki.language",
+				"mediawiki.language.names",
 				"mediawiki.user",
 				"mediawiki.util",
 				"mediawiki.editfont.styles",

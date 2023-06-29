@@ -1381,8 +1381,10 @@
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 				placeholder = mw.msg( 'tux-editor-placeholder-documentation' );
 			} else {
+				var userLangCode = mw.config.get( 'wgUserLanguage' );
+				var targetLangName = mw.language.getData( userLangCode, 'languageNames' )[ targetLangCode ] || $.uls.data.getAutonym( targetLangCode );
 				targetLangAttrib = targetLangCode;
-				placeholder = mw.msg( 'tux-editor-placeholder-language', $.uls.data.getAutonym( targetLangCode ) );
+				placeholder = mw.msg( 'tux-editor-placeholder-language', targetLangName );
 			}
 
 			var targetLangDir = $.uls.data.getDir( targetLangAttrib );
