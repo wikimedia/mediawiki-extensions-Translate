@@ -1541,6 +1541,11 @@ class Hooks {
 				return;
 			}
 
+			$block = $user->getBlock();
+			if ( $block && $block->appliesToTitle( $title ) ) {
+				return;
+			}
+
 			$tab = [
 				'text' => $skin->msg( 'tpt-tab-translate' )->text(),
 				'href' => $page->getTranslationUrl( $code ),
