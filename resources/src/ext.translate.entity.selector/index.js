@@ -22,7 +22,9 @@ var EntitySelectorWidget = function ( config ) {
 		autocomplete: config.autocomplete || false
 	} );
 	// Mixin constructors
-	OO.ui.mixin.LookupElement.call( this );
+	OO.ui.mixin.LookupElement.call( this, {
+		allowSuggestionsWhenEmpty: config.allowSuggestionsWhenEmpty || false
+	} );
 
 	this.entityNotFound = new OO.ui.MenuOptionWidget( {
 		label: mw.msg( 'translate-tes-entity-not-found' ),
@@ -58,6 +60,7 @@ var EntitySelectorWidget = function ( config ) {
 	} );
 
 	var noop = function () {};
+	this.allowSuggestionsWhenEmpty = config.allowSuggestionsWhenEmpty || false;
 	this.failureCallback = config.onFail || noop;
 	this.selectCallback = config.onSelect || noop;
 	this.entityTypeToFetch = config.entityType;
@@ -82,7 +85,7 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	var value = this.getValue();
 	var widget = this;
 
-	if ( value === '' ) {
+	if ( !this.allowSuggestionsWhenEmpty && value === '' ) {
 		return $.Deferred().resolve( [] );
 	}
 

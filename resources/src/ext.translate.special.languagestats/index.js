@@ -257,7 +257,7 @@
 	}
 
 	function getEntitySelector( onSelect ) {
-		var EntitySelector = require( './entity.selector.js' );
+		var EntitySelector = require( '../ext.translate.entity.selector/index.js' );
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups', 'messages' ],

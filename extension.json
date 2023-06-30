@@ -616,7 +616,7 @@
 		"ext.translate.special.languagestats": {
 			"packageFiles": [
 				"resources/src/ext.translate.special.languagestats/index.js",
-				"resources/src/ext.translate.special.languagestats/entity.selector.js"
+				"resources/src/ext.translate.entity.selector/index.js"
 			],
 			"messages": [
 				"translate-langstats-collapse",
@@ -637,12 +637,12 @@
 				"mediawiki.api",
 				"oojs-ui-widgets"
 			],
-			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.less"
+			"styles": "resources/src/ext.translate.entity.selector/index.less"
 		},
 		"ext.translate.special.exporttranslations": {
 			"packageFiles": [
 				"resources/src/ext.translate.special.exporttranslations/index.js",
-				"resources/src/ext.translate.special.languagestats/entity.selector.js"
+				"resources/src/ext.translate.entity.selector/index.js"
 			],
 			"messages": [
 				"translate-tes-server-error",
@@ -656,7 +656,7 @@
 				"oojs-ui-widgets"
 			],
 			"styles": [
-				"resources/src/ext.translate.special.languagestats/entity.selector.less",
+				"resources/src/ext.translate.entity.selector/index.less",
 				"resources/src/ext.translate.special.exporttranslations/export.translations.less"
 			]
 		},
@@ -1047,7 +1047,7 @@
 		"ext.translate.special.aggregategroups": {
 			"packageFiles": [
 				"resources/js/ext.translate.special.aggregategroups.js",
-				"resources/src/ext.translate.special.languagestats/entity.selector.js"
+				"resources/src/ext.translate.entity.selector/index.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
@@ -1075,7 +1075,7 @@
 				"desktop",
 				"mobile"
 			],
-			"styles": "resources/src/ext.translate.special.languagestats/entity.selector.less"
+			"styles": "resources/src/ext.translate.entity.selector/index.less"
 		},
 		"ext.translate.special.importtranslations": {
 			"scripts": "resources/js/ext.translate.special.importtranslations.js",

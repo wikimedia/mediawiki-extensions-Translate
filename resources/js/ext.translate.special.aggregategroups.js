@@ -455,7 +455,7 @@
 	}
 
 	function getEntitySelector( onSelect ) {
-		var EntitySelector = require( '../src/ext.translate.special.languagestats/entity.selector.js' );
+		var EntitySelector = require( '../src/ext.translate.entity.selector/index.js' );
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups' ],
