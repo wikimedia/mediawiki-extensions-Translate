@@ -20,7 +20,7 @@ use MediaWiki\MediaWikiServices;
 
 /**
  * This class implements some basic functions that wrap around the YAML
- * message group configurations. These message groups use the FFS classes
+ * message group configurations. These message groups use the file format classes
  * and are managed with Special:ManageMessageGroups and
  * processMessageChanges.php.
  *

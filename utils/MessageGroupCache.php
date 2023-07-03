@@ -112,7 +112,7 @@ class MessageGroupCache {
 	}
 
 	/**
-	 * Get other data cached from the FFS class.
+	 * Get other data cached from the file format class.
 	 * @return array
 	 * @since 2020.04
 	 */
