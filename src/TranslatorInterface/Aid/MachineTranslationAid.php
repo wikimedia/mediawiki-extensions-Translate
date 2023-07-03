@@ -18,8 +18,8 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 	public function populateQueries(): void {
 		$definition = $this->dataProvider->getDefinition();
 		$translations = $this->dataProvider->getGoodTranslations();
-		$from = $this->group->getSourceLanguage();
-		$to = $this->handle->getCode();
+		$sourceLanguage = $this->group->getSourceLanguage();
+		$targetLanguage = $this->handle->getCode();
 
 		if ( trim( $definition ) === '' ) {
 			return;
@@ -31,19 +31,19 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 			}
 
 			try {
-				if ( $service->isSupportedLanguagePair( $from, $to ) ) {
-					$this->storeQuery( $service, $from, $to, $definition );
+				if ( $service->isSupportedLanguagePair( $sourceLanguage, $targetLanguage ) ) {
+					$this->storeQuery( $service, $sourceLanguage, $targetLanguage, $definition );
 					continue;
 				}
 
 				// Search for translations which we can use as a source for MT
 				// @todo: Support setting priority of languages like Yandex used to have
-				foreach ( $translations as $from => $text ) {
-					if ( !$service->isSupportedLanguagePair( $from, $to ) ) {
+				foreach ( $translations as $alternateSourceLanguage => $text ) {
+					if ( !$service->isSupportedLanguagePair( $alternateSourceLanguage, $targetLanguage ) ) {
 						continue;
 					}
 
-					$this->storeQuery( $service, $from, $to, $text );
+					$this->storeQuery( $service, $alternateSourceLanguage, $targetLanguage, $text );
 					break;
 				}
 			} catch ( TranslationWebServiceConfigurationException $e ) {
