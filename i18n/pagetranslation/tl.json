@@ -101,7 +101,7 @@
 	"pt-movepage-action-perform": "Gawin ang paglipat",
 	"pt-movepage-action-other": "Baguhin ang pinupukol",
 	"pt-movepage-intro": "Ang natatanging pahinang ito ay nagpapahintulot sa iyong mailipat ang mga pahinang minarkahan para sa pagsasalinwika.\nAng galaw ng paglipat ay hindi magiging kaagad-agad, dahil maraming mga pahina ang kailangang ilipat.\nHabang inililipat ang mga pahina, hindi maaaring kasalamuhain ang mga pahinang tinutukoy.\nAng mga kabiguan ay itatala sa loob ng [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] at nangangailangan sila ng kinakamay na pagkukumpuni.",
-	"pt-movepage-logreason": "Bahagi ng maisasalinwikang pahinang $1.",
+	"pt-movepage-logreason": "Bahagi ng maisasalinwikang pahinang [[$1]].",
 	"pt-movepage-started": "Nailipat na ngayon ang pahinang batayan.\nPakisuri ang [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] para sa mga kamalian at mensahe ng pagkakabuo.",
 	"pt-locked-page": "Ikinandao ang pahinang ito dahil ang pahinang maisasalinwika ay kasalukuyang inililipat.",
 	"pt-deletepage-lang-title": "Binubura ang pahina ng salinwikang $1.",

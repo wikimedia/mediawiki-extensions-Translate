@@ -50,7 +50,7 @@
 	"pt-movepage-action-check": "გადატანის შესაძლებლობის შემოწმება",
 	"pt-movepage-action-perform": "გადატანა",
 	"pt-movepage-action-other": "მიზნის შეცვლა",
-	"pt-movepage-logreason": "თარგმნადი გვერდის ნაწილი „$1“.",
+	"pt-movepage-logreason": "თარგმნადი გვერდის ნაწილი „[[$1]]“.",
 	"pt-deletepage-lang-title": "იშლება თარგმნილი გვერდი „$1“.",
 	"pt-deletepage-tp-title": "იშლება თარგმნადი გვერდი „$1“.",
 	"pt-deletepage-invalid-title": "მითითებული გვერდი არასწორია.",

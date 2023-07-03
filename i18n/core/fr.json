@@ -489,6 +489,8 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Le code de langue source « $1 » n’est pas pris en charge.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "Code{{PLURAL:$2||s}} de langue prioritaire non valide{{PLURAL:$2||s}} dans les métadonnées : $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Format de langue prioritaire non valide dans les métadonnées. Les langues prioritaires doivent être une table de chaînes.",
+	"translate-messagebundle-error-invalid-description": "Description du lot de message non valide dans les métadonnées. La description doit être une chaîne de caractères",
+	"translate-messagebundle-error-invalid-label": "Libellé du lot de message non valide dans les métadonnées. Le libellé doit être une chaîne de caractères",
 	"translate-messagebundle-group-description": "Messages d’un groupe de messages défini sur la page [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Configuration de la langue source du groupe de messages selon ses métadonnées.",
 	"translate-messagebundle-sourcelanguage-changed": "La langue source d’un groupe de messages ne peut pas être modifiée une fois qu’il a été créé.",

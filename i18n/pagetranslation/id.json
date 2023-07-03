@@ -182,7 +182,7 @@
 	"pt-movepage-action-perform": "Lakukan langkah ini",
 	"pt-movepage-action-other": "Ubah target",
 	"pt-movepage-intro": "Halaman istimewa ini memungkinkan Anda untuk memindahkan halaman yang ditandai untuk diterjemahkan.\nTindakan pemindahan tidak akan berlangsung seketika karena banyak halaman yang perlu dipindahkan.\nSaat halaman dipindahkan, tidak dimungkinkan untuk berinteraksi dengan halaman yang bersangkutan.\nKegagalan akan dicatat di [[Special:Log/pagetranslation|log terjemahan halaman]] dan perlu diperbaiki secara manual.",
-	"pt-movepage-logreason": "Bagian dari halaman yang dapat diterjemahkan \"$1\".",
+	"pt-movepage-logreason": "Bagian dari halaman yang dapat diterjemahkan \"[[$1]]\".",
 	"pt-movepage-started": "Silakan periksa [[Special:Log/pagetranslation|log penerjemahan halaman]] untuk pesan kesalahan dan penyelesaian.",
 	"pt-locked-page": "Halaman ini dikunci karena halaman yang dapat diterjemahkan saat ini sedang dipindahkan.",
 	"pt-deletepage-lang-title": "Menghapus halaman terjemahan \"$1\"",

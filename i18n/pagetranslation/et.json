@@ -130,7 +130,7 @@
 	"pt-movepage-action-perform": "Teisalda",
 	"pt-movepage-action-other": "Muuda sihtkohta",
 	"pt-movepage-intro": "See erilehekülg võimaldab teisaldada lehekülgi, mis on märgitud tõlkimiseks.\nToiming pole kohene, sest teisaldada tuleb palju lehekülgi.\nTeisaldamise ajal pole võimalik kõnealustel lehekülgedel midagi teha.\nNurjumised logitakse [[$1|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.",
-	"pt-movepage-logreason": "Osa tõlgitavast leheküljest \"$1\"",
+	"pt-movepage-logreason": "Osa tõlgitavast leheküljest \"[[$1]]\"",
 	"pt-movepage-started": "Palun kontrolli natukese aja pärast, kas [[$1|lehekülgede tõlkelogis]] on tõrkeid ja teade lõpulejõudmise kohta.",
 	"pt-locked-page": "See lehekülg on lukus, sest tõlgitavat lehekülge teisaldatakse parasjagu.",
 	"pt-deletepage-lang-title": "Tõlkelehekülje \"$1\" kustutamine",

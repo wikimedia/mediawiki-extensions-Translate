@@ -111,7 +111,7 @@
 	"pt-movepage-action-perform": "Mak the muiv",
 	"pt-movepage-action-other": "Chynge tairget",
 	"pt-movepage-intro": "This byordinair page permits ye tae muiv pages that ar maurkt fer owersetin.\nThe muiv action will na be instant, cause monie pages will need tae be muived.\nWhile the pages ar bein muived, it's na possible tae interact wi the said pages.\nFailures will be loggit in the [[Special:Log/pagetranslation|page owersetin log]] n thay need tae be repaired bi haun.",
-	"pt-movepage-logreason": "Pairt o owersetable page \"$1\".",
+	"pt-movepage-logreason": "Pairt o owersetable page \"[[$1]]\".",
 	"pt-movepage-started": "The base page haes nou been muived.\nPlease check the [[Special:Log/pagetranslation|page owersetin log]] fer mistaks n compleation message.",
 	"pt-locked-page": "This page is lockt cause the owersetable page is nou bein muived.",
 	"pt-deletepage-lang-title": "Delytin owersetin page \"$1\".",

@@ -95,7 +95,7 @@
 	"pt-movepage-action-check": "Patikrinkite, ar perkelti yra įmanoma",
 	"pt-movepage-action-perform": "Perkelti",
 	"pt-movepage-action-other": "Pakeisti taikinį",
-	"pt-movepage-logreason": "Dalis puslapio „$1“, kurį galima versti",
+	"pt-movepage-logreason": "Dalis puslapio „[[$1]]“, kurį galima versti",
 	"pt-deletepage-invalid-title": "Nurodytas puslapis negalimas.",
 	"pt-deletepage-invalid-text": "Nurodytas puslapis nėra nei puslapis, kurį galima išversti, nei vertimų puslapis.",
 	"pt-deletepage-action-check": "Sąrašą puslapių kurie turi būti ištrinti.",

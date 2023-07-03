@@ -185,7 +185,7 @@
 	"pt-movepage-action-perform": "Przenieś",
 	"pt-movepage-action-other": "Zmiana celu",
 	"pt-movepage-intro": "Ta strona specjalna umożliwia przenoszenie stron, które zostały oznaczone jako wymagające tłumaczenia.\nDziałanie przenoszenia nie jest natychmiastowe, ponieważ wiele stron wymaga przenoszenia.\nPodczas gdy strony są przenoszone, nie jest możliwa praca z tymi stronami poprzez zapytania.\nBłędy zostaną odnotowane w [[$1|rejestrze tłumaczeń]] i muszą zostać naprawione ręcznie.",
-	"pt-movepage-logreason": "Część strony do tłumaczenia „$1”",
+	"pt-movepage-logreason": "Część strony do tłumaczenia „[[$1]]”",
 	"pt-movepage-started": "Sprawdź [[$1|dziennik tłumaczenia stron]] pod kątem błędów i komunikatów zakończenia.",
 	"pt-locked-page": "Ta strona jest zablokowana ponieważ jest przygotowana do przeniesienia.",
 	"pt-deletepage-lang-title": "Usuwanie strony tłumaczenia „$1”",

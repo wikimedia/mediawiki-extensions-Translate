@@ -453,6 +453,8 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Изворниот јазичен код „$1“ не е поддржан.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Неважечки код на приоритетен јазик|Неважечки кодови на приоритетни јазици}} во метаподатоците: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Неважечки формат на приоритетен јазик во метаподатоците. Приоритетните јазици мора да бидат строј од низи.",
+	"translate-messagebundle-error-invalid-description": "Неважечки опис на купче пораки во метаподатоците. Описот мора да биде низа",
+	"translate-messagebundle-error-invalid-label": "Неважечки натпис на купче пораки во метаподатоците. Натписот мора да биде низа",
 	"translate-messagebundle-group-description": "Пораки од купче дефинирани на страницата [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Задавање на изворен јазик на купчето пораки согласно метаподатоците.",
 	"translate-messagebundle-sourcelanguage-changed": "Изворниот јазик на купчето пораки не може да се смени откако ќе се создаде.",

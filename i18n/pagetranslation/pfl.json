@@ -96,7 +96,7 @@
 	"pt-movepage-action-perform": "Vaschiebs",
 	"pt-movepage-action-other": "Änas Ziel",
 	"pt-movepage-intro": "Die Schbezialsaid eameschlischds Saide zu vaschiewe, wu fas Iwasedze gkennzaischnd worre sin.\nDie Vaschiewung gehdned glaisch, wails viel Saide hod.\nWerendm Vaschiewe komma die Saide ned bnudze.\nFehla werre im [[Special:Log/pagetranslation|Iwasedzungs-Logbuch]] uffgschriewe un missn vun Hond vaänad werre.",
-	"pt-movepage-logreason": "Deel vunde iwasedzbari Said $1.",
+	"pt-movepage-logreason": "Deel vunde iwasedzbari Said [[$1]].",
 	"pt-movepage-started": "Die Grundsaid isch vaschowe worre.\nBriefs [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] uff Nochrischde vun Fehla- unde Ferdischschdellung.",
 	"pt-locked-page": "Die Said isch gsischad, wail die Iwasetzungssaid grad vaschowe werd.",
 	"pt-deletepage-lang-title": "Lesche vunde iwasedzdi Saide $1.",

@@ -190,7 +190,7 @@
 	"pt-movepage-action-perform": "Taşımaya yap",
 	"pt-movepage-action-other": "Hedefi değiştir",
 	"pt-movepage-intro": "Bu özel sayfa, çeviri için işaretlenmiş sayfaları taşımanıza izin verir.\nBirçok eylemin taşınması gerekeceğinden taşıma işlemi anında gerçekleşmeyecek.\nSayfalar taşınırken, söz konusu sayfalarla etkileşim kurmak mümkün değildir.\nArızalar [[$1|sayfa çeviri günlüğü]] içine kaydedilir ve elle onarılması gerekir.",
-	"pt-movepage-logreason": "Çevrilebilir sayfanın \"$1\" bölümü",
+	"pt-movepage-logreason": "Çevrilebilir sayfanın \"[[$1]]\" bölümü",
 	"pt-movepage-started": "Hatalar ve tamamlanma mesajı için lütfen [[$1|sayfa çeviri günlüğüne]] bakın.",
 	"pt-locked-page": "Çevrilebilir sayfa şu anda taşındığı için bu sayfa kilitli.",
 	"pt-deletepage-lang-title": "\"$1\" çeviri sayfasını siliniyor",

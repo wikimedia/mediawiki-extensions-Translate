@@ -185,7 +185,7 @@
 	"pt-movepage-action-perform": "Hacer el traslado",
 	"pt-movepage-action-other": "Cambiar destino",
 	"pt-movepage-intro": "Esta página especial permite trasladar páginas marcadas para ser traducidas.\nEl traslado no es instantáneo, porque necesitan trasladarse muchas páginas a la vez.\nMientras estén siendo trasladadas, no será posible interactuar con las páginas en cuestión.\nLos errores quedarán [[$1|registrados]] y habrán de ser reparados manualmente.",
-	"pt-movepage-logreason": "Parte de la página traducible «$1»",
+	"pt-movepage-logreason": "Parte de la página traducible «[[$1]]»",
 	"pt-movepage-started": "Comprueba [[$1|el registro]] en unos instantes para ver si han surgido errores y ver también el mensaje de finalización.",
 	"pt-locked-page": "Esta página está bloqueada porque la página traducible está siendo trasladada actualmente.",
 	"pt-deletepage-lang-title": "Eliminación de la página de traducción \"$1\"",

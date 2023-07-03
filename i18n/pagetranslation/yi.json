@@ -93,7 +93,7 @@
 	"pt-movepage-action-check": "קאנטראלירט צי די באוועגונג איז מעגלעך",
 	"pt-movepage-action-perform": "פֿירט אויס די באוועגונג",
 	"pt-movepage-action-other": "ענדערט ציל",
-	"pt-movepage-logreason": "טייל פון איבערזעצבארן בלאט \"$1\"",
+	"pt-movepage-logreason": "טייל פון איבערזעצבארן בלאט \"[[$1]]\"",
 	"pt-deletepage-lang-title": "אויסמעקן איבערזעצונג בלאט \"$1\"",
 	"pt-deletepage-tp-title": "אויסמעקן איבערזעצבארן בלאט \"$1\"",
 	"pt-deletepage-invalid-title": "דער ספעציפירטער בלאט איז נישט גילטיק.",

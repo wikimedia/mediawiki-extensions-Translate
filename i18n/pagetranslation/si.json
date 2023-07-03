@@ -83,7 +83,7 @@
 	"pt-movepage-action-check": "ගෙනයාම කළහැකි දැයි පිරික්සන්න",
 	"pt-movepage-action-perform": "ගෙනයන්න",
 	"pt-movepage-action-other": "ඉලක්කය මාරු කරන්න",
-	"pt-movepage-logreason": "$1 පරිවර්තනය කල හැකි පිටුවෙහි කොටසක්.",
+	"pt-movepage-logreason": "[[$1]] පරිවර්තනය කල හැකි පිටුවෙහි කොටසක්.",
 	"pt-movepage-started": "පදනම් පිටුව දැන් ගෙනයන ලදී.\nසම්පූර්ණ පණිවුඩය සහ දෝෂයන් සඳහා කරුණාකර [[Special:Log/pagetranslation|පිටු පරිවර්තන ලඝු සටහන]] පිරික්සන්න.",
 	"pt-locked-page": "මෙම පිටුව අගුළුදමා ඇත මන්ද පරිවර්තනමය පිටුව ගෙනයමින් පවතියි.",
 	"pt-deletepage-lang-title": "$1 පරිවර්තන පිටුව මකමින්.",

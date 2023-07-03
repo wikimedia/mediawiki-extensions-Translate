@@ -89,7 +89,7 @@
 	"pt-movepage-action-check": "Sjå om flyttinga er mogeleg",
 	"pt-movepage-action-perform": "Utfør flyttinga",
 	"pt-movepage-action-other": "Endra mål",
-	"pt-movepage-logreason": "Del av omsetjingsmerkt side «$1»",
+	"pt-movepage-logreason": "Del av omsetjingsmerkt side «[[$1]]»",
 	"pt-deletepage-action-perform": "Utfør slettinga",
 	"pt-deletepage-action-other": "Endra mål",
 	"pt-deletepage-lang-legend": "Sletta omsetbar side",

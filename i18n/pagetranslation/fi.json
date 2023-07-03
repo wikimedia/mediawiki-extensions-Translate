@@ -173,7 +173,7 @@
 	"pt-movepage-action-perform": "Tee siirto",
 	"pt-movepage-action-other": "Vaihda kohde",
 	"pt-movepage-intro": "Tällä toimintosivulla voit siirtää käännettäväksi merkittyjä sivuja.\nSiirto ei tapahdu heti, koska useita sivuja täytyy siirtää.\nSivut ovat lukittuna siirron ajan.\nEpäonnistuneet siirrot tallennetaan [[$1|sivunkääntölokiin]] ja ne täytyy korjata käsin.",
-	"pt-movepage-logreason": "Osa käännettävää sivua ”$1”",
+	"pt-movepage-logreason": "Osa käännettävää sivua ”[[$1]]”",
 	"pt-movepage-started": "Tarkista sillä aikaa [[$1|lokista]] mahdolliset virheet ja valmistumisviestit.",
 	"pt-locked-page": "Tämä sivu on lukittu, koska käännettävän sivun siirtäminen on kesken.",
 	"pt-deletepage-lang-title": "Käännössivun $1 poisto",

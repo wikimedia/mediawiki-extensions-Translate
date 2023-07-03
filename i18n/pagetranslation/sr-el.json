@@ -119,7 +119,7 @@
 	"pt-movepage-action-check": "Proveri da li je premeštanje izvodljivo",
 	"pt-movepage-action-perform": "Izvrši premeštanje",
 	"pt-movepage-action-other": "Promeni cilj",
-	"pt-movepage-logreason": "Deo prevodive stranice \"$1\"",
+	"pt-movepage-logreason": "Deo prevodive stranice \"[[$1]]\"",
 	"pt-movepage-started": "U međuvremenu, proverite [[$1|dnevnik prevođenja stranice]] da bi se pronašle eventualne greške i poruke završetka.",
 	"pt-deletepage-lang-title": "Brisanje prevodive stranice \"$1\"",
 	"pt-deletepage-tp-title": "Brisanje prevodive stranice \"$1\"",

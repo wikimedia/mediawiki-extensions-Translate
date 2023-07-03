@@ -180,7 +180,7 @@
 	"pt-movepage-action-perform": "Facer le renomination",
 	"pt-movepage-action-other": "Cambiar destination",
 	"pt-movepage-intro": "Iste pagina special permitte renominar paginas marcate pro traduction.\nLe renomination non essera instantanee, proque il essera necessari renominar multe paginas.\nDurante le renomination del paginas, il non es possibile interager con le paginas in question.\nLe fallimentos essera signalate in le [[$1|registro]] e illos necessita reparation manual.",
-	"pt-movepage-logreason": "Parte del pagina traducibile \"$1\"",
+	"pt-movepage-logreason": "Parte del pagina traducibile \"[[$1]]\"",
 	"pt-movepage-started": "Per favor verifica le [[$1|registro]] in un momento pro reparar eventual errores e leger le message de completion.",
 	"pt-locked-page": "Iste pagina es serrate proque le pagina traducibile es actualmente in curso de renomination.",
 	"pt-deletepage-lang-title": "Deletion del pagina traducite \"$1\"",

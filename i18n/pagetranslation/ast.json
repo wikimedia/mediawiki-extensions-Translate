@@ -139,7 +139,7 @@
 	"pt-movepage-action-perform": "Facer el treslláu",
 	"pt-movepage-action-other": "Camudar el destín",
 	"pt-movepage-intro": "Esta páxina especial te permite treslladar páxines que tan marcaes pa traducir.\nL'aición de treslláu nun sedrá inmediata, porque ye necesario mover munches páxines.\nMentanto se treslladen les páxines, nun ye posible interactuar coles mesmes.\nLos fallos quedarán rexistraos nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] y tendrán de reparase a mano.",
-	"pt-movepage-logreason": "Parte de la páxina traducible «$1».",
+	"pt-movepage-logreason": "Parte de la páxina traducible «[[$1]]».",
 	"pt-movepage-started": "Mira nel [[Special:Log/pagetranslation|rexistru de traducción de páxines]] dientro d'un momentu pa ver los errores y mensaxe de completáu.",
 	"pt-locked-page": "Esta páxina ta bloquiada porque ta treslladandose la páxina traducible.",
 	"pt-deletepage-lang-title": "Desaniciando la páxina de traducción «$1».",

@@ -81,7 +81,7 @@
 	"pt-movepage-action-check": "Controlar se lo changement de nom est possiblo",
 	"pt-movepage-action-perform": "Renomar",
 	"pt-movepage-action-other": "Changiér la ciba",
-	"pt-movepage-logreason": "Partia de la pâge traduisibla « $1 ».",
+	"pt-movepage-logreason": "Partia de la pâge traduisibla « [[$1]] ».",
 	"pt-movepage-started": "Ora la pâge de bâsa est renomâye.\nVolyéd controlar lo [[Special:Log/pagetranslation|jornal de les traduccions de pâges]] por repèrar des fôtes et por liére lo mèssâjo d’avance.",
 	"pt-locked-page": "Ceta pâge est vèrrolyêye perce que la pâge traduisibla est aprés étre renomâye.",
 	"pt-deletepage-lang-title": "Suprèssion de la pâge de traduccion « $1 ».",

@@ -162,7 +162,7 @@
 	"pt-movepage-action-perform": "Hernoemen",
 	"pt-movepage-action-other": "Doel wijzigen",
 	"pt-movepage-intro": "Met deze speciale pagina kunt u pagina's hernoemen die gemarkeerd zijn voor vertaling.\nDit kan enige tijd in beslag nemen, want er moeten vele pagina's hernoemd worden.\nTijdens het hernoemen is het niet mogelijk handelingen uit te voeren op de betrokken pagina's.\nIn het [[$1|logboek]] worden fouten opgeslagen die handmatig hersteld moeten worden.",
-	"pt-movepage-logreason": "Onderdeel van te vertalen pagina \"$1\"",
+	"pt-movepage-logreason": "Onderdeel van te vertalen pagina \"[[$1]]\"",
 	"pt-movepage-started": "Kijk over enige ogenblikken in het [[$1|logboek]] of er fouten zijn gemeld en of de handeling volledig is afgerond.",
 	"pt-locked-page": "Deze pagina kan niet gewijzigd worden omdat de te vertalen pagina op dit moment hernoemd wordt.",
 	"pt-deletepage-lang-title": "De vertaalde pagina \"$1\" wordt verwijderd",

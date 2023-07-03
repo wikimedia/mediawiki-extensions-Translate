@@ -136,7 +136,7 @@
 	"pt-movepage-action-perform": "Di chuyển",
 	"pt-movepage-action-other": "Thay đổi trang đích",
 	"pt-movepage-intro": "Trang đặc biệt này cho phép bạn di chuyển các trang được đánh dấu là cần dịch.\nTác vụ này sẽ không được thực hiện ngay vì cần di chuyển nhiều trang một lúc.\nTrong khi các trang đang được di chuyển, không thể tương tác các trang đó.\nNhững vụ thất bại sẽ được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]]; các trang được ảnh hưởng sẽ cần được sửa đổi bằng tay.",
-	"pt-movepage-logreason": "Một phần của trang dịch được $1.",
+	"pt-movepage-logreason": "Một phần của trang dịch được [[$1]].",
 	"pt-movepage-started": "Trang gốc đã được di chuyển.\nXin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].",
 	"pt-locked-page": "Trang này bị khóa vì trang dịch được hiện đang được di chuyển.",
 	"pt-deletepage-lang-title": "Đang xóa trang dịch “$1”",

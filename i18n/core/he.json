@@ -460,6 +460,7 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "קוד שפת המקור \"$1\" אינו נתמך.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|קוד שפה מועדפת בלתי־תקין|קודי שפות מועדפות בלתי־תקינים}} במטא־נתונים: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "תסדיר שפה מועדפת בלתי־תקין במטא־נתונים. שפות מועדפות צריכות להיות מערך של מחרוזות.",
+	"translate-messagebundle-error-invalid-description": "תיאור חבילת הודעות בלתי־תקין במטא־נתונים. התיאור חייב להיות מחרוזת",
 	"translate-messagebundle-error-invalid-label": "תווית חבילת הודעות בלתי־תקינה במטא־נתונים. התווית חייבת להיות מחרוזת",
 	"translate-messagebundle-group-description": "הודעות מתוך חבילת הודעות שמוגדרת בדף [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "הגדרת שפת המקור של חבילת ההודעות לפי המטא־נתונים.",

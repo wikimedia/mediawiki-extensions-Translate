@@ -212,7 +212,7 @@
 	"pt-movepage-action-perform": "Effectuer le renommage",
 	"pt-movepage-action-other": "Changer la cible",
 	"pt-movepage-intro": "Cette page spéciale vous permet de renommer des pages qui sont marquées comme étant à traduire.\nL’action de renommage ne sera pas immédiate car de nombreuses pages devront être déplacées.\nTant que les pages seront en cours de déplacement, il ne sera pas possible d’interagir avec elles.\nLes échecs seront enregistrés dans le [[$1|journal des traductions]] et devront être corrigés manuellement.",
-	"pt-movepage-logreason": "Partie de la page traductible « $1 »",
+	"pt-movepage-logreason": "Partie de la page traductible « [[$1]] »",
 	"pt-movepage-started": "Veuillez ouvrir le [[$1|journal des traductions]] dans quelques instants pour vérifier les erreurs éventuelles et lire le message de complétion.",
 	"pt-locked-page": "Cette page est verrouillée parce que la page traduisible est en cours de renommage.",
 	"pt-deletepage-lang-title": "Suppression de la page de traduction « $1 »",

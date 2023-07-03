@@ -113,7 +113,7 @@
 	"pt-movepage-action-perform": "Pśesunuś",
 	"pt-movepage-action-other": "Cel změniś",
 	"pt-movepage-intro": "Toś ten specialny bok dowólujo śi boki pśesunuś, kótarež sz za pśełožk markěrowane.\nPśesunjenje njebuźo se ned staś, dokulaž wjele bokow musy se pśesunuś.\n\nMjaztym až boki se pśesuwaju,  njejo móžno z wótpowědnymi bokami interagěrowaś.\nZmólki budu se protokolěrowaś w [[Special:Log/pagetranslation|pséłožowańskem protokolu]] a muse se manuelnje wótpóraś.",
-	"pt-movepage-logreason": "Źěl pśełožujobnego boka \"$1\".",
+	"pt-movepage-logreason": "Źěl pśełožujobnego boka \"[[$1]]\".",
 	"pt-movepage-started": "Zakładny bok jo něnto pśesunjony.\nPšosym pśekontrolěruj [[Special:Log/pagetranslation|pśełožowański protokol boka]] za zmólkami a zdźělenje wuwjeźenja.",
 	"pt-locked-page": "Toś ten bok jo se zastajił, dokulaž pśełožujobny bok se rowno pśesuwa.",
 	"pt-deletepage-lang-title": "Pśełožony bok $1 so lašujo.",

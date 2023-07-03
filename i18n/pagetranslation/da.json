@@ -134,7 +134,7 @@
 	"pt-movepage-action-perform": "Gennemfør flytningen",
 	"pt-movepage-action-other": "Skift mål",
 	"pt-movepage-intro": "Denne speciale side tillader dig at flytte sider, der er markeret til oversættelse.\nFlytningen vil ikke være øjeblikkelig, fordi mange sider skal flyttes.\nMens siderne bliver flyttet, er det ikke muligt at interagere med de omtalte sider.\nFejl vil blive logget på [[Special:Log/pagetranslation|sideoversættelsesloggen]], og de skal repareres manuelt.",
-	"pt-movepage-logreason": "Del af oversætbar side \"$1\"",
+	"pt-movepage-logreason": "Del af oversætbar side \"[[$1]]\"",
 	"pt-movepage-started": "Base siden er nu flyttet.\nHusk at tjekke [[Special:Log/pagetranslation|siden oversættelsen log]] for fejl og færdiggørelses besked.",
 	"pt-locked-page": "Denne side er låst, fordi den oversætbare side, der aktuelt er ved at blive flyttet.",
 	"pt-deletepage-lang-title": "Sletter oversættelses side \"$1\"",

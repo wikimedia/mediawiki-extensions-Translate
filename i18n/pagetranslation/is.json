@@ -129,7 +129,7 @@
 	"pt-movepage-action-check": "Athuga hvort tilfærsla sé möguleg",
 	"pt-movepage-action-perform": "Framkvæma tilfærsluna",
 	"pt-movepage-action-other": "Skipta um frálag",
-	"pt-movepage-logreason": "Hluti af þýðanlegri síðu \"$1\"",
+	"pt-movepage-logreason": "Hluti af þýðanlegri síðu \"[[$1]]\"",
 	"pt-movepage-started": "Skoðaðu [[Special:Log/pagetranslation|atvikaskrá þýðinga]] eftir smástund til að sjá skilaboð um villur og lok aðgerða.",
 	"pt-deletepage-lang-title": "Eyði þýðingarsíðu \"$1\"",
 	"pt-deletepage-tp-title": "Eyði þýðanlegri síðu \"$1\"",

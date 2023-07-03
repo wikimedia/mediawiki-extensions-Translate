@@ -81,7 +81,7 @@
 	"pt-movepage-action-perform": "Fari la movon",
 	"pt-movepage-action-other": "Ŝanĝi celon",
 	"pt-movepage-intro": "Tiu ĉi speciala paĝo permesas al vi movi paĝojn markitajn por traduko.\nLa movo ne efektiviĝos tuj, ĉar necesos movi multajn paĝojn.\nDum paĝoj estas movataj, ne eblas pri ili labori.\nEventualaj fiaskoj estos protokolitaj en [[Special:Log/pagetranslation|protokolo pri paĝotradukado]] kaj ilin necesos ripari permane.",
-	"pt-movepage-logreason": "Parto de tradukebla paĝo \"$1\"",
+	"pt-movepage-logreason": "Parto de tradukebla paĝo \"[[$1]]\"",
 	"pt-movepage-started": "La baza paĝo nun estas movita.\nBonvolu kontroli la [[Special:Log/pagetranslation|protokolon pri paĝotradukado]] por eraroj kaj mesaĝo pri kompletiĝo.",
 	"pt-locked-page": "Tiu ĉi paĝo estas ŝlosita ĉar la tradukebla paĝo nuntempe estas movata.",
 	"pt-deletepage-lang-title": "Foriganta la tradukpaĝon \"$1\"",

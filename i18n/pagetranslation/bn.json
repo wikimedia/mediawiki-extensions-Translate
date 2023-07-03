@@ -86,7 +86,7 @@
 	"pt-movepage-current": "বর্তমান নাম:",
 	"pt-movepage-new": "নতুন নাম:",
 	"pt-movepage-reason": "কারণ:",
-	"pt-movepage-logreason": "অনুবাদযোগ্য পাতা \"$1\"-এর অংশ",
+	"pt-movepage-logreason": "অনুবাদযোগ্য পাতা \"[[$1]]\"-এর অংশ",
 	"pt-deletepage-current": "পাতার নাম:",
 	"pt-deletepage-reason": "কারণ:",
 	"pt-deletepage-reason-details": "অন্যান্য/অতিরিক্ত কারণ:",

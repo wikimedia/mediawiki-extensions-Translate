@@ -99,7 +99,7 @@
 	"pt-movepage-action-perform": "Verschiebig durfiere",
 	"pt-movepage-action-other": "Ziil ändere",
 	"pt-movepage-intro": "Die Spezialsyte macht s megli Syte z verschiebe, wu fir d Ibersetzig zeichnet sin.\nD Verschiebig chunnt nit sofort, wel vil Syte derby mien verschobe wäre.\nBim Verschiebigsvorgang isch s nit megli, die Syte z nutze.\nVerschiebigsfähler wäre im [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]] ufzeichnet un mien vu Hand verbesseret wäre.",
-	"pt-movepage-logreason": "Teil vu dr Ibersetzigssyte $1.",
+	"pt-movepage-logreason": "Teil vu dr Ibersetzigssyte [[$1]].",
 	"pt-movepage-started": "D Basissyte isch jetz verschobe wore.\nBitte prief s [[Special:Log/pagetranslation|Ibersetzigs-Logbuech]] uf Fählermäldige un d Vollzugsnochricht.",
 	"pt-locked-page": "Die Syte isch gsperrt, wel d Ibersetzigssyte zurzyt verschobe wird.",
 	"pt-deletepage-lang-title": "Übersetzigs-Syte $1 wird glöscht",

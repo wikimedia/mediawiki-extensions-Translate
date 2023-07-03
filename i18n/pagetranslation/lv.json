@@ -41,7 +41,7 @@
 	"pt-movepage-action-check": "Pārbaudīt, vai ir iespējams pārvietot",
 	"pt-movepage-action-perform": "Nepārvietot",
 	"pt-movepage-action-other": "Mainīt mērķi",
-	"pt-movepage-logreason": "Daļa no tulkojamas lapas \"$1\"",
+	"pt-movepage-logreason": "Daļa no tulkojamas lapas \"[[$1]]\"",
 	"pt-deletepage-action-perform": "Veikt dzēšanu",
 	"pt-deletepage-action-other": "Mainīt mērķi",
 	"pt-deletepage-current": "Lapas nosaukums:",

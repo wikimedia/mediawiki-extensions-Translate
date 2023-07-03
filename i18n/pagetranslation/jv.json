@@ -112,7 +112,7 @@
 	"pt-movepage-action-perform": "Pindhahaké",
 	"pt-movepage-action-other": "Ganti patujon",
 	"pt-movepage-intro": "Kaca mirunggan iki nglilakaké panjenengan mindhahaké kaca sing ditandhai kanggo pertalan.\nPamidhahan ora bakal gelis, amarga akèh kaca sing kudu dipindhahaké.\nNalika kaca dipindhahaké, ora bisa interaksi karo kaca sing dimaksud.\nKagagalan bakal dilebokaké nèng [[Special:Log/pagetranslation|log pertalan kaca]] lan ora perlu dibenahi manual.",
-	"pt-movepage-logreason": "Pérangan kaca \"$1\" kang bisa kapertal",
+	"pt-movepage-logreason": "Pérangan kaca \"[[$1]]\" kang bisa kapertal",
 	"pt-movepage-started": "Mangga priksanen [[Special:Log/pagetranslation|log pertalan kaca]] sadhéla bokmanawa ana masalah lan layang rampungan.",
 	"pt-locked-page": "Kaca iki digembok amarga kaca sing bisa diterjemahaké saiki wis dipindhah.",
 	"pt-deletepage-lang-title": "Mbusak kaca pertalan \"$1\"",

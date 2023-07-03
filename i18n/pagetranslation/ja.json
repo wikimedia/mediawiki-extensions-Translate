@@ -179,7 +179,7 @@
 	"pt-movepage-action-perform": "移動を実行",
 	"pt-movepage-action-other": "対象を変更",
 	"pt-movepage-intro": "この特別ページでは、翻訳対象に指定されているページを移動できます。\n多くのページを移動する必要があるため、移動操作はすぐには完了しません。\nページの移動中は、そのページの操作はできません。\n失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるため、手動で修正する必要があります。",
-	"pt-movepage-logreason": "翻訳対象ページ「$1」の一部",
+	"pt-movepage-logreason": "翻訳対象ページ「[[$1]]」の一部",
 	"pt-movepage-started": "[[$1|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
 	"pt-locked-page": "翻訳対象ページが現在移動中のため、このページはロックされています。",
 	"pt-deletepage-lang-title": "翻訳ページ「$1」の削除",

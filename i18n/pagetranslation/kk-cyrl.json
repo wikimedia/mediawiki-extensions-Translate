@@ -74,7 +74,7 @@
 	"pt-movepage-action-check": "Атауын өзгертуге болатынын тексеру",
 	"pt-movepage-action-perform": "Жылжытуды істеу",
 	"pt-movepage-action-other": "Нысанасын өзгерту",
-	"pt-movepage-logreason": "«$1» аударылатын бетінің бөлігі.",
+	"pt-movepage-logreason": "«[[$1]]» аударылатын бетінің бөлігі.",
 	"pt-deletepage-lang-title": "«$1» аударылатын бетін жойылуда.",
 	"pt-deletepage-tp-title": "«$1» аударылатын бетін жойылуда.",
 	"pt-deletepage-invalid-title": "Көрсетілген бет жарамсыз.",

@@ -192,7 +192,7 @@
 	"pt-movepage-action-perform": "Realizar a movimentação",
 	"pt-movepage-action-other": "Alterar o destino",
 	"pt-movepage-intro": "Esta página especial permite-lhe mover páginas que estão marcadas para tradução.\nA operação de movimentação não é instantânea, porque será necessário mover muitas páginas.\nEnquanto estas estão a ser movidas, não é possível interagir com as páginas em questão.\nAs falhas serão [[$1|registadas]] e têm de ser reparadas manualmente.",
-	"pt-movepage-logreason": "Parte da página traduzível \"$1\"",
+	"pt-movepage-logreason": "Parte da página traduzível \"[[$1]]\"",
 	"pt-movepage-started": "Verifique daqui a pouco no [[$1|registo]] se ocorreram erros e se existe a mensagem de conclusão, por favor.",
 	"pt-locked-page": "Esta página está bloqueada porque a página traduzível está a ser movida.",
 	"pt-deletepage-lang-title": "A eliminar a página traduzida \"$1\"",

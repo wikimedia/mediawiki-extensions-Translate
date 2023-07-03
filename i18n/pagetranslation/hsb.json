@@ -115,7 +115,7 @@
 	"pt-movepage-action-perform": "Přesunyć",
 	"pt-movepage-action-other": "Cil změnić",
 	"pt-movepage-intro": "Tuta specialna strona zmóžnja přesuwanje stronow, kotrež su za přełožowanje markěrowane.\nPřesunjenje so hnydom njestawa, dokelž wjele stronow dyrbi so přesunyć.\nPři přesuwanju stronow njeje móžno, z wotpowědnymi stronami do zwiska stupić.\nZmylki budu so w [[Special:Log/pagetranslation|přełožowanskim protokolu strony]] protokolować  a dyrbja so manuelnje skorigować.",
-	"pt-movepage-logreason": "Dźěl přełožujomneje strony $1.",
+	"pt-movepage-logreason": "Dźěl přełožujomneje strony [[$1]].",
 	"pt-movepage-started": "Zakładna strona je nětko přesunjena.\nProšu skontroluj [[Special:Log/pagetranslation|přełožowanski protokol strony]] za zmylkami a zdźělenku wukonjenja.",
 	"pt-locked-page": "Tuta strona je zawrjena, dokelž přełožujomna strona so runje přesuwa.",
 	"pt-deletepage-lang-title": "Přełožena strona $1 so haša.",

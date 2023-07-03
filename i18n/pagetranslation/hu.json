@@ -173,7 +173,7 @@
 	"pt-movepage-action-perform": "Átnevezés végrehajtása",
 	"pt-movepage-action-other": "Cél megváltoztatása",
 	"pt-movepage-intro": "Ez a speciális lap lehetővé teszi fordításra jelölt lapok átnevezését.\nAz átnevezés nem azonnal hajtódik végre, mert sok lapot kell átnevezni.\nAmíg a művelet be nem fejeződik, nem lehet interakcióba lépni a kérdéses lapokkal.\nA hibák a [[$1|lapfordítási naplóban]] jelennek meg, és kézzel kell javítani őket.",
-	"pt-movepage-logreason": "A(z) „$1” fordítható lap része",
+	"pt-movepage-logreason": "A(z) „[[$1]]” fordítható lap része",
 	"pt-movepage-started": "Kérjük, ellenőrizd a [[$1|lapfordítási naplót]] egy idő múlva a hibaüzenetekért és a befejezésről szóló üzenetért.",
 	"pt-locked-page": "Ez a lap zárolva van, mert a fordítási lap jelenleg áthelyezés alatt áll.",
 	"pt-deletepage-lang-title": "A(z) „$1” fordítható lap törlése",

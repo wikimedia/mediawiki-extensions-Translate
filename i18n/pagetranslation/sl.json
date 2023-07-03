@@ -184,7 +184,7 @@
 	"pt-movepage-action-perform": "Izvedi prestavitev",
 	"pt-movepage-action-other": "Spremeni cilj",
 	"pt-movepage-intro": "Ta posebna stran omogoča prestavljanje strani, ki so označene za prevajanje.\nDejanje prestavitve ne bo izvedeno takoj, saj bo potrebno prestaviti veliko strani.\nMedtem ko se strani premikajo, ne bo mogoče delovati na straneh v obravnavi.\nNeuspehi bodo zabeleženi v [[$1|dnevniku]] in jih je potrebno ročno popraviti.",
-	"pt-movepage-logreason": "Del prevedljive strani »$1«.",
+	"pt-movepage-logreason": "Del prevedljive strani »[[$1]]«.",
 	"pt-movepage-started": "V kratkem preverite [[$1|dnevnik]] glede napak in sporočil o dokončanju.",
 	"pt-locked-page": "Stran je zaklenjena, ker se prevedljiva stran trenutno prestavlja.",
 	"pt-deletepage-lang-title": "Brisanje strani prevoda »$1«",

@@ -194,7 +194,7 @@
 	"pt-movepage-action-perform": "Verschiebung durchführen",
 	"pt-movepage-action-other": "Ziel ändern",
 	"pt-movepage-intro": "Diese Spezialseite ermöglicht es, Seiten zu verschieben, die zur Übersetzung gekennzeichnet wurden.\nDie Verschiebung wird nicht unverzüglich erfolgen, da dabei viele Seiten zu verschieben sind.\nWährend des Verschiebevorgangs ist es nicht möglich, die entsprechenden Seiten zu nutzen.\nVerschiebefehler werden im [[$1|Logbuch]] aufgezeichnet und müssen manuell korrigiert werden.",
-	"pt-movepage-logreason": "Teil der übersetzbaren Seite „$1“",
+	"pt-movepage-logreason": "Teil der übersetzbaren Seite „[[$1]]“",
 	"pt-movepage-started": "Bitte überprüfe das [[$1|Logbuch]] nach einiger Zeit auf Fehler und die Vollzugsnachricht.",
 	"pt-locked-page": "Diese Seite ist gesperrt, da die Übersetzungsseite momentan verschoben wird.",
 	"pt-deletepage-lang-title": "Löschen der übersetzten Seite „$1“",

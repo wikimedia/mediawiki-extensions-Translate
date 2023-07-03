@@ -181,7 +181,7 @@
 	"pt-movepage-action-perform": "Omneamen útfiere",
 	"pt-movepage-action-other": "Doel feroarje",
 	"pt-movepage-intro": "Dizze bysûndere side lit jo siden omneame dy't foar oersetten frijjûn binne.\nDe omneamhanneling giet net yn in omsjoch, om't in protte siden omneamd wurde moatte.\nUnder it omneamen fan 'e siden is it net mooglik wat mei de oanbelangjende siden te dwaan.\nMislearrings wurde yn it [[$1|loch]] set, en moatte mei de hân opholpen wurde.",
-	"pt-movepage-logreason": "Part fan 'e oersetbere side \"$1\"",
+	"pt-movepage-logreason": "Part fan 'e oersetbere side \"[[$1]]\"",
 	"pt-movepage-started": "Besjoch oer in lyts hoartsje it [[$1|loch]] foar flaters en de dienmelding.",
 	"pt-locked-page": "Dizze side is skoattele om't de oersetbere side op it stuit omneamd wurdt.",
 	"pt-deletepage-lang-title": "Wiskjen fan oersettingsside \"$1\"",

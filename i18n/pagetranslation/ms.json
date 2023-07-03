@@ -125,7 +125,7 @@
 	"pt-movepage-action-perform": "Lakukan pemindahan",
 	"pt-movepage-action-other": "Tukar sasaran",
 	"pt-movepage-intro": "Laman khas ini membolehkan anda untuk memindahkan laman-laman yang ditandai untuk diterjemah.\nTindakan pemindahan itu tidak meninggalkan kesan segera, kerana banyak laman yang perlu dipindahkan.\nSementara laman-laman berkenaan dipindahkan, anda tidak boleh berinteraksi dengan laman-laman yang terlibat.\nKegagalan akan dilogkan dalam [[Special:Log/pagetranslation|log penterjemahan laman]] dan perlu dibaiki dengan tangan.",
-	"pt-movepage-logreason": "Sebahagian laman boleh terjemah $1.",
+	"pt-movepage-logreason": "Sebahagian laman boleh terjemah [[$1]].",
 	"pt-movepage-started": "Sila periksa [[Special:Log/pagetranslation|log penterjemahan laman]] sekali-sekala untuk ralat dan mesej penyiapan.",
 	"pt-locked-page": "Laman ini dikunci kerana laman boleh terjemah yang terlibat kini sedang dipindahkan.",
 	"pt-deletepage-lang-title": "Menghapuskan laman penterjemahan $1.",
