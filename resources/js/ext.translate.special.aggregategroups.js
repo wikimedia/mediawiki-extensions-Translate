@@ -1,8 +1,6 @@
 ( function () {
 	'use strict';
 
-	var wikiPageMessageGroups = null;
-
 	function getApiParams( $target ) {
 		return {
 			action: 'aggregategroups',
@@ -418,6 +416,7 @@
 		$( 'div.mw-tpa-group' ).first().before( getToggleAllGroupsLink() );
 	} );
 
+	var entitySelectorLimit = 100, wikiPageMessageGroups = null;
 	function fetchWikiPageMessageGroups( searchValue, _entityTypeToFetch, deferred, failureCallback ) {
 		var alreadySelectedGroups = getSelectedGroups( this.$element );
 		if ( wikiPageMessageGroups ) {
@@ -443,11 +442,23 @@
 	}
 
 	function getGroupsToDisplay( groups, searchValue, alreadySelectedGroups ) {
-		var lowerSearchValue = searchValue.toLowerCase();
-		return groups.filter( function ( group ) {
-			return alreadySelectedGroups.indexOf( group.label ) === -1 &&
-				group.label.toLowerCase().indexOf( lowerSearchValue ) > -1;
-		} );
+		var filteredGroups = [], i = 0, lowercaseSearchValue = searchValue.toLowerCase();
+
+		for ( ;i < groups.length; ++i ) {
+			var label = groups[ i ].label;
+			if (
+				alreadySelectedGroups[ label ] !== true &&
+				label.toLowerCase().indexOf( lowercaseSearchValue ) > -1
+			) {
+				filteredGroups.push( groups[ i ] );
+			}
+
+			if ( filteredGroups.length === entitySelectorLimit ) {
+				return filteredGroups;
+			}
+		}
+
+		return filteredGroups;
 	}
 
 	function normalizeGroups( groups ) {
@@ -467,19 +478,20 @@
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups' ],
+			allowSuggestionsWhenEmpty: true,
 			apiRequestHook: fetchWikiPageMessageGroups
 		} );
 	}
 
 	function getSelectedGroups( $entitySelector ) {
-		var exclude = [];
+		var exclude = {};
 		$entitySelector.closest( '.mw-tpa-group' ).find( 'li' ).each(
 			function ( key, data ) {
 				// Need to trim to remove the trailing whitespace
 				// Can't use innerText not supported by Firefox
 				var groupName = $( data ).text();
 				groupName = groupName.trim();
-				exclude.push( groupName );
+				exclude[ groupName ] = true;
 			}
 		);
 
