@@ -25,5 +25,6 @@
 	"tux-sst-ellipsis-untranslated": "Dim cyfieithiad",
 	"tux-sst-ellipsis-outdated": "Cyfieithiadau hen",
 	"tux-sst-link-all-match": "Defnyddio pob gair.",
-	"tux-sst-case-sensitive": "Ystyried llythyrennau"
+	"tux-sst-case-sensitive": "Ystyried llythyrennau",
+	"tux-sst-error-offset": "Ni ellir dangos mwy o ganlyniadau. Cyfyngwch eich chwiliad."
 }

@@ -9,9 +9,13 @@
 	"tux-sst-view-foreign": "Čuäʹjet seeidast $1",
 	"tux-sst-search": "Ooʒʒ",
 	"tux-sst-search-ph": "Ooʒʒ jåårǥlõõzzid",
-	"tux-sst-count": "{{PLURAL:$1|Õhtt ooccâmpuåđõs|$1 ooccâmpuåđõõzz|$1 ooccâmpuåđõssâd}}",
+	"tux-sst-count": "{{PLURAL:$1|$1 ooccâmpuåđõssâd||1=Õhtt ooccâmpuåđõs|2=2 ooccâmpuåđõõzz|3=3 ooccâmpuåđõõzz|4=4 ooccâmpuåđõõzz|5=5 ooccâmpuåđõõzz|6=6 ooccâmpuåđõõzz|0=Ni mâiʹd ij käunnʼjam}}",
 	"tux-sst-facet-language": "Ǩiõl",
 	"tux-sst-facet-group": "Saakkjoouk",
 	"tux-sst-default": "Jåårǥlõõzz",
-	"tux-sst-translated": "Jåårǥlõttum ǩiõlâst $1"
+	"tux-sst-translated": "Jåårǥlõttum saaǥǥ{{PLURAL:9:|$1|}}",
+	"tux-sst-untranslated": "Jåårǥlââʹttǩani saaǥǥ{{PLURAL:9:|$1|}}",
+	"tux-sst-outdated": "Vuämmnam jåårǥlõõzz{{PLURAL:9:|$1|}}",
+	"tux-sst-ellipsis-untranslated": "Saaǥǥ, kook jie leäkku võl jåårǥlõttum",
+	"tux-sst-ellipsis-outdated": "Vuämmnam jåårǥlõõzz"
 }

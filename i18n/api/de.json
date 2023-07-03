@@ -6,7 +6,8 @@
 			"Metalhead64",
 			"Predatorix",
 			"Seewolf",
-			"SorkDE"
+			"SorkDE",
+			"Brettchenweber"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -60,6 +61,7 @@
 	"apihelp-managemessagegroups-description": "Hinzufügen einer Nachricht als Umbenennung einer vorhandenen Nachricht oder einer neuen Nachricht in der Gruppe während des Imports",
 	"apihelp-managemessagegroups-summary": "Hinzufügen einer Nachricht als Umbenennung einer vorhandenen Nachricht oder einer neuen Nachricht in der Gruppe während des Imports",
 	"apihelp-managemessagegroups-param-groupId": "Gruppen-ID",
+	"apihelp-managemessagegroups-param-changesetModified": "Unix-Zeitstempel der letzten Änderung des Änderungssatzes. Wenn der Änderungssatz danach geändert wurde, gibt die API einen Fehler aus.",
 	"apihelp-translatesandbox-description": "Registriert und verwaltet Spielwiesenbenutzer.",
 	"apihelp-translatesandbox-summary": "Registriert und verwaltet Spielwiesen-Benutzer.",
 	"apihelp-translatesandbox-param-do": "Was ist zu tun?",
@@ -70,6 +72,7 @@
 	"apihelp-translationaids-description": "Ruft alle Übersetzungshilfen ab.",
 	"apihelp-translationaids-summary": "Ruft alle Übersetzungshilfen ab.",
 	"apihelp-translationaids-param-title": "Vollständiger Titel einer bekannten Nachricht.",
+	"apihelp-translationaids-param-group": "Nachrichtengruppe, zu der die Nachricht gehört. Wenn leer, wird die primäre Gruppe verwendet.",
 	"apihelp-translationaids-param-prop": "Die einzuschließenden Übersetzungshelfer.",
 	"apihelp-translationaids-example-1": "Hilfen für [[MediaWiki:January/fi]] anzeigen",
 	"apihelp-translationreview-description": "Markiert Übersetzungen als überprüft.",
@@ -82,6 +85,7 @@
 	"apihelp-translationstash-param-title": "Titel der Übersetzungseinheitsseite.",
 	"apihelp-translationstash-param-translation": "Übersetzung erstellt vom Benutzer.",
 	"apihelp-translationstash-param-metadata": "JSON-Objekt.",
+	"apihelp-translationstash-param-username": "Optional der Benutzer, dessen Stash abgerufen werden soll. Dies ist nur privilegierten Benutzern möglich.",
 	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
 	"apihelp-translationstash-example-2": "Ruft den Speicher ab.",
 	"apihelp-ttmserver-description": "Frage Vorschläge aus den gespeicherten Übersetzungen ab.",
