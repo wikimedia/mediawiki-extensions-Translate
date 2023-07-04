@@ -44,13 +44,7 @@ class MessageBundleContentHandler extends TextContentHandler {
 		}
 	}
 
-	/**
-	 * Set the HTML and add the appropriate styles.
-	 * @since 1.38
-	 * @param Content $content
-	 * @param ContentParseParams $cpoParams
-	 * @param ParserOutput &$parserOutput The output object to fill (reference).
-	 */
+	/** @inheritDoc */
 	protected function fillParserOutput(
 		Content $content,
 		ContentParseParams $cpoParams,

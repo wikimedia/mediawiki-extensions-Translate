@@ -1167,14 +1167,9 @@ class Hooks {
 			[ , $code ] = Utilities::figureMessage( $title->getText() );
 			$mwService = MediaWikiServices::getInstance();
 
-			if ( method_exists( $mwService, 'getUrlUtils' ) ) {
-				$translationUrl = $mwService->getUrlUtils()->expand(
-					$page->getTranslationUrl( $code ), PROTO_RELATIVE
-				);
-			} else {
-				// < MW 1.39
-				$translationUrl = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
-			}
+			$translationUrl = $mwService->getUrlUtils()->expand(
+				$page->getTranslationUrl( $code ), PROTO_RELATIVE
+			);
 
 			$result = [
 				'tpt-target-page',
@@ -1338,14 +1333,9 @@ class Hooks {
 		} else {
 			$mwService = MediaWikiServices::getInstance();
 
-			if ( method_exists( $mwService, 'getUrlUtils' ) ) {
-				$translationUrl = $mwService->getUrlUtils()->expand(
-					$page->getTranslationUrl( $code ), PROTO_RELATIVE
-				);
-			} else {
-				// < MW 1.39
-				$translationUrl = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
-			}
+			$translationUrl = $mwService->getUrlUtils()->expand(
+				$page->getTranslationUrl( $code ), PROTO_RELATIVE
+			);
 
 			$msg = $context->msg( 'tpt-translation-intro',
 				$translationUrl,
