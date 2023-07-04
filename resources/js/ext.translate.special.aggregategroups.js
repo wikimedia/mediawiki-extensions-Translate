@@ -421,8 +421,8 @@
 		api.get( {
 			action: 'query',
 			meta: 'messagegroups',
-			mgformat: 'tree',
-			mgroot: 'all',
+			mgformat: 'flat',
+			mgfilter: 'page-*',
 			mgprop: 'label|id'
 		} ).then( function ( result ) {
 			wikiPageMessageGroups = normalizeGroups( result.query.messagegroups );

@@ -12,7 +12,6 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroup;
 use TranslateMetadata;
 use Wikimedia\ParamValidator\ParamValidator;
-use WikiPageMessageGroup;
 
 /**
  * Api module for querying MessageGroups.
@@ -44,15 +43,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 		$needsMetadata = isset( $props['prioritylangs'] ) || isset( $props['priorityforce'] );
 
-		// Parameter root as all for all pages subgroups
-		if ( $params['root'] === 'all' ) {
-			$allGroups = MessageGroups::getAllGroups();
-			foreach ( $allGroups as $id => $group ) {
-				if ( $group instanceof WikiPageMessageGroup ) {
-					$groups[$id] = $group;
-				}
-			}
-		} elseif ( $params['format'] === 'flat' ) {
+		if ( $params['format'] === 'flat' ) {
 			if ( $params['root'] !== '' ) {
 				$group = MessageGroups::getGroup( $params['root'] );
 				if ( $group ) {
