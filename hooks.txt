@@ -13,8 +13,12 @@ alternative to local patches.
 == Writing hooks ==
 
 === PHP hooks ===
+The hooks for the Translate extension are documented here:
+https://doc.wikimedia.org/Translate/master/php/classMediaWiki_1_1Extension_1_1Translate_1_1HookRunner.html
+
 For a guide to PHP hooks, navigate to your root MediaWiki
 directory, and then find docs/Hooks.md.
+
 The documentation is part of the hook interfaces.
 
 === JavaScript hooks ===
