@@ -60,9 +60,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				}
 			} else {
 				$groups = MessageGroups::getAllGroups();
-				usort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
 			}
-			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option
 			$group = MessageGroups::getGroup( $params['root'] );
@@ -74,10 +72,6 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
-		}
-
-		if ( $needsMetadata && $groups ) {
-			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		}
 
 		if ( $params['root'] === '' ) {
@@ -99,10 +93,11 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 		$result = $this->getResult();
 		$matcher = new StringMatcher( '', $filter );
 		/** @var MessageGroup|array $mixed */
-		foreach ( $groups as $mixed ) {
+		foreach ( $groups as $index => $mixed ) {
 			// array when Format = tree
 			$group = is_array( $mixed ) ? reset( $mixed ) : $mixed;
 			if ( $filter !== [] && !$matcher->matches( $group->getId() ) ) {
+				unset( $groups[$index] );
 				continue;
 			}
 
@@ -110,9 +105,19 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				$params['languageFilter'] !== '' &&
 				TranslateMetadata::isExcluded( $group->getId(), $params['languageFilter'] )
 			) {
+				unset( $groups[$index] );
 				continue;
 			}
+		}
 
+		if ( $needsMetadata && $groups ) {
+			// FIXME: This doesn't preload subgroups in a tree structure
+			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
+		}
+		usort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
+
+		/** @var MessageGroup|array $mixed */
+		foreach ( $groups as $index => $mixed ) {
 			$a = $this->formatGroup( $mixed, $props );
 
 			$result->setIndexedTagName( $a, 'group' );
