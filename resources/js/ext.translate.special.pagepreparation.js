@@ -54,6 +54,43 @@
 	}
 
 	/**
+	 * Get a regex snippet matching any aliases (including the canonical
+	 * name) of the given namespace, or of “other” namespaces if the
+	 * namespace is not given.
+	 *
+	 * @param {number|null} filter The namespace ID to filter for, or
+	 *  `null` to filter for “other” namespaces
+	 * @return {string} The aliases of the specified namespace(s),
+	 *  regex-escaped and joined with `|`
+	 */
+	function getNamespaceRegex( filter ) {
+		var aliases = [];
+		var namespacesObject = mw.config.get( 'wgNamespaceIds' );
+		for ( var key in namespacesObject ) {
+			if ( filter !== null ) {
+				if ( namespacesObject[ key ] === filter ) {
+					aliases.push( mw.util.escapeRegExp( key ) );
+				}
+			} else {
+				switch ( namespacesObject[ key ] ) {
+					case -1:
+					case 0:
+					case 6:
+					case 7:
+					case 14:
+					case 15:
+						// not needed or handled somewhere else
+						break;
+					default:
+						aliases.push( mw.util.escapeRegExp( key ) );
+				}
+			}
+		}
+
+		return aliases.join( '|' );
+	}
+
+	/**
 	 * Remove all the <translate> tags and {{translation}} templates before
 	 * preparing the page. The tool will add them back wherever needed.
 	 *
@@ -85,24 +122,17 @@
 	 * and tag them with the {{translation}} template.
 	 *
 	 * @param {string} pageContent
-	 * @return {jQuery.Promise}
+	 * @return {string}
 	 */
 	function doCategories( pageContent ) {
-		return getNamespaceAliases( 14 ).then( function ( aliases ) {
-			aliases.push( 'category' );
-			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = mw.util.escapeRegExp( aliases[ i ] );
-			}
+		var aliasList = getNamespaceRegex( 14 );
+		// Regex: https://regex101.com/r/sJ3gZ4/2
+		var categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
+			':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
+		pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
+			'[[$1{{#translation:}}$3]]\n<translate>\n' );
 
-			var aliasList = aliases.join( '|' );
-			// Regex: https://regex101.com/r/sJ3gZ4/2
-			var categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
-				':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
-			pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
-				'[[$1{{#translation:}}$3]]\n<translate>\n' );
-
-			return pageContent;
-		} );
+		return pageContent;
 	}
 
 	/**
@@ -177,14 +207,14 @@
 	function fixInternalLinks( pageContent ) {
 		var searchText = pageContent;
 
-		var normalizeRegex = new RegExp( /\[\[(?!Category)([^|]*?)\]\]/gi );
+		var categoryNsString = getNamespaceRegex( 14 );
+		var normalizeRegex = new RegExp( '\\[\\[(?!' + categoryNsString + ')([^|]*?)\\]\\]', 'gi' );
 		// First convert all links into two-party form. If a link is not having a pipe,
 		// add a pipe and duplicate the link text
 		// Regex: https://regex101.com/r/pO9nN2
 		pageContent = pageContent.replace( normalizeRegex, '[[$1|$1]]' );
 
-		var namespaces = getNamespaces();
-		var nsString = namespaces.join( '|' );
+		var nsString = getNamespaceRegex( null );
 		// Finds all the links to sections on the same page.
 		// Regex: https://regex101.com/r/cX6jT3
 		var sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?\]\]/gi );
@@ -204,61 +234,25 @@
 	}
 
 	/**
-	 * Fetch all the aliases for a given namespace on the wiki.
-	 *
-	 * @param {number} namespaceID
-	 * @return {jQuery.Promise}
-	 * @return {Function} return.done
-	 * @return {Array} return.done.data
-	 */
-	function getNamespaceAliases( namespaceID ) {
-		var api = new mw.Api();
-
-		return api.get( {
-			action: 'query',
-			meta: 'siteinfo',
-			siprop: 'namespacealiases'
-		} ).then( function ( data ) {
-			var aliases = [];
-
-			for ( var alias in data.query.namespacealiases ) {
-				if ( data.query.namespacealiases[ alias ].id === namespaceID ) {
-					aliases.push( data.query.namespacealiases[ alias ][ '*' ] );
-				}
-			}
-
-			return aliases;
-		} );
-	}
-
-	/**
 	 * Add translate tags around only translatable content for files and keep everything else
 	 * as a part of the page template.
 	 *
 	 * @param {string} pageContent
-	 * @return {jQuery.Promise}
+	 * @return {string}
 	 */
 	function doFiles( pageContent ) {
-		return getNamespaceAliases( 6 ).then( function ( aliases ) {
-			aliases.push( 'file' );
+		var aliasList = getNamespaceRegex( 6 );
 
-			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = mw.util.escapeRegExp( aliases[ i ] );
-			}
+		// Add translate tags for files with captions
+		var captionFilesRegex = new RegExp( '\\[\\[(' + aliasList + ')(.*\\|)(.*?)\\]\\]', 'gi' );
+		pageContent = pageContent.replace( captionFilesRegex,
+			'</translate>\n[[$1$2<translate>$3</translate>]]\n<translate>' );
 
-			var aliasList = aliases.join( '|' );
+		// Add translate tags for files without captions
+		var fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
+		pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
 
-			// Add translate tags for files with captions
-			var captionFilesRegex = new RegExp( '\\[\\[(' + aliasList + ')(.*\\|)(.*?)\\]\\]', 'gi' );
-			pageContent = pageContent.replace( captionFilesRegex,
-				'</translate>\n[[$1$2<translate>$3</translate>]]\n<translate>' );
-
-			// Add translate tags for files without captions
-			var fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
-			pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
-
-			return pageContent;
-		} );
+		return pageContent;
 	}
 
 	/**
@@ -320,31 +314,6 @@
 		} );
 	}
 
-	/**
-	 * Get the list of valid namespaces for the wiki and remove unwanted
-	 * ones from the list.
-	 *
-	 * @return {Array} Array of valid namespaces
-	 */
-	function getNamespaces() {
-		var namespaces = [];
-
-		var namespacesObject = mw.config.get( 'wgNamespaceIds' );
-		for ( var key in namespacesObject ) {
-			namespaces.push( key );
-		}
-
-		// Remove all what has been already handled somewhere else
-		[ '', 'category', 'category_talk', 'special', 'file', 'file_talk' ].forEach( function ( ns ) {
-			namespaces.splice( namespaces.indexOf( ns ), 1 );
-		} );
-
-		for ( var i = 0; i < namespaces.length; i++ ) {
-			namespaces[ i ] = mw.util.escapeRegExp( namespaces[ i ] );
-		}
-		return namespaces;
-	}
-
 	$( function () {
 		var $input = $( '#page' );
 
@@ -391,26 +360,26 @@
 				pageContent = addNewLines( pageContent );
 				pageContent = fixInternalLinks( pageContent );
 				pageContent = doTemplates( pageContent );
-				doFiles( pageContent ).then( doCategories ).done( function ( preppedContent ) {
-					preppedContent = postPreparationCleanup( preppedContent );
-					preppedContent = preppedContent.trim();
-					getDiff( pageName, preppedContent ).done( function ( diff ) {
-						if ( diff === undefined ) {
-							$messageDiv.text( mw.msg( 'pp-diff-error' ) ).removeClass( 'hide' );
-							return;
-						}
+				pageContent = doFiles( pageContent );
+				pageContent = doCategories( pageContent );
+				pageContent = postPreparationCleanup( pageContent );
+				pageContent = pageContent.trim();
+				getDiff( pageName, pageContent ).done( function ( diff ) {
+					if ( diff === undefined ) {
+						$messageDiv.text( mw.msg( 'pp-diff-error' ) ).removeClass( 'hide' );
+						return;
+					}
 
-						$( '.diff tbody' ).append( diff );
-						$( '.divDiff' ).removeClass( 'hide' );
-						if ( diff !== '' ) {
-							$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).removeClass( 'hide' );
-							$( '#action-prepare' ).addClass( 'hide' );
-							$( '#action-save' ).removeClass( 'hide' );
-							$( '#action-cancel' ).removeClass( 'hide' );
-						} else {
-							$messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).removeClass( 'hide' );
-						}
-					} );
+					$( '.diff tbody' ).append( diff );
+					$( '.divDiff' ).removeClass( 'hide' );
+					if ( diff !== '' ) {
+						$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).removeClass( 'hide' );
+						$( '#action-prepare' ).addClass( 'hide' );
+						$( '#action-save' ).removeClass( 'hide' );
+						$( '#action-cancel' ).removeClass( 'hide' );
+					} else {
+						$messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).removeClass( 'hide' );
+					}
 				} );
 			} );
 		} );
