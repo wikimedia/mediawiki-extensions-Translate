@@ -6,7 +6,8 @@
 			"Robin0van0der0vliet",
 			"Siebrand",
 			"Sjoerddebruin",
-			"McDutchie"
+			"McDutchie",
+			"HanV"
 		]
 	},
 	"searchtranslations": "Vertalingen zoeken",
@@ -32,5 +33,6 @@
 	"tux-sst-link-all-match": "De aanwezigheid van alle zoektermen verplichten.",
 	"tux-sst-match-message": "Toon vertalingen die een van de zoektermen bevatten. $1",
 	"tux-sst-case-sensitive": "Hoofdlettergevoelig",
+	"tux-sst-error-offset": "Er kunnen niet meer zoekresultaten worden getoond. Verfijn uw zoekopdracht.",
 	"tux-sst-error-language": "Deze taal kan niet worden gebruikt met dit type zoekopdracht."
 }

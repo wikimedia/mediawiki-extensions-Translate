@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Сай",
-			"Kareyac"
+			"Kareyac",
+			"Lifeway"
 		]
 	},
 	"translate-next": "Вес лаштык",
 	"translate-prev": "Ончычсо лаштык",
+	"translate-documentation-language": "Увертарымаш дене документаций",
 	"tux-editor-page-mode": "Лаштык"
 }
