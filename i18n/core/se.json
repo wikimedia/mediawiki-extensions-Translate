@@ -60,6 +60,8 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
 	"translate-smg-rename-select": "Vállje",
 	"translate-smg-rename-cancel": "Šluhtte",
+	"translate-smg-group-message-tag-rename": "Rahkat ođđa nama",
+	"translate-manage-action-rename": "Rahkat ođđa nama",
 	"translate-manage-source-message-not-found": "Dieđáhusa čilgehus ii gávdnon",
 	"translate-searchprofile": "Jorgalusat",
 	"translate-search-languagefilter": "Sille giela mielde:",

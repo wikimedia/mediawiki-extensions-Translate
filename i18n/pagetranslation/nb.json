@@ -189,7 +189,7 @@
 	"pt-movepage-action-perform": "Utfør flyttingen",
 	"pt-movepage-action-other": "Endre mål",
 	"pt-movepage-intro": "Denne spesialsiden lar deg flytte sider som er markert for oversettelse.\nFlyttehandlingen vil ikke skje umiddelbart fordi mange sider må flyttes.\nMens sidene flyttes er det ikke mulig å samhandle med gjeldende sider.\nFeil [[$1|logges]] og må repareres for hånd.",
-	"pt-movepage-logreason": "Del av oversettbar side «[[$1]]»",
+	"pt-movepage-logreason": "Del av den oversettbare siden «[[$1]]»",
 	"pt-movepage-started": "Kontroller [[$1|loggen]] om en stund for feil- og fullføringsmeldinger.",
 	"pt-locked-page": "Denne siden er låst fordi oversettelsessiden blir flyttet nå.",
 	"pt-deletepage-lang-title": "Sletter den oversettbare siden «$1»",

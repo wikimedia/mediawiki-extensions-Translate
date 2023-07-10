@@ -456,6 +456,8 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Kildespråkkoden «$1» støttes ikke.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Ugyldig prioritert språkkode|Ugyldige prioriterte språkkoder}} i metadataene: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Ugyldig format for prioritert språk i metadataen. Prioriterte språk må være en tabell av strenger.",
+	"translate-messagebundle-error-invalid-description": "Ugyldig meldingsknippebeskrivelse i metadataen. Beskrivelsen må være en streng",
+	"translate-messagebundle-error-invalid-label": "Ugyldig meldingsknippeetikett i metadataen. Etiketten må være en streng",
 	"translate-messagebundle-group-description": "Beskjeder i en beskjedbunt definert på siden [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Setter kildespråk for meldingsknippet i samsvar med metadataene.",
 	"translate-messagebundle-sourcelanguage-changed": "Kildespråket til et meldingsknippe kan ikke endres etter at det har blitt opprettet.",
