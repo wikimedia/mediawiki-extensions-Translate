@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ante75",
 			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
@@ -67,13 +68,13 @@
 	"translate-smg-rename-cancel": "Šluhtte",
 	"translate-smg-group-message-action-history": "Historjá",
 	"translate-smg-group-message-tag-rename": "Rahkat ođđa nama",
-	"translate-smg-group-message-tag-label": "{{PLURAL:$1|gilkor|gilkora}}:",
+	"translate-smg-group-message-tag-label": "{{PLURAL:$1|gilkor|gilkorat}}:",
 	"translate-smg-group-message-message-content": "Sisdoallu:",
 	"translate-smg-group-message-message-other-langs": "Eará gielat:",
 	"translate-smg-loading": "Viežžamin...",
 	"translate-manage-action-rename": "Rahkat ođđa nama",
 	"translate-manage-source-message-not-found": "Dieđáhusa čilgehus ii gávdnon",
-	"translate-import-load": "Vurke fiilla",
+	"translate-import-load": "Luđe fiilla",
 	"translate-searchprofile": "Jorgalusat",
 	"translate-search-languagefilter": "Sille giela mielde:",
 	"translate-msggroupselector-search-placeholder": "Oza joavkkuid",
