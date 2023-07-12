@@ -60,6 +60,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				}
 			} else {
 				$groups = MessageGroups::getAllGroups();
+				usort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
 			}
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option
@@ -114,7 +115,6 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			// FIXME: This doesn't preload subgroups in a tree structure
 			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
 		}
-		usort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
 
 		/** @var MessageGroup|array $mixed */
 		foreach ( $groups as $index => $mixed ) {
