@@ -28,6 +28,8 @@
 	"apihelp-query+languagestats-param-language": "言語コード。",
 	"apihelp-query+languagestats-example-1": "フィンランド語の翻訳完了の統計一覧",
 	"apihelp-query+messagecollection-description": "翻訳に関する MessageCollection のクエリを実行。",
+	"apihelp-query+managemessagegroups-param-groupId": "群 ID",
+	"apihelp-query+managemessagegroups-param-messageKey": "メッセージキー",
 	"apihelp-query+managemessagegroups-param-changesetName": "セット名の変更 - 既定 / 無人 / MediaWiki など。",
 	"apihelp-query+messagecollection-summary": "翻訳に関する MessageCollection のクエリを実行。",
 	"apihelp-query+messagecollection-param-group": "メッセージ群。",
@@ -51,6 +53,7 @@
 	"apihelp-query+messagetranslations-description": "単一のメッセージに対するすべての翻訳をクエリする。",
 	"apihelp-query+messagetranslations-summary": "単一のメッセージに対するすべての翻訳をクエリする。",
 	"apihelp-query+messagetranslations-example-1": "\"MediaWiki:January\"に対するウィキ上の翻訳一覧",
+	"apihelp-managemessagegroups-param-groupId": "群 ID",
 	"apihelp-managemessagegroups-param-changesetName": "セット名の変更 - 既定 / 無人 / MediaWiki など。",
 	"apihelp-translatesandbox-description": "サインアップしてサンドボックス利用者を管理。",
 	"apihelp-translatesandbox-summary": "サインアップしてサンドボックス利用者を管理。",
@@ -65,6 +68,7 @@
 	"apihelp-translationreview-description": "翻訳を査読済みにする。",
 	"apihelp-translationreview-summary": "翻訳を査読済みにする。",
 	"apihelp-translationreview-param-revision": "査読対象の版番号。",
+	"apihelp-translationstash-param-subaction": "操作。",
 	"apihelp-translationstash-param-translation": "この利用者が手がけた翻訳。",
 	"apihelp-translationstash-param-metadata": "JSON オブジェクト。",
 	"apihelp-ttmserver-param-service": "利用できる翻訳サービスから選択。",
@@ -103,7 +107,9 @@
 	"apierror-translate-owntranslation": "自分の翻訳の査読はできません",
 	"apierror-translate-sandboxdisabled": "サンドボックスの機能は使用できません",
 	"apierror-translate-smg-nochanges": "処理する変更はありません。",
+	"apierror-translate-unknownmessage": "不明なメッセージ",
 	"apierror-translate-invalid-operation": "無効な操作：$1。有効な値 - $2。",
 	"apiwarn-translate-alreadyreviewedbyyou": "あなたの査読済みと記録があります",
-	"apiwarn-translate-language-disabled-source": "このメッセージ群の翻訳原文の言語は$1です。翻訳するには別の言語を選択してください。"
+	"apiwarn-translate-language-disabled-source": "このメッセージ群の翻訳原文の言語は$1です。翻訳するには別の言語を選択してください。",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>あなたは <bdi>$1</bdi> に翻訳しています。</strong> <bdi>$2</bdi> の言語変種であり、既にこれらのメッセージの翻訳元言語です。選択した言語が正しいことを確認し、言語変種間の違いを考慮して、いい翻訳を提供してください。"
 }
