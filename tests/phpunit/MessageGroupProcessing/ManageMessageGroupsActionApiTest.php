@@ -5,15 +5,12 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ApiTestCase;
 use ApiUsageException;
-use CommentStoreComment;
-use ContentHandler;
 use DateInterval;
 use DateTime;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\Revision\SlotRecord;
 use MessageChangeStorage;
 use MockWikiMessageGroup;
 use Title;
@@ -24,6 +21,7 @@ use WANObjectCache;
  * @group medium
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\ManageMessageGroupsActionApi
+ * @group Database
  */
 class ManageMessageGroupsActionApiTest extends ApiTestCase {
 	/** @var User */
@@ -55,13 +53,7 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 		// and will be fetched manually from the database.
 		$title = Title::makeTitle( $group->getNamespace(),
 			Utilities::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
-		$content = ContentHandler::makeContent( 'world 23', $title );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
-		$updater = $page
-			->newPageUpdater( self::getTestSysop()->getUser() )
-			->setContent( SlotRecord::MAIN, $content );
-
-		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
+		$this->editPage( $title, 'world 23' );
 
 		return false;
 	}

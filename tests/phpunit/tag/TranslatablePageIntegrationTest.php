@@ -8,6 +8,7 @@ use MediaWiki\MediaWikiServices;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @covers \TranslatablePage
+ * @group Database
  */
 class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 	use TranslatablePageTestTrait;

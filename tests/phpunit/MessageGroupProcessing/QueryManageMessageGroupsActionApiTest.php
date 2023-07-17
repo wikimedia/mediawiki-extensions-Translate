@@ -14,6 +14,7 @@ use WANObjectCache;
 
 /**
  * @group medium
+ * @group Database
  * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\QueryManageMessageGroupsActionApi
  * @license GPL-2.0-or-later
  */
