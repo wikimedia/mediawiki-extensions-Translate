@@ -10,6 +10,7 @@
 	"translate-taction-lstats": "Кӣлл статистика",
 	"translate-taction-mstats": "Соа̄гэ группа статистика",
 	"translate-page-language": "Кӣлл",
+	"translate-page-showing-all": "$1 {{PLURAL:$1|соа̄гк|соа̄г|соа̄гкэ}} {{PLURAL:$1|вӯзьхувв|вӯзьхуввэв|вӯзьхувв}}.",
 	"translate-edit-definition": "Соа̄г ме̄ррьдэллмушш",
 	"translate-edit-contribute": "вуайхэ",
 	"translate-edit-information": "Те̄д соа̄г баяс ($1)",
