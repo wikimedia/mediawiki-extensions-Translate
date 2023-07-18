@@ -309,7 +309,7 @@
 	"translate-search-languagefilter": "Фільтраваць па мовам:",
 	"translate-search-nofilter": "Без фільтрацыі",
 	"log-name-translationreview": "Журнал вычыткі перакладаў",
-	"log-description-translationreview": "Журнал усіх вычытак перакладаў і групаў паведамленьняў.",
+	"log-description-translationreview": "Журнал усіх вычытак перакладаў і групаў паведамленняў.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|вычытаў|вычытала}} пераклад $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|змяніў|змяніла}} стан перакладу старонкі $3 з «$6» на «$7» для мовы $4",
 	"group-translate-sandboxed": "Не зацверджаныя перакладчыкі",
