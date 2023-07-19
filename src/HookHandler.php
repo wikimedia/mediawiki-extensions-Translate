@@ -800,22 +800,20 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 	 * when Special:Translate is shown.
 	 */
 	public static function addConfig( array &$vars, OutputPage $out ): void {
-		$title = $out->getTitle();
-		[ $alias, ] = MediaWikiServices::getInstance()
-			->getSpecialPageFactory()->resolveAlias( $title->getText() );
+		global $wgTranslateDocumentationLanguageCode,
+			$wgTranslatePermissionUrl,
+			$wgTranslateUseSandbox;
 
-		if ( $title->isSpecialPage()
-			&& ( $alias === 'Translate'
-				|| $alias === 'TranslationStash'
-				|| $alias === 'SearchTranslations' )
+		$title = $out->getTitle();
+		if ( $title->isSpecial( 'Translate' ) ||
+			$title->isSpecial( 'TranslationStash' ) ||
+			$title->isSpecial( 'SearchTranslations' )
 		) {
-			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl,
-				$wgTranslateUseSandbox;
-			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
-			$vars['TranslateMessageReviewRight'] =
-				$out->getUser()->isAllowed( 'translate-messagereview' );
-			$vars['DeleteRight'] = $out->getUser()->isAllowed( 'delete' );
-			$vars['TranslateManageRight'] = $out->getUser()->isAllowed( 'translate-manage' );
+			$user = $out->getUser();
+			$vars['TranslateRight'] = $user->isAllowed( 'translate' );
+			$vars['TranslateMessageReviewRight'] = $user->isAllowed( 'translate-messagereview' );
+			$vars['DeleteRight'] = $user->isAllowed( 'delete' );
+			$vars['TranslateManageRight'] = $user->isAllowed( 'translate-manage' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 			$vars['wgTranslateUseSandbox'] = $wgTranslateUseSandbox;
