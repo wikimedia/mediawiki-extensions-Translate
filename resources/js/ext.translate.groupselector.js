@@ -248,7 +248,9 @@
 				// eslint-disable-next-line no-jquery/variable-pattern
 				this.options.position.of = this.$trigger;
 			}
-			this.$menu.position( this.options.position );
+
+			var positionElement = require( './ext.translate.ui.position.js' );
+			positionElement( this.$menu, this.options.position );
 		},
 
 		/**

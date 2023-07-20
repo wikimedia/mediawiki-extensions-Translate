@@ -692,12 +692,14 @@
 		},
 		"ext.translate.groupselector": {
 			"styles": "resources/css/ext.translate.groupselector.less",
-			"scripts": "resources/js/ext.translate.groupselector.js",
+			"packageFiles": [
+				"resources/js/ext.translate.groupselector.js",
+				"resources/js/ext.translate.ui.position.js"
+			],
 			"dependencies": [
 				"ext.translate.base",
 				"ext.translate.loader",
 				"ext.translate.statsbar",
-				"jquery.ui",
 				"mediawiki.jqueryMsg"
 			],
 			"messages": [
