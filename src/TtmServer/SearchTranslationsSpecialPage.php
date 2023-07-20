@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProv
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Utils\UrlUtils;
 use Message;
 use MessageHandle;
 use SpecialPage;
@@ -30,29 +31,24 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SearchTranslationsSpecialPage extends SpecialPage {
-	/** @var FormOptions */
-	protected $opts;
+	private FormOptions $opts;
 	/**
 	 * Placeholders used for highlighting. Search backend can mark the beginning and
-	 * end but we need to run htmlspecialchars on the result first and then
+	 * end but, we need to run htmlspecialchars on the result first and then
 	 * replace the placeholders with the html. It is assumed placeholders
 	 * don't contain any chars that are escaped in html.
-	 * @var array
 	 */
-	protected $hl = [];
-	/**
-	 * How many search results to display per page
-	 * @var int
-	 */
-	protected $limit = 25;
-	/** @var TtmServerFactory */
-	private $ttmServerFactory;
-	/** @var LanguageFactory */
-	private $languageFactory;
+	private array $hl;
+	/** How many search results to display per page */
+	protected int $limit = 25;
+	private TtmServerFactory $ttmServerFactory;
+	private LanguageFactory $languageFactory;
+	private UrlUtils $urlUtils;
 
 	public function __construct(
 		TtmServerFactory $ttmServerFactory,
-		LanguageFactory $languageFactory
+		LanguageFactory $languageFactory,
+		UrlUtils $urlUtils
 	) {
 		parent::__construct( 'SearchTranslations' );
 		$this->hl = [
@@ -62,9 +58,10 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		$this->ttmServerFactory = $ttmServerFactory;
 		$this->languageFactory = $languageFactory;
+		$this->urlUtils = $urlUtils;
 	}
 
-	public function execute( $par ) {
+	public function execute( $subPage ) {
 		global $wgLanguageCode;
 		$this->setHeaders();
 		$this->checkPermissions();
@@ -126,11 +123,11 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				$opts->setValue( 'language', $options['language'] );
 				$documents = $translationSearch->getDocuments();
 				$total = $translationSearch->getTotalHits();
-				$resultset = $translationSearch->getResultSet();
+				$resultSet = $translationSearch->getResultSet();
 			} else {
-				$resultset = $server->search( $queryString, $params, $this->hl );
-				$documents = $server->getDocuments( $resultset );
-				$total = $server->getTotalHits( $resultset );
+				$resultSet = $server->search( $queryString, $params, $this->hl );
+				$documents = $server->getDocuments( $resultSet );
+				$total = $server->getTotalHits( $resultSet );
 			}
 		} catch ( TTMServerException $e ) {
 			$message = $e->getMessage();
@@ -146,7 +143,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		}
 
 		// Part 1: facets
-		$facets = $server->getFacets( $resultset );
+		$facets = $server->getFacets( $resultSet );
 		$facetHtml = '';
 
 		if ( $facets['language'] !== [] ) {
@@ -205,7 +202,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			$text = $document['content'];
 			$text = Utilities::convertWhiteSpaceToHTML( $text );
 
-			list( $pre, $post ) = $this->hl;
+			[ $pre, $post ] = $this->hl;
 			$text = str_replace( $pre, '<strong class="tux-search-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
 
@@ -231,7 +228,10 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 					$this->msg( 'tux-sst-edit' )->text()
 				);
 			} else {
-				$url = wfParseUrl( $document['uri'] );
+				$url = $this->urlUtils->parse( $document['uri'] );
+				if ( !$url ) {
+					continue;
+				}
 				$domain = $url['host'];
 				$link = Html::element(
 					'a',
@@ -301,24 +301,24 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	private function getLanguages( array $facet ): array {
 		$output = [];
 
-		$nondefaults = $this->opts->getChangedValues();
+		$nonDefaults = $this->opts->getChangedValues();
 		$selected = $this->opts->getValue( 'language' );
 		$filter = $this->opts->getValue( 'filter' );
 
 		foreach ( $facet as $key => $value ) {
 			if ( $filter !== '' && $key === $selected ) {
-				unset( $nondefaults['language'] );
-				unset( $nondefaults['filter'] );
+				unset( $nonDefaults['language'] );
+				unset( $nonDefaults['filter'] );
 			} elseif ( $filter !== '' ) {
-				$nondefaults['language'] = $key;
-				$nondefaults['filter'] = $filter;
+				$nonDefaults['language'] = $key;
+				$nonDefaults['filter'] = $filter;
 			} elseif ( $key === $selected ) {
-				unset( $nondefaults['language'] );
+				unset( $nonDefaults['language'] );
 			} else {
-				$nondefaults['language'] = $key;
+				$nonDefaults['language'] = $key;
 			}
 
-			$url = $this->getPageTitle()->getLocalURL( $nondefaults );
+			$url = $this->getPageTitle()->getLocalURL( $nonDefaults );
 			$value = $this->getLanguage()->formatNum( $value );
 
 			$output[$key] = [
@@ -343,7 +343,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	): array {
 		$output = [];
 
-		$nondefaults = $this->opts->getChangedValues();
+		$nonDefaults = $this->opts->getChangedValues();
 		$selected = $this->opts->getValue( 'group' );
 		$path = explode( '|', $this->opts->getValue( 'grouppath' ) );
 
@@ -363,11 +363,11 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			}
 
 			if ( $id === $selected ) {
-				unset( $nondefaults['group'] );
-				$nondefaults['grouppath'] = $pathString;
+				unset( $nonDefaults['group'] );
+				$nonDefaults['grouppath'] = $pathString;
 			} else {
-				$nondefaults['group'] = $id;
-				$nondefaults['grouppath'] = $pathString . $id;
+				$nonDefaults['group'] = $id;
+				$nonDefaults['grouppath'] = $pathString . $id;
 			}
 
 			$value = $counts[$id] ?? 0;
@@ -483,8 +483,8 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 	/** Build ellipsis to select options */
 	private function ellipsisSelector( string $key, string $value ): string {
-		$nondefaults = $this->opts->getChangedValues();
-		$taskParams = [ 'filter' => $value ] + $nondefaults;
+		$nonDefaults = $this->opts->getChangedValues();
+		$taskParams = [ 'filter' => $value ] + $nonDefaults;
 		ksort( $taskParams );
 		$href = $this->getPageTitle()->getLocalURL( $taskParams );
 		$link = Html::element( 'a',
@@ -495,18 +495,16 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			$this->msg( 'tux-sst-ellipsis-' . $key )->text()
 		);
 
-		$container = Html::rawElement( 'li', [
+		return Html::rawElement( 'li', [
 			'class' => 'column',
 			'data-filter' => $value,
 			'data-title' => $key,
 		], $link );
-
-		return $container;
 	}
 
 	/** Design the tabs */
 	private function messageSelector(): string {
-		$nondefaults = $this->opts->getChangedValues();
+		$nonDefaults = $this->opts->getChangedValues();
 		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header' ] );
 		$output .= Html::openElement( 'div', [ 'class' => 'nine columns' ] );
 		$output .= Html::openElement( 'ul', [ 'class' => 'row tux-message-selector' ] );
@@ -536,8 +534,8 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			$container .= $this->ellipsisSelector( $optKey, $optValue );
 		}
 
-		$sourcelanguage = $this->opts->getValue( 'sourcelanguage' );
-		$sourcelanguage = Utilities::getLanguageName( $sourcelanguage );
+		$sourceLanguage = $this->opts->getValue( 'sourcelanguage' );
+		$sourceLanguage = Utilities::getLanguageName( $sourceLanguage );
 		foreach ( $tabs as $tab => $filter ) {
 			// Messages for grepping:
 			// tux-sst-default
@@ -545,7 +543,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			// tux-sst-untranslated
 			// tux-sst-outdated
 			$tabClass = "tux-sst-$tab";
-			$taskParams = [ 'filter' => $filter ] + $nondefaults;
+			$taskParams = [ 'filter' => $filter ] + $nonDefaults;
 			ksort( $taskParams );
 			$href = $this->getPageTitle()->getLocalURL( $taskParams );
 			if ( $tab === 'default' ) {
@@ -558,7 +556,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				$link = Html::element(
 					'a',
 					[ 'href' => $href ],
-					$this->msg( $tabClass, $sourcelanguage )->text()
+					$this->msg( $tabClass, $sourceLanguage )->text()
 				);
 			}
 
@@ -573,52 +571,47 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		}
 
 		// More column
-		$output .= Html::openElement( 'li', [ 'class' => 'column more' ] ) .
-			'...' .
-			$container .
-			Html::closeElement( 'li' );
-
+		$output .= Html::rawElement( 'li', [ 'class' => 'column more' ], '...' . $container );
 		$output .= Html::closeElement( 'ul' ) . Html::closeElement( 'div' ) . Html::closeElement( 'div' );
 
 		return $output;
 	}
 
-	private function getSearchInput( string $query ) {
+	private function getSearchInput( string $query ): string {
 		$attribs = [
 			'placeholder' => $this->msg( 'tux-sst-search-ph' )->text(),
 			'class' => 'searchinputbox mw-ui-input',
-			'dir' => $this->getLanguage()->getDir(),
+			'dir' => $this->getLanguage()->getDir()
 		];
 
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
-		$input = Xml::input( 'query', false, $query, $attribs );
+		$input = Html::input( 'query', $query, 'text', $attribs );
 		$submit = Xml::submitButton(
 			$this->msg( 'tux-sst-search' )->text(),
 			[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 		);
 
-		$nondefaults = $this->opts->getChangedValues();
+		$nonDefaults = $this->opts->getChangedValues();
 		$checkLabel = Xml::checkLabel(
 			$this->msg( 'tux-sst-case-sensitive' )->text(),
 			'case',
 			'tux-case-sensitive',
-			isset( $nondefaults['case'] )
+			isset( $nonDefaults['case'] )
 		);
-		$checkLabel = Html::openElement(
+		$checkLabel = Html::rawElement(
 			'div',
-			[ 'class' => 'tux-search-operators mw-ui-checkbox' ]
-		) .
-			$checkLabel .
-			Html::closeElement( 'div' );
+			[ 'class' => 'tux-search-operators mw-ui-checkbox' ],
+			$checkLabel
+		);
 
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = $lang === null ? '' : Html::hidden( 'language', $lang );
 
-		$form = Html::rawElement( 'form', [ 'action' => wfScript(), 'name' => 'searchform' ],
+		return Html::rawElement(
+			'form',
+			[ 'action' => wfScript(), 'name' => 'searchform' ],
 			$title . $input . $submit . $checkLabel . $language
 		);
-
-		return $form;
 	}
 
 	protected function getGroupName() {

@@ -340,7 +340,8 @@
 			"class": "\\MediaWiki\\Extension\\Translate\\TtmServer\\SearchTranslationsSpecialPage",
 			"services": [
 				"Translate:TtmServerFactory",
-				"LanguageFactory"
+				"LanguageFactory",
+				"UrlUtils"
 			]
 		}
 	},
