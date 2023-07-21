@@ -505,7 +505,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	private function messageSelector(): string {
 		$nonDefaults = $this->opts->getChangedValues();
 		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header' ] );
-		$output .= Html::openElement( 'div', [ 'class' => 'nine columns' ] );
+		$output .= Html::openElement( 'div', [ 'class' => 'twelve columns' ] );
 		$output .= Html::openElement( 'ul', [ 'class' => 'row tux-message-selector' ] );
 		$tabs = [
 			'default' => '',
