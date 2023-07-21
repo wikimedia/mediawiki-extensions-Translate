@@ -1128,16 +1128,6 @@
 				"mobile"
 			]
 		},
-		"ext.translate.special.searchtranslations.operatorsuggest": {
-			"scripts": "resources/js/ext.translate.special.operatorsuggest.js",
-			"dependencies": [
-				"jquery.ui"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.translate.special.pagetranslation": {
 			"packageFiles": [
 				"resources/js/ext.translate.special.pagetranslation.js",

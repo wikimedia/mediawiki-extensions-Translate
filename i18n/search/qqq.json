@@ -15,6 +15,7 @@
 	"tux-sst-view-foreign": "A link text. Parameters:\n* $1 - the domain/host name where the link points to.",
 	"tux-sst-search": "A button text.\n{{Identical|Search}}",
 	"tux-sst-search-ph": "Placeholder text in input field.\n{{Identical|Search translation}}",
+	"tux-sst-search-info": "Information message shown under the search input field about operators supported for filtering",
 	"tux-sst-count": "Parameters:\n* $1 - the number of search results\n\n'''See also'''\n* [[Template:Identical/Result]]\n* {{msg-mw|Tux-message-filter-result}}",
 	"tux-sst-facet-language": "Label for a facet in [[Special:SearchTranslations]].\n{{Identical|Language}}",
 	"tux-sst-facet-group": "Label for a facet in [[Special:SearchTranslations]].\n{{Identical|Message group}}",

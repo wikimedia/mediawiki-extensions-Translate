@@ -163,3 +163,8 @@
 .tux-search-highlight {
 	background-color: #c9c9c9;
 }
+
+.tux-searchpage .tux-searchinputbox-hint {
+	font-size: 0.9em;
+	margin-top: 5px;
+}

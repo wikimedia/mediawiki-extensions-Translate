@@ -77,7 +77,6 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$out->addModuleStyles( 'ext.translate.special.translate.styles' );
 		$out->addModuleStyles( [ 'mediawiki.ui.button', 'mediawiki.ui.input', 'mediawiki.ui.checkbox' ] );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
-		$out->addModules( 'ext.translate.special.searchtranslations.operatorsuggest' );
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
 		$out->addJsConfigVars(
 			'wgTranslateLanguages',
@@ -591,6 +590,12 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 		);
 
+		$typeHint = Html::rawElement(
+			'div',
+			[ 'class' => 'tux-searchinputbox-hint' ],
+			$this->msg( 'tux-sst-search-info' )->parse()
+		);
+
 		$nonDefaults = $this->opts->getChangedValues();
 		$checkLabel = Xml::checkLabel(
 			$this->msg( 'tux-sst-case-sensitive' )->text(),
@@ -610,7 +615,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		return Html::rawElement(
 			'form',
 			[ 'action' => wfScript(), 'name' => 'searchform' ],
-			$title . $input . $submit . $checkLabel . $language
+			$title . $input . $submit . $typeHint . $checkLabel . $language
 		);
 	}
 

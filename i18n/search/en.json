@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "View at $1",
 	"tux-sst-search": "Search",
 	"tux-sst-search-ph": "Search translations",
+	"tux-sst-search-info": "Use operators <code>language:</code> or <code>group:</code> to further qualify the search criteria",
 	"tux-sst-count": "{{PLURAL:$1|One result found|$1 results found}}",
 	"tux-sst-facet-language": "Languages",
 	"tux-sst-facet-group": "Message groups",
