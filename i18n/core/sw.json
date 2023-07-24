@@ -68,7 +68,7 @@
 	"translate-mgs-submit": "Onyesha takwimu",
 	"translate-mgs-column-language": "Lugha",
 	"supportedlanguages-recenttranslations": "fasiri za hivi karibuni",
-	"supportedlanguages-count": "$1 {{PLURAL:$1|language|lugha}} kwa jumla.",
+	"supportedlanguages-count": "{{PLURAL:$1|Lugha}} $1 kwa jumla.",
 	"translate-save": "Hifadhi ($1)",
 	"translate-jssti-add": "Ongeza kwa orodha",
 	"translate-smg-right": "Mabadiliko yanayoingia",
