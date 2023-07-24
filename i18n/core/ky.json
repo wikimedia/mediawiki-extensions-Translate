@@ -89,8 +89,10 @@
 	"translate-gs-speakers": "Сүйлөөчүлөр",
 	"translate-gs-total": "Бардыгы",
 	"translate-searchprofile": "Котормолор",
+	"translate-msggroupselector-projects": "Билдирүүлөр тобу",
 	"translate-msggroupselector-search-placeholder": "Топторду издөө",
 	"translate-msggroupselector-search-all": "Баары",
+	"translate-msggroupselector-search-recent": "Акыркы",
 	"tux-languageselector": "Бул тилге которуу:",
 	"tux-tab-all": "Баары",
 	"tux-tab-untranslated": "Которулбаган",
@@ -100,12 +102,15 @@
 	"tux-status-fuzzy": "Эскирди",
 	"tux-status-translated": "Которулду",
 	"tux-status-saving": "Жарыяланууда...",
-	"tux-status-unsaved": "Жарыяланбаган",
+	"tux-status-unsaved": "Жарыяланбады",
+	"tux-editor-placeholder-language": "$1 котормоңуз",
 	"tux-editor-save-button-label": "Котормосун жарыялоо",
 	"tux-editor-skip-button-label": "Кийинки",
 	"tux-editor-cancel-button-label": "Жокко чыгаруу",
 	"tux-editor-translate-mode": "Тизме",
 	"tux-editor-page-mode": "Барак",
 	"tux-editor-doc-editor-cancel": "Жокко чыгаруу",
-	"tux-empty-list-translated-action": "Которуу"
+	"tux-empty-list-translated-action": "Которуу",
+	"tux-editor-close-tooltip": "Жабуу",
+	"tux-editor-loading": "Жүктөлүүдө..."
 }
