@@ -245,7 +245,7 @@
 	"pp-cancel-button-label": "Cancel",
 	"pp-save-message": "The page was published. You can [$1 edit] it.",
 	"pp-prepare-message": "The page was prepared for translation. See the diff below. Click the \"{{int:pp-save-button-label}}\" button if okay!",
-	"pp-already-prepared-message": "It seems the page has already been prepared for translation. There are no changes compared to the previous version.",
+	"pp-already-prepared-message": "It seems the page has either already been prepared for translation, or is unable to be prepared automatically. There are no changes compared to the previous version.",
 	"pp-diff-error": "There was an error while fetching the diff from the server.",
 	"pp-pagename-missing": "Please enter the page name.",
 	"pp-diff-old-header": "Source text",
