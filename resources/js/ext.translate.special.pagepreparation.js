@@ -115,8 +115,13 @@
 	 * @return {string}
 	 */
 	function addTranslateTags( pageContent ) {
-		pageContent = pageContent.replace( /(<languages ?\/>\n)/gi, '$1<translate>\n' );
-		pageContent = pageContent + '\n</translate>';
+		// Check for a <languages/> tag with a newline after.
+		// If there is no newline, there is some text/syntax after, so we don't want to add any <translate> tags now.
+		if ( /<languages ?\/>\n/gi.test( pageContent ) ) {
+			pageContent = pageContent.replace( /(<languages ?\/>\n)/gi, '$1<translate>\n' ) +
+				'\n</translate>';
+		}
+
 		return pageContent;
 	}
 
