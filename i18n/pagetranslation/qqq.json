@@ -274,7 +274,7 @@
 	"pp-cancel-button-label": "Used as label for the \"Cancel\" button.\n{{Identical|Cancel}}",
 	"pp-save-message": "Message shown after the page is saved with the prepared text. Parameters:\n* $1 - a link to edit the page",
 	"pp-prepare-message": "Info message shown after the page is prepared for translation",
-	"pp-already-prepared-message": "Info message shown if the page is already prepared for translation",
+	"pp-already-prepared-message": "Info message shown if the page has no changes after being prepared for translation. The page is either already prepared, or any changes that may be necessary cannot be done automatically",
 	"pp-diff-error": "Error message show on the Special:PagePreparation when there is an error fetching the diff from the server.",
 	"pp-pagename-missing": "Error message given when page title field is blank",
 	"pp-diff-old-header": "Header text for old revision for the diff shown at Special:PagePreparation",
