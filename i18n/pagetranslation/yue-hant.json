@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"tpt-translation-intro": "爾版係《[[$2]]》嘅<span class=\"plainlinks\">[$1 翻譯版]</span>，翻譯進度係$3%。",
+	"tpt-languages-nonzero": "$1（$2% 翻譯咗）",
+	"pt-movepage-list-no-pages": "維基百科無呢個名嘅文",
+	"pt-deletepage-list-no-pages": "維基百科無呢個名嘅文"
+}

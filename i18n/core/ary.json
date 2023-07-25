@@ -9,10 +9,13 @@
 		]
 	},
 	"translate-langstats-collapse": "طوي",
+	"translate-ls-column-group": "مجموعة د لميصاجات",
+	"translate-mgs-group": "مجموعة د لميصاجات:",
 	"supportedlanguages": "تّوتيق",
 	"translate-manage-import-new": "Méṣaj jdid $1",
 	"translate-manage-import-deleted": "Méṣaj memḫi $1",
 	"translate-documentation-language": "توثيق الرسالة",
+	"translate-msggroupselector-projects": "مجموعة د لميصاجات",
 	"translate-msggroupselector-search-all": "كلشي",
 	"tux-tab-all": "كلشي",
 	"tux-editor-collapse-tooltip": "طوي"
