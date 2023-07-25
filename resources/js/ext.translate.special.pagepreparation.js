@@ -36,20 +36,12 @@
 			prop: 'revisions',
 			rvprop: 'content',
 			rvlimit: '1',
+			formatversion: '2',
 			titles: pageName,
 			rvdifftotext: pageContent
 		} ).then( function ( data ) {
-			var obj;
-			for ( var page in data.query.pages ) {
-				obj = data.query.pages[ page ];
-			}
-
-			var diff;
-			if ( obj !== undefined ) {
-				diff = obj.revisions[ 0 ].diff[ '*' ];
-			}
-
-			return diff;
+			var page = data.query.pages[ 0 ];
+			return page && page.revisions[ 0 ].diff.body;
 		} );
 	}
 
@@ -98,13 +90,12 @@
 	 * @return {string}
 	 */
 	function cleanupTags( pageContent ) {
-		pageContent = pageContent.replace( /<\/?translate>\n?/gi, '' );
-		return pageContent;
+		return pageContent.replace( /<\/?translate>\n?/gi, '' );
 	}
 
 	/**
 	 * Add the <languages/> bar at the top of the page, if not present.
-	 * Remove the old {{languages}} template, if present.
+	 * Remove the old {{languages}} template if it is present.
 	 *
 	 * @param {string} pageContent
 	 * @return {string}
@@ -113,8 +104,7 @@
 		if ( !/<languages ?\/>/gi.test( pageContent ) ) {
 			pageContent = '<languages/>\n' + pageContent;
 		}
-		pageContent = pageContent.replace( /\{\{languages.*?\}\}/gi, '' );
-		return pageContent;
+		return pageContent.replace( /\{\{languages.*?}}/gi, '' );
 	}
 
 	/**
@@ -129,10 +119,8 @@
 		// Regex: https://regex101.com/r/sJ3gZ4/2
 		var categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
 			':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
-		pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
+		return pageContent.replace( categoryRegex, '\n</translate>\n' +
 			'[[$1{{#translation:}}$3]]\n<translate>\n' );
-
-		return pageContent;
 	}
 
 	/**
@@ -161,12 +149,11 @@
 	 * @return {string}
 	 */
 	function addNewLines( pageContent ) {
-		pageContent = pageContent.replace( /^(==.*==)\n*/gm, '\n$1\n\n' );
-		return pageContent;
+		return pageContent.replace( /^(==.*==)\n*/gm, '\n$1\n\n' );
 	}
 
 	/**
-	 * Add an anchor to a section header with the given headerText
+	 * Add an anchor to a section header with the given headerText.
 	 *
 	 * @param {string} headerText
 	 * @param {string} pageContent
@@ -179,7 +166,7 @@
 		// Search for the header having text as headerText
 		// Regex: https://regex101.com/r/fD6iL1
 		var headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
-		// This is to ensure the tags and the anchor are added only once
+		// This is to ensure that the tags and the anchor are added only once
 
 		if ( pageContent.indexOf( '<span id="' + mw.html.escape( anchorID ) + '"' ) === -1 ) {
 			pageContent = pageContent.replace( headerSearchRegex, '</translate>\n' +
@@ -195,14 +182,12 @@
 		// Replace the link text with the anchorID defined above
 		// Regex: https://regex101.com/r/kB5bK3
 		var replaceAnchorRegex = new RegExp( '(\\[\\[#)' + headerText + '(.*\\]\\])', 'gi' );
-		pageContent = pageContent.replace( replaceAnchorRegex, '$1' +
+		return pageContent.replace( replaceAnchorRegex, '$1' +
 			anchorID.replace( '$', '$$$' ) + '$2' );
-
-		return pageContent;
 	}
 
 	/**
-	 * Convert all the links into two-party form and add the 'Special:MyLanguage/' prefix
+	 * Convert all the links into the two-party form and add the 'Special:MyLanguage/' prefix
 	 * to links in valid namespaces for the wiki. For example, [[Example]] would be converted
 	 * to [[Special:MyLanguage/Example|Example]].
 	 *
@@ -214,7 +199,8 @@
 
 		var categoryNsString = getNamespaceRegex( 14 );
 		var normalizeRegex = new RegExp( '\\[\\[(?!' + categoryNsString + ')([^|]*?)\\]\\]', 'gi' );
-		// First convert all links into two-party form. If a link is not having a pipe,
+		// First, convert all links into the two-party form.
+		// If a link is not having a pipe,
 		// add a pipe and duplicate the link text
 		// Regex: https://regex101.com/r/pO9nN2
 		pageContent = pageContent.replace( normalizeRegex, '[[$1|$1]]' );
@@ -222,7 +208,7 @@
 		var nsString = getNamespaceRegex( null );
 		// Finds all the links to sections on the same page.
 		// Regex: https://regex101.com/r/cX6jT3
-		var sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?\]\]/gi );
+		var sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?]]/gi );
 		var match = sectionLinksRegex.exec( searchText );
 		while ( match !== null ) {
 			pageContent = addAnchor( match[ 1 ], pageContent );
@@ -232,10 +218,9 @@
 		var linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
 			'):)?[^:]*?)\\]\\]', 'gi' );
 		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
-		// mainspace.
+		// main namespace.
 		// Regex: https://regex101.com/r/zZ9jH9
-		pageContent = pageContent.replace( linkPrefixRegex, '[[Special:MyLanguage/$1]]' );
-		return pageContent;
+		return pageContent.replace( linkPrefixRegex, '[[Special:MyLanguage/$1]]' );
 	}
 
 	/**
@@ -255,13 +240,11 @@
 
 		// Add translate tags for files without captions
 		var fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
-		pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
-
-		return pageContent;
+		return pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
 	}
 
 	/**
-	 * Keep templates outside <translate>....</translate> tags
+	 * Keep templates outside <translate>....</translate> tags.
 	 * Does not deal with nested templates, needs manual changes.
 	 *
 	 * @param {string} pageContent
@@ -271,8 +254,7 @@
 		// Regex: https://regex101.com/r/wA3iX0
 		var templateRegex = new RegExp( /^({{[\s\S]*?}})/gm );
 
-		pageContent = pageContent.replace( templateRegex, '</translate>\n$1\n<translate>' );
-		return pageContent;
+		return pageContent.replace( templateRegex, '</translate>\n$1\n<translate>' );
 	}
 
 	/**
@@ -287,8 +269,7 @@
 		// Removes redundant <translate> tags
 		pageContent = pageContent.replace( /\n<translate>(\n*?)<\/translate>/gi, '' );
 		// Removes the Special:MyLanguage/ prefix for section links
-		pageContent = pageContent.replace( /Special:MyLanguage\/#/gi, '#' );
-		return pageContent;
+		return pageContent.replace( /Special:MyLanguage\/#/gi, '#' );
 	}
 
 	/**
@@ -307,15 +288,10 @@
 			prop: 'revisions',
 			rvprop: 'content',
 			rvlimit: '1',
+			formatversion: '2',
 			titles: pageName
 		} ).then( function ( data ) {
-			var obj;
-
-			for ( var page in data.query.pages ) {
-				obj = data.query.pages[ page ];
-			}
-
-			return obj.revisions[ 0 ][ '*' ];
+			return data.query.pages[ 0 ].revisions[ 0 ].content;
 		} );
 	}
 
@@ -328,11 +304,9 @@
 
 		var pageContent;
 		$( '#action-save' ).on( 'click', function () {
-			var pageUrl = '';
-
 			var pageName = $input.val().trim();
 			savePage( pageName, pageContent ).done( function () {
-				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
+				var pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
 				$( '.messageDiv' )
 					.empty()
 					.append( mw.message( 'pp-save-message', pageUrl ).parseDom() )
