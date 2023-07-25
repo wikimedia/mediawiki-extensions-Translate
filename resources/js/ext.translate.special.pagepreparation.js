@@ -73,7 +73,7 @@
 	 * @return {string}
 	 */
 	function addLanguageBar( pageContent ) {
-		if ( !pageContent.match( /<languages\/>/gi ) ) {
+		if ( !pageContent.match( /<languages ?\/>/gi ) ) {
 			pageContent = '<languages/>\n' + pageContent;
 		}
 		pageContent = pageContent.replace( /\{\{languages.*?\}\}/gi, '' );
@@ -115,7 +115,7 @@
 	 * @return {string}
 	 */
 	function addTranslateTags( pageContent ) {
-		pageContent = pageContent.replace( /(<languages\/>\n)/gi, '$1<translate>\n' );
+		pageContent = pageContent.replace( /(<languages ?\/>\n)/gi, '$1<translate>\n' );
 		pageContent = pageContent + '\n</translate>';
 		return pageContent;
 	}
