@@ -32,16 +32,14 @@
 		var api = new mw.Api();
 
 		return api.post( {
-			action: 'query',
-			prop: 'revisions',
-			rvprop: 'content',
-			rvlimit: '1',
+			action: 'compare',
+			prop: 'diff',
 			formatversion: '2',
-			titles: pageName,
-			rvdifftotext: pageContent
+			fromtitle: pageName,
+			toslots: 'main',
+			'totext-main': pageContent
 		} ).then( function ( data ) {
-			var page = data.query.pages[ 0 ];
-			return page && page.revisions[ 0 ].diff.body;
+			return data.compare.body;
 		} );
 	}
 
