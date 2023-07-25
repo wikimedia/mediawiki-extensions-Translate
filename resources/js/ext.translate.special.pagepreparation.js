@@ -355,6 +355,7 @@
 				alert( mw.msg( 'pp-pagename-missing' ) );
 				return;
 			}
+			$( this ).prop( 'disabled', true );
 
 			$.when( getPageContent( pageName ) ).done( function ( content ) {
 				pageContent = content;
@@ -370,14 +371,15 @@
 				pageContent = postPreparationCleanup( pageContent );
 				pageContent = pageContent.trim();
 				getDiff( pageName, pageContent ).done( function ( diff ) {
+					$( '#action-prepare' ).prop( 'disabled', false );
 					if ( diff === undefined ) {
 						$messageDiv.text( mw.msg( 'pp-diff-error' ) ).removeClass( 'hide' );
 						return;
 					}
 
-					$( '.diff tbody' ).append( diff );
-					$( '.divDiff' ).removeClass( 'hide' );
 					if ( diff !== '' ) {
+						$( '.diff tbody' ).html( diff );
+						$( '.divDiff' ).removeClass( 'hide' );
 						$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).removeClass( 'hide' );
 						$( '#action-prepare' ).addClass( 'hide' );
 						$( '#action-save' ).removeClass( 'hide' );
