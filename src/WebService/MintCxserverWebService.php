@@ -13,11 +13,13 @@ namespace MediaWiki\Extension\Translate\WebService;
 class MintCxserverWebService extends CxserverWebService {
 	private int $wikitextCount;
 	private const WIKITEXT_REGEX = '/{?{(PLURAL|GRAMMAR|GENDER):/';
+	private const EXCLUDED_TARGET_LANGUAGES = [ 'zh' ];
 
 	protected function handlePairsForService( array $response ): array {
 		$pairs = [];
 		foreach ( $response[$this->getServiceName()] as $source => $targets ) {
-			foreach ( $targets as $target ) {
+			$filteredTargets = array_diff( $targets, self::EXCLUDED_TARGET_LANGUAGES );
+			foreach ( $filteredTargets as $target ) {
 				$pairs[$source][$target] = true;
 			}
 		}
