@@ -215,7 +215,7 @@
 	"translate-tes-server-error": "取得搜尋建議失敗",
 	"translate-tes-group-not-found": "沒有符合的結果",
 	"translate-tes-type-to-search": "輸入以開始搜尋",
-	"supportedlanguages": "有效語言",
+	"supportedlanguages": "活躍的語言",
 	"supportedlanguages-summary": "本頁顯示在{{SITENAME}}上所有有效語言清單，\n連同翻譯該語言的翻譯人員姓名，\n翻譯人員的姓名越大，代表翻譯人員的編輯貢獻越多，\n底線的顏色用來表示翻譯人員最近活動的狀況。",
 	"supportedlanguages-colorlegend": "色彩圖例：最近一次翻譯於 $1 天前。",
 	"supportedlanguages-sqlite-error": "不支援 SQLite",
