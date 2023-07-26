@@ -112,5 +112,7 @@
 	"tux-editor-doc-editor-cancel": "Жокко чыгаруу",
 	"tux-empty-list-translated-action": "Которуу",
 	"tux-editor-close-tooltip": "Жабуу",
+	"tux-editor-expand-tooltip": "жаюу",
+	"tux-editor-collapse-tooltip": "түрүү",
 	"tux-editor-loading": "Жүктөлүүдө..."
 }
