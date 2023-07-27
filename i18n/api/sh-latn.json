@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"apihelp-aggregategroups-summary": "Upravljanje zbirnim grupama poruka.",
+	"apihelp-aggregategroups-extended-description": "Možete dodavati i uklanjati zbirne grupe poruka i pridruživati ili odstranjivati grupe poruka iz njih (jednu po jednu).",
+	"apihelp-aggregategroups-param-do": "Šta raditi u zbirnoj grupi poruka.",
+	"apihelp-aggregategroups-param-aggregategroup": "Naznaka zbirne grupe poruka.",
+	"apihelp-aggregategroups-param-group": "Naznaka grupe poruka.",
+	"apihelp-aggregategroups-param-groupname": "Naziv zbirne grupe poruka.",
+	"apihelp-aggregategroups-param-groupdescription": "Opis zbirne grupe poruka.",
+	"apihelp-aggregategroups-example-1": "Pridruži grupu",
+	"apihelp-groupreview-summary": "Postavi stanja radnog toka za grupe poruka.",
+	"apihelp-groupreview-param-group": "Grupa poruka.",
+	"apihelp-groupreview-param-language": "Kod jezika.",
+	"apihelp-groupreview-param-state": "Novo stanje grupe.",
+	"apihelp-groupreview-example-1": "Označi stanje njemačkog prijevoda grupa poruka \"group-Example\" spremnim",
+	"apihelp-query+languagestats-summary": "Ispitaj jezičke statistike.",
+	"apihelp-query+languagestats-param-language": "Kod jezika.",
+	"apihelp-query+languagestats-param-group": "Naznaka grupe poruka.",
+	"apihelp-query+languagestats-example-1": "Spisak statistika dovršenosti prijevoda na finski",
+	"apihelp-managemessagegroups-param-changesetName": "Naziv skupa promjena — Zadano / Bez nadzora / MediaWiki itd.",
+	"apihelp-managemessagegroups-param-changesetModified": "Unix vremenska oznaka kada je promjena posljednji put modificirana. Ako nakon toga je izmijenjena, izvršnik će izbaciti pogrešku."
+}

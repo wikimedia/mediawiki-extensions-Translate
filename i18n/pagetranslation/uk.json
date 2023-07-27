@@ -23,6 +23,7 @@
 		]
 	},
 	"pagetranslation": "Переклад сторінок",
+	"nstab-translations": "Блок перекладу",
 	"right-pagetranslation": "Позначення версій сторінок для перекладу",
 	"action-pagetranslation": "керування сторінками, які можна перекладати,",
 	"tps-edit-sourcepage-text": "Ви редагуєте джерело сторінки перекладу. Будь ласка, переконайтесь, що ви знайомі із документацією:\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Редагування вихідного тексту] \n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Приклади використання розмітки]",
@@ -110,6 +111,7 @@
 	"tpt-aggregategroup-save": "Зберегти",
 	"tpt-aggregategroup-close": "Закрити",
 	"tpt-aggregategroup-add-new": "Додати нову загальну групу",
+	"tpt-aggregategroup-select-source-language": "Налаштована вихідна мова (необов'язково):",
 	"tpt-aggregategroup-new-name": "Назва:",
 	"tpt-aggregategroup-new-description": "Опис (необов'язково):",
 	"tpt-aggregategroup-remove-confirm": "Ви дійсно бажаєте видалити цю загальну групу?",
@@ -268,11 +270,12 @@
 	"tpt-generic-confirm": "Будь ласка, підтвердіть дію.",
 	"tpt-generic-button": "Підтвердити",
 	"tpt-validation-not-insertable": "Назва змінної перекладу \"$1\" не працює як вставна в інтерфейсі перекладу. Уникайте використання спеціальних символів.",
-	"tpt-validation-name-reuse": "Змінна перекладу \"$1\" визначається кілька разів з різним змістом. Змініть назви змінних, щоб вони були унікальними наодинці перекладу.",
+	"tpt-validation-name-reuse": "Змінна перекладу «$1» визначається кілька разів з різним вмістом. Змініть назви змінних, щоб вони були унікальними в межах блоку перекладу.",
 	"visualeditor-annotations-translate-start": "Початок перекладу вмісту",
 	"visualeditor-annotations-translate-end": "Кінець змісту для перекладу",
 	"visualeditor-annotations-translate-description": "Цей діапазон позначений як перекладний. Переконайтеся, що ви дотримуєтесь вказівок щодо [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/uk#Зміна_вихідного_тексту зміни вихідного тексту].",
 	"visualeditor-annotations-tvar-start": "Початок неперекладального вмісту",
 	"visualeditor-annotations-tvar-end": "Кінець неперекладального вмісту",
-	"visualeditor-annotations-tvar-description": "Цей діапазон позначений як неперекладний. Для отримання додаткової інформації зверніться до [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сегментації вихідного тексту]."
+	"visualeditor-annotations-tvar-description": "Цей діапазон позначений як неперекладний. Для отримання додаткової інформації зверніться до [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сегментації вихідного тексту].",
+	"tag-translate-translation-pages-description": "Автоматичні редагування сторінок перекладу розширенням Translate"
 }
