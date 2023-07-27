@@ -212,7 +212,7 @@
 	"pp-cancel-button-label": "Annulla",
 	"pp-save-message": "La pagina è stata pubblicata. Puoi [$1 modificarla].",
 	"pp-prepare-message": "La pagina è stata preparata per la traduzione. Vedi le differenze di seguito. Clicca \"{{int:pp-save-button-label}}\" se va bene!",
-	"pp-already-prepared-message": "Sembra che la pagina sia stata già preparata per la traduzione. Non ci sono modifiche rispetto alla versione precedente.",
+	"pp-already-prepared-message": "Sembra che la pagina sia già stata preparata per la traduzione o non possa essere preparata automaticamente. Non ci sono modifiche rispetto alla versione precedente.",
 	"pp-diff-error": "Si è verificato un errore durante il recupero del diff dal server.",
 	"pp-pagename-missing": "Inserisci il nome della pagina.",
 	"pp-diff-old-header": "Testo sorgente",

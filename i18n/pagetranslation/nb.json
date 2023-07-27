@@ -250,7 +250,7 @@
 	"pp-cancel-button-label": "Avbryt",
 	"pp-save-message": "Siden ble publisert. Du kan [$1 redigere] den.",
 	"pp-prepare-message": "Siden ble forberedt for oversettelse. Se diffen nedenfor. Klikk på «{{int:pp-save-button-label}}»-knappen om alt ser greit ut.",
-	"pp-already-prepared-message": "Det ser ut til at siden allerede har blitt forberedt for oversettelse. Det er ingen endringer sammenlignet med forrige versjon.",
+	"pp-already-prepared-message": "Det ser ut til at siden allerede har blitt forberedt for oversettelse, eller ikke kan forberedes automatisk. Det er ingen endringer sammenlignet med forrige versjon.",
 	"pp-diff-error": "Det var en feil under henting av diffen fra tjeneren.",
 	"pp-pagename-missing": "Skriv inn sidenavnet.",
 	"pp-diff-old-header": "Kildetekst",

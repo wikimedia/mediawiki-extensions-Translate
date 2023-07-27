@@ -255,7 +255,7 @@
 	"pp-cancel-button-label": "Abbrechen",
 	"pp-save-message": "Die Seite wurde veröffentlicht. Du kannst sie [$1 bearbeiten].",
 	"pp-prepare-message": "Die Seite wurde für die Übersetzung vorbereitet. Sieh dir den unten stehenden Unterschied an. Klicke auf „{{int:pp-save-button-label}}“, wenn alles in Ordnung ist!",
-	"pp-already-prepared-message": "Es scheint, als ob die Seite bereits für die Übersetzung vorbereitet wurde. Es gibt im Vergleich zur aktuellen Version keine Unterschiede.",
+	"pp-already-prepared-message": "Anscheinend ist die Seite entweder bereits für die Übersetzung vorbereitet oder sie kann nicht automatisch vorbereitet werden. Es gibt keine Änderungen im Vergleich zur vorherigen Version.",
 	"pp-diff-error": "Es gab einen Fehler beim Abrufen des Versionsunterschiedes vom Server.",
 	"pp-pagename-missing": "Bitte den Seitennamen eingeben.",
 	"pp-diff-old-header": "Quelltext",
