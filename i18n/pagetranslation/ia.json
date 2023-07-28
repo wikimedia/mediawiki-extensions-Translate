@@ -241,7 +241,7 @@
 	"pp-cancel-button-label": "Cancellar",
 	"pp-save-message": "Le pagina ha essite publicate. Tu pote [$1 modificar] lo.",
 	"pp-prepare-message": "Le pagina ha essite preparate pro traduction. Vide le diff sequente. Clicca sur le button \"{{int:pp-save-button-label}}\" si toto es in ordine.",
-	"pp-already-prepared-message": "Il pare que le pagina ha jam essite preparate pro traduction. Il non ha cambiamentos in comparation con le version precedente.",
+	"pp-already-prepared-message": "Il pare que le pagina ha jam essite preparate pro traduction, o non pote esser preparate automaticamente. Il non ha cambiamentos in comparation con le version precedente.",
 	"pp-diff-error": "Un error ha occurrite durante le obtention del diff ab le servitor.",
 	"pp-pagename-missing": "Per favor entra le nomine del pagina.",
 	"pp-diff-old-header": "Texto fonte",
