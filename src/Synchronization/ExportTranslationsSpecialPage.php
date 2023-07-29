@@ -15,7 +15,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Message;
 use MessageGroup;
 use MessageHandle;
-use Parser;
+use ParserFactory;
 use SpecialPage;
 use Status;
 use Title;
@@ -41,15 +41,15 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	protected $groupId;
 	/** @var TitleFormatter */
 	private $titleFormatter;
-	/** @var Parser */
-	private $parser;
+	/** @var ParserFactory */
+	private $parserFactory;
 	/** @var string[] */
 	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
 
-	public function __construct( TitleFormatter $titleFormatter, Parser $parser ) {
+	public function __construct( TitleFormatter $titleFormatter, ParserFactory $parserFactory ) {
 		parent::__construct( 'ExportTranslations' );
 		$this->titleFormatter = $titleFormatter;
-		$this->parser = $parser;
+		$this->parserFactory = $parserFactory;
 	}
 
 	/** @param null|string $par */
@@ -277,7 +277,10 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				$translationPage = $translatablePage->getTranslationPage( $collection->getLanguage() );
 
 				$translationPage->filterMessageCollection( $collection );
-				$text = $translationPage->generateSourceFromMessageCollection( $this->parser, $collection );
+				$text = $translationPage->generateSourceFromMessageCollection(
+					$this->parserFactory->getInstance(),
+					$collection
+				);
 
 				$displayTitle = $translatablePage->getPageDisplayTitle( $this->language );
 				if ( $displayTitle ) {
