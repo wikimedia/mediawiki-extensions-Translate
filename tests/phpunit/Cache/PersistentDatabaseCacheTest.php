@@ -10,6 +10,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
+ * @group Database
  * @covers \MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache
  * @covers \MediaWiki\Extension\Translate\Cache\PersistentCacheEntry
  */
