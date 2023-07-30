@@ -7,7 +7,10 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 
-/** @covers MessageGroupStats */
+/**
+ * @group Database
+ * @covers MessageGroupStats
+ */
 class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();

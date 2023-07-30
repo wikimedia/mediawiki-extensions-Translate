@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
+ * @group Database
  * @covers \MediaWiki\Extension\Translate\Validation\ValidationRunner
  * @covers \MediaWiki\Extension\Translate\Validation\ValidationResult
  */

@@ -11,6 +11,7 @@ use MediaWiki\HookContainer\HookContainer;
 
 /**
  * @group medium
+ * @group Database
  * @covers WikiPageMessageGroup
  */
 class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {

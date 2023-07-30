@@ -6,6 +6,7 @@ use MediaWiki\Extension\Translate\Services;
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @group Database
  * @covers \MediaWiki\Extension\Translate\Services
  */
 class ServicesTest extends MediaWikiIntegrationTestCase {

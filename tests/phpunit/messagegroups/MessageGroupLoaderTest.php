@@ -2,7 +2,10 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 
-/** @covers MessageGroupLoader */
+/**
+ * @group Database
+ * @covers MessageGroupLoader
+ */
 class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 
 	protected $cacheLoaderMock;

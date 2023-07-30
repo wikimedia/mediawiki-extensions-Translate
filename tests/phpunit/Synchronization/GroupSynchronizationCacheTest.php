@@ -9,6 +9,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
+ * @group Database
  * @covers \MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache
  * @covers \MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationResponse
  */
