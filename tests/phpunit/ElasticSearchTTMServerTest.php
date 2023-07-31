@@ -9,12 +9,10 @@ use MediaWiki\Extension\Translate\Services;
  * @covers \ElasticSearchTTMServer
  */
 class ElasticSearchTTMServerTest extends MediaWikiIntegrationTestCase {
-	private array $config = [];
-
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->config = [
+		$config = [
 			'primary' => [
 				'class' => ElasticSearchTTMServer::class,
 				'type' => 'ttmserver',
@@ -28,7 +26,7 @@ class ElasticSearchTTMServerTest extends MediaWikiIntegrationTestCase {
 		];
 
 		$this->setMwGlobals( [
-			'wgTranslateTranslationServices' => $this->config,
+			'wgTranslateTranslationServices' => $config,
 			'wgTranslateTranslationDefaultService' => 'primary',
 		] );
 	}

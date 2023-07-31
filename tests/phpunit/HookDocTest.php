@@ -10,9 +10,9 @@
 
 /** @coversNothing */
 class HookDocTest extends MediaWikiIntegrationTestCase {
-	protected $documented = [];
-	protected $used = [];
-	protected $paths = [
+	private array $documented = [];
+	private array $used = [];
+	private array $paths = [
 		'js' => [
 			'resources/js',
 		],

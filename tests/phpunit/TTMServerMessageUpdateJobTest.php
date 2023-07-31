@@ -12,11 +12,8 @@ use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
  * @covers TTMServerMessageUpdateJob
  */
 class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
-	/**
-	 * @var WritableTtmServer[] used to link our mocks with TestableTTMServer built by the
-	 * factory
-	 */
-	public static $mockups = [];
+	/** @var WritableTtmServer[] used to link our mocks with TestableTTMServer built by the factory */
+	public static array $mockups = [];
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -218,10 +215,10 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
  * because other ones would need to have a more complex context to prepare
  */
 class TestableTTMServerMessageUpdateJob extends TTMServerMessageUpdateJob {
-	private $resentJobs = [];
-	private $handleMock;
+	private array $resentJobs = [];
+	private MessageHandle $handleMock;
 
-	public function __construct( Title $title, $params, $handleMock ) {
+	public function __construct( Title $title, $params, MessageHandle $handleMock ) {
 		parent::__construct( $title, $params );
 		$this->handleMock = $handleMock;
 	}

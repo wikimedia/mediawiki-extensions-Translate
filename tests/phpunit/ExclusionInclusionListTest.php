@@ -11,10 +11,9 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 /** @covers FileBasedMessageGroup */
 class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 
-	/** @var MessageGroup */
-	protected $group;
-	protected $codes;
-	protected $groupConfiguration = [
+	private MessageGroup $group;
+	private array $codes;
+	private array $groupConfiguration = [
 		'BASIC' => [
 			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
