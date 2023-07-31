@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"tpt-languages-legend": "Drugi jezici:",
+	"tpt-languages-nonzero": "$1 ($2% prevedeno)",
+	"tpt-aggregategroup-update-cancel": "Otkaži",
+	"pm-cancel-button-label": "Otkaži",
+	"pp-cancel-button-label": "Otkaži"
+}
