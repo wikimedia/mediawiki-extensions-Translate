@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Caden99",
 			"Minh Nguyen",
 			"Pols12",
 			"Trần Nguyễn Minh Huy",
@@ -189,7 +190,7 @@
 	"pp-cancel-button-label": "Hủy bỏ",
 	"pp-save-message": "Trang đã được lưu. Bạn có thể [$1 sửa đổi] nó.",
 	"pp-prepare-message": "Trang đã được chuẩn bị để dịch. Xem khác biệt bên dưới. Bấm nút “{{int:pp-save-button-label}}” nếu được.",
-	"pp-already-prepared-message": "Hình như trang đã được chuẩn bị để dịch rồi. Không có khác biệt so với phiên bản trước.",
+	"pp-already-prepared-message": "Có vẻ như trang đã được chuẩn bị để dịch hoặc không thể chuẩn bị tự động. Không có thay đổi so với phiên bản trước.",
 	"pp-pagename-missing": "Vui lòng nhập tên trang.",
 	"pp-diff-old-header": "Văn bản gốc",
 	"pp-diff-new-header": "Văn bản đã chuẩn bị",
