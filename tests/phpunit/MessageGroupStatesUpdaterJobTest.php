@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -16,6 +17,7 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();

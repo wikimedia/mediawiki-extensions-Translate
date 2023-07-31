@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -24,6 +25,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
 		] );
 
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();

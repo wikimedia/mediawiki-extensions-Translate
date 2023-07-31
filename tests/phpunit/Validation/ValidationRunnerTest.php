@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
+use MediaWiki\HookContainer\HookContainer;
 
 /**
  * @group Database
@@ -19,10 +20,8 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setTemporaryHook(
-			'TranslatePostInitGroups',
-			[ $this, 'getTestGroups' ]
-		);
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
+		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );

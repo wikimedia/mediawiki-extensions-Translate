@@ -6,6 +6,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 
 /**
  * @group Database
@@ -15,6 +16,7 @@ class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
 			static function ( &$list ) {

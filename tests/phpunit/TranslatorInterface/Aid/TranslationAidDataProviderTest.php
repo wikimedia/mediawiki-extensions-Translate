@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWikiIntegrationTestCase;
 use MessageHandle;
 use MessageIndex;
@@ -23,6 +24,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( [
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
 		] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();

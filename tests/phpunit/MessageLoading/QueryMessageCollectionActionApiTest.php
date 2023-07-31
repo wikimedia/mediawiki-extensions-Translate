@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageLoading;
 use ApiTestCase;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use WANObjectCache;
 use WikiMessageGroup;
 
@@ -20,6 +21,7 @@ class QueryMessageCollectionActionApiTest extends ApiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
 			static function ( &$list ) {

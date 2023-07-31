@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use HashBagOStuff;
 use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use MockWikiMessageGroup;
@@ -18,6 +19,7 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();

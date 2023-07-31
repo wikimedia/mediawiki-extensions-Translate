@@ -7,6 +7,7 @@ use HashBagOStuff;
 use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
@@ -27,6 +28,7 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
 		] );
 
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();

@@ -10,6 +10,7 @@ use HashBagOStuff;
 use HashMessageIndex;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 use MessageIndex;
 use MockWikiMessageGroup;
@@ -38,6 +39,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 			],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();
