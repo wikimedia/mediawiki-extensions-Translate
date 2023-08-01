@@ -41,6 +41,9 @@
 				.val(),
 			api = new mw.Api();
 
+		// Clear the selected group value
+		$parent.find( '.tes-entity-selector' ).find( 'input[type="text"]' ).val( '' );
+
 		var successFunction = function () {
 			var aAttr, $a, spanAttr, $span, $ol;
 
@@ -61,7 +64,6 @@
 			$ol = $( '#mw-tpa-grouplist-' + parentId );
 			$ol.append( $( '<li>' ).append( $a, $span ) );
 			$span.on( 'click', dissociate );
-			$parent.find( '.tes-entity-selector' ).find( 'input[type="text"]' ).val( '' );
 		};
 
 		// Get the label for the value and make API request if valid
@@ -226,6 +228,16 @@
 			this.requestCache = {};
 		}
 
+		function associateSelectedGroup( event ) {
+			if ( lastSelectedGroup ) {
+				associate( event, lastSelectedGroup.data );
+				lastSelectedGroup = null;
+			} else {
+				// eslint-disable-next-line no-alert
+				alert( mw.msg( 'tpt-invalid-group' ) );
+			}
+		}
+
 		var $subGroups = $( '.tp-sub-groups' ), $button;
 		$subGroups.each( function () {
 			$button = $( '<button>' )
@@ -234,9 +246,7 @@
 			$( this ).append( getEntitySelector( onEntityItemSelect ).$element, $button );
 		} );
 
-		$( '.tp-aggregate-add-button' ).on( 'click', function ( event ) {
-			associate( event, lastSelectedGroup.data );
-		} );
+		$( '.tp-aggregate-add-button' ).on( 'click', associateSelectedGroup );
 		$( '.tp-aggregate-remove-button' ).on( 'click', dissociate );
 		$( '.tp-aggregate-remove-ag-button' ).on( 'click', removeGroup );
 		$( '.tp-aggregategroup-update' ).on( 'click', editGroup );
@@ -359,9 +369,7 @@
 					} )
 					.val( mw.msg( 'tpt-aggregategroup-add' ) );
 
-				$addButton.on( 'click', function ( event ) {
-					associate( event, lastSelectedGroup.data );
-				} );
+				$addButton.on( 'click', associateSelectedGroup );
 
 				var entitySelector = getEntitySelector( onEntityItemSelect );
 				$subGroupContents.append( entitySelector.$element, $addButton );
