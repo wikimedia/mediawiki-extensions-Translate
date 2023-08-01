@@ -276,7 +276,7 @@
 	"pp-cancel-button-label": "Annuler",
 	"pp-save-message": "La page a été publiée. Vous pouvez la [$1 modifier].",
 	"pp-prepare-message": "La page a été préparée pour sa traduction. Consultez les différences ci-dessous. Cliquez sur le bouton « {{int:pp-save-button-label}} » si cela vous convient !",
-	"pp-already-prepared-message": "Il semble que la page ait déjà été préparée pour sa traduction. Il n’y a eu aucune modification depuis sa version précédente.",
+	"pp-already-prepared-message": "Il semble que la page soit déjà préparée pour la traduction, ou ne peut pas être préparée automatiquement. Il n’y a eu aucune modification depuis sa version précédente.",
 	"pp-diff-error": "Une erreur est survenue lors de la récupération des différences sur le serveur.",
 	"pp-pagename-missing": "Veuillez saisir le nom de la page.",
 	"pp-diff-old-header": "Texte source",

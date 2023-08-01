@@ -95,6 +95,8 @@
 	"tux-editor-in-other-languages": "Eará gielaide",
 	"tux-notices-hide": "čiega",
 	"tux-editor-save-failed": "Jorgalusa almmuheapmi ii lihkostuvvan: $1",
+	"tux-editor-message-desc-more": "Čájet eambbo",
+	"tux-editor-message-desc-less": "Čájet unnit",
 	"tux-editor-translate-mode": "Listu",
 	"tux-proofread-edit-label": "Rievdat",
 	"tux-editor-page-mode": "Siidu",

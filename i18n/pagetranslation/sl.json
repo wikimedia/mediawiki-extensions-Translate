@@ -248,7 +248,7 @@
 	"pp-cancel-button-label": "Prekliči",
 	"pp-save-message": "Stran je objavljena. Lahko jo [$1 urejate].",
 	"pp-prepare-message": "Stran je pripravljena za prevod. Glejte razliko spodaj. Če je v redu, kliknite gumb »{{int:pp-save-button-label}}«!",
-	"pp-already-prepared-message": "Videti je, da je stran že pripravljena za prevod. V primerjavi s prejšnjo redakcijo ni sprememb.",
+	"pp-already-prepared-message": "Videti je, da je stran že pripravljena za prevod ali pa je ni mogoče pripraviti samodejno. V primerjavi s prejšnjo redakcijo ni sprememb.",
 	"pp-diff-error": "Pri pridobivanju razlike iz strežnika je prišlo do napake.",
 	"pp-pagename-missing": "Vnesite ime strani.",
 	"pp-diff-old-header": "Izvirno besedilo",
