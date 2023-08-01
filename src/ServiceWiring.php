@@ -232,7 +232,7 @@ return [
 
 	'Translate:TranslationStashReader' => static function ( MediaWikiServices $services ): TranslationStashReader
 	{
-		$db = $services->getDBLoadBalancer()->getConnectionRef( DB_REPLICA );
+		$db = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		return new TranslationStashStorage( $db );
 	},
 

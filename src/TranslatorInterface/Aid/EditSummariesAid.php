@@ -26,7 +26,7 @@ class EditSummariesAid extends TranslationAid {
 		$revisionFactory = $mwService->getRevisionFactory();
 
 		// Build the query to fetch the last x revisions
-		$dbr = $mwService->getDBLoadBalancer()->getConnectionRef( DB_REPLICA );
+		$dbr = $mwService->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$options = [ 'ORDER BY' => 'rev_timestamp DESC, rev_id DESC' ];
 		$options[ 'LIMIT' ] = self::COMMENT_COUNT;
 		$aid = $pageTitle->getArticleID();

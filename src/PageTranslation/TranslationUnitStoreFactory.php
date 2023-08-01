@@ -28,7 +28,7 @@ class TranslationUnitStoreFactory {
 			throw new LogicException( 'Page must exist' );
 		}
 
-		return new TranslationUnitStore( $this->lb->getConnectionRef( DB_REPLICA ), $pageId );
+		return new TranslationUnitStore( $this->lb->getConnection( DB_REPLICA ), $pageId );
 	}
 
 	public function getWriter( Title $page ): TranslationUnitStore {
@@ -37,6 +37,6 @@ class TranslationUnitStoreFactory {
 			throw new LogicException( 'Page must exist' );
 		}
 
-		return new TranslationUnitStore( $this->lb->getConnectionRef( DB_PRIMARY ), $pageId );
+		return new TranslationUnitStore( $this->lb->getConnection( DB_PRIMARY ), $pageId );
 	}
 }

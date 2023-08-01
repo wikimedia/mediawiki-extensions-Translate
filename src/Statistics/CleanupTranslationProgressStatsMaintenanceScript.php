@@ -25,7 +25,7 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 
 	public function execute() {
 		$services = MediaWikiServices::getInstance();
-		$db = $services->getDBLoadBalancer()->getConnectionRef( DB_PRIMARY );
+		$db = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$dbGroupIds = $db->selectFieldValues(
 			'translate_groupstats',

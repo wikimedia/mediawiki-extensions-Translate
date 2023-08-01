@@ -449,11 +449,17 @@
 	},
 	"ActionFilteredLogs": {
 		"translationreview": {
-			"message": [ "message" ],
-			"group": [ "group" ]
+			"message": [
+				"message"
+			],
+			"group": [
+				"group"
+			]
 		},
 		"import": {
-			"translatable-bundle": [ "translatable-bundle" ]
+			"translatable-bundle": [
+				"translatable-bundle"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -1423,6 +1429,8 @@
 			"translate": true
 		}
 	},
-	"ParsoidModules": [ "MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateExt" ],
+	"ParsoidModules": [
+		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateExt"
+	],
 	"manifest_version": 2
 }

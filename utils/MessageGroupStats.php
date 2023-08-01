@@ -643,7 +643,7 @@ class MessageGroupStats {
 		}
 
 		$lb = $mwInstance->getDBLoadBalancer();
-		$dbw = $lb->getConnectionRef( DB_PRIMARY ); // avoid connecting yet
+		$dbw = $lb->getConnection( DB_PRIMARY ); // avoid connecting yet
 		$table = self::TABLE;
 		$callers = wfGetAllCallers( 50 );
 

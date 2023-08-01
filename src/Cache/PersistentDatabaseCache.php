@@ -29,7 +29,7 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	/** @return PersistentCacheEntry[] */
 	public function get( string ...$keynames ): array {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$rows = $dbr->select(
 			self::TABLE_NAME,
 			[ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ],
@@ -41,7 +41,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function getWithLock( string $keyname ): ?PersistentCacheEntry {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbr = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		$conds = [ 'tc_key' => $keyname ];
 
@@ -59,7 +59,7 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	/** @return PersistentCacheEntry[] */
 	public function getByTag( string $tag ): array {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$rows = $dbr->select(
 			self::TABLE_NAME,
 			[ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ],
@@ -71,7 +71,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function has( string $keyname ): bool {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$hasRow = $dbr->selectRow(
 			self::TABLE_NAME,
 			'tc_key',
@@ -83,7 +83,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function hasEntryWithTag( string $tag ): bool {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$hasRow = $dbr->selectRow(
 			self::TABLE_NAME,
 			'tc_key',
@@ -95,7 +95,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function hasExpiredEntry( string $keyname ): bool {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$row = $dbr->selectRow(
 			self::TABLE_NAME,
 			'tc_expired',
@@ -113,7 +113,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function set( PersistentCacheEntry ...$entries ): void {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		foreach ( $entries as $entry ) {
 			$value = $this->jsonCodec->serialize( $entry->value() );
@@ -141,7 +141,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function setExpiry( string $keyname, int $expiryTime ): void {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->update(
 			self::TABLE_NAME,
 			[ 'tc_exptime' => $expiryTime ],
@@ -151,7 +151,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function delete( string ...$keynames ): void {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_key' => $keynames ],
@@ -160,7 +160,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function deleteEntriesWithTag( string $tag ): void {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_tag' => $tag ],
@@ -169,7 +169,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function clear(): void {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->delete(
 			self::TABLE_NAME,
 			'*',
