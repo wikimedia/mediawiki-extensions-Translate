@@ -50,15 +50,14 @@
 			prop: 'revisions',
 			rvprop: 'content',
 			rvstart: fuzzyTimestamp,
+			rvlimit: 1,
+			formatversion: '2',
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var $errorBox = $( '.mw-tpm-sp-error__message' );
-			var obj;
-			for ( var page in data.query.pages ) {
-				obj = data.query.pages[ page ];
-			}
-			if ( obj === undefined ) {
-				// obj was not initialized
+			var obj = data.query.pages[ 0 ];
+			// TODO: Handle other cases such as invalid page titles ie: obj.invalid
+			if ( obj === undefined || obj.missing ) {
 				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			}
@@ -67,8 +66,7 @@
 				$errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).removeClass( 'hide' );
 				return $.Deferred().reject();
 			}
-			var pageContent = obj.revisions[ 0 ][ '*' ];
-			return pageContent.split( '\n\n' );
+			return obj.revisions[ 0 ].content.split( '\n\n' );
 		} );
 	}
 
@@ -90,13 +88,13 @@
 			rvprop: 'timestamp',
 			rvuser: 'FuzzyBot',
 			rvdir: 'newer',
+			rvlimit: 1,
+			formatversion: '2',
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var $errorBox = $( '.mw-tpm-sp-error__message' );
-			var obj;
-			for ( var page in data.query.pages ) {
-				obj = data.query.pages[ page ];
-			}
+			var obj = data.query.pages[ 0 ];
+
 			// Page does not exist if missing field is present
 			if ( obj === undefined || obj.missing === '' ) {
 				$errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).removeClass( 'hide' );

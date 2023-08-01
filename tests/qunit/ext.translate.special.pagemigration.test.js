@@ -39,8 +39,8 @@ QUnit.module( 'ext.translate.special.pagemigration', function ( hooks ) {
 	} );
 
 	QUnit.test( 'Fuzzy timestamp', function ( assert ) {
-		var data = '{ "query": { "pages": { "19563": {"revisions": ' +
-			'[ {"timestamp": "2014-02-18T20:59:58Z" }, { "timestamp": "t2" } ] } } } }';
+		var data = '{ "query": { "pages": [ { "pageid": "19563", "revisions": ' +
+			'[ {"timestamp": "2014-02-18T20:59:58Z" }, { "timestamp": "t2" } ] } ] } }';
 
 		var done = assert.async();
 		mw.translate.getFuzzyTimestamp( 'Help:Special pages/fr' ).done( function ( timestamp ) {
@@ -54,8 +54,8 @@ QUnit.module( 'ext.translate.special.pagemigration', function ( hooks ) {
 	} );
 
 	QUnit.test( 'Split translation page', function ( assert ) {
-		var data = '{ "query": { "pages": { "19563": { "revisions": ' +
-			'[ { "*": "unit1\\n\\nunit2\\n\\nunit3" } ] } } } }';
+		var data = '{ "query": { "pages": [ { "pageid": "19563", "revisions": ' +
+			'[ { "content": "unit1\\n\\nunit2\\n\\nunit3" } ] } ] } }';
 
 		var done = assert.async();
 		mw.translate.splitTranslationPage( '2014-02-18T20:59:57.000Z', 'Help:Special pages/fr' )
