@@ -856,7 +856,9 @@
 			"messages": [
 				"pp-already-prepared-message",
 				"pp-diff-error",
+				"pp-unexpected-error",
 				"pp-pagename-missing",
+				"pp-page-does-not-exist",
 				"pp-prepare-message",
 				"pp-save-button-label",
 				"pp-save-message"

@@ -2,48 +2,6 @@
 	'use strict';
 
 	/**
-	 * Save the page with a given page name and given content to the wiki.
-	 *
-	 * @param {string} pageName Page title
-	 * @param {string} pageContent Content of the page to be saved
-	 * @return {jQuery.Promise}
-	 */
-	function savePage( pageName, pageContent ) {
-		var api = new mw.Api();
-
-		return api.postWithToken( 'csrf', {
-			action: 'edit',
-			title: pageName,
-			text: pageContent,
-			summary: $( '#pp-summary' ).val()
-		} ).promise();
-	}
-
-	/**
-	 * Get the diff between the current revision and the prepared page content.
-	 *
-	 * @param {string} pageName Page title
-	 * @param {string} pageContent Content of the page to be saved
-	 * @return {jQuery.Promise}
-	 * @return {Function} return.done
-	 * @return {string} return.done.data
-	 */
-	function getDiff( pageName, pageContent ) {
-		var api = new mw.Api();
-
-		return api.post( {
-			action: 'compare',
-			prop: 'diff',
-			formatversion: '2',
-			fromtitle: pageName,
-			toslots: 'main',
-			'totext-main': pageContent
-		} ).then( function ( data ) {
-			return data.compare.body;
-		} );
-	}
-
-	/**
 	 * Get a regex snippet matching any aliases (including the canonical
 	 * name) of the given namespace, or of “other” namespaces if the
 	 * namespace is not given.
@@ -275,8 +233,6 @@
 	 *
 	 * @param {string} pageName
 	 * @return {jQuery.Promise}
-	 * @return {Function} return.done
-	 * @return {string} return.done.value The current revision
 	 */
 	function getPageContent( pageName ) {
 		var api = new mw.Api();
@@ -288,13 +244,75 @@
 			rvlimit: '1',
 			formatversion: '2',
 			titles: pageName
-		} ).then( function ( data ) {
-			return data.query.pages[ 0 ].revisions[ 0 ].content;
-		} );
+		} ).promise();
+	}
+
+	/**
+	 * Get the diff between the current revision and the prepared page content.
+	 *
+	 * @param {string} pageName Page title
+	 * @param {string} pageContent New content of the page
+	 * @return {jQuery.Promise}
+	 */
+	function getDiff( pageName, pageContent ) {
+		var api = new mw.Api();
+
+		return api.post( {
+			action: 'compare',
+			prop: 'diff',
+			formatversion: '2',
+			fromtitle: pageName,
+			toslots: 'main',
+			'totext-main': pageContent
+		} ).promise();
+	}
+
+	/**
+	 * Save the page with a given page name and given content to the wiki.
+	 *
+	 * @param {string} pageName Page title
+	 * @param {string} pageContent Content of the page to be saved
+	 * @param {string} summary Edit summary for the change
+	 * @return {jQuery.Promise}
+	 */
+	function savePage( pageName, pageContent, summary ) {
+		var api = new mw.Api();
+
+		return api.postWithToken( 'csrf', {
+			action: 'edit',
+			title: pageName,
+			text: pageContent,
+			summary: summary
+		} ).promise();
+	}
+
+	/**
+	 * Display error message to the user
+	 * @param {string} errorMessage Error message to display to the user
+	 */
+	function displayError( errorMessage ) {
+		if ( errorMessage === undefined ) {
+			errorMessage = mw.msg( 'pp-unexpected-error' );
+		}
+
+		$( '.messageDiv' )
+			.text( errorMessage )
+			.removeClass( 'hide' )
+			.addClass( 'mw-message-box-error' );
+	}
+
+	/**
+	 * Failure callback method for the prepare step
+	 * @param {string} errorMessage Error message to display to the user
+	 */
+	function onPrepareFailure( errorMessage ) {
+		displayError( errorMessage );
+		$( '#action-prepare' ).prop( 'disabled', false );
 	}
 
 	$( function () {
 		var $input = $( '#page' );
+		var $messageDiv = $( '.messageDiv' );
 
 		$( '#action-cancel' ).on( 'click', function () {
 			document.location.reload( true );
@@ -303,25 +321,27 @@
 		var pageContent;
 		$( '#action-save' ).on( 'click', function () {
 			var pageName = $input.val().trim();
-			savePage( pageName, pageContent ).done( function () {
+			$messageDiv.removeClass( 'mw-message-box-error mw-message-box-success' );
+			savePage( pageName, pageContent, $( '#pp-summary' ).val() ).done( function () {
 				var pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
-				$( '.messageDiv' )
+				$messageDiv
 					.empty()
 					.append( mw.message( 'pp-save-message', pageUrl ).parseDom() )
+					.addClass( 'mw-message-box-success' )
 					.removeClass( 'hide' );
 				$( '.divDiff' ).addClass( 'hide' );
 				$( '#action-prepare' ).removeClass( 'hide' );
 				$input.val( '' );
 				$( '#action-save' ).addClass( 'hide' );
 				$( '#action-cancel' ).addClass( 'hide' );
+			} ).fail( function ( _code, data ) {
+				displayError( data.error.info );
 			} );
 		} );
 
 		$( '#action-prepare' ).on( 'click', function () {
-			var $messageDiv = $( '.messageDiv' );
-
 			var pageName = $input.val().trim();
-			$messageDiv.addClass( 'hide' );
+			$messageDiv.addClass( 'hide' ).removeClass( 'mw-message-box-error mw-message-box-success' );
 			if ( pageName === '' ) {
 				// eslint-disable-next-line no-alert
 				alert( mw.msg( 'pp-pagename-missing' ) );
@@ -329,9 +349,14 @@
 			}
 			$( this ).prop( 'disabled', true );
 
-			$.when( getPageContent( pageName ) ).done( function ( content ) {
-				pageContent = content;
-				pageContent = pageContent.trim();
+			getPageContent( pageName ).done( function ( contentData ) {
+				// Check if the page actually exists
+				if ( contentData.query.pages[ 0 ].revisions === undefined ) {
+					onPrepareFailure( mw.msg( 'pp-page-does-not-exist', pageName ) );
+					return $.Deferred().reject();
+				}
+
+				pageContent = contentData.query.pages[ 0 ].revisions[ 0 ].content.trim();
 				pageContent = cleanupTags( pageContent );
 				pageContent = addLanguageBar( pageContent );
 				pageContent = addTranslateTags( pageContent );
@@ -342,24 +367,32 @@
 				pageContent = doCategories( pageContent );
 				pageContent = postPreparationCleanup( pageContent );
 				pageContent = pageContent.trim();
-				getDiff( pageName, pageContent ).done( function ( diff ) {
-					$( '#action-prepare' ).prop( 'disabled', false );
+				getDiff( pageName, pageContent ).done( function ( diffData ) {
+					var diff = diffData.compare.body;
+					var $prepare = $( '#action-prepare' );
+					// Enable prepare button whether the diff failed or not, so it can be clicked again...
+					$prepare.prop( 'disabled', false );
+					$messageDiv.removeClass( 'hide' );
 					if ( diff === undefined ) {
-						$messageDiv.text( mw.msg( 'pp-diff-error' ) ).removeClass( 'hide' );
-						return;
+						onPrepareFailure( mw.msg( 'pp-diff-error' ) );
+						return $.Deferred().reject();
 					}
 
 					if ( diff !== '' ) {
 						$( '.diff tbody' ).html( diff );
 						$( '.divDiff' ).removeClass( 'hide' );
-						$messageDiv.text( mw.msg( 'pp-prepare-message' ) ).removeClass( 'hide' );
-						$( '#action-prepare' ).addClass( 'hide' );
+						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
+						$prepare.addClass( 'hide' );
 						$( '#action-save' ).removeClass( 'hide' );
 						$( '#action-cancel' ).removeClass( 'hide' );
 					} else {
-						$messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).removeClass( 'hide' );
+						displayError( mw.msg( 'pp-already-prepared-message' ) );
 					}
+				} ).fail( function ( _code, errorData ) {
+					onPrepareFailure( errorData.error && errorData.error.info );
 				} );
+			} ).fail( function ( _code, errorData ) {
+				onPrepareFailure( errorData.error && errorData.error.info );
 			} );
 		} );
 	} );
