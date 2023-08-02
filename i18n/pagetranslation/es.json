@@ -32,12 +32,14 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Josuert",
-			"DarkGames26"
+			"DarkGames26",
+			"No se"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
 	"right-pagetranslation": "Marcar versiones de páginas para traducción",
 	"action-pagetranslation": "administrar páginas traducibles",
+	"tps-edit-sourcepage-text": "Estás editando una página de origen de traducción. Por favor asegúrese de estar familiarizado con la siguiente documentación:\n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/es#Cambiar_el_texto_de_orígen Cambiando el texto de origen]\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/es#Ejemplos_de_marcado Ejemplo de marcado a utilizar]",
 	"tps-edit-sourcepage-ve-warning-title": "Atención: página no admitida",
 	"tps-edit-sourcepage-ve-warning-button": "Aceptar",
 	"tpt-section": "Unidad de traducción $1",
