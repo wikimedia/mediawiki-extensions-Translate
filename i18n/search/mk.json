@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "Пог. на $1",
 	"tux-sst-search": "Пребарај",
 	"tux-sst-search-ph": "Пребарајте преводи",
+	"tux-sst-search-info": "Послужете се со операторите <code>language:</code> или <code>group:</code> за понатаму да ги уточните критериумите на пребарување",
 	"tux-sst-count": "{{PLURAL:$1|Пронајдена е една ставка|Пронајдени се $1 ставки}}",
 	"tux-sst-facet-language": "Јазици",
 	"tux-sst-facet-group": "Групи на пораки",
