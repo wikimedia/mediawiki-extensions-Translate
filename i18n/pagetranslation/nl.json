@@ -218,7 +218,7 @@
 	"pp-cancel-button-label": "Annuleren",
 	"pp-save-message": "De pagina is gepubliceerd. U kunt het [$1 bewerken].",
 	"pp-prepare-message": "De pagina is voorbereid voor vertaling. Zie de wijz hieronder. Klik op de \"{{int:pp-save-button-label}}\" knop indien correct!",
-	"pp-already-prepared-message": "Het lijkt erop dat de pagina al is voorbereid voor vertaling. Er zijn geen wijzigingen ten opzichte van de vorige versie.",
+	"pp-already-prepared-message": "Het lijkt erop dat de pagina of al is voorbereid voor vertaling, of niet automatisch kan worden voorbereid. Er zijn geen wijzigingen ten opzichte van de vorige versie.",
 	"pp-pagename-missing": "Voer een paginanaam in.",
 	"pp-diff-old-header": "Brontekst",
 	"pp-diff-new-header": "Voorbereide tekst",
