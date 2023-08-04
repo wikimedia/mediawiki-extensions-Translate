@@ -18,6 +18,7 @@
 	"tux-sst-view-foreign": "Voir sur $1",
 	"tux-sst-search": "Rechercher",
 	"tux-sst-search-ph": "Recherche de traductions",
+	"tux-sst-search-info": "Utiliser les opérateurs <code>language:</code> ou <code>group:</code> pour qualifier davantage les critères de recherche",
 	"tux-sst-count": "{{PLURAL:$1|0=Aucun résultat trouvé|1=Un résultat trouvé|$1 résultats trouvés}}",
 	"tux-sst-facet-language": "Langues",
 	"tux-sst-facet-group": "Groupes de messages",

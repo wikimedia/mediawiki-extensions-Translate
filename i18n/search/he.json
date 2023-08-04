@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "להציג באתר $1",
 	"tux-sst-search": "חיפוש",
 	"tux-sst-search-ph": "חיפוש בתרגומים",
+	"tux-sst-search-info": "אפשר להשתמש באופרטורים <code>language:</code> או <code>group:</code> כדי להוסיף אבחנות לחיפוש",
 	"tux-sst-count": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
 	"tux-sst-facet-language": "שפות",
 	"tux-sst-facet-group": "קבוצות הודעות",
