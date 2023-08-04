@@ -10,6 +10,7 @@
 	"apihelp-aggregategroups-param-group": "Message group ID.",
 	"apihelp-aggregategroups-param-groupname": "Aggregate message group name.",
 	"apihelp-aggregategroups-param-groupdescription": "Aggregate message group description.",
+	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Aggregate message group source language code, or <kbd>-</kbd> to not set a source language or remove the existing one.",
 	"apihelp-aggregategroups-example-1": "Associate a group",
 	"apihelp-groupreview-summary": "Set message group workflow states.",
 	"apihelp-groupreview-param-group": "Message group.",
