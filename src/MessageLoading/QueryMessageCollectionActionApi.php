@@ -16,6 +16,7 @@ use MessageHandle;
 use RecentMessageGroup;
 use Title;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\ParamValidator\TypeDef\EnumDef;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -303,13 +304,17 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 					'definition',
 					'translation',
 					'tags',
+					'properties',
 					'revision',
-					'properties'
 				],
 				ParamValidator::PARAM_DEFAULT => 'definition|translation',
 				ParamValidator::PARAM_ISMULTI => true,
-				ApiBase::PARAM_HELP_MSG =>
-					[ 'apihelp-query+messagecollection-param-prop', TRANSLATE_FUZZY ],
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [
+					'translation' => [ 'apihelp-query+messagecollection-paramvalue-prop-translation', TRANSLATE_FUZZY ],
+				],
+				EnumDef::PARAM_DEPRECATED_VALUES => [
+					'revision' => true,
+				],
 			],
 		];
 	}

@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
+use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\HookRunner;
@@ -287,6 +288,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				ParamValidator::PARAM_TYPE => array_keys( $this->getPropertyList() ),
 				ParamValidator::PARAM_DEFAULT => 'id|label|description|class|exists',
 				ParamValidator::PARAM_ISMULTI => true,
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 			],
 			'root' => [
 				ParamValidator::PARAM_TYPE => 'string',
