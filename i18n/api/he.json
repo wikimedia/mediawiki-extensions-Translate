@@ -145,7 +145,7 @@
 	"apierror-translate-invalid-changeset-name": "הועבר שם ערכת שינויים בלתי־תקין – $1",
 	"apierror-translate-invalid-operation": "פעולה בלתי־תקינה: $1. ערכים תקינים – $2.",
 	"apierror-translate-addition-key-invalid": "מפתח ההודעה שהועבר להוספה לא נמצא ברשימת ההודעות ששמן שוּנה עבור שפת המקור.",
-	"apierror-translate-rename-msg-new": "אפשר להוסיף רק הודעות ששמן שוּנה בתור הודעת חדשות.",
+	"apierror-translate-rename-msg-new": "אפשר להוסיף רק הודעות ששמן שוּנה בתור הודעות חדשות.",
 	"apierror-translate-rename-key-invalid": "מפתח ההודעה שהועבר לשינוי שם לא נמצאו ברשימת השינויים עבור שפת המקור.",
 	"apierror-translate-rename-state-invalid": "אחת מההודעות שהועברו לשינוי שם אמורה להתווסף מחדש, והאחרת צריכה להימחק. מצבים נוכחיים – הוספה: $1 ומחיקה: $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך",
