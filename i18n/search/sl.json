@@ -10,6 +10,7 @@
 	"tux-sst-view-foreign": "Ogled v: $1",
 	"tux-sst-search": "Išči",
 	"tux-sst-search-ph": "Išči prevode",
+	"tux-sst-search-info": "Za dodatno omejitev iskalnih kriterijev uporabite operator <code>language:</code> ali <code>group:</code>.",
 	"tux-sst-count": "{{PLURAL:$1|En najdeni zadetek|$1 najdena zadetka|$1 najdeni zadetki|$1 najdenih zadetkov}}",
 	"tux-sst-facet-language": "Jeziki",
 	"tux-sst-facet-group": "Skupine sporočil",

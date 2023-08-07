@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "Vider sur $1",
 	"tux-sst-search": "Cercar",
 	"tux-sst-search-ph": "Cerca in traductiones",
+	"tux-sst-search-info": "Usa le operator <code>language:</code> o <code>group:</code> pro qualificar ulteriormente le criterios de recerca",
 	"tux-sst-count": "{{PLURAL:$1|Un resultato trovate|$1 resultatos trovate}}",
 	"tux-sst-facet-language": "Linguas",
 	"tux-sst-facet-group": "Gruppos de messages",

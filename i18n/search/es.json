@@ -4,6 +4,7 @@
 			"Fitoschido",
 			"Jakeukalane",
 			"Macofe",
+			"No se",
 			"Ovruni"
 		]
 	},
@@ -12,6 +13,7 @@
 	"tux-sst-view-foreign": "Ver en $1",
 	"tux-sst-search": "Buscar",
 	"tux-sst-search-ph": "Buscar traducciones",
+	"tux-sst-search-info": "Usa operadores <code>idioma:</code> o <code>grupo:</code> para calificar aún más los criterios de búsqueda",
 	"tux-sst-count": "Se {{PLURAL:$1|encontró un resultado|encontraron $1 resultados}}",
 	"tux-sst-facet-language": "Idiomas",
 	"tux-sst-facet-group": "Grupos de mensajes",
