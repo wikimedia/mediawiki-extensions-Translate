@@ -11,7 +11,6 @@ use HashMessageIndex;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\MediaWikiServices;
 use MessageIndex;
 use MockWikiMessageGroup;
 use Title;
@@ -24,20 +23,22 @@ use WANObjectCache;
  * @covers \MediaWiki\Extension\Translate\TranslatorInterface\ReviewTranslationActionApi
  */
 class ReviewTranslationActionApiTest extends ApiTestCase {
+	protected $tablesUsed = [ 'page' ];
+
 	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [
-			'wgGroupPermissions' => [
-				'sysop' => [
-					'translate-messagereview' => true,
-				],
-				'*' => [
-					'read' => true,
-					'writeapi' => true
-				]
-			],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		] );
+		$this->setGroupPermissions( [
+			'sysop' => [
+				'translate-messagereview' => true,
+			],
+			'*' => [
+				'read' => true,
+				'writeapi' => true
+			]
 		] );
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
@@ -72,15 +73,13 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		$title = Title::makeTitle( NS_MEDIAWIKI, $titleString );
 		$content = ContentHandler::makeContent( $content, $title );
 
-		$this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
-			$content,
-			$this->getUser( $editorName ),
-			__METHOD__
-		);
+		$editStatus = $this->editPage( $title, $content, __METHOD__, NS_MAIN, $this->getUser( $editorName ) );
+		$this->assertStatusOK( $editStatus );
 
-		$revRecord = MediaWikiServices::getInstance()
+		$revRecord = $this->getServiceContainer()
 			->getRevisionLookup()
 			->getRevisionByTitle( $title );
+		$this->assertNotNull( $revRecord );
 
 		if ( $exceptionMessage ) {
 			$this->expectException( ApiUsageException::class );
