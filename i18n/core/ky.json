@@ -22,6 +22,7 @@
 	"translate-next": "кийинки барак",
 	"translate-prev": "мурунку барак",
 	"translate-edit-title": "«$1» түзөтүү",
+	"translate-edit-contribute": "түзөтүү",
 	"translate-edit-information": "Билдирүү тууралуу маалымат ($1)",
 	"translate-export-form-format": "Формат",
 	"translate-rcfilters-translations": "Котормолор",
@@ -34,6 +35,7 @@
 	"translate-statsf-scale-months": "айлар",
 	"translate-statsf-scale-weeks": "апталар",
 	"translate-statsf-scale-days": "күндөр",
+	"translate-statsf-count-edits": "Түзөтүүлөрдүн саны",
 	"translate-statsf-count-registrations": "Жаңы колдонуучулар",
 	"translate-statsf-submit": "Алдын ала көрүү",
 	"translate-sidebar-alltrans": "Башка тилдерде",
@@ -109,6 +111,7 @@
 	"tux-editor-save-button-label": "Котормосун жарыялоо",
 	"tux-editor-skip-button-label": "Кийинки",
 	"tux-editor-cancel-button-label": "Жокко чыгаруу",
+	"tux-editor-suggestions-title": "Сунуштар",
 	"tux-editor-translate-mode": "Тизме",
 	"tux-editor-page-mode": "Барак",
 	"tux-editor-doc-editor-cancel": "Жокко чыгаруу",
@@ -116,5 +119,6 @@
 	"tux-editor-close-tooltip": "Жабуу",
 	"tux-editor-expand-tooltip": "жаюу",
 	"tux-editor-collapse-tooltip": "түрүү",
+	"tux-editor-message-tools-translations": "Бардык котормолор",
 	"tux-editor-loading": "Жүктөлүүдө..."
 }
