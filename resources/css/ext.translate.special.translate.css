@@ -157,7 +157,7 @@
 }
 
 .tux-message-filter-box {
-	background: no-repeat url( ../images/search.svg ) 8px center;
+	background: no-repeat url( ../images/search.svg ) left 8px center;
 	background-size: 18px;
 	font-size: 14px;
 	/* FIXME: `box-sizing` lives here due to a shortcoming in Timeless, isn't needed in other skins
