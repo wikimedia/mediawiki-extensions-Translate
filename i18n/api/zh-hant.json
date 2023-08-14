@@ -38,6 +38,7 @@
 	"apihelp-query+messagecollection-param-offset": "起始的整數或鍵值偏差。",
 	"apihelp-query+messagecollection-param-filter": "訊息集合篩選。使用 <kbd>!</kbd> 來使條件無效。例如 <kbd>!fuzzy</kbd> 代表僅列出未過時的訊息。篩選是以指定的排序來套用。\n;fuzzy：帶有模糊標籤的訊息。\n;optional：僅在需要更改時翻譯的訊息。\n;ignored：不需翻譯的訊息。\n;hastranslation：有被翻譯到的訊息，無論是否為模糊翻譯。\n;translated：有被翻譯到且非模糊翻譯的訊息。\n;changed：自上一次匯出時，有被翻譯或更改的訊息。\n;reviewer&#58;N：在複審員裡使用者編號為 <kbd>N</kbd> 的訊息。\n;last-translator&#58;N：最後一位翻譯者之使用者編號為 <kbd>N</kbd> 的訊息。",
 	"apihelp-query+messagecollection-param-prop": "要取得的參數：\n;definition：訊息定義。\n;translation：目前翻譯（若不帶有 $1 字串，使用標籤來檢查舊有或損壞翻譯）。\n;tags：訊息標籤，像是可選用、已忽略和模糊翻譯。\n;properties：訊息參數，像是狀態、修訂、最後的翻譯者。可在訊息間變動。\n;revision：<span class=\"deprecated\">已棄用！</span>請改用 $2prop=properties。",
+	"apihelp-query+messagecollection-paramvalue-prop-definition": "訊息定義。",
 	"apihelp-query+messagecollection-example-1": "支援語言清單",
 	"apihelp-query+messagecollection-example-2": "群組「group-Example」的非選用群組定義清單",
 	"apihelp-query+messagecollection-example-3": "用於群組「group-Example」，芬蘭語中帶標籤的選用群組清單",
