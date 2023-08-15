@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BrennodAloisi",
 			"Cedric31"
 		]
 	},
@@ -13,5 +14,6 @@
 	"tsb-translations-user": "Traduccions {{GENDER:$1|de l’utilizaire|de l’utilizaira}}",
 	"tsb-translations-current": "Traduccions existentas",
 	"translate-translationstash-translations": "Avètz acabat $1 {{PLURAL:$1|traduccion|traduccions}}.",
-	"tsb-limit-reached-title": "Mercé per vòstras traduccions"
+	"tsb-limit-reached-title": "Mercé per vòstras traduccions",
+	"tsb-create-user-page": "Pagina d'utilizaire de basa creada"
 }
