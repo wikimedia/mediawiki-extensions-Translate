@@ -220,7 +220,7 @@
 	"supportedlanguages-colorlegend": "色彩圖例：最近一次翻譯於 $1 天前。",
 	"supportedlanguages-sqlite-error": "不支援 SQLite",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|翻譯人員}}}}：$1",
-	"supportedlanguages-recenttranslations": "最近的翻譯",
+	"supportedlanguages-recenttranslations": "近期譯文",
 	"supportedlanguages-count": "總共有 $1 語言",
 	"supportedlanguages-activity": "$1：$2 次編輯 - 最近一次編輯於 $3 天前",
 	"translate-supportedlanguages-cached": "此資訊在$1前被快取。",
