@@ -273,6 +273,7 @@
 	"tux-status-saving": "Zveřejňuje se…",
 	"tux-status-unsaved": "Nezveřejněno",
 	"tux-save-unknown-error": "Došlo k neznámé chybě.",
+	"tux-editor-placeholder-language": "Váš překlad v jazyce $1",
 	"tux-editor-editsummary-placeholder": "Nepovinné shrnutí",
 	"tux-editor-paste-original-button-label": "Vložit zdrojový text",
 	"tux-editor-discard-changes-button-label": "Zahodit změny",
