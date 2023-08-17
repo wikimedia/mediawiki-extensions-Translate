@@ -159,6 +159,7 @@
 	"apierror-translate-owntranslation": "Cannot review own translations",
 	"apierror-translate-sandboxdisabled": "Sandbox feature is not in use",
 	"apierror-translate-sandbox-invalidparam": "$1",
+	"apierror-translate-sandbox-user-add": "There was an error while adding a new user",
 	"apierror-translate-smg-nochanges": "There are no changes to process.",
 	"apierror-translate-unknownmessage": "Unknown message",
 	"apierror-translate-invalid-changeset-name": "Invalid changeset file name passed - $1",

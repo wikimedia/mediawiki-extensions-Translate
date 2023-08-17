@@ -16,6 +16,7 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\User\UserOptionsManager;
+use RuntimeException;
 use Sanitizer;
 use TranslateSandbox;
 use User;
@@ -122,7 +123,17 @@ class TranslatorSandboxActionApi extends ApiBase {
 			$this->dieWithError( 'invalidemailaddress', 'invalidemail' );
 		}
 
-		$user = TranslateSandbox::addUser( $username, $email, $password );
+		try {
+			$user = TranslateSandbox::addUser( $username, $email, $password );
+		} catch ( RuntimeException $e ) {
+			// Do not log this error as it might leak private information
+			if ( $e->getCode() === TranslateSandbox::USER_CREATION_FAILURE ) {
+				$this->dieWithError( 'apierror-translate-sandbox-user-add' );
+			}
+
+			throw $e;
+		}
+
 		$output = [ 'user' => [
 			'name' => $user->getName(),
 			'id' => $user->getId(),

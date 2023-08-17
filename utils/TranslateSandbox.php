@@ -23,6 +23,13 @@ use Wikimedia\ScopedCallback;
  * lot of assumptions about what happens to the user account.
  */
 class TranslateSandbox {
+
+	/**
+	 * Custom exception code used when user creation fails in order to differentiate between
+	 * other exceptions that might occur.
+	 */
+	public const USER_CREATION_FAILURE = 56739;
+
 	/**
 	 * Adds a new user without doing much validation.
 	 *
@@ -67,7 +74,10 @@ class TranslateSandbox {
 				// invalid user name or too short password. The WebAPI is prechecking these to
 				// provide nicer error messages.
 				$reason = $res->message->inLanguage( 'en' )->useDatabase( false )->text();
-				throw new RuntimeException( "Account creation failed: $reason" );
+				throw new RuntimeException(
+					"Account creation failed: $reason",
+					self::USER_CREATION_FAILURE
+				);
 			default:
 				// A provider requested further user input. Abort but clean up first if it was a
 				// secondary provider (in which case the user was created).
