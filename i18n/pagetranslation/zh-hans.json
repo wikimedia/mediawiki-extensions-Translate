@@ -40,7 +40,8 @@
 			"列维劳德",
 			"神樂坂秀吉",
 			"铁桶",
-			"阿pp"
+			"阿pp",
+			"CrownedWharf566"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -218,7 +219,7 @@
 	"pt-deletepage-action-other": "更改目标",
 	"pt-deletepage-lang-legend": "删除翻译页面",
 	"pt-deletepage-tp-legend": "删除可翻译页面",
-	"pt-deletepage-any-legend": "删除可翻译页面或翻译页面",
+	"pt-deletepage-any-legend": "删除可翻译页面,消息集或翻译页面",
 	"pt-deletepage-current": "页面名称：",
 	"pt-deletepage-reason": "原因：",
 	"pt-deletepage-reason-details": "其他/更多原因",
@@ -265,7 +266,7 @@
 	"pp-cancel-button-label": "取消",
 	"pp-save-message": "此页面已发布。您可[$1 编辑]它。",
 	"pp-prepare-message": "此页面已准备翻译。请参见下面的差异。点击“{{int:pp-save-button-label}}”以确定。",
-	"pp-already-prepared-message": "看起来页面已经准备翻译。没有与之前版本比较的更改。",
+	"pp-already-prepared-message": "看起来页面已经准备翻译,或是无法自动准备。没有与之前版本比较的更改。",
 	"pp-diff-error": "从服务器获取差异时出错。",
 	"pp-pagename-missing": "请输入页面名。",
 	"pp-diff-old-header": "源文本",
