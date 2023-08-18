@@ -4,6 +4,7 @@
 			"Haqmar",
 			"Kaganer",
 			"Kareyac",
+			"Айсар",
 			"Рустам Нурыев"
 		]
 	},
@@ -12,7 +13,7 @@
 	"tpt-languages-legend": "Башҡа телдәр:",
 	"tpt-languages-nonzero": "$1 ($2% тәржемә ителгән)",
 	"tpt-aggregategroup-add": "Өҫтәргә",
-	"pt-movepage-list-other": "Башҡа эске биттәр",
+	"pt-movepage-list-other": "{{PLURAL:$1|1=Башҡа ярҙамся бит|Башҡа ярҙамся биттәр}}",
 	"pt-movepage-legend": "Тәржемә итеп булған биттәрҙең исемен үҙгәртергә",
 	"pt-movepage-current": "Хәҙерге исеме:",
 	"pt-movepage-new": "Яңы исеме:",

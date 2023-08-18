@@ -227,7 +227,7 @@
 	"pm-savepages-button-label": "שמירה",
 	"pm-cancel-button-label": "ביטול",
 	"pm-page-does-not-exist": "הדף $1 אינו קיים.",
-	"pm-old-translations-missing": "$1 אינו מכיל תרגומים ישנים.",
+	"pm-old-translations-missing": "הדף $1 אינו מכיל תרגומים ישנים.",
 	"pm-extra-units-warning": "ייתכן שקיימות כאן יחידות נספות. נא להתאים את המקור ואת יחידות התרגום.",
 	"pm-pagename-missing": "נא להזין את שם הדף",
 	"pm-add-icon-hover-text": "להוסיף יחידה למטה",
