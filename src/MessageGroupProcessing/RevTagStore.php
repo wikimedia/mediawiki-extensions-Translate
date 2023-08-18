@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Class to manage revision tags for translatable bundles.
@@ -27,9 +28,13 @@ class RevTagStore {
 	/** Indicates a revision of a page that is a valid message bundle. */
 	public const MB_VALID_TAG = 'mb:valid';
 
-	// TODO: Convert to a normal member variable once RevTagStore is a service.
+	private IConnectionProvider $connectionProvider;
 	/** @var array */
-	private static $tagCache = [];
+	private $tagCache = [];
+
+	public function __construct( IConnectionProvider $connectionProvider ) {
+		$this->connectionProvider = $connectionProvider;
+	}
 
 	/** Add tag for the given revisionId, while deleting it from others */
 	public function replaceTag(
@@ -44,7 +49,7 @@ class RevTagStore {
 
 		$articleId = $identity->getId();
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->connectionProvider->getPrimaryDatabase();
 		$conds = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag
@@ -58,7 +63,7 @@ class RevTagStore {
 		$conds['rt_revision'] = $revisionId;
 		$dbw->insert( 'revtag', $conds, __METHOD__ );
 
-		self::$tagCache[$articleId][$tag] = $revisionId;
+		$this->tagCache[$articleId][$tag] = $revisionId;
 	}
 
 	public function getLatestRevisionWithTag( PageIdentity $identity, string $tag ): ?int {
@@ -79,8 +84,8 @@ class RevTagStore {
 
 		// ATTENTION: Cache should only be updated on POST requests.
 		foreach ( $tags as $tag ) {
-			if ( isset( self::$tagCache[$articleId][$tag] ) ) {
-				$response[$tag] = self::$tagCache[$articleId][$tag];
+			if ( isset( $this->tagCache[$articleId][$tag] ) ) {
+				$response[$tag] = $this->tagCache[$articleId][$tag];
 			} else {
 				$remainingTags[] = $tag;
 			}
@@ -115,14 +120,14 @@ class RevTagStore {
 
 		$articleId = $identity->getId();
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->connectionProvider->getPrimaryDatabase();
 		$conds = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag,
 		];
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 
-		unset( self::$tagCache[$articleId] );
+		unset( $this->tagCache[$articleId] );
 	}
 
 	/** Get a list of page ids where the latest revision is either tagged or marked */

@@ -66,7 +66,7 @@ class TranslatablePage extends TranslatableBundle {
 	/** @param Title $title Title object for the page */
 	protected function __construct( Title $title ) {
 		$this->title = $title;
-		$this->revTagStore = new RevTagStore();
+		$this->revTagStore = Services::getInstance()->getRevTagStore();
 	}
 
 	/**

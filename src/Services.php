@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
@@ -126,6 +127,11 @@ class Services implements ContainerInterface {
 	/** @since 2020.12 */
 	public function getProgressStatsTableFactory(): ProgressStatsTableFactory {
 		return $this->get( 'Translate:ProgressStatsTableFactory' );
+	}
+
+	/** @since 2023.08 */
+	public function getRevTagStore(): RevTagStore {
+		return $this->get( 'Translate:RevTagStore' );
 	}
 
 	/** @since 2023.05 */

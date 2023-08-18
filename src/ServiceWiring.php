@@ -95,7 +95,7 @@ return [
 
 	'Translate:MessageBundleStore' => static function ( MediaWikiServices $services ): MessageBundleStore {
 		return new MessageBundleStore(
-			new RevTagStore(),
+			$services->get( 'Translate:RevTagStore' ),
 			$services->getJobQueueGroup(),
 			$services->getLanguageNameUtils(),
 			$services->get( 'Translate:MessageIndex' )
@@ -151,6 +151,12 @@ return [
 		return new ProgressStatsTableFactory(
 			$services->getLinkRenderer(),
 			$services->get( 'Translate:ConfigHelper' )
+		);
+	},
+
+	'Translate:RevTagStore' => static function ( MediaWikiServices $services ): RevTagStore {
+		return new RevTagStore(
+			$services->getDBLoadBalancerFactory()
 		);
 	},
 
@@ -223,7 +229,7 @@ return [
 		return new TranslatablePageStore(
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getJobQueueGroup(),
-			new RevTagStore(),
+			$services->get( 'Translate:RevTagStore' ),
 			$services->getDBLoadBalancer(),
 			$services->get( 'Translate:TranslatableBundleStatusStore' ),
 			$services->get( 'Translate:TranslatablePageParser' ),
