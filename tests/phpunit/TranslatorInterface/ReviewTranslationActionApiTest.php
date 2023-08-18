@@ -24,6 +24,13 @@ use WANObjectCache;
  */
 class ReviewTranslationActionApiTest extends ApiTestCase {
 	protected $tablesUsed = [ 'page' ];
+	private static $testUsers = [];
+
+	public function addDBDataOnce() {
+		self::$testUsers[ 'plainUser' ] = $this->getMutableTestUser()->getUser();
+		self::$testUsers[ 'superUser1' ] = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
+		self::$testUsers[ 'superUser2' ] = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
+	}
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -143,15 +150,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		];
 	}
 
-	private static $testUsers = [];
-
 	private function getUser( string $name ): User {
-		if ( self::$testUsers === [] ) {
-			self::$testUsers[ 'plainUser' ] = $this->getMutableTestUser()->getUser();
-			self::$testUsers[ 'superUser1' ] = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
-			self::$testUsers[ 'superUser2' ] = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
-		}
-
 		if ( isset( self::$testUsers[ $name ] ) ) {
 			return self::$testUsers[ $name ];
 		}
