@@ -111,10 +111,7 @@ class DeleteTranslatableBundleJob extends Job {
 	}
 
 	private function isTranslation(): bool {
-		// Use 'full' property if 'translation' is missing. This will happen
-		// if the job is added before param 'full' was changed to 'translation'
-		// Remove after MLEB 2022.07
-		return $this->params['translation'] ?? !$this->params['full'];
+		return $this->params['translation'];
 	}
 
 	public function getPerformer(): User {

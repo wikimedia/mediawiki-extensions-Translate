@@ -197,18 +197,9 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 
 			global $wgJobClasses;
 			$wgJobClasses['RenderTranslationPageJob'] = RenderTranslationPageJob::class;
-			// Remove after MLEB 2022.10 release
-			$wgJobClasses['TranslateRenderJob'] = RenderTranslationPageJob::class;
-			// Remove after MLEB 2022.07 release
-			$wgJobClasses['TranslatableBundleMoveJob'] = MoveTranslatableBundleJob::class;
 			$wgJobClasses['MoveTranslatableBundleJob'] = MoveTranslatableBundleJob::class;
-			// Remove after MLEB 2022.07 release
-			$wgJobClasses['TranslatableBundleDeleteJob'] = DeleteTranslatableBundleJob::class;
 			$wgJobClasses['DeleteTranslatableBundleJob'] = DeleteTranslatableBundleJob::class;
-
 			$wgJobClasses['UpdateTranslatablePageJob'] = UpdateTranslatablePageJob::class;
-			// Remove after MLEB 2022.10 release
-			$wgJobClasses['TranslationsUpdateJob'] = UpdateTranslatablePageJob::class;
 
 			// Namespaces
 			global $wgNamespacesWithSubpages, $wgNamespaceProtection;
