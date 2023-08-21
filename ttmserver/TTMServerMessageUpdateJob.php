@@ -27,11 +27,6 @@ use Psr\Log\LoggerInterface;
  * This job handles retries itself and return false in allowRetries to disable
  * JobQueue's internal retry service.
  *
- * If mirroring is activated on the primary service then the first job
- * will try to write to all services, it will resend a new job to
- * every single service that failed and will increment errorCount.
- * When too many errors occur on single service the job is dropped.
- *
  * @ingroup JobQueue
  */
 class TTMServerMessageUpdateJob extends Job {

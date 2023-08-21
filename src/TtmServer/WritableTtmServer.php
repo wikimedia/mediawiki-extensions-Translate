@@ -43,13 +43,6 @@ interface WritableTtmServer {
 	/** Do any cleanup, optimizing etc. */
 	public function endBootstrap(): void;
 
-	/**
-	 * Get the list of services to duplicate writes to make them "mirrors"
-	 * of this service.
-	 * @return string[]
-	 */
-	public function getMirrors(): array;
-
 	/** Instruct the service to fully wipe the index and start from scratch. */
 	public function setDoReIndex(): void;
 }

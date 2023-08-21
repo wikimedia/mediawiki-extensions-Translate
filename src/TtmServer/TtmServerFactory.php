@@ -115,8 +115,7 @@ class TtmServerFactory {
 	}
 
 	/**
-	 * Returns writable servers if configured, else returns the default TtmServer with its mirrors,
-	 * else returns null.
+	 * Returns writable servers if configured, else returns the default TtmServer else returns null.
 	 * @return array [ serverId => WritableTtmServer ]
 	 */
 	public function getWritable(): array {
@@ -125,15 +124,6 @@ class TtmServerFactory {
 
 		foreach ( $ttmServerIds as $serverId ) {
 			$isWritable = $this->configs[ $serverId ][ 'writable' ] ?? null;
-			$mirrors = $this->configs[ $serverId ][ 'mirrors' ] ?? null;
-
-			if ( $mirrors !== null ) {
-				if ( $isWritable !== null || $writableServers !== [] ) {
-					throw new InvalidArgumentException(
-						"TTM server configurations cannot use both writable and mirrors parameter."
-					);
-				}
-			}
 
 			if ( $isWritable ) {
 				if ( $serverId === $this->default ) {
@@ -158,21 +148,13 @@ class TtmServerFactory {
 			return $writableServers;
 		}
 
-		// If there are no writable server, check and use the default server and its mirrors
+		// If there are no writable server, check and use the default server
 		if ( $this->default ) {
-			$mirrorIds = [];
 			$defaultTtmServer = $this->create( $this->default );
 
 			if ( $defaultTtmServer instanceof WritableTtmServer ) {
 				if ( !in_array( $this->default, $readOnlyServers ) ) {
 					$writableServers[ $this->default ] = $defaultTtmServer;
-				}
-				$mirrorIds = $defaultTtmServer->getMirrors();
-			}
-
-			foreach ( $mirrorIds as $id ) {
-				if ( !in_array( $id, $readOnlyServers ) ) {
-					$writableServers[ $id ] ??= $this->create( $id );
 				}
 			}
 

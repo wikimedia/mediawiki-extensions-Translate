@@ -117,28 +117,4 @@ abstract class TTMServer {
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'rebuild' );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 	}
-
-	/**
-	 * @deprecated Since MLEB 2023.04
-	 * @return string[]
-	 */
-	public function getMirrors(): array {
-		global $wgTranslateTranslationServices;
-		if ( isset( $this->config['mirrors'] ) ) {
-			$mirrors = [];
-			foreach ( $this->config['mirrors'] as $name ) {
-				if ( !is_string( $name ) ) {
-					throw new TTMServerException( "Invalid configuration set in " .
-						"mirrors, expected an array of strings" );
-				}
-				if ( !isset( $wgTranslateTranslationServices[$name] ) ) {
-					throw new TTMServerException( "Invalid configuration in " .
-						"mirrors, unknown service $name" );
-				}
-				$mirrors[$name] = true;
-			}
-			return array_keys( $mirrors );
-		}
-		return [];
-	}
 }

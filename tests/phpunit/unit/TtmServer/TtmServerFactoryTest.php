@@ -96,12 +96,6 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			'writable' => true
 		];
 
-		$readableServerWithMirror = [
-			'type' => 'ttmserver',
-			'class' => FakeReadableTtmServer::class,
-			'mirrors' => [ 'write' ]
-		];
-
 		yield 'no writable servers' => [
 			[ '1' => $dummyTtm ],
 			null,
@@ -115,15 +109,6 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			],
 			null,
 			'writable'
-		];
-
-		yield 'if mirrors are configured with writable, mirrors are ignored' => [
-			[
-				'read' => $readableServerWithMirror,
-				'write' => $writableServer
-			],
-			'read',
-			'write'
 		];
 	}
 
@@ -154,25 +139,11 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			'writable' => true,
 		];
 
-		$writableMirrorServer = [
-			'type' => 'ttmserver',
-			'class' => FakeTTMServer::class,
-			'writable' => true,
-			'mirrors' => true
-		];
-
 		yield 'readable TtmServer is marked as writable' => [
 			[ 'readable' => $readableTtmServer ],
 			null,
 			InvalidArgumentException::class,
 			'/does not implement WritableTtmServer interface/i'
-		];
-
-		yield 'writable TtmServer is marked as a mirror' => [
-			[ 'writable' => $writableMirrorServer ],
-			null,
-			InvalidArgumentException::class,
-			'/use both writable and mirrors parameter/i'
 		];
 
 		yield 'default server is writable' => [
@@ -258,14 +229,12 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			'type' => 'ttmserver',
 			'class' => FakeTTMServer::class,
 			'writable' => true,
-			'mirror' => true
 		];
 
 		$normalServer = [
 			'type' => 'ttmserver',
 			'class' => FakeTTMServer::class,
 			'writable' => true,
-			'mirror' => true
 		];
 
 		yield 'only writable server are returned' => [

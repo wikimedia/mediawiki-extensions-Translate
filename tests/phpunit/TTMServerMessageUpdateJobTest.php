@@ -7,10 +7,7 @@
 
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 
-/**
- * Mostly test mirroring and failure modes.
- * @covers TTMServerMessageUpdateJob
- */
+/** @covers TTMServerMessageUpdateJob */
 class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	/** @var WritableTtmServer[] used to link our mocks with TestableTTMServer built by the factory */
 	public static array $mockups = [];
@@ -25,16 +22,16 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 					// will be used as the key in static::$mockups to attach the
 					// mock to the newly created TestableTTMServer instance
 					'name' => 'primary',
-					'mirrors' => [ 'secondary' ],
-					'type' => 'ttmserver'
+					'type' => 'ttmserver',
+					'writable' => true
 				],
 				'secondary' => [
 					'class' => TestableTTMServer::class,
 					'name' => 'secondary',
-					'type' => 'ttmserver'
+					'type' => 'ttmserver',
+					'writable' => true
 				]
-			],
-			'wgTranslateTranslationDefaultService' => 'primary'
+			]
 		] );
 	}
 

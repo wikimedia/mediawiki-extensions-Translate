@@ -58,10 +58,6 @@ class FakeTTMServer extends TTMServer implements ReadableTtmServer, WritableTtmS
 	public function endBootstrap(): void {
 	}
 
-	public function getMirrors(): array {
-		return [];
-	}
-
 	public function setDoReIndex(): void {
 	}
 }

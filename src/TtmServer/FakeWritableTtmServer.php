@@ -33,10 +33,6 @@ class FakeWritableTtmServer extends TTMServer implements WritableTtmServer {
 	public function endBootstrap(): void {
 	}
 
-	public function getMirrors(): array {
-		return [];
-	}
-
 	public function isFrozen(): bool {
 		return false;
 	}
