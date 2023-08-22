@@ -489,8 +489,7 @@
 							// Since translation to source language is disabled, do not display any messages
 							return;
 						}
-						if ( currentWarning.code === 'translate-language-targetlang-variant-of-source'
-						) {
+						if ( currentWarning.code === 'translate-language-targetlang-variant-of-source' ) {
 							self.displayLoadErrors( [ currentWarning ] );
 							break;
 						}
