@@ -109,6 +109,7 @@
 	"apierror-translate-nomessagefortitle": "El título no se corresponde con un mensaje traducible",
 	"apierror-translate-notranslationservices": "No se ha configurado ningún servicio público de traducciones. Los administradores de la wiki deben configurar <var>$wgTranslateTranslationServices</var> adecuadamente para poder utilizar esta función.",
 	"apierror-translate-owntranslation": "No se pueden revisar las traducciones propias",
+	"apierror-translate-sandbox-user-add": "Hubo un error al agregar un nuevo usuario",
 	"apierror-translate-smg-nochanges": "No hay ningún cambio que procesar.",
 	"apierror-translate-unknownmessage": "Mensaje desconocido",
 	"apierror-translate-invalid-changeset-name": "Ha pasado un conjunto de cambios de nombre de archivo no válido - $1",

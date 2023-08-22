@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chaduvari"
+			"Chaduvari",
+			"Divya4232"
 		]
 	},
-	"apihelp-query+languagestats-param-group": "సందేశాల సమూహం ఐడీ."
+	"apihelp-query+languagestats-param-group": "సందేశాల సమూహం ఐడీ.",
+	"apierror-translate-sandbox-user-add": "కొత్త యూజర్ ని జోడించేటప్పుడు దోషం ఏర్పడింది"
 }

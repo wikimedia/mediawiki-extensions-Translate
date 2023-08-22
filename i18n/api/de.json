@@ -135,6 +135,7 @@
 	"apierror-translate-notranslationservices": "Es wurden keine öffentlichen Übersetzungsdienste konfiguriert. Der Administrator des Wikis muss <var>$wgTranslateTranslationServices</var> passend festlegen, bevor diese Funktion verwendet werden kann.",
 	"apierror-translate-owntranslation": "Eigene Übersetzungen können nicht überprüft werden",
 	"apierror-translate-sandboxdisabled": "Die Spielwiesenfunktion ist nicht in Verwendung",
+	"apierror-translate-sandbox-user-add": "Beim Hinzufügen eines neuen Benutzers ist ein Fehler aufgetreten",
 	"apierror-translate-smg-nochanges": "Es gibt keine zu verarbeitenden Änderungen.",
 	"apierror-translate-unknownmessage": "Unbekannte Nachricht",
 	"apierror-translate-invalid-operation": "Ungültige Operation: $1. Gültige Werte - $2.",

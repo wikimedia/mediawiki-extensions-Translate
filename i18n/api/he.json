@@ -160,6 +160,7 @@
 	"apierror-translate-notranslationservices": "לא הוגדרו שירותי תרגום ציבוריים. מנהל אתר הוויקי צריך להגדיר את <var dir=\"ltr\">$wgTranslateTranslationServices</var> באופן תקין כדי שניתן יהיה להשתמש בתכונה זו.",
 	"apierror-translate-owntranslation": "לא ניתן לסקור את ההודעות של עצמך",
 	"apierror-translate-sandboxdisabled": "ארגז החול אינו בשימוש",
+	"apierror-translate-sandbox-user-add": "אירעה שגיאה בעת הוספת משתמש חדש",
 	"apierror-translate-smg-nochanges": "אין עוד שינויים שצריך לעבד.",
 	"apierror-translate-unknownmessage": "הודעה בלתי־ידועה",
 	"apierror-translate-invalid-changeset-name": "הועבר שם ערכת שינויים בלתי־תקין – $1",

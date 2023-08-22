@@ -57,6 +57,7 @@
 	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",
 	"apierror-translate-owntranslation": "Lastnih prevodov ni mogoče pregledovati",
 	"apierror-translate-sandboxdisabled": "Možnost peskovnika ni v uporabi",
+	"apierror-translate-sandbox-user-add": "Med dodajanjem novega uporabnika je prišlo do napake",
 	"apierror-translate-smg-nochanges": "Ni nobenih sprememb za obdelavo.",
 	"apiwarn-translate-language-disabled-source": "Izvorni jezik te skupine je $1. Izberite drug jezik, v katerega želite prevajati.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Prevajate v <bdi>$1</bdi>.</strong> To je različica <bdi>$2</bdi>, ki je že izvorni jezik teh sporočil. Prepričajte se, da je izbrani jezik pravilen, in upoštevajte razlike med jezikovnimi različicami, da zagotovite dober prevod.",
