@@ -17,6 +17,8 @@ use Wikimedia\TestingAccessWrapper;
  * @covers MessageIndex
  */
 class MessageIndexTest extends MediaWikiIntegrationTestCase {
+	protected $tablesUsed = [ 'translate_messageindex' ];
+
 	protected function setUp(): void {
 		parent::setUp();
 		$this->setMwGlobals( [

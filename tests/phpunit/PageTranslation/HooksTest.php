@@ -30,6 +30,8 @@ use Wikimedia\TestingAccessWrapper;
  * @covers MediaWiki\Extension\Translate\PageTranslation\Hooks
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
+	protected $tablesUsed = [ 'revtag' ];
+
 	protected function setUp(): void {
 		parent::setUp();
 
