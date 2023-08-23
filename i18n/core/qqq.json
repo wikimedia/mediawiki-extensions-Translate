@@ -220,7 +220,7 @@
 	"translate-ls-submit": "Submit button text on [[Special:LanguageStats]] and [[Special:MessageGroupStats]].",
 	"translate-ls-column-group": "Column header in [[Special:LanguageStats]].\n{{Identical|Message group}}",
 	"translate-mgs-pagename": "{{doc-special|MessageGroupStats}}",
-	"translate-mgs-fieldset": "Fieldset label in [[Special:MessageGroupStats]].\nThese are the preferences that can be set in the input form for displaying or refreshing the list of message groups to translate along with their respective completion statistics.",
+	"translate-mgs-fieldset": "Note that this means \"Preferences for displaying (the table)\" (not \"show the preferences\").\n\nFieldset label in [[Special:MessageGroupStats]].\nThese are the preferences that can be set in the input form for displaying or refreshing the list of message groups to translate along with their respective completion statistics.",
 	"translate-mgs-group": "Label of drop-down box in [[Special:MessageGroupStats]].\n{{Identical|Message group}}",
 	"translate-mgs-nocomplete": "Option in [[Special:MessageGroupStats]]",
 	"translate-mgs-noempty": "Option in [[Special:MessageGroupStats]]",
