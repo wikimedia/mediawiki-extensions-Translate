@@ -69,11 +69,12 @@ class MessageBundle extends TranslatableBundle {
 			[
 				'checkKeys' => [ $cacheKey ],
 				'pcTTL' => $cache::TTL_PROC_SHORT,
-				'pcGroup' => __CLASS__ . ':1'
+				'pcGroup' => __CLASS__ . ':1',
+				'version' => 2,
 			]
 		);
 
-		return in_array( $title->getArticleID(), $translatablePageIds );
+		return isset( $translatablePageIds[$title->getArticleID()] );
 	}
 
 	public static function clearSourcePageCache(): void {

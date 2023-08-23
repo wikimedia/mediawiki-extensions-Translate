@@ -146,7 +146,7 @@ class RevTagStore {
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 		$results = [];
 		foreach ( $res as $row ) {
-			$results[] = (int)$row->rt_page;
+			$results[$row->rt_page] = true;
 		}
 
 		return $results;
