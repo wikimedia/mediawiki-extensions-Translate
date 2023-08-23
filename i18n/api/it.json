@@ -59,6 +59,7 @@
 	"apierror-translate-nomessagefortitle": "Il titolo non corrisponde a un messaggio traducibile",
 	"apierror-translate-owntranslation": "Non puoi revisionare le tue traduzioni",
 	"apierror-translate-sandboxdisabled": "La funzione Sandbox non è in uso",
+	"apierror-translate-sandbox-user-add": "Si è verificato un errore durante l'aggiunta di un nuovo utente",
 	"apierror-translate-unknownmessage": "Messaggio sconosciuto",
 	"apiwarn-translate-alreadyreviewedbyyou": "Già contrassegnata come revisionata da te",
 	"apihelp-translationentitysearch-param-limit": "Numero massimo di risultati della ricerca"

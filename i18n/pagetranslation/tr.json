@@ -223,7 +223,7 @@
 	"pm-import-button-label": "İçe aktar",
 	"pm-savepages-button-label": "Kaydet",
 	"pm-cancel-button-label": "İptal",
-	"pm-page-does-not-exist": "$1 mevcut değil.",
+	"pm-page-does-not-exist": "$1 sayfası yok.",
 	"pm-old-translations-missing": "$1 eski çeviriler içermiyor.",
 	"pm-extra-units-warning": "Fazladan birimler olabilir. Lütfen kaynak ve çeviri birimlerini uygun şekilde eşleştirin.",
 	"pm-pagename-missing": "Lütfen sayfa adı girin.",

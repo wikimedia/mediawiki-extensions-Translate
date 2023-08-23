@@ -10,6 +10,7 @@
 	"tux-sst-view-foreign": "Vis på $1",
 	"tux-sst-search": "Søk",
 	"tux-sst-search-ph": "Søk i oversettelser",
+	"tux-sst-search-info": "Bruk operatorene <code>language:</code> eller <code>group:</code> for å fininnstille søkekriteriene",
 	"tux-sst-count": "{{PLURAL:$1|Ett resultat|$1 resultater}} funnet",
 	"tux-sst-facet-language": "Språk",
 	"tux-sst-facet-group": "Beskjedgrupper",
