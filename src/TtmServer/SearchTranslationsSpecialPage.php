@@ -199,6 +199,9 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
+			if ( $text === null ) {
+				continue;
+			}
 			$text = Utilities::convertWhiteSpaceToHTML( $text );
 
 			[ $pre, $post ] = $this->hl;
