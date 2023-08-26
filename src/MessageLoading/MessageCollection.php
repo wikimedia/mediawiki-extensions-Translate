@@ -270,6 +270,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$pos = array_search( $offset, array_keys( $this->keys ), true );
 			// Now offset is always an integer, suitable for array_slice
 			$offset = $pos !== false ? $pos : count( $this->keys );
+		} else {
+			$offset = (int)$offset;
 		}
 
 		// False means that cannot go back or forward
