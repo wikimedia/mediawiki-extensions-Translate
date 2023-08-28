@@ -5,7 +5,8 @@
 			"Kaganer",
 			"Рустам Нурыев",
 			"Kareyac",
-			"Айсар"
+			"Айсар",
+			"З. ӘЙЛЕ"
 		]
 	},
 	"translate-tag-translate-link-desc": "Был битте тәржемә итергә",
@@ -13,7 +14,7 @@
 	"tpt-languages-legend": "Башҡа телдәр:",
 	"tpt-languages-nonzero": "$1 ($2% тәржемә ителгән)",
 	"tpt-aggregategroup-add": "Өҫтәргә",
-	"pt-movepage-list-other": "{{PLURAL:$1|1=Башҡа ярҙамся бит|Башҡа ярҙамся биттәр}}",
+	"pt-movepage-list-other": "Башҡа {{PLURAL:$1|1=ярҙамсы бит|ярҙамсы биттәр}}",
 	"pt-movepage-legend": "Тәржемә итеп булған биттәрҙең исемен үҙгәртергә",
 	"pt-movepage-current": "Хәҙерге исеме:",
 	"pt-movepage-new": "Яңы исеме:",

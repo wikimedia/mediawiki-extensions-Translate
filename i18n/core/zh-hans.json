@@ -47,11 +47,12 @@
 			"Stang",
 			"Diskdance",
 			"Tr jason",
-			"LittlePaw365"
+			"LittlePaw365",
+			"Func"
 		]
 	},
 	"translate": "翻译",
-	"translate-extensionname": "翻译（Translate）",
+	"translate-extensionname": "Translate",
 	"translate-desc": "用于翻译MediaWiki和其他软件界面消息的[[Special:Translate|特殊页面]]",
 	"translate-fuzzybot-desc": "这是由MediaWiki[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻译扩展]使用的特殊系统账户，用于维护翻译。此账户是MediaWiki软件的一部分，不由任何用户所拥有。",
 	"translate-taskui-export-to-file": "以原始格式导出",
@@ -104,7 +105,7 @@
 	"translate-export-format-notsupported": "指定的导出格式不被消息组支持。",
 	"translate-export-group-too-large": "选择的消息组太大。选择少于$1{{PLURAL:$1|个消息}}的消息组或联系翻译管理员寻求建议。",
 	"translate-checks-parameters": "以下$2个参数未使用：<strong>$1</strong>",
-	"translate-checks-parameters-unknown": "以下$2个参数未知：<strong>$1</strong>",
+	"translate-checks-parameters-unknown": "以下为未知{{PLURAL:$2|参数}}：<strong>$1</strong>",
 	"translate-checks-balance": "有一组数目不均等的{{PLURAL:$2|括号}}：<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "以下$2个链接有问题：<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "以下$2个链接丢失：<strong><nowiki>$1</nowiki></strong>",

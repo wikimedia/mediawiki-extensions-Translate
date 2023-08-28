@@ -44,7 +44,7 @@
 	"tpt-sections-template": "翻譯頁面模板",
 	"tpt-action-nofuzzy": "不要作廢翻譯",
 	"tpt-badtitle": "頁面名稱 ($1) 不是一個有效的標題",
-	"tpt-nosuchpage": "頁面 $1 不存在。",
+	"tpt-nosuchpage": "頁面「$1」不存在。",
 	"tpt-oldrevision": "$2 不是頁面 [[:$1]] 的最新版本。\n僅可標記最新版本的頁面需要翻譯。",
 	"tpt-notsuitable": "頁面 $1 不適合翻譯。\n請確定該頁面擁有 <nowiki><translate></nowiki> 標籤，且使用有效的語法。",
 	"tpt-saveok": "頁面 [[:$1]] 已被標記需要翻譯，包含 $2 個翻譯單元。\n現在已可 <span class=\"plainlinks\">[$3 翻譯]</span> 頁面。",
