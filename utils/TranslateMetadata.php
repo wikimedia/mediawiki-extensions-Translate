@@ -16,7 +16,7 @@ use MediaWiki\MediaWikiServices;
  */
 
 class TranslateMetadata {
-	/** Map of (group => key => value) */
+	/** Map of (database group id => key => value) */
 	private static array $cache = [];
 	private static ?array $priorityCache = null;
 
@@ -25,7 +25,8 @@ class TranslateMetadata {
 	 * @param string $caller
 	 */
 	public static function preloadGroups( array $groups, string $caller ): void {
-		$missing = array_keys( array_diff_key( array_flip( $groups ), self::$cache ) );
+		$dbGroupIds = array_map( [ self::class, 'getGroupIdForDatabase' ], $groups );
+		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), self::$cache ) );
 		if ( !$missing ) {
 			return;
 		}
@@ -55,8 +56,7 @@ class TranslateMetadata {
 	 */
 	public static function get( string $group, string $key ) {
 		self::preloadGroups( [ $group ], __METHOD__ );
-
-		return self::$cache[$group][$key] ?? false;
+		return self::$cache[self::getGroupIdForDatabase( $group )][$key] ?? false;
 	}
 
 	/**
@@ -73,19 +73,20 @@ class TranslateMetadata {
 	/**
 	 * Set a metadata value for the given group and metadata key. Updates the
 	 * value if already existing.
-	 * @param string $group The group id
+	 * @param string $groupId The group id
 	 * @param string $key Metadata key
 	 * @param string|false $value Metadata value, false deletes from cache
 	 */
-	public static function set( string $group, string $key, $value ): void {
+	public static function set( string $groupId, string $key, $value ): void {
 		$dbw = MediaWikiServices::getInstance()
 			->getDBLoadBalancer()
 			->getConnection( DB_PRIMARY );
-		$data = [ 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value ];
+		$dbGroupId = self::getGroupIdForDatabase( $groupId );
+		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
 			$dbw->delete( 'translate_metadata', $data, __METHOD__ );
-			unset( self::$cache[$group][$key] );
+			unset( self::$cache[$dbGroupId][$key] );
 		} else {
 			$dbw->replace(
 				'translate_metadata',
@@ -93,7 +94,7 @@ class TranslateMetadata {
 				$data,
 				__METHOD__
 			);
-			self::$cache[$group][$key] = $value;
+			self::$cache[$dbGroupId][$key] = $value;
 		}
 
 		self::$priorityCache = null;
@@ -135,10 +136,12 @@ class TranslateMetadata {
 		$dbw = MediaWikiServices::getInstance()
 			->getDBLoadBalancer()
 			->getConnection( DB_PRIMARY );
-		$conditions = [ 'tmd_group' => $groupId ];
+
+		$dbGroupId = self::getGroupIdForDatabase( $groupId );
+		$conditions = [ 'tmd_group' => $dbGroupId ];
 		$dbw->delete( 'translate_metadata', $conditions, __METHOD__ );
-		self::$cache[$groupId] = null;
-		unset( self::$priorityCache[ $groupId ] );
+		self::$cache[ $dbGroupId ] = null;
+		unset( self::$priorityCache[ $dbGroupId ] );
 	}
 
 	public static function isExcluded( string $groupId, string $code ): bool {
@@ -176,9 +179,10 @@ class TranslateMetadata {
 			}
 		}
 
+		$dbGroupId = self::getGroupIdForDatabase( $groupId );
 		$isDiscouraged = MessageGroups::getPriority( $groupId ) === 'discouraged';
-		$hasLimitedLanguages = isset( self::$priorityCache[$groupId] );
-		$isLanguageIncluded = isset( self::$priorityCache[$groupId][$code] );
+		$hasLimitedLanguages = isset( self::$priorityCache[$dbGroupId] );
+		$isLanguageIncluded = isset( self::$priorityCache[$dbGroupId][$code] );
 
 		return $isDiscouraged || ( $hasLimitedLanguages && !$isLanguageIncluded );
 	}
@@ -191,11 +195,17 @@ class TranslateMetadata {
 	 */
 	public static function loadBasicMetadataForTranslatablePages( array $groupIds, array $keys ): array {
 		$db = Utilities::getSafeReadDB();
+		$dbGroupIdMap = [];
+
+		foreach ( $groupIds as $groupId ) {
+			$dbGroupIdMap[ self::getGroupIdForDatabase( $groupId ) ] = $groupId;
+		}
+
 		$res = $db->select(
 			'translate_metadata',
 			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
 			[
-				'tmd_group' => $groupIds,
+				'tmd_group' => array_keys( $dbGroupIdMap ),
 				'tmd_key' => $keys,
 			],
 			__METHOD__
@@ -203,7 +213,9 @@ class TranslateMetadata {
 
 		$ret = [];
 		foreach ( $res as $row ) {
-			$ret[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+			$groupId = $row->tmd_group;
+			// Remap the db group ids to group id in the response
+			$ret[ $dbGroupIdMap[ $groupId ] ][ $row->tmd_key ] = $row->tmd_value;
 		}
 
 		return $ret;
@@ -233,5 +245,16 @@ class TranslateMetadata {
 		foreach ( $metadataKeys as $type ) {
 			self::set( $groupId, $type, false );
 		}
+	}
+
+	private static function getGroupIdForDatabase( string $groupId ): string {
+		// Check if length is more than 200 bytes
+		if ( strlen( $groupId ) <= 200 ) {
+			return $groupId;
+		}
+
+		$hash = hash( 'md5', $groupId );
+		// We take 160 bytes of the original string and append the md5 hash (32 bytes)
+		return mb_strcut( $groupId, 0, 160 ) . '||' . $hash;
 	}
 }
