@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Contains class which offers functionality for reading and updating Translate group
@@ -15,32 +16,31 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  */
 
 class TranslateMetadata {
-	/** @var array Map of (group => key => value) */
-	private static $cache = [];
-	/** @var array|null */
-	private static $priorityCache;
+	/** Map of (group => key => value) */
+	private static array $cache = [];
+	private static ?array $priorityCache = null;
 
 	/**
 	 * @param string[] $groups List of translate groups
 	 * @param string $caller
 	 */
-	public static function preloadGroups( array $groups, string $caller ) {
+	public static function preloadGroups( array $groups, string $caller ): void {
 		$missing = array_keys( array_diff_key( array_flip( $groups ), self::$cache ) );
 		if ( !$missing ) {
 			return;
 		}
 
-		$fname = __METHOD__ . " (for $caller)";
+		$functionName = __METHOD__ . " (for $caller)";
 
 		self::$cache += array_fill_keys( $missing, null ); // cache negatives
 
 		$dbr = Utilities::getSafeReadDB();
-		$conds = count( $missing ) <= 500 ? [ 'tmd_group' => array_map( 'strval', $missing ) ] : [];
+		$conditions = count( $missing ) <= 500 ? [ 'tmd_group' => array_map( 'strval', $missing ) ] : [];
 		$res = $dbr->select(
 			'translate_metadata',
 			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
-			$conds,
-			$fname
+			$conditions,
+			$functionName
 		);
 		foreach ( $res as $row ) {
 			self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
@@ -53,7 +53,7 @@ class TranslateMetadata {
 	 * @param string $key Metadata key
 	 * @return string|bool
 	 */
-	public static function get( $group, $key ) {
+	public static function get( string $group, string $key ) {
 		self::preloadGroups( [ $group ], __METHOD__ );
 
 		return self::$cache[$group][$key] ?? false;
@@ -62,10 +62,6 @@ class TranslateMetadata {
 	/**
 	 * Get a metadata value for the given group and key.
 	 * If it does not exist, return the default value.
-	 * @param string $group
-	 * @param string $key
-	 * @param string $defaultValue
-	 * @return string
 	 */
 	public static function getWithDefaultValue(
 		string $group, string $key, string $defaultValue
@@ -81,8 +77,10 @@ class TranslateMetadata {
 	 * @param string $key Metadata key
 	 * @param string|false $value Metadata value, false deletes from cache
 	 */
-	public static function set( $group, $key, $value ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+	public static function set( string $group, string $key, $value ): void {
+		$dbw = MediaWikiServices::getInstance()
+			->getDBLoadBalancer()
+			->getConnection( DB_PRIMARY );
 		$data = [ 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
@@ -103,9 +101,7 @@ class TranslateMetadata {
 
 	/**
 	 * Wrapper for getting subgroups.
-	 * @param string $groupId
 	 * @return string[]|null
-	 * @since 2012-05-09
 	 */
 	public static function getSubgroups( string $groupId ): ?array {
 		$groups = self::get( $groupId, 'subgroups' );
@@ -128,26 +124,19 @@ class TranslateMetadata {
 		return $groups;
 	}
 
-	/**
-	 * Wrapper for setting subgroups.
-	 * @param string $groupId
-	 * @param array $subgroupIds
-	 * @since 2012-05-09
-	 */
-	public static function setSubgroups( $groupId, $subgroupIds ) {
+	/** Wrapper for setting subgroups. */
+	public static function setSubgroups( string $groupId, array $subgroupIds ): void {
 		$subgroups = implode( '|', $subgroupIds );
 		self::set( $groupId, 'subgroups', $subgroups );
 	}
 
-	/**
-	 * Wrapper for deleting one wiki aggregate group at once.
-	 * @param string $groupId
-	 * @since 2012-05-09
-	 */
-	public static function deleteGroup( $groupId ) {
-		$dbw = wfGetDB( DB_PRIMARY );
-		$conds = [ 'tmd_group' => $groupId ];
-		$dbw->delete( 'translate_metadata', $conds, __METHOD__ );
+	/** Wrapper for deleting one wiki aggregate group at once. */
+	public static function deleteGroup( string $groupId ): void {
+		$dbw = MediaWikiServices::getInstance()
+			->getDBLoadBalancer()
+			->getConnection( DB_PRIMARY );
+		$conditions = [ 'tmd_group' => $groupId ];
+		$dbw->delete( 'translate_metadata', $conditions, __METHOD__ );
 		self::$cache[$groupId] = null;
 		unset( self::$priorityCache[ $groupId ] );
 	}
@@ -220,12 +209,6 @@ class TranslateMetadata {
 		return $ret;
 	}
 
-	/**
-	 * @param string $oldGroupId
-	 * @param string $newGroupId
-	 * @param string[] $metadataKeysToMove
-	 * @return void
-	 */
 	public static function moveMetadata(
 		string $oldGroupId,
 		string $newGroupId,
@@ -244,7 +227,6 @@ class TranslateMetadata {
 	/**
 	 * @param string $groupId
 	 * @param string[] $metadataKeys
-	 * @return void
 	 */
 	public static function clearMetadata( string $groupId, array $metadataKeys ): void {
 		// remove the entries from metadata table.
