@@ -99,7 +99,9 @@
 	"tpt-translate-title": "পাতার শিরোনাম অনুবাদের অনুমোদন দিন",
 	"pp-save-button-label": "প্রকাশ করুন",
 	"pp-cancel-button-label": "বাতিল",
+	"pp-page-does-not-exist": "$1 পাতাটির অস্তিত্ব নেই।",
 	"pp-diff-old-header": "উত্স পাঠ্য",
+	"pp-unexpected-error": "আপনার অনুরোধটি প্রক্রিয়াকরণের সময় একটি ত্রুটি হয়েছে",
 	"tpt-generic-button": "নিশ্চিত করুন",
 	"visualeditor-annotations-tvar-end": "অ-অনুবাদযোগ্য বিষয়বস্তুর সমাপ্তি"
 }
