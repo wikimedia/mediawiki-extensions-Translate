@@ -222,6 +222,7 @@
 	"translate-workflowgroup-label": "Arbeidsflytsstoder",
 	"translate-dynagroup-recent-label": "Nylege omsetjingar",
 	"translate-dynagroup-recent-desc": "Denne meldingsgruppa viser alle nylege omsetjingar til dette språket.\nHo er mest nyttig for korrekturlesing.",
+	"translate-dynagroup-additions-desc": "Denne meldingsgruppa syner nye og endra meldingar.",
 	"translate-msggroupselector-projects": "Meldingsgruppe",
 	"translate-msggroupselector-search-placeholder": "Søk etter grupper",
 	"translate-msggroupselector-search-all": "Alle",

@@ -10,7 +10,8 @@
 			"Octahedron80",
 			"Passawuth",
 			"Patsagorn Y.",
-			"Woraponboonkerd"
+			"Woraponboonkerd",
+			"RidJasper"
 		]
 	},
 	"translate": "แปล",
@@ -274,8 +275,8 @@
 	"tux-status-fuzzy": "ล้าสมัย",
 	"tux-status-proofread": "ตรวจทานแล้ว",
 	"tux-status-translated": "แปลแล้ว",
-	"tux-status-saving": "กำลังบันทึก...",
-	"tux-status-unsaved": "ยังไม่บันทึก",
+	"tux-status-saving": "กำลังเผยแพร่…",
+	"tux-status-unsaved": "ยังไม่เผยแพร่",
 	"tux-save-unknown-error": "เกิดข้อผิดพลาดที่ไม่รู้จัก",
 	"tux-editor-editsummary-placeholder": "สรุปทางเลือก",
 	"tux-editor-paste-original-button-label": "วางข้อความต้นฉบับ",
@@ -285,7 +286,7 @@
 	"tux-editor-cancel-button-label": "ยกเลิก",
 	"tux-editor-confirm-button-label": "ยืนยันการแปล",
 	"tux-editor-proofread-button-label": "ทำเครื่องหมายว่าตรวจทานแล้ว",
-	"tux-editor-shortcut-info": "กด \"$1\" เพื่อบันทึก หรือ \"$2\" เพื่อข้ามไปยังข้อความถัดไป หรือ \"$4\" เพื่อเขียนข้อความสรุป หรือ \"$3\" สำหรับทางลัดอื่น ๆ",
+	"tux-editor-shortcut-info": "กด \"$1\" เพื่อบันทึก และย้ายไปยังข้อความถัดไป \"$2\" เพื่อข้าม \"$4\" เพื่อเขียนข้อความสรุป หรือ \"$3\" เพื่อดูทางลัดอื่น ๆ",
 	"tux-editor-edit-desc": "แก้ไขคำอธิบายการใช้งาน",
 	"tux-editor-add-desc": "เพิ่มคำอธิบายการใช้งาน",
 	"tux-editor-suggestions-title": "คำแนะนำ",
