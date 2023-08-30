@@ -142,6 +142,7 @@
 	"apierror-translate-notranslationservices": "未設置開放翻譯服務。在此功能可使用前，Wiki 管理員需適當設定 <var>$wgTranslateTranslationServices</var>。",
 	"apierror-translate-owntranslation": "不能審核自己的翻譯",
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
+	"apierror-translate-sandbox-user-add": "新增使用者時發生錯誤",
 	"apierror-translate-smg-nochanges": "沒有需要處理的更動。",
 	"apierror-translate-unknownmessage": "未知訊息",
 	"apierror-translate-invalid-changeset-name": "傳遞無效的變更集檔案名稱 - $1",
