@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chuvash",
-			"Chuvash2014"
+			"Chuvash2014",
+			"Astahar"
 		]
 	},
 	"translate": "Куçарни",
@@ -24,6 +25,7 @@
 	"translate-ls-submit": "Статистикине кăтарт",
 	"translate-mgs-submit": "Статистикине кăтарт",
 	"supportedlanguages-recenttranslations": "нумай пулмасть куçарнисем",
+	"translate-documentation-language": "Сообщенин документацийӗ",
 	"translate-dynagroup-recent-label": "Нумай пулмасть куçарнисем",
 	"tux-languageselector": "Куçармалла",
 	"tux-tab-all": "Пурте",
