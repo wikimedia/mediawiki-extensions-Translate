@@ -87,7 +87,7 @@
 	"translate-checks-unicode-plural-unsupported": "Гэта паведамленне не падтрымлівае <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-invalid": "Формы множнага ліку павінны быць вызначаны як $1. Гэты пераклад змяшчае $2.",
 	"translate-checks-pagename": "Змянілася вызначэнне прасторы назваў",
-	"translate-checks-format": "Гэты пераклад не адпавядае вызначэнню ці ўтрымлівае сінтаксічную памылку: $1",
+	"translate-checks-format": "Гэты пераклад не адпавядае вызначэнню ці змяшчае сінтаксічную памылку: $1",
 	"translate-checks-escape": "{{PLURAL:$2|Гэты мадыфікацыйны сімвал можа быць выпадковым|Гэтыя мадыфікацыйныя сімвалы могуць быць выпадковымі}}: <strong>$1</strong>. {{PLURAL:$4|Слушны мадыфікацыйны сімвал —|Слушныя мадыфікацыйныя сімвалы ўключаюць}} $3.",
 	"translate-checks-parametersnotequal": "Колькасць параметраў — $1, а {{PLURAL:$2|павінен|павінна}} быць — $2.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> няслушна сфарміраваны.",
