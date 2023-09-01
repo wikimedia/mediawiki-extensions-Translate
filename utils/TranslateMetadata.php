@@ -247,6 +247,19 @@ class TranslateMetadata {
 		}
 	}
 
+	/** Get groups ids that have subgroups set up. */
+	public static function getGroupsWithSubgroups(): array {
+		$tables = [ 'translate_metadata' ];
+		$field = 'tmd_group';
+		$conditions = [ 'tmd_key' => 'subgroups' ];
+
+		$db = Utilities::getSafeReadDB();
+		// There is no need to de-hash the group id from the database as
+		// AggregateGroupsActionApi::generateAggregateGroupId already ensures that the length
+		// is appropriate
+		return $db->selectFieldValues( $tables, $field, $conditions, __METHOD__ );
+	}
+
 	private static function getGroupIdForDatabase( string $groupId ): string {
 		// Check if length is more than 200 bytes
 		if ( strlen( $groupId ) <= 200 ) {

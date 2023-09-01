@@ -91,10 +91,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 * @return array[]
 	 */
 	public function getCacheData(): array {
-		$tables = [ 'translate_metadata' ];
-		$field = 'tmd_group';
-		$conds = [ 'tmd_key' => 'subgroups' ];
-		$groupIds = $this->db->selectFieldValues( $tables, $field, $conds, __METHOD__ );
+		$groupIds = TranslateMetadata::getGroupsWithSubgroups();
 		TranslateMetadata::preloadGroups( $groupIds, __METHOD__ );
 
 		$groups = [];
