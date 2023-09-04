@@ -90,7 +90,7 @@ class FindUnsynchronizedDefinitionsMaintenanceScript extends BaseMaintenanceScri
 				$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
 				$cache->invalidate();
 			}
-			$script = realpath( __DIR__ . '/../../scripts/processMessageChanges.php' );
+			$script = realpath( __DIR__ . '/../../scripts/importExternalTranslations.php' );
 			$groupPattern = implode( ',', array_keys( $groupsWithIssues ) );
 			$command = "php '$script' --group='$groupPattern'";
 			echo "Now run the following command and finish the sync in the wiki:\n$command\n";
