@@ -16,6 +16,7 @@
 	"tux-sst-view-foreign": "$1 üzerinde görüntüle",
 	"tux-sst-search": "Ara",
 	"tux-sst-search-ph": "Çevirileri ara",
+	"tux-sst-search-info": "Arama ölçütlerini daha da nitelendirmek için <code>language:</code> ya da <code>group:</code> işlemcilerini kullanın",
 	"tux-sst-count": "{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu}}",
 	"tux-sst-facet-language": "Diller",
 	"tux-sst-facet-group": "İleti grupları",

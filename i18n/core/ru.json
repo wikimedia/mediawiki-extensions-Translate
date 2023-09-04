@@ -503,5 +503,6 @@
 	"log-action-filter-translationreview": "Тип действия:",
 	"log-action-filter-translationreview-message": "Проверка отдельных переведённых сообщений",
 	"log-action-filter-translationreview-group": "Изменения в статусе выполнения перевода",
-	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|импортировал|импортировала|импортировал_а}} пакет переводов $3"
+	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|импортировал|импортировала|импортировал_а}} пакет переводов $3",
+	"log-action-filter-import-translatable-bundle": "Импорт переводимого пакета"
 }
