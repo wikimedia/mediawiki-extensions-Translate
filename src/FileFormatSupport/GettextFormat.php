@@ -395,12 +395,31 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		}
 		$pluralCount = GettextPlural::getPluralCount( $pluralRule );
 
+		$documentationLanguageCode = MediaWikiServices::getInstance()
+			->getMainConfig()
+			->get( 'TranslateDocumentationLanguageCode' );
+		$documentationCollection = null;
+		if ( is_string( $documentationLanguageCode ) ) {
+			$documentationCollection = clone $collection;
+			$documentationCollection->resetForNewLanguage( $documentationLanguageCode );
+			$documentationCollection->loadTranslations();
+		}
+
 		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$transTemplate = $template['EXTRA']['TEMPLATE'][$key] ?? [];
 			$potTemplate = $pot['EXTRA']['TEMPLATE'][$key] ?? [];
+			$documentation = isset( $documentationCollection[$key] ) ?
+				$documentationCollection[$key]->translation() : null;
 
-			$output .= $this->formatMessageBlock( $key, $m, $transTemplate, $potTemplate, $pluralCount );
+			$output .= $this->formatMessageBlock(
+				$key,
+				$m,
+				$transTemplate,
+				$potTemplate,
+				$pluralCount,
+				$documentation
+			);
 		}
 
 		return $output;
@@ -489,9 +508,10 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		Message $message,
 		array $trans,
 		array $pot,
-		int $pluralCount
+		int $pluralCount,
+		?string $documentation
 	): string {
-		$header = $this->formatDocumentation( $key );
+		$header = $this->formatDocumentation( $documentation );
 		$content = '';
 
 		$comments = $pot['comments'] ?? $trans['comments'] ?? [];
@@ -565,16 +585,12 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $cache->exists() ? $cache->getTimestamp() : wfTimestampNow();
 	}
 
-	private function formatDocumentation( string $key ): string {
-		global $wgTranslateDocumentationLanguageCode;
-
-		$code = $wgTranslateDocumentationLanguageCode;
-		if ( !$this->offlineMode || !$code ) {
+	private function formatDocumentation( ?string $documentation ): string {
+		if ( !is_string( $documentation ) ) {
 			return '';
 		}
 
-		$documentation = Utilities::getMessageContent( $key, $code, $this->group->getNamespace() );
-		if ( !is_string( $documentation ) ) {
+		if ( !$this->offlineMode ) {
 			return '';
 		}
 

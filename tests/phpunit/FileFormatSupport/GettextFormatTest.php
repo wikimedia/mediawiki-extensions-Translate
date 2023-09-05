@@ -144,21 +144,21 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 		// Case 1: no context
 		$this->assertEquals(
 			$results[0],
-			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount, null ) )
 		);
 
 		// Case 2: empty context
 		$pot['ctxt'] = '';
 		$this->assertEquals(
 			$results[1],
-			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount, null ) )
 		);
 
 		// Case 3: context
 		$pot['ctxt'] = 'context';
 		$this->assertEquals(
 			$results[2],
-			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount ) )
+			trim( $method->invoke( $gettextFormat, $key, $m, $trans, $pot, $pluralCount, null ) )
 		);
 	}
 
