@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Diagnostics;
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\Shell\Shell;
 use Title;
 
 /**
@@ -92,7 +93,7 @@ class FindUnsynchronizedDefinitionsMaintenanceScript extends BaseMaintenanceScri
 			}
 			$script = realpath( __DIR__ . '/../../scripts/importExternalTranslations.php' );
 			$groupPattern = implode( ',', array_keys( $groupsWithIssues ) );
-			$command = "php '$script' --group='$groupPattern'";
+			$command = Shell::makeScriptCommand( $script, [ "--group", $groupPattern ] )->getCommandString();
 			echo "Now run the following command and finish the sync in the wiki:\n$command\n";
 		}
 	}
