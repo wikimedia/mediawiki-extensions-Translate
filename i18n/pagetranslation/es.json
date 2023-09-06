@@ -81,6 +81,8 @@
 	"tpt-select-prioritylangs-reason": "Motivo:",
 	"tpt-sections-prioritylangs": "Idiomas prioritarios",
 	"tpt-sections-syntaxversion": "Versión de sintaxis",
+	"tpt-transclusion": "Transclusión de plantilla",
+	"tpt-transclusion-label": "Habilitar la transclusión con reconocimiento de traducción para esta página",
 	"tpt-rev-mark": "marcar para traducción",
 	"tpt-rev-unmark": "eliminar de la traducción",
 	"tpt-rev-discourage": "desaconsejar",
