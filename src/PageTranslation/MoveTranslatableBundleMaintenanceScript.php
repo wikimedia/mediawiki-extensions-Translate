@@ -50,6 +50,11 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		);
 
 		$this->addOption(
+			'skip-redirect',
+			'Skip leaving a redirect behind for translatable bundle, subpages and related talk pages',
+		);
+
+		$this->addOption(
 			'skip-subpages',
 			'Skip moving subpages under the current page'
 		);
@@ -73,6 +78,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		$newBundleName = $this->getArg( 1 );
 		$username = $this->getArg( 2 );
 		$reason = $this->getOption( 'reason', '' );
+		$leaveRedirect = !$this->hasOption( 'skip-redirect' );
 		$moveSubpages = !$this->hasOption( 'skip-subpages' );
 		$moveTalkpages = !$this->hasOption( 'skip-talkpages' );
 
@@ -94,7 +100,12 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			$talkpageMsg = 'including talkpages';
 		}
 
-		$this->output( "$outputMsg ($subpageMsg; $talkpageMsg)\n" );
+		$leaveRedirectMsg = 'without leaving redirects';
+		if ( $leaveRedirect ) {
+			$leaveRedirectMsg = 'leaving redirects';
+		}
+
+		$this->output( "$outputMsg ($subpageMsg; $talkpageMsg; $leaveRedirectMsg)\n" );
 
 		try {
 			$currentTitle = $this->getTitleFromInput( $currentBundleName ?? '' );
@@ -114,14 +125,15 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 				$user,
 				$reason,
 				$moveSubpages,
-				$moveTalkpages
+				$moveTalkpages,
+				$leaveRedirect
 			);
 		} catch ( ImpossiblePageMove $e ) {
 			$fatalErrorMsg = $this->parseErrorMessage( $e->getBlockers() );
 			$this->fatalError( $fatalErrorMsg );
 		}
 
-		$this->displayPagesToMove( $pageCollection );
+		$this->displayPagesToMove( $pageCollection, $leaveRedirect );
 
 		$haveConfirmation = $this->getConfirmation();
 		if ( !$haveConfirmation ) {
@@ -130,13 +142,14 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		$this->output( "Starting page move\n" );
-
 		$pagesToMove = $pageCollection->getListOfPages();
+		$pagesToRedirect = $pageCollection->getListOfPagesToRedirect();
 
 		$this->bundleMover->moveSynchronously(
 			$currentTitle,
 			$newTitle,
 			$pagesToMove,
+			$pagesToRedirect,
 			$user,
 			$reason,
 			Closure::fromCallable( [ $this, 'progressCallback' ] )
@@ -172,7 +185,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		}
 	}
 
-	private function displayPagesToMove( PageMoveCollection $pageCollection ): void {
+	private function displayPagesToMove( PageMoveCollection $pageCollection, bool $leaveRedirect ): void {
 		$infoMessage = "\nThe following pages will be moved:\n";
 		$count = 0;
 		$subpagesCount = 0;
@@ -180,7 +193,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 		/** @var PageMoveOperation[][] */
 		$pagesToMove = [
-			'pt-movepage-list-pages' => [ $pageCollection->getTranslatablePage() ],
+			'pt-movepage-list-source' => [ $pageCollection->getTranslatablePage() ],
 			'pt-movepage-list-translation' => $pageCollection->getTranslationPagesPair(),
 			'pt-movepage-list-section' => $pageCollection->getUnitPagesPair()
 		];
@@ -192,7 +205,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 		foreach ( $pagesToMove as $type => $pages ) {
 			$lines = [];
-			$infoMessage .= $this->getSectionHeader( $type, $pages );
+			$infoMessage .= $this->getSectionHeader( $type, $pages, $leaveRedirect );
 			if ( !count( $pages ) ) {
 				continue;
 			}
@@ -223,7 +236,9 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		$translatableSubpages = $pageCollection->getTranslatableSubpages();
-		$infoMessage .= $this->getSectionHeader( 'pt-movepage-list-translatable', $translatableSubpages );
+		$infoMessage .= $this->getSectionHeader(
+			'pt-movepage-list-translatable', $translatableSubpages, $leaveRedirect
+		);
 
 		if ( $translatableSubpages ) {
 			$lines = [];
@@ -247,13 +262,21 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		$this->output( "\n" );
 	}
 
-	private function getSectionHeader( string $type, array $pages ): string {
+	private function getSectionHeader( string $type, array $pages, bool $leaveRedirect ): string {
 		$infoMessage = $this->getSeparator();
 		$pageCount = count( $pages );
+		$shouldRedirect = TranslatableBundleMover::shouldLeaveRedirect( $type, $leaveRedirect );
 
-		// $type can be: pt-movepage-list-pages, pt-movepage-list-translation, pt-movepage-list-section
+		// $type can be: pt-movepage-list-source, pt-movepage-list-translation, pt-movepage-list-section
 		// pt-movepage-list-other
-		$infoMessage .= $this->message( $type )->numParams( $pageCount )->text() . "\n\n";
+		$infoMessage .= $this->message( $type )->numParams( $pageCount )->text() . ' ';
+
+		if ( $shouldRedirect ) {
+			$infoMessage .= '(leave redirect)';
+		}
+
+		$infoMessage .= "\n\n";
+
 		if ( !$pageCount ) {
 			$infoMessage .= $this->message( 'pt-movepage-list-no-pages' )->text() . "\n";
 		}

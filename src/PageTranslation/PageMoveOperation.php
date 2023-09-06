@@ -17,6 +17,7 @@ class PageMoveOperation {
 	private ?Title $oldTalkpage = null;
 	private ?Title $newTalkpage = null;
 	private ?InvalidPageTitleRename $invalidPageTitleRename;
+	private bool $leaveRedirect = true;
 
 	public function __construct( Title $old, ?Title $new, ?InvalidPageTitleRename $e = null ) {
 		$this->old = $old;
@@ -38,6 +39,14 @@ class PageMoveOperation {
 
 	public function getNewTalkpage(): ?Title {
 		return $this->newTalkpage;
+	}
+
+	public function shouldLeaveRedirect(): bool {
+		return $this->leaveRedirect;
+	}
+
+	public function setLeaveRedirect( bool $leaveRedirect ): void {
+		$this->leaveRedirect = $leaveRedirect;
 	}
 
 	public function hasTalkpage(): bool {

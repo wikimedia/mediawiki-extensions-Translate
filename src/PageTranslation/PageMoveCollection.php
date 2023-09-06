@@ -104,6 +104,21 @@ class PageMoveCollection {
 		return $pageList;
 	}
 
+	/** @return array<string,bool> */
+	public function getListOfPagesToRedirect(): array {
+		$redirects = [
+			$this->translatablePage->getOldTitle()->getPrefixedText() =>
+					$this->translatablePage->shouldLeaveRedirect()
+		];
+
+		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->translationPagePairs ) );
+		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->unitPagesPairs ) );
+		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->subpagesPairs ) );
+		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->talkpagesPairs ) );
+
+		return $redirects;
+	}
+
 	/**
 	 * @param PageMoveOperation[] $pagePairs
 	 * @return Title[]
@@ -123,6 +138,22 @@ class PageMoveCollection {
 		foreach ( $pagePairs as $pair ) {
 			$pairs[ $pair->getOldTitle()->getPrefixedText() ] =
 				$pair->getNewTitle() ? $pair->getNewTitle()->getPrefixedText() : null;
+		}
+
+		return $pairs;
+	}
+
+	/** @return array<string,bool> */
+	private function getLeaveRedirectPairFromList( array $pagePairs ): array {
+		$pairs = [];
+		foreach ( $pagePairs as $pair ) {
+			if ( $pair->shouldLeaveRedirect() ) {
+				$pairs[ $pair->getOldTitle()->getPrefixedText() ] = true;
+				$talkpage = $pair->getOldTalkPage();
+				if ( $talkpage ) {
+					$pairs[ $talkpage->getPrefixedText() ] = true;
+				}
+			}
 		}
 
 		return $pairs;

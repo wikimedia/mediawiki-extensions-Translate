@@ -1,0 +1,5 @@
+.mw-translate-leave-redirect > span:first-child {
+	background-image: url( ../images/articleRedirect-ltr.svg );
+	padding-left: 24px;
+	background-repeat: no-repeat;
+}

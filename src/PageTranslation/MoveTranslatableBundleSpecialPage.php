@@ -40,6 +40,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private $moveTalkpages = true;
 	/** @var bool */
 	private $moveSubpages = true;
+	/** @var bool */
+	private $leaveRedirect = true;
 	// Dependencies
 	/** @var ObjectFactory */
 	private $objectFactory;
@@ -82,6 +84,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 		$user = $this->getUser();
 		$this->addHelpLink( 'Help:Extension:Translate/Move_translatable_page' );
+		$out = $this->getOutput();
+		$out->addModuleStyles( 'ext.translate.special.movetranslatablebundles.styles' );
 
 		$this->oldText = $request->getText(
 			'wpOldTitle',
@@ -121,7 +125,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 						$user,
 						$this->reason,
 						$this->moveSubpages,
-						$this->moveTalkpages
+						$this->moveTalkpages,
+						$this->leaveRedirect
 					);
 				} catch ( ImpossiblePageMove $e ) {
 					$this->showErrors( $e->getBlockers() );
@@ -133,6 +138,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			} elseif ( $isValidPostRequest && $subaction === 'perform' ) {
 				$this->moveSubpages = $request->getBool( 'subpages' );
 				$this->moveTalkpages = $request->getBool( 'talkpages' );
+				$this->leaveRedirect = $request->getBool( 'redirect' );
 
 				$this->bundleMover->moveAsynchronously(
 					$this->oldTitle,
@@ -140,7 +146,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					$this->moveSubpages,
 					$this->getUser(),
 					$this->reason,
-					$this->moveTalkpages
+					$this->moveTalkpages,
+					$this->leaveRedirect
 				);
 				$this->getOutput()->addWikiMsg(
 					'pt-movepage-started',
@@ -254,7 +261,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 		/** @var PageMoveOperation[][] */
 		$pagesToMove = [
-			'pt-movepage-list-pages' => [ $pageCollection->getTranslatablePage() ],
+			'pt-movepage-list-source' => [ $pageCollection->getTranslatablePage() ],
 			'pt-movepage-list-translation' => $pageCollection->getTranslationPagesPair(),
 			'pt-movepage-list-section' => $pageCollection->getUnitPagesPair()
 		];
@@ -263,6 +270,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		if ( $subpages ) {
 			$pagesToMove[ 'pt-movepage-list-other'] = $subpages;
 		}
+
+		$out->wrapWikiMsg( '== $1 ==', [ 'pt-movepage-list-pages' ] );
 
 		foreach ( $pagesToMove as $type => $pages ) {
 			$this->addSectionHeaderAndMessage( $out, $type, $pages );
@@ -325,6 +334,13 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					'label-message' => 'pt-movepage-subpages',
 					'default' => $this->moveSubpages,
 				],
+				'redirect' => [
+					'type' => 'check',
+					'name' => 'redirect',
+					'id' => 'mw-leave-redirect',
+					'label-message' => 'pt-leave-redirect',
+					'default' => $this->leaveRedirect,
+				],
 				'talkpages' => [
 					'type' => 'check',
 					'name' => 'talkpages',
@@ -354,8 +370,18 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 	/** Add section header and no page message if there are no pages */
 	private function addSectionHeaderAndMessage( OutputPage $out, string $type, array $pages ): void {
+		$leaveRedirect = TranslatableBundleMover::shouldLeaveRedirect( $type, $this->leaveRedirect );
+
 		$pageCount = count( $pages );
-		$out->wrapWikiMsg( '=== $1 ===', [ $type, $pageCount ] );
+		if ( $leaveRedirect ) {
+			$headingRedirectLabel = $this->msg(
+				'pt-leave-redirect-label',
+				$this->msg( $type, $pageCount )->text()
+			)->text();
+			$out->addWikiTextAsInterface( "<h3 class=\"mw-translate-leave-redirect\">$headingRedirectLabel</h3>" );
+		} else {
+			$out->wrapWikiMsg( '=== $1 ===', [ $type, $pageCount ] );
+		}
 
 		if ( !$pageCount ) {
 			$out->addWikiMsg( 'pt-movepage-list-no-pages' );
@@ -395,6 +421,13 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 				'label-message' => 'pt-movepage-reason',
 				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 				'default' => $this->reason,
+			],
+			'redirect' => [
+					'type' => 'hidden',
+					'name' => 'redirect',
+					'id' => 'mw-leave-redirect',
+					'label-message' => 'pt-leave-redirect',
+					'default' => $this->leaveRedirect,
 			],
 			'subpages' => [
 				'type' => 'hidden',

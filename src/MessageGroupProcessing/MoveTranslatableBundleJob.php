@@ -20,10 +20,20 @@ use User;
 class MoveTranslatableBundleJob extends Job {
 	private TranslatableBundleMover $bundleMover;
 
+	/**
+	 * @param Title $source
+	 * @param Title $target
+	 * @param array<string,string> $moves list of pages to be moved
+	 * @param array<string,bool> $redirects a list of pages to leave redirect for
+	 * @param string $reason
+	 * @param User $performer
+	 * @return self
+	 */
 	public static function newJob(
 		Title $source,
 		Title $target,
 		array $moves,
+		array $redirects,
 		string $reason,
 		User $performer
 	): self {
@@ -31,6 +41,7 @@ class MoveTranslatableBundleJob extends Job {
 			'source' => $source->getPrefixedText(),
 			'target' => $target->getPrefixedText(),
 			'moves' => $moves,
+			'redirects' => $redirects,
 			'summary' => $reason,
 			'performer' => $performer->getName(),
 		];
@@ -54,6 +65,7 @@ class MoveTranslatableBundleJob extends Job {
 			$sourceTitle,
 			$targetTitle,
 			$this->params['moves'],
+			$this->params['redirects'] ?? [],
 			$performer,
 			$this->params['summary']
 		);

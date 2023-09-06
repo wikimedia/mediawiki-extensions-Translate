@@ -43,6 +43,14 @@ class TranslatableBundleMover {
 	/** @var bool */
 	private $pageMoveLimitEnabled = true;
 
+	private const REDIRECTABLE_PAGE_TYPES = [
+		'pt-movepage-list-source' => true,
+		'pt-movepage-list-section' => false,
+		'pt-movepage-list-translatable' => false,
+		'pt-movepage-list-translation' => false,
+		'pt-movepage-list-other' => true
+	];
+
 	public function __construct(
 		MovePageFactory $movePageFactory,
 		JobQueueGroup $jobQueue,
@@ -65,7 +73,8 @@ class TranslatableBundleMover {
 		User $user,
 		string $reason,
 		bool $moveSubPages,
-		bool $moveTalkPages
+		bool $moveTalkPages,
+		bool $leaveRedirect
 	): PageMoveCollection {
 		$blockers = new SplObjectStorage();
 
@@ -92,7 +101,7 @@ class TranslatableBundleMover {
 		}
 
 		$pageCollection = $this->getPagesToMove(
-			$source, $target, $moveSubPages, self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages
+			$source, $target, $moveSubPages, self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages, $leaveRedirect
 		);
 
 		// Collect all the old and new titles for checks
@@ -178,14 +187,24 @@ class TranslatableBundleMover {
 		bool $moveSubPages,
 		User $user,
 		string $moveReason,
-		bool $moveTalkPages
+		bool $moveTalkPages,
+		bool $leaveRedirect
 	): void {
 		$pageCollection = $this->getPagesToMove(
-			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages
+			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages, $leaveRedirect
 		);
 		$pagesToMove = $pageCollection->getListOfPages();
+		$pagesToLeaveRedirect = $pageCollection->getListOfPagesToRedirect();
 
-		$job = MoveTranslatableBundleJob::newJob( $source, $target, $pagesToMove, $moveReason, $user );
+		$job = MoveTranslatableBundleJob::newJob(
+			$source,
+			$target,
+			$pagesToMove,
+			$pagesToLeaveRedirect,
+			$moveReason,
+			$user,
+		);
+
 		$this->lock( array_keys( $pagesToMove ) );
 		$this->lock( array_values( $pagesToMove ) );
 
@@ -196,6 +215,7 @@ class TranslatableBundleMover {
 	 * @param Title $source
 	 * @param Title $target
 	 * @param string[] $pagesToMove
+	 * @param array<string,bool> $pagesToRedirect
 	 * @param User $performer
 	 * @param string $moveReason
 	 * @param ?callable $progressCallback
@@ -204,13 +224,14 @@ class TranslatableBundleMover {
 		Title $source,
 		Title $target,
 		array $pagesToMove,
+		array $pagesToRedirect,
 		User $performer,
 		string $moveReason,
 		?callable $progressCallback = null
 	): void {
 		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
 
-		$this->move( $sourceBundle, $performer, $pagesToMove, $moveReason, $progressCallback );
+		$this->move( $sourceBundle, $performer, $pagesToMove, $pagesToRedirect, $moveReason, $progressCallback );
 
 		$this->bundleFactory->getStore( $sourceBundle )->move( $source, $target );
 
@@ -226,12 +247,17 @@ class TranslatableBundleMover {
 		$this->pageMoveLimitEnabled = true;
 	}
 
+	public static function shouldLeaveRedirect( string $pageType, bool $leaveRedirect ): bool {
+		return self::REDIRECTABLE_PAGE_TYPES[ $pageType ] && $leaveRedirect;
+	}
+
 	private function getPagesToMove(
 		Title $source,
 		Title $target,
 		bool $moveSubPages,
 		bool $fetchTranslatableSubpages,
-		bool $moveTalkPages
+		bool $moveTalkPages,
+		bool $leaveRedirect
 	): PageMoveCollection {
 		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
 
@@ -248,11 +274,14 @@ class TranslatableBundleMover {
 		}
 
 		$pageTitleRenamer = new PageTitleRenamer( $source, $target );
-		$createOps = static function ( array $pages ) use ( $pageTitleRenamer, $talkPages ) {
+		$createOps = static function ( array $pages, string $pageType )
+			use ( $pageTitleRenamer, $talkPages, $leaveRedirect ) {
+			$leaveRedirect = self::shouldLeaveRedirect( $pageType, $leaveRedirect );
 			$ops = [];
 			foreach ( $pages as $from ) {
 				$to = $pageTitleRenamer->getNewTitle( $from );
 				$op = new PageMoveOperation( $from, $to );
+				$op->setLeaveRedirect( $leaveRedirect );
 
 				$talkPage = $talkPages[ $from->getPrefixedDBkey() ] ?? null;
 				if ( $talkPage ) {
@@ -261,14 +290,14 @@ class TranslatableBundleMover {
 				$ops[] = $op;
 			}
 
-			return $ops;
+				return $ops;
 		};
 
 		return new PageMoveCollection(
-			$createOps( [ $source ] )[0],
-			$createOps( $classifiedSubpages['translationPages'] ),
-			$createOps( $classifiedSubpages['translationUnitPages'] ),
-			$createOps( $subpages ),
+			$createOps( [ $source ], 'pt-movepage-list-source' )[0],
+			$createOps( $classifiedSubpages['translationPages'], 'pt-movepage-list-translation' ),
+			$createOps( $classifiedSubpages['translationUnitPages'], 'pt-movepage-list-section' ),
+			$createOps( $subpages, 'pt-movepage-list-other' ),
 			$relatedTranslatablePageList
 		);
 	}
@@ -299,6 +328,7 @@ class TranslatableBundleMover {
 	 * @param TranslatableBundle $sourceBundle
 	 * @param User $performer
 	 * @param string[] $pagesToMove
+	 * @param array<string,bool> $pagesToRedirect
 	 * @param string $reason
 	 * @param ?callable $progressCallback
 	 */
@@ -306,6 +336,7 @@ class TranslatableBundleMover {
 		TranslatableBundle $sourceBundle,
 		User $performer,
 		array $pagesToMove,
+		array $pagesToRedirect,
 		string $reason,
 		?callable $progressCallback = null
 	): void {
@@ -329,7 +360,7 @@ class TranslatableBundleMover {
 			}
 
 			$mover = $this->movePageFactory->newMovePage( $sourceTitle, $targetTitle );
-			$status = $mover->move( $user, $moveSummary, false );
+			$status = $mover->move( $user, $moveSummary, $pagesToRedirect[$source] ?? false );
 			$processed++;
 
 			if ( $progressCallback ) {

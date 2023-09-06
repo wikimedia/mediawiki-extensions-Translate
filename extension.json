@@ -816,6 +816,13 @@
 				"mobile"
 			]
 		},
+		"ext.translate.special.movetranslatablebundles.styles": {
+			"styles": "resources/css/ext.translate.special.movetranslatablebundles.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
 		"ext.translate.special.pagemigration": {
 			"scripts": [
 				"resources/js/jquery.ajaxdispatcher.js",
