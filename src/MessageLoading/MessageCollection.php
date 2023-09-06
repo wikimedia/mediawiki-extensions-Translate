@@ -70,11 +70,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @var array[]
 	 */
 	protected array $tags = [];
-	/**
-	 * Properties, copied to thin messages
-	 * @var array[]
-	 */
-	private array $properties = [];
 	/** @var string[] Authors. */
 	private array $authors = [];
 
@@ -851,15 +846,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			foreach ( $keys as $mkey ) {
 				if ( isset( $messages[$mkey] ) ) {
 					$messages[$mkey]->addTag( $type );
-				}
-			}
-		}
-
-		// Copy properties if any.
-		foreach ( $this->properties as $type => $keys ) {
-			foreach ( $keys as $mkey => $value ) {
-				if ( isset( $messages[$mkey] ) ) {
-					$messages[$mkey]->setProperty( $type, $value );
 				}
 			}
 		}
