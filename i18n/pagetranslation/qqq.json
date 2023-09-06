@@ -62,6 +62,8 @@
 	"tpt-edit-failed": "Used as error message. Parameters:\n* $1 - page title",
 	"tpt-duplicate": "Used as error message.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-invalid": "Used as error message.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
+	"tpt-unit-title-too-long": "Error message displayed if the combined length of translation unit name, and the translatable page title are too long.\n\nParameters:\n* $1 - translation unit ID (name)\n* $2 - current size of the page title\n* $3 - maximum allowed size for page titles in MediaWiki\n* $4 - translatable page title",
+	"tpt-unit-title-invalid": "Error message displayed if the translation unit name, and the translatable page title are not valid MediaWiki title.\n\nParameters:\n* $1 - translation unit ID (name)\n* $2 - error message from MediaWiki",
 	"tpt-unmarked": "Used as success message for unmarking page for translation.\n\nTranslate this as \"Page $1 has been unmarked for translation\".\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - page title",
 	"tpt-list-nopages": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"tpt-new-pages-title": "Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",

@@ -7,6 +7,7 @@ use ContentHandler;
 use DifferenceEngine;
 use Html;
 use JobQueueGroup;
+use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -32,6 +33,7 @@ use PermissionsError;
 use SpecialPage;
 use Status;
 use Title;
+use TitleParser;
 use TranslateMetadata;
 use UnexpectedValueException;
 use UserBlockedError;
@@ -72,6 +74,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private JobQueueGroup $jobQueueGroup;
 	private ILoadBalancer $loadBalancer;
 	private MessageIndex $messageIndex;
+	private TitleParser $titleParser;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
@@ -81,7 +84,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		LinkBatchFactory $linkBatchFactory,
 		JobQueueGroup $jobQueueGroup,
 		ILoadBalancer $loadBalancer,
-		MessageIndex $messageIndex
+		MessageIndex $messageIndex,
+		TitleParser $titleParser
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageNameUtils = $languageNameUtils;
@@ -92,6 +96,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->loadBalancer = $loadBalancer;
 		$this->messageIndex = $messageIndex;
+		$this->titleParser = $titleParser;
 	}
 
 	public function doesWrites(): bool {
@@ -314,7 +319,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$parse = $this->translatablePageParser->parse( $page->getText() );
 		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
 
-		$error = $this->validateUnitIds( $units );
+		$error = $this->validateUnitIds( $page->getTitle(), $units );
 
 		// Non-fatal error which prevents saving
 		if ( !$error && $request->wasPosted() ) {
@@ -682,17 +687,39 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 	/**
 	 * Validate translation unit IDs.
+	 * @param Title $pageTitle
 	 * @param TranslationUnit[] $units
 	 * @return bool Whether there were any errors
 	 */
-	private function validateUnitIds( array $units ): bool {
+	private function validateUnitIds( Title $pageTitle, array $units ): bool {
 		$usedNames = [];
 		$status = Status::newGood();
 
 		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		foreach ( $units as $s ) {
-			if ( preg_match( "~[$ic]~", $s->id ) ) {
-				$status->fatal( 'tpt-invalid', $s->id );
+			$unitStatus = Status::newGood();
+			// xx-yyyyyyyyyy represents a long language code. 2 more characters than nl-informal which
+			// is the longest non-redirect language code in language-data
+			$longestUnitTitle = 'Translations:' . $pageTitle->getPrefixedDBkey() . '/' . $s->id . '/xx-yyyyyyyyyy';
+			try {
+				$this->titleParser->parseTitle( $longestUnitTitle );
+			} catch ( MalformedTitleException $e ) {
+				if ( $e->getErrorMessage() === 'title-invalid-too-long' ) {
+					$unitStatus->fatal(
+						'tpt-unit-title-too-long',
+						$s->id,
+						Message::numParam( strlen( $longestUnitTitle ) ),
+						$e->getErrorMessageParameters()[ 0 ],
+						$pageTitle->getPrefixedText()
+					);
+				} else {
+					$unitStatus->fatal( 'tpt-unit-title-invalid', $s->id, $e->getMessageObject() );
+				}
+			}
+
+			// Only perform custom validation if the TitleParser validation passed
+			if ( $unitStatus->isGood() && preg_match( "~[$ic]~", $s->id ) ) {
+				$unitStatus->fatal( 'tpt-invalid', $s->id );
 			}
 
 			// We need to do checks for both new and existing units.
@@ -702,8 +729,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 				// If the same ID is used three or more times, the same
 				// error will be added more than once, but that's okay,
 				// Status::fatal will deduplicate
-				$status->fatal( 'tpt-duplicate', $s->id );
+				$unitStatus->fatal( 'tpt-duplicate', $s->id );
 			}
+
+			$status->merge( $unitStatus );
 			$usedNames[$s->id] = true;
 		}
 
