@@ -64,22 +64,14 @@ class PageTranslationSpecialPage extends SpecialPage {
 		TranslatablePageStatus::OUTDATED => 'outdated',
 		TranslatablePageStatus::BROKEN => 'broken'
 	];
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var LanguageFactory */
-	private $languageFactory;
-	/** @var TranslationUnitStoreFactory */
-	private $translationUnitStoreFactory;
-	/** @var TranslatablePageParser */
-	private $translatablePageParser;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var MessageIndex */
-	private $messageIndex;
+	private LanguageNameUtils $languageNameUtils;
+	private LanguageFactory $languageFactory;
+	private TranslationUnitStoreFactory $translationUnitStoreFactory;
+	private TranslatablePageParser $translatablePageParser;
+	private LinkBatchFactory $linkBatchFactory;
+	private JobQueueGroup $jobQueueGroup;
+	private ILoadBalancer $loadBalancer;
+	private MessageIndex $messageIndex;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
