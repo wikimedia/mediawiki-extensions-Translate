@@ -2,7 +2,7 @@
 /**
  * This file contains the base information of unmanaged message groups.
  * These classes don't use Yaml configuration nor Special:ManageMessageGroups
- * nor processMessageChanges.php
+ * nor importExternalTranslations.php
  *
  * @file
  * @author Niklas Laxström

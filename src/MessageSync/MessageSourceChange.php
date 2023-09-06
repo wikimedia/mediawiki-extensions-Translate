@@ -12,7 +12,7 @@ use InvalidArgumentException;
 
 /**
  * Class is used to track the changes made when importing messages from the remote sources
- * using processMessageChanges. Also provides an interface to query these changes, and
+ * using importExternalTranslations.php. Also provides an interface to query these changes, and
  * update them.
  * @since 2019.10
  */
