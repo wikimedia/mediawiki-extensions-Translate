@@ -134,7 +134,7 @@
 	"translate-manage-submit": "Үтәргә",
 	"translate-manage-intro-other": "Түбәндә — $1 теленә тәржемәләрҙәге үҙгәртеүҙәр исемлеге.\nҺәр тәржемәләге үҙгәртеүҙәрҙе тикшерегеҙ һәм улар теләгән ғәмәлегеҙҙе һайлағыҙ.\nӘгәр үҙгәртеүҙәрҙе иғтибарһыҙ ҡалдырһағыҙ, был ваҡытлыса ғына буласаҡ.",
 	"translate-manage-import-ok": "$1 битенең яңы өлгөһө индерелгән.",
-	"translate-manage-import-done": "Барыһы ла үтәлде!",
+	"translate-manage-import-done": "[[Special:Translate/$1|$2]] төркөмө өсөн тәржемәләрҙе (тел: $3) индереү тамамланды!",
 	"importtranslations": "Тәржемәләрҙе индереү",
 	"translate-import-from-local": "Урындағы файлды индерергә:",
 	"translate-import-load": "Файлды индерергә:",

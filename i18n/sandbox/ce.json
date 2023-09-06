@@ -27,6 +27,8 @@
 	"tsb-translations-user": "{{GENDER:$1|Декъашхочун}} гочдарш",
 	"tsb-translations-current": "Долуш долу гочдарш",
 	"translationstash": "Марша догӀийла",
+	"translate-translationstash-welcome": "Маршалла, {{GENDER:$1|$1}}, хӀинца хьо керла гочдархо ву(йу)",
+	"translate-translationstash-welcome-note": "Бовза гочдаран гӀирсаш. Массийта хаам гочбина йуьззина гочдархочун бакъонаш схьаэца, хьайна хазахетачу проектехь дакъалацархьама.",
 	"translate-translationstash-initialtranslation": "Хьан дуьххьарлера гочдар",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|кхочуш дина гочдар}}",
 	"translate-translationstash-skip-button-label": "Хьажа кхечуьнга",
