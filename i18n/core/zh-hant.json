@@ -26,7 +26,8 @@
 			"Wrightbus",
 			"Xiplus",
 			"列维劳德",
-			"捍粵者"
+			"捍粵者",
+			"SunAfterRain"
 		]
 	},
 	"translate": "翻譯",
@@ -173,7 +174,7 @@
 	"translate-statsf-alt-text": "此為翻譯統計的替代文字。",
 	"translate-statsf-embed": "在其它頁面上內嵌翻譯統計圖的代碼。",
 	"translate-tag-page-desc": "wiki頁面[[$2|$1]]來自$3（$4）的翻譯。",
-	"translate-tag-page-wikipage-desc": "從<bdi>$3</bdi>（$4）翻至<bdi>$5</bdi>（$6）的 wiki 頁面[[$2]][[$1|翻譯]]",
+	"translate-tag-page-wikipage-desc": "wiki 頁面[[$2]]譯自<bdi>$3</bdi>（$4）的<bdi>$5</bdi>（$6）[[$1|譯文]]。",
 	"translate-sidebar-alltrans": "其他翻譯",
 	"translations": "所有翻譯",
 	"translations-summary": "在下方輸入訊息名稱以顯示所有可用的翻譯。",

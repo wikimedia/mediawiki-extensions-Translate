@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"FRANCIS5091"
+			"FRANCIS5091",
+			"Meqqal"
 		]
 	},
 	"translate-page-navigation-legend": "Popotunud",
 	"translate-next": "Bolikon sumuhut",
-	"translate-page-edit": "idito"
+	"translate-page-edit": "idito",
+	"translate-documentation-language": "Popodokumen susunudan"
 }
