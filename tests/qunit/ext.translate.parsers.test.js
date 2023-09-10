@@ -9,6 +9,28 @@
 
 	QUnit.module( 'ext.translate.parsers', QUnit.newMwEnvironment() );
 
+	QUnit.test( '-- Page titles and headings', function ( assert ) {
+		mw.config.set( 'wgArticlePath', '/wiki/$1' );
+
+		assert.strictEqual(
+			mw.translate.formatMessageGently( '== Heading with = sign ==' ),
+			'<h2>Heading with = sign</h2>',
+			'Heading equal signs should always detect the line-end equal signs and strip the surronding whitespaces'
+		);
+
+		assert.strictEqual(
+			mw.translate.formatMessageGently( '==Heading with = sign without suggested surronding whitespaces==' ),
+			'<h2>Heading with = sign without suggested surronding whitespaces</h2>',
+			'Heading equal signs should always detect the line-end equal signs without suggested surronding whitespaces'
+		);
+
+		assert.strictEqual(
+			mw.translate.formatMessageGently( '== Heading with = sign ==\nText' ),
+			'<h2>Heading with = sign</h2>\nText',
+			'Headings with text in new line should able to be rendered correctly'
+		);
+	} );
+
 	QUnit.test( '-- External links', function ( assert ) {
 		mw.config.set( 'wgArticlePath', '/wiki/$1' );
 

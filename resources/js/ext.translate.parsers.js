@@ -29,7 +29,7 @@
 				text = '=' + text + '=';
 			}
 
-			text = text.replace( /^(=+)(.*?)(=+)/, function ( match, p1, p2, p3 ) {
+			text = text.replace( /^(=+) ?(.*?) ?(=+)$/gm, function ( match, p1, p2, p3 ) {
 				var len = Math.min( p1.length, p3.length, 6 );
 				return $( '<div>' ).append( $( '<h' + len + '>' ).html( p2 ) ).html();
 			} );
