@@ -13,6 +13,7 @@
 	"tux-sst-view-foreign": "Переглянути на $1",
 	"tux-sst-search": "Пошук",
 	"tux-sst-search-ph": "Пошук перекладів",
+	"tux-sst-search-info": "Використовуйте оператори <code>language:</code> або <code>group:</code> для додаткової кваліфікації критеріїв пошуку",
 	"tux-sst-count": "{{PLURAL:$1|Знайдено один результат|Знайдено $1 результати|Знайдено $1 результатів}}",
 	"tux-sst-facet-language": "Мови",
 	"tux-sst-facet-group": "Групи повідомлень",
