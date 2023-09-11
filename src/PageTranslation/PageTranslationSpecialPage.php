@@ -317,35 +317,39 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$firstMark = $page->getMarkedTag() === null;
 
 		$parse = $this->translatablePageParser->parse( $page->getText() );
-		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
+		[ $allUnits, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
 
-		$error = $this->validateUnitIds( $page->getTitle(), $units );
+		$translateTitle = $request->getCheck( 'translatetitle' );
+		$unitsForTranslation = $allUnits;
+		// Check if user wants to translate title, if not, remove it from the list of units for translation
+		if ( !$translateTitle ) {
+			$unitsForTranslation = array_filter( $allUnits, static function ( $s ) {
+				return $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID;
+			} );
+		}
+
+		$error = $this->validateUnitIds(
+			$page->getTitle(),
+			// If the request was not posted, validate all the units.
+			$request->wasPosted() ? $unitsForTranslation : $allUnits
+		);
 
 		// Non-fatal error which prevents saving
 		if ( !$error && $request->wasPosted() ) {
-			// Check if user wants to translate title
-			// If not, remove it from the list of units
-			if ( !$request->getCheck( 'translatetitle' ) ) {
-				$units = array_filter( $units, static function ( $s ) {
-					return $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID;
-				} );
-			}
-
 			$setVersion = $firstMark || $request->getCheck( 'use-latest-syntax' );
 			$transclusion = $request->getCheck( 'transclusion' );
 
-			$err = $this->markForTranslation( $page, $parse, $units, $setVersion, $transclusion );
-
+			$err = $this->markForTranslation( $page, $parse, $unitsForTranslation, $setVersion, $transclusion );
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
-				$this->showSuccess( $page, $firstMark, count( $units ) );
+				$this->showSuccess( $page, $firstMark, count( $unitsForTranslation ) );
 			}
 
 			return;
 		}
 
-		$this->showPage( $page, $parse, $units, $deletedUnits, $firstMark );
+		$this->showPage( $page, $parse, $allUnits, $deletedUnits, $firstMark );
 	}
 
 	/**
