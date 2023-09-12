@@ -12,25 +12,24 @@ use Title;
  * @since 2021.09
  */
 class PageMoveCollection {
-	/** @var PageMoveOperation|null */
-	private $translatablePage;
+	private PageMoveOperation $translatablePage;
 	/** @var PageMoveOperation[] */
-	private $translationPagePairs;
+	private array $translationPagePairs;
 	/** @var PageMoveOperation[] */
-	private $unitPagesPairs;
+	private array $unitPagesPairs;
 	/** @var PageMoveOperation[] */
-	private $subpagesPairs;
+	private array $subpagesPairs;
 	/** @var PageMoveOperation[] */
-	private $talkpagesPairs;
+	private array $talkpagesPairs;
 	/** @var Title[] */
-	private $translatableSubpages;
+	private array $translatableSubpages;
 
 	/**
 	 * @param PageMoveOperation $translatablePage
 	 * @param PageMoveOperation[] $translationPagePairs Translation pages
 	 * @param PageMoveOperation[] $unitPagesPairs Translation unit pages
 	 * @param PageMoveOperation[] $subpagesPairs Non translatable sub pages
-	 * @param array $translatableSubpages
+	 * @param Title[] $translatableSubpages
 	 */
 	public function __construct(
 		PageMoveOperation $translatablePage,
