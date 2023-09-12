@@ -12,16 +12,11 @@ use Title;
  * @since 2021.09
  */
 class PageMoveOperation {
-	/** @var Title */
-	private $old;
-	/** @var Title|null */
-	private $new;
-	/** @var Title|null */
-	private $oldTalkpage;
-	/** @var Title|null */
-	private $newTalkpage;
-	/** @var InvalidPageTitleRename|null */
-	private $invalidPageTitleRename;
+	private Title $old;
+	private ?Title $new;
+	private ?Title $oldTalkpage = null;
+	private ?Title $newTalkpage = null;
+	private ?InvalidPageTitleRename $invalidPageTitleRename;
 
 	public function __construct( Title $old, ?Title $new, ?InvalidPageTitleRename $e = null ) {
 		$this->old = $old;
@@ -46,7 +41,7 @@ class PageMoveOperation {
 	}
 
 	public function hasTalkpage(): bool {
-		return $this->oldTalkpage !== null;
+		return isset( $this->oldTalkpage );
 	}
 
 	public function getRenameErrorCode(): int {
