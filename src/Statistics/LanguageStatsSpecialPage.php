@@ -333,18 +333,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->getOutput()->addHTML( $out );
 	}
 
-	/** If workflow states are configured, adds a workflow states column */
-	private function addWorkflowStatesColumn(): void {
-		global $wgTranslateWorkflowStates;
-
-		if ( $wgTranslateWorkflowStates ) {
-			$this->states = $this->groupReview->getWorkflowStatesForLanguage( $this->target );
-
-			// An array where keys are state names and values are numbers
-			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
-		}
-	}
-
 	private function getWorkflowStateCell( string $messageGroupId ): string {
 		// This will be set by addWorkflowStatesColumn if needed
 		if ( !isset( $this->states ) ) {
@@ -359,9 +347,9 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	}
 
 	private function getTable( array $stats ): string {
-		$table = $this->table;
+		global $wgTranslateWorkflowStates;
 
-		$this->addWorkflowStatesColumn();
+		$table = $this->table;
 		$out = '';
 
 		// This avoids a database query per translatable page, which would be caused by
@@ -375,6 +363,13 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$lb->setCaller( __METHOD__ )->execute();
 
 		$structure = MessageGroups::getGroupStructure();
+
+		if ( $wgTranslateWorkflowStates ) {
+			$this->states = $this->groupReview->getWorkflowStatesForLanguage( $this->target, array_keys( $structure ) );
+			// An array where keys are state names and values are numbers
+			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
+		}
+
 		foreach ( $structure as $item ) {
 			$out .= $this->makeGroupGroup( $item, $stats );
 		}

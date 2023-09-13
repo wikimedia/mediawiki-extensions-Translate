@@ -37,7 +37,7 @@ class MessageGroupReview {
 			->select( 'tgr_state' )
 			->from( self::TABLE_NAME )
 			->where( [
-				'tgr_group' => $group->getId(),
+				'tgr_group' => self::getGroupIdForDatabase( $group->getId() ),
 				'tgr_lang' => $code
 			] )->fetchField();
 	}
@@ -51,7 +51,7 @@ class MessageGroupReview {
 
 		$index = [ 'tgr_group', 'tgr_lang' ];
 		$row = [
-			'tgr_group' => $group->getId(),
+			'tgr_group' => self::getGroupIdForDatabase( $group->getId() ),
 			'tgr_lang' => $code,
 			'tgr_state' => $newState,
 		];
@@ -80,18 +80,19 @@ class MessageGroupReview {
 
 	public function getGroupPriority( string $group ): ?string {
 		$this->preloadGroupPriorities( __METHOD__ );
-		return $this->priorityCache[$group] ?? null;
+		return $this->priorityCache[self::getGroupIdForDatabase( $group )] ?? null;
 	}
 
 	/** Store priority for message group. Abusing this table that was intended to store message group states */
 	public function setGroupPriority( string $groupId, ?string $priority ): void {
+		$dbGroupId = self::getGroupIdForDatabase( $groupId );
 		if ( isset( $this->priorityCache ) ) {
-			$this->priorityCache[$groupId] = $priority;
+			$this->priorityCache[$dbGroupId] = $priority;
 		}
 
 		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$row = [
-			'tgr_group' => $groupId,
+			'tgr_group' => $dbGroupId,
 			'tgr_lang' => '*priority',
 			'tgr_state' => $priority
 		];
@@ -128,29 +129,43 @@ class MessageGroupReview {
 	 * @return string|null State id or null.
 	 */
 	public function getWorkflowState( string $groupId, string $languageCode ): ?string {
-		$result = $this->getWorkflowStates( $groupId, $languageCode );
+		$result = $this->getWorkflowStates( [ $groupId ], [ $languageCode ] );
 		return $result->fetchRow()['tgr_state'] ?? null;
 	}
 
-	public function getWorkflowStatesForLanguage( string $languageCode ): array {
-		$result = $this->getWorkflowStates( null, $languageCode );
-		return $this->result2map( $result, 'tgr_group', 'tgr_state' );
+	public function getWorkflowStatesForLanguage( string $languageCode, array $groupIds ): array {
+		$result = $this->getWorkflowStates( $groupIds, [ $languageCode ] );
+		$states = $this->result2map( $result, 'tgr_group', 'tgr_state' );
+
+		$finalResult = [];
+		foreach ( $groupIds as $groupId ) {
+			$dbGroupId = self::getGroupIdForDatabase( $groupId );
+			if ( isset( $states[ $dbGroupId ] ) ) {
+				$finalResult[ $groupId ] = $states[ $dbGroupId ];
+			}
+		}
+
+		return $finalResult;
 	}
 
 	public function getWorkflowStatesForGroup( string $groupId ): array {
-		$result = $this->getWorkflowStates( $groupId, null );
+		$result = $this->getWorkflowStates( [ $groupId ], null );
 		return $this->result2map( $result, 'tgr_lang', 'tgr_state' );
 	}
 
-	private function getWorkflowStates( ?string $groupId, ?string $languageCode ): IResultWrapper {
+	private function getWorkflowStates( ?array $groupIds, ?array $languageCodes ): IResultWrapper {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$conditions = array_filter(
-			[ 'tgr_group' => $groupId, 'tgr_lang' => $languageCode ],
+			[ 'tgr_group' => $groupIds, 'tgr_lang' => $languageCodes ],
 			static fn( $x ) => $x !== null && $x !== ''
 		);
 
 		if ( $conditions === [] ) {
 			throw new InvalidArgumentException( 'Either the $groupId or the $languageCode should be provided' );
+		}
+
+		if ( isset( $conditions['tgr_group'] ) ) {
+			$conditions['tgr_group'] = array_map( [ self::class, 'getGroupIdForDatabase' ], $groupIds );
 		}
 
 		return $dbr->newSelectQueryBuilder()
@@ -168,5 +183,17 @@ class MessageGroupReview {
 		}
 
 		return $map;
+	}
+
+	private static function getGroupIdForDatabase( $groupId ): string {
+		$groupId = strval( $groupId );
+
+		// Check if length is more than 200 bytes
+		if ( strlen( $groupId ) <= 200 ) {
+			return $groupId;
+		}
+
+		// We take 160 bytes of the original string and append the md5 hash (32 bytes)
+		return mb_strcut( $groupId, 0, 160 ) . '||' . hash( 'md5', $groupId );
 	}
 }
