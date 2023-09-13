@@ -32,8 +32,6 @@ use WANObjectCache;
  * @license GPL-2.0-or-later
  */
 class MessageGroups {
-	/** @var string[]|null Cache for message group priorities */
-	private static $prioritycache;
 	/** @var MessageGroup[]|null Map of (group ID => MessageGroup) */
 	private $groups;
 	/** @var MessageGroupLoader[]|null */
@@ -181,8 +179,6 @@ class MessageGroups {
 	public function clearProcessCache(): void {
 		$this->groups = null;
 		$this->groupLoaders = null;
-
-		self::$prioritycache = null;
 	}
 
 	protected function getCache(): WANObjectCache {
@@ -346,32 +342,13 @@ class MessageGroups {
 	 * @return string Message group priority
 	 */
 	public static function getPriority( $group ): string {
-		if ( self::$prioritycache === null ) {
-			self::$prioritycache = [];
-			// Abusing this table originally intended for other purposes
-		$dbr = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( DB_REPLICA );
-
-		$res = $dbr->newSelectQueryBuilder()
-			->select( [ 'tgr_group', 'tgr_state' ] )
-			->from( 'translate_groupreviews' )
-			->where( [ 'tgr_lang' => '*priority' ] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-
-			foreach ( $res as $row ) {
-				self::$prioritycache[$row->tgr_group] = $row->tgr_state;
-			}
-		}
-
 		if ( $group instanceof MessageGroup ) {
 			$id = $group->getId();
 		} else {
 			$id = self::normalizeId( $group );
 		}
 
-		return self::$prioritycache[$id] ?? '';
+		return Services::getInstance()->getMessageGroupReview()->getGroupPriority( $id ) ?? '';
 	}
 
 	/**
@@ -387,27 +364,8 @@ class MessageGroups {
 			$id = self::normalizeId( $group );
 		}
 
-		// FIXME: This assumes prioritycache has been populated
-		self::$prioritycache[$id] = $priority;
-
-		$dbw = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( DB_PRIMARY );
-
-			$table = 'translate_groupreviews';
-			$row = [
-				'tgr_group' => $id,
-				'tgr_lang' => '*priority',
-				'tgr_state' => $priority
-			];
-
-		if ( $priority === '' ) {
-			unset( $row['tgr_state'] );
-			$dbw->delete( $table, $row, __METHOD__ );
-		} else {
-			$index = [ 'tgr_group', 'tgr_lang' ];
-			$dbw->replace( $table, [ $index ], $row, __METHOD__ );
-		}
+		$priority = $priority === '' ? null : $priority;
+		Services::getInstance()->getMessageGroupReview()->setGroupPriority( $id, $priority );
 	}
 
 	public static function isDynamic( MessageGroup $group ): bool {
