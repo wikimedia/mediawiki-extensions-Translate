@@ -632,13 +632,11 @@ class Hooks {
 	private static function tpProgressIcon( float $percent ) {
 		$classes = [ 'mw-pt-progress' ];
 		$percent *= 100;
-		if ( $percent < 20 ) {
-			$classes[] = 'mw-pt-progress--stub';
-		} elseif ( $percent < 40 ) {
+		if ( $percent < 15 ) {
 			$classes[] = 'mw-pt-progress--low';
-		} elseif ( $percent < 60 ) {
+		} elseif ( $percent < 70 ) {
 			$classes[] = 'mw-pt-progress--med';
-		} elseif ( $percent < 80 ) {
+		} elseif ( $percent < 100 ) {
 			$classes[] = 'mw-pt-progress--high';
 		} else {
 			$classes[] = 'mw-pt-progress--complete';
