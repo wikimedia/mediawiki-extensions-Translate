@@ -278,7 +278,8 @@
 				"Translate:ProgressStatsTableFactory",
 				"LanguageNameUtils",
 				"JobQueueGroup",
-				"DBLoadBalancer"
+				"DBLoadBalancer",
+				"Translate:MessageGroupReview"
 			]
 		},
 		"MessageGroupStats": {
@@ -351,7 +352,8 @@
 			"services": [
 				"Translate:ConfigHelper",
 				"LanguageNameUtils",
-				"DBLoadBalancer"
+				"DBLoadBalancer",
+				"Translate:MessageGroupReview"
 			]
 		}
 	},

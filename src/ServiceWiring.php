@@ -116,6 +116,7 @@ return [
 			$services->get( 'Translate:ProgressStatsTableFactory' ),
 			$services->getDBLoadBalancer(),
 			$services->getLinkRenderer(),
+			$services->get( 'Translate:MessageGroupReview' ),
 			$services->getMainConfig()->get( 'TranslateWorkflowStates' ) !== false
 		);
 	},

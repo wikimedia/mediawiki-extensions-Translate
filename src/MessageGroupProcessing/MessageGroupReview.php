@@ -3,12 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use InvalidArgumentException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\HookRunner;
 use MessageGroup;
 use SpecialPage;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * Provides methods to get and change the state of a message group
@@ -116,9 +118,55 @@ class MessageGroupReview {
 			->caller( $caller )
 			->fetchResultSet();
 
-		$this->priorityCache = [];
-		foreach ( $res as $row ) {
-			$this->priorityCache[$row->tgr_group] = $row->tgr_state;
+		$this->priorityCache = $this->result2map( $res, 'tgr_group', 'tgr_state' );
+	}
+
+	/**
+	 * Get the current workflow state for the given message group for the given language
+	 * @param string $groupId
+	 * @param string $languageCode
+	 * @return string|null State id or null.
+	 */
+	public function getWorkflowState( string $groupId, string $languageCode ): ?string {
+		$result = $this->getWorkflowStates( $groupId, $languageCode );
+		return $result->fetchRow()['tgr_state'] ?? null;
+	}
+
+	public function getWorkflowStatesForLanguage( string $languageCode ): array {
+		$result = $this->getWorkflowStates( null, $languageCode );
+		return $this->result2map( $result, 'tgr_group', 'tgr_state' );
+	}
+
+	public function getWorkflowStatesForGroup( string $groupId ): array {
+		$result = $this->getWorkflowStates( $groupId, null );
+		return $this->result2map( $result, 'tgr_lang', 'tgr_state' );
+	}
+
+	private function getWorkflowStates( ?string $groupId, ?string $languageCode ): IResultWrapper {
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$conditions = array_filter(
+			[ 'tgr_group' => $groupId, 'tgr_lang' => $languageCode ],
+			static fn( $x ) => $x !== null && $x !== ''
+		);
+
+		if ( $conditions === [] ) {
+			throw new InvalidArgumentException( 'Either the $groupId or the $languageCode should be provided' );
 		}
+
+		return $dbr->newSelectQueryBuilder()
+			->select( [ 'tgr_state', 'tgr_group', 'tgr_lang' ] )
+			->from( self::TABLE_NAME )
+			->where( $conditions )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+	}
+
+	private function result2map( IResultWrapper $result, string $keyValue, string $valueValue ): array {
+		$map = [];
+		foreach ( $result as $row ) {
+			$map[$row->$keyValue] = $row->$valueValue;
+		}
+
+		return $map;
 	}
 }

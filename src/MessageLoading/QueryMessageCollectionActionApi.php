@@ -8,6 +8,7 @@ use ApiPageSet;
 use ApiQuery;
 use ApiQueryGeneratorBase;
 use ApiResult;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -30,18 +31,21 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 	private ConfigHelper $configHelper;
 	private LanguageNameUtils $languageNameUtils;
 	private ILoadBalancer $loadBalancer;
+	private MessageGroupReview $groupReview;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
 		ConfigHelper $configHelper,
 		LanguageNameUtils $languageNameUtils,
-		ILoadBalancer $loadBalancer
+		ILoadBalancer $loadBalancer,
+		MessageGroupReview $groupReview
 	) {
 		parent::__construct( $query, $moduleName, 'mc' );
 		$this->configHelper = $configHelper;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->loadBalancer = $loadBalancer;
+		$this->groupReview = $groupReview;
 	}
 
 	public function execute(): void {
@@ -161,7 +165,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		$result->addValue(
 			[ 'query', 'metadata' ],
 			'state',
-			self::getWorkflowState( $group->getId(), $params['language'] )
+			$this->groupReview->getWorkflowState( $group->getId(), $params['language'] )
 		);
 
 		$result->addValue( [ 'query', 'metadata' ], 'resultsize', $resultSize );
@@ -252,23 +256,6 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		}
 
 		return $data;
-	}
-
-	/**
-	 * Get the current workflow state for the message group for the given language
-	 * @return string|bool State id or false.
-	 */
-	private function getWorkflowState( string $groupId, string $language ) {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		return $dbr->newSelectQueryBuilder()
-			->select( 'tgr_state' )
-			->from( 'translate_groupreviews' )
-			->where( [
-				'tgr_group' => $groupId,
-				'tgr_lang' => $language
-			] )
-			->caller( __METHOD__ )
-			->fetchField();
 	}
 
 	/** @inheritDoc */

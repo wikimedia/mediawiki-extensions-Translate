@@ -11,6 +11,7 @@ use HTMLForm;
 use IContextSource;
 use JobQueueGroup;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -89,13 +90,15 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private $jobQueueGroup;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
+	private MessageGroupReview $groupReview;
 
 	public function __construct(
 		LinkBatchFactory $linkBatchFactory,
 		ProgressStatsTableFactory $progressStatsTableFactory,
 		LanguageNameUtils $languageNameUtils,
 		JobQueueGroup $jobQueueGroup,
-		ILoadBalancer $loadBalancer
+		ILoadBalancer $loadBalancer,
+		MessageGroupReview $groupReview
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
@@ -104,6 +107,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->languageNameUtils = $languageNameUtils;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->loadBalancer = $loadBalancer;
+		$this->groupReview = $groupReview;
 	}
 
 	public function isIncludable() {
@@ -334,7 +338,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		global $wgTranslateWorkflowStates;
 
 		if ( $wgTranslateWorkflowStates ) {
-			$this->states = $this->getWorkflowStates();
+			$this->states = $this->groupReview->getWorkflowStatesForLanguage( $this->target );
 
 			// An array where keys are state names and values are numbers
 			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
@@ -505,22 +509,5 @@ class LanguageStatsSpecialPage extends SpecialPage {
 					"\n";
 			}
 		);
-	}
-
-	private function getWorkflowStates(): array {
-		$db = $this->loadBalancer->getConnection( DB_REPLICA );
-		$res = $db->select(
-			'translate_groupreviews',
-			[ 'tgr_state', 'tgr_group' ],
-			[ 'tgr_lang' => $this->target ],
-			__METHOD__
-		);
-
-		$states = [];
-		foreach ( $res as $row ) {
-			$states[$row->tgr_group] = $row->tgr_state;
-		}
-
-		return $states;
 	}
 }

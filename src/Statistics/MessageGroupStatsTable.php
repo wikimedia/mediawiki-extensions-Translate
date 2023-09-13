@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use Html;
 use Language;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Linker\LinkRenderer;
 use MessageGroup;
@@ -27,6 +28,7 @@ class MessageGroupStatsTable {
 	private MessageLocalizer $localizer;
 	private Language $interfaceLanguage;
 	private StatsTable $table;
+	private MessageGroupReview $groupReview;
 	/** Flag to set if not all numbers are available. */
 	private bool $incompleteStats;
 	private array $languageNames;
@@ -41,6 +43,7 @@ class MessageGroupStatsTable {
 		LinkRenderer $linkRenderer,
 		MessageLocalizer $localizer,
 		Language $interfaceLanguage,
+		MessageGroupReview $groupReview,
 		bool $haveTranslateWorkflowStates
 	) {
 		$this->table = $table;
@@ -49,6 +52,7 @@ class MessageGroupStatsTable {
 		$this->incompleteStats = false;
 		$this->localizer = $localizer;
 		$this->interfaceLanguage = $interfaceLanguage;
+		$this->groupReview = $groupReview;
 		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 		$this->languageNames = Utilities::getLanguageNames( $this->interfaceLanguage->getCode() );
 		$this->translateTitle = SpecialPage::getTitleFor( 'Translate' );
@@ -120,23 +124,6 @@ class MessageGroupStatsTable {
 
 	public function areStatsIncomplete(): bool {
 		return $this->incompleteStats;
-	}
-
-	private function getWorkflowStates( string $groupId ): array {
-		$db = $this->loadBalancer->getConnection( DB_REPLICA );
-		$res = $db->select(
-			'translate_groupreviews',
-			[ 'tgr_state', 'tgr_lang' ],
-			[ 'tgr_group' => $groupId ],
-			__METHOD__
-		);
-
-		$states = [];
-		foreach ( $res as $row ) {
-			$states[$row->tgr_lang] = $row->tgr_state;
-		}
-
-		return $states;
 	}
 
 	private function makeRow(
@@ -223,7 +210,7 @@ class MessageGroupStatsTable {
 			return '';
 		}
 
-		$this->states ??= $this->getWorkflowStates( $group->getId() );
+		$this->states ??= $this->groupReview->getWorkflowStatesForGroup( $group->getId() );
 		return $table->makeWorkflowStateCell( $this->states[$language] ?? null, $group, $language );
 	}
 
