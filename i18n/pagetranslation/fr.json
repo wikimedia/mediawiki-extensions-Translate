@@ -100,7 +100,7 @@
 	"translate-tag-translate-link-desc": "Traduire cette page",
 	"translate-tag-markthis": "Marquer cette page à traduire",
 	"translate-tag-markthisagain": "Cette page a été <span class=\"plainlinks\">[$1 modifiée]</span> depuis la dernière fois qu’elle a été <span class=\"plainlinks\">[$2 marquée à traduire]</span>.",
-	"translate-tag-hasnew": "cette page contient <span class=\"plainlinks\">[$1 des modifications]</span> qui ne sont pas marquées à traduire.",
+	"translate-tag-hasnew": "Cette page contient <span class=\"plainlinks\">[$1 des modifications]</span> qui ne sont pas marquées à traduire.",
 	"tpt-translation-intro": "Cette page est une <span class=\"plainlinks\">[$1 version traduite]</span> de la page [[$2]] et la traduction est terminée à $3 %.",
 	"tpt-translation-intro-fuzzy": "Les traductions désuètes sont identifiées ainsi.",
 	"tpt-languages-legend": "Autres langues :",
