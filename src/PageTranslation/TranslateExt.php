@@ -1,5 +1,4 @@
 <?php
-
 declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
@@ -12,7 +11,14 @@ class TranslateExt implements ExtensionModule {
 	public function getConfig(): array {
 		return [
 			'name' => 'Translate',
-			'annotations' => [ 'translate', 'tvar' ]
+			'annotations' => [
+				'tagNames' => [ 'translate', 'tvar' ],
+				'annotationStripper' =>
+					[
+						'class' => TranslateAnnotationStripper::class,
+						'services' => [ 'Translate:TranslatablePageParser' ]
+					],
+			],
 		];
 	}
 }
