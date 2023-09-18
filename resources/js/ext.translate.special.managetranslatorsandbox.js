@@ -153,7 +153,7 @@
 						} )
 				),
 			$( '<div>' )
-				.addClass( 'translations row' )
+				.addClass( 'translations' )
 		);
 
 		if ( request.languagepreferences ) {

@@ -182,6 +182,11 @@
 
 .details.pane .actions {
 	font-size: 22px;
+	/* Make the buttons sticky to reduce the need to scroll back to top */
+	position: sticky;
+	top: -5px;
+	z-index: 1;
+	padding-bottom: 15px;
 }
 
 .actions button {
