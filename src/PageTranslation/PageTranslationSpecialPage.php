@@ -113,6 +113,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.pagetranslation' );
+		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 		$out->addHelpLink( 'Help:Extension:Translate/Page_translation_example' );
 		$out->enableOOUI();
 
@@ -275,8 +276,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 	protected function onActionMark( Title $title, int $revision ): void {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
-
-		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 
 		if ( $revision === 0 ) {
 			// Get the latest revision
@@ -1294,7 +1293,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				);
 			}
 
-			$items[] = "<li>$link $tagList $acts</li>";
+			$items[] = "<li class='mw-tpt-pagelist-item'>$link $tagList $acts</li>";
 		}
 
 		return '<ol>' . implode( "", $items ) . '</ol>';

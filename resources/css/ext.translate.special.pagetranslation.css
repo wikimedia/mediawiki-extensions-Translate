@@ -13,14 +13,20 @@
 .mw-tpt-sp-legend {
 	font-weight: bold;
 	font-size: 110%;
+	overflow-wrap: break-word;
 }
 
 .mw-tpt-sp-content {
 	font-size: small;
 	padding-left: 2em;
 	padding-right: 2em;
+	overflow-wrap: break-word;
 }
 
 .client-nojs .mw-tpt-sp-markform .mw-widgets-pendingTextInputWidget {
 	display: none;
+}
+
+.mw-tpt-pagelist-item {
+	overflow-wrap: break-word;
 }
