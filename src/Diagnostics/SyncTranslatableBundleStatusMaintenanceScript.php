@@ -22,16 +22,13 @@ use Title;
  */
 class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintenance {
 	private const INDENT_SPACER = '  ';
-
 	private const STATUS_NAME_MAPPING = [
 		TranslatablePageStatus::PROPOSED => 'Proposed',
 		TranslatablePageStatus::ACTIVE => 'Active',
 		TranslatablePageStatus::OUTDATED => 'Outdated',
 		TranslatablePageStatus::BROKEN => 'Broken'
 	];
-
 	private const SYNC_BATCH_STATUS = 15;
-
 	private const SCRIPT_VERSION = 1;
 
 	public function __construct() {
@@ -71,7 +68,7 @@ class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintena
 	}
 
 	private function fetchTranslatableBundles(): array {
-		// Fetch the translatabale pages
+		// Fetch the translatable pages
 		$resultWrapper = PageTranslationSpecialPage::loadPagesFromDB();
 		return PageTranslationSpecialPage::buildPageArray( $resultWrapper );
 
@@ -171,8 +168,7 @@ class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintena
 		// This page has a revision tag, lets assume that this is a translatable page
 		// Broken pages for example will not be in the cache
 		// TODO: Is there a better way to handle this?
-		$tpPage = TranslatablePage::newFromTitle( $title );
-		return $tpPage;
+		return TranslatablePage::newFromTitle( $title );
 	}
 
 	private function syncStatus( array $bundlesWithDifference, string $differenceType ): void {
