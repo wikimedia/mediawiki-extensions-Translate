@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Meno25",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
@@ -57,7 +58,7 @@
 	"apihelp-managemessagegroups-param-groupId": "معرف المجموعة",
 	"apihelp-managemessagegroups-param-renameMessageKey": "مفتاح الرسالة المستهدفة تجري إعادة تسميته",
 	"apihelp-managemessagegroups-param-messageKey": "استبدال مفتاح الرسالة",
-	"apihelp-managemessagegroups-param-operation": "العملية التي يتعين القيام بها.  القيم المحتملة - إعادة تسمية / جديد",
+	"apihelp-managemessagegroups-param-operation": "العملية التي يتعين القيام بها. القيم المحتملة - إعادة تسمية / جديد",
 	"apihelp-managemessagegroups-param-changesetName": "تغيير اسم المجموعة - الافتراضي / غير المراقب / ميدياويكي إلخ",
 	"apihelp-managemessagegroups-param-changesetModified": "الطابع الزمني ليونيكس عندما تم تعديل آخر مجموعة تغييرات، إذا تم تعديل مجموعة التغييرات بعد هذا، فسوف ترمي API خطأ.",
 	"apihelp-translatesandbox-summary": "سجل الدخول وأدر المستخدمين في الملعب.",
