@@ -19,23 +19,19 @@ use Wikimedia\Rdbms\IMaintainableDatabase;
  */
 class TranslatableBundleStatusStore {
 	private const TABLE_NAME = 'translate_translatable_bundles';
-	/** @var IDatabase */
-	private $database;
-	/** @var Collation */
-	private $collation;
-	/** @var IMaintainableDatabase */
-	private $dbMaintainance;
-	/** @var ?bool */
-	private $tableExists = null;
+	private IDatabase $database;
+	private Collation $collation;
+	private IMaintainableDatabase $dbMaintenance;
+	private ?bool $tableExists = null;
 
 	public function __construct(
 		IDatabase $database,
 		Collation $collation,
-		IMaintainableDatabase $dbMaintainance
+		IMaintainableDatabase $dbMaintenance
 	) {
 		$this->database = $database;
 		$this->collation = $collation;
-		$this->dbMaintainance = $dbMaintainance;
+		$this->dbMaintenance = $dbMaintenance;
 	}
 
 	public function setStatus( Title $title, TranslatableBundleStatus $status, string $bundleType ): void {
@@ -102,7 +98,7 @@ class TranslatableBundleStatusStore {
 	/** TODO: Remove this check once table is available on Wikimedia sites that use Translate */
 	private function doesTableExist(): bool {
 		if ( $this->tableExists === null ) {
-			$this->tableExists = $this->dbMaintainance->tableExists( self::TABLE_NAME, __METHOD__ );
+			$this->tableExists = $this->dbMaintenance->tableExists( self::TABLE_NAME, __METHOD__ );
 		}
 
 		return $this->tableExists;
