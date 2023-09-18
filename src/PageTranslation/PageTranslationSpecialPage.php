@@ -450,25 +450,23 @@ class PageTranslationSpecialPage extends SpecialPage {
 	 */
 	public static function loadPagesFromDB(): IResultWrapper {
 		$dbr = Utilities::getSafeReadDB();
-		$tables = [ 'page', 'revtag' ];
-		$vars = [
-			'page_id',
-			'page_namespace',
-			'page_title',
-			'page_latest',
-			'MAX(rt_revision) AS rt_revision',
-			'rt_type'
-		];
-		$conds = [
-			'page_id=rt_page',
-			'rt_type' => [ RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG ],
-		];
-		$options = [
-			'ORDER BY' => 'page_namespace, page_title',
-			'GROUP BY' => 'page_id, page_namespace, page_title, page_latest, rt_type',
-		];
-
-		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
+		return $dbr->newSelectQueryBuilder()
+			->select( [
+				'page_id',
+				'page_namespace',
+				'page_title',
+				'page_latest',
+				'MAX(rt_revision) AS rt_revision',
+				'rt_type'
+			] )
+			->tables( [ 'page', 'revtag' ] )
+			->where( [
+					'page_id=rt_page',
+					'rt_type' => [ RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG ],
+			] )
+			->orderBy( [ 'page_namespace', 'page_title' ] )
+			->groupBy( [ 'page_id', 'page_namespace', 'page_title', 'page_latest', 'rt_type' ] )
+			->fetchResultSet();
 	}
 
 	/**
