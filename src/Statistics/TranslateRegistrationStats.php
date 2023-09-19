@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Graph which provides statistics about amount of registered users in a given time.
  * @ingroup Stats
@@ -10,10 +12,20 @@ namespace MediaWiki\Extension\Translate\Statistics;
  * @since 2010.07
  */
 class TranslateRegistrationStats extends TranslationStatsBase {
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
+	public function preQuery(
+		IDatabase $database,
+		&$tables,
+		&$fields,
+		&$conds,
+		&$type,
+		&$options,
+		&$joins,
+		$start,
+		$end
+	) {
 		$tables = 'user';
 		$fields = 'user_registration';
-		$conds = self::makeTimeCondition( 'user_registration', $start, $end );
+		$conds = self::makeTimeCondition( $database, 'user_registration', $start, $end );
 		$type .= '-registration';
 		$options = [];
 		$joins = [];

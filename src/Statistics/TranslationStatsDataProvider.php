@@ -78,6 +78,7 @@ class TranslationStatsDataProvider {
 		$joins = [];
 
 		$so->preQuery(
+			$dbr,
 			$tables,
 			$fields,
 			$conds,

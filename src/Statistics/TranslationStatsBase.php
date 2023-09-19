@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Provides some hand default implementations for TranslationStatsInterface.
@@ -12,8 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
  * @since 2010.07
  */
 abstract class TranslationStatsBase implements TranslationStatsInterface {
-	/** @var TranslationStatsGraphOptions */
-	protected $opts;
+	protected TranslationStatsGraphOptions $opts;
 
 	public function __construct( TranslationStatsGraphOptions $opts ) {
 		$this->opts = $opts;
@@ -43,15 +43,13 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		return $dateFormat;
 	}
 
-	protected static function makeTimeCondition( $field, $start, $end ) {
-		$db = wfGetDB( DB_REPLICA );
-
+	protected static function makeTimeCondition( IDatabase $database, $field, $start, $end ) {
 		$conds = [];
 		if ( $start !== null ) {
-			$conds[] = "$field >= " . $db->addQuotes( $db->timestamp( $start ) );
+			$conds[] = "$field >= " . $database->addQuotes( $database->timestamp( $start ) );
 		}
 		if ( $end !== null ) {
-			$conds[] = "$field <= " . $db->addQuotes( $db->timestamp( $end ) );
+			$conds[] = "$field <= " . $database->addQuotes( $database->timestamp( $end ) );
 		}
 
 		return $conds;

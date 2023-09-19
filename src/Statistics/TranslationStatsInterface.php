@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use stdClass;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Interface for producing different kinds of graphs.
@@ -23,6 +24,7 @@ interface TranslationStatsInterface {
 
 	/**
 	 * Query details that the graph must fill.
+	 * @param IDatabase $database
 	 * @param array &$tables Empty list. Append table names.
 	 * @param array &$fields Empty list. Append field names.
 	 * @param array &$conds Empty array. Append select conditions.
@@ -32,7 +34,17 @@ interface TranslationStatsInterface {
 	 * @param string $start Precalculated start cutoff timestamp
 	 * @param string|null $end Precalculated end cutoff timestamp
 	 */
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end );
+	public function preQuery(
+		IDatabase $database,
+		&$tables,
+		&$fields,
+		&$conds,
+		&$type,
+		&$options,
+		&$joins,
+		$start,
+		$end
+	);
 
 	/**
 	 * Return the indexes which this result contributes to.

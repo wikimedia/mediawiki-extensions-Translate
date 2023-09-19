@@ -3,9 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
+use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Graph which provides statistics on active users and number of translations.
@@ -15,19 +17,30 @@ use MediaWiki\MediaWikiServices;
  */
 class TranslatePerLanguageStats extends TranslationStatsBase {
 	/** @var array For client side group by time period */
-	protected $seenUsers;
-	protected $groups;
+	protected array $seenUsers = [];
+	protected array $groups = [];
+	private Language $dateFormatter;
 
 	public function __construct( TranslationStatsGraphOptions $opts ) {
 		parent::__construct( $opts );
 		// This query is slow. Set a lower limit, but allow seeing one year at once.
 		$opts->boundValue( 'days', 1, 400 );
+		// TODO: inject
+		$this->dateFormatter = MediaWikiServices::getInstance()->getContentLanguage();
 	}
 
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
+	public function preQuery(
+		IDatabase $database,
+		&$tables,
+		&$fields,
+		&$conds,
+		&$type,
+		&$options,
+		&$joins,
+		$start,
+		$end
+	) {
 		global $wgTranslateMessageNamespaces;
-
-		$db = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'rc_timestamp' ];
@@ -39,7 +52,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			'rc_type != ' . RC_LOG,
 		];
 
-		$timeConds = self::makeTimeCondition( 'rc_timestamp', $start, $end );
+		$timeConds = self::makeTimeCondition( $database, 'rc_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
 
 		$options = [ 'ORDER BY' => 'rc_timestamp' ];
@@ -53,10 +66,10 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		$languages = [];
 		foreach ( $this->opts->getLanguages() as $code ) {
-			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
+			$languages[] = 'rc_title ' . $database->buildLike( $database->anyString(), "/$code" );
 		}
 		if ( count( $languages ) ) {
-			$conds[] = $db->makeList( $languages, LIST_OR );
+			$conds[] = $database->makeList( $languages, LIST_OR );
 		}
 
 		$fields[] = 'rc_title';
@@ -100,10 +113,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$codes = [];
 
 		if ( $this->groups ) {
-			/*
-			 * Get list of keys that the message belongs to, and filter
-			 * out those which are not requested.
-			 */
+			// Get list of keys that the message belongs to, and filter
+			// out those which are not requested.
 			$groups = Utilities::messageKeyToGroups( (int)$row->rc_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
@@ -185,8 +196,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 				$cut = 10;
 				break;
 			default:
-				return MediaWikiServices::getInstance()->getContentLanguage()
-					->sprintfDate( $this->getDateFormat(), $timestamp );
+				return $this->dateFormatter->sprintfDate( $this->getDateFormat(), $timestamp );
 		}
 
 		return substr( $timestamp, 0, -$cut );

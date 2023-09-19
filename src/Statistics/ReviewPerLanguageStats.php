@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Graph which provides statistics on number of reviews and reviewers.
@@ -12,10 +13,18 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * @since 2012.03
  */
 class ReviewPerLanguageStats extends TranslatePerLanguageStats {
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
+	public function preQuery(
+		IDatabase $database,
+		&$tables,
+		&$fields,
+		&$conds,
+		&$type,
+		&$options,
+		&$joins,
+		$start,
+		$end
+	) {
 		global $wgTranslateMessageNamespaces;
-
-		$db = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'logging' ];
 		$fields = [ 'log_timestamp' ];
@@ -26,7 +35,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			'log_action' => 'message',
 		];
 
-		$timeConds = self::makeTimeCondition( 'log_timestamp', $start, $end );
+		$timeConds = $this->makeTimeCondition( $database, 'log_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
 
 		$options = [ 'ORDER BY' => 'log_timestamp' ];
@@ -40,10 +49,10 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 		$languages = [];
 		foreach ( $this->opts->getLanguages() as $code ) {
-			$languages[] = 'log_title ' . $db->buildLike( $db->anyString(), "/$code" );
+			$languages[] = 'log_title ' . $database->buildLike( $database->anyString(), "/$code" );
 		}
 		if ( count( $languages ) ) {
-			$conds[] = $db->makeList( $languages, LIST_OR );
+			$conds[] = $database->makeList( $languages, LIST_OR );
 		}
 
 		$fields[] = 'log_title';
