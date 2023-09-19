@@ -20,6 +20,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	protected array $seenUsers = [];
 	protected array $groups = [];
 	private Language $dateFormatter;
+	private array $formatCache = [];
 
 	public function __construct( TranslationStatsGraphOptions $opts ) {
 		parent::__construct( $opts );
@@ -196,7 +197,12 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 				$cut = 10;
 				break;
 			default:
-				return $this->dateFormatter->sprintfDate( $this->getDateFormat(), $timestamp );
+				// Get the prefix that uniquely identifies a day in the MW timestamp format
+				$index = substr( $timestamp, 0, -6 );
+				// Date formatting is really slow, so do it at most once per day. This is not
+				// adjusted for user timestamp, so it's safe to assume day boundaries follow UTC.
+				$this->formatCache[$index] ??= $this->dateFormatter->sprintfDate( $this->getDateFormat(), $timestamp );
+				return $this->formatCache[$index];
 		}
 
 		return substr( $timestamp, 0, -$cut );
