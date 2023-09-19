@@ -471,10 +471,14 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "Källans språkkod \"$1\" stöds inte.",
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2|Ogiltig prioriterad språkkod|Ogiltiga prioriterade språkkoder}} i metadata: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Ogiltigt prioriterat språkformat i metadata. Prioriterade språk måste vara en array av strängar.",
+	"translate-messagebundle-error-invalid-description": "Ogiltig beskrivning av meddelandebunt i metadata. Beskrivningen måste vara en sträng",
+	"translate-messagebundle-error-invalid-label": "Ogiltig etikett för meddelandebunt i metadata. Etiketten måste vara en sträng",
 	"translate-messagebundle-group-description": "Meddelanden i meddelandebunt som definierats på sidan [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Ändrar meddelandepaketets källspråk enligt metadata.",
 	"translate-messagebundle-sourcelanguage-changed": "Meddelandepaketets källspråk kan inte ändras efter det väl har skapats.",
 	"log-action-filter-translationreview": "Typ av åtgärd:",
 	"log-action-filter-translationreview-message": "Granskning av individuella översättningsmeddelanden",
-	"log-action-filter-translationreview-group": "Ändringar i förloppsstatus för översättningar"
+	"log-action-filter-translationreview-group": "Ändringar i förloppsstatus för översättningar",
+	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importerade}} en översättbar bunt $3",
+	"log-action-filter-import-translatable-bundle": "Översättbar buntimport"
 }
