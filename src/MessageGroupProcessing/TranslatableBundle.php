@@ -62,12 +62,15 @@ abstract class TranslatableBundle {
 			$like = $dbw->buildLike( "$base/", $dbw->anyString(), "/$code" );
 		}
 
-		$fields = [ 'page_namespace', 'page_title' ];
-		$conds = [
-			'page_namespace' => NS_TRANSLATIONS,
-			'page_title ' . $like
-		];
-		$res = $dbw->select( 'page', $fields, $conds, __METHOD__ );
+		$res = $dbw->newSelectQueryBuilder()
+			->select( [ 'page_namespace', 'page_title' ] )
+			->from( 'page' )
+			->where( [
+				'page_namespace' => NS_TRANSLATIONS,
+				'page_title ' . $like
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		// Only include pages which belong to this translatable page.
 		// Problematic cases are when pages Foo and Foo/bar are both

@@ -30,28 +30,25 @@ class PersistentDatabaseCache implements PersistentCache {
 	/** @return PersistentCacheEntry[] */
 	public function get( string ...$keynames ): array {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$rows = $dbr->select(
-			self::TABLE_NAME,
-			[ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ],
-			[ 'tc_key ' => $keynames ],
-			 __METHOD__
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_key' => $keynames ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return $this->buildEntries( $rows );
 	}
 
 	public function getWithLock( string $keyname ): ?PersistentCacheEntry {
 		$dbr = $this->loadBalancer->getConnection( DB_PRIMARY );
-
-		$conds = [ 'tc_key' => $keyname ];
-
-		$rows = $dbr->select(
-			self::TABLE_NAME,
-			[ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ],
-			$conds,
-			__METHOD__,
-			[ 'FOR UPDATE' ]
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
+			->forUpdate()
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_key' => $keyname ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$entries = $this->buildEntries( $rows );
 		return count( $entries ) ? $entries[0] : null;
@@ -60,48 +57,48 @@ class PersistentDatabaseCache implements PersistentCache {
 	/** @return PersistentCacheEntry[] */
 	public function getByTag( string $tag ): array {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$rows = $dbr->select(
-			self::TABLE_NAME,
-			[ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ],
-			[ 'tc_tag' => $tag ],
-			__METHOD__
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_tag' => $tag ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return $this->buildEntries( $rows );
 	}
 
 	public function has( string $keyname ): bool {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$hasRow = $dbr->selectRow(
-			self::TABLE_NAME,
-			'tc_key',
-			[ 'tc_key' => $keyname ],
-			__METHOD__
-		);
+		$hasRow = $dbr->newSelectQueryBuilder()
+			->select( 'tc_key' )
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_key' => $keyname ] )
+			->caller( __METHOD__ )
+			->fetchRow();
 
 		return (bool)$hasRow;
 	}
 
 	public function hasEntryWithTag( string $tag ): bool {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$hasRow = $dbr->selectRow(
-			self::TABLE_NAME,
-			'tc_key',
-			[ 'tc_tag' => $tag ],
-			 __METHOD__
-		);
+		$hasRow = $dbr->newSelectQueryBuilder()
+			->select( 'tc_key' )
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_tag' => $tag ] )
+			->caller( __METHOD__ )
+			->fetchRow();
 
 		return (bool)$hasRow;
 	}
 
 	public function hasExpiredEntry( string $keyname ): bool {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$row = $dbr->selectRow(
-			self::TABLE_NAME,
-			'tc_expired',
-			[ 'tc_key' => $keyname ],
-			__METHOD__
-		);
+		$row = $dbr->newSelectQueryBuilder()
+			->select( 'tc_expired' )
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_key' => $keyname ] )
+			->caller( __METHOD__ )
+			->fetchRow();
 
 		if ( $row === false ) {
 			return false;

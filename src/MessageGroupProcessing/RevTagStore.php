@@ -97,14 +97,16 @@ class RevTagStore {
 		}
 
 		$dbr = Utilities::getSafeReadDB();
-		$vars = [ 'MAX(rt_revision) AS rt_revision', 'rt_type' ];
-		$conds = [
-			'rt_page' => $articleId,
-			'rt_type' => $remainingTags
-		];
-
-		$options = [ 'GROUP BY' => [ 'rt_type' ] ];
-		$results = $dbr->select( 'revtag', $vars, $conds, __METHOD__, $options );
+		$results = $dbr->newSelectQueryBuilder()
+			->select( [ 'MAX(rt_revision) AS rt_revision', 'rt_type' ] )
+			->from( 'revtag' )
+			->where( [
+				'rt_page' => $articleId,
+				'rt_type' => $remainingTags
+			] )
+			->groupBy( 'rt_type' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		foreach ( $results as $row ) {
 			$response[$row->rt_type] = (int)$row->rt_revision;

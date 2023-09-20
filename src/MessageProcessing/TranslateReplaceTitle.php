@@ -49,20 +49,17 @@ class TranslateReplaceTitle {
 
 	private static function getMatchingTitles( MessageHandle $handle ): TitleArray {
 		$dbr = wfGetDB( DB_PRIMARY );
-
-		$tables = [ 'page' ];
-		$vars = [ 'page_title', 'page_namespace', 'page_id' ];
-
-		$comparisonCond = 'page_title ' . $dbr->buildLike(
-			$handle->getTitleForBase()->getDBkey(), '/', $dbr->anyString()
-		);
-
-		$conds = [
-			$comparisonCond,
-			'page_namespace' => $handle->getTitle()->getNamespace(),
-		];
-
-		$result = $dbr->select( $tables, $vars, $conds, __METHOD__ );
+		$result = $dbr->newSelectQueryBuilder()
+			->select( [ 'page_title', 'page_namespace', 'page_id' ] )
+			->from( 'page' )
+			->where( [
+				'page_namespace' => $handle->getTitle()->getNamespace(),
+				'page_title ' . $dbr->buildLike(
+					$handle->getTitleForBase()->getDBkey(), '/', $dbr->anyString()
+				),
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return TitleArray::newFromResult( $result );
 	}
