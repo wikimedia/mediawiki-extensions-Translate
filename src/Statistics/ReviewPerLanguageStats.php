@@ -35,7 +35,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			'log_action' => 'message',
 		];
 
-		$timeConds = $this->makeTimeCondition( $database, 'log_timestamp', $start, $end );
+		$timeConds = self::makeTimeCondition( $database, 'log_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
 
 		$options = [ 'ORDER BY' => 'log_timestamp' ];
