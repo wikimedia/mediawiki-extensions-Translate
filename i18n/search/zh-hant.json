@@ -5,6 +5,7 @@
 			"Kly",
 			"LNDDYL",
 			"Simon Shek",
+			"Winston Sung",
 			"捍粵者"
 		]
 	},
@@ -22,7 +23,7 @@
 	"tux-sst-solr-offline-body": "暫時無法使用搜尋。",
 	"tux-sst-next": "下一頁 ›",
 	"tux-sst-prev": "‹ 上一頁",
-	"tux-sst-default": "翻譯",
+	"tux-sst-default": "譯文",
 	"tux-sst-translated": "翻譯自 $1",
 	"tux-sst-untranslated": "尚無來自於 $1 的翻譯",
 	"tux-sst-outdated": "來自於 $1 的過期翻譯",
