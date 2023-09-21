@@ -28,7 +28,7 @@
 	"tpt-notsuitable": "Kaca $1 ora cocog manawa kapertal.\nPesthèkaké kacané tinengeran <nowiki><translate></nowiki> lan duwé sintaksis kang trep.",
 	"tpt-mark-summary": "Nandhani vèrsi iki supaya kapertal",
 	"tpt-edit-failed": "Ora bisa nganyari kaca: $1",
-	"tpt-duplicate": "Jeneng ékan pertalan $1 kanggo ping akèh.",
+	"tpt-duplicate": "Jeneng ékan pertalan <strong><bdi>$1</bdi></strong> kanggo ping akèh.",
 	"tpt-unmarked": "Kaca $1 ora tinandhanan supaya kapertal manèh.",
 	"tpt-list-nopages": "Ora ana kaca kang tinandhanan supaya kapertal utawa cumepak supaya bisa tinandhanan supaya kapertal.",
 	"tpt-new-pages-title": "Kaca kang kausulaké supaya kapertal",

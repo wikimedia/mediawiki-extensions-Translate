@@ -30,7 +30,7 @@
 	"tpt-mark-summary": "Merkti þessa útgáfu til þýðingar",
 	"tpt-mark-nochanges": "Engar breytingar til að yfirfara. Að merkja þessa síðu til þýðingar mun ekki breyta síðunni eða neinni fyrirliggjandi þýðingareiningu.",
 	"tpt-edit-failed": "Gat ekki uppfært síðuna: $1",
-	"tpt-duplicate": "Nafn þýðingareiningar $1 er notað oftar en einu sinni.",
+	"tpt-duplicate": "Nafn þýðingareiningar <strong><bdi>$1</bdi></strong> er notað oftar en einu sinni.",
 	"tpt-unmarked": "Síðan [[:$1]] er ekki lengur merkt til þýðingar.",
 	"tpt-list-nopages": "Engar síður eru merktar til þýðingar eða eru tilbúnar til að vera merktar til þýðingar.",
 	"tpt-new-pages-title": "Síður sem stungið er upp á að þýða",

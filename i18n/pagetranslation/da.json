@@ -32,7 +32,7 @@
 	"tpt-showpage-intro": "Herunder listes der nye, eksisterende og slettede oversættelsesenheder.\nFør denne version markeres til oversættelse, skal du kontrollere, at ændringerne i oversættelsesenhederne er minimeret for at undgå at give oversætterne unødigt arbejde.",
 	"tpt-mark-summary": "Markerede denne version for oversættelse",
 	"tpt-edit-failed": "Kunne ikke opdatere siden: $1",
-	"tpt-duplicate": "Oversættelsesenhedsnavnet $1 anvendes mere end en gang.",
+	"tpt-duplicate": "Oversættelsesenhedsnavnet <strong><bdi>$1</bdi></strong> anvendes mere end en gang.",
 	"tpt-unmarked": "Siden $1 er ikke længere markeret til oversættelse.",
 	"tpt-list-nopages": "Ingen sider er markeret for oversættelse eller parate til at blive markeret for oversættelse.",
 	"tpt-new-pages-title": "Sider foreslået til oversættelse",

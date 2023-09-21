@@ -26,7 +26,7 @@
 	"tpt-showpage-intro": "Sì-sota a son listà j'unità ëd tradussion neuve, esistente e sganfà.\nPrima ëd marché costa version për la tradussion, controlé che le modìfiche a j'unità ëd tradussion a sio minimisà për evité dël travaj inùtil ai tradutor.",
 	"tpt-mark-summary": "Costa version a l'é stàita marcà për la tradussion",
 	"tpt-edit-failed": "Impossìbil d'agiorné la pàgina: $1",
-	"tpt-duplicate": "Ël nòm dl'unità ëd tradussion $1 a l'é dovrà pi che na vira.",
+	"tpt-duplicate": "Ël nòm dl'unità ëd tradussion <strong><bdi>$1</bdi></strong> a l'é dovrà pi che na vira.",
 	"tpt-unmarked": "La pàgina $1 a l'é pi nen marcà për la tradussion.",
 	"tpt-list-nopages": "A-i é gnun-a pàgina marcà për la tradussion ni pronta për esse marcà për la tradussion.",
 	"tpt-new-pages-title": "Pàgine proponùe për la tradussion",

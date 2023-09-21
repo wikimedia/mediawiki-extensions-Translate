@@ -27,7 +27,7 @@
 	"tpt-showpage-intro": "Unte sin Abschnitt ufglischtet, wu nej sin, sonigi wu s git un sonigi wu s nit git.\nVoreb Du die Version zum Ibersetze frejgisch, iberprief, ass d Änderige an dr Abschnitt gring ghalte sin go uunetigi Arbed bi dr Ibersetzig vermyde.",
 	"tpt-mark-summary": "het die Versione zum Ibersetze markiert",
 	"tpt-edit-failed": "Cha d Syte nit aktualisiere: $1",
-	"tpt-duplicate": "Dr Ibersetzigseinheitsname $1 wird meh wie eimol brucht.",
+	"tpt-duplicate": "Dr Ibersetzigseinheitsname <strong><bdi>$1</bdi></strong> wird meh wie eimol brucht.",
 	"tpt-unmarked": "D Syte $1 isch nit lenger markiert, ass sie mueß ibersetzt wäre.",
 	"tpt-list-nopages": "S sin kei Syte zum Ibersetze markiert wore un sin au no keini Syte fertig, wu chennte zum Ibersetze markiert wäre",
 	"tpt-new-pages-title": "Fir e Ibersetzig vorgschlaani Syte",

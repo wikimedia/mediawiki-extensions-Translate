@@ -28,7 +28,7 @@
 	"tpt-showpage-intro": "Ablo new, exeestin n delytit owerset units ar leetit.\nAfore maurkin this version fer owersetin, check that the chynges til owerset units ar wee tae avoid onnecessair wairk fer the owerseters.",
 	"tpt-mark-summary": "Maurkt this version fer owersetin",
 	"tpt-edit-failed": "Coudna update the page: $1",
-	"tpt-duplicate": "Owerset unit name $1 is uised mair than yince.",
+	"tpt-duplicate": "Owerset unit name <strong><bdi>$1</bdi></strong> is uised mair than yince.",
 	"tpt-unmarked": "Page $1 is naw langer maurkt fer owersetin.",
 	"tpt-list-nopages": "Naw pages ar maurkt fer owersetin or readie tae be maurkt fer owersetin.",
 	"tpt-new-pages-title": "Pages proposed fer owersetin",

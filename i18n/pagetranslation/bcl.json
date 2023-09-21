@@ -25,7 +25,7 @@
 	"tpt-showpage-intro": "Yaon sa ibaba an bago, dati na asin pinagburang yunit nin mga dakit-taramon an nagkarilista.\nBago mamarkahan nin bersyon para sa pagdakit-taramon, aramon mo na an mga kaliwatan pasiring sa mga yunit nin dakit-taramon pinagminimisa tanganing likayan an bakong kaipuhanan na trabaho para sa mga translador.",
 	"tpt-mark-summary": "Markado ining bersyon para sa pagdakit-taramon",
 	"tpt-edit-failed": "Dae mapanumpayan an pahina: $1",
-	"tpt-duplicate": "Pangaran kan yunit nin pagdakit-taramon na $1 ginamit nang sobra nin sarong beses.",
+	"tpt-duplicate": "Pangaran kan yunit nin pagdakit-taramon na <strong><bdi>$1</bdi></strong> ginamit nang sobra nin sarong beses.",
 	"tpt-unmarked": "An pahina $1 bako na pong markado para sa pagdakit-taramon.",
 	"tpt-list-nopages": "Mayong mga pahina na markado para sa pagdakit-taramon ni naka-andam na tanganing markado para sa pagdakit-taramon.",
 	"tpt-new-pages-title": "Mga pahinang pinaghurot para sa pagdakit-taramon",

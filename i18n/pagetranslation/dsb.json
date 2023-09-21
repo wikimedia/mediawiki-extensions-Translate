@@ -26,7 +26,7 @@
 	"tpt-showpage-intro": "Dołojce su nowe, eksistěrujuce a wulašowane pśełožowańske jadnotki nalicone.\nNježli až markěrujoš toś tu wersiju za pśełožowanje, pśekontrolěruj, lěc změny na pśełožowańskich jadnotkach su zminiměrowane, aby se wobinuł njetrěbne źěło za pśełožowarjow.",
 	"tpt-mark-summary": "Jo toś tu wersiju za pśełožowanje markěrował",
 	"tpt-edit-failed": "Toś ten bok njejo se dał aktualizěrowaś: $1",
-	"tpt-duplicate": "Mě pśełožkoweje jadnotki $1 wužywa se wěcej ako jaden raz.",
+	"tpt-duplicate": "Mě pśełožkoweje jadnotki <strong><bdi>$1</bdi></strong> wužywa se wěcej ako jaden raz.",
 	"tpt-unmarked": "Bok $1 wěcej njejo za pśełožowanje markěrowany.",
 	"tpt-list-nopages": "Žedne boki njejsu za pśełožowanje markěrowane ani su gótowe, aby se za pśełožowanje markěrowali.",
 	"tpt-new-pages-title": "Boki naraźone za pśełožowanje",

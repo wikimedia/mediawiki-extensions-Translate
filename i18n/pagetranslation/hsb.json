@@ -27,7 +27,7 @@
 	"tpt-showpage-intro": "Deleka su nowe, eksistowace a zhašane přełožowanske jednotki nalistowane.\nPrjedy hač tutu wersiju za přełožowanje markěruješ, kontroluj, hač změny přełožowanskich jednotkow su miniměrowane, zo by njetrěbne dźěło za přełožowarjow wobešoł.",
 	"tpt-mark-summary": "Je tutu wersiju za přełožowanje markěrował",
 	"tpt-edit-failed": "Strona njeda so aktualizować: $1",
-	"tpt-duplicate": "Mjeno přełožkoweje jednotki $1 so wjace hač jedyn raz wužiwa.",
+	"tpt-duplicate": "Mjeno přełožkoweje jednotki <strong><bdi>$1</bdi></strong> so wjace hač jedyn raz wužiwa.",
 	"tpt-unmarked": "Strona $1 hižo njeje za přełožowanje markěrowana.",
 	"tpt-list-nopages": "Strony njejsu ani za přełožowanje markěrowali ani njejsu hotowe za přełožowanje.",
 	"tpt-new-pages-title": "Strony namjetowane za přełožk",

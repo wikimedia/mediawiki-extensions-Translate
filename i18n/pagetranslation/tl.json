@@ -27,7 +27,7 @@
 	"tpt-showpage-intro": "Nakatala sa ibaba ang bago, umiiral at naburang mga yunit ng salinwika.\nBago tatakan ang bersyong ito para isalinwika, suriing nakauntian ang mga pagbabago sa mga yunit ng salinwika upang maiwasan ang hindi kailangang gawain para sa mga tagapagsalinwika.",
 	"tpt-mark-summary": "Tinatakan ang bersyong ito para isalinwika",
 	"tpt-edit-failed": "Hindi maisapanahon ang pahina:  $1",
-	"tpt-duplicate": "Ang pangalan ng yunit ng salinwika na $1 ay ginagamit nang mas marami kaysa sa isa.",
+	"tpt-duplicate": "Ang pangalan ng yunit ng salinwika na <strong><bdi>$1</bdi></strong> ay ginagamit nang mas marami kaysa sa isa.",
 	"tpt-unmarked": "Ang pahinang $1 ay hindi na tinatakan para sa pagsasalinwika.",
 	"tpt-list-nopages": "Walang mga pahinang tinatakan para sa pagsasalinwika o nakahanda upang markahan para sa pagsasalinwika.",
 	"tpt-new-pages-title": "Mga pahinang ipinanukala para sa pagsasalinwika",

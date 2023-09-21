@@ -32,7 +32,7 @@
 	"tpt-mark-summary": "Ova vezija označena za prevođenje",
 	"tpt-mark-nochanges": "Nema izmjena za pregled. Ako ovu stranicu označite za prevođenje, ona se neće izmijeniti, a isto važi za bilo koju postojeću prevodilačku jedinicu.",
 	"tpt-edit-failed": "Nije moguće ažurirati stranicu: $1",
-	"tpt-duplicate": "Prevodilačka jedinica $1 koristi se više od jednom.",
+	"tpt-duplicate": "Prevodilačka jedinica <strong><bdi>$1</bdi></strong> koristi se više od jednom.",
 	"tpt-unmarked": "Stranica $1 više nije označena za prevođenje.",
 	"tpt-list-nopages": "Nijedna stranica nije označena za prevođenje niti je spremna za označavanje.",
 	"tpt-new-pages-title": "Stranice predložene za prevođenje",

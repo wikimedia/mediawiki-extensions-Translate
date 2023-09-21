@@ -43,7 +43,7 @@
 	"tpt-mark-summary": "Versione segnata per la traduzione",
 	"tpt-mark-nochanges": "Nessuna modifica da rivedere. Contrassegnare questa pagina per la traduzione non modificherà la pagina, né alcuna unità di traduzione esistente.",
 	"tpt-edit-failed": "Impossibile aggiornare la pagina: $1",
-	"tpt-duplicate": "Il nome dell'elemento di traduzione $1 è usato più di una volta.",
+	"tpt-duplicate": "Il nome dell'elemento di traduzione <strong><bdi>$1</bdi></strong> è usato più di una volta.",
 	"tpt-unmarked": "La pagina [[:$1]] non è più segnata per la traduzione.",
 	"tpt-list-nopages": "Nessuna pagina è segnata per la traduzione oppure è pronta per essere segnata per la traduzione.",
 	"tpt-new-pages-title": "Pagine proposte per la traduzione",

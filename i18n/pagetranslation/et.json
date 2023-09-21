@@ -27,7 +27,7 @@
 	"tpt-showpage-intro": "Allpool on loetletud uued, olemasolevad ja kustutatud tõlkeüksused.\nEnne selle versiooni märkimist tõlkimiseks, veendu palun, et tõlkeüksustes tehtud muudatused on võimalikult väikesed, et tõlkijad ei peaks tegema tarbetut tööd.",
 	"tpt-mark-summary": "See versioon on märgitud tõlkimiseks",
 	"tpt-edit-failed": "Lehekülje uuendamine ei õnnestunud: $1",
-	"tpt-duplicate": "Tõlkeüksust nimega $1 kasutatakse rohkem kui ühel korral.",
+	"tpt-duplicate": "Tõlkeüksust nimega <strong><bdi>$1</bdi></strong> kasutatakse rohkem kui ühel korral.",
 	"tpt-unmarked": "Lehekülg [[:$1]] pole enam märgitud tõlkimiseks.",
 	"tpt-list-nopages": "Ükski lehekülg pole märgitud tõlkimiseks ega ole valmis, et märkida ta tõlkimiseks.",
 	"tpt-new-pages-title": "Tõlkimiseks esitatud leheküljed",

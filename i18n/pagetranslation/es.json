@@ -63,7 +63,7 @@
 	"tpt-mark-summary": "Se marcó esta sección para su traducción",
 	"tpt-mark-nochanges": "No hay cambios para revisar. Marcar esta página para su traducción no editará la página ni ninguna de las unidades de traducción existentes.",
 	"tpt-edit-failed": "No pudo actualizar la página : $1",
-	"tpt-duplicate": "El nombre de la unidad de traducción  $1 es utilizado más de una vez.",
+	"tpt-duplicate": "El nombre de la unidad de traducción  <strong><bdi>$1</bdi></strong> es utilizado más de una vez.",
 	"tpt-unmarked": "La página [[:$1]] ya no está marcada para traducción.",
 	"tpt-list-nopages": "Ninguna página está marcada para traducción ni lista para ser marcada para traducción.",
 	"tpt-new-pages-title": "Páginas propuestas para traducción",
