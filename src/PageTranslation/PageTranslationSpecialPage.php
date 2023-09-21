@@ -475,6 +475,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			] )
 			->orderBy( [ 'page_namespace', 'page_title' ] )
 			->groupBy( [ 'page_id', 'page_namespace', 'page_title', 'page_latest', 'rt_type' ] )
+			->caller( __METHOD__ )
 			->fetchResultSet();
 	}
 
