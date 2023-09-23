@@ -10,6 +10,7 @@ use JobQueueGroup;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MessageIndex;
@@ -100,7 +101,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	}
 
 	/** Unmark a translatable page */
-	public function unmark( Title $title ): void {
+	public function unmark( PageIdentity $title ): void {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$translatablePage->getTranslationPercentages();
 		foreach ( $translatablePage->getTranslationPages() as $page ) {
@@ -114,7 +115,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		// Remove tags after all group related work is done in order to avoid breaking calls to
 		// TranslatablePage::getMessageGroup incase the group cache is not populated
 		$this->revTagStore->removeTags( $title, RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG );
-		$this->translatableBundleStatusStore->removeStatus( $title->getArticleID() );
+		$this->translatableBundleStatusStore->removeStatus( $title->getId() );
 
 		MessageGroups::singleton()->recache();
 		$this->messageIndex->rebuild();

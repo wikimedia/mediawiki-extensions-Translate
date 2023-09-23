@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageReference;
 use MessageHandle;
 use Title;
 
@@ -49,10 +51,10 @@ abstract class TranslatableBundle {
 	/** Check if this is a deletable translatable bundle */
 	abstract public function isDeletable(): bool;
 
-	protected function getTranslationUnitPagesByTitle( Title $title, ?string $code = null ): array {
+	protected function getTranslationUnitPagesByTitle( PageReference $title, ?string $code = null ): array {
 		$dbw = wfGetDB( DB_PRIMARY );
 
-		$base = $title->getPrefixedDBkey();
+		$base = MediaWikiServices::getInstance()->getTitleFormatter()->getPrefixedDBkey( $title );
 		// Including the / used as separator
 		$baseLength = strlen( $base ) + 1;
 

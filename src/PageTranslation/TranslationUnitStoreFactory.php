@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use LogicException;
-use Title;
+use MediaWiki\Page\PageIdentity;
 use Wikimedia\Rdbms\ILoadBalancer;
 use const DB_PRIMARY;
 use const DB_REPLICA;
@@ -15,15 +15,14 @@ use const DB_REPLICA;
  * @since 2021.05
  */
 class TranslationUnitStoreFactory {
-	/** @var ILoadBalancer */
-	private $lb;
+	private ILoadBalancer $lb;
 
 	public function __construct( ILoadBalancer $lb ) {
 		$this->lb = $lb;
 	}
 
-	public function getReader( Title $page ): TranslationUnitReader {
-		$pageId = $page->getArticleID();
+	public function getReader( PageIdentity $page ): TranslationUnitReader {
+		$pageId = $page->getId();
 		if ( $pageId === 0 ) {
 			throw new LogicException( 'Page must exist' );
 		}
@@ -31,8 +30,8 @@ class TranslationUnitStoreFactory {
 		return new TranslationUnitStore( $this->lb->getConnection( DB_REPLICA ), $pageId );
 	}
 
-	public function getWriter( Title $page ): TranslationUnitStore {
-		$pageId = $page->getArticleID();
+	public function getWriter( PageIdentity $page ): TranslationUnitStore {
+		$pageId = $page->getId();
 		if ( $pageId === 0 ) {
 			throw new LogicException( 'Page must exist' );
 		}
