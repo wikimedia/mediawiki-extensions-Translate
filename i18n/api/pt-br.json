@@ -5,7 +5,13 @@
 			"Eduardo Addad de Oliveira",
 			"Felipe L. Ewald",
 			"Mordecool",
-			"TheEduGobi"
+			"TheEduGobi",
+			"Amire80",
+			"Eduardoaddad",
+			"Fúlvio",
+			"Mello25",
+			"Robertpontes",
+			"Svjatysberega"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gerencie grupos de mensagens agregadas.\n\nVocê pode adicionar e remover grupos de mensagens agregadas e associar ou dissociar grupos de mensagens deles (um de cada vez).",
@@ -44,7 +50,7 @@
 	"apihelp-query+messagecollection-param-prop": "Quais propriedades obter:\n;definição:Definição da mensagem.\n;tradução:Tradução atual (sem a string $1, se houver, use as tags para verificar traduções desatualizadas ou quebradas).\n;tags:Tags de mensagens, como opcionais, ignorado e fuzzy.\n;properties:Propriedades da mensagem, como status, revisão, último tradutor. Pode variar entre as mensagens.\n;revision:<span class=\"deprecated\">Obsoleto!</span> Use $2prop=properties.",
 	"apihelp-query+messagecollection-example-1": "Lista de idiomas suportados",
 	"apihelp-query+messagecollection-example-2": "Lista de definições de mensagens não-opcionais para o grupo \"page-Example\"",
-	"apihelp-query+messagecollection-example-3": "Lista de mensagens opcionais em finlandês com tags para o grupo  \"page-Example\"",
+	"apihelp-query+messagecollection-example-3": "Lista de mensagens opcionais em finlandês com tags para o grupo \"page-Example\"",
 	"apihelp-query+messagecollection-example-4": "Mais informações sobre revisões de tradução mais recentes para o grupo \"page-Example\"",
 	"apihelp-query+messagegroups-description": "Retorna informações sobre grupos de mensagens.\n\nNote que o parâmetro uselang afeta a saída de partes dependentes do idioma.",
 	"apihelp-query+messagegroups-summary": "Retorna informações sobre grupos de mensagens.",
@@ -60,7 +66,7 @@
 	"apihelp-query+messagegroupstats-summary": "Consultar estatísticas do grupo de mensagens.",
 	"apihelp-query+messagegroupstats-param-timelimit": "Tempo máximo para gastar no cálculo das estatísticas faltantes. Se zero, apenas os resultados em cache desde o início são retornados.",
 	"apihelp-query+messagegroupstats-param-group": "ID do grupo de mensagens.",
-	"apihelp-query+messagegroupstats-example-1": "Lista de estatísticas de conclusão de tradução para o grupo  \"page-Example\"",
+	"apihelp-query+messagegroupstats-example-1": "Lista de estatísticas de conclusão de tradução para o grupo \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "Consultar todas as traduções para uma única mensagem.",
 	"apihelp-query+messagetranslations-summary": "Consultar todas as traduções para uma única mensagem.",
 	"apihelp-query+messagetranslations-param-title": "Título completo de uma mensagem conhecida.",

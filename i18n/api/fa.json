@@ -6,7 +6,8 @@
 			"Ladsgroup",
 			"Reza1615",
 			"Beginneruser",
-			"Jeeputer"
+			"Jeeputer",
+			"Amire80"
 		]
 	},
 	"apihelp-aggregategroups-description": "مدیریت گروه‌های پیام انبوه.\n\nشما می توانید گروه‌های پیام انبوه را بیفزایید یا حذف کنید یا گروه‌های پیام را به آن‌ها متصل یا جدا کنید (در هر زمان یکی).",
@@ -47,7 +48,7 @@
 	"apihelp-translationreview-example-1": "بازبینی نسخه ۱",
 	"apihelp-translationstash-param-subaction": "فعالیت.",
 	"apihelp-translationstash-param-metadata": "شی JSON.",
-	"apihelp-ttmserver-param-sourcelanguage": "کد زبان متن  مبدأ",
+	"apihelp-ttmserver-param-sourcelanguage": "کد زبان متن مبدأ",
 	"apihelp-ttmserver-param-targetlanguage": "کد زبان پیشنهاد.",
 	"apihelp-ttmserver-param-text": "متن برای یافتن پیشنهادات",
 	"apihelp-searchtranslations-description": "جستجوی ترجمه‌ها.",
