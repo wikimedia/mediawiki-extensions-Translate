@@ -6,5 +6,6 @@
 		]
 	},
 	"translationstash": "Xosh keldińiz",
-	"translate-translationstash-welcome": "Xosh keldińiz {{GENDER:$1|$1}}, siz jańa awdarmashısız"
+	"translate-translationstash-welcome": "Xosh keldińiz {{GENDER:$1|$1}}, siz jańa awdarmashısız",
+	"log-name-translatorsandbox": "Awdarma qaralaması jurnalı"
 }

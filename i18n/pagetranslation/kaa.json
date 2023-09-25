@@ -6,6 +6,11 @@
 	},
 	"tpt-select-prioritylangs-reason": "Sebebi:",
 	"tpt-languages-legend": "Basqa tiller:",
+	"tpt-aggregategroup-new-name": "Atı:",
+	"tpt-aggregategroup-new-description": "Sıpatlaması (shárt emes):",
+	"tpt-aggregategroup-edit-name": "Atı:",
+	"tpt-aggregategroup-edit-description": "Sıpatlaması:",
+	"log-name-pagetranslation": "Bet awdarması jurnalı",
 	"pt-movepage-reason": "Sebebi:",
 	"pt-deletepage-reason": "Sebebi:",
 	"pp-cancel-button-label": "Biykar etiw"
