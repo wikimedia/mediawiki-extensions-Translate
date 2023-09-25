@@ -11,7 +11,7 @@ use HTMLForm;
 use IContextSource;
 use JobQueueGroup;
 use MediaWiki\Cache\LinkBatchFactory;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -90,7 +90,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private $jobQueueGroup;
 	/** @var ILoadBalancer */
 	private $loadBalancer;
-	private MessageGroupReview $groupReview;
+	private MessageGroupReviewStore $groupReviewStore;
 
 	public function __construct(
 		LinkBatchFactory $linkBatchFactory,
@@ -98,7 +98,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		LanguageNameUtils $languageNameUtils,
 		JobQueueGroup $jobQueueGroup,
 		ILoadBalancer $loadBalancer,
-		MessageGroupReview $groupReview
+		MessageGroupReviewStore $groupReviewStore
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
@@ -107,7 +107,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->languageNameUtils = $languageNameUtils;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->loadBalancer = $loadBalancer;
-		$this->groupReview = $groupReview;
+		$this->groupReviewStore = $groupReviewStore;
 	}
 
 	public function isIncludable() {
@@ -365,7 +365,10 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$structure = MessageGroups::getGroupStructure();
 
 		if ( $wgTranslateWorkflowStates ) {
-			$this->states = $this->groupReview->getWorkflowStatesForLanguage( $this->target, array_keys( $structure ) );
+			$this->states = $this->groupReviewStore->getWorkflowStatesForLanguage(
+				$this->target,
+				array_keys( $structure )
+			);
 			// An array where keys are state names and values are numbers
 			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
 		}

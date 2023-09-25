@@ -18,18 +18,18 @@ class GroupReviewActionApi extends ApiBase {
 	protected static $right = 'translate-groupreview';
 	/** @var LanguageNameUtils */
 	private $languageNameUtils;
-	/** @var MessageGroupReview */
-	private $messageGroupReview;
+	/** @var MessageGroupReviewStore */
+	private $messageGroupReviewStore;
 
 	public function __construct(
 		ApiMain $main,
 		string $action,
 		LanguageNameUtils $languageNameUtils,
-		MessageGroupReview $messageGroupReview
+		MessageGroupReviewStore $messageGroupReviewStore
 	) {
 		parent::__construct( $main, $action );
 		$this->languageNameUtils = $languageNameUtils;
-		$this->messageGroupReview = $messageGroupReview;
+		$this->messageGroupReviewStore = $messageGroupReviewStore;
 	}
 
 	public function execute() {
@@ -70,7 +70,7 @@ class GroupReviewActionApi extends ApiBase {
 			$this->checkUserRightsAny( $stateConfig[$targetState]['right'] );
 		}
 
-		$this->messageGroupReview->changeState( $group, $code, $targetState, $user );
+		$this->messageGroupReviewStore->changeState( $group, $code, $targetState, $user );
 
 		$output = [ 'review' => [
 			'group' => $group->getId(),

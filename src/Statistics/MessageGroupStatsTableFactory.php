@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use IContextSource;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Linker\LinkRenderer;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -18,20 +18,20 @@ class MessageGroupStatsTableFactory {
 	private ProgressStatsTableFactory $progressStatsTableFactory;
 	private ILoadBalancer $loadBalancer;
 	private LinkRenderer $linkRenderer;
-	private MessageGroupReview $groupReview;
+	private MessageGroupReviewStore $groupReviewStore;
 	private bool $haveTranslateWorkflowStates;
 
 	public function __construct(
 		ProgressStatsTableFactory $progressStatsTableFactory,
 		ILoadBalancer $loadBalancer,
 		LinkRenderer $linkRenderer,
-		MessageGroupReview $groupReview,
+		MessageGroupReviewStore $groupReviewStore,
 		bool $haveTranslateWorkflowStates
 	) {
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->loadBalancer = $loadBalancer;
 		$this->linkRenderer = $linkRenderer;
-		$this->groupReview = $groupReview;
+		$this->groupReviewStore = $groupReviewStore;
 		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 	}
 
@@ -42,7 +42,7 @@ class MessageGroupStatsTableFactory {
 			$this->linkRenderer,
 			$contextSource,
 			$contextSource->getLanguage(),
-			$this->groupReview,
+			$this->groupReviewStore,
 			$this->haveTranslateWorkflowStates
 		);
 	}

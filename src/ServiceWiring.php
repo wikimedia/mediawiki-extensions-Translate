@@ -14,7 +14,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
@@ -102,8 +102,8 @@ return [
 		);
 	},
 
-	'Translate:MessageGroupReview' => static function ( MediaWikiServices $services ): MessageGroupReview {
-		return new MessageGroupReview(
+	'Translate:MessageGroupReviewStore' => static function ( MediaWikiServices $services ): MessageGroupReviewStore {
+		return new MessageGroupReviewStore(
 			$services->getDBLoadBalancer(),
 			$services->get( 'Translate:HookRunner' )
 		);
@@ -116,7 +116,7 @@ return [
 			$services->get( 'Translate:ProgressStatsTableFactory' ),
 			$services->getDBLoadBalancer(),
 			$services->getLinkRenderer(),
-			$services->get( 'Translate:MessageGroupReview' ),
+			$services->get( 'Translate:MessageGroupReviewStore' ),
 			$services->getMainConfig()->get( 'TranslateWorkflowStates' ) !== false
 		);
 	},

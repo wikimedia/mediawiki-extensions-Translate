@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use Html;
 use Language;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Linker\LinkRenderer;
 use MessageGroup;
@@ -28,7 +28,7 @@ class MessageGroupStatsTable {
 	private MessageLocalizer $localizer;
 	private Language $interfaceLanguage;
 	private StatsTable $table;
-	private MessageGroupReview $groupReview;
+	private MessageGroupReviewStore $groupReviewStore;
 	/** Flag to set if not all numbers are available. */
 	private bool $incompleteStats;
 	private array $languageNames;
@@ -43,7 +43,7 @@ class MessageGroupStatsTable {
 		LinkRenderer $linkRenderer,
 		MessageLocalizer $localizer,
 		Language $interfaceLanguage,
-		MessageGroupReview $groupReview,
+		MessageGroupReviewStore $groupReviewStore,
 		bool $haveTranslateWorkflowStates
 	) {
 		$this->table = $table;
@@ -52,7 +52,7 @@ class MessageGroupStatsTable {
 		$this->incompleteStats = false;
 		$this->localizer = $localizer;
 		$this->interfaceLanguage = $interfaceLanguage;
-		$this->groupReview = $groupReview;
+		$this->groupReviewStore = $groupReviewStore;
 		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 		$this->languageNames = Utilities::getLanguageNames( $this->interfaceLanguage->getCode() );
 		$this->translateTitle = SpecialPage::getTitleFor( 'Translate' );
@@ -210,7 +210,7 @@ class MessageGroupStatsTable {
 			return '';
 		}
 
-		$this->states ??= $this->groupReview->getWorkflowStatesForGroup( $group->getId() );
+		$this->states ??= $this->groupReviewStore->getWorkflowStatesForGroup( $group->getId() );
 		return $table->makeWorkflowStateCell( $this->states[$language] ?? null, $group, $language );
 	}
 

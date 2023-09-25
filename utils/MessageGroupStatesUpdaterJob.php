@@ -67,13 +67,13 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 		}
 
 		$groups = self::getGroupsWithTransitions( $handle );
-		$messageGroupReview = Services::getInstance()->getMessageGroupReview();
+		$messageGroupReviewStore = Services::getInstance()->getMessageGroupReviewStore();
 		foreach ( $groups as $id => $transitions ) {
 			$group = MessageGroups::getGroup( $id );
 			$stats = MessageGroupStats::forItem( $id, $code, MessageGroupStats::FLAG_IMMEDIATE_WRITES );
 			$state = self::getNewState( $stats, $transitions );
 			if ( $state ) {
-				$messageGroupReview->changeState( $group, $code, $state, FuzzyBot::getUser() );
+				$messageGroupReviewStore->changeState( $group, $code, $state, FuzzyBot::getUser() );
 			}
 		}
 

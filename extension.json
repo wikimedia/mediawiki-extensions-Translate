@@ -279,7 +279,7 @@
 				"LanguageNameUtils",
 				"JobQueueGroup",
 				"DBLoadBalancer",
-				"Translate:MessageGroupReview"
+				"Translate:MessageGroupReviewStore"
 			]
 		},
 		"MessageGroupStats": {
@@ -353,7 +353,7 @@
 				"Translate:ConfigHelper",
 				"LanguageNameUtils",
 				"DBLoadBalancer",
-				"Translate:MessageGroupReview"
+				"Translate:MessageGroupReviewStore"
 			]
 		}
 	},
@@ -390,7 +390,7 @@
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\GroupReviewActionApi",
 			"services": [
 				"LanguageNameUtils",
-				"Translate:MessageGroupReview"
+				"Translate:MessageGroupReviewStore"
 			]
 		},
 		"managemessagegroups": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\ManageMessageGroupsActionApi",

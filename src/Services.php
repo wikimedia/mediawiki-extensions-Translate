@@ -7,7 +7,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -105,8 +105,8 @@ class Services implements ContainerInterface {
 	}
 
 	/** @since 2022.07 */
-	public function getMessageGroupReview(): MessageGroupReview {
-		return $this->get( 'Translate:MessageGroupReview' );
+	public function getMessageGroupReviewStore(): MessageGroupReviewStore {
+		return $this->get( 'Translate:MessageGroupReviewStore' );
 	}
 
 	/** @since 2023.02 */

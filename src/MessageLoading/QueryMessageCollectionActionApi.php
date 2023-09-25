@@ -8,7 +8,7 @@ use ApiPageSet;
 use ApiQuery;
 use ApiQueryGeneratorBase;
 use ApiResult;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -31,7 +31,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 	private ConfigHelper $configHelper;
 	private LanguageNameUtils $languageNameUtils;
 	private ILoadBalancer $loadBalancer;
-	private MessageGroupReview $groupReview;
+	private MessageGroupReviewStore $groupReviewStore;
 
 	public function __construct(
 		ApiQuery $query,
@@ -39,13 +39,13 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		ConfigHelper $configHelper,
 		LanguageNameUtils $languageNameUtils,
 		ILoadBalancer $loadBalancer,
-		MessageGroupReview $groupReview
+		MessageGroupReviewStore $groupReviewStore
 	) {
 		parent::__construct( $query, $moduleName, 'mc' );
 		$this->configHelper = $configHelper;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->loadBalancer = $loadBalancer;
-		$this->groupReview = $groupReview;
+		$this->groupReviewStore = $groupReviewStore;
 	}
 
 	public function execute(): void {
@@ -165,7 +165,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		$result->addValue(
 			[ 'query', 'metadata' ],
 			'state',
-			$this->groupReview->getWorkflowState( $group->getId(), $params['language'] )
+			$this->groupReviewStore->getWorkflowState( $group->getId(), $params['language'] )
 		);
 
 		$result->addValue( [ 'query', 'metadata' ], 'resultsize', $resultSize );

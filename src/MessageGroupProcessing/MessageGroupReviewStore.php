@@ -15,10 +15,9 @@ use Wikimedia\Rdbms\IResultWrapper;
 /**
  * Provides methods to get and change the state of a message group
  * @author Eugene Wang'ombe
- * @since 2022.07
  * @license GPL-2.0-or-later
  */
-class MessageGroupReview {
+class MessageGroupReviewStore {
 	private HookRunner $hookRunner;
 	private ILoadBalancer $loadBalancer;
 	private const TABLE_NAME = 'translate_groupreviews';

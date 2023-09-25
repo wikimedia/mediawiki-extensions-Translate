@@ -348,7 +348,7 @@ class MessageGroups {
 			$id = self::normalizeId( $group );
 		}
 
-		return Services::getInstance()->getMessageGroupReview()->getGroupPriority( $id ) ?? '';
+		return Services::getInstance()->getMessageGroupReviewStore()->getGroupPriority( $id ) ?? '';
 	}
 
 	/**
@@ -365,7 +365,7 @@ class MessageGroups {
 		}
 
 		$priority = $priority === '' ? null : $priority;
-		Services::getInstance()->getMessageGroupReview()->setGroupPriority( $id, $priority );
+		Services::getInstance()->getMessageGroupReviewStore()->setGroupPriority( $id, $priority );
 	}
 
 	public static function isDynamic( MessageGroup $group ): bool {

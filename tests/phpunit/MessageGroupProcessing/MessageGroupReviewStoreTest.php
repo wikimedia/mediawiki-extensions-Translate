@@ -12,19 +12,19 @@ use WikiMessageGroup;
  * Unit tests for message group state change api.
  * @author Niklas Laxström
  * @group Database
- * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReview
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore
  */
-class MessageGroupReviewTest extends MediaWikiIntegrationTestCase {
+class MessageGroupReviewStoreTest extends MediaWikiIntegrationTestCase {
 	public function testGetSetState(): void {
 		$group = new WikiMessageGroup( 'testgroup', 'wewgweg' );
-		$messageGroupReview = Services::getInstance()->getMessageGroupReview();
-		$ok = $messageGroupReview->changeState( $group, 'fi', 'newstate', FuzzyBot::getUser() );
+		$messageGroupReviewStore = Services::getInstance()->getMessageGroupReviewStore();
+		$ok = $messageGroupReviewStore->changeState( $group, 'fi', 'newstate', FuzzyBot::getUser() );
 		$this->assertTrue( $ok, 'state was changed' );
 
-		$state = $messageGroupReview->getState( $group, 'fi' );
+		$state = $messageGroupReviewStore->getState( $group, 'fi' );
 		$this->assertEquals( 'newstate', $state, 'state was changed to expected value' );
 
-		$ok = $messageGroupReview->changeState( $group, 'fi', 'newstate', FuzzyBot::getUser() );
+		$ok = $messageGroupReviewStore->changeState( $group, 'fi', 'newstate', FuzzyBot::getUser() );
 		$this->assertFalse( $ok, 'state was not changed again' );
 	}
 }
