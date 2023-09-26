@@ -219,6 +219,8 @@
 		"RevisionRecordInserted": "main",
 		"ListDefinedTags": "main",
 		"ChangeTagsListActive": "main",
+		"SpecialPrefixIndexGetFormFilters": "pageTranslation",
+		"SpecialPrefixIndexQuery": "pageTranslation",
 		"UserGetRights": "translateSandbox"
 	},
 	"HookHandlers": {
@@ -238,6 +240,9 @@
 		},
 		"messageBundle": {
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
+		},
+		"pageTranslation": {
+			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler"
 		},
 		"recentChangesTranslationFilter": {
 			"class": "MediaWiki\\Extension\\Translate\\RecentChangesTranslationFilterHookHandler",

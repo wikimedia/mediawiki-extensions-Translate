@@ -462,5 +462,6 @@
 	"log-action-filter-translationreview-message": "Review of individual translation messages",
 	"log-action-filter-translationreview-group": "Changes in the status of the progress of translations",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|imported}} a translatable bundle $3",
-	"log-action-filter-import-translatable-bundle": "Translatable bundle import"
+	"log-action-filter-import-translatable-bundle": "Translatable bundle import",
+	"translate-hidetranslations": "Hide translation pages"
 }
