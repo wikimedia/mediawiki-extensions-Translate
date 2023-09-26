@@ -22,7 +22,8 @@
 			"Wwycheuk",
 			"Xiplus",
 			"Zhxy 519",
-			"捍粵者"
+			"捍粵者",
+			"列维劳德"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -264,7 +265,7 @@
 	"pp-cancel-button-label": "取消",
 	"pp-save-message": "頁面已發布。 您可 [$1] 編輯該頁面。",
 	"pp-prepare-message": "該頁面已準備好等候翻譯。 請參考下方差異。 點選 \"{{int:pp-save-button-label}}\" 確認!",
-	"pp-already-prepared-message": "該頁面似乎已準備好等候翻譯，但與先前的版本無任何差異。",
+	"pp-already-prepared-message": "該頁面似乎已經準備好等候翻譯，或無法進行自動準備等候翻譯。該頁面與先前的版本無任何差異。",
 	"pp-diff-error": "從伺服器上擷取差異時發生錯誤。",
 	"pp-pagename-missing": "請輸入頁面名稱。",
 	"pp-diff-old-header": "來源內容",
