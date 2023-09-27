@@ -8,9 +8,10 @@
 	},
 	"translate": "Куçарни",
 	"translate-taction-translate": "Куçарни",
-	"translate-next": "Урăх страницă",
-	"translate-prev": "Унчченхи страницă",
+	"translate-next": "Тепӗр страница",
+	"translate-prev": "Малтанхи страница",
 	"translationstats": "Куçарнисен статистики",
+	"translations": "Мӗнпур куҫару",
 	"languagestats-stats-for": "$1 ҫине куҫарнисен статистики ($2).",
 	"languagestats-recenttranslations": "нумай пулмасть куҫарнисем",
 	"translate-langstats-expand": "сар",
@@ -33,7 +34,7 @@
 	"tux-tab-untranslated": "Куçарманнисем",
 	"tux-tab-outdated": "Кивелнисем",
 	"tux-tab-translated": "Куçарнисем",
-	"tux-tab-unproofread": "Тĕрĕслеменисем",
+	"tux-tab-unproofread": "Тӗрӗслеменнисем",
 	"tux-empty-list-other": "Куçармалли çук.",
 	"tux-empty-list-other-action": "Куçарнисене тĕрĕслемелли"
 }
