@@ -64,7 +64,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	}
 
 	public function getDescription() {
-		return $this->msg( 'translate-mgs-pagename' )->text();
+		return $this->msg( 'translate-mgs-pagename' );
 	}
 
 	public function isIncludable() {

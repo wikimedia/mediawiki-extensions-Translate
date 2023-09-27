@@ -74,7 +74,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	public function getDescription() {
-		return $this->msg( 'supportedlanguages' )->text();
+		return $this->msg( 'supportedlanguages' );
 	}
 
 	public function execute( $par ): void {

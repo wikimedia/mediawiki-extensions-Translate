@@ -22,7 +22,7 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 	}
 
 	public function getDescription() {
-		return $this->msg( 'pagemigration' )->text();
+		return $this->msg( 'pagemigration' );
 	}
 
 	public function execute( $par ) {

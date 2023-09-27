@@ -105,7 +105,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	}
 
 	public function getDescription() {
-		return $this->msg( 'managemessagegroups' )->text();
+		return $this->msg( 'managemessagegroups' );
 	}
 
 	public function execute( $par ) {
