@@ -71,7 +71,7 @@ class UnicodePlural {
 	 */
 	public static function flattenList( array $formList ) {
 		$formatted = [];
-		foreach ( $formList as list( $keyword, $value ) ) {
+		foreach ( $formList as [ $keyword, $value ] ) {
 			$formatted[] = self::formatForm( $keyword, $value );
 		}
 
@@ -95,7 +95,7 @@ class UnicodePlural {
 	 * @return string[]
 	 */
 	public static function unflatten( $text, $expectedKeywords ) {
-		list( $template, $instanceMap ) = self::parsePluralForms( $text );
+		[ $template, $instanceMap ] = self::parsePluralForms( $text );
 		return self::expandTemplate( $template, $instanceMap, $expectedKeywords );
 	}
 
@@ -176,7 +176,7 @@ class UnicodePlural {
 
 	public static function convertFormListToFormMap( array $formList, array $expectedKeywords ) {
 		$formMap = [];
-		foreach ( $formList as list( $keyword, $value ) ) {
+		foreach ( $formList as [ $keyword, $value ] ) {
 			$formMap[ $keyword ] = $value;
 		}
 

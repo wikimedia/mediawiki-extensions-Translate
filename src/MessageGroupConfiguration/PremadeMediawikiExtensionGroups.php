@@ -145,7 +145,7 @@ class PremadeMediawikiExtensionGroups {
 
 			foreach ( $info['languages'] as $tagSpec ) {
 				if ( preg_match( '/^([+-])?(.+)$/', $tagSpec, $m ) ) {
-					list( , $sign, $tag ) = $m;
+					[ , $sign, $tag ] = $m;
 					if ( $sign === '+' ) {
 						$conf['LANGUAGES']['include'][] = $tag;
 					} elseif ( $sign === '-' ) {
@@ -186,7 +186,7 @@ class PremadeMediawikiExtensionGroups {
 						throw new RuntimeException( 'Trying to define name twice: ' . $line );
 					}
 				} else {
-					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
+					[ $key, $value ] = array_map( 'trim', explode( '=', $line, 2 ) );
 					switch ( $key ) {
 						case 'aliasfile':
 						case 'desc':
@@ -207,7 +207,7 @@ class PremadeMediawikiExtensionGroups {
 							$newGroup[$key] = array_merge( $newGroup[$key], $values );
 							break;
 						case 'prefix':
-							list( $prefix, $messages ) = array_map(
+							[ $prefix, $messages ] = array_map(
 								'trim',
 								explode( '|', $value, 2 )
 							);

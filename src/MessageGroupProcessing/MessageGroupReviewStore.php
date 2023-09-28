@@ -156,7 +156,7 @@ class MessageGroupReviewStore {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$conditions = array_filter(
 			[ 'tgr_group' => $groupIds, 'tgr_lang' => $languageCodes ],
-			static fn( $x ) => $x !== null && $x !== ''
+			static fn ( $x ) => $x !== null && $x !== ''
 		);
 
 		if ( $conditions === [] ) {

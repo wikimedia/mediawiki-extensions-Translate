@@ -408,7 +408,7 @@ class ExternalMessageSourceStateComparator {
 
 		$alreadyRenamed = $additionsToRemove = $deletionsToRemove = [];
 		foreach ( $trackRename as $key => $similarityPercent ) {
-			list( $addKey, $deleteKey ) = explode( '|', $key, 2 );
+			[ $addKey, $deleteKey ] = explode( '|', $key, 2 );
 			if ( isset( $alreadyRenamed[ $addKey ] ) || isset( $alreadyRenamed[ $deleteKey ] ) ) {
 				// Already mapped with another name.
 				continue;

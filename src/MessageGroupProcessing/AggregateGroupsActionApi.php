@@ -258,17 +258,17 @@ class AggregateGroupsActionApi extends ApiBase {
 		string $aggregateGroupId,
 		string $sourceLanguageCode
 	): array {
-			$groupsWithDifferentLanguage = [];
-			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroupId );
-			foreach ( $subgroups as $group ) {
-				$messageGroup = MessageGroups::getGroup( $group );
-				$messageGroupLanguage = $messageGroup->getSourceLanguage();
-				if ( $messageGroupLanguage !== $sourceLanguageCode ) {
-					$groupsWithDifferentLanguage[] = $messageGroup->getLabel();
-				}
+		$groupsWithDifferentLanguage = [];
+		$subgroups = TranslateMetadata::getSubgroups( $aggregateGroupId );
+		foreach ( $subgroups as $group ) {
+			$messageGroup = MessageGroups::getGroup( $group );
+			$messageGroupLanguage = $messageGroup->getSourceLanguage();
+			if ( $messageGroupLanguage !== $sourceLanguageCode ) {
+				$groupsWithDifferentLanguage[] = $messageGroup->getLabel();
 			}
+		}
 
-			return $groupsWithDifferentLanguage;
+		return $groupsWithDifferentLanguage;
 	}
 
 	protected function generateAggregateGroupId( string $aggregateGroupName, string $prefix = 'agg-' ): string {

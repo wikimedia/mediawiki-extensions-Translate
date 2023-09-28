@@ -286,7 +286,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			return false;
 		}
 
-		list( $count, $failed ) = explode( '|', $value, 2 );
+		[ $count, $failed ] = explode( '|', $value, 2 );
 		$count = (int)$count;
 		$failed = (int)$failed;
 		$now = (int)wfTimestamp();
@@ -322,7 +322,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		if ( !is_string( $value ) ) {
 			$count = 0;
 		} else {
-			list( $count, ) = explode( '|', $value, 2 );
+			[ $count, ] = explode( '|', $value, 2 );
 		}
 
 		$count++;

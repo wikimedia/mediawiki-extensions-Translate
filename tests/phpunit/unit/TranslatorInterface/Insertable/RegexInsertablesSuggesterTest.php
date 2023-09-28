@@ -16,7 +16,7 @@ class RegexInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$insertablesSuggester = new RegexInsertablesSuggester( $params );
 		$insertables = $insertablesSuggester->getInsertables( $text );
 
-		$this->assertCount( count( $expectedVals ), $insertables,
+		$this->assertSameSize( $expectedVals, $insertables,
 			'should return all the expected insertables.' );
 
 		foreach ( $expectedVals as $i => $values ) {

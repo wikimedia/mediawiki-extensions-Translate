@@ -194,8 +194,8 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 			);
 		}
 
-		$this->assertCount(
-			count( $data ),
+		$this->assertSameSize(
+			$data,
 			$cached,
 			'Cache has same number of elements'
 		);

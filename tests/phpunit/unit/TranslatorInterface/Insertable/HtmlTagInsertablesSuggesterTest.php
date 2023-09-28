@@ -16,8 +16,8 @@ class HtmlTagInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$suggester = new HtmlTagInsertablesSuggester();
 		$actual = $suggester->getInsertables( $text );
 
-		$this->assertCount(
-			count( $expected ),
+		$this->assertSameSize(
+			$expected,
 			$actual,
 			'should return correct number of insertables ' . $comment
 		);

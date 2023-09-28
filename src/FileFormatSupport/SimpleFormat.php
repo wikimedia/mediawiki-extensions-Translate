@@ -138,7 +138,7 @@ class SimpleFormat implements FileFormatSupport {
 			throw new InvalidArgumentException( 'Wrong number of parts.' );
 		}
 
-		list( $authorsPart, $messagesPart ) = $parts;
+		[ $authorsPart, $messagesPart ] = $parts;
 		$authors = explode( self::RECORD_SEPARATOR, $authorsPart );
 		$messages = [];
 
@@ -153,7 +153,7 @@ class SimpleFormat implements FileFormatSupport {
 				throw new InvalidArgumentException( "Wrong number of parts in line $line." );
 			}
 
-			list( $key, $message ) = $lineParts;
+			[ $key, $message ] = $lineParts;
 			$key = trim( $key );
 			$messages[$key] = $message;
 		}

@@ -77,7 +77,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
-			->will( $this->throwException( new TTMServerException ) );
+			->willThrowException( new TTMServerException );
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
@@ -106,12 +106,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
-			->will( $this->throwException( new TTMServerException ) );
+			->willThrowException( new TTMServerException );
 		static::$mockups['primary'] = $mock;
 		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
-			->will( $this->throwException( new TTMServerException ) );
+			->willThrowException( new TTMServerException );
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
@@ -179,7 +179,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->atLeastOnce() )
 			->method( 'update' )
-			->will( $this->throwException( new TTMServerException ) );
+			->willThrowException( new TTMServerException );
 		static::$mockups['primary'] = $mock;
 		$mock = $this->createMock( WritableTtmServer::class );
 		$mock->expects( $this->never() )

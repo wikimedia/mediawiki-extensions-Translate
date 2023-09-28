@@ -211,11 +211,11 @@ return [
 
 	'Translate:TranslatableBundleStatusStore' =>
 		static function ( MediaWikiServices $services ): TranslatableBundleStatusStore {
-		return new TranslatableBundleStatusStore(
-			$services->getDBLoadBalancer()->getConnection( DB_PRIMARY ),
-			$services->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
-			$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
-		);
+			return new TranslatableBundleStatusStore(
+				$services->getDBLoadBalancer()->getConnection( DB_PRIMARY ),
+				$services->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
+				$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
+			);
 		},
 
 	'Translate:TranslatablePageParser' => static function ( MediaWikiServices $services ): TranslatablePageParser

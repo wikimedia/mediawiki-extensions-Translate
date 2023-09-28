@@ -151,7 +151,7 @@ class PluralCompare extends Maintenance {
 		$gtData = file_get_contents( __DIR__ . '/../data/plural-gettext.txt' );
 		$gtLanguages = [];
 		foreach ( preg_split( '/\n|\r/', $gtData, -1, PREG_SPLIT_NO_EMPTY ) as $line ) {
-			list( $code, $rule ) = explode( "\t", $line );
+			[ $code, $rule ] = explode( "\t", $line );
 			$rule = preg_replace( '/^.*?plural=/', '', $rule );
 			$gtLanguages[$code] = $rule;
 		}

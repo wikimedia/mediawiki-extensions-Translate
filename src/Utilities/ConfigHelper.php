@@ -37,7 +37,7 @@ class ConfigHelper {
 		$excluded = false;
 
 		foreach ( $authorExclusionList as $rule ) {
-			list( $type, $regex ) = $rule;
+			[ $type, $regex ] = $rule;
 
 			if ( preg_match( $regex, $hash ) ) {
 				if ( $type === 'include' ) {

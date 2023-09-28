@@ -72,7 +72,7 @@ class CaighdeanWebService extends TranslationWebService {
 
 		$text = '';
 		$originalText = $reply->getQuery()->getProcessingInstructions();
-		foreach ( $response as list( $sourceToken, $targetToken ) ) {
+		foreach ( $response as [ $sourceToken, $targetToken ] ) {
 			$separator = ' ';
 			$pos = strpos( $originalText, $sourceToken );
 			// Try to keep the effects local. If we fail to match at token, we could accidentally

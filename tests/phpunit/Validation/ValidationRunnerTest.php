@@ -149,13 +149,13 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		$requestContext = new RequestContext();
 		$requestContext->setLanguage( 'en' );
 
-		$this->assertCount(
-			count( $validationResult->getErrors() ),
+		$this->assertSameSize(
+			$validationResult->getErrors(),
 			$validationResult->getDescriptiveErrors( $requestContext ),
 			'the number of descriptive errors messages matches the number of errors.'
 		);
-		$this->assertCount(
-			count( $validationResult->getWarnings() ),
+		$this->assertSameSize(
+			$validationResult->getWarnings(),
 			$validationResult->getDescriptiveWarnings( $requestContext ),
 			'the number of descriptive warnings messages matches the number of warnings.'
 		);

@@ -26,7 +26,7 @@ class DtdFormat extends SimpleFormat {
 		$authors = $matches[1];
 
 		preg_match_all( ',<!ENTITY[ ]+([^ ]+)\s+"([^"]+)"[^>]*>,', $data, $matches );
-		list( , $keys, $messages ) = $matches;
+		[ , $keys, $messages ] = $matches;
 		$messages = array_combine(
 			$keys,
 			array_map(

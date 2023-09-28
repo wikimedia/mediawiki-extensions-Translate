@@ -90,7 +90,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		// The key-building needs to be in sync with ::labels().
-		list( $key, $code ) = Utilities::figureMessage( $row->log_title );
+		[ $key, $code ] = Utilities::figureMessage( $row->log_title );
 
 		$groups = [];
 		$codes = [];

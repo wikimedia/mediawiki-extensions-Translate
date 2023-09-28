@@ -48,7 +48,7 @@ class QueryMessageCollectionActionApiTest extends ApiTestCase {
 		global $wgLanguageCode;
 
 		$groups = MessageGroups::getAllGroups();
-		list( $response ) = $this->doApiRequest(
+		[ $response ] = $this->doApiRequest(
 			[
 				'mcgroup' => $groups['anotherid']->getId(),
 				'action' => 'query',

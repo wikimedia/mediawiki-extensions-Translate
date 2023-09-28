@@ -91,7 +91,7 @@ class AndroidXmlFormat extends SimpleFormat {
 		// Convert string of format \uNNNN (eg: \u1234) to symbols
 		$converted = preg_replace_callback(
 			'/(?<!\\\\)(?:\\\\{2})*+\\K\\\\u([0-9A-Fa-f]{4,6})+/',
-			static fn( array $matches ) => IntlChar::chr( hexdec( $matches[1] ) ),
+			static fn ( array $matches ) => IntlChar::chr( hexdec( $matches[1] ) ),
 			(string)$element
 		);
 

@@ -86,9 +86,9 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	/**
 	 * Analyzer.
 	 *
-	 * @var string Analyzer
+	 * @var string|null Analyzer
 	 */
-	protected $_analyzer;
+	protected $_analyzer = null;
 	// phpcs:enable
 
 	/**
@@ -174,7 +174,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 *
 	 * @return $this
 	 */
-	public function setAnalyzer( $text ) {
+	public function setAnalyzer( string $text ) {
 		$text = trim( $text );
 		$this->_analyzer = $text;
 
@@ -190,11 +190,11 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 */
 	public function toArray() {
 		$args = [];
-		if ( !empty( $this->_fields ) ) {
+		if ( $this->_fields !== [] ) {
 			$args['fields'] = $this->_fields;
 		}
 
-		if ( !empty( $this->_analyzer ) ) {
+		if ( $this->_analyzer !== null ) {
 			$args['analyzer'] = $this->_analyzer;
 		}
 

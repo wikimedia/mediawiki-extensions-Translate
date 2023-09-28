@@ -33,7 +33,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			}
 
 			if ( $type ) {
-				list( $name, $params ) = self::parseDocBlock( $block );
+				[ $name, $params ] = self::parseDocBlock( $block );
 				$this->documented[$type][$name] = $params;
 			}
 		}

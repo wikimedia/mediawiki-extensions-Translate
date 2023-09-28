@@ -51,7 +51,7 @@ class Poimport extends Maintenance {
 		// Parse the po file.
 		$p = new PoImporter( $this->getOption( 'file' ) );
 		$p->setProgressCallback( [ $this, 'myOutput' ] );
-		list( $changes, $group ) = $p->parse();
+		[ $changes, $group ] = $p->parse();
 
 		if ( !count( $changes ) ) {
 			$this->output( "No changes to import\n" );

@@ -17,8 +17,8 @@ class UrlInsertablesSuggesterTest extends MediaWikiUnitTestCase {
 		$suggester = new UrlInsertablesSuggester();
 		$actual = $suggester->getInsertables( $text );
 
-		$this->assertCount(
-			count( $expected ),
+		$this->assertSameSize(
+			$expected,
 			$actual,
 			'should return correct number of insertables ' . $comment
 		);
