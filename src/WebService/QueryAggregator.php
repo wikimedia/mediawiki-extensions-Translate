@@ -15,10 +15,10 @@ use RuntimeException;
  * @ingroup TranslationWebService
  */
 class QueryAggregator {
-	protected $queries = [];
-	protected $responses = [];
-	protected $timeout = 0;
-	protected $hasRun = false;
+	protected array $queries = [];
+	protected array $responses = [];
+	protected float $timeout = 0;
+	protected bool $hasRun = false;
 
 	/**
 	 * Register a query to be run.

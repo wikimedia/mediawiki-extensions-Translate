@@ -10,11 +10,11 @@ namespace MediaWiki\Extension\Translate\WebService;
  * @since 2015.02
  */
 class TranslationQueryResponse {
-	private $code;
-	private $reason;
-	private $headers;
-	private $body;
-	private $error;
+	private int $code;
+	private string $reason;
+	private array $headers;
+	private ?string $body;
+	private string $error;
 	/** @var TranslationQuery */
 	private $query;
 
@@ -33,7 +33,7 @@ class TranslationQueryResponse {
 		return $this->code;
 	}
 
-	public function getStatusMessage() {
+	public function getStatusMessage(): string {
 		if ( $this->code === 0 ) {
 			return $this->error;
 		} else {
@@ -41,7 +41,7 @@ class TranslationQueryResponse {
 		}
 	}
 
-	public function getBody() {
+	public function getBody(): ?string {
 		return $this->body;
 	}
 

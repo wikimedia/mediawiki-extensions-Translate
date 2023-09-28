@@ -14,8 +14,7 @@ use MediaWiki\Http\HttpRequestFactory;
  * @since 2017.10
  */
 class RESTBaseWebService extends TranslationWebService {
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
+	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,

@@ -15,8 +15,7 @@ use MediaWiki\Http\HttpRequestFactory;
  * @ingroup TranslationWebService
  */
 class MicrosoftWebService extends TranslationWebService {
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
+	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,

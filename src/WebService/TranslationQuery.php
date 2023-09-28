@@ -11,16 +11,15 @@ namespace MediaWiki\Extension\Translate\WebService;
  * @since 2015.02
  */
 class TranslationQuery {
-	private $url;
-	private $timeout = 0;
-	private $method = 'GET';
-	private $params = [];
-	private $body;
-	private $headers = [];
+	private string $url;
+	private float $timeout = 0;
+	private string $method = 'GET';
+	private array $params = [];
+	private ?string $body = null;
+	private array $headers = [];
 	/** @var mixed Arbitrary data that is returned with TranslationQueryResponse */
 	private $instructions;
 
-	// URL is mandatory, so using it here
 	public static function factory( string $url ): TranslationQuery {
 		$obj = new self();
 		$obj->url = $url;
@@ -44,7 +43,7 @@ class TranslationQuery {
 		return $this;
 	}
 
-	public function timeout( int $timeout ): TranslationQuery {
+	public function timeout( float $timeout ): TranslationQuery {
 		$this->timeout = $timeout;
 		return $this;
 	}
@@ -59,7 +58,7 @@ class TranslationQuery {
 		return $this;
 	}
 
-	public function getTimeout(): int {
+	public function getTimeout(): float {
 		return $this->timeout;
 	}
 
