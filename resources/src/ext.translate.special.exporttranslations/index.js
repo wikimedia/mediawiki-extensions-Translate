@@ -10,7 +10,7 @@
 
 	function activateEntitySelector( $group ) {
 		// hide the message group selector
-		var $groupContainer = $( '.message-group-selector' );
+		const $groupContainer = $( '.message-group-selector' );
 
 		// Change the label, and update the for attribute, and remove the click handler
 		// which causes the entity selector to become un-responsive when triggered
@@ -19,10 +19,10 @@
 			.off( 'click' );
 
 		// Determine what value was set, and set it on the entity selector
-		var selectedGroup = $group.find( 'select option:selected' ).text();
+		const selectedGroup = $group.find( 'select option:selected' ).text();
 
 		// load the entity selector and set the value
-		var entitySelector = getEntitySelector( onEntitySelect );
+		const entitySelector = getEntitySelector( onEntitySelect );
 		entitySelector.setValue( selectedGroup );
 
 		$group.addClass( 'hidden' );
@@ -34,8 +34,8 @@
 	}
 
 	function onSubmit() {
-		var selectedGroupName = $( 'select[name="group"]' ).find( 'option:selected' ).text();
-		var currentVal = $( '.tes-entity-selector' ).find( 'input[type="text"]' ).val();
+		const selectedGroupName = $( 'select[name="group"]' ).find( 'option:selected' ).text();
+		const currentVal = $( '.tes-entity-selector' ).find( 'input[type="text"]' ).val();
 
 		// Check if the user has selected an invalid entity.
 		if ( currentVal !== selectedGroupName ) {
@@ -51,7 +51,7 @@
 	}
 
 	function getEntitySelector( onSelect ) {
-		var EntitySelector = require( '../ext.translate.entity.selector/index.js' );
+		const EntitySelector = require( '../ext.translate.entity.selector/index.js' );
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups' ],

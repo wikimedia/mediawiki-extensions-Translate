@@ -651,6 +651,7 @@
 			"styles": "resources/src/ext.translate.entity.selector/index.less"
 		},
 		"ext.translate.special.exporttranslations": {
+			"es6": true,
 			"packageFiles": [
 				"resources/src/ext.translate.special.exporttranslations/index.js",
 				"resources/src/ext.translate.entity.selector/index.js"
