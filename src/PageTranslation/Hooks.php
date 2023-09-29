@@ -75,7 +75,7 @@ class Hooks {
 	 */
 	public static function renderTagPage( $wikitextParser, &$text, $state ): void {
 		if ( $text === null ) {
-			// SMW is unhelpfully sending null text if source contains section tags. Do not explode.
+			// SMW is unhelpfully sending null text if the source contains section tags. Do not explode.
 			return;
 		}
 
@@ -105,6 +105,8 @@ class Hooks {
 		if ( !$page ) {
 			return;
 		}
+
+		$wikitextParser->getOutput()->setPageProperty( 'translate-is-translation', true );
 
 		try {
 			self::$renderingContext = true;
@@ -142,10 +144,7 @@ class Hooks {
 			]
 		];
 
-		$wikitextParser->getOutput()->setExtensionData(
-			'translate-translation-page', $extensionData
-		);
-
+		$wikitextParser->getOutput()->setExtensionData( 'translate-translation-page', $extensionData );
 		// Disable edit section links
 		$wikitextParser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
 	}
