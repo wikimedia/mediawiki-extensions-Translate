@@ -604,15 +604,6 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 	}
 
-	/** Hook: ParserTestTables
-	 */
-	public static function parserTestTables( array &$tables ): void {
-		$tables[] = 'revtag';
-		$tables[] = 'translate_groupstats';
-		$tables[] = 'translate_messageindex';
-		$tables[] = 'translate_stash';
-	}
-
 	/**
 	 * Hook: PageContentLanguage
 	 * Set the correct page content language for translation units.

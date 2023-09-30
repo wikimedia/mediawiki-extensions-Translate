@@ -172,7 +172,6 @@
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\Translate\\HookHandler::schemaUpdates",
-		"ParserTestTables": "MediaWiki\\Extension\\Translate\\HookHandler::parserTestTables",
 		"PageContentLanguage": "MediaWiki\\Extension\\Translate\\HookHandler::onPageContentLanguage",
 		"EditPage::showEditForm:initial": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
