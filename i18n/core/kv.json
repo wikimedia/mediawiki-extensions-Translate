@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Merrahtar"
+			"Merrahtar",
+			"СерМар"
 		]
 	},
+	"translate-documentation-language": "Юӧрсӧ документируйтӧм",
 	"translate-searchprofile": "Вуджӧдӧмъяс",
 	"tux-editor-proofreading-mode": "Видлалӧм",
 	"tux-editor-translate-mode": "Лыддьӧг"
