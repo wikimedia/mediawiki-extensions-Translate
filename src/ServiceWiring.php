@@ -251,7 +251,8 @@ return [
 				TranslationStatsDataProvider::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getObjectFactory()
+			$services->getObjectFactory(),
+			$services->getDBLoadBalancer()
 		);
 	},
 

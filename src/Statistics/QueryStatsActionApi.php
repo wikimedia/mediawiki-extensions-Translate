@@ -21,8 +21,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @since 2012-11-30
  */
 abstract class QueryStatsActionApi extends ApiQueryBase {
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
+	private JobQueueGroup $jobQueueGroup;
 
 	public function __construct(
 		ApiQuery $queryModule,

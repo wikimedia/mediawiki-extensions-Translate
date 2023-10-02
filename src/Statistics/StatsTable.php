@@ -24,20 +24,14 @@ use Xml;
  * @license GPL-2.0-or-later
  */
 class StatsTable {
-	/** @var TitleValue */
-	protected $translate;
-	/** @var LinkRenderer */
-	private $linkRenderer;
-	/** @var ConfigHelper */
-	private $configHelper;
-	/** @var MessageLocalizer */
-	private $messageLocalizer;
-	/** @var Language */
-	protected $language;
-	/** @var string */
-	protected $mainColumnHeader;
+	protected TitleValue $translate;
+	private LinkRenderer $linkRenderer;
+	private ConfigHelper $configHelper;
+	private MessageLocalizer $messageLocalizer;
+	protected Language $language;
+	protected string $mainColumnHeader;
 	/** @var Message[] */
-	protected $extraColumns = [];
+	protected array $extraColumns = [];
 
 	public function __construct(
 		LinkRenderer $linkRenderer,

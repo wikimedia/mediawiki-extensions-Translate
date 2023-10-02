@@ -12,8 +12,7 @@ use FormOptions;
  * @since 2020.09
  */
 class TranslationStatsGraphOptions {
-	/** @var FormOptions */
-	private $formOptions;
+	private FormOptions $formOptions;
 	/** @var string[] */
 	public const VALID_SCALES = [ 'years', 'months', 'weeks', 'days', 'hours' ];
 

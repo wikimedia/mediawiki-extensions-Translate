@@ -13,10 +13,8 @@ use MediaWiki\Linker\LinkRenderer;
  * @since 2021.10
  */
 class ProgressStatsTableFactory {
-	/** @var LinkRenderer */
-	private $linkRenderer;
-	/** @var ConfigHelper */
-	private $configHelper;
+	private LinkRenderer $linkRenderer;
+	private ConfigHelper $configHelper;
 
 	public function __construct(
 		LinkRenderer $linkRenderer,

@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use ActorMigration;
 use Config;
-use MediaWiki\Config\ServiceOptions;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -19,12 +18,10 @@ class TranslatorActivityQuery {
 	public const USER_NAME = 0;
 	public const USER_TRANSLATIONS = 1;
 	public const USER_LAST_ACTIVITY = 2;
-	/** @var Config|ServiceOptions */
-	private $options;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	private Config $options;
+	private ILoadBalancer $loadBalancer;
 
-	public function __construct( $options, ILoadBalancer $loadBalancer ) {
+	public function __construct( Config $options, ILoadBalancer $loadBalancer ) {
 		$this->options = $options;
 		$this->loadBalancer = $loadBalancer;
 	}

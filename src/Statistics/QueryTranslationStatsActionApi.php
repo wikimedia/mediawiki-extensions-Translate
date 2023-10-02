@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use ApiBase;
 use ApiMain;
-use MediaWiki\Extension\Translate\Services;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
@@ -17,12 +16,11 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  * @license GPL-2.0-or-later
  */
 class QueryTranslationStatsActionApi extends ApiBase {
-	/** @var TranslationStatsDataProvider */
-	private $dataProvider;
+	private TranslationStatsDataProvider $dataProvider;
 
-	public function __construct( ApiMain $mainModule, $moduleName ) {
+	public function __construct( ApiMain $mainModule, $moduleName, TranslationStatsDataProvider $dataProvider ) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->dataProvider = Services::getInstance()->getTranslationStatsDataProvider();
+		$this->dataProvider = $dataProvider;
 	}
 
 	public function execute() {

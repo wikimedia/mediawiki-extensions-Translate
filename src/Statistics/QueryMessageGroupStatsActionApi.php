@@ -20,16 +20,10 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @license GPL-2.0-or-later
  */
 class QueryMessageGroupStatsActionApi extends QueryStatsActionApi {
-	/**
-	 * Whether to hide rows which are fully translated.
-	 * @var bool
-	 */
-	private $noComplete = false;
-	/**
-	 * Whether to hide rows which are fully untranslated.
-	 * @var bool
-	 */
-	private $noEmpty = false;
+	/** Whether to hide rows which are fully translated. */
+	private bool $noComplete = false;
+	/** Whether to hide rows which are fully untranslated. */
+	private bool $noEmpty = false;
 
 	public function __construct(
 		ApiQuery $query,

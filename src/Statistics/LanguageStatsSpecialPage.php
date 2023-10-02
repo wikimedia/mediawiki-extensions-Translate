@@ -38,58 +38,34 @@ use WikiPageMessageGroup;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class LanguageStatsSpecialPage extends SpecialPage {
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var StatsTable */
-	private $table;
-	/** @var array */
-	private $targetValueName = [ 'code', 'language' ];
+	private LanguageNameUtils $languageNameUtils;
+	private StatsTable $table;
+	private array $targetValueName = [ 'code', 'language' ];
 	/** Most of the displayed numbers added together at the bottom of the table. */
-	private $totals;
-	/**
-	 * Flag to set if nothing to show.
-	 * @var bool
-	 */
-	private $nothing = false;
-	/**
-	 * Flag to set if not all numbers are available.
-	 * @var bool
-	 */
-	private $incomplete = false;
-	/**
-	 * Whether to hide rows which are fully translated.
-	 * @var bool
-	 */
-	private $noComplete = true;
-	/**
-	 * Whether to hide rows which are fully untranslated.
-	 * @var bool
-	 */
-	private $noEmpty = false;
+	private array $totals;
+	/** Flag to set if nothing to show. */
+	private bool $nothing = false;
+	/** Flag to set if not all numbers are available. */
+	private bool $incomplete = false;
+	/** Whether to hide rows which are fully translated. */
+	private bool $noComplete = true;
+	/** Whether to hide rows which are fully untranslated. */
+	private bool $noEmpty = false;
 	/** The target of stats, language code or group id. */
-	private $target;
-	/**
-	 * Whether to regenerate stats. Activated by action=purge in query params.
-	 * @var bool
-	 */
-	private $purge;
+	private string $target;
+	/** Whether to regenerate stats. Activated by action=purge in query params. */
+	private bool $purge;
 	/**
 	 * Helper variable to avoid overcounting message groups that appear
 	 * multiple times in the list with different parents. Aggregate message
 	 * group stats are always excluded from totals.
-	 * @var array
 	 */
-	private $statsCounted = [];
-	/** @var array */
-	private $states;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-	/** @var ProgressStatsTableFactory */
-	private $progressStatsTableFactory;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	private array $statsCounted = [];
+	private array $states = [];
+	private LinkBatchFactory $linkBatchFactory;
+	private ProgressStatsTableFactory $progressStatsTableFactory;
+	private JobQueueGroup $jobQueueGroup;
+	private ILoadBalancer $loadBalancer;
 	private MessageGroupReviewStore $groupReviewStore;
 
 	public function __construct(
@@ -334,8 +310,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	}
 
 	private function getWorkflowStateCell( string $messageGroupId ): string {
-		// This will be set by addWorkflowStatesColumn if needed
-		if ( !isset( $this->states ) ) {
+		if ( $this->states === [] ) {
 			return '';
 		}
 

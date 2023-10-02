@@ -410,7 +410,12 @@
 			]
 		},
 		"translationcheck": "\\MediaWiki\\Extension\\Translate\\Validation\\CheckTranslationActionApi",
-		"translationstats": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",
+		"translationstats": {
+			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryTranslationStatsActionApi",
+			"services": [
+				"Translate:TranslationStatsDataProvider"
+			]
+		},
 		"managegroupsynchronizationcache": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupSynchronizationCacheActionApi",
 			"services": [

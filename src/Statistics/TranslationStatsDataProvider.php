@@ -8,6 +8,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Wikimedia\ObjectFactory\ObjectFactory;
+use Wikimedia\Rdbms\ILoadBalancer;
 use const TS_MW;
 
 /**
@@ -21,14 +22,14 @@ class TranslationStatsDataProvider {
 		'TranslateStatsProviders'
 	];
 
-	/** @var ObjectFactory */
-	private $objectFactory;
-	/** @var ServiceOptions */
-	private $options;
+	private ObjectFactory $objectFactory;
+	private ServiceOptions $options;
+	private ILoadBalancer $loadBalancer;
 
-	public function __construct( ServiceOptions $options, ObjectFactory $objectFactory ) {
+	public function __construct( ServiceOptions $options, ObjectFactory $objectFactory, ILoadBalancer $loadBalancer ) {
 		$this->options = $options;
 		$this->objectFactory = $objectFactory;
+		$this->loadBalancer = $loadBalancer;
 	}
 
 	private function getGraphSpecifications(): array {
@@ -46,7 +47,7 @@ class TranslationStatsDataProvider {
 	 * @return array ( string => array ) Data indexed by their date labels.
 	 */
 	public function getGraphData( TranslationStatsGraphOptions $opts, Language $language ): array {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 
 		$so = $this->getStatsProvider( $opts->getValue( 'count' ), $opts );
 
