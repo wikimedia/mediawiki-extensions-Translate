@@ -135,17 +135,17 @@ class RevTagStore {
 	/** Get a list of page ids where the latest revision is either tagged or marked */
 	public static function getTranslatableBundleIds( string ...$revTags ): array {
 		$dbr = Utilities::getSafeReadDB();
-
-		$tables = [ 'revtag', 'page' ];
-		$fields = 'rt_page';
-		$conds = [
-			'rt_page = page_id',
-			'rt_revision = page_latest',
-			'rt_type' => $revTags,
-		];
-		$options = [ 'GROUP BY' => 'rt_page' ];
-
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( 'rt_page' )
+			->tables( [ 'revtag', 'page' ] )
+			->where( [
+				'rt_page = page_id',
+				'rt_revision = page_latest',
+				'rt_type' => $revTags,
+			] )
+			->groupBy( 'rt_page' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		$results = [];
 		foreach ( $res as $row ) {
 			$results[$row->rt_page] = true;

@@ -51,13 +51,13 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 
 	public function getCacheData(): array {
 		$cacheData = [];
-		$tables = [ 'page', 'revtag' ];
-		$vars = [ 'page_id', 'page_namespace', 'page_title', 'rt_revision' => 'MAX(rt_revision)' ];
-		$conds = [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ];
-		$options = [
-			'GROUP BY' => 'page_id,page_namespace,page_title'
-		];
-		$res = $this->db->select( $tables, $vars, $conds, __METHOD__, $options );
+		$res = $this->db->newSelectQueryBuilder()
+			->select( [ 'page_id', 'page_namespace', 'page_title', 'rt_revision' => 'MAX(rt_revision)' ] )
+			->tables( [ 'page', 'revtag' ] )
+			->where( [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ] )
+			->groupBy( 'page_id,page_namespace,page_title' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		foreach ( $res as $r ) {
 			$title = Title::newFromRow( $r );

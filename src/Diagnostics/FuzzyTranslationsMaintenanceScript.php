@@ -162,14 +162,13 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		$queryInfo = $this->revisionStore->getQueryInfo( [ 'page' ] );
-		$rows = $dbr->select(
-			$queryInfo['tables'],
-			$queryInfo['fields'],
-			$conds,
-			__METHOD__,
-			[],
-			$queryInfo['joins']
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( $queryInfo['fields'] )
+			->tables( $queryInfo['tables'] )
+			->joinConds( $queryInfo['joins'] )
+			->where( $conds )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		return $this->getMessageContentsFromRows( $rows );
 	}
 
@@ -189,14 +188,13 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		$queryInfo = $this->revisionStore->getQueryInfo( [ 'page', 'user' ] );
-		$rows = $dbr->select(
-			$queryInfo['tables'],
-			$queryInfo['fields'],
-			$conds,
-			__METHOD__,
-			[],
-			$queryInfo['joins'] + $revWhere['joins']
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( $queryInfo['fields'] )
+			->tables( $queryInfo['tables'] )
+			->joinConds( $queryInfo['joins'] )
+			->where( $conds )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return $this->getMessageContentsFromRows( $rows );
 	}

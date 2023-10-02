@@ -96,18 +96,13 @@ class Utilities {
 		$titleContents = [];
 
 		$query = $revStore->getQueryInfo( [ 'page', 'user' ] );
-		$rows = $dbr->select(
-			$query['tables'],
-			$query['fields'],
-			[
-				'page_namespace' => $namespace,
-				'page_title' => $titles,
-				'page_latest=rev_id',
-			],
-			__METHOD__,
-			[],
-			$query['joins']
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( $query['fields'] )
+			->tables( $query['tables'] )
+			->joinConds( $query['joins'] )
+			->where( [ 'page_namespace' => $namespace, 'page_title' => $titles, 'page_latest=rev_id' ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$revisions = $revStore->newRevisionsFromBatch( $rows, [
 			'slots' => true,
