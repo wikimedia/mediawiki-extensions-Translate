@@ -80,6 +80,7 @@
 	"translate-checks-malformed": "\"<nowiki>$1</nowiki>\" ten un formato incorrecto.",
 	"translate-checks-fudforum-syntax": "Use <nowiki>$1</nowiki> no canto de <nowiki>$2</nowiki> neste proxecto.",
 	"translate-checks-replacement": "Use \"$2\" no canto de de \"$1\".",
+	"translate-checks-empty": "Non se permite a tradución se non hai contidos ou se só hai espazos en branco.",
 	"translate-pref-editassistlang": "Linguas axudantes:",
 	"prefs-translate": "Opcións de tradución",
 	"translate-pref-editassistlang-help": "Lista de códigos de linguas separados por comas.\nMóstranse as traducións dunha mensaxe nestas linguas cando a traduce.\nA lista de linguas por defecto depende da súa.",
