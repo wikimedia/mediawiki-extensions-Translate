@@ -18,6 +18,7 @@
 			"Robertpontes",
 			"Rodrigo codignoli",
 			"Shirayuki",
+			"YuriNikolai",
 			555
 		]
 	},
@@ -232,8 +233,8 @@
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Salvar",
 	"pm-cancel-button-label": "Cancelar",
-	"pm-page-does-not-exist": "$1 não existe.",
-	"pm-old-translations-missing": "$1 não contém traduções antigas.",
+	"pm-page-does-not-exist": "A página $1 não existe.",
+	"pm-old-translations-missing": "A página $1 não contém traduções antigas.",
 	"pm-extra-units-warning": "Podem existir unidades extras. Por favor, combine as unidades de origem e de conversão corretamente.",
 	"pm-pagename-missing": "Por favor, insira o nome da página.",
 	"pm-add-icon-hover-text": "Adicione uma unidade abaixo",
@@ -258,7 +259,7 @@
 	"pp-cancel-button-label": "Cancelar",
 	"pp-save-message": "A página foi publicada. Você pode [$1 editá-la].",
 	"pp-prepare-message": "A página foi preparada para tradução. Veja o diferencial abaixo. Clique no botão \"{{int: pp-save-button-label}}\" se aprovado!",
-	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução. Não há alterações em relação à versão anterior.",
+	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução, ou não pode ser preparada automaticamente. Não há alterações em relação à versão anterior.",
 	"pp-diff-error": "Houve um erro ao buscar o diff do servidor.",
 	"pp-pagename-missing": "Por favor, insira o nome da página.",
 	"pp-diff-old-header": "Texto-fonte",
