@@ -20,7 +20,7 @@
 	"tsb-email-rejected-body": "Boas, {{GENDER:$1|$1}}:\n\nGrazas por enviar a súa solicitude para converterse en tradutor en {{SITENAME}}. Sinto dicirlle que rexeitamos a súa solicitude, porque a calidade das súas traducións non cumpre cos requisitos.\n\nSe cre que se rexeitou por erro a súa solicitude, pida de novo os dereitos de tradutor en {{SITENAME}}. Pode facelo aquí:\n$2\n\n{{GENDER:$3|$3}},\no equipo de {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Unha solicitude|$1 solicitudes}}",
 	"tsb-all-languages-button-label": "Todas as linguas",
-	"tsb-search-requests": "Procurar nas solicitudes",
+	"tsb-search-requests": "Procurar nas solicitudes pendentes",
 	"tsb-accept-button-label": "Aceptar",
 	"tsb-reject-button-label": "Rexeitar",
 	"tsb-selected-count": "{{PLURAL:$1|$1 usuario seleccionado|$1 usuarios seleccionados}}",
