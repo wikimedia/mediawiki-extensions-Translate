@@ -394,7 +394,7 @@
 	"tux-status-translated": "已翻译",
 	"tux-status-saving": "正在发布...",
 	"tux-status-unsaved": "未发布",
-	"tux-save-unknown-error": "发生未知错误。",
+	"tux-save-unknown-error": "出现未知错误。",
 	"tux-editor-placeholder-documentation": "添加消息文档",
 	"tux-editor-placeholder-language": "$1的翻译",
 	"tux-editor-editsummary-placeholder": "说明您做出的更改（可选）",
