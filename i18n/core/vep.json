@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sociologist",
-			"Игорь Бродский"
+			"Игорь Бродский",
+			"Лариса Чиркова"
 		]
 	},
 	"translate": "Käta",
@@ -124,6 +125,7 @@
 	"translate-gs-multiple": "Äi",
 	"translate-gs-count": "Lugumär",
 	"translate-gs-total": "Ühtes",
+	"translate-documentation-language": "Kändmižen tedod",
 	"translate-searchprofile": "Kändused",
 	"translate-searchprofile-tooltip": "Ectä kaikiš kändmižiš",
 	"translate-search-nofilter": "Fil'truimata",

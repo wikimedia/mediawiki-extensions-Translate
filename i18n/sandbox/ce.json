@@ -31,7 +31,7 @@
 	"translate-translationstash-welcome": "Маршалла, {{GENDER:$1|$1}}, хӀинца хьо керла гочдархо ву(йу)",
 	"translate-translationstash-welcome-note": "Бовза гочдаран гӀирсаш. Массийта хаам гочбина йуьззина гочдархочун бакъонаш схьаэца, хьайна хазахетачу проектехь дакъалацархьама.",
 	"translate-translationstash-initialtranslation": "Хьан дуьххьарлера гочдар",
-	"translate-translationstash-translations": "$1 {{PLURAL:$1|кхочуш дина гочдар}}",
+	"translate-translationstash-translations": "$1 {{PLURAL:$1|чекхдаьккхина гочдар}}",
 	"translate-translationstash-skip-button-label": "Хьажа кхечуьнга",
 	"tsb-limit-reached-title": "Гочдарна баркалла",
 	"tsb-no-requests-from-new-users": "Керла декъашхошкара дехарш дац",
