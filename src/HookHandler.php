@@ -132,6 +132,7 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 					'DBLoadBalancer',
 					'Translate:MessageIndex',
 					'TitleParser',
+					'Translate:TranslatablePageMarker',
 				]
 			];
 			$wgSpecialPages['PageTranslationDeletePage'] = [

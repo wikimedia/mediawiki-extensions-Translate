@@ -25,6 +25,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatu
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleDeleter;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
@@ -226,6 +227,13 @@ return [
 				$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
 			);
 		},
+
+	'Translate:TranslatablePageMarker' => static function ( MediaWikiServices $services ): TranslatablePageMarker {
+		return new TranslatablePageMarker(
+			$services->get( 'Translate:TranslatablePageStore' ),
+			$services->getWikiPageFactory()
+		);
+	},
 
 	'Translate:TranslatablePageParser' => static function ( MediaWikiServices $services ): TranslatablePageParser
 	{

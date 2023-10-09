@@ -20,7 +20,6 @@ use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\User\UserIdentity;
 use Message;
 use MessageGroupStatsRebuildJob;
 use MessageIndex;
@@ -75,6 +74,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private ILoadBalancer $loadBalancer;
 	private MessageIndex $messageIndex;
 	private TitleParser $titleParser;
+	private TranslatablePageMarker $translatablePageMarker;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
@@ -85,7 +85,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		JobQueueGroup $jobQueueGroup,
 		ILoadBalancer $loadBalancer,
 		MessageIndex $messageIndex,
-		TitleParser $titleParser
+		TitleParser $titleParser,
+		TranslatablePageMarker $translatablePageMarker
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageNameUtils = $languageNameUtils;
@@ -97,6 +98,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->loadBalancer = $loadBalancer;
 		$this->messageIndex = $messageIndex;
 		$this->titleParser = $titleParser;
+		$this->translatablePageMarker = $translatablePageMarker;
 	}
 
 	public function doesWrites(): bool {
@@ -231,49 +233,25 @@ class PageTranslationSpecialPage extends SpecialPage {
 			return;
 		}
 
-		if ( $action === 'unlink' ) {
-			$page = TranslatablePage::newFromTitle( $title );
+		if ( $action === 'unlink' || $action === 'unmark' ) {
+			try {
+				$this->translatablePageMarker->unmarkPage(
+					TranslatablePage::newFromTitle( $title ),
+					$user,
+					$action === 'unlink'
+				);
 
-			$content = ContentHandler::makeContent(
-				$page->getStrippedSourcePageText(),
-				$title
-			);
-
-			$status = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->doUserEditContent(
-				$content,
-				$this->getUser(),
-				$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
-				EDIT_FORCE_BOT | EDIT_UPDATE
-			);
-
-			if ( !$status->isOK() ) {
+				$out->wrapWikiMsg(
+					Html::successBox( '$1' ),
+					[ 'tpt-unmarked', $title->getPrefixedText() ]
+				);
+			} catch ( TranslatablePageMarkException $e ) {
 				$out->wrapWikiMsg(
 					Html::errorBox( '$1' ),
-					[ 'tpt-edit-failed', $status->getWikiText() ]
+					$e->getMessageObject()
 				);
-				$out->addWikiMsg( 'tpt-list-pages-in-translations' );
-
-				return;
 			}
 
-			$page = TranslatablePage::newFromTitle( $title );
-			$this->unmarkPage( $page, $user );
-			$out->wrapWikiMsg(
-				Html::successBox( '$1' ),
-				[ 'tpt-unmarked', $title->getPrefixedText() ]
-			);
-			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
-
-			return;
-		}
-
-		if ( $action === 'unmark' ) {
-			$page = TranslatablePage::newFromTitle( $title );
-			$this->unmarkPage( $page, $user );
-			$out->wrapWikiMsg(
-				Html::successBox( '$1' ),
-				[ 'tpt-unmarked', $title->getPrefixedText() ]
-			);
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 		}
 	}
@@ -440,17 +418,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 			) .
 			Html::closeElement( 'form' )
 		);
-	}
-
-	protected function unmarkPage( TranslatablePage $page, UserIdentity $user ): void {
-		$page->unmarkTranslatablePage();
-		$page->getTitle()->invalidateCache();
-
-		$entry = new ManualLogEntry( 'pagetranslation', 'unmark' );
-		$entry->setPerformer( $user );
-		$entry->setTarget( $page->getTitle() );
-		$logid = $entry->insert();
-		$entry->publish( $logid );
 	}
 
 	/**
