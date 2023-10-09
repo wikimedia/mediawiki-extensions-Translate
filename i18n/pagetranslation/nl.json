@@ -44,7 +44,7 @@
 	"tpt-showpage-intro": "Hieronder zijn nieuwe, bestaande en verwijderde vertaaleenheden opgenomen.\nControleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de vertaaleenheden zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.",
 	"tpt-mark-summary": "Heeft deze versie voor vertaling gemarkeerd",
 	"tpt-edit-failed": "De pagina \"$1\" kon niet bijgewerkt worden.",
-	"tpt-duplicate": "De vertaaleenheid \"<strong><bdi>$1</bdi></strong>\" wordt meer dan eens gebruikt.",
+	"tpt-duplicate": "De vertaaleenheid <strong><bdi>$1</bdi></strong> wordt meer dan eens gebruikt.",
 	"tpt-invalid": "De vertaaleenheidnaam <strong><bdi>$1</bdi></strong> mag geen laag streepje (_) of schuine streep (/) bevatten.",
 	"tpt-unmarked": "Pagina \"[[:$1]]\" is niet langer te vertalen.",
 	"tpt-list-nopages": "Er zijn geen pagina's gemarkeerd voor vertaling, noch klaar om gemarkeerd te worden voor vertaling.",
