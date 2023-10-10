@@ -232,6 +232,7 @@ return [
 		return new TranslatablePageMarker(
 			$services->getLinkRenderer(),
 			$services->getTitleFormatter(),
+			$services->getTitleParser(),
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->get( 'Translate:TranslatablePageStore' ),
 			$services->get( 'Translate:TranslationUnitStoreFactory' ),

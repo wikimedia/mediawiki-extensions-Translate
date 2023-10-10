@@ -7,7 +7,6 @@ use ContentHandler;
 use DifferenceEngine;
 use Html;
 use JobQueueGroup;
-use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -20,7 +19,6 @@ use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use Message;
 use MessageGroupStatsRebuildJob;
 use MessageIndex;
 use OOUI\ButtonInputWidget;
@@ -30,7 +28,6 @@ use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
 use PermissionsError;
 use SpecialPage;
-use Status;
 use Title;
 use TitleParser;
 use TranslateMetadata;
@@ -256,42 +253,31 @@ class PageTranslationSpecialPage extends SpecialPage {
 	protected function onActionMark( Title $title, ?int $revision ): void {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
+		$translateTitle = $request->getCheck( 'translatetitle' );
 
 		try {
 			$operation = $this->translatablePageMarker->getMarkOperation(
 				$title->toPageRecord( $request->wasPosted() ? Title::READ_LATEST : Title::READ_NORMAL ),
-				$revision
+				$revision,
+				// If the request was not posted, validate all the units so that initially we display all the errors
+				// and then the user can choose whether they want to translate the title
+				!$request->wasPosted() || $translateTitle
 			);
 		} catch ( TranslatablePageMarkException $e ) {
 			$out->addHTML( Html::errorBox( $this->msg( $e->getMessageObject() )->parse() ) );
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
-
 			return;
 		}
-		$page = $operation->getPage();
 
-		$translateTitle = $request->getCheck( 'translatetitle' );
-		$unitsForTranslation = $operation->getUnits();
-		// Check if user wants to translate title, if not, remove it from the list of units for translation
-		if ( !$translateTitle ) {
-			$unitsForTranslation = array_filter( $operation->getUnits(), static function ( $s ) {
-				return $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID;
-			} );
-		}
-
-		$error = $this->validateUnitIds(
-			$page->getTitle(),
-			// If the request was not posted, validate all the units.
-			$request->wasPosted() ? $unitsForTranslation : $operation->getUnits()
-		);
-
+		$unitNameValidationResult = $operation->getUnitValidationStatus();
 		// Non-fatal error which prevents saving
-		if ( !$error && $request->wasPosted() ) {
+		if ( $unitNameValidationResult->isOK() && $request->wasPosted() ) {
 			$setVersion = $operation->isFirstMark() || $request->getCheck( 'use-latest-syntax' );
 			$transclusion = $request->getCheck( 'transclusion' );
+			$unitsForTranslation = $unitNameValidationResult->getValue();
 
 			$err = $this->markForTranslation(
-				$page,
+				$operation->getPage(),
 				$operation->getParserOutput(),
 				$unitsForTranslation,
 				$setVersion,
@@ -301,13 +287,21 @@ class PageTranslationSpecialPage extends SpecialPage {
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
-				$this->showSuccess( $page, $operation->isFirstMark(), count( $unitsForTranslation ) );
+				$this->showSuccess( $operation->getPage(), $operation->isFirstMark(), count( $unitsForTranslation ) );
 			}
 
 			return;
-		}
+		} else {
+			if ( !$unitNameValidationResult->isOK() ) {
+				$out->addHTML(
+					Html::errorBox(
+						$unitNameValidationResult->getHTML( false, false, $this->getLanguage() )
+					)
+				);
+			}
 
-		$this->showPage( $operation );
+			$this->showPage( $operation );
+		}
 	}
 
 	/**
@@ -635,69 +629,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		return '<div>' . implode( $messageCache['pipe-separator'], $actions ) . '</div>';
-	}
-
-	/**
-	 * Validate translation unit IDs.
-	 * @param Title $pageTitle
-	 * @param TranslationUnit[] $units
-	 * @return bool Whether there were any errors
-	 */
-	private function validateUnitIds( Title $pageTitle, array $units ): bool {
-		$usedNames = [];
-		$status = Status::newGood();
-
-		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
-		foreach ( $units as $s ) {
-			$unitStatus = Status::newGood();
-			// xx-yyyyyyyyyy represents a long language code. 2 more characters than nl-informal which
-			// is the longest non-redirect language code in language-data
-			$longestUnitTitle = 'Translations:' . $pageTitle->getPrefixedDBkey() . '/' . $s->id . '/xx-yyyyyyyyyy';
-			try {
-				$this->titleParser->parseTitle( $longestUnitTitle );
-			} catch ( MalformedTitleException $e ) {
-				if ( $e->getErrorMessage() === 'title-invalid-too-long' ) {
-					$unitStatus->fatal(
-						'tpt-unit-title-too-long',
-						$s->id,
-						Message::numParam( strlen( $longestUnitTitle ) ),
-						$e->getErrorMessageParameters()[ 0 ],
-						$pageTitle->getPrefixedText()
-					);
-				} else {
-					$unitStatus->fatal( 'tpt-unit-title-invalid', $s->id, $e->getMessageObject() );
-				}
-			}
-
-			// Only perform custom validation if the TitleParser validation passed
-			if ( $unitStatus->isGood() && preg_match( "~[$ic]~", $s->id ) ) {
-				$unitStatus->fatal( 'tpt-invalid', $s->id );
-			}
-
-			// We need to do checks for both new and existing units.
-			// Someone might have tampered with the page source adding
-			// duplicate or invalid markers.
-			if ( isset( $usedNames[$s->id] ) ) {
-				// If the same ID is used three or more times, the same
-				// error will be added more than once, but that's okay,
-				// Status::fatal will deduplicate
-				$unitStatus->fatal( 'tpt-duplicate', $s->id );
-			}
-
-			$status->merge( $unitStatus );
-			$usedNames[$s->id] = true;
-		}
-
-		if ( $status->isOK() ) {
-			return false;
-		} else {
-			$this->getOutput()->addHTML(
-				Html::errorBox(
-					$status->getHTML( false, false, $this->getLanguage() )
-				)
-			);
-			return true;
-		}
 	}
 
 	private function showPage( TranslatablePageMarkOperation $operation ): void {

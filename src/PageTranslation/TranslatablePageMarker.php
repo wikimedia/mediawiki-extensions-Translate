@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
+use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Linker\LinkRenderer;
@@ -11,6 +12,8 @@ use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Title\TitleFormatter;
 use Message;
+use Status;
+use TitleParser;
 use TranslateMetadata;
 use User;
 
@@ -21,6 +24,7 @@ use User;
 class TranslatablePageMarker {
 	private LinkRenderer $linkRenderer;
 	private TitleFormatter $titleFormatter;
+	private TitleParser $titleParser;
 	private TranslatablePageParser $translatablePageParser;
 	private TranslatablePageStore $translatablePageStore;
 	private TranslationUnitStoreFactory $translationUnitStoreFactory;
@@ -29,6 +33,7 @@ class TranslatablePageMarker {
 	public function __construct(
 		LinkRenderer $linkRenderer,
 		TitleFormatter $titleFormatter,
+		TitleParser $titleParser,
 		TranslatablePageParser $translatablePageParser,
 		TranslatablePageStore $translatablePageStore,
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
@@ -36,6 +41,7 @@ class TranslatablePageMarker {
 	) {
 		$this->linkRenderer = $linkRenderer;
 		$this->titleFormatter = $titleFormatter;
+		$this->titleParser = $titleParser;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->translatablePageStore = $translatablePageStore;
 		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
@@ -88,7 +94,11 @@ class TranslatablePageMarker {
 	 *  non-latest, or if the latest revision of the page is not ready to be marked
 	 * @throws ParsingFailure If the parse fails
 	 */
-	public function getMarkOperation( PageRecord $page, ?int $revision ): TranslatablePageMarkOperation {
+	public function getMarkOperation(
+		PageRecord $page,
+		?int $revision,
+		bool $validateUnitTitle
+	): TranslatablePageMarkOperation {
 		$latestRevID = $page->getLatest();
 		if ( $revision === null ) {
 			// Get the latest revision
@@ -124,13 +134,91 @@ class TranslatablePageMarker {
 
 		$parserOutput = $this->translatablePageParser->parse( $translatablePage->getText() );
 		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $translatablePage, $parserOutput );
+
+		$unitValidationStatus = $this->validateUnitNames(
+			$translatablePage,
+			$units,
+			$validateUnitTitle
+		);
+
 		return new TranslatablePageMarkOperation(
 			$translatablePage,
 			$parserOutput,
 			$units,
 			$deletedUnits,
-			$translatablePage->getMarkedTag() === null
+			$translatablePage->getMarkedTag() === null,
+			$unitValidationStatus
 		);
+	}
+
+	/**
+	 * Validate translation unit names.
+	 * @param TranslatablePage $page
+	 * @param TranslationUnit[] $units
+	 * @param bool $includePageDisplayTitle Whether to validate the page display title as
+	 * well (notably, it could fail the length validation). Duplicate ID check will be performed
+	 * on the page display title even if this is false, as reusing the page display title unit name
+	 * for a normal unit is an error for that unit.
+	 * @return Status If OK, returns the validated units as a value in the Status object
+	 */
+	private function validateUnitNames(
+		TranslatablePage $page,
+		array $units,
+		bool $includePageDisplayTitle
+	): Status {
+		$usedNames = [];
+		$status = Status::newGood();
+		$unitsValidated = [];
+		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
+		foreach ( $units as $key => $s ) {
+			$unitStatus = Status::newGood();
+			if ( $includePageDisplayTitle || $key !== TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
+				// xx-yyyyyyyyyy represents a long language code. 2 more characters than nl-informal which
+				// is the longest non-redirect language code in language-data
+				$pageTitle = $this->titleFormatter->getPrefixedText( $page->getPageIdentity() );
+				$longestUnitTitle = "Translations:$pageTitle/{$s->id}/xx-yyyyyyyyyy";
+				try {
+					$this->titleParser->parseTitle( $longestUnitTitle );
+				} catch ( MalformedTitleException $e ) {
+					if ( $e->getErrorMessage() === 'title-invalid-too-long' ) {
+						$unitStatus->fatal(
+							'tpt-unit-title-too-long',
+							$s->id,
+							Message::numParam( strlen( $longestUnitTitle ) ),
+							$e->getErrorMessageParameters()[ 0 ],
+							$pageTitle
+						);
+					} else {
+						$unitStatus->fatal( 'tpt-unit-title-invalid', $s->id, $e->getMessageObject() );
+					}
+				}
+
+				// Store the validated units
+				$unitsValidated[ $key ] = $s;
+				// Only perform custom validation if the TitleParser validation passed
+				if ( $unitStatus->isGood() && preg_match( "~[$ic]~", $s->id ) ) {
+					$unitStatus->fatal( 'tpt-invalid', $s->id );
+				}
+			}
+
+			// We need to do checks for both new and existing units. Someone might have tampered with the
+			// page source adding duplicate or invalid markers.
+			if ( isset( $usedNames[$s->id] ) ) {
+				// If the same ID is used three or more times, the same
+				// error will be added more than once, but that's okay,
+				// Status::fatal will deduplicate
+				$unitStatus->fatal( 'tpt-duplicate', $s->id );
+			}
+			$usedNames[$s->id] = true;
+
+			$status->merge( $unitStatus );
+		}
+
+		if ( $status->isOK() ) {
+			$status->setResult( true, $unitsValidated );
+		}
+
+		return $status;
 	}
 
 	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parserOutput ): array {

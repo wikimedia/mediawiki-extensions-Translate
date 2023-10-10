@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use Status;
+
 /**
  * This class encapsulates the information / state needed to mark a page for translation
  * @since 2023.10
@@ -15,19 +17,22 @@ class TranslatablePageMarkOperation {
 	private ParserOutput $parserOutput;
 	private TranslatablePage $page;
 	private bool $firstMark;
+	private Status $unitValidationStatus;
 
 	public function __construct(
 		TranslatablePage $page,
 		ParserOutput $parserOutput,
 		array $units,
 		array $deletedUnits,
-		bool $firstMark
+		bool $firstMark,
+		Status $unitValidationStatus
 	) {
 		$this->page = $page;
 		$this->parserOutput = $parserOutput;
 		$this->units = $units;
 		$this->deletedUnits = $deletedUnits;
 		$this->firstMark = $firstMark;
+		$this->unitValidationStatus = $unitValidationStatus;
 	}
 
 	public function getPage(): TranslatablePage {
@@ -59,5 +64,15 @@ class TranslatablePageMarkOperation {
 	/** Whether the page has not been marked for translation before */
 	public function isFirstMark(): bool {
 		return $this->firstMark;
+	}
+
+	/** Whether the operation is valid */
+	public function isValid(): bool {
+		return $this->unitValidationStatus->isOK();
+	}
+
+	/** Get the status of the unit validation */
+	public function getUnitValidationStatus(): Status {
+		return $this->unitValidationStatus;
 	}
 }
