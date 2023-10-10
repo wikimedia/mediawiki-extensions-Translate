@@ -53,8 +53,8 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 		$cacheData = [];
 		$res = $this->db->newSelectQueryBuilder()
 			->select( [ 'page_id', 'page_namespace', 'page_title', 'rt_revision' => 'MAX(rt_revision)' ] )
-			->tables( [ 'page', 'revtag' ] )
-			->where( [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ] )
+			->from( 'page' )
+			->join( 'revtag', null, [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ] )
 			->groupBy( 'page_id,page_namespace,page_title' )
 			->caller( __METHOD__ )
 			->fetchResultSet();

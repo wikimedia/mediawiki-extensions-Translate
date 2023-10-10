@@ -137,12 +137,12 @@ class RevTagStore {
 		$dbr = Utilities::getSafeReadDB();
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rt_page' )
-			->tables( [ 'revtag', 'page' ] )
-			->where( [
-				'rt_page = page_id',
-				'rt_revision = page_latest',
-				'rt_type' => $revTags,
-			] )
+			->from( 'revtag' )
+			->join(
+				'page',
+				null,
+				[ 'rt_page = page_id', 'rt_revision = page_latest', 'rt_type' => $revTags ]
+			)
 			->groupBy( 'rt_page' )
 			->caller( __METHOD__ )
 			->fetchResultSet();
