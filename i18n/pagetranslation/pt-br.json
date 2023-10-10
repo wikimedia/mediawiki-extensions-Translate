@@ -17,7 +17,9 @@
 			"Rodrigo codignoli",
 			"Shirayuki",
 			555,
-			"Fúlvio"
+			"Fúlvio",
+			"Robertpontes",
+			"YuriNikolai"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -260,7 +262,7 @@
 	"pp-cancel-button-label": "Cancelar",
 	"pp-save-message": "A página foi publicada. Você pode [$1 editá-la].",
 	"pp-prepare-message": "A página foi preparada para tradução. Veja o diferencial abaixo. Clique no botão \"{{int: pp-save-button-label}}\" se aprovado!",
-	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução. Não há alterações em relação à versão anterior.",
+	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução, ou não pode ser preparada automaticamente. Não há alterações em relação à versão anterior.",
 	"pp-diff-error": "Houve um erro ao buscar o diff do servidor.",
 	"pp-pagename-missing": "Por favor, insira o nome da página.",
 	"pp-diff-old-header": "Texto-fonte",
