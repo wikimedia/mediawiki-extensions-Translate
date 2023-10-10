@@ -298,15 +298,6 @@ class TranslatablePage extends TranslatableBundle {
 	}
 
 	/**
-	 * Removes all page translation feature data from the database.
-	 * Does not remove translated sections or translation pages.
-	 */
-	public function unmarkTranslatablePage(): void {
-		$tpPageStore = Services::getInstance()->getTranslatablePageStore();
-		$tpPageStore->unmark( $this->getPageIdentity() );
-	}
-
-	/**
 	 * Produces a link to translation view of a translation page.
 	 * @param string|bool $code MediaWiki language code. Default: false.
 	 * @return string Relative url

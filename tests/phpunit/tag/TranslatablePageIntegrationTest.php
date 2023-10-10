@@ -2,12 +2,14 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @covers \TranslatablePage
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker
  * @group Database
  */
 class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
@@ -30,8 +32,11 @@ class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 			TranslatablePage::isSourcePage( $translatablePage->getTitle() )
 		);
 
-		$translatablePage->unmarkTranslatablePage();
-
+		Services::getInstance()->getTranslatablePageMarker()->unmarkPage(
+			$translatablePage,
+			$this->getTestSysop()->getUser(),
+			false
+		);
 		MediaWikiServices::getInstance()->getMainWANObjectCache()->clearProcessCache();
 
 		$this->assertFalse(
