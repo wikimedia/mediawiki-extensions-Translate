@@ -67,38 +67,35 @@ class PageTranslationSpecialPage extends SpecialPage {
 	];
 	private LanguageNameUtils $languageNameUtils;
 	private LanguageFactory $languageFactory;
-	private TranslationUnitStoreFactory $translationUnitStoreFactory;
-	private TranslatablePageParser $translatablePageParser;
 	private LinkBatchFactory $linkBatchFactory;
 	private JobQueueGroup $jobQueueGroup;
 	private ILoadBalancer $loadBalancer;
 	private MessageIndex $messageIndex;
 	private TitleParser $titleParser;
 	private TranslatablePageMarker $translatablePageMarker;
+	private TranslatablePageParser $translatablePageParser;
 
 	public function __construct(
 		LanguageNameUtils $languageNameUtils,
 		LanguageFactory $languageFactory,
-		TranslationUnitStoreFactory $translationUnitStoreFactory,
-		TranslatablePageParser $translatablePageParser,
 		LinkBatchFactory $linkBatchFactory,
 		JobQueueGroup $jobQueueGroup,
 		ILoadBalancer $loadBalancer,
 		MessageIndex $messageIndex,
 		TitleParser $titleParser,
-		TranslatablePageMarker $translatablePageMarker
+		TranslatablePageMarker $translatablePageMarker,
+		TranslatablePageParser $translatablePageParser
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageNameUtils = $languageNameUtils;
 		$this->languageFactory = $languageFactory;
-		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
-		$this->translatablePageParser = $translatablePageParser;
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->loadBalancer = $loadBalancer;
 		$this->messageIndex = $messageIndex;
 		$this->titleParser = $titleParser;
 		$this->translatablePageMarker = $translatablePageMarker;
+		$this->translatablePageParser = $translatablePageParser;
 	}
 
 	public function doesWrites(): bool {
@@ -116,7 +113,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$request = $this->getRequest();
 
 		$target = $request->getText( 'target', $parameters ?? '' );
-		$revision = $request->getInt( 'revision', 0 );
+		$revision = $request->getIntOrNull( 'revision' );
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.pagetranslation' );
@@ -256,57 +253,28 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 	}
 
-	protected function onActionMark( Title $title, int $revision ): void {
+	protected function onActionMark( Title $title, ?int $revision ): void {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
 
-		if ( $revision === 0 ) {
-			// Get the latest revision
-			$revision = (int)$title->getLatestRevID();
-		}
-
-		// This also catches the case where revision does not belong to the title
-		if ( $revision !== (int)$title->getLatestRevID() ) {
-			// We do want to notify the reviewer if the underlying page changes during review
-			$target = $title->getFullURL( [ 'oldid' => $revision ] );
-			$link = "<span class='plainlinks'>[$target $revision]</span>";
-			$out->wrapWikiMsg(
-				Html::warningBox( '$1' ),
-				[ 'tpt-oldrevision', $title->getPrefixedText(), $link ]
+		try {
+			$operation = $this->translatablePageMarker->getMarkOperation(
+				$title->toPageRecord( $request->wasPosted() ? Title::READ_LATEST : Title::READ_NORMAL ),
+				$revision
 			);
+		} catch ( TranslatablePageMarkException $e ) {
+			$out->addHTML( Html::errorBox( $this->msg( $e->getMessageObject() )->parse() ) );
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
 		}
-
-		// newFromRevision never fails, but getReadyTag might fail if revision does not belong
-		// to the page (checked above)
-		$page = TranslatablePage::newFromRevision( $title, $revision );
-		if ( $page->getReadyTag() !== $title->getLatestRevID() ) {
-			$out->wrapWikiMsg(
-				Html::errorBox( '$1' ),
-				[ 'tpt-notsuitable', $title->getPrefixedText(), Message::plaintextParam( '<translate>' ) ]
-			);
-			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
-
-			return;
-		}
-
-		$parse = $this->translatablePageParser->parse( $page->getText() );
-		[ $allUnits, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
-		$operation = new TranslatablePageMarkOperation(
-			$page,
-			$parse,
-			$allUnits,
-			$deletedUnits,
-			$page->getMarkedTag() === null
-		);
+		$page = $operation->getPage();
 
 		$translateTitle = $request->getCheck( 'translatetitle' );
-		$unitsForTranslation = $allUnits;
+		$unitsForTranslation = $operation->getUnits();
 		// Check if user wants to translate title, if not, remove it from the list of units for translation
 		if ( !$translateTitle ) {
-			$unitsForTranslation = array_filter( $allUnits, static function ( $s ) {
+			$unitsForTranslation = array_filter( $operation->getUnits(), static function ( $s ) {
 				return $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID;
 			} );
 		}
@@ -314,7 +282,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$error = $this->validateUnitIds(
 			$page->getTitle(),
 			// If the request was not posted, validate all the units.
-			$request->wasPosted() ? $unitsForTranslation : $allUnits
+			$request->wasPosted() ? $unitsForTranslation : $operation->getUnits()
 		);
 
 		// Non-fatal error which prevents saving
@@ -730,55 +698,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 			);
 			return true;
 		}
-	}
-
-	/** @return TranslationUnit[][] */
-	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parse ): array {
-		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
-
-		$store = $this->translationUnitStoreFactory->getReader( $page->getTitle() );
-		$storedUnits = $store->getUnits();
-		$parsedUnits = $parse->units();
-
-		// Prepend the display title unit, which is not part of the page contents
-		$displayTitle = new TranslationUnit(
-			$page->getTitle()->getPrefixedText(),
-			TranslatablePage::DISPLAY_TITLE_UNIT_ID
-		);
-		$parsedUnits = [ TranslatablePage::DISPLAY_TITLE_UNIT_ID => $displayTitle ] + $parsedUnits;
-
-		// Figure out the largest used translation unit id
-		foreach ( array_keys( $storedUnits ) as $key ) {
-			$highest = max( $highest, (int)$key );
-		}
-		foreach ( $parsedUnits as $_ ) {
-			$highest = max( $highest, (int)$_->id );
-		}
-
-		foreach ( $parsedUnits as $s ) {
-			$s->type = 'old';
-
-			if ( $s->id === TranslationUnit::NEW_UNIT_ID ) {
-				$s->type = 'new';
-				$s->id = (string)( ++$highest );
-			} else {
-				if ( isset( $storedUnits[$s->id] ) ) {
-					$storedText = $storedUnits[$s->id]->text;
-					if ( $s->text !== $storedText ) {
-						$s->type = 'changed';
-						$s->oldText = $storedText;
-					}
-				}
-			}
-		}
-
-		// Figure out which units were deleted by removing the still existing units
-		$deletedUnits = $storedUnits;
-		foreach ( $parsedUnits as $s ) {
-			unset( $deletedUnits[$s->id] );
-		}
-
-		return [ $parsedUnits, $deletedUnits ];
 	}
 
 	private function showPage( TranslatablePageMarkOperation $operation ): void {

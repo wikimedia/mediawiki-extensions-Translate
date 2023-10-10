@@ -125,14 +125,13 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 				'services' => [
 					'LanguageNameUtils',
 					'LanguageFactory',
-					'Translate:TranslationUnitStoreFactory',
-					'Translate:TranslatablePageParser',
 					'LinkBatchFactory',
 					'JobQueueGroup',
 					'DBLoadBalancer',
 					'Translate:MessageIndex',
 					'TitleParser',
 					'Translate:TranslatablePageMarker',
+					'Translate:TranslatablePageParser'
 				]
 			];
 			$wgSpecialPages['PageTranslationDeletePage'] = [

@@ -8,10 +8,10 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
  * @since 2023.10
  */
 class TranslatablePageMarkOperation {
-	/** @var TranslationUnit[]|null */
-	private ?array $units = null;
-	/** @var TranslationUnit[]|null */
-	private ?array $deletedUnits = null;
+	/** @var TranslationUnit[] */
+	private array $units;
+	/** @var TranslationUnit[] */
+	private array $deletedUnits;
 	private ParserOutput $parserOutput;
 	private TranslatablePage $page;
 	private bool $firstMark;
@@ -21,13 +21,13 @@ class TranslatablePageMarkOperation {
 		ParserOutput $parserOutput,
 		array $units,
 		array $deletedUnits,
-		bool $isFirstMark
+		bool $firstMark
 	) {
 		$this->page = $page;
 		$this->parserOutput = $parserOutput;
 		$this->units = $units;
 		$this->deletedUnits = $deletedUnits;
-		$this->firstMark = $isFirstMark;
+		$this->firstMark = $firstMark;
 	}
 
 	public function getPage(): TranslatablePage {
