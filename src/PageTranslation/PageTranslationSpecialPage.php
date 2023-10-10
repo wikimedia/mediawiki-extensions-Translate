@@ -292,10 +292,15 @@ class PageTranslationSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$firstMark = $page->getMarkedTag() === null;
-
 		$parse = $this->translatablePageParser->parse( $page->getText() );
 		[ $allUnits, $deletedUnits ] = $this->prepareTranslationUnits( $page, $parse );
+		$operation = new TranslatablePageMarkOperation(
+			$page,
+			$parse,
+			$allUnits,
+			$deletedUnits,
+			$page->getMarkedTag() === null
+		);
 
 		$translateTitle = $request->getCheck( 'translatetitle' );
 		$unitsForTranslation = $allUnits;
@@ -314,20 +319,27 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		// Non-fatal error which prevents saving
 		if ( !$error && $request->wasPosted() ) {
-			$setVersion = $firstMark || $request->getCheck( 'use-latest-syntax' );
+			$setVersion = $operation->isFirstMark() || $request->getCheck( 'use-latest-syntax' );
 			$transclusion = $request->getCheck( 'transclusion' );
 
-			$err = $this->markForTranslation( $page, $parse, $unitsForTranslation, $setVersion, $transclusion );
+			$err = $this->markForTranslation(
+				$page,
+				$operation->getParserOutput(),
+				$unitsForTranslation,
+				$setVersion,
+				$transclusion
+			);
+
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
-				$this->showSuccess( $page, $firstMark, count( $unitsForTranslation ) );
+				$this->showSuccess( $page, $operation->isFirstMark(), count( $unitsForTranslation ) );
 			}
 
 			return;
 		}
 
-		$this->showPage( $page, $parse, $allUnits, $deletedUnits, $firstMark );
+		$this->showPage( $operation );
 	}
 
 	/**
@@ -769,13 +781,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		return [ $parsedUnits, $deletedUnits ];
 	}
 
-	private function showPage(
-		TranslatablePage $page,
-		ParserOutput $parse,
-		array $sections,
-		array $deletedUnits,
-		bool $firstMark
-	): void {
+	private function showPage( TranslatablePageMarkOperation $operation ): void {
+		$page = $operation->getPage();
 		$out = $this->getOutput();
 		$out->addBacklinkSubtitle( $page->getTitle() );
 		$out->addWikiMsg( 'tpt-showpage-intro' );
@@ -803,11 +810,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		// Check whether page title was previously marked for translation.
 		// If the page is marked for translation the first time, default to checked.
-		$defaultChecked = $firstMark || $page->hasPageDisplayTitle();
+		$defaultChecked = $operation->isFirstMark() || $page->hasPageDisplayTitle();
 
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
-		foreach ( $sections as $s ) {
+		foreach ( $operation->getUnits() as $s ) {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
 				// Set section type as new if title previously unchecked
 				$s->type = $defaultChecked ? $s->type : 'new';
@@ -891,11 +898,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 			}
 		}
 
-		if ( $deletedUnits ) {
+		if ( $operation->getDeletedUnits() ) {
 			$hasChanges = true;
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
-			foreach ( $deletedUnits as $s ) {
+			foreach ( $operation->getDeletedUnits() as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
 				$text = Utilities::convertWhiteSpaceToHTML( $s->getText() );
 				$out->addHTML( MessageWebImporter::makeSectionElement(
@@ -911,7 +918,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$markedTag = $page->getMarkedTag();
 		if ( $markedTag !== null ) {
 			$hasChanges = true;
-			$newTemplate = $parse->sourcePageTemplateForDiffs();
+			$newTemplate = $operation->getParserOutput()->sourcePageTemplateForDiffs();
 			$oldPage = TranslatablePage::newFromRevision(
 				$page->getTitle(),
 				$markedTag
@@ -950,12 +957,12 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		// If an existing page does not have the supportsTransclusion flag, keep the checkbox unchecked,
 		// If the page is being marked for translation for the first time, the checkbox can be checked
-		$this->templateTransclusionForm( $page->supportsTransclusion() ?? $firstMark );
+		$this->templateTransclusionForm( $page->supportsTransclusion() ?? $operation->isFirstMark() );
 
 		$version = TranslateMetadata::getWithDefaultValue(
 			$page->getMessageGroupId(), 'version', self::DEFAULT_SYNTAX_VERSION
 		);
-		$this->syntaxVersionForm( $version, $firstMark );
+		$this->syntaxVersionForm( $version, $operation->isFirstMark() );
 
 		$submitButton = new FieldLayout(
 			new ButtonInputWidget( [
