@@ -146,5 +146,5 @@
 	"apierror-translate-operation-error": "处理请求时出现错误。错误：$1",
 	"apihelp-translationentitysearch-summary": "搜索消息组和消息",
 	"apihelp-translationentitysearch-param-query": "搜索查询",
-	"apihelp-translationentitysearch-param-limit": "最大搜索结果数量"
+	"apihelp-translationentitysearch-param-limit": "最大搜索结果数"
 }

@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"ОйЛ"
+			"ОйЛ",
+			"Баир Балданов"
 		]
 	},
 	"translate-page-language": "Хэлэн",
-	"translate-language": "Хэлэн"
+	"translate-language": "Хэлэн",
+	"translate-documentation-language": "Бэшэг мэдээсэлэй дансанууд"
 }

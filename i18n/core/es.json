@@ -45,6 +45,7 @@
 	"translate-fuzzybot-desc": "Esta es una cuenta especial del sistema usada por la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate extensión de traducción] para realizar tareas de mantenimiento en las traducciones.\nEsta cuenta es parte del software de MediaWiki y no pertenece a ningún usuario.",
 	"translate-taskui-export-to-file": "Exportar en formato nativo",
 	"translate-taskui-export-as-po": "Exportar para traducir sin conexión",
+	"translate-taskui-export-as-csv": "Exportar en formato CSV",
 	"translate-export-csv-definition": "Definición del mensaje",
 	"translate-taction-translate": "Traducir",
 	"translate-taction-proofread": "Revisar",
