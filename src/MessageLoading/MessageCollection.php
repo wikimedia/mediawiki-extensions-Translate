@@ -582,7 +582,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->loadData( $keys );
 		$origKeys = $keys;
 
-		$userId = $userId ?? 0;
+		$userId ??= 0;
 		foreach ( $this->dbData as $row ) {
 			if ( (int)$row->rev_user === $userId ) {
 				unset( $keys[$this->rowToKey( $row )] );
@@ -639,7 +639,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		]
 		];
 
-		$titleConds = $titleConds ?? $this->getTitleConds( $dbr );
+		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
 			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
@@ -678,7 +678,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			]
 		];
 
-		$titleConds = $titleConds ?? $this->getTitleConds( $dbr );
+		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
 			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
@@ -714,7 +714,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$fields = $revQuery['fields'];
 		$joins = $revQuery['joins'];
 
-		$titleConds = $titleConds ?? $this->getTitleConds( $dbr );
+		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
 			$conds = [ 'page_latest = rev_id', $conds ];

@@ -1313,8 +1313,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			if ( $tags ) {
 				// Performance optimization to avoid calling $this->msg in a loop
 				$tagsKey = implode( '', $tags );
-				$tagsTextCache[$tagsKey] = $tagsTextCache[$tagsKey] ??
-					$this->msg( 'parentheses' )
+				$tagsTextCache[$tagsKey] ??= $this->msg( 'parentheses' )
 						->rawParams( $this->getLanguage()->pipeList( $tags ) )
 						->escaped();
 

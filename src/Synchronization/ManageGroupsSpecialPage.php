@@ -957,7 +957,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	private function createRenameJobs( array $jobParams ): array {
 		$jobs = [];
 		foreach ( $jobParams as $groupId => $groupJobParams ) {
-			$jobs[$groupId] = $jobs[$groupId] ?? [];
+			$jobs[$groupId] ??= [];
 			foreach ( $groupJobParams as $params ) {
 				$jobs[$groupId][] = MessageUpdateJob::newRenameJob(
 					$params['targetTitle'],

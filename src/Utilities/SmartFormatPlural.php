@@ -52,7 +52,7 @@ class SmartFormatPlural {
 			$original = $instance[ 0 ];
 			$variable = $instance[ 1 ];
 			$forms = explode( '|', $instance[ 2 ] );
-			$ldns[ $variable ] = $ldns[ $variable ] ?? [];
+			$ldns[ $variable ] ??= [];
 			$ldns[ $variable ][] = [
 				'forms' => $forms,
 				'original' => $original,

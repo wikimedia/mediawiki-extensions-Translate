@@ -117,7 +117,7 @@ class TranslatorActivity {
 		// In case there is no activity for a supported languages, cache empty results
 		$validLanguages = Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 		foreach ( $validLanguages as $language ) {
-			$data[$language] = $data[$language] ?? [];
+			$data[$language] ??= [];
 		}
 
 		foreach ( $data as $language => $users ) {

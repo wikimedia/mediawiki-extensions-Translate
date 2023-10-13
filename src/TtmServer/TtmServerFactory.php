@@ -172,7 +172,7 @@ class TtmServerFactory {
 
 			foreach ( $mirrorIds as $id ) {
 				if ( !in_array( $id, $readOnlyServers ) ) {
-					$writableServers[ $id ] = $writableServers[ $id ] ?? $this->create( $id );
+					$writableServers[ $id ] ??= $this->create( $id );
 				}
 			}
 
