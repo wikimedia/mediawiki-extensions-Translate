@@ -276,9 +276,18 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$transclusion = $request->getCheck( 'transclusion' );
 			$unitsForTranslation = $unitNameValidationResult->getValue();
 
+			// Fetch priority language related information
+			[ $priorityLanguages, $forcePriorityLanguage, $priorityLanguageReason ] =
+				$this->getPriorityLanguage( $this->getRequest() );
+			$this->translatablePageMarker->setPriorityLanguages(
+				$operation,
+				$priorityLanguages,
+				$forcePriorityLanguage,
+				$priorityLanguageReason
+			);
+
 			$err = $this->markForTranslation(
-				$operation->getPage(),
-				$operation->getParserOutput(),
+				$operation,
 				$unitsForTranslation,
 				$setVersion,
 				$transclusion
@@ -936,24 +945,23 @@ class PageTranslationSpecialPage extends SpecialPage {
 	 * - Invalidates caches
 	 * - Adds interim cache for MessageIndex
 	 *
-	 * @param TranslatablePage $page
-	 * @param ParserOutput $parse
+	 * @param TranslatablePageMarkOperation $operation
 	 * @param TranslationUnit[] $sections
 	 * @param bool $updateVersion
 	 * @param bool $transclusion
 	 * @return array|bool
 	 */
 	protected function markForTranslation(
-		TranslatablePage $page,
-		ParserOutput $parse,
+		TranslatablePageMarkOperation $operation,
 		array $sections,
 		bool $updateVersion,
 		bool $transclusion
 	) {
+		$page = $operation->getPage();
 		// Add the section markers to the source page
 		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page->getTitle() );
 		$content = ContentHandler::makeContent(
-			$parse->sourcePageTextForSaving(),
+			$operation->getParserOutput()->sourcePageTextForSaving(),
 			$page->getTitle()
 		);
 
@@ -1030,7 +1038,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
 		$this->jobQueueGroup->push( $job );
 
-		$this->handlePriorityLanguages( $this->getRequest(), $page );
+		$this->handlePriorityLanguages( $operation );
 
 		// Logging
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
@@ -1049,63 +1057,58 @@ class PageTranslationSpecialPage extends SpecialPage {
 		return false;
 	}
 
-	/**
-	 * @param WebRequest $request
-	 * @param TranslatablePage $page
-	 * @return void
-	 */
-	protected function handlePriorityLanguages( WebRequest $request, TranslatablePage $page ): void {
-		// Get the priority languages from the request
-		// We've to do some extra work here because if JS is disabled, we will be getting
-		// the values split by newline.
-		$npLangs = rtrim( trim( $request->getVal( 'prioritylangs', '' ) ), ',' );
-		$npLangs = str_replace( "\n", ',', $npLangs );
-		$npLangs = array_map( 'trim', explode( ',', $npLangs ) );
-		$npLangs = array_unique( $npLangs );
-
-		$npForce = $request->getCheck( 'forcelimit' ) ? 'on' : 'off';
-		$npReason = trim( $request->getText( 'priorityreason' ) );
-
-		// Remove invalid language codes.
-		$languages = $this->languageNameUtils->getLanguageNames();
-		foreach ( $npLangs as $index => $language ) {
-			if ( !array_key_exists( $language, $languages ) ) {
-				unset( $npLangs[$index] );
-			}
-		}
-		$npLangs = implode( ',', $npLangs );
-		if ( $npLangs === '' ) {
-			$npLangs = false;
-			$npForce = false;
-			$npReason = false;
+	protected function handlePriorityLanguages( TranslatablePageMarkOperation $operation ): void {
+		$languages = implode( ',', $operation->getPriorityLanguages() );
+		if ( $languages === '' ) {
+			$languages = false;
+			$force = false;
+			$reason = false;
+		} else {
+			$force = $operation->shouldForcePriorityLanguage() ? 'on' : 'off';
+			$reason = $operation->getPriorityLanguageComment();
 		}
 
-		$groupId = $page->getMessageGroupId();
+		$groupId = $operation->getPage()->getMessageGroupId();
 		// old priority languages
-		$opLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$opLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$opForce = TranslateMetadata::get( $groupId, 'priorityforce' );
 		$opReason = TranslateMetadata::get( $groupId, 'priorityreason' );
 
-		TranslateMetadata::set( $groupId, 'prioritylangs', $npLangs );
-		TranslateMetadata::set( $groupId, 'priorityforce', $npForce );
-		TranslateMetadata::set( $groupId, 'priorityreason', $npReason );
+		TranslateMetadata::set( $groupId, 'prioritylangs', $languages );
+		TranslateMetadata::set( $groupId, 'priorityforce', $force );
+		TranslateMetadata::set( $groupId, 'priorityreason', $reason );
 
-		if ( $opLangs !== $npLangs || $opForce !== $npForce || $opReason !== $npReason ) {
-			$logComment = $npReason === false ? '' : $npReason;
+		if ( $opLanguages !== $languages || $opForce !== $force || $opReason !== $reason ) {
+			$logComment = $reason === false ? '' : $reason;
 			$params = [
-				'languages' => $npLangs,
-				'force' => $npForce,
-				'reason' => $npReason,
+				'languages' => $languages,
+				'force' => $force,
+				'reason' => $reason,
 			];
 
 			$entry = new ManualLogEntry( 'pagetranslation', 'prioritylanguages' );
 			$entry->setPerformer( $this->getUser() );
-			$entry->setTarget( $page->getTitle() );
+			$entry->setTarget( $operation->getPage()->getTitle() );
 			$entry->setParameters( $params );
 			$entry->setComment( $logComment );
-			$logid = $entry->insert();
-			$entry->publish( $logid );
+			$logId = $entry->insert();
+			$entry->publish( $logId );
 		}
+	}
+
+	private function getPriorityLanguage( WebRequest $request ): array {
+		// Get the priority languages from the request
+		// We've to do some extra work here because if JS is disabled, we will be getting
+		// the values split by newline.
+		$priorityLanguages = rtrim( trim( $request->getVal( 'prioritylangs', '' ) ), ',' );
+		$priorityLanguages = str_replace( "\n", ',', $priorityLanguages );
+		$priorityLanguages = array_map( 'trim', explode( ',', $priorityLanguages ) );
+		$priorityLanguages = array_unique( $priorityLanguages );
+
+		$forcePriorityLanguage = $request->getCheck( 'forcelimit' );
+		$priorityLanguageReason = trim( $request->getText( 'priorityreason' ) );
+
+		return [ $priorityLanguages, $forcePriorityLanguage, $priorityLanguageReason ];
 	}
 
 	private function getPageList( array $pages, string $type ): string {

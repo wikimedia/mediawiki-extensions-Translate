@@ -7,6 +7,7 @@ use ContentHandler;
 use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
@@ -22,6 +23,7 @@ use User;
  * @since 2023.10
  */
 class TranslatablePageMarker {
+	private LanguageNameUtils $languageNameUtils;
 	private LinkRenderer $linkRenderer;
 	private TitleFormatter $titleFormatter;
 	private TitleParser $titleParser;
@@ -31,6 +33,7 @@ class TranslatablePageMarker {
 	private WikiPageFactory $wikiPageFactory;
 
 	public function __construct(
+		LanguageNameUtils $languageNameUtils,
 		LinkRenderer $linkRenderer,
 		TitleFormatter $titleFormatter,
 		TitleParser $titleParser,
@@ -39,6 +42,7 @@ class TranslatablePageMarker {
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		WikiPageFactory $wikiPageFactory
 	) {
+		$this->languageNameUtils = $languageNameUtils;
 		$this->linkRenderer = $linkRenderer;
 		$this->titleFormatter = $titleFormatter;
 		$this->titleParser = $titleParser;
@@ -219,6 +223,28 @@ class TranslatablePageMarker {
 		}
 
 		return $status;
+	}
+
+	/**
+	 * Configure new priority languages. Must be called before MarkPageOperation::markForTranslation() to have effect.
+	 * If not called, the priority languages are not changed.
+	 * @param TranslatablePageMarkOperation $operation
+	 * @param string[] $languages List of priority languages
+	 * @param bool $force Whether to disable translating in other languages
+	 * @param string $reason Reason to log
+	 */
+	public function setPriorityLanguages(
+		TranslatablePageMarkOperation $operation,
+		array $languages,
+		bool $force,
+		string $reason
+	): void {
+		$validLanguages = $this->languageNameUtils->getLanguageNames();
+		$languages = array_filter(
+			$languages,
+			static fn ( string $lang ) => array_key_exists( $lang, $validLanguages )
+		);
+		$operation->setPriorityLanguage( $languages, $force, $reason );
 	}
 
 	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parserOutput ): array {
