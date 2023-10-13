@@ -12,6 +12,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Title\TitleFormatter;
+use MediaWiki\User\UserIdentity;
 use Message;
 use Status;
 use TitleParser;
@@ -245,6 +246,48 @@ class TranslatablePageMarker {
 			static fn ( string $lang ) => array_key_exists( $lang, $validLanguages )
 		);
 		$operation->setPriorityLanguage( $languages, $force, $reason );
+	}
+
+	public function handlePriorityLanguages(
+		TranslatablePageMarkOperation $operation,
+		UserIdentity $user
+	): void {
+		$languages = implode( ',', $operation->getPriorityLanguages() );
+		if ( $languages === '' ) {
+			$languages = false;
+			$force = false;
+			$reason = false;
+		} else {
+			$force = $operation->shouldForcePriorityLanguage() ? 'on' : 'off';
+			$reason = $operation->getPriorityLanguageComment();
+		}
+
+		$groupId = $operation->getPage()->getMessageGroupId();
+		// old priority languages
+		$opLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$opForce = TranslateMetadata::get( $groupId, 'priorityforce' );
+		$opReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+
+		TranslateMetadata::set( $groupId, 'prioritylangs', $languages );
+		TranslateMetadata::set( $groupId, 'priorityforce', $force );
+		TranslateMetadata::set( $groupId, 'priorityreason', $reason );
+
+		if ( $opLanguages !== $languages || $opForce !== $force || $opReason !== $reason ) {
+			$logComment = $reason === false ? '' : $reason;
+			$params = [
+				'languages' => $languages,
+				'force' => $force,
+				'reason' => $reason,
+			];
+
+			$entry = new ManualLogEntry( 'pagetranslation', 'prioritylanguages' );
+			$entry->setPerformer( $user );
+			$entry->setTarget( $operation->getPage()->getTitle() );
+			$entry->setParameters( $params );
+			$entry->setComment( $logComment );
+			$logId = $entry->insert();
+			$entry->publish( $logId );
+		}
 	}
 
 	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parserOutput ): array {

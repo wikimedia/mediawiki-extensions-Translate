@@ -1038,7 +1038,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
 		$this->jobQueueGroup->push( $job );
 
-		$this->handlePriorityLanguages( $operation );
+		$this->translatablePageMarker->handlePriorityLanguages( $operation, $this->getUser() );
 
 		// Logging
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
@@ -1055,45 +1055,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$page->getTitle()->invalidateCache();
 
 		return false;
-	}
-
-	protected function handlePriorityLanguages( TranslatablePageMarkOperation $operation ): void {
-		$languages = implode( ',', $operation->getPriorityLanguages() );
-		if ( $languages === '' ) {
-			$languages = false;
-			$force = false;
-			$reason = false;
-		} else {
-			$force = $operation->shouldForcePriorityLanguage() ? 'on' : 'off';
-			$reason = $operation->getPriorityLanguageComment();
-		}
-
-		$groupId = $operation->getPage()->getMessageGroupId();
-		// old priority languages
-		$opLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
-		$opForce = TranslateMetadata::get( $groupId, 'priorityforce' );
-		$opReason = TranslateMetadata::get( $groupId, 'priorityreason' );
-
-		TranslateMetadata::set( $groupId, 'prioritylangs', $languages );
-		TranslateMetadata::set( $groupId, 'priorityforce', $force );
-		TranslateMetadata::set( $groupId, 'priorityreason', $reason );
-
-		if ( $opLanguages !== $languages || $opForce !== $force || $opReason !== $reason ) {
-			$logComment = $reason === false ? '' : $reason;
-			$params = [
-				'languages' => $languages,
-				'force' => $force,
-				'reason' => $reason,
-			];
-
-			$entry = new ManualLogEntry( 'pagetranslation', 'prioritylanguages' );
-			$entry->setPerformer( $this->getUser() );
-			$entry->setTarget( $operation->getPage()->getTitle() );
-			$entry->setParameters( $params );
-			$entry->setComment( $logComment );
-			$logId = $entry->insert();
-			$entry->publish( $logId );
-		}
 	}
 
 	private function getPriorityLanguage( WebRequest $request ): array {
