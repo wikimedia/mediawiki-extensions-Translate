@@ -230,8 +230,11 @@ return [
 
 	'Translate:TranslatablePageMarker' => static function ( MediaWikiServices $services ): TranslatablePageMarker {
 		return new TranslatablePageMarker(
+			$services->getDBLoadBalancer(),
+			$services->getJobQueueGroup(),
 			$services->getLanguageNameUtils(),
 			$services->getLinkRenderer(),
+			$services->get( 'Translate:MessageIndex' ),
 			$services->getTitleFormatter(),
 			$services->getTitleParser(),
 			$services->get( 'Translate:TranslatablePageParser' ),

@@ -18,7 +18,6 @@ use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
 use MessageGroupStatsRebuildJob;
 use MessageIndex;
 use OOUI\ButtonInputWidget;
@@ -39,8 +38,6 @@ use Wikimedia\Rdbms\IResultWrapper;
 use Xml;
 use function count;
 use function wfEscapeWikiText;
-use const EDIT_FORCE_BOT;
-use const EDIT_UPDATE;
 
 /**
  * A special page for marking revisions of pages for translation.
@@ -54,8 +51,6 @@ use const EDIT_UPDATE;
  * @license GPL-2.0-or-later
  */
 class PageTranslationSpecialPage extends SpecialPage {
-	private const LATEST_SYNTAX_VERSION = '2';
-	private const DEFAULT_SYNTAX_VERSION = '1';
 	private const DISPLAY_STATUS_MAPPING = [
 		TranslatablePageStatus::PROPOSED => 'proposed',
 		TranslatablePageStatus::ACTIVE => 'active',
@@ -272,10 +267,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$unitNameValidationResult = $operation->getUnitValidationStatus();
 		// Non-fatal error which prevents saving
 		if ( $unitNameValidationResult->isOK() && $request->wasPosted() ) {
-			$setVersion = $operation->isFirstMark() || $request->getCheck( 'use-latest-syntax' );
-			$transclusion = $request->getCheck( 'transclusion' );
-			$unitsForTranslation = $unitNameValidationResult->getValue();
-
 			// Fetch priority language related information
 			[ $priorityLanguages, $forcePriorityLanguage, $priorityLanguageReason ] =
 				$this->getPriorityLanguage( $this->getRequest() );
@@ -286,20 +277,31 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$priorityLanguageReason
 			);
 
-			$err = $this->markForTranslation(
-				$operation,
-				$unitsForTranslation,
-				$setVersion,
-				$transclusion
+			$noFuzzyUnits = array_filter(
+				preg_replace(
+					'/^tpt-sect-(.*)-action-nofuzzy$|.*/',
+					'$1',
+					array_keys( $request->getValues() )
+				),
+				'strlen'
 			);
 
-			if ( $err ) {
-				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
-			} else {
-				$this->showSuccess( $operation->getPage(), $operation->isFirstMark(), count( $unitsForTranslation ) );
+			try {
+				$unitCount = $this->translatablePageMarker->markForTranslation(
+					$operation,
+					$this->getUser(),
+					$noFuzzyUnits,
+					$translateTitle,
+					$request->getCheck( 'use-latest-syntax' ),
+					$request->getCheck( 'transclusion' )
+				);
+				$this->showSuccess( $operation->getPage(), $operation->isFirstMark(), $unitCount );
+			} catch ( TranslatablePageMarkException $e ) {
+				$out->wrapWikiMsg(
+					Html::errorBox( '$1' ),
+					$e->getMessageObject()
+				);
 			}
-
-			return;
 		} else {
 			if ( !$unitNameValidationResult->isOK() ) {
 				$out->addHTML(
@@ -484,7 +486,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$groupId = $page['groupid'];
 			$group = MessageGroups::getGroup( $groupId );
 			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
-			$page['version'] = $metadata[$groupId]['version'] ?? self::DEFAULT_SYNTAX_VERSION;
+			$page['version'] = $metadata[$groupId]['version'] ?? TranslatablePageMarker::DEFAULT_SYNTAX_VERSION;
 			$page['transclusion'] = $metadata[$groupId]['transclusion'] ?? false;
 
 			// TODO: Eventually we should query the status directly from the TranslatableBundleStore
@@ -819,7 +821,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->templateTransclusionForm( $page->supportsTransclusion() ?? $operation->isFirstMark() );
 
 		$version = TranslateMetadata::getWithDefaultValue(
-			$page->getMessageGroupId(), 'version', self::DEFAULT_SYNTAX_VERSION
+			$page->getMessageGroupId(), 'version', TranslatablePageMarker::DEFAULT_SYNTAX_VERSION
 		);
 		$this->syntaxVersionForm( $version, $operation->isFirstMark() );
 
@@ -894,7 +896,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private function syntaxVersionForm( string $version, bool $firstMark ): void {
 		$out = $this->getOutput();
 
-		if ( $version === self::LATEST_SYNTAX_VERSION || $firstMark ) {
+		if ( $version === TranslatablePageMarker::LATEST_SYNTAX_VERSION || $firstMark ) {
 			return;
 		}
 
@@ -936,127 +938,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$out->addHTML( $checkBox->toString() );
 	}
 
-	/**
-	 * This function does the heavy duty of marking a page.
-	 * - Updates the source page with section markers.
-	 * - Updates translate_sections table
-	 * - Updates revtags table
-	 * - Sets up renderjobs to update the translation pages
-	 * - Invalidates caches
-	 * - Adds interim cache for MessageIndex
-	 *
-	 * @param TranslatablePageMarkOperation $operation
-	 * @param TranslationUnit[] $sections
-	 * @param bool $updateVersion
-	 * @param bool $transclusion
-	 * @return array|bool
-	 */
-	protected function markForTranslation(
-		TranslatablePageMarkOperation $operation,
-		array $sections,
-		bool $updateVersion,
-		bool $transclusion
-	) {
-		$page = $operation->getPage();
-		// Add the section markers to the source page
-		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page->getTitle() );
-		$content = ContentHandler::makeContent(
-			$operation->getParserOutput()->sourcePageTextForSaving(),
-			$page->getTitle()
-		);
-
-		$status = $wikiPage->doUserEditContent(
-			$content,
-			$this->getUser(),
-			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),
-			EDIT_FORCE_BOT | EDIT_UPDATE
-		);
-
-		if ( !$status->isOK() ) {
-			return [ 'tpt-edit-failed', $status->getWikiText() ];
-		}
-
-		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-		$newRevisionRecord = $status->value['revision-record'];
-		// In theory, it is either null or RevisionRecord object,
-		// not a RevisionRecord object with null id, but who knows
-		$newRevisionId = $newRevisionRecord instanceof RevisionRecord
-			? $newRevisionRecord->getId()
-			: null;
-
-		// Probably a no-change edit, so no new revision was assigned.
-		// Get the latest revision manually
-		// Could also occur on the off chance $newRevisionRecord->getId() returns null
-		$newRevisionId ??= $page->getTitle()->getLatestRevID();
-
-		$inserts = [];
-		$changed = [];
-		$groupId = $page->getMessageGroupId();
-		$maxid = (int)TranslateMetadata::get( $groupId, 'maxid' );
-
-		$pageId = $page->getTitle()->getArticleID();
-		/** @var TranslationUnit $s */
-		foreach ( array_values( $sections ) as $index => $s ) {
-			$maxid = max( $maxid, (int)$s->id );
-			$changed[] = $s->id;
-
-			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
-				// UpdateTranslatablePageJob will only fuzzy when type is changed
-				$s->type = 'old';
-			}
-
-			$inserts[] = [
-				'trs_page' => $pageId,
-				'trs_key' => $s->id,
-				'trs_text' => $s->getText(),
-				'trs_order' => $index
-			];
-		}
-
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
-		$dbw->delete(
-			'translate_sections',
-			[ 'trs_page' => $page->getTitle()->getArticleID() ],
-			__METHOD__
-		);
-		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
-		TranslateMetadata::set( $groupId, 'maxid', $maxid );
-		if ( $updateVersion ) {
-			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
-		}
-
-		$page->setTransclusion( $transclusion );
-
-		$page->addMarkedTag( $newRevisionId );
-		MessageGroups::singleton()->recache();
-
-		// Store interim cache
-		$group = $page->getMessageGroup();
-		$newKeys = $group->makeGroupKeys( $changed );
-		$this->messageIndex->storeInterim( $group, $newKeys );
-
-		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
-		$this->jobQueueGroup->push( $job );
-
-		$this->translatablePageMarker->handlePriorityLanguages( $operation, $this->getUser() );
-
-		// Logging
-		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
-		$entry->setPerformer( $this->getUser() );
-		$entry->setTarget( $page->getTitle() );
-		$entry->setParameters( [
-			'revision' => $newRevisionId,
-			'changed' => count( $changed ),
-		] );
-		$logid = $entry->insert();
-		$entry->publish( $logid );
-
-		// Clear more caches
-		$page->getTitle()->invalidateCache();
-
-		return false;
-	}
-
 	private function getPriorityLanguage( WebRequest $request ): array {
 		// Get the priority languages from the request
 		// We've to do some extra work here because if JS is disabled, we will be getting
@@ -1088,7 +969,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$tags[] = $tagDiscouraged;
 			}
 			if ( $type !== 'proposed' ) {
-				if ( $page['version'] !== self::LATEST_SYNTAX_VERSION ) {
+				if ( $page['version'] !== TranslatablePageMarker::LATEST_SYNTAX_VERSION ) {
 					$tags[] = $tagOldSyntax;
 				}
 

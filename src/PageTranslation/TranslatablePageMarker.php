@@ -4,28 +4,40 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
+use JobQueueGroup;
+use LogicException;
 use MalformedTitleException;
 use ManualLogEntry;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\User\UserIdentity;
 use Message;
+use MessageIndex;
 use Status;
 use TitleParser;
 use TranslateMetadata;
 use User;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Service to unmark pages from translation
  * @since 2023.10
  */
 class TranslatablePageMarker {
+	public const LATEST_SYNTAX_VERSION = '2';
+	public const DEFAULT_SYNTAX_VERSION = '1';
+
+	private ILoadBalancer $loadBalancer;
+	private JobQueueGroup $jobQueueGroup;
 	private LanguageNameUtils $languageNameUtils;
 	private LinkRenderer $linkRenderer;
+	private MessageIndex $messageIndex;
 	private TitleFormatter $titleFormatter;
 	private TitleParser $titleParser;
 	private TranslatablePageParser $translatablePageParser;
@@ -34,8 +46,11 @@ class TranslatablePageMarker {
 	private WikiPageFactory $wikiPageFactory;
 
 	public function __construct(
+		ILoadBalancer $loadBalancer,
+		JobQueueGroup $jobQueueGroup,
 		LanguageNameUtils $languageNameUtils,
 		LinkRenderer $linkRenderer,
+		MessageIndex $messageIndex,
 		TitleFormatter $titleFormatter,
 		TitleParser $titleParser,
 		TranslatablePageParser $translatablePageParser,
@@ -43,8 +58,11 @@ class TranslatablePageMarker {
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		WikiPageFactory $wikiPageFactory
 	) {
+		$this->loadBalancer = $loadBalancer;
+		$this->jobQueueGroup = $jobQueueGroup;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->linkRenderer = $linkRenderer;
+		$this->messageIndex = $messageIndex;
 		$this->titleFormatter = $titleFormatter;
 		$this->titleParser = $titleParser;
 		$this->translatablePageParser = $translatablePageParser;
@@ -173,7 +191,6 @@ class TranslatablePageMarker {
 	): Status {
 		$usedNames = [];
 		$status = Status::newGood();
-		$unitsValidated = [];
 		$ic = preg_quote( TranslationUnit::UNIT_MARKER_INVALID_CHARS, '~' );
 		foreach ( $units as $key => $s ) {
 			$unitStatus = Status::newGood();
@@ -198,8 +215,6 @@ class TranslatablePageMarker {
 					}
 				}
 
-				// Store the validated units
-				$unitsValidated[ $key ] = $s;
 				// Only perform custom validation if the TitleParser validation passed
 				if ( $unitStatus->isGood() && preg_match( "~[$ic]~", $s->id ) ) {
 					$unitStatus->fatal( 'tpt-invalid', $s->id );
@@ -219,16 +234,12 @@ class TranslatablePageMarker {
 			$status->merge( $unitStatus );
 		}
 
-		if ( $status->isOK() ) {
-			$status->setResult( true, $unitsValidated );
-		}
-
 		return $status;
 	}
 
 	/**
-	 * Configure new priority languages. Must be called before MarkPageOperation::markForTranslation() to have effect.
-	 * If not called, the priority languages are not changed.
+	 * Configure new priority languages. Must be called before TranslatablePageMarker::markForTranslation() to have
+	 * effect. If not called, the priority languages are not changed.
 	 * @param TranslatablePageMarkOperation $operation
 	 * @param string[] $languages List of priority languages
 	 * @param bool $force Whether to disable translating in other languages
@@ -248,7 +259,145 @@ class TranslatablePageMarker {
 		$operation->setPriorityLanguage( $languages, $force, $reason );
 	}
 
-	public function handlePriorityLanguages(
+	/**
+	 * This function does the heavy duty of marking a page.
+	 * - Updates the source page with section markers.
+	 * - Updates translate_sections table
+	 * - Updates revtags table
+	 * - Sets up renderjobs to update the translation pages
+	 * - Invalidates caches
+	 * - Adds interim cache for MessageIndex
+	 *
+	 * @param TranslatablePageMarkOperation $operation
+	 * @param User $user User performing the action. Checking user
+	 * permissions is the caller’s responsibility
+	 * @param string[] $noFuzzyUnits IDs of units that should not be fuzzied
+	 * @param bool $translateTitle Whether to allow translation of the page title
+	 * @param bool $forceLatestSyntaxVersion Whether to upgrade the page to the latest
+	 * syntax version; if the page has not been marked for translation before, this is
+	 * ignored and always the latest syntax version is used
+	 * @param bool $transclusion Whether to allow translation-aware transclusion
+	 * @return int The number of translation units actually used
+	 */
+	public function markForTranslation(
+		TranslatablePageMarkOperation $operation,
+		UserIdentity $user,
+		array $noFuzzyUnits,
+		bool $translateTitle,
+		bool $forceLatestSyntaxVersion,
+		bool $transclusion
+	): int {
+		if ( !$operation->isValid() ) {
+			throw new LogicException( 'Trying to mark a page for translation that is not valid' );
+		}
+
+		$page = $operation->getPage();
+		// Add the section markers to the source page
+		$wikiPage = $this->wikiPageFactory->newFromTitle( $page->getTitle() );
+		$content = ContentHandler::makeContent(
+			$operation->getParserOutput()->sourcePageTextForSaving(),
+			$page->getTitle()
+		);
+
+		$status = $wikiPage->doUserEditContent(
+			$content,
+			$user,
+			Message::newFromKey( 'tpt-mark-summary' )->inContentLanguage()->text(),
+			EDIT_FORCE_BOT | EDIT_UPDATE
+		);
+
+		if ( !$status->isOK() ) {
+			throw new TranslatablePageMarkException( [ 'tpt-edit-failed', $status->getMessage() ] );
+		}
+
+		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+		$newRevisionRecord = $status->value['revision-record'];
+		// In theory, it is either null or RevisionRecord object,
+		// not a RevisionRecord object with null id, but who knows
+		$newRevisionId = $newRevisionRecord instanceof RevisionRecord
+			? $newRevisionRecord->getId()
+			: null;
+
+		// Probably a no-change edit, so no new revision was assigned.
+		// Get the latest revision manually
+		// Could also occur on the off chance $newRevisionRecord->getId() returns null
+		$newRevisionId ??= $page->getTitle()->getLatestRevID();
+
+		$inserts = [];
+		$changed = [];
+		$groupId = $page->getMessageGroupId();
+		$maxId = (int)TranslateMetadata::get( $groupId, 'maxid' );
+
+		$pageId = $page->getTitle()->getArticleID();
+		$sections = $translateTitle
+			? $operation->getUnits()
+			: array_filter(
+				$operation->getUnits(),
+				static fn ( TranslationUnit $s ) => $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID
+			);
+
+		foreach ( array_values( $sections ) as $index => $s ) {
+			$maxId = max( $maxId, (int)$s->id );
+			$changed[] = $s->id;
+
+			if ( in_array( $s->id, $noFuzzyUnits, true ) ) {
+				// UpdateTranslatablePageJob will only fuzzy when type is changed
+				$s->type = 'old';
+			}
+
+			$inserts[] = [
+				'trs_page' => $pageId,
+				'trs_key' => $s->id,
+				'trs_text' => $s->getText(),
+				'trs_order' => $index
+			];
+		}
+
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw->delete(
+			'translate_sections',
+			[ 'trs_page' => $page->getTitle()->getArticleID() ],
+			__METHOD__
+		);
+		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
+		TranslateMetadata::set( $groupId, 'maxid', $maxId );
+		if ( $forceLatestSyntaxVersion || $operation->isFirstMark() ) {
+			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
+		}
+
+		$page->setTransclusion( $transclusion );
+
+		$page->addMarkedTag( $newRevisionId );
+		MessageGroups::singleton()->recache();
+
+		// Store interim cache
+		$group = $page->getMessageGroup();
+		$newKeys = $group->makeGroupKeys( $changed );
+		$this->messageIndex->storeInterim( $group, $newKeys );
+
+		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
+		$this->jobQueueGroup->push( $job );
+
+		$this->handlePriorityLanguages( $operation, $user );
+
+		// Logging
+		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
+		$entry->setPerformer( $user );
+		$entry->setTarget( $page->getTitle() );
+		$entry->setParameters( [
+			'revision' => $newRevisionId,
+			'changed' => count( $changed ),
+		] );
+		$logId = $entry->insert();
+		$entry->publish( $logId );
+
+		// Clear more caches
+		$page->getTitle()->invalidateCache();
+
+		return count( $sections );
+	}
+
+	private function handlePriorityLanguages(
 		TranslatablePageMarkOperation $operation,
 		UserIdentity $user
 	): void {
