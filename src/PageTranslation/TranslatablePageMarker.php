@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use CommentStoreComment;
 use ContentHandler;
 use JobQueueGroup;
 use LogicException;
@@ -14,7 +15,7 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
-use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\User\UserIdentity;
 use Message;
@@ -292,34 +293,8 @@ class TranslatablePageMarker {
 		}
 
 		$page = $operation->getPage();
-		// Add the section markers to the source page
-		$wikiPage = $this->wikiPageFactory->newFromTitle( $page->getTitle() );
-		$content = ContentHandler::makeContent(
-			$operation->getParserOutput()->sourcePageTextForSaving(),
-			$page->getTitle()
-		);
-
-		$status = $wikiPage->doUserEditContent(
-			$content,
-			$user,
-			Message::newFromKey( 'tpt-mark-summary' )->inContentLanguage()->text(),
-			EDIT_FORCE_BOT | EDIT_UPDATE
-		);
-
-		if ( !$status->isOK() ) {
-			throw new TranslatablePageMarkException( [ 'tpt-edit-failed', $status->getMessage() ] );
-		}
-
-		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
-		$newRevisionRecord = $status->value['revision-record'];
-		// In theory, it is either null or RevisionRecord object,
-		// not a RevisionRecord object with null id, but who knows
-		$newRevisionId = $newRevisionRecord instanceof RevisionRecord
-			? $newRevisionRecord->getId()
-			: null;
-
-		// Probably a no-change edit, so no new revision was assigned.
-		// Get the latest revision manually
+		$newRevisionId = $this->updateSectionMarkers( $page, $user, $operation );
+		// Probably a no-change edit, so no new revision was assigned. Get the latest revision manually
 		// Could also occur on the off chance $newRevisionRecord->getId() returns null
 		$newRevisionId ??= $page->getTitle()->getLatestRevID();
 
@@ -485,5 +460,29 @@ class TranslatablePageMarker {
 		}
 
 		return [ $units, $deletedUnits ];
+	}
+
+	private function updateSectionMarkers(
+		TranslatablePage $page,
+		UserIdentity $user,
+		TranslatablePageMarkOperation $operation
+	): ?int {
+		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getTitle() )->newPageUpdater( $user );
+		$content = ContentHandler::makeContent(
+			$operation->getParserOutput()->sourcePageTextForSaving(),
+			$page->getTitle()
+		);
+		$comment = CommentStoreComment::newUnsavedComment(
+			Message::newFromKey( 'tpt-mark-summary' )->inContentLanguage()->text()
+		);
+		$newRevisionRecord = $pageUpdater->setContent( SlotRecord::MAIN, $content )
+			->saveRevision( $comment, EDIT_FORCE_BOT | EDIT_UPDATE );
+
+		$status = $pageUpdater->getStatus();
+		if ( !$status->isOK() ) {
+			throw new TranslatablePageMarkException( [ 'tpt-edit-failed', $status->getMessage() ] );
+		}
+
+		return $newRevisionRecord !== null ? $newRevisionRecord->getId() : null;
 	}
 }
