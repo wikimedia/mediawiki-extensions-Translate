@@ -12,7 +12,8 @@
 			"Sarchia",
 			"Épine",
 			"ئارام بکر",
-			"رزگار"
+			"رزگار",
+			"TerranBoy"
 		]
 	},
 	"translate": "وەرگێڕان",
@@ -289,7 +290,7 @@
 	"tux-editor-message-tools-linktothis": "بەستەری ئەم پەیامە",
 	"tux-editor-loading": "باركردن‌ ...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|زمان}}ی تر",
-	"translate-statsbar-tooltip": "$1% وەرگێڕدراوە, $2% پێداجوونەوەی بۆ کراوە",
+	"translate-statsbar-tooltip": "$1٪ وەرگێڕدراوە، $2٪ پێداچوونەوەی بۆ کراوە",
 	"translate-statsbar-tooltip-with-fuzzy": "$1٪ وەرگێڕدراو، $2٪ پێداچوونەوە بۆ کراو، $3٪ کۆن",
 	"specialpages-group-translation": "وەرگێڕان",
 	"translate-messagebundle-error-key-too-long": "کلیلی «$1» زۆر درێژە",

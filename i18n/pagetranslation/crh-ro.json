@@ -9,5 +9,7 @@
 	"tpt-languages-nonzero": "$1 ($2% terğúme etílgen)",
 	"tpt-aggregategroup-add": "Koş",
 	"tpt-aggregategroup-save": "Sakla",
-	"tpt-aggregategroup-close": "Kapat"
+	"tpt-aggregategroup-close": "Kapat",
+	"tpt-aggregategroup-update": "Sakla",
+	"tpt-aggregategroup-update-cancel": "Wazkeş"
 }

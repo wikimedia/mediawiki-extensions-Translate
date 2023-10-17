@@ -26,5 +26,7 @@
 	"tux-sst-ellipsis-outdated": "Zastarjeli prijevodi",
 	"tux-sst-link-all-match": "Pretraga prema cijelom izrazu.",
 	"tux-sst-match-message": "Prikazuju se prijevodi koji odgovaraju svim riječima iz pretrage. $1",
-	"tux-sst-case-sensitive": "Razlikuj velika i mala slova"
+	"tux-sst-case-sensitive": "Razlikuj velika i mala slova",
+	"tux-sst-error-offset": "Nije moguće prikazati više rezultata pretraživanja. Molimo suzite pretragu.",
+	"tux-sst-error-language": "Ovaj se jezik ne može koristiti s ovom vrstom pretraživanja."
 }
