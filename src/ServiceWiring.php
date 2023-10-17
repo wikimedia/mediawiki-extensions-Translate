@@ -23,6 +23,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleDeleter;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
@@ -164,6 +165,16 @@ return [
 		return new SubpageListBuilder(
 			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->getLinkBatchFactory()
+		);
+	},
+
+	'Translate:TranslatableBundleDeleter' => static function ( MediaWikiServices $services ): TranslatableBundleDeleter
+	{
+		return new TranslatableBundleDeleter(
+			$services->getMainObjectStash(),
+			$services->getJobQueueGroup(),
+			$services->get( 'Translate:SubpageListBuilder' ),
+			$services->get( 'Translate:TranslatableBundleFactory' )
 		);
 	},
 

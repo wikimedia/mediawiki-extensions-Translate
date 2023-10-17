@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserIdentity;
 use Title;
 use User;
 
@@ -24,7 +25,7 @@ class DeleteTranslatableBundleJob extends Job {
 		string $base,
 		string $bundleType,
 		bool $isTranslatableBundle,
-		User $performer,
+		UserIdentity $performer,
 		string $reason
 	): self {
 		$params = [

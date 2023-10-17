@@ -137,11 +137,9 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			$wgSpecialPages['PageTranslationDeletePage'] = [
 				'class' => DeleteTranslatableBundleSpecialPage::class,
 				'services' => [
-					'MainObjectStash',
 					'PermissionManager',
+					'Translate:TranslatableBundleDeleter',
 					'Translate:TranslatableBundleFactory',
-					'Translate:SubpageListBuilder',
-					'JobQueueGroup',
 				]
 			];
 
