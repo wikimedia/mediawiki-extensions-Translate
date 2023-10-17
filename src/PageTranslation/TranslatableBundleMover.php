@@ -28,20 +28,13 @@ use User;
 class TranslatableBundleMover {
 	private const LOCK_TIMEOUT = 3600 * 2;
 	private const FETCH_TRANSLATABLE_SUBPAGES = true;
-	/** @var MovePageFactory */
-	private $movePageFactory;
-	/** @var int|null */
-	private $pageMoveLimit;
-	/** @var JobQueueGroup */
-	private $jobQueue;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-	/** @var TranslatableBundleFactory */
-	private $bundleFactory;
-	/** @var SubpageListBuilder */
-	private $subpageBuilder;
-	/** @var bool */
-	private $pageMoveLimitEnabled = true;
+	private MovePageFactory $movePageFactory;
+	private ?int $pageMoveLimit;
+	private JobQueueGroup $jobQueue;
+	private LinkBatchFactory $linkBatchFactory;
+	private TranslatableBundleFactory $bundleFactory;
+	private SubpageListBuilder $subpageBuilder;
+	private bool $pageMoveLimitEnabled = true;
 
 	private const REDIRECTABLE_PAGE_TYPES = [
 		'pt-movepage-list-source' => true,
@@ -90,7 +83,7 @@ class TranslatableBundleMover {
 
 		$movePage = $this->movePageFactory->newMovePage( $source, $target );
 		$status = $movePage->isValidMove();
-		$status->merge( $movePage->checkPermissions( $user, $reason ) );
+		$status->merge( $movePage->probablyCanMove( $user, $reason ) );
 		if ( !$status->isOK() ) {
 			$blockers[$source] = $status;
 		}
