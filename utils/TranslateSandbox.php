@@ -12,6 +12,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandboxEmailJob;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserNotSandboxedException;
 use MediaWiki\Extension\Translate\Utilities\Utilities;

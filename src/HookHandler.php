@@ -32,6 +32,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandboxEmailJob;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
@@ -349,7 +350,7 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			$wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
 
 			global $wgJobClasses;
-			$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
+			$wgJobClasses['TranslateSandboxEmailJob'] = TranslateSandboxEmailJob::class;
 
 			global $wgAPIModules;
 			$wgAPIModules['translationstash'] = [

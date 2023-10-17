@@ -1,28 +1,24 @@
 <?php
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
+
+use Job;
 use MediaWiki\MediaWikiServices;
+use Title;
 
 class TranslateSandboxEmailJob extends Job {
 
-	/**
-	 * @param array $params
-	 * @return self
-	 */
-	public static function newJob( array $params ) {
+	public static function newJob( array $params ): self {
 		return new self( Title::newMainPage(), $params );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params ) {
+	public function __construct( Title $title, array $params ) {
 		parent::__construct( __CLASS__, $title, $params );
 	}
 
-	public function run() {
-		$services = MediaWikiServices::getInstance();
-		$status = $services
+	public function run(): bool {
+		$status = MediaWikiServices::getInstance()
 			->getEmailer()
 			->send(
 				[ $this->params['to'] ],

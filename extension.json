@@ -135,7 +135,6 @@
 		"TranslatePreferences": "utils/TranslatePreferences.php",
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
 		"TranslateSandbox": "utils/TranslateSandbox.php",
-		"TranslateSandboxEmailJob": "utils/TranslateSandboxEmailJob.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
 		"TranslateToolbox": "utils/TranslateToolbox.php",
 		"TranslateYaml": "utils/TranslateYaml.php",
