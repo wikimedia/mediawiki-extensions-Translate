@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Html\Html;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\Title\Title;
 use Message;
 use OutputPage;
@@ -140,6 +141,9 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 				$this->moveTalkpages = $request->getBool( 'talkpages' );
 				$this->leaveRedirect = $request->getBool( 'redirect' );
 
+				// This will throw exceptions if there is an error.
+				$this->authorizeMove();
+
 				$this->bundleMover->moveAsynchronously(
 					$this->oldTitle,
 					$newTitle,
@@ -179,15 +183,37 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
-		if ( $this->getUser()->pingLimiter( 'move' ) ) {
-			throw new ThrottledError;
+		// Since MW 1.36, Authority should be used to check permissions
+		$status = PermissionStatus::newEmpty();
+		if ( !$this->getAuthority()
+			->definitelyCan( 'move', $this->oldTitle, $status )
+		) {
+			throw new PermissionsError( 'move', $status );
 		}
+	}
 
-		// Check rights
-		$permErrors = $this->permissionManager
-			->getPermissionErrors( 'move', $this->getUser(), $this->oldTitle );
-		if ( count( $permErrors ) ) {
-			throw new PermissionsError( 'move', $permErrors );
+	/** Checks permissions, user blocks and rate limits. */
+	protected function authorizeMove(): void {
+		if ( class_exists( PermissionStatus::class )
+			&& method_exists( PermissionStatus::class, 'isRateLimitExceeded' )
+		) {
+			// Since MW 1.41, Authority will implicitly enforce rate limits
+			// and user blocks.
+			$status = PermissionStatus::newEmpty();
+			$this->getAuthority()
+				->authorizeWrite( 'move', $this->oldTitle, $status );
+
+			if ( !$status->isOK() ) {
+				if ( $status->isRateLimitExceeded() ) {
+					throw new ThrottledError;
+				} else {
+					throw new PermissionsError( 'move', $status );
+				}
+			}
+		} else {
+			if ( $this->getUser()->pingLimiter( 'move' ) ) {
+				throw new ThrottledError;
+			}
 		}
 	}
 
