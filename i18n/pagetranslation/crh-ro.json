@@ -8,5 +8,7 @@
 	"tpt-languages-legend": "Başka tíller:",
 	"tpt-languages-nonzero": "$1 ($2% terğúme etílgen)",
 	"tpt-aggregategroup-add": "Koş",
-	"tpt-aggregategroup-save": "Sakla"
+	"tpt-aggregategroup-save": "Sakla",
+	"tpt-aggregategroup-update": "Sakla",
+	"tpt-aggregategroup-update-cancel": "Wazkeş"
 }
