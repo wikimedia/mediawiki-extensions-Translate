@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Ilja.mos",
-			"Mashoi7"
+			"Mashoi7",
+			"Ruppijeva"
 		]
 	},
 	"translate-page-navigation-legend": "Navigacii",
 	"translate-edit-title": "Kohendele sivuu \"$1\"",
 	"translate-suppress-complete": "Peitä viestijoukot, kuduat on kiännetty kogonah",
 	"translate-ls-noempty": "Peitä viestijoukot, kudamii ei ole kiännetty kogonah",
-	"translate-documentation-language": "Viestien dokumentatsii"
+	"translate-documentation-language": "Viestin dokumentoičendu"
 }
