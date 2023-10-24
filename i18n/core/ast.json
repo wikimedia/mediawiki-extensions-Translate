@@ -4,7 +4,8 @@
 			"Amire80",
 			"Esbardu",
 			"Fitoschido",
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"translate": "Traducir",
@@ -200,7 +201,7 @@
 	"translate-smg-left": "Conteníu del mensaxe nel wiki",
 	"translate-smg-right": "Cambios entrantes",
 	"translate-smg-rename-select": "Seleicionar",
-	"translate-smg-rename-cancel": "Encaboxar",
+	"translate-smg-rename-cancel": "Zarrar",
 	"translate-manage-import-diff": "Mensaxe $1 | Aiciones: $2",
 	"translate-manage-import-new": "Mensaxe nuevu $1",
 	"translate-manage-import-deleted": "Mensaxe desaniciáu $1",
@@ -289,7 +290,7 @@
 	"tux-editor-discard-changes-button-label": "Descartar los cambeos",
 	"tux-editor-save-button-label": "Guardar la traducción",
 	"tux-editor-skip-button-label": "Saltar a la siguiente",
-	"tux-editor-cancel-button-label": "Encaboxar",
+	"tux-editor-cancel-button-label": "Zarrar",
 	"tux-editor-confirm-button-label": "Confirmar la traducción",
 	"tux-editor-proofread-button-label": "Marcar como revisao",
 	"tux-editor-shortcut-info": "Pulsia «$1» pa confirmar y dir al siguiente mensaxe, «$2» pa saltar  «$4» p'apurrir un resume o primi «$3» pa ver otros atayos.",
@@ -318,7 +319,7 @@
 	"tux-editor-outdated-notice-diff-link": "Amosar les diferencies",
 	"tux-editor-doc-editor-placeholder": "Documentación del mensaxe",
 	"tux-editor-doc-editor-save": "Guardar documentación",
-	"tux-editor-doc-editor-cancel": "Encaboxar",
+	"tux-editor-doc-editor-cancel": "Zarrar",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|mensaxe|mensaxes}} más",
 	"tux-messagetable-loading-messages": "Cargando $1 {{PLURAL:$1|mensaxe|mensaxes}}...",
 	"tux-message-filter-placeholder": "Peñerar llista",
@@ -357,7 +358,7 @@
 	"translate-statsbar-tooltip": "$1% traducíos, $2% revisaos",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traducíos, $2% revisaos, $3% anticuaos",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupu|grupos}} más",
-	"translate-syntax-error": "La traducción contien errores sintácticos",
+	"translate-syntax-error": "La traducción contién errores sintácticos",
 	"tux-session-expired": "La sesión zarróse yá. Anicia sesión n'una llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión, vuelvi a esta páxina y escribi les traducciones otra vuelta.",
 	"tux-nojs": "Esta ferramienta nun funciona sin JavaScript. JavaScript ta desactiváu, nun funcionó, o nun hai encontu pa esti restolador.",
 	"specialpages-group-translation": "Traducción"
