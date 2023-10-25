@@ -72,7 +72,7 @@
 	"translate-checks-smartformat-plural-count": "Númberu incorreutu de formes plurales en <strong>$3</strong>. Tien de tener $1 {{PLURAL:$1|forma plural|formes plurales}}. Anguaño {{PLURAL:$2|dióse $2 forma plural|diéronse $2 formes plurales}}.",
 	"translate-checks-unicode-plural-missing": "Esta traducción tien de tener <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-unsupported": "Esti mensaxe nun tien encontu pa <nowiki>{{PLURAL|}}</nowiki>.",
-	"translate-checks-unicode-plural-invalid": "Les formes plurales tendríen de definise como $1. Esta traducción contien $2.",
+	"translate-checks-unicode-plural-invalid": "Les formes plurales tendríen de definise como $1. Esta traducción contién $2.",
 	"translate-checks-pagename": "Espaciu de nomes camudáu dende la definición",
 	"translate-checks-format": "Esta traducción nun sigue la definición o tien una sintaxis non válida: $1",
 	"translate-checks-escape": "{{PLURAL:$2|El siguiente caráuter d'escape pue ser accidental|Los $2 siguientes caráuteres d'escape puen ser accidentales}}: <strong>$1</strong>. {{PLURAL:$4|Un caráuter d'escape válidu ye|Los caráuteres d'escape válidos incluyen:}} $3.",
