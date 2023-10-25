@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"pagetranslation": "Traducción de páxines",
@@ -83,7 +84,7 @@
 	"tpt-aggregategroup-edit-name": "Nome:",
 	"tpt-aggregategroup-edit-description": "Descripción:",
 	"tpt-aggregategroup-update": "Guardar",
-	"tpt-aggregategroup-update-cancel": "Encaboxar",
+	"tpt-aggregategroup-update-cancel": "Zarrar",
 	"tpt-invalid-group": "Grupu inválidu",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nPlantía de traducción: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nPlantía de traducción: <pre>$1</pre>",
@@ -168,9 +169,9 @@
 	"pagemigration-summary": "Especifica una páxina de traducción y restaura cualquier traducción fecha antes de que s'activara nesa páxina el sistema Translate.",
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Guardar",
-	"pm-cancel-button-label": "Encaboxar",
+	"pm-cancel-button-label": "Zarrar",
 	"pm-page-does-not-exist": "$1 nun esiste",
-	"pm-old-translations-missing": "$1 nun contien traducciones antigües",
+	"pm-old-translations-missing": "La páxina $1 nun contién traducciones antigües.",
 	"pm-extra-units-warning": "Pue haber otres unidaes presentes. Por favor, casa correutamente les unidaes d'orixe coles de traducción",
 	"pm-pagename-missing": "Escribi'l nome de la páxina",
 	"pm-add-icon-hover-text": "Amiesta una unidá abaxo",
@@ -189,7 +190,7 @@
 	"pp-pagename-placeholder": "Escribi'l nome de la páxina",
 	"pp-prepare-button-label": "Preparar",
 	"pp-save-button-label": "Guardar",
-	"pp-cancel-button-label": "Encaboxar",
+	"pp-cancel-button-label": "Zarrar",
 	"pp-save-message": "Guardóse la páxina. Pues [$1 editala].",
 	"pp-prepare-message": "Preparóse la páxina pa traducción. Mira les diferencies más abaxo. ¡Fai clic nel botón «{{int:pp-save-button-label}}» si ta correuto!",
 	"pp-already-prepared-message": "Paez que la páxina yá se preparó pa traducir. Nun hai cambios comparando cola versión anterior.",
