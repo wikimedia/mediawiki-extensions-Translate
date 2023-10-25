@@ -46,7 +46,7 @@ class MintCxserverWebService extends CxserverWebService {
 			// Verify that the wikitext instances are the same as before translation
 			$postWikitextCount = preg_match_all( self::WIKITEXT_REGEX, $text );
 			if ( $postWikitextCount !== $this->wikitextCount ) {
-				throw new TranslationWebServiceException( 'Missing wikitext in response from MinT' );
+				throw new TranslationWebServiceInvalidInputException( 'Missing wikitext in response from MinT' );
 			}
 		}
 		return $text;
