@@ -156,9 +156,7 @@ return [
 	},
 
 	'Translate:RevTagStore' => static function ( MediaWikiServices $services ): RevTagStore {
-		return new RevTagStore(
-			$services->getDBLoadBalancerFactory()
-		);
+		return new RevTagStore( $services->getDBLoadBalancer() );
 	},
 
 	'Translate:SubpageListBuilder' => static function ( MediaWikiServices $services ): SubpageListBuilder

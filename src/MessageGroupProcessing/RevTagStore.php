@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
-use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Class to manage revision tags for translatable bundles.
@@ -28,12 +28,11 @@ class RevTagStore {
 	/** Indicates a revision of a page that is a valid message bundle. */
 	public const MB_VALID_TAG = 'mb:valid';
 
-	private IConnectionProvider $connectionProvider;
-	/** @var array */
-	private $tagCache = [];
+	private ILoadBalancer $loadBalancer;
+	private array $tagCache = [];
 
-	public function __construct( IConnectionProvider $connectionProvider ) {
-		$this->connectionProvider = $connectionProvider;
+	public function __construct( ILoadBalancer $loadBalancer ) {
+		$this->loadBalancer = $loadBalancer;
 	}
 
 	/** Add tag for the given revisionId, while deleting it from others */
@@ -49,7 +48,7 @@ class RevTagStore {
 
 		$articleId = $identity->getId();
 
-		$dbw = $this->connectionProvider->getPrimaryDatabase();
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$conds = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag
@@ -122,7 +121,7 @@ class RevTagStore {
 
 		$articleId = $identity->getId();
 
-		$dbw = $this->connectionProvider->getPrimaryDatabase();
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$conds = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag,
