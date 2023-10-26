@@ -121,6 +121,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$this->messageIndex->rebuild();
 
 		TranslatablePage::clearSourcePageCache();
+		$translatablePage->getTitle()->invalidateCache();
 	}
 
 	/** Queues an update for the status of the translatable page. Update is not done immediately. */

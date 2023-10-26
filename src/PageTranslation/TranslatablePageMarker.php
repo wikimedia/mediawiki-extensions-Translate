@@ -99,7 +99,6 @@ class TranslatablePageMarker {
 		}
 
 		$this->translatablePageStore->unmark( $page->getPageIdentity() );
-		$page->getTitle()->invalidateCache();
 
 		$entry = new ManualLogEntry( 'pagetranslation', 'unmark' );
 		$entry->setPerformer( $user );
