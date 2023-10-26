@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Huuchin"
+			"Huuchin",
+			"Алия"
 		]
 	},
 	"translate": "Орчуллһн",
@@ -21,6 +22,6 @@
 	"translate-pref-editassistlang": "Туслмҗин келс",
 	"translate-sidebar-alltrans": "Талдан келәр",
 	"translate-language": "Келн",
-	"translate-documentation-language": "Зәңгин бәрмтлг",
+	"translate-documentation-language": "Медгдлин бәрмт-бичг",
 	"translate-searchprofile": "Орчуллһн"
 }
