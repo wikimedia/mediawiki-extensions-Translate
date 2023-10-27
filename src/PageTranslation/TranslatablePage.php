@@ -115,7 +115,7 @@ class TranslatablePage extends TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTitle(): Title {
-		return Title::newFromPageIdentity( $this->title );
+		return Title::castFromPageIdentity( $this->title );
 	}
 
 	public function getPageIdentity(): PageIdentity {
