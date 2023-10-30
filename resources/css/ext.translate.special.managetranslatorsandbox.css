@@ -97,7 +97,6 @@
 	text-align: center;
 }
 
-.request .tsb-header,
 .request .request-selector {
 	height: 30px;
 	line-height: 30px;
@@ -114,11 +113,10 @@
 	white-space: nowrap;
 }
 
-.request .tsb-header,
 .request .username,
 .request .email {
 	padding-left: 10px;
-	text-overflow: ellipsis;
+	overflow-wrap: anywhere;
 }
 
 .request .signup-age {
@@ -266,7 +264,7 @@ textarea.body {
 	border-bottom: 1px solid #c9c8c8;
 	padding: 10px;
 	font-size: 16px;
-	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .translations .title {
