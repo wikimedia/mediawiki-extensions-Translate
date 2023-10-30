@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"CiphriusKane",
 			"John Reid"
 		]
 	},
@@ -13,7 +14,7 @@
 	"tsb-reminder-sent-new": "Sent ae myndin",
 	"tsb-reminder-failed": "Sendin the myndin failed",
 	"tsb-email-promoted-subject": "Ye'r nou aen owerseter at {{SITENAME}}",
-	"tsb-email-promoted-body": "Hallo {{GENDER:$1|$1}},\n\nWeeldun! Ah'v checkt the test owersetins that ye did at {{SITENAME}} n gae ye ful owerseter richts.\n\nCome til {{SITENAME}} tae continue owersetin nou, n ilka day:\n$2\n\nWeelcome, n thank ye fer ye contreebutions!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
+	"tsb-email-promoted-body": "Hallo {{GENDER:$1|$1}},\n\nWeel duin! A'v checkit ower the test owersettins that ye did at {{SITENAME}} an gien ye fu owersetter richts.\n\nHeid til {{SITENAME}} tae continue owersettin nou, an ivery day:\n$2\n\nWalcome, an thank ye fur yer contreibutions!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
 	"tsb-email-rejected-subject": "Yer appleecation tae be aen owerseter at {{SITENAME}} wis turned doon",
 	"tsb-email-rejected-body": "Hallo {{GENDER:$1|$1}},\n\nThank ye fer appliein aes aen owerseter at {{SITENAME}}. Ah regret tae inform ye that Ah'v turned yer appleecation doon, cause the qualitie o yer owersets didna meet the needs.\n\nGif ye think that yer appleecation wis turned doon bi mistak, please gie appliein aes aen owerseter anither gae at {{SITENAME}}. Ye can sign up here:\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
 	"tsb-all-languages-button-label": "Aw leids",
