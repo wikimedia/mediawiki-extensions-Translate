@@ -153,7 +153,7 @@
 	"translate-statsf-language": "רשימת קודי שפה (מופרדים בפסיק):",
 	"translate-statsf-group": "רשימת קודי קבוצות (מופרדים בפסיק):",
 	"translate-statsf-submit": "תצוגה מקדימה",
-	"translate-tag-page-desc": "תרגום של דף הוויקי [[$2|$1]] מ{{GRAMMAR:תחילית|$3}} ($4).",
+	"translate-tag-page-desc": "תרגום דף הוויקי [[$2|$1]] מ{{GRAMMAR:תחילית|$3}} ($4).",
 	"translate-sidebar-alltrans": "בשפות אחרות",
 	"translations": "כל התרגומים",
 	"translations-summary": "הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.",

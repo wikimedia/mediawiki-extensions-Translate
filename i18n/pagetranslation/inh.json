@@ -4,9 +4,12 @@
 			"Adam-Yourist"
 		]
 	},
+	"tpt-select-prioritylangs-reason": "Бахьан:",
 	"tpt-languages-legend": "Кхыдола метташ:",
 	"tpt-languages-nonzero": "$1 ($2% таржам даьд)",
 	"tpt-tab-translate": "Таржам де",
+	"pt-movepage-reason": "Бахьан:",
 	"pt-movepage-subpages": "Ерригача кӀалъоагӀоний цӀераш хувца",
+	"pt-deletepage-reason": "Бахьан:",
 	"tpt-generic-button": "Бакъде"
 }
