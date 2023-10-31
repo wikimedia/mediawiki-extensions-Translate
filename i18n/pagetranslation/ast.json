@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"pagetranslation": "Traducción de páxines",
@@ -54,7 +55,7 @@
 	"translate-tag-translate-link-desc": "Traducir esta páxina",
 	"translate-tag-markthis": "Marcar esta páxina pa traducir",
 	"translate-tag-markthisagain": "Esta páxina tien <span class=\"plainlinks\">[$1 cambios]</span> dende que se <span class=\"plainlinks\">[$2 marcó pa traducir]</span> la última vegada.",
-	"translate-tag-hasnew": "Esta páxina contien <span class=\"plainlinks\">[$1 cambios]</span> que nun tan marcaos pa traducir.",
+	"translate-tag-hasnew": "Esta páxina contién <span class=\"plainlinks\">[$1 cambios]</span> que nun tan marcaos pa traducir.",
 	"tpt-translation-intro": "Esta páxina ye una <span class=\"plainlinks\">[$1 versión traducida]</span> de la páxina [[$2]] y la traducción ta completada nún $3%.",
 	"tpt-translation-intro-fuzzy": "Les traducciones anticuaes márquense d'esta manera.",
 	"tpt-languages-legend": "Otres llingües:",
@@ -83,7 +84,7 @@
 	"tpt-aggregategroup-edit-name": "Nome:",
 	"tpt-aggregategroup-edit-description": "Descripción:",
 	"tpt-aggregategroup-update": "Guardar",
-	"tpt-aggregategroup-update-cancel": "Encaboxar",
+	"tpt-aggregategroup-update-cancel": "Zarrar",
 	"tpt-invalid-group": "Grupu inválidu",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nPlantía de traducción: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nPlantía de traducción: <pre>$1</pre>",
@@ -168,7 +169,7 @@
 	"pagemigration-summary": "Especifica una páxina de traducción y restaura cualquier traducción fecha antes de que s'activara nesa páxina el sistema Translate.",
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Guardar",
-	"pm-cancel-button-label": "Encaboxar",
+	"pm-cancel-button-label": "Zarrar",
 	"pm-page-does-not-exist": "$1 nun esiste",
 	"pm-old-translations-missing": "$1 nun contien traducciones antigües",
 	"pm-extra-units-warning": "Pue haber otres unidaes presentes. Por favor, casa correutamente les unidaes d'orixe coles de traducción",
@@ -189,7 +190,7 @@
 	"pp-pagename-placeholder": "Escribi'l nome de la páxina",
 	"pp-prepare-button-label": "Preparar",
 	"pp-save-button-label": "Guardar",
-	"pp-cancel-button-label": "Encaboxar",
+	"pp-cancel-button-label": "Zarrar",
 	"pp-save-message": "Guardóse la páxina. Pues [$1 editala].",
 	"pp-prepare-message": "Preparóse la páxina pa traducción. Mira les diferencies más abaxo. ¡Fai clic nel botón «{{int:pp-save-button-label}}» si ta correuto!",
 	"pp-already-prepared-message": "Paez que la páxina yá se preparó pa traducir. Nun hai cambios comparando cola versión anterior.",
