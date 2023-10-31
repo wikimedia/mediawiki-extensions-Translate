@@ -133,7 +133,6 @@
 		"TranslateMetadata": "utils/TranslateMetadata.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
-		"TranslatePreferences": "utils/TranslatePreferences.php",
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
 		"TranslateSandbox": "utils/TranslateSandbox.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
@@ -188,7 +187,7 @@
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage::tabify",
 			"MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage::tabify"
 		],
-		"GetPreferences": "TranslatePreferences::translationAssistLanguages",
+		"GetPreferences": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateInterfacePreferences::translationAssistLanguages",
 		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
 		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
 		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",

@@ -1,31 +1,29 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\TranslatorInterface;
+
+use MediaWiki\Extension\Translate\Utilities\HTMLJsSelectToInputField;
+use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\User;
+use RequestContext;
+use XmlSelect;
+
 /**
  * Contains classes for addition of extension specific preference settings.
  *
- * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010 Siebrand Mazeland, Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Extension\Translate\Utilities\HTMLJsSelectToInputField;
-use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
-use MediaWiki\MediaWikiServices;
-
-/**
- * Class to add Translate specific preference settings.
- */
-class TranslatePreferences {
+class TranslateInterfacePreferences {
 	/**
 	 * Add 'translate-editlangs' preference.
 	 * These are the languages also shown when translating.
-	 *
-	 * @param User $user
-	 * @param array &$preferences
-	 * @return bool true
 	 */
-	public static function translationAssistLanguages( User $user, &$preferences ) {
+	public static function translationAssistLanguages( User $user, array &$preferences ): void {
 		// Get selector.
 		$select = self::languageSelector();
 		// Set target ID.
@@ -43,15 +41,10 @@ class TranslatePreferences {
 			'valid-values' => array_keys( $languages ),
 			'name' => 'translate-editlangs',
 		];
-
-		return true;
 	}
 
-	/**
-	 * JavsScript selector for language codes.
-	 * @return JsSelectToInput
-	 */
-	protected static function languageSelector() {
+	/** JavaScript selector for language codes. */
+	private static function languageSelector(): JsSelectToInput {
 		$lang = RequestContext::getMain()->getLanguage();
 		$languages = MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames( $lang->getCode() );
 		ksort( $languages );
@@ -61,8 +54,6 @@ class TranslatePreferences {
 			$selector->addOption( "$code - $name", $code );
 		}
 
-		$jsSelect = new JsSelectToInput( $selector );
-
-		return $jsSelect;
+		return new JsSelectToInput( $selector );
 	}
 }
