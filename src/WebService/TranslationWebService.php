@@ -140,6 +140,9 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		} catch ( TranslationWebServiceException $e ) {
 			$this->reportTranslationServiceFailure( $e->getMessage() );
 			return null;
+		} catch ( TranslationWebServiceInvalidInputException $e ) {
+			// Not much we can do about this, just ignore.
+			return null;
 		}
 	}
 
