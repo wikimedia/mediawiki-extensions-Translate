@@ -238,28 +238,6 @@ class TranslatablePageMarker {
 	}
 
 	/**
-	 * Configure new priority languages. Must be called before TranslatablePageMarker::markForTranslation() to have
-	 * effect. If not called, the priority languages are not changed.
-	 * @param TranslatablePageMarkOperation $operation
-	 * @param string[] $languages List of priority languages
-	 * @param bool $force Whether to disable translating in other languages
-	 * @param string $reason Reason to log
-	 */
-	public function setPriorityLanguages(
-		TranslatablePageMarkOperation $operation,
-		array $languages,
-		bool $force,
-		string $reason
-	): void {
-		$validLanguages = $this->languageNameUtils->getLanguageNames();
-		$languages = array_filter(
-			$languages,
-			static fn ( string $lang ) => array_key_exists( $lang, $validLanguages )
-		);
-		$operation->setPriorityLanguage( $languages, $force, $reason );
-	}
-
-	/**
 	 * This function does the heavy duty of marking a page.
 	 * - Updates the source page with section markers.
 	 * - Updates translate_sections table
@@ -269,23 +247,16 @@ class TranslatablePageMarker {
 	 * - Adds interim cache for MessageIndex
 	 *
 	 * @param TranslatablePageMarkOperation $operation
+	 * @param TranslatablePageSettings $pageSettings Contains information about priority languages, units that should
+	 * not be fuzzed, whether title should be translated and other translatable page settings
 	 * @param User $user User performing the action. Checking user
 	 * permissions is the caller’s responsibility
-	 * @param string[] $noFuzzyUnits IDs of units that should not be fuzzied
-	 * @param bool $translateTitle Whether to allow translation of the page title
-	 * @param bool $forceLatestSyntaxVersion Whether to upgrade the page to the latest
-	 * syntax version; if the page has not been marked for translation before, this is
-	 * ignored and always the latest syntax version is used
-	 * @param bool $transclusion Whether to allow translation-aware transclusion
 	 * @return int The number of translation units actually used
 	 */
 	public function markForTranslation(
 		TranslatablePageMarkOperation $operation,
-		UserIdentity $user,
-		array $noFuzzyUnits,
-		bool $translateTitle,
-		bool $forceLatestSyntaxVersion,
-		bool $transclusion
+		TranslatablePageSettings $pageSettings,
+		UserIdentity $user
 	): int {
 		if ( !$operation->isValid() ) {
 			throw new LogicException( 'Trying to mark a page for translation that is not valid' );
@@ -303,7 +274,7 @@ class TranslatablePageMarker {
 		$maxId = (int)TranslateMetadata::get( $groupId, 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
-		$sections = $translateTitle
+		$sections = $pageSettings->shouldTranslateTitle()
 			? $operation->getUnits()
 			: array_filter(
 				$operation->getUnits(),
@@ -314,7 +285,7 @@ class TranslatablePageMarker {
 			$maxId = max( $maxId, (int)$s->id );
 			$changed[] = $s->id;
 
-			if ( in_array( $s->id, $noFuzzyUnits, true ) ) {
+			if ( in_array( $s->id, $pageSettings->getNoFuzzyUnits(), true ) ) {
 				// UpdateTranslatablePageJob will only fuzzy when type is changed
 				$s->type = 'old';
 			}
@@ -335,11 +306,11 @@ class TranslatablePageMarker {
 		);
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 		TranslateMetadata::set( $groupId, 'maxid', $maxId );
-		if ( $forceLatestSyntaxVersion || $operation->isFirstMark() ) {
+		if ( $pageSettings->shouldForceLatestSyntaxVersion() || $operation->isFirstMark() ) {
 			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
 		}
 
-		$page->setTransclusion( $transclusion );
+		$page->setTransclusion( $pageSettings->shouldEnableTransclusion() );
 
 		$page->addMarkedTag( $newRevisionId );
 		MessageGroups::singleton()->recache();
@@ -352,7 +323,7 @@ class TranslatablePageMarker {
 		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
 		$this->jobQueueGroup->push( $job );
 
-		$this->handlePriorityLanguages( $operation, $user );
+		$this->handlePriorityLanguages( $operation->getPage(), $pageSettings, $user );
 
 		// Logging
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
@@ -372,20 +343,21 @@ class TranslatablePageMarker {
 	}
 
 	private function handlePriorityLanguages(
-		TranslatablePageMarkOperation $operation,
+		TranslatablePage $page,
+		TranslatablePageSettings $pageSettings,
 		UserIdentity $user
 	): void {
-		$languages = implode( ',', $operation->getPriorityLanguages() );
+		$languages = implode( ',', $pageSettings->getPriorityLanguages() );
 		if ( $languages === '' ) {
 			$languages = false;
 			$force = false;
 			$reason = false;
 		} else {
-			$force = $operation->shouldForcePriorityLanguage() ? 'on' : 'off';
-			$reason = $operation->getPriorityLanguageComment();
+			$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : 'off';
+			$reason = $pageSettings->getPriorityLanguageComment();
 		}
 
-		$groupId = $operation->getPage()->getMessageGroupId();
+		$groupId = $page->getMessageGroupId();
 		// old priority languages
 		$opLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
 		$opForce = TranslateMetadata::get( $groupId, 'priorityforce' );
@@ -405,7 +377,7 @@ class TranslatablePageMarker {
 
 			$entry = new ManualLogEntry( 'pagetranslation', 'prioritylanguages' );
 			$entry->setPerformer( $user );
-			$entry->setTarget( $operation->getPage()->getTitle() );
+			$entry->setTarget( $page->getTitle() );
 			$entry->setParameters( $params );
 			$entry->setComment( $logComment );
 			$logId = $entry->insert();

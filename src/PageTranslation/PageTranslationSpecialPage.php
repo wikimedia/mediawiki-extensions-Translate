@@ -270,12 +270,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 			// Fetch priority language related information
 			[ $priorityLanguages, $forcePriorityLanguage, $priorityLanguageReason ] =
 				$this->getPriorityLanguage( $this->getRequest() );
-			$this->translatablePageMarker->setPriorityLanguages(
-				$operation,
-				$priorityLanguages,
-				$forcePriorityLanguage,
-				$priorityLanguageReason
-			);
 
 			$noFuzzyUnits = array_filter(
 				preg_replace(
@@ -286,14 +280,21 @@ class PageTranslationSpecialPage extends SpecialPage {
 				'strlen'
 			);
 
+			$translatablePageSettings = new TranslatablePageSettings(
+				$priorityLanguages,
+				$forcePriorityLanguage,
+				$priorityLanguageReason,
+				$noFuzzyUnits,
+				$translateTitle,
+				$request->getCheck( 'use-latest-syntax' ),
+				$request->getCheck( 'transclusion' )
+			);
+
 			try {
 				$unitCount = $this->translatablePageMarker->markForTranslation(
 					$operation,
-					$this->getUser(),
-					$noFuzzyUnits,
-					$translateTitle,
-					$request->getCheck( 'use-latest-syntax' ),
-					$request->getCheck( 'transclusion' )
+					$translatablePageSettings,
+					$this->getUser()
 				);
 				$this->showSuccess( $operation->getPage(), $operation->isFirstMark(), $unitCount );
 			} catch ( TranslatablePageMarkException $e ) {

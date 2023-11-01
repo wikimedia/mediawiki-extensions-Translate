@@ -18,10 +18,6 @@ class TranslatablePageMarkOperation {
 	private TranslatablePage $page;
 	private bool $firstMark;
 	private Status $unitValidationStatus;
-	/** @var string[]|null */
-	private ?array $priorityLanguages;
-	private ?bool $forcePriorityLanguages;
-	private ?string $priorityLanguagesComment;
 
 	public function __construct(
 		TranslatablePage $page,
@@ -78,23 +74,5 @@ class TranslatablePageMarkOperation {
 	/** Get the status of the unit validation */
 	public function getUnitValidationStatus(): Status {
 		return $this->unitValidationStatus;
-	}
-
-	public function setPriorityLanguage( array $languages, bool $force, string $reason ): void {
-		$this->priorityLanguages = $languages;
-		$this->forcePriorityLanguages = $force;
-		$this->priorityLanguagesComment = $reason;
-	}
-
-	public function getPriorityLanguages(): array {
-		return $this->priorityLanguages;
-	}
-
-	public function shouldForcePriorityLanguage(): bool {
-		return $this->forcePriorityLanguages;
-	}
-
-	public function getPriorityLanguageComment(): string {
-		return $this->priorityLanguagesComment;
 	}
 }
