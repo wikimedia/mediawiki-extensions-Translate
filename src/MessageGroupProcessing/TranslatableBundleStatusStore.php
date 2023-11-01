@@ -61,7 +61,7 @@ class TranslatableBundleStatusStore {
 		}
 
 		$resultSet = $this->database->newSelectQueryBuilder()
-			->select( [ 'ttb_page_id' , 'ttb_status' ] )
+			->select( [ 'ttb_page_id', 'ttb_status' ] )
 			->from( self::TABLE_NAME )
 			->fetchResultSet();
 

@@ -202,13 +202,13 @@ class MessageGroups {
 	/**
 	 * Safely merges first array to second array, throwing warning on duplicates and removing
 	 * duplicates from the first array.
-	 * @param array &$additions Things to append
+	 * @param array $additions Things to append
 	 * @param array &$to Where to append
 	 */
-	protected static function appendAutoloader( array &$additions, array &$to ): void {
+	protected static function appendAutoloader( array $additions, array &$to ): void {
 		foreach ( $additions as $class => $file ) {
 			if ( isset( $to[$class] ) && $to[$class] !== $file ) {
-				$msg = "Autoload conflict for $class: {$to[$class]} !== $file";
+				$msg = "Autoload conflict for $class: $to[$class] !== $file";
 				trigger_error( $msg, E_USER_WARNING );
 				continue;
 			}
@@ -248,7 +248,7 @@ class MessageGroups {
 			if ( !$loader instanceof MessageGroupLoader ) {
 				throw new InvalidArgumentException(
 					"MessageGroupLoader - $loader must implement the " .
-					"MessageGroupLoader interface."
+					'MessageGroupLoader interface.'
 				);
 			}
 
@@ -668,7 +668,7 @@ class MessageGroups {
 		AggregateMessageGroup $parent,
 		array &$childIds = [],
 		string $fname = 'caller'
-		): array {
+	): array {
 		static $recursionGuard = [];
 
 		$pid = $parent->getId();

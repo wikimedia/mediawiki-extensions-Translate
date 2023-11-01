@@ -39,7 +39,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
-	public function execute( $parameters ) {
+	public function execute( $parameters ): void {
 		$this->setHeaders();
 		$this->addHelpLink( 'Help:Extension:Translate/Page translation administration' );
 
@@ -316,7 +316,8 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		if ( $this->languageSelector == null ) {
 			// This should be set according to UI language
 			$this->languageSelector = Utilities::getLanguageSelector(
-				$this->getContext()->getLanguage()->getCode(), '-'
+				$this->getContext()->getLanguage()->getCode(),
+				'-'
 			);
 		}
 

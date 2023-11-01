@@ -59,7 +59,7 @@ class DeleteTranslatableBundleJob extends Job {
 		$deletePage = $mwInstance->getDeletePageFactory()->newDeletePage( $wikipage, $fuzzyBot );
 		$status = $deletePage->setSuppress( false )
 			->forceImmediate( true )
-			->deleteUnsafe( "{$summary}: $reason" );
+			->deleteUnsafe( "$summary: $reason" );
 
 		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
 		// Since the page has been removed from cache, create a bundle from the class name.

@@ -62,7 +62,7 @@ class CsvTranslationImporter {
 				if ( !$status->isGood() ) {
 					return $status;
 				}
-				/** @var string[] */
+				/** @var string[] $indexedLanguageCodes */
 				$indexedLanguageCodes = $status->getValue();
 				continue;
 			}

@@ -116,14 +116,14 @@ class TranslatableBundleImporter {
 		$revisionRecord = $this->revisionLookup->getRevisionByTitle( $translatablePageTitle );
 		if ( !$revisionRecord ) {
 			throw new TranslatableBundleImportException(
-				"Revision record could not be found for imported page: {$translatablePageTitle}"
+				"Revision record could not be found for imported page: $translatablePageTitle"
 			);
 		}
 
 		$content = $revisionRecord->getContent( SlotRecord::MAIN );
 		if ( !$content instanceof TextContent ) {
 			throw new TranslatableBundleImportException(
-				"Content in revision record for {$translatablePageTitle} is not of type TextContent"
+				"Content in revision record for $translatablePageTitle is not of type TextContent"
 			);
 		}
 

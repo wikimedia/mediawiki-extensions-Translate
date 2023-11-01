@@ -97,7 +97,7 @@ class ImportTranslationsFromCsv extends BaseMaintenanceScript {
 		$this->output( "\nProceeding with import...\n\n" );
 		$importStatus = $csvImporter->importData(
 			$status->getValue(), $user, trim( $summary ), [ $this, 'progressReporter' ]
-		 );
+		);
 
 		if ( $importStatus->isOK() ) {
 			$this->output( "\nSuccess: Import done\n" );

@@ -99,7 +99,6 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				TranslateMetadata::isExcluded( $group->getId(), $params['languageFilter'] )
 			) {
 				unset( $groups[$index] );
-				continue;
 			}
 		}
 
@@ -202,9 +201,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			$a['sourcelanguage'] = $g->getSourceLanguage();
 		}
 
-		$this->hookRunner->onTranslateProcessAPIMessageGroupsProperties(
-			$a, $props, $params, $g
-		);
+		$this->hookRunner->onTranslateProcessAPIMessageGroupsProperties( $a, $props, $params, $g );
 
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {

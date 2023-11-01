@@ -154,7 +154,9 @@ class ManageMessageGroupsActionApi extends ApiBase {
 
 			// Check for the renamed message in the rename list, and deleted list.
 			$renameMsg = $sourceChanges->findMessage(
-				$code, $keyToRename, [ MessageSourceChange::RENAME, MessageSourceChange::DELETION ],
+				$code,
+				$keyToRename,
+				[ MessageSourceChange::RENAME, MessageSourceChange::DELETION ],
 				$renameMsgState
 			);
 

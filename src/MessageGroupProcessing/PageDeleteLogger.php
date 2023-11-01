@@ -58,7 +58,10 @@ class PageDeleteLogger {
 	}
 
 	private function getManualLogEntry(
-		string $logType, string $logKey, User $performer, string $reason
+		string $logType,
+		string $logKey,
+		User $performer,
+		string $reason
 	): ManualLogEntry {
 		$entry = new ManualLogEntry( $logType, $logKey );
 		$entry->setPerformer( $performer );

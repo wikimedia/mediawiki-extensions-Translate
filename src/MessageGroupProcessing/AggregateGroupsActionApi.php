@@ -129,7 +129,8 @@ class AggregateGroupsActionApi extends ApiBase {
 			$group = MessageGroups::getGroup( $aggregateGroupId );
 			if ( !( $group instanceof AggregateMessageGroup ) ) {
 				$this->dieWithError(
-					'apierror-translate-invalidaggregategroupname', 'invalidaggregategroupname'
+					'apierror-translate-invalidaggregategroupname',
+					'invalidaggregategroupname'
 				);
 			}
 
@@ -146,7 +147,8 @@ class AggregateGroupsActionApi extends ApiBase {
 			$name = trim( $params['groupname'] );
 			if ( strlen( $name ) === 0 ) {
 				$this->dieWithError(
-					'apierror-translate-invalidaggregategroupname', 'invalidaggregategroupname'
+					'apierror-translate-invalidaggregategroupname',
+					'invalidaggregategroupname'
 				);
 			}
 
@@ -194,7 +196,8 @@ class AggregateGroupsActionApi extends ApiBase {
 			$name = trim( $params['groupname'] );
 			if ( strlen( $name ) === 0 ) {
 				$this->dieWithError(
-					'apierror-translate-invalidaggregategroupname', 'invalidaggregategroupname'
+					'apierror-translate-invalidaggregategroupname',
+					'invalidaggregategroupname'
 				);
 			}
 			$desc = trim( $params['groupdescription'] );
@@ -212,7 +215,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				if ( count( $groupsWithDifferentLanguage ) ) {
 					$this->dieWithError( [
 						'apierror-translate-messagegroup-aggregategrouplanguagemismatch',
-						implode( ", ", $groupsWithDifferentLanguage ),
+						implode( ', ', $groupsWithDifferentLanguage ),
 						$newLanguageCode,
 						count( $groupsWithDifferentLanguage )
 					] );

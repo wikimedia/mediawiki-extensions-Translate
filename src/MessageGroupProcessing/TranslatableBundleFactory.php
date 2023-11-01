@@ -33,11 +33,9 @@ class TranslatableBundleFactory {
 	/** Returns a TranslatableBundle if Title is a valid translatable bundle else returns null */
 	public function getBundle( Title $title ): ?TranslatableBundle {
 		if ( TranslatablePage::isSourcePage( $title ) ) {
-			$translatablePage = TranslatablePage::newFromTitle( $title );
-			return $translatablePage;
+			return TranslatablePage::newFromTitle( $title );
 		} elseif ( MessageBundle::isSourcePage( $title ) ) {
-			$messageBundle = new MessageBundle( $title );
-			return $messageBundle;
+			return new MessageBundle( $title );
 		}
 
 		return null;
@@ -68,7 +66,7 @@ class TranslatableBundleFactory {
 			return new PageMoveLogger( $bundle->getTitle(), 'messagebundle' );
 		}
 
-		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );
+		throw new InvalidArgumentException( 'Unknown TranslatableBundle type: ' . get_class( $bundle ) );
 	}
 
 	public function getPageDeleteLogger( TranslatableBundle $bundle ): PageDeleteLogger {
@@ -78,7 +76,7 @@ class TranslatableBundleFactory {
 			return new PageDeleteLogger( $bundle->getTitle(), 'messagebundle' );
 		}
 
-		throw new InvalidArgumentException( "Unknown TranslatableBundle type: " . get_class( $bundle ) );
+		throw new InvalidArgumentException( 'Unknown TranslatableBundle type: ' . get_class( $bundle ) );
 	}
 
 	public function getStore( TranslatableBundle $bundle ): TranslatableBundleStore {
