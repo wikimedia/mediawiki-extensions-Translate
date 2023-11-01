@@ -27,6 +27,7 @@ class SubsetMessageGroup extends MessageGroupOld {
 	) {
 		$this->id = $id;
 		$this->label = $label;
+		$this->parentId = $parentId;
 		$this->subsetKeys = $subsetKeys;
 	}
 
