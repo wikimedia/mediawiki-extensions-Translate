@@ -55,7 +55,7 @@
 	"translate-tag-translate-link-desc": "Traducir esta páxina",
 	"translate-tag-markthis": "Marcar esta páxina pa traducir",
 	"translate-tag-markthisagain": "Esta páxina tien <span class=\"plainlinks\">[$1 cambios]</span> dende que se <span class=\"plainlinks\">[$2 marcó pa traducir]</span> la última vegada.",
-	"translate-tag-hasnew": "Esta páxina contien <span class=\"plainlinks\">[$1 cambios]</span> que nun tan marcaos pa traducir.",
+	"translate-tag-hasnew": "Esta páxina contién <span class=\"plainlinks\">[$1 cambios]</span> que nun tan marcaos pa traducir.",
 	"tpt-translation-intro": "Esta páxina ye una <span class=\"plainlinks\">[$1 versión traducida]</span> de la páxina [[$2]] y la traducción ta completada nún $3%.",
 	"tpt-translation-intro-fuzzy": "Les traducciones anticuaes márquense d'esta manera.",
 	"tpt-languages-legend": "Otres llingües:",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AmaryllisGardener",
-			"John Reid"
+			"John Reid",
+			"CiphriusKane"
 		]
 	},
 	"translate": "Owerset",
@@ -38,7 +39,7 @@
 	"translate-edit-definition": "Message defineetion",
 	"translate-edit-contribute": "contreebute",
 	"translate-edit-no-information": "<em>This message haes naw documentation.\nGif ye ken whaur or hou this message is uised, ye can heelp ither owerseters bi eikin documentation til this message.</em>",
-	"translate-edit-information": "Information aneat message ($1)",
+	"translate-edit-information": "Information anent message ($1)",
 	"translate-edit-warnings": "Warnishments aneat oncompleate owersets",
 	"translate-edit-tmmatch-source": "Owerset soorce tex: $1",
 	"translate-edit-nopermission": "Ye need owersetin richts tae owerset messages.",
