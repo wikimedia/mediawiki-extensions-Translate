@@ -75,16 +75,18 @@ class SubsetMessageGroup extends MessageGroupOld {
 			return [];
 		}
 
+		// Warning: this must be called outside the recursion guard
+		$keys = $this->getKeys();
+
 		$this->recursion = true;
 		if ( $this->definitionsCache === null ) {
 			$parent = $this->getParentGroup();
 			$sourceLanguage = $parent->getSourceLanguage();
 
-			$defs = [];
-			foreach ( $this->getKeys() as $key ) {
-				$defs[$key] = $parent->getMessage( $key, $sourceLanguage );
+			$this->definitionsCache = [];
+			foreach ( $keys as $key ) {
+				$this->definitionsCache[$key] = $parent->getMessage( $key, $sourceLanguage );
 			}
-			$this->definitionsCache = $defs;
 		}
 
 		$this->recursion = false;
