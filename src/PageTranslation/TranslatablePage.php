@@ -420,14 +420,6 @@ class TranslatablePage extends TranslatableBundle {
 		return $transclusion === '1';
 	}
 
-	public function setTransclusion( bool $supportsTransclusion ): void {
-		TranslateMetadata::set(
-			$this->getMessageGroupId(),
-			'transclusion',
-			$supportsTransclusion ? '1' : '0'
-		);
-	}
-
 	public function getRevisionRecordWithFallback(): ?RevisionRecord {
 		$title = $this->getTitle();
 		$store = MediaWikiServices::getInstance()->getRevisionStore();

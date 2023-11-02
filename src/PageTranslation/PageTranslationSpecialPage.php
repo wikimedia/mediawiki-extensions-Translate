@@ -16,10 +16,8 @@ use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Languages\LanguageFactory;
-use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MessageGroupStatsRebuildJob;
-use MessageIndex;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
@@ -28,12 +26,10 @@ use OOUI\TextInputWidget;
 use PermissionsError;
 use SpecialPage;
 use Title;
-use TitleParser;
 use TranslateMetadata;
 use UnexpectedValueException;
 use UserBlockedError;
 use WebRequest;
-use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 use Xml;
 use function count;
@@ -57,35 +53,23 @@ class PageTranslationSpecialPage extends SpecialPage {
 		TranslatablePageStatus::OUTDATED => 'outdated',
 		TranslatablePageStatus::BROKEN => 'broken'
 	];
-	private LanguageNameUtils $languageNameUtils;
 	private LanguageFactory $languageFactory;
 	private LinkBatchFactory $linkBatchFactory;
 	private JobQueueGroup $jobQueueGroup;
-	private ILoadBalancer $loadBalancer;
-	private MessageIndex $messageIndex;
-	private TitleParser $titleParser;
 	private TranslatablePageMarker $translatablePageMarker;
 	private TranslatablePageParser $translatablePageParser;
 
 	public function __construct(
-		LanguageNameUtils $languageNameUtils,
 		LanguageFactory $languageFactory,
 		LinkBatchFactory $linkBatchFactory,
 		JobQueueGroup $jobQueueGroup,
-		ILoadBalancer $loadBalancer,
-		MessageIndex $messageIndex,
-		TitleParser $titleParser,
 		TranslatablePageMarker $translatablePageMarker,
 		TranslatablePageParser $translatablePageParser
 	) {
 		parent::__construct( 'PageTranslation' );
-		$this->languageNameUtils = $languageNameUtils;
 		$this->languageFactory = $languageFactory;
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->jobQueueGroup = $jobQueueGroup;
-		$this->loadBalancer = $loadBalancer;
-		$this->messageIndex = $messageIndex;
-		$this->titleParser = $titleParser;
 		$this->translatablePageMarker = $translatablePageMarker;
 		$this->translatablePageParser = $translatablePageParser;
 	}

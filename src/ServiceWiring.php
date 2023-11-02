@@ -234,6 +234,7 @@ return [
 			$services->getJobQueueGroup(),
 			$services->getLanguageNameUtils(),
 			$services->getLinkRenderer(),
+			MessageGroups::singleton(),
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getTitleFormatter(),
 			$services->getTitleParser(),

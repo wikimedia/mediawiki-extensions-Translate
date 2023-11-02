@@ -38,6 +38,7 @@ class TranslatablePageMarker {
 	private JobQueueGroup $jobQueueGroup;
 	private LanguageNameUtils $languageNameUtils;
 	private LinkRenderer $linkRenderer;
+	private MessageGroups $messageGroups;
 	private MessageIndex $messageIndex;
 	private TitleFormatter $titleFormatter;
 	private TitleParser $titleParser;
@@ -51,6 +52,7 @@ class TranslatablePageMarker {
 		JobQueueGroup $jobQueueGroup,
 		LanguageNameUtils $languageNameUtils,
 		LinkRenderer $linkRenderer,
+		MessageGroups $messageGroups,
 		MessageIndex $messageIndex,
 		TitleFormatter $titleFormatter,
 		TitleParser $titleParser,
@@ -70,6 +72,7 @@ class TranslatablePageMarker {
 		$this->translatablePageStore = $translatablePageStore;
 		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
 		$this->wikiPageFactory = $wikiPageFactory;
+		$this->messageGroups = $messageGroups;
 	}
 
 	/**
@@ -305,15 +308,11 @@ class TranslatablePageMarker {
 			__METHOD__
 		);
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
-		TranslateMetadata::set( $groupId, 'maxid', $maxId );
-		if ( $pageSettings->shouldForceLatestSyntaxVersion() || $operation->isFirstMark() ) {
-			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
-		}
 
-		$page->setTransclusion( $pageSettings->shouldEnableTransclusion() );
+		$this->saveMetadata( $operation, $pageSettings, $maxId, $user );
 
 		$page->addMarkedTag( $newRevisionId );
-		MessageGroups::singleton()->recache();
+		$this->messageGroups->recache();
 
 		// Store interim cache
 		$group = $page->getMessageGroup();
@@ -322,8 +321,6 @@ class TranslatablePageMarker {
 
 		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );
 		$this->jobQueueGroup->push( $job );
-
-		$this->handlePriorityLanguages( $operation->getPage(), $pageSettings, $user );
 
 		// Logging
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
@@ -340,6 +337,29 @@ class TranslatablePageMarker {
 		$page->getTitle()->invalidateCache();
 
 		return count( $sections );
+	}
+
+	private function saveMetadata(
+		TranslatablePageMarkOperation $operation,
+		TranslatablePageSettings $pageSettings,
+		int $maxId,
+		UserIdentity $user
+	): void {
+		$page = $operation->getPage();
+		$groupId = $page->getMessageGroupId();
+
+		TranslateMetadata::set( $groupId, 'maxid', (string)$maxId );
+		if ( $pageSettings->shouldForceLatestSyntaxVersion() || $operation->isFirstMark() ) {
+			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
+		}
+
+		TranslateMetadata::set(
+			$groupId,
+			'transclusion',
+			$pageSettings->shouldEnableTransclusion() ? '1' : '0'
+		);
+
+		$this->handlePriorityLanguages( $operation->getPage(), $pageSettings, $user );
 	}
 
 	private function handlePriorityLanguages(

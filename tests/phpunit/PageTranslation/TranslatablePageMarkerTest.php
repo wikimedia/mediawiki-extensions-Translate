@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use JobQueueGroup;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
@@ -15,6 +16,7 @@ use MessageIndex;
 use Title;
 use TitleFormatter;
 use TitleParser;
+use TranslateMetadata;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -30,6 +32,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$getServiceOrMock( JobQueueGroup::class ),
 			$getServiceOrMock( LanguageNameUtils::class ),
 			$getServiceOrMock( LinkRenderer::class ),
+			MessageGroups::singleton(),
 			$getServiceOrMock( MessageIndex::class ),
 			$getServiceOrMock( TitleFormatter::class ),
 			$getServiceOrMock( TitleParser::class ),
@@ -122,6 +125,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( [], $operation->getDeletedUnits() );
 		$this->assertStatusGood( $operation->getUnitValidationStatus() );
 
+		$priorityLanguages = [ 'en', 'de', 'fr' ];
 		$translateTitle = true;
 		$noFuzzyUnits = [];
 		$priorityReason = 'Testing!';
@@ -131,7 +135,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		$units = $markPage->markForTranslation(
 			$operation,
 			new TranslatablePageSettings(
-				[ 'en', 'de', 'fr' ],
+				$priorityLanguages,
 				$forcePriorityLanguages,
 				$priorityReason,
 				$noFuzzyUnits,
@@ -192,6 +196,25 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			)
 		);
 
+		// Verify metadata
+		$groupId = $operation->getPage()->getMessageGroupId();
+		$dbPriorityLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$dbPriorityLanguages = $dbPriorityLanguages ? explode( ',', $dbPriorityLanguages ) : [];
+		$this->assertArrayEquals( $priorityLanguages, $dbPriorityLanguages );
+
+		$this->assertEquals( $enableTransclusion, $operation->getPage()->supportsTransclusion() );
+		$this->assertEquals( $priorityReason, TranslateMetadata::get( $groupId, 'priorityreason' ) );
+
+		$this->assertEquals(
+			$forcePriorityLanguages ? 'on' : 'off',
+			TranslateMetadata::get( $groupId, 'priorityforce' )
+		);
+
+		$expectedSyntaxVersion = $forceLatestSyntaxVersion ? TranslatablePageMarker::LATEST_SYNTAX_VERSION :
+				TranslatablePageMarker::DEFAULT_SYNTAX_VERSION;
+		$this->assertEquals( $expectedSyntaxVersion, TranslateMetadata::get( $groupId, 'version' ) );
+
+		// Test unmarking
 		$markPage = $this->createTranslatableMarkPage( [
 			WikiPageFactory::class => $services->getWikiPageFactory(),
 			TranslatablePageStore::class => $services->get( 'Translate:TranslatablePageStore' ),
