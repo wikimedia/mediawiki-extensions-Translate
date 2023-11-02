@@ -3,7 +3,8 @@
 		"authors": [
 			"AmaryllisGardener",
 			"John Reid",
-			"MJL"
+			"MJL",
+			"CiphriusKane"
 		]
 	},
 	"pagetranslation": "Page owersetin",
@@ -24,7 +25,7 @@
 	"tpt-oldrevision": "$2 isna the laitest version o the page [[:$1]].\nYinlie laitest versions can be maurkt fer owersetin.",
 	"tpt-notsuitable": "Page $1 isna suitable fer owersetin.\nMak sair that it haes <nowiki><translate></nowiki> tags n haes ae valit syntax.",
 	"tpt-saveok": "The page [[:$1]] haes been maurkt fer owersetin wi $2 {{PLURAL:$2|owersetin unit|owersetin units}}.\nThe page can nou be <span class=\"plainlinks\">[$3 owerset]</span>.",
-	"tpt-offer-notify": "Ye can <span class=\"plainlinks\">[$1 tell owerseters]</span> aneat this page.",
+	"tpt-offer-notify": "Ye can <span class=\"plainlinks\">[$1 tell owersetters]</span> anent this page.",
 	"tpt-showpage-intro": "Ablo new, exeestin n delytit owerset units ar leetit.\nAfore maurkin this version fer owersetin, check that the chynges til owerset units ar wee tae avoid onnecessair wairk fer the owerseters.",
 	"tpt-mark-summary": "Maurkt this version fer owersetin",
 	"tpt-edit-failed": "Coudna update the page: $1",
@@ -59,7 +60,8 @@
 	"tpt-target-page": "This page canna be updated manuallie.\nThis page is aen owerset o the page [[$1]] n the owersetin can be updated uisin [$2 the owersetin tuil].",
 	"tpt-unknown-page": "This namespace is reserved fer content page owersets.\nThe page that ye'r ettlin tae eedit disna seem tae correspond wi onie page maurkt fer owersetin.",
 	"tpt-translation-restricted": "Owersetin o this page intil this leid haes been stapt bi aen owerset admeenistrater.\n\nReason: $1",
-	"tpt-discouraged-language-force": "<strong>This page canna be owerset intil $2.</strong>\n\nAen owerset admeenistrater decided that this page can yinlie be owerset intil $3.",
+	"tpt-discouraged-language-force-content": "Ae owersettin administrator decidit that this page can anely be owerset tae $1.",
+	"tpt-discouraged-language-force": "<strong>This page cannae be owerset intil $2.</strong>\n\nAe owerset administrater decidit that this page can anely be owerset intil $3.",
 	"tpt-priority-languages": "Aen owerset admeenistrater haes set the prioritie leids fer this groop til $1.",
 	"tpt-render-summary": "Updatin tae match new version o soorce page",
 	"aggregategroups": "Aggregate groops",
