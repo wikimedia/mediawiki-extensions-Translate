@@ -3,12 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
+use CommentStoreComment;
 use ContentHandler;
 use IDBAccessObject;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
@@ -24,14 +26,11 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @author Niklas Laxström
  */
 class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
-	/** @var ActorMigration */
-	private $actorMigration;
-	/** @var UserFactory */
-	private $userFactory;
-	/** @var RevisionStore */
-	private $revisionStore;
-	/** @var ILoadBalancer */
-	private $DBLoadBalancer;
+	private ActorMigration $actorMigration;
+	private UserFactory $userFactory;
+	private RevisionStore $revisionStore;
+	private ILoadBalancer $DBLoadBalancer;
+	private WikiPageFactory $wikiPageFactory;
 
 	public function __construct() {
 		parent::__construct();
@@ -47,33 +46,34 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$this->addOption(
 			'skiplanguages',
 			'(optional) Skip some languages (comma separated)',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'comment',
 			'(optional) Comment for updating',
-			false, /*required*/
-			true /*has arg*/
+			self::OPTIONAL,
+			self::HAS_ARG
 		);
 		$this->addOption(
 			'user',
 			'(optional) Fuzzy the translations made by user given as an argument.',
-			false, /*required*/
-			false /*has arg*/
+			self::OPTIONAL,
+			self::NO_ARG
 		);
 		$this->requireExtension( 'Translate' );
 	}
 
-	private function initServices() {
+	private function initServices(): void {
 		$mwServices = MediaWikiServices::getInstance();
 		$this->actorMigration = $mwServices->getActorMigration();
 		$this->userFactory = $mwServices->getUserFactory();
 		$this->revisionStore = $mwServices->getRevisionStore();
 		$this->DBLoadBalancer = $mwServices->getDBLoadBalancer();
+		$this->wikiPageFactory = $mwServices->getWikiPageFactory();
 	}
 
-	public function execute() {
+	public function execute(): void {
 		$this->initServices();
 
 		$skipLanguages = [];
@@ -96,7 +96,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$this->fuzzyTranslations( $pages, $dryrun, $comment );
 	}
 
-	private function fuzzyTranslations( array $pages, bool $dryrun, $comment ) {
+	private function fuzzyTranslations( array $pages, bool $dryrun, ?string $comment ): void {
 		$count = count( $pages );
 		$this->output( "Found $count pages to update.", 'pagecount' );
 
@@ -110,7 +110,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * @param IResultWrapper $rows
 	 * @return array containing page titles and the text content of the page
 	 */
-	private function getMessageContentsFromRows( $rows ) {
+	private function getMessageContentsFromRows( IResultWrapper $rows ): array {
 		$messagesContents = [];
 		$slots = $this->revisionStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
 		foreach ( $rows as $row ) {
@@ -128,33 +128,23 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		return $messagesContents;
 	}
 
-	/// Searches pages that match given patterns
-	private function getPagesForPattern( $pattern, $skipLanguages = [] ) {
+	/** Searches pages that match given patterns */
+	private function getPagesForPattern( string $pattern, array $skipLanguages = [] ): array {
 		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
-
-		$search = [];
-		foreach ( (array)$pattern as $title ) {
-			$title = Title::newFromText( $title );
-			$ns = $title->getNamespace();
-			if ( !isset( $search[$ns] ) ) {
-				$search[$ns] = [];
-			}
-			$search[$ns][] = 'page_title' . $dbr->buildLike( $title->getDBkey(), $dbr->anyString() );
-		}
-
-		$title_conds = [];
-		foreach ( $search as $ns => $names ) {
-			if ( $ns === NS_MAIN ) {
-				$ns = $this->getConfig()->get( 'TranslateMessageNamespaces' );
-			}
-			$titles = $dbr->makeList( $names, LIST_OR );
-			$title_conds[] = $dbr->makeList( [ 'page_namespace' => $ns, $titles ], LIST_AND );
-		}
 
 		$conds = [
 			'page_latest=rev_id',
-			$dbr->makeList( $title_conds, LIST_OR ),
 		];
+
+		$title = Title::newFromText( $pattern );
+		if ( $title->inNamespace( NS_MAIN ) ) {
+			$namespace = $this->getConfig()->get( 'TranslateMessageNamespaces' );
+		} else {
+			$namespace = $title->getNamespace();
+		}
+
+		$conds['page_namespace'] = $namespace;
+		$conds[] = 'page_title' . $dbr->buildLike( $title->getDBkey(), $dbr->anyString() );
 
 		if ( count( $skipLanguages ) ) {
 			$skiplist = $dbr->makeList( $skipLanguages );
@@ -172,7 +162,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		return $this->getMessageContentsFromRows( $rows );
 	}
 
-	private function getPagesForUser( User $user, $skipLanguages = [] ) {
+	private function getPagesForUser( User $user, array $skipLanguages = [] ): array {
 		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
 
 		$revWhere = $this->actorMigration->getWhere( $dbr, 'rev_user', $user );
@@ -206,13 +196,8 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * @param bool $dryrun Whether to really do it or just show what would be done.
 	 * @param string|null $comment Edit summary.
 	 */
-	private function updateMessage( $title, $text, $dryrun, $comment = null ) {
+	private function updateMessage( Title $title, string $text, bool $dryrun, ?string $comment = null ) {
 		$this->output( "Updating {$title->getPrefixedText()}... ", $title );
-		if ( !$title instanceof Title ) {
-			$this->output( 'INVALID TITLE!', $title );
-
-			return;
-		}
 
 		$documentationLanguageCode = $this->getConfig()->get( 'TranslateDocumentationLanguageCode' );
 		$items = explode( '/', $title->getText(), 2 );
@@ -228,14 +213,14 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			return;
 		}
 
-		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+		$wikiPage = $this->wikiPageFactory->newFromTitle( $title );
+		$summary = CommentStoreComment::newUnsavedComment( $comment ?? 'Marking as fuzzy' );
 		$content = ContentHandler::makeContent( $text, $title );
-		$status = $wikipage->doUserEditContent(
-			$content,
-			FuzzyBot::getUser(),
-			$comment ?: 'Marking as fuzzy',
-			EDIT_FORCE_BOT | EDIT_UPDATE
-		);
+		$updater = $wikiPage->newPageUpdater( FuzzyBot::getUser() );
+		$updater
+			->setContent( SlotRecord::MAIN, $content )
+			->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
+		$status = $updater->getStatus();
 
 		$this->output( $status->isOK() ? 'OK' : 'FAILED', $title );
 	}

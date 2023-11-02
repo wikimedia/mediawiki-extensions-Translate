@@ -46,18 +46,8 @@ class FindUnsynchronizedDefinitionsMaintenanceScript extends BaseMaintenanceScri
 
 	/** @inheritDoc */
 	public function execute() {
-		$spec = $this->getArg( 0 );
 		$ignoreTrailingWhitespace = $this->getOption( 'ignore-trailing-whitespace' );
-		$patterns = explode( ',', trim( $spec ) );
-		$groupIds = MessageGroups::expandWildcards( $patterns );
-		$groups = MessageGroups::getGroupsById( $groupIds );
-
-		foreach ( $groups as $index => $group ) {
-			if ( !$group instanceof FileBasedMessageGroup ) {
-				unset( $groups[ $index ] );
-			}
-		}
-
+		$groups = $this->getGroups( $this->getArg( 0 ) );
 		$matched = count( $groups );
 		$this->output( "Pattern matched $matched file based message group(s).\n" );
 		$this->output( "Left side is the expected value. Right side is the actual value in wiki.\n" );
@@ -87,15 +77,30 @@ class FindUnsynchronizedDefinitionsMaintenanceScript extends BaseMaintenanceScri
 
 		if ( $this->hasOption( 'fix' ) && $groupsWithIssues ) {
 			foreach ( $groupsWithIssues as $group ) {
-				'@phan-var FileBasedMessageGroup $group';
 				$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
 				$cache->invalidate();
 			}
 			$script = realpath( __DIR__ . '/../../scripts/importExternalTranslations.php' );
 			$groupPattern = implode( ',', array_keys( $groupsWithIssues ) );
-			$command = Shell::makeScriptCommand( $script, [ "--group", $groupPattern ] )->getCommandString();
+			$command = Shell::makeScriptCommand( $script, [ '--group', $groupPattern ] )->getCommandString();
 			echo "Now run the following command and finish the sync in the wiki:\n$command\n";
 		}
+	}
+
+	/** @return FileBasedMessageGroup[] */
+	private function getGroups( string $patternList ): array {
+		$patterns = array_map( 'trim', explode( ',', $patternList ) );
+		$groupIds = MessageGroups::expandWildcards( $patterns );
+		$groups = MessageGroups::getGroupsById( $groupIds );
+
+		foreach ( $groups as $index => $group ) {
+			if ( !$group instanceof FileBasedMessageGroup ) {
+				unset( $groups[$index] );
+			}
+		}
+
+		// @phan-suppress-next-line PhanTypeMismatchReturn
+		return $groups;
 	}
 
 	private function getSideBySide( string $a, string $b, int $width ): string {

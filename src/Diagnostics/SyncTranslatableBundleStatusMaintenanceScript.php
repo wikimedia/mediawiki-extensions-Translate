@@ -37,11 +37,13 @@ class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintena
 		$this->requireExtension( 'Translate' );
 	}
 
-	protected function getUpdateKey() {
+	/** @inheritDoc */
+	protected function getUpdateKey(): string {
 		return __CLASS__ . '_v' . self::SCRIPT_VERSION;
 	}
 
-	protected function doDBUpdates() {
+	/** @inheritDoc */
+	protected function doDBUpdates(): bool {
 		$this->output( "... Syncing translatable bundle status ...\n\n" );
 
 		$this->output( "Fetching translatable bundles and their statues\n\n" );
@@ -144,7 +146,7 @@ class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintena
 		array $bundleInfo
 	): ?TranslatableBundleStatus {
 		if ( $bundle instanceof TranslatablePage ) {
-			return $bundle->determineStatus(
+			return $bundle::determineStatus(
 				$bundleInfo[RevTagStore::TP_READY_TAG] ?? null,
 				$bundleInfo[RevTagStore::TP_MARK_TAG] ?? null,
 				$bundleInfo['latest']

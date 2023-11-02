@@ -128,19 +128,21 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	private function deleteMessages( SplObjectStorage $messages, string $reason ): void {
+		$services = MediaWikiServices::getInstance();
+		$wikiPageFactory = $services->getWikiPageFactory();
+		$deletePageFactory = $services->getDeletePageFactory();
+
 		$user = FuzzyBot::getUser();
-		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 
 		/** @var TitleValue $key */
 		foreach ( $messages as $key ) {
 			$title = Title::newFromLinkTarget( $key );
 			$page = $wikiPageFactory->newFromTitle( $title );
-			$status = $page->doDeleteArticleReal(
-				$reason,
-				$user
-			);
+			$status = $deletePageFactory->newDeletePage( $page, $user )
+				->deleteUnsafe( $reason );
+
 			if ( $status->isOK() ) {
-				$this->output( ".", 'deletions' );
+				$this->output( '.', 'deletions' );
 			} else {
 				$pageName = $title->getPrefixedText();
 				$this->output( "FAILED to delete page $pageName\n" );
