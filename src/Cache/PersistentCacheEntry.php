@@ -16,14 +16,11 @@ class PersistentCacheEntry {
 	private const MAX_KEY_LENGTH = 255;
 	private const MAX_TAG_LENGTH = 255;
 
-	/** @var string */
-	private $key;
+	private string $key;
 	/** @var mixed */
 	private $value;
-	/** @var int|null */
-	private $exptime;
-	/** @var string|null */
-	private $tag;
+	private ?int $exptime;
+	private ?string $tag;
 
 	public function __construct(
 		string $key,

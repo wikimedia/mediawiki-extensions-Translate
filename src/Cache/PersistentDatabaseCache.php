@@ -16,11 +16,8 @@ use Wikimedia\Rdbms\ILoadBalancer;
  */
 class PersistentDatabaseCache implements PersistentCache {
 	private const TABLE_NAME = 'translate_cache';
-
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var JsonCodec */
-	private $jsonCodec;
+	private ILoadBalancer $loadBalancer;
+	private JsonCodec $jsonCodec;
 
 	public function __construct( ILoadBalancer $loadBalancer, JsonCodec $jsonCodec ) {
 		$this->loadBalancer = $loadBalancer;
@@ -152,7 +149,7 @@ class PersistentDatabaseCache implements PersistentCache {
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_key' => $keynames ],
-			 __METHOD__
+			__METHOD__
 		);
 	}
 
