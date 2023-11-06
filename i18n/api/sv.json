@@ -81,6 +81,7 @@
 	"apihelp-searchtranslations-param-service": "Vilka tillgängliga översättningstjänster att använda.",
 	"apihelp-searchtranslations-param-query": "Strängen att söka efter.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Källtextens språkkod.",
+	"apihelp-searchtranslations-param-filter": "Statusfilter för meddelandeöversättning.",
 	"apihelp-searchtranslations-param-match": "Matcha något/alla sökord.",
 	"apihelp-searchtranslations-param-case": "Skiftläges(o)känslig sökning.",
 	"apihelp-searchtranslations-param-limit": "Resultatets storlek.",

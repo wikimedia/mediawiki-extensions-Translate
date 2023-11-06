@@ -109,6 +109,7 @@
 	"tux-proofread-edit-label": "Түзөтүү",
 	"tux-editor-page-mode": "Барак",
 	"tux-editor-doc-editor-cancel": "Жокко чыгаруу",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|Билдирүү|Билдирүүлөр}} жүктөлүүдө...",
 	"tux-empty-list-translated-action": "Которуу",
 	"tux-editor-close-tooltip": "Жабуу",
 	"tux-editor-expand-tooltip": "жаюу",
