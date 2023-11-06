@@ -256,7 +256,7 @@
 	"translate-manage-import-rename-summary": "Hernoemd in externe bron",
 	"translate-manage-conflict-summary": "Bezig met het importeren van een nieuwe versie uit een externe bron.\nControleer de wijziging.",
 	"translate-manage-submit": "Uitvoeren",
-	"translate-manage-intro-other": "Hieronder wordt een lijst weergegeven van wijzigingen in de vertalingen voor de taal $1.\nControleer de wijzigingen en kies een uit te voeren handeling voor iedere vertaling.\nAls u wijzigingen negeert, worden deze bij de volgende export overschreven.",
+	"translate-manage-intro-other": "Hieronder staat een lijst met wijzigingen van de vertalingen in het $1.\nControleer de wijzigingen en kies voor iedere bewerking een te verrichten handeling.\nAls u ervoor kiest de wijzigingen te negeren, is deze handeling slechts tijdelijk.",
 	"translate-manage-import-ok": "Geïmporteerd: $1",
 	"translate-manage-import-done": "Importeren van $3 vertalingen in de groep [[Special:Translate/$1|$2]] afgerond!",
 	"importtranslations": "Vertalingen importeren",
