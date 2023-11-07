@@ -382,20 +382,21 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 * @param MessageGroup|MessageGroup[] $item
 	 * @param array $cache Cache as returned by MessageGroupStats::forLanguage
 	 * @param MessageGroup|null $parent MessageGroup (do not use, used internally only)
+	 * @param int $depth The depth level of nesting. Top level is zero.
 	 */
-	private function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ): string {
+	private function makeGroupGroup( $item, array $cache, MessageGroup $parent = null, int $depth = 0 ): string {
 		if ( !is_array( $item ) ) {
-			return $this->makeGroupRow( $item, $cache, $parent );
+			return $this->makeGroupRow( $item, $cache, $parent, $depth );
 		}
 
 		// The first group in the array is the parent AggregateMessageGroup
 		$out = '';
 		$top = array_shift( $item );
-		$out .= $this->makeGroupRow( $top, $cache, $parent );
+		$out .= $this->makeGroupRow( $top, $cache, $parent, $depth );
 
 		// Rest are children
 		foreach ( $item as $subgroup ) {
-			$out .= $this->makeGroupGroup( $subgroup, $cache, $top );
+			$out .= $this->makeGroupGroup( $subgroup, $cache, $top, $depth + 1 );
 		}
 
 		return $out;
@@ -408,7 +409,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private function makeGroupRow(
 		MessageGroup $group,
 		array $cache,
-		MessageGroup $parent = null
+		MessageGroup $parent = null,
+		int $depth = 0
 	): string {
 		$groupId = $group->getId();
 
@@ -448,13 +450,14 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$params[] = $this->getLanguage()->getCode();
 		$params[] = md5( $this->target );
 		$params[] = $parent ? $parent->getId() : '!';
+		$params[] = $depth;
 
 		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 
 		return $cache->getWithSetCallback(
 			$cache->makeKey( __METHOD__ . '-v3', implode( '-', $params ) ),
 			$cache::TTL_DAY,
-			function () use ( $translated, $total, $groupId, $group, $parent, $stats ) {
+			function () use ( $translated, $total, $groupId, $group, $parent, $stats, $depth ) {
 				// Any data variable read below should be part of the cache key above
 				$extra = [];
 				if ( $translated === $total ) {
@@ -466,6 +469,9 @@ class LanguageStatsSpecialPage extends SpecialPage {
 				$rowParams['class'] = get_class( $group );
 				if ( $parent ) {
 					$rowParams['data-parentgroup'] = $parent->getId();
+				}
+				if ( $depth ) {
+					$rowParams['data-depth'] = $depth;
 				}
 
 				return "\t" .
