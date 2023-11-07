@@ -4,7 +4,7 @@
 			"McDutchie"
 		]
 	},
-	"managetranslatorsandbox": "Gerer le cassa a sablo de traduction",
+	"managetranslatorsandbox": "Gerer le sabliera de traduction",
 	"tsb-filter-pending": "Requestas pendente",
 	"tsb-reminder-title-generic": "Completa le introduction pro devenir traductor",
 	"tsb-reminder-content-generic": "Salute $1,\n\nGratias pro haber te inscribite a {{SITENAME}}.\n\nSi tu completa le traductiones de test, le administratores te concedera le accesso complete de traduction in un breve periodo.\n\nVeni e face alcun altere traductiones al adresse:\n$2\n\n$3,\nLe equipa de {{SITENAME}}",
@@ -31,7 +31,7 @@
 	"tsb-translations-source": "Fonte",
 	"tsb-translations-user": "Traductiones del {{GENDER:$1|usator}}",
 	"tsb-translations-current": "Traductiones existente",
-	"tsb-delete-userpage-summary": "Deletion del pagina de usator de un usator in cassa a sablo",
+	"tsb-delete-userpage-summary": "Deletion del pagina de usator de un usator in sabliera",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Usator|Usatores}} rejectate",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Usator|Usatores}} acceptate",
 	"translationstash": "Benvenite",
@@ -44,9 +44,9 @@
 	"tsb-limit-reached-body": "Tu ha attingite le numero limite de traductiones pro le nove traductores. Nostre equipa va verificar e promover tu conto bentosto. Postea tu potera traducer sin limite.",
 	"tsb-no-requests-from-new-users": "Il non ha requestas de nove usatores",
 	"tsb-create-user-page": "Creation de un pagina de usator basic",
-	"log-name-translatorsandbox": "Registro del cassa a sablo de traduction",
-	"log-description-translatorsandbox": "Un registro de actiones sur usatores in le cassa a sablo de traduction",
+	"log-name-translatorsandbox": "Registro del sabliera de traduction",
+	"log-description-translatorsandbox": "Un registro de actiones sur usatores in le sabliera de traduction",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveva}} $3 a {{GENDER:$4|traductor}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rejectava}} le requesta de \"$3\" de devenir traductor",
-	"logentry-newusers-tsbpromoted": "Le conto de ustor $3 ha essite {{GENDER:$2|create}} per promotion ab le cassa a sablo"
+	"logentry-newusers-tsbpromoted": "Le conto de usator $3 ha essite {{GENDER:$2|create}} per promotion ab le sabliera"
 }

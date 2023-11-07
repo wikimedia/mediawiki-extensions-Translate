@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AmaryllisGardener",
-			"John Reid"
+			"John Reid",
+			"CiphriusKane"
 		]
 	},
 	"translate": "Owerset",
@@ -29,7 +30,7 @@
 	"translate-page-showing-none": "Naw messages tae shaw.",
 	"translate-next": "Nex page",
 	"translate-prev": "Preeveeoos page",
-	"translate-page-description-legend": "Information aneat the groop",
+	"translate-page-description-legend": "Information anent the groop",
 	"translate-page-description-hasoptional": "This message groop contains optional messages.\nOptional messages shid yinlie be owerset whan yer leid haes byordinair needs\nlike na uisin spaces or transliteratin proper names. $1",
 	"translate-page-description-hasoptional-open": "Shaw optional messages",
 	"translate-page-edit": "eedit",
@@ -37,9 +38,9 @@
 	"translate-edit-title": "Eedit \"$1\"",
 	"translate-edit-definition": "Message defineetion",
 	"translate-edit-contribute": "contreebute",
-	"translate-edit-no-information": "<em>This message haes naw documentation.\nGif ye ken whaur or hou this message is uised, ye can heelp ither owerseters bi eikin documentation til this message.</em>",
-	"translate-edit-information": "Information aneat message ($1)",
-	"translate-edit-warnings": "Warnishments aneat oncompleate owersets",
+	"translate-edit-no-information": "<em>This message haes nae documentation.\nGin ye ken whaur or hou this message is uised, ye can help ither owersetters bi eikin documentation til this message.</em>",
+	"translate-edit-information": "Information anent message ($1)",
+	"translate-edit-warnings": "Wairnins anent incomplete owersettins",
 	"translate-edit-tmmatch-source": "Owerset soorce tex: $1",
 	"translate-edit-nopermission": "Ye need owersetin richts tae owerset messages.",
 	"translate-edit-askpermission": "Get permeession",
@@ -69,7 +70,7 @@
 	"right-translate-groupreview": "Chynge wairkflaw state o message groops",
 	"translate-rc-translation-filter": "Filter owersets:",
 	"translate-rc-translation-filter-no": "Dae nawthing",
-	"translate-rc-translation-filter-only": "Shaw owersets yinlie",
+	"translate-rc-translation-filter-only": "Shaw owersettens anely",
 	"translate-rc-translation-filter-filter": "Filter oot owersets",
 	"translate-rc-translation-filter-site": "Chynges til site messages yinlie",
 	"translationstats": "Owersetin stateestics",
@@ -154,7 +155,7 @@
 	"translate-manage-toolong": "The mucklest processin time o $1 {{PLURAL:$1|seicont|seiconts}} exceeded.\nPlease haun the form in again tae continue processin.",
 	"translate-manage-import-summary": "Importin ae new version fae external soorce",
 	"translate-manage-conflict-summary": "Importin ae new version fae external soorce.\nPlease check.",
-	"translate-manage-intro-other": "Ablo is ae leet o owerset chynges in the leid $1.\nPlease luik the chynges ower n chuise aen action that ye want tae tak fer ilka update.\nGif ye chuise tae ignore chynges, than this action is yinlie temparie.",
+	"translate-manage-intro-other": "Ablo is ae leet o owerset chynges in the leid $1.\nPlease luik ower the chynges an wale ae action that ye want tae tak fur ilka update.\nGin ye wale tae ignore chynges, then this action is anely temporary.",
 	"translate-manage-import-done": "Import compleate!",
 	"importtranslations": "Import owersets",
 	"translate-import-from-local": "Local file uplaid:",
@@ -263,7 +264,7 @@
 	"tux-editor-close-tooltip": "Claise",
 	"tux-editor-expand-tooltip": "Mak mair muckle",
 	"tux-editor-message-tools-history": "Histerie",
-	"tux-editor-message-tools-delete": "Delyte",
+	"tux-editor-message-tools-delete": "Delete",
 	"tux-editor-message-tools-translations": "Aw owersets",
 	"tux-editor-loading": "Laidin...",
 	"translate-search-more-languages-info": "$1 mair {{PLURAL:$1|leid|leids}}",
