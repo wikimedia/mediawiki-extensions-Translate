@@ -333,7 +333,7 @@
 	"tux-editor-loading": "Učitavam...",
 	"translate-search-more-languages-info": "još $1 {{PLURAL:$1|jezik|jezika}}",
 	"translate-statsbar-tooltip": "$1% prevedeno, $2% pregledano",
-	"translate-statsbar-tooltip-with-fuzzy": "‎$1% prevedeno, $2% pregledano, $3% zastareno",
+	"translate-statsbar-tooltip-with-fuzzy": "$1% prevedeno, $2% pregledano, $3% zastareno",
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|grupa|grupe|grupa}}",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u drugoj kartici. Druga mogućnost je da prekopirate nesačuvane prijevode, prijavite se, vratite se na ovu stranicu i ponovo upišete svoje prijevode.",
 	"tux-nojs": "Ova stranica zahtijeva JavaScript.",

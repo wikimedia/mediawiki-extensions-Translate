@@ -322,7 +322,7 @@
 	"tux-status-proofread": "Gecontroleerd",
 	"tux-status-translated": "Vertaald",
 	"tux-status-saving": "Bezig met publiceren...",
-	"tux-status-unsaved": "Niet-gepubliceerd",
+	"tux-status-unsaved": "Niet gepubliceerd",
 	"tux-save-unknown-error": "Er is een onbekende fout opgetreden.",
 	"tux-editor-editsummary-placeholder": "Leg uw wijzigingen uit (optioneel)",
 	"tux-editor-paste-original-button-label": "Brontekst invoegen",
