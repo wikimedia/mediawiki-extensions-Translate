@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\MediaWikiServices;
 

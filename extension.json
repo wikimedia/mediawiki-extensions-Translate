@@ -134,7 +134,6 @@
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
-		"TranslateSandbox": "utils/TranslateSandbox.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
 		"TranslateToolbox": "utils/TranslateToolbox.php",
 		"TranslateYaml": "utils/TranslateYaml.php",

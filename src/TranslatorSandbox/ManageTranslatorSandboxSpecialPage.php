@@ -10,7 +10,6 @@ use MediaWiki\User\UserOptionsLookup;
 use MWTimestamp;
 use Sanitizer;
 use SpecialPage;
-use TranslateSandbox;
 use User;
 
 /**

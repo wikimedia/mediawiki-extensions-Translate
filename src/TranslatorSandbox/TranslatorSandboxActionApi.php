@@ -18,7 +18,6 @@ use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\User\UserOptionsManager;
 use RuntimeException;
 use Sanitizer;
-use TranslateSandbox;
 use User;
 use Wikimedia\ParamValidator\ParamValidator;
 

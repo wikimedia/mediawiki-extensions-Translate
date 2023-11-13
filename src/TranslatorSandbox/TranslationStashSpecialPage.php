@@ -13,7 +13,6 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\User\UserOptionsLookup;
 use SpecialPage;
 use Title;
-use TranslateSandbox;
 
 /**
  * Special page for new users to translate example messages.
