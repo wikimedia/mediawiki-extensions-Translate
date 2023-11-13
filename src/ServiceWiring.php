@@ -37,6 +37,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
@@ -261,6 +262,25 @@ return [
 			$services->getDBLoadBalancer(),
 			$services->get( 'Translate:TranslatableBundleStatusStore' ),
 			$services->get( 'Translate:TranslatablePageParser' ),
+		);
+	},
+
+	'Translate:TranslateSandbox' => static function ( MediaWikiServices $services ): TranslateSandbox
+	{
+		return new TranslateSandbox(
+			$services->getUserFactory(),
+			$services->getDBLoadBalancer(),
+			$services->getPermissionManager(),
+			$services->getAuthManager(),
+			$services->getUserGroupManager(),
+			$services->getActorStore(),
+			$services->getUserOptionsManager(),
+			$services->getJobQueueGroup(),
+			$services->get( 'Translate:HookRunner' ),
+			new ServiceOptions(
+				TranslateSandbox::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			)
 		);
 	},
 

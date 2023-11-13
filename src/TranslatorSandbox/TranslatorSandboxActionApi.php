@@ -40,6 +40,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 	private $userOptionsLookup;
 	/** @var ServiceOptions */
 	private $options;
+	private TranslateSandbox $translateSandbox;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
@@ -53,6 +54,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 		UserOptionsManager $userOptionsManager,
 		WikiPageFactory $wikiPageFactory,
 		UserOptionsLookup $userOptionsLookup,
+		TranslateSandbox $translateSandbox,
 		ServiceOptions $options
 	) {
 		parent::__construct( $mainModule, $moduleName );
@@ -61,6 +63,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 		$this->userOptionsManager = $userOptionsManager;
 		$this->wikiPageFactory = $wikiPageFactory;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->translateSandbox = $translateSandbox;
 		$this->options = $options;
 	}
 
@@ -123,7 +126,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 		}
 
 		try {
-			$user = TranslateSandbox::addUser( $username, $email, $password );
+			$user = $this->translateSandbox->addUser( $username, $email, $password );
 		} catch ( RuntimeException $e ) {
 			// Do not log this error as it might leak private information
 			if ( $e->getCode() === TranslateSandbox::USER_CREATION_FAILURE ) {
@@ -153,10 +156,10 @@ class TranslatorSandboxActionApi extends ApiBase {
 			$user = $this->userFactory->newFromId( $userId );
 			$userpage = $user->getUserPage();
 
-			TranslateSandbox::sendEmail( $this->getUser(), $user, 'rejection' );
+			$this->translateSandbox->sendEmail( $this->getUser(), $user, 'rejection' );
 
 			try {
-				TranslateSandbox::deleteUser( $user );
+				$this->translateSandbox->deleteUser( $user );
 			} catch ( UserNotSandboxedException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
@@ -181,7 +184,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 			$user = $this->userFactory->newFromId( $userId );
 
 			try {
-				TranslateSandbox::promoteUser( $user );
+				$this->translateSandbox->promoteUser( $user );
 			} catch ( UserNotSandboxedException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
@@ -189,7 +192,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 				);
 			}
 
-			TranslateSandbox::sendEmail( $this->getUser(), $user, 'promotion' );
+			$this->translateSandbox->sendEmail( $this->getUser(), $user, 'promotion' );
 
 			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promoted' );
 			$logEntry->setPerformer( $this->getUser() );
@@ -211,7 +214,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 			$target = $this->userFactory->newFromId( $userId );
 
 			try {
-				TranslateSandbox::sendEmail( $this->getUser(), $target, 'reminder' );
+				$this->translateSandbox->sendEmail( $this->getUser(), $target, 'reminder' );
 			} catch ( UserNotSandboxedException $e ) {
 				$this->dieWithError(
 					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],

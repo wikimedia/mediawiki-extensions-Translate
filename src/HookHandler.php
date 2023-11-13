@@ -296,7 +296,8 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 				'class' => ManageTranslatorSandboxSpecialPage::class,
 				'services' => [
 					'Translate:TranslationStashReader',
-					'UserOptionsLookup'
+					'UserOptionsLookup',
+					'Translate:TranslateSandbox',
 				],
 				'args' => [
 					static function () {
@@ -361,7 +362,8 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 					'UserNameUtils',
 					'UserOptionsManager',
 					'WikiPageFactory',
-					'UserOptionsLookup'
+					'UserOptionsLookup',
+					'Translate:TranslateSandbox',
 				],
 				'args' => [
 					static function () {

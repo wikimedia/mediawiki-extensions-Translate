@@ -1,26 +1,33 @@
 <?php
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use ApiBase;
 use ApiMessage;
 use InvalidArgumentException;
+use JobQueueGroup;
 use MailAddress;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\ActorStore;
 use MediaWiki\User\User;
 use MediaWiki\User\UserArray;
 use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserGroupManager;
+use MediaWiki\User\UserOptionsManager;
 use RuntimeException;
 use SiteStatsUpdate;
 use UnexpectedValueException;
+use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -31,6 +38,47 @@ use Wikimedia\ScopedCallback;
  * @license GPL-2.0-or-later
  */
 class TranslateSandbox {
+	public const CONSTRUCTOR_OPTIONS = [
+		'EmergencyContact',
+		'TranslateSandboxPromotedGroup',
+		'TranslateUseSandbox',
+	];
+
+	private UserFactory $userFactory;
+	private ILoadBalancer $loadBalancer;
+	private PermissionManager $permissionManager;
+	private AuthManager $authManager;
+	private UserGroupManager $userGroupManager;
+	private ActorStore $actorStore;
+	private UserOptionsManager $userOptionsManager;
+	private JobQueueGroup $jobQueueGroup;
+	private HookRunner $hookRunner;
+	private ServiceOptions $options;
+
+	public function __construct(
+		UserFactory $userFactory,
+		ILoadBalancer $loadBalancer,
+		PermissionManager $permissionManager,
+		AuthManager $authManager,
+		UserGroupManager $userGroupManager,
+		ActorStore $actorStore,
+		UserOptionsManager $userOptionsManager,
+		JobQueueGroup $jobQueueGroup,
+		HookRunner $hookRunner,
+		ServiceOptions $options
+	) {
+		$this->userFactory = $userFactory;
+		$this->loadBalancer = $loadBalancer;
+		$this->permissionManager = $permissionManager;
+		$this->authManager = $authManager;
+		$this->userGroupManager = $userGroupManager;
+		$this->actorStore = $actorStore;
+		$this->userOptionsManager = $userOptionsManager;
+		$this->jobQueueGroup = $jobQueueGroup;
+		$this->hookRunner = $hookRunner;
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->options = $options;
+	}
 
 	/**
 	 * Custom exception code used when user creation fails in order to differentiate between
@@ -39,9 +87,8 @@ class TranslateSandbox {
 	public const USER_CREATION_FAILURE = 56739;
 
 	/** Adds a new user without doing much validation. */
-	public static function addUser( string $name, string $email, string $password ): User {
-		$mwServices = MediaWikiServices::getInstance();
-		$user = $mwServices->getUserFactory()->newFromName( $name, UserFactory::RIGOR_CREATABLE );
+	public function addUser( string $name, string $email, string $password ): User {
+		$user = $this->userFactory->newFromName( $name, UserFactory::RIGOR_CREATABLE );
 
 		if ( !$user ) {
 			throw new InvalidArgumentException( 'Invalid user name' );
@@ -55,14 +102,12 @@ class TranslateSandbox {
 			'realname' => '',
 		];
 
-		$permissionManager = $mwServices->getPermissionManager();
 		$creator = TranslateUserManager::getUser();
-		$guard = $permissionManager->addTemporaryUserRights( $creator, 'createaccount' );
+		$guard = $this->permissionManager->addTemporaryUserRights( $creator, 'createaccount' );
 
-		$authManager = $mwServices->getAuthManager();
-		$reqs = $authManager->getAuthenticationRequests( AuthManager::ACTION_CREATE );
+		$reqs = $this->authManager->getAuthenticationRequests( AuthManager::ACTION_CREATE );
 		$reqs = AuthenticationRequest::loadRequestsFromSubmission( $reqs, $data );
-		$res = $authManager->beginAccountCreation( $creator, $reqs, 'null:' );
+		$res = $this->authManager->beginAccountCreation( $creator, $reqs, 'null:' );
 
 		ScopedCallback::consume( $guard );
 
@@ -82,7 +127,7 @@ class TranslateSandbox {
 				// A provider requested further user input. Abort but clean up first if it was a
 				// secondary provider (in which case the user was created).
 				if ( $user->getId() ) {
-					self::deleteUser( $user, 'force' );
+					$this->deleteUser( $user, 'force' );
 				}
 
 				throw new RuntimeException(
@@ -91,7 +136,7 @@ class TranslateSandbox {
 		}
 
 		// group-translate-sandboxed group-translate-sandboxed-member
-		$mwServices->getUserGroupManager()->addUserToGroup( $user, 'translate-sandboxed' );
+		$this->userGroupManager->addUserToGroup( $user, 'translate-sandboxed' );
 
 		return $user;
 	}
@@ -103,8 +148,7 @@ class TranslateSandbox {
 	 * @param string $force If set to 'force' will skip the little validation we have.
 	 * @throws UserNotSandboxedException
 	 */
-	public static function deleteUser( User $user, string $force = '' ): void {
-		$mwServices = MediaWikiServices::getInstance();
+	public function deleteUser( User $user, string $force = '' ): void {
 		$uid = $user->getId();
 		$actorId = $user->getActorId();
 
@@ -113,12 +157,12 @@ class TranslateSandbox {
 		}
 
 		// Delete from database
-		$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->delete( 'user', [ 'user_id' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
 
-		$mwServices->getActorStore()->deleteActor( $user, $dbw );
+		$this->actorStore->deleteActor( $user, $dbw );
 
 		// Assume no joins are needed for logging or recentchanges
 		$dbw->delete( 'logging', [ 'log_actor' => $actorId ], __METHOD__ );
@@ -138,7 +182,7 @@ class TranslateSandbox {
 	}
 
 	/** Get all sandboxed users. */
-	public static function getUsers(): UserArray {
+	public function getUsers(): UserArray {
 		$dbw = Utilities::getSafeReadDB();
 		$userQuery = User::getQueryInfo();
 		$tables = array_merge( $userQuery['tables'], [ 'user_groups' ] );
@@ -159,28 +203,22 @@ class TranslateSandbox {
 	 * Removes the user from the sandbox.
 	 * @throws UserNotSandboxedException
 	 */
-	public static function promoteUser( User $user ): void {
-		global $wgTranslateSandboxPromotedGroup;
+	public function promoteUser( User $user ): void {
+		$translateSandboxPromotedGroup = $this->options->get( 'TranslateSandboxPromotedGroup' );
 
 		if ( !self::isSandboxed( $user ) ) {
 			throw new UserNotSandboxedException();
 		}
 
-		$mwServices = MediaWikiServices::getInstance();
-
-		$userGroupManager = $mwServices->getUserGroupManager();
-		$userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
-
-		if ( $wgTranslateSandboxPromotedGroup ) {
-			$userGroupManager->addUserToGroup( $user, $wgTranslateSandboxPromotedGroup );
+		$this->userGroupManager->removeUserFromGroup( $user, 'translate-sandboxed' );
+		if ( $translateSandboxPromotedGroup ) {
+			$this->userGroupManager->addUserToGroup( $user, $translateSandboxPromotedGroup );
 		}
 
-		$userOptionsManager = $mwServices->getUserOptionsManager();
-		$userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
-		$userOptionsManager->saveOptions( $user );
+		$this->userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
+		$this->userOptionsManager->saveOptions( $user );
 
-		$hookRunner = Services::getInstance()->getHookRunner();
-		$hookRunner->onTranslate_TranslatorSandbox_UserPromoted( $user );
+		$this->hookRunner->onTranslate_TranslatorSandbox_UserPromoted( $user );
 	}
 
 	/**
@@ -190,11 +228,10 @@ class TranslateSandbox {
 	 * @param string $type 'reminder' or 'promotion'
 	 * @throws UserNotSandboxedException
 	 */
-	public static function sendEmail( User $sender, User $target, string $type ): void {
-		global $wgEmergencyContact;
+	public function sendEmail( User $sender, User $target, string $type ): void {
+		$emergencyContact = $this->options->get( 'EmergencyContact' );
 
-		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-		$targetLang = $userOptionsLookup->getOption( $target, 'language' );
+		$targetLang = $this->userOptionsManager->getOption( $target, 'language' );
 
 		switch ( $type ) {
 			case 'reminder':
@@ -234,32 +271,24 @@ class TranslateSandbox {
 		$params = [
 			'user' => $target->getId(),
 			'to' => MailAddress::newFromUser( $target ),
-			'from' => new MailAddress( $wgEmergencyContact ),
-			'replyto' => new MailAddress( $wgEmergencyContact ),
+			'from' => new MailAddress( $emergencyContact ),
+			'replyto' => new MailAddress( $emergencyContact ),
 			'subj' => $subject,
 			'body' => $body,
 			'emailType' => $type,
 		];
 
-		$services = MediaWikiServices::getInstance();
-		$userOptionsManager = $services->getUserOptionsManager();
-
-		$reminders = $userOptionsManager->getOption( $target, 'translate-sandbox-reminders' );
+		$reminders = $this->userOptionsManager->getOption( $target, 'translate-sandbox-reminders' );
 		$reminders = $reminders ? explode( '|', $reminders ) : [];
 		$reminders[] = wfTimestamp();
 
-		$userOptionsManager->setOption( $target, 'translate-sandbox-reminders', implode( '|', $reminders ) );
-		$userOptionsManager->saveOptions( $target );
+		$this->userOptionsManager->setOption( $target, 'translate-sandbox-reminders', implode( '|', $reminders ) );
+		$this->userOptionsManager->saveOptions( $target );
 
-		$services->getJobQueueGroup()->push( TranslateSandboxEmailJob::newJob( $params ) );
+		$this->jobQueueGroup->push( TranslateSandboxEmailJob::newJob( $params ) );
 	}
 
-	/**
-	 * Shortcut for checking if given user is in the sandbox.
-	 * @param User $user
-	 * @return bool
-	 * @since 2013.06
-	 */
+	/** Shortcut for checking if given user is in the sandbox. */
 	public static function isSandboxed( User $user ): bool {
 		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 		return in_array( 'translate-sandboxed', $userGroupManager->getUserGroups( $user ), true );
@@ -297,8 +326,8 @@ class TranslateSandbox {
 		return false;
 	}
 
-	/// Hook: onGetPreferences
-	public static function onGetPreferences( $user, &$preferences ): bool {
+	/** Hook: onGetPreferences */
+	public static function onGetPreferences( User $user, array &$preferences ): bool {
 		$preferences['translate-sandbox'] = $preferences['translate-sandbox-reminders'] =
 			[ 'type' => 'api' ];
 

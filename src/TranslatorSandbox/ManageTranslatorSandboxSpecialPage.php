@@ -25,6 +25,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 	private $stash;
 	/** @var UserOptionsLookup */
 	private $userOptionsLookup;
+	private TranslateSandbox $translateSandbox;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
@@ -33,10 +34,12 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 	public function __construct(
 		TranslationStashReader $stash,
 		UserOptionsLookup $userOptionsLookup,
+		TranslateSandbox $translateSandbox,
 		ServiceOptions $options
 	) {
 		$this->stash = $stash;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->translateSandbox = $translateSandbox;
 
 		parent::__construct(
 			'ManageTranslatorSandbox',
@@ -119,7 +122,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 	private function makeList(): string {
 		$items = [];
 		$requests = [];
-		$users = TranslateSandbox::getUsers();
+		$users = $this->translateSandbox->getUsers();
 
 		/** @var User $user */
 		foreach ( $users as $user ) {

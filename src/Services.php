@@ -25,6 +25,7 @@ use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
+use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashReader;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
@@ -171,6 +172,11 @@ class Services implements ContainerInterface {
 	/** @since 2022.03 */
 	public function getTranslatablePageStore(): TranslatablePageStore {
 		return $this->get( 'Translate:TranslatablePageStore' );
+	}
+
+	/** @since 2023.11 */
+	public function getTranslateSandbox(): TranslateSandbox {
+		return $this->get( 'Translate:TranslateSandbox' );
 	}
 
 	/** @since 2020.11 */

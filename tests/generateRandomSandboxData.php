@@ -7,8 +7,8 @@
  * @file
  */
 
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
-use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\MediaWikiServices;
 
@@ -34,11 +34,12 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 
 		$languages = array_keys( MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames() );
 
+		$translateSandbox = Services::getInstance()->getTranslateSandbox();
 		for ( $i = 0; $i < $users; $i++ ) {
 			$username = 'Pupu' . wfRandomString( 6 );
 			$password = wfRandomString( 12 );
 			$email = "$username.$password@blackhole.io";
-			$user = TranslateSandbox::addUser( $username, $password, $email );
+			$user = $translateSandbox->addUser( $username, $password, $email );
 
 			$language = $languages[rand( 0, count( $languages ) - 1 )];
 

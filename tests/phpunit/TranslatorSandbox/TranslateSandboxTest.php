@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace Mediawiki\Extensions\TranslatorSandbox;
 
 use MediaWiki\Extension\Translate\HookHandler;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserNotSandboxedException;
 use MediaWiki\MediaWikiServices;
@@ -28,7 +29,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateUseSandbox' => true,
 			'wgTranslateSandboxPromotedGroup' => 'translator',
 		] );
-		$this->translateSandbox = new TranslateSandbox();
+		$this->translateSandbox = Services::getInstance()->getTranslateSandbox();
 		// Make sure the hooks are installed even if $wgTranslateUseSandbox is false.
 		HookHandler::setupTranslate();
 		$this->tablesUsed[] = 'user';
