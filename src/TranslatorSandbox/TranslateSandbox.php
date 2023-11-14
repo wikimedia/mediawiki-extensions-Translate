@@ -183,18 +183,18 @@ class TranslateSandbox {
 
 	/** Get all sandboxed users. */
 	public function getUsers(): UserArray {
-		$dbw = Utilities::getSafeReadDB();
-		$userQuery = User::getQueryInfo();
-		$tables = array_merge( $userQuery['tables'], [ 'user_groups' ] );
-		$fields = $userQuery['fields'];
-		$conds = [
-			'ug_group' => 'translate-sandboxed',
-		];
-		$joins = [
-			'user_groups' => [ 'JOIN', 'ug_user = user_id' ],
-		] + $userQuery['joins'];
+		$dbr = Utilities::getSafeReadDB();
+		// MW < 1.41
+		if ( method_exists( User::class, 'newQueryBuilder' ) ) {
+			$query = User::newQueryBuilder( $dbr );
+		} else {
+			$query = $dbr->newSelectQueryBuilder()->queryInfo( User::getQueryInfo() );
+		}
 
-		$res = $dbw->select( $tables, $fields, $conds, __METHOD__, [], $joins );
+		$res = $query->join( 'user_groups', null, 'ug_user = user_id' )
+			->where( [ 'ug_group' => 'translate-sandboxed' ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return UserArray::newFromResult( $res );
 	}
