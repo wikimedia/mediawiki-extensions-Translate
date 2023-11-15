@@ -171,6 +171,7 @@
 		"PageContentLanguage": "MediaWiki\\Extension\\Translate\\HookHandler::onPageContentLanguage",
 		"EditPage::showEditForm:initial": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
+		"ApiCheckCanExecute": "translatorSandbox",
 		"getUserPermissionsErrorsExpensive": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disallowLangTranslations",
 		"LanguageGetTranslatedLanguageNames": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"TranslateSupportedLanguages": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
@@ -184,7 +185,10 @@
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage::tabify",
 			"MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage::tabify"
 		],
-		"GetPreferences": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateInterfacePreferences::translationAssistLanguages",
+		"GetPreferences": [
+			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateInterfacePreferences::translationAssistLanguages",
+			"translateSandbox"
+		],
 		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
 		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
 		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
@@ -223,7 +227,8 @@
 		"CodeEditorGetPageLanguage": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::onCodeEditorGetPageLanguage",
 		"RevisionRecordInserted": "main",
 		"ListDefinedTags": "main",
-		"ChangeTagsListActive": "main"
+		"ChangeTagsListActive": "main",
+		"UserGetRights": "translateSandbox"
 	},
 	"HookHandlers": {
 		"main": {
@@ -242,6 +247,12 @@
 		},
 		"messageBundle": {
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
+		},
+		"translateSandbox": {
+			"class": "MediaWiki\\Extension\\Translate\\TranslatorSandbox\\TranslateSandboxHookHandler",
+			"services": [
+				"MainConfig"
+			]
 		}
 	},
 	"SpecialPages": {

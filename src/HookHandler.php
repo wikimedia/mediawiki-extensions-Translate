@@ -32,7 +32,6 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons;
 use MediaWiki\Extension\Translate\TranslatorSandbox\ManageTranslatorSandboxSpecialPage;
-use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandboxEmailJob;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
@@ -327,10 +326,6 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			$wgDefaultUserOptions['translate-sandbox'] = '';
 			// right-translate-sandboxmanage action-translate-sandboxmanage
 			$wgAvailableRights[] = 'translate-sandboxmanage';
-
-			$hooks['GetPreferences'][] = [ TranslateSandbox::class, 'onGetPreferences' ];
-			$hooks['UserGetRights'][] = [ TranslateSandbox::class, 'enforcePermissions' ];
-			$hooks['ApiCheckCanExecute'][] = [ TranslateSandbox::class, 'onApiCheckCanExecute' ];
 
 			global $wgLogTypes, $wgLogActionsHandlers;
 			// log-name-translatorsandbox log-description-translatorsandbox

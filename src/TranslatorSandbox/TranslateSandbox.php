@@ -3,8 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
-use ApiBase;
-use ApiMessage;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MailAddress;
@@ -41,7 +39,6 @@ class TranslateSandbox {
 	public const CONSTRUCTOR_OPTIONS = [
 		'EmergencyContact',
 		'TranslateSandboxPromotedGroup',
-		'TranslateUseSandbox',
 	];
 
 	private UserFactory $userFactory;
@@ -292,68 +289,5 @@ class TranslateSandbox {
 	public static function isSandboxed( User $user ): bool {
 		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 		return in_array( 'translate-sandboxed', $userGroupManager->getUserGroups( $user ), true );
-	}
-
-	/**
-	 * Hook: UserGetRights
-	 * @param User $user
-	 * @param array &$rights
-	 * @return bool
-	 */
-	public static function enforcePermissions( User $user, array &$rights ): bool {
-		global $wgTranslateUseSandbox;
-
-		if ( !$wgTranslateUseSandbox ) {
-			return true;
-		}
-
-		if ( !self::isSandboxed( $user ) ) {
-			return true;
-		}
-
-		// right-translate-sandboxaction action-translate-sandboxaction
-		$rights = [
-			'editmyoptions',
-			'editmyprivateinfo',
-			'read',
-			'readapi',
-			'translate-sandboxaction',
-			'viewmyprivateinfo',
-			'writeapi',
-		];
-
-		// Do not let other hooks add more actions
-		return false;
-	}
-
-	/** Hook: onGetPreferences */
-	public static function onGetPreferences( User $user, array &$preferences ): bool {
-		$preferences['translate-sandbox'] = $preferences['translate-sandbox-reminders'] =
-			[ 'type' => 'api' ];
-
-		return true;
-	}
-
-	/**
-	 * Inclusion listing for certain API modules. See also enforcePermissions.
-	 * Hook: ApiCheckCanExecute
-	 */
-	public static function onApiCheckCanExecute( ApiBase $module, User $user, string &$message ): bool {
-		$inclusionList = [
-			// Obviously this is needed to get out of the sandbox
-			TranslationStashActionApi::class,
-			// Used by UniversalLanguageSelector for example
-			'ApiOptions'
-		];
-
-		if ( self::isSandboxed( $user ) ) {
-			$class = get_class( $module );
-			if ( $module->isWriteMode() && !in_array( $class, $inclusionList, true ) ) {
-				$message = ApiMessage::create( 'apierror-writeapidenied' );
-				return false;
-			}
-		}
-
-		return true;
 	}
 }
