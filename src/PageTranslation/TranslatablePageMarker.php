@@ -15,10 +15,12 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
 use Message;
 use MessageIndex;
+use RecentChange;
 use Status;
 use TitleFormatter;
 use TitleParser;
@@ -259,7 +261,7 @@ class TranslatablePageMarker {
 	public function markForTranslation(
 		TranslatablePageMarkOperation $operation,
 		TranslatablePageSettings $pageSettings,
-		UserIdentity $user
+		User $user
 	): int {
 		if ( !$operation->isValid() ) {
 			throw new LogicException( 'Trying to mark a page for translation that is not valid' );
@@ -455,10 +457,10 @@ class TranslatablePageMarker {
 
 	private function updateSectionMarkers(
 		TranslatablePage $page,
-		UserIdentity $user,
+		Authority $authority,
 		TranslatablePageMarkOperation $operation
 	): ?int {
-		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getTitle() )->newPageUpdater( $user );
+		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getTitle() )->newPageUpdater( $authority );
 		$content = ContentHandler::makeContent(
 			$operation->getParserOutput()->sourcePageTextForSaving(),
 			$page->getTitle()
@@ -466,8 +468,12 @@ class TranslatablePageMarker {
 		$comment = CommentStoreComment::newUnsavedComment(
 			Message::newFromKey( 'tpt-mark-summary' )->inContentLanguage()->text()
 		);
-		$newRevisionRecord = $pageUpdater->setContent( SlotRecord::MAIN, $content )
-			->saveRevision( $comment, EDIT_FORCE_BOT | EDIT_UPDATE );
+
+		$pageUpdater->setContent( SlotRecord::MAIN, $content );
+		if ( $authority->authorizeWrite( 'autopatrol', $page->getTitle() ) ) {
+			$pageUpdater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+		}
+		$newRevisionRecord = $pageUpdater->saveRevision( $comment, EDIT_FORCE_BOT | EDIT_UPDATE );
 
 		$status = $pageUpdater->getStatus();
 		if ( !$status->isOK() ) {
