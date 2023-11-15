@@ -143,7 +143,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				$forceLatestSyntaxVersion,
 				$enableTransclusion
 			),
-			$this->getTestSysop()->getUserIdentity()
+			$this->getTestSysop()->getUser()
 		);
 		$this->assertEquals(
 			3,
