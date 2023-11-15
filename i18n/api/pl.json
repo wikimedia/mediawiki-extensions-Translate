@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Rzuwig"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Zarządzaj grupami zbiorczymi komunikatów.",
@@ -46,5 +47,6 @@
 	"apierror-translate-sandboxdisabled": "Funkcja brudnopisu nie jest używana",
 	"apierror-translate-unknownmessage": "Nieznany komunikat",
 	"apiwarn-translate-alreadyreviewedbyyou": "Już oznaczono jako przejrzane przez ciebie",
-	"apiwarn-translate-language-disabled-source": "Językiem źródłowym tej grupy jest $1. Wybierz inny język, na który chcesz tłumaczyć."
+	"apiwarn-translate-language-disabled-source": "Językiem źródłowym tej grupy jest $1. Wybierz inny język, na który chcesz tłumaczyć.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Tłumaczysz na wariant językowy: <bdi>$1</bdi>.</strong> Język <bdi>$2</bdi> jest językiem źródłowym dla tego komunikatu. Upewnij się, że wybrany język jest poprawny i uwzględnij różnice między wariantami językowymi, aby zapewnić dobre tłumaczenie."
 }
