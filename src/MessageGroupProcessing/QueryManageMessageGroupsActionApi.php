@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
+use MediaWiki\Extension\Translate\Utilities\StringComparators\EditDistanceStringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageChangeStorage;
 use Title;
@@ -77,7 +77,7 @@ class QueryManageMessageGroupsActionApi extends ApiQueryBase {
 		$targetMsg = $sourceChanges->findMessage(
 			$languageCode, $msgKey, [ MessageSourceChange::ADDITION, MessageSourceChange::RENAME ]
 		);
-		$stringComparator = new SimpleStringComparator();
+		$stringComparator = new EditDistanceStringComparator();
 		$renameList = [];
 
 		// compare deleted messages with the target message and get the similarity.

@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
+use MediaWiki\Extension\Translate\Utilities\StringComparators\EditDistanceStringComparator;
 use MediaWiki\MediaWikiServices;
 use MessageHandle;
 use Title;
@@ -243,6 +244,7 @@ class DatabaseTtmServer extends TTMServer implements WritableTtmServer, Readable
 
 		$lenA = mb_strlen( $text );
 		$results = [];
+		$stringComparator = new EditDistanceStringComparator();
 		foreach ( $res as $row ) {
 			if ( microtime( true ) > $timeLimit ) {
 				// Having no suggestions is better than preventing translation
@@ -259,7 +261,7 @@ class DatabaseTtmServer extends TTMServer implements WritableTtmServer, Readable
 				// two strings of length 2250 ~ 30s
 				$dist = $len;
 			} else {
-				$dist = self::levenshtein( $a, $b, $lenA, $lenB );
+				$dist = $stringComparator->levenshtein( $a, $b, $lenA, $lenB );
 			}
 			$quality = 1 - ( $dist * 0.9 / $len );
 

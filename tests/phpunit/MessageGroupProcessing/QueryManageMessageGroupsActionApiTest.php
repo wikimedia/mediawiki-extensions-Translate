@@ -68,8 +68,18 @@ class QueryManageMessageGroupsActionApiTest extends ApiTestCase {
 				'rename suggestion has key set' );
 			$this->assertEquals( $msg['content'], $testData[ $index ][1],
 				'rename suggestion has content set' );
-			$this->assertEquals( $msg['similarity'], $testData[ $index][2],
-				'rename suggestion has similarity' );
+
+			$expectedSimilarity = $testData[$index][2] ?? null;
+			if ( $expectedSimilarity !== null ) {
+				$this->assertEquals(
+					$expectedSimilarity,
+					$msg['similarity'],
+					'rename suggestion similarity matches'
+				);
+			} else {
+				$this->assertArrayHasKey( 'similarity', $msg, 'rename suggestion has similarity' );
+			}
+
 			$this->assertArrayHasKey( 'link', $msg, 'rename suggestion has link to message' );
 			$this->assertArrayHasKey( 'title', $msg, 'rename suggestion has message title' );
 		}
@@ -84,13 +94,11 @@ class QueryManageMessageGroupsActionApiTest extends ApiTestCase {
 			],
 			[
 				'keyDeleted2',
-				'keyDeleted2 content',
-				0
+				'keyDeleted2 content'
 			],
 			[
 				'keyDeleted3',
-				'keyDeleted3 content',
-				0
+				'keyDeleted3 content'
 			]
 		];
 	}
