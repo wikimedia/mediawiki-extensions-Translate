@@ -322,3 +322,13 @@ mw.translate.MessageRenameDialog.prototype.clearMessages = function () {
 	this.form.$element.find( '.smg-rename-list' ).remove();
 	this.hideNotice();
 };
+
+/**
+ * @inheritDoc
+ */
+mw.translate.MessageRenameDialog.prototype.getReadyProcess = function ( data ) {
+	return mw.translate.MessageRenameDialog.super.prototype.getReadyProcess.call( this, data )
+		.next( function () {
+			this.messageSearch.$element.find( 'input' ).trigger( 'focus' );
+		}, this );
+};
