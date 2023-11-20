@@ -32,7 +32,8 @@
 			"Danniel07",
 			"Destinid10 2",
 			"Josuert",
-			"DarkGames26"
+			"DarkGames26",
+			"No se"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
@@ -146,8 +147,11 @@
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|eliminó}} la página traducible $3 del grupo agregado $4",
 	"log-action-filter-pagetranslation": "Tipo de acción:",
 	"log-action-filter-pagetranslation-mark": "Marcar para su traducción",
+	"log-action-filter-pagetranslation-unmark": "Eliminación de la traducción",
 	"log-action-filter-pagetranslation-move": "Traslados de página",
 	"log-action-filter-pagetranslation-delete": "Eliminación de páginas",
+	"log-action-filter-pagetranslation-encourage": "Alentación de traducción",
+	"log-action-filter-pagetranslation-discourage": "Desalentación de traducción",
 	"log-action-filter-pagetranslation-prioritylanguages": "Modificación de idiomas prioritarios",
 	"log-action-filter-pagetranslation-aggregategroups": "Modificación de grupos del agregado",
 	"pt-movepage-title": "Trasladar la página traducible $1",
