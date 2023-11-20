@@ -10,7 +10,7 @@
 	"translate-page-group": "Баг",
 	"translate-page-language": "Келн",
 	"translate-page-limit": "Кизәрллт",
-	"translate-page-limit-option": "$1 {{PLURAL:$1|зәңг|зәңгс|зәңгс}} халхд",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|зәңг|зәңгс}} халхд",
 	"translate-submit": "Үзүлх",
 	"translate-page-navigation-legend": "Залурдлһ",
 	"translate-page-showing": "Showing messages from $1 to $2 of $3.",
