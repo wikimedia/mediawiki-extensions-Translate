@@ -36,7 +36,7 @@
 
 .mw-pt-languages-list li {
 	display: inline-block;
-	margin: 0 0.4em 0 0;
+	margin: 0 0.2em 0 0;
 }
 
 .mw-pt-languages-selected,
@@ -56,8 +56,18 @@
 	border-radius: 50%;
 	border: 2px solid #a2a9b1;
 	box-sizing: border-box;
-	margin-left: 3px;
-	margin-right: 3px;
+	margin-inline-start: 3px;
+	margin-inline-end: 5px;
+}
+
+.mw-pt-progress > a {
+	flex-grow: 1;
+}
+
+/** Remove default Vector image that appears when JS is disabled */
+.client-nojs ul li.mw-pt-progress--none {
+	list-style-image: none;
+	list-style-type: none;
 }
 
 /* Need very high specificity to override skin styles in the sidebar */
