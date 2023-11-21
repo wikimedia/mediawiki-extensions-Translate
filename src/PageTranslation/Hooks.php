@@ -57,6 +57,7 @@ use WikitextContent;
  * @ingroup PageTranslation
  */
 class Hooks {
+	private const PAGEPROP_HAS_LANGUAGES_TAG = 'translate-has-languages-tag';
 	// Uuugly hacks
 	public static $allowTargetEdit = false;
 	// Check if job queue is running
@@ -497,10 +498,9 @@ class Hooks {
 			self::$renderingContext = false;
 		} );
 
-		// Add a dummy language link that is removed in self::addLanguageLinks.
-		if ( $wgPageTranslationLanguageList === 'sidebar-fallback' ) {
-			$parser->getOutput()->addLanguageLink( 'x-pagetranslation-tag' );
-		}
+		// Store a property that we can avoid adding language links when
+		// $wgPageTranslationLanguageList === 'sidebar-fallback'
+		$parser->getOutput()->setPageProperty( self::PAGEPROP_HAS_LANGUAGES_TAG, true );
 
 		$currentTitle = $parser->getTitle();
 		$pageStatus = self::getTranslatablePageStatus( $currentTitle );
@@ -703,20 +703,16 @@ class Hooks {
 	public static function addLanguageLinks( Title $title, array &$languageLinks ) {
 		global $wgPageTranslationLanguageList;
 
-		$hasLanguagesTag = false;
-		foreach ( $languageLinks as $index => $name ) {
-			if ( $name === 'x-pagetranslation-tag' ) {
-				$hasLanguagesTag = true;
-				unset( $languageLinks[ $index ] );
-			}
-		}
-
 		if ( $wgPageTranslationLanguageList === 'tag-only' ) {
 			return;
 		}
 
-		if ( $wgPageTranslationLanguageList === 'sidebar-fallback' && $hasLanguagesTag ) {
-			return;
+		if ( $wgPageTranslationLanguageList === 'sidebar-fallback' ) {
+			$pageProps = MediaWikiServices::getInstance()->getPageProps();
+			$languageProp = $pageProps->getProperties( $title, self::PAGEPROP_HAS_LANGUAGES_TAG );
+			if ( $languageProp !== [] ) {
+				return;
+			}
 		}
 
 		// $wgPageTranslationLanguageList === 'sidebar-always' OR 'sidebar-only'
