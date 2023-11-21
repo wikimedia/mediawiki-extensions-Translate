@@ -158,6 +158,7 @@
 	"log-action-filter-pagetranslation-discourage": "Desalentación de traducción",
 	"log-action-filter-pagetranslation-prioritylanguages": "Modificación de idiomas prioritarios",
 	"log-action-filter-pagetranslation-aggregategroups": "Modificación de grupos del agregado",
+	"log-description-messagebundle": "Registro de acciones relacionadas con el sistema de paquete de mensajes",
 	"log-name-messagebundle": "Registro de paquetes de mensajes",
 	"logentry-messagebundle-moveok": "$1 {{GENDER:$2|completó}} el cambio de nombre del paquete de mensajes $3 a $4",
 	"logentry-messagebundle-movenok": "$1 {{GENDER:$2|tuvo}} un problema al trasladar el paquete de mensajes $3 a $4",

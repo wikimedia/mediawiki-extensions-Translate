@@ -414,5 +414,6 @@
 	"specialpages-group-translation": "Traducción",
 	"content-model-translate-messagebundle": "Paquete de mensaje traducible",
 	"log-action-filter-translationreview": "Tipo de acción:",
-	"log-action-filter-translationreview-message": "Revisión de traducciones"
+	"log-action-filter-translationreview-message": "Revisión de traducciones",
+	"log-action-filter-translationreview-group": "Cambios en el estado del progreso de traducciones"
 }
