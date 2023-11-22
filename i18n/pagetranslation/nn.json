@@ -13,6 +13,7 @@
 	"pagetranslation": "Sideomsetjing",
 	"right-pagetranslation": "Merk versjonar av sider for omsetjing",
 	"action-pagetranslation": "handsama omsetjingsmerkte sider",
+	"tps-edit-sourcepage-text": "Du endrar kjelda til ei side som kan setjast om. Sørg for at du er kjend med denne dokumentasjonen:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Endring av kjeldeteksten]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Døme på oppmerking som kan brukast]",
 	"tpt-section": "Omsetjingseining $1",
 	"tpt-section-new": "Ny omsetjingseining. Namn: $1",
 	"tpt-section-deleted": "Omsetjingseining $1",

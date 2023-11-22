@@ -22,7 +22,7 @@
 	"tpt-action-nofuzzy": "Dinna onvalitate owersets",
 	"tpt-badtitle": "Page name gien ($1) is na ae valit title",
 	"tpt-nosuchpage": "Page $1 disna exeest",
-	"tpt-oldrevision": "$2 isna the laitest version o the page [[:$1]].\nYinlie laitest versions can be maurkt fer owersetin.",
+	"tpt-oldrevision": "$2 isna the latest version o the page [[:$1]].\nAnely latest versions can be merkt fur owersettin.",
 	"tpt-notsuitable": "Page $1 isna suitable fer owersetin.\nMak sair that it haes <nowiki><translate></nowiki> tags n haes ae valit syntax.",
 	"tpt-saveok": "The page [[:$1]] haes been maurkt fer owersetin wi $2 {{PLURAL:$2|owersetin unit|owersetin units}}.\nThe page can nou be <span class=\"plainlinks\">[$3 owerset]</span>.",
 	"tpt-offer-notify": "Ye can <span class=\"plainlinks\">[$1 tell owersetters]</span> anent this page.",
@@ -121,7 +121,7 @@
 	"pt-deletepage-invalid-title": "The speceefied page isna valid.",
 	"pt-deletepage-invalid-text": "The speceefied page isna aen owersetable page or aen owersetin page.",
 	"pt-deletepage-action-check": "Leet the pages tae be delytit",
-	"pt-deletepage-action-perform": "Mak the delytion",
+	"pt-deletepage-action-perform": "Dae the deletion",
 	"pt-deletepage-action-other": "Chynge tairget",
 	"pt-deletepage-lang-legend": "Delyte owersetin page",
 	"pt-deletepage-tp-legend": "Delyte owersetable page",
@@ -136,5 +136,5 @@
 	"pt-deletepage-full-logreason": "Pairt o owersetable page \"$1\".",
 	"pt-deletepage-lang-logreason": "Pairt o owersetin page \"$1\".",
 	"pt-deletepage-started": "Please check the [[Special:Log/pagetranslation|page owersetin log]] fer mistaks n compleation message.",
-	"pt-deletepage-intro": "This byordinair page permits ye tae delyte ae hale owersetable page, or aen indiveedual owersetin page in ae leid.\nThe delyte action willna be instant, cause aw the pages dependin oan thaim will be delytit ava.\nFailures will be loggit in the [[Special:Log/pagetranslation|page owersetin log]] n thay need tae be repaired bi haun."
+	"pt-deletepage-intro": "This byordinair page permits ye tae delete ae hale owersettable page, or ae individual owersettin page in ae leid.\nThe delete action willna be instant, acause aw the pages dependin on thaim will be deletit an aa.\nFailures will be loggit in the [[Special:Log/pagetranslation|page owersettin log]] an thay need tae be mendit bi haund."
 }

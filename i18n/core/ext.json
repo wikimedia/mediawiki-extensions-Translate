@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Better"
+			"Better",
+			"HackerPunki"
 		]
 	},
 	"translate": "Traucil",
 	"translate-next": "Siguienti páhina",
 	"translate-prev": "Páhina anteriol",
 	"translate-optional": "(ocional)",
-	"translate-ignored": "(inorau)"
+	"translate-ignored": "(inorau)",
+	"translate-documentation-language": "Decumentación del messagi"
 }
