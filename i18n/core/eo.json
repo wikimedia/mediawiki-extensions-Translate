@@ -17,7 +17,8 @@
 			"Robin van der Vliet",
 			"Tlustulimu",
 			"Yekrats",
-			"YvesNevelsteen"
+			"YvesNevelsteen",
+			"Ziko"
 		]
 	},
 	"translate": "Tradukado",
@@ -239,9 +240,18 @@
 	"translate-smg-nochanges": "Ne estas farendaj ŝanĝoj.",
 	"translate-smg-submit": "Proponi farendajn ŝanĝojn",
 	"translate-smg-submitted": "La difino de la mesaĝoj estis ĝisdatigitaj. Ŝanĝoj estas traktataj fontaske.",
+	"translate-smg-submitted-with-failure": "La ĝisdatigo de la mesaĝo {{PLURAL:$1| difino|difinoj}} malsukcesis por la sekvaj {{PLURAL:$1| grupo|grupoj}} - $2 . $3",
+	"translate-smg-submitted-others-processing": "Mesaĝaj difinoj por aliaj grupoj estas traktataj en la fono.",
 	"translate-smg-more": "Estos pli da traktendaj ŝanĝoj, post sendado de ĉi tiuj ŝanĝoj.",
 	"translate-smg-left": "Enhavo de la mesaĝo en la vikio",
 	"translate-smg-right": "Alvenantaj ŝanĝoj",
+	"translate-smg-rename-select": "Elekti",
+	"translate-smg-rename-cancel": "Nuligi",
+	"translate-smg-rename-search": "Serĉi kongruan mesaĝon...",
+	"translate-smg-rename-select-err": "Bonvolu elekti mesaĝon por esti renomita",
+	"translate-smg-rename-no-msg": "Neniu mesaĝo trovita.",
+	"translate-smg-rename-new": "Aldonu kiel novan...",
+	"translate-smg-rename-rename": "Aldoni kiel renomon de...",
 	"translate-manage-import-diff": "Mesaĝo $1 | Agoj: $2",
 	"translate-manage-import-new": "Nova mesaĝo $1",
 	"translate-manage-import-deleted": "Forigita mesaĝo $1",
