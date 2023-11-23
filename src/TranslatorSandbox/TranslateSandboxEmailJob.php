@@ -14,7 +14,7 @@ class TranslateSandboxEmailJob extends Job {
 	}
 
 	public function __construct( Title $title, array $params ) {
-		parent::__construct( __CLASS__, $title, $params );
+		parent::__construct( 'TranslateSandboxEmailJob', $title, $params );
 	}
 
 	public function run(): bool {
