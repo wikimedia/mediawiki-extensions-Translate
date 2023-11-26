@@ -1119,7 +1119,7 @@
 					.addClass( 'message-desc-viewer hide' )
 					.append(
 						$( '<div>' )
-							.addClass( 'row message-desc' ),
+							.addClass( 'row message-desc mw-parser-output' ),
 						$( '<div>' )
 							.addClass( 'row message-desc-control' )
 							.append( $( '<a>' )

@@ -128,7 +128,7 @@ class LegacyTranslationAids {
 		$class = 'mw-sp-translate-edit-info';
 
 		// The information is most likely in English
-		$divAttribs = [ 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr' ];
+		$divAttribs = [ 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr mw-parser-output' ];
 
 		if ( (string)$info === '' ) {
 			$info = $this->context->msg( 'translate-edit-no-information' )->plain();
