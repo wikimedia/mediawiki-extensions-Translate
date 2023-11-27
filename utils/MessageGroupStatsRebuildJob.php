@@ -45,7 +45,7 @@ class MessageGroupStatsRebuildJob extends GenericTranslateJob {
 	 * @param array $params
 	 */
 	public function __construct( $title, $params = [] ) {
-		parent::__construct( __CLASS__, $title, $params );
+		parent::__construct( 'MessageGroupStatsRebuildJob', $title, $params );
 	}
 
 	public function run() {

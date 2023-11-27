@@ -80,7 +80,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 	 * @param array $params
 	 */
 	public function __construct( $title, $params = [] ) {
-		parent::__construct( __CLASS__, $title, $params );
+		parent::__construct( 'MessageUpdateJob', $title, $params );
 	}
 
 	public function run() {

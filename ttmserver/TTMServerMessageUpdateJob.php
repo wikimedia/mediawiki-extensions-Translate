@@ -64,7 +64,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 */
 	public function __construct( $title, $params = [] ) {
 		parent::__construct(
-			__CLASS__,
+			'TTMServerMessageUpdateJob',
 			$title,
 			$params + [
 				'command' => 'rebuild',
