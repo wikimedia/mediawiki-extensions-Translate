@@ -117,9 +117,9 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			}
 			$spiParams[] = $key . '=' . wfEscapeWikiText( $v );
 		}
-		if ( $spiParams ) {
-			$spiParams = '/' . implode( ';', $spiParams );
-		}
+
+		$spiParams = $spiParams ? '/' . implode( ';', $spiParams ) : '';
+
 		$titleText = $this->getPageTitle()->getPrefixedText();
 		$out->addHTML( Html::element( 'hr' ) );
 		// Element to render the graph
