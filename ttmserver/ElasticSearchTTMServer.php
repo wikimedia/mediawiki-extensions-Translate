@@ -514,39 +514,6 @@ class ElasticSearchTTMServer
 		return $response->getData();
 	}
 
-	/**
-	 * Wait for the index to go green
-	 *
-	 * NOTE: This method has been copied and adjusted from
-	 * CirrusSearch/includes/Maintenance/ConfigUtils.php. Ideally we'd
-	 * like to make these utility methods available in the Elastica
-	 * extension, but this one requires some refactoring in cirrus first.
-	 * TODO: Remove this code in the future as we drop support for
-	 * older versions of the Elastica extension.
-	 *
-	 * @param string $indexName
-	 * @param int $timeout
-	 * @return bool true if the index is green false otherwise.
-	 */
-	protected function waitForGreen( $indexName, $timeout ) {
-		$startTime = time();
-		while ( ( $startTime + $timeout ) > time() ) {
-			try {
-				$response = $this->getIndexHealth( $indexName );
-				$status = $response['status'] ?? 'unknown';
-				if ( $status === 'green' ) {
-					$this->logOutput( "\tGreen!" );
-					return true;
-				}
-				$this->logOutput( "\tIndex is $status retrying..." );
-				sleep( 5 );
-			} catch ( Exception $e ) {
-				$this->logOutput( "Error while waiting for green ({$e->getMessage()}), retrying..." );
-			}
-		}
-		return false;
-	}
-
 	protected function waitUntilReady() {
 		$statuses = MWElasticUtils::waitForGreen(
 			$this->getClient(),
