@@ -57,7 +57,6 @@ use Status;
 use TextContent;
 use Title;
 use TitleValue;
-use TranslateToolbox;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Xml;
@@ -393,8 +392,6 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 				];
 			}
 		}
-
-		$hooks['SidebarBeforeOutput'][] = [ TranslateToolbox::class, 'toolboxAllTranslations' ];
 
 		static::registerHookHandlers( $hooks );
 	}

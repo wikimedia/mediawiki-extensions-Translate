@@ -8,7 +8,9 @@ use EditPage;
 use MediaWiki\Diff\Hook\ArticleContentOnDiffHook;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_initialHook;
+use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Skin\SkinComponentUtils;
 use MessageHandle;
 use OutputPage;
 
@@ -18,7 +20,11 @@ use OutputPage;
  * @license GPL-2.0-or-later
  */
 class LegacyInterfaceHookHandler
-	implements AlternateEditHook, ArticleContentOnDiffHook, EditPage__showEditForm_initialHook
+	implements
+	AlternateEditHook,
+	ArticleContentOnDiffHook,
+	EditPage__showEditForm_initialHook,
+	SidebarBeforeOutputHook
 {
 	/** @var LanguageFactory */
 	private $languageFactory;
@@ -80,5 +86,31 @@ class LegacyInterfaceHookHandler
 
 		$th = new LegacyTranslationAids( $handle, $diffEngine->getContext(), $this->languageFactory );
 		$output->addHTML( $th->getBoxes() );
+	}
+
+	/**
+	 * Adds toolbox menu item to pages, showing all other
+	 * available translations for a message. Only shown when it
+	 * actually is a translatable/translated message.
+	 *
+	 * @inheritDoc
+	 */
+	public function onSidebarBeforeOutput( $skin, &$sidebar ): void {
+		$title = $skin->getTitle();
+		$handle = new MessageHandle( $title );
+
+		if ( !$handle->isValid() ) {
+			return;
+		}
+
+		$message = $title->getNsText() . ':' . $handle->getKey();
+		$url = SkinComponentUtils::makeSpecialUrl( 'Translations', [ 'message' => $message ] );
+
+		// Add the actual toolbox entry.
+		$sidebar['TOOLBOX'][ 'alltrans' ] = [
+			'href' => $url,
+			'id' => 't-alltrans',
+			'msg' => 'translate-sidebar-alltrans',
+		];
 	}
 }

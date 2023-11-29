@@ -135,7 +135,6 @@
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
-		"TranslateToolbox": "utils/TranslateToolbox.php",
 		"TTMServer": "ttmserver/TTMServer.php",
 		"TTMServerException": "ttmserver/Exceptions.php",
 		"TTMServerMessageUpdateJob": "ttmserver/TTMServerMessageUpdateJob.php",
@@ -197,6 +196,7 @@
 		"SpecialSearchSetupEngine": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfileSetupEngine",
 		"TitleIsAlwaysKnown": "MediaWiki\\Extension\\Translate\\HookHandler::onTitleIsAlwaysKnown",
 		"MakeGlobalVariablesScript": "MediaWiki\\Extension\\Translate\\HookHandler::addConfig",
+		"SidebarBeforeOutput": "legacyInterface",
 		"TranslateEventTranslationReview": [
 			"MessageGroupStats::clear",
 			"MessageGroupStatesUpdaterJob::onChange"
