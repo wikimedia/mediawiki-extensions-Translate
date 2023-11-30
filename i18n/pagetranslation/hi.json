@@ -99,6 +99,7 @@
 	"tpt-aggregategroup-save": "सहेजें",
 	"tpt-aggregategroup-close": "बंद करें",
 	"tpt-aggregategroup-add-new": "एक नया स्थायी समूह जोड़ें",
+	"tpt-aggregategroup-select-source-language": "अनुकूलित स्रोत भाषा (वैकल्पिक):",
 	"tpt-aggregategroup-new-name": "नाम:",
 	"tpt-aggregategroup-new-description": "विवरण (वैकल्पिक):",
 	"tpt-aggregategroup-remove-confirm": "क्या आप इस स्थायी समूह को हटाना चाहते हैं?",
