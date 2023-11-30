@@ -41,5 +41,29 @@ class UnicodePluralValidatorTest extends BaseValidatorTestCase {
 			[ 'forms' ],
 			'Extra plural forms are an issue'
 		];
+
+		yield [
+			'{{PLURAL|one=a|b}}',
+			'{{PLURAL|one=a|two=b|c}}',
+			[],
+			'Extra plural forms are not an issue for languages without plural rules',
+			'x-unknown'
+		];
+
+		yield [
+			'{{PLURAL|one=a|b}}',
+			'{{PLURAL|tuuli=a|b}}',
+			[ 'forms' ],
+			'Unknown plural forms are an issue even for languages without plural rules',
+			'x-unknown'
+		];
+
+		yield [
+			'{{PLURAL|one=a|b}}',
+			'{{PLURAL|a}}',
+			[],
+			'Fewer plural forms are not an issue for languages without plural rules',
+			'x-unknown'
+		];
 	}
 }

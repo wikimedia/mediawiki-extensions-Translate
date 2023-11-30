@@ -1,15 +1,17 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use RuntimeException;
 
-/** @since 2019.09 */
+/**
+ * @license GPL-2.0-or-later
+ * @since 2019.09
+ */
 class UnicodePlural {
+	/** @var string[] List of supported Unicode CLDR plural keywords */
+	public const KEYWORDS = [ 'zero', 'one', 'two', 'few', 'many', 'other' ];
 	private const PRE = '{{PLURAL|';
 	private const POST = '}}';
 
@@ -17,9 +19,9 @@ class UnicodePlural {
 	 * Returns CLDR plural rule for given language.
 	 *
 	 * @param string $code Language tag in MediaWiki internal format.
-	 * @return array|null Empty string if no plural rule found
+	 * @return ?string[] Null, if no plural rule found
 	 */
-	public static function getPluralKeywords( $code ) {
+	public static function getPluralKeywords( string $code ): ?array {
 		$filePath = __DIR__ . '/../../data/plural-cldr.json';
 		$ruleData = json_decode( file_get_contents( $filePath ), true );
 
@@ -36,13 +38,8 @@ class UnicodePlural {
 		return $keywords;
 	}
 
-	/**
-	 * Quick way to check if the text contains plural syntax.
-	 *
-	 * @param string $text
-	 * @return bool
-	 */
-	public static function hasPlural( $text ) {
+	/** Quick way to check if the text contains plural syntax. */
+	public static function hasPlural( string $text ): bool {
 		return str_contains( $text, self::PRE );
 	}
 
@@ -51,9 +48,8 @@ class UnicodePlural {
 	 *
 	 * This does not check validity of forms. Use ::convertFormListToFormMap for that.
 	 * @param string[] $forms
-	 * @return string
 	 */
-	public static function flattenMap( array $forms ) {
+	public static function flattenMap( array $forms ): string {
 		$list = [];
 		foreach ( $forms as $keyword => $value ) {
 			$list[] = [ $keyword, $value ];
@@ -67,9 +63,8 @@ class UnicodePlural {
 	 *
 	 * This does not check validity of forms.
 	 * @param array[] $formList [ keyword, form ] pairs.
-	 * @return string
 	 */
-	public static function flattenList( array $formList ) {
+	public static function flattenList( array $formList ): string {
 		$formatted = [];
 		foreach ( $formList as [ $keyword, $value ] ) {
 			$formatted[] = self::formatForm( $keyword, $value );
@@ -78,7 +73,7 @@ class UnicodePlural {
 		return self::PRE . implode( '|', $formatted ) . self::POST;
 	}
 
-	private static function formatForm( $keyword, $value ) {
+	private static function formatForm( string $keyword, string $value ): string {
 		$prefix = $keyword === 'other' ? '' : "$keyword=";
 		return $prefix . $value;
 	}
@@ -94,7 +89,7 @@ class UnicodePlural {
 	 * @param string[] $expectedKeywords
 	 * @return string[]
 	 */
-	public static function unflatten( $text, $expectedKeywords ) {
+	public static function unflatten( string $text, array $expectedKeywords ): array {
 		[ $template, $instanceMap ] = self::parsePluralForms( $text );
 		return self::expandTemplate( $template, $instanceMap, $expectedKeywords );
 	}
@@ -102,10 +97,9 @@ class UnicodePlural {
 	/**
 	 * Parses plural markup into a structure form.
 	 *
-	 * @param string $text
 	 * @return array [ string $template, array $instanceMap ]
 	 */
-	public static function parsePluralForms( $text ) {
+	public static function parsePluralForms( string $text ): array {
 		$m = [];
 		$pre = preg_quote( self::PRE, '/' );
 		$post = preg_quote( self::POST, '/' );
@@ -128,7 +122,7 @@ class UnicodePlural {
 			$instanceForms = [];
 			foreach ( explode( '|', $m[ 1 ][ $instanceIndex ] ) as $form ) {
 				$m2 = [];
-				$ok = preg_match( "~\s*([a-z]+)\s*=(.+)~s", $form, $m2 );
+				$ok = preg_match( '~\s*([a-z]+)\s*=(.+)~s', $form, $m2 );
 				$keyword = $ok ? $m2[ 1 ] : 'other';
 				$value = $ok ? trim( $m2[ 2 ] ) : $form;
 				$instanceForms[] = [ $keyword, $value ];
@@ -148,7 +142,7 @@ class UnicodePlural {
 	 * @param string[] $expectedKeywords
 	 * @return string[]
 	 */
-	public static function expandTemplate( $template, array $instanceMap, $expectedKeywords ) {
+	public static function expandTemplate( string $template, array $instanceMap, array $expectedKeywords ): array {
 		$formArray = [];
 
 		// Convert from list of forms to map of forms for easier processing
@@ -174,7 +168,7 @@ class UnicodePlural {
 		return $formArray;
 	}
 
-	public static function convertFormListToFormMap( array $formList, array $expectedKeywords ) {
+	public static function convertFormListToFormMap( array $formList, array $expectedKeywords ): array {
 		$formMap = [];
 		foreach ( $formList as [ $keyword, $value ] ) {
 			$formMap[ $keyword ] = $value;

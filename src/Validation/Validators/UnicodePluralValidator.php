@@ -21,11 +21,8 @@ class UnicodePluralValidator implements MessageValidator {
 	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
+		// We skip certain validations if we don't know the expected keywords
 		$expectedKeywords = UnicodePlural::getPluralKeywords( $targetLanguage );
-		// Skip validation for languages for which we do not know the plural rule
-		if ( $expectedKeywords === null ) {
-			return $issues;
-		}
 
 		$definition = $message->definition();
 		$translation = $message->translation();
@@ -38,21 +35,21 @@ class UnicodePluralValidator implements MessageValidator {
 		);
 
 		// Using same check keys as MediaWikiPluralValidator
-		if ( $presence === 'missing' ) {
+		if ( $presence === 'missing' && $expectedKeywords !== null ) {
 			$issue = new ValidationIssue( 'plural', 'missing', 'translate-checks-unicode-plural-missing' );
 			$issues->add( $issue );
 		} elseif ( $presence === 'unsupported' ) {
 			$issue = new ValidationIssue( 'plural', 'unsupported', 'translate-checks-unicode-plural-unsupported' );
 			$issues->add( $issue );
 		} elseif ( $presence === 'ok' ) {
-			[ $msgcode, $actualKeywords ] =
-				$this->pluralFormCheck( $translation, $expectedKeywords );
+			[ $msgcode, $actualKeywords ] = $this->pluralFormCheck( $translation, $expectedKeywords );
 			if ( $msgcode === 'invalid' ) {
+				$formatter = fn ( string $x ) => [ $x, '…' ];
 				$expectedExample = UnicodePlural::flattenList(
-					array_map( [ $this, 'createFormExample' ], $expectedKeywords )
+					array_map( $formatter, $expectedKeywords ?? UnicodePlural::KEYWORDS )
 				);
 				$actualExample = UnicodePlural::flattenList(
-					array_map( [ $this, 'createFormExample' ], $actualKeywords )
+					array_map( $formatter, $actualKeywords )
 				);
 
 				$issue = new ValidationIssue(
@@ -66,13 +63,10 @@ class UnicodePluralValidator implements MessageValidator {
 				);
 				$issues->add( $issue );
 			}
-		} // else: not-applicable
+		}
+		// else: not-applicable
 
 		return $issues;
-	}
-
-	private function createFormExample( string $keyword ): array {
-		return [ $keyword, '…' ];
 	}
 
 	private function pluralPresenceCheck(
@@ -91,7 +85,7 @@ class UnicodePluralValidator implements MessageValidator {
 		return 'ok';
 	}
 
-	private function pluralFormCheck( string $text, array $expectedKeywords ): array {
+	private function pluralFormCheck( string $text, ?array $expectedKeywords ): array {
 		[ , $instanceMap ] = UnicodePlural::parsePluralForms( $text );
 
 		foreach ( $instanceMap as $forms ) {
@@ -100,7 +94,13 @@ class UnicodePluralValidator implements MessageValidator {
 				$actualKeywords[] = $keyword;
 			}
 
-			if ( $actualKeywords !== $expectedKeywords ) {
+			if ( $expectedKeywords !== null ) {
+				if ( $actualKeywords !== $expectedKeywords ) {
+					return [ 'invalid', $actualKeywords ];
+				}
+			} elseif ( array_diff( $actualKeywords, UnicodePlural::KEYWORDS ) !== [] ) {
+				// We don't know the actual forms for the language, but complain about those
+				// that are not valid in any language
 				return [ 'invalid', $actualKeywords ];
 			}
 		}
