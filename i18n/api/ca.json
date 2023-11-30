@@ -5,6 +5,7 @@
 			"Fitoschido",
 			"Jlrb+",
 			"Jmarchn",
+			"McDutchie",
 			"Robertgarrigos"
 		]
 	},
@@ -14,7 +15,7 @@
 	"apihelp-query+managemessagegroups-summary": "Cerca possibles rebateigs per a un missatge en un grup durant les importacions",
 	"apihelp-query+managemessagegroups-param-groupId": "Id del grup",
 	"apihelp-query+managemessagegroups-param-messageKey": "Clau de missatge",
-	"apihelp-query+managemessagegroups-param-changesetName": "Canvia el nom del conjunt - Per defecte / No atès / MediaWiki etc.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Nom del conjunt de canvis - Per defecte / No atès / MediaWiki etc.",
 	"apihelp-query+managemessagegroups-example-1": "Cerca possibles rebateigs per a la clau donada en el grup donat.",
 	"apihelp-query+messagecollection-param-group": "Grup de missatges.",
 	"apihelp-query+messagecollection-param-language": "Codi d'idioma.",
@@ -26,7 +27,7 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "S'està rebatejant la clau de missatge objectiu",
 	"apihelp-managemessagegroups-param-messageKey": "Clau de missatge de substitució",
 	"apihelp-managemessagegroups-param-operation": "Operació a ser executada. Possibles valors: renomena / nou",
-	"apihelp-managemessagegroups-param-changesetName": "Canvia el nom del conjunt - Per defecte / No atès / MediaWiki etc.",
+	"apihelp-managemessagegroups-param-changesetName": "Nom del conjunt de canvis - Per defecte / No atès / MediaWiki etc.",
 	"apihelp-managemessagegroups-param-changesetModified": "Segell de temps Unix de la darrera modificació del conjunt de canvis. Si el conjunt de canvis s'ha modificat posteriorment, l'API donarà error.",
 	"apihelp-translatesandbox-param-do": "Què fer.",
 	"apihelp-translatesandbox-param-username": "Nom d'usuari a l'hora de crear l'usuari.",

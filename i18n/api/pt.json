@@ -5,6 +5,7 @@
 			"Hamilton Abreu",
 			"Mansil",
 			"Mansil alfalb",
+			"McDutchie",
 			"Vitorvicentevalente"
 		]
 	},
@@ -29,7 +30,7 @@
 	"apihelp-query+managemessagegroups-summary": "Obter possíveis alterações do nome para uma mensagem de um grupo durante as importações",
 	"apihelp-query+managemessagegroups-param-groupId": "Identificador de grupo",
 	"apihelp-query+managemessagegroups-param-messageKey": "Chave de mensagem",
-	"apihelp-query+managemessagegroups-param-changesetName": "Alterar nome do conjunto - Padrão / Não vigiado / MediaWiki, etc.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Nome do conjunto de alterações - Padrão / Não vigiado / MediaWiki, etc.",
 	"apihelp-query+managemessagegroups-example-1": "Obter possíveis alterações do nome para a chave especificada no grupo especificado.",
 	"apihelp-query+messagecollection-summary": "Consultar MessageCollection sobre traduções.",
 	"apihelp-query+messagecollection-param-group": "Grupo de mensagens.",
