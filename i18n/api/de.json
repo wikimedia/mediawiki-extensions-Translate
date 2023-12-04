@@ -7,7 +7,8 @@
 			"Predatorix",
 			"Seewolf",
 			"SorkDE",
-			"Brettchenweber"
+			"Brettchenweber",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -103,7 +104,7 @@
 	"apihelp-searchtranslations-param-language": "Der Sprachcode, in dem die Zeichenfolge gesucht werden soll.",
 	"apihelp-searchtranslations-param-group": "Die Gruppenkennung, in der die Zeichenfolge gesucht werden soll.",
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
-	"apihelp-searchtranslations-param-match": "Nach allen Wörtern suchen.",
+	"apihelp-searchtranslations-param-match": "Ein beliebiges Wort oder alle Wörter suchen.",
 	"apihelp-searchtranslations-param-case": "Suche (un)abhängig von Groß- und Kleinschreibung.",
 	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
