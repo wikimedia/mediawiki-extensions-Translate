@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jon Harald Søby",
-			"Kingu"
+			"Kingu",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-description": "Behandle aggregatmeldingsgrupper.\n\nDu kan legge til og fjerne aggregatmeldingsgrupper og assosiere eller disassosiere meldingsgrupper fra dem (én av gangen).",
@@ -31,7 +32,7 @@
 	"apihelp-query+managemessagegroups-description": "Hent mulige omdøpinger for en melding i en gruppe under import",
 	"apihelp-query+managemessagegroups-param-groupId": "Gruppe-ID",
 	"apihelp-query+managemessagegroups-param-messageKey": "Meldingsnøkkel",
-	"apihelp-query+managemessagegroups-param-changesetName": "Endre settnavn – Default / Unattended / MediaWiki osv.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Navn på endringssettet – Default / Unattended / MediaWiki osv.",
 	"apihelp-query+managemessagegroups-example-1": "Hent mulige omdøpinger for den gitte nøkkelen i den gitte gruppa.",
 	"apihelp-query+messagecollection-summary": "Spør MessageCollection om oversettelser.",
 	"apihelp-query+messagecollection-param-group": "Beskjedgruppe.",
@@ -71,7 +72,7 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "Målbeskjednøkkelen blir omdøpt",
 	"apihelp-managemessagegroups-param-messageKey": "Erstatningsbeskjednøkkel",
 	"apihelp-managemessagegroups-param-operation": "Operasjonen som skal utføres. Mulige verdier: rename / new",
-	"apihelp-managemessagegroups-param-changesetName": "Endre settnavn – Default / Unattended / MediaWiki osv.",
+	"apihelp-managemessagegroups-param-changesetName": "Navn på endringssettet – Default / Unattended / MediaWiki osv.",
 	"apihelp-managemessagegroups-param-changesetModified": "Unix-tidsstempel for når endringssettet sist ble endret. Hvis endringssettet har blitt endret etter dette vil API-et gi en feilmelding.",
 	"apihelp-managegroupsynchronizationcache-description": "Behandle mellomlager for gruppersynkronisering.",
 	"apihelp-managegroupsynchronizationcache-summary": "Behandle mellomlager for gruppesynkronisering.",
