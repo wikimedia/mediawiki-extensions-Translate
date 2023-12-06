@@ -28,7 +28,8 @@
 			"もなー(偽物)",
 			"神樂坂秀吉",
 			"青子守歌",
-			"아라"
+			"아라",
+			"Ant176"
 		]
 	},
 	"translate": "翻訳",
@@ -37,6 +38,7 @@
 	"translate-fuzzybot-desc": "これは、MediaWikiの[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate拡張機能]が、翻訳のメンテナンスに使用する特別なシステム・アカウントです。\nこのアカウントはMediaWikiソフトウェアの一部であり、利用者によって所有されていません。",
 	"translate-taskui-export-to-file": "ネイティブ形式で書き出し",
 	"translate-taskui-export-as-po": "オフライン翻訳のために書き出し",
+	"translate-taskui-export-as-csv": "CSV形式で書き出し",
 	"translate-export-csv-definition": "メッセージ定義",
 	"translate-taction-translate": "翻訳",
 	"translate-taction-proofread": "査読",

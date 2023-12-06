@@ -7,7 +7,8 @@
 			"Metalhead64",
 			"Predatorix",
 			"Seewolf",
-			"SorkDE"
+			"SorkDE",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Verwaltet zusammengefasste Nachrichtengruppen.",
@@ -99,7 +100,7 @@
 	"apihelp-searchtranslations-param-language": "Der Sprachcode, in dem die Zeichenfolge gesucht werden soll.",
 	"apihelp-searchtranslations-param-group": "Die Gruppenkennung, in der die Zeichenfolge gesucht werden soll.",
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
-	"apihelp-searchtranslations-param-match": "Nach allen Wörtern suchen.",
+	"apihelp-searchtranslations-param-match": "Ein beliebiges Wort oder alle Wörter suchen.",
 	"apihelp-searchtranslations-param-case": "Suche (un)abhängig von Groß- und Kleinschreibung.",
 	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
@@ -114,7 +115,7 @@
 	"apihelp-translationstats-param-group": "Liste der Gruppen, für die Statistiken abgerufen werden sollen.",
 	"apihelp-translationstats-param-language": "Liste der Sprachen, für die Statistiken abgerufen werden sollen.",
 	"apihelp-translationstats-param-scale": "Maßstab der Übersetzungsstatistik",
-	"apihelp-translationstats-param-start": "Starting date from which to fetch translation statistics. Defaults to current date minus the number of <var>days</var>.",
+	"apihelp-translationstats-param-start": "Anfangsdatum, ab dem Übersetzungsstatistiken abgerufen werden sollen. Standardmäßig wird das aktuelle Datum minus die Anzahl der Tage (<var>days</var>) verwendet.",
 	"apihelp-translationstats-example-1": "Anzahl der Bearbeitungen in den letzten 30 Tagen für alle Gruppen und Sprachen abrufen",
 	"apihelp-translationstats-example-2": "Abrufen der Anzahl der Bearbeitungen der letzten 30 Tage, für die Sprachen Englisch und Französisch.",
 	"apierror-translate-duplicateaggregategroup": "Die Nachrichtengruppe ist bereits vorhanden",

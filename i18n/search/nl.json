@@ -15,6 +15,7 @@
 	"tux-sst-view-foreign": "Op $1 bekijken",
 	"tux-sst-search": "Zoeken",
 	"tux-sst-search-ph": "Vertalingen zoeken",
+	"tux-sst-search-info": "Gebruik de operatoren <code>language:</code> of <code>group:</code> om de zoekcriteria nader te verfijnen",
 	"tux-sst-count": "{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden",
 	"tux-sst-facet-language": "Talen",
 	"tux-sst-facet-group": "Berichtengroepen",

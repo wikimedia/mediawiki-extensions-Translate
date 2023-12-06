@@ -8,7 +8,8 @@
 			"Mar(c)",
 			"SPQRobin",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"McDutchie"
 		]
 	},
 	"managetranslatorsandbox": "Vertalerszandbak beheren",
@@ -55,5 +56,5 @@
 	"log-description-translatorsandbox": "Een logboek van de handelingen van gebruikers in de vertalingenzandbak.",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|heeft}} $3 gepromoveerd tot {{GENDER:$4|vertaler}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|heeft}} het verzoek van \"$3\" om vertaler te worden geweigerd",
-	"logentry-newusers-tsbpromoted": "Gebruikers $3 is {{GENDER:$2|aangemaakt}} door promotie vanuit de zandbak"
+	"logentry-newusers-tsbpromoted": "Het gebruikersaccount $3 is {{GENDER:$2|aangemaakt}} door bevordering vanuit het kladblok"
 }

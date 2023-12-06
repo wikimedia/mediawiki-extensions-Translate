@@ -7,7 +7,8 @@
 			"Lokal Profil",
 			"Sabelöga",
 			"Victorsa",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Hantera aggregerade meddelandegrupper.",
@@ -30,7 +31,7 @@
 	"apihelp-query+managemessagegroups-summary": "Hämta möjliga namnbyten för ett meddelande i en grupp under importering",
 	"apihelp-query+managemessagegroups-param-groupId": "Grupp-ID",
 	"apihelp-query+managemessagegroups-param-messageKey": "Meddelandenyckel",
-	"apihelp-query+managemessagegroups-param-changesetName": "Ändra uppsättningsnamn - Standard / Oövervakad /MediaWiki osv.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Namn på ändringssatsen - Standard / Oövervakad / MediaWiki osv.",
 	"apihelp-query+managemessagegroups-example-1": "Hämta möjliga namnbyten för angiven nyckel i angiven grupp.",
 	"apihelp-query+messagecollection-summary": "Fråga MessageCollection om översättningar.",
 	"apihelp-query+messagecollection-param-group": "Meddelandegrupp.",
@@ -58,7 +59,7 @@
 	"apihelp-query+messagetranslations-param-title": "Fullständig titel på ett känt meddelande.",
 	"apihelp-query+messagetranslations-example-1": "Lista över översättningar i wikin för \"MediaWiki:January\"",
 	"apihelp-managemessagegroups-param-groupId": "Grupp-ID",
-	"apihelp-managemessagegroups-param-changesetName": "Ändra uppsättningsnamn - Standard / Oövervakad /MediaWiki osv.",
+	"apihelp-managemessagegroups-param-changesetName": "Namn på ändringssatsen - Standard / Oövervakad / MediaWiki osv.",
 	"apihelp-translatesandbox-summary": "Registrera och hantera sandlådeanvändare.",
 	"apihelp-translatesandbox-param-do": "Vad som ska göras.",
 	"apihelp-translatesandbox-param-username": "Användarnamn när du skapar en användare.",
