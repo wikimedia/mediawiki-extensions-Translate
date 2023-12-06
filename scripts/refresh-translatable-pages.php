@@ -42,9 +42,9 @@ class RefreshTranslatablePages extends Maintenance {
 		$jobQueueGroup = $mwInstance->getJobQueueGroup();
 
 		$counter = 0;
+		$jobCounter = 0;
 		$useJobQueue = $this->hasOption( 'jobqueue' );
 
-		/** @var MessageGroup $group */
 		foreach ( $groups as $group ) {
 			if ( !$group instanceof WikiPageMessageGroup ) {
 				continue;
@@ -58,6 +58,7 @@ class RefreshTranslatablePages extends Maintenance {
 			$page = TranslatablePage::newFromTitle( $group->getTitle() );
 			$jobs = UpdateTranslatablePageJob::getRenderJobs( $page );
 			if ( $useJobQueue ) {
+				$jobCounter += count( $jobs );
 				$jobQueueGroup->push( $jobs );
 			} else {
 				foreach ( $jobs as $job ) {
@@ -67,7 +68,7 @@ class RefreshTranslatablePages extends Maintenance {
 		}
 
 		if ( $useJobQueue ) {
-			$this->output( "Queued refresh for $counter translatable pages.\n" );
+			$this->output( "Queued $jobCounter refresh job(s) for $counter translatable pages.\n" );
 		} else {
 			$this->output( "Refreshed $counter translatable pages.\n" );
 		}
