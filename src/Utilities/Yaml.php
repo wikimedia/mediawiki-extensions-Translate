@@ -1,30 +1,28 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Utilities;
+
+use InvalidArgumentException;
+use RuntimeException;
+use Spyc;
+
 /**
- * Contains wrapper class for interface to parse and generate YAML files.
- *
- * @file
+ * A wrapper class to provide interface to parse
+ * and generate YAML files with phpyaml or spyc backend.
  * @author Ævar Arnfjörð Bjarmason
  * @author Niklas Laxström
  * @copyright Copyright © 2009-2013, Niklas Laxström, Ævar Arnfjörð Bjarmason
  * @license GPL-2.0-or-later
  */
-
-/**
- * This class is a wrapper class to provide interface to parse
- * and generate YAML files with phpyaml or spyc backend.
- */
-class TranslateYaml {
-	/**
-	 * @param string $text
-	 * @return array
-	 */
-	public static function loadString( $text ) {
+class Yaml {
+	public static function loadString( string $text ): array {
 		global $wgTranslateYamlLibrary;
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
 				// Harden: do not support unserializing objects.
-				// @phan-suppress-next-line PhanTypeMismatchArgumentInternal Scalar okay with php8.1
+				// @phan-suppress-next-line PhanTypeMismatchArgumentInternalProbablyReal Scalar okay with php8.1
 				$previousValue = ini_set( 'yaml.decode_php', false );
 				$ret = yaml_parse( $text );
 				ini_set( 'yaml.decode_php', $previousValue );
@@ -43,11 +41,7 @@ class TranslateYaml {
 		}
 	}
 
-	/**
-	 * @param array &$yaml
-	 * @return array
-	 */
-	public static function fixSpycSpaces( &$yaml ) {
+	private static function fixSpycSpaces( array &$yaml ): array {
 		foreach ( $yaml as $key => &$value ) {
 			if ( is_array( $value ) ) {
 				self::fixSpycSpaces( $value );
@@ -59,26 +53,22 @@ class TranslateYaml {
 		return $yaml;
 	}
 
-	public static function load( $file ) {
+	public static function load( string $file ): array {
 		$text = file_get_contents( $file );
 
 		return self::loadString( $text );
 	}
 
-	public static function dump( $text ) {
+	public static function dump( array $text ): string {
 		global $wgTranslateYamlLibrary;
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
-				return self::phpyamlDump( $text );
+				return yaml_emit( $text, YAML_UTF8_ENCODING );
 			case 'spyc':
 				return Spyc::YAMLDump( $text );
 			default:
 				throw new RuntimeException( 'Unknown Yaml library' );
 		}
-	}
-
-	protected static function phpyamlDump( $data ) {
-		return yaml_emit( $data, YAML_UTF8_ENCODING );
 	}
 }

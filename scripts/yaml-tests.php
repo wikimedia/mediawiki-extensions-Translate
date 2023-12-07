@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
+use MediaWiki\Extension\Translate\Utilities\Yaml;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -52,7 +53,7 @@ class YamlTests extends Maintenance {
 
 			self::sortNestedArrayAssoc( $documents[$driver] );
 			file_put_contents( "yaml-test-$driver.txt", var_export( $documents[$driver], true ) );
-			file_put_contents( "yaml-output-$driver.txt", TranslateYaml::dump( $documents[$driver] ) );
+			file_put_contents( "yaml-output-$driver.txt", Yaml::dump( $documents[$driver] ) );
 		}
 		var_dump( $times );
 		var_dump( $mems );
@@ -65,7 +66,7 @@ class YamlTests extends Maintenance {
 		$groups = [];
 		$template = false;
 		foreach ( $documents as $document ) {
-			$document = TranslateYaml::loadString( $document );
+			$document = Yaml::loadString( $document );
 			if ( isset( $document['TEMPLATE'] ) ) {
 				$template = $document['TEMPLATE'];
 			} else {

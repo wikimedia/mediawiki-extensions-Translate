@@ -8,8 +8,8 @@ use Exception;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Utilities\Yaml;
 use RomaricDrigon\MetaYaml\MetaYaml;
-use TranslateYaml;
 
 /**
  * Utility class to parse and validate message group configurations.
@@ -90,7 +90,7 @@ class MessageGroupConfigurationParser {
 		$template = [];
 
 		foreach ( $documents as $document ) {
-			$document = TranslateYaml::loadString( $document );
+			$document = Yaml::loadString( $document );
 
 			if ( isset( $document['TEMPLATE'] ) ) {
 				$template = $document['TEMPLATE'];
@@ -113,7 +113,7 @@ class MessageGroupConfigurationParser {
 	}
 
 	public function getBaseSchema(): array {
-		return TranslateYaml::load( __DIR__ . '/../../data/group-yaml-schema.yaml' );
+		return Yaml::load( __DIR__ . '/../../data/group-yaml-schema.yaml' );
 	}
 
 	/**

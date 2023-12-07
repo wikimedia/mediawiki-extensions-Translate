@@ -136,7 +136,6 @@
 		"TranslateRcFilter": "utils/TranslateRcFilter.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
 		"TranslateToolbox": "utils/TranslateToolbox.php",
-		"TranslateYaml": "utils/TranslateYaml.php",
 		"TTMServer": "ttmserver/TTMServer.php",
 		"TTMServerException": "ttmserver/Exceptions.php",
 		"TTMServerMessageUpdateJob": "ttmserver/TTMServerMessageUpdateJob.php",

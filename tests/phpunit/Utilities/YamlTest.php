@@ -1,13 +1,18 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Utilities;
+
+use MediaWikiIntegrationTestCase;
 
 /**
  * Tests for yaml wrapper.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers TranslateYaml
+ * @covers \MediaWiki\Extension\Translate\Utilities\Yaml
  */
-class TranslateYamlTest extends MediaWikiIntegrationTestCase {
+class YamlTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -21,8 +26,8 @@ class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 	 * @requires function yaml_parse
 	 * @dataProvider provideTestLoadString
 	 */
-	public function testLoadStringPhpyaml( $input, $expected, $comment ) {
-		$output = TranslateYaml::loadString( $input );
+	public function testLoadStringPhpyaml( string $input, string $expected, string $comment ): void {
+		$output = Yaml::loadString( $input );
 		$this->assertEquals( $expected, $output, $comment );
 	}
 
@@ -76,9 +81,9 @@ class TranslateYamlTest extends MediaWikiIntegrationTestCase {
 
 			YAML;
 
-		$output = TranslateYaml::dump( $input );
+		$output = Yaml::dump( $input );
 		$this->assertEquals( $expected, $output, "Floaty strings outputted as strings" );
-		$parsed = TranslateYaml::loadString( $output );
+		$parsed = Yaml::loadString( $output );
 		$this->assertEquals( $input, $parsed, "Floaty strings roundtrip" );
 	}
 }

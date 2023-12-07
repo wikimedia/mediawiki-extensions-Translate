@@ -9,7 +9,7 @@ use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use TranslateYaml;
+use MediaWiki\Extension\Translate\Utilities\Yaml;
 
 /**
  * Implements support for message storage in YAML format.
@@ -44,7 +44,7 @@ class YamlFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		$authors = $matches[1];
 
 		// Then messages.
-		$messages = TranslateYaml::loadString( $data ) ?? [];
+		$messages = Yaml::loadString( $data );
 
 		// Some groups have messages under language code
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
@@ -95,7 +95,7 @@ class YamlFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			$messages = [ $code => $messages ];
 		}
 
-		$output .= TranslateYaml::dump( $messages );
+		$output .= Yaml::dump( $messages );
 
 		return $output;
 	}

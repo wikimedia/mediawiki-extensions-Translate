@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
+use MediaWiki\Extension\Translate\Utilities\Yaml;
 use MediaWikiUnitTestCase;
-use TranslateYaml;
 
 /**
  * Test for parsing the special definition file for mediawiki-extensions
@@ -25,15 +25,15 @@ class MediaWikiExtensionsTest extends MediaWikiUnitTestCase {
 		$this->assertCount( 5, $list, 'Right number of groups were created' );
 
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf2.yaml' );
+		$expected = Yaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf2.yaml' );
 		$this->assertEquals( $expected, $list['ext-wikimediamessages']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-examplejsonextension', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf3.yaml' );
+		$expected = Yaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf3.yaml' );
 		$this->assertEquals( $expected, $list['ext-examplejsonextension']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-exampleextension2', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf4.yaml' );
+		$expected = Yaml::load( __DIR__ . '/../../data/MediaWikiExtensionTest-conf4.yaml' );
 		$this->assertEquals( $expected, $list['ext-exampleextension2']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-languagesmodified', $list );
