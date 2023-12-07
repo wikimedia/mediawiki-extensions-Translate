@@ -11,6 +11,7 @@ use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
@@ -24,7 +25,6 @@ use RecentChange;
 use Status;
 use TitleFormatter;
 use TitleParser;
-use TranslateMetadata;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 

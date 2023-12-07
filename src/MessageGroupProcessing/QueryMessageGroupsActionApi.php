@@ -9,9 +9,9 @@ use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroup;
-use TranslateMetadata;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

@@ -10,12 +10,12 @@ use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use MessagePrefixMessageGroup;
 use SpecialPage;
-use TranslateMetadata;
 
 /**
  * Implements includable special page Special:MessageGroupStats which provides

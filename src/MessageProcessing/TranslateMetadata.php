@@ -1,20 +1,21 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 
 /**
- * Contains class which offers functionality for reading and updating Translate group
+ * Offers functionality for reading and updating Translate group
  * related metadata
  *
- * @file
  * @author Niklas Laxström
  * @author Santhosh Thottingal
  * @copyright Copyright © 2012-2013, Niklas Laxström, Santhosh Thottingal
  * @license GPL-2.0-or-later
  */
-
 class TranslateMetadata {
 	/** Map of (database group id => key => value) */
 	private static array $cache = [];
@@ -271,3 +272,5 @@ class TranslateMetadata {
 		return mb_strcut( $groupId, 0, 160 ) . '||' . $hash;
 	}
 }
+
+class_alias( TranslateMetadata::class, 'TranslateMetadata' );

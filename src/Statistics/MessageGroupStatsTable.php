@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use Html;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Linker\LinkRenderer;
 use MessageGroup;
@@ -13,7 +14,6 @@ use MessageGroupStats;
 use MessageLocalizer;
 use SpecialPage;
 use Title;
-use TranslateMetadata;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

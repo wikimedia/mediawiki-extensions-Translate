@@ -7,6 +7,7 @@ use AggregateMessageGroup;
 use DeferredUpdates;
 use InvalidArgumentException;
 use JobQueueGroup;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
@@ -17,7 +18,6 @@ use MessageIndex;
 use RuntimeException;
 use TextContent;
 use Title;
-use TranslateMetadata;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

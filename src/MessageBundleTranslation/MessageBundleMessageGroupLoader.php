@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use CachedMessageGroupLoader;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MessageGroupLoader;
 use MessageGroupWANCache;
 use Title;
-use TranslateMetadata;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
