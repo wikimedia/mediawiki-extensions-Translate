@@ -7,7 +7,8 @@
 			"Iváns",
 			"Maria zaos",
 			"Toliño",
-			"Amire80"
+			"Amire80",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-description": "Xestionar grupos de mensaxes agregados.\n\nPode engadir e eliminar grupos de mensaxes agregados, e asociar ou disociar a eles grupos de mensaxes (un de cada vez).",
@@ -35,7 +36,7 @@
 	"apihelp-query+managemessagegroups-summary": "Obter os posibles cambios de nome para unha mensaxe nun grupo durante as importacións",
 	"apihelp-query+managemessagegroups-param-groupId": "Identificador do grupo",
 	"apihelp-query+managemessagegroups-param-messageKey": "Chave da mensaxe",
-	"apihelp-query+managemessagegroups-param-changesetName": "Cambiar o nome do conxunto: Predeterminado / Desatendido / MediaWiki etc.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Nome do conxunto de cambios: Predeterminado / Desatendido / MediaWiki etc.",
 	"apihelp-query+managemessagegroups-example-1": "Obter os posibles cambios de nome para a chave indicada no grupo dado.",
 	"apihelp-query+messagecollection-summary": "Consultar MessageCollection sobre traducións.",
 	"apihelp-query+messagecollection-param-group": "Grupo de mensaxes.",
@@ -74,7 +75,7 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "A chave da mensaxe de destino que está cambiando o nome",
 	"apihelp-managemessagegroups-param-messageKey": "Chave de mensaxe de substitución",
 	"apihelp-managemessagegroups-param-operation": "A operación a realizar. Valores posibles: rename / new",
-	"apihelp-managemessagegroups-param-changesetName": "Cambiar o nome do conxunto: Predeterminado / Desatendido / MediaWiki etc.",
+	"apihelp-managemessagegroups-param-changesetName": "Nome do conxunto de cambios: Predeterminado / Desatendido / MediaWiki etc.",
 	"apihelp-managemessagegroups-param-changesetModified": "Marca de tempo Unix de cando se modificou o conxunto de cambios por última vez. Se o conxunto de cambios foi modificado despois, a API mostrará un erro.",
 	"apihelp-managegroupsynchronizationcache-summary": "Xestionar a caché de sincronización do grupo.",
 	"apihelp-managegroupsynchronizationcache-param-operation": "A operación a realizar. Valores posibles: resolve",

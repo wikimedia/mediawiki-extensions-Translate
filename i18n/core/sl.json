@@ -317,7 +317,7 @@
 	"log-name-translationreview": "Dnevnik pregledov prevodov",
 	"log-description-translationreview": "Dnevnik vseh pregledov prevodov in skupin sporočil.",
 	"logentry-translationreview-message": "$1 je {{GENDER:$2|pregledal|pregledala|pregledal_a}} prevod $3",
-	"logentry-translationreview-group": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} stanje prevodov jezika $4 za stran $3 iz $6 v $7",
+	"logentry-translationreview-group": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil/a}} stanje prevodov jezika $4 za stran $3 iz $6 v $7",
 	"group-translate-sandboxed": "Neodobreni prevajalci",
 	"group-translate-sandboxed-member": "{{GENDER:$1|neodobren prevajalec|neodobrena prevajalka|neodobreni_a prevajalec_ka}}",
 	"right-translate-sandboxmanage": "Upravljanje uporabnikov, omejenih na peskovnik",

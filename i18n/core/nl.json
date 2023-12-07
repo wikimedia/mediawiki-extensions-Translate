@@ -23,6 +23,7 @@
 		]
 	},
 	"translate": "Vertalen",
+	"translate-extensionname": "Vertalen",
 	"translate-desc": "[[Special:Translate|Speciale pagina]] voor het vertalen van MediaWiki en meer",
 	"translate-fuzzybot-desc": "Dit is een speciaal systeemaccount dat wordt gebruikt door de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate-uitbreiding] van MediaWiki om vertalingen te onderhouden.\nDit account is onderdeel van de MediaWiki-software en is niet van een gebruiker.",
 	"translate-taskui-export-to-file": "Exporteren in de oorspronkelijke indeling",

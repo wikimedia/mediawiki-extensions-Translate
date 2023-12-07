@@ -8,7 +8,8 @@
 			"Purodha",
 			"Raymond",
 			"Robby",
-			"Umherirrender"
+			"Umherirrender",
+			"McDutchie"
 		]
 	},
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",
@@ -37,7 +38,7 @@
 	"apihelp-query+managemessagegroups-description": "{{doc-apihelp-description|query+managemessagegroups}}",
 	"apihelp-query+managemessagegroups-param-groupId": "{{doc-apihelp-param|query+managemessagegroups|groupId}}",
 	"apihelp-query+managemessagegroups-param-messageKey": "{{doc-apihelp-param|query+managemessagegroups|messageKey}}",
-	"apihelp-query+managemessagegroups-param-changesetName": "{{doc-apihelp-param|query+managemessagegroups|changesetName}}",
+	"apihelp-query+managemessagegroups-param-changesetName": "In this message, '''change set name''' means '''name of the changeset''' (and not <s>''change the name of the set''</s>)!\n{{doc-apihelp-param|query+managemessagegroups|changesetName}}",
 	"apihelp-query+managemessagegroups-example-1": "{{doc-apihelp-example|query+managemessagegroups}}",
 	"apihelp-query+messagecollection-summary": "{{doc-apihelp-summary|query+messagecollection}}",
 	"apihelp-query+messagecollection-param-group": "{{doc-apihelp-param|query+messagecollection|group}}",
@@ -77,7 +78,7 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "{{doc-apihelp-param|managemessagegroups|renameMessageKey}}",
 	"apihelp-managemessagegroups-param-messageKey": "{{doc-apihelp-param|managemessagegroups|messageKey}}",
 	"apihelp-managemessagegroups-param-operation": "{{doc-apihelp-param|managemessagegroups|operation}}",
-	"apihelp-managemessagegroups-param-changesetName": "{{doc-apihelp-param|managemessagegroups|changesetName}}",
+	"apihelp-managemessagegroups-param-changesetName": "In this message, '''change set name''' means '''name of the changeset''' (and not <s>''change the name of the set''</s>)!\n{{doc-apihelp-param|managemessagegroups|changesetName}}",
 	"apihelp-managemessagegroups-param-changesetModified": "{{doc-apihelp-param|managemessagegroups|changesetModified}}",
 	"apihelp-managegroupsynchronizationcache-description": "{{doc-apihelp-description|managegroupsynchronizationcache}}",
 	"apihelp-managegroupsynchronizationcache-summary": "{{doc-apihelp-summary|managegroupsynchronizationcache}}",

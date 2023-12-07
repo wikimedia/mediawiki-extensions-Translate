@@ -45,7 +45,7 @@
 	"translate-edit-nopermission": "Ye need owersetin richts tae owerset messages.",
 	"translate-edit-askpermission": "Get permeession",
 	"translate-checks-parameters": "Follaein {{PLURAL:$2|parameter is|parameters ar}} na uised:\n<strong>$1</strong>",
-	"translate-checks-parameters-unknown": "Follaein {{PLURAL:$2|parameter is|parameters ar}} onknawn:\n<strong>$1</strong>",
+	"translate-checks-parameters-unknown": "Follaein {{PLURAL:$2|parameter is|parameters ar}} unkent:\n<strong>$1</strong>",
 	"translate-checks-balance": "Thaur's aen oneven nummer o {{PLURAL:$2|parenthesis|parentheses}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Follaein {{PLURAL:$2|airtin is|$2 airtins ar}} proablemateec:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Follaein {{PLURAL:$2|airtin is|$2 airtins ar}} missin:\n<strong><nowiki>$1</nowiki></strong>",
