@@ -10,6 +10,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Page\PageIdentity;
+use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
@@ -54,7 +55,10 @@ class TranslatableBundleImporter {
 			);
 		}
 
-		$wikiImporter = $this->wikiImporterFactory->getWikiImporter( $importSource->value );
+		$wikiImporter = $this->wikiImporterFactory
+			// This is used only in a maintenance script (importTranslatableBundle.php),
+			// so use UltimateAuthority to skip permission checks
+			->getWikiImporter( $importSource->value, new UltimateAuthority( $user ) );
 		$wikiImporter->setUsernamePrefix( $interwikiPrefix, $assignKnownUsers );
 		$wikiImporter->setPageOutCallback( [ $this, 'pageCallback' ] );
 
