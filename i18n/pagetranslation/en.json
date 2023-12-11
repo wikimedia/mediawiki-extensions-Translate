@@ -217,6 +217,7 @@
 	"pt-deletepage-list-no-pages": "No pages found.",
 	"pt-deletepage-full-logreason": "Part of translatable page \"$1\"",
 	"pt-deletepage-lang-logreason": "Part of translation page \"$1\"",
+	"pt-deletepage-lang-outdated-logreason": "Page no longer has any translations",
 	"pt-deletepage-started": "Please check the [[$1|log]] for errors and completion message.",
 	"pt-deletepage-intro": "This special page allows you delete a whole translatable page, message bundle, or an individual translation page in a language.\nThe delete action will not be instant, because all the pages depending on them will also be deleted.\nFailures will be logged in the [[$1|respective log]] and they need to be repaired by hand.",
 	"pagemigration": "Translation page migration",

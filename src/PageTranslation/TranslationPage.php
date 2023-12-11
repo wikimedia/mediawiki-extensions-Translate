@@ -56,8 +56,8 @@ class TranslationPage {
 	}
 
 	/** @since 2021.07 */
-	public function getPageContent( Parser $parser ): Content {
-		$text = $this->generateSource( $parser );
+	public function getPageContent( Parser $parser, ?int &$percentageTranslated = null ): Content {
+		$text = $this->generateSource( $parser, $percentageTranslated );
 		$model = $this->sourcePageTitle->getContentModel();
 		return ContentHandler::makeContent( $text, null, $model );
 	}
@@ -95,6 +95,7 @@ class TranslationPage {
 	 */
 	public function generateSourceFromTranslations( Parser $parser, array $messages ): string {
 		$replacements = [];
+
 		foreach ( $this->output->units() as $placeholder => $unit ) {
 			/** @var Message $msg */
 			$msg = $messages[$unit->id] ?? null;
@@ -120,9 +121,18 @@ class TranslationPage {
 	}
 
 	/** Generate translation page source using default options. */
-	private function generateSource( Parser $parser ): string {
+	private function generateSource( Parser $parser, ?int &$percentageTranslated = null ): string {
 		$collection = $this->getMessageCollection();
+		$allKeys = count( $collection );
 		$this->filterMessageCollection( $collection );
+		$keysWithTranslation = count( $collection );
+
+		if ( $allKeys === 0 ) {
+			$percentageTranslated = 0;
+		} else {
+			$percentageTranslated = (int)( ( $keysWithTranslation / $allKeys ) * 100 );
+		}
+
 		$messages = $this->extractMessages( $collection );
 		return $this->generateSourceFromTranslations( $parser, $messages );
 	}

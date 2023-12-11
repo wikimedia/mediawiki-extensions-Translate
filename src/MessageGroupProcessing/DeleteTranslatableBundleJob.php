@@ -24,12 +24,12 @@ class DeleteTranslatableBundleJob extends Job {
 		Title $target,
 		string $base,
 		string $bundleType,
-		bool $isTranslatableBundle,
+		bool $isTranslationPage,
 		UserIdentity $performer,
 		string $reason
 	): self {
 		$params = [
-			'translation' => $isTranslatableBundle,
+			'translation' => $isTranslationPage,
 			'base' => $base,
 			'bundleType' => $bundleType,
 			'performer' => $performer->getName(),
