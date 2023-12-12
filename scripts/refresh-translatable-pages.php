@@ -27,6 +27,8 @@ require_once "$IP/maintenance/Maintenance.php";
  * @since 2013-04
  */
 class RefreshTranslatablePages extends Maintenance {
+	private const USE_NON_PRIORITIZED_JOBS = true;
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Ensure all translation pages are up to date.' );
@@ -56,7 +58,7 @@ class RefreshTranslatablePages extends Maintenance {
 			}
 
 			$page = TranslatablePage::newFromTitle( $group->getTitle() );
-			$jobs = UpdateTranslatablePageJob::getRenderJobs( $page );
+			$jobs = UpdateTranslatablePageJob::getRenderJobs( $page, self::USE_NON_PRIORITIZED_JOBS );
 			if ( $useJobQueue ) {
 				$jobCounter += count( $jobs );
 				$jobQueueGroup->push( $jobs );

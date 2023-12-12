@@ -149,7 +149,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 	 * Creates jobs needed to create or update all translation pages.
 	 * @return RunnableJob[]
 	 */
-	public static function getRenderJobs( TranslatablePage $page ): array {
+	public static function getRenderJobs( TranslatablePage $page, bool $nonPrioritizedJobs = false ): array {
 		$jobs = [];
 
 		$jobTitles = $page->getTranslationPages();
@@ -169,7 +169,12 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		// Titles have __toString method that returns the prefixed text so array_unique should work.
 		$jobTitles = array_unique( $jobTitles );
 		foreach ( $jobTitles as $t ) {
-			$jobs[] = RenderTranslationPageJob::newJob( $t );
+			if ( $nonPrioritizedJobs ) {
+				$jobs[] = RenderTranslationPageJob::newNonPrioritizedJob( $t );
+			} else {
+				$jobs[] = RenderTranslationPageJob::newJob( $t );
+			}
+
 		}
 
 		return $jobs;

@@ -191,6 +191,7 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 
 			global $wgJobClasses;
 			$wgJobClasses['RenderTranslationPageJob'] = RenderTranslationPageJob::class;
+			$wgJobClasses['NonPrioritizedRenderTranslationPageJob'] = RenderTranslationPageJob::class;
 			$wgJobClasses['MoveTranslatableBundleJob'] = MoveTranslatableBundleJob::class;
 			$wgJobClasses['DeleteTranslatableBundleJob'] = DeleteTranslatableBundleJob::class;
 			$wgJobClasses['UpdateTranslatablePageJob'] = UpdateTranslatablePageJob::class;

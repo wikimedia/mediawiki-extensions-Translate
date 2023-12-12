@@ -38,6 +38,16 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		return $job;
 	}
 
+	public static function newNonPrioritizedJob(
+		Title $target,
+		?string $triggerAction = null,
+		?string $unitTitleText = null
+	): self {
+		$job = self::newJob( $target, $triggerAction, $unitTitleText );
+		$job->command = 'NonPrioritizedRenderTranslationPageJob';
+		return $job;
+	}
+
 	public function __construct( Title $title, array $params = [] ) {
 		parent::__construct( 'RenderTranslationPageJob', $title, $params );
 		$this->removeDuplicates = true;
