@@ -22,10 +22,12 @@ class Yaml {
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
 				// Harden: do not support unserializing objects.
-				// @phan-suppress-next-line PhanTypeMismatchArgumentInternalProbablyReal Scalar okay with php8.1
-				$previousValue = ini_set( 'yaml.decode_php', false );
+				$previousValue = ini_set( 'yaml.decode_php', '0' );
 				$ret = yaml_parse( $text );
-				ini_set( 'yaml.decode_php', $previousValue );
+				if ( $previousValue !== false ) {
+					ini_set( 'yaml.decode_php', $previousValue );
+				}
+
 				if ( $ret === false ) {
 					// Convert failures to exceptions
 					throw new InvalidArgumentException( 'Invalid Yaml string' );
