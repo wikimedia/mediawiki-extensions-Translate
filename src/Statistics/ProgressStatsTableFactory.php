@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use IContextSource;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Linker\LinkRenderer;
 
@@ -15,13 +16,16 @@ use MediaWiki\Linker\LinkRenderer;
 class ProgressStatsTableFactory {
 	private LinkRenderer $linkRenderer;
 	private ConfigHelper $configHelper;
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		LinkRenderer $linkRenderer,
-		ConfigHelper $configHelper
+		ConfigHelper $configHelper,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		$this->linkRenderer = $linkRenderer;
 		$this->configHelper = $configHelper;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function newFromContext( IContextSource $contextSource ): StatsTable {
@@ -29,7 +33,8 @@ class ProgressStatsTableFactory {
 			$this->linkRenderer,
 			$this->configHelper,
 			$contextSource,
-			$contextSource->getLanguage()
+			$contextSource->getLanguage(),
+			$this->messageGroupMetadata
 		);
 	}
 

@@ -117,8 +117,6 @@
 		"SubsetMessageGroup": "messagegroups/SubsetMessageGroup.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\SimpleFormat": "src/FileFormatSupport/SimpleFormat.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
-		"MediaWiki\\Extension\\Translate\\MessageProcessing\\TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
-		"TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
@@ -310,7 +308,8 @@
 				"Translate:MessageGroupStatsTableFactory",
 				"Translate:EntitySearch",
 				"Translate:MessagePrefixStats",
-				"LanguageNameUtils"
+				"LanguageNameUtils",
+				"Translate:MessageGroupMetadata"
 			]
 		},
 		"ImportTranslations": {
@@ -355,7 +354,8 @@
 		"AggregateGroups": {
 			"class": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsSpecialPage",
 			"services": [
-				"LinkBatchFactory"
+				"LinkBatchFactory",
+				"Translate:MessageGroupMetadata"
 			]
 		},
 		"SearchTranslations": {
@@ -389,7 +389,8 @@
 		"messagegroups": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupsActionApi",
 			"services": [
-				"Translate:HookRunner"
+				"Translate:HookRunner",
+				"Translate:MessageGroupMetadata"
 			]
 		},
 		"messagegroupstats": {
@@ -404,7 +405,8 @@
 		"aggregategroups": {
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsActionApi",
 			"services": [
-				"JobQueueGroup"
+				"JobQueueGroup",
+				"Translate:MessageGroupMetadata"
 			]
 		},
 		"groupreview": {

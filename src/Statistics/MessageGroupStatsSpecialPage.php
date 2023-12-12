@@ -9,7 +9,7 @@ use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -41,6 +41,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	private EntitySearch $entitySearch;
 	private MessagePrefixStats $messagePrefixStats;
 	private LanguageNameUtils $languageNameUtils;
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	private const GROUPS = 'group';
 	private const MESSAGES = 'messages';
@@ -55,7 +56,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		MessageGroupStatsTableFactory $messageGroupStatsTableFactory,
 		EntitySearch $entitySearch,
 		MessagePrefixStats $messagePrefixStats,
-		LanguageNameUtils $languageNameUtils
+		LanguageNameUtils $languageNameUtils,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		parent::__construct( 'MessageGroupStats' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -64,6 +66,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$this->entitySearch = $entitySearch;
 		$this->messagePrefixStats = $messagePrefixStats;
 		$this->languageNameUtils = $languageNameUtils;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function getDescription() {
@@ -261,10 +264,10 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	}
 
 	private function outputIntroduction(): void {
-		$priorityLangs = TranslateMetadata::get( $this->target, 'prioritylangs' );
+		$priorityLangs = $this->messageGroupMetadata->get( $this->target, 'prioritylangs' );
 		if ( $priorityLangs ) {
 			$languagesFormatted = $this->formatLanguageList( explode( ',', $priorityLangs ) );
-			$hasPriorityForce = TranslateMetadata::get( $this->target, 'priorityforce' ) === 'on';
+			$hasPriorityForce = $this->messageGroupMetadata->get( $this->target, 'priorityforce' ) === 'on';
 			if ( $hasPriorityForce ) {
 				$this->getOutput()->addWikiMsg( 'tpt-priority-languages-force', $languagesFormatted );
 			} else {

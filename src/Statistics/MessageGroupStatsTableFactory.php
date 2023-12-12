@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Linker\LinkRenderer;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -19,6 +20,7 @@ class MessageGroupStatsTableFactory {
 	private ILoadBalancer $loadBalancer;
 	private LinkRenderer $linkRenderer;
 	private MessageGroupReviewStore $groupReviewStore;
+	private MessageGroupMetadata $messageGroupMetadata;
 	private bool $haveTranslateWorkflowStates;
 
 	public function __construct(
@@ -26,12 +28,14 @@ class MessageGroupStatsTableFactory {
 		ILoadBalancer $loadBalancer,
 		LinkRenderer $linkRenderer,
 		MessageGroupReviewStore $groupReviewStore,
+		MessageGroupMetadata $messageGroupMetadata,
 		bool $haveTranslateWorkflowStates
 	) {
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->loadBalancer = $loadBalancer;
 		$this->linkRenderer = $linkRenderer;
 		$this->groupReviewStore = $groupReviewStore;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 	}
 
@@ -43,6 +47,7 @@ class MessageGroupStatsTableFactory {
 			$contextSource,
 			$contextSource->getLanguage(),
 			$this->groupReviewStore,
+			$this->messageGroupMetadata,
 			$this->haveTranslateWorkflowStates
 		);
 	}

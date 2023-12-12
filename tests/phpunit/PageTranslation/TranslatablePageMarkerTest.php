@@ -8,7 +8,7 @@ use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
@@ -39,6 +39,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$getServiceOrMock( TranslatablePageParser::class ),
 			$getServiceOrMock( TranslatablePageStore::class ),
 			$getServiceOrMock( TranslationUnitStoreFactory::class ),
+			$getServiceOrMock( MessageGroupMetadata::class ),
 			$getServiceOrMock( WikiPageFactory::class ),
 		);
 	}
@@ -72,8 +73,11 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$this->createMockWithMethods(
 				TranslatablePageParser::class, [ 'parse' => new ParserOutput( '', [], [] ) ]
 			) +
-			[ TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ) ] +
-			[ TitleParser::class => $services->getTitleParser() ]
+			[
+				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
+				TitleParser::class => $services->getTitleParser(),
+				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
+			]
 		);
 
 		$page = $this->insertPageAndGetRecord( $content );
@@ -113,6 +117,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				MessageIndex::class => $services->get( 'Translate:MessageIndex' ),
 				TranslatablePageParser::class => $services->get( 'Translate:TranslatablePageParser' ),
 				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
+				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' )
 			]
 		);
 
@@ -197,22 +202,23 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		);
 
 		// Verify metadata
+		$messageGroupMetadata = $this->getServiceContainer()->get( 'Translate:MessageGroupMetadata' );
 		$groupId = $operation->getPage()->getMessageGroupId();
-		$dbPriorityLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$dbPriorityLanguages = $messageGroupMetadata->get( $groupId, 'prioritylangs' );
 		$dbPriorityLanguages = $dbPriorityLanguages ? explode( ',', $dbPriorityLanguages ) : [];
 		$this->assertArrayEquals( $priorityLanguages, $dbPriorityLanguages );
 
 		$this->assertEquals( $enableTransclusion, $operation->getPage()->supportsTransclusion() );
-		$this->assertEquals( $priorityReason, TranslateMetadata::get( $groupId, 'priorityreason' ) );
+		$this->assertEquals( $priorityReason, $messageGroupMetadata->get( $groupId, 'priorityreason' ) );
 
 		$this->assertEquals(
 			$forcePriorityLanguages ? 'on' : 'off',
-			TranslateMetadata::get( $groupId, 'priorityforce' )
+			$messageGroupMetadata->get( $groupId, 'priorityforce' )
 		);
 
 		$expectedSyntaxVersion = $forceLatestSyntaxVersion ? TranslatablePageMarker::LATEST_SYNTAX_VERSION :
 				TranslatablePageMarker::DEFAULT_SYNTAX_VERSION;
-		$this->assertEquals( $expectedSyntaxVersion, TranslateMetadata::get( $groupId, 'version' ) );
+		$this->assertEquals( $expectedSyntaxVersion, $messageGroupMetadata->get( $groupId, 'version' ) );
 
 		// Test unmarking
 		$markPage = $this->createTranslatableMarkPage( [

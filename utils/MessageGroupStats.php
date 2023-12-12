@@ -10,7 +10,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -577,6 +577,7 @@ class MessageGroupStats {
 			$stats = self::extractResults( $res, $subGroupIds, $stats );
 		}
 
+		$messageGroupMetadata = Services::getInstance()->getMessageGroupMetadata();
 		foreach ( $expanded as $sid => $subgroup ) {
 			// Discouraged groups may belong to another group, usually if there
 			// is an aggregate group for all translatable pages. In that case
@@ -588,7 +589,7 @@ class MessageGroupStats {
 				$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code, $flags );
 			}
 
-			if ( !TranslateMetadata::isExcluded( $sid, $code ) ) {
+			if ( !$messageGroupMetadata->isExcluded( $sid, $code ) ) {
 				$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 			}
 		}

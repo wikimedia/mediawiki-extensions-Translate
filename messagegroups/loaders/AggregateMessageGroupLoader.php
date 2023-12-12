@@ -9,7 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
@@ -93,25 +93,26 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 * @return array[]
 	 */
 	public function getCacheData(): array {
-		$groupIds = TranslateMetadata::getGroupsWithSubgroups();
-		TranslateMetadata::preloadGroups( $groupIds, __METHOD__ );
+		$messageGroupMetadata = Services::getInstance()->getMessageGroupMetadata();
+		$groupIds = $messageGroupMetadata->getGroupsWithSubgroups();
+		$messageGroupMetadata->preloadGroups( $groupIds, __METHOD__ );
 
 		$groups = [];
 		foreach ( $groupIds as $id ) {
 			$conf = [];
 			$conf['BASIC'] = [
 				'id' => $id,
-				'label' => TranslateMetadata::get( $id, 'name' ),
-				'description' => TranslateMetadata::get( $id, 'description' ),
+				'label' => $messageGroupMetadata->get( $id, 'name' ),
+				'description' => $messageGroupMetadata->get( $id, 'description' ),
 				'meta' => 1,
 				'class' => AggregateMessageGroup::class,
 				'namespace' => NS_TRANSLATIONS,
 			];
-			$sourcelanguage = TranslateMetadata::get( $id, 'sourcelanguagecode' );
+			$sourcelanguage = $messageGroupMetadata->get( $id, 'sourcelanguagecode' );
 			if ( $sourcelanguage ) {
 				$conf['BASIC']['sourcelanguage'] = $sourcelanguage;
 			}
-			$conf['GROUPS'] = TranslateMetadata::getSubgroups( $id );
+			$conf['GROUPS'] = $messageGroupMetadata->getSubgroups( $id );
 			$groups[$id] = $conf;
 		}
 

@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use HtmlArmor;
 use Language;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
@@ -32,18 +32,21 @@ class StatsTable {
 	protected string $mainColumnHeader;
 	/** @var Message[] */
 	protected array $extraColumns = [];
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		LinkRenderer $linkRenderer,
 		ConfigHelper $configHelper,
 		MessageLocalizer $messageLocalizer,
-		Language $language
+		Language $language,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		$this->translate = SpecialPage::getTitleValueFor( 'Translate' );
 		$this->linkRenderer = $linkRenderer;
 		$this->configHelper = $configHelper;
 		$this->messageLocalizer = $messageLocalizer;
 		$this->language = $language;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	/**
@@ -321,7 +324,7 @@ class StatsTable {
 			$excluded = true;
 		}
 
-		if ( TranslateMetadata::isExcluded( $groupId, $code ) ) {
+		if ( $this->messageGroupMetadata->isExcluded( $groupId, $code ) ) {
 			$excluded = true;
 		}
 

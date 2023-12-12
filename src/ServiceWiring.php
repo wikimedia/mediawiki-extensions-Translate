@@ -24,6 +24,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImpor
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleDeleter;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
@@ -106,8 +107,13 @@ return [
 			$services->get( 'Translate:RevTagStore' ),
 			$services->getJobQueueGroup(),
 			$services->getLanguageNameUtils(),
-			$services->get( 'Translate:MessageIndex' )
+			$services->get( 'Translate:MessageIndex' ),
+			$services->get( 'Translate:MessageGroupMetadata' )
 		);
+	},
+
+	'Translate:MessageGroupMetadata' => static function ( MediaWikiServices $services ): MessageGroupMetadata {
+		return new MessageGroupMetadata( $services->getDBLoadBalancer() );
 	},
 
 	'Translate:MessageGroupReviewStore' => static function ( MediaWikiServices $services ): MessageGroupReviewStore {
@@ -125,6 +131,7 @@ return [
 			$services->getDBLoadBalancer(),
 			$services->getLinkRenderer(),
 			$services->get( 'Translate:MessageGroupReviewStore' ),
+			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getMainConfig()->get( 'TranslateWorkflowStates' ) !== false
 		);
 	},
@@ -163,7 +170,8 @@ return [
 	{
 		return new ProgressStatsTableFactory(
 			$services->getLinkRenderer(),
-			$services->get( 'Translate:ConfigHelper' )
+			$services->get( 'Translate:ConfigHelper' ),
+			$services->get( 'Translate:MessageGroupMetadata' )
 		);
 	},
 
@@ -253,6 +261,7 @@ return [
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->get( 'Translate:TranslatablePageStore' ),
 			$services->get( 'Translate:TranslationUnitStoreFactory' ),
+			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getWikiPageFactory()
 		);
 	},
@@ -273,6 +282,7 @@ return [
 			$services->getDBLoadBalancer(),
 			$services->get( 'Translate:TranslatableBundleStatusStore' ),
 			$services->get( 'Translate:TranslatablePageParser' ),
+			$services->get( 'Translate:MessageGroupMetadata' )
 		);
 	},
 

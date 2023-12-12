@@ -10,7 +10,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
@@ -29,6 +29,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 	private JobQueueGroup $jobQueue;
 	private LanguageNameUtils $languageNameUtils;
 	private MessageIndex $messageIndex;
+	private MessageGroupMetadata $messageGroupMetadata;
 	private const METADATA_KEYS_DB = [
 		'priorityforce',
 		'prioritylangs'
@@ -38,19 +39,21 @@ class MessageBundleStore implements TranslatableBundleStore {
 		RevTagStore $revTagStore,
 		JobQueueGroup $jobQueue,
 		LanguageNameUtils $languageNameUtils,
-		MessageIndex $messageIndex
+		MessageIndex $messageIndex,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		$this->revTagStore = $revTagStore;
 		$this->jobQueue = $jobQueue;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->messageIndex = $messageIndex;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
 		$oldBundle = new MessageBundle( $oldName );
 		$newBundle = new MessageBundle( $newName );
 
-		TranslateMetadata::moveMetadata(
+		$this->messageGroupMetadata->moveMetadata(
 			$oldBundle->getMessageGroupId(),
 			$newBundle->getMessageGroupId(),
 			self::METADATA_KEYS_DB
@@ -80,7 +83,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 		$this->revTagStore->removeTags( $title, RevTagStore::MB_VALID_TAG );
 
 		$bundle = new MessageBundle( $title );
-		TranslateMetadata::clearMetadata( $bundle->getMessageGroupId(), self::METADATA_KEYS_DB );
+		$this->messageGroupMetadata->clearMetadata( $bundle->getMessageGroupId(), self::METADATA_KEYS_DB );
 
 		MessageBundle::clearSourcePageCache();
 
@@ -177,14 +180,14 @@ class MessageBundleStore implements TranslatableBundleStore {
 			$priorityLanguages = $metadata->getPriorityLanguages();
 			$priorityLanguages = $priorityLanguages ? implode( ',', $priorityLanguages ) : false;
 
-			TranslateMetadata::set( $groupId, 'prioritylangs', $priorityLanguages );
-			TranslateMetadata::set( $groupId, 'priorityforce', $priorityForce );
+			$this->messageGroupMetadata->set( $groupId, 'prioritylangs', $priorityLanguages );
+			$this->messageGroupMetadata->set( $groupId, 'priorityforce', $priorityForce );
 
 			$description = $metadata->getDescription();
-			TranslateMetadata::set( $groupId, 'description', $description ?? false );
+			$this->messageGroupMetadata->set( $groupId, 'description', $description ?? false );
 
 			$label = $metadata->getLabel();
-			TranslateMetadata::set( $groupId, 'label', $label ?? false );
+			$this->messageGroupMetadata->set( $groupId, 'label', $label ?? false );
 		}
 
 		// What should we do if there are no messages? Use the previous version? Remove the group?

@@ -8,7 +8,6 @@ use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -256,9 +255,11 @@ class TranslatablePage extends TranslatableBundle {
 	public function getTranslationPage( string $targetLanguage ): TranslationPage {
 		$mwServices = MediaWikiServices::getInstance();
 		$config = $mwServices->getMainConfig();
-		$parser = Services::getInstance()->getTranslatablePageParser();
+		$services = Services::getInstance();
+		$parser = $services->getTranslatablePageParser();
 		$parserOutput = $parser->parse( $this->getText() );
-		$pageVersion = (int)TranslateMetadata::get( $this->getMessageGroupId(), 'version' );
+		$pageVersion = (int)$services->getMessageGroupMetadata()
+			->get( $this->getMessageGroupId(), 'version' );
 		$wrapUntranslated = $pageVersion >= 2;
 		$languageFactory = $mwServices->getLanguageFactory();
 
@@ -412,7 +413,9 @@ class TranslatablePage extends TranslatableBundle {
 	}
 
 	public function supportsTransclusion(): ?bool {
-		$transclusion = TranslateMetadata::get( $this->getMessageGroupId(), 'transclusion' );
+		$transclusion = Services::getInstance()
+			->getMessageGroupMetadata()
+			->get( $this->getMessageGroupId(), 'transclusion' );
 		if ( $transclusion === false ) {
 			return null;
 		}

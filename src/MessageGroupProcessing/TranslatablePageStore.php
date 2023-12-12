@@ -9,7 +9,7 @@ use IDBAccessObject;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
@@ -34,6 +34,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private ILoadBalancer $loadBalancer;
 	private TranslatableBundleStatusStore $translatableBundleStatusStore;
 	private TranslatablePageParser $translatablePageParser;
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		MessageIndex $messageIndex,
@@ -41,7 +42,8 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		RevTagStore $revTagStore,
 		ILoadBalancer $loadBalancer,
 		TranslatableBundleStatusStore $translatableBundleStatusStore,
-		TranslatablePageParser $translatablePageParser
+		TranslatablePageParser $translatablePageParser,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		$this->messageIndex = $messageIndex;
 		$this->jobQueue = $jobQueue;
@@ -49,6 +51,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$this->loadBalancer = $loadBalancer;
 		$this->translatableBundleStatusStore = $translatableBundleStatusStore;
 		$this->translatablePageParser = $translatablePageParser;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {
@@ -57,7 +60,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$oldGroupId = $oldTranslatablePage->getMessageGroupId();
 		$newGroupId = $newTranslatablePage->getMessageGroupId();
 
-		TranslateMetadata::moveMetadata( $oldGroupId, $newGroupId, TranslatablePage::METADATA_KEYS );
+		$this->messageGroupMetadata->moveMetadata( $oldGroupId, $newGroupId, TranslatablePage::METADATA_KEYS );
 
 		$this->moveMetadata( $oldGroupId, $newGroupId );
 
@@ -110,7 +113,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		}
 
 		$groupId = $translatablePage->getMessageGroupId();
-		TranslateMetadata::clearMetadata( $groupId, TranslatablePage::METADATA_KEYS );
+		$this->messageGroupMetadata->clearMetadata( $groupId, TranslatablePage::METADATA_KEYS );
 		$this->removeFromAggregateGroups( $groupId );
 
 		// Remove tags after all group related work is done in order to avoid breaking calls to
@@ -160,10 +163,10 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private function moveMetadata( string $oldGroupId, string $newGroupId ): void {
 		// Make the changes in aggregate groups metadata, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
+		$this->messageGroupMetadata->preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
 
 		foreach ( $aggregateGroups as $id => $group ) {
-			$subgroups = TranslateMetadata::get( $id, 'subgroups' );
+			$subgroups = $this->messageGroupMetadata->get( $id, 'subgroups' );
 			if ( $subgroups === false ) {
 				continue;
 			}
@@ -174,7 +177,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 				$subgroups[$newGroupId] = $subgroups[$oldGroupId];
 				unset( $subgroups[$oldGroupId] );
 				$subgroups = array_flip( $subgroups );
-				TranslateMetadata::set(
+				$this->messageGroupMetadata->set(
 					$group->getId(),
 					'subgroups',
 					implode( ',', $subgroups )
@@ -193,16 +196,16 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private function removeFromAggregateGroups( string $groupId ): void {
 		// remove the page from aggregate groups, if present in any of them.
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
+		$this->messageGroupMetadata->preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
 		foreach ( $aggregateGroups as $group ) {
-			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
+			$subgroups = $this->messageGroupMetadata->get( $group->getId(), 'subgroups' );
 			if ( $subgroups !== false ) {
 				$subgroups = explode( ',', $subgroups );
 				$subgroups = array_flip( $subgroups );
 				if ( isset( $subgroups[$groupId] ) ) {
 					unset( $subgroups[$groupId] );
 					$subgroups = array_flip( $subgroups );
-					TranslateMetadata::set(
+					$this->messageGroupMetadata->set(
 						$group->getId(),
 						'subgroups',
 						implode( ',', $subgroups )

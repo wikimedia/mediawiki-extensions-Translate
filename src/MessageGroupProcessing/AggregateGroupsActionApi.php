@@ -8,7 +8,7 @@ use ApiBase;
 use ApiMain;
 use JobQueueGroup;
 use ManualLogEntry;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
 use MessageIndexRebuildJob;
@@ -26,19 +26,20 @@ use WikiPageMessageGroup;
  * @ingroup API TranslateAPI
  */
 class AggregateGroupsActionApi extends ApiBase {
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var string */
-	protected static $right = 'translate-manage';
+	private JobQueueGroup $jobQueueGroup;
+	protected static string $right = 'translate-manage';
 	private const NO_LANGUAGE_CODE = '-';
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		ApiMain $main,
 		string $action,
-		JobQueueGroup $jobQueueGroup
+		JobQueueGroup $jobQueueGroup,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		parent::__construct( $main, $action );
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function execute(): void {
@@ -60,7 +61,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				$this->dieWithError( [ 'apierror-missingparam', 'aggregategroup' ] );
 			}
 			$aggregateGroup = $params['aggregategroup'];
-			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroup );
+			$subgroups = $this->messageGroupMetadata->getSubgroups( $aggregateGroup );
 			if ( $subgroups === null ) {
 				// For a newly created aggregate group, it may contain no subgroups, but null
 				// means the group does not exist or something has gone wrong.
@@ -78,7 +79,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				}
 
 				$messageGroupLanguage = $group->getSourceLanguage();
-				$aggregateGroupLanguage = TranslateMetadata::get( $aggregateGroup, 'sourcelanguagecode' );
+				$aggregateGroupLanguage = $this->messageGroupMetadata->get( $aggregateGroup, 'sourcelanguagecode' );
 				// If source language is not set, user shouldn't be prevented from associating a message group
 				if ( $aggregateGroupLanguage !== false && $messageGroupLanguage !== $aggregateGroupLanguage ) {
 					$this->dieWithError( [
@@ -96,10 +97,10 @@ class AggregateGroupsActionApi extends ApiBase {
 				$subgroups = array_flip( $subgroups );
 			}
 
-			TranslateMetadata::setSubgroups( $aggregateGroup, $subgroups );
+			$this->messageGroupMetadata->setSubgroups( $aggregateGroup, $subgroups );
 
 			$logParams = [
-				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
+				'aggregategroup' => $this->messageGroupMetadata->get( $aggregateGroup, 'name' ),
 				'aggregategroup-id' => $aggregateGroup,
 			];
 
@@ -134,7 +135,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				);
 			}
 
-			TranslateMetadata::deleteGroup( $params['aggregategroup'] );
+			$this->messageGroupMetadata->deleteGroup( $params['aggregategroup'] );
 			$logger = LoggerFactory::getInstance( 'Translate' );
 			$logger->info(
 				'Aggregate group {groupId} has been deleted.',
@@ -178,12 +179,12 @@ class AggregateGroupsActionApi extends ApiBase {
 			}
 			$sourceLanguageCode = trim( $params['groupsourcelanguagecode'] );
 
-			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
-			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
+			$this->messageGroupMetadata->set( $aggregateGroupId, 'name', $name );
+			$this->messageGroupMetadata->set( $aggregateGroupId, 'description', $desc );
 			if ( $sourceLanguageCode !== self::NO_LANGUAGE_CODE ) {
-				TranslateMetadata::set( $aggregateGroupId, 'sourcelanguagecode', $sourceLanguageCode );
+				$this->messageGroupMetadata->set( $aggregateGroupId, 'sourcelanguagecode', $sourceLanguageCode );
 			}
-			TranslateMetadata::setSubgroups( $aggregateGroupId, [] );
+			$this->messageGroupMetadata->setSubgroups( $aggregateGroupId, [] );
 
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
 			$output['groups'] = self::getAllPages();
@@ -204,9 +205,9 @@ class AggregateGroupsActionApi extends ApiBase {
 			$aggregateGroupId = $params['aggregategroup'];
 			$newLanguageCode = trim( $params['groupsourcelanguagecode'] );
 
-			$oldName = TranslateMetadata::get( $aggregateGroupId, 'name' );
-			$oldDesc = TranslateMetadata::get( $aggregateGroupId, 'description' );
-			$currentLanguageCode = TranslateMetadata::get( $aggregateGroupId, 'sourcelanguagecode' );
+			$oldName = $this->messageGroupMetadata->get( $aggregateGroupId, 'name' );
+			$oldDesc = $this->messageGroupMetadata->get( $aggregateGroupId, 'description' );
+			$currentLanguageCode = $this->messageGroupMetadata->get( $aggregateGroupId, 'sourcelanguagecode' );
 
 			if ( $newLanguageCode !== self::NO_LANGUAGE_CODE && $newLanguageCode !== $currentLanguageCode ) {
 				$groupsWithDifferentLanguage =
@@ -235,12 +236,12 @@ class AggregateGroupsActionApi extends ApiBase {
 			) {
 				$this->dieWithError( 'apierror-translate-invalidupdate', 'invalidupdate' );
 			}
-			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
-			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
+			$this->messageGroupMetadata->set( $aggregateGroupId, 'name', $name );
+			$this->messageGroupMetadata->set( $aggregateGroupId, 'description', $desc );
 			if ( $newLanguageCode === self::NO_LANGUAGE_CODE ) {
-				TranslateMetadata::clearMetadata( $aggregateGroupId, [ 'sourcelanguagecode' ] );
+				$this->messageGroupMetadata->clearMetadata( $aggregateGroupId, [ 'sourcelanguagecode' ] );
 			} else {
-				TranslateMetadata::set( $aggregateGroupId, 'sourcelanguagecode', $newLanguageCode );
+				$this->messageGroupMetadata->set( $aggregateGroupId, 'sourcelanguagecode', $newLanguageCode );
 			}
 		}
 
@@ -262,7 +263,7 @@ class AggregateGroupsActionApi extends ApiBase {
 		string $sourceLanguageCode
 	): array {
 		$groupsWithDifferentLanguage = [];
-		$subgroups = TranslateMetadata::getSubgroups( $aggregateGroupId );
+		$subgroups = $this->messageGroupMetadata->getSubgroups( $aggregateGroupId );
 		foreach ( $subgroups as $group ) {
 			$messageGroup = MessageGroups::getGroup( $group );
 			$messageGroupLanguage = $messageGroup->getSourceLanguage();

@@ -8,8 +8,8 @@ use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -23,16 +23,18 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class QueryMessageGroupsActionApi extends ApiQueryBase {
-	/** @var HookRunner */
-	private $hookRunner;
+	private HookRunner $hookRunner;
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		HookRunner $hookRunner
+		HookRunner $hookRunner,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		parent::__construct( $query, $moduleName, 'mg' );
 		$this->hookRunner = $hookRunner;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function execute(): void {
@@ -96,7 +98,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 			if (
 				$params['languageFilter'] !== '' &&
-				TranslateMetadata::isExcluded( $group->getId(), $params['languageFilter'] )
+				$this->messageGroupMetadata->isExcluded( $group->getId(), $params['languageFilter'] )
 			) {
 				unset( $groups[$index] );
 			}
@@ -104,7 +106,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 		if ( $needsMetadata && $groups ) {
 			// FIXME: This doesn't preload subgroups in a tree structure
-			TranslateMetadata::preloadGroups( array_keys( $groups ), __METHOD__ );
+			$this->messageGroupMetadata->preloadGroups( array_keys( $groups ), __METHOD__ );
 		}
 
 		/** @var MessageGroup|array $mixed */
@@ -185,12 +187,12 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 		}
 
 		if ( isset( $props['prioritylangs'] ) ) {
-			$prioritylangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
+			$prioritylangs = $this->messageGroupMetadata->get( $groupId, 'prioritylangs' );
 			$a['prioritylangs'] = $prioritylangs ? explode( ',', $prioritylangs ) : false;
 		}
 
 		if ( isset( $props['priorityforce'] ) ) {
-			$a['priorityforce'] = ( TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on' );
+			$a['priorityforce'] = ( $this->messageGroupMetadata->get( $groupId, 'priorityforce' ) === 'on' );
 		}
 
 		if ( isset( $props['workflowstates'] ) ) {

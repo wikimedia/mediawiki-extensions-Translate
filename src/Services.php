@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImpor
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
@@ -172,6 +173,11 @@ class Services implements ContainerInterface {
 	/** @since 2022.03 */
 	public function getTranslatablePageStore(): TranslatablePageStore {
 		return $this->get( 'Translate:TranslatablePageStore' );
+	}
+
+	/** @since 2024.04 */
+	public function getMessageGroupMetadata(): MessageGroupMetadata {
+		return $this->get( 'Translate:MessageGroupMetadata' );
 	}
 
 	/** @since 2023.11 */

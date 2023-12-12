@@ -11,7 +11,7 @@ use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
@@ -59,13 +59,15 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private JobQueueGroup $jobQueueGroup;
 	private TranslatablePageMarker $translatablePageMarker;
 	private TranslatablePageParser $translatablePageParser;
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		LanguageFactory $languageFactory,
 		LinkBatchFactory $linkBatchFactory,
 		JobQueueGroup $jobQueueGroup,
 		TranslatablePageMarker $translatablePageMarker,
-		TranslatablePageParser $translatablePageParser
+		TranslatablePageParser $translatablePageParser,
+		MessageGroupMetadata $messageGroupMetadata
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageFactory = $languageFactory;
@@ -73,6 +75,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->translatablePageMarker = $translatablePageMarker;
 		$this->translatablePageParser = $translatablePageParser;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function doesWrites(): bool {
@@ -464,7 +467,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$pages[$i]['groupid'] = $id;
 		}
 		// Performance optimization: load only data we need to classify the pages
-		$metadata = TranslateMetadata::loadBasicMetadataForTranslatablePages(
+		$metadata = $this->messageGroupMetadata->loadBasicMetadataForTranslatablePages(
 			$messageGroupIdsForPreload,
 			[ 'transclusion', 'version' ]
 		);
@@ -819,7 +822,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		// If the page is being marked for translation for the first time, the checkbox can be checked
 		$this->templateTransclusionForm( $page->supportsTransclusion() ?? $operation->isFirstMark() );
 
-		$version = TranslateMetadata::getWithDefaultValue(
+		$version = $this->messageGroupMetadata->getWithDefaultValue(
 			$page->getMessageGroupId(), 'version', TranslatablePageMarker::DEFAULT_SYNTAX_VERSION
 		);
 		$this->syntaxVersionForm( $version, $operation->isFirstMark() );
@@ -843,10 +846,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private function priorityLanguagesForm( TranslatablePage $page ): void {
 		$groupId = $page->getMessageGroupId();
 		$interfaceLanguage = $this->getLanguage()->getCode();
-		$storedLanguages = (string)TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$storedLanguages = (string)$this->messageGroupMetadata->get( $groupId, 'prioritylangs' );
 		$default = $storedLanguages !== '' ? explode( ',', $storedLanguages ) : [];
 
-		$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+		$priorityReason = $this->messageGroupMetadata->get( $groupId, 'priorityreason' );
 		$priorityReason = $priorityReason !== false ? $priorityReason : '';
 
 		$form = new FieldsetLayout( [
@@ -867,7 +870,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				new FieldLayout(
 					new CheckboxInputWidget( [
 						'name' => 'forcelimit',
-						'selected' => TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on',
+						'selected' => $this->messageGroupMetadata->get( $groupId, 'priorityforce' ) === 'on',
 					] ),
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs-force' )->text(),

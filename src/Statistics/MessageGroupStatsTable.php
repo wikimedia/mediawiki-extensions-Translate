@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
@@ -29,6 +29,7 @@ class MessageGroupStatsTable {
 	private Language $interfaceLanguage;
 	private StatsTable $table;
 	private MessageGroupReviewStore $groupReviewStore;
+	private MessageGroupMetadata $messageGroupMetadata;
 	/** Flag to set if not all numbers are available. */
 	private bool $incompleteStats;
 	private array $languageNames;
@@ -44,6 +45,7 @@ class MessageGroupStatsTable {
 		MessageLocalizer $localizer,
 		Language $interfaceLanguage,
 		MessageGroupReviewStore $groupReviewStore,
+		MessageGroupMetadata $messageGroupMetadata,
 		bool $haveTranslateWorkflowStates
 	) {
 		$this->table = $table;
@@ -53,6 +55,7 @@ class MessageGroupStatsTable {
 		$this->localizer = $localizer;
 		$this->interfaceLanguage = $interfaceLanguage;
 		$this->groupReviewStore = $groupReviewStore;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 		$this->languageNames = Utilities::getLanguageNames( $this->interfaceLanguage->getCode() );
 		$this->translateTitle = SpecialPage::getTitleFor( 'Translate' );
@@ -220,7 +223,7 @@ class MessageGroupStatsTable {
 	 * present, to that list add languages with more than 0% translation.
 	 */
 	private function filterPriorityLangs( array &$languages, string $group, array $cache ): void {
-		$filterLangs = TranslateMetadata::get( $group, 'prioritylangs' );
+		$filterLangs = $this->messageGroupMetadata->get( $group, 'prioritylangs' );
 		if ( $filterLangs === false || strlen( $filterLangs ) === 0 ) {
 			// No restrictions, keep everything
 			return;

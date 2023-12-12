@@ -13,7 +13,6 @@ use LanguageCode;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -676,8 +675,9 @@ class Hooks {
 			return null;
 		}
 
+		$messageGroupMetadata = Services::getInstance()->getMessageGroupMetadata();
 		// If priority languages have been set, always show those languages
-		$priorityLanguages = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
+		$priorityLanguages = $messageGroupMetadata->get( $page->getMessageGroupId(), 'prioritylangs' );
 		if ( (string)$priorityLanguages !== '' ) {
 			$status += array_fill_keys( explode( ',', $priorityLanguages ), 0 );
 		}
@@ -1095,15 +1095,16 @@ class Hooks {
 			return [];
 		}
 
+		$messageGroupMetadata = Services::getInstance()->getMessageGroupMetadata();
 		// Check if anything is prevented for the group in the first place
-		$force = TranslateMetadata::get( $groupId, 'priorityforce' );
+		$force = $messageGroupMetadata->get( $groupId, 'priorityforce' );
 		if ( $force !== 'on' ) {
 			return [];
 		}
 
 		// And finally check whether the language is in the inclusion list
-		$languages = TranslateMetadata::get( $groupId, 'prioritylangs' );
-		$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
+		$languages = $messageGroupMetadata->get( $groupId, 'prioritylangs' );
+		$reason = $messageGroupMetadata->get( $groupId, 'priorityreason' );
 		if ( !$languages ) {
 			if ( $reason ) {
 				return [ 'tpt-translation-restricted-no-priority-languages', $reason ];

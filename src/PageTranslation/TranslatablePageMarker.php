@@ -12,7 +12,7 @@ use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
@@ -47,6 +47,7 @@ class TranslatablePageMarker {
 	private TranslatablePageParser $translatablePageParser;
 	private TranslatablePageStore $translatablePageStore;
 	private TranslationUnitStoreFactory $translationUnitStoreFactory;
+	private MessageGroupMetadata $messageGroupMetadata;
 	private WikiPageFactory $wikiPageFactory;
 
 	public function __construct(
@@ -61,6 +62,7 @@ class TranslatablePageMarker {
 		TranslatablePageParser $translatablePageParser,
 		TranslatablePageStore $translatablePageStore,
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
+		MessageGroupMetadata $messageGroupMetadata,
 		WikiPageFactory $wikiPageFactory
 	) {
 		$this->loadBalancer = $loadBalancer;
@@ -75,6 +77,7 @@ class TranslatablePageMarker {
 		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
 		$this->wikiPageFactory = $wikiPageFactory;
 		$this->messageGroups = $messageGroups;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	/**
@@ -276,7 +279,7 @@ class TranslatablePageMarker {
 		$inserts = [];
 		$changed = [];
 		$groupId = $page->getMessageGroupId();
-		$maxId = (int)TranslateMetadata::get( $groupId, 'maxid' );
+		$maxId = (int)$this->messageGroupMetadata->get( $groupId, 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
 		$sections = $pageSettings->shouldTranslateTitle()
@@ -350,12 +353,12 @@ class TranslatablePageMarker {
 		$page = $operation->getPage();
 		$groupId = $page->getMessageGroupId();
 
-		TranslateMetadata::set( $groupId, 'maxid', (string)$maxId );
+		$this->messageGroupMetadata->set( $groupId, 'maxid', (string)$maxId );
 		if ( $pageSettings->shouldForceLatestSyntaxVersion() || $operation->isFirstMark() ) {
-			TranslateMetadata::set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
+			$this->messageGroupMetadata->set( $groupId, 'version', self::LATEST_SYNTAX_VERSION );
 		}
 
-		TranslateMetadata::set(
+		$this->messageGroupMetadata->set(
 			$groupId,
 			'transclusion',
 			$pageSettings->shouldEnableTransclusion() ? '1' : '0'
@@ -381,13 +384,13 @@ class TranslatablePageMarker {
 
 		$groupId = $page->getMessageGroupId();
 		// old priority languages
-		$opLanguages = TranslateMetadata::get( $groupId, 'prioritylangs' );
-		$opForce = TranslateMetadata::get( $groupId, 'priorityforce' );
-		$opReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+		$opLanguages = $this->messageGroupMetadata->get( $groupId, 'prioritylangs' );
+		$opForce = $this->messageGroupMetadata->get( $groupId, 'priorityforce' );
+		$opReason = $this->messageGroupMetadata->get( $groupId, 'priorityreason' );
 
-		TranslateMetadata::set( $groupId, 'prioritylangs', $languages );
-		TranslateMetadata::set( $groupId, 'priorityforce', $force );
-		TranslateMetadata::set( $groupId, 'priorityreason', $reason );
+		$this->messageGroupMetadata->set( $groupId, 'prioritylangs', $languages );
+		$this->messageGroupMetadata->set( $groupId, 'priorityforce', $force );
+		$this->messageGroupMetadata->set( $groupId, 'priorityreason', $reason );
 
 		if ( $opLanguages !== $languages || $opForce !== $force || $opReason !== $reason ) {
 			$logComment = $reason === false ? '' : $reason;
@@ -408,7 +411,7 @@ class TranslatablePageMarker {
 	}
 
 	private function prepareTranslationUnits( TranslatablePage $page, ParserOutput $parserOutput ): array {
-		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
+		$highest = (int)$this->messageGroupMetadata->get( $page->getMessageGroupId(), 'maxid' );
 
 		$store = $this->translationUnitStoreFactory->getReader( $page->getPageIdentity() );
 		$storedUnits = $store->getUnits();

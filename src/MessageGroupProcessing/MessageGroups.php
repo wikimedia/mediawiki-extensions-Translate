@@ -9,7 +9,6 @@ use CachedMessageGroupLoader;
 use DependencyWrapper;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
@@ -747,7 +746,7 @@ class MessageGroups {
 			$inclusionList = $group->getTranslatableLanguages() ?? $supportedLanguages;
 
 			$included = isset( $inclusionList[$targetLanguage] );
-			$excluded = TranslateMetadata::isExcluded( $groupId, $targetLanguage );
+			$excluded = Services::getInstance()->getMessageGroupMetadata()->isExcluded( $groupId, $targetLanguage );
 
 			$cache[$cacheKey] = [
 				'relevant' => $included && !$excluded,

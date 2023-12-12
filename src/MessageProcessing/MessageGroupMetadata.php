@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Offers functionality for reading and updating Translate group
@@ -16,26 +16,32 @@ use MediaWiki\MediaWikiServices;
  * @copyright Copyright © 2012-2013, Niklas Laxström, Santhosh Thottingal
  * @license GPL-2.0-or-later
  */
-class TranslateMetadata {
+class MessageGroupMetadata {
 	/** Map of (database group id => key => value) */
-	private static array $cache = [];
-	private static ?array $priorityCache = null;
+	private array $cache = [];
+	private ?array $priorityCache = null;
+	private ILoadBalancer $loadBalancer;
+
+	public function __construct( ILoadBalancer $loadBalancer ) {
+		$this->loadBalancer = $loadBalancer;
+	}
 
 	/**
 	 * @param string[] $groups List of translate groups
 	 * @param string $caller
 	 */
-	public static function preloadGroups( array $groups, string $caller ): void {
-		$dbGroupIds = array_map( [ self::class, 'getGroupIdForDatabase' ], $groups );
-		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), self::$cache ) );
+	public function preloadGroups( array $groups, string $caller ): void {
+		$dbGroupIds = array_map( [ $this, 'getGroupIdForDatabase' ], $groups );
+		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), $this->cache ) );
 		if ( !$missing ) {
 			return;
 		}
 
 		$functionName = __METHOD__ . " (for $caller)";
 
-		self::$cache += array_fill_keys( $missing, null ); // cache negatives
+		$this->cache += array_fill_keys( $missing, null ); // cache negatives
 
+		// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 		$dbr = Utilities::getSafeReadDB();
 		$conditions = count( $missing ) <= 500 ? [ 'tmd_group' => array_map( 'strval', $missing ) ] : [];
 		$res = $dbr->select(
@@ -45,7 +51,7 @@ class TranslateMetadata {
 			$functionName
 		);
 		foreach ( $res as $row ) {
-			self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+			$this->cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
 		}
 	}
 
@@ -55,19 +61,17 @@ class TranslateMetadata {
 	 * @param string $key Metadata key
 	 * @return string|bool
 	 */
-	public static function get( string $group, string $key ) {
-		self::preloadGroups( [ $group ], __METHOD__ );
-		return self::$cache[self::getGroupIdForDatabase( $group )][$key] ?? false;
+	public function get( string $group, string $key ) {
+		$this->preloadGroups( [ $group ], __METHOD__ );
+		return $this->cache[$this->getGroupIdForDatabase( $group )][$key] ?? false;
 	}
 
 	/**
 	 * Get a metadata value for the given group and key.
 	 * If it does not exist, return the default value.
 	 */
-	public static function getWithDefaultValue(
-		string $group, string $key, string $defaultValue
-	): string {
-		$value = self::get( $group, $key );
+	public function getWithDefaultValue( string $group, string $key, string $defaultValue ): string {
+		$value = $this->get( $group, $key );
 		return $value === false ? $defaultValue : $value;
 	}
 
@@ -78,16 +82,14 @@ class TranslateMetadata {
 	 * @param string $key Metadata key
 	 * @param string|false $value Metadata value, false deletes from cache
 	 */
-	public static function set( string $groupId, string $key, $value ): void {
-		$dbw = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( DB_PRIMARY );
-		$dbGroupId = self::getGroupIdForDatabase( $groupId );
+	public function set( string $groupId, string $key, $value ): void {
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
 		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
 			$dbw->delete( 'translate_metadata', $data, __METHOD__ );
-			unset( self::$cache[$dbGroupId][$key] );
+			unset( $this->cache[$dbGroupId][$key] );
 		} else {
 			$dbw->replace(
 				'translate_metadata',
@@ -95,18 +97,18 @@ class TranslateMetadata {
 				$data,
 				__METHOD__
 			);
-			self::$cache[$dbGroupId][$key] = $value;
+			$this->cache[$dbGroupId][$key] = $value;
 		}
 
-		self::$priorityCache = null;
+		$this->priorityCache = null;
 	}
 
 	/**
 	 * Wrapper for getting subgroups.
 	 * @return string[]|null
 	 */
-	public static function getSubgroups( string $groupId ): ?array {
-		$groups = self::get( $groupId, 'subgroups' );
+	public function getSubgroups( string $groupId ): ?array {
+		$groups = $this->get( $groupId, 'subgroups' );
 		if ( is_string( $groups ) ) {
 			if ( str_contains( $groups, '|' ) ) {
 				$groups = explode( '|', $groups );
@@ -127,26 +129,25 @@ class TranslateMetadata {
 	}
 
 	/** Wrapper for setting subgroups. */
-	public static function setSubgroups( string $groupId, array $subgroupIds ): void {
+	public function setSubgroups( string $groupId, array $subgroupIds ): void {
 		$subgroups = implode( '|', $subgroupIds );
-		self::set( $groupId, 'subgroups', $subgroups );
+		$this->set( $groupId, 'subgroups', $subgroups );
 	}
 
 	/** Wrapper for deleting one wiki aggregate group at once. */
-	public static function deleteGroup( string $groupId ): void {
-		$dbw = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( DB_PRIMARY );
+	public function deleteGroup( string $groupId ): void {
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 
-		$dbGroupId = self::getGroupIdForDatabase( $groupId );
+		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
 		$conditions = [ 'tmd_group' => $dbGroupId ];
 		$dbw->delete( 'translate_metadata', $conditions, __METHOD__ );
-		self::$cache[ $dbGroupId ] = null;
-		unset( self::$priorityCache[ $dbGroupId ] );
+		$this->cache[ $dbGroupId ] = null;
+		unset( $this->priorityCache[ $dbGroupId ] );
 	}
 
-	public static function isExcluded( string $groupId, string $code ): bool {
-		if ( self::$priorityCache === null ) {
+	public function isExcluded( string $groupId, string $code ): bool {
+		if ( $this->priorityCache === null ) {
+			// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 			$db = Utilities::getSafeReadDB();
 			$res = $db->select(
 				[
@@ -173,17 +174,17 @@ class TranslateMetadata {
 				]
 			);
 
-			self::$priorityCache = [];
+			$this->priorityCache = [];
 			foreach ( $res as $row ) {
-				self::$priorityCache[$row->group] =
+				$this->priorityCache[$row->group] =
 					array_flip( explode( ',', $row->langs ) );
 			}
 		}
 
-		$dbGroupId = self::getGroupIdForDatabase( $groupId );
+		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
 		$isDiscouraged = MessageGroups::getPriority( $groupId ) === 'discouraged';
-		$hasLimitedLanguages = isset( self::$priorityCache[$dbGroupId] );
-		$isLanguageIncluded = isset( self::$priorityCache[$dbGroupId][$code] );
+		$hasLimitedLanguages = isset( $this->priorityCache[$dbGroupId] );
+		$isLanguageIncluded = isset( $this->priorityCache[$dbGroupId][$code] );
 
 		return $isDiscouraged || ( $hasLimitedLanguages && !$isLanguageIncluded );
 	}
@@ -194,12 +195,13 @@ class TranslateMetadata {
 	 * @param string[] $keys Which metadata keys to load
 	 * @return array<string,array<string,string>>
 	 */
-	public static function loadBasicMetadataForTranslatablePages( array $groupIds, array $keys ): array {
+	public function loadBasicMetadataForTranslatablePages( array $groupIds, array $keys ): array {
+		// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 		$db = Utilities::getSafeReadDB();
 		$dbGroupIdMap = [];
 
 		foreach ( $groupIds as $groupId ) {
-			$dbGroupIdMap[ self::getGroupIdForDatabase( $groupId ) ] = $groupId;
+			$dbGroupIdMap[ $this->getGroupIdForDatabase( $groupId ) ] = $groupId;
 		}
 
 		$res = $db->select(
@@ -222,17 +224,17 @@ class TranslateMetadata {
 		return $ret;
 	}
 
-	public static function moveMetadata(
+	public function moveMetadata(
 		string $oldGroupId,
 		string $newGroupId,
 		array $metadataKeysToMove
 	): void {
-		self::preloadGroups( [ $oldGroupId, $newGroupId ], __METHOD__ );
+		$this->preloadGroups( [ $oldGroupId, $newGroupId ], __METHOD__ );
 		foreach ( $metadataKeysToMove as $type ) {
-			$value = self::get( $oldGroupId, $type );
+			$value = $this->get( $oldGroupId, $type );
 			if ( $value !== false ) {
-				self::set( $oldGroupId, $type, false );
-				self::set( $newGroupId, $type, $value );
+				$this->set( $oldGroupId, $type, false );
+				$this->set( $newGroupId, $type, $value );
 			}
 		}
 	}
@@ -241,19 +243,20 @@ class TranslateMetadata {
 	 * @param string $groupId
 	 * @param string[] $metadataKeys
 	 */
-	public static function clearMetadata( string $groupId, array $metadataKeys ): void {
+	public function clearMetadata( string $groupId, array $metadataKeys ): void {
 		// remove the entries from metadata table.
 		foreach ( $metadataKeys as $type ) {
-			self::set( $groupId, $type, false );
+			$this->set( $groupId, $type, false );
 		}
 	}
 
 	/** Get groups ids that have subgroups set up. */
-	public static function getGroupsWithSubgroups(): array {
+	public function getGroupsWithSubgroups(): array {
 		$tables = [ 'translate_metadata' ];
 		$field = 'tmd_group';
 		$conditions = [ 'tmd_key' => 'subgroups' ];
 
+		// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 		$db = Utilities::getSafeReadDB();
 		// There is no need to de-hash the group id from the database as
 		// AggregateGroupsActionApi::generateAggregateGroupId already ensures that the length
@@ -261,7 +264,7 @@ class TranslateMetadata {
 		return $db->selectFieldValues( $tables, $field, $conditions, __METHOD__ );
 	}
 
-	private static function getGroupIdForDatabase( string $groupId ): string {
+	private function getGroupIdForDatabase( string $groupId ): string {
 		// Check if length is more than 200 bytes
 		if ( strlen( $groupId ) <= 200 ) {
 			return $groupId;
@@ -272,5 +275,3 @@ class TranslateMetadata {
 		return mb_strcut( $groupId, 0, 160 ) . '||' . $hash;
 	}
 }
-
-class_alias( TranslateMetadata::class, 'TranslateMetadata' );

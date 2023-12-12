@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
 use MediaWiki\Cache\LinkBatchFactory;
-use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use SpecialPage;
@@ -29,10 +29,13 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	private $linkBatchFactory;
 	/** @var XmlSelect */
 	private $languageSelector;
+	/** @var MessageGroupMetadata */
+	private $messageGroupMetadata;
 
-	public function __construct( LinkBatchFactory $linkBatchFactory ) {
+	public function __construct( LinkBatchFactory $linkBatchFactory, MessageGroupMetadata $messageGroupMetadata ) {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
 		$this->linkBatchFactory = $linkBatchFactory;
+		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	protected function getGroupName(): string {
@@ -52,7 +55,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		}
 
 		$groupsPreload = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		TranslateMetadata::preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
+		$this->messageGroupMetadata->preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
 
 		$groups = MessageGroups::getAllGroups();
 		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
@@ -63,7 +66,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				$pages[] = $group;
 			} elseif ( $group instanceof AggregateMessageGroup ) {
 				// Filter out AggregateGroups configured in YAML
-				$subgroups = TranslateMetadata::getSubgroups( $group->getId() );
+				$subgroups = $this->messageGroupMetadata->getSubgroups( $group->getId() );
 				if ( $subgroups !== null ) {
 					$aggregates[] = $group;
 				}
@@ -84,7 +87,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$id = $group->getId();
 		$label = $group->getLabel();
 		$desc = $group->getDescription( $this->getContext() );
-		$sourceLanguage = TranslateMetadata::get( $id, 'sourcelanguagecode' );
+		$sourceLanguage = $this->messageGroupMetadata->get( $id, 'sourcelanguagecode' );
 
 		$edit = '';
 		$remove = '';
@@ -138,7 +141,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		}
 
 		// Not calling $parent->getGroups() because it has done filtering already
-		$subGroups = TranslateMetadata::getSubgroups( $id );
+		$subGroups = $this->messageGroupMetadata->getSubgroups( $id );
 		$shouldExpand = count( $subGroups ) <= 3;
 		$subGroupsId = $this->htmlIdForGroup( $group->getId(), 'tp-subgroup-' );
 
