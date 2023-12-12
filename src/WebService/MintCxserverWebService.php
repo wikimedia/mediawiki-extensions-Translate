@@ -11,8 +11,13 @@ namespace MediaWiki\Extension\Translate\WebService;
  * @since 2023.06
  */
 class MintCxserverWebService extends CxserverWebService {
-	private int $wikitextCount;
-	private const WIKITEXT_REGEX = '/{?{(PLURAL|GRAMMAR|GENDER):/';
+	private const WIKITEXT_REGEX = [
+		'/\b(PLURAL|GRAMMAR|GENDER)\b/',
+		'/==\s*([^=]+)\s*==/', // heading
+		"/''.+?''/", // italics & bold
+		'/\[\[([^\[\]]+)\]\]/', // links
+		'/\{\{([^{}]+)\}\}/', // templates
+	];
 	private const EXCLUDED_TARGET_LANGUAGES = [ 'zh' ];
 
 	protected function handlePairsForService( array $response ): array {
@@ -36,19 +41,15 @@ class MintCxserverWebService extends CxserverWebService {
 	}
 
 	protected function wrapUntranslatable( string $text ): string {
-		// Keep track of the number of wikitext instances in the source string.
-		$this->wikitextCount = preg_match_all( self::WIKITEXT_REGEX, $text );
-		return $text;
-	}
-
-	protected function unwrapUntranslatable( string $text ): string {
-		if ( $this->wikitextCount !== 0 ) {
-			// Verify that the wikitext instances are the same as before translation
-			$postWikitextCount = preg_match_all( self::WIKITEXT_REGEX, $text );
-			if ( $postWikitextCount !== $this->wikitextCount ) {
-				throw new TranslationWebServiceInvalidInputException( 'Missing wikitext in response from MinT' );
+		// Check if at least one instance of the patterns exists in the source string
+		foreach ( self::WIKITEXT_REGEX as $pattern ) {
+			if ( preg_match( $pattern, $text ) ) {
+				throw new TranslationWebServiceInvalidInputException(
+					'Wikitext instance(s) in source string. See T349375'
+				);
 			}
 		}
+
 		return $text;
 	}
 }
