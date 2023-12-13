@@ -655,8 +655,12 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$hasChanges = false;
 
 		// Check whether page title was previously marked for translation.
-		// If the page is marked for translation the first time, default to checked.
-		$defaultChecked = $operation->isFirstMark() || $page->hasPageDisplayTitle();
+		// If the page is marked for translation the first time, default to checked,
+		// unless the page is a template. T305240
+		$defaultChecked = (
+			$operation->isFirstMark() &&
+			!$page->getTitle()->inNamespace( NS_TEMPLATE )
+		) || $page->hasPageDisplayTitle();
 
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
