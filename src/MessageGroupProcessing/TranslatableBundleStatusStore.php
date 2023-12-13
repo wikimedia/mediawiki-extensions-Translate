@@ -43,7 +43,7 @@ class TranslatableBundleStatusStore {
 		$bundleTypeId = $this->getBundleTypeId( $bundleType );
 		$this->database->replace(
 			self::TABLE_NAME,
-			[ 'ttb_page_id' ],
+			'ttb_page_id',
 			[
 				'ttb_page_id' => $title->getArticleID(),
 				'ttb_type' => $bundleTypeId,
