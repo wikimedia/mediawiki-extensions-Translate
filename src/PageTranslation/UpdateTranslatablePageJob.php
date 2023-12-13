@@ -156,7 +156,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		// Ensure that we create the source language page when page is marked for translation.
 		$jobTitles[] = $page->getTitle()->getSubpage( $page->getSourceLanguageCode() );
 		// In some cases translation page may be missing even though translations exist. One such case
-		// is when FuzzyBot makes edits, which supresses render jobs. There may also be bugs with the
+		// is when FuzzyBot makes edits, which suppresses render jobs. There may also be bugs with the
 		// render jobs failing. Add jobs based on message group stats to create self-healing process.
 		$stats = MessageGroupStats::forGroup( $page->getMessageGroupId() );
 		foreach ( $stats as $languageCode => $languageStats ) {
