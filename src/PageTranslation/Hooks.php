@@ -15,6 +15,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -60,8 +61,8 @@ class Hooks {
 	private const PAGEPROP_HAS_LANGUAGES_TAG = 'translate-has-languages-tag';
 	// Uuugly hacks
 	public static $allowTargetEdit = false;
-	// Check if job queue is running
-	public static $jobQueueRunning = false;
+	/** State flag used by DeleteTranslatableBundleJob for performance optimizations. */
+	public static bool $isDeleteTranslatableBundleJobRunning = false;
 	// Check if we are just rendering tags or such
 	public static $renderingContext = false;
 	// Used to communicate data between LanguageLinks and SkinTemplateGetLanguageLink hooks.
@@ -1624,11 +1625,6 @@ class Hooks {
 		$content,
 		$logEntry
 	) {
-		// Do the update. In case job queue is doing the work, the update is not done here
-		if ( self::$jobQueueRunning ) {
-			return;
-		}
-
 		$title = $unit->getTitle();
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
@@ -1640,11 +1636,23 @@ class Hooks {
 			return;
 		}
 
+		$mwServices = MediaWikiServices::getInstance();
+		// During deletions this may cause creation of a lot of duplicate jobs. It is expected that
+		// job queue will deduplicate them to reduce the number of jobs actually run.
+		$mwServices->getJobQueueGroup()->push(
+			RebuildMessageGroupStatsJob::newRefreshGroupsJob( [ $group->getId() ] )
+		);
+
+		// Logic to update translation pages, skipped if we are in a middle of a deletion
+		if ( self::$isDeleteTranslatableBundleJobRunning ) {
+			return;
+		}
+
 		$target = $group->getTitle();
 		$langCode = $handle->getCode();
 		$fname = __METHOD__;
 
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$callback = function () use (
 			$dbw,
 			$target,
@@ -1664,12 +1672,6 @@ class Hooks {
 			$dbw->startAtomic( $fname );
 
 			$page = TranslatablePage::newFromTitle( $target );
-
-			MessageGroupStats::forItem(
-				$page->getMessageGroupId(),
-				$langCode,
-				MessageGroupStats::FLAG_NO_CACHE
-			);
 
 			if ( !$handle->isDoc() ) {
 				$unitTitle = $handle->getTitle();

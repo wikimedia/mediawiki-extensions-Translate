@@ -18,6 +18,8 @@ use MessageGroupStats;
  * @ingroup JobQueue
  */
 class RebuildMessageGroupStatsJob extends GenericTranslateJob {
+	/** @inheritdoc */
+	protected $removeDuplicates = true;
 
 	public static function newJob( array $params ): self {
 		return new self( Title::newMainPage(), $params );

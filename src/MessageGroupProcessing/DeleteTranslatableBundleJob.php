@@ -52,8 +52,11 @@ class DeleteTranslatableBundleJob extends Job {
 		$reason = $this->getReason();
 		$mwInstance = MediaWikiServices::getInstance();
 
+		// Allows regular user to delete pages that are normally protected from direct editing
 		Hooks::$allowTargetEdit = true;
-		Hooks::$jobQueueRunning = true;
+		// Skip hook that handles deletion of translation units to avoid recreating translation
+		// pages in middle of a delete.
+		Hooks::$isDeleteTranslatableBundleJobRunning = true;
 
 		$wikipage = $mwInstance->getWikiPageFactory()->newFromTitle( $title );
 		$deletePage = $mwInstance->getDeletePageFactory()->newDeletePage( $wikipage, $fuzzyBot );
@@ -75,6 +78,7 @@ class DeleteTranslatableBundleJob extends Job {
 		}
 
 		Hooks::$allowTargetEdit = false;
+		Hooks::$isDeleteTranslatableBundleJobRunning = false;
 
 		$cache = $mwInstance->getMainObjectStash();
 		$pageKey = $cache->makeKey( 'pt-base', $base );
@@ -90,7 +94,6 @@ class DeleteTranslatableBundleJob extends Job {
 			}
 
 			$title->invalidateCache();
-			Hooks::$jobQueueRunning = false;
 		}
 
 		return true;
