@@ -11,11 +11,13 @@ use Content;
 use DatabaseUpdater;
 use IContextSource;
 use Language;
+use LogFormatter;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\Diagnostics\SyncTranslatableBundleStatusMaintenanceScript;
+use MediaWiki\Extension\Translate\LogFormatter as TranslateLogFormatter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -332,12 +334,12 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 			// log-name-translatorsandbox log-description-translatorsandbox
 			$wgLogTypes[] = 'translatorsandbox';
 			// logentry-translatorsandbox-promoted logentry-translatorsandbox-rejected
-			$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
-			$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+			$wgLogActionsHandlers['translatorsandbox/promoted'] = TranslateLogFormatter::class;
+			$wgLogActionsHandlers['translatorsandbox/rejected'] = TranslateLogFormatter::class;
 
 			// This is no longer used for new entries since 2016.07.
 			// logentry-newusers-tsbpromoted
-			$wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
+			$wgLogActionsHandlers['newusers/tsbpromoted'] = LogFormatter::class;
 
 			global $wgJobClasses;
 			$wgJobClasses['TranslateSandboxEmailJob'] = TranslateSandboxEmailJob::class;

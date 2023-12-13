@@ -129,7 +129,6 @@
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\SimpleFormat": "src/FileFormatSupport/SimpleFormat.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
-		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",
 		"MediaWiki\\Extension\\Translate\\MessageProcessing\\TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
 		"TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
@@ -459,8 +458,8 @@
 		"translationreview"
 	],
 	"LogActionsHandlers": {
-		"translationreview/message": "TranslateLogFormatter",
-		"translationreview/group": "TranslateLogFormatter"
+		"translationreview/message": "\\MediaWiki\\Extension\\Translate\\LogFormatter",
+		"translationreview/group": "\\MediaWiki\\Extension\\Translate\\LogFormatter"
 	},
 	"ActionFilteredLogs": {
 		"translationreview": {

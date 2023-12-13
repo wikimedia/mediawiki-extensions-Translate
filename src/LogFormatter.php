@@ -1,20 +1,23 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate;
+
+use LogFormatter as CoreLogFormatter;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
+use Message;
+
 /**
  * Class for formatting Translate logs.
  *
- * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2013, Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\Extension\Translate\Utilities\Utilities;
-
-/**
- * Class for formatting Translate logs.
- */
-class TranslateLogFormatter extends LogFormatter {
-	public function getMessageParameters() {
+class LogFormatter extends CoreLogFormatter {
+	public function getMessageParameters(): array {
 		$params = parent::getMessageParameters();
 
 		$type = $this->entry->getFullType();
@@ -43,7 +46,6 @@ class TranslateLogFormatter extends LogFormatter {
 				[ 'language' => $language ]
 			);
 
-			// @phan-suppress-next-line SecurityCheck-XSS Unlikely. Positive only if language code & mg label are bad
 			$params[2] = Message::rawParam( $targetPage );
 			$params[3] = Utilities::getLanguageName( $language, $uiLanguage->getCode() );
 			$params[5] = $this->formatStateMessage( $params[5] );
@@ -53,34 +55,31 @@ class TranslateLogFormatter extends LogFormatter {
 			$params[2] = $this->entry->getTarget()->getText();
 		} elseif ( $type === 'translatorsandbox/promoted' ) {
 			// Gender for the target
-			$params[3] = User::newFromId( $params[3] )->getName();
+			$params[3] = MediaWikiServices::getInstance()->getUserFactory()
+				->newFromId( $params[3] )
+				->getName();
 		}
 
 		return $params;
 	}
 
-	protected function formatStateMessage( $value ) {
+	/** @param string|bool $value */
+	private function formatStateMessage( $value ): string {
 		$message = $this->msg( "translate-workflow-state-$value" );
 
 		return $message->isBlank() ? $value : $message->text();
 	}
 
-	/**
-	 * @param Title|null $title The page
-	 * @param string|null $text
-	 * @param array $parameters Query parameters
-	 * @return string
-	 * @return-taint onlysafefor_html
-	 */
-	protected function makePageLinkWithText(
-		?Title $title, $text, array $parameters = []
-	) {
+	/** @return-taint onlysafefor_html */
+	private function makePageLinkWithText(
+		?Title $pageTitle, ?string $text, array $queryParameters = []
+	): string {
 		if ( !$this->plaintext ) {
-			$link = $this->getLinkRenderer()->makeLink( $title, $text, [], $parameters );
+			$link = $this->getLinkRenderer()->makeLink( $pageTitle, $text, [], $queryParameters );
 		} else {
 			$target = '***';
-			if ( $title instanceof Title ) {
-				$target = $title->getPrefixedText();
+			if ( $pageTitle instanceof Title ) {
+				$target = $pageTitle->getPrefixedText();
 			}
 			$link = "[[$target|$text]]";
 		}
