@@ -266,11 +266,7 @@
 			return true;
 		}
 
-		if ( priorityLanguages.indexOf( language ) !== -1 ) {
-			return true;
-		}
-
-		return false;
+		return priorityLanguages.indexOf( language ) !== -1;
 	}
 
 	function setupLanguageSelector( $element ) {
