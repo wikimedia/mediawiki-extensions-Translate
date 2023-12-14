@@ -229,6 +229,7 @@
 	"pt-deletepage-list-no-pages": "Geen pagina's gevonden.",
 	"pt-deletepage-full-logreason": "Onderdeel van te vertalen pagina \"$1\"",
 	"pt-deletepage-lang-logreason": "Onderdeel van de vertaalde pagina \"$1\"",
+	"pt-deletepage-lang-outdated-logreason": "Pagina heeft geen vertalingen meer",
 	"pt-deletepage-started": "Kijk in het [[$1|logboek]] of er fouten zijn gemeld en of de handeling volledig is afgerond.",
 	"pt-deletepage-intro": "Met deze speciale pagina kunt u een hele vertaalbare pagina, een berichtenbundel, of een individuele vertaalde pagina in een taal verwijderen.\nHet verwijderen gebeurt niet onmiddellijk, want alle pagina's die ervan afhankelijk zijn worden ook verwijderd.\nFouten worden opgenomen in het [[$1|betreffende logboek]] en moeten handmatig gecorrigeerd worden.",
 	"pagemigration": "Migratie van vertaalde pagina's",

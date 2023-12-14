@@ -227,6 +227,7 @@
 	"pt-deletepage-list-no-pages": "Es wurden keine Seiten gefunden.",
 	"pt-deletepage-full-logreason": "Teil der übersetzbaren Seite „$1“",
 	"pt-deletepage-lang-logreason": "Teil der übersetzbaren Seite „$1“",
+	"pt-deletepage-lang-outdated-logreason": "Die Seite hat keine Übersetzungen mehr",
 	"pt-deletepage-started": "Bitte das [[$1|Logbuch]] auf Fehler und Ausführungsnachrichten prüfen.",
 	"pt-deletepage-intro": "Diese Spezialseite ermöglicht die Löschung einer ganzen übersetzbaren Seite, Nachrichtenbündel oder einer individuellen Übersetzungsseite in einer Sprache.\nDie Ausführung erfolgt nicht unmittelbar, da auch alle dazugehörigen Seiten gelöscht werden.\nFehler werden im [[$1|entsprechenden Logbuch]] aufgezeichnet und müssen nachträglich manuell berichtigt werden.",
 	"pagemigration": "Übersetzungsseitenmigration",

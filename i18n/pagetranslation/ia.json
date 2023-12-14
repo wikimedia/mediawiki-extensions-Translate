@@ -213,6 +213,7 @@
 	"pt-deletepage-list-no-pages": "Nulle pagina trovate.",
 	"pt-deletepage-full-logreason": "Parte del pagina traducibile \"$1\"",
 	"pt-deletepage-lang-logreason": "Parte del pagina traducite \"$1\"",
+	"pt-deletepage-lang-outdated-logreason": "Le pagina non plus ha traductiones",
 	"pt-deletepage-started": "Per favor verifica le [[$1|registro]] pro reparar eventual errores e leger le message de completion.",
 	"pt-deletepage-intro": "Iste pagina special permitte deler un tote pagina traducibile, un gruppo de messages o un pagina de traduction individual in un certe lingua.\nLe deletion non essera instantanee perque tote le paginas que depende de illos essera delite tamben.\nFallimentos essera registrate in le [[$1|registro pertinente]] e requirera reparation manual.",
 	"pagemigration": "Migration de paginas de traduction",
