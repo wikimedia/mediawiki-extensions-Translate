@@ -12,6 +12,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
+use MediaWiki\Languages\LanguageNameUtils;
 use MessageGroupStats;
 use MessageGroupStatsRebuildJob;
 use MessagePrefixMessageGroup;
@@ -40,6 +41,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	private MessageGroupStatsTableFactory $messageGroupStatsTableFactory;
 	private EntitySearch $entitySearch;
 	private MessagePrefixStats $messagePrefixStats;
+	private LanguageNameUtils $languageNameUtils;
 
 	private const GROUPS = 'group';
 	private const MESSAGES = 'messages';
@@ -53,7 +55,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		JobQueueGroup $jobQueueGroup,
 		MessageGroupStatsTableFactory $messageGroupStatsTableFactory,
 		EntitySearch $entitySearch,
-		MessagePrefixStats $messagePrefixStats
+		MessagePrefixStats $messagePrefixStats,
+		LanguageNameUtils $languageNameUtils
 	) {
 		parent::__construct( 'MessageGroupStats' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -61,6 +64,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$this->messageGroupStatsTableFactory = $messageGroupStatsTableFactory;
 		$this->entitySearch = $entitySearch;
 		$this->messagePrefixStats = $messagePrefixStats;
+		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	public function getDescription() {
@@ -260,13 +264,24 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	private function outputIntroduction(): void {
 		$priorityLangs = TranslateMetadata::get( $this->target, 'prioritylangs' );
 		if ( $priorityLangs ) {
+			$languagesFormatted = $this->formatLanguageList( explode( ',', $priorityLangs ) );
 			$hasPriorityForce = TranslateMetadata::get( $this->target, 'priorityforce' ) === 'on';
 			if ( $hasPriorityForce ) {
-				$this->getOutput()->addWikiMsg( 'tpt-priority-languages-force', $priorityLangs );
+				$this->getOutput()->addWikiMsg( 'tpt-priority-languages-force', $languagesFormatted );
 			} else {
-				$this->getOutput()->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
+				$this->getOutput()->addWikiMsg( 'tpt-priority-languages', $languagesFormatted );
 			}
 		}
+	}
+
+	private function formatLanguageList( array $codes ): string {
+		foreach ( $codes as &$value ) {
+			$value = $this->languageNameUtils->getLanguageName( $value, $this->getLanguage()->getCode() )
+				. $this->msg( 'word-separator' )->plain()
+				. $this->msg( 'parentheses', $value )->plain();
+		}
+
+		return $this->getLanguage()->listToText( $codes );
 	}
 
 	private function addForm(): void {

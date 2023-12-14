@@ -296,7 +296,8 @@
 				"JobQueueGroup",
 				"Translate:MessageGroupStatsTableFactory",
 				"Translate:EntitySearch",
-				"Translate:MessagePrefixStats"
+				"Translate:MessagePrefixStats",
+				"LanguageNameUtils"
 			]
 		},
 		"ImportTranslations": {
