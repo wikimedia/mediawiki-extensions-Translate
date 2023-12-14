@@ -321,7 +321,7 @@
 		 */
 		search: function ( query ) {
 			var resultCount = 0,
-				matcher = new RegExp( '(^|\\s|\\b)' + escapeRegex( query ), 'gi' );
+				matcher = new RegExp( '(^|\\s|\\b)' + escapeRegex( query ), 'i' );
 
 			this.$container.find( itemsClass[ this.mode ] ).each( function () {
 				var $message = $( this ),
