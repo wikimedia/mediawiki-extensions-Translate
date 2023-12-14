@@ -3,11 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use JobQueueGroup;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
@@ -63,9 +65,9 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		}
 
 		// Initialization
-		$title = $this->title;
+		$translationPageTitle = $this->title;
 
-		$tpPage = TranslatablePage::getTranslationPageFromTitle( $title );
+		$tpPage = TranslatablePage::getTranslationPageFromTitle( $translationPageTitle );
 		if ( !$tpPage ) {
 			$this->logError( 'Cannot render translation page!' );
 			return false;
@@ -98,33 +100,22 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		if ( $percentageTranslated === 0 ) {
 			// Page is not translated at all. It is possible that when the RenderTranslationPageJob was created
 			// translations existed, but have since been deleted.
-			if ( $title->exists() ) {
-				// Page is not translated, but it exists maybe because translations previously existed.
-				// Delete it now.
-				$baseTitle = ( new MessageHandle( $title ) )->getTitleForBase();
-				$isTranslationPage = true;
-
-				$job = DeleteTranslatableBundleJob::newJob(
-					$title,
-					$baseTitle->getPrefixedText(),
-					TranslatablePage::class,
-					$isTranslationPage,
-					FuzzyBot::getUser(),
-					wfMessage( 'pt-deletepage-lang-outdated-logreason' )->inContentLanguage()->text()
+			if ( $translationPageTitle->exists() ) {
+				$this->deletePageIfFuzzyBotEdited(
+					$mwServices->getRevisionStore(),
+					$mwServices->getJobQueueGroup(),
+					$translationPageTitle
 				);
-				$mwServices->getJobQueueGroup()->push( $job );
-
-				$this->logInfo( 'Deleting translation page that had no translations' );
 			} else {
 				$this->logInfo( 'No translations found; nothing to render.' );
 			}
 		} else {
 			$pageUpdater = $mwServices->getWikiPageFactory()
-				->newFromTitle( $title )
+				->newFromTitle( $translationPageTitle )
 				->newPageUpdater( $user );
 			$pageUpdater->setContent( SlotRecord::MAIN, $content );
 
-			if ( $user->authorizeWrite( 'autopatrol', $title ) ) {
+			if ( $user->authorizeWrite( 'autopatrol', $translationPageTitle ) ) {
 				$pageUpdater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
 			}
 
@@ -211,5 +202,51 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		}
 
 		$this->logInfo( trim( $logMessage ) );
+	}
+
+	/**
+	 * Used on translation page that exist but have no translations. Checks if the translation page was only
+	 * created or modified only by FuzzyBot, if so deletes it.
+	 */
+	private function deletePageIfFuzzyBotEdited(
+		RevisionStore $revisionStore,
+		JobQueueGroup $jobQueueGroup,
+		Title $translationPageTitle
+	): void {
+		$fuzzyBot = FuzzyBot::getUser();
+		$hasOnlyFuzzyBotAuthor = $this->hasOnlyFuzzyBotAsAuthor( $revisionStore, $translationPageTitle, $fuzzyBot );
+
+		if ( $hasOnlyFuzzyBotAuthor ) {
+			$translatablePageTitle = ( new MessageHandle( $translationPageTitle ) )->getTitleForBase();
+			$isTranslationPage = true;
+
+			$job = DeleteTranslatableBundleJob::newJob(
+				$translationPageTitle,
+				$translatablePageTitle->getPrefixedText(),
+				TranslatablePage::class,
+				$isTranslationPage,
+				$fuzzyBot,
+				wfMessage( 'pt-deletepage-lang-outdated-logreason' )->inContentLanguage()->text()
+			);
+			$jobQueueGroup->push( $job );
+
+			$this->logInfo( 'Deleting translation page that had no translations' );
+		} else {
+			$this->logInfo( 'No translations found but translation page exists' );
+		}
+	}
+
+	private function hasOnlyFuzzyBotAsAuthor(
+		RevisionStore $revisionStore,
+		Title $title,
+		UserIdentity $fuzzyBot
+	): bool {
+		$pageAuthors = $revisionStore->getAuthorsBetween( $title->getId() );
+		foreach ( $pageAuthors as $author ) {
+			if ( !$author->equals( $fuzzyBot ) ) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
