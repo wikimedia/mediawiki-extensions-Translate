@@ -276,14 +276,8 @@ mw.translate.MessageRenameDialog.prototype.filterMessages = function ( searchVal
 	}
 
 	filteredMessages = this.possibleRenames.filter( function ( message ) {
-		if ( message.key.toLowerCase().indexOf( normalizedSearchVal ) !== -1 ) {
-			return true;
-		}
-
-		if ( message.content.toLowerCase().indexOf( normalizedSearchVal ) !== -1 ) {
-			return true;
-		}
-		return false;
+		return message.key.toLowerCase().indexOf( normalizedSearchVal ) !== -1 &&
+			message.content.toLowerCase().indexOf( normalizedSearchVal ) !== -1;
 	} );
 
 	this.clearMessages();
