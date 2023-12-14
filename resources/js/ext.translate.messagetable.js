@@ -61,20 +61,20 @@
 				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
 
 			// Vector has transitions of 250ms which affect layout. Let those finish.
-			$( window ).on( 'scroll', mw.util.debounce( 250, function () {
+			$( window ).on( 'scroll', mw.util.debounce( function () {
 				messageTable.scroll();
 
 				if ( isLoaderVisible( messageTable.$loader ) ) {
 					messageTable.load();
 				}
-			} ) ).on( 'resize', mw.util.throttle( function () {
+			}, 250 ) ).on( 'resize', mw.util.throttle( function () {
 				messageTable.resize();
 				messageTable.scroll();
 			}, 250 ) );
 
-			$filterInput.on( 'input', mw.util.debounce( 250, function () {
+			$filterInput.on( 'input', mw.util.debounce( function () {
 				messageTable.search( $filterInput.val() );
-			} ) );
+			} ), 250 );
 
 			this.$actionBar.find( 'button.proofread-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'proofread' );
