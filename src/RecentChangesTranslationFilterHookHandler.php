@@ -1,53 +1,69 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate;
+
+use ChangesListStringOptionsFilterGroup;
+use ChangeTags;
+use IContextSource;
+use MediaWiki\Config\Config;
+use MediaWiki\Hook\SpecialRecentChangesPanelHook;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
+use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageStructuredFiltersHook;
+use MediaWiki\Specials\SpecialRecentChanges;
+use MediaWiki\Storage\NameTableAccessException;
+use RecentChange;
+use RequestContext;
+use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IReadableDatabase;
+use Xml;
+use XmlSelect;
+
 /**
- * Contains class with filter to Special:RecentChanges to enable additional
- * filtering.
+ * Class to add a new filter to Special:RecentChanges which makes it possible to filter
+ * translations away or show them only.
  *
- * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2010, Niklas Laxström
  * @license GPL-2.0-or-later
  */
+class RecentChangesTranslationFilterHookHandler implements
+	SpecialRecentChangesPanelHook,
+	ChangesListSpecialPageStructuredFiltersHook,
+	ChangesListSpecialPageQueryHook
+{
+	private ILoadBalancer $loadBalancer;
+	private Config $config;
 
-use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\NameTableAccessException;
+	public function __construct( ILoadBalancer $loadBalancer, Config $config ) {
+		$this->loadBalancer = $loadBalancer;
+		$this->config = $config;
+	}
 
-/**
- * Adds a new filter to Special:RecentChanges which makes it possible to filter
- * translations away or show them only.
- */
-class TranslateRcFilter {
-	/**
-	 * Hooks ChangesListSpecialPageQuery. See the hook documentation for
-	 * documentation of the function parameters.
-	 *
-	 * Appends SQL filter conditions into $conds.
-	 * @param string $pageName
-	 * @param array &$tables
-	 * @param array &$fields
-	 * @param array &$conds
-	 * @param array &$query_options
-	 * @param array &$join_conds
-	 * @param FormOptions $opts
-	 * @return bool true
-	 */
-	public static function translationFilter( $pageName, &$tables, &$fields, &$conds,
-		&$query_options, &$join_conds, FormOptions $opts
-	) {
-		global $wgTranslateRcFilterDefault;
+	public function onChangesListSpecialPageQuery(
+		$pageName,
+		&$tables,
+		&$fields,
+		&$conds,
+		&$query_options,
+		&$join_conds,
+		$opts
+	): void {
+		$translateRcFilterDefault = $this->config->get( 'TranslateRcFilterDefault' );
 
-		if ( $pageName !== 'Recentchanges' || self::isStructuredFilterUiEnabled() ) {
-			return true;
+		if ( $pageName !== 'Recentchanges' || $this->isStructuredFilterUiEnabled() ) {
+			return;
 		}
 
 		$request = RequestContext::getMain()->getRequest();
-		$translations = $request->getVal( 'translations', $wgTranslateRcFilterDefault );
-		$opts->add( 'translations', $wgTranslateRcFilterDefault );
+		$translations = $request->getVal( 'translations', $translateRcFilterDefault );
+		$opts->add( 'translations', $translateRcFilterDefault );
 		$opts->setValue( 'translations', $translations );
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 
-		$namespaces = self::getTranslateNamespaces();
+		$namespaces = $this->getTranslateNamespaces();
 
 		if ( $translations === 'only' ) {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList( $namespaces ) . ')';
@@ -58,15 +74,13 @@ class TranslateRcFilter {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList( $namespaces ) . ')';
 			$conds[] = 'rc_title not like \'%%/%%\'';
 		}
-
-		return true;
 	}
 
-	private static function getTranslateNamespaces() {
-		global $wgTranslateMessageNamespaces;
+	private function getTranslateNamespaces(): array {
+		$translateMessageNamespaces = $this->config->get( 'TranslateMessageNamespaces' );
 		$namespaces = [];
 
-		foreach ( $wgTranslateMessageNamespaces as $index ) {
+		foreach ( $translateMessageNamespaces as $index ) {
 			$namespaces[] = $index;
 			$namespaces[] = $index + 1; // Include Talk namespaces
 		}
@@ -75,17 +89,12 @@ class TranslateRcFilter {
 	}
 
 	/**
-	 * Hooks SpecialRecentChangesPanel. See the hook documentation for
-	 * documentation of the function parameters.
-	 *
 	 * Adds a HTMl selector into $items
-	 * @param array &$items
-	 * @param FormOptions $opts
-	 * @return bool true
+	 * @inheritDoc
 	 */
-	public static function translationFilterForm( &$items, $opts ) {
-		if ( self::isStructuredFilterUiEnabled() ) {
-			return true;
+	public function onSpecialRecentChangesPanel( &$extraOpts, $opts ): void {
+		if ( $this->isStructuredFilterUiEnabled() ) {
+			return;
 		}
 
 		$opts->consumeValue( 'translations' );
@@ -107,37 +116,27 @@ class TranslateRcFilter {
 		);
 		$select->addOption( wfMessage( 'translate-rc-translation-filter-site' )->text(), 'site' );
 
-		$items['translations'] = [ $label, $select->getHTML() ];
-
-		return true;
+		$extraOpts['translations'] = [ $label, $select->getHTML() ];
 	}
 
-	private static function isStructuredFilterUiEnabled() {
+	private function isStructuredFilterUiEnabled(): bool {
 		$context = RequestContext::getMain();
 
 		// This assumes usage only on RC page
 		$page = new SpecialRecentChanges();
 		$page->setContext( $context );
 
-		// isStructuredFilterUiEnabled used to be a protected method in older versions :(
-		return is_callable( [ $page, 'isStructuredFilterUiEnabled' ] ) &&
-			$page->isStructuredFilterUiEnabled();
+		return $page->isStructuredFilterUiEnabled();
 	}
 
 	/**
-	 * Hooks ChangesListSpecialPageStructuredFilters. See the hook documentation for
-	 * documentation of the function parameters.
-	 *
 	 * Adds translations filters to structured UI
-	 * @param ChangesListSpecialPage $special
-	 * @return bool true
+	 * @inheritDoc
 	 */
-	public static function onChangesListSpecialPageStructuredFilters(
-		ChangesListSpecialPage $special
-	) {
-		global $wgTranslateRcFilterDefault;
-		$defaultFilter = $wgTranslateRcFilterDefault !== 'noaction' ?
-			$wgTranslateRcFilterDefault :
+	public function onChangesListSpecialPageStructuredFilters( $special ): void {
+		$translateRcFilterDefault = $this->config->get( 'TranslateRcFilterDefault' );
+		$defaultFilter = $translateRcFilterDefault !== 'noaction' ?
+			$translateRcFilterDefault :
 			ChangesListStringOptionsFilterGroup::NONE;
 
 		$translationsGroup = new ChangesListStringOptionsFilterGroup(
@@ -153,8 +152,8 @@ class TranslateRcFilter {
 						'label' => 'translate-rcfilters-translations-only-label',
 						'description' => 'translate-rcfilters-translations-only-desc',
 						'cssClassSuffix' => 'only',
-						'isRowApplicableCallable' => function ( $ctx, $rc ) {
-							$namespaces = self::getTranslateNamespaces();
+						'isRowApplicableCallable' => function ( IContextSource $ctx, RecentChange $rc ) {
+							$namespaces = $this->getTranslateNamespaces();
 
 							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
 								!str_contains( $rc->getAttribute( 'rc_title' ), '/' );
@@ -165,8 +164,8 @@ class TranslateRcFilter {
 						'label' => 'translate-rcfilters-translations-site-label',
 						'description' => 'translate-rcfilters-translations-site-desc',
 						'cssClassSuffix' => 'site',
-						'isRowApplicableCallable' => function ( $ctx, $rc ) {
-							$namespaces = self::getTranslateNamespaces();
+						'isRowApplicableCallable' => function ( IContextSource $ctx, RecentChange $rc ) {
+							$namespaces = $this->getTranslateNamespaces();
 
 							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
 								!str_contains( $rc->getAttribute( 'rc_title' ), '/' );
@@ -177,8 +176,8 @@ class TranslateRcFilter {
 						'label' => 'translate-rcfilters-translations-filter-label',
 						'description' => 'translate-rcfilters-translations-filter-desc',
 						'cssClassSuffix' => 'filter',
-						'isRowApplicableCallable' => function ( $ctx, $rc ) {
-							$namespaces = self::getTranslateNamespaces();
+						'isRowApplicableCallable' => function ( IContextSource $ctx, RecentChange $rc ) {
+							$namespaces = $this->getTranslateNamespaces();
 
 							return !in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces );
 						}
@@ -188,15 +187,23 @@ class TranslateRcFilter {
 						'label' => 'translate-rcfilters-translations-filter-translation-pages-label',
 						'description' => 'translate-rcfilters-translations-filter-translation-pages-desc',
 						'cssClassSuffix' => 'filter-translation-pages',
-						'isRowApplicableCallable' => static function ( $ctx, $rc ) {
+						'isRowApplicableCallable' => static function ( IContextSource $ctx, RecentChange $rc ) {
 							$tags = explode( ', ', $rc->getAttribute( 'ts_tags' ) ?? '' );
 							return !in_array( 'translate-filter-translation-pages', $tags );
 						}
 					],
 
 				],
-				'queryCallable' => function ( $specialClassName, $ctx, $dbr, &$tables,
-					&$fields, &$conds, &$query_options, &$join_conds, $selectedValues
+				'queryCallable' => function (
+					string $specialClassName,
+					IContextSource $ctx,
+					IReadableDatabase $dbr,
+					array &$tables,
+					array &$fields,
+					array &$conds,
+					array &$query_options,
+					array &$join_conds,
+					array $selectedValues
 				) {
 					$fields = array_merge( $fields, [ 'rc_title', 'rc_namespace' ] );
 
@@ -209,6 +216,8 @@ class TranslateRcFilter {
 						$changeTagDefStore = MediaWikiServices::getInstance()->getChangeTagDefStore();
 						try {
 							$renderedPage = $changeTagDefStore->getId( 'translate-translation-pages' );
+							// The recommended replacement is for this deprecared method is `ChangeTags::CHANGE_TAG`.
+							// However, ChangeTags::CHANGE_TAG is a private const.
 							$tables['translatetags'] = ChangeTags::getDisplayTableName();
 							$join_conds['translatetags'] = [
 								'LEFT JOIN',
@@ -220,7 +229,7 @@ class TranslateRcFilter {
 						}
 					}
 
-					$namespaces = self::getTranslateNamespaces();
+					$namespaces = $this->getTranslateNamespaces();
 					$inNamespaceCond = 'rc_namespace IN (' .
 						$dbr->makeList( $namespaces ) . ')';
 					$notInNamespaceCond = 'rc_namespace NOT IN (' .
@@ -281,6 +290,5 @@ class TranslateRcFilter {
 		);
 
 		$special->registerFilterGroup( $translationsGroup );
-		return true;
 	}
 }

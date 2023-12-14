@@ -133,7 +133,6 @@
 		"TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
-		"TranslateRcFilter": "utils/TranslateRcFilter.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
 		"TTMServer": "ttmserver/TTMServer.php",
 		"TTMServerException": "ttmserver/Exceptions.php",
@@ -188,9 +187,9 @@
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateInterfacePreferences::translationAssistLanguages",
 			"translateSandbox"
 		],
-		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
-		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
-		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
+		"ChangesListSpecialPageQuery": "recentChangesTranslationFilter",
+		"SpecialRecentChangesPanel": "recentChangesTranslationFilter",
+		"ChangesListSpecialPageStructuredFilters": "recentChangesTranslationFilter",
 		"AbortEmailNotification": "MediaWiki\\Extension\\Translate\\HookHandler::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "TTMServer::onDelete",
 		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
@@ -246,6 +245,13 @@
 		},
 		"messageBundle": {
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
+		},
+		"recentChangesTranslationFilter": {
+			"class": "MediaWiki\\Extension\\Translate\\RecentChangesTranslationFilterHookHandler",
+			"services": [
+				"DBLoadBalancer",
+				"MainConfig"
+			]
 		},
 		"translateSandbox": {
 			"class": "MediaWiki\\Extension\\Translate\\TranslatorSandbox\\TranslateSandboxHookHandler",
