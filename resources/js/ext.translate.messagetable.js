@@ -74,7 +74,7 @@
 
 			$filterInput.on( 'input', mw.util.debounce( function () {
 				messageTable.search( $filterInput.val() );
-			} ), 250 );
+			}, 250 ) );
 
 			this.$actionBar.find( 'button.proofread-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'proofread' );
