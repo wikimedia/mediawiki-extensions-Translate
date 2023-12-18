@@ -7,7 +7,8 @@
 			"Kaare",
 			"Peter Alberti",
 			"Purodha",
-			"Saederup92"
+			"Saederup92",
+			"Zakawer2"
 		]
 	},
 	"pagetranslation": "Sideoversættelse",
@@ -157,6 +158,7 @@
 	"pt-deletepage-list-count": "I alt $1 {{PLURAL:$1|side|sider}} til at slette og $2 {{PLURAL:$2|underside|undersider}}.",
 	"pt-deletepage-full-logreason": "Del af oversætbar side \"$1\"",
 	"pt-deletepage-lang-logreason": "En del af oversættelses side \"$1\"",
+	"pt-deletepage-lang-outdated-logreason": "Side har ikke længere nogle oversættelser",
 	"pt-deletepage-started": "Tjek venligst [[Special:Log/pagetranslation|side oversættelses log]] for fejl og færdiggørelses besked.",
 	"pt-deletepage-intro": "Med denne specielle side kan du slette en hel oversætbar side eller en individuel oversættelsesside.\nSletningen vil ikke ske med det samme, fordi mange afhængige sider også vil blive slettet.\nFejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses log]], og de skal repareres i manuelt.",
 	"pm-import-button-label": "Importer",
