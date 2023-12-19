@@ -231,7 +231,7 @@
 	"tux-status-unsaved": "မလွှင့်တင်ရသေးပါ",
 	"tux-save-unknown-error": "အကြောင်းရင်းမသိရှိရသော အမှားတစ်ခု ဖြစ်ပေါ်နေသည်။",
 	"tux-editor-placeholder-language": "$1သို့ သင်၏ ဘာသာပြန်ဆိုမှု",
-	"tux-editor-editsummary-placeholder": "ထည့်လိုကထည့်နိုင်သော အကျဉ်းချုပ်",
+	"tux-editor-editsummary-placeholder": "သင့်ပြောင်းလဲမှုများကို ရှင်းပြပါ (ချန်လှပ်နိုင်သည်)",
 	"tux-editor-paste-original-button-label": "ရင်းမြစ်စာသားကို မိတ္တူပွားရန်",
 	"tux-editor-discard-changes-button-label": "ပြောင်းလဲမှုများကို မလုပ်တော့ရန်",
 	"tux-editor-save-button-label": "ဘာသာပြန်ကို လွှင့်တင်ရန်",

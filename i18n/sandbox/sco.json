@@ -45,5 +45,5 @@
 	"log-description-translatorsandbox": "Ae log o actions oan owersetin saunpit uisers",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoted}} $3 til {{GENDER:$4|owerseter}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|turned doon}} the request fae \"$3\" tae become aen owerseter",
-	"logentry-newusers-tsbpromoted": "Uiser accoont $3 wis {{GENDER:$2|cræftit}} b promotion fae saunpit"
+	"logentry-newusers-tsbpromoted": "Uiser accoont $3 wis {{GENDER:$2|made}} bi promuivin fae saundpit"
 }
