@@ -97,18 +97,21 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 
 		// $percentageTranslated is modified by reference
 		$content = $tpPage->getPageContent( $mwServices->getParser(), $percentageTranslated );
-		if ( $percentageTranslated === 0 ) {
-			// Page is not translated at all. It is possible that when the RenderTranslationPageJob was created
-			// translations existed, but have since been deleted.
-			if ( $translationPageTitle->exists() ) {
-				$this->deletePageIfFuzzyBotEdited(
-					$mwServices->getRevisionStore(),
-					$mwServices->getJobQueueGroup(),
-					$translationPageTitle
-				);
-			} else {
-				$this->logInfo( 'No translations found; nothing to render.' );
-			}
+		$translationPageTitleExists = $translationPageTitle->exists();
+		if ( $percentageTranslated === 0 && !$translationPageTitleExists ) {
+			Hooks::$allowTargetEdit = false;
+			$this->logInfo( 'No translations found and translation page does not exist. Nothing to do.' );
+			return true;
+		}
+
+		if (
+			$percentageTranslated === 0 &&
+			$translationPageTitleExists &&
+			$this->hasOnlyFuzzyBotAsAuthor( $mwServices->getRevisionStore(), $translationPageTitle )
+		) {
+			$this->logInfo( 'Deleting translation page having no translations and modified only by Fuzzybot' );
+			// Page is not translated at all but the translation page exists and has been only edited by FuzzyBot
+			$this->deleteTranslationPage( $mwServices->getJobQueueGroup(), $translationPageTitle, FuzzyBot::getUser() );
 		} else {
 			$pageUpdater = $mwServices->getWikiPageFactory()
 				->newFromTitle( $translationPageTitle )
@@ -204,43 +207,28 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		$this->logInfo( trim( $logMessage ) );
 	}
 
-	/**
-	 * Used on translation page that exist but have no translations. Checks if the translation page was only
-	 * created or modified only by FuzzyBot, if so deletes it.
-	 */
-	private function deletePageIfFuzzyBotEdited(
-		RevisionStore $revisionStore,
+	private function deleteTranslationPage(
 		JobQueueGroup $jobQueueGroup,
-		Title $translationPageTitle
+		Title $translationPageTitle,
+		UserIdentity $performer
 	): void {
-		$fuzzyBot = FuzzyBot::getUser();
-		$hasOnlyFuzzyBotAuthor = $this->hasOnlyFuzzyBotAsAuthor( $revisionStore, $translationPageTitle, $fuzzyBot );
+		$translatablePageTitle = ( new MessageHandle( $translationPageTitle ) )->getTitleForBase();
+		$isTranslationPage = true;
 
-		if ( $hasOnlyFuzzyBotAuthor ) {
-			$translatablePageTitle = ( new MessageHandle( $translationPageTitle ) )->getTitleForBase();
-			$isTranslationPage = true;
+		$job = DeleteTranslatableBundleJob::newJob(
+			$translationPageTitle,
+			$translatablePageTitle->getPrefixedText(),
+			TranslatablePage::class,
+			$isTranslationPage,
+			$performer,
+			wfMessage( 'pt-deletepage-lang-outdated-logreason' )->inContentLanguage()->text()
+		);
 
-			$job = DeleteTranslatableBundleJob::newJob(
-				$translationPageTitle,
-				$translatablePageTitle->getPrefixedText(),
-				TranslatablePage::class,
-				$isTranslationPage,
-				$fuzzyBot,
-				wfMessage( 'pt-deletepage-lang-outdated-logreason' )->inContentLanguage()->text()
-			);
-			$jobQueueGroup->push( $job );
-
-			$this->logInfo( 'Deleting translation page that had no translations' );
-		} else {
-			$this->logInfo( 'No translations found but translation page exists' );
-		}
+		$jobQueueGroup->push( $job );
 	}
 
-	private function hasOnlyFuzzyBotAsAuthor(
-		RevisionStore $revisionStore,
-		Title $title,
-		UserIdentity $fuzzyBot
-	): bool {
+	private function hasOnlyFuzzyBotAsAuthor( RevisionStore $revisionStore, Title $title ): bool {
+		$fuzzyBot = FuzzyBot::getUser();
 		$pageAuthors = $revisionStore->getAuthorsBetween( $title->getId() );
 		foreach ( $pageAuthors as $author ) {
 			if ( !$author->equals( $fuzzyBot ) ) {
