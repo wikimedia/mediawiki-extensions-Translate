@@ -129,7 +129,7 @@
 	"apihelp-translationcheck-param-title": "Page title with namespace and language code.",
 	"apihelp-translationcheck-param-translation": "The translation to validate.",
 	"apihelp-translationstats-summary": "Fetch translation statistics",
-	"apihelp-translationcheck-extended-description": "Statistics includes translation edits, active translations, new users, translation reviews and reviewers.",
+	"apihelp-translationcheck-extended-description": "Statistics includes translation edits, active translators, new users, translation reviews and reviewers.",
 	"apihelp-translationstats-param-count": "Type of statistics being requested",
 	"apihelp-translationstats-param-days": "Number of days to fetch statistics for",
 	"apihelp-translationstats-param-group": "List of groups to fetch statistics for.",
