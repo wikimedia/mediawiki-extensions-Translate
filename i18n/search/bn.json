@@ -3,6 +3,7 @@
 		"authors": [
 			"Aftab1995",
 			"Aftabuzzaman",
+			"Aishik Rehman",
 			"Nasir8891",
 			"আজিজ",
 			"আফতাবুজ্জামান"
@@ -24,13 +25,13 @@
 	"tux-sst-prev": "‹ পূর্ববর্তী",
 	"tux-sst-default": "অনুবাদসমূহ",
 	"tux-sst-translated": "$1 থেকে অনুবাদ",
-	"tux-sst-untranslated": "$1 থেকে কোন অনুবাদ নেই",
+	"tux-sst-untranslated": "$1 থেকে কোনো অনুবাদ নেই",
 	"tux-sst-outdated": "$1 থেকে পুরাতন অনুবাদ",
-	"tux-sst-ellipsis-untranslated": "কোন অনুবাদ নেই",
+	"tux-sst-ellipsis-untranslated": "কোনো অনুবাদ নেই",
 	"tux-sst-ellipsis-outdated": "পুরাতন অনুবাদ",
 	"tux-sst-link-all-match": "সমস্ত অনুসন্ধান শব্দ প্রয়োজন।",
 	"tux-sst-match-message": "যে কোনও অনুসন্ধান শব্দের সাথে মেলে এমন অনুবাদ দেখানো হচ্ছে। $1",
 	"tux-sst-case-sensitive": "অক্ষর সংবেদনশীল",
-	"tux-sst-error-offset": "আর কোন অনুসন্ধান ফলাফল দেখানো যাবে না। আপনার অনুসন্ধান সংকীর্ণ করুন।",
+	"tux-sst-error-offset": "আর কোনো অনুসন্ধান ফলাফল দেখানো যাবে না। আপনার অনুসন্ধান সংকীর্ণ করুন।",
 	"tux-sst-error-language": "এই ধরনের অনুসন্ধানে এই ভাষা ব্যবহার করা যাবে না।"
 }
