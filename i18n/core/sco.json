@@ -197,7 +197,7 @@
 	"action-translate-sandboxaction": "execute actions whiteleetit for saundkistit uisers",
 	"translate-workflow-state-": "(onset)",
 	"translate-workflow-set-doing": "Settin...",
-	"translate-workflow-autocreated-summary": "Autæmateec cræftin o page fer wairkflaw state $1",
+	"translate-workflow-autocreated-summary": "Automatic creation o page fur wirkflowe state $1",
 	"translate-workflowgroup-label": "Wairkflaw states",
 	"translate-workflowgroup-desc": "This message groop shaws the owersetin wairkflaw states.\nThe states ar defined in the confeeguration vareeable $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Recynt owersets",
