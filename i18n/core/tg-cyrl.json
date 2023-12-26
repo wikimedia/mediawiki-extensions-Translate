@@ -3,7 +3,8 @@
 		"authors": [
 			"Ibrahim",
 			"ToJack",
-			"Vashgird"
+			"Vashgird",
+			"ZulfiqorF"
 		]
 	},
 	"translate": "Тарҷума",
@@ -85,7 +86,7 @@
 	"translate-mgs-group": "Гурӯҳи паём:",
 	"translate-mgs-nocomplete": "Забонҳое, ки тарҷума шудаанд нишон мадеҳ",
 	"translate-mgs-noempty": "Забонҳое, ки ягон тарҷумае надоранд нишон мадеҳ",
-	"translate-mgs-submit": "Нишон додани омор",
+	"translate-mgs-submit": "Намоиши омор",
 	"translate-mgs-column-language": "Забон",
 	"translate-mgs-totals": "Тамоми $1 {{PLURAL:$1|забон|забонҳо}} якҷоя",
 	"supportedlanguages": "Забонҳои пуштибонишуда",
@@ -115,7 +116,7 @@
 	"tux-tab-untranslated": "Тарҷуманашуда",
 	"tux-tab-outdated": "Куҳнашуда",
 	"tux-tab-translated": "Тарҷумашуда",
-	"tux-tab-unproofread": "Тафтишнашуда",
+	"tux-tab-unproofread": "Бозбининашуда",
 	"tux-edit": "Вироиш",
 	"tux-status-optional": "Ихтиёрӣ",
 	"tux-status-fuzzy": "Куҳнашуда",
