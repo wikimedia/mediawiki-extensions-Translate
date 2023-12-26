@@ -87,7 +87,7 @@
 	"translate-tag-markthis": "Deze pagina voor vertaling markeren",
 	"translate-tag-markthisagain": "Deze pagina is <span class=\"plainlinks\">[$1 gewijzigd]</span> sinds deze voor het laatst <span class=\"plainlinks\">[$2 voor vertaling gemarkeerd]</span> is geweest.",
 	"translate-tag-hasnew": "Aan deze pagina zijn <span class=\"plainlinks\">[$1 wijzigingen]</span> gemaakt die niet voor vertaling zijn gemarkeerd.",
-	"tpt-translation-intro": "Deze pagina is een <span class=\"plainlinks\">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet.",
+	"tpt-translation-intro": "Dit is een <span class=\"plainlinks\">[$1 vertaalde versie]</span> van de pagina [[$2]]. De vertaling is voor $3% voltooid.",
 	"tpt-translation-intro-fuzzy": "Verouderde vertalingen worden zo weergegeven.",
 	"tpt-languages-legend": "Andere talen:",
 	"tpt-languages-zero": "Vertaling voor deze taal starten",

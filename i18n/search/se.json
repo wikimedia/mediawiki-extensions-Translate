@@ -8,6 +8,10 @@
 	"tux-sst-edit": "Rievdat jorgalusa",
 	"tux-sst-search": "Oza",
 	"tux-sst-facet-language": "Gielat",
+	"tux-sst-nosolr-title": "Ohcan ii leat anus",
+	"tux-sst-nosolr-body": "Dán wikis ii leat jorgalusaid ohcanbálvalus.",
+	"tux-sst-solr-offline-title": "Ohcan ii leat anus",
+	"tux-sst-solr-offline-body": "Ohcanbálvalus lea gaskaboddosaččat eret anus.",
 	"tux-sst-next": "Čuovvovaš ›",
 	"tux-sst-default": "Jorgalusat"
 }
