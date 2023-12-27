@@ -23,7 +23,8 @@
 			"Xiplus",
 			"Zhxy 519",
 			"列维劳德",
-			"捍粵者"
+			"捍粵者",
+			"SunAfterRain"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -149,7 +150,7 @@
 	"logentry-pagetranslation-discourage": "$1{{GENDER:$2|不建議}}翻譯「$3」",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1{{GENDER:$2|已移除}}可翻譯頁面「$3」的優先語言",
 	"logentry-pagetranslation-prioritylanguages": "$1已將可翻譯頁面「$3」的優先語言{{GENDER:$2|設定}}為$5",
-	"logentry-pagetranslation-prioritylanguages-force": "$1已將可翻譯頁面「$3」的語言{{GENDER:$2|限制}}為$5",
+	"logentry-pagetranslation-prioritylanguages-force": "$1已將可翻譯頁面$3的語言{{GENDER:$2|限制}}為$5",
 	"logentry-pagetranslation-associate": "$1已將可翻譯頁面「$3」{{GENDER:$2|加入}}集合群組「$4」",
 	"logentry-pagetranslation-dissociate": "$1已從集合群組「$4」{{GENDER:$2|移除}}可翻譯頁面「$3」",
 	"log-action-filter-pagetranslation": "操作類型：",
