@@ -138,7 +138,7 @@
 	"apihelp-translationcheck-param-title": "Paginatitel met naamruimte en taalcode.",
 	"apihelp-translationcheck-param-translation": "Te controleren vertaling.",
 	"apihelp-translationstats-summary": "Vertaalstatistieken opvragen",
-	"apihelp-translationcheck-extended-description": "Statistieken omvatten vertalingsbewerkingen, actieve vertalingen, nieuwe gebruikers, vertalingsbeoordelingen en beoordelaars.",
+	"apihelp-translationcheck-extended-description": "De statistieken omvatten vertalingsbewerkingen, actieve vertalers, nieuwe gebruikers, vertalingsbeoordelingen en beoordelaars.",
 	"apihelp-translationstats-param-count": "Het soort op te vragen statistieken",
 	"apihelp-translationstats-param-days": "Aantal dagen waarvoor statistieken moeten worden opgevraagd",
 	"apihelp-translationstats-param-group": "Lijst met groepen waarvoor statistieken moeten worden opgevraagd.",

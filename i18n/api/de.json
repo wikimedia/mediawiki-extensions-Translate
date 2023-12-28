@@ -110,6 +110,7 @@
 	"apihelp-translationcheck-param-title": "Seitentitel mit Namensraum und Sprachcode.",
 	"apihelp-translationcheck-param-translation": "Die zu validierende Übersetzung.",
 	"apihelp-translationstats-summary": "Übersetzungsstatistiken abrufen",
+	"apihelp-translationcheck-extended-description": "Zu den Statistiken gehören Übersetzungsänderungen, aktive Übersetzer, neue Benutzer, Übersetzungsprüfungen und Prüfer.",
 	"apihelp-translationstats-param-count": "Art der angeforderten Statistik",
 	"apihelp-translationstats-param-days": "Anzahl der Tage, für die Statistiken abgerufen werden sollen",
 	"apihelp-translationstats-param-group": "Liste der Gruppen, für die Statistiken abgerufen werden sollen.",

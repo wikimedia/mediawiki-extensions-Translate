@@ -130,7 +130,7 @@
 	"apihelp-translationcheck-param-title": "Titulo de pagina con spatio de nomines e codice de lingua.",
 	"apihelp-translationcheck-param-translation": "Le traduction a validar.",
 	"apihelp-translationstats-summary": "Obtener statisticas de traduction",
-	"apihelp-translationcheck-extended-description": "Le statisticas include modificationes de traduction, traductiones active, nove usatores, revisiones de traduction e revisores.",
+	"apihelp-translationcheck-extended-description": "Le statisticas include modificationes de traduction, traductores active, nove usatores, e revisiones e revisores de traductiones.",
 	"apihelp-translationstats-param-count": "Typo de statisticas a requestar",
 	"apihelp-translationstats-param-days": "Numero de dies pro le quales obtener statisticas",
 	"apihelp-translationstats-param-group": "Lista del gruppos pro le quales obtener statisticas.",

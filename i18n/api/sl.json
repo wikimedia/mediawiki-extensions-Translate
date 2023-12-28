@@ -47,7 +47,7 @@
 	"apihelp-searchtranslations-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
 	"apihelp-searchtranslations-param-case": "Iskanje brez razlikovanja velikih in malih črk.",
 	"apihelp-translationcheck-param-translation": "Prevod za potrditev.",
-	"apihelp-translationcheck-extended-description": "Statistika vključuje urejanja prevodov, aktivne prevode, nove uporabnike, preglede prevodov in pregledovalce.",
+	"apihelp-translationcheck-extended-description": "Statistika vključuje urejanja prevodov, aktivne prevajalce, nove uporabnike, preglede prevodov in pregledovalce.",
 	"apierror-translate-fuzzymessage": "Ohlapnih prevodov ni mogoče pregledovati",
 	"apierror-translate-grouplanguagemismatch": "Jezik ($1) skupine, ki ste jo izbrali, se ne ujema z jezikom ($2) združene skupine.",
 	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "{{PLURAL:$3|Skupina|Skupine}}: $1, {{PLURAL:$3|nima|nimajo}} istega izvornega jezika ($2) kot združena skupina.",
