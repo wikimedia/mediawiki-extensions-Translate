@@ -47,7 +47,7 @@
 	"tsb-create-user-page": "ustvaritev osnovne uporabniške strani",
 	"log-name-translatorsandbox": "Dnevnik prevajalskega peskovnika",
 	"log-description-translatorsandbox": "Dnevnik dejanj uporabnikov prevajalskega peskovnika",
-	"logentry-translatorsandbox-promoted": "$1 je {{GENDER:$2|povišal|povišala|povišal/a}} $3 v {{GENDER:$4|prevajalca|prevajalko|prevajalca/ko}}",
-	"logentry-translatorsandbox-rejected": "$1 je {{GENDER:$2|zavrnil|zavrnila|zavrnil/a}} prošnjo »$3«, da postane prevajalec",
+	"logentry-translatorsandbox-promoted": "$1 je {{GENDER:$2|bil promoviran|bila promovirana|bil_a promoviran_a}} $3 v {{GENDER:$4|prevajalca|prevajalko|prevajalca_ko}}",
+	"logentry-translatorsandbox-rejected": "$1 je {{GENDER:$2|zavrnil|zavrnila|zavrnil_a}} prošnjo »$3«, da postane prevajalec",
 	"logentry-newusers-tsbpromoted": "Uporabniški račun $3 je bil {{GENDER:$2|ustvarjen}} s promocijo iz peskovnika"
 }

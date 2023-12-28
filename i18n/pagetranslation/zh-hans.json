@@ -168,7 +168,7 @@
 	"logentry-pagetranslation-discourage": "$1{{GENDER:$2|不鼓励}}翻译$3",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1已从翻译的页面$3的优先语言中被{{GENDER:$2|移除}}",
 	"logentry-pagetranslation-prioritylanguages": "$1将可翻译页面$3的优先语言{{GENDER:$2|设置}}为$5",
-	"logentry-pagetranslation-prioritylanguages-force": "$1认为$3到$5对此翻译页面的贡献{{GENDER:$2|很有限}}",
+	"logentry-pagetranslation-prioritylanguages-force": "$1已将可翻译页面$3的语言{{GENDER:$2|限制}}为$5",
 	"logentry-pagetranslation-associate": "$1{{GENDER:$2|添加}}了可翻译页面$3至信息组$4",
 	"logentry-pagetranslation-dissociate": "$1已将可翻译页面$3从信息组$4中{{GENDER:$2|移除}}",
 	"log-action-filter-pagetranslation": "操作类型：",
