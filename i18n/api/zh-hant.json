@@ -4,6 +4,7 @@
 			"Kly",
 			"LNDDYL",
 			"Liuxinyu970226",
+			"LowensteinYang",
 			"Weather Top Wizard",
 			"Winston Sung"
 		]
@@ -133,6 +134,7 @@
 	"apihelp-translationcheck-param-title": "帶有命名空間與語言代碼的頁面標題。",
 	"apihelp-translationcheck-param-translation": "要驗證的譯文。",
 	"apihelp-translationstats-summary": "取得翻譯統計",
+	"apihelp-translationcheck-extended-description": "統計數據包括翻譯編輯、活躍的翻譯者、新使用者、翻譯評論、和評論者。",
 	"apihelp-translationstats-param-count": "要求統計的類型",
 	"apihelp-translationstats-param-days": "要取得統計的天數",
 	"apihelp-translationstats-param-group": "要取得統計內容的群組清單。",
