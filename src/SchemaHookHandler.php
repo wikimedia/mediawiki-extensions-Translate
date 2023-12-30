@@ -56,6 +56,10 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 				'translate_translatable_bundles',
 				"{$dir}/{$dbType}/translate_translatable_bundles.sql"
 			);
+			$updater->addExtensionTable(
+				'translate_message_group_subscriptions',
+				"{$dir}/{$dbType}/translate_message_group_subscriptions.sql"
+			);
 
 			// 1.32 - This also adds a PRIMARY KEY
 			$updater->addExtensionUpdate( [

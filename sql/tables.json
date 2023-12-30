@@ -411,5 +411,51 @@
 			}
 		],
 		"pk": [ "ttb_page_id" ]
+	},
+	{
+		"name": "translate_message_group_subscriptions",
+		"comment": "Translator subscriptions to message groups",
+		"columns": [
+			{
+				"name": "tmgs_subscription_id",
+				"type": "integer",
+				"options": {
+					"autoincrement": true,
+					"unsigned": true,
+					"notnull": true
+				}
+			},
+			{
+				"name": "tmgs_user_id",
+				"comment": "Subscribed user ID",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "tmgs_group",
+				"comment": "Group ID that user has subscribed to",
+				"type": "binary",
+				"options": { "notnull": true, "length": 200 }
+			}
+		],
+		"pk": [ "tmgs_subscription_id" ],
+		"indexes": [
+			{
+				"name": "translate_tmgs_user_id",
+				"comment": "Index for finding all group subscriptions of the user",
+				"columns": [
+					"tmgs_user_id"
+				],
+				"unique": false
+			},
+			{
+				"name": "translate_tmgs_group",
+				"comment": "Index for finding all users subscribed to a group",
+				"columns": [
+					"tmgs_group"
+				],
+				"unique": false
+			}
+		]
 	}
 ]
