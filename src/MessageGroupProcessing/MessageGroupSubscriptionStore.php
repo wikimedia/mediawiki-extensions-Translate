@@ -73,6 +73,24 @@ class MessageGroupSubscriptionStore {
 		return $queryBuilder->fetchResultSet();
 	}
 
+	public function removeSubscriptions( string $groupId, int $userId ): void {
+		if ( !$this->doesTableExist() ) {
+			return;
+		}
+
+		$conditions = [
+			'tmgs_group' => $groupId,
+			'tmgs_user_id' => $userId
+		];
+
+		$this->connectionProvider->getPrimaryDatabase()
+			->delete(
+				self::TABLE_NAME,
+				$conditions,
+				__METHOD__
+			);
+	}
+
 	private static function getGroupIdForDatabase( string $groupId ): string {
 		// Check if length is more than 200 bytes
 		if ( strlen( $groupId ) <= self::MAX_GROUP_LENGTH ) {

@@ -345,6 +345,8 @@
 	"tux-languageselector": "Translate to",
 	"tux-select-target-language": "Target language for translation",
 	"tux-watch-group": "Watch $1",
+	"tux-unwatch-group": "Stop watching $1",
+	"tux-subscription-error": "Failed to update message group watchlist",
 	"tux-tab-all": "All",
 	"tux-tab-untranslated": "Untranslated",
 	"tux-tab-outdated": "Outdated",

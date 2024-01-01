@@ -30,4 +30,8 @@ class MessageGroupSubscription {
 	public function isUserSubscribedTo( MessageGroup $group, UserIdentity $user ): bool {
 		return $this->groupSubscriptionStore->getSubscriptions( $group->getId(), $user->getId() )->count() !== 0;
 	}
+
+	public function unsubscribeFromGroup( MessageGroup $group, UserIdentity $user ): void {
+		$this->groupSubscriptionStore->removeSubscriptions( $group->getId(), $user->getId() );
+	}
 }

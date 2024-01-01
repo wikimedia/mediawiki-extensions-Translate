@@ -269,9 +269,13 @@
 			return;
 		}
 
+		var buttonMessage = group.subscription ? 'tux-unwatch-group' : 'tux-watch-group';
 		var $subscribeButton = $( '<button>' )
 			.addClass( 'mw-ui-button' )
-			.text( mw.msg( 'tux-watch-group', group.label ) )
+			// * tux-watch-group
+			// * tux-unwatch-group
+			.text( mw.msg( buttonMessage, group.label ) )
+			.data( 'subscribed', group.subscription )
 			.on( 'click', toggleSubscription );
 
 		$( '.tux-watch-group' ).empty().append( $subscribeButton );
@@ -333,17 +337,41 @@
 
 	function toggleSubscription() {
 		var api = new mw.Api();
+		var $button = $( this );
+		$button.prop( 'disabled', true );
+
+		var subscriptionStatus = $button.data( 'subscribed' );
 
 		// TODO: Check current subscription and either subscribe or unsubscribe
 		var params = {
 			action: 'messagegroupsubscription',
 			groupId: state.group,
-			operation: 'subscribe',
+			operation: subscriptionStatus ? 'unsubscribe' : 'subscribe',
 			assert: 'user',
 			formatversion: 2
 		};
 
-		return api.postWithToken( 'csrf', params );
+		return api.postWithToken( 'csrf', params ).then(
+			function ( response ) {
+				if ( response.messagegroupsubscription && response.messagegroupsubscription.success === 1 ) {
+					var buttonMessage = subscriptionStatus ? 'tux-watch-group' : 'tux-unwatch-group';
+					var groupInfo = response.messagegroupsubscription.group;
+					$button
+						// * tux-watch-group
+						// * tux-unwatch-group
+						.text( mw.msg( buttonMessage, groupInfo.label ) )
+						.data( 'subscribed', !subscriptionStatus );
+				} else {
+					mw.notify( mw.msg( 'tux-subscription-error' ) );
+				}
+			},
+			function ( error ) {
+				mw.notify( mw.msg( 'tux-subscription-error' ) );
+				mw.log.error( 'messagegroupsubscription: Failed', error, params );
+			}
+		).always( function () {
+			$button.prop( 'disabled', false );
+		} );
 	}
 
 	$( function () {

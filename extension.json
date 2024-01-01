@@ -893,7 +893,9 @@
 				"translate-workflow-state-",
 				"translate-workflowstatus",
 				"translate-tag-page-wikipage-desc",
-				"tux-watch-group"
+				"tux-watch-group",
+				"tux-unwatch-group",
+				"tux-subscription-error"
 			]
 		},
 		"ext.translate.special.translate.styles": {

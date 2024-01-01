@@ -383,6 +383,8 @@
 	"tux-languageselector": "Label for language selector in [[Special:Translate]].\n{{Identical|Translate}}",
 	"tux-select-target-language": "Accessibility label for language selector on [[Special:Translate]].",
 	"tux-watch-group": "Label for button allowing user to watch the group currently being translated, on [[Special:Translate]]. Parameters:\n* $1 - Group label",
+	"tux-unwatch-group": "Label for button allowing user to stop watching the group currently being translated, on [[Special:Translate]]. Parameters:\n* $1 - Group label",
+	"tux-subscription-error": "Error message displayed if subscribing / unsubscribing fails on [[Special:Translate]]",
 	"tux-tab-all": "Tab in [[Special:Translate]] new ui to select which messages to show.\n{{Identical|All}}",
 	"tux-tab-untranslated": "Tab in [[Special:Translate]] new ui to select which messages to show.\n{{Identical|Untranslated}}",
 	"tux-tab-outdated": "Tab in [[Special:Translate]] UI to select which messages to show.\n{{Identical|Outdated}}",

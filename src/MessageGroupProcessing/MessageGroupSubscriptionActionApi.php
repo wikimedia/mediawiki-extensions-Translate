@@ -8,7 +8,7 @@ use ApiMain;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
- * API module for watching message group
+ * API module for watching / stop watching a message group
  * @since 2024.04
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
@@ -46,9 +46,21 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 
 		if ( $operation === 'subscribe' ) {
 			$this->groupSubscription->subscribeToGroup( $group, $user );
+		} elseif ( $operation === 'unsubscribe' ) {
+			$this->groupSubscription->unsubscribeFromGroup( $group, $user );
 		}
 
-		$this->getResult()->addValue( null, $this->getModuleName(), [ 'success' => 1 ] );
+		$this->getResult()->addValue(
+			null,
+			$this->getModuleName(),
+			[
+				'success' => 1,
+				'group' => [
+					'id' => $groupId,
+					'label' => $group->getLabel( $this->getContext() )
+				]
+			]
+		);
 	}
 
 	protected function getAllowedParams(): array {
@@ -58,7 +70,7 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'operation' => [
-				ParamValidator::PARAM_TYPE => [ 'subscribe' ],
+				ParamValidator::PARAM_TYPE => [ 'subscribe', 'unsubscribe' ],
 				ParamValidator::PARAM_ISMULTI => false,
 				ParamValidator::PARAM_REQUIRED => true,
 			]
