@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nurlan"
+			"Nurlan",
+			"Ajiniyaz Nurniyazov"
 		]
 	},
+	"tux-sst-facet-language": "Tiller",
 	"tux-sst-case-sensitive": "Háripler úlken-kishiligine bayqaǵısh"
 }
