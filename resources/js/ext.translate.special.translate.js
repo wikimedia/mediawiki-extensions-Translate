@@ -146,13 +146,14 @@
 	 * @param {string} stateInfo.language Language.
 	 */
 	function updateGroupInformation( stateInfo ) {
-		var props = 'id|priority|prioritylangs|priorityforce|description|label|sourcelanguage|class';
+		var props = 'id|priority|prioritylangs|priorityforce|description|label|sourcelanguage|class|subscription';
 
 		mw.translate.recentGroups.append( stateInfo.group );
 
 		mw.translate.getMessageGroup( stateInfo.group, props ).done( function ( group ) {
 			updateDescription( group );
 			updateGroupPriorityWarnings( group, stateInfo.language );
+			updateGroupSubscription( group );
 		} );
 	}
 
@@ -260,6 +261,19 @@
 			$( '<p>' ).append( $( '<strong>' ).text( headerMessage.text() ) ),
 			$( '<p>' ).append( languagesMessage.parseDom() )
 		);
+	}
+
+	function updateGroupSubscription( group ) {
+		if ( group.subscription === undefined ) {
+			// Group subscription is not enabled, nothing to do.
+			return;
+		}
+
+		var $subscribeButton = $( '<button>' )
+			.addClass( 'mw-ui-button' )
+			.text( mw.msg( 'tux-watch-group', group.label ) );
+
+		$( '.tux-watch-group' ).empty().append( $subscribeButton );
 	}
 
 	function removeGroupWarnings() {

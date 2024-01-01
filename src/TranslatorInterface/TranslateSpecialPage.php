@@ -174,6 +174,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$attrs = [ 'class' => 'row tux-editor-header' ];
 		$selectors = $this->tuxGroupSelector() .
 			$this->tuxLanguageSelector() .
+			$this->tuxGroupSubscription() .
 			$this->tuxGroupDescription() .
 			$this->tuxWorkflowSelector() .
 			$this->tuxGroupWarning();
@@ -326,6 +327,13 @@ class TranslateSpecialPage extends SpecialPage {
 			'div',
 			[ 'class' => 'four columns ext-translate-language-selector' ],
 			"$label $value"
+		);
+	}
+
+	private function tuxGroupSubscription(): string {
+		return Html::rawElement(
+			'div',
+			[ 'class' => 'twelve columns tux-watch-group' ]
 		);
 	}
 

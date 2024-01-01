@@ -71,6 +71,7 @@
 	"apihelp-query+messagegroups-paramvalue-prop-priorityforce": "{{doc-apihelp-paramvalue|query+messagegroups|prop|priorityforce}}\nSee the [[mw:Help:Extension:Translate/Message group states|description of ''states'']].",
 	"apihelp-query+messagegroups-paramvalue-prop-workflowstates": "{{doc-apihelp-paramvalue|query+messagegroups|prop|workflowstates}}",
 	"apihelp-query+messagegroups-paramvalue-prop-sourcelanguage": "{{doc-apihelp-paramvalue|query+messagegroups|prop|sourcelanguage}}",
+	"apihelp-query+messagegroups-paramvalue-prop-subscription": "{{doc-apihelp-paramvalue|query+messagegroups|prop|subscription}}",
 	"apihelp-query+messagegroups-param-root": "{{doc-apihelp-param|query+messagegroups|root}}",
 	"apihelp-query+messagegroups-param-languageFilter": "{{doc-apihelp-param|query+messagegroups|languageFilter}}",
 	"apihelp-query+messagegroups-example-1": "{{doc-apihelp-example|query+messagegroups}}",

@@ -25,16 +25,19 @@ use Wikimedia\ParamValidator\ParamValidator;
 class QueryMessageGroupsActionApi extends ApiQueryBase {
 	private HookRunner $hookRunner;
 	private MessageGroupMetadata $messageGroupMetadata;
+	private MessageGroupSubscription $groupSubscription;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
 		HookRunner $hookRunner,
-		MessageGroupMetadata $messageGroupMetadata
+		MessageGroupMetadata $messageGroupMetadata,
+		MessageGroupSubscription $groupSubscription
 	) {
 		parent::__construct( $query, $moduleName, 'mg' );
 		$this->hookRunner = $hookRunner;
 		$this->messageGroupMetadata = $messageGroupMetadata;
+		$this->groupSubscription = $groupSubscription;
 	}
 
 	public function execute(): void {
@@ -203,6 +206,14 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			$a['sourcelanguage'] = $g->getSourceLanguage();
 		}
 
+		if (
+			isset( $props['subscription'] ) &&
+			$this->groupSubscription->isEnabled() &&
+			$this->getUser()->isNamed()
+		) {
+			$a['subscription'] = false;
+		}
+
 		$this->hookRunner->onTranslateProcessAPIMessageGroupsProperties( $a, $props, $params, $g );
 
 		// Depth only applies to tree format
@@ -321,7 +332,8 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			'prioritylangs',
 			'priorityforce',
 			'workflowstates',
-			'sourcelanguage'
+			'sourcelanguage',
+			'subscription'
 		] );
 
 		$this->hookRunner->onTranslateGetAPIMessageGroupsPropertyDescs( $properties );

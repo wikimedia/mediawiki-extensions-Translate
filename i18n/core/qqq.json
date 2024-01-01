@@ -381,6 +381,7 @@
 	"translate-msggroupselector-view-subprojects": "Label indicating that the current message group contains other groups. Parameters:\n* $1 is number of sub groups",
 	"tux-languageselector": "Label for language selector in [[Special:Translate]].\n{{Identical|Translate}}",
 	"tux-select-target-language": "Accessibility label for language selector on [[Special:Translate]].",
+	"tux-watch-group": "Label for button allowing user to watch the group currently being translated, on [[Special:Translate]]. Parameters:\n* $1 - Group label",
 	"tux-tab-all": "Tab in [[Special:Translate]] new ui to select which messages to show.\n{{Identical|All}}",
 	"tux-tab-untranslated": "Tab in [[Special:Translate]] new ui to select which messages to show.\n{{Identical|Untranslated}}",
 	"tux-tab-outdated": "Tab in [[Special:Translate]] UI to select which messages to show.\n{{Identical|Outdated}}",

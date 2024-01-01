@@ -16,6 +16,8 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
@@ -133,6 +135,22 @@ return [
 			$services->get( 'Translate:MessageGroupReviewStore' ),
 			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getMainConfig()->get( 'TranslateWorkflowStates' ) !== false
+		);
+	},
+
+	'Translate:MessageGroupSubscription' => static function (
+		MediaWikiServices $services
+	): MessageGroupSubscription {
+		return new MessageGroupSubscription(
+			$services->get( 'Translate:MessageGroupSubscriptionStore' )
+		);
+	},
+
+	'Translate:MessageGroupSubscriptionStore' => static function (
+		MediaWikiServices $services
+	): MessageGroupSubscriptionStore {
+		return new MessageGroupSubscriptionStore(
+			$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
 		);
 	},
 

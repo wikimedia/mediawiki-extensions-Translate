@@ -62,6 +62,7 @@
 	"apihelp-query+messagegroups-paramvalue-prop-priorityforce": "Include priority status - is the priority languages setting forced.",
 	"apihelp-query+messagegroups-paramvalue-prop-workflowstates": "Include the workflow states for the message group.",
 	"apihelp-query+messagegroups-paramvalue-prop-sourcelanguage": "Include the source language for the message group.",
+	"apihelp-query+messagegroups-paramvalue-prop-subscription": "Include whether the user is subscribed to the group.",
 	"apihelp-query+messagegroups-param-root": "When using the tree format, instead of starting from top level start from the given message group, which must be an aggregate message group. When using flat format only the specified group is returned.",
 	"apihelp-query+messagegroups-param-languageFilter": "Only return message groups that can be translated to the given language.",
 	"apihelp-query+messagegroups-example-1": "Show message groups",

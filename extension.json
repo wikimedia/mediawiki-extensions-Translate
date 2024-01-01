@@ -391,7 +391,8 @@
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupsActionApi",
 			"services": [
 				"Translate:HookRunner",
-				"Translate:MessageGroupMetadata"
+				"Translate:MessageGroupMetadata",
+				"Translate:MessageGroupSubscription"
 			]
 		},
 		"messagegroupstats": {
@@ -884,7 +885,8 @@
 				"translate-workflow-set-doing",
 				"translate-workflow-state-",
 				"translate-workflowstatus",
-				"translate-tag-page-wikipage-desc"
+				"translate-tag-page-wikipage-desc",
+				"tux-watch-group"
 			]
 		},
 		"ext.translate.special.translate.styles": {
