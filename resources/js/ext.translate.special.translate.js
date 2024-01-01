@@ -271,7 +271,8 @@
 
 		var $subscribeButton = $( '<button>' )
 			.addClass( 'mw-ui-button' )
-			.text( mw.msg( 'tux-watch-group', group.label ) );
+			.text( mw.msg( 'tux-watch-group', group.label ) )
+			.on( 'click', toggleSubscription );
 
 		$( '.tux-watch-group' ).empty().append( $subscribeButton );
 	}
@@ -328,6 +329,21 @@
 				.addClass( 'mw-message-box-warning mw-message-box tux-group-warning twelve column' );
 			$tuxEditorHeader.append( $tuxWarning );
 		}
+	}
+
+	function toggleSubscription() {
+		var api = new mw.Api();
+
+		// TODO: Check current subscription and either subscribe or unsubscribe
+		var params = {
+			action: 'messagegroupsubscription',
+			groupId: state.group,
+			operation: 'subscribe',
+			assert: 'user',
+			formatversion: 2
+		};
+
+		return api.postWithToken( 'csrf', params );
 	}
 
 	$( function () {

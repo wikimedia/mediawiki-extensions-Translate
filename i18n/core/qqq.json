@@ -145,6 +145,7 @@
 	"action-translate-messagereview": "{{doc-action|translate-messagereview}}",
 	"right-translate-groupreview": "{{doc-right|translate-groupreview}}",
 	"action-translate-groupreview": "{{doc-action|translate-groupreview}}",
+	"action-translate-watch-message-group": "{{doc-action|translate-watch-message-group}}",
 	"translate-rcfilters-translations": "Title for the filter group for translations. Only available on [[Special:RecentChanges]].\n{{Identical|Translation}}",
 	"translate-rcfilters-translations-only-label": "Label for the filter for showing translations to message groups.\n{{Identical|Translation}}",
 	"translate-rcfilters-translations-only-desc": "Description for the filter for showing translations to message groups.",

@@ -150,6 +150,7 @@ return [
 		MediaWikiServices $services
 	): MessageGroupSubscriptionStore {
 		return new MessageGroupSubscriptionStore(
+			$services->getDBLoadBalancerFactory(),
 			$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
 		);
 	},

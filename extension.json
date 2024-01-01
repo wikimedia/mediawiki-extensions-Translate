@@ -419,6 +419,12 @@
 			]
 		},
 		"managemessagegroups": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\ManageMessageGroupsActionApi",
+		"messagegroupsubscription": {
+			"class": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupSubscriptionActionApi",
+			"services": [
+				"Translate:MessageGroupSubscription"
+			]
+		},
 		"translationaids": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\Aid\\TranslationAidsActionApi",
 		"translationentitysearch": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationEntitySearchActionApi",
