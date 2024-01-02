@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ayire Adongo"
+			"Ayire Adongo",
+			"Baba Ayɛ'ɛra"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% Lerege)"
+	"tpt-languages-nonzero": "$1 ($2% Lerege)",
+	"pt-deletepage-lang-outdated-logreason": "Pɛgerɛ la ka le tara leregere duma"
 }
