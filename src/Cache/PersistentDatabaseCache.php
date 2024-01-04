@@ -117,13 +117,13 @@ class PersistentDatabaseCache implements PersistentCache {
 			$rowsToInsert = [
 				'tc_key' => $entry->key(),
 				'tc_value' => $value,
-				'tc_exptime' => $entry->exptime(),
+				'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
 				'tc_tag' => $entry->tag()
 			];
 
 			$rowsToUpdate = [
 				'tc_value' => $value,
-				'tc_exptime' => $entry->exptime(),
+				'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
 				'tc_tag' => $entry->tag()
 			];
 
@@ -141,7 +141,7 @@ class PersistentDatabaseCache implements PersistentCache {
 		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->update(
 			self::TABLE_NAME,
-			[ 'tc_exptime' => $expiryTime ],
+			[ 'tc_exptime' => $dbw->timestamp( $expiryTime ) ],
 			[ 'tc_key' => $keyname ],
 			__METHOD__
 		);
@@ -181,7 +181,7 @@ class PersistentDatabaseCache implements PersistentCache {
 			$entries[] = new PersistentCacheEntry(
 				$row->tc_key,
 				$this->jsonCodec->unserialize( $row->tc_value ),
-				$row->tc_exptime ? (int)$row->tc_exptime : null,
+				$row->tc_exptime ? (int)wfTimestamp( TS_UNIX, $row->tc_exptime ) : null,
 				$row->tc_tag
 			);
 		}
