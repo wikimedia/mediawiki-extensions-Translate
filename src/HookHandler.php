@@ -8,7 +8,6 @@ use ALTree;
 use ApiRawMessage;
 use Config;
 use Content;
-use DatabaseUpdater;
 use IContextSource;
 use Language;
 use LogFormatter;
@@ -16,7 +15,6 @@ use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
-use MediaWiki\Extension\Translate\Diagnostics\SyncTranslatableBundleStatusMaintenanceScript;
 use MediaWiki\Extension\Translate\LogFormatter as TranslateLogFormatter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
@@ -73,7 +71,11 @@ use XmlSelect;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, ChangeTagsListActiveHook {
+class HookHandler implements
+	ChangeTagsListActiveHook,
+	ListDefinedTagsHook,
+	RevisionRecordInsertedHook
+{
 	/**
 	 * Any user of this list should make sure that the tables
 	 * actually exist, since they may be optional
@@ -493,107 +495,6 @@ class HookHandler implements RevisionRecordInsertedHook, ListDefinedTagsHook, Ch
 	public static function setupParserHooks( Parser $parser ): void {
 		// For nice language list in-page
 		$parser->setHook( 'languages', [ Hooks::class, 'languages' ] );
-	}
-
-	/** Hook: LoadExtensionSchemaUpdates */
-	public static function schemaUpdates( DatabaseUpdater $updater ): void {
-		$dir = dirname( __DIR__, 1 ) . '/sql';
-		$dbType = $updater->getDB()->getType();
-
-		if ( $dbType === 'mysql' || $dbType === 'sqlite' ) {
-			$updater->addExtensionTable(
-				'translate_sections',
-				"{$dir}/{$dbType}/translate_sections.sql"
-			);
-			$updater->addExtensionTable(
-				'revtag',
-				"{$dir}/{$dbType}/revtag.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_groupstats',
-				"{$dir}/{$dbType}/translate_groupstats.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_reviews',
-				"{$dir}/{$dbType}/translate_reviews.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_groupreviews',
-				"{$dir}/{$dbType}/translate_groupreviews.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_tms',
-				"{$dir}/{$dbType}/translate_tm.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_metadata',
-				"{$dir}/{$dbType}/translate_metadata.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_messageindex',
-				"{$dir}/{$dbType}/translate_messageindex.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_stash',
-				"{$dir}/{$dbType}/translate_stash.sql"
-			);
-			$updater->addExtensionTable(
-				'translate_translatable_bundles',
-				"{$dir}/{$dbType}/translate_translatable_bundles.sql"
-			);
-
-			// 1.32 - This also adds a PRIMARY KEY
-			$updater->addExtensionUpdate( [
-				'renameIndex',
-				'translate_reviews',
-				'trr_user_page_revision',
-				'PRIMARY',
-				false,
-				"$dir/translate_reviews-patch-01-primary-key.sql",
-				true
-			] );
-
-			$updater->addExtensionTable(
-				'translate_cache',
-				"{$dir}/{$dbType}/translate_cache.sql"
-			);
-
-			if ( $dbType === 'mysql' ) {
-				// 1.38
-				$updater->modifyExtensionField(
-					'translate_cache',
-					'tc_key',
-					"{$dir}/{$dbType}/translate_cache-alter-varbinary.sql"
-				);
-			}
-		} elseif ( $dbType === 'postgres' ) {
-			$updater->addExtensionTable(
-				'translate_sections',
-				"{$dir}/{$dbType}/tables-generated.sql"
-			);
-			$updater->addExtensionUpdate( [
-				'changeField', 'translate_cache', 'tc_exptime', 'TIMESTAMPTZ', 'th_timestamp::timestamp with time zone'
-			] );
-		}
-
-		// 1.39
-		$updater->dropExtensionIndex(
-			'translate_messageindex',
-			'tmi_key',
-			"{$dir}/{$dbType}/patch-translate_messageindex-unique-to-pk.sql"
-		);
-		$updater->dropExtensionIndex(
-			'translate_tmt',
-			'tms_sid_lang',
-			"{$dir}/{$dbType}/patch-translate_tmt-unique-to-pk.sql"
-		);
-		$updater->dropExtensionIndex(
-			'revtag',
-			'rt_type_page_revision',
-			"{$dir}/{$dbType}/patch-revtag-unique-to-pk.sql"
-		);
-
-		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 	}
 
 	/**

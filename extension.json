@@ -165,7 +165,7 @@
 		"MediaWiki\\Extension\\Translate\\": "tests/phpunit/unit/"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\Translate\\HookHandler::schemaUpdates",
+		"LoadExtensionSchemaUpdates": "schema",
 		"PageContentLanguage": "MediaWiki\\Extension\\Translate\\HookHandler::onPageContentLanguage",
 		"EditPage::showEditForm:initial": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
@@ -258,6 +258,9 @@
 			"services": [
 				"MainConfig"
 			]
+		},
+		"schema": {
+			"class": "MediaWiki\\Extension\\Translate\\SchemaHookHandler"
 		}
 	},
 	"SpecialPages": {
