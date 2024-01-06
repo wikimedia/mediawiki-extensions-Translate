@@ -1,12 +1,10 @@
 <?php
 declare( strict_types = 1 );
 
-namespace Mediawiki\Extensions\TranslatorSandbox;
+namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox;
-use MediaWiki\Extension\Translate\TranslatorSandbox\UserNotSandboxedException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -18,7 +16,7 @@ use MediaWikiIntegrationTestCase;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @group Database
- * @covers \Mediawiki\Extension\Translate\TranslatorSandbox\TranslateSandbox
+ * @covers \MediaWiki\Extension\Translate\TranslatorSandbox\TranslateSandbox
  */
 class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 	private TranslateSandbox $translateSandbox;
