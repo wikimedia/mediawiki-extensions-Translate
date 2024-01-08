@@ -217,7 +217,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$tables = [ 'recentchanges' ];
-		$fields = [ 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' ];
+		$fields = [ 'lang' => 'substring_index(rc_title, \'/\', -1)', 'count' => 'COUNT(*)' ];
 		$timestamp = $dbr->timestamp( (int)wfTimestamp() - 60 * 60 * 24 * $this->period );
 		$conds = [
 			'rc_timestamp > ' . $dbr->addQuotes( $timestamp ),

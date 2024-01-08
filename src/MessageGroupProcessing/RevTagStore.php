@@ -97,7 +97,7 @@ class RevTagStore {
 
 		$dbr = Utilities::getSafeReadDB();
 		$results = $dbr->newSelectQueryBuilder()
-			->select( [ 'MAX(rt_revision) AS rt_revision', 'rt_type' ] )
+			->select( [ 'rt_revision' => 'MAX(rt_revision)', 'rt_type' ] )
 			->from( 'revtag' )
 			->where( [
 				'rt_page' => $articleId,

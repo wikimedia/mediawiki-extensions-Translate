@@ -249,10 +249,10 @@ class MessageGroupStats {
 			->table( self::TABLE )
 			->select( [
 				'tgs_lang',
-				'SUM(tgs_translated) AS tgs_translated',
-				'SUM(tgs_fuzzy) AS tgs_fuzzy',
-				'SUM(tgs_total) AS tgs_total',
-				'SUM(tgs_proofread) AS tgs_proofread'
+				'tgs_translated' => 'SUM(tgs_translated)',
+				'tgs_fuzzy' => 'SUM(tgs_fuzzy)',
+				'tgs_total' => 'SUM(tgs_total)',
+				'tgs_proofread' => 'SUM(tgs_proofread)'
 			] )
 			->groupBy( 'tgs_lang' )
 			->fetchResultSet();

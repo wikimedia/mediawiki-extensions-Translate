@@ -40,8 +40,8 @@ class TranslatorActivityQuery {
 		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
 		$fields = [
 			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
-			'MAX(rev_timestamp) as lastedit',
-			'count(page_id) as count',
+			'lastedit' => 'MAX(rev_timestamp)',
+			'count' => 'COUNT(page_id)',
 		];
 		$conds = [
 			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
@@ -86,9 +86,9 @@ class TranslatorActivityQuery {
 		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
 		$fields = [
 			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
-			'substring_index(page_title, \'/\', -1) as lang',
-			'MAX(rev_timestamp) as lastedit',
-			'count(page_id) as count',
+			'lang' => 'substring_index(page_title, \'/\', -1)',
+			'lastedit' => 'MAX(rev_timestamp)',
+			'count' => 'COUNT(page_id)',
 		];
 		$conds = [
 			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),

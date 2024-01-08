@@ -402,7 +402,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				'page_namespace',
 				'page_title',
 				'page_latest',
-				'MAX(rt_revision) AS rt_revision',
+				'rt_revision' => 'MAX(rt_revision)',
 				'rt_type'
 			] )
 			->tables( [ 'page', 'revtag' ] )
