@@ -14,12 +14,13 @@
 			"Ssola",
 			"Toniher",
 			"Vriullop",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Robertgarrigos"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
 	"right-pagetranslation": "Marcar versions de pàgines per a traduir",
-	"action-pagetranslation": "gestiona les pàgines traduïbles",
+	"action-pagetranslation": "gestionar les pàgines traduïbles",
 	"tpt-section": "Unitat de traducció $1",
 	"tpt-section-new": "Nova unitat de traducció. Nom: $1",
 	"tpt-section-deleted": "Unitat de traducció $1",
