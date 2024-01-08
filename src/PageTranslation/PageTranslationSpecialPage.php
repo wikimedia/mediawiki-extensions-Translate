@@ -264,6 +264,13 @@ class PageTranslationSpecialPage extends SpecialPage {
 				'strlen'
 			);
 
+			// https://www.php.net/manual/en/language.variables.external.php says:
+			// "Dots and spaces in variable names are converted to underscores.
+			// For example <input name="a b" /> becomes $_REQUEST["a_b"]."
+			// Therefore, we need to convert underscores back to spaces where they were used in section
+			// markers.
+			$noFuzzyUnits = str_replace( '_', ' ', $noFuzzyUnits );
+
 			$translatablePageSettings = new TranslatablePageSettings(
 				$priorityLanguages,
 				$forcePriorityLanguage,
