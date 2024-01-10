@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Exception;
-use ExternalMessageSourceStateComparator;
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
@@ -102,7 +101,7 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 			}
 
 			try {
-				$changes[$id] = $comparator->processGroup( $group, $comparator::ALL_LANGUAGES );
+				$changes[$id] = $comparator->processGroup( $group );
 			} catch ( Exception $e ) {
 				$errorMsg = "Exception occurred while processing group: $id.\nException: $e";
 				$this->error( $errorMsg );

@@ -78,7 +78,6 @@
 		"DtdFFS": "src/FileFormatSupport/DtdFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\DtdFormat": "src/FileFormatSupport/DtdFormat.php",
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
-		"ExternalMessageSourceStateComparator": "utils/ExternalMessageSourceStateComparator.php",
 		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FileBasedMessageGroupLoader": "messagegroups/loaders/FileBasedMessageGroupLoader.php",

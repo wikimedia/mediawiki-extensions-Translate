@@ -1,27 +1,26 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MessageGroupCache;
+use RuntimeException;
 
 /**
  * Finds external changes for file based message groups.
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @since 2013.12
  */
-
-use MediaWiki\Extension\Translate\MessageLoading\Message;
-use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
-
 class ExternalMessageSourceStateComparator {
-	/** Process all languages supported by the message group */
-	public const ALL_LANGUAGES = 'all languages';
+	private StringComparator $stringComparator;
 
-	/** @var StringComparator */
-	protected $stringComparator;
-
-	/** @param StringComparator $stringComparator */
 	public function __construct( StringComparator $stringComparator ) {
 		$this->stringComparator = $stringComparator;
 	}
@@ -43,47 +42,30 @@ class ExternalMessageSourceStateComparator {
 	 *   - matched_to (present in case of renames, key of the matched message)
 	 *   - similarity (present in case of renames, similarity % with the matched message)
 	 *   - previous_state (present in case of renames, state of the message before rename)
-	 *
-	 * @param FileBasedMessageGroup $group
-	 * @param array|string $languages
-	 * @throws InvalidArgumentException
-	 * @return MessageSourceChange
 	 */
-	public function processGroup( FileBasedMessageGroup $group, $languages ) {
+	public function processGroup( FileBasedMessageGroup $group ): MessageSourceChange {
 		$changes = new MessageSourceChange();
-		$processAll = $languages === self::ALL_LANGUAGES;
-
-		if ( $processAll ) {
-			$languages = $group->getTranslatableLanguages() ??
-				// This means all languages
-				Utilities::getLanguageNames( 'en' );
-
-			$languages = array_keys( $languages );
-		} elseif ( !is_array( $languages ) ) {
-			throw new InvalidArgumentException( 'Invalid input given for $languages' );
-		}
+		$languages = $group->getTranslatableLanguages() ?? Utilities::getLanguageNames( 'en' );
 
 		// Process the source language before others. Source language might not
 		// be included in $group->getTranslatableLanguages(). The expected
-		// behavior is that source language is always processed when given
-		// self::ALL_LANGUAGES.
+		// behavior is that source language is always processed.
 		$sourceLanguage = $group->getSourceLanguage();
-		$index = array_search( $sourceLanguage, $languages );
-		if ( $processAll || $index !== false ) {
-			unset( $languages[$index] );
-			$this->processLanguage( $group, $sourceLanguage, $changes );
-		}
+		$this->processLanguage( $group, $sourceLanguage, $changes );
+		unset( $languages[ $sourceLanguage] );
 
-		foreach ( $languages as $language ) {
+		foreach ( array_keys( $languages ) as $language ) {
 			$this->processLanguage( $group, $language, $changes );
 		}
 
 		return $changes;
 	}
 
-	protected function processLanguage(
-		FileBasedMessageGroup $group, $language, MessageSourceChange $changes
-	) {
+	private function processLanguage(
+		FileBasedMessageGroup $group,
+		string $language,
+		MessageSourceChange $changes
+	): void {
 		$cache = $group->getMessageGroupCache( $language );
 		$reason = 0;
 		if ( !$cache->isValid( $reason ) ) {
@@ -112,16 +94,15 @@ class ExternalMessageSourceStateComparator {
 	 * later processing of a translation administrator, who can decide what
 	 * actions to take on those events to bring the state more or less in sync.
 	 *
-	 * @param FileBasedMessageGroup $group
-	 * @param string $language
-	 * @param MessageSourceChange $changes
-	 * @param int $reason
-	 * @param MessageGroupCache $cache
 	 * @throws RuntimeException
 	 */
 	protected function addMessageUpdateChanges(
-		FileBasedMessageGroup $group, $language, MessageSourceChange $changes, $reason, $cache
-	) {
+		FileBasedMessageGroup $group,
+		string $language,
+		MessageSourceChange $changes,
+		int $reason,
+		MessageGroupCache $cache
+	): void {
 		// initCollection returns empty list before first import
 		$wiki = $group->initCollection( $language );
 		$wiki->filter( 'hastranslation', false );
@@ -262,8 +243,12 @@ class ExternalMessageSourceStateComparator {
 	 * @param string[] $wikiKeys
 	 */
 	private function checkNonSourceAdditionsForRename(
-		MessageSourceChange $changes, $sourceLanguage, $targetLanguage, MessageCollection $wiki, $wikiKeys
-	) {
+		MessageSourceChange $changes,
+		string $sourceLanguage,
+		string $targetLanguage,
+		MessageCollection $wiki,
+		array $wikiKeys
+	): void {
 		$additions = $changes->getAdditions( $targetLanguage );
 		if ( $additions === [] ) {
 			return;
@@ -332,10 +317,8 @@ class ExternalMessageSourceStateComparator {
 	 * Check for renames and add them to the changes. To identify renames we need to
 	 * compare the contents of the added messages with the deleted ones and identify
 	 * messages that match.
-	 * @param MessageSourcechange $changes
-	 * @param string $sourceLanguage
 	 */
-	private function findAndMarkSourceRenames( MessageSourceChange $changes, $sourceLanguage ) {
+	private function findAndMarkSourceRenames( MessageSourceChange $changes, string $sourceLanguage ): void {
 		// Now check for renames. To identify renames we need to compare
 		// the contents of the added messages with the deleted ones and
 		// identify messages that match.
@@ -365,18 +348,15 @@ class ExternalMessageSourceStateComparator {
 		$this->matchRenames( $changes, $potentialRenames, $sourceLanguage );
 	}
 
-	/**
-	 * Adds non source language renames to the list of changes
-	 * @param MessageSourceChange $changes
-	 * @param string $key
-	 * @param string $renameKey
-	 * @param string $sourceContent
-	 * @param string $wikiContent
-	 * @param string $language
-	 */
+	/** Adds non source language renames to the list of changes */
 	private function addNonSourceRenames(
-		MessageSourceChange $changes, $key, $renameKey, $sourceContent, $wikiContent, $language
-	) {
+		MessageSourceChange $changes,
+		string $key,
+		string $renameKey,
+		string $sourceContent,
+		string $wikiContent,
+		string $language
+	): void {
 		$addedMsg = [
 			'key' => $renameKey,
 			'content' => $sourceContent
@@ -399,11 +379,8 @@ class ExternalMessageSourceStateComparator {
 	 *
 	 * We sort the $trackRename array on the similarity percentage and then start adding the
 	 * messages as renames.
-	 * @param MessageSourceChange $changes
-	 * @param array $trackRename
-	 * @param string $language
 	 */
-	private function matchRenames( MessageSourceChange $changes, array $trackRename, $language ) {
+	private function matchRenames( MessageSourceChange $changes, array $trackRename, string $language ): void {
 		arsort( $trackRename, SORT_NUMERIC );
 
 		$alreadyRenamed = $additionsToRemove = $deletionsToRemove = [];
