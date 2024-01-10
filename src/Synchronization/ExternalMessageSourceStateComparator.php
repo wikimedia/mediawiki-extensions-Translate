@@ -4,12 +4,12 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupCache;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageGroupCache;
 use RuntimeException;
 
 /**

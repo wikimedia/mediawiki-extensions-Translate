@@ -97,7 +97,6 @@
 		"MessageChangeStorage": "utils/MessageChangeStorage.php",
 		"MessageGroup": "messagegroups/MessageGroup.php",
 		"MessageGroupBase": "messagegroups/MessageGroupBase.php",
-		"MessageGroupCache": "utils/MessageGroupCache.php",
 		"MessageGroupLoader": "messagegroups/loaders/MessageGroupLoader.php",
 		"MessageGroupOld": "messagegroups/MessageGroupOld.php",
 		"MessageGroups": "src/MessageGroupProcessing/MessageGroups.php",

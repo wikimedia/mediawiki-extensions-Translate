@@ -1,11 +1,16 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use FileBasedMessageGroup;
+use MediaWikiIntegrationTestCase;
+
 /**
- * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupCache
  */
-
-/** @covers MessageGroupCache */
 class MessageGroupCacheTest extends MediaWikiIntegrationTestCase {
 	public function testCacheRoundtrip() {
 		$parseOutput = [

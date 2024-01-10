@@ -1,12 +1,12 @@
 <?php
-/**
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Cdb\Reader;
 use Cdb\Writer;
+use FileBasedMessageGroup;
+use RuntimeException;
 
 /**
  * Caches messages of file based message group source file. Can also track
@@ -15,6 +15,9 @@ use Cdb\Writer;
  * of the actual format. This also avoid having to deal with potentially unsafe
  * external files during web requests.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ *
  * @ingroup MessageGroups
  */
 class MessageGroupCache {
@@ -22,36 +25,24 @@ class MessageGroupCache {
 	public const NO_CACHE = 2;
 	public const CHANGED = 3;
 	private const VERSION = '4';
-	/** @var FileBasedMessageGroup */
-	protected $group;
-	/** @var Reader|null */
-	protected $cache;
-	/** @var string */
-	protected $code;
-	/** @var string */
-	private $cacheFilePath;
+	private FileBasedMessageGroup $group;
+	private ?Reader $cache = null;
+	private string $languageCode;
+	private string $cacheFilePath;
 
-	/**
-	 * Contructs a new cache object for given group and language code.
-	 * @param FileBasedMessageGroup $group
-	 * @param string $code Language code.
-	 * @param string $cacheFilePath
-	 */
+	/** Contructs a new cache object for given group and language code. */
 	public function __construct(
 		FileBasedMessageGroup $group,
-		string $code,
+		string $languageCode,
 		string $cacheFilePath
 	) {
 		$this->group = $group;
-		$this->code = $code;
+		$this->languageCode = $languageCode;
 		$this->cacheFilePath = $cacheFilePath;
 	}
 
-	/**
-	 * Returns whether cache exists for this language and group.
-	 * @return bool
-	 */
-	public function exists() {
+	/** Returns whether cache exists for this language and group. */
+	public function exists(): bool {
 		return file_exists( $this->getCacheFilePath() );
 	}
 
@@ -59,7 +50,7 @@ class MessageGroupCache {
 	 * Returns list of message keys that are stored.
 	 * @return string[] Message keys that can be passed one-by-one to get() method.
 	 */
-	public function getKeys() {
+	public function getKeys(): array {
 		$reader = $this->open();
 		$keys = [];
 
@@ -77,33 +68,28 @@ class MessageGroupCache {
 
 	/**
 	 * Returns timestamp in unix-format about when this cache was first created.
-	 * @return string Unix timestamp.
+	 * @return string|false Unix timestamp.
 	 */
 	public function getTimestamp() {
 		return $this->open()->get( '#created' );
 	}
 
-	/**
-	 * ...
-	 * @return string Unix timestamp.
-	 */
+	/** @return string|false Unix timestamp. */
 	public function getUpdateTimestamp() {
 		return $this->open()->get( '#updated' );
 	}
 
 	/**
 	 * Get an item from the cache.
-	 * @param string $key
-	 * @return string
+	 * @return string|false
 	 */
-	public function get( $key ) {
+	public function get( string $key ) {
 		return $this->open()->get( $key );
 	}
 
 	/**
 	 * Get a list of authors.
 	 * @return string[]
-	 * @since 2020.04
 	 */
 	public function getAuthors(): array {
 		$cache = $this->open();
@@ -111,11 +97,7 @@ class MessageGroupCache {
 			$this->unserialize( $cache->get( '#authors' ) ) : [];
 	}
 
-	/**
-	 * Get other data cached from the file format class.
-	 * @return array
-	 * @since 2020.04
-	 */
+	/** Get other data cached from the file format class. */
 	public function getExtra(): array {
 		$cache = $this->open();
 		return $cache->exists( '#extra' ) ? $this->unserialize( $cache->get( '#extra' ) ) : [];
@@ -123,12 +105,12 @@ class MessageGroupCache {
 
 	/**
 	 * Populates the cache from current state of the source file.
-	 * @param bool|string $created Unix timestamp when the cache is created (for automatic updates).
+	 * @param string|false $created Unix timestamp when the cache is created (for automatic updates).
 	 */
-	public function create( $created = false ) {
+	public function create( $created = false ): void {
 		$this->close(); // Close the reader instance just to be sure
 
-		$parseOutput = $this->group->parseExternal( $this->code );
+		$parseOutput = $this->group->parseExternal( $this->languageCode );
 		$messages = $parseOutput['MESSAGES'];
 		if ( $messages === [] ) {
 			if ( $this->exists() ) {
@@ -138,7 +120,7 @@ class MessageGroupCache {
 
 			return; // Don't create empty caches
 		}
-		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
+		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->languageCode ) ) );
 
 		wfMkdirParents( dirname( $this->getCacheFilePath() ) );
 		$cache = Writer::open( $this->getCacheFilePath() );
@@ -160,13 +142,16 @@ class MessageGroupCache {
 	 * Checks whether the cache still reflects the source file.
 	 * It uses multiple conditions to speed up the checking from file
 	 * modification timestamps to hashing.
-	 * @param int &$reason
+	 *
+	 * @param int &$reason (output) The reason for the cache being invalid.
+	 * This parameter is an output-only parameter and doesn't need to be initialized
+	 * by callers. It will be populated with the reason when the function returns.
 	 * @return bool Whether the cache is up to date.
 	 */
-	public function isValid( &$reason ) {
+	public function isValid( &$reason ): bool {
 		$group = $this->group;
 		$pattern = $group->getSourceFilePath( '*' );
-		$filename = $group->getSourceFilePath( $this->code );
+		$filename = $group->getSourceFilePath( $this->languageCode );
 
 		$parseOutput = null;
 
@@ -174,7 +159,7 @@ class MessageGroupCache {
 		// that all translations are stored in one file. This means we need to
 		// actually parse the file to know if a language is present.
 		if ( !str_contains( $pattern, '*' ) ) {
-			$parseOutput = $group->parseExternal( $this->code );
+			$parseOutput = $group->parseExternal( $this->languageCode );
 			$source = $parseOutput['MESSAGES'] !== [];
 		} else {
 			static $globCache = [];
@@ -223,7 +208,7 @@ class MessageGroupCache {
 		}
 
 		// Parse output hash check
-		$parseOutput ??= $group->parseExternal( $this->code );
+		$parseOutput ??= $group->parseExternal( $this->languageCode );
 		if ( $this->get( '#msghash' ) === md5( serialize( $parseOutput ) ) ) {
 			// Update cache so that we don't need to do slow checks next time
 			$this->create( $created );
@@ -256,32 +241,22 @@ class MessageGroupCache {
 		return json_decode( substr( $serialized, 1 ), true );
 	}
 
-	/**
-	 * Open the cache for reading.
-	 * @return Reader
-	 */
-	protected function open() {
-		if ( $this->cache === null ) {
-			$this->cache = Reader::open( $this->getCacheFilePath() );
-		}
+	/** Open the cache for reading. */
+	protected function open(): Reader {
+		$this->cache ??= Reader::open( $this->getCacheFilePath() );
 
 		return $this->cache;
 	}
 
-	/**
-	 * Close the cache from reading.
-	 */
-	protected function close() {
+	/** Close the cache from reading. */
+	protected function close(): void {
 		if ( $this->cache !== null ) {
 			$this->cache->close();
 			$this->cache = null;
 		}
 	}
 
-	/**
-	 * Returns full path to the cache file.
-	 * @return string
-	 */
+	/** Returns full path to the cache file. */
 	protected function getCacheFilePath(): string {
 		return $this->cacheFilePath;
 	}
