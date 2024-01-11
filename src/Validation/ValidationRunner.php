@@ -17,7 +17,7 @@ use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
-use PHPVariableLoader;
+use MediaWiki\Extension\Translate\Utilities\PHPVariableLoader;
 use RuntimeException;
 
 /**

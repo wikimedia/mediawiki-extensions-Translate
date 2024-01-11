@@ -113,7 +113,6 @@
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessagePrefixMessageGroup": "messagegroups/MessagePrefixMessageGroup.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
-		"PHPVariableLoader": "utils/PHPVariableLoader.php",
 		"PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupConfiguration\\PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
 		"PremadeMediawikiExtensionGroups": "src/MessageGroupConfiguration/PremadeMediawikiExtensionGroups.php",
