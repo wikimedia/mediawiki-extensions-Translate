@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use IContextSource;
 use LogicException;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
@@ -14,7 +15,6 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
-use MessageGroupStates;
 use Title;
 use const NS_TRANSLATIONS;
 
