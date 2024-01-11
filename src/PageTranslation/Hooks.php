@@ -562,6 +562,7 @@ class Hooks {
 				$classes = array_merge( $classes, self::tpProgressIcon( (float)$percent ) );
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
+					->page( $parser->getPage() )
 					->inLanguage( $userLang )
 					->params( $pagename )
 					->numParams( 100 * $percent )
@@ -588,7 +589,10 @@ class Hooks {
 				$classes[] = 'new'; // For red link color
 
 				$attribs = [
-					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage( $userLang )->text(),
+					'title' => wfMessage( 'tpt-languages-zero' )
+						->page( $parser->getPage() )
+						->inLanguage( $userLang )
+						->text(),
 					'class' => $classes,
 					'lang' => $lang->getHtmlCode(),
 					'dir' => $lang->getDir(),
@@ -609,7 +613,10 @@ class Hooks {
 			'dir' => $userLang->getDir()
 		] );
 		$out .= Html::rawElement( 'div', [ 'class' => 'mw-pt-languages-label' ],
-			wfMessage( 'tpt-languages-legend' )->inLanguage( $userLang )->escaped()
+			wfMessage( 'tpt-languages-legend' )
+				->page( $parser->getPage() )
+				->inLanguage( $userLang )
+				->escaped()
 		);
 		$out .= Html::rawElement(
 			'ul',
