@@ -13,6 +13,7 @@ use Cdb\Writer;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -372,7 +373,7 @@ abstract class MessageIndex {
 	 * @param array $diff
 	 */
 	protected function clearMessageGroupStats( array $diff ) {
-		$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $diff['values'] );
+		$job = RebuildMessageGroupStatsJob::newRefreshGroupsJob( $diff['values'] );
 		$this->jobQueueGroup->push( $job );
 
 		foreach ( $diff['keys'] as $keys ) {

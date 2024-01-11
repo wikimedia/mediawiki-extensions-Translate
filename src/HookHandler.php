@@ -28,6 +28,7 @@ use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
+use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons;
@@ -117,6 +118,10 @@ class HookHandler implements
 
 		$hooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
 
+		// TODO Remove after MLEB 2024.01 release
+		global $wgJobClasses;
+		$wgJobClasses['MessageGroupStatsRebuildJob'] = RebuildMessageGroupStatsJob::class;
+
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {
@@ -193,7 +198,6 @@ class HookHandler implements
 
 			$wgLogActionsHandlers['import/translatable-bundle'] = TranslatableBundleLogFormatter::class;
 
-			global $wgJobClasses;
 			$wgJobClasses['RenderTranslationPageJob'] = RenderTranslationPageJob::class;
 			$wgJobClasses['NonPrioritizedRenderTranslationPageJob'] = RenderTranslationPageJob::class;
 			$wgJobClasses['MoveTranslatableBundleJob'] = MoveTranslatableBundleJob::class;

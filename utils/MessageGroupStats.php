@@ -39,7 +39,7 @@ class MessageGroupStats {
 	public const FLAG_CACHE_ONLY = 1;
 	/// Ignore cached values. Useful for updating stale values.
 	public const FLAG_NO_CACHE = 2;
-	/// Do not defer updates. Meant for jobs like MessageGroupStatsRebuildJob.
+	/// Do not defer updates. Meant for jobs like RebuildMessageGroupStatsJob.
 	public const FLAG_IMMEDIATE_WRITES = 4;
 
 	/** @var array[] */

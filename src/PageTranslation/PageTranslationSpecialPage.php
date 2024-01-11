@@ -12,13 +12,13 @@ use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\MediaWikiServices;
-use MessageGroupStatsRebuildJob;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
@@ -196,7 +196,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$group = MessageGroups::getGroup( $id );
 			$sharedGroupIds = MessageGroups::getSharedGroups( $group );
 			if ( $sharedGroupIds !== [] ) {
-				$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $sharedGroupIds );
+				$job = RebuildMessageGroupStatsJob::newRefreshGroupsJob( $sharedGroupIds );
 				$this->jobQueueGroup->push( $job );
 			}
 

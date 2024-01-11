@@ -9,7 +9,6 @@ use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroupStats;
-use MessageGroupStatsRebuildJob;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -64,7 +63,7 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 
 	/** @inheritDoc */
 	protected function getCacheRebuildJob( string $target ): IJobSpecification {
-		return MessageGroupStatsRebuildJob::newJob( [ 'languagecode' => $target ] );
+		return RebuildMessageGroupStatsJob::newJob( [ 'languagecode' => $target ] );
 	}
 
 	// Api methods

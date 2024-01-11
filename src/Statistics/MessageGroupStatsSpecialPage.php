@@ -14,7 +14,6 @@ use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageGroupStats;
-use MessageGroupStatsRebuildJob;
 use MessagePrefixMessageGroup;
 use SpecialPage;
 
@@ -177,7 +176,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 					// already updated, so it is not much of an overhead.
 					$jobParams = $this->getCacheRebuildJobParameters( $this->target );
 					$jobParams[ 'purge' ] = $purge;
-					$job = MessageGroupStatsRebuildJob::newJob( $jobParams );
+					$job = RebuildMessageGroupStatsJob::newJob( $jobParams );
 					$this->jobQueueGroup->push( $job );
 
 					// $purge is only true if request was posted

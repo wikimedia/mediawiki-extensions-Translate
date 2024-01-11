@@ -17,7 +17,6 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageGroup;
 use MessageGroupStats;
-use MessageGroupStatsRebuildJob;
 use ObjectCache;
 use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -172,7 +171,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 					// already updated, so it is not much of an overhead.
 					$jobParams = $this->getCacheRebuildJobParameters( $this->target );
 					$jobParams[ 'purge' ] = $this->purge;
-					$this->jobQueueGroup->push( MessageGroupStatsRebuildJob::newJob( $jobParams ) );
+					$this->jobQueueGroup->push( RebuildMessageGroupStatsJob::newJob( $jobParams ) );
 
 					// $this->purge is only true if request was posted
 					if ( !$this->purge ) {

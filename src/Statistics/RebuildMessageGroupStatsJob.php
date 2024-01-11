@@ -1,29 +1,26 @@
 <?php
-/**
- * Contains class with job for rebuilding message group stats.
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
+use MessageGroupStats;
 
 /**
  * Job for rebuilding message group stats.
  *
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup JobQueue
  */
-class MessageGroupStatsRebuildJob extends GenericTranslateJob {
-	/**
-	 * @param array $params
-	 * @return self
-	 */
-	public static function newJob( $params ) {
-		$job = new self( Title::newMainPage(), $params );
-		return $job;
+class RebuildMessageGroupStatsJob extends GenericTranslateJob {
+
+	public static function newJob( array $params ): self {
+		return new self( Title::newMainPage(), $params );
 	}
 
 	/**
@@ -34,21 +31,16 @@ class MessageGroupStatsRebuildJob extends GenericTranslateJob {
 	 * that no duplicate work is done.
 	 *
 	 * @param string[] $messageGroupIds
-	 * @return self
 	 */
-	public static function newRefreshGroupsJob( array $messageGroupIds ) {
+	public static function newRefreshGroupsJob( array $messageGroupIds ): self {
 		return new self( Title::newMainPage(), [ 'cleargroups' => $messageGroupIds ] );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params = [] ) {
-		parent::__construct( 'MessageGroupStatsRebuildJob', $title, $params );
+	public function __construct( Title $title, array $params = [] ) {
+		parent::__construct( 'RebuildMessageGroupStatsJob', $title, $params );
 	}
 
-	public function run() {
+	public function run(): bool {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		if ( !$lb->waitForReplication() ) {
 			$this->logWarning( 'Continuing despite replication lag' );

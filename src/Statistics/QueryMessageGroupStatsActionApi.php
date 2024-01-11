@@ -8,7 +8,6 @@ use IJobSpecification;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MessageGroupStats;
-use MessageGroupStatsRebuildJob;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -87,7 +86,7 @@ class QueryMessageGroupStatsActionApi extends QueryStatsActionApi {
 
 	/** @inheritDoc */
 	protected function getCacheRebuildJob( string $target ): IJobSpecification {
-		return MessageGroupStatsRebuildJob::newJob( [ 'groupid' => $target ] );
+		return RebuildMessageGroupStatsJob::newJob( [ 'groupid' => $target ] );
 	}
 
 	// Api methods

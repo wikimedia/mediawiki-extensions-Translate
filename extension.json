@@ -105,7 +105,6 @@
 		"MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MessageGroupStats": "utils/MessageGroupStats.php",
-		"MessageGroupStatsRebuildJob": "utils/MessageGroupStatsRebuildJob.php",
 		"MessageGroupWANCache": "utils/MessageGroupWANCache.php",
 		"MessageHandle": "utils/MessageHandle.php",
 		"MessageIndex": "utils/MessageIndex.php",
@@ -454,7 +453,6 @@
 	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
-		"MessageGroupStatsRebuildJob": "MessageGroupStatsRebuildJob",
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
 		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
