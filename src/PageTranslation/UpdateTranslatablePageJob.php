@@ -150,6 +150,10 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 	 * @return RunnableJob[]
 	 */
 	public static function getRenderJobs( TranslatablePage $page, bool $nonPrioritizedJobs = false ): array {
+		$documentationLanguageCode = MediaWikiServices::getInstance()
+			->getMainConfig()
+			->get( 'TranslateDocumentationLanguageCode' );
+
 		$jobs = [];
 
 		$jobTitles = $page->getTranslationPages();
@@ -160,7 +164,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		// render jobs failing. Add jobs based on message group stats to create self-healing process.
 		$stats = MessageGroupStats::forGroup( $page->getMessageGroupId() );
 		foreach ( $stats as $languageCode => $languageStats ) {
-			if ( $languageStats[MessageGroupStats::TRANSLATED] > 0 ) {
+			if ( $languageStats[MessageGroupStats::TRANSLATED] > 0 && $languageCode !== $documentationLanguageCode ) {
 				$jobTitles[] = $page->getTitle()->getSubpage( $languageCode );
 			}
 		}
