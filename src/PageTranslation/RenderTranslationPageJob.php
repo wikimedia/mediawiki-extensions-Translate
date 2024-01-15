@@ -126,7 +126,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 			$pageUpdater->saveRevision( $commentStoreComment, $flags );
 			$status = $pageUpdater->getStatus();
 
-			if ( !$status->isGood() ) {
+			if ( !$status->isOK() ) {
 				if ( $this->isDeleteTrigger() && $status->hasMessage( 'edit-gone-missing' ) ) {
 					$this->logInfo( 'Translation page missing with delete trigger' );
 				} else {
