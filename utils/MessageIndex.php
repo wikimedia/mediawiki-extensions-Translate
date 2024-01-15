@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use Psr\Log\LoggerInterface;
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
@@ -44,6 +45,7 @@ abstract class MessageIndex {
 	private $jobQueueGroup;
 	/** @var HookRunner */
 	private $hookRunner;
+	private LoggerInterface $logger;
 
 	public function __construct() {
 		// TODO: Use dependency injection
@@ -51,6 +53,8 @@ abstract class MessageIndex {
 		$this->statusCache = $mwInstance->getMainWANObjectCache();
 		$this->jobQueueGroup = $mwInstance->getJobQueueGroup();
 		$this->hookRunner = Services::getInstance()->getHookRunner();
+		$this->logger = LoggerFactory::getInstance( 'Translate' );
+		$this->interimCache = ObjectCache::getInstance( CACHE_ANYTHING );
 	}
 
 	/**
@@ -126,6 +130,10 @@ abstract class MessageIndex {
 	private function getWithCache( $key ) {
 		$interimCacheValue = $this->getInterimCache()->get( self::CACHEKEY );
 		if ( $interimCacheValue && isset( $interimCacheValue['newKeys'][$key] ) ) {
+			$this->logger->debug(
+				'[MessageIndex] interim cache hit: {messageKey} with value {groupId}',
+				[ 'messageKey' => $key, 'groupId' => $interimCacheValue['newKeys'][$key] ]
+			);
 			return $interimCacheValue['newKeys'][$key];
 		}
 
@@ -172,8 +180,6 @@ abstract class MessageIndex {
 	 * @throws Exception
 	 */
 	public function rebuild( float $timestamp = null ): array {
-		$logger = LoggerFactory::getInstance( 'Translate' );
-
 		static $recursion = 0;
 
 		if ( $recursion > 0 ) {
@@ -185,7 +191,7 @@ abstract class MessageIndex {
 		}
 		$recursion++;
 
-		$logger->info(
+		$this->logger->info(
 			'[MessageIndex] Started rebuild. Initiated by {callers}',
 			[ 'callers' => wfGetAllCallers( 20 ) ]
 		);
@@ -198,7 +204,7 @@ abstract class MessageIndex {
 		}
 
 		$lockWaitDuration = microtime( true ) - $tsStart;
-		$logger->info(
+		$this->logger->info(
 			'[MessageIndex] Got lock in {duration}',
 			[ 'duration' => $lockWaitDuration ]
 		);
@@ -235,7 +241,7 @@ abstract class MessageIndex {
 		$this->unlock();
 
 		$criticalSectionDuration = microtime( true ) - $tsStart - $lockWaitDuration;
-		$logger->info(
+		$this->logger->info(
 			'[MessageIndex] Finished critical section in {duration}',
 			[ 'duration' => $criticalSectionDuration ]
 		);
@@ -246,11 +252,19 @@ abstract class MessageIndex {
 			$timestamp ??= microtime( true );
 			if ( $interimCacheValue['timestamp'] <= $timestamp ) {
 				$cache->delete( self::CACHEKEY );
+				$this->logger->debug(
+					'[MessageIndex] interim cache with timestamp {cacheTimestamp} deleted',
+					[ 'cacheTimestamp' => $interimCacheValue['timestamp'] ]
+				);
 			} else {
 				// Cache has a later timestamp. This may be caused due to
 				// job deduplication. Just in case, spin off a new job to clean up the cache.
 				$job = MessageIndexRebuildJob::newJob();
 				$this->jobQueueGroup->push( $job );
+				$this->logger->debug(
+					'[MessageIndex] interim cache with timestamp {cacheTimestamp} too fresh',
+					[ 'cacheTimestamp' => $interimCacheValue['timestamp'] ]
+				);
 			}
 		}
 
@@ -273,7 +287,7 @@ abstract class MessageIndex {
 	}
 
 	private function getInterimCache(): BagOStuff {
-		return ObjectCache::getInstance( CACHE_ANYTHING );
+		return $this->interimCache;
 	}
 
 	public function storeInterim( MessageGroup $group, array $newKeys ): void {
@@ -286,10 +300,14 @@ abstract class MessageIndex {
 		}
 
 		$cache = $this->getInterimCache();
-		// Merge existing with existing keys
+		// Merge with existing keys (if present)
 		$interimCacheValue = $cache->get( self::CACHEKEY, $cache::READ_LATEST );
 		if ( $interimCacheValue ) {
 			$normalizedNewKeys = array_merge( $interimCacheValue['newKeys'], $normalizedNewKeys );
+			$this->logger->debug(
+				'[MessageIndex] interim cache: merging with existing cache of size {count}',
+				[ ' count' => count( $interimCacheValue['newKeys'] ) ]
+			);
 		}
 
 		$value = [
@@ -298,6 +316,11 @@ abstract class MessageIndex {
 		];
 
 		$cache->set( self::CACHEKEY, $value, $cache::TTL_DAY );
+		$this->logger->debug(
+			'[MessageIndex] interim cache: added group {groupId} with new size {count} keys and ' .
+			'timestamp {cacheTimestamp}',
+			[ 'groupId' => $id, 'count' => count( $normalizedNewKeys ), 'cacheTimestamp' => $value['timestamp'] ]
+		);
 	}
 
 	/**
