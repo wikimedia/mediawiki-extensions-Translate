@@ -222,6 +222,7 @@
 	"pt-deletepage-list-no-pages": "Ingen sider funnet.",
 	"pt-deletepage-full-logreason": "Del av den oversettbare siden «$1»",
 	"pt-deletepage-lang-logreason": "Del av oversettelsessiden «$1»",
+	"pt-deletepage-lang-outdated-logreason": "Siden har ikke lenger noen oversettelser",
 	"pt-deletepage-started": "Sjekk [[$1|loggen]] for feil- og fullføringsmeldinger.",
 	"pt-deletepage-intro": "Denne spesialsiden lar deg slette hele oversettbare sider, meldingsknipper eller en inviduell oversettelsesside på ett språk.\nSlettingen vil ikke være umiddelbar, fordi alle avhengige sider også vil bli slettet.\nFeil [[$1|logges]], og må fikses manuelt.",
 	"pagemigration": "Migrering av oversettbar side",
