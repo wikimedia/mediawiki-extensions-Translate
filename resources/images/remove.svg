@@ -18,6 +18,6 @@
 		<linearGradient xlink:href="#c" id="f" x1="4.551" x2="11.459" y1="4.433" y2="11.341" gradientUnits="userSpaceOnUse"/>
 	</defs>
 	<path fill="url(#d)" fill-rule="evenodd" stroke="url(#e)" d="M14.647 7.824a6.85 6.85 0 1 1-13.7 0 6.85 6.85 0 1 1 13.7 0z" transform="translate(.253 .127)"/>
-	<path fill="url(#f)" d="M13.006 7.982a4.988 4.988 0 1 1-9.976 0 4.988 4.988 0 1 1 9.976 0z" transform="translate(-.038) scale(1.002)"/>
+	<path fill="url(#f)" d="M13.006 7.982a4.988 4.988 0 1 1-9.976 0 4.988 4.988 0 1 1 9.976 0" transform="translate(-.038)scale(1.002)"/>
 	<path fill="#fff" fill-opacity=".957" d="M5 9h6V7H5.004z"/>
 </svg>
