@@ -125,7 +125,6 @@
 		"SubsetMessageGroup": "messagegroups/SubsetMessageGroup.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\SimpleFormat": "src/FileFormatSupport/SimpleFormat.php",
 		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
-		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
 		"MediaWiki\\Extension\\Translate\\MessageProcessing\\TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
 		"TranslateMetadata": "src/MessageProcessing/TranslateMetadata.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",

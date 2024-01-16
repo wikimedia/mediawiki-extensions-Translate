@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\WebService\QueryAggregator;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
+use Psr\Log\AbstractLogger;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -59,13 +60,24 @@ class TestMT extends Maintenance {
 		$name = $this->getOption( 'service' );
 
 		if ( !isset( $wgTranslateTranslationServices[ $name ] ) ) {
-			$this->fatalError( "Unknown service.\n" );
+			$available = implode( ', ', array_keys( $wgTranslateTranslationServices ) );
+			$this->fatalError( "Unknown service. Available services: $available\n" );
 		}
 
+		$logger = new class( fn ( $msg ) => $this->output( $msg ) ) extends AbstractLogger {
+			private $logger;
+
+			public function __construct( $logger ) {
+				$this->logger = $logger;
+			}
+
+			public function log( $level, $msg, array $context = [] ) {
+				call_user_func( $this->logger, "[$level] $msg\n" );
+			}
+		};
+
 		$service = TranslationWebService::factory( $name, $wgTranslateTranslationServices[ $name ] );
-		$service->setLogger( new TranslateCliLogger( function ( $msg ) {
-			$this->output( "$msg\n" );
-		} ) );
+		$service->setLogger( $logger );
 
 		$from = $this->getOption( 'from' );
 		$to = $this->getOption( 'to' );
