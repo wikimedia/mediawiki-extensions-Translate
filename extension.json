@@ -260,6 +260,13 @@
 			"class": "MediaWiki\\Extension\\Translate\\SchemaHookHandler"
 		}
 	},
+	"DeprecatedHooks": {
+		"Translate:GettextFFS:headerFields": {
+			"deprecatedVersion": "2024.01",
+			"component": "Translate",
+			"silent": true
+		}
+	},
 	"SpecialPages": {
 		"Translate": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage",
