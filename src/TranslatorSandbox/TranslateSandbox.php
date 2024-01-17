@@ -212,7 +212,7 @@ class TranslateSandbox {
 			$this->userGroupManager->addUserToGroup( $user, $translateSandboxPromotedGroup );
 		}
 
-		$this->userOptionsManager->setOption( $user, 'translate-sandbox-reminders', '' );
+		$this->userOptionsManager->setOption( $user, 'translate-sandbox-reminders', null );
 		$this->userOptionsManager->saveOptions( $user );
 
 		$this->hookRunner->onTranslate_TranslatorSandbox_UserPromoted( $user );
