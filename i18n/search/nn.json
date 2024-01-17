@@ -8,6 +8,7 @@
 	"tux-sst-edit": "Endra omsetjing",
 	"tux-sst-search": "Søk",
 	"tux-sst-search-ph": "Søk i omsetjingar",
+	"tux-sst-search-info": "Bruk operatorane <code>language:</code> eller <code>group:</code> for å avgrensa søket vidare",
 	"tux-sst-count": "Fann {{PLURAL:$1|eitt|$1}} resultat",
 	"tux-sst-facet-language": "Språk",
 	"tux-sst-facet-group": "Meldingsgrupper",
