@@ -602,7 +602,7 @@ class Hooks {
 		$languages = implode( "\n", $languages );
 
 		$out = Html::openElement( 'div', [
-			'class' => 'mw-pt-languages noprint',
+			'class' => 'mw-pt-languages noprint navigation-not-searchable',
 			'lang' => $userLang->getHtmlCode(),
 			'dir' => $userLang->getDir()
 		] );
