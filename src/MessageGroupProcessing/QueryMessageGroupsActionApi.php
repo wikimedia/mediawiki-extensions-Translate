@@ -208,10 +208,9 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 		if (
 			isset( $props['subscription'] ) &&
-			$this->groupSubscription->isEnabled() &&
-			$this->getUser()->isNamed()
+			$this->groupSubscription->canUserSubscribeToGroup( $g, $this->getUser() )->isOK()
 		) {
-			$a['subscription'] = false;
+			$a['subscription'] = $this->groupSubscription->isUserSubscribedTo( $g, $this->getUser() );
 		}
 
 		$this->hookRunner->onTranslateProcessAPIMessageGroupsProperties( $a, $props, $params, $g );

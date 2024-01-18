@@ -6,6 +6,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\User\UserIdentity;
 use MessageGroup;
+use StatusValue;
+use User;
 
 /**
  * Manage user subscriptions to message groups and trigger notifications
@@ -17,6 +19,10 @@ class MessageGroupSubscription {
 	private MessageGroupSubscriptionStore $groupSubscriptionStore;
 	private bool $isMessageGroupSubscriptionEnabled;
 	public const CONSTRUCTOR_OPTIONS = [ 'TranslateEnableMessageGroupSubscription' ];
+
+	public const NOT_ENABLED = 'mgs-not-enabled';
+	public const UNNAMED_USER_UNSUPPORTED = 'mgs-unnamed-user-unsupported';
+	public const DYNAMIC_GROUP_UNSUPPORTED = 'mgs-dynamic-group-unsupported';
 
 	public function __construct(
 		MessageGroupSubscriptionStore $groupSubscriptionStore,
@@ -31,8 +37,14 @@ class MessageGroupSubscription {
 		return $this->isMessageGroupSubscriptionEnabled;
 	}
 
-	public function subscribeToGroup( MessageGroup $group, UserIdentity $user ): void {
+	public function subscribeToGroup( MessageGroup $group, User $user ): StatusValue {
+		$status = $this->canUserSubscribeToGroup( $group, $user );
+		if ( !$status->isOK() ) {
+			return $status;
+		}
+
 		$this->groupSubscriptionStore->addSubscription( $group->getId(), $user->getId() );
+		return StatusValue::newGood();
 	}
 
 	public function isUserSubscribedTo( MessageGroup $group, UserIdentity $user ): bool {
@@ -41,5 +53,21 @@ class MessageGroupSubscription {
 
 	public function unsubscribeFromGroup( MessageGroup $group, UserIdentity $user ): void {
 		$this->groupSubscriptionStore->removeSubscriptions( $group->getId(), $user->getId() );
+	}
+
+	public function canUserSubscribeToGroup( MessageGroup $group, User $user ): StatusValue {
+		if ( !$this->isEnabled() ) {
+			return StatusValue::newFatal( self::NOT_ENABLED );
+		}
+
+		if ( MessageGroups::isDynamic( $group ) ) {
+			return StatusValue::newFatal( self::DYNAMIC_GROUP_UNSUPPORTED );
+		}
+
+		if ( !$user->isNamed() ) {
+			return StatusValue::newFatal( self::UNNAMED_USER_UNSUPPORTED );
+		}
+
+		return StatusValue::newGood();
 	}
 }

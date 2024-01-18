@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ApiBase;
 use ApiMain;
+use StatusValue;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -42,14 +43,11 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 		}
 
 		$user = $this->getUser();
-		if ( !$user->isNamed() ) {
-			$this->dieWithError(
-				[ 'apierror-mustbeloggedin', $this->msg( 'action-translate-watch-message-group' ) ]
-			);
-		}
-
 		if ( $operation === 'subscribe' ) {
-			$this->groupSubscription->subscribeToGroup( $group, $user );
+			$status = $this->groupSubscription->subscribeToGroup( $group, $user );
+			if ( !$status->isOK() ) {
+				$this->handleSubscriptionFailure( $status );
+			}
 		} elseif ( $operation === 'unsubscribe' ) {
 			$this->groupSubscription->unsubscribeFromGroup( $group, $user );
 		}
@@ -87,5 +85,17 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 
 	public function needsToken(): string {
 		return 'csrf';
+	}
+
+	private function handleSubscriptionFailure( StatusValue $status ): void {
+		if ( $status->hasMessage( MessageGroupSubscription::NOT_ENABLED ) ) {
+			$this->dieWithError( 'apierror-translate-messagegroupsubscription-disabled' );
+		} elseif ( $status->hasMessage( MessageGroupSubscription::UNNAMED_USER_UNSUPPORTED ) ) {
+			$this->dieWithError(
+				[ 'apierror-mustbeloggedin', $this->msg( 'action-translate-watch-message-group' ) ]
+			);
+		} else {
+			$this->dieWithError( 'apierror-translate-messagegroupsubscription-dynamic-group-unsupported' );
+		}
 	}
 }
