@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\User\UserIdentity;
 use MessageGroup;
 
@@ -14,13 +15,20 @@ use MessageGroup;
  */
 class MessageGroupSubscription {
 	private MessageGroupSubscriptionStore $groupSubscriptionStore;
+	private bool $isMessageGroupSubscriptionEnabled;
+	public const CONSTRUCTOR_OPTIONS = [ 'TranslateEnableMessageGroupSubscription' ];
 
-	public function __construct( MessageGroupSubscriptionStore $groupSubscriptionStore ) {
+	public function __construct(
+		MessageGroupSubscriptionStore $groupSubscriptionStore,
+		ServiceOptions $options
+	) {
 		$this->groupSubscriptionStore = $groupSubscriptionStore;
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->isMessageGroupSubscriptionEnabled = $options->get( 'TranslateEnableMessageGroupSubscription' );
 	}
 
 	public function isEnabled(): bool {
-		return $this->groupSubscriptionStore->doesTableExist();
+		return $this->isMessageGroupSubscriptionEnabled;
 	}
 
 	public function subscribeToGroup( MessageGroup $group, UserIdentity $user ): void {

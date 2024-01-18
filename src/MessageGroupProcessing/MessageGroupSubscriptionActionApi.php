@@ -27,6 +27,10 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 	}
 
 	public function execute(): void {
+		if ( !$this->groupSubscription->isEnabled() ) {
+			$this->dieWithError( 'apierror-translate-messagegroupsubscription-disabled' );
+		}
+
 		$params = $this->extractRequestParams();
 
 		$groupId = $params['groupId'];

@@ -181,6 +181,7 @@
 	"apierror-translate-rename-msg-new": "{{doc-apierror}}",
 	"apierror-translate-rename-key-invalid": "{{doc-apierror}}",
 	"apierror-translate-rename-state-invalid": "'{{doc-apierror}}\n\nParameters:\n* $1 - State of the message being added as the replacement.\n$2 - State of the message being replaced.",
+	"apierror-translate-messagegroupsubscription-disabled": "{{doc-apierror}}",
 	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}",
 	"apiwarn-translate-language-disabled-source": "{{doc-apierror}}\n\nParameters:\n* $1 - language name",
 	"apiwarn-translate-language-targetlang-variant-of-source": "{{doc-apierror}}\n\nParameters:\n* $1 - target language name, $2 - source language name",

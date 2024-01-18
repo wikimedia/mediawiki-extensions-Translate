@@ -142,17 +142,18 @@ return [
 		MediaWikiServices $services
 	): MessageGroupSubscription {
 		return new MessageGroupSubscription(
-			$services->get( 'Translate:MessageGroupSubscriptionStore' )
+			$services->get( 'Translate:MessageGroupSubscriptionStore' ),
+			new ServiceOptions(
+				MessageGroupSubscription::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			)
 		);
 	},
 
 	'Translate:MessageGroupSubscriptionStore' => static function (
 		MediaWikiServices $services
 	): MessageGroupSubscriptionStore {
-		return new MessageGroupSubscriptionStore(
-			$services->getDBLoadBalancerFactory(),
-			$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
-		);
+		return new MessageGroupSubscriptionStore( $services->getDBLoadBalancerFactory() );
 	},
 
 	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {

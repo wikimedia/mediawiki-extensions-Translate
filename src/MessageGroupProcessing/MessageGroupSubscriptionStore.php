@@ -3,9 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IConnectionProvider;
-use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
 /**
@@ -18,28 +16,13 @@ class MessageGroupSubscriptionStore {
 	private const TABLE_NAME = 'translate_message_group_subscriptions';
 	/** @var int Match field tmgs_group byte length */
 	private const MAX_GROUP_LENGTH = 200;
-	private ?bool $tableExists = null;
 	private IConnectionProvider $connectionProvider;
-	private IMaintainableDatabase $dbMaintenance;
 
-	public function __construct(
-		IConnectionProvider $connectionProvider,
-		IMaintainableDatabase $dbMaintenance
-	) {
+	public function __construct( IConnectionProvider $connectionProvider ) {
 		$this->connectionProvider = $connectionProvider;
-		$this->dbMaintenance = $dbMaintenance;
-	}
-
-	public function doesTableExist(): bool {
-		$this->tableExists ??= $this->dbMaintenance->tableExists( self::TABLE_NAME, __METHOD__ );
-		return $this->tableExists;
 	}
 
 	public function addSubscription( string $groupId, int $userId ): void {
-		if ( !$this->doesTableExist() ) {
-			return;
-		}
-
 		$this->connectionProvider->getPrimaryDatabase()->replace(
 			self::TABLE_NAME,
 			[ [ 'tmgs_group', 'tmgs_user_id' ] ],
@@ -52,10 +35,6 @@ class MessageGroupSubscriptionStore {
 	}
 
 	public function getSubscriptions( ?string $groupId, ?int $userId ): IResultWrapper {
-		if ( !$this->doesTableExist() ) {
-			return new FakeResultWrapper( [] );
-		}
-
 		$queryBuilder = $this->connectionProvider->getReplicaDatabase()
 			->newSelectQueryBuilder()
 			->select( [ 'tmgs_group', 'tmgs_user_id' ] )
@@ -74,10 +53,6 @@ class MessageGroupSubscriptionStore {
 	}
 
 	public function removeSubscriptions( string $groupId, int $userId ): void {
-		if ( !$this->doesTableExist() ) {
-			return;
-		}
-
 		$conditions = [
 			'tmgs_group' => $groupId,
 			'tmgs_user_id' => $userId
