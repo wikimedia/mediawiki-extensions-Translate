@@ -3,8 +3,15 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use EmptyIterator;
+use Iterator;
+use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityLookup;
 use MessageGroup;
 use StatusValue;
 use User;
@@ -17,7 +24,13 @@ use User;
  */
 class MessageGroupSubscription {
 	private MessageGroupSubscriptionStore $groupSubscriptionStore;
+	private JobQueueGroup $jobQueueGroup;
 	private bool $isMessageGroupSubscriptionEnabled;
+	private UserIdentityLookup $userIdentityLookup;
+	private array $queuedMessages = [];
+
+	public const STATE_REMOVED = 'removed';
+	public const STATE_ADDED = 'added';
 	public const CONSTRUCTOR_OPTIONS = [ 'TranslateEnableMessageGroupSubscription' ];
 
 	public const NOT_ENABLED = 'mgs-not-enabled';
@@ -26,9 +39,13 @@ class MessageGroupSubscription {
 
 	public function __construct(
 		MessageGroupSubscriptionStore $groupSubscriptionStore,
+		JobQueueGroup $jobQueueGroup,
+		UserIdentityLookup $userIdentityLookup,
 		ServiceOptions $options
 	) {
 		$this->groupSubscriptionStore = $groupSubscriptionStore;
+		$this->jobQueueGroup = $jobQueueGroup;
+		$this->userIdentityLookup = $userIdentityLookup;
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isMessageGroupSubscriptionEnabled = $options->get( 'TranslateEnableMessageGroupSubscription' );
 	}
@@ -48,11 +65,121 @@ class MessageGroupSubscription {
 	}
 
 	public function isUserSubscribedTo( MessageGroup $group, UserIdentity $user ): bool {
-		return $this->groupSubscriptionStore->getSubscriptions( $group->getId(), $user->getId() )->count() !== 0;
+		return $this->groupSubscriptionStore->getSubscriptions( [ $group->getId() ], $user->getId() )->count() !== 0;
 	}
 
 	public function unsubscribeFromGroup( MessageGroup $group, UserIdentity $user ): void {
 		$this->groupSubscriptionStore->removeSubscriptions( $group->getId(), $user->getId() );
+	}
+
+	/**
+	 * Queue a message / group to send notifications for
+	 * @param Title $messageTitle
+	 * @param string $state
+	 * @param string[] $groupIds
+	 * @return void
+	 */
+	public function queueMessage(
+		Title $messageTitle,
+		string $state,
+		array $groupIds
+	): void {
+		foreach ( $groupIds as $groupId ) {
+			$this->queuedMessages[ $groupId ][ $state ][] = $messageTitle->getPrefixedDBkey();
+		}
+	}
+
+	public function queueNotificationJob(): void {
+		if ( !$this->isEnabled() || $this->queuedMessages === [] ) {
+			return;
+		}
+
+		$this->jobQueueGroup->push( MessageGroupSubscriptionNotificationJob::newJob( $this->queuedMessages ) );
+		// Reset queued messages once job has been queued
+		$this->queuedMessages = [];
+	}
+
+	public function sendNotifications( array $changesToProcess ): void {
+		if ( !$this->isEnabled() || $changesToProcess === [] ) {
+			return;
+		}
+
+		$groupIds = array_keys( $changesToProcess );
+		$allGroupSubscribers = $this->getSubscriberIdsForGroups( $groupIds );
+
+		// No subscribers found for the groups
+		if ( !$allGroupSubscribers ) {
+			return;
+		}
+
+		$groups = MessageGroups::getGroupsById( $groupIds );
+		foreach ( $changesToProcess as $groupId => $state ) {
+			$group = $groups[ $groupId ] ?? null;
+			if ( !$group ) {
+				// TODO: Add some log
+				continue;
+			}
+
+			$groupSubscribers = $allGroupSubscribers[ $groupId ] ?? [];
+			if ( $groupSubscribers === [] ) {
+				// No subscribers
+				continue;
+			}
+
+			Event::create( [
+				'type' => 'translate-mgs-message-added-removed',
+				'extra' => [
+					'groupId' => $groupId,
+					'groupLabel' => $group->getLabel(),
+					'changes' => $state
+				]
+			] );
+		}
+	}
+
+	public function handleMessageIndexUpdate( MessageHandle $handle, array $old, array $new ): void {
+		$removedGroups = array_diff( $old, $new );
+		if ( $removedGroups ) {
+			$this->queueMessage( $handle->getTitle(), self::STATE_REMOVED, $removedGroups );
+		}
+
+		$addedGroups = array_diff( $new, $old );
+		if ( $addedGroups ) {
+			$this->queueMessage( $handle->getTitle(), self::STATE_ADDED, $addedGroups );
+		}
+	}
+
+	/**
+	 * Given a group id returns an iterator to the subscribers of that group.
+	 * @return Iterator<UserIdentity>
+	 */
+	public function getGroupSubscribers( string $groupId ): Iterator {
+		$groupSubscriberIds = $this->getSubscriberIdsForGroups( [ $groupId ] );
+		$groupSubscriberIds = $groupSubscriberIds[ $groupId ] ?? [];
+		if ( $groupSubscriberIds === [] ) {
+			return new EmptyIterator();
+		}
+
+		return $this->userIdentityLookup->newSelectQueryBuilder()
+			->whereUserIds( $groupSubscriberIds )
+			->fetchUserIdentities();
+	}
+
+	/**
+	 * Get all subscribers for groups. Returns an array where the keys are the
+	 * group ids and value is a list of integer user ids
+	 * @param string[] $groupIds
+	 * @return array[] [(str) groupId => (int[]) userId, ...]
+	 */
+	private function getSubscriberIdsForGroups( array $groupIds ): array {
+		$dbGroupSubscriptions = $this->groupSubscriptionStore->getSubscriptions( $groupIds, null );
+		$groupSubscriptions = [];
+
+		foreach ( $dbGroupSubscriptions as $row ) {
+			$groupSubscriptions[ $row->tmgs_group ][] = (int)$row->tmgs_user_id;
+		}
+
+		return $groupSubscriptions;
 	}
 
 	public function canUserSubscribeToGroup( MessageGroup $group, User $user ): StatusValue {

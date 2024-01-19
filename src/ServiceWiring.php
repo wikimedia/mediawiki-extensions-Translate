@@ -17,6 +17,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionHookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
@@ -143,10 +144,21 @@ return [
 	): MessageGroupSubscription {
 		return new MessageGroupSubscription(
 			$services->get( 'Translate:MessageGroupSubscriptionStore' ),
+			$services->getJobQueueGroup(),
+			$services->getUserIdentityLookup(),
 			new ServiceOptions(
 				MessageGroupSubscription::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			)
+		);
+	},
+
+	'Translate:MessageGroupSubscriptionHookHandler' => static function (
+		MediaWikiServices $services
+	): MessageGroupSubscriptionHookHandler {
+		return new MessageGroupSubscriptionHookHandler(
+			$services->get( 'Translate:MessageGroupSubscription' ),
+			$services->getUserFactory()
 		);
 	},
 

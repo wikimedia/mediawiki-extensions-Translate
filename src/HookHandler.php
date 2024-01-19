@@ -8,15 +8,19 @@ use ALTree;
 use ApiRawMessage;
 use Config;
 use Content;
+use ExtensionRegistry;
 use IContextSource;
 use Language;
 use LogFormatter;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
+use MediaWiki\Config\ConfigException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\LogFormatter as TranslateLogFormatter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionHookHandler;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionNotificationJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
@@ -402,6 +406,18 @@ class HookHandler implements
 					'public' => false,
 				];
 			}
+		}
+
+		global $wgTranslateEnableMessageGroupSubscription;
+		if ( $wgTranslateEnableMessageGroupSubscription ) {
+			if ( !ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
+				throw new ConfigException(
+					'Translate: Message group subscriptions (TranslateEnableMessageGroupSubscription) are ' .
+					'enabled but Echo extension is not installed'
+				);
+			}
+			MessageGroupSubscriptionHookHandler::registerHooks( $hooks );
+			$wgJobClasses['MessageGroupSubscriptionNotificationJob'] = MessageGroupSubscriptionNotificationJob::class;
 		}
 
 		static::registerHookHandlers( $hooks );

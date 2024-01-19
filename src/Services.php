@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionHookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleExporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -121,6 +122,11 @@ class Services implements ContainerInterface {
 	/** @since 2024.04 */
 	public function getMessageGroupSubscription(): MessageGroupSubscription {
 		return $this->get( 'Translate:MessageGroupSubscription' );
+	}
+
+	/** @since 2024.04 */
+	public function getMessageGroupSubscriptionHookHandler(): MessageGroupSubscriptionHookHandler {
+		return $this->get( 'Translate:MessageGroupSubscriptionHookHandler' );
 	}
 
 	/** @since 2020.07 */

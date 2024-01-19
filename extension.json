@@ -237,6 +237,12 @@
 		"messageBundle": {
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
 		},
+		"messageGroupSubscription": {
+			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupSubscriptionHookHandler",
+			"services": [
+				"Translate:MessageGroupSubscription"
+			]
+		},
 		"pageTranslation": {
 			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler"
 		},

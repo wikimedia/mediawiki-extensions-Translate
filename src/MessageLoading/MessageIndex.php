@@ -9,6 +9,7 @@ use JobQueueGroup;
 use MapCacheLRU;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -43,6 +44,7 @@ abstract class MessageIndex {
 	private JobQueueGroup $jobQueueGroup;
 	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
+	private MessageGroupSubscription $messageGroupSubscription;
 	private array $translateMessageNamespaces;
 
 	public function __construct() {
@@ -55,6 +57,7 @@ abstract class MessageIndex {
 		$this->hookRunner = Services::getInstance()->getHookRunner();
 		$this->logger = LoggerFactory::getInstance( 'Translate' );
 		$this->interimCache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$this->messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
 	}
 
 	/**
@@ -237,6 +240,7 @@ abstract class MessageIndex {
 		$this->statusCache->touchCheckKey( $this->getStatusCacheKey() );
 
 		$this->clearMessageGroupStats( $diff );
+		$this->messageGroupSubscription->queueNotificationJob();
 
 		$recursion--;
 
@@ -365,6 +369,7 @@ abstract class MessageIndex {
 				[ $oldGroups, $newGroups ] = $data;
 				$this->hookRunner->onTranslateEventMessageMembershipChange(
 					$handle, $oldGroups, $newGroups );
+				$this->messageGroupSubscription->handleMessageIndexUpdate( $handle, $oldGroups, $newGroups );
 			}
 		}
 	}

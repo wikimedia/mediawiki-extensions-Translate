@@ -467,5 +467,12 @@
 	"log-action-filter-translationreview-group": "Changes in the status of the progress of translations",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|imported}} a translatable bundle $3",
 	"log-action-filter-import-translatable-bundle": "Translatable bundle import",
-	"translate-hidetranslations": "Hide translation pages"
+	"translate-hidetranslations": "Hide translation pages",
+	"echo-category-title-translate-message-group-subscription": "Translatable message group subscriptions",
+	"echo-pref-tooltip-translate-message-group-subscription": "Notify me about changes in translatable message groups that I'm subscribed to",
+	"notification-bundle-header-message-group-subscription": "Translation updates to $1 subscribed message {{PLURAL:$1|group|groups}}",
+	"notification-header-message-group-subscription": "There are translation updates for $1",
+	"notification-compact-header-translate-mgs-message-added-removed": "New or removed {{PLURAL:$2|message|messages}} in $1",
+	"notification-body-translate-mgs-message-added-removed": "Added $1 and removed $2 {{PLURAL:$2|message|messages}}",
+	"notification-link-mgs-group-translate": "Translate $1"
 }

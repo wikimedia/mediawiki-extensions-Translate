@@ -34,15 +34,20 @@ class MessageGroupSubscriptionStore {
 		);
 	}
 
-	public function getSubscriptions( ?string $groupId, ?int $userId ): IResultWrapper {
-		$queryBuilder = $this->connectionProvider->getReplicaDatabase()
+	public function getSubscriptions( ?array $groupIds, ?int $userId ): IResultWrapper {
+		$queryBuilder = $this->connectionProvider
+			->getReplicaDatabase()
 			->newSelectQueryBuilder()
 			->select( [ 'tmgs_group', 'tmgs_user_id' ] )
 			->from( self::TABLE_NAME )
 			->caller( __METHOD__ );
 
-		if ( $groupId !== null ) {
-			$queryBuilder->where( [ 'tmgs_group' => self::getGroupIdForDatabase( $groupId ) ] );
+		if ( $groupIds !== null ) {
+			$dbGroupIds = [];
+			foreach ( $groupIds as $groupId ) {
+				$dbGroupIds[] = self::getGroupIdForDatabase( $groupId );
+			}
+			$queryBuilder->where( [ 'tmgs_group' => $dbGroupIds ] );
 		}
 
 		if ( $userId !== null ) {
