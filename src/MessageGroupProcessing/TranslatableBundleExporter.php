@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use Closure;
 use DumpStringOutput;
 use MediaWiki\Export\WikiExporterFactory;
-use Title;
+use MediaWiki\Title\Title;
 use WikiExporter;
 use Wikimedia\Rdbms\ILoadBalancer;
 

@@ -11,9 +11,9 @@ use HashMessageIndex;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Title\Title;
 use MessageIndex;
 use MockWikiMessageGroup;
-use Title;
 use User;
 use WANObjectCache;
 

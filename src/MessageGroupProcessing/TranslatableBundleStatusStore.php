@@ -7,7 +7,7 @@ use Collation;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use Title;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 

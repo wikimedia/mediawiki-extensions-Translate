@@ -9,8 +9,8 @@ use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException
 use MediaWiki\Extension\Translate\WebService\QueryAggregator;
 use MediaWiki\Extension\Translate\WebService\QueryAggregatorAware;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Title\Title;
 use MessageHandle;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

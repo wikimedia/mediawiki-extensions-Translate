@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageHandle;
 use MessageIndex;
 use MockWikiMessageGroup;
 use ObjectCache;
-use Title;
 use WANObjectCache;
 
 /**

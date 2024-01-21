@@ -12,9 +12,9 @@ use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
+use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageHandle;
-use Title;
 use TTMServer;
 
 /**

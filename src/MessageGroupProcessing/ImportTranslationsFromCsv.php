@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Script to import translations from a CSV file

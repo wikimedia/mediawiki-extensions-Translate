@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Title\Title;
 use MessageHandle;
-use Title;
 use TitleArrayFromResult;
 
 /**

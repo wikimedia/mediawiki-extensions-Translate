@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Contains logic to determine the new title of translatable pages and

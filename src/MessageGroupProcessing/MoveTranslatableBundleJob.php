@@ -7,7 +7,7 @@ use Job;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 use User;
 
 /**

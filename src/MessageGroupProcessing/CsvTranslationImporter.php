@@ -9,10 +9,10 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MessageHandle;
 use SplFileObject;
 use Status;
-use Title;
 
 /**
  * Parse, validate and import translations from a CSV file

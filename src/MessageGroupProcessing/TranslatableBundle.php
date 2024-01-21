@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReference;
+use MediaWiki\Title\Title;
 use MessageHandle;
-use Title;
 
 /**
  * Translatable bundle represents a message group where its translatable content is

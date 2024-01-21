@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Title\Title;
 use MessageHandle;
-use Title;
 
 /**
  * Translation aid that provides an url where users can ask for help

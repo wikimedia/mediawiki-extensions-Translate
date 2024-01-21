@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\Validation;
 
 use ApiBase;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+use MediaWiki\Title\Title;
 use MessageHandle;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /** @license GPL-2.0-or-later */

@@ -14,10 +14,10 @@ use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MessageIndex;
 use RuntimeException;
 use TextContent;
-use Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

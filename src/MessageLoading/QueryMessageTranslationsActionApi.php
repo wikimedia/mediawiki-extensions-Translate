@@ -8,8 +8,8 @@ use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Title\Title;
 use MessageHandle;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

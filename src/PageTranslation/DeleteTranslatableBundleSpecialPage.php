@@ -9,11 +9,11 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Title\Title;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
 use SpecialPage;
-use Title;
 use WebRequest;
 use Xml;
 

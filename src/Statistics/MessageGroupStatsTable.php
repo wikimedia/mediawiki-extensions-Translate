@@ -9,11 +9,11 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageGroupStats;
 use MessageLocalizer;
 use SpecialPage;
-use Title;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

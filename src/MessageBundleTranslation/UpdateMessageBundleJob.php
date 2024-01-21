@@ -8,10 +8,10 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MessageGroupStats;
 use MessageIndexRebuildJob;
 use MessageUpdateJob;
-use Title;
 
 /**
  * @author Niklas Laxström

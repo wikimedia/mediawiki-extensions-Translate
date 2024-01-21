@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Wrapper for message definitions, just to beauty the code.

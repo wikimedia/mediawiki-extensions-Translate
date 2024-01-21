@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Generates list of subpages for the translatable bundle that can be

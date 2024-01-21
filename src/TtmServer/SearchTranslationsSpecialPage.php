@@ -14,12 +14,12 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Title\Title;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
 use MessageHandle;
 use SpecialPage;
-use Title;
 use TTMServerException;
 use Xml;
 

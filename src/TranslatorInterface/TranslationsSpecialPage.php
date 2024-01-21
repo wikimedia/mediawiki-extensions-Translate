@@ -10,9 +10,9 @@ use HTMLForm;
 use Language;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Title\Title;
 use MessageHandle;
 use SpecialAllPages;
-use Title;
 use Xml;
 
 /**

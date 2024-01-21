@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 use CachedMessageGroupLoader;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
+use MediaWiki\Title\Title;
 use MessageGroupLoader;
 use MessageGroupWANCache;
-use Title;
 use Wikimedia\Rdbms\IDatabase;
 
 /**

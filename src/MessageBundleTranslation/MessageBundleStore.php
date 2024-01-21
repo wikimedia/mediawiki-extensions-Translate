@@ -12,11 +12,11 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 use Message;
 use MessageIndex;
 use RequestContext;
 use SpecialPageLanguage;
-use Title;
 
 /**
  * @author Abijeet Patro

@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
 use MessageUpdateJob;
-use Title;
 
 /** @covers \MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter */
 class MessageUpdateParameterTest extends MediaWikiUnitTestCase {

@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\Database;
 
 /**

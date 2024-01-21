@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use Collation;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStatus;
+use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
-use Title;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 

@@ -11,11 +11,11 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
 use MessageHandle;
 use RecentChange;
-use Title;
 use User;
 
 /**

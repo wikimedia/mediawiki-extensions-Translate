@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Collection of pages potentially affected by a page move operation.

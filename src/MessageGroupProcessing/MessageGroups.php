@@ -13,12 +13,12 @@ use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageGroupBase;
 use MessageGroupLoader;
 use MessageHandle;
 use RuntimeException;
-use Title;
 use WANObjectCache;
 
 /**

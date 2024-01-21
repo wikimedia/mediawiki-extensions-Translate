@@ -11,9 +11,9 @@ use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Title\Title;
 use MessageChangeStorage;
 use MockWikiMessageGroup;
-use Title;
 use User;
 use WANObjectCache;
 

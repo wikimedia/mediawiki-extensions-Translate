@@ -6,11 +6,11 @@ use HashBagOStuff;
 use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use MockWikiMessageGroup;
 use RequestContext;
-use Title;
 use WANObjectCache;
 
 /** @group Database */

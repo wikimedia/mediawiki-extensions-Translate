@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStatus;
+use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
 use MessageIndex;
-use Title;
 use Wikimedia\Rdbms\LoadBalancer;
 
 /**

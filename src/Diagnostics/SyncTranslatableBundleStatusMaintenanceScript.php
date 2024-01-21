@@ -13,8 +13,8 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStatus;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use RuntimeException;
-use Title;
 
 /**
  * Script to identify the status of the translatable bundles in the rev_tag table

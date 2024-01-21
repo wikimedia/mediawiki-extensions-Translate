@@ -10,10 +10,10 @@ use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MediaWikiLangTestCase;
 use MessageIndex;
 use MockWikiMessageGroup;
-use Title;
 use WANObjectCache;
 
 /**

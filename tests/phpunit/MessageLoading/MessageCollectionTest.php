@@ -10,10 +10,10 @@ use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use MockWikiMessageGroup;
-use Title;
 use WANObjectCache;
 
 /**

@@ -10,8 +10,8 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use Title;
 
 /**
  * Contains the core logic to delete translatable bundles or translation pages

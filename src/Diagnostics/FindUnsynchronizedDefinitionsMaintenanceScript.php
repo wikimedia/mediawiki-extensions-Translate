@@ -7,7 +7,7 @@ use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Shell\Shell;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @since 2021.01

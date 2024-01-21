@@ -9,9 +9,9 @@ use FormatJson;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Title\Title;
 use MessageChangeStorage;
 use MessageGroup;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

@@ -9,8 +9,8 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use SplObjectStorage;
-use Title;
 use TitleValue;
 use const SORT_NUMERIC;
 

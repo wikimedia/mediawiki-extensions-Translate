@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use Title;
 use User;
 
 /**

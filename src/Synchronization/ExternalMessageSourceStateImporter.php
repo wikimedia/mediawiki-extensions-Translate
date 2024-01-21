@@ -15,13 +15,13 @@ use FileBasedMessageGroup;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Title\Title;
 use MessageChangeStorage;
 use MessageHandle;
 use MessageIndex;
 use MessageUpdateJob;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use Title;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {

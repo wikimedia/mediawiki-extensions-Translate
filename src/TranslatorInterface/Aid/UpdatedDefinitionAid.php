@@ -9,7 +9,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use Title;
+use MediaWiki\Title\Title;
 use WikitextContent;
 
 /**

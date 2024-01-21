@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ManualLogEntry;
+use MediaWiki\Title\Title;
 use Status;
-use Title;
 use User;
 
 /**

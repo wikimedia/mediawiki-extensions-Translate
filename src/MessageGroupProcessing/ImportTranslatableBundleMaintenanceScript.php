@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use Title;
 
 /**
  * Script to import a translatable bundle from a script exported via WikiExporter.

@@ -10,9 +10,9 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserOptionsLookup;
 use SpecialPage;
-use Title;
 
 /**
  * Special page for new users to translate example messages.

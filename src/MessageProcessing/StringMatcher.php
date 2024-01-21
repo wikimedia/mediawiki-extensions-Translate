@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * The versatile default implementation of StringMangler interface.

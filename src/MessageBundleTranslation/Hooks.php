@@ -11,10 +11,10 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
+use MediaWiki\Title\Title;
 use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
 use Status;
-use Title;
 use User;
 use WANObjectCache;
 

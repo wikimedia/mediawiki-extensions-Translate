@@ -13,9 +13,9 @@ use MediaWiki\Page\PageIdentity;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use TextContent;
-use Title;
 use WikiImporterFactory;
 
 /**

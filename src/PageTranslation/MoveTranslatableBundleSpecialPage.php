@@ -12,13 +12,13 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Title\Title;
 use Message;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
 use SplObjectStorage;
 use ThrottledError;
-use Title;
 use UnlistedSpecialPage;
 use Wikimedia\ObjectFactory\ObjectFactory;
 

@@ -7,10 +7,10 @@ use ApiBase;
 use ApiMain;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MessageHandle;
 use MessageIndex;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\ILoadBalancer;
 

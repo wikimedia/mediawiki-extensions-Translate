@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use Job;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 class TranslateSandboxEmailJob extends Job {
 

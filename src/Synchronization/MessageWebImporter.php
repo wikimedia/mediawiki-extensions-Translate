@@ -13,12 +13,12 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageHandle;
 use RequestContext;
 use RuntimeException;
 use Sanitizer;
-use Title;
 use User;
 use Xml;
 

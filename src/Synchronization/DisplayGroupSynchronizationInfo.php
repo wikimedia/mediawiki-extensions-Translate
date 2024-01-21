@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use Html;
 use Language;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Title\Title;
 use MessageLocalizer;
-use Title;
 
 /**
  * Display Group synchronization related information

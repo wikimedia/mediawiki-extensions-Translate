@@ -14,8 +14,8 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MessageGroup;
-use Title;
 use const NS_TRANSLATIONS;
 
 /**

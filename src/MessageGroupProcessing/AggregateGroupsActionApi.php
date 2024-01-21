@@ -10,8 +10,8 @@ use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Title\Title;
 use MessageIndexRebuildJob;
-use Title;
 use Wikimedia\ParamValidator\ParamValidator;
 use WikiPageMessageGroup;
 

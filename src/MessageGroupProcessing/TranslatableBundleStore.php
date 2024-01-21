@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Revision\RevisionRecord;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Translatable bundle store manages bundles of certain type.

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use Title;
 
 /**
  * The StringMatcher class is responsible for making sure message keys
