@@ -88,13 +88,7 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		// @todo FuzzyBot hack
 		Hooks::$allowTargetEdit = true;
 
-		if ( class_exists( CommentStoreComment::class ) ) {
-			$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
-		} else {
-			// MW < 1.40
-			$commentStoreComment = \CommentStoreComment::newUnsavedComment( $summary );
-		}
-
+		$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
 		// $percentageTranslated is modified by reference
 		$content = $tpPage->getPageContent( $mwServices->getParser(), $percentageTranslated );
 		$translationPageTitleExists = $translationPageTitle->exists();

@@ -410,19 +410,9 @@ class HookHandler implements
 					$hookContainer->register( $name, $h );
 				}
 			}
-		} elseif ( method_exists( SettingsBuilder::class, 'registerHookHandlers' ) ) {
-			// Since 1.40: Use SettingsBuilder to register hooks during initialization.
-			// HookContainer is not available at this time.
+		} else {
 			$settingsBuilder = SettingsBuilder::getInstance();
 			$settingsBuilder->registerHookHandlers( $hooks );
-		} else {
-			// For MW < 1.40: Directly manipulate $wgHooks during initialization.
-			foreach ( $hooks as $name => $handlers ) {
-				$GLOBALS['wgHooks'][$name] = array_merge(
-					$GLOBALS['wgHooks'][$name] ?? [],
-					$handlers
-				);
-			}
 		}
 	}
 
@@ -650,18 +640,12 @@ class HookHandler implements
 		$handle = new MessageHandle( $linkTarget );
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$parserOutput = $parser->getOutput();
-			// MW >= 1.40
-			if ( method_exists( $parserOutput, 'getCategorySortKey' ) ) {
-				$names = $parserOutput->getCategoryNames();
-				$parserCategories = [];
-				foreach ( $names as $name ) {
-					$parserCategories[$name] = $parserOutput->getCategorySortKey( $name );
-				}
-				$parserOutput->setExtensionData( 'translate-fake-categories', $parserCategories );
-			} else {
-				$parserOutput->setExtensionData( 'translate-fake-categories',
-					$parserOutput->getCategories() );
+			$names = $parserOutput->getCategoryNames();
+			$parserCategories = [];
+			foreach ( $names as $name ) {
+				$parserCategories[$name] = $parserOutput->getCategorySortKey( $name );
 			}
+			$parserOutput->setExtensionData( 'translate-fake-categories', $parserCategories );
 			$parserOutput->setCategories( [] );
 		}
 	}
