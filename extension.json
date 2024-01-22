@@ -455,6 +455,7 @@
 		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
+		"RebuildMessageGroupStatsJob": "\\MediaWiki\\Extension\\Translate\\Statistics\\RebuildMessageGroupStatsJob",
 		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
 		"UpdateMessageBundle": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\UpdateMessageBundleJob",
 		"UpdateTranslatorActivity": "\\MediaWiki\\Extension\\Translate\\Statistics\\UpdateTranslatorActivityJob"
