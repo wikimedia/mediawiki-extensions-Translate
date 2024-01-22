@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use CommentStoreComment;
 use ContentHandler;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;

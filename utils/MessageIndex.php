@@ -17,6 +17,7 @@ use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be

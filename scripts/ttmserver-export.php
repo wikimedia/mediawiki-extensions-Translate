@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+use MediaWiki\Title\Title;
 use Wikimedia\Assert\Assert;
 
 // Standard boilerplate to define $IP

@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 
 /**
  * Tests for fuzzy flag change on edits.

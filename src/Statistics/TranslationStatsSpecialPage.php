@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use Html;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
+use MediaWiki\Html\Html;
 use SpecialPage;
 use Xml;
 use XmlSelect;

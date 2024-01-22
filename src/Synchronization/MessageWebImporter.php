@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use ContentHandler;
 use DifferenceEngine;
-use Html;
 use InvalidArgumentException;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;

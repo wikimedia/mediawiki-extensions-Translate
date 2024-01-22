@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
-use ActorMigration;
 use ContentHandler;
 use IDBAccessObject;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -13,6 +12,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\ActorMigration;
 use MediaWiki\User\UserFactory;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;

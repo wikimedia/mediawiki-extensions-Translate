@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Title\Title;
 use Wikimedia\TestingAccessWrapper;
 
 /**

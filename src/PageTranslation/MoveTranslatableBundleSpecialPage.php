@@ -3,14 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use CommentStore;
 use ErrorPageError;
-use Html;
 use HTMLForm;
 use InvalidArgumentException;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
+use MediaWiki\Html\Html;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Title\Title;
 use Message;

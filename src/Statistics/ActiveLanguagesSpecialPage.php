@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use Config;
-use Html;
 use HtmlArmor;
 use InvalidArgumentException;
 use Language;
@@ -12,6 +11,7 @@ use LanguageCode;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;

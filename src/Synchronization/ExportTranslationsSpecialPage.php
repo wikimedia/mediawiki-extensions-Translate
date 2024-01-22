@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
-use Html;
 use HTMLForm;
 use LogicException;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
@@ -12,6 +11,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use MediaWiki\Title\Title;
 use Message;
 use MessageGroup;

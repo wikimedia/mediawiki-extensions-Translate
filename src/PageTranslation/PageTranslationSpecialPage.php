@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
 use DifferenceEngine;
-use Html;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
@@ -17,6 +16,7 @@ use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
 use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;

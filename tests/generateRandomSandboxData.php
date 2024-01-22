@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {

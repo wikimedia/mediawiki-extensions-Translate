@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use ActorMigration;
 use Config;
+use MediaWiki\User\ActorMigration;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

@@ -25,6 +25,7 @@ use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
 /**

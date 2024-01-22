@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
-use CommentStoreComment;
 use ContentHandler;
 use HashBagOStuff;
 use HashMessageIndex;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;

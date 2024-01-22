@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use FormatJson;
-use Html;
+use MediaWiki\Html\Html;
 use SpecialPage;
 
 /**

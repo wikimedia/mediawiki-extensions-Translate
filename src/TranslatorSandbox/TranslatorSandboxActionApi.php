@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use ApiBase;
 use ApiMain;
-use CommentStoreComment;
 use ContentHandler;
 use FormatJson;
 use ManualLogEntry;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Revision\SlotRecord;

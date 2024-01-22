@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use FormatJson;
-use Html;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Html\Html;
 use MediaWiki\User\UserOptionsLookup;
 use MWTimestamp;
 use Sanitizer;

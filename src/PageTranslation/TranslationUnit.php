@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Html;
 use Language;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Html\Html;
 use Parser;
 use const PREG_SET_ORDER;
 

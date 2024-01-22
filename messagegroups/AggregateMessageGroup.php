@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Title\Title;
 
 /**
  * Groups multiple message groups together as one group.

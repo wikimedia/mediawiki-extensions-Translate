@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Title\Title;
+
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

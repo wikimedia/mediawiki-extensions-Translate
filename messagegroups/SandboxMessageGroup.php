@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Title\Title;
 
 /**
  * @since 2013.06

@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use DifferenceEngine;
-use Html;
+use MediaWiki\Html\Html;
+use MediaWiki\Html\TemplateParser;
 use SpecialPage;
-use TemplateParser;
 
 /**
  * Contains code to prepare a page for translation

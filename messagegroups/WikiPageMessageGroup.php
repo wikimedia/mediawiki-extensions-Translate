@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 
 /**
  * Wraps the translatable page sections into a message group.

@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Psr\Log\LoggerInterface;
 
 /**

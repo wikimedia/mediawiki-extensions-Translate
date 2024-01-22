@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /** @ingroup MessageGroup */
 class WorkflowStatesMessageGroup extends WikiMessageGroup {

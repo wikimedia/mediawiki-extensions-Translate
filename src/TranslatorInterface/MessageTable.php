@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use ContextSource;
-use Html;
 use IContextSource;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
 

@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use AggregateMessageGroup;
 use ErrorPageError;
-use Html;
 use Language;
 use LogicException;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;

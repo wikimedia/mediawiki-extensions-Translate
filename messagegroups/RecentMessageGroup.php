@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Title\Title;
 
 /**
  * @since 2011-11-28

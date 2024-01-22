@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use BagOStuff;
 use FileBasedMessageGroup;
-use Html;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextParseException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Html\Html;
 use MessageGroupBase;
 use SpecialPage;
 use Xml;

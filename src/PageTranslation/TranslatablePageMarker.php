@@ -3,12 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use CommentStoreComment;
 use ContentHandler;
 use JobQueueGroup;
 use LogicException;
 use MalformedTitleException;
 use ManualLogEntry;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;

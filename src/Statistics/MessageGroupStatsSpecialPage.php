@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use Config;
 use DeferredUpdates;
-use Html;
 use HTMLForm;
 use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageGroupStats;
 use MessagePrefixMessageGroup;

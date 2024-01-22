@@ -6,6 +6,7 @@
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * A utility trait containing reusable methods for use in tests

@@ -4,11 +4,11 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use DerivativeContext;
-use Html;
 use HtmlArmor;
 use HTMLForm;
 use Language;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Title\Title;
 use MessageHandle;

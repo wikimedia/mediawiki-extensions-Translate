@@ -6,6 +6,7 @@
  */
 
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+use MediaWiki\Title\Title;
 
 /** @covers TTMServerMessageUpdateJob */
 class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {

@@ -3,6 +3,7 @@
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
+use MediaWiki\Title\Title;
 
 /**
  * Cross Language Translation Search.

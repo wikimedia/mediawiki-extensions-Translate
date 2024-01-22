@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
-use Html;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use SpecialPage;
 use WikiPageMessageGroup;
 use Xml;

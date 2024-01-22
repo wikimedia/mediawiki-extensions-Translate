@@ -3,11 +3,11 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use Html;
 use HtmlArmor;
 use Language;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use Message;
 use MessageGroup;
