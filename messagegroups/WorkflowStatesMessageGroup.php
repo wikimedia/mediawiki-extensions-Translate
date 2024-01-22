@@ -50,6 +50,10 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 			}
 		}
 
+		if ( !$keys ) {
+			return [];
+		}
+
 		$defs = Utilities::getContents( array_keys( $keys ), $this->getNamespace() );
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $keys as $key => $state ) {
