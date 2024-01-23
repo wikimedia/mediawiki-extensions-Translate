@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate;
 
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormatHeaderFieldsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageGroupStateChangeHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageMembershipChangeHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsParameterListHook;
@@ -50,7 +51,8 @@ class HookRunner implements
 	PostInitGroupsHook,
 	ProcessAPIMessageGroupsPropertiesHook,
 	SupportedLanguagesHook,
-	EventMessageMembershipChangeHook
+	EventMessageMembershipChangeHook,
+	GettextFormatHeaderFieldsHook
 {
 	private HookContainer $hookContainer;
 
@@ -127,5 +129,16 @@ class HookRunner implements
 
 	public function onTranslateEventMessageMembershipChange( MessageHandle $handle, array $old, array $new ) {
 		return $this->hookContainer->run( 'TranslateEventMessageMembershipChange', [ $handle, $old, $new ] );
+	}
+
+	public function onTranslate_GettextFormat_headerFields(
+		array &$headers,
+		MessageGroup $group,
+		string $languageCode
+	) {
+		return $this->hookContainer->run(
+			'Translate:GettextFormat:headerFields',
+			[ &$headers, $group, $languageCode ]
+		);
 	}
 }

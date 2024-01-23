@@ -8,6 +8,7 @@ use LanguageCode;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
@@ -470,8 +471,12 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		MediaWikiServices::getInstance()->getHookContainer()
 			->run( 'Translate:GettextFFS:headerFields', [ &$specs, $this->group, $code ] );
 
-		MediaWikiServices::getInstance()->getHookContainer()
-			->run( 'Translate:GettextFormat:headerFields', [ &$specs, $this->group, $code ] );
+		Services::getInstance()->getHookRunner()->onTranslate_GettextFormat_headerFields(
+			$specs,
+			$this->group,
+			$code
+		);
+
 		$specs['X-Generator'] = 'MediaWiki '
 			. SpecialVersion::getVersion()
 			. '; Translate '
