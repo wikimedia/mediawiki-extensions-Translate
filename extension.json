@@ -166,7 +166,7 @@
 		"PageContentLanguage": "MediaWiki\\Extension\\Translate\\HookHandler::onPageContentLanguage",
 		"EditPage::showEditForm:initial": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
-		"ApiCheckCanExecute": "translatorSandbox",
+		"ApiCheckCanExecute": "translateSandbox",
 		"getUserPermissionsErrorsExpensive": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disallowLangTranslations",
 		"LanguageGetTranslatedLanguageNames": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"TranslateSupportedLanguages": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
