@@ -263,8 +263,7 @@
 	"DeprecatedHooks": {
 		"Translate:GettextFFS:headerFields": {
 			"deprecatedVersion": "2024.01",
-			"component": "Translate",
-			"silent": true
+			"component": "Translate"
 		}
 	},
 	"SpecialPages": {
