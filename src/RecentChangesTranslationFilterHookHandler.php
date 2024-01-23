@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate;
 
 use ChangesListStringOptionsFilterGroup;
 use ChangeTags;
+use Config;
 use IContextSource;
-use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialRecentChangesPanelHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
