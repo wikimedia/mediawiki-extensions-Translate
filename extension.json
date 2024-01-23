@@ -494,11 +494,7 @@
 	},
 	"ResourceModules": {
 		"ext.translate": {
-			"styles": "resources/css/ext.translate.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.css"
 		},
 		"ext.translate.base": {
 			"scripts": "resources/js/ext.translate.base.js",
@@ -508,19 +504,11 @@
 			],
 			"messages": [
 				"translate-js-support-unsaved-warning"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.dropdownmenu": {
 			"styles": "resources/css/ext.translate.dropdownmenu.css",
-			"scripts": "resources/js/ext.translate.dropdownmenu.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"scripts": "resources/js/ext.translate.dropdownmenu.js"
 		},
 		"ext.translate.specialpages.styles": {
 			"styles": [
@@ -532,18 +520,10 @@
 				"resources/css/ext.translate.special.searchtranslations.css",
 				"resources/css/ext.translate.special.supportedlanguages.css",
 				"resources/css/ext.translate.special.translations.css"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.loader": {
-			"styles": "resources/css/ext.translate.loader.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.loader.css"
 		},
 		"ext.translate.messagetable": {
 			"scripts": "resources/js/ext.translate.messagetable.js",
@@ -588,10 +568,6 @@
 				"tux-status-optional",
 				"tux-status-proofread",
 				"tux-status-translated"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.pagetranslation.uls": {
@@ -599,51 +575,27 @@
 			"dependencies": [
 				"ext.uls.mediawiki",
 				"mediawiki.util"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.edit.documentation.styles": {
 			"styles": [
 				"resources/css/ext.translate.edit.documentation.less"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.parsers": {
 			"scripts": "resources/js/ext.translate.parsers.js",
 			"dependencies": [
 				"mediawiki.util"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.quickedit": {
-			"styles": "resources/css/ext.translate.quickedit.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.quickedit.css"
 		},
 		"ext.translate.selecttoinput": {
-			"scripts": "resources/js/ext.translate.selecttoinput.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"scripts": "resources/js/ext.translate.selecttoinput.js"
 		},
 		"ext.translate.special.groupstats": {
-			"styles": "resources/css/ext.translate.special.groupstats.less",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.special.groupstats.less"
 		},
 		"ext.translate.special.languagestats": {
 			"packageFiles": [
@@ -711,10 +663,6 @@
 			],
 			"styles": [
 				"resources/css/ext.translate.messagerenamedialog.less"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.groupselector": {
@@ -734,10 +682,6 @@
 				"translate-msggroupselector-search-placeholder",
 				"translate-msggroupselector-search-recent",
 				"translate-msggroupselector-view-subprojects"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.editor": {
@@ -824,25 +768,13 @@
 				"tux-notices-hide",
 				"tux-notices-more",
 				"spamprotectiontext"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.managetranslatorsandbox.styles": {
-			"styles": "resources/css/ext.translate.special.managetranslatorsandbox.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.special.managetranslatorsandbox.css"
 		},
 		"ext.translate.special.movetranslatablebundles.styles": {
-			"styles": "resources/css/ext.translate.special.movetranslatablebundles.css",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.special.movetranslatablebundles.css"
 		},
 		"ext.translate.special.pagemigration": {
 			"scripts": [
@@ -873,10 +805,6 @@
 				"pm-pagetitle-not-translatable",
 				"pm-translation-unit-fetch-failed",
 				"tpt-unknown-page"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.pagepreparation": {
@@ -898,10 +826,6 @@
 				"pp-prepare-message",
 				"pp-save-button-label",
 				"pp-save-message"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.searchtranslations": {
@@ -916,10 +840,6 @@
 			"messages": [
 				"translate-search-more-groups-info",
 				"translate-search-more-languages-info"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.translate": {
@@ -960,20 +880,12 @@
 				"translate-workflow-state-",
 				"translate-workflowstatus",
 				"translate-tag-page-wikipage-desc"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.translate.styles": {
 			"styles": [
 				"resources/css/ext.translate.special.translate.css",
 				"resources/css/ext.translate.language.selector.css"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.specialTranslationStash": {
@@ -997,10 +909,6 @@
 				"translate-translationstash-translations",
 				"tsb-limit-reached-body",
 				"tsb-limit-reached-title"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.translationstats": {
@@ -1010,10 +918,6 @@
 			"dependencies": [
 				"ext.translate.translationstats.graphbuilder.js",
 				"mediawiki.widgets.datetime"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.translationstats.embedded": {
@@ -1022,10 +926,6 @@
 			],
 			"dependencies": [
 				"ext.translate.translationstats.graphbuilder.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.translationstats.graphbuilder.js": {
@@ -1056,10 +956,6 @@
 				"translate-statsf-error-message",
 				"translate-statsf-graph-alt-text-info",
 				"translate-statsf-alt-text"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.statsbar": {
@@ -1068,25 +964,13 @@
 			"messages": [
 				"translate-statsbar-tooltip",
 				"translate-statsbar-tooltip-with-fuzzy"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.statstable": {
-			"styles": "resources/css/ext.translate.statstable.less",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.statstable.less"
 		},
 		"ext.translate.tag.languages": {
-			"styles": "resources/css/ext.translate.tag.languages.less",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"styles": "resources/css/ext.translate.tag.languages.less"
 		},
 		"ext.translate.special.aggregategroups": {
 			"packageFiles": [
@@ -1115,18 +999,10 @@
 				"translate-tes-entity-not-found",
 				"translate-tes-type-to-search"
 			],
-			"targets": [
-				"desktop",
-				"mobile"
-			],
 			"styles": "resources/src/ext.translate.entity.selector/index.less"
 		},
 		"ext.translate.special.importtranslations": {
-			"scripts": "resources/js/ext.translate.special.importtranslations.js",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
+			"scripts": "resources/js/ext.translate.special.importtranslations.js"
 		},
 		"ext.translate.special.managetranslatorsandbox": {
 			"scripts": "resources/js/ext.translate.special.managetranslatorsandbox.js",
@@ -1160,10 +1036,6 @@
 				"tsb-translations-source",
 				"tsb-translations-user",
 				"tsb-user-posted-a-comment"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.special.pagetranslation": {
@@ -1195,10 +1067,6 @@
 			],
 			"scripts": [
 				"resources/js/ext.translate.special.managegroups.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.ve": {
@@ -1217,19 +1085,11 @@
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.translate.codemirror": {
 			"styles": [
 				"resources/css/ext.translate.codemirror.css"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		}
 	},
