@@ -30,6 +30,11 @@ class TranslationUnit {
 		\s* > (?<value>.*?) </tvar \s* >
 		~xusi
 		REGEXP;
+	/**
+	 * Regular expression matching the `{{TRANSLATIONLANGUAGE}}` “magic word”
+	 * (which is not a real magic word, but rather replaced in the source text)
+	 */
+	public const TRANSLATIONLANGUAGE_REGEX = '/{{\s*TRANSLATIONLANGUAGE\s*}}/';
 
 	/** @var string Unit name */
 	public $id;
@@ -233,7 +238,7 @@ class TranslationUnit {
 
 		// Allow wrapping this inside variables
 		$content = preg_replace(
-			'/{{\s*TRANSLATIONLANGUAGE\s*}}/',
+			self::TRANSLATIONLANGUAGE_REGEX,
 			$translationLanguage,
 			$content
 		);

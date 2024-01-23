@@ -94,22 +94,13 @@ class TranslationPage {
 	 * @param Message[] $messages
 	 */
 	public function generateSourceFromTranslations( Parser $parser, array $messages ): string {
-		$replacements = [];
-
-		foreach ( $this->output->units() as $placeholder => $unit ) {
-			/** @var Message $msg */
-			$msg = $messages[$unit->id] ?? null;
-			$replacements[$placeholder] = $unit->getTextForRendering(
-				$msg,
-				$this->sourceLanguage,
-				$this->targetLanguage,
-				$this->wrapUntranslated,
-				$parser
-			);
-		}
-
-		$template = $this->output->translationPageTemplate();
-		return strtr( $template, $replacements );
+		return $this->output->getPageTextForRendering(
+			$this->sourceLanguage,
+			$this->targetLanguage,
+			$this->wrapUntranslated,
+			$messages,
+			$parser
+		);
 	}
 
 	public function generateSourceFromMessageCollection(

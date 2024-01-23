@@ -66,10 +66,10 @@ class ParserOutputTest extends MediaWikiUnitTestCase {
 
 	public function testSourcePageTextForRendering() {
 		$units = [];
-		$units['<1>'] = new TranslationUnit( 'Hello' );
+		$units['<1>'] = new TranslationUnit( 'Hello {{TRANSLATIONLANGUAGE}}' );
 
 		$output = new ParserOutput(
-			'A<0>B',
+			'A<0>B {{TRANSLATIONLANGUAGE}}',
 			[ '<0>' => new Section( '<translate>', '<1>', '</translate>' ) ],
 			$units
 		);
@@ -81,7 +81,7 @@ class ParserOutputTest extends MediaWikiUnitTestCase {
 		$language->method( 'getCode' )
 			->willReturn( 'en-GB' );
 
-		$this->assertSame( 'AHelloB', $output->sourcePageTextForRendering( $language ) );
+		$this->assertSame( 'AHello en-GBB en-GB', $output->sourcePageTextForRendering( $language ) );
 	}
 
 	public function testSourcePageTextForSaving() {

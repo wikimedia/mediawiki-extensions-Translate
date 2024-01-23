@@ -25,7 +25,7 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 	) {
 		// This test skips all the message loading from database
 
-		$template = '<S>';
+		$template = '<S> | {{TRANSLATIONLANGUAGE}}';
 		$unitMap = [];
 		foreach ( $messages as $id => $m ) {
 			/** @var FatMessage $m */
@@ -91,64 +91,64 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 			$inline,
 			$wrap,
 			$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			"Hallo | $inlineWrappedOutdated | Hello | $inlineWrappedUntranslated"
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			"Hallo | $inlineWrappedOutdated | Hello | $inlineWrappedUntranslated | ar",
 		];
 
 		yield [
 			$inline,
 			$wrap,
 			!$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			"Hallo | $inlineWrappedOutdated | Hello | Hello"
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			"Hallo | $inlineWrappedOutdated | Hello | Hello | ar",
 		];
 
 		yield [
 			$inline,
 			$nowrap,
 			$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			'Hallo | hallo | Hello | Hello',
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello | ar',
 		];
 
 		yield [
 			$inline,
 			$nowrap,
 			!$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			'Hallo | hallo | Hello | Hello',
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello | ar',
 		];
 
 		yield [
 			$block,
 			$wrap,
 			$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			"Hallo | $blockWrappedOutdated | Hello | $blockWrappedUntranslated"
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			"Hallo | $blockWrappedOutdated | Hello | $blockWrappedUntranslated | ar",
 		];
 
 		yield [
 			$block,
 			$wrap,
 			!$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			"Hallo | $blockWrappedOutdated | Hello | Hello"
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			"Hallo | $blockWrappedOutdated | Hello | Hello | ar",
 		];
 
 		yield [
 			$block,
 			$nowrap,
 			$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			'Hallo | hallo | Hello | Hello',
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello | ar',
 		];
 
 		yield [
 			$block,
 			$nowrap,
 			!$wrapUntranslated,
-			[ $okMessage, $fuzzyMessage, $identicalMessage, $untranslatedMessage ],
-			'Hallo | hallo | Hello | Hello',
+			[ 'aaa' => $okMessage, 'bbb' => $fuzzyMessage, 'ccc' => $identicalMessage, 'ddd' => $untranslatedMessage ],
+			'Hallo | hallo | Hello | Hello | ar',
 		];
 	}
 }

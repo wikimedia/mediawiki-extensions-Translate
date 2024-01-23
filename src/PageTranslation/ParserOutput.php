@@ -5,6 +5,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
 use Language;
+use MediaWiki\Extension\Translate\MessageLoading\Message;
+use Parser;
 
 /**
  * Represents a parsing output produced by TranslatablePageParser.
@@ -60,12 +62,46 @@ class ParserOutput {
 
 	/** Returns the source page wikitext used for rendering the page. */
 	public function sourcePageTextForRendering( Language $sourceLanguage ): string {
+		return $this->getPageTextForRendering( $sourceLanguage, $sourceLanguage, false );
+	}
+
+	/**
+	 * @param Language $sourceLanguage Language of the translatable page
+	 * @param Language $targetLanguage Language of the translation page; same as
+	 *  $sourceLanguage when rendering the translatable page
+	 * @param bool $wrapUntranslated Whether to wrap untranslated units in `<span>` or `<div>`
+	 *  with appropriate language and directionality set
+	 * @param array<string,Message> $messages Translations by translation unit;
+	 *  empty when rendering the translatable page
+	 * @param Parser|null $parser Wikitext parser to use when generating anchors for translated
+	 *  headings; if `null`, no anchors will be generated
+	 */
+	public function getPageTextForRendering(
+		Language $sourceLanguage,
+		Language $targetLanguage,
+		bool $wrapUntranslated,
+		array $messages = [],
+		?Parser $parser = null
+	): string {
 		$text = $this->translationPageTemplate();
 
 		foreach ( $this->unitMap as $ph => $s ) {
-			$t = $s->getTextForRendering( null, $sourceLanguage, $sourceLanguage, false );
+			$t = $s->getTextForRendering(
+				$messages[$s->id] ?? null,
+				$sourceLanguage,
+				$targetLanguage,
+				$wrapUntranslated,
+				$parser
+			);
 			$text = str_replace( $ph, $t, $text );
 		}
+
+		// Replace {{TRANSLATIONLANGUAGE}} usage outside of translation units (T224810)
+		$text = preg_replace(
+			TranslationUnit::TRANSLATIONLANGUAGE_REGEX,
+			$targetLanguage->getCode(),
+			$text
+		);
 
 		return $text;
 	}
