@@ -41,7 +41,7 @@
 	"apihelp-query+messagecollection-paramvalue-prop-translation": "Den gjeldende oversettelsen (uten $1-streng om det er noen, bruk taggene for å sjekke utdaterte eller ugyldige oversettelser).",
 	"apihelp-query+messagecollection-paramvalue-prop-tags": "Beskjedtagger, som optional, ignored og fuzzy.",
 	"apihelp-query+messagecollection-paramvalue-prop-properties": "Beskjedegenskaper, som status, revision, last-translator. Kan variere mellom beskjeder.",
-	"apihelp-query+messagecollection-paramvalue-prop-revision": "Bruk $2prop=properties.",
+	"apihelp-query+messagecollection-paramvalue-prop-revision": "Bruk $1prop=properties.",
 	"apihelp-query+messagecollection-example-1": "Liste over støttede språk",
 	"apihelp-query+messagecollection-example-2": "Liste over ikke-valgfrie beskjeddefinisjoner for gruppa «page-Example»",
 	"apihelp-query+messagecollection-example-3": "Liste over valgfrie beskjeder på finsk med tagger for gruppa «page-Example»",
