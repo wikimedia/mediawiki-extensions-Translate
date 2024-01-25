@@ -120,7 +120,6 @@
 		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
 		"RemoteTTMServer": "ttmserver/RemoteTTMServer.php",
 		"SandboxMessageGroup": "messagegroups/SandboxMessageGroup.php",
-		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"SimpleFFS": "src/FileFormatSupport/SimpleFormat.php",
 		"SubsetMessageGroup": "messagegroups/SubsetMessageGroup.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\SimpleFormat": "src/FileFormatSupport/SimpleFormat.php",

@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\SerializedMessageIndex;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use Wikimedia\TestingAccessWrapper;
@@ -248,7 +249,7 @@ class TestableCDBMessageIndex extends CDBMessageIndex {
 }
 
 class TestableSerializedMessageIndex extends SerializedMessageIndex {
-	public function store( array $a, array $diff ) {
+	public function store( array $a, array $diff ): void {
 		parent::store( $a, $diff );
 	}
 

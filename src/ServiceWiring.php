@@ -131,7 +131,11 @@ return [
 		}
 
 		$class = array_shift( $params );
-		// @phan-suppress-next-line PhanTypeExpectedObjectOrClassName
+
+		if ( !class_exists( $class ) ) {
+			$class = "Mediawiki\\Extension\\Translate\MessageLoading\\$class";
+		}
+
 		return new $class( $params );
 	},
 
