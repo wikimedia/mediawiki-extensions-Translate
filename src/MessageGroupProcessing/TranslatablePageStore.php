@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
 use DeferredUpdates;
+use IDBAccessObject;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
@@ -144,7 +145,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$status = TranslatablePage::determineStatus(
 			$revTags[RevTagStore::TP_READY_TAG] ?? null,
 			$revTags[RevTagStore::TP_MARK_TAG] ?? null,
-			$title->getLatestRevID( Title::READ_LATEST )
+			$title->getLatestRevID( IDBAccessObject::READ_LATEST )
 		);
 
 		if ( $status ) {

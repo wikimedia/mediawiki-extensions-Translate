@@ -7,6 +7,7 @@ use AppendIterator;
 use ArrayAccess;
 use Countable;
 use EmptyIterator;
+use IDBAccessObject;
 use InvalidArgumentException;
 use Iterator;
 use LogicException;
@@ -807,7 +808,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$messages = [];
 		$definitions = $this->definitions->getDefinitions();
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$queryFlags = Utilities::shouldReadFromPrimary() ? $revStore::READ_LATEST : 0;
+		$queryFlags = Utilities::shouldReadFromPrimary() ? IDBAccessObject::READ_LATEST : 0;
 		foreach ( array_keys( $this->keys ) as $mkey ) {
 			$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 		}

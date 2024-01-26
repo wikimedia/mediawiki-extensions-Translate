@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
 use DifferenceEngine;
+use IDBAccessObject;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
@@ -236,7 +237,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		try {
 			$operation = $this->translatablePageMarker->getMarkOperation(
-				$title->toPageRecord( $request->wasPosted() ? Title::READ_LATEST : Title::READ_NORMAL ),
+				$title->toPageRecord(
+					$request->wasPosted() ? IDBAccessObject::READ_LATEST : IDBAccessObject::READ_NORMAL
+				),
 				$revision,
 				// If the request was not posted, validate all the units so that initially we display all the errors
 				// and then the user can choose whether they want to translate the title

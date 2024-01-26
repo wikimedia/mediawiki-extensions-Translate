@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use IDBAccessObject;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
@@ -12,7 +13,6 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Revision\SlotRecord;
-use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use TitleFormatter;
@@ -52,7 +52,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function insertPageAndGetRecord( string $text, string $pageName = 'Fréttinga' ): PageRecord {
-		return $this->insertPage( $pageName, $text )['title']->toPageRecord( Title::READ_LATEST );
+		return $this->insertPage( $pageName, $text )['title']->toPageRecord( IDBAccessObject::READ_LATEST );
 	}
 
 	public static function provideGetMarkOperation(): array {

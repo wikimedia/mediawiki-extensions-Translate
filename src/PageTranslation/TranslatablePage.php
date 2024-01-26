@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use IDBAccessObject;
 use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -15,7 +16,6 @@ use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\Page\PageReference;
-use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
@@ -139,8 +139,8 @@ class TranslatablePage extends TranslatableBundle {
 		}
 
 		$flags = Utilities::shouldReadFromPrimary()
-			? RevisionLookup::READ_LATEST
-			: RevisionLookup::READ_NORMAL;
+			? IDBAccessObject::READ_LATEST
+			: IDBAccessObject::READ_NORMAL;
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
 			->getRevisionByTitle( $this->getPageIdentity(), $this->revision, $flags );
@@ -237,7 +237,7 @@ class TranslatablePage extends TranslatableBundle {
 			return null;
 		}
 
-		return $group->getMessage( "$page/$section", $languageCode, $group::READ_NORMAL );
+		return $group->getMessage( "$page/$section", $languageCode, IDBAccessObject::READ_NORMAL );
 	}
 
 	public function getStrippedSourcePageText(): string {

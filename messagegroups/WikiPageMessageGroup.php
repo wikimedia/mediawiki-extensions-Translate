@@ -21,7 +21,7 @@ use MediaWiki\Title\Title;
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
  */
-class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
+class WikiPageMessageGroup extends MessageGroupOld {
 	/** @var Title|string */
 	protected $title;
 	/** @var int */
@@ -139,7 +139,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 	 * @param int $flags READ_* class constant bitfield
 	 * @return string|null Stored translation or null.
 	 */
-	public function getMessage( $key, $code, $flags = self::READ_LATEST ) {
+	public function getMessage( $key, $code, $flags = IDBAccessObject::READ_LATEST ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$stuff = $this->load( $code );
 
@@ -155,7 +155,7 @@ class WikiPageMessageGroup extends MessageGroupOld implements IDBAccessObject {
 		if ( Hooks::$renderingContext ) {
 			$revFlags = IDBAccessObject::READ_NORMAL; // bug T95753
 		} else {
-			$revFlags = ( $flags & self::READ_LATEST ) == self::READ_LATEST
+			$revFlags = ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST
 				? IDBAccessObject::READ_LATEST
 				: IDBAccessObject::READ_NORMAL;
 		}

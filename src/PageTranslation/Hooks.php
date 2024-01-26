@@ -7,6 +7,7 @@ use Content;
 use DeferredUpdates;
 use Exception;
 use IContextSource;
+use IDBAccessObject;
 use Language;
 use LanguageCode;
 use ManualLogEntry;
@@ -1665,7 +1666,7 @@ class Hooks {
 			$translationPageTitle = $target->getSubpage( $langCode );
 			// Do a more thorough check for the translation page in case the translation page is deleted in a
 			// different transaction.
-			if ( !$translationPageTitle || !$translationPageTitle->exists( Title::READ_LATEST ) ) {
+			if ( !$translationPageTitle || !$translationPageTitle->exists( IDBAccessObject::READ_LATEST ) ) {
 				return;
 			}
 
