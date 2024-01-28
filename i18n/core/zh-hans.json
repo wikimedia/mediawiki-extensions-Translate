@@ -372,7 +372,7 @@
 	"translate-workflowgroup-label": "工作流状态",
 	"translate-workflowgroup-desc": "本消息组显示翻译工作流状态。该状态以$wgTranslateWorkflowStates配置变量定义。",
 	"translate-dynagroup-recent-label": "最近翻译",
-	"translate-dynagroup-recent-desc": "本消息组显示该语言的所有最近翻译。对复核任务很实用。",
+	"translate-dynagroup-recent-desc": "本消息组显示该语言的所有最近翻译，最有助于复核任务。",
 	"translate-dynagroup-additions-label": "最近添加",
 	"translate-dynagroup-additions-desc": "此消息组显示新出现和已变更的消息。",
 	"translate-msggroupselector-projects": "消息组",

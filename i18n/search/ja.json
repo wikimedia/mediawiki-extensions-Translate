@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ant176",
 			"Omotecho",
 			"Otokoume",
 			"Shirayuki",
@@ -13,6 +14,7 @@
 	"tux-sst-view-foreign": "$1 で閲覧",
 	"tux-sst-search": "検索",
 	"tux-sst-search-ph": "翻訳の検索",
+	"tux-sst-search-info": "検索条件をさらに絞り込むには、演算子 <code>language:</code> または <code>group:</code> を使用します。",
 	"tux-sst-count": "{{PLURAL:$1|$1 件見つかりました}}",
 	"tux-sst-facet-language": "言語",
 	"tux-sst-facet-group": "メッセージ群",

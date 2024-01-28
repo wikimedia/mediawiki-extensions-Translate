@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Chinneeb",
+			"Enkhsaihan2005",
 			"Wisdom"
 		]
 	},
 	"translate-page-language": "Хэл",
 	"translate-language": "Хэл",
+	"translate-documentation-language": "Мессежийн баримт",
 	"tux-session-expired": "Таны логин гарсан байна. Энэ таб -аа хаалгүй шинэ таб нэмээд логин хийчихээд хадгалаарай."
 }
