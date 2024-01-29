@@ -25,7 +25,7 @@ class WikiMessageGroup extends MessageGroupOld {
 
 	/**
 	 * @param string $id Unique id for this group.
-	 * @param string $source Mediawiki message that contains list of message keys.
+	 * @param string $source MediaWiki message that contains list of message keys.
 	 */
 	public function __construct( $id, $source ) {
 		$this->id = $id;

@@ -700,7 +700,7 @@ class HookHandler implements
 	 * For UserMerge extension.
 	 */
 	public static function onMergeAccountFromTo( User $oldUser, User $newUser ): void {
-		$dbw = MediawikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 
 		// Update the non-duplicate rows, we'll just delete
 		// the duplicate ones later
@@ -722,7 +722,7 @@ class HookHandler implements
 	 * For UserMerge extension.
 	 */
 	public static function onDeleteAccount( User $oldUser ): void {
-		$dbw = MediawikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 
 		// Delete any remaining rows that didn't get merged
 		foreach ( self::USER_MERGE_TABLES as $table => $field ) {

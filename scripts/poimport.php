@@ -88,7 +88,7 @@ class Poimport extends Maintenance {
 }
 
 /**
- * Parses a po file that has been exported from Mediawiki. Other files are not
+ * Parses a po file that has been exported from MediaWiki. Other files are not
  * supported.
  */
 class PoImporter {
