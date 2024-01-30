@@ -4,6 +4,7 @@
 			"Jonbg",
 			"Maxí",
 			"Snævar",
+			"Stefán Örvar Sigmundsson",
 			"Sveinn í Felli"
 		]
 	},
@@ -39,10 +40,12 @@
 	"tpt-new-pages": "{{PLURAL:$1|Þessi síða inniheldur|Þessar síður innihalda}} texta með þýðingamerkjum,\nen engin útgáfa {{PLURAL:$1|þessarar síðu er|þessara síðna er}} merkt til þýðinga í augnablikinu.",
 	"tpt-old-pages": "Einhver útgáfa {{PLURAL:$1|þessarar síðu|þessara síðna}} hefur verið merkt til þýðingar.",
 	"tpt-other-pages": "{{PLURAL:$1|Eldri útgáfa þessarar síðu er merkt|Eldri útgáfur þessara síðna eru merktar}} til þýðingar,\nen {{PLURAL:$1|nýjustu útgáfuna|nýjustu útgáfurnar}} er ekki hægt að merkja til þýðingar.",
+	"tpt-tag-no-transclusion-support": "enginn stuðningur við innifalningar",
 	"tpt-select-prioritylangs": "Listi yfir kóða tungumála í forgangi, aðskilinn með kommum:",
 	"tpt-select-prioritylangs-force": "Hindra þýðingar á þeim tungumálum sem ekki eru forgangstungumál",
 	"tpt-select-prioritylangs-reason": "Ástæða:",
 	"tpt-sections-prioritylangs": "Forgangstungumál",
+	"tpt-transclusion": "Innifalning sniðs",
 	"tpt-rev-mark": "merkja til þýðingar",
 	"tpt-rev-unmark": "fjarlægja úr þýðingu",
 	"tpt-rev-discourage": "forðast að nota",
