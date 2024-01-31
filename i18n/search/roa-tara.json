@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "'Ndruche sus a $1",
 	"tux-sst-search": "Cirche",
 	"tux-sst-search-ph": "Cirche le traduziune",
+	"tux-sst-search-info": "Ause le operature  <code>language:</code> o <code>group:</code> pe aggiungere otre criterie de recerche",
 	"tux-sst-count": "{{PLURAL:$1|'Nu resultate acchiate|$1 resultate acchiate}}",
 	"tux-sst-facet-language": "Lènghe",
 	"tux-sst-facet-group": "Gruppe de messàgge",

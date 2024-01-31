@@ -8,7 +8,8 @@
 			"Octahedron80",
 			"Passawuth",
 			"RidJasper",
-			"Woraponboonkerd"
+			"Woraponboonkerd",
+			"Ekminarin"
 		]
 	},
 	"pagetranslation": "การแปลภาษา",
@@ -61,6 +62,8 @@
 	"tpt-aggregategroup-edit-description": "คำอธิบาย:",
 	"tpt-aggregategroup-update": "บันทึก",
 	"tpt-aggregategroup-update-cancel": "ยกเลิก",
+	"tpt-aggregategroup-expand-all-groups": "ขยายกลุ่มทั้งหมด",
+	"tpt-aggregategroup-collapse-all-groups": "ยุบกลุ่มทั้งหมด",
 	"pt-movepage-list-pages": "รายชื่อหน้าที่จะย้าย",
 	"pt-movepage-current": "ชื่อปัจจุบัน:",
 	"pt-movepage-new": "ชื่อใหม่:",
