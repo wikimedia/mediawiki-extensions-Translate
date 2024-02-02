@@ -219,7 +219,8 @@
 		"ChangeTagsListActive": "main",
 		"SpecialPrefixIndexGetFormFilters": "pageTranslation",
 		"SpecialPrefixIndexQuery": "pageTranslation",
-		"UserGetRights": "translateSandbox"
+		"UserGetRights": "translateSandbox",
+		"AfterImportPage": "translatableBundleImporter"
 	},
 	"HookHandlers": {
 		"main": {
@@ -257,6 +258,9 @@
 		},
 		"schema": {
 			"class": "MediaWiki\\Extension\\Translate\\SchemaHookHandler"
+		},
+		"translatableBundleImporter": {
+			"factory": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\TranslatableBundleImporter::getInstance"
 		}
 	},
 	"DeprecatedHooks": {

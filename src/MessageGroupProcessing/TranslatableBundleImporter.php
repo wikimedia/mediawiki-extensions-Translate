@@ -9,7 +9,8 @@ use ImportStreamSource;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
-use MediaWiki\Page\PageIdentity;
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Hook\AfterImportPageHook;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
@@ -24,12 +25,13 @@ use WikiImporterFactory;
  * @license GPL-2.0-or-later
  * @author Abijeet Patro
  */
-class TranslatableBundleImporter {
+class TranslatableBundleImporter implements AfterImportPageHook {
 	private WikiImporterFactory $wikiImporterFactory;
 	private TranslatablePageParser $translatablePageParser;
 	private RevisionLookup $revisionLookup;
 	private ?Title $bundleTitle;
 	private ?Closure $importCompleteCallback;
+	private bool $importInProgress = false;
 
 	public function __construct(
 		WikiImporterFactory $wikiImporterFactory,
@@ -39,6 +41,11 @@ class TranslatableBundleImporter {
 		$this->wikiImporterFactory = $wikiImporterFactory;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->revisionLookup = $revisionLookup;
+	}
+
+	/** Factory method used to initialize this HookHandler */
+	public static function getInstance(): self {
+		return Services::getInstance()->getTranslatableBundleImporter();
 	}
 
 	public function import(
@@ -60,9 +67,9 @@ class TranslatableBundleImporter {
 			// so use UltimateAuthority to skip permission checks
 			->getWikiImporter( $importSource->value, new UltimateAuthority( $user ) );
 		$wikiImporter->setUsernamePrefix( $interwikiPrefix, $assignKnownUsers );
-		$wikiImporter->setPageOutCallback( [ $this, 'pageCallback' ] );
 
 		try {
+			$this->importInProgress = true;
 			// Reset the currently set title which might have been set during the previous import process
 			$this->bundleTitle = null;
 			$importResult = $wikiImporter->doImport();
@@ -72,6 +79,8 @@ class TranslatableBundleImporter {
 				$e->getCode(),
 				$e
 			);
+		} finally {
+			$this->importInProgress = false;
 		}
 
 		if ( $importResult === false ) {
@@ -93,11 +102,6 @@ class TranslatableBundleImporter {
 		$this->logImport( $user, $this->bundleTitle, $comment );
 
 		return $this->bundleTitle;
-	}
-
-	public function pageCallback( PageIdentity $pageIdentity ): void {
-		// We assume that the first PageIdentity that we receive is the translatable bundle being imported.
-		$this->bundleTitle ??= Title::newFromPageIdentity( $pageIdentity );
 	}
 
 	public function setImportCompleteCallback( callable $callable ): void {
@@ -135,6 +139,12 @@ class TranslatableBundleImporter {
 			// Add the ready tag
 			$page = TranslatablePage::newFromTitle( Title::newFromLinkTarget( $translatablePageTitle ) );
 			$page->addReadyTag( $revisionRecord->getId() );
+		}
+	}
+
+	public function onAfterImportPage( $title, $foreignTitle, $revCount, $sRevCount, $pageInfo ) {
+		if ( $this->importInProgress ) {
+			$this->bundleTitle ??= $title;
 		}
 	}
 }
