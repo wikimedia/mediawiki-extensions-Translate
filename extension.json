@@ -818,8 +818,7 @@
 				"mediawiki.Title",
 				"mediawiki.diff.styles",
 				"mediawiki.api",
-				"mediawiki.jqueryMsg",
-				"mediawiki.ui"
+				"mediawiki.jqueryMsg"
 			],
 			"messages": [
 				"pp-already-prepared-message",

@@ -13,3 +13,11 @@
 .client-js .tux-nojs {
 	display: none;
 }
+
+.mw-tpp-sp-input {
+	display: flex;
+}
+
+.hide {
+	display: none;
+}

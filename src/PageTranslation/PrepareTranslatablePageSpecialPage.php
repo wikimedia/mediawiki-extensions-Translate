@@ -35,7 +35,7 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		$output->addModules( 'ext.translate.special.pagepreparation' );
 		$output->addModuleStyles( [
 			'ext.translate.specialpages.styles',
-			'jquery.uls.grid'
+			'codex-styles'
 		] );
 
 		$output->addHTML(
