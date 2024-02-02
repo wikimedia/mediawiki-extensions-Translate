@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 
@@ -48,6 +49,17 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		$this->addOption(
 			'assign-known-users',
 			'Whether to apply the prefix to usernames that exist locally',
+			self::OPTIONAL
+		);
+		$this->addOption(
+			'target-name',
+			'Target page name to import the page to',
+			self::OPTIONAL,
+			self::HAS_ARG
+		);
+		$this->addOption(
+			'override',
+			'Override existing target page if it exists',
 			self::OPTIONAL
 		);
 
@@ -90,11 +102,12 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 	/** @inheritDoc */
 	public function execute() {
-		$importFilePath = $this->getFilePathToImport();
+		$importFilePath = $this->getPathOfFileToImport();
 		$importUser = $this->getImportUser();
 		$comment = $this->getOption( 'comment' );
 		$interwikiPrefix = $this->getInterwikiPrefix();
 		$assignKnownUsers = $this->hasOption( 'assign-known-users' );
+		$targetPage = $this->getTargetPageName();
 		$translatablePageSettings = $this->getTranslatablePageSettings();
 
 		// First import the page
@@ -106,6 +119,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 				$interwikiPrefix,
 				$assignKnownUsers,
 				$importUser,
+				$targetPage,
 				$comment
 			);
 		} catch ( TranslatableBundleImportException $e ) {
@@ -119,10 +133,10 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	public function logImportComplete( Title $title ): void {
-		$this->output( "Completed import of translatable bundle. Created page '{$title->getPrefixedText()}'\n" );
+		$this->output( "Completed import of translatable bundle. Created page {$title->getPrefixedText()}\n" );
 	}
 
-	private function getFilePathToImport(): string {
+	private function getPathOfFileToImport(): string {
 		$xmlPath = $this->getArg( 'xml-path' );
 		if ( !file_exists( $xmlPath ) ) {
 			$this->fatalError( "File '$xmlPath' does not exist" );
@@ -225,5 +239,33 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			!$this->hasOption( 'use-old-syntax-version' ),
 			!$this->hasOption( 'disallow-transclusion' ),
 		);
+	}
+
+	private function getTargetPageName(): ?Title {
+		$targetPage = $this->getOption( 'target-name' );
+		if ( $targetPage === null ) {
+			return null;
+		}
+
+		try {
+			$targetPageTitle = MediaWikiServices::getInstance()->getTitleFactory()->newFromTextThrow( $targetPage );
+		} catch ( MalformedTitleException $e ) {
+			$this->fatalError(
+				"Target page name $targetPage does not appear to be valid: {$e->getMessage()}"
+			);
+		}
+
+		$shouldOverride = $this->hasOption( 'override' );
+		if ( $targetPageTitle->exists() && !$shouldOverride ) {
+			$this->fatalError(
+				"Specified target page $targetPage already exists. Use '--override' if you still want to import"
+			);
+		}
+
+		if ( !$targetPageTitle->canExist() ) {
+			$this->fatalError( "The target page name $targetPage cannot be created" );
+		}
+
+		return $targetPageTitle;
 	}
 }

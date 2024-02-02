@@ -213,7 +213,9 @@ return [
 		return new TranslatableBundleImporter(
 			$services->getWikiImporterFactory(),
 			$services->get( 'Translate:TranslatablePageParser' ),
-			$services->getRevisionLookup()
+			$services->getRevisionLookup(),
+			$services->getNamespaceInfo(),
+			$services->getTitleFactory()
 		);
 	},
 

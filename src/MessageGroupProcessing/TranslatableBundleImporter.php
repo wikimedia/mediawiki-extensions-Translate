@@ -14,7 +14,9 @@ use MediaWiki\Hook\AfterImportPageHook;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserIdentity;
 use TextContent;
 use WikiImporterFactory;
@@ -31,16 +33,22 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 	private RevisionLookup $revisionLookup;
 	private ?Title $bundleTitle;
 	private ?Closure $importCompleteCallback;
+	private NamespaceInfo $namespaceInfo;
+	private TitleFactory $titleFactory;
 	private bool $importInProgress = false;
 
 	public function __construct(
 		WikiImporterFactory $wikiImporterFactory,
 		TranslatablePageParser $translatablePageParser,
-		RevisionLookup $revisionLookup
+		RevisionLookup $revisionLookup,
+		NamespaceInfo $namespaceInfo,
+		TitleFactory $titleFactory
 	) {
 		$this->wikiImporterFactory = $wikiImporterFactory;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->revisionLookup = $revisionLookup;
+		$this->namespaceInfo = $namespaceInfo;
+		$this->titleFactory = $titleFactory;
 	}
 
 	/** Factory method used to initialize this HookHandler */
@@ -53,6 +61,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		string $interwikiPrefix,
 		bool $assignKnownUsers,
 		UserIdentity $user,
+		?Title $targetPage,
 		?string $comment
 	): Title {
 		$importSource = ImportStreamSource::newFromFile( $importFilePath );
@@ -67,6 +76,12 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 			// so use UltimateAuthority to skip permission checks
 			->getWikiImporter( $importSource->value, new UltimateAuthority( $user ) );
 		$wikiImporter->setUsernamePrefix( $interwikiPrefix, $assignKnownUsers );
+
+		if ( $targetPage !== null ) {
+			$wikiImporter->setImportTitleFactory(
+				new TranslatableBundleImportTitleFactory( $this->namespaceInfo, $this->titleFactory, $targetPage )
+			);
+		}
 
 		try {
 			$this->importInProgress = true;
