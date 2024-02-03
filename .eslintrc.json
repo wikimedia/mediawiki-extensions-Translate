@@ -4,5 +4,7 @@
 		"wikimedia/server",
 		"wikimedia/mediawiki"
 	],
-	"rules": { "security/detect-bidi-characters": "off" }
+	"rules": {
+		"security/detect-bidi-characters": "off"
+	}
 }
