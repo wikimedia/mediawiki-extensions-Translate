@@ -93,7 +93,7 @@
 	"translate-mgs-column-language": "Ziman",
 	"translate-mgs-totals": "Hemû {{PLURAL:$1|ziman|zimanan}} bi hev re",
 	"supportedlanguages": "Zimanên çalak",
-	"supportedlanguages-summary": "Ev rûpel lîsteya hemû zimananên aktîv yên li ser {{SITENAME}}, û wergêrên ku li ser vî zimanî dixebitin, nîşan dide.\nGava navê wergêrekî mezintir xuya dike, ev tê wê maneyê ku ew wergêr zêdetir beşdar bûye.\nRengên binxetekê çalakiya wergêrê nîşan didin.",
+	"supportedlanguages-summary": "Ev rûpel lîsteya hemû zimananên aktîv yên li ser {{GRAMMAR:oblique|{{SITENAME}}}}, û wergêrên ku li ser vî zimanî dixebitin, nîşan dide.\nGava navê wergêrekî mezintir xuya dike, ev tê wê maneyê ku ew wergêr zêdetir beşdar bûye.\nRengên binxetekê çalakiya wergêrê nîşan didin.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Wergêr}}|Wergêr}}: $1",
 	"supportedlanguages-recenttranslations": "wergerên niha",
 	"supportedlanguages-count": "Bi tevahî $1 {{PLURAL:$1|ziman}}",
