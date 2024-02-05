@@ -143,16 +143,12 @@
 }
 
 @media screen and ( min-height: 600px ) {
-	.tux-messagetable-header.floating {
+	.tux-messagetable-header {
 		background: #fff;
-		position: fixed;
+		position: sticky;
 		padding-top: 5px;
 		top: 0;
 		z-index: 200;
-	}
-
-	.tux-messagetable-header.floating + .tux-messagelist {
-		margin-top: 50px;
 	}
 }
 

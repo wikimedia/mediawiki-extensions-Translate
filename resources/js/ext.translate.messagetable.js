@@ -62,14 +62,11 @@
 
 			// Vector has transitions of 250ms which affect layout. Let those finish.
 			$( window ).on( 'scroll', mw.util.debounce( function () {
-				messageTable.scroll();
-
 				if ( isLoaderVisible( messageTable.$loader ) ) {
 					messageTable.load();
 				}
 			}, 250 ) ).on( 'resize', mw.util.throttle( function () {
 				messageTable.resize();
-				messageTable.scroll();
 			}, 250 ) );
 
 			$filterInput.on( 'input', mw.util.debounce( function () {
@@ -365,10 +362,6 @@
 			}
 
 			this.updateLastMessage();
-
-			// Trigger a scroll event for the window to make sure all floating toolbars
-			// are in their position.
-			$( window ).trigger( 'scroll' );
 		},
 
 		resize: function () {
@@ -539,9 +532,6 @@
 					self.$loaderInfo.text(
 						mw.msg( 'tux-messagetable-more-messages', remaining )
 					);
-
-					// Make sure the floating toolbars are visible without the need for scroll
-					$( window ).trigger( 'scroll' );
 				}
 
 				// Helpfully open the first message in show mode on page load
@@ -770,46 +760,6 @@
 
 			messageTable.updateHideOwnInProofreadingToggleVisibility();
 			messageTable.updateLastMessage();
-		},
-
-		/**
-		 * The scroll handler
-		 */
-		scroll: function () {
-			var $window = $( window );
-
-			var windowScrollTop = $window.scrollTop();
-			var windowScrollBottom = windowScrollTop + $window.height();
-			var messageListOffset = this.$container.offset();
-			var messageListHeight = this.$container.height();
-			var messageListTop = messageListOffset.top;
-			var messageListBottom = messageListTop + messageListHeight;
-			var messageListWidth = this.$container.width();
-
-			// Header:
-			var messageTableRelativePos = messageListTop - this.$header.height() - windowScrollTop;
-			var needsTableHeaderFloat = messageTableRelativePos + 10 < 0;
-			var needsTableHeaderStick = messageTableRelativePos - 10 >= 0;
-			if ( needsTableHeaderFloat ) {
-				this.$header.addClass( 'floating' ).width( messageListWidth );
-			} else if ( needsTableHeaderStick ) {
-				// Let the element change width automatically again
-				this.$header.removeClass( 'floating' ).css( 'width', '' );
-			}
-
-			// Action bar:
-			var isActionBarFloating = this.$actionBar.hasClass( 'floating' );
-			var needsActionBarFloat = windowScrollBottom < messageListBottom;
-			var needsActionBarStick = windowScrollBottom > ( messageListBottom + this.$actionBar.height() );
-
-			if ( !isActionBarFloating && needsActionBarFloat ) {
-				this.$actionBar.addClass( 'floating' ).width( messageListWidth );
-			} else if ( isActionBarFloating && needsActionBarStick ) {
-				// Let the element change width automatically again
-				this.$actionBar.removeClass( 'floating' ).css( 'width', '' );
-			} else if ( isActionBarFloating && needsActionBarFloat ) {
-				this.$actionBar.width( messageListWidth );
-			}
 		},
 
 		/**
