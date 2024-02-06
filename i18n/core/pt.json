@@ -212,6 +212,7 @@
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-message-prefix-limit": "O prefixo de mensagens selecionado tem mais de $1 {{PLURAL:$1|mensagem|mensagens}}. A consulta de um grande número de mensagens é lenta. Refine mais a sua pesquisa.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
+	"translate-mgs-invalid-entity": "O grupo de mensagens ou prefixo selecionado não foi encontrado",
 	"translate-tes-optgroup-group": "Grupos",
 	"translate-tes-optgroup-message": "Mensagens",
 	"translate-tes-message-prefix": "Prefixo - $1",
