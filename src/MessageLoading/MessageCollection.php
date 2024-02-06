@@ -52,7 +52,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	private array $infile = [];
 	// Keys and messages.
 
-	/** array( %Message display key => database key, ... ) */
+	/** @var array<string, TitleValue> Key is message display key */
 	protected array $keys = [];
 	/** array( %Message String => Message, ... ) */
 	protected ?array $messages = [];
@@ -121,7 +121,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Returns list of available message keys. This is affected by filtering.
-	 * @return array List of database keys indexed by display keys (TitleValue).
+	 * @return array<string, TitleValue> List of database keys indexed by display keys.
 	 */
 	public function keys(): array {
 		return $this->keys;

@@ -10,6 +10,9 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Page\PageStore;
+use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Utils\MWTimestamp;
 use RuntimeException;
 
 /**
@@ -20,9 +23,17 @@ use RuntimeException;
  */
 class ExternalMessageSourceStateComparator {
 	private StringComparator $stringComparator;
+	private RevisionLookup $revisionLookup;
+	private PageStore $pageStore;
 
-	public function __construct( StringComparator $stringComparator ) {
+	public function __construct(
+		StringComparator $stringComparator,
+		RevisionLookup $revisionLookup,
+		PageStore $pageStore
+	) {
 		$this->stringComparator = $stringComparator;
+		$this->revisionLookup = $revisionLookup;
+		$this->pageStore = $pageStore;
 	}
 
 	/**
@@ -167,11 +178,14 @@ class ExternalMessageSourceStateComparator {
 			if ( $reason !== MessageGroupCache::NO_CACHE ) {
 				$cacheContent = $cache->get( $key );
 
-				/* We want to ignore the common situation that the string
-				 * in the wiki has been changed since the last export.
+				/* We want to ignore the following situations:
+				 * 1. The string in the wiki has been changed since the last export.
 				 * Hence we check that source === cache && cache !== wiki
-				 * and if so we skip this string. */
+				 * 2. Missing cache entry due to the string being translated on translatewiki.net,
+				 * exported and then being updated on translatewiki.net again.
+				 */
 				if (
+					$this->hasCacheEntry( $cache, $wiki, $key ) &&
 					!$ffs->isContentEqual( $wikiContent, $cacheContent ) &&
 					$ffs->isContentEqual( $sourceContent, $cacheContent )
 				) {
@@ -409,4 +423,45 @@ class ExternalMessageSourceStateComparator {
 		$changes->removeAdditions( $language, $additionsToRemove );
 		$changes->removeDeletions( $language, $deletionsToRemove );
 	}
+
+	/**
+	 * Checks if the cache has an entry for the given key
+	 * @return bool True if entry is present, false if entry is not present but that is the expected behavior
+	 * @throws RuntimeException If the cache should have an entry but is unexpectedly missing
+	 */
+	private function hasCacheEntry(
+		MessageGroupCache $cache,
+		MessageCollection $collection,
+		string $messageKey
+	): bool {
+		$cacheContent = $cache->get( $messageKey );
+		if ( $cacheContent !== false ) {
+			return true;
+		}
+
+		$cacheUpdateTime = $cache->getUpdateTimestamp();
+		$cacheUpdateTime = $cacheUpdateTime !== false ? MWTimestamp::convert( TS_MW, $cacheUpdateTime ) : false;
+
+		$pageIdentity = $this->pageStore->getPageForLink( $collection->keys()[ $messageKey ] );
+		$oldestRevision = $this->revisionLookup->getFirstRevision( $pageIdentity );
+		$latestRevision = $this->revisionLookup->getRevisionByTitle( $pageIdentity );
+
+		// Here we are checking for the following:
+		// 1. New translation was added for a message on translatewiki.net
+		// 2. Translation was exported
+		// 3. Translation was updated on translatewiki.net
+		// In this case the cache does not have the message
+		if (
+			$cacheUpdateTime !== false &&
+			$oldestRevision->getTimestamp() < $cacheUpdateTime &&
+			$cacheUpdateTime < $latestRevision->getTimestamp()
+		) {
+			return false;
+		}
+
+		throw new RuntimeException(
+			"No cache entry found for $messageKey in language: {$collection->getLanguage()}"
+		);
+	}
+
 }

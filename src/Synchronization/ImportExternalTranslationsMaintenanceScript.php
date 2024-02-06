@@ -65,7 +65,11 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 
 		$groups = $this->getGroups();
 		$changes = [];
-		$comparator = new ExternalMessageSourceStateComparator( new SimpleStringComparator() );
+		$comparator = new ExternalMessageSourceStateComparator(
+			new SimpleStringComparator(),
+			$this->getServiceContainer()->getRevisionLookup(),
+			$this->getServiceContainer()->getPageStore()
+		);
 
 		$importStrategy = $this->getImportStrategy();
 		$skipGroupSyncCache = $this->hasOption( 'skip-group-sync-check' );
