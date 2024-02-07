@@ -31,7 +31,8 @@
 			"WTM",
 			"Woytecr",
 			"Wpedzich",
-			"Žekřil71pl"
+			"Žekřil71pl",
+			"Msz2001"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -285,7 +286,7 @@
 	"translate-manage-submit": "Wykonaj",
 	"translate-manage-intro-other": "Poniżej znajduje się lista zmian komunikatów w języku $1.\nProszę przejrzeć zmiany i wybrać dla każdego komunikatu operację, którą chcesz dla niego wykonać.\nJeśli polecisz zignorować zmiany, zostaną one nadpisane przy następnym eksporcie.",
 	"translate-manage-import-ok": "Zaimportowano: $1",
-	"translate-manage-import-done": "Import zakończony!",
+	"translate-manage-import-done": "Ukończono importowanie tłumaczeń dla języka $3 i grupy [[Special:Translate/$1|$2]].",
 	"translate-manage-empty-content": "Nie ma zawartości",
 	"translate-manage-key-reused": "Ten komunikat istnieje już na wiki. Sprawdź, czy nie doszło do przypadkowego użycia starego klucza.",
 	"importtranslations": "Importowanie tłumaczeń",

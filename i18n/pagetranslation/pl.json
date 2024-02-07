@@ -18,7 +18,8 @@
 			"Sp5uhe",
 			"ToSter",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Msz2001"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -49,7 +50,7 @@
 	"tpt-mark-summary": "Oznaczono tę wersję do tłumaczenia",
 	"tpt-mark-nochanges": "Nie ma zmian do przejrzenia. Oznaczenie tej strony do tłumaczenia nie spowoduje jej zmiany ani żadnej istniejącej jednostki tłumaczeń.",
 	"tpt-edit-failed": "Nie udało się zaktualizować strony $1",
-	"tpt-duplicate": "Nazwa jednostki tłumaczenia  <strong><bdi>$1</bdi></strong>  jest używana więcej niż jeden raz.",
+	"tpt-duplicate": "Nazwa jednostki tłumaczenia <strong><bdi>$1</bdi></strong>  jest używana więcej niż jeden raz.",
 	"tpt-invalid": "Nazwa jednostki tłumaczenia <strong><bdi>$1</bdi></strong> nie może zawierać znaku podkreślenia lub ukośnika.",
 	"tpt-unmarked": "Strona [[:$1]] nie będzie dłużej oznaczona jako przeznaczona do tłumaczenia.",
 	"tpt-list-nopages": "Nie oznaczono stron do tłumaczenia i nie ma stron gotowych do oznaczenia do tłumaczenia.",
@@ -220,8 +221,8 @@
 	"pm-import-button-label": "Importuj",
 	"pm-savepages-button-label": "Zapisz",
 	"pm-cancel-button-label": "Anuluj",
-	"pm-page-does-not-exist": "$1 nie istnieje",
-	"pm-old-translations-missing": "$1 nie zawiera starego tłumaczenia",
+	"pm-page-does-not-exist": "Strona $1 nie istnieje.",
+	"pm-old-translations-missing": "Strona $1 nie zawiera starego tłumaczenia.",
 	"pm-extra-units-warning": "Mogą występować dodatkowe jednostki. Proszę odpowiednio dopasować jednostki źródła i tłumaczenia.",
 	"pm-pagename-missing": "Podaj nazwę strony",
 	"pm-add-icon-hover-text": "Dodaj jednostkę poniżej",
@@ -246,7 +247,7 @@
 	"pp-cancel-button-label": "Anuluj",
 	"pp-save-message": "Strona została opublikowana. Możesz ją [$1 edytować].",
 	"pp-prepare-message": "Strona została przygotowana do tłumaczenia. Przejrzyj poniższy diff. Jeśli wszystko jest porządku, kliknij przycisk „{{int:pp-save-button-label}}”!",
-	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
+	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia albo nie może być automatycznie przygotowana. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
 	"pp-diff-error": "Podczas pobierania różnicy z serwera wystąpił błąd.",
 	"pp-pagename-missing": "Podaj nazwę strony.",
 	"pp-diff-old-header": "Tekst źródłowy",
