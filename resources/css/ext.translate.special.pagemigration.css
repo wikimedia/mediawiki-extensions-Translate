@@ -40,15 +40,15 @@
 }
 
 .mw-tpm-sp-action--delete {
-	background-image: linear-gradient( transparent, transparent ), url( ../images/trash_darkgray.svg );
+	background-image: url( ../images/trash_darkgray.svg );
 }
 
 .mw-tpm-sp-action--swap {
-	background-image: linear-gradient( transparent, transparent ), url( ../images/switch.svg );
+	background-image: url( ../images/switch.svg );
 }
 
 .mw-tpm-sp-action--add {
-	background-image: linear-gradient( transparent, transparent ), url( ../images/plus_darkgray.svg );
+	background-image: url( ../images/plus_darkgray.svg );
 }
 
 .mw-tpm-sp-error__message {

@@ -9,7 +9,7 @@
 .grid .tux-message-editor .close {
 	background: no-repeat center center;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/close.svg );
+	background-image: url( ../images/close.svg );
 	padding: 16px;
 	cursor: pointer;
 	float: right;
@@ -25,13 +25,13 @@
 .tux-message-editor .editor-contract {
 	background: no-repeat center center;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/contract-ltr.svg );
+	background-image: url( ../images/contract-ltr.svg );
 }
 
 .tux-message-editor .editor-expand {
 	background: no-repeat center center;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
+	background-image: url( ../images/expand-ltr.svg );
 }
 
 .tux-message-editor .editcolumn {
@@ -229,7 +229,7 @@
 
 .message-desc-edit {
 	background: left center no-repeat;
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/action-edit.svg );
+	background-image: /* @embed */ url( ../images/action-edit.svg );
 	background-size: 18px 18px;
 	padding-left: 19px;
 }
@@ -477,7 +477,7 @@
 .tux-editor-insert-buttons .tux-editor-paste-original-button {
 	background: #fbfbfb left center no-repeat;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/paste.svg );
+	background-image: url( ../images/paste.svg );
 	background-size: 16px 16px;
 	padding-left: 18px;
 }
@@ -515,7 +515,7 @@
 .tux-message-tools-menu li.selected {
 	background: right no-repeat;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
+	background-image: url( ../images/label-tick.svg );
 	color: #222;
 }
 

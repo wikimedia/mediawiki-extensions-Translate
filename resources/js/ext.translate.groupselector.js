@@ -509,7 +509,7 @@
 			}
 
 			if ( messagegroup.icon && messagegroup.icon.vector ) {
-				style += 'background-image: linear-gradient(transparent, transparent), url(--);';
+				style += 'background-image: url(--);';
 				style = style.replace( /--/g, messagegroup.icon.vector );
 			}
 

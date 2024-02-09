@@ -86,7 +86,7 @@
 	height: 18px; /* Icon height + 3px */
 	background: top right no-repeat;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/user-small.svg );
+	background-image: url( ../images/user-small.svg );
 }
 
 .tux-proofread-status {
@@ -96,21 +96,21 @@
 .tux-proofread-status.fuzzy {
 	background: left center no-repeat;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
+	background-image: url( ../images/outdated-ltr.svg );
 	height: 40px;
 }
 
 .tux-proofread-status.untranslated {
 	background: left center no-repeat;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
+	background-image: url( ../images/translate-ltr.svg );
 	height: 40px;
 }
 
 .tux-proofread-action {
 	background-position: right top;
 	background-repeat: no-repeat;
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
+	background-image: /* @embed */ url( ../images/check-sprite-ltr.svg );
 	/* There is 1px white row between each icon */
 	height: 30px;
 	cursor: pointer;
@@ -139,7 +139,7 @@
 }
 
 .tux-proofread-edit {
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
+	background-image: /* @embed */ url( ../images/edit-mark.svg );
 	background-repeat: no-repeat;
 	background-position: right center;
 	height: 50px;
@@ -173,7 +173,7 @@
 	display: inline-block;
 	background: left bottom no-repeat;
 	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/check-small.svg );
+	background-image: url( ../images/check-small.svg );
 	height: 12px;
 	width: 14px;
 }

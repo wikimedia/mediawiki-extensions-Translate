@@ -22,7 +22,7 @@
 
 .tsb-container.grid .search.pane {
 	background: no-repeat scroll left top transparent;
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/search.svg );
+	background-image: /* @embed */ url( ../images/search.svg );
 	background-size: 22px;
 	padding-left: 30px;
 	background-position-y: 10px;
