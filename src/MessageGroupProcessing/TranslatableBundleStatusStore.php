@@ -63,6 +63,7 @@ class TranslatableBundleStatusStore {
 		$resultSet = $this->database->newSelectQueryBuilder()
 			->select( [ 'ttb_page_id', 'ttb_status' ] )
 			->from( self::TABLE_NAME )
+			->caller( __METHOD__ )
 			->fetchResultSet();
 
 		$result = [];
