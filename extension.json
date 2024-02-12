@@ -86,7 +86,6 @@
 		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
 		"GettextFFS": "src/FileFormatSupport/GettextFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\GettextFormat": "src/FileFormatSupport/GettextFormat.php",
-		"HashMessageIndex": "utils/MessageIndex.php",
 		"IniFFS": "src/FileFormatSupport/IniFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\IniFormat": "src/FileFormatSupport/IniFormat.php",
 		"JavaFFS": "src/FileFormatSupport/JavaFormat.php",

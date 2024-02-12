@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use ContentHandler;
 use HashBagOStuff;
-use HashMessageIndex;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;

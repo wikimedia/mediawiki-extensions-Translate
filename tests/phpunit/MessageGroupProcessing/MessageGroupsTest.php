@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use HashBagOStuff;
-use HashMessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWikiIntegrationTestCase;
 use MessageIndex;
 use WANObjectCache;

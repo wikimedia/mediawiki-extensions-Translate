@@ -690,34 +690,3 @@ class CDBMessageIndex extends MessageIndex {
 		return $this->reader;
 	}
 }
-
-/**
- * Storage on hash.
- *
- * For testing.
- *
- * @since 2015.04
- */
-class HashMessageIndex extends MessageIndex {
-	/** @var array */
-	protected $index = [];
-
-	public function retrieve( bool $readLatest = false ): array {
-		return $this->index;
-	}
-
-	/**
-	 * @param string $key
-	 * @return mixed
-	 */
-	protected function get( $key ) {
-		return $this->index[$key] ?? null;
-	}
-
-	protected function store( array $array, array $diff ) {
-		$this->index = $array;
-	}
-
-	protected function clearMessageGroupStats( array $diff ) {
-	}
-}

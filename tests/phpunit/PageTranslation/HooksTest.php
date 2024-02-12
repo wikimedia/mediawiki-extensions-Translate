@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
 use HashBagOStuff;
-use HashMessageIndex;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;

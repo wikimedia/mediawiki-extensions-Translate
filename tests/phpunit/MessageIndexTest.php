@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\SerializedMessageIndex;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
@@ -259,7 +260,7 @@ class TestableSerializedMessageIndex extends SerializedMessageIndex {
 }
 
 class TestableHashMessageIndex extends HashMessageIndex {
-	public function store( array $a, array $diff ) {
+	public function store( array $a, array $diff ): void {
 		parent::store( $a, $diff );
 	}
 

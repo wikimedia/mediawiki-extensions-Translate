@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use Generator;
 use HashBagOStuff;
-use HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWikiIntegrationTestCase;
 use MessageGroup;
 use MessageIndex;
