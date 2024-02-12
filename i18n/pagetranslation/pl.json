@@ -18,7 +18,8 @@
 			"Sp5uhe",
 			"ToSter",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Msz2001"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -249,7 +250,7 @@
 	"pp-cancel-button-label": "Anuluj",
 	"pp-save-message": "Strona została opublikowana. Możesz ją [$1 edytować].",
 	"pp-prepare-message": "Strona została przygotowana do tłumaczenia. Przejrzyj poniższy diff. Jeśli wszystko jest porządku, kliknij przycisk „{{int:pp-save-button-label}}”!",
-	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
+	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia albo nie może być automatycznie przygotowana. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
 	"pp-diff-error": "Podczas pobierania różnicy z serwera wystąpił błąd.",
 	"pp-pagename-missing": "Podaj nazwę strony.",
 	"pp-diff-old-header": "Tekst źródłowy",

@@ -215,7 +215,7 @@
 	"logentry-translationreview-message": "$1 {{GENDER:$2|теллина}} «$3» гочдар",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|хийцина}} «$3» агӀонан гочдар $4 мотт «$6» → «$7»",
 	"group-translate-sandboxed": "ЧӀагӀбина гочдархой",
-	"translate-workflow-state-": "(яздина дац)",
+	"translate-workflow-state-": "(билгалдина дац)",
 	"translate-workflowstatus": "Статус: $1",
 	"translate-workflow-set-doing": "ДӀахӀоттош йу...",
 	"translate-stats-workflow": "Статус",
