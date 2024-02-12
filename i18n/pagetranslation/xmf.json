@@ -36,5 +36,6 @@
 	"tpt-invalid-group": "ჩილათირი ბუნა",
 	"pt-parse-open": "უდუბალანსებუ &lt;translate> ხინტკი.\nთანგუაშ თანგი: <pre>$1</pre>",
 	"log-name-pagetranslation": "ხასჷლაშ თანგუაშ ჟურნალი",
-	"log-action-filter-pagetranslation": "ქიმინუაშ ტიპი:"
+	"log-action-filter-pagetranslation": "ქიმინუაშ ტიპი:",
+	"pt-deletepage-list-translation": "ოთანგალი ხასჷლეფი"
 }
