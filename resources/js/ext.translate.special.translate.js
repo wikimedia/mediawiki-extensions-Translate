@@ -205,6 +205,20 @@
 			return;
 		}
 
+		var headerMessage, languagesMessage;
+		if ( !group.prioritylangs && group.priorityforce ) {
+			headerMessage = mw.message(
+				'tpt-discouraged-language-force-header',
+				$.uls.data.getAutonym( language )
+			);
+			languagesMessage = mw.message( 'tpt-translation-restricted-no-priority-languages-no-reason' );
+			$groupWarning.append(
+				$( '<p>' ).append( $( '<strong>' ).text( headerMessage.text() ) ),
+				$( '<p>' ).text( languagesMessage.text() )
+			);
+			return;
+		}
+
 		if ( !group.prioritylangs || isPriorityLanguage( language, group.prioritylangs ) ) {
 			return;
 		}
@@ -223,7 +237,6 @@
 			}
 		} );
 
-		var headerMessage, languagesMessage;
 		if ( group.priorityforce ) {
 			headerMessage = mw.message(
 				'tpt-discouraged-language-force-header',

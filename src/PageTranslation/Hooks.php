@@ -1119,9 +1119,16 @@ class Hooks {
 
 		// And finally check whether the language is in the inclusion list
 		$languages = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
+		if ( !$languages ) {
+			if ( $reason ) {
+				return [ 'tpt-translation-restricted-no-priority-languages', $reason ];
+			}
+			return [ 'tpt-translation-restricted-no-priority-languages-no-reason' ];
+		}
+
 		$filter = array_flip( explode( ',', $languages ) );
 		if ( !isset( $filter[$handle->getCode()] ) ) {
-			$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
 			if ( $reason ) {
 				return [ 'tpt-translation-restricted', $reason ];
 			}
