@@ -12,7 +12,6 @@ require_once "$IP/maintenance/Maintenance.php";
 // Manually load required classes, as autoloader is not available until RUN_MAINTENANCE_IF_MAIN
 require_once __DIR__ . '/../src/Utilities/BaseMaintenanceScript.php';
 // $maintClass must be after Maintenance.php
-// @phan-suppress-next-line PhanUndeclaredGlobalVariable
 $maintClass = $class;
 $file = strtr( $maintClass, [ 'MediaWiki\\Extension\\Translate\\' => '', '\\' => '/' ] );
 require_once __DIR__ . "/../src/$file.php";

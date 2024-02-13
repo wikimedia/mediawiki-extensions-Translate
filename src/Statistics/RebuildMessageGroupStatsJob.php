@@ -18,6 +18,10 @@ use MessageGroupStats;
  * @ingroup JobQueue
  */
 class RebuildMessageGroupStatsJob extends GenericTranslateJob {
+	public const GROUP_ID = 'groupid';
+	public const LANGUAGE_CODE = 'languagecode';
+	public const CLEAR_GROUPS = 'cleargroups';
+	public const REFRESH = 'purge';
 	/** @inheritdoc */
 	protected $removeDuplicates = true;
 
@@ -35,7 +39,7 @@ class RebuildMessageGroupStatsJob extends GenericTranslateJob {
 	 * @param string[] $messageGroupIds
 	 */
 	public static function newRefreshGroupsJob( array $messageGroupIds ): self {
-		return new self( Title::newMainPage(), [ 'cleargroups' => $messageGroupIds ] );
+		return new self( Title::newMainPage(), [ self::CLEAR_GROUPS => $messageGroupIds ] );
 	}
 
 	public function __construct( Title $title, array $params = [] ) {
@@ -61,16 +65,18 @@ class RebuildMessageGroupStatsJob extends GenericTranslateJob {
 		// There is still a possibility that, due to replication lag, an old value is read.
 		MessageGroups::singleton()->clearProcessCache();
 
-		if ( isset( $params[ 'purge' ] ) && $params[ 'purge' ] ) {
+		if ( isset( $params[self::REFRESH] ) && $params[self::REFRESH] ) {
 			$flags |= MessageGroupStats::FLAG_NO_CACHE;
 		}
 
-		if ( isset( $params[ 'groupid' ] ) ) {
-			MessageGroupStats::forGroup( $params[ 'groupid' ], $flags );
-		} elseif ( isset( $params[ 'cleargroups' ] ) ) {
-			MessageGroupStats::clearGroup( $params[ 'cleargroups' ], $flags );
-		} elseif ( isset( $params[ 'languagecode' ] ) ) {
-			MessageGroupStats::forLanguage( $params[ 'languagecode' ], $flags );
+		if ( isset( $params[self::GROUP_ID] ) && isset( $params[self::LANGUAGE_CODE] ) ) {
+			MessageGroupStats::forItem( $params[self::GROUP_ID], $params[self::LANGUAGE_CODE], $flags );
+		} elseif ( isset( $params[self::GROUP_ID] ) ) {
+			MessageGroupStats::forGroup( $params[self::GROUP_ID], $flags );
+		} elseif ( isset( $params[self::CLEAR_GROUPS] ) ) {
+			MessageGroupStats::clearGroup( $params[self::CLEAR_GROUPS], $flags );
+		} elseif ( isset( $params[self::LANGUAGE_CODE] ) ) {
+			MessageGroupStats::forLanguage( $params[self::LANGUAGE_CODE], $flags );
 		} else {
 			throw new InvalidArgumentException( 'No groupid or languagecode or cleargroup provided' );
 		}
