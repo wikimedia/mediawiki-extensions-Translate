@@ -499,23 +499,6 @@ class ElasticSearchTTMServer
 		return $this->config['replicas'] ?? '0-2';
 	}
 
-	/**
-	 * Get index health
-	 * TODO: Remove this code in the future as we drop support for
-	 * older versions of the Elastica extension.
-	 *
-	 * @param string $indexName
-	 * @return array the index health status
-	 */
-	protected function getIndexHealth( $indexName ) {
-		$path = "_cluster/health/$indexName";
-		$response = $this->getClient()->request( $path );
-		if ( $response->hasError() ) {
-			throw new Exception( "Error while fetching index health status: " . $response->getError() );
-		}
-		return $response->getData();
-	}
-
 	protected function waitUntilReady() {
 		$statuses = MWElasticUtils::waitForGreen(
 			$this->getClient(),
