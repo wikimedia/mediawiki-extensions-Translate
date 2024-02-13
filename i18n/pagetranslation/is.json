@@ -149,7 +149,7 @@
 	"pt-deletepage-subpages": "Eyða öllum undirsíðum",
 	"pt-deletepage-list-pages": "Listi yfir síður sem á að eyða",
 	"pt-deletepage-list-translation": "Þýðingarsíður",
-	"pt-deletepage-list-section": "Síður með þýðingareiningum",
+	"pt-deletepage-list-section": "Síður þýðingareininga",
 	"pt-deletepage-list-other": "Aðrar undirsíður",
 	"pt-deletepage-list-count": "Samtals $1 {{PLURAL:$1|síða|síður}} sem á að eyða.",
 	"pt-deletepage-full-logreason": "Hluti af þýðanlegri síðu \"$1\"",
