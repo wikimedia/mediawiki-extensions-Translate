@@ -8,7 +8,8 @@
 			"Ole Yves",
 			"Redredsonia",
 			"Stjn",
-			"Vlad5250"
+			"Vlad5250",
+			"Bashkorttan"
 		]
 	},
 	"managetranslatorsandbox": "Управление песочницей переводчика",
@@ -53,7 +54,7 @@
 	"tsb-create-user-page": "Создана основная страница участника",
 	"log-name-translatorsandbox": "Журнал песочницы для переводов",
 	"log-description-translatorsandbox": "Журнал действий с участниками песочницы переводов",
-	"logentry-translatorsandbox-promoted": "$1 сделал{{GENDER:$2||а}} $3 {{GENDER:$4|переводчиком}}",
+	"logentry-translatorsandbox-promoted": "$1 $3 ҡулланыусыһын {{GENDER:$4|тәржемәсе}} {{GENDER:$2|итте}}",
 	"logentry-translatorsandbox-rejected": "$1 отклонил{{GENDER:$2||а}} запрос от «$3» на получение статуса переводчика.",
 	"logentry-newusers-tsbpromoted": "Учётная запись участника $3 была {{GENDER:$2|создана}} из записи в песочнице"
 }

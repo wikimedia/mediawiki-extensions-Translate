@@ -5,7 +5,8 @@
 			"Minh Nguyen",
 			"Pols12",
 			"Trần Nguyễn Minh Huy",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Tryvix1509"
 		]
 	},
 	"pagetranslation": "Biên dịch trang",
@@ -68,7 +69,7 @@
 	"tpt-discouraged-language-force-header": "Không thể biên dịch trang này ra $1.",
 	"tpt-discouraged-language-force-content": "Một người quản lý biên dịch chỉ cho phép dịch trang ra $1.",
 	"tpt-discouraged-language-header": "Việc biên dịch ra $1 không phải là một ưu tiên cho trang này.",
-	"tpt-discouraged-language-content": "Một người quản lý biên dịch đã quyết định chú trọng vào việc biên dịch ra $1.",
+	"tpt-discouraged-language-content": "Một bảo quản viên bản dịch đã quyết định chú trọng vào việc biên dịch sang $1.",
 	"tpt-discouraged-language-force": "<strong>Không thể biên dịch trang này ra $2.</strong>\n\nMột người quản lý biên dịch chỉ cho phép dịch trang ra $3.",
 	"tpt-priority-languages": "Một người quản lý biên dịch đã đặt các ngôn ngữ quan trọng của nhóm này là $1.",
 	"tpt-render-summary": "Cập nhật đến phiên bản mới của trang nguồn",
