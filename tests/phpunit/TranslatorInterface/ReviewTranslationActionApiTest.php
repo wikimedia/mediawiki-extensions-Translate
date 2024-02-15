@@ -36,7 +36,6 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 			],
 			'*' => [
 				'read' => true,
-				'writeapi' => true
 			]
 		] );
 

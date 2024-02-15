@@ -43,7 +43,6 @@ class TranslateSandboxHookHandler implements
 			'readapi',
 			'translate-sandboxaction',
 			'viewmyprivateinfo',
-			'writeapi',
 		];
 
 		// Do not let other hooks add more actions
