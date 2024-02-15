@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MyraMidnight",
+			"Stefán Örvar Sigmundsson",
 			"Sveinn í Felli"
 		]
 	},
@@ -14,9 +15,9 @@
 	"apihelp-query+messagecollection-example-1": "Listi yfir studd tungumál",
 	"apihelp-query+messagetranslations-param-title": "Heildartitill á þekktum skilaboðum.",
 	"apihelp-translatesandbox-param-do": "Hvað skal gera.",
-	"apihelp-translatesandbox-param-username": "Notendanafn við sköpun notanda.",
-	"apihelp-translatesandbox-param-password": "Lykilorð við sköpun notanda.",
-	"apihelp-translatesandbox-param-email": "Netfang við sköpun notanda.",
+	"apihelp-translatesandbox-param-username": "Notandanafn þegar notandi er búinn til.",
+	"apihelp-translatesandbox-param-password": "Aðgangsorð þegar notandi er búinn til.",
+	"apihelp-translatesandbox-param-email": "Tölvupóstfang þegar notandi er búinn til.",
 	"apihelp-translationaids-param-title": "Heildartitill á þekktum skilaboðum.",
 	"apihelp-translationstash-param-subaction": "Aðgerð.",
 	"apihelp-searchtranslations-summary": "Leita í þýðingum",

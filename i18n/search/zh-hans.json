@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Angrydog001",
+			"Anterdc99",
 			"Hydra",
 			"Li3939108",
 			"Liuxinyu970226",
@@ -14,6 +15,7 @@
 	"tux-sst-view-foreign": "在$1查看",
 	"tux-sst-search": "搜索",
 	"tux-sst-search-ph": "搜索译文",
+	"tux-sst-search-info": "使用运算符<code>language:</code>或<code>group:</code>进一步限定搜索条件",
 	"tux-sst-count": "{{PLURAL:$1|找到$1个结果}}",
 	"tux-sst-facet-language": "语言",
 	"tux-sst-facet-group": "信息组",
