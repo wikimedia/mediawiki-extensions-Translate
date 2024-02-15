@@ -133,7 +133,7 @@ return [
 		$class = array_shift( $params );
 
 		if ( !class_exists( $class ) ) {
-			$class = "Mediawiki\\Extension\\Translate\\MessageLoading\\$class";
+			$class = "MediaWiki\\Extension\\Translate\\MessageLoading\\$class";
 		}
 
 		return new $class( $params );
