@@ -52,9 +52,10 @@ abstract class TranslatableBundle {
 	abstract public function isDeletable(): bool;
 
 	protected function getTranslationUnitPagesByTitle( PageReference $title, ?string $code = null ): array {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$mwServices = MediaWikiServices::getInstance();
 
-		$base = MediaWikiServices::getInstance()->getTitleFormatter()->getPrefixedDBkey( $title );
+		$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$base = $mwServices->getTitleFormatter()->getPrefixedDBkey( $title );
 		// Including the / used as separator
 		$baseLength = strlen( $base ) + 1;
 

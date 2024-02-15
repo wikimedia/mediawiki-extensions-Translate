@@ -31,7 +31,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 		$mean = 15;
 		$stddev = 20;
 
-		$stash = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
+		$stash = new TranslationStashStorage( $this->getDB( DB_PRIMARY ) );
 
 		$languages = array_keys( MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames() );
 

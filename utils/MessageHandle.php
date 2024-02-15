@@ -244,7 +244,7 @@ class MessageHandle {
 	 * @return bool If title is marked fuzzy.
 	 */
 	public function isFuzzy() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$tables = [ 'page', 'revtag' ];
 		$field = 'rt_type';

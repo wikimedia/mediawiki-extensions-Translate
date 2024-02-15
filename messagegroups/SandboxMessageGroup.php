@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -54,7 +55,9 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		$list = [];
 
 		// Ugly
-		$store = new TranslationStashStorage( wfGetDB( DB_PRIMARY ) );
+		$store = new TranslationStashStorage(
+			MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY )
+		);
 		$user = RequestContext::getMain()->getUser();
 		$translations = $store->getTranslations( $user );
 

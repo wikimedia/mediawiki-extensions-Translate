@@ -68,7 +68,6 @@ class CreateCheckIndex extends Maintenance {
 			$this->fatalError( "Pattern '$reqGroupsPattern' did not match any groups" );
 		}
 
-		$groups = MessageGroups::singleton()->getGroups();
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		/** @var MessageGroup $g */
@@ -126,18 +125,18 @@ class CreateCheckIndex extends Maintenance {
 					}
 				}
 
-				self::tagFuzzy( $problematic );
+				$this->tagFuzzy( $problematic );
 			}
 		}
 	}
 
-	public static function tagFuzzy( array $problematic ): void {
+	public function tagFuzzy( array $problematic ): void {
 		if ( $problematic === [] ) {
 			return;
 		}
 
 		$titleConditions = [];
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->getDB( DB_PRIMARY );
 
 		foreach ( $problematic as $p ) {
 			// Normalize page key

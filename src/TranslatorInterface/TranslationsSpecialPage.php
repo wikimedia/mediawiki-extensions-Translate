@@ -13,6 +13,7 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Title\Title;
 use MessageHandle;
 use SpecialAllPages;
+use Wikimedia\Rdbms\ILoadBalancer;
 use Xml;
 
 /**
@@ -25,16 +26,20 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslationsSpecialPage extends SpecialAllPages {
-	/** @var Language */
-	private $contentLanguage;
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
+	private Language $contentLanguage;
+	private LanguageNameUtils $languageNameUtils;
+	private ILoadBalancer $loadBalancer;
 
-	public function __construct( Language $contentLanguage, LanguageNameUtils $languageNameUtils ) {
+	public function __construct(
+		Language $contentLanguage,
+		LanguageNameUtils $languageNameUtils,
+		ILoadBalancer $loadBalancer
+	) {
 		parent::__construct();
 		$this->mName = 'Translations';
 		$this->contentLanguage = $contentLanguage;
 		$this->languageNameUtils = $languageNameUtils;
+		$this->loadBalancer = $loadBalancer;
 	}
 
 	protected function getGroupName() {
@@ -176,8 +181,7 @@ class TranslationsSpecialPage extends SpecialAllPages {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
-
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $dbr->select( 'page',
 			[ 'page_namespace', 'page_title' ],
 			[

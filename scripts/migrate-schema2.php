@@ -31,7 +31,8 @@ class TSchema2 extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->getDB( DB_PRIMARY );
+
 		if ( !$dbw->tableExists( 'revtag', __METHOD__ ) ) {
 			$this->fatalError( "Table revtag doesn't exist. Translate extension is not installed?" );
 		}

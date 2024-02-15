@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -54,7 +55,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	}
 
 	protected function getRCCutoff() {
-		$db = wfGetDB( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$tables = 'recentchanges';
 		$max = $db->selectField( $tables, 'MAX(rc_id)', [], __METHOD__ );
 
@@ -67,7 +68,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 */
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
-		$db = wfGetDB( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
@@ -94,7 +95,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 				throw new BadMethodCallException( 'Language not set' );
 		}
 
-		$db = wfGetDB( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$rcQuery = RecentChange::getQueryInfo();
 		$tables = $rcQuery['tables'];

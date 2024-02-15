@@ -46,7 +46,6 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 			[
 				$name => [
 					'database' => false,
-					// Passed to wfGetDB
 					'cutoff' => 0.75,
 					'type' => 'ttmserver',
 					'public' => false,
@@ -85,7 +84,6 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 	public static function provideGetWritable(): Generator {
 		$dummyTtm = [
 			'database' => false,
-			// Passed to wfGetDB
 			'cutoff' => 0.75,
 			'type' => 'ttmserver',
 			'public' => false,

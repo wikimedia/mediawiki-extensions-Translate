@@ -87,10 +87,14 @@ class TranslationAidDataProvider {
 			return $this->translations;
 		}
 
-		$data = self::loadTranslationData( wfGetDB( DB_REPLICA ), $this->handle );
+		$mwServices = MediaWikiServices::getInstance();
+		$data = self::loadTranslationData(
+			$mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA ),
+			$this->handle
+		);
 		$translations = [];
 		$prefixLength = strlen( $this->handle->getTitleForBase()->getDBkey() . '/' );
-		$languageNameUtils = MediaWikiServices::getInstance()->getLanguageNameUtils();
+		$languageNameUtils = $mwServices->getLanguageNameUtils();
 
 		foreach ( $data as $page => $translation ) {
 			// Could use MessageHandle here, but that queries the message index.

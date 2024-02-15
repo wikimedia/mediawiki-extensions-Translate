@@ -389,7 +389,7 @@ class HookHandler implements
 			$wgTranslateTranslationDefaultService = 'TTMServer';
 			if ( !isset( $wgTranslateTranslationServices['TTMServer'] ) ) {
 				$wgTranslateTranslationServices['TTMServer'] = [
-					'database' => false, // Passed to wfGetDB
+					'database' => false,
 					'cutoff' => 0.75,
 					'type' => 'ttmserver',
 					'public' => false,

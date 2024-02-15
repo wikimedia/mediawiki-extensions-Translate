@@ -54,14 +54,15 @@ class MessageBundle extends TranslatableBundle {
 	}
 
 	public static function isSourcePage( Title $title ): bool {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$mwServices = MediaWikiServices::getInstance();
+		$cache = $mwServices->getMainWANObjectCache();
 		$cacheKey = $cache->makeKey( 'messagebundle', 'source' );
 
 		$translatablePageIds = $cache->getWithSetCallback(
 			$cacheKey,
 			$cache::TTL_HOUR * 2,
-			static function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = wfGetDB( DB_REPLICA );
+			static function ( $oldValue, &$ttl, array &$setOpts ) use ( $mwServices ) {
+				$dbr = $mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return RevTagStore::getTranslatableBundleIds( RevTagStore::MB_VALID_TAG );

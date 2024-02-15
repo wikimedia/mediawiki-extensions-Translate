@@ -279,7 +279,8 @@
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslationsSpecialPage",
 			"services": [
 				"ContentLanguage",
-				"LanguageNameUtils"
+				"LanguageNameUtils",
+				"DBLoadBalancer"
 			]
 		},
 		"TranslationStats": {

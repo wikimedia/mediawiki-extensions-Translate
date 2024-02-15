@@ -26,7 +26,8 @@ class TS extends Maintenance {
 	public function execute() {
 		global $wgDisableUserGroupExpiry;
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->getDB( DB_REPLICA );
+
 		$users = $dbr->select(
 			[ 'user', 'user_groups' ],
 			[
