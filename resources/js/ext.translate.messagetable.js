@@ -362,6 +362,9 @@
 			}
 
 			this.updateLastMessage();
+
+			// Trigger a scroll event to make sure enough messages are loaded
+			$( window ).trigger( 'scroll' );
 		},
 
 		resize: function () {
