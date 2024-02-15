@@ -326,7 +326,11 @@
 						$message.data( 'pagemode' ) ||
 						$message.data( 'proofread' ) ).message;
 
-				if ( matcher.test( message.definition ) || matcher.test( message.translation ) ) {
+				if (
+					matcher.test( message.definition ) ||
+					matcher.test( message.translation ) ||
+					matcher.test( message.key )
+				) {
 					$message.removeClass( 'hide' );
 					resultCount++;
 				} else {
