@@ -411,7 +411,9 @@
 			);
 
 			// Update the target language
-			this.$container.data( 'targetlangcode', this.settings.language );
+			var languageDetails = mw.translate.getLanguageDetailsForHtml( this.settings.language );
+			this.$container.data( 'targetlangcode', languageDetails.code );
+			this.$container.data( 'targetlangdir', languageDetails.direction );
 
 			// Reset the statsbar
 			this.$statsBar
