@@ -734,6 +734,15 @@
 					$skipButton.trigger( 'click' );
 				} );
 
+				// Make the Ctrl+Enter shortcut work in the edit summary field
+				$editSummary.on( 'keydown', function ( e ) {
+					if ( !e.ctrlKey || e.keyCode !== 13 ) {
+						return;
+					}
+
+					$saveButton.trigger( 'click' );
+				} );
+
 				if ( originalTranslation !== null ) {
 					$discardChangesButton = $( '<button>' )
 						.addClass( 'tux-editor-discard-changes-button hide' ) // Initially hidden
