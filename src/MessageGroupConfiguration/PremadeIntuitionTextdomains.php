@@ -11,7 +11,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
  * @copyright Copyright © 2011, Krinkle
  * @license GPL-2.0-or-later
  */
-class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
+class PremadeIntuitionTextdomains extends PremadeMediaWikiExtensionGroups {
 	protected array $groups;
 
 	/** @inheritDoc */
@@ -53,7 +53,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			$g['mangle'] = [ '*' ];
 
 			// Prevent E_NOTICE undefined index.
-			// PremadeMediawikiExtensionGroups::factory should probably check this better instead
+			// PremadeMediaWikiExtensionGroups::factory should probably check this better instead
 			if ( !isset( $g['ignored'] ) ) {
 				$g['ignored'] = [];
 			}

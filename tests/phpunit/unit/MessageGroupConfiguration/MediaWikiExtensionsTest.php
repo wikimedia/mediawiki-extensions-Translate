@@ -10,14 +10,14 @@ use MediaWikiUnitTestCase;
  * Test for parsing the special definition file for mediawiki-extensions
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \MediaWiki\Extension\Translate\MessageGroupConfiguration\PremadeMediawikiExtensionGroups
+ * @covers \MediaWiki\Extension\Translate\MessageGroupConfiguration\PremadeMediaWikiExtensionGroups
  */
 class MediaWikiExtensionsTest extends MediaWikiUnitTestCase {
 	/** @requires function yaml_parse */
 	public function testParsing(): void {
 		$defs = __DIR__ . '/../../data/mediawiki-extensions.txt';
 		$path = '%GROUPROOT%/mediawiki-extensions/extensions';
-		$foo = new PremadeMediawikiExtensionGroups( $defs, $path );
+		$foo = new PremadeMediaWikiExtensionGroups( $defs, $path );
 		$list = $deps = $autoload = [];
 		$foo->register( $list, $deps, $autoload );
 

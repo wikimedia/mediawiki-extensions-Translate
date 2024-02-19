@@ -18,7 +18,7 @@ use UnexpectedValueException;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-class PremadeMediawikiExtensionGroups {
+class PremadeMediaWikiExtensionGroups {
 	protected string $idPrefix = 'ext-';
 	protected ?int $namespace = null;
 	/** @see __construct */
@@ -297,4 +297,4 @@ class PremadeMediawikiExtensionGroups {
 	}
 }
 
-class_alias( PremadeMediawikiExtensionGroups::class, 'PremadeMediawikiExtensionGroups' );
+class_alias( PremadeMediaWikiExtensionGroups::class, 'PremadeMediaWikiExtensionGroups' );
