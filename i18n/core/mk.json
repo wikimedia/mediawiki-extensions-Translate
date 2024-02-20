@@ -462,5 +462,6 @@
 	"log-action-filter-translationreview-message": "Проверка на поединечни пораки за превод",
 	"log-action-filter-translationreview-group": "Промени во напредокот на преведувањата",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|увезе}} преводливо купче $3",
-	"log-action-filter-import-translatable-bundle": "Увоз на преводливи купчиња"
+	"log-action-filter-import-translatable-bundle": "Увоз на преводливи купчиња",
+	"translate-hidetranslations": "Скриј преводни страници"
 }
