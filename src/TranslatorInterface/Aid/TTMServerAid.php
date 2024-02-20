@@ -118,9 +118,9 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			// TtmServerActionApi expands this... need to fix it again to be the bare name
 			if ( $local ) {
 				$pagename = urldecode( substr( $item['location'], $localPrefixLength ) );
-				$item['location'] = $pagename;
 				$handle = new MessageHandle( Title::newFromText( $pagename ) );
 				$item['editorUrl'] = Utilities::getEditorUrl( $handle );
+				$item['location'] = $handle->getTitle()->getPrefixedText();
 			}
 		}
 		return $items;
