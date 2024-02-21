@@ -9,7 +9,7 @@ use MessageHandle;
 use TitleArrayFromResult;
 
 /**
- * Helper class that cotains utility methods to help with identifying and replace titles.
+ * Helper class that contains utility methods to help with identifying and replace titles.
  * @author Abijeet Patro
  * @since 2019.10
  * @license GPL-2.0-or-later
