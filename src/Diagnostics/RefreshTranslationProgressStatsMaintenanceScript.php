@@ -19,7 +19,7 @@ use TranslateUtils;
  * @license GPL-2.0-or-later
  * @since 2024.02
  */
-class RefreshTranslationProgressStats extends BaseMaintenanceScript {
+class RefreshTranslationProgressStatsMaintenanceScript extends BaseMaintenanceScript {
 	private Language $language;
 
 	public function __construct() {

@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extension\Translate\Diagnostics\RefreshTranslationProgressStats;
+use MediaWiki\Extension\Translate\Diagnostics\RefreshTranslationProgressStatsMaintenanceScript;
 
-$class = RefreshTranslationProgressStats::class;
+$class = RefreshTranslationProgressStatsMaintenanceScript::class;
 require_once __DIR__ . '/../scripts/__bootstrap.php';
