@@ -72,7 +72,6 @@
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\AppleFormat": "src/FileFormatSupport/AppleFormat.php",
 		"CachedMessageGroupLoader": "messagegroups/loaders/CachedMessageGroupLoader.php",
 		"CrossLanguageTranslationSearchQuery": "ttmserver/CrossLanguageTranslationSearchQuery.php",
-		"DatabaseMessageIndex": "utils/MessageIndex.php",
 		"DtdFFS": "src/FileFormatSupport/DtdFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\DtdFormat": "src/FileFormatSupport/DtdFormat.php",
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",

@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\CDBMessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\DatabaseMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\SerializedMessageIndex;
 use MediaWiki\HookContainer\HookContainer;
@@ -231,7 +232,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 }
 
 class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
-	public function store( array $a, array $diff ) {
+	public function store( array $a, array $diff ): void {
 		parent::store( $a, $diff );
 	}
 
