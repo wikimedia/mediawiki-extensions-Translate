@@ -52,7 +52,6 @@ class RefreshTranslationProgressStats extends BaseMaintenanceScript {
 		$groupInput = $this->getOption( 'group', '*' );
 		$groupIdPattern = self::commaList2Array( $groupInput );
 		$groupIds = MessageGroups::expandWildcards( $groupIdPattern );
-		$groups = MessageGroups::getGroupsById( $groupIds );
 
 		// All language codes are internally lower case in MediaWiki
 		$languageInput = strtolower( $this->getOption( 'language', '*' ) );
@@ -60,30 +59,35 @@ class RefreshTranslationProgressStats extends BaseMaintenanceScript {
 		$languages = $this->getLanguages( $languagePattern );
 
 		$useJobQueue = $this->hasOption( 'use-job-queue' );
-		$jobs = [];
+		$jobQueueGroup = MediaWikiServices::getInstance()->getJobQueueGroup();
+		$jobCount = count( $groupIds ) * count( $languages );
+		$counter = 0;
 
-		foreach ( $groups as $groupId => $group ) {
+		foreach ( $groupIds as $groupId ) {
+			$jobs = [];
 			foreach ( $languages as $language ) {
-				$jobs[] = RebuildMessageGroupStatsJob::newJob( [
+				$jobs[] = $job = RebuildMessageGroupStatsJob::newJob( [
 					RebuildMessageGroupStatsJob::REFRESH => true,
 					RebuildMessageGroupStatsJob::GROUP_ID => $groupId,
 					RebuildMessageGroupStatsJob::LANGUAGE_CODE => $language
 				] );
+
+				if ( !$useJobQueue ) {
+					$job->run();
+				}
+				$this->output( "\033[0K\r" . $this->cliProgressBar( $jobCount, ++$counter ) );
+			}
+
+			if ( $useJobQueue ) {
+				$jobQueueGroup->push( $jobs );
 			}
 		}
 
-		$jobCount = count( $jobs );
 		if ( $useJobQueue ) {
-			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
-			$message = new RawMessage( "Queued {{PLURAL:$1|$1 job|$1 jobs}}.\n", [ $jobCount ] );
+			$message = new RawMessage( "\nQueued {{PLURAL:$1|$1 job|$1 jobs}}.", [ $jobCount ] );
 			$this->output( $message->text() );
-		} else {
-			foreach ( $jobs as $i => $job ) {
-				$this->output( "\033[0K\r" . $this->cliProgressBar( $jobCount, $i + 1 ) );
-				$job->run();
-			}
-			$this->output( "\n" );
 		}
+		$this->output( "\n" );
 	}
 
 	private static function commaList2Array( string $list ): array {
