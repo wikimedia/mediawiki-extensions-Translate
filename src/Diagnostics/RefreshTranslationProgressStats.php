@@ -3,12 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Diagnostics;
 
+use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Language\RawMessage;
-use MediaWiki\MediaWikiServices;
 use TranslateUtils;
 
 /**
@@ -20,6 +20,8 @@ use TranslateUtils;
  * @since 2024.02
  */
 class RefreshTranslationProgressStats extends BaseMaintenanceScript {
+	private Language $language;
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Refresh cached message group stats to fix any outdated entries' );
@@ -49,6 +51,8 @@ class RefreshTranslationProgressStats extends BaseMaintenanceScript {
 
 	/** @inheritDoc */
 	public function execute() {
+		$this->language = $this->getServiceContainer()->getContentLanguage();
+
 		$groupInput = $this->getOption( 'group', '*' );
 		$groupIdPattern = self::commaList2Array( $groupInput );
 		$groupIds = MessageGroups::expandWildcards( $groupIdPattern );
@@ -59,9 +63,11 @@ class RefreshTranslationProgressStats extends BaseMaintenanceScript {
 		$languages = $this->getLanguages( $languagePattern );
 
 		$useJobQueue = $this->hasOption( 'use-job-queue' );
-		$jobQueueGroup = MediaWikiServices::getInstance()->getJobQueueGroup();
+		$jobQueueGroup = $this->getServiceContainer()->getJobQueueGroup();
 		$jobCount = count( $groupIds ) * count( $languages );
 		$counter = 0;
+
+		$startTime = microtime( true );
 
 		foreach ( $groupIds as $groupId ) {
 			$jobs = [];
@@ -75,12 +81,14 @@ class RefreshTranslationProgressStats extends BaseMaintenanceScript {
 				if ( !$useJobQueue ) {
 					$job->run();
 				}
-				$this->output( "\033[0K\r" . $this->cliProgressBar( $jobCount, ++$counter ) );
+				$elapsed = microtime( true ) - $startTime;
+				$this->output( "\033[0K\r" . $this->cliProgressBar( $jobCount, ++$counter, $elapsed ) );
 			}
 
 			if ( $useJobQueue ) {
 				$jobQueueGroup->push( $jobs );
 			}
+
 		}
 
 		if ( $useJobQueue ) {
@@ -120,12 +128,14 @@ class RefreshTranslationProgressStats extends BaseMaintenanceScript {
 		return $matchedLanguages;
 	}
 
-	private function cliProgressBar( int $total, int $current ): string {
+	private function cliProgressBar( int $total, int $current, float $elapsed ): string {
 		$barLength = 50;
-		$filledLength = (int)round( $barLength * $current / $total );
-		$percent = $current / $total * 100;
+		$progress = $current / $total;
+		$filledLength = (int)round( $barLength * $progress );
 		$bar = str_repeat( '#', $filledLength ) . str_repeat( '-', ( $barLength - $filledLength ) );
+		$percent = $current / $total * 100;
+		$estimatedRemaining = $this->language->formatDuration( (int)( $elapsed / $progress - $elapsed ) );
 
-		return sprintf( 'Progress: [%s] %.2f%%', $bar, $percent );
+		return sprintf( 'Progress: [%s] %.2f%% | %s remaining', $bar, $percent, $estimatedRemaining );
 	}
 }
