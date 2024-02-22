@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
+use GenericParameterJob;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Title\Title;
 use MessageGroupStats;
 
 /**
@@ -17,7 +17,7 @@ use MessageGroupStats;
  * @license GPL-2.0-or-later
  * @ingroup JobQueue
  */
-class RebuildMessageGroupStatsJob extends GenericTranslateJob {
+class RebuildMessageGroupStatsJob extends GenericTranslateJob implements GenericParameterJob {
 	public const GROUP_ID = 'groupid';
 	public const LANGUAGE_CODE = 'languagecode';
 	public const CLEAR_GROUPS = 'cleargroups';
@@ -26,7 +26,7 @@ class RebuildMessageGroupStatsJob extends GenericTranslateJob {
 	protected $removeDuplicates = true;
 
 	public static function newJob( array $params ): self {
-		return new self( Title::newMainPage(), $params );
+		return new self( $params );
 	}
 
 	/**
@@ -39,11 +39,11 @@ class RebuildMessageGroupStatsJob extends GenericTranslateJob {
 	 * @param string[] $messageGroupIds
 	 */
 	public static function newRefreshGroupsJob( array $messageGroupIds ): self {
-		return new self( Title::newMainPage(), [ self::CLEAR_GROUPS => $messageGroupIds ] );
+		return new self( [ self::CLEAR_GROUPS => $messageGroupIds ] );
 	}
 
-	public function __construct( Title $title, array $params = [] ) {
-		parent::__construct( 'RebuildMessageGroupStatsJob', $title, $params );
+	public function __construct( array $params = [] ) {
+		parent::__construct( 'RebuildMessageGroupStatsJob', $params );
 	}
 
 	public function run(): bool {
