@@ -465,5 +465,6 @@
 	"log-action-filter-translationreview-message": "Gjennomgang av individuelle oversettelsesmeldinger",
 	"log-action-filter-translationreview-group": "Endringer i framgangsstatusen til oversettelser",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importerte}} et oversettbart knippe $3",
-	"log-action-filter-import-translatable-bundle": "Importering av oversettbart knippe"
+	"log-action-filter-import-translatable-bundle": "Importering av oversettbart knippe",
+	"translate-hidetranslations": "Skjul oversettbare sider"
 }

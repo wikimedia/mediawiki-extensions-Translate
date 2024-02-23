@@ -432,5 +432,6 @@
 	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインして、このページに戻ってきて、翻訳ページに入り直してください。",
 	"tux-nojs": "このツールの動作には JavaScript が必要です。JavaScript が無効、作動していないもしくはブラウザーがサポートされていません。",
 	"specialpages-group-translation": "翻訳",
-	"log-action-filter-translationreview": "操作の種類:"
+	"log-action-filter-translationreview": "操作の種類:",
+	"translate-hidetranslations": "翻訳ページを隠す"
 }
