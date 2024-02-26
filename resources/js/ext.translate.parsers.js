@@ -64,8 +64,17 @@
 				return $( '<div>' ).append( $link ).html();
 			} );
 
-			text = text.replace( /'''(.+?)'''/g, function ( match, p1 ) {
-				return $( '<div>' ).append( $( '<strong>' ).html( p1 ) ).html();
+			text = text.replace( /('')?'''(.+?)('')?'''/g, function ( match, p1, p2, p3 ) {
+				p1 = p1 || '';
+				p3 = p3 || '';
+				if ( /''/.test( p2 ) && ( p1 || p3 ) ) {
+					// Move p1 and p3 to p2 (inside <strong> tags)
+					// if italic text ends inside bold
+					p2 = p1 + p2 + p3;
+					p1 = '';
+					p3 = '';
+				}
+				return p1 + $( '<div>' ).append( $( '<strong>' ).html( p2 ) ).html() + p3;
 			} );
 
 			text = text.replace( /''(.+?)''/g, function ( match, p1 ) {
