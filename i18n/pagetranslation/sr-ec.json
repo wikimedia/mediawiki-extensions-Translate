@@ -12,7 +12,8 @@
 			"Zoranzoki21",
 			"Милан Јелисавчић",
 			"Михајло Анђелковић",
-			"Сербијана"
+			"Сербијана",
+			"Zenfiric"
 		]
 	},
 	"pagetranslation": "Превођење странице",
@@ -94,6 +95,7 @@
 	"log-name-pagetranslation": "Дневник превођења страница",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|означио|означила}} је страницу „$3” за превођење",
 	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|уклонио|уклонила}} је страницу „$3” из система превођења",
+	"logentry-pagetranslation-moveok": "$1 је {{GENDER:$2|завршио|завршила}} преименовање преводиве странице $3 у $4",
 	"logentry-pagetranslation-deletefok": "$1 је {{GENDER:$2|избрисао|избрисала}} преводиву страницу $3",
 	"logentry-pagetranslation-deletelok": "$1 је {{GENDER:$2|избрисао|избрисала}} преводиву страницу $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 је {{GENDER:$2|одредио|одредила}} приоритетне језике за преводиву страницу $3: $5",

@@ -7,7 +7,8 @@
 			"S.Örvarr.S",
 			"Snævar",
 			"Spacebirdy",
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"Stefán Örvar Sigmundsson"
 		]
 	},
 	"translate": "Þýða",
@@ -51,7 +52,7 @@
 	"translate-edit-warnings": "Viðvaranir vegna ókláraðra þýðinga",
 	"translate-edit-tmmatch-source": "Uppruna texti þýðingarinnar: $1",
 	"translate-edit-tmmatch": "$1% samsvörun",
-	"translate-edit-nopermission": "Þú þarft þýðenda réttindi til að þýða skilaboð.",
+	"translate-edit-nopermission": "Þú þarft þýðingaréttindi til að þýða skilaboð.",
 	"translate-edit-askpermission": "Fá réttindi",
 	"exporttranslations": "Flytja út þýðingar",
 	"translate-export-form-format": "Snið",
@@ -279,7 +280,7 @@
 	"tux-empty-nothing-to-proofread": "Ekkert til að yfirfara",
 	"tux-empty-you-can-help-providing": "Þú getur hjálpað til með nýjar þýðingar",
 	"tux-empty-list-other": "Ekkert til að þýða",
-	"tux-empty-list-other-guide": "Þú getur hjálpað til með því að yfirfara fyrirliggjandi þýðingar",
+	"tux-empty-list-other-guide": "Þú getur hjálpað við að yfirfara fyrirliggjandi þýðingar",
 	"tux-empty-list-other-action": "Yfirfara þýðingar",
 	"tux-empty-list-other-link": "Birta öll skilaboð",
 	"tux-editor-close-tooltip": "Loka",

@@ -5,7 +5,8 @@
 			"Khan27",
 			"Vesely35",
 			"Wertuose",
-			"Toghrul Rahimli"
+			"Toghrul Rahimli",
+			"NMW03"
 		]
 	},
 	"pagetranslation": "Səhifə tərcüməsi",
@@ -65,6 +66,7 @@
 	"tpt-aggregategroup-new-description": "İzah (məcburi deyil):",
 	"tpt-aggregategroup-remove-confirm": "Bu aqreqat qrupunu silmək istədiyinizdən əminsiniz?",
 	"tpt-aggregategroup-invalid-group": "Qrup mövcud deyil",
+	"log-name-messagebundle": "Mesaj paketi jurnalı",
 	"pt-movepage-new": "Yeni ad:",
 	"pt-movepage-reason": "Səbəb:",
 	"pt-deletepage-current": "Səhifə adı:",
