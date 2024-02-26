@@ -98,10 +98,6 @@ class RefreshTranslationProgressStatsMaintenanceScript extends BaseMaintenanceSc
 		$this->output( "\n" );
 	}
 
-	private static function commaList2Array( string $list ): array {
-		return array_map( 'trim', explode( ',', $list ) );
-	}
-
 	private function getLanguages( array $patterns ): array {
 		$allLanguages = array_keys( TranslateUtils::getLanguageNames( null ) );
 

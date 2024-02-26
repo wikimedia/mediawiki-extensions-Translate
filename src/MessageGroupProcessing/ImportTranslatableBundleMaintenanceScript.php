@@ -172,16 +172,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	private function getPriorityLanguages(): array {
-		$priorityLanguageCodes = array_unique(
-			array_filter(
-				array_map(
-					'trim',
-					explode( ',', $this->getOption( 'priority-languages' ) ?? '' )
-				),
-				'strlen'
-			)
-		);
-
+		$priorityLanguageCodes = self::commaList2Array( $this->getOption( 'priority-languages' ) ?? '' );
 		$knownLanguageCodes = array_keys( Utilities::getLanguageNames( 'en' ) );
 		$invalidLanguageCodes = array_diff( $priorityLanguageCodes, $knownLanguageCodes );
 

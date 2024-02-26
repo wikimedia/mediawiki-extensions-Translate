@@ -6,10 +6,8 @@ namespace MediaWiki\Extension\Translate\Utilities;
 use Maintenance;
 
 /**
- * Constants for making code for maintenance scripts more readable.
- *
- * Hopefully temporary until https://phabricator.wikimedia.org/T271787 is fixed.
- *
+ * Base maintenance script containing constants and methods used in multiple scripts
+ * Hopefully the constants can be removed after https://phabricator.wikimedia.org/T271787 is fixed.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
@@ -18,4 +16,17 @@ abstract class BaseMaintenanceScript extends Maintenance {
 	protected const REQUIRED = true;
 	protected const HAS_ARG = true;
 	protected const NO_ARG = false;
+
+	/**
+	 * Converts a comma seperated list to an array. Removes empty strings and duplicate values.
+	 * @return string[]
+	 */
+	protected static function commaList2Array( string $list ): array {
+		return array_unique(
+			array_filter(
+				array_map( 'trim', explode( ',', $list ) ),
+				'strlen'
+			)
+		);
+	}
 }
