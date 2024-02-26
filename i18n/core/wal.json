@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ella Lachow"
+			"Ella Lachow",
+			"Malaalaa"
 		]
 	},
 	"translate-tes-optgroup-group": "Citata",
-	"translate-documentation-language": "Kiitaa xaafi oyqqiyoogaa"
+	"translate-documentation-language": "Kiitaa xaafi oyqqiyoogaa",
+	"translate-hidetranslations": "Birshshettaa sinttata gentta"
 }

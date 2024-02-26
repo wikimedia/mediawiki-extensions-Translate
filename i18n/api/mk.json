@@ -131,7 +131,7 @@
 	"apihelp-translationcheck-param-title": "Наслов на страницата со именски простор и јазичен код.",
 	"apihelp-translationcheck-param-translation": "Превод за потврда.",
 	"apihelp-translationstats-summary": "Дај преводни статистики",
-	"apihelp-translationcheck-extended-description": "Во статистиката се опфатени преводните уредувања, активните преводи, новите корисинци, преводните оценувачи и оценувачите.",
+	"apihelp-translationcheck-extended-description": "Во статистиката се опфатени преводните уредувања, активните преведувачи, новите корисинци, преводните оценувачи и оценувачите.",
 	"apihelp-translationstats-param-count": "Кој вид на статистика се бара",
 	"apihelp-translationstats-param-days": "За колку дена се бара статистика",
 	"apihelp-translationstats-param-group": "Список на групи за кои се бара статистика.",
