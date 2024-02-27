@@ -32,7 +32,8 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 	private TranslatablePageParser $translatablePageParser;
 	private RevisionLookup $revisionLookup;
 	private ?Title $bundleTitle;
-	private ?Closure $importCompleteCallback;
+	private ?Closure $importCompleteCallback = null;
+	private ?Closure $pageImportCompleteCallback = null;
 	private NamespaceInfo $namespaceInfo;
 	private TitleFactory $titleFactory;
 	private bool $importInProgress = false;
@@ -123,6 +124,10 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		$this->importCompleteCallback = Closure::fromCallable( $callable );
 	}
 
+	public function setPageImportCompleteCallback( callable $callable ): void {
+		$this->pageImportCompleteCallback = Closure::fromCallable( $callable );
+	}
+
 	private function logImport( UserIdentity $user, Title $bundle, ?string $comment ): void {
 		$entry = new ManualLogEntry( 'import', 'translatable-bundle' );
 		$entry->setPerformer( $user );
@@ -160,6 +165,9 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 	public function onAfterImportPage( $title, $foreignTitle, $revCount, $sRevCount, $pageInfo ) {
 		if ( $this->importInProgress ) {
 			$this->bundleTitle ??= $title;
+			if ( $this->pageImportCompleteCallback ) {
+				call_user_func( $this->pageImportCompleteCallback, $title, $foreignTitle );
+			}
 		}
 	}
 }

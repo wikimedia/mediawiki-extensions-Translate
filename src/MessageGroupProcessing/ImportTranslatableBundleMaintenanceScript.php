@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use ForeignTitle;
 use IDBAccessObject;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarkException;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageSettings;
@@ -21,6 +22,9 @@ use MediaWiki\User\UserIdentity;
  * @author Abijeet Patro
  */
 class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
+	private int $pageImportCount = 0;
+	private int $totalPagesBeingImported = 0;
+
 	public function __construct() {
 		parent::__construct();
 		$this->addArg(
@@ -102,6 +106,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 	/** @inheritDoc */
 	public function execute() {
+		$this->pageImportCount = 0;
 		$importFilePath = $this->getPathOfFileToImport();
 		$importUser = $this->getImportUser();
 		$comment = $this->getOption( 'comment' );
@@ -112,8 +117,10 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 		// First import the page
 		try {
+			$this->totalPagesBeingImported = substr_count( file_get_contents( $importFilePath ), '</page>' );
 			$importer = Services::getInstance()->getTranslatableBundleImporter();
-			$importer->setImportCompleteCallback( [ $this, 'logImportComplete' ] );
+			$this->output( "Starting import for file '$importFilePath'...\n" );
+			$importer->setPageImportCompleteCallback( [ $this, 'logPageImportComplete' ] );
 			$bundleTitle = $importer->import(
 				$importFilePath,
 				$interwikiPrefix,
@@ -123,17 +130,32 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 				$comment
 			);
 		} catch ( TranslatableBundleImportException $e ) {
-			$this->fatalError( "An error occurred during import: {$e->getMessage()}\n" );
+			$this->error( "An error occurred during import: {$e->getMessage()}\n" );
+			$this->error( "Stacktrace: {$e->getTraceAsString()} .\n" );
+			$this->fatalError( 'Stopping import.' );
 		}
 
-		$this->output( "Page {$bundleTitle->getPrefixedText()} was imported, now marking it for translation.\n" );
+		$this->output(
+			"Translatable bundle {$bundleTitle->getPrefixedText()} was imported. " .
+			"Total {$this->pageImportCount} page(s) were created\n"
+		);
 
+		$this->output( "Now marking {$bundleTitle->getPrefixedText()} for translation...\n" );
 		// Try to mark the page for translation
 		$this->markPageForTranslation( $bundleTitle, $translatablePageSettings, $importUser );
 	}
 
-	public function logImportComplete( Title $title ): void {
-		$this->output( "Completed import of translatable bundle. Created page {$title->getPrefixedText()}\n" );
+	public function logPageImportComplete( Title $title, ForeignTitle $foreignTitle ): void {
+		++$this->pageImportCount;
+		$currentProgress = str_pad(
+			(string)$this->pageImportCount,
+			strlen( (string)$this->totalPagesBeingImported ),
+			' ',
+			STR_PAD_LEFT
+		);
+
+		$progressCounter = "($currentProgress/$this->totalPagesBeingImported)";
+		$this->output( "$progressCounter {$foreignTitle->getFullText()} --> {$title->getFullText()}\n" );
 	}
 
 	private function getPathOfFileToImport(): string {
