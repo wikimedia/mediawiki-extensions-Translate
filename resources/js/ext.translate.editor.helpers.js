@@ -12,7 +12,12 @@
 
 		return $( '<a>' )
 			.addClass( 'edit-summary-time' )
-			.attr( { href: diffLink } )
+			.attr(
+				{
+					href: diffLink,
+					target: '_blank'
+				}
+			)
 			.data( 'commentTimestamp', comment.timestamp )
 			.text( comment.humanTimestamp );
 	}

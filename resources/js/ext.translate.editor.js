@@ -1165,7 +1165,8 @@
 				.append( $( '<a>' )
 					.attr(
 						{
-							href: mw.util.getUrl( this.message.title, { action: 'history' } )
+							href: mw.util.getUrl( this.message.title, { action: 'history' } ),
+							target: '_blank'
 						}
 					)
 					.text( mw.msg( 'tux-editor-all-changes' ) )
