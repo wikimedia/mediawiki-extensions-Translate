@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use MediaWiki\MediaWikiServices;
 use MessageIndex;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Storage on the database itself.
@@ -17,10 +18,15 @@ use MessageIndex;
  */
 class DatabaseMessageIndex extends MessageIndex {
 	private ?array $index = null;
+	private ILoadBalancer $loadBalancer;
 
-	/** @return bool|float|null	*/
-	protected function lock() {
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+	public function __construct() {
+		parent::__construct();
+		$this->loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
+	}
+
+	protected function lock(): bool {
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		// Any transaction should be flushed after getting the lock to avoid
 		// stale pre-lock REPEATABLE-READ snapshot data.
@@ -34,16 +40,12 @@ class DatabaseMessageIndex extends MessageIndex {
 
 	protected function unlock(): bool {
 		$fname = __METHOD__;
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		// Unlock once the rows are actually unlocked to avoid deadlocks
 		if ( !$dbw->trxLevel() ) {
 			$dbw->unlock( 'translate-messageindex', $fname );
-		} elseif ( is_callable( [ $dbw, 'onTransactionResolution' ] ) ) { // 1.28
-			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
-				$dbw->unlock( 'translate-messageindex', $fname );
-			}, $fname );
 		} else {
-			$dbw->onTransactionCommitOrIdle( static function () use ( $dbw, $fname ) {
+			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
 		}
@@ -56,9 +58,7 @@ class DatabaseMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		$dbr = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( $readLatest ? DB_PRIMARY : DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( $readLatest ? DB_PRIMARY : DB_REPLICA );
 		$res = $dbr->select( 'translate_messageindex', '*', [], __METHOD__ );
 		$this->index = [];
 		foreach ( $res as $row ) {
@@ -70,7 +70,7 @@ class DatabaseMessageIndex extends MessageIndex {
 
 	/** @inheritDoc */
 	protected function get( $key ) {
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$value = $dbr->selectField(
 			'translate_messageindex',
 			'tmi_value',
@@ -97,7 +97,7 @@ class DatabaseMessageIndex extends MessageIndex {
 		$index = [ 'tmi_key' ];
 		$deletions = array_keys( $diff['del'] );
 
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		if ( $updates !== [] ) {
