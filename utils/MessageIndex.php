@@ -251,17 +251,23 @@ abstract class MessageIndex {
 			if ( $interimCacheValue['timestamp'] <= $timestamp ) {
 				$cache->delete( self::CACHEKEY );
 				$this->logger->debug(
-					'[MessageIndex] interim cache with timestamp {cacheTimestamp} deleted',
-					[ 'cacheTimestamp' => $interimCacheValue['timestamp'] ]
+					'[MessageIndex] Deleted interim cache with timestamp {cacheTimestamp} <= {currentTimestamp}.',
+					[
+						'cacheTimestamp' => $interimCacheValue['timestamp'],
+						'currentTimestamp' => $timestamp,
+					]
 				);
 			} else {
 				// Cache has a later timestamp. This may be caused due to
 				// job deduplication. Just in case, spin off a new job to clean up the cache.
-				$job = MessageIndexRebuildJob::newJob();
+				$job = MessageIndexRebuildJob::newJob( __METHOD__ );
 				$this->jobQueueGroup->push( $job );
 				$this->logger->debug(
-					'[MessageIndex] interim cache with timestamp {cacheTimestamp} too fresh',
-					[ 'cacheTimestamp' => $interimCacheValue['timestamp'] ]
+					'[MessageIndex] Kept interim cache with timestamp {cacheTimestamp} > ${currentTimestamp}.',
+					[
+						'cacheTimestamp' => $interimCacheValue['timestamp'],
+						'currentTimestamp' => $timestamp,
+					]
 				);
 			}
 		}
@@ -304,7 +310,7 @@ abstract class MessageIndex {
 			$normalizedNewKeys = array_merge( $interimCacheValue['newKeys'], $normalizedNewKeys );
 			$this->logger->debug(
 				'[MessageIndex] interim cache: merging with existing cache of size {count}',
-				[ ' count' => count( $interimCacheValue['newKeys'] ) ]
+				[ 'count' => count( $interimCacheValue['newKeys'] ) ]
 			);
 		}
 
