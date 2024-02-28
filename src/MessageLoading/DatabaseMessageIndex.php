@@ -24,7 +24,7 @@ class DatabaseMessageIndex extends MessageIndex {
 
 		// Any transaction should be flushed after getting the lock to avoid
 		// stale pre-lock REPEATABLE-READ snapshot data.
-		$ok = $dbw->lock( 'translate-messageindex', __METHOD__, 30 );
+		$ok = $dbw->lock( 'translate-messageindex', __METHOD__, 5 );
 		if ( $ok ) {
 			$dbw->commit( __METHOD__, 'flush' );
 		}
