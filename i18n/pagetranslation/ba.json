@@ -6,13 +6,15 @@
 			"Kareyac",
 			"Айсар",
 			"З. ӘЙЛЕ",
-			"Рустам Нурыев"
+			"Рустам Нурыев",
+			"Bashkorttan"
 		]
 	},
 	"translate-tag-translate-link-desc": "Был битте тәржемә итергә",
 	"tpt-translation-intro": "Был бит — [[$2]] битенең <span class=\"plainlinks\">[$1 тәржемәһе]</span>. Тәржемә $3% үтәлгән.",
 	"tpt-languages-legend": "Башҡа телдәр:",
 	"tpt-languages-nonzero": "$1 ($2% тәржемә ителгән)",
+	"aggregategroups": "Дөйөм төркөмдәр",
 	"tpt-aggregategroup-add": "Өҫтәргә",
 	"pt-movepage-list-other": "Башҡа {{PLURAL:$1|1=ярҙамсы бит|ярҙамсы биттәр}}",
 	"pt-movepage-legend": "Тәржемә ителгән биттәрҙең исемен үҙгәртергә",

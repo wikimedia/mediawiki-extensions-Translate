@@ -3,13 +3,15 @@
 		"authors": [
 			"Gazimagomedov",
 			"Omarov M.",
-			"Аль-Гимравий"
+			"Аль-Гимравий",
+			"Augustus A C"
 		]
 	},
 	"translate-total": "Ругьелал",
 	"translate-untranslated": "Таржама гьабичӀел",
 	"translate-mgs-group": "Ругьелазул группа:",
-	"translate-manage-submit": "ТӀубазабизе",
+	"supportedlanguages": "Активиял мацӀал",
+	"translate-manage-submit": "ТӀобазабизе",
 	"translate-documentation-language": "Баяналъул документация",
 	"translate-msggroupselector-projects": "Ругьелазул группа"
 }
