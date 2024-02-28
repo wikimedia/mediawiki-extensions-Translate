@@ -189,12 +189,7 @@ abstract class MessageIndex {
 		}
 		$recursion++;
 
-		$this->logger->info(
-			'[MessageIndex] Started rebuild. Initiated by {callers}',
-			[ 'callers' => wfGetAllCallers( 20 ) ]
-		);
-
-		$groups = MessageGroups::singleton()->getGroups();
+		$this->logger->info( '[MessageIndex] Started rebuild.' );
 
 		$tsStart = microtime( true );
 		if ( !$this->lock() ) {
@@ -207,6 +202,7 @@ abstract class MessageIndex {
 			[ 'duration' => $lockWaitDuration ]
 		);
 
+		$groups = MessageGroups::singleton()->getGroups();
 		self::getCache()->clear();
 
 		$new = [];
@@ -236,13 +232,6 @@ abstract class MessageIndex {
 
 		$diff = self::getArrayDiff( $old, $new );
 		$this->store( $new, $diff['keys'] );
-		$this->unlock();
-
-		$criticalSectionDuration = microtime( true ) - $tsStart - $lockWaitDuration;
-		$this->logger->info(
-			'[MessageIndex] Finished critical section in {duration}',
-			[ 'duration' => $criticalSectionDuration ]
-		);
 
 		$cache = $this->getInterimCache();
 		$interimCacheValue = $cache->get( self::CACHEKEY );
@@ -271,6 +260,13 @@ abstract class MessageIndex {
 				);
 			}
 		}
+
+		$this->unlock();
+		$criticalSectionDuration = microtime( true ) - $tsStart - $lockWaitDuration;
+		$this->logger->info(
+			'[MessageIndex] Finished critical section in {duration}',
+			[ 'duration' => $criticalSectionDuration ]
+		);
 
 		// Other caches can check this key to know when they need to refresh
 		$this->statusCache->touchCheckKey( $this->getStatusCacheKey() );
