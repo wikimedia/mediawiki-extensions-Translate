@@ -129,6 +129,7 @@
 	"supportedlanguages-colorlegend": "Төҫ буйынса легенда: Һуңғы тәржемә $1 көн элек.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Тәржемәсе}}}}: $1",
 	"supportedlanguages-recenttranslations": "яңыраҡ эшләнгән тәржемәләр",
+	"supportedlanguages-count": "Бырыһы $1 {{PLURAL:$1|тел}}.",
 	"translate-supportedlanguages-cached": "Мәғлүмәттәр $1 элек кешланған.",
 	"translate-jssti-add": "Исемлеккә өҫтәргә",
 	"managemessagegroups": "Хәбәр төркөмдәрен идаралау",
