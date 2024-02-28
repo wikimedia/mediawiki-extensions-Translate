@@ -2,7 +2,6 @@
 	"name": "Translate",
 	"private": true,
 	"scripts": {
-		"build-lib": "./bin/build.sh",
 		"minify:svg": "svgo --config=.svgo.config.js -q -r -f resources/images/",
 		"test": "grunt test"
 	},
