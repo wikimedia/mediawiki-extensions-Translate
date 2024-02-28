@@ -549,7 +549,7 @@ class ElasticSearchTTMServer
 				// For wildcard search
 				$fields['content.prefix_complete'][] = $prefix;
 			} elseif ( $case === '1' ) {
-				// For case sensitive search
+				// For case-sensitive search
 				$fields['content.case_sensitive'][] = $term;
 			} else {
 				$fields['content'][] = $term;
