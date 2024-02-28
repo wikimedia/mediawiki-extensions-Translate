@@ -159,6 +159,8 @@ class MessageHandle {
 	 * @return bool
 	 */
 	public function isValid() {
+		static $jobHasBeenScheduled = false;
+
 		if ( !$this->isMessageNamespace() ) {
 			return false;
 		}
@@ -181,9 +183,12 @@ class MessageHandle {
 				]
 			);
 
-			// Schedule a job in the job queue (with deduplication)
-			$job = MessageIndexRebuildJob::newJob();
-			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
+			if ( !$jobHasBeenScheduled ) {
+				// Schedule a job in the job queue (with deduplication)
+				$job = MessageIndexRebuildJob::newJob( __METHOD__ );
+				MediaWikiServices::getInstance()->getJobQueueGroup()->lazyPush( $job );
+				$jobHasBeenScheduled = true;
+			}
 
 			return false;
 		}
