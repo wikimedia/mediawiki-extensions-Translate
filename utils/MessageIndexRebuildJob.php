@@ -11,28 +11,25 @@
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Title\Title;
 
 /**
  * Job for rebuilding message index.
  *
  * @ingroup JobQueue
  */
-class MessageIndexRebuildJob extends GenericTranslateJob {
+class MessageIndexRebuildJob extends GenericTranslateJob implements GenericParameterJob {
 	/** @return self */
-	public static function newJob() {
+	public static function newJob( ?string $caller = null ) {
 		$timestamp = microtime( true );
-		$job = new self( Title::newMainPage(), [ 'timestamp' => $timestamp ] );
-
-		return $job;
+		return new self( [
+			'timestamp' => $timestamp,
+			'caller' => $caller ?? wfGetCaller(),
+		] );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params = [] ) {
-		parent::__construct( 'MessageIndexRebuildJob', $title, $params );
+	/** @inheritDoc */
+	public function __construct( $params = [] ) {
+		parent::__construct( 'MessageIndexRebuildJob', $params );
 		$this->removeDuplicates = true;
 	}
 
@@ -74,6 +71,7 @@ class MessageIndexRebuildJob extends GenericTranslateJob {
 		// Ideally we would take the latest timestamp, but it seems that the job queue
 		// just prevents insertion of duplicate jobs instead.
 		unset( $info['params']['timestamp'] );
+		unset( $info['params']['caller'] );
 
 		return $info;
 	}
