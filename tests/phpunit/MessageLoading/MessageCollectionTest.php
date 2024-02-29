@@ -7,11 +7,11 @@ use ContentHandler;
 use HashBagOStuff;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use MessageIndex;
 use MockWikiMessageGroup;
 use WANObjectCache;
 
@@ -26,6 +26,10 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->setMwGlobals( [
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+		] );
+
 		$this->setMwGlobals( [ 'wgTranslateTranslationServices' => [], ] );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
@@ -34,9 +38,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		$hashIndex = new HashMessageIndex();
-		MessageIndex::setInstance( $hashIndex );
-		$hashIndex->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( &$list ): bool {

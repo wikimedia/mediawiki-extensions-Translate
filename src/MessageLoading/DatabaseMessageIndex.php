@@ -4,7 +4,6 @@ declare ( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use MediaWiki\MediaWikiServices;
-use MessageIndex;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

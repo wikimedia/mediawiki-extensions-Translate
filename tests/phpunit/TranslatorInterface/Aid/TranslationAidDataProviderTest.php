@@ -3,12 +3,11 @@
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageHandle;
-use MessageIndex;
 use MockWikiMessageGroup;
 use ObjectCache;
 use WANObjectCache;
@@ -30,8 +29,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => ObjectCache::getInstance( 'hash' ) ] ) );
 		$mg->recache();
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		$index = Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( &$list ) {

@@ -7,10 +7,10 @@ use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWikiIntegrationTestCase;
-use MessageIndex;
 use MockWikiMessageGroup;
 use WANObjectCache;
 
@@ -25,7 +25,8 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( [
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
@@ -35,8 +36,7 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( &$list ) {

@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageLoading;
 use Cdb\Reader;
 use Cdb\Writer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageIndex;
 
 /**
  * Storage on CDB files.

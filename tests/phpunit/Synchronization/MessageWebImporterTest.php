@@ -4,11 +4,10 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use MessageIndex;
 use MockWikiMessageGroup;
 use RequestContext;
 use WANObjectCache;
@@ -25,8 +24,7 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 		$this->overrideUserPermissions( RequestContext::getMain()->getUser(), [
 			'translate-manage' // needed for MessageWebImporter::doFuzzy for testDoFuzzy
 		] );

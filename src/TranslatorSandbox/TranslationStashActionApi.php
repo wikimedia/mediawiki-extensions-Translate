@@ -7,10 +7,10 @@ use ApiBase;
 use ApiMain;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MessageHandle;
-use MessageIndex;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -99,7 +99,7 @@ class TranslationStashActionApi extends ApiBase {
 		$definition = '';
 		$comparison = '';
 		if ( $handle->isValid() ) {
-			$groupId = MessageIndex::getPrimaryGroupId( $handle );
+			$groupId = Services::getInstance()->getMessageIndex()->getPrimaryGroupId( $handle );
 			$group = MessageGroups::getGroup( $groupId );
 
 			$key = $handle->getKey();

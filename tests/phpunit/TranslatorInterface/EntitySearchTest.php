@@ -7,9 +7,9 @@ use Generator;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWikiIntegrationTestCase;
 use MessageGroup;
-use MessageIndex;
 use WANObjectCache;
 
 /**

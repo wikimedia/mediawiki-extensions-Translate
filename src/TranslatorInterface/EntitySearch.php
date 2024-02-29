@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use Collation;
 use MalformedTitleException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use NamespaceInfo;
 use SplMinHeap;
 use TitleFormatter;

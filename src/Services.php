@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
@@ -31,7 +32,6 @@ use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
 use MediaWiki\MediaWikiServices;
-use MessageIndex;
 use Psr\Container\ContainerInterface;
 
 /**

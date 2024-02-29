@@ -9,6 +9,7 @@
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -27,6 +28,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( [
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
@@ -35,8 +37,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( &$list ) {

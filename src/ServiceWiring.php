@@ -23,6 +23,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleDeleter;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;

@@ -10,9 +10,9 @@ use HashBagOStuff;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
-use MessageIndex;
 use MockWikiMessageGroup;
 use User;
 use WANObjectCache;
@@ -37,6 +37,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 
 		$this->setMwGlobals( [
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 		$this->setGroupPermissions( [
 			'sysop' => [
@@ -54,8 +55,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( &$list ): bool {

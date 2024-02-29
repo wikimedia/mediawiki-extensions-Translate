@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageIndex;
 
 /**
  * Storage on serialized file.

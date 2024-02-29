@@ -1,13 +1,12 @@
 <?php
-/**
- * Contains classes for handling the message index.
- *
- * @file
- * @author Niklas Laxstrom
- * @copyright Copyright © 2008-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use BagOStuff;
+use Exception;
+use JobQueueGroup;
+use MapCacheLRU;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
@@ -16,7 +15,13 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MessageGroup;
+use MessageHandle;
+use MessageIndexException;
+use MessageIndexRebuildJob;
+use ObjectCache;
 use Psr\Log\LoggerInterface;
+use WANObjectCache;
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
@@ -25,108 +30,76 @@ use Psr\Log\LoggerInterface;
  * reaches a messages from somewhere else than Special:Translate. Also used
  * by Special:TranslationStats and alike which need to map lots of titles
  * to message groups.
+ *
+ * @author Niklas Laxstrom
+ * @copyright Copyright © 2008-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 abstract class MessageIndex {
-	private const CACHEKEY = 'Translate-MessageIndex-interim';
-
+	// TODO: Use dependency injection
+	private const CACHE_KEY = 'Translate-MessageIndex-interim';
 	private const READ_LATEST = true;
-
-	/** @var self */
-	protected static $instance;
-	/** @var MapCacheLRU|null */
-	private static $keysCache;
-	/** @var BagOStuff */
-	protected $interimCache;
-	/** @var WANObjectCache */
-	private $statusCache;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var HookRunner */
-	private $hookRunner;
+	private static ?MapCacheLRU $keysCache = null;
+	protected BagOStuff $interimCache;
+	private WANObjectCache $statusCache;
+	private JobQueueGroup $jobQueueGroup;
+	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
+	private array $translateMessageNamespaces;
 
 	public function __construct() {
-		// TODO: Use dependency injection
 		$mwInstance = MediaWikiServices::getInstance();
 		$this->statusCache = $mwInstance->getMainWANObjectCache();
 		$this->jobQueueGroup = $mwInstance->getJobQueueGroup();
+		$this->translateMessageNamespaces = $mwInstance
+			->getMainConfig()
+			->get( 'TranslateMessageNamespaces' );
 		$this->hookRunner = Services::getInstance()->getHookRunner();
 		$this->logger = LoggerFactory::getInstance( 'Translate' );
 		$this->interimCache = ObjectCache::getInstance( CACHE_ANYTHING );
 	}
 
 	/**
-	 * @deprecated Since 2020.10 Use Services::getMessageIndex()
-	 * @return self
-	 */
-	public static function singleton(): self {
-		if ( self::$instance === null ) {
-			self::$instance = Services::getInstance()->getMessageIndex();
-		}
-
-		return self::$instance;
-	}
-
-	/**
-	 * Override the global instance, for testing.
-	 *
-	 * @since 2015.04
-	 * @param MessageIndex $instance
-	 */
-	public static function setInstance( self $instance ) {
-		self::$instance = $instance;
-	}
-
-	/**
 	 * Retrieves a list of groups given MessageHandle belongs to.
-	 * @since 2012-01-04
-	 * @param MessageHandle $handle
 	 * @return string[]
 	 */
-	public static function getGroupIds( MessageHandle $handle ): array {
-		global $wgTranslateMessageNamespaces;
-
+	public function getGroupIds( MessageHandle $handle ): array {
 		$title = $handle->getTitle();
 
-		if ( !$title->inNamespaces( $wgTranslateMessageNamespaces ) ) {
+		if ( !$title->inNamespaces( $this->translateMessageNamespaces ) ) {
 			return [];
 		}
 
 		$namespace = $title->getNamespace();
 		$key = $handle->getKey();
-		$normkey = Utilities::normaliseKey( $namespace, $key );
+		$normalisedKey = Utilities::normaliseKey( $namespace, $key );
 
-		$cache = self::getCache();
-		$value = $cache->get( $normkey );
+		$cache = $this->getCache();
+		$value = $cache->get( $normalisedKey );
 		if ( $value === null ) {
-			$value = (array)self::singleton()->getWithCache( $normkey );
-			$cache->set( $normkey, $value );
+			$value = (array)$this->getWithCache( $normalisedKey );
+			$cache->set( $normalisedKey, $value );
 		}
 
 		return $value;
 	}
 
-	/** @return MapCacheLRU */
-	private static function getCache() {
+	private function getCache(): MapCacheLRU {
 		if ( self::$keysCache === null ) {
 			self::$keysCache = new MapCacheLRU( 30 );
 		}
 		return self::$keysCache;
 	}
 
-	/**
-	 * @since 2012-01-04
-	 * @param MessageHandle $handle
-	 * @return ?string
-	 */
-	public static function getPrimaryGroupId( MessageHandle $handle ): ?string {
-		$groups = self::getGroupIds( $handle );
+	public function getPrimaryGroupId( MessageHandle $handle ): ?string {
+		$groups = $this->getGroupIds( $handle );
 
 		return count( $groups ) ? array_shift( $groups ) : null;
 	}
 
-	private function getWithCache( $key ) {
-		$interimCacheValue = $this->getInterimCache()->get( self::CACHEKEY );
+	/** @return string|array|null */
+	private function getWithCache( string $key ) {
+		$interimCacheValue = $this->getInterimCache()->get( self::CACHE_KEY );
 		if ( $interimCacheValue && isset( $interimCacheValue['newKeys'][$key] ) ) {
 			$this->logger->debug(
 				'[MessageIndex] interim cache hit: {messageKey} with value {groupId}',
@@ -140,11 +113,10 @@ abstract class MessageIndex {
 
 	/**
 	 * Looks up the stored value for single key. Only for testing.
-	 * @since 2012-04-10
 	 * @param string $key
 	 * @return string|array|null
 	 */
-	protected function get( $key ) {
+	protected function get( string $key ) {
 		// Default implementation
 		$mi = $this->retrieve();
 		return $mi[$key] ?? null;
@@ -152,21 +124,18 @@ abstract class MessageIndex {
 
 	abstract public function retrieve( bool $readLatest = false ): array;
 
-	/**
-	 * @since 2018.01
-	 * @return string[]
-	 */
-	public function getKeys() {
+	/** @return string[] */
+	public function getKeys(): array {
 		return array_keys( $this->retrieve() );
 	}
 
 	abstract protected function store( array $array, array $diff );
 
-	protected function lock() {
+	protected function lock(): bool {
 		return true;
 	}
 
-	protected function unlock() {
+	protected function unlock(): bool {
 		return true;
 	}
 
@@ -174,7 +143,6 @@ abstract class MessageIndex {
 	 * Creates the index from scratch.
 	 *
 	 * @param float|null $timestamp Purge interim caches older than this timestamp.
-	 * @return array
 	 * @throws Exception
 	 */
 	public function rebuild( float $timestamp = null ): array {
@@ -209,36 +177,35 @@ abstract class MessageIndex {
 		$old = $this->retrieve( self::READ_LATEST );
 		$postponed = [];
 
-		/** @var MessageGroup $g */
-		foreach ( $groups as $g ) {
-			if ( !$g->exists() ) {
-				$id = $g->getId();
+		foreach ( $groups as $messageGroup ) {
+			if ( !$messageGroup->exists() ) {
+				$id = $messageGroup->getId();
 				wfWarn( __METHOD__ . ": group '$id' is registered but does not exist" );
 				continue;
 			}
 
 			# Skip meta thingies
-			if ( $g->isMeta() ) {
-				$postponed[] = $g;
+			if ( $messageGroup->isMeta() ) {
+				$postponed[] = $messageGroup;
 				continue;
 			}
 
-			$this->checkAndAdd( $new, $g );
+			$this->checkAndAdd( $new, $messageGroup );
 		}
 
-		foreach ( $postponed as $g ) {
-			$this->checkAndAdd( $new, $g, true );
+		foreach ( $postponed as $messageGroup ) {
+			$this->checkAndAdd( $new, $messageGroup, true );
 		}
 
 		$diff = self::getArrayDiff( $old, $new );
 		$this->store( $new, $diff['keys'] );
 
 		$cache = $this->getInterimCache();
-		$interimCacheValue = $cache->get( self::CACHEKEY );
+		$interimCacheValue = $cache->get( self::CACHE_KEY );
 		if ( $interimCacheValue ) {
 			$timestamp ??= microtime( true );
 			if ( $interimCacheValue['timestamp'] <= $timestamp ) {
-				$cache->delete( self::CACHEKEY );
+				$cache->delete( self::CACHE_KEY );
 				$this->logger->debug(
 					'[MessageIndex] Deleted interim cache with timestamp {cacheTimestamp} <= {currentTimestamp}.',
 					[
@@ -278,10 +245,6 @@ abstract class MessageIndex {
 		return $new;
 	}
 
-	/**
-	 * @since 2021.10
-	 * @return string
-	 */
 	public function getStatusCacheKey(): string {
 		return $this->statusCache->makeKey( 'Translate', 'MessageIndex', 'status' );
 	}
@@ -301,7 +264,7 @@ abstract class MessageIndex {
 
 		$cache = $this->getInterimCache();
 		// Merge with existing keys (if present)
-		$interimCacheValue = $cache->get( self::CACHEKEY, $cache::READ_LATEST );
+		$interimCacheValue = $cache->get( self::CACHE_KEY, $cache::READ_LATEST );
 		if ( $interimCacheValue ) {
 			$normalizedNewKeys = array_merge( $interimCacheValue['newKeys'], $normalizedNewKeys );
 			$this->logger->debug(
@@ -315,7 +278,7 @@ abstract class MessageIndex {
 			'newKeys' => $normalizedNewKeys,
 		];
 
-		$cache->set( self::CACHEKEY, $value, $cache::TTL_DAY );
+		$cache->set( self::CACHE_KEY, $value, $cache::TTL_DAY );
 		$this->logger->debug(
 			'[MessageIndex] interim cache: added group {groupId} with new size {count} keys and ' .
 			'timestamp {cacheTimestamp}',
@@ -351,7 +314,7 @@ abstract class MessageIndex {
 	 * @param array $new
 	 * @return array
 	 */
-	public static function getArrayDiff( array $old, array $new ) {
+	public function getArrayDiff( array $old, array $new ): array {
 		$values = [];
 		$record = static function ( $groups ) use ( &$values ) {
 			foreach ( $groups as $group ) {
@@ -391,19 +354,15 @@ abstract class MessageIndex {
 		];
 	}
 
-	/**
-	 * Purge stuff when set of keys have changed.
-	 *
-	 * @param array $diff
-	 */
-	protected function clearMessageGroupStats( array $diff ) {
+	/** Purge stuff when set of keys have changed. */
+	protected function clearMessageGroupStats( array $diff ): void {
 		$job = RebuildMessageGroupStatsJob::newRefreshGroupsJob( $diff['values'] );
 		$this->jobQueueGroup->push( $job );
 
 		foreach ( $diff['keys'] as $keys ) {
 			foreach ( $keys as $key => $data ) {
-				[ $ns, $pagename ] = explode( ':', $key, 2 );
-				$title = Title::makeTitle( (int)$ns, $pagename );
+				[ $ns, $pageName ] = explode( ':', $key, 2 );
+				$title = Title::makeTitle( (int)$ns, $pageName );
 				$handle = new MessageHandle( $title );
 				[ $oldGroups, $newGroups ] = $data;
 				$this->hookRunner->onTranslateEventMessageMembershipChange(
@@ -412,12 +371,7 @@ abstract class MessageIndex {
 		}
 	}
 
-	/**
-	 * @param array &$hugearray
-	 * @param MessageGroup $g
-	 * @param bool $ignore
-	 */
-	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
+	protected function checkAndAdd( array &$hugeArray, MessageGroup $g, bool $ignore = false ): void {
 		$keys = $g->getKeys();
 		$id = $g->getId();
 		$namespace = $g->getNamespace();
@@ -427,25 +381,25 @@ abstract class MessageIndex {
 			# easier to do comparing when the case of first letter is unknown, because
 			# mediawiki forces it to upper case
 			$key = Utilities::normaliseKey( $namespace, $key );
-			if ( isset( $hugearray[$key] ) ) {
+			if ( isset( $hugeArray[$key] ) ) {
 				if ( !$ignore ) {
-					$to = implode( ', ', (array)$hugearray[$key] );
+					$to = implode( ', ', (array)$hugeArray[$key] );
 					wfWarn( "Key $key already belongs to $to, conflict with $id" );
 				}
 
-				if ( is_array( $hugearray[$key] ) ) {
+				if ( is_array( $hugeArray[$key] ) ) {
 					// Hard work is already done, just add a new reference
-					$hugearray[$key][] = & $id;
+					$hugeArray[$key][] = & $id;
 				} else {
 					// Store the actual reference, then remove it from array, to not
 					// replace the references value, but to store an array of new
 					// references instead. References are hard!
-					$value = & $hugearray[$key];
-					unset( $hugearray[$key] );
-					$hugearray[$key] = [ &$value, &$id ];
+					$value = & $hugeArray[$key];
+					unset( $hugeArray[$key] );
+					$hugeArray[$key] = [ &$value, &$id ];
 				}
 			} else {
-				$hugearray[$key] = & $id;
+				$hugeArray[$key] = & $id;
 			}
 		}
 		unset( $id ); // Disconnect the previous references to this $id

@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -29,7 +30,7 @@ class CreateMessageIndex extends Maintenance {
 
 	public function execute() {
 		MessageGroups::singleton()->recache();
-		MessageIndex::singleton()->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 }
 

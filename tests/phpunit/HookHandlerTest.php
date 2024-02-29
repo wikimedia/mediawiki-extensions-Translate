@@ -12,7 +12,6 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWikiLangTestCase;
-use MessageIndex;
 use MockWikiMessageGroup;
 use WANObjectCache;
 
@@ -32,6 +31,7 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 			'wgTranslateDocumentationLanguageCode' => 'qqq',
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
@@ -40,9 +40,7 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		$index = Services::getInstance()->getMessageIndex();
-		$index->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( &$list ) {

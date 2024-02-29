@@ -9,6 +9,8 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -27,9 +29,11 @@ class MessageHandle {
 	protected $code;
 	/** @var string[]|null */
 	protected $groupIds;
+	private MessageIndex $messageIndex;
 
 	public function __construct( LinkTarget $title ) {
 		$this->title = $title;
+		$this->messageIndex = Services::getInstance()->getMessageIndex();
 	}
 
 	/**
@@ -51,7 +55,7 @@ class MessageHandle {
 		if ( $this->key === null ) {
 			// Check if this is a valid message first
 			$this->key = $this->title->getDBkey();
-			$known = MessageIndex::singleton()->getGroupIds( $this ) !== [];
+			$known = $this->messageIndex->getGroupIds( $this ) !== [];
 
 			$pos = strrpos( $this->key, '/' );
 			if ( $known || $pos === false ) {
@@ -133,7 +137,7 @@ class MessageHandle {
 	 */
 	public function getGroupIds() {
 		if ( $this->groupIds === null ) {
-			$this->groupIds = MessageIndex::singleton()->getGroupIds( $this );
+			$this->groupIds = $this->messageIndex->getGroupIds( $this );
 		}
 
 		return $this->groupIds;

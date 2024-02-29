@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Title\Title;
 
 /**
@@ -132,7 +133,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		 */
 		$title = Title::makeTitle( $this->getNamespace(), $key );
 		$handle = new MessageHandle( $title );
-		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		$groupId = Services::getInstance()->getMessageIndex()->getPrimaryGroupId( $handle );
 		if ( $groupId === null ) {
 			error_log( "Could not determine groupId for MessageHandle of key $key" );
 			return null;

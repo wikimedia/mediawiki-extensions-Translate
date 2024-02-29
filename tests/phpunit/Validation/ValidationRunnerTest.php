@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\HookContainer\HookContainer;
 
@@ -20,6 +21,9 @@ use MediaWiki\HookContainer\HookContainer;
 class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
+		$this->setMwGlobals( [
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+		] );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
@@ -28,8 +32,7 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		MessageIndex::setInstance( new HashMessageIndex() );
-		MessageIndex::singleton()->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 
 		// Run with empty ignore list by default
 		$this->setMwGlobals( 'wgTranslateValidationExclusionFile', false );

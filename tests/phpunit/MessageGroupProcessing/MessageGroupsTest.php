@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWikiIntegrationTestCase;
-use MessageIndex;
 use WANObjectCache;
 
 /**
@@ -29,6 +29,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateGroupFiles' => $conf,
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
@@ -38,9 +39,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		$hashIndex = new HashMessageIndex();
-		MessageIndex::setInstance( $hashIndex );
-		$hashIndex->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	/** @dataProvider provideGroups */

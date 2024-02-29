@@ -1,25 +1,27 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use Generator;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
+use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Title\Title;
+use MediaWikiIntegrationTestCase;
+use MessageHandle;
+use MockWikiMessageGroup;
+use ObjectCache;
+use WANObjectCache;
+
 /**
  * Tests for different MessageIndex backends.
  *
- * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- */
-
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\CDBMessageIndex;
-use MediaWiki\Extension\Translate\MessageLoading\DatabaseMessageIndex;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
-use MediaWiki\Extension\Translate\MessageLoading\SerializedMessageIndex;
-use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\Title\Title;
-use Wikimedia\TestingAccessWrapper;
-
-/**
  * @group Database
  * @group large
- * @covers MessageIndex
+ * @covers MediaWiki\Extension\Translate\MessageLoading\MessageIndex
  */
 class MessageIndexTest extends MediaWikiIntegrationTestCase {
 	protected $tablesUsed = [ 'translate_messageindex' ];
@@ -40,7 +42,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$mg->recache();
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups( &$list ): bool {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
@@ -53,33 +55,20 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	public static function provideTranslateMessageIndexConfig() {
+	public static function provideTranslateMessageIndexConfig(): Generator {
 		yield [ 'DatabaseMessageIndex', DatabaseMessageIndex::class ];
 		yield [ [ 'DatabaseMessageIndex' ], DatabaseMessageIndex::class ];
 		yield [ [ 'SerializedMessageIndex' ], SerializedMessageIndex::class ];
 	}
 
-	/** @dataProvider provideTranslateMessageIndexConfig */
-	public function testSingleton( $configValue, $expectedClass ) {
-		$this->setMwGlobals( [
-			'wgTranslateMessageIndex' => $configValue,
-		] );
-		$wrapIndex = TestingAccessWrapper::newFromClass( MessageIndex::class );
-		$wrapIndex->instance = null;
-
-		$object = MessageIndex::singleton();
-
-		$this->assertInstanceOf( $expectedClass, $object );
-	}
-
 	/** @dataProvider provideTestGetArrayDiff */
-	public function testGetArrayDiff( $expected, $old, $new ) {
-		$actual = MessageIndex::getArrayDiff( $old, $new );
+	public function testGetArrayDiff( array $expected, array $old, array $new ): void {
+		$actual = Services::getInstance()->getMessageIndex()->getArrayDiff( $old, $new );
 		$this->assertEquals( $expected['keys'], $actual['keys'], 'key diff' );
 		$this->assertEquals( $expected['values'], $actual['values'], 'value diff' );
 	}
 
-	public static function provideTestGetArrayDiff() {
+	public static function provideTestGetArrayDiff(): array {
 		$tests = [];
 
 		// Addition
@@ -166,35 +155,35 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 	protected static function getTestData() {
 		static $data = null;
 		if ( $data === null ) {
-			$data = unserialize( file_get_contents( __DIR__ . '/data/messageindexdata.ser' ) );
+			$data = unserialize( file_get_contents( __DIR__ . '/../data/messageindexdata.ser' ) );
 		}
 
 		return $data;
 	}
 
 	/** @dataProvider provideMessageIndexImplementation */
-	public function testMessageIndexImplementation( $mi ) {
+	public function testMessageIndexImplementation( array $messageIndexSpec ): void {
+		$messageIndex = $this->getServiceContainer()->getObjectFactory()->createObject( $messageIndexSpec );
 		$data = self::getTestData();
-		/** @var TestableDatabaseMessageIndex|TestableCDBMessageIndex|TestableSerializedMessageIndex */
-		$diff = MessageIndex::getArrayDiff( [], $data );
-		$mi->store( $data, $diff['keys'] );
+		$diff = Services::getInstance()->getMessageIndex()->getArrayDiff( [], $data );
+		$messageIndex->store( $data, $diff['keys'] );
 
 		$tests = array_rand( $data, 10 );
 		foreach ( $tests as $key ) {
 			$this->assertSame(
 				$data[$key],
-				$mi->get( $key ),
+				$messageIndex->get( $key ),
 				"Values are preserved for random key $key"
 			);
 		}
 
-		$cached = $mi->retrieve();
+		$cached = $messageIndex->retrieve();
 
 		$tests = array_rand( $data, 10 );
 		foreach ( $tests as $key ) {
 			$this->assertSame(
 				$data[$key],
-				$mi->get( $key ),
+				$messageIndex->get( $key ),
 				"Values are preserved after retrieve for random key $key"
 			);
 		}
@@ -207,19 +196,16 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $data, $cached, 'Cache is preserved' );
 	}
 
-	public static function provideMessageIndexImplementation() {
-		return [
-			[ new TestableDatabaseMessageIndex() ],
-			[ new TestableCDBMessageIndex() ],
-			[ new TestableSerializedMessageIndex() ],
-			[ new TestableHashMessageIndex() ],
-			// Not testing CachedMessageIndex because there is no easy way to mockup those.
-		];
+	public static function provideMessageIndexImplementation(): Generator {
+		yield [ 'TestableDatabaseMessageIndex' => [ 'class' => TestableDatabaseMessageIndex::class ] ];
+		yield [ 'TestableCDBMessageIndex' => [ 'class' => TestableCDBMessageIndex::class ] ];
+		yield [ 'TestableSerializedMessageIndex' => [ 'class' => TestableSerializedMessageIndex::class ] ];
+		yield [ 'TestableHashMessageIndex' => [ 'class' => TestableHashMessageIndex::class ] ];
 	}
 
-	public function testInterimCache() {
+	public function testInterimCache(): void {
 		$group = MessageGroups::getGroup( 'test-group' );
-		MessageIndex::singleton()->storeInterim( $group, [
+		Services::getInstance()->getMessageIndex()->storeInterim( $group, [
 			'translated_changed',
 		] );
 
@@ -232,12 +218,12 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 }
 
 class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
-	public function store( array $a, array $diff ): void {
-		parent::store( $a, $diff );
+	public function store( array $array, array $diff ): void {
+		parent::store( $array, $diff );
 	}
 
-	public function get( $a ) {
-		return parent::get( $a );
+	public function get( $key ) {
+		return parent::get( $key );
 	}
 }
 
@@ -252,21 +238,21 @@ class TestableCDBMessageIndex extends CDBMessageIndex {
 }
 
 class TestableSerializedMessageIndex extends SerializedMessageIndex {
-	public function store( array $a, array $diff ): void {
-		parent::store( $a, $diff );
+	public function store( array $array, array $diff ): void {
+		parent::store( $array, $diff );
 	}
 
-	public function get( $a ) {
-		return parent::get( $a );
+	public function get( $key ) {
+		return parent::get( $key );
 	}
 }
 
 class TestableHashMessageIndex extends HashMessageIndex {
-	public function store( array $a, array $diff ): void {
-		parent::store( $a, $diff );
+	public function store( array $array, array $diff ): void {
+		parent::store( $array, $diff );
 	}
 
-	public function get( $a ) {
-		return parent::get( $a );
+	public function get( $key ) {
+		return parent::get( $key );
 	}
 }

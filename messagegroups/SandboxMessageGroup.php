@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -71,7 +72,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		}
 
 		// Get some random keys
-		$all = MessageIndex::singleton()->getKeys();
+		$all = Services::getInstance()->getMessageIndex()->getKeys();
 		// In case there aren't any messages
 		if ( $all === [] ) {
 			return $list;
@@ -137,7 +138,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	 * @return null|string
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
-		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		$groupId = Services::getInstance()->getMessageIndex()->getPrimaryGroupId( $handle );
 		if ( $groupId === null ) {
 			return null;
 		}

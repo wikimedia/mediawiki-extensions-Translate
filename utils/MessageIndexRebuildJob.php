@@ -10,6 +10,7 @@
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Services;
 
 /**
  * Job for rebuilding message index.
@@ -41,7 +42,7 @@ class MessageIndexRebuildJob extends GenericTranslateJob implements GenericParam
 		$timestamp = $this->getParams()['timestamp'] ?? microtime( true );
 
 		try {
-			MessageIndex::singleton()->rebuild( $timestamp );
+			Services::getInstance()->getMessageIndex()->rebuild( $timestamp );
 		} catch ( MessageIndexException $e ) {
 			// Currently there is just one type of exception: lock wait time exceeded.
 			// Assuming no bugs, this is a transient issue and retry will solve it.

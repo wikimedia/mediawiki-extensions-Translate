@@ -3,8 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
-use MessageIndex;
-
 /** Storage on hash. For testing. */
 class HashMessageIndex extends MessageIndex {
 	private array $index = [];

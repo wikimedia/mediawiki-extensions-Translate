@@ -8,11 +8,11 @@ use HashBagOStuff;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use MessageIndex;
 use MockWikiValidationMessageGroup;
 use ParserOptions;
 use RequestContext;
@@ -44,6 +44,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 					'translate-manage' => true,
 				],
 			],
+			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 
 		$this->clearHooks();
@@ -61,9 +62,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 
-		$hashIndex = new HashMessageIndex();
-		MessageIndex::setInstance( $hashIndex );
-		$hashIndex->rebuild();
+		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
 	public function getTestGroups( array &$groups, array &$deps, array &$autoload ) {
