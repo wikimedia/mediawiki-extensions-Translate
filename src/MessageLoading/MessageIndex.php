@@ -17,7 +17,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageHandle;
-use MessageIndexException;
 use MessageIndexRebuildJob;
 use ObjectCache;
 use Psr\Log\LoggerInterface;

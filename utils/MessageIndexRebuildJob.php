@@ -10,6 +10,7 @@
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndexException;
 use MediaWiki\Extension\Translate\Services;
 
 /**
