@@ -85,7 +85,8 @@
 				mgformat: 'flat',
 				mgprop: props,
 				mgroot: id,
-				formatversion: 2
+				formatversion: 2,
+				uselang: mw.config.get( 'wgUserLanguage' )
 			};
 
 			var api = new mw.Api();

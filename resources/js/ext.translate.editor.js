@@ -944,7 +944,8 @@
 			this.validating = api.post( {
 				action: 'translationcheck',
 				title: this.message.title,
-				translation: $textarea.val()
+				translation: $textarea.val(),
+				uselang: mw.config.get( 'wgUserLanguage' )
 			} ).done( function ( data ) {
 				var warnings = data.validation.warnings,
 					errors = data.validation.errors;

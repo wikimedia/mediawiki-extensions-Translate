@@ -23,7 +23,8 @@
 				mcprop: 'definition|translation|tags|properties',
 				rawcontinue: 1,
 				errorformat: 'html',
-				formatversion: 2
+				formatversion: 2,
+				uselang: mw.config.get( 'wgUserLanguage' )
 			} );
 		}
 	} );
