@@ -168,7 +168,7 @@
 	"tux-editor-outdated-notice-diff-link": "Čuäʹjet muttsid",
 	"tux-editor-doc-editor-cancel": "Jõõsk",
 	"tux-message-filter-placeholder": "Siʹlle liist",
-	"tux-message-filter-result": "{{PLURAL:$1|0=Ni mâiʹd ij käunnʼjam|1=Õhtt puåđõs käunnʼji|2= puåđõõzz käunnʼje|3= puåđõõzz käunnʼje|4= puåđõõzz käunnʼje|5= puåđõõzz käunnʼje|6= puåđõõzz käunnʼje|$1 puåđõssâd käunnʼje}} ooccâmsänna leʹbe -saaʹnid $2",
+	"tux-message-filter-result": "{{PLURAL:$1|0=Ij käunnʼjam ni mii|1=Õhtt puåđõs käunnʼji|2= puåđõõzz käunnʼje|3= puåđõõzz käunnʼje|4= puåđõõzz käunnʼje|5= puåđõõzz käunnʼje|6= puåđõõzz käunnʼje|$1 puåđõssâd käunnʼje}} ooccâmsänna leʹbe -saaʹnid $2",
 	"tux-message-filter-advanced-button": "Tääʹrǩab ooccmõš",
 	"tux-empty-list-translated-action": "Jåårǥlââʹtt",
 	"tux-empty-show-optional-messages": "Čuäʹjet vaʹlljeemnallšem saaǥǥid.",

@@ -3,14 +3,15 @@
 		"authors": [
 			"Gazimagomedov",
 			"Omarov M.",
-			"Аль-Гимравий"
+			"Аль-Гимравий",
+			"Augustus A C"
 		]
 	},
 	"tpt-invalid-group": "Бегьулареб группа",
 	"pt-movepage-new": "ЦӀияб цӀар:",
 	"pt-deletepage-action-perform": "Гилдизаби тӀубазе",
 	"pp-prepare-button-label": "ХӀадур гьабизе",
-	"pp-save-button-label": "Басмалъизабизе",
+	"pp-save-button-label": "Публикати",
 	"pp-diff-old-header": "Иццалъулаб текст",
-	"pp-diff-new-header": "ХӀадурараб текст"
+	"pp-diff-new-header": "КъачӀараб текст"
 }

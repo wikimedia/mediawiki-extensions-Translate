@@ -164,6 +164,7 @@
 	"supportedlanguages-recenttranslations": "viimased tõlked",
 	"supportedlanguages-count": "Kokku {{PLURAL:$1|üks keel|$1 keelt}}.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|Üks muudatus|$2 muudatust}} – viimane muudatus {{PLURAL:$3|eile|$3 päeva tagasi}}",
+	"translate-supportedlanguages-cached": "See teave puhverdati $1 tagasi.",
 	"translate-jssti-add": "Lisa loetellu",
 	"managemessagegroups": "Sõnumirühmade haldamine",
 	"translate-smg-notallowed": "Sul pole lubatud seda toimingut sooritada.",

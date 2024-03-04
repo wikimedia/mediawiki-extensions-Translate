@@ -34,6 +34,8 @@
 	"translate-taskui-export-to-file": "Vie perusmuodossa",
 	"translate-taskui-export-as-po": "Vie off-line kääntämiseen soveltuvassa muodossa",
 	"translate-taskui-export-as-csv": "Vie CSV-muodossa",
+	"translate-export-csv-message-title": "Käännösviestin otsikko",
+	"translate-export-csv-definition": "Viestin määritelmä",
 	"translate-taction-translate": "Käännä",
 	"translate-taction-proofread": "Oikolue",
 	"translate-taction-lstats": "Kielitilastot",

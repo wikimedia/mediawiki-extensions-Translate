@@ -169,7 +169,7 @@
 	"apierror-translate-smg-nochanges": "{{doc-apierror}}",
 	"apierror-translate-unknownmessage": "{{doc-apierror}}",
 	"apierror-translate-invalid-changeset-name": "{{doc-apierror}} \n\nParameters:\n* $1 - Changeset file name passed in the request",
-	"apierror-translate-invalid-operation": "{{doc-apierror}}\n\nParameters:\n* $1 - Operation value passed in request.\n* $2 - Comma separated list of valid values.",
+	"apierror-translate-invalid-operation": "{{doc-apierror}}\n\nParameters:\n* $1 - Operation value passed in request.\n* $2 - Comma-separated list of valid values.",
 	"apierror-translate-addition-key-invalid": "{{doc-apierror}}",
 	"apierror-translate-rename-msg-new": "{{doc-apierror}}",
 	"apierror-translate-rename-key-invalid": "{{doc-apierror}}",
