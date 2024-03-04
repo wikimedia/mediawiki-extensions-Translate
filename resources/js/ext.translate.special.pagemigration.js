@@ -298,6 +298,12 @@
 	 * @return {string[]}
 	 */
 	function alignHeaders( units, translationUnits ) {
+		// The content does not have information about the page title. Add an empty string
+		// at the beginning of the translationUnits array to match the length of units and
+		// translationUnits.
+		if ( units.length && units[ 0 ].identifier === 'Page_display_title' ) {
+			translationUnits.unshift( '' );
+		}
 		var tIndex = 0;
 		var regex = new RegExp( /^==[^=]+==$/m );
 		for ( var i = 0; i < units.length; i++ ) {
