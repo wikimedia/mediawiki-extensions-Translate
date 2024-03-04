@@ -376,5 +376,6 @@
 	"tux-nojs": "Dësen Tool funktionéiert net ouni JavaScript. JavaScript ass ausgeschalt, funktionéiert net oder dëse Browser gëtt net ënnerstëtzt.",
 	"specialpages-group-translation": "Iwwersetzung",
 	"translate-messagebundle-error-key-too-long": "Schlëssel \"$1\" ass ze laang",
-	"translate-messagebundle-error-empty-value": "Schlëssel \"$1\" huet kee Wäert"
+	"translate-messagebundle-error-empty-value": "Schlëssel \"$1\" huet kee Wäert",
+	"translate-hidetranslations": "Iwwersetzungssäite verstoppen"
 }

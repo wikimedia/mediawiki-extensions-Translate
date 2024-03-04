@@ -13,6 +13,7 @@
 	"tux-sst-view-foreign": "Näytä sivulla $1",
 	"tux-sst-search": "Hae",
 	"tux-sst-search-ph": "Etsi käännöksiä",
+	"tux-sst-search-info": "Käytä operaattoreita <code>language:</code> tai <code>group:</code> tarkentaaksesi hakuehtoja",
 	"tux-sst-count": "{{PLURAL:$1|Yksi hakutulos|$1 hakutulosta}}",
 	"tux-sst-facet-language": "Kielet",
 	"tux-sst-facet-group": "Viestiryhmät",
