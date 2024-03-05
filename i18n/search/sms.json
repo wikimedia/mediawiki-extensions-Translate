@@ -9,7 +9,7 @@
 	"tux-sst-view-foreign": "Čuäʹjet seeidast $1",
 	"tux-sst-search": "Ooʒʒ",
 	"tux-sst-search-ph": "Ooʒʒ jåårǥlõõzzid",
-	"tux-sst-count": "{{PLURAL:$1|$1 ooccâmpuåđõssâd||1=Õhtt ooccâmpuåđõs|2=2 ooccâmpuåđõõzz|3=3 ooccâmpuåđõõzz|4=4 ooccâmpuåđõõzz|5=5 ooccâmpuåđõõzz|6=6 ooccâmpuåđõõzz|0=Ni mâiʹd ij käunnʼjam}}",
+	"tux-sst-count": "{{PLURAL:$1|$1 ooccâmpuåđõssâd||1=Õhtt ooccâmpuåđõs|2=2 ooccâmpuåđõõzz|3=3 ooccâmpuåđõõzz|4=4 ooccâmpuåđõõzz|5=5 ooccâmpuåđõõzz|6=6 ooccâmpuåđõõzz|0=Ij käunnʼjam ni mii}}",
 	"tux-sst-facet-language": "Ǩiõl",
 	"tux-sst-facet-group": "Saakkjoouk",
 	"tux-sst-default": "Jåårǥlõõzz",
