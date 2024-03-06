@@ -47,7 +47,7 @@ class TranslationPageTest extends MediaWikiIntegrationTestCase {
 			$this->createStub( WikiPageMessageGroup::class ),
 			$languageFactory->getLanguage( 'ar' ),
 			$languageFactory->getLanguage( 'en' ),
-			true /*$showOutdated*/,
+			true, /*$showOutdated*/
 			$wrapUntranslated,
 			Title::newFromText( __METHOD__ )
 		);

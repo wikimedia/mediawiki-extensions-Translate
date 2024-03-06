@@ -11,7 +11,7 @@ use MediaWiki\Title\Title;
 /**
  * @group Database
  * @group medium
- * @covers TranslatablePage
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePage
  */
 class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

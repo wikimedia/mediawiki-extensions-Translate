@@ -77,7 +77,7 @@ class ManageMessageGroupsActionApi extends ApiBase {
 			} else {
 				$this->dieWithError(
 					[ 'apierror-translate-invalid-operation', wfEscapeWikiText( $op ),
-						wfEscapeWikiText( implode( '/', [ 'new' , 'rename' ] ) ) ],
+						wfEscapeWikiText( implode( '/', [ 'new', 'rename' ] ) ) ],
 					'invalidoperation'
 				);
 			}

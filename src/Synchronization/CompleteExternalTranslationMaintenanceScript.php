@@ -59,7 +59,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 					'Messages - {messages}; ' .
 					'Jobs remaining - {jobRemaining}',
 					[
-						'groupId' => $groupId ,
+						'groupId' => $groupId,
 						'jobRemaining' => count( $remainingMessages ),
 						'messages' => implode( ', ', array_keys( $remainingMessages ) )
 					]
