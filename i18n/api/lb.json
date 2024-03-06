@@ -5,9 +5,11 @@
 			"Volvox"
 		]
 	},
+	"apihelp-groupreview-param-group": "Noriichtegrupp. Kuckt <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-groupreview-param-language": "Sproochcode.",
 	"apihelp-query+languagestats-param-language": "Sproochcode.",
-	"apihelp-query+managemessagegroups-param-groupId": "Gruppen-ID",
+	"apihelp-query+languagestats-param-group": "Noriichtegruppen-ID. Kuckt <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-query+managemessagegroups-param-groupId": "Gruppen-ID. Kuckt <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-query+messagecollection-param-language": "Sproochcode.",
 	"apihelp-query+messagecollection-example-1": "Lëscht vun den ënnerstëtzte Sproochen",
 	"apihelp-query+messagecollection-example-4": "Méi Informatioun iwwer déi lescht Iwwersetzungsversioun fir de Grupp \"Beispill-Säit\"",
@@ -15,7 +17,7 @@
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Sproochen net weisen, déi komplett iwwersat sinn",
 	"apihelp-query+messagetranslations-param-title": "Kompletten Titel vun engem bekannte Message.",
 	"apihelp-query+messagetranslations-example-1": "Lëscht vun Iwwersetzungen an der Wiki fir \"MediaWiki:January\"",
-	"apihelp-managemessagegroups-param-groupId": "Gruppen-ID",
+	"apihelp-managemessagegroups-param-groupId": "Gruppen-ID. Kuckt <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-translatesandbox-param-do": "Wat maachen.",
 	"apihelp-translationaids-param-title": "Kompletten Titel vun engem bekannte Message.",
 	"apihelp-translationreview-summary": "Nogekuckt Iwwersetzunge markéieren.",
