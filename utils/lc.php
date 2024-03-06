@@ -15,8 +15,11 @@
  * @param string $name Name of the namespace
  * @param string|null $constant (optional) name of namespace constant, defaults to
  *   NS_ followed by upper case version of $name, e.g., NS_MEDIAWIKI
+ * @deprecated since MLEB 2024.04. This function is best located in the translatewiki
+ * repository under TranslatewikiSettings.php.
  */
 function wfAddNamespace( $id, $name, $constant = null ) {
+	wfDeprecated( __FUNCTION__, '2024.04', 'Translate' );
 	global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
 		$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault,
 		$wgVisualEditorAvailableNamespaces;
