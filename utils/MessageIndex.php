@@ -252,7 +252,7 @@ abstract class MessageIndex {
 				$job = MessageIndexRebuildJob::newJob( __METHOD__ );
 				$this->jobQueueGroup->push( $job );
 				$this->logger->debug(
-					'[MessageIndex] Kept interim cache with timestamp {cacheTimestamp} > ${currentTimestamp}.',
+					'[MessageIndex] Kept interim cache with timestamp {cacheTimestamp} > {currentTimestamp}.',
 					[
 						'cacheTimestamp' => $interimCacheValue['timestamp'],
 						'currentTimestamp' => $timestamp,
