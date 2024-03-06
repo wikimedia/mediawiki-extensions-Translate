@@ -9,7 +9,8 @@
 			"Purodha",
 			"Raymond",
 			"Shirayuki",
-			"Verdy p"
+			"Verdy p",
+			"Jon Harald Søby"
 		]
 	},
 	"managetranslatorsandbox": "{{doc-special|TranslateSandbox}}",
@@ -46,7 +47,7 @@
 	"translate-translationstash-welcome": "Title text shown for the [[Special:TranslationStash]]. Parameters:\n* $1 - user name of the new translator",
 	"translate-translationstash-welcome-note": "Title note for the [[Special:TranslationStash]].",
 	"translate-translationstash-initialtranslation": "Header for messages showing the progress of translations in [[Special:TranslationStash]].\n\nSee also:\n* {{msg-mw|Translate-translationstash-translations}}",
-	"translate-translationstash-translations": "Header for messages showing the progress of translations in [[Special:TranslationStash]]. Params:\n\t* $1 - the number of translations user has completed in the stash",
+	"translate-translationstash-translations": "Header for messages showing the progress of translations in [[Special:TranslationStash]].\n\nParameters:\n* $1 - the number of translations user has completed in the stash",
 	"translate-translationstash-skip-button-label": "Label for the skip button in translation editor.\n{{Identical|Try another}}",
 	"tsb-limit-reached-title": "Heading shown below translations when the user has reached the limit for number of translations.",
 	"tsb-limit-reached-body": "Text shown below translations when the user has reached the limit for number of translations.",
