@@ -4,9 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use AggregateMessageGroup;
-use ErrorPageError;
 use Language;
-use LogicException;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -29,19 +27,12 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslateSpecialPage extends SpecialPage {
-	/** @var MessageGroup|null */
-	protected $group;
-	protected $defaults;
-	protected $nondefaults = [];
-	protected $options;
-	/** @var Language */
-	private $contentLanguage;
-	/** @var LanguageFactory */
-	private $languageFactory;
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var HookRunner */
-	private $hookRunner;
+	protected ?MessageGroup $group = null;
+	protected array $options = [];
+	private Language $contentLanguage;
+	private LanguageFactory $languageFactory;
+	private LanguageNameUtils $languageNameUtils;
+	private HookRunner $hookRunner;
 
 	public function __construct(
 		Language $contentLanguage,
@@ -64,12 +55,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
-	/**
-	 * Access point for this special page.
-	 *
-	 * @param string|null $parameters
-	 * @throws ErrorPageError
-	 */
+	/** @inheritDoc */
 	public function execute( $parameters ) {
 		$out = $this->getOutput();
 		$out->addModuleStyles( [
@@ -85,7 +71,7 @@ class TranslateSpecialPage extends SpecialPage {
 		// Redirect old export URLs to Special:ExportTranslations
 		if ( $this->getRequest()->getText( 'taction' ) === 'export' ) {
 			$exportPage = SpecialPage::getTitleFor( 'ExportTranslations' );
-			$out->redirect( $exportPage->getLocalURL( $this->nondefaults ) );
+			$out->redirect( $exportPage->getLocalURL( $this->options ) );
 		}
 
 		$out->addModules( 'ext.translate.special.translate' );
@@ -112,15 +98,13 @@ class TranslateSpecialPage extends SpecialPage {
 		$request = $this->getRequest();
 
 		$defaults = [
-			/* str  */'language' => $this->getLanguage()->getCode(),
-			/* str  */'group' => '!additions',
+			'language' => $this->getLanguage()->getCode(),
+			'group' => '!additions',
 		];
 
 		// Dump everything here
 		$nondefaults = [];
-
-		$parameters = $parameters !== null ? array_map( 'trim', explode( ';', $parameters ) ) : [];
-		$pars = [];
+		$parameters = array_map( 'trim', explode( ';', (string)$parameters ) );
 
 		foreach ( $parameters as $_ ) {
 			if ( $_ === '' ) {
@@ -134,32 +118,18 @@ class TranslateSpecialPage extends SpecialPage {
 				$value = $_;
 			}
 
-			$pars[$key] = $value;
-		}
-
-		foreach ( $defaults as $v => $t ) {
-			if ( is_bool( $t ) ) {
-				$r = isset( $pars[$v] ) ? (bool)$pars[$v] : $defaults[$v];
-				$r = $request->getBool( $v, $r );
-			} elseif ( is_int( $t ) ) {
-				$r = isset( $pars[$v] ) ? (int)$pars[$v] : $defaults[$v];
-				$r = $request->getInt( $v, $r );
-			} elseif ( is_string( $t ) ) {
-				$r = isset( $pars[$v] ) ? (string)$pars[$v] : $defaults[$v];
-				$r = $request->getText( $v, $r );
-			}
-
-			if ( !isset( $r ) ) {
-				throw new LogicException( '$r was not set' );
-			}
-
-			if ( $defaults[$v] !== $r ) {
-				$nondefaults[$v] = $r;
+			if ( isset( $defaults[$key] ) ) {
+				$nondefaults[$key] = $value;
 			}
 		}
 
-		$this->defaults = $defaults;
-		$this->nondefaults = $nondefaults;
+		foreach ( array_keys( $defaults ) as $key ) {
+			$value = $request->getVal( $key );
+			if ( is_string( $value ) ) {
+				$nondefaults[$key] = $value;
+			}
+		}
+
 		$this->hookRunner->onTranslateGetSpecialTranslateOptions( $defaults, $nondefaults );
 
 		$this->options = $nondefaults + $defaults;
@@ -167,11 +137,11 @@ class TranslateSpecialPage extends SpecialPage {
 		if ( $this->group ) {
 			$this->options['group'] = $this->group->getId();
 		} else {
-			$this->group = MessageGroups::getGroup( $this->defaults['group'] );
+			$this->group = MessageGroups::getGroup( $defaults['group'] );
 		}
 
 		if ( !$this->languageNameUtils->isKnownLanguageTag( $this->options['language'] ) ) {
-			$this->options['language'] = $this->defaults['language'];
+			$this->options['language'] = $defaults['language'];
 		}
 
 		if ( MessageGroups::isDynamic( $this->group ) ) {
@@ -210,7 +180,7 @@ class TranslateSpecialPage extends SpecialPage {
 			'unproofread' => "translated|!reviewer:$userId|!last-translator:$userId",
 		];
 
-		$params = $this->nondefaults;
+		$params = $this->options;
 
 		foreach ( $tabs as $tab => $filter ) {
 			// Possible classes and messages, for grepping:
@@ -220,10 +190,7 @@ class TranslateSpecialPage extends SpecialPage {
 			// tux-tab-translated
 			// tux-tab-unproofread
 			$tabClass = "tux-tab-$tab";
-			$taskParams = [ 'filter' => $filter ] + $params;
-			ksort( $taskParams );
-			$href = $this->getPageTitle()->getLocalURL( $taskParams );
-			$link = Html::element( 'a', [ 'href' => $href ], $this->msg( $tabClass )->text() );
+			$link = Html::element( 'a', [ 'href' => '#' ], $this->msg( $tabClass )->text() );
 			$output .= Html::rawElement( 'li', [
 				'class' => 'column ' . $tabClass,
 				'data-filter' => $filter,
@@ -232,33 +199,21 @@ class TranslateSpecialPage extends SpecialPage {
 		}
 
 		// Check boxes for the "more" tab.
-		// The array keys are used as the name attribute of the checkbox.
-		// in the id attribute as tux-option-KEY,
-		// and also for the data-filter attribute.
-		// The message is shown as the checkbox's label.
-		$options = [
-			'optional' => $this->msg( 'tux-message-filter-optional-messages-label' )->text(),
-		];
-
 		$container = Html::openElement( 'ul', [ 'class' => 'column tux-message-selector' ] );
-		foreach ( $options as $optFilter => $optLabel ) {
-			$container .= Html::rawElement( 'li',
-				[ 'class' => 'column' ],
-				Xml::checkLabel(
-					$optLabel,
-					$optFilter,
-					"tux-option-$optFilter",
-					isset( $this->nondefaults[$optFilter] ),
-					[ 'data-filter' => $optFilter ]
-				)
-			);
-		}
+		$container .= Html::rawElement( 'li',
+			[ 'class' => 'column' ],
+			Xml::checkLabel(
+				$this->msg( 'tux-message-filter-optional-messages-label' )->text(),
+				'optional',
+				'tux-option-optional',
+				false,
+				[ 'data-filter' => 'optional' ]
+			)
+		);
 
 		$container .= Html::closeElement( 'ul' );
-
-		// @todo FIXME: Hard coded "ellipsis".
 		$output .= Html::openElement( 'li', [ 'class' => 'column more' ] ) .
-			'...' .
+			$this->msg( 'ellipsis' )->escaped() .
 			$container .
 			Html::closeElement( 'li' );
 
