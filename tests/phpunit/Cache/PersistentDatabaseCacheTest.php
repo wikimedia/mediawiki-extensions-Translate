@@ -15,8 +15,7 @@ use MediaWikiIntegrationTestCase;
  * @covers \MediaWiki\Extension\Translate\Cache\PersistentCacheEntry
  */
 class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
-	/** @var PersistentDatabaseCache */
-	private $persistentCache;
+	private PersistentDatabaseCache $persistentCache;
 
 	protected function setUp(): void {
 		parent::setUp();

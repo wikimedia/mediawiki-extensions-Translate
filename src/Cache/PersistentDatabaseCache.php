@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Cache;
 
-use ArrayIterator;
 use Iterator;
 use MediaWiki\Json\JsonCodec;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -35,20 +34,6 @@ class PersistentDatabaseCache implements PersistentCache {
 			->fetchResultSet();
 
 		return $this->buildEntries( $rows );
-	}
-
-	public function getWithLock( string $keyname ): ?PersistentCacheEntry {
-		$dbr = $this->loadBalancer->getConnection( DB_PRIMARY );
-		$rows = $dbr->newSelectQueryBuilder()
-			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
-			->forUpdate()
-			->from( self::TABLE_NAME )
-			->where( [ 'tc_key' => $keyname ] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-
-		$entries = $this->buildEntries( $rows );
-		return count( $entries ) ? $entries[0] : null;
 	}
 
 	/** @return PersistentCacheEntry[] */
@@ -86,24 +71,6 @@ class PersistentDatabaseCache implements PersistentCache {
 			->fetchRow();
 
 		return (bool)$hasRow;
-	}
-
-	public function hasExpiredEntry( string $keyname ): bool {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$row = $dbr->newSelectQueryBuilder()
-			->select( 'tc_expired' )
-			->from( self::TABLE_NAME )
-			->where( [ 'tc_key' => $keyname ] )
-			->caller( __METHOD__ )
-			->fetchRow();
-
-		if ( $row === false ) {
-			return false;
-		}
-
-		$rows = new ArrayIterator( [ $row ] );
-		$entry = $this->buildEntries( $rows )[0];
-		return $entry->hasExpired();
 	}
 
 	public function set( PersistentCacheEntry ...$entries ): void {

@@ -8,13 +8,9 @@ interface PersistentCache {
 	/** @return PersistentCacheEntry[] */
 	public function get( string ...$keynames ): array;
 
-	public function getWithLock( string $keyname ): ?PersistentCacheEntry;
-
 	public function has( string $keyname ): bool;
 
 	public function hasEntryWithTag( string $tag ): bool;
-
-	public function hasExpiredEntry( string $keyname ): bool;
 
 	public function setExpiry( string $keyname, int $expiryTime ): void;
 
