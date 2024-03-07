@@ -29,8 +29,8 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslateSpecialPage extends SpecialPage {
-	protected ?MessageGroup $group = null;
-	protected array $options = [];
+	private ?MessageGroup $group = null;
+	private array $options = [];
 	private Language $contentLanguage;
 	private LanguageFactory $languageFactory;
 	private LanguageNameUtils $languageNameUtils;
@@ -98,7 +98,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
-	protected function setup( ?string $parameters ): void {
+	private function setup( ?string $parameters ): void {
 		$request = $this->getRequest();
 
 		$defaults = [
@@ -107,7 +107,7 @@ class TranslateSpecialPage extends SpecialPage {
 		];
 
 		// Dump everything here
-		$nondefaults = [];
+		$nonDefaults = [];
 		$parameters = array_map( 'trim', explode( ';', (string)$parameters ) );
 
 		foreach ( $parameters as $_ ) {
@@ -123,30 +123,30 @@ class TranslateSpecialPage extends SpecialPage {
 			}
 
 			if ( isset( $defaults[$key] ) ) {
-				$nondefaults[$key] = $value;
+				$nonDefaults[$key] = $value;
 			}
 		}
 
 		foreach ( array_keys( $defaults ) as $key ) {
 			$value = $request->getVal( $key );
 			if ( is_string( $value ) ) {
-				$nondefaults[$key] = $value;
+				$nonDefaults[$key] = $value;
 			}
 		}
 
-		$this->hookRunner->onTranslateGetSpecialTranslateOptions( $defaults, $nondefaults );
+		$this->hookRunner->onTranslateGetSpecialTranslateOptions( $defaults, $nonDefaults );
 
-		$this->options = $nondefaults + $defaults;
+		$this->options = $nonDefaults + $defaults;
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
 		if ( $this->group ) {
 			$this->options['group'] = $this->group->getId();
 		} else {
 			$this->group = MessageGroups::getGroup( $defaults['group'] );
-			if ( isset( $nondefaults['group'] ) ) {
+			if ( isset( $nonDefaults['group'] ) ) {
 				// https://phabricator.wikimedia.org/T320220
 				$this->logger->debug(
 					"[Special:Translate] Requested group {groupId} doesn't exist.",
-					[ 'groupId' => $nondefaults['group'] ]
+					[ 'groupId' => $nonDefaults['group'] ]
 				);
 			}
 		}
@@ -161,8 +161,8 @@ class TranslateSpecialPage extends SpecialPage {
 		}
 	}
 
-	protected function tuxSettingsForm(): string {
-		$nojs = Html::errorBox(
+	private function tuxSettingsForm(): string {
+		$noJs = Html::errorBox(
 			$this->msg( 'tux-nojs' )->plain(),
 			'',
 			'tux-nojs'
@@ -175,10 +175,10 @@ class TranslateSpecialPage extends SpecialPage {
 			$this->tuxWorkflowSelector() .
 			$this->tuxGroupWarning();
 
-		return Html::rawElement( 'div', $attrs, $selectors ) . $nojs;
+		return Html::rawElement( 'div', $attrs, $selectors ) . $noJs;
 	}
 
-	protected function messageSelector(): string {
+	private function messageSelector(): string {
 		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header hide' ] );
 		$output .= Html::openElement( 'div', [ 'class' => 'nine columns' ] );
 		$output .= Html::openElement( 'ul', [ 'class' => 'row tux-message-selector' ] );
@@ -190,8 +190,6 @@ class TranslateSpecialPage extends SpecialPage {
 			'translated' => 'translated',
 			'unproofread' => "translated|!reviewer:$userId|!last-translator:$userId",
 		];
-
-		$params = $this->options;
 
 		foreach ( $tabs as $tab => $filter ) {
 			// Possible classes and messages, for grepping:
@@ -247,14 +245,14 @@ class TranslateSpecialPage extends SpecialPage {
 		return $output;
 	}
 
-	protected function tuxGroupSelector(): string {
+	private function tuxGroupSelector(): string {
 		$groupClass = [ 'grouptitle', 'grouplink' ];
 		if ( $this->group instanceof AggregateMessageGroup ) {
 			$groupClass[] = 'tux-breadcrumb__item--aggregate';
 		}
 
 		// @todo FIXME The selector should have expanded parent-child lists
-		$output = Html::openElement( 'div', [
+		return Html::openElement( 'div', [
 			'class' => 'eight columns tux-breadcrumb',
 			'data-language' => $this->options['language'],
 		] ) .
@@ -274,11 +272,9 @@ class TranslateSpecialPage extends SpecialPage {
 				$this->group->getLabel( $this->getContext() )
 			) .
 			Html::closeElement( 'div' );
-
-		return $output;
 	}
 
-	protected function tuxLanguageSelector(): string {
+	private function tuxLanguageSelector(): string {
 		global $wgTranslateDocumentationLanguageCode;
 
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
@@ -328,7 +324,7 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function tuxGroupDescription(): string {
+	private function tuxGroupDescription(): string {
 		// Initialize an empty warning box to be filled client-side.
 		return Html::rawElement(
 			'div',
@@ -337,13 +333,13 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function getGroupDescription( MessageGroup $group ): string {
+	private function getGroupDescription( MessageGroup $group ): string {
 		$description = $group->getDescription( $this->getContext() );
 		return $description === null ?
 			'' : $this->getOutput()->parseAsInterface( $description );
 	}
 
-	protected function tuxGroupWarning(): string {
+	private function tuxGroupWarning(): string {
 		if ( $this->options['group'] === '' ) {
 			return Html::warningBox(
 				$this->msg( 'tux-translate-page-no-such-group' )->parse(),
@@ -354,7 +350,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return '';
 	}
 
-	protected function tuxWorkflowSelector(): string {
+	private function tuxWorkflowSelector(): string {
 		return Html::element( 'div', [ 'class' => 'tux-workflow twelve columns' ] );
 	}
 
@@ -397,8 +393,8 @@ class TranslateSpecialPage extends SpecialPage {
 		} );
 
 		$translate = SpecialPage::getTitleFor( 'Translate' );
-		$languagestats = SpecialPage::getTitleFor( 'LanguageStats' );
-		$messagegroupstats = SpecialPage::getTitleFor( 'MessageGroupStats' );
+		$languageStatistics = SpecialPage::getTitleFor( 'LanguageStats' );
+		$messageGroupStatistics = SpecialPage::getTitleFor( 'MessageGroupStats' );
 
 		// Clear the special page tab that might be there already
 		$tabs['namespaces'] = [];
@@ -415,7 +411,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$tabs['views']['lstats'] = [
 			'text' => wfMessage( 'translate-taction-lstats' )->text(),
-			'href' => $languagestats->getLocalURL( $params ),
+			'href' => $languageStatistics->getLocalURL( $params ),
 			'class' => 'tux-tab',
 		];
 		if ( $alias === 'LanguageStats' ) {
@@ -424,7 +420,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$tabs['views']['mstats'] = [
 			'text' => wfMessage( 'translate-taction-mstats' )->text(),
-			'href' => $messagegroupstats->getLocalURL( $params ),
+			'href' => $messageGroupStatistics->getLocalURL( $params ),
 			'class' => 'tux-tab',
 		];
 
