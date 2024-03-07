@@ -8,6 +8,8 @@ use InvalidArgumentException;
 use LogicException;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentCacheEntry;
+use MediaWiki\Logger\LoggerFactory;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 
 /**
@@ -32,22 +34,17 @@ use RuntimeException;
  * @since 2020.06
  */
 class GroupSynchronizationCache {
-	/** @var PersistentCache */
-	private $cache;
-	/** @var int */
-	private $initialTimeoutSeconds;
-	/** @var int */
-	private $incrementalTimeoutSeconds;
-
+	private PersistentCache $cache;
+	private int $initialTimeoutSeconds;
+	private int $incrementalTimeoutSeconds;
 	/** @var string Cache tag used for groups */
 	private const GROUP_LIST_TAG = 'gsc_%group_in_sync%';
 	/** @var string Cache tag used for tracking groups that have errors */
 	private const GROUP_ERROR_TAG = 'gsc_%group_with_error%';
 	/** @var string Cache tag used for tracking groups that are in review */
 	private const GROUP_IN_REVIEW_TAG = 'gsc_%group_in_review%';
+	private LoggerInterface $logger;
 
-	// The timeout is set to 40 minutes initially, and then incremented by 10 minutes
-	// each time a message is marked as processed if group is about to expire.
 	public function __construct(
 		PersistentCache $cache,
 		int $initialTimeoutSeconds = 2400,
@@ -55,8 +52,11 @@ class GroupSynchronizationCache {
 
 	) {
 		$this->cache = $cache;
+		// The timeout is set to 40 minutes initially, and then incremented by 10 minutes
+		// each time a message is marked as processed if group is about to expire.
 		$this->initialTimeoutSeconds = $initialTimeoutSeconds;
 		$this->incrementalTimeoutSeconds = $incrementalTimeoutSeconds;
+		$this->logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
 	}
 
 	/**
@@ -65,7 +65,6 @@ class GroupSynchronizationCache {
 	 */
 	public function getGroupsInSync(): array {
 		$groupsInSyncEntries = $this->cache->getByTag( self::GROUP_LIST_TAG );
-		/** @var string[] */
 		$groups = [];
 		foreach ( $groupsInSyncEntries as $entry ) {
 			$groups[] = $entry->value();
@@ -85,6 +84,7 @@ class GroupSynchronizationCache {
 				self::GROUP_LIST_TAG
 			)
 		);
+		$this->logger->debug( 'Started sync for group {groupId}', [ 'groupId' => $groupId ] );
 	}
 
 	public function getSyncEndTime( string $groupId ): ?int {
@@ -102,6 +102,7 @@ class GroupSynchronizationCache {
 
 		$groupKey = $this->getGroupKey( $groupId );
 		$this->cache->delete( $groupKey );
+		$this->logger->debug( 'Ended sync for group {groupId}', [ 'groupId' => $groupId ] );
 	}
 
 	/** End synchronization for a group. Deletes the group key and messages */
@@ -260,7 +261,6 @@ class GroupSynchronizationCache {
 	 */
 	public function getGroupsWithErrors(): array {
 		$groupsInSyncEntries = $this->cache->getByTag( self::GROUP_ERROR_TAG );
-		/** @var string[] */
 		$groupIds = [];
 		foreach ( $groupsInSyncEntries as $entry ) {
 			$groupResponse = $entry->value();
@@ -357,6 +357,20 @@ class GroupSynchronizationCache {
 		return $groupSyncResponse;
 	}
 
+	/**
+	 * Return groups that are in review
+	 * @return string[]
+	 */
+	public function getGroupsInReview(): array {
+		$groupsInReviewEntries = $this->cache->getByTag( self::GROUP_IN_REVIEW_TAG );
+		$groups = [];
+		foreach ( $groupsInReviewEntries as $entry ) {
+			$groups[] = $entry->value();
+		}
+
+		return $groups;
+	}
+
 	public function markGroupAsInReview( string $groupId ): void {
 		$groupReviewKey = $this->getGroupReviewKey( $groupId );
 		$this->cache->set(
@@ -367,11 +381,13 @@ class GroupSynchronizationCache {
 				self::GROUP_IN_REVIEW_TAG
 			)
 		);
+		$this->logger->debug( 'Group {groupId} marked for review', [ 'groupId' => $groupId ] );
 	}
 
 	public function markGroupAsReviewed( string $groupId ): void {
 		$groupReviewKey = $this->getGroupReviewKey( $groupId );
 		$this->cache->delete( $groupReviewKey );
+		$this->logger->debug( 'Group {groupId} removed from review', [ 'groupId' => $groupId ] );
 	}
 
 	public function isGroupInReview( string $groupId ): bool {
@@ -424,11 +440,9 @@ class GroupSynchronizationCache {
 
 	private function getExpireTime( int $timeoutSeconds ): int {
 		$currentTime = ( new DateTime() )->getTimestamp();
-		$expTime = ( new DateTime() )
+		return ( new DateTime() )
 			->setTimestamp( $currentTime + $timeoutSeconds )
 			->getTimestamp();
-
-		return $expTime;
 	}
 
 	private function invalidArgument( $value, string $expectedType ): RuntimeException {

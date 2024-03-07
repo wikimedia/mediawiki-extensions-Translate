@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MessageIndexRebuildJob;
+use Psr\Log\LoggerInterface;
 
 /**
  * @author Abijeet Patro
@@ -37,11 +38,15 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$groupsInSync = $groupSyncCache->getGroupsInSync();
 		if ( !$groupsInSync ) {
-			$logger->info( 'All message groups are in sync' );
+			$logger->debug( 'Nothing to synchronize' );
+			$this->printSummaryInfo( $groupSyncCache, $logger, $groupsInSync );
 			return;
 		}
 
-		$logger->info( 'Group synchronization is in progress' );
+		$logger->info(
+			'Group synchronization is in progress for {count} groups. Checking latest status...',
+			[ 'count' => count( $groupsInSync ) ]
+		);
 
 		$groupsInProgress = [];
 		foreach ( $groupsInSync as $groupId ) {
@@ -82,12 +87,35 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 			$mwServices->getJobQueueGroup()->push( MessageIndexRebuildJob::newJob() );
 		}
 
+		$logger->info( "Script completed successfully." );
+		$this->printSummaryInfo( $groupSyncCache, $logger, $groupsInProgress );
+	}
+
+	private function printSummaryInfo(
+		GroupSynchronizationCache $groupSyncCache,
+		LoggerInterface $logger,
+		array $groupsInSync
+	): void {
+		$summaryMessage = [ 'Current group sync summary:' ];
+		$summaryParams = [];
+
+		$summaryMessage[] = '{syncCount} in sync: {syncGroups}';
+		$summaryParams[ 'syncCount' ] = count( $groupsInSync );
+		$summaryParams[ 'syncGroups' ] = $groupsInSync ? implode( ', ', $groupsInSync ) : 'N/A';
+
+		$groupsInReview = $groupSyncCache->getGroupsInReview();
+		$summaryMessage[] = '{reviewCount} in review: {reviewGroups}';
+		$summaryParams[ 'reviewCount' ] = count( $groupsInReview );
+		$summaryParams[ 'reviewGroups' ] = $groupsInReview ? implode( ', ', $groupsInReview ) : 'N/A';
+
+		$groupsWithError = $groupSyncCache->getGroupsWithErrors();
+		$summaryMessage[] = '{errorCount} with errors: {errorGroups}';
+		$summaryParams[ 'errorCount' ] = count( $groupsWithError );
+		$summaryParams[ 'errorGroups' ] = $groupsWithError ? implode( ', ', $groupsWithError ) : 'N/A';
+
 		$logger->info(
-			"Script completed successfully. " .
-			"{inProgressGroupCount} group synchronization(s) is/are in progress",
-			[
-				'inProgressGroupCount' => count( $groupsInProgress )
-			]
+			implode( '; ', $summaryMessage ),
+			$summaryParams
 		);
 	}
 }
