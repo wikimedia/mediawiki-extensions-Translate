@@ -11,8 +11,10 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
+use Psr\Log\LoggerInterface;
 use Skin;
 use SpecialPage;
 use Xml;
@@ -33,6 +35,7 @@ class TranslateSpecialPage extends SpecialPage {
 	private LanguageFactory $languageFactory;
 	private LanguageNameUtils $languageNameUtils;
 	private HookRunner $hookRunner;
+	private LoggerInterface $logger;
 
 	public function __construct(
 		Language $contentLanguage,
@@ -45,6 +48,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$this->languageFactory = $languageFactory;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->hookRunner = $hookRunner;
+		$this->logger = LoggerFactory::getInstance( 'Translate' );
 	}
 
 	public function doesWrites() {
@@ -138,6 +142,13 @@ class TranslateSpecialPage extends SpecialPage {
 			$this->options['group'] = $this->group->getId();
 		} else {
 			$this->group = MessageGroups::getGroup( $defaults['group'] );
+			if ( isset( $nondefaults['group'] ) ) {
+				// https://phabricator.wikimedia.org/T320220
+				$this->logger->debug(
+					"[Special:Translate] Requested group {groupId} doesn't exist.",
+					[ 'groupId' => $nondefaults['group'] ]
+				);
+			}
 		}
 
 		if ( !$this->languageNameUtils->isKnownLanguageTag( $this->options['language'] ) ) {
