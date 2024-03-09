@@ -303,7 +303,7 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 	private function getCommonFormFields(): array {
 		$dropdownOptions = $this->msg( 'deletereason-dropdown' )->inContentLanguage()->text();
 
-		$options = Xml::listDropDownOptions(
+		$options = Xml::listDropdownOptions(
 			$dropdownOptions,
 			[
 				'other' => $this->msg( 'pt-deletepage-reason-other' )->inContentLanguage()->text()
