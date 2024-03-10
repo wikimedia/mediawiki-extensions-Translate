@@ -32,12 +32,4 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 	]
 );
 
-$cfg['exclude_file_list'] = array_merge(
-	$cfg['exclude_file_list'],
-	[
-		'../../extensions/TranslationNotifications/.phan/stubs/Event.php',
-		'../../extensions/TranslationNotifications/.phan/stubs/EchoEventPresentationModel.php'
-	]
-);
-
 return $cfg;
