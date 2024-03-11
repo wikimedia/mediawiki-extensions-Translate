@@ -4,12 +4,12 @@
 			"Zolgoyo"
 		]
 	},
-	"pagetranslation": "Sayifa terğúme etúw",
-	"tpt-languages-legend": "Başka tíller:",
-	"tpt-languages-nonzero": "$1 ($2% terğúme etílgen)",
-	"tpt-aggregategroup-add": "Koş",
-	"tpt-aggregategroup-save": "Sakla",
-	"tpt-aggregategroup-close": "Kapat",
-	"tpt-aggregategroup-update": "Sakla",
+	"pagetranslation": "Bet tercüme etüw",
+	"tpt-languages-legend": "Başqa tĭller:",
+	"tpt-languages-nonzero": "$1 ($2% tercüme etĭlgen)",
+	"tpt-aggregategroup-add": "Qoş",
+	"tpt-aggregategroup-save": "Saqlaw",
+	"tpt-aggregategroup-close": "Qapat",
+	"tpt-aggregategroup-update": "Saqlaw",
 	"tpt-aggregategroup-update-cancel": "Wazkeş"
 }
