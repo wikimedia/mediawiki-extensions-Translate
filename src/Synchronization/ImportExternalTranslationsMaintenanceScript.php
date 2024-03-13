@@ -10,7 +10,6 @@ use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
-use MediaWiki\MediaWikiServices;
 use MessageChangeStorage;
 use MessageGroup;
 use SpecialPage;
@@ -72,28 +71,13 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 		$skipGroupSyncCache = $this->hasOption( 'skip-group-sync-check' );
 
 		$services = Services::getInstance();
-		$groupSyncCache = $services->getGroupSynchronizationCache();
-		$groupSyncCacheEnabled = MediaWikiServices::getInstance()->getMainConfig()
-			->get( 'TranslateGroupSynchronizationCache' );
+		$importer = $services->getExternalMessageSourceStateImporter();
 
 		foreach ( $groups as $id => $group ) {
-			if ( !$group instanceof FileBasedMessageGroup ) {
-				$this->error(
-					"Group $id expected to be FileBasedMessageGroup, got " . get_class( $group ) . " instead."
-				);
+			$status = $importer->canImportGroup( $group, $skipGroupSyncCache );
+			if ( !$status->isOK() ) {
+				$this->error( $status->getMessage()->plain() );
 				continue;
-			}
-
-			if ( $groupSyncCacheEnabled && !$skipGroupSyncCache ) {
-				if ( $groupSyncCache->isGroupBeingProcessed( $id ) ) {
-					$this->error( "Group $id is currently being synchronized; skipping processing of changes\n" );
-					continue;
-				}
-
-				if ( $groupSyncCache->groupHasErrors( $id ) ) {
-					$this->error( "Skipping $id due to an error during synchronization\n" );
-					continue;
-				}
 			}
 
 			if ( $importStrategy === ExternalMessageSourceStateImporter::IMPORT_NONE ) {
@@ -122,7 +106,6 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 			return;
 		}
 
-		$importer = $services->getExternalMessageSourceStateImporter();
 		$info = $importer->import( $changes, $name, $importStrategy );
 		$this->printChangeInfo( $info );
 	}
@@ -150,15 +133,13 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 		$include = array_flip( $include );
 		$exclude = array_flip( $exclude );
 
-		$groups = array_filter( $groups,
+		return array_filter( $groups,
 			static function ( MessageGroup $group ) use ( $include, $exclude ) {
 				$id = $group->getId();
 
 				return isset( $include[$id] ) && !isset( $exclude[$id] );
 			}
 		);
-
-		return $groups;
 	}
 
 	private function printChangeInfo( array $info ): void {

@@ -15,11 +15,14 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Language\RawMessage;
 use MessageChangeStorage;
+use MessageGroup;
 use MessageHandle;
 use MessageUpdateJob;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use Status;
 use TitleFactory;
 use function wfWarn;
 
@@ -147,6 +150,28 @@ class ExternalMessageSourceStateImporter {
 			'skipped' => $skipped,
 			'name' => $name,
 		];
+	}
+
+	public function canImportGroup( MessageGroup $group, bool $skipGroupSyncCache ): Status {
+		$groupId = $group->getId();
+		if ( !$group instanceof FileBasedMessageGroup ) {
+			$error = "Group $groupId expected to be FileBasedMessageGroup, got " . get_class( $group ) . " instead.";
+			return Status::newFatal( new RawMessage( $error ) );
+		}
+
+		if ( $this->isGroupSyncCacheEnabled && !$skipGroupSyncCache ) {
+			if ( $this->groupSynchronizationCache->isGroupBeingProcessed( $groupId ) ) {
+				$error = "Group $groupId is currently being synchronized; skipping processing of changes\n";
+				return Status::newFatal( new RawMessage( $error ) );
+			}
+
+			if ( $this->groupSynchronizationCache->groupHasErrors( $groupId ) ) {
+				$error = "Skipping $groupId due to an error during synchronization\n";
+				return Status::newFatal( new RawMessage( $error ) );
+			}
+		}
+
+		return Status::newGood();
 	}
 
 	/** Creates MessageUpdateJobs additions for a language under a group */
