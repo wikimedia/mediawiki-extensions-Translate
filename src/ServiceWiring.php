@@ -73,11 +73,15 @@ return [
 		MediaWikiServices $services
 	): ExternalMessageSourceStateImporter {
 		return new ExternalMessageSourceStateImporter(
-			$services->getMainConfig(),
 			$services->get( 'Translate:GroupSynchronizationCache' ),
 			$services->getJobQueueGroup(),
 			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
-			$services->get( 'Translate:MessageIndex' )
+			$services->get( 'Translate:MessageIndex' ),
+			$services->getTitleFactory(),
+			new ServiceOptions(
+				ExternalMessageSourceStateImporter::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			)
 		);
 	},
 

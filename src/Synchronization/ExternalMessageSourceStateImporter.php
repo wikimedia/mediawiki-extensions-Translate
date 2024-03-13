@@ -7,34 +7,29 @@ declare( strict_types = 1 );
  * @license GPL-2.0-or-later
  * @since 2016.02
  */
-
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use Config;
 use FileBasedMessageGroup;
 use JobQueueGroup;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
-use MediaWiki\Title\Title;
 use MessageChangeStorage;
 use MessageHandle;
 use MessageUpdateJob;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use TitleFactory;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {
-	/** @var Config */
-	private $config;
-	/** @var GroupSynchronizationCache */
-	private $groupSynchronizationCache;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var LoggerInterface */
-	private $logger;
-	/** @var MessageIndex */
-	private $messageIndex;
+	private GroupSynchronizationCache $groupSynchronizationCache;
+	private JobQueueGroup $jobQueueGroup;
+	private LoggerInterface $logger;
+	private MessageIndex $messageIndex;
+	private TitleFactory $titleFactory;
+	private bool $isGroupSyncCacheEnabled;
 	// Do not perform any import
 	public const IMPORT_NONE = 1;
 	// Import changes in a language for a group if it only has additions
@@ -42,19 +37,23 @@ class ExternalMessageSourceStateImporter {
 	// Import changes in a language for a group if it only has additions or changes, but
 	// not deletions as it may be a rename of an addition
 	public const IMPORT_NON_RENAMES = 3;
+	public const CONSTRUCTOR_OPTIONS = [ 'TranslateGroupSynchronizationCache' ];
 
 	public function __construct(
-		Config $config,
 		GroupSynchronizationCache $groupSynchronizationCache,
 		JobQueueGroup $jobQueueGroup,
 		LoggerInterface $logger,
-		MessageIndex $messageIndex
+		MessageIndex $messageIndex,
+		TitleFactory $titleFactory,
+		ServiceOptions $options
 	) {
-		$this->config = $config;
 		$this->groupSynchronizationCache = $groupSynchronizationCache;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->logger = $logger;
 		$this->messageIndex = $messageIndex;
+		$this->titleFactory = $titleFactory;
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->isGroupSyncCacheEnabled = $options->get( 'TranslateGroupSynchronizationCache' );
 	}
 
 	/**
@@ -67,8 +66,6 @@ class ExternalMessageSourceStateImporter {
 		$processed = [];
 		$skipped = [];
 		$jobs = [];
-
-		$groupSyncCacheEnabled = $this->config->get( 'TranslateGroupSynchronizationCache' );
 
 		foreach ( $changeData as $groupId => $changesForGroup ) {
 			$group = MessageGroups::getGroup( $groupId );
@@ -94,7 +91,7 @@ class ExternalMessageSourceStateImporter {
 			$languages = $changesForGroup->getLanguages();
 			$groupJobs = [];
 
-			$groupSafeLanguages = self::identifySafeLanguages( $group, $changesForGroup, $importStrategy );
+			$groupSafeLanguages = $this->identifySafeLanguages( $group, $changesForGroup, $importStrategy );
 
 			foreach ( $languages as $language ) {
 				if ( !$groupSafeLanguages[ $language ] ) {
@@ -121,12 +118,12 @@ class ExternalMessageSourceStateImporter {
 			}
 
 			// Mark the skipped group as in review
-			if ( $groupSyncCacheEnabled && isset( $skipped[$groupId] ) ) {
+			if ( $this->isGroupSyncCacheEnabled && isset( $skipped[$groupId] ) ) {
 				$this->groupSynchronizationCache->markGroupAsInReview( $groupId );
 			}
 
 			if ( $groupJobs !== [] ) {
-				if ( $groupSyncCacheEnabled ) {
+				if ( $this->isGroupSyncCacheEnabled ) {
 					$this->updateGroupSyncInfo( $groupId, $groupJobs );
 				}
 				$jobs = array_merge( $jobs, $groupJobs );
@@ -165,7 +162,7 @@ class ExternalMessageSourceStateImporter {
 			$namespace = $group->getNamespace();
 			$name = "{$addition['key']}/$language";
 
-			$title = Title::makeTitleSafe( $namespace, $name );
+			$title = $this->titleFactory->makeTitleSafe( $namespace, $name );
 			if ( !$title ) {
 				wfWarn( "Invalid title for group $groupId key {$addition['key']}" );
 				continue;
@@ -213,7 +210,7 @@ class ExternalMessageSourceStateImporter {
 	 * Identifies languages in a message group that are safe to import
 	 * @return array<string,bool>
 	 */
-	private static function identifySafeLanguages(
+	private function identifySafeLanguages(
 		FileBasedMessageGroup $group,
 		MessageSourceChange $changesForGroup,
 		int $importStrategy
@@ -267,7 +264,7 @@ class ExternalMessageSourceStateImporter {
 					// This is either a new external translation which is not added in the same sync
 					// as the source language key, or this translation does not have a corresponding
 					// definition. We will check the message index to determine which of the two.
-					$sourceHandle = new MessageHandle( Title::makeTitle( $groupNamespace, $msgKey ) );
+					$sourceHandle = new MessageHandle( $this->titleFactory->makeTitle( $groupNamespace, $msgKey ) );
 					$sourceLanguageKeyCache[ $msgKey ] = $sourceHandle->isValid();
 				}
 
