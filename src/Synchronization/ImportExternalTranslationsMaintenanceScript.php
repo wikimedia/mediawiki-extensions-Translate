@@ -122,19 +122,9 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 			return;
 		}
 
-		if ( $importStrategy !== ExternalMessageSourceStateImporter::IMPORT_NONE ) {
-			$importer = $services->getExternalMessageSourceStateImporter();
-			$info = $importer->import( $changes, $name, $importStrategy );
-			$this->printChangeInfo( $info );
-
-			return;
-		}
-
-		$file = MessageChangeStorage::getCdbPath( $name );
-
-		MessageChangeStorage::writeChanges( $changes, $file );
-		$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $name )->getFullURL();
-		$this->output( "Process changes at $url\n" );
+		$importer = $services->getExternalMessageSourceStateImporter();
+		$info = $importer->import( $changes, $name, $importStrategy );
+		$this->printChangeInfo( $info );
 	}
 
 	/**

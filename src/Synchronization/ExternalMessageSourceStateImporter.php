@@ -287,6 +287,11 @@ class ExternalMessageSourceStateImporter {
 		string $languageCode,
 		int $importStrategy
 	): bool {
+		if ( $importStrategy === self::IMPORT_NONE ) {
+			// If import strategy is none, every change needs to be reviewed.
+			return false;
+		}
+
 		if ( $importStrategy === self::IMPORT_SAFE ) {
 			return $changesForGroup->hasOnly( $languageCode, MessageSourceChange::ADDITION );
 		}
