@@ -1,63 +1,72 @@
 <?php
+declare( strict_types = 1 );
 
-/** @covers MessageGroupWANCache */
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use DependencyWrapper;
+use HashBagOStuff;
+use InvalidArgumentException;
+use MediaWikiIntegrationTestCase;
+use MockCacheMessageGroupLoader;
+use WANObjectCache;
+
+/** @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache */
 class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
-	protected $mgCache;
+	private MessageGroupWANCache $messageGroupWANCache;
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->mgCache = new MessageGroupWANCache(
+		$this->messageGroupWANCache = new MessageGroupWANCache(
 			new WANObjectCache( [ 'cache' => new HashBagOStuff() ] )
 		);
 	}
 
-	public function testCacheKeyConfiguration() {
+	public function testCacheKeyConfiguration(): void {
 		$this->expectException( InvalidArgumentException::class );
-		$this->expectExceptionMessage( 'Invalid cache key' );
+		$this->expectExceptionMessage( '$config[\'key\'] not set' );
 
-		$this->mgCache->configure( [
+		$this->messageGroupWANCache->configure( [
 			'regenerator' => static function () {
 				return 'hello';
 			}
 		] );
 	}
 
-	public function testCacheRegeneratorConfig() {
+	public function testCacheRegeneratorConfig(): void {
 		$this->expectException( InvalidArgumentException::class );
-		$this->expectExceptionMessage( 'Invalid regenerator' );
+		$this->expectExceptionMessage( '$config[\'regenerator\'] not set' );
 
-		$this->mgCache->configure( [
+		$this->messageGroupWANCache->configure( [
 			'key' => 'test',
-			'regenerator' => 'hello-world'
 		] );
 	}
 
-	public function testNoConfigureCall() {
+	public function testNoConfigureCall(): void {
 		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'configure function' );
 
-		$this->mgCache->setValue( [ 'abc' ] );
+		$this->messageGroupWANCache->setValue( [ 'abc' ] );
 	}
 
-	public function testDefaultConfig() {
+	public function testDefaultConfig(): void {
 		$cacheData = [ 'dummy', 'data' ];
-		$this->mgCache->configure( [
+		$this->messageGroupWANCache->configure( [
 			'key' => 'mg-wan-test',
 			'regenerator' => static function () use ( $cacheData ) {
 				return $cacheData;
 			}
 		] );
 
-		$mgCacheData = $this->mgCache->getValue();
+		$mgCacheData = $this->messageGroupWANCache->getValue();
 		$this->assertEquals( $cacheData, $mgCacheData, 'correctly returns the data ' .
 			'returned in regenerator function.' );
 	}
 
-	public function testTouchCallbackConfig() {
+	public function testTouchCallbackConfig(): void {
 		$this->expectException( InvalidArgumentException::class );
-		$this->expectExceptionMessage( 'touchedCallback is not callable' );
+		$this->expectExceptionMessage( '$config[\'touchedCallback\'] is not callable' );
 
-		$this->mgCache->configure( [
+		$this->messageGroupWANCache->configure( [
 			'key' => 'mg-wan-test',
 			'regenerator' => static function () {
 				return 'hello';
@@ -66,11 +75,11 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 		] );
 	}
 
-	public function testTouchCallbackIsCalled() {
+	public function testTouchCallbackIsCalled(): void {
 		$wrapper = new DependencyWrapper( [ 'dummy' ] );
 
 		$mockMgLoader = $this->createMock( MockCacheMessageGroupLoader::class );
-		$this->mgCache->configure( [
+		$this->messageGroupWANCache->configure( [
 			'key' => 'mg-wan-test',
 			'regenerator' => [ $mockMgLoader, 'getGroups' ],
 			'touchedCallback' => [ $mockMgLoader, 'isExpired' ]
@@ -87,7 +96,7 @@ class MessageGroupWANCacheTest extends MediaWikiIntegrationTestCase {
 
 		// touchedCallback is not called the first time,
 		// since the value was just obtained
-		$this->mgCache->getValue();
-		$this->mgCache->getValue();
+		$this->messageGroupWANCache->getValue();
+		$this->messageGroupWANCache->getValue();
 	}
 }

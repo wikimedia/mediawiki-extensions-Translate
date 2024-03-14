@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
+
 /** @covers FileBasedMessageGroupLoader */
 class FileBasedMessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 	/** @var FileBasedMessageGroupLoader */

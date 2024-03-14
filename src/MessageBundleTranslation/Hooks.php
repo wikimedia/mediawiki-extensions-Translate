@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Content;
 use IContextSource;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Logger\LoggerFactory;
@@ -12,7 +13,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MediaWiki\Title\Title;
-use MessageGroupWANCache;
 use Psr\Log\LoggerInterface;
 use Status;
 use User;

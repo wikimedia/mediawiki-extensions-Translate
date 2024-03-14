@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**

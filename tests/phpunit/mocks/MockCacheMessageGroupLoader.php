@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
+
 class MockCacheMessageGroupLoader extends MessageGroupLoader
 	implements CachedMessageGroupLoader {
 

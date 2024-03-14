@@ -4,11 +4,11 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use CachedMessageGroupLoader;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\TranslateMetadata;
 use MediaWiki\Title\Title;
 use MessageGroupLoader;
-use MessageGroupWANCache;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
