@@ -13,6 +13,7 @@
  * @cfg {Function} [onFail] Callback function triggered when an error occurs
  * @cfg {Function} [onSelect] Callback function triggered when an item is selected
  * @cfg {Array} [entityType] Entity type to query for - "groups" and/or "messages"
+ * @stable for use inside gadgets and extensions
  */
 var EntitySelectorWidget = function ( config ) {
 	// Parent constructor

@@ -594,6 +594,21 @@
 				"resources/css/ext.translate.edit.documentation.less"
 			]
 		},
+		"ext.translate.entity.selector": {
+			"packageFiles": "resources/src/ext.translate.entity.selector/index.js",
+			"styles": "resources/src/ext.translate.entity.selector/index.less",
+			"dependencies": [
+				"oojs-ui-widgets"
+			],
+			"messages": [
+				"translate-tes-type-to-search",
+				"translate-tes-entity-not-found",
+				"translate-tes-server-error",
+				"translate-tes-optgroup-message",
+				"translate-tes-optgroup-group",
+				"translate-tes-message-prefix"
+			]
+		},
 		"ext.translate.parsers": {
 			"scripts": "resources/js/ext.translate.parsers.js",
 			"dependencies": [
@@ -611,49 +626,37 @@
 		},
 		"ext.translate.special.languagestats": {
 			"packageFiles": [
-				"resources/src/ext.translate.special.languagestats/index.js",
-				"resources/src/ext.translate.entity.selector/index.js"
+				"resources/src/ext.translate.special.languagestats/index.js"
 			],
 			"messages": [
 				"translate-langstats-collapse",
 				"translate-langstats-collapseall",
 				"translate-langstats-expand",
 				"translate-langstats-expandall",
-				"translate-tes-server-error",
-				"translate-tes-entity-not-found",
-				"translate-tes-type-to-search",
-				"translate-tes-optgroup-group",
-				"translate-tes-optgroup-message",
-				"translate-tes-message-prefix",
 				"translate-mgs-group-or-prefix",
 				"translate-mgs-invalid-entity"
 			],
 			"dependencies": [
 				"jquery.tablesorter",
 				"mediawiki.api",
-				"oojs-ui-widgets"
-			],
-			"styles": "resources/src/ext.translate.entity.selector/index.less"
+				"oojs-ui-widgets",
+				"ext.translate.entity.selector"
+			]
 		},
 		"ext.translate.special.exporttranslations": {
 			"es6": true,
 			"packageFiles": [
-				"resources/src/ext.translate.special.exporttranslations/index.js",
-				"resources/src/ext.translate.entity.selector/index.js"
+				"resources/src/ext.translate.special.exporttranslations/index.js"
 			],
 			"messages": [
-				"translate-tes-server-error",
-				"translate-tes-entity-not-found",
-				"translate-tes-type-to-search",
-				"translate-tes-optgroup-group",
 				"translate-mgs-invalid-group"
 			],
 			"dependencies": [
 				"mediawiki.api",
-				"oojs-ui-widgets"
+				"oojs-ui-widgets",
+				"ext.translate.entity.selector"
 			],
 			"styles": [
-				"resources/src/ext.translate.entity.selector/index.less",
 				"resources/src/ext.translate.special.exporttranslations/export.translations.less"
 			]
 		},
@@ -989,13 +992,13 @@
 		},
 		"ext.translate.special.aggregategroups": {
 			"packageFiles": [
-				"resources/js/ext.translate.special.aggregategroups.js",
-				"resources/src/ext.translate.entity.selector/index.js"
+				"resources/js/ext.translate.special.aggregategroups.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
 				"mediawiki.util",
-				"oojs-ui-widgets"
+				"oojs-ui-widgets",
+				"ext.translate.entity.selector"
 			],
 			"messages": [
 				"tpt-aggregategroup-add",
@@ -1009,12 +1012,8 @@
 				"tpt-aggregategroup-collapse-all-groups",
 				"tpt-aggregategroup-expand-group",
 				"tpt-aggregategroup-collapse-group",
-				"tpt-invalid-group",
-				"translate-tes-server-error",
-				"translate-tes-entity-not-found",
-				"translate-tes-type-to-search"
-			],
-			"styles": "resources/src/ext.translate.entity.selector/index.less"
+				"tpt-invalid-group"
+			]
 		},
 		"ext.translate.special.importtranslations": {
 			"scripts": "resources/js/ext.translate.special.importtranslations.js"
