@@ -58,7 +58,6 @@
 	"tpt-languages-nonzero": "$1 ($2% voltà)",
 	"tpt-target-page": "Sta pàgina-sì a peul pa esse modificà a man.\nSta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	"tpt-unknown-page": "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.\nLa pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
-	"tpt-translation-restricted": "La tradussion dë sta pàgina an costa lenga a l'é stàita ampedìa da n'aministrator dle tradussion.\n\nRason: $1",
 	"tpt-discouraged-language-force": "<strong>Costa pàgina a peul pa esse voltà an $2.</strong>\n\nN'aministrator dle tradussion a l'ha decidù che costa pàgina a peul mach esse voltà an $3.",
 	"tpt-priority-languages": "N'aministrator ëd tradussion a l'ha ampostà le lenghe prioritarie për sta partìa a $1.",
 	"tpt-render-summary": "Modifiché për esse com la neuva version dla pàgina sorgiss",

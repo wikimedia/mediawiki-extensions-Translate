@@ -59,7 +59,6 @@
 	"tpt-tab-translate": "Pertal",
 	"tpt-target-page": "Kaca iki ora bisa dianyari manual.\nKaca iki kaca pertalan [[$1]] lan pertalan bisa dianyari nganggo [$2 piranti pertalan].",
 	"tpt-unknown-page": "Mandhala aran iki kacawisaké tumrap pertalan kaca kontèn.\nKaca kang arep kobesut katoné ora ana gayutané karo kaca kang tinengeran pertalan.",
-	"tpt-translation-restricted": "Pertalan kaca iki ing basa iki ditulak déning panata pertalan.\n\nDhedhasar: $1",
 	"tpt-discouraged-language-force-header": "Kaca iki ora bisa kapertal menyang $1.",
 	"tpt-discouraged-language-force": "<strong>Kaca iki ora bisa diterjemahaké menyang $2.</strong>\n\nPanata pertalan milih supaya kaca iki namung bisa diterjemahaké menyang $3.",
 	"tpt-priority-languages": "Panata pertalan nyetèl basa prioritas kanggo klompok iki dadi $1.",

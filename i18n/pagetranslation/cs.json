@@ -71,7 +71,6 @@
 	"tpt-tab-translate": "Přeložit",
 	"tpt-target-page": "Tuto stránku nelze ručně aktualizovat.\nTato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].",
 	"tpt-unknown-page": "Tento jmenný prostor je vyhrazen pro překlady stránek s obsahem.\nZdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné stránce označené pro překlad.",
-	"tpt-translation-restricted": "Správce překladů zabránil překladu této stránky do tohoto jazyka.\n\nZdůvodnění: $1",
 	"tpt-discouraged-language-force-header": "Tuto stránku nelze překládat do jazyka $1.",
 	"tpt-discouraged-language-force-content": "Správce překladů se rozhodl, že tuto stránku je možné překládat pouze do $1.",
 	"tpt-discouraged-language-header": "Překlad do jazyka $1 není pro tuto stránku prioritou.",

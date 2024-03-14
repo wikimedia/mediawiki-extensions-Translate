@@ -78,7 +78,6 @@
 	"tpt-tab-translate": "Traducer",
 	"tpt-target-page": "Iste pagina non pote esser actualisate manualmente.\nIste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].",
 	"tpt-unknown-page": "Iste spatio de nomines es reservate pro traductiones de paginas de contento.\nLe pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.",
-	"tpt-translation-restricted": "Le traduction de iste pagina in iste lingua ha essite impedite per un administrator de traductiones.\n\nMotivo: $1",
 	"tpt-translation-restricted-no-reason": "Le traduction de iste pagina in iste lingua ha essite impedite per un administrator de traductiones.",
 	"tpt-discouraged-language-force-header": "Iste pagina non pote esser traducite in $1.",
 	"tpt-discouraged-language-force-content": "Un administrator de traductiones ha decidite que iste pagina pote esser traducite solmente in $1.",

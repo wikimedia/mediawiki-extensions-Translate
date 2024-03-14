@@ -83,7 +83,6 @@
 	"tpt-tab-translate": "Prevedi",
 	"tpt-target-page": "Te strani ni mogoče ročno posodobiti.\nTa stran je prevod strani [[$1]], ki ga lahko posodobite s [$2 prevajalskim orodjem].",
 	"tpt-unknown-page": "Ta imenski prostor je pridržan za prevode vsebinskih strani.\nStran, ki jo poskušate urediti, ne ustreza nobeni strani označeni za prevajanje.",
-	"tpt-translation-restricted": "Prevod te strani v ta jezik je preprečil administrator prevajanja.\n\nRazlog: $1",
 	"tpt-translation-restricted-no-reason": "Prevod te strani v ta jezik je preprečil administrator prevajanja.",
 	"tpt-discouraged-language-force-header": "Te strani ni mogoče prevesti v $1.",
 	"tpt-discouraged-language-force-content": "Administrator prevajanja se je odločil, da je to stran mogoče prevesti samo v $1 .",

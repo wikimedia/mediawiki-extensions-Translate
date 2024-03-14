@@ -59,7 +59,6 @@
 	"tpt-languages-nonzero": "$1 ($2% ibersetzt)",
 	"tpt-target-page": "Die Syte cha nit vu Hand aktualisiert wäre.\nDie Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].",
 	"tpt-unknown-page": "Dää Namensruum isch reserviert fir Ibersetzige vu Inhaltssyte.\nD Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze markiert isch.",
-	"tpt-translation-restricted": "S Ibersetze vu däre Syte in die Sproch isch vun eme Ibersetzigsadministrator deaktiviert wore.\n\nGrund: $1",
 	"tpt-discouraged-language-force": "<strong>Die Syte cha nit in $2 ibersetzt wäre.</strong>\n\nEn Ibersetzigsadministrator het entschide, dass die Syte nume in $3 cha ibersetzt wäre.",
 	"tpt-priority-languages": "En Ibersetzigsadministrator het di priorisierte Sproche fir die Nochrichtegruppe uf $1 feschtgleit.",
 	"tpt-render-summary": "Aktualisiere zum e neji Version vu dr Quällsyte z finde",

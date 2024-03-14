@@ -120,7 +120,6 @@
 	"tpt-tab-translate": "翻译",
 	"tpt-target-page": "本页面无法手动更新。本页面是[[$1]]页面的翻译版，可以使用[$2 翻译工具]来更新该翻译。",
 	"tpt-unknown-page": "此命名空间为内容页面翻译保留。\n您尝试编辑的页面似乎没有对应任何被标记进行翻译的页面。",
-	"tpt-translation-restricted": "此页面到这种语言的翻译，已被翻译管理员禁止。\n\n原因：$1",
 	"tpt-translation-restricted-no-reason": "翻译管理员已阻止将此页面翻译成该语言。",
 	"tpt-discouraged-language-force-header": "此页面不能翻译成$1。",
 	"tpt-discouraged-language-force-content": "翻译管理员决定此页面只能翻译成$1。",

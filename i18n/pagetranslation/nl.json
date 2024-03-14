@@ -94,7 +94,6 @@
 	"tpt-tab-translate": "Vertalen",
 	"tpt-target-page": "Deze pagina kan niet handmatig worden bijgewerkt.\nDeze pagina is een vertaling van de pagina [[$1]].\nDe vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].",
 	"tpt-unknown-page": "Deze naamruimte is gereserveerd voor vertalingen van inhoudspagina’s.\nDe pagina die u probeert te bewerken lijkt niet bij een voor vertaling gemarkeerde pagina te horen.",
-	"tpt-translation-restricted": "Het vertalen van deze pagina in deze taal is onmogelijk gemaakt door een vertalingenbeheerder.\n\nReden: $1",
 	"tpt-translation-restricted-no-reason": "Het vertalen van deze pagina in deze taal is onmogelijk gemaakt door een vertalingenbeheerder.",
 	"tpt-discouraged-language-force-header": "Deze pagina kan niet in het $1 vertaald worden.",
 	"tpt-discouraged-language-force-content": "Een vertalingenbeheerder heeft besloten dat deze pagina alleen vertaald kan worden in het $1.",

@@ -67,7 +67,6 @@
 	"tpt-tab-translate": "Oversæt",
 	"tpt-target-page": "Denne side kan ikke opdateres manuelt.\nSiden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].",
 	"tpt-unknown-page": "Dette navnerum er reserveret til oversættelser af indholdssider.\nSiden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.",
-	"tpt-translation-restricted": "Oversættelse af denne side til dette sprog blev forhindret af en oversættelsesadministrator.\n\nÅrsag: $1",
 	"tpt-discouraged-language-force-header": "Denne side kan ikke oversættes til $1.",
 	"tpt-discouraged-language-header": "Oversættelser til $1 er ikke en prioritet for denne side.",
 	"tpt-discouraged-language-force": "<strong>Denne side kan ikke oversættes til $2.</strong>\n\nEn oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.",

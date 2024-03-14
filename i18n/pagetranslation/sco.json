@@ -59,7 +59,6 @@
 	"tpt-tab-translate": "Owerset",
 	"tpt-target-page": "This page canna be updatit manually.\nThis page is ae owersettin o the page [[$1]] an the owersettin can be updatit uisin [$2 the owersettin tuil].",
 	"tpt-unknown-page": "This namespace is reserved fer content page owersets.\nThe page that ye'r ettlin tae eedit disna seem tae correspond wi onie page maurkt fer owersetin.",
-	"tpt-translation-restricted": "Owersetin o this page intil this leid haes been stapt bi aen owerset admeenistrater.\n\nReason: $1",
 	"tpt-discouraged-language-force-content": "Ae owersettin administrator decidit that this page can anely be owerset tae $1.",
 	"tpt-discouraged-language-force": "<strong>This page cannae be owerset intil $2.</strong>\n\nAe owerset administrater decidit that this page can anely be owerset intil $3.",
 	"tpt-priority-languages": "Aen owerset admeenistrater haes set the prioritie leids fer this groop til $1.",

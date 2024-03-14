@@ -59,7 +59,6 @@
 	"tpt-languages-nonzero": "$1 ($2% nasalin)",
 	"tpt-target-page": "Hindi maaaring kinakamay na maisapanahon ang pahinang ito.\nAng pahinang ito ay isang salinwika ng pahinang [[$1]] at maisasapanahon ang salinwika sa pamamagitan ng [$2 kasangkapang pansalinwika].",
 	"tpt-unknown-page": "Nakalaan ang puwang na pampangalang ito para sa mga salinwika ng pahina ng nilalaman.\nTila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang natatakan para sa pagsasalinwika.",
-	"tpt-translation-restricted": "Ang pagsasalinwika ng pahinang ito na papunta sa wikang ito ay pinigilan ng isang tagapangasiwa ng salinwika.\n\nDahilan: $1",
 	"tpt-discouraged-language-force": "<strong>Ang pahinang ito ay hindi maisasalinwika upang maging $2.</strong>\n\nIsang tagapangasiwa ng pagsasalinwika ang nagpasya na ang pahinang ito ay maisasalinwika lamang papunta sa $3.",
 	"tpt-priority-languages": "Isang tagapangasiwa ng salinwika ang nagtakda ng mga wikang nararapat na unahin para sa pangkat na ito upang maging $1.",
 	"tpt-render-summary": "Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina",

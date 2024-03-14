@@ -60,7 +60,6 @@
 	"tpt-tab-translate": "Přełožić",
 	"tpt-target-page": "Tuta strona njeda so manulenje aktualizować.\nTuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.",
 	"tpt-unknown-page": "Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.\nStrona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.",
-	"tpt-translation-restricted": "Přełožowanski administrator je přełožowanju tuteje strony do tuteje rěče zadźěwał.\n\nPřičina: $1",
 	"tpt-discouraged-language-force": "<strong>Tuta strona njehodźi so do $2 přełožić.</strong>\n\nPřełožowanski administrator je rozsudźił, zo tuta strona hodźi so jenož do $3 přełožować.",
 	"tpt-priority-languages": "Přełožowanski administrator je primarne rěče za tutu skupinu jako $1 nastajił.",
 	"tpt-render-summary": "Aktualizacija po nowej wersiji žórłoweje strony",

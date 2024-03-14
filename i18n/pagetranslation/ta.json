@@ -44,7 +44,6 @@
 	"tpt-languages-legend": "மற்ற மொழிகள்:",
 	"tpt-languages-zero": "இம் மொழியின் சிறிய மொழிபெயர்ப்பு",
 	"tpt-languages-nonzero": "$1 ($2% மொழிபெயர்க்கப்பட்டது)",
-	"tpt-translation-restricted": "இப்பக்கத்தை இந்த மொழிக்கு மொழிபெயர்ப்பது மொழிபெயர்ப்பு நிருவாகி ஒருவரால் காக்கப்பட்டுள்ளது.\n\nகாரணம்: $1",
 	"tpt-aggregategroup-add": "சேர்",
 	"tpt-aggregategroup-save": "சேமி",
 	"tpt-aggregategroup-new-name": "பெயர்:",

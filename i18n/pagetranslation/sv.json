@@ -91,7 +91,6 @@
 	"tpt-tab-translate": "Översätt",
 	"tpt-target-page": "Den här sidan kan inte uppdateras manuellt. Den här sidan är en översättning av [[$1]] och översättningen kan uppdateras genom att använda [$2 översättningsverktyget].",
 	"tpt-unknown-page": "Den här namnrymden är reserverad för översättningar av sidor.\nSidan du försöker redigera verkar inte stämma överens med någon sida som är märkt för översättning.",
-	"tpt-translation-restricted": "Översättningar av denna sida har förhindrats av en översättningsadministratör.\n\nAnledningar: $1",
 	"tpt-translation-restricted-no-reason": "Översättning av en här sidan till det här språket hindrades av en översättningsadministratör.",
 	"tpt-discouraged-language-force-header": "Denna sida kan inte översättas till $1.",
 	"tpt-discouraged-language-force-content": "En översättningsadministratör har beslutat att denna sida enbart kan översättas till $1.",

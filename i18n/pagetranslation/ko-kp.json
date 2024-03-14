@@ -60,7 +60,6 @@
 	"tpt-tab-translate": "번역하기",
 	"tpt-target-page": "이 문서를 수동으로 갱신할수 없습니다.\n이 문서는 [[$1]]의 번역이며 번역은 [$2 번역 도구]를 사용하여 갱신할수 있습니다.",
 	"tpt-unknown-page": "이 이름공간은 내용 문서 번역에 대해 예약되여있습니다.\n편집하려고하는 문서는 번역에 대해 표시한 모든 문서와 일치하지 않는것 같습니다.",
-	"tpt-translation-restricted": "이 언어로의 이 문서의 번역은 번역관리자에 의해 차단되였습니다.\n\n리유: $1",
 	"tpt-discouraged-language-force-header": "이 문서는 $1로 번역할수 없습니다.",
 	"tpt-discouraged-language-force-content": "번역 관리자가 이 글을 $1로만 번역이 가능하도록 결정하였습니다.",
 	"tpt-discouraged-language-force": "<strong>이 문서는 $2로 번역할수 없습니다.</strong>\n\n번역 관리자는 이 문서가 $3로 번역할수 있도록 결정했습니다.",

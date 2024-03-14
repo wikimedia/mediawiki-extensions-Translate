@@ -78,7 +78,6 @@
 	"tpt-tab-translate": "Traduci",
 	"tpt-target-page": "Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].",
 	"tpt-unknown-page": "Questo namespace è riservato alle traduzioni del contenuto delle pagine.\nLa pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.",
-	"tpt-translation-restricted": "La traduzione di questa pagina in questa lingua è stata impedita dall'amministratore.\n\nMotivo: $1",
 	"tpt-discouraged-language-force-header": "Questa pagina non può essere tradotta in $1.",
 	"tpt-discouraged-language-force-content": "Un amministratore delle traduzione ha deciso che questa pagina può essere tradotta solo in $1.",
 	"tpt-discouraged-language-header": "La traduzione in $1 non è prioritaria per questa pagina.",

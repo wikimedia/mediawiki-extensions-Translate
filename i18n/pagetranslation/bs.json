@@ -65,7 +65,6 @@
 	"tpt-tab-translate": "Prevedi",
 	"tpt-target-page": "Ova stranica ne može biti ručno ažurirana.\nOva stranica je prijevod stranice [[$1]] a prijevodi se mogu ažurirati putem [$2 alata za prevođenje].",
 	"tpt-unknown-page": "Ovaj imenski prostor je rezervisan za prevode stranica sadržaja.\nStranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su označene za prevođenje.",
-	"tpt-translation-restricted": "Prevodilački administrator spriječio je prevođenje stranice na ovaj jezik.\n\nRazlog: $1",
 	"tpt-discouraged-language-force-header": "Stranica se ne može prevesti na $1.",
 	"tpt-discouraged-language-force-content": "Prevodilački administrator odlučio je da se stranica može prevesti samo na $1.",
 	"tpt-discouraged-language-header": "Prevođenje na $1 nije prioritet za ovu stranicu.",

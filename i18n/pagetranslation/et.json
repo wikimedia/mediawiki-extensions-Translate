@@ -64,7 +64,6 @@
 	"tpt-tab-translate": "Tõlgi",
 	"tpt-target-page": "Seda lehekülge ei saa käsitsi uuendada.\nSee lehekülg on lehekülje [[$1]] tõlge ja tõlget saab uuendada [$2 tõlkeriista] abil.",
 	"tpt-unknown-page": "See nimeruum on sisulehekülgede tõlkimiseks.\nLehekülg, mida redigeerida üritad, ei paista olevat seotud ühegi tõlkimiseks märgitud leheküljega.",
-	"tpt-translation-restricted": "Tõlkeadministraator on tõkestanud selle lehekülje tõlkimise sellesse keelde.\n\nPõhjus: $1",
 	"tpt-discouraged-language-force": "<strong>Seda lehekülge ei saa tõlkida $2 keelde.</strong>\n\nTõlkeadministraator otsustas, et seda lehekülge saab tõlkida vaid järgmistesse keeltesse: $3.",
 	"tpt-priority-languages": "Tõlkeadministraator määras, et on oluline tõlkida see rühm järgmistesse keeltesse: $1.",
 	"tpt-render-summary": "Uuendatud, et vastata lähtelehekülje uuele versioonile",

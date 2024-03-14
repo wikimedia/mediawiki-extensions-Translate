@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"McDutchie"
 		]
 	},
@@ -118,7 +119,7 @@
 	"apihelp-searchtranslations-param-query": "Le texto a cercar.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Le codice de lingua del texto original.",
 	"apihelp-searchtranslations-param-language": "Le codice de lingua del texto a cercar.",
-	"apihelp-searchtranslations-param-group": "Le ID del gruppo in le qual cercar le texto. Vide  <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-searchtranslations-param-group": "Le ID del gruppo in le qual cercar le texto. Vide <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-searchtranslations-param-filter": "Filtro de stato de traduction de messages.",
 	"apihelp-searchtranslations-param-match": "Trovar qualcunque parola a cercar o tote le parolas a cercar.",
 	"apihelp-searchtranslations-param-case": "Recerca (non) sensibile al differentia inter majusculas e minusculas.",

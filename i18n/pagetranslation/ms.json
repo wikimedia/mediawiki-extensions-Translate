@@ -64,7 +64,6 @@
 	"tpt-tab-translate": "Terjemah",
 	"tpt-target-page": "Laman ini tidak boleh dikemaskini secara manual.\nLaman ini merupakan terjemahan laman [[$1]], dan terjemahannya boleh dikemas kini dengan menggunakan [$2 alatan penterjemahan].",
 	"tpt-unknown-page": "Ruang nama ini ditempah untuk penterjemahan laman kandungan.\nLaman yang anda cuba sunting itu nampaknya tidak berpadan dengan sebarang laman yang ditandai untuk diterjemah.",
-	"tpt-translation-restricted": "Penterjemahan laman ini kepada bahasa ini telah disekat oleh seorang penyelia penterjemahan.\n\nSebab: $1",
 	"tpt-discouraged-language-force-header": "Halaman ini tidak boleh diterjemahkan ke $1.",
 	"tpt-discouraged-language-force-content": "Seorang penyelia penterjemahan telah memutuskan bahawa halaman ini hanya boleh diterjemahkan ke $1.",
 	"tpt-discouraged-language-header": "Penterjemahan ke $1 bukan keutamaan bagi halaman ini.",

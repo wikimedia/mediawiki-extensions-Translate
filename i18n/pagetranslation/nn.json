@@ -54,7 +54,6 @@
 	"tpt-languages-zero": "Byrja omsetjing for dette språket",
 	"tpt-languages-nonzero": "$1 ($2 % sett om)",
 	"tpt-tab-translate": "Set om",
-	"tpt-translation-restricted": "Omsetjing av sida til dette språket er stogga av ein omsetjingsadministrator.\n\nÅrsak: $1",
 	"tpt-discouraged-language-force": "<strong>Sida kan ikkje setjast om til $2.</strong>\n\nEin omsetjingsadministrator har avgjort at sida berre kan setjast om til $3.",
 	"tpt-render-summary": "Oppdatering for å svara til ny versjon av kjeldesida",
 	"tpt-aggregategroup-add": "Legg til",

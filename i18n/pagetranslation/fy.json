@@ -78,7 +78,6 @@
 	"tpt-tab-translate": "Oersette",
 	"tpt-target-page": "Dizze side kin net hânmjittich bywurke wurde.\nIt is in oersetting fan 'e side [[$1]], en kin bywurke wurde mei [$2 it oersettingsark].",
 	"tpt-unknown-page": "Dizze nammeromte is ornearre foar oersettings fan ynhâldlike siden.\nDe side dy't jo besykje te bewurkjen, liket gjin foar oersetten frijjûne side te wêzen.",
-	"tpt-translation-restricted": "It oersetten fan 'e side yn dizze taal, is troch in oersettingsbehearder tsjingien.\n\nReden: $1",
 	"tpt-translation-restricted-no-reason": "It oersetten fan 'e side yn dizze taal, is troch in oersettingsbehearder tsjingien.",
 	"tpt-discouraged-language-force-header": "Dizze side kin net yn it $1 oerset wurde.",
 	"tpt-discouraged-language-force-content": "In oersettingsbehearder hat besletten dat dizze side inkeld yn it $1 oerset wurde kin.",

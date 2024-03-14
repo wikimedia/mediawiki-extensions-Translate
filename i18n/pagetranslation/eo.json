@@ -85,7 +85,6 @@
 	"tpt-tab-translate": "Traduki",
 	"tpt-target-page": "Ĉi tiu paĝo ne povas esti ĝisdatigita permane.\nĈi tiu paĝo estas traduko de la paĝo [[$1]] kaj la traduko povas esti ĝisdatigita per [$2 la tradukilo].",
 	"tpt-unknown-page": "Ĉi tiu nomspaco estas rezervita por enhavpaĝaj tradukoj.\nLa paĝo, kiun vi provas redakti, ŝajnas ne respondi al iu ajn paĝo markita por tradukado.",
-	"tpt-translation-restricted": "Tradukado de ĉi tiu paĝo al ĉi tiu lingvo estas malhelpita de tradukadministranto.\n\nKialo: $1",
 	"tpt-translation-restricted-no-reason": "Tradukado de ĉi tiu paĝo al ĉi tiu lingvo estis malhelpita de tradukadministranto.",
 	"tpt-discouraged-language-force-header": "Ĉi tiu paĝo ne povas esti tradukita al $1.",
 	"tpt-discouraged-language-force-content": "Tradukadministranto decidis, ke ĉi tiu paĝo povas esti tradukita nur al $1.",

@@ -64,7 +64,6 @@
 	"tpt-languages-zero": "Hefja þýðingu á þetta tungumál",
 	"tpt-languages-nonzero": "$1 ($2% þýtt)",
 	"tpt-tab-translate": "Þýða",
-	"tpt-translation-restricted": "Kerfisstjóri þýðinga hefur komið í veg fyrir þýðingu síðunnar á þetta tungumál.\n\nÁstæða: $1",
 	"tpt-discouraged-language-force-header": "Þessa síðu er ekki hægt að þýða á $1.",
 	"tpt-discouraged-language-force-content": "Kerfisstjóri þýðinga ákvað að þessa síðu sé einungis hægt að þýða á $1.",
 	"tpt-discouraged-language-header": "Að þýða á $1 er ekki í forgangi fyrir þessa síðu.",
