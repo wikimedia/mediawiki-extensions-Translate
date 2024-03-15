@@ -13,7 +13,7 @@ use MediaWiki\Title\Title;
 use OutputPage;
 use PermissionsError;
 use ReadOnlyError;
-use SpecialPage;
+use UnlistedSpecialPage;
 use WebRequest;
 use Xml;
 
@@ -23,7 +23,7 @@ use Xml;
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage PageTranslation
  */
-class DeleteTranslatableBundleSpecialPage extends SpecialPage {
+class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	// Basic form parameters both as text and as titles
 	private string $text;
 	private ?Title $title;
@@ -67,10 +67,6 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 
 	public function doesWrites() {
 		return true;
-	}
-
-	public function isListed() {
-		return false;
 	}
 
 	public function execute( $par ) {
