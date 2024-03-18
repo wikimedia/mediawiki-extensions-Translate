@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Умар"
 		]
 	},
@@ -26,5 +27,5 @@
 	"tux-sst-ellipsis-outdated": "Ширделла гочдарш",
 	"tux-sst-link-all-match": "Дерриг дешнаш лаха.",
 	"tux-sst-match-message": "Гойтуш ду лоьхуш долучу муьлхачу дешнашца догӀурш. $1",
-	"tux-sst-case-sensitive": "регистр лоруш"
+	"tux-sst-case-sensitive": "Регистр лоруш"
 }

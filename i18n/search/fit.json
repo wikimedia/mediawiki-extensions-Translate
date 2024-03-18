@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Pyscowicz"
 		]
 	},
@@ -18,5 +19,5 @@
 	"tux-sst-outdated": "Vanhentuneet käänökset kielestä $1",
 	"tux-sst-ellipsis-outdated": "Vanhentuneet käänökset",
 	"tux-sst-match-message": "Näytethään mihin tahansa hakusanaan täsmäävät käänökset. $1",
-	"tux-sst-case-sensitive": "puustaavikoko oon merkitsevä"
+	"tux-sst-case-sensitive": "Puustaavikoko oon merkitsevä"
 }

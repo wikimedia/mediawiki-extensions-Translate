@@ -118,12 +118,14 @@
 	"tux-status-saving": "Жарыяланууда...",
 	"tux-status-unsaved": "Жарыяланбады",
 	"tux-editor-placeholder-language": "$1 котормоңуз",
+	"tux-editor-editsummary-placeholder": "Түзөтүүңүздү түшүндүрүп бериңиз (талаптанбайт)",
 	"tux-editor-save-button-label": "Котормону жарыялоо",
 	"tux-editor-skip-button-label": "Кийинки",
 	"tux-editor-cancel-button-label": "Жокко чыгаруу",
 	"tux-editor-suggestions-title": "Сунуштар",
 	"tux-editor-latest-updates-title": "Соңку түзөтүүлөр",
 	"tux-editor-changes-without-summary": "түшүндүрмөсү жок $1 {{PLURAL:$1|түзөтүү}}",
+	"tux-editor-clear-translated": "Которулгандарды жашыруу",
 	"tux-editor-translate-mode": "Тизме",
 	"tux-proofread-edit-label": "Түзөтүү",
 	"tux-editor-page-mode": "Барак",
@@ -137,5 +139,6 @@
 	"tux-editor-collapse-tooltip": "түрүү",
 	"tux-editor-message-tools-history": "Тарых",
 	"tux-editor-message-tools-translations": "Бардык котормолор",
-	"tux-editor-loading": "Жүктөлүүдө..."
+	"tux-editor-loading": "Жүктөлүүдө...",
+	"translate-hidetranslations": "Которулган барактарды жашыруу"
 }

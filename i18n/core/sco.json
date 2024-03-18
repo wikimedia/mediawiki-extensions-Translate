@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"AmaryllisGardener",
+			"Amire80",
 			"CiphriusKane",
 			"John Reid"
 		]
@@ -59,7 +60,7 @@
 	"translate-checks-fudforum-syntax": "Uise <nowiki>$1</nowiki> instead o <nowiki>$2</nowiki> in this waurk.",
 	"translate-pref-editassistlang": "Assistant leids:",
 	"prefs-translate": "Owersetin opties",
-	"translate-pref-editassistlang-help": "Comma separated leet o lee codes.\nThe owersetin o ae message in thir leids ar shawn whan ye'r owersetin.\nThe defaut leet o leids depends oan yer leid.",
+	"translate-pref-editassistlang-help": "Comma-separatit leet o leid codes.\nThe owersetin o ae message in thir leids ar shawn whan ye'r owersetin.\nThe defaut leet o leids depends oan yer leid.",
 	"translate-pref-editassistlang-bad": "Onvalit leid code in the leet:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Eedit uisin the owersetin interface",
 	"right-translate-manage": "Manage message groops",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Joao Xavier"
 		]
 	},
@@ -17,5 +18,5 @@
 	"tux-sst-ellipsis-untranslated": "Nula tradukuro",
 	"tux-sst-link-all-match": "Demandez omna serchata vorti.",
 	"tux-sst-match-message": "Hike montresas tradukuri qui koincidas kun irga vorto ek la serchita. $1",
-	"tux-sst-case-sensitive": "''Case sensitive''"
+	"tux-sst-case-sensitive": "Mayu/minuskulo-distingenda"
 }
