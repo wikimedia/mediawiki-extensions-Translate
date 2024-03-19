@@ -4,6 +4,7 @@
 			"A Chinese Wikipedian",
 			"Alexsh",
 			"Anakmalaysia",
+			"Anterdc99",
 			"Bencmq",
 			"Chenxiaoqino",
 			"Dimension",
@@ -501,5 +502,6 @@
 	"log-action-filter-translationreview-message": "复核单独翻译消息",
 	"log-action-filter-translationreview-group": "翻译进度的状态更改",
 	"logentry-import-translatable-bundle": "$1{{GENDER:$2|导入了}}可翻译捆绑包$3",
-	"log-action-filter-import-translatable-bundle": "可翻译捆绑包导入"
+	"log-action-filter-import-translatable-bundle": "可翻译捆绑包导入",
+	"translate-hidetranslations": "隐藏翻译页面"
 }

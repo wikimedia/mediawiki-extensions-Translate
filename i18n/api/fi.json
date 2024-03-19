@@ -9,11 +9,11 @@
 			"Valtlait"
 		]
 	},
-	"apihelp-aggregategroups-param-group": "Viestiryhmän tunnus.",
+	"apihelp-aggregategroups-param-group": "Viestiryhmän tunnus. Katso <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Kokoelmaviestiryhmän nimi.",
 	"apihelp-aggregategroups-param-groupdescription": "Kokoelmaviestiryhmän kuvaus.",
 	"apihelp-aggregategroups-example-1": "Liitä ryhmä",
-	"apihelp-groupreview-param-group": "Viestiryhmä.",
+	"apihelp-groupreview-param-group": "Viestiryhmä. Katso <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-groupreview-param-language": "Kielikoodi.",
 	"apihelp-groupreview-param-state": "Viestiryhmän uusi tila.",
 	"apihelp-groupreview-example-1": "Merkitsee saksankielisen käännöksen viestiryhmälle ”group-Example” valmiiksi",
