@@ -248,35 +248,58 @@
 					translateEditor.message.translation = translation;
 					translateEditor.onSaveSuccess();
 				} else {
-					translateEditor.onSaveFail( mw.msg( 'tux-save-unknown-error' ) );
+					translateEditor.onSaveFail( [ mw.msg( 'tux-save-unknown-error' ) ] );
 					mw.log( response, xhr );
 				}
 			} ).fail( function ( errorCode, response ) {
-				if ( errorCode === 'assertuserfailed' ) {
-					// eslint-disable-next-line no-alert
-					alert( mw.msg( 'tux-session-expired' ) );
-				} else if ( errorCode === 'translate-validation-failed' ) {
-					// Cancel the translation check API call to avoid extra notices
-					// from appearing.
-					if ( translateEditor.validating ) {
-						translateEditor.validating.abort();
-					} else {
-						// Cancel the translation check API call that might be made in the future.
-						translateEditor.delayValidation( false );
+				if ( errorCode === 'http' || errorCode === 'ok-but-empty' ) {
+					var api = new mw.Api();
+					translateEditor.displayNotices(
+						api.getErrorMessage( errorCode ),
+						noticeTypes.error
+					);
+					return;
+				}
+
+				var errors = [];
+				for ( var i = 0; i < response.errors.length; i++ ) {
+					var error = response.errors[ i ];
+					if ( error.code === 'assertuserfailed' ) {
+						// eslint-disable-next-line no-alert
+						alert( mw.msg( 'tux-session-expired' ) );
+						break;
+					} else if ( error.code === 'translate-validation-failed' ) {
+						// Cancel the translation check API call to avoid extra
+						// notices from appearing.
+						if ( translateEditor.validating ) {
+							translateEditor.validating.abort();
+						} else {
+							// Cancel the translation check API call that might be made
+							// in the future.
+							translateEditor.delayValidation( false );
+						}
+
+						translateEditor.removeNotices( [ noticeTypes.error, noticeTypes.warning ] );
+
+						if ( error.data && error.data.validation ) {
+							translateEditor.displayNotices(
+								error.data.validation.warnings,
+								noticeTypes.warning
+							);
+							translateEditor.displayNotices(
+								error.data.validation.errors,
+								noticeTypes.error
+							);
+						}
 					}
 
-					translateEditor.removeNotices( [ noticeTypes.error, noticeTypes.warning ] );
-
-					if ( response.error && response.error.validation ) {
-						translateEditor.displayNotices( response.error.validation.warnings, noticeTypes.warning );
-						translateEditor.displayNotices( response.error.validation.errors, noticeTypes.error );
-					}
+					errors.push( error.html );
 				}
 
 				// This is placed at the bottom to ensure that the save error appears at the
 				// top of the notices
 				translateEditor.onSaveFail(
-					response.error && response.error.info || mw.msg( 'tux-save-unknown-error' )
+					errors.length ? errors : [ mw.msg( 'tux-save-unknown-error' ) ]
 				);
 
 				// Display all the notices whenever an error occurs.
@@ -325,11 +348,22 @@
 		/**
 		 * Marks that there was a problem saving a translation.
 		 *
-		 * @param {string} error Strings of notices to display.
+		 * @param {string[]} errors Array of HTML notices to display.
 		 */
-		onSaveFail: function ( error ) {
+		onSaveFail: function ( errors ) {
+			var $error;
+			if ( errors.length === 1 ) {
+				$error = $( $.parseHTML( errors[ 0 ] ) );
+			} else {
+				var $errorList = $( '<ul>' );
+				for ( var i = 0; i < errors.length; i++ ) {
+					$errorList.append( $( '<li>' ).html( errors[ i ] ) );
+				}
+				$error = $errorList;
+			}
+
 			this.addNotice(
-				mw.msg( 'tux-editor-save-failed', error ),
+				mw.message( 'tux-editor-save-failed', $error, errors.length ).parse(),
 				noticeTypes.translateFail
 			);
 			this.saving = false;

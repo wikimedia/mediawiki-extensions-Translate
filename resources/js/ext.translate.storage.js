@@ -25,10 +25,16 @@
 			var api = new mw.Api();
 
 			return api.postWithToken( 'csrf', {
+				format: 'json',
+				formatversion: 2,
 				action: 'edit',
 				title: title,
 				text: translation,
 				summary: editSummary,
+				errorformat: 'html',
+				errorlang: 'uselang',
+				errorsuselocal: 1,
+				uselang: mw.config.get( 'wgUserLanguage' ),
 				// If the session expires, fail the saving instead of saving it
 				// as an anonymous user (if anonymous can save).
 				// When undefined, the parameter is not included in the request
