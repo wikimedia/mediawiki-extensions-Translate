@@ -20,6 +20,7 @@
 	"tpt-languages-legend": "Altra lingui:",
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"tpt-tab-translate": "Tradukar",
+	"tpt-target-page": "Ca pagino ne povas aktualigesar manuale.\nCa pagino esas tradukuro de la pagino [[$1]], e la tradukuro povas aktualigesar uzanta [$2 la tradukilo].",
 	"tpt-translation-restricted-no-reason": "La traduko di ca pagino a ca idiomo impedesis da ula administranto di tradukuri.",
 	"tpt-discouraged-language-header": "Tradukar ad $1 ne esas prioreso por ca pagino.",
 	"tpt-aggregategroup-add": "Adjuntar",
