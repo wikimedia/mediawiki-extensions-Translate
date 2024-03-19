@@ -146,6 +146,7 @@ return [
 			$services->get( 'Translate:MessageGroupSubscriptionStore' ),
 			$services->getJobQueueGroup(),
 			$services->getUserIdentityLookup(),
+			LoggerFactory::getInstance( 'Translate.MessageGroupSubscription' ),
 			new ServiceOptions(
 				MessageGroupSubscription::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()

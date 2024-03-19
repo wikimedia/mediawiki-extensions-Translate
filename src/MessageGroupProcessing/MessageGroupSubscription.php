@@ -13,6 +13,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MessageGroup;
+use Psr\Log\LoggerInterface;
 use StatusValue;
 use User;
 
@@ -28,6 +29,7 @@ class MessageGroupSubscription {
 	private bool $isMessageGroupSubscriptionEnabled;
 	private UserIdentityLookup $userIdentityLookup;
 	private array $queuedMessages = [];
+	private LoggerInterface $logger;
 
 	public const STATE_REMOVED = 'removed';
 	public const STATE_ADDED = 'added';
@@ -41,11 +43,13 @@ class MessageGroupSubscription {
 		MessageGroupSubscriptionStore $groupSubscriptionStore,
 		JobQueueGroup $jobQueueGroup,
 		UserIdentityLookup $userIdentityLookup,
+		LoggerInterface $logger,
 		ServiceOptions $options
 	) {
 		$this->groupSubscriptionStore = $groupSubscriptionStore;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->userIdentityLookup = $userIdentityLookup;
+		$this->logger = $logger;
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isMessageGroupSubscriptionEnabled = $options->get( 'TranslateEnableMessageGroupSubscription' );
 	}
@@ -95,6 +99,10 @@ class MessageGroupSubscription {
 		}
 
 		$this->jobQueueGroup->push( MessageGroupSubscriptionNotificationJob::newJob( $this->queuedMessages ) );
+		$this->logger->debug(
+			'Queued job with changes for {countGroups} groups',
+			[ 'countGroups' => count( $this->queuedMessages ) ]
+		);
 		// Reset queued messages once job has been queued
 		$this->queuedMessages = [];
 	}
@@ -109,6 +117,7 @@ class MessageGroupSubscription {
 
 		// No subscribers found for the groups
 		if ( !$allGroupSubscribers ) {
+			$this->logger->info( 'No subscribers for groups.' );
 			return;
 		}
 
@@ -116,13 +125,19 @@ class MessageGroupSubscription {
 		foreach ( $changesToProcess as $groupId => $state ) {
 			$group = $groups[ $groupId ] ?? null;
 			if ( !$group ) {
-				// TODO: Add some log
+				$this->logger->debug(
+					'Group not found {groupId}.',
+					[ 'groupId' => $groupId ]
+				);
 				continue;
 			}
 
 			$groupSubscribers = $allGroupSubscribers[ $groupId ] ?? [];
 			if ( $groupSubscribers === [] ) {
-				// No subscribers
+				$this->logger->info(
+					'No subscribers found for {groupId} group.',
+					[ 'groupId' => $groupId ]
+				);
 				continue;
 			}
 
@@ -134,6 +149,14 @@ class MessageGroupSubscription {
 					'changes' => $state
 				]
 			] );
+
+			$this->logger->info(
+				'Event created for {groupId} with {subscriberCount} subscribers.',
+				[
+					'groupId' => $groupId,
+					'subscriberCount' => count( $groupSubscribers )
+				]
+			);
 		}
 	}
 
