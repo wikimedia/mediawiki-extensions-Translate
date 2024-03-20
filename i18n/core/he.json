@@ -94,7 +94,7 @@
 	"translate-checks-format": "תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1",
 	"translate-checks-escape": "ייתכן {{PLURAL:$2|שתו החילוף הבא נכתב|שתווי החילוף הבאים נכתבו}} בשגגה: <strong>$1</strong>. {{PLURAL:$4|תו חילוף התקין הוא|תווי החילוף התקינים הם}}: $3",
 	"translate-checks-parametersnotequal": "{{PLURAL:$1|נמצא פרמטר אחד|נמצאו $1 פרמטרים}}; {{PLURAL:אמורים להיות $2|אמור להיות אחד}}.",
-	"translate-checks-malformed": "<nowiki>$1</nowiki> אינו תקין.",
+	"translate-checks-malformed": "<nowiki>$1</nowiki> כתוב באופן פגום.",
 	"translate-checks-fudforum-syntax": "השתמשו ב־<nowiki>$1</nowiki> ולא ב־<nowiki>$2</nowiki> בפרויקט הזה.",
 	"translate-checks-newline-missing-start": "{{PLURAL:$1|חסר תו שורה חדשה אחד|חסרים $1 תווי שורה חדשה}} בתחילת התרגום.",
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|חסר תו שורה חדשה אחד|חסרים $1 תווי שורה חדשה}} בסוף התרגום.",

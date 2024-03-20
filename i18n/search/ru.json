@@ -8,7 +8,8 @@
 			"Ole Yves",
 			"Stjn",
 			"Translatobecomer",
-			"Vlad5250"
+			"Vlad5250",
+			"Amire80"
 		]
 	},
 	"searchtranslations": "Поиск переводов",
@@ -33,7 +34,7 @@
 	"tux-sst-ellipsis-outdated": "Устаревшие переводы",
 	"tux-sst-link-all-match": "Считать обязательными все поисковые слова.",
 	"tux-sst-match-message": "Показаны переводы, которые соответствуют любому из поисковых слов. $1",
-	"tux-sst-case-sensitive": "с учётом регистра",
+	"tux-sst-case-sensitive": "С учётом регистра",
 	"tux-sst-error-offset": "Больше невозможно показать результаты. Пожалуйста, уточните поиск.",
 	"tux-sst-error-language": "Этот язык не может использоваться для такого типа поиска."
 }

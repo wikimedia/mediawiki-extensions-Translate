@@ -5,7 +5,8 @@
 			"Nike",
 			"Pyscowicz",
 			"Silvonen",
-			"Stryn"
+			"Stryn",
+			"Amire80"
 		]
 	},
 	"searchtranslations": "Etsi käännöksiä",
@@ -31,7 +32,7 @@
 	"tux-sst-ellipsis-outdated": "Vanhentuneet käännökset",
 	"tux-sst-link-all-match": "Vaadi kaikkien hakusanojen täsmäys.",
 	"tux-sst-match-message": "Näytetään mihin tahansa hakusanaan täsmäävät käännökset. $1",
-	"tux-sst-case-sensitive": "kirjainkoko on merkitsevä",
+	"tux-sst-case-sensitive": "Kirjainkoko on merkitsevä",
 	"tux-sst-error-offset": "Hakutuloksia ei voi näyttää enempää. Rajaa hakuasi.",
 	"tux-sst-error-language": "Tätä kieltä ei voi käyttää tämäntyyppisessä haussa."
 }
