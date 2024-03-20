@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
-			"Chadyka"
+			"Chadyka",
+			"No Sleep till Krupki"
 		]
 	},
 	"searchtranslations": "Пошук перакладаў",
@@ -10,6 +11,7 @@
 	"tux-sst-view-foreign": "Глядзець на $1",
 	"tux-sst-search": "Пошук",
 	"tux-sst-search-ph": "Пошук перакладаў",
+	"tux-sst-search-info": "Выкарыстоўвайце аператары <code>language:</code> або <code>group:</code> каб удакладніць крытэрыі пошуку",
 	"tux-sst-count": "{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}",
 	"tux-sst-facet-language": "Мовы",
 	"tux-sst-facet-group": "Групы паведамленняў",
