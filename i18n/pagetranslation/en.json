@@ -53,6 +53,7 @@
 	"tpt-tag-no-transclusion-support": "no transclusion support",
 	"tpt-select-prioritylangs": "Comma-separated list of priority language codes:",
 	"tpt-select-prioritylangs-force": "Prevent translations to languages other than the priority languages",
+	"tpt-select-no-prioritylangs-force": "Preventing translations to non-priority languages without selecting any priority languages will prevent translations to all languages.",
 	"tpt-select-prioritylangs-reason": "Reason:",
 	"tpt-sections-prioritylangs": "Priority languages",
 	"tpt-sections-syntaxversion": "Syntax version",

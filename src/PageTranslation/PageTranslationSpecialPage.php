@@ -25,6 +25,7 @@ use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
 use OOUI\TextInputWidget;
 use PermissionsError;
 use SpecialPage;
@@ -875,6 +876,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs-force' )->text(),
 						'align' => 'inline',
+						'help' => new HtmlSnippet( $this->msg( 'tpt-select-no-prioritylangs-force' )->parse() ),
 					]
 				),
 				new FieldLayout(
@@ -947,7 +949,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$priorityLanguages = rtrim( trim( $request->getVal( 'prioritylangs', '' ) ), ',' );
 		$priorityLanguages = str_replace( "\n", ',', $priorityLanguages );
 		$priorityLanguages = array_map( 'trim', explode( ',', $priorityLanguages ) );
-		$priorityLanguages = array_unique( $priorityLanguages );
+		$priorityLanguages = array_unique( array_filter( $priorityLanguages ) );
 
 		$forcePriorityLanguage = $request->getCheck( 'forcelimit' );
 		$priorityLanguageReason = trim( $request->getText( 'priorityreason' ) );

@@ -373,17 +373,23 @@ class TranslatablePageMarker {
 		UserIdentity $user
 	): void {
 		$languages = implode( ',', $pageSettings->getPriorityLanguages() );
-		if ( $languages === '' ) {
-			$languages = false;
-			$force = false;
-			$reason = false;
-		} else {
-			$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : 'off';
+		$reason = false;
+
+		if ( $languages !== '' ) {
 			$reason = $pageSettings->getPriorityLanguageComment();
+			$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : 'off';
+		} else {
+			$languages = false;
+			$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : false;
+			if ( $force === 'on' ) {
+				// We use the reason, if priority force and / or priority languages are set
+				// Otherwise just a reason doesn't make sense
+				$reason = $pageSettings->getPriorityLanguageComment();
+			}
 		}
 
 		$groupId = $page->getMessageGroupId();
-		// old priority languages
+		// old metadata
 		$opLanguages = $this->messageGroupMetadata->get( $groupId, 'prioritylangs' );
 		$opForce = $this->messageGroupMetadata->get( $groupId, 'priorityforce' );
 		$opReason = $this->messageGroupMetadata->get( $groupId, 'priorityreason' );
