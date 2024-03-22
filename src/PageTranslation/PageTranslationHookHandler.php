@@ -5,13 +5,15 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use HTMLCheckField;
 use IContextSource;
+use MediaWiki\Hook\LonelyPagesQueryHook;
 use MediaWiki\Hook\SpecialPrefixIndexGetFormFiltersHook;
 use MediaWiki\Hook\SpecialPrefixIndexQueryHook;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PageTranslationHookHandler implements
 	SpecialPrefixIndexGetFormFiltersHook,
-	SpecialPrefixIndexQueryHook
+	SpecialPrefixIndexQueryHook,
+	LonelyPagesQueryHook
 {
 
 	public function onSpecialPrefixIndexGetFormFilters( IContextSource $contextSource, array &$filters ) {
@@ -33,5 +35,16 @@ class PageTranslationHookHandler implements
 				]
 			)->andWhere( [ 'translate_pp.pp_value' => null ] );
 		}
+	}
+
+	public function onLonelyPagesQuery( &$tables, &$conds, &$joinConds ) {
+		$tables[ 'translate_pp' ] = 'page_props';
+		$joinConds['translate_pp'] = [
+			'LEFT JOIN', [
+				'translate_pp.pp_page=page_id',
+				'translate_pp.pp_propname' => 'translate-is-translation'
+			]
+		];
+		$conds['translate_pp.pp_value'] = null;
 	}
 }

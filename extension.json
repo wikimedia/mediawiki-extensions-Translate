@@ -218,7 +218,8 @@
 		"SpecialPrefixIndexGetFormFilters": "pageTranslation",
 		"SpecialPrefixIndexQuery": "pageTranslation",
 		"UserGetRights": "translateSandbox",
-		"AfterImportPage": "translatableBundleImporter"
+		"AfterImportPage": "translatableBundleImporter",
+		"LonelyPagesQuery": "pageTranslation"
 	},
 	"HookHandlers": {
 		"main": {
