@@ -677,25 +677,9 @@ class Hooks {
 		}
 
 		// If priority languages have been set, always show those languages
-		$priorityLangs = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
-		$priorityForce = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
-		$filter = null;
-		if ( (string)$priorityLangs !== '' ) {
-			$filter = array_flip( explode( ',', $priorityLangs ) );
-		}
-		if ( $filter !== null ) {
-			// If translation is restricted to some languages, only show them
-			if ( $priorityForce === 'on' ) {
-				// Do not filter the source language link
-				$filter[$page->getMessageGroup()->getSourceLanguage()] = true;
-				$status = array_intersect_key( $status, $filter );
-			}
-			foreach ( $filter as $langCode => $value ) {
-				if ( !isset( $status[$langCode] ) ) {
-					// We need to show all priority languages even if no translation started
-					$status[$langCode] = 0;
-				}
-			}
+		$priorityLanguages = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
+		if ( (string)$priorityLanguages !== '' ) {
+			$status += array_fill_keys( explode( ',', $priorityLanguages ), 0 );
 		}
 
 		return [
