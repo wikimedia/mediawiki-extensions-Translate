@@ -1161,7 +1161,7 @@ class Hooks {
 		];
 		$needsPageTranslationRight = in_array( $action, [ 'delete', 'undelete' ] );
 		if ( in_array( $action, $inclusionList ) ||
-			$needsPageTranslationRight && $user->isAllowed( 'pagetranslation' )
+			( $needsPageTranslationRight && $user->isAllowed( 'pagetranslation' ) )
 		) {
 			return true;
 		}
