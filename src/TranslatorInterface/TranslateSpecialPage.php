@@ -17,7 +17,6 @@ use MessageGroup;
 use Psr\Log\LoggerInterface;
 use Skin;
 use SpecialPage;
-use Xml;
 
 /**
  * Implements the core of Translate extension - a special page which shows
@@ -211,12 +210,14 @@ class TranslateSpecialPage extends SpecialPage {
 		$container = Html::openElement( 'ul', [ 'class' => 'column tux-message-selector' ] );
 		$container .= Html::rawElement( 'li',
 			[ 'class' => 'column' ],
-			Xml::checkLabel(
+			Html::element( 'input', [
+				'type' => 'checkbox', 'name' => 'optional', 'value' => '1',
+				'checked' => false,
+				'id' => 'tux-option-optional',
+				'data-filter' => 'optional'
+			] ) . '&nbsp;' . Html::label(
 				$this->msg( 'tux-message-filter-optional-messages-label' )->text(),
-				'optional',
-				'tux-option-optional',
-				false,
-				[ 'data-filter' => 'optional' ]
+				'tux-option-optional'
 			)
 		);
 

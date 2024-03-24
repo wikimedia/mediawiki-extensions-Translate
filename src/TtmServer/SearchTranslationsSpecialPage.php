@@ -21,7 +21,6 @@ use Message;
 use MessageHandle;
 use SpecialPage;
 use TTMServerException;
-use Xml;
 
 /**
  * Contains logic to search for translations
@@ -588,7 +587,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Html::input( 'query', $query, 'text', $attribs );
-		$submit = Xml::submitButton(
+		$submit = Html::submitButton(
 			$this->msg( 'tux-sst-search' )->text(),
 			[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 		);
@@ -600,11 +599,13 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		);
 
 		$nonDefaults = $this->opts->getChangedValues();
-		$checkLabel = Xml::checkLabel(
+		$checkLabel = Html::element( 'input', [
+			'type' => 'checkbox', 'name' => 'case', 'value' => '1',
+			'checked' => isset( $nonDefaults['case'] ),
+			'id' => 'tux-case-sensitive',
+		] ) . '&nbsp;' . Html::label(
 			$this->msg( 'tux-sst-case-sensitive' )->text(),
-			'case',
-			'tux-case-sensitive',
-			isset( $nonDefaults['case'] )
+			'tux-case-sensitive'
 		);
 		$checkLabel = Html::rawElement(
 			'div',
