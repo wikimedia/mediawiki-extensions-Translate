@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"MuratTheTurkish",
 			"StanProg",
 			"Vlad5250"
@@ -25,7 +26,7 @@
 	"apihelp-query+managemessagegroups-summary": "Извличане на възможни преименувания на съобщение в група по време на внясяне",
 	"apihelp-query+managemessagegroups-param-groupId": "Идентификатор на групата",
 	"apihelp-query+managemessagegroups-param-messageKey": "Ключ за съобщение",
-	"apihelp-query+managemessagegroups-param-changesetName": "Промяна името на набора – По подразбиране / Необслужено / MediaWiki и др.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Име на набор от промени – По подразбиране / Необслужено / MediaWiki и др.",
 	"apihelp-query+managemessagegroups-example-1": "Извличане на възможни преименувания за дадения ключ в дадената група.",
 	"apihelp-query+messagecollection-summary": "Извършване на заявка MessageCollection за преводите.",
 	"apihelp-query+messagecollection-param-group": "Група съобщения.",

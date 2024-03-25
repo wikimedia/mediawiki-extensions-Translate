@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Fúlvio",
 			"Hamilton Abreu",
 			"Mansil",
@@ -66,7 +67,7 @@
 	"apihelp-managemessagegroups-param-renameMessageKey": "Chave de mensagem, a ser alterada",
 	"apihelp-managemessagegroups-param-messageKey": "Chave de mensagem de substituição",
 	"apihelp-managemessagegroups-param-operation": "A operação a ser realizada. Valores possíveis: rename (alterar nome) / new (novo)",
-	"apihelp-managemessagegroups-param-changesetName": "Nome do conjunto de alterações - Default (Padrão) / Unattended (Autónomo) / MediaWiki, etc.",
+	"apihelp-managemessagegroups-param-changesetName": "Nome do conjunto de alterações - Padrão / Não vigiado / MediaWiki, etc.",
 	"apihelp-managemessagegroups-param-changesetModified": "Data e hora Unix da última modificação do conjunto de alterações. Se o conjunto tiver sido modificado depois desta data e hora a API gera um erro.",
 	"apihelp-managegroupsynchronizationcache-summary": "Gerir a cache de sincronização de grupos.",
 	"apihelp-managegroupsynchronizationcache-param-operation": "A operação a ser realizada. Valores possíveis: resolve (obter)",

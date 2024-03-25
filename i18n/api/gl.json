@@ -33,7 +33,7 @@
 	"apihelp-query+managemessagegroups-summary": "Obter os posibles cambios de nome para unha mensaxe nun grupo durante as importacións",
 	"apihelp-query+managemessagegroups-param-groupId": "Identificador do grupo",
 	"apihelp-query+managemessagegroups-param-messageKey": "Chave da mensaxe",
-	"apihelp-query+managemessagegroups-param-changesetName": "Nome do conxunto de cambios: Predeterminado / Desatendido / MediaWiki etc.",
+	"apihelp-query+managemessagegroups-param-changesetName": "Nome do conxunto de cambios: Predeterminado / Desatendido / MediaWiki, etc.",
 	"apihelp-query+managemessagegroups-example-1": "Obter os posibles cambios de nome para a chave indicada no grupo dado.",
 	"apihelp-query+messagecollection-summary": "Consultar MessageCollection sobre traducións.",
 	"apihelp-query+messagecollection-param-group": "Grupo de mensaxes.",

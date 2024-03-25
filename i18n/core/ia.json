@@ -453,5 +453,6 @@
 	"log-action-filter-translationreview-message": "Revision de messages de traduction individual",
 	"log-action-filter-translationreview-group": "Cambiamentos in le stato del progresso de traductiones",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|ha importate}} un gruppo de messages traducibile $3",
-	"log-action-filter-import-translatable-bundle": "Importation de gruppos de messages traducibile"
+	"log-action-filter-import-translatable-bundle": "Importation de gruppos de messages traducibile",
+	"translate-hidetranslations": "Celar paginas de traduction"
 }

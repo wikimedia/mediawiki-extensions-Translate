@@ -79,6 +79,8 @@
 	"tpt-target-page": "Iste pagina non pote esser actualisate manualmente.\nIste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].",
 	"tpt-unknown-page": "Iste spatio de nomines es reservate pro traductiones de paginas de contento.\nLe pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.",
 	"tpt-translation-restricted-no-reason": "Le traduction de iste pagina in iste lingua ha essite impedite per un administrator de traductiones.",
+	"tpt-translation-restricted-no-priority-languages-no-reason": "Iste gruppo de messages ha essite configurate pro impedir le traductiones in linguas altere que le linguas de prioritate, ma illo non ha linguas de prioritate.",
+	"tpt-translation-restricted-reason": "Motivo: $1",
 	"tpt-discouraged-language-force-header": "Iste pagina non pote esser traducite in $1.",
 	"tpt-discouraged-language-force-content": "Un administrator de traductiones ha decidite que iste pagina pote esser traducite solmente in $1.",
 	"tpt-discouraged-language-header": "Le traduction in $1 non es un prioritate pro iste pagina.",
