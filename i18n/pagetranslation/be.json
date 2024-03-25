@@ -15,6 +15,7 @@
 		]
 	},
 	"pagetranslation": "Пераклад старонкі",
+	"nstab-translations": "Адзінка перакладу",
 	"right-pagetranslation": "Пазначэнне версіяў старонак для перакладу",
 	"action-pagetranslation": "кіраваць перакладам старонак",
 	"tps-edit-sourcepage-text": "Вы правіце зыходны тэкст перакладальнай старонкі. Калі ласка, пераканайцеся, што вы знаёмыя з гэтай дакументацыяй:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Змяненне зыходнага тэксту]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Прыклады выкарыстання разметкі]",
@@ -252,7 +253,7 @@
 	"pp-cancel-button-label": "Адмена",
 	"pp-save-message": "Старонка была апублікаваная. Вы можаце яе [$1 правіць].",
 	"pp-prepare-message": "Старонка была падрыхтаваная да перакладу. Глядзіце ўнізе адрозненні. Калі ўсё добра, націсніце кнопку «{{int:pp-save-button-label}}»!",
-	"pp-already-prepared-message": "Выглядае, што старонка ўжо была падрыхтаваная да перакладу. Няма ніякіх зменаў у параўнанні з мінулай версіяй.",
+	"pp-already-prepared-message": "Выглядае, што старонка або ўжо была падрыхтаваная да перакладу, або не можа быць падрыхтавана аўтаматычна. Няма ніякіх зменаў у параўнанні з мінулай версіяй.",
 	"pp-diff-error": "Пры атрыманні розніцы версіяў з серверу адбылася памылка.",
 	"pp-pagename-missing": "Калі ласка, увядзіце назву старонкі.",
 	"pp-diff-old-header": "Крынічны тэкст",

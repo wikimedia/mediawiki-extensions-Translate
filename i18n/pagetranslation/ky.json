@@ -33,6 +33,8 @@
 	"pt-movepage-reason": "Себеп:",
 	"pt-deletepage-current": "Барактын аты:",
 	"pt-deletepage-reason": "Себеп:",
+	"pt-deletepage-reason-details": "Башка/кошумча себеп:",
+	"pt-deletepage-reason-other": "Башка себеп",
 	"pm-savepages-button-label": "Сактоо",
 	"pm-cancel-button-label": "Жокко чыгаруу",
 	"pp-save-button-label": "Жарыялоо",

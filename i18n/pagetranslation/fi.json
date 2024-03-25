@@ -231,7 +231,7 @@
 	"pp-pagename-missing": "Anna sivun nimi.",
 	"pp-diff-old-header": "Lähdeteksti",
 	"pp-diff-new-header": "Valmisteltu teksti",
-	"tpt-unlink-confirm": "Varmista, että haluat poistaa tämän sivun käännösjärjestelmästä. Kielivalitsin sekä käännetyt sivujen nimet lakkaavat toimimasta. Käännössivut muuttuvat muokattaviksi.",
+	"tpt-unlink-confirm": "Varmista, että haluat poistaa tämän sivun käännösjärjestelmästä. Kielenvalitsin sekä käännetyt sivujen nimet lakkaavat toimimasta. Käännössivut muuttuvat muokattaviksi.",
 	"tpt-unlink-button": "Poista käännettävistä sivuista",
 	"tpt-unlink-summary": "Poistettu käännettävistä sivuista",
 	"tpt-generic-confirm": "Vahvista toiminto.",

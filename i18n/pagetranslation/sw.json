@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Kwisha",
-			"Rance"
+			"Rance",
+			"Wangombe"
 		]
 	},
+	"pagetranslation": "Tafsiri ya ukurasa",
+	"nstab-translations": "Kitengo cha tafsiri",
 	"tpt-select-prioritylangs-reason": "Sababu:",
 	"tpt-rev-discourage": "vunja moyo",
 	"tpt-rev-encourage": "rejesha",

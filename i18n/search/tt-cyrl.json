@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ерней",
-			"Ильнар"
+			"Ильнар",
+			"Amire80"
 		]
 	},
 	"searchtranslations": "Тәрҗемәләрне эзләү",
@@ -15,5 +16,6 @@
 	"tux-sst-prev": "‹ Артка таба",
 	"tux-sst-default": "Тәрҗемәләр",
 	"tux-sst-ellipsis-untranslated": "Тәрҗемә юк",
-	"tux-sst-ellipsis-outdated": "Искергән тәрҗемәләр"
+	"tux-sst-ellipsis-outdated": "Искергән тәрҗемәләр",
+	"tux-sst-case-sensitive": "Хәреф зурлыгын исәпкә алып"
 }
