@@ -52,6 +52,7 @@
 	"apihelp-query+messagetranslations-param-title": "Полный заголовок известного сообщения.",
 	"apihelp-query+messagetranslations-example-1": "Список переводов в вики для «MediaWiki:January»",
 	"apihelp-managemessagegroups-param-groupId": "Идентификатор группы",
+	"apihelp-managemessagegroups-param-changesetName": "Сохранить имя - По умолчанию/ Автоматически/ МедиаВики и т.д.",
 	"apihelp-translatesandbox-summary": "Зарегистрировать и управлять пользователями в песочнице.",
 	"apihelp-translatesandbox-param-do": "Что делать.",
 	"apihelp-translatesandbox-param-username": "Имя учётной записи при её создании.",
