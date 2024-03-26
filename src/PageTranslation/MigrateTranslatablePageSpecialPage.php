@@ -79,7 +79,7 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 		$output->addHTML( $out );
 		$output->addHTML(
 			Html::errorBox(
-				$this->msg( 'tux-nojs' )->plain(),
+				$this->msg( 'tux-nojs' )->escaped(),
 				'',
 				'tux-nojs'
 			)

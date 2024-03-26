@@ -162,7 +162,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 	private function tuxSettingsForm(): string {
 		$noJs = Html::errorBox(
-			$this->msg( 'tux-nojs' )->plain(),
+			$this->msg( 'tux-nojs' )->escaped(),
 			'',
 			'tux-nojs'
 		);

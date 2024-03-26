@@ -43,7 +43,7 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		);
 		$output->addHTML(
 			Html::errorBox(
-				$this->msg( 'tux-nojs' )->plain(),
+				$this->msg( 'tux-nojs' )->escaped(),
 				'',
 				'tux-nojs'
 			)

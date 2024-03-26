@@ -77,7 +77,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 
 		$nojs = Html::errorBox(
-			$this->msg( 'tux-nojs' )->plain(),
+			$this->msg( 'tux-nojs' )->escaped(),
 			'',
 			'tux-nojs'
 		);
