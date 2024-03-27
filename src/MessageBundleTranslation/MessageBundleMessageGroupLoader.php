@@ -55,7 +55,7 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 			->select( [ 'page_id', 'page_namespace', 'page_title', 'rt_revision' => 'MAX(rt_revision)' ] )
 			->from( 'page' )
 			->join( 'revtag', null, [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ] )
-			->groupBy( 'page_id,page_namespace,page_title' )
+			->groupBy( [ 'page_id', 'page_namespace', 'page_title' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
