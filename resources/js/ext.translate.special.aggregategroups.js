@@ -417,7 +417,7 @@
 	} );
 
 	var entitySelectorLimit = 100, wikiPageMessageGroups = null;
-	function fetchWikiPageMessageGroups( searchValue, _entityTypeToFetch, deferred, failureCallback ) {
+	function fetchWikiPageMessageGroups( searchValue, _entityTypeToFetch, groupTypesToFetch, deferred, failureCallback ) {
 		var alreadySelectedGroups = getSelectedGroups( this.$element );
 		if ( wikiPageMessageGroups ) {
 			deferred.resolve( { groups: getGroupsToDisplay( wikiPageMessageGroups, searchValue, alreadySelectedGroups ) } );

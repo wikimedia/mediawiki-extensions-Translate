@@ -180,6 +180,7 @@
 	"apierror-translate-operation-error": "There was an error while processing the request. Error: $1",
 	"apihelp-translationentitysearch-summary": "Search for message groups and messages",
 	"apihelp-translationentitysearch-param-entitytype": "Entity type being queried",
+	"apihelp-translationentitysearch-param-grouptypes": "Group type(s) to filter by",
 	"apihelp-translationentitysearch-param-query": "Search query",
 	"apihelp-translationentitysearch-param-limit": "Maximum number of search results"
 }

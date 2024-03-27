@@ -60,17 +60,29 @@ var EntitySelectorWidget = function ( config ) {
 		classes: [ 'tes-error-label' ]
 	} );
 
+	var validGroupTypes = [ 'aggregate-groups', 'translatable-pages', 'message-bundles' ];
 	var noop = function () {};
 	this.allowSuggestionsWhenEmpty = config.allowSuggestionsWhenEmpty || false;
 	this.failureCallback = config.onFail || noop;
 	this.selectCallback = config.onSelect || noop;
 	this.entityTypeToFetch = config.entityType;
+	this.groupTypesToFetch = config.groupTypes;
 	this.apiRequestHook = config.apiRequestHook || null;
 	this.apiRequestTimeoutMilliseconds = config.apiRequestTimeoutMilliseconds || 250;
 	this.inputId = config.inputId || null;
 
 	if ( this.entityTypeToFetch && !Array.isArray( this.entityTypeToFetch ) ) {
 		throw new Error( 'entityType must be an array.' );
+	}
+
+	if ( this.groupTypesToFetch ) {
+		for ( var i = 0; i < this.groupTypesToFetch.length; i++ ) {
+			if ( validGroupTypes.indexOf( this.groupTypesToFetch[ i ] ) === -1 ) {
+				throw new Error(
+					this.groupTypesToFetch[ i ] +
+					' is invalid. Allowed types: ' + validGroupTypes );
+			}
+		}
 	}
 
 	this.selectedEntity = null;
@@ -101,9 +113,9 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 		function () {
 			currentRequestTimeout = null;
 			if ( widget.apiRequestHook ) {
-				widget.apiRequestHook( value, widget.entityTypeToFetch, deferred, widget.failureCallback );
+				widget.apiRequestHook( value, widget.entityTypeToFetch, widget.groupTypesToFetch, deferred, widget.failureCallback );
 			} else {
-				makeRequest( value, widget.entityTypeToFetch, deferred, widget.failureCallback );
+				makeRequest( value, widget.entityTypeToFetch, widget.groupTypesToFetch, deferred, widget.failureCallback );
 			}
 
 		},
@@ -120,12 +132,13 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	return deferred;
 };
 
-function makeRequest( value, entityType, deferred, cbFailure ) {
+function makeRequest( value, entityType, groupTypes, deferred, cbFailure ) {
 	var api = new mw.Api();
 	api.get( {
 		action: 'translationentitysearch',
 		query: value,
-		entitytype: entityType
+		entitytype: entityType,
+		grouptypes: groupTypes
 	} ).then( function ( result ) {
 		deferred.resolve( result.translationentitysearch );
 	}, function ( msg, error ) {

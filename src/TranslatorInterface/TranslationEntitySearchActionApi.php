@@ -28,13 +28,14 @@ class TranslationEntitySearchActionApi extends ApiBase {
 		$query = $this->getParameter( 'query' );
 		$maxResults = $this->getParameter( 'limit' );
 		$entityTypes = $this->getParameter( 'entitytype' );
+		$groupTypeFilter = $this->getParameter( 'grouptypes' );
 
 		$searchResults = [];
 		$remainingResults = $maxResults;
 
 		if ( in_array( self::GROUPS, $entityTypes ) ) {
 			$searchResults[ self::GROUPS ] = $this->entitySearch
-				->searchStaticMessageGroups( $query, $maxResults );
+				->searchStaticMessageGroups( $query, $maxResults, $groupTypeFilter );
 			$remainingResults = $maxResults - count( $searchResults[ self::GROUPS ] );
 		}
 
@@ -62,6 +63,11 @@ class TranslationEntitySearchActionApi extends ApiBase {
 				ParamValidator::PARAM_DEFAULT => 10,
 				NumericDef::PARAM_MAX => ApiBase::LIMIT_SML1
 			],
+			'grouptypes' => [
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_DEFAULT => [],
+				ParamValidator::PARAM_TYPE => array_keys( $this->entitySearch->getGroupTypes() )
+			]
 		];
 	}
 

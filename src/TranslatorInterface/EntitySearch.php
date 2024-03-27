@@ -3,8 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
+use AggregateMessageGroup;
 use Collation;
 use MalformedTitleException;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use NamespaceInfo;
@@ -13,6 +15,7 @@ use TitleFormatter;
 use TitleParser;
 use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use WikiPageMessageGroup;
 
 /**
  * Service for searching message groups and message keys.
@@ -38,6 +41,17 @@ class EntitySearch {
 	private $titleParser;
 	/** @var TitleFormatter */
 	private $titleFormatter;
+	private const TYPE_AGGREGATE = AggregateMessageGroup::class;
+	private const TYPE_MESSAGE_BUNDLE = MessageBundleMessageGroup::class;
+	private const TYPE_WIKIPAGE = WikiPageMessageGroup::class;
+	private const TYPE_OTHERS = 'o';
+	private const TYPE_MAPPING = [
+		self::TYPE_AGGREGATE => [ 'aggregate-groups', 'a' ],
+		self::TYPE_MESSAGE_BUNDLE => [ 'message-bundles', 'm' ],
+		self::TYPE_WIKIPAGE => [ 'translatable-pages', 'w' ]
+	];
+	/** @var array<string,string> */
+	private array $mappedTypes;
 
 	public function __construct(
 		WANObjectCache $cache,
@@ -55,13 +69,14 @@ class EntitySearch {
 		$this->messageIndex = $messageIndex;
 		$this->titleParser = $titleParser;
 		$this->titleFormatter = $titleFormatter;
+		$this->mappedTypes = $this->getGroupTypes();
 	}
 
-	public function searchStaticMessageGroups( string $query, int $maxResults ): array {
+	public function searchStaticMessageGroups( string $query, int $maxResults, array $types = [] ): array {
 		$cache = $this->cache;
 		// None of the static groups currently use language-dependent labels. This
 		// may need revisiting later and splitting the cache by language.
-		$key = $cache->makeKey( 'Translate', 'EntitySearch', 'static-groups' );
+		$key = $cache->makeKey( 'Translate', 'EntitySearch', 'static-groups', '-v2' );
 		$haystack = $cache->getWithSetCallback(
 			$key,
 			ExpirationAwareness::TTL_WEEK,
@@ -84,8 +99,17 @@ class EntitySearch {
 		$delimiter = self::FIELD_DELIMITER;
 		$anything = "[^$delimiter\n]";
 		$query = preg_quote( $query, '/' );
+
+		$groupTypeFilter = [];
+		foreach ( $types as $filter ) {
+			$groupTypeFilter[] = $this->mappedTypes[$filter] ?? '';
+		}
+		$groupTypeFilter = count( $groupTypeFilter )
+			? ( '[' . implode( $groupTypeFilter ) . ']' )
+			: $anything;
+
 		// Prefix match
-		$pattern = "/^($query$anything*)$delimiter($anything+)$/miu";
+		$pattern = "/^$groupTypeFilter$delimiter($query$anything+)$delimiter($anything)$/miu";
 		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
 		foreach ( $matches as [ , $label, $groupId ] ) {
 			// Index by $groupId to avoid duplicates from the prefix match and the word match
@@ -100,7 +124,7 @@ class EntitySearch {
 		}
 
 		// Word match
-		$pattern = "/^($anything*\b$query$anything*)$delimiter($anything+)$/miu";
+		$pattern = "/^$groupTypeFilter$delimiter($anything*\b$query$anything*)$delimiter($anything+)$/miu";
 		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
 		foreach ( $matches as [ , $label, $groupId ] ) {
 			$results[$groupId] = [
@@ -209,14 +233,21 @@ class EntitySearch {
 			$sortKey = $this->collation->getSortKey( $label );
 			// It is unlikely that different groups have the same label (or sort key),
 			// but it's possible, so cannot use a hashmap here.
-			$data->insert( [ $sortKey, $label, $group->getId() ] );
+			$groupType = get_class( $group );
+			$type = self::TYPE_MAPPING[$groupType][1] ?? self::TYPE_OTHERS;
+			$data->insert( [ $sortKey, $label, $group->getId(), $type ] );
 		}
 
 		$haystack = '';
-		foreach ( $data as [ , $label, $groupId ] ) {
-			$haystack .= $label . self::FIELD_DELIMITER . $groupId . self::ROW_DELIMITER;
+		foreach ( $data as [ , $label, $groupId, $type ] ) {
+			$haystack
+				.= $type
+				. self::FIELD_DELIMITER
+				. $label
+				. self::FIELD_DELIMITER
+				. $groupId
+				. self::ROW_DELIMITER;
 		}
-
 		return $haystack;
 	}
 
@@ -267,5 +298,14 @@ class EntitySearch {
 				'pcTTL' => ExpirationAwareness::TTL_PROC_LONG
 			]
 		);
+	}
+
+	/** @return array<string,string> */
+	public function getGroupTypes(): array {
+		$types = [];
+		foreach ( self::TYPE_MAPPING as $value ) {
+			$types[$value[0]] = $value[1];
+		}
+		return $types;
 	}
 }
