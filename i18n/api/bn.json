@@ -6,9 +6,13 @@
 		]
 	},
 	"apihelp-query+languagestats-param-language": "ভাষা কোড।",
+	"apihelp-query+messagecollection-param-language": "ভাষা কোড।",
 	"apihelp-searchtranslations-summary": "অনুবাদ অনুসন্ধান করে।",
+	"apihelp-searchtranslations-param-limit": "ফলাফলের আকার।",
 	"apierror-translate-invalidlanguage": "ভাষা কোড $1 বৈধ নয়।",
 	"apierror-translate-language-disabled": "$1-এ অনুবাদ নিষ্ক্রিয় করা হয়েছে।",
 	"apierror-translate-language-disabled-reason": "$1-এ অনুবাদ নিষ্ক্রিয় করা হয়েছে: $2",
-	"apierror-translate-unknownmessage": "অজানা বার্তা"
+	"apierror-translate-unknownmessage": "অজানা বার্তা",
+	"apiwarn-translate-alreadyreviewedbyyou": "ইতিমধ্যে আপনার দ্বারা পর্যালোচিত হিসাবে চিহ্নিত করা হয়েছে।",
+	"apiwarn-translate-language-disabled-source": "এই গ্রুপের উৎস ভাষা হলো $1। অনুগ্রহ করে অনুবাদ করতে অন্য একটি ভাষা নির্বাচন করুন।"
 }
