@@ -1,34 +1,33 @@
 <?php
-/**
- * Class that enhances Title with stuff related to message groups
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2011-2013 Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use BadMethodCallException;
+use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
-use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MessageGroup;
+use MessageIndexRebuildJob;
 
 /**
  * Class for pointing to messages, like Title class is for titles.
- * @since 2011-03-13
+ * Also enhances Title with stuff related to message groups
+ * @author Niklas Laxström
+ * @copyright Copyright © 2011-2013 Niklas Laxström
+ * @license GPL-2.0-or-later
  */
 class MessageHandle {
-	/** @var LinkTarget */
-	protected $title;
-	/** @var string|null */
-	protected $key;
-	/** @var string|null Language code */
-	protected $code;
+	private LinkTarget $title;
+	private ?string $key = null;
+	private ?string $languageCode = null;
 	/** @var string[]|null */
-	protected $groupIds;
+	private ?array $groupIds = null;
 	private MessageIndex $messageIndex;
 
 	public function __construct( LinkTarget $title ) {
@@ -36,11 +35,8 @@ class MessageHandle {
 		$this->messageIndex = Services::getInstance()->getMessageIndex();
 	}
 
-	/**
-	 * Check if this handle is in a message namespace.
-	 * @return bool
-	 */
-	public function isMessageNamespace() {
+	/** Check if this handle is in a message namespace. */
+	public function isMessageNamespace(): bool {
 		global $wgTranslateMessageNamespaces;
 		$namespace = $this->title->getNamespace();
 
@@ -51,7 +47,7 @@ class MessageHandle {
 	 * Recommended to use getCode and getKey instead.
 	 * @return string[] Array of the message key and the language code
 	 */
-	public function figureMessage() {
+	public function figureMessage(): array {
 		if ( $this->key === null ) {
 			// Check if this is a valid message first
 			$this->key = $this->title->getDBkey();
@@ -59,22 +55,19 @@ class MessageHandle {
 
 			$pos = strrpos( $this->key, '/' );
 			if ( $known || $pos === false ) {
-				$this->code = '';
+				$this->languageCode = '';
 			} else {
 				// For keys like Foo/, substr returns false instead of ''
-				$this->code = (string)( substr( $this->key, $pos + 1 ) );
+				$this->languageCode = (string)( substr( $this->key, $pos + 1 ) );
 				$this->key = substr( $this->key, 0, $pos );
 			}
 		}
 
-		return [ $this->key, $this->code ];
+		return [ $this->key, $this->languageCode ];
 	}
 
-	/**
-	 * Returns the identified or guessed message key.
-	 * @return string
-	 */
-	public function getKey() {
+	/** Returns the identified or guessed message key. */
+	public function getKey(): string {
 		$this->figureMessage();
 
 		return $this->key;
@@ -83,37 +76,31 @@ class MessageHandle {
 	/**
 	 * Returns the language code.
 	 * For language codeless source messages will return empty string.
-	 * @return string
 	 */
-	public function getCode() {
+	public function getCode(): string {
 		$this->figureMessage();
 
-		return $this->code;
+		return $this->languageCode;
 	}
 
 	/**
 	 * Return the Language object for the assumed language of the content, which might
 	 * be different from the subpage code (qqq, no subpage).
-	 * @return Language
-	 * @since 2016-01
 	 */
-	public function getEffectiveLanguage() {
+	public function getEffectiveLanguage(): Language {
 		$code = $this->getCode();
-		$mwInstance = MediaWikiServices::getInstance();
-		if ( !$mwInstance->getLanguageNameUtils()->isKnownLanguageTag( $code ) ||
+		$mwServices = MediaWikiServices::getInstance();
+		if ( !$mwServices->getLanguageNameUtils()->isKnownLanguageTag( $code ) ||
 			$this->isDoc()
 		) {
-			return $mwInstance->getContentLanguage();
+			return $mwServices->getContentLanguage();
 		}
 
-		return $mwInstance->getLanguageFactory()->getLanguage( $code );
+		return $mwServices->getLanguageFactory()->getLanguage( $code );
 	}
 
-	/**
-	 * Determine whether the current handle is for message documentation.
-	 * @return bool
-	 */
-	public function isDoc() {
+	/** Determine whether the current handle is for message documentation. */
+	public function isDoc(): bool {
 		global $wgTranslateDocumentationLanguageCode;
 
 		return $this->getCode() === $wgTranslateDocumentationLanguageCode;
@@ -122,9 +109,8 @@ class MessageHandle {
 	/**
 	 * Determine whether the current handle is for page translation feature.
 	 * This does not consider whether the handle corresponds to any message.
-	 * @return bool
 	 */
-	public function isPageTranslation() {
+	public function isPageTranslation(): bool {
 		return $this->title->inNamespace( NS_TRANSLATIONS );
 	}
 
@@ -146,23 +132,17 @@ class MessageHandle {
 	/**
 	 * Get the primary MessageGroup this message belongs to.
 	 * You should check first that the handle is valid.
-	 * @return MessageGroup|null
 	 */
-	public function getGroup() {
+	public function getGroup(): ?MessageGroup {
 		$ids = $this->getGroupIds();
 		if ( !isset( $ids[0] ) ) {
 			throw new BadMethodCallException( 'called before isValid' );
 		}
-
 		return MessageGroups::getGroup( $ids[0] );
 	}
 
-	/**
-	 * Checks if the handle corresponds to a known message.
-	 * @since 2011-03-16
-	 * @return bool
-	 */
-	public function isValid() {
+	/** Checks if the handle corresponds to a known message. */
+	public function isValid(): bool {
 		static $jobHasBeenScheduled = false;
 
 		if ( !$this->isMessageNamespace() ) {
@@ -200,33 +180,21 @@ class MessageHandle {
 		return true;
 	}
 
-	/**
-	 * Get the original title.
-	 * @return Title
-	 */
-	public function getTitle() {
+	/** Get the original title. */
+	public function getTitle(): Title {
 		return Title::newFromLinkTarget( $this->title );
 	}
 
-	/**
-	 * Get the original title.
-	 * @param string $code Language code.
-	 * @return Title
-	 * @since 2014.04
-	 */
-	public function getTitleForLanguage( $code ) {
+	/** Get the original title with the passed language code. */
+	public function getTitleForLanguage( string $languageCode ): Title {
 		return Title::makeTitle(
 			$this->title->getNamespace(),
-			$this->getKey() . "/$code"
+			$this->getKey() . "/$languageCode"
 		);
 	}
 
-	/**
-	 * Get the title for the page base.
-	 * @return Title
-	 * @since 2014.04
-	 */
-	public function getTitleForBase() {
+	/** Get the title for the page base. */
+	public function getTitleForBase(): Title {
 		return Title::makeTitle(
 			$this->title->getNamespace(),
 			$this->getKey()
@@ -235,11 +203,10 @@ class MessageHandle {
 
 	/**
 	 * Check if a string contains the fuzzy string.
-	 *
 	 * @param string $text Arbitrary text
 	 * @return bool If string contains fuzzy string.
 	 */
-	public static function hasFuzzyString( $text ) {
+	public static function hasFuzzyString( string $text ): bool {
 		return str_contains( $text, TRANSLATE_FUZZY );
 	}
 
@@ -248,11 +215,8 @@ class MessageHandle {
 		return self::hasFuzzyString( $text ) ? $text : TRANSLATE_FUZZY . $text;
 	}
 
-	/**
-	 * Check if a title is marked as fuzzy.
-	 * @return bool If title is marked fuzzy.
-	 */
-	public function isFuzzy() {
+	/** Check if a title is marked as fuzzy. */
+	public function isFuzzy(): bool {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$tables = [ 'page', 'revtag' ];
@@ -274,12 +238,11 @@ class MessageHandle {
 	 * This returns the key that can be used for showMessage parameter for Special:Translate
 	 * for regular message groups. It is not possible to automatically determine this key
 	 * from the title alone.
-	 * @return string
-	 * @since 2017.10
 	 */
 	public function getInternalKey(): string {
-		$nsInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
-		$contentLanguage = MediaWikiServices::getInstance()->getContentLanguage();
+		$mwServices = MediaWikiServices::getInstance();
+		$nsInfo = $mwServices->getNamespaceInfo();
+		$contentLanguage = $mwServices->getContentLanguage();
 
 		$key = $this->getKey();
 		$group = $this->getGroup();

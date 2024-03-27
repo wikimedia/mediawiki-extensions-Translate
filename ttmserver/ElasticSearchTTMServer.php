@@ -19,6 +19,7 @@ use Elastica\Query\MatchQuery;
 use Elastica\Query\Term;
 use Elastica\ResultSet;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;

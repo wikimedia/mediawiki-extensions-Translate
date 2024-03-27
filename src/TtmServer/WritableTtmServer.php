@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use MessageHandle;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 
 /**
  * Interface for TTMServer that can be updated.

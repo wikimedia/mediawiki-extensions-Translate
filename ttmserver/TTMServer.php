@@ -8,6 +8,7 @@
  * @defgroup TTMServer The Translate extension translation memory interface
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\MediaWikiServices;
 
 /**

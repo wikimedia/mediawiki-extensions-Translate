@@ -16,7 +16,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageHandle;
 use MessageIndexRebuildJob;
 use ObjectCache;
 use Psr\Log\LoggerInterface;

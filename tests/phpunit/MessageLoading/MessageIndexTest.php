@@ -10,7 +10,6 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use MessageHandle;
 use MockWikiMessageGroup;
 use WANObjectCache;
 

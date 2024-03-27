@@ -3,6 +3,7 @@
 use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 
@@ -197,7 +198,7 @@ class MockMessageHandle extends MessageHandle {
 	public function __construct() {
 	}
 
-	public function getGroupIds() {
+	public function getGroupIds(): array {
 		return [ 'group-trans', 'group-notrans' ];
 	}
 }

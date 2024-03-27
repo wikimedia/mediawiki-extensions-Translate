@@ -7,6 +7,7 @@ use CrossLanguageTranslationSearchQuery;
 use ErrorPageError;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -18,7 +19,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
-use MessageHandle;
 use SpecialPage;
 use TTMServerException;
 

@@ -9,7 +9,6 @@ use ApiQueryBase;
 use ApiResult;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Title\Title;
-use MessageHandle;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

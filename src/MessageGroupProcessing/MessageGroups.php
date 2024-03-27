@@ -8,6 +8,7 @@ use AggregateMessageGroupLoader;
 use CachedMessageGroupLoader;
 use DependencyWrapper;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -16,7 +17,6 @@ use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageGroupBase;
 use MessageGroupLoader;
-use MessageHandle;
 use RuntimeException;
 use WANObjectCache;
 

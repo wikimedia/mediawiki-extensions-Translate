@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ContentHandler;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use MessageHandle;
 use SplFileObject;
 use Status;
 

@@ -21,6 +21,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJ
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
@@ -48,7 +49,6 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
 use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
-use MessageHandle;
 use OutputPage;
 use Parser;
 use ParserOutput;

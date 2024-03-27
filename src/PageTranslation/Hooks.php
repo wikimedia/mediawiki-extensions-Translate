@@ -13,6 +13,7 @@ use LanguageCode;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -33,7 +34,6 @@ use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MessageGroupStats;
-use MessageHandle;
 use ObjectCache;
 use OutputPage;
 use Parser;
@@ -1593,7 +1593,7 @@ class Hooks {
 			$language = $handle->getCode();
 
 			// Ignore pages such as Translations:Page/unit without language code
-			if ( (string)$language === '' ) {
+			if ( $language === '' ) {
 				continue;
 			}
 

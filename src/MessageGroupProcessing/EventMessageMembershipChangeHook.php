@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use MessageHandle;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 
 /**
  * This is a hook handler interface, see docs/Hooks.md in core.

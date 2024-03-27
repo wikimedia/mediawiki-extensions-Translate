@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\InitGroupLoadersHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ModifyMessageGroupStatesHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\PostInitGroupsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ProcessAPIMessageGroupsPropertiesHook;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\PrefillTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\BeforeAddModulesHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\EventTranslationReviewHook;
@@ -24,7 +25,6 @@ use MediaWiki\Extension\Translate\Utilities\SupportedLanguagesHook;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\User\UserIdentity;
 use MessageGroup;
-use MessageHandle;
 use User;
 
 /**

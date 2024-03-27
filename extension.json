@@ -101,7 +101,6 @@
 		"MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MessageGroupStats": "utils/MessageGroupStats.php",
-		"MessageHandle": "utils/MessageHandle.php",
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessagePrefixMessageGroup": "messagegroups/MessagePrefixMessageGroup.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",

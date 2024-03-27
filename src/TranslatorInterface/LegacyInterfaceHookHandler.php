@@ -6,13 +6,13 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use DifferenceEngine;
 use MediaWiki\Diff\Hook\ArticleContentOnDiffHook;
 use MediaWiki\EditPage\EditPage;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_initialHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\Hook\TitleGetEditNoticesHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Skin\SkinComponentUtils;
-use MessageHandle;
 use OutputPage;
 use RequestContext;
 

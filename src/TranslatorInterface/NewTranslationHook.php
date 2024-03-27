@@ -5,7 +5,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use MessageHandle;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use User;
 
 /**

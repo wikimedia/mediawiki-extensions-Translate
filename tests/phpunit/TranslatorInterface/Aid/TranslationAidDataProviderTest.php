@@ -4,11 +4,11 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use MessageHandle;
 use MockWikiMessageGroup;
 use WANObjectCache;
 

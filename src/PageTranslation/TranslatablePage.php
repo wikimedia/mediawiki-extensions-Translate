@@ -8,6 +8,7 @@ use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
@@ -19,7 +20,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MessageGroupStats;
-use MessageHandle;
 use RuntimeException;
 use SpecialPage;
 use TextContent;
@@ -454,10 +454,6 @@ class TranslatablePage extends TranslatableBundle {
 
 		$languageCode = $handle->getCode();
 		$newTitle = $handle->getTitleForBase();
-
-		if ( !$newTitle ) {
-			return false;
-		}
 
 		$page = self::newFromTitle( $newTitle );
 

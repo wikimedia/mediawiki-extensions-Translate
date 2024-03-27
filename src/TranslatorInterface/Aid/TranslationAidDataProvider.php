@@ -6,12 +6,12 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 use Content;
 use ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
-use MessageHandle;
 use TextContent;
 use Wikimedia\Rdbms\IDatabase;
 

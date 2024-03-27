@@ -9,6 +9,7 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 

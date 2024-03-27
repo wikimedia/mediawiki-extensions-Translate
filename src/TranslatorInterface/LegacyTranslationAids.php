@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use IContextSource;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\MessageDefinitionAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -11,7 +12,6 @@ use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageHandle;
 
 /**
  * Provides minimal translation aids which integrate with the edit page and on diffs for

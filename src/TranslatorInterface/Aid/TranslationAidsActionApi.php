@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use ApiBase;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\WebService\QueryAggregator;
 use MediaWiki\Extension\Translate\WebService\QueryAggregatorAware;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
-use MessageHandle;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

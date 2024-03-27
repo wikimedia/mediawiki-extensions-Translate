@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageReference;
 use MediaWiki\Title\Title;
-use MessageHandle;
 
 /**
  * Translatable bundle represents a message group where its translatable content is
