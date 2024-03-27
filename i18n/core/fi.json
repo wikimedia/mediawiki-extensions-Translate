@@ -79,6 +79,7 @@
 	"translate-export-invalid-format": "Määritä kelvollinen muoto.",
 	"translate-export-not-supported": "Käännösten vientiä ei tueta.",
 	"translate-export-format-notsupported": "Tätä viestiryhmää ei voi viedä tässä muodossa.",
+	"translate-export-format-file-empty": "Ei vietäviä viestejä.",
 	"translate-checks-parameters": "{{PLURAL:$2|Seuraavaa parametria|Seuraavia parametreja}} ei käytetä:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Seuraava parametri on tuntematon|Seuraavat parametrit ovat tuntemattomia}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "Pariton määrä {{PLURAL:$2|sulkeita}}:\n<strong><nowiki>$1</nowiki></strong>",

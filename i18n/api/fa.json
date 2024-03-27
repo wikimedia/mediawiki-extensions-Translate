@@ -7,7 +7,8 @@
 			"Huji",
 			"Jeeputer",
 			"Ladsgroup",
-			"Reza1615"
+			"Reza1615",
+			"Ebraminio"
 		]
 	},
 	"apihelp-aggregategroups-summary": "مدیریت گروه‌های پیام انبوه",
@@ -58,8 +59,8 @@
 	"apierror-translate-invalidstate": "وضعیت درخواستی نامعتبر است.",
 	"apierror-translate-invalidlanguage": "کد زبان $1 معتبر نیست.",
 	"apierror-translate-invalidupdate": "به‌روزرسانی نامعتبر",
-	"apierror-translate-language-disabled": "ترجمه روی $1 غیرفعال شده‌است.",
-	"apierror-translate-language-disabled-reason": "ترجمه روی $1 غیرفعال شده‌است: $2",
+	"apierror-translate-language-disabled": "ترجمه روی $1 غیرفعال شده است.",
+	"apierror-translate-language-disabled-reason": "ترجمه روی $1 غیرفعال شده است: $2",
 	"apierror-translate-owntranslation": "نمی‌توانید ترجمه‌های خودتان را بازبینی کنید",
 	"apierror-translate-unknownmessage": "پیام ناشناخته",
 	"apiwarn-translate-alreadyreviewedbyyou": "ازقبل به عنوان بازبینی‌شده توسط شما علامت‌گذاری شده است",
