@@ -16,6 +16,7 @@
 
 .mw-tpp-sp-input {
 	display: flex;
+	align-items: center;
 }
 
 .mw-tpp-sp-container .hide {
