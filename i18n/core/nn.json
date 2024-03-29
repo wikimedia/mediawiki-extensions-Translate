@@ -263,7 +263,7 @@
 	"tux-editor-tm-match": "$1% samsvar",
 	"tux-notices-more": "{{PLURAL:$1|$1 meir}}",
 	"tux-notices-hide": "gøym",
-	"tux-editor-save-failed": "Lagringa av omsetjinga gjekk ikkje: $1",
+	"tux-editor-save-failed": "Publiseringa av omsetjinga gjekk ikkje: $1",
 	"tux-editor-n-uses": "nytta {{PLURAL:$1|éin gong|$1 gonger}}",
 	"tux-editor-message-desc-more": "Sjå meir",
 	"tux-editor-message-desc-less": "Sjå mindre",
