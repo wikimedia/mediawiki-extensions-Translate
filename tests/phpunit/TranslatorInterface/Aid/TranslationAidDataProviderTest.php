@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
+use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
@@ -9,7 +10,6 @@ use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageHandle;
 use MockWikiMessageGroup;
-use ObjectCache;
 use WANObjectCache;
 
 /**
@@ -27,7 +27,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => ObjectCache::getInstance( 'hash' ) ] ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 		$index = Services::getInstance()->getMessageIndex()->rebuild();
 	}

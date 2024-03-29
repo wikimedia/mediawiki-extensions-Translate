@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use Generator;
+use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
@@ -11,7 +12,6 @@ use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageHandle;
 use MockWikiMessageGroup;
-use ObjectCache;
 use WANObjectCache;
 
 /**
@@ -38,7 +38,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => ObjectCache::getInstance( 'hash' ) ] ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 		$mg->recache();
 	}
 
