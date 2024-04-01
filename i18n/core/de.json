@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Als-Holder",
+			"Ameisenigel",
 			"Brettchenweber",
 			"Geitost",
 			"Giftpflanze",
@@ -475,7 +476,7 @@
 	"log-action-filter-translationreview": "Typ der Aktion:",
 	"log-action-filter-translationreview-message": "Überprüfung der einzelnen Übersetzungsnachrichten",
 	"log-action-filter-translationreview-group": "Änderungen des Stands des Übersetzungsprozesses",
-	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importe}} ein übersetzbares Bundle $3",
+	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importierte}} ein übersetzbares Bundle $3",
 	"log-action-filter-import-translatable-bundle": "Übersetzbarer Bundle-Import",
 	"translate-hidetranslations": "Übersetzungsseiten ausblenden"
 }
