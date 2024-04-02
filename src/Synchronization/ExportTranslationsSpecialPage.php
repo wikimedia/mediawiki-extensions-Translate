@@ -131,9 +131,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		$options = [];
 		foreach ( $groups as $id => $group ) {
-			if ( !$group->exists()
-				|| ( MessageGroups::getPriority( $group ) === 'discouraged' && $id !== $selected )
-			) {
+			if ( !$group->exists() ) {
 				continue;
 			}
 
