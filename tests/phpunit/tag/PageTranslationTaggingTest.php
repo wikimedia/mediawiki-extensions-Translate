@@ -23,8 +23,6 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
 		] );
 		HookHandler::setupTranslate();
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
-			'TranslatablePageMessageGroupStore::registerLoader' );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );

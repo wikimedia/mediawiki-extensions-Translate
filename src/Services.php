@@ -20,6 +20,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMessageGroupFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
@@ -181,6 +182,11 @@ class Services implements ContainerInterface {
 
 	public function getTranslatablePageMarker(): TranslatablePageMarker {
 		return $this->get( 'Translate:TranslatablePageMarker' );
+	}
+
+	/** @since 2024.05 */
+	public function getTranslatablePageMessageGroupFactory(): TranslatablePageMessageGroupFactory {
+		return $this->get( 'Translate:TranslatablePageMessageGroupFactory' );
 	}
 
 	public function getTranslatablePageParser(): TranslatablePageParser {

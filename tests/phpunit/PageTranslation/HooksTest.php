@@ -50,8 +50,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->clearHooks();
 
 		HookHandler::setupTranslate();
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
-			'TranslatablePageMessageGroupStore::registerLoader' );
 
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
@@ -60,8 +58,6 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-
 		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 

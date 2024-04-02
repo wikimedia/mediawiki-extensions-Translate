@@ -114,7 +114,6 @@
 		"SimpleFFS": "src/FileFormatSupport/SimpleFormat.php",
 		"SubsetMessageGroup": "messagegroups/SubsetMessageGroup.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\SimpleFormat": "src/FileFormatSupport/SimpleFormat.php",
-		"TranslatablePageMessageGroupStore": "messagegroups/loaders/TranslatablePageMessageGroupStore.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
@@ -190,7 +189,6 @@
 			"MessageGroupStatesUpdaterJob::onChange"
 		],
 		"TranslateInitGroupLoaders": [
-			"TranslatablePageMessageGroupStore::registerLoader",
 			"WorkflowStatesMessageGroupLoader::registerLoader",
 			"AggregateMessageGroupLoader::registerLoader",
 			"FileBasedMessageGroupLoader::registerLoader",

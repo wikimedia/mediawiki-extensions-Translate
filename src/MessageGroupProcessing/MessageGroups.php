@@ -222,6 +222,8 @@ class MessageGroups {
 			return $this->groupLoaders;
 		}
 
+		$services = Services::getInstance();
+
 		$cache = $this->getCache();
 
 		$groupLoaderInstances = $this->groupLoaders = [];
@@ -232,8 +234,7 @@ class MessageGroups {
 			'cache' => $cache
 		];
 
-		Services::getInstance()->getHookRunner()
-			->onTranslateInitGroupLoaders( $groupLoaderInstances, $deps );
+		$services->getHookRunner()->onTranslateInitGroupLoaders( $groupLoaderInstances, $deps );
 
 		foreach ( $groupLoaderInstances as $loader ) {
 			if ( !$loader instanceof MessageGroupLoader ) {
@@ -245,6 +246,11 @@ class MessageGroups {
 
 			$this->groupLoaders[] = $loader;
 		}
+
+		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
+			$cache,
+			$services->getTranslatablePageMessageGroupFactory()
+		);
 
 		return $this->groupLoaders;
 	}

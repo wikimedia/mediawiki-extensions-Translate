@@ -16,7 +16,7 @@ abstract class MessageGroupLoader {
 	 * Fetches and returns an array of MessageGroups.
 	 * @return MessageGroup[] Array of message groups with group id as the key
 	 * @note Do not return an indexed based array as that would cause MessageGroups to
-	 * be ovewritten.
+	 * be overwritten.
 	 */
 	abstract public function getGroups();
 
@@ -26,6 +26,7 @@ abstract class MessageGroupLoader {
 	 * @param DependencyWrapper $wrapper
 	 * @return bool true if expired, false otherwise.
 	 */
+	// TODO remove and convert this to an interface
 	public function isExpired( DependencyWrapper $wrapper ) {
 		return $wrapper->isExpired();
 	}

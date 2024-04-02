@@ -31,6 +31,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleDeleter;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMessageGroupFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
@@ -208,7 +209,7 @@ return [
 		return new PersistentDatabaseCache(
 			$services->getDBLoadBalancer(),
 			$services->getJsonCodec()
-		 );
+		);
 	},
 
 	'Translate:ProgressStatsTableFactory' => static function ( MediaWikiServices $services ): ProgressStatsTableFactory
@@ -308,6 +309,18 @@ return [
 			$services->get( 'Translate:TranslationUnitStoreFactory' ),
 			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getWikiPageFactory()
+		);
+	},
+
+	'Translate:TranslatablePageMessageGroupFactory' => static function (
+		MediaWikiServices $services
+	): TranslatablePageMessageGroupFactory {
+		return new TranslatablePageMessageGroupFactory(
+			new ServiceOptions(
+				TranslatablePageMessageGroupFactory::SERVICE_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getDBLoadBalancerFactory()->getPrimaryDatabase()
 		);
 	},
 
