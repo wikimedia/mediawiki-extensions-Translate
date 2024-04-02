@@ -220,7 +220,7 @@ class TranslateSpecialPage extends SpecialPage {
 				'checked' => false,
 				'id' => 'tux-option-optional',
 				'data-filter' => 'optional'
-			] ) . '&nbsp;' . Html::label(
+			] ) . "\u{00A0}" . Html::label(
 				$this->msg( 'tux-message-filter-optional-messages-label' )->text(),
 				'tux-option-optional'
 			)

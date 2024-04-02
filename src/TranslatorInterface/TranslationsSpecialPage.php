@@ -227,9 +227,9 @@ class TranslationsSpecialPage extends SpecialAllPages {
 		// Adapted version of Utilities:makeListing() by Nikerabbit.
 		$out = $tableheader;
 
-		$historyText = '&#160;<sup>' .
+		$historyText = "\u{00A0}<sup>" .
 			$this->msg( 'translate-translations-history-short' )->escaped() .
-			'</sup>&#160;';
+			"</sup>\u{00A0}";
 		$separator = $this->msg( 'word-separator' )->plain();
 
 		$tools = [];

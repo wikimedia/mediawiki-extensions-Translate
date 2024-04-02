@@ -97,7 +97,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 								<span class="selected-counter">
 									{$this->msg( 'tsb-selected-count' )->numParams( 0 )->escaped()}
 								</span>
-								&nbsp;
+								\u{00A0}
 								<a href="#" class="older-requests-indicator"></a>
 							</div>
 						</div>

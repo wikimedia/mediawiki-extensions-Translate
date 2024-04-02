@@ -609,7 +609,7 @@ class HookHandler implements
 		$label = Xml::label(
 			wfMessage( 'translate-search-languagefilter' )->text(),
 			'languagefilter'
-		) . '&#160;';
+		) . "\u{00A0}";
 		$params = [ 'id' => 'mw-searchoptions' ];
 
 		$form = Xml::fieldset( false, false, $params ) .

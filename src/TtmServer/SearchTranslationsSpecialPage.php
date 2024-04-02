@@ -603,7 +603,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			'type' => 'checkbox', 'name' => 'case', 'value' => '1',
 			'checked' => isset( $nonDefaults['case'] ),
 			'id' => 'tux-case-sensitive',
-		] ) . '&nbsp;' . Html::label(
+		] ) . "\u{00A0}" . Html::label(
 			$this->msg( 'tux-sst-case-sensitive' )->text(),
 			'tux-case-sensitive'
 		);
