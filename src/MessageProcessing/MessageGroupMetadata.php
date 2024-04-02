@@ -17,6 +17,8 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @license GPL-2.0-or-later
  */
 class MessageGroupMetadata {
+	/** @var int Threshold for query batching */
+	private const MAX_ITEMS_PER_QUERY = 2000;
 	/** Map of (database group id => key => value) */
 	private array $cache = [];
 	private ?array $priorityCache = null;
@@ -26,10 +28,6 @@ class MessageGroupMetadata {
 		$this->loadBalancer = $loadBalancer;
 	}
 
-	/**
-	 * @param string[] $groups List of translate groups
-	 * @param string $caller
-	 */
 	public function preloadGroups( array $groups, string $caller ): void {
 		$dbGroupIds = array_map( [ $this, 'getGroupIdForDatabase' ], $groups );
 		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), $this->cache ) );
@@ -43,15 +41,17 @@ class MessageGroupMetadata {
 
 		// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 		$dbr = Utilities::getSafeReadDB();
-		$conditions = count( $missing ) <= 500 ? [ 'tmd_group' => array_map( 'strval', $missing ) ] : [];
-		$res = $dbr->select(
-			'translate_metadata',
-			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
-			$conditions,
-			$functionName
-		);
-		foreach ( $res as $row ) {
-			$this->cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+		$chunks = array_chunk( $missing, self::MAX_ITEMS_PER_QUERY );
+		foreach ( $chunks as $chunk ) {
+			$res = $dbr->newSelectQueryBuilder()
+				->select( [ 'tmd_group', 'tmd_key', 'tmd_value' ] )
+				->from( 'translate_metadata' )
+				->where( [ 'tmd_group' => array_map( 'strval', $chunk ) ] )
+				->caller( $functionName )
+				->fetchResultSet();
+			foreach ( $res as $row ) {
+				$this->cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+			}
 		}
 	}
 
