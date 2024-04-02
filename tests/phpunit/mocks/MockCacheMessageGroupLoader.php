@@ -1,7 +1,5 @@
 <?php
 
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
-
 class MockCacheMessageGroupLoader extends MessageGroupLoader
 	implements CachedMessageGroupLoader {
 
@@ -16,8 +14,6 @@ class MockCacheMessageGroupLoader extends MessageGroupLoader
 	}
 
 	public static function registerLoader( array &$groupLoader, array $deps ) {
-		$groupLoader[] = new self( new MessageGroupWANCache(
-			$deps['cache']
-		) );
+		$groupLoader[] = new self();
 	}
 }

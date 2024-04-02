@@ -182,15 +182,11 @@ class MessageGroups {
 	}
 
 	protected function getCache(): WANObjectCache {
-		if ( $this->cache === null ) {
-			return MediaWikiServices::getInstance()->getMainWANObjectCache();
-		} else {
-			return $this->cache;
-		}
+		return $this->cache ?? MediaWikiServices::getInstance()->getMainWANObjectCache();
 	}
 
 	/** Override cache, for example during tests. */
-	public function setCache( ?WANObjectCache $cache = null ) {
+	public function setCache( WANObjectCache $cache ) {
 		$this->cache = $cache;
 	}
 
@@ -240,10 +236,6 @@ class MessageGroups {
 		Services::getInstance()->getHookRunner()
 			->onTranslateInitGroupLoaders( $groupLoaderInstances, $deps );
 
-		if ( $groupLoaderInstances === [] ) {
-			return $this->groupLoaders;
-		}
-
 		foreach ( $groupLoaderInstances as $loader ) {
 			if ( !$loader instanceof MessageGroupLoader ) {
 				throw new InvalidArgumentException(
@@ -265,9 +257,10 @@ class MessageGroups {
 	 */
 	protected function getCacheGroupLoaders(): array {
 		// @phan-suppress-next-line PhanTypeMismatchReturn
-		return array_filter( $this->getGroupLoaders(), static function ( $groupLoader ) {
-			return $groupLoader instanceof CachedMessageGroupLoader;
-		} );
+		return array_filter(
+			$this->getGroupLoaders(),
+			static fn ( $groupLoader ) => $groupLoader instanceof CachedMessageGroupLoader
+		);
 	}
 
 	/**
