@@ -372,20 +372,18 @@ class TranslatablePageMarker {
 		TranslatablePageSettings $pageSettings,
 		UserIdentity $user
 	): void {
-		$languages = implode( ',', $pageSettings->getPriorityLanguages() );
-		$reason = false;
+		$languages = $pageSettings->getPriorityLanguages() ?
+			implode( ',', $pageSettings->getPriorityLanguages() ) :
+			false;
+		$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : false;
+		$hasPriorityConfig = $languages || $force;
 
-		if ( $languages !== '' ) {
+		// We use the reason if priority force and / or priority languages are set
+		// Otherwise just a reason doesn't make sense
+		if ( $hasPriorityConfig && $pageSettings->getPriorityLanguageComment() !== '' ) {
 			$reason = $pageSettings->getPriorityLanguageComment();
-			$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : 'off';
 		} else {
-			$languages = false;
-			$force = $pageSettings->shouldForcePriorityLanguage() ? 'on' : false;
-			if ( $force === 'on' ) {
-				// We use the reason, if priority force and / or priority languages are set
-				// Otherwise just a reason doesn't make sense
-				$reason = $pageSettings->getPriorityLanguageComment();
-			}
+			$reason = false;
 		}
 
 		$groupId = $page->getMessageGroupId();
@@ -398,7 +396,15 @@ class TranslatablePageMarker {
 		$this->messageGroupMetadata->set( $groupId, 'priorityforce', $force );
 		$this->messageGroupMetadata->set( $groupId, 'priorityreason', $reason );
 
-		if ( $opLanguages !== $languages || $opForce !== $force || $opReason !== $reason ) {
+		if (
+			$opLanguages !== $languages ||
+			// Since 2024.04, we started storing false instead of 'off' to avoid additional storage
+			// Remove after 2024.07 MLEB release
+			( $opForce !== $force && !( $force === false && $opForce === 'off' ) ) ||
+			// Since 2024.04, empty reason values are no longer stored.
+			// Remove casting to string after 2024.07 MLEB release
+			( $opReason !== (string)$reason )
+		) {
 			$logComment = $reason === false ? '' : $reason;
 			$params = [
 				'languages' => $languages,

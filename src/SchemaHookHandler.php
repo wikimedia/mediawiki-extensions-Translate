@@ -5,6 +5,7 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\Translate;
 
 use DatabaseUpdater;
+use MediaWiki\Extension\Translate\Diagnostics\RemoveRedundantMessageGroupMetadataMaintenanceScript;
 use MediaWiki\Extension\Translate\Diagnostics\SyncTranslatableBundleStatusMaintenanceScript;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 
@@ -102,5 +103,6 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 		);
 
 		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
+		$updater->addPostDatabaseUpdateMaintenance( RemoveRedundantMessageGroupMetadataMaintenanceScript::class );
 	}
 }

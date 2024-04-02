@@ -212,7 +212,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $priorityReason, $messageGroupMetadata->get( $groupId, 'priorityreason' ) );
 
 		$this->assertEquals(
-			$forcePriorityLanguages ? 'on' : 'off',
+			$forcePriorityLanguages ? 'on' : false,
 			$messageGroupMetadata->get( $groupId, 'priorityforce' )
 		);
 
