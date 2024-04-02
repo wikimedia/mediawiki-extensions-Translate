@@ -142,7 +142,6 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 */
 	public function recache() {
 		$this->clearProcessCache();
-		$this->cache->touchKey();
 
 		$cacheData = $this->cache->getValue( 'recache' );
 		$this->groups = $this->initGroupsFromConf( $cacheData );

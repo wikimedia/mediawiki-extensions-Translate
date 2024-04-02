@@ -26,8 +26,6 @@ class MessageGroupWANCache {
 	/** @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html */
 	private int $lockTSE;
 	/** @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html */
-	private array $checkKeys;
-	/** @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html */
 	private ?Closure $touchedCallback;
 	/** @see @https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html */
 	private int $ttl;
@@ -57,7 +55,6 @@ class MessageGroupWANCache {
 			$this->regenerator,
 			[
 				'lockTSE' => $this->lockTSE, // avoid stampedes (mutex)
-				'checkKeys' => $this->checkKeys,
 				'touchedCallback' => function ( $value ) {
 					if ( isset( $this->touchedCallback ) && call_user_func( $this->touchedCallback, $value ) ) {
 						// treat value as if it just expired (for "lockTSE")
@@ -81,11 +78,6 @@ class MessageGroupWANCache {
 		$this->cache->set( $this->cacheKey, $cacheData, $this->ttl );
 	}
 
-	public function touchKey(): void {
-		$this->checkConfig();
-		$this->cache->touchCheckKey( $this->cacheKey );
-	}
-
 	/** Deletes the cached value */
 	public function delete(): void {
 		$this->checkConfig();
@@ -106,7 +98,6 @@ class MessageGroupWANCache {
 
 		$cacheVersion = $config['version'] ?? null;
 		$this->lockTSE = $config['lockTSE'] ?? 30;
-		$this->checkKeys = $config['checkKeys'] ?? [ $cacheKey ];
 		$this->touchedCallback = isset( $config['touchedCallback'] )
 			? $this->toClosure( 'touchedCallback', $config['touchedCallback'] )
 			: null;

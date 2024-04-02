@@ -135,8 +135,6 @@ class FileBasedMessageGroupLoader extends MessageGroupLoader
 	 */
 	public function recache() {
 		$this->clearProcessCache();
-		$this->cache->touchKey();
-
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $this->cache->getValue( 'recache' );
 		$cacheData = $wrapper->getValue();

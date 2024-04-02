@@ -70,8 +70,6 @@ class TranslatablePageMessageGroupStore extends MessageGroupLoader
 	 */
 	public function recache() {
 		$this->clearProcessCache();
-		$this->cache->touchKey();
-
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $this->cache->getValue( 'recache' );
 		$this->groups = $this->initGroupsFromTitle( $wrapper->getValue() );

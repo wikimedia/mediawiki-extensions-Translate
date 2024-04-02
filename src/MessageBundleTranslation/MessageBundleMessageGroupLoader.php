@@ -105,8 +105,6 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 	/** @inheritDoc */
 	public function recache(): void {
 		$this->groups = null;
-		$this->cache->touchKey();
-
 		$cacheData = $this->cache->getValue( 'recache' );
 		$this->groups = $this->initGroupsFromConf( $cacheData );
 	}
