@@ -141,7 +141,11 @@ class TranslateSpecialPage extends SpecialPage {
 			$this->options['group'] = $this->group->getId();
 		} else {
 			$this->group = MessageGroups::getGroup( $defaults['group'] );
-			if ( isset( $nonDefaults['group'] ) ) {
+			if (
+				isset( $nonDefaults['group'] ) &&
+				str_starts_with( $nonDefaults['group'], 'page-' ) &&
+				!str_contains( $nonDefaults['group'], '+' )
+			) {
 				// https://phabricator.wikimedia.org/T320220
 				$this->logger->debug(
 					"[Special:Translate] Requested group {groupId} doesn't exist.",
