@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 use CachedMessageGroupLoader;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
-use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Title\Title;
 use MessageGroupLoader;
@@ -89,8 +88,8 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 		// Loop over all the group ids and create the MessageBundleMessageGroup
 		foreach ( $groupIds as $index => $groupId ) {
 			$conf = $cacheData[$index];
-			$description = $this->getMetadata( $groupId, 'description', $messageGroupMetadata );
-			$label = $this->getMetadata( $groupId, 'label', $messageGroupMetadata );
+			$description = $messageGroupMetadata->getWithDefaultValue( $groupId, 'description', null );
+			$label = $messageGroupMetadata->getWithDefaultValue( $groupId, 'label', null );
 			$groups[$groupId] = new MessageBundleMessageGroup(
 				$groupId,
 				$conf[0],
@@ -115,10 +114,5 @@ class MessageBundleMessageGroupLoader extends MessageGroupLoader implements Cach
 	public function clearCache(): void {
 		$this->groups = null;
 		$this->cache->delete();
-	}
-
-	private function getMetadata( string $groupId, string $key, MessageGroupMetadata $messageGroupMetadata ): ?string {
-		$metadata = $messageGroupMetadata->get( $groupId, $key );
-		return $metadata !== false ? $metadata : null;
 	}
 }

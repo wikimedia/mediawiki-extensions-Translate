@@ -70,7 +70,7 @@ class MessageGroupMetadata {
 	 * Get a metadata value for the given group and key.
 	 * If it does not exist, return the default value.
 	 */
-	public function getWithDefaultValue( string $group, string $key, string $defaultValue ): string {
+	public function getWithDefaultValue( string $group, string $key, ?string $defaultValue ): ?string {
 		$value = $this->get( $group, $key );
 		return $value === false ? $defaultValue : $value;
 	}
