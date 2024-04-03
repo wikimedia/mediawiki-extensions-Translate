@@ -26,7 +26,8 @@
 			"Purodha",
 			"Vlad5250",
 			"WindEwriX",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"Fenixs-ru"
 		]
 	},
 	"pagetranslation": "Перевод страниц",
@@ -59,6 +60,7 @@
 	"tpt-edit-failed": "Невозможно обновить эту страницу: $1",
 	"tpt-duplicate": "Перевод элемента с названием <strong><bdi>$1</bdi></strong> используется более одного раза.",
 	"tpt-invalid": "Блок перевода <strong><bdi>$1</bdi></strong> не должен содержать знак подчёркивания или косую черту.",
+	"tpt-unit-title-invalid": "Имя единицы перевода <strong><bdi>$1</bdi></strong> недопустимо: $2",
 	"tpt-unmarked": "Страница [[:$1]] больше не отмечена для перевода.",
 	"tpt-list-nopages": "Нет страниц, отмеченных для перевода, а также нет страниц готовых к отметке.",
 	"tpt-new-pages-title": "Страницы, предложенные к переводу",
@@ -118,6 +120,7 @@
 	"tpt-aggregategroup-save": "Сохранить",
 	"tpt-aggregategroup-close": "Закрыть",
 	"tpt-aggregategroup-add-new": "Добавить новую агрегированную группу",
+	"tpt-aggregategroup-select-source-language": "Пользовательский исходный язык (необязательно):",
 	"tpt-aggregategroup-new-name": "Название:",
 	"tpt-aggregategroup-new-description": "Описание (необязательно):",
 	"tpt-aggregategroup-remove-confirm": "Вы правда хотите удалить агрегированную группу?",
@@ -265,11 +268,13 @@
 	"pp-cancel-button-label": "Отмена",
 	"pp-save-message": "Страница была опубликована. Вы можете [$1 редактировать] её.",
 	"pp-prepare-message": "Страница была подготовлена для перевода. Различия между версиями смотрите ниже. Нажмите кнопку «{{int:pp-save-button-label}}», если всё нормально!",
-	"pp-already-prepared-message": "Кажется, эта страница уже была подготовлена для перевода. Нет никаких изменений по сравнению с предыдущей версией.",
+	"pp-already-prepared-message": "Судя по всему, страница либо уже подготовлена к переводу, либо не может быть подготовлена автоматически. Никаких изменений по сравнению с предыдущей версией нет.",
 	"pp-diff-error": "Возникла ошибка во время получения с сервера различия между версиями.",
 	"pp-pagename-missing": "Пожалуйста, введите имя страницы.",
+	"pp-page-does-not-exist": "Страница $1 не существует.",
 	"pp-diff-old-header": "Исходный текст",
 	"pp-diff-new-header": "Подготовленный текст",
+	"pp-unexpected-error": "При обработке вашего запроса произошла ошибка",
 	"tpt-unlink-confirm": "Пожалуйста, подтвердите, что вы действительно хотите исключить эту страницу из системы перевода.\nСелектор языка и имена переведенной страницы перестанут работать.\nСтраницы перевода станут редактируемыми.",
 	"tpt-unlink-button": "Удалить из перевода",
 	"tpt-unlink-summary": "Удалённая из перевода страница",
@@ -282,5 +287,6 @@
 	"visualeditor-annotations-translate-description": "Этот диапазон помечен как переводимый. Пожалуйста, убедитесь, что вы следуете рекомендациям, приведенным для [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text изменений в исходном тексте].",
 	"visualeditor-annotations-tvar-start": "Начало кода, не подлежащего переводу",
 	"visualeditor-annotations-tvar-end": "Конец кода, не подлежащего переводу",
-	"visualeditor-annotations-tvar-description": "Этот диапазон помечен как непереводимый. Пожалуйста, ознакомьсь с дополнительной информацией по [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation сегментации исходного текста]."
+	"visualeditor-annotations-tvar-description": "Этот диапазон помечен как непереводимый. Пожалуйста, ознакомьсь с дополнительной информацией по [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation сегментации исходного текста].",
+	"tag-translate-translation-pages-description": "Автоматическое редактирование страниц перевода с помощью расширения Translate"
 }
