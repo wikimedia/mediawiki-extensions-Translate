@@ -62,6 +62,7 @@
 	"tpt-tag-no-transclusion-support": "ללא תמיכה בהכללה",
 	"tpt-select-prioritylangs": "רשימה מופרדת בפסיקים של קודי שפות מועדפות:",
 	"tpt-select-prioritylangs-force": "למנוע תרגום לשפות שאינן מוגדרות כמועדפות",
+	"tpt-select-no-prioritylangs-force": "מניעת תרגומים לשפות שאינן מועדפות ללא בחירת שפות מועדפות תמנע תרגומים לכל השפות.",
 	"tpt-select-prioritylangs-reason": "סיבה:",
 	"tpt-sections-prioritylangs": "שפות מועדפות",
 	"tpt-sections-syntaxversion": "גרסת תחביר",

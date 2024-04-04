@@ -65,6 +65,7 @@
 	"tpt-tag-no-transclusion-support": "keine Transklusionsunterstützung",
 	"tpt-select-prioritylangs": "Komma-getrennte Liste der Codes der zu priorisierenden Sprachen:",
 	"tpt-select-prioritylangs-force": "Übersetzungen in andere Sprachen als die priorisierte Sprache verhindern",
+	"tpt-select-no-prioritylangs-force": "Verhinderung von Übersetzungen in nicht-priorisierte Sprachen ohne Auswahl von priorisierten Sprachen",
 	"tpt-select-prioritylangs-reason": "Grund:",
 	"tpt-sections-prioritylangs": "Priorisierte Sprachen",
 	"tpt-sections-syntaxversion": "Syntaxversion",
