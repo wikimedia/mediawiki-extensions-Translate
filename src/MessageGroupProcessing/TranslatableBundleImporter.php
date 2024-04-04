@@ -32,7 +32,6 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 	private TranslatablePageParser $translatablePageParser;
 	private RevisionLookup $revisionLookup;
 	private ?Title $bundleTitle;
-	private ?Closure $importCompleteCallback = null;
 	private ?Closure $pageImportCompleteCallback = null;
 	private NamespaceInfo $namespaceInfo;
 	private TitleFactory $titleFactory;
@@ -107,21 +106,12 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 			throw new TranslatableBundleImportException( 'Import done, but could not identify imported page.' );
 		}
 
-		if ( $this->importCompleteCallback ) {
-			// Import is complete
-			call_user_func( $this->importCompleteCallback, $this->bundleTitle );
-		}
-
 		// WikiImporter does not trigger hooks that run after a page is edited. Hence, manually add the ready
 		// tag to the imported page if it contains the markup
 		$this->addReadyTagForTranslatablePage( $this->bundleTitle );
 		$this->logImport( $user, $this->bundleTitle, $comment );
 
 		return $this->bundleTitle;
-	}
-
-	public function setImportCompleteCallback( callable $callable ): void {
-		$this->importCompleteCallback = Closure::fromCallable( $callable );
 	}
 
 	public function setPageImportCompleteCallback( callable $callable ): void {
