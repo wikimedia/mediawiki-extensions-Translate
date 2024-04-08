@@ -51,6 +51,7 @@
 	"tpt-tag-no-transclusion-support": "sin supporto de transclusion",
 	"tpt-select-prioritylangs": "Lista de linguas prioritari separate per commas:",
 	"tpt-select-prioritylangs-force": "Impedir le traduction in linguas non prioritari",
+	"tpt-select-no-prioritylangs-force": "Impedir le traduction in linguas non prioritari sin seliger linguas prioritari impedira le traduction in tote le linguas.",
 	"tpt-select-prioritylangs-reason": "Motivo:",
 	"tpt-sections-prioritylangs": "Linguas prioritari",
 	"tpt-sections-syntaxversion": "Version de syntaxe",
