@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kuldeepburjbhalaike"
+		]
+	},
+	"tsb-reminder-title-generic": "ਅਨੁਵਾਦਕ ਬਣਨ ਲਈ ਆਪਣੀ ਜਾਣ-ਪਛਾਣ ਪੂਰੀ ਕਰੋ",
+	"tsb-reminder-content-generic": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ $1,\n\n{{SITENAME}} ਨਾਲ ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਧੰਨਵਾਦ।\n\nਇੱਥੇ ਆਓ ਅਤੇ ਇੱਥੇ ਕੁਝ ਹੋਰ ਅਨੁਵਾਦ ਕਰੋ:\n$2\n\n$3,\n{{SITENAME}} ਸਟਾਫ",
+	"tsb-email-promoted-subject": "ਤੁਸੀਂ ਹੁਣ {{SITENAME}} 'ਤੇ ਇੱਕ ਅਨੁਵਾਦਕ ਹੋ",
+	"tsb-email-promoted-body": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ {{GENDER:$1|$1}},\n\nਵਧਾਈਆਂ! ਮੈਂ ਉਹਨਾਂ ਟੈਸਟ ਅਨੁਵਾਦਾਂ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜੋ ਤੁਸੀਂ {{SITENAME}} 'ਤੇ ਕੀਤੇ ਹਨ ਅਤੇ ਤੁਹਾਨੂੰ ਪੂਰੇ ਅਨੁਵਾਦਕ ਅਧਿਕਾਰ ਦਿੱਤੇ ਜਾਂਦੇ ਹਨ।\n\nਹੁਣੇ ਅਤੇ ਹਰ ਰੋਜ਼ ਅਨੁਵਾਦ ਕਰਨਾ ਜਾਰੀ ਰੱਖਣ ਲਈ {{SITENAME}} 'ਤੇ ਆਓ:\n$2\n\nਜੀ ਆਇਆਂ ਨੂੰ, ਅਤੇ ਤੁਹਾਡੇ ਯੋਗਦਾਨਾਂ ਲਈ ਧੰਨਵਾਦ!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} ਸਟਾਫ",
+	"tsb-email-rejected-subject": "{{SITENAME}} 'ਤੇ ਅਨੁਵਾਦਕ ਬਣਨ ਲਈ ਤੁਹਾਡੀ ਅਰਜ਼ੀ ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ",
+	"tsb-email-rejected-body": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ {{GENDER:$1|$1}},\n\n{{SITENAME}} 'ਤੇ ਅਨੁਵਾਦਕ ਵਜੋਂ ਅਰਜ਼ੀ ਦੇਣ ਲਈ ਤੁਹਾਡਾ ਧੰਨਵਾਦ। ਮੈਨੂੰ ਇਹ ਦੱਸਦੇ ਹੋਏ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਮੈਂ ਤੁਹਾਡੀ ਅਰਜ਼ੀ ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਹੈ, ਕਿਉਂਕਿ ਤੁਹਾਡੇ ਅਨੁਵਾਦਾਂ ਦੀ ਗੁਣਵੱਤਾ ਲੋੜਾਂ ਨੂੰ ਪੂਰਾ ਨਹੀਂ ਕਰਦੀ ਹੈ।\n\nਜੇ ਤੁਹਾਨੂੰ ਲੱਗਦਾ ਹੈ ਕਿ ਤੁਹਾਡੀ ਅਰਜ਼ੀ ਗਲਤੀ ਨਾਲ ਰੱਦ ਹੋਈ ਹੈ ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ {{SITENAME}} 'ਤੇ ਦੁਬਾਰਾ ਆਪਣੀ ਅਰਜ਼ੀ ਦਾਖ਼ਲ ਕਰੋ। ਤੁਸੀਂ ਇੱਥੇ ਸਾਈਨ ਅੱਪ ਕਰ ਸਕਦੇ ਹੋ:\n$2 \n\n{{GENDER:$3|$3}},\n{{SITENAME}} ਸਟਾਫ",
+	"tsb-request-count": "$1 {{PLURAL:$1|ਬੇਨਤੀ|ਬੇਨਤੀਆਂ}}",
+	"tsb-all-languages-button-label": "ਸਾਰੀਆਂ ਭਾਸ਼ਾਵਾਂ",
+	"tsb-accept-button-label": "ਸਵੀਕਾਰ ਕਰੋ",
+	"tsb-reject-button-label": "ਰੱਦ ਕਰੋ",
+	"tsb-selected-count": "{{PLURAL:$1|$1 ਵਰਤੋਂਕਾਰ ਚੁਣਿਆ|$1 ਵਰਤੋਂਕਾਰ ਚੁਣੇ ਗਏ}}",
+	"tsb-older-requests": "$1 ਪੁਰਾਣੀ {{PLURAL:$1|ਬੇਨਤੀ|ਬੇਨਤੀਆਂ}}",
+	"tsb-accept-all-button-label": "ਸਭ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ",
+	"tsb-reject-all-button-label": "ਸਭ ਨੂੰ ਰੱਦ ਕਰੋ",
+	"tsb-user-posted-a-comment": "ਅਨੁਵਾਦਕ ਨਹੀਂ",
+	"tsb-reminder-link-text": "ਈਮੇਲ ਰੀਮਾਈਂਡਰ ਭੇਜੋ",
+	"tsb-didnt-make-any-translations": "ਇਸ ਵਰਤੋਂਕਾਰ ਨੇ ਕੋਈ ਅਨੁਵਾਦ ਨਹੀਂ ਕੀਤਾ।",
+	"tsb-translations-source": "ਸਰੋਤ",
+	"tsb-translations-user": "{{GENDER:$1|ਵਰਤੋਂਕਾਰ}} ਅਨੁਵਾਦ",
+	"tsb-translations-current": "ਮੌਜੂਦਾ ਅਨੁਵਾਦ",
+	"translationstash": "ਜੀ ਆਇਆਂ ਨੂੰ",
+	"translate-translationstash-welcome": "ਜੀ ਆਇਆਂ ਨੂੰ {{GENDER:$1|$1}}, ਤੁਸੀਂ ਇੱਕ ਨਵੇਂ ਅਨੁਵਾਦਕ ਹੋ",
+	"translate-translationstash-skip-button-label": "ਕੋਈ ਹੋਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+	"tsb-limit-reached-title": "ਤੁਹਾਡੇ ਅਨੁਵਾਦਾਂ ਲਈ ਧੰਨਵਾਦ",
+	"tsb-no-requests-from-new-users": "ਨਵੇਂ ਵਰਤੋਂਕਾਰਾਂ ਤੋਂ ਕੋਈ ਬੇਨਤੀ ਨਹੀਂ",
+	"tsb-create-user-page": "ਬੁਨਿਆਦੀ ਵਰਤੋਂਕਾਰ ਸਫ਼ਾ ਬਣਾਇਆ",
+	"logentry-translatorsandbox-promoted": "$1 ਨੇ  $3 ਨੂੰ {{GENDER:$4|ਅਨੁਵਾਦਕ}} ਦੀ {{GENDER:$2|ਤਰੱਕੀ}} ਦਿੱਤੀ",
+	"logentry-translatorsandbox-rejected": "$1 ਨੇ \"$3\" ਦੀ ਇੱਕ ਅਨੁਵਾਦਕ ਬਣਨ ਦੀ ਬੇਨਤੀ ਨੂੰ {{GENDER:$2|ਅਸਵੀਕਾਰ}} ਕੀਤਾ"
+}
