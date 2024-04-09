@@ -27,7 +27,10 @@ class TranslatableBundleExporter {
 		ILoadBalancer $dbLoadBalancer
 	) {
 		$this->subpageListBuilder = $subpageListBuilder;
-		$this->wikiExporter = $wikiExporterFactory->getWikiExporter( $dbLoadBalancer->getConnection( DB_REPLICA ) );
+		$this->wikiExporter = $wikiExporterFactory->getWikiExporter(
+			$dbLoadBalancer->getConnection( DB_REPLICA ),
+			WikiExporter::FULL
+		);
 	}
 
 	public function export( TranslatableBundle $bundle, bool $includeTalkPages, bool $includeSubPages ): string {
