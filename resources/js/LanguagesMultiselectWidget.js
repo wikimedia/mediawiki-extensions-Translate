@@ -19,7 +19,7 @@ var LanguagesMultiselectWidget = function ( config ) {
 	this.allowedValues = Object.keys( config.languages );
 	this.languages = config.languages;
 
-	LanguagesMultiselectWidget.parent.call( this, $.extend( true,
+	LanguagesMultiselectWidget.super.call( this, $.extend( true,
 		{
 			allowEditTags: false,
 			allowArbitary: false,
@@ -58,7 +58,7 @@ LanguagesMultiselectWidget.prototype.onInputChange = function () {
 			widget.menu.addItems( widget.getOptionsFromData( data ) );
 		} ).always( function () {
 			// Parent method
-			LanguagesMultiselectWidget.parent.prototype.onInputChange.call( widget );
+			LanguagesMultiselectWidget.super.prototype.onInputChange.call( widget );
 		} );
 };
 
