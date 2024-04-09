@@ -9,10 +9,12 @@ use MediaWiki\EditPage\EditPage;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_initialHook;
 use MediaWiki\Hook\SidebarBeforeOutputHook;
+use MediaWiki\Hook\TitleGetEditNoticesHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Skin\SkinComponentUtils;
 use MessageHandle;
 use OutputPage;
+use RequestContext;
 
 /**
  * Integration point to MediaWiki for the legacy translation aids.
@@ -24,6 +26,7 @@ class LegacyInterfaceHookHandler
 	AlternateEditHook,
 	ArticleContentOnDiffHook,
 	EditPage__showEditForm_initialHook,
+	TitleGetEditNoticesHook,
 	SidebarBeforeOutputHook
 {
 	/** @var LanguageFactory */
@@ -66,9 +69,20 @@ class LegacyInterfaceHookHandler
 				$editPage->textbox1 = MessageHandle::makeFuzzyString( $editPage->textbox1 );
 			}
 		}
+	}
+
+	public function onTitleGetEditNotices( $title, $oldid, &$notices ) {
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return;
+		}
+
+		// The context is required for loading style modules. This won't work in
+		// an API context e.g. when loading VisualEditor.
+		$context = RequestContext::getMain();
 
 		$th = new LegacyTranslationAids( $handle, $context, $this->languageFactory );
-		$editPage->editFormTextTop .= $th->getBoxes();
+		$notices[] = $th->getBoxes();
 	}
 
 	/**

@@ -154,6 +154,7 @@
 		"LoadExtensionSchemaUpdates": "schema",
 		"PageContentLanguage": "MediaWiki\\Extension\\Translate\\HookHandler::onPageContentLanguage",
 		"EditPage::showEditForm:initial": "legacyInterface",
+		"TitleGetEditNotices": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
 		"ApiCheckCanExecute": "translateSandbox",
 		"getUserPermissionsErrorsExpensive": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disallowLangTranslations",
