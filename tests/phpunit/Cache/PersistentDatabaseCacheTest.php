@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\Cache;
 use DateInterval;
 use DateTime;
 use InvalidArgumentException;
-use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -19,7 +18,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$mwServices = MediaWikiServices::getInstance();
+		$mwServices = $this->getServiceContainer();
 		$lb = $mwServices->getDBLoadBalancer();
 		$jsonCodec = $mwServices->getJsonCodec();
 		$this->persistentCache = new PersistentDatabaseCache( $lb, $jsonCodec );

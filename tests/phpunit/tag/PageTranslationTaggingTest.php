@@ -6,7 +6,6 @@ use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -133,7 +132,7 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		MessageGroups::singleton()->recache();
 
 		$translationPage = Title::newFromText( 'Translatable page/fi' );
-		$pm = MediaWikiServices::getInstance()->getPermissionManager();
+		$pm = $this->getServiceContainer()->getPermissionManager();
 		RenderTranslationPageJob::newJob( $translationPage )->run();
 		$this->assertTrue( $pm->userCan( 'read', $superUser, $translationPage ),
 			'Users can read existing translation pages' );

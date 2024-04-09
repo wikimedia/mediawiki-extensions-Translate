@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\MediaWikiServices;
 
 /**
  * @author Niklas Laxström
@@ -37,7 +36,7 @@ class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 			$this->getTestSysop()->getUser(),
 			false
 		);
-		MediaWikiServices::getInstance()->getMainWANObjectCache()->clearProcessCache();
+		$this->getServiceContainer()->getMainWANObjectCache()->clearProcessCache();
 
 		$this->assertFalse(
 			TranslatablePage::isSourcePage( $translatablePage->getTitle() )

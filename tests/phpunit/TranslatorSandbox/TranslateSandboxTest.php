@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
@@ -38,7 +37,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 	 * @return array|string[]
 	 */
 	private function getUserGroups( User $user ): array {
-		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+		$userGroupManager = $this->getServiceContainer()->getUserGroupManager();
 		$groups = $userGroupManager->getUserGroups( $user );
 
 		return $groups;
@@ -111,7 +110,7 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 	public function testPermissions(): void {
 		$user = $this->translateSandbox->addUser( 'Test user7', 'test@blackhole.io', 'test password' );
 		$title = Title::makeTitle( NS_USER_TALK, $user->getName() );
-		$pm = MediaWikiServices::getInstance()->getPermissionManager();
+		$pm = $this->getServiceContainer()->getPermissionManager();
 
 		$this->assertFalse(
 			$pm->userCan( 'edit', $user, $title ),

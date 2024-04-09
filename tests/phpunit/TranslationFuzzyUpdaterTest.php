@@ -11,7 +11,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 
@@ -93,7 +92,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	public function testValidationFuzzy() {
 		$user = $this->getTestUser()->getUser();
 		$title = Title::newFromText( 'MediaWiki:nlkey/en-gb' );
-		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'Test message', $title );
 		$page->doUserEditContent( $content, $user, __METHOD__ );
 

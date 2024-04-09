@@ -4,7 +4,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -126,7 +125,7 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 
-		self::translateRunJobs();
+		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress after first translation' );
 
@@ -136,7 +135,7 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 			'revision' => self::getRevisionRecordId( $status )
 		], null, $user );
 
-		self::translateRunJobs();
+		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'inprogress', $currentState, 'in progress while untranslated messages' );
 
@@ -147,7 +146,7 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 
-		self::translateRunJobs();
+		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'proofreading', $currentState, 'proofreading after second translation' );
 
@@ -156,7 +155,7 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 			'action' => 'translationreview',
 			'revision' => self::getRevisionRecordId( $status )
 		], null, $user );
-		self::translateRunJobs();
+		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals( 'ready', $currentState, 'ready when all proofread' );
 
@@ -167,7 +166,7 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 
 		$page->doUserEditContent( $content, $user, __METHOD__ );
 
-		self::translateRunJobs();
+		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
 		$this->assertEquals(
 			'proofreading',
@@ -182,8 +181,8 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 		return $value['revision-record']->getId();
 	}
 
-	protected static function translateRunJobs() {
-		$jobQueueGroup = MediaWikiServices::getInstance()->getJobQueueGroup();
+	protected function translateRunJobs() {
+		$jobQueueGroup = $this->getServiceContainer()->getJobQueueGroup();
 		do {
 			$job = $jobQueueGroup->pop();
 			if ( !$job ) {

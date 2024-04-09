@@ -5,7 +5,6 @@
  */
 
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -46,7 +45,7 @@ trait TranslatablePageTestTrait {
 	): TranslatablePage {
 		// Create new page
 		$translatablePageTitle = Title::newFromText( $title );
-		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $translatablePageTitle );
+		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $translatablePageTitle );
 		$text = "<translate>$content</translate>";
 		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );

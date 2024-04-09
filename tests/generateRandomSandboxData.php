@@ -10,7 +10,6 @@
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 // Standard boilerplate to define $IP
@@ -33,7 +32,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 
 		$stash = new TranslationStashStorage( $this->getDB( DB_PRIMARY ) );
 
-		$languages = array_keys( MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames() );
+		$languages = array_keys( $this->getServiceContainer()->getLanguageNameUtils()->getLanguageNames() );
 
 		$translateSandbox = Services::getInstance()->getTranslateSandbox();
 		for ( $i = 0; $i < $users; $i++ ) {
