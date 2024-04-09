@@ -477,8 +477,9 @@ class HookHandler implements
 
 	/** Register AbuseFilter variables provided by Translate. */
 	public static function onAbuseFilterBuilder( array &$builderValues ): void {
-		// Uses: 'abusefilter-edit-builder-vars-translate-source-text'
-		// and 'abusefilter-edit-builder-vars-translate-target-language'
+		// The following messages are generated here:
+		// * abusefilter-edit-builder-vars-translate-source-text
+		// * abusefilter-edit-builder-vars-translate-target-language
 		$builderValues['vars']['translate_source_text'] = 'translate-source-text';
 		$builderValues['vars']['translate_target_language'] = 'translate-target-language';
 	}
