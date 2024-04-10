@@ -9,6 +9,7 @@
 	"tux-sst-view-foreign": "$1 تي ڏسو",
 	"tux-sst-search": "ڳوليو",
 	"tux-sst-search-ph": "ترجما ڳوليو",
+	"tux-sst-search-info": "ڳولا جي پيمانن کي وڌيڪ قابليت ڏيڻ لاءِ آپريٽر <code>ٻولي:</code> يا <code>گروھ:</code> استعمال ڪريو",
 	"tux-sst-count": "{{PLURAL:$1|ھڪ نتيجو لڌو|$1 نتيجا لڌا}}",
 	"tux-sst-facet-language": "ٻوليون",
 	"tux-sst-facet-group": "نياپو گروھَ",

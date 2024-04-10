@@ -48,7 +48,8 @@
 			"Zazzzz",
 			"乌拉跨氪",
 			"列维劳德",
-			"铁桶"
+			"铁桶",
+			"Anterdc99"
 		]
 	},
 	"translate": "翻译",
@@ -266,7 +267,7 @@
 	"abusefilter-edit-builder-vars-translate-source-text": "翻译单元的原始文本",
 	"abusefilter-edit-builder-vars-translate-target-language": "翻译目标语言",
 	"translate-jssti-add": "添加至列表",
-	"managemessagegroups": "消息组管理",
+	"managemessagegroups": "管理消息组",
 	"translate-smg-notallowed": "您不被允许执行该操作。",
 	"translate-smg-nochanges": "没有要处理的更改。",
 	"translate-smg-submit": "提交要处理的更改",

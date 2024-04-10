@@ -245,7 +245,7 @@
 	"abusefilter-edit-builder-vars-translate-source-text": "翻譯單元的來源文字",
 	"abusefilter-edit-builder-vars-translate-target-language": "翻譯的目標語言",
 	"translate-jssti-add": "新增至清單",
-	"managemessagegroups": "訊息群組管理",
+	"managemessagegroups": "管理訊息群組",
 	"translate-smg-notallowed": "你不允許執行此操作。",
 	"translate-smg-nochanges": "沒有需要處理的更動。",
 	"translate-smg-submit": "送出要處理更動",
