@@ -16,11 +16,10 @@ use MediaWiki\Extension\Translate\Validation\ValidationIssues;
  */
 class MatchSetValidator implements MessageValidator {
 	/** @var string[] */
-	protected $possibleValues;
+	private array $possibleValues;
 	/** @var string[] */
-	protected $normalizedValues;
-	/** @var bool */
-	protected $caseSensitive;
+	private array $normalizedValues;
+	private bool $caseSensitive;
 
 	public function __construct( array $params ) {
 		$this->possibleValues = $params['values'] ?? [];
