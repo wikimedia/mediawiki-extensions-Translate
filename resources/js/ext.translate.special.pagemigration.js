@@ -215,8 +215,22 @@
 		var $newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
 		var $sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
 			.prop( 'readonly', true ).attr( 'tabindex', '-1' ).val( sourceText );
-		var $targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
+		var $target = $( '<div>' ).addClass( 'five columns' );
+		var $targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target' )
 			.val( targetText ).prop( 'dir', $.uls.data.getDir( langCode ) );
+		var $clearButton = $( '<button>' ).addClass( 'mw-tpm-sp-action--clear' )
+			.attr( 'title', mw.msg( 'pm-clear-icon-hover-text' ) );
+
+		$targetUnit.on( 'input', function () {
+			var $input = $( this );
+			if ( $input.val().length === 0 ) {
+				$clearButton.addClass( 'hide' );
+			} else {
+				$clearButton.removeClass( 'hide' );
+			}
+		} ).trigger( 'input' );
+		$target.append( $targetUnit, $clearButton );
+
 		var $actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
 		$actionUnit.append(
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' )
@@ -226,7 +240,7 @@
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' )
 				.attr( 'title', mw.msg( 'pm-delete-icon-hover-text' ) )
 		);
-		$newUnit.append( $sourceUnit, $targetUnit, $actionUnit );
+		$newUnit.append( $sourceUnit, $target, $actionUnit );
 		return $newUnit;
 	}
 
@@ -430,6 +444,18 @@
 	}
 
 	/**
+	 * Handler for clear icon click event. Clear the unit and maintains
+	 * the position of other units.
+	 *
+	 * @param {jQuery.Event} event
+	 */
+	function clearContents( event ) {
+		var $rowUnit = $( event.target ).closest( '.mw-tpm-sp-unit' );
+		$rowUnit.find( '.mw-tpm-sp-unit__target' ).val( '' );
+		$( event.target ).addClass( 'hide' );
+	}
+
+	/**
 	 * Handler for swap icon click event. Swaps the text in the current unit
 	 * with the text in the unit below.
 	 *
@@ -522,6 +548,7 @@
 		$listing.on( 'click', '.mw-tpm-sp-action--swap', swapHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--delete', deleteHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--add', addHandler );
+		$listing.on( 'click', '.mw-tpm-sp-action--clear', clearContents );
 	}
 
 	$( listen );

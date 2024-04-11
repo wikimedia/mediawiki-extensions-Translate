@@ -264,6 +264,7 @@
 	"pm-add-icon-hover-text": "Hover text for add new unit icon",
 	"pm-swap-icon-hover-text": "Hover text for the icon on Special:PageMigration which, when clicked, swaps a unit (text area) with the unit below.",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
+	"pm-clear-icon-hover-text": "Hover text for clear target unit icon",
 	"pm-pagetitle-placeholder": "Placeholder for the page title input field.",
 	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered. You should translate page example (“de” is a language code, you must keep a language code in your translation); you can localize quotes but you must keep the middle slash <code>/</code>.",
 	"pm-pagetitle-missing": "Error message given when page title field is blank",

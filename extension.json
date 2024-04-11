@@ -810,6 +810,7 @@
 			"messages": [
 				"pm-add-icon-hover-text",
 				"pm-delete-icon-hover-text",
+				"pm-clear-icon-hover-text",
 				"pm-extra-units-warning",
 				"pm-langcode-missing",
 				"pm-old-translations-missing",

@@ -3,6 +3,7 @@
 	overflow-y: auto;
 	height: 150px;
 	border: 2px solid #808080;
+	resize: vertical;
 }
 
 .mw-tpm-sp-form #title {
@@ -49,6 +50,27 @@
 
 .mw-tpm-sp-action--add {
 	background-image: url( ../images/plus_darkgray.svg );
+}
+
+.mw-tpm-sp-action,
+.mw-tpm-sp-action--clear {
+	cursor: pointer;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.mw-tpm-sp-action--clear {
+	position: absolute;
+	background: transparent;
+	/* @embed */
+	background-image: url( ../images/clear.svg );
+	background-size: contain;
+	height: 16px;
+	width: 16px;
+	top: 5px;
+	right: 10px;
+	border: 0;
+	padding: 0;
 }
 
 .mw-tpm-sp-error__message {

@@ -236,6 +236,7 @@
 	"pm-add-icon-hover-text": "Add a unit below",
 	"pm-swap-icon-hover-text": "Swap with unit below",
 	"pm-delete-icon-hover-text": "Delete unit",
+	"pm-clear-icon-hover-text": "Clear unit",
 	"pm-pagetitle-placeholder": "Enter the page title",
 	"pm-pagetitle-invalid": "Page migration only works on translation pages, for example \"Page/de\". The provided title is not a valid title.",
 	"pm-pagetitle-missing": "Please enter the page title.",
