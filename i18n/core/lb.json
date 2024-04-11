@@ -371,11 +371,12 @@
 	"translate-statsbar-tooltip": "$1% iwwersat, $2% nogekuckt",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% iwwersat, $2% nogekuckt, $3% vereelzt",
 	"translate-search-more-groups-info": "$1 weider {{PLURAL:$1|Grupp|Gruppen}}",
-	"translate-syntax-error": "Iwwersetzung huet Syntax-Feeler",
+	"translate-syntax-error": "D'Iwwersetzung enthält Syntax-Feeler",
 	"tux-session-expired": "Dir sidd net méi ageloggt. Loggt Iech wgl. an engem separaten Tab an. Alternativ kënnt Dir och eng Kopie vun den net-gespäicherten Iwwersetzunge maachen, Iech aloggen op dës Säit zréckkommen an Är Iwwersetzungen nees aginn.",
 	"tux-nojs": "Dësen Tool funktionéiert net ouni JavaScript. JavaScript ass ausgeschalt, funktionéiert net oder dëse Browser gëtt net ënnerstëtzt.",
 	"specialpages-group-translation": "Iwwersetzung",
 	"translate-messagebundle-error-key-too-long": "Schlëssel \"$1\" ass ze laang",
+	"translate-messagebundle-error-key-invalid-characters": "De Schlëssel „$1“ enthält onerlaabt Zeechen",
 	"translate-messagebundle-error-empty-value": "Schlëssel \"$1\" huet kee Wäert",
 	"translate-hidetranslations": "Iwwersetzungssäite verstoppen"
 }
