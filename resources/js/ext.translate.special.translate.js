@@ -202,7 +202,6 @@
 				),
 				$( '<p>' ).append( mw.message( 'tpt-discouraged-translation-content' ).parseDom() )
 			);
-			return;
 		}
 
 		var headerMessage, languagesMessage;
