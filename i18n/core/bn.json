@@ -91,7 +91,7 @@
 	"translate-checks-newline-missing-end": "অনুবাদটির শেষে নতুন লাইনের $1টি {{PLURAL:$1|অক্ষর}} অনুপস্থিত রয়েছে।",
 	"translate-checks-newline-extra-start": "অনুবাদটির শুরুতে নতুন লাইনের $1টি {{PLURAL:$1|অক্ষর}} অতিরিক্ত রয়েছে।",
 	"translate-checks-newline-extra-end": "অনুবাদটির শেষে নতুন লাইনের $1টি {{PLURAL:$1|অক্ষর}} অতিরিক্ত রয়েছে।",
-	"translate-checks-value-not-present": "অনুবাদ অবশ্যই নিম্নলিখিত {{PLURAL:$1|1=|মানগুলির যেকোনও একটির}} সমান হতে হবে: $1।",
+	"translate-checks-value-not-present": "অনুবাদ অবশ্যই নিম্নলিখিত {{PLURAL:$2|1=|মানগুলির যেকোনও একটির}} সমান হতে হবে: $1।",
 	"translate-checks-replacement": "$1 এর পরিবর্তে $2 ব্যবহার করুন।",
 	"translate-checks-empty": "কোনো বিষয়বস্তু ছাড়া অথবা শুধুমাত্র ফাঁকাস্থান সহ অনুবাদ গ্রহণযোগ্য নয়।",
 	"translate-pref-editassistlang": "সহযোগী ভাষা:",

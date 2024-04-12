@@ -113,7 +113,7 @@
 	"translate-checks-newline-missing-end": "譯文結尾{{PLURAL:$1|少了}}$1粒換行{{PLURAL:$1|字元}}。",
 	"translate-checks-newline-extra-start": "譯文開頭{{PLURAL:$1|多出}}$1粒換行{{PLURAL:$1|字元}}。",
 	"translate-checks-newline-extra-end": "譯文結尾{{PLURAL:$1|多出}}$1粒換行{{PLURAL:$1|字元}}。",
-	"translate-checks-value-not-present": "此譯文應相同於{{PLURAL:$1|1=|以下值之一：}}$1。",
+	"translate-checks-value-not-present": "此譯文應相同於{{PLURAL:$2|1=|以下值之一：}}$1。",
 	"translate-checks-replacement": "使用$2替代$1。",
 	"translate-checks-empty": "不允許沒有內容或只有空格的譯文。",
 	"translate-pref-editassistlang": "輔助語言：",

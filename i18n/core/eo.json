@@ -102,7 +102,7 @@
 	"translate-checks-newline-missing-end": "Mankas $1 {{PLURAL:$1|linifino|linifinoj}} fine de la traduko.",
 	"translate-checks-newline-extra-start": "Estas $1 {{PLURAL:$1|kroma linifino|kromaj linifinoj}} komence de la traduko.",
 	"translate-checks-newline-extra-end": "Estas $1 {{PLURAL:$1|kroma linifino|kromaj linifinoj}} fine de la traduko.",
-	"translate-checks-value-not-present": "La traduko devas esti egala al {{PLURAL:$1|1=|unu el la jenaj valoroj:}} $1.",
+	"translate-checks-value-not-present": "La traduko devas esti egala al {{PLURAL:$2|1=|unu el la jenaj valoroj:}} $1.",
 	"translate-checks-replacement": "Uzu $2 anstataŭ $1.",
 	"translate-checks-empty": "Tradukado kun neniu enhavo aŭ nur blankspaco ne estas permesita.",
 	"translate-pref-editassistlang": "Helpaj lingvoj:",

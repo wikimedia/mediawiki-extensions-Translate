@@ -100,7 +100,7 @@
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|חסר תו שורה חדשה אחד|חסרים $1 תווי שורה חדשה}} בסוף התרגום.",
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|יש תו שורה חדשה אחד מיותר|יש $1 תווי שורה חדשה מיותרים}} בתחילת התרגום.",
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|יש תו שורה חדשה אחד מיותר|יש $1 תווי שורה חדשה מיותרים}} בסוף התרגום.",
-	"translate-checks-value-not-present": "התרגום צריך להיות שווה {{PLURAL:$1|ל־$1|לאחד מהערכים הבאים: $1}}.",
+	"translate-checks-value-not-present": "התרגום צריך להיות שווה {{PLURAL:$2|ל־$1|לאחד מהערכים הבאים: $1}}.",
 	"translate-checks-replacement": "להשתמש ב\"$2\" במקום ב\"$1\".",
 	"translate-checks-empty": "תרגום ללא תוכן או רק עם רווחים אסור.",
 	"translate-pref-editassistlang": "שפות מסייעות:",

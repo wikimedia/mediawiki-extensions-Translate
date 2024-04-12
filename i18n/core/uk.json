@@ -113,7 +113,7 @@
 	"translate-checks-newline-missing-end": "У кінці перекладу {{PLURAL:$1|відсутній символ|відсутно $1 символа|відсутні $1 символів}} нового рядку.",
 	"translate-checks-newline-extra-start": "На початку перекладу є {{PLURAL:$1|один зайвий символ|$1  зайві символа|$1 зайвих символів}} нового рядку.",
 	"translate-checks-newline-extra-end": "У кінці перекладу є {{PLURAL:$1|один зайвий символ|$1  зайві символа|$1 зайвих символів}} нового рядку.",
-	"translate-checks-value-not-present": "Переклад має дорівнювати {{PLURAL:$1|1=|одному з таких значень:}} $1.",
+	"translate-checks-value-not-present": "Переклад має дорівнювати {{PLURAL:$2|1=|одному з таких значень:}} $1.",
 	"translate-checks-replacement": "Використовуйте $2 замість $1.",
 	"translate-checks-empty": "Не допускається переклад без вмісту або лише пробілів.",
 	"translate-pref-editassistlang": "Допоміжні мови:",

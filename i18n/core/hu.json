@@ -86,7 +86,7 @@
 	"translate-checks-newline-missing-end": "A fordítás végén hiányzik $1 újsor karakter.",
 	"translate-checks-newline-extra-start": "A fordítás elején $1 extra újsor karakter van.",
 	"translate-checks-newline-extra-end": "A fordítás végén $1 extra újsor karakter van.",
-	"translate-checks-value-not-present": "A fordításnak {{PLURAL:$1|1=a következőnek|a következő értékek egyikének}} kell lennie: $1.",
+	"translate-checks-value-not-present": "A fordításnak {{PLURAL:$2|1=a következőnek|a következő értékek egyikének}} kell lennie: $1.",
 	"translate-checks-replacement": "$1 helyett használd a következőt: $2.",
 	"translate-pref-editassistlang": "Segédnyelvek:",
 	"prefs-translate": "Fordítási beállítások",

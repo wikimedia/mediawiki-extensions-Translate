@@ -115,7 +115,7 @@
 	"translate-checks-newline-missing-end": "Brakuje $1 {{PLURAL:$1|znak|znaków}} nowej linii na końcu tłumaczenia.",
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|Jest|Są}} $1 {{PLURAL:$1|nadmiarowy znak|nadmiarowe znaki}} nowej linii na początku tłumaczenia.",
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|Jest|Są}} $1 {{PLURAL:$1|nadmiarowy znak|nadmiarowe znaki}} nowej linii na końcu tłumaczenia.",
-	"translate-checks-value-not-present": "Tłumaczenie musi {{PLURAL:$1|1=brzmieć|być jedna z podanych wartości:}}: $1.",
+	"translate-checks-value-not-present": "Tłumaczenie musi {{PLURAL:$2|1=brzmieć|być jedna z podanych wartości:}}: $1.",
 	"translate-checks-replacement": "Użyj $2 zamiast $1.",
 	"translate-checks-empty": "Tłumaczenie bez treści lub zawierające tylko spacje jest niedozwolone.",
 	"translate-pref-editassistlang": "Języki pomocnicze:",

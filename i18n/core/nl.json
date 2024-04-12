@@ -103,7 +103,7 @@
 	"translate-checks-newline-missing-end": "Er {{PLURAL:$1|ontbreekt één regeleindeteken|ontbreken $1 regeleindetekens}} aan het einde van de vertaling.",
 	"translate-checks-newline-extra-start": "Er {{PLURAL:$1|is één extra regeleindeteken|zijn $1 extra regeleindetekens}} aan het begin van de vertaling.",
 	"translate-checks-newline-extra-end": "Er {{PLURAL:$1|is één extra regeleindeteken|zijn $1 extra regeleindetekens}} aan het einde van de vertaling.",
-	"translate-checks-value-not-present": "De vertaling moet gelijk zijn aan {{PLURAL:$1|1=|een van de volgende waarden:}} $1.",
+	"translate-checks-value-not-present": "De vertaling moet gelijk zijn aan {{PLURAL:$2|1=|een van de volgende waarden:}} $1.",
 	"translate-checks-replacement": "Gebruik $2 in plaats van $1.",
 	"translate-checks-empty": "Een vertaling zonder inhoud of met alleen witruimte is niet toegestaan.",
 	"translate-pref-editassistlang": "Hulptalen:",

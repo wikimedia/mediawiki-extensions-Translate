@@ -91,7 +91,7 @@
 	"translate-checks-newline-missing-end": "Na koncu prevoda {{PLURAL:$1|manjka|manjkata|manjkajo|manjka}} $1 {{PLURAL:$1|znak|znaka|znaki|znakov}}.",
 	"translate-checks-newline-extra-start": "Na začetku prevoda {{PLURAL:$1|je|sta|so|je}} $1 {{PLURAL:$1|dodaten znak|dodatna znaka|dodatni znaki|dodatnih znakov}} v novi vrstici.",
 	"translate-checks-newline-extra-end": "Na koncu prevoda {{PLURAL:$1|je|sta|so|je}} $1 {{PLURAL:$1|dodaten znak|dodatna znaka|dodatni znaki|dodatnih znakov}} v novi vrstici.",
-	"translate-checks-value-not-present": "Prevod mora biti enak {{PLURAL:$1|1=|eni od naslednjih vrednosti:}} $1.",
+	"translate-checks-value-not-present": "Prevod mora biti enak {{PLURAL:$2|1=|eni od naslednjih vrednosti:}} $1.",
 	"translate-checks-replacement": "Namesto $1 uporabite $2.",
 	"translate-checks-empty": "Prevod brez vsebine ali samo s praznimi znaki ni dovoljen.",
 	"translate-pref-editassistlang": "Pomožni jeziki:",

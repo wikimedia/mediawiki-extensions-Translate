@@ -79,7 +79,7 @@
 	"translate-checks-malformed": "<nowiki>$1</nowiki> yawá uikú murupiawa'ana yawiçawa rupí.",
 	"translate-checks-fudforum-syntax": "E-purú <nowiki>$1</nowiki> ruê rupí <nowiki>$2</nowiki> kuá mumuekawaçawa çui.",
 	"translate-checks-newline-missing-start": "{{PLURAL:$1|Ti aikué $1 tita|Ti aikué $1 tita'etá}} nimũ piçaçú çui sinimukanhẽẽgawa yupirũgawa rupí.",
-	"translate-checks-value-not-present": "Sinimukanhẽẽgawa umurú uikú {{PLURAL:$1|1=|yepé kuá çepi'etá çui yawé:}} $1.",
+	"translate-checks-value-not-present": "Sinimukanhẽẽgawa umurú uikú {{PLURAL:$2|1=|yepé kuá çepi'etá çui yawé:}} $1.",
 	"translate-checks-replacement": "E-purú $2 ruê rupí $1 çui.",
 	"translate-checks-empty": "Sinimukanhẽẽgawa'etá taurikú ne yepé maã aé pupé ã aĩtá kuaye taurikú anhũtu mukũçawa'etá murutĩga aĩtá tau ĩti xiari'ana.",
 	"translate-pref-editassistlang": "Nhẽẽga'etá pitimũgara:",

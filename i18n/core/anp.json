@@ -82,7 +82,7 @@
 	"translate-checks-newline-missing-end": "अनुवाद केरौ अंत मँ $1 अनुपस्थित नैका-पंक्ति {{PLURAL:$1|अक्षर}} {{PLURAL:$1|छेकै}}।",
 	"translate-checks-newline-extra-start": "अनुवाद केरौ अंत मँ $1 अतिरिक्त नैका-पंक्ति {{PLURAL:$1|अक्षर}} {{PLURAL:$1|छेकै}}।",
 	"translate-checks-newline-extra-end": "अनुवाद केरौ अंत मँ $1 अनुपस्थित नैका-पंक्ति {{PLURAL:$1|अक्षर}} {{PLURAL:$1|छेकै}}।",
-	"translate-checks-value-not-present": "अनुवाद क {{PLURAL:$1|1=|एकरा मँ सँ कोय एक वैल्यू केरौ समान होय ल पड़तै:}} $1।",
+	"translate-checks-value-not-present": "अनुवाद क {{PLURAL:$2|1=|एकरा मँ सँ कोय एक वैल्यू केरौ समान होय ल पड़तै:}} $1।",
 	"translate-checks-replacement": "$2 के जगह $1 क उपयोग करौ।",
 	"translate-checks-empty": "बिन कोय सामग्री, या फिरु केवल व्हाइटस्पेस केरौ साथ अनुवादित नाय करलौ जाय सकै छै।",
 	"translate-pref-editassistlang": "सहायक भाषा सिनी:",

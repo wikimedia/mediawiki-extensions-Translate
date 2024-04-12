@@ -84,7 +84,7 @@
 	"translate-checks-newline-missing-end": "Manca $1 character{{PLURAL:$1||es}} de salto de linea al fin del traduction.",
 	"translate-checks-newline-extra-start": "Se trova $1 character{{PLURAL:$1||es}} de salto de linea in excesso al initio del traduction.",
 	"translate-checks-newline-extra-end": "Se trova $1 character{{PLURAL:$1||es}} de salto de linea in excesso al fin del traduction.",
-	"translate-checks-value-not-present": "Le traduction debe esser equal a {{PLURAL:$1|1=|un del sequente valores:}} $1.",
+	"translate-checks-value-not-present": "Le traduction debe esser equal a {{PLURAL:$2|1=|un del sequente valores:}} $1.",
 	"translate-checks-replacement": "Usa $2 in loco de $1.",
 	"translate-checks-empty": "Un traduction sin contento o con solo spatios non es permittite.",
 	"translate-pref-editassistlang": "Linguas assistente:",

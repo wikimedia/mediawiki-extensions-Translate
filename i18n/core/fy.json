@@ -88,7 +88,7 @@
 	"translate-checks-newline-missing-end": "Der {{PLURAL:$1|mist|misse}} $1 nijrigel-{{PLURAL:$1|teken|tekens}} oan 'e ein fan 'e oersetting.",
 	"translate-checks-newline-extra-start": "Der {{PLURAL:$1|is|binne}} $1 ekstra nijrigel-{{PLURAL:$1|teken|tekens}} oan it begjin fan 'e oersetting.",
 	"translate-checks-newline-extra-end": "Der {{PLURAL:$1|is|binne}} $1 ekstra nijrigel-{{PLURAL:$1|teken|tekens}} oan 'e ein fan 'e oersetting.",
-	"translate-checks-value-not-present": "De oersetting moat lyk wêze oan {{PLURAL:$1|1=|ien fan 'e neikommende wearden:}} $1.",
+	"translate-checks-value-not-present": "De oersetting moat lyk wêze oan {{PLURAL:$2|1=|ien fan 'e neikommende wearden:}} $1.",
 	"translate-checks-replacement": "Brûk $2 yn stee fan $1.",
 	"translate-checks-empty": "Oersetten sûnder ynhâld of mei inkeld wytromte is net tastien.",
 	"translate-pref-editassistlang": "Stypjende talen:",

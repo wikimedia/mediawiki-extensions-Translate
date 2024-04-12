@@ -133,7 +133,7 @@
 	"translate-checks-newline-missing-end": "在翻译的末尾缺少$1{{PLURAL:$1|个换行符}}。",
 	"translate-checks-newline-extra-start": "在翻译的开头{{PLURAL:$1|有}}$1个额外的换行符。",
 	"translate-checks-newline-extra-end": "翻译结束时{{PLURAL:$1|有}}$1个额外换行符。",
-	"translate-checks-value-not-present": "翻译必须等于{{PLURAL:$1|1=|以下值之一：}} $1。",
+	"translate-checks-value-not-present": "翻译必须等于{{PLURAL:$2|1=|以下值之一：}} $1。",
 	"translate-checks-replacement": "用$2代替$1。",
 	"translate-checks-empty": "不允许没有内容或只有空格的翻译。",
 	"translate-pref-editassistlang": "辅助语言：",

@@ -100,7 +100,7 @@
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|Terdapat}} $1 {{PLURAL:$1|karakter|karakter-karakter}} garis baru yang hilang di akhir terjemahan.",
 	"translate-checks-newline-extra-start": "{{PLURAL:$1|Terdapat}} $1 {{PLURAL:$1|karakter|karakter-karakter}} garis baru yang berlebih di awal terjemahan.",
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|Terdapat}} $1 {{PLURAL:$1|karakter|karakter-karakter}} garis baru yang berlebih di akhir terjemahan.",
-	"translate-checks-value-not-present": "Terjemahannya harus sama dengan {{PLURAL:$1|1=|salah satu dari nilai-nilai berikut:}} $1.",
+	"translate-checks-value-not-present": "Terjemahannya harus sama dengan {{PLURAL:$2|1=|salah satu dari nilai-nilai berikut:}} $1.",
 	"translate-checks-replacement": "Gunakan $2 bukannya $1.",
 	"translate-checks-empty": "Penerjemahan tanpa konten atau hanya ruang putih tidak dibolehkan.",
 	"translate-pref-editassistlang": "Bahasa penunjang:",

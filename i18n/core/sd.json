@@ -71,7 +71,7 @@
 	"translate-checks-pagename": "نانءُپولار وصف کان بدليل آھي",
 	"translate-checks-parametersnotequal": "پيراميٽر جو انگ {{PLURAL:$1|$1}} آھي؛ اھو {{PLURAL:$2|$2}} ھجڻ گهرجي.",
 	"translate-checks-fudforum-syntax": "ھن رٿا ۾ <nowiki>$2</nowiki> بجاءِ <nowiki>$1</nowiki> استعمال ڪريو.",
-	"translate-checks-value-not-present": "ھي ترجمو {{PLURAL:$1|1=|ھيٺين مان ڪنھن ھڪ قدر}} جي برابر ھجڻ گهرجي: $1",
+	"translate-checks-value-not-present": "ھي ترجمو {{PLURAL:$2|1=|ھيٺين مان ڪنھن ھڪ قدر}} جي برابر ھجڻ گهرجي: $1",
 	"translate-checks-replacement": "$1 بجاءِ $2 استعمال ڪريو",
 	"translate-checks-empty": "بغير مواد واري يا خالي ترجمي جي اجازت نہ آھي.",
 	"translate-pref-editassistlang": "مددگار ٻوليون:",

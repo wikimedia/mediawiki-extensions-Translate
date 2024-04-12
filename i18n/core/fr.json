@@ -127,7 +127,7 @@
 	"translate-checks-newline-missing-end": "Il manque $1 caractère{{PLURAL:$1||s }} de saut de ligne à la fin de la traduction.",
 	"translate-checks-newline-extra-start": "Il y a $1 caractère{{PLURAL:$1||s}} de saut de ligne en trop au début de la traduction.",
 	"translate-checks-newline-extra-end": "Il y a $1 caractère{{PLURAL:$1||s}} de saut de ligne en trop à la fin de la traduction.",
-	"translate-checks-value-not-present": "La traduction doit être égale à {{PLURAL:$1|1=|l’une des valeurs suivantes :}} $1.",
+	"translate-checks-value-not-present": "La traduction doit être égale à {{PLURAL:$2|1=|l’une des valeurs suivantes :}} $1.",
 	"translate-checks-replacement": "Utiliser $2 au lieu de $1.",
 	"translate-checks-empty": "Une traduction sans contenu ou avec seulement des espaces n’est pas autorisée.",
 	"translate-pref-editassistlang": "Langues d’assistance :",

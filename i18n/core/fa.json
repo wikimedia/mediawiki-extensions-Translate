@@ -112,7 +112,7 @@
 	"translate-checks-newline-missing-end": "$1 {{PLURAL:$1|نویسه}} خط جدید فراموش شده در انتهای ترجمه وجود {{PLURAL:$1|دارد|دارند}}.",
 	"translate-checks-newline-extra-start": "$1 {{PLURAL:$1|نویسه}} خط جدید اضافی در آغاز ترجمه وجود {{PLURAL:$1|دارد|دارند}}",
 	"translate-checks-newline-extra-end": "$1 {{PLURAL:$1|نویسه}} خط جدید فراموش شده در انتهای ترجمه وجود {{PLURAL:$1|دارد|دارند}}.",
-	"translate-checks-value-not-present": "ترجمه باید معادل با {{PLURAL:$1|۱=|یکی از مقادیر زیر:}} $1 باشد.",
+	"translate-checks-value-not-present": "ترجمه باید معادل با {{PLURAL:$2|۱=|یکی از مقادیر زیر:}} $1 باشد.",
 	"translate-checks-replacement": "به‌جای $1 از $2 استفاده کنید.",
 	"translate-checks-empty": "ترجمۀ بدون محتوا یا فقط فضای خالی مجاز نیست.",
 	"translate-pref-editassistlang": "زبان‌های دستیار:",

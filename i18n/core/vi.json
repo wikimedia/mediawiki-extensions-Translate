@@ -91,7 +91,7 @@
 	"translate-checks-newline-missing-end": "Cuối bản dịch thiếu $1 {{PLURAL:$1}}dấu ngắt dòng.",
 	"translate-checks-newline-extra-start": "Đầu bản dịch có $1 {{PLURAL:$1}}dấu ngắt dòng dư.",
 	"translate-checks-newline-extra-end": "Cuối bản dịch có $1 {{PLURAL:$1}}dấu ngắt dòng dư.",
-	"translate-checks-value-not-present": "Bản dịch phải khớp với {{PLURAL:$1|1=|một trong những giá trị sau:}} $1.",
+	"translate-checks-value-not-present": "Bản dịch phải khớp với {{PLURAL:$2|1=|một trong những giá trị sau:}} $1.",
 	"translate-checks-replacement": "Sử dụng $2 thay vì $1.",
 	"translate-checks-empty": "Không cho phép bản dịch thiếu nội dung hoặc chỉ có khoảng cách.",
 	"translate-pref-editassistlang": "Ngôn ngữ bổ trợ:",

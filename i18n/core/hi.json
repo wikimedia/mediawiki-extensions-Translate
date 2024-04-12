@@ -97,7 +97,7 @@
 	"translate-checks-newline-missing-end": "अनुवाद के अंत में $1 अनुपस्थित नई-पंक्ति {{PLURAL:$1|अक्षर}} {{PLURAL:$1|है|हैं}}।",
 	"translate-checks-newline-extra-start": "अनुवाद के शुरुआत में $1 अतिरिक्त नई-पंक्ति {{PLURAL:$1|अक्षर}} {{PLURAL:$1|है|हैं}}।",
 	"translate-checks-newline-extra-end": "अनुवाद के अंत में $1 अतिरिक्त नई-पंक्ति {{PLURAL:$1|अक्षर}} {{PLURAL:$1|है|हैं}}।",
-	"translate-checks-value-not-present": "अनुवाद को {{PLURAL:$1|1=|इनमें से किसी एक वैल्यू के समान होना पड़ेगा:}} $1।",
+	"translate-checks-value-not-present": "अनुवाद को {{PLURAL:$2|1=|इनमें से किसी एक वैल्यू के समान होना पड़ेगा:}} $1।",
 	"translate-checks-replacement": "$2 की जगह $1 का उपयोग करें।",
 	"translate-checks-empty": "बिना किसी सामग्री, या फिर सिर्फ व्हाइटस्पेस के साथ अनुवादित नहीं किया जा सकता।",
 	"translate-pref-editassistlang": "सहायक भाषाएँ:",

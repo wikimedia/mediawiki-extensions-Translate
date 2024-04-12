@@ -110,7 +110,7 @@
 	"translate-checks-newline-missing-end": "Çevirinin sonunda $1 eksik yeni satır karakter var.",
 	"translate-checks-newline-extra-start": "Çevirinin başında $1 ekstra yeni satır karakter var.",
 	"translate-checks-newline-extra-end": "Çevirinin sonunda $1 ekstra yeni satır karakter var.",
-	"translate-checks-value-not-present": "Çeviri {{PLURAL:$1|1=|şu değerlerden birine eşit olmalıdır:}} $1.",
+	"translate-checks-value-not-present": "Çeviri {{PLURAL:$2|1=|şu değerlerden birine eşit olmalıdır:}} $1.",
 	"translate-checks-replacement": "$1 yerine $2 kullanın.",
 	"translate-checks-empty": "İçeriği olmayan ya da salt boşluk içeren çevirilere izin verilmiyor.",
 	"translate-pref-editassistlang": "Yardımcı diller:",

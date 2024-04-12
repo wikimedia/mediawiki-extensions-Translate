@@ -96,7 +96,7 @@
 	"translate-checks-newline-missing-end": "{{PLURAL:$1|Адсутнічае $1 сімвал|Адсутнічаюць $1 сімвалы|Адсутнічаюць $1 сімвалаў}} новага радка ў канцы перакладу.",
 	"translate-checks-newline-extra-start": "Ёсць $1 {{PLURAL:$1|дадатковы сімвал|дадатковыя сімвалы|дадатковых сімвалаў}} новага радка ў пачатку перакладу.",
 	"translate-checks-newline-extra-end": "Ёсць $1 {{PLURAL:$1|дадатковы сімвал|дадатковыя сімвалы|дадатковых сімвалаў}} новага радка ў канцы перакладу.",
-	"translate-checks-value-not-present": "The translation must be equal to {{PLURAL:$1|1=|one of the following values:}} $1.\n\nПераклад павінен быць {{PLURAL:$1|1=роўным|роўны аднаму з наступных значэнняў:}} $1.",
+	"translate-checks-value-not-present": "The translation must be equal to {{PLURAL:$2|1=|one of the following values:}} $1.\n\nПераклад павінен быць {{PLURAL:$2|1=роўным|роўны аднаму з наступных значэнняў:}} $1.",
 	"translate-checks-replacement": "Выкарыстоўвайце $2 замест $1.",
 	"translate-checks-empty": "Пераклад без зместу або толькі с прабеламі не дапускаецца.",
 	"translate-pref-editassistlang": "Дапаможныя мовы:",
