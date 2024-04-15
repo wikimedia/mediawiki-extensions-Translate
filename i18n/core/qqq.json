@@ -402,6 +402,8 @@
 	"tux-editor-placeholder-language": "Placeholder text for the translation editor textbox if target language is not message documentation. Parameters:\n* $1 - Language name",
 	"tux-editor-editsummary-placeholder": "Placeholder text for the translation editor's edit summary box",
 	"tux-editor-paste-original-button-label": "Label for a button that pastes the text in the source language to the translation editor.",
+	"tux-editor-copy-original-button-label": "Title for a button that copies the text in the source language to the clipboard.",
+	"tux-editor-copied-original-button-label": "Title for button when text in the source language is copied",
 	"tux-editor-discard-changes-button-label": "Label for a button that discards the changes made to a translation and restores the saved version.",
 	"tux-editor-save-button-label": "Label for save translation button",
 	"tux-editor-skip-button-label": "Label for skip button",

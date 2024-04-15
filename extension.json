@@ -765,6 +765,8 @@
 				"tux-editor-outdated-notice",
 				"tux-editor-outdated-notice-diff-link",
 				"tux-editor-paste-original-button-label",
+				"tux-editor-copy-original-button-label",
+				"tux-editor-copied-original-button-label",
 				"tux-editor-placeholder-documentation",
 				"tux-editor-placeholder-language",
 				"tux-editor-editsummary-placeholder",

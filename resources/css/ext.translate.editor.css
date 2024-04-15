@@ -57,6 +57,38 @@
 	margin-right: -5px;
 }
 
+.grid .tux-message-editor .tux-editor-sourcemessage-container {
+	position: relative;
+}
+
+.grid .tux-message-editor .tux-editor-sourcemessage-container .tux-editor-copy-original-button {
+	position: absolute;
+	top: 3px;
+	right: -30px;
+	background: transparent center center no-repeat;
+	/* @embed */
+	background-image: url( ../images/copy.svg );
+	padding: 16px;
+	cursor: pointer;
+	border: 0;
+	opacity: 0;
+}
+
+.grid .tux-message-editor--expanded .tux-editor-sourcemessage-container .tux-editor-copy-original-button {
+	right: 6px;
+}
+
+.grid .tux-message-editor .tux-editor-sourcemessage-container:hover .tux-editor-copy-original-button,
+.grid .tux-message-editor .tux-editor-sourcemessage-container .tux-editor-copy-original-button:focus {
+	opacity: 1;
+}
+
+.grid .tux-message-editor .tux-editor-sourcemessage-container .tux-editor-copy-original-button.copied {
+	cursor: initial;
+	background-image: url( ../images/label-tick.svg );
+	opacity: 1;
+}
+
 .tux-message-editor textarea {
 	border: 1px solid #555;
 	font-size: 16px;

@@ -587,9 +587,34 @@
 				$sourceString.addClass( 'longer' );
 			}
 
+			var $copyOriginalButton = null;
+			if ( window.navigator.clipboard ) {
+				$copyOriginalButton = $( '<button>' )
+					.addClass( 'tux-editor-copy-original-button' )
+					.prop( 'title', mw.msg( 'tux-editor-copy-original-button-label' ) )
+					.on( 'click', function () {
+						window.navigator.clipboard.writeText( sourceString );
+						var $self = $( this );
+						$self
+							.addClass( 'copied' )
+							.prop( {
+								disabled: true,
+								title: mw.msg( 'tux-editor-copied-original-button-label' )
+							} );
+						setTimeout( function () {
+							$self
+								.prop( {
+									disabled: false,
+									title: mw.msg( 'tux-editor-copy-original-button-label' )
+								} )
+								.removeClass( 'copied' );
+						}, 2000 );
+					} );
+			}
+
 			$editorColumn.append( $( '<div>' )
-				.addClass( 'row' )
-				.append( $sourceString )
+				.addClass( 'row tux-editor-sourcemessage-container' )
+				.append( $sourceString, $copyOriginalButton )
 			);
 
 			var $notices = $( '<div>' )

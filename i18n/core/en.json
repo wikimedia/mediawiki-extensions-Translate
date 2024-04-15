@@ -364,6 +364,8 @@
 	"tux-editor-placeholder-language": "Your translation in $1",
 	"tux-editor-editsummary-placeholder": "Explain your changes (optional)",
 	"tux-editor-paste-original-button-label": "Paste source text",
+	"tux-editor-copy-original-button-label": "Copy source text",
+	"tux-editor-copied-original-button-label": "Copied!",
 	"tux-editor-discard-changes-button-label": "Discard changes",
 	"tux-editor-save-button-label": "Publish translation",
 	"tux-editor-skip-button-label": "Skip to next",
