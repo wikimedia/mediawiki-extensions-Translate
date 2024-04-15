@@ -39,7 +39,9 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
 use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
@@ -75,6 +77,7 @@ use XmlSelect;
 class HookHandler implements
 	ChangeTagsListActiveHook,
 	ListDefinedTagsHook,
+	ParserFirstCallInitHook,
 	RevisionRecordInsertedHook
 {
 	/**
@@ -88,15 +91,18 @@ class HookHandler implements
 	private RevisionLookup $revisionLookup;
 	private ILoadBalancer $loadBalancer;
 	private Config $config;
+	private LanguageNameUtils $languageNameUtils;
 
 	public function __construct(
 		RevisionLookup $revisionLookup,
 		ILoadBalancer $loadBalancer,
-		Config $config
+		Config $config,
+		LanguageNameUtils $languageNameUtils
 	) {
 		$this->revisionLookup = $revisionLookup;
 		$this->loadBalancer = $loadBalancer;
 		$this->config = $config;
+		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	/** Do late setup that depends on configuration. */
@@ -776,12 +782,11 @@ class HookHandler implements
 		return true;
 	}
 
-	/** Hook: ParserFirstCallInit */
-	public static function setupTranslateParserFunction( Parser $parser ): void {
-		$parser->setFunctionHook( 'translation', [ self::class, 'translateRenderParserFunction' ] );
+	public function onParserFirstCallInit( $parser ) {
+		$parser->setFunctionHook( 'translation', [ $this, 'translateRenderParserFunction' ] );
 	}
 
-	public static function translateRenderParserFunction( Parser $parser ): string {
+	public function translateRenderParserFunction( Parser $parser ): string {
 		$pageReference = $parser->getPage();
 		if ( !$pageReference ) {
 			return '';
@@ -789,7 +794,7 @@ class HookHandler implements
 		$linkTarget = TitleValue::newFromPage( $pageReference );
 		$handle = new MessageHandle( $linkTarget );
 		$code = $handle->getCode();
-		if ( MediaWikiServices::getInstance()->getLanguageNameUtils()->isKnownLanguageTag( $code ) ) {
+		if ( $this->languageNameUtils->isKnownLanguageTag( $code ) ) {
 			return '/' . $code;
 		}
 		return '';

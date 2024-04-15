@@ -161,7 +161,7 @@
 		"LanguageGetTranslatedLanguageNames": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"TranslateSupportedLanguages": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"ArticlePrepareTextForEdit": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disablePreSaveTransform",
-		"ParserFirstCallInit": "MediaWiki\\Extension\\Translate\\HookHandler::setupTranslateParserFunction",
+		"ParserFirstCallInit": "main",
 		"UserGetReservedNames": "MediaWiki\\Extension\\Translate\\HookHandler::onUserGetReservedNames",
 		"ParserAfterTidy": "MediaWiki\\Extension\\Translate\\HookHandler::preventCategorization",
 		"OutputPageParserOutput": "MediaWiki\\Extension\\Translate\\HookHandler::showFakeCategories",
@@ -225,7 +225,8 @@
 			"services": [
 				"RevisionLookup",
 				"DBLoadBalancer",
-				"MainConfig"
+				"MainConfig",
+				"LanguageNameUtils"
 			]
 		},
 		"legacyInterface": {
