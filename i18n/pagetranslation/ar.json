@@ -3,6 +3,7 @@
 		"authors": [
 			"Asma",
 			"Bibas",
+			"Dr-Taher",
 			"Hhaboh162002",
 			"LaMagiaaa",
 			"Meno25",
@@ -168,6 +169,7 @@
 	"pt-deletepage-any-legend": "احذف الصفحة القابلة للترجمة أو مجموعة الرسائل أو صفحة الترجمة",
 	"pt-deletepage-current": "اسم الصفحة:",
 	"pt-deletepage-reason": "السبب:",
+	"pt-deletepage-reason-details": "سبب آخر/إضافي:",
 	"pt-deletepage-reason-other": "سبب آخر",
 	"pt-deletepage-subpages": "أحذف جميع الصفحات الفرعية",
 	"pt-deletepage-list-pages": "قائمة الصفحات للحذف",

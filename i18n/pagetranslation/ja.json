@@ -39,7 +39,7 @@
 	"tpt-nosuchpage": "ページ $1 は存在しません",
 	"tpt-oldrevision": "$2 はページ [[:$1]] の最新版ではありません。\n翻訳対象に指定できるのは最新版のみです。",
 	"tpt-notsuitable": "ページ $1 は翻訳に対応していません。\nタグ $2 が含まれていて、かつ構文が正しいことを確認してください。",
-	"tpt-saveok": "ページ [[:$1]] は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。\nこのページを<span class=\"plainlinks\">[$3 翻訳]</span>できます。",
+	"tpt-saveok": "ページ [[:$1]] を翻訳対象に指定しました。$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。\nこのページを<span class=\"plainlinks\">[$3 翻訳]</span>できます。",
 	"tpt-saveok-first": "このページの[[Special:PageMigration|既存の翻訳を取り込む]]こともできます (存在する場合)。",
 	"tpt-offer-notify": "このページについて<span class=\"plainlinks\">[$1 翻訳者に通知]</span>できます。",
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|翻訳対象ページの一覧を閲覧する。]]",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
@@ -327,5 +328,6 @@
 	"translate-statsbar-tooltip": "$1% troet, $2% adwelet",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% troet, $2% adwelet, $3% dispredet",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|strollad}} ouzhpenn",
-	"specialpages-group-translation": "Troidigezh"
+	"specialpages-group-translation": "Troidigezh",
+	"translate-messagebundle-error-key-too-long": "Re hir eo an alc'hwez \"$1\""
 }
