@@ -406,7 +406,7 @@
 	"tux-editor-tm-match": "Text showing the quality of suggestion in percentage. Parameters:\n* $1 - a value less than 100\n{{Identical|Match}}",
 	"tux-notices-more": "A label for a small tab above the edit area, clicking on which shows more notices.\n* $1 - the number of additional notices that will be shown\n{{Identical|More}}",
 	"tux-notices-hide": "A label for a small tab above the notices about the edit area, clicking on which hides the notices.\n{{Identical|Hide}}",
-	"tux-editor-save-failed": "An error shown above the edit box.\n* $1 - the notice message that the API returns",
+	"tux-editor-save-failed": "An error shown above the edit box.\n\nParameters:\n* $1 - the error message as HTML, or an unordered list of error messages if there's more than one error\n* $2 - (optional) the number of errors, if you need to use PLURAL in the translation",
 	"tux-editor-n-uses": "Link text in the translation editor which tells how many times the same string was suggested as translation from the translation memory. $1 is a number.",
 	"tux-editor-message-desc-more": "{{doc-actionlink}}\nLink text for expanding long message documentation.\n\nSee also:\n* {{msg-mw|Tux-editor-message-desc-less}}\n{{Identical|View more}}",
 	"tux-editor-message-desc-less": "{{doc-actionlink}}\nLink text for collapsing long message documentation.\n\nSee also:\n* {{msg-mw|Tux-editor-message-desc-more}}",
