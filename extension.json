@@ -161,7 +161,7 @@
 		"TranslateSupportedLanguages": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"ArticlePrepareTextForEdit": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disablePreSaveTransform",
 		"ParserFirstCallInit": "main",
-		"UserGetReservedNames": "MediaWiki\\Extension\\Translate\\HookHandler::onUserGetReservedNames",
+		"UserGetReservedNames": "main",
 		"ParserAfterTidy": "MediaWiki\\Extension\\Translate\\HookHandler::preventCategorization",
 		"OutputPageParserOutput": "MediaWiki\\Extension\\Translate\\HookHandler::showFakeCategories",
 		"Translate:newTranslation": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::updateTransverTag",

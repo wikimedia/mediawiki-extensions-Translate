@@ -53,6 +53,7 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
 use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
+use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use OutputPage;
 use Parser;
 use ParserOutput;
@@ -82,7 +83,8 @@ class HookHandler implements
 	ChangeTagsListActiveHook,
 	ListDefinedTagsHook,
 	ParserFirstCallInitHook,
-	RevisionRecordInsertedHook
+	RevisionRecordInsertedHook,
+	UserGetReservedNamesHook
 {
 	/**
 	 * Any user of this list should make sure that the tables
@@ -440,12 +442,12 @@ class HookHandler implements
 	}
 
 	/**
-	 * Hook: UserGetReservedNames
 	 * Prevents anyone from registering or logging in as FuzzyBot
+	 * @inheritDoc
 	 */
-	public static function onUserGetReservedNames( array &$names ): void {
-		$names[] = FuzzyBot::getName();
-		$names[] = TranslateUserManager::getName();
+	public function onUserGetReservedNames( &$reservedUsernames ): void {
+		$reservedUsernames[] = FuzzyBot::getName();
+		$reservedUsernames[] = TranslateUserManager::getName();
 	}
 
 	/** Used for setting an AbuseFilter variable. */
