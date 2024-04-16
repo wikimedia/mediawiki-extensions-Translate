@@ -37,7 +37,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Wifidel",
-			"No se"
+			"No se",
+			"Eulalio"
 		]
 	},
 	"translate": "Traducir",
@@ -237,6 +238,7 @@
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|ediciones}}, última edición hace $3 {{PLURAL:$3|día|días}}",
 	"translate-supportedlanguages-cached": "Esta información se prealmacenó hace $1.",
 	"abusefilter-edit-builder-vars-translate-source-text": "Texto de origen de la unidad de traducción",
+	"abusefilter-edit-builder-vars-translate-target-language": "Idioma de destino para la traducción",
 	"translate-jssti-add": "Añadir a la lista",
 	"managemessagegroups": "Gestión de grupos de mensajes",
 	"translate-smg-notallowed": "No estás autorizado a ejecutar esta acción.",
