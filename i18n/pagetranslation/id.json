@@ -16,7 +16,8 @@
 			"Rex",
 			"William Surya Permana",
 			"WillsonEP09",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"MarioMS"
 		]
 	},
 	"pagetranslation": "Penerjemahan halaman",
@@ -215,7 +216,7 @@
 	"pm-import-button-label": "Impor",
 	"pm-savepages-button-label": "Simpan",
 	"pm-cancel-button-label": "Batalkan",
-	"pm-page-does-not-exist": "$1 tidak ada.",
+	"pm-page-does-not-exist": "Halaman $1 tidak ada.",
 	"pm-old-translations-missing": "$1 tidak mengandung terjemahan lama.",
 	"pm-extra-units-warning": "Mungkin ada satuan berlebih. Tolong cocokkan satuan sumber dan terjemahan dengan benar.",
 	"pm-pagename-missing": "Tolong masukkan nama halamannya.",
