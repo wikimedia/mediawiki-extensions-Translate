@@ -18,6 +18,7 @@ use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\LogFormatter as TranslateLogFormatter;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\ScribuntoHookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionHookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionNotificationJob;
@@ -420,6 +421,21 @@ class HookHandler implements
 			}
 			MessageGroupSubscriptionHookHandler::registerHooks( $hooks );
 			$wgJobClasses['MessageGroupSubscriptionNotificationJob'] = MessageGroupSubscriptionNotificationJob::class;
+		}
+
+		global $wgTranslateEnableLuaIntegration;
+		if ( $wgTranslateEnableLuaIntegration ) {
+			if ( ExtensionRegistry::getInstance()->isLoaded( 'Scribunto' ) ) {
+				$hooks[ 'ScribuntoExternalLibraries' ][] = static function ( string $engine, array &$extraLibraries ) {
+					$scribuntoHookHandler = new ScribuntoHookHandler();
+					$scribuntoHookHandler->onScribuntoExternalLibraries( $engine, $extraLibraries );
+				};
+			} else {
+				wfLogWarning(
+					'Translate: Lua integration (TranslateEnableLuaIntegration) is ' .
+					'enabled but Scribunto extension is not installed'
+				);
+			}
 		}
 
 		static::registerHookHandlers( $hooks );
