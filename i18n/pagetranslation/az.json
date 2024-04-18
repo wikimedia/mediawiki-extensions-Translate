@@ -70,5 +70,6 @@
 	"pt-movepage-new": "Yeni ad:",
 	"pt-movepage-reason": "Səbəb:",
 	"pt-deletepage-current": "Səhifə adı:",
-	"pt-deletepage-reason": "Səbəb:"
+	"pt-deletepage-reason": "Səbəb:",
+	"pm-page-does-not-exist": "$1 səhifəsi mövcud deyil."
 }
