@@ -35,6 +35,7 @@
 	"apihelp-query+messagetranslations-summary": "Interroga tutte le traduzioni per un singolo messaggio.",
 	"apihelp-query+messagetranslations-param-title": "Titolo completo di un messaggio conosciuto.",
 	"apihelp-managemessagegroups-param-groupId": "ID gruppo. Vedi <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-messagegroupsubscription-param-operation": "L'operazione da eseguire.",
 	"apihelp-translatesandbox-param-do": "Che cosa fare.",
 	"apihelp-translationaids-param-title": "Titolo completo di un messaggio conosciuto.",
 	"apihelp-translationstash-param-subaction": "Azione.",

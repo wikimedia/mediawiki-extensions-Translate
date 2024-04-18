@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bergerdias"
+		]
+	},
+	"apihelp-query+messagegroups-paramvalue-prop-subscription": "Yo vanda kana muntu yina ke sadila yo kele na kati ya kimvuka.",
+	"apihelp-messagegroupsubscription-summary": "Bisalu ya ke wakana ti kimvuka ya bansangu",
+	"apierror-translate-messagegroupsubscription-disabled": "Bo ke pesaka nzila na kusonika na kilvuka ya bansangu yandi ikele ve"
+}
