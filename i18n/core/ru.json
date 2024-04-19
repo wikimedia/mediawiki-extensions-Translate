@@ -389,6 +389,8 @@
 	"tux-languageselector": "Переводить на",
 	"tux-select-target-language": "Целевой язык для перевода",
 	"tux-watch-group": "Отслеживать «$1»",
+	"tux-unwatch-group": "Хватит смотреть $1",
+	"tux-subscription-error": "Не удалось обновить список наблюдения группы сообщений.",
 	"tux-tab-all": "Все",
 	"tux-tab-untranslated": "Непереведённые",
 	"tux-tab-outdated": "Устаревшие",

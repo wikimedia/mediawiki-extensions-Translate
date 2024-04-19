@@ -128,6 +128,7 @@
 	"tux-editor-latest-updates-title": "Соңку түзөтүүлөр",
 	"tux-editor-changes-without-summary": "түшүндүрмөсү жок $1 {{PLURAL:$1|түзөтүү}}",
 	"tux-editor-all-changes": "Бардык түзөтүүлөр",
+	"tux-editor-in-other-languages": "Башка тилдерде",
 	"tux-editor-clear-translated": "Которулгандарды жашыруу",
 	"tux-editor-translate-mode": "Тизме",
 	"tux-proofread-edit-label": "Түзөтүү",

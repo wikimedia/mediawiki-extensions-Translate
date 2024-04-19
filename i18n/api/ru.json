@@ -46,6 +46,7 @@
 	"apihelp-query+messagecollection-example-4": "Больше информации о последних версиях перевода для группы «page-Example»",
 	"apihelp-query+messagegroups-summary": "Получить информацию о группах сообщений.",
 	"apihelp-query+messagegroups-extended-description": "Учтите, что параметр uselang влияет на вывод языкозависимых частей.",
+	"apihelp-query+messagegroups-paramvalue-prop-subscription": "Укажите, подписан ли пользователь на группу.",
 	"apihelp-query+messagegroups-example-1": "Показать группы сообщений",
 	"apihelp-query+messagegroupstats-summary": "Запросить статистику группы сообщений.",
 	"apihelp-query+messagegroupstats-param-group": "ID группы сообщений. См. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
@@ -54,6 +55,8 @@
 	"apihelp-query+messagetranslations-example-1": "Список переводов в вики для «MediaWiki:January»",
 	"apihelp-managemessagegroups-param-groupId": "Идентификатор группы. См. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-managemessagegroups-param-changesetName": "Сохранить имя - По умолчанию/ Автоматически/ МедиаВики и т.д.",
+	"apihelp-messagegroupsubscription-summary": "Операции, связанные с подпиской на группу сообщений",
+	"apihelp-messagegroupsubscription-param-groupId": "Идентификатор группы, в которой следует искать строку. См. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-messagegroupsubscription-param-operation": "Операция, которую необходимо выполнить.",
 	"apihelp-translatesandbox-summary": "Зарегистрировать и управлять пользователями в песочнице.",
 	"apihelp-translatesandbox-param-do": "Что делать.",
@@ -89,5 +92,7 @@
 	"apierror-translate-owntranslation": "Не может проверять собственные переводы",
 	"apierror-translate-sandboxdisabled": "Функция песочницы не используется.",
 	"apierror-translate-unknownmessage": "Неизвестное сообщение",
+	"apierror-translate-messagegroupsubscription-disabled": "Подписка на группу сообщений не включена",
+	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Просмотр динамических групп сообщений не поддерживается.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Уже отмечены как просмотренные Вами"
 }
