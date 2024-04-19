@@ -288,6 +288,7 @@
 
 	/**
 	 * Display error message to the user
+	 *
 	 * @param {string} errorMessage Error message to display to the user
 	 */
 	function displayError( errorMessage ) {
@@ -303,6 +304,7 @@
 
 	/**
 	 * Failure callback method for the prepare step
+	 *
 	 * @param {string} errorMessage Error message to display to the user
 	 */
 	function onPrepareFailure( errorMessage ) {
