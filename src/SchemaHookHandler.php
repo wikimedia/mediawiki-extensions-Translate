@@ -61,17 +61,6 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 				"{$dir}/{$dbType}/translate_message_group_subscriptions.sql"
 			);
 
-			// 1.32 - This also adds a PRIMARY KEY
-			$updater->addExtensionUpdate( [
-				'renameIndex',
-				'translate_reviews',
-				'trr_user_page_revision',
-				'PRIMARY',
-				false,
-				"$dir/translate_reviews-patch-01-primary-key.sql",
-				true
-			] );
-
 			$updater->addExtensionTable(
 				'translate_cache',
 				"{$dir}/{$dbType}/translate_cache.sql"
