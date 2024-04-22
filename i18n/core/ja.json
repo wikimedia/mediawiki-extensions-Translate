@@ -29,7 +29,8 @@
 			"青子守歌",
 			"아라",
 			"もなー(偽物)",
-			"Ant176"
+			"Ant176",
+			"Waki285"
 		]
 	},
 	"translate": "翻訳",
@@ -39,6 +40,7 @@
 	"translate-taskui-export-to-file": "ネイティブ形式で書き出し",
 	"translate-taskui-export-as-po": "オフライン翻訳のために書き出し",
 	"translate-taskui-export-as-csv": "CSV形式で書き出し",
+	"translate-export-csv-message-title": "翻訳メッセージタイトル",
 	"translate-export-csv-definition": "メッセージ定義",
 	"translate-taction-translate": "翻訳",
 	"translate-taction-proofread": "査読",
