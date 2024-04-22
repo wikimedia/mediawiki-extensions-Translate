@@ -28,11 +28,13 @@ class MessageBundleLuaLibrary extends LibraryBase {
 	}
 
 	public function getMessageBundleTranslations( string $messageBundleTitle, string $languageCode ): array {
-		// TODO: Actually load the translation
-		return [ [
-			'title' => $messageBundleTitle,
-			'code' => $languageCode,
-			'test' => 'pewpew'
-		] ];
+		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
+		$messageBundle = new MessageBundle( $titleFactory->newFromText( $messageBundleTitle ) );
+		$messageBundleTranslationLoader = new MessageBundleTranslationLoader();
+		if ( !MessageBundle::isSourcePage( $messageBundle->getTitle() ) ) {
+			throw new LuaError( "Message bundle with title $messageBundleTitle not found" );
+		}
+
+		return [ $messageBundleTranslationLoader->get( $messageBundle, $languageCode ) ];
 	}
 }
