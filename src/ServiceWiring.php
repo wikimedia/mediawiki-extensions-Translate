@@ -39,6 +39,7 @@ use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivityQuery;
+use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateComparator;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
@@ -48,6 +49,7 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
+use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -70,6 +72,16 @@ return [
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getTitleParser(),
 			$services->getTitleFormatter()
+		);
+	},
+
+	'Translate:ExternalMessageSourceStateComparator' => static function (
+		MediaWikiServices $services
+	): ExternalMessageSourceStateComparator {
+		return new ExternalMessageSourceStateComparator(
+			new SimpleStringComparator(),
+			$services->getRevisionLookup(),
+			$services->getPageStore()
 		);
 	},
 

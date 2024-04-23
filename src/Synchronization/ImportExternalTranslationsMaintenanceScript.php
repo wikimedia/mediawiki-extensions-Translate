@@ -9,7 +9,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
-use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MessageChangeStorage;
 use MessageGroup;
 use SpecialPage;
@@ -65,11 +64,7 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 
 		$groups = $this->getGroups();
 		$changes = [];
-		$comparator = new ExternalMessageSourceStateComparator(
-			new SimpleStringComparator(),
-			$this->getServiceContainer()->getRevisionLookup(),
-			$this->getServiceContainer()->getPageStore()
-		);
+		$comparator = Services::getInstance()->getExternalMessageSourceStateComparator();
 
 		$importStrategy = $this->getImportStrategy();
 		$skipGroupSyncCache = $this->hasOption( 'skip-group-sync-check' );

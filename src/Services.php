@@ -26,6 +26,7 @@ use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\TranslationStatsDataProvider;
 use MediaWiki\Extension\Translate\Statistics\TranslatorActivity;
+use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateComparator;
 use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateImporter;
 use MediaWiki\Extension\Translate\Synchronization\GroupSynchronizationCache;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
@@ -80,6 +81,10 @@ class Services implements ContainerInterface {
 	/** @since 2021.10 */
 	public function getEntitySearch(): EntitySearch {
 		return $this->get( 'Translate:EntitySearch' );
+	}
+
+	public function getExternalMessageSourceStateComparator(): ExternalMessageSourceStateComparator {
+		return $this->get( 'Translate:ExternalMessageSourceStateComparator' );
 	}
 
 	public function getExternalMessageSourceStateImporter(): ExternalMessageSourceStateImporter {
