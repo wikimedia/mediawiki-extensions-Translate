@@ -146,6 +146,9 @@
 	"translate-stats-workflow": "স্থিতি",
 	"translate-dynagroup-recent-label": "শেহতীয়া ভাঙনিসমূহ",
 	"tux-languageselector": "অনুবাদ কৰক:",
+	"tux-status-proofread": "পুনৰীক্ষণ কৰা হ’ল",
 	"tux-editor-placeholder-language": "$1 ভাষাত আপোনাৰ অনুবাদ",
-	"tux-editor-proofreading-mode": "পুনঃৰীক্ষণ"
+	"tux-editor-proofread-button-label": "পুনৰীক্ষিত বুলি চিহ্নিত কৰক",
+	"tux-editor-proofreading-mode": "পুনঃৰীক্ষণ",
+	"tux-proofread-action-tooltip": "পুনৰীক্ষিত বুলি চিহ্নিত কৰক"
 }
