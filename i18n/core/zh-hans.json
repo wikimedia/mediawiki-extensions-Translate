@@ -49,6 +49,7 @@
 			"Zazzzz",
 			"乌拉跨氪",
 			"列维劳德",
+			"沈澄心",
 			"铁桶"
 		]
 	},
@@ -150,6 +151,7 @@
 	"action-translate-messagereview": "复核翻译",
 	"right-translate-groupreview": "更改消息组工作流状态",
 	"action-translate-groupreview": "更改消息组工作流状态",
+	"action-translate-watch-message-group": "监视消息组",
 	"translate-rcfilters-translations": "翻译",
 	"translate-rcfilters-translations-only-label": "翻译命名空间",
 	"translate-rcfilters-translations-only-desc": "提交至消息组的翻译。",
@@ -383,6 +385,9 @@
 	"translate-msggroupselector-view-subprojects": "$1{{PLURAL:$1|个子消息组}}",
 	"tux-languageselector": "翻译为",
 	"tux-select-target-language": "翻译目标语言",
+	"tux-watch-group": "监视$1",
+	"tux-unwatch-group": "停止监视$1",
+	"tux-subscription-error": "无法更新消息组监视列表",
 	"tux-tab-all": "所有",
 	"tux-tab-untranslated": "未翻译",
 	"tux-tab-outdated": "已过时",

@@ -458,5 +458,12 @@
 	"log-action-filter-translationreview-group": "Cambiamentos in le stato del progresso de traductiones",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|ha importate}} un gruppo de messages traducibile $3",
 	"log-action-filter-import-translatable-bundle": "Importation de gruppos de messages traducibile",
-	"translate-hidetranslations": "Celar paginas de traduction"
+	"translate-hidetranslations": "Celar paginas de traduction",
+	"echo-category-title-translate-message-group-subscription": "Subscriptiones de gruppo de message traducibile",
+	"echo-pref-tooltip-translate-message-group-subscription": "Notificar me sur le cambiamentos in le gruppos de messages traducibile al quales io es subscribite",
+	"notification-bundle-header-message-group-subscription": "Actualisationes de traduction in $1 gruppo{{PLURAL:$1||s}} de messages subscribite",
+	"notification-header-message-group-subscription": "Il ha actualisationes de traduction pro $1",
+	"notification-compact-header-translate-mgs-message-added-removed": "Message{{PLURAL:$2||s}} nove o removite in $1",
+	"notification-body-translate-mgs-message-added-removed": "$1 message{{PLURAL:$1||s}} addite e $2 removite",
+	"notification-link-mgs-group-translate": "Traducer $1"
 }

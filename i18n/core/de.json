@@ -482,5 +482,11 @@
 	"log-action-filter-translationreview-group": "Änderungen des Stands des Übersetzungsprozesses",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importierte}} ein übersetzbares Bundle $3",
 	"log-action-filter-import-translatable-bundle": "Übersetzbarer Bundle-Import",
-	"translate-hidetranslations": "Übersetzungsseiten ausblenden"
+	"translate-hidetranslations": "Übersetzungsseiten ausblenden",
+	"echo-category-title-translate-message-group-subscription": "Übersetzbare Nachrichtengruppenabonnements",
+	"echo-pref-tooltip-translate-message-group-subscription": "Benachrichtige mich über Änderungen in übersetzbaren Nachrichtengruppen, die ich abonniert habe",
+	"notification-header-message-group-subscription": "Es gibt Übersetzungsaktualisierungen für $1",
+	"notification-compact-header-translate-mgs-message-added-removed": "Neue oder entfernte {{PLURAL:$2|Nachricht|Nachrichten}} in $1",
+	"notification-body-translate-mgs-message-added-removed": "$1 hinzugefügt und $2 {{PLURAL:$2|Nachricht|Nachrichten}} entfernt",
+	"notification-link-mgs-group-translate": "Übersetzen $1"
 }

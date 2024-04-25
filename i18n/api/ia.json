@@ -180,6 +180,7 @@
 	"apierror-translate-operation-error": "Occurreva un error durante le tractamento del requesta. Error: $1",
 	"apihelp-translationentitysearch-summary": "Cercar messages e gruppos de messages",
 	"apihelp-translationentitysearch-param-entitytype": "Le typo de entitate que se consulta",
+	"apihelp-translationentitysearch-param-grouptypes": "Typo(s) de gruppo per le qual(es) filtrar",
 	"apihelp-translationentitysearch-param-query": "Consulta de recerca",
 	"apihelp-translationentitysearch-param-limit": "Numero maxime de resultatos del recerca"
 }
