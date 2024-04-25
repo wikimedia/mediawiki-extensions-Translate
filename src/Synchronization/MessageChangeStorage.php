@@ -1,32 +1,33 @@
 <?php
-/**
- * Handles storage / retrieval of data from message change files.
- *
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- * @since 2016.02
- * @file
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use Cdb\Reader;
+use Cdb\Writer;
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
+/**
+ * Handles storage / retrieval of data from message change files.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
+ */
 class MessageChangeStorage {
 	public const DEFAULT_NAME = 'default';
 
 	/**
 	 * Writes change array as a serialized file.
-	 *
 	 * @param MessageSourceChange[] $changes Array of changes as returned by processGroup
 	 * indexed by message group id.
 	 * @param string $file Which file to use.
 	 */
-	public static function writeChanges( array $changes, $file ) {
-		$cache = \Cdb\Writer::open( $file );
+	public static function writeChanges( array $changes, string $file ): void {
+		$cache = Writer::open( $file );
 		$keys = array_keys( $changes );
 		$cache->set( '#keys', Utilities::serialize( $keys ) );
 
-		/** @var MessageSourceChange $change */
 		foreach ( $changes as $key => $change ) {
 			$value = Utilities::serialize( $change->getAllModifications() );
 			$cache->set( $key, $value );
@@ -34,33 +35,17 @@ class MessageChangeStorage {
 		$cache->close();
 	}
 
-	/**
-	 * Validate a name.
-	 *
-	 * @param string $name Which file to use.
-	 * @return bool
-	 */
-	public static function isValidCdbName( $name ) {
-		return preg_match( '/^[a-z_-]{1,100}$/i', $name );
+	/** Validate a file name. */
+	public static function isValidCdbName( string $fileName ): bool {
+		return (bool)preg_match( '/^[a-z_-]{1,100}$/i', $fileName );
 	}
 
-	/**
-	 * Get a full path to file in a known location.
-	 *
-	 * @param string $name Which file to use.
-	 * @return string
-	 */
-	public static function getCdbPath( $name ) {
-		return Utilities::cacheFile( "messagechanges.$name.cdb" );
+	/** Get a full path to file in a known location. */
+	public static function getCdbPath( string $fileName ): string {
+		return Utilities::cacheFile( "messagechanges.$fileName.cdb" );
 	}
 
-	/**
-	 * Fetches changes for a group from the message change file.
-	 * @param string $cdbPath Path of the cdb file.
-	 * @param string $groupId
-	 * @return MessageSourceChange
-	 */
-	public static function getGroupChanges( $cdbPath, $groupId ) {
+	public static function getGroupChanges( string $cdbPath, string $groupId ): MessageSourceChange {
 		$reader = self::getCdbReader( $cdbPath );
 		if ( $reader === null ) {
 			return MessageSourceChange::loadModifications( [] );
@@ -79,13 +64,14 @@ class MessageChangeStorage {
 	}
 
 	/**
-	 * Writes changes for a group. Has to read the changes first from the file,
+	 * Writes changes for a group. Has to read the changes first from the file
 	 * and then re-write them to the file.
-	 * @param MessageSourceChange $changes
-	 * @param string $groupId
-	 * @param string $cdbPath Path of the cdb file.
 	 */
-	public static function writeGroupChanges( MessageSourceChange $changes, $groupId, $cdbPath ) {
+	public static function writeGroupChanges(
+		MessageSourceChange $changes,
+		string $groupId,
+		string $cdbPath
+	): void {
 		$reader = self::getCdbReader( $cdbPath );
 		if ( $reader === null ) {
 			return;
@@ -104,27 +90,21 @@ class MessageChangeStorage {
 		self::writeChanges( $allChanges, $cdbPath );
 	}
 
-	/**
-	 * Validate and return a reader reference to the CDB file
-	 * @param string $cdbPath
-	 * @return \Cdb\Reader|null
-	 */
-	private static function getCdbReader( $cdbPath ) {
+	/** Validate and return a reader reference to the CDB file */
+	private static function getCdbReader( string $cdbPath ): ?Reader {
 		// File not found, probably no changes.
 		if ( !file_exists( $cdbPath ) ) {
 			return null;
 		}
 
-		return \Cdb\Reader::open( $cdbPath );
+		return Reader::open( $cdbPath );
 	}
 
 	/**
 	 * Gets the last modified time for the CDB file.
-	 *
-	 * @param string $cdbPath
-	 * @return int time of last modification (Unix timestamp)
+	 * @return int|null time of last modification (Unix timestamp)
 	 */
-	public static function getLastModifiedTime( $cdbPath ) {
+	public static function getLastModifiedTime( string $cdbPath ): ?int {
 		// File not found
 		if ( !file_exists( $cdbPath ) ) {
 			return null;
@@ -135,19 +115,14 @@ class MessageChangeStorage {
 		return $stat['mtime'];
 	}
 
-	/**
-	 * Checks if the CDB file has been modified since the time given.
-	 * @param string $cdbPath
-	 * @param int $time Unix timestamp
-	 * @return bool
-	 */
-	public static function isModifiedSince( $cdbPath, $time ) {
+	/** Checks if the CDB file has been modified since the time given. */
+	public static function isModifiedSince( string $cdbPath, int $unixTimestamp ): bool {
 		$lastModifiedTime = self::getLastModifiedTime( $cdbPath );
 
 		if ( $lastModifiedTime === null ) {
 			throw new InvalidArgumentException( "CDB file not found - $cdbPath" );
 		}
 
-		return $lastModifiedTime <= $time;
+		return $lastModifiedTime <= $unixTimestamp;
 	}
 }

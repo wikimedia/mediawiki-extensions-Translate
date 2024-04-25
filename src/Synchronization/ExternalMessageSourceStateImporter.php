@@ -17,7 +17,6 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Language\RawMessage;
-use MessageChangeStorage;
 use MessageGroup;
 use MessageUpdateJob;
 use Psr\Log\LoggerInterface;

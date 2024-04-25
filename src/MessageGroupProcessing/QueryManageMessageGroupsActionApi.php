@@ -6,10 +6,10 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\EditDistanceStringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Title\Title;
-use MessageChangeStorage;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

@@ -90,7 +90,6 @@
 		"JsonFFS": "src/FileFormatSupport/JsonFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\JsonFormat": "src/FileFormatSupport/JsonFormat.php",
 		"MediaWikiExtensionMessageGroup": "messagegroups/MediaWikiExtensionMessageGroup.php",
-		"MessageChangeStorage": "utils/MessageChangeStorage.php",
 		"MessageGroup": "messagegroups/MessageGroup.php",
 		"MessageGroupBase": "messagegroups/MessageGroupBase.php",
 		"MessageGroupLoader": "messagegroups/loaders/MessageGroupLoader.php",

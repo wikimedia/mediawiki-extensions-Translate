@@ -7,10 +7,10 @@ use ApiBase;
 use Exception;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Title\Title;
-use MessageChangeStorage;
 use MessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 

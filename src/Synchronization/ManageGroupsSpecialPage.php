@@ -23,7 +23,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use MessageChangeStorage;
 use MessageGroup;
 use MessageUpdateJob;
 use NamespaceInfo;
