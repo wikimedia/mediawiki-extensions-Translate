@@ -29,6 +29,7 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 			Page 2
 			Page Page Page Page
 			page page page page
+			foo Page
 			EOF;
 		$data = explode( "\n", $data );
 		$stubGroups = [];
@@ -93,6 +94,10 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 				[
 					'label' => 'Page Page Page Page',
 					'group' => 'page-Page Page Page Page',
+				],
+				[
+					'label' => 'foo Page',
+					'group' => 'page-foo Page'
 				],
 				[
 					'label' => 'Translatable page',

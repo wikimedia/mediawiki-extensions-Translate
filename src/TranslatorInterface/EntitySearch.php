@@ -109,7 +109,7 @@ class EntitySearch {
 			: $anything;
 
 		// Prefix match
-		$pattern = "/^$groupTypeFilter$delimiter($query$anything+)$delimiter($anything)$/miu";
+		$pattern = "/^$groupTypeFilter$delimiter($query$anything*)$delimiter($anything+)$/miu";
 		preg_match_all( $pattern, $haystack, $matches, PREG_SET_ORDER );
 		foreach ( $matches as [ , $label, $groupId ] ) {
 			// Index by $groupId to avoid duplicates from the prefix match and the word match
