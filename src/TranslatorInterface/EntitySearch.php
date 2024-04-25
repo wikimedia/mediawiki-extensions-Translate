@@ -302,10 +302,6 @@ class EntitySearch {
 
 	/** @return array<string,string> */
 	public function getGroupTypes(): array {
-		$types = [];
-		foreach ( self::TYPE_MAPPING as $value ) {
-			$types[$value[0]] = $value[1];
-		}
-		return $types;
+		return array_column( self::TYPE_MAPPING, 1, 0 );
 	}
 }
