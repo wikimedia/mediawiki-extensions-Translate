@@ -1,0 +1,24 @@
+== Translate 2024.04 ==
+Released at 2024-04-25.
+
+=== Noteworthy changes ===
+* Method <code>wfAddNamespace</code> has been deprecated and will be removed in the next MLEB release.
+* Implement a minimal prototype for watching message groups. In this early phase, the implementation notifies users about new or deleted messages in the messages groups that they are watching. ({{phab|T348501}})
+** Requires the [[Extension:Echo|Echo extension]]
+** Requires MW >= 1.41
+** Set <code>$wgTranslateEnableMessageGroupSubscription = true;</code> to enable the functionality.
+* Show priority language warnings even for discouraged pages ({{phab|T362386}})
+* Improve handling of save errors in the Special:Translate interface ({{phab|T360447}})
+* Allow enforcing empty priority languages on translatable pages ({{phab|T359975}})
+* Allow discouraged groups to be exported ({{phab|T361368}})
+* Filter out translation pages from Special:LonelyPages ({{phab|T230456}})
+* Use Codex components in Special:PagePreparation ({{phab|T348516}})
+* Fix: PageMigration maps translation units incorrectly ({{phab|T344827}})
+* Stop translation of message bundle based on prioritylangs and priorityforce ({{phab|T350652}})
+* Address contrast issues in night mode ({{phab|T358822}})
+* Update import translatable bundle maintenance script to import metadata and automatically mark a page for translation after import. ({{phab|T347155}})
+** Read [https://www.mediawiki.org/wiki/User:APatro_(WMF)/Move_translatable_bundles_across_wiki Move translatable bundles across wiki] for more information on this script.
+* Add magic word to embed the translation language outside of translation units ({{phab|T224810}})
+* Fix: <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to go to the next message doesn’t work in edit summary field ({{phab|T334354}})
+* Add functionality to hide translations to Special:PrefixIndex ({{phab|T299308}})
+* Other localisation and maintenance updates.
