@@ -19,6 +19,8 @@ use MessageGroup;
 use MessageIndexRebuildJob;
 use Psr\Log\LoggerInterface;
 use WANObjectCache;
+use Wikimedia\Rdbms\ILoadBalancer;
+use const DB_PRIMARY;
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
@@ -43,6 +45,7 @@ abstract class MessageIndex {
 	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
 	private MessageGroupSubscription $messageGroupSubscription;
+	private ILoadBalancer $loadBalancer;
 	private array $translateMessageNamespaces;
 
 	public function __construct() {
@@ -56,6 +59,7 @@ abstract class MessageIndex {
 		$this->logger = LoggerFactory::getInstance( 'Translate' );
 		$this->interimCache = $mwInstance->getMainObjectStash();
 		$this->messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
+		$this->loadBalancer = $mwInstance->getDBLoadBalancer();
 	}
 
 	/** Converts page name and namespace to message index format. */
@@ -153,11 +157,31 @@ abstract class MessageIndex {
 
 	abstract protected function store( array $array, array $diff );
 
-	protected function lock(): bool {
-		return true;
+	private function lock(): bool {
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+
+		// Any transaction should be flushed after getting the lock to avoid
+		// stale pre-lock REPEATABLE-READ snapshot data.
+		$ok = $dbw->lock( 'translate-messageindex', __METHOD__, 5 );
+		if ( $ok ) {
+			$dbw->commit( __METHOD__, 'flush' );
+		}
+
+		return $ok;
 	}
 
-	protected function unlock(): bool {
+	private function unlock(): bool {
+		$fname = __METHOD__;
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		// Unlock once the rows are actually unlocked to avoid deadlocks
+		if ( !$dbw->trxLevel() ) {
+			$dbw->unlock( 'translate-messageindex', $fname );
+		} else {
+			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
+				$dbw->unlock( 'translate-messageindex', $fname );
+			}, $fname );
+		}
+
 		return true;
 	}
 

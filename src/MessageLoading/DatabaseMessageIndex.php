@@ -24,34 +24,6 @@ class DatabaseMessageIndex extends MessageIndex {
 		$this->loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
 	}
 
-	protected function lock(): bool {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
-
-		// Any transaction should be flushed after getting the lock to avoid
-		// stale pre-lock REPEATABLE-READ snapshot data.
-		$ok = $dbw->lock( 'translate-messageindex', __METHOD__, 5 );
-		if ( $ok ) {
-			$dbw->commit( __METHOD__, 'flush' );
-		}
-
-		return $ok;
-	}
-
-	protected function unlock(): bool {
-		$fname = __METHOD__;
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
-		// Unlock once the rows are actually unlocked to avoid deadlocks
-		if ( !$dbw->trxLevel() ) {
-			$dbw->unlock( 'translate-messageindex', $fname );
-		} else {
-			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
-				$dbw->unlock( 'translate-messageindex', $fname );
-			}, $fname );
-		}
-
-		return true;
-	}
-
 	public function retrieve( bool $readLatest = false ): array {
 		if ( $this->index !== null && !$readLatest ) {
 			return $this->index;
