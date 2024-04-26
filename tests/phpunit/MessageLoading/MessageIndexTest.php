@@ -221,7 +221,7 @@ class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
 		parent::store( $array, $diff );
 	}
 
-	public function get( $key ) {
+	public function get( string $key ) {
 		return parent::get( $key );
 	}
 }
@@ -231,8 +231,8 @@ class TestableCDBMessageIndex extends CDBMessageIndex {
 		parent::store( $a, $diff );
 	}
 
-	public function get( $a ) {
-		return parent::get( $a );
+	public function get( string $key ) {
+		return parent::get( $key );
 	}
 }
 
@@ -241,7 +241,7 @@ class TestableSerializedMessageIndex extends SerializedMessageIndex {
 		parent::store( $array, $diff );
 	}
 
-	public function get( $key ) {
+	public function get( string $key ) {
 		return parent::get( $key );
 	}
 }
@@ -251,7 +251,7 @@ class TestableHashMessageIndex extends HashMessageIndex {
 		parent::store( $array, $diff );
 	}
 
-	public function get( $key ) {
+	public function get( string $key ) {
 		return parent::get( $key );
 	}
 }

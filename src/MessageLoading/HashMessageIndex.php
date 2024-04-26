@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 /** Storage on hash. For testing. */
-class HashMessageIndex extends MessageIndex {
+class HashMessageIndex extends MessageIndexStore {
 	private array $index = [];
 
 	public function retrieve( bool $readLatest = false ): array {
@@ -12,12 +12,12 @@ class HashMessageIndex extends MessageIndex {
 	}
 
 	/** @inheritDoc */
-	protected function get( $key ) {
+	public function get( string $key ) {
 		return $this->index[$key] ?? null;
 	}
 
 	/** @inheritDoc */
-	protected function store( array $array, array $diff ): void {
+	public function store( array $array, array $diff ): void {
 		$this->index = $array;
 	}
 }

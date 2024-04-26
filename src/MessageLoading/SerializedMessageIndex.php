@@ -19,7 +19,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * need to look up only few keys, it is better to use another backend
  * which provides random access - this backend doesn't support that.
  */
-class SerializedMessageIndex extends MessageIndex {
+class SerializedMessageIndex extends MessageIndexStore {
 	private ?array $index = null;
 	private const FILENAME = 'translate_messageindex.ser';
 
@@ -32,13 +32,13 @@ class SerializedMessageIndex extends MessageIndex {
 		if ( file_exists( $file ) ) {
 			$this->index = unserialize( file_get_contents( $file ) );
 		} else {
-			$this->index = $this->rebuild();
+			$this->index = [];
 		}
 
 		return $this->index;
 	}
 
-	protected function store( array $array, array $diff ): void {
+	public function store( array $array, array $diff ): void {
 		$file = Utilities::cacheFile( self::FILENAME );
 		file_put_contents( $file, serialize( $array ) );
 		$this->index = $array;

@@ -28,7 +28,11 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\MessageLoading\CDBMessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\DatabaseMessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndexStore;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleDeleter;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -205,18 +209,23 @@ return [
 	},
 
 	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {
-		$params = $services->getMainConfig()->get( 'TranslateMessageIndex' );
-		if ( is_string( $params ) ) {
-			$params = (array)$params;
-		}
-
+		$params = (array)$services->getMainConfig()->get( 'TranslateMessageIndex' );
 		$class = array_shift( $params );
 
-		if ( !class_exists( $class ) ) {
-			$class = "MediaWiki\\Extension\\Translate\\MessageLoading\\$class";
-		}
+		$implementationMap = [
+			// Aliases for BC
+			'HashMessageIndex' => HashMessageIndex::class,
+			'CDBMessageIndex' => CDBMessageIndex::class,
+			'DatabaseMessageIndex' => DatabaseMessageIndex::class,
+			// Recommended values
+			'hash' => HashMessageIndex::class,
+			'cdb' => CDBMessageIndex::class,
+			'database' => DatabaseMessageIndex::class,
+		];
 
-		return new $class( $params );
+		/** @var MessageIndexStore $store */
+		$messageIndexStoreClass = $implementationMap[$class] ?? $implementationMap['database'];
+		return new MessageIndex( new $messageIndexStoreClass );
 	},
 
 	'Translate:MessagePrefixStats' => static function ( MediaWikiServices $services ): MessagePrefixStats {

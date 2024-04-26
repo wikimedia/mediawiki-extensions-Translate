@@ -57,7 +57,7 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 			$mediaWikiServices->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
 			$this->getMessageGroupFactoryStub(),
 			$mediaWikiServices->getNamespaceInfo(),
-			new HashMessageIndex(),
+			new MessageIndex( new HashMessageIndex() ),
 			$mediaWikiServices->getTitleFormatter(),
 			$mediaWikiServices->getTitleParser()
 		);

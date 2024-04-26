@@ -15,12 +15,11 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * which is the reason this is the default backend. It also works well
  * on multi-server setup without needing for shared file storage.
  */
-class DatabaseMessageIndex extends MessageIndex {
+class DatabaseMessageIndex extends MessageIndexStore {
 	private ?array $index = null;
 	private ILoadBalancer $loadBalancer;
 
 	public function __construct() {
-		parent::__construct();
 		$this->loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
 	}
 
@@ -44,7 +43,7 @@ class DatabaseMessageIndex extends MessageIndex {
 	}
 
 	/** @inheritDoc */
-	protected function get( $key ) {
+	public function get( string $key ) {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$value = $dbr->newSelectQueryBuilder()
 			->select( 'tmi_value' )
@@ -56,7 +55,7 @@ class DatabaseMessageIndex extends MessageIndex {
 		return is_string( $value ) ? $this->unserialize( $value ) : null;
 	}
 
-	protected function store( array $array, array $diff ): void {
+	public function store( array $array, array $diff ): void {
 		$updates = [];
 
 		foreach ( [ $diff['add'], $diff['mod'] ] as $changes ) {

@@ -18,14 +18,13 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * as for database. Suitable for single-server setups where
  * SerializedMessageIndex is too slow for loading the whole index.
  */
-class CDBMessageIndex extends MessageIndex {
+class CDBMessageIndex extends MessageIndexStore {
 	private ?array $index = null;
 	private ?Reader $reader = null;
 	private const FILENAME = 'translate_messageindex.cdb';
 
 	public function retrieve( bool $readLatest = false ): array {
 		$reader = $this->getReader();
-		// This must be below the line above, which may fill the index
 		if ( $this->index !== null ) {
 			return $this->index;
 		}
@@ -51,7 +50,7 @@ class CDBMessageIndex extends MessageIndex {
 	}
 
 	/** @inheritDoc */
-	protected function get( $key ) {
+	public function get( string $key ) {
 		$reader = $this->getReader();
 		// We might have the full cache loaded
 		if ( $this->index !== null ) {
@@ -63,7 +62,7 @@ class CDBMessageIndex extends MessageIndex {
 	}
 
 	/** @inheritDoc */
-	protected function store( array $array, array $diff ): void {
+	public function store( array $array, array $diff ): void {
 		$this->reader = null;
 
 		$file = Utilities::cacheFile( self::FILENAME );
@@ -86,9 +85,8 @@ class CDBMessageIndex extends MessageIndex {
 
 		$file = Utilities::cacheFile( self::FILENAME );
 		if ( !file_exists( $file ) ) {
-			// Create an empty index to allow rebuild
+			// Create an empty index
 			$this->store( [], [] );
-			$this->index = $this->rebuild();
 		}
 
 		$this->reader = Reader::open( $file );

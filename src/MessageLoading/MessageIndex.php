@@ -32,10 +32,11 @@ use Wikimedia\Rdbms\IConnectionProvider;
  * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  */
-abstract class MessageIndex {
+class MessageIndex {
 	// TODO: Use dependency injection
 	private const CACHE_KEY = 'Translate-MessageIndex-interim';
 	private const READ_LATEST = true;
+	private MessageIndexStore $messageIndexStore;
 	private static ?MapCacheLRU $keysCache = null;
 	protected BagOStuff $interimCache;
 	private WANObjectCache $statusCache;
@@ -46,7 +47,8 @@ abstract class MessageIndex {
 	private MessageGroupSubscription $messageGroupSubscription;
 	private array $translateMessageNamespaces;
 
-	public function __construct() {
+	public function __construct( MessageIndexStore $store ) {
+		$this->messageIndexStore = $store;
 		$mwInstance = MediaWikiServices::getInstance();
 		$this->statusCache = $mwInstance->getMainWANObjectCache();
 		$this->jobQueueGroup = $mwInstance->getJobQueueGroup();
@@ -132,28 +134,17 @@ abstract class MessageIndex {
 			return $interimCacheValue['newKeys'][$key];
 		}
 
-		return $this->get( $key );
+		return $this->messageIndexStore->get( $key );
 	}
 
-	/**
-	 * Looks up the stored value for single key. Only for testing.
-	 * @param string $key
-	 * @return string|array|null
-	 */
-	protected function get( string $key ) {
-		// Default implementation
-		$mi = $this->retrieve();
-		return $mi[$key] ?? null;
+	public function get( string $key ): ?array {
+		return $this->messageIndexStore->get( $key );
 	}
-
-	abstract public function retrieve( bool $readLatest = false ): array;
 
 	/** @return string[] */
 	public function getKeys(): array {
-		return array_keys( $this->retrieve() );
+		return $this->messageIndexStore->getKeys();
 	}
-
-	abstract protected function store( array $array, array $diff );
 
 	private function lock(): bool {
 		$dbw = $this->connectionProvider->getPrimaryDatabase();
@@ -168,7 +159,7 @@ abstract class MessageIndex {
 		return $ok;
 	}
 
-	private function unlock(): bool {
+	private function unlock(): void {
 		$fname = __METHOD__;
 		$dbw = $this->connectionProvider->getPrimaryDatabase();
 		// Unlock once the rows are actually unlocked to avoid deadlocks
@@ -179,8 +170,6 @@ abstract class MessageIndex {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			}, $fname );
 		}
-
-		return true;
 	}
 
 	/**
@@ -218,7 +207,7 @@ abstract class MessageIndex {
 		self::getCache()->clear();
 
 		$new = [];
-		$old = $this->retrieve( self::READ_LATEST );
+		$old = $this->messageIndexStore->retrieve( self::READ_LATEST );
 		$postponed = [];
 
 		foreach ( $groups as $messageGroup ) {
@@ -242,7 +231,7 @@ abstract class MessageIndex {
 		}
 
 		$diff = self::getArrayDiff( $old, $new );
-		$this->store( $new, $diff['keys'] );
+		$this->messageIndexStore->store( $new, $diff['keys'] );
 
 		$cache = $this->getInterimCache();
 		$interimCacheValue = $cache->get( self::CACHE_KEY );
@@ -449,21 +438,5 @@ abstract class MessageIndex {
 			}
 		}
 		unset( $id ); // Disconnect the previous references to this $id
-	}
-
-	/**
-	 * These are probably slower than serialize and unserialize,
-	 * but they are more space efficient because we only need
-	 * strings and arrays.
-	 * @param mixed $data
-	 * @return mixed
-	 */
-	protected function serialize( $data ) {
-		return is_array( $data ) ? implode( '|', $data ) : $data;
-	}
-
-	protected function unserialize( $data ) {
-		$array = explode( '|', $data );
-		return count( $array ) > 1 ? $array : $data;
 	}
 }

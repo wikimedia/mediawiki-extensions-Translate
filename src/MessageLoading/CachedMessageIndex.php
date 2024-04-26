@@ -21,7 +21,6 @@ class CachedMessageIndex extends MessageIndex {
 	private ?array $index = null;
 
 	protected function __construct() {
-		parent::__construct();
 		wfDeprecated( __CLASS__, 'MLEB 2024.04', 'Translate' );
 		$this->cache = ObjectCache::getInstance( CACHE_ANYTHING );
 	}
