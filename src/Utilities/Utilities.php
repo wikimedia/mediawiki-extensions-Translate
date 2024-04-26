@@ -15,6 +15,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleValue;
 use MessageGroup;
 use RequestContext;
 use TextContent;
@@ -246,18 +247,13 @@ class Utilities {
 	}
 
 	/**
-	 * Returns the all the groups message belongs to.
+	 * Returns all the groups the message belongs to.
 	 * @return string[] Possibly empty list of group ids.
 	 */
 	public static function messageKeyToGroups( int $namespace, string $key ): array {
-		$mi = Services::getInstance()->getMessageIndex()->retrieve();
-		$normkey = self::normaliseKey( $namespace, $key );
-
-		if ( isset( $mi[$normkey] ) ) {
-			return (array)$mi[$normkey];
-		} else {
-			return [];
-		}
+		$title = new TitleValue( $namespace, $key );
+		$handle = new MessageHandle( $title );
+		return $handle->getGroupIds();
 	}
 
 	/** Converts page name and namespace to message index format. */
