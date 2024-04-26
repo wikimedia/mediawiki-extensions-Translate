@@ -379,6 +379,8 @@
 	"tux-editor-placeholder-language": "Deine Übersetzung in $1",
 	"tux-editor-editsummary-placeholder": "Erläutere bitte deine Änderungen (optional)",
 	"tux-editor-paste-original-button-label": "Quelltext einfügen",
+	"tux-editor-copy-original-button-label": "Quelltext kopieren",
+	"tux-editor-copied-original-button-label": "Kopiert!",
 	"tux-editor-discard-changes-button-label": "Änderungen verwerfen",
 	"tux-editor-save-button-label": "Übersetzung speichern",
 	"tux-editor-skip-button-label": "Zur nächsten",

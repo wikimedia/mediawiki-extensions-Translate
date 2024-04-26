@@ -510,7 +510,7 @@
 	"translate-hidetranslations": "Filter option on Special:PrefixIndex to hide translation pages",
 	"echo-category-title-translate-message-group-subscription": "{{doc-echo-category-title|tooltip=Echo-pref-tooltip-translate-message-group-subscription}}",
 	"echo-pref-tooltip-translate-message-group-subscription": "{{doc-echo-pref-tooltip|title=Echo-category-title-translate-message-group-subscription}}",
-	"notification-bundle-header-message-group-subscription": "Bundle header text for notifications related to message group updates related subscriptions",
+	"notification-bundle-header-message-group-subscription": "Bundle header text for notifications related to message group updates related subscriptions. $1 is the number of groups.",
 	"notification-header-message-group-subscription": "Header text for notifications related to message group updates related subscriptions.\n\nParameters:\n* $1 Label of the message group",
 	"notification-compact-header-translate-mgs-message-added-removed": "Header text for notifications sent out to users when messages are added or removed from message groups.\n\nParameters:\n* $1 Label of the message group\n* $2 Number of messages changed",
 	"notification-body-translate-mgs-message-added-removed": "Body text for notifications sent out to users when messages are added or removed from message groups.\n\nParameters:\n* $1 Number of messages added\n* $2 Number of messages removed",

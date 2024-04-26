@@ -355,6 +355,8 @@
 	"tux-editor-placeholder-language": "Tu traduction in $1",
 	"tux-editor-editsummary-placeholder": "Explica tu modificationes (facultative)",
 	"tux-editor-paste-original-button-label": "Collar texto original",
+	"tux-editor-copy-original-button-label": "Copiar texto fonte",
+	"tux-editor-copied-original-button-label": "Copiate!",
 	"tux-editor-discard-changes-button-label": "Abandonar modificationes",
 	"tux-editor-save-button-label": "Publicar traduction",
 	"tux-editor-skip-button-label": "Saltar al sequente",

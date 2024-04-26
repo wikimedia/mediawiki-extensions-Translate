@@ -371,6 +371,8 @@
 	"tux-editor-placeholder-language": "‫התרגום שלך ל{{GRAMMAR:תחילית|$1}}‬",
 	"tux-editor-editsummary-placeholder": "נא להסביר את השינויים שלך (לא חובה)",
 	"tux-editor-paste-original-button-label": "הדבקת טקסט המקור",
+	"tux-editor-copy-original-button-label": "העתקת טקסט המקור",
+	"tux-editor-copied-original-button-label": "הועתק!",
 	"tux-editor-discard-changes-button-label": "זריקת שינויים",
 	"tux-editor-save-button-label": "פרסום תרגום",
 	"tux-editor-skip-button-label": "מעבר להודעה הבאה",
@@ -474,5 +476,12 @@
 	"log-action-filter-translationreview-group": "שינויים במצב התקדמות התרגומים",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|ייבא|ייבאה}} חבילה ההודעות לתרגום $3",
 	"log-action-filter-import-translatable-bundle": "יבוא חבילת הודעות לתרגום",
-	"translate-hidetranslations": "הסתרת דפי תרגום"
+	"translate-hidetranslations": "הסתרת דפי תרגום",
+	"echo-category-title-translate-message-group-subscription": "מינויים לקבוצות הודעות לתרגום",
+	"echo-pref-tooltip-translate-message-group-subscription": "להודיע לי על שינויים בקבוצות הודעות לתרגום שעשיתי להן מינוי",
+	"notification-bundle-header-message-group-subscription": "עדכוני תרגום {{PLURAL:$1|בקבוצת הודעות אחת|ב־$1 קבוצות הודעות}}",
+	"notification-header-message-group-subscription": "ישנם עדכוני תרגום בקבוצה $1",
+	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|נוספה או הוסרה הודעה|נוספו או הוסרו הודעות}} בקבוצה $1",
+	"notification-body-translate-mgs-message-added-removed": "{{PLURAL:$1|נוספה הודעה אחת|נוספו $1 הודעות}} {{PLURAL:$2|והוסרה הודעה אחת|הוסרו $1 הודעות}}",
+	"notification-link-mgs-group-translate": "לתרגם את $1"
 }
