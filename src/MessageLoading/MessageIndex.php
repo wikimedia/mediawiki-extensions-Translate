@@ -18,7 +18,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageIndexRebuildJob;
-use ObjectCache;
 use Psr\Log\LoggerInterface;
 use WANObjectCache;
 
@@ -56,7 +55,7 @@ abstract class MessageIndex {
 			->get( 'TranslateMessageNamespaces' );
 		$this->hookRunner = Services::getInstance()->getHookRunner();
 		$this->logger = LoggerFactory::getInstance( 'Translate' );
-		$this->interimCache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$this->interimCache = $mwInstance->getMainObjectStash();
 		$this->messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
 	}
 
