@@ -19,8 +19,7 @@ use MessageGroup;
 use MessageIndexRebuildJob;
 use Psr\Log\LoggerInterface;
 use WANObjectCache;
-use Wikimedia\Rdbms\ILoadBalancer;
-use const DB_PRIMARY;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
@@ -44,8 +43,8 @@ abstract class MessageIndex {
 	private JobQueueGroup $jobQueueGroup;
 	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
+	private IConnectionProvider $connectionProvider;
 	private MessageGroupSubscription $messageGroupSubscription;
-	private ILoadBalancer $loadBalancer;
 	private array $translateMessageNamespaces;
 
 	public function __construct() {
@@ -58,8 +57,8 @@ abstract class MessageIndex {
 		$this->hookRunner = Services::getInstance()->getHookRunner();
 		$this->logger = LoggerFactory::getInstance( 'Translate' );
 		$this->interimCache = $mwInstance->getMainObjectStash();
+		$this->connectionProvider = $mwInstance->getDBLoadBalancerFactory();
 		$this->messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
-		$this->loadBalancer = $mwInstance->getDBLoadBalancer();
 	}
 
 	/** Converts page name and namespace to message index format. */
@@ -158,7 +157,7 @@ abstract class MessageIndex {
 	abstract protected function store( array $array, array $diff );
 
 	private function lock(): bool {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->connectionProvider->getPrimaryDatabase();
 
 		// Any transaction should be flushed after getting the lock to avoid
 		// stale pre-lock REPEATABLE-READ snapshot data.
@@ -172,7 +171,7 @@ abstract class MessageIndex {
 
 	private function unlock(): bool {
 		$fname = __METHOD__;
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->connectionProvider->getPrimaryDatabase();
 		// Unlock once the rows are actually unlocked to avoid deadlocks
 		if ( !$dbw->trxLevel() ) {
 			$dbw->unlock( 'translate-messageindex', $fname );
