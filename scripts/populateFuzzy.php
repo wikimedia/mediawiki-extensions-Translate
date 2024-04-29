@@ -60,18 +60,16 @@ class PopulateFuzzy extends Maintenance {
 		while ( true ) {
 			$inserts = [];
 			$this->output( '.', 0 );
-			$options = [ 'LIMIT' => $limit, 'OFFSET' => $offset ];
-			$res = $dbw->select(
-				$queryInfo['tables'],
-				$queryInfo['fields'],
-				[
+			$res = $dbw->newSelectQueryBuilder()
+				->queryInfo( $queryInfo )
+				->where( [
 					'page_latest = rev_id',
 					'page_namespace' => $namespace,
-				],
-				__METHOD__,
-				$options,
-				$queryInfo['joins']
-			);
+				] )
+				->limit( $limit )
+				->offset( $offset )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			if ( !$res->numRows() ) {
 				break;

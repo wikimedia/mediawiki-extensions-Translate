@@ -153,7 +153,12 @@ class CreateCheckIndex extends Maintenance {
 
 		$conds = $dbw->makeList( $titleConditions, LIST_OR );
 
-		$res = $dbw->select( 'page', [ 'page_id', 'page_latest' ], $conds, __METHOD__ );
+		$res = $dbw->newSelectQueryBuilder()
+			->select( [ 'page_id', 'page_latest' ] )
+			->from( 'page' )
+			->where( $conds )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		$inserts = [];
 		foreach ( $res as $row ) {
 			$inserts[] = [

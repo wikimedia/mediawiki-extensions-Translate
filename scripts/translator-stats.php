@@ -28,72 +28,63 @@ class TS extends Maintenance {
 
 		$dbr = $this->getDB( DB_REPLICA );
 
-		$users = $dbr->select(
-			[ 'user', 'user_groups' ],
-			[
+		$users = $dbr->newSelectQueryBuilder()
+			->select( [
 				'user_name',
 				'user_registration',
 				'user_editcount',
 				'ug_group',
-			],
-			[
+			] )
+			->from( 'user' )
+			->leftJoin( 'user_groups', null, [
+				'user_id=ug_user',
+				'ug_group' => 'translator',
+				( isset( $wgDisableUserGroupExpiry ) && !$wgDisableUserGroupExpiry ) ?
+					'ug_expiry IS NULL OR ug_expiry >= ' . $dbr->addQuotes( $dbr->timestamp() ) :
+					''
+			] )
+			->where( [
 				'user_registration is not null'
-			],
-			__METHOD__,
-			[
-				'ORDER BY' => 'user_id ASC',
-			],
-			[
-				'user_groups' => [
-					'LEFT JOIN',
-					[
-						'user_id=ug_user',
-						'ug_group' => 'translator',
-						( isset( $wgDisableUserGroupExpiry ) && !$wgDisableUserGroupExpiry ) ?
-							'ug_expiry IS NULL OR ug_expiry >= ' . $dbr->addQuotes( $dbr->timestamp() ) :
-							''
-					]
-				]
-			]
-		);
+			] )
+			->orderBy( 'user_id' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		echo "username\tregistration ts\tedit count\tis translator?\tpromoted ts\tmethod\n";
 
-		$rejected = $dbr->select(
-			[ 'logging' ],
-			[
+		$rejected = $dbr->newSelectQueryBuilder()
+			->select( [
 				'log_title',
 				'log_timestamp',
-			],
-			[
+			] )
+			->from( 'logging' )
+			->where( [
 				'log_type' => 'translatorsandbox',
 				'log_action' => 'rejected',
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		foreach ( $rejected as $r ) {
 			echo "{$r->log_title}\t{$r->log_timestamp}\t0\t\t\tsandbox\n";
 		}
 
 		foreach ( $users as $u ) {
-			$logs = $dbr->select(
-				'logging',
-				[
+			$logs = $dbr->newSelectQueryBuilder()
+				->select( [
 					'log_type',
 					'log_action',
 					'log_timestamp',
 					'log_params',
-				],
-				[
+				] )
+				->from( 'logging' )
+				->where( [
 					'log_title' => $u->user_name,
 					'log_type' => [ 'rights', 'translatorsandbox' ],
-				],
-				__METHOD__,
-				[
-					'ORDER BY' => 'log_id ASC',
-				]
-			);
+				] )
+				->orderBy( 'log_id' )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			$promoted = null;
 			$method = 'normal';

@@ -127,18 +127,17 @@ class CharacterEditStats extends Maintenance {
 			'page_namespace' => $namespaces,
 		];
 
-		$res = $dbr->select(
-			$revQuery['tables'],
-			[
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [
 				'title' => 'page_title',
 				'user_text' => $revUserText,
 				'length' => 'rev_len',
-			],
-			$conds,
-			__METHOD__,
-			[],
-			$revQuery['joins']
-		);
+			] )
+			->tables( $revQuery['tables'] )
+			->where( $conds )
+			->joinConds( $revQuery['joins'] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		return iterator_to_array( $res );
 	}
 }
