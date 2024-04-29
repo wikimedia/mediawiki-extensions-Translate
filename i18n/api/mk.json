@@ -180,6 +180,7 @@
 	"apierror-translate-operation-error": "Се јави грешка при обработката на барањето. Грешка: $1",
 	"apihelp-translationentitysearch-summary": "Пребарување за групи пораки и пораки",
 	"apihelp-translationentitysearch-param-entitytype": "Вид на единицата што се бара",
+	"apihelp-translationentitysearch-param-grouptypes": "Тип(ови) групи за филтрирање",
 	"apihelp-translationentitysearch-param-query": "Побарување",
 	"apihelp-translationentitysearch-param-limit": "Највеќе ставки во исходот"
 }

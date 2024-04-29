@@ -405,6 +405,8 @@
 	"tux-editor-placeholder-language": "$1的翻译",
 	"tux-editor-editsummary-placeholder": "说明您做出的更改（可选）",
 	"tux-editor-paste-original-button-label": "粘贴源文本",
+	"tux-editor-copy-original-button-label": "复制原文",
+	"tux-editor-copied-original-button-label": "已复制！",
 	"tux-editor-discard-changes-button-label": "放弃更改",
 	"tux-editor-save-button-label": "发布翻译",
 	"tux-editor-skip-button-label": "跳至下一条",
@@ -508,5 +510,7 @@
 	"log-action-filter-translationreview-group": "翻译进度的状态更改",
 	"logentry-import-translatable-bundle": "$1{{GENDER:$2|导入了}}可翻译捆绑包$3",
 	"log-action-filter-import-translatable-bundle": "可翻译捆绑包导入",
-	"translate-hidetranslations": "隐藏翻译页面"
+	"translate-hidetranslations": "隐藏翻译页面",
+	"notification-compact-header-translate-mgs-message-added-removed": "$1中新增或删除的{{PLURAL:$2|消息}}",
+	"notification-link-mgs-group-translate": "翻译$1"
 }

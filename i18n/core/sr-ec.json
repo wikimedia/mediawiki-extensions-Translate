@@ -345,6 +345,8 @@
 	"tux-editor-placeholder-language": "Ваш превод на $1",
 	"tux-editor-editsummary-placeholder": "Опис (пожељно)",
 	"tux-editor-paste-original-button-label": "Налепи изворни текст",
+	"tux-editor-copy-original-button-label": "Копирај изворни текст",
+	"tux-editor-copied-original-button-label": "Копирано!",
 	"tux-editor-discard-changes-button-label": "Одбаци измене",
 	"tux-editor-save-button-label": "Објави превод",
 	"tux-editor-skip-button-label": "Пређи на следећу",
@@ -427,5 +429,6 @@
 	"translate-messagebundle-error-empty-value": "Кључ ”$1” нема вредност",
 	"log-action-filter-translationreview": "Врста радње:",
 	"log-action-filter-translationreview-message": "Провера појединачних порука",
-	"log-action-filter-translationreview-group": "Промена статуса превода"
+	"log-action-filter-translationreview-group": "Промена статуса превода",
+	"notification-link-mgs-group-translate": "Преведи $1"
 }
