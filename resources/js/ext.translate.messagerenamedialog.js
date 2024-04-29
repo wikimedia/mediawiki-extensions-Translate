@@ -14,6 +14,7 @@ mw.translate = mw.translate || {};
  * @class
  * @extends OO.ui.ProcessDialog
  *
+ * @private
  * @constructor
  * @param {Object} [config] Similar configuration as the OO.ui.ProcessDialog
  * @param {Function} [onRenameSelect] Function to call when the rename button is pressed
