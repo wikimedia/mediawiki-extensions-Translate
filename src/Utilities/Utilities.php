@@ -235,18 +235,6 @@ class Utilities {
 	}
 
 	/**
-	 * Returns the primary group message belongs to.
-	 * @param int $namespace
-	 * @param string $key
-	 * @return string|null Group id or null.
-	 */
-	public static function messageKeyToGroup( int $namespace, string $key ): ?string {
-		$groups = self::messageKeyToGroups( $namespace, $key );
-
-		return count( $groups ) ? $groups[0] : null;
-	}
-
-	/**
 	 * Returns all the groups the message belongs to.
 	 * @return string[] Possibly empty list of group ids.
 	 */
