@@ -4,18 +4,25 @@
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
+		/** @private */
 		dirty: false,
-		// A cache for language stats loaded from API,
-		// indexed by language code
+
+		/**
+		 * A cache for language stats loaded from API, indexed by language code
+		 * @private
+		 */
 		languagestats: {},
 
-		// Storage for language stats loader functions from API,
-		// indexed by language code
+		/**
+		 * Storage for language stats loader functions from API, indexed by language code
+		 * @private
+		 */
 		languageStatsLoader: {},
 
 		/**
 		 * Get language stats for a language from the API.
 		 *
+		 * @private
 		 * @param {string} language Language code.
 		 * @return {jQuery.Deferred}
 		 */
@@ -38,6 +45,7 @@
 		/**
 		 * Get language stats for a language and group from the API
 		 *
+		 * @private
 		 * @param {string} language
 		 * @param {string} group
 		 * @return {jQuery.Deferred}
@@ -69,6 +77,7 @@
 		/**
 		 * Load message group information asynchronously.
 		 *
+		 * @private
 		 * @param {string} id Message group id
 		 * @param {string|Array} [props] List of properties to load
 		 * @return {jQuery.Promise} Object containing the requested properties on success.
@@ -100,6 +109,7 @@
 		 * Find a group from an array of message groups as returned by web api
 		 * and recurse it through sub groups.
 		 *
+		 * @private
 		 * @param {string} id Group id to search for.
 		 * @param {Array} groups Array of message groups
 		 * @return {Object} Message group object
@@ -134,6 +144,7 @@
 		/**
 		 * Check if the current user is allowed to translate on this wiki.
 		 *
+		 * @private
 		 * @return {boolean}
 		 */
 		canTranslate: function () {
@@ -143,6 +154,7 @@
 		/**
 		 * Check if the current user is allowed to proofread on this wiki.
 		 *
+		 * @private
 		 * @return {boolean}
 		 */
 		canProofread: function () {
@@ -152,6 +164,7 @@
 		/**
 		 * Check if the current user can delete translations on this wiki.
 		 *
+		 * @private
 		 * @return {boolean}
 		 */
 		canDelete: function () {
@@ -161,6 +174,7 @@
 		/**
 		 * Check if the current user can update and manage message groups.
 		 *
+		 * @private
 		 * @return {boolean}
 		 */
 		canManage: function () {
@@ -170,6 +184,7 @@
 		/**
 		 * Adds missing languages to the language database so that they can be used in ULS.
 		 *
+		 * @private
 		 * @param {Object} languages Language tags mapped to language names
 		 * @param {Array} regions Which regions to add the languages.
 		 */
@@ -187,6 +202,12 @@
 			}
 		},
 
+		/**
+		 * Checks if there are any unsaved edits in Special:Translate
+		 *
+		 * @private
+		 * @returns {boolean|number}
+		 */
 		isDirty: function () {
 			// Something being typed in the current editor.
 			return mw.translate.dirty ||
@@ -197,6 +218,7 @@
 		/**
 		 * Return the language details for usage in HTML attributes
 		 *
+		 * @private
 		 * @param {string} languageCode
 		 * @return {Object}
 		 */
