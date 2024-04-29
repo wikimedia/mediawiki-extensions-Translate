@@ -7,6 +7,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslationLoader;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
@@ -132,6 +133,11 @@ class Services implements ContainerInterface {
 	/** @since 2022.06 */
 	public function getMessageBundleStore(): MessageBundleStore {
 		return $this->get( 'Translate:MessageBundleStore' );
+	}
+
+	/** @since 2024.06 */
+	public function getMessageBundleTranslationLoader(): MessageBundleTranslationLoader {
+		return $this->get( 'Translate:MessageBundleTranslationLoader' );
 	}
 
 	/** @since 2020.10 */

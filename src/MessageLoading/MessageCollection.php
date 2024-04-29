@@ -939,6 +939,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		reset( $this->keys );
 	}
 
+	/** @return Message|false */
 	#[\ReturnTypeWillChange]
 	public function current() {
 		if ( !count( $this->keys ) ) {

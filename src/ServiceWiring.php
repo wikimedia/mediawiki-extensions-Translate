@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslationLoader;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
@@ -174,6 +175,12 @@ return [
 			$services->get( 'Translate:MessageIndex' ),
 			$services->get( 'Translate:MessageGroupMetadata' )
 		);
+	},
+
+	'Translate:MessageBundleTranslationLoader' => static function (
+		MediaWikiServices $services
+	): MessageBundleTranslationLoader {
+		return new MessageBundleTranslationLoader( $services->getLanguageFallback() );
 	},
 
 	'Translate:MessageGroupMetadata' => static function ( MediaWikiServices $services ): MessageGroupMetadata {

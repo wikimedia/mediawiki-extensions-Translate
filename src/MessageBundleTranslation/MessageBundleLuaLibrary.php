@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 
 class MessageBundleLuaLibrary extends LibraryBase {
@@ -30,7 +31,7 @@ class MessageBundleLuaLibrary extends LibraryBase {
 	public function getMessageBundleTranslations( string $messageBundleTitle, string $languageCode ): array {
 		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
 		$messageBundle = new MessageBundle( $titleFactory->newFromText( $messageBundleTitle ) );
-		$messageBundleTranslationLoader = new MessageBundleTranslationLoader();
+		$messageBundleTranslationLoader = Services::getInstance()->getMessageBundleTranslationLoader();
 		if ( !MessageBundle::isSourcePage( $messageBundle->getTitle() ) ) {
 			throw new LuaError( "Message bundle with title $messageBundleTitle not found" );
 		}
