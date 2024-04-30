@@ -8,7 +8,8 @@
 			"Predatorix",
 			"Seewolf",
 			"SorkDE",
-			"McDutchie"
+			"McDutchie",
+			"Justman10000"
 		]
 	},
 	"apihelp-aggregategroups-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
@@ -49,6 +50,8 @@
 	"apihelp-query+messagecollection-example-4": "Weitere Informationen über die aktuellsten Übersetzungsversionen für die Gruppe „page-Example“",
 	"apihelp-query+messagegroups-summary": "Gibt Informationen über Nachrichtengruppen zurück.",
 	"apihelp-query+messagegroups-extended-description": "Beachten Sie, dass der uselang-Parameter die Ausgabe von sprachabhängigen Teilen beeinflusst.",
+	"apihelp-query+messagegroups-param-depth": "Wenn du das Baumformat verwendest, beschränke die Tiefe auf so viele Ebenen. Der Wert 0 bedeutet, dass keine Untergruppen angezeigt werden. Wenn die Grenze erreicht ist, enthält die Ausgabe einen \"groupcount\" Wert, der die Anzahl der direkten Kinder angibt.",
+	"apihelp-query+messagegroups-param-filter": "Gibt nur Nachrichten mit IDs zurück, die mit einer oder mehreren der angegebenen Eingaben übereinstimmen (Groß-/Kleinschreibung nicht berücksichtigt, durch Pipes getrennt, * Wildcard).",
 	"apihelp-query+messagegroups-param-format": "Im Baumformat können Nachrichtengruppen an mehreren Orten im Baum vorhanden sein.",
 	"apihelp-query+messagegroups-param-iconsize": "Bevorzugte Größe des Rastergruppensymbols.",
 	"apihelp-query+messagegroups-param-languageFilter": "Gibt nur Nachrichtengruppen zurück, die in die angegebene Sprache übersetzt werden können.",
