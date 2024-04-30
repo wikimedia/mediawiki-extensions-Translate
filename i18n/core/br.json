@@ -263,6 +263,7 @@
 	"tux-status-unsaved": "Hep embann",
 	"tux-save-unknown-error": "C'hoarvezet ez eus ur fazi dianav.",
 	"tux-editor-paste-original-button-label": "Pegañ an destenn orin",
+	"tux-editor-copied-original-button-label": "Eilet!",
 	"tux-editor-discard-changes-button-label": "Dilezel ar c'hemmoù",
 	"tux-editor-save-button-label": "Embann an droidigezh",
 	"tux-editor-skip-button-label": "Mont d'an hini war-lerc'h",
@@ -331,5 +332,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% troet, $2% adwelet, $3% dispredet",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|strollad}} ouzhpenn",
 	"specialpages-group-translation": "Troidigezh",
-	"translate-messagebundle-error-key-too-long": "Re hir eo an alc'hwez \"$1\""
+	"translate-messagebundle-error-key-too-long": "Re hir eo an alc'hwez \"$1\"",
+	"notification-link-mgs-group-translate": "Treiñ $1"
 }

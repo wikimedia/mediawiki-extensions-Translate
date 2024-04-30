@@ -9,7 +9,8 @@
 			"Metalhead64",
 			"Predatorix",
 			"Seewolf",
-			"SorkDE"
+			"SorkDE",
+			"TomatoCake"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Verwaltet zusammengefasste Nachrichtengruppen.",
@@ -55,7 +56,7 @@
 	"apihelp-query+messagegroups-param-iconsize": "Bevorzugte Größe des Rastergruppensymbols.",
 	"apihelp-query+messagegroups-paramvalue-prop-id": "ID der Gruppe einschließen.",
 	"apihelp-query+messagegroups-paramvalue-prop-label": "Schließe das Label der Gruppe ein.",
-	"apihelp-query+messagegroups-paramvalue-prop-description": "Schließe eine Beschreibung der Gruppe ein.",
+	"apihelp-query+messagegroups-paramvalue-prop-description": "Schließe die Beschreibung der Gruppe ein.",
 	"apihelp-query+messagegroups-paramvalue-prop-class": "Schließe den Klassennamen der Gruppe ein.",
 	"apihelp-query+messagegroups-paramvalue-prop-namespace": "Namespace der Gruppe einschließen. Nicht alle Gruppen gehören zu einem einzigen Namespace.",
 	"apihelp-query+messagegroups-paramvalue-prop-exists": "Schließe die selbst berechnete Existenzeigenschaft der Gruppe ein.",

@@ -308,6 +308,7 @@
 	"tux-editor-placeholder-language": "Är Iwwersetzung op $1",
 	"tux-editor-editsummary-placeholder": "Resumé (fakultativ)",
 	"tux-editor-paste-original-button-label": "Quelltext drasetzen",
+	"tux-editor-copied-original-button-label": "Kopéiert!",
 	"tux-editor-discard-changes-button-label": "Ännerungen annuléieren",
 	"tux-editor-save-button-label": "Iwwersetzung publizéieren",
 	"tux-editor-skip-button-label": "Op den Nächste goen",
@@ -388,5 +389,6 @@
 	"translate-messagebundle-error-key-too-long": "Schlëssel \"$1\" ass ze laang",
 	"translate-messagebundle-error-key-invalid-characters": "De Schlëssel „$1“ enthält onerlaabt Zeechen",
 	"translate-messagebundle-error-empty-value": "Schlëssel \"$1\" huet kee Wäert",
-	"translate-hidetranslations": "Iwwersetzungssäite verstoppen"
+	"translate-hidetranslations": "Iwwersetzungssäite verstoppen",
+	"notification-header-message-group-subscription": "Et gëtt Iwwersetzungsaktualiséierunge fir $1"
 }
