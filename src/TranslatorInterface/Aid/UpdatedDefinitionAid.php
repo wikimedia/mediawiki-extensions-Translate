@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use WikitextContent;
 
 /**
@@ -23,15 +24,17 @@ use WikitextContent;
 class UpdatedDefinitionAid extends TranslationAid {
 	public function getData(): array {
 		$db = Utilities::getSafeReadDB();
-		$conds = [
-			'rt_page' => $this->handle->getTitle()->getArticleID(),
-			'rt_type' => RevTagStore::TRANSVER_PROP,
-		];
-		$options = [
-			'ORDER BY' => 'rt_revision DESC',
-		];
 
-		$translationRevision = $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
+		$translationRevision = $db->newSelectQueryBuilder()
+			->select( 'rt_value' )
+			->from( 'revtag' )
+			->where( [
+				'rt_page' => $this->handle->getTitle()->getArticleID(),
+				'rt_type' => RevTagStore::TRANSVER_PROP,
+			] )
+			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
+			->caller( __METHOD__ )
+			->fetchField();
 		if ( $translationRevision === false ) {
 			throw new TranslationHelperException( 'No definition revision recorded' );
 		}

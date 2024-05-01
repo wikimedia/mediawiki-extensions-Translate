@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use MediaWiki\MediaWikiServices;
 use MWTimestamp;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Translation aid that provides last X edit summaries for a translation
@@ -27,18 +28,18 @@ class EditSummariesAid extends TranslationAid {
 
 		// Build the query to fetch the last x revisions
 		$dbr = $mwService->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$options = [ 'ORDER BY' => 'rev_timestamp DESC, rev_id DESC' ];
-		$options[ 'LIMIT' ] = self::COMMENT_COUNT;
 		$aid = $pageTitle->getArticleID();
 		$revQuery = $revisionFactory->getQueryInfo();
-		$result = $dbr->select(
-			$revQuery[ 'tables' ],
-			$revQuery[ 'fields' ],
-			[ 'rev_page' => $aid ],
-			__METHOD__,
-			$options,
-			$revQuery[ 'joins' ]
-		);
+		// TODO Migrate to RevisionStore::newSelectQueryBuilder once we support >= 1.41
+		$result = $dbr->newSelectQueryBuilder()
+			->tables( $revQuery[ 'tables' ] )
+			->fields( $revQuery[ 'fields' ] )
+			->where( [ 'rev_page' => $aid ] )
+			->orderBy( [ 'rev_timestamp', 'rev_id' ], SelectQueryBuilder::SORT_DESC )
+			->limit( self::COMMENT_COUNT )
+			->joinConds( $revQuery[ 'joins' ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$editSummaries = [];
 		$commentFormatter = $mwService->getCommentFormatter();

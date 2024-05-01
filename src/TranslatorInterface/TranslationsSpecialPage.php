@@ -182,15 +182,16 @@ class TranslationsSpecialPage extends SpecialAllPages {
 		}
 
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$res = $dbr->select( 'page',
-			[ 'page_namespace', 'page_title' ],
-			[
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'page_namespace', 'page_title' ] )
+			->from( 'page' )
+			->where( [
 				'page_namespace' => $namespace,
 				'page_title ' . $dbr->buildLike( "$message/", $dbr->anyString() ),
-			],
-			__METHOD__,
-			[ 'ORDER BY' => 'page_title', ]
-		);
+			] )
+			->caller( __METHOD__ )
+			->orderBy( 'page_title' )
+			->fetchResultSet();
 
 		if ( !$res->numRows() ) {
 			$this->getOutput()->addWikiMsg(

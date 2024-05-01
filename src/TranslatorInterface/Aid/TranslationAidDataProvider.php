@@ -115,11 +115,7 @@ class TranslationAidDataProvider {
 	private static function loadTranslationData( IDatabase $db, MessageHandle $handle ): array {
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$queryInfo = $revisionStore->getQueryInfo( [ 'page' ] );
-		$tables = $queryInfo[ 'tables' ];
-		$fields = $queryInfo[ 'fields' ];
 		$conds = [];
-		$options = [];
-		$joins = $queryInfo[ 'joins' ];
 
 		// The list of pages we want to select, and their latest versions
 		$conds['page_namespace'] = $handle->getTitle()->getNamespace();
@@ -127,15 +123,22 @@ class TranslationAidDataProvider {
 		$conds[] = 'page_title ' . $db->buildLike( "$base/", $db->anyString() );
 		$conds[] = 'rev_id=page_latest';
 
-		// For fuzzy tags we also need:
-		$tables[] = 'revtag';
+		// For fuzzy tags we need the join with revtag and also:
 		$conds[ 'rt_type' ] = null;
-		$joins[ 'revtag' ] = [
-			'LEFT JOIN',
-			[ 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTagStore::FUZZY_TAG ]
-		];
 
-		$rows = $db->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
+		// TODO Migrate to RevisionStore::newSelectQueryBuilder once we support >= 1.41
+		$rows = $db->newSelectQueryBuilder()
+			->tables( $queryInfo[ 'tables' ] )
+			->fields( $queryInfo[ 'fields' ] )
+			->leftJoin( 'revtag', null, [
+				'page_id=rt_page',
+				'page_latest=rt_revision',
+				'rt_type' => RevTagStore::FUZZY_TAG
+			] )
+			->where( $conds )
+			->joinConds( $queryInfo[ 'joins' ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$pages = [];
 		$revisions = $revisionStore->newRevisionsFromBatch( $rows, [ 'slots' => [ SlotRecord::MAIN ] ] )
