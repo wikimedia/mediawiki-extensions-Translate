@@ -1,26 +1,22 @@
 <?php
-/**
- * Contains class with job for rebuilding message index.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2011-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageLoading;
+
+use GenericParameterJob;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\MessageIndexException;
 use MediaWiki\Extension\Translate\Services;
 
 /**
  * Job for rebuilding message index.
- *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2011-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup JobQueue
  */
-class MessageIndexRebuildJob extends GenericTranslateJob implements GenericParameterJob {
-	/** @return self */
-	public static function newJob( ?string $caller = null ) {
+class RebuildMessageIndexJob extends GenericTranslateJob implements GenericParameterJob {
+	public static function newJob( ?string $caller = null ): self {
 		$timestamp = microtime( true );
 		return new self( [
 			'timestamp' => $timestamp,
@@ -30,11 +26,11 @@ class MessageIndexRebuildJob extends GenericTranslateJob implements GenericParam
 
 	/** @inheritDoc */
 	public function __construct( $params = [] ) {
-		parent::__construct( 'MessageIndexRebuildJob', $params );
+		parent::__construct( 'RebuildMessageIndexJob', $params );
 		$this->removeDuplicates = true;
 	}
 
-	public function run() {
+	public function run(): bool {
 		// Make sure we have latest version of message groups from global cache.
 		// This should be pretty fast, just a few cache fetches with some post processing.
 		MessageGroups::singleton()->clearProcessCache();
@@ -55,14 +51,12 @@ class MessageIndexRebuildJob extends GenericTranslateJob implements GenericParam
 		return true;
 	}
 
-	/** @inheritDoc */
-	public function allowRetries() {
+	public function allowRetries(): bool {
 		// This is the default, but added for explicitness and clarity
 		return true;
 	}
 
-	/** @inheritDoc */
-	public function getDeduplicationInfo() {
+	public function getDeduplicationInfo(): array {
 		$info = parent::getDeduplicationInfo();
 		// The timestamp is different for every job, so ignore it. The worst that can
 		// happen is that the front cache is not cleared until a future job is created.
@@ -77,3 +71,5 @@ class MessageIndexRebuildJob extends GenericTranslateJob implements GenericParam
 		return $info;
 	}
 }
+
+class_alias( RebuildMessageIndexJob::class, 'MessageIndexRebuildJob' );

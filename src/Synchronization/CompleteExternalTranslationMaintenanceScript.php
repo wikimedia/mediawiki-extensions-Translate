@@ -5,10 +5,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Maintenance;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use MessageIndexRebuildJob;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -20,7 +20,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription(
-			'Check and run MessageIndexRebuild and MessageGroupStats update once ' .
+			'Check and run RebuildMessageIndex and MessageGroupStats update once ' .
 			'MessageUpdateJobs are done. Intended to be run periodically'
 		);
 		$this->requireExtension( 'Translate' );
@@ -84,7 +84,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		if ( !$groupsInProgress ) {
 			// No groups in progress.
 			$logger->info( 'All message groups are now in sync.' );
-			$mwServices->getJobQueueGroup()->push( MessageIndexRebuildJob::newJob() );
+			$mwServices->getJobQueueGroup()->push( RebuildMessageIndexJob::newJob() );
 		}
 
 		$logger->info( "Script completed successfully." );

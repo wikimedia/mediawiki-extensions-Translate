@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroupStats;
-use MessageIndexRebuildJob;
 use MessageUpdateJob;
 use RunnableJob;
 
@@ -114,7 +114,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		// a while (and on large wikis it does take a while!). Running it as a separate job
 		// also allows de-duplication in case multiple translatable pages are being marked
 		// for translation in a short period of time.
-		$job = MessageIndexRebuildJob::newJob();
+		$job = RebuildMessageIndexJob::newJob();
 		$jobQueueGroup->push( $job );
 
 		$this->logInfo( 'Finished UpdateTranslatablePageJob' );

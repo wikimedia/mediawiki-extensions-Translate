@@ -13,7 +13,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageIndexRebuildJob;
 
 /**
  * Class for pointing to messages, like Title class is for titles.
@@ -169,7 +168,7 @@ class MessageHandle {
 
 			if ( !$jobHasBeenScheduled ) {
 				// Schedule a job in the job queue (with deduplication)
-				$job = MessageIndexRebuildJob::newJob( __METHOD__ );
+				$job = RebuildMessageIndexJob::newJob( __METHOD__ );
 				MediaWikiServices::getInstance()->getJobQueueGroup()->lazyPush( $job );
 				$jobHasBeenScheduled = true;
 			}

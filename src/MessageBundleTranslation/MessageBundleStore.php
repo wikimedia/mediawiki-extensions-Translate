@@ -64,7 +64,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 		// Re-render the bundles to get everything in sync
 		MessageGroups::singleton()->recache();
 		// Update message index now so that, when after this job the MoveTranslationUnits hook
-		// runs in deferred updates, it will not run MessageIndexRebuildJob (T175834).
+		// runs in deferred updates, it will not run RebuildMessageIndexJob (T175834).
 		$this->messageIndex->rebuild();
 	}
 

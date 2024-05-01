@@ -16,7 +16,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageIndexRebuildJob;
 use Psr\Log\LoggerInterface;
 use WANObjectCache;
 use Wikimedia\Rdbms\IConnectionProvider;
@@ -261,7 +260,7 @@ abstract class MessageIndex {
 			} else {
 				// Cache has a later timestamp. This may be caused due to
 				// job deduplication. Just in case, spin off a new job to clean up the cache.
-				$job = MessageIndexRebuildJob::newJob( __METHOD__ );
+				$job = RebuildMessageIndexJob::newJob( __METHOD__ );
 				$this->jobQueueGroup->push( $job );
 				$this->logger->debug(
 					'[MessageIndex] Kept interim cache with timestamp {cacheTimestamp} > {currentTimestamp}.',

@@ -8,10 +8,10 @@ use ApiBase;
 use ApiMain;
 use JobQueueGroup;
 use ManualLogEntry;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
-use MessageIndexRebuildJob;
 use Wikimedia\ParamValidator\ParamValidator;
 use WikiPageMessageGroup;
 
@@ -250,7 +250,7 @@ class AggregateGroupsActionApi extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::singleton()->recache();
-		$this->jobQueueGroup->push( MessageIndexRebuildJob::newJob() );
+		$this->jobQueueGroup->push( RebuildMessageIndexJob::newJob() );
 	}
 
 	/**

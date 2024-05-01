@@ -26,6 +26,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
@@ -133,6 +134,9 @@ class HookHandler implements
 		// TODO Remove after MLEB 2024.01 release
 		global $wgJobClasses;
 		$wgJobClasses['MessageGroupStatsRebuildJob'] = RebuildMessageGroupStatsJob::class;
+		// TODO Remove after MLEB 2024.07 release
+		$wgJobClasses['MessageIndexRebuildJob'] = RebuildMessageIndexJob::class;
+		$wgJobClasses['RebuildMessageIndexJob'] = RebuildMessageIndexJob::class;
 
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;

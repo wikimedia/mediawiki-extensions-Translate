@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Job;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroupStats;
-use MessageIndexRebuildJob;
 use MessageUpdateJob;
 
 /**
@@ -110,10 +110,10 @@ class UpdateMessageBundleJob extends Job {
 		// Schedule message index update. Thanks to front caching, it is okay if this takes
 		// a while (and on large wikis it does take a while!). Running it as a separate job
 		// also allows de-duplication.
-		$job = MessageIndexRebuildJob::newJob();
+		$job = RebuildMessageIndexJob::newJob();
 		$jobQueue->push( $job );
 		$logger->info(
-			'UpdateMessageBundleJob: {title}: Queue MessageIndexRebuildJob',
+			'UpdateMessageBundleJob: {title}: Queue RebuildMessageIndexJob',
 			[ 'title' => $name ]
 		);
 
