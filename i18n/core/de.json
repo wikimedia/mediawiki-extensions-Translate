@@ -24,7 +24,8 @@
 			"The Evil IP address",
 			"Tobi 406",
 			"Umherirrender",
-			"Ameisenigel"
+			"Ameisenigel",
+			"Justman10000"
 		]
 	},
 	"translate": "Übersetzen",
@@ -220,7 +221,7 @@
 	"translate-mgs-totals": "{{PLURAL:$1|Die gesamte Sprache|Alle $1 Sprachen zusammen}}",
 	"translate-mgs-invalid-group": "Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.",
 	"translate-mgs-message-prefix-limit": "Das ausgewählte Nachrichtenpräfix hat mehr als $1 {{PLURAL:$1|Nachricht|Nachrichten}}. Das Abfragen einer großen Anzahl von Nachrichten ist langsam. Bitte verfeinere deine Suche.",
-	"translate-mgs-nothing": "Zu den angeforderten Statistiken gibt es keine anzuzeigenden Daten.",
+	"translate-mgs-nothing": "Für die angeforderten Statistiken existiert nichts zu sehen.",
 	"translate-mgs-invalid-entity": "Ausgewählte Nachrichtengruppe oder Präfix wurde nicht gefunden",
 	"translate-tes-optgroup-group": "Gruppen",
 	"translate-tes-optgroup-message": "Nachrichten",

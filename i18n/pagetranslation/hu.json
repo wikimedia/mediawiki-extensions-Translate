@@ -44,6 +44,8 @@
 	"tpt-edit-failed": "Nem sikerült frissíteni a lapot: $1",
 	"tpt-duplicate": "A(z) <strong><bdi>$1</bdi></strong> név több fordítási egységhez is tartozik",
 	"tpt-invalid": "A(z) <strong><bdi>$1</bdi></strong> fordításiegység-név nem tartalmazhat alávonást vagy perjelet.",
+	"tpt-unit-title-too-long": "A(z) <strong><bdi>$1</bdi></strong> fordításiegység-név  túl hosszú. A lefordítható lap címe a névtérrel, a fordítási egység nevével és a nyelvkóddal együtt $2 bájt, de csak legfeljebb $3 {{PLURAL:$3|bájt}} támogatott. A fordításra jelöléshez rövidíts a fordítási egység nevén (ha az nem automatikusan generált) vagy [[Special:MovePage/$4|nevezd át a lefordítható lapot]] egy rövidebb névre.",
+	"tpt-unit-title-invalid": "A(z) <strong><bdi>$1</bdi></strong> fordításiegység-név érvénytelen: $2",
 	"tpt-unmarked": "A(z) [[:$1]] lap most már nincs megjelölve fordításra.",
 	"tpt-list-nopages": "Nincsenek sem fordításra kijelölt, sem kijelölésre kész lapok.",
 	"tpt-new-pages-title": "Fordításra jelölt lapok",
