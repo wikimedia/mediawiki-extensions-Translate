@@ -24,6 +24,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMessageGroupFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageView;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\ProgressStatsTableFactory;
@@ -212,6 +213,11 @@ class Services implements ContainerInterface {
 	/** @since 2024.04 */
 	public function getMessageGroupMetadata(): MessageGroupMetadata {
 		return $this->get( 'Translate:MessageGroupMetadata' );
+	}
+
+	/** @since 2024.05 */
+	public function getTranslatablePageView(): TranslatablePageView {
+		return $this->get( 'Translate:TranslatablePageView' );
 	}
 
 	/** @since 2023.11 */

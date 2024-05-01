@@ -1220,8 +1220,23 @@ class Hooks {
 		if ( $transPage ) {
 			self::translationPageHeader( $context, $transPage );
 		} else {
-			// Check for pages that are tagged or marked
-			self::sourcePageHeader( $context );
+			$viewTranslatablePage = Services::getInstance()->getTranslatablePageView();
+			$user = $context->getUser();
+			if ( $user->isNamed() && $viewTranslatablePage->shouldDisplayPageTranslationBanner( $article, $user ) ) {
+				$output = $context->getOutput();
+				$pageUrl = SpecialPage::getTitleFor( 'PageTranslation' )->getFullURL( [
+					'do' => 'settings',
+					'target' => $article->getTitle()->getPrefixedDBkey(),
+				] );
+				$output->addHTML(
+					Html::noticeBox(
+						$context->msg( 'pt-cta-mark-translation', $pageUrl ),
+						'translate-cta-pt-mark'
+					)
+				);
+			} else {
+				self::sourcePageHeader( $context );
+			}
 		}
 	}
 

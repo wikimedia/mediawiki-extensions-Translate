@@ -39,6 +39,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMessageGroupFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageView;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
 use MediaWiki\Extension\Translate\Statistics\MessagePrefixStats;
@@ -371,6 +372,16 @@ return [
 			$services->get( 'Translate:TranslatableBundleStatusStore' ),
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->get( 'Translate:MessageGroupMetadata' )
+		);
+	},
+
+	'Translate:TranslatablePageView' => static function ( MediaWikiServices $services ): TranslatablePageView {
+		return new TranslatablePageView(
+			$services->getDBLoadBalancerFactory(),
+			new ServiceOptions(
+				TranslatablePageView::SERVICE_OPTIONS,
+				$services->getMainConfig()
+			)
 		);
 	},
 

@@ -238,7 +238,10 @@
 			]
 		},
 		"pageTranslation": {
-			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler"
+			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler",
+			"services": [
+				"MainConfig"
+			]
 		},
 		"recentChangesTranslationFilter": {
 			"class": "MediaWiki\\Extension\\Translate\\RecentChangesTranslationFilterHookHandler",
@@ -1163,6 +1166,11 @@
 			"description": "Like $wgTranslateSupportUrl, but for a specific namespace. Each $wgTranslateSupportUrl-like array needs to be the value assigned to the numerical ID of a namespace of the wiki. Since 2015-09.",
 			"public": true,
 			"merge_strategy": "array_plus"
+		},
+		"TranslatePageTranslationBannerNamespaces": {
+			"value": [],
+			"description": "List of namespace numbers for which the call to action banner to mark the page for translation will be displayed to editors who have recently updated the page. Since 2024.05",
+			"public": true
 		},
 		"TranslatePermissionUrl": {
 			"value": "Project:Translator",

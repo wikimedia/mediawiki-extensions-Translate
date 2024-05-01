@@ -185,6 +185,7 @@
 	"log-action-filter-messagebundle": "{{Doc-log-action-filter-type|messagebundle}}\n{{Identical|Type of action}}\n{{Related|Log-action-filter}}",
 	"log-action-filter-messagebundle-move": "{{doc-log-action-filter-action|messagebundle|move}}",
 	"log-action-filter-messagebundle-delete": "{{doc-log-action-filter-action|messagebundle|delete}}",
+	"pt-cta-mark-translation": "Notice message shown in the call to action to mark a page for translation to recent editors of a page not yet marked for translation.\n\nParameters:\n* $1 - URL to the settings action on Special:PageTranslation",
 	"pt-movepage-title": "Used as page title when moving a translatable page.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - old page title",
 	"pt-movepage-messagebundle-title": "Used as page title when moving a message bundle.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - old page title",
 	"pt-movepage-blockers": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nFollowed by any of the following error messages:\n* {{msg-mw|Pt-movepage-block-base-invalid}}\n* {{msg-mw|Pt-movepage-block-tp-invalid}}\n* {{msg-mw|Pt-movepage-block-section-invalid}}\n* {{msg-mw|Pt-movepage-block-subpage-invalid}}\n\nParameters:\n* $1 - number of error messages",

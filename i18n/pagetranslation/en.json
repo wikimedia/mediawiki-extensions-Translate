@@ -157,6 +157,7 @@
 	"log-action-filter-messagebundle": "Type of action:",
 	"log-action-filter-messagebundle-move": "Message bundle moves",
 	"log-action-filter-messagebundle-delete": "Message bundle deletions",
+	"pt-cta-mark-translation": "This page can be marked for community translation. Adjust the [$1 page translation settings] to let editors know they can start translating the contents.",
 	"pt-movepage-title": "Move translatable page \"$1\"",
 	"pt-movepage-messagebundle-title": "Move message bundle \"$1\"",
 	"pt-movepage-blockers": "The translatable page cannot be moved to a new name because of the following {{PLURAL:$1|error|errors}}:",
