@@ -149,30 +149,20 @@ class MessageGroupMetadata {
 		if ( $this->priorityCache === null ) {
 			// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 			$db = Utilities::getSafeReadDB();
-			$res = $db->select(
-				[
-					'a' => 'translate_metadata',
-					'b' => 'translate_metadata'
-				],
-				[
+			$res = $db->newSelectQueryBuilder()
+				->select( [
 					'group' => 'b.tmd_group',
 					'langs' => 'b.tmd_value',
-				],
-				[],
-				__METHOD__,
-				[],
-				[
-					'b' => [
-						'INNER JOIN',
-						[
-							'a.tmd_group = b.tmd_group',
-							'a.tmd_key' => 'priorityforce',
-							'a.tmd_value' => 'on',
-							'b.tmd_key' => 'prioritylangs',
-						]
-					]
-				]
-			);
+				] )
+				->from( 'translate_metadata', 'a' )
+				->join( 'translate_metadata', 'b', [
+					'a.tmd_group = b.tmd_group',
+					'a.tmd_key' => 'priorityforce',
+					'a.tmd_value' => 'on',
+					'b.tmd_key' => 'prioritylangs',
+				] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			$this->priorityCache = [];
 			foreach ( $res as $row ) {
@@ -204,15 +194,15 @@ class MessageGroupMetadata {
 			$dbGroupIdMap[ $this->getGroupIdForDatabase( $groupId ) ] = $groupId;
 		}
 
-		$res = $db->select(
-			'translate_metadata',
-			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
-			[
+		$res = $db->newSelectQueryBuilder()
+			->select( [ 'tmd_group', 'tmd_key', 'tmd_value' ] )
+			->from( 'translate_metadata' )
+			->where( [
 				'tmd_group' => array_keys( $dbGroupIdMap ),
 				'tmd_key' => $keys,
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$ret = [];
 		foreach ( $res as $row ) {
@@ -252,16 +242,17 @@ class MessageGroupMetadata {
 
 	/** Get groups ids that have subgroups set up. */
 	public function getGroupsWithSubgroups(): array {
-		$tables = [ 'translate_metadata' ];
-		$field = 'tmd_group';
-		$conditions = [ 'tmd_key' => 'subgroups' ];
-
 		// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 		$db = Utilities::getSafeReadDB();
 		// There is no need to de-hash the group id from the database as
 		// AggregateGroupsActionApi::generateAggregateGroupId already ensures that the length
 		// is appropriate
-		return $db->selectFieldValues( $tables, $field, $conditions, __METHOD__ );
+		return $db->newSelectQueryBuilder()
+			->select( 'tmd_group' )
+			->from( 'translate_metadata' )
+			->where( [ 'tmd_key' => 'subgroups' ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
 	private function getGroupIdForDatabase( string $groupId ): string {

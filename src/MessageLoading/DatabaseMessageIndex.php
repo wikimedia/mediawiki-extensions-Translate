@@ -58,7 +58,11 @@ class DatabaseMessageIndex extends MessageIndex {
 		}
 
 		$dbr = $this->loadBalancer->getConnection( $readLatest ? DB_PRIMARY : DB_REPLICA );
-		$res = $dbr->select( 'translate_messageindex', '*', [], __METHOD__ );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( '*' )
+			->from( 'translate_messageindex' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		$this->index = [];
 		foreach ( $res as $row ) {
 			$this->index[$row->tmi_key] = $this->unserialize( $row->tmi_value );
@@ -70,12 +74,12 @@ class DatabaseMessageIndex extends MessageIndex {
 	/** @inheritDoc */
 	protected function get( $key ) {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$value = $dbr->selectField(
-			'translate_messageindex',
-			'tmi_value',
-			[ 'tmi_key' => $key ],
-			__METHOD__
-		);
+		$value = $dbr->newSelectQueryBuilder()
+			->select( 'tmi_value' )
+			->from( 'translate_messageindex' )
+			->where( [ 'tmi_key' => $key ] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return is_string( $value ) ? $this->unserialize( $value ) : null;
 	}

@@ -631,19 +631,21 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$dbr = Utilities::getSafeReadDB();
-		$tables = [ 'page', 'revtag' ];
-		$fields = [ 'page_namespace', 'page_title', 'rt_type' ];
-		$joins = [ 'revtag' =>
-		[
-			'LEFT JOIN',
-			[ 'page_id=rt_page', 'page_latest=rt_revision', 'rt_type' => RevTagStore::FUZZY_TAG ]
-		]
-		];
 
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
+			$iterator->append( $dbr->newSelectQueryBuilder()
+				->select( [ 'page_namespace', 'page_title', 'rt_type' ] )
+				->from( 'page' )
+				->leftJoin( 'revtag', null, [
+					'page_id=rt_page',
+					'page_latest=rt_revision',
+					'rt_type' => RevTagStore::FUZZY_TAG,
+				] )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->fetchResultSet() );
 		}
 
 		$this->dbInfo = $iterator;
@@ -670,19 +672,17 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		$dbr = Utilities::getSafeReadDB();
-		$tables = [ 'page', 'translate_reviews' ];
-		$fields = [ 'page_namespace', 'page_title', 'trr_user' ];
-		$joins = [ 'translate_reviews' =>
-			[
-				'JOIN',
-				[ 'page_id=trr_page', 'page_latest=trr_revision' ]
-			]
-		];
 
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
+			$iterator->append( $dbr->newSelectQueryBuilder()
+				->select( [ 'page_namespace', 'page_title', 'trr_user' ] )
+				->from( 'page' )
+				->join( 'translate_reviews', null, [ 'page_id=trr_page', 'page_latest=trr_revision' ] )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->fetchResultSet() );
 		}
 
 		$this->dbReviewData = $iterator;
@@ -711,15 +711,18 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$dbr = Utilities::getSafeReadDB();
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$revQuery = $revisionStore->getQueryInfo( [ 'page' ] );
-		$tables = $revQuery['tables'];
-		$fields = $revQuery['fields'];
-		$joins = $revQuery['joins'];
 
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$conds = [ 'page_latest = rev_id', $conds ];
-			$iterator->append( $dbr->select( $tables, $fields, $conds, __METHOD__, [], $joins ) );
+			$iterator->append( $dbr->newSelectQueryBuilder()
+				->tables( $revQuery['tables'] )
+				->fields( $revQuery['fields'] )
+				->where( $conds )
+				->andWhere( [ 'page_latest = rev_id' ] )
+				->joinConds( $revQuery['joins'] )
+				->caller( __METHOD__ )
+				->fetchResultSet() );
 		}
 
 		$this->dbData = $iterator;

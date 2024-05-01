@@ -219,17 +219,20 @@ class MessageHandle {
 	public function isFuzzy(): bool {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
-		$tables = [ 'page', 'revtag' ];
-		$field = 'rt_type';
-		$conds = [
-			'page_namespace' => $this->title->getNamespace(),
-			'page_title' => $this->title->getDBkey(),
-			'rt_type' => RevTagStore::FUZZY_TAG,
-			'page_id=rt_page',
-			'page_latest=rt_revision'
-		];
-
-		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( 'rt_type' )
+			->from( 'page' )
+			->join( 'revtag', null, [
+				'page_id=rt_page',
+				'page_latest=rt_revision',
+				'rt_type' => RevTagStore::FUZZY_TAG,
+			] )
+			->where( [
+				'page_namespace' => $this->title->getNamespace(),
+				'page_title' => $this->title->getDBkey(),
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return $res !== false;
 	}
