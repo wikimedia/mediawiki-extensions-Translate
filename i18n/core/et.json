@@ -232,6 +232,8 @@
 	"translate-msggroupselector-search-recent": "Viimased",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|alamrühm|alamrühma}}",
 	"tux-languageselector": "Keel",
+	"tux-watch-group": "Jälgi rühma $1",
+	"tux-unwatch-group": "Lõpeta rühma $1 jälgimine",
 	"tux-tab-all": "Kõik",
 	"tux-tab-untranslated": "Tõlkimata",
 	"tux-tab-outdated": "Iganenud",
@@ -247,6 +249,8 @@
 	"tux-editor-placeholder-language": "Sinu tõlge ($1)",
 	"tux-editor-editsummary-placeholder": "Selgita muudatusi (valikuline)",
 	"tux-editor-paste-original-button-label": "Kleebi lähtetekst",
+	"tux-editor-copy-original-button-label": "Kopeeri lähtetekst",
+	"tux-editor-copied-original-button-label": "Kopeeritud!",
 	"tux-editor-discard-changes-button-label": "Hülga muudatused",
 	"tux-editor-save-button-label": "Avalda tõlge",
 	"tux-editor-skip-button-label": "Jäta vahele ja mine järgmise juurde",
@@ -324,5 +328,12 @@
 	"specialpages-group-translation": "Tõlkimine",
 	"log-action-filter-translationreview": "Toimingu tüüp:",
 	"log-action-filter-translationreview-message": "Üksiku tõlgitud sõnumi ülevaatus",
-	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused"
+	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused",
+	"echo-category-title-translate-message-group-subscription": "Tõlgitava sõnumirühma tellimus",
+	"echo-pref-tooltip-translate-message-group-subscription": "Teavita mind muudatustest tõlgitavas sõnumirühmas, mida tellin.",
+	"notification-bundle-header-message-group-subscription": "Uuendused $1 tõlgitavas {{PLURAL:$1|sõnumirühmas}}",
+	"notification-header-message-group-subscription": "Rühma $1 tõlkeid on uuendatud.",
+	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Uus või eemaldatud sõnum|Uued või eemaldatud sõnumid}} rühmas $1",
+	"notification-body-translate-mgs-message-added-removed": "Lisatud $1 ja eemaldatud $2 {{PLURAL:$2|sõnum|sõnumit}}",
+	"notification-link-mgs-group-translate": "Tõlgi rühm $1"
 }
