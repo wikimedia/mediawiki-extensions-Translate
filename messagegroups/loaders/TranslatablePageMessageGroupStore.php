@@ -148,11 +148,14 @@ class TranslatablePageMessageGroupStore extends MessageGroupLoader
 	 */
 	protected function getTranslatablePageTitles() {
 		$groupTitles = [];
-		$tables = [ 'page', 'revtag' ];
-		$vars = [ 'page_id', 'page_namespace', 'page_title' ];
-		$conds = [ 'page_id=rt_page', 'rt_type' => RevTagStore::TP_MARK_TAG ];
-		$options = [ 'GROUP BY' => 'rt_page,page_id,page_namespace,page_title' ];
-		$res = $this->db->select( $tables, $vars, $conds, __METHOD__, $options );
+		$res = $this->db->newSelectQueryBuilder()
+			->select( [ 'page_id', 'page_namespace', 'page_title' ] )
+			->from( 'page' )
+			->join( 'revtag', null, 'page_id=rt_page' )
+			->where( [ 'rt_type' => RevTagStore::TP_MARK_TAG ] )
+			->caller( __METHOD__ )
+			->groupBy( [ 'rt_page', 'page_id', 'page_namespace', 'page_title' ] )
+			->fetchResultSet();
 
 		foreach ( $res as $r ) {
 			$title = Title::newFromRow( $r );

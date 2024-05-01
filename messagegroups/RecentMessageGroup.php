@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * @since 2011-11-28
@@ -58,8 +59,11 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 	protected function getRCCutoff() {
 		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$tables = 'recentchanges';
-		$max = $db->selectField( $tables, 'MAX(rc_id)', [], __METHOD__ );
+		$max = $db->newSelectQueryBuilder()
+			->select( 'MAX(rc_id)' )
+			->from( 'recentchanges' )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return max( 0, $max - 50000 );
 	}
@@ -100,16 +104,15 @@ class RecentMessageGroup extends WikiMessageGroup {
 		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$rcQuery = RecentChange::getQueryInfo();
-		$tables = $rcQuery['tables'];
-		$joins = $rcQuery['joins'];
-
-		$fields = [ 'rc_namespace', 'rc_title' ];
-		$conds = $this->getQueryConditions();
-		$options = [
-			'ORDER BY' => 'rc_id DESC',
-			'LIMIT' => 5000
-		];
-		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
+		$res = $db->newSelectQueryBuilder()
+			->select( [ 'rc_namespace', 'rc_title' ] )
+			->tables( $rcQuery['tables'] )
+			->where( $this->getQueryConditions() )
+			->orderBy( 'rc_id', SelectQueryBuilder::SORT_DESC )
+			->limit( 5000 )
+			->joinConds( $rcQuery['joins'] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$defs = [];
 		foreach ( $res as $row ) {

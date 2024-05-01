@@ -492,7 +492,12 @@ class MessageGroupStats {
 		}
 
 		$dbr = Utilities::getSafeReadDB();
-		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( '*' )
+			->from( self::TABLE )
+			->where( $conds )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return $res;
 	}

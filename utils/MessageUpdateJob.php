@@ -241,11 +241,16 @@ class MessageUpdateJob extends GenericTranslateJob {
 		$dbw = MediaWikiServices::getInstance()
 			->getDBLoadBalancer()
 			->getMaintenanceConnectionRef( DB_PRIMARY );
-		$fields = [ 'page_id', 'page_latest' ];
-		$conds = [ 'page_namespace' => $title->getNamespace() ];
-		$conds['page_title'] = array_keys( $pages );
 
-		$res = $dbw->select( 'page', $fields, $conds, __METHOD__ );
+		$res = $dbw->newSelectQueryBuilder()
+			->select( [ 'page_id', 'page_latest' ] )
+			->from( 'page' )
+			->where( [
+				'page_namespace' => $title->getNamespace(),
+				'page_title' => array_keys( $pages ),
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		$inserts = [];
 		foreach ( $res as $row ) {
 			$inserts[] = [

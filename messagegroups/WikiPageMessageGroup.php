@@ -64,16 +64,17 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		$title = $this->getTitle();
 
 		$dbr = Utilities::getSafeReadDB();
-		$tables = [ 'page', 'translate_sections' ];
-		$vars = [ 'trs_key', 'trs_text' ];
-		$conds = [
-			'page_namespace' => $title->getNamespace(),
-			'page_title' => $title->getDBkey(),
-			// The join condition
-			'page_id = trs_page',
-		];
-		$options = [ 'ORDER BY' => 'trs_order' ];
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'trs_key', 'trs_text' ] )
+			->from( 'page' )
+			->join( 'translate_sections', null, 'page_id = trs_page' )
+			->where( [
+				'page_namespace' => $title->getNamespace(),
+				'page_title' => $title->getDBkey(),
+			] )
+			->caller( __METHOD__ )
+			->orderBy( 'trs_order' )
+			->fetchResultSet();
 
 		$defs = [];
 
