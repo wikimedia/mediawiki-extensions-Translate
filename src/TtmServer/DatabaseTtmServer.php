@@ -58,12 +58,15 @@ class DatabaseTtmServer extends TTMServer implements WritableTtmServer, Readable
 		 * get suggestions which do not match the original definition any
 		 * longer. The old translations are still kept until purged by
 		 * rerunning the bootstrap script. */
-		$conditions = [
-			'tms_context' => $context->getPrefixedText(),
-			'tms_text' => $definition,
-		];
-
-		$sid = $dbw->selectField( 'translate_tms', 'tms_sid', $conditions, __METHOD__ );
+		$sid = $dbw->newSelectQueryBuilder()
+			->select( 'tms_sid' )
+			->from( 'translate_tms' )
+			->where( [
+				'tms_context' => $context->getPrefixedText(),
+				'tms_text' => $definition,
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
 		if ( $sid === false ) {
 			$sid = $this->insertSource( $context, $sourceLanguage, $definition );
 		}

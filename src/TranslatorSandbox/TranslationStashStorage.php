@@ -26,10 +26,12 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 	}
 
 	public function getTranslations( User $user ): array {
-		$conds = [ 'ts_user' => $user->getId() ];
-		$fields = [ 'ts_namespace', 'ts_title', 'ts_value', 'ts_metadata' ];
-
-		$res = $this->db->select( $this->dbTable, $fields, $conds, __METHOD__ );
+		$res = $this->db->newSelectQueryBuilder()
+			->select( [ 'ts_namespace', 'ts_title', 'ts_value', 'ts_metadata' ] )
+			->from( $this->dbTable )
+			->where( [ 'ts_user' => $user->getId() ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$objects = [];
 		foreach ( $res as $row ) {

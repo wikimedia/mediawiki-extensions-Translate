@@ -25,6 +25,7 @@ use SpecialPage;
 use TextContent;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use WikiPageMessageGroup;
 
 /**
@@ -319,14 +320,16 @@ class TranslatablePage extends TranslatableBundle {
 	public function getMarkedRevs(): IResultWrapper {
 		$db = Utilities::getSafeReadDB();
 
-		$fields = [ 'rt_revision', 'rt_value' ];
-		$conds = [
-			'rt_page' => $this->getPageIdentity()->getId(),
-			'rt_type' => RevTagStore::TP_MARK_TAG,
-		];
-		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
-
-		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
+		return $db->newSelectQueryBuilder()
+			->select( [ 'rt_revision', 'rt_value' ] )
+			->from( 'revtag' )
+			->where( [
+				'rt_page' => $this->getPageIdentity()->getId(),
+				'rt_type' => RevTagStore::TP_MARK_TAG,
+			] )
+			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 	}
 
 	/** @inheritDoc */
@@ -402,14 +405,17 @@ class TranslatablePage extends TranslatableBundle {
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
 		$db = Utilities::getSafeReadDB();
-		$fields = 'rt_value';
-		$conds = [
-			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTagStore::TRANSVER_PROP,
-		];
-		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
-		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
+		return $db->newSelectQueryBuilder()
+			->select( 'rt_value' )
+			->from( 'revtag' )
+			->where( [
+				'rt_page' => $title->getArticleID(),
+				'rt_type' => RevTagStore::TRANSVER_PROP,
+			] )
+			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 
 	public function supportsTransclusion(): ?bool {

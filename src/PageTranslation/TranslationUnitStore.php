@@ -23,12 +23,12 @@ class TranslationUnitStore implements TranslationUnitReader {
 	}
 
 	public function getUnits(): array {
-		$res = $this->db->select(
-			self::TABLE,
-			[ 'trs_key', 'trs_text' ],
-			[ 'trs_page' => $this->pageId ],
-			__METHOD__
-		);
+		$res = $this->db->newSelectQueryBuilder()
+			->select( [ 'trs_key', 'trs_text' ] )
+			->from( self::TABLE )
+			->where( [ 'trs_page' => $this->pageId ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$units = [];
 		foreach ( $res as $row ) {
@@ -40,12 +40,12 @@ class TranslationUnitStore implements TranslationUnitReader {
 
 	/** @return string[] */
 	public function getNames(): array {
-		return $this->db->selectFieldValues(
-			self::TABLE,
-			'trs_key',
-			[ 'trs_page' => $this->pageId ],
-			__METHOD__
-		);
+		return $this->db->newSelectQueryBuilder()
+			->select( 'trs_key' )
+			->from( self::TABLE )
+			->where( [ 'trs_page' => $this->pageId ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
 	public function delete(): void {
