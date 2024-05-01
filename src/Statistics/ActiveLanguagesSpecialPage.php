@@ -216,17 +216,21 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		}
 
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$tables = [ 'recentchanges' ];
-		$fields = [ 'lang' => 'substring_index(rc_title, \'/\', -1)', 'count' => 'COUNT(*)' ];
 		$timestamp = $dbr->timestamp( (int)wfTimestamp() - 60 * 60 * 24 * $this->period );
-		$conds = [
-			'rc_timestamp > ' . $dbr->addQuotes( $timestamp ),
-			'rc_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
-			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
-		];
-		$options = [ 'GROUP BY' => 'lang', 'HAVING' => 'count > 20', 'ORDER BY' => 'NULL' ];
 
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'lang' => 'substring_index(rc_title, \'/\', -1)', 'count' => 'COUNT(*)' ] )
+			->from( 'recentchanges' )
+			->where( [
+				'rc_timestamp > ' . $dbr->addQuotes( $timestamp ),
+				'rc_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
+				'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+			] )
+			->groupBy( 'lang' )
+			->having( 'count > 20' )
+			->orderBy( 'NULL' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$data = [];
 		foreach ( $res as $row ) {

@@ -27,12 +27,12 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 		$services = MediaWikiServices::getInstance();
 		$db = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
-		$dbGroupIds = $db->selectFieldValues(
-			'translate_groupstats',
-			'DISTINCT(tgs_group)',
-			'*',
-			__METHOD__
-		);
+		$dbGroupIds = $db->newSelectQueryBuilder()
+			->select( 'tgs_group' )
+			->distinct()
+			->from( 'translate_groupstats' )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 		$knownGroupIds = array_map(
 			[ MessageGroupStats::class, 'getDatabaseIdForGroupId' ],
 			array_keys( MessageGroups::singleton()->getGroups() )
@@ -55,12 +55,12 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			);
 		}
 
-		$dbLanguages = $db->selectFieldValues(
-			'translate_groupstats',
-			'DISTINCT(tgs_lang)',
-			'*',
-			__METHOD__
-		);
+		$dbLanguages = $db->newSelectQueryBuilder()
+			->select( 'tgs_lang' )
+			->distinct()
+			->from( 'translate_groupstats' )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 		$knownLanguages = array_keys( Utilities::getLanguageNames( 'en' ) );
 		$unknownLanguages = array_diff( $dbLanguages, $knownLanguages );
 

@@ -37,25 +37,24 @@ class TranslatorActivityQuery {
 
 		$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
 
-		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
-		$fields = [
-			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
-			'lastedit' => 'MAX(rev_timestamp)',
-			'count' => 'COUNT(page_id)',
-		];
-		$conds = [
-			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
-			'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
-		];
-		$options = [
-			'GROUP BY' => $actorQuery['fields']['rev_user_text'],
-			'ORDER BY' => 'NULL',
-		];
-		$joins = [
-				'revision' => [ 'JOIN', 'page_id=rev_page' ],
-			] + $actorQuery['joins'];
-
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [
+				'rev_user_text' => $actorQuery['fields']['rev_user_text'],
+				'lastedit' => 'MAX(rev_timestamp)',
+				'count' => 'COUNT(page_id)',
+			] )
+			->from( 'page' )
+			->join( 'revision', null, 'page_id=rev_page' )
+			->tables( $actorQuery['tables'] )
+			->where( [
+				'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
+				'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
+			] )
+			->groupBy( $actorQuery['fields']['rev_user_text'] )
+			->orderBy( 'NULL' )
+			->joinConds( $actorQuery['joins'] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$data = [];
 		foreach ( $res as $row ) {
@@ -83,27 +82,25 @@ class TranslatorActivityQuery {
 
 		$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
 
-		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
-		$fields = [
-			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
-			'lang' => 'substring_index(page_title, \'/\', -1)',
-			'lastedit' => 'MAX(rev_timestamp)',
-			'count' => 'COUNT(page_id)',
-		];
-		$conds = [
-			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
-			'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
-		];
-		$options = [
-			'GROUP BY' => [ 'lang', $actorQuery['fields']['rev_user_text'] ],
-			'ORDER BY' => 'NULL',
-		];
-
-		$joins = [
-				'revision' => [ 'JOIN', 'page_id=rev_page' ],
-			] + $actorQuery['joins'];
-
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [
+				'rev_user_text' => $actorQuery['fields']['rev_user_text'],
+				'lang' => 'substring_index(page_title, \'/\', -1)',
+				'lastedit' => 'MAX(rev_timestamp)',
+				'count' => 'COUNT(page_id)',
+			] )
+			->from( 'page' )
+			->join( 'revision', null, 'page_id=rev_page' )
+			->tables( $actorQuery['tables'] )
+			->where( [
+				'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+				'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
+			] )
+			->groupBy( [ 'lang', $actorQuery['fields']['rev_user_text'] ] )
+			->orderBy( 'NULL' )
+			->joinConds( $actorQuery['joins'] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$data = [];
 		foreach ( $res as $row ) {
