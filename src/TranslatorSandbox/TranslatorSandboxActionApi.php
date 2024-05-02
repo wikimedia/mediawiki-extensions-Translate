@@ -28,20 +28,13 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class TranslatorSandboxActionApi extends ApiBase {
-	/** @var UserFactory */
-	private $userFactory;
-	/** @var UserNameUtils */
-	private $userNameUtils;
-	/** @var UserOptionsManager */
-	private $userOptionsManager;
-	/** @var WikiPageFactory */
-	private $wikiPageFactory;
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-	/** @var ServiceOptions */
-	private $options;
+	private UserFactory $userFactory;
+	private UserNameUtils $userNameUtils;
+	private UserOptionsManager $userOptionsManager;
+	private WikiPageFactory $wikiPageFactory;
+	private UserOptionsLookup $userOptionsLookup;
 	private TranslateSandbox $translateSandbox;
-
+	private bool $isSandboxEnabled;
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
 	];
@@ -64,11 +57,12 @@ class TranslatorSandboxActionApi extends ApiBase {
 		$this->wikiPageFactory = $wikiPageFactory;
 		$this->userOptionsLookup = $userOptionsLookup;
 		$this->translateSandbox = $translateSandbox;
-		$this->options = $options;
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->isSandboxEnabled = $options->get( 'TranslateUseSandbox' );
 	}
 
 	public function execute(): void {
-		if ( !$this->options->get( 'TranslateUseSandbox' ) ) {
+		if ( !$this->isSandboxEnabled ) {
 			$this->dieWithError( 'apierror-translate-sandboxdisabled', 'sandboxdisabled' );
 		}
 
@@ -154,7 +148,7 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 		foreach ( $params['userid'] as $userId ) {
 			$user = $this->userFactory->newFromId( $userId );
-			$userpage = $user->getUserPage();
+			$userPage = $user->getUserPage();
 
 			$this->translateSandbox->sendEmail( $this->getUser(), $user, 'rejection' );
 
@@ -169,9 +163,9 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 			$logEntry = new ManualLogEntry( 'translatorsandbox', 'rejected' );
 			$logEntry->setPerformer( $this->getUser() );
-			$logEntry->setTarget( $userpage );
-			$logid = $logEntry->insert();
-			$logEntry->publish( $logid );
+			$logEntry->setTarget( $userPage );
+			$logId = $logEntry->insert();
+			$logEntry->publish( $logId );
 		}
 	}
 
@@ -200,8 +194,8 @@ class TranslatorSandboxActionApi extends ApiBase {
 			$logEntry->setParameters( [
 				'4::userid' => $user->getId(),
 			] );
-			$logid = $logEntry->insert();
-			$logEntry->publish( $logid );
+			$logId = $logEntry->insert();
+			$logEntry->publish( $logId );
 
 			$this->createUserPage( $user );
 		}
@@ -226,22 +220,22 @@ class TranslatorSandboxActionApi extends ApiBase {
 
 	/** Create a user page for a user with a babel template based on the signup preferences. */
 	private function createUserPage( User $user ): void {
-		$userpage = $user->getUserPage();
+		$userPage = $user->getUserPage();
 
-		if ( $userpage->exists() ) {
+		if ( $userPage->exists() ) {
 			return;
 		}
 
-		$languagePrefs = FormatJson::decode(
+		$languagePreferences = FormatJson::decode(
 			$this->userOptionsLookup->getOption( $user, 'translate-sandbox' ),
 			true
 		);
-		$languages = implode( '|', $languagePrefs[ 'languages' ] ?? [] );
-		$babeltext = "{{#babel:$languages}}";
+		$languages = implode( '|', $languagePreferences[ 'languages' ] ?? [] );
+		$babelText = "{{#babel:$languages}}";
 		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();
 
-		$page = $this->wikiPageFactory->newFromTitle( $userpage );
-		$content = ContentHandler::makeContent( $babeltext, $userpage );
+		$page = $this->wikiPageFactory->newFromTitle( $userPage );
+		$content = ContentHandler::makeContent( $babelText, $userPage );
 
 		$page->newPageUpdater( $user )
 			->setContent( SlotRecord::MAIN, $content )
