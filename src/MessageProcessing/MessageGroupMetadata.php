@@ -151,23 +151,28 @@ class MessageGroupMetadata {
 			$db = Utilities::getSafeReadDB();
 			$res = $db->newSelectQueryBuilder()
 				->select( [
-					'group' => 'b.tmd_group',
+					'group' => 'a.tmd_group',
 					'langs' => 'b.tmd_value',
 				] )
 				->from( 'translate_metadata', 'a' )
-				->join( 'translate_metadata', 'b', [
+				->leftJoin( 'translate_metadata', 'b', [
 					'a.tmd_group = b.tmd_group',
-					'a.tmd_key' => 'priorityforce',
-					'a.tmd_value' => 'on',
 					'b.tmd_key' => 'prioritylangs',
+				] )
+				->where( [
+					'a.tmd_key' => 'priorityforce',
+					'a.tmd_value' => 'on'
 				] )
 				->caller( __METHOD__ )
 				->fetchResultSet();
 
 			$this->priorityCache = [];
 			foreach ( $res as $row ) {
-				$this->priorityCache[$row->group] =
-					array_flip( explode( ',', $row->langs ) );
+				if ( isset( $row->langs ) ) {
+					$this->priorityCache[ $row->group ] = array_flip( explode( ',', $row->langs ) );
+				} else {
+					$this->priorityCache[ $row->group ] = [];
+				}
 			}
 		}
 
