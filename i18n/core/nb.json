@@ -70,7 +70,7 @@
 	"translate-export-group-too-large": "Den valgte beskjedgruppa er for stor. Velg en beskjedgruppe som har færre enn $1 {{PLURAL:$1|beskjed|beskjeder}} eller kontakt en oversettelsesadministrator for råd.",
 	"translate-checks-parameters": "Følgende {{PLURAL:$2|parameter|parametre}} brukes ikke:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Følgende {{PLURAL:$2|parameter er ukjent|parametre er ukjente}}:\n<strong>$1</strong>",
-	"translate-checks-balance": "Det er et ujevnt antall {{PLURAL:$2|parenteser|parenteser}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-balance": "Det er et ujevnt antall {{PLURAL:$2|parenteser}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Følgende {{PLURAL:$2|lenke er problematisk|$2 lenker er problematiske}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Følgende {{PLURAL:$2|lenke|$2 lenker}} mangler:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definisjonen bruker <nowiki>{{PLURAL:}}</nowiki>, men oversettelsen gjør ikke det.",

@@ -484,5 +484,6 @@
 	"log-action-filter-translationreview-message": "Перевірка окремих повідомлень перекладу",
 	"log-action-filter-translationreview-group": "Зміни в статусі прогресу перекладів",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|імпортував|імпортувала|імпортували}} перекладний пакет $3",
-	"log-action-filter-import-translatable-bundle": "Імпорт перекладного пакета"
+	"log-action-filter-import-translatable-bundle": "Імпорт перекладного пакета",
+	"translate-hidetranslations": "Приховати сторінки перекладу"
 }
