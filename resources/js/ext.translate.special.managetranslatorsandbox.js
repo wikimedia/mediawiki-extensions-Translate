@@ -68,13 +68,14 @@
 	function displayRequestDetails( request ) {
 		var $reminderStatus = $( '<span>' ).addClass( 'reminder-status' ),
 			$detailsPane = $( '.details.pane' );
+		const userLanguage = mw.config.get( 'wgUserLanguage' );
 		if ( request.reminderscount ) {
 			var agoText = moment.isMoment( request.lastreminder ) ? moment( request.lastreminder ).fromNow() : request.lastreminder;
 			$reminderStatus.text( mw.msg(
 				'tsb-reminder-sent',
 				request.reminderscount,
 				agoText
-			) );
+			) ).prop( 'title', moment( request.lastreminderts ).toDate().toLocaleString( userLanguage ) );
 		}
 
 		$detailsPane.empty().append(
@@ -103,6 +104,7 @@
 							} ).done( function () {
 								request.lastreminder = moment();
 								request.reminderscount++;
+								request.lastreminderts = moment().toDate().toLocaleString( userLanguage );
 								$reminderStatus.text( mw.msg( 'tsb-reminder-sent-new' ) );
 							} ).fail( function () {
 								$reminderStatus.text( mw.msg( 'tsb-reminder-failed' ) );

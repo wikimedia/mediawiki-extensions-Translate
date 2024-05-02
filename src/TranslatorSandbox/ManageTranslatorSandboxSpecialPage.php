@@ -134,11 +134,13 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 			$remindersCount = count( $reminders );
 			if ( $remindersCount ) {
 				$lastReminderTimestamp = new MWTimestamp( end( $reminders ) );
+				$lastReminderRfcTimestamp = $lastReminderTimestamp->getTimestamp( TS_RFC2822 );
 				$lastReminderAgo = htmlspecialchars(
 					$this->getHumanTimestamp( $lastReminderTimestamp )
 				);
 			} else {
 				$lastReminderAgo = '';
+				$lastReminderRfcTimestamp = '';
 			}
 
 			$requests[] = [
@@ -153,6 +155,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 				'userid' => $user->getId(),
 				'reminderscount' => $remindersCount,
 				'lastreminder' => $lastReminderAgo,
+				'lastreminderts' => $lastReminderRfcTimestamp
 			];
 		}
 
