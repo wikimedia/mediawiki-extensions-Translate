@@ -120,6 +120,10 @@ class SubsetMessageGroup extends MessageGroupOld {
 		return $value;
 	}
 
+	public function getIcon(): ?string {
+		return $this->getParentGroup()->getIcon();
+	}
+
 	protected function getParentGroup(): MessageGroup {
 		// Protected for testing, until this code is refactored to not call static methods
 		$this->parentGroup ??= MessageGroups::getGroup( $this->parentId );
