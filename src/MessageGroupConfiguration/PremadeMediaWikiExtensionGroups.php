@@ -7,6 +7,7 @@ use FileDependency;
 use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\UrlInsertablesSuggester;
 use MediaWikiExtensionMessageGroup;
 use MessageGroup;
 use MessageGroupBase;
@@ -127,7 +128,8 @@ class PremadeMediaWikiExtensionGroups {
 		];
 
 		$conf['INSERTABLES'] = [
-			[ 'class' => MediaWikiInsertablesSuggester::class ]
+			[ 'class' => MediaWikiInsertablesSuggester::class ],
+			[ 'class' => UrlInsertablesSuggester::class ]
 		];
 
 		if ( isset( $info['optional'] ) ) {
