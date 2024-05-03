@@ -205,6 +205,7 @@
 	"translate-mgs-invalid-group": "निर्दिष्ट समूह $1 मौजूद नहीं है।",
 	"translate-mgs-nothing": "अनुरोध किए गए आँकड़ों में दिखाने के लिए कुछ नहीं है।",
 	"translate-tes-optgroup-group": "समूह",
+	"translate-tes-optgroup-message": "संदेश",
 	"translate-tes-server-error": "खोज के सुझाव लाए न जा सके",
 	"translate-tes-entity-not-found": "कोई मेल खाता परिणाम नहीं है",
 	"translate-tes-type-to-search": "खोज शुरू करने के लिए लिखें",
@@ -338,6 +339,8 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|उपपृष्ठ}}",
 	"tux-languageselector": "अनुवाद का लक्ष्य",
 	"tux-select-target-language": "अनुवाद का लक्ष्य भाषा",
+	"tux-watch-group": "$1 देखें",
+	"tux-unwatch-group": "$1 देखना बंद करें",
 	"tux-tab-all": "सभी",
 	"tux-tab-untranslated": "अनानुवादित",
 	"tux-tab-outdated": "कालग्रस्त",
@@ -453,5 +456,6 @@
 	"translate-messagebundle-sourcelanguage-changed": "संदेश बंडल के बनने के बाद इसके स्रोत भाषा को बदला नहीं जा सकता।",
 	"log-action-filter-translationreview": "कार्य का प्रकार:",
 	"log-action-filter-translationreview-message": "अनुवाद संदेशों का निरीक्षण",
-	"log-action-filter-translationreview-group": "अनुवादों की प्रगति की स्थिति में बदलाव"
+	"log-action-filter-translationreview-group": "अनुवादों की प्रगति की स्थिति में बदलाव",
+	"notification-link-mgs-group-translate": "$1 का अनुवाद करें"
 }
