@@ -419,10 +419,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 				'rt_revision' => 'MAX(rt_revision)',
 				'rt_type'
 			] )
-			->tables( [ 'page', 'revtag' ] )
+			->from( 'page' )
+			->join( 'revtag', null, 'page_id=rt_page' )
 			->where( [
-					'page_id=rt_page',
-					'rt_type' => [ RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG ],
+				'rt_type' => [ RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG ],
 			] )
 			->orderBy( [ 'page_namespace', 'page_title' ] )
 			->groupBy( [ 'page_id', 'page_namespace', 'page_title', 'page_latest', 'rt_type' ] )
