@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\StringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Page\PageStore;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Utils\MWTimestamp;
@@ -446,6 +447,7 @@ class ExternalMessageSourceStateComparator {
 		$oldestRevision = $this->revisionLookup->getFirstRevision( $pageIdentity );
 		$latestRevision = $this->revisionLookup->getRevisionByTitle( $pageIdentity );
 
+		$logger = LoggerFactory::getInstance( 'Translate' );
 		// Here we are checking for the following:
 		// 1. New translation was added for a message on translatewiki.net
 		// 2. Translation was exported
@@ -453,15 +455,29 @@ class ExternalMessageSourceStateComparator {
 		// In this case the cache does not have the message
 		if (
 			$cacheUpdateTime !== false &&
-			$oldestRevision->getTimestamp() < $cacheUpdateTime &&
-			$cacheUpdateTime < $latestRevision->getTimestamp()
+			( $oldestRevision && $oldestRevision->getTimestamp() < $cacheUpdateTime ) &&
+			( $latestRevision && $cacheUpdateTime < $latestRevision->getTimestamp() )
 		) {
+			$logger->info(
+				'Expected cache miss for {messageKey} in language: {language}. Cache update time: {cacheUpdateTime}',
+				[
+					'messageKey' => $messageKey,
+					'language' => $collection->getLanguage(),
+					'cacheUpdateTime' => $cacheUpdateTime
+				]
+			);
 			return false;
 		}
 
-		throw new RuntimeException(
-			"No cache entry found for $messageKey in language: {$collection->getLanguage()}"
+		$logger->warning(
+			'Unexpected cache miss for {messageKey} in language: {language}. Cache update time: {cacheUpdateTime}',
+			[
+				'messageKey' => $messageKey,
+				'language' => $collection->getLanguage(),
+				'cacheUpdateTime' => $cacheUpdateTime
+			]
 		);
+		return false;
 	}
 
 }
