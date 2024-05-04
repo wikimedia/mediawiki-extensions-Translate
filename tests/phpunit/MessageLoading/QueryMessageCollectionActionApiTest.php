@@ -55,10 +55,8 @@ class QueryMessageCollectionActionApiTest extends ApiTestCase {
 		);
 
 		$this->assertArrayHasKey( 'warnings', $response,
-			'warning triggered when source language same as target language.' );
-		$this->assertCount( 1, $response['warnings'],
-			'warning triggered when source language same as target language.' );
+			'warning triggered when target language same as source language.' );
 		$this->assertArrayNotHasKey( 'errors', $response,
-			'no error triggered when source language same as target language.' );
+			'no error triggered when target language same as source language.' );
 	}
 }

@@ -84,40 +84,40 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		if ( $sourceLanguageCode === $languageCode ) {
 			$name = $this->getLanguageName( $languageCode );
 			$this->addWarning( [ 'apiwarn-translate-language-disabled-source', wfEscapeWikiText( $name ) ] );
-		} else {
-			$languages = $group->getTranslatableLanguages();
-			if ( $languages === null ) {
-				$checks = [
-					$group->getId(),
-					strtok( $group->getId(), '-' ),
-					'*'
-				];
+		}
 
-				$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
-				foreach ( $checks as $check ) {
-					if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
-						$name = $this->getLanguageName( $languageCode );
-						$reason = $disabledLanguages[ $check ][ $languageCode ];
-						$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
-					}
+		$languages = $group->getTranslatableLanguages();
+		if ( $languages === null ) {
+			$checks = [
+				$group->getId(),
+				strtok( $group->getId(), '-' ),
+				'*'
+			];
+
+			$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
+			foreach ( $checks as $check ) {
+				if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
+					$name = $this->getLanguageName( $languageCode );
+					$reason = $disabledLanguages[ $check ][ $languageCode ];
+					$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
 				}
-			} elseif ( !isset( $languages[ $languageCode ] ) ) {
-				// Not a translatable language
-				$name = $this->getLanguageName( $languageCode );
-				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
 			}
+		} elseif ( !isset( $languages[ $languageCode ] ) ) {
+			// Not a translatable language
+			$name = $this->getLanguageName( $languageCode );
+			$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
+		}
 
-			// A check for cases where the source language of group messages
-			// is a variant of the target language being translated into.
-			if ( strtok( $sourceLanguageCode, '-' ) === strtok( $languageCode, '-' ) ) {
-				$sourceLanguageName = $this->getLanguageName( $sourceLanguageCode );
-				$targetLanguageName = $this->getLanguageName( $languageCode );
-				$this->addWarning( [
-					'apiwarn-translate-language-targetlang-variant-of-source',
-					wfEscapeWikiText( $targetLanguageName ),
-					wfEscapeWikiText( $sourceLanguageName ) ]
-				);
-			}
+		// A check for cases where the source language of group messages
+		// is a variant of the target language being translated into.
+		if ( strtok( $sourceLanguageCode, '-' ) === strtok( $languageCode, '-' ) ) {
+			$sourceLanguageName = $this->getLanguageName( $sourceLanguageCode );
+			$targetLanguageName = $this->getLanguageName( $languageCode );
+			$this->addWarning( [
+				'apiwarn-translate-language-targetlang-variant-of-source',
+				wfEscapeWikiText( $targetLanguageName ),
+				wfEscapeWikiText( $sourceLanguageName ) ]
+			);
 		}
 
 		if ( MessageGroups::isDynamic( $group ) ) {

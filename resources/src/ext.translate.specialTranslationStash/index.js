@@ -173,7 +173,8 @@ function loadMessages() {
 		.done( function ( result ) {
 			var messages = result.query.messagecollection;
 
-			$messageTable.empty();
+			// Remove error class if it was previously added in .fail() below
+			$messageTable.empty().removeClass( 'error' );
 			messages.forEach( function ( message ) {
 				message.properties = {};
 				message.properties.status = 'untranslated';
