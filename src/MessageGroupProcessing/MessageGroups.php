@@ -35,8 +35,7 @@ class MessageGroups {
 	private $groups;
 	/** @var MessageGroupLoader[]|null */
 	private $groupLoaders;
-	/** @var WANObjectCache|null */
-	private $cache;
+	private WANObjectCache $cache;
 
 	/**
 	 * Tracks the current cache version. Update this when there are incompatible changes

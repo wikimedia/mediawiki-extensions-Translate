@@ -16,10 +16,8 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class GroupReviewActionApi extends ApiBase {
 	protected static $right = 'translate-groupreview';
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var MessageGroupReviewStore */
-	private $messageGroupReviewStore;
+	private LanguageNameUtils $languageNameUtils;
+	private MessageGroupReviewStore $messageGroupReviewStore;
 
 	public function __construct(
 		ApiMain $main,

@@ -49,8 +49,7 @@ use Psr\Container\ContainerInterface;
  * @since 2020.04
  */
 class Services implements ContainerInterface {
-	/** @var ContainerInterface */
-	private $container;
+	private ContainerInterface $container;
 
 	private function __construct( ContainerInterface $container ) {
 		$this->container = $container;

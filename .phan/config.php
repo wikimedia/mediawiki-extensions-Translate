@@ -5,6 +5,9 @@ $cfg = require __DIR__ . '/../vendor/mediawiki/mediawiki-phan-config/src/config.
 // These are too spammy for now. TODO enable
 $cfg['null_casts_as_any_type'] = true;
 
+// Gives false positives for uninitialized properties
+$cfg['suppress_issue_types'][] = 'PhanCoalescingNeverNull';
+
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],
 	[

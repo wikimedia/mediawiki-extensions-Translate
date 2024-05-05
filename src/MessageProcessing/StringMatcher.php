@@ -16,13 +16,13 @@ use MediaWiki\Title\Title;
  */
 class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	/** @var string Prefix for mangled message keys */
-	protected $sPrefix = '';
+	protected string $sPrefix = '';
 	/** @var string[] Exact message keys */
-	protected $aExact = [];
+	protected array $aExact = [];
 	/** @var int[] Patterns of type foo* */
-	protected $aPrefix = [];
+	protected array $aPrefix = [];
 	/** @var string[] Patterns that contain wildcard anywhere else than in the end */
-	protected $aRegex = [];
+	protected array $aRegex = [];
 
 	public function __construct( string $prefix = '', array $patterns = [] ) {
 		$this->sPrefix = $prefix;

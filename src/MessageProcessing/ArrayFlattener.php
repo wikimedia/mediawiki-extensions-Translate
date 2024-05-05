@@ -17,10 +17,8 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * @since 2016.01
  */
 class ArrayFlattener {
-	/** @var string */
-	protected $sep;
-	/** @var bool */
-	protected $parseCLDRPlurals;
+	protected string $sep;
+	protected bool $parseCLDRPlurals;
 	// For CLDR pluralization rules
 	protected static $pluralWords = [
 		'zero' => 1,

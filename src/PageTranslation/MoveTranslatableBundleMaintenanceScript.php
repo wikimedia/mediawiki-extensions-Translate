@@ -15,10 +15,8 @@ use Status;
 use TitleParser;
 
 class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
-	/** @var TranslatableBundleMover */
-	private $bundleMover;
-	/** @var TitleParser */
-	private $titleParser;
+	private TranslatableBundleMover $bundleMover;
+	private TitleParser $titleParser;
 
 	public function __construct() {
 		parent::__construct();

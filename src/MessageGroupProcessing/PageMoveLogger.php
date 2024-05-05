@@ -16,10 +16,8 @@ use User;
  * @license GPL-2.0-or-later
  */
 class PageMoveLogger {
-	/** @var string */
-	private $logType;
-	/** @var Title */
-	private $baseSourceTitle;
+	private string $logType;
+	private Title $baseSourceTitle;
 
 	public function __construct( Title $baseSourceTitle, string $logType ) {
 		$this->baseSourceTitle = $baseSourceTitle;

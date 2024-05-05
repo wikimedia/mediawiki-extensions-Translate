@@ -13,8 +13,7 @@ use SplObjectStorage;
  * @since 2021.09
  */
 class ImpossiblePageMove extends Exception {
-	/** @var SplObjectStorage */
-	private $blockers;
+	private SplObjectStorage $blockers;
 
 	public function __construct( SplObjectStorage $blockers ) {
 		parent::__construct();

@@ -17,10 +17,8 @@ use MediaWiki\Title\Title;
  * @license GPL-2.0-or-later
  */
 class TranslatableBundleFactory {
-	/** @var TranslatablePageStore */
-	private $translatablePageStore;
-	/** @var MessageBundleStore */
-	private $messageBundleStore;
+	private TranslatablePageStore $translatablePageStore;
+	private MessageBundleStore $messageBundleStore;
 
 	public function __construct(
 		TranslatablePageStore $translatablePageStore,

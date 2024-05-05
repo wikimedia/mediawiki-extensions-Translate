@@ -23,14 +23,10 @@ use XmlSelect;
  * @license GPL-2.0-or-later
  */
 class AggregateGroupsSpecialPage extends SpecialPage {
-	/** @var bool */
-	private $hasPermission = false;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-	/** @var XmlSelect */
-	private $languageSelector;
-	/** @var MessageGroupMetadata */
-	private $messageGroupMetadata;
+	private bool $hasPermission = false;
+	private LinkBatchFactory $linkBatchFactory;
+	private ?XmlSelect $languageSelector = null;
+	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct( LinkBatchFactory $linkBatchFactory, MessageGroupMetadata $messageGroupMetadata ) {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );

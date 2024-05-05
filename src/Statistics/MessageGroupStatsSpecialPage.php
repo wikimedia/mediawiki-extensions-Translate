@@ -120,7 +120,6 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		// Whether the form has been submitted, only relevant if not including
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
-		// @phan-suppress-next-line PhanCoalescingNeverNull Need to check if the property is initialized
 		$this->target = $request->getVal( self::GROUPS, $this->target ?? '' );
 		if ( $this->target !== '' ) {
 			$this->targetType = self::GROUPS;

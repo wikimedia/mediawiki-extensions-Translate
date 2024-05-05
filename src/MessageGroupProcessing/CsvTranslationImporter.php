@@ -21,8 +21,7 @@ use Status;
  * @author Abijeet Patro
  */
 class CsvTranslationImporter {
-	/** @var WikiPageFactory */
-	private $wikiPageFactory;
+	private WikiPageFactory $wikiPageFactory;
 
 	public function __construct( WikiPageFactory $wikiPageFactory ) {
 		$this->wikiPageFactory = $wikiPageFactory;
