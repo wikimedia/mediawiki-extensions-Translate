@@ -33,29 +33,18 @@ use Wikimedia\ObjectFactory\ObjectFactory;
  */
 class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	// Form parameters both as text and as titles
-	/** @var string */
-	private $oldText;
-	/** @var string */
-	private $reason;
-	/** @var bool */
-	private $moveTalkpages = true;
-	/** @var bool */
-	private $moveSubpages = true;
-	/** @var bool */
-	private $leaveRedirect = true;
-	// Dependencies
-	/** @var ObjectFactory */
-	private $objectFactory;
-	/** @var TranslatableBundleMover */
-	private $bundleMover;
-	/** @var PermissionManager */
-	private $permissionManager;
-	/** @var TranslatableBundleFactory */
-	private $bundleFactory;
+	private string $oldText;
+	private string $reason;
+	private bool $moveTalkpages = true;
+	private bool $moveSubpages = true;
+	private bool $leaveRedirect = true;
+	private ObjectFactory $objectFactory;
+	private TranslatableBundleMover $bundleMover;
+	private PermissionManager $permissionManager;
+	private TranslatableBundleFactory $bundleFactory;
 	private $movePageSpec;
 	// Other
-	/** @var Title */
-	private $oldTitle;
+	private ?Title $oldTitle;
 
 	public function __construct(
 		ObjectFactory $objectFactory,

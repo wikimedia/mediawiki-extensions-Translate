@@ -19,12 +19,11 @@ use Parser;
  * @since 2020.08
  */
 class ParserOutput {
-	/** @var string */
-	private $template;
+	private string $template;
 	/** @var Section[] */
-	private $sectionMap;
+	private array $sectionMap;
 	/** @var TranslationUnit[] */
-	private $unitMap;
+	private array $unitMap;
 
 	public function __construct( string $template, array $sectionMap, array $unitMap ) {
 		$this->assertContainsOnlyInstancesOf( Section::class, '$sectionMap', $sectionMap );

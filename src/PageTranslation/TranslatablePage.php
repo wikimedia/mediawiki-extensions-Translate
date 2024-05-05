@@ -51,8 +51,7 @@ class TranslatablePage extends TranslatableBundle {
 	public const DISPLAY_TITLE_UNIT_ID = 'Page display title';
 
 	protected PageIdentity $title;
-	/** @var RevTagStore */
-	protected $revTagStore;
+	protected RevTagStore $revTagStore;
 	/** @var ?string Text contents of the page. */
 	protected $text;
 	/** @var ?int Revision of the page, if applicable. */

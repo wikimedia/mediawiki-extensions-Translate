@@ -22,20 +22,13 @@ use WikiPageMessageGroup;
  * @since 2020.08
  */
 class TranslationPage {
-	/** @var ParserOutput */
-	private $output;
-	/** @var WikiPageMessageGroup */
-	private $group;
-	/** @var Language */
-	private $targetLanguage;
-	/** @var Language */
-	private $sourceLanguage;
-	/** @var bool */
-	private $showOutdated;
-	/** @var bool */
-	private $wrapUntranslated;
-	/** @var Title */
-	private $sourcePageTitle;
+	private ParserOutput $output;
+	private WikiPageMessageGroup $group;
+	private Language $targetLanguage;
+	private Language $sourceLanguage;
+	private bool $showOutdated;
+	private bool $wrapUntranslated;
+	private Title $sourcePageTitle;
 
 	public function __construct(
 		ParserOutput $output,

@@ -12,10 +12,8 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class TranslationUnitStore implements TranslationUnitReader {
 	private const TABLE = 'translate_sections';
-	/** @var IDatabase */
-	private $db;
-	/** @var int */
-	private $pageId;
+	private IDatabase $db;
+	private int $pageId;
 
 	public function __construct( IDatabase $db, int $pageId ) {
 		$this->db = $db;

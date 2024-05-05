@@ -11,12 +11,9 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
  * @since 2021.03
  */
 class TranslationVariable {
-	/** @var string */
-	private $definition;
-	/** @var string */
-	private $name;
-	/** @var string */
-	private $value;
+	private string $definition;
+	private string $name;
+	private string $value;
 
 	public function __construct( string $definition, string $name, string $value ) {
 		$this->definition = $definition;

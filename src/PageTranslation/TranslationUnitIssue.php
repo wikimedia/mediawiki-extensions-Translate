@@ -17,11 +17,9 @@ class TranslationUnitIssue implements MessageSpecifier {
 	public const ERROR = 'error';
 	public const WARNING = 'warning';
 	/** @var string self::ERROR|self::WARNING */
-	private $severity;
-	/** @var string */
-	private $messageKey;
-	/** @var array */
-	private $messageParams;
+	private string $severity;
+	private string $messageKey;
+	private array $messageParams;
 
 	public function __construct( string $severity, string $messageKey, array $messageParams = [] ) {
 		if ( !in_array( $severity, [ self::ERROR, self::WARNING ] ) ) {

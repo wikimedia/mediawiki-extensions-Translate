@@ -10,12 +10,9 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
  * @since 2020.08
  */
 class Section {
-	/** @var string */
-	private $open;
-	/** @var string */
-	private $contents;
-	/** @var string */
-	private $close;
+	private string $open;
+	private string $contents;
+	private string $close;
 
 	public function __construct( string $open, string $contents, string $close ) {
 		$this->open = $open;
