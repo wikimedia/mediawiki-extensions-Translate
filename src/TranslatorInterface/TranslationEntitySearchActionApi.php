@@ -14,8 +14,7 @@ use Wikimedia\ParamValidator\TypeDef\NumericDef;
  * @license GPL-2.0-or-later
  */
 class TranslationEntitySearchActionApi extends ApiBase {
-	/** @var EntitySearch */
-	private $entitySearch;
+	private EntitySearch $entitySearch;
 	private const GROUPS = 'groups';
 	private const MESSAGES = 'messages';
 

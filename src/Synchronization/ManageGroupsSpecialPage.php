@@ -51,28 +51,19 @@ use Xml;
 class ManageGroupsSpecialPage extends SpecialPage {
 	private const GROUP_SYNC_INFO_WRAPPER_CLASS = 'smg-group-sync-cache-info';
 	private const RIGHT = 'translate-manage';
-	/** @var DifferenceEngine */
-	protected $diff;
-	/** @var string Path to the change cdb file. */
-	protected $cdb;
-	/** @var bool Has the necessary right specified by the RIGHT constant */
-	protected $hasRight = false;
-	/** @var Language */
-	private $contLang;
-	/** @var NamespaceInfo */
-	private $nsInfo;
-	/** @var RevisionLookup */
-	private $revLookup;
-	/** @var GroupSynchronizationCache */
-	private $synchronizationCache;
-	/** @var DisplayGroupSynchronizationInfo */
-	private $displayGroupSyncInfo;
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
-	/** @var MessageIndex */
-	private $messageIndex;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
+	protected DifferenceEngine $diff;
+	/** Path to the change cdb file. */
+	protected string $cdb;
+	/** Has the necessary right specified by the RIGHT constant */
+	protected bool $hasRight = false;
+	private Language $contLang;
+	private NamespaceInfo $nsInfo;
+	private RevisionLookup $revLookup;
+	private GroupSynchronizationCache $synchronizationCache;
+	private DisplayGroupSynchronizationInfo $displayGroupSyncInfo;
+	private JobQueueGroup $jobQueueGroup;
+	private MessageIndex $messageIndex;
+	private LinkBatchFactory $linkBatchFactory;
 
 	public function __construct(
 		Language $contLang,

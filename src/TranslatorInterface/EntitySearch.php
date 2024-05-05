@@ -27,20 +27,13 @@ class EntitySearch {
 	private const FIELD_DELIMITER = "\x7F";
 	private const ROW_DELIMITER = "\n";
 
-	/** @var WANObjectCache */
-	private $cache;
-	/** @var Collation */
-	private $collation;
-	/** @var MessageGroups */
-	private $messageGroupFactory;
-	/** @var NamespaceInfo */
-	private $namespaceInfo;
-	/** @var MessageIndex */
-	private $messageIndex;
-	/** @var TitleParser */
-	private $titleParser;
-	/** @var TitleFormatter */
-	private $titleFormatter;
+	private WANObjectCache $cache;
+	private Collation $collation;
+	private MessageGroups $messageGroupFactory;
+	private NamespaceInfo $namespaceInfo;
+	private MessageIndex $messageIndex;
+	private TitleParser $titleParser;
+	private TitleFormatter $titleFormatter;
 	private const TYPE_AGGREGATE = AggregateMessageGroup::class;
 	private const TYPE_MESSAGE_BUNDLE = MessageBundleMessageGroup::class;
 	private const TYPE_WIKIPAGE = WikiPageMessageGroup::class;

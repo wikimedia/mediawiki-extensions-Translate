@@ -29,8 +29,7 @@ class LegacyInterfaceHookHandler
 	TitleGetEditNoticesHook,
 	SidebarBeforeOutputHook
 {
-	/** @var LanguageFactory */
-	private $languageFactory;
+	private LanguageFactory $languageFactory;
 
 	public function __construct( LanguageFactory $languageFactory ) {
 		$this->languageFactory = $languageFactory;

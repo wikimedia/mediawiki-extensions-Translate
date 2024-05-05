@@ -20,14 +20,10 @@ use MessageGroup;
  * @license GPL-2.0-or-later
  */
 class LegacyTranslationAids {
-	/** @var MessageHandle */
-	private $handle;
-	/** @var MessageGroup */
-	private $group;
-	/** @var IContextSource */
-	private $context;
-	/** @var LanguageFactory */
-	private $languageFactory;
+	private MessageHandle $handle;
+	private ?MessageGroup $group;
+	private IContextSource $context;
+	private LanguageFactory $languageFactory;
 
 	public function __construct(
 		MessageHandle $handle,

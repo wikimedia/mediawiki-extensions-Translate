@@ -16,10 +16,8 @@ use MessageLocalizer;
  * @since 2021.02
  */
 class DisplayGroupSynchronizationInfo {
-	/** @var MessageLocalizer */
-	private $localizer;
-	/** @var LinkRenderer */
-	private $linkRenderer;
+	private MessageLocalizer $localizer;
+	private LinkRenderer $linkRenderer;
 
 	public function __construct( MessageLocalizer $localizer, LinkRenderer $linkRenderer ) {
 		$this->localizer = $localizer;

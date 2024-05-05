@@ -33,16 +33,11 @@ use WikiPageMessageGroup;
 class ExportTranslationsSpecialPage extends SpecialPage {
 	/** Maximum size of a group until exporting is not allowed due to performance reasons. */
 	public const MAX_EXPORT_SIZE = 10000;
-	/** @var string */
-	protected $language;
-	/** @var string */
-	protected $format;
-	/** @var string */
-	protected $groupId;
-	/** @var TitleFormatter */
-	private $titleFormatter;
-	/** @var ParserFactory */
-	private $parserFactory;
+	protected string $language;
+	protected string $format;
+	protected string $groupId;
+	private TitleFormatter $titleFormatter;
+	private ParserFactory $parserFactory;
 	/** @var string[] */
 	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
 

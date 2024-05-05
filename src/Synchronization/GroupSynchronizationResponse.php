@@ -20,11 +20,9 @@ class GroupSynchronizationResponse implements JsonSerializable, JsonUnserializab
 	use JsonUnserializableTrait;
 
 	/** @var MessageUpdateParameter[] */
-	private $remainingMessages;
-	/** @var string */
-	private $groupId;
-	/** @var bool */
-	private $timeout;
+	private array $remainingMessages;
+	private string $groupId;
+	private bool $timeout;
 
 	public function __construct(
 		string $groupId, array $remainingMessages, bool $hasTimedOut

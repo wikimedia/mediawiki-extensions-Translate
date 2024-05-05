@@ -22,8 +22,7 @@ use function wfEscapeWikiText;
  * @license GPL-2.0-or-later
  */
 class TranslationStatsSpecialPage extends SpecialPage {
-	/** @var TranslationStatsDataProvider */
-	private $dataProvider;
+	private TranslationStatsDataProvider $dataProvider;
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
 	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-container';
 

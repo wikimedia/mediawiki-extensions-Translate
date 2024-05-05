@@ -23,8 +23,7 @@ use Xml;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ImportTranslationsSpecialPage extends SpecialPage {
-	/** @var BagOStuff */
-	private $cache;
+	private BagOStuff $cache;
 
 	public function __construct( BagOStuff $cache ) {
 		parent::__construct( 'ImportTranslations', 'translate-import' );

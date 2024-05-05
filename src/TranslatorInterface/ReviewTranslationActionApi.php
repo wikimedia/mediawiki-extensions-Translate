@@ -24,14 +24,10 @@ use Wikimedia\Rdbms\ILoadBalancer;
  */
 class ReviewTranslationActionApi extends ApiBase {
 	protected static $right = 'translate-messagereview';
-	/** @var RevisionLookup */
-	private $revisionLookup;
-	/** @var TitleFormatter */
-	private $titleFormatter;
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var HookRunner */
-	private $hookRunner;
+	private RevisionLookup $revisionLookup;
+	private TitleFormatter $titleFormatter;
+	private ILoadBalancer $loadBalancer;
+	private HookRunner $hookRunner;
 
 	public function __construct(
 		ApiMain $main,
