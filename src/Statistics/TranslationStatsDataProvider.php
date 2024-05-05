@@ -89,7 +89,14 @@ class TranslationStatsDataProvider {
 			wfTimestamp( TS_MW, $start ),
 			wfTimestampOrNull( TS_MW, $end )
 		);
-		$res = $dbr->select( $tables, $fields, $conds, $type, $options, $joins );
+		$res = $dbr->newSelectQueryBuilder()
+			->tables( $tables )
+			->fields( $fields )
+			->conds( $conds )
+			->caller( $type )
+			->options( $options )
+			->joinConds( $joins )
+			->fetchResultSet();
 		wfDebug( __METHOD__ . "-queryend\n" );
 
 		// Start processing the data
