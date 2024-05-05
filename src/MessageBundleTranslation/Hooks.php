@@ -5,8 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Content;
 use IContextSource;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupWANCache;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -119,26 +117,10 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 		}
 	}
 
-	/** Hook: TranslateInitGroupLoaders */
-	public static function onTranslateInitGroupLoaders( array &$groupLoader ): void {
-		self::getInstance()->onTranslateInitGroupLoadersImpl( $groupLoader );
-	}
-
 	/** Hook: CodeEditorGetPageLanguage */
 	public static function onCodeEditorGetPageLanguage( Title $title, ?string &$lang, string $model ) {
 		if ( $model === MessageBundleContent::CONTENT_MODEL_ID ) {
 			$lang = 'json';
 		}
-	}
-
-	public function onTranslateInitGroupLoadersImpl( array &$groupLoader ): void {
-		if ( !$this->enableIntegration ) {
-			return;
-		}
-
-		$groupLoader[] = new MessageBundleMessageGroupLoader(
-			Utilities::getSafeReadDB(),
-			new MessageGroupWANCache( $this->WANObjectCache )
-		);
 	}
 }

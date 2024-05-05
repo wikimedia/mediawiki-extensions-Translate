@@ -191,8 +191,7 @@
 		"TranslateInitGroupLoaders": [
 			"WorkflowStatesMessageGroupLoader::registerLoader",
 			"AggregateMessageGroupLoader::registerLoader",
-			"FileBasedMessageGroupLoader::registerLoader",
-			"MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::onTranslateInitGroupLoaders"
+			"FileBasedMessageGroupLoader::registerLoader"
 		],
 		"AdminLinks": "MediaWiki\\Extension\\Translate\\HookHandler::onAdminLinks",
 		"MergeAccountFromTo": "MediaWiki\\Extension\\Translate\\HookHandler::onMergeAccountFromTo",

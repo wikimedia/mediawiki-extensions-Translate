@@ -248,6 +248,11 @@ class MessageGroups {
 
 		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
 			$cache,
+			$services->getMessageBundleMessageGroupFactory()
+		);
+
+		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
+			$cache,
 			$services->getTranslatablePageMessageGroupFactory()
 		);
 
