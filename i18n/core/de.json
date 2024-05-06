@@ -23,7 +23,9 @@
 			"Tbleher",
 			"The Evil IP address",
 			"Tobi 406",
-			"Umherirrender"
+			"Umherirrender",
+			"Ameisenigel",
+			"Justman10000"
 		]
 	},
 	"translate": "Übersetzen",
@@ -212,7 +214,7 @@
 	"translate-mgs-column-language": "Sprache",
 	"translate-mgs-totals": "{{PLURAL:$1|Die gesamte Sprache|Alle $1 Sprachen zusammen}}",
 	"translate-mgs-invalid-group": "Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.",
-	"translate-mgs-nothing": "Zu den angeforderten Statistiken gibt es keine anzuzeigenden Daten.",
+	"translate-mgs-nothing": "Für die angeforderten Statistiken existiert nichts zu sehen.",
 	"translate-tes-server-error": "Suchvorschläge konnten nicht abgerufen werden",
 	"translate-tes-group-not-found": "Keine passenden Ergebnisse",
 	"translate-tes-type-to-search": "Tippe, um mit der Suche zu beginnen",
