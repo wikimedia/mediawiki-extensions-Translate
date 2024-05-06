@@ -134,15 +134,6 @@
 	"translate-import-err-invalid-title": "اسم الملف المعطى <nowiki>$1</nowiki> غير صالح.",
 	"translate-import-err-no-such-file": "الملف <nowiki>$1</nowiki> غير موجود أو لم يرفع محليًا.",
 	"translate-import-err-no-headers": "الملف ليس ملف  Gettext صحيح بصيغه امتداد الترجمة:\nغير قادر على تحديد المجموعه واللغه من مقدمه الملف.",
-	"translate-gs-pos": "الترتيب",
-	"translate-gs-code": "الرمز",
-	"translate-gs-continent": "القارة",
-	"translate-gs-speakers": "الناطقون",
-	"translate-gs-score": "الدرجة",
-	"translate-gs-multiple": "عديدة",
-	"translate-gs-count": "العدد",
-	"translate-gs-total": "المجموع",
-	"translate-gs-avgscore": "معدل الدرجات",
 	"translate-documentation-language": "رسالة التوثيق",
 	"translate-searchprofile": "ترجمات"
 }

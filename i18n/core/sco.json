@@ -168,8 +168,6 @@
 	"translate-import-err-stale-group": "The message groop that this file belangs til disna exeest.",
 	"translate-import-err-no-headers": "File's na ae weel formed Gettext file in Owerset extension format:\nOnable tae determine message groop n leid fae file heiders.",
 	"translate-js-support-unsaved-warning": "Ye hae onhained owersets.",
-	"translate-gs-continent": "Continant",
-	"translate-gs-count": "Coont",
 	"translate-documentation-language": "Message documentation",
 	"translate-searchprofile": "Owersets",
 	"translate-searchprofile-tooltip": "Rake fae aw owersets",

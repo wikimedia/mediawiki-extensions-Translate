@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cookai1205",
 			"Cwlin0416",
 			"Kly",
 			"LNDDYL",
@@ -14,6 +15,7 @@
 	"tux-sst-view-foreign": "在 $1 檢視",
 	"tux-sst-search": "搜尋",
 	"tux-sst-search-ph": "搜尋譯文",
+	"tux-sst-search-info": "使用運算子<code>language:</code>或<code>group:</code>進一步限定搜尋條件",
 	"tux-sst-count": "找到 {{PLURAL:$1|1|$1}} 筆結果",
 	"tux-sst-facet-language": "語言",
 	"tux-sst-facet-group": "訊息群組",

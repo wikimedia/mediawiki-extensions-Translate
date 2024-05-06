@@ -150,7 +150,6 @@
 	"translate-import-err-stale-group": "Tämä fiili kuuluu viestijoukkoon, jota ei ole olemassa.",
 	"translate-import-err-no-headers": "Fiili ei ole kelvollisesti muotoiltu Gettext-fiili Translate-laajennoksen käyttämässä muodossa:\nViestijoukko- ja kielitietoja ei löytynyt fiilin otsakkeesta.",
 	"translate-js-support-unsaved-warning": "Kaikkia käänöksiä ei ole säästetty.",
-	"translate-gs-code": "Kooti",
 	"translate-documentation-language": "käänöstokymenttasuuni",
 	"translate-searchprofile": "Käänökset",
 	"translate-searchprofile-tooltip": "Hae kaikista käänöksistä",

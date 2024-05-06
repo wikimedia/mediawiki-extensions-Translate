@@ -158,15 +158,6 @@
 	"translate-manage-import-done": "Вшытко зроблено!",
 	"importtranslations": "Імпортовати переклады",
 	"translate-import-load": "Награти файл",
-	"translate-gs-pos": "Поз.",
-	"translate-gs-code": "Код",
-	"translate-gs-continent": "Частина світу",
-	"translate-gs-speakers": "Говорців",
-	"translate-gs-score": "Оцінка",
-	"translate-gs-multiple": "По веце",
-	"translate-gs-count": "Рахунок",
-	"translate-gs-total": "Цілком",
-	"translate-gs-avgscore": "Сер. оцінка",
 	"translate-documentation-language": "Документація уповісток",
 	"translate-searchprofile": "Переклады"
 }
