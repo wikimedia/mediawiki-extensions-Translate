@@ -90,6 +90,22 @@ abstract class MessageIndex {
 		return $value;
 	}
 
+	/**
+	 * Fast-path to retrieve groups for database titles.
+	 *
+	 * Performance is critical for stats that need to check groups for many rows.
+	 * Do not include the language code subpage!
+	 * @return string[]
+	 */
+	public function getGroupIdsForDatabaseTitle( int $namespace, string $title ): array {
+		$normalisedKey = $this->normaliseKey( $namespace, $title );
+
+		// Optimization 1: skip LRU cache assuming that hit rate is very low for this use case
+		// Optimization 2: skip interim cache as not essential
+
+		return $this->get( $normalisedKey ) ?? [];
+	}
+
 	private function getCache(): MapCacheLRU {
 		if ( self::$keysCache === null ) {
 			self::$keysCache = new MapCacheLRU( 30 );

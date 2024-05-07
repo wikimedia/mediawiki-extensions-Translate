@@ -5,6 +5,8 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
@@ -21,6 +23,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	protected array $groups = [];
 	private Language $dateFormatter;
 	private array $formatCache = [];
+	protected MessageIndex $messageIndex;
 
 	public function __construct( TranslationStatsGraphOptions $opts ) {
 		parent::__construct( $opts );
@@ -28,6 +31,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$opts->boundValue( 'days', 1, 400 );
 		// TODO: inject
 		$this->dateFormatter = MediaWikiServices::getInstance()->getContentLanguage();
+		$this->messageIndex = Services::getInstance()->getMessageIndex();
 	}
 
 	public function preQuery(
@@ -116,7 +120,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		if ( $this->groups ) {
 			// Get list of keys that the message belongs to, and filter
 			// out those which are not requested.
-			$groups = Utilities::messageKeyToGroups( (int)$row->rc_namespace, $key );
+			$groups = $this->messageIndex->getGroupIdsForDatabaseTitle( (int)$row->rc_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
 
