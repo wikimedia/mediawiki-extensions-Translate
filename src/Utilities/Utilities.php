@@ -174,23 +174,6 @@ class Utilities {
 		return $languages[$code] ?? $code;
 	}
 
-	// TODO remove languageSelector() after Sunsetting of TranslateSvg extension
-
-	/**
-	 * Returns a language selector.
-	 * @param string $language Language code of the language the names should be localised to.
-	 * @param string $selectedId The language code that is selected by default.
-	 * @return string
-	 */
-	public static function languageSelector( $language, $selectedId ) {
-		$selector = self::getLanguageSelector( $language );
-		$selector->setDefault( $selectedId );
-		$selector->setAttribute( 'id', 'language' );
-		$selector->setAttribute( 'name', 'language' );
-
-		return $selector->getHTML();
-	}
-
 	/**
 	 * Standard language selector in Translate extension.
 	 * @param string $language Language code of the language the names should be localised to.
