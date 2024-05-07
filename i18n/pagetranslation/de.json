@@ -245,6 +245,7 @@
 	"pm-add-icon-hover-text": "Unten eine Einheit hinzufügen",
 	"pm-swap-icon-hover-text": "Mit der unteren Einheit tauschen",
 	"pm-delete-icon-hover-text": "Einheit löschen",
+	"pm-clear-icon-hover-text": "Einheit löschen",
 	"pm-pagetitle-placeholder": "Gib den Seitentitel ein",
 	"pm-pagetitle-invalid": "Die Seitenmigration funktioniert nur bei Übersetzungsseiten, z. B. „Seite/de“. Der angegebene Titel ist kein gültiger Titel.",
 	"pm-pagetitle-missing": "Bitte gib den Seitentitel ein.",

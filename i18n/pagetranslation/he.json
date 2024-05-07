@@ -241,6 +241,7 @@
 	"pm-add-icon-hover-text": "להוסיף יחידה למטה",
 	"pm-swap-icon-hover-text": "להחליף עם יחידה מעל",
 	"pm-delete-icon-hover-text": "למחוק יחידה",
+	"pm-clear-icon-hover-text": "ניקוי יחידה",
 	"pm-pagetitle-placeholder": "נא להזין את שם הדף",
 	"pm-pagetitle-invalid": "המרת דפים עובדת רק בדפים מתורגמים, למשל \"Page/de\". הכותרת שסופקה אינה תקינה.",
 	"pm-pagetitle-missing": "נא להזין את שם הדף.",

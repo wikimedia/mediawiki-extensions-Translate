@@ -238,6 +238,7 @@
 	"pm-add-icon-hover-text": "Añadir una unidad más abajo",
 	"pm-swap-icon-hover-text": "Intercambiar con la unidad siguiente",
 	"pm-delete-icon-hover-text": "Eliminar unidad",
+	"pm-clear-icon-hover-text": "Limpiar unidad",
 	"pm-pagetitle-placeholder": "Escribe el título de la página",
 	"pm-pagetitle-invalid": "Escribe un título válido para la página. Debe tener el formato <nombre-de-página>/<código-de-idioma>.",
 	"pm-pagetitle-missing": "Escribe el título de la página.",
