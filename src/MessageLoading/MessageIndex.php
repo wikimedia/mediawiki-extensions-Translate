@@ -12,7 +12,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -59,6 +58,13 @@ abstract class MessageIndex {
 		$this->messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
 	}
 
+	/** Converts page name and namespace to message index format. */
+	private function normaliseKey( int $namespace, string $key ): string {
+		$key = lcfirst( $key );
+
+		return strtr( "$namespace:$key", ' ', '_' );
+	}
+
 	/**
 	 * Retrieves a list of groups given MessageHandle belongs to.
 	 * @return string[]
@@ -72,7 +78,7 @@ abstract class MessageIndex {
 
 		$namespace = $title->getNamespace();
 		$key = $handle->getKey();
-		$normalisedKey = Utilities::normaliseKey( $namespace, $key );
+		$normalisedKey = $this->normaliseKey( $namespace, $key );
 
 		$cache = $this->getCache();
 		$value = $cache->get( $normalisedKey );
@@ -260,7 +266,7 @@ abstract class MessageIndex {
 
 		$normalizedNewKeys = [];
 		foreach ( $newKeys as $key ) {
-			$normalizedNewKeys[Utilities::normaliseKey( $namespace, $key )] = $id;
+			$normalizedNewKeys[$this->normaliseKey( $namespace, $key )] = $id;
 		}
 
 		$cache = $this->getInterimCache();
@@ -382,7 +388,7 @@ abstract class MessageIndex {
 			# Force all keys to lower case, because the case doesn't matter and it is
 			# easier to do comparing when the case of first letter is unknown, because
 			# mediawiki forces it to upper case
-			$key = Utilities::normaliseKey( $namespace, $key );
+			$key = $this->normaliseKey( $namespace, $key );
 			if ( isset( $hugeArray[$key] ) ) {
 				if ( !$ignore ) {
 					$to = implode( ', ', (array)$hugeArray[$key] );

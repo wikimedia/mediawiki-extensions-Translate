@@ -244,13 +244,6 @@ class Utilities {
 		return $handle->getGroupIds();
 	}
 
-	/** Converts page name and namespace to message index format. */
-	public static function normaliseKey( int $namespace, string $key ): string {
-		$key = lcfirst( $key );
-
-		return strtr( "$namespace:$key", ' ', '_' );
-	}
-
 	/**
 	 * Constructs a fieldset with contents.
 	 * @param string $legend Raw html.
