@@ -16,7 +16,8 @@
 			"Yusuke1109",
 			"そらたこ",
 			"ネイ",
-			"青子守歌"
+			"青子守歌",
+			"Waki285"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -153,6 +154,7 @@
 	"log-action-filter-pagetranslation-discourage": "翻訳の非推奨指定",
 	"log-action-filter-pagetranslation-prioritylanguages": "優先言語の変更",
 	"log-action-filter-pagetranslation-aggregategroups": "集約群の変更",
+	"log-name-messagebundle": "メッセージバンドル記録",
 	"log-action-filter-messagebundle": "操作の種類:",
 	"pt-movepage-title": "翻訳対象ページ「$1」の移動",
 	"pt-movepage-blockers": "以下の{{PLURAL:$1|エラー}}が発生したため、翻訳対象ページを新しいページ名に移動できません:",
