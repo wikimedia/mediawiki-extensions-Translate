@@ -232,6 +232,7 @@
 	"pm-add-icon-hover-text": "Додај единица подолу",
 	"pm-swap-icon-hover-text": "Замени ја единицата подолу",
 	"pm-delete-icon-hover-text": "Избриши единица",
+	"pm-clear-icon-hover-text": "Исчисти единица",
 	"pm-pagetitle-placeholder": "Внесете има на страницата",
 	"pm-pagetitle-invalid": "Преселбата на страници работи само на преводни страници, како на пр. „Page/mk“. Укажаниот наслов е неважечки.",
 	"pm-pagetitle-missing": "Внесете име на страница.",
