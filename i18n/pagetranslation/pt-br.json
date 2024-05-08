@@ -52,6 +52,8 @@
 	"tpt-edit-failed": "Não foi possível atualizar a página: $1",
 	"tpt-duplicate": "<strong><bdi>$1</bdi></strong> é usado como nome de unidade de tradução mais de uma vez.",
 	"tpt-invalid": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> não deve conter sublinhado nem barra.",
+	"tpt-unit-title-too-long": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> é muito longo. O comprimento combinado do título da página traduzível com o prefixo do namespace, o nome da unidade de tradução e o código do idioma é de $2 {{PLURAL:$2|byte|bytes}}, que é maior que o comprimento máximo suportado de $3 {{PLURAL:$3|byte|bytes}}. Encurte o nome da unidade de tradução (se tiver sido personalizado) ou [[Special:MovePage/$4|renomeie a página traduzível]] para um nome mais curto para permitir a tradução.",
+	"tpt-unit-title-invalid": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> é inválido: $2",
 	"tpt-unmarked": "A página [[:$1]] deixou de estar marcada para tradução.",
 	"tpt-list-nopages": "Não há páginas nem marcadas para tradução, nem prontas para serem marcadas para tradução.",
 	"tpt-new-pages-title": "Páginas propostas para tradução",
@@ -262,8 +264,10 @@
 	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução, ou não pode ser preparada automaticamente. Não há alterações em relação à versão anterior.",
 	"pp-diff-error": "Houve um erro ao buscar o diff do servidor.",
 	"pp-pagename-missing": "Por favor, insira o nome da página.",
+	"pp-page-does-not-exist": "A página $1 não existe.",
 	"pp-diff-old-header": "Texto-fonte",
 	"pp-diff-new-header": "Texto preparado",
+	"pp-unexpected-error": "Ocorreu um erro ao processar sua solicitação",
 	"tpt-unlink-confirm": "Por favor, confirme que deseja realmente remover esta página do sistema de tradução.\nO seletor de idioma e os nomes das páginas traduzidas deixarão de funcionar.\nAs páginas de tradução se tornarão editáveis.",
 	"tpt-unlink-button": "Remover da tradução",
 	"tpt-unlink-summary": "Página removida da tradução",
@@ -276,5 +280,6 @@
 	"visualeditor-annotations-translate-description": "Este intervalo é marcado como traduzível. Por favor, certifique-se de seguir as diretrizes fornecidas para [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Changing_the_source_text alterar o texto de origem].",
 	"visualeditor-annotations-tvar-start": "Início do conteúdo não traduzível",
 	"visualeditor-annotations-tvar-end": "Fim do conteúdo não traduzível",
-	"visualeditor-annotations-tvar-description": "Esse intervalo é marcado como não traduzível. Por favor, consulte [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Segmentação segmentação do texto de origem] para maiores informações."
+	"visualeditor-annotations-tvar-description": "Esse intervalo é marcado como não traduzível. Por favor, consulte [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/pt-br#Segmentação segmentação do texto de origem] para maiores informações.",
+	"tag-translate-translation-pages-description": "Edições automáticas em páginas de tradução pela extensão Translate"
 }
