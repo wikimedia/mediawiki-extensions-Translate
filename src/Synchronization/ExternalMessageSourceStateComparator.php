@@ -463,7 +463,9 @@ class ExternalMessageSourceStateComparator {
 				[
 					'messageKey' => $messageKey,
 					'language' => $collection->getLanguage(),
-					'cacheUpdateTime' => $cacheUpdateTime
+					'cacheUpdateTime' => $cacheUpdateTime,
+					'oldestRevisionTs' => $oldestRevision->getTimestamp(),
+					'latestRevisionTs' => $latestRevision->getTimestamp()
 				]
 			);
 			return false;
@@ -474,7 +476,9 @@ class ExternalMessageSourceStateComparator {
 			[
 				'messageKey' => $messageKey,
 				'language' => $collection->getLanguage(),
-				'cacheUpdateTime' => $cacheUpdateTime
+				'cacheUpdateTime' => $cacheUpdateTime,
+				'oldestRevisionTs' => $oldestRevision ? $oldestRevision->getTimestamp() : 'N/A',
+				'latestRevisionTs' => $latestRevision ? $latestRevision->getTimestamp() : 'N/A'
 			]
 		);
 		return false;
