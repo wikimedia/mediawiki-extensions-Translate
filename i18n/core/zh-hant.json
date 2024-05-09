@@ -137,7 +137,7 @@
 	"translate-rcfilters-translations-filter-label": "不位於譯文命名空間",
 	"translate-rcfilters-translations-filter-desc": "提交至訊息群組的譯文以外的所有變更。",
 	"translate-rcfilters-translations-filter-translation-pages-label": "非譯文頁面",
-	"translate-rcfilters-translations-filter-translation-pages-desc": "除了更改譯文頁面以外的任何事項。",
+	"translate-rcfilters-translations-filter-translation-pages-desc": "除了譯文頁面以外的所有變更。",
 	"translate-rcfilters-translations-site-label": "站台訊息",
 	"translate-rcfilters-translations-site-desc": "與網站語言相同的訊息的變更。",
 	"translate-rc-translation-filter": "篩選譯文：",
