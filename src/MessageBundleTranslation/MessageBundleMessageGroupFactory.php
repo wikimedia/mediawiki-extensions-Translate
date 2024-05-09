@@ -49,12 +49,14 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 		return [ new GlobalDependency( 'wgTranslateEnableMessageBundleIntegration' ) ];
 	}
 
-	public function getData( array &$setOpts ) {
+	public function getData( bool $recache, array &$setOpts ) {
 		if ( !$this->enableIntegration ) {
 			return [];
 		}
 
-		$setOpts += Database::getCacheSetOptions( $this->db );
+		if ( !$recache ) {
+			$setOpts += Database::getCacheSetOptions( $this->db );
+		}
 
 		$cacheData = [];
 		$res = $this->db->newSelectQueryBuilder()

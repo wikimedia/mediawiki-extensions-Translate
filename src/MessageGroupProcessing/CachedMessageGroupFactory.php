@@ -24,7 +24,7 @@ interface CachedMessageGroupFactory {
 	 * @see WANObjectCache::getWithSetCallback()
 	 * @return mixed
 	 */
-	public function getData( array &$setOpts );
+	public function getData( bool $recache, array &$setOpts );
 
 	/**
 	 * @param mixed $data Data returned by `getData()`

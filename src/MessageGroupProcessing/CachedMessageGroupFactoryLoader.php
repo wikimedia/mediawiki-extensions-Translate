@@ -49,7 +49,7 @@ class CachedMessageGroupFactoryLoader extends MessageGroupLoader implements Cach
 		return $this->cache->getWithSetCallback(
 			$this->cacheKey,
 			self::CACHE_TTL,
-			fn ( $oldValue, &$ttl, array &$setOpts ) => $this->getCacheData( $setOpts ),
+			fn ( $oldValue, &$ttl, array &$setOpts ) => $this->getCacheData( $recache, $setOpts ),
 			[
 				// avoid stampedes (mutex)
 				'lockTSE' => 30,
@@ -62,9 +62,9 @@ class CachedMessageGroupFactoryLoader extends MessageGroupLoader implements Cach
 		);
 	}
 
-	private function getCacheData( array &$setOpts ): DependencyWrapper {
+	private function getCacheData( bool $recache, array &$setOpts ): DependencyWrapper {
 		$wrapper = new DependencyWrapper(
-			$this->factory->getData( $setOpts ),
+			$this->factory->getData( $recache, $setOpts ),
 			$this->factory->getDependencies()
 		);
 		$wrapper->initialiseDeps();

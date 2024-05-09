@@ -51,12 +51,14 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	}
 
 	/** @return string[] */
-	public function getData( array &$setOpts ): array {
+	public function getData( bool $recache, array &$setOpts ): array {
 		if ( !$this->options->get( 'EnablePageTranslation' ) ) {
 			return [];
 		}
 
-		$setOpts += Database::getCacheSetOptions( $this->db );
+		if ( !$recache ) {
+			$setOpts += Database::getCacheSetOptions( $this->db );
+		}
 
 		$groupTitles = [];
 		$res = $this->db->newSelectQueryBuilder()
