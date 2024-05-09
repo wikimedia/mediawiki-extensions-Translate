@@ -24,18 +24,7 @@ class TS extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgDisableUserGroupExpiry;
-
 		$dbr = $this->getDB( DB_REPLICA );
-
-		$leftJoinConditions = [
-			'user_id=ug_user',
-			'ug_group' => 'translator',
-		];
-
-		if ( isset( $wgDisableUserGroupExpiry ) && !$wgDisableUserGroupExpiry ) {
-			$leftJoinConditions[] = 'ug_expiry IS NULL OR ug_expiry >= ' . $dbr->addQuotes( $dbr->timestamp() );
-		}
 
 		$users = $dbr->newSelectQueryBuilder()
 			->select( [
@@ -45,7 +34,11 @@ class TS extends Maintenance {
 				'ug_group',
 			] )
 			->from( 'user' )
-			->leftJoin( 'user_groups', null, $leftJoinConditions )
+			->leftJoin( 'user_groups', null, [
+				'user_id=ug_user',
+				'ug_group' => 'translator',
+				'ug_expiry IS NULL OR ug_expiry >= ' . $dbr->addQuotes( $dbr->timestamp() ),
+			] )
 			->where( [
 				'user_registration is not null'
 			] )
