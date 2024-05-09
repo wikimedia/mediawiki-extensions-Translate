@@ -34,7 +34,6 @@ use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
-use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons;
@@ -130,11 +129,8 @@ class HookHandler implements
 		}
 
 		$hooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
-
-		// TODO Remove after MLEB 2024.01 release
 		global $wgJobClasses;
-		$wgJobClasses['MessageGroupStatsRebuildJob'] = RebuildMessageGroupStatsJob::class;
-		// TODO Remove after MLEB 2024.07 release
+
 		$wgJobClasses['MessageIndexRebuildJob'] = RebuildMessageIndexJob::class;
 		$wgJobClasses['RebuildMessageIndexJob'] = RebuildMessageIndexJob::class;
 
@@ -364,7 +360,6 @@ class HookHandler implements
 			// logentry-newusers-tsbpromoted
 			$wgLogActionsHandlers['newusers/tsbpromoted'] = LogFormatter::class;
 
-			global $wgJobClasses;
 			$wgJobClasses['TranslateSandboxEmailJob'] = TranslateSandboxEmailJob::class;
 
 			global $wgAPIModules;
