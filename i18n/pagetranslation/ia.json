@@ -43,7 +43,7 @@
 	"tpt-other-pages-title": "Paginas defectuose",
 	"tpt-outdated-pages-title": "Paginas con modificationes pendente",
 	"tpt-new-pages": "Iste {{PLURAL:$1|pagina|paginas}} contine texto con etiquettas de traduction, ma nulle version de iste {{PLURAL:$1|pagina|paginas}} es actualmente marcate pro traduction.",
-	"tpt-old-pages": "Le ultime version de iste {{PLURAL:$1|pagina|paginas}} ha essite marcate pro traduction.",
+	"tpt-old-pages": "Le ultime version de {{PLURAL:$1|iste pagina|cata un de iste paginas}} ha essite marcate pro traduction.",
 	"tpt-other-pages": "{{PLURAL:$1|Un ancian version de iste pagina|Ancian versiones de iste paginas}} es marcate pro traduction,\nma le ultime {{PLURAL:$1|version|versiones}} non pote esser marcate pro traduction.",
 	"tpt-outdated-pages": "Iste pagina{{PLURAL:$1||s}} ha cambiamentos non marcate pro traduction.",
 	"tpt-tag-discouraged": "discoragiate",
