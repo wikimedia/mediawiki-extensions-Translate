@@ -107,7 +107,7 @@
 	"action-translate-messagereview": "review translations",
 	"right-translate-groupreview": "Change workflow state of message groups",
 	"action-translate-groupreview": "change workflow state of message groups",
-	"action-translate-watch-message-group": "Watch message group",
+	"action-translate-watch-message-group": "watch message group",
 	"translate-rcfilters-translations": "Translations",
 	"translate-rcfilters-translations-only-label": "Translation namespaces",
 	"translate-rcfilters-translations-only-desc": "Translations submitted to message groups.",
