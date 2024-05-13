@@ -1,16 +1,25 @@
 <?php
+declare( strict_types = 1 );
 
-use MediaWiki\Extension\Translate\MessageGroupProcessing\GroupReviewActionApi;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use ContentHandler;
+use HashBagOStuff;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Status\Status;
+use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
+use MessageGroupStats;
+use MockWikiMessageGroup;
+use WANObjectCache;
 
 /**
  * @group Database
  * @group medium
- * @covers MessageGroupStatesUpdaterJob
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStatesUpdaterJob
  */
 class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 	protected function setUp(): void {
@@ -142,10 +151,13 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 
 		// Second translation
 		$title = Title::newFromText( 'MediaWiki:key2/fi' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
+		$wikipage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'trans2', $title );
 
-		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
+		$updater = $wikipage
+			->newPageUpdater( self::getTestSysop()->getUser() )
+			->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
 
 		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
@@ -165,7 +177,10 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'trans1 updated', $title );
 
-		$page->doUserEditContent( $content, $user, __METHOD__ );
+		$updater = $wikipage
+			->newPageUpdater( self::getTestSysop()->getUser() )
+			->setContent( SlotRecord::MAIN, $content );
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
 
 		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
@@ -176,13 +191,13 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 		);
 	}
 
-	protected static function getRevisionRecordId( Status $s ) {
+	private static function getRevisionRecordId( Status $s ) {
 		$value = $s->getValue();
 
 		return $value['revision-record']->getId();
 	}
 
-	protected function translateRunJobs() {
+	private function translateRunJobs() {
 		$jobQueueGroup = $this->getServiceContainer()->getJobQueueGroup();
 		do {
 			$job = $jobQueueGroup->pop();

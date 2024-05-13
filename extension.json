@@ -96,7 +96,6 @@
 		"MessageGroupOld": "messagegroups/MessageGroupOld.php",
 		"MessageGroups": "src/MessageGroupProcessing/MessageGroups.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroups": "src/MessageGroupProcessing/MessageGroups.php",
-		"MessageGroupStatesUpdaterJob": "utils/MessageGroupStatesUpdaterJob.php",
 		"MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MessageGroupStats": "utils/MessageGroupStats.php",
@@ -472,7 +471,7 @@
 		}
 	},
 	"JobClasses": {
-		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
+		"MessageGroupStatesUpdaterJob": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStatesUpdaterJob",
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
 		"RebuildMessageGroupStatsJob": "\\MediaWiki\\Extension\\Translate\\Statistics\\RebuildMessageGroupStatsJob",

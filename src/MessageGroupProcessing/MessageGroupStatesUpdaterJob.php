@@ -1,32 +1,27 @@
 <?php
-/**
- * Logic for handling automatic message group state changes
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
+
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MessageGroupStats;
 
 /**
  * Logic for handling automatic message group state changes
  *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup JobQueue
  */
 class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params = [] ) {
+	public function __construct( Title $title, array $params = [] ) {
 		parent::__construct( 'MessageGroupStatesUpdaterJob', $title, $params );
 		$this->removeDuplicates = true;
 	}
@@ -34,27 +29,19 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 	/**
 	 * Hook: TranslateEventTranslationReview
 	 * and also on translation changes
-	 * @param MessageHandle $handle
-	 * @return true
 	 */
-	public static function onChange( MessageHandle $handle ) {
+	public static function onChange( MessageHandle $handle ): bool {
 		$job = self::newJob( $handle->getTitle() );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 
 		return true;
 	}
 
-	/**
-	 * @param Title $title
-	 * @return self
-	 */
-	public static function newJob( $title ) {
-		$job = new self( $title );
-
-		return $job;
+	public static function newJob( Title $title ): self {
+		return new self( $title );
 	}
 
-	public function run() {
+	public function run(): bool {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		if ( !$lb->waitForReplication() ) {
 			$this->logWarning( 'Continuing despite replication lag' );
@@ -82,7 +69,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 		return true;
 	}
 
-	public static function getGroupsWithTransitions( MessageHandle $handle ) {
+	public static function getGroupsWithTransitions( MessageHandle $handle ): array {
 		$listeners = [];
 		foreach ( $handle->getGroupIds() as $id ) {
 			$group = MessageGroups::getGroup( $id );
@@ -92,16 +79,16 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 				continue;
 			}
 
-			$conds = $group->getMessageGroupStates()->getConditions();
-			if ( $conds ) {
-				$listeners[$id] = $conds;
+			$conditions = $group->getMessageGroupStates()->getConditions();
+			if ( $conditions ) {
+				$listeners[$id] = $conditions;
 			}
 		}
 
 		return $listeners;
 	}
 
-	public static function getStatValue( $stats, $type ) {
+	public static function getStatValue( array $stats, string $type ): int {
 		$total = $stats[MessageGroupStats::TOTAL];
 		$translated = $stats[MessageGroupStats::TRANSLATED];
 		$outdated = $stats[MessageGroupStats::FUZZY];
@@ -121,7 +108,7 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 		}
 	}
 
-	public static function matchCondition( $value, $condition, $max ) {
+	public static function matchCondition( int $value, string $condition, int $max ): bool {
 		switch ( $condition ) {
 			case 'ZERO':
 				return $value === 0;
@@ -136,19 +123,17 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 
 	/**
 	 * @param int[] $stats
-	 * @param array[] $transitions
-	 *
 	 * @return string|bool
 	 */
-	public static function getNewState( $stats, $transitions ) {
+	public static function getNewState( array $stats, array $transitions ) {
 		foreach ( $transitions as $transition ) {
-			[ $newState, $conds ] = $transition;
+			[ $newState, $conditions ] = $transition;
 			$match = true;
 
-			foreach ( $conds as $type => $cond ) {
+			foreach ( $conditions as $type => $conditions ) {
 				$statValue = self::getStatValue( $stats, $type );
 				$max = $stats[MessageGroupStats::TOTAL];
-				$match = $match && self::matchCondition( $statValue, $cond, $max );
+				$match = $match && self::matchCondition( $statValue, $conditions, $max );
 				// Conditions are AND, so no point trying more if no match
 				if ( !$match ) {
 					break;
