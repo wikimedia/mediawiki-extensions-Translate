@@ -23,7 +23,7 @@ class TranslateRegistrationStats extends TranslationStatsBase {
 		$start,
 		$end
 	) {
-		$tables = 'user';
+		$tables = [ 'user' ];
 		$fields = 'user_registration';
 		$conds = self::makeTimeCondition( $database, 'user_registration', $start, $end );
 		$type .= '-registration';
