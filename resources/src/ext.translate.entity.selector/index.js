@@ -67,9 +67,8 @@ var EntitySelectorWidget = function ( config ) {
 	this.selectCallback = config.onSelect || noop;
 	this.entityTypeToFetch = config.entityType;
 	this.groupTypesToFetch = config.groupTypes;
-	this.apiRequestHook = config.apiRequestHook || null;
-	this.apiRequestTimeoutMilliseconds = config.apiRequestTimeoutMilliseconds || 250;
 	this.inputId = config.inputId || null;
+	this.limit = config.limit || 10;
 
 	if ( this.entityTypeToFetch && !Array.isArray( this.entityTypeToFetch ) ) {
 		throw new Error( 'entityType must be an array.' );
@@ -112,14 +111,9 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	var currentRequestTimeout = setTimeout(
 		function () {
 			currentRequestTimeout = null;
-			if ( widget.apiRequestHook ) {
-				widget.apiRequestHook( value, widget.entityTypeToFetch, widget.groupTypesToFetch, deferred, widget.failureCallback );
-			} else {
-				makeRequest( value, widget.entityTypeToFetch, widget.groupTypesToFetch, deferred, widget.failureCallback );
-			}
-
+			makeRequest( value, widget.entityTypeToFetch, widget.groupTypesToFetch, deferred, widget.failureCallback, widget.limit );
 		},
-		this.apiRequestTimeoutMilliseconds
+		250
 	);
 
 	deferred.abort = function () {
@@ -132,13 +126,14 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	return deferred;
 };
 
-function makeRequest( value, entityType, groupTypes, deferred, cbFailure ) {
+function makeRequest( value, entityType, groupTypes, deferred, cbFailure, limit ) {
 	var api = new mw.Api();
 	api.get( {
 		action: 'translationentitysearch',
 		query: value,
 		entitytype: entityType,
-		grouptypes: groupTypes
+		grouptypes: groupTypes,
+		limit: limit
 	} ).then( function ( result ) {
 		deferred.resolve( result.translationentitysearch );
 	}, function ( msg, error ) {

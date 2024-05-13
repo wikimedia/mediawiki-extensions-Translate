@@ -55,7 +55,7 @@ class TranslationEntitySearchActionApi extends ApiBase {
 			],
 			'query' => [
 				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_REQUIRED => true
+				ParamValidator::PARAM_DEFAULT => ''
 			],
 			'limit' => [
 				ParamValidator::PARAM_TYPE => 'limit',

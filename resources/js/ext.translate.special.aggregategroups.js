@@ -416,83 +416,15 @@
 		$( 'div.mw-tpa-group' ).first().before( getToggleAllGroupsLink() );
 	} );
 
-	var entitySelectorLimit = 100, wikiPageMessageGroups = null;
-	function fetchWikiPageMessageGroups( searchValue, _entityTypeToFetch, groupTypesToFetch, deferred, failureCallback ) {
-		var alreadySelectedGroups = getSelectedGroups( this.$element );
-		if ( wikiPageMessageGroups ) {
-			deferred.resolve( { groups: getGroupsToDisplay( wikiPageMessageGroups, searchValue, alreadySelectedGroups ) } );
-			return;
-		}
-
-		var api = new mw.Api();
-		api.get( {
-			action: 'query',
-			meta: 'messagegroups',
-			mgformat: 'flat',
-			mgfilter: 'page-*',
-			mgprop: 'label|id'
-		} ).then( function ( result ) {
-			wikiPageMessageGroups = normalizeGroups( result.query.messagegroups );
-			deferred.resolve( { groups: getGroupsToDisplay( wikiPageMessageGroups, searchValue, alreadySelectedGroups ) } );
-		}, function ( _msg, error ) {
-			mw.log.error( error );
-			failureCallback( error, mw.msg( 'translate-tes-server-error' ) );
-			deferred.resolve( error );
-		} );
-	}
-
-	function getGroupsToDisplay( groups, searchValue, alreadySelectedGroups ) {
-		var filteredGroups = [], i = 0, lowercaseSearchValue = searchValue.toLowerCase();
-
-		for ( ;i < groups.length; ++i ) {
-			var label = groups[ i ].label;
-			if (
-				alreadySelectedGroups[ label ] !== true &&
-				label.toLowerCase().indexOf( lowercaseSearchValue ) > -1
-			) {
-				filteredGroups.push( groups[ i ] );
-			}
-
-			if ( filteredGroups.length === entitySelectorLimit ) {
-				return filteredGroups;
-			}
-		}
-
-		return filteredGroups;
-	}
-
-	function normalizeGroups( groups ) {
-		var normalizedGroups = [], i = 0;
-		for ( ; i < groups.length; ++i ) {
-			normalizedGroups.push( {
-				label: groups[ i ].label,
-				group: groups[ i ].id
-			} );
-		}
-
-		return normalizedGroups;
-	}
-
 	function getEntitySelector( onSelect ) {
 		var EntitySelector = require( 'ext.translate.entity.selector' );
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups' ],
-			allowSuggestionsWhenEmpty: true,
-			apiRequestHook: fetchWikiPageMessageGroups
+			groupTypes: [ 'translatable-pages' ],
+			limit: 50,
+			allowSuggestionsWhenEmpty: true
 		} );
 	}
 
-	function getSelectedGroups( $entitySelector ) {
-		var exclude = {};
-		$entitySelector.closest( '.mw-tpa-group' ).find( 'li' ).each(
-			function ( key, data ) {
-				// Need to trim to remove the trailing whitespace
-				// Can't use innerText not supported by Firefox
-				exclude[ $( data ).text().trim() ] = true;
-			}
-		);
-
-		return exclude;
-	}
 }() );
