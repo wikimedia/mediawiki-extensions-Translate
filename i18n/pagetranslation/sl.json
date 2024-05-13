@@ -232,6 +232,7 @@
 	"pm-add-icon-hover-text": "Dodajte enoto spodaj",
 	"pm-swap-icon-hover-text": "Zamenjajte z enoto spodaj",
 	"pm-delete-icon-hover-text": "Izbrišite enoto",
+	"pm-clear-icon-hover-text": "Počisti enoto",
 	"pm-pagetitle-placeholder": "Vnesite naslov strani",
 	"pm-pagetitle-invalid": "Selitev strani deluje samo na prevodnih straneh, na primer »Stran/de«. Navedeni naslov ni veljaven naslov.",
 	"pm-pagetitle-missing": "Prosimo, vnesite naslov strani.",
