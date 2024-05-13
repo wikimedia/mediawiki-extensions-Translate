@@ -132,6 +132,7 @@
 	"translate-statsf-group": "Čárkami oddělený seznam kódů skupin:",
 	"translate-statsf-submit": "Náhled",
 	"translate-tag-page-desc": "Překlad wiki stránky [[$2|$1]] z jazyka $3 ($4).",
+	"translate-tag-page-wikipage-desc": "[[$1|Překlad]] wikistránky [[$2]] z jazyka <bdi>$3</bdi> ($4) do jazyka <bdi>$5</bdi> ($6)",
 	"translate-sidebar-alltrans": "V jiných jazycích",
 	"translations": "Všechny překlady",
 	"translations-summary": "Všechny dostupné překlady zobrazíte po zadání názvu zprávy.",
