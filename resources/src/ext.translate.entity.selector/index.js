@@ -3,7 +3,7 @@
 /**
  * @class
  * @extends OO.ui.TextInputWidget
- * @mixins OO.ui.mixin.LookupElement
+ * @mixes OO.ui.mixin.LookupElement
  *
  * @author Abijeet Patro
  * @license GPL-2.0-or-later

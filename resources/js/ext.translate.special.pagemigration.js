@@ -38,9 +38,7 @@
 	 *
 	 * @param {string} fuzzyTimestamp Timestamp in MediaWiki format
 	 * @param {string} pageTitle
-	 * @return {jQuery.Promise}
-	 * @return {Function} return.done
-	 * @return {Array} return.done.data Array of old translations
+	 * @return {jQuery.Promise<Array>} Old translations
 	 */
 	function splitTranslationPage( fuzzyTimestamp, pageTitle ) {
 		var api = new mw.Api();
@@ -74,9 +72,7 @@
 	 * Get the timestamp before FuzzyBot's first edit on page.
 	 *
 	 * @param {string} pageTitle
-	 * @return {jQuery.Promise}
-	 * @return {Function} return.done
-	 * @return {string} return.done.data
+	 * @return {jQuery.Promise<string>} Timestamp
 	 */
 	function getFuzzyTimestamp( pageTitle ) {
 		var api = new mw.Api();
@@ -118,12 +114,16 @@
 	}
 
 	/**
+	 * @typedef {Object} SourceUnit
+	 * @param {string} identifier
+	 * @param {string} definition
+	 */
+
+	/**
 	 * Get the translation units created by Translate extension.
 	 *
 	 * @param {string} page Page name
-	 * @return {jQuery.Promise}
-	 * @return {Function} return.done
-	 * @return {Object[]} return.done.data Array of sUnit Objects
+	 * @return {jQuery.Promise<SourceUnit[]>}
 	 */
 	function getSourceUnits( page ) {
 		var api = new mw.Api();

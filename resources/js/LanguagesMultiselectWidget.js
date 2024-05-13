@@ -4,8 +4,8 @@
 /**
  * @class
  * @extends OO.ui.MenuTagMultiselectWidget
- * @mixins OO.ui.mixin.RequestManager
- * @mixins OO.ui.mixin.PendingElement
+ * @mixes OO.ui.mixin.RequestManager
+ * @mixes OO.ui.mixin.PendingElement
  *
  * @constructor
  * @param {Object} [config] Configuration options

@@ -243,12 +243,16 @@
 		return api.postWithToken( 'csrf', params );
 	}
 
+	/**
+	 * @class RenameDropdown
+	 */
 	RenameDropdown = ( function () {
 		var $renameMenu;
 
 		/**
 		 * Initialization function. Creates the elements for the rename dropdown
 		 *
+		 * @return {RenameDropdown}
 		 * @chainable
 		 */
 		function init() {
@@ -284,6 +288,7 @@
 		/**
 		 * Displays the rename menu
 		 *
+		 * @return {RenameDropdown}
 		 * @chainable
 		 */
 		function show() {
@@ -294,6 +299,7 @@
 		/**
 		 * Hides the rename menu
 		 *
+		 * @return {RenameDropdown}
 		 * @chainable
 		 */
 		function hide() {
@@ -307,6 +313,7 @@
 		 * @param {jQuery} target Target trigger element
 		 * @param {jQuery} $container Container to which to append the menu
 		 * @param {Object} customData Custom data to be associated with the menu
+		 * @return {RenameDropdown}
 		 * @chainable
 		 */
 		function appendTo( target, $container, customData ) {
@@ -336,6 +343,7 @@
 		 * Hide a specific option in the dropdown
 		 *
 		 * @param {string} optSelector
+		 * @return {RenameDropdown}
 		 * @chainable
 		 */
 		function hideOption( optSelector ) {
