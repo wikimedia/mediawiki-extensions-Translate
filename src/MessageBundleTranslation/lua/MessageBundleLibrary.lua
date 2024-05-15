@@ -1,6 +1,7 @@
 --[=[
 Translate Message bundle Lua module
 ]=]
+local util = require 'libraryUtil'
 
 local php
 
@@ -26,6 +27,8 @@ end
 Represents translate message bundle object
 ]=]
 function translateMessageBundle.new( title )
+	util.checkTypeMulti( 'translateMessageBundle:new', 1, title, { 'string', 'table' } )
+
 	if type( title ) == 'string' then
 		title = mw.title.new( title )
 	end
@@ -35,6 +38,8 @@ function translateMessageBundle.new( title )
 	local obj = {
 		title = title,
 	}
+
+	php.validate( title.prefixedText )
 
 	local translationCache = {}
 

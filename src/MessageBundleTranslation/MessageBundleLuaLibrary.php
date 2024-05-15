@@ -4,16 +4,27 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
+use MediaWiki\MediaWikiServices;
 
 class MessageBundleLuaLibrary extends LibraryBase {
 	public function register() {
 		$extensionLuaPath = __DIR__ . '/lua/MessageBundleLibrary.lua';
 		$lib = [
+			'validate' => [ $this, 'validate' ],
 			'getMessageBundleTranslations' => [ $this, 'getMessageBundleTranslations' ]
 		];
 		$opts = [];
 
 		return $this->getEngine()->registerInterface( $extensionLuaPath, $lib, $opts );
+	}
+
+	public function validate( string $messageBundleTitle ): void {
+		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
+		$mbTitle = $titleFactory->newFromText( $messageBundleTitle );
+		if ( !MessageBundle::isSourcePage( $mbTitle ) ) {
+			throw new LuaError( "$messageBundleTitle is not a valid message bundle." );
+		}
 	}
 
 	public function getMessageBundleTranslations( string $messageBundleTitle, string $languageCode ): array {
