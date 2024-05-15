@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
-use MessageUpdateJob;
 
 /** @covers \MediaWiki\Extension\Translate\Synchronization\MessageUpdateParameter */
 class MessageUpdateParameterTest extends MediaWikiUnitTestCase {
@@ -64,14 +63,14 @@ class MessageUpdateParameterTest extends MediaWikiUnitTestCase {
 		string $replacement,
 		bool $isFuzzy,
 		array $otherLangs
-	): MessageUpdateJob {
+	): UpdateMessageJob {
 		$title = Title::makeTitle( NS_MAIN, $title );
 		if ( $isRename ) {
-			$job = MessageUpdateJob::newRenameJob(
+			$job = UpdateMessageJob::newRenameJob(
 				$title, $target, $replacement, $isFuzzy, $content, $otherLangs
 			);
 		} else {
-			$job = MessageUpdateJob::newJob( $title, $content, $isFuzzy );
+			$job = UpdateMessageJob::newJob( $title, $content, $isFuzzy );
 		}
 
 		return $job;

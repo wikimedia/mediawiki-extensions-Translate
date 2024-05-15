@@ -99,7 +99,6 @@
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MessageGroupStats": "utils/MessageGroupStats.php",
 		"MessagePrefixMessageGroup": "messagegroups/MessagePrefixMessageGroup.php",
-		"MessageUpdateJob": "utils/MessageUpdateJob.php",
 		"PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupConfiguration\\PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
 		"PremadeMediaWikiExtensionGroups": "src/MessageGroupConfiguration/PremadeMediaWikiExtensionGroups.php",
@@ -475,10 +474,11 @@
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStatesUpdaterJob",
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
-		"MessageUpdateJob": "MessageUpdateJob",
+		"MessageUpdateJob": "\\MediaWiki\\Extension\\Translate\\Synchronization\\UpdateMessageJob",
 		"RebuildMessageGroupStatsJob": "\\MediaWiki\\Extension\\Translate\\Statistics\\RebuildMessageGroupStatsJob",
 		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
 		"UpdateMessageBundle": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\UpdateMessageBundleJob",
+		"UpdateMessageJob": "\\MediaWiki\\Extension\\Translate\\Synchronization\\UpdateMessageJob",
 		"UpdateTranslatorActivity": "\\MediaWiki\\Extension\\Translate\\Statistics\\UpdateTranslatorActivityJob"
 	},
 	"LogTypes": [
@@ -1300,7 +1300,7 @@
 		},
 		"TranslateGroupSynchronizationCache": {
 			"value": false,
-			"description": "If true, enables the group synchronization cache that keeps track of FileBasedMessageGroups messages currently being processed via MessageUpdateJob",
+			"description": "If true, enables the group synchronization cache that keeps track of FileBasedMessageGroups messages currently being processed via UpdateMessageJob",
 			"public": true
 		},
 		"TranslatePageMoveLimit": {

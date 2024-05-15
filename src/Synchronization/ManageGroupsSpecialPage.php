@@ -24,7 +24,6 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageUpdateJob;
 use NamespaceInfo;
 use OOUI\ButtonInputWidget;
 use OutputPage;
@@ -896,7 +895,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 					Utilities::title( $targetStr, $language, $groupNamespace ),
 					$groupNamespace
 				);
-				$modificationJobs[] = MessageUpdateJob::newJob( $title, $jobParams['content'] );
+				$modificationJobs[] = UpdateMessageJob::newJob( $title, $jobParams['content'] );
 			}
 
 			// remove the matched key in order to avoid double processing.
@@ -942,18 +941,18 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				}
 
 				$fuzzy = $selectedVal === 'fuzzy';
-				$messageUpdateJob[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
+				$messageUpdateJob[] = UpdateMessageJob::newJob( $title, $params['content'], $fuzzy );
 			}
 		}
 	}
 
-	/** @return MessageUpdateJob[][] */
+	/** @return UpdateMessageJob[][] */
 	private function createRenameJobs( array $jobParams ): array {
 		$jobs = [];
 		foreach ( $jobParams as $groupId => $groupJobParams ) {
 			$jobs[$groupId] ??= [];
 			foreach ( $groupJobParams as $params ) {
-				$jobs[$groupId][] = MessageUpdateJob::newRenameJob(
+				$jobs[$groupId][] = UpdateMessageJob::newRenameJob(
 					$params['targetTitle'],
 					$params['target'],
 					$params['replacement'],
@@ -1055,8 +1054,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 	/**
 	 * Add jobs to the queue, updates the interim cache, and start sync process for the group.
-	 * @param MessageUpdateJob[][] $modificationJobs
-	 * @param MessageUpdateJob[][] $renameJobs
+	 * @param UpdateMessageJob[][] $modificationJobs
+	 * @param UpdateMessageJob[][] $renameJobs
 	 */
 	private function startSync( array $modificationJobs, array $renameJobs ): void {
 		// We are adding an empty array for groups that have no jobs. This is mainly done to
@@ -1072,7 +1071,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$groupJobs = [];
 
 			$groupRenameJobs = $renameJobs[$groupId] ?? [];
-			/** @var MessageUpdateJob $job */
+			/** @var UpdateMessageJob $job */
 			foreach ( $groupRenameJobs as $job ) {
 				$groupJobs[] = $job;
 				$messageUpdateParam = MessageUpdateParameter::createFromJob( $job );
@@ -1085,7 +1084,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			}
 
 			$groupModificationJobs = $modificationJobs[$groupId] ?? [];
-			/** @var MessageUpdateJob $job */
+			/** @var UpdateMessageJob $job */
 			foreach ( $groupModificationJobs as $job ) {
 				$groupJobs[] = $job;
 				$messageUpdateParam = MessageUpdateParameter::createFromJob( $job );

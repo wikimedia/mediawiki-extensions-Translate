@@ -7,10 +7,9 @@ use JsonSerializable;
 use MediaWiki\Json\JsonUnserializable;
 use MediaWiki\Json\JsonUnserializableTrait;
 use MediaWiki\Json\JsonUnserializer;
-use MessageUpdateJob;
 
 /**
- * Store params for MessageUpdateJob.
+ * Store params for UpdateMessageJob.
  * @author Abijeet Patro
  * @license GPL-2.0-or-later
  * @since 2020.06
@@ -90,8 +89,8 @@ class MessageUpdateParameter implements JsonSerializable, JsonUnserializable {
 		}
 	}
 
-	/** Create a new instance of the class from MessageUpdateJob */
-	public static function createFromJob( MessageUpdateJob $job ): self {
+	/** Create a new instance of the class from UpdateMessageJob */
+	public static function createFromJob( UpdateMessageJob $job ): self {
 		$jobParams = $job->getParams();
 		$jobParams['title'] = $job->getTitle()->getPrefixedDBkey();
 		return new self( $jobParams );

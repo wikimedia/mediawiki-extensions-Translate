@@ -1,13 +1,10 @@
 <?php
-/**
- * Job for updating translation pages.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2008-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Synchronization;
+
+use ContentHandler;
+use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -18,31 +15,27 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 /**
  * Job for updating translation pages when translation or message definition changes.
  *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2008-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup JobQueue
  */
-class MessageUpdateJob extends GenericTranslateJob {
-	/**
-	 * Create a normal message update job without a rename process
-	 * @param Title $target
-	 * @param string $content
-	 * @param string|false $fuzzy
-	 * @return self
-	 */
+class UpdateMessageJob extends GenericTranslateJob {
+	/** Create a normal message update job without a rename process */
 	public static function newJob(
-		Title $target, string $content, $fuzzy = false
+		Title $target, string $content, bool $fuzzy = false
 	): self {
 		$params = [
 			'content' => $content,
 			'fuzzy' => $fuzzy,
 		];
 
-		$job = new self( $target, $params );
-
-		return $job;
+		return new self( $target, $params );
 	}
 
 	/**
@@ -72,20 +65,14 @@ class MessageUpdateJob extends GenericTranslateJob {
 			'otherLangs' => $otherLangContents
 		];
 
-		$job = new self( $target, $params );
-
-		return $job;
+		return new self( $target, $params );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 */
-	public function __construct( $title, $params = [] ) {
-		parent::__construct( 'MessageUpdateJob', $title, $params );
+	public function __construct( Title $title, array $params = [] ) {
+		parent::__construct( 'UpdateMessageJob', $title, $params );
 	}
 
-	public function run() {
+	public function run(): bool {
 		$params = $this->params;
 		$user = FuzzyBot::getUser();
 		$flags = EDIT_FORCE_BOT;
@@ -147,14 +134,7 @@ class MessageUpdateJob extends GenericTranslateJob {
 		return true;
 	}
 
-	/**
-	 * Handles renames
-	 * @param string $target
-	 * @param string $replacement
-	 * @param User $user
-	 * @return Title|null
-	 */
-	private function handleRename( $target, $replacement, User $user ) {
+	private function handleRename( string $target, string $replacement, User $user ): ?Title {
 		$newSourceTitle = null;
 
 		$sourceMessageHandle = new MessageHandle( $this->title );
@@ -207,15 +187,15 @@ class MessageUpdateJob extends GenericTranslateJob {
 				'Source title was not in the list of moveable titles.',
 				[ 'title' => $this->title->getPrefixedText() ]
 			);
+			return null;
 		}
 	}
 
 	/**
 	 * Handles fuzzying. Message documentation and the source language are excluded from
 	 * fuzzying. The source language is the identified via the $title parameter
-	 * @param Title $title
 	 */
-	private function handleFuzzy( Title $title ) {
+	private function handleFuzzy( Title $title ): void {
 		global $wgTranslateDocumentationLanguageCode;
 		$handle = new MessageHandle( $title );
 
@@ -272,18 +252,15 @@ class MessageUpdateJob extends GenericTranslateJob {
 		);
 	}
 
-	/**
-	 * Updates the translation unit pages in non-source languages.
-	 * @param array $langChanges
-	 * @param string $baseTitle
-	 * @param int $groupNamespace
-	 * @param string $summary
-	 * @param int $flags
-	 * @param User $user
-	 */
+	/** Updates the translation unit pages in non-source languages. */
 	private function processTranslationChanges(
-		array $langChanges, $baseTitle, $groupNamespace, $summary, $flags, User $user
-	) {
+		array $langChanges,
+		string $baseTitle,
+		int $groupNamespace,
+		string $summary,
+		int $flags,
+		User $user
+	): void {
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $langChanges as $code => $contentStr ) {
 			$titleStr = Utilities::title( $baseTitle, $code, $groupNamespace );

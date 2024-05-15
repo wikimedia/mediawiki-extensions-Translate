@@ -21,7 +21,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 		parent::__construct();
 		$this->addDescription(
 			'Check and run RebuildMessageIndex and MessageGroupStats update once ' .
-			'MessageUpdateJobs are done. Intended to be run periodically'
+			'UpdateMessageJobs are done. Intended to be run periodically'
 		);
 		$this->requireExtension( 'Translate' );
 	}
@@ -60,7 +60,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 			if ( $groupResponse->hasTimedOut() ) {
 				$remainingMessages = $groupResponse->getRemainingMessages();
 				$logger->warning(
-					'MessageUpdateJobs timed out for group - {groupId}; ' .
+					'UpdateMessageJobs timed out for group - {groupId}; ' .
 					'Messages - {messages}; ' .
 					'Jobs remaining - {jobRemaining}',
 					[
@@ -71,7 +71,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 				);
 
 				$count = count( $remainingMessages );
-				wfLogWarning( "MessageUpdateJob timed out for group $groupId with $count message(s) remaining" );
+				wfLogWarning( "UpdateMessageJob timed out for group $groupId with $count message(s) remaining" );
 				$groupSyncCache->forceEndSync( $groupId );
 
 				$groupSyncCache->addGroupErrors( $groupResponse );

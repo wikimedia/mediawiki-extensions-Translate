@@ -18,7 +18,6 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Language\RawMessage;
 use MessageGroup;
-use MessageUpdateJob;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Status;
@@ -106,7 +105,7 @@ class ExternalMessageSourceStateImporter {
 					continue;
 				}
 
-				[ $groupLanguageJobs, $groupProcessed ] = $this->createMessageUpdateJobs(
+				[ $groupLanguageJobs, $groupProcessed ] = $this->createUpdateMessageJobs(
 					$group, $additions, $language
 				);
 
@@ -173,8 +172,8 @@ class ExternalMessageSourceStateImporter {
 		return Status::newGood();
 	}
 
-	/** Creates MessageUpdateJobs additions for a language under a group */
-	private function createMessageUpdateJobs(
+	/** Creates UpdateMessageJobs additions for a language under a group */
+	private function createUpdateMessageJobs(
 		FileBasedMessageGroup $group,
 		array $additions,
 		string $language
@@ -192,7 +191,7 @@ class ExternalMessageSourceStateImporter {
 				continue;
 			}
 
-			$jobs[] = MessageUpdateJob::newJob( $title, $addition['content'] );
+			$jobs[] = UpdateMessageJob::newJob( $title, $addition['content'] );
 			$processed++;
 		}
 
@@ -201,7 +200,7 @@ class ExternalMessageSourceStateImporter {
 
 	/**
 	 * @param string $groupId
-	 * @param MessageUpdateJob[] $groupJobs
+	 * @param UpdateMessageJob[] $groupJobs
 	 */
 	private function updateGroupSyncInfo( string $groupId, array $groupJobs ): void {
 		$messageParams = [];

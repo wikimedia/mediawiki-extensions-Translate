@@ -7,11 +7,11 @@ use Job;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Synchronization\UpdateMessageJob;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroupStats;
-use MessageUpdateJob;
 
 /**
  * @author Niklas Laxström
@@ -87,11 +87,11 @@ class UpdateMessageBundleJob extends Job {
 		foreach ( $messages as $key => $value ) {
 			$title = Title::makeTitle( $namespace, "$key/$code" );
 			$fuzzy = $this->shouldFuzzy( $previousMessages, $newKeys, $key, $value );
-			$jobs[] = MessageUpdateJob::newJob( $title, $value, $fuzzy );
+			$jobs[] = UpdateMessageJob::newJob( $title, $value, $fuzzy );
 		}
 		$jobQueue->push( $jobs );
 		$logger->info(
-			'UpdateMessageBundleJob: Added {number} MessageUpdateJobs to the job queue for: {title}',
+			'UpdateMessageBundleJob: Added {number} UpdateMessageJobs to the job queue for: {title}',
 			[
 				'number' => count( $jobs ),
 				'title' => $name

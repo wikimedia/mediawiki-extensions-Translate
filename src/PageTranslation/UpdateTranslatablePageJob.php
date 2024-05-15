@@ -6,10 +6,10 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
+use MediaWiki\Extension\Translate\Synchronization\UpdateMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroupStats;
-use MessageUpdateJob;
 use RunnableJob;
 
 /**
@@ -139,7 +139,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 			$title = Title::makeTitle( NS_TRANSLATIONS, "$prefix/$unitName/$code" );
 
 			$fuzzy = $unit->type === 'changed';
-			$jobs[] = MessageUpdateJob::newJob( $title, $unit->getTextWithVariables(), $fuzzy );
+			$jobs[] = UpdateMessageJob::newJob( $title, $unit->getTextWithVariables(), $fuzzy );
 		}
 
 		return $jobs;
