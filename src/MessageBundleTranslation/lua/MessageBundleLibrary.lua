@@ -26,8 +26,9 @@ end
 --[=[
 Represents translate message bundle object
 ]=]
-function translateMessageBundle.new( title )
+function translateMessageBundle.new( title, languageCode )
 	util.checkTypeMulti( 'translateMessageBundle:new', 1, title, { 'string', 'table' } )
+	util.checkType( 'translateMessageBundle:new', 2, languageCode, 'string', true )
 
 	if type( title ) == 'string' then
 		title = mw.title.new( title )
@@ -35,20 +36,26 @@ function translateMessageBundle.new( title )
 
 	assert( title, 'Message bundle title is needed' )
 
-	local obj = {
-		title = title,
-	}
-
+	-- Verify that this is a valid message bundle
 	php.validate( title.prefixedText )
 
-	local translationCache = {}
+	-- Determine the language code to use for the message bundle
+	languageCode = languageCode or mw.title.getCurrentTitle().pageLang.code;
 
-	function obj:loadTranslations( languageCode )
-		if translationCache[languageCode] == nil then
-			translationCache[languageCode] = php.getMessageBundleTranslations( title.prefixedText, languageCode )
+	local obj = {};
+	local translations = nil;
+
+	function loadTranslations( languageCode )
+		if translations == nil then
+			translations = php.getMessageBundleTranslations( title.prefixedText, languageCode )
 		end
 
-		return translationCache[languageCode]
+		return translations
+	end
+
+	function obj:t( key )
+		local languageTranslations = loadTranslations( languageCode )
+		return languageTranslations[ key ]
 	end
 
 	return obj
