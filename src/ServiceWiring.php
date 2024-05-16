@@ -123,7 +123,6 @@ return [
 		MediaWikiServices $services
 	): MessageBundleMessageGroupFactory {
 		return new MessageBundleMessageGroupFactory(
-			$services->getDBLoadBalancerFactory()->getPrimaryDatabase(),
 			$services->get( 'Translate:MessageGroupMetadata' ),
 			new ServiceOptions(
 				MessageBundleMessageGroupFactory::SERVICE_OPTIONS,
@@ -334,7 +333,6 @@ return [
 				TranslatablePageMessageGroupFactory::SERVICE_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getDBLoadBalancerFactory()->getPrimaryDatabase()
 		);
 	},
 

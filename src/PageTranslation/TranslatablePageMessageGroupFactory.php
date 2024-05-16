@@ -10,7 +10,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IReadableDatabase;
 use WikiPageMessageGroup;
 
@@ -26,13 +25,8 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	];
 
 	private ServiceOptions $options;
-	private IReadableDatabase $db;
 
-	public function __construct(
-		ServiceOptions $options,
-		IReadableDatabase $db
-	) {
-		$this->db = $db;
+	public function __construct( ServiceOptions $options ) {
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->options = $options;
 	}
@@ -51,17 +45,13 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	}
 
 	/** @return string[] */
-	public function getData( bool $recache, array &$setOpts ): array {
+	public function getData( IReadableDatabase $db ): array {
 		if ( !$this->options->get( 'EnablePageTranslation' ) ) {
 			return [];
 		}
 
-		if ( !$recache ) {
-			$setOpts += Database::getCacheSetOptions( $this->db );
-		}
-
 		$groupTitles = [];
-		$res = $this->db->newSelectQueryBuilder()
+		$res = $db->newSelectQueryBuilder()
 			->select( [ 'page_id', 'page_namespace', 'page_title' ] )
 			->from( 'page' )
 			->join( 'revtag', null, 'page_id=rt_page' )

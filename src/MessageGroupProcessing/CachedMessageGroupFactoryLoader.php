@@ -9,6 +9,8 @@ use MessageGroup;
 use MessageGroupLoader;
 use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Loads and manages message group factory loaders
@@ -18,14 +20,20 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  */
 class CachedMessageGroupFactoryLoader extends MessageGroupLoader implements CachedMessageGroupLoader {
 	private WANObjectCache $cache;
+	private IConnectionProvider $connectionProvider;
 	private string $cacheKey;
 	private CachedMessageGroupFactory $factory;
 	private const CACHE_TTL = ExpirationAwareness::TTL_DAY;
 
-	public function __construct( WANObjectCache $cache, CachedMessageGroupFactory $factory ) {
+	public function __construct(
+		WANObjectCache $cache,
+		IConnectionProvider $connectionProvider,
+		CachedMessageGroupFactory $factory
+	) {
 		$this->cache = $cache;
 		$this->cacheKey = $cache->makeKey( 'translate-mg', $factory->getCacheKey() );
 		$this->factory = $factory;
+		$this->connectionProvider = $connectionProvider;
 	}
 
 	/** @return MessageGroup[] */
@@ -33,38 +41,42 @@ class CachedMessageGroupFactoryLoader extends MessageGroupLoader implements Cach
 		return $this->factory->createGroups( $this->getCachedValue()->getValue() );
 	}
 
-	public function recache(): void {
-		$this->getCachedValue( true );
+	/** @return MessageGroup[] */
+	public function recache(): array {
+		$this->cache->touchCheckKey( $this->cacheKey );
+		return $this->factory->createGroups(
+			$this->factory->getData( $this->connectionProvider->getPrimaryDatabase() )
+		);
 	}
 
 	public function clearCache(): void {
 		$this->cache->delete( $this->cacheKey );
 	}
 
-	private function getCachedValue( bool $recache = false ): DependencyWrapper {
-		if ( $recache ) {
-			// Ensure the cache value gets invalidated in other datacenters
-			$this->cache->touchCheckKey( $this->cacheKey );
-		}
+	private function getCachedValue(): DependencyWrapper {
 		return $this->cache->getWithSetCallback(
 			$this->cacheKey,
 			self::CACHE_TTL,
-			fn ( $oldValue, &$ttl, array &$setOpts ) => $this->getCacheData( $recache, $setOpts ),
+			fn ( $oldValue, &$ttl, array &$setOpts ) => $this->getCacheData( $setOpts ),
 			[
 				// avoid stampedes (mutex)
 				'lockTSE' => 30,
+				'checkKeys' => [ $this->cacheKey ],
 				'touchedCallback' => static fn ( DependencyWrapper $value ) => $value->isExpired() ? time() : null,
-				// "miss" on recache
-				'minAsOf' => $recache ? INF : WANObjectCache::MIN_TIMESTAMP_NONE,
 				'version' => $this->factory->getCacheVersion(),
-				// use pcTTL causes stale data to be used even if guarded with !$recache
 			]
 		);
 	}
 
-	private function getCacheData( bool $recache, array &$setOpts ): DependencyWrapper {
+	private function getCacheData( array &$setOpts ): DependencyWrapper {
+		$dbr = $this->connectionProvider->getReplicaDatabase();
+
+		// Some factories may not use the database, in which case this is superflous.
+		// Having it here for simplicity.
+		$setOpts += Database::getCacheSetOptions( $dbr );
+
 		$wrapper = new DependencyWrapper(
-			$this->factory->getData( $recache, $setOpts ),
+			$this->factory->getData( $dbr ),
 			$this->factory->getDependencies()
 		);
 		$wrapper->initialiseDeps();

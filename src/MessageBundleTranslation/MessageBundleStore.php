@@ -61,10 +61,12 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 		MessageBundle::clearSourcePageCache();
 
-		// Re-render the bundles to get everything in sync
 		MessageGroups::singleton()->recache();
 		// Update message index now so that, when after this job the MoveTranslationUnits hook
 		// runs in deferred updates, it will not run RebuildMessageIndexJob (T175834).
+		// Notice: currently this code is only called on CLI or in jobs, but this is not very
+		// obvious. messageIndex->rebuild() should never be called during web requests due to
+		// its slowness.
 		$this->messageIndex->rebuild();
 	}
 
@@ -87,6 +89,9 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 		MessageBundle::clearSourcePageCache();
 
+		// Notice: currently this code is only called on CLI or in jobs, but this is not very
+		// obvious. messageIndex->rebuild() should never be called during web requests due to
+		// its slowness.
 		MessageGroups::singleton()->recache();
 		$this->messageIndex->rebuild();
 	}

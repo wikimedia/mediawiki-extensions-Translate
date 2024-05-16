@@ -141,11 +141,12 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	/**
 	 * Clear and refill the cache with the latest values
 	 */
-	public function recache() {
+	public function recache(): array {
 		$this->clearProcessCache();
 
 		$cacheData = $this->cache->getValue( 'recache' );
 		$this->groups = $this->initGroupsFromConf( $cacheData );
+		return $this->groups;
 	}
 
 	/**

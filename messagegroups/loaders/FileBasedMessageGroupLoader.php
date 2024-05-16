@@ -133,12 +133,13 @@ class FileBasedMessageGroupLoader extends MessageGroupLoader
 	/**
 	 * Clear and refill the cache with the latest values
 	 */
-	public function recache() {
+	public function recache(): array {
 		$this->clearProcessCache();
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $this->cache->getValue( 'recache' );
 		$cacheData = $wrapper->getValue();
 		$this->initFromCacheValue( $cacheData );
+		return $this->groups;
 	}
 
 	/**

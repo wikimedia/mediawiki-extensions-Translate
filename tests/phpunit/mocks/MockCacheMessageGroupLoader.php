@@ -7,7 +7,8 @@ class MockCacheMessageGroupLoader extends MessageGroupLoader
 		return [];
 	}
 
-	public function recache() {
+	public function recache(): array {
+		return [];
 	}
 
 	public function clearCache() {

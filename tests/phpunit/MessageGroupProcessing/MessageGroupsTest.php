@@ -37,6 +37,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
+		$mg->clearProcessCache();
 		$mg->recache();
 
 		Services::getInstance()->getMessageIndex()->rebuild();

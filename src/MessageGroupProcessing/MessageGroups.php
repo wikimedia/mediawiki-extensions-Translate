@@ -36,7 +36,6 @@ class MessageGroups {
 	/** @var MessageGroupLoader[]|null */
 	private $groupLoaders;
 	private WANObjectCache $cache;
-
 	/**
 	 * Tracks the current cache version. Update this when there are incompatible changes
 	 * with the last version of the cache to force a new key to be used. The older cache
@@ -51,49 +50,23 @@ class MessageGroups {
 			return; // groups already initialized
 		}
 
-		$value = $this->getCachedGroupDefinitions();
-		$groups = $value['cc'];
-
+		$groups = $this->getCachedHookDefinedGroups();
 		foreach ( $this->getGroupLoaders() as $loader ) {
 			$groups += $loader->getGroups();
 		}
 		$this->initGroupsFromDefinitions( $groups );
 	}
 
-	/** @param string|false $recache Either "recache" or false */
-	protected function getCachedGroupDefinitions( $recache = false ): array {
+	/** Return MessageGroup[] */
+	protected function getCachedHookDefinedGroups(): array {
 		global $wgAutoloadClasses;
-
-		$regenerator = function () {
-			global $wgAutoloadClasses;
-
-			$groups = $deps = $autoload = [];
-			// This constructs the list of all groups from multiple different sources.
-			// When possible, a cache dependency is created to automatically recreate
-			// the cache when configuration changes. Currently used by other extensions
-			// such as Banner Messages and test cases to load message groups.
-			Services::getInstance()->getHookRunner()
-				->onTranslatePostInitGroups( $groups, $deps, $autoload );
-			// Register autoloaders for this request, both values modified by reference
-			self::appendAutoloader( $autoload, $wgAutoloadClasses );
-
-			$value = [
-				'ts' => wfTimestamp( TS_MW ),
-				'cc' => $groups,
-				'autoload' => $autoload
-			];
-			$wrapper = new DependencyWrapper( $value, $deps );
-			$wrapper->initialiseDeps();
-
-			return $wrapper; // save the new value to cache
-		};
 
 		$cache = $this->getCache();
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $cache->getWithSetCallback(
 			$this->getCacheKey(),
 			$cache::TTL_DAY,
-			$regenerator,
+			fn () => $this->getHookDefinedGroupsDependencyWrapper(),
 			[
 				'lockTSE' => 30, // avoid stampedes (mutex)
 				'checkKeys' => [ $this->getCacheKey() ],
@@ -102,14 +75,40 @@ class MessageGroups {
 						? time() // treat value as if it just expired (for "lockTSE")
 						: null;
 				},
-				'minAsOf' => $recache ? INF : $cache::MIN_TIMESTAMP_NONE, // "miss" on recache
 			]
 		);
 
 		$value = $wrapper->getValue();
 		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
+		return $value['cc'];
+	}
 
-		return $value;
+	private function getHookDefinedGroupsDependencyWrapper(): DependencyWrapper {
+		$groups = $deps = $autoload = [];
+		// When possible, a cache dependency is created to automatically recreate
+		// the cache when configuration changes. Currently used by other extensions
+		// such as Banner Messages and test cases to load message groups.
+		Services::getInstance()->getHookRunner()
+			->onTranslatePostInitGroups( $groups, $deps, $autoload );
+
+		$value = [
+			'ts' => wfTimestamp( TS_MW ),
+			'cc' => $groups,
+			'autoload' => $autoload
+		];
+		$wrapper = new DependencyWrapper( $value, $deps );
+		$wrapper->initialiseDeps();
+
+		return $wrapper;
+	}
+
+	/** Return MessageGroup[] */
+	private function getHookDefinedGroups(): array {
+		global $wgAutoloadClasses;
+		$wrapper = $this->getHookDefinedGroupsDependencyWrapper();
+		$value = $wrapper->getValue();
+		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
+		return $value['cc'];
 	}
 
 	/**
@@ -127,51 +126,26 @@ class MessageGroups {
 		$this->groups = $groups;
 	}
 
-	/** Immediately update the cache. */
+	/** Clear message group caches and populate message groups from uncached data */
 	public function recache(): void {
-		// Purge the value from all datacenters
 		$cache = $this->getCache();
 		$cache->touchCheckKey( $this->getCacheKey() );
 
-		$this->clearProcessCache();
-
-		foreach ( $this->getCacheGroupLoaders() as $cacheLoader ) {
-			$cacheLoader->recache();
-		}
-
-		// Reload the cache value and update the local datacenter
-		$value = $this->getCachedGroupDefinitions( 'recache' );
-		$groups = $value['cc'];
-
+		$groups = $this->getHookDefinedGroups();
 		foreach ( $this->getGroupLoaders() as $loader ) {
-			$groups += $loader->getGroups();
+			if ( $loader instanceof CachedMessageGroupLoader ) {
+				$groups += $loader->recache();
+			} else {
+				$groups += $loader->getGroups();
+			}
 		}
-
 		$this->initGroupsFromDefinitions( $groups );
-	}
-
-	/**
-	 * Manually reset group cache.
-	 *
-	 * Use when automatic dependency tracking fails.
-	 */
-	public static function clearCache(): void {
-		$self = self::singleton();
-
-		$cache = $self->getCache();
-		$cache->delete( $self->getCacheKey(), 1 );
-
-		foreach ( $self->getCacheGroupLoaders() as $cacheLoader ) {
-			$cacheLoader->clearCache();
-		}
-
-		$self->clearProcessCache();
 	}
 
 	/**
 	 * Manually reset the process cache.
 	 *
-	 * This is helpful for long running scripts where the process cache might get stale
+	 * This is helpful for long-running scripts where the process cache might get stale
 	 * even though the global cache is updated.
 	 */
 	public function clearProcessCache(): void {
@@ -222,8 +196,8 @@ class MessageGroups {
 		}
 
 		$services = Services::getInstance();
-
 		$cache = $this->getCache();
+		$connectionProvider = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		$groupLoaderInstances = $this->groupLoaders = [];
 
@@ -248,28 +222,17 @@ class MessageGroups {
 
 		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
 			$cache,
+			$connectionProvider,
 			$services->getMessageBundleMessageGroupFactory()
 		);
 
 		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
 			$cache,
+			$connectionProvider,
 			$services->getTranslatablePageMessageGroupFactory()
 		);
 
 		return $this->groupLoaders;
-	}
-
-	/**
-	 * Returns group loaders that implement the CachedMessageGroupLoader
-	 *
-	 * @return CachedMessageGroupLoader[]
-	 */
-	protected function getCacheGroupLoaders(): array {
-		// @phan-suppress-next-line PhanTypeMismatchReturn
-		return array_filter(
-			$this->getGroupLoaders(),
-			static fn ( $groupLoader ) => $groupLoader instanceof CachedMessageGroupLoader
-		);
 	}
 
 	/**

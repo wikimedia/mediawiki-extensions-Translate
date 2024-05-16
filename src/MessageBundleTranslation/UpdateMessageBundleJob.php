@@ -98,14 +98,8 @@ class UpdateMessageBundleJob extends Job {
 			]
 		);
 
-		// This is somewhat slow, so it has been postponed until now, but it's needed to
-		// make the group available for the message index rebuild.
+		// TODO: Ideally we would only invalidate message bundle message group cache
 		MessageGroups::singleton()->recache();
-
-		$logger->info(
-			'UpdateMessageBundleJob: {title}: Recaching message groups',
-			[ 'title' => $name ]
-		);
 
 		// Schedule message index update. Thanks to front caching, it is okay if this takes
 		// a while (and on large wikis it does take a while!). Running it as a separate job

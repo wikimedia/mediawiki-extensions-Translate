@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use CacheDependency;
 use MessageGroup;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Interface for message group factories that use caching.
@@ -20,11 +21,8 @@ interface CachedMessageGroupFactory {
 	/** @return CacheDependency[] */
 	public function getDependencies(): array;
 
-	/**
-	 * @see WANObjectCache::getWithSetCallback()
-	 * @return mixed
-	 */
-	public function getData( bool $recache, array &$setOpts );
+	/** @return mixed */
+	public function getData( IReadableDatabase $db );
 
 	/**
 	 * @param mixed $data Data returned by `getData()`

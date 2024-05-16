@@ -14,9 +14,10 @@
  */
 interface CachedMessageGroupLoader {
 	/**
-	 * Clear and refill the cache with the latest values
+	 * Invalidate caches and return uncached data
+	 * @return MessageGroup[]
 	 */
-	public function recache();
+	public function recache(): array;
 
 	/**
 	 * Clear values from the cache

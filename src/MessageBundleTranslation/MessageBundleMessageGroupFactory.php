@@ -9,8 +9,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Title\Title;
-use Wikimedia\Rdbms\Database;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * @since 2024.05
@@ -21,17 +20,13 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 	public const SERVICE_OPTIONS = [
 		'TranslateEnableMessageBundleIntegration'
 	];
-
-	private IDatabase $db;
 	private MessageGroupMetadata $messageGroupMetadata;
 	private bool $enableIntegration;
 
 	public function __construct(
-		IDatabase $db,
 		MessageGroupMetadata $messageGroupMetadata,
 		ServiceOptions $options
 	) {
-		$this->db = $db;
 		$this->messageGroupMetadata = $messageGroupMetadata;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->enableIntegration = $options->get( 'TranslateEnableMessageBundleIntegration' );
@@ -49,17 +44,13 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 		return [ new GlobalDependency( 'wgTranslateEnableMessageBundleIntegration' ) ];
 	}
 
-	public function getData( bool $recache, array &$setOpts ) {
+	public function getData( IReadableDatabase $db ) {
 		if ( !$this->enableIntegration ) {
 			return [];
 		}
 
-		if ( !$recache ) {
-			$setOpts += Database::getCacheSetOptions( $this->db );
-		}
-
 		$cacheData = [];
-		$res = $this->db->newSelectQueryBuilder()
+		$res = $db->newSelectQueryBuilder()
 			->select( [ 'page_id', 'page_namespace', 'page_title', 'rt_revision' => 'MAX(rt_revision)' ] )
 			->from( 'page' )
 			->join( 'revtag', null, [ 'page_id=rt_page', 'rt_type' => RevTagStore::MB_VALID_TAG ] )

@@ -7,6 +7,7 @@ use GenericParameterJob;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job for rebuilding message index.
@@ -31,6 +32,11 @@ class RebuildMessageIndexJob extends GenericTranslateJob implements GenericParam
 	}
 
 	public function run(): bool {
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		if ( !$lb->waitForReplication() ) {
+			$this->logWarning( 'Continuing despite replication lag' );
+		}
+
 		// Make sure we have latest version of message groups from global cache.
 		// This should be pretty fast, just a few cache fetches with some post processing.
 		MessageGroups::singleton()->clearProcessCache();

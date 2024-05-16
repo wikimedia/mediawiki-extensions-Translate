@@ -27,6 +27,7 @@ use TitleFormatter;
 use TitleParser;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
+use WikiPageMessageGroup;
 
 /**
  * Service to unmark pages from translation
@@ -317,11 +318,13 @@ class TranslatablePageMarker {
 		$this->saveMetadata( $operation, $pageSettings, $maxId, $user );
 
 		$page->addMarkedTag( $newRevisionId );
+		// TODO: Ideally we would only invalidate translatable page message group cache
 		$this->messageGroups->recache();
 
-		// Store interim cache
-		$group = $page->getMessageGroup();
+		$group = new WikiPageMessageGroup( $groupId, $page->getTitle() );
 		$newKeys = $group->makeGroupKeys( $changed );
+		// Interim cache is temporary cache to make new message groups keys known
+		// until MessageIndex is rebuilt (which can take a long time)
 		$this->messageIndex->storeInterim( $group, $newKeys );
 
 		$job = UpdateTranslatablePageJob::newFromPage( $page, $sections );

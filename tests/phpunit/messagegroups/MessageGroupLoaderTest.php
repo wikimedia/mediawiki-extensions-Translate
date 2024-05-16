@@ -18,7 +18,7 @@ class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->clearCache();
+		$mg->clearProcessCache();
 	}
 
 	public function registerLoader( array &$groupLoader ) {
@@ -27,20 +27,9 @@ class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 
 	public function testGroupLoaderRecache() {
 		$this->cacheLoaderMock->expects( $this->once() )
-			->method( 'getGroups' )
-			->willReturn( [] );
-
-		$this->cacheLoaderMock->expects( $this->once() )
 			->method( 'recache' );
 
 		MessageGroups::singleton()->recache();
-	}
-
-	public function testGroupLoaderClearCache() {
-		$this->cacheLoaderMock->expects( $this->once() )
-			->method( 'clearCache' );
-
-		MessageGroups::singleton()->clearCache();
 	}
 
 	public function testGroupLoaderGetGroups() {
