@@ -153,7 +153,7 @@
 	"action-translate-messagereview": "вычитать переводы",
 	"right-translate-groupreview": "Изменять состояние обработки групп сообщений",
 	"action-translate-groupreview": "изменение состояния групп сообщений",
-	"action-translate-watch-message-group": "Посмотреть группу сообщений",
+	"action-translate-watch-message-group": "посмотреть группу сообщений",
 	"translate-rcfilters-translations": "Переводы",
 	"translate-rcfilters-translations-only-label": "Пространства имён переводов",
 	"translate-rcfilters-translations-only-desc": "Отправленные переводы из групп сообщений.",
@@ -400,6 +400,8 @@
 	"tux-editor-placeholder-language": "Ваш перевод на $1",
 	"tux-editor-editsummary-placeholder": "Объясните ваши изменения (по желанию)",
 	"tux-editor-paste-original-button-label": "Вставить исходный текст",
+	"tux-editor-copy-original-button-label": "Скопировать исходный текст",
+	"tux-editor-copied-original-button-label": "Скопировано!",
 	"tux-editor-discard-changes-button-label": "Отменить изменения",
 	"tux-editor-save-button-label": "Опубликовать перевод",
 	"tux-editor-skip-button-label": "Следующее",
@@ -503,5 +505,10 @@
 	"log-action-filter-translationreview-group": "Изменения в статусе выполнения перевода",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|импортировал|импортировала|импортировал_а}} пакет переводов $3",
 	"log-action-filter-import-translatable-bundle": "Импорт переводимого пакета",
-	"translate-hidetranslations": "Скрыть страницы перевода"
+	"translate-hidetranslations": "Скрыть страницы перевода",
+	"echo-pref-tooltip-translate-message-group-subscription": "Уведомите меня об изменениях в переводимых группах сообщений, на которые я подписан",
+	"notification-header-message-group-subscription": "Есть обновления перевода для $1",
+	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Новое или удалённое сообщение|Новые или удалённые сообщения}} в $1",
+	"notification-body-translate-mgs-message-added-removed": "Добавлено $1 и удалено $2 {{PLURAL:$2|сообщение|сообщения|сообщений}}",
+	"notification-link-mgs-group-translate": "Перевести $1"
 }

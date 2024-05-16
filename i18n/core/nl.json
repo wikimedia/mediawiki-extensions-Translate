@@ -120,6 +120,7 @@
 	"action-translate-messagereview": "vertalingen te controleren",
 	"right-translate-groupreview": "Workflowstatus van berichtengroepen wijzigen",
 	"action-translate-groupreview": "de workflowstatus van berichtengroepen te wijzigen",
+	"action-translate-watch-message-group": "de berichtengroep te volgen",
 	"translate-rcfilters-translations": "Vertalingen",
 	"translate-rcfilters-translations-only-label": "Vertalingsnaamruimten",
 	"translate-rcfilters-translations-only-desc": "Bij berichtengroepen ingediende vertalingen.",
@@ -344,6 +345,9 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgroep|subgroepen}}",
 	"tux-languageselector": "Vertalen in het",
 	"tux-select-target-language": "Doeltaal voor de vertaling",
+	"tux-watch-group": "$1 volgen",
+	"tux-unwatch-group": "$1 niet meer volgen",
+	"tux-subscription-error": "Kan de volglijst van de berichtgroep niet bijwerken",
 	"tux-tab-all": "Alle",
 	"tux-tab-untranslated": "Onvertaald",
 	"tux-tab-outdated": "Verouderd",
@@ -361,6 +365,8 @@
 	"tux-editor-placeholder-language": "Uw vertaling in het $1",
 	"tux-editor-editsummary-placeholder": "Leg uw wijzigingen uit (optioneel)",
 	"tux-editor-paste-original-button-label": "Brontekst invoegen",
+	"tux-editor-copy-original-button-label": "Brontekst kopiëren",
+	"tux-editor-copied-original-button-label": "Gekopieerd!",
 	"tux-editor-discard-changes-button-label": "Wijzigingen negeren",
 	"tux-editor-save-button-label": "Vertaling publiceren",
 	"tux-editor-skip-button-label": "Overslaan en volgende",
@@ -463,5 +469,8 @@
 	"log-action-filter-translationreview-message": "Beoordeling van individuele vertaalberichten",
 	"log-action-filter-translationreview-group": "Veranderingen in de status van de voortgang van vertalingen",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|heeft}} een vertaalbare bundel $3 geïmporteerd",
-	"log-action-filter-import-translatable-bundle": "Import vertaalbare bundel"
+	"log-action-filter-import-translatable-bundle": "Import vertaalbare bundel",
+	"translate-hidetranslations": "Vertalingspagina’s verbergen",
+	"echo-category-title-translate-message-group-subscription": "Abonnementen op groepen vertaalbare berichten",
+	"echo-pref-tooltip-translate-message-group-subscription": "Houd mij op de hoogte van wijzigingen in groepen vertaalbare berichten waarop ik ben geabonneerd"
 }
