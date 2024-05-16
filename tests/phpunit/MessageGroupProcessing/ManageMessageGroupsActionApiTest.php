@@ -7,15 +7,13 @@ use ApiTestCase;
 use ApiUsageException;
 use DateInterval;
 use DateTime;
-use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
+use MessageGroupTestTrait;
 use MockWikiMessageGroup;
 use User;
-use WANObjectCache;
 
 /**
  * @group medium
@@ -24,8 +22,9 @@ use WANObjectCache;
  * @group Database
  */
 class ManageMessageGroupsActionApiTest extends ApiTestCase {
-	/** @var User */
-	protected $user;
+	use MessageGroupTestTrait;
+
+	protected User $user;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -35,17 +34,12 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 
 		$this->setGroupPermissions( 'translate-admin', 'translate-manage', true );
 		$this->user = $this->getTestUser( 'translate-admin' )->getUser();
-
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 		$this->setupTestData();
 
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( array &$list ): bool {
+	public function getTestGroups(): array {
 		$group = new MockWikiMessageGroup( 'testgroup-api', [] );
 		$list['testgroup-api'] = $group;
 
@@ -55,7 +49,7 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 			Utilities::title( 'keyDeleted', 'en-gb', $group->getNamespace() ) );
 		$this->editPage( $title, 'world 23' );
 
-		return false;
+		return $list;
 	}
 
 	public function testRename(): void {

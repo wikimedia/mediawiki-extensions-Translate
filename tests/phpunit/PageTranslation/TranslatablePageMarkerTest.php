@@ -25,6 +25,13 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @group Database
  */
 class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
+	protected function setUp(): void {
+		parent::setUp();
+		$this->setMwGlobals( [
+			'wgTranslateMessageIndex' => 'hash'
+		] );
+	}
+
 	private function createTranslatableMarkPage( array $services = [] ): TranslatablePageMarker {
 		$getServiceOrMock = fn ( string $className ) => $services[$className] ?? $this->createNoOpMock( $className );
 		return new TranslatablePageMarker(

@@ -139,6 +139,8 @@
 		"MockTranslateValidator": "tests/phpunit/mocks/MockValidators.php",
 		"MockWikiMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
 		"MockWikiValidationMessageGroup": "tests/phpunit/mocks/MockWikiMessageGroup.php",
+		"MessageGroupTestTrait": "tests/phpunit/helpers/MessageGroupTestTrait.php",
+		"MessageGroupTestConfig": "tests/phpunit/helpers/MessageGroupTestConfig.php",
 		"TranslatablePageTestTrait": "tests/phpunit/helpers/TranslatablePageTestTrait.php"
 	},
 	"TestAutoloadNamespaces": {

@@ -2,42 +2,34 @@
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
-use HashBagOStuff;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use WANObjectCache;
 
 /**
  * @group Database
  * @covers \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider
  */
 class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
 
 	protected function setUp(): void {
 		parent::setUp();
 		$this->setMwGlobals( [
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
 		] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-		$index = Services::getInstance()->getMessageIndex()->rebuild();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups() {
 		$messages = [
 			'TestPage' => 'bunny',
 		];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
-		return false;
+		return $list;
 	}
 
 	/** @covers \MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider::getGoodTranslations */

@@ -4,17 +4,15 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ContentHandler;
-use HashBagOStuff;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
+use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use WANObjectCache;
 
 /**
  * @group Database
@@ -22,26 +20,19 @@ use WANObjectCache;
  * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStatesUpdaterJob
  */
 class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-		] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups() {
 		$messages = [ 'key1' => 'msg1', 'key2' => 'msg2' ];
 		$list['group-trans'] = new MessageGroupWithTransitions( 'group-trans', $messages );
 		$list['group-notrans'] = new MessageGroupWithoutTransitions( 'group-notrans', [] );
 
-		return false;
+		return $list;
 	}
 
 	public function testGetGroupsWithTransitions() {

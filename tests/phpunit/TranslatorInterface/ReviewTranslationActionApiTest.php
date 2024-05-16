@@ -6,15 +6,11 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use ApiTestCase;
 use ApiUsageException;
 use ContentHandler;
-use HashBagOStuff;
 use InvalidArgumentException;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
+use MessageGroupTestTrait;
 use MockWikiMessageGroup;
 use User;
-use WANObjectCache;
 
 /**
  * @group Database
@@ -22,22 +18,18 @@ use WANObjectCache;
  * @covers \MediaWiki\Extension\Translate\TranslatorInterface\ReviewTranslationActionApi
  */
 class ReviewTranslationActionApiTest extends ApiTestCase {
-	protected $tablesUsed = [ 'page' ];
+	use MessageGroupTestTrait;
+
 	private static $testUsers = [];
 
 	public function addDBDataOnce() {
 		self::$testUsers[ 'plainUser' ] = $this->getMutableTestUser()->getUser();
-		self::$testUsers[ 'superUser1' ] = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
-		self::$testUsers[ 'superUser2' ] = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
+		self::$testUsers[ 'superUser1' ] = $this->getMutableTestUser( [ 'sysop' ] )->getUser();
+		self::$testUsers[ 'superUser2' ] = $this->getMutableTestUser( [ 'sysop' ] )->getUser();
 	}
 
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => [ 'hash' ],
-		] );
 		$this->setGroupPermissions( [
 			'sysop' => [
 				'translate-messagereview' => true,
@@ -47,17 +39,11 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 				'writeapi' => true
 			]
 		] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
 
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-
-		Services::getInstance()->getMessageIndex()->rebuild();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( &$list ): bool {
+	public function getTestGroups(): array {
 		$messages = [
 			'ugakey1' => 'value1',
 			'ugakey2' => 'value2',
@@ -65,7 +51,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 
 		$list['testgroup'] = new MockWikiMessageGroup( 'testgroup', $messages );
 
-		return false;
+		return $list;
 	}
 
 	/** @dataProvider provideTestGetReviewBlockers */

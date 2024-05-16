@@ -4,10 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use ApiTestCase;
-use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\HookContainer\HookContainer;
-use WANObjectCache;
+use MessageGroupTestTrait;
 use WikiMessageGroup;
 
 /**
@@ -18,30 +16,25 @@ use WikiMessageGroup;
  * @covers \MediaWiki\Extension\Translate\MessageLoading\QueryMessageCollectionActionApi
  */
 class QueryMessageCollectionActionApiTest extends ApiTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
+	}
 
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook(
-			'TranslatePostInitGroups',
-			static function ( &$list ) {
-				$exampleMessageGroup = new WikiMessageGroup( 'theid', 'thesource' );
-				$exampleMessageGroup->setLabel( 'thelabel' ); // Example
-				$exampleMessageGroup->setNamespace( 5 ); // Example
-				$list['theid'] = $exampleMessageGroup;
+	public function getTestGroups(): array {
+		$exampleMessageGroup = new WikiMessageGroup( 'theid', 'thesource' );
+		$exampleMessageGroup->setLabel( 'thelabel' ); // Example
+		$exampleMessageGroup->setNamespace( 5 ); // Example
+		$list['theid'] = $exampleMessageGroup;
 
-				$anotherExampleMessageGroup = new WikiMessageGroup( 'anotherid', 'thesource' );
-				$anotherExampleMessageGroup->setLabel( 'thelabel' ); // Example
-				$anotherExampleMessageGroup->setNamespace( 5 ); // Example
-				$list['anotherid'] = $anotherExampleMessageGroup;
+		$anotherExampleMessageGroup = new WikiMessageGroup( 'anotherid', 'thesource' );
+		$anotherExampleMessageGroup->setLabel( 'thelabel' ); // Example
+		$anotherExampleMessageGroup->setNamespace( 5 ); // Example
+		$list['anotherid'] = $anotherExampleMessageGroup;
 
-				return false;
-			}
-		);
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
+		return $list;
 	}
 
 	public function testSameAsSourceLanguage(): void {

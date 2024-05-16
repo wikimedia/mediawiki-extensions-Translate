@@ -6,11 +6,8 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 
@@ -21,25 +18,14 @@ use MediaWiki\Title\Title;
  * @covers MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
  */
 class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => [ 'hash' ],
-		] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-
-		Services::getInstance()->getMessageIndex()->rebuild();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups() {
 		$messages = [ 'ugakey' => '$1 of $2', ];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
 
@@ -47,7 +33,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$list['validation-test-group'] = new MockWikiValidationMessageGroup(
 			'validation-test-group', $otherMessages );
 
-		return false;
+		return $list;
 	}
 
 	public function testParsing() {

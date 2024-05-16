@@ -2,39 +2,32 @@
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use HashBagOStuff;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use MessageGroupTestTrait;
 use MockWikiMessageGroup;
 use RequestContext;
-use WANObjectCache;
 
 /** @group Database */
 class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	private const PAGE = 'MediaWiki:' . __METHOD__ . '_translated';
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-		Services::getInstance()->getMessageIndex()->rebuild();
 		$this->overrideUserPermissions( RequestContext::getMain()->getUser(), [
 			'translate-manage' // needed for MessageWebImporter::doFuzzy for testDoFuzzy
 		] );
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups() {
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', [
 			self::PAGE => 'bunny',
 		] );
-		return false;
+		return $list;
 	}
 
 	/** @covers \MediaWiki\Extension\Translate\Synchronization\MessageWebImporter::doFuzzy */

@@ -8,9 +8,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
-use MediaWiki\HookContainer\HookContainer;
 
 /**
  * @group Database
@@ -18,27 +16,18 @@ use MediaWiki\HookContainer\HookContainer;
  * @covers \MediaWiki\Extension\Translate\Validation\ValidationResult
  */
 class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgTranslateMessageIndex' => [ 'hash' ],
-		] );
-
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-
-		Services::getInstance()->getMessageIndex()->rebuild();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 
 		// Run with empty ignore list by default
 		$this->setMwGlobals( 'wgTranslateValidationExclusionFile', false );
 		ValidationRunner::reloadIgnorePatterns();
 	}
 
-	public function getTestGroups( &$list ) {
+	public function getTestGroups() {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
@@ -51,6 +40,8 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		];
 
 		$list['test-group'] = new MockWikiValidationMessageGroup( 'test-group', $messages );
+
+		return $list;
 	}
 
 	public function testValidateMessage() {

@@ -3,10 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use HashBagOStuff;
-use MediaWiki\Extension\Translate\Services;
 use MediaWikiIntegrationTestCase;
-use WANObjectCache;
+use MessageGroupTestConfig;
+use MessageGroupTestTrait;
 
 /**
  * @author Niklas Laxström
@@ -16,30 +15,23 @@ use WANObjectCache;
  * @license GPL-2.0-or-later
  */
 class MessageGroupsTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
 
-		$conf = [
-			__DIR__ . '../../data/ParentGroups.yaml',
-			__DIR__ . '../../data/ValidatorGroup.yaml'
-		];
-
 		$this->setMwGlobals( [
-			'wgTranslateGroupFiles' => $conf,
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => [ 'hash' ],
+			'wgTranslateGroupFiles' => [
+				__DIR__ . '../../data/ParentGroups.yaml',
+				__DIR__ . '../../data/ValidatorGroup.yaml'
+			]
 		] );
 
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
-			'FileBasedMessageGroupLoader::registerLoader' );
+		$config = new MessageGroupTestConfig();
+		$config->groupInitLoaders = [ 'FileBasedMessageGroupLoader::registerLoader' ];
+		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
 
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->clearProcessCache();
-		$mg->recache();
-
-		Services::getInstance()->getMessageIndex()->rebuild();
+		MessageGroups::singleton()->recache();
 	}
 
 	/** @dataProvider provideGroups */
@@ -78,6 +70,11 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( [
 			'wgTranslateGroupFiles' => [ __DIR__ . '../../data/MixedSourceLanguageGroups.yaml' ],
 		] );
+		$config = new MessageGroupTestConfig();
+		$config->groupInitLoaders = [ 'FileBasedMessageGroupLoader::registerLoader' ];
+		$config->skipMessageIndexRebuild = true;
+		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
+
 		MessageGroups::singleton()->recache();
 
 		$enGroup1 = MessageGroups::getGroup( 'EnglishGroup1' );

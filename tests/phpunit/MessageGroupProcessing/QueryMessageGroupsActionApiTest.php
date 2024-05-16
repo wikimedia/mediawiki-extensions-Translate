@@ -4,9 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ApiTestCase;
-use HashBagOStuff;
-use MediaWiki\HookContainer\HookContainer;
-use WANObjectCache;
+use MessageGroupTestTrait;
 use WikiMessageGroup;
 
 /**
@@ -18,22 +16,14 @@ use WikiMessageGroup;
  * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\QueryMessageGroupsActionApi
  */
 class QueryMessageGroupsActionApiTest extends ApiTestCase {
+	use MessageGroupTestTrait;
 
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgTranslateTranslationServices' => [],
-		] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( array &$list ): bool {
+	public function getTestGroups(): array {
 		$exampleMessageGroup = new WikiMessageGroup( 'theid', 'thesource' );
 		$exampleMessageGroup->setLabel( 'thelabel' ); // Example
 		$exampleMessageGroup->setNamespace( 5 ); // Example
@@ -44,7 +34,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 		$anotherExampleMessageGroup->setNamespace( 5 ); // Example
 		$list['anotherid'] = $anotherExampleMessageGroup;
 
-		return false;
+		return $list;
 	}
 
 	public function testAPIAccuracy(): void {

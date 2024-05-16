@@ -12,14 +12,12 @@ use MediaWiki\Extension\Translate\Services;
  * @group Database
  */
 class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
 	use TranslatablePageTestTrait;
 
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgEnablePageTranslation' => true
-		] );
+		$this->setupGroupTestEnvironment( $this );
 	}
 
 	public function testIsSourcePage() {

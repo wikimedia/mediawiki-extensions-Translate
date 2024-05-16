@@ -4,19 +4,17 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
-use HashBagOStuff;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use MessageGroupTestTrait;
 use MockWikiValidationMessageGroup;
 use ParserOptions;
 use RequestContext;
 use Status;
-use WANObjectCache;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -29,45 +27,31 @@ use Wikimedia\TestingAccessWrapper;
  * @covers MediaWiki\Extension\Translate\PageTranslation\Hooks
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected $tablesUsed = [ 'revtag' ];
 
 	protected function setUp(): void {
 		parent::setUp();
+		$this->setupGroupTestEnvironment( $this );
 
 		$this->setMwGlobals( [
-			'wgEnablePageTranslation' => true,
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 			'wgGroupPermissions' => [
 				'sysop' => [
 					'translate-manage' => true,
 				],
 			],
-			'wgTranslateMessageIndex' => [ 'hash' ],
 		] );
-
-		$this->clearHooks();
-
-		HookHandler::setupTranslate();
-
-		$this->setTemporaryHook(
-			'TranslatePostInitGroups',
-			[ $this, 'getTestGroups' ]
-		);
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		Services::getInstance()->getMessageIndex()->rebuild();
 	}
 
-	public function getTestGroups( array &$groups, array &$deps, array &$autoload ) {
+	public function getTestGroups() {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
 		];
 		$groups['test-group'] = new MockWikiValidationMessageGroup( 'test-group', $messages );
 
-		return false;
+		return $groups;
 	}
 
 	public function testRenderTagPage() {
@@ -168,6 +152,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testValidateMessagePermission() {
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
+
 		$plainUser = $this->getMutableTestUser()->getUser();
 
 		$title = Title::newFromText( 'MediaWiki:translated/fi' );

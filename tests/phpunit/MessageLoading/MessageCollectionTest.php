@@ -4,16 +4,13 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use ContentHandler;
-use HashBagOStuff;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Services;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use WANObjectCache;
 
 /**
  * @author Niklas Laxström
@@ -23,25 +20,14 @@ use WANObjectCache;
  * @covers MediaWiki\Extension\Translate\MessageLoading\MessageCollection
  */
 class MessageCollectionTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgTranslateMessageIndex' => [ 'hash' ],
-		] );
-
-		$this->setMwGlobals( [ 'wgTranslateTranslationServices' => [], ] );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-
-		Services::getInstance()->getMessageIndex()->rebuild();
+		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 
-	public function getTestGroups( &$list ): bool {
+	public function getTestGroups(): array {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
@@ -50,7 +36,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
 
-		return false;
+		return $list;
 	}
 
 	public function testMessage(): void {

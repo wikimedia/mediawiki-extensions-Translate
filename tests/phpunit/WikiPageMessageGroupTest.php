@@ -7,7 +7,6 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
-use MediaWiki\HookContainer\HookContainer;
 
 /**
  * @group medium
@@ -17,25 +16,16 @@ use MediaWiki\HookContainer\HookContainer;
 class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
+		MessageGroups::singleton()->overrideGroupsForTesting( $this->getTestGroups() );
+	}
 
-		$this->setTemporaryHook(
-			'TranslatePostInitGroups',
-			static function ( &$list ) {
-				$anotherPageMessageGroup = new WikiPageMessageGroup( 'anotherpageid', 'mypage' );
-				$anotherPageMessageGroup->setLabel( 'thelabel' ); // Example
-				$anotherPageMessageGroup->setNamespace( 5 ); // Example
+	public function getTestGroups(): array {
+		$anotherPageMessageGroup = new WikiPageMessageGroup( 'anotherpageid', 'mypage' );
+		$anotherPageMessageGroup->setLabel( 'thelabel' ); // Example
+		$anotherPageMessageGroup->setNamespace( 5 ); // Example
 
-				$list['anotherpageid'] = $anotherPageMessageGroup;
-
-				return false;
-			}
-		);
-
-		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
+		$list['anotherpageid'] = $anotherPageMessageGroup;
+		return $list;
 	}
 
 	public function testMessageValidator() {

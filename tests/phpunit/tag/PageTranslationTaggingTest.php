@@ -1,10 +1,8 @@
 <?php
 
-use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Title\Title;
 
 /**
@@ -13,21 +11,11 @@ use MediaWiki\Title\Title;
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePage
  */
 class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgEnablePageTranslation' => true,
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageIndex' => [ 'hash' ],
-		] );
-		HookHandler::setupTranslate();
-
-		$mg = MessageGroups::singleton();
-		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
-		$mg->recache();
-
-		Services::getInstance()->getMessageIndex()->rebuild();
+		$this->setupGroupTestEnvironment( $this );
 	}
 
 	public function testNormalPage() {

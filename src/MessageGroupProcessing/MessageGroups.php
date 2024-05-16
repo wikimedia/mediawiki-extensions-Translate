@@ -746,6 +746,11 @@ class MessageGroups {
 		return $cache[$cacheKey]['relevant'] &&
 			!isset( $cache[$cacheKey]['tags'][ucfirst( $handle->getKey() )] );
 	}
+
+	/** @internal For testing */
+	public function overrideGroupsForTesting( array $groups ): void {
+		$this->groups = $groups;
+	}
 }
 
 class_alias( MessageGroups::class, 'MessageGroups' );
