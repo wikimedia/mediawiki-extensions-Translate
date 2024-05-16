@@ -265,7 +265,13 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			if ( !$isCompatible ) {
 				continue;
 			}
+
 			if ( $sourceValue !== null && !$fileFormat->isContentEqual( $sourceValue, $targetValue ) ) {
+				// {{#FORMAL:}} magic word was introduced in 1.43. Temporary skip backporting translations using it.
+				if ( str_contains( $sourceValue, '#FORMAL:' ) ) {
+					continue;
+				}
+
 				// Keep track if we actually overwrote any values, so we can report back stats
 				$hasUpdates = true;
 				$combinedMessages[$key] = $sourceValue;
