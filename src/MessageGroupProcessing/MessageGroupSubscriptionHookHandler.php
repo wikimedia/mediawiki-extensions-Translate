@@ -61,7 +61,7 @@ class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, 
 			'tooltip' => 'echo-pref-tooltip-translate-message-group-subscription'
 		];
 
-		$notifications[ 'translate-mgs-message-added-removed' ] = [
+		$notifications[ 'translate-mgs-message-added' ] = [
 			'category' => 'translate-message-group-subscription',
 			'group' => 'neutral',
 			'section' => 'message',

@@ -51,15 +51,13 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 
 	public function getBodyMessage() {
 		$type = $this->event->getType();
-		if ( $type === 'translate-mgs-message-added-removed' ) {
+		if ( $type === 'translate-mgs-message-added' ) {
 			$changes = $this->event->getExtraParam( 'changes' );
-			$msg = $this->msg( 'notification-body-translate-mgs-message-added-removed' );
+			$msg = $this->msg( 'notification-body-translate-mgs-message-added' );
 
 			$addedMessages = count( $changes[ MessageGroupSubscription::STATE_ADDED ] ?? [] );
-			$removedMessages = count( $changes[ MessageGroupSubscription::STATE_REMOVED ] ?? [] );
 
 			$msg->params( $addedMessages );
-			$msg->params( $removedMessages );
 			return $msg;
 		}
 	}
@@ -67,7 +65,7 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 	public function getNumberOfChangedMessages(): int {
 		$changes = $this->event->getExtraParam( 'changes' );
 		$messageCount = 0;
-		foreach ( $changes as $type => $changeType ) {
+		foreach ( $changes as $changeType ) {
 			$messageCount += count( $changeType );
 		}
 

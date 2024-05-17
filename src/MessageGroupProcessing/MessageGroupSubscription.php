@@ -31,7 +31,6 @@ class MessageGroupSubscription {
 	private array $queuedMessages = [];
 	private LoggerInterface $logger;
 
-	public const STATE_REMOVED = 'removed';
 	public const STATE_ADDED = 'added';
 	public const CONSTRUCTOR_OPTIONS = [ 'TranslateEnableMessageGroupSubscription' ];
 
@@ -142,7 +141,7 @@ class MessageGroupSubscription {
 			}
 
 			Event::create( [
-				'type' => 'translate-mgs-message-added-removed',
+				'type' => 'translate-mgs-message-added',
 				'extra' => [
 					'groupId' => $groupId,
 					'groupLabel' => $group->getLabel(),
@@ -161,11 +160,6 @@ class MessageGroupSubscription {
 	}
 
 	public function handleMessageIndexUpdate( MessageHandle $handle, array $old, array $new ): void {
-		$removedGroups = array_diff( $old, $new );
-		if ( $removedGroups ) {
-			$this->queueMessage( $handle->getTitle(), self::STATE_REMOVED, $removedGroups );
-		}
-
 		$addedGroups = array_diff( $new, $old );
 		if ( $addedGroups ) {
 			$this->queueMessage( $handle->getTitle(), self::STATE_ADDED, $addedGroups );
