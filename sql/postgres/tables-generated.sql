@@ -15,8 +15,8 @@ CREATE INDEX trs_page_order ON translate_sections (trs_page, trs_order);
 
 CREATE TABLE revtag (
   rt_type TEXT NOT NULL,
-  rt_page INT NOT NULL,
-  rt_revision INT NOT NULL,
+  rt_page BIGINT NOT NULL,
+  rt_revision BIGINT NOT NULL,
   rt_value TEXT DEFAULT NULL,
   PRIMARY KEY(rt_type, rt_page, rt_revision)
 );

@@ -48,14 +48,20 @@
 			{
 				"name": "rt_page",
 				"comment": "Link to page.page_id",
-				"type": "integer",
-				"options": { "notnull": true }
+				"type": "bigint",
+				"options": {
+					"notnull": true,
+					"unsigned": true
+				}
 			},
 			{
 				"name": "rt_revision",
 				"comment": "Link to revision.rev_id",
-				"type": "integer",
-				"options": { "notnull": true }
+				"type": "bigint",
+				"options": {
+					"notnull": true,
+					"unsigned": true
+				}
 			},
 			{
 				"name": "rt_value",
