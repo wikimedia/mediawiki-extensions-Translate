@@ -23,7 +23,9 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-/// A script to populate fuzzy tags to revtag table.
+/**
+ * A script to populate fuzzy tags to revtag table.
+ */
 class PopulateFuzzy extends Maintenance {
 	public function __construct() {
 		parent::__construct();
@@ -34,7 +36,7 @@ class PopulateFuzzy extends Maintenance {
 			/*required*/false,
 			/*has arg*/true
 		);
-		$this->setBatchSize( 5000 );
+		$this->setBatchSize( 500 );
 		$this->requireExtension( 'Translate' );
 	}
 
