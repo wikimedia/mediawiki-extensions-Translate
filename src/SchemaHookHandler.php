@@ -102,6 +102,12 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 			"{$dir}/{$dbType}/patch-revtag-unique-to-pk.sql"
 		);
 
+		// MW 1.41
+		$updater->modifyExtensionTable(
+			'revtag',
+			"{$dir}/{$dbType}/patch-revtag-int-to-bigint-unsigned.sql"
+		);
+
 		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 		$updater->addPostDatabaseUpdateMaintenance( RemoveRedundantMessageGroupMetadataMaintenanceScript::class );
 	}
