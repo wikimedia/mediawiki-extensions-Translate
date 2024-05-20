@@ -15,7 +15,9 @@ class MessageBundleLuaLibrary extends LibraryBase {
 			'validate' => [ $this, 'validate' ],
 			'getMessageBundleTranslations' => [ $this, 'getMessageBundleTranslations' ]
 		];
-		$opts = [];
+		$opts = [
+			'pageLanguageCode' => $this->getTitle()->getPageLanguage()->getCode()
+		];
 
 		return $this->getEngine()->registerInterface( $extensionLuaPath, $lib, $opts );
 	}

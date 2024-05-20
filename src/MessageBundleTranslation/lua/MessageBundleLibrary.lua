@@ -4,7 +4,7 @@ Translate Message bundle Lua module
 local util = require 'libraryUtil'
 
 local php
-
+local pageLanguageCode
 local translateMessageBundle = {}
 
 function translateMessageBundle.setupInterface( options )
@@ -12,6 +12,7 @@ function translateMessageBundle.setupInterface( options )
 	translateMessageBundle.setupInterface = nil
 	php = mw_interface
 	mw_interface = nil
+	pageLanguageCode = options.pageLanguageCode
 
 	-- Install into the mw global
 	mw = mw or {}
@@ -40,7 +41,7 @@ function translateMessageBundle.new( title, languageCode )
 	php.validate( title.prefixedText )
 
 	-- Determine the language code to use for the message bundle
-	languageCode = languageCode or mw.title.getCurrentTitle().pageLang.code;
+	languageCode = languageCode or pageLanguageCode
 
 	local obj = {};
 	local translations = nil;
