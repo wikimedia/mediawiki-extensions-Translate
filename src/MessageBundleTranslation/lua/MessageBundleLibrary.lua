@@ -60,7 +60,8 @@ function translateMessageBundle.new( title, languageCode, skipFallbacks )
 
 	function obj:t( key )
 		local languageTranslations = loadTranslations( languageCode )
-		return languageTranslations[ key ]
+		local translation = languageTranslations[ key ]
+		return translation ~= nil and mw.message.newRawMessage( translation ) or nil
 	end
 
 	return obj
