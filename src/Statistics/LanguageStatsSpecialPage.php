@@ -16,7 +16,6 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MessageGroup;
-use MessageGroupStats;
 use ObjectCache;
 use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;

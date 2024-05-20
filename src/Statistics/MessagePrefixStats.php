@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
-use MessageGroupStats;
 use TitleParser;
 
 /**

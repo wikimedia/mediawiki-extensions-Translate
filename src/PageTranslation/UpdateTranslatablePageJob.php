@@ -6,10 +6,10 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
+use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\Synchronization\UpdateMessageJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MessageGroupStats;
 use RunnableJob;
 
 /**

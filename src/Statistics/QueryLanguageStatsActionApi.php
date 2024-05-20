@@ -8,7 +8,6 @@ use IJobSpecification;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageGroupStats;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

@@ -1,16 +1,20 @@
 <?php
-/**
- * @author Niklas Laxström
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\Statistics;
+
+use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWikiIntegrationTestCase;
+use WANObjectCache;
+use WikiMessageGroup;
 
 /**
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @group Database
- * @covers MessageGroupStats
+ * @covers \MediaWiki\Extension\Translate\Statistics\MessageGroupStats
  */
 class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

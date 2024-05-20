@@ -1,4 +1,8 @@
 <?php
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\Statistics;
+
 /**
  * This file aims to provide efficient mechanism for fetching translation completion stats.
  *
@@ -8,6 +12,9 @@
  * @license GPL-2.0-or-later
  */
 
+use AggregateMessageGroup;
+use FileBasedMessageGroup;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -15,6 +22,9 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MessageGroup;
+use stdClass;
+use WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 

@@ -13,7 +13,6 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
-use MessageGroupStats;
 use MessagePrefixMessageGroup;
 use SpecialPage;
 

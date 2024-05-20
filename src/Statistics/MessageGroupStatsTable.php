@@ -11,7 +11,6 @@ use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageGroupStats;
 use MessageLocalizer;
 use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;

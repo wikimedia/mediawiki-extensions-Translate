@@ -6,11 +6,11 @@ use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MessageGroup;
-use MessageGroupStats;
 
 /**
  * Script to export translations of message groups to files.

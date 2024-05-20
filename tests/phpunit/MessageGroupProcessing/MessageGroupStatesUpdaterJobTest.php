@@ -7,12 +7,12 @@ use ContentHandler;
 use HashBagOStuff;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
-use MessageGroupStats;
 use MockWikiMessageGroup;
 use WANObjectCache;
 

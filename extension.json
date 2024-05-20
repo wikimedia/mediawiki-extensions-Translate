@@ -97,7 +97,6 @@
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroups": "src/MessageGroupProcessing/MessageGroups.php",
 		"MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStates": "src/MessageGroupProcessing/MessageGroupStates.php",
-		"MessageGroupStats": "utils/MessageGroupStats.php",
 		"MessagePrefixMessageGroup": "messagegroups/MessagePrefixMessageGroup.php",
 		"PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupConfiguration\\PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
@@ -183,7 +182,7 @@
 		"MakeGlobalVariablesScript": "MediaWiki\\Extension\\Translate\\HookHandler::addConfig",
 		"SidebarBeforeOutput": "legacyInterface",
 		"TranslateEventTranslationReview": [
-			"MessageGroupStats::clear",
+			"MediaWiki\\Extension\\Translate\\Statistics\\MessageGroupStats::clear",
 			"MessageGroupStatesUpdaterJob::onChange"
 		],
 		"TranslateInitGroupLoaders": [

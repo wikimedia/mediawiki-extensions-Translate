@@ -8,7 +8,6 @@ use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
-use MessageGroupStats;
 
 /**
  * Job for rebuilding message group stats.

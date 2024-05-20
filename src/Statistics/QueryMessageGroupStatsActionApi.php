@@ -7,7 +7,6 @@ use ApiQuery;
 use IJobSpecification;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MessageGroupStats;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

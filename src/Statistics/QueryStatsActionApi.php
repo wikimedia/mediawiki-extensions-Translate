@@ -9,7 +9,6 @@ use ApiQueryBase;
 use DeferredUpdates;
 use IJobSpecification;
 use JobQueueGroup;
-use MessageGroupStats;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
