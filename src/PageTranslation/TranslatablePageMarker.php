@@ -403,7 +403,7 @@ class TranslatablePageMarker {
 			( $opForce !== $force && !( $force === false && $opForce === 'off' ) ) ||
 			// Since 2024.04, empty reason values are no longer stored.
 			// Remove casting to string after 2024.07 MLEB release
-			( $opReason !== (string)$reason )
+			( (string)$opReason !== (string)$reason )
 		) {
 			$logComment = $reason === false ? '' : $reason;
 			$params = [
