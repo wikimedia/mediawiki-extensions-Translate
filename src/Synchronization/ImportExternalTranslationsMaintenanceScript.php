@@ -78,10 +78,6 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 				continue;
 			}
 
-			if ( $importStrategy === ExternalMessageSourceStateImporter::IMPORT_NONE ) {
-				$this->output( "Processing $id\n" );
-			}
-
 			try {
 				$changes[$id] = $comparator->processGroup( $group );
 			} catch ( Exception $e ) {
