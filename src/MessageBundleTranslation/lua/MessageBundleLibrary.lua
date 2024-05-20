@@ -24,9 +24,11 @@ function translateMessageBundle.setupInterface( options )
 	package.loaded['mw.ext.translate.messageBundle'] = translateMessageBundle
 end
 
---[=[
-Represents translate message bundle object
-]=]
+--- Returns a table to access translations loaded with fallbacks from the requested message bundle
+--- @param title string Message bundle page name
+--- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
+--- @param skipFallbacks boolean (Optional) Whether to skip loading fallback translations, defaults to false
+--- @return table A new translate message bundle table
 function translateMessageBundle.new( title, languageCode, skipFallbacks )
 	util.checkTypeMulti( 'translateMessageBundle:new', 1, title, { 'string', 'table' } )
 	util.checkType( 'translateMessageBundle:new', 2, languageCode, 'string', true )
@@ -58,6 +60,9 @@ function translateMessageBundle.new( title, languageCode, skipFallbacks )
 		return translations
 	end
 
+	--- Loads the translation for a given key, with the specified params
+	--- @param key string Key in message bundle for which to retrieve the translation
+	--- @return mw.message The translation for the given key wrapped in mw.message object
 	function obj:t( key )
 		local languageTranslations = loadTranslations( languageCode )
 		local translation = languageTranslations[ key ]
@@ -67,8 +72,12 @@ function translateMessageBundle.new( title, languageCode, skipFallbacks )
 	return obj
 end
 
-return translateMessageBundle
-
+--- Returns a table to access translations without fallbacks from the requested message bundle
+--- @param title string Message bundle page name
+--- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
+--- @return table A new translate message bundle table loaded without access to fallbacks
 function translateMessageBundle.newWithoutFallbacks( title, languageCode )
 	return translateMessageBundle.new( title, languageCode, true )
 end
+
+return translateMessageBundle
