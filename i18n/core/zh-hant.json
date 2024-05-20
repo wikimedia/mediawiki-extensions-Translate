@@ -233,7 +233,7 @@
 	"supportedlanguages-activity": "$1：$2 次{{PLURAL:$2|編輯}} - 最近一次編輯於 $3 {{PLURAL:$3|天}}前",
 	"translate-supportedlanguages-cached": "此資訊在$1前被快取。",
 	"translate-activelanguages-invalid-code": "未知的語言代碼「$1」或沒有為此語言啟用翻譯。",
-	"abusefilter-edit-builder-vars-translate-source-text": "翻譯單元的來源文字",
+	"abusefilter-edit-builder-vars-translate-source-text": "翻譯單元的原文",
 	"abusefilter-edit-builder-vars-translate-target-language": "翻譯的目標語言",
 	"translate-jssti-add": "新增至清單",
 	"managemessagegroups": "管理訊息群組",
@@ -448,12 +448,14 @@
 	"tux-session-expired": "您已不在登入狀態，請使用另一個分頁登入。或者備份您尚未儲存的譯文，登入返回此頁然後再輸入您的譯文一次。",
 	"tux-nojs": "此工具在沒有 JavaScript 時無法運作。JavaScript 已停用、運作失敗，或者此瀏覽器不受支援。",
 	"specialpages-group-translation": "翻譯",
-	"content-model-translate-messagebundle": "可翻譯的訊息集",
+	"content-model-translate-messagebundle": "可翻譯的訊息包",
 	"translate-messagebundle-validation-error": "無效訊息包：$1",
 	"translate-messagebundle-error-parsing": "解析JSON時出現錯誤：$1",
 	"translate-messagebundle-error-metadata-type": "元資料必須是陣列。",
 	"translate-messagebundle-error-invalid-sourcelanguage": "不支援來源語言代碼「$1」。",
 	"translate-messagebundle-error-invalid-prioritylanguage": "在詮釋資料裡的無效優先語言{{PLURAL:$2|代碼}}：$1",
 	"translate-messagebundle-sourcelanguage-changed": "訊息包的來源語言一旦建立後就無法變更。",
-	"log-action-filter-translationreview": "操作類型："
+	"log-action-filter-translationreview": "操作類型：",
+	"log-action-filter-translationreview-message": "審核個別翻譯訊息",
+	"log-action-filter-translationreview-group": "變更翻譯進度狀態"
 }
