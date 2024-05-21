@@ -60,7 +60,6 @@ class PopulateFuzzy extends Maintenance {
 		$limit = $this->getBatchSize();
 		$offset = 0;
 		while ( true ) {
-			$inserts = [];
 			$this->output( '.', 0 );
 			$res = $dbw->newSelectQueryBuilder()
 				->queryInfo( $queryInfo )
@@ -77,6 +76,7 @@ class PopulateFuzzy extends Maintenance {
 				break;
 			}
 
+			$inserts = [];
 			$slots = $revStore->getContentBlobsForBatch( $res, [ SlotRecord::MAIN ] )->getValue();
 			foreach ( $res as $r ) {
 				if ( isset( $slots[$r->rev_id] ) ) {
@@ -90,7 +90,7 @@ class PopulateFuzzy extends Maintenance {
 					$inserts[] = [
 						'rt_page' => $r->page_id,
 						'rt_revision' => $r->rev_id,
-						'rt_type' => RevTagStore::FUZZY_TAG
+						'rt_type' => RevTagStore::FUZZY_TAG,
 					];
 				}
 			}
@@ -98,7 +98,7 @@ class PopulateFuzzy extends Maintenance {
 			$offset += $limit;
 
 			if ( $inserts ) {
-				$dbw->replace( 'revtag', [ [ 'rt_type', 'rt_page', 'rt_revision' ] ], $inserts, __METHOD__ );
+				$dbw->insert( 'revtag', $inserts, __METHOD__ );
 			}
 		}
 	}
