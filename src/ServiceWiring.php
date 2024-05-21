@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -57,6 +58,14 @@ use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
+	'Translate:AggregateGroupMessageGroupFactory' => static function (
+		MediaWikiServices $services
+	): AggregateGroupMessageGroupFactory {
+		return new AggregateGroupMessageGroupFactory(
+			$services->get( 'Translate:MessageGroupMetadata' )
+		);
+	},
+
 	'Translate:ConfigHelper' => static function (): ConfigHelper {
 		return new ConfigHelper();
 	},

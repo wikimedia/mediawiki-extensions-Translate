@@ -7,6 +7,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
@@ -68,6 +69,11 @@ class Services implements ContainerInterface {
 	/** @inheritDoc */
 	public function has( string $id ): bool {
 		return $this->container->has( $id );
+	}
+
+	/** @since 2024.05 */
+	public function getAggregateGroupMessageGroupFactory(): AggregateGroupMessageGroupFactory {
+		return $this->get( 'Translate:AggregateGroupMessageGroupFactory' );
 	}
 
 	public function getConfigHelper(): ConfigHelper {

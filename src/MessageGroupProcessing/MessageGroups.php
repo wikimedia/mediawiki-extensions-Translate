@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
-use AggregateMessageGroupLoader;
 use CachedMessageGroupLoader;
 use DependencyWrapper;
 use InvalidArgumentException;
@@ -15,7 +14,6 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use MessageGroupBase;
 use MessageGroupLoader;
 use RuntimeException;
 use WANObjectCache;
@@ -220,17 +218,19 @@ class MessageGroups {
 			$this->groupLoaders[] = $loader;
 		}
 
-		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
-			$cache,
-			$connectionProvider,
-			$services->getMessageBundleMessageGroupFactory()
-		);
-
-		$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
-			$cache,
-			$connectionProvider,
+		$factories = [
+			$services->getAggregateGroupMessageGroupFactory(),
+			$services->getMessageBundleMessageGroupFactory(),
 			$services->getTranslatablePageMessageGroupFactory()
-		);
+		];
+
+		foreach ( $factories as $factory ) {
+			$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
+				$cache,
+				$connectionProvider,
+				$factory
+			);
+		}
 
 		return $this->groupLoaders;
 	}
@@ -283,11 +283,17 @@ class MessageGroups {
 
 	/** Check if a particular aggregate group label exists */
 	public static function labelExists( string $name ): bool {
-		$loader = AggregateMessageGroupLoader::getInstance();
-		$labels = array_map( static function ( MessageGroupBase $g ) {
-			return $g->getLabel();
-		}, $loader->loadAggregateGroups() );
-		return in_array( $name, $labels, true );
+		$groups = self::getAllGroups();
+		foreach ( $groups as $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				if ( $group->getLabel() === $name ) {
+					return true;
+				}
+			}
+
+		}
+
+		return false;
 	}
 
 	/**

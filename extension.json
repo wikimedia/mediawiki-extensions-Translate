@@ -63,7 +63,6 @@
 	},
 	"AutoloadClasses": {
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
-		"AggregateMessageGroupLoader": "messagegroups/loaders/AggregateMessageGroupLoader.php",
 		"AmdFFS": "src/FileFormatSupport/AmdFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\AmdFormat": "src/FileFormatSupport/AmdFormat.php",
 		"AndroidXmlFFS": "src/FileFormatSupport/AndroidXmlFormat.php",
@@ -190,7 +189,6 @@
 		],
 		"TranslateInitGroupLoaders": [
 			"WorkflowStatesMessageGroupLoader::registerLoader",
-			"AggregateMessageGroupLoader::registerLoader",
 			"FileBasedMessageGroupLoader::registerLoader"
 		],
 		"AdminLinks": "MediaWiki\\Extension\\Translate\\HookHandler::onAdminLinks",
