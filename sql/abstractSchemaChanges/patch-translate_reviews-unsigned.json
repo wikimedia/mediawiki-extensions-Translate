@@ -1,0 +1,53 @@
+{
+	"comment": "Convert integer columns in translate_reviews table to unsigned; make trr_revision bigint",
+	"before": {
+		"name": "translate_reviews",
+		"comment": "Translation reviews; to store reviews of a page revision by a user.",
+		"columns": [
+			{
+				"name": "trr_user",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "trr_page",
+				"comment": "Link to page.page_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "trr_revision",
+				"comment": "Link to revision.rev_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"pk": [ "trr_page", "trr_revision", "trr_user" ],
+		"indexes": []
+	},
+	"after": {
+		"name": "translate_reviews",
+		"comment": "Translation reviews; to store reviews of a page revision by a user.",
+		"columns": [
+			{
+				"name": "trr_user",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "trr_page",
+				"comment": "Link to page.page_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "trr_revision",
+				"comment": "Link to revision.rev_id",
+				"type": "bigint",
+				"options": { "notnull": true, "unsigned": true }
+			}
+		],
+		"pk": [ "trr_page", "trr_revision", "trr_user" ],
+		"indexes": []
+	}
+}

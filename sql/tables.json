@@ -129,19 +129,19 @@
 			{
 				"name": "trr_user",
 				"type": "integer",
-				"options": { "notnull": true }
+				"options": { "notnull": true, "unsigned": true }
 			},
 			{
 				"name": "trr_page",
 				"comment": "Link to page.page_id",
 				"type": "integer",
-				"options": { "notnull": true }
+				"options": { "notnull": true, "unsigned": true }
 			},
 			{
 				"name": "trr_revision",
 				"comment": "Link to revision.rev_id",
-				"type": "integer",
-				"options": { "notnull": true }
+				"type": "bigint",
+				"options": { "notnull": true, "unsigned": true }
 			}
 		],
 		"pk": [ "trr_page", "trr_revision", "trr_user" ],
