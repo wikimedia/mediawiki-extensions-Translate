@@ -25,7 +25,7 @@
 	"translate-fuzzybot-desc": "זה חשבון מערכת מיוחד שמשמש את [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate ההרחבה Translate] של מדיה־ויקי כדי לטפל בתרגומים.\nהחשבון הזה הוא חלק מתוכנת מדיה־ויקי ואינו בבעלות של שום משתמש.",
 	"translate-taskui-export-to-file": "לייצא בתסדיר ילידי",
 	"translate-taskui-export-as-po": "לייצא לתרגום בלתי־מקוון",
-	"translate-taskui-export-as-csv": "יצוא בתסדיר CSV",
+	"translate-taskui-export-as-csv": "לייצא בתסדיר CSV",
 	"translate-export-csv-message-title": "כותרת הודעת תרגום",
 	"translate-export-csv-definition": "הגדרת ההודעה",
 	"translate-taction-translate": "תרגום",
