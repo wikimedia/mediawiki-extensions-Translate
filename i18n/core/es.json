@@ -332,6 +332,7 @@
 	"translate-msggroupselector-search-recent": "Recientes",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgrupo|subgrupos}}",
 	"tux-languageselector": "Traducir al",
+	"tux-select-target-language": "Idioma de destino para la traducción",
 	"tux-watch-group": "Vigilar $1",
 	"tux-unwatch-group": "Dejar de vigilar $1",
 	"tux-subscription-error": "No se actualizó la lista de seguimiento de los grupos de mensajes",
