@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use ContentHandler;
 use FileBasedMessageGroup;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -14,8 +15,11 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Storage\PageUpdateStatus;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use RecentChange;
 
 /**
  * Job for updating translation pages when translation or message definition changes.
@@ -26,6 +30,8 @@ use MediaWiki\User\User;
  * @ingroup JobQueue
  */
 class UpdateMessageJob extends GenericTranslateJob {
+	private User $fuzzyBot;
+
 	/** Create a normal message update job without a rename process */
 	public static function newJob(
 		Title $target, string $content, bool $fuzzy = false
@@ -74,15 +80,13 @@ class UpdateMessageJob extends GenericTranslateJob {
 
 	public function run(): bool {
 		$params = $this->params;
-		$user = FuzzyBot::getUser();
-		$flags = EDIT_FORCE_BOT;
 		$isRename = $params['rename'] ?? false;
 		$isFuzzy = $params['fuzzy'] ?? false;
 		$otherLangs = $params['otherLangs'] ?? [];
 		$originalTitle = Title::newFromLinkTarget( $this->title->getTitleValue(), Title::NEW_CLONE );
 
 		if ( $isRename ) {
-			$this->title = $this->handleRename( $params['target'], $params['replacement'], $user );
+			$this->title = $this->handleRename( $params['target'], $params['replacement'] );
 			if ( $this->title === null ) {
 				// There was a failure, return true, but don't proceed further.
 				$this->logWarning(
@@ -97,33 +101,21 @@ class UpdateMessageJob extends GenericTranslateJob {
 				return true;
 			}
 		}
-
 		$title = $this->title;
-		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
-		$summary = wfMessage( 'translate-manage-import-summary' )
-			->inContentLanguage()->plain();
-		$content = ContentHandler::makeContent( $params['content'], $title );
-		$editStatus = $wikiPage->doUserEditContent(
-			$content,
-			$user,
-			$summary,
-			$flags
-		);
+		$editStatus = $this->fuzzyBotEdit( $title, $params['content'] );
 		if ( !$editStatus->isOK() ) {
 			$this->logError(
 				'Failed to update content for source message',
 				[
-					'content' => $content,
-					'errors' => $editStatus->getErrors()
+					'content' => ContentHandler::makeContent( $params['content'], $this->title ),
+					'errors' => $editStatus->getMessages()
 				]
 			);
 		}
 
 		if ( $isRename ) {
 			// Update other language content if present.
-			$this->processTranslationChanges(
-				$otherLangs, $params['replacement'], $params['namespace'], $summary, $flags, $user
-			);
+			$this->processTranslationChanges( $otherLangs, $params['replacement'], $params['namespace'] );
 		}
 
 		if ( $isFuzzy ) {
@@ -134,7 +126,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 		return true;
 	}
 
-	private function handleRename( string $target, string $replacement, User $user ): ?Title {
+	private function handleRename( string $target, string $replacement ): ?Title {
 		$newSourceTitle = null;
 
 		$sourceMessageHandle = new MessageHandle( $this->title );
@@ -142,7 +134,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 
 		if ( $movableTitles === [] ) {
 			$this->logError(
-				'No moveable titles found with target text.',
+				'No movable titles found with target text.',
 				[
 					'title' => $this->title->getPrefixedText(),
 					'replacement' => $replacement,
@@ -160,14 +152,14 @@ class UpdateMessageJob extends GenericTranslateJob {
 				->getMovePageFactory()
 				->newMovePage( $sourceTitle, $replacementTitle );
 
-			$status = $mv->move( $user, $renameSummary, false );
+			$status = $mv->move( $this->getFuzzyBot(), $renameSummary, false );
 			if ( !$status->isOK() ) {
 				$this->logError(
 					'Error moving message',
 					[
 						'target' => $sourceTitle->getPrefixedText(),
 						'replacement' => $replacementTitle->getPrefixedText(),
-						'errors' => $status->getErrors()
+						'errors' => $status->getMessages()
 					]
 				);
 			}
@@ -184,7 +176,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 			// This means that the old source Title was never moved
 			// which is not possible but handle it.
 			$this->logError(
-				'Source title was not in the list of moveable titles.',
+				'Source title was not in the list of movable titles.',
 				[ 'title' => $this->title->getPrefixedText() ]
 			);
 			return null;
@@ -256,29 +248,19 @@ class UpdateMessageJob extends GenericTranslateJob {
 	private function processTranslationChanges(
 		array $langChanges,
 		string $baseTitle,
-		int $groupNamespace,
-		string $summary,
-		int $flags,
-		User $user
+		int $groupNamespace
 	): void {
-		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $langChanges as $code => $contentStr ) {
 			$titleStr = Utilities::title( $baseTitle, $code, $groupNamespace );
 			$title = Title::newFromText( $titleStr, $groupNamespace );
-			$wikiPage = $wikiPageFactory->newFromTitle( $title );
-			$content = ContentHandler::makeContent( $contentStr, $title );
-			$status = $wikiPage->doUserEditContent(
-				$content,
-				$user,
-				$summary,
-				$flags
-			);
+			$status = $this->fuzzyBotEdit( $title, $contentStr );
+
 			if ( !$status->isOK() ) {
 				$this->logError(
 					'Failed to update content for non-source message',
 					[
 						'title' => $title->getPrefixedText(),
-						'errors' => $status->getErrors()
+						'errors' => $status->getMessages()
 					]
 				);
 			}
@@ -294,7 +276,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 
 		$currentTitle = $title;
 		// Check if the current title, is equal to the title passed. This condition will be
-		// true incase of rename where the old title would have been renamed.
+		// true in case of rename where the old title would have been renamed.
 		if ( $this->title && $this->title->getPrefixedDBkey() !== $title->getPrefixedDBkey() ) {
 			$currentTitle = $this->title;
 		}
@@ -328,5 +310,30 @@ class UpdateMessageJob extends GenericTranslateJob {
 				$this->getParams()
 			);
 		}
+	}
+
+	private function fuzzyBotEdit( Title $title, string $content ): PageUpdateStatus {
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
+		$content = ContentHandler::makeContent( $content, $title );
+		$page = $wikiPageFactory->newFromTitle( $title );
+		$updater = $page->newPageUpdater( $this->getFuzzyBot() )
+			->setContent( SlotRecord::MAIN, $content );
+
+		if ( $this->getFuzzyBot()->authorizeWrite( 'autopatrol', $title ) ) {
+			$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+		}
+
+		$summary = wfMessage( 'translate-manage-import-summary' )
+			->inContentLanguage()->plain();
+		$updater->saveRevision(
+			CommentStoreComment::newUnsavedComment( $summary ),
+			EDIT_FORCE_BOT
+		);
+		return $updater->getStatus();
+	}
+
+	private function getFuzzyBot(): User {
+		$this->fuzzyBot ??= FuzzyBot::getUser();
+		return $this->fuzzyBot;
 	}
 }
