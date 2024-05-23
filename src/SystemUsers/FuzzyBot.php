@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\SystemUsers;
 
-use User;
+use MediaWiki\User\User;
 
 /**
  * FuzzyBot - the misunderstood workhorse.
