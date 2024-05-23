@@ -52,7 +52,10 @@ function translateMessageBundle.new( title, languageCode, skipFallbacks )
 	local obj = {};
 	local translations = nil;
 
-	function loadTranslations( languageCode )
+	--- Loads all the messages in a table format with the key being the key in the message bundle
+	--- value being the string
+	--- @return table A table containing all translations.
+	function obj:getAllTranslations()
 		if translations == nil then
 			translations = php.getMessageBundleTranslations( title.prefixedText, languageCode, skipFallbacks )
 		end
@@ -64,7 +67,7 @@ function translateMessageBundle.new( title, languageCode, skipFallbacks )
 	--- @param key string Key in message bundle for which to retrieve the translation
 	--- @return mw.message The translation for the given key wrapped in mw.message object
 	function obj:t( key )
-		local languageTranslations = loadTranslations( languageCode )
+		local languageTranslations = self:getAllTranslations()
 		local translation = languageTranslations[ key ]
 		return translation ~= nil and mw.message.newRawMessage( translation ) or nil
 	end
