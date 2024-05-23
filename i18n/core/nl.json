@@ -472,5 +472,6 @@
 	"log-action-filter-translationreview-message": "Beoordeling van individuele vertaalberichten",
 	"log-action-filter-translationreview-group": "Veranderingen in de status van de voortgang van vertalingen",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|heeft}} een vertaalbare bundel $3 geïmporteerd",
-	"log-action-filter-import-translatable-bundle": "Import vertaalbare bundel"
+	"log-action-filter-import-translatable-bundle": "Import vertaalbare bundel",
+	"translate-hidetranslations": "Vertalingspagina’s verbergen"
 }
