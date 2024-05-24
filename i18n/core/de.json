@@ -479,8 +479,9 @@
 	"translate-hidetranslations": "Übersetzungsseiten ausblenden",
 	"echo-category-title-translate-message-group-subscription": "Übersetzbare Nachrichtengruppenabonnements",
 	"echo-pref-tooltip-translate-message-group-subscription": "Benachrichtige mich über Änderungen in übersetzbaren Nachrichtengruppen, die ich abonniert habe",
+	"notification-bundle-header-message-group-subscription": "Übersetzungsaktualisierungen für $1 abonnierte {{PLURAL:$1|Nachrichtengruppe|Nachrichtenruppen}}",
 	"notification-header-message-group-subscription": "Es gibt Übersetzungsaktualisierungen für $1",
-	"notification-compact-header-translate-mgs-message-added-removed": "Neue oder entfernte {{PLURAL:$2|Nachricht|Nachrichten}} in $1",
-	"notification-body-translate-mgs-message-added-removed": "$1 hinzugefügt und $2 {{PLURAL:$2|Nachricht|Nachrichten}} entfernt",
+	"notification-compact-header-translate-mgs-message-added": "Neue {{PLURAL:$2|Nachricht|Nachrichten}} in $1",
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|Nachricht|Nachrichten}} hinzugefügt",
 	"notification-link-mgs-group-translate": "Übersetzen $1"
 }

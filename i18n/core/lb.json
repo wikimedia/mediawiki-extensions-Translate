@@ -381,5 +381,6 @@
 	"translate-messagebundle-error-key-invalid-characters": "De Schlëssel „$1“ enthält onerlaabt Zeechen",
 	"translate-messagebundle-error-empty-value": "Schlëssel \"$1\" huet kee Wäert",
 	"translate-hidetranslations": "Iwwersetzungssäite verstoppen",
-	"notification-header-message-group-subscription": "Et gëtt Iwwersetzungsaktualiséierunge fir $1"
+	"notification-header-message-group-subscription": "Et gëtt Iwwersetzungsaktualiséierunge fir $1",
+	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Neie Message|Nei Messagen}} a(n) $1"
 }

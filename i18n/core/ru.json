@@ -508,7 +508,5 @@
 	"translate-hidetranslations": "Скрыть страницы перевода",
 	"echo-pref-tooltip-translate-message-group-subscription": "Уведомите меня об изменениях в переводимых группах сообщений, на которые я подписан",
 	"notification-header-message-group-subscription": "Есть обновления перевода для $1",
-	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Новое или удалённое сообщение|Новые или удалённые сообщения}} в $1",
-	"notification-body-translate-mgs-message-added-removed": "Добавлено $1 и удалено $2 {{PLURAL:$2|сообщение|сообщения|сообщений}}",
 	"notification-link-mgs-group-translate": "Перевести $1"
 }

@@ -487,7 +487,5 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Повідомляти мене про зміни в перекладних групах повідомлень, на які мене підписано",
 	"notification-bundle-header-message-group-subscription": "Оновлення перекладів у $1 {{PLURAL:$1|перекладній групі|перекладних групах}} повідомлень",
 	"notification-header-message-group-subscription": "Є оновлення перекладу у «$1»",
-	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Нове або вилучене|Нові або вилучені}} повідомлення у «$1»",
-	"notification-body-translate-mgs-message-added-removed": "Додано $1 і видалено $2 {{PLURAL:$2|повідомлення|повідомлення|повідомлень}}",
 	"notification-link-mgs-group-translate": "Перекласти «$1»"
 }

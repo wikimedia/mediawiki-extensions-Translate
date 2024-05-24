@@ -324,7 +324,5 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Teavita mind muudatustest tõlgitavas sõnumirühmas, mida tellin.",
 	"notification-bundle-header-message-group-subscription": "Uuendused $1 tõlgitavas {{PLURAL:$1|sõnumirühmas}}",
 	"notification-header-message-group-subscription": "Rühma $1 tõlkeid on uuendatud.",
-	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Uus või eemaldatud sõnum|Uued või eemaldatud sõnumid}} rühmas $1",
-	"notification-body-translate-mgs-message-added-removed": "Lisatud $1 ja eemaldatud $2 {{PLURAL:$2|sõnum|sõnumit}}",
 	"notification-link-mgs-group-translate": "Tõlgi rühm $1"
 }

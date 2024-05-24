@@ -108,7 +108,7 @@
 	"action-translate-messagereview": "проверка на преводи",
 	"right-translate-groupreview": "Менување на состојбата на работниот тек на групите пораки",
 	"action-translate-groupreview": "менување на состојбата на работниот тек на групите пораки",
-	"action-translate-watch-message-group": "Набљудување на група пораки",
+	"action-translate-watch-message-group": "набљудување на група пораки",
 	"translate-rcfilters-translations": "Преводи",
 	"translate-rcfilters-translations-only-label": "Преводни именски простори",
 	"translate-rcfilters-translations-only-desc": "Преведени поднесени во групи пораки.",
@@ -465,7 +465,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Извести ме за промени во преводливи групи пораки на кои сум претплатен",
 	"notification-bundle-header-message-group-subscription": "Измените во преводите на $1 {{PLURAL:$1|претплатена група|претплатени групи}} пораки",
 	"notification-header-message-group-subscription": "Има измени во преводот на $1",
-	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Нова или отстранета порака|Нови или отстранети пораки}} во $1",
-	"notification-body-translate-mgs-message-added-removed": "{{PLURAL:$2|Додадена|Додадени}} $1 и {{PLURAL:$2|отстранета|отстранети}} $2 {{PLURAL:$2|порака|пораки}}",
+	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Нова порака|Нови пораки}} во $1",
+	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|Додадена $1 порака|Додадени $1 пораки}}",
 	"notification-link-mgs-group-translate": "Преведи ја $1"
 }

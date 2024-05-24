@@ -437,7 +437,5 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Értesítést kérek azoknak a lefordítható üzenetcsoportoknak a változásairól, amikre feliratkoztam",
 	"notification-bundle-header-message-group-subscription": "Fordítási frissítések $1 feliratkozott {{PLURAL:$1|üzenetcsoportból}}",
 	"notification-header-message-group-subscription": "Fordítási frissítések a(z) $1 üzenetcsoporthoz",
-	"notification-compact-header-translate-mgs-message-added-removed": "Új vagy eltávolított {{PLURAL:$2|üzenet|üzenetek}} a(z) $1 üzenetcsoportban",
-	"notification-body-translate-mgs-message-added-removed": "$1 üzenet hozzáadva, $2 {{PLURAL:$2|üzenet}} eltávolítva",
 	"notification-link-mgs-group-translate": "$1 fordítása"
 }

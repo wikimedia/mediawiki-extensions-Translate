@@ -483,7 +483,5 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Notificar-me sobre alterações em grupos de mensagens traduzíveis nos quais estou inscrito",
 	"notification-bundle-header-message-group-subscription": "Atualizações de traduções para $1 {{PLURAL:$1|grupo de mensagens inscrito|grupos de mensagens inscritos}}",
 	"notification-header-message-group-subscription": "Existem atualizações de tradução para $1",
-	"notification-compact-header-translate-mgs-message-added-removed": "{{PLURAL:$2|Mensagem nova ou removida|Mensagens novas ou removidas}} em $1",
-	"notification-body-translate-mgs-message-added-removed": "Adicionada(s) $1 e removida(s) $2 {{PLURAL:$2|mensagem|mensagens}}",
 	"notification-link-mgs-group-translate": "Traduzir $1"
 }
