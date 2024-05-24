@@ -485,7 +485,9 @@
 	],
 	"LogActionsHandlers": {
 		"translationreview/message": "\\MediaWiki\\Extension\\Translate\\LogFormatter",
-		"translationreview/group": "\\MediaWiki\\Extension\\Translate\\LogFormatter"
+		"translationreview/group": "\\MediaWiki\\Extension\\Translate\\LogFormatter",
+		"translationreview/unfuzzy": "\\MediaWiki\\Extension\\Translate\\LogFormatter"
+
 	},
 	"ActionFilteredLogs": {
 		"translationreview": {
@@ -1339,11 +1341,18 @@
 		"translate-import",
 		"translate-manage",
 		"translate-messagereview",
-		"translate-groupreview"
+		"translate-groupreview",
+		"unfuzzy"
 	],
 	"GrantPermissions": {
 		"editpage": {
-			"translate": true
+			"translate": true,
+			"unfuzzy": true
+		}
+	},
+	"GroupPermissions": {
+		"*": {
+			"unfuzzy": true
 		}
 	},
 	"ParsoidModules": [

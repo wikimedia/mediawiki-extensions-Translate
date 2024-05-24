@@ -38,8 +38,9 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 
 	public function testParsing() {
 		$user = $this->getTestUser()->getUser();
+		$container = $this->getServiceContainer();
 		$title = Title::newFromText( 'MediaWiki:Ugakey/nl' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
+		$page = $container->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
 		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
 		$value = $status->getValue();
@@ -60,10 +61,22 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$handle = new MessageHandle( $title );
 		$this->assertTrue( $handle->isValid(), 'Message is known' );
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after database fuzzying' );
-		// Update the translation without the fuzzy string
+
+		$permissionManager = $container->getPermissionManager();
+
+		// Update the translation without the fuzzy string as a user without the unfuzzy right
+		$permissionManager->overrideUserRightsForTesting( $user, [] );
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
 		$page->doUserEditContent( $content, $user, __METHOD__ );
-		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
+		$this->assertTrue( $handle->isFuzzy(), 'Message is still fuzzy after edit without required permissions' );
+
+		// Now add the required rights and try that again
+		$rightsCallback = $permissionManager->addTemporaryUserRights( $user,
+			[ 'editinterface', 'unfuzzy' ]
+		);
+		$content = ContentHandler::makeContent( '$1 van $2 new', $title );
+		$page->doUserEditContent( $content, $user, __METHOD__ );
+		$this->assertFalse( $handle->isFuzzy(), 'Message is no longer fuzzy after editing with required permissions' );
 
 		$content = ContentHandler::makeContent( '!!FUZZY!!$1 van $2', $title );
 		$page->doUserEditContent( $content, $user, __METHOD__ );

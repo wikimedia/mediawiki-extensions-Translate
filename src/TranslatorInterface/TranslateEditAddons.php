@@ -3,7 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
+use CommentStoreComment;
 use DeferredUpdates;
+use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStatesUpdaterJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
@@ -14,6 +16,7 @@ use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Storage\EditResult;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use ParserOptions;
@@ -96,7 +99,8 @@ class TranslateEditAddons {
 		UserIdentity $userIdentity,
 		string $summary,
 		int $flags,
-		RevisionRecord $revisionRecord
+		RevisionRecord $revisionRecord,
+		EditResult $editResult
 	): void {
 		global $wgEnablePageTranslation;
 
@@ -117,8 +121,40 @@ class TranslateEditAddons {
 
 		// Update it.
 		$revId = $revisionRecord->getId();
+		$mwServices = MediaWikiServices::getInstance();
 
 		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
+		$wasFuzzy = $handle->isFuzzy();
+		if ( !$fuzzy && $wasFuzzy ) {
+			$title = $mwServices->getTitleFactory()->castFromPageIdentity( $wikiPage );
+			$user = $mwServices->getUserFactory()->newFromUserIdentity( $userIdentity );
+
+			if ( !$mwServices->getPermissionManager()->userCan( 'unfuzzy', $user, $title ) ) {
+				// No permission to unfuzzy this unit so leave it fuzzy
+				$fuzzy = true;
+			} elseif ( $editResult->isNullEdit() ) {
+				// Log the otherwise invisible unfuzzying
+				$entry = new ManualLogEntry( 'translationreview', 'unfuzzy' );
+				$entry->setPerformer( $userIdentity );
+				$entry->setTarget( $title );
+				$logId = $entry->insert();
+				$entry->publish( $logId );
+				// And add a null revision
+				$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+				$nullRevision = $mwServices->getRevisionStore()->newNullRevision(
+					$dbw,
+					$wikiPage,
+					CommentStoreComment::newUnsavedComment(
+						wfMessage( "translate-unfuzzy-comment" )
+					),
+					false,
+					$userIdentity
+				);
+				if ( $nullRevision ) {
+					$mwServices->getRevisionStore()->insertRevisionOn( $nullRevision, $dbw );
+				}
+			}
+		}
 		self::updateFuzzyTag( $title, $revId, $fuzzy );
 
 		$group = $handle->getGroup();
@@ -139,7 +175,6 @@ class TranslateEditAddons {
 				MessageGroupStatesUpdaterJob::onChange( $handle );
 			}
 		);
-		$mwServices = MediaWikiServices::getInstance();
 		$user = $mwServices->getUserFactory()
 			->newFromId( $userIdentity->getId() );
 
