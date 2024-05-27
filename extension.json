@@ -76,7 +76,6 @@
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
 		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
-		"FileBasedMessageGroupLoader": "messagegroups/loaders/FileBasedMessageGroupLoader.php",
 		"FlatPhpFFS": "src/FileFormatSupport/FlatPhpFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\FlatPhpFormat": "src/FileFormatSupport/FlatPhpFormat.php",
 		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
@@ -188,8 +187,7 @@
 			"MessageGroupStatesUpdaterJob::onChange"
 		],
 		"TranslateInitGroupLoaders": [
-			"WorkflowStatesMessageGroupLoader::registerLoader",
-			"FileBasedMessageGroupLoader::registerLoader"
+			"WorkflowStatesMessageGroupLoader::registerLoader"
 		],
 		"AdminLinks": "MediaWiki\\Extension\\Translate\\HookHandler::onAdminLinks",
 		"MergeAccountFromTo": "MediaWiki\\Extension\\Translate\\HookHandler::onMergeAccountFromTo",

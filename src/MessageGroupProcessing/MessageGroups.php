@@ -220,6 +220,7 @@ class MessageGroups {
 
 		$factories = [
 			$services->getAggregateGroupMessageGroupFactory(),
+			$services->getFileBasedMessageGroupFactory(),
 			$services->getMessageBundleMessageGroupFactory(),
 			$services->getTranslatablePageMessageGroupFactory()
 		];

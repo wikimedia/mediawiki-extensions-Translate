@@ -1,5 +1,5 @@
 ---
-# test for FileBasedMessageGroupLoader
+# test for FileBasedMessageGroupFactory
 BASIC:
   id: message-loader-group
   label: Message Loader Group

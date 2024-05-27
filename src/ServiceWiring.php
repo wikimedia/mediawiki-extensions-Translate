@@ -14,6 +14,8 @@ use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
@@ -114,6 +116,18 @@ return [
 				ExternalMessageSourceStateImporter::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			)
+		);
+	},
+
+	'Translate:FileBasedMessageGroupFactory' => static function (
+		MediaWikiServices $services
+	): FileBasedMessageGroupFactory {
+		return new FileBasedMessageGroupFactory(
+			new MessageGroupConfigurationParser(),
+			new ServiceOptions(
+				FileBasedMessageGroupFactory::SERVICE_OPTIONS,
+				$services->getMainConfig()
+			),
 		);
 	},
 

@@ -27,9 +27,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 			]
 		] );
 
-		$config = new MessageGroupTestConfig();
-		$config->groupInitLoaders = [ 'FileBasedMessageGroupLoader::registerLoader' ];
-		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
+		$this->setupGroupTestEnvironment( $this );
 
 		MessageGroups::singleton()->recache();
 	}
@@ -71,7 +69,6 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateGroupFiles' => [ __DIR__ . '../../data/MixedSourceLanguageGroups.yaml' ],
 		] );
 		$config = new MessageGroupTestConfig();
-		$config->groupInitLoaders = [ 'FileBasedMessageGroupLoader::registerLoader' ];
 		$config->skipMessageIndexRebuild = true;
 		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
 

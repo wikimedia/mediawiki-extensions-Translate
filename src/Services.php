@@ -7,6 +7,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
@@ -97,6 +98,11 @@ class Services implements ContainerInterface {
 
 	public function getExternalMessageSourceStateImporter(): ExternalMessageSourceStateImporter {
 		return $this->get( 'Translate:ExternalMessageSourceStateImporter' );
+	}
+
+	/** @since 2024.05 */
+	public function getFileBasedMessageGroupFactory(): FileBasedMessageGroupFactory {
+		return $this->get( 'Translate:FileBasedMessageGroupFactory' );
 	}
 
 	public function getFileFormatFactory(): FileFormatFactory {
