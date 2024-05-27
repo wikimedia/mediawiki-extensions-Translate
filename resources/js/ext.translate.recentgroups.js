@@ -6,11 +6,11 @@
 	/**
 	 * Simple wrapper for storing recent groups for an user.
 	 *
+	 * @internal
 	 * @class mw.translate.recentGroups
 	 * @singleton
 	 * @since 2016.03
 	 */
-
 	mw.translate.recentGroups = {
 		get: function () {
 			return JSON.parse( mw.storage.get( 'translate-recentgroups' ) ) || [];
