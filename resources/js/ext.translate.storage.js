@@ -44,5 +44,6 @@
 	};
 
 	mw.translate = mw.translate || {};
+	/** @private */
 	mw.translate.TranslationApiStorage = TranslationApiStorage;
 }() );
