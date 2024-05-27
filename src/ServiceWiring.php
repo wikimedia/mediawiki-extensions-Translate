@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
@@ -139,6 +140,12 @@ return [
 		MediaWikiServices $services
 	): GroupSynchronizationCache {
 		return new GroupSynchronizationCache( $services->get( 'Translate:PersistentCache' ) );
+	},
+
+	'Translate:HookDefinedMessageGroupFactory' => static function (
+		MediaWikiServices $services
+	): HookDefinedMessageGroupFactory {
+		return new HookDefinedMessageGroupFactory( $services->get( 'Translate:HookRunner' ) );
 	},
 
 	'Translate:HookRunner' => static function (

@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
@@ -111,6 +112,11 @@ class Services implements ContainerInterface {
 
 	public function getGroupSynchronizationCache(): GroupSynchronizationCache {
 		return $this->get( 'Translate:GroupSynchronizationCache' );
+	}
+
+	/** @since 2024.05 */
+	public function getHookDefinedMessageGroupFactory(): HookDefinedMessageGroupFactory {
+		return $this->get( 'Translate:HookDefinedMessageGroupFactory' );
 	}
 
 	/** @since 2023.03 */

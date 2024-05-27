@@ -7,6 +7,7 @@ use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWikiIntegrationTestCase;
+use MessageGroupTestTrait;
 use WANObjectCache;
 use WikiMessageGroup;
 
@@ -17,8 +18,11 @@ use WikiMessageGroup;
  * @covers \MediaWiki\Extension\Translate\Statistics\MessageGroupStats
  */
 class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
+	use MessageGroupTestTrait;
+
 	protected function setUp(): void {
 		parent::setUp();
+		$this->setupGroupTestEnvironment( $this );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook(

@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
 use CachedMessageGroupLoader;
-use DependencyWrapper;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
@@ -48,65 +47,11 @@ class MessageGroups {
 			return; // groups already initialized
 		}
 
-		$groups = $this->getCachedHookDefinedGroups();
+		$groups = [];
 		foreach ( $this->getGroupLoaders() as $loader ) {
 			$groups += $loader->getGroups();
 		}
 		$this->initGroupsFromDefinitions( $groups );
-	}
-
-	/** Return MessageGroup[] */
-	protected function getCachedHookDefinedGroups(): array {
-		global $wgAutoloadClasses;
-
-		$cache = $this->getCache();
-		/** @var DependencyWrapper $wrapper */
-		$wrapper = $cache->getWithSetCallback(
-			$this->getCacheKey(),
-			$cache::TTL_DAY,
-			fn () => $this->getHookDefinedGroupsDependencyWrapper(),
-			[
-				'lockTSE' => 30, // avoid stampedes (mutex)
-				'checkKeys' => [ $this->getCacheKey() ],
-				'touchedCallback' => static function ( $value ) {
-					return ( $value instanceof DependencyWrapper && $value->isExpired() )
-						? time() // treat value as if it just expired (for "lockTSE")
-						: null;
-				},
-			]
-		);
-
-		$value = $wrapper->getValue();
-		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
-		return $value['cc'];
-	}
-
-	private function getHookDefinedGroupsDependencyWrapper(): DependencyWrapper {
-		$groups = $deps = $autoload = [];
-		// When possible, a cache dependency is created to automatically recreate
-		// the cache when configuration changes. Currently used by other extensions
-		// such as Banner Messages and test cases to load message groups.
-		Services::getInstance()->getHookRunner()
-			->onTranslatePostInitGroups( $groups, $deps, $autoload );
-
-		$value = [
-			'ts' => wfTimestamp( TS_MW ),
-			'cc' => $groups,
-			'autoload' => $autoload
-		];
-		$wrapper = new DependencyWrapper( $value, $deps );
-		$wrapper->initialiseDeps();
-
-		return $wrapper;
-	}
-
-	/** Return MessageGroup[] */
-	private function getHookDefinedGroups(): array {
-		global $wgAutoloadClasses;
-		$wrapper = $this->getHookDefinedGroupsDependencyWrapper();
-		$value = $wrapper->getValue();
-		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
-		return $value['cc'];
 	}
 
 	/**
@@ -129,7 +74,7 @@ class MessageGroups {
 		$cache = $this->getCache();
 		$cache->touchCheckKey( $this->getCacheKey() );
 
-		$groups = $this->getHookDefinedGroups();
+		$groups = [];
 		foreach ( $this->getGroupLoaders() as $loader ) {
 			if ( $loader instanceof CachedMessageGroupLoader ) {
 				$groups += $loader->recache();
@@ -163,24 +108,6 @@ class MessageGroups {
 	/** Returns the cache key. */
 	public function getCacheKey(): string {
 		return $this->getCache()->makeKey( 'translate-groups', 'v' . self::CACHE_VERSION );
-	}
-
-	/**
-	 * Safely merges first array to second array, throwing warning on duplicates and removing
-	 * duplicates from the first array.
-	 * @param array $additions Things to append
-	 * @param array &$to Where to append
-	 */
-	protected static function appendAutoloader( array $additions, array &$to ): void {
-		foreach ( $additions as $class => $file ) {
-			if ( isset( $to[$class] ) && $to[$class] !== $file ) {
-				$msg = "Autoload conflict for $class: $to[$class] !== $file";
-				trigger_error( $msg, E_USER_WARNING );
-				continue;
-			}
-
-			$to[$class] = $file;
-		}
 	}
 
 	/**
@@ -221,6 +148,7 @@ class MessageGroups {
 		$factories = [
 			$services->getAggregateGroupMessageGroupFactory(),
 			$services->getFileBasedMessageGroupFactory(),
+			$services->getHookDefinedMessageGroupFactory(),
 			$services->getMessageBundleMessageGroupFactory(),
 			$services->getTranslatablePageMessageGroupFactory()
 		];
