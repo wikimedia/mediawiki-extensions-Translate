@@ -36,6 +36,7 @@
 	/**
 	 * Get the old translations of a given page at given time.
 	 *
+	 * @internal
 	 * @param {string} fuzzyTimestamp Timestamp in MediaWiki format
 	 * @param {string} pageTitle
 	 * @return {jQuery.Promise<Array>} Old translations
@@ -71,6 +72,7 @@
 	/**
 	 * Get the timestamp before FuzzyBot's first edit on page.
 	 *
+	 * @internal
 	 * @param {string} pageTitle
 	 * @return {jQuery.Promise<string>} Timestamp
 	 */
@@ -122,6 +124,7 @@
 	/**
 	 * Get the translation units created by Translate extension.
 	 *
+	 * @internal
 	 * @param {string} page Page name
 	 * @return {jQuery.Promise<SourceUnit[]>}
 	 */
@@ -272,6 +275,7 @@
 	/**
 	 * Split headers from remaining text in each translation unit if present.
 	 *
+	 * @internal
 	 * @param {Array} translations Array of initial units obtained on splitting
 	 * @return {string[]} Array having the headers split into new unit
 	 */
@@ -307,6 +311,7 @@
 	 * Assumption: The source headers and translation headers appear in
 	 * the same order.
 	 *
+	 * @internal
 	 * @param {Object[]} units
 	 * @param {string[]} translationUnits
 	 * @return {string[]}
