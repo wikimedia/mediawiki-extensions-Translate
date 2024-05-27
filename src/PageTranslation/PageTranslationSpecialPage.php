@@ -190,8 +190,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$entry = new ManualLogEntry( 'pagetranslation', $action );
 				$entry->setPerformer( $user );
 				$entry->setTarget( $title );
-				$logid = $entry->insert();
-				$entry->publish( $logid );
+				$logId = $entry->insert();
+				$entry->publish( $logId );
 			}
 
 			// Defer stats purging of parent aggregate groups. Shared groups can contain other
@@ -321,9 +321,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	 * @param int $unitCount
 	 * @return void
 	 */
-	private function showSuccess(
-		TranslatablePage $page, bool $firstMark, int $unitCount
-	): void {
+	private function showSuccess( TranslatablePage $page, bool $firstMark, int $unitCount ): void {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $unitCount );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( [
@@ -357,7 +355,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'tpt-list-pages-in-translations' );
 	}
 
-	protected function showGenericConfirmation( array $params ): void {
+	private function showGenericConfirmation( array $params ): void {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getLocalURL(),
@@ -383,7 +381,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function showUnlinkConfirmation( Title $target ): void {
+	private function showUnlinkConfirmation( Title $target ): void {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getLocalURL(),
@@ -454,7 +452,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 	/**
 	 * Classify a list of pages and amend them with additional metadata.
-	 *
 	 * @param array[] $pages
 	 * @return array[]
 	 * @phan-return array{proposed:array[],active:array[],broken:array[],outdated:array[]}
