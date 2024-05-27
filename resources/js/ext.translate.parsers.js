@@ -14,6 +14,7 @@
 		/**
 		 * Formats some common wikitext elements.
 		 *
+		 * @internal
 		 * @param {string} text Message text
 		 * @param {string} [key] Message key
 		 * @return {string} Formatted text in html
