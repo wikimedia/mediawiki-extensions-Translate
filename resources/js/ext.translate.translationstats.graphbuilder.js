@@ -27,6 +27,7 @@
 	 * Used to display translation stats graph. Each instance of this class manages one
 	 * instance of the graph.
 	 *
+	 * @private
 	 * @param {Object} $graphContainer The title of the page including language code
 	 *   to store the translation.
 	 * @param {Object} graphOptions Graph options, current only processes the width and height.
@@ -65,6 +66,7 @@
 
 		$graphWrapper.append( $graphElement );
 
+		/** @internal */
 		function display( options ) {
 			if ( lineChart ) {
 				cleanup();
@@ -257,6 +259,7 @@
 				.height( 'auto' );
 		}
 
+		/** @internal */
 		function showLoading() {
 			// show loading, and hide error messages.
 			$graphContainer.addClass( 'mw-translate-loading' )
@@ -335,8 +338,7 @@
 
 		return {
 			display: display,
-			showLoading: showLoading,
-			hideLoading: hideLoading
+			showLoading: showLoading
 		};
 	};
 
