@@ -475,5 +475,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Houd mij op de hoogte van wijzigingen in groepen vertaalbare berichten waarop ik ben geabonneerd",
 	"notification-bundle-header-message-group-subscription": "Vertalingsupdates voor $1 geabonneerde berichtengroep{{PLURAL:$1||en}}",
 	"notification-header-message-group-subscription": "Er zijn vertalingsupdates voor $1",
+	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Nieuw bericht|Nieuwe berichten}} in $1",
+	"notification-body-translate-mgs-message-added": "$1 bericht{{PLURAL:$1||en}} toegevoegd",
 	"notification-link-mgs-group-translate": "Vertalen: $1"
 }

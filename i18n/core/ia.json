@@ -456,5 +456,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Notificar me sur le cambiamentos in le gruppos de messages traducibile al quales io es subscribite",
 	"notification-bundle-header-message-group-subscription": "Actualisationes de traduction in $1 gruppo{{PLURAL:$1||s}} de messages subscribite",
 	"notification-header-message-group-subscription": "Il ha actualisationes de traduction pro $1",
+	"notification-compact-header-translate-mgs-message-added": "Nove {{PLURAL:$2|message|messages}} in $1",
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|message|messages}} addite",
 	"notification-link-mgs-group-translate": "Traducer $1"
 }
