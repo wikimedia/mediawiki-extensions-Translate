@@ -9,6 +9,7 @@
 
 	mw.translate = mw.translate || {};
 	mw.translate = $.extend( mw.translate, {
+		/** @private */
 		getMessages: function ( messageGroup, language, offset, limit, filter ) {
 			var api = new mw.Api();
 
@@ -53,10 +54,12 @@
 	}
 
 	MessageTable.prototype = {
+		/** @private */
 		init: function () {
 			this.$actionBar.removeClass( 'hide' );
 		},
 
+		/** @private */
 		listen: function () {
 			var messageTable = this,
 				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
@@ -98,6 +101,8 @@
 
 		/**
 		 * Clear the message table
+		 *
+		 * @private
 		 */
 		clear: function () {
 			this.$container.empty();
@@ -110,6 +115,7 @@
 		/**
 		 * Adds a new message using current mode.
 		 *
+		 * @private
 		 * @param {Object} message
 		 */
 		add: function ( message ) {
@@ -128,6 +134,7 @@
 		/**
 		 * Add a message to the message table for translation.
 		 *
+		 * @private
 		 * @param {Object} message
 		 */
 		addTranslate: function ( message ) {
@@ -236,6 +243,7 @@
 		/**
 		 * Add a message to the message table for proofreading.
 		 *
+		 * @private
 		 * @param {Object} message
 		 */
 		addProofread: function ( message ) {
@@ -298,6 +306,7 @@
 		/**
 		 * Add a message to the message table for wiki page mode.
 		 *
+		 * @private
 		 * @param {Object} message
 		 */
 		addPageModeMessage: function ( message ) {
@@ -315,6 +324,7 @@
 		/**
 		 * Search the message filter
 		 *
+		 * @private
 		 * @param {string} query
 		 */
 		search: function ( query ) {
@@ -372,6 +382,7 @@
 			$( window ).trigger( 'scroll' );
 		},
 
+		/** @private */
 		resize: function () {
 			var $messageSelector = $( '.row.tux-message-selector' );
 
@@ -399,6 +410,7 @@
 		/**
 		 * Start loading messages again with new settings.
 		 *
+		 * @internal
 		 * @param {Object} changes
 		 */
 		changeSettings: function ( changes ) {
@@ -449,6 +461,7 @@
 		},
 
 		/**
+		 * @private
 		 * @param {number} [limit] Only load this many messages and then stop even if there is more.
 		 */
 		load: function ( limit ) {
@@ -578,6 +591,7 @@
 		 * Creates a uniformly styled button for different actions,
 		 * shown when there are no messages to display.
 		 *
+		 * @private
 		 * @param {string} labelMsg A message key for the button label.
 		 * @param {Function} callback A callback for clicking the button.
 		 * @return {jQuery} A button element.
@@ -693,6 +707,7 @@
 		/**
 		 * Switch the message table mode
 		 *
+		 * @private
 		 * @param {string} mode The message table mode to switch to: translate, page or proofread
 		 */
 		switchMode: function ( mode ) {
@@ -774,6 +789,7 @@
 
 		/**
 		 * Clear errors encountered during the loading state
+		 * @private
 		 */
 		clearLoadErrors: function () {
 			$( '.tux-editor-header .tux-group-warning .tux-api-load-error' ).remove();
@@ -782,6 +798,7 @@
 		/**
 		 * Display errors encountered during the loading state.
 		 *
+		 * @private
 		 * @param {Array} errors
 		 * @param {string} errorCode
 		 */
@@ -808,6 +825,7 @@
 		/**
 		 * Displays the errors and updates the state of the table.
 		 *
+		 * @private
 		 * @param {Array} errors
 		 * @param {string} errorCode
 		 */
