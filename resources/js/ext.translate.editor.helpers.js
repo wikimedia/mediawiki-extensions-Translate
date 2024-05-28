@@ -27,6 +27,7 @@
 	}
 
 	var translateEditorHelpers = {
+		/** @internal */
 		showDocumentationEditor: function () {
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
 				$editColumn = this.$editor.find( '.editcolumn' ),
@@ -49,6 +50,7 @@
 			return false;
 		},
 
+		/** @internal */
 		hideDocumentationEditor: function () {
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
 				$editColumn = this.$editor.find( '.editcolumn' ),
@@ -69,6 +71,7 @@
 		/**
 		 * Save the documentation
 		 *
+		 * @internal
 		 * @return {jQuery.Promise}
 		 */
 		saveDocumentation: function () {
@@ -112,6 +115,7 @@
 		/**
 		 * Shows the message documentation.
 		 *
+		 * @internal
 		 * @param {Object} documentation A documentation object as returned by API.
 		 */
 		showMessageDocumentation: function ( documentation ) {
@@ -198,6 +202,7 @@
 		/**
 		 * Shows uneditable documentation.
 		 *
+		 * @internal
 		 * @param {Object} documentation A gettext object as returned by API.
 		 */
 		showUneditableDocumentation: function ( documentation ) {
@@ -223,6 +228,7 @@
 		/**
 		 * Shows the translations from other languages
 		 *
+		 * @internal
 		 * @param {Array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
@@ -266,6 +272,7 @@
 		/**
 		 * Shows the translation suggestions from Translation Memory
 		 *
+		 * @internal
 		 * @param {Array} translations A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( translations ) {
@@ -380,6 +387,7 @@
 			$heading.removeClass( 'hide' );
 		},
 
+		/** @internal */
 		onShowTranslationMemorySources: function ( e, suggestion ) {
 			e.stopPropagation();
 
@@ -419,6 +427,7 @@
 		/**
 		 * Shows the translation from machine translation systems
 		 *
+		 * @internal
 		 * @param {Array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
@@ -470,6 +479,7 @@
 		 * Makes the $source element clickable and clicking it will replace the
 		 * translation textarea with the given suggestion.
 		 *
+		 * @internal
 		 * @param {jQuery} $source
 		 * @param {string} suggestion Text to add
 		 */
@@ -501,6 +511,7 @@
 		/**
 		 * Shows the support options for the translator.
 		 *
+		 * @internal
 		 * @param {Object} support A support object as returned by API.
 		 */
 		showSupportOptions: function ( support ) {
@@ -514,6 +525,7 @@
 		/**
 		 * Adds buttons for quickly inserting insertables.
 		 *
+		 * @internal
 		 * @param {Object} insertables A insertables object as returned by API.
 		 */
 		addInsertables: function ( insertables ) {
@@ -559,6 +571,7 @@
 		/**
 		 * Loads and shows edit summaries
 		 *
+		 * @internal
 		 * @param {Array} editsummaries An array of edit summaries as returned by the API
 		 */
 		showEditSummaries: function ( editsummaries ) {
@@ -636,6 +649,7 @@
 			$editSummariesTitle.removeClass( 'hide' );
 		},
 
+		/** @internal */
 		updateEditSummaryTimestamp: function () {
 			// If the editor is hidden, don't bother updating anything or setting up another timeout
 			if ( this.$editor.hasClass( 'hide' ) ) {
@@ -667,6 +681,8 @@
 
 		/**
 		 * Handles any necessary updates to translation helpers when an editor is reopened.
+		 *
+		 * @internal
 		 */
 		updateTranslationHelpers: function () {
 			this.updateEditSummaryTimestamp();
@@ -674,6 +690,8 @@
 
 		/**
 		 * Loads and shows the translation helpers.
+		 *
+		 * @internal
 		 */
 		showTranslationHelpers: function () {
 			// API call to get translation suggestions from other languages
