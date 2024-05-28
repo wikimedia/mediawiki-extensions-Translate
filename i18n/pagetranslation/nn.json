@@ -73,6 +73,7 @@
 	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|fullførte}} slettinga av omsetjingssida $3",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|oppmoda}} til omsetjing av $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|frårådde}} omsetjing av $3",
+	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|fjerna}} prioriterte språk frå den omsetbare sida $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|sette}} prioriterte språk for den omsetbare sida $3 til $5",
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|avgrensa}} språka for den omsetjingsmerkte sida $3 til $5",
 	"log-action-filter-pagetranslation-encourage": "Oppmoding til omsetjing",

@@ -5,6 +5,8 @@
 		]
 	},
 	"tpt-select-prioritylangs-reason": "Sebebi:",
+	"translate-tag-translate-link-desc": "Bul betti awdarıw",
+	"tpt-translation-intro": "Bul bet [[$2]] betiniń <span class=\"plainlinks\">[$1 awdarılǵan kórinisi]</span> hám awdarma $3%ke juwmaqlanǵan.",
 	"tpt-languages-legend": "Basqa tiller:",
 	"tpt-aggregategroup-new-name": "Atı:",
 	"tpt-aggregategroup-new-description": "Sıpatlaması (shárt emes):",
