@@ -1243,8 +1243,8 @@
 			"public": true
 		},
 		"TranslateMessageIndex": {
-			"value": "DatabaseMessageIndex",
-			"description": "Configures how the message index is stored. Possible values are 'DatabaseMessageIndex', 'SerializedMessageIndex', and 'CDBMessageIndex'. The last two backends need $wgCacheDirectory to be functional.",
+			"value": "database",
+			"description": "Configures how the message index is stored. Possible values are 'cdb' and 'database'. The first backend needs $wgCacheDirectory to be functional.",
 			"public": true
 		},
 		"TranslateUseSandbox": {
