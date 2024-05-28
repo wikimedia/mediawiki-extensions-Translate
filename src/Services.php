@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleDependencyPurger;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslationLoader;
@@ -129,6 +130,11 @@ class Services implements ContainerInterface {
 	/** @since 2023.03 */
 	public function getHookRunner(): HookRunner {
 		return $this->get( 'Translate:HookRunner' );
+	}
+
+	/** @since 2024.10 */
+	public function getMessageBundleDependencyPurger(): MessageBundleDependencyPurger {
+		return $this->get( 'Translate:MessageBundleDependencyPurger' );
 	}
 
 	/** @since 2024.05 */

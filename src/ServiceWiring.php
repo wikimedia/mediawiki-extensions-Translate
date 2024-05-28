@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleDependencyPurger;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslationLoader;
@@ -162,6 +163,12 @@ return [
 		MediaWikiServices $services
 	): HookRunner {
 		return new HookRunner( $services->getHookContainer() );
+	},
+
+	'Translate:MessageBundleDependencyPurger' => static function (
+		MediaWikiServices $services
+	): MessageBundleDependencyPurger {
+		return new MessageBundleDependencyPurger( $services->get( 'Translate:TranslatableBundleFactory' ) );
 	},
 
 	'Translate:MessageBundleMessageGroupFactory' => static function (

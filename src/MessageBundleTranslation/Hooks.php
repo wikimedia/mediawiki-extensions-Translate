@@ -5,7 +5,9 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Article;
 use Content;
+use JobQueueGroup;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
@@ -18,6 +20,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use Psr\Log\LoggerInterface;
 use WANObjectCache;
@@ -38,18 +41,24 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 	private WANObjectCache $WANObjectCache;
 	private LinkRenderer $linkRenderer;
 	private bool $enableIntegration;
+	private TitleFactory $titleFactory;
+	private JobQueueGroup $jobQueueGroup;
 
 	public function __construct(
 		LoggerInterface $logger,
 		WANObjectCache $WANObjectCache,
 		MessageBundleStore $messageBundleStore,
 		LinkRenderer $linkRenderer,
+		TitleFactory $titleFactory,
+		JobQueueGroup $jobQueueGroup,
 		bool $enableIntegration
 	) {
 		$this->logger = $logger;
 		$this->WANObjectCache = $WANObjectCache;
 		$this->messageBundleStore = $messageBundleStore;
 		$this->linkRenderer = $linkRenderer;
+		$this->titleFactory = $titleFactory;
+		$this->jobQueueGroup = $jobQueueGroup;
 		$this->enableIntegration = $enableIntegration;
 	}
 
@@ -60,6 +69,8 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 			$services->getMainWANObjectCache(),
 			$services->get( 'Translate:MessageBundleStore' ),
 			$services->getLinkRenderer(),
+			$services->getTitleFactory(),
+			$services->getJobQueueGroup(),
 			$services->getMainConfig()->get( 'TranslateEnableMessageBundleIntegration' )
 		);
 		return self::$instance;
@@ -100,6 +111,20 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 			return;
 		}
 
+		$pageTitle = $wikiPage->getTitle();
+		$handle = new MessageHandle( $pageTitle );
+
+		// Check if it's a message bundle unit translation
+		if ( $handle->isValid() && $handle->isPageTranslation() ) {
+			$group = $handle->getGroup();
+			if ( $group instanceof MessageBundleMessageGroup ) {
+				$messageBundleTitle = $this->titleFactory->newFromID( $group->getBundlePageId() );
+				$this->jobQueueGroup->push( PurgeMessageBundleDependenciesJob::newJob( $messageBundleTitle ) );
+			}
+
+			return;
+		}
+
 		$method = __METHOD__;
 		$content = $revisionRecord->getContent( SlotRecord::MAIN );
 		$pageTitle = $wikiPage->getTitle();
@@ -125,6 +150,8 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 			] );
 			return;
 		}
+
+		$this->jobQueueGroup->push( PurgeMessageBundleDependenciesJob::newJob( $pageTitle ) );
 	}
 
 	/** Hook: CodeEditorGetPageLanguage */

@@ -500,6 +500,7 @@
 		"MessageGroupStatesUpdaterJob": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStatesUpdaterJob",
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "\\MediaWiki\\Extension\\Translate\\Synchronization\\UpdateMessageJob",
+		"PurgeMessageBundleDependencies": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\PurgeMessageBundleDependenciesJob",
 		"RebuildMessageGroupStatsJob": "\\MediaWiki\\Extension\\Translate\\Statistics\\RebuildMessageGroupStatsJob",
 		"TtmServerMessageUpdateJob": "\\MediaWiki\\Extension\\Translate\\TtmServer\\TtmServerMessageUpdateJob",
 		"TTMServerMessageUpdateJob": "\\MediaWiki\\Extension\\Translate\\TtmServer\\TtmServerMessageUpdateJob",

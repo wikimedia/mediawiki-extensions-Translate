@@ -25,6 +25,10 @@ class MessageBundleLuaLibrary extends LibraryBase {
 	public function validate( string $messageBundleTitle ): void {
 		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
 		$mbTitle = $titleFactory->newFromText( $messageBundleTitle );
+		// Record template transclusion to the message bundle. We do it before isSourcePage check because
+		// if the title is not a source page when the page containing the Lua page is parsed, but later becomes one,
+		// the parser cache should be invalidated so that the error goes away.
+		$this->getParser()->getOutput()->addTemplate( $mbTitle, $mbTitle->getId(), $mbTitle->getLatestRevID() );
 		if ( !MessageBundle::isSourcePage( $mbTitle ) ) {
 			throw new LuaError( "$messageBundleTitle is not a valid message bundle." );
 		}
