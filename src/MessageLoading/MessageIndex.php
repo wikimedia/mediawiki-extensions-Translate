@@ -7,13 +7,11 @@ use BagOStuff;
 use Exception;
 use JobQueueGroup;
 use MapCacheLRU;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
-use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
-use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
@@ -37,7 +35,7 @@ class MessageIndex {
 	private const CACHE_KEY = 'Translate-MessageIndex-interim';
 	private const READ_LATEST = true;
 	private MessageIndexStore $messageIndexStore;
-	private static ?MapCacheLRU $keysCache = null;
+	private MapCacheLRU $keysCache;
 	protected BagOStuff $interimCache;
 	private WANObjectCache $statusCache;
 	private JobQueueGroup $jobQueueGroup;
@@ -46,20 +44,32 @@ class MessageIndex {
 	private IConnectionProvider $connectionProvider;
 	private MessageGroupSubscription $messageGroupSubscription;
 	private array $translateMessageNamespaces;
+	public const SERVICE_OPTIONS = [
+		'TranslateMessageNamespaces'
+	];
 
-	public function __construct( MessageIndexStore $store ) {
+	public function __construct(
+		MessageIndexStore $store,
+		WANObjectCache $statusCache,
+		JobQueueGroup $jobQueueGroup,
+		HookRunner $hookRunner,
+		LoggerInterface $logger,
+		BagOStuff $interimCache,
+		IConnectionProvider $connectionProvider,
+		MessageGroupSubscription $messageGroupSubscription,
+		ServiceOptions $options
+	) {
 		$this->messageIndexStore = $store;
-		$mwInstance = MediaWikiServices::getInstance();
-		$this->statusCache = $mwInstance->getMainWANObjectCache();
-		$this->jobQueueGroup = $mwInstance->getJobQueueGroup();
-		$this->translateMessageNamespaces = $mwInstance
-			->getMainConfig()
-			->get( 'TranslateMessageNamespaces' );
-		$this->hookRunner = Services::getInstance()->getHookRunner();
-		$this->logger = LoggerFactory::getInstance( 'Translate' );
-		$this->interimCache = $mwInstance->getMainObjectStash();
-		$this->connectionProvider = $mwInstance->getDBLoadBalancerFactory();
-		$this->messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
+		$this->keysCache = new MapCacheLRU( 30 );
+		$this->statusCache = $statusCache;
+		$this->jobQueueGroup = $jobQueueGroup;
+		$this->hookRunner = $hookRunner;
+		$this->logger = $logger;
+		$this->interimCache = $interimCache;
+		$this->connectionProvider = $connectionProvider;
+		$this->messageGroupSubscription = $messageGroupSubscription;
+		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
+		$this->translateMessageNamespaces = $options->get( 'TranslateMessageNamespaces' );
 	}
 
 	/** Converts page name and namespace to message index format. */
@@ -84,11 +94,10 @@ class MessageIndex {
 		$key = $handle->getKey();
 		$normalisedKey = $this->normaliseKey( $namespace, $key );
 
-		$cache = $this->getCache();
-		$value = $cache->get( $normalisedKey );
+		$value = $this->keysCache->get( $normalisedKey );
 		if ( $value === null ) {
 			$value = (array)$this->getWithCache( $normalisedKey );
-			$cache->set( $normalisedKey, $value );
+			$this->keysCache->set( $normalisedKey, $value );
 		}
 
 		return $value;
@@ -108,13 +117,6 @@ class MessageIndex {
 		// Optimization 2: skip interim cache as not essential
 
 		return (array)$this->get( $normalisedKey ) ?? [];
-	}
-
-	private function getCache(): MapCacheLRU {
-		if ( self::$keysCache === null ) {
-			self::$keysCache = new MapCacheLRU( 30 );
-		}
-		return self::$keysCache;
 	}
 
 	public function getPrimaryGroupId( MessageHandle $handle ): ?string {
@@ -204,7 +206,7 @@ class MessageIndex {
 		);
 
 		$groups = MessageGroups::singleton()->getGroups();
-		self::getCache()->clear();
+		$this->keysCache->clear();
 
 		$new = [];
 		$old = $this->messageIndexStore->retrieve( self::READ_LATEST );

@@ -226,7 +226,17 @@ return [
 
 		/** @var MessageIndexStore $store */
 		$messageIndexStoreClass = $implementationMap[$class] ?? $implementationMap['database'];
-		return new MessageIndex( new $messageIndexStoreClass );
+		return new MessageIndex(
+			new $messageIndexStoreClass,
+			$services->getMainWANObjectCache(),
+			$services->getJobQueueGroup(),
+			$services->get( 'Translate:HookRunner' ),
+			LoggerFactory::getInstance( 'Translate' ),
+			$services->getMainObjectStash(),
+			$services->getDBLoadBalancerFactory(),
+			$services->get( 'Translate:MessageGroupSubscription' ),
+			new ServiceOptions( MessageIndex::SERVICE_OPTIONS, $services->getMainConfig() ),
+		);
 	},
 
 	'Translate:MessagePrefixStats' => static function ( MediaWikiServices $services ): MessagePrefixStats {

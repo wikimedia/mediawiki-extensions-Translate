@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use Generator;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\Services;
 use MediaWikiIntegrationTestCase;
 use MessageGroup;
 use WANObjectCache;
@@ -17,6 +17,11 @@ use WANObjectCache;
  * @license GPL-2.0-or-later
  */
 class EntitySearchTest extends MediaWikiIntegrationTestCase {
+	protected function setUp(): void {
+		parent::setUp();
+		$this->setMwGlobals( 'TranslateMessageIndex', 'hash' );
+	}
+
 	public function getMessageGroupFactoryStub(): MessageGroups {
 		$data =
 			<<<'EOF'
@@ -57,7 +62,7 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 			$mediaWikiServices->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
 			$this->getMessageGroupFactoryStub(),
 			$mediaWikiServices->getNamespaceInfo(),
-			new MessageIndex( new HashMessageIndex() ),
+			Services::getInstance()->getMessageIndex(),
 			$mediaWikiServices->getTitleFormatter(),
 			$mediaWikiServices->getTitleParser()
 		);
