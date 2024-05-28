@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageProcessing;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Page\WikiPageFactory;
@@ -26,7 +25,7 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+			'wgTranslateMessageIndex' => [ 'hash' ],
 		] );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );

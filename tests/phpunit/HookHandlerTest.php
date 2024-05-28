@@ -7,7 +7,6 @@ use ContentHandler;
 use HashBagOStuff;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
@@ -31,7 +30,7 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 			'wgTranslateDocumentationLanguageCode' => 'qqq',
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+			'wgTranslateMessageIndex' => [ 'hash' ],
 		] );
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
 		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );

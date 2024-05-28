@@ -9,7 +9,6 @@ use ContentHandler;
 use HashBagOStuff;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
@@ -37,7 +36,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 
 		$this->setMwGlobals( [
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+			'wgTranslateMessageIndex' => [ 'hash' ],
 		] );
 		$this->setGroupPermissions( [
 			'sysop' => [

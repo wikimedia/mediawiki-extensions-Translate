@@ -27,7 +27,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 
 		$this->setMwGlobals( [
-			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+			'wgTranslateMessageIndex' => [ 'hash' ],
 		] );
 
 		$this->setMwGlobals( [ 'wgTranslateTranslationServices' => [], ] );

@@ -54,12 +54,6 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		return false;
 	}
 
-	public static function provideTranslateMessageIndexConfig(): Generator {
-		yield [ 'DatabaseMessageIndex', DatabaseMessageIndex::class ];
-		yield [ [ 'DatabaseMessageIndex' ], DatabaseMessageIndex::class ];
-		yield [ [ 'SerializedMessageIndex' ], SerializedMessageIndex::class ];
-	}
-
 	/** @dataProvider provideTestGetArrayDiff */
 	public function testGetArrayDiff( array $expected, array $old, array $new ): void {
 		$actual = Services::getInstance()->getMessageIndex()->getArrayDiff( $old, $new );

@@ -7,7 +7,6 @@ use ContentHandler;
 use HashBagOStuff;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -44,7 +43,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 					'translate-manage' => true,
 				],
 			],
-			'wgTranslateMessageIndex' => [ HashMessageIndex::class ],
+			'wgTranslateMessageIndex' => [ 'hash' ],
 		] );
 
 		$this->clearHooks();
