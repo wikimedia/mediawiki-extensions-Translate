@@ -10,9 +10,9 @@
  * @since 2022.02
  * @constructor
  * @param {Object} [config] Configuration options
- * @cfg {Function} [onFail] Callback function triggered when an error occurs
- * @cfg {Function} [onSelect] Callback function triggered when an item is selected
- * @cfg {Array} [entityType] Entity type to query for - "groups" and/or "messages"
+ * @param {Function} [config.onFail] Callback function triggered when an error occurs
+ * @param {Function} [config.onSelect] Callback function triggered when an item is selected
+ * @param {Array} [config.entityType] Entity type to query for - "groups" and/or "messages"
  * @stable for use inside gadgets and extensions
  */
 var EntitySelectorWidget = function ( config ) {
