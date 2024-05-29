@@ -163,6 +163,7 @@
 	"log-action-filter-messagebundle": "סוג הפעולה:",
 	"log-action-filter-messagebundle-move": "העברות חבילות הודעות",
 	"log-action-filter-messagebundle-delete": "מחיקות חבילות הודעות",
+	"pt-cta-mark-translation": "ניתן לסמן את הדף הזה לתרגום קהילתי. יש להתאים את [$1 הגדרות התרגום של הדף] כדי ליידע את העורכים שהם יכולים להתחיל לתרגם את התוכן.",
 	"pt-movepage-title": "העברת הדף המתורגם \"$1\"",
 	"pt-movepage-messagebundle-title": "העברת חבילת ההודעות \"$1\"",
 	"pt-movepage-blockers": "דף מתורגם אינו יכול להיות מועבר לשם חדש בגלל {{PLURAL:$1|השגיאה הבאה|השגיאות הבאות}}:",

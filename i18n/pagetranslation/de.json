@@ -167,6 +167,7 @@
 	"log-action-filter-messagebundle": "Typ der Aktion:",
 	"log-action-filter-messagebundle-move": "Nachrichtenbündel-Verschiebungen",
 	"log-action-filter-messagebundle-delete": "Nachrichtenbündel-Löschungen",
+	"pt-cta-mark-translation": "Diese Seite kann für die Community-Übersetzung markiert werden. Passe die [$1 Seitenübersetzungseinstellungen] an, um Benutzer darüber zu informieren, dass sie mit der Übersetzung des Inhalts beginnen können.",
 	"pt-movepage-title": "Die Übersetzungsseite $1 verschieben",
 	"pt-movepage-messagebundle-title": "Nachrichtenbündel „$1“ verschieben",
 	"pt-movepage-blockers": "Die zum Übersetzen vorgesehene Seite konnte aufgrund {{PLURAL:$1|des folgenden Fehlers|folgender Fehler}} nicht zur neuen Bezeichnung verschoben werden:",
