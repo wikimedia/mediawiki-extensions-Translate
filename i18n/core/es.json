@@ -38,7 +38,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Wifidel",
-			"Eulalio"
+			"Eulalio",
+			"Kidneyspr"
 		]
 	},
 	"translate": "Traducir",
@@ -338,6 +339,7 @@
 	"translate-msggroupselector-search-recent": "Recientes",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgrupo|subgrupos}}",
 	"tux-languageselector": "Traducir al",
+	"tux-select-target-language": "Idioma de destino para la traducción",
 	"tux-tab-all": "Todos",
 	"tux-tab-untranslated": "Sin traducir",
 	"tux-tab-outdated": "Desactualizados",

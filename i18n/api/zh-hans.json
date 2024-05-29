@@ -11,7 +11,9 @@
 			"TsuyaMarisa",
 			"VulpesVulpes825",
 			"Xiplus",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Amire80",
+			"LowensteinYang"
 		]
 	},
 	"apihelp-aggregategroups-summary": "管理聚合消息组。",
@@ -39,7 +41,7 @@
 	"apihelp-query+messagecollection-param-language": "语言代码。",
 	"apihelp-query+messagecollection-param-limit": "显示的消息数量（过滤后）。",
 	"apihelp-query+messagecollection-param-offset": "整数或键的起始偏移量。",
-	"apihelp-query+messagecollection-param-filter": "消息集合过滤器。使用<kbd>!</kbd>否定条件。例如<kbd>!fuzzy</kbd>意思是只列出所有未过期消息。过滤器以特定顺序应用。\n;fuzzy:带fuzzy标签的消息。\n;optional:只应在需要更改时翻译的消息。\n;ignored:不应翻译的消息。\n;hastranslation:无论过期与否，带翻译的消息。\n;translated:带有未过期翻译的消息。\n;changed:自从上次导出之日起，已翻译或更改的消息。\n;reviewer&#58;N:当用户数字<kbd>N</kbd>在复核者之间时的消息。\n;last-translator&#58;N:当用户数字<kbd>N</kbd>是最终翻译者时的消息。",
+	"apihelp-query+messagecollection-param-filter": "消息合集筛选器。使用<kbd>!</kbd>否定条件。例如<kbd>!fuzzy</kbd>表示只列出所有未过时消息。筛选器以给定的顺序应用。\n;fuzzy:有过时标签的消息。\n;optional:只应在确需更改时翻译的消息。\n;ignored:不应翻译的消息。\n;hastranslation:有翻译的消息，无论翻译是否过时。\n;translated:有未过时翻译的消息。\n;changed:上次导出后被翻译或更改的消息。\n;reviewer&#58;N:编号<kbd>N</kbd>用户属于复核者的消息。\n;last-translator&#58;N:编号<kbd>N</kbd>用户是最后翻译者的消息。",
 	"apihelp-query+messagecollection-param-prop": "要获取的属性：",
 	"apihelp-query+messagecollection-paramvalue-prop-definition": "消息定义。",
 	"apihelp-query+messagecollection-paramvalue-prop-translation": "当前翻译（如果有则不带$1字符串，使用标签以检查已过时或损坏的翻译）。",
