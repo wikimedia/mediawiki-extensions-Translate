@@ -26,7 +26,7 @@ class YamlTest extends MediaWikiIntegrationTestCase {
 	 * @requires function yaml_parse
 	 * @dataProvider provideTestLoadString
 	 */
-	public function testLoadStringPhpyaml( string $input, string $expected, string $comment ): void {
+	public function testLoadStringPhpyaml( string $input, array $expected, string $comment ): void {
 		$output = Yaml::loadString( $input );
 		$this->assertEquals( $expected, $output, $comment );
 	}
