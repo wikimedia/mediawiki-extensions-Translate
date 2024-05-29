@@ -139,7 +139,7 @@ class MessageIndex {
 		return $this->messageIndexStore->get( $key );
 	}
 
-	public function get( string $key ): ?array {
+	public function get( string $key ) {
 		return $this->messageIndexStore->get( $key );
 	}
 
