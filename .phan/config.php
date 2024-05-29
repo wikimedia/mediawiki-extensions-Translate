@@ -15,7 +15,6 @@ $cfg['directory_list'] = array_merge(
 		'scripts',
 		'src',
 		'ttmserver',
-		'utils',
 		'../../extensions/AbuseFilter',
 		'../../extensions/AdminLinks',
 		'../../extensions/cldr',
