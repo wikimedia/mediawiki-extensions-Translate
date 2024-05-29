@@ -30,11 +30,9 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 	 * Hook: TranslateEventTranslationReview
 	 * and also on translation changes
 	 */
-	public static function onChange( MessageHandle $handle ): bool {
+	public static function onChange( MessageHandle $handle ): void {
 		$job = self::newJob( $handle->getTitle() );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
-
-		return true;
 	}
 
 	public static function newJob( Title $title ): self {
@@ -123,17 +121,17 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 
 	/**
 	 * @param int[] $stats
+	 * @param array[] $transitions
 	 * @return string|bool
 	 */
 	public static function getNewState( array $stats, array $transitions ) {
-		foreach ( $transitions as $transition ) {
-			[ $newState, $conditions ] = $transition;
+		foreach ( $transitions as [ $newState, $conditions ] ) {
 			$match = true;
 
-			foreach ( $conditions as $type => $conditions ) {
+			foreach ( $conditions as $type => $typeConditions ) {
 				$statValue = self::getStatValue( $stats, $type );
 				$max = $stats[MessageGroupStats::TOTAL];
-				$match = $match && self::matchCondition( $statValue, $conditions, $max );
+				$match = $match && self::matchCondition( $statValue, $typeConditions, $max );
 				// Conditions are AND, so no point trying more if no match
 				if ( !$match ) {
 					break;
