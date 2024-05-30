@@ -17,9 +17,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
 class RevTagStore {
 	/** Indicates that a translation is fuzzy (outdated or not passing validation). */
 	public const FUZZY_TAG = 'fuzzy';
-	/** Stores the revision id of the source text which was translated. Used for showing
-	 * diffs for outdated messages.
-	 */
+	/** Stores the revision id of the corresponding source text. Used for showing diffs for outdated messages. */
 	public const TRANSVER_PROP = 'tp:transver';
 	/** Indicates a revision of a page that can be marked for translation. */
 	public const TP_MARK_TAG = 'tp:mark';
@@ -49,18 +47,18 @@ class RevTagStore {
 		$articleId = $identity->getId();
 
 		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
-		$conds = [
+		$conditions = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag
 		];
-		$dbw->delete( 'revtag', $conds, __METHOD__ );
+		$dbw->delete( 'revtag', $conditions, __METHOD__ );
 
 		if ( $value !== null ) {
-			$conds['rt_value'] = serialize( implode( '|', $value ) );
+			$conditions['rt_value'] = serialize( implode( '|', $value ) );
 		}
 
-		$conds['rt_revision'] = $revisionId;
-		$dbw->insert( 'revtag', $conds, __METHOD__ );
+		$conditions['rt_revision'] = $revisionId;
+		$dbw->insert( 'revtag', $conditions, __METHOD__ );
 
 		$this->tagCache[$articleId][$tag] = $revisionId;
 	}
@@ -122,11 +120,11 @@ class RevTagStore {
 		$articleId = $identity->getId();
 
 		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
-		$conds = [
+		$conditions = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag,
 		];
-		$dbw->delete( 'revtag', $conds, __METHOD__ );
+		$dbw->delete( 'revtag', $conditions, __METHOD__ );
 
 		unset( $this->tagCache[$articleId] );
 	}
