@@ -152,6 +152,7 @@
 	"log-action-filter-messagebundle": "Typo de action:",
 	"log-action-filter-messagebundle-move": "Renominationes de pacchettos de messages",
 	"log-action-filter-messagebundle-delete": "Deletiones de pacchettos de messages",
+	"pt-cta-mark-translation": "Iste pagina pote esser marcate pro traduction communitari. Adjusta le [$1 parametros de traduction de paginas] pro informar le redactores que illes pote comenciar a traducer le contento.",
 	"pt-movepage-title": "Renominar le pagina traducibile $1",
 	"pt-movepage-messagebundle-title": "Renominar le pacchetto de messages \"$1\"",
 	"pt-movepage-blockers": "Le pagina traducibile non pote esser renominate a causa del sequente {{PLURAL:$1|error|errores}}:",

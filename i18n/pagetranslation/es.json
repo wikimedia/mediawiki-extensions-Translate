@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Antur",
+			"AnupamM",
 			"ArenaL5",
 			"Armando-Martin",
 			"Crazymadlover",
@@ -166,6 +167,7 @@
 	"log-action-filter-messagebundle": "Tipo de acción:",
 	"log-action-filter-messagebundle-move": "Traslado de paquetes de mensajes",
 	"log-action-filter-messagebundle-delete": "Borrado de paquetes de mensajes",
+	"pt-cta-mark-translation": "Esta página se puede marcar para traducción comunitaria. Ajuste la [configuración de traducción de página $1 ] para que los editores sepan que pueden comenzar a traducir el contenido.",
 	"pt-movepage-title": "Trasladar la página traducible $1",
 	"pt-movepage-messagebundle-title": "Trasladar el paquete de mensajes «$1»",
 	"pt-movepage-blockers": "La página traducible no puede ser movida a un nuevo nombre por {{PLURAL:$1|el siguiente error|los siguientes errores}}:",
