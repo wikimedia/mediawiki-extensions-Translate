@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Article;
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\User\User;
+use MediaWiki\Title\Title;
+use User;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -19,21 +19,71 @@ class TranslatablePageView {
 	public const SERVICE_OPTIONS = [ 'TranslatePageTranslationBannerNamespaces' ];
 	private const RECENT_EDITOR_DAYS = 4;
 	private IConnectionProvider $connectionProvider;
+	private TranslatablePageStateStore $translatablePageStateStore;
 	/** @var int[] */
 	private array $pageTranslationBannerNamespaces;
 
 	public function __construct(
 		IConnectionProvider $connectionProvider,
+		TranslatablePageStateStore $translatablePageStateStore,
 		ServiceOptions $options
 	) {
 		$this->connectionProvider = $connectionProvider;
+		$this->translatablePageStateStore = $translatablePageStateStore;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->pageTranslationBannerNamespaces = $options->get( 'TranslatePageTranslationBannerNamespaces' );
 	}
 
-	/** Determines whether call to action to mark a page for translation should be shown on the article header. */
-	public function shouldDisplayPageTranslationBanner( Article $article, User $user ): bool {
-		$articleTitle = $article->getTitle();
+	/** Determines whether the user should be allowed to update the translation setting */
+	public function canManageTranslationSettings( Title $articleTitle, User $user ): bool {
+		if ( !$this->isTranslationSettingsAllowedForTitle( $articleTitle ) ) {
+			return false;
+		}
+
+		// Allow translation administrators and recent editors to edit the translation settings
+		return ( $user->isNamed() && $this->isRecentEditor( $articleTitle, $user ) )
+			|| $user->isAllowed( 'pagetranslation' );
+	}
+
+	/** Determines whether the banner to mark a page for translation should be displayed */
+	public function canDisplayTranslationSettingsBanner( Title $articleTitle, User $user ): bool {
+		if ( !$this->isTranslationSettingsAllowedForTitle( $articleTitle ) ) {
+			return false;
+		}
+
+		if ( $this->translatablePageStateStore->get( $articleTitle ) !== null ) {
+			return false;
+		}
+
+		$canPerformPageTranslation = $user->isAllowed( 'pagetranslation' );
+		// Don't show the banner to translation administrators
+		if ( $canPerformPageTranslation ) {
+			return false;
+		}
+
+		return $this->isRecentEditor( $articleTitle, $user );
+	}
+
+	private function isRecentEditor( Title $articleTitle, User $user ): bool {
+		$dbr = $this->connectionProvider->getReplicaDatabase();
+		$fieldValue = $dbr->newSelectQueryBuilder()
+			->select( 'rev_id' )
+			->from( 'revision' )
+			->join( 'actor', null, 'actor.actor_id = revision.rev_actor' )
+			->where( [
+				'rev_page' => $articleTitle->getId(),
+				'actor.actor_user' => $user->getId(),
+				$dbr->expr(
+					'rev_timestamp', '>=', $dbr->timestamp( time() - self::RECENT_EDITOR_DAYS * 24 * 3600 )
+				)
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
+
+		return $fieldValue !== false;
+	}
+
+	private function isTranslationSettingsAllowedForTitle( Title $articleTitle ): bool {
 		if ( !$articleTitle->inNamespaces( $this->pageTranslationBannerNamespaces ) ) {
 			return false;
 		}
@@ -50,30 +100,6 @@ class TranslatablePageView {
 
 		// Check if the page has the <translate> tags already
 		$page = TranslatablePage::newFromTitle( $articleTitle );
-		if ( $page->getReadyTag() !== null ) {
-			return false;
-		}
-
-		// Don't show the banner to translation administrators
-		if ( $user->isAllowed( 'pagetranslation' ) ) {
-			return false;
-		}
-
-		$dbr = $this->connectionProvider->getReplicaDatabase();
-		$fieldValue = $dbr->newSelectQueryBuilder()
-			->select( 'rev_id' )
-			->from( 'revision' )
-			->join( 'actor', null, 'actor.actor_id = revision.rev_actor' )
-			->where( [
-				'rev_page' => $article->getPage()->getId(),
-				'actor.actor_user' => $user->getId(),
-				$dbr->expr(
-					'rev_timestamp', '>=', $dbr->timestamp( time() - self::RECENT_EDITOR_DAYS * 24 * 3600 )
-				)
-			] )
-			->caller( __METHOD__ )
-			->fetchField();
-
-		return $fieldValue !== false;
+		return $page->getReadyTag() === null;
 	}
 }

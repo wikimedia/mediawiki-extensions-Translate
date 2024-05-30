@@ -146,9 +146,12 @@ class HookHandler implements
 					'LanguageFactory',
 					'LinkBatchFactory',
 					'JobQueueGroup',
+					'PermissionManager',
 					'Translate:TranslatablePageMarker',
 					'Translate:TranslatablePageParser',
-					'Translate:MessageGroupMetadata'
+					'Translate:MessageGroupMetadata',
+					'Translate:TranslatablePageView',
+					'Translate:TranslatablePageStateStore'
 				]
 			];
 			$wgSpecialPages['PageTranslationDeletePage'] = [

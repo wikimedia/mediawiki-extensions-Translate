@@ -30,3 +30,7 @@
 .mw-tpt-pagelist-item {
 	overflow-wrap: break-word;
 }
+
+.mw-content-container .mw-tpt-vm {
+	margin: 1em 0;
+}

@@ -1215,18 +1215,22 @@ class Hooks {
 			return;
 		}
 
-		$transPage = TranslatablePage::isTranslationPage( $article->getTitle() );
+		$articleTitle = $article->getTitle();
+		$transPage = TranslatablePage::isTranslationPage( $articleTitle );
 		$context = $article->getContext();
 		if ( $transPage ) {
 			self::translationPageHeader( $context, $transPage );
 		} else {
 			$viewTranslatablePage = Services::getInstance()->getTranslatablePageView();
 			$user = $context->getUser();
-			if ( $user->isNamed() && $viewTranslatablePage->shouldDisplayPageTranslationBanner( $article, $user ) ) {
+			if (
+				$user->isNamed() &&
+				$viewTranslatablePage->canDisplayTranslationSettingsBanner( $articleTitle, $user )
+			) {
 				$output = $context->getOutput();
 				$pageUrl = SpecialPage::getTitleFor( 'PageTranslation' )->getFullURL( [
 					'do' => 'settings',
-					'target' => $article->getTitle()->getPrefixedDBkey(),
+					'target' => $articleTitle->getPrefixedDBkey(),
 				] );
 				$output->addHTML(
 					Html::noticeBox(

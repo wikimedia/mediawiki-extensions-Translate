@@ -5,12 +5,15 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
 use DifferenceEngine;
+use ErrorPageError;
 use IDBAccessObject;
+use InvalidArgumentException;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleState;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
@@ -19,7 +22,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use OOUI\ButtonInputWidget;
@@ -27,9 +30,11 @@ use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
+use OOUI\RadioInputWidget;
 use OOUI\TextInputWidget;
 use PermissionsError;
 use UnexpectedValueException;
+use User;
 use UserBlockedError;
 use WebRequest;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -58,25 +63,34 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private LanguageFactory $languageFactory;
 	private LinkBatchFactory $linkBatchFactory;
 	private JobQueueGroup $jobQueueGroup;
+	private PermissionManager $permissionManager;
 	private TranslatablePageMarker $translatablePageMarker;
 	private TranslatablePageParser $translatablePageParser;
 	private MessageGroupMetadata $messageGroupMetadata;
+	private TranslatablePageView $translatablePageView;
+	private TranslatablePageStateStore $translatablePageStateStore;
 
 	public function __construct(
 		LanguageFactory $languageFactory,
 		LinkBatchFactory $linkBatchFactory,
 		JobQueueGroup $jobQueueGroup,
+		PermissionManager $permissionManager,
 		TranslatablePageMarker $translatablePageMarker,
 		TranslatablePageParser $translatablePageParser,
-		MessageGroupMetadata $messageGroupMetadata
+		MessageGroupMetadata $messageGroupMetadata,
+		TranslatablePageView $translatablePageView,
+		TranslatablePageStateStore $translatablePageStateStore
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageFactory = $languageFactory;
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->jobQueueGroup = $jobQueueGroup;
+		$this->permissionManager = $permissionManager;
 		$this->translatablePageMarker = $translatablePageMarker;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->messageGroupMetadata = $messageGroupMetadata;
+		$this->translatablePageView = $translatablePageView;
+		$this->translatablePageStateStore = $translatablePageStateStore;
 	}
 
 	public function doesWrites(): bool {
@@ -108,11 +122,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 			return;
 		}
 
-		// Anything else than listing the pages need permissions
-		if ( !$user->isAllowed( 'pagetranslation' ) ) {
-			throw new PermissionsError( 'pagetranslation' );
-		}
-
 		$title = Title::newFromText( $target );
 		if ( !$title ) {
 			$out->wrapWikiMsg( Html::errorBox( '$1' ), [ 'tpt-badtitle', $target ] );
@@ -129,26 +138,29 @@ class PageTranslationSpecialPage extends SpecialPage {
 			return;
 		}
 
-		// Check for blocks
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		if ( $permissionManager->isBlockedFrom( $user, $title, !$request->wasPosted() ) ) {
-			$block = $user->getBlock();
-			if ( $block ) {
-				throw new UserBlockedError(
-					$block,
-					$user,
-					$this->getLanguage(),
-					$request->getIP()
-				);
-			}
+		$block = $this->getBlock( $request, $user, $title );
+		if ( $action === 'settings' && !$request->wasPosted() ) {
+			$this->showTranslationSettings( $title, $block );
+			return;
+		}
 
-			throw new PermissionsError( 'pagetranslation', [ 'badaccess-group0' ] );
-
+		if ( $block ) {
+			throw $block;
 		}
 
 		// Check token for all POST actions here
 		$csrfTokenSet = $this->getContext()->getCsrfTokenSet();
 		if ( $request->wasPosted() && !$csrfTokenSet->matchTokenField( 'token' ) ) {
+			throw new PermissionsError( 'pagetranslation' );
+		}
+
+		if ( $action === 'settings' && $request->wasPosted() ) {
+			$this->handleTranslationState( $title, $request->getRawVal( 'translatable-page-state' ) );
+			return;
+		}
+
+		// Anything other than listing the pages or manipulating settings needs permissions
+		if ( !$user->isAllowed( 'pagetranslation' ) ) {
 			throw new PermissionsError( 'pagetranslation' );
 		}
 
@@ -644,19 +656,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$out->addBacklinkSubtitle( $page->getTitle() );
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle()->getLocalURL(),
-			'class' => 'mw-tpt-sp-markform',
-		];
-
-		$out->addHTML(
-			Xml::openElement( 'form', $formParams ) .
-			Html::hidden( 'do', 'mark' ) .
-			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-			Html::hidden( 'revision', $page->getRevision() ) .
-			Html::hidden( 'target', $page->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() )
+		$this->addPageForm(
+			$page->getTitle(),
+			'mw-tpt-sp-markform',
+			'mark',
+			$page->getRevision()
 		);
 
 		$out->wrapWikiMsg( '==$1==', 'tpt-sections-oldnew' );
@@ -984,8 +988,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 				// Performance optimization to avoid calling $this->msg in a loop
 				$tagsKey = implode( '', $tags );
 				$tagsTextCache[$tagsKey] ??= $this->msg( 'parentheses' )
-						->rawParams( $this->getLanguage()->pipeList( $tags ) )
-						->escaped();
+					->rawParams( $this->getLanguage()->pipeList( $tags ) )
+					->escaped();
 
 				$tagList = Html::rawElement(
 					'span',
@@ -998,5 +1002,185 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		return '<ol>' . implode( "", $items ) . '</ol>';
+	}
+
+	private function showTranslationSettings( Title $target, ?ErrorPageError $block ): void {
+		$out = $this->getOutput();
+		$out->setPageTitle( $this->msg( 'tpt-translation-settings-page-title' )->text() );
+		$out->addBacklinkSubtitle( $target );
+
+		$currentState = $this->translatablePageStateStore->get( $target );
+
+		if ( !$this->translatablePageView->canManageTranslationSettings( $target, $this->getUser() ) ) {
+			$out->wrapWikiMsg( Html::errorBox( '$1' ), 'tpt-translation-settings-restricted' );
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
+			return;
+		}
+
+		if ( $block ) {
+			$out->wrapWikiMsg( Html::errorBox( '$1' ), $block->getMessageObject() );
+		}
+
+		if ( $currentState ) {
+			$this->displayStateInfoMessage( $target, $currentState );
+		}
+
+		$this->addPageForm( $target, 'mw-tpt-sp-settings', 'settings', null );
+		$out->addHTML(
+			Html::rawElement(
+				'p',
+				[ 'class' => 'mw-tpt-vm' ],
+				Html::element( 'strong', [], $this->msg( 'tpt-translation-settings-subtitle' ) )
+			)
+		);
+
+		$currentStateId = $currentState ? $currentState->getStateId() : null;
+		$options = new FieldsetLayout( [
+			'items' => [
+				new FieldLayout(
+					new RadioInputWidget( [
+						'name' => 'translatable-page-state',
+						'value' => 'ignored',
+						'selected' => $currentStateId === TranslatableBundleState::IGNORE
+					] ),
+					[
+						'label' => $this->msg( 'tpt-translation-settings-ignore' )->text(),
+						'align' => 'inline',
+						'help' => $this->msg( 'tpt-translation-settings-ignore-hint' )->text(),
+						'helpInline' => true,
+					]
+				),
+				new FieldLayout(
+					new RadioInputWidget( [
+						'name' => 'translatable-page-state',
+						'value' => 'unstable',
+						'selected' => $currentStateId === null
+					] ),
+					[
+						'label' => $this->msg( 'tpt-translation-settings-unstable' )->text(),
+						'align' => 'inline',
+						'help' => $this->msg( 'tpt-translation-settings-unstable-hint' )->text(),
+						'helpInline' => true,
+					]
+				),
+				new FieldLayout(
+					new RadioInputWidget( [
+						'name' => 'translatable-page-state',
+						'value' => 'proposed',
+						'selected' => $currentStateId === TranslatableBundleState::PROPOSE
+					] ),
+					[
+						'label' => $this->msg( 'tpt-translation-settings-propose' )->text(),
+						'align' => 'inline',
+						'help' => $this->msg( 'tpt-translation-settings-propose-hint' )->text(),
+						'helpInline' => true,
+					]
+				),
+			],
+		] );
+
+		$out->addHTML( $options->toString() );
+
+		$submitButton = new FieldLayout(
+			new ButtonInputWidget( [
+				'label' => $this->msg( 'tpt-translation-settings-save' )->text(),
+				'type' => 'submit',
+				'flags' => [ 'primary', 'progressive' ],
+				'disabled' => $block !== null,
+			] )
+		);
+
+		$out->addHTML( $submitButton->toString() );
+		$out->addHTML( Html::closeElement( 'form' ) );
+	}
+
+	private function handleTranslationState( Title $title, string $selectedState ): void {
+		$validStateValues = [ 'ignored', 'unstable', 'proposed' ];
+		$out = $this->getOutput();
+		if ( !in_array( $selectedState, $validStateValues ) ) {
+			throw new InvalidArgumentException( "Invalid translation state selected: $selectedState" );
+		}
+
+		$user = $this->getUser();
+		if ( !$this->translatablePageView->canManageTranslationSettings( $title, $user ) ) {
+			$out->wrapWikiMsg( Html::errorBox( "$1" ), 'tpt-translation-settings-restricted' );
+			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
+			return;
+		}
+
+		$bundleState = TranslatableBundleState::newFromText( $selectedState );
+		if ( $selectedState === 'unstable' ) {
+			$this->translatablePageStateStore->remove( $title );
+		} else {
+			$this->translatablePageStateStore->set( $title, $bundleState );
+		}
+
+		$this->displayStateInfoMessage( $title, $bundleState );
+		$out->setPageTitle( $this->msg( 'tpt-translation-settings-page-title' )->text() );
+		$out->addWikiMsg( 'tpt-list-pages-in-translations' );
+	}
+
+	private function addPageForm(
+		Title $target,
+		string $formClass,
+		string $action,
+		?int $revision
+	): void {
+		$formParams = [
+			'method' => 'post',
+			'action' => $this->getPageTitle()->getLocalURL(),
+			'class' => $formClass
+		];
+
+		$this->getOutput()->addHTML(
+			Xml::openElement( 'form', $formParams ) .
+			Html::hidden( 'do', $action ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
+			( $revision ? Html::hidden( 'revision', $revision ) : '' ) .
+			Html::hidden( 'target', $target->getPrefixedText() ) .
+			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() )
+		);
+	}
+
+	private function displayStateInfoMessage( Title $title, TranslatableBundleState $bundleState ): void {
+		$stateId = $bundleState->getStateId();
+		if ( $stateId === TranslatableBundleState::UNSTABLE ) {
+			$infoMessage = $this->msg( 'tpt-translation-settings-unstable-notice' );
+		} elseif ( $stateId === TranslatableBundleState::PROPOSE ) {
+			$userHasPageTranslationRight = $this->getUser()->isAllowed( 'pagetranslation' );
+			if ( $userHasPageTranslationRight ) {
+				$infoMessage = $this->msg( 'tpt-translation-settings-proposed-pagetranslation-notice' )->params(
+					'https://www.mediawiki.org/wiki/Special:MyLanguage/' .
+					'Help:Extension:Translate/Page_translation_administration',
+					$title->getFullURL( 'action=edit' ),
+					SpecialPage::getTitleFor( 'PagePreparation' )
+						->getFullURL( [ 'page' => $title->getPrefixedText() ] )
+				);
+			} else {
+				$infoMessage = $this->msg( 'tpt-translation-settings-proposed-editor-notice' );
+			}
+		} else {
+			$infoMessage = $this->msg( 'tpt-translation-settings-ignored-notice' );
+		}
+
+		$this->getOutput()->wrapWikiMsg( Html::noticeBox( '$1', '' ), $infoMessage );
+	}
+
+	private function getBlock( WebRequest $request, User $user, Title $title ): ?ErrorPageError {
+		if ( $this->permissionManager->isBlockedFrom( $user, $title, !$request->wasPosted() ) ) {
+			$block = $user->getBlock();
+			if ( $block ) {
+				return new UserBlockedError(
+					$block,
+					$user,
+					$this->getLanguage(),
+					$request->getIP()
+				);
+			}
+
+			return new PermissionsError( 'pagetranslation', [ 'badaccess-group0' ] );
+		}
+
+		return null;
 	}
 }

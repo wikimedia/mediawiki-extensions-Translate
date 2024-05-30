@@ -44,6 +44,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMessageGroupFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStateStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageView;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStatsTableFactory;
@@ -407,6 +408,12 @@ return [
 		);
 	},
 
+	'Translate:TranslatablePageStateStore' => static function (
+		MediaWikiServices $services
+	): TranslatablePageStateStore {
+		return new TranslatablePageStateStore( $services->get( 'Translate:PersistentCache' ) );
+	},
+
 	'Translate:TranslatablePageStore' => static function ( MediaWikiServices $services ): TranslatablePageStore
 	{
 		return new TranslatablePageStore(
@@ -423,6 +430,7 @@ return [
 	'Translate:TranslatablePageView' => static function ( MediaWikiServices $services ): TranslatablePageView {
 		return new TranslatablePageView(
 			$services->getDBLoadBalancerFactory(),
+			$services->get( 'Translate:TranslatablePageStateStore' ),
 			new ServiceOptions(
 				TranslatablePageView::SERVICE_OPTIONS,
 				$services->getMainConfig()
