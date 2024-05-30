@@ -3,6 +3,7 @@
 	"private": true,
 	"scripts": {
 		"doc": "jsdoc -c jsdoc.json -p",
+		"lint:js": "grunt lint:js",
 		"minify:svg": "svgo --config=.svgo.config.js -q -r -f resources/images/",
 		"test": "grunt test"
 	},

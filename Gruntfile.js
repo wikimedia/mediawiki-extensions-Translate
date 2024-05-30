@@ -28,7 +28,6 @@ module.exports = function ( grunt ) {
 				'!resources/lib/**'
 			]
 		},
-
 		banana: Object.assign( conf.MessagesDirs, {
 			options: {
 				requireLowerCase: 'initial'
@@ -37,5 +36,6 @@ module.exports = function ( grunt ) {
 	} );
 
 	grunt.registerTask( 'test', [ 'eslint', 'banana', 'stylelint' ] );
+	grunt.registerTask( 'lint:js', [ 'eslint' ] );
 	grunt.registerTask( 'default', 'test' );
 };
