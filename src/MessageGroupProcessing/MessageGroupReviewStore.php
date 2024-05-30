@@ -38,7 +38,9 @@ class MessageGroupReviewStore {
 			->where( [
 				'tgr_group' => self::getGroupIdForDatabase( $group->getId() ),
 				'tgr_lang' => $code
-			] )->fetchField();
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 
 	/** @return bool true if the message group state changed, otherwise false */
