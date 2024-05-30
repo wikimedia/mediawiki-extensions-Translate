@@ -228,6 +228,7 @@ class MessageGroupStats {
 				'tgs_proofread' => 'SUM(tgs_proofread)'
 			] )
 			->groupBy( 'tgs_lang' )
+			->caller( __METHOD__ )
 			->fetchResultSet();
 
 		$allLanguages = self::getLanguages();

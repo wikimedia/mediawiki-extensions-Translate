@@ -179,6 +179,7 @@ class MessageGroupSubscription {
 
 		return $this->userIdentityLookup->newSelectQueryBuilder()
 			->whereUserIds( $groupSubscriberIds )
+			->caller( __METHOD__ )
 			->fetchUserIdentities();
 	}
 
