@@ -18,7 +18,7 @@ class TranslatablePageStatus implements TranslatableBundleStatus {
 	public const OUTDATED = 3;
 	public const BROKEN = 4;
 
-	private $status;
+	private int $status;
 
 	public function __construct( int $status ) {
 		if ( !in_array( $status, [ self::PROPOSED, self::ACTIVE, self::OUTDATED, self::BROKEN ] ) ) {
