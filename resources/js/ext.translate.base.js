@@ -9,12 +9,14 @@
 
 		/**
 		 * A cache for language stats loaded from API, indexed by language code
+		 *
 		 * @private
 		 */
 		languagestats: {},
 
 		/**
 		 * Storage for language stats loader functions from API, indexed by language code
+		 *
 		 * @private
 		 */
 		languageStatsLoader: {},
@@ -206,7 +208,7 @@
 		 * Checks if there are any unsaved edits in Special:Translate
 		 *
 		 * @private
-		 * @returns {boolean|number}
+		 * @return {boolean|number}
 		 */
 		isDirty: function () {
 			// Something being typed in the current editor.
