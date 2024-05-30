@@ -31,6 +31,7 @@
 	"translate-tag-markthisagain": "చివరిసారి <span class=\"plainlinks\">[$2 అనువాదానికి గుర్తించినప్పటి నుండి]</span> ఈ పేజీకి <span class=\"plainlinks\">[$1 మార్పులు]</span> జరిగాయి.",
 	"tpt-languages-legend": "ఇతర భాషలు:",
 	"tpt-languages-nonzero": "$1 ($2% అనువాదమైంది)",
+	"tpt-discouraged-language-force-header": "ఈ పేజీని $1 లోకి అనువదించలేరు.",
 	"tpt-aggregategroup-add": "చేర్చు",
 	"tpt-aggregategroup-save": "భద్రపరచు",
 	"tpt-aggregategroup-new-name": "పేరు:",

@@ -42,7 +42,9 @@
 			"Yasten",
 			"Yumeki",
 			"Zcqsc06",
-			"Zetud"
+			"Zetud",
+			"SleaY",
+			"U.T."
 		]
 	},
 	"translate": "Traduire",
@@ -498,5 +500,6 @@
 	"log-action-filter-translationreview-message": "Relecture des messages de traduction individuels",
 	"log-action-filter-translationreview-group": "Modifications d’état de la progression des traductions",
 	"logentry-import-translatable-bundle": "$1{{GENDER:$2|}} a importé un groupe de messages traduisibles « $3 »",
-	"log-action-filter-import-translatable-bundle": "Importation des groupes de messages traduisibles"
+	"log-action-filter-import-translatable-bundle": "Importation des groupes de messages traduisibles",
+	"translate-hidetranslations": "Masquer les pages de traduction"
 }
