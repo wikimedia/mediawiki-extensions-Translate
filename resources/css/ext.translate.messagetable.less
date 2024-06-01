@@ -1,6 +1,6 @@
 @import '../lib/codex-design-tokens/theme-wikimedia-ui-legacy.less';
 @import 'mediawiki.skin.variables.less';
-@import 'mediawiki.mixins';
+@import 'mediawiki.mixins.less';
 
 /* Default colors */
 .tux-messagelist {
@@ -98,20 +98,20 @@
 }
 
 .tux-status-unsaved {
-	.background-image( '../images/label-pen.svg' );
+	background-image: url( ../images/label-pen.svg );
 }
 
 .tux-status-translated,
 .tux-status-proofread {
-	.background-image( '../images/label-tick.svg' );
+	background-image: url( ../images/label-tick.svg );
 }
 
 .tux-status-fuzzy {
-	.background-image( '../images/label-clock.svg' );
+	background-image: url( ../images/label-clock.svg );
 }
 
 .tux-list-edit a {
-	.background-image( '../images/action-edit.svg' );
+	background-image: url( ../images/action-edit.svg );
 	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
@@ -219,11 +219,11 @@
 }
 
 .tux-action-bar .translate-mode-button::before {
-	.background-image( '../images/view-list.svg' );
+	background-image: url( ../images/view-list.svg );
 }
 
 .tux-action-bar .translate-mode-button.down::before {
-	.background-image( '../images/view-list-hi.svg' );
+	background-image: url( ../images/view-list-hi.svg );
 }
 
 .tux-action-bar .page-mode-button {
@@ -231,11 +231,11 @@
 }
 
 .tux-action-bar .page-mode-button::before {
-	.background-image( '../images/view-page.svg' );
+	background-image: url( ../images/view-page.svg );
 }
 
 .tux-action-bar .page-mode-button.down::before {
-	.background-image( '../images/view-page-hi.svg' );
+	background-image: url( ../images/view-page-hi.svg );
 }
 
 .tux-action-bar .proofread-mode-button {
@@ -243,11 +243,11 @@
 }
 
 .tux-action-bar .proofread-mode-button::before {
-	.background-image( '../images/view-proofread.svg' );
+	background-image: url( ../images/view-proofread.svg );
 }
 
 .tux-action-bar .proofread-mode-button.down::before {
-	.background-image( '../images/view-proofread-hi.svg' );
+	background-image: url( ../images/view-proofread-hi.svg );
 }
 
 .tux-message-filter-result {
