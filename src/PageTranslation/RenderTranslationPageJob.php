@@ -133,8 +133,6 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 					);
 				}
 			}
-
-			$this->logInfo( 'Finished page edit operation' );
 		}
 
 		Hooks::$allowTargetEdit = false;
