@@ -98,7 +98,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		// Real stuff starts here
 		$bundle = $this->bundleFactory->getBundle( $this->oldTitle );
 		if ( $bundle && $bundle->isMoveable() ) {
-			$this->getOutput()->setPageTitle( $this->getSpecialPageTitle( $bundle ) );
+			$this->getOutput()->setPageTitleMsg( $this->getSpecialPageTitle( $bundle ) );
 
 			if ( !$user->isAllowed( 'pagetranslation' ) ) {
 				throw new PermissionsError( 'pagetranslation' );

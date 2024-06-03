@@ -101,7 +101,7 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			$this->code = null;
 		}
 
-		$out->setPageTitle(
+		$out->setPageTitleMsg(
 			$this->msg( self::PAGE_TITLE_MSG[ $this->entityType ], $this->title->getPrefixedText() )
 		);
 
