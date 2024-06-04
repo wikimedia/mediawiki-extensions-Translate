@@ -33,7 +33,9 @@
 			"Sanbec",
 			"Translationista",
 			"Vivaelcelta",
-			"No se"
+			"No se",
+			"AnupamM",
+			"Eulalio"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
@@ -258,5 +260,6 @@
 	"tpt-unlink-button": "Eliminar de la traducción",
 	"tpt-unlink-summary": "Eliminar página de la traducción",
 	"tpt-generic-confirm": "Confirma la acción.",
-	"tpt-generic-button": "Confirmar"
+	"tpt-generic-button": "Confirmar",
+	"tag-translate-translation-pages-description": "Ediciones automáticas a páginas de traducción mediante la extensión Traducir"
 }
