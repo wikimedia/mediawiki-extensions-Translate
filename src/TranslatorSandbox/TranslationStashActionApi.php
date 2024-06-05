@@ -66,12 +66,13 @@ class TranslationStashActionApi extends ApiBase {
 				$this->dieWithError( [ 'apierror-missingparam', 'translation' ] );
 			}
 
+			$metadata = $params['metadata'] ? FormatJson::decode( $params['metadata'], true ) : null;
 			// @todo: Return value of Title::newFromText not checked
 			$translation = new StashedTranslation(
 				$user,
 				Title::newFromText( $params['title'] ),
 				$params['translation'],
-				FormatJson::decode( $params['metadata'], true )
+				$metadata
 			);
 			$stash->addTranslation( $translation );
 		}
