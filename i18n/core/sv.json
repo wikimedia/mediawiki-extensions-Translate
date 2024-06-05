@@ -373,6 +373,8 @@
 	"tux-editor-placeholder-language": "Din översättning på $1",
 	"tux-editor-editsummary-placeholder": "Förklara dina ändringar (valfritt)",
 	"tux-editor-paste-original-button-label": "Klistra in källtext",
+	"tux-editor-copy-original-button-label": "Kopiera källtext",
+	"tux-editor-copied-original-button-label": "Kopierades!",
 	"tux-editor-discard-changes-button-label": "Ta bort ändringar",
 	"tux-editor-save-button-label": "Publicera översättning",
 	"tux-editor-skip-button-label": "Hoppa över till nästa",
@@ -475,5 +477,13 @@
 	"log-action-filter-translationreview-message": "Granskning av individuella översättningsmeddelanden",
 	"log-action-filter-translationreview-group": "Ändringar i förloppsstatus för översättningar",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importerade}} en översättbar bunt $3",
-	"log-action-filter-import-translatable-bundle": "Översättbar buntimport"
+	"log-action-filter-import-translatable-bundle": "Översättbar buntimport",
+	"translate-hidetranslations": "Dölj översättningssidor",
+	"echo-category-title-translate-message-group-subscription": "Prenumerationer på översättbara meddelandegrupper",
+	"echo-pref-tooltip-translate-message-group-subscription": "Meddela mig om förändringar i översättbara meddelandegrupper som jag prenumererar på.",
+	"notification-bundle-header-message-group-subscription": "Översättningsuppdateringar på $1 prenumererade meddelande{{PLURAL:$1|grupp|grupper}}",
+	"notification-header-message-group-subscription": "Det finns översättningsuppdateringar för $1",
+	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Nytt meddelande|Nya meddelanden}} i $1",
+	"notification-body-translate-mgs-message-added": "Lade till $1 {{PLURAL:$1|meddelande|meddelanden}}",
+	"notification-link-mgs-group-translate": "Översätt $1"
 }
