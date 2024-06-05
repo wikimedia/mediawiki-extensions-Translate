@@ -411,7 +411,10 @@ return [
 	'Translate:TranslatablePageStateStore' => static function (
 		MediaWikiServices $services
 	): TranslatablePageStateStore {
-		return new TranslatablePageStateStore( $services->get( 'Translate:PersistentCache' ) );
+		return new TranslatablePageStateStore(
+			$services->get( 'Translate:PersistentCache' ),
+			$services->getPageStore()
+		);
 	},
 
 	'Translate:TranslatablePageStore' => static function ( MediaWikiServices $services ): TranslatablePageStore

@@ -22,6 +22,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Page\PageRecord;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -469,6 +470,18 @@ class PageTranslationSpecialPage extends SpecialPage {
 	 * @phan-return array{proposed:array[],active:array[],broken:array[],outdated:array[]}
 	 */
 	private function classifyPages( array $pages ): array {
+		$out = [
+			// The ideal state for pages: marked and up to date
+			'active' => [],
+			'proposed' => [],
+			'outdated' => [],
+			'broken' => [],
+		];
+
+		if ( $pages === [] ) {
+			return $out;
+		}
+
 		// Preload stuff for performance
 		$messageGroupIdsForPreload = [];
 		foreach ( $pages as $i => $page ) {
@@ -481,14 +494,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$messageGroupIdsForPreload,
 			[ 'transclusion', 'version' ]
 		);
-
-		$out = [
-			// The ideal state for pages: marked and up to date
-			'active' => [],
-			'proposed' => [],
-			'outdated' => [],
-			'broken' => [],
-		];
 
 		foreach ( $pages as $page ) {
 			$groupId = $page['groupid'];
@@ -520,7 +525,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$res = self::loadPagesFromDB();
 		$allPages = self::buildPageArray( $res );
-		if ( !count( $allPages ) ) {
+		$pagesWithProposedState = $this->translatablePageStateStore->getRequested();
+
+		if ( !count( $allPages ) && !count( $pagesWithProposedState ) ) {
 			$out->addWikiMsg( 'tpt-list-nopages' );
 
 			return;
@@ -531,15 +538,26 @@ class PageTranslationSpecialPage extends SpecialPage {
 		foreach ( $allPages as $page ) {
 			$lb->addObj( $page['title'] );
 		}
+
+		foreach ( $pagesWithProposedState as $title ) {
+			$lb->addObj( $title );
+		}
 		$lb->execute();
 
 		$types = $this->classifyPages( $allPages );
 
 		$pages = $types['proposed'];
-		if ( $pages ) {
+		if ( $pages || $pagesWithProposedState ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-new-pages-title' );
-			$out->addWikiMsg( 'tpt-new-pages', count( $pages ) );
-			$out->addHTML( $this->getPageList( $pages, 'proposed' ) );
+			if ( $pages ) {
+				$out->addWikiMsg( 'tpt-new-pages', count( $pages ) );
+				$out->addHTML( $this->getPageList( $pages, 'proposed' ) );
+			}
+
+			if ( $pagesWithProposedState ) {
+				$out->addWikiMsg( 'tpt-proposed-state-pages', count( $pagesWithProposedState ) );
+				$out->addHTML( $this->displayPagesWithProposedState( $pagesWithProposedState ) );
+			}
 		}
 
 		$pages = $types['broken'];
@@ -1001,7 +1019,26 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$items[] = "<li class='mw-tpt-pagelist-item'>$link $tagList $acts</li>";
 		}
 
-		return '<ol>' . implode( "", $items ) . '</ol>';
+		return '<ol>' . implode( '', $items ) . '</ol>';
+	}
+
+	/** @param PageRecord[] $pagesWithProposedState */
+	private function displayPagesWithProposedState( array $pagesWithProposedState ): string {
+		$items = [];
+		$preparePageAction = $this->msg( 'tpt-prepare-page' )->text();
+		$preparePageTooltip = $this->msg( 'tpt-prepare-page-tooltip' )->text();
+		$linkRenderer = $this->getLinkRenderer();
+		foreach ( $pagesWithProposedState as $pageRecord ) {
+			$link = $linkRenderer->makeKnownLink( $pageRecord );
+			$action = $linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'PagePreparation' ),
+				$preparePageAction,
+				[ 'title' => $preparePageTooltip ],
+				[ 'page' => ( Title::newFromPageReference( $pageRecord ) )->getPrefixedText() ]
+			);
+			$items[] = "<li class='mw-tpt-pagelist-item'>$link <div>$action</div></li>";
+		}
+		return '<ol>' . implode( '', $items ) . '</ol>';
 	}
 
 	private function showTranslationSettings( Title $target, ?ErrorPageError $block ): void {

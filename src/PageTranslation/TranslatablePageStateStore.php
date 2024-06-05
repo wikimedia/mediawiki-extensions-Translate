@@ -7,6 +7,8 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentCacheEntry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleState;
 use MediaWiki\Page\PageIdentity;
+use MediaWiki\Page\PageRecord;
+use MediaWiki\Page\PageStore;
 
 /**
  * Manage translation state for translatable pages
@@ -16,9 +18,14 @@ use MediaWiki\Page\PageIdentity;
  */
 class TranslatablePageStateStore {
 	private PersistentCache $persistentCache;
+	private PageStore $pageStore;
 
-	public function __construct( PersistentCache $persistentCache ) {
+	public function __construct(
+		PersistentCache $persistentCache,
+		PageStore $pageStore
+	) {
 		$this->persistentCache = $persistentCache;
+		$this->pageStore = $pageStore;
 	}
 
 	public function remove( PageIdentity $pageIdentity ): void {
@@ -45,11 +52,31 @@ class TranslatablePageStateStore {
 		return TranslatableBundleState::fromJson( $entry[0]->value() );
 	}
 
+	/** @return PageRecord[] */
+	public function getRequested(): array {
+		$proposedState = new TranslatableBundleState( TranslatableBundleState::PROPOSE );
+		$entries = $this->persistentCache->getByTag( $this->getCacheTag( $proposedState ) );
+
+		$pageIds = [];
+		foreach ( $entries as $entry ) {
+			$pageIds[] = $this->getPageIdFromCacheKey( $entry->key() );
+		}
+
+		return $this->pageStore->newSelectQueryBuilder()
+			->wherePageIds( $pageIds )
+			->fetchPageRecordArray();
+	}
+
 	private function getCacheKey( PageIdentity $pageIdentity ): string {
 		return 'page-translation-state-' . $pageIdentity->getId();
 	}
 
 	private function getCacheTag( TranslatableBundleState $state ): string {
 		return "tps_%state_{$state->getStateText()}%";
+	}
+
+	private function getPageIdFromCacheKey( string $key ): int {
+		$parts = explode( '-', $key );
+		return (int)end( $parts );
 	}
 }
