@@ -3,8 +3,8 @@
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 
 /**
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups
  * @group Database
- * @covers MessageGroupLoader
  */
 class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;

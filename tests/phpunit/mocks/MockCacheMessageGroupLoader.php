@@ -1,9 +1,8 @@
 <?php
 
-class MockCacheMessageGroupLoader extends MessageGroupLoader
-	implements CachedMessageGroupLoader {
+class MockCacheMessageGroupLoader implements MessageGroupLoader, CachedMessageGroupLoader {
 
-	public function getGroups() {
+	public function getGroups(): array {
 		return [];
 	}
 
@@ -11,7 +10,7 @@ class MockCacheMessageGroupLoader extends MessageGroupLoader
 		return [];
 	}
 
-	public function clearCache() {
+	public function clearCache(): void {
 	}
 
 	public static function registerLoader( array &$groupLoader, array $deps ) {

@@ -11,13 +11,8 @@
  * Loads WorkflowStatesMessageGroup, and handles the related cache.
  * @since 2019.05
  */
-class WorkflowStatesMessageGroupLoader extends MessageGroupLoader {
-	/**
-	 * Fetches configured WorkflowStatesMessageGroup
-	 *
-	 * @return WorkflowStatesMessageGroup[]
-	 */
-	public function getGroups() {
+class WorkflowStatesMessageGroupLoader implements MessageGroupLoader {
+	public function getGroups(): array {
 		global $wgTranslateWorkflowStates;
 		$groups = [];
 		if ( $wgTranslateWorkflowStates ) {

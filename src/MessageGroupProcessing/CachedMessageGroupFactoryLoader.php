@@ -18,7 +18,7 @@ use Wikimedia\Rdbms\IConnectionProvider;
  * @license GPL-2.0-or-later
  * @author Niklas Laxström
  */
-class CachedMessageGroupFactoryLoader extends MessageGroupLoader implements CachedMessageGroupLoader {
+class CachedMessageGroupFactoryLoader implements CachedMessageGroupLoader, MessageGroupLoader {
 	private WANObjectCache $cache;
 	private IConnectionProvider $connectionProvider;
 	private string $cacheKey;
