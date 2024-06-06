@@ -356,5 +356,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "Message on [[Special:ManageMessageGroupSubscriptions]] after pages are removed from the watchlist.\n\nFollowed by list of page titles which are removed.\n\nParameters:\n* $1 - number of message groups which are removed\nSee also:\n* {{msg-mw|manage-message-group-subscriptions-raw-added}}\n* {{msg-mw|manage-message-group-subscriptions-raw-removed}}",
 	"tpt-manage-message-group-subscriptions-raw-titles": "Text above edit box containing items being watched on [[Special:ManageMessageGroupSubscriptions/raw]].",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "'''\"Check\" refers to checking a ☑️ box, not to testing.'''\n\nLabel for checkbox to select all items.",
-	"tpt-manage-message-group-subscriptions-raw-submit": "Text of submit button on [[Special:ManageMessageGroupSubscriptions/raw]].\n\nSee also:\n* {{msg-mw|Tpt-manage-message-group-subscriptions-raw-submit}}"
+	"tpt-manage-message-group-subscriptions-raw-submit": "Text of submit button on [[Special:ManageMessageGroupSubscriptions/raw]].\n\nSee also:\n* {{msg-mw|Tpt-manage-message-group-subscriptions-raw-submit}}",
+	"translate-category-summary": "Edit summary used by FuzzyBot when creating categories.\n\nParameters:\n* $1 - the name of the page that triggered the category creation."
 }

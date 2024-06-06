@@ -322,6 +322,9 @@ class HookHandler implements
 			// Prevent renaming of translatable pages and their translation and translation units
 			$hooks['ReplaceTextFilterPageTitlesForRename'][] =
 				[ Hooks::class, 'onReplaceTextFilterPageTitlesForRename' ];
+
+			// Auto-create translated categories when not empty
+			$hooks['LinksUpdateComplete'][] = [ Hooks::class, 'onLinksUpdateComplete' ];
 		}
 
 		global $wgTranslateUseSandbox;

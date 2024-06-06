@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use Category;
 use JobQueueGroup;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
@@ -26,6 +27,7 @@ use RecentChange;
  */
 class RenderTranslationPageJob extends GenericTranslateJob {
 	public const ACTION_DELETE = 'delete';
+	public const ACTION_CATEGORIZATION = 'categorization';
 
 	public static function newJob(
 		Title $target,
@@ -92,7 +94,15 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		// $percentageTranslated is modified by reference
 		$content = $tpPage->getPageContent( $mwServices->getParser(), $percentageTranslated );
 		$translationPageTitleExists = $translationPageTitle->exists();
-		if ( $percentageTranslated === 0 && !$translationPageTitleExists ) {
+		if ( $this->isCategoryTrigger() ) {
+			$isNonEmptyCategory = true;
+		} elseif ( $translationPageTitle->inNamespace( NS_CATEGORY ) ) {
+			$cat = Category::newFromTitle( $translationPageTitle );
+			$isNonEmptyCategory = $cat->getMemberCount() > 0;
+		} else {
+			$isNonEmptyCategory = false;
+		}
+		if ( $percentageTranslated === 0 && !$translationPageTitleExists && !$isNonEmptyCategory ) {
 			Hooks::$allowTargetEdit = false;
 			$this->logInfo( 'No translations found and translation page does not exist. Nothing to do.' );
 			return true;
@@ -101,7 +111,8 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		if (
 			$percentageTranslated === 0 &&
 			$translationPageTitleExists &&
-			$this->hasOnlyFuzzyBotAsAuthor( $mwServices->getRevisionStore(), $translationPageTitle )
+			$this->hasOnlyFuzzyBotAsAuthor( $mwServices->getRevisionStore(), $translationPageTitle ) &&
+			!$isNonEmptyCategory
 		) {
 			$this->logInfo( 'Deleting translation page having no translations and modified only by Fuzzybot' );
 			// Page is not translated at all but the translation page exists and has been only edited by FuzzyBot
@@ -181,8 +192,11 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 	}
 
 	private function isDeleteTrigger(): bool {
-		$triggerAction = $this->params['triggerAction'] ?? null;
-		return $triggerAction === self::ACTION_DELETE;
+		return ( $this->params['triggerAction'] ?? null ) === self::ACTION_DELETE;
+	}
+
+	private function isCategoryTrigger(): bool {
+		return ( $this->params['triggerAction'] ?? null ) === self::ACTION_CATEGORIZATION;
 	}
 
 	private function logJobStart(): void {

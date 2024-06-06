@@ -14,6 +14,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
+use MediaWiki\Deferred\LinksUpdate\LinksUpdate;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
@@ -1771,5 +1772,42 @@ class Hooks {
 		return [
 			'pagelink' => SpecialPage::getTitleFor( 'ManageMessageGroupSubscriptions' )->getPrefixedText()
 		];
+	}
+
+	/**
+	 * Create any redlinked categories marked for translation
+	 * Hook: LinksUpdateComplete
+	 */
+	public static function onLinksUpdateComplete( LinksUpdate $linksUpdate ) {
+		$handle = new MessageHandle( $linksUpdate->getTitle() );
+		if ( !Utilities::isTranslationPage( $handle ) ) {
+			return;
+		}
+		$code = $handle->getCode();
+		$categories = $linksUpdate->getParserOutput()->getCategoryNames();
+		$editSummary = wfMessage(
+			'translate-category-summary',
+			$linksUpdate->getTitle()->getText()
+		)->inContentLanguage()->text();
+		foreach ( $categories as $category ) {
+			$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
+			$categoryHandle = new MessageHandle( $categoryTitle );
+			// Only create categories for the same language code to reduce
+			// the potential for very deep recursion if a category is
+			// a member of itself in a different language
+			if ( Utilities::isTranslationPage( $categoryHandle )
+				&& $categoryHandle->getCode() == $code
+				&& !$categoryTitle->exists()
+			) {
+				self::updateTranslationPage(
+					TranslatablePage::isTranslationPage( $categoryTitle ),
+					$code,
+					FuzzyBot::getUser(),
+					0,
+					$editSummary,
+					RenderTranslationPageJob::ACTION_CATEGORIZATION
+				);
+			}
+		}
 	}
 }

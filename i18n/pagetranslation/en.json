@@ -326,5 +326,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "{{PLURAL:$1|1 message group was|$1 message groups were}} removed from your subscriptions:",
 	"tpt-manage-message-group-subscriptions-raw-titles": "Groups:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Check all",
-	"tpt-manage-message-group-subscriptions-raw-submit": "Update subscriptions"
+	"tpt-manage-message-group-subscriptions-raw-submit": "Update subscriptions",
+	"translate-category-summary": "Automatically creating translation of category used on [[$1]]"
 }
