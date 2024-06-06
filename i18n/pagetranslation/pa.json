@@ -24,6 +24,12 @@
 	"tpt-badtitle": "ਦਿੱਤਾ ਗਿਆ ਸਫ਼ਾ ਨਾਂ ($1) ਇੱਕ ਦਰੁਸਤ ਸਿਰਲੇਖ ਨਹੀਂ ਹੈ",
 	"tpt-nosuchpage": "ਸਫ਼ਾ $1 ਮੌਜੂਦ ਨਹੀਂ ਹੈ",
 	"tpt-mark-nochanges": "ਇਸ ਸੁਧਾਈ ਅਤੇ ਆਖ਼ਰੀ ਨਿਸ਼ਾਨਦੇਹ ਸੁਧਾਈ ਵਿੱਚ ਕੋਈ ਫ਼ਰਕ ਨਹੀਂ ਹੈ।",
+	"tpt-list-nopages": "ਕੋਈ ਵੀ ਸਫ਼ਾ ਤਰਜਮੇ ਲਈ ਨਿਸ਼ਾਨਬੱਧ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ ਜਾਂ ਤਰਜਮੇ ਲਈ ਨਿਸ਼ਾਨ-ਬੱਧ ਕਰਨ ਲਈ ਤਿਆਰ ਨਹੀਂ ਹੈ।",
+	"tpt-old-pages-title": "ਤਰਜਮੇ ਵਿੱਚ ਸਫ਼ੇ",
+	"tpt-select-prioritylangs-reason": "ਕਾਰਨ:",
+	"tpt-sections-prioritylangs": "ਤਰਜੀਹੀ ਭਾਸ਼ਾਵਾਂ",
+	"tpt-rev-mark": "ਤਰਜਮੇ ਲਈ ਨਿਸ਼ਾਨ ਲਾਓ",
+	"tpt-rev-unmark": "ਤਰਜਮਾਕਾਰੀ ਤੋਂ ਹਟਾਉ",
 	"translate-tag-translate-link-desc": "ਇਸ ਸਫ਼ੇ ਦਾ ਤਰਜਮਾ ਕਰੋ",
 	"translate-tag-markthis": "ਇਸ ਸਫ਼ੇ ਨੂੰ ਤਰਜਮੇ ਲਈ ਨਿਸ਼ਾਨਦੇਹੀ ਕਰੋ",
 	"tpt-translation-intro": "ਇਹ ਸਫ਼ਾ [[$2]] ਸਫ਼ੇ ਦਾ <span class=\"plainlinks\">[$1 ਤਰਜਮਾ ਕੀਤਾ ਰੂਪ]</span> ਹੈ ਅਤੇ ਤਰਜਮਾਕਾਰੀ $3% ਪੂਰੀ ਹੋਈ ਹੈ।",
@@ -32,6 +38,7 @@
 	"tpt-languages-zero": "ਇਸ ਭਾਸ਼ਾ ਲਈ ਤਰਜਮਾ ਸ਼ੁਰੂ ਕਰੋ",
 	"tpt-languages-nonzero": "$1 ($2% ਤਰਜਮੇ ਪੂਰੇ)",
 	"tpt-tab-translate": "ਤਰਜਮਾ ਕਰੋ",
+	"tpt-translation-restricted-no-reason": "ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਇਸ ਸਫ਼ੇ ਦਾ ਤਰਜਮਾ ਇੱਕ ਤਰਜਮਾ-ਪ੍ਰਬੰਧਕ ਦੁਆਰਾ ਰੋਕਿਆ ਗਿਆ ਹੈ।",
 	"tpt-translation-restricted-reason": "ਕਾਰਨ: $1",
 	"tpt-discouraged-language-force-header": "ਇਸ ਸਫ਼ੇ ਦਾ $1 ਵਿੱਚ ਤਰਜਮਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।",
 	"tpt-aggregategroup-add": "ਜੋੜੋ",
@@ -45,6 +52,10 @@
 	"tpt-aggregategroup-edit-description": "ਵਰਣਨ:",
 	"tpt-aggregategroup-update": "ਸਾਂਭੋ",
 	"tpt-aggregategroup-update-cancel": "ਰੱਦ ਕਰੋ",
+	"log-name-pagetranslation": "ਸਫ਼ੇ ਦੇ ਤਰਜਮਾ ਦਾ ਇੰਦਰਾਜ",
+	"tpt-translate-title": "ਸਫ਼ੇ ਦੇ ਸਿਰਲੇਖ ਦੇ ਤਰਜਮੇ ਦੀ ਆਗਿਆ ਦਿਓ",
+	"pp-save-summary": "ਇਸ ਸਫ਼ੇ ਨੂੰ ਤਰਜਮੇ ਲਈ ਤਿਆਰ ਕੀਤਾ",
 	"tpt-unlink-button": "ਤਰਜਮਾਕਾਰੀ ਤੋਂ ਹਟਾਉ",
-	"tpt-unlink-summary": "ਸਫ਼ੇ ਨੂੰ ਤਰਜਮਾਕਾਰੀ ਤੋਂ ਹਟਾਇਆ"
+	"tpt-unlink-summary": "ਸਫ਼ੇ ਨੂੰ ਤਰਜਮਾਕਾਰੀ ਤੋਂ ਹਟਾਇਆ",
+	"tpt-generic-confirm": "ਕਿਰਪਾ ਕਰਕੇ ਕਾਰਵਾਈ ਦੀ ਤਸਦੀਕ ਕਰੋ।"
 }

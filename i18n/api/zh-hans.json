@@ -13,7 +13,8 @@
 			"TsuyaMarisa",
 			"VulpesVulpes825",
 			"Xiplus",
-			"Yfdyh000"
+			"Yfdyh000",
+			"沈澄心"
 		]
 	},
 	"apihelp-aggregategroups-summary": "管理聚合消息组。",
@@ -126,6 +127,7 @@
 	"apihelp-translationcheck-summary": "验证翻译。",
 	"apihelp-translationcheck-param-title": "带命名空间和语言代码的页面标题。",
 	"apihelp-translationcheck-param-translation": "要验证的翻译。",
+	"apihelp-translationstats-summary": "获取翻译统计",
 	"apihelp-translationcheck-extended-description": "统计数据包括翻译编辑、活跃的译员、新用户、翻译的审核、和审核者。",
 	"apihelp-translationstats-param-group": "要获取统计信息的组列表。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apierror-translate-duplicateaggregategroup": "消息组已存在",
