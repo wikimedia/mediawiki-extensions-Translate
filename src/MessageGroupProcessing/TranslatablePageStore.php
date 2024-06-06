@@ -9,6 +9,7 @@ use IDBAccessObject;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
@@ -122,7 +123,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$this->translatableBundleStatusStore->removeStatus( $title->getId() );
 
 		MessageGroups::singleton()->recache();
-		$this->messageIndex->rebuild();
+		$this->jobQueue->push( RebuildMessageIndexJob::newJob( __METHOD__ ) );
 
 		TranslatablePage::clearSourcePageCache();
 		$translatablePage->getTitle()->invalidateCache();

@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
@@ -89,11 +90,8 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 		MessageBundle::clearSourcePageCache();
 
-		// Notice: currently this code is only called on CLI or in jobs, but this is not very
-		// obvious. messageIndex->rebuild() should never be called during web requests due to
-		// its slowness.
 		MessageGroups::singleton()->recache();
-		$this->messageIndex->rebuild();
+		$this->jobQueue->push( RebuildMessageIndexJob::newJob( __METHOD__ ) );
 	}
 
 	public function validate( Title $pageTitle, MessageBundleContent $content ): void {
