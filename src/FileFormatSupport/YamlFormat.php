@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Utilities\Yaml;
+use RuntimeException;
 
 /**
  * Implements support for message storage in YAML format.
@@ -71,12 +72,16 @@ class YamlFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		$messages = [];
 
+		$collection->filter( 'hastranslation', false );
 		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$value = $m->translation();
-			$value = str_replace( TRANSLATE_FUZZY, '', $value );
+			if ( $value === null ) {
+				throw new RuntimeException( "Expected translation to be present for $key, but found null." );
+			}
 
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			if ( $value === '' ) {
 				continue;
 			}

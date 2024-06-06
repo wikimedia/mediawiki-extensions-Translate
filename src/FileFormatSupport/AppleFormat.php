@@ -7,6 +7,7 @@ use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use RuntimeException;
 
 /**
  * AppleFFS class implements support for Apple .strings files.
@@ -101,9 +102,13 @@ class AppleFormat extends SimpleFormat {
 		$output = '';
 		$mangler = $this->group->getMangler();
 
+		$collection->filter( 'hastranslation', false );
 		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
+			if ( $value === null ) {
+				throw new RuntimeException( "Expected translation to be present for $key, but found null." );
+			}
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
 			if ( $value === '' ) {

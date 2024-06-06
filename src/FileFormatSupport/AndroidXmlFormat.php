@@ -9,6 +9,7 @@ use IntlChar;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+use RuntimeException;
 use SimpleXMLElement;
 
 /**
@@ -164,6 +165,9 @@ class AndroidXmlFormat extends SimpleFormat {
 			$key = $mangler->unmangle( $key );
 
 			$value = $m->translation();
+			if ( $value === null ) {
+				throw new RuntimeException( "Expected translation to be present for $key, but found null." );
+			}
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
 			$plurals = $this->flattener->unflattenCLDRPlurals( '', $value );
