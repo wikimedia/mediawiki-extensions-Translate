@@ -8,11 +8,11 @@ use ApiMain;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * WebAPI module for storing translations for users who are in a sandbox.
@@ -22,30 +22,31 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @since 2013.06
  */
 class TranslationStashActionApi extends ApiBase {
-	/** @var ILoadBalancer */
-	private $loadBalancer;
-	/** @var UserFactory */
-	private $userFactory;
+	private IConnectionProvider $connectionProvider;
+	private UserFactory $userFactory;
+	private MessageIndex $messageIndex;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		ILoadBalancer $loadBalancer,
-		UserFactory $userFactory
+		IConnectionProvider $connectionProvider,
+		UserFactory $userFactory,
+		MessageIndex $messageIndex
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->loadBalancer = $loadBalancer;
+		$this->connectionProvider = $connectionProvider;
 		$this->userFactory = $userFactory;
+		$this->messageIndex = $messageIndex;
 	}
 
 	public function execute(): void {
 		$params = $this->extractRequestParams();
 
-		// The user we are operating on, not necessarly the user making the request
+		// The user we are operating on, not necessarily the user making the request
 		$user = $this->getUser();
 
 		if ( isset( $params['username'] ) ) {
-			if ( $this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
+			if ( $user->isAllowed( 'translate-sandboxmanage' ) ) {
 				$user = $this->userFactory->newFromName( $params['username'] );
 				if ( !$user ) {
 					$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
@@ -55,7 +56,7 @@ class TranslationStashActionApi extends ApiBase {
 			}
 		}
 
-		$stash = new TranslationStashStorage( $this->loadBalancer->getConnection( DB_PRIMARY ) );
+		$stash = new TranslationStashStorage( $this->connectionProvider->getPrimaryDatabase() );
 		$action = $params['subaction'];
 
 		if ( $action === 'add' ) {
@@ -100,7 +101,7 @@ class TranslationStashActionApi extends ApiBase {
 		$definition = '';
 		$comparison = '';
 		if ( $handle->isValid() ) {
-			$groupId = Services::getInstance()->getMessageIndex()->getPrimaryGroupId( $handle );
+			$groupId = $this->messageIndex->getPrimaryGroupId( $handle );
 			$group = MessageGroups::getGroup( $groupId );
 
 			$key = $handle->getKey();

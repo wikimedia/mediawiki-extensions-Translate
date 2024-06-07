@@ -366,8 +366,9 @@ class HookHandler implements
 			$wgAPIModules['translationstash'] = [
 				'class' => TranslationStashActionApi::class,
 				'services' => [
-					'DBLoadBalancer',
-					'UserFactory'
+					'DBLoadBalancerFactory',
+					'UserFactory',
+					'Translate:MessageIndex'
 				]
 			];
 			$wgAPIModules['translatesandbox'] = [
