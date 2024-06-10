@@ -78,6 +78,8 @@
 
 		/**
 		 * Initialize the plugin
+		 *
+		 * @internal
 		 */
 		init: function () {
 			// In case we have already created the editor earlier,
@@ -96,6 +98,8 @@
 
 		/**
 		 * Render the editor UI
+		 *
+		 * @private
 		 */
 		render: function () {
 			this.$editor = $( '<div>' )
@@ -121,6 +125,7 @@
 		/**
 		 * Mark the message as unsaved because of edits, can be resumed later
 		 *
+		 * @private
 		 * @param {string} [highlightClass] Class for background highlighting
 		 */
 		markUnsaved: function ( highlightClass ) {
@@ -140,6 +145,8 @@
 
 		/**
 		 * Mark the message as unsaved because of saving failure.
+		 *
+		 * @private
 		 */
 		markUnsavedFailure: function () {
 			this.markUnsaved( 'tux-notice' );
@@ -147,6 +154,8 @@
 
 		/**
 		 * Mark the message as no longer unsaved
+		 *
+		 * @internal
 		 */
 		markUnunsaved: function () {
 			var $tuxListStatus = this.$editTrigger.find( '.tux-list-status' );
@@ -160,6 +169,8 @@
 
 		/**
 		 * Mark the message as being saved
+		 *
+		 * @private
 		 */
 		markSaving: function () {
 			var $tuxListStatus = this.$editTrigger.find( '.tux-list-status' );
@@ -178,6 +189,8 @@
 
 		/**
 		 * Mark the message as translated and successfully saved.
+		 *
+		 * @private
 		 */
 		markTranslated: function () {
 			this.$editTrigger.find( '.tux-list-status' )
@@ -206,6 +219,8 @@
 
 		/**
 		 * Save the translation
+		 *
+		 * @private
 		 */
 		save: function () {
 			var translateEditor = this;
@@ -309,6 +324,8 @@
 
 		/**
 		 * Success handler for the translation saving.
+		 *
+		 * @private
 		 */
 		onSaveSuccess: function () {
 			this.markTranslated();
@@ -348,6 +365,7 @@
 		/**
 		 * Marks that there was a problem saving a translation.
 		 *
+		 * @private
 		 * @param {string[]} errors Array of HTML notices to display.
 		 */
 		onSaveFail: function ( errors ) {
@@ -374,8 +392,9 @@
 		},
 
 		/**
-		 * Skip the current message.
-		 * Record it to mark as hard.
+		 * Skip the current message. Record it to mark as hard.
+		 *
+		 * @private
 		 */
 		skip: function () {
 			// @TODO devise good algorithm for identifying hard to translate messages
@@ -383,6 +402,8 @@
 
 		/**
 		 * Jump to the next translation editor row.
+		 *
+		 * @private
 		 */
 		next: function () {
 			var $next = this.$editTrigger.next( '.tux-message' );
@@ -418,6 +439,7 @@
 		/**
 		 * Creates a menu element for the message tools.
 		 *
+		 * @private
 		 * @param {string} className Used as the element's CSS class
 		 * @param {Object} query Used as the query in the mw.Uri object
 		 * @param {string} message The message of the label of the menu item
@@ -444,6 +466,7 @@
 		 * Creates an element with a dropdown menu including
 		 * tools for the translators.
 		 *
+		 * @private
 		 * @return {jQuery} The new message tools menu element
 		 */
 		createMessageTools: function () {
@@ -514,6 +537,10 @@
 				.append( $editItem, $historyItem, $deleteItem, $translationsItem, $linkToThisItem );
 		},
 
+		/**
+		 * @private
+		 * @return {jQuery}
+		 */
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				$discardChangesButton = $( [] ),
@@ -947,6 +974,7 @@
 		 * Modifies the save button to provide suitable default action for *unchanged*
 		 * message. It will revert back to normal save button if the text is changed.
 		 *
+		 * @private
 		 * @param {jQuery} $button The save button.
 		 */
 		makeSaveButtonContextSensitive: function ( $button ) {
@@ -977,6 +1005,7 @@
 		 * Modifies the save button to just save the translation as usual. Whether the
 		 * button is enabled or not is controlled elsewhere.
 		 *
+		 * @private
 		 * @param {jQuery} $button The save button.
 		 */
 		makeSaveButtonJustSave: function ( $button ) {
@@ -993,6 +1022,8 @@
 		/**
 		 * Validate the current translation using the API
 		 * and show the notices.
+		 *
+		 * @internal
 		 */
 		validateTranslation: function () {
 			var translateEditor = this,
@@ -1047,6 +1078,7 @@
 		/**
 		 * Remove all notices of given types
 		 *
+		 * @internal
 		 * @param {(string|string[])} types
 		 */
 		removeNotices: function ( types ) {
@@ -1085,6 +1117,7 @@
 		 * added to the bottom. This also means that older notices will
 		 * not be shown by default unless the user clicks "more notices" tab.
 		 *
+		 * @private
 		 * @param {string} notice used as html for the notices display
 		 * @param {string} type used to group the notices.eg: warning, diff, error
 		 * @return {jQuery} the new notice element
@@ -1122,6 +1155,8 @@
 		 * Toggles the class on the more button based on the types of notice displayed, and whether
 		 * the more section is expanded. This is done in order to change the background color of the
 		 * button.
+		 *
+		 * @private
 		 */
 		toggleMoreButtonClass: function () {
 			var $allNotices = this.$editor.find( '.tux-notice-message' ),
@@ -1135,6 +1170,10 @@
 			$moreButton.toggleClass( 'tux-has-errors', errorCount > 0 && !expanded );
 		},
 
+		/**
+		 * @private
+		 * @return {jQuery}
+		 */
 		prepareInfoColumn: function () {
 			var $infoColumn = $( '<div>' ).addClass( 'infocolumn' ),
 				translateEditor = this;
@@ -1265,6 +1304,10 @@
 				);
 		},
 
+		/**
+		 * @internal
+		 * @return {boolean}
+		 */
 		show: function () {
 			if ( !this.$editor ) {
 				this.init();
@@ -1303,6 +1346,10 @@
 			return false;
 		},
 
+		/**
+		 * @private
+		 * @return {boolean}
+		 */
 		hide: function () {
 			// If the user has made changes, make sure they are either
 			// in process of being saved or highlighted as unsaved.
@@ -1331,6 +1378,10 @@
 			return false;
 		},
 
+		/**
+		 * @private
+		 * @param {jQuery} toggleIcon
+		 */
 		infoToggle: function ( toggleIcon ) {
 			if ( this.expanded ) {
 				this.contract( toggleIcon );
@@ -1339,6 +1390,10 @@
 			}
 		},
 
+		/**
+		 * @private
+		 * @param {jQuery} toggleIcon
+		 */
 		contract: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon
@@ -1350,6 +1405,10 @@
 			this.expanded = false;
 		},
 
+		/**
+		 * @private
+		 * @param {jQuery } toggleIcon
+		 */
 		expand: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon
@@ -1364,6 +1423,7 @@
 		/**
 		 * Adds the diff between old and current definitions to the view.
 		 *
+		 * @internal
 		 * @param {Object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
@@ -1391,6 +1451,8 @@
 
 		/**
 		 * Attach event listeners
+		 *
+		 * @internal
 		 */
 		listen: function () {
 			var translateEditor = this;
@@ -1405,6 +1467,7 @@
 		/**
 		 * Makes the textarea large enough for insertables and positions the insertables.
 		 *
+		 * @internal
 		 * @param {jQuery} $textarea Text area.
 		 */
 		resizeInsertables: function ( $textarea ) {
@@ -1418,6 +1481,7 @@
 		/**
 		 * Utility method to display a list of notices on the UI
 		 *
+		 * @private
 		 * @param {Array} notices
 		 * @param {string} noticeType
 		 */
@@ -1429,6 +1493,8 @@
 
 		/**
 		 * Ensures that all the notices are displayed
+		 *
+		 * @private
 		 */
 		showMoreNotices: function () {
 			var $moreNoticesTab = this.$editor.find( '.tux-more-notices' );
@@ -1442,6 +1508,7 @@
 		/**
 		 * Generates the translation editor element based on target language
 		 *
+		 * @private
 		 * @param {string} targetLangCode
 		 * @return {Object} Returns translation editor element
 		 */
