@@ -4,6 +4,9 @@
 ( function () {
 	'use strict';
 	var translateEditorShortcuts = {
+		/**
+		 * @internal
+		 */
 		showShortcuts: function () {
 			// Any better way?
 			var rtl = $( document.body ).is( '.rtl' );
@@ -48,6 +51,9 @@
 			} );
 		},
 
+		/**
+		 * @internal
+		 */
 		hideShortcuts: function () {
 			$( '.shortcut-popup' ).remove();
 		}
