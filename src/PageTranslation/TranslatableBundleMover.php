@@ -18,6 +18,7 @@ use ObjectCache;
 use SplObjectStorage;
 use Status;
 use User;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Contains the core logic to validate and move translatable bundles
@@ -34,6 +35,7 @@ class TranslatableBundleMover {
 	private LinkBatchFactory $linkBatchFactory;
 	private TranslatableBundleFactory $bundleFactory;
 	private SubpageListBuilder $subpageBuilder;
+	private IConnectionProvider $connectionProvider;
 	private bool $pageMoveLimitEnabled = true;
 
 	private const REDIRECTABLE_PAGE_TYPES = [
@@ -50,6 +52,7 @@ class TranslatableBundleMover {
 		LinkBatchFactory $linkBatchFactory,
 		TranslatableBundleFactory $bundleFactory,
 		SubpageListBuilder $subpageBuilder,
+		IConnectionProvider $connectionProvider,
 		?int $pageMoveLimit
 	) {
 		$this->movePageFactory = $movePageFactory;
@@ -58,6 +61,7 @@ class TranslatableBundleMover {
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->bundleFactory = $bundleFactory;
 		$this->subpageBuilder = $subpageBuilder;
+		$this->connectionProvider = $connectionProvider;
 	}
 
 	public function getPageMoveCollection(
@@ -338,6 +342,8 @@ class TranslatableBundleMover {
 		Hooks::$allowTargetEdit = true;
 
 		$processed = 0;
+
+		$this->connectionProvider->getPrimaryDatabase()->startAtomic( __METHOD__ );
 		foreach ( $pagesToMove as $source => $target ) {
 			$sourceTitle = Title::newFromText( $source );
 			$targetTitle = Title::newFromText( $target );
@@ -373,6 +379,7 @@ class TranslatableBundleMover {
 
 			$this->unlock( [ $source, $target ] );
 		}
+		$this->connectionProvider->getPrimaryDatabase()->endAtomic( __METHOD__ );
 
 		Hooks::$allowTargetEdit = false;
 	}

@@ -344,6 +344,7 @@ return [
 			$services->getLinkBatchFactory(),
 			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->get( 'Translate:SubpageListBuilder' ),
+			$services->getDBLoadBalancerFactory(),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},
