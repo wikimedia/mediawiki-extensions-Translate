@@ -185,7 +185,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$filteredAuthors = [];
 		foreach ( $authors as $author => $edits ) {
 			if ( $author !== $fuzzyBot ) {
-				$filteredAuthors[] = $author;
+				$filteredAuthors[] = (string)$author;
 			}
 		}
 
