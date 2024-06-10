@@ -356,6 +356,7 @@
 	"log-description-translationreview": "Журнал всех проверок переводов и групп сообщений.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|проверил|проверила}} перевод «$3»",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|изменил|изменила}} состояние переводов страницы «$3» на $4 язык с «$6» на «$7»",
+	"translate-unfuzzy-comment": "Единица перевода помечена как устаревшая без изменений.",
 	"group-translate-sandboxed": "Неутвержденные переводчики",
 	"group-translate-sandboxed-member": "{{GENDER:$1|неутверждённый переводчик|неутверждённая переводчица}}",
 	"right-translate-sandboxmanage": "Управление участниками, ещё не получившими полных прав (sandboxed users)",

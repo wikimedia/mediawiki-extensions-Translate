@@ -210,7 +210,7 @@
 	"translate-manage-empty-content": "Mae'r cynnwys yn wag",
 	"importtranslations": "Mewnforio cyfieithiadau",
 	"translate-import-from-local": "Ffeil lleol i'w llwytho:",
-	"translate-import-load": "Llwyther y ffeil",
+	"translate-import-load": "Llwytho ffeil",
 	"translate-import-err-dl-failed": "Heb allu nôl y ffeil:\n$1",
 	"translate-import-err-ul-failed": "Methwyd uwchlwytho ffeil",
 	"translate-js-support-unsaved-warning": "Mae gennych gyfieithiadau heb eu cadw.",
@@ -236,6 +236,8 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|is-grŵp}}",
 	"tux-languageselector": "Cyfieithu i",
 	"tux-select-target-language": "Iaith darged ar gyfer cyfieithu",
+	"tux-watch-group": "Gwylio $1",
+	"tux-unwatch-group": "Stopio gwylio $1",
 	"tux-tab-all": "Oll",
 	"tux-tab-untranslated": "Heb eu cyfieithu",
 	"tux-tab-outdated": "Ag angen diweddaru",
@@ -323,5 +325,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grŵp}} mwy",
 	"specialpages-group-translation": "Cyfieithu",
 	"log-action-filter-translationreview": "Math o weithred:",
-	"log-action-filter-translationreview-group": "Newidiadau yn statws cynnydd cyfieithiadau"
+	"log-action-filter-translationreview-group": "Newidiadau yn statws cynnydd cyfieithiadau",
+	"notification-link-mgs-group-translate": "Cyfieithu $1"
 }
