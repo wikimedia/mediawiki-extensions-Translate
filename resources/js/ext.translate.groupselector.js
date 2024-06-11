@@ -12,6 +12,7 @@
 	 *  - recent: list of recent group ids
 	 * groups: list of message group ids
 	 *
+	 * @private
 	 * @param {Element} element
 	 * @param {Object} options
 	 * @param {Object} [options.position] Accepts same values as jquery.ui.position.
@@ -45,6 +46,8 @@
 
 		/**
 		 * Initialize the plugin
+		 *
+		 * @private
 		 */
 		init: function () {
 			this.parentGroupId = this.$trigger.data( 'msggroupid' );
@@ -54,6 +57,8 @@
 
 		/**
 		 * Prepare the selector menu rendering
+		 *
+		 * @private
 		 */
 		prepareSelectorMenu: function () {
 			this.$menu = $( '<div>' )
@@ -113,6 +118,8 @@
 
 		/**
 		 * Show the selector
+		 *
+		 * @private
 		 */
 		show: function () {
 			this.$menu.addClass( 'open' ).removeClass( 'hide' );
@@ -130,6 +137,7 @@
 		/**
 		 * Hide the selector
 		 *
+		 * @private
 		 * @param {jQuery.Event} e
 		 */
 		hide: function ( e ) {
@@ -143,6 +151,8 @@
 
 		/**
 		 * Toggle the menu open/close state
+		 *
+		 * @private
 		 */
 		toggle: function () {
 			if ( this.$menu.hasClass( 'open' ) ) {
@@ -154,6 +164,8 @@
 
 		/**
 		 * Attach event listeners
+		 *
+		 * @private
 		 */
 		listen: function () {
 			var groupSelector = this;
@@ -235,6 +247,8 @@
 
 		/**
 		 * Handle the keypress/keyup events in the message group search box.
+		 *
+		 * @private
 		 */
 		keyup: function () {
 			delay( this.showList.bind( this ), 300 );
@@ -242,6 +256,8 @@
 
 		/**
 		 * Position the menu
+		 *
+		 * @private
 		 */
 		position: function () {
 			if ( this.options.position.of === undefined ) {
@@ -255,6 +271,8 @@
 
 		/**
 		 * Shows suitable list for current view, taking possible filter into account
+		 *
+		 * @private
 		 */
 		showList: function () {
 			var query = this.$search.val().trim().toLowerCase();
@@ -268,6 +286,8 @@
 
 		/**
 		 * Shows an unfiltered list of groups depending on the selected tab.
+		 *
+		 * @private
 		 */
 		showUnfilteredList: function () {
 			var $selected = this.$menu.find( '.tux-grouptab--selected' );
@@ -288,6 +308,8 @@
 		 *
 		 * In case a parent message group has been given, only subgroups of that
 		 * message group are shown, otherwise all top-level message groups are shown.
+		 *
+		 * @private
 		 */
 		showDefaultGroups: function () {
 			var groupSelector = this;
@@ -310,6 +332,8 @@
 
 		/**
 		 * Show recent message groups.
+		 *
+		 * @private
 		 */
 		showRecentGroups: function () {
 			var recent = this.options.recent || [];
@@ -320,6 +344,7 @@
 		/**
 		 * Load message groups.
 		 *
+		 * @private
 		 * @param {Array} groups List of the message group ids to show.
 		 */
 		showSelectedGroups: function ( groups ) {
@@ -348,6 +373,7 @@
 		/**
 		 * Flattens a message group tree.
 		 *
+		 * @private
 		 * @param {Array} messageGroups An array or data object.
 		 * @param {Object} foundIDs The array in which the keys are IDs of message groups that were found already.
 		 */
@@ -377,6 +403,7 @@
 		 * Search the message groups based on label or id.
 		 * Label match is prefix match, while id match is exact match.
 		 *
+		 * @private
 		 * @param {string} query
 		 */
 		filter: function ( query ) {
@@ -414,6 +441,7 @@
 		/**
 		 * Load message groups and relevant properties using the API.
 		 *
+		 * @private
 		 * @return {jQuery.Promise}
 		 */
 		loadGroups: function () {
@@ -443,6 +471,7 @@
 		/**
 		 * Add rows with message groups to the selector.
 		 *
+		 * @private
 		 * @param {Array} groups Array of message group objects to add.
 		 */
 		addGroupRows: function ( groups ) {
@@ -473,6 +502,7 @@
 		/**
 		 * Prepare a message group row in the selector.
 		 *
+		 * @private
 		 * @param {Object} messagegroup object.
 		 * @return {Object} a jQuery object with the groups selector row (<div>).
 		 */
@@ -533,6 +563,7 @@
 		/**
 		 * Check that a DOM event is supported by the $menu jQuery object.
 		 *
+		 * @private
 		 * @param {string} eventName
 		 * @return {boolean}
 		 */
@@ -551,6 +582,7 @@
 		/**
 		 * Only shows message groups translatable to given target language
 		 *
+		 * @internal
 		 * @param {string} targetLanguage
 		 */
 		updateTargetLanguage: function ( targetLanguage ) {
@@ -560,10 +592,14 @@
 		}
 	};
 
-	/*
+	/**
 	 * msggroupselector PLUGIN DEFINITION
+	 *
+	 * @internal
+	 * @param {Object} options
+	 * @param {string[]} groups
+	 * @returns {jQuery}
 	 */
-
 	$.fn.msggroupselector = function ( options, groups ) {
 		return this.each( function () {
 			var $this = $( this ),
@@ -583,6 +619,11 @@
 
 	$.fn.msggroupselector.Constructor = TranslateMessageGroupSelector;
 
+	/**
+	 * Default options when initializing the message group selector
+	 *
+	 * @private
+	 */
 	$.fn.msggroupselector.defaults = {
 		language: 'en',
 		position: {
