@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use DateTime;
 use EchoAttributeManager;
 use MediaWiki\Extension\Notifications\Hooks\BeforeCreateEchoEventHook;
 use MediaWiki\Extension\Notifications\Hooks\EchoGetBundleRulesHook;
@@ -90,11 +89,8 @@ class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, 
 		];
 	}
 
+	/** Notifications for subscriptions are bundled by message group */
 	public function onEchoGetBundleRules( Event $event, string &$bundleKey ) {
-		// We bundle on the basis of timestamp by grouping notifications
-		// sent in 4 hour periods together.
-		$eventDateTime = new DateTime( wfTimestamp( TS_ISO_8601, $event->getTimestamp() ) );
-		$period = floor( (int)$eventDateTime->format( 'H' ) / 4 );
-		$bundleKey = $eventDateTime->format( 'Ymd' ) . $period;
+		$bundleKey = $event->getExtraParam( 'groupId' );
 	}
 }

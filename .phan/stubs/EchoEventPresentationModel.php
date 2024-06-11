@@ -23,6 +23,10 @@ class EchoEventPresentationModel implements MessageLocalizer {
 		return 5;
 	}
 
+	public function getBundledEvents() {
+		return [];
+	}
+
 	/** @return string */
 	public function getCompactHeaderMessageKey() {
 		return "notification-compact-header-stub";

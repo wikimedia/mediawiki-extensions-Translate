@@ -31,20 +31,22 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 	}
 
 	public function getHeaderMessage() {
-		if ( $this->isBundled() ) {
-			$msg = $this->msg( 'notification-bundle-header-message-group-subscription' );
-			$msg->params( $this->getBundleCount() );
-		} else {
-			$msg = $this->msg( 'notification-header-message-group-subscription' );
-			$msg->params( $this->event->getExtraParam( 'groupLabel' ) );
-		}
-
+		$msg = $this->msg( 'notification-header-message-group-subscription' );
+		$msg->params( $this->event->getExtraParam( 'groupLabel' ) );
 		return $msg;
 	}
 
+	public function getCompactHeaderMessageKey(): string {
+		$type = $this->event->getType();
+		if ( $type === 'translate-mgs-message-added' ) {
+			return 'notification-body-translate-mgs-message-added';
+		}
+
+		return parent::getCompactHeaderMessageKey();
+	}
+
 	public function getCompactHeaderMessage() {
-		$msg = $this->msg( parent::getCompactHeaderMessage()->getKey() );
-		$msg->params( $this->event->getExtraParam( 'groupLabel' ) );
+		$msg = $this->msg( $this->getCompactHeaderMessageKey() );
 		$msg->params( $this->getNumberOfChangedMessages() );
 		return $msg;
 	}
@@ -52,11 +54,20 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 	public function getBodyMessage() {
 		$type = $this->event->getType();
 		if ( $type === 'translate-mgs-message-added' ) {
-			$changes = $this->event->getExtraParam( 'changes' );
+			if ( $this->isBundled() ) {
+				$events = $this->getBundledEvents();
+				$events[] = $this->event;
+			} else {
+				$events = [ $this->event ];
+			}
+
+			$addedMessages = 0;
+			foreach ( $events as $event ) {
+				$changes = $event->getExtraParam( 'changes' );
+				$addedMessages += count( $changes[ MessageGroupSubscription::STATE_ADDED ] ?? [] );
+			}
+
 			$msg = $this->msg( 'notification-body-translate-mgs-message-added' );
-
-			$addedMessages = count( $changes[ MessageGroupSubscription::STATE_ADDED ] ?? [] );
-
 			$msg->params( $addedMessages );
 			return $msg;
 		}
