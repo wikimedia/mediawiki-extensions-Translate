@@ -16,6 +16,7 @@
 	 *     targetlangcode: 'hi' // Mandatory target language code
 	 * } );
 	 *
+	 * @internal
 	 * @param {Element} element
 	 * @param {Object} options
 	 * @param {Object} options.message
@@ -34,6 +35,8 @@
 
 		/**
 		 * Initialize the plugin
+		 *
+		 * @private
 		 */
 		init: function () {
 			var that = this;
@@ -64,6 +67,9 @@
 
 		},
 
+		/**
+		 * @private
+		 */
 		render: function () {
 			var sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
 
@@ -111,6 +117,8 @@
 
 		/**
 		 * Attach event listeners
+		 *
+		 * @private
 		 */
 		listen: function () {
 			var that = this;
@@ -122,8 +130,12 @@
 		}
 	};
 
-	/*
+	/**
 	 * pagemode PLUGIN DEFINITION
+	 *
+	 * @internal
+	 * @param {Object} options
+	 * @returns {jQuery}
 	 */
 	$.fn.pagemode = function ( options ) {
 		return this.each( function () {
