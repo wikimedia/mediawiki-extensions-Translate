@@ -496,6 +496,9 @@
 			],
 			"group": [
 				"group"
+			],
+			"unfuzzy": [
+				"unfuzzy"
 			]
 		},
 		"import": {

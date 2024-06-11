@@ -133,13 +133,9 @@ class TranslateEditAddons {
 				// No permission to unfuzzy this unit so leave it fuzzy
 				$fuzzy = true;
 			} elseif ( $editResult->isNullEdit() ) {
-				// Log the otherwise invisible unfuzzying
 				$entry = new ManualLogEntry( 'translationreview', 'unfuzzy' );
-				$entry->setPerformer( $userIdentity );
-				$entry->setTarget( $title );
-				$logId = $entry->insert();
-				$entry->publish( $logId );
-				// And add a null revision
+				// Generate a log entry and null revision for the otherwise
+				// invisible unfuzzying
 				$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 				$nullRevision = $mwServices->getRevisionStore()->newNullRevision(
 					$dbw,
@@ -151,8 +147,15 @@ class TranslateEditAddons {
 					$userIdentity
 				);
 				if ( $nullRevision ) {
-					$mwServices->getRevisionStore()->insertRevisionOn( $nullRevision, $dbw );
+					$nullRevision = $mwServices->getRevisionStore()->insertRevisionOn( $nullRevision, $dbw );
+					$wikiPage->updateRevisionOn( $dbw, $nullRevision, $nullRevision->getParentId() );
+					$entry->setAssociatedRevId( $nullRevision->getId() );
 				}
+
+				$entry->setPerformer( $userIdentity );
+				$entry->setTarget( $title );
+				$logId = $entry->insert();
+				$entry->publish( $logId );
 			}
 		}
 		self::updateFuzzyTag( $title, $revId, $fuzzy );
