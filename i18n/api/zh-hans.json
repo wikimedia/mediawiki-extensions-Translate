@@ -13,7 +13,8 @@
 			"Xiplus",
 			"Yfdyh000",
 			"Amire80",
-			"LowensteinYang"
+			"LowensteinYang",
+			"沈澄心"
 		]
 	},
 	"apihelp-aggregategroups-summary": "管理聚合消息组。",
@@ -125,6 +126,7 @@
 	"apihelp-translationcheck-summary": "验证翻译。",
 	"apihelp-translationcheck-param-title": "带命名空间和语言代码的页面标题。",
 	"apihelp-translationcheck-param-translation": "要验证的翻译。",
+	"apihelp-translationstats-summary": "获取翻译统计",
 	"apierror-translate-duplicateaggregategroup": "消息组已存在",
 	"apierror-translate-fuzzymessage": "不能复核模糊翻译",
 	"apierror-translate-groupreviewdisabled": "未使用消息组复核。",
