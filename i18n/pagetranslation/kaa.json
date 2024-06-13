@@ -13,8 +13,10 @@
 	"tpt-aggregategroup-new-description": "Sıpatlaması (shárt emes):",
 	"tpt-aggregategroup-edit-name": "Atı:",
 	"tpt-aggregategroup-edit-description": "Sıpatlaması:",
+	"tpt-aggregategroup-update-cancel": "Biykar etiw",
 	"log-name-pagetranslation": "Bet awdarması jurnalı",
 	"pt-movepage-reason": "Sebebi:",
 	"pt-deletepage-reason": "Sebebi:",
+	"pm-cancel-button-label": "Biykar etiw",
 	"pp-cancel-button-label": "Biykar etiw"
 }
