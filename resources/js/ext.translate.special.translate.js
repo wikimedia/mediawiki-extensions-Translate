@@ -17,6 +17,7 @@
 		 * Change the group that is currently displayed
 		 * in the TUX translation editor.
 		 *
+		 * @private
 		 * @param {Object} group a message group object.
 		 */
 		changeGroup: function ( group ) {
@@ -39,6 +40,10 @@
 			updateGroupInformation( state );
 		},
 
+		/**
+		 * @private
+		 * @param {string} language
+		 */
 		changeLanguage: function ( language ) {
 			var changes = {
 				language: language,
@@ -55,6 +60,10 @@
 			updateGroupInformation( state );
 		},
 
+		/**
+		 * @internal
+		 * @param {string} filter
+		 */
 		changeFilter: function ( filter ) {
 			if ( !checkDirty() ) {
 				return;
@@ -64,6 +73,11 @@
 			state.messageList.changeSettings( { filter: getActualFilter( filter ) } );
 		},
 
+		/**
+		 * @internal
+		 * @param {Object} params
+		 * @param {boolean} forceChange
+		 */
 		changeUrl: function ( params, forceChange ) {
 			var uri = new mw.Uri( window.location.href );
 
@@ -95,6 +109,7 @@
 		/**
 		 * Updates the navigation tabs.
 		 *
+		 * @private
 		 * @param {Object} params Url parameters to update.
 		 * @since 2013.05
 		 */
