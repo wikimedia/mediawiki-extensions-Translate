@@ -8,8 +8,8 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Language\RawMessage;
-use TranslateUtils;
 
 /**
  * This maintenance script is responsible for refreshing the cached translation progress stats
@@ -99,7 +99,7 @@ class RefreshTranslationProgressStatsMaintenanceScript extends BaseMaintenanceSc
 	}
 
 	private function getLanguages( array $patterns ): array {
-		$allLanguages = array_keys( TranslateUtils::getLanguageNames( null ) );
+		$allLanguages = array_keys( Utilities::getLanguageNames( null ) );
 
 		if ( in_array( '*', $patterns, true ) ) {
 			return $allLanguages;

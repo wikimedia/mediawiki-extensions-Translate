@@ -7,7 +7,7 @@ use MediaWiki\Extension\Translate\Services;
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \TranslatablePage
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePage
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker
  * @group Database
  */
