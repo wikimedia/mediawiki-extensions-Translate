@@ -16,6 +16,7 @@
 	 *     targetlangcode: 'hi' // Mandatory target language code
 	 * } );
 	 *
+	 * @private
 	 * @param {Element} element
 	 * @param {Object} options
 	 * @param {Object} options.message
@@ -34,6 +35,8 @@
 
 		/**
 		 * Initialize the plugin
+		 *
+		 * @private
 		 */
 		init: function () {
 			var that = this;
@@ -78,6 +81,9 @@
 
 		},
 
+		/**
+		 * @private
+		 */
 		render: function () {
 			// List of all reviewers
 			var reviewers = this.message.properties.reviewers || [];
@@ -180,6 +186,9 @@
 			}
 		},
 
+		/**
+		 * @private
+		 */
 		disableProofread: function () {
 			this.message.proofreadable = false;
 			this.$message.find( '.tux-proofread-action' )
@@ -188,6 +197,8 @@
 
 		/**
 		 * Mark the message self translated.
+		 *
+		 * @private
 		 */
 		markSelfTranslation: function () {
 			// Own translations cannot be reviewed, so disable proofread
@@ -203,6 +214,8 @@
 		},
 		/**
 		 * Mark this message as proofread.
+		 *
+		 * @private
 		 */
 		proofread: function () {
 			var message = this.message,
@@ -249,6 +262,8 @@
 
 		/**
 		 * Attach event listeners
+		 *
+		 * @private
 		 */
 		listen: function () {
 			var that = this;
@@ -268,8 +283,12 @@
 		}
 	};
 
-	/*
+	/**
 	 * proofread PLUGIN DEFINITION
+	 *
+	 * @internal
+	 * @param {Object} options
+	 * @returns {jQuery}
 	 */
 	$.fn.proofread = function ( options ) {
 		return this.each( function () {
