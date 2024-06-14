@@ -12,6 +12,7 @@
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
+use MediaWiki\Linker\LinkTarget;
 
 /**
  * Interface for message groups.
@@ -163,4 +164,7 @@ interface MessageGroup {
 	 * @return array|null
 	 */
 	public function getSupportConfig(): ?array;
+
+	/** Returns the page where the messages in the group are defined. */
+	public function getRelatedPage(): ?LinkTarget;
 }

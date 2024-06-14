@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSug
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
@@ -40,8 +41,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		return $this->getTitle()->getPageLanguage()->getCode();
 	}
 
-	/** @return Title */
-	public function getTitle() {
+	public function getTitle(): Title {
 		if ( is_string( $this->title ) ) {
 			$this->title = Title::newFromText( $this->title );
 		}
@@ -208,5 +208,10 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		self::addContext( $msg, $context );
 
 		return $msg->plain() . $customText;
+	}
+
+	/** @inheritDoc */
+	public function getRelatedPage(): ?LinkTarget {
+		return $this->getTitle();
 	}
 }

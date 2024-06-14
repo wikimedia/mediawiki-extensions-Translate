@@ -17,6 +17,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid;
+use MediaWiki\Linker\LinkTarget;
 
 /**
  * This is the interface and base implementation of unmanaged
@@ -320,6 +321,11 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	public function getSupportConfig(): ?array {
+		return null;
+	}
+
+	/** @inheritDoc */
+	public function getRelatedPage(): ?LinkTarget {
 		return null;
 	}
 }

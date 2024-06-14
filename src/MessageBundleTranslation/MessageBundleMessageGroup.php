@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
@@ -32,6 +33,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 	private ?array $data = null;
 	private ?string $description;
 	private ?string $label;
+	private ?Title $title;
 
 	public function __construct(
 		string $groupId,
@@ -227,5 +229,11 @@ class MessageBundleMessageGroup implements MessageGroup {
 	/** @inheritDoc */
 	public function getSupportConfig(): ?array {
 		return null;
+	}
+
+	/** @inheritDoc */
+	public function getRelatedPage(): ?LinkTarget {
+		$this->title ??= Title::newFromID( $this->pageId );
+		return $this->title;
 	}
 }

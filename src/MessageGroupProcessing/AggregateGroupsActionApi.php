@@ -11,9 +11,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
-use WikiPageMessageGroup;
 
 /**
  * API module for managing aggregate message groups
@@ -30,16 +28,19 @@ class AggregateGroupsActionApi extends ApiBase {
 	protected static string $right = 'translate-manage';
 	private const NO_LANGUAGE_CODE = '-';
 	private MessageGroupMetadata $messageGroupMetadata;
+	private AggregateGroupManager $aggregateGroupManager;
 
 	public function __construct(
 		ApiMain $main,
 		string $action,
 		JobQueueGroup $jobQueueGroup,
-		MessageGroupMetadata $messageGroupMetadata
+		MessageGroupMetadata $messageGroupMetadata,
+		AggregateGroupManager $aggregateGroupManager
 	) {
 		parent::__construct( $main, $action );
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->messageGroupMetadata = $messageGroupMetadata;
+		$this->aggregateGroupManager = $aggregateGroupManager;
 	}
 
 	public function execute(): void {
@@ -74,7 +75,7 @@ class AggregateGroupsActionApi extends ApiBase {
 
 			// Add or remove from the list
 			if ( $action === 'associate' ) {
-				if ( !$group instanceof WikiPageMessageGroup ) {
+				if ( !$this->aggregateGroupManager->supportsAggregation( $group ) ) {
 					$this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
 				}
 
@@ -104,13 +105,10 @@ class AggregateGroupsActionApi extends ApiBase {
 				'aggregategroup-id' => $aggregateGroup,
 			];
 
-			/* Note that to allow removing no longer existing groups from
-			 * aggregate message groups, the message group object $group
-			 * might not always be available. In this case we need to fake
-			 * some title. */
-			$title = $group instanceof WikiPageMessageGroup ?
-				$group->getTitle() :
-				Title::newFromText( "Special:Translate/$subgroupId" );
+			/* To allow removing no longer existing groups from aggregate message groups,
+			 * the message group object $group might not always be available.
+			 * In this case we need to fake some title. */
+			$title = $this->aggregateGroupManager->getTargetTitleByGroupId( $subgroupId );
 
 			$entry = new ManualLogEntry( 'pagetranslation', $action );
 			$entry->setPerformer( $this->getUser() );
@@ -119,8 +117,8 @@ class AggregateGroupsActionApi extends ApiBase {
 			// $entry->setComment( $comment );
 			$entry->setParameters( $logParams );
 
-			$logid = $entry->insert();
-			$entry->publish( $logid );
+			$logId = $entry->insert();
+			$entry->publish( $logId );
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
 				$this->dieWithError( [ 'apierror-missingparam', 'aggregategroup' ] );
@@ -187,7 +185,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			$this->messageGroupMetadata->setSubgroups( $aggregateGroupId, [] );
 
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
-			$output['groups'] = self::getAllPages();
+			$output['groups'] = $this->getIncludableGroups();
 			$output['aggregategroupId'] = $aggregateGroupId;
 			// @todo Logging
 		} elseif ( $action === 'update' ) {
@@ -329,12 +327,12 @@ class AggregateGroupsActionApi extends ApiBase {
 		];
 	}
 
-	public static function getAllPages(): array {
+	private function getIncludableGroups(): array {
 		$groups = MessageGroups::getAllGroups();
 		$pages = [];
 		foreach ( $groups as $group ) {
-			if ( $group instanceof WikiPageMessageGroup ) {
-				$pages[$group->getId()] = $group->getTitle()->getPrefixedText();
+			if ( $this->aggregateGroupManager->supportsAggregation( $group ) ) {
+				$pages[$group->getId()] = $group->getLabel( $this->getContext() );
 			}
 		}
 

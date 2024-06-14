@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslationLoader;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupManager;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
@@ -73,6 +74,11 @@ class Services implements ContainerInterface {
 	/** @inheritDoc */
 	public function has( string $id ): bool {
 		return $this->container->has( $id );
+	}
+
+	/** @since 2024.06 */
+	public function getAggregateGroupManager(): AggregateGroupManager {
+		return $this->get( 'Translate:AggregateGroupManager' );
 	}
 
 	/** @since 2024.05 */

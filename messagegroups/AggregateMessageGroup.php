@@ -89,23 +89,23 @@ class AggregateMessageGroup extends MessageGroupBase {
 	protected function loadMessagesFromCache( $groups ) {
 		$messages = [];
 		foreach ( $groups as $group ) {
-			if ( $group instanceof MessageGroupOld ) {
-				$messages += $group->getDefinitions();
-				continue;
-			}
-
 			if ( $group instanceof self ) {
 				$messages += $this->loadMessagesFromCache( $group->getGroups() );
 				continue;
 			}
-			'@phan-var FileBasedMessageGroup $group';
 
-			$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
-			if ( $cache->exists() ) {
-				foreach ( $cache->getKeys() as $key ) {
-					$messages[$key] = $cache->get( $key );
+			if ( $group instanceof FileBasedMessageGroup ) {
+				$cache = $group->getMessageGroupCache( $group->getSourceLanguage() );
+				if ( $cache->exists() ) {
+					foreach ( $cache->getKeys() as $key ) {
+						$messages[$key] = $cache->get( $key );
+					}
 				}
+				continue;
 			}
+
+			$messages += $group->getDefinitions();
+			return $messages;
 		}
 
 		return $messages;

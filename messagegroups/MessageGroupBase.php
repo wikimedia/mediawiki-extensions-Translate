@@ -17,6 +17,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFacto
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -347,5 +348,10 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	public function getSupportConfig(): ?array {
 		return $this->getFromConf( 'BASIC', 'support' );
+	}
+
+	/** @inheritDoc */
+	public function getRelatedPage(): ?LinkTarget {
+		return null;
 	}
 }

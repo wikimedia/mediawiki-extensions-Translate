@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslat
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupManager;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
@@ -67,6 +68,12 @@ use MediaWiki\MediaWikiServices;
 
 /** @phpcs-require-sorted-array */
 return [
+	'Translate:AggregateGroupManager' => static function (
+		MediaWikiServices $services
+	): AggregateGroupManager {
+		return new AggregateGroupManager( $services->getTitleFactory() );
+	},
+
 	'Translate:AggregateGroupMessageGroupFactory' => static function (
 		MediaWikiServices $services
 	): AggregateGroupMessageGroupFactory {

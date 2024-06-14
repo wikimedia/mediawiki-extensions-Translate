@@ -357,7 +357,8 @@
 			"class": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsSpecialPage",
 			"services": [
 				"LinkBatchFactory",
-				"Translate:MessageGroupMetadata"
+				"Translate:MessageGroupMetadata",
+				"Translate:AggregateGroupManager"
 			]
 		},
 		"SearchTranslations": {
@@ -409,7 +410,8 @@
 			"class": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\AggregateGroupsActionApi",
 			"services": [
 				"JobQueueGroup",
-				"Translate:MessageGroupMetadata"
+				"Translate:MessageGroupMetadata",
+				"Translate:AggregateGroupManager"
 			]
 		},
 		"groupreview": {

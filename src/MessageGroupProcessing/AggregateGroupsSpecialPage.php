@@ -9,7 +9,6 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use SpecialPage;
-use WikiPageMessageGroup;
 use Xml;
 use XmlSelect;
 
@@ -27,11 +26,17 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	private LinkBatchFactory $linkBatchFactory;
 	private ?XmlSelect $languageSelector = null;
 	private MessageGroupMetadata $messageGroupMetadata;
+	private AggregateGroupManager $aggregateGroupManager;
 
-	public function __construct( LinkBatchFactory $linkBatchFactory, MessageGroupMetadata $messageGroupMetadata ) {
+	public function __construct(
+		LinkBatchFactory $linkBatchFactory,
+		MessageGroupMetadata $messageGroupMetadata,
+		AggregateGroupManager $aggregateGroupManager
+	) {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->messageGroupMetadata = $messageGroupMetadata;
+		$this->aggregateGroupManager = $aggregateGroupManager;
 	}
 
 	protected function getGroupName(): string {
@@ -58,7 +63,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$aggregates = [];
 		$pages = [];
 		foreach ( $groups as $group ) {
-			if ( $group instanceof WikiPageMessageGroup ) {
+			if ( $this->aggregateGroupManager->supportsAggregation( $group ) ) {
 				$pages[] = $group;
 			} elseif ( $group instanceof AggregateMessageGroup ) {
 				// Filter out AggregateGroups configured in YAML
@@ -243,13 +248,15 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 		// Get the respective groups and sort them
 		$subgroups = MessageGroups::getGroupsById( $subGroupIds );
-		'@phan-var WikiPageMessageGroup[] $subgroups';
 		uasort( $subgroups, [ MessageGroups::class, 'groupLabelSort' ] );
 
-		// Avoid potentially thousands of separate database queries
+		// Avoid potentially thousands of separate database queries from LinkRenderer::makeKnownLink
+		$groupCache = [];
 		$lb = $this->linkBatchFactory->newLinkBatch();
 		foreach ( $subgroups as $group ) {
-			$lb->addObj( $group->getTitle() );
+			$subGroupId = $group->getId();
+			$groupCache[ $subGroupId ] = $this->aggregateGroupManager->getTargetTitleByGroupId( $subGroupId );
+			$lb->addObj( $groupCache[ $subGroupId ] );
 		}
 		$lb->setCaller( __METHOD__ );
 		$lb->execute();
@@ -271,7 +278,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			}
 
 			if ( $group ) {
-				$text = $this->getLinkRenderer()->makeKnownLink( $group->getTitle() );
+				$text = $this->getLinkRenderer()->makeKnownLink( $groupCache[ $group->getId() ] );
 				$note = htmlspecialchars( MessageGroups::getPriority( $id ) );
 			} else {
 				$text = htmlspecialchars( $id );

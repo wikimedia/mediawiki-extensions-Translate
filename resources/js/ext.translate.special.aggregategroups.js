@@ -421,7 +421,7 @@
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups' ],
-			groupTypes: [ 'translatable-pages' ],
+			groupTypes: [ 'translatable-pages', 'message-bundles' ],
 			limit: 50,
 			allowSuggestionsWhenEmpty: true
 		} );
