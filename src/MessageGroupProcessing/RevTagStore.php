@@ -129,6 +129,22 @@ class RevTagStore {
 		unset( $this->tagCache[$articleId] );
 	}
 
+	public function isRevIdFuzzy( int $articleId, int $revisionId ): bool {
+		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$res = $dbw->newSelectQueryBuilder()
+			->select( 'rt_type' )
+			->from( 'revtag' )
+			->where( [
+				'rt_page' => $articleId,
+				'rt_type' => self::FUZZY_TAG,
+				'rt_revision' => $revisionId
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
+
+		return $res !== false;
+	}
+
 	/** Get a list of page ids where the latest revision is either tagged or marked */
 	public static function getTranslatableBundleIds( string ...$revTags ): array {
 		$dbr = Utilities::getSafeReadDB();

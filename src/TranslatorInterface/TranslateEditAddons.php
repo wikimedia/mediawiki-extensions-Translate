@@ -124,7 +124,17 @@ class TranslateEditAddons {
 		$mwServices = MediaWikiServices::getInstance();
 
 		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
-		$wasFuzzy = $handle->isFuzzy();
+		$parentId = $revisionRecord->getParentId();
+		if ( $editResult->isNullEdit() || $parentId == 0 ) {
+			// In this case the page_latest hasn't changed so we can rely on its fuzzy status
+			$wasFuzzy = $handle->isFuzzy();
+		} else {
+			// In this case the page_latest will (probably) have changed. The above might work by chance
+			// since it reads from a replica database which might not have gotten the update yet, but
+			// don't trust it and read the fuzzy status of the parent ID from the database instead
+			$revTagStore = Services::getInstance()->getRevTagStore();
+			$wasFuzzy = $revTagStore->isRevIdFuzzy( $title->getArticleID(), $parentId );
+		}
 		if ( !$fuzzy && $wasFuzzy ) {
 			$title = $mwServices->getTitleFactory()->castFromPageIdentity( $wikiPage );
 			$user = $mwServices->getUserFactory()->newFromUserIdentity( $userIdentity );
@@ -148,8 +158,11 @@ class TranslateEditAddons {
 				);
 				if ( $nullRevision ) {
 					$nullRevision = $mwServices->getRevisionStore()->insertRevisionOn( $nullRevision, $dbw );
+					// Overwrite $revId so the revision ID of the null revision rather than the previous parent
+					// revision is used for any further edits
+					$revId = $nullRevision->getId();
 					$wikiPage->updateRevisionOn( $dbw, $nullRevision, $nullRevision->getParentId() );
-					$entry->setAssociatedRevId( $nullRevision->getId() );
+					$entry->setAssociatedRevId( $revId );
 				}
 
 				$entry->setPerformer( $userIdentity );
