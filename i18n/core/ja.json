@@ -115,7 +115,7 @@
 	"translate-checks-newline-missing-end": "翻訳の末尾に $1 {{PLURAL:$1|個の改行文字}}が不足しています。",
 	"translate-checks-newline-extra-start": "翻訳の先頭に余分な $1 {{PLURAL:$1|個の改行文字}}があります。",
 	"translate-checks-newline-extra-end": "翻訳の末尾に余分な $1 {{PLURAL:$1|個の改行文字}}があります。",
-	"translate-checks-value-not-present": "翻訳は{{PLURAL:$2|1=&#32;$1 と同じでなければなりません|以下の値のいずれかと同じでなければなりません: $1}}。",
+	"translate-checks-value-not-present": "翻訳は{{PLURAL:$2|1=以下の値|以下の値のいずれか}}と同じでなければなりません: $1。",
 	"translate-checks-replacement": "$1 の代わりに $2 を使用してください。",
 	"translate-checks-empty": "内容がない翻訳や空白のみの翻訳は許可されません。",
 	"translate-pref-editassistlang": "補助言語:",
@@ -427,5 +427,6 @@
 	"tux-nojs": "このツールの動作には JavaScript が必要です。JavaScript が無効、作動していないもしくはブラウザーがサポートされていません。",
 	"specialpages-group-translation": "翻訳",
 	"log-action-filter-translationreview": "操作の種類:",
-	"translate-hidetranslations": "翻訳ページを隠す"
+	"translate-hidetranslations": "翻訳ページを隠す",
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|件のメッセージ}}が追加されました"
 }
