@@ -10,7 +10,7 @@
 		/**
 		 * A cache for language stats loaded from API, indexed by language code
 		 *
-		 * @private
+		 * @internal
 		 */
 		languagestats: {},
 
@@ -24,7 +24,7 @@
 		/**
 		 * Get language stats for a language from the API.
 		 *
-		 * @private
+		 * @internal
 		 * @param {string} language Language code.
 		 * @return {jQuery.Deferred}
 		 */
@@ -47,7 +47,7 @@
 		/**
 		 * Get language stats for a language and group from the API
 		 *
-		 * @private
+		 * @internal
 		 * @param {string} language
 		 * @param {string} group
 		 * @return {jQuery.Deferred}

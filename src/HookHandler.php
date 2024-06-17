@@ -434,6 +434,16 @@ class HookHandler implements
 			$wgJobClasses['MessageGroupSubscriptionNotificationJob'] = MessageGroupSubscriptionNotificationJob::class;
 		}
 
+		global $wgTranslateEnableEventLogging;
+		if ( $wgTranslateEnableEventLogging ) {
+			if ( !ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
+				throw new ConfigException(
+					'Translate: Event logging (TranslateEnableEventLogging) is ' .
+					'enabled but EventLogging extension is not installed'
+				);
+			}
+		}
+
 		global $wgTranslateEnableLuaIntegration;
 		if ( $wgTranslateEnableLuaIntegration ) {
 			if ( ExtensionRegistry::getInstance()->isLoaded( 'Scribunto' ) ) {

@@ -1327,6 +1327,7 @@ class Hooks {
 					'language' => $langCode,
 					'action' => 'page',
 					'filter' => '',
+					'action_source' => 'translate_page'
 				]
 			);
 	}

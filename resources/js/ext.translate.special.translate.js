@@ -10,6 +10,7 @@
 	};
 
 	mw.translate = mw.translate || {};
+	var logger = require( 'ext.translate.eventlogginghelpers' );
 
 	mw.translate = $.extend( mw.translate, {
 
@@ -60,6 +61,21 @@
 			state.messageList.changeSettings( changes );
 			state.groupSelector.updateTargetLanguage( language );
 			updateGroupInformation( state );
+
+			getTranslationStats( language ).done( function ( stats ) {
+				logger.logClickEvent(
+					'change_target_lang',
+					'language_selector',
+					{
+						// eslint-disable-next-line camelcase
+						target_lang: language,
+						// eslint-disable-next-line camelcase
+						translatable_count: stats.total,
+						// eslint-disable-next-line camelcase
+						translated_count: stats.translated
+					}
+				);
+			} );
 		},
 
 		/**
@@ -120,6 +136,29 @@
 			} );
 		}
 	} );
+
+	function getTranslationStats( language ) {
+		return mw.translate.loadMessageGroupStatsForItem( state.language, state.group ).then(
+			function () {
+				var statsData = mw.translate.languagestats[ language ] || [];
+				for ( var i = 0; i < statsData.length; i++ ) {
+					if ( statsData[ i ].group === state.group ) {
+						return statsData[ i ];
+					}
+				}
+
+				return {
+					total: 0,
+					translated: 0
+				};
+			}
+		);
+	}
+
+	function getActionSource() {
+		var uri = new mw.Uri( window.location.href );
+		return uri.query.action_source || 'direct_open';
+	}
 
 	function getActualFilter( filter ) {
 		var realFilters = [ '!ignored' ];
@@ -456,12 +495,12 @@
 		var $messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
 		state.language = $messageList.data( 'targetlangcode' );
+		var uri = new mw.Uri( window.location.href );
 
 		if ( $messageList.length ) {
 			$messageList.messagetable();
 			state.messageList = $messageList.data( 'messagetable' );
 
-			var uri = new mw.Uri( window.location.href );
 			var filter = uri.query.filter;
 			var offset = uri.query.showMessage;
 			var limit;
@@ -607,6 +646,28 @@
 
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
 			mw.translate.changeFilter( currentUri.query.filter );
+		} );
+
+		getTranslationStats( state.language ).done( function ( stats ) {
+			logger.logEvent(
+				'interface_open',
+				null,
+				getActionSource(),
+				{
+					// eslint-disable-next-line camelcase
+					source_lang: $messageList.data( 'sourcelangcode' ),
+					// eslint-disable-next-line camelcase
+					target_lang: state.language,
+					// eslint-disable-next-line camelcase
+					source_id: uri.query.group,
+					// eslint-disable-next-line camelcase
+					source_type: 'page',
+					// eslint-disable-next-line camelcase
+					translatable_count: stats.total,
+					// eslint-disable-next-line camelcase
+					translated_count: stats.translated
+				}
+			);
 		} );
 	} );
 

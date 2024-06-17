@@ -220,7 +220,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			$handle = new MessageHandle( $title );
 
 			if ( $handle->isValid() ) {
-				$uri = Utilities::getEditorUrl( $handle );
+				$uri = Utilities::getEditorUrl( $handle, 'search' );
 				$link = Html::element(
 					'a',
 					[ 'href' => $uri ],

@@ -633,6 +633,18 @@
 				"translate-tes-message-prefix"
 			]
 		},
+		"ext.translate.eventlogginghelpers": {
+			"localBasePath": "resources/src/ext.translate.eventlogginghelpers",
+			"packageFiles": [
+				"index.js",
+				{
+					"name": "config.json",
+					"config": [
+						"TranslateEnableEventLogging"
+					]
+				}
+			]
+		},
 		"ext.translate.parsers": {
 			"scripts": "resources/js/ext.translate.parsers.js",
 			"dependencies": [
@@ -906,6 +918,7 @@
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"ext.translate.editor",
+				"ext.translate.eventlogginghelpers",
 				"ext.translate.groupselector",
 				"ext.translate.messagetable",
 				"jquery.uls.data",
@@ -1224,6 +1237,11 @@
 		"EnablePageTranslation": {
 			"value": true,
 			"description": "Enable page translation feature.\n\nPage translation feature allows structured translation of wiki pages with simple markup and automatic tracking of changes. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration",
+			"public": true
+		},
+		"TranslateEnableEventLogging": {
+			"value": false,
+			"description": "Enable use of analytics on Special:Translate",
 			"public": true
 		},
 		"TranslatePageTranslationULS": {

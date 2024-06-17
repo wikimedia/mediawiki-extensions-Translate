@@ -336,20 +336,28 @@ class Utilities {
 	/**
 	 * Get a URL that points to an editor for this message handle.
 	 * @param MessageHandle $handle
+	 * @param string $action_source If non-empty, defines where
+	 * the link originates from, for metrics (event logging)
 	 * @return string Domain relative URL
 	 */
-	public static function getEditorUrl( MessageHandle $handle ): string {
+	public static function getEditorUrl( MessageHandle $handle, string $action_source = '' ): string {
 		if ( !$handle->isValid() ) {
 			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
 		}
 
 		$title = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->getPage( 'Translate' )->getPageTitle();
-		return $title->getFullURL( [
+		$urlParameters = [
 			'showMessage' => $handle->getInternalKey(),
 			'group' => $handle->getGroup()->getId(),
 			'language' => $handle->getCode(),
-		] );
+		];
+
+		if ( $action_source !== '' ) {
+			$urlParameters[ 'action_source' ] = $action_source;
+		}
+
+		return $title->getFullURL( $urlParameters );
 	}
 
 	/**
