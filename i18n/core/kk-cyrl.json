@@ -7,7 +7,8 @@
 			"Marat",
 			"Nurlan",
 			"U.ayaao.p",
-			"СеніңШешең"
+			"СеніңШешең",
+			"Casserium"
 		]
 	},
 	"translate": "Аудару",
@@ -217,7 +218,7 @@
 	"tux-editor-add-desc": "Құжаттаманы қосу",
 	"tux-editor-suggestions-title": "Ұсыныстар",
 	"tux-editor-in-other-languages": "Басқа тілдерде",
-	"tux-editor-need-more-help": "Басқада көмек қажет пе?",
+	"tux-editor-need-more-help": "Басқа да көмек қажет пе?",
 	"tux-editor-ask-help": "Көбірек мәлімет сұрау",
 	"tux-editor-tm-match": "$1% сай келеді",
 	"tux-notices-more": "{{PLURAL:$1|Тағы $1}}",
@@ -276,5 +277,6 @@
 	"translate-statsbar-tooltip": "$1% аударылған, $2% тексерілген",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% аударылған, $2% тексерілген, $3%  жаңартуды қажет етеді",
 	"translate-search-more-groups-info": "Тағы $1 {{PLURAL:$1|топ}}:",
-	"tux-nojs": "Бұл құрал JavaScript-сіз жұмыс істемейді. JavaScript өшірулі, жұмыс істей алмады, немесе бұл браузерге қолдау көрсетілмейді."
+	"tux-nojs": "Бұл құрал JavaScript-сіз жұмыс істемейді. JavaScript өшірулі, жұмыс істей алмады, немесе бұл браузерге қолдау көрсетілмейді.",
+	"log-action-filter-translationreview": "Әрекет түрі:"
 }

@@ -202,7 +202,7 @@
 	"translate-manage-empty-content": "Mae'r cynnwys yn wag",
 	"importtranslations": "Mewnforio cyfieithiadau",
 	"translate-import-from-local": "Ffeil lleol i'w llwytho:",
-	"translate-import-load": "Llwyther y ffeil",
+	"translate-import-load": "Llwytho ffeil",
 	"translate-import-err-dl-failed": "Heb allu nôl y ffeil:\n$1",
 	"translate-import-err-ul-failed": "Methwyd uwchlwytho ffeil",
 	"translate-js-support-unsaved-warning": "Mae gennych gyfieithiadau heb eu cadw.",

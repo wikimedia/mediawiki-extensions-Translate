@@ -6,5 +6,8 @@
 	},
 	"translate-sidebar-alltrans": "Omu ndimi ezindi",
 	"languagestats": "Ebibazirwe by'orulimi",
+	"languagestats-stats-for": "Ebibazirwe by'okuhindura bya $1 ($2).",
+	"translate-language-code-field-name": "Akarorwaho k'orulimi:",
+	"translate-mgs-fieldset": "Ebyendwa by'okwoleka",
 	"translate-documentation-language": "Ekihandiiko ky'obutumwa"
 }
