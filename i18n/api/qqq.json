@@ -80,6 +80,7 @@
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "{{doc-apihelp-param|query+messagegroupstats|nocomplete}}",
 	"apihelp-query+messagegroupstats-param-suppressempty": "{{doc-apihelp-param|query+messagegroupstats|noempty}}",
 	"apihelp-query+messagegroupstats-example-1": "{{doc-apihelp-example|query+messagegroupstats}}",
+	"apihelp-query+messagegroupsubscription-summary": "{{doc-apihelp-summary|query+messagegroupsubscription}}",
 	"apihelp-query+messagetranslations-summary": "{{doc-apihelp-summary|query+messagetranslations}}",
 	"apihelp-query+messagetranslations-param-title": "{{doc-apihelp-param|query+messagetranslations|title}}",
 	"apihelp-query+messagetranslations-example-1": "Don't translate \"MediaWiki:January\".\n\n{{doc-apihelp-example|query+messagetranslations}}",

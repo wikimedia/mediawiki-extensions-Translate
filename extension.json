@@ -379,6 +379,12 @@
 				"DBLoadBalancer",
 				"Translate:MessageGroupReviewStore"
 			]
+		},
+		"messagegroupsubscription": {
+			"class": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryMessageGroupSubscriptionApi",
+			"services": [
+				"Translate:MessageGroupSubscription"
+			]
 		}
 	},
 	"APIMetaModules": {

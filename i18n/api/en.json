@@ -71,6 +71,7 @@
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Do not display languages which have completed translation",
 	"apihelp-query+messagegroupstats-param-suppressempty": "Do not display languages which do not have any translations",
 	"apihelp-query+messagegroupstats-example-1": "List of translation completion statistics for the group \"page-Example\"",
+	"apihelp-query+messagegroupsubscription-summary": "List message groups the current user is subscribed to.",
 	"apihelp-query+messagetranslations-summary": "Query all translations for a single message.",
 	"apihelp-query+messagetranslations-param-title": "Full title of a known message.",
 	"apihelp-query+messagetranslations-example-1": "List of translations in the wiki for \"MediaWiki:January\"",

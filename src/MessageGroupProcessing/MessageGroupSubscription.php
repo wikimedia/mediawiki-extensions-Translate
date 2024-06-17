@@ -75,6 +75,16 @@ class MessageGroupSubscription {
 		$this->groupSubscriptionStore->removeSubscriptions( $group->getId(), $user->getId() );
 	}
 
+	/** @return string[] */
+	public function getUserSubscriptions( UserIdentity $user ): array {
+		$subscriptions = [];
+		$result = $this->groupSubscriptionStore->getSubscriptions( null, $user->getId() );
+		foreach ( $result as $row ) {
+			$subscriptions[] = $row->tmgs_group;
+		}
+		return $subscriptions;
+	}
+
 	/**
 	 * Queue a message / group to send notifications for
 	 * @param Title $messageTitle
