@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use AggregateMessageGroup;
 use Language;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -35,12 +36,14 @@ class TranslateSpecialPage extends SpecialPage {
 	private LanguageNameUtils $languageNameUtils;
 	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
+	private bool $isMessageGroupSubscriptionEnabled;
 
 	public function __construct(
 		Language $contentLanguage,
 		LanguageFactory $languageFactory,
 		LanguageNameUtils $languageNameUtils,
-		HookRunner $hookRunner
+		HookRunner $hookRunner,
+		Config $config
 	) {
 		parent::__construct( 'Translate' );
 		$this->contentLanguage = $contentLanguage;
@@ -48,6 +51,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$this->languageNameUtils = $languageNameUtils;
 		$this->hookRunner = $hookRunner;
 		$this->logger = LoggerFactory::getInstance( 'Translate' );
+		$this->isMessageGroupSubscriptionEnabled = $config->get( 'TranslateEnableMessageGroupSubscription' );
 	}
 
 	public function doesWrites() {
@@ -78,10 +82,10 @@ class TranslateSpecialPage extends SpecialPage {
 		}
 
 		$out->addModules( 'ext.translate.special.translate' );
-		$out->addJsConfigVars(
-			'wgTranslateLanguages',
-			Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS )
-		);
+		$out->addJsConfigVars( [
+			'wgTranslateLanguages' => Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS ),
+			'wgTranslateEnableMessageGroupSubscription' => $this->isMessageGroupSubscriptionEnabled
+		] );
 
 		$out->addHTML( Html::openElement( 'div', [
 			'class' => 'grid ext-translate-container',

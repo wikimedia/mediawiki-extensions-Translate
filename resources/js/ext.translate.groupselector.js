@@ -20,6 +20,7 @@
 	 * @param {string} options.language Language code for statistics.
 	 * @param {boolean} [options.preventSelector] Do not allow selection of subgroups.
 	 * @param {string[]} [options.recent] List of recent message group ids.
+	 * @param {string[]} [options.showWatched] Whether to show watched message groups
 	 * @param {string[]} [groups] List of message group ids to show.
 	 */
 	function TranslateMessageGroupSelector( element, options, groups ) {
@@ -37,6 +38,7 @@
 		this.flatGroupList = null;
 		this.groups = groups;
 		this.firstShow = true;
+		this.watchedGroups = [];
 
 		this.init();
 	}
@@ -91,6 +93,14 @@
 					$( '<div>' )
 						.addClass( 'tux-grouptab tux-grouptab--recent' )
 						.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
+				);
+			}
+
+			if ( this.options.showWatched ) {
+				$listFilters.append(
+					$( '<div>' )
+						.addClass( 'tux-grouptab tux-grouptab--watched' )
+						.text( mw.msg( 'translate-msggroupselector-search-watched' ) )
 				);
 			}
 
@@ -228,10 +238,11 @@
 				 */
 				if ( $this.hasClass( 'tux-grouptab--selected' ) ) {
 					return;
+				} else {
+					$tabs.removeClass( 'tux-grouptab--selected' );
+					$this.addClass( 'tux-grouptab--selected' );
 				}
 
-				// This is okay as long as we only have two classes
-				$tabs.toggleClass( 'tux-grouptab--selected' );
 				groupSelector.$search.val( '' );
 				groupSelector.showList();
 			} );
@@ -300,6 +311,8 @@
 				}
 			} else if ( $selected.hasClass( 'tux-grouptab--recent' ) ) {
 				this.showRecentGroups();
+			} else if ( $selected.hasClass( 'tux-grouptab--watched' ) ) {
+				this.showWatchedGroups();
 			}
 		},
 
@@ -339,6 +352,15 @@
 			var recent = this.options.recent || [];
 
 			this.showSelectedGroups( recent );
+		},
+
+		/**
+		 * Show watched message groups.
+		 */
+		showWatchedGroups: function () {
+			if ( this.options.showWatched ) {
+				this.showSelectedGroups( this.watchedGroups || [] );
+			}
 		},
 
 		/**
@@ -589,6 +611,16 @@
 			this.options.language = targetLanguage;
 			groupsLoader = undefined;
 			this.firstShow = true;
+		},
+
+		/**
+		 * Set the list of watched message group ids
+		 *
+		 * @param {string[]} groupIds
+		 */
+		setWatchedGroups: function ( groupIds ) {
+			this.watchedGroups = groupIds;
+			this.showWatchedGroups();
 		}
 	};
 

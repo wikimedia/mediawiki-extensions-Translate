@@ -264,8 +264,7 @@
 	}
 
 	function updateGroupSubscription( group ) {
-		if ( group.subscription === undefined ) {
-			// Group subscription is not enabled, nothing to do.
+		if ( mw.config.get( 'wgTranslateEnableMessageGroupSubscription' ) !== true ) {
 			return;
 		}
 
@@ -342,7 +341,6 @@
 
 		var subscriptionStatus = $button.data( 'subscribed' );
 
-		// TODO: Check current subscription and either subscribe or unsubscribe
 		var params = {
 			action: 'messagegroupsubscription',
 			groupId: state.group,
@@ -361,6 +359,8 @@
 						// * tux-unwatch-group
 						.text( mw.msg( buttonMessage, groupInfo.label ) )
 						.data( 'subscribed', !subscriptionStatus );
+
+					loadWatchedMessageGroups();
 				} else {
 					mw.notify( mw.msg( 'tux-subscription-error' ) );
 				}
@@ -372,6 +372,28 @@
 		).always( function () {
 			$button.prop( 'disabled', false );
 		} );
+	}
+
+	function loadWatchedMessageGroups() {
+		if ( mw.config.get( 'wgTranslateEnableMessageGroupSubscription' ) !== true ) {
+			return;
+		}
+
+		var api = new mw.Api();
+		var params = {
+			action: 'query',
+			list: 'messagegroupsubscription',
+			formatversion: 2
+		};
+
+		return api.get( params ).then(
+			function ( response ) {
+				state.groupSelector.setWatchedGroups( response.query.messagegroupsubscription );
+			},
+			function ( error ) {
+				mw.log.error( 'messagegroupsubscription: Failed to fetch user subscriptions', error, params );
+			}
+		);
 	}
 
 	$( function () {
@@ -437,13 +459,17 @@
 				at: 'right+80 bottom+5'
 			};
 		}
+
 		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( {
 			onSelect: mw.translate.changeGroup,
 			language: state.language,
 			position: position,
-			recent: mw.translate.recentGroups.get()
+			recent: mw.translate.recentGroups.get(),
+			showWatched: mw.config.get( 'wgTranslateEnableMessageGroupSubscription' ) || false
 		} );
+
 		state.groupSelector = $( '.tux-breadcrumb__item--aggregate' ).data( 'msggroupselector' );
+		loadWatchedMessageGroups();
 
 		updateGroupInformation( state );
 

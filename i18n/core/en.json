@@ -336,6 +336,7 @@
 	"translate-msggroupselector-search-placeholder": "Search groups",
 	"translate-msggroupselector-search-all": "All",
 	"translate-msggroupselector-search-recent": "Recent",
+	"translate-msggroupselector-search-watched": "Watched",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgroup|subgroups}}",
 	"tux-languageselector": "Translate to",
 	"tux-select-target-language": "Target language for translation",

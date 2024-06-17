@@ -274,7 +274,8 @@
 				"ContentLanguage",
 				"LanguageFactory",
 				"LanguageNameUtils",
-				"Translate:HookRunner"
+				"Translate:HookRunner",
+				"MainConfig"
 			]
 		},
 		"Translations": {
@@ -711,6 +712,7 @@
 				"translate-msggroupselector-search-all",
 				"translate-msggroupselector-search-placeholder",
 				"translate-msggroupselector-search-recent",
+				"translate-msggroupselector-search-watched",
 				"translate-msggroupselector-view-subprojects"
 			]
 		},

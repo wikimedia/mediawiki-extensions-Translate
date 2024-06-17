@@ -374,6 +374,7 @@
 	"translate-msggroupselector-search-placeholder": "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	"translate-msggroupselector-search-all": "Label to display all projects.\n{{Identical|All}}",
 	"translate-msggroupselector-search-recent": "A tab label in the message group selector that shows groups that were recently translated by the user.\n{{Identical|Recent}}",
+	"translate-msggroupselector-search-watched": "A tab label in the message group selector that shows groups that are currently being watched by the user.",
 	"translate-msggroupselector-view-subprojects": "Label indicating that the current message group contains other groups. Parameters:\n* $1 is number of sub groups",
 	"tux-languageselector": "Label for language selector in [[Special:Translate]].\n{{Identical|Translate}}",
 	"tux-select-target-language": "Accessibility label for language selector on [[Special:Translate]].",
