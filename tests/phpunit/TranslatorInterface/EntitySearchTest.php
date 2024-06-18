@@ -19,7 +19,7 @@ use WANObjectCache;
 class EntitySearchTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( 'TranslateMessageIndex', 'hash' );
+		$this->overrideConfigValue( 'TranslateMessageIndex', 'hash' );
 	}
 
 	public function getMessageGroupFactoryStub(): MessageGroups {

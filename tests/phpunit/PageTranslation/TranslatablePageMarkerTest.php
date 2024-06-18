@@ -27,9 +27,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
 class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgTranslateMessageIndex' => 'hash'
-		] );
+		$this->overrideConfigValue( 'TranslateMessageIndex', 'hash' );
 	}
 
 	private function createTranslatableMarkPage( array $services = [] ): TranslatablePageMarker {
