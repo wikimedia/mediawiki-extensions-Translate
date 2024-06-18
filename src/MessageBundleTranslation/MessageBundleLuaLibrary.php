@@ -30,7 +30,11 @@ class MessageBundleLuaLibrary extends LibraryBase {
 		}
 	}
 
-	public function getMessageBundleTranslations( string $messageBundleTitle, string $languageCode ): array {
+	public function getMessageBundleTranslations(
+		string $messageBundleTitle,
+		string $languageCode,
+		bool $skipFallbacks
+	): array {
 		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
 		$messageBundle = new MessageBundle( $titleFactory->newFromText( $messageBundleTitle ) );
 		$messageBundleTranslationLoader = Services::getInstance()->getMessageBundleTranslationLoader();
@@ -38,6 +42,6 @@ class MessageBundleLuaLibrary extends LibraryBase {
 			throw new LuaError( "Message bundle with title $messageBundleTitle not found" );
 		}
 
-		return [ $messageBundleTranslationLoader->get( $messageBundle, $languageCode ) ];
+		return [ $messageBundleTranslationLoader->get( $messageBundle, $languageCode, $skipFallbacks ) ];
 	}
 }

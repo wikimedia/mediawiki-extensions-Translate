@@ -18,10 +18,15 @@ class MessageBundleTranslationLoader {
 	 * Given a language code, returns translation for that language or its fallbacks in an array format.
 	 * @param MessageBundle $messageBundle
 	 * @param string $languageCode
+	 * @param bool $skipFallbacks Skip loading the fallback languages
 	 * @return array<string, string> Key is the key in the message bundle, value is the translation.
 	 */
-	public function get( MessageBundle $messageBundle, string $languageCode ): array {
-		$translations = $this->getTranslationsWithFallback( $messageBundle, $languageCode );
+	public function get(
+		MessageBundle $messageBundle,
+		string $languageCode,
+		bool $skipFallbacks
+	): array {
+		$translations = $this->getTranslationsWithFallback( $messageBundle, $languageCode, $skipFallbacks );
 		$normalizedTranslations = [];
 		foreach ( $translations as $key => $translation ) {
 			$normalizedTranslations[
@@ -32,7 +37,11 @@ class MessageBundleTranslationLoader {
 		return $normalizedTranslations;
 	}
 
-	private function getTranslationsWithFallback( MessageBundle $messageBundle, string $languageCode ): array {
+	private function getTranslationsWithFallback(
+		MessageBundle $messageBundle,
+		string $languageCode,
+		bool $skipFallbacks
+	): array {
 		$messageBundleGroup = MessageGroups::getGroup( $messageBundle->getMessageGroupId() );
 		if ( !$messageBundleGroup ) {
 			throw new RuntimeException(
@@ -40,11 +49,15 @@ class MessageBundleTranslationLoader {
 			);
 		}
 
-		$fallbackChain = [
-			$languageCode,
-			...$this->languageFallback->getAll( $languageCode ),
-			$messageBundleGroup->getSourceLanguage()
-		];
+		if ( $skipFallbacks ) {
+			$fallbackChain = [ $languageCode ];
+		} else {
+			$fallbackChain = [
+				$languageCode,
+				...$this->languageFallback->getAll( $languageCode ),
+				$messageBundleGroup->getSourceLanguage()
+			];
+		}
 
 		$collection = $messageBundleGroup->initCollection( $fallbackChain[0] );
 		$translations = [];

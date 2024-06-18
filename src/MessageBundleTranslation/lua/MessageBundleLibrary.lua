@@ -27,9 +27,10 @@ end
 --[=[
 Represents translate message bundle object
 ]=]
-function translateMessageBundle.new( title, languageCode )
+function translateMessageBundle.new( title, languageCode, skipFallbacks )
 	util.checkTypeMulti( 'translateMessageBundle:new', 1, title, { 'string', 'table' } )
 	util.checkType( 'translateMessageBundle:new', 2, languageCode, 'string', true )
+	util.checkType( 'translateMessageBundle:new', 3, skipFallbacks, 'boolean', true )
 
 	if type( title ) == 'string' then
 		title = mw.title.new( title )
@@ -43,12 +44,15 @@ function translateMessageBundle.new( title, languageCode )
 	-- Determine the language code to use for the message bundle
 	languageCode = languageCode or pageLanguageCode
 
+	-- Decide whether to skip loading fallbacks, load them by default
+	skipFallbacks = skipFallbacks or false
+
 	local obj = {};
 	local translations = nil;
 
 	function loadTranslations( languageCode )
 		if translations == nil then
-			translations = php.getMessageBundleTranslations( title.prefixedText, languageCode )
+			translations = php.getMessageBundleTranslations( title.prefixedText, languageCode, skipFallbacks )
 		end
 
 		return translations
@@ -63,3 +67,7 @@ function translateMessageBundle.new( title, languageCode )
 end
 
 return translateMessageBundle
+
+function translateMessageBundle.newWithoutFallbacks( title, languageCode )
+	return translateMessageBundle.new( title, languageCode, true )
+end
