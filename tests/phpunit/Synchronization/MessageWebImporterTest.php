@@ -32,12 +32,12 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 
 	/** @covers \MediaWiki\Extension\Translate\Synchronization\MessageWebImporter::doFuzzy */
 	public function testDoFuzzy() {
-		$this->assertTrue(
-			$this->editPage( self::PAGE . '/en', 'English Original' )->isGood(),
+		$this->assertStatusGood(
+			$this->editPage( self::PAGE . '/en', 'English Original' ),
 			'Sanity: Must create English original translation'
 		);
-		$this->assertTrue(
-			$this->editPage( self::PAGE . '/fi', 'Finnish Original' )->isGood(),
+		$this->assertStatusGood(
+			$this->editPage( self::PAGE . '/fi', 'Finnish Original' ),
 			'Sanity: Must create Finnish original translation'
 		);
 

@@ -187,7 +187,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$title->getPrefixedDBkey(),
 			'<translate>Test text</translate>'
 		);
-		$this->assertTrue( $status->isGood(), 'Sanity: must create revision 1' );
+		$this->assertStatusGood( $status, 'Sanity: must create revision 1' );
 		/** @var RevisionRecord $rev1 */
 		$rev1 = $status->getValue()['revision-record'];
 
@@ -234,7 +234,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$status = $this->editPage( $title->getPrefixedDBkey(), 'Modified test text' );
-		$this->assertTrue( $status->isGood(), 'Sanity: must create revision 2' );
+		$this->assertStatusGood( $status, 'Sanity: must create revision 2' );
 		$this->assertEquals(
 			$translatablePage->getReadyTag(),
 			$nullRev->getId(),

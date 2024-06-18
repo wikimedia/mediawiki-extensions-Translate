@@ -36,12 +36,12 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 	public function testGetGoodTranslations() {
 		$title = 'MediaWiki:TestPage';
 		// Create some translations
-		$this->assertTrue(
-			$this->editPage( $title . '/fi', 'Test Finnish Translation' )->isGood(),
+		$this->assertStatusGood(
+			$this->editPage( $title . '/fi', 'Test Finnish Translation' ),
 			'Sanity: must successfully edit ' . $title . '/fi page'
 		);
-		$this->assertTrue(
-			$this->editPage( $title . '/ru', 'Test Russian Translation' )->isGood(),
+		$this->assertStatusGood(
+			$this->editPage( $title . '/ru', 'Test Russian Translation' ),
 			'Sanity: must successfully edit ' . $title . '/ru page'
 		);
 

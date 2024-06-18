@@ -93,11 +93,11 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 
 	/** @covers MediaWiki\Extension\Translate\MessageLoading\MessageCollection::filterChanged */
 	public function testFilterChanged(): void {
-		$this->assertTrue(
-			$this->editPage( 'MediaWiki:Changedtranslated_1/fi', 'pupuliini_1' )->isGood()
+		$this->assertStatusGood(
+			$this->editPage( 'MediaWiki:Changedtranslated_1/fi', 'pupuliini_1' )
 		);
-		$this->assertTrue(
-			$this->editPage( 'MediaWiki:Changedtranslated_2/fi', 'pupuliini_modified' )->isGood()
+		$this->assertStatusGood(
+			$this->editPage( 'MediaWiki:Changedtranslated_2/fi', 'pupuliini_modified' )
 		);
 		$group = MessageGroups::getGroup( 'test-group' );
 		$collection = $group->initCollection( 'fi' );
