@@ -273,4 +273,49 @@ class MessageHandle {
 
 		return "BUG:$key";
 	}
+
+	/** Returns true if message is fuzzy, OR fails checks OR fails validations (error OR warning). */
+	public function needsFuzzy( string $text ): bool {
+		// Docs are exempt for checks
+		if ( $this->isDoc() ) {
+			return false;
+		}
+
+		// Check for explicit tag.
+		if ( self::hasFuzzyString( $text ) ) {
+			return true;
+		}
+
+		// Not all groups have validators
+		$group = $this->getGroup();
+		$validator = $group->getValidator();
+
+		// no validator set
+		if ( !$validator ) {
+			return false;
+		}
+
+		$code = $this->getCode();
+		$key = $this->getKey();
+		$en = $group->getMessage( $key, $group->getSourceLanguage() );
+		$message = new FatMessage( $key, $en );
+		// Take the contents from edit field as a translation.
+		$message->setTranslation( $text );
+		if ( $message->definition() === null ) {
+			// This should NOT happen, but add a check since it seems to be happening
+			// See: https://phabricator.wikimedia.org/T255669
+			LoggerFactory::getInstance( 'Translate' )->warning(
+				'Message definition is empty! Title: {title}, group: {group}, key: {key}',
+				[
+					'title' => $this->getTitle()->getPrefixedText(),
+					'group' => $group->getId(),
+					'key' => $key
+				]
+			);
+			return false;
+		}
+
+		$validationResult = $validator->quickValidate( $message, $code );
+		return $validationResult->hasIssues();
+	}
 }

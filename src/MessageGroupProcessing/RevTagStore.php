@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Class to manage revision tags for translatable bundles.
@@ -143,6 +144,35 @@ class RevTagStore {
 			->fetchField();
 
 		return $res !== false;
+	}
+
+	/**
+	 * Get the revision ID of the original message that was live the last
+	 * time a non-fuzzy translation was saved (presumably the version whose
+	 * translation the translation is). Used to determine whether the
+	 * translation is outdated and to show a diff of the original message
+	 * if it is.
+	 * @return int|null The revision ID, or `null` if none is found
+	 */
+	public function getTransver( PageIdentity $identity ): ?int {
+		$db = Utilities::getSafeReadDB();
+		$result = $db->newSelectQueryBuilder()
+			->select( 'rt_value' )
+			->from( 'revtag' )
+			->where( [
+				'rt_page' => $identity->getId(),
+				'rt_type' => self::TRANSVER_PROP,
+			] )
+			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
+			->caller( __METHOD__ )
+			->fetchField();
+		if ( $result === false ) {
+			return null;
+		} else {
+			// The revtag database is defined to store a string in rt_value,
+			// but tp:transver is always an integer
+			return (int)$result;
+		}
 	}
 
 	/** Get a list of page ids where the latest revision is either tagged or marked */

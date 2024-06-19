@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use ContentHandler;
 use FileBasedMessageGroup;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -16,7 +17,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use MediaWiki\Storage\PageUpdateStatus;
+use MediaWiki\Storage\PageUpdater;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use RecentChange;
@@ -102,13 +103,13 @@ class UpdateMessageJob extends GenericTranslateJob {
 			}
 		}
 		$title = $this->title;
-		$editStatus = $this->fuzzyBotEdit( $title, $params['content'] );
-		if ( !$editStatus->isOK() ) {
+		$updater = $this->fuzzyBotEdit( $title, $params['content'] );
+		if ( !$updater->getStatus()->isOK() ) {
 			$this->logError(
 				'Failed to update content for source message',
 				[
 					'content' => ContentHandler::makeContent( $params['content'], $this->title ),
-					'errors' => $editStatus->getMessages()
+					'errors' => $updater->getStatus()->getMessages()
 				]
 			);
 		}
@@ -118,9 +119,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 			$this->processTranslationChanges( $otherLangs, $params['replacement'], $params['namespace'] );
 		}
 
-		if ( $isFuzzy ) {
-			$this->handleFuzzy( $title );
-		}
+		$this->handleFuzzy( $title, $isFuzzy, $updater );
 
 		$this->removeFromCache( $originalTitle );
 		return true;
@@ -186,62 +185,114 @@ class UpdateMessageJob extends GenericTranslateJob {
 	/**
 	 * Handles fuzzying. Message documentation and the source language are excluded from
 	 * fuzzying. The source language is the identified via the $title parameter
+	 *
+	 * If the edit to the source translation unit is a manual revert, then any translations
+	 * whose tp:transver is set to the revision being reverted to are marked **unfuzzy**
+	 * unless they have an explicit !!FUZZY!! or fail validation.
+	 *
+	 * Any revisions with other tp:transvers are marked fuzzy, unless invalidation skipping is used.
 	 */
-	private function handleFuzzy( Title $title ): void {
+	private function handleFuzzy( Title $title, bool $invalidate, PageUpdater $updater ): void {
 		global $wgTranslateDocumentationLanguageCode;
+		$editResult = $updater->getEditResult();
+		if ( !$invalidate && !$editResult->isExactRevert() ) {
+			return;
+		}
+		$oldRevId = $editResult->getOriginalRevisionId();
 		$handle = new MessageHandle( $title );
 
 		$languages = Utilities::getLanguageNames( 'en' );
 
-		// Don't fuzzy the message documentation
+		// Don't fuzzy the message documentation or the source language
 		unset( $languages[$wgTranslateDocumentationLanguageCode] );
+		unset( $languages[$handle->getCode()] );
+
 		$languages = array_keys( $languages );
 
-		$pages = [];
+		$fuzzies = [];
+		$unfuzzies = [];
+		$mwInstance = MediaWikiServices::getInstance();
+		$revTagStore = Services::getInstance()->getRevTagStore();
+		$revStore = $mwInstance->getRevisionStore();
+
+		if ( $oldRevId || $invalidate ) {
+			// We'll need to check if each possible tunit exists later on, so do that now
+			// as a batch
+			$batch = $mwInstance->getLinkBatchFactory()->newLinkBatch();
+			$batch->setCaller( __METHOD__ );
+			foreach ( $languages as $code ) {
+				$batch->addObj( $handle->getTitleForLanguage( $code ) );
+			}
+			$batch->execute();
+		}
+		$targetSha = $updater->getNewRevision()->getSha1();
+
 		foreach ( $languages as $code ) {
 			$otherTitle = $handle->getTitleForLanguage( $code );
-			$pages[$otherTitle->getDBkey()] = true;
+			$shouldUnfuzzy = false;
+			if ( $oldRevId && $otherTitle->exists() ) {
+				$transver = $revTagStore->getTransver( $otherTitle );
+				if ( $oldRevId == $transver ) {
+					// It's a straightforward revert
+					$shouldUnfuzzy = true;
+				} elseif ( $transver ) {
+					$transverSha = $revStore->getRevisionById( $transver, 0, $title )->getSha1();
+					if ( $transverSha == $targetSha ) {
+						// It's a deeper revert or otherwise wasn't detected by MediaWiki's builtin revert detection
+						$shouldUnfuzzy = true;
+					} // Else it's not a revert at all so leave shouldUnfuzzy false
+				} // Else the page doesn't have a transver set for some reason so bail and leave shouldUnfuzzy false
+			}
+			if ( $shouldUnfuzzy ) {
+				// In principle it's a revert so should unfuzzy, first check for validation failures
+				// or manual fuzzying
+				$otherHandle = new MessageHandle( $otherTitle );
+				$wikiPage = $mwInstance->getWikiPageFactory()->newFromTitle( $otherTitle );
+				$content = $wikiPage->getContent();
+				if ( !$content instanceof TextContent ) {
+					// This should never happen (translation units should always be wikitext) but Phan complains
+					// otherwise
+					continue;
+				}
+				$text = $content->getText();
+				if ( $otherHandle->isFuzzy() && !$otherHandle->needsFuzzy( $text ) ) {
+					$unfuzzies[] = $otherTitle;
+				}
+				// If it's not already fuzzy then that means the original change was done without invalidating
+				// translations and while the new change probably should have been done that way as well
+				// even if it wasn't it never makes sense to re-fuzzy in that case so just leave the fuzzy status alone
+			} elseif ( $invalidate ) {
+				$fuzzies[] = $otherTitle;
+			}
 		}
 
-		// Unset to ensure that the source language is not fuzzied
-		unset( $pages[$title->getDBkey()] );
+		$dbw = $mwInstance->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 
-		if ( $pages === [] ) {
-			return;
+		if ( $fuzzies !== [] ) {
+			$inserts = [];
+			foreach ( $fuzzies as $otherTitle ) {
+				$inserts[] = [
+					'rt_type' => RevTagStore::FUZZY_TAG,
+					'rt_page' => $otherTitle->getId(),
+					'rt_revision' => $otherTitle->getLatestRevID(),
+				];
+			}
+			$dbw->replace(
+				'revtag',
+				[ [ 'rt_type', 'rt_page', 'rt_revision' ] ],
+				$inserts,
+				__METHOD__
+			);
 		}
-
-		$dbw = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getMaintenanceConnectionRef( DB_PRIMARY );
-
-		$res = $dbw->newSelectQueryBuilder()
-			->select( [ 'page_id', 'page_latest' ] )
-			->from( 'page' )
-			->where( [
-				'page_namespace' => $title->getNamespace(),
-				'page_title' => array_keys( $pages ),
-			] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-		$inserts = [];
-		foreach ( $res as $row ) {
-			$inserts[] = [
-				'rt_type' => RevTagStore::FUZZY_TAG,
-				'rt_page' => $row->page_id,
-				'rt_revision' => $row->page_latest,
-			];
+		if ( $unfuzzies !== [] ) {
+			foreach ( $unfuzzies as $otherTitle ) {
+				$dbw->delete( 'revtag', [
+					'rt_type' => RevTagStore::FUZZY_TAG,
+					'rt_page' => $otherTitle->getId(),
+					'rt_revision' => $otherTitle->getLatestRevID(),
+				], __METHOD__ );
+			}
 		}
-
-		if ( $inserts === [] ) {
-			return;
-		}
-
-		$dbw->replace(
-			'revtag',
-			[ [ 'rt_type', 'rt_page', 'rt_revision' ] ],
-			$inserts,
-			__METHOD__
-		);
 	}
 
 	/** Updates the translation unit pages in non-source languages. */
@@ -253,14 +304,14 @@ class UpdateMessageJob extends GenericTranslateJob {
 		foreach ( $langChanges as $code => $contentStr ) {
 			$titleStr = Utilities::title( $baseTitle, $code, $groupNamespace );
 			$title = Title::newFromText( $titleStr, $groupNamespace );
-			$status = $this->fuzzyBotEdit( $title, $contentStr );
+			$updater = $this->fuzzyBotEdit( $title, $contentStr );
 
-			if ( !$status->isOK() ) {
+			if ( !$updater->getStatus()->isOK() ) {
 				$this->logError(
 					'Failed to update content for non-source message',
 					[
 						'title' => $title->getPrefixedText(),
-						'errors' => $status->getMessages()
+						'errors' => $updater->getStatus()->getMessages()
 					]
 				);
 			}
@@ -312,7 +363,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 		}
 	}
 
-	private function fuzzyBotEdit( Title $title, string $content ): PageUpdateStatus {
+	private function fuzzyBotEdit( Title $title, string $content ): PageUpdater {
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		$content = ContentHandler::makeContent( $content, $title );
 		$page = $wikiPageFactory->newFromTitle( $title );
@@ -329,7 +380,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 			CommentStoreComment::newUnsavedComment( $summary ),
 			EDIT_FORCE_BOT
 		);
-		return $updater->getStatus();
+		return $updater;
 	}
 
 	private function getFuzzyBot(): User {

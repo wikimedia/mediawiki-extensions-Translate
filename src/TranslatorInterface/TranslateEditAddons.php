@@ -8,12 +8,10 @@ use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStatesUpdaterJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
-use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
-use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
@@ -123,7 +121,7 @@ class TranslateEditAddons {
 		$revId = $revisionRecord->getId();
 		$mwServices = MediaWikiServices::getInstance();
 
-		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
+		$fuzzy = $handle->needsFuzzy( $text );
 		$parentId = $revisionRecord->getParentId();
 		if ( $editResult->isNullEdit() || $parentId == 0 ) {
 			// In this case the page_latest hasn't changed so we can rely on its fuzzy status
@@ -207,51 +205,6 @@ class TranslateEditAddons {
 			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
 				$summary, $minor, $flags, $handle );
 		}
-	}
-
-	/** Returns true if message is fuzzy, OR fails checks OR fails validations (error OR warning). */
-	private static function checkNeedsFuzzy( MessageHandle $handle, string $text ): bool {
-		// Docs are exempt for checks
-		if ( $handle->isDoc() ) {
-			return false;
-		}
-
-		// Check for explicit tag.
-		if ( MessageHandle::hasFuzzyString( $text ) ) {
-			return true;
-		}
-
-		// Not all groups have validators
-		$group = $handle->getGroup();
-		$validator = $group->getValidator();
-
-		// no validator set
-		if ( !$validator ) {
-			return false;
-		}
-
-		$code = $handle->getCode();
-		$key = $handle->getKey();
-		$en = $group->getMessage( $key, $group->getSourceLanguage() );
-		$message = new FatMessage( $key, $en );
-		// Take the contents from edit field as a translation.
-		$message->setTranslation( $text );
-		if ( $message->definition() === null ) {
-			// This should NOT happen, but add a check since it seems to be happening
-			// See: https://phabricator.wikimedia.org/T255669
-			LoggerFactory::getInstance( 'Translate' )->warning(
-				'Message definition is empty! Title: {title}, group: {group}, key: {key}',
-				[
-					'title' => $handle->getTitle()->getPrefixedText(),
-					'group' => $group->getId(),
-					'key' => $key
-				]
-			);
-			return false;
-		}
-
-		$validationResult = $validator->quickValidate( $message, $code );
-		return $validationResult->hasIssues();
 	}
 
 	/**

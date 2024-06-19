@@ -4,13 +4,12 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use DifferenceEngine;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use Wikimedia\Rdbms\SelectQueryBuilder;
 use WikitextContent;
 
 /**
@@ -25,17 +24,10 @@ class UpdatedDefinitionAid extends TranslationAid {
 	public function getData(): array {
 		$db = Utilities::getSafeReadDB();
 
-		$translationRevision = $db->newSelectQueryBuilder()
-			->select( 'rt_value' )
-			->from( 'revtag' )
-			->where( [
-				'rt_page' => $this->handle->getTitle()->getArticleID(),
-				'rt_type' => RevTagStore::TRANSVER_PROP,
-			] )
-			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
-			->caller( __METHOD__ )
-			->fetchField();
-		if ( $translationRevision === false ) {
+		$revTagStore = Services::getInstance()->getRevTagStore();
+
+		$translationRevision = $revTagStore->getTransver( $this->handle->getTitle() );
+		if ( $translationRevision === null ) {
 			throw new TranslationHelperException( 'No definition revision recorded' );
 		}
 
