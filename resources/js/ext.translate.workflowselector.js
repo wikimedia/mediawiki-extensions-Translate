@@ -9,6 +9,10 @@
 ( function () {
 	'use strict';
 
+	/**
+	 * @private
+	 * @param {jQuery} container
+	 */
 	function WorkflowSelector( container ) {
 		this.$container = $( container );
 
@@ -26,6 +30,7 @@
 		/**
 		 * Displays the current state and selector if relevant.
 		 *
+		 * @private
 		 * @param {string} groupId
 		 * @param {string} language
 		 * @param {string} state
@@ -54,6 +59,7 @@
 		/**
 		 * Calls the WebApi to change the state to a new value.
 		 *
+		 * @private
 		 * @param {string} state
 		 * @return {jQuery.Promise}
 		 */
@@ -73,6 +79,7 @@
 		/**
 		 * Get the text which says that the current state is X.
 		 *
+		 * @private
 		 * @param {string} stateName
 		 * @return {string} Text which should be escaped.
 		 */
@@ -82,6 +89,8 @@
 
 		/**
 		 * Actually constructs the DOM and displays the selector.
+		 *
+		 * @private
 		 */
 		display: function () {
 			var instance = this;
@@ -147,7 +156,15 @@
 		}
 	};
 
-	/* workflowselector jQuery definitions */
+	/**
+	 * workflowselector jQuery definitions
+	 *
+	 * @internal
+	 * @param {string} groupId
+	 * @param {string} language
+	 * @param {string} state
+	 * @returns {jQuery}
+	 */
 	$.fn.workflowselector = function ( groupId, language, state ) {
 		return this.each( function () {
 			var $this = $( this ),
