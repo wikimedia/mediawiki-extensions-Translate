@@ -47,6 +47,7 @@
 	 * and the editor will appear as if the message is replaced by the editor.
 	 * See the UI of Translate messagetable for a demo.
 	 *
+	 * @private
 	 * @param {HTMLElement} element
 	 * @param {Object} options
 	 * @param {Function} [options.beforeSave] Callback to call when translation is going to be saved.
@@ -1407,7 +1408,7 @@
 
 		/**
 		 * @private
-		 * @param {jQuery } toggleIcon
+		 * @param {jQuery} toggleIcon
 		 */
 		expand: function ( toggleIcon ) {
 			// Change the icon image
@@ -1482,7 +1483,7 @@
 		 * Utility method to display a list of notices on the UI
 		 *
 		 * @private
-		 * @param {Array} notices
+		 * @param {string[]} notices
 		 * @param {string} noticeType
 		 */
 		displayNotices: function ( notices, noticeType ) {
@@ -1510,7 +1511,7 @@
 		 *
 		 * @private
 		 * @param {string} targetLangCode
-		 * @return {Object} Returns translation editor element
+		 * @return {jQuery} Returns translation editor element
 		 */
 		getTranslationEditor: function ( targetLangCode ) {
 			var targetLangAttrib, placeholder;
@@ -1541,10 +1542,13 @@
 		}
 	};
 
-	/*
+	/**
 	 * translateeditor PLUGIN DEFINITION
+	 *
+	 * @internal
+	 * @param {Object} options
+	 * @returns {jQuery}
 	 */
-
 	$.fn.translateeditor = function ( options ) {
 		return this.each( function () {
 			var $this = $( this ),
