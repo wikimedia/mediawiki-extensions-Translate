@@ -87,6 +87,7 @@
 	"translate-export-invalid-format": "Proszę podać poprawny format.",
 	"translate-export-not-supported": "Eksport tłumaczeń nie jest obsługiwany.",
 	"translate-export-format-notsupported": "Określony format eksportu nie jest obsługiwany przez tę grupę komunikatów.",
+	"translate-export-format-file-empty": "Brak komunikatów do wyeksportowania.",
 	"translate-export-group-too-large": "Wybrana grupa komunikatów jest za duża. Wybierz grupę, która ma mniej niż $1 {{PLURAL:$1|komunikat|komunikaty|komunikatów}} lub skontaktuj się z administratorem tłumaczeń.",
 	"translate-checks-parameters": "{{PLURAL:$2|Następujący parametr nie jest wykorzystywany|Następujące parametry nie są wykorzystywane}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Następujący parametr nie jest zdefiniowany|Następujące parametry nie są zdefiniowane}}:\n<strong>$1</strong>",
