@@ -721,7 +721,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$checkLabel = new FieldLayout(
 					new CheckboxInputWidget( [
 						'name' => $id,
-						'selected' => false,
+						'selected' => $s->onlyTvarsChanged()
 					] ),
 					[
 						'label' => $this->msg( 'tpt-action-nofuzzy' )->text(),

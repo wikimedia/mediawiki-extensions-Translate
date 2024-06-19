@@ -91,12 +91,16 @@ class TranslationUnit {
 
 	/** Returns the text with tvars replaces with placeholders */
 	public function getTextWithVariables(): string {
+		return $this->replaceVariablesWithNames( $this->text );
+	}
+
+	private function replaceVariablesWithNames( string $text ): string {
 		$variableReplacements = [];
-		foreach ( $this->getVariables() as $variable ) {
+		foreach ( $this->loadVariables( $text ) as $variable ) {
 			$variableReplacements[$variable->getDefinition()] = $variable->getName();
 		}
 
-		return strtr( $this->text, $variableReplacements );
+		return strtr( $text, $variableReplacements );
 	}
 
 	/** Returns unit text with variables replaced. */
@@ -107,6 +111,17 @@ class TranslationUnit {
 		}
 
 		return strtr( $this->text, $variableReplacements );
+	}
+
+	/** Returns whether all changes to the unit were done inside tvars */
+	public function onlyTvarsChanged(): bool {
+		if ( $this->oldText === null ) {
+			// This shouldn't ever be called if oldText is null, but just in case
+			return false;
+		}
+		$newText = $this->getTextWithVariables();
+		$oldText = $this->replaceVariablesWithNames( $this->oldText );
+		return $oldText === $newText;
 	}
 
 	/** Returns the unit text with updated or added unit marker */
@@ -134,16 +149,21 @@ class TranslationUnit {
 
 	/** @return TranslationVariable[] */
 	public function getVariables(): array {
+		return $this->loadVariables( $this->text );
+	}
+
+	/** @return TranslationVariable[] */
+	private function loadVariables( string $text ): array {
 		$vars = [];
 
 		$matches = [];
-		preg_match_all( self::TVAR_OLD_SYNTAX_REGEX, $this->text, $matches, PREG_SET_ORDER );
+		preg_match_all( self::TVAR_OLD_SYNTAX_REGEX, $text, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $m ) {
 			$vars[] = new TranslationVariable( $m[0], '$' . $m[1], $m[2] );
 		}
 
 		$matches = [];
-		preg_match_all( self::TVAR_NEW_SYNTAX_REGEX, $this->text, $matches, PREG_SET_ORDER );
+		preg_match_all( self::TVAR_NEW_SYNTAX_REGEX, $text, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $m ) {
 			$vars[] = new TranslationVariable(
 				$m[0],

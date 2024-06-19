@@ -506,4 +506,37 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 		$language->method( 'getDir' )->willReturn( $dir );
 		return $language;
 	}
+
+	public static function provideTestOnlyTvarsChanged() {
+		yield 'no tvars"' => [
+			'foo',
+			'bar',
+			false
+		];
+		yield 'tvar name changed' => [
+			'<tvar name="1">Foo</tvar>',
+			'<tvar name="2">Bar</tvar>',
+			false
+		];
+		yield 'tvar content changed' => [
+			'<tvar name="1">Foo</tvar>',
+			'<tvar name="1">Baz</tvar>',
+			true
+		];
+		yield 'tvar formatting changed' => [
+			'<tvar|1>Foo</>',
+			'<tvar name="1">Foo</tvar>',
+			true
+		];
+	}
+
+	/** @dataProvider provideTestOnlyTvarsChanged */
+	public function testOnlyTvarsChanged( string $old, string $new, bool $expected ) {
+		$unit = new TranslationUnit( $new, TranslationUnit::NEW_UNIT_ID, 'changed', $old );
+		$this->assertEquals( $expected, $unit->onlyTvarsChanged() );
+
+		// Test it the other way around too just to be sure
+		$unit = new TranslationUnit( $old, TranslationUnit::NEW_UNIT_ID, 'changed', $new );
+		$this->assertEquals( $expected, $unit->onlyTvarsChanged() );
+	}
 }
