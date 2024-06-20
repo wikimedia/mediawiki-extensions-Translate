@@ -481,9 +481,7 @@
 	"translate-hidetranslations": "Dölj översättningssidor",
 	"echo-category-title-translate-message-group-subscription": "Prenumerationer på översättbara meddelandegrupper",
 	"echo-pref-tooltip-translate-message-group-subscription": "Meddela mig om förändringar i översättbara meddelandegrupper som jag prenumererar på.",
-	"notification-bundle-header-message-group-subscription": "Översättningsuppdateringar på $1 prenumererade meddelande{{PLURAL:$1|grupp|grupper}}",
 	"notification-header-message-group-subscription": "Det finns översättningsuppdateringar för $1",
-	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Nytt meddelande|Nya meddelanden}} i $1",
 	"notification-body-translate-mgs-message-added": "Lade till $1 {{PLURAL:$1|meddelande|meddelanden}}",
 	"notification-link-mgs-group-translate": "Översätt $1"
 }

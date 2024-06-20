@@ -435,7 +435,6 @@
 	"translate-hidetranslations": "Lefordított lapok elrejtése",
 	"echo-category-title-translate-message-group-subscription": "Lefordítható üzenetcsoportok feliratkozásai",
 	"echo-pref-tooltip-translate-message-group-subscription": "Értesítést kérek azoknak a lefordítható üzenetcsoportoknak a változásairól, amikre feliratkoztam",
-	"notification-bundle-header-message-group-subscription": "Fordítási frissítések $1 feliratkozott {{PLURAL:$1|üzenetcsoportból}}",
 	"notification-header-message-group-subscription": "Fordítási frissítések a(z) $1 üzenetcsoporthoz",
 	"notification-link-mgs-group-translate": "$1 fordítása"
 }

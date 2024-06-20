@@ -468,9 +468,7 @@
 	"translate-hidetranslations": "Скриј преводни страници",
 	"echo-category-title-translate-message-group-subscription": "Претплати на преводливи групи пораки",
 	"echo-pref-tooltip-translate-message-group-subscription": "Извести ме за промени во преводливи групи пораки на кои сум претплатен",
-	"notification-bundle-header-message-group-subscription": "Измените во преводите на $1 {{PLURAL:$1|претплатена група|претплатени групи}} пораки",
 	"notification-header-message-group-subscription": "Има измени во преводот на $1",
-	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Нова порака|Нови пораки}} во $1",
 	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|Додадена $1 порака|Додадени $1 пораки}}",
 	"notification-link-mgs-group-translate": "Преведи ја $1"
 }

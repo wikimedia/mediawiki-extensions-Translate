@@ -388,7 +388,6 @@
 	"translate-messagebundle-error-empty-value": "Schlëssel \"$1\" huet kee Wäert",
 	"translate-hidetranslations": "Iwwersetzungssäite verstoppen",
 	"notification-header-message-group-subscription": "Et gëtt Iwwersetzungsaktualiséierunge fir $1",
-	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|Neie Message|Nei Messagen}} a(n) $1",
 	"notification-body-translate-mgs-message-added": "Huet {{PLURAL:$1|ee Message|$1 Messagen}} derbäigesat",
 	"notification-link-mgs-group-translate": "$1 iwwersetzen"
 }

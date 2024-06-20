@@ -17,6 +17,7 @@
 	"tux-sst-view-foreign": "Смотреть в $1",
 	"tux-sst-search": "Найти",
 	"tux-sst-search-ph": "Поиск переводов",
+	"tux-sst-search-info": "Для уточнения критериев поиска используйте операторы <code>language:</code> или <code>group:</code>.",
 	"tux-sst-count": "{{PLURAL:$1|Найден $1 результат|Найдены $1 результата|Найдено $1 результатов}}",
 	"tux-sst-facet-language": "Языки",
 	"tux-sst-facet-group": "Группы сообщений",

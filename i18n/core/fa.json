@@ -359,7 +359,7 @@
 	"tux-save-unknown-error": "خطای ناشناخته رخ داد.",
 	"tux-editor-placeholder-documentation": "افزودن مستندات ترجمه",
 	"tux-editor-placeholder-language": "ترجمۀ شما به $1",
-	"tux-editor-editsummary-placeholder": "توضیح تغییرات شما (اختیاری)",
+	"tux-editor-editsummary-placeholder": "توضیح تغییرات (اختیاری)",
 	"tux-editor-paste-original-button-label": "چسباندن متن مبدأ",
 	"tux-editor-discard-changes-button-label": "دور ریختن تغییرات",
 	"tux-editor-save-button-label": "انتشار ترجمه",

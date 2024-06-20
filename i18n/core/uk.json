@@ -485,7 +485,6 @@
 	"translate-hidetranslations": "Приховати сторінки перекладу",
 	"echo-category-title-translate-message-group-subscription": "Підписки на перекладні групи повідомлень",
 	"echo-pref-tooltip-translate-message-group-subscription": "Повідомляти мене про зміни в перекладних групах повідомлень, на які мене підписано",
-	"notification-bundle-header-message-group-subscription": "Оновлення перекладів у $1 {{PLURAL:$1|перекладній групі|перекладних групах}} повідомлень",
 	"notification-header-message-group-subscription": "Є оновлення перекладу у «$1»",
 	"notification-link-mgs-group-translate": "Перекласти «$1»"
 }

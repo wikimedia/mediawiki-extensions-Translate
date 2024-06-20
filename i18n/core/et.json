@@ -322,7 +322,6 @@
 	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused",
 	"echo-category-title-translate-message-group-subscription": "Tõlgitava sõnumirühma tellimus",
 	"echo-pref-tooltip-translate-message-group-subscription": "Teavita mind muudatustest tõlgitavas sõnumirühmas, mida tellin.",
-	"notification-bundle-header-message-group-subscription": "Uuendused $1 tõlgitavas {{PLURAL:$1|sõnumirühmas}}",
 	"notification-header-message-group-subscription": "Rühma $1 tõlkeid on uuendatud.",
 	"notification-link-mgs-group-translate": "Tõlgi rühm $1"
 }

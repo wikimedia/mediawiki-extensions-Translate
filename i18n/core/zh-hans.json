@@ -504,7 +504,6 @@
 	"translate-hidetranslations": "隐藏翻译页面",
 	"echo-category-title-translate-message-group-subscription": "可翻译消息组订阅",
 	"echo-pref-tooltip-translate-message-group-subscription": "当我订阅的可翻译消息组更改时通知我",
-	"notification-bundle-header-message-group-subscription": "$1个订阅的消息{{PLURAL:$1|组}}有翻译更新",
 	"notification-header-message-group-subscription": "$1有翻译更新",
 	"notification-link-mgs-group-translate": "翻译$1"
 }

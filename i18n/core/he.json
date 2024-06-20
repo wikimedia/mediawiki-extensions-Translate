@@ -475,9 +475,7 @@
 	"translate-hidetranslations": "הסתרת דפי תרגום",
 	"echo-category-title-translate-message-group-subscription": "מינויים לקבוצות הודעות לתרגום",
 	"echo-pref-tooltip-translate-message-group-subscription": "להודיע לי על שינויים בקבוצות הודעות לתרגום שעשיתי להן מינוי",
-	"notification-bundle-header-message-group-subscription": "עדכוני תרגום {{PLURAL:$1|בקבוצת הודעות אחת|ב־$1 קבוצות הודעות}}",
 	"notification-header-message-group-subscription": "ישנם עדכוני תרגום בקבוצה $1",
-	"notification-compact-header-translate-mgs-message-added": "{{PLURAL:$2|הודעה חדשה|הודעות חדשות}} בקבוצה $1",
 	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|נוספה הודעה אחת|נוספו $1 הודעות}}",
 	"notification-link-mgs-group-translate": "לתרגם את $1"
 }
