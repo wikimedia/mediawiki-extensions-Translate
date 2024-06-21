@@ -19,6 +19,7 @@ use MediaWiki\User\UserFactory;
 class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, EchoGetBundleRulesHook {
 	private MessageGroupSubscription $messageGroupSubscription;
 	private UserFactory $userFactory;
+	private const SUPPORTED_NOTIFICATION_TYPES = [ 'translate-mgs-message-added' ];
 
 	public function __construct(
 		MessageGroupSubscription $messageGroupSubscription,
@@ -91,6 +92,8 @@ class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, 
 
 	/** Notifications for subscriptions are bundled by message group */
 	public function onEchoGetBundleRules( Event $event, string &$bundleKey ) {
-		$bundleKey = $event->getExtraParam( 'groupId' );
+		if ( in_array( $event->getType(), self::SUPPORTED_NOTIFICATION_TYPES ) ) {
+			$bundleKey = $event->getExtraParam( 'groupId' );
+		}
 	}
 }
