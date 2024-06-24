@@ -71,7 +71,7 @@
 
 			// Support removing keys from the query
 			Object.keys( params ).forEach( function ( key ) {
-				if ( params[ key ] === null ) {
+				if ( params[ key ] === null || params[ key ] === undefined ) {
 					delete uri.query[ key ];
 				}
 			} );
