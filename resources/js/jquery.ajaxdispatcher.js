@@ -4,6 +4,7 @@
 	/**
 	 * Call list of callbacks returning promises in serial order and returns a list of promises.
 	 *
+	 * @internal
 	 * @author Niklas Laxström
 	 *
 	 * @param {Function[]} list List of callbacks returning promises.
