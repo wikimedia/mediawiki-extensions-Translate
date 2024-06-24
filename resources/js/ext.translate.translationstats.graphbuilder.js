@@ -27,7 +27,7 @@
 	 * Used to display translation stats graph. Each instance of this class manages one
 	 * instance of the graph.
 	 *
-	 * @private
+	 * @internal
 	 * @param {Object} $graphContainer The title of the page including language code
 	 *   to store the translation.
 	 * @param {Object} graphOptions Graph options, current only processes the width and height.
