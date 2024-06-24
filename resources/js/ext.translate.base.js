@@ -79,7 +79,7 @@
 		/**
 		 * Load message group information asynchronously.
 		 *
-		 * @private
+		 * @internal
 		 * @param {string} id Message group id
 		 * @param {string|Array} [props] List of properties to load
 		 * @return {jQuery.Promise} Object containing the requested properties on success.
@@ -111,7 +111,7 @@
 		 * Find a group from an array of message groups as returned by web api
 		 * and recurse it through sub groups.
 		 *
-		 * @private
+		 * @internal
 		 * @param {string} id Group id to search for.
 		 * @param {Array} groups Array of message groups
 		 * @return {Object} Message group object
@@ -146,7 +146,7 @@
 		/**
 		 * Check if the current user is allowed to translate on this wiki.
 		 *
-		 * @private
+		 * @internal
 		 * @return {boolean}
 		 */
 		canTranslate: function () {
@@ -156,7 +156,7 @@
 		/**
 		 * Check if the current user is allowed to proofread on this wiki.
 		 *
-		 * @private
+		 * @internal
 		 * @return {boolean}
 		 */
 		canProofread: function () {
@@ -166,7 +166,7 @@
 		/**
 		 * Check if the current user can delete translations on this wiki.
 		 *
-		 * @private
+		 * @internal
 		 * @return {boolean}
 		 */
 		canDelete: function () {
@@ -176,7 +176,7 @@
 		/**
 		 * Check if the current user can update and manage message groups.
 		 *
-		 * @private
+		 * @internal
 		 * @return {boolean}
 		 */
 		canManage: function () {
@@ -186,7 +186,7 @@
 		/**
 		 * Adds missing languages to the language database so that they can be used in ULS.
 		 *
-		 * @private
+		 * @internal
 		 * @param {Object} languages Language tags mapped to language names
 		 * @param {Array} regions Which regions to add the languages.
 		 */
@@ -207,7 +207,7 @@
 		/**
 		 * Checks if there are any unsaved edits in Special:Translate
 		 *
-		 * @private
+		 * @internal
 		 * @return {boolean|number}
 		 */
 		isDirty: function () {
@@ -220,7 +220,7 @@
 		/**
 		 * Return the language details for usage in HTML attributes
 		 *
-		 * @private
+		 * @internal
 		 * @param {string} languageCode
 		 * @return {Object}
 		 */
