@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Malafaya",
+			"Morozof",
 			"Smeira"
 		]
 	},
@@ -69,5 +70,6 @@
 	"translate-language": "Pük",
 	"translate-total": "Nuns",
 	"translate-untranslated": "No petradutöls",
-	"translate-percentage-complete": "Lölöfükam"
+	"translate-percentage-complete": "Lölöfükam",
+	"translate-documentation-language": "Patöfs pükanema pro nuns"
 }
