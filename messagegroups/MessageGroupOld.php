@@ -16,7 +16,6 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAid;
 use MediaWiki\Linker\LinkTarget;
 
 /**
@@ -200,39 +199,6 @@ abstract class MessageGroupOld implements MessageGroup {
 	protected $messages = [];
 
 	/**
-	 * Returns path to the file where translation of language code $code are.
-	 *
-	 * @param string $code
-	 * @return string|false Path to the file or false if not applicable.
-	 */
-	public function getMessageFile( $code ) {
-		return false;
-	}
-
-	public function getPath() {
-		return false;
-	}
-
-	/**
-	 * @param string $code
-	 * @return bool|string
-	 */
-	public function getMessageFileWithPath( $code ) {
-		$path = $this->getPath();
-		$file = $this->getMessageFile( $code );
-
-		if ( !$path || !$file ) {
-			return false;
-		}
-
-		return "$path/$file";
-	}
-
-	public function getSourceFilePath( $code ) {
-		return $this->getMessageFileWithPath( $code );
-	}
-
-	/**
 	 * Creates a new MessageCollection for this group.
 	 *
 	 * @param string $code Language code for this collection.
@@ -308,16 +274,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		}
 
 		return $message;
-	}
-
-	/**
-	 * List of available message types mapped to the classes
-	 * implementing them. Default implementation (all).
-	 *
-	 * @return array
-	 */
-	public function getTranslationAids() {
-		return TranslationAid::getTypes();
 	}
 
 	public function getSupportConfig(): ?array {
