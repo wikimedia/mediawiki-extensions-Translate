@@ -8,7 +8,13 @@
 	"searchtranslations": "Awdarmalardı izlew",
 	"tux-sst-edit": "Awdarmanı dúzetiw",
 	"tux-sst-search-ph": "Awdarmalardı izlew",
+	"tux-sst-count": "{{PLURAL:$1|Bir nátiyje tabıldı|$1 nátiyje tabıldı}}",
 	"tux-sst-facet-language": "Tiller",
 	"tux-sst-facet-group": "Xabarlama toparları",
+	"tux-sst-default": "Awdarmalar",
+	"tux-sst-translated": "$1 tilinen awdarmalar",
+	"tux-sst-untranslated": "$1 tilinen awdarmalar joq",
+	"tux-sst-link-all-match": "Barlıq izlengen sózlerdi talap etiw.",
+	"tux-sst-match-message": "Gez kelgen izlew sózlerine sáykes awdarmalar kórsetilgen. $1",
 	"tux-sst-case-sensitive": "Háripler úlken-kishiligine bayqaǵısh"
 }

@@ -160,6 +160,7 @@
 	"tux-messagetable-more-messages": "Taǵı $1 {{PLURAL:$1|xabarlama}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|Xabarlama|Xabarlamalar}} júklenbekte...",
 	"tux-message-filter-placeholder": "Dizimdi filtrlew",
+	"tux-message-filter-result": "«$2» degen izlew sorawıńız boyınsha $1 {{PLURAL:$1|nátiyje|nátiyje}} tabıldı",
 	"tux-proofread-translated-by-self": "Siz awdardıńız",
 	"tux-empty-list-translated": "Awdarılǵan xabarlamalar joq",
 	"tux-empty-list-translated-action": "Awdarıw",
