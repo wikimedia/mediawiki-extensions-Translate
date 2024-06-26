@@ -29,10 +29,10 @@ end
 --- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
 --- @param skipFallbacks boolean (Optional) Whether to skip loading fallback translations, defaults to false
 --- @return table A new translate message bundle table
-function translateMessageBundle.new( title, languageCode, skipFallbacks )
-	util.checkTypeMulti( 'translateMessageBundle:new', 1, title, { 'string', 'table' } )
-	util.checkType( 'translateMessageBundle:new', 2, languageCode, 'string', true )
-	util.checkType( 'translateMessageBundle:new', 3, skipFallbacks, 'boolean', true )
+function translateGetMessageBundle( title, languageCode, skipFallbacks )
+	util.checkTypeMulti( 'translateGetMessageBundle', 1, title, { 'string', 'table' } )
+	util.checkType( 'translateGetMessageBundle', 2, languageCode, 'string', true )
+	util.checkType( 'translateGetMessageBundle', 3, skipFallbacks, 'boolean', true )
 
 	if type( title ) == 'string' then
 		title = mw.title.new( title )
@@ -75,12 +75,20 @@ function translateMessageBundle.new( title, languageCode, skipFallbacks )
 	return obj
 end
 
+--- Returns a table to access translations loaded with fallbacks from the requested message bundle
+--- @param title string Message bundle page name
+--- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
+--- @return table A new translate message bundle table
+function translateMessageBundle.new( title, languageCode )
+	return translateGetMessageBundle( title, languageCode, false )
+end
+
 --- Returns a table to access translations without fallbacks from the requested message bundle
 --- @param title string Message bundle page name
 --- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
 --- @return table A new translate message bundle table loaded without access to fallbacks
 function translateMessageBundle.newWithoutFallbacks( title, languageCode )
-	return translateMessageBundle.new( title, languageCode, true )
+	return translateGetMessageBundle( title, languageCode, true )
 end
 
 return translateMessageBundle
