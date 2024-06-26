@@ -7,10 +7,7 @@
 		"template": "node_modules/jsdoc-wmf-theme"
 	},
 	"plugins": [
-		"node_modules/jsdoc-wmf-theme/plugins/allow-dots-in-modules",
-		"node_modules/jsdoc-wmf-theme/plugins/betterlinks",
-		"node_modules/jsdoc-wmf-theme/plugins/summarize",
-		"plugins/markdown"
+		"node_modules/jsdoc-wmf-theme/plugins/default"
 	],
 	"source": {
 		"include": [ "resources" ],
@@ -31,23 +28,15 @@
 			"useLongnameInNav": true
 		},
 		"wmf": {
-			"linkMap": {
-				"Array": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-				"jQuery.Promise": "https://api.jquery.com/Types/#Promise",
-				"jQuery": "https://api.jquery.com/Types/#jQuery",
-				"OO.ui.MenuOptionWidget": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.MenuOptionWidget.html",
-				"OO.ui.MenuTagMultiselectWidget": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.MenuTagMultiselectWidget.html",
-				"OO.ui.mixin.LookupElement": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.mixin.LookupElement.html",
-				"OO.ui.mixin.PendingElement": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.mixin.PendingElement.html",
-				"OO.ui.mixin.RequestManager": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.mixin.RequestManager.html",
-				"OO.ui.ProcessDialog": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.ProcessDialog.html",
-				"OO.ui.TextInputWidget": "https://doc.wikimedia.org/oojs-ui/master/js/OO.ui.TextInputWidget.html",
-				"ve.ce.MWAnnotationNode": "https://doc.wikimedia.org/VisualEditor/master/js/ve.ce.MWAnnotationNode.html",
-				"ve.dm.Model": "https://doc.wikimedia.org/visualeditor-standalone/master/ve.dm.Model.html",
-				"ve.dm.MWAnnotationNode": "https://doc.wikimedia.org/VisualEditor/master/js/ve.dm.MWAnnotationNode.html",
-				"ve.dm.Node": "https://doc.wikimedia.org/visualeditor-standalone/master/ve.dm.Node.html",
-				"ve.ui.Context": "https://doc.wikimedia.org/visualeditor-standalone/master/ve.ui.Context.html",
-				"ve.ui.MWAnnotationContextItem": "https://doc.wikimedia.org/VisualEditor/master/js/ve.ui.MWAnnotationContextItem.html"
+			"repository": "https://gerrit.wikimedia.org/g/mediawiki/extensions/Translate/",
+			"prefixMap": {
+				"ve.": "https://doc.wikimedia.org/visualeditor-standalone/master/{type}.html",
+				"ve.dm.MW": "https://doc.wikimedia.org/VisualEditor/master/js/{type}.html",
+				"ve.ce.MW": "https://doc.wikimedia.org/VisualEditor/master/js/{type}.html",
+				"ve.ui.MW": "https://doc.wikimedia.org/VisualEditor/master/js/{type}.html",
+				"ve.dm.MWTranslateAnnotation": true,
+				"ve.ce.MWTranslateAnnotation": true,
+				"ve.ui.MWTranslateAnnotation": true
 			}
 		}
 	}

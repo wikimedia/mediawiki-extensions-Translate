@@ -9,7 +9,7 @@
 
 	mw.translate = mw.translate || {};
 	mw.translate = $.extend( mw.translate, {
-		/** @private */
+		/** @ignore */
 		getMessages: function ( messageGroup, language, offset, limit, filter ) {
 			var api = new mw.Api();
 
