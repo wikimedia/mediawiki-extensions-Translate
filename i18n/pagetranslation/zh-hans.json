@@ -288,6 +288,7 @@
 	"pp-page-does-not-exist": "页面“$1”不存在。",
 	"pp-diff-old-header": "源文本",
 	"pp-diff-new-header": "准备好的文本",
+	"pp-unexpected-error": "处理请求时出错",
 	"tpt-unlink-confirm": "请确认您真的希望从翻译系统移除此页面。语言选择器和翻译页面名将停止工作。翻译页面将可编辑。",
 	"tpt-unlink-button": "从翻译中移除",
 	"tpt-unlink-summary": "从翻译中移除页面",
@@ -300,5 +301,6 @@
 	"visualeditor-annotations-translate-description": "此范围内的内容被标记为可翻译。请确保您遵循[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 更改源文本]的相关守则。",
 	"visualeditor-annotations-tvar-start": "不可翻译内容的开始",
 	"visualeditor-annotations-tvar-end": "不可翻译内容的结尾",
-	"visualeditor-annotations-tvar-description": "此范围内的内容被标记为不可翻译。请参考[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation 源文本的分割]这一文档以获取更多信息。"
+	"visualeditor-annotations-tvar-description": "此范围内的内容被标记为不可翻译。请参考[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation 源文本的分割]这一文档以获取更多信息。",
+	"tag-translate-translation-pages-description": "通过翻译扩展的自动翻译页面编辑"
 }
