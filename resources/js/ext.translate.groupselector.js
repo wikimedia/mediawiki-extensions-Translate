@@ -620,7 +620,10 @@
 		 */
 		setWatchedGroups: function ( groupIds ) {
 			this.watchedGroups = groupIds;
-			this.showWatchedGroups();
+			var $watchedTab = this.$menu.find( '.tux-grouptab--watched' );
+			if ( $watchedTab.hasClass( 'tux-grouptab--selected' ) ) {
+				this.showWatchedGroups();
+			}
 		}
 	};
 
