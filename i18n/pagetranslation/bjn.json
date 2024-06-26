@@ -13,6 +13,8 @@
 	"translate-tag-translate-link-desc": "Tarjamahakan laman ngini",
 	"tpt-languages-nonzero": "$1 ($2% tarjamahan)",
 	"tpt-render-summary": "Mahanyari ka ralatan pahanyarnya laman bahan acuan",
+	"tpt-aggregategroup-collapse-all-groups": "ungsutakan samunyaan galambang",
+	"tpt-aggregategroup-collapse-group": "ungsutakan galambang",
 	"log-name-pagetranslation": "Log panarjamahan laman",
 	"pagemigration": "Pamindahan laman tarjamahan",
 	"tpt-unlink-button": "Pinggirakan matan panarjamahan"
