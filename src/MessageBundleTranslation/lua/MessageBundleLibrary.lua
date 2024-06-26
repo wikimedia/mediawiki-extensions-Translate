@@ -25,15 +25,11 @@ function translateMessageBundle.setupInterface( options )
 end
 
 --- Returns a table to access translations loaded with fallbacks from the requested message bundle
---- @param title string Message bundle page name
---- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
---- @param skipFallbacks boolean (Optional) Whether to skip loading fallback translations, defaults to false
+--- @param title string|table Message bundle page name
+--- @param languageCode string Language to load the translations in
+--- @param skipFallbacks boolean Whether to skip loading fallback translations
 --- @return table A new translate message bundle table
-function translateGetMessageBundle( title, languageCode, skipFallbacks )
-	util.checkTypeMulti( 'translateGetMessageBundle', 1, title, { 'string', 'table' } )
-	util.checkType( 'translateGetMessageBundle', 2, languageCode, 'string', true )
-	util.checkType( 'translateGetMessageBundle', 3, skipFallbacks, 'boolean', true )
-
+function getMessageBundle( title, languageCode, skipFallbacks )
 	if type( title ) == 'string' then
 		title = mw.title.new( title )
 	end
@@ -42,12 +38,6 @@ function translateGetMessageBundle( title, languageCode, skipFallbacks )
 
 	-- Verify that this is a valid message bundle
 	php.validate( title.prefixedText )
-
-	-- Determine the language code to use for the message bundle
-	languageCode = languageCode or pageLanguageCode
-
-	-- Decide whether to skip loading fallbacks, load them by default
-	skipFallbacks = skipFallbacks or false
 
 	local obj = {};
 	local translations = nil;
@@ -76,19 +66,25 @@ function translateGetMessageBundle( title, languageCode, skipFallbacks )
 end
 
 --- Returns a table to access translations loaded with fallbacks from the requested message bundle
---- @param title string Message bundle page name
+--- @param title string|table Message bundle page name
 --- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
 --- @return table A new translate message bundle table
 function translateMessageBundle.new( title, languageCode )
-	return translateGetMessageBundle( title, languageCode, false )
+	util.checkTypeMulti( 'translateMessageBundle.new', 1, title, { 'string', 'table' } )
+	util.checkType( 'translateMessageBundle.new', 2, languageCode, 'string', true )
+
+	return getMessageBundle( title, languageCode or pageLanguageCode, false )
 end
 
 --- Returns a table to access translations without fallbacks from the requested message bundle
---- @param title string Message bundle page name
+--- @param title string|table Message bundle page name
 --- @param languageCode string (Optional) Language to load the translations in, defaults to page language code
 --- @return table A new translate message bundle table loaded without access to fallbacks
 function translateMessageBundle.newWithoutFallbacks( title, languageCode )
-	return translateGetMessageBundle( title, languageCode, true )
+	util.checkTypeMulti( 'translateMessageBundle.newWithoutFallbacks', 1, title, { 'string', 'table' } )
+	util.checkType( 'translateMessageBundle.newWithoutFallbacks', 2, languageCode, 'string', true )
+
+	return getMessageBundle( title, languageCode or pageLanguageCode, true )
 end
 
 return translateMessageBundle
