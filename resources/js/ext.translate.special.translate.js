@@ -268,6 +268,12 @@
 			return;
 		}
 
+		var $tuxWatchGroup = $( '.tux-watch-group' );
+		if ( group.subscription === undefined ) {
+			$tuxWatchGroup.empty();
+			return;
+		}
+
 		var buttonMessage = group.subscription ? 'tux-unwatch-group' : 'tux-watch-group';
 		var $subscribeButton = $( '<button>' )
 			.addClass( 'mw-ui-button' )
@@ -277,7 +283,7 @@
 			.data( 'subscribed', group.subscription )
 			.on( 'click', toggleSubscription );
 
-		$( '.tux-watch-group' ).empty().append( $subscribeButton );
+		$tuxWatchGroup.empty().append( $subscribeButton );
 	}
 
 	function removeGroupWarnings() {
