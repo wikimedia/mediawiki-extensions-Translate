@@ -13,6 +13,8 @@
 	"translate-statsf-count-registrations": "Pamakai hanyar",
 	"translations": "Samunyaan tarjamahan",
 	"languagestats-recenttranslations": "tarjamahan wayahini",
+	"translate-langstats-collapse": "ungsutakan",
+	"translate-langstats-collapseall": "ungsutakan samunyaan",
 	"translate-mgs-fieldset": "Tampaiakan kakatujuan",
 	"translate-tes-entity-not-found": "Kadada hasil nang rasuk",
 	"supportedlanguages-recenttranslations": "tarjamahan damini",
@@ -20,5 +22,6 @@
 	"importtranslations": "Impur tarjamahan",
 	"translate-documentation-language": "Dokuméntasi pasan",
 	"translate-searchprofile": "Tarjamahan",
-	"tux-notices-hide": "suhukakan"
+	"tux-notices-hide": "suhukakan",
+	"tux-editor-collapse-tooltip": "Ungsutakan"
 }
