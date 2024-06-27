@@ -355,6 +355,7 @@
 	"translate-msggroupselector-search-placeholder": "搜尋群組",
 	"translate-msggroupselector-search-all": "所有",
 	"translate-msggroupselector-search-recent": "近期",
+	"translate-msggroupselector-search-watched": "已監視",
 	"translate-msggroupselector-view-subprojects": "$1 個{{PLURAL:$1|小組|小組}}",
 	"tux-languageselector": "翻譯至",
 	"tux-select-target-language": "翻譯的目標語言",
@@ -475,7 +476,7 @@
 	"translate-hidetranslations": "隱藏譯文頁面",
 	"echo-category-title-translate-message-group-subscription": "可翻譯訊息群組訂閱",
 	"echo-pref-tooltip-translate-message-group-subscription": "通知我有關我訂閱的可翻譯訊息群組的變更",
-	"notification-header-message-group-subscription": "群組$1有翻譯更新",
+	"notification-header-message-group-subscription": "群組$1的翻譯更新",
 	"notification-body-translate-mgs-message-added": "已新增$1則{{PLURAL:$1|訊息}}。",
 	"notification-link-mgs-group-translate": "翻譯$1"
 }

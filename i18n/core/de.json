@@ -352,6 +352,7 @@
 	"translate-msggroupselector-search-placeholder": "Gruppen durchsuchen",
 	"translate-msggroupselector-search-all": "Alle",
 	"translate-msggroupselector-search-recent": "Aktuell",
+	"translate-msggroupselector-search-watched": "Beobachtet",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|Eine Untergruppe|$1 Untergruppen}}",
 	"tux-languageselector": "Übersetzen auf",
 	"tux-select-target-language": "Zielsprache für die Übersetzung",
