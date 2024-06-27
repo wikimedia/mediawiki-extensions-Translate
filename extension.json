@@ -1365,7 +1365,8 @@
 	"GrantPermissions": {
 		"editpage": {
 			"translate": true,
-			"unfuzzy": true
+			"unfuzzy": true,
+			"translate-manage": true
 		}
 	},
 	"GroupPermissions": {
