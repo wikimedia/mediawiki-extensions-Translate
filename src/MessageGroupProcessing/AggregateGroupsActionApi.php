@@ -312,6 +312,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			],
 			'groupsourcelanguagecode' => [
 				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => self::NO_LANGUAGE_CODE,
 			],
 			'token' => [
 				ParamValidator::PARAM_TYPE => 'string',
