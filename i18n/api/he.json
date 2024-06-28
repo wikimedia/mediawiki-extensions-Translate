@@ -74,6 +74,7 @@
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "לא להציג שפות עם תרגום מלא",
 	"apihelp-query+messagegroupstats-param-suppressempty": "לא להציג שפות ללא שום תרגום",
 	"apihelp-query+messagegroupstats-example-1": "רשימה של סטטיסטיקת השלמת תרגומים עבור הקבוצה \"page-Example\"",
+	"apihelp-query+messagegroupsubscription-summary": "לרשום קבוצות הודעות שהמשתמש הנוכחי מנוי אליהן.",
 	"apihelp-query+messagetranslations-summary": "שאילתה על כל התרגומים של הודעה אחת.",
 	"apihelp-query+messagetranslations-param-title": "כותרת שלמה של הודעה ידועה.",
 	"apihelp-query+messagetranslations-example-1": "רשימת תרגומים בוויקי עבור \"MediaWiki:January\"",

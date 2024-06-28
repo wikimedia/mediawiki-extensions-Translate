@@ -315,6 +315,7 @@
 	"translate-msggroupselector-search-placeholder": "Претражите групе",
 	"translate-msggroupselector-search-all": "Све",
 	"translate-msggroupselector-search-recent": "Недавне",
+	"translate-msggroupselector-search-watched": "Надгледано",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|подгрупа|подгрупе}}",
 	"tux-languageselector": "Превод на",
 	"tux-select-target-language": "Циљни језик за превођење",

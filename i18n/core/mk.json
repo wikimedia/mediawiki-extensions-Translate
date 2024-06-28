@@ -336,6 +336,7 @@
 	"translate-msggroupselector-search-placeholder": "Пребарајте групи",
 	"translate-msggroupselector-search-all": "Сите",
 	"translate-msggroupselector-search-recent": "Скорешни",
+	"translate-msggroupselector-search-watched": "Набљудувани",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|подгрупа|подгрупи}}",
 	"tux-languageselector": "Преведи на",
 	"tux-select-target-language": "Целен јазик за преводот",

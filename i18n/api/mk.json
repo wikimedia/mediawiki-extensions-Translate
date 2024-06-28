@@ -73,6 +73,7 @@
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Не прикажувај јазици со наполно завршен превод",
 	"apihelp-query+messagegroupstats-param-suppressempty": "Не прикажувај јазици што немаат почнато со преведување",
 	"apihelp-query+messagegroupstats-example-1": "Список на статистики за потполност на преводите за групата „page-Example“",
+	"apihelp-query+messagegroupsubscription-summary": "Список на групи пораки на кои тековниот корисник е претплатен.",
 	"apihelp-query+messagetranslations-summary": "Побарај ги сите преводи на една порака.",
 	"apihelp-query+messagetranslations-param-title": "Целосен наслов на позната порака.",
 	"apihelp-query+messagetranslations-example-1": "Список на преводи во викито за „MediaWiki:January“",
