@@ -105,7 +105,6 @@ class AggregateMessageGroup extends MessageGroupBase {
 			}
 
 			$messages += $group->getDefinitions();
-			return $messages;
 		}
 
 		return $messages;
