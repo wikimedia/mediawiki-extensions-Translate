@@ -209,6 +209,9 @@
 	"log-description-translationreview": "Kõigi tõlgete ja sõnumirühmade ülevaatuslogi.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|märkis ülevaadatuks}} tõlke $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|muutis}} lehekülje \"$3\" $4 tõlgete oleku: $6 → $7",
+	"logentry-translationreview-unfuzzy": "$1 {{GENDER:$2|märkis}}, et tõlge $3 ei ole enam iganenud",
+	"right-unfuzzy": "Märkida, et tõlkeüksus pole enam iganenud",
+	"action-unfuzzy": "märkida, et tõlkeüksus pole enam iganenud",
 	"translate-workflow-state-": "(määramata)",
 	"translate-workflowstatus": "Olek: $1",
 	"translate-workflow-set-doing": "Määramine...",
@@ -322,6 +325,7 @@
 	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused",
 	"echo-category-title-translate-message-group-subscription": "Tõlgitava sõnumirühma tellimus",
 	"echo-pref-tooltip-translate-message-group-subscription": "Teavita mind muudatustest tõlgitavas sõnumirühmas, mida tellin.",
-	"notification-header-message-group-subscription": "Rühma $1 tõlkeid on uuendatud.",
+	"notification-header-message-group-subscription": "Rühma $1 tõlgete uuendused",
+	"notification-body-translate-mgs-message-added": "Lisatud $1 {{PLURAL:$1|sõnum|sõnumit}}",
 	"notification-link-mgs-group-translate": "Tõlgi rühm $1"
 }

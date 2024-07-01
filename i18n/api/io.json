@@ -7,5 +7,6 @@
 	"apihelp-groupreview-param-language": "Linguala kodexo.",
 	"apihelp-translationstash-param-subaction": "Agado.",
 	"apihelp-translationstash-example-1": "Adjuntez tradukuro a rezervajo por [[MediaWiki:Jan/fi]]",
+	"apierror-translate-nomessagefortitle": "Titulo ne korespondas a tradukebla mesajo",
 	"apiwarn-translate-alreadyreviewedbyyou": "Vu ja indikis kom revizita"
 }
