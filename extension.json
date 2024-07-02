@@ -103,7 +103,6 @@
 		"MediaWiki\\Extension\\Translate\\MessageLoading\\RebuildMessageIndexJob": "src/MessageLoading/RebuildMessageIndexJob.php",
 		"RecentAdditionsMessageGroup": "messagegroups/RecentAdditionsMessageGroup.php",
 		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
-		"RemoteTTMServer": "ttmserver/RemoteTTMServer.php",
 		"SandboxMessageGroup": "messagegroups/SandboxMessageGroup.php",
 		"SimpleFFS": "src/FileFormatSupport/SimpleFormat.php",
 		"SubsetMessageGroup": "messagegroups/SubsetMessageGroup.php",
