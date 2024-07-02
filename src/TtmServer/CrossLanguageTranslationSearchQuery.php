@@ -1,32 +1,34 @@
 <?php
+declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TtmServer;
+
+use Elastica\Document;
+use Elastica\ResultSet;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Title\Title;
 
 /**
  * Cross Language Translation Search.
- * @since 2015.08
+ *
+ * @license GPL-2.0-or-later
+ * @ingroup TTMServer
  */
 class CrossLanguageTranslationSearchQuery {
-	/** @var SearchableTtmServer */
-	protected $server;
-	/** @var array */
-	protected $params;
-	/** @var \Elastica\ResultSet|null */
-	protected $resultset;
-	/** @var int */
-	protected $total = 0;
-	protected $hl = [ '', '' ];
+	private SearchableTtmServer $server;
+	private array $params;
+	private ?ResultSet $resultSet = null;
+	private int $total = 0;
+	private array $hl = [ '', '' ];
 
 	public function __construct( array $params, SearchableTtmServer $server ) {
 		$this->params = $params;
 		$this->server = $server;
 	}
 
-	public function getDocuments() {
+	public function getDocuments(): array {
 		$documents = [];
 		$offset = $this->params['offset'];
 		$limit = $this->params['limit'];
@@ -47,11 +49,11 @@ class CrossLanguageTranslationSearchQuery {
 		$scroll = $search->scroll( '5s' );
 
 		// Used for aggregations. Only the first scroll response has them.
-		$this->resultset = null;
+		$this->resultSet = null;
 
 		foreach ( $scroll as $resultSet ) {
-			if ( !$this->resultset ) {
-				$this->resultset = $resultSet;
+			if ( !$this->resultSet ) {
+				$this->resultSet = $resultSet;
 				$this->total = $resultSet->getTotalHits();
 			}
 
@@ -65,9 +67,9 @@ class CrossLanguageTranslationSearchQuery {
 			}
 		}
 
-		if ( !$this->resultset ) {
+		if ( !$this->resultSet ) {
 			// No hits for documents, just set the result set.
-			$this->resultset = $scroll->current();
+			$this->resultSet = $scroll->current();
 			$this->total = $scroll->current()->getTotalHits();
 		}
 
@@ -75,9 +77,7 @@ class CrossLanguageTranslationSearchQuery {
 		if ( is_callable( [ $scroll, 'clear' ] ) ) {
 			$scroll->clear();
 		}
-		$documents = array_slice( $documents, $offset, $limit );
-
-		return $documents;
+		return array_slice( $documents, $offset, $limit );
 	}
 
 	/**
@@ -85,10 +85,9 @@ class CrossLanguageTranslationSearchQuery {
 	 * Create a message collection from the definitions in the target language.
 	 * Filter the message collection to get filtered messages.
 	 * Slice messages according to limit and offset given.
-	 * @param \Elastica\Document[] $documents
-	 * @return array[]
+	 * @param Document[] $documents
 	 */
-	protected function extractMessages( $documents ) {
+	private function extractMessages( array $documents ): array {
 		$messages = $ret = [];
 
 		$language = $this->params['language'];
@@ -128,13 +127,13 @@ class CrossLanguageTranslationSearchQuery {
 			$collection->loadTranslations();
 		}
 
-		foreach ( $collection->keys() as $mkey => $titleValue ) {
+		foreach ( $collection->keys() as $messageKey => $titleValue ) {
 			$title = Title::newFromLinkTarget( $titleValue );
 
 			$result = [];
-			$result['content'] = $messages[$mkey];
+			$result['content'] = $messages[$messageKey];
 			if ( $filter === 'translated' || $filter === 'fuzzy' ) {
-				$result['content'] = $collection[$mkey]->translation();
+				$result['content'] = $collection[$messageKey]->translation();
 			}
 			$handle = new MessageHandle( $title );
 			$result['localid'] = $handle->getTitleForBase()->getPrefixedText();
@@ -146,8 +145,7 @@ class CrossLanguageTranslationSearchQuery {
 		return $ret;
 	}
 
-	/** @return array */
-	public function getAvailableFilters() {
+	public function getAvailableFilters(): array {
 		return [
 			'translated',
 			'fuzzy',
@@ -155,11 +153,11 @@ class CrossLanguageTranslationSearchQuery {
 		];
 	}
 
-	public function getTotalHits() {
+	public function getTotalHits(): int {
 		return $this->total;
 	}
 
-	public function getResultSet() {
-		return $this->resultset;
+	public function getResultSet(): ResultSet {
+		return $this->resultSet;
 	}
 }

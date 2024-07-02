@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 use ApiBase;
 use ApiMain;
 use Config;
-use CrossLanguageTranslationSearchQuery;
 use MediaWiki\Config\ServiceOptions;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;

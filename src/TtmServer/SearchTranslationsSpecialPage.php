@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use CrossLanguageTranslationSearchQuery;
 use ErrorPageError;
 use FormatJson;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
