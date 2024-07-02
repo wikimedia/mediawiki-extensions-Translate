@@ -1,26 +1,22 @@
 <?php
-/**
- * TTMServer - The Translate extension translation memory interface
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- * @ingroup TTMServer
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\TtmServer;
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
-use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+use TTMServer;
 
 /**
  * NO-OP version of TTMServer when it is disabled.
  * Keeps other code simpler when they can just do
  * TTMServer::primary()->update( ... );
- * @since 2012-01-28
+ *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2012-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup TTMServer
  */
-class FakeTTMServer extends TTMServer implements ReadableTtmServer, WritableTtmServer {
+class FakeTtmServer extends TTMServer implements ReadableTtmServer, WritableTtmServer {
 	public function __construct() {
 		parent::__construct( [] );
 	}

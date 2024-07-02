@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use FakeTTMServer;
 use InvalidArgumentException;
 use RemoteTTMServer;
 use TTMServer;
@@ -94,7 +93,7 @@ class TtmServerFactory {
 
 	public function getDefaultForQuerying(): ReadableTtmServer {
 		if ( $this->default === null ) {
-			return new FakeTTMServer();
+			return new FakeTtmServer();
 		}
 
 		if ( $this->configs[ $this->default ][ 'writable' ] ?? false ) {

@@ -73,7 +73,6 @@
 		"DtdFFS": "src/FileFormatSupport/DtdFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\DtdFormat": "src/FileFormatSupport/DtdFormat.php",
 		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
-		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FlatPhpFFS": "src/FileFormatSupport/FlatPhpFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\FlatPhpFormat": "src/FileFormatSupport/FlatPhpFormat.php",

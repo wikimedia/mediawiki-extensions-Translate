@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use FakeTTMServer;
 use Generator;
 use InvalidArgumentException;
 use MediaWikiUnitTestCase;
@@ -90,7 +89,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		];
 		$writableServer = [
 			'type' => 'ttmserver',
-			'class' => FakeTTMServer::class,
+			'class' => FakeTtmServer::class,
 			'writable' => true
 		];
 
@@ -133,7 +132,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 
 		$writableServer = [
 			'type' => 'ttmserver',
-			'class' => FakeTTMServer::class,
+			'class' => FakeTtmServer::class,
 			'writable' => true,
 		];
 
@@ -160,7 +159,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 
 		$writableServer = [
 			'type' => 'ttmserver',
-			'class' => FakeTTMServer::class,
+			'class' => FakeTtmServer::class,
 			'writable' => true
 		];
 
@@ -225,13 +224,13 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 	public static function provideTestGetWriteOnly(): Generator {
 		$writableServer = [
 			'type' => 'ttmserver',
-			'class' => FakeTTMServer::class,
+			'class' => FakeTtmServer::class,
 			'writable' => true,
 		];
 
 		$normalServer = [
 			'type' => 'ttmserver',
-			'class' => FakeTTMServer::class,
+			'class' => FakeTtmServer::class,
 			'writable' => true,
 		];
 

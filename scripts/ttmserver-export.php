@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
+use MediaWiki\Extension\Translate\TtmServer\FakeTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Title\Title;
@@ -183,7 +184,7 @@ class TTMServerBootstrap extends Maintenance {
 		$servers = [];
 		$ttmServerFactory = Services::getInstance()->getTtmServerFactory();
 		if ( $isDryRun ) {
-			$servers = [ self::FAKE_TTM => new FakeTTMServer() ];
+			$servers = [ self::FAKE_TTM => new FakeTtmServer() ];
 		} else {
 			if ( $ttmServerId !== null ) {
 				try {
@@ -387,7 +388,7 @@ class TTMServerBootstrap extends Maintenance {
 
 	private function getWritableServer( string $serverId ): WritableTtmServer {
 		if ( $serverId === self::FAKE_TTM ) {
-			return new FakeTTMServer();
+			return new FakeTtmServer();
 		}
 
 		$server = Services::getInstance()->getTtmServerFactory()->create( $serverId );

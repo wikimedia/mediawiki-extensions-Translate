@@ -1,17 +1,20 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\TtmServer;
+
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
+use MediaWikiIntegrationTestCase;
 
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers \FakeTTMServer
+ * @covers \MediaWiki\Extension\Translate\TtmServer\FakeTtmServer
  */
-class FakeTTMServerTest extends MediaWikiIntegrationTestCase {
-	public function testFakeTTMServer() {
-		$server = new FakeTTMServer();
+class FakeTtmServerTest extends MediaWikiIntegrationTestCase {
+	public function testFakeTTMServer(): void {
+		$server = new FakeTtmServer();
 		$this->assertEquals(
 			[],
 			$server->query( 'en', 'fi', 'daa' ),
