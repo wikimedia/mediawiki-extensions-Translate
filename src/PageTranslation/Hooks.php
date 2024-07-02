@@ -1223,10 +1223,7 @@ class Hooks {
 		} else {
 			$viewTranslatablePage = Services::getInstance()->getTranslatablePageView();
 			$user = $context->getUser();
-			if (
-				$user->isNamed() &&
-				$viewTranslatablePage->canDisplayTranslationSettingsBanner( $articleTitle, $user )
-			) {
+			if ( $viewTranslatablePage->canDisplayTranslationSettingsBanner( $articleTitle, $user ) ) {
 				$output = $context->getOutput();
 				$pageUrl = SpecialPage::getTitleFor( 'PageTranslation' )->getFullURL( [
 					'do' => 'settings',

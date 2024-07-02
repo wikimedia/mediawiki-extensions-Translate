@@ -47,6 +47,10 @@ class TranslatablePageView {
 
 	/** Determines whether the banner to mark a page for translation should be displayed */
 	public function canDisplayTranslationSettingsBanner( Title $articleTitle, User $user ): bool {
+		if ( !$user->isNamed() ) {
+			return false;
+		}
+
 		if ( !$this->isTranslationSettingsAllowedForTitle( $articleTitle ) ) {
 			return false;
 		}
