@@ -19,7 +19,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
-use TTMServerException;
 
 /**
  * Contains logic to search for translations
@@ -126,7 +125,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				$documents = $server->getDocuments( $resultSet );
 				$total = $server->getTotalHits( $resultSet );
 			}
-		} catch ( TTMServerException $e ) {
+		} catch ( TtmServerException $e ) {
 			$message = $e->getMessage();
 			// Known exceptions
 			if ( preg_match( '/^Result window is too large/', $message ) ) {

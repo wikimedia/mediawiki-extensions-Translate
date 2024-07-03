@@ -111,7 +111,6 @@
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
 		"TTMServer": "ttmserver/TTMServer.php",
-		"TTMServerException": "ttmserver/Exceptions.php",
 		"TTMServerMessageUpdateJob": "ttmserver/TTMServerMessageUpdateJob.php",
 		"TranslateUtils": "src/Utilities/Utilities.php",
 		"MediaWiki\\Extension\\Translate\\Utilities\\Utilities": "src/Utilities/Utilities.php",

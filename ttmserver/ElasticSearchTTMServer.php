@@ -23,6 +23,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
+use MediaWiki\Extension\Translate\TtmServer\TtmServerException;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -673,7 +674,7 @@ class ElasticSearchTTMServer
 	 * @param string $queryString
 	 * @param array $opts
 	 * @param array $highlight
-	 * @throws TTMServerException
+	 * @throws TtmServerException
 	 * @return ResultSet
 	 */
 	public function search( $queryString, $opts, $highlight ) {
@@ -682,7 +683,7 @@ class ElasticSearchTTMServer
 		try {
 			return $search->search();
 		} catch ( ExceptionInterface $e ) {
-			throw new TTMServerException( $e->getMessage() );
+			throw new TtmServerException( $e->getMessage() );
 		}
 	}
 
