@@ -278,7 +278,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			}
 
 			if ( $group ) {
-				$text = $this->getLinkRenderer()->makeKnownLink( $groupCache[ $group->getId() ] );
+				$text = $this->getLinkRenderer()->makeKnownLink( $groupCache[ $group->getId() ], $group->getLabel() );
 				$note = htmlspecialchars( MessageGroups::getPriority( $id ) );
 			} else {
 				$text = htmlspecialchars( $id );
