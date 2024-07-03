@@ -7,7 +7,8 @@
 			"Ice bulldog",
 			"Piramidion",
 			"Ypryima",
-			"Ата"
+			"Ата",
+			"Ignatgg"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Керування агрегованими групами повідомлень.",
@@ -17,6 +18,7 @@
 	"apihelp-aggregategroups-param-group": "Ідентифікатор групи повідомлень.",
 	"apihelp-aggregategroups-param-groupname": "Назва агрегованої групи повідомлень.",
 	"apihelp-aggregategroups-param-groupdescription": "Опис агрегованої групи повідомлень.",
+	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Агрегувати код вихідної мови групи повідомлень або <kbd>-</kbd> щоб не встановлювати вихідну мову або видалити наявну.",
 	"apihelp-aggregategroups-example-1": "Додати до групи",
 	"apihelp-groupreview-summary": "Встановити повідомлення робочого процесу групи.",
 	"apihelp-groupreview-param-group": "Група повідомлень.",
