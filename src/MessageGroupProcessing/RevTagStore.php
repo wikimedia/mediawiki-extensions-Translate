@@ -191,7 +191,7 @@ class RevTagStore {
 			->fetchResultSet();
 		$results = [];
 		foreach ( $res as $row ) {
-			$results[$row->rt_page] = true;
+			$results[] = (int)$row->rt_page;
 		}
 
 		return $results;

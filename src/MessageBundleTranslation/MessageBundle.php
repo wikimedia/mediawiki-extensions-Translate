@@ -54,28 +54,35 @@ class MessageBundle extends TranslatableBundle {
 	}
 
 	public static function isSourcePage( Title $title ): bool {
+		if ( !$title->exists() ) {
+			return false;
+		}
+
 		$mwServices = MediaWikiServices::getInstance();
 		$cache = $mwServices->getMainWANObjectCache();
 		$cacheKey = $cache->makeKey( 'messagebundle', 'source' );
 
-		$translatablePageIds = $cache->getWithSetCallback(
+		$messageBundleIds = $cache->getWithSetCallback(
 			$cacheKey,
 			$cache::TTL_HOUR * 2,
 			static function ( $oldValue, &$ttl, array &$setOpts ) use ( $mwServices ) {
 				$dbr = $mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return RevTagStore::getTranslatableBundleIds( RevTagStore::MB_VALID_TAG );
+				$ids = RevTagStore::getTranslatableBundleIds( RevTagStore::MB_VALID_TAG );
+				// Adding a comma at the end and beginning so that we can check for page Id
+				// existence with the "," delimiters
+				return ',' . implode( ',', $ids ) . ',';
 			},
 			[
 				'checkKeys' => [ $cacheKey ],
 				'pcTTL' => $cache::TTL_PROC_SHORT,
 				'pcGroup' => __CLASS__ . ':1',
-				'version' => 2,
+				'version' => 3,
 			]
 		);
 
-		return isset( $translatablePageIds[$title->getArticleID()] );
+		return str_contains( $messageBundleIds, ( ',' . $title->getArticleID() . ',' ) );
 	}
 
 	public static function clearSourcePageCache(): void {
