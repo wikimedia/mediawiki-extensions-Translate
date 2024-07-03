@@ -22,10 +22,6 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 	}
 
 	public function getDescription() {
-		// Backward compatibility for < 1.41
-		if ( version_compare( MW_VERSION, '1.41', '<' ) ) {
-			return $this->msg( 'pagemigration' )->text();
-		}
 		return $this->msg( 'pagemigration' );
 	}
 

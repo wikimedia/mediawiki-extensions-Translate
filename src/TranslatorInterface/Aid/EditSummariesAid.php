@@ -29,15 +29,12 @@ class EditSummariesAid extends TranslationAid {
 		// Build the query to fetch the last x revisions
 		$dbr = $mwService->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$aid = $pageTitle->getArticleID();
-		$revQuery = $revisionFactory->getQueryInfo();
-		// TODO Migrate to RevisionStore::newSelectQueryBuilder once we support >= 1.41
-		$result = $dbr->newSelectQueryBuilder()
-			->tables( $revQuery[ 'tables' ] )
-			->fields( $revQuery[ 'fields' ] )
+		$result = $revisionFactory
+			->newSelectQueryBuilder( $dbr )
+			->joinComment()
 			->where( [ 'rev_page' => $aid ] )
 			->orderBy( [ 'rev_timestamp', 'rev_id' ], SelectQueryBuilder::SORT_DESC )
 			->limit( self::COMMENT_COUNT )
-			->joinConds( $revQuery[ 'joins' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 

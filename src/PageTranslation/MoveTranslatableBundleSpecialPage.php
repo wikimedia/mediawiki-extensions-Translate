@@ -183,25 +183,15 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 	/** Checks permissions, user blocks and rate limits. */
 	protected function authorizeMove(): void {
-		if ( class_exists( PermissionStatus::class )
-			&& method_exists( PermissionStatus::class, 'isRateLimitExceeded' )
-		) {
-			// Since MW 1.41, Authority will implicitly enforce rate limits
-			// and user blocks.
-			$status = PermissionStatus::newEmpty();
-			$this->getAuthority()
-				->authorizeWrite( 'move', $this->oldTitle, $status );
+		$status = PermissionStatus::newEmpty();
+		$this->getAuthority()
+			->authorizeWrite( 'move', $this->oldTitle, $status );
 
-			if ( !$status->isOK() ) {
-				if ( $status->isRateLimitExceeded() ) {
-					throw new ThrottledError;
-				} else {
-					throw new PermissionsError( 'move', $status );
-				}
-			}
-		} else {
-			if ( $this->getUser()->pingLimiter( 'move' ) ) {
+		if ( !$status->isOK() ) {
+			if ( $status->isRateLimitExceeded() ) {
 				throw new ThrottledError;
+			} else {
+				throw new PermissionsError( 'move', $status );
 			}
 		}
 	}

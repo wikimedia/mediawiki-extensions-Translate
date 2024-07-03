@@ -117,12 +117,7 @@ class LegacyInterfaceHookHandler
 		}
 
 		$message = $title->getNsText() . ':' . $handle->getKey();
-		if ( method_exists( SkinComponentUtils::class, 'makeSpecialUrl' ) ) {
-			$url = SkinComponentUtils::makeSpecialUrl( 'Translations', [ 'message' => $message ] );
-		} else {
-			// MW < 1.41
-			$url = $skin::makeSpecialUrl( 'Translations', [ 'message' => $message ] );
-		}
+		$url = SkinComponentUtils::makeSpecialUrl( 'Translations', [ 'message' => $message ] );
 
 		// Add the actual toolbox entry.
 		$sidebar['TOOLBOX'][ 'alltrans' ] = [

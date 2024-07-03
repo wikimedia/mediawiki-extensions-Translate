@@ -181,12 +181,7 @@ class TranslateSandbox {
 	/** Get all sandboxed users. */
 	public function getUsers(): UserArray {
 		$dbr = Utilities::getSafeReadDB();
-		// MW < 1.41
-		if ( method_exists( User::class, 'newQueryBuilder' ) ) {
-			$query = User::newQueryBuilder( $dbr );
-		} else {
-			$query = $dbr->newSelectQueryBuilder()->queryInfo( User::getQueryInfo() );
-		}
+		$query = User::newQueryBuilder( $dbr );
 
 		$res = $query->join( 'user_groups', null, 'ug_user = user_id' )
 			->where( [ 'ug_group' => 'translate-sandboxed' ] )

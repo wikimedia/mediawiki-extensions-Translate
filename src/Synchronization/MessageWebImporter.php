@@ -453,18 +453,14 @@ class MessageWebImporter {
 		$titleText = $handle->getKey();
 
 		$revStore = $services->getRevisionStore();
-		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
 		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
-		// TODO Migrate to RevisionStore::newSelectQueryBuilder once we support >= 1.41
-		$rows = $dbw->newSelectQueryBuilder()
-			->tables( $queryInfo['tables'] )
-			->fields( $queryInfo['fields'] )
+		$rows = $revStore->newSelectQueryBuilder( $dbw )
+			->joinPage()
 			->where( [
 				'page_namespace' => $title->getNamespace(),
 				'page_latest=rev_id',
 				'page_title' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
 			] )
-			->joinConds( $queryInfo['joins'] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
