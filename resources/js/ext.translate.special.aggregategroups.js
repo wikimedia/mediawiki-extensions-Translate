@@ -241,7 +241,7 @@
 			$button = $( '<button>' )
 				.addClass( 'tp-aggregate-add-button' )
 				.text( mw.msg( 'tpt-aggregategroup-add' ) );
-			$( this ).append( getEntitySelector( onEntityItemSelect ).$element, $button );
+			$( this ).append( getEntitySelector( onEntityItemSelect, filterSelectedGroups ).$element, $button );
 		} );
 
 		$( '.tp-aggregate-add-button' ).on( 'click', associateSelectedGroup );
@@ -369,7 +369,7 @@
 
 				$addButton.on( 'click', associateSelectedGroup );
 
-				var entitySelector = getEntitySelector( onEntityItemSelect );
+				var entitySelector = getEntitySelector( onEntityItemSelect, filterSelectedGroups );
 				$subGroupContents.append( entitySelector.$element, $addButton );
 				$div.append( $subGroupContents );
 
@@ -416,15 +416,47 @@
 		$( 'div.mw-tpa-group' ).first().before( getToggleAllGroupsLink() );
 	} );
 
-	function getEntitySelector( onSelect ) {
+	var entitySelectorLimit = 50;
+	function getEntitySelector( onSelect, filterResults ) {
 		var EntitySelector = require( 'ext.translate.entity.selector' );
 		return new EntitySelector( {
 			onSelect: onSelect,
 			entityType: [ 'groups' ],
 			groupTypes: [ 'translatable-pages', 'message-bundles' ],
-			limit: 50,
-			allowSuggestionsWhenEmpty: true
+			limit: entitySelectorLimit,
+			allowSuggestionsWhenEmpty: true,
+			filterResults: filterResults
 		} );
+	}
+
+	function filterSelectedGroups( apiResult ) {
+		var filteredGroups = [];
+		var alreadySelectedGroups = getSelectedGroups( this.$element );
+		for ( var i = 0; i < apiResult.groups.length; ++i ) {
+			var currentGroup = apiResult.groups[ i ];
+			if ( alreadySelectedGroups[ currentGroup.label ] !== true ) {
+				filteredGroups.push( currentGroup );
+			}
+
+			if ( filteredGroups.length === entitySelectorLimit ) {
+				return { groups: filteredGroups };
+			}
+		}
+
+		return { groups: filteredGroups };
+	}
+
+	function getSelectedGroups( $entitySelector ) {
+		var exclude = {};
+		$entitySelector.closest( '.mw-tpa-group' ).find( 'li' ).each(
+			function ( _key, data ) {
+				// Need to trim to remove the trailing whitespace
+				// Can't use innerText not supported by Firefox
+				exclude[ $( data ).text().trim() ] = true;
+			}
+		);
+
+		return exclude;
 	}
 
 }() );

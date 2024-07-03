@@ -13,6 +13,7 @@
  * @param {Function} [config.onFail] Callback function triggered when an error occurs
  * @param {Function} [config.onSelect] Callback function triggered when an item is selected
  * @param {Array} [config.entityType] Entity type to query for - "groups" and/or "messages"
+ * @param {Function} [config.filterResults] Callback function to filter the results returned from the API
  * @stable for use inside gadgets and extensions
  */
 var EntitySelectorWidget = function ( config ) {
@@ -65,6 +66,7 @@ var EntitySelectorWidget = function ( config ) {
 	this.allowSuggestionsWhenEmpty = config.allowSuggestionsWhenEmpty || false;
 	this.failureCallback = config.onFail || noop;
 	this.selectCallback = config.onSelect || noop;
+	this.filterResults = config.filterResults || null;
 	this.entityTypeToFetch = config.entityType;
 	this.groupTypesToFetch = config.groupTypes;
 	this.inputId = config.inputId || null;
@@ -111,7 +113,24 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 	var currentRequestTimeout = setTimeout(
 		function () {
 			currentRequestTimeout = null;
-			makeRequest( value, widget.entityTypeToFetch, widget.groupTypesToFetch, deferred, widget.failureCallback, widget.limit );
+			var api = new mw.Api();
+			api.get( {
+				action: 'translationentitysearch',
+				query: value,
+				entitytype: widget.entityTypeToFetch,
+				grouptypes: widget.groupTypesToFetch,
+				limit: widget.limit
+			} ).then( function ( result ) {
+				var response = result.translationentitysearch;
+				if ( widget.filterResults ) {
+					response = widget.filterResults( result.translationentitysearch );
+				}
+				deferred.resolve( response );
+			}, function ( msg, error ) {
+				mw.log.error( error );
+				widget.failureCallback( error, mw.msg( 'translate-tes-server-error' ) );
+				deferred.resolve( error );
+			} );
 		},
 		250
 	);
@@ -125,23 +144,6 @@ EntitySelectorWidget.prototype.getLookupRequest = function () {
 
 	return deferred;
 };
-
-function makeRequest( value, entityType, groupTypes, deferred, cbFailure, limit ) {
-	var api = new mw.Api();
-	api.get( {
-		action: 'translationentitysearch',
-		query: value,
-		entitytype: entityType,
-		grouptypes: groupTypes,
-		limit: limit
-	} ).then( function ( result ) {
-		deferred.resolve( result.translationentitysearch );
-	}, function ( msg, error ) {
-		mw.log.error( error );
-		cbFailure( error, mw.msg( 'translate-tes-server-error' ) );
-		deferred.resolve( error );
-	} );
-}
 
 EntitySelectorWidget.prototype.getLookupMenuOptionsFromData = function ( response ) {
 	var groups = response.groups || [];
