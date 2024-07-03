@@ -42,11 +42,11 @@
 		// Clear the selected group value
 		$parent.find( '.tes-entity-selector' ).find( 'input[type="text"]' ).val( '' );
 
-		var successFunction = function () {
+		var successFunction = function ( data ) {
 			var aAttr, $a, spanAttr, $span, $ol;
 
 			aAttr = {
-				href: mw.util.getUrl( subgroupName ),
+				href: data.aggregategroups.groupUrl,
 				title: subgroupName
 			};
 

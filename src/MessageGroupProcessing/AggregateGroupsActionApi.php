@@ -91,6 +91,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				}
 				$subgroups[] = $subgroupId;
 				$subgroups = array_unique( $subgroups );
+				$output[ 'groupUrl' ] = $this->aggregateGroupManager->getTargetTitleByGroup( $group )->getFullURL();
 			} elseif ( $action === 'dissociate' ) {
 				// Allow removal of non-existing groups
 				$subgroups = array_flip( $subgroups );
