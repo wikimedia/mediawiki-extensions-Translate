@@ -17,7 +17,6 @@ use Elastica\Query\Term;
 use Elastica\ResultSet;
 use Elastica\Search;
 use Exception;
-use FuzzyLikeThis;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;

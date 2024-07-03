@@ -1,4 +1,7 @@
 <?php
+
+namespace MediaWiki\Extension\Translate\TtmServer;
+
 /**
  * NOTE: the following class has been copied from elastica 2.3.1 :
  * https://github.com/ruflin/Elastica/blob/2.3.1/lib/Elastica/Query/FuzzyLikeThis.php
@@ -29,19 +32,11 @@
  * THE SOFTWARE.
  *
  * (c.f. https://github.com/ruflin/Elastica/blob/2.3.1/LICENSE.txt)
- *
- * @file
- * @license MIT
- * @ingroup TTMServer
- */
-
-/**
  * Fuzzy Like This query.
  *
  * @author Raul Martinez, Jr <juneym@gmail.com>
- *
- * @link https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl-flt-query.html
- *
+ * @license MIT
+ * @link https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl-flt-query.html *
  * @since 2016.05
  * @ingroup TTMServer
  */

@@ -77,7 +77,6 @@
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FlatPhpFFS": "src/FileFormatSupport/FlatPhpFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\FlatPhpFormat": "src/FileFormatSupport/FlatPhpFormat.php",
-		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
 		"GettextFFS": "src/FileFormatSupport/GettextFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\GettextFormat": "src/FileFormatSupport/GettextFormat.php",
 		"IniFFS": "src/FileFormatSupport/IniFormat.php",
