@@ -508,19 +508,23 @@ class TranslatablePage extends TranslatableBundle {
 				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return RevTagStore::getTranslatableBundleIds(
+				$ids = RevTagStore::getTranslatableBundleIds(
 					RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
 				);
+
+				// Adding a comma at the end and beginning so that we can check for page Id
+				// existence with the "," delimiters
+				return ',' . implode( ',', $ids ) . ',';
 			},
 			[
 				'checkKeys' => [ $cacheKey ],
-				'pcTTL' => $cache::TTL_PROC_SHORT,
+				'pcTTL' => $cache::TTL_PROC_SHORT * 2,
 				'pcGroup' => __CLASS__ . ':1',
-				'version' => 2,
+				'version' => 3,
 			]
 		);
 
-		return isset( $translatablePageIds[$page->getId()] );
+		return str_contains( $translatablePageIds, ( ',' . $page->getId() . ',' ) );
 	}
 
 	/** Clears the source page cache */
