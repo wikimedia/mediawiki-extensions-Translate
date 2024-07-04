@@ -40,9 +40,9 @@ class TranslatablePageView {
 			return false;
 		}
 
-		// Allow translation administrators and recent editors to edit the translation settings
-		return ( $user->isNamed() && $this->isRecentEditor( $articleTitle, $user ) )
-			|| $user->isAllowed( 'pagetranslation' );
+		// Allow translation administrators and editors to manage the translation settings
+		return $user->definitelyCan( 'edit', $articleTitle ) ||
+			$user->definitelyCan( 'pagetranslation', $articleTitle );
 	}
 
 	/** Determines whether the banner to mark a page for translation should be displayed */
@@ -84,6 +84,8 @@ class TranslatablePageView {
 	}
 
 	private function isTranslationSettingsAllowedForTitle( Title $articleTitle ): bool {
+		// TODO: Remove this check for POST action once the feature is enabled on Wikimedia wikis.
+		// If a user wants to propose a user subpage for translation, we should let them do so.
 		if ( !$articleTitle->inNamespaces( $this->pageTranslationBannerNamespaces ) ) {
 			return false;
 		}
