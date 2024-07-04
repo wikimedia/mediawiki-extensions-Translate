@@ -10,12 +10,12 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
 use StatusValue;
-use User;
 
 /**
  * Manage user subscriptions to message groups and trigger notifications

@@ -10,8 +10,8 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use User;
 
 /**
  * Job for deleting translatable bundles and translation pages.

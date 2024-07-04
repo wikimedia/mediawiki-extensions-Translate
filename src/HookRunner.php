@@ -23,9 +23,9 @@ use MediaWiki\Extension\Translate\TranslatorInterface\NewTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserPromotedHook;
 use MediaWiki\Extension\Translate\Utilities\SupportedLanguagesHook;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MessageGroup;
-use User;
 
 /**
  * Hook runner for the Translate extension.

@@ -9,7 +9,7 @@
 
 namespace MediaWiki\Extension\Translate\SystemUsers;
 
-use User;
+use MediaWiki\User\User;
 
 /** @since 2019.08 */
 class TranslateUserManager {

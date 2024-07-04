@@ -8,7 +8,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use User;
+use MediaWiki\User\User;
 
 /**
  * Contains class with job for moving translation pages.

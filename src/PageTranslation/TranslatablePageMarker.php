@@ -18,13 +18,13 @@ use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use Message;
 use RecentChange;
 use Status;
 use TitleFormatter;
 use TitleParser;
-use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 

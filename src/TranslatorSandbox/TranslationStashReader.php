@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
-use User;
+use MediaWiki\User\User;
 
 /*
  * @author Niklas Laxström

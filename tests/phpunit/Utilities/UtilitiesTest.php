@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use User;
 
 /**
  * @group Database

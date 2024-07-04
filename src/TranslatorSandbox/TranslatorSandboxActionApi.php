@@ -12,13 +12,13 @@ use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\User\UserOptionsManager;
 use RuntimeException;
 use Sanitizer;
-use User;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

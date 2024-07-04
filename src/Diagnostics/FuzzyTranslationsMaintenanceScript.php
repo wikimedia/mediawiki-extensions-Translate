@@ -15,8 +15,8 @@ use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\ActorMigration;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
-use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 

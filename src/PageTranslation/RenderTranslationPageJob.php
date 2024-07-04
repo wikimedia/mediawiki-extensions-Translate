@@ -13,10 +13,10 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
 use RecentChange;
-use User;
 
 /**
  * Job for updating translation pages when translation or template changes.

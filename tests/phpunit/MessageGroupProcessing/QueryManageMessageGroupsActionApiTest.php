@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use ApiTestCase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
+use MediaWiki\User\User;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use User;
 
 /**
  * @group medium

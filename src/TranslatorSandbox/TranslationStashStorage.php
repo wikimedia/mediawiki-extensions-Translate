@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use MediaWiki\Title\Title;
-use User;
+use MediaWiki\User\User;
 use Wikimedia\Rdbms\IDatabase;
 
 /**

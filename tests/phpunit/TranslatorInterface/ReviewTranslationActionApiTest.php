@@ -8,9 +8,9 @@ use ApiUsageException;
 use ContentHandler;
 use InvalidArgumentException;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use User;
 
 /**
  * @group Database

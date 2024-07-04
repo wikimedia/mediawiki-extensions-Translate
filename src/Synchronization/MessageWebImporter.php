@@ -15,11 +15,11 @@ use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MessageGroup;
 use RequestContext;
 use RuntimeException;
 use Sanitizer;
-use User;
 use Xml;
 
 /**

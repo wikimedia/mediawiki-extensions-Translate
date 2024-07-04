@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ManualLogEntry;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Status;
-use User;
 
 /**
  * Helper class for logging translatable bundle moves

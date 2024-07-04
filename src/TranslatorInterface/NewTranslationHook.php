@@ -6,7 +6,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use User;
+use MediaWiki\User\User;
 
 /**
  * This is a hook handler interface, see docs/Hooks.md in core.

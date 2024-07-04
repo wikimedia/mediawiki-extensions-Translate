@@ -16,11 +16,11 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use ParserOptions;
 use TextContent;
 use TTMServer;
-use User;
 use WikiPage;
 
 /**

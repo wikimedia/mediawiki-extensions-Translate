@@ -10,9 +10,9 @@ use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 use Status;
 use TitleFormatter;
-use User;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\ILoadBalancer;
 

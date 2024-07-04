@@ -11,9 +11,9 @@ use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use User;
 
 /**
  * @group medium

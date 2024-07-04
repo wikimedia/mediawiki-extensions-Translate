@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use User;
 
 /**
  * @author Niklas Laxström

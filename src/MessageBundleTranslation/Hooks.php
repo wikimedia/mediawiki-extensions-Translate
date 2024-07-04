@@ -11,9 +11,9 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Psr\Log\LoggerInterface;
 use Status;
-use User;
 use WANObjectCache;
 
 /**

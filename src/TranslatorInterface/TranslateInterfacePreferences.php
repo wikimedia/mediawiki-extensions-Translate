@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use MediaWiki\Extension\Translate\Utilities\HTMLJsSelectToInputField;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\User;
 use RequestContext;
-use User;
 use XmlSelect;
 
 /**

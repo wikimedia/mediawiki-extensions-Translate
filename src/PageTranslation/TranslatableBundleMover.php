@@ -13,11 +13,11 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Message;
 use ObjectCache;
 use SplObjectStorage;
 use Status;
-use User;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

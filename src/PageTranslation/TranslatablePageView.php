@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Article;
 use MediaWiki\Config\ServiceOptions;
-use User;
+use MediaWiki\User\User;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
