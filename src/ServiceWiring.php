@@ -376,7 +376,6 @@ return [
 		return new TranslatablePageMarker(
 			$services->getDBLoadBalancer(),
 			$services->getJobQueueGroup(),
-			$services->getLanguageNameUtils(),
 			$services->getLinkRenderer(),
 			MessageGroups::singleton(),
 			$services->get( 'Translate:MessageIndex' ),

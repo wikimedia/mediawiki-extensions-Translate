@@ -13,7 +13,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
-use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
@@ -30,7 +29,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 
 /**
- * Service to unmark pages from translation
+ * Service to mark/unmark pages from translation and perform related validations
  * @since 2023.10
  */
 class TranslatablePageMarker {
@@ -39,7 +38,6 @@ class TranslatablePageMarker {
 
 	private ILoadBalancer $loadBalancer;
 	private JobQueueGroup $jobQueueGroup;
-	private LanguageNameUtils $languageNameUtils;
 	private LinkRenderer $linkRenderer;
 	private MessageGroups $messageGroups;
 	private MessageIndex $messageIndex;
@@ -54,7 +52,6 @@ class TranslatablePageMarker {
 	public function __construct(
 		ILoadBalancer $loadBalancer,
 		JobQueueGroup $jobQueueGroup,
-		LanguageNameUtils $languageNameUtils,
 		LinkRenderer $linkRenderer,
 		MessageGroups $messageGroups,
 		MessageIndex $messageIndex,
@@ -68,7 +65,6 @@ class TranslatablePageMarker {
 	) {
 		$this->loadBalancer = $loadBalancer;
 		$this->jobQueueGroup = $jobQueueGroup;
-		$this->languageNameUtils = $languageNameUtils;
 		$this->linkRenderer = $linkRenderer;
 		$this->messageIndex = $messageIndex;
 		$this->titleFormatter = $titleFormatter;

@@ -35,7 +35,6 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		return new TranslatablePageMarker(
 			$getServiceOrMock( ILoadBalancer::class ),
 			$getServiceOrMock( JobQueueGroup::class ),
-			$getServiceOrMock( LanguageNameUtils::class ),
 			$getServiceOrMock( LinkRenderer::class ),
 			MessageGroups::singleton(),
 			$getServiceOrMock( MessageIndex::class ),
