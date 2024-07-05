@@ -8,10 +8,10 @@ use MalformedTitleException;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use Message;
 use SplObjectStorage;
-use Status;
 use TitleParser;
 
 class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {

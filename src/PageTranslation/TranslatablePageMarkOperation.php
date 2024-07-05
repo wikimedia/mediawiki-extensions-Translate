@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Status;
+use MediaWiki\Status\Status;
 
 /**
  * This class encapsulates the information / state needed to mark a page for translation

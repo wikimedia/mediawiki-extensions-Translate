@@ -13,12 +13,12 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use Message;
 use MessageGroup;
 use ParserFactory;
 use SpecialPage;
-use Status;
 use TitleFormatter;
 use WikiPageMessageGroup;
 

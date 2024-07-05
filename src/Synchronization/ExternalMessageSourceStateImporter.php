@@ -17,10 +17,10 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Status\Status;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use Status;
 use TitleFactory;
 use function wfWarn;
 

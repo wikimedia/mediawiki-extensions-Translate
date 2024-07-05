@@ -8,13 +8,13 @@ use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
 use MockWikiValidationMessageGroup;
 use ParserOptions;
 use RequestContext;
-use Status;
 use Wikimedia\TestingAccessWrapper;
 
 /**

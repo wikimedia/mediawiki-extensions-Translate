@@ -12,12 +12,12 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Page\MovePageFactory;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use Message;
 use ObjectCache;
 use SplObjectStorage;
-use Status;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

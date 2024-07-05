@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ManualLogEntry;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Status;
 
 /**
  * Helper class for logging translatable bundle moves
