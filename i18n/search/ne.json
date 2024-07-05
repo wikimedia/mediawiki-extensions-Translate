@@ -4,6 +4,7 @@
 			"Bada Kaji",
 			"NehalDaveND",
 			"Nirajan pant",
+			"पर्वत सुबेदी",
 			"बडा काजी",
 			"हिमाल सुबेदी"
 		]
@@ -30,7 +31,7 @@
 	"tux-sst-ellipsis-outdated": "पुराना अनुवादहरू",
 	"tux-sst-link-all-match": "सबै खोज शब्दहरू चाहिन्छ।",
 	"tux-sst-match-message": "कुनै पनि खोज शब्दहरूसँग मेल खाने अनुवादहरू देखाउँदै। $1",
-	"tux-sst-case-sensitive": "केस संवेदनशील",
+	"tux-sst-case-sensitive": "विषय-संवेदनशील",
 	"tux-sst-error-offset": "थप खोज परिणामहरू देखाउन सकिँदैन। कृपया आफ्नो खोज संकुचित गर्नुहोस्।",
 	"tux-sst-error-language": "यस प्रकारको खोजमा यो भाषा प्रयोग गर्न सकिँदैन।"
 }
