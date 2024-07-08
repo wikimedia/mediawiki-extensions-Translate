@@ -61,6 +61,8 @@
 	"exporttranslations": "Tərcümələri ixrac edin",
 	"translate-export-invalid-format": "Xahiş edirik, etibarlı format göstərin.",
 	"translate-export-not-supported": "Tərcümə ixracı dəstəklənmir.",
+	"translate-export-format-notsupported": "Göstərilən ixrac formatı mesaj qrupu tərəfindən dəstəklənmir.",
+	"translate-export-format-file-empty": "İxrac ediləcək mesaj yoxdur.",
 	"translate-checks-parameters": "Aşağıdakı {{PLURAL:$2|parametrdən|parametrlərdən}} istifadə edilmir:\n<strong>$1</strong>",
 	"translate-checks-pagename": "Anlayışdakı ad sahəsi dəyişdirilib",
 	"translate-pref-editassistlang": "Köməkçi dillər:",

@@ -327,6 +327,7 @@
 	"translate-msggroupselector-search-placeholder": "Cercar gruppos",
 	"translate-msggroupselector-search-all": "Totes",
 	"translate-msggroupselector-search-recent": "Recentes",
+	"translate-msggroupselector-search-watched": "Sub observation",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgruppo|subgruppos}}",
 	"tux-languageselector": "Traducer in",
 	"tux-select-target-language": "Lingua de destination pro le traduction",

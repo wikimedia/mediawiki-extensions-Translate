@@ -267,7 +267,7 @@
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"pm-clear-icon-hover-text": "Hover text for clear target unit icon. \"Unit\" refers to \"translation unit\".",
 	"pm-pagetitle-placeholder": "Placeholder for the page title input field.",
-	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered. You should translate page example (“de” is a language code, you must keep a language code in your translation); you can localize quotes but you must keep the middle slash <code>/</code>.",
+	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered. You should translate page example (“de” is a language code, you must keep a language code in your translation); you may localize quotes but you must keep the middle slash <code>/</code>.",
 	"pm-pagetitle-missing": "Error message given when page title field is blank",
 	"pm-langcode-missing": "Error message given when the page title field does not contain a language code.",
 	"pm-summary-import": "Edit summary used while creating translation pages which were imported using [[Special:PageMigration]], see [[mw:Help:Extension:Translate/Page_translation_administration#Migrating to page translation]]",
