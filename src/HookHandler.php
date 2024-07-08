@@ -30,6 +30,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
+use MediaWiki\Extension\Translate\PageTranslation\MarkForTranslationActionApi;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PageTranslationSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\PrepareTranslatablePageSpecialPage;
@@ -220,6 +221,16 @@ class HookHandler implements
 			$wgJobClasses['MoveTranslatableBundleJob'] = MoveTranslatableBundleJob::class;
 			$wgJobClasses['DeleteTranslatableBundleJob'] = DeleteTranslatableBundleJob::class;
 			$wgJobClasses['UpdateTranslatablePageJob'] = UpdateTranslatablePageJob::class;
+
+			// API modules
+			global $wgAPIModules;
+			$wgAPIModules['markfortranslation'] = [
+				'class' => MarkForTranslationActionApi::class,
+				'services' => [
+					'Translate:TranslatablePageMarker',
+					'Translate:MessageGroupMetadata',
+				]
+			];
 
 			// Namespaces
 			global $wgNamespacesWithSubpages, $wgNamespaceProtection;
