@@ -428,7 +428,7 @@
 	"tux-session-expired": "Niste več prijavljeni. Prosimo, prijavite se na ločenem zavihku. Druga možnost je, da ustvarite kopijo neshranjenega prevoda, se prijavite, se vrnete na to stran in znova vnesete svoj prevod.",
 	"tux-nojs": "Orodje ne deluje brez JavaScripta. JavaScript je onemogočen, ne deluje ali pa brskalnik ni podprt.",
 	"specialpages-group-translation": "Prevajanje",
-	"content-model-translate-messagebundle": "Sveženj sporočil za prevod",
+	"content-model-translate-messagebundle": "sveženj sporočil za prevod",
 	"translate-messagebundle-validation-error": "Neveljaven sveženj sporočil: $1",
 	"translate-messagebundle-error-parsing": "Napaka pri obdelavi JSON-a: $1",
 	"translate-messagebundle-error-invalid-array": "Sveženj sporočil mora biti objekt JSON. Pridobljena vrsta: $1",

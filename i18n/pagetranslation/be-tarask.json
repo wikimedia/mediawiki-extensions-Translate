@@ -68,7 +68,7 @@
 	"tpt-rev-unmark-tooltip": "Выдаліць гэтую старонку зь перакладу.",
 	"tpt-rev-discourage-tooltip": "Адхіліць далейшыя пераклады гэтай старонкі.",
 	"tpt-rev-encourage-tooltip": "Аднавіць гэтую старонку да звычайнага перакладу.",
-	"translate-tag-translate-link-desc": "Перакласьці гэту старонку",
+	"translate-tag-translate-link-desc": "Перакласьці гэтую старонку",
 	"translate-tag-markthis": "Пазначыць гэту старонку для перакладу",
 	"translate-tag-markthisagain": "Гэта старонка ўтрымлівае <span class=\"plainlinks\">[$1 зьмены]</span> пасьля апошняй <span class=\"plainlinks\">[$2 пазнакі для перакладу]</span>.",
 	"translate-tag-hasnew": "Гэта старонка ўтрымлівае <span class=\"plainlinks\">[$1 зьмены]</span>, не пазначаныя для перакладу.",
