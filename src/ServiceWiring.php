@@ -384,6 +384,7 @@ return [
 			$services->getTitleParser(),
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->get( 'Translate:TranslatablePageStore' ),
+			$services->get( 'Translate:TranslatablePageStateStore' ),
 			$services->get( 'Translate:TranslationUnitStoreFactory' ),
 			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getWikiPageFactory()

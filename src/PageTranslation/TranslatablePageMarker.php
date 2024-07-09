@@ -45,6 +45,7 @@ class TranslatablePageMarker {
 	private TitleParser $titleParser;
 	private TranslatablePageParser $translatablePageParser;
 	private TranslatablePageStore $translatablePageStore;
+	private TranslatablePageStateStore $translatablePageStateStore;
 	private TranslationUnitStoreFactory $translationUnitStoreFactory;
 	private MessageGroupMetadata $messageGroupMetadata;
 	private WikiPageFactory $wikiPageFactory;
@@ -59,6 +60,7 @@ class TranslatablePageMarker {
 		TitleParser $titleParser,
 		TranslatablePageParser $translatablePageParser,
 		TranslatablePageStore $translatablePageStore,
+		TranslatablePageStateStore $translatablePageStateStore,
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		MessageGroupMetadata $messageGroupMetadata,
 		WikiPageFactory $wikiPageFactory
@@ -71,6 +73,7 @@ class TranslatablePageMarker {
 		$this->titleParser = $titleParser;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->translatablePageStore = $translatablePageStore;
+		$this->translatablePageStateStore = $translatablePageStateStore;
 		$this->translationUnitStoreFactory = $translationUnitStoreFactory;
 		$this->wikiPageFactory = $wikiPageFactory;
 		$this->messageGroups = $messageGroups;
@@ -314,6 +317,9 @@ class TranslatablePageMarker {
 		$this->saveMetadata( $operation, $pageSettings, $maxId, $user );
 
 		$page->addMarkedTag( $newRevisionId );
+
+		$this->translatablePageStateStore->remove( $page->getPageIdentity() );
+
 		// TODO: Ideally we would only invalidate translatable page message group cache
 		$this->messageGroups->recache();
 
