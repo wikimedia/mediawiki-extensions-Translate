@@ -73,6 +73,7 @@
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Non monstrar linguas con traduction complete",
 	"apihelp-query+messagegroupstats-param-suppressempty": "Non monstrar linguas sin traductiones",
 	"apihelp-query+messagegroupstats-example-1": "Lista de statisticas de finalisation de traductiones pro le gruppo \"page-Example\"",
+	"apihelp-query+messagegroupsubscription-summary": "Listar le gruppos de messages al quales le usator actual es subscribite.",
 	"apihelp-query+messagetranslations-summary": "Consultar tote le traductiones de un sol message.",
 	"apihelp-query+messagetranslations-param-title": "Titulo complete de un message cognoscite.",
 	"apihelp-query+messagetranslations-example-1": "Lista de traductiones in le wiki de \"MediaWiki:January\"",
