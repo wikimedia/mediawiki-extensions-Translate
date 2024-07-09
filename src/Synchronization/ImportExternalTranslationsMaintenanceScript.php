@@ -9,8 +9,8 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
-use SpecialPage;
 
 /** Script for processing message changes in file based message groups. */
 class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript {

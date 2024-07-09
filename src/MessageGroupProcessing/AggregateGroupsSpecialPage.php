@@ -8,7 +8,7 @@ use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
-use SpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
 use Xml;
 use XmlSelect;
 

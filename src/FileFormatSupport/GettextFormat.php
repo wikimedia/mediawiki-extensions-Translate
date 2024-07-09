@@ -13,9 +13,9 @@ use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Specials\SpecialVersion;
 use MediaWiki\Title\Title;
 use RuntimeException;
-use SpecialVersion;
 
 /**
  * FileFormat class that implements support for gettext file format.

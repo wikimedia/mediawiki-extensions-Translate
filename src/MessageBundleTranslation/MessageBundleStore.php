@@ -14,10 +14,10 @@ use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Specials\SpecialPageLanguage;
 use MediaWiki\Title\Title;
 use Message;
 use RequestContext;
-use SpecialPageLanguage;
 
 /**
  * @author Abijeet Patro

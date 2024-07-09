@@ -15,9 +15,9 @@ use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use ObjectCache;
-use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

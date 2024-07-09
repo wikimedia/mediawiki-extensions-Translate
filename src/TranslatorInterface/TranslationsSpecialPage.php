@@ -11,8 +11,8 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Specials\SpecialAllPages;
 use MediaWiki\Title\Title;
-use SpecialAllPages;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Xml;
 

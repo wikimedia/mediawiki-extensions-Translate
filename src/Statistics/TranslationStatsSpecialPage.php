@@ -8,7 +8,7 @@ use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
-use SpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
 use Xml;
 use XmlSelect;
 use function wfEscapeWikiText;

@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Html\Html;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Permissions\PermissionStatus;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use Message;
 use OutputPage;
@@ -20,7 +21,6 @@ use PermissionsError;
 use ReadOnlyError;
 use SplObjectStorage;
 use ThrottledError;
-use UnlistedSpecialPage;
 use Wikimedia\ObjectFactory\ObjectFactory;
 
 /**

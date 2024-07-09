@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use InvalidArgumentException;
 use ManualLogEntry;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
 use MessageGroup;
-use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 

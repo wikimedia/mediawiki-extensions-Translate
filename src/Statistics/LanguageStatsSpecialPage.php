@@ -15,9 +15,9 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
 use ObjectCache;
-use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 

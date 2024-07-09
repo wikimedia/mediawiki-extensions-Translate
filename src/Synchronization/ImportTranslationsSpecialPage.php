@@ -9,8 +9,8 @@ use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextParseException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroupBase;
-use SpecialPage;
 use Xml;
 
 /**

@@ -13,8 +13,8 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessagePrefixMessageGroup;
-use SpecialPage;
 
 /**
  * Implements includable special page Special:MessageGroupStats which provides

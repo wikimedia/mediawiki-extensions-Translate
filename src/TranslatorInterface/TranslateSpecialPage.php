@@ -14,10 +14,10 @@ use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
 use Skin;
-use SpecialPage;
 
 /**
  * Implements the core of Translate extension - a special page which shows

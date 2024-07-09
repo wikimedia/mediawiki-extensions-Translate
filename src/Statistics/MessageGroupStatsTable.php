@@ -9,10 +9,10 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageLocalizer;
-use SpecialPage;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

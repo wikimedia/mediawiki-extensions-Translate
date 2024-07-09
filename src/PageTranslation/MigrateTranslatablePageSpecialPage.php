@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use FormatJson;
 use MediaWiki\Html\Html;
-use SpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
 
 /**
  * Contains code for Special:PageMigration to migrate to page transation
