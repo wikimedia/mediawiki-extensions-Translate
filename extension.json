@@ -163,8 +163,15 @@
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateInterfacePreferences::translationAssistLanguages",
 			"translateSandbox"
 		],
-		"ChangesListSpecialPageQuery": "recentChangesTranslationFilter",
-		"SpecialRecentChangesPanel": "recentChangesTranslationFilter",
+		"FetchChangesList": "cleanChanges",
+		"ChangesListSpecialPageQuery": [
+			"recentChangesTranslationFilter",
+			"cleanChanges"
+		],
+		"SpecialRecentChangesPanel": [
+			"recentChangesTranslationFilter",
+			"cleanChanges"
+		],
 		"ChangesListSpecialPageStructuredFilters": "recentChangesTranslationFilter",
 		"AbortEmailNotification": "MediaWiki\\Extension\\Translate\\HookHandler::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onDelete",
@@ -206,6 +213,14 @@
 		"ArticleViewHeader": "messageBundle"
 	},
 	"HookHandlers": {
+		"cleanChanges": {
+			"class": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\CleanChangesFilters",
+			"services": [
+				"LanguageNameUtils",
+				"DBLoadBalancer",
+				"MainConfig"
+			]
+		},
 		"main": {
 			"class": "MediaWiki\\Extension\\Translate\\HookHandler",
 			"services": [
@@ -686,6 +701,12 @@
 				"resources/css/ext.translate.messagerenamedialog.less"
 			]
 		},
+		"ext.translate.cleanchanges": {
+			"packageFiles": [
+				"resources/src/ext.translate.cleanchanges/index.js"
+			],
+			"styles": "resources/src/ext.translate.cleanchanges/index.less"
+		},
 		"ext.translate.groupselector": {
 			"styles": "resources/css/ext.translate.groupselector.less",
 			"packageFiles": [
@@ -1130,6 +1151,10 @@
 		]
 	},
 	"config": {
+		"TranslateCleanChangesTrailerFilter": {
+			"value": false,
+			"description": "Add language filter to the Special:RecentChanges"
+		},
 		"PageTranslationLanguageList": {
 			"value": "tag-only",
 			"description": "How language list for translatable pages is shown. Allowed values:\n * tag-only: Only display languages with the <languages /> tag.\n * sidebar-only: Display languages as interlanguage links only and ignore the tag even if present on the page.\n * sidebar-fallback: Display languages as interlanguage links if no tag is on the page.\n * sidebar-always: Display languages as interlanguage links and also in tag if it is present on the page.\n @since 2018.07",

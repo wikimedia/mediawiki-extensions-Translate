@@ -1,0 +1,30 @@
+@import 'mediawiki.skin.variables.less';
+
+.ext-translate-cc-language-selector__trigger {
+	cursor: pointer;
+	color: @color-link-external;
+}
+
+.ext-translate-cc-language-selector__trigger::after {
+	display: inline-block;
+	margin-left: 4px;
+	content: '';
+	vertical-align: middle;
+	border-top: 4px solid @color-link-external;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.ext-translate-cc-language-selector__clear {
+	font-weight: bold;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.ext-translate-cc-language-selector {
+	padding-right: 50px;
+}
+
+.ext-translate-cc-hidden {
+	display: none;
+}
