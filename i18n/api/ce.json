@@ -8,5 +8,7 @@
 	"apihelp-query+languagestats-param-language": "Меттан код.",
 	"apihelp-query+messagecollection-param-group": "Хаамийн тоба.",
 	"apihelp-query+messagecollection-param-language": "Меттан код.",
-	"apihelp-translationstash-param-subaction": "Ардамаш."
+	"apihelp-translationstash-param-subaction": "Ардамаш.",
+	"apierror-translate-language-disabled": "$1 тӀе гочдар дӀадайина ду.",
+	"apierror-translate-language-disabled-reason": "$1 тӀе гочдар дӀадайина ду: $2"
 }

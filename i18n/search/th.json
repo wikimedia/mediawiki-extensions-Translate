@@ -25,6 +25,6 @@
 	"tux-sst-untranslated": "ไม่มีการแปลจาก $1",
 	"tux-sst-ellipsis-untranslated": "ไม่มีการแปล",
 	"tux-sst-link-all-match": "ต้องใช้คำค้นหาทั้งหมด",
-	"tux-sst-match-message": "กำลังแสดงคำแปลที่ตรงกับคำค้นหา $1",
+	"tux-sst-match-message": "กำลังแสดงคำแปลที่ตรงกับคำค้นหา$1",
 	"tux-sst-error-language": "ไม่สามารถใช้ภาษานี้กับการค้นหาประเภทนี้"
 }
