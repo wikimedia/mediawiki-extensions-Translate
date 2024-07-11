@@ -22,6 +22,8 @@
 	"tpt-aggregategroup-update": "Ӏалашдан",
 	"tpt-aggregategroup-update-cancel": "Цаоьшу",
 	"tpt-invalid-group": "ТӀекхачарехь йоцу тоба",
+	"log-description-pagetranslation": "АгӀонаш гочйаран системица доьзна гӀуллакхийн журнал",
+	"log-name-pagetranslation": "АгӀонаш гочйаран журнал",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|цӀе хийцина}} гочйан луш йолу агӀонан «$3» → «$4»",
 	"log-action-filter-pagetranslation": "Дечунна тайпа:",
 	"log-action-filter-pagetranslation-delete": "АгӀо дӀайаккхар",
