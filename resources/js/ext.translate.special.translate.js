@@ -76,9 +76,8 @@
 		/**
 		 * @internal
 		 * @param {Object} params
-		 * @param {boolean} forceChange
 		 */
-		changeUrl: function ( params, forceChange ) {
+		changeUrl: function ( params ) {
 			var uri = new mw.Uri( window.location.href );
 
 			uri.extend( params );
@@ -96,12 +95,9 @@
 				return;
 			}
 
-			// If supported by the browser and requested, change the URL with
-			// this URI but try not to leave the page.
-			if ( !forceChange && history.pushState && $( '.tux-messagelist' ).length ) {
-				history.pushState( uri, null, uri.toString() );
+			if ( $( '.tux-messagelist' ).length ) {
+				history.replaceState( uri, null, uri.toString() );
 			} else {
-				// For old browsers, just reload
 				window.location.href = uri.toString();
 			}
 		},
