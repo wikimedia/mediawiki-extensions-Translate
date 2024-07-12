@@ -1,8 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Elmonitis",
 			"MuratTheTurkish"
 		]
 	},
+	"tpt-translation-settings-page-title": "Mga setting sa paghubad",
+	"tpt-translation-settings-ignore": "Wala gitumong nga hubaron kining unora",
+	"tpt-translation-settings-ignore-hint": "Kining panira dili apilon sa lista sa mga hubaronon sa katilingban.",
+	"tpt-translation-settings-unstable": "Dili pa lig-on o kasaligan ang sulod niini.",
+	"tpt-translation-settings-propose": "Kasaligan na ang unod ug andam na",
+	"tpt-translation-settings-propose-hint": "Apilon kining panira sa mga hubaron sa katilingban.",
+	"tpt-translation-settings-unstable-notice": "Ang sulod niining panid kulang pa sa kalig-on aron mahimong hubaron.",
 	"tpt-languages-legend": "Uban pang mga sinultian:"
 }
