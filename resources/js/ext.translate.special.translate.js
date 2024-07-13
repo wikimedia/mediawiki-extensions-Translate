@@ -286,13 +286,23 @@
 		}
 
 		var buttonMessage = group.subscription ? 'tux-unwatch-group' : 'tux-watch-group';
+		var watchClass = group.subscription ? 'tux-watch-group--watch' : 'tux-watch-group--unwatch';
 		var $subscribeButton = $( '<button>' )
-			.addClass( 'mw-ui-button' )
-			// * tux-watch-group
-			// * tux-unwatch-group
-			.text( mw.msg( buttonMessage, group.label ) )
+			// CSS Classes:
+			// * tux-watch-group--watch
+			// * tux-watch-group--unwatch
+			.addClass( 'mw-ui-button ' + watchClass )
 			.data( 'subscribed', group.subscription )
 			.on( 'click', toggleSubscription );
+
+		$subscribeButton.append(
+			$( '<span>' ).addClass( 'tux-watch-icon' ),
+			$( '<span>' )
+				.addClass( 'tux-watch-label' )
+				// * tux-watch-group
+				// * tux-unwatch-group
+				.text( mw.msg( buttonMessage, group.label ) )
+		);
 
 		$tuxWatchGroup.empty().append( $subscribeButton );
 	}
@@ -368,14 +378,24 @@
 
 		return api.postWithToken( 'csrf', params ).then(
 			function ( response ) {
+				var oldSubscriptionStatus = subscriptionStatus;
 				if ( response.messagegroupsubscription && response.messagegroupsubscription.success === 1 ) {
-					var buttonMessage = subscriptionStatus ? 'tux-watch-group' : 'tux-unwatch-group';
+					var buttonMessage = oldSubscriptionStatus ? 'tux-watch-group' : 'tux-unwatch-group';
+					var watchClass = oldSubscriptionStatus ?
+						'tux-watch-group--unwatch' : 'tux-watch-group--watch';
 					var groupInfo = response.messagegroupsubscription.group;
 					$button
+						.removeClass( [ 'tux-watch-group--watch', 'tux-watch-group--unwatch' ] )
+						// CSS Classes:
+						// * tux-watch-group--watch
+						// * tux-watch-group--unwatch
+						.addClass( watchClass )
+						.data( 'subscribed', !oldSubscriptionStatus );
+
+					$button.find( '.tux-watch-label' )
 						// * tux-watch-group
 						// * tux-unwatch-group
-						.text( mw.msg( buttonMessage, groupInfo.label ) )
-						.data( 'subscribed', !subscriptionStatus );
+						.text( mw.msg( buttonMessage, groupInfo.label ) );
 
 					loadWatchedMessageGroups();
 				} else {

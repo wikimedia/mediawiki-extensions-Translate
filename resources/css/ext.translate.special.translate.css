@@ -109,6 +109,25 @@
 	top: 1px;
 }
 
+.tux-watch-group .mw-ui-button .tux-watch-icon {
+	background: no-repeat left center transparent;
+	background-size: 20px;
+	padding-left: 20px;
+}
+
+.tux-watch-group .mw-ui-button.tux-watch-group--unwatch .tux-watch-icon {
+	background-image: url( ../images/bookmark-outlined.svg );
+}
+
+.tux-watch-group .mw-ui-button.tux-watch-group--watch .tux-watch-icon {
+	background-image: url( ../images/bookmark.svg );
+}
+
+.tux-watch-group .mw-ui-button .tux-watch-label {
+	font-size: 1.1em;
+	padding-inline-start: 2px;
+}
+
 .tux-editor-header {
 	color: #222;
 	font-size: 14px;
