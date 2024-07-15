@@ -88,6 +88,7 @@
 	"tpt-rev-unmark-tooltip": "從翻譯中刪除此頁面。",
 	"tpt-rev-discourage-tooltip": "不建議翻譯此頁面。",
 	"tpt-rev-encourage-tooltip": "將此頁面還原為一般翻譯。",
+	"tpt-translation-settings-save": "儲存設定",
 	"translate-tag-translate-link-desc": "翻譯此頁面",
 	"translate-tag-markthis": "標記此頁面需要翻譯",
 	"translate-tag-markthisagain": "此頁面在<span class=\"plainlinks\">[$2 標記需要翻譯]</span>之後，已有<span class=\"plainlinks\">[$1 變更]</span>。",
