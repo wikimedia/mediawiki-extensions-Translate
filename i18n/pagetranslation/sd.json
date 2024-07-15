@@ -20,6 +20,7 @@
 	"tpt-sections-deleted": "ڊاٿل ترجمن جا ايڪا",
 	"tpt-sections-template": "ترجمي جي صفحي جو سانچو",
 	"tpt-mark-nochanges": "نظر ثاني لاءِ ڪي بہ تبديليون ناھن. ھن صفحي ترجمي لاءِ نشان ھڻڻ سان صفحو نہ سنواربو نہ ئي ڪو موجود ترجمي جو ايڪو.",
+	"tpt-unmarked": "صفحو [[:$1]] هاڻي ترجمي لاءِ نشان لڳل نہ آهي.",
 	"translate-tag-translate-link-desc": "ھن صفحي جو ترجمو ڪريو",
 	"tpt-languages-legend": "ٻيون ٻوليون:",
 	"tpt-languages-nonzero": "$1 ($2% ترجمو ٿيل)",
