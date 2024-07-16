@@ -90,7 +90,7 @@ class ElasticSearchTtmServer
 
 		$fuzzyQuery = new FuzzyLikeThis();
 		$fuzzyQuery->setLikeText( $text );
-		$fuzzyQuery->addFields( [ 'content' ] );
+		$fuzzyQuery->addFieldNames( [ 'content' ] );
 
 		$boostQuery = new FunctionScore();
 		$boostQuery->addFunction(

@@ -1,6 +1,9 @@
 <?php
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
+
+use Elastica\Query\AbstractQuery;
 
 /**
  * NOTE: the following class has been copied from elastica 2.3.1 :
@@ -40,165 +43,77 @@ namespace MediaWiki\Extension\Translate\TtmServer;
  * @since 2016.05
  * @ingroup TTMServer
  */
-class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
-	// phpcs:disable PSR2.Classes.PropertyDeclaration.Underscore
-	/**
-	 * Field names.
-	 *
-	 * @var array Field names
-	 */
-	protected $_fields = [];
-	/**
-	 * Like text.
-	 *
-	 * @var string Like text
-	 */
-	protected $_likeText = '';
-	/**
-	 * Ignore term frequency.
-	 *
-	 * @var bool ignore term frequency
-	 */
-	protected $_ignoreTF = false;
-	/**
-	 * Max query terms value.
-	 *
-	 * @var int Max query terms value
-	 */
-	protected $_maxQueryTerms = 25;
-	/**
-	 * fuzziness.
-	 *
-	 * @var int fuzziness
-	 */
-	protected $_fuzziness = 2;
-	/**
-	 * Prefix Length.
-	 *
-	 * @var int Prefix Length
-	 */
-	protected $_prefixLength = 0;
-	/**
-	 * Analyzer.
-	 *
-	 * @var string|null Analyzer
-	 */
-	protected $_analyzer = null;
-	// phpcs:enable
+class FuzzyLikeThis extends AbstractQuery {
+	private array $fieldNames = [];
+	private string $likeText = '';
+	private bool $ignoreTermFrequency = false;
+	private int $maxQueryTerms = 25;
+	private int $fuzziness = 2;
+	private int $prefixLength = 0;
+	private ?string $analyzer = null;
 
-	/**
-	 * Adds field to flt query.
-	 *
-	 * @param array $fields Field names
-	 *
-	 * @return $this
-	 */
-	public function addFields( array $fields ) {
-		$this->_fields = $fields;
+	public function addFieldNames( array $fieldNames ): self {
+		$this->fieldNames = $fieldNames;
+		return $this;
+	}
+
+	public function setLikeText( string $text ): self {
+		$this->likeText = trim( $text );
 
 		return $this;
 	}
 
-	/**
-	 * Set the "like_text" value.
-	 *
-	 * @param string $text
-	 *
-	 * @return $this
-	 */
-	public function setLikeText( $text ) {
-		$text = trim( $text );
-		$this->_likeText = $text;
+	public function setIgnoreTermFrequency( bool $ignoreTermFrequency ): self {
+		$this->ignoreTermFrequency = $ignoreTermFrequency;
 
 		return $this;
 	}
 
-	/**
-	 * Set the "ignore_tf" value (ignore term frequency).
-	 *
-	 * @param bool $ignoreTF
-	 *
-	 * @return $this
-	 */
-	public function setIgnoreTF( $ignoreTF ) {
-		$this->_ignoreTF = (bool)$ignoreTF;
+	public function setFuzziness( int $value ): self {
+		$this->fuzziness = $value;
 
 		return $this;
 	}
 
-	/**
-	 * Set the minimum similarity.
-	 *
-	 * @param int $value
-	 *
-	 * @return $this
-	 */
-	public function setFuzziness( $value ) {
-		$value = (int)$value;
-		$this->_fuzziness = $value;
+	public function setPrefixLength( int $value ): self {
+		$this->prefixLength = $value;
 
 		return $this;
 	}
 
-	/**
-	 * @param int $value Prefix length
-	 *
-	 * @return $this
-	 */
-	public function setPrefixLength( $value ) {
-		$this->_prefixLength = (int)$value;
+	public function setMaxQueryTerms( int $value ): self {
+		$this->maxQueryTerms = $value;
 
 		return $this;
 	}
 
-	/**
-	 * Set max_query_terms.
-	 *
-	 * @param int $value Max query terms value
-	 *
-	 * @return $this
-	 */
-	public function setMaxQueryTerms( $value ) {
-		$this->_maxQueryTerms = (int)$value;
-
-		return $this;
-	}
-
-	/**
-	 * @param string $text Analyzer text
-	 *
-	 * @return $this
-	 */
-	public function setAnalyzer( string $text ) {
-		$text = trim( $text );
-		$this->_analyzer = $text;
+	public function setAnalyzer( string $text ): self {
+		$this->analyzer = trim( $text );
 
 		return $this;
 	}
 
 	/**
 	 * Converts fuzzy like this query to array.
-	 *
 	 * @return array Query array
-	 *
 	 * @see \Elastica\Query\AbstractQuery::toArray()
 	 */
-	public function toArray() {
+	public function toArray(): array {
 		$args = [];
-		if ( $this->_fields !== [] ) {
-			$args['fields'] = $this->_fields;
+		if ( $this->fieldNames !== [] ) {
+			$args['fields'] = $this->fieldNames;
 		}
 
-		if ( $this->_analyzer !== null ) {
-			$args['analyzer'] = $this->_analyzer;
+		if ( $this->analyzer ) {
+			$args['analyzer'] = $this->analyzer;
 		}
 
-		$args['fuzziness'] = ( $this->_fuzziness > 0 ) ? $this->_fuzziness : 0;
+		$args['fuzziness'] = ( $this->fuzziness > 0 ) ? $this->fuzziness : 0;
 
-		$args['like_text'] = $this->_likeText;
-		$args['prefix_length'] = $this->_prefixLength;
-		$args['ignore_tf'] = $this->_ignoreTF;
-		$args['max_query_terms'] = $this->_maxQueryTerms;
+		$args['like_text'] = $this->likeText;
+		$args['prefix_length'] = $this->prefixLength;
+		$args['ignore_tf'] = $this->ignoreTermFrequency;
+		$args['max_query_terms'] = $this->maxQueryTerms;
 
 		$data = parent::toArray();
 		$args = array_merge( $args, $data['fuzzy_like_this'] );
