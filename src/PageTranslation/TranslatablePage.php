@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use ArrayIterator;
 use IDBAccessObject;
 use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -23,6 +24,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use RuntimeException;
 use TextContent;
+use WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\SelectQueryBuilder;
@@ -62,6 +64,7 @@ class TranslatablePage extends TranslatableBundle {
 	protected $pageDisplayTitle;
 	/** @var ?string */
 	private $targetLanguage;
+	private const CACHE_SHARD_SIZE = 3;
 
 	protected function __construct( PageIdentity $title ) {
 		$this->title = $title;
@@ -498,35 +501,55 @@ class TranslatablePage extends TranslatableBundle {
 			return false;
 		}
 
+		static $cachedData = null;
+
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$cacheKey = $cache->makeKey( 'pagetranslation', 'sourcepages' );
+		$cacheKeys = self::getCacheKeys( $cache );
 
-		$translatablePageIds = $cache->getWithSetCallback(
-			$cacheKey,
+		$shardedTranslatablePageIds = $cache->getMultiWithSetCallback(
+			$cacheKeys,
 			$cache::TTL_HOUR * 2,
-			static function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-				$setOpts += Database::getCacheSetOptions( $dbr );
+			static function ( $shardIndex, $oldValue, &$ttl, array &$setOpts ) use ( &$cachedData ) {
+				if ( $cachedData === null ) {
+					$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+					$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return RevTagStore::getTranslatableBundleIds(
-					RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
-				);
+					$cachedData = RevTagStore::getTranslatableBundleIds(
+						RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
+					);
+				}
+
+				if ( $cachedData === [] ) {
+					return [];
+				}
+
+				$partSize = (int)ceil( count( $cachedData ) / self::CACHE_SHARD_SIZE );
+				$parts = array_chunk( $cachedData, $partSize, true );
+				return $parts[ $shardIndex ] ?? [];
 			},
 			[
-				'checkKeys' => [ $cacheKey ],
 				'pcTTL' => $cache::TTL_PROC_SHORT,
 				'pcGroup' => __CLASS__ . ':1',
-				'version' => 2,
+				'version' => 1,
 			]
 		);
 
-		return isset( $translatablePageIds[$page->getId()] );
+		$cachedData = null;
+
+		$allTranslatablePageIds = [];
+		foreach ( $shardedTranslatablePageIds as $shardTranslatablePageIds ) {
+			$allTranslatablePageIds += $shardTranslatablePageIds;
+		}
+		return isset( $allTranslatablePageIds[$page->getId()] );
 	}
 
 	/** Clears the source page cache */
 	public static function clearSourcePageCache(): void {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$cache->touchCheckKey( $cache->makeKey( 'pagetranslation', 'sourcepages' ) );
+		$cacheKeys = self::getCacheKeys( $cache );
+		foreach ( $cacheKeys as $key => $shardIndex ) {
+			$cache->delete( $key );
+		}
 	}
 
 	public static function determineStatus(
@@ -556,6 +579,17 @@ class TranslatablePage extends TranslatableBundle {
 		}
 
 		return new TranslatablePageStatus( $status );
+	}
+
+	private static function getCacheKeys( WANObjectCache $cache ): ArrayIterator {
+		// The cache containing translatable pages is split over several keys due to
+		// its very high memcached request rate. See: T366455.
+		$shardIndexes = range( 0, self::CACHE_SHARD_SIZE - 1 );
+		return $cache->makeMultiKeys(
+			$shardIndexes,
+			static fn ( $shardIndex ) =>
+			$cache->makeKey( 'pagetranslation', 'sourcepages', $shardIndex )
+		);
 	}
 }
 
