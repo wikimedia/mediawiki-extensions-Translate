@@ -49,6 +49,7 @@ class TranslatablePageMarker {
 	private TranslationUnitStoreFactory $translationUnitStoreFactory;
 	private MessageGroupMetadata $messageGroupMetadata;
 	private WikiPageFactory $wikiPageFactory;
+	private TranslatablePageView $translatablePageView;
 
 	public function __construct(
 		ILoadBalancer $loadBalancer,
@@ -63,7 +64,8 @@ class TranslatablePageMarker {
 		TranslatablePageStateStore $translatablePageStateStore,
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		MessageGroupMetadata $messageGroupMetadata,
-		WikiPageFactory $wikiPageFactory
+		WikiPageFactory $wikiPageFactory,
+		TranslatablePageView $translatablePageView
 	) {
 		$this->loadBalancer = $loadBalancer;
 		$this->jobQueueGroup = $jobQueueGroup;
@@ -78,6 +80,7 @@ class TranslatablePageMarker {
 		$this->wikiPageFactory = $wikiPageFactory;
 		$this->messageGroups = $messageGroups;
 		$this->messageGroupMetadata = $messageGroupMetadata;
+		$this->translatablePageView = $translatablePageView;
 	}
 
 	/**
@@ -318,7 +321,9 @@ class TranslatablePageMarker {
 
 		$page->addMarkedTag( $newRevisionId );
 
-		$this->translatablePageStateStore->remove( $page->getPageIdentity() );
+		if ( $this->translatablePageView->isTranslationBannerNamespaceConfigured() ) {
+			$this->translatablePageStateStore->remove( $page->getPageIdentity() );
+		}
 
 		// TODO: Ideally we would only invalidate translatable page message group cache
 		$this->messageGroups->recache();

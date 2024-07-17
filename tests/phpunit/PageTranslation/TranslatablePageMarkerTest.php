@@ -46,6 +46,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$getServiceOrMock( TranslationUnitStoreFactory::class ),
 			$getServiceOrMock( MessageGroupMetadata::class ),
 			$getServiceOrMock( WikiPageFactory::class ),
+			$getServiceOrMock( TranslatablePageView::class )
 		);
 	}
 
@@ -123,7 +124,8 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				TranslatablePageParser::class => $services->get( 'Translate:TranslatablePageParser' ),
 				TranslatablePageStateStore::class => $services->get( 'Translate:TranslatablePageStateStore' ),
 				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
-				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' )
+				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
+				TranslatablePageView::class => $services->get( 'Translate:TranslatablePageView' ),
 			]
 		);
 
