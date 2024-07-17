@@ -8,7 +8,6 @@ use MediaWiki\Extension\Translate\Utilities\StringComparators\EditDistanceString
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use TTMServer;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -20,7 +19,7 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @license GPL-2.0-or-later
  * @ingroup TTMServer
  */
-class DatabaseTtmServer extends TTMServer implements WritableTtmServer, ReadableTtmServer {
+class DatabaseTtmServer extends TtmServer implements WritableTtmServer, ReadableTtmServer {
 	private array $sids;
 
 	private function getDB( int $mode = DB_REPLICA ): IDatabase {

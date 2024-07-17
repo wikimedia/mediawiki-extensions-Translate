@@ -4,10 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use TTMServer;
 
 /**
- * NO-OP version of TTMServer when it is disabled.
+ * NO-OP version of TtmServer when it is disabled.
  * Keeps other code simpler when they can just do
  * TTMServer::primary()->update( ... );
  *
@@ -16,7 +15,7 @@ use TTMServer;
  * @license GPL-2.0-or-later
  * @ingroup TTMServer
  */
-class FakeTtmServer extends TTMServer implements ReadableTtmServer, WritableTtmServer {
+class FakeTtmServer extends TtmServer implements ReadableTtmServer, WritableTtmServer {
 	public function __construct() {
 		parent::__construct( [] );
 	}

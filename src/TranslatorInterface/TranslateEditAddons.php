@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
+use MediaWiki\Extension\Translate\TtmServer\TtmServer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
@@ -20,7 +21,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use ParserOptions;
 use TextContent;
-use TTMServer;
 use WikiPage;
 
 /**
@@ -197,7 +197,7 @@ class TranslateEditAddons {
 				->onTranslate_newTranslation( $handle, $revId, $text, $user );
 		}
 
-		TTMServer::onChange( $handle );
+		TtmServer::onChange( $handle );
 
 		if ( $wgEnablePageTranslation && $handle->isPageTranslation() ) {
 			// Updates for translatable pages only

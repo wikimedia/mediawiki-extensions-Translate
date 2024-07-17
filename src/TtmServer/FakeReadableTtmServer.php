@@ -3,13 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use TTMServer;
-
 /**
- * NO-OP readable version of TTMServer when it is disabled.
+ * NO-OP readable version of TtmServer when it is disabled.
  * @ingroup TTMServer
  */
-class FakeReadableTtmServer extends TTMServer implements ReadableTtmServer {
+class FakeReadableTtmServer extends TtmServer implements ReadableTtmServer {
 	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		return [];
 	}

@@ -3,8 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use TTMServer;
-
 /**
  * Class for handling remote TTMServers over MediaWiki API.
  * Currently, querying is done in TranslationHelpers, and
@@ -15,7 +13,7 @@ use TTMServer;
  * @license GPL-2.0-or-later
  * @ingroup TTMServer
  */
-class RemoteTtmServer extends TTMServer implements ReadableTtmServer {
+class RemoteTtmServer extends TtmServer implements ReadableTtmServer {
 	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		// @todo Implement some day perhaps?
 		return [];

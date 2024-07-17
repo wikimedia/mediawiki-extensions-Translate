@@ -11,7 +11,6 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use TTMServer;
 
 /** @covers \MediaWiki\Extension\Translate\TtmServer\TtmServerMessageUpdateJob */
 class TtmServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
@@ -244,13 +243,13 @@ class TestableTtmServerMessageUpdateJob extends TtmServerMessageUpdateJob {
 }
 
 /**
- * This "testable" TTMServer implementation allows to:
- * - test TTMServer specific methods
+ * This "testable" TtmServer implementation allows to:
+ * - test TtmServer specific methods
  * - attach our mocks to the Test static context, this is needed because
  *   the factory always creates a new instance of the service
  */
-class TestableTTMServer extends TTMServer implements WritableTtmServer {
-	private $delegate;
+class TestableTtmServer extends TtmServer implements WritableTtmServer {
+	private WritableTtmServer $delegate;
 
 	public function __construct( array $config ) {
 		parent::__construct( $config );

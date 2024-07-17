@@ -1,6 +1,6 @@
 <?php
 /**
- * Script to bootstrap TTMServer translation memory
+ * Script to bootstrap TtmServer translation memory
  *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
@@ -28,7 +28,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 /**
- * Script to bootstrap TTMServer translation memory.
+ * Script to bootstrap TtmServer translation memory.
  * @since 2012-01-26
  */
 class TTMServerBootstrap extends Maintenance {
@@ -37,7 +37,7 @@ class TTMServerBootstrap extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->addDescription( 'Script to bootstrap TTMServer.' );
+		$this->addDescription( 'Script to bootstrap TtmServer.' );
 		$this->addOption(
 			'threads',
 			'(optional) Number of threads',

@@ -4,9 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use TTMServer;
 
-class FakeWritableTtmServer extends TTMServer implements WritableTtmServer {
+class FakeWritableTtmServer extends TtmServer implements WritableTtmServer {
 	public function __construct() {
 		parent::__construct( [] );
 	}

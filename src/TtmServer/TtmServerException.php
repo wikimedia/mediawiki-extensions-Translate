@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 use Exception;
 
 /**
- * Class to handle TTMServer specific exceptions.
+ * Class to handle TtmServer specific exceptions.
  * @ingroup TTMServer
  */
 class TtmServerException extends Exception {

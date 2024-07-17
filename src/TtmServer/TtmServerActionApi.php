@@ -10,7 +10,7 @@ use MediaWiki\Config\ServiceOptions;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
- * API module for TTMServer
+ * API module for TtmServer
  * @ingroup API TranslateAPI TTMServer
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

@@ -111,7 +111,6 @@
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
-		"TTMServer": "ttmserver/TTMServer.php",
 		"TranslateUtils": "src/Utilities/Utilities.php",
 		"MediaWiki\\Extension\\Translate\\Utilities\\Utilities": "src/Utilities/Utilities.php",
 		"WikiMessageGroup": "messagegroups/WikiMessageGroup.php",
@@ -169,8 +168,8 @@
 		"SpecialRecentChangesPanel": "recentChangesTranslationFilter",
 		"ChangesListSpecialPageStructuredFilters": "recentChangesTranslationFilter",
 		"AbortEmailNotification": "MediaWiki\\Extension\\Translate\\HookHandler::onAbortEmailNotificationReview",
-		"ArticleDeleteComplete": "TTMServer::onDelete",
-		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
+		"ArticleDeleteComplete": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onDelete",
+		"TranslateEventMessageMembershipChange": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onGroupChange",
 		"ArticleContentOnDiff": "legacyInterface",
 		"SpecialSearchProfiles": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfile",
 		"SpecialSearchProfileForm": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfileForm",
@@ -1289,7 +1288,7 @@
 		},
 		"TranslateTranslationDefaultService": {
 			"value": true,
-			"description": "Name of the default translation memory service. This service must accept updates.\n\nIf left as the default `true`, the extension will fallback to TTMServer. If `$wgTranslateTranslationServices` is also unconfigured, built-in values will be used to configure the TTMServer.\n\nIf set to `false`, no translation memory will be used.",
+			"description": "Name of the default translation memory service. This service must accept updates.\n\nIf left as the default `true`, the extension will fallback to TtmServer. If `$wgTranslateTranslationServices` is also unconfigured, built-in values will be used to configure the TtmServer.\n\nIf set to `false`, no translation memory will be used.",
 			"public": true
 		},
 		"TranslateTranslationServices": {

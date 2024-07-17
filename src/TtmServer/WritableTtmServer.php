@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 
 /**
- * Interface for TTMServer that can be updated.
+ * Interface for TtmServer that can be updated.
  * @ingroup TTMServer
  */
 interface WritableTtmServer {

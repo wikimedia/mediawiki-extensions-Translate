@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 /**
- * Interface for TTMServer that can be queried (=all of them).
+ * Interface for TtmServer that can be queried (=all of them).
  * @ingroup TTMServer
  */
 interface ReadableTtmServer {
@@ -23,13 +23,13 @@ interface ReadableTtmServer {
 	public function query( string $sourceLanguage, string $targetLanguage, string $text ): array;
 
 	/**
-	 * Determines if the suggestion returned by this TTMServer comes
+	 * Determines if the suggestion returned by this TtmServer comes
 	 * from this wiki or any other wiki.
 	 */
 	public function isLocalSuggestion( array $suggestion ): bool;
 
 	/**
-	 * Given suggestion returned by this TTMServer, constructs fully
+	 * Given suggestion returned by this TtmServer, constructs fully
 	 * qualified URL to the location of the translation.
 	 * @return string URL
 	 */

@@ -26,17 +26,17 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use RuntimeException;
-use TTMServer;
 use TTMServerBootstrap;
 
 /**
- * TTMServer backend based on ElasticSearch. Depends on Elastica.
+ * TtmServer backend based on ElasticSearch. Depends on Elastica.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
+ * @since 2014.04
  * @ingroup TTMServer
  */
 class ElasticSearchTtmServer
-	extends TTMServer
+	extends TtmServer
 	implements ReadableTtmServer, WritableTtmServer, SearchableTtmServer
 {
 	/**

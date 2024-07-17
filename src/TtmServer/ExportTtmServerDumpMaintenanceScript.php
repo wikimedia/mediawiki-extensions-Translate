@@ -26,7 +26,7 @@ class ExportTtmServerDumpMaintenanceScript extends BaseMaintenanceScript {
 
 	public function __construct() {
 		parent::__construct();
-		$this->addDescription( 'Creates a dump file that can be imported to a TTMServer' );
+		$this->addDescription( 'Creates a dump file that can be imported to a TtmServer' );
 
 		$this->addOption(
 			'output-directory',

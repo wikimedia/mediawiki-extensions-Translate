@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 /**
- * Interface for TTMServer that can act as backend for translation search.
+ * Interface for TtmServer that can act as backend for translation search.
  * @ingroup TTMServer
  */
 interface SearchableTtmServer {

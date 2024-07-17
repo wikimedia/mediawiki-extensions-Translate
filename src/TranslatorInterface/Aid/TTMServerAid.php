@@ -9,13 +9,13 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
+use MediaWiki\Extension\Translate\TtmServer\TtmServer;
 use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use TTMServer;
 
 /**
  * Translation aid that provides suggestion from translation memory.
@@ -84,7 +84,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			$suggestions = array_merge( $suggestions, $sugs );
 		}
 
-		$suggestions = TTMServer::sortSuggestions( $suggestions );
+		$suggestions = TtmServer::sortSuggestions( $suggestions );
 		// Must be here to not mess up the sorting function
 		$suggestions['**'] = 'suggestion';
 

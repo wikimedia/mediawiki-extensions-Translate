@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use InvalidArgumentException;
-use TTMServer;
 
 /**
  * @since 2021.01
@@ -56,7 +55,7 @@ class TtmServerFactory {
 		return in_array( $name, $ttmServersIds );
 	}
 
-	public function create( string $name ): TTMServer {
+	public function create( string $name ): TtmServer {
 		if ( !$this->has( $name ) ) {
 			throw new ServiceCreationFailure( "No configuration for name '$name'" );
 		}
