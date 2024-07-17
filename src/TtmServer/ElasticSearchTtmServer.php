@@ -1,41 +1,40 @@
 <?php
-/**
- * TTMServer - The Translate extension translation memory interface
- *
- * @file
- * @author Niklas Laxström
- * @license GPL-2.0-or-later
- * @ingroup TTMServer
- */
+declare( strict_types = 1 );
+
+namespace MediaWiki\Extension\Translate\TtmServer;
 
 use Elastica\Aggregation\Terms;
 use Elastica\Client;
 use Elastica\Document;
 use Elastica\Exception\ExceptionInterface;
+use Elastica\Index;
 use Elastica\Query;
 use Elastica\Query\BoolQuery;
 use Elastica\Query\FunctionScore;
 use Elastica\Query\MatchQuery;
 use Elastica\Query\Term;
 use Elastica\ResultSet;
+use Elastica\Search;
+use Exception;
+use FuzzyLikeThis;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
-use MediaWiki\Extension\Translate\TtmServer\ReadableTtmServer;
-use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
-use MediaWiki\Extension\Translate\TtmServer\TtmServerException;
-use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
+use RuntimeException;
+use TTMServer;
+use TTMServerBootstrap;
 
 /**
- * TTMServer backed based on ElasticSearch. Depends on Elastica.
- * @since 2014.04
+ * TTMServer backend based on ElasticSearch. Depends on Elastica.
+ * @author Niklas Laxström
+ * @license GPL-2.0-or-later
  * @ingroup TTMServer
  */
-class ElasticSearchTTMServer
+class ElasticSearchTtmServer
 	extends TTMServer
 	implements ReadableTtmServer, WritableTtmServer, SearchableTtmServer
 {
@@ -53,16 +52,11 @@ class ElasticSearchTTMServer
 	 */
 	private const WAIT_UNTIL_READY_TIMEOUT = 3600;
 
-	/** @var Client */
-	protected $client;
-	/**
-	 * Reference to the maintenance script to relay logging output.
-	 */
-	protected $logger;
-	/**
-	 * Used for Reindex
-	 */
-	protected $updateMapping = false;
+	private ?Client $client = null;
+	/** Reference to the maintenance script to relay logging output. */
+	private ?TTMServerBootstrap $logger = null;
+	/** Used for reindex */
+	private bool $updateMapping = false;
 
 	public function isLocalSuggestion( array $suggestion ): bool {
 		return $suggestion['wiki'] === WikiMap::getCurrentWikiId();
@@ -80,7 +74,7 @@ class ElasticSearchTTMServer
 		}
 	}
 
-	protected function doQuery( $sourceLanguage, $targetLanguage, $text ) {
+	private function doQuery( string $sourceLanguage, string $targetLanguage, string $text ): array {
 		if ( !$this->useWikimediaExtraPlugin() ) {
 			// ElasticTTM is currently not compatible with elasticsearch 2.x/5.x
 			// It needs FuzzyLikeThis ported via the wmf extra plugin
@@ -108,7 +102,7 @@ class ElasticSearchTTMServer
 		);
 		$boostQuery->setBoostMode( FunctionScore::BOOST_MODE_REPLACE );
 
-		// Wrap the fuzzy query so it can be used as a filter.
+		// Wrap the fuzzy query, so it can be used as a filter.
 		// This is slightly faster, as ES can throw away the scores by this query.
 		$bool = new BoolQuery();
 		$bool->addFilter( $fuzzyQuery );
@@ -289,13 +283,7 @@ class ElasticSearchTTMServer
 		return true;
 	}
 
-	/**
-	 * @param MessageHandle $handle
-	 * @param string $text
-	 * @param int $revId
-	 * @return Document
-	 */
-	protected function createDocument( MessageHandle $handle, $text, $revId ) {
+	private function createDocument( MessageHandle $handle, string $text, int $revId ): Document {
 		$language = $handle->getCode();
 
 		$localid = $handle->getTitleForBase()->getPrefixedText();
@@ -314,11 +302,8 @@ class ElasticSearchTTMServer
 		return new Document( $globalid, $data, '_doc' );
 	}
 
-	/**
-	 * Create index
-	 * @param bool $rebuild Deletes index first if already exists
-	 */
-	public function createIndex( $rebuild ) {
+	/** @param bool $rebuild Deletes index first if already exists */
+	private function createIndex( bool $rebuild ): void {
 		$indexSettings = [
 			'settings' => [
 				'index' => [
@@ -354,7 +339,6 @@ class ElasticSearchTTMServer
 
 	/**
 	 * Begin the bootstrap process.
-	 *
 	 * @throws RuntimeException
 	 */
 	public function beginBootstrap(): void {
@@ -404,12 +388,12 @@ class ElasticSearchTTMServer
 			// Elastica 6 support
 			// @phan-suppress-next-line PhanUndeclaredClassMethod
 			$mapping = new \Elastica\Type\Mapping();
-			// @phan-suppress-next-line PhanUndeclaredMethod, PhanUndeclaredClassMethod
+			// @phan-suppress-next-line PhanUndeclaredClassMethod, PhanUndeclaredMethod
 			$mapping->setType( $index->getType( '_doc' ) );
 			// @phan-suppress-next-line PhanUndeclaredClassMethod
 			$mapping->setProperties( $properties );
 			// @phan-suppress-next-line PhanUndeclaredClassMethod
-			$mapping->send( [ 'include_type_name' => 'true' ] );
+			$mapping->send( $index, [ 'include_type_name' => 'true' ] );
 		} else {
 			// Elastica 7
 			$mapping = new \Elastica\Mapping( $properties );
@@ -467,8 +451,8 @@ class ElasticSearchTTMServer
 		$index->getSettings()->setRefreshInterval( '5s' );
 	}
 
-	public function getClient() {
-		if ( !$this->client ) {
+	public function getClient(): Client {
+		if ( !isset( $this->client ) ) {
 			if ( isset( $this->config['config'] ) ) {
 				$this->client = new Client( $this->config['config'] );
 			} else {
@@ -479,29 +463,28 @@ class ElasticSearchTTMServer
 	}
 
 	/** @return true if the backend is configured with the wikimedia extra plugin */
-	public function useWikimediaExtraPlugin() {
+	public function useWikimediaExtraPlugin(): bool {
 		return isset( $this->config['use_wikimedia_extra'] ) && $this->config['use_wikimedia_extra'];
 	}
 
-	/** @return string */
-	private function getIndexName() {
+	private function getIndexName(): string {
 		return $this->config['index'] ?? 'ttmserver';
 	}
 
-	public function getIndex() {
+	public function getIndex(): Index {
 		return $this->getClient()
 			->getIndex( $this->getIndexName() );
 	}
 
-	protected function getShardCount() {
+	private function getShardCount(): int {
 		return $this->config['shards'] ?? 1;
 	}
 
-	protected function getReplicaCount() {
+	private function getReplicaCount(): string {
 		return $this->config['replicas'] ?? '0-2';
 	}
 
-	protected function waitUntilReady() {
+	private function waitUntilReady(): void {
 		$statuses = MWElasticUtils::waitForGreen(
 			$this->getClient(),
 			$this->getIndexName(),
@@ -516,13 +499,13 @@ class ElasticSearchTTMServer
 		}
 	}
 
-	public function setLogger( $logger ) {
+	public function setLogger( TTMServerBootstrap $logger ): void {
 		$this->logger = $logger;
 	}
 
 	// Can it get any uglier?
-	protected function logOutput( $text ) {
-		if ( $this->logger ) {
+	private function logOutput( string $text ): void {
+		if ( isset( $this->logger ) ) {
 			$this->logger->statusLine( "$text\n" );
 		}
 	}
@@ -531,13 +514,8 @@ class ElasticSearchTTMServer
 		$this->updateMapping = true;
 	}
 
-	/**
-	 * Parse query string and build the search query
-	 * @param string $queryString
-	 * @param array $opts
-	 * @return array
-	 */
-	protected function parseQueryString( $queryString, array $opts ) {
+	/** Parse query string and build the search query */
+	private function parseQueryString( string $queryString, array $opts ): array {
 		$fields = $highlights = [];
 		$terms = preg_split( '/\s+/', $queryString );
 		$match = $opts['match'];
@@ -602,14 +580,8 @@ class ElasticSearchTTMServer
 		return [ $searchQuery, $highlights ];
 	}
 
-	/**
-	 * Search interface
-	 * @param string $queryString
-	 * @param array $opts
-	 * @param array $highlight
-	 * @return \Elastica\Search
-	 */
-	public function createSearch( $queryString, $opts, $highlight ) {
+	/** Search interface */
+	public function createSearch( string $queryString, array $opts, array $highlight ): Search {
 		$query = new Query();
 
 		[ $searchQuery, $highlights ] = $this->parseQueryString( $queryString, $opts );
@@ -671,13 +643,9 @@ class ElasticSearchTTMServer
 
 	/**
 	 * Search interface
-	 * @param string $queryString
-	 * @param array $opts
-	 * @param array $highlight
 	 * @throws TtmServerException
-	 * @return ResultSet
 	 */
-	public function search( $queryString, $opts, $highlight ) {
+	public function search( string $queryString, array $opts, array $highlight ): ResultSet {
 		$search = $this->createSearch( $queryString, $opts, $highlight );
 
 		try {
@@ -736,17 +704,14 @@ class ElasticSearchTTMServer
 	/**
 	 * Delete docs by query by using the scroll API.
 	 * TODO: Elastica\Index::deleteByQuery() ? was removed
-	 *  in 2.x and returned in 5.x.
-	 *
-	 * @param \Elastica\Index $index the source index
-	 * @param Query $query
+	 * in 2.x and returned in 5.x.
 	 * @throws RuntimeException
 	 */
-	private function deleteByQuery( \Elastica\Index $index, Query $query ) {
+	private function deleteByQuery( Index $sourceIndex, Query $query ): void {
 		try {
-			MWElasticUtils::deleteByQuery( $index, $query, /* $allowConflicts = */ true );
+			MWElasticUtils::deleteByQuery( $sourceIndex, $query, /* $allowConflicts = */ true );
 		} catch ( Exception $e ) {
-			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
+			LoggerFactory::getInstance( 'ElasticSearchTtmServer' )->error(
 				'Problem encountered during deletion.',
 				[ 'exception' => $e ]
 			);
@@ -759,21 +724,21 @@ class ElasticSearchTTMServer
 	private function getElasticsearchVersion(): string {
 		$response = $this->getClient()->request( '' );
 		if ( !$response->isOK() ) {
-			throw new \RuntimeException( "Cannot fetch elasticsearch version: " . $response->getError() );
+			throw new RuntimeException( "Cannot fetch elasticsearch version: " . $response->getError() );
 		}
 
 		$result = $response->getData();
 		if ( !isset( $result['version']['number'] ) ) {
-			throw new \RuntimeException( 'Unable to determine elasticsearch version, aborting.' );
+			throw new RuntimeException( 'Unable to determine elasticsearch version, aborting.' );
 		}
 
 		return $result[ 'version' ][ 'number' ];
 	}
 
-	private function checkElasticsearchVersion() {
+	private function checkElasticsearchVersion(): void {
 		$version = $this->getElasticsearchVersion();
 		if ( !str_starts_with( $version, '6.8' ) && !str_starts_with( $version, '7.' ) ) {
-			throw new \RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
+			throw new RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
 		}
 	}
 
@@ -781,8 +746,9 @@ class ElasticSearchTTMServer
 		return class_exists( '\Elastica\Type' );
 	}
 
-	private function assertResultSetInstance( $resultset ): void {
-		if ( $resultset instanceof ResultSet ) {
+	/** @param mixed $resultSet */
+	private function assertResultSetInstance( $resultSet ): void {
+		if ( $resultSet instanceof ResultSet ) {
 			return;
 		}
 
@@ -791,3 +757,7 @@ class ElasticSearchTTMServer
 		);
 	}
 }
+
+// Translation memory configuration ($wgTranslateTranslationServices) uses class as ElasticSearchTTMServer
+// See: https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories#Configuration
+class_alias( ElasticSearchTtmServer::class, "ElasticSearchTTMServer" );
