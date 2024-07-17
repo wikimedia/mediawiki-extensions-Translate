@@ -68,6 +68,10 @@ class TranslatablePageView {
 		return $this->isRecentEditor( $articleTitle, $user );
 	}
 
+	public function isTranslationBannerNamespaceConfigured(): bool {
+		return $this->pageTranslationBannerNamespaces !== [];
+	}
+
 	private function isRecentEditor( Title $articleTitle, User $user ): bool {
 		$dbr = $this->connectionProvider->getReplicaDatabase();
 		$fieldValue = $dbr->newSelectQueryBuilder()

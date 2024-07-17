@@ -139,6 +139,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 			return;
 		}
 
+		if ( $action === 'settings' && !$this->translatablePageView->isTranslationBannerNamespaceConfigured() ) {
+			$this->showTranslationStateRestricted();
+			return;
+		}
+
 		$block = $this->getBlock( $request, $user, $title );
 		if ( $action === 'settings' && !$request->wasPosted() ) {
 			$this->showTranslationSettings( $title, $block );
@@ -525,7 +530,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$res = self::loadPagesFromDB();
 		$allPages = self::buildPageArray( $res );
-		$pagesWithProposedState = $this->translatablePageStateStore->getRequested();
+
+		$pagesWithProposedState = [];
+		if ( $this->translatablePageView->isTranslationBannerNamespaceConfigured() ) {
+			$pagesWithProposedState = $this->translatablePageStateStore->getRequested();
+		}
 
 		if ( !count( $allPages ) && !count( $pagesWithProposedState ) ) {
 			$out->addWikiMsg( 'tpt-list-nopages' );
@@ -1140,8 +1149,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$user = $this->getUser();
 		if ( !$this->translatablePageView->canManageTranslationSettings( $title, $user ) ) {
-			$out->wrapWikiMsg( Html::errorBox( "$1" ), 'tpt-translation-settings-restricted' );
-			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
+			$this->showTranslationStateRestricted();
 			return;
 		}
 
@@ -1219,5 +1227,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		return null;
+	}
+
+	private function showTranslationStateRestricted(): void {
+		$out = $this->getOutput();
+		$out->wrapWikiMsg( Html::errorBox( "$1" ), 'tpt-translation-settings-restricted' );
+		$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 	}
 }
