@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Don Alessandro",
 			"TayfunEt.",
 			"Zolgoyo"
 		]
 	},
-	"apihelp-groupreview-param-group": "Beyanat grupu.",
+	"apihelp-groupreview-param-group": "Beyanat gruppası. Şuña baqıñız <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-groupreview-param-language": "Til kodu.",
 	"apierror-translate-unknownmessage": "Bilinmegen beyanat"
 }
