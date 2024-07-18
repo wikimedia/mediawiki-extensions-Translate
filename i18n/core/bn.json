@@ -424,5 +424,6 @@
 	"translate-messagebundle-sourcelanguage-changed": "বার্তা গুচ্ছ তৈরি হয়ে গেলে এর উৎস ভাষা পরিবর্তন করা যাবে না।",
 	"log-action-filter-translationreview": "কাজের ধরন:",
 	"log-action-filter-translationreview-message": "স্বতন্ত্র অনুবাদ বার্তার পর্যালোচনা",
-	"log-action-filter-translationreview-group": "অনুবাদ অগ্রগতির অবস্থার পরিবর্তন"
+	"log-action-filter-translationreview-group": "অনুবাদ অগ্রগতির অবস্থার পরিবর্তন",
+	"translate-hidetranslations": "অনুবাদ পাতা লুকান"
 }
