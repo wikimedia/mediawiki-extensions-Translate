@@ -55,14 +55,14 @@ class PopulateFuzzy extends Maintenance {
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()
 			->getMaintenanceConnectionRef( DB_PRIMARY );
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
 
 		$limit = $this->getBatchSize();
 		$offset = 0;
 		while ( true ) {
 			$this->output( '.', 0 );
-			$res = $dbw->newSelectQueryBuilder()
-				->queryInfo( $queryInfo )
+			$res = $revStore->newSelectQueryBuilder( $dbw )
+				->joinPage()
+				->joinComment()
 				->where( [
 					'page_latest = rev_id',
 					'page_namespace' => $namespace,

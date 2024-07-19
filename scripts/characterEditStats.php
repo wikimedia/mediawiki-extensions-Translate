@@ -119,26 +119,23 @@ class CharacterEditStats extends Maintenance {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 
-		$revQuery = MediaWikiServices::getInstance()->getRevisionStore()->getQueryInfo( [ 'page' ] );
-		$revUserText = $revQuery['fields']['rev_user_text'] ?? 'rev_user_text';
-
-		$conds = [
-			"rev_timestamp > $cutoff",
-			'page_namespace' => $namespaces,
-		];
-
-		$res = $dbr->newSelectQueryBuilder()
-			->select( [
-				'title' => 'page_title',
-				'user_text' => $revUserText,
-				'length' => 'rev_len',
+		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
+		$result = $revisionStore->newSelectQueryBuilder( $dbr )
+			->select(
+				[
+					'title' => 'page_title',
+					'user_text' => 'actor_rev_user.actor_name',
+					'length' => 'rev_len',
+				]
+			)
+			->joinPage()
+			->where( [
+				"rev_timestamp > $cutoff",
+				'page_namespace' => $namespaces,
 			] )
-			->tables( $revQuery['tables'] )
-			->where( $conds )
-			->joinConds( $revQuery['joins'] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
-		return iterator_to_array( $res );
+		return iterator_to_array( $result );
 	}
 }
 

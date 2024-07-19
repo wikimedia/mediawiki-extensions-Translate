@@ -710,19 +710,19 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$dbr = Utilities::getSafeReadDB();
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
-		$revQuery = $revisionStore->getQueryInfo( [ 'page' ] );
 
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$iterator->append( $dbr->newSelectQueryBuilder()
-				->tables( $revQuery['tables'] )
-				->fields( $revQuery['fields'] )
-				->where( $conds )
-				->andWhere( [ 'page_latest = rev_id' ] )
-				->joinConds( $revQuery['joins'] )
-				->caller( __METHOD__ )
-				->fetchResultSet() );
+			$iterator->append(
+				$revisionStore->newSelectQueryBuilder( $dbr )
+					->joinPage()
+					->joinComment()
+					->where( $conds )
+					->andWhere( [ 'page_latest = rev_id' ] )
+					->caller( __METHOD__ )
+					->fetchResultSet()
+			);
 		}
 
 		$this->dbData = $iterator;

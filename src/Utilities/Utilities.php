@@ -95,11 +95,9 @@ class Utilities {
 		$revStore = $mwServices->getRevisionStore();
 		$titleContents = [];
 
-		$query = $revStore->getQueryInfo( [ 'page', 'user' ] );
-		$rows = $dbr->newSelectQueryBuilder()
-			->select( $query['fields'] )
-			->tables( $query['tables'] )
-			->joinConds( $query['joins'] )
+		$rows = $revStore->newSelectQueryBuilder( $dbr )
+			->joinPage()
+			->joinComment()
 			->where( [ 'page_namespace' => $namespace, 'page_title' => $titles, 'page_latest=rev_id' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();

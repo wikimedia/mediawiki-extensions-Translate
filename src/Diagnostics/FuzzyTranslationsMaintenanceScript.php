@@ -151,11 +151,8 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
 		}
 
-		$queryInfo = $this->revisionStore->getQueryInfo( [ 'page' ] );
-		$rows = $dbr->newSelectQueryBuilder()
-			->select( $queryInfo['fields'] )
-			->tables( $queryInfo['tables'] )
-			->joinConds( $queryInfo['joins'] )
+		$rows = $this->revisionStore->newSelectQueryBuilder( $dbr )
+			->joinPage()
 			->where( $conds )
 			->caller( __METHOD__ )
 			->fetchResultSet();
@@ -177,11 +174,9 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
 		}
 
-		$queryInfo = $this->revisionStore->getQueryInfo( [ 'page', 'user' ] );
-		$rows = $dbr->newSelectQueryBuilder()
-			->select( $queryInfo['fields'] )
-			->tables( $queryInfo['tables'] )
-			->joinConds( $queryInfo['joins'] )
+		$rows = $this->revisionStore->newSelectQueryBuilder( $dbr )
+			->joinPage()
+			->joinUser()
 			->where( $conds )
 			->caller( __METHOD__ )
 			->fetchResultSet();
