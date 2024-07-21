@@ -85,7 +85,7 @@
 	"tpt-translation-settings-unstable-notice": "The page content is not yet stable enough to be marked for translation.",
 	"tpt-translation-settings-ignored-notice": "Editors have indicated that this page should <em>not</em> be marked for translation.",
 	"tpt-translation-settings-proposed-editor-notice": "Translation administrators will be recommended to mark this page for translation. You can contribute translations once they mark the page for translation.",
-	"tpt-translation-settings-proposed-pagetranslation-notice": "Editors have indicated that this page should be marked for translation. You can [$1 mark up the page] by [$2 editing it] or by using [$3 Special:PagePreparation].",
+	"tpt-translation-settings-proposed-pagetranslation-notice": "Editors have indicated that this page should be marked for translation. You can [$1 mark up the page] by [$2 editing it] or by using [$3 {{#Special:PagePreparation}}].",
 	"translate-edit-tag-warning": "",
 	"translate-tag-translate-link-desc": "Translate this page",
 	"translate-tag-markthis": "Mark this page for translation",
