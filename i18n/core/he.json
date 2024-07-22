@@ -347,7 +347,7 @@
 	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}",
 	"tux-languageselector": "שפת היעד לתרגום:",
 	"tux-select-target-language": "שפת היעד לתרגום",
-	"tux-watch-group": "מעקב אחר $1",
+	"tux-watch-group": "לעקוב אחר $1",
 	"tux-unwatch-group": "להפסיק לעקוב אחר $1",
 	"tux-subscription-error": "נכשל עדכון רשימת מעקב קבוצות ההודעות",
 	"tux-tab-all": "הכול",
