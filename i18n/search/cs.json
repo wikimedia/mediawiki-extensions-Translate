@@ -10,6 +10,7 @@
 	"tux-sst-view-foreign": "Zobrazit na $1",
 	"tux-sst-search": "Hledat",
 	"tux-sst-search-ph": "Hledat v překladech",
+	"tux-sst-search-info": "Pro další vymezení vyhledávacích kritérií použijte operátory <code>language:</code> nebo <code>group:</code>",
 	"tux-sst-count": "{{PLURAL:$1|Nalezen jeden výsledek|Nalezeny $1 výsledky|Nalezeno $1 výsledků}}",
 	"tux-sst-facet-language": "Jazyky",
 	"tux-sst-facet-group": "Skupiny zpráv",
@@ -27,5 +28,7 @@
 	"tux-sst-ellipsis-outdated": "Zastaralé překlady",
 	"tux-sst-link-all-match": "Vyžadovat všechna hledaná slova.",
 	"tux-sst-match-message": "Zobrazují se překlady, které odpovídají libovolnému z hledaných slov. $1",
-	"tux-sst-case-sensitive": "Rozlišovat velikost písmen"
+	"tux-sst-case-sensitive": "Rozlišovat velikost písmen",
+	"tux-sst-error-offset": "Více výsledků vyhledávání nelze zobrazit. Zužte prosím své hledání.",
+	"tux-sst-error-language": "Tento jazyk nelze pro tento typ vyhledávání použít."
 }
