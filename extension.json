@@ -1356,7 +1356,8 @@
 		"editpage": {
 			"translate": true,
 			"unfuzzy": true,
-			"translate-manage": true
+			"translate-manage": true,
+			"pagetranslation": true
 		}
 	},
 	"GroupPermissions": {
