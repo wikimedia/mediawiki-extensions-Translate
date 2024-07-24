@@ -21,6 +21,8 @@ class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testIsSourcePage() {
+		TranslatablePage::setCacheShardSize( 1 );
+
 		$translatablePage = $this->createMarkedTranslatablePage(
 			'Test page', 'Testing page', $this->getTestSysop()->getUser()
 		);
@@ -39,5 +41,7 @@ class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse(
 			TranslatablePage::isSourcePage( $translatablePage->getTitle() )
 		);
+
+		TranslatablePage::setCacheShardSize( null );
 	}
 }
