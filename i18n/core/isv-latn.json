@@ -4,6 +4,8 @@
 			"IJzeren Jan"
 		]
 	},
+	"translate": "Prěvodženje",
+	"translate-desc": "[[Special:Translate|Specialna stranica]] za prěvodženje MediaWiki i druge",
 	"supportedlanguages": "Aktivne jezyky",
 	"translate-documentation-language": "Dokumentacija soobčenja"
 }

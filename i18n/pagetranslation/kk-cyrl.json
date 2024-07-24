@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Arystanbek",
-			"U.ayaao.p"
+			"U.ayaao.p",
+			"Casserium"
 		]
 	},
 	"pagetranslation": "Бет аудармасы",
@@ -86,6 +87,7 @@
 	"pt-deletepage-any-legend": "Аударылатын бетті немесе аударма бетті жою",
 	"pt-deletepage-current": "Бет атауы:",
 	"pt-deletepage-reason": "Себебі:",
+	"pt-deletepage-reason-details": "Басқа/қосымша себеп:",
 	"pt-deletepage-subpages": "Барлық бетшелерін жою",
 	"pt-deletepage-list-pages": "Жойылатын беттер тізімі",
 	"pt-deletepage-list-translation": "Аударма беттер",
