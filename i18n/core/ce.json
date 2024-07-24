@@ -320,6 +320,6 @@
 	"translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}",
 	"translate-syntax-error": "Гочдар йукъахь синтаксин гӀалаташ ду.",
 	"specialpages-group-translation": "Гоч",
-	"log-action-filter-translationreview": "Дечунна тайпа:",
+	"log-action-filter-translationreview": "Ардаман тайпа:",
 	"log-action-filter-import-translatable-bundle": "Гочдешдерг пакетан импортйар"
 }
