@@ -1,0 +1,20 @@
+== Translate 2024.07 ==
+Released at 2024-07-25.
+
+=== Noteworthy changes ===
+* Hook <code>Translate:GettextFFS:headerFields</code> was deprecated in MLEB 2024.01 release and will be removed from future releases.
+* Allow adding message bundles to aggregate groups ({{phab|T366479}})
+* Allow users to subscribe/watch to message groups and receive notifications when new messages are added for translation ({{phab|T348500}})
+** Set <code>$wgTranslateEnableMessageGroupSubscription  = true</code>
+** Requires the [[Echo]] extension to be installed
+* Add log entry when confirming an outdated translation ({{phab|T49177}})
+* Ensure that moving of translatable bundles is rolled back when there is an error ({{gerrit|1041169}})
+* Possible values for <code>wgTranslateMessageIndex</code> have been updated to: <code>cdb</code> and <code>database</code> with the default being <code>database</code>. Serialized and cached message indexes are no longer supported. Please update your configuration accordingly. Support for older values will be removed in the next MLEB release
+* Due to existing issues, there may have been instances where translation pages are created for languages that have no translations. We've updated the code to delete such pages over time. No additional action is required on your part ({{gerrit|982094}})
+* Display a banner to recent editors of a page allowing them to set the translation state for that page. The translation state of a page describes whether the page should or is ready to be marked for translation. ({{phab|T360411}}), ({{phab|T360409}})
+** To enable this feature set <code>$wgTranslatePageTranslationBannerNamespaces = [ NS_MAIN ];</code> to namespaces where you want this feature to be enabled
+* Add an API module to mark a page for translation ({{phab|T235397}})
+* Fix issues with back / forward button press on Special:Translate page ({{phab|T324864}})
+* Reverting changes to the source text should unfuzzy units it fuzzied ({{phab|T367932}})
+* Default to not invalidating translations for tvar-only changes ({{phab|T52103}})
+* Add watched tab to group selector in order to display user's watched message groups ({{phab|T367992}})
