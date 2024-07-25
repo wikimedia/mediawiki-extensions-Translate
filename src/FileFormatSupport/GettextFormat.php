@@ -465,12 +465,6 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		$specs['Language'] = LanguageCode::bcp47( $this->group->mapCode( $code ) );
 
-		// @deprecated Use Translate:GettextFormat:headerFields instead.
-		// This hook is deprecated and will be removed in a future release.
-		// TODO: Remove after 2024.01
-		MediaWikiServices::getInstance()->getHookContainer()
-			->run( 'Translate:GettextFFS:headerFields', [ &$specs, $this->group, $code ] );
-
 		Services::getInstance()->getHookRunner()->onTranslate_GettextFormat_headerFields(
 			$specs,
 			$this->group,

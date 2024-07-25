@@ -257,12 +257,6 @@
 			"factory": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\TranslatableBundleImporter::getInstance"
 		}
 	},
-	"DeprecatedHooks": {
-		"Translate:GettextFFS:headerFields": {
-			"deprecatedVersion": "2024.01",
-			"component": "Translate"
-		}
-	},
 	"SpecialPages": {
 		"Translate": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage",
