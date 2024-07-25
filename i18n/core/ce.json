@@ -157,7 +157,7 @@
 	"translate-tes-optgroup-message": "Хаам",
 	"translate-tes-message-prefix": "Префикс – $1",
 	"translate-tes-type-to-search": "Лехар доладалийтархьама, йазде",
-	"supportedlanguages": "ТӀе ца оьцу меттанаш",
+	"supportedlanguages": "Жигара меттанаш",
 	"supportedlanguages-portallink": "[$1] $2 — $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
 	"supportedlanguages-sqlite-error": "SQLite ловш йац",

@@ -6,6 +6,8 @@
 	},
 	"translate": "Prěvodženje",
 	"translate-desc": "[[Special:Translate|Specialna stranica]] za prěvodženje MediaWiki i druge",
+	"translate-rcfilters-translations-only-label": "Imenne prostory prěvodženja",
+	"translate-rcfilters-translations-filter-label": "Ne v imennyh prostorah prěvodženja",
 	"supportedlanguages": "Aktivne jezyky",
 	"translate-documentation-language": "Dokumentacija soobčenja"
 }
