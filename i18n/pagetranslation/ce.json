@@ -25,7 +25,7 @@
 	"log-description-pagetranslation": "АгӀонаш гочйаран системица доьзна гӀуллакхийн журнал",
 	"log-name-pagetranslation": "АгӀонаш гочйаран журнал",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|цӀе хийцина}} гочйан луш йолу агӀонан «$3» → «$4»",
-	"log-action-filter-pagetranslation": "Дечунна тайпа:",
+	"log-action-filter-pagetranslation": "Ардаман тайпа:",
 	"log-action-filter-pagetranslation-delete": "АгӀо дӀайаккхар",
 	"pt-movepage-current": "Карара цӀе:",
 	"pt-movepage-new": "Керла цӀе:",

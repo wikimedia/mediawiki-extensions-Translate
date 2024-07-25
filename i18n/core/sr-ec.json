@@ -83,6 +83,8 @@
 	"translate-checks-plural-dupe": "Ознака <nowiki>{{PLURAL:}}</nowiki> садржи удвојене облике. Облик <nowiki>{{PLURAL:$1|врата|врата}}</nowiki> би требало писати само као <nowiki>{{PLURAL:$1|врата}}</nowiki>.",
 	"translate-checks-gettext-plural-missing": "Овај превод мора имати <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-unsupported": "Ова порука не подржава <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
+	"translate-checks-smartformat-plural-missing": "Превод мора имати множину променљиве $1.",
+	"translate-checks-smartformat-plural-unsupported": "Ова порука не подржава множину променљиве $1.",
 	"translate-checks-unicode-plural-missing": "Овај превод мора имати <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-unsupported": "Ова порука не подржава <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-pagename": "Именски простор је промењен у односу на изворни текст",
