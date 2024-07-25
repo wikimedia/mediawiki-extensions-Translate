@@ -3,9 +3,14 @@
 	color: #333;
 }
 
-.mw-pt-translate-header {
+.mw-pt-translate-header,
+.mw-mb-translate-header {
 	border-bottom: 1px solid #a2a9b1;
 	padding-bottom: 0.4em;
 	font-size: small;
 	text-align: center;
+}
+
+.mw-mb-translate-header {
+	border-bottom: 0;
 }

@@ -3,12 +3,18 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
+use Article;
 use Content;
 use IContextSource;
 use MediaWiki\Hook\EditFilterMergedContentHook;
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\Hook\ArticleViewHeaderHook;
+use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MediaWiki\Title\Title;
@@ -21,7 +27,7 @@ use WANObjectCache;
  * @license GPL-2.0-or-later
  * @since 2021.05
  */
-class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
+class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageSaveCompleteHook {
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateEnableMessageBundleIntegration',
 	];
@@ -30,17 +36,20 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 	private LoggerInterface $logger;
 	private MessageBundleStore $messageBundleStore;
 	private WANObjectCache $WANObjectCache;
+	private LinkRenderer $linkRenderer;
 	private bool $enableIntegration;
 
 	public function __construct(
 		LoggerInterface $logger,
 		WANObjectCache $WANObjectCache,
 		MessageBundleStore $messageBundleStore,
+		LinkRenderer $linkRenderer,
 		bool $enableIntegration
 	) {
 		$this->logger = $logger;
 		$this->WANObjectCache = $WANObjectCache;
 		$this->messageBundleStore = $messageBundleStore;
+		$this->linkRenderer = $linkRenderer;
 		$this->enableIntegration = $enableIntegration;
 	}
 
@@ -50,6 +59,7 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 			LoggerFactory::getInstance( 'Translate.MessageBundle' ),
 			$services->getMainWANObjectCache(),
 			$services->get( 'Translate:MessageBundleStore' ),
+			$services->getLinkRenderer(),
 			$services->getMainConfig()->get( 'TranslateEnableMessageBundleIntegration' )
 		);
 		return self::$instance;
@@ -121,6 +131,50 @@ class Hooks implements EditFilterMergedContentHook, PageSaveCompleteHook {
 	public static function onCodeEditorGetPageLanguage( Title $title, ?string &$lang, string $model ) {
 		if ( $model === MessageBundleContent::CONTENT_MODEL_ID ) {
 			$lang = 'json';
+		}
+	}
+
+	/**
+	 * Hook: ArticleViewHeader
+	 *
+	 * @param Article $article
+	 * @param bool|ParserOutput|null &$outputDone
+	 * @param bool &$pcache
+	 */
+	public function onArticleViewHeader( $article, &$outputDone, &$pcache ) {
+		if ( !$this->enableIntegration ) {
+			return;
+		}
+
+		$articleTitle = $article->getTitle();
+		if ( MessageBundle::isSourcePage( $articleTitle ) ) {
+			$messageBundle = new MessageBundle( $articleTitle );
+			$context = $article->getContext();
+			$language = $context->getLanguage();
+
+			$translateLink = $this->linkRenderer->makeKnownLink(
+				SpecialPage::getTitleFor( 'Translate' ),
+				$context->msg( 'translate-tag-translate-mb-link-desc' )->text(),
+				[],
+				[
+					'group' => $messageBundle->getMessageGroupId(),
+					'action' => 'page',
+					'filter' => '',
+				]
+			);
+			$header = Html::rawElement(
+				'div',
+				[
+					'class' => 'mw-mb-translate-header noprint nomobile',
+					'dir' => $language->getDir(),
+					'lang' => $language->getHtmlCode(),
+				],
+				$translateLink
+			);
+
+			$output = $context->getOutput();
+			$output->addHTML( $header );
+			$output->addModuleStyles( 'ext.translate' );
 		}
 	}
 }

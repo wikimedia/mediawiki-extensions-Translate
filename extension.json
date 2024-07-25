@@ -204,7 +204,8 @@
 		"SpecialPrefixIndexQuery": "pageTranslation",
 		"UserGetRights": "translateSandbox",
 		"AfterImportPage": "translatableBundleImporter",
-		"LonelyPagesQuery": "pageTranslation"
+		"LonelyPagesQuery": "pageTranslation",
+		"ArticleViewHeader": "messageBundle"
 	},
 	"HookHandlers": {
 		"main": {
