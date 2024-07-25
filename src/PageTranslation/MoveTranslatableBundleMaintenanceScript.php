@@ -7,16 +7,19 @@ use Closure;
 use MalformedTitleException;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use Message;
+use RequestContext;
 use SplObjectStorage;
 use TitleParser;
 
 class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 	private TranslatableBundleMover $bundleMover;
 	private TitleParser $titleParser;
+	private FormatterFactory $formatterFactory;
 
 	public function __construct() {
 		parent::__construct();
@@ -71,6 +74,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 		$mwService = MediaWikiServices::getInstance();
 		$this->titleParser = $mwService->getTitleParser();
+		$this->formatterFactory = $mwService->getFormatterFactory();
 
 		$currentBundleName = $this->getArg( 0 );
 		$newBundleName = $this->getArg( 1 );
@@ -243,6 +247,22 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			$infoMessage .= $this->message( 'pt-movepage-list-translatable-note' )->text() . "\n";
 			foreach ( $translatableSubpages as $page ) {
 				$lines[] = '* ' . $page->getPrefixedText();
+			}
+
+			$infoMessage .= implode( "\n", $lines ) . "\n";
+		}
+
+		$nonMovableSubpages = $pageCollection->getNonMovableSubpages();
+		if ( $nonMovableSubpages ) {
+			$lines = [];
+			$infoMessage .= $this->getSectionHeader(
+				'pt-movepage-list-nonmovable', $nonMovableSubpages, $leaveRedirect
+			);
+			foreach ( $nonMovableSubpages as $page => $status ) {
+				$invalidityReason = $this->formatterFactory
+					->getStatusFormatter( RequestContext::getMain() )
+					->getWikiText( $status );
+				$lines[] = '* ' . $page . ' (' . str_replace( "\n", " ", $invalidityReason ) . ')';
 			}
 
 			$infoMessage .= implode( "\n", $lines ) . "\n";

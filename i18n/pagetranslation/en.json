@@ -190,6 +190,8 @@
 	"pt-movepage-list-source": "Source translatable page",
 	"pt-movepage-list-translation": "Translation {{PLURAL:$1|page|pages}}",
 	"pt-movepage-list-section": "Translation unit {{PLURAL:$1|page|pages}}",
+	"pt-movepage-list-nonmovable": "{{PLURAL:$1|Page|Pages}} blocking move of sub-pages",
+	"pt-movepage-list-nonmovable-note": "Since the following {{PLURAL:$1|sub-page|sub-pages}} cannot be moved for various reasons, no sub-page will be moved along.",
 	"pt-movepage-list-translatable": "{{PLURAL:$1|Subpage|Subpages}} marked for translation",
 	"pt-movepage-list-translatable-note": "These pages must be moved separately.",
 	"pt-movepage-list-other": "Other {{PLURAL:$1|subpage|subpages}}",

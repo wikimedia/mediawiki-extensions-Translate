@@ -41,6 +41,7 @@ class TranslatableBundleMover {
 	private const REDIRECTABLE_PAGE_TYPES = [
 		'pt-movepage-list-source' => true,
 		'pt-movepage-list-section' => false,
+		'pt-movepage-list-nonmovable' => false,
 		'pt-movepage-list-translatable' => false,
 		'pt-movepage-list-translation' => false,
 		'pt-movepage-list-other' => true
@@ -159,7 +160,11 @@ class TranslatableBundleMover {
 				// Do not check for permissions here, as these pages are not editable/movable
 				// in regular use
 				if ( !$status->isOK() ) {
-					$blockers[$old] = $status;
+					if ( $type === 'subpage' ) {
+						$pageCollection->addNonMovableSubpage( $old, $status );
+					} else {
+						$blockers[$old] = $status;
+					}
 				}
 
 				/* Because of the poor performance, check only one of the possibly thousands

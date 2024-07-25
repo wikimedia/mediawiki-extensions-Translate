@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
@@ -42,6 +43,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private TranslatableBundleMover $bundleMover;
 	private PermissionManager $permissionManager;
 	private TranslatableBundleFactory $bundleFactory;
+	private FormatterFactory $formatterFactory;
 	private $movePageSpec;
 	// Other
 	private ?Title $oldTitle;
@@ -51,6 +53,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		PermissionManager $permissionManager,
 		TranslatableBundleMover $bundleMover,
 		TranslatableBundleFactory $bundleFactory,
+		FormatterFactory $formatterFactory,
 		$movePageSpec
 	) {
 		parent::__construct( 'Movepage' );
@@ -58,6 +61,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$this->permissionManager = $permissionManager;
 		$this->bundleMover = $bundleMover;
 		$this->bundleFactory = $bundleFactory;
+		$this->formatterFactory = $formatterFactory;
 		$this->movePageSpec = $movePageSpec;
 	}
 
@@ -309,6 +313,21 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
 		}
 
+		$nonMovableSubpages = $pageCollection->getNonMovableSubpages();
+		if ( $nonMovableSubpages ) {
+			$this->addSectionHeaderAndMessage( $out, 'pt-movepage-list-nonmovable', $nonMovableSubpages );
+			$lines = [];
+			$out->wrapWikiMsg( "'''$1'''", $this->msg( 'pt-movepage-list-nonmovable-note' ) );
+			foreach ( $nonMovableSubpages as $page => $status ) {
+				$invalidityReason = $this->formatterFactory
+					->getStatusFormatter( $this->getContext() )
+					->getWikiText( $status );
+				$lines[] = '* ' . $page . ' (' . str_replace( "\n", " ", $invalidityReason ) . ')';
+			}
+
+			$out->addWikiTextAsInterface( implode( "\n", $lines ) );
+		}
+
 		$translatableSubpages = $pageCollection->getTranslatableSubpages();
 		$sectionType = 'pt-movepage-list-translatable';
 		$this->addSectionHeaderAndMessage( $out, $sectionType, $translatableSubpages );
@@ -337,7 +356,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					'name' => 'subpages',
 					'id' => 'mw-subpages',
 					'label-message' => 'pt-movepage-subpages',
-					'default' => $this->moveSubpages,
+					'default' => $this->moveSubpages && !count( $nonMovableSubpages ),
+					'disabled' => count( $nonMovableSubpages )
 				],
 				'redirect' => [
 					'type' => 'check',

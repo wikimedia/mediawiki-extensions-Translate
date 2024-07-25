@@ -1405,7 +1405,8 @@ class Hooks {
 				'ObjectFactory',
 				'PermissionManager',
 				'Translate:TranslatableBundleMover',
-				'Translate:TranslatableBundleFactory'
+				'Translate:TranslatableBundleFactory',
+				'FormatterFactory'
 			],
 			'args' => [
 				$movePageSpec

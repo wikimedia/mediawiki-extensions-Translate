@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Title\Title;
+use Status;
 
 /**
  * Collection of pages potentially affected by a page move operation.
@@ -23,6 +24,8 @@ class PageMoveCollection {
 	private array $talkpagesPairs;
 	/** @var Title[] */
 	private array $translatableSubpages;
+	/** @var array<string,Status> */
+	private array $nonMovableSubpages;
 
 	/**
 	 * @param PageMoveOperation $translatablePage
@@ -48,6 +51,8 @@ class PageMoveCollection {
 		$this->talkpagesPairs = $this->getTalkpages(
 			$this->translatablePage, ...$translationPagePairs, ...$unitPagesPairs, ...$subpagesPairs
 		);
+
+		$this->nonMovableSubpages = [];
 	}
 
 	public function getTranslatablePage(): PageMoveOperation {
@@ -117,6 +122,44 @@ class PageMoveCollection {
 		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->talkpagesPairs ) );
 
 		return $redirects;
+	}
+
+	/**
+	 * Adds provided page to non-movable subpage list, and removes it from
+	 * other (movable) subpage list.
+	 * @param Title $page The page which cannot be moved.
+	 * @param Status $invalidityReason The error status returned by MovePage.
+	 *
+	 * @return bool Whether the page has been found and removed from movable
+	 * subpage list.
+	 */
+	public function addNonMovableSubpage( Title $page, Status $invalidityReason ): bool {
+		$this->nonMovableSubpages[ $page->getPrefixedText() ] = $invalidityReason;
+
+		return $this->removeFromSubpageList( $page );
+	}
+
+	/**
+	 * Get list of sub-pages which cannot be moved for various reasons
+	 * (e.g. the target page already exists). Those do not include translatable
+	 * sub-pages which cannot be moved because of current limitation.
+	 */
+	public function getNonMovableSubpages(): array {
+		return $this->nonMovableSubpages;
+	}
+
+	/**
+	 * Removes provided subpage from list of subpages.
+	 * @return bool Whether the page has been found and removed from the list.
+	 */
+	private function removeFromSubpageList( Title $page ): bool {
+		foreach ( $this->subpagesPairs as $key => $pair ) {
+			if ( $pair->getOldTitle() === $page ) {
+				unset( $this->subpagesPairs[ $key ] );
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
