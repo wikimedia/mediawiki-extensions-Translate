@@ -73,6 +73,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			$subgroupId = $params['group'];
 			$group = MessageGroups::getGroup( $subgroupId );
 
+			$addLogEntry = false;
 			// Add or remove from the list
 			if ( $action === 'associate' ) {
 				if ( !$this->aggregateGroupManager->supportsAggregation( $group ) ) {
@@ -90,12 +91,20 @@ class AggregateGroupsActionApi extends ApiBase {
 					] );
 				}
 				$subgroups[] = $subgroupId;
-				$subgroups = array_unique( $subgroups );
+				$uniqueSubgroups = array_unique( $subgroups );
+				if ( $uniqueSubgroups === $subgroups ) {
+					// A new group will actually be added, add a log entry
+					$addLogEntry = true;
+				}
+				$subgroups = $uniqueSubgroups;
 				$output[ 'groupUrl' ] = $this->aggregateGroupManager->getTargetTitleByGroup( $group )->getFullURL();
 			} elseif ( $action === 'dissociate' ) {
 				// Allow removal of non-existing groups
 				$subgroups = array_flip( $subgroups );
-				unset( $subgroups[$subgroupId] );
+				if ( isset( $subgroups[$subgroupId] ) ) {
+					unset( $subgroups[$subgroupId] );
+					$addLogEntry = true;
+				}
 				$subgroups = array_flip( $subgroups );
 			}
 
@@ -106,20 +115,21 @@ class AggregateGroupsActionApi extends ApiBase {
 				'aggregategroup-id' => $aggregateGroup,
 			];
 
-			/* To allow removing no longer existing groups from aggregate message groups,
-			 * the message group object $group might not always be available.
-			 * In this case we need to fake some title. */
-			$title = $this->aggregateGroupManager->getTargetTitleByGroupId( $subgroupId );
+			if ( $addLogEntry ) {
+				/* To allow removing no longer existing groups from aggregate message groups,
+				 * the message group object $group might not always be available.
+				 * In this case we need to fake some title. */
+				$title = $this->aggregateGroupManager->getTargetTitleByGroupId( $subgroupId );
+				$entry = new ManualLogEntry( 'pagetranslation', $action );
+				$entry->setPerformer( $this->getUser() );
+				$entry->setTarget( $title );
+				// @todo
+				// $entry->setComment( $comment );
+				$entry->setParameters( $logParams );
 
-			$entry = new ManualLogEntry( 'pagetranslation', $action );
-			$entry->setPerformer( $this->getUser() );
-			$entry->setTarget( $title );
-			// @todo
-			// $entry->setComment( $comment );
-			$entry->setParameters( $logParams );
-
-			$logId = $entry->insert();
-			$entry->publish( $logId );
+				$logId = $entry->insert();
+				$entry->publish( $logId );
+			}
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
 				$this->dieWithError( [ 'apierror-missingparam', 'aggregategroup' ] );
