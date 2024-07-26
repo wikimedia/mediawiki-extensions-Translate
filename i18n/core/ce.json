@@ -314,6 +314,7 @@
 	"tux-editor-message-tools-translations": "Массо а гочдарш",
 	"tux-editor-message-tools-linktothis": "ХӀокху хаамна тӀе хьажорг",
 	"tux-editor-loading": "ДӀахӀуттуш йу…",
+	"tux-editor-loading-failed": "Гочдаран хьехам чубаккха аьтто ца баьлла: $1",
 	"translate-search-more-languages-info": "кхин $1 {{PLURAL:$1|мотт|меттанаш}}",
 	"translate-statsbar-tooltip": "$1% гочйинарш, $2% хьаьжнаш",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% гочйинарш, $2% хьаьжнаш, $3% шираеларш",
