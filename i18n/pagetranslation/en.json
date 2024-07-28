@@ -204,6 +204,7 @@
 	"pt-movepage-new": "New name:",
 	"pt-movepage-reason": "Reason:",
 	"pt-movepage-subpages": "Move all subpages",
+	"pt-movepage-subpages-blocked-exist": "Move all subpages (skip blocked subpages)",
 	"pt-movepage-talkpages": "Move talk pages",
 	"pt-movepage-talkpage-exists": "(Has talk page)",
 	"pt-movepage-action-check": "Check if the move is possible",

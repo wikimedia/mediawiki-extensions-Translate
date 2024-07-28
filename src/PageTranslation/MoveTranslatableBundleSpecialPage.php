@@ -355,9 +355,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					'type' => 'check',
 					'name' => 'subpages',
 					'id' => 'mw-subpages',
-					'label-message' => 'pt-movepage-subpages',
-					'default' => $this->moveSubpages && !count( $nonMovableSubpages ),
-					'disabled' => count( $nonMovableSubpages )
+					'label-message' =>
+						count( $nonMovableSubpages ) ? 'pt-movepage-subpages-blocked-exist' : 'pt-movepage-subpages'
 				],
 				'redirect' => [
 					'type' => 'check',
