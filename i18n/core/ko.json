@@ -313,6 +313,7 @@
 	"translate-msggroupselector-search-placeholder": "그룹 검색",
 	"translate-msggroupselector-search-all": "모두",
 	"translate-msggroupselector-search-recent": "최근",
+	"translate-msggroupselector-search-watched": "주시 중",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|하위 그룹}} $1개 보기",
 	"tux-languageselector": "번역할 언어",
 	"tux-select-target-language": "번역 대상 언어",
