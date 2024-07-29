@@ -373,7 +373,7 @@
 	"tux-notices-more": "{{PLURAL:$1|Яшчэ $1}}",
 	"tux-notices-hide": "схаваць",
 	"tux-editor-save-failed": "Не атрымалася апублікаваць пераклад: $1",
-	"tux-editor-n-uses": "выкарыстаны $1 {{PLURAL:$1|раз|разы|разоў}}",
+	"tux-editor-n-uses": "выкарыстана $1 {{PLURAL:$1|раз|разы|разоў}}",
 	"tux-editor-message-desc-more": "Праглядзець больш",
 	"tux-editor-message-desc-less": "Глядзець менш",
 	"tux-editor-clear-translated": "Схаваць перакладзеныя",

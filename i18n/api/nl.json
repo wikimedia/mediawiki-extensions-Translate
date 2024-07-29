@@ -84,7 +84,7 @@
 	"apihelp-translationaids-param-title": "Volledige titel van een bekend bericht.",
 	"apihelp-translationaids-param-group": "Berichtgroep waartoe het bericht behoort. Indien leeg, wordt de primaire groep gebruikt.",
 	"apihelp-translationaids-param-prop": "De op te nemen vertaalhulpen.",
-	"apihelp-translationaids-example-1": "Hulpmiddelen tonen voor [[MediaWiki:January/fi]]",
+	"apihelp-translationaids-example-1": "Hulpmiddelen weergeven voor [[MediaWiki:January/fi]]",
 	"apihelp-translationreview-summary": "Vertalingen als beoordeeld markeren.",
 	"apihelp-translationreview-param-revision": "Nummer van de te beoordelen versie.",
 	"apihelp-translationreview-example-1": "Versie 1 beoordelen",

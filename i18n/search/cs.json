@@ -27,5 +27,7 @@
 	"tux-sst-ellipsis-outdated": "Zastaralé překlady",
 	"tux-sst-link-all-match": "Vyžadovat všechna hledaná slova.",
 	"tux-sst-match-message": "Zobrazují se překlady, které odpovídají libovolnému z hledaných slov. $1",
-	"tux-sst-case-sensitive": "Rozlišovat velikost písmen"
+	"tux-sst-case-sensitive": "Rozlišovat velikost písmen",
+	"tux-sst-error-offset": "Více výsledků vyhledávání nelze zobrazit. Zužte prosím své hledání.",
+	"tux-sst-error-language": "Tento jazyk nelze pro tento typ vyhledávání použít."
 }
