@@ -144,7 +144,7 @@ class PersistentDatabaseCache implements PersistentCache {
 		foreach ( $rows as $row ) {
 			$entries[] = new PersistentCacheEntry(
 				$row->tc_key,
-				$this->jsonCodec->unserialize( $row->tc_value ),
+				$this->jsonCodec->deserialize( $row->tc_value ),
 				$row->tc_exptime ? (int)wfTimestamp( TS_UNIX, $row->tc_exptime ) : null,
 				$row->tc_tag
 			);
