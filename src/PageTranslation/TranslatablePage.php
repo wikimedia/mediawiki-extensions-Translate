@@ -498,30 +498,30 @@ class TranslatablePage extends TranslatableBundle {
 			return false;
 		}
 
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$cacheKey = $cache->makeKey( 'pagetranslation', 'sourcepages' );
+		$localCache = MediaWikiServices::getInstance()->getLocalServerObjectCache();
+		$localKey = $localCache->makeKey( 'pagetranslation', 'sourcepages', 'local' );
+		// Store the value in the local cache for a short duration to reduce the number of
+		// times we hit the WAN cache. See: T366455
+		$translatablePageIds = $localCache->getWithSetCallback(
+			$localKey,
+			$localCache::TTL_SECOND * 8,
+			static function () {
+				$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+				$cacheKey = $cache->makeKey( 'pagetranslation', 'sourcepages' );
 
-		$translatablePageIds = $cache->getWithSetCallback(
-			$cacheKey,
-			$cache::TTL_HOUR * 2,
-			static function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-				$setOpts += Database::getCacheSetOptions( $dbr );
-
-				$ids = RevTagStore::getTranslatableBundleIds(
-					RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
+				return $cache->getWithSetCallback(
+					$cacheKey,
+					$cache::TTL_HOUR * 2,
+					[ TranslatablePage::class, 'getCacheValue' ],
+					[
+						'checkKeys' => [ $cacheKey ],
+						'pcTTL' => $cache::TTL_PROC_SHORT,
+						'pcGroup' => __CLASS__ . ':1',
+						'version' => 3,
+					]
 				);
-
-				// Adding a comma at the end and beginning so that we can check for page Id
-				// existence with the "," delimiters
-				return ',' . implode( ',', $ids ) . ',';
 			},
-			[
-				'checkKeys' => [ $cacheKey ],
-				'pcTTL' => $cache::TTL_PROC_SHORT * 2,
-				'pcGroup' => __CLASS__ . ':1',
-				'version' => 3,
-			]
+			$localCache::READ_LATEST
 		);
 
 		return str_contains( $translatablePageIds, ( ',' . $page->getId() . ',' ) );
@@ -560,6 +560,27 @@ class TranslatablePage extends TranslatableBundle {
 		}
 
 		return new TranslatablePageStatus( $status );
+	}
+
+	/**
+	 * Get list of translatable page ids to be stored in the cache
+	 * @internal
+	 * @param mixed $oldValue
+	 * @param int &$ttl
+	 * @param array &$setOpts
+	 * @return string
+	 */
+	public static function getCacheValue( $oldValue, &$ttl, array &$setOpts ): string {
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$setOpts += Database::getCacheSetOptions( $dbr );
+
+		$ids = RevTagStore::getTranslatableBundleIds(
+			RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
+		);
+
+		// Adding a comma at the end and beginning so that we can check for page Id
+		// existence with the "," delimiters
+		return ',' . implode( ',', $ids ) . ',';
 	}
 }
 
