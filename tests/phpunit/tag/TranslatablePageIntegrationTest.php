@@ -25,9 +25,7 @@ class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 			'Test page', 'Testing page', $this->getTestSysop()->getUser()
 		);
 
-		$this->assertTrue(
-			TranslatablePage::isSourcePage( $translatablePage->getTitle() )
-		);
+		$this->assertTrue( TranslatablePage::isSourcePage( $translatablePage->getTitle() ) );
 
 		Services::getInstance()->getTranslatablePageMarker()->unmarkPage(
 			$translatablePage,
@@ -35,9 +33,10 @@ class TranslatablePageIntegrationTest extends MediaWikiIntegrationTestCase {
 			false
 		);
 		$this->getServiceContainer()->getMainWANObjectCache()->clearProcessCache();
+		$this->setService( 'LocalServerObjectCache', new HashBagOStuff() );
 
-		$this->assertFalse(
-			TranslatablePage::isSourcePage( $translatablePage->getTitle() )
-		);
+		$this->assertFalse( TranslatablePage::isSourcePage( $translatablePage->getTitle() ) );
+
+		$this->resetServices();
 	}
 }
