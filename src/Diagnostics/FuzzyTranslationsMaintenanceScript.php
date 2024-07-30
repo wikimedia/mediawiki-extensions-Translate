@@ -14,9 +14,7 @@ use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use MediaWiki\User\ActorMigration;
-use MediaWiki\User\User;
-use MediaWiki\User\UserFactory;
+use MediaWiki\User\ActorNormalization;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -26,8 +24,7 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @author Niklas Laxström
  */
 class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
-	private ActorMigration $actorMigration;
-	private UserFactory $userFactory;
+	private ActorNormalization $actorNormalization;
 	private RevisionStore $revisionStore;
 	private ILoadBalancer $DBLoadBalancer;
 	private WikiPageFactory $wikiPageFactory;
@@ -66,8 +63,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 	private function initServices(): void {
 		$mwServices = MediaWikiServices::getInstance();
-		$this->actorMigration = $mwServices->getActorMigration();
-		$this->userFactory = $mwServices->getUserFactory();
+		$this->actorNormalization = $mwServices->getActorNormalization();
 		$this->revisionStore = $mwServices->getRevisionStore();
 		$this->DBLoadBalancer = $mwServices->getDBLoadBalancer();
 		$this->wikiPageFactory = $mwServices->getWikiPageFactory();
@@ -85,8 +81,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		if ( $this->hasOption( 'user' ) ) {
-			$user = $this->userFactory->newFromName( $this->getArg( 0 ) );
-			$pages = $this->getPagesForUser( $user, $skipLanguages );
+			$pages = $this->getPagesForUser( $this->getArg( 0 ), $skipLanguages );
 		} else {
 			$pages = $this->getPagesForPattern( $this->getArg( 0 ), $skipLanguages );
 		}
@@ -159,13 +154,16 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		return $this->getMessageContentsFromRows( $rows );
 	}
 
-	private function getPagesForUser( User $user, array $skipLanguages = [] ): array {
+	private function getPagesForUser( string $userName, array $skipLanguages = [] ): array {
 		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
+		$actorId = $this->actorNormalization->findActorIdByName( $userName, $dbr );
+		if ( $actorId === null ) {
+			return [];
+		}
 
-		$revWhere = $this->actorMigration->getWhere( $dbr, 'rev_user', $user );
 		$conds = [
 			'page_latest=rev_id',
-			$revWhere['conds'],
+			'rev_actor' => $actorId,
 			'page_namespace' => $this->getConfig()->get( 'TranslateMessageNamespaces' ),
 			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 		];

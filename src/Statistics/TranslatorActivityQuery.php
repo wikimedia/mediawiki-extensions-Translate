@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use Config;
-use MediaWiki\User\ActorMigration;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -35,24 +34,22 @@ class TranslatorActivityQuery {
 	public function inLanguage( string $code ): array {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA, 'vslow' );
 
-		$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
-
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [
-				'rev_user_text' => $actorQuery['fields']['rev_user_text'],
+				'rev_user_text' => 'actor_rev_user.actor_name',
 				'lastedit' => 'MAX(rev_timestamp)',
 				'count' => 'COUNT(page_id)',
 			] )
 			->from( 'page' )
 			->join( 'revision', null, 'page_id=rev_page' )
-			->tables( $actorQuery['tables'] )
+			->tables( [ 'actor_rev_user' => 'actor' ] )
 			->where( [
 				'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
 				'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
 			] )
-			->groupBy( $actorQuery['fields']['rev_user_text'] )
+			->groupBy( 'actor_rev_user.actor_name' )
 			->orderBy( 'NULL' )
-			->joinConds( $actorQuery['joins'] )
+			->joinConds( [ 'actor_rev_user.actor_id = rev_actor' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
@@ -80,25 +77,23 @@ class TranslatorActivityQuery {
 	public function inAllLanguages(): array {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA, 'vslow' );
 
-		$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
-
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [
-				'rev_user_text' => $actorQuery['fields']['rev_user_text'],
+				'rev_user_text' => 'actor_rev_user.actor_name',
 				'lang' => 'substring_index(page_title, \'/\', -1)',
 				'lastedit' => 'MAX(rev_timestamp)',
 				'count' => 'COUNT(page_id)',
 			] )
 			->from( 'page' )
 			->join( 'revision', null, 'page_id=rev_page' )
-			->tables( $actorQuery['tables'] )
+			->tables( [ 'actor_rev_user' => 'actor' ] )
 			->where( [
 				'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 				'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
 			] )
-			->groupBy( [ 'lang', $actorQuery['fields']['rev_user_text'] ] )
+			->groupBy( [ 'lang', 'actor_rev_user.actor_name' ] )
 			->orderBy( 'NULL' )
-			->joinConds( $actorQuery['joins'] )
+			->joinConds( [ 'actor_rev_user.actor_id = rev_actor' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
