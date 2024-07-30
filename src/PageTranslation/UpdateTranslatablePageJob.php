@@ -80,15 +80,25 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 			$this->logWarning( 'Continuing despite replication lag' );
 		}
 
-		// Ensure we are using the latest group definitions. This is needed so
-		// that in long running scripts we do see the page which was just
-		// marked for translation. Otherwise getMessageGroup in the next line
-		// returns null. There is no need to regenerate the global cache.
+		// Ensure we are using the latest group definitions. This is needed so long-running
+		// scripts detect the page which was just marked for translation. Otherwise getMessageGroup
+		// in the next line returns null. There is no need to regenerate the global cache.
 		MessageGroups::singleton()->clearProcessCache();
 		// Ensure fresh definitions for stats
-		$page->getMessageGroup()->clearCaches();
+		// TODO: getMessageGroup still appears to return null sometimes. Check why.
+		$messageGroup = $page->getMessageGroup();
 
-		$this->logInfo( 'Cleared caches' );
+		if ( $messageGroup !== null ) {
+			$messageGroup->clearCaches();
+			$this->logInfo( 'Cleared caches' );
+		} else {
+			$this->logWarning(
+				"No message group found for page {pageTitle}", [
+					'pageTitle' => $page->getTitle()->getPrefixedText()
+				]
+			);
+
+		}
 
 		// Refresh translations statistics, we want these to be up to date for the
 		// RenderJobs, for displaying up to date statistics on the translation pages.
