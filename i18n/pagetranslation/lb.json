@@ -149,7 +149,7 @@
 	"pt-deletepage-tp-title": "Déi iwwersetzbar Säit ''$1'' gëtt geläscht",
 	"pt-deletepage-invalid-title": "Déi spezifizéiert Säit ass net valabel.",
 	"pt-deletepage-invalid-text": "Déi Säit déi Dir uginn hutt ass keng iwwersetzbar Säit a keng Iwwersetzungssäit.",
-	"pt-deletepage-action-check": "Säiten déi geläscht solle ginn opzielen",
+	"pt-deletepage-action-check": "Säiten opzielen, déi geläscht solle ginn",
 	"pt-deletepage-action-perform": "Elo läschen",
 	"pt-deletepage-action-other": "Zil änneren",
 	"pt-deletepage-lang-legend": "Iwwersetzungssäit läschen",

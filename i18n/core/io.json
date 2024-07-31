@@ -147,6 +147,7 @@
 	"translate-msggroupselector-search-placeholder": "Serchez grupi",
 	"translate-msggroupselector-search-all": "Omni",
 	"translate-msggroupselector-search-recent": "Maxim recenta",
+	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgrupo|subgrupi}}",
 	"tux-languageselector": "Tradukez a(d)",
 	"tux-tab-all": "Omna",
 	"tux-tab-untranslated": "Ne tradukita",

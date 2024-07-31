@@ -206,7 +206,7 @@
 	"pt-movepage-current": "Label followed by name of a translatable page section (the thing inside <!-- T:[name] --> if you edit the translatable page source.",
 	"pt-movepage-new": "{{Identical|New name}}",
 	"pt-movepage-reason": "{{Identical|Reason}}",
-	"pt-movepage-subpages": "Checkbox label when moving a translatable page.",
+	"pt-movepage-subpages": "Checkbox label when moving a translatable subpage.",
 	"pt-movepage-talkpages": "Checkbox label when moving a translatable page.",
 	"pt-movepage-talkpage-exists": "Label next to pages being moved if they have talk pages",
 	"pt-movepage-action-check": "Button text when moving a translatable page. Without checking you cannot do the move.",
