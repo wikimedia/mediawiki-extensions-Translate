@@ -39,12 +39,29 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		return $list;
 	}
 
-	private function saveRevision( WikiPage $page, string $content, UserIdentity $user ): ?RevisionRecord {
+	private function saveRevision(
+		WikiPage $page,
+		string $content,
+		UserIdentity $user,
+		string $comment = __METHOD__
+	): ?RevisionRecord {
 		$contentObj = ContentHandler::makeContent( $content, $page->getTitle() );
 		$updater = $page->newPageUpdater( $user )->setContent( SlotRecord::MAIN, $contentObj );
-		$revisionRecord = $updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
+		$revisionRecord = $updater->saveRevision( CommentStoreComment::newUnsavedComment( $comment ) );
 		$this->assertTrue( $updater->wasSuccessful(), "Saving edit should have suceeded" );
 		return $revisionRecord;
+	}
+
+	private function fuzzyRevision( RevisionRecord $rev ): void {
+		$dbw = $this->getDb();
+		$conds = [
+			'rt_page' => $rev->getPageId(),
+			'rt_type' => RevTagStore::FUZZY_TAG,
+			'rt_revision' => $rev->getId()
+		];
+
+		$index = array_keys( $conds );
+		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
 	}
 
 	/** @return int|false */
@@ -69,15 +86,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$page = $container->getWikiPageFactory()->newFromTitle( $title );
 		$originalRevisionRecord = $this->saveRevision( $page, '$1 van $2 old', $user );
 
-		$dbw = $this->getDb();
-		$conds = [
-			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTagStore::FUZZY_TAG,
-			'rt_revision' => $originalRevisionRecord->getId()
-		];
-
-		$index = array_keys( $conds );
-		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+		$this->fuzzyRevision( $originalRevisionRecord );
 
 		$handle = new MessageHandle( $title );
 		$this->assertTrue( $handle->isValid(), 'Message is known' );
@@ -128,26 +137,47 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		$rightsCallback = $permissionManager->addTemporaryUserRights( $user,
 			[ 'editinterface', 'unfuzzy' ]
 		);
-		$thirdRevisionRecord = $this->saveRevision( $page, '$1 van $2', $user );
-		$this->assertFalse(
-			$handle->isFuzzy(),
-			'Message is no longer fuzzy after null edit with required permissions'
-		);
-		// This is (from core's POV) a null edit so no revision was created
-		$this->assertNull( $thirdRevisionRecord, 'Null edit should not have been saved' );
-		// But a null revision was created by Translate
-		$this->assertNotEquals(
-			$firstRevisionRecord->getId(),
-			$container->getRevisionStore()->getRevisionByPageId( $page->getId() )->getId(),
-			'Unfuzzying translation without changes should have created a null revision'
-		);
-		// And a log entry
-		$newLastLogId = $this->getLastLogId( $title );
-		$this->assertNotEquals(
-			$newLastLogId,
-			$oldLastLogId,
-			'Unfuzzying translation without changes should have created a log entry'
-		);
+		$nullEditUnfuzzySummaries = [
+			[
+				'',
+				'Marked translation unit as no longer outdated with no changes',
+				'Unfuzzying translation with an empty edit summary should have used the default one'
+			],
+			[
+				'It’s still good!',
+				'It’s still good!',
+				'Unfuzzying translation with a non-empty edit summary should have used that one'
+			],
+		];
+		foreach ( $nullEditUnfuzzySummaries as [ $enteredSummary, $actualSummary, $assertionText ] ) {
+			if ( isset( $latestRevisionRecordAfterThird ) ) {
+				// If not the first iteration, re-fuzzy the revision
+				$this->fuzzyRevision( $latestRevisionRecordAfterThird );
+			}
+			$thirdRevisionRecord = $this->saveRevision( $page, '$1 van $2', $user, $enteredSummary );
+			$this->assertFalse(
+				$handle->isFuzzy(),
+				'Message is no longer fuzzy after null edit with required permissions'
+			);
+			// This is (from core's POV) a null edit so no revision was created
+			$this->assertNull( $thirdRevisionRecord, 'Null edit should not have been saved' );
+			// But a null revision was created by Translate...
+			$latestRevisionRecordAfterThird = $container->getRevisionStore()->getRevisionByPageId( $page->getId() );
+			$this->assertNotEquals(
+				$firstRevisionRecord->getId(),
+				$latestRevisionRecordAfterThird->getId(),
+				'Unfuzzying translation without changes should have created a null revision'
+			);
+			// ...with the appropriate edit summary (custom if provided, default otherwise)...
+			$this->assertEquals( $actualSummary, $latestRevisionRecordAfterThird->getComment()->text, $assertionText );
+			// ...as well as a log entry
+			$newLastLogId = $this->getLastLogId( $title );
+			$this->assertNotEquals(
+				$newLastLogId,
+				$oldLastLogId,
+				'Unfuzzying translation without changes should have created a log entry'
+			);
+		}
 
 		// Test adding !!FUZZY!! to refuzzy
 		$this->saveRevision( $page, '!!FUZZY!!$1 van $2', $user );
