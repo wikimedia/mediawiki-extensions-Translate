@@ -40,7 +40,6 @@ class RefreshTranslatablePages extends Maintenance {
 	public function execute() {
 		$groups = MessageGroups::singleton()->getGroups();
 		$mwInstance = MediaWikiServices::getInstance();
-		$lbFactory = $mwInstance->getDBLoadBalancerFactory();
 		$jobQueueGroup = $mwInstance->getJobQueueGroup();
 
 		$counter = 0;
@@ -54,7 +53,7 @@ class RefreshTranslatablePages extends Maintenance {
 
 			$counter++;
 			if ( ( $counter % $this->mBatchSize ) === 0 ) {
-				$lbFactory->waitForReplication();
+				$this->waitForReplication();
 			}
 
 			$page = TranslatablePage::newFromTitle( $group->getTitle() );
