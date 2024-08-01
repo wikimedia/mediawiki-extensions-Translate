@@ -19,9 +19,9 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$mwServices = $this->getServiceContainer();
-		$lb = $mwServices->getDBLoadBalancer();
+		$connectionProvider = $mwServices->getConnectionProvider();
 		$jsonCodec = $mwServices->getJsonCodec();
-		$this->persistentCache = new PersistentDatabaseCache( $lb, $jsonCodec );
+		$this->persistentCache = new PersistentDatabaseCache( $connectionProvider, $jsonCodec );
 	}
 
 	protected function tearDown(): void {

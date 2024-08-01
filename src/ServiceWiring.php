@@ -285,7 +285,7 @@ return [
 
 	'Translate:PersistentCache' => static function ( MediaWikiServices $services ): PersistentCache {
 		return new PersistentDatabaseCache(
-			$services->getDBLoadBalancer(),
+			$services->getConnectionProvider(),
 			$services->getJsonCodec()
 		);
 	},

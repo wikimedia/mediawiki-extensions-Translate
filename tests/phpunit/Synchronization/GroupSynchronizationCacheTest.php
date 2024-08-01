@@ -338,9 +338,9 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 
 	private function getGroupSynchronizationCache( int $timeout = null ): GroupSynchronizationCache {
 		$mwServices = $this->getServiceContainer();
-		$lb = $mwServices->getDBLoadBalancer();
+		$connectionProvider = $mwServices->getConnectionProvider();
 		$jsonCodec = $mwServices->getJsonCodec();
-		$persistentCache = new PersistentDatabaseCache( $lb, $jsonCodec );
+		$persistentCache = new PersistentDatabaseCache( $connectionProvider, $jsonCodec );
 		$persistentCache->clear();
 
 		if ( $timeout ) {

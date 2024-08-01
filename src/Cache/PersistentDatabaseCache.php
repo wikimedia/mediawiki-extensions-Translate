@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\Cache;
 
 use Iterator;
 use MediaWiki\Json\JsonCodec;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * A persistent cache implementation using the database.
@@ -15,17 +15,17 @@ use Wikimedia\Rdbms\ILoadBalancer;
  */
 class PersistentDatabaseCache implements PersistentCache {
 	private const TABLE_NAME = 'translate_cache';
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 	private JsonCodec $jsonCodec;
 
-	public function __construct( ILoadBalancer $loadBalancer, JsonCodec $jsonCodec ) {
-		$this->loadBalancer = $loadBalancer;
+	public function __construct( IConnectionProvider $dbProvider, JsonCodec $jsonCodec ) {
+		$this->dbProvider = $dbProvider;
 		$this->jsonCodec = $jsonCodec;
 	}
 
 	/** @return PersistentCacheEntry[] */
 	public function get( string ...$keynames ): array {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
 			->from( self::TABLE_NAME )
@@ -38,7 +38,7 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	/** @return PersistentCacheEntry[] */
 	public function getByTag( string $tag ): array {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
 			->from( self::TABLE_NAME )
@@ -50,7 +50,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function has( string $keyname ): bool {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$hasRow = $dbr->newSelectQueryBuilder()
 			->select( 'tc_key' )
 			->from( self::TABLE_NAME )
@@ -62,7 +62,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function hasEntryWithTag( string $tag ): bool {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$hasRow = $dbr->newSelectQueryBuilder()
 			->select( 'tc_key' )
 			->from( self::TABLE_NAME )
@@ -74,7 +74,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function set( PersistentCacheEntry ...$entries ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		foreach ( $entries as $entry ) {
 			$value = $this->jsonCodec->serialize( $entry->value() );
@@ -102,7 +102,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function setExpiry( string $keyname, int $expiryTime ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->update(
 			self::TABLE_NAME,
 			[ 'tc_exptime' => $dbw->timestamp( $expiryTime ) ],
@@ -112,7 +112,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function delete( string ...$keynames ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_key' => $keynames ],
@@ -121,7 +121,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function deleteEntriesWithTag( string $tag ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_tag' => $tag ],
@@ -130,7 +130,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function clear(): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete(
 			self::TABLE_NAME,
 			'*',
