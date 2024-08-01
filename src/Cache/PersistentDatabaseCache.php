@@ -14,6 +14,7 @@ use Wikimedia\Rdbms\IConnectionProvider;
  * @since 2020.12
  */
 class PersistentDatabaseCache implements PersistentCache {
+	private const VIRTUAL_DOMAIN = 'virtual-translate';
 	private const TABLE_NAME = 'translate_cache';
 	private IConnectionProvider $dbProvider;
 	private JsonCodec $jsonCodec;
@@ -25,7 +26,7 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	/** @return PersistentCacheEntry[] */
 	public function get( string ...$keynames ): array {
-		$dbr = $this->dbProvider->getReplicaDatabase();
+		$dbr = $this->dbProvider->getReplicaDatabase( self::VIRTUAL_DOMAIN );
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
 			->from( self::TABLE_NAME )
@@ -38,7 +39,7 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	/** @return PersistentCacheEntry[] */
 	public function getByTag( string $tag ): array {
-		$dbr = $this->dbProvider->getReplicaDatabase();
+		$dbr = $this->dbProvider->getReplicaDatabase( self::VIRTUAL_DOMAIN );
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
 			->from( self::TABLE_NAME )
@@ -50,7 +51,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function has( string $keyname ): bool {
-		$dbr = $this->dbProvider->getReplicaDatabase();
+		$dbr = $this->dbProvider->getReplicaDatabase( self::VIRTUAL_DOMAIN );
 		$hasRow = $dbr->newSelectQueryBuilder()
 			->select( 'tc_key' )
 			->from( self::TABLE_NAME )
@@ -62,7 +63,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function hasEntryWithTag( string $tag ): bool {
-		$dbr = $this->dbProvider->getReplicaDatabase();
+		$dbr = $this->dbProvider->getReplicaDatabase( self::VIRTUAL_DOMAIN );
 		$hasRow = $dbr->newSelectQueryBuilder()
 			->select( 'tc_key' )
 			->from( self::TABLE_NAME )
@@ -74,7 +75,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function set( PersistentCacheEntry ...$entries ): void {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
 
 		foreach ( $entries as $entry ) {
 			$value = $this->jsonCodec->serialize( $entry->value() );
@@ -102,7 +103,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function setExpiry( string $keyname, int $expiryTime ): void {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
 		$dbw->update(
 			self::TABLE_NAME,
 			[ 'tc_exptime' => $dbw->timestamp( $expiryTime ) ],
@@ -112,7 +113,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function delete( string ...$keynames ): void {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_key' => $keynames ],
@@ -121,7 +122,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function deleteEntriesWithTag( string $tag ): void {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
 		$dbw->delete(
 			self::TABLE_NAME,
 			[ 'tc_tag' => $tag ],
@@ -130,7 +131,7 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	public function clear(): void {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
 		$dbw->delete(
 			self::TABLE_NAME,
 			'*',

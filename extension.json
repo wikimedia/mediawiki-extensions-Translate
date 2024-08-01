@@ -1367,5 +1367,8 @@
 	"ParsoidModules": [
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateExt"
 	],
+	"DatabaseVirtualDomains": [
+		"virtual-translate"
+	],
 	"manifest_version": 2
 }
