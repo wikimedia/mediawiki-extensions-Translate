@@ -13,7 +13,7 @@ use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
  * @since 2020.08
  */
 class TranslatablePageParser {
-	private $placeholderFactory;
+	private ParsingPlaceholderFactory $placeholderFactory;
 
 	public function __construct( ParsingPlaceholderFactory $placeholderFactory ) {
 		$this->placeholderFactory = $placeholderFactory;
@@ -42,8 +42,7 @@ class TranslatablePageParser {
 		$unit = new TranslationUnit( $text );
 		$text = $unit->getTextForTrans();
 
-		$text = $this->unarmourNowiki( $nowiki, $text );
-		return $text;
+		return $this->unarmourNowiki( $nowiki, $text );
 	}
 
 	/** @throws ParsingFailure */
@@ -134,10 +133,10 @@ class TranslatablePageParser {
 				$template .= $_;
 			} else {
 				$ph = $this->placeholderFactory->make();
-				$tpsection = $this->parseUnit( $_ );
-				$tpsection->setIsInline( $inline );
-				$tpsection->setCanWrap( $canWrap );
-				$sections[$ph] = $tpsection;
+				$tpSection = $this->parseUnit( $_ );
+				$tpSection->setIsInline( $inline );
+				$tpSection->setCanWrap( $canWrap );
+				$sections[$ph] = $tpSection;
 				$template .= $ph;
 			}
 		}
