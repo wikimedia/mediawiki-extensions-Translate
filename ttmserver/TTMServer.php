@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Extension\Translate\TtmServer\TtmServerMessageUpdateJob;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -44,7 +45,7 @@ abstract class TTMServer {
 	 */
 	public static function onDelete( WikiPage $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
-		$job = TTMServerMessageUpdateJob::newJob( $handle, 'delete' );
+		$job = TtmServerMessageUpdateJob::newJob( $handle, 'delete' );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 	}
 
@@ -53,7 +54,7 @@ abstract class TTMServer {
 	 * @param MessageHandle $handle
 	 */
 	public static function onChange( MessageHandle $handle ) {
-		$job = TTMServerMessageUpdateJob::newJob( $handle, 'refresh' );
+		$job = TtmServerMessageUpdateJob::newJob( $handle, 'refresh' );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 	}
 
@@ -67,7 +68,7 @@ abstract class TTMServer {
 			return;
 		}
 
-		$job = TTMServerMessageUpdateJob::newJob( $handle, 'rebuild' );
+		$job = TtmServerMessageUpdateJob::newJob( $handle, 'rebuild' );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 	}
 }

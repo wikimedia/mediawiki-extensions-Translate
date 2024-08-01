@@ -1,4 +1,7 @@
 <?php
+
+namespace MediaWiki\Extension\Translate\TtmServer;
+
 /**
  * @file
  * @author David Causse
@@ -6,12 +9,12 @@
  */
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\TtmServer\TtmServerException;
-use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Title\Title;
+use MediaWikiIntegrationTestCase;
+use TTMServer;
 
-/** @covers TTMServerMessageUpdateJob */
-class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
+/** @covers \MediaWiki\Extension\Translate\TtmServer\TtmServerMessageUpdateJob */
+class TtmServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	/** @var WritableTtmServer[] used to link our mocks with TestableTTMServer built by the factory */
 	public static array $mockups = [];
 
@@ -58,7 +61,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
-		$job = new TestableTTMServerMessageUpdateJob(
+		$job = new TestableTtmServerMessageUpdateJob(
 			$title, [ 'command' => 'refresh' ], $this->createMessageHandleMock( $title )
 		);
 		$job->run();
@@ -81,7 +84,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
-		$job = new TestableTTMServerMessageUpdateJob(
+		$job = new TestableTtmServerMessageUpdateJob(
 			$title, [ 'command' => 'refresh' ], $this->createMessageHandleMock( $title )
 		);
 		$job->run();
@@ -115,7 +118,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
-		$job = new TestableTTMServerMessageUpdateJob(
+		$job = new TestableTtmServerMessageUpdateJob(
 			$title, [ 'command' => 'refresh' ], $this->createMessageHandleMock( $title )
 		);
 		$job->run();
@@ -158,7 +161,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
-		$job = new TestableTTMServerMessageUpdateJob(
+		$job = new TestableTtmServerMessageUpdateJob(
 			$title,
 			[
 				'errorCount' => 1,
@@ -187,7 +190,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 		static::$mockups['secondary'] = $mock;
 
 		$title = Title::makeTitle( NS_MAIN, 'Main Page' );
-		$job = new TestableTTMServerMessageUpdateJob(
+		$job = new TestableTtmServerMessageUpdateJob(
 			$title,
 			[
 				'errorCount' => 4,
@@ -214,7 +217,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
  * For the context of the test we can only test the 'refresh' command
  * because other ones would need to have a more complex context to prepare
  */
-class TestableTTMServerMessageUpdateJob extends TTMServerMessageUpdateJob {
+class TestableTtmServerMessageUpdateJob extends TtmServerMessageUpdateJob {
 	private array $resentJobs = [];
 	private MessageHandle $handleMock;
 
@@ -223,7 +226,7 @@ class TestableTTMServerMessageUpdateJob extends TTMServerMessageUpdateJob {
 		$this->handleMock = $handleMock;
 	}
 
-	public function resend( TTMServerMessageUpdateJob $job ) {
+	public function resend( TtmServerMessageUpdateJob $job ) {
 		$this->resentJobs[] = $job;
 	}
 

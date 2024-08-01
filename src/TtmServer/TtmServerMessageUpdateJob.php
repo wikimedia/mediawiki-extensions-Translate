@@ -1,4 +1,7 @@
 <?php
+
+namespace MediaWiki\Extension\Translate\TtmServer;
+
 /**
  * Contains class with job for updating translation memory.
  *
@@ -7,9 +10,11 @@
  * @license GPL-2.0-or-later
  */
 
+use Exception;
+use Job;
+use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -31,7 +36,7 @@ use Psr\Log\LoggerInterface;
  *
  * @ingroup JobQueue
  */
-class TTMServerMessageUpdateJob extends Job {
+class TtmServerMessageUpdateJob extends Job {
 	/**
 	 * Number of *retries* allowed, 4 means we attempt
 	 * to run the job 5 times (1 initial attempt + 4 retries).
@@ -66,7 +71,7 @@ class TTMServerMessageUpdateJob extends Job {
 	 */
 	public function __construct( $title, $params = [] ) {
 		parent::__construct(
-			'TTMServerMessageUpdateJob',
+			'TtmServerMessageUpdateJob',
 			$title,
 			$params + [
 				'command' => 'rebuild',
