@@ -153,11 +153,11 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
-		$permissionErrors = $this->permissionManager->getPermissionErrors(
+		$permissionStatus = $this->permissionManager->getPermissionStatus(
 			'delete', $this->getUser(), $this->title
 		);
-		if ( count( $permissionErrors ) ) {
-			throw new PermissionsError( 'delete', $permissionErrors );
+		if ( !$permissionStatus->isOK() ) {
+			throw new PermissionsError( 'delete', $permissionStatus );
 		}
 
 		# Check for database lock
