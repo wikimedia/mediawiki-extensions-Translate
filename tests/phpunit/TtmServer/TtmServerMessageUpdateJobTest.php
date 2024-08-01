@@ -1,12 +1,11 @@
 <?php
-
-namespace MediaWiki\Extension\Translate\TtmServer;
-
+declare( strict_types = 1 );
 /**
- * @file
  * @author David Causse
  * @license GPL-2.0-or-later
  */
+
+namespace MediaWiki\Extension\Translate\TtmServer;
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
@@ -225,15 +224,15 @@ class TestableTtmServerMessageUpdateJob extends TtmServerMessageUpdateJob {
 		$this->handleMock = $handleMock;
 	}
 
-	public function resend( TtmServerMessageUpdateJob $job ) {
+	protected function resend( TtmServerMessageUpdateJob $job ): void {
 		$this->resentJobs[] = $job;
 	}
 
-	protected function getHandle() {
+	protected function getHandle(): MessageHandle {
 		return $this->handleMock;
 	}
 
-	protected function getTranslation( MessageHandle $handle ) {
+	protected function getTranslation( MessageHandle $handle ): string {
 		return 'random text';
 	}
 
