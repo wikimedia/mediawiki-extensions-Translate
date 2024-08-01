@@ -9,7 +9,7 @@ use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
 use MessageGroup;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IResultWrapper;
 
 /**
@@ -19,19 +19,19 @@ use Wikimedia\Rdbms\IResultWrapper;
  */
 class MessageGroupReviewStore {
 	private HookRunner $hookRunner;
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 	private const TABLE_NAME = 'translate_groupreviews';
 	/** Cache for message group priorities: (database group id => value) */
 	private ?array $priorityCache = null;
 
-	public function __construct( ILoadBalancer $loadBalancer, HookRunner $hookRunner ) {
-		$this->loadBalancer = $loadBalancer;
+	public function __construct( IConnectionProvider $dbProvider, HookRunner $hookRunner ) {
+		$this->dbProvider = $dbProvider;
 		$this->hookRunner = $hookRunner;
 	}
 
 	/** @return mixed|false — The value from the field, or false if nothing was found */
 	public function getState( MessageGroup $group, string $code ) {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		return $dbw->newSelectQueryBuilder()
 			->select( 'tgr_state' )
 			->from( self::TABLE_NAME )
@@ -56,7 +56,7 @@ class MessageGroupReviewStore {
 			'tgr_lang' => $code,
 			'tgr_state' => $newState,
 		];
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->replace( self::TABLE_NAME, [ $index ], $row, __METHOD__ );
 
 		$entry = new ManualLogEntry( 'translationreview', 'group' );
@@ -91,7 +91,7 @@ class MessageGroupReviewStore {
 			$this->priorityCache[$dbGroupId] = $priority;
 		}
 
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$row = [
 			'tgr_group' => $dbGroupId,
 			'tgr_lang' => '*priority',
@@ -112,7 +112,7 @@ class MessageGroupReviewStore {
 			return;
 		}
 
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [ 'tgr_group', 'tgr_state' ] )
 			->from( self::TABLE_NAME )
@@ -155,7 +155,7 @@ class MessageGroupReviewStore {
 	}
 
 	private function getWorkflowStates( ?array $groupIds, ?array $languageCodes ): IResultWrapper {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$conditions = array_filter(
 			[ 'tgr_group' => $groupIds, 'tgr_lang' => $languageCodes ],
 			static fn ( $x ) => $x !== null && $x !== ''

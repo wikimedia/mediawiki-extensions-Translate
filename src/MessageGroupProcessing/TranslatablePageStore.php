@@ -20,7 +20,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use RuntimeException;
 use TextContent;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @author Abijeet Patro
@@ -32,7 +32,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	private MessageIndex $messageIndex;
 	private JobQueueGroup $jobQueue;
 	private RevTagStore $revTagStore;
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 	private TranslatableBundleStatusStore $translatableBundleStatusStore;
 	private TranslatablePageParser $translatablePageParser;
 	private MessageGroupMetadata $messageGroupMetadata;
@@ -41,7 +41,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		MessageIndex $messageIndex,
 		JobQueueGroup $jobQueue,
 		RevTagStore $revTagStore,
-		ILoadBalancer $loadBalancer,
+		IConnectionProvider $dbProvider,
 		TranslatableBundleStatusStore $translatableBundleStatusStore,
 		TranslatablePageParser $translatablePageParser,
 		MessageGroupMetadata $messageGroupMetadata
@@ -49,7 +49,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$this->messageIndex = $messageIndex;
 		$this->jobQueue = $jobQueue;
 		$this->revTagStore = $revTagStore;
-		$this->loadBalancer = $loadBalancer;
+		$this->dbProvider = $dbProvider;
 		$this->translatableBundleStatusStore = $translatableBundleStatusStore;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->messageGroupMetadata = $messageGroupMetadata;
@@ -99,7 +99,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 
 	/** Delete a translatable page */
 	public function delete( Title $title ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete( 'translate_sections', [ 'trs_page' => $title->getArticleID() ], __METHOD__ );
 
 		$this->unmark( $title );

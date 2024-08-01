@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Offers functionality for reading and updating Translate group
@@ -22,10 +22,10 @@ class MessageGroupMetadata {
 	/** Map of (database group id => key => value) */
 	private array $cache = [];
 	private ?array $priorityCache = null;
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 
-	public function __construct( ILoadBalancer $loadBalancer ) {
-		$this->loadBalancer = $loadBalancer;
+	public function __construct( IConnectionProvider $dbProvider ) {
+		$this->dbProvider = $dbProvider;
 	}
 
 	public function preloadGroups( array $groups, string $caller ): void {
@@ -83,7 +83,7 @@ class MessageGroupMetadata {
 	 * @param string|false $value Metadata value, false deletes from cache
 	 */
 	public function set( string $groupId, string $key, $value ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
 		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
@@ -136,7 +136,7 @@ class MessageGroupMetadata {
 
 	/** Wrapper for deleting one wiki aggregate group at once. */
 	public function deleteGroup( string $groupId ): void {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
 		$conditions = [ 'tmd_group' => $dbGroupId ];

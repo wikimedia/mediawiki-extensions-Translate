@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
@@ -27,11 +27,11 @@ class RevTagStore {
 	/** Indicates a revision of a page that is a valid message bundle. */
 	public const MB_VALID_TAG = 'mb:valid';
 
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 	private array $tagCache = [];
 
-	public function __construct( ILoadBalancer $loadBalancer ) {
-		$this->loadBalancer = $loadBalancer;
+	public function __construct( IConnectionProvider $dbProvider ) {
+		$this->dbProvider = $dbProvider;
 	}
 
 	/** Add tag for the given revisionId, while deleting it from others */
@@ -47,7 +47,7 @@ class RevTagStore {
 
 		$articleId = $identity->getId();
 
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$conditions = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag
@@ -120,7 +120,7 @@ class RevTagStore {
 
 		$articleId = $identity->getId();
 
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$conditions = [
 			'rt_page' => $articleId,
 			'rt_type' => $tag,
@@ -131,7 +131,7 @@ class RevTagStore {
 	}
 
 	public function isRevIdFuzzy( int $articleId, int $revisionId ): bool {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$res = $dbw->newSelectQueryBuilder()
 			->select( 'rt_type' )
 			->from( 'revtag' )

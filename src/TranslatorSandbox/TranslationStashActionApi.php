@@ -22,19 +22,19 @@ use Wikimedia\Rdbms\IConnectionProvider;
  * @since 2013.06
  */
 class TranslationStashActionApi extends ApiBase {
-	private IConnectionProvider $connectionProvider;
+	private IConnectionProvider $dbProvider;
 	private UserFactory $userFactory;
 	private MessageIndex $messageIndex;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		IConnectionProvider $connectionProvider,
+		IConnectionProvider $dbProvider,
 		UserFactory $userFactory,
 		MessageIndex $messageIndex
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->connectionProvider = $connectionProvider;
+		$this->dbProvider = $dbProvider;
 		$this->userFactory = $userFactory;
 		$this->messageIndex = $messageIndex;
 	}
@@ -56,7 +56,7 @@ class TranslationStashActionApi extends ApiBase {
 			}
 		}
 
-		$stash = new TranslationStashStorage( $this->connectionProvider->getPrimaryDatabase() );
+		$stash = new TranslationStashStorage( $this->dbProvider->getPrimaryDatabase() );
 		$action = $params['subaction'];
 
 		if ( $action === 'add' ) {

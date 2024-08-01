@@ -9,7 +9,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Graph which provides statistics on active users and number of translations.
@@ -35,7 +35,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	}
 
 	public function preQuery(
-		IDatabase $database,
+		IReadableDatabase $database,
 		&$tables,
 		&$fields,
 		&$conds,

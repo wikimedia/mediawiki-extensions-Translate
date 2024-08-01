@@ -25,7 +25,7 @@ use Message;
 use RecentChange;
 use TitleFormatter;
 use TitleParser;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use WikiPageMessageGroup;
 
 /**
@@ -36,7 +36,7 @@ class TranslatablePageMarker {
 	public const LATEST_SYNTAX_VERSION = '2';
 	public const DEFAULT_SYNTAX_VERSION = '1';
 
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 	private JobQueueGroup $jobQueueGroup;
 	private LinkRenderer $linkRenderer;
 	private MessageGroups $messageGroups;
@@ -52,7 +52,7 @@ class TranslatablePageMarker {
 	private TranslatablePageView $translatablePageView;
 
 	public function __construct(
-		ILoadBalancer $loadBalancer,
+		IConnectionProvider $dbProvider,
 		JobQueueGroup $jobQueueGroup,
 		LinkRenderer $linkRenderer,
 		MessageGroups $messageGroups,
@@ -67,7 +67,7 @@ class TranslatablePageMarker {
 		WikiPageFactory $wikiPageFactory,
 		TranslatablePageView $translatablePageView
 	) {
-		$this->loadBalancer = $loadBalancer;
+		$this->dbProvider = $dbProvider;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->linkRenderer = $linkRenderer;
 		$this->messageIndex = $messageIndex;
@@ -309,7 +309,7 @@ class TranslatablePageMarker {
 			];
 		}
 
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete(
 			'translate_sections',
 			[ 'trs_page' => $page->getTitle()->getArticleID() ],

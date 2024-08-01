@@ -13,7 +13,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageLocalizer;
-use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Used to build the table displayed on Special:MessageGroupStats
@@ -22,7 +21,6 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @license GPL-2.0-or-later
  */
 class MessageGroupStatsTable {
-	private ILoadBalancer $loadBalancer;
 	private LinkRenderer $linkRenderer;
 	private MessageLocalizer $localizer;
 	private Language $interfaceLanguage;
@@ -39,7 +37,6 @@ class MessageGroupStatsTable {
 
 	public function __construct(
 		StatsTable $table,
-		ILoadBalancer $loadBalancer,
 		LinkRenderer $linkRenderer,
 		MessageLocalizer $localizer,
 		Language $interfaceLanguage,
@@ -48,7 +45,6 @@ class MessageGroupStatsTable {
 		bool $haveTranslateWorkflowStates
 	) {
 		$this->table = $table;
-		$this->loadBalancer = $loadBalancer;
 		$this->linkRenderer = $linkRenderer;
 		$this->incompleteStats = false;
 		$this->localizer = $localizer;

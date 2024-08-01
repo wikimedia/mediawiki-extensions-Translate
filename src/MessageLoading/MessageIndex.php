@@ -41,7 +41,7 @@ class MessageIndex {
 	private JobQueueGroup $jobQueueGroup;
 	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
-	private IConnectionProvider $connectionProvider;
+	private IConnectionProvider $dbProvider;
 	private MessageGroupSubscription $messageGroupSubscription;
 	private array $translateMessageNamespaces;
 	public const SERVICE_OPTIONS = [
@@ -55,7 +55,7 @@ class MessageIndex {
 		HookRunner $hookRunner,
 		LoggerInterface $logger,
 		BagOStuff $interimCache,
-		IConnectionProvider $connectionProvider,
+		IConnectionProvider $dbProvider,
 		MessageGroupSubscription $messageGroupSubscription,
 		ServiceOptions $options
 	) {
@@ -66,7 +66,7 @@ class MessageIndex {
 		$this->hookRunner = $hookRunner;
 		$this->logger = $logger;
 		$this->interimCache = $interimCache;
-		$this->connectionProvider = $connectionProvider;
+		$this->dbProvider = $dbProvider;
 		$this->messageGroupSubscription = $messageGroupSubscription;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->translateMessageNamespaces = $options->get( 'TranslateMessageNamespaces' );
@@ -149,7 +149,7 @@ class MessageIndex {
 	}
 
 	private function lock(): bool {
-		$dbw = $this->connectionProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		// Any transaction should be flushed after getting the lock to avoid
 		// stale pre-lock REPEATABLE-READ snapshot data.
@@ -163,7 +163,7 @@ class MessageIndex {
 
 	private function unlock(): void {
 		$fname = __METHOD__;
-		$dbw = $this->connectionProvider->getPrimaryDatabase();
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		// Unlock once the rows are actually unlocked to avoid deadlocks
 		if ( !$dbw->trxLevel() ) {
 			$dbw->unlock( 'translate-messageindex', $fname );

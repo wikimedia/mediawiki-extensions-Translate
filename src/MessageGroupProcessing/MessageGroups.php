@@ -122,7 +122,7 @@ class MessageGroups {
 
 		$services = Services::getInstance();
 		$cache = $this->getCache();
-		$connectionProvider = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$dbProvider = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		$groupLoaderInstances = $this->groupLoaders = [];
 
@@ -156,7 +156,7 @@ class MessageGroups {
 		foreach ( $factories as $factory ) {
 			$this->groupLoaders[] = new CachedMessageGroupFactoryLoader(
 				$cache,
-				$connectionProvider,
+				$dbProvider,
 				$factory
 			);
 		}

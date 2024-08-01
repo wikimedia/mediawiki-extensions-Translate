@@ -10,7 +10,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStatus;
 use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
-use Wikimedia\Rdbms\LoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @author Abijeet Patro
@@ -31,7 +31,7 @@ class TranslatablePageStoreTest extends MediaWikiUnitTestCase {
 			$this->createStub( MessageIndex::class ),
 			$this->createStub( JobQueueGroup::class ),
 			$this->getRevTagStoreStub( $readyRevisionId, $markRevisionId ),
-			$this->createStub( LoadBalancer::class ),
+			$this->createStub( IConnectionProvider::class ),
 			$this->getTranslatableBundleStatusStoreMock( $shouldSetStatusBeCalled, $title, $expectedStatus ),
 			$this->createStub( TranslatablePageParser::class ),
 			$this->createStub( MessageGroupMetadata::class )

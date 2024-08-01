@@ -8,7 +8,7 @@ use DumpStringOutput;
 use MediaWiki\Export\WikiExporterFactory;
 use MediaWiki\Title\Title;
 use WikiExporter;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Service to export a translatable bundle into XML. Uses WikiExporter from MediaWiki core.
@@ -24,11 +24,11 @@ class TranslatableBundleExporter {
 	public function __construct(
 		SubpageListBuilder $subpageListBuilder,
 		WikiExporterFactory $wikiExporterFactory,
-		ILoadBalancer $dbLoadBalancer
+		IConnectionProvider $dbProvider
 	) {
 		$this->subpageListBuilder = $subpageListBuilder;
 		$this->wikiExporter = $wikiExporterFactory->getWikiExporter(
-			$dbLoadBalancer->getConnection( DB_REPLICA ),
+			$dbProvider->getReplicaDatabase(),
 			WikiExporter::FULL
 		);
 	}

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Graph which provides statistics about amount of registered users in a given time.
@@ -13,7 +13,7 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class TranslateRegistrationStats extends TranslationStatsBase {
 	public function preQuery(
-		IDatabase $database,
+		IReadableDatabase $database,
 		&$tables,
 		&$fields,
 		&$conds,

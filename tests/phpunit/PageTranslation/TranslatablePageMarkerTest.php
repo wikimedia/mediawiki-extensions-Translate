@@ -17,7 +17,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWikiIntegrationTestCase;
 use TitleFormatter;
 use TitleParser;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker
@@ -33,7 +33,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 	private function createTranslatableMarkPage( array $services = [] ): TranslatablePageMarker {
 		$getServiceOrMock = fn ( string $className ) => $services[$className] ?? $this->createNoOpMock( $className );
 		return new TranslatablePageMarker(
-			$getServiceOrMock( ILoadBalancer::class ),
+			$getServiceOrMock( IConnectionProvider::class ),
 			$getServiceOrMock( JobQueueGroup::class ),
 			$getServiceOrMock( LinkRenderer::class ),
 			MessageGroups::singleton(),
@@ -116,7 +116,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$this->createMockWithMethods( JobQueueGroup::class, [ 'push' => null ] ) +
 			$this->createMockWithMethods( LanguageNameUtils::class, [ 'getLanguageNames' => [ 'en' => 'English' ] ] ) +
 			[
-				ILoadBalancer::class => $services->getDBLoadBalancer(),
+				IConnectionProvider::class => $services->getConnectionProvider(),
 				TitleParser::class => $services->getTitleParser(),
 				TitleFormatter::class => $services->getTitleFormatter(),
 				WikiPageFactory::class => $services->getWikiPageFactory(),

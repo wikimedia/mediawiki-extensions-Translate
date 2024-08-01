@@ -25,7 +25,7 @@ use MediaWiki\User\UserOptionsManager;
 use RuntimeException;
 use SiteStatsUpdate;
 use UnexpectedValueException;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -42,7 +42,7 @@ class TranslateSandbox {
 	];
 
 	private UserFactory $userFactory;
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 	private PermissionManager $permissionManager;
 	private AuthManager $authManager;
 	private UserGroupManager $userGroupManager;
@@ -54,7 +54,7 @@ class TranslateSandbox {
 
 	public function __construct(
 		UserFactory $userFactory,
-		ILoadBalancer $loadBalancer,
+		IConnectionProvider $dbProvider,
 		PermissionManager $permissionManager,
 		AuthManager $authManager,
 		UserGroupManager $userGroupManager,
@@ -65,7 +65,7 @@ class TranslateSandbox {
 		ServiceOptions $options
 	) {
 		$this->userFactory = $userFactory;
-		$this->loadBalancer = $loadBalancer;
+		$this->dbProvider = $dbProvider;
 		$this->permissionManager = $permissionManager;
 		$this->authManager = $authManager;
 		$this->userGroupManager = $userGroupManager;
@@ -154,7 +154,7 @@ class TranslateSandbox {
 		}
 
 		// Delete from database
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete( 'user', [ 'user_id' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );

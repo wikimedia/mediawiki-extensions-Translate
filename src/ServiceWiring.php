@@ -192,12 +192,12 @@ return [
 	},
 
 	'Translate:MessageGroupMetadata' => static function ( MediaWikiServices $services ): MessageGroupMetadata {
-		return new MessageGroupMetadata( $services->getDBLoadBalancer() );
+		return new MessageGroupMetadata( $services->getConnectionProvider() );
 	},
 
 	'Translate:MessageGroupReviewStore' => static function ( MediaWikiServices $services ): MessageGroupReviewStore {
 		return new MessageGroupReviewStore(
-			$services->getDBLoadBalancer(),
+			$services->getConnectionProvider(),
 			$services->get( 'Translate:HookRunner' )
 		);
 	},
@@ -207,7 +207,6 @@ return [
 	): MessageGroupStatsTableFactory {
 		return new MessageGroupStatsTableFactory(
 			$services->get( 'Translate:ProgressStatsTableFactory' ),
-			$services->getDBLoadBalancer(),
 			$services->getLinkRenderer(),
 			$services->get( 'Translate:MessageGroupReviewStore' ),
 			$services->get( 'Translate:MessageGroupMetadata' ),
@@ -242,7 +241,7 @@ return [
 	'Translate:MessageGroupSubscriptionStore' => static function (
 		MediaWikiServices $services
 	): MessageGroupSubscriptionStore {
-		return new MessageGroupSubscriptionStore( $services->getDBLoadBalancerFactory() );
+		return new MessageGroupSubscriptionStore( $services->getConnectionProvider() );
 	},
 
 	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {
@@ -269,7 +268,7 @@ return [
 			$services->get( 'Translate:HookRunner' ),
 			LoggerFactory::getInstance( 'Translate' ),
 			$services->getMainObjectStash(),
-			$services->getDBLoadBalancerFactory(),
+			$services->getConnectionProvider(),
 			$services->get( 'Translate:MessageGroupSubscription' ),
 			new ServiceOptions( MessageIndex::SERVICE_OPTIONS, $services->getMainConfig() ),
 		);
@@ -300,7 +299,7 @@ return [
 	},
 
 	'Translate:RevTagStore' => static function ( MediaWikiServices $services ): RevTagStore {
-		return new RevTagStore( $services->getDBLoadBalancer() );
+		return new RevTagStore( $services->getConnectionProvider() );
 	},
 
 	'Translate:SubpageListBuilder' => static function ( MediaWikiServices $services ): SubpageListBuilder
@@ -327,7 +326,7 @@ return [
 		return new TranslatableBundleExporter(
 			$services->get( 'Translate:SubpageListBuilder' ),
 			$services->getWikiExporterFactory(),
-			$services->getDBLoadBalancer()
+			$services->getConnectionProvider()
 		);
 	},
 
@@ -359,7 +358,7 @@ return [
 			$services->getLinkBatchFactory(),
 			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->get( 'Translate:SubpageListBuilder' ),
-			$services->getDBLoadBalancerFactory(),
+			$services->getConnectionProvider(),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},
@@ -367,7 +366,7 @@ return [
 	'Translate:TranslatableBundleStatusStore' =>
 		static function ( MediaWikiServices $services ): TranslatableBundleStatusStore {
 			return new TranslatableBundleStatusStore(
-				$services->getDBLoadBalancer()->getConnection( DB_PRIMARY ),
+				$services->getConnectionProvider()->getPrimaryDatabase(),
 				$services->getCollationFactory()->makeCollation( 'uca-default-u-kn' ),
 				$services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY )
 			);
@@ -375,7 +374,7 @@ return [
 
 	'Translate:TranslatablePageMarker' => static function ( MediaWikiServices $services ): TranslatablePageMarker {
 		return new TranslatablePageMarker(
-			$services->getDBLoadBalancer(),
+			$services->getConnectionProvider(),
 			$services->getJobQueueGroup(),
 			$services->getLinkRenderer(),
 			MessageGroups::singleton(),
@@ -425,7 +424,7 @@ return [
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getJobQueueGroup(),
 			$services->get( 'Translate:RevTagStore' ),
-			$services->getDBLoadBalancer(),
+			$services->getConnectionProvider(),
 			$services->get( 'Translate:TranslatableBundleStatusStore' ),
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->get( 'Translate:MessageGroupMetadata' )
@@ -434,7 +433,7 @@ return [
 
 	'Translate:TranslatablePageView' => static function ( MediaWikiServices $services ): TranslatablePageView {
 		return new TranslatablePageView(
-			$services->getDBLoadBalancerFactory(),
+			$services->getConnectionProvider(),
 			$services->get( 'Translate:TranslatablePageStateStore' ),
 			new ServiceOptions(
 				TranslatablePageView::SERVICE_OPTIONS,
@@ -447,7 +446,7 @@ return [
 	{
 		return new TranslateSandbox(
 			$services->getUserFactory(),
-			$services->getDBLoadBalancer(),
+			$services->getConnectionProvider(),
 			$services->getPermissionManager(),
 			$services->getAuthManager(),
 			$services->getUserGroupManager(),
@@ -464,8 +463,7 @@ return [
 
 	'Translate:TranslationStashReader' => static function ( MediaWikiServices $services ): TranslationStashReader
 	{
-		$db = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		return new TranslationStashStorage( $db );
+		return new TranslationStashStorage( $services->getConnectionProvider()->getPrimaryDatabase() );
 	},
 
 	'Translate:TranslationStatsDataProvider' => static function (
@@ -477,7 +475,7 @@ return [
 				$services->getMainConfig()
 			),
 			$services->getObjectFactory(),
-			$services->getDBLoadBalancer()
+			$services->getConnectionProvider()
 		);
 	},
 

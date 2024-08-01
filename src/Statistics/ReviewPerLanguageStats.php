@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Graph which provides statistics on number of reviews and reviewers.
@@ -14,7 +14,7 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 	public function preQuery(
-		IDatabase $database,
+		IReadableDatabase $database,
 		&$tables,
 		&$fields,
 		&$conds,

@@ -16,14 +16,14 @@ class MessageGroupSubscriptionStore {
 	private const TABLE_NAME = 'translate_message_group_subscriptions';
 	/** @var int Match field tmgs_group byte length */
 	private const MAX_GROUP_LENGTH = 200;
-	private IConnectionProvider $connectionProvider;
+	private IConnectionProvider $dbProvider;
 
-	public function __construct( IConnectionProvider $connectionProvider ) {
-		$this->connectionProvider = $connectionProvider;
+	public function __construct( IConnectionProvider $dbProvider ) {
+		$this->dbProvider = $dbProvider;
 	}
 
 	public function addSubscription( string $groupId, int $userId ): void {
-		$this->connectionProvider->getPrimaryDatabase()->replace(
+		$this->dbProvider->getPrimaryDatabase()->replace(
 			self::TABLE_NAME,
 			[ [ 'tmgs_group', 'tmgs_user_id' ] ],
 			[
@@ -35,7 +35,7 @@ class MessageGroupSubscriptionStore {
 	}
 
 	public function getSubscriptions( ?array $groupIds, ?int $userId ): IResultWrapper {
-		$queryBuilder = $this->connectionProvider
+		$queryBuilder = $this->dbProvider
 			->getReplicaDatabase()
 			->newSelectQueryBuilder()
 			->select( [ 'tmgs_group', 'tmgs_user_id' ] )
@@ -63,7 +63,7 @@ class MessageGroupSubscriptionStore {
 			'tmgs_user_id' => $userId
 		];
 
-		$this->connectionProvider->getPrimaryDatabase()
+		$this->dbProvider->getPrimaryDatabase()
 			->delete(
 				self::TABLE_NAME,
 				$conditions,

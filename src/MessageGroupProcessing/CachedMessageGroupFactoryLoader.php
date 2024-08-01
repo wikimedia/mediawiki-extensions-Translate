@@ -20,20 +20,20 @@ use Wikimedia\Rdbms\IConnectionProvider;
  */
 class CachedMessageGroupFactoryLoader implements CachedMessageGroupLoader, MessageGroupLoader {
 	private WANObjectCache $cache;
-	private IConnectionProvider $connectionProvider;
+	private IConnectionProvider $dbProvider;
 	private string $cacheKey;
 	private CachedMessageGroupFactory $factory;
 	private const CACHE_TTL = ExpirationAwareness::TTL_DAY;
 
 	public function __construct(
 		WANObjectCache $cache,
-		IConnectionProvider $connectionProvider,
+		IConnectionProvider $dbProvider,
 		CachedMessageGroupFactory $factory
 	) {
 		$this->cache = $cache;
 		$this->cacheKey = $cache->makeKey( 'translate-mg', $factory->getCacheKey() );
 		$this->factory = $factory;
-		$this->connectionProvider = $connectionProvider;
+		$this->dbProvider = $dbProvider;
 	}
 
 	/** @return MessageGroup[] */
@@ -45,7 +45,7 @@ class CachedMessageGroupFactoryLoader implements CachedMessageGroupLoader, Messa
 	public function recache(): array {
 		$this->cache->touchCheckKey( $this->cacheKey );
 		return $this->factory->createGroups(
-			$this->factory->getData( $this->connectionProvider->getPrimaryDatabase() )
+			$this->factory->getData( $this->dbProvider->getPrimaryDatabase() )
 		);
 	}
 
@@ -69,7 +69,7 @@ class CachedMessageGroupFactoryLoader implements CachedMessageGroupLoader, Messa
 	}
 
 	private function getCacheData( array &$setOpts ): DependencyWrapper {
-		$dbr = $this->connectionProvider->getReplicaDatabase();
+		$dbr = $this->dbProvider->getReplicaDatabase();
 
 		// Some factories may not use the database, in which case this is superflous.
 		// Having it here for simplicity.

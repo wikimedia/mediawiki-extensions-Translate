@@ -18,17 +18,17 @@ use Wikimedia\Rdbms\IConnectionProvider;
 class TranslatablePageView {
 	public const SERVICE_OPTIONS = [ 'TranslatePageTranslationBannerNamespaces' ];
 	private const RECENT_EDITOR_DAYS = 4;
-	private IConnectionProvider $connectionProvider;
+	private IConnectionProvider $dbProvider;
 	private TranslatablePageStateStore $translatablePageStateStore;
 	/** @var int[] */
 	private array $pageTranslationBannerNamespaces;
 
 	public function __construct(
-		IConnectionProvider $connectionProvider,
+		IConnectionProvider $dbProvider,
 		TranslatablePageStateStore $translatablePageStateStore,
 		ServiceOptions $options
 	) {
-		$this->connectionProvider = $connectionProvider;
+		$this->dbProvider = $dbProvider;
 		$this->translatablePageStateStore = $translatablePageStateStore;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->pageTranslationBannerNamespaces = $options->get( 'TranslatePageTranslationBannerNamespaces' );
@@ -73,7 +73,7 @@ class TranslatablePageView {
 	}
 
 	private function isRecentEditor( Title $articleTitle, User $user ): bool {
-		$dbr = $this->connectionProvider->getReplicaDatabase();
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$fieldValue = $dbr->newSelectQueryBuilder()
 			->select( 'rev_id' )
 			->from( 'revision' )
