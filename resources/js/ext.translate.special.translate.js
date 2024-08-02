@@ -25,6 +25,8 @@
 				return;
 			}
 
+			showAggregateSubgroupCount();
+
 			state.group = group.id;
 
 			var changes = {
@@ -279,9 +281,9 @@
 			return;
 		}
 
-		var $tuxWatchGroup = $( '.tux-watch-group' );
+		var $tuxBreadcrumb = $( '.tux-breadcrumb' );
 		if ( group.subscription === undefined ) {
-			$tuxWatchGroup.empty();
+			$tuxBreadcrumb.find( '.tux-watch-button' ).remove();
 			return;
 		}
 
@@ -291,7 +293,7 @@
 			// CSS Classes:
 			// * tux-watch-group--watch
 			// * tux-watch-group--unwatch
-			.addClass( 'mw-ui-button ' + watchClass )
+			.addClass( 'mw-ui-button tux-watch-button ' + watchClass )
 			.data( 'subscribed', group.subscription )
 			.on( 'click', toggleSubscription );
 
@@ -301,10 +303,11 @@
 				.addClass( 'tux-watch-label' )
 				// * tux-watch-group
 				// * tux-unwatch-group
-				.text( mw.msg( buttonMessage, group.label ) )
+				.text( mw.msg( buttonMessage ) )
 		);
 
-		$tuxWatchGroup.empty().append( $subscribeButton );
+		$tuxBreadcrumb.find( '.tux-watch-button' ).remove();
+		$tuxBreadcrumb.append( $subscribeButton );
 	}
 
 	function removeGroupWarnings() {
@@ -383,7 +386,6 @@
 					var buttonMessage = oldSubscriptionStatus ? 'tux-watch-group' : 'tux-unwatch-group';
 					var watchClass = oldSubscriptionStatus ?
 						'tux-watch-group--unwatch' : 'tux-watch-group--watch';
-					var groupInfo = response.messagegroupsubscription.group;
 					$button
 						.removeClass( [ 'tux-watch-group--watch', 'tux-watch-group--unwatch' ] )
 						// CSS Classes:
@@ -395,7 +397,7 @@
 					$button.find( '.tux-watch-label' )
 						// * tux-watch-group
 						// * tux-unwatch-group
-						.text( mw.msg( buttonMessage, groupInfo.label ) );
+						.text( mw.msg( buttonMessage ) );
 
 					loadWatchedMessageGroups();
 				} else {
@@ -431,6 +433,23 @@
 				mw.log.error( 'messagegroupsubscription: Failed to fetch user subscriptions', error, params );
 			}
 		);
+	}
+
+	function showAggregateSubgroupCount() {
+		var $groupBreadcrumbs = $( '.tux-breadcrumb .grouptitle' );
+		var $selectedGroup = $groupBreadcrumbs.last();
+		var groupCounts = $selectedGroup.data( 'msggroup-subgroup-count' );
+		if ( groupCounts === undefined ) {
+			$groupBreadcrumbs
+				.find( '.tux-breadcrumb__item--aggregate-count' )
+				.remove();
+		} else {
+			var subGroups = mw.msg( 'translate-msggroupselector-view-subprojects', groupCounts );
+			$selectedGroup.append(
+				$( '<span>' ).append( mw.message( 'parentheses', $( '<span>' ).text( subGroups ) ).parse() )
+					.addClass( 'tux-breadcrumb__item--aggregate-count' )
+			);
+		}
 	}
 
 	$( function () {
@@ -489,11 +508,14 @@
 
 		addTuxGroupWarningContainer();
 
-		var position;
+		var position = {
+			my: 'left top',
+			at: 'left-10 bottom+5'
+		};
 		if ( $( document.body ).hasClass( 'rtl' ) ) {
 			position = {
 				my: 'right top',
-				at: 'right+80 bottom+5'
+				at: 'right+10 bottom+5'
 			};
 		}
 
@@ -502,13 +524,16 @@
 			language: state.language,
 			position: position,
 			recent: mw.translate.recentGroups.get(),
-			showWatched: mw.config.get( 'wgTranslateEnableMessageGroupSubscription' ) || false
+			showWatched: mw.config.get( 'wgTranslateEnableMessageGroupSubscription' ) || false,
+			menuClass: 'tux-groupselector-tpt'
 		} );
 
 		state.groupSelector = $( '.tux-breadcrumb__item--aggregate' ).data( 'msggroupselector' );
 		loadWatchedMessageGroups();
 
 		updateGroupInformation( state );
+
+		showAggregateSubgroupCount();
 
 		$( '.ext-translate-language-selector .uls' ).one( 'click', function () {
 			var $target = $( this );

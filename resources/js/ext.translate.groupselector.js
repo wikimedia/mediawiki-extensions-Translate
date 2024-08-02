@@ -21,6 +21,7 @@
 	 * @param {boolean} [options.preventSelector] Do not allow selection of subgroups.
 	 * @param {string[]} [options.recent] List of recent message group ids.
 	 * @param {string[]} [options.showWatched] Whether to show watched message groups
+	 * @param {string} [options.menuClass] A CSS class to add to the menu element
 	 * @param {string[]} [groups] List of message group ids to show.
 	 */
 	function TranslateMessageGroupSelector( element, options, groups ) {
@@ -66,6 +67,11 @@
 			this.$menu = $( '<div>' )
 				.addClass( 'tux-groupselector' )
 				.addClass( 'grid hide' );
+
+			if ( this.customOptions.menuClass ) {
+				// eslint-disable-next-line mediawiki/class-doc
+				this.$menu.addClass( this.customOptions.menuClass );
+			}
 
 			var $searchIcon = $( '<div>' )
 				.addClass( 'two columns tux-groupselector__filter__search__icon' );
@@ -218,6 +224,7 @@
 							.addClass( 'tux-breadcrumb__item--aggregate' )
 							.msggroupselector( groupSelector.customOptions )
 							.data( 'msggroupselector' ).show();
+						$newLink.data( 'msggroup-subgroup-count', messageGroup.groups.length );
 					}
 				}
 
@@ -633,7 +640,7 @@
 	 * @internal
 	 * @param {Object} options
 	 * @param {string[]} groups
-	 * @returns {jQuery}
+	 * @return {jQuery}
 	 */
 	$.fn.msggroupselector = function ( options, groups ) {
 		return this.each( function () {

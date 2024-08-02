@@ -9,7 +9,7 @@
 }
 
 /* Arrow between breadcrumb items */
-.tux-breadcrumb .grouplink + .grouplink::before {
+.tux-breadcrumb .grouplink::after {
 	border-left: 4px solid #777;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;
@@ -17,13 +17,29 @@
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
-	left: -5px;
+	right: -5px;
+}
+
+.tux-breadcrumb .grouplink:last-of-type::after {
+	display: none;
+}
+
+.tux-breadcrumb .grouplink:last-of-type {
+	font-size: 1em;
+	margin: 6px 0 4px 0;
+	clear: both;
+}
+
+.tux-breadcrumb .grouplink.tux-breadcrumb__item--aggregate:last-of-type > span {
+	font-size: 0.75em;
+	margin-inline-start: 6px;
 }
 
 /* This applies to all items in the breadcrumb */
 .tux-breadcrumb .grouptitle {
 	float: left;
 	padding: 0 6px 0 0;
+	font-size: 0.75em;
 }
 
 /* Not all of these are links, so name is wrong besides being too generic.
@@ -33,9 +49,23 @@
 }
 
 /* Color clickable groups to look as links */
-.tux-breadcrumb__item--aggregate {
+.tux-breadcrumb__item--aggregate,
+.tux-breadcrumb .grouplink.tux-breadcrumb__item--aggregate:last-of-type > span > span {
 	cursor: pointer;
 	color: #0645ad;
+}
+
+.tux-breadcrumb .grouplink.tux-breadcrumb__item--aggregate:last-of-type {
+	color: unset;
+}
+
+/** Move the triangle for the groupselector */
+.tux-groupselector.tux-groupselector-tpt::before {
+	left: 19px;
+}
+
+.tux-groupselector.tux-groupselector-tpt::after {
+	left: 20px;
 }
 
 .tux-message-selector {
@@ -109,28 +139,35 @@
 	top: 1px;
 }
 
-.tux-watch-group .mw-ui-button .tux-watch-icon {
+.tux-breadcrumb .mw-ui-button.tux-watch-button {
+	float: left;
+	padding: 3px 8px;
+	margin-left: 3px;
+	margin-top: 2px;
+}
+
+.tux-breadcrumb .tux-watch-button .tux-watch-icon {
 	background: no-repeat left center transparent;
 	background-size: contain;
 	width: 20px;
 	height: 20px;
 }
 
-.tux-watch-group .mw-ui-button.tux-watch-group--unwatch .tux-watch-icon {
+.tux-breadcrumb .tux-watch-button.tux-watch-group--unwatch .tux-watch-icon {
 	background-image: url( ../images/bookmark-outlined.svg );
 }
 
-.tux-watch-group .mw-ui-button.tux-watch-group--watch .tux-watch-icon {
+.tux-breadcrumb .tux-watch-button.tux-watch-group--watch .tux-watch-icon {
 	background-image: url( ../images/bookmark.svg );
 }
 
-.tux-watch-group .mw-ui-button .tux-watch-label {
-	font-size: 1.1em;
-	padding-inline-start: 5px;
+.tux-breadcrumb .tux-watch-button .tux-watch-label {
+	font-size: 0.75em;
+	padding-inline-start: 3px;
 }
 
-.tux-watch-group .tux-watch-label,
-.tux-watch-group .tux-watch-icon {
+.tux-breadcrumb .tux-watch-button .tux-watch-label,
+.tux-breadcrumb .tux-watch-button .tux-watch-icon {
 	display: inline-block;
 	vertical-align: middle;
 }

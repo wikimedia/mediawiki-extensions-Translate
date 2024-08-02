@@ -915,6 +915,7 @@
 				"mediawiki.storage"
 			],
 			"messages": [
+				"parentheses",
 				"tpt-discouraged-language-content",
 				"tpt-discouraged-language-force-content",
 				"tpt-discouraged-language-force-header",

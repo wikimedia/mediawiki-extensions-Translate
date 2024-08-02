@@ -258,8 +258,10 @@ class TranslateSpecialPage extends SpecialPage {
 
 	private function tuxGroupSelector(): string {
 		$groupClass = [ 'grouptitle', 'grouplink' ];
+		$subGroupCount = null;
 		if ( $this->group instanceof AggregateMessageGroup ) {
 			$groupClass[] = 'tux-breadcrumb__item--aggregate';
+			$subGroupCount = count( $this->group->getGroups() );
 		}
 
 		// @todo FIXME The selector should have expanded parent-child lists
@@ -268,10 +270,6 @@ class TranslateSpecialPage extends SpecialPage {
 			'data-language' => $this->options['language'],
 		] ) .
 			Html::element( 'span',
-				[ 'class' => 'grouptitle' ],
-				$this->msg( 'translate-msggroupselector-projects' )->text()
-			) .
-			Html::element( 'span',
 				[ 'class' => 'grouptitle grouplink tux-breadcrumb__item--aggregate' ],
 				$this->msg( 'translate-msggroupselector-search-all' )->text()
 			) .
@@ -279,6 +277,7 @@ class TranslateSpecialPage extends SpecialPage {
 				[
 					'class' => $groupClass,
 					'data-msggroupid' => $this->group->getId(),
+					'data-msggroup-subgroup-count' => $subGroupCount
 				],
 				$this->group->getLabel( $this->getContext() )
 			) .
