@@ -82,6 +82,7 @@
 	"translate-mgs-nocomplete": "Ele čääiti kielâid, moi jurgâlem lii vaalmâš",
 	"translate-mgs-submit": "Čääiti statistiikijd",
 	"translate-mgs-column-language": "Kielâ",
+	"translate-tes-optgroup-group": "Juávhuh",
 	"supportedlanguages": "Aktiivliih kielah",
 	"supportedlanguages-colorlegend": "Ivne čielgiittâs: Majemuš jurgâlus $1 peivid tassaaš",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jurgâleijee}}|Jurgâleijeeh}}: $1",
@@ -144,5 +145,6 @@
 	"tux-editor-message-tools-translations": "Puoh jurgâlusah",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kielâ|kielâ|kielâ|kiellâd}} lase",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|eres juávkku|eres juávhu|eres juávhu|eres juávkkud}}",
-	"specialpages-group-translation": "Jurgâlus"
+	"specialpages-group-translation": "Jurgâlus",
+	"notification-link-mgs-group-translate": "Jurgâl $1"
 }

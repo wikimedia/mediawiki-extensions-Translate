@@ -67,6 +67,7 @@
 	"translate-ls-submit": "Čájet statistihka",
 	"translate-mgs-submit": "Čájet statistihka",
 	"translate-mgs-column-language": "Giella",
+	"translate-tes-optgroup-group": "Joavkkut",
 	"translate-tes-entity-not-found": "Eai bohtosat",
 	"supportedlanguages": "Aktiivvalaš gielat",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Jorgaleaddji}}|jorgaleaddji}}: $1",
@@ -75,6 +76,7 @@
 	"translate-smg-rename-select": "Vállje",
 	"translate-smg-rename-cancel": "Gaskkalduhte",
 	"translate-smg-group-message-action-history": "Historjá",
+	"translate-smg-group-message-tag-outdated": "Áigahaččat",
 	"translate-smg-group-message-tag-rename": "Ráhkat ođđa nama",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|gilkor|gilkorat}}:",
 	"translate-smg-group-message-message-content": "Sisdoallu:",
@@ -86,6 +88,7 @@
 	"translate-searchprofile": "Jorgalusat",
 	"translate-searchprofile-tooltip": "Oza buot jorgalusain",
 	"translate-search-languagefilter": "Sille giela mielde:",
+	"translate-dynagroup-recent-label": "Ođđaseamos jorgalusat",
 	"translate-msggroupselector-search-placeholder": "Oza joavkkuid",
 	"translate-msggroupselector-search-all": "Buot",
 	"tux-languageselector": "Čuozáhatgiella:",
@@ -131,5 +134,6 @@
 	"tux-editor-message-tools-delete": "Sihko",
 	"tux-editor-message-tools-translations": "Buot jorgalusat",
 	"tux-editor-loading": "Viežžamin...",
-	"specialpages-group-translation": "Jorgaleapmi"
+	"specialpages-group-translation": "Jorgaleapmi",
+	"notification-link-mgs-group-translate": "Jorgal $1"
 }
