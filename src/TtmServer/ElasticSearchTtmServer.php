@@ -8,6 +8,7 @@ use Elastica\Client;
 use Elastica\Document;
 use Elastica\Exception\ExceptionInterface;
 use Elastica\Index;
+use Elastica\Mapping;
 use Elastica\Query;
 use Elastica\Query\BoolQuery;
 use Elastica\Query\FunctionScore;
@@ -384,21 +385,9 @@ class ElasticSearchTtmServer
 				]
 			],
 		];
-		if ( $this->useElastica6() ) {
-			// Elastica 6 support
-			// @phan-suppress-next-line PhanUndeclaredClassMethod
-			$mapping = new \Elastica\Type\Mapping();
-			// @phan-suppress-next-line PhanUndeclaredClassMethod, PhanUndeclaredMethod
-			$mapping->setType( $index->getType( '_doc' ) );
-			// @phan-suppress-next-line PhanUndeclaredClassMethod
-			$mapping->setProperties( $properties );
-			// @phan-suppress-next-line PhanUndeclaredClassMethod
-			$mapping->send( $index, [ 'include_type_name' => 'true' ] );
-		} else {
-			// Elastica 7
-			$mapping = new \Elastica\Mapping( $properties );
-			$mapping->send( $index, [ 'include_type_name' => 'false' ] );
-		}
+
+		$mapping = new Mapping( $properties );
+		$mapping->send( $index, [ 'include_type_name' => 'false' ] );
 
 		$this->waitUntilReady();
 	}
@@ -740,10 +729,6 @@ class ElasticSearchTtmServer
 		if ( !str_starts_with( $version, '6.8' ) && !str_starts_with( $version, '7.' ) ) {
 			throw new RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
 		}
-	}
-
-	private function useElastica6(): bool {
-		return class_exists( '\Elastica\Type' );
 	}
 
 	/** @param mixed $resultSet */
