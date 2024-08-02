@@ -20,8 +20,8 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgTranslateGroupFiles' => [
+		$this->overrideConfigValues( [
+			'TranslateGroupFiles' => [
 				__DIR__ . '../../data/ParentGroups.yaml',
 				__DIR__ . '../../data/ValidatorGroup.yaml'
 			]
@@ -65,8 +65,8 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testHaveSingleSourceLanguage(): void {
-		$this->setMwGlobals( [
-			'wgTranslateGroupFiles' => [ __DIR__ . '../../data/MixedSourceLanguageGroups.yaml' ],
+		$this->overrideConfigValues( [
+			'TranslateGroupFiles' => [ __DIR__ . '../../data/MixedSourceLanguageGroups.yaml' ],
 		] );
 		$config = new MessageGroupTestConfig();
 		$config->skipMessageIndexRebuild = true;

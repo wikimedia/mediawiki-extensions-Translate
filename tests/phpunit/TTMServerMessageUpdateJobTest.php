@@ -18,8 +18,8 @@ class TTMServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		self::$mockups = [];
-		$this->setMwGlobals( [
-			'wgTranslateTranslationServices' => [
+		$this->overrideConfigValues( [
+			'TranslateTranslationServices' => [
 				'primary' => [
 					'class' => TestableTTMServer::class,
 					// will be used as the key in static::$mockups to attach the

@@ -16,8 +16,8 @@ class YamlTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgTranslateYamlLibrary' => 'phpyaml',
+		$this->overrideConfigValues( [
+			'TranslateYamlLibrary' => 'phpyaml',
 		] );
 	}
 

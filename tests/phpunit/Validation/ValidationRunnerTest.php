@@ -23,7 +23,7 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 
 		// Run with empty ignore list by default
-		$this->setMwGlobals( 'wgTranslateValidationExclusionFile', false );
+		$this->overrideConfigValue( 'TranslateValidationExclusionFile', false );
 		ValidationRunner::reloadIgnorePatterns();
 	}
 
@@ -165,8 +165,8 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testIgnoreList() {
-		$this->setMwGlobals( [
-			'wgTranslateValidationExclusionFile' => __DIR__ . '/../data/validation-exclusion-list.php'
+		$this->overrideConfigValues( [
+			'TranslateValidationExclusionFile' => __DIR__ . '/../data/validation-exclusion-list.php',
 		] );
 
 		$group = MessageGroups::getGroup( 'test-group' );

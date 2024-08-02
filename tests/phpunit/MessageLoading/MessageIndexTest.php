@@ -27,10 +27,10 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ]
+		$this->overrideConfigValues( [
+			'TranslateCacheDirectory' => $this->getNewTempDirectory(),
+			'TranslateTranslationServices' => [],
+			'TranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );

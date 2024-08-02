@@ -35,13 +35,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 		$this->setupGroupTestEnvironment( $this );
 
-		$this->setMwGlobals( [
-			'wgGroupPermissions' => [
-				'sysop' => [
-					'translate-manage' => true,
-				],
-			],
-		] );
+		$this->setGroupPermissions( 'sysop', 'translate-manage', true );
 	}
 
 	public function getTestGroups() {

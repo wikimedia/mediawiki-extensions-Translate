@@ -26,12 +26,12 @@ trait MessageGroupTestTrait {
 		MediaWikiIntegrationTestCase $case,
 		MessageGroupTestConfig $config
 	): void {
-		$case->setMwGlobals( [
-			'wgEnablePageTranslation' => true,
-			'wgTranslateTranslationServices' => [],
-			'wgTranslateDocumentationLanguageCode' => 'qqq',
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-			'wgTranslateMessageIndex' => 'hash'
+		$case->overrideConfigValues( [
+			'EnablePageTranslation' => true,
+			'TranslateTranslationServices' => [],
+			'TranslateDocumentationLanguageCode' => 'qqq',
+			'TranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'TranslateMessageIndex' => 'hash',
 		] );
 
 		if ( $config->groupInitLoaders ) {

@@ -18,7 +18,7 @@ class AndroidXmlFormatTest extends MediaWikiIntegrationTestCase {
 	private const DOCLANG = 'qqq';
 
 	protected function setUp(): void {
-		$this->setMwGlobals( 'wgTranslateDocumentationLanguageCode', self::DOCLANG );
+		$this->overrideConfigValue( 'TranslateDocumentationLanguageCode', self::DOCLANG );
 	}
 
 	private array $groupConfiguration = [

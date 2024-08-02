@@ -19,8 +19,8 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
+		$this->overrideConfigValues( [
+			'TranslateCacheDirectory' => $this->getNewTempDirectory(),
 		] );
 
 		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );

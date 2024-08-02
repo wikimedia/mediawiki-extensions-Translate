@@ -100,8 +100,8 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 
 	public function testModifyMessageGroupStates() {
 		// Create a basic workflow.
-		$this->setMwGlobals( [
-			'wgTranslateWorkflowStates' => [
+		$this->overrideConfigValues( [
+			'TranslateWorkflowStates' => [
 				'progress' => [ 'color' => 'd33' ],
 				'proofreading' => [ 'color' => 'fc3' ],
 			],

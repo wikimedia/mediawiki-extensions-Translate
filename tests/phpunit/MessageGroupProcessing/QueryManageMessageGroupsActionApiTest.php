@@ -23,8 +23,8 @@ class QueryManageMessageGroupsActionApiTest extends ApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgTranslateCacheDirectory' => $this->getNewTempDirectory()
+		$this->overrideConfigValues( [
+			'TranslateCacheDirectory' => $this->getNewTempDirectory()
 		] );
 
 		$this->setGroupPermissions( 'translate-admin', 'translate-manage', true );

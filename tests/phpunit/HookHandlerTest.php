@@ -25,9 +25,9 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgTranslateDocumentationLanguageCode' => 'qqq',
-			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		$this->overrideConfigValues( [
+			'TranslateDocumentationLanguageCode' => 'qqq',
+			'TranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
 
 		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );

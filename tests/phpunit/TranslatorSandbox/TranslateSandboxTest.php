@@ -22,9 +22,9 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgTranslateUseSandbox' => true,
-			'wgTranslateSandboxPromotedGroup' => 'translator',
+		$this->overrideConfigValues( [
+			'TranslateUseSandbox' => true,
+			'TranslateSandboxPromotedGroup' => 'translator',
 		] );
 		$this->translateSandbox = Services::getInstance()->getTranslateSandbox();
 		// Make sure the hooks are installed even if $wgTranslateUseSandbox is false.
