@@ -258,6 +258,8 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			$infoMessage .= $this->getSectionHeader(
 				'pt-movepage-list-nonmovable', $nonMovableSubpages, $leaveRedirect
 			);
+			$infoMessage .= $this->message( 'pt-movepage-list-nonmovable-note' )
+				->numParams( count( $nonMovableSubpages ) )->text() . "\n";
 			foreach ( $nonMovableSubpages as $page => $status ) {
 				$invalidityReason = $this->formatterFactory
 					->getStatusFormatter( RequestContext::getMain() )

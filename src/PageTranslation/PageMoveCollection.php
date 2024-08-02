@@ -32,6 +32,7 @@ class PageMoveCollection {
 	 * @param PageMoveOperation[] $translationPagePairs Translation pages
 	 * @param PageMoveOperation[] $unitPagesPairs Translation unit pages
 	 * @param PageMoveOperation[] $subpagesPairs Non translatable sub pages
+	 * @param array<string,Status> $nonMovableSubpages Subpages that are not movable
 	 * @param Title[] $translatableSubpages
 	 */
 	public function __construct(
@@ -39,6 +40,7 @@ class PageMoveCollection {
 		array $translationPagePairs,
 		array $unitPagesPairs,
 		array $subpagesPairs,
+		array $nonMovableSubpages,
 		array $translatableSubpages
 	) {
 		$this->translatablePage = $translatablePage;
@@ -52,7 +54,7 @@ class PageMoveCollection {
 			$this->translatablePage, ...$translationPagePairs, ...$unitPagesPairs, ...$subpagesPairs
 		);
 
-		$this->nonMovableSubpages = [];
+		$this->nonMovableSubpages = $nonMovableSubpages;
 	}
 
 	public function getTranslatablePage(): PageMoveOperation {
@@ -125,41 +127,12 @@ class PageMoveCollection {
 	}
 
 	/**
-	 * Adds provided page to non-movable subpage list, and removes it from
-	 * other (movable) subpage list.
-	 * @param Title $page The page which cannot be moved.
-	 * @param Status $invalidityReason The error status returned by MovePage.
-	 *
-	 * @return bool Whether the page has been found and removed from movable
-	 * subpage list.
-	 */
-	public function addNonMovableSubpage( Title $page, Status $invalidityReason ): bool {
-		$this->nonMovableSubpages[ $page->getPrefixedText() ] = $invalidityReason;
-
-		return $this->removeFromSubpageList( $page );
-	}
-
-	/**
 	 * Get list of sub-pages which cannot be moved for various reasons
 	 * (e.g. the target page already exists). Those do not include translatable
 	 * sub-pages which cannot be moved because of current limitation.
 	 */
 	public function getNonMovableSubpages(): array {
 		return $this->nonMovableSubpages;
-	}
-
-	/**
-	 * Removes provided subpage from list of subpages.
-	 * @return bool Whether the page has been found and removed from the list.
-	 */
-	private function removeFromSubpageList( Title $page ): bool {
-		foreach ( $this->subpagesPairs as $key => $pair ) {
-			if ( $pair->getOldTitle() === $page ) {
-				unset( $this->subpagesPairs[ $key ] );
-				return true;
-			}
-		}
-		return false;
 	}
 
 	/**

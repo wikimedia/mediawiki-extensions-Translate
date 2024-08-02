@@ -160,11 +160,7 @@ class TranslatableBundleMover {
 				// Do not check for permissions here, as these pages are not editable/movable
 				// in regular use
 				if ( !$status->isOK() ) {
-					if ( $type === 'subpage' ) {
-						$pageCollection->addNonMovableSubpage( $old, $status );
-					} else {
-						$blockers[$old] = $status;
-					}
+					$blockers[$old] = $status;
 				}
 
 				/* Because of the poor performance, check only one of the possibly thousands
@@ -267,6 +263,8 @@ class TranslatableBundleMover {
 
 		$talkPages = $moveTalkPages ? $classifiedSubpages['talkPages'] : [];
 		$subpages = $moveSubPages ? $classifiedSubpages['normalSubpages'] : [];
+		$nonMovableSubpages = [];
+
 		$relatedTranslatablePageList = [];
 		if ( $fetchTranslatableSubpages ) {
 			$relatedTranslatablePageList = array_merge(
@@ -275,14 +273,30 @@ class TranslatableBundleMover {
 			);
 		}
 
+		$movePageFactory = $this->movePageFactory;
 		$pageTitleRenamer = new PageTitleRenamer( $source, $target );
-		$createOps = static function ( array $pages, string $pageType )
-			use ( $pageTitleRenamer, $talkPages, $leaveRedirect ) {
+		$createOps = function ( array $pages, string $pageType )
+			use ( $pageTitleRenamer, $talkPages, &$nonMovableSubpages, $leaveRedirect, $movePageFactory ) {
 			$leaveRedirect = self::shouldLeaveRedirect( $pageType, $leaveRedirect );
 			$ops = [];
 			foreach ( $pages as $from ) {
 				$to = $pageTitleRenamer->getNewTitle( $from );
 				$op = new PageMoveOperation( $from, $to );
+
+				if ( $pageType === 'pt-movepage-list-other' ) {
+					// TODO: In the future, think of moving all checks regarding whether a page
+					// is movable into this method. Currently its' being checked in two places
+					// making things slow.
+					$movePage = $movePageFactory->newMovePage( $from, $to );
+					$status = $movePage->isValidMove();
+
+					// Remove non movable subpages
+					if ( !$status->isOK() ) {
+						$nonMovableSubpages[ $from->getPrefixedText() ] = $status;
+						continue;
+					}
+				}
+
 				$op->setLeaveRedirect( $leaveRedirect );
 
 				$talkPage = $talkPages[ $from->getPrefixedDBkey() ] ?? null;
@@ -300,6 +314,7 @@ class TranslatableBundleMover {
 			$createOps( $classifiedSubpages['translationPages'], 'pt-movepage-list-translation' ),
 			$createOps( $classifiedSubpages['translationUnitPages'], 'pt-movepage-list-section' ),
 			$createOps( $subpages, 'pt-movepage-list-other' ),
+			$nonMovableSubpages,
 			$relatedTranslatablePageList
 		);
 	}

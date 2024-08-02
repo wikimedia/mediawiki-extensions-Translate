@@ -317,7 +317,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		if ( $nonMovableSubpages ) {
 			$this->addSectionHeaderAndMessage( $out, 'pt-movepage-list-nonmovable', $nonMovableSubpages );
 			$lines = [];
-			$out->wrapWikiMsg( "'''$1'''", $this->msg( 'pt-movepage-list-nonmovable-note' ) );
+			$out->wrapWikiMsg( "'''$1'''", [ 'pt-movepage-list-nonmovable-note', count( $nonMovableSubpages ) ] );
 			foreach ( $nonMovableSubpages as $page => $status ) {
 				$invalidityReason = $this->formatterFactory
 					->getStatusFormatter( $this->getContext() )
