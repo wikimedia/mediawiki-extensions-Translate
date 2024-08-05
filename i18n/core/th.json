@@ -281,6 +281,8 @@
 	"tux-editor-placeholder-language": "การแปลของคุณใน $1",
 	"tux-editor-editsummary-placeholder": "อธิบายการเปลี่ยนแปลงของคุณ (ไม่บังคับ)",
 	"tux-editor-paste-original-button-label": "วางข้อความต้นฉบับ",
+	"tux-editor-copy-original-button-label": "คัดลอกข้อความต้นฉบับ",
+	"tux-editor-copied-original-button-label": "คัดลอกแล้ว!",
 	"tux-editor-discard-changes-button-label": "ละทิ้งการเปลี่ยนแปลง",
 	"tux-editor-save-button-label": "บันทึกการแปล",
 	"tux-editor-skip-button-label": "ข้ามไปข้อความถัดไป",
