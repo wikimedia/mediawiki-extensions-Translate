@@ -24,7 +24,8 @@
 			"VezonThunder",
 			"Vililikku",
 			"Yupik",
-			"ZeiP"
+			"ZeiP",
+			"Samoasambia"
 		]
 	},
 	"translate": "Käännä",
@@ -107,6 +108,7 @@
 	"translate-checks-newline-extra-end": "Käännöksen lopussa on $1 {{PLURAL:$1|ylimääräinen rivinvaihto|ylimääräistä rivinvaihtoa}}.",
 	"translate-checks-value-not-present": "Käännöksen täytyy olla {{PLURAL:$1|1=|yksi seuraavista vaihtoehdoista:}} $1.",
 	"translate-checks-replacement": "Käytä $2 $1 sijasta.",
+	"translate-checks-empty": "Käännökset ilman sisältöä tai vain tulostumattomia merkkejä sisältävät käännökset eivät ole sallittuja.",
 	"translate-pref-editassistlang": "Apukielet:",
 	"prefs-translate": "Käännösasetukset",
 	"translate-pref-editassistlang-help": "Pilkuin eroteltu lista kielikoodeista.\nViestin käännökset näillä kielillä näkyvät kääntäessäsi.\nAsetuksen oletusarvoiset kielet riippuvat kielestä, jolle olet kääntämässä.",
@@ -207,6 +209,7 @@
 	"translate-mgs-totals": "Kaikki $1 {{PLURAL:$1|kieltä}} yhdessä",
 	"translate-mgs-invalid-group": "Määritettyä ryhmää $1 ei ole.",
 	"translate-mgs-nothing": "Pyydetyille tilastoille ei löydy tuloksia.",
+	"translate-tes-server-error": "Ehdotusten haku epäonnistui",
 	"translate-tes-type-to-search": "Kirjoita aloittaaksesi haun",
 	"supportedlanguages": "Aktiiviset kielet",
 	"supportedlanguages-summary": "Tällä sivulla luetellaan aktiiviset kielet {{GRAMMAR:inessive|{{SITENAME}}}}, sekä kaikki näillä kielillä työskentelevät kääntäjät.\nKääntäjän nimi on sitä suurempi, mitä enemmän hän on tehnyt käännöksiä.\nAlleviivauksen väri kertoo, milloin kääntäjä on viimeksi kääntänyt täällä.",
@@ -232,6 +235,8 @@
 	"translate-smg-right": "Tulevat muutokset",
 	"translate-smg-rename-select": "Valitse",
 	"translate-smg-rename-cancel": "Peruuta",
+	"translate-smg-rename-search": "Hae vastaavia viestejä...",
+	"translate-smg-rename-select-err": "Valitse viesti uudelleennimettäväksi",
 	"translate-smg-rename-no-msg": "Viestejä ei löytynyt.",
 	"translate-smg-rename-new": "Lisää uutena...",
 	"translate-smg-strong-sync-help": "Ohje",
@@ -239,6 +244,7 @@
 	"translate-smg-group-action-resolve": "Merkitse ratkaistuksi",
 	"translate-smg-group-message-tag-outdated": "Vanhentunut",
 	"translate-smg-group-message-tag-rename": "Nimeä uudelleen",
+	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Merkintä|Merkinnät}}:",
 	"translate-smg-group-message-message-content": "Sisältö:",
 	"translate-smg-group-message-message-target": "Kohde:",
 	"translate-smg-group-message-message-other-langs": "Muut kielet:",

@@ -5,7 +5,9 @@
 			"Himiq Dzyu",
 			"Timming",
 			"Ерней",
-			"Ильнар"
+			"Ильнар",
+			"Don Alessandro",
+			"Ильгиз"
 		]
 	},
 	"translate": "Тәрҗемә",
@@ -91,8 +93,8 @@
 	"translate-langstats-collapseall": "барысын да төрү",
 	"translate-language-code": "Телнең коды",
 	"translate-language-code-field-name": "Телнең коды:",
-	"translate-suppress-complete": "Тулысынча тәрҗемә ителгән хәбәр тупламнарын күрсәтмәскә",
-	"translate-ls-noempty": "Тулысынча тәрҗемә ителмәгән хәбәр тупламнарын күрсәтмәскә",
+	"translate-suppress-complete": "Тулысынча тәрҗемә ителгән хәбәр тупламнарын күрсәтелмәсен",
+	"translate-ls-noempty": "Тулысынча тәрҗемә ителмәгән хәбәр тупламнарын күрсәтелмәсен",
 	"translate-language": "Тел",
 	"translate-total": "Хәбәрләр",
 	"translate-untranslated": "Тәрҗемә ителмәгәннәре",
