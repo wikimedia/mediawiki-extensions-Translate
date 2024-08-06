@@ -391,7 +391,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			Html::openElement( 'form', $formParams ) .
 			$hidden .
 			$this->msg( 'tpt-generic-confirm' )->parseAsBlock() .
-			Xml::submitButton(
+			Html::submitButton(
 				$this->msg( 'tpt-generic-button' )->text(),
 				[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 			) .
@@ -412,7 +412,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			Html::hidden( 'target', $target->getPrefixedText() ) .
 			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
 			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedText() )->parseAsBlock() .
-			Xml::submitButton(
+			Html::submitButton(
 				$this->msg( 'tpt-unlink-button' )->text(),
 				[ 'class' => 'mw-ui-button mw-ui-destructive' ]
 			) .

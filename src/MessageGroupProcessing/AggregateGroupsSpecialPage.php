@@ -9,7 +9,6 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
-use Xml;
 use XmlSelect;
 
 /**
@@ -117,11 +116,11 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				'text',
 				[ 'class' => 'tp-aggregategroup-edit-description' ]
 			);
-			$saveButton = Xml::submitButton(
+			$saveButton = Html::submitButton(
 				$this->msg( 'tpt-aggregategroup-update' )->text(),
 				[ 'class' => 'tp-aggregategroup-update' ]
 			);
-			$cancelButton = Xml::submitButton(
+			$cancelButton = Html::submitButton(
 				$this->msg( 'tpt-aggregategroup-update-cancel' )->text(),
 				[ 'class' => 'tp-aggregategroup-update-cancel' ]
 			);

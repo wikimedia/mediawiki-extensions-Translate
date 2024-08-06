@@ -162,7 +162,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 					$this->getRequest()->getText( 'upload-local' ),
 					[ 'type' => 'file' ]
 				) .
-				Xml::submitButton( $this->msg( 'translate-import-load' )->text() ) .
+				Html::submitButton( $this->msg( 'translate-import-load' )->text() ) .
 				Xml::closeElement( 'form' )
 		);
 	}

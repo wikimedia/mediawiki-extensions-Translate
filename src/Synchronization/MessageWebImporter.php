@@ -342,7 +342,7 @@ class MessageWebImporter {
 				}
 				$output->addHTML( Html::hidden( 'language', $code ) );
 				$output->addHTML( implode( "\n", $changed ) );
-				$output->addHTML( Xml::submitButton( $context->msg( 'translate-manage-submit' )->text() ) );
+				$output->addHTML( Html::submitButton( $context->msg( 'translate-manage-submit' )->text() ) );
 			} else {
 				$output->addWikiMsg( 'translate-manage-nochanges' );
 			}

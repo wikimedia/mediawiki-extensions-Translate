@@ -88,7 +88,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			) . Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'preview', 1 ) . '<table>'
 		);
-		$submit = Xml::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
+		$submit = Html::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
 		$out->addHTML(
 			$this->eInput( 'width', $opts ) . $this->eInput( 'height', $opts ) .
 			'<tr><td colspan="2"><hr /></td></tr>' . $this->eInput( 'start', $opts, 24 ) .
