@@ -207,6 +207,7 @@
 	"pt-movepage-list-translation": "Page{{PLURAL:$1||s}} de traduction",
 	"pt-movepage-list-section": "{{PLURAL:$1|Page de l’unité|Pages des unités}} de traduction",
 	"pt-movepage-list-nonmovable": "{{PLURAL:$1|Page|Pages}} deplacement en bloc des sous-pages",
+	"pt-movepage-list-nonmovable-note": "Comme les {{PLURAL:$1|sous-page|sous-pages}} suivantes ne peuvent être déplacées pour diverses raisons, aucune sous-page ne sera déplacée.",
 	"pt-movepage-list-translatable": "Sous-page{{PLURAL:$1||s}} marquée{{PLURAL:$1||s}} à traduire",
 	"pt-movepage-list-translatable-note": "Ces pages doivent être renommées séparément.",
 	"pt-movepage-list-other": "Autre{{PLURAL:$1||s}} sous-page{{PLURAL:$1||s}}",
