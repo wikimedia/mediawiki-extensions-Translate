@@ -23,7 +23,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use Psr\Log\LoggerInterface;
-use WANObjectCache;
 
 /**
  * @author Niklas Laxström
@@ -38,7 +37,6 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 	private static self $instance;
 	private LoggerInterface $logger;
 	private MessageBundleStore $messageBundleStore;
-	private WANObjectCache $WANObjectCache;
 	private LinkRenderer $linkRenderer;
 	private bool $enableIntegration;
 	private TitleFactory $titleFactory;
@@ -46,7 +44,6 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 
 	public function __construct(
 		LoggerInterface $logger,
-		WANObjectCache $WANObjectCache,
 		MessageBundleStore $messageBundleStore,
 		LinkRenderer $linkRenderer,
 		TitleFactory $titleFactory,
@@ -54,7 +51,6 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 		bool $enableIntegration
 	) {
 		$this->logger = $logger;
-		$this->WANObjectCache = $WANObjectCache;
 		$this->messageBundleStore = $messageBundleStore;
 		$this->linkRenderer = $linkRenderer;
 		$this->titleFactory = $titleFactory;
@@ -66,7 +62,6 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 		$services = MediaWikiServices::getInstance();
 		self::$instance ??= new self(
 			LoggerFactory::getInstance( 'Translate.MessageBundle' ),
-			$services->getMainWANObjectCache(),
 			$services->get( 'Translate:MessageBundleStore' ),
 			$services->getLinkRenderer(),
 			$services->getTitleFactory(),
