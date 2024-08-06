@@ -31,7 +31,7 @@ class PageMoveCollection {
 	 * @param PageMoveOperation $translatablePage
 	 * @param PageMoveOperation[] $translationPagePairs Translation pages
 	 * @param PageMoveOperation[] $unitPagesPairs Translation unit pages
-	 * @param PageMoveOperation[] $subpagesPairs Non translatable sub pages
+	 * @param PageMoveOperation[] $subpagesPairs Non-translatable subpages
 	 * @param array<string,Status> $nonMovableSubpages Subpages that are not movable
 	 * @param Title[] $translatableSubpages
 	 */
@@ -127,9 +127,9 @@ class PageMoveCollection {
 	}
 
 	/**
-	 * Get list of sub-pages which cannot be moved for various reasons
+	 * Get list of subpages which cannot be moved for various reasons
 	 * (e.g. the target page already exists). Those do not include translatable
-	 * sub-pages which cannot be moved because of current limitation.
+	 * subpages which cannot be moved because of current limitation.
 	 */
 	public function getNonMovableSubpages(): array {
 		return $this->nonMovableSubpages;
