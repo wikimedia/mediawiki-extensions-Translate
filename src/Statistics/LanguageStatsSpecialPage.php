@@ -19,7 +19,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
 use ObjectCacheFactory;
 use Wikimedia\ObjectCache\BagOStuff;
-use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 
 /**
@@ -64,7 +63,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private LinkBatchFactory $linkBatchFactory;
 	private ProgressStatsTableFactory $progressStatsTableFactory;
 	private JobQueueGroup $jobQueueGroup;
-	private ILoadBalancer $loadBalancer;
 	private MessageGroupReviewStore $groupReviewStore;
 	private BagOStuff $cache;
 
@@ -73,7 +71,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		ProgressStatsTableFactory $progressStatsTableFactory,
 		LanguageNameUtils $languageNameUtils,
 		JobQueueGroup $jobQueueGroup,
-		ILoadBalancer $loadBalancer,
 		MessageGroupReviewStore $groupReviewStore,
 		ObjectCacheFactory $objectCacheFactory
 	) {
@@ -83,7 +80,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->jobQueueGroup = $jobQueueGroup;
-		$this->loadBalancer = $loadBalancer;
 		$this->groupReviewStore = $groupReviewStore;
 		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}

@@ -288,7 +288,6 @@
 				"Translate:ProgressStatsTableFactory",
 				"LanguageNameUtils",
 				"JobQueueGroup",
-				"DBLoadBalancer",
 				"Translate:MessageGroupReviewStore",
 				"ObjectCacheFactory"
 			]
