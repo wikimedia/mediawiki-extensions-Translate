@@ -1523,7 +1523,7 @@
 	 *
 	 * @internal
 	 * @param {Object} options
-	 * @returns {jQuery}
+	 * @return {jQuery}
 	 */
 	$.fn.translateeditor = function ( options ) {
 		return this.each( function () {

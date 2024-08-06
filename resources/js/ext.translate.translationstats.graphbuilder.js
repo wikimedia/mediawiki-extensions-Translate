@@ -66,7 +66,10 @@
 
 		$graphWrapper.append( $graphElement );
 
-		/** @internal */
+		/**
+		 * @param options
+		 * @internal
+		 */
 		function display( options ) {
 			if ( lineChart ) {
 				cleanup();

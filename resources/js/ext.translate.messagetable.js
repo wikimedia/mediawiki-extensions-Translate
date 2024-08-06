@@ -789,6 +789,7 @@
 
 		/**
 		 * Clear errors encountered during the loading state
+		 *
 		 * @private
 		 */
 		clearLoadErrors: function () {

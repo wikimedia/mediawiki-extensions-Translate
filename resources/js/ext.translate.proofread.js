@@ -288,7 +288,7 @@
 	 *
 	 * @internal
 	 * @param {Object} options
-	 * @returns {jQuery}
+	 * @return {jQuery}
 	 */
 	$.fn.proofread = function ( options ) {
 		return this.each( function () {

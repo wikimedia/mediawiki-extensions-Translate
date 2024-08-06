@@ -387,7 +387,11 @@
 			$heading.removeClass( 'hide' );
 		},
 
-		/** @internal */
+		/**
+		 * @param e
+		 * @param suggestion
+		 * @internal
+		 */
 		onShowTranslationMemorySources: function ( e, suggestion ) {
 			e.stopPropagation();
 

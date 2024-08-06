@@ -135,7 +135,7 @@
 	 *
 	 * @internal
 	 * @param {Object} options
-	 * @returns {jQuery}
+	 * @return {jQuery}
 	 */
 	$.fn.pagemode = function ( options ) {
 		return this.each( function () {

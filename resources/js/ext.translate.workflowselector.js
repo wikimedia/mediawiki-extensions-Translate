@@ -163,7 +163,7 @@
 	 * @param {string} groupId
 	 * @param {string} language
 	 * @param {string} state
-	 * @returns {jQuery}
+	 * @return {jQuery}
 	 */
 	$.fn.workflowselector = function ( groupId, language, state ) {
 		return this.each( function () {
