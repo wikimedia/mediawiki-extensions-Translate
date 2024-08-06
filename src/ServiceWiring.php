@@ -359,6 +359,7 @@ return [
 			$services->get( 'Translate:TranslatableBundleFactory' ),
 			$services->get( 'Translate:SubpageListBuilder' ),
 			$services->getConnectionProvider(),
+			$services->getObjectCacheFactory(),
 			$services->getMainConfig()->get( 'TranslatePageMoveLimit' )
 		);
 	},

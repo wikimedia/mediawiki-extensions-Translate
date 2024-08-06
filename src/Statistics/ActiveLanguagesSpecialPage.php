@@ -17,7 +17,8 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use ObjectCache;
+use ObjectCacheFactory;
+use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -39,6 +40,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	private StatsTable $progressStatsTable;
 	private LinkBatchFactory $linkBatchFactory;
 	private LanguageFactory $languageFactory;
+	private BagOStuff $cache;
 	/** Cutoff time for inactivity in days */
 	private int $period = 180;
 
@@ -55,7 +57,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		Language $contentLanguage,
 		ProgressStatsTableFactory $progressStatsTableFactory,
 		LinkBatchFactory $linkBatchFactory,
-		LanguageFactory $languageFactory
+		LanguageFactory $languageFactory,
+		ObjectCacheFactory $objectCacheFactory
 	) {
 		parent::__construct( 'SupportedLanguages' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
@@ -67,6 +70,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->progressStatsTableFactory = $progressStatsTableFactory;
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->languageFactory = $languageFactory;
+		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
 	protected function getGroupName() {
@@ -202,11 +206,9 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	private function languageCloud(): array {
-		// TODO: Inject a factory when such a thing is available in MediaWiki core
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
-		$cachekey = $cache->makeKey( 'translate-supportedlanguages-language-cloud', 'v2' );
+		$cacheKey = $this->cache->makeKey( 'translate-supportedlanguages-language-cloud', 'v2' );
 
-		$data = $cache->get( $cachekey );
+		$data = $this->cache->get( $cacheKey );
 		if ( is_array( $data ) ) {
 			return $data;
 		}
@@ -233,7 +235,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			$data[$row->lang] = (int)$row->count;
 		}
 
-		$cache->set( $cachekey, $data, 3600 );
+		$this->cache->set( $cacheKey, $data, 3600 );
 
 		return $data;
 	}

@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use BagOStuff;
 use JobQueueGroup;
 use LogicException;
 use MediaWiki\Cache\LinkBatchFactory;
@@ -16,7 +17,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use Message;
-use ObjectCache;
+use ObjectCacheFactory;
 use SplObjectStorage;
 use Wikimedia\Rdbms\IConnectionProvider;
 
@@ -36,6 +37,7 @@ class TranslatableBundleMover {
 	private TranslatableBundleFactory $bundleFactory;
 	private SubpageListBuilder $subpageBuilder;
 	private IConnectionProvider $dbProvider;
+	private BagOStuff $cache;
 	private bool $pageMoveLimitEnabled = true;
 
 	private const REDIRECTABLE_PAGE_TYPES = [
@@ -54,6 +56,7 @@ class TranslatableBundleMover {
 		TranslatableBundleFactory $bundleFactory,
 		SubpageListBuilder $subpageBuilder,
 		IConnectionProvider $dbProvider,
+		ObjectCacheFactory $objectCacheFactory,
 		?int $pageMoveLimit
 	) {
 		$this->movePageFactory = $movePageFactory;
@@ -63,6 +66,7 @@ class TranslatableBundleMover {
 		$this->bundleFactory = $bundleFactory;
 		$this->subpageBuilder = $subpageBuilder;
 		$this->dbProvider = $dbProvider;
+		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
 	public function getPageMoveCollection(
@@ -321,23 +325,21 @@ class TranslatableBundleMover {
 
 	/** @param string[] $titles */
 	private function lock( array $titles ): void {
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 		$data = [];
 		foreach ( $titles as $title ) {
-			$data[$cache->makeKey( 'pt-lock', sha1( $title ) )] = 'locked';
+			$data[$this->cache->makeKey( 'pt-lock', sha1( $title ) )] = 'locked';
 		}
 
 		// Do not lock pages indefinitely during translatable page moves since
 		// they can fail. Add a timeout so that the locks expire by themselves.
 		// Timeout value has been chosen by a gut feeling
-		$cache->setMulti( $data, self::LOCK_TIMEOUT );
+		$this->cache->setMulti( $data, self::LOCK_TIMEOUT );
 	}
 
 	/** @param string[] $titles */
 	private function unlock( array $titles ): void {
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
 		foreach ( $titles as $title ) {
-			$cache->delete( $cache->makeKey( 'pt-lock', sha1( $title ) ) );
+			$this->cache->delete( $this->cache->makeKey( 'pt-lock', sha1( $title ) ) );
 		}
 	}
 

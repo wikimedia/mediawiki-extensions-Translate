@@ -17,7 +17,8 @@ use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
-use ObjectCache;
+use ObjectCacheFactory;
+use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Rdbms\ILoadBalancer;
 use WikiPageMessageGroup;
 
@@ -65,6 +66,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private JobQueueGroup $jobQueueGroup;
 	private ILoadBalancer $loadBalancer;
 	private MessageGroupReviewStore $groupReviewStore;
+	private BagOStuff $cache;
 
 	public function __construct(
 		LinkBatchFactory $linkBatchFactory,
@@ -72,7 +74,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		LanguageNameUtils $languageNameUtils,
 		JobQueueGroup $jobQueueGroup,
 		ILoadBalancer $loadBalancer,
-		MessageGroupReviewStore $groupReviewStore
+		MessageGroupReviewStore $groupReviewStore,
+		ObjectCacheFactory $objectCacheFactory
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
@@ -82,6 +85,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->loadBalancer = $loadBalancer;
 		$this->groupReviewStore = $groupReviewStore;
+		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
 	public function isIncludable() {
@@ -450,11 +454,9 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$params[] = $parent ? $parent->getId() : '!';
 		$params[] = $depth;
 
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
-
-		return $cache->getWithSetCallback(
-			$cache->makeKey( __METHOD__ . '-v3', implode( '-', $params ) ),
-			$cache::TTL_DAY,
+		return $this->cache->getWithSetCallback(
+			$this->cache->makeKey( __METHOD__ . '-v3', implode( '-', $params ) ),
+			$this->cache::TTL_DAY,
 			function () use ( $translated, $total, $groupId, $group, $parent, $stats, $depth ) {
 				// Any data variable read below should be part of the cache key above
 				$extra = [];

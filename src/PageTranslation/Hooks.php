@@ -37,7 +37,6 @@ use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use ObjectCache;
 use OutputPage;
 use Parser;
 use ParserOutput;
@@ -1420,7 +1419,7 @@ class Hooks {
 			return true;
 		}
 
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
 		$key = $cache->makeKey( 'pt-lock', sha1( $title->getPrefixedText() ) );
 		if ( $cache->get( $key ) === 'locked' ) {
 			$result = [ 'pt-locked-page' ];

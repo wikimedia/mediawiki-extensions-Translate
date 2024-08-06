@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\WebService;
 use Exception;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use ObjectCache;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Multipurpose class:
@@ -22,6 +22,8 @@ use Psr\Log\LoggerInterface;
  * @defgroup TranslationWebService Translation Web Services
  */
 abstract class TranslationWebService implements LoggerAwareInterface {
+	private ?BagOStuff $cache;
+
 	/* Public api */
 
 	/**
@@ -223,7 +225,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * @throws TranslationWebServiceConfigurationException
 	 */
 	protected function getSupportedLanguagePairs(): array {
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cache = $this->getObjectCache();
 
 		return $cache->getWithSetCallback(
 			$cache->makeKey( 'translate-tmsug-pairs-' . $this->service ),
@@ -281,7 +283,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	/** Checks whether the service has exceeded failure count */
 	public function checkTranslationServiceFailure(): bool {
 		$service = $this->service;
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cache = $this->getObjectCache();
 
 		$key = $cache->makeKey( "translate-service-$service" );
 		$value = $cache->get( $key );
@@ -318,7 +320,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		$service = $this->service;
 		$this->logger->warning( "Translation service $service problem: $msg" );
 
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cache = $this->getObjectCache();
 		$key = $cache->makeKey( "translate-service-$service" );
 
 		$value = $cache->get( $key );
@@ -341,5 +343,13 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		} elseif ( $count > $this->serviceFailureCount ) {
 			$this->logger->warning( "Translation service $service still suspended" );
 		}
+	}
+
+	private function getObjectCache(): BagOStuff {
+		$this->cache ??= MediaWikiServices::getInstance()
+			->getObjectCacheFactory()
+			->getInstance( CACHE_ANYTHING );
+
+		return $this->cache;
 	}
 }
