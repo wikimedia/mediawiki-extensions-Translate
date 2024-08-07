@@ -18,13 +18,14 @@
 			"Pols12",
 			"Reza1615",
 			"ZxxZxxZ",
-			"پاناروما"
+			"پاناروما",
+			"Ebrahim"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
 	"right-pagetranslation": "علامت‌گذاری نسخه‌های صفحه برای ترجمه",
 	"action-pagetranslation": "مدیریت صفحه‌های قابل‌ترجمه",
-	"tps-edit-sourcepage-text": "شما در حال ویرایش صفحه ترجمه هستید. لطفاً مطمئن باشید که شما با مستندات زیر آشنا هستید:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text تغییردادن متن مبدأ]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples مثال علامت‌گذاری برای استفاده]",
+	"tps-edit-sourcepage-text": "شما در حال ویرایش صفحه ترجمه هستید. لطفاً مطمئن باشید که شما با مستندات زیر آشنا هستید:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text تغییر دادن متن مبدأ]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples مثال علامت‌گذاری برای استفاده]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "بعضی قسمت‌های قابل‌ترجمه ممکن است در این ویرایشگر  غیرقابل‌ویرایش باشد. لطفاً ویرایشگر مبدأ برای ویرایش آنها استفاده کنید.",
 	"tpt-section": "واحد ترجمهٔ $1",
 	"tpt-section-new": "واحد ترجمهٔ تازه.\nنام: $1",
