@@ -43,7 +43,7 @@ abstract class TtmServer {
 
 	/** Called from TranslateEditAddons::onSave */
 	public static function onChange( MessageHandle $handle ): void {
-		$job = TTMServerMessageUpdateJob::newJob( $handle, 'refresh' );
+		$job = TtmServerMessageUpdateJob::newJob( $handle, 'refresh' );
 		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 	}
 
