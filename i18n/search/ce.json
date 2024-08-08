@@ -11,7 +11,8 @@
 	"tux-sst-view-foreign": "Хьажар $1",
 	"tux-sst-search": "Лахар",
 	"tux-sst-search-ph": "Гочдарш лахар",
-	"tux-sst-count": "{{PLURAL:$1|Карина $1 хилам}}",
+	"tux-sst-search-info": "Лехаман критереш билгалйаха лелайе <code>language:</code> йа <code>group:</code> операторш.",
+	"tux-sst-count": "{{PLURAL:$1|Карийна $1 хилам}}",
 	"tux-sst-facet-language": "Меттанаш",
 	"tux-sst-facet-group": "Хаамийн тоба",
 	"tux-sst-nosolr-title": "Лахар тӀецакхочу",
@@ -28,5 +29,7 @@
 	"tux-sst-ellipsis-outdated": "Ширделла гочдарш",
 	"tux-sst-link-all-match": "Дерриг дешнаш лаха.",
 	"tux-sst-match-message": "Гойтуш ду лоьхуш долучу муьлхачу дешнашца догӀурш. $1",
-	"tux-sst-case-sensitive": "Регистр лоруш"
+	"tux-sst-case-sensitive": "Регистр лоруш",
+	"tux-sst-error-offset": "Кхин аьтто бац жамӀаш гайта. Дехар до, хьой лоьхург билгалдаккха.",
+	"tux-sst-error-language": "ХӀара мотт оцу тайпана лехамашна лело йиш йац."
 }
