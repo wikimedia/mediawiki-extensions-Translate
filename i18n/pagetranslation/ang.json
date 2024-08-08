@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gott wisst"
+			"Gott wisst",
+			"Hogweard"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ({{PLURAL:$2|$2% is awended|$2% sindon awended}})"
+	"tpt-languages-nonzero": "$1 ({{PLURAL:$2|$2% is awended|$2% sindon awended}})",
+	"pt-movepage-list-nonmovable": "Unwegend {{PLURAL:$1|undertramet|undertrametas}}",
+	"pt-movepage-list-nonmovable-note": "Þa folgenda {{PLURAL:$1|undertramet|undertrametas}} mot man ne awegan"
 }
