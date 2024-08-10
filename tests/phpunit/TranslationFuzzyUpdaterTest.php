@@ -8,9 +8,11 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Page\PageReference;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\UserIdentity;
 
 /**
  * Tests for fuzzy flag change on edits.
@@ -37,7 +39,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		return $list;
 	}
 
-	private function saveRevision( WikiPage $page, string $content, User $user ): ?RevisionRecord {
+	private function saveRevision( WikiPage $page, string $content, UserIdentity $user ): ?RevisionRecord {
 		$contentObj = ContentHandler::makeContent( $content, $page->getTitle() );
 		$updater = $page->newPageUpdater( $user )->setContent( SlotRecord::MAIN, $contentObj );
 		$revisionRecord = $updater->saveRevision( CommentStoreComment::newUnsavedComment( __METHOD__ ) );
@@ -46,7 +48,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @return int|false */
-	private function getLastLogId( Title $title ) {
+	private function getLastLogId( PageReference $title ) {
 		return $this->getDb()->newSelectQueryBuilder()
 				->select( 'max(log_id)' )
 				->from( 'logging' )
