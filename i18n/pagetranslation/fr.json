@@ -33,7 +33,9 @@
 			"Wyz",
 			"Y-M D",
 			"Yasten",
-			"Zetud"
+			"Zetud",
+			"Alien333",
+			"Méthodes Bulebe Hangi"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -41,7 +43,7 @@
 	"right-pagetranslation": "Marquer des versions de pages à traduire",
 	"action-pagetranslation": "gérer les pages traduisibles",
 	"tps-edit-sourcepage-text": "Vous modifiez une page de traduction source. Assurez-vous d’être familiarisé{{GENDER:||e}} avec la documentation suivante :\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Modifier le texte source]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Exemples de balisage à suivre]",
-	"tps-edit-sourcepage-ve-warning-limited-text": "Certains fragments traductibles peuvent ne pas être modifiables dans cet éditeur. Veuillez utiliser l’éditeur de wikicode source pour les modifier.",
+	"tps-edit-sourcepage-ve-warning-limited-text": "Certains fragments traductibles peuvent ne pas être modifiables dans cet éditeur. Utilisez l’éditeur de wikicode pour les modifier.",
 	"tps-edit-sourcepage-ve-warning-title": "Attention : page non prise en charge",
 	"tps-edit-sourcepage-ve-warning-text": "Vous modifiez une page traduisible. La modifier dans cet éditeur n’est pas encore officiellement pris en charge. Veuillez utiliser l’éditeur de wikicode.",
 	"tps-edit-sourcepage-ve-warning-button": "OK",
@@ -201,7 +203,7 @@
 	"pt-movepage-list-translatable-note": "Ces pages doivent être renommées séparément.",
 	"pt-movepage-list-other": "Autre{{PLURAL:$1||s}} sous-page{{PLURAL:$1||s}}",
 	"pt-movepage-list-count": "Au total, il y a $1 page{{PLURAL:$1||s}} à déplacer, dont $2 {{PLURAL:$2|sous-page|sous-pages}} et $3 {{PLURAL:$3|page de discussion|pages de discussion}}.",
-	"pt-movepage-page-count-limit": "La page traductible consiste en plus de $1 page{{PLURAL:$1||s}}. Déplacer en même temps un si grand nombre de pages s’est avéré peu fiable. Veuillez contacter un administrateur système pour réaliser ceci par un script de maintenance.",
+	"pt-movepage-page-count-limit": "La page traductible est composée de plus de $1 page{{PLURAL:$1||s}}. Déplacer en même temps un si grand nombre de pages s’est avéré peu fiable. Veuillez contacter un administrateur système pour réaliser ceci par un script de maintenance.",
 	"pt-movepage-list-no-pages": "Aucune page trouvée.",
 	"pt-movepage-legend": "Déplacer la page traduisible",
 	"pt-movepage-messagebundle-legend": "Déplacer le groupe de messages",
@@ -216,7 +218,7 @@
 	"pt-movepage-action-other": "Changer la cible",
 	"pt-movepage-intro": "Cette page spéciale vous permet de renommer des pages qui sont marquées comme étant à traduire.\nL’action de renommage ne sera pas immédiate car de nombreuses pages devront être déplacées.\nTant que les pages seront en cours de déplacement, il ne sera pas possible d’interagir avec elles.\nLes échecs seront enregistrés dans le [[$1|journal des traductions]] et devront être corrigés manuellement.",
 	"pt-movepage-logreason": "Partie de la page traductible « $1 »",
-	"pt-movepage-started": "Veuillez ouvrir le [[$1|journal des traductions]] dans quelques instants pour vérifier les erreurs éventuelles et lire le message de complétion.",
+	"pt-movepage-started": "Consultez le [[$1|journal des traductions]] dans quelques instants pour vérifier les erreurs éventuelles et lire le message d’achèvement.",
 	"pt-locked-page": "Cette page est verrouillée parce que la page traduisible est en cours de renommage.",
 	"pt-deletepage-lang-title": "Suppression de la page de traduction « $1 »",
 	"pt-deletepage-tp-title": "Suppression de la page traduisible « $1 »",
