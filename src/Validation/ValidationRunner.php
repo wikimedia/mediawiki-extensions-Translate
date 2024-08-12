@@ -310,7 +310,7 @@ class ValidationRunner {
 			if ( !is_array( $match ) ) {
 				throw new InvalidArgumentException(
 					"Invalid key matcher configuration passed. Expected type: array or string. " .
-					"Received: " . gettype( $match ) . ". match value: " . FormatJson::encode( $match )
+					"Received: " . get_debug_type( $match ) . ". match value: " . FormatJson::encode( $match )
 				);
 			}
 

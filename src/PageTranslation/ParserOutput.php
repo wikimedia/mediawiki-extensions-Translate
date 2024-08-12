@@ -134,7 +134,7 @@ class ParserOutput {
 	): void {
 		foreach ( $x as $item ) {
 			if ( !$item instanceof $expected ) {
-				$actual = gettype( $item );
+				$actual = get_debug_type( $item );
 				throw new InvalidArgumentException(
 					"Parameter $name must only contain instances of class $expected. Got $actual."
 				);

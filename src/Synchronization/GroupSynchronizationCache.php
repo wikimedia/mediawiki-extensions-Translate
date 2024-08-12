@@ -446,7 +446,7 @@ class GroupSynchronizationCache {
 	}
 
 	private function invalidArgument( $value, string $expectedType ): RuntimeException {
-		$valueType = $value ? get_class( $value ) : gettype( $value );
+		$valueType = get_debug_type( $value );
 		return new RuntimeException( "Expected $expectedType, got $valueType" );
 	}
 

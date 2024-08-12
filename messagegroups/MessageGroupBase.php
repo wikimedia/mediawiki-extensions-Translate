@@ -164,7 +164,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 			if ( !is_string( $config['class'] ) ) {
 				throw new InvalidArgumentException(
-					'Expected Insertable class to be string, got: ' . gettype( $config['class'] ) .
+					'Expected Insertable class to be string, got: ' . get_debug_type( $config['class'] ) .
 					' for group: ' . $this->getId()
 				);
 			}
