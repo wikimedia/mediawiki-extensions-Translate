@@ -76,7 +76,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			$addLogEntry = false;
 			// Add or remove from the list
 			if ( $action === 'associate' ) {
-				if ( !$this->aggregateGroupManager->supportsAggregation( $group ) ) {
+				if ( $group === null || !$this->aggregateGroupManager->supportsAggregation( $group ) ) {
 					$this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
 				}
 

@@ -164,7 +164,7 @@
 	"apierror-translate-invalidaggregategroup": "Invalid aggregate message group",
 	"apierror-translate-invalidaggregategroupname": "Invalid aggregate message group name",
 	"apierror-translate-invalidfilter": "$1",
-	"apierror-translate-invalidgroup": "Group does not exist or invalid",
+	"apierror-translate-invalidgroup": "Group does not exist or is invalid",
 	"apierror-translate-invalidstate": "The requested state is invalid.",
 	"apierror-translate-invalidlanguage": "Language code $1 is not valid.",
 	"apierror-translate-invalidupdate": "Invalid update",
