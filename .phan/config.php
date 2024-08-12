@@ -14,7 +14,6 @@ $cfg['directory_list'] = array_merge(
 		'messagegroups',
 		'scripts',
 		'src',
-		'ttmserver',
 		'../../extensions/AbuseFilter',
 		'../../extensions/AdminLinks',
 		'../../extensions/cldr',
