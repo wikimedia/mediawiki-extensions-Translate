@@ -137,6 +137,8 @@
 	"pt-movepage-list-pages": "Lëscht vun de Säite fir ze réckelen",
 	"pt-movepage-list-translation": "Iwwersetzung {{PLURAL:$1|Säit|Säiten}}",
 	"pt-movepage-list-section": "Iwwersetzungseenheet {{PLURAL:$1|Säit|Säiten}}",
+	"pt-movepage-list-nonmovable": "{{PLURAL:$1|Ënnersäit|Ënnersäiten}}, déi net geréckelt kënne ginn",
+	"pt-movepage-list-nonmovable-note": "Déi follgend {{PLURAL:$1|Ënnersäit kann|Ënnersäite kënnen}} net geréckelt ginn.",
 	"pt-movepage-list-translatable": "Fir d'Iwwersetzung markéiert {{PLURAL:$1|Ënnersäit|Ënnersäiten}}",
 	"pt-movepage-list-translatable-note": "Dës Säite musse separat geréckelt ginn.",
 	"pt-movepage-list-other": "Aner {{PLURAL:$1|Ënnersäit|Ënnersäiten}}",
