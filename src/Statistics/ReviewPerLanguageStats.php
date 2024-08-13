@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Graph which provides statistics on number of reviews and reviewers.
@@ -13,22 +14,15 @@ use Wikimedia\Rdbms\IReadableDatabase;
  * @since 2012.03
  */
 class ReviewPerLanguageStats extends TranslatePerLanguageStats {
-	public function preQuery(
+	public function createQueryBuilder(
 		IReadableDatabase $database,
-		&$tables,
-		&$fields,
-		&$conds,
-		&$type,
-		&$options,
-		&$joins,
-		$start,
-		$end
-	) {
+		string $caller,
+		string $start,
+		?string $end
+	): SelectQueryBuilder {
 		global $wgTranslateMessageNamespaces;
 
-		$tables = [ 'logging' ];
 		$fields = [ 'log_timestamp' ];
-		$joins = [];
 
 		$conds = [
 			'log_namespace' => $wgTranslateMessageNamespaces,
@@ -37,8 +31,6 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 		$timeConds = self::makeTimeCondition( $database, 'log_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
-
-		$options = [ 'ORDER BY' => 'log_timestamp' ];
 
 		$this->groups = $this->opts->getGroups();
 
@@ -65,7 +57,12 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			$fields[] = 'log_actor';
 		}
 
-		$type .= '-reviews';
+		return $database->newSelectQueryBuilder()
+			->table( 'logging' )
+			->fields( $fields )
+			->conds( $conds )
+			->options( [ 'ORDER BY' => 'log_timestamp' ] )
+			->caller( $caller . '-reviews' );
 	}
 
 	public function indexOf( $row ) {

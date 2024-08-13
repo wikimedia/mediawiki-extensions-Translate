@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Graph which provides statistics on active users and number of translations.
@@ -34,22 +35,15 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$this->messageIndex = Services::getInstance()->getMessageIndex();
 	}
 
-	public function preQuery(
+	public function createQueryBuilder(
 		IReadableDatabase $database,
-		&$tables,
-		&$fields,
-		&$conds,
-		&$type,
-		&$options,
-		&$joins,
-		$start,
-		$end
-	) {
+		string $caller,
+		string $start,
+		?string $end
+	): SelectQueryBuilder {
 		global $wgTranslateMessageNamespaces;
 
-		$tables = [ 'recentchanges' ];
 		$fields = [ 'rc_timestamp' ];
-		$joins = [];
 
 		$conds = [
 			'rc_namespace' => $wgTranslateMessageNamespaces,
@@ -59,8 +53,6 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		$timeConds = self::makeTimeCondition( $database, 'rc_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
-
-		$options = [ 'ORDER BY' => 'rc_timestamp' ];
 
 		$this->groups = array_map( [ MessageGroups::class, 'normalizeId' ], $this->opts->getGroups() );
 
@@ -87,7 +79,12 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$fields[] = 'rc_actor';
 		}
 
-		$type .= '-perlang';
+		return $database->newSelectQueryBuilder()
+			->table( 'recentchanges' )
+			->fields( $fields )
+			->conds( $conds )
+			->options( [ 'ORDER BY' => 'rc_timestamp' ] )
+			->caller( $caller . '-perlang' );
 	}
 
 	public function indexOf( $row ) {

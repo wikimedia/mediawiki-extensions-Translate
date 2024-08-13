@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Graph which provides statistics about amount of registered users in a given time.
@@ -12,26 +13,20 @@ use Wikimedia\Rdbms\IReadableDatabase;
  * @since 2010.07
  */
 class TranslateRegistrationStats extends TranslationStatsBase {
-	public function preQuery(
-		IReadableDatabase $database,
-		&$tables,
-		&$fields,
-		&$conds,
-		&$type,
-		&$options,
-		&$joins,
-		$start,
-		$end
-	) {
-		$tables = [ 'user' ];
-		$fields = 'user_registration';
-		$conds = self::makeTimeCondition( $database, 'user_registration', $start, $end );
-		$type .= '-registration';
-		$options = [];
-		$joins = [];
-	}
-
 	public function getTimestamp( $row ) {
 		return $row->user_registration;
+	}
+
+	public function createQueryBuilder(
+		IReadableDatabase $database,
+		string $caller,
+		string $start,
+		?string $end
+	): SelectQueryBuilder {
+		return $database->newSelectQueryBuilder()
+			->table( 'user' )
+			->fields( 'user_registration' )
+			->conds( self::makeTimeCondition( $database, 'user_registration', $start, $end ) )
+			->caller( $caller . '-registration' );
 	}
 }

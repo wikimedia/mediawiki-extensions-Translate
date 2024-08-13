@@ -75,32 +75,14 @@ class TranslationStatsDataProvider {
 			$end = null;
 		}
 
-		$tables = [];
-		$fields = [];
-		$conds = [];
-		$type = __METHOD__;
-		$options = [];
-		$joins = [];
-
-		$so->preQuery(
+		$selectQueryBuilder = $so->createQueryBuilder(
 			$dbr,
-			$tables,
-			$fields,
-			$conds,
-			$type,
-			$options,
-			$joins,
+			__METHOD__,
 			wfTimestamp( TS_MW, $start ),
 			wfTimestampOrNull( TS_MW, $end )
 		);
-		$res = $dbr->newSelectQueryBuilder()
-			->tables( $tables )
-			->fields( $fields )
-			->conds( $conds )
-			->caller( $type )
-			->options( $options )
-			->joinConds( $joins )
-			->fetchResultSet();
+
+		$res = $selectQueryBuilder->fetchResultSet();
 		wfDebug( __METHOD__ . "-queryend\n" );
 
 		// Start processing the data

@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use stdClass;
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Interface for producing different kinds of graphs.
@@ -23,28 +24,18 @@ interface TranslationStatsInterface {
 	public function __construct( TranslationStatsGraphOptions $opts );
 
 	/**
-	 * Query details that the graph must fill.
+	 * Return the SelectQueryBuilder to fetch the data needed for the graph
 	 * @param IReadableDatabase $database
-	 * @param array &$tables Empty list. Append table names.
-	 * @param array &$fields Empty list. Append field names.
-	 * @param array &$conds Empty array. Append select conditions.
-	 * @param string &$type Append graph type (used to identify queries).
-	 * @param array &$options Empty array. Append extra query options.
-	 * @param array &$joins Empty array. Append extra join conditions.
+	 * @param string $caller Appended with the graph type and passed to `->caller()` (used to identify queries).
 	 * @param string $start Precalculated start cutoff timestamp
 	 * @param string|null $end Precalculated end cutoff timestamp
 	 */
-	public function preQuery(
+	public function createQueryBuilder(
 		IReadableDatabase $database,
-		&$tables,
-		&$fields,
-		&$conds,
-		&$type,
-		&$options,
-		&$joins,
-		$start,
-		$end
-	);
+		string $caller,
+		string $start,
+		?string $end
+	): SelectQueryBuilder;
 
 	/**
 	 * Return the indexes which this result contributes to.
