@@ -164,13 +164,10 @@ class Hooks {
 		if ( $translatablePageParser->containsMarkup( $text ) ) {
 			try {
 				$parserOutput = $translatablePageParser->parse( $text );
-				// If parsing succeeds, replace text and add styles
+				// If parsing succeeds, replace text
 				$text = $parserOutput->sourcePageTextForRendering(
 					$wikitextParser->getTargetLanguage()
 				);
-				$wikitextParser->getOutput()->addModuleStyles( [
-					'ext.translate',
-				] );
 			} catch ( ParsingFailure $e ) {
 				wfDebug( 'ParsingFailure caught; expected' );
 			}
@@ -349,11 +346,7 @@ class Hooks {
 				$out->addModuleStyles( 'ext.translate.edit.documentation.styles' );
 			}
 
-			if ( $isTranslation ) {
-				// Source pages get this module via <translate>, but for translation
-				// pages we need to add it manually.
-				$out->addModuleStyles( 'ext.translate' );
-			}
+			$out->addModuleStyles( 'ext.translate' );
 
 			$out->addJsConfigVars( 'wgTranslatePageTranslation', $isTranslation ? 'translation' : 'source' );
 		}
