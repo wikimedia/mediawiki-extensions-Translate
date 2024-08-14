@@ -181,6 +181,7 @@
 	"tux-status-translated": "Tərcümə edilən",
 	"tux-status-saving": "Yayımlanır...",
 	"tux-status-unsaved": "Yayımlanmadı",
+	"tux-editor-placeholder-language": "$1 dilindəki tərcüməniz",
 	"tux-editor-paste-original-button-label": "Mənbə mətn yapışdır",
 	"tux-editor-save-button-label": "Tərcüməni yayımla",
 	"tux-editor-skip-button-label": "Sonrakına keç",
