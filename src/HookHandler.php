@@ -654,7 +654,7 @@ class HookHandler implements
 
 		$selector = $selector->getHTML();
 
-		$label = Xml::label(
+		$label = Html::label(
 			wfMessage( 'translate-search-languagefilter' )->text(),
 			'languagefilter'
 		) . "\u{00A0}";

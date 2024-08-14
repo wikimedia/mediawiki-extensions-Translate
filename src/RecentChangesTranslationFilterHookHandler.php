@@ -8,6 +8,7 @@ use ChangeTags;
 use Config;
 use IContextSource;
 use MediaWiki\Hook\SpecialRecentChangesPanelHook;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageStructuredFiltersHook;
@@ -17,7 +18,6 @@ use RecentChange;
 use RequestContext;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IReadableDatabase;
-use Xml;
 use XmlSelect;
 
 /**
@@ -100,7 +100,7 @@ class RecentChangesTranslationFilterHookHandler implements
 		$opts->consumeValue( 'translations' );
 		$default = $opts->getValue( 'translations' );
 
-		$label = Xml::label(
+		$label = Html::label(
 			wfMessage( 'translate-rc-translation-filter' )->text(),
 			'mw-translation-filter'
 		);
