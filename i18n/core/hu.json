@@ -434,6 +434,7 @@
 	"translate-messagebundle-sourcelanguage-changed": "Az üzenetcsomag forrásnyelve nem módosítható a létrehozás után.",
 	"log-action-filter-translationreview": "Művelet típusa:",
 	"log-action-filter-translationreview-message": "Egyes fordításüzenetek átnézése",
+	"log-action-filter-translationreview-group": "Változások a fordítások előrehaladásának állapotában",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importálta}} a(z) $3 lefordítható csomagot",
 	"log-action-filter-import-translatable-bundle": "Lefordítható csomag importálása",
 	"translate-hidetranslations": "Lefordított lapok elrejtése"
