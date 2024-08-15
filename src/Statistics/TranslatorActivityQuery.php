@@ -42,14 +42,13 @@ class TranslatorActivityQuery {
 			] )
 			->from( 'page' )
 			->join( 'revision', null, 'page_id=rev_page' )
-			->tables( [ 'actor_rev_user' => 'actor' ] )
+			->join( 'actor', 'actor_rev_user', 'actor_rev_user.actor_id = rev_actor' )
 			->where( [
 				'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
 				'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
 			] )
 			->groupBy( 'actor_rev_user.actor_name' )
 			->orderBy( 'NULL' )
-			->joinConds( [ 'actor_rev_user.actor_id = rev_actor' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
@@ -86,14 +85,13 @@ class TranslatorActivityQuery {
 			] )
 			->from( 'page' )
 			->join( 'revision', null, 'page_id=rev_page' )
-			->tables( [ 'actor_rev_user' => 'actor' ] )
+			->join( 'actor', 'actor_rev_user', 'actor_rev_user.actor_id = rev_actor' )
 			->where( [
 				'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 				'page_namespace' => $this->options->get( 'TranslateMessageNamespaces' ),
 			] )
 			->groupBy( [ 'lang', 'actor_rev_user.actor_name' ] )
 			->orderBy( 'NULL' )
-			->joinConds( [ 'actor_rev_user.actor_id = rev_actor' ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
