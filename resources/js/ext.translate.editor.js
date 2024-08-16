@@ -1384,41 +1384,15 @@
 		 * @param {jQuery} toggleIcon
 		 */
 		infoToggle: function ( toggleIcon ) {
-			if ( this.expanded ) {
-				this.contract( toggleIcon );
-			} else {
-				this.expand( toggleIcon );
-			}
-		},
+			this.expanded = !this.expanded;
 
-		/**
-		 * @private
-		 * @param {jQuery} toggleIcon
-		 */
-		contract: function ( toggleIcon ) {
 			// Change the icon image
 			toggleIcon
-				.removeClass( 'editor-contract' )
-				.addClass( 'editor-expand' )
-				.attr( 'title', mw.msg( 'tux-editor-expand-tooltip' ) );
+				.toggleClass( 'editor-expand', !this.expanded )
+				.toggleClass( 'editor-contract', this.expanded )
+				.attr( 'title', mw.msg( this.expanded ? 'tux-editor-collapse-tooltip' : 'tux-editor-expand-tooltip' ) );
 
-			this.$editor.removeClass( 'tux-message-editor--expanded' );
-			this.expanded = false;
-		},
-
-		/**
-		 * @private
-		 * @param {jQuery} toggleIcon
-		 */
-		expand: function ( toggleIcon ) {
-			// Change the icon image
-			toggleIcon
-				.removeClass( 'editor-expand' )
-				.addClass( 'editor-contract' )
-				.attr( 'title', mw.msg( 'tux-editor-collapse-tooltip' ) );
-
-			this.$editor.addClass( 'tux-message-editor--expanded' );
-			this.expanded = true;
+			this.$editor.toggleClass( 'tux-message-editor--expanded', this.expanded );
 		},
 
 		/**
