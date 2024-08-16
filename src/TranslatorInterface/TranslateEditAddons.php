@@ -213,7 +213,7 @@ class TranslateEditAddons {
 	 * @param bool $fuzzy Whether to fuzzy or not
 	 */
 	private static function updateFuzzyTag( Title $title, int $revision, bool $fuzzy ): void {
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase();
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),
@@ -256,9 +256,7 @@ class TranslateEditAddons {
 		}
 
 		$definitionRevision = $definitionTitle->getLatestRevID();
-		$dbw = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase();
 
 		$conds = [
 			'rt_page' => $title->getArticleID(),

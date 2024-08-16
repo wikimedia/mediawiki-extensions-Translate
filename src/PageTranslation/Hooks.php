@@ -1661,7 +1661,7 @@ class Hooks {
 		$langCode = $handle->getCode();
 		$fname = __METHOD__;
 
-		$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $mwServices->getConnectionProvider()->getPrimaryDatabase();
 		$callback = function () use (
 			$dbw,
 			$target,

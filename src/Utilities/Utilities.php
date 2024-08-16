@@ -91,7 +91,7 @@ class Utilities {
 	 */
 	public static function getContents( $titles, int $namespace ): array {
 		$mwServices = MediaWikiServices::getInstance();
-		$dbr = $mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $mwServices->getConnectionProvider()->getReplicaDatabase();
 		$revStore = $mwServices->getRevisionStore();
 		$titleContents = [];
 
@@ -423,9 +423,7 @@ class Utilities {
 		$namespace = $handle->getTitle()->getNamespace();
 		$base = $handle->getKey();
 
-		$dbr = MediaWikiServices::getInstance()
-			->getDBLoadBalancer()
-			->getConnection( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 
 		$titles = $dbr->newSelectQueryBuilder()
 			->select( 'page_title' )

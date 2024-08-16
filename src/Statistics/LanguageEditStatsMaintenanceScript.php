@@ -99,7 +99,7 @@ class LanguageEditStatsMaintenanceScript extends BaseMaintenanceScript {
 	 */
 	private function translationChanges( int $days, bool $bots, array $ns ): array {
 		global $wgTranslateMessageNamespaces;
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 
 		$cutoff = $dbr->timestamp( time() - ( $days * 24 * 3600 ) );
 

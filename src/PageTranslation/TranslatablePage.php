@@ -571,7 +571,7 @@ class TranslatablePage extends TranslatableBundle {
 	 * @return string
 	 */
 	public static function getCacheValue( $oldValue, &$ttl, array &$setOpts ): string {
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 		$setOpts += Database::getCacheSetOptions( $dbr );
 
 		$ids = RevTagStore::getTranslatableBundleIds(
