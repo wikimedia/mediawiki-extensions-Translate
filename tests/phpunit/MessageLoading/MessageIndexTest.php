@@ -148,10 +148,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 
 	protected static function getTestData() {
 		static $data = null;
-		if ( $data === null ) {
-			$data = unserialize( file_get_contents( __DIR__ . '/../data/messageindexdata.ser' ) );
-		}
-
+		$data ??= unserialize( file_get_contents( __DIR__ . '/../data/messageindexdata.ser' ) );
 		return $data;
 	}
 

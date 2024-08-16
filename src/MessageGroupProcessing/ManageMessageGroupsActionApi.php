@@ -178,9 +178,7 @@ class ManageMessageGroupsActionApi extends ApiBase {
 
 				// If the message was found in changes, this will be set, otherwise set it
 				// to none
-				if ( $renameMsgState === null ) {
-					$renameMsgState = MessageSourceChange::NONE;
-				}
+				$renameMsgState ??= MessageSourceChange::NONE;
 			}
 
 			// Remove previous states

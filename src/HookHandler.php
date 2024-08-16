@@ -126,9 +126,7 @@ class HookHandler implements
 			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 		}
 
-		if ( $wgTranslateYamlLibrary === null ) {
-			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
-		}
+		$wgTranslateYamlLibrary ??= function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 
 		$hooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
 		global $wgJobClasses;

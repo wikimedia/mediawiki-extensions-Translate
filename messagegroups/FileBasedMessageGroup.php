@@ -141,9 +141,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		}
 
 		// Fallback to sourcePattern which must be defined
-		if ( $pattern === null ) {
-			$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
-		}
+		$pattern ??= $this->getFromConf( 'FILES', 'sourcePattern' );
 
 		if ( $pattern === null ) {
 			throw new RuntimeException( 'No source file pattern defined.' );

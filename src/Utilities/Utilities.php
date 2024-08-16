@@ -371,9 +371,7 @@ class Utilities {
 	public static function getVersion(): string {
 		// Avoid parsing JSON multiple time per request
 		static $version = null;
-		if ( $version === null ) {
-			$version = json_decode( file_get_contents( __DIR__ . '../../../extension.json' ) )->version;
-		}
+		$version ??= json_decode( file_get_contents( __DIR__ . '../../../extension.json' ) )->version;
 		return $version;
 	}
 
@@ -460,9 +458,7 @@ class Utilities {
 		}
 
 		static $codes = null;
-		if ( $codes === null ) {
-			$codes = self::getLanguageNames( LanguageNameUtils::AUTONYMS );
-		}
+		$codes ??= self::getLanguageNames( LanguageNameUtils::AUTONYMS );
 
 		return !$handle->isDoc() && isset( $codes[ $languageCode ] );
 	}
