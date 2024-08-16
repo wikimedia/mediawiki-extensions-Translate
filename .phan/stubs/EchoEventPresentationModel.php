@@ -8,22 +8,22 @@ use MessageLocalizer;
 
 /** Stub of Echo's EchoEventPresentationModel class for phan */
 class EchoEventPresentationModel implements MessageLocalizer {
-	public Event $event;
+	protected Event $event;
 
 	/** @inheritDoc */
 	public function msg( $key, ...$params ): Message {
 		return new Message( $key, $params );
 	}
 
-	public function isBundled(): bool {
+	protected function isBundled(): bool {
 		return false;
 	}
 
-	public function getBundleCount(): int {
+	protected function getBundleCount(): int {
 		return 5;
 	}
 
-	public function getBundledEvents() {
+	protected function getBundledEvents() {
 		return [];
 	}
 
