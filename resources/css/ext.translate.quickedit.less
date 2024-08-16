@@ -1,11 +1,10 @@
-.mw-sp-translate-edit-fields a {
-	color: #00f;
-}
+@import 'mediawiki.skin.variables.less';
 
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
 	margin: 0;
-	border: 1px solid #dbdbdb;
+	border: 1px solid @border-color-subtle;
+	color: @color-base;
 }
 
 .mw-sp-translate-edit-fields legend {
@@ -37,9 +36,9 @@
 
 /* Blue tints for translate fieldsets */
 .mw-sp-translate-message-documentation {
-	background-color: #ebebeb;
+	background-color: @background-color-interactive;
 }
 
 .mw-sp-translate-edit-definition {
-	background-color: #eaf3fc;
+	background-color: @background-color-progressive-subtle;
 }

@@ -623,7 +623,7 @@
 			]
 		},
 		"ext.translate.quickedit": {
-			"styles": "resources/css/ext.translate.quickedit.css"
+			"styles": "resources/css/ext.translate.quickedit.less"
 		},
 		"ext.translate.selecttoinput": {
 			"scripts": "resources/js/ext.translate.selecttoinput.js"
