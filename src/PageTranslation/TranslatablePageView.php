@@ -77,10 +77,10 @@ class TranslatablePageView {
 		$fieldValue = $dbr->newSelectQueryBuilder()
 			->select( 'rev_id' )
 			->from( 'revision' )
-			->join( 'actor', null, 'actor.actor_id = revision.rev_actor' )
+			->join( 'actor', null, 'actor_id = rev_actor' )
 			->where( [
 				'rev_page' => $articleTitle->getId(),
-				'actor.actor_user' => $user->getId(),
+				'actor_user' => $user->getId(),
 				$dbr->expr(
 					'rev_timestamp', '>=', $dbr->timestamp( time() - self::RECENT_EDITOR_DAYS * 24 * 3600 )
 				)
