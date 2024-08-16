@@ -19,22 +19,20 @@ class TtmServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		self::$mockups = [];
-		$this->overrideConfigValues( [
-			'TranslateTranslationServices' => [
-				'primary' => [
-					'class' => TestableTTMServer::class,
-					// will be used as the key in static::$mockups to attach the
-					// mock to the newly created TestableTTMServer instance
-					'name' => 'primary',
-					'type' => 'ttmserver',
-					'writable' => true
-				],
-				'secondary' => [
-					'class' => TestableTTMServer::class,
-					'name' => 'secondary',
-					'type' => 'ttmserver',
-					'writable' => true
-				]
+		$this->overrideConfigValue( 'TranslateTranslationServices', [
+			'primary' => [
+				'class' => TestableTTMServer::class,
+				// will be used as the key in static::$mockups to attach the
+				// mock to the newly created TestableTTMServer instance
+				'name' => 'primary',
+				'type' => 'ttmserver',
+				'writable' => true
+			],
+			'secondary' => [
+				'class' => TestableTTMServer::class,
+				'name' => 'secondary',
+				'type' => 'ttmserver',
+				'writable' => true
 			]
 		] );
 	}

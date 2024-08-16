@@ -18,11 +18,7 @@ class CsvTranslationImporterTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->overrideConfigValues( [
-			'TranslateCacheDirectory' => $this->getNewTempDirectory(),
-		] );
-
+		$this->overrideConfigValue( 'TranslateCacheDirectory', $this->getNewTempDirectory() );
 		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 

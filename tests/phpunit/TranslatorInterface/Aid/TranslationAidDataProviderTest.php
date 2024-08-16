@@ -17,10 +17,7 @@ class TranslationAidDataProviderTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->overrideConfigValues( [
-			'TranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
-		] );
-
+		$this->overrideConfigValue( 'TranslateMessageNamespaces', [ NS_MEDIAWIKI ] );
 		$this->setupGroupTestEnvironmentWithGroups( $this, $this->getTestGroups() );
 	}
 

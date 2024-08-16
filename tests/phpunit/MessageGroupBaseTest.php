@@ -100,11 +100,9 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 
 	public function testModifyMessageGroupStates() {
 		// Create a basic workflow.
-		$this->overrideConfigValues( [
-			'TranslateWorkflowStates' => [
-				'progress' => [ 'color' => 'd33' ],
-				'proofreading' => [ 'color' => 'fc3' ],
-			],
+		$this->overrideConfigValue( 'TranslateWorkflowStates', [
+			'progress' => [ 'color' => 'd33' ],
+			'proofreading' => [ 'color' => 'fc3' ],
 		] );
 		// Install a special permission when the group ID is matched.
 		$this->setTemporaryHook(

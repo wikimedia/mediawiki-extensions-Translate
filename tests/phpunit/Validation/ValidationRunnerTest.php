@@ -165,9 +165,8 @@ class ValidationRunnerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testIgnoreList() {
-		$this->overrideConfigValues( [
-			'TranslateValidationExclusionFile' => __DIR__ . '/../data/validation-exclusion-list.php',
-		] );
+		$this->overrideConfigValue( 'TranslateValidationExclusionFile',
+			__DIR__ . '/../data/validation-exclusion-list.php' );
 
 		$group = MessageGroups::getGroup( 'test-group' );
 		$collection = $group->initCollection( 'en-gb' );

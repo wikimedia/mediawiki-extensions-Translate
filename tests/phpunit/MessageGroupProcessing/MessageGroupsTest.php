@@ -20,11 +20,9 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->overrideConfigValues( [
-			'TranslateGroupFiles' => [
-				__DIR__ . '../../data/ParentGroups.yaml',
-				__DIR__ . '../../data/ValidatorGroup.yaml'
-			]
+		$this->overrideConfigValue( 'TranslateGroupFiles', [
+			__DIR__ . '../../data/ParentGroups.yaml',
+			__DIR__ . '../../data/ValidatorGroup.yaml',
 		] );
 
 		$this->setupGroupTestEnvironment( $this );
@@ -65,8 +63,8 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testHaveSingleSourceLanguage(): void {
-		$this->overrideConfigValues( [
-			'TranslateGroupFiles' => [ __DIR__ . '../../data/MixedSourceLanguageGroups.yaml' ],
+		$this->overrideConfigValue( 'TranslateGroupFiles', [
+			__DIR__ . '../../data/MixedSourceLanguageGroups.yaml',
 		] );
 		$config = new MessageGroupTestConfig();
 		$config->skipMessageIndexRebuild = true;

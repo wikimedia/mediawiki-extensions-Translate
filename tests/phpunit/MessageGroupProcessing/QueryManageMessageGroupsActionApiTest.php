@@ -23,10 +23,7 @@ class QueryManageMessageGroupsActionApiTest extends ApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->overrideConfigValues( [
-			'TranslateCacheDirectory' => $this->getNewTempDirectory()
-		] );
-
+		$this->overrideConfigValue( 'TranslateCacheDirectory', $this->getNewTempDirectory() );
 		$this->setGroupPermissions( 'translate-admin', 'translate-manage', true );
 		$this->user = $this->getTestUser( 'translate-admin' )->getUser();
 		$this->setupTestData();

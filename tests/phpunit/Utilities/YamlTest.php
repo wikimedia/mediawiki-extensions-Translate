@@ -15,10 +15,7 @@ use MediaWikiIntegrationTestCase;
 class YamlTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
-
-		$this->overrideConfigValues( [
-			'TranslateYamlLibrary' => 'phpyaml',
-		] );
+		$this->overrideConfigValue( 'TranslateYamlLibrary', 'phpyaml' );
 	}
 
 	/**
