@@ -8,8 +8,6 @@ namespace MediaWiki\Extension\Translate;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormatHeaderFieldsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageGroupStateChangeHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\EventMessageMembershipChangeHook;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsParameterListHook;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\GetAPIMessageGroupsPropertyDescsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\InitGroupLoadersHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ModifyMessageGroupStatesHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\PostInitGroupsHook;
@@ -45,8 +43,6 @@ class HookRunner implements
 	NewTranslationHook,
 	ModifyMessageGroupStatesHook,
 	EventMessageGroupStateChangeHook,
-	GetAPIMessageGroupsParameterListHook,
-	GetAPIMessageGroupsPropertyDescsHook,
 	InitGroupLoadersHook,
 	PostInitGroupsHook,
 	ProcessAPIMessageGroupsPropertiesHook,
@@ -96,14 +92,6 @@ class HookRunner implements
 	) {
 		return $this->hookContainer->run( 'TranslateEventMessageGroupStateChange',
 			[ $group, $code, $oldState, $newState ] );
-	}
-
-	public function onTranslateGetAPIMessageGroupsParameterList( array &$params ) {
-		return $this->hookContainer->run( 'TranslateGetAPIMessageGroupsParameterList', [ &$params ] );
-	}
-
-	public function onTranslateGetAPIMessageGroupsPropertyDescs( array &$properties ) {
-		return $this->hookContainer->run( 'TranslateGetAPIMessageGroupsPropertyDescs', [ &$properties ] );
 	}
 
 	public function onTranslateInitGroupLoaders( array &$groupLoader, array $deps ) {

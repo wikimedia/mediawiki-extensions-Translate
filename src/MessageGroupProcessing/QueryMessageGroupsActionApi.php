@@ -308,7 +308,6 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				ParamValidator::PARAM_DEFAULT => '',
 			]
 		];
-		$this->hookRunner->onTranslateGetAPIMessageGroupsParameterList( $allowedParams );
 
 		return $allowedParams;
 	}
@@ -334,8 +333,6 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			'sourcelanguage',
 			'subscription'
 		] );
-
-		$this->hookRunner->onTranslateGetAPIMessageGroupsPropertyDescs( $properties );
 
 		return $properties;
 	}
