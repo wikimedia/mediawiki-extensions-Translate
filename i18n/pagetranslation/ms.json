@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Anakmalaysia",
+			"Hakimi97",
 			"Jeluang Terluang",
 			"Muhdnurhidayat",
 			"Pizza1016",
@@ -111,8 +112,8 @@
 	"pt-movepage-block-section-invalid": "Tajuk halaman sasaran \"[[:$1]]\" untuk unit terjemahan itu adalah tidak sah (terlalu panjang?).",
 	"pt-movepage-block-subpage-invalid": "Tajuk sublaman sasaran untuk [[:$1]] adalah tidak sah (terlalu panjang?).",
 	"pt-movepage-list-pages": "Senarai laman untuk dipindahkan",
-	"pt-movepage-list-translation": "{{PLURAL:$1|Halaman|Halaman-halaman}} penterjemahan",
-	"pt-movepage-list-section": "{{PLURAL:$1|Halaman|Halaman-halaman}} unit penterjemahan",
+	"pt-movepage-list-translation": "{{PLURAL:$1|Laman|Laman-laman}} penterjemahan",
+	"pt-movepage-list-section": "{{PLURAL:$1|Laman|Laman-laman}} unit penterjemahan",
 	"pt-movepage-list-other": "{{PLURAL:$1|Subhalaman|Subhalaman-subhalaman}} yang lain",
 	"pt-movepage-list-count": "Sejumlah $1 laman untuk dipindahkan.",
 	"pt-movepage-legend": "Pindahkan laman yang boleh diterjemah",
