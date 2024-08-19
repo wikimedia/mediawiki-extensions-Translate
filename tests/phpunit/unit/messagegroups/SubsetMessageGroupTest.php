@@ -1,6 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
+use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
+
 /**
  * @license GPL-2.0-or-later
  * @covers SubsetMessageGroup
@@ -22,14 +25,25 @@ class SubsetMessageGroupTest extends MediaWikiUnitTestCase {
 		$parentKeys = [ 'key1', 'key2', 'key3' ];
 		$subsetKeys = [ 'key2', 'key-unknown' ];
 		$commonKeys = [ 'key2' ];
+		$invalidKeys = [ 'key-unknown' ];
 
 		$parentGroup = $this->createMock( MessageGroup::class );
 		$parentGroup->method( 'getKeys' )->willReturn( $parentKeys );
 
-		$subsetGroup = $this->getSubsetGroup( $parentGroup, $subsetKeys );
+		$logger = new TestLogger(
+			true,
+			static fn ( string $msg ): ?string => strpos( $msg, 'Invalid top messages' ) === 0 ? $msg : null,
+			true
+		);
+		$subsetGroup = $this->getSubsetGroup( $parentGroup, $subsetKeys, $logger );
 
-		// Side effect of printing to error log, not possible to test?
 		$this->assertEquals( $commonKeys, $subsetGroup->getKeys() );
+		$this->assertArrayEquals(
+			[
+				[ LogLevel::WARNING, 'Invalid top messages: {invalidMessages}', [ 'invalidMessages' => $invalidKeys ] ]
+			],
+			$logger->getBuffer()
+		);
 	}
 
 	public function testGetTags() {
@@ -66,15 +80,23 @@ class SubsetMessageGroupTest extends MediaWikiUnitTestCase {
 	 * @param MessageGroup $parentGroup A mock parent group that should be returned
 	 *  by SubsetMessageGroup::getParentGroup
 	 * @param string[] $subsetKeys Subset keys to be passed to the constructor
+	 * @param LoggerInterface|null $logger Logger if log messages are expected.
+	 *  If `null`, a default logger will be set, which causes test cases to fail
+	 *  if anything is logged.
 	 * @return SubsetMessageGroup
 	 */
-	private function getSubsetGroup( MessageGroup $parentGroup, array $subsetKeys = [] ): SubsetMessageGroup {
+	private function getSubsetGroup(
+		MessageGroup $parentGroup,
+		array $subsetKeys = [],
+		?LoggerInterface $logger = null
+	): SubsetMessageGroup {
 		$subsetGroup = $this->getMockBuilder( SubsetMessageGroup::class )
-			->onlyMethods( [ 'getParentGroup' ] )
+			->onlyMethods( [ 'getParentGroup', 'getLogger' ] )
 			->setConstructorArgs( [ 'testGroupId', 'Test group', 'testParentGroupId', $subsetKeys ] )
 			->getMock();
 
 		$subsetGroup->method( 'getParentGroup' )->willReturn( $parentGroup );
+		$subsetGroup->method( 'getLogger' )->willReturn( $logger ?? new TestLogger() );
 		return $subsetGroup;
 	}
 }

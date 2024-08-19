@@ -2,6 +2,8 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Logger\LoggerFactory;
+use Psr\Log\LoggerInterface;
 
 /**
  * Message group that contains a subset of keys of another group.
@@ -31,6 +33,11 @@ class SubsetMessageGroup extends MessageGroupOld {
 		$this->subsetKeys = $subsetKeys;
 	}
 
+	/** @internal Factored out only for testing */
+	protected function getLogger(): LoggerInterface {
+		return LoggerFactory::getInstance( 'Translate' );
+	}
+
 	/** @inheritDoc */
 	public function isMeta() {
 		return true;
@@ -58,8 +65,10 @@ class SubsetMessageGroup extends MessageGroupOld {
 			$parentKeys = $this->getParentGroup()->getKeys();
 			$commonKeys = array_intersect( $this->subsetKeys, $parentKeys );
 			if ( count( $commonKeys ) < count( $this->subsetKeys ) ) {
-				$unknownKeyList = implode( ', ', array_diff( $this->subsetKeys, $commonKeys ) );
-				error_log( 'Invalid top messages: ' . $unknownKeyList );
+				$this->getLogger()->warning(
+					'Invalid top messages: {invalidMessages}',
+					[ 'invalidMessages' => array_values( array_diff( $this->subsetKeys, $commonKeys ) ) ]
+				);
 			}
 
 			$this->keyCache = array_values( $commonKeys );
