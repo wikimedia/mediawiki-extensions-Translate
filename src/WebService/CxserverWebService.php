@@ -37,7 +37,7 @@ abstract class CxserverWebService extends TranslationWebService {
 	}
 
 	protected function doPairs(): array {
-		$url = $this->config['host'] . '/v1/list/mt';
+		$url = $this->config['host'] . '/v2/list/mt';
 		$json = $this->httpRequestFactory->get( $url, [ $this->config['timeout'] ], __METHOD__ );
 		if ( $json === null ) {
 			throw new TranslationWebServiceException( 'Failure encountered when contacting remote server' );
@@ -54,7 +54,7 @@ abstract class CxserverWebService extends TranslationWebService {
 	protected function getQuery( string $text, string $sourceLanguage, string $targetLanguage ): TranslationQuery {
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-		$url = $this->config['host'] . "/v1/mt/$sourceLanguage/$targetLanguage/{$this->getServiceName()}";
+		$url = $this->config['host'] . "/v2/mt/$sourceLanguage/$targetLanguage/{$this->getServiceName()}";
 
 		return TranslationQuery::factory( $url )
 			->timeout( intval( $this->config['timeout'] ) )
