@@ -421,5 +421,6 @@
 	"translate-messagebundle-change-sourcelanguage": "Az üzenetcsomag forrásnyelvének beállítása a metaadatok alapján.",
 	"translate-messagebundle-sourcelanguage-changed": "Az üzenetcsomag forrásnyelve nem módosítható a létrehozás után.",
 	"log-action-filter-translationreview": "Művelet típusa:",
-	"log-action-filter-translationreview-message": "Egyes fordításüzenetek átnézése"
+	"log-action-filter-translationreview-message": "Egyes fordításüzenetek átnézése",
+	"log-action-filter-translationreview-group": "Változások a fordítások előrehaladásának állapotában"
 }

@@ -24,7 +24,8 @@
 			"Zhxy 519",
 			"捍粵者",
 			"列维劳德",
-			"SunAfterRain"
+			"SunAfterRain",
+			"Cookai1205"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -74,7 +75,7 @@
 	"tpt-tag-oldsyntax": "舊語法",
 	"tpt-tag-no-transclusion-support": "不支援內嵌",
 	"tpt-select-prioritylangs": "優先語言代碼（以逗號分隔）：",
-	"tpt-select-prioritylangs-force": "防止翻譯至優先語言以外的語言",
+	"tpt-select-prioritylangs-force": "禁止翻譯成優先語言以外的語言",
 	"tpt-select-prioritylangs-reason": "原因：",
 	"tpt-sections-prioritylangs": "優先語言",
 	"tpt-sections-syntaxversion": "語法版本",
