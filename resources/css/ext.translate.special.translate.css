@@ -111,8 +111,9 @@
 
 .tux-watch-group .mw-ui-button .tux-watch-icon {
 	background: no-repeat left center transparent;
-	background-size: 20px;
-	padding-left: 20px;
+	background-size: contain;
+	width: 20px;
+	height: 20px;
 }
 
 .tux-watch-group .mw-ui-button.tux-watch-group--unwatch .tux-watch-icon {
@@ -125,7 +126,13 @@
 
 .tux-watch-group .mw-ui-button .tux-watch-label {
 	font-size: 1.1em;
-	padding-inline-start: 2px;
+	padding-inline-start: 5px;
+}
+
+.tux-watch-group .tux-watch-label,
+.tux-watch-group .tux-watch-icon {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .tux-editor-header {
