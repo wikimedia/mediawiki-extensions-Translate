@@ -10,6 +10,19 @@
 	opacity: 0.65;
 }
 
+.mw-tpt-sp-section-type-dropdown > .mw-tpt-sp-content {
+	padding: unset;
+}
+
+.mw-tpt-sp-section-type-dropdown > .oo-ui-fieldLayout-body {
+	align-items: center;
+	flex-direction: row;
+}
+
+.client-nojs .mw-tpt-sp-section-type-dropdown {
+	display: none;
+}
+
 .mw-tpt-sp-legend {
 	font-weight: bold;
 	font-size: 110%;
@@ -21,6 +34,10 @@
 	padding-left: 2em;
 	padding-right: 2em;
 	overflow-wrap: break-word;
+}
+
+.mw-tpt-sp-markform.mw-tpt-hide-custom-fuzzy .mw-tpt-action-field {
+	display: none;
 }
 
 .client-nojs .mw-tpt-sp-markform .mw-widgets-pendingTextInputWidget {

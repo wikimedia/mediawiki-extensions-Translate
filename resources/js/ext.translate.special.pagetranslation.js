@@ -42,12 +42,20 @@ function configurePostLinks( $container ) {
 	} );
 }
 
+function configureDropdownForFuzzySelector( $container ) {
+	var $form = $container.find( '.mw-tpt-sp-markform' );
+	var $dropdown = $form.find( 'select[name="unit-fuzzy-selector"]' );
+	$dropdown.on( 'change', function () {
+		// hide the dropdown when it is "all" or "none"
+		$form.toggleClass( 'mw-tpt-hide-custom-fuzzy', $( this ).val() !== 'custom' );
+	} );
+}
 // Init
 $( function () {
 	var $widgets = $( '#mw-translate-SpecialPageTranslation-prioritylangs' );
 
 	configurePostLinks( $( '#mw-content-text' ) );
-
+	configureDropdownForFuzzySelector( $( '#mw-content-text' ) );
 	if ( $widgets.length ) {
 		configureLanguageInput( $( '.mw-tpt-sp-markform' ), $widgets );
 	}

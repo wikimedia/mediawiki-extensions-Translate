@@ -28,6 +28,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
+use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
@@ -280,21 +281,30 @@ class PageTranslationSpecialPage extends SpecialPage {
 			[ $priorityLanguages, $forcePriorityLanguage, $priorityLanguageReason ] =
 				$this->getPriorityLanguage( $this->getRequest() );
 
-			$noFuzzyUnits = array_filter(
-				preg_replace(
-					'/^tpt-sect-(.*)-action-nofuzzy$|.*/',
-					'$1',
-					array_keys( $request->getValues() )
-				),
-				'strlen'
-			);
+			$unitFuzzySelector = $request->getRawVal( 'unit-fuzzy-selector' );
+			if ( $unitFuzzySelector === 'all' ) {
+				$noFuzzyUnits = [];
+			} else {
+				// Get IDs of all changed units
+				$allChangedUnits = array_map(
+					static fn ( $unit ) => $unit->id,
+					array_filter(
+						$operation->getUnits(),
+						static fn ( $unit ) => $unit->type === 'changed'
+					)
+				);
 
-			// https://www.php.net/manual/en/language.variables.external.php says:
-			// "Dots and spaces in variable names are converted to underscores.
-			// For example <input name="a b" /> becomes $_REQUEST["a_b"]."
-			// Therefore, we need to convert underscores back to spaces where they were used in section
-			// markers.
-			$noFuzzyUnits = str_replace( '_', ' ', $noFuzzyUnits );
+				if ( $unitFuzzySelector === 'none' ) {
+					$noFuzzyUnits = $allChangedUnits;
+				} else { // custom
+					$fuzzyUnits = $request->getArray( 'tpt-sect-fuzzy' ) ?? [];
+					// Filter the units that should not be fuzzied
+					$noFuzzyUnits = array_filter(
+						$allChangedUnits,
+						static fn ( $value ) => !in_array( $value, $fuzzyUnits )
+					);
+				}
+			}
 
 			$translatablePageSettings = new TranslatablePageSettings(
 				$priorityLanguages,
@@ -706,6 +716,37 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
+		// General Area
+		$dropdown = new FieldLayout(
+			new DropdownInputWidget( [
+				'name' => 'unit-fuzzy-selector',
+				'options' => [
+					[
+						'data' => 'all',
+						'label' => $this->msg( 'tpt-fuzzy-select-all' )->text()
+					],
+					[
+						'data' => 'none',
+						'label' => $this->msg( 'tpt-fuzzy-select-none' )->text()
+					],
+					[
+						'data' => 'custom',
+						'label' => $this->msg( 'tpt-fuzzy-select-custom' )->text()
+					]
+				],
+				'value' => 'custom'
+			] ),
+			[
+				'label' => $this->msg( 'tpt-fuzzy-select-label' )->text(),
+				'align' => 'left',
+			]
+		);
+		$out->addHTML( MessageWebImporter::makeSectionElement(
+			$this->msg( 'tpt-general-area-header' )->text(),
+			'dropdown',
+			$dropdown->toString()
+		) );
+
 		foreach ( $operation->getUnits() as $s ) {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
 				// Set section type as new if title previously unchecked
@@ -748,16 +789,16 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$diffOld = $diffNew = null;
 				$diff->showDiffStyle();
 
-				$id = "tpt-sect-{$s->id}-action-nofuzzy";
 				$checkLabel = new FieldLayout(
 					new CheckboxInputWidget( [
-						'name' => $id,
-						'selected' => $s->onlyTvarsChanged()
+						'name' => 'tpt-sect-fuzzy[]',
+						'value' => $s->id,
+						'selected' => !$s->onlyTvarsChanged()
 					] ),
 					[
-						'label' => $this->msg( 'tpt-action-nofuzzy' )->text(),
+						'label' => $this->msg( 'tpt-action-fuzzy' )->text(),
 						'align' => 'inline',
-						'classes' => [ 'mw-tpt-m-vertical' ]
+						'classes' => [ 'mw-tpt-m-vertical', 'mw-tpt-action-field' ],
 					]
 				);
 				$text = $checkLabel->toString() . $text;
