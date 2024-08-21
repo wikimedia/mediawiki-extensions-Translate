@@ -1025,13 +1025,13 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				->params(
 					$this->getLanguage()->commaList( $errorGroups ),
 					$this->msg( 'translate-smg-submitted-others-processing' )
-				)->text();
+				)->parse();
 		} else {
 			$errorMsg = trim(
 				$this->msg( 'translate-smg-submitted-with-failure' )
 					->numParams( count( $errorGroups ) )
 					->params( $this->getLanguage()->commaList( $errorGroups ), '' )
-					->text()
+					->parse()
 			);
 		}
 
