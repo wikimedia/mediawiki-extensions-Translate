@@ -465,8 +465,7 @@ class Hooks {
 	): void {
 		switch ( $magicWordId ) {
 			case 'translatablepage':
-				$title = Title::castFromPageReference( $parser->getPage() );
-				$pageStatus = self::getTranslatablePageStatus( $title );
+				$pageStatus = self::getTranslatablePageStatus( $parser->getPage() );
 				$ret = $pageStatus !== null ? $pageStatus['page']->getTitle()->getPrefixedText() : '';
 				$variableCache[$magicWordId] = $ret;
 				break;
@@ -495,8 +494,8 @@ class Hooks {
 		// $wgPageTranslationLanguageList === 'sidebar-fallback'
 		$parser->getOutput()->setPageProperty( self::PAGEPROP_HAS_LANGUAGES_TAG, true );
 
-		$currentTitle = $parser->getTitle();
-		$pageStatus = self::getTranslatablePageStatus( $currentTitle );
+		$currentPage = $parser->getPage();
+		$pageStatus = self::getTranslatablePageStatus( $currentPage );
 		if ( !$pageStatus ) {
 			return '';
 		}
@@ -534,7 +533,7 @@ class Hooks {
 
 			$linker = $parser->getLinkRenderer();
 			$lang = $langFactory->getLanguage( $code );
-			if ( $currentTitle->equals( $subpage ) ) {
+			if ( $currentPage->isSamePageAs( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
 				$classes = array_merge( $classes, self::tpProgressIcon( (float)$percent ) );
 				$attribs = [
@@ -645,13 +644,14 @@ class Hooks {
 	}
 
 	/**
-	 * Returns translatable page and language stats for given title.
+	 * Returns translatable page and language stats for the given page.
 	 * @return array{page:TranslatablePage,languages:array}|null Returns null if not a translatable page.
 	 */
-	private static function getTranslatablePageStatus( ?Title $title ): ?array {
-		if ( $title === null ) {
+	private static function getTranslatablePageStatus( ?PageReference $pageReference ): ?array {
+		if ( $pageReference === null ) {
 			return null;
 		}
+		$title = Title::newFromPageReference( $pageReference );
 		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $title );
 		if ( $page->getMarkedTag() === null ) {
