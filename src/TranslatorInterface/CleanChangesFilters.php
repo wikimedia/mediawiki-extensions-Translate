@@ -7,6 +7,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Extension\CLDR\LanguageNames;
 use MediaWiki\Hook\FetchChangesListHook;
 use MediaWiki\Hook\SpecialRecentChangesPanelHook;
+use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
 use MediaWiki\Xml\Xml;
@@ -60,7 +61,7 @@ class CleanChangesFilters implements
 	 * Hook: SpecialRecentChangesPanel
 	 * @inheritDoc
 	 */
-	public function onSpecialRecentChangesPanel( &$items, $opts ) {
+	public function onSpecialRecentChangesPanel( &$extraOpts, $opts ) {
 		global $wgLang, $wgRequest;
 		if ( !$this->config->get( 'TranslateCleanChangesTrailerFilter' ) ) {
 			return;
@@ -74,18 +75,30 @@ class CleanChangesFilters implements
 			// cldr extension
 			$languages = LanguageNames::getNames(
 				$wgLang->getCode(),
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW
+				LanguageNames::FALLBACK_NORMAL
 			);
 		} else {
-			$languages = $this->languageNameUtils
-				->getLanguageNames( LanguageNameUtils::AUTONYMS, LanguageNameUtils::DEFINED );
+			$languages = $this->languageNameUtils->getLanguageNames();
 		}
 		ksort( $languages );
-		$options = Xml::option( wfMessage( 'tpt-cleanchanges-language-na' )->text(), '', $default === '' );
+		$optionAttributes = [ 'value' => '' ];
+		if ( $default === '' ) {
+			$optionAttributes[ 'selected' ] = 'selected';
+		}
+
+		$options = Html::element(
+			'option',
+			$optionAttributes,
+			wfMessage( 'tpt-cleanchanges-language-na' )->text()
+		);
+
 		foreach ( $languages as $code => $name ) {
 			$selected = ( "/$code" === $default );
-			$options .= Xml::option( "$code - $name", "/$code", $selected ) . "\n";
+			$optionAttributes = [ 'value' => "/$code" ];
+			if ( $selected ) {
+				$optionAttributes[ 'selected' ] = 'selected';
+			}
+			$options .= Html::element( 'option', $optionAttributes, "$code - $name" ) . "\n";
 		}
 		$str =
 		Xml::openElement( 'select',
@@ -97,7 +110,7 @@ class CleanChangesFilters implements
 		$options .
 		Xml::closeElement( 'select' );
 
-		$items['tailer'] = [ wfMessage( 'tpt-cleanchanges-language' )->escaped(), $str ];
+		$extraOpts['tailer'] = [ wfMessage( 'tpt-cleanchanges-language' )->escaped(), $str ];
 	}
 
 	/**
