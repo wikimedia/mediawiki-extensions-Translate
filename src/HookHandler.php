@@ -68,7 +68,6 @@ use SearchEngine;
 use TextContent;
 use TitleValue;
 use Wikimedia\Rdbms\ILoadBalancer;
-use Xml;
 use XmlSelect;
 
 /**
@@ -656,11 +655,12 @@ class HookHandler implements
 			wfMessage( 'translate-search-languagefilter' )->text(),
 			'languagefilter'
 		) . "\u{00A0}";
-		$params = [ 'id' => 'mw-searchoptions' ];
 
-		$form = Xml::fieldset( false, false, $params ) .
-			$hidden . $label . $selector .
-			Html::closeElement( 'fieldset' );
+		$form = Html::rawElement(
+			'fieldset',
+			[ 'id' => 'mw-searchoptions' ],
+			$hidden . $label . $selector
+		);
 
 		return false;
 	}

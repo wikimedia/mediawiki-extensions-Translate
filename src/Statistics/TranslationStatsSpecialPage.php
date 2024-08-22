@@ -82,10 +82,13 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 		$out->addWikiMsg( 'translate-statsf-intro' );
 		$out->addHTML(
-			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) . Html::openElement(
+			Html::openElement( 'fieldset' ) .
+			Html::element( 'legend', null, $this->msg( 'translate-statsf-options' )->text() ) .
+			Html::openElement(
 				'form',
 				[ 'action' => $script, 'id' => 'translationStatsConfig' ]
-			) . Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
+			) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'preview', 1 ) . '<table>'
 		);
 		$submit = Html::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
