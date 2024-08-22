@@ -7,6 +7,7 @@ use ContentHandler;
 use DifferenceEngine;
 use InvalidArgumentException;
 use Language;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
@@ -17,6 +18,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MessageGroup;
+use RecentChange;
 use RequestContext;
 use RuntimeException;
 use Sanitizer;
@@ -412,11 +414,13 @@ class MessageWebImporter {
 	): array {
 		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $message, $title );
-		$status = $wikiPage->doUserEditContent(
-			$content,
-			$user,
-			$summary
-		);
+
+		$updater = $wikiPage->newPageUpdater( $user )->setContent( SlotRecord::MAIN, $content );
+		if ( $user->authorizeWrite( 'autopatrol', $title ) ) {
+			$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+		}
+		$updater->saveRevision( CommentStoreComment::newUnsavedComment( $summary ) );
+		$status = $updater->getStatus();
 		$success = $status->isOK();
 
 		if ( $success ) {
