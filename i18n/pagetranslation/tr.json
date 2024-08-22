@@ -40,7 +40,6 @@
 	"tpt-sections-oldnew": "Yeni ve mevcut çeviri birimleri",
 	"tpt-sections-deleted": "Silinen çeviri birimleri",
 	"tpt-sections-template": "Çeviri sayfası şablonu",
-	"tpt-action-nofuzzy": "Çevirileri geçersiz kılmayın",
 	"tpt-badtitle": "Verilen sayfa adı ($1) geçerli bir başlık değil",
 	"tpt-nosuchpage": "$1 sayfası mevcut değil",
 	"tpt-oldrevision": "$2, [[:$1]] sayfasının en son sürümü değil.\nYalnızca en son sürümler çeviri için işaretlenebilir.",

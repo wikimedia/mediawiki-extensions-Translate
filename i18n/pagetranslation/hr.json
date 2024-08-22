@@ -23,7 +23,6 @@
 	"tpt-sections-oldnew": "Novi i postojeći prijevodi",
 	"tpt-sections-deleted": "Obrisane grupe prijevoda",
 	"tpt-sections-template": "Predložak stranice za prijevod",
-	"tpt-action-nofuzzy": "Ne obeskrepljuj prijevode",
 	"tpt-badtitle": "Dano ime stranice ($1) nije valjani naslov",
 	"tpt-nosuchpage": "Stranica $1 ne postoji",
 	"tpt-oldrevision": "$2 nije posljednja inačica stranice [[:$1]].\nJedino posljednje inačice mogu se označiti za prevođenje.",

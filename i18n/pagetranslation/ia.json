@@ -20,7 +20,6 @@
 	"tpt-sections-oldnew": "Unitates de traduction nove e existente",
 	"tpt-sections-deleted": "Unitates de traduction delite",
 	"tpt-sections-template": "Patrono de pagina de traduction",
-	"tpt-action-nofuzzy": "Non invalidar traductiones",
 	"tpt-badtitle": "Le nomine de pagina specificate ($1) non es un titulo valide",
 	"tpt-nosuchpage": "Le pagina $1 non existe",
 	"tpt-oldrevision": "$2 non es le version le plus recente del pagina [[:$1]].\nSolmente le versiones le plus recente pote esser marcate pro traduction.",

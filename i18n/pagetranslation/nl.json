@@ -35,7 +35,6 @@
 	"tpt-sections-oldnew": "Nieuwe en bestaande vertaaleenheden",
 	"tpt-sections-deleted": "Verwijderde vertaaleenheden",
 	"tpt-sections-template": "Sjabloon voor vertalingspagina’s",
-	"tpt-action-nofuzzy": "Vertalingen niet als verouderd markeren",
 	"tpt-badtitle": "De opgegeven paginanaam ($1) is geen geldige titel",
 	"tpt-nosuchpage": "Pagina \"$1\" bestaat niet",
 	"tpt-oldrevision": "$2 is niet de meest recente versie van de pagina \"[[:$1]]\".\nAlleen de meest recente versie kan voor vertaling gemarkeerd worden.",

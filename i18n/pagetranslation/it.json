@@ -32,7 +32,6 @@
 	"tpt-sections-oldnew": "Elementi della traduzione nuovi ed esistenti",
 	"tpt-sections-deleted": "Elementi della traduzione cancellati",
 	"tpt-sections-template": "Modello della pagina di traduzione",
-	"tpt-action-nofuzzy": "Non invalidare le traduzioni",
 	"tpt-badtitle": "Il nome fornito per la pagina ($1) non è un titolo valido",
 	"tpt-nosuchpage": "La pagina $1 non esiste",
 	"tpt-oldrevision": "$2 non è l'ultima versione della pagina [[:$1]].\nSolo le ultime versioni possono essere segnate per la traduzione.",

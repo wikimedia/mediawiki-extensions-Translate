@@ -22,7 +22,6 @@
 	"tpt-sections-oldnew": "Unități de traducere noi și existente",
 	"tpt-sections-deleted": "Unități de traducere șterse",
 	"tpt-sections-template": "Format de pagină de traducere",
-	"tpt-action-nofuzzy": "Nu invalida traduceri",
 	"tpt-badtitle": "Numele de pagină dat ($1) nu este un titlu valid",
 	"tpt-nosuchpage": "Pagina $1 nu există",
 	"tpt-oldrevision": "$2 nu este cea mai recentă versiune a paginii [[:$1]].\nDoar cele mai recente versiuni pot fi marcate pentru traducere.",

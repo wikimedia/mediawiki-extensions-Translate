@@ -30,7 +30,6 @@
 	"tpt-sections-oldnew": "Unitats de traduccions noves i existents",
 	"tpt-sections-deleted": "Unitats de traducció suprimides",
 	"tpt-sections-template": "Plantilla de la pàgina de traducció",
-	"tpt-action-nofuzzy": "No invalida les traduccions",
 	"tpt-badtitle": "El nom de pàgina donat ($1) no és un títol vàlid",
 	"tpt-nosuchpage": "La pàgina $1 no existeix",
 	"tpt-notsuitable": "La pàgina $1 no està preparada per a la seva traducció.\nAssegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.",

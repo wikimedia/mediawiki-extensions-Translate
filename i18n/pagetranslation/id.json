@@ -35,7 +35,6 @@
 	"tpt-sections-oldnew": "Unit-unit penerjemahan baru dan yang telah ada",
 	"tpt-sections-deleted": "Unit penerjemahan yang dihapus",
 	"tpt-sections-template": "Templat halaman penerjemahan",
-	"tpt-action-nofuzzy": "Jangan membatalkan terjemahan",
 	"tpt-badtitle": "Nama halaman yang diberikan ($1) tidak valid",
 	"tpt-nosuchpage": "Halaman $1 tidak ada",
 	"tpt-oldrevision": "$2 bukan revisi terakhir dari halaman [[:$1]].\nHanya revisi terakhir yang dapat ditandai untuk diterjemahkan.",

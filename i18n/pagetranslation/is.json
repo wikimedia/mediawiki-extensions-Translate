@@ -20,7 +20,6 @@
 	"tpt-sections-oldnew": "Nýjar og fyrirliggjandi þýðingareiningar",
 	"tpt-sections-deleted": "Eyddar þýðingareiningar",
 	"tpt-sections-template": "Sniðmát þýðingarsíðu",
-	"tpt-action-nofuzzy": "Ekki gera þýðingar ógildar",
 	"tpt-badtitle": "Uppgefið síðuheiti ($1) er ekki gildur titill",
 	"tpt-nosuchpage": "Síðan $1 er ekki til",
 	"tpt-oldrevision": "$2 er ekki síðasta útgáfa síðunnar [[:$1]].\nAðeins nýjustu útgáfur er hægt að merkja til þýðingar.",

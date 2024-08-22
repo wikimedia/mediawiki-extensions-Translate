@@ -23,7 +23,6 @@
 	"tpt-sections-oldnew": "Nove i postojeće jedinice prevođenja",
 	"tpt-sections-deleted": "Izbrisane jedinice prevođenja",
 	"tpt-sections-template": "Šablon stranice za prevođenje",
-	"tpt-action-nofuzzy": "Ne poništavajte prevode",
 	"tpt-badtitle": "Zadato ime stranice ($1) nije važeći naslov",
 	"tpt-nosuchpage": "Stranica „$1” ne postoji",
 	"tpt-saveok": "Stranica [[:$1]] je označena za prevođenje sa $2 {{PLURAL:$2|jedinicom prevođenja|jedinice prevođenja|jedinica prevođenja}}. Stranica sada može da bude <span class=\"plainlinks\">[$3 prevedena]</span>.",

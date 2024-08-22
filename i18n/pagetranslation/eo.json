@@ -26,7 +26,6 @@
 	"tpt-sections-oldnew": "Novaj kaj ekzistantaj tradukaĵoj",
 	"tpt-sections-deleted": "Forigitaj tradukadaj unuoj",
 	"tpt-sections-template": "Ŝablono por tradukada paĝo",
-	"tpt-action-nofuzzy": "Ne malvalidigu tradukojn.",
 	"tpt-badtitle": "La provizita paĝnomo ($1) ne estas valida titolo",
 	"tpt-nosuchpage": "La paĝo $1 ne ekzistas.",
 	"tpt-oldrevision": "$2 ne estas la lasta versio de la paĝo [[:$1]].\nNur la lasta versio de la paĝo povas esti markita por esti tradukita.",

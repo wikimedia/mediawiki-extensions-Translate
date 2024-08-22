@@ -23,7 +23,6 @@
 	"tpt-sections-oldnew": "Nye og eksisterende oversættelsesenheder",
 	"tpt-sections-deleted": "Slettede oversættelsesenheder",
 	"tpt-sections-template": "Skabelon til oversættelsesside",
-	"tpt-action-nofuzzy": "Ugyldiggør ikke oversættelser.",
 	"tpt-badtitle": "Det angivne sidenavn ($1) er ikke en gyldig titel",
 	"tpt-nosuchpage": "Siden $1 findes ikke",
 	"tpt-oldrevision": "$2 er ikke den seneste version af siden [[:$1]].\nKun den seneste version kan markeres for oversættelse.",

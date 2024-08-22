@@ -24,7 +24,6 @@
 	"tpt-sections-oldnew": "Nove in obstoječe prevajalske enote",
 	"tpt-sections-deleted": "Izbrisane prevajalske enote",
 	"tpt-sections-template": "Prevod predloge strani",
-	"tpt-action-nofuzzy": "Ne označuj prevodov kot ohlapne",
 	"tpt-badtitle": "Dano ime strani ($1) ni veljaven naslov",
 	"tpt-nosuchpage": "Stran $1 ne obstaja",
 	"tpt-oldrevision": "$2 ni zadnja redakcija strani [[:$1]].\nZa prevod se lahko označijo samo zadnje redakcije.",

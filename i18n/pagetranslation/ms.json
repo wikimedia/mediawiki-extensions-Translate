@@ -21,7 +21,6 @@
 	"tpt-sections-oldnew": "Unit penterjemahan yang baru dan sedia ada",
 	"tpt-sections-deleted": "Unit penterjemahan yang dihapuskan",
 	"tpt-sections-template": "Templat laman penterjemahan",
-	"tpt-action-nofuzzy": "Jangan taksahkan terjemahan",
 	"tpt-badtitle": "Nama laman yang diberikan ($1) bukan tajuk yang sah",
 	"tpt-nosuchpage": "Halaman $1 tidak wujud",
 	"tpt-oldrevision": "$2 bukan versi terkini laman [[:$1]].\nHanya versi terkini boleh ditandai untuk penterjemahan.",

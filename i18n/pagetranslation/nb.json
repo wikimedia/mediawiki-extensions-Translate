@@ -28,7 +28,6 @@
 	"tpt-sections-oldnew": "Nye og eksisterende oversettelsesenheter",
 	"tpt-sections-deleted": "Slettede oversettelsesenheter",
 	"tpt-sections-template": "Mal for oversettelsesside",
-	"tpt-action-nofuzzy": "Ikke ugyldiggjør oversettelser",
 	"tpt-badtitle": "Det angitte sidenavnet ($1) er ikke en gyldig tittel",
 	"tpt-nosuchpage": "Siden $1 finnes ikke",
 	"tpt-oldrevision": "$2 er ikke den siste versjonen av siden [[:$1]].\nKun siste versjoner kan bli markert for oversettelse.",

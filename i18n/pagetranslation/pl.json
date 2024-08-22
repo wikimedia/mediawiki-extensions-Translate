@@ -37,7 +37,6 @@
 	"tpt-sections-oldnew": "Nowe i istniejące jednostki tłumaczenia",
 	"tpt-sections-deleted": "Usunięte jednostki tłumaczenia",
 	"tpt-sections-template": "Szablon strony tłumaczenia",
-	"tpt-action-nofuzzy": "Nie unieważniaj tłumaczeń",
 	"tpt-badtitle": "Podana nazwa strony ($1) nie jest dozwolonym tytułem",
 	"tpt-nosuchpage": "Strona $1 nie istnieje",
 	"tpt-oldrevision": "$2 nie jest najnowszą wersją strony [[:$1]].\nTylko najnowsze wersje mogą być oznaczane do tłumaczenia.",

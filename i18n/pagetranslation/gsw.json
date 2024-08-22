@@ -18,7 +18,6 @@
 	"tpt-sections-oldnew": "Neji un vorhandeni Ibersetzigs-Abschnitt",
 	"tpt-sections-deleted": "Gleschti Ibersetzigs-Abschnitt",
 	"tpt-sections-template": "Ibersetzigs-Sytevorlag",
-	"tpt-action-nofuzzy": "Setz d Ibersetzige nit usser Chraft",
 	"tpt-badtitle": "Dr Sytename, wu Du aagee hesch ($1), isch kei giltige Sytename",
 	"tpt-nosuchpage": "D Syte $1 git s nit",
 	"tpt-oldrevision": "$2 isch nit di letscht Version vu dr Syte [[:$1]].\nNume di letschte Versione chenne zum Iberseze markiert wäre.",

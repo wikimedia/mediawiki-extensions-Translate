@@ -21,7 +21,6 @@
 	"tpt-sections-oldnew": "Nove i postojeće prevodilačke jedinice",
 	"tpt-sections-deleted": "Obrisane prevodilačke jedinice",
 	"tpt-sections-template": "Šablon stranice prevođenja",
-	"tpt-action-nofuzzy": "Ne poništavajte prevode",
 	"tpt-badtitle": "Zadano ime stranice ($1) nije valjan naslov",
 	"tpt-nosuchpage": "Stranica $1 ne postoji",
 	"tpt-oldrevision": "$2 nije posljednja verzija stranice [[:$1]].\nJedino posljednje verzije se mogu označiti za prevođenje.",

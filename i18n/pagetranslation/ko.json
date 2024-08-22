@@ -33,7 +33,6 @@
 	"tpt-sections-oldnew": "신규 및 기존 번역 단위",
 	"tpt-sections-deleted": "삭제된 번역 단위",
 	"tpt-sections-template": "번역 문서 틀",
-	"tpt-action-nofuzzy": "번역을 무효화하지 않습니다",
 	"tpt-badtitle": "주어진 문서 이름($1)은 올바른 제목이 아닙니다",
 	"tpt-nosuchpage": "$1 문서가 존재하지 않습니다",
 	"tpt-oldrevision": "$2 판은 [[:$1]] 문서의 최신 판이 아닙니다.\n최신 판만 번역에서 표시할 수 있습니다.",

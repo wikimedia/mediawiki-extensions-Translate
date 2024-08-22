@@ -33,7 +33,6 @@
 	"tpt-sections-oldnew": "Nya och existerande översättningsenheter",
 	"tpt-sections-deleted": "Raderade översättningsenheter",
 	"tpt-sections-template": "Mall för översättningssida",
-	"tpt-action-nofuzzy": "Ogiltigförklara inte översättningar",
 	"tpt-badtitle": "Det angivna sidnammet ($1) är inte en giltlig titel",
 	"tpt-nosuchpage": "Sidan $1 finns inte",
 	"tpt-oldrevision": "$2 är inte den senaste versionen av sidan [[:$1]].\nEndast den senaste versionen kan märkas för översättning.",

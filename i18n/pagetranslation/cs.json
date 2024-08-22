@@ -29,7 +29,6 @@
 	"tpt-sections-oldnew": "Nové a existující části překladu",
 	"tpt-sections-deleted": "Smazané části překladu",
 	"tpt-sections-template": "Šablona stránky pro překlad",
-	"tpt-action-nofuzzy": "Nezneplatňovat překlady",
 	"tpt-badtitle": "Zadaný název stránky ($1) je neplatný",
 	"tpt-nosuchpage": "Stránka $1 neexistuje",
 	"tpt-oldrevision": "$2 není nejnovější verze stránky [[:$1]].\nPro překlad je možné označit pouze nejnovější verze.",

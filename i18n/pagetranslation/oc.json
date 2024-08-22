@@ -15,7 +15,6 @@
 	"tpt-sections-oldnew": "Unitats de traduccion novèlas e existentas",
 	"tpt-sections-deleted": "Unitats de traduccion suprimidas",
 	"tpt-sections-template": "Modèl de pagina de traduccion",
-	"tpt-action-nofuzzy": "Invalidar pas las traduccions",
 	"tpt-badtitle": "Lo nom de pagina donada ($1) es pas un títol valid",
 	"tpt-oldrevision": "$2 es pas la darrièra version de la pagina [[:$1]].\nSola la darrièra version de la pagina pòt èsser marcada per èsser traduita.",
 	"tpt-notsuitable": "La pagina $1 conven pas per èsser traduita.\nSiatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sintaxi corrècta.",

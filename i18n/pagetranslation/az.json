@@ -22,7 +22,6 @@
 	"tpt-sections-oldnew": "Yeni və mövcud tərcümə bölümləri",
 	"tpt-sections-deleted": "Tərcümə bölümləri silindi",
 	"tpt-sections-template": "Tərcümə səhifəsi şablonu",
-	"tpt-action-nofuzzy": "Tərcümələri etibarsız etməyin",
 	"tpt-badtitle": "Verilmiş səhifə adı ($1) etibarlı ad deyil",
 	"tpt-nosuchpage": "$1 səhifəsi mövcud deyil",
 	"tpt-oldrevision": "$2 [[:$1]] səhifəsinin son versiyası deyil.\nYalnız ən son versiyalar tərcümə üçün işarə oluna bilər.",

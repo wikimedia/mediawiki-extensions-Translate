@@ -37,7 +37,6 @@
 	"tpt-sections-oldnew": "Unidades de tradução novas e existentes",
 	"tpt-sections-deleted": "Unidades de tradução apagadas",
 	"tpt-sections-template": "Modelo de página de tradução",
-	"tpt-action-nofuzzy": "Não invalidar traduções",
 	"tpt-badtitle": "O nome de página dado ($1) não é um título válido",
 	"tpt-nosuchpage": "A página $1 não existe",
 	"tpt-oldrevision": "$2 não é a versão atual da página [[:$1]].\nApenas as versões atuais pode ser marcadas para tradução.",

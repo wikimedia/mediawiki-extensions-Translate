@@ -317,7 +317,7 @@
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-general-area-header": "Header text for the general area in Special:PageTranslation",
-	"tpt-fuzzy-select-label": "Label of the select all nofuzzy choosebox in the general area",
+	"tpt-fuzzy-select-label": "Label of the select all nofuzzy checkbox in the general area. \"Edited units\" means \"units that were edited\".",
 	"tpt-fuzzy-select-all": "Text for the selection ALL on the nofuzzy choosebox dropdown list",
 	"tpt-fuzzy-select-none": "Text for the selection NONE on the nofuzzy choosebox dropdown list",
 	"tpt-fuzzy-select-custom": "Text for the selection CUSTOM on the nofuzzy choosebox dropdown list",
