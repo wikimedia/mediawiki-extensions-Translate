@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 
 /** @ingroup MessageGroup */
@@ -63,11 +64,18 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 				$title = Title::makeTitleSafe( $this->getNamespace(), $key );
 				$page = $wikiPageFactory->newFromTitle( $title );
 				$content = ContentHandler::makeContent( $state, $title );
+				$fuzzyBotUser = FuzzyBot::getUser();
 
-				$page->doUserEditContent(
-					$content,
-					FuzzyBot::getUser(),
-					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text()
+				$updater = $page->newPageUpdater( $fuzzyBotUser )
+					->setContent( SlotRecord::MAIN, $content );
+				if ( $fuzzyBotUser->authorizeWrite( 'autopatrol', $title ) ) {
+						$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+				}
+
+				$summary = wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text();
+				$updater->saveRevision(
+					CommentStoreComment::newUnsavedComment( $summary ),
+					EDIT_FORCE_BOT
 				);
 			} else {
 				// Use the wiki translation as definition if available.
