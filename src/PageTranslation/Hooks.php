@@ -1223,7 +1223,7 @@ class Hooks {
 				] );
 				$output->addHTML(
 					Html::noticeBox(
-						$context->msg( 'pt-cta-mark-translation', $pageUrl ),
+						$context->msg( 'pt-cta-mark-translation', $pageUrl )->parse(),
 						'translate-cta-pt-mark'
 					)
 				);

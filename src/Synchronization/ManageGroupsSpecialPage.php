@@ -320,7 +320,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			// forever and will prevent rebuilding the cache, which
 			// leads to many other annoying problems.
 			$type = 'change';
-			$noticeHtml .= Html::warningBox( $this->msg( 'translate-manage-key-reused' )->text() );
+			$noticeHtml .= Html::warningBox( $this->msg( 'translate-manage-key-reused' )->parse() );
 			$isReusedKey = true;
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
 			// This happens if a message key has been renamed
@@ -341,7 +341,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			if ( $wiki === '' ) {
 				$noticeHtml .= Html::warningBox(
-					$this->msg( 'translate-manage-empty-content' )->text()
+					$this->msg( 'translate-manage-empty-content' )->parse()
 				);
 			}
 
@@ -369,7 +369,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				}
 			} elseif ( !self::isMessageDefinitionPresent( $group, $changes, $key ) ) {
 				$noticeHtml .= Html::warningBox(
-					$this->msg( 'translate-manage-source-message-not-found' )->text(),
+					$this->msg( 'translate-manage-source-message-not-found' )->parse(),
 					'mw-translate-smg-notice-important'
 				);
 
@@ -380,7 +380,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			if ( $params['content'] === '' ) {
 				$noticeHtml .= Html::warningBox(
-					$this->msg( 'translate-manage-empty-content' )->text()
+					$this->msg( 'translate-manage-empty-content' )->parse()
 				);
 			}
 
@@ -409,7 +409,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				!self::isMessageDefinitionPresent( $group, $changes, $key )
 			) {
 				$noticeHtml .= Html::warningBox(
-					$this->msg( 'translate-manage-source-message-not-found' )->text(),
+					$this->msg( 'translate-manage-source-message-not-found' )->parse(),
 					'mw-translate-smg-notice-important'
 				);
 
