@@ -23,6 +23,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup API TranslateAPI
  */
 class ReviewTranslationActionApi extends ApiBase {
+	/** @var string */
 	protected static $right = 'translate-messagereview';
 	private RevisionLookup $revisionLookup;
 	private TitleFormatter $titleFormatter;

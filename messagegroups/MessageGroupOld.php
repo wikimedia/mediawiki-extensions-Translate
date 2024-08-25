@@ -27,6 +27,7 @@ use MediaWiki\Linker\LinkTarget;
 abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Human-readable name of this group
+	 * @var string
 	 */
 	protected $label = 'none';
 
@@ -45,6 +46,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	/**
 	 * Group-wide unique id of this group. Used also for sorting.
+	 * @var string
 	 */
 	protected $id = 'none';
 
@@ -62,6 +64,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * The namespace where all the messages of this group belong.
 	 * If the group has messages from multiple namespaces, set this to false
 	 * and look how RecentMessageGroup implements the definitions.
+	 * @var int
 	 */
 	protected $namespace = NS_MEDIAWIKI;
 
@@ -84,6 +87,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Holds description of this group. Description is a wiki text snippet that
 	 * gives information about this group to translators.
+	 * @var string|null
 	 */
 	protected $description = null;
 
@@ -102,6 +106,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Meta groups consist of multiple groups or parts of other groups. This info
 	 * is used on many places, like when creating message index.
+	 * @var bool
 	 */
 	protected $meta = false;
 
@@ -116,6 +121,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * To avoid key conflicts between groups or separated changed messages between
 	 * branches one can set a message key mangler.
+	 * @var StringMatcher|null
 	 */
 	protected $mangler = null;
 
@@ -195,6 +201,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	/**
 	 * All the messages for this group, by language code.
+	 * @var array
 	 */
 	protected $messages = [];
 

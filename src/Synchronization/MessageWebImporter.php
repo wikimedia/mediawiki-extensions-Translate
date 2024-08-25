@@ -36,6 +36,7 @@ class MessageWebImporter {
 	private User $user;
 	private MessageGroup $group;
 	private string $code;
+	/** @var int|null */
 	private $time;
 	/** Maximum processing time in seconds. */
 	private const MAX_PROCESSING_TIME = 43;

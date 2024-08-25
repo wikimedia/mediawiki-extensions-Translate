@@ -19,7 +19,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 class ArrayFlattener {
 	protected string $sep;
 	protected bool $parseCLDRPlurals;
-	// For CLDR pluralization rules
+	/** @var array For CLDR pluralization rules */
 	protected static $pluralWords = [
 		'zero' => 1,
 		'one' => 1,

@@ -20,6 +20,7 @@ use MockWikiMessageGroup;
 class ReviewTranslationActionApiTest extends ApiTestCase {
 	use MessageGroupTestTrait;
 
+	/** @var User[] */
 	private static $testUsers = [];
 
 	public function addDBDataOnce() {

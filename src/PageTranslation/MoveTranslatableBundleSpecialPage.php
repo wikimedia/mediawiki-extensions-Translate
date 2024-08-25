@@ -44,6 +44,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private PermissionManager $permissionManager;
 	private TranslatableBundleFactory $bundleFactory;
 	private FormatterFactory $formatterFactory;
+	/** @var array */
 	private $movePageSpec;
 	// Other
 	private ?Title $oldTitle;

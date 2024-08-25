@@ -21,6 +21,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * @ingroup MessageGroup
  */
 class WikiMessageGroup extends MessageGroupOld {
+	/** @var string */
 	protected $source;
 
 	/**

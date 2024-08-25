@@ -27,6 +27,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaExtender {
 	public const NO_FILE_FORMAT = 1;
 
+	/** @var array */
 	protected $reverseCodeMap;
 
 	/**

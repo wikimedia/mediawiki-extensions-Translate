@@ -21,11 +21,13 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
  * @ingroup MessageGroup
  */
 class RecentMessageGroup extends WikiMessageGroup {
-	/*
+	/**
 	 * Yes this is very ugly hack and should not be removed.
 	 * @see \MediaWiki\Extension\Translate\MessageLoading\MessageCollection::getPages()
+	 * @var int|false
 	 */
 	protected $namespace = false;
+	/** @var string */
 	protected $language;
 
 	/**

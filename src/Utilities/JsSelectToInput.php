@@ -14,13 +14,13 @@ use XmlSelect;
  * @license GPL-2.0-or-later
  */
 class JsSelectToInput {
-	/// Id of the text field where stuff is appended
+	/** @var string Id of the text field where stuff is appended */
 	protected $targetId;
-	/// Id of the \<option> field
+	/** @var string Id of the \<option> field */
 	protected $sourceId;
 	/** @var XmlSelect */
 	protected $select;
-	/// Id on the button
+	/** @var string Id on the button */
 	protected $buttonId;
 	/** @var string Text for the append button */
 	protected $msg = 'translate-jssti-add';

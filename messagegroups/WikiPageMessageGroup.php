@@ -52,6 +52,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 	/**
 	 * Only used for caching to avoid repeating database queries
 	 * for example during message index rebuild.
+	 * @var array
 	 */
 	protected $definitions;
 

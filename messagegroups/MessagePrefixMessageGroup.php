@@ -9,6 +9,7 @@ declare( strict_types = 1 );
  * @ingroup MessageGroup
  */
 class MessagePrefixMessageGroup extends WikiMessageGroup {
+	/** @var string */
 	protected $language;
 
 	public function __construct() {

@@ -15,7 +15,9 @@ use MediaWiki\Extension\Translate\Validation\ValidationIssues;
  * @since 2020.07
  */
 class ReplacementValidator implements MessageValidator {
+	/** @var string|null */
 	private $search;
+	/** @var string|null */
 	private $replace;
 
 	public function __construct( array $params ) {

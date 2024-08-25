@@ -58,13 +58,13 @@ use WikitextContent;
  */
 class Hooks {
 	private const PAGEPROP_HAS_LANGUAGES_TAG = 'translate-has-languages-tag';
-	// Uuugly hacks
+	/** @var bool Uuugly hacks */
 	public static $allowTargetEdit = false;
 	/** State flag used by DeleteTranslatableBundleJob for performance optimizations. */
 	public static bool $isDeleteTranslatableBundleJobRunning = false;
-	// Check if we are just rendering tags or such
+	/** @var bool Check if we are just rendering tags or such */
 	public static $renderingContext = false;
-	// Used to communicate data between LanguageLinks and SkinTemplateGetLanguageLink hooks.
+	/** @var array Used to communicate data between LanguageLinks and SkinTemplateGetLanguageLink hooks. */
 	private static $languageLinkData = [];
 
 	/**

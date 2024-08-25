@@ -30,7 +30,9 @@ use MediaWiki\MediaWikiServices;
  * @ingroup MessageGroup
  */
 abstract class MessageGroupBase implements MessageGroup {
+	/** @var array */
 	protected $conf;
+	/** @var int|false */
 	protected $namespace;
 	/** @var StringMatcher */
 	protected $mangler;

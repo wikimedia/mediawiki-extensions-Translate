@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\Utilities\ParsingPlaceholderFactory;
  * @since 2020.08
  */
 class TestingParsingPlaceholderFactory extends ParsingPlaceholderFactory {
+	/** @var int */
 	private $i = 0;
 
 	public function make(): string {

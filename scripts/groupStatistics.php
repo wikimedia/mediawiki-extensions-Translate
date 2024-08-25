@@ -36,6 +36,7 @@ class GroupStatistics extends Maintenance {
 	 *    [speakers in millions],
 	 *    [continent where localisation is spoken]
 	 * )
+	 * @var array
 	 */
 	public $mostSpokenLanguages = [
 		'en' => [ 1, 1500, 'multiple' ],
@@ -102,6 +103,7 @@ class GroupStatistics extends Maintenance {
 	 * scores for the 50 most spoken languages.
 	 *
 	 * @todo Allow weighted reporting for all available languages.
+	 * @var array
 	 */
 	public $localisedWeights = [
 		'wikimedia' => [
@@ -124,6 +126,7 @@ class GroupStatistics extends Maintenance {
 	 * Code map to map localisation codes to Wikimedia project codes. Only
 	 * exclusion and remapping is defined here. It is assumed that the first part
 	 * of the localisation code is the WMF project name otherwise (zh-hans -> zh).
+	 * @var array
 	 */
 	public $wikimediaCodeMap = [
 		// Codes containing a dash

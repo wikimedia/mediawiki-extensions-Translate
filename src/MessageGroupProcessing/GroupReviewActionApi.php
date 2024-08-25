@@ -15,6 +15,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class GroupReviewActionApi extends ApiBase {
+	/** @var string */
 	protected static $right = 'translate-groupreview';
 	private LanguageNameUtils $languageNameUtils;
 	private MessageGroupReviewStore $messageGroupReviewStore;

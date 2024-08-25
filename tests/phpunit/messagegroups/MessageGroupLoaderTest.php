@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
 
+	/** @var MockCacheMessageGroupLoader */
 	protected $cacheLoaderMock;
 
 	protected function setUp(): void {

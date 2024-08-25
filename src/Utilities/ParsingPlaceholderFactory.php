@@ -10,6 +10,7 @@ namespace MediaWiki\Extension\Translate\Utilities;
  * @since 2020.07
  */
 class ParsingPlaceholderFactory {
+	/** @var int */
 	private $i = 0;
 
 	/** Return value is guaranteed to only contain [a-zA-Z0-9\x7f] */
