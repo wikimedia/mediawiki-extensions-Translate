@@ -23,8 +23,6 @@ use WANObjectCache;
  * @covers MediaWiki\Extension\Translate\MessageLoading\MessageIndex
  */
 class MessageIndexTest extends MediaWikiIntegrationTestCase {
-	protected $tablesUsed = [ 'translate_messageindex' ];
-
 	protected function setUp(): void {
 		parent::setUp();
 		$this->overrideConfigValues( [

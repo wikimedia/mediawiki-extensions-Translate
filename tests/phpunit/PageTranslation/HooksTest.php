@@ -29,8 +29,6 @@ use Wikimedia\TestingAccessWrapper;
 class HooksTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
 
-	protected $tablesUsed = [ 'revtag' ];
-
 	protected function setUp(): void {
 		parent::setUp();
 		$this->setupGroupTestEnvironment( $this );
