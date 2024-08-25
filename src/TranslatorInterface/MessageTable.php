@@ -16,8 +16,8 @@ use MessageGroup;
  * @license GPL-2.0-or-later
  */
 class MessageTable extends ContextSource {
-	protected $group;
-	protected $language;
+	protected MessageGroup $group;
+	protected string $language;
 
 	public function __construct( IContextSource $context, MessageGroup $group, string $language ) {
 		$this->setContext( $context );
