@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Wikimedia\ObjectFactory\ObjectFactory;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IReadableDatabase;
 use const TS_MW;
 
 /**
@@ -75,11 +76,16 @@ class TranslationStatsDataProvider {
 			$end = null;
 		}
 
-		$selectQueryBuilder = $so->createQueryBuilder(
-			$dbr,
-			__METHOD__,
-			wfTimestamp( TS_MW, $start ),
-			wfTimestampOrNull( TS_MW, $end )
+		$timestampColumn = $so->getTimestampColumn();
+
+		$selectQueryBuilder = $so->createQueryBuilder( $dbr, __METHOD__ );
+		$selectQueryBuilder->andWhere(
+			$this->makeTimeCondition(
+				$dbr,
+				$timestampColumn,
+				wfTimestamp( TS_MW, $start ),
+				wfTimestampOrNull( TS_MW, $end )
+			)
 		);
 
 		$res = $selectQueryBuilder->fetchResultSet();
@@ -118,7 +124,7 @@ class TranslationStatsDataProvider {
 				if ( !isset( $labelToIndex[$i] ) ) {
 					continue;
 				}
-				$date = $language->sprintfDate( $dateFormat, $so->getTimestamp( $row ) );
+				$date = $language->sprintfDate( $dateFormat, $row->$timestampColumn );
 				// Ignore values outside range
 				if ( !isset( $data[$date] ) ) {
 					continue;
@@ -246,5 +252,23 @@ class TranslationStatsDataProvider {
 		}
 
 		return $increment;
+	}
+
+	/** @return string[] */
+	private function makeTimeCondition(
+		IReadableDatabase $database,
+		string $field,
+		?string $start,
+		?string $end
+	): array {
+		$conditions = [];
+		if ( $start !== null ) {
+			$conditions[] = "$field >= " . $database->addQuotes( $database->timestamp( $start ) );
+		}
+		if ( $end !== null ) {
+			$conditions[] = "$field <= " . $database->addQuotes( $database->timestamp( $end ) );
+		}
+
+		return $conditions;
 	}
 }

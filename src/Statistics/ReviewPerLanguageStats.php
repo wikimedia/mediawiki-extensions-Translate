@@ -14,12 +14,7 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
  * @since 2012.03
  */
 class ReviewPerLanguageStats extends TranslatePerLanguageStats {
-	public function createQueryBuilder(
-		IReadableDatabase $database,
-		string $caller,
-		string $start,
-		?string $end
-	): SelectQueryBuilder {
+	public function createQueryBuilder( IReadableDatabase $database, string $caller ): SelectQueryBuilder {
 		global $wgTranslateMessageNamespaces;
 
 		$fields = [ 'log_timestamp' ];
@@ -28,9 +23,6 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			'log_namespace' => $wgTranslateMessageNamespaces,
 			'log_action' => 'message',
 		];
-
-		$timeConds = self::makeTimeCondition( $database, 'log_timestamp', $start, $end );
-		$conds = array_merge( $conds, $timeConds );
 
 		$this->groups = $this->opts->getGroups();
 
@@ -110,7 +102,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		return $this->combineTwoArrays( $this->groups, $this->opts->getLanguages() );
 	}
 
-	public function getTimestamp( $row ) {
-		return $row->log_timestamp;
+	public function getTimestampColumn(): string {
+		return 'log_timestamp';
 	}
 }

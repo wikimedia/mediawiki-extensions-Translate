@@ -24,18 +24,13 @@ interface TranslationStatsInterface {
 	public function __construct( TranslationStatsGraphOptions $opts );
 
 	/**
-	 * Return the SelectQueryBuilder to fetch the data needed for the graph
+	 * Return the SelectQueryBuilder to fetch the data needed for the graph.
+	 * An additional condition with the cutoff timestamp(s) will be added to
+	 * the returned query builder.
 	 * @param IReadableDatabase $database
 	 * @param string $caller Appended with the graph type and passed to `->caller()` (used to identify queries).
-	 * @param string $start Precalculated start cutoff timestamp
-	 * @param string|null $end Precalculated end cutoff timestamp
 	 */
-	public function createQueryBuilder(
-		IReadableDatabase $database,
-		string $caller,
-		string $start,
-		?string $end
-	): SelectQueryBuilder;
+	public function createQueryBuilder( IReadableDatabase $database, string $caller ): SelectQueryBuilder;
 
 	/**
 	 * Return the indexes which this result contributes to.
@@ -53,12 +48,8 @@ interface TranslationStatsInterface {
 	 */
 	public function labels();
 
-	/**
-	 * Return the timestamp associated with this result row.
-	 * @param stdClass $row Database Result Row
-	 * @return string Timestamp.
-	 */
-	public function getTimestamp( $row );
+	/** Return the name of the timestamp column to be queried. */
+	public function getTimestampColumn(): string;
 
 	/**
 	 * Return time formatting string.

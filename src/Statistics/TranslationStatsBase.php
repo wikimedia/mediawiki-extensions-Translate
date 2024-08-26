@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Provides some hand default implementations for TranslationStatsInterface.
@@ -41,18 +40,6 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		}
 
 		return $dateFormat;
-	}
-
-	protected static function makeTimeCondition( IReadableDatabase $database, $field, $start, $end ) {
-		$conds = [];
-		if ( $start !== null ) {
-			$conds[] = "$field >= " . $database->addQuotes( $database->timestamp( $start ) );
-		}
-		if ( $end !== null ) {
-			$conds[] = "$field <= " . $database->addQuotes( $database->timestamp( $end ) );
-		}
-
-		return $conds;
 	}
 
 	/**

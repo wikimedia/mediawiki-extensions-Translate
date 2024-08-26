@@ -35,12 +35,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$this->messageIndex = Services::getInstance()->getMessageIndex();
 	}
 
-	public function createQueryBuilder(
-		IReadableDatabase $database,
-		string $caller,
-		string $start,
-		?string $end
-	): SelectQueryBuilder {
+	public function createQueryBuilder( IReadableDatabase $database, string $caller ): SelectQueryBuilder {
 		global $wgTranslateMessageNamespaces;
 
 		$fields = [ 'rc_timestamp' ];
@@ -50,9 +45,6 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			'rc_bot' => 0,
 			'rc_type != ' . RC_LOG,
 		];
-
-		$timeConds = self::makeTimeCondition( $database, 'rc_timestamp', $start, $end );
-		$conds = array_merge( $conds, $timeConds );
 
 		$this->groups = array_map( [ MessageGroups::class, 'normalizeId' ], $this->opts->getGroups() );
 
@@ -132,8 +124,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		return $this->combineTwoArrays( $this->groups, $this->opts->getLanguages() );
 	}
 
-	public function getTimestamp( $row ) {
-		return $row->rc_timestamp;
+	public function getTimestampColumn(): string {
+		return 'rc_timestamp';
 	}
 
 	/**
