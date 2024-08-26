@@ -3,17 +3,18 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use ContentHandler;
 use JobQueueGroup;
 use LogicException;
 use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Message\Message;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
@@ -21,7 +22,6 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use Message;
 use RecentChange;
 use TitleFormatter;
 use TitleParser;
@@ -92,17 +92,21 @@ class TranslatablePageMarker {
 	 */
 	public function unmarkPage( TranslatablePage $page, User $user, bool $removeMarkup ): void {
 		if ( $removeMarkup ) {
-			$content = ContentHandler::makeContent(
-				$page->getStrippedSourcePageText(),
-				$page->getTitle()
+			$pageTitle = $page->getTitle();
+			$content = ContentHandler::makeContent( $page->getStrippedSourcePageText(), $pageTitle );
+
+			$wikiPage = $this->wikiPageFactory->newFromTitle( $pageTitle );
+			$updater = $wikiPage->newPageUpdater( $user )
+				->setContent( SlotRecord::MAIN, $content );
+			$summary = CommentStoreComment::newUnsavedComment(
+				Message::newFromKey( 'tpt-unlink-summary' )->inContentLanguage()->text()
 			);
 
-			$status = $this->wikiPageFactory->newFromTitle( $page->getPageIdentity() )->doUserEditContent(
-				$content,
-				$user,
-				Message::newFromKey( 'tpt-unlink-summary' )->inContentLanguage()->text(),
-				EDIT_FORCE_BOT | EDIT_UPDATE
-			);
+			if ( $user->authorizeWrite( 'autopatrol', $pageTitle ) ) {
+				$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+			}
+			$updater->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
+			$status = $updater->getStatus();
 
 			if ( !$status->isOK() ) {
 				throw new TranslatablePageMarkException( [ 'tpt-edit-failed', $status->getWikiText() ] );
