@@ -23,15 +23,10 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotNull( $title, 'Title is valid' );
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
+
+		$this->editPage( $title, ContentHandler::makeContent( 'kissa', $title ), 'Test case' );
+
 		$translatablePage = TranslatablePage::newFromTitle( $title );
-		$content = ContentHandler::makeContent( 'kissa', $title );
-
-		$page->doUserEditContent(
-			$content,
-			$this->getTestUser()->getUser(),
-			'Test case'
-		);
-
 		$this->assertNull( $translatablePage->getReadyTag(), 'No ready tag was added' );
 		$this->assertNull( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
@@ -41,16 +36,15 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotNull( $title, 'Title is valid' );
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
-		$translatablePage = TranslatablePage::newFromTitle( $title );
 
-		$content = ContentHandler::makeContent( '<translate>kissa</translate>', $title );
-		$status = $page->doUserEditContent(
-			$content,
-			$this->getTestUser()->getUser(),
+		$status = $this->editPage(
+			$title,
+			ContentHandler::makeContent( '<translate>kissa</translate>', $title ),
 			'Test case'
 		);
 		$latest = $status->value['revision-record']->getId();
 
+		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertNull( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
@@ -60,16 +54,15 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotNull( $title, 'Title is valid' );
 		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
-		$translatablePage = TranslatablePage::newFromTitle( $title );
 
-		$content = ContentHandler::makeContent( '<translate>koira</translate>', $title );
-		$status = $page->doUserEditContent(
-			$content,
-			$this->getTestUser()->getUser(),
+		$status = $this->editPage(
+			$title,
+			ContentHandler::makeContent( '<translate>koira</translate>', $title ),
 			'Test case'
 		);
 		$latest = $status->value['revision-record']->getId();
 
+		$translatablePage = TranslatablePage::newFromTitle( $title );
 		$translatablePage->addMarkedTag( $latest, [ 'foo' ] );
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was added' );
@@ -102,13 +95,13 @@ class PageTranslationTaggingTest extends MediaWikiIntegrationTestCase {
 	public function testTranslationPageRestrictions() {
 		$superUser = $this->getTestSysop()->getUser();
 		$title = Title::newFromText( 'Translatable page' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
-		$content = ContentHandler::makeContent( '<translate>Hello</translate>', $title );
 
-		$status = $page->doUserEditContent(
-			$content,
-			$superUser,
-			'New page'
+		$status = $this->editPage(
+			$title,
+			ContentHandler::makeContent( '<translate>Hello</translate>', $title ),
+			'New page',
+			NS_MAIN,
+			$superUser
 		);
 
 		$revisionId = $status->value['revision-record']->getId();
