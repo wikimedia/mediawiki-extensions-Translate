@@ -26,6 +26,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
+use MediaWiki\Page\PageReference;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\RevisionRecord;
@@ -48,7 +49,6 @@ use UserBlockedError;
 use Wikimedia\ScopedCallback;
 use WikiPage;
 use WikiPageMessageGroup;
-use WikitextContent;
 
 /**
  * Hooks for page translation.
@@ -820,11 +820,11 @@ class Hooks {
 	}
 
 	private static function tpSyntaxError( ?PageIdentity $page, ?Content $content ): ?Status {
-		// T163254: Ignore translation markup on non-wikitext pages
-		if ( !$content instanceof WikitextContent || !$page ) {
+		if ( !$page || !self::isAllowedContentModel( $content, $page ) ) {
 			return null;
 		}
 
+		'@phan-var TextContent $content';
 		$text = $content->getText();
 
 		// See T154500
@@ -895,13 +895,13 @@ class Hooks {
 	) {
 		$content = $wikiPage->getContent();
 
-		// T163254: Disable page translation on non-wikitext pages
-		if ( $content instanceof WikitextContent ) {
-			$text = $content->getText();
-		} else {
-			// Not applicable
+		// Only allow translating configured content models (T360544)
+		if ( !self::isAllowedContentModel( $content, $wikiPage ) ) {
 			return;
 		}
+
+		'@phan-var TextContent $content';
+		$text = $content->getText();
 
 		$parser = Services::getInstance()->getTranslatablePageParser();
 		if ( $parser->containsMarkup( $text ) ) {
@@ -1377,6 +1377,28 @@ class Hooks {
 				$output->wrapWikiMsg( $wrap, [ 'tpt-translation-intro-fuzzy' ] );
 			}
 		}
+	}
+
+	private static function isAllowedContentModel( Content $content, PageReference $page ): bool {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$allowedModels = $config->get( 'PageTranslationAllowedContentModels' );
+		$contentModel = $content->getModel();
+		$allowed = (bool)( $allowedModels[$contentModel] ?? false );
+
+		// T163254: Disable page translation on non-text pages
+		if ( $allowed && !$content instanceof TextContent ) {
+			LoggerFactory::getInstance( 'Translate' )->error(
+				'Expected {title} to have content of type TextContent, got {contentType}. ' .
+				'$wgPageTranslationAllowedContentModels is incorrectly configured with a non-text content model.',
+				[
+					'title' => (string)$page,
+					'contentType' => get_class( $content )
+				]
+			);
+			return false;
+		}
+
+		return $allowed;
 	}
 
 	/**

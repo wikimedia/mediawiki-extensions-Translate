@@ -34,6 +34,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->setupGroupTestEnvironment( $this );
 
 		$this->setGroupPermissions( 'sysop', 'translate-manage', true );
+		$this->overrideConfigValue( 'PageTranslationAllowedContentModels', [ CONTENT_MODEL_WIKITEXT => true ] );
 	}
 
 	public function getTestGroups() {
@@ -232,5 +233,37 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$nullRev->getId(),
 			'Must not update ready tag for non-null revision'
 		);
+	}
+
+	/** @covers \MediaWiki\Extension\Translate\PageTranslation\Hooks::addTranstagAfterSave */
+	public function testShouldAddTransTagOnSave(): void {
+		$title = $this->getNonexistingTestPage();
+		$revRecord = $this->editPage( $title, '<translate>test</translate>' )->getNewRevision();
+
+		$translatablePage = TranslatablePage::newFromTitle( $title );
+		$this->assertSame(
+			$revRecord->getId(),
+			$translatablePage->getReadyTag(),
+			'Page should be ready for translation'
+		);
+	}
+
+	/**
+	 * @dataProvider provideShouldNotAddTransTagOnSave
+	 * @covers \MediaWiki\Extension\Translate\PageTranslation\Hooks::addTranstagAfterSave
+	 */
+	public function testShouldNotAddTransTagOnSave( string $contentModel, string $content ): void {
+		$title = $this->getNonexistingTestPage();
+		$contentHandler = $this->getServiceContainer()->getContentHandlerFactory()->getContentHandler( $contentModel );
+		$content = $contentHandler->unserializeContent( $content );
+		$this->editPage( $title, $content );
+
+		$translatablePage = TranslatablePage::newFromTitle( $title );
+		$this->assertNull( $translatablePage->getReadyTag(), 'Page should not be ready for translation' );
+	}
+
+	public static function provideShouldNotAddTransTagOnSave(): iterable {
+		yield 'unsupported content model' => [ CONTENT_MODEL_JSON, '{"test":"<translate>test</translate>"}' ];
+		yield 'no translate tag' => [ CONTENT_MODEL_WIKITEXT, 'test' ];
 	}
 }
