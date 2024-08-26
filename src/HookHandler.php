@@ -626,9 +626,9 @@ class HookHandler implements
 		string $profile,
 		string $term,
 		array $opts
-	): bool {
+	): void {
 		if ( $profile !== 'translation' ) {
-			return true;
+			return;
 		}
 
 		if ( Services::getInstance()->getTtmServerFactory()->getDefaultForQuerying() instanceof SearchableTtmServer ) {
@@ -639,11 +639,11 @@ class HookHandler implements
 				'plainlinks'
 			);
 
-			return false;
+			return;
 		}
 
 		if ( !$search->getSearchEngine()->supports( 'title-suffix-filter' ) ) {
-			return false;
+			return;
 		}
 
 		$hidden = '';
@@ -672,13 +672,11 @@ class HookHandler implements
 			'languagefilter'
 		) . "\u{00A0}";
 
-		$form = Html::rawElement(
+		$form .= Html::rawElement(
 			'fieldset',
 			[ 'id' => 'mw-searchoptions' ],
 			$hidden . $label . $selector
 		);
-
-		return false;
 	}
 
 	/** Hook: SpecialSearchSetupEngine */
