@@ -12,6 +12,7 @@
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 
 // Standard boilerplate to define $IP
@@ -307,11 +308,15 @@ class WikiWriter {
 
 		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-		$status = $page->doUserEditContent(
-			$content,
-			$this->user,
-			'Updating translation from gettext import'
-		);
+		$updater = $page->newPageUpdater( $this->user )->setContent( SlotRecord::MAIN, $content );
+
+		if ( $this->user->authorizeWrite( 'autopatrol', $title ) ) {
+			$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
+		}
+
+		$summary = CommentStoreComment::newUnsavedComment( 'Updating translation from gettext import' );
+		$updater->saveRevision( $summary );
+		$status = $updater->getStatus();
 
 		if ( $status->isOK() ) {
 			$this->reportProgress( 'OK!', $title );
