@@ -46,7 +46,7 @@ interface TranslationStatsInterface {
 	 * returned by indexOf() and contain them all.
 	 * @return string[]
 	 */
-	public function labels();
+	public function labels(): array;
 
 	/** Return the name of the timestamp column to be queried. */
 	public function getTimestampColumn(): string;
@@ -54,7 +54,6 @@ interface TranslationStatsInterface {
 	/**
 	 * Return time formatting string.
 	 * @see Language::sprintfDate()
-	 * @return string
 	 */
-	public function getDateFormat();
+	public function getDateFormat(): string;
 }

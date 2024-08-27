@@ -23,11 +23,11 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		return [ 'all' ];
 	}
 
-	public function labels() {
+	public function labels(): array {
 		return [ 'all' ];
 	}
 
-	public function getDateFormat() {
+	public function getDateFormat(): string {
 		$dateFormat = 'Y-m-d';
 		$scale = $this->opts->getValue( 'scale' );
 		if ( $scale === 'years' ) {

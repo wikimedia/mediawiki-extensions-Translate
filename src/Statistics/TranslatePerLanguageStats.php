@@ -121,7 +121,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		return $this->combineTwoArrays( $groups, $codes );
 	}
 
-	public function labels() {
+	public function labels(): array {
 		return $this->combineTwoArrays( $this->groups, $this->opts->getLanguages() );
 	}
 
