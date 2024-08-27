@@ -27,9 +27,8 @@ use MessageGroup;
  */
 class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	/** @var array[] */
-	private $services;
-	/** @var TtmServerFactory */
-	private $ttmServerFactory;
+	private array $services;
+	private TtmServerFactory $ttmServerFactory;
 
 	public function __construct(
 		MessageGroup $group,
@@ -75,14 +74,14 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 				continue;
 			}
 
-			$sugs = $this->formatInternalSuggestions( $queryData, $service, $name, $from );
-			$suggestions = array_merge( $suggestions, $sugs );
+			$serviceSuggestion = $this->formatInternalSuggestions( $queryData, $service, $name, $from );
+			$suggestions = array_merge( $suggestions, $serviceSuggestion );
 		}
 
 		// Results from web services
 		foreach ( $this->getQueryData() as $queryData ) {
-			$sugs = $this->formatWebSuggestions( $queryData );
-			$suggestions = array_merge( $suggestions, $sugs );
+			$serviceSuggestion = $this->formatWebSuggestions( $queryData );
+			$suggestions = array_merge( $suggestions, $serviceSuggestion );
 		}
 
 		$suggestions = TtmServer::sortSuggestions( $suggestions );
@@ -118,8 +117,8 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 
 			// TtmServerActionApi expands this... need to fix it again to be the bare name
 			if ( $local ) {
-				$pagename = urldecode( substr( $item['location'], $localPrefixLength ) );
-				$handle = new MessageHandle( Title::newFromText( $pagename ) );
+				$pageName = urldecode( substr( $item['location'], $localPrefixLength ) );
+				$handle = new MessageHandle( Title::newFromText( $pageName ) );
 				$item['editorUrl'] = Utilities::getEditorUrl( $handle );
 				$item['location'] = $handle->getTitle()->getPrefixedText();
 			}
@@ -184,8 +183,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	private function getQueryableServices(): array {
 		if ( !$this->services ) {
 			global $wgTranslateTranslationServices;
-			$this->services = $this->getQueryableServicesUncached(
-				$wgTranslateTranslationServices );
+			$this->services = $this->getQueryableServicesUncached( $wgTranslateTranslationServices );
 		}
 
 		return $this->services;
