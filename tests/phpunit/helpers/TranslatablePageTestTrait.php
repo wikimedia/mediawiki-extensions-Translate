@@ -45,13 +45,13 @@ trait TranslatablePageTestTrait {
 	): TranslatablePage {
 		// Create new page
 		$translatablePageTitle = Title::newFromText( $title );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $translatablePageTitle );
 		$text = "<translate>$content</translate>";
 		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
 
 		// Create the page
-		$editStatus = $page->doUserEditContent( $content, $creator, __METHOD__ );
+		$editStatus =
+			$this->editPage( $translatablePageTitle, $content, __METHOD__, NS_MAIN, $creator );
 
 		if ( $markForTranslation ) {
 			// Mark the page for translation

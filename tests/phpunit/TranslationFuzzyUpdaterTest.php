@@ -200,11 +200,10 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testValidationFuzzy() {
-		$user = $this->getTestUser()->getUser();
 		$title = Title::newFromText( 'MediaWiki:nlkey/en-gb' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'Test message', $title );
-		$page->doUserEditContent( $content, $user, __METHOD__ );
+
+		$this->editPage( $title, $content, __METHOD__, NS_MAIN, $this->getTestUser()->getUser() );
 
 		$handle = new MessageHandle( $title );
 		$this->assertTrue( $handle->isValid(), 'Message is known' );

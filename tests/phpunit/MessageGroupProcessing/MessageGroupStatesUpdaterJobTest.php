@@ -121,10 +121,9 @@ class MessageGroupStatesUpdaterJobTest extends ApiTestCase {
 
 		// First translation
 		$title = Title::newFromText( 'MediaWiki:key1/fi' );
-		$page = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( 'trans1', $title );
 
-		$status = $page->doUserEditContent( $content, $user, __METHOD__ );
+		$status = $this->editPage( $title, $content, __METHOD__, NS_MAIN, $user );
 
 		$this->translateRunJobs();
 		$currentState = GroupReviewActionApi::getState( $group, 'fi' );
