@@ -13,6 +13,7 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @author Abijeet Patro
  */
 class MessageGroupSubscriptionStore {
+	private const VIRTUAL_DOMAIN = 'virtual-translate';
 	private const TABLE_NAME = 'translate_message_group_subscriptions';
 	/** @var int Match field tmgs_group byte length */
 	private const MAX_GROUP_LENGTH = 200;
@@ -23,7 +24,7 @@ class MessageGroupSubscriptionStore {
 	}
 
 	public function addSubscription( string $groupId, int $userId ): void {
-		$this->dbProvider->getPrimaryDatabase()->replace(
+		$this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN )->replace(
 			self::TABLE_NAME,
 			[ [ 'tmgs_group', 'tmgs_user_id' ] ],
 			[
@@ -36,7 +37,7 @@ class MessageGroupSubscriptionStore {
 
 	public function getSubscriptions( ?array $groupIds, ?int $userId ): IResultWrapper {
 		$queryBuilder = $this->dbProvider
-			->getReplicaDatabase()
+			->getReplicaDatabase( self::VIRTUAL_DOMAIN )
 			->newSelectQueryBuilder()
 			->select( [ 'tmgs_group', 'tmgs_user_id' ] )
 			->from( self::TABLE_NAME )
@@ -63,7 +64,7 @@ class MessageGroupSubscriptionStore {
 			'tmgs_user_id' => $userId
 		];
 
-		$this->dbProvider->getPrimaryDatabase()
+		$this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN )
 			->delete(
 				self::TABLE_NAME,
 				$conditions,
