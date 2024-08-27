@@ -423,15 +423,6 @@
 		"comment": "Translator subscriptions to message groups",
 		"columns": [
 			{
-				"name": "tmgs_subscription_id",
-				"type": "integer",
-				"options": {
-					"autoincrement": true,
-					"unsigned": true,
-					"notnull": true
-				}
-			},
-			{
 				"name": "tmgs_user_id",
 				"comment": "Subscribed user ID",
 				"type": "integer",
@@ -444,21 +435,13 @@
 				"options": { "notnull": true, "length": 200 }
 			}
 		],
-		"pk": [ "tmgs_subscription_id" ],
+		"pk": [ "tmgs_group", "tmgs_user_id" ],
 		"indexes": [
 			{
 				"name": "translate_tmgs_user_id",
 				"comment": "Index for finding all group subscriptions of the user",
 				"columns": [
 					"tmgs_user_id"
-				],
-				"unique": false
-			},
-			{
-				"name": "translate_tmgs_group",
-				"comment": "Index for finding all users subscribed to a group",
-				"columns": [
-					"tmgs_group"
 				],
 				"unique": false
 			}

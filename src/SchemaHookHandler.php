@@ -111,6 +111,11 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 			'translate_reviews',
 			"{$dir}/{$dbType}/patch-translate_reviews-unsigned.sql"
 		);
+		$updater->dropExtensionField(
+			'translate_message_group_subscriptions',
+			'tmgs_subscription_id',
+			"{$dir}/{$dbType}/patch-translate_message_group_subscriptions-composite-primary-key.sql"
+		);
 
 		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 		$updater->addPostDatabaseUpdateMaintenance( RemoveRedundantMessageGroupMetadataMaintenanceScript::class );
