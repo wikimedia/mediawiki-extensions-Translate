@@ -708,7 +708,7 @@ class HookHandler implements
 	public static function showFakeCategories( OutputPage $outputPage, ParserOutput $parserOutput ): void {
 		$fakeCategories = $parserOutput->getExtensionData( 'translate-fake-categories' );
 		if ( $fakeCategories ) {
-			$outputPage->setCategoryLinks( $fakeCategories );
+			$outputPage->addCategoryLinks( $fakeCategories );
 		}
 	}
 
