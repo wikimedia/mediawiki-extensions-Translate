@@ -116,7 +116,7 @@ class TranslationStatsDataProvider {
 
 		foreach ( $res as $row ) {
 			$indexLabels = $so->indexOf( $row );
-			if ( $indexLabels === false ) {
+			if ( $indexLabels === null ) {
 				continue;
 			}
 

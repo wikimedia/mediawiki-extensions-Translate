@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use stdClass;
 
 /**
  * Provides some hand default implementations for TranslationStatsInterface.
@@ -18,7 +19,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		$this->opts = $opts;
 	}
 
-	public function indexOf( $row ) {
+	public function indexOf( stdClass $row ): ?array {
 		return [ 'all' ];
 	}
 

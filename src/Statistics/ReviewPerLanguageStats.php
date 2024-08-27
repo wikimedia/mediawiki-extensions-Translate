@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use stdClass;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -57,12 +58,12 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			->caller( $caller . '-reviews' );
 	}
 
-	public function indexOf( $row ) {
+	public function indexOf( stdClass $row ): ?array {
 		if ( $this->opts->getValue( 'count' ) === 'reviewers' ) {
 			$date = $this->formatTimestamp( $row->log_timestamp );
 
 			if ( isset( $this->seenUsers[$date][$row->log_actor] ) ) {
-				return false;
+				return null;
 			}
 
 			$this->seenUsers[$date][$row->log_actor] = 1;
@@ -70,7 +71,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 		// Do not consider language-less pages.
 		if ( !str_contains( $row->log_title, '/' ) ) {
-			return false;
+			return null;
 		}
 
 		// No filters, just one key to track.

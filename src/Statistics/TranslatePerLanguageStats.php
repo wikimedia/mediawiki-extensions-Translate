@@ -9,6 +9,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use stdClass;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -79,12 +80,12 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			->caller( $caller . '-perlang' );
 	}
 
-	public function indexOf( $row ) {
+	public function indexOf( stdClass $row ): ?array {
 		if ( $this->opts->getValue( 'count' ) === 'users' ) {
 			$date = $this->formatTimestamp( $row->rc_timestamp );
 
 			if ( isset( $this->seenUsers[$date][$row->rc_actor] ) ) {
-				return false;
+				return null;
 			}
 
 			$this->seenUsers[$date][$row->rc_actor] = true;
@@ -92,7 +93,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		// Do not consider language-less pages.
 		if ( !str_contains( $row->rc_title, '/' ) ) {
-			return false;
+			return null;
 		}
 
 		// No filters, just one key to track.

@@ -36,9 +36,9 @@ interface TranslationStatsInterface {
 	 * Return the indexes which this result contributes to.
 	 * Return 'all' if only one variable is measured. Return false if none.
 	 * @param stdClass $row Database Result Row
-	 * @return array|false
+	 * @return ?array
 	 */
-	public function indexOf( $row );
+	public function indexOf( stdClass $row ): ?array;
 
 	/**
 	 * Return the names of the variables being measured.
