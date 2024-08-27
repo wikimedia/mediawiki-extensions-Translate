@@ -135,7 +135,7 @@
 	"translate-statsf-submit": "แสดงตัวอย่าง",
 	"translate-statsf-unknown-error": "เกิดข้อผิดพลาดไม่ทราบสาเหตุ",
 	"translate-tag-page-desc": "การแปลหน้าวิกิ [[$2|$1]] จาก $3 ($4)",
-	"translate-tag-page-wikipage-desc": "[[$1|การแปลภาษา]]ของหน้าวิกิ[[$2]]จาก <bdi>$3</bdi> ($4) เป็น <bdi>$5</bdi> ($6)",
+	"translate-tag-page-wikipage-desc": "[[$1|การแปลภาษา]]ของหน้าวิกิ [[$2]] จาก <bdi>$3</bdi> ($4) เป็น <bdi>$5</bdi> ($6)",
 	"translate-sidebar-alltrans": "ในภาษาอื่น ๆ",
 	"translations": "คำแปลทุกภาษา",
 	"translations-summary": "ใส่ชื่อของข้อความลงด้านล่างนี้ เพื่อแสดงคำแปลที่มีทั้งหมด",
