@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\TtmServer\TtmServerFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
 
@@ -206,12 +207,13 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		}
 
 		// Then determine the query method. Prefer HTTP queries that can be run parallel.
+		$urlUtils = MediaWikiServices::getInstance()->getUrlUtils();
 		foreach ( $services as $name => &$config ) {
 			$public = $config['public'] ?? false;
 			if ( $config['type'] === 'ttmserver' && $public ) {
 				$config['type'] = 'remote-ttmserver';
 				$config['service'] = $name;
-				$config['url'] = wfExpandUrl( wfScript( 'api' ), PROTO_CANONICAL );
+				$config['url'] = $urlUtils->expand( wfScript( 'api' ), PROTO_CANONICAL );
 			}
 		}
 
