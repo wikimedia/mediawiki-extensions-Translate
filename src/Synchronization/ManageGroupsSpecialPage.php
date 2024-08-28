@@ -34,7 +34,6 @@ use Skin;
 use TextContent;
 use UserBlockedError;
 use WebRequest;
-use Xml;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
@@ -400,7 +399,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			if ( $sourceLanguage === $language ) {
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
-				$actions .= Xml::radioLabel( $label, "msg/$id", "fuzzy", "f/$id", $shouldFuzzy );
+				$actions .= $this->radioLabel( $label, "msg/$id", "fuzzy", $shouldFuzzy );
 			}
 
 			if (
@@ -418,10 +417,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$limit--;
 			} else {
 				$label = $this->msg( 'translate-manage-action-import' )->text();
-				$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", !$shouldFuzzy );
+				$actions .= $this->radioLabel( $label, "msg/$id", "import", !$shouldFuzzy );
 
 				$label = $this->msg( 'translate-manage-action-ignore' )->text();
-				$actions .= Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
+				$actions .= $this->radioLabel( $label, "msg/$id", "ignore" );
 				$limit--;
 			}
 
@@ -710,20 +709,20 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			if ( !$isEqual ) {
 				$renameSelected = false;
 				$label = $this->msg( 'translate-manage-action-rename-fuzzy' )->text();
-				$actions .= Xml::radioLabel( $label, "msg/$id", "renamefuzzy", "rf/$id", true );
+				$actions .= $this->radioLabel( $label, "msg/$id", "renamefuzzy", true );
 			}
 
 			$label = $this->msg( 'translate-manage-action-rename' )->text();
-			$actions .= Xml::radioLabel( $label, "msg/$id", "rename", "imp/$id", $renameSelected );
+			$actions .= $this->radioLabel( $label, "msg/$id", "rename", $renameSelected );
 		} else {
 			$label = $this->msg( 'translate-manage-action-import' )->text();
-			$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", true );
+			$actions .= $this->radioLabel( $label, "msg/$id", "import", true );
 		}
 
 		if ( $group->getSourceLanguage() !== $language ) {
 			// Allow user to ignore changes to non-source languages.
 			$label = $this->msg( 'translate-manage-action-ignore-change' )->text();
-			$actions .= Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
+			$actions .= $this->radioLabel( $label, "msg/$id", "ignore" );
 		}
 		$limit--;
 
@@ -1118,5 +1117,22 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			);
 
 		}
+	}
+
+	private function radioLabel(
+		string $label,
+		string $name,
+		string $value,
+		bool $checked = false
+	): string {
+		return Html::rawElement(
+			'label',
+			[],
+			Html::radio(
+				$name,
+				$checked,
+				[ 'value' => $value ]
+			) . "\u{00A0}" . $label
+		);
 	}
 }
