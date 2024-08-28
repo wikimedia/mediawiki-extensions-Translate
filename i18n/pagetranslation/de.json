@@ -53,7 +53,7 @@
 	"tpt-invalid": "Der Name der Übersetzungseinheit <strong><bdi>$1</bdi></strong> darf keinen Unterstrich oder Schrägstrich enthalten.",
 	"tpt-unit-title-too-long": "Der Name der Übersetzungseinheit <strong><bdi>$1</bdi></strong> ist zu lang. Die kombinierte Länge des übersetzbaren Seitentitels mit Namensraum-Präfix, dem Namen der Übersetzungseinheit und dem Sprachcode beträgt $2 {{PLURAL:$2|Byte|Bytes}}, was länger als die maximal unterstützte Länge von $3 {{PLURAL:$3|Byte|Bytes}} ist. Kürze den Namen der Übersetzungseinheit (falls er angepasst wurde) oder [[Special:MovePage/$4|benenne die übersetzbare Seite]] auf einen kürzeren Namen um, damit die Übersetzung ermöglicht wird.",
 	"tpt-unit-title-invalid": "Name der Übersetzungseinheit <strong><bdi>$1</strong> ist ungültig: $2",
-	"tpt-unmarked": "Seite [[:$1]] ist nicht länger als zu Übersetzen markiert.",
+	"tpt-unmarked": "Seite [[:$1]] ist nicht länger zum Übersetzen markiert.",
 	"tpt-list-nopages": "Es sind keine Seiten zum Übersetzen freigegeben und auch nicht vorbereitet, um freigegeben werden zu können.",
 	"tpt-new-pages-title": "Zur Übersetzung vorgeschlagene Seiten",
 	"tpt-old-pages-title": "Zu übersetzende Seiten",
