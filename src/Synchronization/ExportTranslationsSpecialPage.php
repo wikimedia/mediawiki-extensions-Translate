@@ -13,8 +13,10 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
+use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use Message;
 use MessageGroup;
@@ -38,13 +40,19 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	protected string $groupId;
 	private TitleFormatter $titleFormatter;
 	private ParserFactory $parserFactory;
+	private StatusFormatter $statusFormatter;
 	/** @var string[] */
 	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
 
-	public function __construct( TitleFormatter $titleFormatter, ParserFactory $parserFactory ) {
+	public function __construct(
+		TitleFormatter $titleFormatter,
+		ParserFactory $parserFactory,
+		FormatterFactory $formatterFactory
+	) {
 		parent::__construct( 'ExportTranslations' );
 		$this->titleFormatter = $titleFormatter;
 		$this->parserFactory = $parserFactory;
+		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this );
 	}
 
 	/** @param null|string $par */
@@ -67,7 +75,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$out->wrapWikiTextAsInterface(
 					'error',
-					$status->getWikiText( false, false, $lang )
+					$this->statusFormatter->getWikiText( $status )
 				);
 				return;
 			}
@@ -75,7 +83,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			$status = $this->doExport();
 			if ( !$status->isGood() ) {
 				$out->addHTML(
-					Html::errorBox( $status->getHTML( false, false, $lang ) )
+					Html::errorBox( $this->statusFormatter->getHTML( $status, [ 'lang' => $lang ] ) )
 				);
 			}
 		}

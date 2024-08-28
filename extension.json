@@ -329,7 +329,8 @@
 			"class": "\\MediaWiki\\Extension\\Translate\\Synchronization\\ExportTranslationsSpecialPage",
 			"services": [
 				"TitleFormatter",
-				"ParserFactory"
+				"ParserFactory",
+				"FormatterFactory"
 			]
 		},
 		"ManageMessageGroups": {
