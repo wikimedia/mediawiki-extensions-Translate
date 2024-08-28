@@ -36,7 +36,7 @@
 	"tsb-limit-reached-title": "Гочдарна баркалла",
 	"tsb-no-requests-from-new-users": "Керла декъашхошкара дехарш дац",
 	"tsb-create-user-page": "Кхоьллина коьрта декъашхочун агӀо",
-	"log-name-translatorsandbox": "Ловзаран майда",
+	"log-name-translatorsandbox": "Гочдарийн ловзаран майданан журнал",
 	"log-description-translatorsandbox": "Гочдаран ловзаран майдан чохь декъашхоша бина хийцамаш",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|вина|йина}}$3 {{GENDER:$4|гочдархо}}.",
 	"logentry-translatorsandbox-rejected": "гочдархо статусан дехар $3 $1 {{GENDER:$2|йухадаьккхина}}.",
