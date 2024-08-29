@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use ForeignTitle;
 use IDBAccessObject;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarkException;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageSettings;
 use MediaWiki\Extension\Translate\Services;
@@ -226,10 +227,14 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			$this->fatalError( wfMessage( $e->getMessageObject() )->text() );
 		}
 
+		$statusFormatter = MediaWikiServices::getInstance()
+			->getFormatterFactory()
+			->getStatusFormatter( RequestContext::getMain() );
+
 		$unitNameValidationResult = $operation->getUnitValidationStatus();
 		if ( !$unitNameValidationResult->isOK() ) {
 			$this->output( "Unit validation failed for {$bundleTitle->getPrefixedText()}.\n" );
-			$this->fatalError( $unitNameValidationResult->getMessage()->text() );
+			$this->fatalError( $statusFormatter->getMessage( $unitNameValidationResult )->text() );
 		}
 
 		try {
