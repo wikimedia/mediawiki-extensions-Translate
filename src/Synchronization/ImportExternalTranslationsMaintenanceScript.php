@@ -5,10 +5,12 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Exception;
 use FileBasedMessageGroup;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
 
@@ -71,10 +73,14 @@ class ImportExternalTranslationsMaintenanceScript extends BaseMaintenanceScript 
 		$services = Services::getInstance();
 		$importer = $services->getExternalMessageSourceStateImporter();
 
+		$statusFormatter = MediaWikiServices::getInstance()
+			->getFormatterFactory()
+			->getStatusFormatter( RequestContext::getMain() );
+
 		foreach ( $groups as $id => $group ) {
 			$status = $importer->canImportGroup( $group, $skipGroupSyncCache );
 			if ( !$status->isOK() ) {
-				$this->error( $status->getMessage()->plain() );
+				$this->error( $statusFormatter->getMessage( $status )->plain() );
 				continue;
 			}
 
