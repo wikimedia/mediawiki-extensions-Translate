@@ -10,7 +10,6 @@ use MapCacheLRU;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Title\Title;
 use MessageGroup;
@@ -42,7 +41,6 @@ class MessageIndex {
 	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
 	private IConnectionProvider $dbProvider;
-	private MessageGroupSubscription $messageGroupSubscription;
 	private array $translateMessageNamespaces;
 	public const SERVICE_OPTIONS = [
 		'TranslateMessageNamespaces'
@@ -56,7 +54,6 @@ class MessageIndex {
 		LoggerInterface $logger,
 		BagOStuff $interimCache,
 		IConnectionProvider $dbProvider,
-		MessageGroupSubscription $messageGroupSubscription,
 		ServiceOptions $options
 	) {
 		$this->messageIndexStore = $store;
@@ -67,7 +64,6 @@ class MessageIndex {
 		$this->logger = $logger;
 		$this->interimCache = $interimCache;
 		$this->dbProvider = $dbProvider;
-		$this->messageGroupSubscription = $messageGroupSubscription;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->translateMessageNamespaces = $options->get( 'TranslateMessageNamespaces' );
 	}
@@ -274,7 +270,6 @@ class MessageIndex {
 		$this->statusCache->touchCheckKey( $this->getStatusCacheKey() );
 
 		$this->clearMessageGroupStats( $diff );
-		$this->messageGroupSubscription->queueNotificationJob();
 
 		$recursion--;
 
@@ -403,7 +398,6 @@ class MessageIndex {
 				[ $oldGroups, $newGroups ] = $data;
 				$this->hookRunner->onTranslateEventMessageMembershipChange(
 					$handle, $oldGroups, $newGroups );
-				$this->messageGroupSubscription->handleMessageIndexUpdate( $handle, $oldGroups, $newGroups );
 			}
 		}
 	}

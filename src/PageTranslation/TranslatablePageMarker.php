@@ -10,6 +10,7 @@ use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
@@ -20,6 +21,7 @@ use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
+use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use RecentChange;
@@ -50,6 +52,7 @@ class TranslatablePageMarker {
 	private MessageGroupMetadata $messageGroupMetadata;
 	private WikiPageFactory $wikiPageFactory;
 	private TranslatablePageView $translatablePageView;
+	private MessageGroupSubscription $messageGroupSubscription;
 
 	public function __construct(
 		IConnectionProvider $dbProvider,
@@ -65,7 +68,8 @@ class TranslatablePageMarker {
 		TranslationUnitStoreFactory $translationUnitStoreFactory,
 		MessageGroupMetadata $messageGroupMetadata,
 		WikiPageFactory $wikiPageFactory,
-		TranslatablePageView $translatablePageView
+		TranslatablePageView $translatablePageView,
+		MessageGroupSubscription $messageGroupSubscription
 	) {
 		$this->dbProvider = $dbProvider;
 		$this->jobQueueGroup = $jobQueueGroup;
@@ -81,6 +85,7 @@ class TranslatablePageMarker {
 		$this->messageGroups = $messageGroups;
 		$this->messageGroupMetadata = $messageGroupMetadata;
 		$this->translatablePageView = $translatablePageView;
+		$this->messageGroupSubscription = $messageGroupSubscription;
 	}
 
 	/**
@@ -278,17 +283,18 @@ class TranslatablePageMarker {
 		}
 
 		$page = $operation->getPage();
+		$title = $page->getTitle();
 		$newRevisionId = $this->updateSectionMarkers( $page, $user, $operation );
 		// Probably a no-change edit, so no new revision was assigned. Get the latest revision manually
 		// Could also occur on the off chance $newRevisionRecord->getId() returns null
-		$newRevisionId ??= $page->getTitle()->getLatestRevID();
+		$newRevisionId ??= $title->getLatestRevID();
 
 		$inserts = [];
 		$changed = [];
 		$groupId = $page->getMessageGroupId();
 		$maxId = (int)$this->messageGroupMetadata->get( $groupId, 'maxid' );
 
-		$pageId = $page->getTitle()->getArticleID();
+		$pageId = $title->getArticleID();
 		$sections = $pageSettings->shouldTranslateTitle()
 			? $operation->getUnits()
 			: array_filter(
@@ -316,7 +322,7 @@ class TranslatablePageMarker {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->delete(
 			'translate_sections',
-			[ 'trs_page' => $page->getTitle()->getArticleID() ],
+			[ 'trs_page' => $title->getArticleID() ],
 			__METHOD__
 		);
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
@@ -332,7 +338,7 @@ class TranslatablePageMarker {
 		// TODO: Ideally we would only invalidate translatable page message group cache
 		$this->messageGroups->recache();
 
-		$group = new WikiPageMessageGroup( $groupId, $page->getTitle() );
+		$group = new WikiPageMessageGroup( $groupId, $title );
 		$newKeys = $group->makeGroupKeys( $changed );
 		// Interim cache is temporary cache to make new message groups keys known
 		// until MessageIndex is rebuilt (which can take a long time)
@@ -344,7 +350,7 @@ class TranslatablePageMarker {
 		// Logging
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
 		$entry->setPerformer( $user );
-		$entry->setTarget( $page->getTitle() );
+		$entry->setTarget( $title );
 		$entry->setParameters( [
 			'revision' => $newRevisionId,
 			'changed' => count( $changed ),
@@ -353,7 +359,9 @@ class TranslatablePageMarker {
 		$entry->publish( $logId );
 
 		// Clear more caches
-		$page->getTitle()->invalidateCache();
+		$title->invalidateCache();
+
+		$this->sendNotifications( $sections, $group, $groupId );
 
 		return count( $sections );
 	}
@@ -510,5 +518,35 @@ class TranslatablePageMarker {
 		}
 
 		return $newRevisionRecord !== null ? $newRevisionRecord->getId() : null;
+	}
+
+	/**
+	 * @param TranslationUnit[] $sections
+	 * @param WikiPageMessageGroup $group
+	 * @param string $groupId
+	 */
+	public function sendNotifications( array $sections, WikiPageMessageGroup $group, string $groupId ): void {
+		$changedMessages = array_filter( $sections, static function ( $section ) {
+			return $section->type !== 'old';
+		} );
+
+		if ( !$changedMessages ) {
+			return;
+		}
+
+		$code = $group->getSourceLanguage();
+		$pageTitle = $group->getTitle();
+
+		foreach ( $changedMessages as $message ) {
+			$messageTitle = Title::makeTitle( NS_TRANSLATIONS, "$pageTitle/$message->id/$code" );
+			$this->messageGroupSubscription->queueMessage(
+				$messageTitle,
+				$message->type === 'new'
+				 ? MessageGroupSubscription::STATE_ADDED
+				 : MessageGroupSubscription::STATE_UPDATED,
+				[ $groupId ],
+			);
+		}
+		$this->messageGroupSubscription->queueNotificationJob();
 	}
 }

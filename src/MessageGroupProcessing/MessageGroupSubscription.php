@@ -8,7 +8,6 @@ use Iterator;
 use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Notifications\Model\Event;
-use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -32,6 +31,7 @@ class MessageGroupSubscription {
 	private LoggerInterface $logger;
 
 	public const STATE_ADDED = 'added';
+	public const STATE_UPDATED = 'updated';
 	public const CONSTRUCTOR_OPTIONS = [ 'TranslateEnableMessageGroupSubscription' ];
 
 	public const NOT_ENABLED = 'mgs-not-enabled';
@@ -116,6 +116,10 @@ class MessageGroupSubscription {
 		$this->queuedMessages = [];
 	}
 
+	/**
+	 * @param array<string,array<string,array<int,string>>> $changesToProcess
+	 *  Group ID → state → array of message prefixed DB keys map
+	 */
 	public function sendNotifications( array $changesToProcess ): void {
 		if ( !$this->isEnabled() || $changesToProcess === [] ) {
 			return;
@@ -166,13 +170,6 @@ class MessageGroupSubscription {
 					'subscriberCount' => count( $groupSubscribers )
 				]
 			);
-		}
-	}
-
-	public function handleMessageIndexUpdate( MessageHandle $handle, array $old, array $new ): void {
-		$addedGroups = array_diff( $new, $old );
-		if ( $addedGroups ) {
-			$this->queueMessage( $handle->getTitle(), self::STATE_ADDED, $addedGroups );
 		}
 	}
 

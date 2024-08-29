@@ -269,7 +269,6 @@ return [
 			LoggerFactory::getInstance( 'Translate' ),
 			$services->getMainObjectStash(),
 			$services->getConnectionProvider(),
-			$services->get( 'Translate:MessageGroupSubscription' ),
 			new ServiceOptions( MessageIndex::SERVICE_OPTIONS, $services->getMainConfig() ),
 		);
 	},
@@ -388,7 +387,8 @@ return [
 			$services->get( 'Translate:TranslationUnitStoreFactory' ),
 			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getWikiPageFactory(),
-			$services->get( 'Translate:TranslatablePageView' )
+			$services->get( 'Translate:TranslatablePageView' ),
+			$services->get( 'Translate:MessageGroupSubscription' )
 		);
 	},
 

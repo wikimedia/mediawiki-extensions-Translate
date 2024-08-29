@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Job;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
@@ -41,6 +42,7 @@ class UpdateMessageBundleJob extends Job {
 		$jobQueue = $mwInstance->getJobQueueGroup();
 		$logger = LoggerFactory::getInstance( 'Translate.MessageBundle' );
 		$messageIndex = Services::getInstance()->getMessageIndex();
+		$messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
 
 		$logger->info( 'UpdateMessageBundleJob: Starting job for: ' . $this->getTitle()->getPrefixedText() );
 
@@ -86,8 +88,17 @@ class UpdateMessageBundleJob extends Job {
 		$code = $group->getSourceLanguage();
 		foreach ( $messages as $key => $value ) {
 			$title = Title::makeTitle( $namespace, "$key/$code" );
-			$fuzzy = $this->shouldFuzzy( $previousMessages, $newKeys, $key, $value );
+			$subscriptionState = $this->getMessageSubscriptionState( $previousMessages, $newKeys, $key, $value );
+			$fuzzy = $subscriptionState === null;
 			$jobs[] = UpdateMessageJob::newJob( $title, $value, $fuzzy );
+
+			if ( $subscriptionState ) {
+				$messageGroupSubscription->queueMessage(
+					$title,
+					$subscriptionState,
+					[ $groupId ],
+				);
+			}
 		}
 		$jobQueue->push( $jobs );
 		$logger->info(
@@ -119,21 +130,31 @@ class UpdateMessageBundleJob extends Job {
 			MessageGroupStats::FLAG_NO_CACHE | MessageGroupStats::FLAG_IMMEDIATE_WRITES
 		);
 
+		$messageGroupSubscription->queueNotificationJob();
+
 		return true;
 	}
 
-	private function shouldFuzzy(
+	/**
+	 * Return a message subscription state based on whether a message is new, updated
+	 * or null if it hasn't been changed at all.
+	 */
+	private function getMessageSubscriptionState(
 		?array $previousMessages,
 		array $newKeys,
 		string $key,
 		string $value
-	): bool {
-		// Mark new keys as fuzzy
+	): ?string {
 		if ( in_array( $key, $newKeys ) ) {
-			return true;
+			return MessageGroupSubscription::STATE_ADDED;
 		}
 
 		$previousValue = $previousMessages[$key] ?? null;
-		return $previousMessages !== null && $previousValue !== $value;
+		$isFuzzy = $previousMessages !== null && $previousValue !== $value;
+		if ( $isFuzzy ) {
+			return MessageGroupSubscription::STATE_UPDATED;
+		}
+
+		return null;
 	}
 }

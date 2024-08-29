@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use IDBAccessObject;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
@@ -46,7 +47,8 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$getServiceOrMock( TranslationUnitStoreFactory::class ),
 			$getServiceOrMock( MessageGroupMetadata::class ),
 			$getServiceOrMock( WikiPageFactory::class ),
-			$getServiceOrMock( TranslatablePageView::class )
+			$getServiceOrMock( TranslatablePageView::class ),
+			$getServiceOrMock( MessageGroupSubscription::class )
 		);
 	}
 
@@ -126,6 +128,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
 				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
 				TranslatablePageView::class => $services->get( 'Translate:TranslatablePageView' ),
+				MessageGroupSubscription::class => $services->get( 'Translate:MessageGroupSubscription' ),
 			]
 		);
 

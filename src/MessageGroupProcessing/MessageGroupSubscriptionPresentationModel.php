@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Extension\Notifications\Formatters\EchoEventPresentationModel;
+use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\SpecialPage\SpecialPage;
 
 /**
@@ -47,7 +48,7 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 
 	public function getCompactHeaderMessage() {
 		$msg = $this->msg( $this->getCompactHeaderMessageKey() );
-		$msg->params( $this->getNumberOfChangedMessages() );
+		$msg->params( $this->getNumberOfChangedMessages( $this->event ) );
 		return $msg;
 	}
 
@@ -61,24 +62,22 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 				$events = [ $this->event ];
 			}
 
-			$addedMessages = 0;
+			$addedOrUpdatedMessages = 0;
 			foreach ( $events as $event ) {
-				$changes = $event->getExtraParam( 'changes' );
-				$addedMessages += count( $changes[ MessageGroupSubscription::STATE_ADDED ] ?? [] );
+				$addedOrUpdatedMessages += $this->getNumberOfChangedMessages( $event );
 			}
 
 			$msg = $this->msg( 'notification-body-translate-mgs-message-added' );
-			$msg->params( $addedMessages );
+			$msg->params( $addedOrUpdatedMessages );
 			return $msg;
 		}
 	}
 
-	public function getNumberOfChangedMessages(): int {
-		$changes = $this->event->getExtraParam( 'changes' );
+	private function getNumberOfChangedMessages( Event $event ): int {
+		$changes = $event->getExtraParam( 'changes' );
 		$messageCount = 0;
-		foreach ( $changes as $changeType ) {
-			$messageCount += count( $changeType );
-		}
+		$messageCount += count( $changes[MessageGroupSubscription::STATE_ADDED] ?? [] );
+		$messageCount += count( $changes[MessageGroupSubscription::STATE_UPDATED] ?? [] );
 
 		return $messageCount;
 	}

@@ -470,6 +470,6 @@
 	"echo-category-title-translate-message-group-subscription": "Translatable message group subscriptions",
 	"echo-pref-tooltip-translate-message-group-subscription": "Notify me about changes in translatable message groups that I'm subscribed to",
 	"notification-header-message-group-subscription": "Translation updates for $1",
-	"notification-body-translate-mgs-message-added": "Added $1 {{PLURAL:$1|message|messages}}",
+	"notification-body-translate-mgs-message-added": "$1 new or updated {{PLURAL:$1|message|messages}}",
 	"notification-link-mgs-group-translate": "Translate $1"
 }
