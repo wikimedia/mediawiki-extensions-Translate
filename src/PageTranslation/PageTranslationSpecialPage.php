@@ -716,36 +716,42 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
-		// General Area
-		$dropdown = new FieldLayout(
-			new DropdownInputWidget( [
-				'name' => 'unit-fuzzy-selector',
-				'options' => [
-					[
-						'data' => 'all',
-						'label' => $this->msg( 'tpt-fuzzy-select-all' )->text()
+		// Check if there are changed units
+		if ( array_filter(
+			$operation->getUnits(),
+			static fn ( $unit ) => $unit->type === 'changed'
+		) ) {
+			// General Area
+			$dropdown = new FieldLayout(
+				new DropdownInputWidget( [
+					'name' => 'unit-fuzzy-selector',
+					'options' => [
+						[
+							'data' => 'all',
+							'label' => $this->msg( 'tpt-fuzzy-select-all' )->text()
+						],
+						[
+							'data' => 'none',
+							'label' => $this->msg( 'tpt-fuzzy-select-none' )->text()
+						],
+						[
+							'data' => 'custom',
+							'label' => $this->msg( 'tpt-fuzzy-select-custom' )->text()
+						]
 					],
-					[
-						'data' => 'none',
-						'label' => $this->msg( 'tpt-fuzzy-select-none' )->text()
-					],
-					[
-						'data' => 'custom',
-						'label' => $this->msg( 'tpt-fuzzy-select-custom' )->text()
-					]
-				],
-				'value' => 'custom'
-			] ),
-			[
-				'label' => $this->msg( 'tpt-fuzzy-select-label' )->text(),
-				'align' => 'left',
-			]
-		);
-		$out->addHTML( MessageWebImporter::makeSectionElement(
-			$this->msg( 'tpt-general-area-header' )->text(),
-			'dropdown',
-			$dropdown->toString()
-		) );
+					'value' => 'custom'
+				] ),
+				[
+					'label' => $this->msg( 'tpt-fuzzy-select-label' )->text(),
+					'align' => 'left',
+				]
+			);
+			$out->addHTML( MessageWebImporter::makeSectionElement(
+				$this->msg( 'tpt-general-area-header' )->text(),
+				'dropdown',
+				$dropdown->toString()
+			) );
+		}
 
 		foreach ( $operation->getUnits() as $s ) {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
