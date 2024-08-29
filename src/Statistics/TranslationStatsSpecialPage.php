@@ -149,7 +149,8 @@ class TranslationStatsSpecialPage extends SpecialPage {
 	private function eInput( string $name, FormOptions $opts, int $width = 4 ): string {
 		$value = $opts[$name];
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			Xml::input( $name, $width, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
+			Html::input( $name, $value, 'text', [ 'id' => $name, 'size' => $width ] ) .
+			'</td></tr>' . "\n";
 	}
 
 	/// Construct HTML for a label for option.
@@ -173,12 +174,14 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$options = [];
 		foreach ( $alts as $alt ) {
 			$id = "$name-$alt";
-			$radio = Xml::radio(
-					$name,
-					$alt,
-					$alt === $opts[$name],
-					[ 'id' => $id ]
-				) . ' ';
+			$radio = Html::radio(
+				$name,
+				$alt === $opts[$name],
+				[
+					'value' => $alt,
+					'id' => $id
+				]
+			) . ' ';
 			$options[] = $radio . ' ' . $this->eLabel( $id );
 		}
 		$s .= implode( ' ', $options );
@@ -193,7 +196,8 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$select = $this->languageSelector();
 		$select->setTargetId( 'language' );
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' . $select->getHtmlAndPrepareJS() .
-			'<br />' . Xml::input( $name, 20, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
+			'<br />' . Html::input( $name, $value, 'text', [ 'id' => $name, 'size' => 20 ] ) .
+			'</td></tr>' . "\n";
 	}
 
 	/// Construct a JavaScript enhanced language selector.
@@ -214,7 +218,8 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$select = $this->groupSelector();
 		$select->setTargetId( 'group' );
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' . $select->getHtmlAndPrepareJS() .
-			'<br />' . Xml::input( $name, 20, $value, [ 'id' => $name ] ) . '</td></tr>' . "\n";
+			'<br />' . Html::input( $name, $value, 'text', [ 'id' => $name, 'size' => 20 ] ) .
+			'</td></tr>' . "\n";
 	}
 
 	/// Construct a JavaScript enhanced group selector.
