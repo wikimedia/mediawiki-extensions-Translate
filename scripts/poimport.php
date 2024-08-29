@@ -242,7 +242,9 @@ class WikiWriter {
 	public function __construct( array $changes, $groupId, $user, $dryrun = true ) {
 		$this->changes = $changes;
 		$this->group = MessageGroups::getGroup( $groupId );
-		$this->user = User::newFromName( $user );
+		$this->user = MediaWikiServices::getInstance()
+			->getUserFactory()
+			->newFromName( $user );
 		$this->dryrun = $dryrun;
 	}
 
