@@ -365,8 +365,7 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			$marker,
 			$messageGroupMetadata,
 			$title
-		) extends MarkForTranslationActionApi
-		{
+		) extends MarkForTranslationActionApi {
 			private $title;
 
 			public function __construct(
