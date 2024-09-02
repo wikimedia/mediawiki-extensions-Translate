@@ -1163,13 +1163,17 @@ class Hooks {
 
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false && $page->getMarkedTag() ) {
+			$mwService = MediaWikiServices::getInstance();
 			if ( $needsPageTranslationRight ) {
-				$result = User::newFatalPermissionDeniedStatus( 'pagetranslation' )->getMessage();
+				$context = RequestContext::getMain();
+				$statusFormatter = $mwService->getFormatterFactory()->getStatusFormatter( $context );
+				$permissionError = $mwService->getPermissionManager()
+					->newFatalPermissionDeniedStatus( 'pagetranslation', $context );
+				$result = $statusFormatter->getMessage( $permissionError );
 				return false;
 			}
 
 			[ , $code ] = Utilities::figureMessage( $title->getText() );
-			$mwService = MediaWikiServices::getInstance();
 
 			$translationUrl = $mwService->getUrlUtils()->expand(
 				$page->getTranslationUrl( $code ), PROTO_RELATIVE
