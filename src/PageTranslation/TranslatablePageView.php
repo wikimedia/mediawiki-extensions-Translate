@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Title\Title;
+use RecentChange;
 use User;
 use Wikimedia\Rdbms\IConnectionProvider;
 
@@ -75,15 +76,15 @@ class TranslatablePageView {
 	private function isRecentEditor( Title $articleTitle, User $user ): bool {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 		$fieldValue = $dbr->newSelectQueryBuilder()
-			->select( 'rev_id' )
-			->from( 'revision' )
-			->join( 'actor', null, 'actor_id = rev_actor' )
+			->select( 'rc_id' )
+			->from( 'recentchanges' )
 			->where( [
-				'rev_page' => $articleTitle->getId(),
-				'actor_user' => $user->getId(),
+				'rc_cur_id' => $articleTitle->getId(),
+				'rc_source' => [ RecentChange::SRC_NEW, RecentChange::SRC_EDIT ],
 				$dbr->expr(
-					'rev_timestamp', '>=', $dbr->timestamp( time() - self::RECENT_EDITOR_DAYS * 24 * 3600 )
-				)
+					'rc_timestamp', '>=', $dbr->timestamp( time() - self::RECENT_EDITOR_DAYS * 24 * 3600 )
+				),
+				'rc_actor' => $user->getActorId()
 			] )
 			->caller( __METHOD__ )
 			->fetchField();
