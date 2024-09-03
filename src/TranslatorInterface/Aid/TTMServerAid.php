@@ -26,8 +26,8 @@ use MessageGroup;
  * @since 2013-01-01 | 2015.02 extends QueryAggregatorAwareTranslationAid
  */
 class TTMServerAid extends QueryAggregatorAwareTranslationAid {
-	/** @var array[] */
-	private array $services;
+	/** @var array[]|null */
+	private ?array $services;
 	private TtmServerFactory $ttmServerFactory;
 
 	public function __construct(
@@ -181,10 +181,8 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	}
 
 	private function getQueryableServices(): array {
-		if ( !$this->services ) {
-			global $wgTranslateTranslationServices;
-			$this->services = $this->getQueryableServicesUncached( $wgTranslateTranslationServices );
-		}
+		global $wgTranslateTranslationServices;
+		$this->services ??= $this->getQueryableServicesUncached( $wgTranslateTranslationServices );
 
 		return $this->services;
 	}
