@@ -1021,12 +1021,15 @@ class Hooks {
 			// it just hasn't finished yet. Do a secondary check to make sure we are not
 			// inconveniencing translators for no good reason.
 			// See https://phabricator.wikimedia.org/T221119
-			$statsdDataFactory = MediaWikiServices::getInstance()->getStatsdDataFactory();
-			$statsdDataFactory->increment( 'translate.slow_translatable_page_check' );
 			$translatablePage = self::checkTranslatablePageSlow( $title );
+			MediaWikiServices::getInstance()->getStatsFactory()
+				->withComponent( 'Translate' )
+				->getCounter( 'slow_translatable_page_check' )
+				->setLabel( 'valid', $translatablePage ? 'yes' : 'no' )
+				->increment();
+
 			if ( $translatablePage ) {
 				$groupId = $translatablePage->getMessageGroupId();
-				$statsdDataFactory->increment( 'translate.slow_translatable_page_check_valid' );
 			} else {
 				$isValid = false;
 			}
