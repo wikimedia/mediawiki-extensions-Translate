@@ -107,7 +107,7 @@ class Hooks {
 			return;
 		}
 
-		$wikitextParser->getOutput()->setPageProperty( 'translate-is-translation', true );
+		$wikitextParser->getOutput()->setUnsortedPageProperty( 'translate-is-translation' );
 
 		try {
 			self::$renderingContext = true;
@@ -492,7 +492,7 @@ class Hooks {
 
 		// Store a property that we can avoid adding language links when
 		// $wgPageTranslationLanguageList === 'sidebar-fallback'
-		$parser->getOutput()->setPageProperty( self::PAGEPROP_HAS_LANGUAGES_TAG, true );
+		$parser->getOutput()->setUnsortedPageProperty( self::PAGEPROP_HAS_LANGUAGES_TAG );
 
 		$currentPage = $parser->getPage();
 		$pageStatus = self::getTranslatablePageStatus( $currentPage );
