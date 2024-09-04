@@ -1152,7 +1152,7 @@
 		]
 	},
 	"config": {
-		"TranslateCleanChangesTrailerFilter": {
+		"TranslateRecentChangesLanguageFilter": {
 			"value": false,
 			"description": "Add language filter to the Special:RecentChanges"
 		},

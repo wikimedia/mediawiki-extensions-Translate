@@ -42,7 +42,7 @@ class CleanChangesFilters implements
 		$name, &$tables, &$fields, &$conds, &$query_options, &$join_conds, $opts
 	) {
 		global $wgRequest;
-		if ( !$this->config->get( 'TranslateCleanChangesTrailerFilter' ) ) {
+		if ( !$this->config->get( 'TranslateRecentChangesLanguageFilter' ) ) {
 			return;
 		}
 
@@ -63,7 +63,7 @@ class CleanChangesFilters implements
 	 */
 	public function onSpecialRecentChangesPanel( &$extraOpts, $opts ) {
 		global $wgLang, $wgRequest;
-		if ( !$this->config->get( 'TranslateCleanChangesTrailerFilter' ) ) {
+		if ( !$this->config->get( 'TranslateRecentChangesLanguageFilter' ) ) {
 			return;
 		}
 
@@ -118,7 +118,7 @@ class CleanChangesFilters implements
 	 * @inheritDoc
 	 */
 	public function onFetchChangesList( $user, $skin, &$list, $groups ) {
-		if ( $this->config->get( 'TranslateCleanChangesTrailerFilter' ) && defined( 'ULS_VERSION' ) ) {
+		if ( $this->config->get( 'TranslateRecentChangesLanguageFilter' ) && defined( 'ULS_VERSION' ) ) {
 			$skin->getOutput()->addModules( 'ext.translate.cleanchanges' );
 		}
 	}
