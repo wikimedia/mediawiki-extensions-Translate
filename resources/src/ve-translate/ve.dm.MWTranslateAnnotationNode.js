@@ -53,6 +53,13 @@ ve.dm.MWTranslateAnnotationNode.prototype.getWikitextTag = function () {
 	return map[ this.getAttribute( 'type' ) ];
 };
 
+ve.dm.MWTranslateAnnotationNode.static.getHashObject = function ( dataElement ) {
+	// Consider all translation nodes to be comparable (T324790)
+	return {
+		type: dataElement.type
+	};
+};
+
 /* Registration */
 
 ve.dm.modelRegistry.register( ve.dm.MWTranslateAnnotationNode );
