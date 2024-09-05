@@ -7,10 +7,12 @@
 			"Pols12",
 			"Tryvix1509",
 			"Trần Nguyễn Minh Huy",
-			"Vinhtantran"
+			"Vinhtantran",
+			"NguyenHung"
 		]
 	},
 	"pagetranslation": "Biên dịch trang",
+	"nstab-translations": "Nội dung biên dịch",
 	"right-pagetranslation": "Đánh dấu các phiên bản của trang là cần dịch",
 	"action-pagetranslation": "quản lý các trang dịch được",
 	"tpt-section": "Đơn vị dịch thuật $1",

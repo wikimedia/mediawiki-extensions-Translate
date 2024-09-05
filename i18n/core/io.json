@@ -157,6 +157,7 @@
 	"tux-edit": "Redaktar",
 	"tux-status-fuzzy": "Sen aktualigo",
 	"tux-save-unknown-error": "Eventis eroro nekonocata.",
+	"tux-editor-placeholder-language": "Vua tradukuro ad $1",
 	"tux-editor-editsummary-placeholder": "Rezumo fakultativa",
 	"tux-editor-paste-original-button-label": "Kopiez l'originala texto",
 	"tux-editor-discard-changes-button-label": "Eliminar modifikuri",
