@@ -306,5 +306,6 @@
 	"visualeditor-annotations-tvar-end": "End of the untranslatable content",
 	"visualeditor-annotations-tvar-description": "This range is marked as untranslatable. Please refer to [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] for more information.",
 	"tag-translate-translation-pages": "-",
-	"tag-translate-translation-pages-description": "Automatic edits to translation pages by Translate extension"
+	"tag-translate-translation-pages-description": "Automatic edits to translation pages by Translate extension",
+	"tpt-cant-edit-source-language": "Cannot manually edit translation units in the source language. Please make the change to base page ([[$1]]) instead, and then mark it for translation."
 }

@@ -958,6 +958,9 @@ class Hooks {
 
 	/**
 	 * Prevent creation of orphan translation units in Translations namespace.
+	 * Prevent editing of translation units relating to the source language (these should only be touched by FuzzyBot)
+	 * Prevent editing of translation units relating to a page if you're blocked from that page
+	 * Prevent editing of translation units relating to a language that the page isn't allowed to be translated into.
 	 * Hook: getUserPermissionsErrorsExpensive
 	 *
 	 * @param Title $title
@@ -995,6 +998,18 @@ class Hooks {
 			}
 
 			if ( $permissionTitleCheck ) {
+				if ( $handle->getCode() === $group->getSourceLanguage() && !$user->equals( FuzzyBot::getUser() ) ) {
+					// Allow revision deletion actions as per T286884 since if something bad somehow gets marked for
+					// translation, deleting revisions everywhere should be possible without deliberately
+					// invalidating the unit
+					$allowedActionList = [
+						'deleterevision', 'suppressrevision', 'viewsuppressed', // T286884
+					];
+					if ( !in_array( $action, $allowedActionList ) ) {
+						$result = [ 'tpt-cant-edit-source-language', $permissionTitleCheck ];
+						return false;
+					}
+				}
 				// Check for blocks
 				$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 				if ( $permissionManager->isBlockedFrom( $user, $permissionTitleCheck ) ) {
