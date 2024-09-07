@@ -96,7 +96,11 @@ class TranslateSandboxHookHandler implements
 			// Obviously this is needed to get out of the sandbox
 			TranslationStashActionApi::class,
 			// Used by UniversalLanguageSelector for example
-			'ApiOptions'
+			\ApiOptions::class,
+			// Allow logging out
+			\ApiLogout::class,
+			// Allow marking the welcome notification as read
+			\MediaWiki\Extension\Notifications\Api\ApiEchoMarkRead::class,
 		];
 
 		if ( TranslateSandbox::isSandboxed( $user ) ) {
