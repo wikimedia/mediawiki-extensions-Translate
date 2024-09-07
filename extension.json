@@ -210,7 +210,8 @@
 		"UserGetRights": "translateSandbox",
 		"AfterImportPage": "translatableBundleImporter",
 		"LonelyPagesQuery": "pageTranslation",
-		"ArticleViewHeader": "messageBundle"
+		"ArticleViewHeader": "messageBundle",
+		"TitleQuickPermissions": "translateSandbox"
 	},
 	"HookHandlers": {
 		"cleanChanges": {

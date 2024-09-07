@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 use ApiMessage;
 use Config;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
+use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 use MediaWiki\Permissions\Hook\UserGetRightsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 
@@ -18,9 +19,19 @@ use MediaWiki\Preferences\Hook\GetPreferencesHook;
 class TranslateSandboxHookHandler implements
 	GetPreferencesHook,
 	ApiCheckCanExecuteHook,
-	UserGetRightsHook
+	UserGetRightsHook,
+	TitleQuickPermissionsHook
 {
 	private bool $isTranslateSandboxEnabled;
+	// right-translate-sandboxaction action-translate-sandboxaction
+	private const ALLOWED_RIGHTS = [
+		'editmyoptions',
+		'editmyprivateinfo',
+		'read',
+		'readapi',
+		'translate-sandboxaction',
+		'viewmyprivateinfo',
+	];
 
 	public function __construct( Config $config ) {
 		$this->isTranslateSandboxEnabled = $config->get( 'TranslateUseSandbox' );
@@ -35,18 +46,31 @@ class TranslateSandboxHookHandler implements
 		if ( !TranslateSandbox::isSandboxed( $user ) ) {
 			return true;
 		}
-		// right-translate-sandboxaction action-translate-sandboxaction
-		$rights = [
-			'editmyoptions',
-			'editmyprivateinfo',
-			'read',
-			'readapi',
-			'translate-sandboxaction',
-			'viewmyprivateinfo',
-		];
+
+		$rights = self::ALLOWED_RIGHTS;
 
 		// Do not let other hooks add more actions
 		return false;
+	}
+
+	/** @inheritDoc */
+	public function onTitleQuickPermissions( $title, $user, $action, &$errors, $doExpensiveQueries, $short ) {
+		if ( !$this->isTranslateSandboxEnabled ) {
+			return true;
+		}
+
+		if ( !TranslateSandbox::isSandboxed( $user ) ) {
+			return true;
+		}
+
+		if ( !in_array( $action, self::ALLOWED_RIGHTS ) ) {
+			// This is technically redundant (the userGetRights hook above will handle it)
+			// but this displays a clearer error message.
+			$errors = [ "tsb-other-actions" ];
+			return false;
+		}
+
+		return true;
 	}
 
 	/** @inheritDoc */

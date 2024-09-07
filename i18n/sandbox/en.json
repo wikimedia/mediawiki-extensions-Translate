@@ -52,5 +52,6 @@
 	"log-description-translatorsandbox": "A log of actions on translation sandbox users",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoted}} $3 to {{GENDER:$4|translator}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rejected}} the request from \"$3\" to become a translator",
-	"logentry-newusers-tsbpromoted": "User account $3 was {{GENDER:$2|created}} by promotion from sandbox"
+	"logentry-newusers-tsbpromoted": "User account $3 was {{GENDER:$2|created}} by promotion from sandbox",
+	"tsb-other-actions": "You need to [[Special:TranslationStash|submit some test translations]] and have them approved before editing."
 }
