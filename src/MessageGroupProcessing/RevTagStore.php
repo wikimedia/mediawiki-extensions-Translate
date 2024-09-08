@@ -175,6 +175,27 @@ class RevTagStore {
 		}
 	}
 
+	/**
+	 * Sets the tp:transver revtag of the given page/revision. This
+	 * normally represents the last time a non-fuzzy translation was saved
+	 * (presumably the version whose translation the translation is).
+	 * and is used to determine whether the translation is outdated
+	 * and to show a diff of the original message if it is.
+	 * @return int|null The revision ID, or `null` if none is found
+	 */
+	public function setTransver( PageIdentity $identity, int $translationRevision, int $transver ) {
+		$dbw = $this->dbProvider->getPrimaryDatabase();
+
+		$conds = [
+			'rt_page' => $identity->getId(),
+			'rt_type' => self::TRANSVER_PROP,
+			'rt_revision' => $translationRevision,
+			'rt_value' => $transver,
+		];
+		$index = [ 'rt_type', 'rt_page', 'rt_revision' ];
+		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+	}
+
 	/** Get a list of page ids where the latest revision is either tagged or marked */
 	public static function getTranslatableBundleIds( string ...$revTags ): array {
 		$dbr = Utilities::getSafeReadDB();

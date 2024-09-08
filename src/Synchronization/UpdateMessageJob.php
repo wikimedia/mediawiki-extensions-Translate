@@ -103,6 +103,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 			}
 		}
 		$title = $this->title;
+		$baseRevId = $title->getLatestRevId();
 		$updater = $this->fuzzyBotEdit( $title, $params['content'] );
 		if ( !$updater->getStatus()->isOK() ) {
 			$this->logError(
@@ -119,7 +120,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 			$this->processTranslationChanges( $otherLangs, $params['replacement'], $params['namespace'] );
 		}
 
-		$this->handleFuzzy( $title, $isFuzzy, $updater );
+		$this->handleFuzzy( $title, $isFuzzy, $updater, $baseRevId );
 
 		$this->removeFromCache( $originalTitle );
 		return true;
@@ -192,7 +193,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 	 *
 	 * Any revisions with other tp:transvers are marked fuzzy, unless invalidation skipping is used.
 	 */
-	private function handleFuzzy( Title $title, bool $invalidate, PageUpdater $updater ): void {
+	private function handleFuzzy( Title $title, bool $invalidate, PageUpdater $updater, int $baseTranver ): void {
 		global $wgTranslateDocumentationLanguageCode;
 		$editResult = $updater->getEditResult();
 		if ( !$invalidate && !$editResult->isExactRevert() ) {
@@ -225,23 +226,45 @@ class UpdateMessageJob extends GenericTranslateJob {
 			}
 			$batch->execute();
 		}
-		$targetSha = $updater->getNewRevision()->getSha1();
+		$newRevision = $updater->getNewRevision();
+		// $newRevision can be null if a change is made to only tvars and then the fuzzy checkbox is manually turned on
+		$targetSha = $newRevision ? $newRevision->getSha1() : null;
 
 		foreach ( $languages as $code ) {
 			$otherTitle = $handle->getTitleForLanguage( $code );
 			$shouldUnfuzzy = false;
-			if ( $oldRevId && $otherTitle->exists() ) {
-				$transver = $revTagStore->getTransver( $otherTitle );
-				if ( $oldRevId == $transver ) {
+			if ( !$otherTitle->exists() ) {
+				// Don't care about fuzzy status for nonexistent tunits
+				continue;
+			}
+			$transverId = $revTagStore->getTransver( $otherTitle );
+			if ( !$transverId ) {
+				// The page doesn't have a tp:transver at all
+				// This shouldn't happen, but it does in some edge cases like importing translations across wikis
+				$latest = $otherTitle->getLatestRevID();
+				if ( $invalidate && !$revTagStore->isRevIdFuzzy( $otherTitle->getId(), $latest ) && $newRevision ) {
+					// If the (latest revision of the) translation isn't fuzzy and the source tunit was actually changed
+					// then assume the translation pertains to the latest revision of the source tunit
+					// (before the update that triggered this job and marked it fuzzy)
+					// and set its transver to that so "show differences" has something to show
+					$revTagStore->setTransver( $otherTitle, $latest, $baseTranver );
+				}
+				// Don't do any revert checking
+			} elseif ( $oldRevId && $newRevision && $editResult->isExactRevert() ) {
+				// Only try to do revert analysis if the edit succeeded and is truly an exact revert
+				$transver = $revStore->getRevisionById( $transverId, 0, $title );
+				if ( $oldRevId == $transverId ) {
 					// It's a straightforward revert
 					$shouldUnfuzzy = true;
 				} elseif ( $transver ) {
-					$transverSha = $revStore->getRevisionById( $transver, 0, $title )->getSha1();
+					$transverSha = $transver->getSha1();
 					if ( $transverSha == $targetSha ) {
 						// It's a deeper revert or otherwise wasn't detected by MediaWiki's builtin revert detection
 						$shouldUnfuzzy = true;
 					} // Else it's not a revert at all so leave shouldUnfuzzy false
-				} // Else the page doesn't have a transver set for some reason so bail and leave shouldUnfuzzy false
+				}
+				// Else should never happen (it means tp:transver is corrupt) but it could concievably happen
+				// in some edge cases so do nothing (and fuzzy the tunit) rather than crashing the entire job
 			}
 			if ( $shouldUnfuzzy ) {
 				// In principle it's a revert so should unfuzzy, first check for validation failures

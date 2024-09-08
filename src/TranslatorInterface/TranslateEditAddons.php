@@ -256,16 +256,8 @@ class TranslateEditAddons {
 		}
 
 		$definitionRevision = $definitionTitle->getLatestRevID();
-		$dbw = MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase();
-
-		$conds = [
-			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTagStore::TRANSVER_PROP,
-			'rt_revision' => $revision,
-			'rt_value' => $definitionRevision,
-		];
-		$index = [ 'rt_type', 'rt_page', 'rt_revision' ];
-		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+		$revTagStore = Services::getInstance()->getRevTagStore();
+		$revTagStore->setTransver( $title, $revision, $definitionRevision );
 
 		return true;
 	}

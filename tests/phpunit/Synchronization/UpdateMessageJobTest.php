@@ -3,7 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
@@ -81,6 +83,7 @@ class UpdateMessageJobTest extends MediaWikiIntegrationTestCase {
 		$this->insertPage( "MediaWiki:Ugakey/en", "$1 of $2 old" );
 		$this->insertPage( "MediaWiki:Ugakey/nl", "!!FUZZY!!$1 van $2" );
 		$srcTitle = Title::newFromText( "MediaWiki:Ugakey/en" );
+
 		$handle = new MessageHandle( Title::newFromText( "MediaWiki:Ugakey/nl" ) );
 		$this->assertTrue( $handle->isFuzzy() );
 
@@ -92,5 +95,58 @@ class UpdateMessageJobTest extends MediaWikiIntegrationTestCase {
 		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2", true );
 		$job->run();
 		$this->assertTrue( $handle->isFuzzy() );
+	}
+
+	public function testNullEditCanFuzzy() {
+		// Tests for T372994
+		// Setup
+		$srcTitle = $this->insertPage( "MediaWiki:Ugakey/en", "$1 of $2" )["title"];
+		$this->insertPage( "MediaWiki:Ugakey/nl", "$1 van $2" );
+		// Run the job
+		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2", true );
+		$job->run();
+
+		$handle = new MessageHandle( Title::newFromText( "MediaWiki:Ugakey/nl" ) );
+		$this->assertTrue( $handle->isFuzzy() );
+	}
+
+	public function testNoTransver() {
+		// Setup
+		$srcTitle = $this->insertPage( "MediaWiki:Ugakey/en", "$1 of $2" )["title"];
+		$targetTitle = $this->insertPage( "MediaWiki:Ugakey/nl", "$1 van $2" )["title"];
+
+		// In certain circumstances a tp:transver tag won't exist
+		// Simulate them by manually deleting it from the database
+		$revTagStore = Services::getInstance()->getRevTagStore();
+		$revTagStore->removeTags( $targetTitle, RevTagStore::TRANSVER_PROP );
+
+		// If the tunit is not fuzzied, then its transver should be left alone
+		$this->assertNull( $revTagStore->getTransver( $targetTitle ) );
+		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2 new", false );
+		$job->run();
+
+		// If it is fuzzied, then the transver should be set to the version of the source page
+		// before the fuzzying change
+		$expectedTransver = Title::newFromText( "MediaWiki:Ugakey/en" )->getLatestRevId();
+		$this->assertNull( $revTagStore->getTransver( $targetTitle ) );
+		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2 newer", true );
+		$job->run();
+		$this->assertEquals( $expectedTransver, $revTagStore->getTransver( $targetTitle ) );
+
+		// Delete the transver tag and add a fuzzy tag
+		$revTagStore->removeTags( $targetTitle, RevTagStore::TRANSVER_PROP );
+
+		$conds = [
+			'rt_page' => $targetTitle->getId(),
+			'rt_type' => RevTagStore::FUZZY_TAG,
+			'rt_revision' => $targetTitle->getLatestRevId()
+		];
+		$index = array_keys( $conds );
+		$this->getDB()->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+
+		// If it's already outdated then further updates don't touch the transver
+		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2 newest", true );
+		$job->run();
+		$this->assertNull( $revTagStore->getTransver( $targetTitle ) );
 	}
 }
