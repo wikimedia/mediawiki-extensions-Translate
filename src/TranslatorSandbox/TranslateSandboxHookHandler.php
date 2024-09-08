@@ -66,7 +66,7 @@ class TranslateSandboxHookHandler implements
 		if ( !in_array( $action, self::ALLOWED_RIGHTS ) ) {
 			// This is technically redundant (the userGetRights hook above will handle it)
 			// but this displays a clearer error message.
-			$errors = [ "tsb-other-actions" ];
+			$errors = [ 'tsb-other-actions' ];
 			return false;
 		}
 
