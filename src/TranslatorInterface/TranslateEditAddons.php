@@ -149,7 +149,7 @@ class TranslateEditAddons {
 					$dbw,
 					$wikiPage,
 					CommentStoreComment::newUnsavedComment(
-						$summary ?: wfMessage( "translate-unfuzzy-comment" )
+						$summary !== '' ? $summary : wfMessage( "translate-unfuzzy-comment" )
 					),
 					false,
 					$userIdentity
