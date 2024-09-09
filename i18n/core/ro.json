@@ -207,7 +207,7 @@
 	"translate-searchprofile-tooltip": "Caută în toate traducerile",
 	"translate-search-languagefilter": "Filtrare după limbă:",
 	"translate-search-nofilter": "Fără filtrare",
-	"log-name-translationreview": "Jurnal recenzii traduceri",
+	"log-name-translationreview": "Jurnal revizuiri traduceri",
 	"log-description-translationreview": "Jurnalul tuturor revizuirilor pentru traduceri și grupuri de mesaje.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|a revizuit}} traducerea $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|a schimbat}} starea traducerilor în $4 pentru $3 de la $6 la $7",

@@ -42,5 +42,6 @@
 	"tsb-create-user-page": "Alapvető felhasználói lap készítése",
 	"log-name-translatorsandbox": "Fordítói homokozó naplója",
 	"log-description-translatorsandbox": "A fordítói homokozó felhasználóinak műveleteinek naplója",
-	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|visszautasította}} „$3” fordítóvá válási kérését"
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|visszautasította}} „$3” fordítóvá válási kérését",
+	"tsb-other-actions": "Szerkesztés előtt [[Special:TranslationStash|be kell küldened néhány próbafordítást]], és valakinek jóvá kell hagynia azokat."
 }

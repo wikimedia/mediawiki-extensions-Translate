@@ -48,5 +48,6 @@
 	"log-description-translatorsandbox": "Дневник на дејства со корисници на преводниот песочник",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$4|го|ја}} {{GENDER:$2|унапреди}} $3 во {{GENDER:$4|преведувач}}",
 	"logentry-translatorsandbox-rejected": "$1 го {{GENDER:$2|одби}} барањето од „$3“ за да стане преведувач",
-	"logentry-newusers-tsbpromoted": "Корисничката сметка $3 е {{GENDER:$2|создадена}} со унапредување од песочник"
+	"logentry-newusers-tsbpromoted": "Корисничката сметка $3 е {{GENDER:$2|создадена}} со унапредување од песочник",
+	"tsb-other-actions": "Пред да уредувате ќе треба да поднесете [[Special:TranslationStash|некои пробни преводи]] и истите треба да бидат одобрени."
 }
