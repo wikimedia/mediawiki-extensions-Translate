@@ -17,6 +17,7 @@ $cfg['directory_list'] = array_merge(
 		'../../extensions/AbuseFilter',
 		'../../extensions/AdminLinks',
 		'../../extensions/cldr',
+		'../../extensions/Echo',
 		'../../extensions/Elastica',
 		'../../extensions/Scribunto',
 		'../../extensions/TranslationNotifications'
@@ -29,6 +30,7 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 		'../../extensions/AbuseFilter',
 		'../../extensions/AdminLinks',
 		'../../extensions/cldr',
+		'../../extensions/Echo',
 		'../../extensions/Elastica',
 		'../../extensions/Scribunto',
 		'../../extensions/TranslationNotifications'
