@@ -4,5 +4,26 @@
 			"Ezagren"
 		]
 	},
-	"searchtranslations": "Gagai tarjamahan"
+	"searchtranslations": "Gagai tarjamahan",
+	"tux-sst-edit": "Babak tarjamahan",
+	"tux-sst-view-foreign": "Janaki di $1",
+	"tux-sst-search": "Gagai",
+	"tux-sst-search-ph": "Gagai tarjamahan",
+	"tux-sst-count": "{{PLURAL:$1|Satu hasil ditamuakan|$1 hasil ditamuakan}}",
+	"tux-sst-facet-language": "Basa",
+	"tux-sst-facet-group": "Galambang pasan",
+	"tux-sst-nosolr-title": "Panggagaian kada tasadia",
+	"tux-sst-nosolr-body": "Wiki ngini kada baisi layanan panggagaian tarjamahan.",
+	"tux-sst-next": "Salanjutnya ›",
+	"tux-sst-prev": "‹ Sabalumnya",
+	"tux-sst-default": "Tarjamahan",
+	"tux-sst-translated": "Tarjamahan matan $1",
+	"tux-sst-untranslated": "Kadada tarjamahan matan $1",
+	"tux-sst-outdated": "Tarjamahan usang matan $1",
+	"tux-sst-ellipsis-untranslated": "Kadada tarjamahan",
+	"tux-sst-ellipsis-outdated": "Tarjamahan usang",
+	"tux-sst-link-all-match": "Wajipakan samunyaan kata panggagaian.",
+	"tux-sst-match-message": "Tampaiakan tarjamahan nang rasuk lawan kata-kata panggagaian manapun. $1",
+	"tux-sst-error-offset": "Kadada lagi kulihan panggagaian nang kawa ditampaiakan. Tulung kipitakan panggagaian Pian.",
+	"tux-sst-error-language": "Basa ini kada kawa dipakai lawan huaran panggagaian ini."
 }
