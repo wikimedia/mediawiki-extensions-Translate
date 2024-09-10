@@ -3,6 +3,7 @@
 		"authors": [
 			"Bluehill",
 			"Bluemersen",
+			"Cookai1205",
 			"Ellif",
 			"Ficell",
 			"Freebiekr",
@@ -317,8 +318,8 @@
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|하위 그룹}} $1개 보기",
 	"tux-languageselector": "번역할 언어",
 	"tux-select-target-language": "번역 대상 언어",
-	"tux-watch-group": "$1 주시하기",
-	"tux-unwatch-group": "$1 주시 중단",
+	"tux-watch-group": "주시",
+	"tux-unwatch-group": "주시 해제",
 	"tux-subscription-error": "메시지 그룹 주시문서 목록을 업데이트하지 못했습니다",
 	"tux-tab-all": "모두",
 	"tux-tab-untranslated": "미번역",

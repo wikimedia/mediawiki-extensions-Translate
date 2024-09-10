@@ -58,5 +58,6 @@
 	"log-description-translatorsandbox": "翻譯沙盒使用者的工作日誌",
 	"logentry-translatorsandbox-promoted": "$1{{GENDER:$2|授權}}$3成為{{GENDER:$4|翻譯人員}}",
 	"logentry-translatorsandbox-rejected": "$1{{GENDER:$2|拒絕}}來自「$3」申請成為翻譯人員的請求",
-	"logentry-newusers-tsbpromoted": "使用者帳號 $3 已{{GENDER:$2|建立}}，由沙盒所授權"
+	"logentry-newusers-tsbpromoted": "使用者帳號 $3 已{{GENDER:$2|建立}}，由沙盒所授權",
+	"tsb-other-actions": "您需要[[Special:TranslationStash|提交一些測試翻譯]]，並在編輯之前獲得批准。"
 }
