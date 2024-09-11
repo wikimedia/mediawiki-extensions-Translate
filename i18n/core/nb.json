@@ -339,11 +339,12 @@
 	"translate-msggroupselector-search-placeholder": "Søk i grupper",
 	"translate-msggroupselector-search-all": "Alle",
 	"translate-msggroupselector-search-recent": "Siste",
+	"translate-msggroupselector-search-watched": "Overvåket",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|undergruppe|undergrupper}}",
 	"tux-languageselector": "Oversett til",
 	"tux-select-target-language": "Målspråk for oversettelse",
-	"tux-watch-group": "Overvåk $1",
-	"tux-unwatch-group": "Avslutt overvåking av $1",
+	"tux-watch-group": "Overvåk",
+	"tux-unwatch-group": "Avslutt overvåkning",
 	"tux-subscription-error": "Kunne ikke oppdatere overvåkningsliste for meldingsgruppe",
 	"tux-tab-all": "Alle",
 	"tux-tab-untranslated": "Uoversatte",
@@ -471,7 +472,7 @@
 	"translate-hidetranslations": "Skjul oversettbare sider",
 	"echo-category-title-translate-message-group-subscription": "Abonnementer på oversettbare meldingsgrupper",
 	"echo-pref-tooltip-translate-message-group-subscription": "Varsle meg når det kommer endringer i en oversettbar meldingsgruppe jeg abonnerer på",
-	"notification-header-message-group-subscription": "Det er oversettelsesoppdateringer for $1",
+	"notification-header-message-group-subscription": "Oversettelsesoppdateringer for $1",
 	"notification-body-translate-mgs-message-added": "La til $1 {{PLURAL:$1|melding|meldinger}}",
 	"notification-link-mgs-group-translate": "Oversett $1"
 }

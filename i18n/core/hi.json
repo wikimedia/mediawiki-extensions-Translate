@@ -330,7 +330,7 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|उपपृष्ठ}}",
 	"tux-languageselector": "अनुवाद का लक्ष्य",
 	"tux-select-target-language": "अनुवाद का लक्ष्य भाषा",
-	"tux-watch-group": "$1 देखें",
+	"tux-watch-group": "ध्यान रखें",
 	"tux-unwatch-group": "$1 देखना बंद करें",
 	"tux-tab-all": "सभी",
 	"tux-tab-untranslated": "अनानुवादित",

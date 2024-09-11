@@ -314,5 +314,6 @@
 	"visualeditor-annotations-tvar-start": "Beginn des nicht übersetzbaren Inhalts",
 	"visualeditor-annotations-tvar-end": "Ende des nicht übersetzbaren Inhalts",
 	"visualeditor-annotations-tvar-description": "Dieser Bereich ist als nicht übersetzbar gekennzeichnet. Weitere Informationen findest du unter [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentierung des Ausgangstextes].",
-	"tag-translate-translation-pages-description": "Automatische Bearbeitungen von Übersetzungsseiten durch die Translate-Erweiterung"
+	"tag-translate-translation-pages-description": "Automatische Bearbeitungen von Übersetzungsseiten durch die Translate-Erweiterung",
+	"tpt-cant-edit-source-language": "Übersetzungseinheiten können in der Ausgangssprache nicht manuell bearbeitet werden. Nimm stattdessen die Änderung an der Basisseite ([[$1]]) vor und markiere sie dann zur Übersetzung."
 }

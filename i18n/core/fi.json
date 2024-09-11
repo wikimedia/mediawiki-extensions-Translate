@@ -331,7 +331,7 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|alaryhmä|alaryhmää}}",
 	"tux-languageselector": "Kohdekieli:",
 	"tux-select-target-language": "Kohdekieli käännöstä varten",
-	"tux-watch-group": "Tarkkaile viestiryhmää $1",
+	"tux-watch-group": "Tarkkaile",
 	"tux-unwatch-group": "Lopeta viestiryhmän $1 tarkkailu",
 	"tux-subscription-error": "Viestiryhmien tarkkailulistan päivittäminen epäonnistui",
 	"tux-tab-all": "Kaikki",
