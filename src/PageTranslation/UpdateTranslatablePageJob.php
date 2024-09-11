@@ -17,6 +17,8 @@ use RunnableJob;
  * a translatable page is marked for translation.
  */
 class UpdateTranslatablePageJob extends GenericTranslateJob {
+	private const MAX_TRIES = 3;
+
 	/** @inheritDoc */
 	public function __construct( Title $title, array $params = [] ) {
 		parent::__construct( 'UpdateTranslatablePageJob', $title, $params );
@@ -80,24 +82,40 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 			$this->logWarning( 'Continuing despite replication lag' );
 		}
 
-		// Ensure we are using the latest group definitions. This is needed so long-running
-		// scripts detect the page which was just marked for translation. Otherwise getMessageGroup
-		// in the next line returns null. There is no need to regenerate the global cache.
-		MessageGroups::singleton()->clearProcessCache();
-		// Ensure fresh definitions for stats
-		// TODO: getMessageGroup still appears to return null sometimes. Check why.
-		$messageGroup = $page->getMessageGroup();
+		$attemptsCount = 0;
+		do {
+			// Ensure we are using the latest group definitions. This is needed so long-running
+			// scripts detect the page which was just marked for translation. Otherwise, getMessageGroup
+			// in the next line returns null. There is no need to regenerate the global cache.
+			MessageGroups::singleton()->clearProcessCache();
+			// Ensure fresh definitions for stats
 
-		if ( $messageGroup !== null ) {
+			// Message group may return null due to stale caches, attempt to fetch the group a few
+			// times before giving up.
+			$messageGroup = $page->getMessageGroup();
+			++$attemptsCount;
+			if ( $messageGroup ) {
+				break;
+			}
+
+			// The message group cache regen time on production is around 600ms
+			usleep( 500 * 1000 );
+		} while ( $attemptsCount <= self::MAX_TRIES );
+
+		if ( !$messageGroup ) {
 			$messageGroup->clearCaches();
-			$this->logInfo( 'Cleared caches' );
+			$this->logInfo(
+				'Cleared caches after {attemptCount} attempt(s)',
+				[ 'attemptsCount' => $attemptsCount ]
+			);
 		} else {
 			$this->logWarning(
-				"No message group found for page {pageTitle}", [
-					'pageTitle' => $page->getTitle()->getPrefixedText()
+				'No message group found for page {pageTitle} after {attemptsCount} attempt(s)',
+				[
+					'pageTitle' => $page->getTitle()->getPrefixedText(),
+					'attemptsCount' => self::MAX_TRIES
 				]
 			);
-
 		}
 
 		// Refresh translations statistics, we want these to be up to date for the
@@ -193,5 +211,4 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 
 		return $jobs;
 	}
-
 }
