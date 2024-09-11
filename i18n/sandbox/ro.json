@@ -3,7 +3,9 @@
 		"authors": [
 			"Minisarm",
 			"NGC 54",
-			"Strainu"
+			"Strainu",
+			"Firilacroco",
+			"Paloi Sciurala"
 		]
 	},
 	"managetranslatorsandbox": "Administrați pagina de teste a traducătorului",
@@ -21,8 +23,8 @@
 	"tsb-translations-source": "Sursă",
 	"tsb-translations-user": "Traducerile {{GENDER:$1|utilizatorului|utilizatoarei}}",
 	"tsb-translations-current": "Traduceri existente",
-	"translationstash": "Bun venit",
-	"translate-translationstash-welcome": "Bun venit, {{GENDER:$1|$1}}, sunteți {{GENDER:$1|un nou traducător|o nouă traducătoare|un nou traducător}}",
+	"translationstash": "Bun-venit",
+	"translate-translationstash-welcome": "Bun-venit, {{GENDER:$1|$1}}, sunteți {{GENDER:$1|un nou traducător|o nouă traducătoare|un nou traducător}}",
 	"translate-translationstash-initialtranslation": "Traducerea dumnevoastră inițială",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|traducere finalizată|traduceri finalizate|de traduceri finalizate}}",
 	"translate-translationstash-skip-button-label": "Încercați o alta",
