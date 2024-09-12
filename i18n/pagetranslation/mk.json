@@ -301,5 +301,6 @@
 	"visualeditor-annotations-tvar-start": "Почеток на непреводливата содржина",
 	"visualeditor-annotations-tvar-end": "Крај на непреводливата содржина",
 	"visualeditor-annotations-tvar-description": "Овој опсег е означен како непреводлив. Повеќе информации ќе добиете на страницата [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Разделување на изворниот текст].",
-	"tag-translate-translation-pages-description": "Автоматски уредувања на преводни страници со додатокот „Преведување“"
+	"tag-translate-translation-pages-description": "Автоматски уредувања на преводни страници со додатокот „Преведување“",
+	"tpt-cant-edit-source-language": "Не можете рачно да уредувате преводни единици на изворниот јазик. Промените направете ги во основната страница ([[$1]]) наместо тука, а потоа означете ја за преведување."
 }

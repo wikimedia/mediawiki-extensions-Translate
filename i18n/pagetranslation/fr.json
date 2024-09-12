@@ -25,6 +25,7 @@
 			"Purodha",
 			"Sherbrooke",
 			"Shirayuki",
+			"Terio legale",
 			"Thibaut120094",
 			"Tititou36",
 			"TomT0m",
@@ -333,5 +334,6 @@
 	"visualeditor-annotations-tvar-start": "Début du contenu intraductible",
 	"visualeditor-annotations-tvar-end": "Fin du contenu intraductible",
 	"visualeditor-annotations-tvar-description": "Cette partie est marquée comme intraductible. Consultez la documentation sur la [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Segmentation Segmentation du texte source] pour plus d’informations.",
-	"tag-translate-translation-pages-description": "Modifications automatiques aux pages de traduction par l’extension Traduction"
+	"tag-translate-translation-pages-description": "Modifications automatiques aux pages de traduction par l’extension Traduction",
+	"tpt-cant-edit-source-language": "Impossible de modifier manuellement les unités de traduction dans la langue source. Veuillez plutôt modifier à partir de la page de base ([[$1]]), puis l'indiquer pour traduction."
 }
