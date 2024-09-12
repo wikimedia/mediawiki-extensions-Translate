@@ -148,6 +148,11 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 				'It’s still good!',
 				'Unfuzzying translation with a non-empty edit summary should have used that one'
 			],
+			[
+				'0',
+				'0',
+				'Unfuzzying translation with a non-empty but falsy edit summary should have used that one'
+			],
 		];
 		foreach ( $nullEditUnfuzzySummaries as [ $enteredSummary, $actualSummary, $assertionText ] ) {
 			if ( isset( $latestRevisionRecordAfterThird ) ) {
