@@ -122,6 +122,7 @@ return [
 			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getTitleFactory(),
+			$services->get( 'Translate:MessageGroupSubscription' ),
 			new ServiceOptions(
 				ExternalMessageSourceStateImporter::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()

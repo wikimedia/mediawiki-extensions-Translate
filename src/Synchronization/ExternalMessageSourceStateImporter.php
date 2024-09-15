@@ -13,6 +13,7 @@ use FileBasedMessageGroup;
 use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
@@ -30,6 +31,7 @@ class ExternalMessageSourceStateImporter {
 	private LoggerInterface $logger;
 	private MessageIndex $messageIndex;
 	private TitleFactory $titleFactory;
+	private MessageGroupSubscription $messageGroupSubscription;
 	private bool $isGroupSyncCacheEnabled;
 	// Do not perform any import
 	public const IMPORT_NONE = 1;
@@ -46,6 +48,7 @@ class ExternalMessageSourceStateImporter {
 		LoggerInterface $logger,
 		MessageIndex $messageIndex,
 		TitleFactory $titleFactory,
+		MessageGroupSubscription $messageGroupSubscription,
 		ServiceOptions $options
 	) {
 		$this->groupSynchronizationCache = $groupSynchronizationCache;
@@ -53,6 +56,7 @@ class ExternalMessageSourceStateImporter {
 		$this->logger = $logger;
 		$this->messageIndex = $messageIndex;
 		$this->titleFactory = $titleFactory;
+		$this->messageGroupSubscription = $messageGroupSubscription;
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isGroupSyncCacheEnabled = $options->get( 'TranslateGroupSynchronizationCache' );
 	}
@@ -131,6 +135,8 @@ class ExternalMessageSourceStateImporter {
 			}
 		}
 
+		$this->messageGroupSubscription->queueNotificationJob();
+
 		// Remove groups where everything was imported
 		$changeData = array_filter( $changeData, static function ( MessageSourceChange $change ) {
 			return $change->getAllModifications() !== [];
@@ -172,13 +178,17 @@ class ExternalMessageSourceStateImporter {
 		return Status::newGood();
 	}
 
-	/** Creates UpdateMessageJobs additions for a language under a group */
+	/**
+	 * Creates UpdateMessageJobs additions for a language under a group. Also queues a message
+	 * for notification if the addition is in the source language
+	 */
 	private function createUpdateMessageJobs(
 		FileBasedMessageGroup $group,
 		array $additions,
 		string $language
 	): array {
 		$groupId = $group->getId();
+		$isSourceLanguage = $group->getSourceLanguage() === $language;
 		$jobs = [];
 		$processed = 0;
 		foreach ( $additions as $addition ) {
@@ -193,6 +203,14 @@ class ExternalMessageSourceStateImporter {
 
 			$jobs[] = UpdateMessageJob::newJob( $title, $addition['content'] );
 			$processed++;
+
+			if ( $isSourceLanguage ) {
+				$this->messageGroupSubscription->queueMessage(
+					$title,
+					MessageGroupSubscription::STATE_ADDED,
+					[ $groupId ]
+				);
+			}
 		}
 
 		return [ $jobs, $processed ];
