@@ -343,7 +343,8 @@
 				"Translate:GroupSynchronizationCache",
 				"JobQueueGroup",
 				"Translate:MessageIndex",
-				"LinkBatchFactory"
+				"LinkBatchFactory",
+				"Translate:MessageGroupSubscription"
 			]
 		},
 		"SupportedLanguages": {

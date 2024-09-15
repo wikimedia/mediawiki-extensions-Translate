@@ -12,6 +12,7 @@ use JobQueueGroup;
 use Language;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
@@ -62,6 +63,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	private JobQueueGroup $jobQueueGroup;
 	private MessageIndex $messageIndex;
 	private LinkBatchFactory $linkBatchFactory;
+	private MessageGroupSubscription $messageGroupSubscription;
 
 	public function __construct(
 		Language $contLang,
@@ -70,7 +72,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		GroupSynchronizationCache $synchronizationCache,
 		JobQueueGroup $jobQueueGroup,
 		MessageIndex $messageIndex,
-		LinkBatchFactory $linkBatchFactory
+		LinkBatchFactory $linkBatchFactory,
+		MessageGroupSubscription $messageGroupSubscription
 	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
@@ -82,6 +85,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->messageIndex = $messageIndex;
 		$this->linkBatchFactory = $linkBatchFactory;
+		$this->messageGroupSubscription = $messageGroupSubscription;
 	}
 
 	public function doesWrites() {
@@ -522,6 +526,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$errorGroups[] = $group->getLabel();
 			}
 		}
+		$this->messageGroupSubscription->queueNotificationJob();
 
 		$renameJobs = $this->createRenameJobs( $renameJobData );
 		$this->startSync( $modificationJobs, $renameJobs );
@@ -878,6 +883,14 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$targetStr = $jobParams[ 'target' ];
 			if ( $isSourceLang ) {
 				$jobData[ $targetStr ] = $jobParams;
+				// Send notification for fuzzy items
+				if ( isset( $jobParams[ 'targetTitle' ] ) && ( $jobParams[ 'fuzzy' ] ?? false ) ) {
+					$this->messageGroupSubscription->queueMessage(
+						$jobParams[ 'targetTitle' ],
+						MessageGroupSubscription::STATE_UPDATED,
+						[ $groupId ]
+					);
+				}
 			} elseif ( isset( $jobData[ $targetStr ] ) ) {
 				// We are grouping the source rename, and content changes in other languages
 				// for the message together into a single job in order to avoid race conditions
@@ -909,6 +922,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	): void {
 		$groupId = $group->getId();
 		$subchanges = $sourceChanges->getModificationsForLanguage( $language );
+		$isSourceLanguage = $group->getSourceLanguage() === $language;
 
 		// Ignore renames
 		unset( $subchanges[ MessageSourceChange::RENAME ] );
@@ -937,6 +951,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 				$fuzzy = $selectedVal === 'fuzzy';
 				$messageUpdateJob[] = UpdateMessageJob::newJob( $title, $params['content'], $fuzzy );
+
+				if ( $isSourceLanguage ) {
+					$this->sendNotificationsForChangedMessages( $groupId, $title, $type, $fuzzy );
+				}
 			}
 		}
 	}
@@ -1134,5 +1152,21 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				[ 'value' => $value ]
 			) . "\u{00A0}" . $label
 		);
+	}
+
+	private function sendNotificationsForChangedMessages( string $groupId, Title $title, $type, bool $fuzzy ): void {
+		$subscriptionState = $type === MessageSourceChange::ADDITION ?
+			MessageGroupSubscription::STATE_ADDED :
+			MessageGroupSubscription::STATE_UPDATED;
+
+		if ( $subscriptionState === MessageGroupSubscription::STATE_UPDATED && !$fuzzy ) {
+			// If the state is updated, but the change has not been marked as fuzzy,
+			// lets not send a notification.
+			$subscriptionState = null;
+		}
+
+		if ( $subscriptionState ) {
+			$this->messageGroupSubscription->queueMessage( $title, $subscriptionState, [ $groupId ] );
+		}
 	}
 }
