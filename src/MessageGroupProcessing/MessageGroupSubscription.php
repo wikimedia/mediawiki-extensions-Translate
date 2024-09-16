@@ -77,6 +77,20 @@ class MessageGroupSubscription {
 		$this->groupSubscriptionStore->removeSubscriptions( $group->getId(), $user->getId() );
 	}
 
+	public function unsubscribeFromGroupsById( array $groupIds, UserIdentity $user ): void {
+		$uniqueGroupIds = array_unique( $groupIds );
+		foreach ( $uniqueGroupIds as $groupId ) {
+			$this->groupSubscriptionStore->removeSubscriptions( $groupId, $user->getId() );
+		}
+	}
+
+	public function subscribeToGroupsById( array $groupIds, UserIdentity $user ): void {
+		$uniqueGroupIds = array_unique( $groupIds );
+		foreach ( $uniqueGroupIds as $groupId ) {
+			$this->groupSubscriptionStore->addSubscription( $groupId, $user->getId() );
+		}
+	}
+
 	/** @return string[] */
 	public function getUserSubscriptions( UserIdentity $user ): array {
 		$subscriptions = [];

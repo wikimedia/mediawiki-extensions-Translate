@@ -350,6 +350,12 @@
 				"Translate:MessageGroupSubscription"
 			]
 		},
+		"ManageMessageGroupSubscriptions": {
+			"class": "\\MediaWiki\\Extension\\Translate\\PageTranslation\\ManageMessageGroupSubscriptionsSpecialPage",
+			"services": [
+				"Translate:MessageGroupSubscription"
+			]
+		},
 		"SupportedLanguages": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\ActiveLanguagesSpecialPage",
 			"services": [
@@ -698,6 +704,17 @@
 			"styles": [
 				"resources/src/ext.translate.special.exporttranslations/export.translations.less"
 			]
+		},
+		"ext.translate.special.managemessagegroupsubscriptions": {
+			"packageFiles": [
+				"resources/src/ext.translate.special.managemessagegroupsubscriptions/index.js"
+			],
+			"dependencies": [
+				"oojs-ui-widgets"
+			]
+		},
+		"ext.translate.special.managemessagegroupsubscriptions.styles": {
+			"styles": "resources/css/ext.translate.special.managemessagegroupsubscriptions.css"
 		},
 		"ext.translate.messagerenamedialog": {
 			"dependencies": [

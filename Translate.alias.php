@@ -14,6 +14,7 @@ $specialPageAliases['en'] = [
 	'ImportTranslations' => [ 'ImportTranslations' ],
 	'ExportTranslations' => [ 'ExportTranslations' ],
 	'LanguageStats' => [ 'LanguageStats' ],
+	'ManageMessageGroupSubscriptions' => [ 'ManageMessageGroupSubscriptions' ],
 	'ManageMessageGroups' => [ 'ManageMessageGroups' ],
 	'ManageTranslatorSandbox' => [ 'ManageTranslatorSandbox', 'TranslateSandbox' ],
 	'MessageGroupStats' => [ 'MessageGroupStats' ],
