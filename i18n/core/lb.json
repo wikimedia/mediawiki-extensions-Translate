@@ -76,7 +76,7 @@
 	"translate-checks-fudforum-syntax": "<nowiki>$1</nowiki>  aplaz vu(n) <nowiki>$2</nowiki>  an dësem Projet benotzen.",
 	"translate-checks-newline-extra-end": "Et gëtt {{PLURAL:$1|een zousätlechen Zeilenëmbroch|$1 zousätzlech Zeilenëmbrëch}} um Ënn vun der Iwwersetzung.",
 	"translate-checks-replacement": "Benotzt $2 amplaz vu(n) $1",
-	"translate-pref-editassistlang": "Sproochen, déi ënnerstëtzen:",
+	"translate-pref-editassistlang": "Ënnerstëtzungssproochen:",
 	"prefs-translate": "Optioune vun der Iwwersetzung",
 	"translate-pref-editassistlang-help": "Mat Komma getrennte Lëscht vun de Sproochcoden.\nIwwersetzung vun engem Message an dës Sprooche gëtt gewisen wann Dir iwwersetzt.\nD'Standard-Lëscht vu Sproochen hànkt vun Ärer Sprooch of.",
 	"translate-pref-editassistlang-bad": "Net valabele Sproochcode an der Lëscht:\n<nowiki>$1</nowiki>.",
