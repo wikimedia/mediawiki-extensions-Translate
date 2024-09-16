@@ -48,5 +48,6 @@
 	"log-description-translatorsandbox": "יומן פעולות על משתמשים בארגז חול של תרגומים",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$4|מתרגם|מתרגמת}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של \"$3\" לקבל הרשאת מתרגם",
-	"logentry-newusers-tsbpromoted": "החשבון $3 {{GENDER:$2|נוצר}} באמצעות קידום מארגז החול"
+	"logentry-newusers-tsbpromoted": "החשבון $3 {{GENDER:$2|נוצר}} באמצעות קידום מארגז החול",
+	"tsb-other-actions": "יש [[Special:TranslationStash|לשלוח כמה תרגומי ניסיון]] ולקבל אישור לפני עריכה."
 }
