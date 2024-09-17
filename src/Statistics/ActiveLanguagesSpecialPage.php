@@ -253,18 +253,17 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	}
 
 	protected function outputLanguageCloud( array $languages, array $names ) {
-		global $wgTranslateDocumentationLanguageCode;
-
 		$out = $this->getOutput();
 
 		$out->addHTML( '<div class="tagcloud autonym">' );
 
+		$translateDocumentationLanguageCode = $this->getConfig()->get( 'TranslateDocumentationLanguageCode' );
 		foreach ( $languages as $k => $v ) {
 			$name = $names[$k];
 			$langAttribute = $k;
 			$size = round( log( $v ) * 20 ) + 10;
 
-			if ( $langAttribute === $wgTranslateDocumentationLanguageCode ) {
+			if ( $langAttribute === $translateDocumentationLanguageCode ) {
 				$langAttribute = $this->contentLanguage->getHtmlCode();
 			}
 

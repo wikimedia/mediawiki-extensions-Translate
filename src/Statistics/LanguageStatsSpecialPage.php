@@ -320,8 +320,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	}
 
 	private function getTable( array $stats ): string {
-		global $wgTranslateWorkflowStates;
-
 		$table = $this->table;
 		$out = '';
 
@@ -337,7 +335,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 		$structure = MessageGroups::getGroupStructure();
 
-		if ( $wgTranslateWorkflowStates ) {
+		if ( $this->getConfig()->get( 'TranslateWorkflowStates' ) ) {
 			$this->states = $this->groupReviewStore->getWorkflowStatesForLanguage(
 				$this->target,
 				array_keys( $structure )

@@ -285,9 +285,7 @@ class TranslateSpecialPage extends SpecialPage {
 	}
 
 	private function tuxLanguageSelector(): string {
-		global $wgTranslateDocumentationLanguageCode;
-
-		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
+		if ( $this->options['language'] === $this->getConfig()->get( 'TranslateDocumentationLanguageCode' ) ) {
 			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
 			$targetLanguage = $this->contentLanguage;
 		} else {

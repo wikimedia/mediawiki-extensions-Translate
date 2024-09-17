@@ -14,6 +14,7 @@ use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\Utils\UrlUtils;
@@ -59,7 +60,6 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	}
 
 	public function execute( $subPage ) {
-		global $wgLanguageCode;
 		$this->setHeaders();
 		$this->checkPermissions();
 
@@ -82,7 +82,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
-		$opts->add( 'sourcelanguage', $wgLanguageCode );
+		$opts->add( 'sourcelanguage', $this->getConfig()->get( MainConfigNames::LanguageCode ) );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
