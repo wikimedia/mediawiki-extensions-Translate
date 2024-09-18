@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use Cdb\Reader;
 use ContentHandler;
 use DeferredUpdates;
 use DifferenceEngine;
@@ -226,7 +227,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			);
 		}
 
-		$reader = \Cdb\Reader::open( $this->cdb );
+		$reader = Reader::open( $this->cdb );
 		$groups = $this->getGroupsFromCdb( $reader );
 		foreach ( $groups as $id => $group ) {
 			$sourceChanges = MessageSourceChange::loadModifications(
@@ -240,7 +241,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				);
 			}
 
-			// Reduce page existance queries to one per group
+			// Reduce page existence queries to one per group
 			$lb = $this->linkBatchFactory->newLinkBatch();
 			$ns = $group->getNamespace();
 			$isCap = $this->nsInfo->isCapitalized( $ns );
@@ -248,7 +249,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			foreach ( $languages as $language ) {
 				$languageChanges = $sourceChanges->getModificationsForLanguage( $language );
-				foreach ( $languageChanges as $type => $changes ) {
+				foreach ( $languageChanges as $changes ) {
 					foreach ( $changes as $params ) {
 						// Constructing title objects is way slower
 						$key = $params['key'];
@@ -316,10 +317,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		if ( $title && $type === 'addition' && $title->exists() ) {
 			// The message has for some reason dropped out from cache
-			// or perhaps it is being reused. In any case treat it
+			// or, perhaps it is being reused. In any case treat it
 			// as a change for display, so the admin can see if
 			// action is needed and let the message be processed.
-			// Otherwise it will end up in the postponed category
+			// Otherwise, it will end up in the postponed category
 			// forever and will prevent rebuilding the cache, which
 			// leads to many other annoying problems.
 			$type = 'change';
@@ -366,8 +367,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 							'data-lang' => $language,
 							'data-msgkey' => $key,
 							'data-msgtitle' => $title->getFullText()
-						],
-						''
+						]
 					);
 				}
 			} elseif ( !self::isMessageDefinitionPresent( $group, $changes, $key ) ) {
@@ -461,7 +461,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$reader = \Cdb\Reader::open( $this->cdb );
+		$reader = Reader::open( $this->cdb );
 		$groups = $this->getGroupsFromCdb( $reader );
 		$groupSyncCacheEnabled = $this->getConfig()->get( 'TranslateGroupSynchronizationCache' );
 		$postponed = [];
@@ -746,7 +746,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 					'data-group-id' => $group->getId(),
 					'data-msgkey' => $addedKey,
 					'data-msgtitle' => $addedTitle->getFullText()
-				], ''
+				]
 			);
 		}
 
@@ -782,7 +782,6 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		}
 
 		$params = [];
-		$replacementContent = '';
 		$currentMsgKey = $currentMsg['key'];
 		$matchedMsg = $sourceChanges->getMatchedMessage( $languageCode, $currentMsgKey );
 		if ( $matchedMsg === null ) {
@@ -921,14 +920,14 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		array &$messageUpdateJob
 	): void {
 		$groupId = $group->getId();
-		$subchanges = $sourceChanges->getModificationsForLanguage( $language );
+		$subChanges = $sourceChanges->getModificationsForLanguage( $language );
 		$isSourceLanguage = $group->getSourceLanguage() === $language;
 
 		// Ignore renames
-		unset( $subchanges[ MessageSourceChange::RENAME ] );
+		unset( $subChanges[ MessageSourceChange::RENAME ] );
 
 		// Handle additions, deletions, and changes.
-		foreach ( $subchanges as $type => $messages ) {
+		foreach ( $subChanges as $type => $messages ) {
 			foreach ( $messages as $index => $params ) {
 				$key = $params['key'];
 				$id = self::changeId( $groupId, $language, $type, $key );
@@ -1055,8 +1054,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		return $errorMsg;
 	}
 
-	/** @return associative-array<int|string,\MessageGroup> */
-	private function getGroupsFromCdb( \Cdb\Reader $reader ): array {
+	/** @return array<int|string, MessageGroup> */
+	private function getGroupsFromCdb( Reader $reader ): array {
 		$groups = [];
 		$groupIds = Utilities::deserialize( $reader->get( '#keys' ) );
 		foreach ( $groupIds as $id ) {
@@ -1124,7 +1123,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				);
 			}
 
-			// There is posibility for a race condition here: the translate_cache table / group sync
+			// There is possibility for a race condition here: the translate_cache table / group sync
 			// cache is not yet populated with the messages to be processed, but the jobs start
 			// running and try to remove the message from the cache. This results in a "Key not found"
 			// error. Avoid this condition by using a DeferredUpdate.
