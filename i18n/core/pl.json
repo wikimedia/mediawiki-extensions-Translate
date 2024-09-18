@@ -339,7 +339,7 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|podgrupa|podgrupy|podgrup}}",
 	"tux-languageselector": "Przetłumacz na",
 	"tux-select-target-language": "Docelowy język tłumaczenia",
-	"tux-watch-group": "Obserwuj „$1”",
+	"tux-watch-group": "Obserwuj",
 	"tux-unwatch-group": "Przestań obserwować „$1”",
 	"tux-tab-all": "Wszystko",
 	"tux-tab-untranslated": "Nieprzetłumaczone",
