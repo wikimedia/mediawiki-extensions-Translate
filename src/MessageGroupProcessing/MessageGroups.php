@@ -509,7 +509,7 @@ class MessageGroups {
 			}
 		}
 
-		usort( $tree, [ self::class, 'groupLabelSort' ] );
+		uasort( $tree, [ self::class, 'groupLabelSort' ] );
 
 		/* Now we have two things left in $tree array:
 		 * - solitaries: top-level non-aggregate message groups
