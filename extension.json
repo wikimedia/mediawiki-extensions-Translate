@@ -1342,7 +1342,7 @@
 		},
 		"TranslateTranslationDefaultService": {
 			"value": true,
-			"description": "Name of the default translation memory service. This service must accept updates.\n\nIf left as the default `true`, the extension will fallback to TtmServer. If `$wgTranslateTranslationServices` is also unconfigured, built-in values will be used to configure the TtmServer.\n\nIf set to `false`, no translation memory will be used.",
+			"description": "Name of the default translation memory service. This service must accept updates.\n\nIf left as the default `true`, the extension will fallback to 'TTMServer'. If `$wgTranslateTranslationServices` is also unconfigured, built-in values will be used to configure the TtmServer.\n\nIf set to `false`, no translation memory will be used.",
 			"public": true
 		},
 		"TranslateTranslationServices": {
