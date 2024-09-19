@@ -393,5 +393,7 @@
 	"tux-nojs": "هذه الأداة لا تعمل بدون جافا سكريبت. الجافا سكريبت معطلة، فشلت في العمل، أو هذا المتصفح غير مدعوم.",
 	"specialpages-group-translation": "ترجمة",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|imported}} حزمة قابلة للترجمة $3",
-	"log-action-filter-import-translatable-bundle": "استيراد حزمة قابلة للترجمة"
+	"log-action-filter-import-translatable-bundle": "استيراد حزمة قابلة للترجمة",
+	"tpt-cleanchanges-language": "اللغة:",
+	"tpt-cleanchanges-language-na": "الكل"
 }

@@ -216,5 +216,7 @@
 	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradukita, $2% revizita, $3% desaktualigita",
 	"tux-session-expired": "Vu ne pluse esas enrejistrita. Voluntez rienirar, per altra pagino. Alternative, facez kopiuro di tradukuri ne enrejistrita, facez itere ''log in'', retrovenez a ca pagino, ed informez itere vua tradukuri.",
-	"tux-nojs": "Ca utensilo ne funcionas sen JavaScript. Sive JavaScript esas nekapabligata, sive ne funcionis, sive vua interreto-navigilo ('browser') ne suportas ol."
+	"tux-nojs": "Ca utensilo ne funcionas sen JavaScript. Sive JavaScript esas nekapabligata, sive ne funcionis, sive vua interreto-navigilo ('browser') ne suportas ol.",
+	"tpt-cleanchanges-language": "Linguo:",
+	"tpt-cleanchanges-language-na": "Omni"
 }

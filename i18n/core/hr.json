@@ -395,5 +395,7 @@
 	"tux-session-expired": "Više niste prijavljeni. Molimo Vas, prijavite se u zasebnoj kartici. Druga mogućnost je da načinite kopije nesačuvanih prijevoda, prijavite se, a potle vratite na ovu stranicu i ponovo unesete svoje prijevode.",
 	"tux-nojs": "Ovaj alat ne radi bez JavaScripta. Javascript je onemogućen, ne radi ili je preglednik nepodržan.",
 	"specialpages-group-translation": "Prevođenje",
-	"translate-messagebundle-error-invalid-sourcelanguage": "Izvorni jezični kôd \"$1\" nije podržan."
+	"translate-messagebundle-error-invalid-sourcelanguage": "Izvorni jezični kôd \"$1\" nije podržan.",
+	"tpt-cleanchanges-language": "Jezik:",
+	"tpt-cleanchanges-language-na": "Svi"
 }

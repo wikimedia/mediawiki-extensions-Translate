@@ -306,5 +306,7 @@
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|dalša rěč|dalšej rěči|dalše rěče|dalšich rěčow}}",
 	"translate-statsbar-tooltip": "$1 % přełoženy, $2 % přepruwowany",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % přełoženy, $2 % přepruwowany, $3 % zestarjeny",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}"
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}",
+	"tpt-cleanchanges-language": "Rěč:",
+	"tpt-cleanchanges-language-na": "Wšě"
 }

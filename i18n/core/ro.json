@@ -312,5 +312,7 @@
 	"translate-statsbar-tooltip": "$1% traduse, $2% revizuite",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduse, $2% revizuite, $3% învechite",
 	"translate-search-more-groups-info": "Încă {{PLURAL:$1|un grup|$1 grupuri|$1 de grupuri}}",
-	"specialpages-group-translation": "Traducere"
+	"specialpages-group-translation": "Traducere",
+	"tpt-cleanchanges-language": "Limbă:",
+	"tpt-cleanchanges-language-na": "Toate"
 }

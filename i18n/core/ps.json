@@ -219,5 +219,7 @@
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|بله ژبه|نورې ژبې}}",
 	"translate-statsbar-tooltip": "$1% ژباړل شوي، $2% مخکتل شوي",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% ژباړل شوي، $2% مخکتل شوي, $3% نېټه اوښتي",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|بله ډله|نورې ډلې}}"
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|بله ډله|نورې ډلې}}",
+	"tpt-cleanchanges-language": "ژبه:",
+	"tpt-cleanchanges-language-na": "ټول"
 }

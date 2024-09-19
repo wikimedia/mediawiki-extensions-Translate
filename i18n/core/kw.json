@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nrowe"
+			"Nrowe",
+			"Kw-Moon"
 		]
 	},
 	"translate-langstats-collapse": "diskara",
-	"translate-documentation-language": "Gweres ow treylya"
+	"translate-documentation-language": "Gweres ow treylya",
+	"tpt-cleanchanges-language": "Yeth:",
+	"tpt-cleanchanges-language-na": "Oll"
 }

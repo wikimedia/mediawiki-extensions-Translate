@@ -426,5 +426,7 @@
 	"translate-messagebundle-error-key-too-long": "Kunci \"$1\" terlalu panjang",
 	"translate-messagebundle-error-key-invalid-characters": "Kunci \"$1\" mengandung karakter yang tidak diperbolehkan",
 	"translate-messagebundle-error-invalid-value": "Kunci \"$1\" tidak memiliki nilai teks",
-	"translate-messagebundle-error-empty-value": "Kunci \"$1\" tidak memiliki nilai"
+	"translate-messagebundle-error-empty-value": "Kunci \"$1\" tidak memiliki nilai",
+	"tpt-cleanchanges-language": "Bahasa:",
+	"tpt-cleanchanges-language-na": "Semua"
 }

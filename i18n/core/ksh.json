@@ -310,5 +310,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% fähdesch övversaz, $3% övverhollt, $2% jähjejelässe",
 	"translate-search-more-groups-info": "{{PLURAL:$1|Ein Jropp|$1 Jroppe|Kein Jropp}} mih",
 	"tux-session-expired": "Do bes nit mih ennjelogg.\nBes esu johd un donn en enem extra Brauserfinster widder enlogge.\nUdder donn Ding Övversäzonge woh anders faßhallde, di noch nit em Wiki jeseschert woodte, donn neu enlogge, un jangk dann retuur op heh di Sigg, un donn Ding Övversäzonge widder erövver koppeere!",
-	"tux-nojs": "Heh di Sigg bruch JahvaSkrepp."
+	"tux-nojs": "Heh di Sigg bruch JahvaSkrepp.",
+	"tpt-cleanchanges-language": "Schprohch:",
+	"tpt-cleanchanges-language-na": "jehde"
 }

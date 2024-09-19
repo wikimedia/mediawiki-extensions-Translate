@@ -45,5 +45,7 @@
 	"translate-documentation-language": "Dokumentacija poruke",
 	"tux-editor-cancel-button-label": "Otkaži",
 	"tux-editor-in-other-languages": "Na drugim jezicima",
-	"tux-editor-doc-editor-cancel": "Otkaži"
+	"tux-editor-doc-editor-cancel": "Otkaži",
+	"tpt-cleanchanges-language": "Jezik:",
+	"tpt-cleanchanges-language-na": "Svi"
 }

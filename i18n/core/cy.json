@@ -328,5 +328,7 @@
 	"log-action-filter-translationreview": "Math o weithred:",
 	"log-action-filter-translationreview-group": "Newidiadau yn statws cynnydd cyfieithiadau",
 	"notification-header-message-group-subscription": "Diweddariadau cyfieithu ar gyfer $1",
-	"notification-link-mgs-group-translate": "Cyfieithu $1"
+	"notification-link-mgs-group-translate": "Cyfieithu $1",
+	"tpt-cleanchanges-language": "Iaith:",
+	"tpt-cleanchanges-language-na": "Oll"
 }

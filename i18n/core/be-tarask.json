@@ -328,5 +328,7 @@
 	"translate-search-more-languages-info": "Яшчэ на $1 {{PLURAL:$1|мове|мовах}}",
 	"translate-statsbar-tooltip": "$1% перакладзена, $2% вычытана",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% перакладзена, $2% вычытана, $3% састарэла",
-	"translate-search-more-groups-info": "Яшчэ $1 {{PLURAL:$1|група|групы|груп}}"
+	"translate-search-more-groups-info": "Яшчэ $1 {{PLURAL:$1|група|групы|груп}}",
+	"tpt-cleanchanges-language": "Мова:",
+	"tpt-cleanchanges-language-na": "Усе"
 }

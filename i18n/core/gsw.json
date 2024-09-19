@@ -207,5 +207,7 @@
 	"translate-workflowgroup-label": "Arbetsablaufstatus",
 	"translate-workflowgroup-desc": "Die Nochrichtegruppe zeigt d Status zum Arbetsablauf bi Ibersetzige.\nD Status wäre mit dr Konfigurationsvariable <code lang=\"en\">$wgTranslateWorkflowStates</code> definiert.",
 	"translate-dynagroup-recent-label": "Aktuälli Ibersetzige",
-	"translate-dynagroup-recent-desc": "Die Nochrichtegruppe zeigt alli aktuälle Ibersetzige in däre Sproch aa.\nAm nitzligschte isch si fir s Korrekturläse."
+	"translate-dynagroup-recent-desc": "Die Nochrichtegruppe zeigt alli aktuälle Ibersetzige in däre Sproch aa.\nAm nitzligschte isch si fir s Korrekturläse.",
+	"tpt-cleanchanges-language": "Sproch:",
+	"tpt-cleanchanges-language-na": "Alli"
 }

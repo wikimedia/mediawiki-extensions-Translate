@@ -82,5 +82,6 @@
 	"tux-message-filter-advanced-button": "ပွမဂၠာဲသၠုၚ်ၚ်",
 	"tux-editor-message-tools-delete": "ဇိုတ်",
 	"tux-editor-message-tools-translations": "တြာဲဘာသာ သီုဖအိုတ်",
-	"translate-search-more-languages-info": "{{PLURAL:$1|အရေဝ်ဘာသာ|အရေဝ်ဘာသာဂမၠိုၚ်}}ထပ်ပၠန် $1 သာ်"
+	"translate-search-more-languages-info": "{{PLURAL:$1|အရေဝ်ဘာသာ|အရေဝ်ဘာသာဂမၠိုၚ်}}ထပ်ပၠန် $1 သာ်",
+	"tpt-cleanchanges-language-na": "သီုဖအိုတ်"
 }

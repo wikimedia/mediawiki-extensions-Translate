@@ -5,7 +5,8 @@
 			"Jnanaranjan Sahu",
 			"Jose77",
 			"MKar",
-			"Psubhashish"
+			"Psubhashish",
+			"Odisha1"
 		]
 	},
 	"translate": "ଅନୁବାଦ",
@@ -93,5 +94,7 @@
 	"translate-import-load": "ଲୋଡ଼ ଫାଇଲ",
 	"translate-documentation-language": "ସନ୍ଦେଶ ନଥିପତ୍ର",
 	"translate-workflowstatus": "ସ୍ଥିତି: $1",
-	"translate-stats-workflow": "ସ୍ଥିତି"
+	"translate-stats-workflow": "ସ୍ଥିତି",
+	"tpt-cleanchanges-language": "ଭାଷା:",
+	"tpt-cleanchanges-language-na": "ସବୁ"
 }

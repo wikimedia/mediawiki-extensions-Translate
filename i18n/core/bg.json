@@ -337,5 +337,7 @@
 	"translate-statsbar-tooltip": "$1% преведени, $2% проверени",
 	"translate-search-more-groups-info": "още $1 {{PLURAL:$1|група|групи}}",
 	"tux-nojs": "Този инструмент не работи без JavaScript. JavaScript е деактивиран, не работи или не се поддържа от браузъра.",
-	"specialpages-group-translation": "Превод"
+	"specialpages-group-translation": "Превод",
+	"tpt-cleanchanges-language": "Език:",
+	"tpt-cleanchanges-language-na": "Всички"
 }

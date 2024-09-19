@@ -324,5 +324,7 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|strollad}} ouzhpenn",
 	"specialpages-group-translation": "Troidigezh",
 	"translate-messagebundle-error-key-too-long": "Re hir eo an alc'hwez \"$1\"",
-	"notification-link-mgs-group-translate": "Treiñ $1"
+	"notification-link-mgs-group-translate": "Treiñ $1",
+	"tpt-cleanchanges-language": "Yezh :",
+	"tpt-cleanchanges-language-na": "An holl"
 }

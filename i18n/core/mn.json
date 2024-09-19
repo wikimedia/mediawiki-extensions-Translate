@@ -9,5 +9,7 @@
 	"translate-page-language": "Хэл",
 	"translate-language": "Хэл",
 	"translate-documentation-language": "Мессежийн баримт",
-	"tux-session-expired": "Таны логин гарсан байна. Энэ таб -аа хаалгүй шинэ таб нэмээд логин хийчихээд хадгалаарай."
+	"tux-session-expired": "Таны логин гарсан байна. Энэ таб -аа хаалгүй шинэ таб нэмээд логин хийчихээд хадгалаарай.",
+	"tpt-cleanchanges-language": "Хэл:",
+	"tpt-cleanchanges-language-na": "Бүгдийг"
 }

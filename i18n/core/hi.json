@@ -15,7 +15,8 @@
 			"Sfic",
 			"Siddhartha Ghai",
 			"ThisIsACreeper0101",
-			"संजीव कुमार"
+			"संजीव कुमार",
+			"Innocentbunny"
 		]
 	},
 	"translate": "अनुवाद करें",
@@ -448,5 +449,7 @@
 	"log-action-filter-translationreview": "कार्य का प्रकार:",
 	"log-action-filter-translationreview-message": "अनुवाद संदेशों का निरीक्षण",
 	"log-action-filter-translationreview-group": "अनुवादों की प्रगति की स्थिति में बदलाव",
-	"notification-link-mgs-group-translate": "$1 का अनुवाद करें"
+	"notification-link-mgs-group-translate": "$1 का अनुवाद करें",
+	"tpt-cleanchanges-language": "भाषा:",
+	"tpt-cleanchanges-language-na": "सभी"
 }

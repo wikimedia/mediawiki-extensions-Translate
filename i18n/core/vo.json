@@ -71,5 +71,7 @@
 	"translate-total": "Nuns",
 	"translate-untranslated": "No petradutöls",
 	"translate-percentage-complete": "Lölöfükam",
-	"translate-documentation-language": "Patöfs pükanema pro nuns"
+	"translate-documentation-language": "Patöfs pükanema pro nuns",
+	"tpt-cleanchanges-language": "Pük:",
+	"tpt-cleanchanges-language-na": "Valiks"
 }

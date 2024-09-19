@@ -390,5 +390,7 @@
 	"translate-hidetranslations": "Iwwersetzungssäite verstoppen",
 	"notification-header-message-group-subscription": "Iwwersetzungsaktualiséierunge fir $1",
 	"notification-body-translate-mgs-message-added": "Huet {{PLURAL:$1|ee Message|$1 Messagen}} derbäigesat",
-	"notification-link-mgs-group-translate": "$1 iwwersetzen"
+	"notification-link-mgs-group-translate": "$1 iwwersetzen",
+	"tpt-cleanchanges-language": "Sprooch:",
+	"tpt-cleanchanges-language-na": "All"
 }

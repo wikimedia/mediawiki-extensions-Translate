@@ -21,7 +21,9 @@
 			"Toniher",
 			"Vriullop",
 			"XVEC",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"El libre",
+			"Solde"
 		]
 	},
 	"translate": "Tradueix",
@@ -363,5 +365,7 @@
 	"translate-syntax-error": "La traducció conté errors de sintaxi",
 	"tux-session-expired": "Jo no teniu la sessió iniciada. Inicieu la sessió en una altra pestanya. Alternativament, feu una còpia de les traduccions no desades, inicieu la sessió, torneu a la pàgina i torneu a introduir les traduccions.",
 	"tux-nojs": "Aquesta eina no funciona sense JavaScript. El JavaScript està inhabilitat, no funciona o el navegador no el permet.",
-	"specialpages-group-translation": "Traducció"
+	"specialpages-group-translation": "Traducció",
+	"tpt-cleanchanges-language": "Idioma:",
+	"tpt-cleanchanges-language-na": "Tot"
 }

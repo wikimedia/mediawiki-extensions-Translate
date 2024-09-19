@@ -8,7 +8,8 @@
 			"Snævar",
 			"Spacebirdy",
 			"Stefán Örvar Sigmundsson",
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"පසිඳු කාවින්ද"
 		]
 	},
 	"translate": "Þýða",
@@ -287,5 +288,7 @@
 	"translate-statsbar-tooltip": "$1% þýtt, $2% yfirfarið",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% þýtt, $2% yfirfarið, $3% úrelt",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|hópur|hópar}} í viðbót",
-	"tux-nojs": "Þetta verkfæri virkar ekki ef slökkt er á JavaScript. JavaScript er óvirkt, það virkaði ekki, eða að þessi vafri er ekki studdur."
+	"tux-nojs": "Þetta verkfæri virkar ekki ef slökkt er á JavaScript. JavaScript er óvirkt, það virkaði ekki, eða að þessi vafri er ekki studdur.",
+	"tpt-cleanchanges-language": "Tungumál:",
+	"tpt-cleanchanges-language-na": "Allir"
 }

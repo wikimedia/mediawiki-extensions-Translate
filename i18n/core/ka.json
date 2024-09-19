@@ -212,5 +212,7 @@
 	"translate-search-more-languages-info": "კიდევ $1 {{PLURAL:$1|ენა|ენა}}",
 	"translate-statsbar-tooltip": "ნათარგმნი $1%, შემოწმებული $2%",
 	"translate-statsbar-tooltip-with-fuzzy": "ნათარგმნი $1%, შემოწმებული $2%, მოძველებული $3%",
-	"translate-search-more-groups-info": "კიდევ $1 {{PLURAL:$1|ჯგუფი|ჯგუფი}}"
+	"translate-search-more-groups-info": "კიდევ $1 {{PLURAL:$1|ჯგუფი|ჯგუფი}}",
+	"tpt-cleanchanges-language": "ენა:",
+	"tpt-cleanchanges-language-na": "ყველა"
 }

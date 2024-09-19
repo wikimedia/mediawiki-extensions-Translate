@@ -300,5 +300,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% išversti, $2% apžvelgti, $3% pasenę",
 	"translate-search-more-groups-info": "dar $1 {{PLURAL:$1|grupė|grupės}}",
 	"tux-nojs": "Šiam puslapiui reikia JavaScript.",
-	"specialpages-group-translation": "Vertimas"
+	"specialpages-group-translation": "Vertimas",
+	"tpt-cleanchanges-language": "Kalba:",
+	"tpt-cleanchanges-language-na": "Visi"
 }

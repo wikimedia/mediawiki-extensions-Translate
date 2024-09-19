@@ -5,7 +5,8 @@
 			"PiefPafPier",
 			"Robin van der Vliet",
 			"Robin0van0der0vliet",
-			"Snakesteuben"
+			"Snakesteuben",
+			"SK-luuut"
 		]
 	},
 	"translate": "Oersette",
@@ -434,5 +435,7 @@
 	"translate-messagebundle-sourcelanguage-changed": "De boarnetaal fan in berjochtebondel kin net wizige wurde nei't er al oanmakke is.",
 	"log-action-filter-translationreview": "Type fan hanneling:",
 	"log-action-filter-translationreview-message": "Hifkjen fan ôfsûnderlike oersetberjochten",
-	"log-action-filter-translationreview-group": "Statuswizigings fan 'e oersettingsfuortgong"
+	"log-action-filter-translationreview-group": "Statuswizigings fan 'e oersettingsfuortgong",
+	"tpt-cleanchanges-language": "Taal:",
+	"tpt-cleanchanges-language-na": "Alles"
 }

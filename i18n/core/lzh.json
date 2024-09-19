@@ -148,5 +148,7 @@
 	"tux-editor-loading": "載之……",
 	"translate-search-more-languages-info": "尚有{{PLURAL:$1|語文|語文}}$1",
 	"translate-statsbar-tooltip": "已譯$1%，已檢校$2%",
-	"translate-statsbar-tooltip-with-fuzzy": "$1%已翻，$2%檢校，$3%過時"
+	"translate-statsbar-tooltip-with-fuzzy": "$1%已翻，$2%檢校，$3%過時",
+	"tpt-cleanchanges-language": "語：",
+	"tpt-cleanchanges-language-na": "全"
 }

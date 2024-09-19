@@ -18,5 +18,7 @@
 	"translate-edit-title": "Edita \"$1\"",
 	"translate-stats-edits": "Edisaun sira",
 	"translate-language": "Lian",
-	"translate-searchprofile": "Tradusaun sira"
+	"translate-searchprofile": "Tradusaun sira",
+	"tpt-cleanchanges-language": "Lian:",
+	"tpt-cleanchanges-language-na": "Hotu"
 }

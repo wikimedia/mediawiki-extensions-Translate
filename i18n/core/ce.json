@@ -468,5 +468,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Со йазвеллачу гочйинчу хаамийн тобанашна тӀехь хийцамаш хиларх лаьцна хаам бе суна",
 	"notification-header-message-group-subscription": "Гочдар карладаккхар $1",
 	"notification-body-translate-mgs-message-added": "ТӀетоьхна $1 {{PLURAL:$1|хаам}}",
-	"notification-link-mgs-group-translate": "$1 гочйе"
+	"notification-link-mgs-group-translate": "$1 гочйе",
+	"tpt-cleanchanges-language": "Мотт:",
+	"tpt-cleanchanges-language-na": "Массо"
 }

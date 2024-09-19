@@ -248,5 +248,7 @@
 	"tux-editor-doc-editor-save": "Salvé la documentassion",
 	"tux-editor-doc-editor-cancel": "Scancela",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|mëssagi}} ëd pi",
-	"tux-messagetable-loading-messages": "Cariagi {{PLURAL:$1|dël mëssagi|dij mëssagi}}..."
+	"tux-messagetable-loading-messages": "Cariagi {{PLURAL:$1|dël mëssagi|dij mëssagi}}...",
+	"tpt-cleanchanges-language": "Lenga:",
+	"tpt-cleanchanges-language-na": "Tùit"
 }

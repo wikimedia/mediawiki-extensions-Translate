@@ -306,5 +306,7 @@
 	"translate-messagebundle-error-invalid-sourcelanguage": "ရင်းမြစ်ဘာသာစကားကုဒ် \"$1\" ကို ပံ့ပိုးမထားပါ။",
 	"log-action-filter-translationreview": "လုပ်ဆောင်ချက် အမျိုးအစား:",
 	"log-action-filter-translationreview-message": "သီးခြားဘာသာပြန်မက်ဆေ့များ၏ ပြန်လည်သုံးသပ်ချက်",
-	"log-action-filter-translationreview-group": "ဘာသာပြန်များ၏ တိုးတက်မှု အခြေအနေ အပြောင်းအလဲများ"
+	"log-action-filter-translationreview-group": "ဘာသာပြန်များ၏ တိုးတက်မှု အခြေအနေ အပြောင်းအလဲများ",
+	"tpt-cleanchanges-language": "ဘာသာစကား:",
+	"tpt-cleanchanges-language-na": "အားလုံး"
 }

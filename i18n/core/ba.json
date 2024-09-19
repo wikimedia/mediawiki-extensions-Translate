@@ -263,5 +263,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% тәржемәле, $2% тикшерелгән, $3% иҫкергән",
 	"tux-nojs": "Был ҡорал JavaScript-һыҙ эшләмәй. JavaScript һүндерелгән, эшләмәй йәки был браузер тотмай.",
 	"translate-messagebundle-error-key-too-long": "\"$1\" асҡысы бик оҙон",
-	"translate-messagebundle-error-key-invalid-characters": "\"$1\" асҡысында рөхсәт ителмәгән билдәләр бар"
+	"translate-messagebundle-error-key-invalid-characters": "\"$1\" асҡысында рөхсәт ителмәгән билдәләр бар",
+	"tpt-cleanchanges-language": "Тел:",
+	"tpt-cleanchanges-language-na": "Барыһы"
 }

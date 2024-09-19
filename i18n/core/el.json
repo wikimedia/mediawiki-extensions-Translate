@@ -358,5 +358,7 @@
 	"tux-nojs": "Αυτό το εργαλείο δεν λειτουργεί χωρίς JavaScript. Ή το JavaScript είναι απενεργοποιημένο, ή απέτυχε να δουλέψει ή αυτό το πρόγραμμα περιήγησης δεν υποστηρίζεται.",
 	"specialpages-group-translation": "Μετάφραση",
 	"logentry-import-translatable-bundle": "Ο χρήστης $1 {{GENDER:$2|εισήγαγε}} ένα μεταφράσιμο bundle $3.",
-	"log-action-filter-import-translatable-bundle": "Μεταφόρτωση μεταφράσιμου bundle"
+	"log-action-filter-import-translatable-bundle": "Μεταφόρτωση μεταφράσιμου bundle",
+	"tpt-cleanchanges-language": "Γλώσσα:",
+	"tpt-cleanchanges-language-na": "Όλες"
 }

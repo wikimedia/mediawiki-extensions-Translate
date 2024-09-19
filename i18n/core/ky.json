@@ -170,5 +170,6 @@
 	"translate-search-more-groups-info": "дагы $1 {{PLURAL:$1|топ}}",
 	"translate-syntax-error": "Котормодо синтаксистик каталар бар",
 	"specialpages-group-translation": "Котормолор",
-	"translate-hidetranslations": "Которулган барактарды жашыруу"
+	"translate-hidetranslations": "Которулган барактарды жашыруу",
+	"tpt-cleanchanges-language": "Тил:"
 }

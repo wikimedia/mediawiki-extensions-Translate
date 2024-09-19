@@ -428,5 +428,7 @@
 	"specialpages-group-translation": "翻訳",
 	"log-action-filter-translationreview": "操作の種類:",
 	"translate-hidetranslations": "翻訳ページを隠す",
-	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|件のメッセージ}}が追加されました"
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|件のメッセージ}}が追加されました",
+	"tpt-cleanchanges-language": "言語:",
+	"tpt-cleanchanges-language-na": "すべて"
 }

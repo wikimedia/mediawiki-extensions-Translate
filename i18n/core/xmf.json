@@ -152,5 +152,7 @@
 	"translate-manage-action-fuzzy": "იმპორტი დო არაზუსტი ნათანგეფი",
 	"translate-manage-action-rename": "ჯოხოშ თირუა",
 	"translate-documentation-language": "გინაფაშ დოკუმენტაცია",
-	"translate-searchprofile": "ნათანგეფი"
+	"translate-searchprofile": "ნათანგეფი",
+	"tpt-cleanchanges-language": "ნინა:",
+	"tpt-cleanchanges-language-na": "არძა"
 }

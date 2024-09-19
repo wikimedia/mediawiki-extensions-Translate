@@ -252,5 +252,7 @@
 	"tux-editor-message-tools-linktothis": "Bu habara baglanyşyk",
 	"tux-editor-loading": "Ýüklenýär...",
 	"specialpages-group-translation": "Terjime",
-	"content-model-translate-messagebundle": "Terjime edilip bilinýän habarlar toplumy"
+	"content-model-translate-messagebundle": "Terjime edilip bilinýän habarlar toplumy",
+	"tpt-cleanchanges-language": "Dil:",
+	"tpt-cleanchanges-language-na": "Ählisi"
 }

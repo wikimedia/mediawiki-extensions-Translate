@@ -147,5 +147,7 @@
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kielâ|kielâ|kielâ|kiellâd}} lase",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|eres juávkku|eres juávhu|eres juávhu|eres juávkkud}}",
 	"specialpages-group-translation": "Jurgâlus",
-	"notification-link-mgs-group-translate": "Jurgâl $1"
+	"notification-link-mgs-group-translate": "Jurgâl $1",
+	"tpt-cleanchanges-language": "Kielâ:",
+	"tpt-cleanchanges-language-na": "Puoh"
 }

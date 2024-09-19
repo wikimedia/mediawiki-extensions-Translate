@@ -95,5 +95,7 @@
 	"translate-manage-import-done": "ಆಮದು ಮುಗಿಯಿತು!",
 	"importtranslations": "ಭಾಷಾಂತರಗಳನ್ನು ಆಮದು ಮಾಡಿ",
 	"translate-documentation-language": "ಸಂದೇಶ ದಾಖಲೀಕರಣ",
-	"translate-dynagroup-recent-label": "ಇತ್ತೀಚಿನ ಅನುವಾದಗಳು"
+	"translate-dynagroup-recent-label": "ಇತ್ತೀಚಿನ ಅನುವಾದಗಳು",
+	"tpt-cleanchanges-language": "ಭಾಷೆ:",
+	"tpt-cleanchanges-language-na": "ಎಲ್ಲಾ"
 }

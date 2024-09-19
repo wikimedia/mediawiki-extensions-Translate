@@ -478,5 +478,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "להודיע לי על שינויים בקבוצות הודעות לתרגום שעשיתי להן מינוי",
 	"notification-header-message-group-subscription": "עדכוני תרגום בקבוצה $1",
 	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|נוספה או עודכנה הודעה אחת|נוספו או עודכנו $1 הודעות}}",
-	"notification-link-mgs-group-translate": "לתרגם את $1"
+	"notification-link-mgs-group-translate": "לתרגם את $1",
+	"tpt-cleanchanges-language": "שפה:",
+	"tpt-cleanchanges-language-na": "הכול"
 }

@@ -138,5 +138,7 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|àutru grupp|àutri gruppa}}",
 	"specialpages-group-translation": "Traduzzioni",
 	"translate-messagebundle-error-key-too-long": "La chiavi \"$1\" è troppo lonca",
-	"translate-messagebundle-error-empty-value": "La chiavi \"$1\" nun havi nu valuri"
+	"translate-messagebundle-error-empty-value": "La chiavi \"$1\" nun havi nu valuri",
+	"tpt-cleanchanges-language": "Lingua:",
+	"tpt-cleanchanges-language-na": "Tutti"
 }

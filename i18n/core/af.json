@@ -289,5 +289,7 @@
 	"translate-search-more-languages-info": "Nog $1 {{PLURAL:$1|taal|tale}}",
 	"translate-statsbar-tooltip": "$1% vertaal, $2% geproeflees",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% vertaal, $2% geproeflees, $3% verouderd",
-	"translate-search-more-groups-info": "nog $1 groep{{PLURAL:$1||e}}"
+	"translate-search-more-groups-info": "nog $1 groep{{PLURAL:$1||e}}",
+	"tpt-cleanchanges-language": "Taal:",
+	"tpt-cleanchanges-language-na": "Alle tale"
 }

@@ -462,5 +462,7 @@
 	"log-action-filter-translationreview-message": "Revizio de unuopaj tradukmesaĝoj",
 	"log-action-filter-translationreview-group": "Ŝanĝoj en la statuso de la progreso de tradukoj",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|importis}} tradukeblan pakaĵon $3",
-	"log-action-filter-import-translatable-bundle": "Importo de tradukebla pakaĵo"
+	"log-action-filter-import-translatable-bundle": "Importo de tradukebla pakaĵo",
+	"tpt-cleanchanges-language": "Lingvo:",
+	"tpt-cleanchanges-language-na": "Ĉiuj"
 }

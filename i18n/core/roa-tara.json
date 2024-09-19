@@ -407,5 +407,7 @@
 	"translate-messagebundle-error-key-too-long": "'A chiave \"$1\" jè troppe longhe",
 	"translate-messagebundle-error-key-invalid-characters": "'A chiave \"$1\" tène carattere non conzendite",
 	"translate-messagebundle-error-invalid-value": "'A chiave \"$1\" non ge tène 'nu valore stringhe",
-	"translate-messagebundle-error-empty-value": "'A chiave \"$1\" non ge tène 'nu valore"
+	"translate-messagebundle-error-empty-value": "'A chiave \"$1\" non ge tène 'nu valore",
+	"tpt-cleanchanges-language": "Lènghe:",
+	"tpt-cleanchanges-language-na": "Tutte"
 }

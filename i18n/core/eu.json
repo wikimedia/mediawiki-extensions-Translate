@@ -220,5 +220,7 @@
 	"translate-search-more-languages-info": "{{PLURAL:$1|Hizkuntza bat|$1 hizkuntza}} gehiago",
 	"translate-statsbar-tooltip": "%$1 itzulita, %$2 berrikusita",
 	"translate-statsbar-tooltip-with-fuzzy": "%$1 itzulita, %$2 berrikusita, %$3 zeharkituta",
-	"translate-search-more-groups-info": "{{PLURAL:$1|Talde $1|$1 talde}} gehiago"
+	"translate-search-more-groups-info": "{{PLURAL:$1|Talde $1|$1 talde}} gehiago",
+	"tpt-cleanchanges-language": "Hizkuntza:",
+	"tpt-cleanchanges-language-na": "Guztiak"
 }

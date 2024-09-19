@@ -269,5 +269,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% аударылған, $2% тексерілген, $3%  жаңартуды қажет етеді",
 	"translate-search-more-groups-info": "Тағы $1 {{PLURAL:$1|топ}}:",
 	"tux-nojs": "Бұл құрал JavaScript-сіз жұмыс істемейді. JavaScript өшірулі, жұмыс істей алмады, немесе бұл браузерге қолдау көрсетілмейді.",
-	"log-action-filter-translationreview": "Әрекет түрі:"
+	"log-action-filter-translationreview": "Әрекет түрі:",
+	"tpt-cleanchanges-language": "Тіл:",
+	"tpt-cleanchanges-language-na": "Барлығы"
 }

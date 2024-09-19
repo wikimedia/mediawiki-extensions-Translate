@@ -328,5 +328,7 @@
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|grupa|grupe|grupa}}",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u drugoj kartici. Druga mogućnost je da prekopirate nesačuvane prijevode, prijavite se, vratite se na ovu stranicu i ponovo upišete svoje prijevode.",
 	"tux-nojs": "Ova stranica zahtijeva JavaScript.",
-	"log-action-filter-translationreview": "Vrsta radnje:"
+	"log-action-filter-translationreview": "Vrsta radnje:",
+	"tpt-cleanchanges-language": "Jezik:",
+	"tpt-cleanchanges-language-na": "Sve"
 }

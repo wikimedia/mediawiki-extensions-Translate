@@ -82,5 +82,7 @@
 	"tux-editor-collapse-tooltip": "မာအိင်း",
 	"tux-editor-message-tools-history": "မေင်ႋစိင်",
 	"tux-editor-message-tools-delete": "ထုဂ်ဆိင့်",
-	"tux-editor-message-tools-translations": "ဆ်ုခၠယ့်လ်ုဖးလုက်ဆိင့်"
+	"tux-editor-message-tools-translations": "ဆ်ုခၠယ့်လ်ုဖးလုက်ဆိင့်",
+	"tpt-cleanchanges-language": "ဆ်ုခၠါင်ဘာႋသာ့:",
+	"tpt-cleanchanges-language-na": "လုက်ဆိင့်"
 }

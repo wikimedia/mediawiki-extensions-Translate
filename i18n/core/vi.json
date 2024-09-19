@@ -424,5 +424,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "Chìa khóa “$1” có ký tự không được phép",
 	"translate-messagebundle-error-invalid-value": "Chìa khóa “$1” không có giá trị chuỗi",
 	"translate-messagebundle-error-empty-value": "Chìa khóa “$1” không có giá trị",
-	"translate-messagebundle-group-description": "Các thông điệp của bó thông điệp được định nghĩa tại trang [[$2|$1]]."
+	"translate-messagebundle-group-description": "Các thông điệp của bó thông điệp được định nghĩa tại trang [[$2|$1]].",
+	"tpt-cleanchanges-language": "Ngôn ngữ:",
+	"tpt-cleanchanges-language-na": "Tất cả"
 }

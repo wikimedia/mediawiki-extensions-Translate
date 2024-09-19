@@ -474,5 +474,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Varsle meg når det kommer endringer i en oversettbar meldingsgruppe jeg abonnerer på",
 	"notification-header-message-group-subscription": "Oversettelsesoppdateringer for $1",
 	"notification-body-translate-mgs-message-added": "La til $1 {{PLURAL:$1|melding|meldinger}}",
-	"notification-link-mgs-group-translate": "Oversett $1"
+	"notification-link-mgs-group-translate": "Oversett $1",
+	"tpt-cleanchanges-language": "Språk:",
+	"tpt-cleanchanges-language-na": "Alle"
 }

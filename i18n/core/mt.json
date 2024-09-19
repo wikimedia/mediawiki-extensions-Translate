@@ -153,5 +153,7 @@
 	"tux-empty-list-other-guide": "Tista' tgħin tirrevedi traduzzjonijiet eżistenti",
 	"tux-empty-list-other-action": "Irrevedi t-traduzzjonijiet",
 	"tux-empty-list-other-link": "Uri l-messaġġi kollha",
-	"translate-search-more-languages-info": "$1 {{PLURAL:$1|lingwa|lingwi}} oħra"
+	"translate-search-more-languages-info": "$1 {{PLURAL:$1|lingwa|lingwi}} oħra",
+	"tpt-cleanchanges-language": "Lingwa:",
+	"tpt-cleanchanges-language-na": "Kollha"
 }

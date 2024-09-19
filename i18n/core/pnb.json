@@ -82,5 +82,6 @@
 	"tux-empty-list-translated-action": "ترجمہ کرو",
 	"tux-editor-message-tools-translations": "سارے ترجمے",
 	"translate-search-more-languages-info": "$1 ہور {{PLURAL:$1|بولی|بولیاں}}",
-	"specialpages-group-translation": "ترجمہ"
+	"specialpages-group-translation": "ترجمہ",
+	"tpt-cleanchanges-language": "بولی:"
 }

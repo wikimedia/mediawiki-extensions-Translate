@@ -19,5 +19,7 @@
 	"translate-statsf-submit": "Réamhamharc",
 	"translate-translations-fieldset-title": "Teachtaireacht",
 	"translate-translations-messagename": "Ainm:",
-	"translate-language": "Teanga"
+	"translate-language": "Teanga",
+	"tpt-cleanchanges-language": "Teanga:",
+	"tpt-cleanchanges-language-na": "An t-iomlán"
 }

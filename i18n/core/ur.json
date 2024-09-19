@@ -271,5 +271,7 @@
 	"tux-session-expired": "آپ لاگ ان نہیں نہیں، براہ کرم دوسرے ٹیب میں لاگ ان ہوں۔ یا غیر محفوظ ترجموں کو نقل کریں، لاگ ان ہوں اور واپس اس صفحے میں پہنچ کر اپنے ترجمے دوبارہ درج کریں۔",
 	"tux-nojs": "اس صفحے کے لیے جاوا اسکرپٹ درکار ہے۔",
 	"specialpages-group-translation": "ترجمہ",
-	"log-action-filter-translationreview": "عمل کی نوعیت:"
+	"log-action-filter-translationreview": "عمل کی نوعیت:",
+	"tpt-cleanchanges-language": "زبان:",
+	"tpt-cleanchanges-language-na": "تمام"
 }

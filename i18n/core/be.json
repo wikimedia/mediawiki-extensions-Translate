@@ -475,5 +475,6 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Апавяшчаць мяне аб зменах у групах перакладу паведамленняў, на якія ў мяне ёсць падпіска",
 	"notification-header-message-group-subscription": "Абнаўленні перакладу ў $1",
 	"notification-body-translate-mgs-message-added": "Дададзена $1 {{PLURAL:$1|паведамленне|паведамленні|паведамленняў}}",
-	"notification-link-mgs-group-translate": "Перакласці $1"
+	"notification-link-mgs-group-translate": "Перакласці $1",
+	"tpt-cleanchanges-language": "Мова:"
 }

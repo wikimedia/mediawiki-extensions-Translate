@@ -218,5 +218,6 @@
 	"tux-editor-skip-button-label": "كېيىنكىگە ئاتلاش",
 	"tux-editor-suggestions-title": "نامزاتلار",
 	"tux-editor-in-other-languages": "باشقا تىلاردا",
-	"tux-editor-tm-match": "$1% ماس كېلىدۇ"
+	"tux-editor-tm-match": "$1% ماس كېلىدۇ",
+	"tpt-cleanchanges-language": "تىل:"
 }

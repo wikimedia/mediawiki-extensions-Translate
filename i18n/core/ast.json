@@ -352,5 +352,7 @@
 	"translate-syntax-error": "La traducción contién errores sintácticos",
 	"tux-session-expired": "La sesión zarróse yá. Anicia sesión n'una llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión, vuelvi a esta páxina y escribi les traducciones otra vuelta.",
 	"tux-nojs": "Esta ferramienta nun funciona sin JavaScript. JavaScript ta desactiváu, nun funcionó, o nun hai encontu pa esti restolador.",
-	"specialpages-group-translation": "Traducción"
+	"specialpages-group-translation": "Traducción",
+	"tpt-cleanchanges-language": "Llingua:",
+	"tpt-cleanchanges-language-na": "Toos"
 }

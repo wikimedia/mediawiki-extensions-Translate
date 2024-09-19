@@ -255,5 +255,7 @@
 	"tux-editor-loading": "កំពុងផ្ទុក…",
 	"translate-search-more-languages-info": "{{PLURAL:$1|ភាសា|ភាសា}}$1បន្ថែមទៀត",
 	"translate-statsbar-tooltip": "បកប្រែរួច $1%  ផ្ទៀតផ្ទាត់រួច $2%",
-	"translate-statsbar-tooltip-with-fuzzy": "បកប្រែរួច $1%  ផ្ទៀតផ្ទាត់រួច $2% ហួសសម័យ $3%"
+	"translate-statsbar-tooltip-with-fuzzy": "បកប្រែរួច $1%  ផ្ទៀតផ្ទាត់រួច $2% ហួសសម័យ $3%",
+	"tpt-cleanchanges-language": "ភាសា៖",
+	"tpt-cleanchanges-language-na": "ទាំងអស់"
 }

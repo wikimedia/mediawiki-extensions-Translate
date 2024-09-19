@@ -52,7 +52,9 @@
 			"Wirbel78",
 			"Александр Сигачёв",
 			"Туллук",
-			"Умар"
+			"Умар",
+			"Innv",
+			"RDmitriyS"
 		]
 	},
 	"translate": "Перевести",
@@ -510,5 +512,7 @@
 	"translate-hidetranslations": "Скрыть страницы перевода",
 	"echo-pref-tooltip-translate-message-group-subscription": "Уведомите меня об изменениях в переводимых группах сообщений, на которые я подписан",
 	"notification-header-message-group-subscription": "Есть обновления перевода для $1",
-	"notification-link-mgs-group-translate": "Перевести $1"
+	"notification-link-mgs-group-translate": "Перевести $1",
+	"tpt-cleanchanges-language": "Язык:",
+	"tpt-cleanchanges-language-na": "Все"
 }

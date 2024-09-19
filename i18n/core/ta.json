@@ -188,5 +188,7 @@
 	"tux-editor-need-more-help": "மேலதிக உதவி தேவையா?",
 	"tux-editor-ask-help": "மேலும் தகவல்களைக் கேள்",
 	"tux-editor-message-tools-show-editor": "விக்கி எடிட்டரில் காண்பிக்கவும்",
-	"tux-nojs": "இந்தப் பக்கத்திற்கு ஜாவாஸ்ரிப்ட் தேவை"
+	"tux-nojs": "இந்தப் பக்கத்திற்கு ஜாவாஸ்ரிப்ட் தேவை",
+	"tpt-cleanchanges-language": "மொழி:",
+	"tpt-cleanchanges-language-na": "யாவும்"
 }

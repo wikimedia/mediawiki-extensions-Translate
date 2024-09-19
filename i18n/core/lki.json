@@ -142,5 +142,7 @@
 	"tux-editor-message-tools-delete": "حۀذف کردن/پاک کردن",
 	"tux-editor-message-tools-translations": "کؤل(گِشت) زوونەل چاوواشآبی",
 	"tux-editor-loading": "...(loading)بارنیائن",
-	"translate-search-more-languages-info": "$1 {{PLURAL:$1|زبان}} بیشتر"
+	"translate-search-more-languages-info": "$1 {{PLURAL:$1|زبان}} بیشتر",
+	"tpt-cleanchanges-language": ":زوون",
+	"tpt-cleanchanges-language-na": "کؤل(گشت)"
 }

@@ -261,5 +261,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % ተተርጒሙ፣ $2 % ተገምጊሙ፣ $3 % ኣይተሓደሰን",
 	"translate-search-more-groups-info": "{{PLURAL:$1|$1 ተወሳኺ|$1 ተወሰኽቲ}} {{PLURAL:$1|ጉጅለ|ጉጅለታት}}",
 	"specialpages-group-translation": "ትርጉም",
-	"log-action-filter-translationreview": "ዓይነት ተግባር፦"
+	"log-action-filter-translationreview": "ዓይነት ተግባር፦",
+	"tpt-cleanchanges-language": "ቋንቋ፦",
+	"tpt-cleanchanges-language-na": "ኩሎም"
 }

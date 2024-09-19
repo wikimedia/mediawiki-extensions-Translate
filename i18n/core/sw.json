@@ -79,5 +79,7 @@
 	"translate-searchprofile": "Tafsiri",
 	"translate-workflowstatus": "Hali: $1",
 	"translate-stats-workflow": "Hali",
-	"translate-dynagroup-recent-label": "fasiri za hivi karibuni"
+	"translate-dynagroup-recent-label": "fasiri za hivi karibuni",
+	"tpt-cleanchanges-language": "Lugha:",
+	"tpt-cleanchanges-language-na": "Wote"
 }

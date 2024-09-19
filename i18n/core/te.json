@@ -232,5 +232,7 @@
 	"tux-editor-message-tools-translations": "అన్ని అనువాదాలు",
 	"tux-editor-loading": "లోడవుతోంది...",
 	"translate-search-more-languages-info": "ఇంకా $1 {{PLURAL:$1|భాష|భాషలు}}",
-	"translate-search-more-groups-info": "మరో {{PLURAL:$1|సమూహం|$1 సమూహాలు}}"
+	"translate-search-more-groups-info": "మరో {{PLURAL:$1|సమూహం|$1 సమూహాలు}}",
+	"tpt-cleanchanges-language": "భాష:",
+	"tpt-cleanchanges-language-na": "అన్నీ"
 }

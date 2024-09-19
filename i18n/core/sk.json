@@ -299,5 +299,7 @@
 	"translate-syntax-error": "Preklad obsahuje chybu v syntaxi",
 	"tux-session-expired": "Už nie ste prihlásení. Prihláste sa, prosím, na inej karte, alebo skopírujte neuložený preklad, prihláste sa, vráťte sa k tejto stránke a zadajte znovu váš preklad.",
 	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je vypnutý alebo zlyhal alebo prehliadač nie je podporovaný.",
-	"specialpages-group-translation": "Preklad"
+	"specialpages-group-translation": "Preklad",
+	"tpt-cleanchanges-language": "Jazyk:",
+	"tpt-cleanchanges-language-na": "Všetky"
 }

@@ -123,5 +123,7 @@
 	"translate-dynagroup-recent-label": "Tantoižed kändmižed",
 	"translate-dynagroup-recent-desc": "Nece tedotandgrupp ozutab kaik tantoižed kändmižed neche kel'he.\nOm tarbhaižemb kodvingtöks.",
 	"tux-empty-list-other-link": "Ozutada kaik kirjutesed",
-	"tux-editor-message-tools-translations": "Kaik kändmižed"
+	"tux-editor-message-tools-translations": "Kaik kändmižed",
+	"tpt-cleanchanges-language": "Kel':",
+	"tpt-cleanchanges-language-na": "Kaik"
 }

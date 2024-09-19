@@ -3,7 +3,8 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Kalani",
-			"Singularity"
+			"Singularity",
+			"Kolonahe"
 		]
 	},
 	"translate": "Unuhi",
@@ -11,5 +12,7 @@
 	"translate-page-language": "ʻŌlelo",
 	"translate-page-navigation-legend": "Ka hoʻokele ʻana",
 	"translate-page-edit": "e hoʻololi",
-	"translate-language": "ʻŌlelo"
+	"translate-language": "ʻŌlelo",
+	"tpt-cleanchanges-language": "ʻŌlelo:",
+	"tpt-cleanchanges-language-na": "Nā mea apau"
 }

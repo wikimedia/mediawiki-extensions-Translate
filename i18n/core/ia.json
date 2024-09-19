@@ -462,5 +462,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Notificar me sur le cambiamentos in le gruppos de messages traducibile al quales io es subscribite",
 	"notification-header-message-group-subscription": "Actualisationes de traduction pro $1",
 	"notification-body-translate-mgs-message-added": "$1 message{{PLURAL:$1||s}} nove o actualisate",
-	"notification-link-mgs-group-translate": "Traducer $1"
+	"notification-link-mgs-group-translate": "Traducer $1",
+	"tpt-cleanchanges-language": "Lingua:",
+	"tpt-cleanchanges-language-na": "Totes"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Basharh"
+			"Basharh",
+			"Michaelovic"
 		]
 	},
 	"translate": "ܬܪܓܡ",
@@ -75,5 +76,7 @@
 	"translate-js-support-unsaved-warning": "ܐܝܬ ܠܟ ܬܘܪ̈ܓܡܐ ܠܐ ܠܒܝܟ̈ܐ.",
 	"translate-documentation-language": "ܐܓܪܬܐ ܕܐܫܛܪܘܬܐ",
 	"translate-searchprofile": "ܬܘܪ̈ܓܡܐ",
-	"tux-notices-hide": "ܛܫܝ"
+	"tux-notices-hide": "ܛܫܝ",
+	"tpt-cleanchanges-language": "ܠܫܢܐ:",
+	"tpt-cleanchanges-language-na": "ܟܠ"
 }

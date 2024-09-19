@@ -336,5 +336,7 @@
 	"translate-messagebundle-error-key-invalid-characters": "ڪنجي \"$1\" غير اجازت ڏنل حرف رکي ٿي",
 	"translate-messagebundle-error-empty-value": "ڪنجي \"$1\" ۾ ڪو قدر ڄاڻايل ناھي",
 	"log-action-filter-translationreview": "عمل جو قسم:",
-	"log-action-filter-translationreview-message": "انفرادي ترجمو نياپن جو جائزو"
+	"log-action-filter-translationreview-message": "انفرادي ترجمو نياپن جو جائزو",
+	"tpt-cleanchanges-language": "ٻولي:",
+	"tpt-cleanchanges-language-na": "سڀ"
 }

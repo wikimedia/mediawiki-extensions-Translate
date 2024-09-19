@@ -24,5 +24,7 @@
 	"translate-language-code-field-name": "Spraak-Code:",
 	"translate-documentation-language": "Narichtenopteeknung",
 	"tux-notices-hide": "versteken",
-	"tux-proofread-edit-label": "Ännern"
+	"tux-proofread-edit-label": "Ännern",
+	"tpt-cleanchanges-language": "Spraak:",
+	"tpt-cleanchanges-language-na": "All"
 }

@@ -48,5 +48,7 @@
 	"supportedlanguages-recenttranslations": "Letscht Iwwersetzinge",
 	"translate-jssti-add": "Zu de Lischt dezu duh",
 	"translate-manage-import-done": "Alles geduh!",
-	"translate-import-load": "Feil ufflaade"
+	"translate-import-load": "Feil ufflaade",
+	"tpt-cleanchanges-language": "Schprooch:",
+	"tpt-cleanchanges-language-na": "all"
 }

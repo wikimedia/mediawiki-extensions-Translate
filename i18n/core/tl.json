@@ -209,5 +209,7 @@
 	"translate-workflowgroup-desc": "Ipinapakita ng pangkat ng mensaheng ito ang mga katayuan ng paggawa ng salinwika.\nAng mga katayuan ay inilalarawan sa kaayusan ng pagkakaiba na $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Kamakailang mga salinwika",
 	"translate-dynagroup-recent-desc": "Nagpapakita ang pangkat na ito ng mensahe ng lahat ng kamakailang mga pagsasalinwika papunta sa wikang ito.\nPinaka nakakatulong para sa mga gawain ng pagwawasto.",
-	"tux-editor-message-tools-delete": "Burahin"
+	"tux-editor-message-tools-delete": "Burahin",
+	"tpt-cleanchanges-language": "Wika:",
+	"tpt-cleanchanges-language-na": "Lahat"
 }

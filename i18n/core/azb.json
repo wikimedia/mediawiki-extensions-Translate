@@ -8,7 +8,8 @@
 			"Ilğım",
 			"Koroğlu",
 			"Mousa",
-			"Reza1615"
+			"Reza1615",
+			"පසිඳු කාවින්ද"
 		]
 	},
 	"translate": "ترجومه ائت",
@@ -283,5 +284,7 @@
 	"tux-editor-loading": "یوکلنیر...",
 	"translate-search-more-languages-info": "$1 داها {{PLURAL:$1|دیل}}",
 	"translate-statsbar-tooltip": "$1٪ چئویریلیب، $2٪ تصحیح ائدیلیب",
-	"translate-statsbar-tooltip-with-fuzzy": "$1٪ چئویریلیب، $2٪ تصحیح ائدیلیب، $3٪ کؤهنه‌لنیب"
+	"translate-statsbar-tooltip-with-fuzzy": "$1٪ چئویریلیب، $2٪ تصحیح ائدیلیب، $3٪ کؤهنه‌لنیب",
+	"tpt-cleanchanges-language": "دیل:",
+	"tpt-cleanchanges-language-na": "بوتون"
 }

@@ -14,7 +14,8 @@
 			"Zaheen",
 			"আজিজ",
 			"আফতাবুজ্জামান",
-			"মোঃ মারুফ হাসান24"
+			"মোঃ মারুফ হাসান24",
+			"Wikitanvir"
 		]
 	},
 	"translate": "অনুবাদ",
@@ -423,5 +424,7 @@
 	"log-action-filter-translationreview-group": "অনুবাদ অগ্রগতির অবস্থার পরিবর্তন",
 	"translate-hidetranslations": "অনুবাদ পাতা লুকান",
 	"notification-body-translate-mgs-message-added": "$1টি {{PLURAL:$1|বার্তা}} যোগ করা হয়েছে",
-	"notification-link-mgs-group-translate": "$1 অনুবাদ করুন"
+	"notification-link-mgs-group-translate": "$1 অনুবাদ করুন",
+	"tpt-cleanchanges-language": "ভাষা:",
+	"tpt-cleanchanges-language-na": "সকল"
 }

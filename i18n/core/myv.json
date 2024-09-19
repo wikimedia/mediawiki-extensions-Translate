@@ -58,5 +58,7 @@
 	"translate-percentage-fuzzy": "Таштамозь",
 	"translate-manage-action-import": "Совавтомс",
 	"translate-manage-submit": "Топавтомс",
-	"translate-documentation-language": "Нурька сёрмадо тевконёв"
+	"translate-documentation-language": "Нурька сёрмадо тевконёв",
+	"tpt-cleanchanges-language": "Келесь:",
+	"tpt-cleanchanges-language-na": "Весе"
 }

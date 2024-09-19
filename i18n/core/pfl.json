@@ -197,5 +197,7 @@
 	"translate-workflowgroup-label": "Awaidsschridd-Zuschdond",
 	"translate-workflowgroup-desc": "Die Nochrischdegrubb zaischde Zuschdoand zum Schaffnsflus baide Iwasedzunge.\nDe Zuschdoand wead iwa die Oischdellunge <code lang=\"en\">$wgTranslateWorkflowStates</code> oagbassd.",
 	"translate-dynagroup-recent-label": "Jingschdi Iwasedzunge",
-	"translate-dynagroup-recent-desc": "Die Nochrischdegrubb zaischd alli geschewerdische Iwasedzunge inde Sbrooch oa.\nOam Beschde ischse fa Uffgawe vum Gescheleese."
+	"translate-dynagroup-recent-desc": "Die Nochrischdegrubb zaischd alli geschewerdische Iwasedzunge inde Sbrooch oa.\nOam Beschde ischse fa Uffgawe vum Gescheleese.",
+	"tpt-cleanchanges-language": "Schbrooch:",
+	"tpt-cleanchanges-language-na": "alle"
 }

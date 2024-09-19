@@ -156,5 +156,7 @@
 	"tux-editor-message-tools-linktothis": "Пайвандҳо ба ин паём",
 	"tux-editor-loading": "Бор шуда истодааст...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|забони|забонҳои}} бештар",
-	"specialpages-group-translation": "Тарҷума"
+	"specialpages-group-translation": "Тарҷума",
+	"tpt-cleanchanges-language": "Забон:",
+	"tpt-cleanchanges-language-na": "Ҳама"
 }

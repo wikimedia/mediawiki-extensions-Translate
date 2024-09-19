@@ -81,5 +81,7 @@
 	"translate-total": "Systemättergjuchte",
 	"translate-untranslated": "Nit uursät",
 	"translate-percentage-complete": "Fulboodegaid",
-	"translate-percentage-fuzzy": "Ferallerd"
+	"translate-percentage-fuzzy": "Ferallerd",
+	"tpt-cleanchanges-language": "Sproake:",
+	"tpt-cleanchanges-language-na": "aal"
 }

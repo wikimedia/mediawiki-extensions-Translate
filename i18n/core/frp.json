@@ -259,5 +259,7 @@
 	"tux-editor-tm-match": "$1 % de corrèspondance",
 	"tux-notices-more": "{{PLURAL:$1|$1 de ples}}",
 	"tux-notices-hide": "cachiér",
-	"tux-editor-save-failed": "Falyita de l’encartâjo de la traduccion : $1"
+	"tux-editor-save-failed": "Falyita de l’encartâjo de la traduccion : $1",
+	"tpt-cleanchanges-language": "Lengoua :",
+	"tpt-cleanchanges-language-na": "Tôs"
 }

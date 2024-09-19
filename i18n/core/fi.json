@@ -457,5 +457,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Ilmoita muutoksista käännettävissä viestiryhmissä, jotka olen tilannut",
 	"notification-header-message-group-subscription": "Käännöspäivityksiä viestiryhmässä $1",
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|uusi tai päivitetty viesti|uutta tai päivitettyä viestiä}}",
-	"notification-link-mgs-group-translate": "Käännä $1"
+	"notification-link-mgs-group-translate": "Käännä $1",
+	"tpt-cleanchanges-language": "Kieli:",
+	"tpt-cleanchanges-language-na": "Kaikki"
 }

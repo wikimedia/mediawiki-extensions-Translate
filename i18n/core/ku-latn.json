@@ -186,5 +186,7 @@
 	"translate-search-more-languages-info": "{{PLURAL:$1|Zimanekî din|$1 zimanên din}}",
 	"translate-statsbar-tooltip": "$1% wergerandî, $2% nirxandî",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% wergerandî, $2% nirxandî, $3% kevnbûyî",
-	"translate-search-more-groups-info": "{{PLURAL:$1|Komeka din|$1 komên din}}"
+	"translate-search-more-groups-info": "{{PLURAL:$1|Komeka din|$1 komên din}}",
+	"tpt-cleanchanges-language": "Ziman:",
+	"tpt-cleanchanges-language-na": "Hemû"
 }

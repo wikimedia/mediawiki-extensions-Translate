@@ -471,5 +471,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Извести ме за промени во преводливи групи пораки на кои сум претплатен",
 	"notification-header-message-group-subscription": "Измени во преводот на $1",
 	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|Додадена $1 порака|Додадени $1 пораки}}",
-	"notification-link-mgs-group-translate": "Преведи ја $1"
+	"notification-link-mgs-group-translate": "Преведи ја $1",
+	"tpt-cleanchanges-language": "Јазик:",
+	"tpt-cleanchanges-language-na": "Сите"
 }

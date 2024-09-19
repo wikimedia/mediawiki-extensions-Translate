@@ -405,5 +405,7 @@
 	"content-model-translate-messagebundle": "Paquete de mensaxes traducibles",
 	"log-action-filter-translationreview": "Tipo de acción:",
 	"log-action-filter-translationreview-message": "Revisión de mensaxes de tradución individuais",
-	"log-action-filter-translationreview-group": "Cambios no estado do progreso das traducións"
+	"log-action-filter-translationreview-group": "Cambios no estado do progreso das traducións",
+	"tpt-cleanchanges-language": "Lingua:",
+	"tpt-cleanchanges-language-na": "Todas"
 }

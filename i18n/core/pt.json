@@ -460,5 +460,7 @@
 	"log-action-filter-translationreview-message": "Revisão de mensagens de tradução individuais",
 	"log-action-filter-translationreview-group": "Alterações do estado de progresso das traduções",
 	"logentry-import-translatable-bundle": "$1 importou um pacote traduzível $3{{GENDER:$2|}}",
-	"log-action-filter-import-translatable-bundle": "Importação de pacote traduzível"
+	"log-action-filter-import-translatable-bundle": "Importação de pacote traduzível",
+	"tpt-cleanchanges-language": "Língua:",
+	"tpt-cleanchanges-language-na": "Todas"
 }

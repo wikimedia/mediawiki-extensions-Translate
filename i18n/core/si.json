@@ -221,5 +221,7 @@
 	"tux-editor-tm-match": "$1% ගැලපේ",
 	"tux-notices-more": "{{PLURAL:$1|තවත් $1}}",
 	"tux-notices-hide": "සඟවන්න",
-	"tux-editor-save-failed": "පරිවර්තනය සුරැකීම අසාර්ථකයි: $1"
+	"tux-editor-save-failed": "පරිවර්තනය සුරැකීම අසාර්ථකයි: $1",
+	"tpt-cleanchanges-language": "භාෂාව:",
+	"tpt-cleanchanges-language-na": "සියල්ල"
 }

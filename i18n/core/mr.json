@@ -297,5 +297,7 @@
 	"translate-statsbar-tooltip": "$1% भाषांतरीत, $2% पुनर्विलोकित",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% भाषांतरीत, $2% पुनर्विलोकित, $3% कालबाह्य",
 	"translate-search-more-groups-info": "$1 अधिक{{PLURAL:$1|गट}}",
-	"tux-nojs": "यापानासाठी जावास्क्रिप्ट हवी."
+	"tux-nojs": "यापानासाठी जावास्क्रिप्ट हवी.",
+	"tpt-cleanchanges-language": "भाषा:",
+	"tpt-cleanchanges-language-na": "सर्व"
 }

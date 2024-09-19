@@ -51,5 +51,6 @@
 	"tux-editor-expand-tooltip": "o suli",
 	"tux-editor-collapse-tooltip": "o lili",
 	"tux-editor-loading": "ijo li kama...",
-	"translate-statsbar-tooltip-with-fuzzy": "toki $1% li ante, toki ante $2% li pona, toki $3% li wile e pali sin"
+	"translate-statsbar-tooltip-with-fuzzy": "toki $1% li ante, toki ante $2% li pona, toki $3% li wile e pali sin",
+	"tpt-cleanchanges-language": "toki:"
 }

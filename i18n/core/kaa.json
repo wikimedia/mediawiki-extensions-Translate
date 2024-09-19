@@ -184,5 +184,7 @@
 	"tux-editor-message-tools-translations": "Barlıq awdarmalar",
 	"tux-editor-loading": "Júklenbekte…",
 	"translate-statsbar-tooltip": "$1% awdarılǵan, $2% tekserilgen",
-	"log-action-filter-translationreview": "Háreket túri:"
+	"log-action-filter-translationreview": "Háreket túri:",
+	"tpt-cleanchanges-language": "Til:",
+	"tpt-cleanchanges-language-na": "Hámmesi"
 }

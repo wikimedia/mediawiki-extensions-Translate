@@ -339,5 +339,7 @@
 	"translate-statsbar-tooltip": "$1% oversatte, $2% korrekturlæste",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% oversatte, $2% korrekturlæste, $3% forældede",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|mere gruppe|flere grupper}}",
-	"specialpages-group-translation": "Oversættelse"
+	"specialpages-group-translation": "Oversættelse",
+	"tpt-cleanchanges-language": "Sprog:",
+	"tpt-cleanchanges-language-na": "Alle"
 }

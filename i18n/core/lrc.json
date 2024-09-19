@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beyronvan",
-			"Mogoeilor"
+			"Mogoeilor",
+			"Bonevarluri"
 		]
 	},
 	"translate": "والرن",
@@ -62,5 +63,6 @@
 	"translate-documentation-language": "سٱنٱدسازی سی پاٛغوم",
 	"tux-edit": "ڤیرایئشت",
 	"tux-proofread-edit-label": "ڤیرایئشت",
-	"tux-editor-message-tools-history": "ڤیرگار"
+	"tux-editor-message-tools-history": "ڤیرگار",
+	"tpt-cleanchanges-language": "زون:"
 }

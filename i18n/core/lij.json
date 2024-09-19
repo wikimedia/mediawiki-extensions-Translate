@@ -60,5 +60,7 @@
 	"translate-checks-links-missing": "Gh'amanca {{PLURAL:$2|o seguente ingancio|i $2 seguenti inganci}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definission a l'adoeuvia <nowiki>{{PLURAL:}}</nowiki> ma a tradussion no.",
 	"languagestats": "Statisteghe da lengoa",
-	"translate-documentation-language": "Docomentaçión do mesàggio"
+	"translate-documentation-language": "Docomentaçión do mesàggio",
+	"tpt-cleanchanges-language": "Lengua:",
+	"tpt-cleanchanges-language-na": "Tutti"
 }

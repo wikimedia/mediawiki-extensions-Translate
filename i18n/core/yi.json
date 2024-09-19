@@ -315,5 +315,7 @@
 	"translate-statsbar-tooltip": "$1% איבערגעזעצט, $2% איבערגעקוקט",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% איבערגעזעצט, $2% איבערגעקוקט, $3% פֿארעלטערט",
 	"translate-search-more-groups-info": "נאך {{PLURAL:$1|גרופע|גרופעס}}: $1",
-	"tux-nojs": "דער דאזיקער געצייג ארבעט נישט אן JavaScript .JavaScript איז אומאקטיווירט, אדער ארבעט נישט, אדער דער דאזיקער בלעטערער איז נישט געשטיצט."
+	"tux-nojs": "דער דאזיקער געצייג ארבעט נישט אן JavaScript .JavaScript איז אומאקטיווירט, אדער ארבעט נישט, אדער דער דאזיקער בלעטערער איז נישט געשטיצט.",
+	"tpt-cleanchanges-language": "שפּראַך:",
+	"tpt-cleanchanges-language-na": "אַלע"
 }

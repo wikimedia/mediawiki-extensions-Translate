@@ -446,5 +446,7 @@
 	"translate-messagebundle-error-invalid-value": "\"$1\" anahtarı dize değeri içermiyor",
 	"translate-messagebundle-error-empty-value": "\"$1\" anahtarının bir değeri yok",
 	"translate-messagebundle-group-description": "[[$2|$1]] sayfasında tanımlanan bir mesaj paketinin mesajları.",
-	"log-action-filter-translationreview": "Eylem türü:"
+	"log-action-filter-translationreview": "Eylem türü:",
+	"tpt-cleanchanges-language": "Dil:",
+	"tpt-cleanchanges-language-na": "Hepsi"
 }

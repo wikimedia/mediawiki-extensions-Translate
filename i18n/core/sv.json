@@ -489,5 +489,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "Meddela mig om förändringar i översättbara meddelandegrupper som jag prenumererar på.",
 	"notification-header-message-group-subscription": "Översättningsuppdateringar för $1",
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|nytt eller uppdaterat meddelande|nya eller uppdaterade meddelanden}}",
-	"notification-link-mgs-group-translate": "Översätt $1"
+	"notification-link-mgs-group-translate": "Översätt $1",
+	"tpt-cleanchanges-language": "Språk:",
+	"tpt-cleanchanges-language-na": "Alla"
 }

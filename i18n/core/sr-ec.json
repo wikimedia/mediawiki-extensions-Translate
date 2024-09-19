@@ -428,5 +428,7 @@
 	"log-action-filter-translationreview-message": "Провера појединачних порука",
 	"log-action-filter-translationreview-group": "Промена статуса превода",
 	"notification-header-message-group-subscription": "Ажурирања превода за $1",
-	"notification-link-mgs-group-translate": "Преведи $1"
+	"notification-link-mgs-group-translate": "Преведи $1",
+	"tpt-cleanchanges-language": "Језик:",
+	"tpt-cleanchanges-language-na": "Све"
 }

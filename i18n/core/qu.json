@@ -246,5 +246,7 @@
 	"translate-search-more-languages-info": "$1 aswan {{PLURAL:$1|rimay|rimaykuna}}",
 	"translate-statsbar-tooltip": "$1% t'ikrasqa, $2% allinchaspa ñawirisqa",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% t'ikrasqa, $2% allinchaspa ñawirisqa, $3% mawk'ayasqa",
-	"translate-search-more-groups-info": "$1 aswan {{PLURAL:$1|huñum|huñukunam}}"
+	"translate-search-more-groups-info": "$1 aswan {{PLURAL:$1|huñum|huñukunam}}",
+	"tpt-cleanchanges-language": "Rimay:",
+	"tpt-cleanchanges-language-na": "Tukuy"
 }

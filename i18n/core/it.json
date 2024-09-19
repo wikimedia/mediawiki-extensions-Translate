@@ -398,5 +398,7 @@
 	"translate-messagebundle-error-key-too-long": "La chiave \"$1\" è troppo lunga",
 	"translate-messagebundle-error-empty-value": "La chiave \"$1\" non ha un valore",
 	"log-action-filter-translationreview": "Tipo di azione:",
-	"translate-hidetranslations": "Nascondi pagine di traduzione"
+	"translate-hidetranslations": "Nascondi pagine di traduzione",
+	"tpt-cleanchanges-language": "Lingua:",
+	"tpt-cleanchanges-language-na": "Tutte"
 }

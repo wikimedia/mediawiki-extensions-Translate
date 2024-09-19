@@ -329,5 +329,7 @@
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|lenga|lengas}} mai",
 	"translate-statsbar-tooltip": "$1% tradusit,  $2% repassat",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradusit, $2% repassat, $3% desuet",
-	"translate-search-more-groups-info": "$1 grop{{PLURAL:$1||es}} mai"
+	"translate-search-more-groups-info": "$1 grop{{PLURAL:$1||es}} mai",
+	"tpt-cleanchanges-language": "Lenga :",
+	"tpt-cleanchanges-language-na": "Totes"
 }

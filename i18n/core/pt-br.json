@@ -482,5 +482,7 @@
 	"echo-category-title-translate-message-group-subscription": "Inscrições de grupos de mensagens traduzíveis",
 	"echo-pref-tooltip-translate-message-group-subscription": "Notificar-me sobre alterações em grupos de mensagens traduzíveis nos quais estou inscrito",
 	"notification-header-message-group-subscription": "Existem atualizações de tradução para $1",
-	"notification-link-mgs-group-translate": "Traduzir $1"
+	"notification-link-mgs-group-translate": "Traduzir $1",
+	"tpt-cleanchanges-language": "Língua:",
+	"tpt-cleanchanges-language-na": "Todas"
 }

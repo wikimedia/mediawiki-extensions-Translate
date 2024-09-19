@@ -42,5 +42,7 @@
 	"translate-manage-import-new": "Du yeye $1",
 	"translate-manage-submit": "Wɔe",
 	"translate-manage-import-done": "Wo wɔ wokatã vɔ!",
-	"translate-documentation-language": "Gbedasɛwo ŋuti nuŋlɔɖiwo"
+	"translate-documentation-language": "Gbedasɛwo ŋuti nuŋlɔɖiwo",
+	"tpt-cleanchanges-language": "Gbe:",
+	"tpt-cleanchanges-language-na": "Wokatã"
 }

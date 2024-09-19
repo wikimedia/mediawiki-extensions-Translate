@@ -372,5 +372,7 @@
 	"translate-hidetranslations": "ซ่อนหน้าการแปล",
 	"notification-header-message-group-subscription": "ปรับปรุงการแปลสำหรับ $1",
 	"notification-body-translate-mgs-message-added": "เพิ่ม $1 {{PLURAL:$1|ข้อความ}}",
-	"notification-link-mgs-group-translate": "แปล: $1"
+	"notification-link-mgs-group-translate": "แปล: $1",
+	"tpt-cleanchanges-language": "ภาษา:",
+	"tpt-cleanchanges-language-na": "ทั้งหมด"
 }

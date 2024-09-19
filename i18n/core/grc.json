@@ -45,5 +45,7 @@
 	"translate-percentage-complete": "Πλήρωσις",
 	"translate-percentage-fuzzy": "Ἀπηρχαιωμένη",
 	"translate-mgs-column-language": "Γλῶττα",
-	"translate-documentation-language": "Τεκμηρίωσις ἀγγέλματος"
+	"translate-documentation-language": "Τεκμηρίωσις ἀγγέλματος",
+	"tpt-cleanchanges-language": "Γλῶττα:",
+	"tpt-cleanchanges-language-na": "Ἅπασαι"
 }

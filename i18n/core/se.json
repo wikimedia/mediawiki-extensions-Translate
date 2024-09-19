@@ -135,5 +135,7 @@
 	"tux-editor-message-tools-translations": "Buot jorgalusat",
 	"tux-editor-loading": "Viežžamin...",
 	"specialpages-group-translation": "Jorgaleapmi",
-	"notification-link-mgs-group-translate": "Jorgal $1"
+	"notification-link-mgs-group-translate": "Jorgal $1",
+	"tpt-cleanchanges-language": "Giella:",
+	"tpt-cleanchanges-language-na": "Buot"
 }

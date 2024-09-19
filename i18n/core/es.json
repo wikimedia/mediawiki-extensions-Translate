@@ -447,5 +447,7 @@
 	"log-action-filter-translationreview-group": "Cambios en el estado del progreso de traducciones",
 	"echo-category-title-translate-message-group-subscription": "Suscripciones a grupos de mensajes traducibles",
 	"echo-pref-tooltip-translate-message-group-subscription": "Notificarme sobre cambios en los grupos de mensajes traducibles a los que estoy suscrito",
-	"notification-link-mgs-group-translate": "Traducir $1"
+	"notification-link-mgs-group-translate": "Traducir $1",
+	"tpt-cleanchanges-language": "Idioma:",
+	"tpt-cleanchanges-language-na": "Todos"
 }

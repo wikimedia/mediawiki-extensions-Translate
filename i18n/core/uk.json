@@ -487,5 +487,7 @@
 	"echo-category-title-translate-message-group-subscription": "Підписки на перекладні групи повідомлень",
 	"echo-pref-tooltip-translate-message-group-subscription": "Повідомляти мене про зміни в перекладних групах повідомлень, на які мене підписано",
 	"notification-header-message-group-subscription": "Є оновлення перекладу у «$1»",
-	"notification-link-mgs-group-translate": "Перекласти «$1»"
+	"notification-link-mgs-group-translate": "Перекласти «$1»",
+	"tpt-cleanchanges-language": "Мова:",
+	"tpt-cleanchanges-language-na": "Усі"
 }

@@ -264,5 +264,7 @@
 	"translate-search-more-languages-info": "{{PLURAL:$1|ഒരു ഭാഷ കൂടി|$1 ഭാഷകൾ കൂടി}}",
 	"translate-statsbar-tooltip": "$1% പരിഭാഷപ്പെടുത്തിയവ, $2% സംശോധനം ചെയ്തവ",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% പരിഭാഷപ്പെടുത്തിയവ, $2% സംശോധനം ചെയ്തവ, $3% കാലഹരണപ്പെട്ടവ",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$2|സംഘം|സംഘങ്ങൾ}} കൂടി"
+	"translate-search-more-groups-info": "$1 {{PLURAL:$2|സംഘം|സംഘങ്ങൾ}} കൂടി",
+	"tpt-cleanchanges-language": "ഭാഷ:",
+	"tpt-cleanchanges-language-na": "എല്ലാം"
 }

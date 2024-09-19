@@ -392,5 +392,7 @@
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u zasebnoj kartici. Druga mogućnost je da prekopirate nesačuvane prevode, prijavite se, vratite se na ovu stranicu i ponovo unesete svoje prevode.",
 	"tux-nojs": "Ova alatka ne radi bez javaskripta. Javaskript je isključen, ne radi ili je ovaj pregledač nepodržan.",
 	"specialpages-group-translation": "Prevođenje",
-	"log-action-filter-translationreview": "Vrsta radnje:"
+	"log-action-filter-translationreview": "Vrsta radnje:",
+	"tpt-cleanchanges-language": "Jezik:",
+	"tpt-cleanchanges-language-na": "Sve"
 }

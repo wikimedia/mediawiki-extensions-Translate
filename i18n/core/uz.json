@@ -260,5 +260,6 @@
 	"translate-statsbar-tooltip": "$1% tarjima qilindi, $2% tekshirildi",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tarjima qilingan, $2% tekshirilgan, $3% eskirgan",
 	"translate-search-more-groups-info": "$1 tadan oshiq {{PLURAL:$1|guruh}}",
-	"specialpages-group-translation": "Tarjima"
+	"specialpages-group-translation": "Tarjima",
+	"tpt-cleanchanges-language": "Til:"
 }
