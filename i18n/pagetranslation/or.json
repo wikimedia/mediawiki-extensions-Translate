@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ansumang",
-			"Jnanaranjan Sahu"
+			"Jnanaranjan Sahu",
+			"Psubhashish"
 		]
 	},
 	"pagetranslation": "ପୃଷ୍ଠା ଅନୁବାଦ",
@@ -16,5 +17,6 @@
 	"pt-movepage-reason": "କାରଣ :",
 	"pt-deletepage-current": "ପୃଷ୍ଠା ନାମ:",
 	"pt-deletepage-reason": "କାରଣ:",
+	"pt-deletepage-reason-details": "ବାକି/ଅଧିକ କାରଣ:",
 	"pt-deletepage-list-section": "ଅନୁଭାଗ ପୃଷ୍ଠାସବୁ"
 }
