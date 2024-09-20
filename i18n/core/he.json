@@ -344,7 +344,7 @@
 	"translate-msggroupselector-search-all": "הכול",
 	"translate-msggroupselector-search-recent": "אחרונות",
 	"translate-msggroupselector-search-watched": "במעקב",
-	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}",
+	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|קבוצת־משנה אחת|$1 קבוצות־משנה}}",
 	"tux-languageselector": "שפת היעד לתרגום:",
 	"tux-select-target-language": "שפת היעד לתרגום",
 	"tux-watch-group": "לעקוב",
@@ -477,6 +477,6 @@
 	"echo-category-title-translate-message-group-subscription": "מינויים לקבוצות הודעות לתרגום",
 	"echo-pref-tooltip-translate-message-group-subscription": "להודיע לי על שינויים בקבוצות הודעות לתרגום שעשיתי להן מינוי",
 	"notification-header-message-group-subscription": "עדכוני תרגום בקבוצה $1",
-	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|נוספה הודעה אחת|נוספו $1 הודעות}}",
+	"notification-body-translate-mgs-message-added": "{{PLURAL:$1|נוספה או עודכנה הודעה אחת|נוספו או עודכנו $1 הודעות}}",
 	"notification-link-mgs-group-translate": "לתרגם את $1"
 }

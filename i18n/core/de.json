@@ -486,6 +486,6 @@
 	"echo-category-title-translate-message-group-subscription": "Übersetzbare Nachrichtengruppenabonnements",
 	"echo-pref-tooltip-translate-message-group-subscription": "Benachrichtige mich über Änderungen in übersetzbaren Nachrichtengruppen, die ich abonniert habe",
 	"notification-header-message-group-subscription": "Übersetzungsaktualisierungen für $1",
-	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|Nachricht|Nachrichten}} hinzugefügt",
+	"notification-body-translate-mgs-message-added": "$1 neue oder aktualisierte {{PLURAL:$1|Nachricht|Nachrichten}}",
 	"notification-link-mgs-group-translate": "Übersetzen $1"
 }
