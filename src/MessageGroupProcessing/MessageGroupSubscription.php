@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use AggregateMessageGroup;
 use EmptyIterator;
 use Iterator;
 use JobQueueGroup;
@@ -29,6 +30,7 @@ class MessageGroupSubscription {
 	private UserIdentityLookup $userIdentityLookup;
 	private array $queuedMessages = [];
 	private LoggerInterface $logger;
+	private ?MockEventCreator $mockEventCreator = null;
 
 	public const STATE_ADDED = 'added';
 	public const STATE_UPDATED = 'updated';
@@ -125,8 +127,35 @@ class MessageGroupSubscription {
 			return;
 		}
 
-		$groupIds = array_keys( $changesToProcess );
-		$allGroupSubscribers = $this->getSubscriberIdsForGroups( $groupIds );
+		$groupIdAggregateMapped = $this->getMappedAggregateGroupIds();
+
+		// List of changes to process along with aggregate groups.
+		$changesWithAggregateGroups = $changesToProcess;
+		$sourceGroupIdMap = [];
+		// Find aggregate groups which need to be notified.
+		foreach ( $changesToProcess as $groupId => $stateValues ) {
+			// Find the aggregate groups that the current group belongs to.
+			$aggregateGroupIds = $groupIdAggregateMapped[$groupId] ?? [];
+			if ( !$aggregateGroupIds ) {
+				continue;
+			}
+
+			foreach ( $aggregateGroupIds as $aggregateGroupId ) {
+				// The aggregate group might already be in the list of changes to process
+				$currentGroupState = $changesWithAggregateGroups[$aggregateGroupId] ??
+					$changesToProcess[$aggregateGroupId] ?? [];
+				$changesWithAggregateGroups[$aggregateGroupId] = $this->appendState( $currentGroupState, $stateValues );
+
+				// If an aggregate group is added to the list of changes, don't bother tracking dependency
+				// and send notifications to all subscribers
+				if ( !isset( $changesToProcess[$aggregateGroupId] ) ) {
+					$sourceGroupIdMap[$aggregateGroupId][] = $groupId;
+				}
+			}
+		}
+
+		$groupIdsToNotify = array_keys( $changesWithAggregateGroups );
+		$allGroupSubscribers = $this->getSubscriberIdsForGroups( $groupIdsToNotify );
 
 		// No subscribers found for the groups
 		if ( !$allGroupSubscribers ) {
@@ -134,8 +163,8 @@ class MessageGroupSubscription {
 			return;
 		}
 
-		$groups = MessageGroups::getGroupsById( $groupIds );
-		foreach ( $changesToProcess as $groupId => $state ) {
+		$groups = MessageGroups::getGroupsById( $groupIdsToNotify );
+		foreach ( $changesWithAggregateGroups as $groupId => $state ) {
 			$group = $groups[ $groupId ] ?? null;
 			if ( !$group ) {
 				$this->logger->debug(
@@ -154,14 +183,27 @@ class MessageGroupSubscription {
 				continue;
 			}
 
-			Event::create( [
-				'type' => 'translate-mgs-message-added',
-				'extra' => [
-					'groupId' => $groupId,
-					'groupLabel' => $group->getLabel(),
-					'changes' => $state
-				]
-			] );
+			$extraParams = [
+				'groupId' => $groupId,
+				'groupLabel' => $group->getLabel(),
+				'changes' => $state,
+			];
+
+			if ( isset( $sourceGroupIdMap[ $groupId ] ) ) {
+				$extraParams['sourceGroupIds'] = $sourceGroupIdMap[ $groupId ];
+			}
+
+			if ( $this->mockEventCreator ) {
+				$this->mockEventCreator->create( [
+					'type' => 'translate-mgs-message-added',
+					'extra' => $extraParams
+				] );
+			} else {
+				Event::create( [
+					'type' => 'translate-mgs-message-added',
+					'extra' => $extraParams
+				] );
+			}
 
 			$this->logger->info(
 				'Event created for {groupId} with {subscriberCount} subscribers.',
@@ -188,6 +230,25 @@ class MessageGroupSubscription {
 			->whereUserIds( $groupSubscriberIds )
 			->caller( __METHOD__ )
 			->fetchUserIdentities();
+	}
+
+	/**
+	 * Return a list of users ids that belong to all the given groups
+	 * @return int[]
+	 */
+	public function getGroupSubscriberUnion( array $groupIds ): array {
+		$unionGroups = $this->groupSubscriptionStore->getSubscriptionByGroupUnion( $groupIds );
+		$userList = [];
+
+		foreach ( $unionGroups as $row ) {
+			$userList[] = (int)$row;
+		}
+
+		return $userList;
+	}
+
+	public function setMockEventCreator( MockEventCreator $mockEventCreator ): void {
+		$this->mockEventCreator = $mockEventCreator;
 	}
 
 	/**
@@ -221,5 +282,39 @@ class MessageGroupSubscription {
 		}
 
 		return StatusValue::newGood();
+	}
+
+	/**
+	 * Returns a map of group id mapped to the aggregate groups that it belongs to.
+	 * @return array<string, string[]>
+	 */
+	private function getMappedAggregateGroupIds(): array {
+		$groupStructure = MessageGroups::getGroupStructure();
+		// Flatten the group structure for easy indexing
+		$groupIdAggregateMapped = [];
+		foreach ( $groupStructure as $groupId => $mappedGroups ) {
+			if ( !is_array( $mappedGroups ) ) {
+				// We don't care about non-aggregate groups
+				continue;
+			}
+			foreach ( $mappedGroups as $subGroups ) {
+				if ( $subGroups instanceof AggregateMessageGroup ) {
+					continue;
+				}
+				$groupIdAggregateMapped[$subGroups->getId()][] = $groupId;
+			}
+		}
+
+		return $groupIdAggregateMapped;
+	}
+
+	private function appendState( array $existingState, array $newState ): array {
+		foreach ( $newState as $stateType => $stateValues ) {
+			$existingState[$stateType] = array_unique(
+				array_merge( $existingState[$stateType] ?? [], $stateValues )
+			);
+		}
+
+		return $existingState;
 	}
 }

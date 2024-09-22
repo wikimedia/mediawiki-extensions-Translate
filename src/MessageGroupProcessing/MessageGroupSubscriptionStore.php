@@ -58,6 +58,19 @@ class MessageGroupSubscriptionStore {
 		return $queryBuilder->fetchResultSet();
 	}
 
+	public function getSubscriptionByGroupUnion( array $groupIds ): array {
+		$queryBuilder = $this->dbProvider
+			->getReplicaDatabase( self::VIRTUAL_DOMAIN )
+			->newSelectQueryBuilder()
+			->select( [ 'tmgs_user_id' ] )
+			->from( self::TABLE_NAME )
+			->where( [ 'tmgs_group' => $groupIds ] )
+			->having( 'COUNT(tmgs_group) = ' . count( $groupIds ) )
+			->caller( __METHOD__ );
+
+		return $queryBuilder->fetchFieldValues();
+	}
+
 	public function removeSubscriptions( string $groupId, int $userId ): void {
 		$conditions = [
 			'tmgs_group' => $groupId,

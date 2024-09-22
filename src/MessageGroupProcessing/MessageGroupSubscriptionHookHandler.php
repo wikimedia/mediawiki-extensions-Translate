@@ -75,13 +75,27 @@ class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, 
 				$userFactory
 			) {
 				$extra = $event->getExtra();
-				$iterator = $messageGroupSubscription->getGroupSubscribers( $extra['groupId'] );
-				$users = [];
-				foreach ( $iterator as $userIdentityValue ) {
-					$users[] = $userFactory->newFromUserIdentity( $userIdentityValue );
+				$sourceGroupIds = $extra['sourceGroupIds'] ?? [];
+
+				$commonUserIds = [];
+				if ( $sourceGroupIds ) {
+					// Find the list of users who will receive more specific notification about updates
+					// and remove them from this group notification.
+					// If an aggregate group has *two* source message group, remove users who
+					// have to be subscribed to both those two source message groups.
+					$commonUserIds = $messageGroupSubscription->getGroupSubscriberUnion( $sourceGroupIds );
 				}
 
-				return $users;
+				$iterator = $messageGroupSubscription->getGroupSubscribers( $extra['groupId'] );
+				$usersToNotify = [];
+				foreach ( $iterator as $userIdentityValue ) {
+					if ( in_array( $userIdentityValue->getId(), $commonUserIds ) ) {
+						continue;
+					}
+					$usersToNotify[] = $userFactory->newFromUserIdentity( $userIdentityValue );
+				}
+
+				return $usersToNotify;
 			}
 		];
 
