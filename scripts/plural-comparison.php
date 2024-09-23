@@ -91,6 +91,7 @@ class PluralCompare extends Maintenance {
 			}
 
 			if ( $gtExp ) {
+				// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions.eval
 				$gt = eval( $gtExp );
 			}
 
