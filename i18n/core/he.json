@@ -336,7 +336,7 @@
 	"translate-msggroupselector-search-placeholder": "חיפוש קבוצה",
 	"translate-msggroupselector-search-all": "הכול",
 	"translate-msggroupselector-search-recent": "אחרונות",
-	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}",
+	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|קבוצת־משנה אחת|$1 קבוצות־משנה}}",
 	"tux-languageselector": "שפת היעד לתרגום:",
 	"tux-select-target-language": "שפת היעד לתרגום",
 	"tux-tab-all": "הכול",

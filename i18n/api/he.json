@@ -48,7 +48,7 @@
 	"apihelp-query+messagegroups-description": "החזרת מידע על קבוצות הודעות.\n\nשימו לב שהפרמטר uselang משפיע על הפלט של החלקים שתלויים בשפה.",
 	"apihelp-query+messagegroups-summary": "החזרת מידע על קבוצות של הודעות.",
 	"apihelp-query+messagegroups-extended-description": "יש לשים לב לכך שהפרמטר uselang משפיע על הפלט של החלקים התלויים בשפה.",
-	"apihelp-query+messagegroups-param-depth": "בעת שימוש בתסדיר עץ, להגביל את העומק למספר כזה של רמות. ערך 0 אומר שלא תוצג שום תת־קבוצה. אם המגבלה מושגת, הפלט כולל ערך \"groupcount\", שמציין את מספר הילדים הישיר.",
+	"apihelp-query+messagegroups-param-depth": "בעת שימוש בתסדיר עץ, להגביל את העומק למספר כזה של רמות. ערך 0 אומר שלא תוצג שום קבוצת־משנה. אם המגבלה מושגת, הפלט כולל ערך \"groupcount\", שמציין את מספר הילדים הישיר.",
 	"apihelp-query+messagegroups-param-filter": "להחזיר רק הודעות עם מזהים שמתאימים לאחד מהקלטים שניתנו (אינו תלוי־רישיות, מופרד בתווי קו ניצב, תו־כול *).",
 	"apihelp-query+messagegroups-param-format": "בתסדיר עץ קבוצות הודעות יכולות להתקיים במקומות מרובים בעץ.",
 	"apihelp-query+messagegroups-param-iconsize": "גודל מועדף של סמל קבוצה רשתי.",

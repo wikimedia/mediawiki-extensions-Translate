@@ -16,13 +16,15 @@
 			"Valtlait",
 			"VezonThunder",
 			"ZeiP",
-			"Valtlai"
+			"Valtlai",
+			"Samoasambia"
 		]
 	},
 	"pagetranslation": "Sivujen kääntäminen",
 	"nstab-translations": "Käännösosio",
 	"right-pagetranslation": "Merkitä sivuja käännettäviksi",
 	"action-pagetranslation": "hallita käännettäviä sivuja",
+	"tps-edit-sourcepage-text": "Olet muokkaamassa käännössivun lähdettä. Varmista, että tunnut seuraavat ohjeet:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Lähdetekstin muuttaminen]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Esimerkki käytettävästä merkintäkielestä]",
 	"tps-edit-sourcepage-ve-warning-button": "OK",
 	"tpt-section": "Käännösosio $1",
 	"tpt-section-new": "Uusi käännösosio.\nNimi: $1",
