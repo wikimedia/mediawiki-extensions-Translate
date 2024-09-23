@@ -10,8 +10,6 @@
 	"nstab-translations": "Translation unit",
 	"right-pagetranslation": "Mark versions of pages for translation",
 	"action-pagetranslation": "manage translatable pages",
-	"tpt-cleanchanges-language": "Language:",
-	"tpt-cleanchanges-language-na": "All",
 	"tps-edit-sourcepage-text": "You are editing a source translation page. Please make sure that you are familiar with the following documentation:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Changing the source text]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Some translatable areas may be uneditable in this editor. Please use the source editor to edit these.",
 	"tpt-section": "Translation unit $1",

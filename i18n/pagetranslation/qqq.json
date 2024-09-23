@@ -39,8 +39,6 @@
 	"nstab-translations": "Tab label for pages in the Translations namespace.",
 	"right-pagetranslation": "{{doc-right|pagetranslation}}",
 	"action-pagetranslation": "{{doc-action|pagetranslation}}",
-	"tpt-cleanchanges-language": "{{Identical|Language}}",
-	"tpt-cleanchanges-language-na": "Used in the trailer selection of [[Special:RecentChanges]] to not filter on any trailer.\n\n{{Identical|All}}",
 	"tps-edit-sourcepage-text": "Help text shown while editing a source translation page. Contains links to various Translate extension documentation page. Appears below {{msg-mw|Tps-edit-sourcepage-title}}.",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Text shown in the notification area when user is editing the sourcepage using Visual Editor 'visual' mode",
 	"tpt-section": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",

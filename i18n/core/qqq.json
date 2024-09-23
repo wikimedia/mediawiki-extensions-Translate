@@ -509,5 +509,7 @@
 	"echo-pref-tooltip-translate-message-group-subscription": "{{doc-echo-pref-tooltip|title=Echo-category-title-translate-message-group-subscription}}",
 	"notification-header-message-group-subscription": "Header text for notifications related to message group updates related subscriptions.\n\nParameters:\n* $1 Label of the message group",
 	"notification-body-translate-mgs-message-added": "Body text for notifications sent out to users when messages are added or updated to the message groups.\n\nParameters:\n* $1 Sum of the number of added and updated messages",
-	"notification-link-mgs-group-translate": "Link to Special:Translate with the group selected.\n\nParameters:\n* $1 Group label"
+	"notification-link-mgs-group-translate": "Link to Special:Translate with the group selected.\n\nParameters:\n* $1 Group label",
+	"tpt-cleanchanges-language": "{{Identical|Language}}",
+	"tpt-cleanchanges-language-na": "Used in the trailer selection of [[Special:RecentChanges]] to not filter on any trailer.\n\n{{Identical|All}}"
 }
