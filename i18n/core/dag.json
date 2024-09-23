@@ -25,5 +25,8 @@
 	"translate-smg-group-message-message-other-langs": "Bali shɛŋa din pahi:",
 	"translate-manage-source-message-not-found": "Lahibali gbunni kani",
 	"translate-documentation-language": "Satarili sabisɔŋ",
-	"translate-messagebundle-error-empty-value": "Key\"$1\" ka timsim"
+	"tux-watch-group": "Dilihiya",
+	"tux-unwatch-group": "Dibilihi",
+	"translate-messagebundle-error-empty-value": "Key\"$1\" ka timsim",
+	"notification-body-translate-mgs-message-added": "$1 zaɣ'palli bee labiniŋ {{PLURAL:$1| yɛltɔɣali|yɛltɔɣa}}"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Constraque",
 			"Gazeb",
 			"Gramo6",
 			"Tkalyn"
@@ -159,5 +160,6 @@
 	"importtranslations": "Імпортовати переклады",
 	"translate-import-load": "Награти файл",
 	"translate-documentation-language": "Документація уповісток",
-	"translate-searchprofile": "Переклады"
+	"translate-searchprofile": "Переклады",
+	"tux-message-filter-advanced-button": "Розшырене гляданя"
 }
