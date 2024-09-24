@@ -62,10 +62,11 @@ class MessageBundleContentHandler extends TextContentHandler {
 		}
 
 		if ( $cpoParams->getGenerateHtml() && $content->isValid() ) {
-			$parserOutput->setText( $content->rootValueTable( $content->getData()->getValue() ) );
+			/** @param $content JsonContent::class */
+			$parserOutput->setRawText( $content->rootValueTable( $content->getData()->getValue() ) );
 			$parserOutput->addModuleStyles( [ 'mediawiki.content.json' ] );
 		} else {
-			$parserOutput->setText( null );
+			$parserOutput->setRawText( null );
 		}
 	}
 }
