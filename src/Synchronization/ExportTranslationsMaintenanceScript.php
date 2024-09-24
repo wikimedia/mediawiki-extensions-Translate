@@ -21,11 +21,11 @@ use MessageGroup;
  * @license GPL-2.0-or-later
  */
 class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
-	/// The translation file should be deleted if it exists
+	/** The translation file should be deleted if it exists */
 	private const ACTION_DELETE = 'delete';
-	/// The translation file should be created or updated
+	/** The translation file should be created or updated */
 	private const ACTION_CREATE = 'create';
-	/// The translation file should be updated if exists, but not created as a new
+	/** The translation file should be updated if it exists, but should not be created as a new file */
 	private const ACTION_UPDATE = 'update';
 
 	public function __construct() {
