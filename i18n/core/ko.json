@@ -425,5 +425,7 @@
 	"translate-messagebundle-error-empty-value": "\"$1\" 키에 값이 없습니다",
 	"translate-messagebundle-error-metadata-type": "메타데이터는 배열이어야 합니다.",
 	"translate-messagebundle-group-description": "문서 [[$2|$1]]에 정의된 메시지 번들의 메시지입니다.",
-	"log-action-filter-translationreview": "조치 유형:"
+	"log-action-filter-translationreview": "조치 유형:",
+	"echo-category-title-translate-message-group-subscription": "번역 가능한 메시지 그룹 구독",
+	"echo-pref-tooltip-translate-message-group-subscription": "구독 중인 번역 가능한 메시지 그룹에 변경이 있으면 내게 알립니다"
 }
