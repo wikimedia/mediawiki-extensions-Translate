@@ -182,8 +182,11 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		if ( $status->isOK() ) {
 			$this->output( "$progressCounter $previousTitleText --> $newTitleText\n" );
 		} else {
+			$reason = $this->formatterFactory
+				->getStatusFormatter( RequestContext::getMain() )
+				->getWikiText( $status );
 			$this->output( "$progressCounter Failed to move $previousTitleText to $newTitleText\n" );
-			$this->output( "\tReason:" . $status->getWikiText() . "\n" );
+			$this->output( "\tReason: $reason\n" );
 		}
 	}
 
