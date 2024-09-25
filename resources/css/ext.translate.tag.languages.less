@@ -54,7 +54,8 @@
 	height: 0.7em;
 	width: 0.7em;
 	border-radius: 50%;
-	border: 2px solid #a2a9b1;
+	border: 0;
+	outline: 1px solid #36c;
 	box-sizing: border-box;
 	margin-left: 3px;
 	flex-shrink: 0;
@@ -87,27 +88,26 @@
 
 /* @noflip */
 .mw-pt-progress--low::after {
-	background: conic-gradient( #36c 0%, #fff 0% 100% );
+	border: 2px solid #a2a9b1;
+	outline: 0;
+	background: conic-gradient( #36c 0deg, #fff 0deg );
 }
 
 /* @noflip */
 .mw-pt-progress--med::after {
-	border: 1px solid #36c;
-	/* Blue filling up to a half. Adding 0.1% for white to reduce jagged edges. */
-	background: conic-gradient( #36c 0% 50%, #fff 50.1% 100% );
+	/* Blue filling up to a half. */
+	background: conic-gradient( #36c 180deg, #fff 0deg );
 }
 
 /* @noflip */
 .mw-pt-progress--high::after {
-	border: 1px solid #36c;
-	/* Blue filling almost the full circle. Adding 0.1% for white to reduce jagged edges. */
-	background: conic-gradient( #36c 0% 70%, #fff 70.1% 100% );
+	/* Blue filling almost the full circle. */
+	background: conic-gradient( #36c 252deg, #fff 0deg );
 }
 
 /* @noflip */
 .mw-pt-progress--complete::after {
 	/* Fully blue */
-	border: 1px solid #36c;
 	background: conic-gradient( #fff 0, #36c 0 );
 }
 
