@@ -758,6 +758,7 @@
 				"resources/css/ext.translate.proofread.css"
 			],
 			"dependencies": [
+				"mediawiki.legacy.messageBox",
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"jquery.makeCollapsible",
@@ -871,6 +872,7 @@
 		"ext.translate.special.pagepreparation": {
 			"scripts": "resources/js/ext.translate.special.pagepreparation.js",
 			"dependencies": [
+				"mediawiki.legacy.messageBox",
 				"mediawiki.util",
 				"mediawiki.Title",
 				"mediawiki.diff.styles",
@@ -916,6 +918,7 @@
 				"vector": "resources/css/ext.translate.navitoggle.css"
 			},
 			"dependencies": [
+				"mediawiki.legacy.messageBox",
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"ext.translate.editor",
