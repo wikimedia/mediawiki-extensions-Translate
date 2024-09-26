@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ideophagous"
+		]
+	},
+	"apihelp-groupreview-param-group": "مجموعة د لميصاجات. شوف <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-query+messagecollection-param-group": "مجموعة د لميصاجات. شوف <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>."
+}
