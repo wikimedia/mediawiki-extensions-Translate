@@ -114,7 +114,7 @@ class HookHandler implements
 
 	/** Do late setup that depends on configuration. */
 	public static function setupTranslate(): void {
-		global $wgTranslateYamlLibrary;
+		global $wgTranslateYamlLibrary, $wgLogTypes;
 		$hooks = [];
 
 		/*
@@ -167,7 +167,7 @@ class HookHandler implements
 			$wgSpecialPages['PageMigration'] = MigrateTranslatablePageSpecialPage::class;
 			$wgSpecialPages['PagePreparation'] = PrepareTranslatablePageSpecialPage::class;
 
-			global $wgActionFilteredLogs, $wgLogActionsHandlers, $wgLogTypes;
+			global $wgActionFilteredLogs, $wgLogActionsHandlers;
 
 			// log-description-pagetranslation log-name-pagetranslation logentry-pagetranslation-mark
 			// logentry-pagetranslation-unmark logentry-pagetranslation-moveok
@@ -457,6 +457,12 @@ class HookHandler implements
 					'enabled but Scribunto extension is not installed'
 				);
 			}
+		}
+
+		// Remove possibly-duplicated log types in the case where the HookHandler is
+		// run more than once
+		if ( $wgLogTypes ) {
+			$wgLogTypes = array_unique( $wgLogTypes );
 		}
 
 		static::registerHookHandlers( $hooks );

@@ -31,6 +31,20 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 		HookHandler::setupTranslate();
 	}
 
+	private function assertLogTypesAreUnique() {
+		global $wgLogTypes;
+		$seen = [];
+		foreach ( $wgLogTypes as $logType ) {
+			$this->assertNotContains( $logType, $seen, 'Got types: ' . print_r( $wgLogTypes, true ) );
+			$seen[] = $logType;
+		}
+	}
+
+	protected function tearDown(): void {
+		parent::tearDown();
+		$this->assertLogTypesAreUnique();
+	}
+
 	/**
 	 * @param User $user
 	 * @return array|string[]
