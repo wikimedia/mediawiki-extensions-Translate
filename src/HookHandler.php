@@ -176,7 +176,9 @@ class HookHandler implements
 			// logentry-pagetranslation-deletelnok logentry-pagetranslation-encourage
 			// logentry-pagetranslation-discourage logentry-pagetranslation-prioritylanguages
 			// logentry-pagetranslation-associate logentry-pagetranslation-dissociate
-			$wgLogTypes[] = 'pagetranslation';
+			if ( !in_array( 'pagetranslation', $wgLogTypes ) ) {
+				$wgLogTypes[] = 'pagetranslation';
+			}
 			$wgLogActionsHandlers['pagetranslation/mark'] = TranslatableBundleLogFormatter::class;
 			$wgLogActionsHandlers['pagetranslation/unmark'] = TranslatableBundleLogFormatter::class;
 			$wgLogActionsHandlers['pagetranslation/moveok'] = TranslatableBundleLogFormatter::class;
@@ -201,7 +203,9 @@ class HookHandler implements
 				'aggregategroups' => [ 'associate', 'dissociate' ],
 			];
 
-			$wgLogTypes[] = 'messagebundle';
+			if ( !in_array( 'messagebundle', $wgLogTypes ) ) {
+				$wgLogTypes[] = 'messagebundle';
+			}
 			$wgLogActionsHandlers['messagebundle/moveok'] = TranslatableBundleLogFormatter::class;
 			$wgLogActionsHandlers['messagebundle/movenok'] = TranslatableBundleLogFormatter::class;
 			$wgLogActionsHandlers['messagebundle/deletefok'] = TranslatableBundleLogFormatter::class;
@@ -363,7 +367,9 @@ class HookHandler implements
 
 			global $wgLogTypes, $wgLogActionsHandlers;
 			// log-name-translatorsandbox log-description-translatorsandbox
-			$wgLogTypes[] = 'translatorsandbox';
+			if ( !in_array( 'translatorsandbox', $wgLogTypes ) ) {
+				$wgLogTypes[] = 'translatorsandbox';
+			}
 			// logentry-translatorsandbox-promoted logentry-translatorsandbox-rejected
 			$wgLogActionsHandlers['translatorsandbox/promoted'] = TranslateLogFormatter::class;
 			$wgLogActionsHandlers['translatorsandbox/rejected'] = TranslateLogFormatter::class;
@@ -457,12 +463,6 @@ class HookHandler implements
 					'enabled but Scribunto extension is not installed'
 				);
 			}
-		}
-
-		// Remove possibly-duplicated log types in the case where the HookHandler is
-		// run more than once
-		if ( $wgLogTypes ) {
-			$wgLogTypes = array_unique( $wgLogTypes );
 		}
 
 		static::registerHookHandlers( $hooks );
