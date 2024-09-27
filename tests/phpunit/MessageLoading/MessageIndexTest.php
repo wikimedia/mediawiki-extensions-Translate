@@ -152,7 +152,6 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideMessageIndexImplementation */
 	public function testMessageIndexImplementation( array $messageIndexSpec ): void {
-		$this->markTestSkipped( 'T375756' );
 		$messageIndex = $this->getServiceContainer()->getObjectFactory()->createObject( $messageIndexSpec );
 		$data = self::getTestData();
 		$diff = Services::getInstance()->getMessageIndex()->getArrayDiff( [], $data );
