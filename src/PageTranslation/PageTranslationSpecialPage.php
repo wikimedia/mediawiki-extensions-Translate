@@ -899,7 +899,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		// If an existing page does not have the supportsTransclusion flag, keep the checkbox unchecked,
 		// If the page is being marked for translation for the first time, the checkbox can be checked
-		$this->templateTransclusionForm( $page->supportsTransclusion() ?? $operation->isFirstMark() );
+		$this->templateTransclusionForm( $page, $page->supportsTransclusion() ?? $operation->isFirstMark() );
 
 		$version = $this->messageGroupMetadata->getWithDefaultValue(
 			$page->getMessageGroupId(), 'version', TranslatablePageMarker::DEFAULT_SYNTAX_VERSION
@@ -1002,7 +1002,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$out->addHTML( $checkBox->toString() );
 	}
 
-	private function templateTransclusionForm( bool $supportsTransclusion ): void {
+	private function templateTransclusionForm( TranslatablePage $page, bool $supportsTransclusion ): void {
 		$out = $this->getOutput();
 		$out->wrapWikiMsg( '==$1==', 'tpt-transclusion' );
 
@@ -1014,6 +1014,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 			[
 				'label' => $out->msg( 'tpt-transclusion-label' )->text(),
 				'align' => 'inline',
+				'help' => $out->msg( 'tpt-transclusion-help' )
+					->params( $page->getTitle()->getSubpage( 'de' )->getPrefixedText() )
+					->text(),
+				'helpInline' => true,
 			]
 		);
 
