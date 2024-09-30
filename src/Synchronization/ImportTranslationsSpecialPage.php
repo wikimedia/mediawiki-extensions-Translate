@@ -154,13 +154,17 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 			] ) .
 				Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-				Xml::inputLabel(
-					$this->msg( 'translate-import-from-local' )->text(),
-					'upload-local', // name
-					'mw-translate-up-local-input', // id
-					50, // size
-					$this->getRequest()->getText( 'upload-local' ),
-					[ 'type' => 'file' ]
+				Html::rawElement(
+					'label',
+					[],
+					$this->msg( 'translate-import-from-local' )->escaped() .
+					"\u{00A0}" .
+					Html::input(
+						'upload-local',
+						$this->getRequest()->getText( 'upload-local' ),
+						'file',
+						[ 'id' => 'mw-translate-up-local-input' ]
+					)
 				) .
 				Html::submitButton( $this->msg( 'translate-import-load' )->text() ) .
 				Xml::closeElement( 'form' )
