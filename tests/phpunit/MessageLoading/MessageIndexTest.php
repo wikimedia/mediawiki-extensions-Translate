@@ -157,10 +157,9 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$diff = Services::getInstance()->getMessageIndex()->getArrayDiff( [], $data );
 		$messageIndex->store( $data, $diff['keys'] );
 
-		$tests = array_rand( $data, 10 );
-		foreach ( $tests as $key ) {
+		foreach ( $data as $key => $value ) {
 			$this->assertSame(
-				$data[$key],
+				$value,
 				$messageIndex->get( $key ),
 				"Values are preserved for random key $key"
 			);
@@ -168,10 +167,9 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 
 		$cached = $messageIndex->retrieve();
 
-		$tests = array_rand( $data, 10 );
-		foreach ( $tests as $key ) {
+		foreach ( $data as $key => $value ) {
 			$this->assertSame(
-				$data[$key],
+				$value,
 				$messageIndex->get( $key ),
 				"Values are preserved after retrieve for random key $key"
 			);
