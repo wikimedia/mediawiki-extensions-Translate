@@ -15,7 +15,6 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -285,10 +284,18 @@ class MessageWebImporter {
 				// translate-manage-action-import, translate-manage-action-conflict,
 				// translate-manage-action-ignore, translate-manage-action-fuzzy
 				foreach ( $actions as $action ) {
-					$label = $context->msg( "translate-manage-action-$action" )->text();
-					$name = self::escapeNameForPHP( "action-$type-$key" );
-					$id = Sanitizer::escapeIdForAttribute( "action-$key-$action" );
-					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaultAction );
+					$label = $context->msg( "translate-manage-action-$action" )->escaped();
+					$act[] = Html::rawElement(
+						'label',
+						[],
+						Html::radio(
+							self::escapeNameForPHP( "action-$type-$key" ),
+							$action === $defaultAction,
+							[ 'value' => $action ]
+						) .
+						"\u{00A0}" .
+						$label
+					);
 				}
 
 				$param = '<code class="mw-tmi-diff">' . htmlspecialchars( $key ) . '</code>';
