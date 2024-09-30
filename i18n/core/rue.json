@@ -3,7 +3,8 @@
 		"authors": [
 			"Gazeb",
 			"Gramo6",
-			"Tkalyn"
+			"Tkalyn",
+			"Constraque"
 		]
 	},
 	"translate": "Перекладаня",
@@ -168,5 +169,6 @@
 	"translate-gs-total": "Цілком",
 	"translate-gs-avgscore": "Сер. оцінка",
 	"translate-documentation-language": "Документація уповісток",
-	"translate-searchprofile": "Переклады"
+	"translate-searchprofile": "Переклады",
+	"tux-message-filter-advanced-button": "Розшырене гляданя"
 }
