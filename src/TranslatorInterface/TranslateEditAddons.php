@@ -224,7 +224,12 @@ class TranslateEditAddons {
 		// Replace the existing fuzzy tag, if any
 		if ( $fuzzy ) {
 			$index = array_keys( $conds );
-			$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( 'revtag' )
+				->uniqueIndexFields( $index )
+				->row( $conds )
+				->caller( __METHOD__ )
+				->execute();
 		} else {
 			$dbw->delete( 'revtag', $conds, __METHOD__ );
 		}

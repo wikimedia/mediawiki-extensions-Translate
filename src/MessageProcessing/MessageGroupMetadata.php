@@ -91,12 +91,12 @@ class MessageGroupMetadata {
 			$dbw->delete( 'translate_metadata', $data, __METHOD__ );
 			unset( $this->cache[$dbGroupId][$key] );
 		} else {
-			$dbw->replace(
-				'translate_metadata',
-				[ [ 'tmd_group', 'tmd_key' ] ],
-				$data,
-				__METHOD__
-			);
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( 'translate_metadata' )
+				->uniqueIndexFields( [ 'tmd_group', 'tmd_key' ] )
+				->row( $data )
+				->caller( __METHOD__ )
+				->execute();
 			$this->cache[$dbGroupId][$key] = $value;
 		}
 

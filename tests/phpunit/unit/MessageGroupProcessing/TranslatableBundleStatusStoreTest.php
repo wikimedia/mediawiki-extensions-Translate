@@ -10,6 +10,7 @@ use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IMaintainableDatabase;
+use Wikimedia\Rdbms\ReplaceQueryBuilder;
 
 /**
  * @author Abijeet Patro
@@ -32,8 +33,11 @@ class TranslatableBundleStatusStoreTest extends MediaWikiUnitTestCase {
 	private function getDatabaseMock() {
 		// Set status should replace the record if it exists, or insert
 		$mock = $this->createMock( Database::class );
+		$rqb = $this->createMock( ReplaceQueryBuilder::class );
+		$rqb->method( $this->logicalOr( 'replaceInto', 'uniqueIndexFields', 'row', 'caller' ) )->willReturnSelf();
 		$mock->expects( $this->once() )
-			->method( 'replace' );
+			->method( 'newReplaceQueryBuilder' )
+			->willReturn( $rqb );
 
 		return $mock;
 	}

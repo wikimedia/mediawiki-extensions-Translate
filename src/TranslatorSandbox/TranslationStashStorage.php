@@ -55,11 +55,12 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 			'ts_metadata' => serialize( $item->getMetadata() ),
 		];
 
-		$indexes = [
-			[ 'ts_user', 'ts_namespace', 'ts_title' ],
-		];
-
-		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );
+		$this->db->newReplaceQueryBuilder()
+			->replaceInto( $this->dbTable )
+			->uniqueIndexFields( [ 'ts_user', 'ts_namespace', 'ts_title' ] )
+			->row( $row )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	public function deleteTranslations( User $user ): void {

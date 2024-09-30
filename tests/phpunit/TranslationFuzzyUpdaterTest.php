@@ -61,7 +61,12 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 		];
 
 		$index = array_keys( $conds );
-		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'revtag' )
+			->uniqueIndexFields( $index )
+			->row( $conds )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/** @return int|false */

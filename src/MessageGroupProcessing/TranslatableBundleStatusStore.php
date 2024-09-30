@@ -41,17 +41,17 @@ class TranslatableBundleStatusStore {
 
 		$sortKey = substr( $this->collation->getSortKey( $title->getPrefixedDBkey() ), 0, 255 );
 		$bundleTypeId = $this->getBundleTypeId( $bundleType );
-		$this->database->replace(
-			self::TABLE_NAME,
-			'ttb_page_id',
-			[
+		$this->database->newReplaceQueryBuilder()
+			->replaceInto( self::TABLE_NAME )
+			->uniqueIndexFields( [ 'ttb_page_id' ] )
+			->row( [
 				'ttb_page_id' => $title->getArticleID(),
 				'ttb_type' => $bundleTypeId,
 				'ttb_status' => $status->getId(),
 				'ttb_sortkey' => $sortKey
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/** Return all bundles in an array with key being page id, value being status */

@@ -24,15 +24,16 @@ class MessageGroupSubscriptionStore {
 	}
 
 	public function addSubscription( string $groupId, int $userId ): void {
-		$this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN )->replace(
-			self::TABLE_NAME,
-			[ [ 'tmgs_group', 'tmgs_user_id' ] ],
-			[
+		$this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN )
+			->newReplaceQueryBuilder()
+			->replaceInto( self::TABLE_NAME )
+			->uniqueIndexFields( [ 'tmgs_group', 'tmgs_user_id' ] )
+			->row( [
 				'tmgs_group' => self::getGroupIdForDatabase( $groupId ),
 				'tmgs_user_id' => $userId,
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	public function getSubscriptions( ?array $groupIds, ?int $userId ): IResultWrapper {

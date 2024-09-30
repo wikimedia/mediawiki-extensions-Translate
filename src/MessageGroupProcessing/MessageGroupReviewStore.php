@@ -50,14 +50,18 @@ class MessageGroupReviewStore {
 			return false;
 		}
 
-		$index = [ 'tgr_group', 'tgr_lang' ];
 		$row = [
 			'tgr_group' => self::getGroupIdForDatabase( $group->getId() ),
 			'tgr_lang' => $code,
 			'tgr_state' => $newState,
 		];
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbw->replace( self::TABLE_NAME, [ $index ], $row, __METHOD__ );
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( self::TABLE_NAME )
+			->uniqueIndexFields( [ 'tgr_group', 'tgr_lang' ] )
+			->row( $row )
+			->caller( __METHOD__ )
+			->execute();
 
 		$entry = new ManualLogEntry( 'translationreview', 'group' );
 		$entry->setPerformer( $user );
@@ -102,8 +106,12 @@ class MessageGroupReviewStore {
 			unset( $row['tgr_state'] );
 			$dbw->delete( self::TABLE_NAME, $row, __METHOD__ );
 		} else {
-			$index = [ 'tgr_group', 'tgr_lang' ];
-			$dbw->replace( self::TABLE_NAME, [ $index ], $row, __METHOD__ );
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( self::TABLE_NAME )
+				->uniqueIndexFields( [ 'tgr_group', 'tgr_lang' ] )
+				->row( $row )
+				->caller( __METHOD__ )
+				->execute();
 		}
 	}
 

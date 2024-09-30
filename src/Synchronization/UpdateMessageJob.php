@@ -300,12 +300,12 @@ class UpdateMessageJob extends GenericTranslateJob {
 					'rt_revision' => $otherTitle->getLatestRevID(),
 				];
 			}
-			$dbw->replace(
-				'revtag',
-				[ [ 'rt_type', 'rt_page', 'rt_revision' ] ],
-				$inserts,
-				__METHOD__
-			);
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( 'revtag' )
+				->uniqueIndexFields( [ 'rt_type', 'rt_page', 'rt_revision' ] )
+				->rows( $inserts )
+				->caller( __METHOD__ )
+				->execute();
 		}
 		if ( $unfuzzies !== [] ) {
 			foreach ( $unfuzzies as $otherTitle ) {

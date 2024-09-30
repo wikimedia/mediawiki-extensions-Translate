@@ -68,14 +68,18 @@ class DatabaseMessageIndex extends MessageIndexStore {
 			}
 		}
 
-		$index = [ 'tmi_key' ];
 		$deletions = array_keys( $diff['del'] );
 
 		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		if ( $updates !== [] ) {
-			$dbw->replace( 'translate_messageindex', [ $index ], $updates, __METHOD__ );
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( 'translate_messageindex' )
+				->uniqueIndexFields( [ 'tmi_key' ] )
+				->rows( $updates )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		if ( $deletions !== [] ) {

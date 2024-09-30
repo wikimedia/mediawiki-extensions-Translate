@@ -192,8 +192,12 @@ class RevTagStore {
 			'rt_revision' => $translationRevision,
 			'rt_value' => $transver,
 		];
-		$index = [ 'rt_type', 'rt_page', 'rt_revision' ];
-		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'revtag' )
+			->uniqueIndexFields( [ 'rt_type', 'rt_page', 'rt_revision' ] )
+			->row( $conds )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/** Get a list of page ids where the latest revision is either tagged or marked */

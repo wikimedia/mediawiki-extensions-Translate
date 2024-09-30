@@ -142,7 +142,12 @@ class UpdateMessageJobTest extends MediaWikiIntegrationTestCase {
 			'rt_revision' => $targetTitle->getLatestRevId()
 		];
 		$index = array_keys( $conds );
-		$this->getDB()->replace( 'revtag', [ $index ], $conds, __METHOD__ );
+		$this->getDB()->newReplaceQueryBuilder()
+			->replaceInto( 'revtag' )
+			->uniqueIndexFields( $index )
+			->row( $conds )
+			->caller( __METHOD__ )
+			->execute();
 
 		// If it's already outdated then further updates don't touch the transver
 		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2 newest", true );

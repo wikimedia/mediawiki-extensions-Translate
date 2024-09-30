@@ -167,7 +167,12 @@ class CreateCheckIndex extends Maintenance {
 				'rt_type' => RevTagStore::FUZZY_TAG
 			];
 		}
-		$dbw->replace( 'revtag', [ [ 'rt_type', 'rt_page', 'rt_revision' ] ], $inserts, __METHOD__ );
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'revtag' )
+			->uniqueIndexFields( [ 'rt_type', 'rt_page', 'rt_revision' ] )
+			->rows( $inserts )
+			->caller( __METHOD__ )
+			->execute();
 	}
 }
 

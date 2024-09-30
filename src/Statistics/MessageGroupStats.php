@@ -620,8 +620,12 @@ class MessageGroupStats {
 				);
 			}
 
-			$primaryKey = [ 'tgs_group', 'tgs_lang' ];
-			$dbw->replace( self::TABLE, [ $primaryKey ], array_values( self::$updates ), $method );
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( self::TABLE )
+				->uniqueIndexFields( [ 'tgs_group', 'tgs_lang' ] )
+				->rows( array_values( self::$updates ) )
+				->caller( $method )
+				->execute();
 			self::$updates = [];
 
 			$mwInstance->getMainWANObjectCache()->touchCheckKey( self::LANGUAGE_STATS_KEY );
