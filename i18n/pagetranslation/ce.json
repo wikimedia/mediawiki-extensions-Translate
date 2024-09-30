@@ -10,8 +10,6 @@
 	"nstab-translations": "Гочдаран дакъа",
 	"right-pagetranslation": "Гочдарна агӀонан версеш билгалйахар",
 	"action-pagetranslation": "гочйина агӀонашна урхалладан",
-	"tpt-cleanchanges-language": "Мотт:",
-	"tpt-cleanchanges-language-na": "Массо",
 	"tps-edit-sourcepage-text": "Ахьа хуьйцуш йу гочйечу агӀонан йуьхьанцара код. Дехар до, хьалха хӀара документаци йеша:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Йуьхьанцара код хийцар]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Лелочу билгалонан масал]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Цхьайолу гочйеш йиш йолу меттигаш оцу редакторехула хийца йиш йоцуш хила тарло. Дехар до, хӀара хуьйцуш вики-текстан редакторш лелайе.",
 	"tpt-section": "$1 гочдаран блок",

@@ -19,8 +19,6 @@
 	"nstab-translations": "יחידת תרגום",
 	"right-pagetranslation": "סימון גרסאות של דפים כגרסאות שצריך לתרגם",
 	"action-pagetranslation": "לנהל דפים לתרגום",
-	"tpt-cleanchanges-language": "שפה:",
-	"tpt-cleanchanges-language-na": "הכול",
 	"tps-edit-sourcepage-text": "{{GENDER:|אתה עורך|את עורכת}} את המקור של דף שאפשר לתרגם. נא לוודא {{GENDER:|שאתה מכיר|שאת מכירה}} את המסמכים הבאים:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text שינוי טקסט המקור]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples דוגמה לשימוש בשפת עיצוב]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "אי־אפשר לערוך חלק מהאזורים הניתנים לתרגום בעורך הזה. נא להשתמש בעורך קוד המקור כדי לערוך אותם.",
 	"tpt-section": "יחידת תרגום $1",

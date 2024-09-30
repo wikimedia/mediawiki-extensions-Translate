@@ -3,6 +3,7 @@
 		"authors": [
 			"BHARATHESHA ALASANDEMAJALU",
 			"Ravi Mundkur",
+			"Vinoda mamatharai",
 			"Vishwanatha Badikana"
 		]
 	},
@@ -15,5 +16,6 @@
 	"translationstash": "ಸೊಲ್ಮೆಲೋ",
 	"translate-translationstash-skip-button-label": "ನನೊಂಜಿ ಪ್ರಯತ್ನ ಮಾಂಪಿ",
 	"tsb-limit-reached-title": "ಈರೆನ ಅನುವಾದಾಗ್ ಉಡಲ್ ದಿಂಜಿ ಸೊಲ್ಮೆಲೋ",
-	"tsb-create-user-page": "ಸರಳ ಬಳಕೆದಾರೆ ಪುಟ ರಚಿಸಾಂಡ್"
+	"tsb-create-user-page": "ಸರಳ ಬಳಕೆದಾರೆ ಪುಟ ರಚಿಸಾಂಡ್",
+	"tsb-other-actions": "ನಿಕುಲು [[Special:TranslationStash|ಕೆಲವು ಪರೀಕ್ಷೆದ ಅನುವಾದೊಲೆನ್ ಸಲ್ಲಿಸೊಡು]] ಬೊಕ್ಕ ಸಂಪಾದನೆ ಮಲ್ಪುನ ದುಂಬು ಅವೆನ್ ಅನುಮೋದನೆ ಮಲ್ಪೊಡು."
 }

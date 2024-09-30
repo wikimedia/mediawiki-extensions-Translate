@@ -26,8 +26,6 @@
 	"nstab-translations": "Jednostka tłumaczenia",
 	"right-pagetranslation": "Oznaczanie wersji stron do przetłumaczenia",
 	"action-pagetranslation": "zarządzanie stronami do tłumaczenia",
-	"tpt-cleanchanges-language": "Język:",
-	"tpt-cleanchanges-language-na": "Wszystkie",
 	"tps-edit-sourcepage-text": "Edytujesz stronę źródłową do przetłumaczenia. Upewnij się, że zapoznałeś się z poniższą dokumentacją:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Zmienianie treści strony źródłowej]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Przykład znaczników]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Niektóre obszary oznaczone do przetłumaczenia mogą być nieedytowalne w tym edytorze. Użyj edytora kodu, aby je edytować.",
 	"tpt-section": "Jednostka tłumaczenia $1",

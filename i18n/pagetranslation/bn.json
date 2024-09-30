@@ -14,8 +14,6 @@
 	"pagetranslation": "পাতা অনুবাদ",
 	"right-pagetranslation": "অনুবাদের জন্য পাতাসমূহের সংস্করণ চিহ্নিত করুন",
 	"action-pagetranslation": "অনুবাদযোগ্য পাতা পরিচালনা করার",
-	"tpt-cleanchanges-language": "ভাষা:",
-	"tpt-cleanchanges-language-na": "সব",
 	"tps-edit-sourcepage-text": "আপনি একটি অনুবাদের উৎস পাতা সম্পাদনা করছেন। অনুগ্রহ করে নিশ্চিত করুন যে আপনি নিম্নলিখিত নথিপত্রের সাথে পরিচিত:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text উৎসের পাঠ্য পরিবর্তন করা]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples ব্যবহারের জন্য মার্কআপের উদাহরণ]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "কিছু অনুবাদযোগ্য অংশ এই সম্পাদকের দ্বারা নাও সম্পাদনা করা যেতে পারে। এগুলি সম্পাদনা করতে অনুগ্রহ করে উৎস সম্পাদক ব্যবহার করুন।",
 	"tpt-section": "$1 নং অনুবাদের উপাদান",

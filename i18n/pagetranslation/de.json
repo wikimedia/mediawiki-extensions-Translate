@@ -23,8 +23,6 @@
 	"nstab-translations": "Übersetzungseinheit",
 	"right-pagetranslation": "Seitenversionen zur Übersetzung freigeben",
 	"action-pagetranslation": "übersetzbare Seiten zu verwalten",
-	"tpt-cleanchanges-language": "Sprache:",
-	"tpt-cleanchanges-language-na": "Alle",
 	"tps-edit-sourcepage-text": "Du bearbeitest die Quelle einer übersetzbaren Seite. Bitte stelle sicher, dass du mit der folgenden Dokumentation vertraut bist:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Ändern des Quelltextes] \n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Beispiel für zu verwendendes Markup]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Einige übersetzbare Bereiche sind in diesem Editor möglicherweise nicht bearbeitbar. Bitte verwenden den Quelltext-Editor, um diese zu bearbeiten.",
 	"tpt-section": "Übersetzungseinheit $1",

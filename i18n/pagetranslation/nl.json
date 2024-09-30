@@ -24,8 +24,6 @@
 	"nstab-translations": "Vertaaleenheid",
 	"right-pagetranslation": "Versies van pagina’s voor vertaling markeren",
 	"action-pagetranslation": "vertaalbare pagina's te beheren",
-	"tpt-cleanchanges-language": "Taal:",
-	"tpt-cleanchanges-language-na": "Alle",
 	"tps-edit-sourcepage-text": "U bewerkt nu het origineel van een vertaalbare pagina. Zorg ervoor dat u bekend bent met de volgende documentatie:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text De brontekst wijzigen] \n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Voorbeeld van de te gebruiken markeringen]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Sommige vertaalbare gebieden kunnen in deze editor mogelijk niet worden bewerkt. Gebruik de broncode-editor om deze te bewerken.",
 	"tpt-section": "Vertaaleenheid $1",

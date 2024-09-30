@@ -32,8 +32,6 @@
 	"nstab-translations": "譯文單元",
 	"right-pagetranslation": "標記需要翻譯的頁面版本",
 	"action-pagetranslation": "管理可翻譯頁面",
-	"tpt-cleanchanges-language": "語言：",
-	"tpt-cleanchanges-language-na": "全部",
 	"tps-edit-sourcepage-text": "您正在編輯譯文原文頁面。請確認您已熟悉以下說明文件內容：\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 變更原文] \n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples 標記式語言語法用例]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "某些可翻譯區域可能無法在此編輯器裡編輯。請使用原始碼編輯器來編輯它們。",
 	"tpt-section": "譯文單元 $1",

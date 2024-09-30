@@ -52,8 +52,6 @@
 	"nstab-translations": "翻译单元",
 	"right-pagetranslation": "标记页面版本为待翻译",
 	"action-pagetranslation": "管理可翻译页面",
-	"tpt-cleanchanges-language": "语言：",
-	"tpt-cleanchanges-language-na": "全部",
 	"tps-edit-sourcepage-text": "你正在编辑一个翻译原文页。请您确保对下面的文档非常熟悉：\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 更改源文本]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples 标记使用示例]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "某些可翻译区域可能无法在此编辑器内编辑。请使用源代码编辑器来编辑它们。",
 	"tpt-section": "翻译单元$1",

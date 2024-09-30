@@ -10,8 +10,6 @@
 	"nstab-translations": "Преводна единица",
 	"right-pagetranslation": "Обележување на верзии на страници за преведување",
 	"action-pagetranslation": "раководење со преводливи страници",
-	"tpt-cleanchanges-language": "Јазик:",
-	"tpt-cleanchanges-language-na": "Сите",
 	"tps-edit-sourcepage-text": "Уредувате изворна преводна страница. Осигурајте се дека сте запознаени со следнава документација: \n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Промена на изворен текст] \n\n* [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Markup_examples Пример за употреба на ознаки]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Некои преводливи длеови може да не бидат уредливи со овој уредник. За нив послужете се со изворниот уредник.",
 	"tpt-section": "Преводна единица $1",

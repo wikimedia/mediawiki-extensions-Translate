@@ -19,8 +19,6 @@
 	"pagetranslation": "Превођење странице",
 	"right-pagetranslation": "означавање верзија страница за превођење",
 	"action-pagetranslation": "управљате преводивим страницама",
-	"tpt-cleanchanges-language": "Језик:",
-	"tpt-cleanchanges-language-na": "Све",
 	"tps-edit-sourcepage-text": "Уређујете изворну (оригиналну) страницу. Прво се упознајте са следећом документацијом:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Мењање изворног текста]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Example of markup to use]",
 	"tpt-section": "Јединица превода $1",
 	"tpt-section-new": "Нова јединица превода.\nИме: $1",

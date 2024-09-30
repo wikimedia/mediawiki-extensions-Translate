@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Къарачайлы"
 		]
 	},
+	"translate-sidebar-alltrans": "Башха тилледе",
 	"translate-total": "Джазылгъанла",
 	"translate-mgs-column-language": "Тил",
+	"translate-smg-group-message-message-other-langs": "Башха тилле:",
 	"translate-documentation-language": "Билдириуню документациясы",
+	"tux-editor-in-other-languages": "Башха тилледе",
 	"tpt-cleanchanges-language": "Тил:"
 }
