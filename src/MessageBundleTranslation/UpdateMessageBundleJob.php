@@ -93,11 +93,7 @@ class UpdateMessageBundleJob extends Job {
 			$jobs[] = UpdateMessageJob::newJob( $title, $value, $fuzzy );
 
 			if ( $subscriptionState ) {
-				$messageGroupSubscription->queueMessage(
-					$title,
-					$subscriptionState,
-					[ $groupId ],
-				);
+				$messageGroupSubscription->queueMessage( $title, $subscriptionState );
 			}
 		}
 		$jobQueue->push( $jobs );

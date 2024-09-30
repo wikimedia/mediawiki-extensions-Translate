@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestConfig;
 use MessageGroupTestTrait;
@@ -27,10 +28,15 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$this->setupTestData();
+		$this->overrideConfigValues( [
+			'TranslateEnableMessageGroupSubscription' => true,
+			'JobClasses' => [
+				'MessageGroupSubscriptionNotificationJob' => MessageGroupSubscriptionNotificationJob::class
+			]
+		] );
 
 		$config = new MessageGroupTestConfig();
 		$config->groups = $this->getTestGroups();
-		$config->skipMessageIndexRebuild = true;
 		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
 	}
 
@@ -92,9 +98,21 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 							MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
 						],
 					]
+				],
+				[
+					'type' => 'translate-mgs-message-added',
+					'extra'	=> [
+						'groupId' => 'parent-agg-group-id',
+						'groupLabel' => 'parent aggregate group',
+						'changes' => [
+							MessageGroupSubscription::STATE_ADDED => [ 'msg1', 'tp-msg1' ],
+							MessageGroupSubscription::STATE_UPDATED => [ 'msg2', 'tp-msg2' ]
+						],
+						'sourceGroupIds' => [ 'agg-group-id', 'agg-group-id-tp-1' ]
+					]
 				]
 			],
-			'input for getSubscriber method' => [ 'agg-group-id', 'agg-group-id-tp-1' ],
+			'input for getSubscriber method' => [ 'agg-group-id', 'agg-group-id-tp-1', 'parent-agg-group-id' ],
 		];
 
 		yield 'notification for an aggregate subgroup and a normal group' => [
@@ -142,9 +160,21 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 						],
 						'sourceGroupIds' => [ 'agg-group-id-tp-1' ]
 					]
+				],
+				[
+					'type' => 'translate-mgs-message-added',
+					'extra'	=> [
+						'groupId' => 'parent-agg-group-id',
+						'groupLabel' => 'parent aggregate group',
+						'changes' => [
+							MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
+							MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
+						],
+						'sourceGroupIds' => [ 'agg-group-id-tp-1' ]
+					]
 				]
 			],
-			'input for getSubscriber method' => [ 'agg-group-id', 'bar', 'agg-group-id-tp-1' ]
+			'input for getSubscriber method' => [ 'agg-group-id', 'bar', 'agg-group-id-tp-1', 'parent-agg-group-id' ]
 		];
 
 		yield 'notification for a normal group' => [
@@ -169,6 +199,40 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 			],
 			'input for getSubscriber method' => [ 'bar' ]
 		];
+	}
+
+	public function testQueueMessage(): void {
+		$messageTitle = Title::makeTitle( NS_MEDIAWIKI, 'translated' );
+		$message2Title = Title::makeTitle( NS_MEDIAWIKI, 'changedtranslated_1' );
+		$this->subscription->queueMessage( $messageTitle, MessageGroupSubscription::STATE_ADDED );
+		$this->subscription->queueMessage( $message2Title, MessageGroupSubscription::STATE_UPDATED );
+
+		$this->subscription->queueNotificationJob();
+
+		$jobQueueGroup = $this->getServiceContainer()->getJobQueueGroup();
+		$job = $jobQueueGroup->pop( 'MessageGroupSubscriptionNotificationJob' );
+		$this->assertInstanceOf( MessageGroupSubscriptionNotificationJob::class, $job );
+
+		$changes = $job->getParams()['changes'];
+		$this->assertEqualsCanonicalizing(
+			[ 'agg-group-id-tp-1', 'bar' ],
+			array_keys( $changes ),
+			'all expected groups have notifications'
+		);
+		$this->assertEquals(
+			$changes['agg-group-id-tp-1'][MessageGroupSubscription::STATE_ADDED],
+			[ $messageTitle->getPrefixedDBkey() ],
+			'changes for each group match expected outcome'
+		);
+		$this->assertEquals(
+			$changes['bar'][MessageGroupSubscription::STATE_UPDATED],
+			[ $message2Title->getPrefixedDBkey() ],
+			'changes for each group match expected outcome'
+		);
+
+		$this->subscription->queueNotificationJob();
+		$job = $jobQueueGroup->pop( 'MessageGroupSubscriptionNotificationJob' );
+		$this->assertFalse( $job, 'job is not created if there are no changes' );
 	}
 
 	private function setupTestData(): void {
@@ -203,7 +267,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 
 		$messageGroupMetadata = $this->createStub( MessageGroupMetadata::class );
 		$factory = new AggregateGroupMessageGroupFactory( $messageGroupMetadata );
-		$data = [
+		$aggGroup = [
 			'agg-group-id' => [
 				'BASIC' => [
 					'id' => 'agg-group-id',
@@ -211,22 +275,37 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					'description' => 'my-description',
 				],
 				'GROUPS' => [ 'agg-group-id-tp-1', 'agg-group-id-tp-2' ],
+			],
+			'parent-agg-group-id' => [
+				'BASIC' => [
+					'id' => 'parent-agg-group-id',
+					'label' => 'parent aggregate group',
+					'description' => 'parent my-description',
+				],
+				'GROUPS' => [ 'agg-group-id', 'agg-group-id-tp-1' ],
 			]
 		];
 
-		$testGroups[ 'agg-group-id' ] = $factory->createGroups( $data )['agg-group-id'];
+		$aggregateGroups = $factory->createGroups( $aggGroup );
+		$testGroups[ 'agg-group-id' ] = $aggregateGroups['agg-group-id'];
+		$testGroups[ 'parent-agg-group-id' ] = $aggregateGroups['parent-agg-group-id'];
 
 		$messages = [
 			'translated' => 'bunny',
-			'untranslated' => 'fanny',
+			'untranslated' => 'fanny'
+		];
+		$messages2 = [
+			'newtranslated' => 'new',
+			'oldtranslated' => 'old'
+		];
+		$messages3 = [
 			'changedtranslated_1' => 'bunny',
 			'changedtranslated_2' => 'fanny'
 		];
 
 		$testGroups['agg-group-id-tp-1'] = new MockWikiMessageGroup( 'agg-group-id-tp-1', $messages );
-		$testGroups['agg-group-id-tp-2'] = new MockWikiMessageGroup( 'agg-group-id-tp-2', $messages );
-		$testGroups['bar'] = new MockWikiMessageGroup( 'bar', $messages );
-		$testGroups['foo'] = new MockWikiMessageGroup( 'foo', $messages );
+		$testGroups['agg-group-id-tp-2'] = new MockWikiMessageGroup( 'agg-group-id-tp-2', $messages2 );
+		$testGroups['bar'] = new MockWikiMessageGroup( 'bar', $messages3 );
 
 		return $testGroups;
 	}

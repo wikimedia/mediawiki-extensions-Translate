@@ -3,12 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
 use EmptyIterator;
 use Iterator;
 use JobQueueGroup;
+use LogicException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -105,17 +106,18 @@ class MessageGroupSubscription {
 	 * Queue a message / group to send notifications for
 	 * @param Title $messageTitle
 	 * @param string $state
-	 * @param string[] $groupIds
 	 * @return void
 	 */
-	public function queueMessage(
-		Title $messageTitle,
-		string $state,
-		array $groupIds
-	): void {
-		foreach ( $groupIds as $groupId ) {
-			$this->queuedMessages[ $groupId ][ $state ][] = $messageTitle->getPrefixedDBkey();
+	public function queueMessage( Title $messageTitle, string $state ): void {
+		$handle = new MessageHandle( $messageTitle );
+		if ( !$handle->isValid() ) {
+			throw new LogicException(
+				"Trying to send notification for a message {$handle->getKey()} that is not valid!"
+			);
 		}
+
+		$primaryGroupId = $handle->getGroup()->getId();
+		$this->queuedMessages[ $primaryGroupId ][ $state ][] = $messageTitle->getPrefixedDBkey();
 	}
 
 	public function queueNotificationJob(): void {
@@ -158,12 +160,14 @@ class MessageGroupSubscription {
 				// The aggregate group might already be in the list of changes to process
 				$currentGroupState = $changesWithAggregateGroups[$aggregateGroupId] ??
 					$changesToProcess[$aggregateGroupId] ?? [];
-				$changesWithAggregateGroups[$aggregateGroupId] = $this->appendState( $currentGroupState, $stateValues );
+				$changesWithAggregateGroups[$aggregateGroupId] =
+					$this->appendToState( $currentGroupState, $stateValues );
 
-				// If an aggregate group is added to the list of changes, don't bother tracking dependency
-				// and send notifications to all subscribers
+				// If an aggregate group is added to the list of changes directly, don't bother finding other
+				// groups that have this group as a parent and notify all subscribers; otherwise, add the source
+				// message group id due to which notification is being sent to this aggregate group.
 				if ( !isset( $changesToProcess[$aggregateGroupId] ) ) {
-					$sourceGroupIdMap[$aggregateGroupId][] = $groupId;
+					$sourceGroupIdMap[$aggregateGroupId][$groupId] = true;
 				}
 			}
 		}
@@ -204,7 +208,7 @@ class MessageGroupSubscription {
 			];
 
 			if ( isset( $sourceGroupIdMap[ $groupId ] ) ) {
-				$extraParams['sourceGroupIds'] = $sourceGroupIdMap[ $groupId ];
+				$extraParams['sourceGroupIds'] = array_unique( array_keys( $sourceGroupIdMap[ $groupId ] ) );
 			}
 
 			if ( $this->mockEventCreator ) {
@@ -311,18 +315,37 @@ class MessageGroupSubscription {
 				// We don't care about non-aggregate groups
 				continue;
 			}
-			foreach ( $mappedGroups as $subGroups ) {
-				if ( $subGroups instanceof AggregateMessageGroup ) {
-					continue;
-				}
-				$groupIdAggregateMapped[$subGroups->getId()][] = $groupId;
-			}
-		}
 
+			// array_merge_recursive causes duplicates to appear in the mapped group ids, but that's
+			// alright, we can deduplicate them when we use the values.
+			$groupIdAggregateMapped = array_merge_recursive(
+				$groupIdAggregateMapped,
+				$this->mapGroups( $mappedGroups, $groupId )
+			);
+		}
 		return $groupIdAggregateMapped;
 	}
 
-	private function appendState( array $existingState, array $newState ): array {
+	/** @return array<string, string[]> */
+	private function mapGroups( array $subGroupList, string $groupId ): array {
+		$groupIdAggregateMapped = [];
+		foreach ( $subGroupList as $subGroups ) {
+			if ( is_array( $subGroups ) && $subGroups ) {
+				// First group in the array is the aggregate group
+				$subGroupId = ( $subGroups[0] )->getId();
+				$groupIdAggregateMapped = $this->mapGroups( array_slice( $subGroups, 1 ), $subGroupId );
+				foreach ( array_keys( $groupIdAggregateMapped ) as $mappedGubGroupId ) {
+					$groupIdAggregateMapped[$mappedGubGroupId][] = $groupId;
+				}
+				$groupIdAggregateMapped[$subGroupId][] = $groupId;
+			} else {
+				$groupIdAggregateMapped[$subGroups->getId()][] = $groupId;
+			}
+		}
+		return $groupIdAggregateMapped;
+	}
+
+	private function appendToState( array $existingState, array $newState ): array {
 		foreach ( $newState as $stateType => $stateValues ) {
 			$existingState[$stateType] = array_unique(
 				array_merge( $existingState[$stateType] ?? [], $stateValues )

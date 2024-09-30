@@ -550,8 +550,7 @@ class TranslatablePageMarker {
 				$messageTitle,
 				$message->type === 'new'
 				 ? MessageGroupSubscription::STATE_ADDED
-				 : MessageGroupSubscription::STATE_UPDATED,
-				[ $groupId ],
+				 : MessageGroupSubscription::STATE_UPDATED
 			);
 		}
 		$this->messageGroupSubscription->queueNotificationJob();

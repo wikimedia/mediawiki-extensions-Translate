@@ -207,8 +207,7 @@ class ExternalMessageSourceStateImporter {
 			if ( $isSourceLanguage ) {
 				$this->messageGroupSubscription->queueMessage(
 					$title,
-					MessageGroupSubscription::STATE_ADDED,
-					[ $groupId ]
+					MessageGroupSubscription::STATE_ADDED
 				);
 			}
 		}
