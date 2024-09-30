@@ -1509,7 +1509,7 @@ class Hooks {
 				$c = 0;
 				$growinglink = '';
 				$display = '';
-				$lang = $skin->getLanguage();
+				$sitedir = $skin->getLanguage()->getDir();
 
 				foreach ( $links as $link ) {
 					$growinglink .= $link;
@@ -1525,12 +1525,12 @@ class Hooks {
 						$c++;
 
 						if ( $c > 1 ) {
-							$subpages .= $lang->getDirMarkEntity() . $skin->msg( 'pipe-separator' )->escaped();
+							$subpages .= $skin->msg( 'pipe-separator' )->escaped();
 						} else {
 							$subpages .= '&lt; ';
 						}
 
-						$subpages .= $getlink;
+						$subpages .= Html::rawElement( 'bdi', [ 'dir' => $sitedir ], $getlink );
 						$display = '';
 					} else {
 						$display .= '/';
