@@ -165,7 +165,7 @@ class TtmServerMessageUpdateJob extends Job {
 	}
 
 	/** Extracted for testing purpose */
-	protected function getTranslation( MessageHandle $handle ): string {
+	protected function getTranslation( MessageHandle $handle ): ?string {
 		return Utilities::getMessageContent(
 			$handle->getKey(),
 			$handle->getCode(),
