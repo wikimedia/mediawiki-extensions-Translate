@@ -505,7 +505,7 @@
 	"log-action-filter-translationreview-unfuzzy": "{{doc-log-action-filter-action|translationreview|unfuzzy}}",
 	"logentry-import-translatable-bundle": "{{logentry|[[Special:Log/import]]}}",
 	"log-action-filter-import-translatable-bundle": "{{doc-log-action-filter-action|import|translatable-bundle}}",
-	"translate-hidetranslations": "Filter option on Special:PrefixIndex to hide translation pages",
+	"translate-hidetranslations": "Filter option on Special:PrefixIndex and Special:WhatLinksHere to hide translation pages",
 	"echo-category-title-translate-message-group-subscription": "{{doc-echo-category-title|tooltip=Echo-pref-tooltip-translate-message-group-subscription}}",
 	"echo-pref-tooltip-translate-message-group-subscription": "{{doc-echo-pref-tooltip|title=Echo-category-title-translate-message-group-subscription}}",
 	"notification-header-message-group-subscription": "Header text for notifications related to message group updates related subscriptions.\n\nParameters:\n* $1 Label of the message group",

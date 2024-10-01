@@ -7,13 +7,17 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Hook\LonelyPagesQueryHook;
 use MediaWiki\Hook\SpecialPrefixIndexGetFormFiltersHook;
 use MediaWiki\Hook\SpecialPrefixIndexQueryHook;
+use MediaWiki\Hook\SpecialWhatLinksHereQueryHook;
 use MediaWiki\HTMLForm\Field\HTMLCheckField;
+use MediaWiki\SpecialPage\Hook\SpecialPageBeforeFormDisplayHook;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PageTranslationHookHandler implements
 	SpecialPrefixIndexGetFormFiltersHook,
 	SpecialPrefixIndexQueryHook,
-	LonelyPagesQueryHook
+	LonelyPagesQueryHook,
+	SpecialPageBeforeFormDisplayHook,
+	SpecialWhatLinksHereQueryHook
 {
 
 	public function onSpecialPrefixIndexGetFormFilters( IContextSource $contextSource, array &$filters ) {
@@ -46,5 +50,34 @@ class PageTranslationHookHandler implements
 			]
 		];
 		$conds['translate_pp.pp_value'] = null;
+	}
+
+	public function onSpecialPageBeforeFormDisplay( $name, $form ): void {
+		if ( $name === 'Whatlinkshere' ) {
+			$form->addFields( [
+				'translate-hidetranslations' => [
+					'type' => 'check',
+					'name' => 'translate-hidetranslations',
+					'label-message' => 'translate-hidetranslations',
+					'section' => 'whatlinkshere-filter',
+				]
+			] );
+		}
+	}
+
+	public function onSpecialWhatLinksHereQuery( $table, $data, $queryBuilder ) {
+		$isSupportedTable = in_array( $table, [ 'pagelinks', 'templatelinks', 'imagelinks' ] );
+
+		if ( $data[ 'translate-hidetranslations' ] && $isSupportedTable ) {
+			$queryBuilder->leftJoin(
+				'page_props',
+				'translate_pp',
+				[
+					'translate_pp.pp_page=page_id',
+					'translate_pp.pp_propname' => 'translate-is-translation',
+				]
+			)
+			->andWhere( [ 'translate_pp.pp_value' => null ] );
+		}
 	}
 }
