@@ -701,6 +701,9 @@ class HookHandler implements
 
 	/** Hook: ParserAfterTidy */
 	public static function preventCategorization( Parser $parser, string &$html ): void {
+		if ( $parser->getOptions()->getInterfaceMessage() ) {
+			return;
+		}
 		$pageReference = $parser->getPage();
 		if ( !$pageReference ) {
 			return;
@@ -849,6 +852,9 @@ class HookHandler implements
 	}
 
 	public function translateRenderParserFunction( Parser $parser ): string {
+		if ( $parser->getOptions()->getInterfaceMessage() ) {
+			return '';
+		}
 		$pageReference = $parser->getPage();
 		if ( !$pageReference ) {
 			return '';
