@@ -130,7 +130,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
 
 			return;
-		} elseif ( !$title->exists() ) {
+		}
+
+		$this->getSkin()->setRelevantTitle( $title );
+
+		if ( !$title->exists() ) {
 			$out->wrapWikiMsg(
 				Html::errorBox( '$1' ),
 				[ 'tpt-nosuchpage', $title->getPrefixedText() ]
@@ -690,7 +694,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private function showPage( TranslatablePageMarkOperation $operation ): void {
 		$page = $operation->getPage();
 		$out = $this->getOutput();
-		$out->addBacklinkSubtitle( $page->getTitle() );
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
 		$this->addPageForm(
@@ -1100,7 +1103,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private function showTranslationSettings( Title $target, ?ErrorPageError $block ): void {
 		$out = $this->getOutput();
 		$out->setPageTitle( $this->msg( 'tpt-translation-settings-page-title' )->text() );
-		$out->addBacklinkSubtitle( $target );
 
 		$currentState = $this->translatablePageStateStore->get( $target );
 
