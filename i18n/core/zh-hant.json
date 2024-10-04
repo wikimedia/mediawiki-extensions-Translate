@@ -479,7 +479,7 @@
 	"echo-category-title-translate-message-group-subscription": "可翻譯訊息群組訂閱",
 	"echo-pref-tooltip-translate-message-group-subscription": "通知我有關我訂閱的可翻譯訊息群組的變更",
 	"notification-header-message-group-subscription": "群組$1的翻譯更新",
-	"notification-body-translate-mgs-message-added": "已新增或更新$1則{{PLURAL:$1|訊息}}。",
+	"notification-body-translate-mgs-message-added": "$1則新增或更新{{PLURAL:$1|訊息}}。",
 	"notification-link-mgs-group-translate": "翻譯$1",
 	"tpt-cleanchanges-language": "語言：",
 	"tpt-cleanchanges-language-na": "全部"

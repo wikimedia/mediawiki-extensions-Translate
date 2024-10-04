@@ -3,6 +3,7 @@
 		"authors": [
 			"Helix84",
 			"Kusavica",
+			"Luky001",
 			"Sudo77(new)",
 			"Vegetator"
 		]
@@ -12,6 +13,7 @@
 	"tux-sst-view-foreign": "Zobraziť na $1",
 	"tux-sst-search": "Hľadať",
 	"tux-sst-search-ph": "Hľadať v prekladoch",
+	"tux-sst-count": "{{PLURAL:$1|Nájdený jeden výsledok|Nájdené $1 výsledky|Nájdených $1 výsledkov}}",
 	"tux-sst-facet-language": "Jazyky",
 	"tux-sst-nosolr-title": "Hľadanie nie je dostupné",
 	"tux-sst-nosolr-body": "Táto wiki nemá službu pre vyhľadávanie prekladov.",
