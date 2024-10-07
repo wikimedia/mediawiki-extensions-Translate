@@ -56,12 +56,12 @@ class TSchema2 extends Maintenance {
 			->fetchResultSet();
 
 		foreach ( $res as $row ) {
-			$dbw->update(
-				'revtag',
-				[ 'rt_type' => $row->rtt_name ],
-				[ 'rt_type' => (string)$row->rtt_id ],
-				__METHOD__
-			);
+			$dbw->newUpdateQueryBuilder()
+				->update( 'revtag' )
+				->set( [ 'rt_type' => $row->rtt_name ] )
+				->where( [ 'rt_type' => (string)$row->rtt_id ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		$dbw->dropTable( 'revtag_type', __METHOD__ );

@@ -101,12 +101,12 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	public function setExpiry( string $keyname, int $expiryTime ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
-		$dbw->update(
-			self::TABLE_NAME,
-			[ 'tc_exptime' => $dbw->timestamp( $expiryTime ) ],
-			[ 'tc_key' => $keyname ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( self::TABLE_NAME )
+			->set( [ 'tc_exptime' => $dbw->timestamp( $expiryTime ) ] )
+			->where( [ 'tc_key' => $keyname ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	public function delete( string ...$keynames ): void {

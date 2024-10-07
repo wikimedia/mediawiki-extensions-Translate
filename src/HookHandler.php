@@ -779,13 +779,13 @@ class HookHandler implements
 		// the duplicate ones later
 		foreach ( self::USER_MERGE_TABLES as $table => $field ) {
 			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
-				$dbw->update(
-					$table,
-					[ $field => $newUser->getId() ],
-					[ $field => $oldUser->getId() ],
-					__METHOD__,
-					[ 'IGNORE' ]
-				);
+				$dbw->newUpdateQueryBuilder()
+					->update( $table )
+					->ignore()
+					->set( [ $field => $newUser->getId() ] )
+					->where( [ $field => $oldUser->getId() ] )
+					->caller( __METHOD__ )
+					->execute();
 			}
 		}
 	}
