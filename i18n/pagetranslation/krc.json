@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Къарачайлы"
 		]
 	},
+	"tpt-languages-legend": "Башха тилле:",
 	"tpt-languages-nonzero": "$1 ($2% кёчюрюлгенди)"
 }
