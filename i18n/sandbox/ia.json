@@ -48,5 +48,6 @@
 	"log-description-translatorsandbox": "Un registro de actiones sur usatores in le sabliera de traduction",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveva}} $3 a {{GENDER:$4|traductor}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rejectava}} le requesta de \"$3\" de devenir traductor",
-	"logentry-newusers-tsbpromoted": "Le conto de usator $3 ha essite {{GENDER:$2|create}} per promotion ab le sabliera"
+	"logentry-newusers-tsbpromoted": "Le conto de usator $3 ha essite {{GENDER:$2|create}} per promotion ab le sabliera",
+	"tsb-other-actions": "Tu debe [[Special:TranslationStash|submitter alcun traductiones de test]] e attender lor approbation ante de modificar."
 }

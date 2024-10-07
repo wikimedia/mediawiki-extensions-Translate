@@ -83,6 +83,7 @@
 	"tpt-rev-unmark-tooltip": "このページを翻訳対象から除去します。",
 	"tpt-rev-discourage-tooltip": "このページのこれ以上の翻訳を推奨しません。",
 	"tpt-rev-encourage-tooltip": "このページを通常の翻訳に復元します。",
+	"tpt-translation-settings-page-title": "翻訳設定",
 	"tpt-translation-settings-save": "設定を保存",
 	"translate-tag-translate-link-desc": "このページを翻訳",
 	"translate-tag-markthis": "このページを翻訳対象に指定",
@@ -97,6 +98,7 @@
 	"tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
 	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳用に予約されています。\n編集しようとしているページには翻訳対象ページが対応していないようです。",
 	"tpt-translation-restricted-no-reason": "翻訳管理者がこのページのこの言語への翻訳を阻止しています。",
+	"tpt-translation-restricted-reason": "理由: $1",
 	"tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",
 	"tpt-discouraged-language-force-content": "翻訳管理者がこのページの翻訳を $1 のみに限定することにしました。",
 	"tpt-discouraged-language-header": "このページでは$1への翻訳は優先課題ではありません。",
@@ -260,5 +262,6 @@
 	"tpt-validation-not-insertable": "翻訳変数名「$1」は、翻訳インターフェイスの挿入可能な変数として機能しません。特殊文字の使用は避けてください。",
 	"tpt-validation-name-reuse": "翻訳変数「$1」が異なる内容で複数回定義されています。翻訳単位内で一意になるように変数名を変更してください。",
 	"visualeditor-annotations-translate-description": "この範囲は翻訳対象に指定されています。[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 翻訳元テキストの変更]に記載されているガイドラインに従うようにしてください。",
-	"tag-translate-translation-pages-description": "翻訳拡張機能による翻訳ページへの自動編集"
+	"tag-translate-translation-pages-description": "翻訳拡張機能による翻訳ページへの自動編集",
+	"tpt-cant-edit-source-language": "翻訳元言語の翻訳単位は手動では編集できません。代わりに基底ページ ([[$1]]) を編集し、それを翻訳対象に指定してください。"
 }
