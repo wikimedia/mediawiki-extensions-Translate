@@ -30,6 +30,17 @@
 				return;
 			}
 
+			var sourceType;
+			if ( group.id.indexOf( 'agg-' ) === 0 ) {
+				sourceType = 'aggregate-group';
+			} else if ( group.id.indexOf( 'page-' ) === 0 ) {
+				sourceType = 'translatable-page';
+			} else if ( group.id.indexOf( 'messagebundle-' ) === 0 ) {
+				sourceType = 'message-bundle';
+			} else {
+				sourceType = 'normal-message-group';
+			}
+
 			showAggregateSubgroupCount();
 
 			state.group = group.id;
@@ -45,6 +56,22 @@
 			removeGroupWarnings();
 			state.messageList.changeSettings( changes );
 			updateGroupInformation( state );
+			getTranslationStats( state.language ).done( function ( stats ) {
+				logger.logClickEvent(
+					'switch_translate_content',
+					'message_group_menu',
+					{
+						// eslint-disable-next-line camelcase
+						source_title: group.id,
+						// eslint-disable-next-line camelcase
+						source_type: sourceType,
+						// eslint-disable-next-line camelcase
+						translatable_count: stats.total,
+						// eslint-disable-next-line camelcase
+						translated_count: stats.translated
+					}
+				);
+			} );
 		},
 
 		/**
