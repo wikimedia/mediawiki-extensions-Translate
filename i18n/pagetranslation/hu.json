@@ -71,6 +71,7 @@
 	"tpt-syntaxversion-label": "A legújabb szintaxisverzió használata ezen a lapon",
 	"tpt-transclusion": "Sablonbeillesztés",
 	"tpt-transclusion-label": "Fordítást figyelembe vevő sablonbeillesztés bekapcsolása a lapon",
+	"tpt-transclusion-help": "Ha engedélyezve van, az ezen lapot sablonként beillesztő lapok valójában nem ezt a lapot fogják beilleszteni, hanem a beillesztő lap nyelvének megfelelő fordítást (ha az nem létezik, akkor a forrásnyelvi „fordítást”). Például ha ezt a lap egy német nyelvű lapra van beillesztve, akkor valójában a(z) „$1” lap lesz beillesztve. Ez a beállítás megbízhatóan működik, ha a beillesztő lapok is lefordítható lapok, viszont kézzel fordított lapoknál előfordulhat, hogy rossz nyelvet választ. Kapcsold ki, ha a lap maga kezeli a fordítást (például kézzel fordított lapok támogatása érdekében, vagy a lapnyelv helyett a felhasználói felület nyelvének használatához), mert különben magának a lapnak a wikiszövege teljesen ignoráltatik beillesztéskor. Ennek a beállításnak semmilyen hatása nincs, ha a lap soha nincs beillesztve.",
 	"tpt-rev-mark": "megjelölés fordításra",
 	"tpt-rev-unmark": "lap eltávolítása a fordításból",
 	"tpt-rev-discourage": "nem javasolt",

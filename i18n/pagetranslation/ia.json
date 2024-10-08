@@ -61,6 +61,7 @@
 	"tpt-syntaxversion-label": "Usar le ultime version del syntaxe pro iste pagina",
 	"tpt-transclusion": "Transclusion de patronos",
 	"tpt-transclusion-label": "Activar le transclusion con recognoscimento de traduction pro iste pagina",
+	"tpt-transclusion-help": "Si activate, le paginas que transclude iste pagina como un patrono transcludera in su loco le traduction in le lingua del pagina transcludente (o in le lingua de origine si iste traduction non existe ancora). Per exemplo, si tu tenta transcluder iste pagina in un pagina in germano, illo transcludera le pagina “$1” in su loco. Isto functiona de maniera fidibile si le paginas transcludente tamben usa le traduction de paginas, ma pote faller si illos es traducite manualmente. Per favor disactiva iste parametro si le pagina gere le traduction de maniera independente (per exemplo, pro supportar paginas traducite manualmente o pro usar le lingua del interfacie de usator in loco del lingua del pagina), perque alteremente le wikitexto del pagina mesme essera completemente ignorate durante le transclusion. Iste parametro non ha effecto si le pagina nunquam es transcludite.",
 	"tpt-rev-mark": "marcar pro traduction",
 	"tpt-rev-unmark": "remover del traduction",
 	"tpt-rev-discourage": "discoragiar",

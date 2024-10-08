@@ -75,6 +75,7 @@
 	"tpt-syntaxversion-label": "Neueste Syntaxversion für diese Seite verwenden",
 	"tpt-transclusion": "Vorlagen-Transklusion",
 	"tpt-transclusion-label": "Aktivieren der übersetzungsfähigen Transklusion für diese Seite",
+	"tpt-transclusion-help": "Wenn diese Option aktiviert ist, werden Seiten, die diese Seite als Vorlage einbinden, stattdessen die Übersetzung in der Sprache der einbindenden Seite einbinden (oder in der Ausgangssprache, wenn diese Übersetzung noch nicht existiert). Wenn du zum Beispiel versuchst, diese Seite in eine deutschsprachige Seite einzubinden, wird stattdessen die Seite „$1“ eingebunden. Dies funktioniert zuverlässig, wenn die einschließenden Seiten ebenfalls die Seitenübersetzung verwenden, kann aber fehlschlagen, wenn sie manuell übersetzt werden. Deaktiviere diese Einstellung, wenn die Seite die Übersetzung selbst vornimmt (z.B. um manuell übersetzte Seiten zu unterstützen oder um die Sprache der Benutzeroberfläche anstelle der Seitensprache zu verwenden), da sonst der Wikitext der Seite selbst bei der Transklusion vollständig ignoriert wird. Diese Einstellung hat keine Auswirkung, wenn die Seite nie eingeschlossen wird.",
 	"tpt-rev-mark": "Zum Übersetzen freigeben",
 	"tpt-rev-unmark": "Freigabe zum Übersetzen entfernen",
 	"tpt-rev-discourage": "Freigabe zurückziehen",
