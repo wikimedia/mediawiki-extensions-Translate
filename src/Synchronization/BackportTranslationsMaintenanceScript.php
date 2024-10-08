@@ -266,7 +266,11 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				continue;
 			}
 
-			if ( $sourceValue !== null && !$fileFormat->isContentEqual( $sourceValue, $targetValue ) ) {
+			if ( $sourceValue === null ) {
+				// Translation no longer exists, remove it from the stable branch. See: T375487
+				$hasUpdates = true;
+				unset( $combinedMessages[$key] );
+			} elseif ( !$fileFormat->isContentEqual( $sourceValue, $targetValue ) ) {
 				// {{#FORMAL:}} magic word was introduced in 1.43. Temporary skip backporting translations using it.
 				if ( str_contains( $sourceValue, '#FORMAL:' ) ) {
 					continue;
