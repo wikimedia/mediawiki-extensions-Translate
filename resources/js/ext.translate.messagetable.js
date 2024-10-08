@@ -505,6 +505,10 @@
 						var currentWarning = result.warnings[ i ];
 						if ( currentWarning.code === 'translate-language-disabled-source' ) {
 							self.handleLoadErrors( [ currentWarning ] );
+							logger.logEvent(
+								'message_prompt',
+								'change_lang'
+							);
 							// Since translation to source language is disabled, do not display any messages
 							return;
 						}
