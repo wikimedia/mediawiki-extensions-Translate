@@ -16,6 +16,7 @@
 	"translate-statsf-scale-weeks": "Singhgiz",
 	"translate-statsf-scale-days": "Ngoenz",
 	"translate-statsf-scale-hours": "Cungdaeuz",
+	"translate-translations-fieldset-title": "Siuhsik",
 	"translate-langstats-expand": "mbe",
 	"translate-langstats-collapse": "rwt",
 	"translate-language": "Vah",
@@ -25,6 +26,10 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Bouxhoiz}}}}: $1",
 	"translate-smg-strong-sync-help": "Bangcoh",
 	"translate-smg-group-message-action-history": "Lizsij",
+	"tux-notices-hide": "cangz",
+	"tux-empty-list-translated-action": "Fanhoiz",
 	"tux-editor-expand-tooltip": "Mbe",
-	"tux-editor-collapse-tooltip": "Rwt"
+	"tux-editor-collapse-tooltip": "Rwt",
+	"tux-editor-message-tools-history": "Lizsij",
+	"tpt-cleanchanges-language": "Vah:"
 }
