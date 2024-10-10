@@ -16,6 +16,8 @@
 	background-color: #f0f0f0;
 	border-radius: 5px;
 	box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
+	display: flex;
+	flex-direction: column;
 
 	&.hide {
 		display: none;
@@ -93,11 +95,26 @@
  * Group list
  */
 .tux-grouplist {
+	flex: 1;
 	max-height: 400px;
 	overflow: hidden auto;
 	background-color: @background-color-base;
 	min-height: 200px;
 	border-radius: 0 0 5px 5px;
+}
+
+.tux-groupselector__footer {
+	padding: 12px 15px;
+
+	&.hide {
+		display: none;
+	}
+}
+
+.tux-groupselector__footer a {
+	padding-left: 28px;
+	background: left center no-repeat;
+	background-image: url( ../images/gear-icon.svg );
 }
 
 .tux-grouplist__item {

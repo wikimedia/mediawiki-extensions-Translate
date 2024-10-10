@@ -10,6 +10,7 @@ use Language;
 use LanguageCode;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
@@ -31,6 +32,7 @@ use MediaWiki\Page\PageIdentity;
 use MediaWiki\Page\PageReference;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\ResourceLoader\Context;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\RevisionRecord;
@@ -1768,5 +1770,14 @@ class Hooks {
 				unset( $titles[ $index ] );
 			}
 		}
+	}
+
+	public static function getSpecialManageMessageGroupSubscriptionsLink(
+		Context $context,
+		Config $config
+	): array {
+		return [
+			'pagelink' => SpecialPage::getTitleFor( 'ManageMessageGroupSubscriptions' )->getPrefixedText()
+		];
 	}
 }

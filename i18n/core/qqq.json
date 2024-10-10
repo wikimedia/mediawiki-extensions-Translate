@@ -377,6 +377,7 @@
 	"translate-msggroupselector-search-recent": "A tab label in the message group selector that shows groups that were recently translated by the user.\n{{Identical|Recent}}",
 	"translate-msggroupselector-search-watched": "A tab label in the message group selector that shows groups that are currently being watched by the user.",
 	"translate-msggroupselector-view-subprojects": "Label indicating that the current message group contains other groups. Parameters:\n* $1 is number of sub groups",
+	"translate-msggroupselector-special-msgsubscriptions-label": "A label for a link in the message group selector's watch tab that points to [Special:ManageMessageGroupSubscriptions]]",
 	"tux-languageselector": "Label for language selector in [[Special:Translate]].\n{{Identical|Translate}}",
 	"tux-select-target-language": "Accessibility label for language selector on [[Special:Translate]].",
 	"tux-watch-group": "Label for button allowing user to watch the group currently being translated, on [[Special:Translate]].\n\nShould be consistent with {{msg-mw|Tux-unwatch-group}}.",

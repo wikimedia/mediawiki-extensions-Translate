@@ -120,6 +120,14 @@
 				.addClass( 'row' )
 				.append( $listFilters, $searchGroup );
 
+			var manageSubscriptions = require( './data.json' ).pagelink;
+			var $footer = $( '<div>' )
+				.addClass( 'tux-groupselector__footer hide' )
+				.append( $( '<a>' )
+					.prop( 'href', mw.util.getUrl( manageSubscriptions ) )
+					.text( mw.msg( 'translate-msggroupselector-special-msgsubscriptions-label' ) )
+				);
+
 			this.$list = $( '<div>' )
 				.addClass( 'tux-grouplist' )
 				.addClass( 'row' );
@@ -127,7 +135,7 @@
 			this.$loader = $( '<div>' )
 				.addClass( 'tux-loading-indicator tux-loading-indicator--centered' );
 
-			this.$menu.append( $listFiltersGroup, this.$loader, this.$list );
+			this.$menu.append( $listFiltersGroup, this.$loader, this.$list, $footer );
 
 			this.$menu.appendTo( document.body );
 		},
@@ -194,7 +202,6 @@
 			} );
 
 			groupSelector.$menu.on( 'click', function ( e ) {
-				e.preventDefault();
 				e.stopPropagation();
 			} );
 
@@ -252,6 +259,8 @@
 
 				groupSelector.$search.val( '' );
 				groupSelector.showList();
+				groupSelector.$menu.find( '.tux-groupselector__footer' )
+					.toggleClass( 'hide', !$this.hasClass( 'tux-grouptab--watched' ) );
 			} );
 
 			this.$search.on( 'click', this.show.bind( this ) )
@@ -283,7 +292,7 @@
 				this.options.position.of = this.$trigger;
 			}
 
-			var positionElement = require( './ext.translate.ui.position.js' );
+			var positionElement = require( './ui.position.js' );
 			positionElement( this.$menu, this.options.position );
 		},
 

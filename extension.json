@@ -745,8 +745,12 @@
 		"ext.translate.groupselector": {
 			"styles": "resources/css/ext.translate.groupselector.less",
 			"packageFiles": [
-				"resources/js/ext.translate.groupselector.js",
-				"resources/js/ext.translate.ui.position.js"
+				"resources/src/ext.translate.groupselector/index.js",
+				"resources/src/ext.translate.groupselector/ui.position.js",
+				{
+					"name": "resources/src/ext.translate.groupselector/data.json",
+					"callback": "MediaWiki\\Extension\\Translate\\PageTranslation\\Hooks::getSpecialManageMessageGroupSubscriptionsLink"
+				}
 			],
 			"dependencies": [
 				"ext.translate.base",
@@ -759,7 +763,8 @@
 				"translate-msggroupselector-search-placeholder",
 				"translate-msggroupselector-search-recent",
 				"translate-msggroupselector-search-watched",
-				"translate-msggroupselector-view-subprojects"
+				"translate-msggroupselector-view-subprojects",
+				"translate-msggroupselector-special-msgsubscriptions-label"
 			]
 		},
 		"ext.translate.editor": {
