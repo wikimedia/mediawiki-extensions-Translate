@@ -18,7 +18,8 @@
 			"ネイ",
 			"青子守歌",
 			"Waki285",
-			"Chqaz"
+			"Chqaz",
+			"Hideki Yoshida"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -95,6 +96,7 @@
 	"tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
 	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳用に予約されています。\n編集しようとしているページには翻訳対象ページが対応していないようです。",
 	"tpt-translation-restricted-no-reason": "翻訳管理者がこのページのこの言語への翻訳を阻止しています。",
+	"tpt-translation-restricted-reason": "理由: $1",
 	"tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",
 	"tpt-discouraged-language-force-content": "翻訳管理者がこのページの翻訳を $1 のみに限定することにしました。",
 	"tpt-discouraged-language-header": "このページでは$1への翻訳は優先課題ではありません。",
