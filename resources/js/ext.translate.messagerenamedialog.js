@@ -256,7 +256,7 @@ mw.translate.MessageRenameDialog.prototype.rename = function () {
 					{ recoverable: false } ) );
 			}
 
-			return deferred.reject( OO.ui.Error( result.error.info ) );
+			return deferred.reject( new OO.ui.Error( result.error.info ) );
 		}
 	} );
 

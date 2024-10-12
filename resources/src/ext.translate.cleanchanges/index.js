@@ -33,7 +33,7 @@
 
 		update( trigger.value.replace( '/', '' ) );
 
-		clearButton.addEventListener( 'click', function () {
+		clearButton.addEventListener( 'click', () => {
 			trigger.value = '';
 			update( '' );
 			clearButton.classList.add( 'ext-translate-cc-hidden' );
@@ -49,10 +49,10 @@
 		} );
 	}
 
-	$( function () {
+	$( () => {
 		const trigger = document.getElementById( 'tpt-rc-language' );
 		if ( trigger ) {
-			mw.loader.using( 'ext.uls.mediawiki', function () {
+			mw.loader.using( 'ext.uls.mediawiki', () => {
 				useULS( trigger );
 			} );
 		}

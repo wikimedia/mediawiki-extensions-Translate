@@ -59,7 +59,7 @@
 		} );
 	}
 
-	$( function () {
+	$( () => {
 		activateEntitySelector( $( '#group' ) );
 
 		$( '#mw-export-message-group-form' ).on( 'submit', onSubmit );

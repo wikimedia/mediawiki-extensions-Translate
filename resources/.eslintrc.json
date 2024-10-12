@@ -16,6 +16,7 @@
 		"no-jquery/no-sizzle": "warn",
 		"no-jquery/no-visibility": "error",
 		"compat/compat": "warn",
+		"no-jquery/no-extend": "warn",
 		"es-x/no-resizable-and-growable-arraybuffers": "warn"
 	}
 }
