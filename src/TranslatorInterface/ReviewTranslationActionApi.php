@@ -85,14 +85,16 @@ class ReviewTranslationActionApi extends ApiBase {
 	 */
 	private function doReview( User $user, RevisionRecord $revRecord ): bool {
 		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
-		$table = 'translate_reviews';
-		$row = [
-			'trr_user' => $user->getId(),
-			'trr_page' => $revRecord->getPageId(),
-			'trr_revision' => $revRecord->getId(),
-		];
-		$options = [ 'IGNORE' ];
-		$dbw->insert( $table, $row, __METHOD__, $options );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'translate_reviews' )
+			->ignore()
+			->row( [
+				'trr_user' => $user->getId(),
+				'trr_page' => $revRecord->getPageId(),
+				'trr_revision' => $revRecord->getId(),
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		if ( !$dbw->affectedRows() ) {
 			return false;

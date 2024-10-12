@@ -87,31 +87,40 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 				'tmt_text' => $targetText,
 			];
 
-			$dbw->insert( 'translate_tmt', $row, __METHOD__ );
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'translate_tmt' )
+				->row( $row )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		return true;
 	}
 
 	private function insertSource( Title $context, string $sourceLanguage, string $text ): int {
-		$row = [
-			'tms_lang' => $sourceLanguage,
-			'tms_len' => mb_strlen( $text ),
-			'tms_text' => $text,
-			'tms_context' => $context->getPrefixedText(),
-		];
-
 		$dbw = $this->getDB( DB_PRIMARY );
-		$dbw->insert( 'translate_tms', $row, __METHOD__ );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'translate_tms' )
+			->row( [
+				'tms_lang' => $sourceLanguage,
+				'tms_len' => mb_strlen( $text ),
+				'tms_text' => $text,
+				'tms_context' => $context->getPrefixedText(),
+			] )
+			->caller( __METHOD__ )
+			->execute();
 		$sid = $dbw->insertId();
 
 		$fulltext = $this->filterForFulltext( $sourceLanguage, $text );
 		if ( count( $fulltext ) ) {
-			$row = [
-				'tmf_sid' => $sid,
-				'tmf_text' => implode( ' ', $fulltext ),
-			];
-			$dbw->insert( 'translate_tmf', $row, __METHOD__ );
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'translate_tmf' )
+				->row( [
+					'tmf_sid' => $sid,
+					'tmf_text' => implode( ' ', $fulltext ),
+				] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		return $sid;
@@ -194,7 +203,11 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 		}
 
 		$dbw = $this->getDB( DB_PRIMARY );
-		$dbw->insert( 'translate_tmt', $rows, __METHOD__ );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'translate_tmt' )
+			->rows( $rows )
+			->caller( __METHOD__ )
+			->execute();
 
 		MediaWikiServices::getInstance()
 			->getDBLoadBalancerFactory()

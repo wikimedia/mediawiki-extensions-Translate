@@ -98,7 +98,11 @@ class PopulateFuzzy extends Maintenance {
 			$offset += $limit;
 
 			if ( $inserts ) {
-				$dbw->insert( 'revtag', $inserts, __METHOD__ );
+				$dbw->newInsertQueryBuilder()
+					->insertInto( 'revtag' )
+					->rows( $inserts )
+					->caller( __METHOD__ )
+					->execute();
 			}
 		}
 	}

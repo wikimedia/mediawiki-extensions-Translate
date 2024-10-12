@@ -63,7 +63,11 @@ class RevTagStore {
 		}
 
 		$conditions['rt_revision'] = $revisionId;
-		$dbw->insert( 'revtag', $conditions, __METHOD__ );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'revtag' )
+			->row( $conditions )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->tagCache[$articleId][$tag] = $revisionId;
 	}

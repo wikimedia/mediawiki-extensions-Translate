@@ -79,26 +79,23 @@ class PersistentDatabaseCache implements PersistentCache {
 
 		foreach ( $entries as $entry ) {
 			$value = $this->jsonCodec->serialize( $entry->value() );
-			$rowsToInsert = [
-				'tc_key' => $entry->key(),
-				'tc_value' => $value,
-				'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
-				'tc_tag' => $entry->tag()
-			];
-
-			$rowsToUpdate = [
-				'tc_value' => $value,
-				'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
-				'tc_tag' => $entry->tag()
-			];
-
-			$dbw->upsert(
-				self::TABLE_NAME,
-				$rowsToInsert,
-				'tc_key',
-				$rowsToUpdate,
-				__METHOD__
-			);
+			$dbw->newInsertQueryBuilder()
+				->insertInto( self::TABLE_NAME )
+				->row( [
+					'tc_key' => $entry->key(),
+					'tc_value' => $value,
+					'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
+					'tc_tag' => $entry->tag()
+				] )
+				->onDuplicateKeyUpdate()
+				->uniqueIndexFields( [ 'tc_key' ] )
+				->set( [
+					'tc_value' => $value,
+					'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
+					'tc_tag' => $entry->tag()
+				] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 	}
 
