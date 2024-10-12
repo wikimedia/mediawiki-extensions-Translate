@@ -155,15 +155,35 @@ class TranslateSandbox {
 
 		// Delete from database
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbw->delete( 'user', [ 'user_id' => $uid ], __METHOD__ );
-		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
-		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'user' )
+			->where( [ 'user_id' => $uid ] )
+			->caller( __METHOD__ )
+			->execute();
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'user_groups' )
+			->where( [ 'ug_user' => $uid ] )
+			->caller( __METHOD__ )
+			->execute();
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'user_properties' )
+			->where( [ 'up_user' => $uid ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->actorStore->deleteActor( $user, $dbw );
 
 		// Assume no joins are needed for logging or recentchanges
-		$dbw->delete( 'logging', [ 'log_actor' => $actorId ], __METHOD__ );
-		$dbw->delete( 'recentchanges', [ 'rc_actor' => $actorId ], __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'logging' )
+			->where( [ 'log_actor' => $actorId ] )
+			->caller( __METHOD__ )
+			->execute();
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'recentchanges' )
+			->where( [ 'rc_actor' => $actorId ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		// Update the site stats
 		$statsUpdate = SiteStatsUpdate::factory( [ 'users' => -1 ] );

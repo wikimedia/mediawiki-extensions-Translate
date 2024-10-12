@@ -309,11 +309,15 @@ class UpdateMessageJob extends GenericTranslateJob {
 		}
 		if ( $unfuzzies !== [] ) {
 			foreach ( $unfuzzies as $otherTitle ) {
-				$dbw->delete( 'revtag', [
-					'rt_type' => RevTagStore::FUZZY_TAG,
-					'rt_page' => $otherTitle->getId(),
-					'rt_revision' => $otherTitle->getLatestRevID(),
-				], __METHOD__ );
+				$dbw->newDeleteQueryBuilder()
+					->deleteFrom( 'revtag' )
+					->where( [
+						'rt_type' => RevTagStore::FUZZY_TAG,
+						'rt_page' => $otherTitle->getId(),
+						'rt_revision' => $otherTitle->getLatestRevID(),
+					] )
+					->caller( __METHOD__ )
+					->execute();
 			}
 		}
 	}

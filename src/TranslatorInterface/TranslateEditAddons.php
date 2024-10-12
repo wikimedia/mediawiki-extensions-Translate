@@ -231,7 +231,11 @@ class TranslateEditAddons {
 				->caller( __METHOD__ )
 				->execute();
 		} else {
-			$dbw->delete( 'revtag', $conds, __METHOD__ );
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'revtag' )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->execute();
 		}
 	}
 

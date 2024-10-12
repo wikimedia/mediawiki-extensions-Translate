@@ -64,7 +64,10 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 	}
 
 	public function deleteTranslations( User $user ): void {
-		$conds = [ 'ts_user' => $user->getId() ];
-		$this->db->delete( $this->dbTable, $conds, __METHOD__ );
+		$this->db->newDeleteQueryBuilder()
+			->deleteFrom( $this->dbTable )
+			->where( [ 'ts_user' => $user->getId() ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 }

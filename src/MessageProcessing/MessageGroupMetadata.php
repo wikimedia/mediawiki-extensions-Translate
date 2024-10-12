@@ -88,7 +88,11 @@ class MessageGroupMetadata {
 		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
-			$dbw->delete( 'translate_metadata', $data, __METHOD__ );
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'translate_metadata' )
+				->where( $data )
+				->caller( __METHOD__ )
+				->execute();
 			unset( $this->cache[$dbGroupId][$key] );
 		} else {
 			$dbw->newReplaceQueryBuilder()
@@ -139,8 +143,11 @@ class MessageGroupMetadata {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
-		$conditions = [ 'tmd_group' => $dbGroupId ];
-		$dbw->delete( 'translate_metadata', $conditions, __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_metadata' )
+			->where( [ 'tmd_group' => $dbGroupId ] )
+			->caller( __METHOD__ )
+			->execute();
 		$this->cache[ $dbGroupId ] = null;
 		unset( $this->priorityCache[ $dbGroupId ] );
 	}

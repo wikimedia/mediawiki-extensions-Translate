@@ -47,10 +47,10 @@ class TranslationUnitStore implements TranslationUnitReader {
 	}
 
 	public function delete(): void {
-		$this->db->delete(
-			self::TABLE,
-			[ 'trs_page' => $this->pageId ],
-			__METHOD__
-		);
+		$this->db->newDeleteQueryBuilder()
+			->deleteFrom( self::TABLE )
+			->where( [ 'trs_page' => $this->pageId ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 }

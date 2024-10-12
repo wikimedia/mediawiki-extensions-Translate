@@ -104,7 +104,11 @@ class MessageGroupReviewStore {
 
 		if ( $priority === null ) {
 			unset( $row['tgr_state'] );
-			$dbw->delete( self::TABLE_NAME, $row, __METHOD__ );
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( self::TABLE_NAME )
+				->where( $row )
+				->caller( __METHOD__ )
+				->execute();
 		} else {
 			$dbw->newReplaceQueryBuilder()
 				->replaceInto( self::TABLE_NAME )

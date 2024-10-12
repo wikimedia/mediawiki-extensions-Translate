@@ -100,7 +100,11 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	/** Delete a translatable page */
 	public function delete( Title $title ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbw->delete( 'translate_sections', [ 'trs_page' => $title->getArticleID() ], __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_sections' )
+			->where( [ 'trs_page' => $title->getArticleID() ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->unmark( $title );
 	}

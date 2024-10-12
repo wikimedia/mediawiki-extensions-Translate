@@ -800,11 +800,11 @@ class HookHandler implements
 		// Delete any remaining rows that didn't get merged
 		foreach ( self::USER_MERGE_TABLES as $table => $field ) {
 			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
-				$dbw->delete(
-					$table,
-					[ $field => $oldUser->getId() ],
-					__METHOD__
-				);
+				$dbw->newDeleteQueryBuilder()
+					->deleteFrom( $table )
+					->where( [ $field => $oldUser->getId() ] )
+					->caller( __METHOD__ )
+					->execute();
 			}
 		}
 	}

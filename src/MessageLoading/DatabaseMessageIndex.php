@@ -83,7 +83,11 @@ class DatabaseMessageIndex extends MessageIndexStore {
 		}
 
 		if ( $deletions !== [] ) {
-			$dbw->delete( 'translate_messageindex', [ 'tmi_key' => $deletions ], __METHOD__ );
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'translate_messageindex' )
+				->where( [ 'tmi_key' => $deletions ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		$dbw->endAtomic( __METHOD__ );

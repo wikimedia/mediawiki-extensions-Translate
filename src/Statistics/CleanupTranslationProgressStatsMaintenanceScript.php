@@ -47,11 +47,11 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			foreach ( $unknownGroupIds as $id ) {
 				$this->output( "* $id\n" );
 			}
-			$db->delete(
-				'translate_groupstats',
-				[ 'tgs_group' => $unknownGroupIds ],
-				__METHOD__
-			);
+			$db->newDeleteQueryBuilder()
+				->deleteFrom( 'translate_groupstats' )
+				->where( [ 'tgs_group' => $unknownGroupIds ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		$dbLanguages = $db->newSelectQueryBuilder()
@@ -72,11 +72,11 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			foreach ( $unknownLanguages as $languageCode ) {
 				$this->output( "* $languageCode\n" );
 			}
-			$db->delete(
-				'translate_groupstats',
-				[ 'tgs_lang' => $unknownLanguages ],
-				__METHOD__
-			);
+			$db->newDeleteQueryBuilder()
+				->deleteFrom( 'translate_groupstats' )
+				->where( [ 'tgs_lang' => $unknownLanguages ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		$this->output( "Done.\n" );

@@ -79,11 +79,11 @@ class TranslatableBundleStatusStore {
 			return;
 		}
 
-		$this->database->delete(
-			self::TABLE_NAME,
-			[ 'ttb_page_id' => $pageIds ],
-			__METHOD__
-		);
+		$this->database->newDeleteQueryBuilder()
+			->deleteFrom( self::TABLE_NAME )
+			->where( [ 'ttb_page_id' => $pageIds ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	private function getBundleTypeId( string $bundle ): int {

@@ -114,29 +114,29 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	public function delete( string ...$keynames ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
-		$dbw->delete(
-			self::TABLE_NAME,
-			[ 'tc_key' => $keynames ],
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( self::TABLE_NAME )
+			->where( [ 'tc_key' => $keynames ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	public function deleteEntriesWithTag( string $tag ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
-		$dbw->delete(
-			self::TABLE_NAME,
-			[ 'tc_tag' => $tag ],
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( self::TABLE_NAME )
+			->where( [ 'tc_tag' => $tag ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	public function clear(): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
-		$dbw->delete(
-			self::TABLE_NAME,
-			'*',
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( self::TABLE_NAME )
+			->where( '*' )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/** @return PersistentCacheEntry[] */

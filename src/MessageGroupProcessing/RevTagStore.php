@@ -52,7 +52,11 @@ class RevTagStore {
 			'rt_page' => $articleId,
 			'rt_type' => $tag
 		];
-		$dbw->delete( 'revtag', $conditions, __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'revtag' )
+			->where( $conditions )
+			->caller( __METHOD__ )
+			->execute();
 
 		if ( $value !== null ) {
 			$conditions['rt_value'] = serialize( implode( '|', $value ) );
@@ -121,11 +125,14 @@ class RevTagStore {
 		$articleId = $identity->getId();
 
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$conditions = [
-			'rt_page' => $articleId,
-			'rt_type' => $tag,
-		];
-		$dbw->delete( 'revtag', $conditions, __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'revtag' )
+			->where( [
+				'rt_page' => $articleId,
+				'rt_type' => $tag,
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		unset( $this->tagCache[$articleId] );
 	}

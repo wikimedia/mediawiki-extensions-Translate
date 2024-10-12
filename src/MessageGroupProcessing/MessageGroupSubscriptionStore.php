@@ -73,17 +73,15 @@ class MessageGroupSubscriptionStore {
 	}
 
 	public function removeSubscriptions( string $groupId, int $userId ): void {
-		$conditions = [
-			'tmgs_group' => $groupId,
-			'tmgs_user_id' => $userId
-		];
-
 		$this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN )
-			->delete(
-				self::TABLE_NAME,
-				$conditions,
-				__METHOD__
-			);
+			->newDeleteQueryBuilder()
+			->deleteFrom( self::TABLE_NAME )
+			->where( [
+				'tmgs_group' => $groupId,
+				'tmgs_user_id' => $userId
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	private static function getGroupIdForDatabase( string $groupId ): string {

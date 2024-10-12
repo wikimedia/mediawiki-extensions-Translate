@@ -30,23 +30,23 @@ class RemoveRedundantMessageGroupMetadataMaintenanceScript extends LoggedUpdateM
 		$this->output( "... Removing empty values from the translate_metadata table ... " );
 		$dbw = $this->getDB( DB_PRIMARY );
 
-		$dbw->delete(
-			'translate_metadata',
-			[
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_metadata' )
+			->where( [
 				'tmd_key' => 'priorityforce',
 				'tmd_value' => 'off'
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
-		$dbw->delete(
-			'translate_metadata',
-			[
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_metadata' )
+			->where( [
 				'tmd_key' => 'reason',
 				'tmd_value' => ''
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->output( "done\n" );
 

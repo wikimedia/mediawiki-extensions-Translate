@@ -75,7 +75,11 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 			'tmt_sid' => $sid,
 			'tmt_lang' => $targetLanguage,
 		];
-		$dbw->delete( 'translate_tmt', $deleteConditions, __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_tmt' )
+			->where( $deleteConditions )
+			->caller( __METHOD__ )
+			->execute();
 
 		// Insert the new translation
 		if ( $targetText !== null ) {
@@ -138,9 +142,21 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 
 	public function beginBootstrap(): void {
 		$dbw = $this->getDB( DB_PRIMARY );
-		$dbw->delete( 'translate_tms', '*', __METHOD__ );
-		$dbw->delete( 'translate_tmt', '*', __METHOD__ );
-		$dbw->delete( 'translate_tmf', '*', __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_tms' )
+			->where( '*' )
+			->caller( __METHOD__ )
+			->execute();
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_tmt' )
+			->where( '*' )
+			->caller( __METHOD__ )
+			->execute();
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_tmf' )
+			->where( '*' )
+			->caller( __METHOD__ )
+			->execute();
 		$table = $dbw->tableName( 'translate_tmf' );
 		try {
 			$dbw->query( "DROP INDEX tmf_text ON $table", __METHOD__ );

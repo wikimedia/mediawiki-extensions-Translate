@@ -320,11 +320,11 @@ class TranslatablePageMarker {
 		}
 
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbw->delete(
-			'translate_sections',
-			[ 'trs_page' => $title->getArticleID() ],
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'translate_sections' )
+			->where( [ 'trs_page' => $title->getArticleID() ] )
+			->caller( __METHOD__ )
+			->execute();
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
 
 		$this->saveMetadata( $operation, $pageSettings, $maxId, $user );
