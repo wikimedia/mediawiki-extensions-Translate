@@ -11,8 +11,9 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
-use MediaWiki\Specials\SpecialAllPages;
+use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
+use SearchEngineFactory;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Xml;
 
@@ -25,21 +26,23 @@ use Xml;
  * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class TranslationsSpecialPage extends SpecialAllPages {
+class TranslationsSpecialPage extends IncludableSpecialPage {
 	private Language $contentLanguage;
 	private LanguageNameUtils $languageNameUtils;
 	private ILoadBalancer $loadBalancer;
+	private SearchEngineFactory $searchEngineFactory;
 
 	public function __construct(
 		Language $contentLanguage,
 		LanguageNameUtils $languageNameUtils,
-		ILoadBalancer $loadBalancer
+		ILoadBalancer $loadBalancer,
+		SearchEngineFactory $searchEngineFactory
 	) {
-		parent::__construct();
-		$this->mName = 'Translations';
+		parent::__construct( 'Translations' );
 		$this->contentLanguage = $contentLanguage;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->loadBalancer = $loadBalancer;
+		$this->searchEngineFactory = $searchEngineFactory;
 	}
 
 	protected function getGroupName() {
@@ -48,6 +51,10 @@ class TranslationsSpecialPage extends SpecialAllPages {
 
 	public function getDescription() {
 		return $this->msg( 'translations' );
+	}
+
+	public function prefixSearchSubpages( $search, $limit, $offset ) {
+		return $this->prefixSearchString( $search, $limit, $offset, $this->searchEngineFactory );
 	}
 
 	/**
@@ -150,10 +157,8 @@ class TranslationsSpecialPage extends SpecialAllPages {
 	 * @return array ( string => int )
 	 */
 	public function getSortedNamespaces(): array {
-		global $wgTranslateMessageNamespaces;
-
 		$nslist = [];
-		foreach ( $wgTranslateMessageNamespaces as $ns ) {
+		foreach ( $this->getConfig()->get( 'TranslateMessageNamespaces' ) as $ns ) {
 			$nslist[$this->contentLanguage->getFormattedNsText( $ns )] = $ns;
 		}
 		ksort( $nslist );

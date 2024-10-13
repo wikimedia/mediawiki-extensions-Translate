@@ -288,7 +288,8 @@
 			"services": [
 				"ContentLanguage",
 				"LanguageNameUtils",
-				"DBLoadBalancer"
+				"DBLoadBalancer",
+				"SearchEngineFactory"
 			]
 		},
 		"TranslationStats": {
