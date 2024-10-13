@@ -3,19 +3,18 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use DerivativeContext;
 use HtmlArmor;
-use HTMLForm;
-use Language;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Language\Language;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
 use SearchEngineFactory;
 use Wikimedia\Rdbms\ILoadBalancer;
-use Xml;
 
 /**
  * Implements a special page which shows all translations for a message.
@@ -86,14 +85,10 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 		 * GET values.
 		 */
 		$request = $this->getRequest();
-		$message = $request->getText( 'message' );
+		$message = $request->getText( 'message', $par );
 		$namespace = $request->getInt( 'namespace', NS_MAIN );
 
-		if ( $message !== '' ) {
-			$title = Title::newFromText( $message, $namespace );
-		} else {
-			$title = Title::newFromText( $par, $namespace );
-		}
+		$title = Title::newFromText( $message, $namespace );
 
 		$out->addHelpLink(
 			'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages'
@@ -111,16 +106,8 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 
 	/**
 	 * Message input fieldset
-	 *
-	 * @param Title|null $title (default: null)
 	 */
-	protected function namespaceMessageForm( Title $title = null ): void {
-		$options = [];
-
-		foreach ( $this->getSortedNamespaces() as $text => $index ) {
-			$options[ $text ] = $index;
-		}
-
+	private function namespaceMessageForm( Title $title ): void {
 		$formDescriptor = [
 			'textbox' => [
 				'type' => 'text',
@@ -135,16 +122,14 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				'name' => 'namespace',
 				'id' => 'namespace',
 				'label-message' => 'translate-translations-project',
-				'options' => $options,
+				'options' => $this->getSortedNamespaces(),
 				'default' => $title->getNamespace(),
 			]
 		];
 
-		$context = new DerivativeContext( $this->getContext() );
-		$context->setTitle( $this->getPageTitle() ); // Remove subpage
-
-		HTMLForm::factory( 'ooui', $formDescriptor, $context )
+		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
 			->setMethod( 'get' )
+			->setTitle( $this->getPageTitle() ) // Remove subpage
 			->setSubmitTextMsg( 'allpagessubmit' )
 			->setWrapperLegendMsg( 'translate-translations-fieldset-title' )
 			->prepareForm()
@@ -154,9 +139,9 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 	/**
 	 * Returns sorted array of namespaces.
 	 *
-	 * @return array ( string => int )
+	 * @return array<string,int>
 	 */
-	public function getSortedNamespaces(): array {
+	private function getSortedNamespaces(): array {
 		$nslist = [];
 		foreach ( $this->getConfig()->get( 'TranslateMessageNamespaces' ) as $ns ) {
 			$nslist[$this->contentLanguage->getFormattedNsText( $ns )] = $ns;
@@ -168,10 +153,8 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 
 	/**
 	 * Builds a table with all translations of $title.
-	 *
-	 * @param Title $title (default: null)
 	 */
-	protected function showTranslations( Title $title ): void {
+	private function showTranslations( Title $title ): void {
 		$handle = new MessageHandle( $title );
 		$namespace = $title->getNamespace();
 		$message = $handle->getKey();
@@ -183,8 +166,9 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 		}
 
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$res = $dbr->newSelectQueryBuilder()
-			->select( [ 'page_namespace', 'page_title' ] )
+		/** @var string[] */
+		$titles = $dbr->newSelectQueryBuilder()
+			->select( 'page_title' )
 			->from( 'page' )
 			->where( [
 				'page_namespace' => $namespace,
@@ -192,9 +176,9 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 			] )
 			->caller( __METHOD__ )
 			->orderBy( 'page_title' )
-			->fetchResultSet();
+			->fetchFieldValues();
 
-		if ( !$res->numRows() ) {
+		if ( !$titles ) {
 			$this->getOutput()->addWikiMsg(
 				'translate-translations-no-message',
 				$title->getPrefixedText()
@@ -204,40 +188,28 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 		} else {
 			$this->getOutput()->addWikiMsg(
 				'translate-translations-count',
-				$this->getLanguage()->formatNum( $res->numRows() )
+				Message::numParam( count( $titles ) )
 			);
-		}
-
-		// Normal output.
-		$titles = [];
-
-		foreach ( $res as $s ) {
-			$titles[] = $s->page_title;
 		}
 
 		$pageInfo = Utilities::getContents( $titles, $namespace );
 
-		$tableheader = Xml::openElement( 'table', [
-			'class' => 'mw-sp-translate-table sortable wikitable'
-		] );
-
-		$tableheader .= Xml::openElement( 'tr' );
-		$tableheader .= Xml::element( 'th', null, $this->msg( 'allmessagesname' )->text() );
-		$tableheader .= Xml::element( 'th', null, $this->msg( 'allmessagescurrent' )->text() );
-		$tableheader .= Xml::closeElement( 'tr' );
-
-		// Adapted version of Utilities:makeListing() by Nikerabbit.
-		$out = $tableheader;
+		$rows = [
+			Html::rawElement(
+				'tr',
+				[],
+				Html::element( 'th', [], $this->msg( 'allmessagesname' )->text() ) .
+					Html::element( 'th', [], $this->msg( 'allmessagescurrent' )->text() )
+			),
+		];
 
 		$historyText = "\u{00A0}<sup>" .
 			$this->msg( 'translate-translations-history-short' )->escaped() .
 			"</sup>\u{00A0}";
 		$separator = $this->msg( 'word-separator' )->plain();
 
-		$tools = [];
-		foreach ( $res as $s ) {
-			$key = $s->page_title;
-			$tTitle = Title::makeTitle( $s->page_namespace, $key );
+		foreach ( $titles as $key ) {
+			$tTitle = Title::makeTitle( $namespace, $key );
 			$tHandle = new MessageHandle( $tTitle );
 
 			$code = $tHandle->getCode();
@@ -245,20 +217,21 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 			$text = Utilities::getLanguageName( $code, $this->getLanguage()->getCode() );
 			$text .= $separator;
 			$text .= $this->msg( 'parentheses' )->params( $code )->plain();
-			$tools['edit'] = Html::element(
-				'a',
-				[ 'href' => Utilities::getEditorUrl( $tHandle ) ],
-				$text
-			);
-
-			$tools['history'] = $this->getLinkRenderer()->makeLink(
-				$tTitle,
-				new HtmlArmor( $historyText ),
-				[
-					'title' => $this->msg( 'history-title', $tTitle->getPrefixedDBkey() )->text()
-				],
-				[ 'action' => 'history' ]
-			);
+			$tools = [
+				'edit' => Html::element(
+					'a',
+					[ 'href' => Utilities::getEditorUrl( $tHandle ) ],
+					$text
+				),
+				'history' => $this->getLinkRenderer()->makeLink(
+					$tTitle,
+					new HtmlArmor( $historyText ),
+					[
+						'title' => $this->msg( 'history-title', $tTitle->getPrefixedDBkey() )->text()
+					],
+					[ 'action' => 'history' ]
+				),
+			];
 
 			$class = '';
 			if ( MessageHandle::hasFuzzyString( $pageInfo[$key][0] ) || $tHandle->isFuzzy() ) {
@@ -276,14 +249,19 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 
 			$formattedContent = Utilities::convertWhiteSpaceToHTML( $pageInfo[$key][0] );
 
-			$leftColumn = $tools['history'] . $tools['edit'];
-			$out .= Xml::tags( 'tr', [ 'class' => $class ],
-				Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', $languageAttributes, $formattedContent )
+			$rows[] = Html::rawElement(
+				'tr',
+				[ 'class' => $class ],
+				Html::rawElement( 'td', [], $tools['history'] . $tools['edit'] ) .
+					Html::rawElement( 'td', $languageAttributes, $formattedContent )
 			);
 		}
 
-		$out .= Xml::closeElement( 'table' );
+		$out = Html::rawElement(
+			'table',
+			[ 'class' => 'mw-sp-translate-table sortable wikitable' ],
+			"\n" . implode( "\n", $rows ) . "\n"
+		);
 		$this->getOutput()->addHTML( $out );
 	}
 }
