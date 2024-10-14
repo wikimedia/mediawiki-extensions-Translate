@@ -3,6 +3,7 @@
 ( function () {
 	'use strict';
 
+	var logger = require( 'ext.translate.eventlogginghelpers' );
 	/**
 	 * Dictionary of classes that will be used by different types of notices
 	 * TODO: Should probably review and rename these classes in the future to
@@ -629,6 +630,7 @@
 								disabled: true,
 								title: mw.msg( 'tux-editor-copied-original-button-label' )
 							} );
+						logger.logClickEvent( 'copy', 'copy_text_button' );
 						setTimeout( function () {
 							$self
 								.prop( {
