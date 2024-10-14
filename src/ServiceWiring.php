@@ -353,7 +353,8 @@ return [
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->getRevisionLookup(),
 			$services->getNamespaceInfo(),
-			$services->getTitleFactory()
+			$services->getTitleFactory(),
+			$services->getFormatterFactory()
 		);
 	},
 

@@ -127,6 +127,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 				$interwikiPrefix,
 				$assignKnownUsers,
 				$importUser,
+				RequestContext::getMain(),
 				$targetPage,
 				$comment
 			);

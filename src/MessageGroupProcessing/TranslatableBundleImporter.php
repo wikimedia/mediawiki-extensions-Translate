@@ -11,6 +11,7 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Hook\AfterImportPageHook;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
@@ -18,6 +19,7 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserIdentity;
+use MessageLocalizer;
 use TextContent;
 use WikiImporterFactory;
 
@@ -35,6 +37,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 	private ?Closure $pageImportCompleteCallback = null;
 	private NamespaceInfo $namespaceInfo;
 	private TitleFactory $titleFactory;
+	private FormatterFactory $formatterFactory;
 	private bool $importInProgress = false;
 
 	public function __construct(
@@ -42,13 +45,15 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		TranslatablePageParser $translatablePageParser,
 		RevisionLookup $revisionLookup,
 		NamespaceInfo $namespaceInfo,
-		TitleFactory $titleFactory
+		TitleFactory $titleFactory,
+		FormatterFactory $formatterFactory
 	) {
 		$this->wikiImporterFactory = $wikiImporterFactory;
 		$this->translatablePageParser = $translatablePageParser;
 		$this->revisionLookup = $revisionLookup;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->titleFactory = $titleFactory;
+		$this->formatterFactory = $formatterFactory;
 	}
 
 	/** Factory method used to initialize this HookHandler */
@@ -61,13 +66,15 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		string $interwikiPrefix,
 		bool $assignKnownUsers,
 		UserIdentity $user,
+		MessageLocalizer $localizer,
 		?Title $targetPage,
 		?string $comment
 	): Title {
 		$importSource = ImportStreamSource::newFromFile( $importFilePath );
 		if ( !$importSource->isOK() ) {
 			throw new TranslatableBundleImportException(
-				"Error while reading import file '$importFilePath': " . $importSource->getMessage()->text()
+				"Error while reading import file '$importFilePath': " .
+				$this->formatterFactory->getStatusFormatter( $localizer )->getMessage( $importSource )->text()
 			);
 		}
 
