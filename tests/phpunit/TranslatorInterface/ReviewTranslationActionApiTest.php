@@ -35,6 +35,9 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 			'sysop' => [
 				'translate-messagereview' => true,
 			],
+			'user' => [
+				'translate-messagereview' => false,
+			],
 			'*' => [
 				'read' => true,
 			]

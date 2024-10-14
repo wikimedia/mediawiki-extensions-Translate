@@ -11,4 +11,5 @@ final class MessageGroupTestConfig {
 	public ?array $groups = null;
 	public array $groupInitLoaders = [];
 	public bool $skipMessageIndexRebuild = false;
+	public array $translateGroupFiles = [];
 }

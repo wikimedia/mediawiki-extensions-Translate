@@ -32,6 +32,7 @@ trait MessageGroupTestTrait {
 			'TranslateDocumentationLanguageCode' => 'qqq',
 			'TranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 			'TranslateMessageIndex' => 'hash',
+			'TranslateGroupFiles' => $config->translateGroupFiles
 		] );
 
 		if ( $config->groupInitLoaders ) {
