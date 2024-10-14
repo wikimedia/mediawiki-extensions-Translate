@@ -571,6 +571,10 @@
 				.on( 'click', function ( e ) {
 					translateEditor.hide();
 					e.stopPropagation();
+					logger.logClickEvent(
+						'close',
+						'close_button'
+					);
 				} );
 
 			var $infoToggleIcon = $( '<span>' )
