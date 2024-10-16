@@ -403,7 +403,7 @@
 	"tux-messagetable-loading-messages": "Ladataan {{PLURAL:$1|viestiä|viestejä}}...",
 	"tux-message-filter-placeholder": "Hae listasta",
 	"tux-message-filter-result": "{{PLURAL:$1|Yksi hakutulos|$1 hakutulosta}} haulle $2",
-	"tux-message-filter-advanced-button": "Laajennettu haku",
+	"tux-message-filter-advanced-button": "Tarkennettu haku",
 	"tux-message-filter-optional-messages-label": "Valinnaiset viestit",
 	"tux-proofread-translated-by-self": "Sinun kääntämäsi",
 	"tux-empty-list-all": "Tämä viestiryhmä on tyhjä",

@@ -4,7 +4,7 @@
 			"Cabal"
 		]
 	},
-	"apihelp-translationreview-summary": "ਤਰਜਮੇ ਦੀ ਸਮੀਖਿਆ ਕੀਤੀ ਗਈ ਦੀ ਨਿਸ਼ਾਨਦੇਹੀ ਕਰੋ।",
+	"apihelp-translationreview-summary": "ਤਰਜਮੇ ਦੀ ਪਰਖ ਕੀਤੀ ਗਈ ਦੀ ਨਿਸ਼ਾਨਦੇਹੀ ਕਰੋ।",
 	"apihelp-searchtranslations-summary": "ਤਰਜਮੇ ਖੋਜੋ",
 	"apihelp-translationcheck-summary": "ਤਰਜਮੇ ਤਸਦੀਕ ਕਰੋ।",
 	"apihelp-translationcheck-param-translation": "ਤਸਦੀਕ ਕਰਨ ਲਈ ਤਰਜਮਾ।"
