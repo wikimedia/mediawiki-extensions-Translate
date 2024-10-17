@@ -480,7 +480,7 @@
 	"echo-category-title-translate-message-group-subscription": "Abonnementen op groepen vertaalbare berichten",
 	"echo-pref-tooltip-translate-message-group-subscription": "Houd mij op de hoogte van wijzigingen in groepen vertaalbare berichten waarop ik ben geabonneerd",
 	"notification-header-message-group-subscription": "Vertalingsupdates voor $1",
-	"notification-body-translate-mgs-message-added": "$1 bericht{{PLURAL:$1||en}} toegevoegd",
+	"notification-body-translate-mgs-message-added": "$1 bericht{{PLURAL:$1||en}} toegevoegd of bijgewerkt",
 	"notification-link-mgs-group-translate": "Vertalen: $1",
 	"tpt-cleanchanges-language": "Taal:",
 	"tpt-cleanchanges-language-na": "Alle talen"

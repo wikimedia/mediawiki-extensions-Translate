@@ -168,7 +168,7 @@
 	"translate-langstats-expandall": "expandir todo",
 	"translate-langstats-collapseall": "contraer todo",
 	"translate-language-code": "Código da lingua",
-	"translate-language-code-field-name": "Código da lingua:",
+	"translate-language-code-field-name": "Código de lingua:",
 	"translate-suppress-complete": "Omitir os grupos de mensaxes completamente traducidos",
 	"translate-ls-noempty": "Omitir os grupos de mensaxes sen tradución iniciada",
 	"translate-language": "Lingua",
@@ -406,6 +406,7 @@
 	"log-action-filter-translationreview": "Tipo de acción:",
 	"log-action-filter-translationreview-message": "Revisión de mensaxes de tradución individuais",
 	"log-action-filter-translationreview-group": "Cambios no estado do progreso das traducións",
+	"notification-link-mgs-group-translate": "Traducir $1",
 	"tpt-cleanchanges-language": "Lingua:",
 	"tpt-cleanchanges-language-na": "Todas"
 }
