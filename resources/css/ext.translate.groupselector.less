@@ -13,7 +13,8 @@
 	width: 600px;
 	padding: 0;
 	border: @border-base;
-	background-color: #f0f0f0;
+	background-color: @background-color-neutral;
+	color: @color-base;
 	border-radius: 5px;
 	box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
 	display: flex;
@@ -37,7 +38,7 @@
 }
 
 .tux-groupselector::after {
-	border-bottom: 6px solid #f0f0f0;
+	border-bottom: 6px solid @background-color-neutral;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
 	content: '';
@@ -119,12 +120,12 @@
 
 .tux-grouplist__item {
 	position: relative;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid @border-color-muted;
 	height: 50px;
 	cursor: pointer;
 
 	&:hover {
-		background-color: #f8f8f8;
+		background-color: @background-color-neutral-subtle;
 	}
 }
 
@@ -152,7 +153,7 @@
 }
 
 .grid .row .tux-grouplist__item__subgroups {
-	color: #72777d;
+	color: @color-disabled;
 	position: absolute; /* grid override */
 	padding: 0 15px 2px 0; /* grid override */
 	line-height: 1.25em;
