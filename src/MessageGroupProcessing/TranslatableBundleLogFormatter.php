@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use LogFormatter;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
-use Message;
 
 /**
  * Class for formatting translatable bundle logs.

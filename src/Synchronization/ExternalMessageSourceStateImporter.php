@@ -19,10 +19,10 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Status\Status;
+use MediaWiki\Title\TitleFactory;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use TitleFactory;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {

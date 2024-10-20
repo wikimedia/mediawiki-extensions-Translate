@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
-use DeferredUpdates;
 use IJobSpecification;
 use JobQueueGroup;
+use MediaWiki\Deferred\DeferredUpdates;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

@@ -3,7 +3,7 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use RequestContext;
+use MediaWiki\Context\RequestContext;
 use RuntimeException;
 use Xml;
 use XmlSelect;

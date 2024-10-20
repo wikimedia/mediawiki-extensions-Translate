@@ -7,7 +7,7 @@ use Content;
 use InvalidArgumentException;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\ValidationParams;
-use ParserOutput;
+use MediaWiki\Parser\ParserOutput;
 use StatusValue;
 use TextContentHandler;
 use const CONTENT_FORMAT_JSON;

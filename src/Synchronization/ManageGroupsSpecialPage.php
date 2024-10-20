@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Cdb\Reader;
 use ContentHandler;
-use DeferredUpdates;
 use DifferenceEngine;
 use Exception;
 use FileBasedMessageGroup;
 use JobQueueGroup;
 use Language;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -21,21 +21,21 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\DisabledSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use NamespaceInfo;
 use OOUI\ButtonInputWidget;
-use OutputPage;
 use PermissionsError;
 use RuntimeException;
 use Skin;
 use TextContent;
 use UserBlockedError;
-use WebRequest;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page

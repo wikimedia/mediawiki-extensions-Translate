@@ -17,10 +17,10 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\TitleValue;
 use RuntimeException;
 use stdClass;
 use TextContent;
-use TitleValue;
 use Traversable;
 use Wikimedia\Rdbms\IDatabase;
 

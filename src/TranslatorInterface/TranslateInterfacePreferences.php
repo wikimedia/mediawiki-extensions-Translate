@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\Utilities\HTMLJsSelectToInputField;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
-use RequestContext;
 use XmlSelect;
 
 /**

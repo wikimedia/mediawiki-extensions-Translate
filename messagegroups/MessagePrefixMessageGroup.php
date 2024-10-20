@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Context\IContextSource;
+
 /**
  * Contains an unmanaged message group for fetching stats using message prefixes
  * @author Abijeet Patro

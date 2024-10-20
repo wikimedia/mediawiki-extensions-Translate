@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use ApiMessage;
-use Config;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
+use MediaWiki\Config\Config;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 use MediaWiki\Permissions\Hook\UserGetRightsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;

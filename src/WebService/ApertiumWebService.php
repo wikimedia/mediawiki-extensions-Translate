@@ -7,7 +7,7 @@ use FormatJson;
 use LanguageCode;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Http\HttpRequestFactory;
-use Sanitizer;
+use MediaWiki\Parser\Sanitizer;
 
 /**
  * Implements support Apertium translator API.

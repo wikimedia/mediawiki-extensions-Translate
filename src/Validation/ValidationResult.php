@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation;
 
-use IContextSource;
 use InvalidArgumentException;
+use MediaWiki\Context\IContextSource;
 
 /**
  * Container for validation issues returned by MessageValidator.

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use Config;
+use MediaWiki\Config\Config;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**

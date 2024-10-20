@@ -7,7 +7,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use TitleArrayFromResult;
+use MediaWiki\Title\TitleArrayFromResult;
 
 /**
  * Helper class that contains utility methods to help with identifying and replace titles.

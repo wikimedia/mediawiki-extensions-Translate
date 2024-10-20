@@ -3,7 +3,7 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use HTMLTextField;
+use MediaWiki\HTMLForm\Field\HTMLTextField;
 
 /**
  * Implementation of JsSelectToInput class which is compatible with MediaWiki's preferences system

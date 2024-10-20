@@ -11,12 +11,14 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\Message\Message;
 
 /**
  * This is the interface and base implementation of unmanaged

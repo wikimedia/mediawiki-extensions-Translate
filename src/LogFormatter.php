@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\Translate;
 use LogFormatter as CoreLogFormatter;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
-use Message;
 
 /**
  * Class for formatting Translate logs.

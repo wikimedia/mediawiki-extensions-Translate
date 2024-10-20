@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use HTMLCheckField;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Hook\LonelyPagesQueryHook;
 use MediaWiki\Hook\SpecialPrefixIndexGetFormFiltersHook;
 use MediaWiki\Hook\SpecialPrefixIndexQueryHook;
+use MediaWiki\HTMLForm\Field\HTMLCheckField;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PageTranslationHookHandler implements

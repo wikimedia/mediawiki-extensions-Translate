@@ -4,17 +4,17 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Closure;
-use MalformedTitleException;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Language\FormatterFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Status\Status;
+use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\Title;
-use Message;
-use RequestContext;
+use MediaWiki\Title\TitleParser;
 use SplObjectStorage;
-use TitleParser;
 
 class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 	private TranslatableBundleMover $bundleMover;

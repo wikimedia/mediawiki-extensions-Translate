@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use ForeignTitle;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\PageTranslation\PageTitleRenamer;
+use MediaWiki\Title\ForeignTitle;
 use MediaWiki\Title\ImportTitleFactory;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;

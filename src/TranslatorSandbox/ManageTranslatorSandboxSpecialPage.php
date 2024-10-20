@@ -6,11 +6,11 @@ namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 use FormatJson;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Html\Html;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
-use MediaWiki\User\UserOptionsLookup;
-use MWTimestamp;
-use Sanitizer;
+use MediaWiki\Utils\MWTimestamp;
 
 /**
  * Special page for managing sandboxed users.

@@ -3,9 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use ConfigException;
 use Content;
 use LanguageCode;
+use MediaWiki\Config\ConfigException;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -16,7 +17,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MessageGroup;
-use RequestContext;
 use TextContent;
 use UnexpectedValueException;
 use Wikimedia\Rdbms\IDatabase;

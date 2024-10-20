@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use FormatJson;
 use JsonContent;
+use MediaWiki\Message\Message;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
-use Message;
 use WikiPage;
 
 /**

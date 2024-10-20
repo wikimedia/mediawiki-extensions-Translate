@@ -10,8 +10,8 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleValue;
 use SplObjectStorage;
-use TitleValue;
 use const SORT_NUMERIC;
 
 /**

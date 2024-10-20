@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
-use PoolCounterWorkViaCallback;
+use MediaWiki\PoolCounter\PoolCounterWorkViaCallback;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**

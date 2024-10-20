@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
-use TitleParser;
+use MediaWiki\Title\TitleParser;
 
 /**
  * This class abstracts MessagePrefix statistics calculation and storing.

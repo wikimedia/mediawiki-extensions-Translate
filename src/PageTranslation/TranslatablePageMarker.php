@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use JobQueueGroup;
 use LogicException;
-use MalformedTitleException;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
@@ -21,12 +20,13 @@ use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
+use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
+use MediaWiki\Title\TitleParser;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use RecentChange;
-use TitleFormatter;
-use TitleParser;
 use Wikimedia\Rdbms\IConnectionProvider;
 use WikiPageMessageGroup;
 

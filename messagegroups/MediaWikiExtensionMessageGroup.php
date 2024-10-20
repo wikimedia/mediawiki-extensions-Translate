@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Context\IContextSource;
+
 /**
  * Message group for MediaWiki extensions.
  * @author Niklas Laxström

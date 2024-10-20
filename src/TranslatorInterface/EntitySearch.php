@@ -5,14 +5,14 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use AggregateMessageGroup;
 use Collation;
-use MalformedTitleException;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
-use NamespaceInfo;
+use MediaWiki\Title\MalformedTitleException;
+use MediaWiki\Title\NamespaceInfo;
+use MediaWiki\Title\TitleFormatter;
+use MediaWiki\Title\TitleParser;
 use SplMinHeap;
-use TitleFormatter;
-use TitleParser;
 use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use WikiPageMessageGroup;

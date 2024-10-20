@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\WebService;
 
 use FormatJson;
 use MediaWiki\Http\HttpRequestFactory;
-use Sanitizer;
+use MediaWiki\Parser\Sanitizer;
 
 /**
  * Implements support for Yandex translation API v1.

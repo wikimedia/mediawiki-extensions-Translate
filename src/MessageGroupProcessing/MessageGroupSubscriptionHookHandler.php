@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use EchoAttributeManager;
+use MediaWiki\Extension\Notifications\AttributeManager;
 use MediaWiki\Extension\Notifications\Hooks\BeforeCreateEchoEventHook;
 use MediaWiki\Extension\Notifications\Hooks\EchoGetBundleRulesHook;
 use MediaWiki\Extension\Notifications\Model\Event;
@@ -70,7 +70,7 @@ class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, 
 				'web' => true,
 				'expandable' => true,
 			],
-			EchoAttributeManager::ATTR_LOCATORS => static function ( Event $event ) use (
+			AttributeManager::ATTR_LOCATORS => static function ( Event $event ) use (
 				$messageGroupSubscription,
 				$userFactory
 			) {

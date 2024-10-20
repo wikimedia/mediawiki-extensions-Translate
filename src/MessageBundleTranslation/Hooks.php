@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Article;
 use Content;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;

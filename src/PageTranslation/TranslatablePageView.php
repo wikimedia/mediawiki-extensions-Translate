@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use RecentChange;
-use User;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

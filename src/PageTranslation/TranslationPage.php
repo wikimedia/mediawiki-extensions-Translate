@@ -8,8 +8,8 @@ use ContentHandler;
 use Language;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
-use Parser;
 use WikiPageMessageGroup;
 
 /**
