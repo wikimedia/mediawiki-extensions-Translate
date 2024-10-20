@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
 use Language;
+use MediaWiki\Parser\Parser;
 use MediaWikiUnitTestCase;
-use Parser;
 
 /**
  * @author Niklas Laxström

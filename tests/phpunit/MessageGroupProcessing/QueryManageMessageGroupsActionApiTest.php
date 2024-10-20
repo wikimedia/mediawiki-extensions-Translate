@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use ApiTestCase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
+use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\User\User;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;

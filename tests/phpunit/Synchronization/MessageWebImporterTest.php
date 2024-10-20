@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use RequestContext;
 
 /** @group Database */
 class MessageWebImporterTest extends MediaWikiIntegrationTestCase {

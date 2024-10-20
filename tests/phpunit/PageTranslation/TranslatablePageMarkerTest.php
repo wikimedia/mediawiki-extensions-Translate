@@ -15,9 +15,9 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\TitleFormatter;
+use MediaWiki\Title\TitleParser;
 use MediaWikiIntegrationTestCase;
-use TitleFormatter;
-use TitleParser;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use ApiTestCase;
+use MediaWiki\Tests\Api\ApiTestCase;
 use MessageGroupTestTrait;
 use WikiMessageGroup;
 

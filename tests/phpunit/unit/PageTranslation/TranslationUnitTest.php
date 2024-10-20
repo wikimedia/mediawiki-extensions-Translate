@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Language;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+use MediaWiki\Parser\Parser;
 use MediaWikiUnitTestCase;
-use Parser;
 
 /**
  * @author Niklas Laxström

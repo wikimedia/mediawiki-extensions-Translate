@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use ContentHandler;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
@@ -14,7 +15,6 @@ use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
 use MockWikiValidationMessageGroup;
 use ParserOptions;
-use RequestContext;
 use Wikimedia\TestingAccessWrapper;
 
 /**

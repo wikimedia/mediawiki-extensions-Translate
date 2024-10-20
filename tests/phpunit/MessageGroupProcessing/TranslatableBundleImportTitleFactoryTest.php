@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use ForeignTitle;
+use MediaWiki\Title\ForeignTitle;
 use MediaWiki\Title\NamespaceAwareForeignTitleFactory;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;

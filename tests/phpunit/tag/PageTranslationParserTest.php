@@ -6,6 +6,7 @@ use MediaWiki\Extension\Translate\PageTranslation\ParsingFailure;
 use MediaWiki\Extension\Translate\PageTranslation\TestingParsingPlaceholderFactory;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationPage;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 
 /**

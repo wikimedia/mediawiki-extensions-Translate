@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use Parser;
 use WikiPageMessageGroup;
 
 /**
