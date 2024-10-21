@@ -76,6 +76,7 @@
 	"tpt-syntaxversion-label": "De laatste versie van de syntaxis gebruiken voor deze pagina",
 	"tpt-transclusion": "Sjabloontransclusie",
 	"tpt-transclusion-label": "Vertalingsbewuste transclusie inschakelen voor deze pagina",
+	"tpt-transclusion-help": "Als deze optie is ingeschakeld, wordt op pagina’s waarin deze pagina als sjabloon is ingevoegd, in plaats daarvan de vertaling in de taal van de invoegende pagina ingevoegd (of de brontaal als die vertaling nog niet bestaat). Als u bijvoorbeeld probeert deze pagina in te voegen in een Duitstalige pagina, wordt in plaats daarvan de pagina “$1” ingevoegd. Dit werkt betrouwbaar als de invoegende pagina’s ook paginavertaling gebruiken, maar kan mislukken als ze handmatig worden vertaald. Schakel deze instelling uit als vertalingen op deze pagina afzonderlijk worden afgehandeld (bijvoorbeeld om handmatig vertaalde pagina’s te ondersteunen of om de taal van de gebruikersinterface te gebruiken in plaats van de paginataal), want anders wordt de wikitekst van de pagina zelf volledig genegeerd bij het invoegen. Deze instelling heeft geen effect als de pagina nooit wordt ingevoegd.",
 	"tpt-rev-mark": "voor vertaling markeren",
 	"tpt-rev-unmark": "als te vertalen pagina verwijderen",
 	"tpt-rev-discourage": "afraden",
@@ -313,5 +314,6 @@
 	"visualeditor-annotations-tvar-start": "Begin van de onvertaalbare inhoud",
 	"visualeditor-annotations-tvar-end": "Einde van de onvertaalbare inhoud",
 	"visualeditor-annotations-tvar-description": "Dit bereik is als niet vertaalbaar gemarkeerd. Zie [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/nl#Segmentation Segmentatie van de brontekst] voor meer informatie.",
-	"tag-translate-translation-pages-description": "Automatische bewerkingen van vertalingspagina’s via de uitbreiding Translate"
+	"tag-translate-translation-pages-description": "Automatische bewerkingen van vertalingspagina’s via de uitbreiding Translate",
+	"tpt-cant-edit-source-language": "De vertalingseenheden in de brontaal kunnen niet handmatig bewerkt worden. Breng in plaats daarvan de wijziging aan op de basispagina ([[$1]]) en markeer deze dan voor vertaling."
 }

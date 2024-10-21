@@ -236,6 +236,7 @@
 	"translate-statsbar-tooltip": "$1% ਤਰਜਮਾ ਹੋਇਆ, $2% ਪਰਖਿਆ ਗਿਆ",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% ਤਰਜਮਾ ਹੋਇਆ, $2% ਪਰਖਿਆ ਗਿਆ, $3% ਪੁਰਾਣਾ ਹੋ ਗਿਆ",
 	"translate-search-more-groups-info": "$1 ਹੋਰ {{PLURAL:$1|ਸਮੂਹ}}",
+	"specialpages-group-translation": "ਤਰਜਮਾ",
 	"notification-link-mgs-group-translate": "\"$1\" ਦਾ ਤਰਜਮਾ ਕਰੋ",
 	"tpt-cleanchanges-language": "ਭਾਸ਼ਾ:",
 	"tpt-cleanchanges-language-na": "ਸਭ"
