@@ -164,7 +164,7 @@
 	"translate-langstats-expandall": "expandir todo",
 	"translate-langstats-collapseall": "contraer todo",
 	"translate-language-code": "Código da lingua",
-	"translate-language-code-field-name": "Código da lingua:",
+	"translate-language-code-field-name": "Código de lingua:",
 	"translate-suppress-complete": "Omitir os grupos de mensaxes completamente traducidos",
 	"translate-ls-noempty": "Omitir os grupos de mensaxes sen tradución iniciada",
 	"translate-language": "Lingua",
