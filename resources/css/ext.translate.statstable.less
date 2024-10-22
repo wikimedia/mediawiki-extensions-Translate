@@ -1,3 +1,5 @@
+@import 'mediawiki.skin.variables.less';
+
 .groupexpander-all {
 	text-align: right;
 }
@@ -18,7 +20,7 @@
 	/* Small zebra rows effect */
 	> * > tr {
 		&.tux-statstable-even > td {
-			background-color: #f8f9fa;
+			background-color: @background-color-neutral-subtle;
 		}
 
 		&:hover > td {
@@ -29,8 +31,8 @@
 		}
 
 		> th {
-			background-color: #eaecf0;
-			border: 1px solid #fff;
+			background-color: @background-color-neutral;
+			border: 1px solid @border-color-inverted;
 			padding: 0.5em;
 			font-weight: normal;
 			letter-spacing: 1px;
@@ -40,10 +42,10 @@
 		}
 
 		> td {
-			background-color: #fff;
+			background-color: @background-color-base;
 			padding: 0.5em;
-			border-left: 1px solid #f8f9fa;
-			border-right: 1px solid #f8f9fa;
+			border-left: 1px solid @border-color-muted;
+			border-right: 1px solid @border-color-muted;
 		}
 
 		/* Align numbers to the right */
@@ -54,7 +56,7 @@
 
 		/* De-emphasize 0% outdated */
 		> td:nth-child( 6 )[ data-sort-value='0.00000' ] {
-			color: #54595d;
+			color: @color-subtle;
 		}
 	}
 }

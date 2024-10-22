@@ -63,6 +63,7 @@ class StatsTable {
 		}
 
 		if ( $bgcolor ) {
+			$attributes['class'] = 'notheme skin-invert';
 			$attributes['style'] = 'background-color: #' . $bgcolor;
 		}
 
@@ -71,6 +72,7 @@ class StatsTable {
 		return $element;
 	}
 
+	// FIXME: should be moved to .less file to prevent potential Linter errors
 	public function getBackgroundColor( float $percentage, bool $fuzzy = false ): string {
 		if ( $fuzzy ) {
 			// Steeper scale for fuzzy
@@ -128,8 +130,7 @@ class StatsTable {
 		// Create table header
 		$out = Html::openElement(
 			'table',
-			// Poor man's way of adopting dark mode till compatibility of complicated color logic in #getBackgroundColor
-			[ 'class' => 'statstable notheme skin-invert' ]
+			[ 'class' => 'statstable' ]
 		);
 
 		$out .= "\n\t" . Html::openElement( 'thead' );
