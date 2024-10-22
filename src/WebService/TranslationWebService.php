@@ -55,10 +55,6 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 				'class' => ApertiumCxserverWebService::class,
 				'deps' => [ 'HttpRequestFactory' ]
 			],
-			'restbase' => [
-				'class' => RESTBaseWebService::class,
-				'deps' => [ 'HttpRequestFactory' ]
-			],
 			'caighdean' => [
 				'class' => CaighdeanWebService::class
 			],
