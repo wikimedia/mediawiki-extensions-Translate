@@ -128,7 +128,8 @@ class StatsTable {
 		// Create table header
 		$out = Html::openElement(
 			'table',
-			[ 'class' => 'statstable' ]
+			// Poor man's way of adopting dark mode till compatibility of complicated color logic in #getBackgroundColor
+			[ 'class' => 'statstable notheme skin-invert' ]
 		);
 
 		$out .= "\n\t" . Html::openElement( 'thead' );
