@@ -26,6 +26,7 @@
 			"McDutchie",
 			"Meno25",
 			"Mormegil",
+			"Msz2001",
 			"Nemo bis",
 			"Nike",
 			"Purodha",
@@ -513,5 +514,7 @@
 	"notification-body-translate-mgs-message-added": "Body text for notifications sent out to users when messages are added or updated to the message groups.\n\nParameters:\n* $1 Sum of the number of added and updated messages",
 	"notification-link-mgs-group-translate": "Link to Special:Translate with the group selected.\n\nParameters:\n* $1 Group label",
 	"tpt-cleanchanges-language": "{{Identical|Language}}",
-	"tpt-cleanchanges-language-na": "Used in the trailer selection of [[Special:RecentChanges]] to not filter on any trailer.\n\n{{Identical|All}}"
+	"tpt-cleanchanges-language-na": "Used in the trailer selection of [[Special:RecentChanges]] to not filter on any trailer.\n\n{{Identical|All}}",
+	"namespaceinfo-description-ns1198": "Description for the Translations namespace",
+	"namespaceinfo-description-ns1199": "Description for the Translations talk namespace"
 }

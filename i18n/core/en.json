@@ -5,7 +5,8 @@
 			"Siebrand",
 			"Amire80",
 			"Santhosh.thottingal",
-			"MarcoAurelio"
+			"MarcoAurelio",
+			"Msz2001"
 		]
 	},
 	"translate": "Translate",
@@ -474,5 +475,7 @@
 	"notification-body-translate-mgs-message-added": "$1 new or updated {{PLURAL:$1|message|messages}}",
 	"notification-link-mgs-group-translate": "Translate $1",
 	"tpt-cleanchanges-language": "Language:",
-	"tpt-cleanchanges-language-na": "All"
+	"tpt-cleanchanges-language-na": "All",
+	"namespaceinfo-description-ns1198": "Namespace that contains translation units, i.e. individual translatable and translated pieces of [[Special:PageTranslation|translatable pages]] and [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|message bundles]]",
+	"namespaceinfo-description-ns1199": "Talk pages for translation units"
 }
