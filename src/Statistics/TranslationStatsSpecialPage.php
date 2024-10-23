@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
+use DateTime;
+use DateTimeZone;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -91,11 +93,13 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'preview', 1 ) . '<table>'
 		);
+		$now = new DateTime( 'now', new DateTimeZone( 'UTC' ) );
 		$submit = Html::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
 		$out->addHTML(
-			$this->eInput( 'width', $opts ) . $this->eInput( 'height', $opts ) .
-			'<tr><td colspan="2"><hr /></td></tr>' . $this->eInput( 'start', $opts, 24 ) .
-			$this->eInput( 'days', $opts ) .
+			$this->eNumber( 'width', $opts ) . $this->eNumber( 'height', $opts ) .
+			'<tr><td colspan="2"><hr /></td></tr>' .
+			$this->eInput( 'start', $opts, 'date', [ 'max' => $now->format( 'Y-m-d' ) ] ) .
+			$this->eNumber( 'days', $opts ) .
 			$this->eRadio( 'scale', $opts, [ 'years', 'months', 'weeks', 'days', 'hours' ] ) .
 			$this->eRadio( 'count', $opts, $this->dataProvider->getGraphTypes() ) .
 			'<tr><td colspan="2"><hr /></td></tr>' . $this->eLanguage( 'language', $opts ) .
@@ -145,11 +149,16 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		);
 	}
 
-	/// Construct HTML for a table row with label and input in two columns.
-	private function eInput( string $name, FormOptions $opts, int $width = 4 ): string {
+	/** Construct HTML for a table row with label and number input in two columns. */
+	private function eNumber( string $name, FormOptions $opts ): string {
+		return $this->eInput( $name, $opts, 'number', TranslationStatsGraphOptions::INT_BOUNDS[$name] );
+	}
+
+	/** Construct HTML for a table row with label and a specified type of input in two columns. */
+	private function eInput( string $name, FormOptions $opts, string $type, array $attribs ): string {
 		$value = $opts[$name];
 		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			Html::input( $name, $value, 'text', [ 'id' => $name, 'size' => $width ] ) .
+			Html::input( $name, $value, $type, [ 'id' => $name ] + $attribs ) .
 			'</td></tr>' . "\n";
 	}
 

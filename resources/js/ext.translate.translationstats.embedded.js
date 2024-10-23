@@ -22,7 +22,7 @@ var EmbeddedHandler = function ( $graphContainer ) {
 		return {
 			measure: graphOptions.count,
 			days: graphOptions.days,
-			start: graphOptions.start,
+			start: graphOptions.start + 'T00:00:00', // the JSON contains only a date, the graph expects a timestamp
 			granularity: graphOptions.scale,
 			group: graphOptions.group,
 			language: graphOptions.language,

@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use MediaWiki\Html\FormOptions;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
+use Wikimedia\Timestamp\TimestampException;
 
 /**
  * Encapsulates graph options
@@ -15,6 +17,17 @@ class TranslationStatsGraphOptions {
 	private FormOptions $formOptions;
 	/** @var string[] */
 	public const VALID_SCALES = [ 'years', 'months', 'weeks', 'days', 'hours' ];
+	/**
+	 * Default bounds for integer-valued options, can be used in the HTML `<input>` elements.
+	 * `days` has additional bounds depending on the scale, which is not represented here, as
+	 * it couldn’t be used in HTML anyway.
+	 * @var array<string,array{min:int,max:int}>
+	 */
+	public const INT_BOUNDS = [
+		'days' => [ 'min' => 1, 'max' => 10000 ],
+		'width' => [ 'min' => 200, 'max' => 1000 ],
+		'height' => [ 'min' => 200, 'max' => 1000 ],
+	];
 
 	public function __construct() {
 		$this->formOptions = new FormOptions();
@@ -51,14 +64,29 @@ class TranslationStatsGraphOptions {
 	}
 
 	public function normalize( array $validCounts ): void {
-		$this->formOptions->validateIntBounds( 'days', 1, 10000 );
-		$this->formOptions->validateIntBounds( 'width', 200, 1000 );
-		$this->formOptions->validateIntBounds( 'height', 200, 1000 );
+		foreach ( self::INT_BOUNDS as $name => [ 'min' => $min, 'max' => $max ] ) {
+			$this->formOptions->validateIntBounds( $name, $min, $max );
+		}
 
 		if ( $this->formOptions['start'] !== '' ) {
-			$timestamp = wfTimestamp( TS_ISO_8601, $this->formOptions['start'] );
+			try {
+				$timestamp = new ConvertibleTimestamp( $this->formOptions['start'] );
+			} catch ( TimestampException $e ) {
+				// If we weren’t able to parse the timestamp, try if we got an ISO 8601 date without time
+				try {
+					$timestamp = new ConvertibleTimestamp( $this->formOptions['start'] . 'T00:00:00' );
+				} catch ( TimestampException $e2 ) {
+					$timestamp = null;
+					// If still fails, log the original exception
+					wfDebug(
+						'TranslationStatsGraphOptions got invalid timestamp: {exception}',
+						'all',
+						[ 'exception' => $e ]
+					);
+				}
+			}
 			if ( $timestamp ) {
-				$this->formOptions['start'] = rtrim( $timestamp, 'Z' );
+				$this->formOptions['start'] = $timestamp->format( 'Y-m-d' );
 			} else {
 				$this->formOptions['start'] = '';
 			}

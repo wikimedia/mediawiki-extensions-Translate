@@ -1011,8 +1011,7 @@
 				"resources/js/ext.translate.special.translationstats.js"
 			],
 			"dependencies": [
-				"ext.translate.translationstats.graphbuilder.js",
-				"mediawiki.widgets.datetime"
+				"ext.translate.translationstats.graphbuilder.js"
 			]
 		},
 		"ext.translate.translationstats.embedded": {
