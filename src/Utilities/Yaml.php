@@ -6,6 +6,9 @@ namespace MediaWiki\Extension\Translate\Utilities;
 use InvalidArgumentException;
 use RuntimeException;
 use Spyc;
+use function spyc_load;
+use function yaml_emit;
+use function yaml_parse;
 
 /**
  * A wrapper class to provide interface to parse
