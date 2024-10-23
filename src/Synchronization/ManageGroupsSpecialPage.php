@@ -52,7 +52,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	private const GROUP_SYNC_INFO_WRAPPER_CLASS = 'smg-group-sync-cache-info';
 	private const RIGHT = 'translate-manage';
 	protected DifferenceEngine $diff;
-	/** Path to the change cdb file. */
+	/** Name of the import. */
+	private string $name;
+	/** Path to the change cdb file, derived from the name. */
 	protected string $cdb;
 	/** Has the necessary right specified by the RIGHT constant */
 	protected bool $hasRight = false;
@@ -109,10 +111,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.managegroups' );
 		$out->addHelpLink( 'Help:Extension:Translate/Group_management' );
 
-		$name = $par ?: MessageChangeStorage::DEFAULT_NAME;
+		$this->name = $par ?: MessageChangeStorage::DEFAULT_NAME;
 
-		$this->cdb = MessageChangeStorage::getCdbPath( $name );
-		if ( !MessageChangeStorage::isValidCdbName( $name ) || !file_exists( $this->cdb ) ) {
+		$this->cdb = MessageChangeStorage::getCdbPath( $this->name );
+		if ( !MessageChangeStorage::isValidCdbName( $this->name ) || !file_exists( $this->cdb ) ) {
 			if ( $this->getConfig()->get( 'TranslateGroupSynchronizationCache' ) ) {
 				$out->addHTML(
 					$this->displayGroupSyncInfo->getGroupsInSyncHtml(
@@ -196,10 +198,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->addHTML(
-			Html::openElement( 'form', [ 'method' => 'post' ] ) .
-			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText(), [
-				'id' => 'smgPageTitle'
-			] ) .
+			Html::openElement( 'form', [ 'method' => 'post', 'id' => 'smgForm', 'data-name' => $this->name ] ) .
 			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
 			Html::hidden( 'changesetModifiedTime',
 				MessageChangeStorage::getLastModifiedTime( $this->cdb ) ) .

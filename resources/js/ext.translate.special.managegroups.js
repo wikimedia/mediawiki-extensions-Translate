@@ -144,14 +144,10 @@
 			action: 'query',
 			meta: 'managemessagegroups',
 			formatversion: 2,
+			changesetName: getChangesetName(),
 			mmggroupId: groupId,
 			mmgmessageKey: msgKey
 		};
-
-		var changesetName = getChangesetName();
-		if ( changesetName !== null ) {
-			params.mmgchangesetName = changesetName;
-		}
 
 		return api.get( params ).then( function ( result ) {
 			return result.query;
@@ -159,24 +155,26 @@
 	}
 
 	/**
-	 * Identifies and returns the group name from the URL
+	 * Get our form.
+	 *
+	 * @return {HTMLFormElement}
+	 */
+	function getForm() {
+		return document.getElementById( 'smgForm' );
+	}
+
+	/**
+	 * Get the group name. It always returns a value; that value may be
+	 * `default` if nothing else was specified as special page subpage.
 	 *
 	 * @return {string}
 	 */
 	function getChangesetName() {
-		var locationPaths = window.location.pathname.split( '/' );
-		var suffix = locationPaths.pop();
-		var pageTitle = $( '#smgPageTitle' ).val();
-
-		if ( suffix && suffix.indexOf( pageTitle ) === -1 ) {
-			return suffix;
-		}
-
-		return null;
+		return getForm().dataset.name;
 	}
 
 	function getChangesetModifiedTime() {
-		var modifiedTime = $( '[name="changesetModifiedTime"]' ).val();
+		var modifiedTime = getForm().elements.namedItem( 'changesetModifiedTime' ).value;
 		modifiedTime = +modifiedTime;
 		if ( isNaN( modifiedTime ) ) {
 			return 0;
@@ -203,15 +201,12 @@
 			renameMessageKey: renameParams.selectedKey,
 			messageKey: renameParams.targetKey,
 			operation: 'rename',
+			changesetName: getChangesetName(),
 			changesetModified: getChangesetModifiedTime(),
 			assert: 'user',
 			formatversion: 2
 		};
 
-		var changesetName = getChangesetName();
-		if ( changesetName !== null ) {
-			params.changesetName = changesetName;
-		}
 		return api.postWithToken( 'csrf', params );
 	}
 
@@ -230,15 +225,11 @@
 			groupId: groupId,
 			messageKey: msgKey,
 			operation: 'new',
+			changesetName: getChangesetName(),
 			changesetModified: getChangesetModifiedTime(),
 			assert: 'user',
 			formatversion: 2
 		};
-
-		var changesetName = getChangesetName();
-		if ( changesetName !== null ) {
-			params.changesetName = changesetName;
-		}
 
 		return api.postWithToken( 'csrf', params );
 	}
