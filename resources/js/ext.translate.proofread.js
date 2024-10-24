@@ -1,5 +1,6 @@
 ( function () {
 	'use strict';
+	var logger = require( 'ext.translate.eventlogginghelpers' );
 
 	/**
 	 * Proofread Plugin
@@ -270,6 +271,10 @@
 
 			this.$message.find( '.tux-proofread-action' ).on( 'click', function () {
 				that.proofread();
+				logger.logClickEvent(
+					'review',
+					'review_button'
+				);
 				return false;
 			} );
 
