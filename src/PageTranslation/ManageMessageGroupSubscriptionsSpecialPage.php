@@ -225,7 +225,11 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 				$labels[self::NS_INVALID][$subscriptionItem] = $subscriptionItem;
 				continue;
 			}
-			$namespace = $messageGroup->getNamespace();
+
+			// For items with other namespaces that don't exist in Translate but broader MediaWiki
+			$relatedPage = $messageGroup->getRelatedPage();
+			$namespace = $relatedPage ? $relatedPage->getNamespace() : $messageGroup->getNamespace();
+
 			$groupLabel = $messageGroup->getLabel();
 			$labels[$namespace][$groupLabel] = $messageGroup;
 		}
