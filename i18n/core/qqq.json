@@ -43,7 +43,9 @@
 			"Սերգեյ Սաֆարյան",
 			"פוילישער",
 			"아라",
-			555
+			555,
+			"Byrial",
+			"Msz2001"
 		]
 	},
 	"translate": "{{doc-special|Translate}}\nIt is the verb \"to translate\".\n{{Identical|Translate}}",
@@ -501,5 +503,5 @@
 	"log-action-filter-translationreview-group": "{{doc-log-action-filter-action|translationreview|group}}",
 	"logentry-import-translatable-bundle": "{{logentry|[[Special:Log/import]]}}",
 	"log-action-filter-import-translatable-bundle": "{{doc-log-action-filter-action|import|translatable-bundle}}",
-	"translate-hidetranslations": "Filter option on Special:PrefixIndex to hide translation pages"
+	"translate-hidetranslations": "Filter option on Special:PrefixIndex and Special:WhatLinksHere to hide translation pages"
 }
