@@ -192,6 +192,9 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 	}
 
 	public function batchInsertTranslations( array $batch ): void {
+		if ( $batch === [] ) {
+			return;
+		}
 		$rows = [];
 		foreach ( $batch as $key => $data ) {
 			[ , $language, $text ] = $data;

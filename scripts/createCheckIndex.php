@@ -159,6 +159,9 @@ class CreateCheckIndex extends Maintenance {
 			->where( $conds )
 			->caller( __METHOD__ )
 			->fetchResultSet();
+		if ( $res->numRows() === 0 ) {
+			return;
+		}
 		$inserts = [];
 		foreach ( $res as $row ) {
 			$inserts[] = [
