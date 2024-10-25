@@ -20,6 +20,7 @@
 			"Linforest",
 			"LittlePaw365",
 			"Liuxinyu970226",
+			"Maitian MaiLin",
 			"Midleading",
 			"Mys 721tx",
 			"NigelSoft",
@@ -312,5 +313,7 @@
 	"visualeditor-annotations-tvar-start": "不可翻译内容的开始",
 	"visualeditor-annotations-tvar-end": "不可翻译内容的结尾",
 	"visualeditor-annotations-tvar-description": "此范围内的内容被标记为不可翻译。请参考[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation 源文本的分割]这一文档以获取更多信息。",
-	"tag-translate-translation-pages-description": "通过翻译扩展的自动翻译页面编辑"
+	"tag-translate-translation-pages-description": "通过翻译扩展的自动翻译页面编辑",
+	"special-tab-managemessagegroupsubscriptions-short": "查看和编辑",
+	"tpt-manage-message-group-subscriptions-edit-too-many'": "您的订阅已更新。"
 }

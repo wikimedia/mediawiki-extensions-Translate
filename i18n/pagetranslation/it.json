@@ -229,5 +229,6 @@
 	"tpt-unlink-summary": "Pagina rimossa dalla traduzione",
 	"tpt-generic-confirm": "Per favore, conferma l'azione.",
 	"tpt-generic-button": "Conferma",
-	"tag-translate-translation-pages-description": "Modifiche automatiche alle pagine di traduzione dell'estensione Translate"
+	"tag-translate-translation-pages-description": "Modifiche automatiche alle pagine di traduzione dell'estensione Translate",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppi:"
 }

@@ -338,6 +338,7 @@
 	"translate-msggroupselector-search-recent": "Скорешни",
 	"translate-msggroupselector-search-watched": "Набљудувани",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|подгрупа|подгрупи}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Раководење со ваши претплати",
 	"tux-languageselector": "Преведи на",
 	"tux-select-target-language": "Целен јазик за преводот",
 	"tux-watch-group": "Набљудувај",
@@ -473,5 +474,7 @@
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|нова или изменета порака|нови или изменети пораки}}",
 	"notification-link-mgs-group-translate": "Преведи ја $1",
 	"tpt-cleanchanges-language": "Јазик:",
-	"tpt-cleanchanges-language-na": "Сите"
+	"tpt-cleanchanges-language-na": "Сите",
+	"namespaceinfo-description-ns1198": "Именски простор кој содржи преводни единици, т.е. поединечни преводливи и преведени парчиња од [[Special:PageTranslation|преводливи страници]] и [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|групи пораки]]",
+	"namespaceinfo-description-ns1199": "Разговорни страници за преводни единици"
 }

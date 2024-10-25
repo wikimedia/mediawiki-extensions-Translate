@@ -227,5 +227,14 @@
 	"visualeditor-annotations-tvar-start": "Ufank vum net iwwersetzbaren Inhalt",
 	"visualeditor-annotations-tvar-end": "Schluss vum net iwwersetzbaren Inhalt",
 	"visualeditor-annotations-tvar-description": "Dëse Beräich ass als net iwwersetzbar markéiert. Kuckt wgl. ënner [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentéierung vum Ausgangstext] fir méi Informatiounen.",
-	"tag-translate-translation-pages-description": "Automatesch Ännerunge vun Iwwersetzungssäiten duerch d'Translate-Erweiderung"
+	"tag-translate-translation-pages-description": "Automatesch Ännerunge vun Iwwersetzungssäiten duerch d'Translate-Erweiderung",
+	"tpt-manage-message-group-subscriptions-normal-submit": "Abonnementer ewechhuelen",
+	"special-tab-managemessagegroupsubscriptions-short": "Weisen an änneren",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "Abonnementer ewechhuelen",
+	"tpt-manage-message-group-subscriptions-raw-done": "Är Abonnementer goufen aktualiséiert.",
+	"tpt-manage-message-group-subscriptions-raw-added": "Et {{PLURAL:$1|gouf 1 Abonnement|goufen $1 Abonnementer}} derbäigesat.",
+	"tpt-manage-message-group-subscriptions-raw-removed": "Et {{PLURAL:$1|gouf 1 Abonnement|goufen $1 Abonnementer}} ewechgeholl.",
+	"tpt-manage-message-group-subscriptions-edit-too-many'": "Är Abonnementer goufen aktualiséiert.",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppen:",
+	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnementer aktualiséieren"
 }

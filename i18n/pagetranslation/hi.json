@@ -266,5 +266,6 @@
 	"visualeditor-annotations-translate-description": "रेंज को अनुवाद-योग्य के तौर पर चिह्नित किया गया है। कृपया [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text स्रोत पाठ को बदलने] के लिए विधि का पालन करें।",
 	"visualeditor-annotations-tvar-start": "अनुवाद-अयोग्य सामग्री की शुरुआत",
 	"visualeditor-annotations-tvar-end": "अनुवाद-अयोग्य सामग्री का अंत",
-	"visualeditor-annotations-tvar-description": "इस रेंज को अनुवाद-अयोग्य के रूप में चिह्नित किया गया है। अधिक जानकारी के लिए [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation स्रोत पाठ का विभाजन] देखें।"
+	"visualeditor-annotations-tvar-description": "इस रेंज को अनुवाद-अयोग्य के रूप में चिह्नित किया गया है। अधिक जानकारी के लिए [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation स्रोत पाठ का विभाजन] देखें।",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "सभी चेक करें"
 }

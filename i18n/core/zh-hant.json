@@ -359,6 +359,7 @@
 	"translate-msggroupselector-search-recent": "近期",
 	"translate-msggroupselector-search-watched": "已監視",
 	"translate-msggroupselector-view-subprojects": "$1 個{{PLURAL:$1|小組|小組}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "管理您的訂閱",
 	"tux-languageselector": "翻譯至",
 	"tux-select-target-language": "翻譯的目標語言",
 	"tux-watch-group": "監視",
@@ -482,5 +483,6 @@
 	"notification-body-translate-mgs-message-added": "$1則新增或更新{{PLURAL:$1|訊息}}。",
 	"notification-link-mgs-group-translate": "翻譯$1",
 	"tpt-cleanchanges-language": "語言：",
-	"tpt-cleanchanges-language-na": "全部"
+	"tpt-cleanchanges-language-na": "全部",
+	"namespaceinfo-description-ns1199": "譯文單元討論頁"
 }

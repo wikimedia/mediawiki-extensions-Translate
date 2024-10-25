@@ -348,6 +348,7 @@
 	"translate-msggroupselector-search-recent": "Recent",
 	"translate-msggroupselector-search-watched": "Gevolgd",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgroep|subgroepen}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Uw abonnementen beheren",
 	"tux-languageselector": "Vertalen in het",
 	"tux-select-target-language": "Doeltaal voor de vertaling",
 	"tux-watch-group": "Volgen",
@@ -483,5 +484,7 @@
 	"notification-body-translate-mgs-message-added": "$1 bericht{{PLURAL:$1||en}} toegevoegd of bijgewerkt",
 	"notification-link-mgs-group-translate": "Vertalen: $1",
 	"tpt-cleanchanges-language": "Taal:",
-	"tpt-cleanchanges-language-na": "Alle talen"
+	"tpt-cleanchanges-language-na": "Alle talen",
+	"namespaceinfo-description-ns1198": "Naamruimte die vertaaleenheden bevat, d.w.z. individuele vertaalbare en vertaalde stukken van [[Special:PageTranslation|vertaalbare pagina’s]] en [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|berichtenbundels]]",
+	"namespaceinfo-description-ns1199": "Overlegpagina’s voor vertaaleenheden"
 }

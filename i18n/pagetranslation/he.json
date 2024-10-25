@@ -310,5 +310,20 @@
 	"visualeditor-annotations-tvar-end": "סוף תוכן לא לתרגום",
 	"visualeditor-annotations-tvar-description": "הטווח הזה סומן \"לא לתרגום\". נא לקרוא על [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Segmentation חלוקת טקסט המקור למקטעים] למידע נוסף.",
 	"tag-translate-translation-pages-description": "עריכות אוטומטיות של דפי תרגום על ידי ההרחבה Translate",
-	"tpt-cant-edit-source-language": "לא ניתן לערוך ידנית יחידות תרגום בשפת המקור. נא לעשות במקום זאת את השינוי לדף הבסיס ([[$1]]), ולאחר מכן לסמן אותו לתרגום."
+	"tpt-cant-edit-source-language": "לא ניתן לערוך ידנית יחידות תרגום בשפת המקור. נא לעשות במקום זאת את השינוי לדף הבסיס ([[$1]]), ולאחר מכן לסמן אותו לתרגום.",
+	"tpt-manage-message-group-subscriptions-list-anon-text": "נא להיכנס לחשבון כדי להציג או לערוך פריטים במינויים שלך לקבוצות הודעות.",
+	"tpt-manage-message-group-subscriptions-normal-legend": "ביטול מינוי לקבוצות הודעות",
+	"tpt-manage-message-group-subscriptions-normal-submit": "הסרת מינויים",
+	"tpt-manage-message-group-subscriptions-raw-legend": "עריכת מינויים גולמיים",
+	"tpt-manage-message-group-subscriptions-raw-title": "עריכת מינויים גולמיים לקבוצות הודעות",
+	"special-tab-managemessagegroupsubscriptions-short": "הצגה ועריכה",
+	"special-tab-managemessagegroupsubscriptions-raw-short": "ערוך רשימה גולמית",
+	"tpt-manage-message-group-subscriptions-edit-raw-title": "עריכת מינויים גולמיים",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "הסרת מינויים",
+	"tpt-manage-message-group-subscriptions-raw-done": "המינויים שלך עודכנו.",
+	"tpt-manage-message-group-subscriptions-edit-too-many'": "המינויים שלך עודכנו.",
+	"tpt-manage-message-group-subscriptions-too-many": "המינויים שלך עודכנו. יש יותר מדי קבוצות ולא ניתן להציגן כאן.",
+	"tpt-manage-message-group-subscriptions-raw-titles": "קבוצות:",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "לסמן הכול",
+	"tpt-manage-message-group-subscriptions-raw-submit": "עדכון מינויים"
 }

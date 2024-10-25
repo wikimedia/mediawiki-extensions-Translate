@@ -26,6 +26,7 @@
 			"Okras",
 			"Pacha Tchernof",
 			"Purodha",
+			"Stjn",
 			"Vlad5250",
 			"WindEwriX",
 			"Александр Сигачёв",
@@ -61,7 +62,7 @@
 	"tpt-edit-failed": "Невозможно обновить эту страницу: $1",
 	"tpt-duplicate": "Перевод элемента с названием <strong><bdi>$1</bdi></strong> используется более одного раза.",
 	"tpt-invalid": "Блок перевода <strong><bdi>$1</bdi></strong> не должен содержать знак подчёркивания или косую черту.",
-	"tpt-unit-title-too-long": "Название единицы перевода <strong><bdi>$1</strong> — это слишком долго. Общая длина переводимого заголовка страницы с префиксом пространства имен, названием единицы перевода и кодом языка составляет $2 {{PLURAL:$2|байт|байтов}}, что превышает максимально поддерживаемую длину $3 {{PLURAL:$3|байт|байты}}. Сократите имя единицы перевода (если оно было настроено) или [[Special:MovePage/$4|переименуйте переводимую страницу]] на более короткое имя, чтобы включить перевод.",
+	"tpt-unit-title-too-long": "Название единицы перевода <strong><bdi>$1</bdi></strong> слишком длинно. Общая длина переводимого заголовка страницы с префиксом пространства имён, названием единицы перевода и кодом языка — $2 {{PLURAL:$2|байт|байта|байтов}}, что длиннее максимальных $3 {{PLURAL:$3|байт|байта|байтов}}. Сократите название единицы перевода (если оно было изменено) или [[Special:MovePage/$4|переименуйте переводимую страницу]] в более краткое название, чтобы разрешить перевод.",
 	"tpt-unit-title-invalid": "Имя единицы перевода <strong><bdi>$1</bdi></strong> недопустимо: $2",
 	"tpt-unmarked": "Страница [[:$1]] больше не отмечена для перевода.",
 	"tpt-list-nopages": "Нет страниц, отмеченных для перевода, а также нет страниц готовых к отметке.",
@@ -296,5 +297,10 @@
 	"visualeditor-annotations-tvar-start": "Начало кода, не подлежащего переводу",
 	"visualeditor-annotations-tvar-end": "Конец кода, не подлежащего переводу",
 	"visualeditor-annotations-tvar-description": "Этот диапазон помечен как непереводимый. Пожалуйста, ознакомьсь с дополнительной информацией по [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation сегментации исходного текста].",
-	"tag-translate-translation-pages-description": "Автоматическое редактирование страниц перевода с помощью расширения Translate"
+	"tag-translate-translation-pages-description": "Автоматическое редактирование страниц перевода с помощью расширения Translate",
+	"special-tab-managemessagegroupsubscriptions-short": "Просмотр и редактирование",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "Удалить подписки",
+	"tpt-manage-message-group-subscriptions-edit-too-many'": "Ваши подписки обновлены.",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Группы:",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Проверить все"
 }

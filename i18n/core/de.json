@@ -354,6 +354,7 @@
 	"translate-msggroupselector-search-recent": "Aktuell",
 	"translate-msggroupselector-search-watched": "Beobachtet",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|Eine Untergruppe|$1 Untergruppen}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Verwalten deiner Abonnements",
 	"tux-languageselector": "Übersetzen auf",
 	"tux-select-target-language": "Zielsprache für die Übersetzung",
 	"tux-watch-group": "Beobachten",
@@ -489,5 +490,7 @@
 	"notification-body-translate-mgs-message-added": "$1 neue oder aktualisierte {{PLURAL:$1|Nachricht|Nachrichten}}",
 	"notification-link-mgs-group-translate": "Übersetzen $1",
 	"tpt-cleanchanges-language": "Sprache:",
-	"tpt-cleanchanges-language-na": "Alle"
+	"tpt-cleanchanges-language-na": "Alle",
+	"namespaceinfo-description-ns1198": "Namensraum, der Übersetzungseinheiten enthält, d.h. einzelne übersetzbare und übersetzte Teile von [[Special:PageTranslation|übersetzbaren Seiten]] und [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|Message Bundles]]",
+	"namespaceinfo-description-ns1199": "Diskussionsseiten für Übersetzungseinheiten"
 }

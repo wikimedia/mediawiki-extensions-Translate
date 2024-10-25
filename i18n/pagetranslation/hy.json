@@ -18,5 +18,11 @@
 	"pm-cancel-button-label": "Չեղարկել",
 	"pp-save-button-label": "Հրապարակել",
 	"pp-cancel-button-label": "Չեղարկել",
-	"tpt-generic-button": "Հաստատել"
+	"tpt-generic-button": "Հաստատել",
+	"tpt-manage-message-group-subscriptions-normal-submit": "Հեռացնել բաժանորդագրությունները",
+	"special-tab-managemessagegroupsubscriptions-short": "Դիտել և խմբագրել",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "Հեռացնել բաժանորդագրությունները",
+	"tpt-manage-message-group-subscriptions-raw-done": "Ձեր բաժանորդագրությունները թարմացվել են:",
+	"tpt-manage-message-group-subscriptions-edit-too-many'": "Ձեր բաժանորդագրությունները թարմացվել են:",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Խմբեր՝"
 }
