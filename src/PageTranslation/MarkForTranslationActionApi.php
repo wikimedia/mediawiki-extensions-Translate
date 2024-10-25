@@ -23,7 +23,7 @@ class MarkForTranslationActionApi extends ApiBase {
 
 	public function __construct(
 		ApiMain $mainModule,
-		$moduleName,
+		string $moduleName,
 		TranslatablePageMarker $translatablePageMarker,
 		MessageGroupMetadata $messageGroupMetadata
 	) {

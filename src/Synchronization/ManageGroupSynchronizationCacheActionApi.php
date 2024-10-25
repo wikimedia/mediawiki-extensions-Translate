@@ -25,7 +25,11 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 	private GroupSynchronizationCache $groupSyncCache;
 	private LoggerInterface $groupSyncLog;
 
-	public function __construct( ApiMain $mainModule, $moduleName, GroupSynchronizationCache $groupSyncCache ) {
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		GroupSynchronizationCache $groupSyncCache
+	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->groupSyncCache = $groupSyncCache;
 		$this->groupSyncLog = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );

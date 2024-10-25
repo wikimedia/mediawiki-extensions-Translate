@@ -20,7 +20,7 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 
 	public function __construct(
 		ApiMain $mainModule,
-		$moduleName,
+		string $moduleName,
 		MessageGroupSubscription $groupSubscription
 	) {
 		parent::__construct( $mainModule, $moduleName );

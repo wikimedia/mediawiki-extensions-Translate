@@ -18,7 +18,11 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 class QueryTranslationStatsActionApi extends ApiBase {
 	private TranslationStatsDataProvider $dataProvider;
 
-	public function __construct( ApiMain $mainModule, $moduleName, TranslationStatsDataProvider $dataProvider ) {
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		TranslationStatsDataProvider $dataProvider
+	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->dataProvider = $dataProvider;
 	}

@@ -18,7 +18,11 @@ class TranslationEntitySearchActionApi extends ApiBase {
 	private const GROUPS = 'groups';
 	private const MESSAGES = 'messages';
 
-	public function __construct( ApiMain $mainModule, $moduleName, EntitySearch $entitySearch ) {
+	public function __construct(
+		ApiMain $mainModule,
+		string $moduleName,
+		EntitySearch $entitySearch
+	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->entitySearch = $entitySearch;
 	}
