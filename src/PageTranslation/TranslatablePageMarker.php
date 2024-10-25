@@ -325,11 +325,14 @@ class TranslatablePageMarker {
 			->where( [ 'trs_page' => $title->getArticleID() ] )
 			->caller( __METHOD__ )
 			->execute();
-		$dbw->newInsertQueryBuilder()
-			->insertInto( 'translate_sections' )
-			->rows( $inserts )
-			->caller( __METHOD__ )
-			->execute();
+
+		if ( $inserts ) {
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'translate_sections' )
+				->rows( $inserts )
+				->caller( __METHOD__ )
+				->execute();
+		}
 
 		$this->saveMetadata( $operation, $pageSettings, $maxId, $user );
 
