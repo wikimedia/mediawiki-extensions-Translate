@@ -93,7 +93,7 @@ class DisplayGroupSynchronizationInfo {
 		string $summaryMsgKey,
 		string $descriptionMsgKey,
 		string $htmlContent,
-		string $preHtmlContent = null
+		?string $preHtmlContent = null
 	): string {
 		$output = Html::openElement( 'div', [ 'class' => $className ] );
 		if ( $preHtmlContent ) {

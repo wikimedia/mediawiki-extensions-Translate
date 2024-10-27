@@ -60,7 +60,7 @@ class TranslationUnit {
 		string $text,
 		string $id = self::NEW_UNIT_ID,
 		string $type = 'new',
-		string $oldText = null
+		?string $oldText = null
 	) {
 		$this->text = $text;
 		$this->id = $id;

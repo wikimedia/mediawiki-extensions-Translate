@@ -37,7 +37,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @param IContextSource|null $context
 	 * @return string
 	 */
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		return $this->label;
 	}
 
@@ -93,7 +93,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected $description = null;
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		return $this->description;
 	}
 
@@ -275,7 +275,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	protected static function addContext( Message $message, IContextSource $context = null ) {
+	protected static function addContext( Message $message, ?IContextSource $context = null ) {
 		if ( $context ) {
 			$message->inLanguage( $context->getLanguage() );
 		} else {

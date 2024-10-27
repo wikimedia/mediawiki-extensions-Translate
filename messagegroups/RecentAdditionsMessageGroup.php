@@ -21,14 +21,14 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		return '!additions';
 	}
 
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-additions-label' );
 		$msg = self::addContext( $msg, $context );
 
 		return $msg->plain();
 	}
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-additions-desc' );
 		$msg = self::addContext( $msg, $context );
 

@@ -176,7 +176,7 @@ class MessageIndex {
 	 * @param float|null $timestamp Purge interim caches older than this timestamp.
 	 * @throws Exception
 	 */
-	public function rebuild( float $timestamp = null ): array {
+	public function rebuild( ?float $timestamp = null ): array {
 		static $recursion = 0;
 
 		if ( $recursion > 0 ) {

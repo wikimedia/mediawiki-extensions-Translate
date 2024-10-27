@@ -541,7 +541,7 @@ class MessageWebImporter {
 		string $legend,
 		string $type,
 		string $content,
-		Language $lang = null
+		?Language $lang = null
 	): string {
 		$containerParams = [ 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" ];
 		$legendParams = [ 'class' => 'mw-tpt-sp-legend' ];

@@ -44,12 +44,12 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		return '!sandbox';
 	}
 
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		// Should not be visible
 		return 'Sandbox messages';
 	}
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		// Should not be visible
 		return 'Suggests messages to translate for sandboxed users';
 	}

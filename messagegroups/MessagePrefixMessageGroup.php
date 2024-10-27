@@ -25,11 +25,11 @@ class MessagePrefixMessageGroup extends WikiMessageGroup {
 		return '!prefix';
 	}
 
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		return 'Message prefixes';
 	}
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		return '"Messages in this message group are dynamically added based on ' .
 			'selecting of message prefix on Special:MessageGroupStats';
 	}

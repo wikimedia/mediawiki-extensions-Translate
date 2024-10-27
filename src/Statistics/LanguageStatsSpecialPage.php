@@ -380,7 +380,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 * @param MessageGroup|null $parent MessageGroup (do not use, used internally only)
 	 * @param int $depth The depth level of nesting. Top level is zero.
 	 */
-	private function makeGroupGroup( $item, array $cache, MessageGroup $parent = null, int $depth = 0 ): string {
+	private function makeGroupGroup( $item, array $cache, ?MessageGroup $parent = null, int $depth = 0 ): string {
 		if ( !is_array( $item ) ) {
 			return $this->makeGroupRow( $item, $cache, $parent, $depth );
 		}
@@ -405,7 +405,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private function makeGroupRow(
 		MessageGroup $group,
 		array $cache,
-		MessageGroup $parent = null,
+		?MessageGroup $parent = null,
 		int $depth = 0
 	): string {
 		$groupId = $group->getId();

@@ -25,8 +25,8 @@ class PersistentCacheEntry {
 	public function __construct(
 		string $key,
 		$value = null,
-		int $exptime = null,
-		string $tag = null
+		?int $exptime = null,
+		?string $tag = null
 	) {
 		if ( strlen( $key ) > self::MAX_KEY_LENGTH ) {
 			throw new InvalidArgumentException(

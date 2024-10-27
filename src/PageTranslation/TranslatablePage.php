@@ -275,7 +275,7 @@ class TranslatablePage extends TranslatableBundle {
 	}
 
 	/** Adds a tag which indicates that this page is suitable for translation. */
-	public function addMarkedTag( int $revision, array $value = null ) {
+	public function addMarkedTag( int $revision, ?array $value = null ) {
 		$this->revTagStore->replaceTag( $this->getPageIdentity(), RevTagStore::TP_MARK_TAG, $revision, $value );
 		self::clearSourcePageCache();
 	}
