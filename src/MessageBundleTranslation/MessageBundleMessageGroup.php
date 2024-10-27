@@ -104,12 +104,12 @@ class MessageBundleMessageGroup implements MessageGroup {
 	}
 
 	/** @inheritDoc */
-	public function getLabel( IContextSource $context = null ): string {
+	public function getLabel( ?IContextSource $context = null ): string {
 		return $this->label ?? $this->name;
 	}
 
 	/** @inheritDoc */
-	public function getDescription( IContextSource $context = null ): string {
+	public function getDescription( ?IContextSource $context = null ): string {
 		$titleText = Title::newFromID( $this->pageId )->getPrefixedText();
 		$linkTargetText = ":$titleText";
 		if ( $context ) {

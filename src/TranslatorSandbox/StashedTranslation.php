@@ -23,7 +23,7 @@ class StashedTranslation {
 	/** @var array|null */
 	protected $metadata;
 
-	public function __construct( User $user, Title $title, string $value, array $metadata = null ) {
+	public function __construct( User $user, Title $title, string $value, ?array $metadata = null ) {
 		$this->user = $user;
 		$this->title = $title;
 		$this->value = $value;

@@ -46,14 +46,14 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return '!recent';
 	}
 
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-recent-label' );
 		$msg = self::addContext( $msg, $context );
 
 		return $msg->plain();
 	}
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-recent-desc' );
 		$msg = self::addContext( $msg, $context );
 

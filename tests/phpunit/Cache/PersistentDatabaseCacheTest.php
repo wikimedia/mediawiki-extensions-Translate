@@ -50,7 +50,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideTestSetMulti */
-	public function testGetSetMulti( array $inputs, int $exptime = null, string $tag = null ) {
+	public function testGetSetMulti( array $inputs, ?int $exptime = null, ?string $tag = null ) {
 		$entries = $this->getEntriesFromInput( $inputs, $exptime, $tag );
 		$this->persistentCache->set( ...$entries );
 

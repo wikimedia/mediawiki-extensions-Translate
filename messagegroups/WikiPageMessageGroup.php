@@ -109,7 +109,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 	 * @param IContextSource|null $context
 	 * @return string
 	 */
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		return $this->getTitle()->getPrefixedText();
 	}
 
@@ -189,7 +189,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		return new TranslatablePageInsertablesSuggester();
 	}
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		$title = $this->getTitle()->getPrefixedText();
 		$target = ":$title";
 		$pageLanguageCode = $this->getSourceLanguage();

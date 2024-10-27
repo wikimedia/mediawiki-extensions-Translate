@@ -62,11 +62,11 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->getFromConf( 'BASIC', 'id' );
 	}
 
-	public function getLabel( IContextSource $context = null ) {
+	public function getLabel( ?IContextSource $context = null ) {
 		return $this->getFromConf( 'BASIC', 'label' );
 	}
 
-	public function getDescription( IContextSource $context = null ) {
+	public function getDescription( ?IContextSource $context = null ) {
 		return $this->getFromConf( 'BASIC', 'description' );
 	}
 

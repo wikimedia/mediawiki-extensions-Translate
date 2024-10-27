@@ -336,7 +336,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		] );
 	}
 
-	private function getGroupSynchronizationCache( int $timeout = null ): GroupSynchronizationCache {
+	private function getGroupSynchronizationCache( ?int $timeout = null ): GroupSynchronizationCache {
 		$mwServices = $this->getServiceContainer();
 		$connectionProvider = $mwServices->getConnectionProvider();
 		$jsonCodec = $mwServices->getJsonCodec();

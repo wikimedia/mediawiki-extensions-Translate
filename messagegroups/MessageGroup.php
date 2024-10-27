@@ -39,7 +39,7 @@ interface MessageGroup {
 	 *   translated descriptions, for example.
 	 * @return string
 	 */
-	public function getLabel( IContextSource $context = null );
+	public function getLabel( ?IContextSource $context = null );
 
 	/**
 	 * Returns a longer description about the group. Description can use wikitext.
@@ -48,7 +48,7 @@ interface MessageGroup {
 	 *   translated descriptions, for example.
 	 * @return string
 	 */
-	public function getDescription( IContextSource $context = null );
+	public function getDescription( ?IContextSource $context = null );
 
 	/**
 	 * Returns an icon for this message group if any.

@@ -67,7 +67,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		}
 	}
 
-	private function run( ApiPageSet $resultPageSet = null ): void {
+	private function run( ?ApiPageSet $resultPageSet = null ): void {
 		$params = $this->extractRequestParams();
 
 		$group = MessageGroups::getGroup( $params['group'] );
