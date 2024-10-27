@@ -129,7 +129,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	/** @return StringMatcher */
 	public function getMangler() {
-		if ( !isset( $this->mangler ) ) {
+		if ( $this->mangler === null ) {
 			$this->mangler = new StringMatcher();
 		}
 

@@ -50,7 +50,7 @@ class PageMoveOperation {
 	}
 
 	public function hasTalkpage(): bool {
-		return isset( $this->oldTalkpage );
+		return $this->oldTalkpage !== null;
 	}
 
 	public function getRenameErrorCode(): int {

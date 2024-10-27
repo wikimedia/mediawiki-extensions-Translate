@@ -35,7 +35,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	protected $conf;
 	/** @var int|false */
 	protected $namespace;
-	/** @var StringMatcher */
+	/** @var StringMatcher|null */
 	protected $mangler;
 
 	protected function __construct() {
@@ -126,7 +126,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	public function getMangler() {
-		if ( !isset( $this->mangler ) ) {
+		if ( $this->mangler === null ) {
 			$class = $this->getFromConf( 'MANGLER', 'class' ) ?? StringMatcher::class;
 
 			if ( $class === 'StringMatcher' || $class === StringMatcher::class ) {

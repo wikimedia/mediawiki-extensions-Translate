@@ -40,7 +40,7 @@ class ThinMessage extends Message {
 
 	/** @inheritDoc */
 	public function translation(): ?string {
-		if ( !isset( $this->row ) ) {
+		if ( $this->row === null ) {
 			return $this->infile();
 		}
 		return $this->translation;

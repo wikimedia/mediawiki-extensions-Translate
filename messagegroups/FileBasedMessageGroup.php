@@ -27,7 +27,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaExtender {
 	public const NO_FILE_FORMAT = 1;
 
-	/** @var array */
+	/** @var array|null */
 	protected $reverseCodeMap;
 
 	/**
@@ -186,7 +186,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		if ( isset( $this->conf['FILES']['codeMap'][$code] ) ) {
 			return $this->conf['FILES']['codeMap'][$code];
 		} else {
-			if ( !isset( $this->reverseCodeMap ) ) {
+			if ( $this->reverseCodeMap === null ) {
 				$this->reverseCodeMap = array_flip( $this->conf['FILES']['codeMap'] );
 			}
 

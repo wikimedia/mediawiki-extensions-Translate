@@ -65,7 +65,7 @@ class MessageBundleContent extends JsonContent {
 
 	/** @throws MalformedBundle */
 	public function getMessages(): array {
-		if ( isset( $this->messages ) ) {
+		if ( $this->messages !== null ) {
 			return $this->messages;
 		}
 
@@ -112,7 +112,7 @@ class MessageBundleContent extends JsonContent {
 	}
 
 	public function getMetadata(): MessageBundleMetadata {
-		if ( isset( $this->metadata ) ) {
+		if ( $this->metadata !== null ) {
 			return $this->metadata;
 		}
 

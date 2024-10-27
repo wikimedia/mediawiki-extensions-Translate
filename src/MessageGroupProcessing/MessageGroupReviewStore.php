@@ -91,7 +91,7 @@ class MessageGroupReviewStore {
 	/** Store priority for message group. Abusing this table that was intended to store message group states */
 	public function setGroupPriority( string $groupId, ?string $priority ): void {
 		$dbGroupId = self::getGroupIdForDatabase( $groupId );
-		if ( isset( $this->priorityCache ) ) {
+		if ( $this->priorityCache !== null ) {
 			$this->priorityCache[$dbGroupId] = $priority;
 		}
 
@@ -120,7 +120,7 @@ class MessageGroupReviewStore {
 	}
 
 	private function preloadGroupPriorities( string $caller ): void {
-		if ( isset( $this->priorityCache ) ) {
+		if ( $this->priorityCache !== null ) {
 			return;
 		}
 

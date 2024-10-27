@@ -61,7 +61,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 	}
 
 	private function getData(): array {
-		if ( isset( $this->data ) ) {
+		if ( $this->data !== null ) {
 			return $this->data;
 		}
 

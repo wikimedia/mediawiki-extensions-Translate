@@ -239,7 +239,7 @@ class MessageWebImporter {
 						$process = false;
 					} else {
 						// Check processing time
-						if ( !isset( $this->time ) ) {
+						if ( $this->time === null ) {
 							$this->time = (int)wfTimestamp();
 						}
 

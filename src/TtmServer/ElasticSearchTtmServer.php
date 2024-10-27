@@ -440,7 +440,7 @@ class ElasticSearchTtmServer
 	}
 
 	public function getClient(): Client {
-		if ( !isset( $this->client ) ) {
+		if ( $this->client === null ) {
 			if ( isset( $this->config['config'] ) ) {
 				$this->client = new Client( $this->config['config'] );
 			} else {
@@ -493,7 +493,7 @@ class ElasticSearchTtmServer
 
 	// Can it get any uglier?
 	private function logOutput( string $text ): void {
-		if ( isset( $this->logger ) ) {
+		if ( $this->logger !== null ) {
 			$this->logger->statusLine( "$text\n" );
 		}
 	}
