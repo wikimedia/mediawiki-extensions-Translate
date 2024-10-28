@@ -56,7 +56,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	protected array $keys = [];
 	/** array( %Message String => Message, ... ) */
 	protected ?array $messages = [];
-	private ?array $reverseMap;
+	private ?array $reverseMap = null;
 	// Database resources
 
 	/** Stored message existence and fuzzy state. */
@@ -785,7 +785,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/** Creates a two-dimensional map of namespace and pagenames. */
 	private function getReverseMap(): array {
-		if ( isset( $this->reverseMap ) ) {
+		if ( $this->reverseMap !== null ) {
 			return $this->reverseMap;
 		}
 

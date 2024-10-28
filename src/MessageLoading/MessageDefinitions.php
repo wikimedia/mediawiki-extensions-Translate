@@ -16,7 +16,7 @@ class MessageDefinitions {
 	/** @var string[] */
 	private array $messages;
 	/** @var Title[]|null */
-	private ?array $pages;
+	private ?array $pages = null;
 
 	/**
 	 * @param string[] $messages
@@ -35,7 +35,7 @@ class MessageDefinitions {
 	/** @return Title[] List of title indexed by message key. */
 	public function getPages(): array {
 		$namespace = $this->namespace;
-		if ( isset( $this->pages ) ) {
+		if ( $this->pages !== null ) {
 			return $this->pages;
 		}
 
