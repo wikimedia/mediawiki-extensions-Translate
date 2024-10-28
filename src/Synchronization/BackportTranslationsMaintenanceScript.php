@@ -251,7 +251,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 		$combinedMessages = [];
 		// $keyCompatibilityMap has the target (stable branch) source language key order
-		foreach ( $keyCompatibilityMap as $key => $isCompatible ) {
+		foreach ( $keyCompatibilityMap as $key => $isDefinitionCompatible ) {
 			$sourceValue = $sourceTemplate['MESSAGES'][$key] ?? null;
 			$targetValue = $targetTemplate['MESSAGES'][$key] ?? null;
 
@@ -260,9 +260,9 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$combinedMessages[$key] = $targetValue;
 			}
 
-			// If the source (development branch) has a different translation for a compatible key
-			// replace the target (stable branch) translation with it.
-			if ( !$isCompatible ) {
+			// The source (development branch) message definition in the source language is not compatible with the
+			// target (stable branch) definition. Skip exporting the message
+			if ( !$isDefinitionCompatible ) {
 				continue;
 			}
 
