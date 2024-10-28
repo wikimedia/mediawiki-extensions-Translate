@@ -482,5 +482,6 @@
 	"notification-link-mgs-group-translate": "לתרגם את $1",
 	"tpt-cleanchanges-language": "שפה:",
 	"tpt-cleanchanges-language-na": "הכול",
+	"namespaceinfo-description-ns1198": "מרחב שם שמכיל יחידות תרגום, כלומר חלקים נפרדים מתורגמים או כאלה שאפשר לתרגום של [[Special:PageTranslation|דפים לתרגום]] ו[[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles\n|חבילות הודעות]].",
 	"namespaceinfo-description-ns1199": "דפי שיחה ליחידות תרגום"
 }

@@ -23,6 +23,7 @@
 			"Litlok",
 			"Louperivois",
 			"Ltrlg",
+			"Mahabarata",
 			"McDutchie",
 			"Metroitendo",
 			"Orikrin1998",
@@ -509,7 +510,7 @@
 	"echo-category-title-translate-message-group-subscription": "Abonnements aux groupes de messages traduisibles",
 	"echo-pref-tooltip-translate-message-group-subscription": "Me notifier des changements dans les groupes de messages traduisibles auxquels je suis abonné{{GENDER:||e}}.",
 	"notification-header-message-group-subscription": "Changements dans les traductions de $1",
-	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|message ajouté|messages ajoutés}}",
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|message nouveau|messages nouveaux}} ou mis à jour",
 	"notification-link-mgs-group-translate": "Traduire $1",
 	"tpt-cleanchanges-language": "Langue :",
 	"tpt-cleanchanges-language-na": "Tous"

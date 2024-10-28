@@ -200,5 +200,9 @@
 	"tpt-unlink-button": "Уклони из система превођења",
 	"tpt-unlink-summary": "Уклоњена страница из система превођења",
 	"tpt-generic-confirm": "Потврдите радњу.",
-	"tpt-generic-button": "Потврди"
+	"tpt-generic-button": "Потврди",
+	"special-tab-managemessagegroupsubscriptions-short": "Види и уреди",
+	"special-tab-managemessagegroupsubscriptions-raw-short": "Уреди необрађен списак",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Групе:",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Означи све"
 }

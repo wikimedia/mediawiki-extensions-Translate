@@ -298,9 +298,11 @@
 	"visualeditor-annotations-tvar-end": "Конец кода, не подлежащего переводу",
 	"visualeditor-annotations-tvar-description": "Этот диапазон помечен как непереводимый. Пожалуйста, ознакомьсь с дополнительной информацией по [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation сегментации исходного текста].",
 	"tag-translate-translation-pages-description": "Автоматическое редактирование страниц перевода с помощью расширения Translate",
+	"tpt-manage-message-group-subscriptions-normal-submit": "Удалить подписки",
 	"special-tab-managemessagegroupsubscriptions-short": "Просмотр и редактирование",
 	"tpt-manage-message-group-subscriptions-edit-normal-title": "Удалить подписки",
 	"tpt-manage-message-group-subscriptions-edit-too-many'": "Ваши подписки обновлены.",
+	"tpt-manage-message-group-subscriptions-too-many": "Ваши подписки обновлены. Слишком много групп для отображения здесь.",
 	"tpt-manage-message-group-subscriptions-raw-titles": "Группы:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Проверить все"
 }

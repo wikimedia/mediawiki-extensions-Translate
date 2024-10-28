@@ -341,6 +341,7 @@
 	"translate-msggroupselector-search-recent": "Äskettäiset",
 	"translate-msggroupselector-search-watched": "Tarkkaillut",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|alaryhmä|alaryhmää}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Hallitse tilauksiasi",
 	"tux-languageselector": "Kohdekieli:",
 	"tux-select-target-language": "Kohdekieli käännöstä varten",
 	"tux-watch-group": "Tarkkaile",
