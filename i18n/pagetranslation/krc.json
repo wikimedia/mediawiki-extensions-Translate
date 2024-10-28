@@ -7,5 +7,6 @@
 		]
 	},
 	"tpt-languages-legend": "Башха тилле:",
-	"tpt-languages-nonzero": "$1 ($2% кёчюрюлгенди)"
+	"tpt-languages-nonzero": "$1 ($2% кёчюрюлгенди)",
+	"tpt-tab-translate": "Кёчюр"
 }
