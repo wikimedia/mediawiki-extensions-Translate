@@ -719,8 +719,6 @@ class Hooks {
 		$mwServices = MediaWikiServices::getInstance();
 		$en = $mwServices->getLanguageFactory()->getLanguage( 'en' );
 
-		$newLanguageLinks = [];
-
 		// Batch the Title::exists queries used below
 		$lb = $mwServices->getLinkBatchFactory()->newLinkBatch();
 		foreach ( array_keys( $languages ) as $code ) {
@@ -731,13 +729,13 @@ class Hooks {
 		$languageNameUtils = $mwServices->getLanguageNameUtils();
 		foreach ( $languages as $code => $percentage ) {
 			$title = $page->getTitle()->getSubpage( $code );
-			$key = "x-pagetranslation:{$title->getPrefixedText()}";
+			$placeholderValue = "$code-x-pagetranslation:{$title->getPrefixedText()}";
 			$translatedName = $page->getPageDisplayTitle( $code ) ?: $title->getPrefixedText();
 
 			if ( $title->exists() ) {
 				$href = $title->getLocalURL();
 				$classes = self::tpProgressIcon( (float)$percentage );
-				$title = wfMessage( 'tpt-languages-nonzero' )
+				$titleAttribute = wfMessage( 'tpt-languages-nonzero' )
 					->params( $translatedName )
 					->numParams( 100 * $percentage );
 			} else {
@@ -746,23 +744,20 @@ class Hooks {
 					'language' => $code,
 				] );
 				$classes = [ 'mw-pt-progress--none' ];
-				$title = wfMessage( 'tpt-languages-zero' );
+				$titleAttribute = wfMessage( 'tpt-languages-zero' );
 			}
 
-			self::$languageLinkData[ $key ] = [
+			self::$languageLinkData[ $placeholderValue ] = [
 				'href' => $href,
 				'language' => $code,
-				'percentage' => $percentage,
 				'classes' => $classes,
 				'autonym' => $en->ucfirst( $languageNameUtils->getLanguageName( $code ) ),
-				'title' => $title,
+				'title' => $titleAttribute,
 			];
 
-			$newLanguageLinks[ $key ] = self::$languageLinkData[ $key ][ 'autonym' ];
+			// Insert a placeholder which we will then fix up in SkinTemplateGetLanguageLink hook handler
+			$languageLinks[] = $placeholderValue;
 		}
-
-		asort( $newLanguageLinks );
-		$languageLinks = array_merge( array_keys( $newLanguageLinks ), $languageLinks );
 	}
 
 	/**
@@ -778,20 +773,17 @@ class Hooks {
 		Title $pageTitle,
 		OutputPage $out
 	) {
-		if ( !str_starts_with( $link['text'], 'x-pagetranslation:' ) ||
-			!isset( self::$languageLinkData[ $link['text'] ] )
-		) {
+		$data = self::$languageLinkData[$link['text']] ?? null;
+		if ( !$data ) {
 			return;
 		}
 
-		$data = self::$languageLinkData[ $link[ 'text' ] ];
-
-		$link[ 'class' ] .= ' ' . implode( ' ', $data[ 'classes' ] );
-		$link[ 'href' ] = $data[ 'href' ];
-		$link[ 'text' ] = $data[ 'autonym' ];
-		$link[ 'title' ] = $data[ 'title' ]->inLanguage( $out->getLanguage()->getCode() )->text();
-		$link[ 'lang'] = LanguageCode::bcp47( $data[ 'language' ] );
-		$link[ 'hreflang'] = LanguageCode::bcp47( $data[ 'language' ] );
+		$link['class'] .= ' interwiki-pagetranslation ' . implode( ' ', $data['classes'] );
+		$link['href'] = $data['href'];
+		$link['text'] = $data['autonym'];
+		$link['title'] = $data['title']->inLanguage( $out->getLanguage()->getCode() )->text();
+		$link['lang'] = LanguageCode::bcp47( $data['language'] );
+		$link['hreflang'] = LanguageCode::bcp47( $data['language'] );
 
 		$out->addModuleStyles( 'ext.translate.tag.languages' );
 	}
