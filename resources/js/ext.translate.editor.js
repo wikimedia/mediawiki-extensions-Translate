@@ -888,6 +888,16 @@
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.on( 'click', function ( e ) {
 						translateEditor.save();
+						logger.logClickEvent(
+							'open',
+							'publish_translation',
+							{
+								// eslint-disable-next-line camelcase
+								source_title: translateEditor.message.title,
+								// eslint-disable-next-line camelcase
+								source_type: 'message'
+							}
+						);
 						e.stopPropagation();
 					} );
 
@@ -928,6 +938,17 @@
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
 					translateEditor.next();
+
+					logger.logClickEvent(
+						'open',
+						'skip_to_next',
+						{
+							// eslint-disable-next-line camelcase
+							source_title: translateEditor.message.title,
+							// eslint-disable-next-line camelcase
+							source_type: 'message'
+						}
+					);
 
 					if ( translateEditor.options.onSkip ) {
 						translateEditor.options.onSkip.call( translateEditor );
@@ -1023,6 +1044,16 @@
 				.off( 'click' )
 				.on( 'click', function ( e ) {
 					self.save();
+					logger.logClickEvent(
+						'open',
+						'publish_translation',
+						{
+							// eslint-disable-next-line camelcase
+							source_title: self.message.title,
+							// eslint-disable-next-line camelcase
+							source_type: 'message'
+						}
+					);
 					e.stopPropagation();
 				} );
 		},
@@ -1441,7 +1472,16 @@
 
 			this.$editTrigger.find( '.tux-message-item' ).on( 'click', function () {
 				translateEditor.show();
-
+				logger.logClickEvent(
+					'open',
+					'edit_translation_button',
+					{
+						// eslint-disable-next-line camelcase
+						source_title: translateEditor.message.title,
+						// eslint-disable-next-line camelcase
+						source_type: 'message'
+					}
+				);
 				return false;
 			} );
 		},
