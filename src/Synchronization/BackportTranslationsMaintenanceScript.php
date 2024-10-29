@@ -20,6 +20,12 @@ use RuntimeException;
  * @author Niklas Laxström
  */
 class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
+	/**
+	 * List of language codes where a lot of translations have been moved under a different code.
+	 * Translations are never removed for these languages to avoid disturbances in stable releases.
+	 */
+	private const CHANGED_CODES = [ 'cdo', 'nan', 'sh', 'wuu', 'yue' ];
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Backport translations from one branch to another.' );
@@ -267,6 +273,9 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			}
 
 			if ( $sourceValue === null ) {
+				if ( in_array( $language, self::CHANGED_CODES, true ) ) {
+					continue;
+				}
 				// Translation no longer exists, remove it from the stable branch. See: T375487
 				$hasUpdates = true;
 				unset( $combinedMessages[$key] );
