@@ -293,6 +293,7 @@
 	"log-description-translationreview": "번역과 메시지 그룹에 대한 모든 검토 기록입니다.",
 	"logentry-translationreview-message": "$1님이 $3 번역을 {{GENDER:$2|검토했습니다}}",
 	"logentry-translationreview-group": "$1님이 $3의 $4 번역의 상태를 $6에서 $7(으)로 {{GENDER:$2|바꾸었습니다}}",
+	"translate-unfuzzy-comment": "더 이상 변경할 내용이 없으므로 번역 단위를 오래되지 않은 것으로 표시함",
 	"group-translate-sandboxed": "승인하지 않은 번역자",
 	"group-translate-sandboxed-member": "{{GENDER:$1|승인하지 않은 번역자}}",
 	"right-translate-sandboxmanage": "연습장 사용자 관리",
@@ -430,5 +431,6 @@
 	"echo-category-title-translate-message-group-subscription": "번역 가능한 메시지 그룹 구독",
 	"echo-pref-tooltip-translate-message-group-subscription": "구독 중인 번역 가능한 메시지 그룹에 변경이 있으면 내게 알립니다",
 	"tpt-cleanchanges-language": "언어:",
-	"tpt-cleanchanges-language-na": "모두"
+	"tpt-cleanchanges-language-na": "모두",
+	"namespaceinfo-description-ns1199": "번역 단위의 토론 문서"
 }

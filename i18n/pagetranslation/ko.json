@@ -219,9 +219,12 @@
 	"visualeditor-annotations-translate-description": "이 항목은 번역이 가능하도록 분류되었습니다. [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text changing the source text]에서 편집방침을 확인해 주십시오.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "메시지 그룹에서 구독을 취소",
 	"tpt-manage-message-group-subscriptions-normal-submit": "구독 제거",
+	"tpt-manage-message-group-subscriptions-raw-legend": "원본 구독 편집",
 	"special-tab-managemessagegroupsubscriptions-short": "보기 및 편집",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "구독 제거",
 	"tpt-manage-message-group-subscriptions-raw-done": "구독이 업데이트되었습니다.",
 	"tpt-manage-message-group-subscriptions-edit-too-many'": "구독이 업데이트되었습니다.",
 	"tpt-manage-message-group-subscriptions-raw-titles": "그룹:",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "모두 체크",
 	"tpt-manage-message-group-subscriptions-raw-submit": "구독 업데이트"
 }
