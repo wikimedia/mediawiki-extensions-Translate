@@ -5,9 +5,11 @@
 		]
 	},
 	"searchtranslations": "ਤਰਜਮੇ ਖੋਜੋ",
+	"tux-sst-edit": "ਤਰਜਮੇ ਸੋਧੋ",
 	"tux-sst-search-ph": "ਤਰਜਮੇ ਖੋਜੋ",
 	"tux-sst-default": "ਤਰਜਮੇ",
 	"tux-sst-translated": "$1 ਤੋਂ ਤਰਜਮੇ",
 	"tux-sst-outdated": "$1 ਤੋਂ ਪੁਰਾਣੇ ਤਰਜਮੇ",
+	"tux-sst-ellipsis-untranslated": "ਕੋਈ ਤਰਜਮਾ ਨਹੀਂ",
 	"tux-sst-ellipsis-outdated": "ਪੁਰਾਣੇ ਤਰਜਮੇ"
 }

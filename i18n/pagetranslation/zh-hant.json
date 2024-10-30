@@ -25,7 +25,8 @@
 			"列维劳德",
 			"捍粵者",
 			"SunAfterRain",
-			"Cookai1205"
+			"Cookai1205",
+			"Stjn"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -58,7 +59,7 @@
 	"tpt-edit-failed": "無法更新該頁面：$1",
 	"tpt-duplicate": "譯文單元名稱<strong><bdi>$1</bdi></strong>已被使用超過一次。",
 	"tpt-invalid": "譯文單位名稱<strong><bdi>$1</bdi></strong>不得包含底線或斜線。",
-	"tpt-unit-title-too-long": "翻譯單元名稱<strong><bdi>$1</strong>太長。可翻譯頁面標題與命名空間前綴、翻譯單元名稱、和語言代碼的總長度為 $2 {{PLURAL:$2|位元組}}，超於支援的最大長度 $3 {{PLURAL:$3|位元組}}。若是自訂的名稱請縮短翻譯單元名稱，或是[[Special:MovePage/$4|重新命名可翻譯頁面]]成更短的名稱，以便啟用翻譯。",
+	"tpt-unit-title-too-long": "翻譯單元名稱<strong><bdi>$1</bdi></strong>太長。可翻譯頁面標題與命名空間前綴、翻譯單元名稱、和語言代碼的總長度為 $2 {{PLURAL:$2|位元組}}，超於支援的最大長度 $3 {{PLURAL:$3|位元組}}。若是自訂的名稱請縮短翻譯單元名稱，或是[[Special:MovePage/$4|重新命名可翻譯頁面]]成更短的名稱，以便啟用翻譯。",
 	"tpt-unit-title-invalid": "翻譯單元名稱<strong><bdi>$1</bdi></strong>無效：$2",
 	"tpt-unmarked": "頁面「[[:$1]]」已不再標記為可用於翻譯。",
 	"tpt-list-nopages": "沒有頁面已標記需要翻譯或等待標記需要翻譯。",

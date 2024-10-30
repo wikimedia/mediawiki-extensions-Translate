@@ -13,7 +13,6 @@
 	"tux-sst-view-foreign": "$1에서 보기",
 	"tux-sst-search": "검색",
 	"tux-sst-search-ph": "번역 검색",
-	"tux-sst-search-info": "검색 범주를 더 정하기 위해 <code>언어:</code>나 <code>그룹:</code> 연산자를 사용해",
 	"tux-sst-count": "{{PLURAL:$1|결과 한 개를 찾았습니다|결과 $1개를 찾았습니다}}",
 	"tux-sst-facet-language": "언어",
 	"tux-sst-facet-group": "메시지 그룹",
