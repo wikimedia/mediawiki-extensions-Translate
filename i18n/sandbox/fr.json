@@ -6,6 +6,7 @@
 			"Framafan",
 			"Gomoko",
 			"Linedwell",
+			"Mahabarata",
 			"McDutchie",
 			"NemesisIII",
 			"Nobody",
@@ -62,5 +63,6 @@
 	"log-description-translatorsandbox": "Un journal des actions sur les utilisateurs du bac à sable de traduction",
 	"logentry-translatorsandbox-promoted": "$1{{GENDER:$2|}} a promu $3 en traduct{{GENDER:$4|eur|rice}}.",
 	"logentry-translatorsandbox-rejected": "$1{{GENDER:$2|}} a rejeté la demande de « $3 » pour devenir traducteur ou traductrice",
-	"logentry-newusers-tsbpromoted": "Le compte de l’utilisat·eur·rice $3 a été créé par promotion du bac à sable par {{GENDER:$2|}}$2"
+	"logentry-newusers-tsbpromoted": "Le compte de l’utilisat·eur·rice $3 a été créé par promotion du bac à sable par {{GENDER:$2|}}$2",
+	"tsb-other-actions": "Vous devez [[Special:TranslationStash|répondre à des tests de traduction]] et les faire approuver avant de pouvoir commencer à traduire."
 }
