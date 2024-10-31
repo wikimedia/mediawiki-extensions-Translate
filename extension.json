@@ -753,6 +753,7 @@
 				"ext.translate.base",
 				"ext.translate.loader",
 				"ext.translate.statsbar",
+				"mediawiki.language",
 				"mediawiki.jqueryMsg"
 			],
 			"messages": [
@@ -948,6 +949,7 @@
 				"ext.translate.messagetable",
 				"jquery.uls.data",
 				"mediawiki.api",
+				"mediawiki.language",
 				"mediawiki.jqueryMsg",
 				"mediawiki.storage"
 			],

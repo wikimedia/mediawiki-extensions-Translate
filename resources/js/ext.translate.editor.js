@@ -717,9 +717,11 @@
 							}
 						} );
 
+						var formattedNoticeCount = mw.language.convertNumber(
+							lastNoticeIndex );
 						$this
 							.removeClass( 'open' )
-							.text( mw.msg( 'tux-notices-more', lastNoticeIndex ) );
+							.text( mw.msg( 'tux-notices-more', formattedNoticeCount ) );
 					} else {
 						$moreNotices.each( function ( index, element ) {
 							// The first element must always be shown
@@ -1229,8 +1231,10 @@
 			var noticeCount = $notices.find( '.tux-notice-message' ).length;
 
 			if ( noticeCount > 1 ) {
+				var formattedNoticeCount = mw.language.convertNumber(
+					noticeCount - 1 );
 				$moreNoticesButton
-					.text( mw.msg( 'tux-notices-more', noticeCount - 1 ) )
+					.text( mw.msg( 'tux-notices-more', formattedNoticeCount ) )
 					.removeClass( 'hide open' );
 			} else {
 				$moreNoticesButton.addClass( 'hide' );

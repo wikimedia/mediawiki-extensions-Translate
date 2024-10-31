@@ -518,7 +518,8 @@
 				.find( '.tux-breadcrumb__item--aggregate-count' )
 				.remove();
 		} else {
-			var subGroups = mw.msg( 'translate-msggroupselector-view-subprojects', groupCounts );
+			var formattedGroupCounts = mw.language.convertNumber( groupCounts );
+			var subGroups = mw.msg( 'translate-msggroupselector-view-subprojects', formattedGroupCounts );
 			$selectedGroup.append(
 				$( '<span>' ).append( mw.message( 'parentheses', $( '<span>' ).text( subGroups ) ).parse() )
 					.addClass( 'tux-breadcrumb__item--aggregate-count' )

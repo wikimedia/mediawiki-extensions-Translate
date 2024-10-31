@@ -588,11 +588,13 @@
 			var $subGroupsLabel = $( [] );
 
 			if ( messagegroup.groups && messagegroup.groups.length > 0 ) {
+				var formattedGroupCounts = mw.language.convertNumber(
+					messagegroup.groups.length );
 				$subGroupsLabel = $( '<div>' )
 					.addClass( 'tux-grouplist__item__subgroups' )
 					.addClass( 'four columns' )
 					.text( mw.msg( 'translate-msggroupselector-view-subprojects',
-						messagegroup.groups.length ) );
+						formattedGroupCounts ) );
 			}
 
 			return $row.append( $icon, $label, $subGroupsLabel );
