@@ -38,8 +38,8 @@
 		}
 	],
 	"ExtensionMessagesFiles": {
-		"TranslateAlias": "Translate.alias.php",
-		"TranslateMagic": "Translate.i18n.magic.php"
+		"TranslateAlias": "i18n/Translate.alias.php",
+		"TranslateMagic": "i18n/Translate.i18n.magic.php"
 	},
 	"MessagesDirs": {
 		"PageTranslation": [
