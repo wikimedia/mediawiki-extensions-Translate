@@ -790,6 +790,7 @@
 							.val( sourceString )
 							.trigger( 'input' );
 
+						logger.logClickEvent( 'paste', 'paste_source_button' );
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
@@ -1514,7 +1515,10 @@
 					dir: targetLangDir
 				} )
 				.val( this.message.translation || '' )
-				.prop( 'placeholder', placeholder );
+				.prop( 'placeholder', placeholder )
+				.on( 'paste', function () {
+					logger.logClickEvent( 'paste', 'direct_paste' );
+				} );
 		}
 	};
 
