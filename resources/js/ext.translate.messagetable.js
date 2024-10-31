@@ -1,6 +1,6 @@
 ( function () {
 	'use strict';
-
+	var logger = require( 'ext.translate.eventlogginghelpers' );
 	var itemsClass = {
 		proofread: '.tux-message-proofread',
 		page: '.tux-message-pagemode',
@@ -79,14 +79,17 @@
 
 			this.$actionBar.find( 'button.proofread-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'proofread' );
+				logger.logClickEvent( 'change_mode', 'review' );
 			} );
 
 			this.$actionBar.find( 'button.translate-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'translate' );
+				logger.logClickEvent( 'change_mode', 'list' );
 			} );
 
 			this.$actionBar.find( 'button.page-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'page' );
+				logger.logClickEvent( 'change_mode', 'page' );
 			} );
 
 			this.$proofreadOwnTranslations.on( 'click', function () {
