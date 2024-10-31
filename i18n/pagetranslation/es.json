@@ -36,7 +36,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"AnupamM",
-			"ZebaX2010"
+			"ZebaX2010",
+			"Stjn"
 		]
 	},
 	"pagetranslation": "Traducción de páginas",
@@ -69,8 +70,8 @@
 	"tpt-edit-failed": "No se pudo actualizar la página: $1",
 	"tpt-duplicate": "El nombre de la unidad de traducción <strong><bdi>$1</bdi></strong> es utilizado más de una vez.",
 	"tpt-invalid": "El nombre de la unidad de traducción <strong><bdi>$1</bdi></strong> no debe contener guion bajo o barra.",
-	"tpt-unit-title-too-long": "El nombre de la unidad de traducción <strong><bdi>$1</strong> es demasiado largo. La longitud combinada del título de la página traducible con el prefijo del espacio de nombres, el nombre de la unidad de traducción y el código de idioma es $2 {{PLURAL:$2|byte|bytes}}, que es más largo que la longitud máxima admitida de $3 {{PLURAL:$3|byte|bytes}}. Acorta el nombre de la unidad de traducción (si se ha personalizado) o [[Special:MovePage/$4|cambia el nombre de la página traducible]] a un nombre más corto para habilitar la traducción.",
-	"tpt-unit-title-invalid": "El nombre de la unidad de traducción <strong><bdi>$1</strong> no es válido: $2",
+	"tpt-unit-title-too-long": "El nombre de la unidad de traducción <strong><bdi>$1</bdi></strong> es demasiado largo. La longitud combinada del título de la página traducible con el prefijo del espacio de nombres, el nombre de la unidad de traducción y el código de idioma es $2 {{PLURAL:$2|byte|bytes}}, que es más largo que la longitud máxima admitida de $3 {{PLURAL:$3|byte|bytes}}. Acorta el nombre de la unidad de traducción (si se ha personalizado) o [[Special:MovePage/$4|cambia el nombre de la página traducible]] a un nombre más corto para habilitar la traducción.",
+	"tpt-unit-title-invalid": "El nombre de la unidad de traducción <strong><bdi>$1</bdi></strong> no es válido: $2",
 	"tpt-unmarked": "La página [[:$1]] ya no está marcada para traducción.",
 	"tpt-list-nopages": "Ninguna página está marcada para traducción ni lista para ser marcada para traducción.",
 	"tpt-new-pages-title": "Páginas propuestas para traducción",
