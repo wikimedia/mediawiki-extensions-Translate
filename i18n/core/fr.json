@@ -378,6 +378,7 @@
 	"translate-msggroupselector-search-recent": "Récents",
 	"translate-msggroupselector-search-watched": "Suivis",
 	"translate-msggroupselector-view-subprojects": "$1 sous-groupe{{PLURAL:$1||s}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Gérez vos abonnements",
 	"tux-languageselector": "Traduire en",
 	"tux-select-target-language": "Langue cible pour la traduction",
 	"tux-watch-group": "Suivre",
@@ -513,5 +514,7 @@
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|message nouveau|messages nouveaux}} ou mis à jour",
 	"notification-link-mgs-group-translate": "Traduire $1",
 	"tpt-cleanchanges-language": "Langue :",
-	"tpt-cleanchanges-language-na": "Tous"
+	"tpt-cleanchanges-language-na": "Tous",
+	"namespaceinfo-description-ns1198": "Espace de noms contenant des unités de traduction, c'est-à-dire des éléments individuels traduisibles et traduites de [[Special:PageTranslation|pages traduisibles]] et de [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|groupes de messages]]",
+	"namespaceinfo-description-ns1199": "Pages de discussion pour les traductions"
 }
