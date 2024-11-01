@@ -344,6 +344,7 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|زیرگروه|زیرگروه}}",
 	"tux-languageselector": "ترجمه به",
 	"tux-select-target-language": "زبان هدف برای ترجمه",
+	"tux-watch-group": "پیگیری",
 	"tux-tab-all": "همه",
 	"tux-tab-untranslated": "ترجمه‌نشده",
 	"tux-tab-outdated": "تاریخ‌گذشته",
