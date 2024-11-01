@@ -522,13 +522,16 @@
 				}
 			} );
 
-			mw.translate.changeUrl( {
+			var newUrlParams = {
 				group: state.group,
 				language: state.language,
 				filter: filter,
-				showMessage: offset,
-				optional: offset ? 1 : undefined
-			} );
+				showMessage: offset
+			};
+			if ( offset ) {
+				newUrlParams.optional = 1;
+			}
+			mw.translate.changeUrl( newUrlParams );
 
 			// Start loading messages
 			var actualFilter = getActualFilter( filter );
