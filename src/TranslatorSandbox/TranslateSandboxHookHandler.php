@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use ApiMessage;
+use MediaWiki\Api\ApiLogout;
+use MediaWiki\Api\ApiOptions;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Config\Config;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
@@ -96,9 +98,9 @@ class TranslateSandboxHookHandler implements
 			// Obviously this is needed to get out of the sandbox
 			TranslationStashActionApi::class,
 			// Used by UniversalLanguageSelector for example
-			\ApiOptions::class,
+			ApiOptions::class,
 			// Allow logging out
-			\ApiLogout::class,
+			ApiLogout::class,
 			// Allow marking the welcome notification as read
 			\MediaWiki\Extension\Notifications\Api\ApiEchoMarkRead::class,
 		];
