@@ -12,7 +12,8 @@
 			"R-Joe",
 			"Tacsipacsi",
 			"Tgr",
-			"Xbspiro"
+			"Xbspiro",
+			"Ewithu"
 		]
 	},
 	"pagetranslation": "Lap fordítása",
@@ -45,7 +46,7 @@
 	"tpt-showpage-intro": "Alább az új, már létező és törölt szakaszok felsorolása látható.\nMielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok változásai minimálisak, elkerülendő a felesleges munkát a fordítóknak.",
 	"tpt-mark-summary": "Változat megjelölve fordításra",
 	"tpt-mark-nochanges": "Nincs átnézendő változtatás. A lap megjelölése fordításra nem fogja módosítani se a lapot, sem bármilyen létező fordítási egységet.",
-	"tpt-edit-failed": "Nem sikerült frissíteni a lapot: $1",
+	"tpt-edit-failed": "Nem sikerült frissíteni a(z) $1 lapot",
 	"tpt-duplicate": "A(z) $1 név több fordítási egységhez is tartozik",
 	"tpt-invalid": "A(z) $1 fordításiegység-név nem tartalmazhat alávonást vagy perjelet.",
 	"tpt-unmarked": "A(z) [[:$1]] lap most már nincs megjelölve fordításra.",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Rzuwig"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Zarządzaj grupami zbiorczymi komunikatów.",

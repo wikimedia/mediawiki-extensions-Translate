@@ -10,7 +10,9 @@
 			"Lemondoge",
 			"Macofe",
 			"MarcoAurelio",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Eulalio",
+			"No se"
 		]
 	},
 	"apihelp-aggregategroups-description": "Administrar grupos de mensajes agregados.\n\nPuedes agregar y quitar grupos de mensajes agregados, y asociar o disociar a ellos grupos de mensajes (uno a la vez).",

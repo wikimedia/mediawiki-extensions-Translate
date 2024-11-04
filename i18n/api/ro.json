@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"NGC 54"
+			"NGC 54",
+			"Paloi Sciurala"
 		]
 	},
 	"apihelp-query+messagecollection-example-1": "Lista limbilor suportate",
