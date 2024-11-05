@@ -7,6 +7,7 @@ use ErrorPageError;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
@@ -15,7 +16,6 @@ use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use PermissionsError;
 use ReadOnlyError;
-use Xml;
 
 /**
  * Special page which enables deleting translations of translatable bundles and translation pages
@@ -299,7 +299,7 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private function getCommonFormFields(): array {
 		$dropdownOptions = $this->msg( 'deletereason-dropdown' )->inContentLanguage()->text();
 
-		$options = Xml::listDropdownOptions(
+		$options = Html::listDropdownOptions(
 			$dropdownOptions,
 			[
 				'other' => $this->msg( 'pt-deletepage-reason-other' )->inContentLanguage()->text()
