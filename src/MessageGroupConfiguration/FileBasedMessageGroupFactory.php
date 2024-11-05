@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 use FileDependency;
-use GlobalDependency;
+use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
 use MessageGroupBase;
@@ -41,7 +41,7 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 	}
 
 	public function getDependencies(): array {
-		$deps = [ new GlobalDependency( 'wgTranslateGroupFiles' ) ];
+		$deps = [ new MainConfigDependency( 'TranslateGroupFiles' ) ];
 
 		foreach ( $this->groupFiles as $configFile ) {
 			$deps[] = new FileDependency( realpath( $configFile ) );

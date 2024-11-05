@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
-use GlobalDependency;
+use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -41,7 +41,7 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 	}
 
 	public function getDependencies(): array {
-		return [ new GlobalDependency( 'wgTranslateEnableMessageBundleIntegration' ) ];
+		return [ new MainConfigDependency( 'TranslateEnableMessageBundleIntegration' ) ];
 	}
 
 	public function getData( IReadableDatabase $db ) {

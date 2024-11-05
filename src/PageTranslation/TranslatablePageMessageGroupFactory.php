@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use CacheDependency;
-use GlobalDependency;
+use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -41,7 +41,7 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 
 	/** @return CacheDependency[] */
 	public function getDependencies(): array {
-		return [ new GlobalDependency( 'wgEnablePageTranslation' ) ];
+		return [ new MainConfigDependency( 'EnablePageTranslation' ) ];
 	}
 
 	/** @return string[] */
