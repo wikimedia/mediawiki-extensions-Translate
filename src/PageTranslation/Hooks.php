@@ -1787,7 +1787,7 @@ class Hooks {
 		$categories = $linksUpdate->getParserOutput()->getCategoryNames();
 		$editSummary = wfMessage(
 			'translate-category-summary',
-			$linksUpdate->getTitle()->getText()
+			$linksUpdate->getTitle()->getPrefixedText()
 		)->inContentLanguage()->text();
 		foreach ( $categories as $category ) {
 			$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
@@ -1803,7 +1803,7 @@ class Hooks {
 					TranslatablePage::isTranslationPage( $categoryTitle ),
 					$code,
 					FuzzyBot::getUser(),
-					0,
+					EDIT_FORCE_BOT,
 					$editSummary,
 					RenderTranslationPageJob::ACTION_CATEGORIZATION
 				);
