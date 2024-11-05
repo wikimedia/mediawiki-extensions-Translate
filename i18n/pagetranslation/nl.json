@@ -335,5 +335,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "{{PLURAL:$1|Eén berichtengroep is|$1 berichtengroepen zijn}} uit uw abonnementen verwijderd:",
 	"tpt-manage-message-group-subscriptions-raw-titles": "Groepen:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Alles markeren",
-	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnementen bijwerken"
+	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnementen bijwerken",
+	"translate-category-summary": "Automatisch aangemaakte vertaling van een op [[$1]] gebruikte categorie"
 }

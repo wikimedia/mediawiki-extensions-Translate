@@ -333,5 +333,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "{{PLURAL:$1|1 Nachrichtengruppe wurde|$1 Nachrichtengruppen wurden}} aus deinen Abonnements entfernt:",
 	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppen:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Alle Häkchen setzen",
-	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnements aktualisieren"
+	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnements aktualisieren",
+	"translate-category-summary": "Automatische Erstellung der Übersetzung der Kategorie, die auf [[$1]] verwendet wird"
 }
