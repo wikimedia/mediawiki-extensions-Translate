@@ -102,7 +102,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 			usleep( 500 * 1000 );
 		} while ( $attemptsCount <= self::MAX_TRIES );
 
-		if ( !$messageGroup ) {
+		if ( $messageGroup ) {
 			$messageGroup->clearCaches();
 			$this->logInfo(
 				'Cleared caches after {attemptCount} attempt(s)',
