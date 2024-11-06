@@ -28,9 +28,10 @@ class MessageBundleTranslationLoader {
 	): array {
 		$translations = $this->getTranslationsWithFallback( $messageBundle, $languageCode, $skipFallbacks );
 		$normalizedTranslations = [];
+		$prefixToReplace = '/^' . preg_quote( $messageBundle->getTitle()->getPrefixedDBkey() . '/', '/' ) . '/';
 		foreach ( $translations as $key => $translation ) {
 			$normalizedTranslations[
-				str_replace( "{$messageBundle->getTitle()->getDBkey()}/", '', $key )
+				preg_replace( $prefixToReplace, '', $key )
 			] = $translation;
 		}
 
