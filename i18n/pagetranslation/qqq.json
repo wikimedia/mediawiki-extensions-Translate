@@ -32,7 +32,8 @@
 			"Zoranzoki21",
 			"Tacsipacsi",
 			"Wangombe",
-			"McDutchie"
+			"McDutchie",
+			"Pppery"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -56,7 +57,7 @@
 	"tpt-oldrevision": "Error message displayed when trying to mark an older page revision for translation. Parameters:\n* $1 is a page title.\n* $2 is a page link.",
 	"tpt-notsuitable": "Parameters:\n* $1 - page title\n* $2 - <code>&lt;translate></code> tag",
 	"tpt-saveok": "Followed by {{msg-mw|Tpt-saveok-first}} if the page is being marked for translation for the first time and {{msg-mw|Tpt-offer-notify}} if the user is allowed to notify translators.\n\nParameters:\n* $1 - page title\n* $2 - number of sections, can be used with PLURAL\n* $3 - URL which points to [[Special:Translate]]",
-	"tpt-saveok-first": "Message displayed on [[Special:PageTranslation]] after marking a page for translation the very first time.\n\nParameters:\n* $1 - a URL to [[Special:PageMigration]]",
+	"tpt-saveok-first": "Message displayed on [[Special:PageTranslation]] after marking a page for translation the very first time.",
 	"tpt-offer-notify": "Message displayed on [[Special:PageTranslation]] after marking a page for translation when the marking user also has right to notify translators.\n\nParameters:\n* $1 - a URL to [[Special:NotifyTranslators]] with the marked page preselected",
 	"tpt-list-pages-in-translations": "Message displayed on [[Special:PageTranslation]] after marking a page for translation to view the list of translatable pages.",
 	"tpt-showpage-intro": "See definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].",
