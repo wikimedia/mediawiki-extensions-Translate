@@ -344,5 +344,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "已從訂閱清單中移除{{PLURAL:$1|$1個}}訊息群組：",
 	"tpt-manage-message-group-subscriptions-raw-titles": "群組：",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "選取所有",
-	"tpt-manage-message-group-subscriptions-raw-submit": "更新訊息群組訂閱"
+	"tpt-manage-message-group-subscriptions-raw-submit": "更新訊息群組訂閱",
+	"translate-category-summary": "自動建立使用於[[$1]]的分類的譯文頁面"
 }

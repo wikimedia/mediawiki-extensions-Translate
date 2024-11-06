@@ -330,5 +330,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "{{PLURAL:$1|קבוצת הודעות אחת הוסרה|$1 קבוצות הודעות הוסרו}} מהמינויים שלך:",
 	"tpt-manage-message-group-subscriptions-raw-titles": "קבוצות:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "לסמן הכול",
-	"tpt-manage-message-group-subscriptions-raw-submit": "עדכון מינויים"
+	"tpt-manage-message-group-subscriptions-raw-submit": "עדכון מינויים",
+	"translate-category-summary": "יצירת אוטומטית של תרגום הקטגוריה שמשמשת בדף [[$1]]"
 }
