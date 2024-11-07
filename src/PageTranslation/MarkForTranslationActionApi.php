@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use ApiBase;
 use ApiMain;
 use IDBAccessObject;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Status\Status;
@@ -122,6 +123,7 @@ class MarkForTranslationActionApi extends ApiBase {
 			$unitCount = $this->translatablePageMarker->markForTranslation(
 				$operation,
 				$translatablePageSettings,
+				RequestContext::getMain(),
 				$this->getUser()
 			);
 		} catch ( TranslatablePageMarkException $e ) {

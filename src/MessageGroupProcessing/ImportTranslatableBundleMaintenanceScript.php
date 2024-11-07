@@ -239,7 +239,12 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		}
 
 		try {
-			$translatablePageMarker->markForTranslation( $operation, $translatablePageSettings, $user );
+			$translatablePageMarker->markForTranslation(
+				$operation,
+				$translatablePageSettings,
+				RequestContext::getMain(),
+				$user
+			);
 			$this->output( "The page {$bundleTitle->getPrefixedText()} has been marked for translation.\n" );
 		} catch ( TranslatablePageMarkException $e ) {
 			$this->error( "Error while marking page {$bundleTitle->getPrefixedText()} for translation.\n" );

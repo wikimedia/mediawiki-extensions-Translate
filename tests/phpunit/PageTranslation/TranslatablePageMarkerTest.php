@@ -5,11 +5,13 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use IDBAccessObject;
 use JobQueueGroup;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
@@ -48,7 +50,8 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$getServiceOrMock( MessageGroupMetadata::class ),
 			$getServiceOrMock( WikiPageFactory::class ),
 			$getServiceOrMock( TranslatablePageView::class ),
-			$getServiceOrMock( MessageGroupSubscription::class )
+			$getServiceOrMock( MessageGroupSubscription::class ),
+			$getServiceOrMock( FormatterFactory::class )
 		);
 	}
 
@@ -129,6 +132,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
 				TranslatablePageView::class => $services->get( 'Translate:TranslatablePageView' ),
 				MessageGroupSubscription::class => $services->get( 'Translate:MessageGroupSubscription' ),
+				FormatterFactory::class => $services->getFormatterFactory(),
 			]
 		);
 
@@ -159,6 +163,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				$forceLatestSyntaxVersion,
 				$enableTransclusion
 			),
+			RequestContext::getMain(),
 			$this->getTestSysop()->getUser()
 		);
 		$this->assertEquals(
@@ -239,6 +244,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		$markPage->unmarkPage(
 			TranslatablePage::newFromTitle( $page ),
 			$this->getTestUser()->getUser(),
+			RequestContext::getMain(),
 			true
 		);
 		$currentText = $services->getRevisionLookup()->getRevisionByTitle( $page )

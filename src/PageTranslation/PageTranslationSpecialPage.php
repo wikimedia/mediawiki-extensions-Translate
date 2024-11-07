@@ -246,6 +246,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$this->translatablePageMarker->unmarkPage(
 					TranslatablePage::newFromTitle( $title ),
 					$user,
+					$this,
 					$action === 'unlink'
 				);
 
@@ -331,6 +332,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$unitCount = $this->translatablePageMarker->markForTranslation(
 					$operation,
 					$translatablePageSettings,
+					$this,
 					$this->getUser()
 				);
 				$this->showSuccess( $operation->getPage(), $operation->isFirstMark(), $unitCount );

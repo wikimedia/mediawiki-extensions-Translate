@@ -397,7 +397,8 @@ return [
 			$services->get( 'Translate:MessageGroupMetadata' ),
 			$services->getWikiPageFactory(),
 			$services->get( 'Translate:TranslatablePageView' ),
-			$services->get( 'Translate:MessageGroupSubscription' )
+			$services->get( 'Translate:MessageGroupSubscription' ),
+			$services->getFormatterFactory()
 		);
 	},
 

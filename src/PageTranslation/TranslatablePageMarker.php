@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptio
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Message\Message;
 use MediaWiki\Page\PageRecord;
@@ -20,12 +21,14 @@ use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
+use MediaWiki\Storage\PageUpdater;
 use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Title\TitleParser;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use MessageLocalizer;
 use RecentChange;
 use Wikimedia\Rdbms\IConnectionProvider;
 use WikiPageMessageGroup;
@@ -53,6 +56,7 @@ class TranslatablePageMarker {
 	private WikiPageFactory $wikiPageFactory;
 	private TranslatablePageView $translatablePageView;
 	private MessageGroupSubscription $messageGroupSubscription;
+	private FormatterFactory $formatterFactory;
 
 	public function __construct(
 		IConnectionProvider $dbProvider,
@@ -69,7 +73,8 @@ class TranslatablePageMarker {
 		MessageGroupMetadata $messageGroupMetadata,
 		WikiPageFactory $wikiPageFactory,
 		TranslatablePageView $translatablePageView,
-		MessageGroupSubscription $messageGroupSubscription
+		MessageGroupSubscription $messageGroupSubscription,
+		FormatterFactory $formatterFactory
 	) {
 		$this->dbProvider = $dbProvider;
 		$this->jobQueueGroup = $jobQueueGroup;
@@ -86,16 +91,23 @@ class TranslatablePageMarker {
 		$this->messageGroupMetadata = $messageGroupMetadata;
 		$this->translatablePageView = $translatablePageView;
 		$this->messageGroupSubscription = $messageGroupSubscription;
+		$this->formatterFactory = $formatterFactory;
 	}
 
 	/**
 	 * Remove a page from translation.
 	 * @param TranslatablePage $page The page to remove from translation
 	 * @param User $user The user performing the action
+	 * @param MessageLocalizer $localizer
 	 * @param bool $removeMarkup Whether to remove markup from the translation page
 	 * @throws TranslatablePageMarkException If removing the markup from the translation page fails
 	 */
-	public function unmarkPage( TranslatablePage $page, User $user, bool $removeMarkup ): void {
+	public function unmarkPage(
+		TranslatablePage $page,
+		User $user,
+		MessageLocalizer $localizer,
+		bool $removeMarkup
+	): void {
 		if ( $removeMarkup ) {
 			$pageTitle = $page->getTitle();
 			$content = ContentHandler::makeContent( $page->getStrippedSourcePageText(), $pageTitle );
@@ -111,11 +123,7 @@ class TranslatablePageMarker {
 				$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
 			}
 			$updater->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
-			$status = $updater->getStatus();
-
-			if ( !$status->isOK() ) {
-				throw new TranslatablePageMarkException( [ 'tpt-edit-failed', $status->getWikiText() ] );
-			}
+			$this->throwIfEditFailed( $updater, $localizer );
 		}
 
 		$this->translatablePageStore->unmark( $page->getPageIdentity() );
@@ -269,6 +277,7 @@ class TranslatablePageMarker {
 	 * @param TranslatablePageMarkOperation $operation
 	 * @param TranslatablePageSettings $pageSettings Contains information about priority languages, units that should
 	 * not be fuzzed, whether title should be translated and other translatable page settings
+	 * @param MessageLocalizer $localizer
 	 * @param User $user User performing the action. Checking user
 	 * permissions is the caller’s responsibility
 	 * @return int The number of translation units actually used
@@ -276,6 +285,7 @@ class TranslatablePageMarker {
 	public function markForTranslation(
 		TranslatablePageMarkOperation $operation,
 		TranslatablePageSettings $pageSettings,
+		MessageLocalizer $localizer,
 		User $user
 	): int {
 		if ( !$operation->isValid() ) {
@@ -284,7 +294,7 @@ class TranslatablePageMarker {
 
 		$page = $operation->getPage();
 		$title = $page->getTitle();
-		$newRevisionId = $this->updateSectionMarkers( $page, $user, $operation );
+		$newRevisionId = $this->updateSectionMarkers( $page, $user, $localizer, $operation );
 		// Probably a no-change edit, so no new revision was assigned. Get the latest revision manually
 		// Could also occur on the off chance $newRevisionRecord->getId() returns null
 		$newRevisionId ??= $title->getLatestRevID();
@@ -502,6 +512,7 @@ class TranslatablePageMarker {
 	private function updateSectionMarkers(
 		TranslatablePage $page,
 		Authority $authority,
+		MessageLocalizer $localizer,
 		TranslatablePageMarkOperation $operation
 	): ?int {
 		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getTitle() )->newPageUpdater( $authority );
@@ -519,12 +530,21 @@ class TranslatablePageMarker {
 		}
 		$newRevisionRecord = $pageUpdater->saveRevision( $comment, EDIT_FORCE_BOT | EDIT_UPDATE );
 
-		$status = $pageUpdater->getStatus();
-		if ( !$status->isOK() ) {
-			throw new TranslatablePageMarkException( [ 'tpt-edit-failed', $status->getMessage() ] );
-		}
+		$this->throwIfEditFailed( $pageUpdater, $localizer );
 
 		return $newRevisionRecord !== null ? $newRevisionRecord->getId() : null;
+	}
+
+	private function throwIfEditFailed( PageUpdater $pageUpdater, MessageLocalizer $messageLocalizer ): void {
+		$status = $pageUpdater->getStatus();
+		if ( !$status->isOK() ) {
+			throw new TranslatablePageMarkException(
+				[
+					'tpt-edit-failed',
+					$this->formatterFactory->getStatusFormatter( $messageLocalizer )->getMessage( $status ),
+				]
+			);
+		}
 	}
 
 	/**

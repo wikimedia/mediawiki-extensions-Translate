@@ -344,6 +344,7 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			->with(
 				$this->identicalTo( $operation ),
 				$settings,
+				RequestContext::getMain(),
 				$this->isInstanceOf( User::class )
 			)
 			->willReturn( 42 );
