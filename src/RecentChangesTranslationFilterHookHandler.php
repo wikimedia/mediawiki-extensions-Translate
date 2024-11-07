@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate;
 
 use ChangesListStringOptionsFilterGroup;
-use ChangeTags;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
@@ -216,9 +215,8 @@ class RecentChangesTranslationFilterHookHandler implements
 						$changeTagDefStore = MediaWikiServices::getInstance()->getChangeTagDefStore();
 						try {
 							$renderedPage = $changeTagDefStore->getId( 'translate-translation-pages' );
-							// The recommended replacement is for this deprecared method is `ChangeTags::CHANGE_TAG`.
-							// However, ChangeTags::CHANGE_TAG is a private const.
-							$tables['translatetags'] = ChangeTags::getDisplayTableName();
+							// Hard-coded string, as ChangeTags::CHANGE_TAG is a private const.
+							$tables['translatetags'] = 'change_tag';
 							$join_conds['translatetags'] = [
 								'LEFT JOIN',
 								[ 'translatetags.ct_rc_id=rc_id', 'translatetags.ct_tag_id' => $renderedPage ]
