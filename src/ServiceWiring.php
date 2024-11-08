@@ -73,7 +73,10 @@ return [
 	'Translate:AggregateGroupManager' => static function (
 		MediaWikiServices $services
 	): AggregateGroupManager {
-		return new AggregateGroupManager( $services->getTitleFactory() );
+		return new AggregateGroupManager(
+			$services->getTitleFactory(),
+			$services->get( 'Translate:MessageGroupMetadata' )
+		);
 	},
 
 	'Translate:AggregateGroupMessageGroupFactory' => static function (

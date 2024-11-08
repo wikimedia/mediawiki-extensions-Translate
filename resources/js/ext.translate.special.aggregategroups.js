@@ -46,7 +46,7 @@
 			var aAttr, $a, spanAttr, $span, $ol;
 
 			aAttr = {
-				href: data.aggregategroups.groupUrl,
+				href: data.aggregategroups.groupUrls[ subGroupId ],
 				title: subgroupName
 			};
 
