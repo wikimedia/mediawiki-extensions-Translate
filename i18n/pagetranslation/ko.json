@@ -217,6 +217,7 @@
 	"tpt-unlink-button": "번역에서 제거",
 	"tpt-unlink-summary": "번역에서 문서 제거",
 	"visualeditor-annotations-translate-description": "이 항목은 번역이 가능하도록 분류되었습니다. [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text changing the source text]에서 편집방침을 확인해 주십시오.",
+	"tpt-manage-message-group-subscriptions-list-anon-text": "메시지 그룹 구독에 대한 항목을 보거나 편집하려면 로그인해 주십시오.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "메시지 그룹에서 구독을 취소",
 	"tpt-manage-message-group-subscriptions-normal-submit": "구독 제거",
 	"tpt-manage-message-group-subscriptions-raw-legend": "원본 구독 편집",

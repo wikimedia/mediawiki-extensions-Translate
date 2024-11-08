@@ -321,5 +321,6 @@
 	"tpt-manage-message-group-subscriptions-normal-done": "{{PLURAL:$1|Отстранета е 1 група пораки|Отстранети се $1 групи пораки}} removed од вашите претплати:",
 	"tpt-manage-message-group-subscriptions-raw-titles": "Групи:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Штиклирај сè",
-	"tpt-manage-message-group-subscriptions-raw-submit": "Поднови претплати"
+	"tpt-manage-message-group-subscriptions-raw-submit": "Поднови претплати",
+	"translate-category-summary": "Автоматско создавање на превод на категоријата користена на [[$1]]"
 }
