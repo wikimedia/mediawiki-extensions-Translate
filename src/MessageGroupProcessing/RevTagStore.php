@@ -163,17 +163,25 @@ class RevTagStore {
 	 * translation the translation is). Used to determine whether the
 	 * translation is outdated and to show a diff of the original message
 	 * if it is.
+	 *
+	 * If a revision ID argument is specified, then ignore all versions after
+	 * that revision ID in the above calculation.
+	 *
 	 * @return int|null The revision ID, or `null` if none is found
 	 */
-	public function getTransver( PageIdentity $identity ): ?int {
+	public function getTransver( PageIdentity $identity, ?int $revid = null ): ?int {
 		$db = Utilities::getSafeReadDB();
-		$result = $db->newSelectQueryBuilder()
+		$query = $db->newSelectQueryBuilder()
 			->select( 'rt_value' )
 			->from( 'revtag' )
 			->where( [
 				'rt_page' => $identity->getId(),
 				'rt_type' => self::TRANSVER_PROP,
-			] )
+			] );
+		if ( $revid !== null ) {
+			$query->where( $db->expr( 'rt_revision', '<=', $revid ) );
+		}
+		$result = $query
 			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
 			->caller( __METHOD__ )
 			->fetchField();

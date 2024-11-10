@@ -123,6 +123,7 @@ class TranslateEditAddons {
 
 		$fuzzy = $handle->needsFuzzy( $text );
 		$parentId = $revisionRecord->getParentId();
+		$revTagStore = Services::getInstance()->getRevTagStore();
 		if ( $editResult->isNullEdit() || $parentId == 0 ) {
 			// In this case the page_latest hasn't changed so we can rely on its fuzzy status
 			$wasFuzzy = $handle->isFuzzy();
@@ -130,7 +131,6 @@ class TranslateEditAddons {
 			// In this case the page_latest will (probably) have changed. The above might work by chance
 			// since it reads from a replica database which might not have gotten the update yet, but
 			// don't trust it and read the fuzzy status of the parent ID from the database instead
-			$revTagStore = Services::getInstance()->getRevTagStore();
 			$wasFuzzy = $revTagStore->isRevIdFuzzy( $title->getArticleID(), $parentId );
 		}
 		if ( !$fuzzy && $wasFuzzy ) {
@@ -169,6 +169,23 @@ class TranslateEditAddons {
 				$entry->publish( $logId );
 			}
 		}
+		// If the edit is already fuzzy due to validation, !!FUZZY!!, or lacking permissions to unfuzzy
+		// then don't do revert checking (and don't set a transver below)
+		// Otherwise, if the edit undoes or rolls back (but not manually reverts) to a fuzzy revision
+		// then set the fuzzy status
+		$revertedTo = null;
+		if ( !$fuzzy && $editResult->isExactRevert() ) {
+			$method = $editResult->getRevertMethod();
+			if ( $method !== EditResult::REVERT_MANUAL ) {
+				$revertedTo = $editResult->getOriginalRevisionId();
+				// This is a paranoia check - if somehow getOriginalRevisionId returns null despite isExactRevert
+				// being true just handle it like it wasn't a revert rather than crashing
+				if ( $revertedTo !== null ) {
+					$fuzzy = $revTagStore->isRevIdFuzzy( $title->getArticleID(), $revertedTo );
+				}
+			}
+		}
+
 		self::updateFuzzyTag( $title, $revId, $fuzzy );
 
 		$group = $handle->getGroup();
@@ -195,6 +212,13 @@ class TranslateEditAddons {
 		if ( !$fuzzy ) {
 			Services::getInstance()->getHookRunner()
 				->onTranslate_newTranslation( $handle, $revId, $text, $user );
+		} elseif ( $revertedTo !== null ) {
+			// If a revert sets fuzzy status then also set tp:transver
+			// to the tp:transver of the version being reverted to
+			$oldTransver = $revTagStore->getTransver( $title, $revertedTo );
+			if ( $oldTransver !== null ) {
+				$revTagStore->setTransver( $title, $revId, $oldTransver );
+			}
 		}
 
 		TtmServer::onChange( $handle );
