@@ -57,22 +57,35 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 				'translate_translatable_bundles',
 				"{$dir}/{$dbType}/translate_translatable_bundles.sql"
 			);
-			$updater->addExtensionTable(
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-translate',
+				'addTable',
 				'translate_message_group_subscriptions',
-				"{$dir}/{$dbType}/translate_message_group_subscriptions.sql"
-			);
-
-			$updater->addExtensionTable(
+				"{$dir}/{$dbType}/translate_message_group_subscriptions.sql",
+				true
+			] );
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-translate',
+				'addTable',
 				'translate_cache',
-				"{$dir}/{$dbType}/translate_cache.sql"
-			);
+				"{$dir}/{$dbType}/translate_cache.sql",
+				true
+			] );
 
 			if ( $dbType === 'mysql' ) {
 				// 1.38
-				$updater->modifyExtensionField(
+				$updater->addExtensionUpdateOnVirtualDomain( [
+					'virtual-translate',
+					'modifyField',
 					'translate_cache',
 					'tc_key',
-					"{$dir}/{$dbType}/translate_cache-alter-varbinary.sql"
+					"{$dir}/{$dbType}/translate_cache-alter-varbinary.sql",
+					true
+				] );
+				$updater->modifyExtensionField(
+					'translate_groupreviews',
+					'tgr_group',
+					"{$dir}/{$dbType}/translate_groupreviews-alter-varbinary.sql",
 				);
 			}
 		} elseif ( $dbType === 'postgres' ) {
@@ -80,8 +93,13 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 				'translate_sections',
 				"{$dir}/{$dbType}/tables-generated.sql"
 			);
-			$updater->addExtensionUpdate( [
-				'changeField', 'translate_cache', 'tc_exptime', 'TIMESTAMPTZ', 'th_timestamp::timestamp with time zone'
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-translate',
+				'changeField',
+				'translate_cache',
+				'tc_exptime',
+				'TIMESTAMPTZ',
+				'th_timestamp::timestamp with time zone'
 			] );
 		}
 
@@ -111,11 +129,14 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 			'translate_reviews',
 			"{$dir}/{$dbType}/patch-translate_reviews-unsigned.sql"
 		);
-		$updater->dropExtensionField(
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-translate',
+			'dropField',
 			'translate_message_group_subscriptions',
 			'tmgs_subscription_id',
-			"{$dir}/{$dbType}/patch-translate_message_group_subscriptions-composite-primary-key.sql"
-		);
+			"{$dir}/{$dbType}/patch-translate_message_group_subscriptions-composite-primary-key.sql",
+			true
+		] );
 
 		$updater->addPostDatabaseUpdateMaintenance( SyncTranslatableBundleStatusMaintenanceScript::class );
 		$updater->addPostDatabaseUpdateMaintenance( RemoveRedundantMessageGroupMetadataMaintenanceScript::class );
