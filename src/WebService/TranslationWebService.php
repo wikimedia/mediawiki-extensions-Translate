@@ -23,6 +23,7 @@ use Wikimedia\ObjectCache\BagOStuff;
  */
 abstract class TranslationWebService implements LoggerAwareInterface {
 	private ?BagOStuff $cache;
+	private ?array $supportedLanguagePairs = null;
 
 	/* Public api */
 
@@ -223,7 +224,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	protected function getSupportedLanguagePairs(): array {
 		$cache = $this->getObjectCache();
 
-		return $cache->getWithSetCallback(
+		$this->supportedLanguagePairs ??= $cache->getWithSetCallback(
 			$cache->makeKey( 'translate-tmsug-pairs-' . $this->service ),
 			$cache::TTL_DAY,
 			function ( &$ttl ) use ( $cache ) {
@@ -238,6 +239,8 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 				return $pairs;
 			}
 		);
+
+		return $this->supportedLanguagePairs;
 	}
 
 	/**
