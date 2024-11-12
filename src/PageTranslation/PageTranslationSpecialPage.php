@@ -21,6 +21,7 @@ use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Permissions\PermissionManager;
@@ -28,6 +29,7 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use OOUI\ButtonInputWidget;
@@ -73,6 +75,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private MessageGroupMetadata $messageGroupMetadata;
 	private TranslatablePageView $translatablePageView;
 	private TranslatablePageStateStore $translatablePageStateStore;
+	private StatusFormatter $statusFormatter;
 
 	public function __construct(
 		LanguageFactory $languageFactory,
@@ -83,7 +86,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		TranslatablePageParser $translatablePageParser,
 		MessageGroupMetadata $messageGroupMetadata,
 		TranslatablePageView $translatablePageView,
-		TranslatablePageStateStore $translatablePageStateStore
+		TranslatablePageStateStore $translatablePageStateStore,
+		FormatterFactory $formatterFactory
 	) {
 		parent::__construct( 'PageTranslation' );
 		$this->languageFactory = $languageFactory;
@@ -95,6 +99,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->messageGroupMetadata = $messageGroupMetadata;
 		$this->translatablePageView = $translatablePageView;
 		$this->translatablePageStateStore = $translatablePageStateStore;
+		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this );
 	}
 
 	public function doesWrites(): bool {
@@ -338,9 +343,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		} else {
 			if ( !$unitNameValidationResult->isOK() ) {
 				$out->addHTML(
-					Html::errorBox(
-						$unitNameValidationResult->getHTML( false, false, $this->getLanguage() )
-					)
+					Html::errorBox( $this->statusFormatter->getHTML( $unitNameValidationResult ) )
 				);
 			}
 
