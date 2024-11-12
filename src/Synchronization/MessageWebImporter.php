@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -207,8 +208,14 @@ class MessageWebImporter {
 				}
 
 				$oldContent = ContentHandler::makeContent( $oldTextForDiff, $diff->getTitle() );
+				$oldRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$oldRevision->setContent( SlotRecord::MAIN, $oldContent );
+
 				$newContent = ContentHandler::makeContent( $value, $diff->getTitle() );
-				$diff->setContent( $oldContent, $newContent );
+				$newRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$newRevision->setContent( SlotRecord::MAIN, $newContent );
+
+				$diff->setRevisions( $oldRevision, $newRevision );
 				$text = $diff->getDiff( '', '' );
 
 				// This is a changed translation. Note it for the next steps.

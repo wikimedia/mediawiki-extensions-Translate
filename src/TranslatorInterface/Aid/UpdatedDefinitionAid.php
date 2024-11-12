@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use WikitextContent;
@@ -71,11 +72,12 @@ class UpdatedDefinitionAid extends TranslationAid {
 			throw new TranslationHelperException( 'No changes' );
 		}
 
+		$newRevRecord = new MutableRevisionRecord( $definitionTitle );
+		$newRevRecord->setContent( SlotRecord::MAIN, $newContent );
+
 		$diff = new DifferenceEngine( $this->context );
-		$diff->setTextLanguage(
-			$mwInstance->getLanguageFactory()->getLanguage( $sourceLanguage )
-		);
-		$diff->setContent( $oldContent, $newContent );
+		$diff->setTextLanguage( $mwInstance->getLanguageFactory()->getLanguage( $sourceLanguage ) );
+		$diff->setRevisions( $oldRevRecord, $newRevRecord );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
 

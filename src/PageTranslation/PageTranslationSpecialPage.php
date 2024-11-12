@@ -25,6 +25,8 @@ use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Revision\MutableRevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -790,9 +792,14 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$diff->setReducedLineNumbers();
 
 				$oldContent = ContentHandler::makeContent( $s->getOldText(), $diff->getTitle() );
-				$newContent = ContentHandler::makeContent( $s->getText(), $diff->getTitle() );
+				$oldRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$oldRevision->setContent( SlotRecord::MAIN, $oldContent );
 
-				$diff->setContent( $oldContent, $newContent );
+				$newContent = ContentHandler::makeContent( $s->getText(), $diff->getTitle() );
+				$newRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$newRevision->setContent( SlotRecord::MAIN, $newContent );
+
+				$diff->setRevisions( $oldRevision, $newRevision );
 
 				$text = $diff->getDiff( $diffOld, $diffNew );
 				$diffOld = $diffNew = null;
@@ -876,9 +883,14 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$diff->setTextLanguage( $sourceLanguage );
 
 				$oldContent = ContentHandler::makeContent( $oldTemplate, $diff->getTitle() );
-				$newContent = ContentHandler::makeContent( $newTemplate, $diff->getTitle() );
+				$oldRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$oldRevision->setContent( SlotRecord::MAIN, $oldContent );
 
-				$diff->setContent( $oldContent, $newContent );
+				$newContent = ContentHandler::makeContent( $newTemplate, $diff->getTitle() );
+				$newRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$newRevision->setContent( SlotRecord::MAIN, $newContent );
+
+				$diff->setRevisions( $oldRevision, $newRevision );
 
 				$text = $diff->getDiff(
 					$this->msg( 'tpt-diff-old' )->escaped(),

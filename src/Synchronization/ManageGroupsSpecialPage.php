@@ -23,6 +23,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\DisabledSpecialPage;
@@ -348,9 +349,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				);
 			}
 
-			$oldContent = ContentHandler::makeContent( (string)$wiki, $title );
-			$newContent = ContentHandler::makeContent( '', $title );
-			$this->diff->setContent( $oldContent, $newContent );
+			$newRevision = new MutableRevisionRecord( $title );
+			$newRevision->setContent( SlotRecord::MAIN, ContentHandler::makeContent( '', $title ) );
+
+			$this->diff->setRevisions( $revTitle, $newRevision );
 			$text = $this->diff->getDiff( $titleLink, '', $noticeHtml );
 		} elseif ( $type === 'addition' ) {
 			$menu = '';
@@ -386,9 +388,16 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				);
 			}
 
-			$oldContent = ContentHandler::makeContent( '', $title );
-			$newContent = ContentHandler::makeContent( (string)$params['content'], $title );
-			$this->diff->setContent( $oldContent, $newContent );
+			$oldRevision = new MutableRevisionRecord( $title );
+			$oldRevision->setContent( SlotRecord::MAIN, ContentHandler::makeContent( '', $title ) );
+
+			$newRevision = new MutableRevisionRecord( $title );
+			$newRevision->setContent(
+				SlotRecord::MAIN,
+				ContentHandler::makeContent( (string)$params['content'], $title )
+			);
+
+			$this->diff->setRevisions( $oldRevision, $newRevision );
 			$text = $this->diff->getDiff( '', $titleLink . $menu, $noticeHtml );
 		} elseif ( $type === 'change' ) {
 			$wiki = Utilities::getContentForTitle( $title, true );
@@ -427,10 +436,16 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$limit--;
 			}
 
-			$oldContent = ContentHandler::makeContent( (string)$wiki, $title );
-			$newContent = ContentHandler::makeContent( (string)$params['content'], $title );
+			$oldRevision = new MutableRevisionRecord( $title );
+			$oldRevision->setContent( SlotRecord::MAIN, ContentHandler::makeContent( (string)$wiki, $title ) );
 
-			$this->diff->setContent( $oldContent, $newContent );
+			$newRevision = new MutableRevisionRecord( $title );
+			$newRevision->setContent(
+				SlotRecord::MAIN,
+				ContentHandler::makeContent( (string)$params['content'], $title )
+			);
+
+			$this->diff->setRevisions( $oldRevision, $newRevision );
 			$text .= $this->diff->getDiff( $titleLink, $actions, $noticeHtml );
 		}
 
@@ -731,8 +746,14 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$limit--;
 
 		$addedContent = ContentHandler::makeContent( (string)$addedMsg['content'], $addedTitle );
+		$addedRevision = new MutableRevisionRecord( $addedTitle );
+		$addedRevision->setContent( SlotRecord::MAIN, $addedContent );
+
 		$deletedContent = ContentHandler::makeContent( (string)$deletedMsg['content'], $deletedTitle );
-		$this->diff->setContent( $deletedContent, $addedContent );
+		$deletedRevision = new MutableRevisionRecord( $deletedTitle );
+		$deletedRevision->setContent( SlotRecord::MAIN, $deletedContent );
+
+		$this->diff->setRevisions( $deletedRevision, $addedRevision );
 
 		$menu = '';
 		if ( $group->getSourceLanguage() === $language && $this->hasRight ) {
