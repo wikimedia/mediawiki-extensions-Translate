@@ -43,7 +43,7 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 
 		$result = MessageWebImporter::doFuzzy(
 			Title::newFromText( self::PAGE ),
-			'English Changed', '', null
+			'English Changed', '', null, RequestContext::getMain()
 		);
 		$this->assertEquals( 'translate-manage-import-fuzzy', $result[0] );
 		$this->assertEquals(

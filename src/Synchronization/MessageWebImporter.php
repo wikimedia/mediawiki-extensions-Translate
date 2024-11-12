@@ -21,6 +21,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MessageGroup;
+use MessageLocalizer;
 use RecentChange;
 use RuntimeException;
 use Xml;
@@ -41,20 +42,29 @@ class MessageWebImporter {
 	private string $code;
 	/** @var int|null */
 	private $time;
+	private MessageLocalizer $messageLocalizer;
 	/** Maximum processing time in seconds. */
 	private const MAX_PROCESSING_TIME = 43;
 
 	/**
 	 * @param Title $title
 	 * @param User $user
+	 * @param MessageLocalizer $messageLocalizer
 	 * @param MessageGroup|string|null $group
 	 * @param string $code
 	 */
-	public function __construct( Title $title, User $user, $group = null, string $code = 'en' ) {
+	public function __construct(
+		Title $title,
+		User $user,
+		MessageLocalizer $messageLocalizer,
+		$group = null,
+		string $code = 'en'
+	) {
 		$this->setTitle( $title );
 		$this->setUser( $user );
 		$this->setGroup( $group );
 		$this->setCode( $code );
+		$this->messageLocalizer = $messageLocalizer;
 	}
 
 	/** Wrapper for consistency with SpecialPage */
@@ -400,7 +410,7 @@ class MessageWebImporter {
 				$message = MessageHandle::makeFuzzyString( $message );
 			}
 
-			return self::doImport( $title, $message, $comment, $this->getUser() );
+			return self::doImport( $title, $message, $comment, $this->getUser(), $this->messageLocalizer );
 		} elseif ( $action === 'ignore' ) {
 			return [ 'translate-manage-import-ignore', $key ];
 		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
@@ -408,9 +418,9 @@ class MessageWebImporter {
 		) {
 			$message = MessageHandle::makeFuzzyString( $message );
 
-			return self::doImport( $title, $message, $comment, $this->getUser() );
+			return self::doImport( $title, $message, $comment, $this->getUser(), $this->messageLocalizer );
 		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
-			return self::doFuzzy( $title, $message, $comment, $this->getUser() );
+			return self::doFuzzy( $title, $message, $comment, $this->getUser(), $this->messageLocalizer );
 		} else {
 			throw new InvalidArgumentException( "Unhandled action $action" );
 		}
@@ -425,9 +435,11 @@ class MessageWebImporter {
 		Title $title,
 		string $message,
 		string $summary,
-		User $user
+		User $user,
+		MessageLocalizer $messageLocalizer
 	): array {
-		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+		$mwServices = MediaWikiServices::getInstance();
+		$wikiPage = $mwServices->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $message, $title );
 
 		$updater = $wikiPage->newPageUpdater( $user )->setContent( SlotRecord::MAIN, $content );
@@ -444,8 +456,11 @@ class MessageWebImporter {
 			];
 		}
 
+		$statusFormatter = $mwServices
+			->getFormatterFactory()
+			->getStatusFormatter( $messageLocalizer );
 		$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
-		$text .= $status->getWikiText();
+		$text .= $statusFormatter->getWikiText( $status );
 		throw new RuntimeException( $text );
 	}
 
@@ -454,7 +469,8 @@ class MessageWebImporter {
 		Title $title,
 		string $message,
 		string $comment,
-		?User $user
+		?User $user,
+		MessageLocalizer $messageLocalizer
 	): array {
 		$context = RequestContext::getMain();
 		$services = MediaWikiServices::getInstance();
@@ -514,7 +530,8 @@ class MessageWebImporter {
 				$translationTitle,
 				$text,
 				$comment,
-				$user
+				$user,
+				$messageLocalizer
 			);
 		}
 
