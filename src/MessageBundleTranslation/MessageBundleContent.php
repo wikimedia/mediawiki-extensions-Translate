@@ -6,9 +6,6 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 use FormatJson;
 use JsonContent;
 use MediaWiki\Message\Message;
-use MediaWiki\Status\Status;
-use MediaWiki\User\User;
-use WikiPage;
 
 /**
  * @author Niklas Laxström
@@ -47,20 +44,6 @@ class MessageBundleContent extends JsonContent {
 	public function validate(): void {
 		$this->getMessages();
 		$this->getMetadata();
-	}
-
-	public function prepareSave( WikiPage $page, $flags, $parentRevId, User $user ) {
-		// TODO: Should be removed when it is no longer needed for backwards compatibility.
-
-		// This will give an informative error message when trying to change the content model
-		try {
-			$this->getMessages();
-			$this->getMetadata();
-			return Status::newGood();
-		} catch ( MalformedBundle $e ) {
-			// XXX: We have no context source nor is there Message::messageParam :(
-			return Status::newFatal( 'translate-messagebundle-validation-error', wfMessage( $e ) );
-		}
 	}
 
 	/** @throws MalformedBundle */
