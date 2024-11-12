@@ -6,7 +6,12 @@
 			"Къарачайлы"
 		]
 	},
+	"pagetranslation": "Бет кёчюрюу",
+	"nstab-translations": "Кёчюрюу бирим",
+	"right-pagetranslation": "Бетлени версияларын кёчюрюу ючюн белгиле",
+	"action-pagetranslation": "кёчюрюлюрча бетлени оноуун джюрют",
 	"tpt-languages-legend": "Башха тилле:",
 	"tpt-languages-nonzero": "$1 ($2% кёчюрюлгенди)",
-	"tpt-tab-translate": "Кёчюр"
+	"tpt-tab-translate": "Кёчюр",
+	"log-action-filter-pagetranslation": "Этиуню типи:"
 }

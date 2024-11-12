@@ -71,6 +71,8 @@
 	"tpt-rev-unmark-tooltip": "Poista tämän sivun käännösominaisuus.",
 	"tpt-rev-discourage-tooltip": "Piilota sivu käännösjärjestelmästä, jotta uusia käännöksiä ei enää tehtäisi.",
 	"tpt-rev-encourage-tooltip": "Palauta tämä sivu käännösjärjestelmään.",
+	"tpt-translation-settings-page-title": "Käännösasetukset",
+	"tpt-translation-settings-save": "Tallenna asetukset",
 	"translate-tag-translate-link-desc": "Käännä tämä sivu",
 	"translate-tag-markthis": "Merkitse tämä sivu käännettäväksi",
 	"translate-tag-markthisagain": "Tähän sivuun on tehty <span class=\"plainlinks\">[$1 muutoksia]</span> sen jälkeen kun se viimeksi <span class=\"plainlinks\">[$2 merkittiin käännettäväksi]</span>.",
