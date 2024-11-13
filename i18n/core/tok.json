@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
+			"Tamzin",
 			"Tbodt"
 		]
 	},
@@ -18,6 +19,7 @@
 	"translate-language": "toki",
 	"translate-mgs-column-language": "toki",
 	"translate-smg-group-message-message-other-langs": "toki ante:",
+	"translate-documentation-language": "sona toki",
 	"translate-msggroupselector-search-all": "ale",
 	"tux-languageselector": "o ante tawa toki ni:",
 	"tux-tab-all": "ale",
