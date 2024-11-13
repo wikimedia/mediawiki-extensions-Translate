@@ -1795,12 +1795,14 @@ class Hooks {
 			// Only create categories for the same language code to reduce
 			// the potential for very deep recursion if a category is
 			// a member of itself in a different language
-			if ( Utilities::isTranslationPage( $categoryHandle )
+			$categoryTranslationPage = TranslatablePage::isTranslationPage( $categoryTitle );
+			if (
+				$categoryTranslationPage
 				&& $categoryHandle->getCode() == $code
 				&& !$categoryTitle->exists()
 			) {
 				self::updateTranslationPage(
-					TranslatablePage::isTranslationPage( $categoryTitle ),
+					$categoryTranslationPage,
 					$code,
 					FuzzyBot::getUser(),
 					EDIT_FORCE_BOT,
