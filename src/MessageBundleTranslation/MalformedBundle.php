@@ -27,12 +27,12 @@ class MalformedBundle extends Exception implements MessageSpecifier {
 	}
 
 	/** @inheritDoc */
-	public function getKey() {
+	public function getKey(): string {
 		return $this->key;
 	}
 
 	/** @inheritDoc */
-	public function getParams() {
+	public function getParams(): array {
 		return $this->params;
 	}
 }
