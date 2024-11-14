@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Category;
 use JobQueueGroup;
+use MediaWiki\Category\Category;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
