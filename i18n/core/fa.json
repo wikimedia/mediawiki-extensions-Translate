@@ -465,5 +465,6 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "قالب زبان اولویت‌دار در فراداده نامعتبر است. زبان‌های اولویت‌دار باید یک آرایه از رشته‌ها باشند.",
 	"translate-messagebundle-group-description": "پیام‌های یک بستهٔ پیام روی صفحهٔ [[$2|$1]] تعریف شده است.",
 	"log-action-filter-translationreview": "نوع عمل:",
-	"log-action-filter-translationreview-message": "بازبینی پیام‌های ترجمه فردی"
+	"log-action-filter-translationreview-message": "بازبینی پیام‌های ترجمه فردی",
+	"translate-hidetranslations": "نهفتن صفحه‌های ترجمه"
 }
