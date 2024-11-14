@@ -906,7 +906,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				if ( isset( $jobParams[ 'targetTitle' ] ) && ( $jobParams[ 'fuzzy' ] ?? false ) ) {
 					$this->messageGroupSubscription->queueMessage(
 						$jobParams[ 'targetTitle' ],
-						MessageGroupSubscription::STATE_UPDATED
+						MessageGroupSubscription::STATE_UPDATED,
+						$groupId
 					);
 				}
 			} elseif ( isset( $jobData[ $targetStr ] ) ) {
@@ -1184,7 +1185,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		}
 
 		if ( $subscriptionState ) {
-			$this->messageGroupSubscription->queueMessage( $title, $subscriptionState );
+			$this->messageGroupSubscription->queueMessage( $title, $subscriptionState, $groupId );
 		}
 	}
 }

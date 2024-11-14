@@ -6,10 +6,8 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use EmptyIterator;
 use Iterator;
 use JobQueueGroup;
-use LogicException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Notifications\Model\Event;
-use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -108,16 +106,8 @@ class MessageGroupSubscription {
 	 * @param string $state
 	 * @return void
 	 */
-	public function queueMessage( Title $messageTitle, string $state ): void {
-		$handle = new MessageHandle( $messageTitle );
-		if ( !$handle->isValid() ) {
-			throw new LogicException(
-				"Trying to send notification for a message {$handle->getKey()} that is not valid!"
-			);
-		}
-
-		$primaryGroupId = $handle->getGroup()->getId();
-		$this->queuedMessages[ $primaryGroupId ][ $state ][] = $messageTitle->getPrefixedDBkey();
+	public function queueMessage( Title $messageTitle, string $state, string $groupId ): void {
+		$this->queuedMessages[ $groupId ][ $state ][] = $messageTitle->getPrefixedDBkey();
 	}
 
 	public function queueNotificationJob(): void {

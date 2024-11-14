@@ -204,8 +204,16 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 	public function testQueueMessage(): void {
 		$messageTitle = Title::makeTitle( NS_MEDIAWIKI, 'translated' );
 		$message2Title = Title::makeTitle( NS_MEDIAWIKI, 'changedtranslated_1' );
-		$this->subscription->queueMessage( $messageTitle, MessageGroupSubscription::STATE_ADDED );
-		$this->subscription->queueMessage( $message2Title, MessageGroupSubscription::STATE_UPDATED );
+		$this->subscription->queueMessage(
+			$messageTitle,
+			MessageGroupSubscription::STATE_ADDED,
+			'agg-group-id-tp-1'
+		);
+		$this->subscription->queueMessage(
+			$message2Title,
+			MessageGroupSubscription::STATE_UPDATED,
+			'bar'
+		);
 
 		$this->subscription->queueNotificationJob();
 
