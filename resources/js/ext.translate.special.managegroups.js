@@ -144,7 +144,7 @@
 			action: 'query',
 			meta: 'managemessagegroups',
 			formatversion: 2,
-			changesetName: getChangesetName(),
+			mmgchangesetName: getChangesetName(),
 			mmggroupId: groupId,
 			mmgmessageKey: msgKey
 		};
