@@ -61,7 +61,7 @@
 	"translate-export-format-notsupported": "Белгиленнген экспорт формат бу билдириу къауумда дагъансызды.",
 	"translate-export-format-file-empty": "Экспорт этиллик билдиру джокъду.",
 	"translate-export-group-too-large": "Сайланнган билдириу къауум бек уллуду. {{PLURAL:$1|билдириую}} $1 аз болгъан билдириу къауумну сайлагъыз неда кёчюрюуню администраторуна кенгеш алыр ючюн байлам этигиз.",
-	"translate-checks-parameters": "Тюбюндеги {{PLURAL:$2|параметр|параметрле}} хайырланмайдыла: <strong>$1</strong>",
+	"translate-checks-parameters": "Тюбюндеги {{PLURAL:$2|параметр хайырланмайды|параметрле хайырланмайдыла}} : <strong>$1</strong>",
 	"translate-checks-parameters-unknown": "Тюбюндеги {{PLURAL:$2|параметр|параметрле}} билинмейди: <strong>$1</strong>",
 	"translate-checks-balance": "{{PLURAL:$2|Скобкасыны|Скобкаларыны}} ачылыуу эмда джабылыуу келишмейди: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Тюбюндеги {{PLURAL:$2|джибериу|$2 джибериуле}} проблемалыдыла: <strong><nowiki>$1</nowiki></strong>",
