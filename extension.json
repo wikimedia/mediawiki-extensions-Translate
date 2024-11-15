@@ -541,7 +541,7 @@
 	},
 	"ResourceModules": {
 		"ext.translate": {
-			"styles": "resources/css/ext.translate.css"
+			"styles": "resources/css/ext.translate.less"
 		},
 		"ext.translate.base": {
 			"scripts": "resources/js/ext.translate.base.js",
