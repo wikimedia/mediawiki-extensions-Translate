@@ -3,9 +3,10 @@
  * @author Pau Giner
  * @since 2013-01-10
  */
+@import 'mediawiki.skin.variables.less';
 
 .tux-searchpage .tux-selectedbox .facet-item {
-	background-color: #ededed;
+	background-color: @background-color-neutral;
 	margin-right: 5px;
 }
 
@@ -16,19 +17,19 @@
 
 /* Facets */
 .tux-searchpage .facet {
-	color: #222;
-	font-size: 24px;
+	color: @color-base;
+	font-size: @font-size-xx-large;
 	padding: 20px 0 10px 0;
 }
 
 .tux-searchpage .facet-item {
-	font-size: 16px;
+	font-size: @font-size-medium;
 	padding: 4px 5px;
 	overflow-wrap: anywhere;
 }
 
 .tux-searchpage .facet-item:hover {
-	background: #f8f8f8;
+	background: @background-color-neutral-subtle;
 	cursor: pointer;
 }
 
@@ -37,21 +38,21 @@
 }
 
 .tux-searchpage .facet-item .facet-count {
-	color: #aaa;
+	color: @color-subtle;
 	float: right;
 	margin-right: 5%;
 }
 
 .tux-searchpage .facet-level-0 {
-	font-size: 16px;
+	font-size: @font-size-medium;
 }
 
 .tux-searchpage .facet-level-1 {
-	font-size: 14px;
+	font-size: @font-size-small;
 }
 
 .tux-searchpage .facet-level-2 {
-	font-size: 12px;
+	font-size: @font-size-x-small;
 }
 
 .tux-searchpage .facet-level-3 {
@@ -64,41 +65,41 @@
 
 .tux-searchpage .facet-item a:visited,
 .tux-searchpage .facet-item a:link {
-	color: #0645ad;
+	color: @color-progressive;
 }
 
 /* Results */
 .tux-searchpage .count {
-	color: #54595d;
-	font-size: 16px;
+	color: @color-subtle;
+	font-size: @font-size-medium;
 	padding-bottom: 10px;
 }
 
 .tux-searchpage .searchcontent .results {
-	color: #222;
+	color: @color-base;
 	padding-left: 10px;
 }
 
 .tux-searchpage .results .tux-text {
 	text-align: left;
-	font-size: 16px;
+	font-size: @font-size-medium;
 	padding-top: 20px;
 }
 
 .tux-searchpage .results .tux-title {
 	text-align: left;
-	color: #54595d;
+	color: @color-subtle;
 	overflow-wrap: anywhere;
 }
 
 /* Pagination links */
 .tux-searchpage .results .tux-pagination-line {
-	color: #eee;
+	color: @background-color-neutral;
 	font-size: 1px;
 }
 
 .tux-searchpage .results .tux-pagination-links {
-	font-size: 20px;
+	font-size: @font-size-x-large;
 	padding-top: 20px;
 	text-align: center;
 }
@@ -124,30 +125,30 @@
 
 .translate-search-more-groups,
 .translate-search-more-languages {
-	background-color: #f0f0f0;
-	font-size: 16px;
+	background-color: @background-color-neutral-subtle;
+	font-size: @font-size-medium;
 	cursor: pointer;
 	padding: 0 6px;
 	border-radius: 2px;
-	border: 1px solid #eee;
+	border: @border-width-base @border-style-base @border-color-muted;
 }
 
 .translate-search-more-groups:hover,
 .translate-search-more-languages:hover {
-	border: 1px solid #ccc;
+	border-color: @border-color-subtle;
 	text-decoration: none;
 }
 
 .translate-search-more-groups-info,
 .translate-search-more-languages-info {
-	color: #72777d;
-	font-size: 14px;
+	color: @color-subtle;
+	font-size: @font-size-small;
 	padding: 0 8px;
 }
 
 /* Override tabs */
 .tux-searchpage .tux-messagetable-header .seven {
-	width: 100%;
+	width: @size-full;
 }
 
 .tux-searchpage .tux-message-selector .more ul {
@@ -163,7 +164,7 @@
 }
 
 .tux-search-highlight {
-	background-color: #c9c9c9;
+	background-color: @background-color-disabled;
 }
 
 .tux-searchpage .tux-searchinputbox-hint {

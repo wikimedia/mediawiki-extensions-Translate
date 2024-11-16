@@ -564,9 +564,9 @@
 				"resources/css/ext.translate.special.pagemigration.css",
 				"resources/css/ext.translate.special.pagepreparation.css",
 				"resources/css/ext.translate.special.pagetranslation.css",
-				"resources/css/ext.translate.special.searchtranslations.css",
-				"resources/css/ext.translate.special.supportedlanguages.css",
-				"resources/css/ext.translate.special.translations.css"
+				"resources/css/ext.translate.special.searchtranslations.less",
+				"resources/css/ext.translate.special.supportedlanguages.less",
+				"resources/css/ext.translate.special.translations.less"
 			]
 		},
 		"ext.translate.loader": {

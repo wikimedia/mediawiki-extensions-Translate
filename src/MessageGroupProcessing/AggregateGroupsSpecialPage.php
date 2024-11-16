@@ -310,7 +310,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			[
 				'type' => 'button',
 				'title' => $title,
-				'class' => 'js-tp-toggle-groups tp-toggle-group-icon',
+				'class' => 'js-tp-toggle-groups tp-toggle-group-icon skin-invert',
 				'aria-expanded' => $shouldExpand ? 'true' : 'false',
 				'aria-controls' => $targetElementId
 			]
