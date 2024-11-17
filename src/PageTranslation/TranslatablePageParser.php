@@ -76,7 +76,7 @@ class TranslatablePageParser {
 			if ( preg_match( '~<translate( nowrap)?>~', $contentWithoutTags ) !== 0 ) {
 				throw new ParsingFailure(
 					'Nested tags',
-					new MessageValue( 'pt-parse-nested', [ $contentWithoutTags ] )
+					new MessageValue( 'pt-parse-nested', [ wfEscapeWikiText( $contentWithoutTags ) ] )
 				);
 			}
 
@@ -100,12 +100,15 @@ class TranslatablePageParser {
 		if ( preg_match( '~<translate( nowrap)?>~', $text ) !== 0 ) {
 			throw new ParsingFailure(
 				'Unmatched opening tag',
-				new MessageValue( 'pt-parse-open', [ $prettyTemplate ] )
+				// TODO this and the below one should use ->plaintextParams() instead of wfEscapeWikiText,
+				// but MediaWiki\EditPage\Constraint\EditFilterMergedContentHookConstraint::formatStatusErrors()
+				// calls ->plain() instead of ->parse(), at which point the meaning of plain text params gets lost
+				new MessageValue( 'pt-parse-open', [ wfEscapeWikiText( $prettyTemplate ) ] )
 			);
 		} elseif ( str_contains( $text, '</translate>' ) ) {
 			throw new ParsingFailure(
 				"Unmatched closing tag",
-				new MessageValue( 'pt-parse-close', [ $prettyTemplate ] )
+				new MessageValue( 'pt-parse-close', [ wfEscapeWikiText( $prettyTemplate ) ] )
 			);
 		}
 
@@ -162,7 +165,7 @@ class TranslatablePageParser {
 		if ( $count > 1 ) {
 			throw new ParsingFailure(
 				'Multiple translation unit markers',
-				new MessageValue( 'pt-shake-multiple', [ $content ] )
+				new MessageValue( 'pt-shake-multiple', [ wfEscapeWikiText( $content ) ] )
 			);
 		}
 
@@ -182,12 +185,12 @@ class TranslatablePageParser {
 				if ( preg_match( $re, $content ) === 1 ) {
 					throw new ParsingFailure(
 						'Translation unit marker is in unsupported position',
-						new MessageValue( 'pt-shake-position', [ $content ] )
+						new MessageValue( 'pt-shake-position', [ wfEscapeWikiText( $content ) ] )
 					);
 				} elseif ( trim( $content ) === '' ) {
 					throw new ParsingFailure(
 						'Translation unit has no content besides marker',
-						new MessageValue( 'pt-shake-empty', [ $id ] )
+						new MessageValue( 'pt-shake-empty', [ wfEscapeWikiText( $id ) ] )
 					);
 				}
 			}
