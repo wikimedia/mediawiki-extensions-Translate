@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use RuntimeException;
+use Wikimedia\Message\MessageSpecifier;
 
 /**
  * Represents any kind of failure to parse a translatable page source code.
@@ -16,27 +17,14 @@ use RuntimeException;
  * @since 2020.08
  */
 class ParsingFailure extends RuntimeException {
-	/**
-	 * @var array
-	 * @phan-var non-empty-array
-	 */
-	private $messageSpec;
+	private MessageSpecifier $messageSpec;
 
-	/**
-	 * @param string $message
-	 * @param array $messageSpec
-	 * @phan-param non-empty-array $messageSpec
-	 */
-	public function __construct( string $message, array $messageSpec ) {
+	public function __construct( string $message, MessageSpecifier $messageSpec ) {
 		parent::__construct( $message );
 		$this->messageSpec = $messageSpec;
 	}
 
-	/**
-	 * @return array
-	 * @phan-return non-empty-array
-	 */
-	public function getMessageSpecification(): array {
+	public function getMessageSpecification(): MessageSpecifier {
 		return $this->messageSpec;
 	}
 }

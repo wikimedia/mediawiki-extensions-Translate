@@ -830,7 +830,7 @@ class Hooks {
 			try {
 				$parser->parse( $text );
 			} catch ( ParsingFailure $e ) {
-				$status->fatal( ...( $e->getMessageSpecification() ) );
+				$status->fatal( $e->getMessageSpecification() );
 			}
 		}
 
