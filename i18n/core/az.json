@@ -8,7 +8,8 @@
 			"Toghrul Rahimli",
 			"Vesely35",
 			"Wertuose",
-			"Nemoralis"
+			"Nemoralis",
+			"Əkrəm Cəfər"
 		]
 	},
 	"translate": "Tərcümə et",
@@ -204,7 +205,7 @@
 	"tux-editor-save-button-label": "Tərcüməni yayımla",
 	"tux-editor-skip-button-label": "Sonrakına keç",
 	"tux-editor-confirm-button-label": "Tərcüməni təsdiq edin",
-	"tux-editor-shortcut-info": "Yaddaşda saxlamaq üçün \"$1\", növbəti mesaja keçmək üçün \"$2\", digər qısayolları açmaq üçün \"$3\" düyməsini basın.",
+	"tux-editor-shortcut-info": "Təsdiqləyib növbəti mesaja keçmək üçün \"$1\", mesajı ötürmək üçün \"$2\", qısa məzmun daxil etmək üçün \"$4\" düymələrinə basın; digər qısayolları görmək üçün isə \"$3\" düyməsinə basıb saxlayın.",
 	"tux-editor-edit-desc": "Sənədləşdirməni redaktə et",
 	"tux-editor-suggestions-title": "Təkliflər",
 	"tux-editor-need-more-help": "Daha çox köməyə ehtiyacınız var?",
