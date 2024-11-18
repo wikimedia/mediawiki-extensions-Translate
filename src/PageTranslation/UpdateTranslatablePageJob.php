@@ -105,7 +105,7 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		if ( $messageGroup ) {
 			$messageGroup->clearCaches();
 			$this->logInfo(
-				'Cleared caches after {attemptCount} attempt(s)',
+				'Cleared caches after {attemptsCount} attempt(s)',
 				[ 'attemptsCount' => $attemptsCount ]
 			);
 		} else {
