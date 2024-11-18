@@ -58,5 +58,6 @@
 	"log-description-translatorsandbox": "번역 연습 사용자의 명령 기록",
 	"logentry-translatorsandbox-promoted": "$1님이 $3님을 {{GENDER:$4|번역자}}로 {{GENDER:$2|승격시켰습니다}}",
 	"logentry-translatorsandbox-rejected": "$1님이 \"$3\"님의 번역자 승격 신청을 {{GENDER:$2|거절했습니다}}",
-	"logentry-newusers-tsbpromoted": "$3 사용자 계정은 연습장에서의 승격에 따라 {{GENDER:$2|만들어졌습니다}}"
+	"logentry-newusers-tsbpromoted": "$3 사용자 계정은 연습장에서의 승격에 따라 {{GENDER:$2|만들어졌습니다}}",
+	"tsb-other-actions": "편집 전 [[Special:TranslationStash|시험 번역 몇 개]]를 제출하고 통과해야 함."
 }
