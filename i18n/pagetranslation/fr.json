@@ -36,7 +36,8 @@
 			"Wyz",
 			"Y-M D",
 			"Yasten",
-			"Zetud"
+			"Zetud",
+			"Mahabarata"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -95,6 +96,7 @@
 	"tpt-syntaxversion-label": "Utiliser la dernière version de la syntaxe pour cette page",
 	"tpt-transclusion": "Inclusion de modèle",
 	"tpt-transclusion-label": "Utiliser automatiquement une traduction lors de l’inclusion de cette page",
+	"tpt-transclusion-help": "Si cette option est activée, les pages qui incluent cette page en tant que modèle incluront à la place la traduction dans la langue de la page qui l'inclue (ou la langue source si cette traduction n'existe pas encore). Par exemple, si vous essayez d'inclure cette page dans une page en langue allemande, elle inclura à la place la page « $1 ». Cela fonctionne de manière fiable si les pages qui l'incluent utilisent également la traduction de page, mais peut échouer si elles sont traduites manuellement. Désactivez ce paramètre si la page gère la traduction par elle-même (par exemple pour prendre en charge les pages traduites manuellement ou pour utiliser la langue de l'interface utilisateur au lieu de la langue de la page), car sinon le wikitexte de la page elle-même sera complètement ignoré pendant l'inclusion. Ce paramètre n'a aucun effet si la page n'est jamais incluse dans une autre page.",
 	"tpt-rev-mark": "marquer à traduire",
 	"tpt-rev-unmark": "retirer la possibilité de traduire",
 	"tpt-rev-discourage": "dissuader",
