@@ -4,6 +4,8 @@
 ( function () {
 	'use strict';
 
+	var logger = require( 'ext.translate.eventlogginghelpers' );
+
 	function getEditSummaryTimeWithDiff( pageTitle, comment ) {
 		var diffLink = mw.util.getUrl( pageTitle, {
 			oldid: comment.revisionId,
@@ -714,11 +716,37 @@
 					return false;
 				}
 
+				var mtSuggestions = result.helpers.mt;
+				var suggestionsProvided = mtSuggestions.map( function ( suggestion ) {
+					return suggestion.service;
+				} );
+				var ttmSuggestions = result.helpers.ttmserver;
+
+				if ( ttmSuggestions.length ) {
+					suggestionsProvided.push( 'translation_memory' );
+				}
+
+				logger.logEvent(
+					'suggestion',
+					'',
+					suggestionsProvided.join( '; ' ),
+					{
+						// eslint-disable-next-line camelcase
+						source_title: this.message.group + '|' + this.message.title,
+						// eslint-disable-next-line camelcase
+						target_title: this.message.title,
+						// eslint-disable-next-line camelcase
+						source_language: result.helpers.definition.language,
+						// eslint-disable-next-line camelcase
+						target_language: this.message.targetLanguage
+					}
+				);
+
 				this.showMessageDocumentation( result.helpers.documentation );
 				this.showUneditableDocumentation( result.helpers.gettext );
 				this.showAssistantLanguages( result.helpers.inotherlanguages );
-				this.showTranslationMemory( result.helpers.ttmserver );
-				this.showMachineTranslations( result.helpers.mt );
+				this.showTranslationMemory( ttmSuggestions );
+				this.showMachineTranslations( mtSuggestions );
 				this.showSupportOptions( result.helpers.support );
 				this.addDefinitionDiff( result.helpers.definitiondiff );
 				this.addInsertables( result.helpers.insertables );
