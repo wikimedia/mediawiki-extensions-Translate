@@ -55,7 +55,7 @@ class QueryTranslationStatsActionApi extends ApiBase {
 				ParamValidator::PARAM_DEFAULT => 30,
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => 10000,
-				ApiBase::PARAM_RANGE_ENFORCE => true
+				IntegerDef::PARAM_IGNORE_RANGE => false
 			],
 			'group' => [
 				ParamValidator::PARAM_TYPE => 'string',
