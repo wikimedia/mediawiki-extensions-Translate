@@ -635,7 +635,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$iterator->append( $dbr->newSelectQueryBuilder()
+			$queryResults = $dbr->newSelectQueryBuilder()
 				->select( [ 'page_namespace', 'page_title', 'rt_type' ] )
 				->from( 'page' )
 				->leftJoin( 'revtag', null, [
@@ -645,7 +645,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 				] )
 				->where( $conds )
 				->caller( __METHOD__ )
-				->fetchResultSet() );
+				->fetchResultSet();
+			$iterator->append( $queryResults );
 		}
 
 		$this->dbInfo = $iterator;
@@ -676,13 +677,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$iterator->append( $dbr->newSelectQueryBuilder()
+			$queryResults = $dbr->newSelectQueryBuilder()
 				->select( [ 'page_namespace', 'page_title', 'trr_user' ] )
 				->from( 'page' )
 				->join( 'translate_reviews', null, [ 'page_id=trr_page', 'page_latest=trr_revision' ] )
 				->where( $conds )
 				->caller( __METHOD__ )
-				->fetchResultSet() );
+				->fetchResultSet();
+			$iterator->append( $queryResults );
 		}
 
 		$this->dbReviewData = $iterator;
@@ -714,15 +716,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$titleConds ??= $this->getTitleConds( $dbr );
 		$iterator = new AppendIterator();
 		foreach ( $titleConds as $conds ) {
-			$iterator->append(
-				$revisionStore->newSelectQueryBuilder( $dbr )
-					->joinPage()
-					->joinComment()
-					->where( $conds )
-					->andWhere( [ 'page_latest = rev_id' ] )
-					->caller( __METHOD__ )
-					->fetchResultSet()
-			);
+			$queryResults = $revisionStore->newSelectQueryBuilder( $dbr )
+				->joinPage()
+				->joinComment()
+				->where( $conds )
+				->andWhere( [ 'page_latest = rev_id' ] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+			$iterator->append( $queryResults );
 		}
 
 		$this->dbData = $iterator;
@@ -818,7 +819,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		if ( !$this->dbData instanceof EmptyIterator ) {
 			$slotRows = $revStore->getContentBlobsForBatch(
-				$this->dbData, [ SlotRecord::MAIN ], $queryFlags
+				$this->dbData,
+				[ SlotRecord::MAIN ],
+				$queryFlags
 			)->getValue();
 
 			foreach ( $this->dbData as $row ) {
