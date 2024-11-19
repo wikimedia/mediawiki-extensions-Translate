@@ -168,7 +168,7 @@ class MessageBundleContent extends JsonContent {
 		if ( !$status->isOK() ) {
 			throw new MalformedBundle(
 				'translate-messagebundle-error-parsing',
-				[ $status->getMessage()->text() ]
+				[ $status->getMessages( 'error' )[0] ]
 			);
 		}
 
