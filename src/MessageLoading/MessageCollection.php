@@ -44,16 +44,26 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * items.
 	 */
 	private const MAX_ITEMS_PER_QUERY = 2000;
+	public const FILTER_FUZZY = 'fuzzy';
+	public const FILTER_OPTIONAL = 'optional';
+	public const FILTER_IGNORED = 'ignored';
+	public const FILTER_HAS_TRANSLATION = 'hastranslation';
+	public const FILTER_CHANGED = 'changed';
+	public const FILTER_TRANSLATED = 'translated';
+	public const FILTER_REVIEWER = 'reviewer';
+	public const FILTER_LAST_TRANSLATOR = 'last-translator';
 	private const AVAILABLE_FILTERS = [
-		'fuzzy',
-		'optional',
-		'ignored',
-		'hastranslation',
-		'changed',
-		'translated',
-		'reviewer',
-		'last-translator',
+		self::FILTER_FUZZY,
+		self::FILTER_OPTIONAL,
+		self::FILTER_IGNORED,
+		self::FILTER_HAS_TRANSLATION,
+		self::FILTER_CHANGED,
+		self::FILTER_TRANSLATED,
+		self::FILTER_REVIEWER,
+		self::FILTER_LAST_TRANSLATOR,
 	];
+	public const INCLUDE_MATCHING = false;
+	public const EXCLUDE_MATCHING = true;
 
 	/** Language code. */
 	public string $code;
@@ -315,63 +325,55 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Filters messages based on some condition. Some filters cause data to be
-	 * loaded from the database. PAGEINFO: existence and fuzzy tags.
-	 * TRANSLATIONS: translations for every message. It is recommended to first
-	 * filter with messages that do not need those. It is recommended to add
-	 * translations from file with addInfile, and it is needed for changed
-	 * filter to work.
+	 * loaded from the database:
+	 * - PAGEINFO: existence and fuzzy tags.
+	 * - TRANSLATIONS: translations for every message. It is recommended to first
+	 *   filter with messages that do not need those. It is recommended to add
+	 *   translations from file with addInfile, and it is needed for changed
+	 *   filter to work.
 	 *
-	 * @param string $type
-	 *  - fuzzy: messages with fuzzy tag (PAGEINFO)
-	 *  - optional: messages marked for optional.
-	 *  - ignored: messages which are not for translation.
-	 *  - hastranslation: messages which have translation (be if fuzzy or not)
+	 * @param string $filter
+	 *  - FILTER_FUZZY: messages with fuzzy tag (PAGEINFO)
+	 *  - FILTER_OPTIONAL: messages marked for optional.
+	 *  - FILTER_IGNORED: messages which are not for translation.
+	 *  - FILTER_HAS_TRANSLATION: messages which have translation (be if fuzzy or not)
 	 *    (PAGEINFO, *INFILE).
-	 *  - translated: messages which have translation which is not fuzzy
+	 *  - FILTER_TRANSLATED: messages which have translation which is not fuzzy
 	 *    (PAGEINFO, *INFILE).
-	 *  - changed: translation in database differs from infile.
+	 *  - FILTER_CHANGED: translation in database differs from infile.
 	 *    (INFILE, TRANSLATIONS)
+	 *  - FILTER_REVIEWER: messages which are reviewed by a particular user
+	 *  - FILTER_LAST_TRANSLATOR: messages which are last translated by a particular user
 	 * @param bool $condition Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
 	 * @param int|null $value Value for properties filtering.
 	 * @throws InvalidFilterException If given invalid filter name.
 	 */
-	public function filter( string $type, bool $condition = true, ?int $value = null ): void {
-		if ( !in_array( $type, self::AVAILABLE_FILTERS, true ) ) {
-			throw new InvalidFilterException( $type );
+	public function filter( string $filter, bool $condition, ?int $value = null ): void {
+		if ( !in_array( $filter, self::AVAILABLE_FILTERS, true ) ) {
+			throw new InvalidFilterException( $filter );
 		}
-		$this->applyFilter( $type, $condition, $value );
-	}
 
-	/**
-	 * Really apply a filter. Some filters need multiple conditions.
-	 * @param string $filter Filter name.
-	 * @param bool $condition Whether to return messages which do not satisfy
-	 * @param int|null $value Value for properties filtering.
-	 * the given filter condition (true), or only which do (false).
-	 */
-	private function applyFilter( string $filter, bool $condition, ?int $value ): void {
 		$keys = $this->keys;
-		if ( $filter === 'fuzzy' ) {
+		if ( $filter === self::FILTER_FUZZY ) {
 			$keys = $this->filterFuzzy( $keys, $condition );
-		} elseif ( $filter === 'hastranslation' ) {
+		} elseif ( $filter === self::FILTER_HAS_TRANSLATION ) {
 			$keys = $this->filterHastranslation( $keys, $condition );
-		} elseif ( $filter === 'translated' ) {
-			$fuzzy = $this->filterFuzzy( $keys, false );
-			$hastranslation = $this->filterHastranslation( $keys, false );
+		} elseif ( $filter === self::FILTER_TRANSLATED ) {
+			$fuzzy = $this->filterFuzzy( $keys, self::INCLUDE_MATCHING );
+			$hastranslation = $this->filterHastranslation( $keys, self::INCLUDE_MATCHING );
 			// Fuzzy messages are not counted as translated messages
 			$translated = $this->filterOnCondition( $hastranslation, $fuzzy );
 			$keys = $this->filterOnCondition( $keys, $translated, $condition );
-		} elseif ( $filter === 'changed' ) {
+		} elseif ( $filter === self::FILTER_CHANGED ) {
 			$keys = $this->filterChanged( $keys, $condition );
-		} elseif ( $filter === 'reviewer' ) {
+		} elseif ( $filter === self::FILTER_REVIEWER ) {
 			$keys = $this->filterReviewer( $keys, $condition, $value );
-		} elseif ( $filter === 'last-translator' ) {
+		} elseif ( $filter === self::FILTER_LAST_TRANSLATOR ) {
 			$keys = $this->filterLastTranslator( $keys, $condition, $value );
 		} else {
-			// Filter based on tags.
 			if ( !isset( $this->tags[$filter] ) ) {
-				if ( $filter !== 'optional' && $filter !== 'ignored' ) {
+				if ( $filter !== self::FILTER_OPTIONAL && $filter !== self::FILTER_IGNORED ) {
 					throw new RuntimeException( "No tagged messages for custom filter $filter" );
 				}
 				$keys = $this->filterOnCondition( $keys, [], $condition );
@@ -388,11 +390,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	public function filterUntranslatedOptional(): void {
 		$optionalKeys = array_flip( $this->tags['optional'] ?? [] );
 		// Convert plain message keys to array<string,TitleValue>
-		$optional = $this->filterOnCondition( $this->keys, $optionalKeys, false );
+		$optional = $this->filterOnCondition( $this->keys, $optionalKeys, self::INCLUDE_MATCHING );
 		// Then get reduce that list to those which have no translation. Ensure we don't
 		// accidentally populate the info cache with too few keys.
 		$this->loadInfo( $this->keys );
-		$untranslatedOptional = $this->filterHastranslation( $optional, true );
+		$untranslatedOptional = $this->filterHastranslation( $optional, self::EXCLUDE_MATCHING );
 		// Now remove that list from the full list
 		$this->keys = $this->filterOnCondition( $this->keys, $untranslatedOptional );
 	}
@@ -413,7 +415,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @return string[] Filtered keys.
 	 */
 	private function filterOnCondition( array $keys, array $condKeys, bool $condition = true ): array {
-		if ( $condition ) {
+		if ( $condition === self::EXCLUDE_MATCHING ) {
 			// Delete $condKeys from $keys
 			foreach ( array_keys( $condKeys ) as $key ) {
 				unset( $keys[$key] );
@@ -441,7 +443,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->loadInfo( $keys );
 
 		$origKeys = [];
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$origKeys = $keys;
 		}
 
@@ -451,7 +453,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$keys = array_diff( $origKeys, $keys );
 		}
 
@@ -469,7 +471,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->loadInfo( $keys );
 
 		$origKeys = [];
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$origKeys = $keys;
 		}
 
@@ -483,7 +485,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		// Remove the messages which do not have a translation from the list
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$keys = array_diff( $origKeys, $keys );
 		}
 
@@ -502,7 +504,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->loadData( $keys );
 
 		$origKeys = [];
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$origKeys = $keys;
 		}
 
@@ -536,7 +538,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		// Remove the messages which have changed from the original list
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$keys = $this->filterOnCondition( $origKeys, $keys );
 		}
 
@@ -563,7 +565,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$keys = array_diff( $origKeys, $keys );
 		}
 
@@ -587,7 +589,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			}
 		}
 
-		if ( !$condition ) {
+		if ( $condition === self::INCLUDE_MATCHING ) {
 			$keys = array_diff( $origKeys, $keys );
 		}
 

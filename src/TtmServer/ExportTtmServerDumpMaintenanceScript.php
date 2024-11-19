@@ -7,6 +7,7 @@ use FormatJson;
 use Language;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
@@ -161,8 +162,8 @@ class ExportTtmServerDumpMaintenanceScript extends BaseMaintenanceScript {
 			}
 
 			$collection->resetForNewLanguage( $language );
-			$collection->filter( 'ignored' );
-			$collection->filter( 'translated', false );
+			$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
+			$collection->filter( MessageCollection::FILTER_TRANSLATED, MessageCollection::INCLUDE_MATCHING );
 			$collection->loadTranslations();
 
 			foreach ( $collection->keys() as $mkey => $titleValue ) {

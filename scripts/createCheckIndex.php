@@ -13,6 +13,7 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -107,9 +108,9 @@ class CreateCheckIndex extends Maintenance {
 
 				$collection->resetForNewLanguage( $code );
 				$collection->loadTranslations();
-				$collection->filter( 'ignored' );
-				$collection->filter( 'fuzzy' );
-				$collection->filter( 'translated', false );
+				$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
+				$collection->filter( MessageCollection::FILTER_FUZZY, MessageCollection::EXCLUDE_MATCHING );
+				$collection->filter( MessageCollection::FILTER_TRANSLATED, MessageCollection::INCLUDE_MATCHING );
 
 				foreach ( $collection as $key => $message ) {
 					$result = $validator->quickValidate( $message, $code );

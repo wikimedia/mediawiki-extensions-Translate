@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
@@ -266,11 +267,11 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				if ( $lang !== $wgTranslateDocumentationLanguageCode
 					&& $lang !== $sourceLanguage
 				) {
-					$collection->filter( 'ignored' );
+					$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
 				}
 
 				if ( $noFuzzy ) {
-					$collection->filter( 'fuzzy' );
+					$collection->filter( MessageCollection::FILTER_FUZZY, MessageCollection::EXCLUDE_MATCHING );
 				}
 
 				$languagesExportedCount++;

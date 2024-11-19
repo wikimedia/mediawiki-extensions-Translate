@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Languages\LanguageFallback;
 use RuntimeException;
 
@@ -67,13 +68,13 @@ class MessageBundleTranslationLoader {
 			$collection->resetForNewLanguage( $fallbackLanguageCode );
 			// TODO use custom tag after fixing MessageCollection::filter
 			$collection->setTags( 'ignored', array_keys( $translations ) );
-			$collection->filter( 'ignored' );
+			$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
 			if ( count( $collection ) === 0 ) {
 				break;
 			}
 
 			$collection->loadTranslations();
-			$collection->filter( 'hastranslation', false );
+			$collection->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::INCLUDE_MATCHING );
 			foreach ( $collection as $key => $message ) {
 				if ( $message->translation() !== null ) {
 					$translations[ $key ] = $message->translation();

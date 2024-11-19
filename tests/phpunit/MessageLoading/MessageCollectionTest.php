@@ -109,7 +109,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 			'changedtranslated_1' => 'pupuliini_1',
 			'changedtranslated_2' => 'pupuliini_2'
 		] );
-		$collection->filter( 'changed' );
+		$collection->filter( MessageCollection::FILTER_CHANGED, MessageCollection::EXCLUDE_MATCHING );
 		$this->assertContains( 'changedtranslated_2', $collection->getMessageKeys() );
 		$this->assertNotContains( 'changedtranslated_1', $collection->getMessageKeys() );
 	}

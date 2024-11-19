@@ -307,7 +307,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		if ( $this->language !== $translateDocCode
 			&& $this->language !== $group->getSourceLanguage()
 		) {
-			$collection->filter( 'ignored' );
+			$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
 		}
 
 		$collection->loadTranslations();

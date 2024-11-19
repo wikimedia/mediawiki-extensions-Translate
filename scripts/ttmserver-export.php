@@ -333,8 +333,8 @@ class TTMServerBootstrap extends Maintenance {
 
 	private function getTranslations( MessageCollection $collection, string $targetLanguage ): Generator {
 		$collection->resetForNewLanguage( $targetLanguage );
-		$collection->filter( 'ignored' );
-		$collection->filter( 'translated', false );
+		$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
+		$collection->filter( MessageCollection::FILTER_TRANSLATED, MessageCollection::INCLUDE_MATCHING );
 		$collection->loadTranslations();
 		$translations = [];
 
@@ -403,7 +403,7 @@ class TTMServerBootstrap extends Maintenance {
 
 	private function getCollection( MessageGroup $group, string $sourceLanguage ): MessageCollection {
 		$collection = $group->initCollection( $sourceLanguage );
-		$collection->filter( 'ignored' );
+		$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
 		$collection->initMessages();
 		return $collection;
 	}

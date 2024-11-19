@@ -118,9 +118,9 @@ class CrossLanguageTranslationSearchQuery {
 
 		$filter = $this->params['filter'];
 		if ( $filter === 'untranslated' ) {
-			$collection->filter( 'hastranslation', true );
+			$collection->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::EXCLUDE_MATCHING );
 		} elseif ( in_array( $filter, $this->getAvailableFilters() ) ) {
-			$collection->filter( $filter, false );
+			$collection->filter( $filter, MessageCollection::INCLUDE_MATCHING );
 		}
 
 		if ( $filter === 'translated' || $filter === 'fuzzy' ) {

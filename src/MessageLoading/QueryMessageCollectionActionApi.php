@@ -143,9 +143,9 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			try {
 				$value = $value === null ? $value : (int)$value;
 				if ( str_starts_with( $filter, '!' ) ) {
-					$messages->filter( substr( $filter, 1 ), true, $value );
+					$messages->filter( substr( $filter, 1 ), MessageCollection::EXCLUDE_MATCHING, $value );
 				} else {
-					$messages->filter( $filter, false, $value );
+					$messages->filter( $filter, MessageCollection::INCLUDE_MATCHING, $value );
 				}
 			} catch ( InvalidFilterException $e ) {
 				$this->dieWithError(

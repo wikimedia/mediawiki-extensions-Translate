@@ -117,7 +117,7 @@ class ExternalMessageSourceStateComparator {
 	): void {
 		// initCollection returns empty list before first import
 		$wiki = $group->initCollection( $language );
-		$wiki->filter( 'hastranslation', false );
+		$wiki->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::INCLUDE_MATCHING );
 		$wiki->loadTranslations();
 		$wikiKeys = $wiki->getMessageKeys();
 

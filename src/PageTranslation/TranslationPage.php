@@ -62,9 +62,9 @@ class TranslationPage {
 	public function filterMessageCollection( MessageCollection $collection ): void {
 		$collection->loadTranslations();
 		if ( $this->showOutdated ) {
-			$collection->filter( 'hastranslation', false );
+			$collection->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::INCLUDE_MATCHING );
 		} else {
-			$collection->filter( 'translated', false );
+			$collection->filter( MessageCollection::FILTER_TRANSLATED, MessageCollection::INCLUDE_MATCHING );
 		}
 	}
 

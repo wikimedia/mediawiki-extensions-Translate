@@ -662,22 +662,22 @@ class MessageGroupStats {
 
 	/** @return int[] */
 	public static function getStatsForCollection( MessageCollection $collection ): array {
-		$collection->filter( 'ignored' );
+		$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
 		$collection->filterUntranslatedOptional();
 		// Store the count of real messages for later calculation.
 		$total = count( $collection );
 
 		// Count fuzzy first.
-		$collection->filter( 'fuzzy' );
+		$collection->filter( MessageCollection::FILTER_FUZZY, MessageCollection::EXCLUDE_MATCHING );
 		$fuzzy = $total - count( $collection );
 
 		// Count the completed translations.
-		$collection->filter( 'hastranslation', false );
+		$collection->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::INCLUDE_MATCHING );
 		$translated = count( $collection );
 
 		// Count how many of the completed translations
 		// have been proofread
-		$collection->filter( 'reviewer', false );
+		$collection->filter( MessageCollection::FILTER_REVIEWER, MessageCollection::INCLUDE_MATCHING );
 		$proofread = count( $collection );
 
 		return [

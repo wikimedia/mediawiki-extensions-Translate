@@ -140,7 +140,7 @@ class AndroidXmlFormat extends SimpleFormat {
 	protected function writeReal( MessageCollection $collection ): string {
 		global $wgTranslateDocumentationLanguageCode;
 
-		$collection->filter( 'hastranslation', false );
+		$collection->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::INCLUDE_MATCHING );
 		if ( count( $collection ) === 0 ) {
 			return '';
 		}

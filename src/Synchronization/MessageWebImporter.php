@@ -10,6 +10,7 @@ use Language;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -315,7 +316,7 @@ class MessageWebImporter {
 		}
 
 		if ( !$process ) {
-			$collection->filter( 'hastranslation', false );
+			$collection->filter( MessageCollection::FILTER_HAS_TRANSLATION, MessageCollection::INCLUDE_MATCHING );
 			$keys = $collection->getMessageKeys();
 
 			$diff = array_diff( $keys, array_keys( $messages ) );
