@@ -8,7 +8,7 @@
 
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
-/** @covers FileBasedMessageGroup */
+/** @covers \FileBasedMessageGroup */
 class ExclusionInclusionListTest extends MediaWikiIntegrationTestCase {
 
 	private MessageGroup $group;

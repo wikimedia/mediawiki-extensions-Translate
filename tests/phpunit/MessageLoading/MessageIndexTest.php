@@ -20,7 +20,7 @@ use WANObjectCache;
  * @license GPL-2.0-or-later
  * @group Database
  * @group large
- * @covers MediaWiki\Extension\Translate\MessageLoading\MessageIndex
+ * @covers \MediaWiki\Extension\Translate\MessageLoading\MessageIndex
  */
 class MessageIndexTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

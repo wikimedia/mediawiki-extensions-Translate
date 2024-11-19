@@ -11,7 +11,7 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 /**
  * @group medium
  * @group Database
- * @covers WikiPageMessageGroup
+ * @covers \WikiPageMessageGroup
  */
 class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

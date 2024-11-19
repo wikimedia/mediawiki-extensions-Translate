@@ -14,7 +14,7 @@ use MessageGroupBase;
  * correctly.
  *
  * @author Niklas Laxström
- * @covers MediaWiki\Extension\Translate\FileFormatSupport\JavaFormat
+ * @covers \MediaWiki\Extension\Translate\FileFormatSupport\JavaFormat
  */
 class JavaFormatTest extends MediaWikiIntegrationTestCase {
 

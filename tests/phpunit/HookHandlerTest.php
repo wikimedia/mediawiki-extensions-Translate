@@ -17,7 +17,7 @@ use MockWikiMessageGroup;
  * @group medium
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers MediaWiki\Extension\Translate\HookHandler
+ * @covers \MediaWiki\Extension\Translate\HookHandler
  */
 class HookHandlerTest extends MediaWikiLangTestCase {
 	use MessageGroupTestTrait;

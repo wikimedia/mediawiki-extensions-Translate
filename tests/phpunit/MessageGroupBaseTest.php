@@ -10,7 +10,7 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
  * @license GPL-2.0-or-later
- * @covers MessageGroupBase
+ * @covers \MessageGroupBase
  */
 class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 	private MessageGroup $group;

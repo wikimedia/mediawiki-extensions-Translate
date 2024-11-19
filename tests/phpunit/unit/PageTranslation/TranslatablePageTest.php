@@ -10,7 +10,7 @@ use MediaWikiUnitTestCase;
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers MediaWiki\Extension\Translate\PageTranslation\TranslatablePage
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePage
  */
 class TranslatablePageTest extends MediaWikiUnitTestCase {
 	/** @dataProvider provideTestParseTranslationUnit */

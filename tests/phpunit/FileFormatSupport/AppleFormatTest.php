@@ -14,7 +14,7 @@ use MessageGroupBase;
  * correctly.
  * @author Brion Vibber
  * @author Niklas Laxström
- * @covers MediaWiki\Extension\Translate\FileFormatSupport\AppleFormat
+ * @covers \MediaWiki\Extension\Translate\FileFormatSupport\AppleFormat
  */
 class AppleFormatTest extends MediaWikiIntegrationTestCase {
 

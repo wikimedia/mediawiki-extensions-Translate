@@ -23,8 +23,8 @@ use Wikimedia\TestingAccessWrapper;
  * @license GPL-2.0-or-later
  * @group Database
  * @group medium
- * @covers MediaWiki\Extension\Translate\HookHandler
- * @covers MediaWiki\Extension\Translate\PageTranslation\Hooks
+ * @covers \MediaWiki\Extension\Translate\HookHandler
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\Hooks
  */
 class HooksTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
@@ -173,7 +173,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			"translation with errors is saved if user with 'translate-manage' permission is translating." );
 	}
 
-	/** @covers MediaWiki\Extension\Translate\PageTranslation\Hooks::updateTranstagOnNullRevisions */
+	/** @covers \MediaWiki\Extension\Translate\PageTranslation\Hooks::updateTranstagOnNullRevisions */
 	public function testTagNullRevision() {
 		$title = Title::newFromText( 'translated' );
 		$status = $this->editPage(

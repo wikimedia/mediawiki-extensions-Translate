@@ -16,7 +16,7 @@ use MockMessageCollectionForExport;
  * @license GPL-2.0-or-later
  */
 
-/** @covers MediaWiki\Extension\Translate\FileFormatSupport\IniFormat */
+/** @covers \MediaWiki\Extension\Translate\FileFormatSupport\IniFormat */
 class IniFormatTest extends MediaWikiIntegrationTestCase {
 	private array $groupConfiguration = [
 		'BASIC' => [

@@ -12,7 +12,7 @@ use MessageGroupBase;
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers MediaWiki\Extension\Translate\FileFormatSupport\AndroidXmlFormat
+ * @covers \MediaWiki\Extension\Translate\FileFormatSupport\AndroidXmlFormat
  */
 class AndroidXmlFormatTest extends MediaWikiIntegrationTestCase {
 	private const DOCLANG = 'qqq';

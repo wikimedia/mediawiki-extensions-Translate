@@ -16,7 +16,7 @@ use ReflectionObject;
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat
+ * @covers \MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat
  */
 class GettextFormatTest extends MediaWikiIntegrationTestCase {
 	private array $groupConfiguration;

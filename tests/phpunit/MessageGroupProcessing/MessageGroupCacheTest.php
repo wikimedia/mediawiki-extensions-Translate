@@ -9,7 +9,7 @@ use MediaWikiIntegrationTestCase;
 /**
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupCache
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupCache
  */
 class MessageGroupCacheTest extends MediaWikiIntegrationTestCase {
 	public function testCacheRoundtrip() {

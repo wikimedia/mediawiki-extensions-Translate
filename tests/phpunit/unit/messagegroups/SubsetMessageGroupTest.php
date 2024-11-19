@@ -6,7 +6,7 @@ use Psr\Log\LogLevel;
 
 /**
  * @license GPL-2.0-or-later
- * @covers SubsetMessageGroup
+ * @covers \SubsetMessageGroup
  */
 class SubsetMessageGroupTest extends MediaWikiUnitTestCase {
 	public function testGetKeys() {

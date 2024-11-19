@@ -16,7 +16,7 @@ use MessageGroupBase;
  * @license GPL-2.0-or-later
  */
 
-/** @covers MediaWiki\Extension\Translate\FileFormatSupport\DtdFormat */
+/** @covers \MediaWiki\Extension\Translate\FileFormatSupport\DtdFormat */
 class DtdFormatTest extends MediaWikiIntegrationTestCase {
 
 	private const GROUP_CONFIGURATION = [

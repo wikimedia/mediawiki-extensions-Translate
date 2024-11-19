@@ -6,7 +6,7 @@
 
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 
-/** @covers MediaWiki\Extension\Translate\MessageSync\MessageSourceChange */
+/** @covers \MediaWiki\Extension\Translate\MessageSync\MessageSourceChange */
 class MessageSourceChangeTest extends MediaWikiUnitTestCase {
 	/** @var MessageSourceChange */
 	protected $change;

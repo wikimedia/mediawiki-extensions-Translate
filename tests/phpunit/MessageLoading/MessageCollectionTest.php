@@ -17,7 +17,7 @@ use MockWikiMessageGroup;
  * @license GPL-2.0-or-later
  * @group Database
  * @group medium
- * @covers MediaWiki\Extension\Translate\MessageLoading\MessageCollection
+ * @covers \MediaWiki\Extension\Translate\MessageLoading\MessageCollection
  */
 class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
@@ -91,7 +91,7 @@ class MessageCollectionTest extends MediaWikiIntegrationTestCase {
 		$this->assertNull( $untranslated->getProperty( 'revision' ) );
 	}
 
-	/** @covers MediaWiki\Extension\Translate\MessageLoading\MessageCollection::filterChanged */
+	/** @covers \MediaWiki\Extension\Translate\MessageLoading\MessageCollection::filterChanged */
 	public function testFilterChanged(): void {
 		$this->assertStatusGood(
 			$this->editPage( 'MediaWiki:Changedtranslated_1/fi', 'pupuliini_1' )

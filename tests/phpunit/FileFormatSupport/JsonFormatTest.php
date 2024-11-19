@@ -16,7 +16,7 @@ use MockMessageCollectionForExport;
  * @license GPL-2.0-or-later
  */
 
-/** @covers MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat */
+/** @covers \MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat */
 class JsonFormatTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {

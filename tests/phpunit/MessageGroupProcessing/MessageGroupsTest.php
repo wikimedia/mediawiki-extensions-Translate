@@ -11,7 +11,7 @@ use MessageGroupTestTrait;
  * @author Niklas Laxström
  * @group Database
  * ^ See AggregateMessageGroup::getGroups -> MessageGroups::getPriority
- * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups
  * @license GPL-2.0-or-later
  */
 class MessageGroupsTest extends MediaWikiIntegrationTestCase {

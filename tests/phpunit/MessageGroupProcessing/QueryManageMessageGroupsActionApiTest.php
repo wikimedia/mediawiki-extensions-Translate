@@ -13,7 +13,7 @@ use MockWikiMessageGroup;
 /**
  * @group medium
  * @group Database
- * @covers MediaWiki\Extension\Translate\MessageGroupProcessing\QueryManageMessageGroupsActionApi
+ * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\QueryManageMessageGroupsActionApi
  * @license GPL-2.0-or-later
  */
 class QueryManageMessageGroupsActionApiTest extends ApiTestCase {

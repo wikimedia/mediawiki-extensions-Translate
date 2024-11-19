@@ -15,7 +15,7 @@ use MockMessageCollectionForExport;
  * @copyright Copyright © 2011-2015, MetaSolutions AB
  * @license GPL-2.0-or-later
  *
- * @covers MediaWiki\Extension\Translate\FileFormatSupport\AmdFormat
+ * @covers \MediaWiki\Extension\Translate\FileFormatSupport\AmdFormat
  */
 class AmdFormatTest extends MediaWikiIntegrationTestCase {
 

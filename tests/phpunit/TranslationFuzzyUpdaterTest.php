@@ -19,7 +19,7 @@ use MediaWiki\User\UserIdentity;
  * Tests for fuzzy flag change on edits.
  * @group Database
  * @group medium
- * @covers MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
+ * @covers \MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
  */
 class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
