@@ -242,7 +242,7 @@ class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintena
 		$titlePrefixedDbKey = $bundle['title'] instanceof Title ?
 			$bundle['title']->getPrefixedDBkey() : '<Title not available>';
 		$id = str_pad( (string)$bundle['page_id'], 7, ' ', STR_PAD_LEFT );
-		$status = self::STATUS_NAME_MAPPING[ $bundle['status']->getId() ];
+		$status = self::STATUS_NAME_MAPPING[$bundle['status']->getId()];
 		$this->output( self::INDENT_SPACER . "* [Id: $id] $titlePrefixedDbKey: $status\n" );
 	}
 }

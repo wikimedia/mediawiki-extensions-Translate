@@ -107,7 +107,7 @@ class AmdFormat extends SimpleFormat {
 		$dataStart = strpos( $data, 'define(' ) + 6;
 		$dataEnd = strrpos( $data, ')' );
 
-		// Strip everything outside of the data section.
+		// Strip everything outside the data section.
 		return substr( $data, $dataStart + 1, $dataEnd - $dataStart - 1 );
 	}
 

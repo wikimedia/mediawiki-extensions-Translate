@@ -30,9 +30,7 @@ class DtdFormat extends SimpleFormat {
 		$messages = array_combine(
 			$keys,
 			array_map(
-				static function ( $message ) {
-					return html_entity_decode( $message, ENT_QUOTES );
-				},
+				static fn ( $message ) => html_entity_decode( $message, ENT_QUOTES ),
 				$messages
 			)
 		);

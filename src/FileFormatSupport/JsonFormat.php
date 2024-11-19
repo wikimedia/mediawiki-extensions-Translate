@@ -157,4 +157,5 @@ class JsonFormat extends SimpleFormat {
 		];
 	}
 }
+
 class_alias( JsonFormat::class, 'JsonFFS' );

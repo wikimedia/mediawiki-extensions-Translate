@@ -37,10 +37,9 @@ class FlatPhpFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		foreach ( $matches as $_ ) {
 			$legal = Title::legalChars();
-			$key = preg_replace_callback( "/([^$legal]|\\\\)/u",
-				static function ( $m ) {
-					return '\x' . dechex( ord( $m[0] ) );
-				},
+			$key = preg_replace_callback(
+				"/([^$legal]|\\\\)/u",
+				static fn ( $m ) => '\x' . dechex( ord( $m[0] ) ),
 				$_[1]
 			);
 			$value = str_replace( [ "\'", "\\\\" ], [ "'", "\\" ], $_[2] );
@@ -96,8 +95,7 @@ class FlatPhpFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		$authors = $this->doAuthors( $collection );
 
-		$output =
-			<<<PHP
+		return <<<PHP
 			/** $name ($native)
 			 * $docu
 			 * To improve a translation please visit $wgServer
@@ -109,8 +107,6 @@ class FlatPhpFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 
 			PHP;
-
-		return $output;
 	}
 
 	private function doAuthors( MessageCollection $collection ): string {

@@ -81,7 +81,7 @@ class AndroidXmlFormat extends SimpleFormat {
 		}
 
 		$authors = $matches = [];
-		preg_match_all( '~\* (.*)~', $match[ 1 ], $matches );
+		preg_match_all( '~\* (.*)~', $match[1], $matches );
 		foreach ( $matches[1] as $author ) {
 			$authors[] = str_replace( "\u{2011}\u{2011}", '--', $author );
 		}

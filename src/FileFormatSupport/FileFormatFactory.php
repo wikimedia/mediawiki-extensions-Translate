@@ -46,13 +46,13 @@ class FileFormatFactory {
 	 * @return SimpleFormat
 	 */
 	public function create( string $format, FileBasedMessageGroup $group ): SimpleFormat {
-		if ( !isset( self::FORMATS[ $format ] ) ) {
+		if ( !isset( self::FORMATS[$format] ) ) {
 			throw new InvalidArgumentException(
 				"FileFormatSupport: Unknown file format '$format' specified for group '{$group->getId()}'"
 			);
 		}
 
-		$spec = self::FORMATS[ $format ];
+		$spec = self::FORMATS[$format];
 		if ( is_string( $spec ) ) {
 			$spec = [ 'class' => $spec ];
 		}
@@ -76,10 +76,10 @@ class FileFormatFactory {
 	}
 
 	public function getClassname( string $format ): string {
-		if ( !isset( self::FORMATS[ $format ] ) ) {
+		if ( !isset( self::FORMATS[$format] ) ) {
 			throw new InvalidArgumentException( "Unknown format $format" );
 		}
 
-		return self::FORMATS[ $format ];
+		return self::FORMATS[$format];
 	}
 }

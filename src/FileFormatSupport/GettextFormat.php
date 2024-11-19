@@ -318,7 +318,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			$legalChars = Title::legalChars();
 			$snippet = $item['id'];
 			$snippet = preg_replace( "/[^$legalChars]/", ' ', $snippet );
-			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
+			$snippet = preg_replace( '/[:&%\/_]/', ' ', $snippet );
 			$snippet = preg_replace( '/ {2,}/', ' ', $snippet );
 			$snippet = $lang->truncateForDatabase( $snippet, 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );

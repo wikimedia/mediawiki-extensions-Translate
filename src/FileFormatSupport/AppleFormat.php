@@ -148,9 +148,7 @@ class AppleFormat extends SimpleFormat {
 
 	/** Escape Obj-C-style strings; use backslash-escapes etc. */
 	private static function escapeString( string $str ): string {
-		$str = addcslashes( $str, '\\"' );
-		$str = str_replace( "\n", '\\n', $str );
-		return $str;
+		return str_replace( "\n", '\\n', addcslashes( $str, '\\"' ) );
 	}
 
 	/**
