@@ -261,7 +261,7 @@
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
-				this.suggestionAdder( $element, translation.value );
+				this.suggestionAdder( $element, translation.value, 'assistant language' );
 
 				return $element;
 			}.bind( this ) );
@@ -353,7 +353,7 @@
 				suggestion.sources = [];
 				suggestion.sources.push( translation );
 
-				this.suggestionAdder( suggestion.$element, translation.target );
+				this.suggestionAdder( suggestion.$element, translation.target, 'translation memory' );
 
 				suggestions[ translation.target ] = suggestion;
 			}, this );
@@ -475,7 +475,7 @@
 							.text( translation.service )
 					);
 
-				translateEditor.suggestionAdder( $translation, translation.target );
+				translateEditor.suggestionAdder( $translation, translation.target, translation.service );
 
 				$mtSuggestions.append( $translation );
 			} );
@@ -488,8 +488,9 @@
 		 * @internal
 		 * @param {jQuery} $source
 		 * @param {string} suggestion Text to add
+		 * @param {string} service TTM service
 		 */
-		suggestionAdder: function ( $source, suggestion ) {
+		suggestionAdder: function ( $source, suggestion, service ) {
 			var $target = this.$editor.find( '.tux-textarea-translation' );
 			if ( $target.get( 0 ).readOnly ) {
 				// If the textarea is disabled, then disable the translation aid.
@@ -508,6 +509,7 @@
 				if ( !selection ) {
 					$target.val( suggestion ).trigger( 'focus' ).trigger( 'input' );
 				}
+				logger.logClickEvent( 'accept_suggestion', service );
 			};
 
 			$source.on( 'click', inserter )
