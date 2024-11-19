@@ -26,9 +26,10 @@ use Wikimedia\ParamValidator\ParamValidator;
 class AggregateGroupsActionApi extends ApiBase {
 	private JobQueueGroup $jobQueueGroup;
 	protected static string $right = 'translate-manage';
-	private const NO_LANGUAGE_CODE = '-';
 	private MessageGroupMetadata $messageGroupMetadata;
 	private AggregateGroupManager $aggregateGroupManager;
+
+	private const NO_LANGUAGE_CODE = '-';
 
 	public function __construct(
 		ApiMain $main,
@@ -143,33 +144,13 @@ class AggregateGroupsActionApi extends ApiBase {
 
 			$desc = trim( $params['groupdescription'] );
 
-			$aggregateGroupId = self::generateAggregateGroupId( $name );
-
-			// Throw error if group already exists
-			$nameExists = MessageGroups::labelExists( $name );
-			if ( $nameExists ) {
-				$this->dieWithError( 'apierror-translate-duplicateaggregategroup', 'duplicateaggregategroup' );
+			try {
+				$languageCode = $params['groupsourcelanguagecode'] === self::NO_LANGUAGE_CODE ?
+					null : trim( $params['groupsourcelanguagecode'] );
+				$aggregateGroupId = $this->aggregateGroupManager->add( $name, $desc, $languageCode );
+			} catch ( DuplicateAggregateGroupException $e ) {
+				$this->dieWithException( $e );
 			}
-
-			// ID already exists: Generate a new ID by adding a number to it.
-			$idExists = MessageGroups::getGroup( $aggregateGroupId );
-			if ( $idExists ) {
-				$i = 1;
-				do {
-					$tempId = $aggregateGroupId . '-' . $i;
-					$idExists = MessageGroups::getGroup( $tempId );
-					$i++;
-				} while ( $idExists );
-				$aggregateGroupId = $tempId;
-			}
-			$sourceLanguageCode = trim( $params['groupsourcelanguagecode'] );
-
-			$this->messageGroupMetadata->set( $aggregateGroupId, 'name', $name );
-			$this->messageGroupMetadata->set( $aggregateGroupId, 'description', $desc );
-			if ( $sourceLanguageCode !== self::NO_LANGUAGE_CODE ) {
-				$this->messageGroupMetadata->set( $aggregateGroupId, 'sourcelanguagecode', $sourceLanguageCode );
-			}
-			$this->messageGroupMetadata->setSubgroups( $aggregateGroupId, [] );
 
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
 			$output['groups'] = $this->getIncludableGroups();
@@ -258,16 +239,6 @@ class AggregateGroupsActionApi extends ApiBase {
 		}
 
 		return $groupsWithDifferentLanguage;
-	}
-
-	protected function generateAggregateGroupId( string $aggregateGroupName, string $prefix = 'agg-' ): string {
-		// The database field has a maximum limit of 200 bytes
-		if ( strlen( $aggregateGroupName ) + strlen( $prefix ) >= 200 ) {
-			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );
-		} else {
-			$pattern = '/[\x00-\x1f\x23\x27\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i';
-			return $prefix . preg_replace( $pattern, '_', $aggregateGroupName );
-		}
 	}
 
 	public function isWriteMode(): bool {

@@ -465,6 +465,7 @@
 	"translate-error-association-failure": "Following message {{PLURAL:$2|group|groups}} cannot be associated with the aggregate group: $1",
 	"translate-error-invalid-aggregategroup": "Invalid aggregate message group $1",
 	"translate-error-aggregategroup-source-language-mismatch": "The {{PLURAL:$3|group $1 does|groups $1 do}} not have the same source language as the aggregate group ($2).",
+	"translate-error-duplicate-aggregategroup": "Aggregate message group with the name $1 already exists.",
 	"log-action-filter-translationreview": "Type of action:",
 	"log-action-filter-translationreview-message": "Review of individual translation messages",
 	"log-action-filter-translationreview-group": "Changes in the status of the progress of translations",

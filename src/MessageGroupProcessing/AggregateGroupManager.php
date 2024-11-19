@@ -21,6 +21,8 @@ class AggregateGroupManager {
 	private TitleFactory $titleFactory;
 	private MessageGroupMetadata $messageGroupMetadata;
 
+	private const MESSAGE_GROUP_PREFIX = 'agg-';
+
 	public function __construct(
 		TitleFactory $titleFactory,
 		MessageGroupMetadata $messageGroupMetadata
@@ -53,6 +55,26 @@ class AggregateGroupManager {
 		}
 
 		return $this->titleFactory->newFromLinkTarget( $relatedGroupPage );
+	}
+
+	public function add( string $name, string $description, ?string $languageCode ): string {
+		$aggregateGroupId = $this->generateAggregateGroupId( $name );
+
+		// Throw error if group already exists
+		if ( MessageGroups::labelExists( $name ) ) {
+			throw new DuplicateAggregateGroupException( $name );
+		}
+
+		// FIXME: Each call to set runs a DB query. Make this more efficient.
+		$this->messageGroupMetadata->set( $aggregateGroupId, 'name', $name );
+		$this->messageGroupMetadata->set( $aggregateGroupId, 'description', $description );
+		if ( $languageCode ) {
+			// TODO: Add language code validation
+			$this->messageGroupMetadata->set( $aggregateGroupId, 'sourcelanguagecode', $languageCode );
+		}
+		$this->messageGroupMetadata->setSubgroups( $aggregateGroupId, [] );
+
+		return $aggregateGroupId;
 	}
 
 	/**
@@ -132,5 +154,29 @@ class AggregateGroupManager {
 		}
 
 		throw new AggregateGroupNotFoundException( $aggregateGroupId );
+	}
+
+	private function generateAggregateGroupId( string $name ): string {
+		// The database field has a maximum limit of 200 bytes
+		if ( strlen( $name ) + strlen( self::MESSAGE_GROUP_PREFIX ) >= 200 ) {
+			$aggregateGroupId = self::MESSAGE_GROUP_PREFIX . substr( sha1( $name ), 0, 5 );
+		} else {
+			$pattern = '/[\x00-\x1f\x23\x27\x2c\x2e\x3c\x3e\x5b\x5d\x7b\x7c\x7d\x7f\s]+/i';
+			$aggregateGroupId = self::MESSAGE_GROUP_PREFIX . preg_replace( $pattern, '_', $name );
+		}
+
+		// ID already exists: Generate a new ID by adding a number to it.
+		$idExists = MessageGroups::getGroup( $aggregateGroupId );
+		if ( $idExists ) {
+			$i = 1;
+			do {
+				$tempId = $aggregateGroupId . '-' . $i;
+				$idExists = MessageGroups::getGroup( $tempId );
+				$i++;
+			} while ( $idExists );
+			$aggregateGroupId = $tempId;
+		}
+
+		return $aggregateGroupId;
 	}
 }

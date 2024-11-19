@@ -506,6 +506,7 @@
 	"translate-error-association-failure": "Error message.\n\nParameters:\n* $1 - Invalid message group ids\n* $2 - Count of invalid message group ids",
 	"translate-error-invalid-aggregategroup": "Error message.\n\nParameters:\n* $1 - Aggregate message group id",
 	"translate-error-aggregategroup-source-language-mismatch": "Error message.\n\nParameters:\n* $1 - List of message groups ids\n* $2 - Language of the aggregate message group\n* $3 - Number of invalid message groups ids",
+	"translate-error-duplicate-aggregategroup": "Error message.\n\nParameters:\n* $1 - Aggregate message group name",
 	"log-action-filter-translationreview": "{{Doc-log-action-filter-type|translationreview}}\n{{Identical|Type of action}}\n{{Related|Log-action-filter}}",
 	"log-action-filter-translationreview-message": "{{doc-log-action-filter-action|translationreview|message}}",
 	"log-action-filter-translationreview-group": "{{doc-log-action-filter-action|translationreview|group}}",

@@ -157,7 +157,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "If <kbd>false</kbd>, do not use latest syntax version for this page. If absent, latest syntax version is used.",
 	"apihelp-markfortranslation-param-transclusion": "If <kbd>yes</kbd> or absent, enable translation aware transclusion for this page. If <kbd>no</kbd>, disable transclusion.",
 	"apierror-translate-changeset-modified": "The changeset has been modified by another user or process. Your changes cannot be saved as it might override their changes. Please refresh the page to see the latest changes.",
-	"apierror-translate-duplicateaggregategroup": "Message group already exists",
 	"apierror-translate-fuzzymessage": "Cannot review fuzzy translations",
 	"apierror-translate-groupreviewdisabled": "Message group review not in use.",
 	"apierror-translate-invalidaggregategroupname": "Invalid aggregate message group name",

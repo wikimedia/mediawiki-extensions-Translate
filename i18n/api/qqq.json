@@ -167,7 +167,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "{{doc-apihelp-param|markfortranslation|forcelatestsyntaxversion}}",
 	"apihelp-markfortranslation-param-transclusion": "{{doc-apihelp-param|markfortranslation|transclusion}}",
 	"apierror-translate-changeset-modified": "{{doc-apierror}}",
-	"apierror-translate-duplicateaggregategroup": "{{doc-apierror}}",
 	"apierror-translate-fuzzymessage": "{{doc-apierror}}",
 	"apierror-translate-groupreviewdisabled": "{{doc-apierror}}",
 	"apierror-translate-invalidaggregategroupname": "{{doc-apierror}}",
