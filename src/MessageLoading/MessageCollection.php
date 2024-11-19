@@ -44,6 +44,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * items.
 	 */
 	private const MAX_ITEMS_PER_QUERY = 2000;
+	private const AVAILABLE_FILTERS = [
+		'fuzzy',
+		'optional',
+		'ignored',
+		'hastranslation',
+		'changed',
+		'translated',
+		'reviewer',
+		'last-translator',
+	];
 
 	/** Language code. */
 	public string $code;
@@ -327,23 +337,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @throws InvalidFilterException If given invalid filter name.
 	 */
 	public function filter( string $type, bool $condition = true, ?int $value = null ): void {
-		if ( !in_array( $type, self::getAvailableFilters(), true ) ) {
+		if ( !in_array( $type, self::AVAILABLE_FILTERS, true ) ) {
 			throw new InvalidFilterException( $type );
 		}
 		$this->applyFilter( $type, $condition, $value );
-	}
-
-	private static function getAvailableFilters(): array {
-		return [
-			'fuzzy',
-			'optional',
-			'ignored',
-			'hastranslation',
-			'changed',
-			'translated',
-			'reviewer',
-			'last-translator',
-		];
 	}
 
 	/**
