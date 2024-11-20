@@ -13,7 +13,8 @@
 			"Vitorvicentevalente",
 			"Vivaelcelta",
 			"Waldir",
-			"Waldyrious"
+			"Waldyrious",
+			"Mbs262"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -227,8 +228,8 @@
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Gravar",
 	"pm-cancel-button-label": "Cancelar",
-	"pm-page-does-not-exist": "$1 não existe",
-	"pm-old-translations-missing": "$1 não contém tradução antigas",
+	"pm-page-does-not-exist": "A página $1 não existe.",
+	"pm-old-translations-missing": "A página $1 não contém traduções antigas.",
 	"pm-extra-units-warning": "Podem existir unidades suplementares. Faça corresponder corretamente as unidades de origem às de tradução, por favor.",
 	"pm-pagename-missing": "Introduza o nome da página, por favor.",
 	"pm-add-icon-hover-text": "Adicionar uma unidade abaixo",

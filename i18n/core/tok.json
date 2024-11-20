@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Tbodt"
+			"Tbodt",
+			"Juwan",
+			"Tamzin"
 		]
 	},
 	"translate": "ante toki",
@@ -18,6 +20,7 @@
 	"translate-language": "toki",
 	"translate-mgs-column-language": "toki",
 	"translate-smg-group-message-message-other-langs": "toki ante:",
+	"translate-documentation-language": "sona toki",
 	"translate-msggroupselector-search-all": "ale",
 	"tux-languageselector": "o ante tawa toki ni:",
 	"tux-tab-all": "ale",
@@ -30,7 +33,7 @@
 	"tux-editor-editsummary-placeholder": "ante li tan seme? (sina ken toki ala e ni)",
 	"tux-editor-save-button-label": "o pana e toki",
 	"tux-editor-skip-button-label": "o ala o tawa toki kama",
-	"tux-editor-cancel-button-label": "o ala",
+	"tux-editor-cancel-button-label": "o weka",
 	"tux-editor-edit-desc": "o ante e sona pi toki ni",
 	"tux-editor-suggestions-title": "ken",
 	"tux-editor-need-more-help": "sina awen sona ala toki ante e ni la,",
@@ -41,7 +44,7 @@
 	"tux-editor-clear-translated": "o weka e pali pini tan lukin",
 	"tux-editor-translate-mode": "toki mute",
 	"tux-editor-page-mode": "lipu",
-	"tux-editor-doc-editor-cancel": "o ala",
+	"tux-editor-doc-editor-cancel": "o weka",
 	"tux-messagetable-more-messages": "{{PLURAL:$1|toki}} $1 li kama",
 	"tux-messagetable-loading-messages": "ilo li kama e {{PLURAL:$1|toki}}...",
 	"tux-message-filter-placeholder": "o alasa",
