@@ -141,9 +141,6 @@ class AggregateGroupsActionApi extends ApiBase {
 				);
 			}
 
-			if ( !isset( $params['groupdescription'] ) ) {
-				$this->dieWithError( [ 'apierror-missingparam', 'groupdescription' ] );
-			}
 			$desc = trim( $params['groupdescription'] );
 
 			$aggregateGroupId = self::generateAggregateGroupId( $name );
@@ -305,6 +302,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			],
 			'groupdescription' => [
 				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 			],
 			'groupsourcelanguagecode' => [
 				ParamValidator::PARAM_TYPE => 'string',
