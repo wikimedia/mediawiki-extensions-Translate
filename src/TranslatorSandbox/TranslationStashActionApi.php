@@ -142,10 +142,6 @@ class TranslationStashActionApi extends ApiBase {
 			'metadata' => [
 				ParamValidator::PARAM_TYPE => 'string',
 			],
-			'token' => [
-				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_REQUIRED => true,
-			],
 			'username' => [
 				ParamValidator::PARAM_TYPE => 'string',
 			],

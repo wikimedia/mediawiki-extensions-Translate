@@ -261,10 +261,6 @@ class TranslatorSandboxActionApi extends ApiBase {
 				ParamValidator::PARAM_DEFAULT => 0,
 				ParamValidator::PARAM_ISMULTI => true,
 			],
-			'token' => [
-				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_REQUIRED => true,
-			],
 			'username' => [ ParamValidator::PARAM_TYPE => 'string' ],
 			'password' => [ ParamValidator::PARAM_TYPE => 'string' ],
 			'email' => [ ParamValidator::PARAM_TYPE => 'string' ],
