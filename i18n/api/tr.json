@@ -133,7 +133,6 @@
 	"apierror-translate-duplicateaggregategroup": "Mesaj grubu zaten var",
 	"apierror-translate-fuzzymessage": "Fuzzy çevirileri incelenemiyor",
 	"apierror-translate-groupreviewdisabled": "Mesaj grubu incelemesi kullanılmıyor.",
-	"apierror-translate-invalidaggregategroup": "Geçersiz toplu mesaj grubu",
 	"apierror-translate-invalidaggregategroupname": "Geçersiz toplu mesaj grubu adı",
 	"apierror-translate-invalidgroup": "Grup mevcut değil veya geçersiz",
 	"apierror-translate-invalidstate": "İstenen durum geçersiz.",

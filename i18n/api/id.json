@@ -83,7 +83,6 @@
 	"apihelp-translationstats-example-2": "Ambil banyak suntingan pada 30 hari terakhir, untuk bahasa Inggris dan Prancis.",
 	"apierror-translate-duplicateaggregategroup": "Kelompok pesan sudah ada",
 	"apierror-translate-groupreviewdisabled": "Tinjauan kelompok pesan tidak sedang digunakan.",
-	"apierror-translate-invalidaggregategroup": "Kelompok pesan agregat tidak valid",
 	"apierror-translate-invalidaggregategroupname": "Nama kelompok pesan agregat tidak valid",
 	"apierror-translate-invalidgroup": "Kelompok tidak ada atau tidak valid",
 	"apierror-translate-invalidlanguage": "Kode bahasa $1 tidak valid.",

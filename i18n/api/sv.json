@@ -103,7 +103,6 @@
 	"apierror-translate-duplicateaggregategroup": "Meddelandegruppen finns redan",
 	"apierror-translate-fuzzymessage": "Kan inte granska föråldrade översättningar",
 	"apierror-translate-groupreviewdisabled": "Granskning av meddelandegrupp är inte i bruk.",
-	"apierror-translate-invalidaggregategroup": "Ogiltig aggregerad meddelandegrupp",
 	"apierror-translate-invalidaggregategroupname": "Ogiltigt namn på meddelandegrupp",
 	"apierror-translate-invalidgroup": "Gruppen finns inte eller är ogiltig",
 	"apierror-translate-invalidstate": "Den begärda statusen är ogiltig.",

@@ -132,7 +132,6 @@
 	"apierror-translate-duplicateaggregategroup": "消息组已存在",
 	"apierror-translate-fuzzymessage": "不能复核模糊翻译",
 	"apierror-translate-groupreviewdisabled": "未使用消息组复核。",
-	"apierror-translate-invalidaggregategroup": "无效的聚合消息组",
 	"apierror-translate-invalidaggregategroupname": "无效的聚合消息组名称",
 	"apierror-translate-invalidgroup": "组不存在或无效",
 	"apierror-translate-invalidstate": "请求的状态无效。",

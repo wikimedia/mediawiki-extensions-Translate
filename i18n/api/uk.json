@@ -146,7 +146,6 @@
 	"apierror-translate-duplicateaggregategroup": "Група повідомлень вже існує",
 	"apierror-translate-fuzzymessage": "Не вдалося переглянути застарілі переклади",
 	"apierror-translate-groupreviewdisabled": "Група повідомлень не використовується.",
-	"apierror-translate-invalidaggregategroup": "Недійсна загальна група повідомлень",
 	"apierror-translate-invalidaggregategroupname": "Недійсна назва загальної групи повідомлень",
 	"apierror-translate-invalidgroup": "Група не існує або є недійсною",
 	"apierror-translate-invalidstate": "Запитуваний стан недійсний.",

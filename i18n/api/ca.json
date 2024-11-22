@@ -37,8 +37,6 @@
 	"apihelp-ttmserver-param-text": "El text per trobar suggeriments.",
 	"apihelp-ttmserver-example-1": "Obtenir suggeriments per a la traducció de \"Ajuda\" de l'anglès al finès",
 	"apierror-translate-changeset-modified": "Un altre usuari o procés ha modificat aquest conjunt de canvis. Els teus canvis no es poden desar perquè eliminaria els seus canvis. Refresca la pàgina per a veure els darrers canvis.",
-	"apierror-translate-grouplanguagemismatch": "L'idioma ( $1 ) del grup que heu seleccionat no coincideix amb l'idioma ( $2 ) del grup agregat.",
-	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "El {{PLURAL:$3|grup|grups}}: $1, {{PLURAL:$3|no té|no tenen}} el mateix idioma font ($2) que el grup agregat.",
 	"apierror-translate-smg-nochanges": "No hi ha cap canvi per a processar.",
 	"apierror-translate-invalid-changeset-name": "Ha passat un conjunt de canvis amb nom no vàlid - $1",
 	"apierror-translate-invalid-operation": "Operació no vàlida: $1. Valors vàlids - $2.",

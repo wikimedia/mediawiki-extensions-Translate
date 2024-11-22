@@ -128,7 +128,6 @@
 	"apierror-translate-duplicateaggregategroup": "संदेश समूह पहले से ही मौजूद है",
 	"apierror-translate-fuzzymessage": "फ़ज़ी के अनुवादों को निरीक्षित नहीं कर सकते",
 	"apierror-translate-groupreviewdisabled": "संदेश समूह निरीक्षण का उपयोग नहीं किया जा रहा है।",
-	"apierror-translate-invalidaggregategroup": "अमान्य स्थायी संदेश समूह",
 	"apierror-translate-invalidaggregategroupname": "स्थायी संदेश समूह का अमान्य नाम",
 	"apierror-translate-invalidgroup": "समूह मौजूद नहीं है या फिर अमान्य है",
 	"apierror-translate-invalidstate": "अनुरोधित स्थिति अमान्य है।",

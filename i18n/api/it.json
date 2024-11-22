@@ -51,8 +51,6 @@
 	"apierror-translate-duplicateaggregategroup": "Il gruppo messaggi esiste già",
 	"apierror-translate-fuzzymessage": "Non puoi revisionare traduzioni da aggiornare",
 	"apierror-translate-groupreviewdisabled": "Revisione gruppo messaggi non in uso.",
-	"apierror-translate-messagegroup-aggregategrouplanguagemismatch": "{{PLURAL:$3|Il gruppo|I gruppi}}: $1, non {{PLURAL:$3|ha|hanno}} la stessa lingua di origine ($2) del gruppo aggregato.",
-	"apierror-translate-invalidaggregategroup": "Gruppo messaggi aggregati non valido",
 	"apierror-translate-invalidaggregategroupname": "Nome del gruppo messaggi aggregati non valido",
 	"apierror-translate-invalidgroup": "Gruppo non esistente o non valido",
 	"apierror-translate-invalidstate": "Lo stato richiesto non è valido.",

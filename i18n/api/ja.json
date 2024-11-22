@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cookai1205",
 			"Funa-enpitu",
 			"Omotecho",
 			"RYOUMA1117",
@@ -27,7 +28,7 @@
 	"apihelp-query+languagestats-example-1": "フィンランド語の翻訳完了の統計一覧",
 	"apihelp-query+managemessagegroups-param-groupId": "群 ID",
 	"apihelp-query+managemessagegroups-param-messageKey": "メッセージキー",
-	"apihelp-query+managemessagegroups-param-changesetName": "セット名の変更 - 既定 / 無人 / MediaWiki など。",
+	"apihelp-query+managemessagegroups-param-changesetName": "変更セットの名前 - 既定 / 無人 / MediaWiki など。",
 	"apihelp-query+messagecollection-summary": "翻訳に関する MessageCollection のクエリを実行。",
 	"apihelp-query+messagecollection-param-group": "メッセージ群。",
 	"apihelp-query+messagecollection-param-language": "言語コード。",
@@ -48,7 +49,7 @@
 	"apihelp-query+messagetranslations-summary": "単一のメッセージに対するすべての翻訳をクエリする。",
 	"apihelp-query+messagetranslations-example-1": "\"MediaWiki:January\"に対するウィキ上の翻訳一覧",
 	"apihelp-managemessagegroups-param-groupId": "群 ID",
-	"apihelp-managemessagegroups-param-changesetName": "セット名の変更 - 既定 / 無人 / MediaWiki など。",
+	"apihelp-managemessagegroups-param-changesetName": "変更セットの名前 - 既定 / 無人 / MediaWiki など。",
 	"apihelp-translatesandbox-summary": "サインアップしてサンドボックス利用者を管理。",
 	"apihelp-translatesandbox-param-userid": "管理対象の利用者の利用者ID。作成には「0」を使います。",
 	"apihelp-translatesandbox-param-username": "利用者を作成する時の利用者名。",
@@ -84,7 +85,6 @@
 	"apihelp-translationcheck-param-translation": "検証対象の翻訳。",
 	"apierror-translate-duplicateaggregategroup": "メッセージ群はすでに存在します",
 	"apierror-translate-groupreviewdisabled": "メッセージ群の査読は未使用です。",
-	"apierror-translate-invalidaggregategroup": "無効な集約メッセージ群",
 	"apierror-translate-invalidaggregategroupname": "無効な集約メッセージ群名",
 	"apierror-translate-invalidgroup": "存在しないまたは無効なメッセージ群",
 	"apierror-translate-invalidstate": "要求された状態は無効です。",

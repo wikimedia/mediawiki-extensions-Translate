@@ -35,7 +35,6 @@
 	"apihelp-translationcheck-param-translation": "Tłumaczenie do sprawdzenia poprawności.",
 	"apierror-translate-duplicateaggregategroup": "Grupa komunikatów już istnieje",
 	"apierror-translate-groupreviewdisabled": "Przeglądanie grup komunikatów nie jest używane.",
-	"apierror-translate-invalidaggregategroup": "Nieprawidłowa zbiorcza grupa komunikatów",
 	"apierror-translate-invalidaggregategroupname": "Nieprawidłowa nazwa zbiorczej grupy komunikatów",
 	"apierror-translate-invalidgroup": "Grupa nie istnieje lub jest nieprawidłowa",
 	"apierror-translate-invalidupdate": "Nieprawidłowa aktualizacja",

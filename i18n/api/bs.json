@@ -91,7 +91,6 @@
 	"apierror-translate-duplicateaggregategroup": "Grupa poruka već postoji",
 	"apierror-translate-fuzzymessage": "Ne možete pregledati zastarjele prijevode",
 	"apierror-translate-groupreviewdisabled": "Pregled grupe poruka nije u upotrebi.",
-	"apierror-translate-invalidaggregategroup": "Neispravna grupa zbirnih poruka",
 	"apierror-translate-invalidaggregategroupname": "Neispravni naziv za grupu zbirnih poruka",
 	"apierror-translate-invalidgroup": "Grupa ne postoji ili nije ispravna",
 	"apierror-translate-invalidstate": "Traženo stanje nije ispravno.",

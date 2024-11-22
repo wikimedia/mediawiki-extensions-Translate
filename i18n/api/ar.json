@@ -108,7 +108,6 @@
 	"apierror-translate-duplicateaggregategroup": "مجموعة الرسائل موجودة بالفعل",
 	"apierror-translate-fuzzymessage": "لا يمكن مراجعة الترجمات الضبابية",
 	"apierror-translate-groupreviewdisabled": "مراجعة مجموعة الرسائل غير مستخدمة.",
-	"apierror-translate-invalidaggregategroup": "مجموعة رسائل مجمعة غير صالحة",
 	"apierror-translate-invalidaggregategroupname": "اسم مجموعة رسائل مجمعة غير صالح",
 	"apierror-translate-invalidgroup": "المجموعة غير موجودة أو غير صالحة",
 	"apierror-translate-invalidstate": "الحالة المطلوبة غير صالحة.",

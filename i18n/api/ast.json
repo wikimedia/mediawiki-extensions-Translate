@@ -94,7 +94,6 @@
 	"apierror-translate-duplicateaggregategroup": "El grupu de mensaxes yá existe",
 	"apierror-translate-fuzzymessage": "Nun pueden revisase les traducciones aproximaes",
 	"apierror-translate-groupreviewdisabled": "La revisión del grupu de mensaxes nun ta n'usu.",
-	"apierror-translate-invalidaggregategroup": "Grupu de mensaxes agregaos inválidu",
 	"apierror-translate-invalidaggregategroupname": "Nome de grupu de mensaxes agregaos inválidu",
 	"apierror-translate-invalidgroup": "El grupu nun esiste o nun ye válidu",
 	"apierror-translate-invalidstate": "L'estáu solicitáu nun ye válidu.",
