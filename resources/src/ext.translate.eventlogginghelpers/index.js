@@ -6,13 +6,17 @@
 	const config = require( './config.json' );
 
 	const eventLoggingHelpers = {
+		isEventLoggingEnabled: function () {
+			return config.TranslateEnableEventLogging;
+		},
+
 		/**
 		 * @param {string|null} actionSubtype
 		 * @param {string|null} actionSource
 		 * @param {Object|null} actionContext
 		 */
 		logClickEvent: function ( actionSubtype, actionSource, actionContext ) {
-			if ( !config.TranslateEnableEventLogging ) {
+			if ( !this.isEventLoggingEnabled() ) {
 				return;
 			}
 

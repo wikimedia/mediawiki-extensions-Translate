@@ -10,7 +10,11 @@
 	};
 
 	mw.translate = mw.translate || {};
+
 	var logger = require( 'ext.translate.eventlogginghelpers' );
+	if ( logger.isEventLoggingEnabled() ) {
+		trackUserExit();
+	}
 
 	mw.translate = $.extend( mw.translate, {
 
@@ -489,6 +493,57 @@
 					.addClass( 'tux-breadcrumb__item--aggregate-count' )
 			);
 		}
+	}
+
+	function trackUserExit() {
+		var timeout;
+		var timeoutDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+		function resetTimer() {
+			// Clear the existing timeout
+			clearTimeout( timeout );
+			timeout = setTimeout( logInactivity, timeoutDuration );
+		}
+
+		function logInactivity() {
+			logger.logEvent( 'exit', 'inactivity' );
+		}
+
+		function throttle( func, delay ) {
+			var lastCall = 0;
+
+			return function () {
+				var now = Date.now();
+				if ( now - lastCall >= delay ) {
+					lastCall = now;
+					func();
+				}
+			};
+		}
+
+		// Create a throttled version of resetTimer
+		var throttledResetTimer = throttle( resetTimer, 3000 ); // 3 seconds between resets
+		// Add event listeners with throttled reset
+		var events = [
+			'mousemove',
+			'mousedown',
+			'touchstart',
+			'touchmove',
+			'click',
+			'keydown',
+			'scroll',
+			'wheel'
+		];
+
+		events.forEach( function ( eventName ) {
+			window.addEventListener( eventName, throttledResetTimer, true );
+		} );
+
+		resetTimer(); // Initial timer setup
+
+		window.addEventListener( 'unload', function () {
+			logger.logEvent( 'exit', 'browser_tab_close' );
+		} );
 	}
 
 	$( function () {
