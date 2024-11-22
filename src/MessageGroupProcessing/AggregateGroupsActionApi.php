@@ -97,7 +97,7 @@ class AggregateGroupsActionApi extends ApiBase {
 
 			/* To allow removing no longer existing groups from aggregate message groups,
 			 * the message group object $group might not always be available.
-			 * In this case we need to fake some title. */
+			 * In this case, we need to fake some title. */
 			foreach ( $groupIdsToLog as $subgroupId ) {
 				$title = $this->aggregateGroupManager->getTargetTitleByGroupId( $subgroupId );
 				$entry = new ManualLogEntry( 'pagetranslation', $action );
@@ -152,7 +152,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				$this->dieWithException( $e );
 			}
 
-			// Once new aggregate group added, we need to show all the pages that can be added to that.
+			// Once a new aggregate group is added, we need to show all the pages that can be added to that.
 			$output['groups'] = $this->getIncludableGroups();
 			$output['aggregategroupId'] = $aggregateGroupId;
 			// @todo Logging
@@ -167,11 +167,20 @@ class AggregateGroupsActionApi extends ApiBase {
 					'invalidaggregategroupname'
 				);
 			}
-			$desc = trim( $params['groupdescription'] );
+
 			$aggregateGroupId = $params['aggregategroup'];
+			$oldName = $this->messageGroupMetadata->get( $aggregateGroupId, 'name' );
+
+			// Error if the label exists already
+			$exists = MessageGroups::labelExists( $name );
+			if ( $exists && $oldName !== $name ) {
+				$this->dieWithError( 'apierror-translate-duplicateaggregategroup', 'duplicateaggregategroup' );
+			}
+
+			$desc = trim( $params['groupdescription'] );
+
 			$newLanguageCode = trim( $params['groupsourcelanguagecode'] );
 
-			$oldName = $this->messageGroupMetadata->get( $aggregateGroupId, 'name' );
 			$oldDesc = $this->messageGroupMetadata->get( $aggregateGroupId, 'description' );
 			$currentLanguageCode = $this->messageGroupMetadata->get( $aggregateGroupId, 'sourcelanguagecode' );
 
@@ -187,12 +196,6 @@ class AggregateGroupsActionApi extends ApiBase {
 						count( $groupsWithDifferentLanguage )
 					] );
 				}
-			}
-
-			// Error if the label exists already
-			$exists = MessageGroups::labelExists( $name );
-			if ( $exists && $oldName !== $name ) {
-				$this->dieWithError( 'apierror-translate-duplicateaggregategroup', 'duplicateaggregategroup' );
 			}
 
 			if (

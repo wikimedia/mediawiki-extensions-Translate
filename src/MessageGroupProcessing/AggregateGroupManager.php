@@ -58,12 +58,12 @@ class AggregateGroupManager {
 	}
 
 	public function add( string $name, string $description, ?string $languageCode ): string {
-		$aggregateGroupId = $this->generateAggregateGroupId( $name );
-
-		// Throw error if group already exists
+		// Throw error if the group already exists
 		if ( MessageGroups::labelExists( $name ) ) {
 			throw new DuplicateAggregateGroupException( $name );
 		}
+
+		$aggregateGroupId = $this->generateAggregateGroupId( $name );
 
 		// FIXME: Each call to set runs a DB query. Make this more efficient.
 		$this->messageGroupMetadata->set( $aggregateGroupId, 'name', $name );
