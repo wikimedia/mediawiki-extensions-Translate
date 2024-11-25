@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "Serchar tradukuri",
 	"tux-sst-edit": "Modifikar tradukuro",
+	"tux-sst-view-foreign": "Vidar en $1",
 	"tux-sst-search": "Serchez",
 	"tux-sst-search-ph": "Serchar tradukuri",
 	"tux-sst-count": "{{PLURAL:$1|1 rezulto|$1 rezulti}} trovesis",

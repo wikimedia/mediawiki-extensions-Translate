@@ -11,6 +11,7 @@
 	"apihelp-aggregategroups-param-do": "מה לעשות עם קבוצות ההודעות המשולבת.",
 	"apihelp-aggregategroups-param-aggregategroup": "מזהה קבוצת ההודעות המשולבת.",
 	"apihelp-aggregategroups-param-group": "מזהה קבוצת הודעות. ר' <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-aggregategroups-param-groups": "רשימת מזהי קבוצת הודעות. ר' <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "שם קבוצת ההודעות המשולבת.",
 	"apihelp-aggregategroups-param-groupdescription": "תיאור קבוצת ההודעות המשולבת.",
 	"apihelp-aggregategroups-param-groupsourcelanguagecode": "קוד שפת מקור של קבוצת הודעות משולבת, או <kbd>-</kbd> כדי לא להגדיר שפת מקור או להסיר את הקיימת.",

@@ -9,6 +9,7 @@
 	"apihelp-aggregategroups-param-do": "Mit csináljon az összesített üzenetcsoporttal.",
 	"apihelp-aggregategroups-param-aggregategroup": "Összesített üzenetcsoport azonosítója.",
 	"apihelp-aggregategroups-param-group": "Az üzenetcsoport azonosítója. A lehetséges értékekért lásd: <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-aggregategroups-param-groups": "Üzenetcsoport-azonosítók listája. A lehetséges értékekért lásd: <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Összesített üzenetcsoport neve.",
 	"apihelp-aggregategroups-param-groupdescription": "Összesített üzenetcsoport leírása.",
 	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Az összesített üzenetcsoport forrásnyelvének kódja, vagy <kbd>-</kbd> a forrásnyelv beállításának mellőzéséhez, illetve a meglévő forrásnyelv eltávolításához.",
