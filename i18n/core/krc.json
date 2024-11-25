@@ -342,7 +342,7 @@
 	"tux-notices-more": "{{PLURAL:$1|дагъыда $1}}",
 	"tux-notices-hide": "джашыр",
 	"tux-editor-save-failed": "Кёчюрюуню басмалау джетишимсиз болду: $1",
-	"tux-editor-n-uses": "$1 {{PLURAL:$1|кере}} хайырланды",
+	"tux-editor-n-uses": "$1 {{PLURAL:$1|кере}} хайырланнганды",
 	"tux-editor-message-desc-more": "Аслам кёргюзт",
 	"tux-editor-message-desc-less": "Азыракъ кёргюзт",
 	"tux-editor-clear-translated": "Кёчюрюлгенни джашыр",

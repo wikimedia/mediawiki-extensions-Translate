@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Khan27",
-			"Şeyx Şamil"
+			"Şeyx Şamil",
+			"Nemoralis"
 		]
 	},
 	"searchtranslations": "Tərcümələri axtar",
 	"tux-sst-edit": "Tərcümələri redaktə et",
+	"tux-sst-view-foreign": "$1 saytında bax",
 	"tux-sst-search": "Axtar",
 	"tux-sst-search-ph": "Tərcümələri axtar",
 	"tux-sst-count": "{{PLURAL:$1|Bir nəticə tapıldı|$1 nəticə tapıldı}}",
@@ -14,9 +16,18 @@
 	"tux-sst-facet-group": "Mesaj qrupları",
 	"tux-sst-nosolr-title": "Axtarış mümkün deyil",
 	"tux-sst-nosolr-body": "Bu viki üçün tərcümə axtarış sistemi yoxdur.",
+	"tux-sst-solr-offline-title": "Axtarış işləmir",
+	"tux-sst-solr-offline-body": "Axtarış xidməti müvəqqəti olaraq əlçatmazdır.",
+	"tux-sst-next": "Növbəti ›",
+	"tux-sst-prev": "‹ Əvvəlki",
 	"tux-sst-default": "Tərcümələr",
 	"tux-sst-translated": "$1 dilindən tərcümələr",
 	"tux-sst-untranslated": "$1 dilindən tərcümə yoxdur",
+	"tux-sst-outdated": "$1 dilindəki köhnəlmiş tərcümələr",
 	"tux-sst-ellipsis-untranslated": "Tərcümə yoxdur",
-	"tux-sst-ellipsis-outdated": "Köhnəlmiş tərcümələr"
+	"tux-sst-ellipsis-outdated": "Köhnəlmiş tərcümələr",
+	"tux-sst-link-all-match": "Bütün axtarış sözlərini tələb et.",
+	"tux-sst-match-message": "Axtarış sözlərindən hər hansı birinə uyğun gələn tərcümələr göstərilir. $1",
+	"tux-sst-error-offset": "Daha çox axtarış nəticələri göstərilə bilməz. Zəhmət olmasa axtarışınızı daraldın.",
+	"tux-sst-error-language": "Bu dil bu növ axtarışla istifadə edilə bilməz."
 }

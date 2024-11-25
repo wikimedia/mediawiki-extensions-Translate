@@ -358,7 +358,7 @@
 	"tux-editor-placeholder-language": "Uw vertaling in het $1",
 	"tux-editor-editsummary-placeholder": "Leg uw wijzigingen uit (optioneel)",
 	"tux-editor-paste-original-button-label": "Brontekst invoegen",
-	"tux-editor-discard-changes-button-label": "Wijzigingen negeren",
+	"tux-editor-discard-changes-button-label": "Wijzigingen weggooien",
 	"tux-editor-save-button-label": "Vertaling publiceren",
 	"tux-editor-skip-button-label": "Overslaan en volgende",
 	"tux-editor-cancel-button-label": "Annuleren",

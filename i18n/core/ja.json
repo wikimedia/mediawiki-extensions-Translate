@@ -30,7 +30,8 @@
 			"아라",
 			"もなー(偽物)",
 			"Ant176",
-			"Waki285"
+			"Waki285",
+			"Kokage si"
 		]
 	},
 	"translate": "翻訳",
@@ -252,6 +253,7 @@
 	"translate-smg-groups-with-error-title": "同期の際にエラーが発生したメッセージ群",
 	"translate-smg-group-message-action-history": "履歴",
 	"translate-smg-group-action-resolve": "解決済の印を付ける",
+	"translate-smg-group-message-tag-outdated": "要更新",
 	"translate-smg-group-message-tag-rename": "名前を変更",
 	"translate-smg-group-message-message-content": "内容：",
 	"translate-smg-group-message-message-target": "対象：",
