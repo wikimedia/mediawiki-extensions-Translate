@@ -359,7 +359,7 @@ class TranslatablePage extends TranslatableBundle {
 		}
 
 		$titles = $this->getTranslationPages();
-		$temp = MessageGroupStats::forGroup( $this->getMessageGroupId() );
+		$temp = MessageGroupStats::forGroup( $this->getMessageGroupId(), MessageGroupStats::FLAG_CACHE_ONLY );
 		$stats = [];
 
 		foreach ( $titles as $t ) {
