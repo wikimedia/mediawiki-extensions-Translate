@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Purodha",
-			"Reedy"
+			"Reedy",
+			"Juwan"
 		]
 	},
 	"translate": "Övversäze",
@@ -29,7 +30,7 @@
 	"translate-page-showing": "De Nohreshte fon Nommer $1 aff, beß $2, fon ennßjesammp $3.",
 	"translate-page-showing-all": "{{PLURAL:$1|Eijn_Nohresch|$1 Nohreschte|Keijn_esu_e_Nohreschte}}.",
 	"translate-page-showing-none": "Nix för Aan_ze_zeije.",
-	"translate-page-paging-links": "[ $1 ] ↔ [ $2 ]",
+	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "Näx Sigk",
 	"translate-prev": "Förrije Sigk",
 	"translate-page-description-legend": "Enfommazjohne övver di {{int:translate-page-group}}",

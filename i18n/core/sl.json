@@ -6,7 +6,8 @@
 			"Eleassar",
 			"Janezdrilc",
 			"Smihael",
-			"Upwinxp"
+			"Upwinxp",
+			"Juwan"
 		]
 	},
 	"translate": "Prevedi",
@@ -38,7 +39,7 @@
 	"translate-page-showing": "Prikazujem sporočila od $1 do $2 od skupno $3.",
 	"translate-page-showing-all": "Prikazujem $1 {{PLURAL:$1|sporočilo|sporočili|sporočila|sporočil}}.",
 	"translate-page-showing-none": "Ni sporočil za prikaz.",
-	"translate-page-paging-links": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> <nowiki>[</nowiki>$2<nowiki>]</nowiki>",
+	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "Naslednja stran",
 	"translate-prev": "Prejšnja stran",
 	"translate-page-description-legend": "Informacije o skupini",

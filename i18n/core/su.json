@@ -3,7 +3,8 @@
 		"authors": [
 			"Irwangatot",
 			"Kandar",
-			"Uchup19"
+			"Uchup19",
+			"Zulf"
 		]
 	},
 	"translate": "Alih basakeun",
@@ -32,7 +33,7 @@
 	"translate-edit-information": "Informasi ngeunaan talatah ieu \"$2\" ($1)",
 	"translate-edit-warnings": "Panginget ngeunaan tarjamahan anu teu pepek",
 	"translate-edit-tmmatch": "$1% cocog",
-	"right-translate": "Édit migunakeun antarmuka panarjamah",
+	"right-translate": "Édit migunakeun antarpenteu panarjamah",
 	"translationstats": "Statistik alihbasa",
 	"translate-statsf-width": "Lébar dina piksel:",
 	"translate-statsf-height": "Jangkung dina piksel:",

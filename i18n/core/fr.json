@@ -46,7 +46,8 @@
 			"Yumeki",
 			"Zcqsc06",
 			"Zetud",
-			"Mahabarata"
+			"Mahabarata",
+			"Juwan"
 		]
 	},
 	"translate": "Traduire",
@@ -78,7 +79,7 @@
 	"translate-page-showing": "Visualisation des messages de $1 à $2 sur $3.",
 	"translate-page-showing-all": "Visualisation de $1 message{{PLURAL:$1||s}}",
 	"translate-page-showing-none": "Aucun message à visualiser.",
-	"translate-page-paging-links": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> <nowiki>[</nowiki>$2<nowiki>]</nowiki>",
+	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "Page suivante",
 	"translate-prev": "Page précédente",
 	"translate-page-description-legend": "Informations à propos du groupe de messages",

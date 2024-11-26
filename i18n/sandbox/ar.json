@@ -51,5 +51,6 @@
 	"log-description-translatorsandbox": "سجل بالأفعال على مستخدمي ملعب الترجمة",
 	"logentry-translatorsandbox-promoted": "{{GENDER:$2|رقى|رقت}} $1 $3 {{GENDER:$4|لمترجم|لمترجمة}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|رفض|رفضت}} الطلب من \"$3\" ليكون مترجما",
-	"logentry-newusers-tsbpromoted": "حساب المستخدم $3 تم {{GENDER:$2|إنشاؤه}} بواسطة الترقية من الملعب"
+	"logentry-newusers-tsbpromoted": "حساب المستخدم $3 تم {{GENDER:$2|إنشاؤه}} بواسطة الترقية من الملعب",
+	"tsb-other-actions": "يجب عليك [[Special:TranslationStash|إرسال بعض الترجمات التجريبية]] والحصول على الموافقة عليها قبل التحرير."
 }
