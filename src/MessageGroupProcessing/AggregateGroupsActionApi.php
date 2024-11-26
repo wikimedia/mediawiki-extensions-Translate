@@ -174,7 +174,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			// Error if the label exists already
 			$exists = MessageGroups::labelExists( $name );
 			if ( $exists && $oldName !== $name ) {
-				$this->dieWithError( 'apierror-translate-duplicateaggregategroup', 'duplicateaggregategroup' );
+				$this->dieWithException( new DuplicateAggregateGroupException( $name ) );
 			}
 
 			$desc = trim( $params['groupdescription'] );
