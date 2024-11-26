@@ -112,7 +112,6 @@ class TranslatablePageStore implements TranslatableBundleStore {
 	/** Unmark a translatable page */
 	public function unmark( PageIdentity $title ): void {
 		$translatablePage = TranslatablePage::newFromTitle( $title );
-		$translatablePage->getTranslationPercentages();
 		foreach ( $translatablePage->getTranslationPages() as $page ) {
 			$page->invalidateCache();
 		}
