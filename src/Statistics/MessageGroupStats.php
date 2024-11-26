@@ -602,11 +602,6 @@ class MessageGroupStats {
 		$callers = wfGetAllCallers( 50 );
 		$functionName = __METHOD__;
 		$callback = static function ( IDatabase $dbw, $method ) use ( $callers, $mwInstance ) {
-			// Maybe another deferred update already processed these
-			if ( self::$updates === [] ) {
-				return;
-			}
-
 			// This path should only be hit during web requests
 			if ( count( self::$updates ) > 100 ) {
 				$groups = array_unique( array_column( self::$updates, 'tgs_group' ) );
@@ -631,8 +626,22 @@ class MessageGroupStats {
 			$mwInstance->getMainWANObjectCache()->touchCheckKey( self::LANGUAGE_STATS_KEY );
 		};
 		$updateOp = static function () use ( $dbw, $functionName, $callback ) {
+			// Maybe another deferred update already processed these
+			if ( self::$updates === [] ) {
+				return;
+			}
+
 			$lockName = 'MessageGroupStats:updates';
 			if ( !$dbw->lock( $lockName, $functionName, 1 ) ) {
+				$groups = array_unique( array_column( self::$updates, 'tgs_group' ) );
+				LoggerFactory::getInstance( 'Translate' )->warning(
+					'Message group stats update of {count} rows failed for group(s) {groups} due to lock',
+					[
+						'count' => count( self::$updates ),
+						'groups' => implode( ', ', $groups ),
+					]
+				);
+
 				return; // raced out
 			}
 
