@@ -24,8 +24,6 @@ use MediaWiki\Title\Title;
 use RuntimeException;
 use TextContent;
 use Wikimedia\Rdbms\Database;
-use Wikimedia\Rdbms\IResultWrapper;
-use Wikimedia\Rdbms\SelectQueryBuilder;
 use WikiPageMessageGroup;
 
 /**
@@ -316,21 +314,6 @@ class TranslatablePage extends TranslatableBundle {
 		return $translate->getLocalURL( $params );
 	}
 
-	public function getMarkedRevs(): IResultWrapper {
-		$db = Utilities::getSafeReadDB();
-
-		return $db->newSelectQueryBuilder()
-			->select( [ 'rt_revision', 'rt_value' ] )
-			->from( 'revtag' )
-			->where( [
-				'rt_page' => $this->getPageIdentity()->getId(),
-				'rt_type' => RevTagStore::TP_MARK_TAG,
-			] )
-			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-	}
-
 	/** @inheritDoc */
 	public function getTranslationPages(): array {
 		$mwServices = MediaWikiServices::getInstance();
@@ -398,23 +381,6 @@ class TranslatablePage extends TranslatableBundle {
 		$stats[$this->getSourceLanguageCode()] = 1.00;
 
 		return $stats;
-	}
-
-	public function getTransRev( string $suffix ) {
-		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
-
-		$db = Utilities::getSafeReadDB();
-
-		return $db->newSelectQueryBuilder()
-			->select( 'rt_value' )
-			->from( 'revtag' )
-			->where( [
-				'rt_page' => $title->getArticleID(),
-				'rt_type' => RevTagStore::TRANSVER_PROP,
-			] )
-			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
-			->caller( __METHOD__ )
-			->fetchField();
 	}
 
 	public function supportsTransclusion(): ?bool {
