@@ -133,7 +133,7 @@
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|ги зададе}} приоритетните јазици од преводливата страница $3: $5",
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|ги ограничи}} јазиците на преводливата страница $3 на $5",
 	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|ја додаде}} преводливата страница $3 во збирната група $4",
-	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|ја острани}} преводливата страница $3 од збирната група $4",
+	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|ја отстрани}} преводливата страница $3 од збирната група $4",
 	"log-action-filter-pagetranslation": "Вид дејство:",
 	"log-action-filter-pagetranslation-mark": "Означување за преведување",
 	"log-action-filter-pagetranslation-unmark": "Отстранување од превод",
