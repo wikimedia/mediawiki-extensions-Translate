@@ -480,6 +480,7 @@
 	"translate-error-association-failure": "Die {{PLURAL:$2|folgende Nachrichtengruppe kann|folgenden Nachrichtengruppen können}} nicht mit der Aggregatgruppe verknüpft werden: $1",
 	"translate-error-invalid-aggregategroup": "Ungültige aggregierte Nachrichtengruppe $1",
 	"translate-error-aggregategroup-source-language-mismatch": "Die {{PLURAL:$3|Gruppe $1 hat|Gruppen $1 haben}} nicht die gleiche Ausgangssprache wie die Aggregatgruppe ($2).",
+	"translate-error-duplicate-aggregategroup": "Eine aggregierte Nachrichtengruppe mit dem Namen $1 ist bereits vorhanden.",
 	"log-action-filter-translationreview": "Typ der Aktion:",
 	"log-action-filter-translationreview-message": "Überprüfung der einzelnen Übersetzungsnachrichten",
 	"log-action-filter-translationreview-group": "Änderungen des Stands des Übersetzungsprozesses",

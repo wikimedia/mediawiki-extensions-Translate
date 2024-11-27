@@ -91,7 +91,6 @@
 	"apihelp-translationcheck-summary": "Validar traducciones.",
 	"apihelp-translationcheck-param-title": "Títulu de páxina con espaciu de nomes y códigu de llingua.",
 	"apihelp-translationcheck-param-translation": "La traducción a validar.",
-	"apierror-translate-duplicateaggregategroup": "El grupu de mensaxes yá existe",
 	"apierror-translate-fuzzymessage": "Nun pueden revisase les traducciones aproximaes",
 	"apierror-translate-groupreviewdisabled": "La revisión del grupu de mensaxes nun ta n'usu.",
 	"apierror-translate-invalidaggregategroupname": "Nome de grupu de mensaxes agregaos inválidu",

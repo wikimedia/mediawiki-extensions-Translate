@@ -146,7 +146,6 @@
 	"apihelp-translationstats-example-1": "Obter o reconto de edicións dos últimos 30 días para todos os grupos e linguas",
 	"apihelp-translationstats-example-2": "Obter o reconto de edicións dos últimos 30 días para o inglés e o francés.",
 	"apierror-translate-changeset-modified": "O conxunto de cambios foi modificado por outro usuario ou proceso. Os teus cambios non se poden gardar xa que poden sobrescribir eses cambios. Actualiza a páxina para ver os últimos cambios.",
-	"apierror-translate-duplicateaggregategroup": "O grupo de mensaxes xa existe",
 	"apierror-translate-fuzzymessage": "Non se poden revisar as traducións marcadas como obsoletas",
 	"apierror-translate-groupreviewdisabled": "A revisión do grupo de mensaxes non está en uso.",
 	"apierror-translate-invalidaggregategroupname": "Nome do grupo de mensaxes agregadas non válido",

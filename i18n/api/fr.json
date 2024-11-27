@@ -176,7 +176,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "Si <kbd>false</kbd>, la dernière version de la syntaxe ne sera pas utilisée pour cette page. Si absent, la dernière version de la syntaxe sera utilisée.",
 	"apihelp-markfortranslation-param-transclusion": "Si <kbd>yes</kbd> ou absent, activer la transclusion consciente de la traduction pour cette page. Si <kbd>no</kbd>, désactiver la transclusion.",
 	"apierror-translate-changeset-modified": "L’ensemble de modifications a été modifié par un autre utilisateur ou processus. Vos modifications ne peuvent pas être enregistrées car elles pourraient écraser les leurs. Veuille rafraîchir la page pour voir les dernières modifications.",
-	"apierror-translate-duplicateaggregategroup": "Le groupe de messages existe déjà",
 	"apierror-translate-fuzzymessage": "Impossible de relire des traductions floues ou approximatives (''fuzzy'')",
 	"apierror-translate-groupreviewdisabled": "La revue du groupe de message n’est pas utilisée.",
 	"apierror-translate-invalidaggregategroupname": "Nom du groupe de messages agrégés non-valide",

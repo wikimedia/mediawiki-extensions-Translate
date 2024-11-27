@@ -12,7 +12,6 @@
 	"apihelp-query+messagegroupstats-param-group": "ID gruppu di missaggi.",
 	"apihelp-managemessagegroups-param-groupId": "ID dû gruppu",
 	"apihelp-translationstash-param-subaction": "Azzioni.",
-	"apierror-translate-duplicateaggregategroup": "Lu gruppu di missaggi già esisti",
 	"apierror-translate-invalidlanguage": "Lu còdici lingua $1 nun è vàliddu.",
 	"apierror-translate-unknownmessage": "Missaggiu scanusciutu"
 }

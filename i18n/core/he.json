@@ -471,6 +471,7 @@
 	"translate-error-association-failure": "לא ניתן לשייך את {{PLURAL:$2|קבוצת ההודעות הבאה|קבוצות ההודעות הבאות}} לקבוצה המשולבת: $1",
 	"translate-error-invalid-aggregategroup": "קבוצת הודעות משולבת בלתי־תקינה $1",
 	"translate-error-aggregategroup-source-language-mismatch": "שפת המקור של {{PLURAL:$3|הקבוצה|הקבוצות}} $1 שונה משפת המקור של הקבוצה המשולבת ($2).",
+	"translate-error-duplicate-aggregategroup": "כבר קיימת קבוצת הודעות משולבת בשם $1.",
 	"log-action-filter-translationreview": "סוג הפעולה:",
 	"log-action-filter-translationreview-message": "סקירה של הודעות תרגום בודדות",
 	"log-action-filter-translationreview-group": "שינויים במצב התקדמות התרגומים",

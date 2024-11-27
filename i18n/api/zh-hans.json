@@ -129,7 +129,6 @@
 	"apihelp-translationstats-summary": "获取翻译统计",
 	"apihelp-translationcheck-extended-description": "统计数据包括翻译编辑、活跃的译员、新用户、翻译的审核、和审核者。",
 	"apihelp-translationstats-param-group": "要获取统计信息的组列表。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
-	"apierror-translate-duplicateaggregategroup": "消息组已存在",
 	"apierror-translate-fuzzymessage": "不能复核模糊翻译",
 	"apierror-translate-groupreviewdisabled": "未使用消息组复核。",
 	"apierror-translate-invalidaggregategroupname": "无效的聚合消息组名称",

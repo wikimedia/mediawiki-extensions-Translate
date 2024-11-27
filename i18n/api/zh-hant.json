@@ -145,7 +145,6 @@
 	"apihelp-translationstats-example-1": "取得所有群組與語言在最近 30 天的編輯計數",
 	"apihelp-translationstats-example-2": "取得英語與法語在最近 30 天的編輯計數",
 	"apierror-translate-changeset-modified": "變更集已被其他使用者或程序給變更。因您的變更可能會覆蓋掉它們的變更，所以無法儲存。請重新整理頁面來查看最新一次的變更內容。",
-	"apierror-translate-duplicateaggregategroup": "已存在訊息群組",
 	"apierror-translate-fuzzymessage": "不能審核模糊式譯文",
 	"apierror-translate-groupreviewdisabled": "未使用訊息群組審核。",
 	"apierror-translate-invalidaggregategroupname": "無效集合訊息群組名稱",

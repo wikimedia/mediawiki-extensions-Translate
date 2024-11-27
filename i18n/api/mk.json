@@ -158,7 +158,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "Ако е <kbd>false</kbd>, не ја користи верзијата со најнова синтакса за страницава. Ако е отсутно, ќе се користи верзијата со најнова синтакса.",
 	"apihelp-markfortranslation-param-transclusion": "Ако е <kbd>yes</kbd> или отсутно, овозможи превметнувања свесни за преведување за оваа страница. Ако е <kbd>no</kbd>, оневозможи превметнување.",
 	"apierror-translate-changeset-modified": "Промените се изменети од друг корисник или постапка. Вашите промени не можат да се зачуваат бидејќи ќе ги заменат нив. Превчитајте ја страницата за да ги видите најновите промени.",
-	"apierror-translate-duplicateaggregategroup": "Групата пораки веќе постои",
 	"apierror-translate-fuzzymessage": "Не можете да проверувате застарени пораки",
 	"apierror-translate-groupreviewdisabled": "Проверката на групи пораки не е во употреба.",
 	"apierror-translate-invalidaggregategroupname": "Неважечки назив за групата збирни пораки",

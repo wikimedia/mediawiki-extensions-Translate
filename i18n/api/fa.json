@@ -54,7 +54,6 @@
 	"apihelp-searchtranslations-param-limit": "اندازۀ نتیجه.",
 	"apihelp-translationcheck-summary": "اعتبارسنجی ترجمه‌ها.",
 	"apihelp-translationcheck-param-translation": "ترجمه‌ برای اعتبارسنجی.",
-	"apierror-translate-duplicateaggregategroup": "گروه پیام پیش از این وجود دارد.",
 	"apierror-translate-invalidgroup": "گروه وجود ندارد یا نامعتبر است.",
 	"apierror-translate-invalidstate": "وضعیت درخواستی نامعتبر است.",
 	"apierror-translate-invalidlanguage": "کد زبان $1 معتبر نیست.",

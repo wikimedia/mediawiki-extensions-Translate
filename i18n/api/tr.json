@@ -130,7 +130,6 @@
 	"apihelp-translationstats-example-1": "Tüm gruplar ve diller için son 30 güne ait düzenleme sayısını getirin",
 	"apihelp-translationstats-example-2": "İngilizce ve Fransızca dilleri için son 30 güne ait düzenleme sayısını getir.",
 	"apierror-translate-changeset-modified": "Değişiklik kümesi başka bir kullanıcı veya işlem tarafından değiştirildi. Yaptığınız değişiklikler, değişikliklerini geçersiz kılabileceği için kaydedilemiyor. En son değişiklikleri görmek için lütfen sayfayı yenileyin.",
-	"apierror-translate-duplicateaggregategroup": "Mesaj grubu zaten var",
 	"apierror-translate-fuzzymessage": "Fuzzy çevirileri incelenemiyor",
 	"apierror-translate-groupreviewdisabled": "Mesaj grubu incelemesi kullanılmıyor.",
 	"apierror-translate-invalidaggregategroupname": "Geçersiz toplu mesaj grubu adı",

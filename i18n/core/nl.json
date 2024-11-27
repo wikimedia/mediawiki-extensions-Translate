@@ -474,6 +474,7 @@
 	"translate-error-association-failure": "De volgende berichten{{PLURAL:$2|groep kan|groepen kunnen}} niet aan de geaggregeerde groep worden gekoppeld: $1",
 	"translate-error-invalid-aggregategroup": "Foutieve samengevoegde berichtengroep $1",
 	"translate-error-aggregategroup-source-language-mismatch": "De {{PLURAL:$3|groep $1 heeft|groepen $1 hebben}} niet dezelfde brontaal als de samengevoegde groep ($2).",
+	"translate-error-duplicate-aggregategroup": "Er is al een samengevoegde berichtengroep met de naam $1.",
 	"log-action-filter-translationreview": "Soort handeling:",
 	"log-action-filter-translationreview-message": "Beoordeling van individuele vertaalberichten",
 	"log-action-filter-translationreview-group": "Veranderingen in de status van de voortgang van vertalingen",

@@ -143,7 +143,6 @@
 	"apihelp-translationstats-example-1": "Отримати число редагувань за останні 30 днів для всіх груп та мов",
 	"apihelp-translationstats-example-2": "Отримати число редагувань за останні 30 днів для англійської та французької мов.",
 	"apierror-translate-changeset-modified": "Набір змін модифіковано іншим користувачем чи процесом. Ваші зміни не можна зберегти, оскільки це може перезаписати їхні зміни. Будь ласка, перезавантажте сторінку, щоб побачити останні зміни.",
-	"apierror-translate-duplicateaggregategroup": "Група повідомлень вже існує",
 	"apierror-translate-fuzzymessage": "Не вдалося переглянути застарілі переклади",
 	"apierror-translate-groupreviewdisabled": "Група повідомлень не використовується.",
 	"apierror-translate-invalidaggregategroupname": "Недійсна назва загальної групи повідомлень",

@@ -125,7 +125,6 @@
 	"apihelp-translationstats-example-1": "Szerkesztésszám lekérése az elmúlt 30 napra, minden üzenetcsoportra és nyelvre",
 	"apihelp-translationstats-example-2": "Szerkesztésszám lekérése az elmúlt 30 napra, angol és francia nyelvre",
 	"apierror-translate-changeset-modified": "A változáscsomagot egy másik felhasználó vagy folyamat módosította, így nem lehet közzétenni a módosításaidat, mert felülírhatnák azokat. Töltsd újra a lapot a legfrissebb változások megtekintéséhez.",
-	"apierror-translate-duplicateaggregategroup": "Az üzenetcsoport már létezik",
 	"apierror-translate-groupreviewdisabled": "Az üzenetcsoport-ellenőrzés nincs használatban.",
 	"apierror-translate-invalidaggregategroupname": "Érvénytelen név összesített üzenetcsoportnak",
 	"apierror-translate-invalidgroup": "A csoport nem létezik vagy érvénytelen",

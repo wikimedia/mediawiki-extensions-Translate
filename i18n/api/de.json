@@ -136,7 +136,6 @@
 	"apihelp-translationstats-param-start": "Anfangsdatum, ab dem Übersetzungsstatistiken abgerufen werden sollen. Standardmäßig wird das aktuelle Datum minus die Anzahl der Tage (<var>days</var>) verwendet.",
 	"apihelp-translationstats-example-1": "Anzahl der Bearbeitungen in den letzten 30 Tagen für alle Gruppen und Sprachen abrufen",
 	"apihelp-translationstats-example-2": "Abrufen der Anzahl der Bearbeitungen der letzten 30 Tage, für die Sprachen Englisch und Französisch.",
-	"apierror-translate-duplicateaggregategroup": "Die Nachrichtengruppe ist bereits vorhanden",
 	"apierror-translate-fuzzymessage": "Veraltete Übersetzungen können nicht überprüft werden",
 	"apierror-translate-groupreviewdisabled": "Die Nachrichtengruppenüberprüfung ist nicht in Verwendung.",
 	"apierror-translate-invalidaggregategroupname": "Ungültiger zusammengefasster Nachrichtengruppenname",

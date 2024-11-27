@@ -157,7 +157,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "Si <kbd>false</kbd>, non usar le ultime version del syntaxe pro iste pagina. Si absente, le ultime version del syntaxe es usate.",
 	"apihelp-markfortranslation-param-transclusion": "Si <kbd>yes</kbd> o absente, activar le transclusion consciente de traduction pro iste pagina. Si <kbd>no</kbd>, disactivar transclusion.",
 	"apierror-translate-changeset-modified": "Un altere usator o processo ha modificate le gruppo de modificationes. Tu cambiamentos non pote esser salveguardate perque illos pote supplantar le sues. Per favor refresca le pagina pro vider le ultime cambiamentos.",
-	"apierror-translate-duplicateaggregategroup": "Le gruppo de messages jam existe.",
 	"apierror-translate-fuzzymessage": "Impossibile revider traductiones marcate como \"fuzzy\".",
 	"apierror-translate-groupreviewdisabled": "Le revision de gruppos de messages non es in uso.",
 	"apierror-translate-invalidaggregategroupname": "Nomine de gruppo de messages aggregate non valide.",

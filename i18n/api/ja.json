@@ -83,7 +83,6 @@
 	"apihelp-translationcheck-summary": "翻訳を検証する。",
 	"apihelp-translationcheck-param-title": "名前空間と言語コードとページ名。",
 	"apihelp-translationcheck-param-translation": "検証対象の翻訳。",
-	"apierror-translate-duplicateaggregategroup": "メッセージ群はすでに存在します",
 	"apierror-translate-groupreviewdisabled": "メッセージ群の査読は未使用です。",
 	"apierror-translate-invalidaggregategroupname": "無効な集約メッセージ群名",
 	"apierror-translate-invalidgroup": "存在しないまたは無効なメッセージ群",

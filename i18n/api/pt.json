@@ -126,7 +126,6 @@
 	"apihelp-translationstats-example-1": "Obter a contagem de edições dos últimos 30 dias, para todos os grupos e línguas",
 	"apihelp-translationstats-example-2": "Obter a contagem de edições dos últimos 30 dias, nas línguas inglês e françês",
 	"apierror-translate-changeset-modified": "O conjunto de alterações foi modificado por outro utilizador ou processo. As suas alterações não podem ser gravadas porque podem substituir as alterações do mesmo. Atualize a página para ver as alterações mais recentes, por favor.",
-	"apierror-translate-duplicateaggregategroup": "O grupo de mensagens já existe",
 	"apierror-translate-fuzzymessage": "Não se pode rever traduções sinalizadas com FUZZY",
 	"apierror-translate-groupreviewdisabled": "A revisão de grupos de mensagens não está em uso.",
 	"apierror-translate-invalidaggregategroupname": "O nome do grupo agregador de mensagens é inválido",

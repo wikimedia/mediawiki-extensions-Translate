@@ -81,7 +81,6 @@
 	"apihelp-translationstats-param-language": "Daftar bahasa yang diambil statistiknya.",
 	"apihelp-translationstats-example-1": "Ambil banyak suntingan pada 30 hari terakhir, untuk semua kelompok dan bahasa",
 	"apihelp-translationstats-example-2": "Ambil banyak suntingan pada 30 hari terakhir, untuk bahasa Inggris dan Prancis.",
-	"apierror-translate-duplicateaggregategroup": "Kelompok pesan sudah ada",
 	"apierror-translate-groupreviewdisabled": "Tinjauan kelompok pesan tidak sedang digunakan.",
 	"apierror-translate-invalidaggregategroupname": "Nama kelompok pesan agregat tidak valid",
 	"apierror-translate-invalidgroup": "Kelompok tidak ada atau tidak valid",

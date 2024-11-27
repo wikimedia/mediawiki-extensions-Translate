@@ -55,7 +55,6 @@
 	"apihelp-searchtranslations-example-1": "Показване на преводи на този език.",
 	"apihelp-translationcheck-summary": "Потвърждаване на преводи.",
 	"apihelp-translationcheck-param-translation": "Превод за потвърждение.",
-	"apierror-translate-duplicateaggregategroup": "Групата съобщения вече съществува",
 	"apierror-translate-invalidgroup": "Групата не съществува или е невалидна",
 	"apierror-translate-invalidstate": "Заявеното състояние е невалидно.",
 	"apierror-translate-invalidlanguage": "Езиковият код $1 е невалиден.",

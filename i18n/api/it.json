@@ -48,7 +48,6 @@
 	"apihelp-searchtranslations-summary": "Cerca traduzioni.",
 	"apihelp-searchtranslations-param-limit": "Dimensione del risultato.",
 	"apihelp-searchtranslations-example-1": "Mostra le traduzioni per la lingua.",
-	"apierror-translate-duplicateaggregategroup": "Il gruppo messaggi esiste già",
 	"apierror-translate-fuzzymessage": "Non puoi revisionare traduzioni da aggiornare",
 	"apierror-translate-groupreviewdisabled": "Revisione gruppo messaggi non in uso.",
 	"apierror-translate-invalidaggregategroupname": "Nome del gruppo messaggi aggregati non valido",

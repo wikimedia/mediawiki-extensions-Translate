@@ -88,7 +88,6 @@
 	"apihelp-searchtranslations-param-limit": "Veličina rezultata.",
 	"apihelp-searchtranslations-example-1": "Prikaži prijevode na ovaj jezik.",
 	"apihelp-searchtranslations-example-2": "Prikaži neprevedene poruke koji odgovaraju upitu na izvornom jeziku.",
-	"apierror-translate-duplicateaggregategroup": "Grupa poruka već postoji",
 	"apierror-translate-fuzzymessage": "Ne možete pregledati zastarjele prijevode",
 	"apierror-translate-groupreviewdisabled": "Pregled grupe poruka nije u upotrebi.",
 	"apierror-translate-invalidaggregategroupname": "Neispravni naziv za grupu zbirnih poruka",

@@ -100,7 +100,6 @@
 	"apihelp-translationstats-param-group": "Lista över grupper att hämta statistik för.",
 	"apihelp-translationstats-param-language": "Lista över språk att hämta statistik för.",
 	"apihelp-translationstats-param-scale": "Översättningsstatistikens omfattning",
-	"apierror-translate-duplicateaggregategroup": "Meddelandegruppen finns redan",
 	"apierror-translate-fuzzymessage": "Kan inte granska föråldrade översättningar",
 	"apierror-translate-groupreviewdisabled": "Granskning av meddelandegrupp är inte i bruk.",
 	"apierror-translate-invalidaggregategroupname": "Ogiltigt namn på meddelandegrupp",

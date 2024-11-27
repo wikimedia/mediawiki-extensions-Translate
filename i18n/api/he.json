@@ -160,7 +160,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "אם זה <kbd>false</kbd>, לא להשתמש בגרסה האחרונה של התחביר בדף הזה. אם זה לא מוגדר, משמשת גרסת התחביר האחרונה.",
 	"apihelp-markfortranslation-param-transclusion": "אם זה <kbd>yes</kbd> או לא מוגדר, להפעיל הכללה מודעת לתרגום בדף הזה. אם זה <kbd>no</kbd>, לכבות הכללה.",
 	"apierror-translate-changeset-modified": "ערכת השינויים שונתה על־ידי משתמש או תהליך אחר. אי־אפשר לשמור את השינויים שלך כי הם יכולים לדרוס את השינויים שלהם. נא לרענן את הדף כדי לראות את השינויים האחרונים.",
-	"apierror-translate-duplicateaggregategroup": "קבוצת ההודעות כבר קיימת",
 	"apierror-translate-fuzzymessage": "לא ניתן לסקור תרגומים שאינם מעודכנים",
 	"apierror-translate-groupreviewdisabled": "סקירת קבוצת ההודעות אינה בשימוש.",
 	"apierror-translate-invalidaggregategroupname": "שם קבוצת הודעות משולבת בלתי־תקין",

@@ -148,7 +148,6 @@
 	"apihelp-translationstats-example-2": "Hent antall redigeringer for de siste 30 dagene, for språkene engelsk og fransk.",
 	"apihelp-markfortranslation-summary": "Merk ei side for oversettelse",
 	"apierror-translate-changeset-modified": "Endringssettet har blitt endret av en annen bruker eller prosess. Endringene dine kan ikke lagres siden det kan overskrive deres endringer. Oppdater siden for å se de siste endringene.",
-	"apierror-translate-duplicateaggregategroup": "Meldingsgruppa finnes allerede",
 	"apierror-translate-fuzzymessage": "Kan ikke vurdere foreldede oversettelser",
 	"apierror-translate-groupreviewdisabled": "Beskjedgruppevurdering er ikke i bruk.",
 	"apierror-translate-invalidaggregategroupname": "Ugyldig navn på aggregatmeldingsgruppe",

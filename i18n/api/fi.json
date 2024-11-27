@@ -45,7 +45,6 @@
 	"apihelp-translationcheck-summary": "Vahvista käännökset.",
 	"apihelp-translationcheck-param-title": "Sivun otsikko nimiavaruudella ja kielikoodilla.",
 	"apihelp-translationcheck-param-translation": "Vahvistettavat käännökset.",
-	"apierror-translate-duplicateaggregategroup": "Viestiryhmä on jo olemassa",
 	"apierror-translate-invalidgroup": "Ryhmä ei ole olemassa tai se on virheellinen",
 	"apierror-translate-invalidlanguage": "Kielikoodi $1 ei ole kelvollinen.",
 	"apierror-translate-invalidupdate": "Virheellinen päivitys",

@@ -29,7 +29,6 @@
 	"apihelp-translationcheck-summary": "번역을 확인합니다.",
 	"apihelp-translationcheck-param-title": "이름공간과 언어 코드가 있는 문서 제목입니다.",
 	"apihelp-translationcheck-param-translation": "확인할 번역입니다.",
-	"apierror-translate-duplicateaggregategroup": "메시지 그룹이 이미 존재합니다",
 	"apierror-translate-invalidgroup": "그룹이 존재하지 않거나 잘못되었습니다",
 	"apierror-translate-invalidlanguage": "$1 언어 코드는 유효하지 않습니다.",
 	"apierror-translate-invalidupdate": "유효하지 않은 업데이트",

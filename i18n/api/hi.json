@@ -125,7 +125,6 @@
 	"apihelp-translationstats-example-1": "पिछले 30 दिनों के संपादनों की मात्रा लाएँ, सभी समूहों और भाषाओं के लिए।",
 	"apihelp-translationstats-example-2": "अंग्रेज़ी और फ्रांसिसी भाषाओं के लिए पिछले 30 दिनों में संपादनों की मात्रा लाएँ",
 	"apierror-translate-changeset-modified": "बदलाव-सेट को किसी दूसरे सदस्य या प्रक्रिया द्वारा बदला गया है। आपके बदलावों को प्रकाशित नहीं किया जा सकता क्योंकि इससे उनके बदलाव ओवर्राइड हो सकते हैं। आखिरी बदलाव देखने के लिए पृष्ठ को दोबारा लोड करें।",
-	"apierror-translate-duplicateaggregategroup": "संदेश समूह पहले से ही मौजूद है",
 	"apierror-translate-fuzzymessage": "फ़ज़ी के अनुवादों को निरीक्षित नहीं कर सकते",
 	"apierror-translate-groupreviewdisabled": "संदेश समूह निरीक्षण का उपयोग नहीं किया जा रहा है।",
 	"apierror-translate-invalidaggregategroupname": "स्थायी संदेश समूह का अमान्य नाम",

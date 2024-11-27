@@ -22,7 +22,6 @@
 	"apihelp-searchtranslations-param-match": "임의/모든 검색어와 대조.",
 	"apihelp-searchtranslations-example-1": "이 언어에 대한 번역 보이기",
 	"apihelp-translationcheck-summary": "번역을 확인합니다.",
-	"apierror-translate-duplicateaggregategroup": "통보문 집단이 이미 존재합니다",
 	"apierror-translate-invalidgroup": "집단이 존재하지 않거나 잘못되였습니다",
 	"apierror-translate-language-disabled": "이 언어로의 번역이 비활성화되여있습니다",
 	"apierror-translate-nomessagefortitle": "제목이 번역 가능한 통보문과 일치하지 않습니다",

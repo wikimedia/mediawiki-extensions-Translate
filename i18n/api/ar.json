@@ -105,7 +105,6 @@
 	"apihelp-translationcheck-param-title": "عنوان الصفحة بالنطاق ورمز اللغة.",
 	"apihelp-translationcheck-param-translation": "ترجمة للتحقق.",
 	"apierror-translate-changeset-modified": "تم تعديل مجموعة التغييرات بواسطة مستخدم أو عملية أخرى، لا يمكن حفظ تغييراتك لأنها قد تتجاوز تغييراتها، يُرجَى تحديث الصفحة لرؤية آخر التغييرات.",
-	"apierror-translate-duplicateaggregategroup": "مجموعة الرسائل موجودة بالفعل",
 	"apierror-translate-fuzzymessage": "لا يمكن مراجعة الترجمات الضبابية",
 	"apierror-translate-groupreviewdisabled": "مراجعة مجموعة الرسائل غير مستخدمة.",
 	"apierror-translate-invalidaggregategroupname": "اسم مجموعة رسائل مجمعة غير صالح",

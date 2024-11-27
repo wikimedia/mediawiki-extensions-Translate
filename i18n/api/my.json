@@ -15,7 +15,6 @@
 	"apihelp-translationstash-param-translation": "အသုံးပြုသူ လုပ်ဆောင်သော ဘာသာပြန်ဆိုမှု။",
 	"apihelp-searchtranslations-summary": "ဘာသာပြန်များ ရှာဖွေရန်။",
 	"apihelp-searchtranslations-example-1": "ဘာသာစကားအတွက် ဘာသာပြန်များကို ပြရန်။",
-	"apierror-translate-duplicateaggregategroup": "မက်ဆေ့အုပ်စု ရှိနှင့်ပြီးဖြစ်သည်",
 	"apierror-translate-language-disabled": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်။",
 	"apierror-translate-language-disabled-reason": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်: $2",
 	"apierror-translate-owntranslation": "ကိုယ်ပိုင်ဘာသာပြန်များကို ပြန်လည်မဆန်းစစ်နိုင်ပါ",

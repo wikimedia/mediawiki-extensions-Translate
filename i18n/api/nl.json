@@ -166,7 +166,6 @@
 	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "Indien <kbd>false</kbd>, gebruik dan niet de nieuwste syntaxisversie voor deze pagina. Indien afwezig, wordt de nieuwste syntaxisversie gebruikt.",
 	"apihelp-markfortranslation-param-transclusion": "Indien <kbd>yes</kbd> of afwezig, schakel vertalingsbewuste transclusie in voor deze pagina. Indien <kbd>no</kbd>, schakel transclusie uit.",
 	"apierror-translate-changeset-modified": "De wijzigingenreeks is aangepast door een andere gebruiker of een ander proces. Uw wijzigingen kunnen niet opgeslagen worden omdat diens wijzigingen anders teniet gedaan kunnen worden. Laad de pagina opnieuw om de laatste wijzigingen te zien.",
-	"apierror-translate-duplicateaggregategroup": "Berichtgroep bestaat al",
 	"apierror-translate-fuzzymessage": "Het is niet mogelijk ‘fuzzy’ vertalingen te beoordelen",
 	"apierror-translate-groupreviewdisabled": "Beoordeling berichtengroepen niet in gebruik.",
 	"apierror-translate-invalidaggregategroupname": "Ongeldige naam samengestelde berichtengroep",
