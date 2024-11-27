@@ -14,12 +14,14 @@ use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
+use Psr\Log\LoggerInterface;
 
 /**
  * Contains logic to search for translations
@@ -42,6 +44,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	private TtmServerFactory $ttmServerFactory;
 	private LanguageFactory $languageFactory;
 	private UrlUtils $urlUtils;
+	private LoggerInterface $logger;
 
 	public function __construct(
 		TtmServerFactory $ttmServerFactory,
@@ -57,6 +60,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$this->ttmServerFactory = $ttmServerFactory;
 		$this->languageFactory = $languageFactory;
 		$this->urlUtils = $urlUtils;
+		$this->logger = LoggerFactory::getInstance( 'Translate' );
 	}
 
 	public function execute( $subPage ) {
@@ -103,6 +107,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		$search = $this->getSearchInput( $queryString );
 
+		$crossLanguageSearch = false;
 		$options = $params = $opts->getAllValues();
 		$filter = $opts->getValue( 'filter' );
 		try {
@@ -120,6 +125,8 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				$documents = $translationSearch->getDocuments();
 				$total = $translationSearch->getTotalHits();
 				$resultSet = $translationSearch->getResultSet();
+
+				$crossLanguageSearch = true;
 			} else {
 				$resultSet = $server->search( $queryString, $params, $this->hl );
 				$documents = $server->getDocuments( $resultSet );
@@ -134,7 +141,10 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			}
 
 			// Other exceptions
-			error_log( 'Translation search server unavailable: ' . $e->getMessage() );
+			$this->logger->error(
+				'Translation search server unavailable: {exception}',
+				[ 'exception' => $e ]
+			);
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
@@ -205,9 +215,14 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			$text = str_replace( $pre, '<strong class="tux-search-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
 
-			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
+			$titleText = $document['localid'] . '/' . $document['language'];
+			$title = Title::newFromText( $titleText );
 			if ( !$title ) {
 				// Should not ever happen but who knows...
+				$this->logger->warning(
+					'SearchTranslationsSpecialPage: Invalid title: {title}',
+					[ 'title' => $titleText, 'document' => json_encode( $document ) ]
+				);
 				continue;
 			}
 
@@ -227,6 +242,14 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 					$this->msg( 'tux-sst-edit' )->text()
 				);
 			} else {
+				if ( $crossLanguageSearch ) {
+					$this->logger->warning(
+						'SearchTranslationsSpecialPage: Expected valid handle: {$title}',
+						[ 'title' => $title->getPrefixedText() ]
+					);
+					continue;
+				}
+
 				$url = $this->urlUtils->parse( $document['uri'] );
 				if ( !$url ) {
 					continue;
