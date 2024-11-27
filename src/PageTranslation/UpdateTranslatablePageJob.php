@@ -35,9 +35,9 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 	 */
 	public static function newFromPage( TranslatablePage $page, array $sections = [] ): self {
 		$params = [];
-		$params[ 'sections' ] = [];
+		$params['sections'] = [];
 		foreach ( $sections as $section ) {
-			$params[ 'sections' ][] = $section->serializeToArray();
+			$params['sections'][] = $section->serializeToArray();
 		}
 
 		return new self( $page->getTitle(), $params );
@@ -51,13 +51,13 @@ class UpdateTranslatablePageJob extends GenericTranslateJob {
 		// START: This section does not care about replication lag
 		$this->logInfo( 'Starting UpdateTranslatablePageJob' );
 
-		$sections = $this->params[ 'sections' ];
+		$sections = $this->params['sections'];
 		foreach ( $sections as $index => $section ) {
 			// Old jobs stored sections as objects because they were serialized and
 			// unserialized transparently. That is no longer supported, so we
 			// convert manually to primitive types first (to an PHP array).
 			if ( is_array( $section ) ) {
-				$sections[ $index ] = TranslationUnit::unserializeFromArray( $section );
+				$sections[$index] = TranslationUnit::unserializeFromArray( $section );
 			}
 		}
 

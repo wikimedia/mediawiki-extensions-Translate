@@ -541,10 +541,11 @@ class TranslatablePage extends TranslatableBundle {
 		$setOpts += Database::getCacheSetOptions( $dbr );
 
 		$ids = RevTagStore::getTranslatableBundleIds(
-			RevTagStore::TP_MARK_TAG, RevTagStore::TP_READY_TAG
+			RevTagStore::TP_MARK_TAG,
+			RevTagStore::TP_READY_TAG
 		);
 
-		// Adding a comma at the end and beginning so that we can check for page Id
+		// Adding a comma at the end and beginning so that we can check for page ID
 		// existence with the "," delimiters
 		return ',' . implode( ',', $ids ) . ',';
 	}

@@ -235,7 +235,7 @@ class TranslatablePageMarker {
 							'tpt-unit-title-too-long',
 							$s->id,
 							Message::numParam( strlen( $longestUnitTitle ) ),
-							$e->getErrorMessageParameters()[ 0 ],
+							$e->getErrorMessageParameters()[0],
 							$pageTitle
 						);
 					} else {

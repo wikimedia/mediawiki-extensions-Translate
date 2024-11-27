@@ -157,7 +157,9 @@ class TranslatablePageStore implements TranslatableBundleStore {
 
 		if ( $status ) {
 			$this->translatableBundleStatusStore->setStatus(
-				$title, $status, TranslatablePage::class
+				$title,
+				$status,
+				TranslatablePage::class
 			);
 		}
 
