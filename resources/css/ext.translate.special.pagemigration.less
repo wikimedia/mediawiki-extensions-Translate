@@ -1,32 +1,34 @@
-.mw-tpm-sp-unit__source,
-.mw-tpm-sp-unit__target {
-	overflow-y: auto;
-	height: 150px;
-	border: 2px solid #808080;
-	resize: vertical;
+.mw-tpm-sp-unit {
+	padding-bottom: 10px;
+
+	&__source,
+	&__target {
+		overflow-y: auto;
+		height: 150px;
+		border: 2px solid #808080;
+		resize: vertical;
+	}
+
+	&__source,
+	&__target,
+	&__actions {
+		height: 150px;
+	}
+
+	&:last-child {
+		.mw-tpm-sp-action--swap,
+		.mw-tpm-sp-action--add {
+			display: none;
+		}
+	}
 }
 
 .mw-tpm-sp-form #title {
 	width: 35%;
 }
 
-.mw-tpm-sp-unit:last-child .mw-tpm-sp-action--swap,
-.mw-tpm-sp-unit:last-child .mw-tpm-sp-action--add {
-	display: none;
-}
-
-.mw-tpm-sp-unit {
-	padding-bottom: 10px;
-}
-
 .mw-tpm-sp-container .mw-tpm-sp-unit textarea {
 	padding: 10px;
-}
-
-.mw-tpm-sp-unit__source,
-.mw-tpm-sp-unit__target,
-.mw-tpm-sp-unit__actions {
-	height: 150px;
 }
 
 .mw-tpm-sp-action {
@@ -38,39 +40,39 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 25px 25px;
-}
 
-.mw-tpm-sp-action--delete {
-	background-image: url( ../images/trash_darkgray.svg );
-}
+	&,
+	&--clear {
+		cursor: pointer;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 
-.mw-tpm-sp-action--swap {
-	background-image: url( ../images/switch.svg );
-}
+	&--delete {
+		background-image: url( ../images/trash_darkgray.svg );
+	}
 
-.mw-tpm-sp-action--add {
-	background-image: url( ../images/plus_darkgray.svg );
-}
+	&--swap {
+		background-image: url( ../images/switch.svg );
+	}
 
-.mw-tpm-sp-action,
-.mw-tpm-sp-action--clear {
-	cursor: pointer;
-	background-position: center;
-	background-repeat: no-repeat;
-}
+	&--add {
+		background-image: url( ../images/plus_darkgray.svg );
+	}
 
-.mw-tpm-sp-action--clear {
-	position: absolute;
-	background: transparent;
-	/* @embed */
-	background-image: url( ../images/clear.svg );
-	background-size: contain;
-	height: 16px;
-	width: 16px;
-	top: 5px;
-	right: 10px;
-	border: 0;
-	padding: 0;
+	&--clear {
+		position: absolute;
+		background: transparent;
+		/* @embed */
+		background-image: url( ../images/clear.svg );
+		background-size: contain;
+		height: 16px;
+		width: 16px;
+		top: 5px;
+		right: 10px;
+		border: 0;
+		padding: 0;
+	}
 }
 
 .mw-tpm-sp-error__message {

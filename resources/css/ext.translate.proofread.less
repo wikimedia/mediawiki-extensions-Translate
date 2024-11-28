@@ -1,37 +1,46 @@
-.ext-translate-container .tux-messagelist .tux-message-proofread {
-	min-height: 50px;
-	margin: 0 auto;
-	vertical-align: middle;
-	background: #f8f8f8;
-}
+.ext-translate-container {
+	.tux-messagelist {
+		.tux-message-proofread {
+			min-height: 50px;
+			margin: 0 auto;
+			vertical-align: middle;
+			background: #f8f8f8;
 
-.ext-translate-container .tux-messagelist .tux-message-proofread .tux-message-item-compact {
-	padding: 30px 0;
-	overflow: hidden;
-	margin-right: auto;
-	margin-left: auto;
-	vertical-align: middle;
-	border-bottom: 1px solid #f0f0f0;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
-	background: #fff;
-	max-width: 900px;
-}
+			.tux-message-item-compact {
+				padding: 30px 0;
+				overflow: hidden;
+				margin-right: auto;
+				margin-left: auto;
+				vertical-align: middle;
+				border-bottom: 1px solid #f0f0f0;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				background: #fff;
+				max-width: 900px;
 
-.ext-translate-container .tux-messagelist .tux-message-proofread .tux-message-item-compact:hover {
-	background: #fcfcfc;
-}
+				&:hover {
+					background: #fcfcfc;
+				}
+			}
 
-.ext-translate-container .tux-messagelist .tux-message-proofread:first-child .tux-message-item-compact {
-	margin-top: 10px;
-	padding-top: 60px;
-	border-top: 1px solid #ddd;
-}
+			&:first-child .tux-message-item-compact {
+				margin-top: 10px;
+				padding-top: 60px;
+				border-top: 1px solid #ddd;
+			}
 
-.ext-translate-container .tux-messagelist .tux-message-proofread:last-child .tux-message-item-compact {
-	margin-bottom: 10px;
-	padding-bottom: 60px;
-	border-bottom: 1px solid #ddd;
+			&:last-child .tux-message-item-compact {
+				margin-bottom: 10px;
+				padding-bottom: 60px;
+				border-bottom: 1px solid #ddd;
+			}
+
+			&.own-translation,
+			&.own-translation:hover {
+				background: #fbfbfb;
+			}
+		}
+	}
 }
 
 .tux-proofread-source,
@@ -40,40 +49,41 @@
 	white-space: pre-wrap;
 }
 
-.tux-message-proofread.open .tux-proofread-status,
-.tux-message-proofread.open .tux-proofread-source,
-.tux-message-proofread.open .tux-proofread-translation,
-.tux-message-proofread.open .tux-proofread-action-block {
-	display: none;
+.tux-message-proofread.open {
+	.tux-proofread-status,
+	.tux-proofread-source,
+	.tux-proofread-translation,
+	.tux-proofread-action-block {
+		display: none;
+	}
 }
 
-.tux-messagelist .tux-message-proofread .tux-proofread-source {
-	color: #54595d;
-	font-size: 16px;
-	line-height: 1.5em;
-	padding-right: 25px;
-	padding-left: 25px;
-}
+.tux-messagelist {
+	.tux-message-proofread {
+		.tux-proofread-source {
+			color: #54595d;
+			font-size: 16px;
+			line-height: 1.5em;
+			padding-right: 25px;
+			padding-left: 25px;
+		}
 
-.tux-messagelist .tux-message-proofread .tux-proofread-translation {
-	color: #222;
-	font-size: 16px;
-	line-height: 1.5em;
-	padding-left: 20px;
+		.tux-proofread-translation {
+			color: #222;
+			font-size: 16px;
+			line-height: 1.5em;
+			padding-left: 20px;
+		}
+	}
+
+	&.tux-hide-own .tux-message-proofread.own-translation {
+		display: none;
+	}
 }
 
 .tux-proofread-action-block {
 	top: -5px;
 	right: -5px;
-}
-
-.ext-translate-container .tux-messagelist .tux-message-proofread.own-translation,
-.ext-translate-container .tux-messagelist .tux-message-proofread.own-translation:hover {
-	background: #fbfbfb;
-}
-
-.tux-messagelist.tux-hide-own .tux-message-proofread.own-translation {
-	display: none;
 }
 
 .translated-by-self {
@@ -91,20 +101,20 @@
 
 .tux-proofread-status {
 	top: -10px;
-}
 
-.tux-proofread-status.fuzzy {
-	background: left center no-repeat;
-	/* @embed */
-	background-image: url( ../images/outdated-ltr.svg );
-	height: 40px;
-}
+	&.fuzzy {
+		background: left center no-repeat;
+		/* @embed */
+		background-image: url( ../images/outdated-ltr.svg );
+		height: 40px;
+	}
 
-.tux-proofread-status.untranslated {
-	background: left center no-repeat;
-	/* @embed */
-	background-image: url( ../images/translate-ltr.svg );
-	height: 40px;
+	&.untranslated {
+		background: left center no-repeat;
+		/* @embed */
+		background-image: url( ../images/translate-ltr.svg );
+		height: 40px;
+	}
 }
 
 .tux-proofread-action {
@@ -114,28 +124,28 @@
 	/* There is 1px white row between each icon */
 	height: 30px;
 	cursor: pointer;
-}
 
-.tux-proofread-action:hover {
-	background-position: right -31px;
-}
+	&:hover {
+		background-position: right -31px;
+	}
 
-.tux-proofread-action.accepted {
-	cursor: default;
-	background-position: right -62px;
+	&.accepted {
+		cursor: default;
+		background-position: right -62px;
+	}
 }
 
 .proofread-by-others .tux-proofread-action {
 	background-position: right -124px;
-}
 
-.proofread-by-others .tux-proofread-action:hover {
-	background-position: right -155px;
-}
+	&:hover {
+		background-position: right -155px;
+	}
 
-.proofread-by-others .tux-proofread-action.accepted {
-	cursor: default;
-	background-position: right -186px;
+	&.accepted {
+		cursor: default;
+		background-position: right -186px;
+	}
 }
 
 .tux-proofread-edit {
@@ -146,19 +156,19 @@
 	cursor: pointer;
 	visibility: hidden;
 	text-align: right;
-}
 
-.tux-message-proofread:hover .tux-proofread-edit {
-	visibility: visible;
-}
+	.tux-message-proofread:hover & {
+		visibility: visible;
+	}
 
-.tux-proofread-edit-label {
-	color: #72777d;
-	position: relative;
-	display: inline-block;
-	font-size: 13px;
-	padding-top: 30px;
-	padding-right: 2px;
+	&-label {
+		color: #72777d;
+		position: relative;
+		display: inline-block;
+		font-size: 13px;
+		padding-top: 30px;
+		padding-right: 2px;
+	}
 }
 
 .tux-proofread-count {
@@ -166,14 +176,14 @@
 	font-size: 15px;
 	padding-right: 5px;
 	text-align: right;
-}
 
-.tux-proofread-count::before {
-	content: '';
-	display: inline-block;
-	background: left bottom no-repeat;
-	/* @embed */
-	background-image: url( ../images/check-small.svg );
-	height: 12px;
-	width: 14px;
+	&::before {
+		content: '';
+		display: inline-block;
+		background: left bottom no-repeat;
+		/* @embed */
+		background-image: url( ../images/check-small.svg );
+		height: 12px;
+		width: 14px;
+	}
 }

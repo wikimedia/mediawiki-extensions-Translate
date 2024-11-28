@@ -1,38 +1,42 @@
-.ext-translate-container .tux-messagelist .tux-message-pagemode {
-	min-height: 50px;
-	margin: 0 auto;
-	vertical-align: middle;
-	background: #f8f8f8;
-}
+.ext-translate-container {
+	.tux-messagelist {
+		.tux-message-pagemode {
+			min-height: 50px;
+			margin: 0 auto;
+			vertical-align: middle;
+			background: #f8f8f8;
 
-.ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact {
-	padding: 35px 0;
-	line-height: 50px;
-	overflow: hidden;
-	margin-right: auto;
-	margin-left: auto;
-	vertical-align: middle;
-	border-bottom: 1px solid #f0f0f0;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
-	background: #fff;
-	max-width: 900px;
-}
+			.tux-message-item-compact {
+				padding: 35px 0;
+				line-height: 50px;
+				overflow: hidden;
+				margin-right: auto;
+				margin-left: auto;
+				vertical-align: middle;
+				border-bottom: 1px solid #f0f0f0;
+				border-left: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				background: #fff;
+				max-width: 900px;
 
-.ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact:hover {
-	background: #fcfcfc;
-}
+				&:hover {
+					background: #fcfcfc;
+				}
+			}
 
-.ext-translate-container .tux-messagelist .tux-message-pagemode:first-child .tux-message-item-compact {
-	margin-top: 10px;
-	padding-top: 60px;
-	border-top: 1px solid #ddd;
-}
+			&:first-child .tux-message-item-compact {
+				margin-top: 10px;
+				padding-top: 60px;
+				border-top: 1px solid #ddd;
+			}
 
-.ext-translate-container .tux-messagelist .tux-message-pagemode:last-child .tux-message-item-compact {
-	margin-bottom: 10px;
-	padding-bottom: 60px;
-	border-bottom: 1px solid #ddd;
+			&:last-child .tux-message-item-compact {
+				margin-bottom: 10px;
+				padding-bottom: 60px;
+				border-bottom: 1px solid #ddd;
+			}
+		}
+	}
 }
 
 .tux-pagemode-source,
@@ -40,26 +44,36 @@
 	word-wrap: break-word;
 }
 
-.tux-message-pagemode.open .tux-pagemode-status,
-.tux-message-pagemode.open .tux-pagemode-source,
-.tux-message-pagemode.open .tux-pagemode-translation,
-.tux-message-pagemode.open .tux-pagemode-action-block {
-	display: none;
+.tux-message-pagemode {
+	&.open {
+		.tux-pagemode-status,
+		.tux-pagemode-source,
+		.tux-pagemode-translation,
+		.tux-pagemode-action-block {
+			display: none;
+		}
+	}
+
+	&:hover .tux-pagemode-edit {
+		visibility: visible;
+	}
 }
 
-.tux-messagelist .tux-message-pagemode .tux-pagemode-source {
-	color: #54595d;
-	font-size: 16px;
-	line-height: 1.5em;
-	padding-right: 25px;
-	padding-left: 25px;
-}
+.tux-messagelist .tux-message-pagemode {
+	.tux-pagemode-source {
+		color: #54595d;
+		font-size: 16px;
+		line-height: 1.5em;
+		padding-right: 25px;
+		padding-left: 25px;
+	}
 
-.tux-messagelist .tux-message-pagemode .tux-pagemode-translation {
-	color: #222;
-	font-size: 16px;
-	line-height: 1.5em;
-	padding-left: 20px;
+	.tux-pagemode-translation {
+		color: #222;
+		font-size: 16px;
+		line-height: 1.5em;
+		padding-left: 20px;
+	}
 }
 
 .tux-pagemode-action-block {
@@ -70,18 +84,18 @@
 .tux-pagemode-status {
 	top: -10px;
 	height: 40px;
-}
 
-.tux-pagemode-status.fuzzy {
-	background: left center no-repeat;
-	/* @embed */
-	background-image: url( ../images/outdated-ltr.svg );
-}
+	&.fuzzy {
+		background: left center no-repeat;
+		/* @embed */
+		background-image: url( ../images/outdated-ltr.svg );
+	}
 
-.tux-pagemode-status.untranslated {
-	background: left center no-repeat;
-	/* @embed */
-	background-image: url( ../images/translate-ltr.svg );
+	&.untranslated {
+		background: left center no-repeat;
+		/* @embed */
+		background-image: url( ../images/translate-ltr.svg );
+	}
 }
 
 .tux-pagemode-action {
@@ -90,10 +104,10 @@
 	background-image: url( ../images/check-sprite-ltr.svg );
 	height: 31px;
 	cursor: pointer;
-}
 
-.tux-pagemode-action:hover {
-	background-position: right -31px;
+	&:hover {
+		background-position: right -31px;
+	}
 }
 
 .tux-pagemode-edit {
@@ -103,8 +117,4 @@
 	height: 40px;
 	cursor: pointer;
 	visibility: hidden;
-}
-
-.tux-message-pagemode:hover .tux-pagemode-edit {
-	visibility: visible;
 }

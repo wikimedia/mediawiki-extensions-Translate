@@ -2,71 +2,76 @@
 	padding-bottom: 1em;
 	margin-bottom: 2em;
 	position: relative;
-}
 
-.mw-translate-smg-change label {
-	padding: 0;
-	margin: 0;
-	margin-right: 1.1em;
-	font-size: 0.95em;
-}
+	label {
+		padding: 0;
+		margin: 0;
+		margin-right: 1.1em;
+		font-size: 0.95em;
+	}
 
-.mw-translate-smg-change .diff-title td {
-	padding: 0.75em 0.5em;
-}
+	.diff-title td {
+		padding: 0.75em 0.5em;
+	}
 
-.mw-translate-smg-change.smg-change-addition td.diff-ntitle,
-.mw-translate-smg-change.smg-change-rename td.diff-ntitle {
-	padding-right: 32px;
-}
+	&.smg-change-addition td.diff-ntitle,
+	&.smg-change-rename td.diff-ntitle {
+		padding-right: 32px;
+	}
 
-.mw-translate-smg-change input[ type='radio' ] {
-	margin: 0 2px;
-	margin-top: -1px;
-	vertical-align: middle;
-}
+	input[ type='radio' ] {
+		margin: 0 2px;
+		margin-top: -1px;
+		vertical-align: middle;
+	}
 
-.mw-translate-smg-change .smg-rename-actions {
-	border: 0;
-	background: transparent url( ../images/ellipsis.svg ) center center no-repeat;
-	padding: 0;
-	width: 32px;
-	min-height: 32px;
-	cursor: pointer;
-	position: absolute;
-	top: 5px;
-	right: 0;
-}
+	.smg-rename-actions {
+		border: 0;
+		background: transparent url( ../images/ellipsis.svg ) center center no-repeat;
+		padding: 0;
+		width: 32px;
+		min-height: 32px;
+		cursor: pointer;
+		position: absolute;
+		top: 5px;
+		right: 0;
 
-/** Added to override hover style added by Timeless */
-.mw-translate-smg-change .smg-rename-actions:hover {
-	background-color: transparent;
-}
+		/** Added to override hover style added by Timeless */
+		&:hover {
+			background-color: transparent;
+		}
 
-.mw-translate-smg-change .smg-rename-actions.loading {
-	background: transparent url( ../images/loading.gif ) center center no-repeat;
-	background-size: 90%;
-}
+		&.loading {
+			background: transparent url( ../images/loading.gif ) center center no-repeat;
+			background-size: 90%;
+		}
+	}
 
-.mw-translate-smg-change .smg-change-import-options {
-	padding: 0.75em 0.5em 0 0.5em;
+	.smg-change-import-options {
+		padding: 0.75em 0.5em 0 0.5em;
+	}
+
+	.diff-lineno {
+		display: none;
+	}
+
+	.mw-translate-smg-notice-important {
+		background: #fbb;
+		border: 1px solid #f58d8d;
+	}
 }
 
 .oo-ui-buttonElement.mw-translate-smg-submit {
 	display: block;
-}
 
-.oo-ui-buttonElement.mw-translate-smg-submit button {
-	font-size: 3em;
-	margin: auto;
-	width: 80%;
-	display: block;
-	word-wrap: break-word;
-	white-space: pre-wrap;
-}
-
-.mw-translate-smg-change .diff-lineno {
-	display: none;
+	button {
+		font-size: 3em;
+		margin: auto;
+		width: 80%;
+		display: block;
+		word-wrap: break-word;
+		white-space: pre-wrap;
+	}
 }
 
 .mw-translate-smg-header td {
@@ -82,11 +87,6 @@
 	margin-top: 2.5em;
 }
 
-.mw-translate-smg-change .mw-translate-smg-notice-important {
-	background: #fbb;
-	border: 1px solid #f58d8d;
-}
-
 /**************************
  * Rename dropdown styles
  **************************/
@@ -99,30 +99,29 @@
 	box-shadow: 0 3px 3px -3px rgba( 0, 0, 0, 0.5 );
 	border-radius: 3px;
 	display: none;
-}
 
-.smg-rename-dropdown-menu.show {
-	display: block;
-}
+	&.show {
+		display: block;
+	}
 
-/* Additional class to override CSS from skins */
-.smg-rename-dropdown-menu.smg-rename-dropdown-menu button {
-	display: block;
-	background: none;
-	border: 0;
-	padding: 8px 10px;
-	width: 100%;
-	text-align: left;
-	white-space: nowrap;
-	color: #222;
-	font-size: 14px;
-	font-weight: normal;
-}
+	.smg-rename-dropdown-menu button {
+		display: block;
+		background: none;
+		border: 0;
+		padding: 8px 10px;
+		width: 100%;
+		text-align: left;
+		white-space: nowrap;
+		color: #222;
+		font-size: 14px;
+		font-weight: normal;
 
-.smg-rename-dropdown-menu.smg-rename-dropdown-menu button:hover {
-	cursor: pointer;
-	background-color: #f0f0f0;
-	color: #222;
+		&:hover {
+			cursor: pointer;
+			background-color: #f0f0f0;
+			color: #222;
+		}
+	}
 }
 
 .smg-group-sync-cache-info {
@@ -130,34 +129,34 @@
 	background: #f0f0f0;
 	border-radius: 3px;
 	margin-bottom: 1em;
-}
 
-.smg-group-sync-cache-info__help {
-	position: absolute;
-	right: 1em;
-}
+	&__help {
+		position: absolute;
+		right: 1em;
+	}
 
-.smg-group-sync-cache-info__group-errors {
-	margin-bottom: 0.5em;
-	background-color: #e0e0e0;
-	padding: 0.5em 1em;
-	border-radius: 3px;
-}
+	&__group-errors {
+		margin-bottom: 0.5em;
+		background-color: #e0e0e0;
+		padding: 0.5em 1em;
+		border-radius: 3px;
+	}
 
-.smg-group-sync-cache-info__message-error dt {
-	float: left;
-	text-align: right;
-	margin-right: 5px;
+	&__message-error dt {
+		float: left;
+		text-align: right;
+		margin-right: 5px;
+	}
+
+	&__sync-actions .loading {
+		pointer-events: none;
+		color: inherit;
+		text-decoration: none;
+	}
 }
 
 .client-nojs .smg-group-sync-cache-info__resolve-action {
 	pointer-events: none;
 	text-decoration: line-through;
 	color: inherit;
-}
-
-.smg-group-sync-cache-info__sync-actions .loading {
-	pointer-events: none;
-	color: inherit;
-	text-decoration: none;
 }

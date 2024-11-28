@@ -11,7 +11,6 @@
 	display: none;
 }
 
-/* Panes */
 .filter.pane,
 .tsb-container .search.pane {
 	border-bottom: 1px solid #575656;
@@ -26,11 +25,11 @@
 	background-size: 22px;
 	padding-left: 30px;
 	background-position-y: 10px;
-}
 
-.tsb-container.grid .search.pane input[ type='search' ] {
-	box-sizing: border-box;
-	margin-top: 7px;
+	input[ type='search' ] {
+		box-sizing: border-box;
+		margin-top: 7px;
+	}
 }
 
 .request-filter-box {
@@ -56,80 +55,125 @@
 	overflow: auto;
 }
 
-.grid .details.pane {
-	border-left: 1px solid #ddd;
-	left: -1px;
-	padding: 5px 20px 10px 20px;
+.details.pane {
+	.grid & {
+		border-left: 1px solid #ddd;
+		left: -1px;
+		padding: 5px 20px 10px 20px;
+	}
+
+	& > .row {
+		padding-top: 15px;
+	}
+
+	.tsb-header {
+		font-size: 30px;
+		font-weight: lighter;
+	}
+
+	.reminder-email {
+		color: #6c6d70;
+		font-size: 14px;
+		padding-top: 15px;
+
+		.send-reminder {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
+
+	.languages {
+		color: #6c6d70;
+		font-size: 16px;
+		font-weight: lighter;
+		padding-top: 10px;
+
+		span {
+			margin-right: 2em;
+		}
+	}
+
+	.actions {
+		font-size: 22px;
+		/* Make the buttons sticky to reduce the need to scroll back to top */
+		position: sticky;
+		top: -5px;
+		z-index: 1;
+		padding-bottom: 15px;
+
+		button {
+			margin-right: 1.5em;
+		}
+	}
 }
 
-/* Requests pane */
-.grid .requests.pane,
-.grid .requests.pane .request,
-.grid .requests.pane .request-header {
-	margin: 0;
-	padding: 0;
+.grid .requests.pane {
+	&,
+	.request,
+	.request-header {
+		margin: 0;
+		padding: 0;
+	}
 }
 
 .request {
 	border-right: 1px solid #c9c8c8;
 	border-bottom: 1px solid #c9c8c8;
 	cursor: pointer;
-}
 
-.request:last-child {
-	border-bottom: 0;
-}
+	&:last-child {
+		border-bottom: 0;
+	}
 
-.request:hover {
-	background-color: #fafafa;
-}
+	&:hover {
+		background-color: #fafafa;
+	}
 
-.request.selected {
-	background-color: #f0f0f0;
-}
+	&.selected {
+		background-color: #f0f0f0;
+	}
 
-.grid .request .amount {
-	height: 100%;
-	font-size: 3em;
-	color: #96989a;
-	background-color: #f7f8f8;
-	padding: 20px 5px;
-	text-align: center;
-}
+	.grid & .amount {
+		height: 100%;
+		font-size: 3em;
+		color: #96989a;
+		background-color: #f7f8f8;
+		padding: 20px 5px;
+		text-align: center;
+	}
 
-.request .request-selector {
-	height: 30px;
-	line-height: 30px;
-	font-size: 16px;
-	white-space: nowrap;
-}
+	.request-selector {
+		height: 30px;
+		line-height: 30px;
+		font-size: 16px;
+		white-space: nowrap;
+	}
 
-.request .email,
-.request .signup-age {
-	height: 20px;
-	line-height: 20px;
-	font-size: 12px;
-	color: #6c6d70;
-	white-space: nowrap;
-}
+	.email,
+	.signup-age {
+		height: 20px;
+		line-height: 20px;
+		font-size: 12px;
+		color: #6c6d70;
+		white-space: nowrap;
+	}
 
-.request .username,
-.request .email {
-	padding-left: 10px;
-	overflow-wrap: anywhere;
-}
+	.signup-age {
+		text-align: center;
+		overflow: hidden;
+	}
 
-.request .signup-age {
-	text-align: center;
-	overflow: hidden;
-}
+	.grid & .request-info,
+	.grid & .approval {
+		padding-top: 5px;
+	}
 
-.grid .request .request-info,
-.grid .request .approval {
-	padding-top: 5px;
+	.username,
+	.email {
+		padding-left: 10px;
+		overflow-wrap: anywhere;
+	}
 }
-
-/* Details pane */
 
 .tsb-details-no-translations {
 	color: #72777d;
@@ -147,50 +191,6 @@
 	padding: 5px 0;
 }
 
-.details.pane > .row {
-	padding-top: 15px;
-}
-
-.details.pane .tsb-header {
-	font-size: 30px;
-	font-weight: lighter;
-}
-
-.details.pane .reminder-email {
-	color: #6c6d70;
-	font-size: 14px;
-	padding-top: 15px;
-}
-
-.details.pane .reminder-email .send-reminder {
-	padding-left: 1em;
-	padding-right: 1em;
-}
-
-.details.pane .languages {
-	color: #6c6d70;
-	font-size: 16px;
-	font-weight: lighter;
-	padding-top: 10px;
-}
-
-.details.pane .languages span {
-	margin-right: 2em;
-}
-
-.details.pane .actions {
-	font-size: 22px;
-	/* Make the buttons sticky to reduce the need to scroll back to top */
-	position: sticky;
-	top: -5px;
-	z-index: 1;
-	padding-bottom: 15px;
-}
-
-.actions button {
-	margin-right: 1.5em;
-}
-
 .request-header {
 	color: #72777d;
 	border-right: 1px solid #c9c9c9;
@@ -206,13 +206,13 @@
 	line-height: 40px;
 	padding: 0 5px;
 	background-color: #f8f8f8;
-}
 
-.request-footer .selected-counter,
-.request-footer .older-requests-indicator {
-	unicode-bidi: -moz-isolate;
-	unicode-bidi: -webkit-isolate;
-	unicode-bidi: isolate;
+	.selected-counter,
+	.older-requests-indicator {
+		unicode-bidi: -moz-isolate;
+		unicode-bidi: -webkit-isolate;
+		unicode-bidi: isolate;
+	}
 }
 
 .clear-language-selector,
@@ -232,50 +232,54 @@
 	border-left: 0;
 }
 
-.language-selector.selected {
-	cursor: default;
-	border-radius: 3px 0 0 3px;
-	max-width: 80%;
-	max-height: 40px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
+.language-selector {
+	&.selected {
+		cursor: default;
+		border-radius: 3px 0 0 3px;
+		max-width: 80%;
+		max-height: 40px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 
-.language-selector:hover {
-	border-color: #aaa;
-}
+	&:hover {
+		border-color: #aaa;
+	}
 
-.language-selector.unselected::after {
-	content: '';
-	border-top: 4px solid #aaa;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 0.5em;
+	&.unselected::after {
+		content: '';
+		border-top: 4px solid #aaa;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0.5em;
+	}
 }
 
 textarea.body {
 	height: 300px;
 }
 
-.translations .row {
-	border-bottom: 1px solid #c9c8c8;
-	padding: 10px;
-	font-size: 16px;
-	overflow-wrap: anywhere;
-}
+.translations {
+	.row {
+		border-bottom: 1px solid #c9c8c8;
+		padding: 10px;
+		font-size: 16px;
+		overflow-wrap: anywhere;
+	}
 
-.translations .title {
-	font-size: 16px;
-	background-color: #f7f8f8;
-	font-weight: bold;
-}
+	.title {
+		font-size: 16px;
+		background-color: #f7f8f8;
+		font-weight: bold;
+	}
 
-.translations .info {
-	font-size: 12px;
-	color: #6c6d70;
+	.info {
+		font-size: 12px;
+		color: #6c6d70;
+	}
 }
 
 .client-nojs .grid {

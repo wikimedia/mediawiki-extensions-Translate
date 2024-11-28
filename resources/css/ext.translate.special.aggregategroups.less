@@ -14,27 +14,29 @@ span.tp-aggregate-edit-ag-button {
 	cursor: pointer;
 }
 
-a.tpt-add-new-group {
-	background: no-repeat scroll left center transparent;
-	background-image: /* @embed */ url( ../images/add.svg );
-	padding-left: 20px;
-	display: inline-block;
-	margin-bottom: 1em;
+span.tp-toggle-group {
+	font-size: 16px;
+	margin-right: 1em;
+	margin-left: 0.5em;
 }
 
-div.tpt-add-new-group {
-	margin-bottom: 1em;
+.tpt-add-new-group {
+	a& {
+		background: no-repeat scroll left center transparent;
+		background-image: /* @embed */ url( ../images/add.svg );
+		padding-left: 20px;
+		display: inline-block;
+		margin-bottom: 1em;
+	}
+
+	div& {
+		margin-bottom: 1em;
+	}
 }
 
 h2.tp-name {
 	/** Allows the outline for the toggle icon to be visible **/
 	overflow: visible;
-}
-
-span.tp-toggle-group {
-	font-size: 16px;
-	margin-right: 1em;
-	margin-left: 0.5em;
 }
 
 .tp-toggle-group-icon {
@@ -48,30 +50,36 @@ span.tp-toggle-group {
 	background-size: 20px;
 	vertical-align: middle;
 	cursor: pointer;
+
+	&:focus {
+		outline: 1px dotted;
+	}
 }
 
-.tp-toggle-group-icon:focus {
-	outline: 1px dotted;
+.mw-tpa-group {
+	&.mw-tpa-group-open {
+		.tp-toggle-group-icon {
+			background-image: /* @embed */ url( ../images/collapse.svg );
+		}
+
+		.tp-sub-groups {
+			display: block;
+		}
+	}
+
+	.tp-sub-groups {
+		display: none;
+	}
 }
 
-.mw-tpa-group.mw-tpa-group-open .tp-toggle-group-icon {
-	background-image: /* @embed */ url( ../images/collapse.svg );
-}
+input {
+	&.tp-aggregategroup-add-name {
+		width: 250px;
+	}
 
-.mw-tpa-group .tp-sub-groups {
-	display: none;
-}
-
-.mw-tpa-group.mw-tpa-group-open .tp-sub-groups {
-	display: block;
-}
-
-input.tp-aggregategroup-add-name {
-	width: 250px;
-}
-
-input.tp-aggregategroup-add-description {
-	width: 500px;
+	&.tp-aggregategroup-add-description {
+		width: 500px;
+	}
 }
 
 div.hidden {
@@ -95,12 +103,14 @@ div.hidden {
 	width: 500px;
 }
 
-.client-nojs .tpt-add-new-group,
-.client-nojs .tp-aggregate-edit-ag-button,
-.client-nojs .tp-aggregate-remove-button,
-.client-nojs .tp-aggregate-remove-ag-button,
-.client-nojs .mw-tpa-group input {
-	display: none;
+.client-nojs {
+	.tpt-add-new-group,
+	.tp-aggregate-edit-ag-button,
+	.tp-aggregate-remove-button,
+	.tp-aggregate-remove-ag-button,
+	.mw-tpa-group input {
+		display: none;
+	}
 }
 
 .client-js .tux-nojs {
