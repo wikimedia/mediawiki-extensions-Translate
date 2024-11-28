@@ -16,41 +16,43 @@
 	cursor: pointer;
 }
 
-.tux-navi-collapsed .tux-navitoggle {
-	background: no-repeat scroll right center transparent;
-	/* @embed */
-	background-image: url( ../images/expand-ltr.svg );
-	left: 40px !important;
-}
-
-.tux-navi-collapsed #mw-panel {
-	display: none;
-}
-
-.tux-navi-collapsed #content {
-	margin-left: 0;
-}
-
-.tux-navi-collapsed #left-navigation {
-	left: 0;
-}
-
 .tux-navi-minilogo {
 	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
+
+	a {
+		width: 40px;
+		height: 40px;
+		background-size: 30px;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
 }
 
-.tux-navi-collapsed .tux-navi-minilogo {
-	display: block;
-}
+.tux-navi-collapsed {
+	.tux-navitoggle {
+		background: no-repeat scroll right center transparent;
+		/* @embed */
+		background-image: url( ../images/expand-ltr.svg );
+		left: 40px !important;
+	}
 
-.tux-navi-minilogo a {
-	width: 40px;
-	height: 40px;
-	background-size: 30px;
-	display: block;
-	background-repeat: no-repeat;
-	background-position: center center;
+	#mw-panel {
+		display: none;
+	}
+
+	#content {
+		margin-left: 0;
+	}
+
+	#left-navigation {
+		left: 0;
+	}
+
+	.tux-navi-minilogo {
+		display: block;
+	}
 }

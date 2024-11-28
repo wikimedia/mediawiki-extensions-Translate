@@ -4,266 +4,292 @@
 	background-color: #fff;
 	cursor: default;
 	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.3 );
-}
 
-.grid .tux-message-editor .close {
-	background: no-repeat center center;
-	/* @embed */
-	background-image: url( ../images/close.svg );
-	padding: 16px;
-	cursor: pointer;
-	float: right;
-	opacity: 0.87;
-}
+	.grid & .close {
+		background: no-repeat center center;
+		/* @embed */
+		background-image: url( ../images/close.svg );
+		padding: 16px;
+		cursor: pointer;
+		float: right;
+		opacity: 0.87;
+	}
 
-.grid .tux-message-editor .editor-info-toggle {
-	padding: 16px;
-	cursor: pointer;
-	float: right;
-}
+	.grid & .editor-info-toggle {
+		padding: 16px;
+		cursor: pointer;
+		float: right;
+	}
 
-.tux-message-editor .editor-contract {
-	background: no-repeat center center;
-	/* @embed */
-	background-image: url( ../images/contract-ltr.svg );
-}
+	.editor-contract {
+		background: no-repeat center center;
+		/* @embed */
+		background-image: url( ../images/contract-ltr.svg );
+	}
 
-.tux-message-editor .editor-expand {
-	background: no-repeat center center;
-	/* @embed */
-	background-image: url( ../images/expand-ltr.svg );
-}
+	.editor-expand {
+		background: no-repeat center center;
+		/* @embed */
+		background-image: url( ../images/expand-ltr.svg );
+	}
 
-.tux-message-editor .editcolumn {
-	border-right: 1px solid #aaa;
-	transition: width 0.5s;
-	background-color: #fff;
-	z-index: 1;
-	/* Padding to have space for the arrow indicating split section */
-	padding-right: 40px;
-}
+	.editcolumn {
+		border-right: 1px solid #aaa;
+		transition: width 0.5s;
+		background-color: #fff;
+		z-index: 1;
+		/* Padding to have space for the arrow indicating split section */
+		padding-right: 40px;
+	}
 
-.grid .tux-message-editor--expanded .editcolumn {
-	width: 100%;
-	padding-right: 5px;
-}
+	.grid & .tux-editor-titletools {
+		/* Ignore the padding added for the arrow */
+		margin-right: -40px;
+	}
 
-.grid .tux-message-editor .tux-editor-titletools {
-	/* Ignore the padding added for the arrow */
-	margin-right: -40px;
-}
+	.grid & .tux-editor-sourcemessage-container {
+		position: relative;
 
-.grid .tux-message-editor--expanded .tux-editor-titletools {
-	margin-right: -5px;
-}
+		.tux-editor-copy-original-button {
+			position: absolute;
+			top: 3px;
+			right: -30px;
+			background: transparent center center no-repeat;
+			/* @embed */
+			background-image: url( ../images/copy.svg );
+			padding: 16px;
+			cursor: pointer;
+			border: 0;
+			opacity: 0;
 
-.grid .tux-message-editor .tux-editor-sourcemessage-container {
-	position: relative;
-}
+			&.copied {
+				cursor: initial;
+				background-image: url( ../images/label-tick.svg );
+				opacity: 1;
+			}
+		}
 
-.grid .tux-message-editor .tux-editor-sourcemessage-container .tux-editor-copy-original-button {
-	position: absolute;
-	top: 3px;
-	right: -30px;
-	background: transparent center center no-repeat;
-	/* @embed */
-	background-image: url( ../images/copy.svg );
-	padding: 16px;
-	cursor: pointer;
-	border: 0;
-	opacity: 0;
-}
+		&:hover .tux-editor-copy-original-button,
+		.tux-editor-copy-original-button:focus {
+			opacity: 1;
+		}
+	}
 
-.grid .tux-message-editor--expanded .tux-editor-sourcemessage-container .tux-editor-copy-original-button {
-	right: 6px;
-}
+	&__caret {
+		&::before,
+		&::after {
+			border-top: 20px solid transparent;
+			border-right: 20px solid #aaa;
+			border-bottom: 20px solid transparent;
+			content: '';
+			display: inline-block;
+			left: -21px;
+			position: absolute;
+			bottom: 50%;
+			z-index: 2;
+			transition: visibility 0s 0.5s;
+		}
 
-.grid .tux-message-editor .tux-editor-sourcemessage-container:hover .tux-editor-copy-original-button,
-.grid .tux-message-editor .tux-editor-sourcemessage-container .tux-editor-copy-original-button:focus {
-	opacity: 1;
-}
+		&::after {
+			border-right: 20px solid #fcfcfc;
+			left: -20px;
+		}
+	}
 
-.grid .tux-message-editor .tux-editor-sourcemessage-container .tux-editor-copy-original-button.copied {
-	cursor: initial;
-	background-image: url( ../images/label-tick.svg );
-	opacity: 1;
-}
+	&--expanded {
+		.grid & .editcolumn {
+			width: 100%;
+			padding-right: 5px;
+		}
 
-.tux-message-editor textarea {
-	border: 1px solid #555;
-	font-size: 16px;
-	/* The (30px + 5px paddings) 40px for bottom is for the insertables */
-	padding: 5px 5px 40px 5px;
-	/* Normalize margin across skins (esp. Timeless) */
-	margin: 0;
-	height: 100px;
-	min-height: 150px;
-	overflow-y: auto;
-	position: relative;
-	z-index: 100;
-	/* We have automatic resizing for height, and horizontal makes no sense */
-	resize: none;
-	/* Avoid weird extra space appearing at the bottom of enclosing div when
-	 * the default value inline-block is used in Chrome.
-	 * https://stackoverflow.com/questions/5196424/inconsistent-textarea-handling-in-browsers */
-	display: block;
-}
+		.grid & .tux-editor-titletools {
+			margin-right: -5px;
+		}
 
-.tux-editor-editsummary-block input {
-	border: 1px solid #c0c0c0;
-	font-size: 14px;
-	width: 100%;
-	height: 30px;
-	margin: 5px 0 0;
-	padding: 1px 4px;
-}
+		.grid & .tux-editor-sourcemessage-container .tux-editor-copy-original-button {
+			right: 6px;
+		}
 
-.tux-editor-editsummary-block input:disabled {
-	background-color: #f8f8f8;
-}
+		.tux-message-editor__caret {
+			&::before,
+			&::after {
+				visibility: hidden;
+				transition: visibility 0s 0s;
+			}
+		}
+	}
 
-.tux-message-editor .editarea {
-	position: relative;
-}
-
-/* Temporary fix for T111685 */
-.grid .tux-message-editor .messagekey {
-	color: #222;
-	font-size: 13px;
-	font-weight: bold;
-	padding: 5px 0 5px 10px;
-	cursor: pointer;
-}
-
-.tux-message-editor .messagekey .caret {
-	border-top: 4px solid #222;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0 4px;
-}
-
-/* Temporary fix for T111685 */
-.grid .tux-message-editor .sourcemessage {
-	font-size: 18px;
-	line-height: 1.6em;
-	padding: 5px 0 10px 10px;
-	word-wrap: break-word;
-}
-
-.tux-message-editor .sourcemessage.long {
-	font-size: 16px;
-}
-
-.tux-message-editor .sourcemessage.longer {
-	font-size: 14px;
-}
-
-.tux-message-editor .shortcutinfo {
-	color: #54595d;
-	font-size: 13px;
-	padding: 0 5px 5px 10px;
-	display: none;
-}
-
-@media screen and ( min-width: 980px ) {
-	.tux-message-editor .shortcutinfo {
+	textarea {
+		border: 1px solid #555;
+		font-size: 16px;
+		/* The (30px + 5px paddings) 40px for bottom is for the insertables */
+		padding: 5px 5px 40px 5px;
+		/* Normalize margin across skins (esp. Timeless) */
+		margin: 0;
+		height: 100px;
+		min-height: 150px;
+		overflow-y: auto;
+		position: relative;
+		z-index: 100;
+		/* We have automatic resizing for height, and horizontal makes no sense */
+		resize: none;
+		/* Avoid weird extra space appearing at the bottom of enclosing div when
+		 * the default value inline-block is used in Chrome.
+		 * https://stackoverflow.com/questions/5196424/inconsistent-textarea-handling-in-browsers */
 		display: block;
+	}
+
+	.editarea {
+		position: relative;
+	}
+
+	.grid & .messagekey {
+		color: #222;
+		font-size: 13px;
+		font-weight: bold;
+		padding: 5px 0 5px 10px;
+		cursor: pointer;
+
+		.caret {
+			border-top: 4px solid #222;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 4px;
+		}
+	}
+
+	.sourcemessage {
+		font-size: 18px;
+		line-height: 1.6em;
+		padding: 5px 0 10px 10px;
+		word-wrap: break-word;
+
+		&.long {
+			font-size: 16px;
+		}
+
+		&.longer {
+			font-size: 14px;
+		}
+	}
+
+	.shortcutinfo {
+		color: #54595d;
+		font-size: 13px;
+		padding: 0 5px 5px 10px;
+		display: none;
+
+		@media screen and ( min-width: 980px ) {
+			display: block;
+		}
+	}
+
+	.grid & .infocolumn-block {
+		font-size: 12pt;
+		background: #fcfcfc;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding: 0;
+		transition: width 0.5s;
+
+		.infocolumn {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 10px;
+			padding: 0 5px;
+			overflow: auto;
+
+			.message-desc {
+				font-size: 16px;
+				padding: 5px 0;
+				margin-right: 5px;
+
+				&-editor {
+					padding: 5px 0;
+					margin-right: 5px;
+				}
+
+				&.long {
+					font-size: 14px;
+					border-bottom: 1px solid #ddd;
+				}
+
+				&.compact {
+					max-height: 100px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				&-control {
+					font-size: 14px;
+					padding: 3px 0 5px 0;
+
+					.read-more {
+						font-size: 14px;
+						color: #36c;
+						cursor: pointer;
+						margin-right: 5px;
+					}
+				}
+
+				&-edit {
+					background: left center no-repeat;
+					background-image: /* @embed */ url( ../images/action-edit.svg );
+					background-size: 18px 18px;
+					padding-left: 19px;
+				}
+			}
+		}
+	}
+
+	.help {
+		font-size: 16px;
+		padding: 10px 5px;
+
+		a {
+			font-size: 14px;
+			padding: 0 0 0 5px;
+		}
+	}
+
+	.tux-translation-aid-disabled:hover {
+		cursor: not-allowed;
 	}
 }
 
-.tux-message-editor .infocolumn-block .infocolumn {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 10px;
+.grid .row {
+	.tm-suggestion,
+	.in-other-language {
+		margin: 0 5px 3px -5px;
+	}
+}
+
+.tux-editor-editsummary-block {
 	padding: 0 5px;
-	overflow: auto;
-}
 
-/* Temporary fix for T111685 */
-.grid .tux-message-editor .infocolumn-block {
-	font-size: 12pt;
-	background: #fcfcfc;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	padding: 0;
-	transition: width 0.5s;
-}
+	input {
+		border: 1px solid #c0c0c0;
+		font-size: 14px;
+		width: 100%;
+		height: 30px;
+		margin: 5px 0 0;
+		padding: 1px 4px;
 
-.tux-message-editor__caret::before,
-.tux-message-editor__caret::after {
-	border-top: 20px solid transparent;
-	border-right: 20px solid #aaa;
-	border-bottom: 20px solid transparent;
-	content: '';
-	display: inline-block;
-	left: -21px;
-	position: absolute;
-	bottom: 50%;
-	z-index: 2;
-	transition: visibility 0s 0.5s;
-}
-
-.tux-message-editor__caret::after {
-	border-right: 20px solid #fcfcfc;
-	left: -20px;
-}
-
-.tux-message-editor--expanded .tux-message-editor__caret::before,
-.tux-message-editor--expanded .tux-message-editor__caret::after {
-	visibility: hidden;
-	transition: visibility 0s 0s;
-}
-
-.infocolumn-block .infocolumn .message-desc-editor {
-	padding: 5px 0;
-	margin-right: 5px;
+		&:disabled {
+			background-color: #f8f8f8;
+		}
+	}
 }
 
 .tux-textarea-documentation {
 	height: 100px;
 	overflow: auto;
-}
-
-.infocolumn-block .infocolumn .message-desc {
-	font-size: 16px;
-	padding: 5px 0;
-	margin-right: 5px;
-}
-
-.infocolumn-block .infocolumn .message-desc.long {
-	font-size: 14px;
-	border-bottom: 1px solid #ddd;
-}
-
-.infocolumn-block .infocolumn .message-desc.compact {
-	max-height: 100px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.message-desc-control {
-	font-size: 14px;
-	padding: 3px 0 5px 0;
-}
-
-.message-desc-control .read-more {
-	font-size: 14px;
-	color: #36c;
-	cursor: pointer;
-	margin-right: 5px;
-}
-
-.message-desc-edit {
-	background: left center no-repeat;
-	background-image: /* @embed */ url( ../images/action-edit.svg );
-	background-size: 18px 18px;
-	padding-left: 19px;
 }
 
 .tm-suggestions-title,
@@ -274,33 +300,35 @@
 	padding: 10px 0;
 }
 
-.edit-summaries-title {
-	display: flex;
-}
+.edit-summaries {
+	&-title {
+		display: flex;
 
-.edit-summaries-title span {
-	flex: 1;
-}
+		span {
+			flex: 1;
+		}
 
-.edit-summaries-title a {
-	margin-right: 10px;
-	font-size: 0.75em;
-	background: left center no-repeat;
-	background-image: url( ../images/history.svg );
-	background-size: 18px 18px;
-	padding-left: 23px;
-	display: inline-flex;
-	align-items: center;
-}
+		a {
+			margin-right: 10px;
+			font-size: 0.75em;
+			background: left center no-repeat;
+			background-image: url( ../images/history.svg );
+			background-size: 18px 18px;
+			padding-left: 23px;
+			display: inline-flex;
+			align-items: center;
+		}
+	}
 
-.edit-summaries ul {
-	margin: 0 0.2em 0.3em 0.4em;
-}
+	ul {
+		margin: 0 0.2em 0.3em 0.4em;
+	}
 
-.edit-summaries li > span {
-	display: flex;
-	white-space: nowrap;
-	font-size: 13px;
+	li > span {
+		display: flex;
+		white-space: nowrap;
+		font-size: 13px;
+	}
 }
 
 .edit-summary-message {
@@ -325,6 +353,11 @@
 	border-left: 2px solid #36c;
 	padding: 5px 5px 5px 10px;
 	background-color: #f5f5f5;
+
+	&:hover {
+		cursor: pointer;
+		box-shadow: 0 0 3px rgba( 0, 0, 0, 0.2 );
+	}
 }
 
 .tux-tm-suggestion-source,
@@ -338,127 +371,104 @@
 	margin-right: 15px;
 }
 
-.grid .row .tm-suggestion,
-.grid .row .in-other-language {
-	margin: 0 5px 3px -5px;
-}
-
-.tm-suggestion:hover,
-.in-other-language:hover {
-	cursor: pointer;
-	box-shadow: 0 0 3px rgba( 0, 0, 0, 0.2 );
-}
-
 .in-other-language .language {
 	color: #54595d;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
-.tux-message-editor .help {
-	font-size: 16px;
-	padding: 10px 5px;
-}
+.editarea {
+	.tux-notices-block {
+		position: relative;
+	}
 
-.tux-message-editor .help a {
-	font-size: 14px;
-	padding: 0 0 0 5px;
-}
+	.tux-more-notices {
+		background-color: #fbf6ad;
+		position: absolute;
+		right: 0;
+		padding: 2px 5px;
+		text-align: right;
+		cursor: pointer;
+		bottom: 0;
+		font-size: 14px;
 
-.tux-message-editor .tux-translation-aid-disabled:hover {
-	cursor: not-allowed;
-}
+		&::before {
+			content: '';
+			border-bottom: 1em solid #fbf6ad;
+			border-top: 1em solid transparent;
+			border-left: 1em solid transparent;
+			border-right: 1em solid #fbf6ad;
+			display: inline-block;
+			position: absolute;
+			right: 100%;
+			top: 0;
+		}
 
-.editarea .tux-notices-block {
-	position: relative;
+		&.tux-has-errors {
+			background-color: #fbb;
+
+			&::before {
+				border-bottom-color: #fbb;
+				border-right-color: #fbb;
+			}
+		}
+	}
 }
 
 .tux-notice {
 	background-color: #ffc;
+
+	&-message {
+		font-size: 14px;
+		padding: 2px 13% 2px 5px;
+		/* 24px space for icon */
+		padding-left: 24px;
+		background-position: left 4px center;
+		background-repeat: no-repeat;
+		background-size: 16px 16px;
+
+		&.warning {
+			background-image: url( ../images/label-flag.svg );
+		}
+
+		&.error,
+		&.translation-saving {
+			background-color: #fee7e6;
+			color: #b32424;
+			background-image: url( ../images/label-error.svg );
+		}
+
+		&.diff {
+			background-image: url( ../images/label-clock.svg );
+
+			td.diff-marker {
+				font-size: 1.2em;
+				padding: 0;
+			}
+		}
+
+		.show-diff-link {
+			color: #36c;
+			cursor: pointer;
+			padding-left: 5px;
+		}
+	}
+
+	.diff {
+		/** Uses an older version of the clock */
+		background-size: 14px;
+		background-position: left 5px center;
+
+		&-deletedline,
+		&-addedline {
+			font-size: 0.75em;
+			font-family: monospace;
+		}
+	}
 }
 
 .tux-highlight {
 	background-color: #c9c9c9;
-}
-
-.tux-notice-message {
-	font-size: 14px;
-	padding: 2px 13% 2px 5px;
-	/* 24px space for icon */
-	padding-left: 24px;
-	background-position: left 4px center;
-	background-repeat: no-repeat;
-	background-size: 16px 16px;
-}
-
-.tux-notice .diff {
-	/** Uses an older version of the clock */
-	background-size: 14px;
-	background-position: left 5px center;
-}
-
-.tux-notice .diff-deletedline,
-.tux-notice .diff-addedline {
-	font-size: 0.75em;
-	font-family: monospace;
-}
-
-.editarea .tux-more-notices {
-	background-color: #fbf6ad;
-	position: absolute;
-	right: 0;
-	padding: 2px 5px;
-	text-align: right;
-	cursor: pointer;
-	bottom: 0;
-	font-size: 14px;
-}
-
-.tux-notice-message.warning {
-	background-image: url( ../images/label-flag.svg );
-}
-
-.tux-notice-message.error,
-.tux-notice-message.translation-saving {
-	background-color: #fee7e6;
-	color: #b32424;
-	background-image: url( ../images/label-error.svg );
-}
-
-.tux-notice-message.diff {
-	background-image: url( ../images/label-clock.svg );
-}
-
-.tux-notice-message .show-diff-link {
-	color: #36c;
-	cursor: pointer;
-	padding-left: 5px;
-}
-
-.tux-notice-message .diff td.diff-marker {
-	font-size: 1.2em;
-	padding: 0;
-}
-
-.editarea .tux-more-notices::before {
-	content: '';
-	border-bottom: 1em solid #fbf6ad;
-	border-top: 1em solid transparent;
-	border-left: 1em solid transparent;
-	border-right: 1em solid #fbf6ad;
-	display: inline-block;
-	position: absolute;
-	right: 100%;
-	top: 0;
-}
-
-.editarea .tux-more-notices.tux-has-errors {
-	background-color: #fbb;
-}
-
-.editarea .tux-more-notices.tux-has-errors::before {
-	border-bottom-color: #fbb;
-	border-right-color: #fbb;
 }
 
 .tux-editor-request-right {
@@ -475,43 +485,40 @@
 	padding: 0 5px;
 }
 
-.tux-editor-editsummary-block {
-	padding: 0 5px;
-}
-
 .tux-editor-actions-block {
 	position: relative;
+
+	.grid & .tux-editor-insert-buttons {
+		position: absolute;
+		/* 30px + 5px padding on bottom */
+		top: -35px;
+		margin-left: 10px;
+		padding-right: 20px;
+		z-index: 110;
+	}
 }
 
-/* Temporary fix for T111685 */
-.grid .tux-editor-actions-block .tux-editor-insert-buttons {
-	position: absolute;
-	/* 30px + 5px padding on bottom */
-	top: -35px;
-	margin-left: 10px;
-	padding-right: 20px;
-	z-index: 110;
-}
+.tux-editor-insert-buttons {
+	button {
+		padding: 0 5px;
+		min-width: 30px;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		border: 1px solid #ddd;
+		background: #fbfbfb;
+		color: #222;
+		font-size: 13px;
+		line-height: 30px;
+		overflow-wrap: anywhere;
+	}
 
-.tux-editor-insert-buttons button {
-	padding: 0 5px;
-	min-width: 30px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	border: 1px solid #ddd;
-	background: #fbfbfb;
-	color: #222;
-	font-size: 13px;
-	line-height: 30px;
-	overflow-wrap: anywhere;
-}
-
-.tux-editor-insert-buttons .tux-editor-paste-original-button {
-	background: #fbfbfb left center no-repeat;
-	/* @embed */
-	background-image: url( ../images/paste.svg );
-	background-size: 16px 16px;
-	padding-left: 18px;
+	.tux-editor-paste-original-button {
+		background: #fbfbfb left center no-repeat;
+		/* @embed */
+		background-image: url( ../images/paste.svg );
+		background-size: 16px 16px;
+		padding-left: 18px;
+	}
 }
 
 .message-desc-editor .mw-ui-button,
@@ -530,41 +537,42 @@
 	font-size: 14px;
 }
 
-.tux-message-tools-menu li a {
-	color: #54595d;
-	display: block;
-	font-size: 14px;
-	padding: 0 2px;
-	text-decoration: none;
+.tux-message-tools-menu li {
+	a {
+		color: #54595d;
+		display: block;
+		font-size: 14px;
+		padding: 0 2px;
+		text-decoration: none;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #f0f0f0;
+			color: #222;
+		}
+	}
+
+	&.selected {
+		background: right no-repeat;
+		/* @embed */
+		background-image: url( ../images/label-tick.svg );
+		color: #222;
+	}
 }
 
-.tux-message-tools-menu li a:hover {
-	cursor: pointer;
-	background-color: #f0f0f0;
-	color: #222;
-}
-
-.tux-message-tools-menu li.selected {
-	background: right no-repeat;
-	/* @embed */
-	background-image: url( ../images/label-tick.svg );
-	color: #222;
-}
-
-/*
- * Hide the cancel button by default, but show it in the last message.
- * !important is used to override the button styling in ULS.
-*/
+/* Hide the cancel button by default, but show it in the last message. */
 .tux-editor-cancel-button {
-	display: none !important;
-}
-
-.last-message .tux-editor-cancel-button {
-	display: inline-block !important;
-}
-
-.last-message .tux-editor-skip-button {
 	display: none;
+}
+
+.last-message {
+	.tux-editor-cancel-button {
+		display: inline-block;
+	}
+
+	.tux-editor-skip-button {
+		display: none;
+	}
 }
 
 .shortcut-popup {
