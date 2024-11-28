@@ -554,23 +554,23 @@
 			]
 		},
 		"ext.translate.dropdownmenu": {
-			"styles": "resources/css/ext.translate.dropdownmenu.css",
+			"styles": "resources/css/ext.translate.dropdownmenu.less",
 			"scripts": "resources/js/ext.translate.dropdownmenu.js"
 		},
 		"ext.translate.specialpages.styles": {
 			"styles": [
-				"resources/css/ext.translate.special.aggregategroups.css",
-				"resources/css/ext.translate.special.managegroups.css",
-				"resources/css/ext.translate.special.pagemigration.css",
-				"resources/css/ext.translate.special.pagepreparation.css",
-				"resources/css/ext.translate.special.pagetranslation.css",
+				"resources/css/ext.translate.special.aggregategroups.less",
+				"resources/css/ext.translate.special.managegroups.less",
+				"resources/css/ext.translate.special.pagemigration.less",
+				"resources/css/ext.translate.special.pagepreparation.less",
+				"resources/css/ext.translate.special.pagetranslation.less",
 				"resources/css/ext.translate.special.searchtranslations.less",
 				"resources/css/ext.translate.special.supportedlanguages.less",
 				"resources/css/ext.translate.special.translations.less"
 			]
 		},
 		"ext.translate.loader": {
-			"styles": "resources/css/ext.translate.loader.css"
+			"styles": "resources/css/ext.translate.loader.less"
 		},
 		"ext.translate.messagetable": {
 			"scripts": "resources/js/ext.translate.messagetable.js",
@@ -715,7 +715,7 @@
 			]
 		},
 		"ext.translate.special.managemessagegroupsubscriptions.styles": {
-			"styles": "resources/css/ext.translate.special.managemessagegroupsubscriptions.css"
+			"styles": "resources/css/ext.translate.special.managemessagegroupsubscriptions.less"
 		},
 		"ext.translate.messagerenamedialog": {
 			"dependencies": [
@@ -779,9 +779,9 @@
 				"resources/js/ext.translate.proofread.js"
 			],
 			"styles": [
-				"resources/css/ext.translate.editor.css",
-				"resources/css/ext.translate.pagemode.css",
-				"resources/css/ext.translate.proofread.css"
+				"resources/css/ext.translate.editor.less",
+				"resources/css/ext.translate.pagemode.less",
+				"resources/css/ext.translate.proofread.less"
 			],
 			"dependencies": [
 				"mediawiki.legacy.messageBox",
@@ -859,10 +859,10 @@
 			]
 		},
 		"ext.translate.special.managetranslatorsandbox.styles": {
-			"styles": "resources/css/ext.translate.special.managetranslatorsandbox.css"
+			"styles": "resources/css/ext.translate.special.managetranslatorsandbox.less"
 		},
 		"ext.translate.special.movetranslatablebundles.styles": {
-			"styles": "resources/css/ext.translate.special.movetranslatablebundles.css"
+			"styles": "resources/css/ext.translate.special.movetranslatablebundles.less"
 		},
 		"ext.translate.special.pagemigration": {
 			"scripts": [
@@ -937,12 +937,12 @@
 				"resources/js/ext.translate.workflowselector.js",
 				"resources/js/ext.translate.special.translate.js"
 			],
-			"styles": "resources/css/ext.translate.workflowselector.css",
+			"styles": "resources/css/ext.translate.workflowselector.less",
 			"skinScripts": {
 				"vector": "resources/js/ext.translate.navitoggle.js"
 			},
 			"skinStyles": {
-				"vector": "resources/css/ext.translate.navitoggle.css"
+				"vector": "resources/css/ext.translate.navitoggle.less"
 			},
 			"dependencies": [
 				"mediawiki.legacy.messageBox",
@@ -979,8 +979,8 @@
 		},
 		"ext.translate.special.translate.styles": {
 			"styles": [
-				"resources/css/ext.translate.special.translate.css",
-				"resources/css/ext.translate.language.selector.css"
+				"resources/css/ext.translate.special.translate.less",
+				"resources/css/ext.translate.language.selector.less"
 			]
 		},
 		"ext.translate.specialTranslationStash": {
@@ -989,8 +989,8 @@
 				"resources/src/ext.translate.specialTranslationStash/storage.js"
 			],
 			"styles": [
-				"resources/src/ext.translate.specialTranslationStash/index.css",
-				"resources/css/ext.translate.language.selector.css"
+				"resources/src/ext.translate.specialTranslationStash/index.less",
+				"resources/css/ext.translate.language.selector.less"
 			],
 			"dependencies": [
 				"ext.translate.editor",
@@ -1179,7 +1179,7 @@
 		},
 		"ext.translate.codemirror": {
 			"styles": [
-				"resources/css/ext.translate.codemirror.css"
+				"resources/css/ext.translate.codemirror.less"
 			]
 		}
 	},
