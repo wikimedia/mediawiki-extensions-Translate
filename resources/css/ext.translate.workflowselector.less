@@ -8,47 +8,47 @@
 	margin-top: 5px;
 	min-width: 150px;
 	margin-bottom: 5px;
-}
 
-.tux-workflow-status:hover {
-	border: 1px solid #c9c9c9;
-}
+	&:hover {
+		border: 1px solid #c9c9c9;
+	}
 
-.tux-workflow-status-triangle {
-	float: right;
-}
+	&-triangle {
+		float: right;
 
-.tux-workflow-status-triangle::after {
-	margin: 3px;
-	border-left: 3px solid transparent;
-	border-right: 3px solid transparent;
-	border-top: 3px solid #555;
-	content: '';
-	display: inline-block;
-	vertical-align: middle;
+		&::after {
+			margin: 3px;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+			border-top: 3px solid #555;
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
 }
 
 ul.tux-workflow-status-selector {
 	min-width: 150px;
 	margin-top: -1px;
-}
 
-.tux-workflow-status-selector li {
-	color: #54595d;
-	display: block;
-	font-size: 14px;
-	padding: 0 2px;
-}
+	li {
+		color: #54595d;
+		display: block;
+		font-size: 14px;
+		padding: 0 2px;
 
-.tux-workflow-status-selector li.changeable:hover {
-	background-color: #f0f0f0;
-	color: #222;
-	cursor: pointer;
-}
+		&.changeable:hover {
+			background-color: #f0f0f0;
+			color: #222;
+			cursor: pointer;
+		}
 
-.tux-workflow-status-selector li.selected {
-	background: right no-repeat;
-	/* @embed */
-	background-image: url( ../images/label-tick.svg );
-	color: #222;
+		&.selected {
+			background: right no-repeat;
+			/* @embed */
+			background-image: url( ../images/label-tick.svg );
+			color: #222;
+		}
+	}
 }

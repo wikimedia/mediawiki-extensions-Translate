@@ -1,13 +1,16 @@
-.mw-tpp-sp-container form.mw-tpp-sp-form {
-	margin-bottom: 0.5em;
-}
+.mw-tpp-sp-container {
+	form.mw-tpp-sp-form {
+		margin-bottom: 0.5em;
 
-.mw-tpp-sp-form #page {
-	width: 35%;
-}
+		#page {
+			width: 35%;
+		}
+	}
 
-.client-nojs .mw-tpp-sp-container {
-	display: none;
+	.hide,
+	.client-nojs & {
+		display: none;
+	}
 }
 
 .client-js .tux-nojs {
@@ -17,8 +20,4 @@
 .mw-tpp-sp-input {
 	display: flex;
 	align-items: center;
-}
-
-.mw-tpp-sp-container .hide {
-	display: none;
 }

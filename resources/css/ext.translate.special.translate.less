@@ -6,66 +6,103 @@
 	margin-top: 5px;
 	font-size: 14pt;
 	line-height: 1.25em;
-}
 
-/* Arrow between breadcrumb items */
-.tux-breadcrumb .grouplink::after {
-	border-left: 4px solid #777;
-	border-top: 4px solid transparent;
-	border-bottom: 4px solid transparent;
-	content: '';
-	display: inline-block;
-	vertical-align: middle;
-	position: relative;
-	right: -5px;
-}
+	/* This applies to all items in the breadcrumb */
+	.grouptitle {
+		float: left;
+		padding: 0 6px 0 0;
+		font-size: 0.75em;
+	}
 
-.tux-breadcrumb .grouplink:last-of-type::after {
-	display: none;
-}
+	/* Not all of these are links, so name is wrong besides being too generic.
+	 * This excludes the first item which says "message group". */
+	.grouplink {
+		padding: 0 6px;
 
-.tux-breadcrumb .grouplink:last-of-type {
-	font-size: 1em;
-	margin: 6px 0 4px 0;
-	clear: both;
-}
+		/* Arrow between breadcrumb items */
+		&::after {
+			border-left: 4px solid #777;
+			border-top: 4px solid transparent;
+			border-bottom: 4px solid transparent;
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			right: -5px;
+		}
 
-.tux-breadcrumb .grouplink.tux-breadcrumb__item--aggregate:last-of-type > span {
-	font-size: 0.75em;
-	margin-inline-start: 6px;
-}
+		&:last-of-type {
+			font-size: 1em;
+			margin: 6px 0 4px 0;
+			clear: both;
 
-/* This applies to all items in the breadcrumb */
-.tux-breadcrumb .grouptitle {
-	float: left;
-	padding: 0 6px 0 0;
-	font-size: 0.75em;
-}
+			&::after {
+				display: none;
+			}
+		}
 
-/* Not all of these are links, so name is wrong besides being too generic.
- * This excludes the first item which says "message group". */
-.tux-breadcrumb .grouplink {
-	padding: 0 6px;
-}
+		&.tux-breadcrumb__item--aggregate:last-of-type > span {
+			font-size: 0.75em;
+			margin-inline-start: 6px;
+		}
+	}
 
-/* Color clickable groups to look as links */
-.tux-breadcrumb__item--aggregate,
-.tux-breadcrumb .grouplink.tux-breadcrumb__item--aggregate:last-of-type > span > span {
-	cursor: pointer;
-	color: #0645ad;
-}
+	/* Color clickable groups to look as links */
+	&__item--aggregate,
+	.grouplink.tux-breadcrumb__item--aggregate:last-of-type > span > span {
+		cursor: pointer;
+		color: #0645ad;
+	}
 
-.tux-breadcrumb .grouplink.tux-breadcrumb__item--aggregate:last-of-type {
-	color: unset;
+	.grouplink.tux-breadcrumb__item--aggregate:last-of-type {
+		color: unset;
+	}
+
+	.mw-ui-button.tux-watch-button {
+		float: left;
+		padding: 3px 8px;
+		margin-left: 3px;
+		margin-top: 2px;
+	}
+
+	.tux-watch-button {
+		.tux-watch-icon {
+			background: no-repeat left center transparent;
+			background-size: contain;
+			width: 20px;
+			height: 20px;
+		}
+
+		&.tux-watch-group--unwatch .tux-watch-icon {
+			background-image: url( ../images/bookmark-outlined.svg );
+		}
+
+		&.tux-watch-group--watch .tux-watch-icon {
+			background-image: url( ../images/bookmark.svg );
+		}
+
+		.tux-watch-label {
+			font-size: 0.75em;
+			padding-inline-start: 3px;
+		}
+
+		.tux-watch-label,
+		.tux-watch-icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
 }
 
 /** Move the triangle for the groupselector */
-.tux-groupselector.tux-groupselector-tpt::before {
-	left: 19px;
-}
+.tux-groupselector.tux-groupselector-tpt {
+	&::before {
+		left: 19px;
+	}
 
-.tux-groupselector.tux-groupselector-tpt::after {
-	left: 20px;
+	&::after {
+		left: 20px;
+	}
 }
 
 .tux-message-selector {
@@ -73,121 +110,92 @@
 	margin: 0;
 	padding: 6px 0 0 0;
 	list-style: none;
-}
 
-.tux-message-selector .column {
-	border: medium none;
-	font-size: 14pt;
-	cursor: pointer;
-	font-weight: normal;
-	line-height: 1.25em;
-	top: 1px;
-	display: block;
-	margin-bottom: 0;
-}
+	.column {
+		border: medium none;
+		font-size: 14pt;
+		cursor: pointer;
+		font-weight: normal;
+		line-height: 1.25em;
+		top: 1px;
+		display: block;
+		margin-bottom: 0;
+	}
 
-.tux-message-selector .more {
-	padding: 0 40px 0 5px;
-}
+	.more {
+		padding: 0 40px 0 5px;
 
-.tux-message-selector .more ul {
-	display: none;
-	cursor: default;
-	border: 1px solid #777;
-	border-top: 2px solid transparent;
-	padding: 3px 5px 10px 5px;
-	width: 300px;
-	z-index: 10;
-	background: #fff;
-	top: 100%;
-	left: -5px;
-}
+		ul {
+			display: none;
+			cursor: default;
+			border: 1px solid #777;
+			border-top: 2px solid transparent;
+			padding: 3px 5px 10px 5px;
+			width: 300px;
+			z-index: 10;
+			background: #fff;
+			top: 100%;
+			left: -5px;
 
-.tux-message-selector .more ul a {
-	display: block;
-	white-space: nowrap;
-	margin-left: 1px;
-}
+			a {
+				display: block;
+				white-space: nowrap;
+				margin-left: 1px;
+			}
+		}
 
-.tux-message-selector .more:hover ul {
-	display: block;
-	position: absolute;
-}
+		&:hover {
+			ul {
+				display: block;
+				position: absolute;
+			}
 
-.tux-message-selector .more:hover li {
-	float: none;
-}
+			li {
+				float: none;
+			}
+		}
+	}
 
-.tux-message-selector li.selected {
-	border-bottom: 2px solid #36c;
-}
+	li {
+		&.selected {
+			border-bottom: 2px solid #36c;
 
-.tux-message-selector li.selected a {
-	color: #36c;
-}
+			a {
+				color: #36c;
+			}
+		}
 
-.tux-message-selector li a {
-	color: #54595d;
-	text-decoration: none;
-	white-space: nowrap;
-	margin-left: 1px;
-}
+		a {
+			color: #54595d;
+			text-decoration: none;
+			white-space: nowrap;
+			margin-left: 1px;
+		}
+	}
 
-.tux-message-selector label {
-	color: #54595d;
-	font-size: 12pt;
-	top: 1px;
-}
-
-.tux-breadcrumb .mw-ui-button.tux-watch-button {
-	float: left;
-	padding: 3px 8px;
-	margin-left: 3px;
-	margin-top: 2px;
-}
-
-.tux-breadcrumb .tux-watch-button .tux-watch-icon {
-	background: no-repeat left center transparent;
-	background-size: contain;
-	width: 20px;
-	height: 20px;
-}
-
-.tux-breadcrumb .tux-watch-button.tux-watch-group--unwatch .tux-watch-icon {
-	background-image: url( ../images/bookmark-outlined.svg );
-}
-
-.tux-breadcrumb .tux-watch-button.tux-watch-group--watch .tux-watch-icon {
-	background-image: url( ../images/bookmark.svg );
-}
-
-.tux-breadcrumb .tux-watch-button .tux-watch-label {
-	font-size: 0.75em;
-	padding-inline-start: 3px;
-}
-
-.tux-breadcrumb .tux-watch-button .tux-watch-label,
-.tux-breadcrumb .tux-watch-button .tux-watch-icon {
-	display: inline-block;
-	vertical-align: middle;
+	label {
+		color: #54595d;
+		font-size: 12pt;
+		top: 1px;
+	}
 }
 
 .tux-editor-header {
 	color: #222;
 	font-size: 14px;
 	padding-bottom: 10px;
-}
 
-.tux-editor-header .description {
-	margin: 5px 0;
-}
+	.description {
+		margin: 5px 0;
+	}
 
-.tux-editor-header .mw-message-box {
-	margin-bottom: 5px;
-}
+	.mw-message-box {
+		margin-bottom: 5px;
+	}
 
-.tux-editor-header .tux-group-warning.tux-group-warning {
-	padding: 0.5em 1.2em;
+	.tux-group-warning.tux-group-warning {
+		padding: 0.5em 1.2em;
+	}
 }
 
 .tux-group-warning:empty {
@@ -203,10 +211,8 @@
 	margin: 0;
 	list-style: none;
 	transition: width 250ms;
-}
 
-@media screen and ( min-height: 600px ) {
-	.tux-messagetable-header {
+	@media screen and ( min-height: 600px ) {
 		background: #fff;
 		position: sticky;
 		padding-top: 5px;

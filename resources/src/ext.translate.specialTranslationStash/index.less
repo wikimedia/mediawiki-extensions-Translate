@@ -4,18 +4,13 @@
  * @since 2013.10
  */
 
-h1.firstHeading {
-	display: none;
-}
-
 h1 {
 	text-decoration: none;
 	border-bottom: 0;
-}
 
-.translate-welcome-header > p {
-	color: #54595d;
-	font-size: 1.2em;
+	&.firstHeading {
+		display: none;
+	}
 }
 
 .translate-welcome-header {
@@ -23,17 +18,22 @@ h1 {
 	background-image: linear-gradient( #fafafa, #f8f8f8 );
 	border-bottom: 1px solid #eee;
 	padding: 10px;
-}
 
-.limit-reached > p {
-	color: #57585a;
-	font-size: 1.2em;
+	& > p {
+		color: #54595d;
+		font-size: 1.2em;
+	}
 }
 
 .limit-reached {
 	margin-top: 10px;
 	background-color: #fbf9ce;
 	padding: 10px;
+
+	& > p {
+		color: #57585a;
+		font-size: 1.2em;
+	}
 }
 
 .translate-stash-control {
