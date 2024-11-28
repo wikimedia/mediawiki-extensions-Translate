@@ -6,7 +6,8 @@
 			"Hamilton Abreu",
 			"Mansil alfalb",
 			"Vitorvicentevalente",
-			"Mbs262"
+			"Mbs262",
+			"B3rnas"
 		]
 	},
 	"managetranslatorsandbox": "Administrar a área de testes dos tradutores",
@@ -17,7 +18,7 @@
 	"tsb-reminder-sent": "{{PLURAL:$1|Enviou $1 lembrete. Hora: $2.|Enviou $1 lembretes. Hora do último: $2.}}",
 	"tsb-reminder-sent-new": "Enviou um lembrete",
 	"tsb-reminder-failed": "O envio do lembrete falhou",
-	"tsb-email-promoted-subject": "É agora tradutor em {{SITENAME}}",
+	"tsb-email-promoted-subject": "Agora você é um tradutor em {{SITENAME}}",
 	"tsb-email-promoted-body": "Olá $1,\n\nParabéns! Revi as traduções de teste que fez na wiki {{SITENAME}} e concedi-lhe todos os privilégios de tradução.\n\nVenha hoje e todos os dias à wiki {{SITENAME}} para continuar a traduzir:\n$2\n\n{{GENDER:$1|Bem-vindo|Bem-vinda}} e {{GENDER:$3|obrigado|obrigada}} pelas suas traduções!\n\n$3,\nda equipa da wiki {{SITENAME}}",
 	"tsb-email-rejected-subject": "O seu pedido para tornar-se tradutor na wiki {{SITENAME}} foi rejeitado",
 	"tsb-email-rejected-body": "Olá $1,\n\n{{GENDER:$3|Obrigado|Obrigada}} por se ter candidatado a {{GENDER:$1|tradutor|tradutora}} na wiki {{SITENAME}}. Lamento informar que rejeitei o seu pedido, porque a qualidade das traduções não preencheu os requisitos.\n\nSe acredita que a rejeição resulta de um erro de avaliação, tente candidatar-se novamente a {{GENDER:$1|tradutor|tradutora}} na wiki {{SITENAME}}, por favor. Pode inscrever-se aqui:\n$2\n\n$3,\nda equipa da wiki {{SITENAME}}",

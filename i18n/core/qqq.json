@@ -45,7 +45,9 @@
 			"아라",
 			555,
 			"Byrial",
-			"Msz2001"
+			"Msz2001",
+			"Juwan",
+			"Kokage si"
 		]
 	},
 	"translate": "{{doc-special|Translate}}\nIt is the verb \"to translate\".\n{{Identical|Translate}}",
@@ -119,7 +121,7 @@
 	"translate-checks-smartformat-plural-count": "Notice message from automated syntax check for translators. Parameters:\n* $1 - number\n* $2 - number\n* $3 the bad plural mark-up\n{{Related|Translate-checks}}",
 	"translate-checks-unicode-plural-missing": "Notice message from automated syntax check for translators.\n{{Related|Translate-checks}}",
 	"translate-checks-unicode-plural-unsupported": "Notice message from automated syntax check for translators.\n{{Related|Translate-checks}}",
-	"translate-checks-unicode-plural-invalid": "Notice message from automated syntax check for translators. Parameters:\n* $1 - Example: <nowiki>{{PLURAl|one=…|…|two=…}}</nowiki>\n* $2 - Example: <nowiki>{{PLURAl|one=…|two=…|…}}</nowiki>\n{{Related|Translate-checks}}",
+	"translate-checks-unicode-plural-invalid": "Notice message from automated syntax check for translators. Parameters:\n* $1 - Example: <nowiki>{{PLURAL|one=…|…|two=…}}</nowiki>\n* $2 - Example: <nowiki>{{PLURAL|one=…|two=…|…}}</nowiki>\n{{Related|Translate-checks}}",
 	"translate-checks-pagename": "A notice when editing a message.\n\nThis notice indicates that the namespace in the translation does not match the namespace appearing in the message definition (original English message).\n{{Related|Translate-checks}}",
 	"translate-checks-format": "Notice message from automated syntax check for translators. Parameters:\n* $1 - any one of the following messages:\n**{{msg-mw|Translate-checks-parametersnotequal}}\n** {{msg-mw|Translate-checks-malformed}}\n** \"<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>\" (hard-coded)\n{{Related|Translate-checks}}",
 	"translate-checks-escape": "Notice message shown when invalid escape characters are present in the translation.\n* $1 - invalid escape characters, comma-separated.\n* $2 = number of invalid escape characters.\n* $3 - list of allowed escape characters.\n* $4 - number of allowed escape characters.",

@@ -14,6 +14,7 @@
 	"tux-sst-view-foreign": "اعرض في $1",
 	"tux-sst-search": "ابحث",
 	"tux-sst-search-ph": "ابحث في الترجمات",
+	"tux-sst-search-info": "استخدم <code>language:</code> أو <code>group:</code> لتحديد معايير البحث بشكل أفضل",
 	"tux-sst-count": "{{PLURAL:$1|لا نتائج|نتيجة واحدة عُثِر عليها|عٌثر على نتيجتين|$1 نتائج عُثِر عليهم}}",
 	"tux-sst-facet-language": "اللغات",
 	"tux-sst-facet-group": "مجموعات الرسائل",

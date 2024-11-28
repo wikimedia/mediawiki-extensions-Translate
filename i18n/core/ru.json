@@ -415,7 +415,7 @@
 	"tux-editor-confirm-button-label": "Подтвердить перевод",
 	"tux-editor-proofread-button-label": "Пометить как проверенное",
 	"tux-editor-shortcut-info": "Нажмите «$1» для подтверждения перевода и перемещения к следующему сообщению, «$2» для пропуска, «$4» для ввода описания изменения или нажмите и подержите «$3», чтобы увидеть другие сочетания клавиш.",
-	"tux-editor-edit-desc": "Изменить документацию",
+	"tux-editor-edit-desc": "Править документацию",
 	"tux-editor-add-desc": "Добавить документацию",
 	"tux-editor-suggestions-title": "Подсказки",
 	"tux-editor-latest-updates-title": "Последние обновления",
