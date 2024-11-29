@@ -505,6 +505,7 @@
 	"translate-error-association-failure": "{{PLURAL:$2|Le groupe de messages suivant ne peut pas être associé|Les groupes de messages suivants ne peuvent pas être associés}} au groupe agrégé : $1",
 	"translate-error-invalid-aggregategroup": "Groupe de messages agrégés invalide $1",
 	"translate-error-aggregategroup-source-language-mismatch": "{{PLURAL:$3|Le groupe $1 n'a|Les groupes $1 n'ont}} pas la même langue source que le groupe agrégé ($2).",
+	"translate-error-duplicate-aggregategroup": "Un groupe de messages agrégés portant ce nom $1 existe déjà.",
 	"log-action-filter-translationreview": "Type d’action :",
 	"log-action-filter-translationreview-message": "Relecture des messages de traduction individuels",
 	"log-action-filter-translationreview-group": "Modifications d’état de la progression des traductions",
