@@ -49,5 +49,6 @@
 	"log-description-translatorsandbox": "Un rexistro de accións sobre os usuarios da zona de probas de tradución",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|converteu a}} $3 en {{GENDER:$4|tradutor|tradutora}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rexeitou}} a solicitude de $3 de converterse en tradutor",
-	"logentry-newusers-tsbpromoted": "A conta de usuario $3 {{GENDER:$2|creouse}} desde a zona de probas"
+	"logentry-newusers-tsbpromoted": "A conta de usuario $3 {{GENDER:$2|creouse}} desde a zona de probas",
+	"tsb-other-actions": "Debe [[Special:TranslationStash|enviar algunhas traducións de proba]] e que se aproben antes de editalas."
 }
