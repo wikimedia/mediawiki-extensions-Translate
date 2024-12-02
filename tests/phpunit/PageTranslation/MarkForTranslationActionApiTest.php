@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use ApiMain;
-use ApiQueryTokens;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiQueryTokens;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Page\PageStoreRecord;

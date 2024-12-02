@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
@@ -18,6 +19,7 @@ use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Wraps the translatable page sections into a message group.

@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
-use IDBAccessObject;
 use InvalidArgumentException;
 use JobQueueGroup;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
@@ -19,8 +19,8 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use RuntimeException;
-use TextContent;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @author Abijeet Patro

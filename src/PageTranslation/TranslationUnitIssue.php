@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
-use MessageSpecifier;
+use Wikimedia\Message\MessageSpecifier;
 
 /**
  * @author Niklas Laxström

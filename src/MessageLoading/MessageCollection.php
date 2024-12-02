@@ -7,10 +7,10 @@ use AppendIterator;
 use ArrayAccess;
 use Countable;
 use EmptyIterator;
-use IDBAccessObject;
 use InvalidArgumentException;
 use Iterator;
 use LogicException;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -20,9 +20,9 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\TitleValue;
 use RuntimeException;
 use stdClass;
-use TextContent;
 use Traversable;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * This file contains the class for core message collections implementation.

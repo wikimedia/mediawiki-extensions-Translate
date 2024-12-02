@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use ApiUsageException;
-use ContentHandler;
 use InvalidArgumentException;
+use MediaWiki\Api\ApiUsageException;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

@@ -12,12 +12,12 @@
 namespace MediaWiki\Extension\Translate\Validation;
 
 use Exception;
-use FormatJson;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use MediaWiki\Extension\Translate\Utilities\PHPVariableLoader;
+use MediaWiki\Json\FormatJson;
 use RuntimeException;
 
 /**

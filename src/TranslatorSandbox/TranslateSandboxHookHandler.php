@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
-use ApiMessage;
 use MediaWiki\Api\ApiLogout;
+use MediaWiki\Api\ApiMessage;
 use MediaWiki\Api\ApiOptions;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Config\Config;

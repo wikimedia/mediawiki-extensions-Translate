@@ -8,7 +8,7 @@ use MediaWiki\Extension\Translate\Utilities\HTMLJsSelectToInputField;
 use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
-use XmlSelect;
+use MediaWiki\Xml\XmlSelect;
 
 /**
  * Contains classes for addition of extension specific preference settings.

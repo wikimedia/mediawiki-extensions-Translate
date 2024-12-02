@@ -4,13 +4,13 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use InvalidArgumentException;
-use LanguageCode;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Language\LanguageCode;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Specials\SpecialVersion;

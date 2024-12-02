@@ -7,6 +7,7 @@ use Closure;
 use Exception;
 use ImportStreamSource;
 use ManualLogEntry;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\Services;
@@ -20,7 +21,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserIdentity;
 use MessageLocalizer;
-use TextContent;
 use WikiImporterFactory;
 
 /**

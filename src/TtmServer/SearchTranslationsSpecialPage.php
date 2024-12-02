@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use ErrorPageError;
-use FormatJson;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
@@ -12,6 +11,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProv
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;

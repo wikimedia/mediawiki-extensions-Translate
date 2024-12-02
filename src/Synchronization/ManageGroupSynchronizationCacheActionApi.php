@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use ApiBase;
-use ApiMain;
 use Exception;
-use FormatJson;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Logger\LoggerFactory;
 use Psr\Log\LoggerInterface;
 use Wikimedia\ParamValidator\ParamValidator;

@@ -4,12 +4,12 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use FileBasedMessageGroup;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use RuntimeException;
-use TextContent;
 
 /**
  * JavaFormat class implements support for Java properties files.

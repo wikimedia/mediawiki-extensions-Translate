@@ -3,14 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use ApiBase;
-use ApiMain;
-use IDBAccessObject;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Status\Status;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * API module to mark a page for translation

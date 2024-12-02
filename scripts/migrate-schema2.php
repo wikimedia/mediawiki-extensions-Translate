@@ -8,6 +8,8 @@
  * @file
  */
 
+use MediaWiki\Maintenance\Maintenance;
+
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );

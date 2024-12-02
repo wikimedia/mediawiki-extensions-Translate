@@ -3,25 +3,25 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use Content;
-use LanguageCode;
 use MediaWiki\Config\ConfigException;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Language\LanguageCode;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 use MessageGroup;
-use TextContent;
 use UnexpectedValueException;
 use Wikimedia\Rdbms\IDatabase;
-use Xml;
-use XmlSelect;
 
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.

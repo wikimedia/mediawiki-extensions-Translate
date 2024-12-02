@@ -15,13 +15,13 @@ use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Message\Message;
+use MediaWiki\Parser\ParserFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFormatter;
 use MessageGroup;
-use ParserFactory;
 use WikiPageMessageGroup;
 
 /**

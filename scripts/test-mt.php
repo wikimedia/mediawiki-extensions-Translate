@@ -9,6 +9,7 @@
 
 use MediaWiki\Extension\Translate\WebService\QueryAggregator;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
+use MediaWiki\Maintenance\Maintenance;
 use Psr\Log\AbstractLogger;
 
 // Standard boilerplate to define $IP

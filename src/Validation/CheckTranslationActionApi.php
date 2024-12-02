@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation;
 
-use ApiBase;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Title\Title;

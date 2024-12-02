@@ -14,10 +14,10 @@ use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageStructuredFiltersHook;
 use MediaWiki\Specials\SpecialRecentChanges;
 use MediaWiki\Storage\NameTableAccessException;
+use MediaWiki\Xml\XmlSelect;
 use RecentChange;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IReadableDatabase;
-use XmlSelect;
 
 /**
  * Class to add a new filter to Special:RecentChanges which makes it possible to filter

@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Page\PageReference;

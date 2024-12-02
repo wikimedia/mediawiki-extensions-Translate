@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
-use ApiBase;
-use ApiMain;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
 use Wikimedia\ParamValidator\ParamValidator;

@@ -3,18 +3,18 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use ContentHandler;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\HookHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
 use MockWikiValidationMessageGroup;
-use ParserOptions;
 use Wikimedia\TestingAccessWrapper;
 
 /**

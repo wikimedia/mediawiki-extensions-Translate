@@ -3,15 +3,15 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use BagOStuff;
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextParseException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Xml\Xml;
 use MessageGroupBase;
-use Xml;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Special page to import Gettext (.po) files exported using Translate extension.

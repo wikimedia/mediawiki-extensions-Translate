@@ -9,10 +9,10 @@ use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserFactory;
+use MediaWiki\Parser\ParserOptions;
+use MediaWiki\Parser\PPFrame;
 use MediaWiki\User\UserFactory;
-use ParserFactory;
-use ParserOptions;
-use PPFrame;
 
 /**
  * Handles plural validation for MediaWiki inline plural syntax.

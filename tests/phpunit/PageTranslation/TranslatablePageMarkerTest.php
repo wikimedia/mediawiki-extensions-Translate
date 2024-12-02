@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use IDBAccessObject;
 use JobQueueGroup;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -21,6 +20,7 @@ use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Title\TitleParser;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarker

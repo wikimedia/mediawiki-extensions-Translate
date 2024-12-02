@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\TtmServer\FakeTtmServer;
 use MediaWiki\Extension\Translate\TtmServer\ServiceCreationFailure;
 use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Title\Title;
 use Wikimedia\Assert\Assert;
 

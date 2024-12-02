@@ -15,7 +15,7 @@ use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageGroupLoader;
 use RuntimeException;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * Factory class for accessing message groups individually by id or

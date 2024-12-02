@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\PageTranslation\RenderTranslationPageJob;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;

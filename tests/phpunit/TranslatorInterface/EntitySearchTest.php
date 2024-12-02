@@ -4,13 +4,13 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use Generator;
-use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\Services;
 use MediaWikiIntegrationTestCase;
 use MessageGroup;
-use WANObjectCache;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\Translate\TranslatorInterface\EntitySearch

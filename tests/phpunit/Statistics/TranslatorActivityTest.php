@@ -3,12 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use EmptyBagOStuff;
-use HashBagOStuff;
 use InvalidArgumentException;
 use JobQueueGroup;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWikiIntegrationTestCase;
+use Wikimedia\ObjectCache\EmptyBagOStuff;
+use Wikimedia\ObjectCache\HashBagOStuff;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**

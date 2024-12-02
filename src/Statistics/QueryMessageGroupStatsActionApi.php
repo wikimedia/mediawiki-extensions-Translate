@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use ApiQuery;
 use IJobSpecification;
 use JobQueueGroup;
+use MediaWiki\Api\ApiQuery;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use Wikimedia\ParamValidator\ParamValidator;
 

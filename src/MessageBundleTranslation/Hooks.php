@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Article;
-use Content;
 use JobQueueGroup;
+use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Hook\EditFilterMergedContentHook;

@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
-use ApiBase;
-use ApiPageSet;
-use ApiQuery;
-use ApiQueryGeneratorBase;
-use ApiResult;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiPageSet;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryGeneratorBase;
+use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;

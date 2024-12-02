@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FormatJson;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Json\FormatJson;
 
 /**
  * Support for the AMD i18n message file format (used by require.js and Dojo). See:

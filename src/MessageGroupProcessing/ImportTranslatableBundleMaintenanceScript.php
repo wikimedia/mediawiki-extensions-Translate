@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use IDBAccessObject;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageMarkException;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageSettings;
@@ -15,6 +14,7 @@ use MediaWiki\Title\ForeignTitle;
 use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Script to import a translatable bundle from a script exported via WikiExporter.

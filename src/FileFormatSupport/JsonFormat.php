@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use FileBasedMessageGroup;
-use FormatJson;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
+use MediaWiki\Json\FormatJson;
 
 /**
  * JsonFormat implements a message format where messages are encoded

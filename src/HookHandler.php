@@ -5,16 +5,15 @@ namespace MediaWiki\Extension\Translate;
 
 use ALItem;
 use ALTree;
-use ApiRawMessage;
-use Content;
-use ExtensionRegistry;
-use Language;
 use LogFormatter;
+use MediaWiki\Api\ApiRawMessage;
 use MediaWiki\ChangeTags\Hook\ChangeTagsListActiveHook;
 use MediaWiki\ChangeTags\Hook\ListDefinedTagsHook;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Content\Content;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\Translate\LogFormatter as TranslateLogFormatter;
@@ -48,11 +47,13 @@ use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
@@ -64,11 +65,10 @@ use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
+use MediaWiki\Xml\XmlSelect;
 use RecentChange;
 use SearchEngine;
-use TextContent;
 use Wikimedia\Rdbms\ILoadBalancer;
-use XmlSelect;
 
 /**
  * Hooks for Translate extension.

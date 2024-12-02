@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStatesUpdaterJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
@@ -14,13 +15,12 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\TtmServer\TtmServer;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use ParserOptions;
-use TextContent;
 use WikiPage;
 
 /**

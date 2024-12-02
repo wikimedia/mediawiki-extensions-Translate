@@ -4,13 +4,13 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Cdb\Reader;
-use ContentHandler;
 use DifferenceEngine;
 use Exception;
 use FileBasedMessageGroup;
 use JobQueueGroup;
-use Language;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
@@ -19,6 +19,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
@@ -35,7 +36,6 @@ use OOUI\ButtonInputWidget;
 use PermissionsError;
 use RuntimeException;
 use Skin;
-use TextContent;
 use UserBlockedError;
 
 /**

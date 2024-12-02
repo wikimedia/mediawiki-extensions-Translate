@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use HtmlArmor;
 use InvalidArgumentException;
-use Language;
-use LanguageCode;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
+use MediaWiki\Language\LanguageCode;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;

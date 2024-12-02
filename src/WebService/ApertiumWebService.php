@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
-use FormatJson;
-use LanguageCode;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Json\FormatJson;
+use MediaWiki\Language\LanguageCode;
 use MediaWiki\Parser\Sanitizer;
 
 /**

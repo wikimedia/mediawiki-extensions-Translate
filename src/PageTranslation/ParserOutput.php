@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
-use Language;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Language\Language;
 use MediaWiki\Parser\Parser;
 
 /**

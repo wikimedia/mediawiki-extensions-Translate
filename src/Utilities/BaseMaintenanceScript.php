@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use Maintenance;
+use MediaWiki\Maintenance\Maintenance;
 
 /**
  * Base maintenance script containing constants and methods used in multiple scripts

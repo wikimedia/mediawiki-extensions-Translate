@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
-use ApiBase;
-use ApiMain;
-use ContentHandler;
-use FormatJson;
 use ManualLogEntry;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Content\ContentHandler;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Revision\SlotRecord;

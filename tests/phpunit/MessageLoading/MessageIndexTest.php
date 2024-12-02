@@ -4,14 +4,14 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use Generator;
-use HashBagOStuff;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MockWikiMessageGroup;
-use WANObjectCache;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * Tests for different MessageIndex backends.

@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use ApiUsageException;
 use DateInterval;
 use DateTime;
+use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;

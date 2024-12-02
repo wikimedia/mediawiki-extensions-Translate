@@ -4,9 +4,9 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 use RuntimeException;
-use Xml;
-use XmlSelect;
 
 /**
  * Code for JavaScript enhanced \<option> selectors.

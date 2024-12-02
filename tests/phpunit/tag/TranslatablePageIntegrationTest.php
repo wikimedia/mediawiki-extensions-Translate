@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
+use Wikimedia\ObjectCache\HashBagOStuff;
 
 /**
  * @author Niklas Laxström

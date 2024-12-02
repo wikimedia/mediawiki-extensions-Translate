@@ -10,6 +10,7 @@
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorSandbox\StashedTranslation;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashStorage;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Title\Title;
 
 // Standard boilerplate to define $IP

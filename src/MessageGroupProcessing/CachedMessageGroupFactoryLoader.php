@@ -7,8 +7,8 @@ use CachedMessageGroupLoader;
 use DependencyWrapper;
 use MessageGroup;
 use MessageGroupLoader;
-use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IConnectionProvider;
 

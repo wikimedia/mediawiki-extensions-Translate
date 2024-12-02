@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Exception;
-use MessageSpecifier;
 use Throwable;
+use Wikimedia\Message\MessageSpecifier;
 
 /**
  * @author Niklas Laxström

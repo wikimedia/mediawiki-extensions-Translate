@@ -13,8 +13,8 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Title\TitleParser;
 use SplMinHeap;
-use WANObjectCache;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\ObjectCache\WANObjectCache;
 use WikiPageMessageGroup;
 
 /**

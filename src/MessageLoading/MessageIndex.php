@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
-use BagOStuff;
 use Exception;
 use JobQueueGroup;
 use MapCacheLRU;
@@ -14,7 +13,8 @@ use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
-use WANObjectCache;
+use Wikimedia\ObjectCache\BagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use BagOStuff;
 use JobQueueGroup;
 use LogicException;
 use MediaWiki\Cache\LinkBatchFactory;
@@ -19,6 +18,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use ObjectCacheFactory;
 use SplObjectStorage;
+use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

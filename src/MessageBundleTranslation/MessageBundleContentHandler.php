@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
-use Content;
 use InvalidArgumentException;
+use MediaWiki\Content\Content;
 use MediaWiki\Content\Renderer\ContentParseParams;
+use MediaWiki\Content\TextContentHandler;
 use MediaWiki\Content\ValidationParams;
 use MediaWiki\Parser\ParserOutput;
 use StatusValue;
-use TextContentHandler;
 use const CONTENT_FORMAT_JSON;
 
 /**

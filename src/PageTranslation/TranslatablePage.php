@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use IDBAccessObject;
 use LogicException;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
@@ -22,8 +22,8 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use RuntimeException;
-use TextContent;
 use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IDBAccessObject;
 use WikiPageMessageGroup;
 
 /**

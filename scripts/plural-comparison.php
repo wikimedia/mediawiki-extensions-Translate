@@ -11,6 +11,7 @@
 
 use CLDRPluralRuleParser\Evaluator;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
 
 // Standard boilerplate to define $IP

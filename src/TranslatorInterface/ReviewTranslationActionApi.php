@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use ApiBase;
-use ApiMain;
 use ManualLogEntry;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Revision\RevisionLookup;

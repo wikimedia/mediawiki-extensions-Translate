@@ -4,6 +4,7 @@
  * @file
  */
 
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

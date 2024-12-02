@@ -9,7 +9,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
-use XmlSelect;
+use MediaWiki\Xml\XmlSelect;
 
 /**
  * Contains logic for special page Special:AggregateGroups.

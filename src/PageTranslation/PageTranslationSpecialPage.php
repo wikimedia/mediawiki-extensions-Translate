@@ -3,14 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use ContentHandler;
 use DifferenceEngine;
 use ErrorPageError;
-use IDBAccessObject;
 use InvalidArgumentException;
 use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleState;
@@ -32,6 +31,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use MediaWiki\Xml\Xml;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\DropdownInputWidget;
@@ -43,8 +43,8 @@ use OOUI\TextInputWidget;
 use PermissionsError;
 use UnexpectedValueException;
 use UserBlockedError;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IResultWrapper;
-use Xml;
 use function count;
 use function wfEscapeWikiText;
 

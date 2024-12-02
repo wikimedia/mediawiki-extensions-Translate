@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
-use FormatJson;
-use JsonContent;
+use MediaWiki\Content\JsonContent;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Message\Message;
 
 /**

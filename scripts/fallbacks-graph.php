@@ -9,7 +9,9 @@
  */
 
 use MediaWiki\Languages\LanguageFallback;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Xml\Xml;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {

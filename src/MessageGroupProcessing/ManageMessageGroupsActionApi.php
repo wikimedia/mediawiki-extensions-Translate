@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use ApiBase;
 use Exception;
-use FormatJson;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;

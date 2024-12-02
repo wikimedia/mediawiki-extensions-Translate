@@ -3,12 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
-use ApiBase;
-use ApiMain;
-use FormatJson;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use Wikimedia\ParamValidator\ParamValidator;

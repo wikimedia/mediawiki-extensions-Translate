@@ -4,17 +4,17 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use HtmlArmor;
-use Language;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\TitleValue;
+use MediaWiki\Xml\Xml;
 use MessageGroup;
 use MessageLocalizer;
-use Xml;
 
 /**
  * Implements generation of HTML stats table.

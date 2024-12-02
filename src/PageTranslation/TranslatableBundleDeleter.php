@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use BagOStuff;
 use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
@@ -12,6 +11,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Contains the core logic to delete translatable bundles or translation pages

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 
 /**
  * Class for querying external translation service. Implements support for ttmserver via MediaWiki API.

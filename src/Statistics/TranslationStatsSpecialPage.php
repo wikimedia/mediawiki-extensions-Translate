@@ -11,8 +11,8 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
-use Xml;
-use XmlSelect;
+use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 use function wfEscapeWikiText;
 
 /**

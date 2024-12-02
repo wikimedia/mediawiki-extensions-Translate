@@ -7,8 +7,8 @@
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use Maintenance;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Maintenance\Maintenance;
 
 /** @since 2020.04 */
 class UpdateTranslatorActivityMaintenanceScript extends Maintenance {

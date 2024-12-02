@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use Maintenance;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
 use Psr\Log\LoggerInterface;
 
