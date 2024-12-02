@@ -87,7 +87,10 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->progressStatsTable = $this->progressStatsTableFactory->newFromContext( $this->getContext() );
 
 		$this->setHeaders();
-		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
+		$out->addModuleStyles( [
+			'ext.translate.specialpages.styles',
+			'mediawiki.codex.messagebox.styles',
+		] );
 
 		$out->addHelpLink(
 			'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'

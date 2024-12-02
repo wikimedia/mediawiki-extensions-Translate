@@ -121,7 +121,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.pagetranslation' );
-		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
+		$out->addModuleStyles( [
+			'ext.translate.specialpages.styles',
+			'mediawiki.codex.messagebox.styles',
+		] );
 		$out->addHelpLink( 'Help:Extension:Translate/Page_translation_example' );
 		$out->enableOOUI();
 

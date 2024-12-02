@@ -65,6 +65,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 				'ext.translate.special.managetranslatorsandbox.styles',
 				'mediawiki.ui.button',
 				'jquery.uls.grid',
+				'mediawiki.codex.messagebox.styles',
 			]
 		);
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );

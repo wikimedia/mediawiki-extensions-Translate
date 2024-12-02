@@ -97,6 +97,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.languagestats' );
 		$out->addModuleStyles( 'ext.translate.statstable' );
 		$out->addModuleStyles( 'ext.translate.special.groupstats' );
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 
 		$params = $par ? explode( '/', $par ) : [];
 

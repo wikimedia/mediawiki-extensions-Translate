@@ -34,7 +34,8 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 		$output->addModules( 'ext.translate.special.pagemigration' );
 		$output->addModuleStyles( [
 			'ext.translate.specialpages.styles',
-			'jquery.uls.grid'
+			'jquery.uls.grid',
+			'mediawiki.codex.messagebox.styles',
 		] );
 
 		# Do stuff

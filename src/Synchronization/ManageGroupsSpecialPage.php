@@ -108,7 +108,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->setHeaders();
 
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
+		$out->addModuleStyles( [
+			'ext.translate.specialpages.styles',
+			'mediawiki.codex.messagebox.styles',
+		] );
 		$out->addModules( 'ext.translate.special.managegroups' );
 		$out->addHelpLink( 'Help:Extension:Translate/Group_management' );
 

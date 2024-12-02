@@ -80,7 +80,10 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$user = $this->getUser();
 		$this->addHelpLink( 'Help:Extension:Translate/Move_translatable_page' );
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.translate.special.movetranslatablebundles.styles' );
+		$out->addModuleStyles( [
+				'ext.translate.special.movetranslatablebundles.styles',
+				'mediawiki.codex.messagebox.styles',
+		] );
 
 		$this->oldText = $request->getText(
 			'wpOldTitle',

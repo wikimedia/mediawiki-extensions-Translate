@@ -68,7 +68,8 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addModuleStyles( [
 			'ext.translate.special.translate.styles',
 			'jquery.uls.grid',
-			'mediawiki.ui.button'
+			'mediawiki.ui.button',
+			"mediawiki.codex.messagebox.styles",
 		] );
 
 		$this->setHeaders();
