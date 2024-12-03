@@ -38,8 +38,7 @@ class TranslatableBundleLogFormatter extends LogFormatter {
 			case 'pagetranslation/deletelnok':
 			case 'messagebundle/moveok':
 			case 'messagebundle/movenok':
-				$target = $legacy['target'];
-
+				$target = $legacy['target'] ?? 'Special:Badtitle';
 				$moveTarget = $this->makePageLink( Title::newFromText( $target ) );
 				$params[3] = Message::rawParam( $moveTarget );
 				break;
