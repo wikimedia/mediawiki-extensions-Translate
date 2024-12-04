@@ -12,7 +12,8 @@
 			"Kumkumuk",
 			"Marmase",
 			"Mirzali",
-			"Orbot707"
+			"Orbot707",
+			"GolyatGeri"
 		]
 	},
 	"translate": "Bıçarne",
@@ -133,6 +134,7 @@
 	"translate-mgs-pagename": "İstatistikê gruba mesacan",
 	"translate-mgs-fieldset": "Asengeyê tercihan",
 	"translate-mgs-group": "Gruba mesacan",
+	"translate-mgs-group-or-prefix": "Verole ya zi Gruba Peyaman:",
 	"translate-mgs-nocomplete": "Açarnayışê cı baş bıyaye zıwana mocnayış",
 	"translate-mgs-submit": "İstatistikan bımocne",
 	"translate-mgs-column-language": "Zıwan",
