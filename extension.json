@@ -1291,7 +1291,7 @@
 		},
 		"PageTranslationLanguageList": {
 			"value": "tag-only",
-			"description": "How language list for translatable pages is shown. Allowed values:\n * tag-only: Only display languages with the <languages /> tag.\n * sidebar-only: Display languages as interlanguage links only and ignore the tag even if present on the page.\n * sidebar-fallback: Display languages as interlanguage links if no tag is on the page.\n * sidebar-always: Display languages as interlanguage links and also in tag if it is present on the page.\n @since 2018.07",
+			"description": "How language list for translatable pages is shown. Allowed values:\n * tag-only: Only display languages with the <languages /> tag.\n * sidebar-only: Display languages as interlanguage links only and ignore the tag even if present on the page.\n * sidebar-fallback: Display languages as interlanguage links if no tag is on the page.\n * sidebar-always: Display languages as interlanguage links and also in tag if it is present on the page.\n@since 2018.07",
 			"public": true
 		},
 		"TranslateDocumentationLanguageCode": {
@@ -1402,7 +1402,7 @@
 		},
 		"TranslateWorkflowStates": {
 			"value": false,
-			"description": "List of possible message group review workflow states and properties for each state. The currently supported properties are 'color', the color that is used for displaying the state in the tables, and 'right', the additional right that is needed to set the state. Users who have the translate-groupreview right can set this in Special:Translate. The state is visible in Special:Translate, Special:MessageGroupStats and Special:LanguageStats. If the value is false, the workflow states feature is disabled. State name can be up to 32 characters maximum.\n\nExample:\n'TranslateWorkflowStates': {\n\n'new': { 'color': 'FF0000' },\n'needs_proofreading': { 'color': '0000FF' },\n'ready': { 'color': 'FFFF00'},\n'published': { 'color': '00FF00', 'right': 'centralnotice-admin' }\n}",
+			"description": "List of possible message group review workflow states and properties for each state. The currently supported properties are 'color', the color that is used for displaying the state in the tables, and 'right', the additional right that is needed to set the state. Users who have the translate-groupreview right can set this in Special:Translate. The state is visible in Special:Translate, Special:MessageGroupStats and Special:LanguageStats. If the value is false, the workflow states feature is disabled. State name can be up to 32 characters maximum.\n\nExample:\n'TranslateWorkflowStates': {\n  'new': { 'color': 'FF0000' },\n  'needs_proofreading': { 'color': '0000FF' },\n  'ready': { 'color': 'FFFF00'},\n  'published': { 'color': '00FF00', 'right': 'centralnotice-admin' }\n}",
 			"public": true
 		},
 		"TranslateGroupAliases": {
