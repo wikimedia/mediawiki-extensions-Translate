@@ -40,8 +40,8 @@ class TranslateSandboxTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	protected function tearDown(): void {
-		parent::tearDown();
+	protected function assertPostConditions(): void {
+		parent::assertPostConditions();
 		$this->assertLogTypesAreUnique();
 	}
 
