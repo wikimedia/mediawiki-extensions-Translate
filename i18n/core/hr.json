@@ -103,7 +103,7 @@
 	"action-translate-groupreview": "promijenite stanje radnoga tijeka za skupine poruka",
 	"translate-rcfilters-translations": "Prijevodi",
 	"translate-rcfilters-translations-only-label": "Imenski prostori prevođenja",
-	"translate-rcfilters-translations-only-desc": "Promjene stranica s prijevodima.",
+	"translate-rcfilters-translations-only-desc": "Izmjene prijevoda u grupama poruka",
 	"translate-rcfilters-translations-filter-label": "Nije u imenskim prostorima prevođenja",
 	"translate-rcfilters-translations-filter-desc": "Sva uređivanja koja nisu prijevodi.",
 	"translate-rcfilters-translations-site-label": "Poruke vezane uz prevođenje",
@@ -299,6 +299,8 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|podskupina|podskupine|podskupina}}",
 	"tux-languageselector": "Prijevod na",
 	"tux-select-target-language": "Željeni jezik za prevođenje",
+	"tux-watch-group": "Prati",
+	"tux-unwatch-group": "Prestani pratiti",
 	"tux-tab-all": "Sve",
 	"tux-tab-untranslated": "Neprevedeno",
 	"tux-tab-outdated": "Zastarjelo",
@@ -396,6 +398,8 @@
 	"tux-nojs": "Ovaj alat ne radi bez JavaScripta. Javascript je onemogućen, ne radi ili je preglednik nepodržan.",
 	"specialpages-group-translation": "Prevođenje",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Izvorni jezični kôd \"$1\" nije podržan.",
+	"notification-header-message-group-subscription": "Ažuriran je prijevod $1",
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|nova ili ažurirana poruka|nove ili ažurirane poruke|novih ili ažuriranih poruka}}",
 	"tpt-cleanchanges-language": "Jezik:",
 	"tpt-cleanchanges-language-na": "Svi"
 }
