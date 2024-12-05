@@ -12,6 +12,7 @@ use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Deferred\DeferredUpdates;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -1137,7 +1138,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$this->synchronizationCache->addMessages( $groupId, ...$messages );
 				$this->synchronizationCache->markGroupForSync( $groupId );
 
-				LoggerFactory::getInstance( 'Translate.GroupSynchronization' )->info(
+				LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION )->info(
 					'[' . __CLASS__ . '] Synchronization started for {groupId} by {user}',
 					[
 						'groupId' => $groupId,

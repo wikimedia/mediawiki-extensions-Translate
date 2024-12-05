@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
@@ -115,7 +116,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	public function execute() {
-		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$logger = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 		$groupPattern = $this->getOption( 'group' ) ?? '';
 		$groupSkipPattern = $this->getOption( 'skipgroup' ) ?? '';
 		$skipGroupSyncCheck = $this->hasOption( 'skip-group-sync-check' );

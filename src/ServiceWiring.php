@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentDatabaseCache;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleDependencyPurger;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
@@ -123,7 +124,7 @@ return [
 		return new ExternalMessageSourceStateImporter(
 			$services->get( 'Translate:GroupSynchronizationCache' ),
 			$services->getJobQueueGroup(),
-			LoggerFactory::getInstance( 'Translate.GroupSynchronization' ),
+			LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION ),
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getTitleFactory(),
 			$services->get( 'Translate:MessageGroupSubscription' ),
@@ -232,7 +233,7 @@ return [
 			$services->get( 'Translate:MessageGroupSubscriptionStore' ),
 			$services->getJobQueueGroup(),
 			$services->getUserIdentityLookup(),
-			LoggerFactory::getInstance( 'Translate.MessageGroupSubscription' ),
+			LoggerFactory::getInstance( LogNames::GROUP_SUBSCRIPTION ),
 			new ServiceOptions(
 				MessageGroupSubscription::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
@@ -277,7 +278,7 @@ return [
 			$services->getMainWANObjectCache(),
 			$services->getJobQueueGroup(),
 			$services->get( 'Translate:HookRunner' ),
-			LoggerFactory::getInstance( 'Translate' ),
+			LoggerFactory::getInstance( LogNames::MAIN ),
 			$services->getMainObjectStash(),
 			$services->getConnectionProvider(),
 			new ServiceOptions( MessageIndex::SERVICE_OPTIONS, $services->getMainConfig() ),

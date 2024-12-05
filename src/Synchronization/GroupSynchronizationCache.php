@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use LogicException;
 use MediaWiki\Extension\Translate\Cache\PersistentCache;
 use MediaWiki\Extension\Translate\Cache\PersistentCacheEntry;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Logger\LoggerFactory;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
@@ -56,7 +57,7 @@ class GroupSynchronizationCache {
 		// each time a message is marked as processed if group is about to expire.
 		$this->initialTimeoutSeconds = $initialTimeoutSeconds;
 		$this->incrementalTimeoutSeconds = $incrementalTimeoutSeconds;
-		$this->logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$this->logger = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 	}
 
 	/**

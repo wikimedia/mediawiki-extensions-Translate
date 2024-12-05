@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\WebService;
 
 use Exception;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Psr\Log\LoggerAwareInterface;
@@ -81,7 +82,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			// @phan-suppress-next-line PhanTypeInvalidCallableArraySize due to annotations on createObject?
 			$serviceObject = $objectFactory->createObject( $spec );
 			if ( $serviceObject instanceof LoggerAwareInterface ) {
-				$serviceObject->setLogger( LoggerFactory::getInstance( 'translationservices' ) );
+				$serviceObject->setLogger( LoggerFactory::getInstance( LogNames::TRANSLATION_SERVICES ) );
 			}
 
 			return $serviceObject;

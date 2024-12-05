@@ -13,6 +13,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Deferred\LinksUpdate\LinksUpdate;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
@@ -126,7 +127,7 @@ class Hooks {
 			}
 			self::$renderingContext = false;
 		} catch ( Exception $e ) {
-			LoggerFactory::getInstance( 'Translate' )->error(
+			LoggerFactory::getInstance( LogNames::MAIN )->error(
 				'T302754 Failed to set display title for page {title}',
 				[
 					'title' => $title->getPrefixedDBkey(),
@@ -227,7 +228,7 @@ class Hooks {
 			$revRecord = $templateTranslationPage->getRevisionRecordWithFallback();
 			if ( !$revRecord ) {
 				// In rare cases fetching of the source fallback might fail. See: T323863
-				LoggerFactory::getInstance( 'Translate' )->warning(
+				LoggerFactory::getInstance( LogNames::MAIN )->warning(
 					"T323863: Could not fetch any revision record for '{groupid}'",
 					[ 'groupid' => $templateTranslationPage->getMessageGroupId() ]
 				);
@@ -1052,7 +1053,7 @@ class Hooks {
 		}
 
 		// Don't allow editing invalid messages that do not belong to any translatable page
-		LoggerFactory::getInstance( 'Translate' )->info(
+		LoggerFactory::getInstance( LogNames::MAIN )->info(
 			'Unknown translation page: {title}',
 			[ 'title' => $title->getPrefixedDBkey() ]
 		);
@@ -1405,7 +1406,7 @@ class Hooks {
 
 		// T163254: Disable page translation on non-text pages
 		if ( $allowed && !$content instanceof TextContent ) {
-			LoggerFactory::getInstance( 'Translate' )->error(
+			LoggerFactory::getInstance( LogNames::MAIN )->error(
 				'Expected {title} to have content of type TextContent, got {contentType}. ' .
 				'$wgPageTranslationAllowedContentModels is incorrectly configured with a non-text content model.',
 				[

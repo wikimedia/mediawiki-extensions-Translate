@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupCache;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -447,7 +448,7 @@ class ExternalMessageSourceStateComparator {
 		$oldestRevision = $this->revisionLookup->getFirstRevision( $pageIdentity );
 		$latestRevision = $this->revisionLookup->getRevisionByTitle( $pageIdentity );
 
-		$logger = LoggerFactory::getInstance( 'Translate' );
+		$logger = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 		// Here we are checking for the following:
 		// 1. New translation was added for a message on translatewiki.net
 		// 2. Translation was exported

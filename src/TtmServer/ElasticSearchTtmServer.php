@@ -18,6 +18,7 @@ use Elastica\ResultSet;
 use Elastica\Search;
 use Exception;
 use MediaWiki\Extension\Elastica\MWElasticUtils;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\Logger\LoggerFactory;
@@ -699,7 +700,7 @@ class ElasticSearchTtmServer
 		try {
 			MWElasticUtils::deleteByQuery( $sourceIndex, $query, /* $allowConflicts = */ true );
 		} catch ( Exception $e ) {
-			LoggerFactory::getInstance( 'ElasticSearchTtmServer' )->error(
+			LoggerFactory::getInstance( LogNames::ELASTIC_SEARCH_TTMSERVER )->error(
 				'Problem encountered during deletion.',
 				[ 'exception' => $e ]
 			);

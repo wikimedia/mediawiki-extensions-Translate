@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 use AggregateMessageGroup;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
@@ -50,7 +51,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$this->languageFactory = $languageFactory;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->hookRunner = $hookRunner;
-		$this->logger = LoggerFactory::getInstance( 'Translate' );
+		$this->logger = LoggerFactory::getInstance( LogNames::MAIN );
 		$this->isMessageGroupSubscriptionEnabled = $config->get( 'TranslateEnableMessageGroupSubscription' );
 	}
 

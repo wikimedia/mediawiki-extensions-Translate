@@ -1,6 +1,7 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Logger\LoggerFactory;
 use Psr\Log\LoggerInterface;
@@ -35,7 +36,7 @@ class SubsetMessageGroup extends MessageGroupOld {
 
 	/** @internal Factored out only for testing */
 	protected function getLogger(): LoggerInterface {
-		return LoggerFactory::getInstance( 'Translate' );
+		return LoggerFactory::getInstance( LogNames::MAIN );
 	}
 
 	/** @inheritDoc */

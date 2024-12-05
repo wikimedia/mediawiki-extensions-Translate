@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -66,7 +67,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	/** @inheritDoc */
 	public function execute() {
 		$config = $this->getConfig();
-		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$logger = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 		$groupPattern = $this->getOption( 'group' ) ?? '';
 		$logger->info(
 			'Starting backports for groups {groups}',

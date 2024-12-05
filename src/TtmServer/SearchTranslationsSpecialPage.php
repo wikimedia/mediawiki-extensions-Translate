@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use ErrorPageError;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\CurrentTranslationAid;
@@ -60,7 +61,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$this->ttmServerFactory = $ttmServerFactory;
 		$this->languageFactory = $languageFactory;
 		$this->urlUtils = $urlUtils;
-		$this->logger = LoggerFactory::getInstance( 'Translate' );
+		$this->logger = LoggerFactory::getInstance( LogNames::MAIN );
 	}
 
 	public function execute( $subPage ) {

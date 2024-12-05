@@ -7,6 +7,7 @@ use Article;
 use JobQueueGroup;
 use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Html\Html;
@@ -61,7 +62,7 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 	public static function getInstance(): self {
 		$services = MediaWikiServices::getInstance();
 		self::$instance ??= new self(
-			LoggerFactory::getInstance( 'Translate.MessageBundle' ),
+			LoggerFactory::getInstance( LogNames::MESSAGE_BUNDLE ),
 			$services->get( 'Translate:MessageBundleStore' ),
 			$services->getLinkRenderer(),
 			$services->getTitleFactory(),

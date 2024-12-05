@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use BadMethodCallException;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\Services;
@@ -156,7 +157,7 @@ class MessageHandle {
 		// Do another check that the group actually exists
 		$group = $this->getGroup();
 		if ( !$group ) {
-			$logger = LoggerFactory::getInstance( 'Translate' );
+			$logger = LoggerFactory::getInstance( LogNames::MAIN );
 			$logger->warning(
 				'[MessageHandle] MessageIndex is out of date. Page {pagename} refers to ' .
 				'unknown group {messagegroup}',
@@ -304,7 +305,7 @@ class MessageHandle {
 		if ( $message->definition() === null ) {
 			// This should NOT happen, but add a check since it seems to be happening
 			// See: https://phabricator.wikimedia.org/T255669
-			LoggerFactory::getInstance( 'Translate' )->warning(
+			LoggerFactory::getInstance( LogNames::MAIN )->warning(
 				'Message definition is empty! Title: {title}, group: {group}, key: {key}',
 				[
 					'title' => $this->getTitle()->getPrefixedText(),

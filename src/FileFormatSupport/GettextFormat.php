@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -389,7 +390,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		$pluralRule = GettextPlural::getPluralRule( $code );
 		if ( !$pluralRule ) {
 			$pluralRule = GettextPlural::getPluralRule( 'en' );
-			LoggerFactory::getInstance( 'Translate' )->warning(
+			LoggerFactory::getInstance( LogNames::MAIN )->warning(
 				"T235180: Missing Gettext plural rule for '{languagecode}'",
 				[ 'languagecode' => $code ]
 			);

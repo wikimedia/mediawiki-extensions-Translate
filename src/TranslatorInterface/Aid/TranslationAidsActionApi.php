@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use MediaWiki\Api\ApiBase;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
@@ -65,7 +66,7 @@ class TranslationAidsActionApi extends ApiBase {
 		// See: https://phabricator.wikimedia.org/T285830
 		// Identify and log.
 		if ( !$dataProvider->hasDefinition() ) {
-			LoggerFactory::getInstance( 'Translate' )->warning(
+			LoggerFactory::getInstance( LogNames::MAIN )->warning(
 				'Message definition is empty! Title: {title}, group: {group}, key: {key}',
 				[
 					'title' => $handle->getTitle()->getPrefixedText(),

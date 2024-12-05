@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Job;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Page\PageReference;
@@ -24,7 +25,7 @@ class PurgeMessageBundleDependenciesJob extends Job {
 	}
 
 	public function run(): bool {
-		$logger = LoggerFactory::getInstance( 'Translate.MessageBundle' );
+		$logger = LoggerFactory::getInstance( LogNames::MESSAGE_BUNDLE );
 		$dependencyPurger = Services::getInstance()->getMessageBundleDependencyPurger();
 		$dependencyPurger->purge( $this->getTitle() );
 		$logger->debug(

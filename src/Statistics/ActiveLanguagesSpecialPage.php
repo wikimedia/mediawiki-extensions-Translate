@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
@@ -304,7 +305,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			$username = $stats[TranslatorActivityQuery::USER_NAME];
 			$title = Title::makeTitleSafe( NS_USER, $username );
 			if ( !$title ) {
-				LoggerFactory::getInstance( 'Translate' )->warning(
+				LoggerFactory::getInstance( LogNames::MAIN )->warning(
 					"T248125: Got Title-invalid username '{username}'",
 					[ 'username' => $username ]
 				);

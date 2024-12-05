@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Statistics;
 use AggregateMessageGroup;
 use FileBasedMessageGroup;
 use MediaWiki\Deferred\DeferredUpdates;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -605,7 +606,7 @@ class MessageGroupStats {
 			// This path should only be hit during web requests
 			if ( count( self::$updates ) > 100 ) {
 				$groups = array_unique( array_column( self::$updates, 'tgs_group' ) );
-				LoggerFactory::getInstance( 'Translate' )->warning(
+				LoggerFactory::getInstance( LogNames::MAIN )->warning(
 					"Huge translation update of {count} rows for group(s) {groups}",
 					[
 						'count' => count( self::$updates ),
@@ -634,7 +635,7 @@ class MessageGroupStats {
 			$lockName = 'MessageGroupStats:updates';
 			if ( !$dbw->lock( $lockName, $functionName, 1 ) ) {
 				$groups = array_unique( array_column( self::$updates, 'tgs_group' ) );
-				LoggerFactory::getInstance( 'Translate' )->warning(
+				LoggerFactory::getInstance( LogNames::MAIN )->warning(
 					'Message group stats update of {count} rows failed for group(s) {groups} due to lock',
 					[
 						'count' => count( self::$updates ),

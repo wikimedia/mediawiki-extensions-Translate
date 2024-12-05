@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use Job;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
@@ -40,7 +41,7 @@ class UpdateMessageBundleJob extends Job {
 		$mwInstance = MediaWikiServices::getInstance();
 		$lb = $mwInstance->getDBLoadBalancerFactory();
 		$jobQueue = $mwInstance->getJobQueueGroup();
-		$logger = LoggerFactory::getInstance( 'Translate.MessageBundle' );
+		$logger = LoggerFactory::getInstance( LogNames::MESSAGE_BUNDLE );
 		$messageIndex = Services::getInstance()->getMessageIndex();
 		$messageGroupSubscription = Services::getInstance()->getMessageGroupSubscription();
 

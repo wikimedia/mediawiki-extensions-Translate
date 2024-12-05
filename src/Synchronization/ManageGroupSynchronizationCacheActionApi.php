@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use Exception;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Logger\LoggerFactory;
@@ -32,7 +33,7 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->groupSyncCache = $groupSyncCache;
-		$this->groupSyncLog = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$this->groupSyncLog = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 	}
 
 	public function execute() {

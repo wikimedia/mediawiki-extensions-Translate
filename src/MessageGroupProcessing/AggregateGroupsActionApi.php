@@ -8,6 +8,7 @@ use JobQueueGroup;
 use ManualLogEntry;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
@@ -125,7 +126,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			}
 
 			$this->messageGroupMetadata->deleteGroup( $params['aggregategroup'] );
-			$logger = LoggerFactory::getInstance( 'Translate' );
+			$logger = LoggerFactory::getInstance( LogNames::MAIN );
 			$logger->info(
 				'Aggregate group {groupId} has been deleted.',
 				[ 'groupId' => $aggregateGroupId ]

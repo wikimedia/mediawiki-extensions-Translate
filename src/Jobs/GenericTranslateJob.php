@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Jobs;
 
 use Job;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Logger\LoggerFactory;
 use Psr\Log\LoggerInterface;
 
@@ -16,15 +17,12 @@ use Psr\Log\LoggerInterface;
 abstract class GenericTranslateJob extends Job {
 	private LoggerInterface $logger;
 
-	/** @var string Channel name to be used during logging */
-	private const CHANNEL_NAME = 'Translate.Jobs';
-
 	/**
 	 * Returns a logger instance with the channel name. Can have only a single
 	 * channel per job, so once instantiated, the same instance is returned.
 	 */
 	private function getLogger(): LoggerInterface {
-		$this->logger ??= LoggerFactory::getInstance( self::CHANNEL_NAME );
+		$this->logger ??= LoggerFactory::getInstance( LogNames::JOBS );
 		return $this->logger;
 	}
 

@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Logger\LoggerFactory;
@@ -34,7 +35,7 @@ class CompleteExternalTranslationMaintenanceScript extends Maintenance {
 			$this->fatalError( 'GroupSynchronizationCache is not enabled' );
 		}
 
-		$logger = LoggerFactory::getInstance( 'Translate.GroupSynchronization' );
+		$logger = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 		$groupSyncCache = Services::getInstance()->getGroupSynchronizationCache();
 		$groupsInSync = $groupSyncCache->getGroupsInSync();
 		if ( !$groupsInSync ) {
