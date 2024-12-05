@@ -9,6 +9,12 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 
+/**
+ * Registers the interface for the Message bundle Scribunto Lua library
+ * @author Abijeet Patro
+ * @license GPL-2.0-or-later
+ * @experimental
+ */
 class MessageBundleLuaLibrary extends LibraryBase {
 	public function register() {
 		$extensionLuaPath = __DIR__ . '/lua/MessageBundleLibrary.lua';

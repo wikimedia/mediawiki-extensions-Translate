@@ -1,5 +1,6 @@
 --[=[
 Translate Message bundle Lua module
+@experimental
 ]=]
 local util = require 'libraryUtil'
 

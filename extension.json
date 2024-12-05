@@ -1219,7 +1219,7 @@
 		},
 		"TranslateEnableLuaIntegration": {
 			"value": false,
-			"description": "Enable integration with Lua modules using Scribunto extension.",
+			"description": "[Experimental] Enable integration with Lua modules using Scribunto extension.",
 			"public": true
 		},
 		"TranslateEnableMessageGroupSubscription": {
