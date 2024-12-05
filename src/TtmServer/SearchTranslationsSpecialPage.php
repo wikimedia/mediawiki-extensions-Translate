@@ -245,7 +245,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			} else {
 				if ( $crossLanguageSearch ) {
 					$this->logger->warning(
-						'SearchTranslationsSpecialPage: Expected valid handle: {$title}',
+						'SearchTranslationsSpecialPage: Expected valid handle: {title}',
 						[ 'title' => $title->getPrefixedText() ]
 					);
 					continue;
