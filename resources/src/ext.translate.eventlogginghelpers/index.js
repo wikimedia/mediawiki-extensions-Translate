@@ -11,7 +11,6 @@
 		 * @param {string|null} actionSource
 		 * @param {Object|null} actionContext
 		 */
-		// eslint-disable-next-line no-unused-vars
 		logClickEvent: function ( actionSubtype, actionSource, actionContext ) {
 			if ( !config.TranslateEnableEventLogging ) {
 				return;
@@ -27,14 +26,14 @@
 				// eslint-disable-next-line camelcase
 				interactionData.action_source = actionSource;
 			}
-			/*
-			Implementation can be revisited after T369687 is resolved.
-			if (actionContext) {
+
+			if ( actionContext ) {
 				// action_context is defined as a string under
 				// https://gitlab.wikimedia.org/repos/data-engineering/metrics-platform/-/blob/fcdc361d04792930e5b10f0fd6bd1f3150f34737/js/src/EventData.d.ts#L104
+				// eslint-disable-next-line camelcase
 				interactionData.action_context = JSON.stringify( actionContext );
 			}
-			*/
+
 			mw.eventLog.submitClick( streamName, interactionData );
 		},
 
@@ -44,7 +43,6 @@
 		 * @param {string|null} actionSource
 		 * @param {Object|null} actionContext
 		 */
-		// eslint-disable-next-line no-unused-vars
 		logEvent: function ( action, actionSubtype, actionSource, actionContext ) {
 			if ( !config.TranslateEnableEventLogging ) {
 				return;
@@ -60,16 +58,14 @@
 				// eslint-disable-next-line camelcase
 				interactionData.action_source = actionSource;
 			}
-			/*
-			Implementation can be revisited after T369687 is resolved.
+
 			if ( actionContext ) {
 				// action_context is defined as a string under
 				// https://gitlab.wikimedia.org/repos/data-engineering/metrics-platform/-/blob/fcdc361d04792930e5b10f0fd6bd1f3150f34737/js/src/EventData.d.ts#L104
-				// eg interactionData.action_context = JSON.stringify( actionContext );
 				// eslint-disable-next-line camelcase
-				interactionData.action_context = null;
+				interactionData.action_context = JSON.stringify( actionContext );
 			}
-			*/
+
 			mw.eventLog.submitInteraction( streamName, schemaId, action, null );
 		}
 	};
