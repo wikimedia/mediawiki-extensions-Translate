@@ -158,7 +158,7 @@
 	"log-description-translationreview": "ਸਾਰੇ ਅਨੁਵਾਦਾਂ ਅਤੇ ਸੁਨੇਹਾ ਸਮੂਹਾਂ ਦੀਆਂ ਪਰਖਾਂ ਦਾ ਇੰਦਰਾਜ",
 	"logentry-translationreview-message": "$1 ਨੇ ਤਰਜਮਾ $3 {{GENDER:$2|ਪਰਖਿਆ}}",
 	"translate-workflowstatus": "ਦਰਜਾ: $1",
-	"translate-workflow-set-doing": "ਸੈੱਟ ਹੋ ਰਿਹਾ ਹੈ...",
+	"translate-workflow-set-doing": "ਤਰਜੀਹਾਂ...",
 	"translate-stats-workflow": "ਦਰਜਾ",
 	"translate-dynagroup-recent-label": "ਹਾਲੀਆ ਤਰਜਮੇ",
 	"translate-dynagroup-additions-label": "ਹਾਲੀਆ ਜੋੜੇ ਗਏ",
