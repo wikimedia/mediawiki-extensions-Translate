@@ -1,8 +1,8 @@
 ( function () {
 	'use strict';
 
-	const streamName = '/analytics/product_metrics/web/base/1.2.0';
-	const schemaId = 'mediawiki.product_metrics.translate_extension';
+	const streamName = 'mediawiki.product_metrics.translate_extension';
+	const schemaId = '/analytics/product_metrics/web/base/1.2.0';
 	const config = require( './config.json' );
 
 	const eventLoggingHelpers = {
