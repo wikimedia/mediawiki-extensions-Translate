@@ -4,15 +4,15 @@
  * @license GPL-2.0-or-later
  */
 
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 .tux-navitoggle {
-	background: no-repeat scroll right center transparent;
-	/* @embed */
-	background-image: url( ../images/expand-rtl.svg );
+	.cdx-mixin-css-icon( @cdx-icon-double-chevron-start, @color-subtle );
 	height: 40px;
-	width: 20px;
 	position: absolute;
 	top: 0;
-	z-index: 10000000004;
+	z-index: @z-index-top;
 	cursor: pointer;
 }
 
@@ -34,9 +34,8 @@
 
 .tux-navi-collapsed {
 	.tux-navitoggle {
-		background: no-repeat scroll right center transparent;
-		/* @embed */
-		background-image: url( ../images/expand-ltr.svg );
+		.cdx-mixin-css-icon( @cdx-icon-double-chevron-end, @color-subtle );
+		height: 40px;
 		left: 40px !important;
 	}
 

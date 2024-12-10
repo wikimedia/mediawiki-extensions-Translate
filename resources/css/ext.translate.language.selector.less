@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins';
+
 .ext-translate-language-selector {
 	/* Double selector for higher specificity */
 	&.ext-translate-language-selector {
@@ -7,21 +10,21 @@
 		font-size: 12.5pt;
 	}
 
-	.ext-translate-language-icon {
-		background: no-repeat scroll right center transparent;
-		background-image: url( ../images/language.svg );
-		background-size: 20px;
-		padding-right: 20px;
-	}
+	.uls.mw-ui-button {
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
 
-	.ext-translate-language-selector-expand {
-		background: no-repeat scroll right center transparent;
-		background-image: url( ../images/expand.svg );
-		background-size: 16px;
-		padding-right: 16px;
-	}
+		.ext-translate-language-icon {
+			.cdx-mixin-css-icon( @cdx-icon-language );
+		}
 
-	.ext-translate-target-language {
-		padding: 0 0.5em;
+		.ext-translate-target-language {
+			padding: 0 0.5em;
+		}
+
+		.ext-translate-language-selector-expand {
+			.cdx-mixin-css-icon( @cdx-icon-expand, @color-base, @size-icon-small);
+		}
 	}
 }

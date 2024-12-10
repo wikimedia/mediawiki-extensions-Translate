@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 /*
  * Breadcrumb for message group selector
  */
@@ -74,11 +77,11 @@
 		}
 
 		&.tux-watch-group--unwatch .tux-watch-icon {
-			background-image: url( ../images/bookmark-outlined.svg );
+			.cdx-mixin-css-icon( @cdx-icon-bookmark-outline, @param-vertical-align: middle );
 		}
 
 		&.tux-watch-group--watch .tux-watch-icon {
-			background-image: url( ../images/bookmark.svg );
+			.cdx-mixin-css-icon( @cdx-icon-bookmark, @param-vertical-align: middle );
 		}
 
 		.tux-watch-label {
@@ -221,18 +224,31 @@
 	}
 }
 
-.tux-message-filter-box {
-	background: no-repeat url( ../images/search.svg ) left 8px center;
-	background-size: 18px;
-	font-size: 14px;
-	/* FIXME: `box-sizing` lives here due to a shortcoming in Timeless, isn't needed in other skins
-	As soon as https://phabricator.wikimedia.org/T276896 is resolved, next line should be removed */
-	box-sizing: border-box !important;
-	height: 28px;
-	border: 1px solid #c9c9c9;
-	width: 100%;
-	padding: 0 5px 0 34px;
-	margin: 0;
+.tux-message-filter-wrapper {
+	position: relative;
+
+	&::before {
+		content: '';
+		.cdx-mixin-css-icon( @cdx-icon-search, @color-subtle );
+		height: 28px; // Identical to height of input box below
+		width: 34px; // Identical to right padding of input box below
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.tux-message-filter-box {
+		background-size: 18px;
+		font-size: 14px;
+		/* FIXME: `box-sizing` lives here due to a shortcoming in Timeless, isn't needed in other skins
+		As soon as https://phabricator.wikimedia.org/T276896 is resolved, next line should be removed */
+		box-sizing: border-box !important;
+		height: 28px;
+		border: 1px solid #c9c9c9;
+		width: 100%;
+		padding: 0 5px 0 34px;
+		margin: 0;
+	}
 }
 
 .client-nojs .tux-messagetable-header {

@@ -60,13 +60,7 @@
 .tux-list-status span,
 .tux-list-edit {
 	padding: 5px;
-	/* 15px space for icon */
-	padding-left: 20px;
-	/* Do not combine these two, unless you also fix the
-	 * tux-status-* styles below. That includes you, Siebrand ;)
-	 */
-	background-position: left;
-	background-repeat: no-repeat;
+	white-space: nowrap;
 }
 
 .tux-info {
@@ -96,25 +90,31 @@
 	text-overflow: ellipsis;
 }
 
-.tux-status-unsaved {
-	background-image: url( ../images/label-pen.svg );
+.tux-status-unsaved::before {
+	content: '';
+	.cdx-mixin-css-icon( @cdx-icon-edit, currentColor, @size-icon-small, @param-vertical-align: middle );
+	margin-right: @spacing-25;
 }
 
 .tux-status-translated,
 .tux-status-proofread {
-	background-image: url( ../images/label-tick.svg );
+	&::before {
+		content: '';
+		.cdx-mixin-css-icon( @cdx-icon-check, currentColor, @size-icon-small, @param-vertical-align: middle );
+		margin-right: @spacing-25;
+	}
 }
 
-.tux-status-fuzzy {
-	background-image: url( ../images/label-clock.svg );
+.tux-status-fuzzy::before {
+	content: '';
+	.cdx-mixin-css-icon( @cdx-icon-clock, currentColor, @size-icon-small, @param-vertical-align: middle );
+	margin-right: @spacing-25;
 }
 
-.tux-list-edit a {
-	background-image: url( ../images/action-edit.svg );
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-size: 18px 18px;
-	padding-left: 19px;
+.tux-list-edit a::before {
+	content: '';
+	.cdx-mixin-css-icon( @cdx-icon-edit, currentColor, @size-icon-small, @param-vertical-align: middle );
+	margin-right: @spacing-25;
 }
 
 .tux-messagetable-loader {
@@ -207,10 +207,8 @@
 
 .tux-view-switcher button::before {
 	content: '';
-	height: 15px;
-	width: 25px;
 	display: inline-block;
-	vertical-align: bottom;
+	margin-right: @spacing-25;
 }
 
 .tux-action-bar .translate-mode-button {
@@ -218,23 +216,19 @@
 }
 
 .tux-action-bar .translate-mode-button::before {
-	background-image: url( ../images/view-list.svg );
+	.cdx-mixin-css-icon( 'none', currentColor, @size-icon-small, @param-vertical-align: middle );
+	-webkit-mask-image: url( ../images/view-list.svg );
+	mask-image: url( ../images/view-list.svg );
 }
 
-.tux-action-bar .translate-mode-button.down::before {
-	background-image: url( ../images/view-list-hi.svg );
+.tux-action-bar .page-mode-button::before {
+	.cdx-mixin-css-icon( 'none', currentColor, @size-icon-small, @param-vertical-align: middle );
+	-webkit-mask-image: url( ../images/view-page.svg );
+	mask-image: url( ../images/view-page.svg );
 }
 
 .tux-action-bar .page-mode-button {
 	width: 30%;
-}
-
-.tux-action-bar .page-mode-button::before {
-	background-image: url( ../images/view-page.svg );
-}
-
-.tux-action-bar .page-mode-button.down::before {
-	background-image: url( ../images/view-page-hi.svg );
 }
 
 .tux-action-bar .proofread-mode-button {
@@ -242,11 +236,7 @@
 }
 
 .tux-action-bar .proofread-mode-button::before {
-	background-image: url( ../images/view-proofread.svg );
-}
-
-.tux-action-bar .proofread-mode-button.down::before {
-	background-image: url( ../images/view-proofread-hi.svg );
+	.cdx-mixin-css-icon( @cdx-icon-check, currentColor, @size-icon-small, @param-vertical-align: middle );
 }
 
 .tux-message-filter-result {

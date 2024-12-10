@@ -68,10 +68,7 @@
 }
 
 .tux-groupselector__filter__search__icon {
-	background-image: url( ../images/search.svg );
-	background-repeat: no-repeat;
-	background-position: right center;
-	background-size: 25px;
+	.cdx-mixin-css-icon( @cdx-icon-search, @color-subtle, @size-150, @param-background-position: right center );
 	height: 28px;
 }
 
@@ -112,10 +109,10 @@
 	}
 }
 
-.tux-groupselector__footer a {
-	padding-left: 28px;
-	background: left center no-repeat;
-	background-image: url( ../images/gear-icon.svg );
+.tux-groupselector__footer a::before {
+	content: '';
+	.cdx-mixin-css-icon( @cdx-icon-settings, currentColor );
+	margin-right: @spacing-25;
 }
 
 .tux-grouplist__item {

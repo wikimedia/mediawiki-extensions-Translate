@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 .ext-translate-container {
 	.tux-messagelist {
 		.tux-message-proofread {
@@ -87,16 +90,10 @@
 }
 
 .translated-by-self {
-	color: #72777d;
-	text-align: right;
-	font-size: 12px;
-	margin-right: 5px;
-	margin-left: auto;
-	width: 18px;
-	height: 18px; /* Icon height + 3px */
-	background: top right no-repeat;
-	/* @embed */
-	background-image: url( ../images/user-small.svg );
+	.cdx-mixin-css-icon( @cdx-icon-user-avatar, @color-placeholder );
+	float: right;
+	clear: both;
+	margin-right: @spacing-25;
 }
 
 .tux-proofread-status {
@@ -149,24 +146,29 @@
 }
 
 .tux-proofread-edit {
-	background-image: /* @embed */ url( ../images/edit-mark.svg );
-	background-repeat: no-repeat;
-	background-position: right center;
+	color: @color-placeholder;
+	float: right;
+	margin-top: @spacing-50;
+	margin-right: @spacing-25;
 	height: 50px;
 	cursor: pointer;
 	visibility: hidden;
 	text-align: right;
+
+	&::before {
+		content: '';
+		.cdx-mixin-css-icon( @cdx-icon-edit, currentColor, @size-icon-small );
+		float: right;
+		display: block;
+	}
 
 	.tux-message-proofread:hover & {
 		visibility: visible;
 	}
 
 	&-label {
-		color: #72777d;
-		position: relative;
-		display: inline-block;
+		display: block;
 		font-size: 13px;
-		padding-top: 30px;
 		padding-right: 2px;
 	}
 }
@@ -179,11 +181,7 @@
 
 	&::before {
 		content: '';
-		display: inline-block;
-		background: left bottom no-repeat;
-		/* @embed */
-		background-image: url( ../images/check-small.svg );
-		height: 12px;
-		width: 14px;
+		.cdx-mixin-css-icon( @cdx-icon-check, currentColor, @size-icon-x-small, @param-vertical-align: middle );
+		margin-right: @spacing-25;
 	}
 }

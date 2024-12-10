@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins';
+
 .tux-message-editor {
 	position: relative;
 	border: 1px solid #777;
@@ -6,9 +9,7 @@
 	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.3 );
 
 	.grid & .close {
-		background: no-repeat center center;
-		/* @embed */
-		background-image: url( ../images/close.svg );
+		.cdx-mixin-css-icon( @cdx-icon-close );
 		padding: 16px;
 		cursor: pointer;
 		float: right;
@@ -22,15 +23,11 @@
 	}
 
 	.editor-contract {
-		background: no-repeat center center;
-		/* @embed */
-		background-image: url( ../images/contract-ltr.svg );
+		.cdx-mixin-css-icon( @cdx-icon-double-chevron-start );
 	}
 
 	.editor-expand {
-		background: no-repeat center center;
-		/* @embed */
-		background-image: url( ../images/expand-ltr.svg );
+		.cdx-mixin-css-icon( @cdx-icon-double-chevron-end );
 	}
 
 	.editcolumn {
@@ -51,20 +48,18 @@
 		position: relative;
 
 		.tux-editor-copy-original-button {
+			.cdx-mixin-css-icon( @cdx-icon-copy );
 			position: absolute;
 			top: 3px;
 			right: -30px;
-			background: transparent center center no-repeat;
-			/* @embed */
-			background-image: url( ../images/copy.svg );
 			padding: 16px;
 			cursor: pointer;
 			border: 0;
 			opacity: 0;
 
 			&.copied {
+				.cdx-mixin-css-icon( @cdx-icon-check );
 				cursor: initial;
-				background-image: url( ../images/label-tick.svg );
 				opacity: 1;
 			}
 		}
@@ -238,11 +233,10 @@
 					}
 				}
 
-				&-edit {
-					background: left center no-repeat;
-					background-image: /* @embed */ url( ../images/action-edit.svg );
-					background-size: 18px 18px;
-					padding-left: 19px;
+				&-edit::before {
+					content: '';
+					.cdx-mixin-css-icon( @cdx-icon-edit, currentColor, @size-icon-small, @param-vertical-align: middle );
+					margin-right: @spacing-25;
 				}
 			}
 		}
@@ -311,12 +305,12 @@
 		a {
 			margin-right: 10px;
 			font-size: 0.75em;
-			background: left center no-repeat;
-			background-image: url( ../images/history.svg );
-			background-size: 18px 18px;
-			padding-left: 23px;
-			display: inline-flex;
-			align-items: center;
+
+			&::before {
+				content: '';
+				.cdx-mixin-css-icon( @cdx-icon-history, currentColor, @size-icon-small, @param-vertical-align: middle );
+				margin-right: @spacing-25;
+			}
 		}
 	}
 
@@ -419,27 +413,42 @@
 	background-color: #ffc;
 
 	&-message {
+		position: relative;
 		font-size: 14px;
 		padding: 2px 13% 2px 5px;
-		/* 24px space for icon */
-		padding-left: 24px;
-		background-position: left 4px center;
-		background-repeat: no-repeat;
-		background-size: 16px 16px;
+		padding-left: @size-150; /* Needs to match width of icons below */
 
-		&.warning {
-			background-image: url( ../images/label-flag.svg );
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&.warning::before {
+			.cdx-mixin-css-icon( @cdx-icon-flag, @color-warning, @size-icon-small );
+			height: @size-full;
+			width: @size-150;
 		}
 
 		&.error,
 		&.translation-saving {
 			background-color: #fee7e6;
 			color: #b32424;
-			background-image: url( ../images/label-error.svg );
+
+			&::before {
+				.cdx-mixin-css-icon( @cdx-icon-error, @color-error, @size-icon-small );
+				height: @size-full;
+				width: @size-150;
+			}
 		}
 
 		&.diff {
-			background-image: url( ../images/label-clock.svg );
+			&::before {
+				.cdx-mixin-css-icon( @cdx-icon-clock, @color-subtle, @size-icon-small );
+				height: @size-full;
+				width: @size-150;
+			}
 
 			td.diff-marker {
 				font-size: 1.2em;
@@ -455,7 +464,6 @@
 	}
 
 	.diff {
-		/** Uses an older version of the clock */
 		background-size: 14px;
 		background-position: left 5px center;
 
@@ -514,10 +522,12 @@
 
 	.tux-editor-paste-original-button {
 		background: #fbfbfb left center no-repeat;
-		/* @embed */
-		background-image: url( ../images/paste.svg );
-		background-size: 16px 16px;
-		padding-left: 18px;
+
+		&::before {
+			content: '';
+			.cdx-mixin-css-icon( @cdx-icon-paste, currentColor, @size-icon-small, @param-vertical-align: middle );
+			margin-right: @spacing-25;
+		}
 	}
 }
 
@@ -553,10 +563,14 @@
 	}
 
 	&.selected {
-		background: right no-repeat;
-		/* @embed */
-		background-image: url( ../images/label-tick.svg );
 		color: #222;
+
+		& a::after {
+			content: '';
+			.cdx-mixin-css-icon( @cdx-icon-check, currentColor, @size-icon-small );
+			margin-left: @spacing-25;
+			float: right;
+		}
 	}
 }
 

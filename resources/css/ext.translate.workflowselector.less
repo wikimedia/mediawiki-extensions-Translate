@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins';
+
 .tux-workflow-status {
 	background: #eee;
 	color: #222;
@@ -34,7 +37,9 @@ ul.tux-workflow-status-selector {
 
 	li {
 		color: #54595d;
-		display: block;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 		font-size: 14px;
 		padding: 0 2px;
 
@@ -44,11 +49,11 @@ ul.tux-workflow-status-selector {
 			cursor: pointer;
 		}
 
-		&.selected {
-			background: right no-repeat;
-			/* @embed */
-			background-image: url( ../images/label-tick.svg );
-			color: #222;
+		&.selected::after {
+			content: '';
+			.cdx-mixin-css-icon( @cdx-icon-check, @color-base, @size-icon-small );
+			margin-left: auto;
+			padding-left: @spacing-25;
 		}
 	}
 }

@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 .ext-translate-container {
 	.tux-messagelist {
 		.tux-message-pagemode {
@@ -111,10 +114,10 @@
 }
 
 .tux-pagemode-edit {
-	background-image: /* @embed */ url( ../images/edit-mark.svg );
-	background-repeat: no-repeat;
-	background-position: right center;
+	.cdx-mixin-css-icon( @cdx-icon-edit, @color-placeholder );
 	height: 40px;
+	float: right;
+	margin-right: @spacing-25;
 	cursor: pointer;
 	visibility: hidden;
 }
