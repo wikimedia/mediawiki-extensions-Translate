@@ -1,17 +1,22 @@
-span.tp-aggregate-remove-ag-button,
-span.tp-aggregate-remove-button {
-	background: no-repeat scroll left center transparent;
-	background-image: /* @embed */ url( ../images/remove.svg );
-	padding: 10px;
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
+span.tp-aggregate-remove-ag-button {
+	.cdx-mixin-css-icon( @cdx-icon-trash, @color-destructive, @size-icon-small );
 	cursor: pointer;
+	margin: @spacing-25;
+}
+
+span.tp-aggregate-remove-button {
+	.cdx-mixin-css-icon( @cdx-icon-trash, @color-destructive, @size-icon-small, @param-vertical-align: middle );
+	cursor: pointer;
+	margin: @spacing-25;
 }
 
 span.tp-aggregate-edit-ag-button {
-	background: no-repeat scroll left center transparent;
-	background-image: /* @embed */ url( ../images/action-edit.svg );
-	background-size: 18px 18px;
-	padding: 10px;
+	.cdx-mixin-css-icon( @cdx-icon-edit, @color-progressive, @size-icon-small );
 	cursor: pointer;
+	margin: @spacing-25;
 }
 
 span.tp-toggle-group {
@@ -22,11 +27,13 @@ span.tp-toggle-group {
 
 .tpt-add-new-group {
 	a& {
-		background: no-repeat scroll left center transparent;
-		background-image: /* @embed */ url( ../images/add.svg );
-		padding-left: 20px;
 		display: inline-block;
 		margin-bottom: 1em;
+
+		&::before {
+			content: '';
+			.cdx-mixin-css-icon( @cdx-icon-add, currentColor, @param-vertical-align: bottom );
+		}
 	}
 
 	div& {
@@ -40,36 +47,29 @@ h2.tp-name {
 }
 
 .tp-toggle-group-icon {
-	background: no-repeat scroll center center transparent;
-	background-image: /* @embed */ url( ../images/expand.svg );
-	padding: 14px 18px;
-	margin: 0 2px;
-	/** Improve icon alignment with text **/
-	margin-top: -4px;
+	background: @background-color-transparent;
 	border: 0;
-	background-size: 20px;
-	vertical-align: middle;
 	cursor: pointer;
+	margin-right: @spacing-50;
+
+	&::before {
+		content: '';
+		.cdx-mixin-css-icon( @cdx-icon-expand );
+		width: @size-150;
+
+		.mw-tpa-group.mw-tpa-group-open & {
+			.cdx-mixin-css-icon( @cdx-icon-collapse );
+			width: @size-150;
+		}
+	}
 
 	&:focus {
 		outline: 1px dotted;
 	}
 }
 
-.mw-tpa-group {
-	&.mw-tpa-group-open {
-		.tp-toggle-group-icon {
-			background-image: /* @embed */ url( ../images/collapse.svg );
-		}
-
-		.tp-sub-groups {
-			display: block;
-		}
-	}
-
-	.tp-sub-groups {
-		display: none;
-	}
+.mw-tpa-group:not( .mw-tpa-group-open ) .tp-sub-groups {
+	display: none;
 }
 
 input {
