@@ -1,10 +1,12 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 .mw-tpm-sp-unit {
 	padding-bottom: 10px;
 
 	&__source,
 	&__target {
 		overflow-y: auto;
-		height: 150px;
 		border: 2px solid #808080;
 		resize: vertical;
 	}
@@ -21,6 +23,13 @@
 			display: none;
 		}
 	}
+
+	&__actions {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		gap: 20px;
+	}
 }
 
 .mw-tpm-sp-form #title {
@@ -32,42 +41,24 @@
 }
 
 .mw-tpm-sp-action {
-	width: 25px;
-	height: 150px;
 	cursor: pointer;
-	display: inline-block;
-	margin-left: 20px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 25px 25px;
-
-	&,
-	&--clear {
-		cursor: pointer;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
 
 	&--delete {
-		background-image: url( ../images/trash_darkgray.svg );
+		.cdx-mixin-css-icon( @cdx-icon-trash, @color-subtle, @size-150 );
 	}
 
 	&--swap {
-		background-image: url( ../images/switch.svg );
+		.cdx-mixin-css-icon( @cdx-icon-table-move-row-after, @color-subtle, @size-150 );
 	}
 
 	&--add {
-		background-image: url( ../images/plus_darkgray.svg );
+		.cdx-mixin-css-icon( @cdx-icon-add, @color-subtle, @size-150 );
 	}
 
 	&--clear {
+		cursor: pointer;
 		position: absolute;
-		background: transparent;
-		/* @embed */
-		background-image: url( ../images/clear.svg );
-		background-size: contain;
-		height: 16px;
-		width: 16px;
+		.cdx-mixin-css-icon( @cdx-icon-clear, @color-subtle, @size-icon-small );
 		top: 5px;
 		right: 10px;
 		border: 0;
