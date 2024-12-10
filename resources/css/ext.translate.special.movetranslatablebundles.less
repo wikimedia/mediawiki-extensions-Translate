@@ -1,5 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 .mw-translate-leave-redirect > span:first-child {
-	background-image: url( ../images/articleRedirect-ltr.svg );
-	padding-left: 24px;
-	background-repeat: no-repeat;
+	.cdx-mixin-css-icon( @cdx-icon-article-redirect, currentColor );
 }
