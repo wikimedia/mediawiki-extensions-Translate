@@ -6,6 +6,9 @@
  * @license GPL-2.0-or-later
  */
 
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 /* Hide the page title to give more space for the content */
 #firstHeading {
 	display: none;
@@ -20,15 +23,18 @@
 }
 
 .tsb-container.grid .search.pane {
-	background: no-repeat scroll left top transparent;
-	background-image: /* @embed */ url( ../images/search.svg );
-	background-size: 22px;
-	padding-left: 30px;
-	background-position-y: 10px;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+
+	&::before {
+		content: '';
+		.cdx-mixin-css-icon( @cdx-icon-search, @color-subtle, @size-icon-medium );
+		width: @size-200;
+	}
 
 	input[ type='search' ] {
 		box-sizing: border-box;
-		margin-top: 7px;
 	}
 }
 
