@@ -1,3 +1,6 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
 .mw-translate-smg-change {
 	padding-bottom: 1em;
 	margin-bottom: 2em;
@@ -27,23 +30,22 @@
 
 	.smg-rename-actions {
 		border: 0;
-		background: transparent url( ../images/ellipsis.svg ) center center no-repeat;
 		padding: 0;
-		width: 32px;
-		min-height: 32px;
 		cursor: pointer;
 		position: absolute;
 		top: 5px;
 		right: 0;
 
-		/** Added to override hover style added by Timeless */
-		&:hover {
-			background-color: transparent;
+		// In order to make the background styling for `.loading` work correctly
+		&:not( .loading ) {
+			.cdx-mixin-css-icon( @cdx-icon-ellipsis );
 		}
 
 		&.loading {
 			background: transparent url( ../images/loading.gif ) center center no-repeat;
 			background-size: 90%;
+			width: @size-icon-medium;
+			height: @size-icon-medium;
 		}
 	}
 
