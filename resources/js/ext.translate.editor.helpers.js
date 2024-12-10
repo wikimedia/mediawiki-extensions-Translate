@@ -498,7 +498,7 @@
 				$source.addClass( 'tux-translation-aid-disabled' );
 				return;
 			}
-			var inserter = function () {
+			const inserter = () => {
 				var selection;
 				if ( window.getSelection ) {
 					selection = window.getSelection().toString();
@@ -510,6 +510,11 @@
 					$target.val( suggestion ).trigger( 'focus' ).trigger( 'input' );
 				}
 				logger.logClickEvent( 'accept_suggestion', service );
+
+				// Remove all 'tux-suggestion-aid-used' classes on the page, we only need the one
+				// that was most recently clicked.
+				this.$editor.find( '.tux-suggestion-aid-used' ).removeClass( 'tux-suggestion-aid-used' );
+				$source.addClass( 'tux-suggestion-aid-used' );
 			};
 
 			$source.on( 'click', inserter )

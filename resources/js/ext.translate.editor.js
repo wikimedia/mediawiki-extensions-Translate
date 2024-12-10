@@ -4,6 +4,7 @@
 	'use strict';
 
 	var logger = require( 'ext.translate.eventlogginghelpers' );
+	var mtHelpers = require( 'ext.translate.mtHelpers' );
 	/**
 	 * Dictionary of classes that will be used by different types of notices
 	 * TODO: Should probably review and rename these classes in the future to
@@ -227,6 +228,17 @@
 		save: function () {
 			var translateEditor = this;
 
+			logger.logClickEvent(
+				'edit',
+				'publish_translation_button',
+				{
+					// eslint-disable-next-line camelcase
+					target_type: 'message',
+					// eslint-disable-next-line camelcase
+					source_title: translateEditor.message.title
+				}
+			);
+
 			mw.hook( 'mw.translate.editor.beforeSubmit' ).fire( translateEditor.$editor );
 			var translation = translateEditor.$editor.find( '.tux-textarea-translation' ).val();
 			var editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
@@ -263,6 +275,33 @@
 				var editResp = response.edit;
 				if ( editResp.result === 'Success' ) {
 					translateEditor.message.translation = translation;
+
+					if ( logger.isEventLoggingEnabled() ) {
+						var proposedMTText = translateEditor.$editor.find( '.tux-suggestion-aid-used > .suggestiontext' ).text();
+						var mtModificationPercentage = 1;
+
+						if ( proposedMTText ) {
+							var contentDifferencePercentage = mtHelpers.calculateUnmodifiedContent(
+								proposedMTText,
+								translation,
+								translateEditor.message.targetLanguage
+							);
+							mtModificationPercentage = 1 - contentDifferencePercentage;
+						}
+
+						logger.logEvent(
+							'edit',
+							'publish_success',
+							'translation_text',
+							{
+								// eslint-disable-next-line camelcase
+								modification_rate: mtModificationPercentage,
+								// eslint-disable-next-line camelcase
+								source_title: translateEditor.message.title
+							}
+						);
+					}
+
 					translateEditor.onSaveSuccess();
 				} else {
 					translateEditor.onSaveFail( [ mw.msg( 'tux-save-unknown-error' ) ] );
@@ -312,6 +351,16 @@
 
 					errors.push( error.html );
 				}
+
+				logger.logEvent(
+					'edit',
+					'publish_error',
+					'translation_text',
+					{
+						// eslint-disable-next-line camelcase
+						source_title: translateEditor.message.title
+					}
+				);
 
 				// This is placed at the bottom to ensure that the save error appears at the
 				// top of the notices
@@ -938,6 +987,8 @@
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
 					translateEditor.next();
+					// Remove any instances of MT suggestions that were previously clicked.
+					translateEditor.$editor.find( '.tux-suggestion-aid-used' ).removeClass( 'tux-suggestion-aid-used' );
 
 					logger.logClickEvent(
 						'open',

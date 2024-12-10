@@ -656,6 +656,10 @@
 				}
 			]
 		},
+		"ext.translate.mtHelpers": {
+			"localBasePath": "resources/src/ext.translate.mtHelpers",
+			"packageFiles": "index.js"
+		},
 		"ext.translate.parsers": {
 			"scripts": "resources/js/ext.translate.parsers.js",
 			"dependencies": [
@@ -788,6 +792,7 @@
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"ext.translate.eventlogginghelpers",
+				"ext.translate.mtHelpers",
 				"jquery.makeCollapsible",
 				"jquery.textSelection",
 				"mediawiki.Uri",
