@@ -378,7 +378,10 @@ class TranslatablePageMarker {
 		// Clear more caches
 		$title->invalidateCache();
 
-		$this->sendNotifications( $sections, $group, $groupId );
+		if ( !$operation->isFirstMark() ) {
+			// No subscribers if the page is being marked for translation the very first time.
+			$this->sendNotifications( $sections, $group, $groupId );
+		}
 
 		return count( $sections );
 	}
