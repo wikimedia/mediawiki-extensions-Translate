@@ -218,12 +218,14 @@ class MessageWebImporter {
 					$oldTextForDiff = MessageHandle::makeFuzzyString( $old );
 				}
 
-				$oldContent = ContentHandler::makeContent( $oldTextForDiff, $diff->getTitle() );
-				$oldRevision = new MutableRevisionRecord( $diff->getTitle() );
+				// MutableRevisionRecord expects a page that can exist, so use a dummy non-special page.
+				$dummyMainPage = Title::makeTitle( NS_MAIN, 'Some title just for diff' );
+				$oldContent = ContentHandler::makeContent( $oldTextForDiff, $dummyMainPage );
+				$oldRevision = new MutableRevisionRecord( $dummyMainPage );
 				$oldRevision->setContent( SlotRecord::MAIN, $oldContent );
 
-				$newContent = ContentHandler::makeContent( $value, $diff->getTitle() );
-				$newRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $value, $dummyMainPage );
+				$newRevision = new MutableRevisionRecord( $dummyMainPage );
 				$newRevision->setContent( SlotRecord::MAIN, $newContent );
 
 				$diff->setRevisions( $oldRevision, $newRevision );

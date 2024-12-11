@@ -799,12 +799,13 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$diff->setTextLanguage( $sourceLanguage );
 				$diff->setReducedLineNumbers();
 
-				$oldContent = ContentHandler::makeContent( $s->getOldText(), $diff->getTitle() );
-				$oldRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$tpTitle = $page->getTitle();
+				$oldContent = ContentHandler::makeContent( $s->getOldText(), $tpTitle );
+				$oldRevision = new MutableRevisionRecord( $tpTitle );
 				$oldRevision->setContent( SlotRecord::MAIN, $oldContent );
 
-				$newContent = ContentHandler::makeContent( $s->getText(), $diff->getTitle() );
-				$newRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $s->getText(), $tpTitle );
+				$newRevision = new MutableRevisionRecord( $tpTitle );
 				$newRevision->setContent( SlotRecord::MAIN, $newContent );
 
 				$diff->setRevisions( $oldRevision, $newRevision );
@@ -876,10 +877,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 		if ( $markedTag !== null ) {
 			$hasChanges = true;
 			$newTemplate = $operation->getParserOutput()->sourcePageTemplateForDiffs();
-			$oldPage = TranslatablePage::newFromRevision(
-				$page->getTitle(),
-				$markedTag
-			);
+			$tpTitle = $page->getTitle();
+			$oldPage = TranslatablePage::newFromRevision( $tpTitle, $markedTag );
 			$oldTemplate = $this->translatablePageParser
 				->parse( $oldPage->getText() )
 				->sourcePageTemplateForDiffs();
@@ -890,12 +889,12 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$diff = new DifferenceEngine();
 				$diff->setTextLanguage( $sourceLanguage );
 
-				$oldContent = ContentHandler::makeContent( $oldTemplate, $diff->getTitle() );
-				$oldRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$oldContent = ContentHandler::makeContent( $oldTemplate, $tpTitle );
+				$oldRevision = new MutableRevisionRecord( $tpTitle );
 				$oldRevision->setContent( SlotRecord::MAIN, $oldContent );
 
-				$newContent = ContentHandler::makeContent( $newTemplate, $diff->getTitle() );
-				$newRevision = new MutableRevisionRecord( $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $newTemplate, $tpTitle );
+				$newRevision = new MutableRevisionRecord( $tpTitle );
 				$newRevision->setContent( SlotRecord::MAIN, $newContent );
 
 				$diff->setRevisions( $oldRevision, $newRevision );
