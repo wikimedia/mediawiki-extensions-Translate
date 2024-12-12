@@ -225,6 +225,7 @@ class MessageGroupSubscription {
 
 	/**
 	 * Given a group id returns an iterator to the subscribers of that group.
+	 * Returns an EmptyIterator if there are no subscribers
 	 * @return Iterator<UserIdentity>
 	 */
 	public function getGroupSubscribers( string $groupId ): Iterator {

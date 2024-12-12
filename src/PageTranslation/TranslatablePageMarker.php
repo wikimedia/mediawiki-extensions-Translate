@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use EmptyIterator;
 use JobQueueGroup;
 use LogicException;
 use ManualLogEntry;
@@ -378,10 +379,7 @@ class TranslatablePageMarker {
 		// Clear more caches
 		$title->invalidateCache();
 
-		if ( !$operation->isFirstMark() ) {
-			// No subscribers if the page is being marked for translation the very first time.
-			$this->sendNotifications( $sections, $group, $groupId );
-		}
+		$this->sendNotifications( $sections, $group, $groupId, $operation->isFirstMark() );
 
 		return count( $sections );
 	}
@@ -554,14 +552,31 @@ class TranslatablePageMarker {
 	 * @param TranslationUnit[] $sections
 	 * @param WikiPageMessageGroup $group
 	 * @param string $groupId
+	 * @param bool $isFirstMark
 	 */
-	public function sendNotifications( array $sections, WikiPageMessageGroup $group, string $groupId ): void {
+	public function sendNotifications(
+		array $sections,
+		WikiPageMessageGroup $group,
+		string $groupId,
+		bool $isFirstMark
+	): void {
 		$changedMessages = array_filter( $sections, static function ( $section ) {
 			return $section->type !== 'old';
 		} );
 
 		if ( !$changedMessages ) {
 			return;
+		}
+
+		if ( $isFirstMark ) {
+			$subscribers = $this->messageGroupSubscription->getGroupSubscribers( $groupId );
+			if ( $subscribers instanceof EmptyIterator ) {
+				// A non-translatable page may have subscribers if it was marked for translation before, or
+				// if it was subscribed to from Special:ManageMessageGroupSubscriptions/raw.
+				// This page is being marked for the first time, and has no subscribers, so no need to
+				// send notifications
+				return;
+			}
 		}
 
 		$code = $group->getSourceLanguage();
