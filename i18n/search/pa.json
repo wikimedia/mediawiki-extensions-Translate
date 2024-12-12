@@ -6,11 +6,22 @@
 	},
 	"searchtranslations": "ਤਰਜਮੇ ਖੋਜੋ",
 	"tux-sst-edit": "ਤਰਜਮੇ ਸੋਧੋ",
+	"tux-sst-view-foreign": "$1 ਉੱਤੇ ਵੇਖੋ",
 	"tux-sst-search": "ਲੱਭੋ",
 	"tux-sst-search-ph": "ਤਰਜਮੇ ਖੋਜੋ",
+	"tux-sst-count": "{{PLURAL:$1| ਇੱਕ ਨਤੀਜਾ ਮਿਲਿਆ | $1 ਨਤੀਜੇ ਮਿਲੇ}}",
+	"tux-sst-facet-language": "ਬੋਲੀਆਂ",
+	"tux-sst-facet-group": "ਸੁਨੇਹੇ ਦੀ ਟੋਲੀ",
+	"tux-sst-nosolr-body": "ਇਸ ਵਿਕੀ ਵਿੱਚ ਉਲਥਾ ਖੋਜ ਸੇਵਾ ਨਹੀਂ ਹੈ।",
+	"tux-sst-next": "ਅਗਲਾ ›",
+	"tux-sst-prev": "‹ ਪਿਛਲਾ",
 	"tux-sst-default": "ਤਰਜਮੇ",
 	"tux-sst-translated": "$1 ਤੋਂ ਤਰਜਮੇ",
+	"tux-sst-untranslated": "$1 ਤੋਂ ਕੋਈ ਤਰਜਮਾ ਨਹੀਂ ਹੈ",
 	"tux-sst-outdated": "$1 ਤੋਂ ਪੁਰਾਣੇ ਤਰਜਮੇ",
 	"tux-sst-ellipsis-untranslated": "ਕੋਈ ਤਰਜਮਾ ਨਹੀਂ",
-	"tux-sst-ellipsis-outdated": "ਪੁਰਾਣੇ ਤਰਜਮੇ"
+	"tux-sst-ellipsis-outdated": "ਪੁਰਾਣੇ ਤਰਜਮੇ",
+	"tux-sst-match-message": "ਕਿਸੇ ਵੀ ਖੋਜ ਸ਼ਬਦਾਂ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਤਰਜਮੇਆਂ ਨੂੰ ਵਿਖਾ ਰਿਹਾ ਹੈ। $1",
+	"tux-sst-error-offset": "ਕੋਈ ਹੋਰ ਖੋਜ ਨਤੀਜੇ ਨਹੀਂ ਦਿਖਾਏ ਜਾ ਸਕਦੇ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਖੋਜ ਨੂੰ ਛੋਟਾ ਕਰੋ।",
+	"tux-sst-error-language": "ਇਸ ਕਿਸਮ ਦੀ ਖੋਜ ਨਾਲ ਇਸ ਭਾਸ਼ਾ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ।"
 }
