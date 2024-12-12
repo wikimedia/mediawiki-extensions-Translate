@@ -14,6 +14,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
+use RuntimeException;
 
 /**
  * Class for pointing to messages, like Title class is for titles.
@@ -164,6 +165,8 @@ class MessageHandle {
 				[
 					'pagename' => $this->getTitle()->getPrefixedText(),
 					'messagegroup' => $groups[0],
+					'exception' => new RuntimeException(),
+					'hasJobBeenScheduled' => $jobHasBeenScheduled
 				]
 			);
 
