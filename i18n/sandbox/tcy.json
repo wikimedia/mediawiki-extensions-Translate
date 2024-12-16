@@ -4,11 +4,12 @@
 			"BHARATHESHA ALASANDEMAJALU",
 			"Ravi Mundkur",
 			"Vishwanatha Badikana",
-			"Vinoda mamatharai"
+			"Vinoda mamatharai",
+			"ChiK"
 		]
 	},
 	"tsb-email-promoted-body": "ಓಯ್{{GENDER:$1|$1}},\n\nಅಭಿನಂದನೆಲು! ಈರ್ ಅನುಮಾದೊ ಮಲ್ತಿನೆನ್ ಯಾನ್ ತೂಯೆ {{SITENAME}} ಬುಕ್ಕೊ ಈರೆಗ್ ಪೂರ್ತಿ ಅನುವಾದೊ ಮಲ್ಪುನ ಹಕ್ಕ್‌ ಕೊರ್ಪೆ.\n\nಈಡೆಗ್ ಬಲೆ {{SITENAME}} ಮುಲ್ತುಡ್ದ್ ಇತ್ತೆ ಅನುವಾದೊ ದುಂಬರಿಪುಲೆ, ಬುಕ್ಕೊ ದಿನೋಲ:\n$2\n\nಸ್ವಾಗತೊ, ಬುಕ್ಕೊ ಈರೆಗ್ ಈರೆನ ಕಾನಿಕೆಗ್ ಸೊಲ್ಮೆಲು!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} ಸಿಬಂದಿ",
-	"tsb-all-languages-button-label": "ಮಾಂತಾ ಬಾಸೆಲೆಡ್",
+	"tsb-all-languages-button-label": "ಮಾತಾ ಬಾಸೆಲು",
 	"tsb-search-requests": "ನಾಡ್‍ಪತ್ತ್‌ನೆದ ಪಲಿತಾಂಸೊಲು",
 	"tsb-accept-button-label": "ಒತ್ತೋನಿ",
 	"tsb-reject-button-label": "ತಿರಸ್ಕಾರ ಮಲ್ಪುಲೆ",
