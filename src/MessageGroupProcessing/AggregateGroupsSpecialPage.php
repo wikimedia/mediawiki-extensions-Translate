@@ -57,33 +57,13 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$this->hasPermission = true;
 		}
 
-		$groupsPreload = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
-		$this->messageGroupMetadata->preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
-
-		$groups = MessageGroups::getAllGroups();
-		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
-		$aggregates = [];
-		$pages = [];
-		foreach ( $groups as $group ) {
-			if ( $this->aggregateGroupManager->supportsAggregation( $group ) ) {
-				$pages[] = $group;
-			} elseif ( $group instanceof AggregateMessageGroup ) {
-				// Filter out AggregateGroups configured in YAML
-				$subgroups = $this->messageGroupMetadata->getSubgroups( $group->getId() );
-				if ( $subgroups !== null ) {
-					$aggregates[] = $group;
-				}
-			}
-		}
-
-		if ( !$pages ) {
+		if ( !$this->aggregateGroupManager->hasGroupsSupportingAggregation() ) {
 			// @todo Use different message
 			$out->addWikiMsg( 'tpt-list-nopages' );
-
 			return;
 		}
 
-		$this->showAggregateGroups( $aggregates );
+		$this->showAggregateGroups( $this->aggregateGroupManager->getAll() );
 	}
 
 	protected function showAggregateGroup( AggregateMessageGroup $group ): string {

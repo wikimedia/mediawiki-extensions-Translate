@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Title\Title;
@@ -137,6 +138,42 @@ class AggregateGroupManager {
 		$remainingSubGroupIds = array_diff( $existingSubGroupIds, $subgroupIds );
 		$this->messageGroupMetadata->setSubgroups( $aggregateGroupId, $remainingSubGroupIds );
 		return array_diff( $existingSubGroupIds, $remainingSubGroupIds );
+	}
+
+	/** Checks if there are any pages that support aggregation */
+	public function hasGroupsSupportingAggregation(): bool {
+		$groups = MessageGroups::getAllGroups();
+		foreach ( $groups as $group ) {
+			if ( $this->supportsAggregation( $group ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Return a list of all Aggregate groups
+	 * @return AggregateMessageGroup[]
+	 */
+	public function getAll(): array {
+		$groupsPreload = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
+		$this->messageGroupMetadata->preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
+
+		$groups = MessageGroups::getAllGroups();
+		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
+		$aggregates = [];
+		foreach ( $groups as $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				// Filter out AggregateGroups configured in YAML
+				$subgroups = $this->messageGroupMetadata->getSubgroups( $group->getId() );
+				if ( $subgroups !== null ) {
+					$aggregates[] = $group;
+				}
+			}
+		}
+
+		return $aggregates;
 	}
 
 	/** @return string[] */
