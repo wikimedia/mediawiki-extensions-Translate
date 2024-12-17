@@ -56,5 +56,6 @@
 	"log-description-translatorsandbox": "Журнал дій користувачів у пісочниці перекладу",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|підвищив|підвищила}} $3 до {{GENDER:$4|перекладача|перекладачки}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|відхилив|відхилила}} запит від «$3» стати перекладачем",
-	"logentry-newusers-tsbpromoted": "Обліковий запис користувача  $3  був  {{GENDER:$2| створений}} шляхом заохочення з пісочниці"
+	"logentry-newusers-tsbpromoted": "Обліковий запис користувача  $3  був  {{GENDER:$2| створений}} шляхом заохочення з пісочниці",
+	"tsb-other-actions": "Вам треба [[Special:TranslationStash|подати якісь тестові переклади]] і щоб їх затвердили, перш ніж редагувати."
 }
