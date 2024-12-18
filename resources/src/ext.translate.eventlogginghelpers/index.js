@@ -2,7 +2,7 @@
 	'use strict';
 
 	const streamName = 'mediawiki.product_metrics.translate_extension';
-	const schemaId = '/analytics/product_metrics/web/base/1.2.0';
+	const schemaId = '/analytics/product_metrics/web/translation/1.0.0';
 	const config = require( './config.json' );
 
 	const eventLoggingHelpers = {
@@ -78,7 +78,7 @@
 				interactionData.action_context = JSON.stringify( actionContext );
 			}
 
-			mw.eventLog.submitInteraction( streamName, schemaId, action, null );
+			mw.eventLog.submitInteraction( streamName, schemaId, action, interactionData );
 		}
 	};
 
