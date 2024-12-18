@@ -16,7 +16,13 @@
 				return;
 			}
 
-			const interactionData = {};
+			const interactionData = {
+				// We are currently not using tranlsation property but it is a required field in
+				// https://gitlab.wikimedia.org/repos/data-engineering/schemas-event-secondary/-/blob/master/jsonschema/analytics/product_metrics/web/translation/1.0.0.yaml?ref_type=heads#L12
+				// Passing an empty object should let this pass validation
+				translation: {}
+			};
+
 			if ( actionSubtype ) {
 				// eslint-disable-next-line camelcase
 				interactionData.action_subtype = actionSubtype;
@@ -48,7 +54,13 @@
 				return;
 			}
 
-			const interactionData = {};
+			const interactionData = {
+				// We are currently not using tranlsation property but it is a required field in
+				// https://gitlab.wikimedia.org/repos/data-engineering/schemas-event-secondary/-/blob/master/jsonschema/analytics/product_metrics/web/translation/1.0.0.yaml?ref_type=heads#L12
+				// Passing an empty object should let this pass validation.
+				translation: {}
+			};
+
 			if ( actionSubtype ) {
 				// eslint-disable-next-line camelcase
 				interactionData.action_subtype = actionSubtype;
