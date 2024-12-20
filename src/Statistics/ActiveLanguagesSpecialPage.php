@@ -269,6 +269,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 			if ( $langAttribute === $translateDocumentationLanguageCode ) {
 				$langAttribute = $this->contentLanguage->getHtmlCode();
+			} else {
+				$langAttribute = LanguageCode::bcp47( $langAttribute );
 			}
 
 			$params = [
