@@ -1092,6 +1092,13 @@
 				"tpt-invalid-group"
 			]
 		},
+		"ext.translate.special.aggregategroups.refresh": {
+			"class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"codexStyleOnly": "true",
+			"codexComponents": [
+				"CdxAccordion"
+			]
+		},
 		"ext.translate.special.importtranslations": {
 			"scripts": "resources/js/ext.translate.special.importtranslations.js"
 		},

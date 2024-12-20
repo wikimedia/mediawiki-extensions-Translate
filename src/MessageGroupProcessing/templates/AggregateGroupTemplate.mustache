@@ -1,0 +1,19 @@
+<details class="cdx-accordion" {{#shouldExpand}}open{{/shouldExpand}}>
+	<summary>
+		<h3 class="cdx-accordion__header">
+			<span class="cdx-accordion__header__title">
+				{{ name }}
+			</span>
+			<span class="cdx-accordion__header__description">
+				{{ description }}
+			</span>
+		</h3>
+	</summary>
+	<div class="cdx-accordion__content">
+		<ol>
+			{{#subGroups}}
+				<li>{{{ labelHtml }}} {{ note }}</li>
+			{{/subGroups}}
+		</ol>
+	</div>
+</details>

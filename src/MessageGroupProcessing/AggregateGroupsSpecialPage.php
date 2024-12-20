@@ -8,6 +8,7 @@ use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
+use MediaWiki\Html\TemplateParser;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Xml\XmlSelect;
 
@@ -26,6 +27,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	private ?XmlSelect $languageSelector = null;
 	private MessageGroupMetadata $messageGroupMetadata;
 	private AggregateGroupManager $aggregateGroupManager;
+	private TemplateParser $templateParser;
 
 	public function __construct(
 		LinkBatchFactory $linkBatchFactory,
@@ -36,6 +38,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->messageGroupMetadata = $messageGroupMetadata;
 		$this->aggregateGroupManager = $aggregateGroupManager;
+		$this->templateParser = new TemplateParser( __DIR__ . '/templates' );
 	}
 
 	protected function getGroupName(): string {
@@ -46,16 +49,21 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$this->setHeaders();
 		$this->addHelpLink( 'Help:Extension:Translate/Page translation administration' );
 
+		// Check permissions
+		if ( $this->getUser()->isAllowed( 'translate-manage' ) ) {
+			$this->hasPermission = true;
+		}
+
+		if ( $this->getRequest()->getBool( 'refresh' ) ) {
+			$this->loadRefreshVersion();
+			return;
+		}
+
 		$out = $this->getOutput();
 		$out->addModuleStyles( [
 			'ext.translate.specialpages.styles',
 			'mediawiki.codex.messagebox.styles',
 		] );
-
-		// Check permissions
-		if ( $this->getUser()->isAllowed( 'translate-manage' ) ) {
-			$this->hasPermission = true;
-		}
 
 		if ( !$this->aggregateGroupManager->hasGroupsSupportingAggregation() ) {
 			// @todo Use different message
@@ -64,6 +72,26 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		}
 
 		$this->showAggregateGroups( $this->aggregateGroupManager->getAll() );
+	}
+
+	private function loadRefreshVersion(): void {
+		$out = $this->getOutput();
+
+		$out->addModuleStyles( [ 'ext.translate.special.aggregategroups.refresh' ] );
+
+		$aggregateGroups = $this->aggregateGroupManager->getAll();
+		if ( $aggregateGroups === [] ) {
+			$out->addHTML(
+				Html::noticeBox(
+					$this->msg( 'tpt-aggregategroup-no-groups' )->escaped(),
+					'tpt-aggregategroup-nogroups'
+				)
+			);
+		}
+
+		foreach ( $aggregateGroups as $aggregateGroup ) {
+			$this->getOutput()->addHTML( $this->getAggregateGroupRefreshHtml( $aggregateGroup ) );
+		}
 	}
 
 	protected function showAggregateGroup( AggregateMessageGroup $group ): string {
@@ -243,15 +271,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		uasort( $subgroups, [ MessageGroups::class, 'groupLabelSort' ] );
 
 		// Avoid potentially thousands of separate database queries from LinkRenderer::makeKnownLink
-		$groupCache = [];
-		$lb = $this->linkBatchFactory->newLinkBatch();
-		foreach ( $subgroups as $group ) {
-			$subGroupId = $group->getId();
-			$groupCache[ $subGroupId ] = $this->aggregateGroupManager->getTargetTitleByGroupId( $subGroupId );
-			$lb->addObj( $groupCache[ $subGroupId ] );
-		}
-		$lb->setCaller( __METHOD__ );
-		$lb->execute();
+		$groupCache = $this->getGroupCache( $subgroups );
 
 		// Add missing invalid group ids back, not returned by getGroupsById
 		foreach ( $subGroupIds as $id ) {
@@ -325,5 +345,59 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 		$languageSelectorLabel = $this->msg( 'tpt-aggregategroup-select-source-language' )->escaped();
 		return $languageSelectorLabel . $selector;
+	}
+
+	private function getAggregateGroupRefreshHtml( AggregateMessageGroup $group ): string {
+		$subGroupIds = $this->messageGroupMetadata->getSubgroups( $group->getId() );
+
+		return $this->templateParser->processTemplate( 'AggregateGroupTemplate', [
+			'name' => $group->getLabel(),
+			'description' => $group->getDescription(),
+			'subGroups' => $this->getSubGroupInfoForTemplate( $subGroupIds ),
+			'shouldExpand' => count( $subGroupIds ) <= 3,
+		] );
+	}
+
+	private function getSubGroupInfoForTemplate( array $subGroupIds ): array {
+		$subGroups = MessageGroups::getGroupsById( $subGroupIds );
+		uasort( $subGroups, [ MessageGroups::class, 'groupLabelSort' ] );
+
+		$groupCache = $this->getGroupCache( $subGroups );
+
+		$subGroupInfo = [];
+		foreach ( $subGroupIds as $id ) {
+			$group = $subGroups[$id] ?? null;
+			if ( $group ) {
+				$text = $this->getLinkRenderer()->makeKnownLink( $groupCache[$group->getId()], $group->getLabel() );
+				$note = htmlspecialchars( MessageGroups::getPriority( $id ) );
+			} else {
+				$text = htmlspecialchars( $id );
+				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escaped();
+			}
+			$subGroupInfo[] = [
+				'labelHtml' => $text,
+				'note' => $note,
+			];
+		}
+
+		return $subGroupInfo;
+	}
+
+	/**
+	 * Adds titles of subgroups into the link cache and execute it to add them to the LinkCache
+	 * to avoid potentially thousands of separate database queries from LinkRenderer::makeKnownLink
+	 */
+	private function getGroupCache( array $subGroups ): array {
+		$groupCache = [];
+		$lb = $this->linkBatchFactory->newLinkBatch();
+		foreach ( $subGroups as $group ) {
+			$subGroupId = $group->getId();
+			$groupCache[$subGroupId] = $this->aggregateGroupManager->getTargetTitleByGroupId( $subGroupId );
+			$lb->addObj( $groupCache[$subGroupId] );
+		}
+		$lb->setCaller( __METHOD__ );
+		$lb->execute();
+
+		return $groupCache;
 	}
 }
