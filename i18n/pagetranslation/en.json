@@ -123,6 +123,7 @@
 	"tpt-aggregategroup-no-groups": "There are currently no aggregate groups on this wiki.",
 	"tpt-aggregategroup-add-new": "Add a new aggregate group",
 	"tpt-aggregategroup-select-source-language": "Custom source language (optional):",
+	"tpt-aggregategroup-language-none": "(None)",
 	"tpt-aggregategroup-new-name": "Name:",
 	"tpt-aggregategroup-new-description": "Description (optional):",
 	"tpt-aggregategroup-remove-confirm": "Are you sure you want to delete this aggregate group?",

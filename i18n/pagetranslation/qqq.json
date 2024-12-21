@@ -153,6 +153,7 @@
 	"tpt-aggregategroup-no-groups": "Message displayed on [[Special:AggregateGroups]] when no aggregate groups are defined.",
 	"tpt-aggregategroup-add-new": "Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-select-source-language": "Label for the optional source language selector input to explicitly define source language in [[Special:AggregateGroups]]",
+	"tpt-aggregategroup-language-none": "Option displayed when no source language is selected for an aggregate group in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-new-name": "Label for the name field in [[Special:AggregateGroups]].\n{{Identical|Name}}",
 	"tpt-aggregategroup-new-description": "Label for the description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
 	"tpt-aggregategroup-remove-confirm": "Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]",

@@ -1092,11 +1092,61 @@
 				"tpt-invalid-group"
 			]
 		},
-		"ext.translate.special.aggregategroups.refresh": {
+		"ext.translate.special.aggregategroups.refresh.nojs": {
 			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"codexStyleOnly": "true",
 			"codexComponents": [
 				"CdxAccordion"
+			]
+		},
+		"ext.translate.special.aggregategroups.refresh": {
+			"class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"dependencies": [
+				"vue"
+			],
+			"messages": [
+				"tpt-aggregategroup-save",
+				"tpt-aggregategroup-close",
+				"tpt-aggregategroup-add-new",
+				"tpt-aggregategroup-add",
+				"tpt-aggregategroup-edit-description",
+				"tpt-aggregategroup-edit-name",
+				"tpt-aggregategroup-remove-confirm",
+				"tpt-aggregategroup-select-source-language",
+				"tpt-aggregategroup-language-none",
+				"tpt-aggregategroup-update",
+				"tpt-aggregategroup-update-cancel",
+				"tpt-aggregategroup-expand-all-groups",
+				"tpt-aggregategroup-collapse-all-groups",
+				"tpt-aggregategroup-expand-group",
+				"tpt-aggregategroup-collapse-group",
+				"tpt-invalid-group"
+			],
+			"packageFiles": [
+				"resources/src/ext.translate.aggregategroups.refresh/init.js",
+				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupsToolboxApp.vue",
+				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDialog.vue",
+				{
+					"name": "resources/src/ext.translate.aggregategroups.refresh/icons.json",
+					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
+					"callbackParam": [
+						"cdxIconAdd",
+						"cdxIconClose"
+					]
+				},
+				{
+					"name": "resources/src/language-map.json",
+					"callback": "MediaWiki\\Extension\\Translate\\HookHandler::getLanguageJson"
+				}
+			],
+			"codexComponents": [
+				"CdxButton",
+				"CdxIcon",
+				"CdxDialog",
+				"CdxField",
+				"CdxTextArea",
+				"CdxTextInput",
+				"CdxSelect"
 			]
 		},
 		"ext.translate.special.importtranslations": {

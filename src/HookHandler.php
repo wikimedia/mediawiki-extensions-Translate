@@ -54,6 +54,7 @@ use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Registration\ExtensionRegistry;
+use MediaWiki\ResourceLoader\Context;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
@@ -985,5 +986,9 @@ class HookHandler implements
 		if ( $this->config->get( 'EnablePageTranslation' ) ) {
 			$tags[] = 'translate-translation-pages';
 		}
+	}
+
+	public static function getLanguageJson( Context $context ): array {
+		return Utilities::getLanguageNames( $context->getLanguage() );
 	}
 }

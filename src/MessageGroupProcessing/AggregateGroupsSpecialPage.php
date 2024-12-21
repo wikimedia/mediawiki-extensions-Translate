@@ -77,7 +77,14 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	private function loadRefreshVersion(): void {
 		$out = $this->getOutput();
 
-		$out->addModuleStyles( [ 'ext.translate.special.aggregategroups.refresh' ] );
+		$out->addModuleStyles( [ 'ext.translate.special.aggregategroups.refresh.nojs' ] );
+
+		// Check permissions
+		if ( $this->hasPermission ) {
+			$out->addModules( 'ext.translate.special.aggregategroups.refresh' );
+		}
+
+		$out->addHTML( Html::element( 'div', [ 'id' => 'ext-translate-aggregategroups-refresh' ] ) );
 
 		$aggregateGroups = $this->aggregateGroupManager->getAll();
 		if ( $aggregateGroups === [] ) {
