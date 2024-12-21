@@ -145,12 +145,18 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			$stats = $this->loadStatistics( $this->target, MessageGroupStats::FLAG_CACHE_ONLY );
 
 			$messageGroupStatsTable = $this->messageGroupStatsTableFactory->newFromContext( $this->getContext() );
+			$group = MessageGroups::getGroup( $this->target );
+			$description = $group ? $group->getDescription( $this->getContext() ) : '';
 			$output = $messageGroupStatsTable->get(
 				$stats,
-				MessageGroups::getGroup( $this->target ),
+				$group,
 				$this->noComplete,
 				$this->noEmpty
 			);
+			// If description is present parse it to HTML and show it above the stats
+			if ( $description ) {
+				$this->getOutput()->addWikiTextAsContent( $description );
+			}
 
 			$incomplete = $messageGroupStatsTable->areStatsIncomplete();
 			if ( $incomplete ) {
