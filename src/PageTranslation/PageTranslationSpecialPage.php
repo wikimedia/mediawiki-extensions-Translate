@@ -31,6 +31,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use MediaWiki\Widget\ToggleSwitchWidget;
 use MediaWiki\Xml\Xml;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
@@ -731,13 +732,31 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
+		$hideUnchangedUnitToggle = '';
+		// Toggle for unchanged translation units
+		if ( array_filter(
+			$operation->getUnits(),
+			static fn ( $unit ) => $unit->type === 'old' && $unit->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID
+		) ) {
+			$hideUnchangedUnitToggle = ( new FieldLayout(
+				new ToggleSwitchWidget( [
+					'name' => 'unchanged-translation-units',
+					'selected' => false
+				] ),
+				[
+					'label' => $this->msg( 'tpt-translate-hide-unchanged-units' )->text(),
+					'align' => 'left',
+				]
+			) )->toString();
+		}
+
 		// Check if there are changed units
+		$requireUpdatesDropdown = '';
 		if ( array_filter(
 			$operation->getUnits(),
 			static fn ( $unit ) => $unit->type === 'changed'
 		) ) {
-			// General Area
-			$dropdown = new FieldLayout(
+			$requireUpdatesDropdown = ( new FieldLayout(
 				new DropdownInputWidget( [
 					'name' => 'unit-fuzzy-selector',
 					'options' => [
@@ -760,13 +779,20 @@ class PageTranslationSpecialPage extends SpecialPage {
 					'label' => $this->msg( 'tpt-fuzzy-select-label' )->text(),
 					'align' => 'left',
 				]
-			);
+			) )->toString();
+		}
+
+		// General area
+		if ( $hideUnchangedUnitToggle !== '' || $requireUpdatesDropdown !== '' ) {
 			$out->addHTML( MessageWebImporter::makeSectionElement(
 				$this->msg( 'tpt-general-area-header' )->text(),
-				'dropdown',
-				$dropdown->toString()
+				'general',
+				$hideUnchangedUnitToggle . $requireUpdatesDropdown
 			) );
 		}
+
+		// Separator
+		$out->addHTML( '<hr>' );
 
 		foreach ( $operation->getUnits() as $s ) {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
@@ -839,7 +865,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$name,
 				$s->type,
 				$text,
-				$lang
+				$lang,
+				$s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ?
+					[ 'mw-tpt-sp-section-type-title' ] :
+					[]
 			) );
 
 			foreach ( $s->getIssues() as $issue ) {

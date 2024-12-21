@@ -49,12 +49,22 @@ function configureDropdownForFuzzySelector( $container ) {
 		$form.toggleClass( 'mw-tpt-hide-custom-fuzzy', $( this ).val() !== 'custom' );
 	} );
 }
+
+function configureHideUnchangedTranslationUnits( $container ) {
+	var $form = $container.find( '.mw-tpt-sp-markform' );
+	$form.find( 'input[name="unchanged-translation-units"]' ).on( 'change', function () {
+		$form.toggleClass( 'mw-tpt-hide-unchanged', $( this ).prop( 'checked' ) );
+	} );
+}
+
 // Init
 $( function () {
 	var $widgets = $( '#mw-translate-SpecialPageTranslation-prioritylangs' );
 
-	configurePostLinks( $( '#mw-content-text' ) );
-	configureDropdownForFuzzySelector( $( '#mw-content-text' ) );
+	var $container = $( '#mw-content-text' );
+	configurePostLinks( $container );
+	configureDropdownForFuzzySelector( $container );
+	configureHideUnchangedTranslationUnits( $container );
 	if ( $widgets.length ) {
 		configureLanguageInput( $( '.mw-tpt-sp-markform' ), $widgets );
 	}

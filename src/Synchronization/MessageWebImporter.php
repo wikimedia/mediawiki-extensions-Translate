@@ -569,15 +569,20 @@ class MessageWebImporter {
 	 * @param string $type Contents of type class.
 	 * @param string $content Contents as raw html.
 	 * @param Language|null $lang The language in which the text is written.
+	 * @param string[] $extraContainerClasses Additional classes to add to the section container
 	 * @return string Section element as html.
 	 */
 	public static function makeSectionElement(
 		string $legend,
 		string $type,
 		string $content,
-		?Language $lang = null
+		?Language $lang = null,
+		array $extraContainerClasses = []
 	): string {
 		$containerParams = [ 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" ];
+		if ( $extraContainerClasses ) {
+			$containerParams[ 'class' ] .= ' ' . implode( ' ', $extraContainerClasses );
+		}
 		$legendParams = [ 'class' => 'mw-tpt-sp-legend' ];
 		$contentParams = [ 'class' => 'mw-tpt-sp-content' ];
 		if ( $lang ) {

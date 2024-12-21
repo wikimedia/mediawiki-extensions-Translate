@@ -52,6 +52,7 @@
 	"tpt-sections-oldnew": "\"New and existing\" refers to the sum of: (a) new translation units in a translatable page, plus (b) the already existing ones from previous version of a translatable page.",
 	"tpt-sections-deleted": "See definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].",
 	"tpt-sections-template": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nThe template used by translations of the translatable page, extracted from the source text. Shown on the translation administration page; a screenshot is available.",
+	"tpt-translate-hide-unchanged-units": "Checkbox for hidding the unchanged translation units",
 	"tpt-action-fuzzy": "See [[mw:Special:MyLanguage/Help:Extension:Translate/Page translation administration#Changing the source text]] for context.",
 	"tpt-badtitle": "Parameters:\n* $1 - page title",
 	"tpt-nosuchpage": "Parameters:\n* $1 - page title",

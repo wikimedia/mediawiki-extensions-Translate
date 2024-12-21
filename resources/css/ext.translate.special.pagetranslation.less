@@ -1,11 +1,17 @@
+@import 'mediawiki.skin.variables.less';
+
 .mw-tpt-sp-section {
-	padding-bottom: 3ex;
+	padding-bottom: 1.5em;
 
 	&-type-old {
 		opacity: 0.65;
 	}
 
-	&-type-dropdown {
+	&-type-general {
+		.mw-tpt-sp-legend {
+			margin-bottom: 1em;
+		}
+
 		& > .mw-tpt-sp-content {
 			padding: unset;
 		}
@@ -34,8 +40,15 @@
 	overflow-wrap: break-word;
 }
 
-.mw-tpt-sp-markform.mw-tpt-hide-custom-fuzzy .mw-tpt-action-field {
-	display: none;
+.mw-tpt-sp-markform {
+	hr {
+		margin-bottom: 1em;
+	}
+
+	&.mw-tpt-hide-custom-fuzzy .mw-tpt-action-field,
+	&.mw-tpt-hide-unchanged .mw-tpt-sp-section-type-old:not( .mw-tpt-sp-section-type-title ) {
+		display: none;
+	}
 }
 
 .mw-tpt-pagelist-item {
@@ -47,7 +60,7 @@
 }
 
 .client-nojs {
-	.mw-tpt-sp-section-type-dropdown,
+	.mw-tpt-sp-section-type-general,
 	.mw-tpt-sp-markform .mw-widgets-pendingTextInputWidget {
 		display: none;
 	}
