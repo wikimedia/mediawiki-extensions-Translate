@@ -166,6 +166,7 @@
 	"tpt-aggregategroup-collapse-all-groups": "Label for link to collapse all groups",
 	"tpt-aggregategroup-expand-group": "Tooltip for button on [[Special:AggregateGroups]] to expand a specific group",
 	"tpt-aggregategroup-collapse-group": "Tooltip for button on [[Special:AggregateGroups]] to collapse a specific group",
+	"tpt-aggregategroup-empty-name": "Error message when an empty aggregate message group name is used",
 	"tpt-invalid-group": "Message when user tries to add an invalid group.\n\n\"group\" refers to \"aggregate group\".",
 	"pt-parse-open": "Error shown after an attempt to mark a page for translation, see [[mw:Special:MyLanguage/Help:Extension:Translate/Page translation administration]] for context.\n\n\"Translation template\" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.\n\nParameters:\n* $1 - translation template\nSee also:\n* {{msg-mw|Pt-parse-close}}",
 	"pt-parse-close": "Error shown after an attempt to mark a page for translation, see [[mw:Special:MyLanguage/Help:Extension:Translate/Page translation administration]] for context.\n\n\"Translation template\" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.\n\nParameters:\n* $1 - translation template\nSee also:\n* {{msg-mw|Pt-parse-open}}",

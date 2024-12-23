@@ -1120,6 +1120,7 @@
 				"tpt-aggregategroup-collapse-all-groups",
 				"tpt-aggregategroup-expand-group",
 				"tpt-aggregategroup-collapse-group",
+				"tpt-aggregategroup-empty-name",
 				"tpt-invalid-group"
 			],
 			"packageFiles": [
@@ -1146,7 +1147,8 @@
 				"CdxField",
 				"CdxTextArea",
 				"CdxTextInput",
-				"CdxSelect"
+				"CdxSelect",
+				"CdxMessage"
 			]
 		},
 		"ext.translate.special.importtranslations": {

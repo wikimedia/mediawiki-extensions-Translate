@@ -4,7 +4,9 @@
 	</cdx-button>
 	<aggregate-group-dialog
 		:visible="showAggregateGroupDialog"
-		@close="showAggregateGroupDialog = false">
+		@close="showAggregateGroupDialog = false"
+		@saved="onAggregateGroupSave"
+	>
 	</aggregate-group-dialog>
 </template>
 
@@ -28,6 +30,11 @@ module.exports = {
 			cdxIconAdd,
 			showAggregateGroupDialog
 		};
+	},
+	methods: {
+		onAggregateGroupSave() {
+			window.location.reload();
+		}
 	}
 };
 </script>
