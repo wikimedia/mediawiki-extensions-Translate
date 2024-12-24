@@ -128,6 +128,7 @@
 	"tpt-aggregategroup-language-none": "(None)",
 	"tpt-aggregategroup-new-name": "Name:",
 	"tpt-aggregategroup-new-description": "Description (optional):",
+	"tpt-aggregategroup-remove-confirm-title": "Delete aggregate group",
 	"tpt-aggregategroup-remove-confirm": "Are you sure you want to delete this aggregate group?",
 	"tpt-aggregategroup-invalid-group": "Group does not exist",
 	"tpt-aggregategroup-edit-name": "Name:",

@@ -1110,10 +1110,12 @@
 			"messages": [
 				"tpt-aggregategroup-save",
 				"tpt-aggregategroup-close",
+				"tpt-aggregategroup-delete",
 				"tpt-aggregategroup-add-new",
 				"tpt-aggregategroup-add",
 				"tpt-aggregategroup-edit-description",
 				"tpt-aggregategroup-edit-name",
+				"tpt-aggregategroup-remove-confirm-title",
 				"tpt-aggregategroup-remove-confirm",
 				"tpt-aggregategroup-select-source-language",
 				"tpt-aggregategroup-language-none",
@@ -1130,6 +1132,7 @@
 				"resources/src/ext.translate.aggregategroups.refresh/init.js",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupsToolboxApp.vue",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDialog.vue",
+				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDeleteDialog.vue",
 				{
 					"name": "resources/src/ext.translate.aggregategroups.refresh/icons.json",
 					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",

@@ -358,6 +358,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$subGroupIds = $this->messageGroupMetadata->getSubgroups( $group->getId() );
 
 		return $this->templateParser->processTemplate( 'AggregateGroupTemplate', [
+			'id' => $group->getId(),
 			'name' => $group->getLabel(),
 			'description' => $group->getDescription(),
 			'subGroups' => $this->getSubGroupInfoForTemplate( $subGroupIds ),

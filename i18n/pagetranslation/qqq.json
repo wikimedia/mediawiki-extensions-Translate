@@ -158,6 +158,7 @@
 	"tpt-aggregategroup-language-none": "Option displayed when no source language is selected for an aggregate group in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-new-name": "Label for the name field in [[Special:AggregateGroups]].\n{{Identical|Name}}",
 	"tpt-aggregategroup-new-description": "Label for the description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
+	"tpt-aggregategroup-remove-confirm-title": "Dialog title when confirming whether the user wants to delete an aggregate group",
 	"tpt-aggregategroup-remove-confirm": "Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-invalid-group": "Show on [[Special:AggregateGroups]] after remove button of a group, if the stored group id does not match any currently known groups.",
 	"tpt-aggregategroup-edit-name": "Label for the edit name field in [[Special:AggregateGroups]].\n{{Identical|Name}}",
