@@ -120,6 +120,7 @@
 	"tpt-aggregategroup-add": "Add",
 	"tpt-aggregategroup-save": "Save",
 	"tpt-aggregategroup-close": "Close",
+	"tpt-aggregategroup-no-groups": "There are currently no aggregate groups on this wiki.",
 	"tpt-aggregategroup-add-new": "Add a new aggregate group",
 	"tpt-aggregategroup-select-source-language": "Custom source language (optional):",
 	"tpt-aggregategroup-new-name": "Name:",

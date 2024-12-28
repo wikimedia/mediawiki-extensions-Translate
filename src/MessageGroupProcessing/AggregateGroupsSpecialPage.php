@@ -176,6 +176,16 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 
 		$out->addHTML( $nojs );
 
+		// Display a message if there are no groups
+		if ( $aggregates === [] ) {
+			$out->addHTML(
+				Html::noticeBox(
+					$this->msg( 'tpt-aggregategroup-no-groups' )->escaped(),
+					'tpt-aggregategroup-nogroups'
+				)
+			);
+		}
+
 		// Add new group if user has permissions
 		if ( $this->hasPermission ) {
 			$out->addHTML(

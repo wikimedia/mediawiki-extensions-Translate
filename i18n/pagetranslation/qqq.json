@@ -150,6 +150,7 @@
 	"tpt-aggregategroup-add": "Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].\n{{Identical|Add}}",
 	"tpt-aggregategroup-save": "Label for the button to save a new aggregate group in [[Special:AggregateGroups]].\n{{Identical|Save}}",
 	"tpt-aggregategroup-close": "Label for the button to close the new aggregate group form on [[Special:AggregateGroups]].\n{{Identical|Close}}",
+	"tpt-aggregategroup-no-groups": "Message displayed on [[Special:AggregateGroups]] when no aggregate groups are defined.",
 	"tpt-aggregategroup-add-new": "Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-select-source-language": "Label for the optional source language selector input to explicitly define source language in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-new-name": "Label for the name field in [[Special:AggregateGroups]].\n{{Identical|Name}}",
