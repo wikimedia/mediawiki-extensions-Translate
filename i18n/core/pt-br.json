@@ -24,7 +24,8 @@
 			"Mariagarbin",
 			"Opraco",
 			"Re demz",
-			"TheEduGobi"
+			"TheEduGobi",
+			"Tuliouel"
 		]
 	},
 	"translate": "Traduzir",
@@ -353,7 +354,7 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgrupo|subgrupos}}",
 	"tux-languageselector": "Traduzir para",
 	"tux-select-target-language": "Idioma de destino para tradução",
-	"tux-watch-group": "Vigiar $1",
+	"tux-watch-group": "Vigiar",
 	"tux-unwatch-group": "Parar de vigiar $1",
 	"tux-subscription-error": "Falha ao atualizar a lista de páginas vigiadas do grupo de mensagens",
 	"tux-tab-all": "Todas",
