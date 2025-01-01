@@ -94,7 +94,7 @@
 	"translate-rcfilters-translations-only-label": "Iwwersetzungsnummraim",
 	"translate-rcfilters-translations-only-desc": "Iwwersetzungen publizéiert op Gruppe vu Messagen",
 	"translate-rcfilters-translations-filter-label": "Net an Iwwersetzungsnummraim",
-	"translate-rcfilters-translations-filter-desc": "All Ännerunge déi keng Iwwersetzunge sinn.",
+	"translate-rcfilters-translations-filter-desc": "Alles ausser Iwwersetzungen, déi u Message-Gruppe geschéckt goufen.",
 	"translate-rcfilters-translations-filter-translation-pages-label": "Keng Iwwersetzungssäiten",
 	"translate-rcfilters-translations-filter-translation-pages-desc": "Alles ausser Ännerung vun Iwwersetzungssäiten.",
 	"translate-rcfilters-translations-site-label": "Systemmessagen",
