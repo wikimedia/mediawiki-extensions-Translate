@@ -23,7 +23,7 @@
 	"tux-sst-prev": "← Anteriores",
 	"tux-sst-default": "Traducións",
 	"tux-sst-translated": "Traducións do $1",
-	"tux-sst-untranslated": "Non hai traducións do $1",
+	"tux-sst-untranslated": "Sen tradución do $1",
 	"tux-sst-outdated": "Traducións obsoletas do $1",
 	"tux-sst-ellipsis-untranslated": "Sen tradución",
 	"tux-sst-ellipsis-outdated": "Traducións obsoletas",

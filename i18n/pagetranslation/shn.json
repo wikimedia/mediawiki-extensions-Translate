@@ -7,8 +7,8 @@
 	},
 	"tpt-languages-nonzero": "$1 (ပိၼ်ႇၽႃႇသႃႇယဝ်ႉ $2%)",
 	"tpt-aggregategroup-edit-description": "ၶေႃႈသပ်းလႅင်း:",
-	"tpt-aggregategroup-update-cancel": "ယုၵ်ႉလိူၵ်ႈ",
-	"pm-cancel-button-label": "ယုၵ်ႉလိူၵ်ႈ",
+	"tpt-aggregategroup-update-cancel": "ယႃႉၶိုၼ်း",
+	"pm-cancel-button-label": "ယႃႉၶိုၼ်း",
 	"pm-on-import-message-text": "လွင်ႈပိၼ်ႇၽႃႇသႃႇၵဝ်ႇ ၼၼ်ႉ လႆႈၼမ်းၶဝ်ႈဝႆႉယဝ်ႉ။ ၸႂ်ႉၵၢၼ်လိူၵ်ႈ ၽိူမ်ႉသႂ်ႇ၊ လႅၵ်ႈလၢႆႈ၊ မွတ်ႇပႅတ်ႈ သေ မႄးငိ ယူႇၼိတ်ႉ လွင်ႈပိၼ်ႇၽႃႇသႃႇ သေ တႃႇသိမ်းဝႆႉၼၼ်ႉ ၼဵၵ်းပၼ်ၼဵၼ် \"{{int:pm-savepages-button-label}}\"။ တွၼ်ႈတႃႇ လူတ်းပႅတ်ႈတႄႉ ၼဵၵ်းပၼ် ၼဵၼ် \"{{int:pm-cancel-button-label}}\" လႄႈ။",
-	"pp-cancel-button-label": "ယုၵ်ႉလိူၵ်ႈ"
+	"pp-cancel-button-label": "ယႃႉၶိုၼ်း"
 }
