@@ -1113,6 +1113,7 @@
 				"tpt-aggregategroup-delete",
 				"tpt-aggregategroup-add-new",
 				"tpt-aggregategroup-add",
+				"tpt-aggregategroup-edit",
 				"tpt-aggregategroup-edit-description",
 				"tpt-aggregategroup-edit-name",
 				"tpt-aggregategroup-remove-confirm-title",
@@ -1126,7 +1127,9 @@
 				"tpt-aggregategroup-expand-group",
 				"tpt-aggregategroup-collapse-group",
 				"tpt-aggregategroup-empty-name",
-				"tpt-invalid-group"
+				"tpt-invalid-group",
+				"tpt-aggregategroup-load-error",
+				"tpt-aggregategroup-not-found"
 			],
 			"packageFiles": [
 				"resources/src/ext.translate.aggregategroups.refresh/init.js",

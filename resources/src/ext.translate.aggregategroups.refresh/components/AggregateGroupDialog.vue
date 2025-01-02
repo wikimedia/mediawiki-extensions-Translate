@@ -1,17 +1,20 @@
 <template>
 	<cdx-dialog
 		:open="visible"
-		:title="$i18n( 'tpt-aggregategroup-add-new' ).text()"
+		:title="dialogTitle"
 		:default-action="defaultAction"
 		:primary-action="primaryAction"
 		@primary="onPrimaryAction"
 		@default="$emit( 'close' )"
 		@update:open="$emit( 'close' )"
 	>
-		<!--
-		FIXME: See if it's possible to wrap the controls including the button in a form tag
-		Button's form attribute can be used to map the button to the form.
-		-->
+		<cdx-message
+			v-if="apiLoadError"
+			type="error"
+			allow-user-dismiss
+		>
+			{{ apiLoadError }}
+		</cdx-message>
 		<cdx-message
 			v-if="apiSaveError"
 			type="error"
@@ -74,16 +77,16 @@ module.exports = {
 		visible: {
 			type: Boolean,
 			required: true
+		},
+		aggregateGroupId: {
+			type: [ String, null ],
+			default: null
 		}
 	},
 	emits: [ 'close', 'saved' ],
 	data() {
 		const defaultAction = {
 			label: this.$i18n( 'tpt-aggregategroup-close' )
-		};
-		const primaryAction = {
-			label: this.$i18n( 'tpt-aggregategroup-save' ),
-			actionType: 'progressive'
 		};
 
 		const languageMenuItems = [ {
@@ -99,7 +102,6 @@ module.exports = {
 
 		return {
 			defaultAction,
-			primaryAction,
 			languageMenuItems,
 			formData: {
 				name: '',
@@ -108,10 +110,51 @@ module.exports = {
 			},
 			inputNameMessages: null,
 			inputNameStatus: 'default',
+			apiLoadError: null,
 			apiSaveError: null
 		};
 	},
+	computed: {
+		dialogTitle() {
+			return this.aggregateGroupId ?
+				mw.msg( 'tpt-aggregategroup-edit' ) : mw.msg( 'tpt-aggregategroup-add-new' );
+		},
+		primaryAction() {
+			return {
+				label: this.$i18n( 'tpt-aggregategroup-save' ),
+				actionType: 'progressive',
+				disabled: !!this.apiLoadError
+			};
+		}
+	},
 	methods: {
+		fetchAggregateGroupInfo( aggregateGroupId ) {
+			const params = {
+				meta: 'messagegroups',
+				mgformat: 'flat',
+				mgprop: 'id|label|description|sourcelanguage',
+				mgroot: aggregateGroupId,
+				formatversion: 2,
+				uselang: mw.config.get( 'wgUserLanguage' )
+			};
+
+			const api = new mw.Api();
+			api.get( params )
+				.done( ( result ) => {
+					const messageGroup = result.query.messagegroups[ 0 ];
+					if ( !messageGroup ) {
+						this.apiLoadError = mw.msg( 'tpt-aggregategroup-not-found' );
+						return;
+					}
+					this.formData.name = messageGroup.label;
+					this.formData.languageCode = messageGroup.sourcelanguage;
+					this.formData.description = messageGroup.description;
+				} )
+				.fail( ( code, data ) => {
+					mw.log.error( 'Error while fetching aggregate group', code, data );
+					this.apiLoadError = mw.msg( 'tpt-aggregategroup-load-error' );
+				} );
+		},
 		onPrimaryAction() {
 			if ( !this.validate() ) {
 				return;
@@ -121,11 +164,15 @@ module.exports = {
 			const api = new mw.Api();
 			const params = {
 				action: 'aggregategroups',
-				do: 'add',
+				do: this.aggregateGroupId ? 'update' : 'add',
 				groupname: this.formData.name,
 				groupdescription: this.formData.description,
 				groupsourcelanguagecode: this.formData.languageCode
 			};
+
+			if ( this.aggregateGroupId ) {
+				params.aggregategroup = this.aggregateGroupId;
+			}
 
 			api.postWithToken( 'csrf', params )
 				.done( () => {
@@ -158,6 +205,7 @@ module.exports = {
 			this.inputNameStatus = 'default';
 			this.inputNameMessages = null;
 			this.apiSaveError = null;
+			this.apiLoadError = null;
 		}
 	},
 	watch: {
@@ -165,6 +213,17 @@ module.exports = {
 			if ( newValue ) {
 				// Dialog is being opened.
 				this.resetErrors();
+			}
+		},
+		aggregateGroupId( newValue ) {
+			if ( newValue ) {
+				this.fetchAggregateGroupInfo( newValue );
+			} else {
+				this.formData = {
+					name: null,
+					description: null,
+					languageCode: null
+				};
 			}
 		}
 	}

@@ -140,6 +140,8 @@
 	"tpt-aggregategroup-expand-group": "expand group",
 	"tpt-aggregategroup-collapse-group": "collapse group",
 	"tpt-aggregategroup-empty-name": "Aggregate message group name cannot be empty",
+	"tpt-aggregategroup-load-error": "There was an error while trying to load aggregate group information.",
+	"tpt-aggregategroup-not-found": "Could not find aggregate group. It may have been deleted.",
 	"tpt-invalid-group": "Invalid group",
 	"pt-parse-open": "Unbalanced &lt;translate> tag.\nTranslation template: <pre>$1</pre>",
 	"pt-parse-close": "Unbalanced &lt;/translate> tag.\nTranslation template: <pre>$1</pre>",
