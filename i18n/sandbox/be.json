@@ -50,5 +50,6 @@
 	"log-description-translatorsandbox": "Журнал дзеянняў з удзельнікамі пясочніцы перакладаў",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|павысіў|павысіла}} $3 да {{GENDER:$4|перакладчыка|перакладчыцы}}.",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|адхіліў|адхіліла}} запыт удзельніка «$3» стаць перакладчыкам",
-	"logentry-newusers-tsbpromoted": "Уліковы запіс $3 быў {{GENDER:$2|створаны}} павышэннем з пясочніцы"
+	"logentry-newusers-tsbpromoted": "Уліковы запіс $3 быў {{GENDER:$2|створаны}} павышэннем з пясочніцы",
+	"tsb-other-actions": "Вам трэба [[Special:TranslationStash|прадставіць некалькі тэставых перакладаў]], якія павінны быць правераны адміністратарам перад праўкай."
 }
