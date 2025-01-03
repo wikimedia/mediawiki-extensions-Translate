@@ -89,11 +89,11 @@ root:
             _type: choice
             _choices:
               1:
-                 _type: array
-                 _children: []
-                 _ignore_extra_keys: true
+                _type: array
+                _children: []
+                _ignore_extra_keys: true
               2:
-                 _type: text
+                _type: text
           keymatch:
             _type: array
             _description: 'Specify the message keys for which this validation should be run. *DEPRECATED*: Use "include" instead'

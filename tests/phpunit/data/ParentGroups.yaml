@@ -59,7 +59,6 @@ BASIC:
 GROUPS:
   - oneparent-twopaths
 
-
 # Test case 3 starts
 ---
 BASIC:
@@ -92,4 +91,3 @@ BASIC:
 
 GROUPS:
   - multilevelnested
-

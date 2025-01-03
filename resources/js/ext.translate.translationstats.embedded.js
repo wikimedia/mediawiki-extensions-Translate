@@ -1,5 +1,4 @@
 'use strict';
-/* eslint-disable no-implicit-globals */
 
 /*!
  * Used to embed translation stats graph on other pages.

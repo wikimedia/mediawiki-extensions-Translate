@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es5",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
@@ -9,8 +9,13 @@
 		"Chart": "readonly",
 		"moment": "readonly"
 	},
+	"parserOptions": {
+		"sourceType": "commonjs"
+	},
 	"rules": {
 		"max-len": "off",
+		"no-var": "off",
+		"prefer-arrow-callback": "off",
 		"no-jquery/no-class-state": "off",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-sizzle": "warn",

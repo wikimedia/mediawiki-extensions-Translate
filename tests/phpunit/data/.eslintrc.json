@@ -1,0 +1,5 @@
+{
+	"rules": {
+		"yml/no-empty-sequence-entry": "off"
+	}
+}

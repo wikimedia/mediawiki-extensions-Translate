@@ -1,5 +1,4 @@
 'use strict';
-/* eslint-disable no-implicit-globals */
 
 /*!
  * Display translation stats via a form.
