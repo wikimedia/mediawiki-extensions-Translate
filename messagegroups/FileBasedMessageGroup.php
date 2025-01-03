@@ -300,4 +300,10 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 
 		return new MessageGroupCache( $this, $code, $cacheFilePath );
 	}
+
+	public function getSourceLanguage(): string {
+		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
+
+		return $conf ?? 'en';
+	}
 }

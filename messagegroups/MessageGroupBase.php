@@ -89,13 +89,6 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	/** @inheritDoc */
-	public function getSourceLanguage() {
-		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
-
-		return $conf ?? 'en';
-	}
-
-	/** @inheritDoc */
 	public function getDefinitions() {
 		$defs = $this->load( $this->getSourceLanguage() );
 

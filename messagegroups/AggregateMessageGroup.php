@@ -178,4 +178,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 		return array_values( array_unique( $keys ) );
 	}
+
+	/** @inheritDoc */
+	public function getSourceLanguage(): string {
+		// Return undetermined language code (und) if no language is defined for the web configured
+		// aggregate group
+		return $this->conf['BASIC']['sourcelanguage'] ?? 'und';
+	}
 }

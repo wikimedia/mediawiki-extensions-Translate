@@ -61,6 +61,7 @@ const {
 	CdxMessage
 } = require( '../../../../codex.js' );
 const supportedLanguages = require( '../../language-map.json' );
+const unselectedLanguageCode = '-';
 
 // @vue/component
 module.exports = {
@@ -92,7 +93,7 @@ module.exports = {
 
 		const languageMenuItems = [ {
 			label: this.$i18n( 'tpt-aggregategroup-language-none' ).text(),
-			value: '-'
+			value: unselectedLanguageCode
 		} ];
 		Object.keys( supportedLanguages ).forEach( ( languageCode ) => {
 			languageMenuItems.push( {
@@ -107,7 +108,7 @@ module.exports = {
 			formData: {
 				name: '',
 				description: '',
-				languageCode: ''
+				languageCode: unselectedLanguageCode
 			},
 			inputNameMessages: null,
 			inputNameStatus: 'default',
@@ -148,7 +149,11 @@ module.exports = {
 						return;
 					}
 					this.formData.name = messageGroup.label;
-					this.formData.languageCode = messageGroup.sourcelanguage;
+					if ( messageGroup.sourcelanguage === 'und' ) {
+						this.formData.languageCode = unselectedLanguageCode;
+					} else {
+						this.formData.languageCode = messageGroup.sourcelanguage;
+					}
 					this.formData.description = messageGroup.description;
 				} )
 				.fail( ( code, data ) => {
@@ -215,9 +220,9 @@ module.exports = {
 				this.fetchAggregateGroupInfo( newValue );
 			} else {
 				this.formData = {
-					name: null,
-					description: null,
-					languageCode: null
+					name: '',
+					description: '',
+					languageCode: unselectedLanguageCode
 				};
 			}
 		}

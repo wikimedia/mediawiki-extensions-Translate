@@ -140,6 +140,7 @@ return [
 	): FileBasedMessageGroupFactory {
 		return new FileBasedMessageGroupFactory(
 			new MessageGroupConfigurationParser(),
+			$services->getContentLanguageCode()->toString(),
 			new ServiceOptions(
 				FileBasedMessageGroupFactory::SERVICE_OPTIONS,
 				$services->getMainConfig()

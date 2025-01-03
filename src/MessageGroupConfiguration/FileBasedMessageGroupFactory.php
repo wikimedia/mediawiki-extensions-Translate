@@ -22,12 +22,15 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 	private MessageGroupConfigurationParser $messageGroupConfigurationParser;
 	/** @var string[] */
 	private array $groupFiles;
+	private string $contentLanguageCode;
 
 	public function __construct(
 		MessageGroupConfigurationParser $messageGroupConfigurationParser,
+		string $contentLanguageCode,
 		ServiceOptions $serviceOptions
 	) {
 		$this->messageGroupConfigurationParser = $messageGroupConfigurationParser;
+		$this->contentLanguageCode = $contentLanguageCode;
 		$serviceOptions->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->groupFiles = $serviceOptions->get( 'TranslateGroupFiles' );
 	}
@@ -87,6 +90,7 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 
 		$groups = [];
 		foreach ( $data['groups'] as $id => $conf ) {
+			$conf['BASIC']['sourcelanguage'] ??= $this->contentLanguageCode;
 			$groups[$id] = MessageGroupBase::factory( $conf );
 		}
 
