@@ -1129,7 +1129,8 @@
 				"tpt-aggregategroup-empty-name",
 				"tpt-invalid-group",
 				"tpt-aggregategroup-load-error",
-				"tpt-aggregategroup-not-found"
+				"tpt-aggregategroup-not-found",
+				"tpt-aggregategroup-disassociate-error"
 			],
 			"packageFiles": [
 				"resources/src/ext.translate.aggregategroups.refresh/init.js",

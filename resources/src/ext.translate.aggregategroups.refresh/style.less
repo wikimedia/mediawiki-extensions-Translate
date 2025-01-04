@@ -12,10 +12,24 @@
 	margin-bottom: @spacing-100;
 }
 
-.mw-translate-aggregategroup-container summary .cdx-button:first-of-type {
-	right: @min-size-interactive-touch;
+.mw-translate-aggregategroup-container {
+	summary .cdx-button:first-of-type {
+		right: @min-size-interactive-touch;
+	}
+
+	.cdx-aggregate-group-subgroup-delete {
+		margin-inline-start: @size-12;
+		vertical-align: middle;
+	}
+
+	.cdx-aggregate-group-subgroup-icon--delete {
+		.cdx-mixin-css-icon( @cdx-icon-trash, @param-is-button-icon: true );
+	}
 }
 
-html.client-nojs .mw-translate-aggregategroup-container summary .cdx-button {
-	display: none;
+html.client-nojs .mw-translate-aggregategroup-container {
+	summary .cdx-button,
+	.cdx-aggregate-group-subgroup-icon--delete {
+		display: none;
+	}
 }

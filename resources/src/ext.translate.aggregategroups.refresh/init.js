@@ -110,9 +110,56 @@ function addEditAction() {
 	}
 }
 
+function addDeleteSubGroupAction() {
+	// Avoid adding too many click handlers by adding the handler to the accordion
+	// and then determining if the delete button was clicked.
+	const accordionContentOrderedList =
+		document.querySelectorAll( '.cdx-accordion__content ol' );
+	accordionContentOrderedList.forEach( ( element ) => {
+		element.addEventListener( 'click', onAccordionContentClick );
+	} );
+
+	function onAccordionContentClick( event ) {
+		const deleteButton = event.target.closest( '.js-button-subgroup-delete' );
+		if ( !deleteButton ) {
+			return;
+		}
+
+		const aggregateGroupId = getParentGroupId( deleteButton );
+		const listItem = deleteButton.closest( 'li' );
+		const subGroupId = listItem.dataset.groupId;
+		removeGroupItem( aggregateGroupId, subGroupId )
+			.then( () => listItem.remove() )
+			.catch( ( code, data ) => {
+				mw.log.error(
+					`Dissociating '${ deleteButton.dataset.groupId }' from '${ aggregateGroupId }' failed`,
+					code,
+					data
+				);
+				mw.notify(
+					data.error && data.error.info || mw.msg( 'tpt-aggregategroup-disassociate-error' ),
+					{ type: 'error' }
+				);
+			} );
+	}
+}
+
 function getParentGroupId( element ) {
 	return element.closest( 'details.cdx-accordion' ).dataset.groupId;
 }
 
+function removeGroupItem( aggregateGroupId, groupId ) {
+	const api = new mw.Api();
+	const params = {
+		action: 'aggregategroups',
+		do: 'dissociate',
+		group: groupId,
+		aggregategroup: aggregateGroupId
+	};
+
+	return api.postWithToken( 'csrf', params );
+}
+
 addDeleteAction();
 addEditAction();
+addDeleteSubGroupAction();

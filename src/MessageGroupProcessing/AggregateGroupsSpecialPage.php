@@ -365,6 +365,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			'shouldExpand' => count( $subGroupIds ) <= 3,
 			'editLabel' => $this->msg( 'tpt-aggregategroup-edit' ),
 			'deleteLabel' => $this->msg( 'tpt-aggregategroup-delete' ),
+			'removeItemLabel' => $this->msg( 'tpt-aggregategroup-remove-item' )->text(),
 			'hasManageRights' => $this->hasPermission,
 		] );
 	}
@@ -386,6 +387,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 				$note = $this->msg( 'tpt-aggregategroup-invalid-group' )->escaped();
 			}
 			$subGroupInfo[] = [
+				'id' => $id,
 				'labelHtml' => $text,
 				'note' => $note,
 			];
