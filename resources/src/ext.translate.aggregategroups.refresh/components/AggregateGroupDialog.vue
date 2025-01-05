@@ -73,6 +73,7 @@ module.exports = {
 		CdxSelect,
 		CdxMessage
 	},
+	inject: [ 'aggregateGroupApi' ],
 	props: {
 		visible: {
 			type: Boolean,
@@ -161,20 +162,14 @@ module.exports = {
 			}
 
 			this.apiSaveError = null;
-			const api = new mw.Api();
-			const params = {
-				action: 'aggregategroups',
-				do: this.aggregateGroupId ? 'update' : 'add',
-				groupname: this.formData.name,
-				groupdescription: this.formData.description,
-				groupsourcelanguagecode: this.formData.languageCode
-			};
-
+			let apiPromise;
 			if ( this.aggregateGroupId ) {
-				params.aggregategroup = this.aggregateGroupId;
+				apiPromise = this.aggregateGroupApi.update( this.aggregateGroupId, this.formData );
+			} else {
+				apiPromise = this.aggregateGroupApi.add( this.formData );
 			}
 
-			api.postWithToken( 'csrf', params )
+			apiPromise
 				.done( () => {
 					this.resetErrors();
 					this.$emit( 'saved' );

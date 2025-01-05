@@ -29,6 +29,7 @@ module.exports = {
 		CdxDialog,
 		CdxMessage
 	},
+	inject: [ 'aggregateGroupApi' ],
 	props: {
 		visible: {
 			type: Boolean,
@@ -60,20 +61,13 @@ module.exports = {
 		onPrimaryAction() {
 			this.apiSaveError = null;
 
-			// Delete the aggregate group
-			const api = new mw.Api();
-			api.postWithToken( 'csrf', {
-				action: 'aggregategroups',
-				do: 'remove',
-				aggregategroup: this.aggregateGroupId
-			} ).done( () => {
-				this.$emit( 'deleted' );
-			} ).fail( ( code, data ) => {
-				// data.error && data.error.info
-				this.apiSaveError = data.error && data.error.info;
-			} );
+			this.aggregateGroupApi.remove( this.aggregateGroupId )
+				.done( () => this.$emit( 'deleted' ) )
+				.fail( ( code, data ) => {
+					this.apiSaveError = data.error && data.error.info;
+				} );
 		},
-		onDefaultAction: function () {
+		onDefaultAction() {
 			this.apiSaveError = null;
 			this.$emit( 'close' );
 		}

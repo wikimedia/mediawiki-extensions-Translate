@@ -1137,6 +1137,7 @@
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupsToolboxApp.vue",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDialog.vue",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDeleteDialog.vue",
+				"resources/src/services/aggregategroup.api.factory.js",
 				{
 					"name": "resources/src/ext.translate.aggregategroups.refresh/icons.json",
 					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",

@@ -2,9 +2,12 @@ const Vue = require( 'vue' );
 const App = require( './components/AggregateGroupsToolboxApp.vue' );
 const DeleteDialogApp = require( './components/AggregateGroupDeleteDialog.vue' );
 const AggregateGroupDialog = require( './components/AggregateGroupDialog.vue' );
+const createAggregateGroupApiFactory = require( '../services/aggregategroup.api.factory.js' );
 
-Vue.createMwApp( App )
-	.mount( '#ext-translate-aggregategroups-refresh' );
+const aggregateGroupApi = createAggregateGroupApiFactory();
+const aggregateGroupsManageApp = Vue.createMwApp( App );
+aggregateGroupsManageApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+aggregateGroupsManageApp.mount( '#ext-translate-aggregategroups-refresh' );
 
 /**
  * Adds the delete click handler, and loads the AggregateGroupDeleteDialog component in order to
@@ -52,6 +55,7 @@ function addDeleteAction() {
 	const div = document.createElement( 'div' );
 	document.querySelector( '#ext-translate-aggregategroups-refresh' )
 		.insertAdjacentElement( 'afterend', div );
+	vmDeleteDialogApp.provide( 'aggregateGroupApi', aggregateGroupApi );
 	vmDeleteDialogApp.mount( div );
 
 	function onDeleteClick( event ) {
@@ -102,6 +106,7 @@ function addEditAction() {
 	const div = document.createElement( 'div' );
 	document.querySelector( '#ext-translate-aggregategroups-refresh' )
 		.insertAdjacentElement( 'afterend', div );
+	vmEditDialogApp.provide( 'aggregateGroupApi', aggregateGroupApi );
 	vmEditDialogApp.mount( div );
 
 	function onEditClick( event ) {
@@ -128,11 +133,11 @@ function addDeleteSubGroupAction() {
 		const aggregateGroupId = getParentGroupId( deleteButton );
 		const listItem = deleteButton.closest( 'li' );
 		const subGroupId = listItem.dataset.groupId;
-		removeGroupItem( aggregateGroupId, subGroupId )
+		aggregateGroupApi.removeMessageGroup( aggregateGroupId, subGroupId )
 			.then( () => listItem.remove() )
 			.catch( ( code, data ) => {
 				mw.log.error(
-					`Dissociating '${ deleteButton.dataset.groupId }' from '${ aggregateGroupId }' failed`,
+					`Dissociating '${ subGroupId }' from '${ aggregateGroupId }' failed`,
 					code,
 					data
 				);
@@ -146,18 +151,6 @@ function addDeleteSubGroupAction() {
 
 function getParentGroupId( element ) {
 	return element.closest( 'details.cdx-accordion' ).dataset.groupId;
-}
-
-function removeGroupItem( aggregateGroupId, groupId ) {
-	const api = new mw.Api();
-	const params = {
-		action: 'aggregategroups',
-		do: 'dissociate',
-		group: groupId,
-		aggregategroup: aggregateGroupId
-	};
-
-	return api.postWithToken( 'csrf', params );
 }
 
 addDeleteAction();
