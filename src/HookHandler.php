@@ -749,7 +749,7 @@ class HookHandler implements
 			$title->isSpecial( 'SearchTranslations' )
 		) {
 			$user = $out->getUser();
-			$vars['TranslateRight'] = $user->isAllowed( 'translate' );
+			$vars['TranslateRight'] = $user->isAllowedAll( 'translate', 'edit' );
 			$vars['TranslateMessageReviewRight'] = $user->isAllowed( 'translate-messagereview' );
 			$vars['DeleteRight'] = $user->isAllowed( 'delete' );
 			$vars['TranslateManageRight'] = $user->isAllowed( 'translate-manage' );
