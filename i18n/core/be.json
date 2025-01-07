@@ -344,8 +344,8 @@
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|падгрупа|падгрупы|падгрупаў}}",
 	"tux-languageselector": "Перакласці на:",
 	"tux-select-target-language": "Мэтавая мова для перакладу",
-	"tux-watch-group": "Назіраць за групай $1",
-	"tux-unwatch-group": "Спыніць назіранне за групай $1",
+	"tux-watch-group": "Назіраць за групай",
+	"tux-unwatch-group": "Спыніць назіранне за групай",
 	"tux-subscription-error": "Не ўдалося абнавіць спіс назірання за групамі паведамленняў",
 	"tux-tab-all": "Усе",
 	"tux-tab-untranslated": "Неперакладзеныя",
@@ -474,7 +474,8 @@
 	"echo-category-title-translate-message-group-subscription": "Падпіскі на групы пераклады паведамленняў",
 	"echo-pref-tooltip-translate-message-group-subscription": "Апавяшчаць мяне аб зменах у групах перакладу паведамленняў, на якія ў мяне ёсць падпіска",
 	"notification-header-message-group-subscription": "Абнаўленні перакладу ў $1",
-	"notification-body-translate-mgs-message-added": "Дададзена $1 {{PLURAL:$1|паведамленне|паведамленні|паведамленняў}}",
+	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|новае ці абноўленае паведамленне|новых ці абноўленых паведамленні|новых ці абноўленых паведамленняў}}",
 	"notification-link-mgs-group-translate": "Перакласці $1",
-	"tpt-cleanchanges-language": "Мова:"
+	"tpt-cleanchanges-language": "Мова:",
+	"tpt-cleanchanges-language-na": "Усе"
 }
