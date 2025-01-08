@@ -98,6 +98,7 @@
 	"translate-smg-group-message-action-history": "Historjá",
 	"translate-smg-group-message-tag-outdated": "Puárásmum",
 	"translate-smg-group-message-message-other-langs": "Eres kielah:",
+	"translate-smg-loading": "Luođiimin...",
 	"translate-import-load": "Luođii tiätuvuárhá",
 	"translate-gs-code": "Koodi",
 	"translate-documentation-language": "jurgâlemravvuuh",
@@ -146,6 +147,7 @@
 	"tux-editor-message-tools-history": "Historjá",
 	"tux-editor-message-tools-delete": "Siho",
 	"tux-editor-message-tools-translations": "Puoh jurgâlusah",
+	"tux-editor-loading": "Luođiimin...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|kielâ|kielâ|kielâ|kiellâd}} lase",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|eres juávkku|eres juávhu|eres juávhu|eres juávkkud}}",
 	"specialpages-group-translation": "Jurgâlus"
