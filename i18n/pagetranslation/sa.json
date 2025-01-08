@@ -3,6 +3,7 @@
 		"authors": [
 			"Ansumang",
 			"NehalDaveND",
+			"Sanjay pande",
 			"Shubha"
 		]
 	},
@@ -15,6 +16,7 @@
 	"tpt-tab-translate": "अनूद्यताम्",
 	"tpt-aggregategroup-add": "योज्यताम्",
 	"tpt-aggregategroup-save": "रक्ष्यताम्",
+	"tpt-aggregategroup-no-groups": "अस्मिन् विकि-मध्ये सम्प्रति समुच्चयसमूहाः नास्ति ।",
 	"tpt-aggregategroup-new-name": "नाम :",
 	"tpt-aggregategroup-new-description": "विवरणम् (ऐच्छिकम्)",
 	"tpt-aggregategroup-edit-name": "नाम :",
