@@ -1,0 +1,17 @@
+@import 'mediawiki.skin.variables.less';
+
+.cdx-aggregate-group-icon--delete {
+	.cdx-mixin-css-icon( @cdx-icon-trash, @param-is-button-icon: true );
+}
+
+.cdx-aggregate-group-icon--edit {
+	.cdx-mixin-css-icon( @cdx-icon-edit, @param-is-button-icon: true );
+}
+
+.mw-translate-aggregategroup-container summary .cdx-button:first-of-type {
+	right: @min-size-interactive-touch;
+}
+
+html.client-nojs .mw-translate-aggregategroup-container summary .cdx-button {
+	display: none;
+}

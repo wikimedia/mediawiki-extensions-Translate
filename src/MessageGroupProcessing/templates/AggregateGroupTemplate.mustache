@@ -1,5 +1,5 @@
-<details class="cdx-accordion" {{#shouldExpand}}open{{/shouldExpand}}>
-	<summary>
+<details class="cdx-accordion mw-translate-aggregategroup-container" {{#shouldExpand}}open{{/shouldExpand}}>
+	<summary {{#hasManageRights}}class="cdx-accordion--has-icon"{{/hasManageRights}}>
 		<h3 class="cdx-accordion__header">
 			<span class="cdx-accordion__header__title">
 				{{ name }}
@@ -8,6 +8,20 @@
 				{{ description }}
 			</span>
 		</h3>
+		{{#hasManageRights}}
+		<button
+			class="cdx-button cdx-button--icon-only cdx-button--size-large cdx-accordion__action cdx-button--action-progressive cdx-button--weight-quiet"
+			aria-label="{{ editLabel }}"
+		>
+			<span class="cdx-button__icon cdx-aggregate-group-icon--edit"></span>
+		</button>
+		<button
+			class="cdx-button cdx-button--icon-only cdx-button--size-large cdx-accordion__action cdx-button--action-destructive cdx-button--weight-quiet"
+			aria-label="{{ deleteLabel }}"
+		>
+			<span class="cdx-button__icon cdx-aggregate-group-icon--delete"></span>
+		</button>
+		{{/hasManageRights}}
 	</summary>
 	<div class="cdx-accordion__content">
 		<ol>

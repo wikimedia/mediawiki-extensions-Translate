@@ -149,6 +149,8 @@
 	"aggregategroups": "{{doc-special|AggregateGroups}}",
 	"tpt-aggregategroup-add": "Label for the button to add a new page to aggregate group in [[Special:AggregateGroups]].\n{{Identical|Add}}",
 	"tpt-aggregategroup-save": "Label for the button to save a new aggregate group in [[Special:AggregateGroups]].\n{{Identical|Save}}",
+	"tpt-aggregategroup-edit": "Label for the edit aggregate group icon button in [[Special:AggregateGroupsRefresh]].",
+	"tpt-aggregategroup-delete": "Label for the delete aggregate group icon button in [[Special:AggregateGroupsRefresh]].",
 	"tpt-aggregategroup-close": "Label for the button to close the new aggregate group form on [[Special:AggregateGroups]].\n{{Identical|Close}}",
 	"tpt-aggregategroup-no-groups": "Message displayed on [[Special:AggregateGroups]] when no aggregate groups are defined.",
 	"tpt-aggregategroup-add-new": "Label for the link that gives a form to enter new group details in [[Special:AggregateGroups]]",

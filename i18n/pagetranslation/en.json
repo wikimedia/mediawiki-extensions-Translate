@@ -119,6 +119,8 @@
 	"aggregategroups": "Aggregate groups",
 	"tpt-aggregategroup-add": "Add",
 	"tpt-aggregategroup-save": "Save",
+	"tpt-aggregategroup-edit": "Edit aggregate group",
+	"tpt-aggregategroup-delete": "Delete aggregate group",
 	"tpt-aggregategroup-close": "Close",
 	"tpt-aggregategroup-no-groups": "There are currently no aggregate groups on this wiki.",
 	"tpt-aggregategroup-add-new": "Add a new aggregate group",
