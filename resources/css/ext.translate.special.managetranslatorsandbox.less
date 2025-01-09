@@ -16,7 +16,7 @@
 
 .filter.pane,
 .tsb-container .search.pane {
-	border-bottom: 1px solid #575656;
+	border-bottom: @border-width-base @border-style-base @border-color-interactive;
 	height: 2em;
 	line-height: 50px;
 	font-size: 24px;
@@ -42,18 +42,18 @@
 	font-size: 14px;
 	height: 28px;
 	width: 100%;
-	border: 1px solid #c9c9c9;
+	border: @border-subtle;
 	padding: 0 5px;
 }
 
 .tsb-body {
-	border: 1px solid #c9c9c9;
+	border: @border-subtle;
 	border-top: 0;
 }
 
 .requests.pane,
 .details.pane {
-	border-top: 1px solid #d3d2d2;
+	border-top: @border-width-base @border-style-base @border-color-muted;
 }
 
 .requests.pane .requests-list,
@@ -63,8 +63,8 @@
 
 .details.pane {
 	.grid & {
-		border-left: 1px solid #ddd;
-		left: -1px;
+		border-left: @border-width-base @border-style-base @border-color-muted;
+		left: @position-offset-border-width-base;
 		padding: 5px 20px 10px 20px;
 	}
 
@@ -78,7 +78,7 @@
 	}
 
 	.reminder-email {
-		color: #6c6d70;
+		color: @color-subtle;
 		font-size: 14px;
 		padding-top: 15px;
 
@@ -89,9 +89,8 @@
 	}
 
 	.languages {
-		color: #6c6d70;
+		color: @color-subtle;
 		font-size: 16px;
-		font-weight: lighter;
 		padding-top: 10px;
 
 		span {
@@ -104,7 +103,7 @@
 		/* Make the buttons sticky to reduce the need to scroll back to top */
 		position: sticky;
 		top: -5px;
-		z-index: 1;
+		z-index: @z-index-above-content;
 		padding-bottom: 15px;
 
 		button {
@@ -123,8 +122,8 @@
 }
 
 .request {
-	border-right: 1px solid #c9c8c8;
-	border-bottom: 1px solid #c9c8c8;
+	border-right: @border-subtle;
+	border-bottom: @border-subtle;
 	cursor: pointer;
 
 	&:last-child {
@@ -132,18 +131,17 @@
 	}
 
 	&:hover {
-		background-color: #fafafa;
+		background-color: @background-color-interactive-subtle--hover;
 	}
 
 	&.selected {
-		background-color: #f0f0f0;
+		background-color: @background-color-interactive-subtle--active;
 	}
 
 	.grid & .amount {
 		height: 100%;
 		font-size: 3em;
-		color: #96989a;
-		background-color: #f7f8f8;
+		color: @color-subtle;
 		padding: 20px 5px;
 		text-align: center;
 	}
@@ -160,7 +158,7 @@
 		height: 20px;
 		line-height: 20px;
 		font-size: 12px;
-		color: #6c6d70;
+		color: @color-subtle;
 		white-space: nowrap;
 	}
 
@@ -182,36 +180,36 @@
 }
 
 .tsb-details-no-translations {
-	color: #72777d;
+	color: @color-subtle;
 }
 
 .signup-comment-label {
-	color: #e85355;
+	color: @color-destructive;
 	font-size: 14px;
 }
 
 .signup-comment-text {
-	color: #222;
+	color: @color-base;
 	font-size: 16px;
 	line-height: 1.5em;
 	padding: 5px 0;
 }
 
 .request-header {
-	color: #72777d;
-	border-right: 1px solid #c9c9c9;
-	border-bottom: 1px solid #aaa;
+	color: @color-subtle;
+	border-right: @border-subtle;
+	border-bottom: @border-base;
 	line-height: 40px;
-	background-color: #f8f8f8;
+	background-color: @background-color-interactive-subtle;
 }
 
 .request-footer {
-	color: #72777d;
-	border-right: 1px solid #c9c9c9;
-	border-top: 1px solid #aaa;
+	color: @color-subtle;
+	border-right: @border-subtle;
+	border-top: @border-base;
 	line-height: 40px;
 	padding: 0 5px;
-	background-color: #f8f8f8;
+	background-color: @background-color-interactive-subtle;
 
 	.selected-counter,
 	.older-requests-indicator {
@@ -225,8 +223,8 @@
 .language-selector {
 	margin: 10px 0;
 	border-radius: 3px;
-	background: #f8f8f8;
-	border: 1px solid #ccc;
+	background: @background-color-interactive-subtle;
+	border: @border-subtle;
 	cursor: pointer;
 	font-size: 1em;
 	display: block;
@@ -250,12 +248,12 @@
 	}
 
 	&:hover {
-		border-color: #aaa;
+		border-color: @border-color-base;
 	}
 
 	&.unselected::after {
 		content: '';
-		border-top: 4px solid #aaa;
+		border-top: 4px solid @border-color-base;
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
 		display: inline-block;
@@ -270,7 +268,7 @@ textarea.body {
 
 .translations {
 	.row {
-		border-bottom: 1px solid #c9c8c8;
+		border-bottom: @border-subtle;
 		padding: 10px;
 		font-size: 16px;
 		overflow-wrap: anywhere;
@@ -278,13 +276,13 @@ textarea.body {
 
 	.title {
 		font-size: 16px;
-		background-color: #f7f8f8;
+		background-color: @background-color-interactive-subtle;
 		font-weight: bold;
 	}
 
 	.info {
 		font-size: 12px;
-		color: #6c6d70;
+		color: @color-subtle;
 	}
 }
 
