@@ -7,7 +7,8 @@
 	&__source,
 	&__target {
 		overflow-y: auto;
-		border: 2px solid #808080;
+		border: @border-base;
+		border-radius: @border-radius-base;
 		resize: vertical;
 	}
 
@@ -69,9 +70,9 @@
 .mw-tpm-sp-error__message {
 	font-size: 0.9em;
 	word-wrap: break-word;
-	color: #c00;
-	border: 1px solid #fac5c5;
-	background-color: #fae3e3;
+	border: @border-width-base @border-style-base @border-color-error;
+	color: @color-error;
+	background-color: @background-color-error-subtle;
 }
 
 .mw-tpm-sp-instructions {
