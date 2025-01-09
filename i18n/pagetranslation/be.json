@@ -61,6 +61,7 @@
 	"tpt-tag-no-transclusion-support": "няма падтрымкі ўключэньня",
 	"tpt-select-prioritylangs": "Спіс прыярытэтных кодаў моў, падзеленых коскамі:",
 	"tpt-select-prioritylangs-force": "Прадухіліць пераклад на мовы, адрозныя ад прыярытэтных",
+	"tpt-select-no-prioritylangs-force": "Прадухіленне перакладаў на непрыярытэтныя мовы без выбару прыярытэтных моў прывядзе да забароны перакладаў на ўсе мовы.",
 	"tpt-select-prioritylangs-reason": "Прычына:",
 	"tpt-sections-prioritylangs": "Прыярытэтныя мовы",
 	"tpt-sections-syntaxversion": "Версія сінтаксісу",
