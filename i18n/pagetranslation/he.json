@@ -126,6 +126,7 @@
 	"tpt-aggregategroup-add": "הוספה",
 	"tpt-aggregategroup-save": "שמירה",
 	"tpt-aggregategroup-close": "סגירה",
+	"tpt-aggregategroup-no-groups": "אין כרגע קבוצות משולבות בוויקי כזה.",
 	"tpt-aggregategroup-add-new": "הוספת קבוצה משולבת חדשה",
 	"tpt-aggregategroup-select-source-language": "שפת מקור מותאמת (רשות):",
 	"tpt-aggregategroup-new-name": "שם:",
