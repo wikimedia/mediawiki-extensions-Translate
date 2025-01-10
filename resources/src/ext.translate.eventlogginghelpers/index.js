@@ -13,18 +13,15 @@
 		/**
 		 * @param {string|null} actionSubtype
 		 * @param {string|null} actionSource
-		 * @param {Object|null} actionContext
+		 * @param {Object|null} translation
 		 */
-		logClickEvent: function ( actionSubtype, actionSource, actionContext ) {
+		logClickEvent: function ( actionSubtype, actionSource, translation ) {
 			if ( !this.isEventLoggingEnabled() ) {
 				return;
 			}
 
 			const interactionData = {
-				// We are currently not using tranlsation property but it is a required field in
-				// https://gitlab.wikimedia.org/repos/data-engineering/schemas-event-secondary/-/blob/master/jsonschema/analytics/product_metrics/web/translation/1.0.0.yaml?ref_type=heads#L12
-				// Passing an empty object should let this pass validation
-				translation: {}
+				translation: translation || {}
 			};
 
 			if ( actionSubtype ) {
@@ -37,32 +34,22 @@
 				interactionData.action_source = actionSource;
 			}
 
-			if ( actionContext ) {
-				// action_context is defined as a string under
-				// https://gitlab.wikimedia.org/repos/data-engineering/metrics-platform/-/blob/fcdc361d04792930e5b10f0fd6bd1f3150f34737/js/src/EventData.d.ts#L104
-				// eslint-disable-next-line camelcase
-				interactionData.action_context = JSON.stringify( actionContext );
-			}
-
-			mw.eventLog.submitClick( streamName, interactionData );
+			mw.eventLog.submitInteraction( streamName, schemaId, 'click', interactionData );
 		},
 
 		/**
 		 * @param {string} action
 		 * @param {string|null} actionSubtype
 		 * @param {string|null} actionSource
-		 * @param {Object|null} actionContext
+		 * @param {Object|null} translation
 		 */
-		logEvent: function ( action, actionSubtype, actionSource, actionContext ) {
+		logEvent: function ( action, actionSubtype, actionSource, translation ) {
 			if ( !config.TranslateEnableEventLogging ) {
 				return;
 			}
 
 			const interactionData = {
-				// We are currently not using tranlsation property but it is a required field in
-				// https://gitlab.wikimedia.org/repos/data-engineering/schemas-event-secondary/-/blob/master/jsonschema/analytics/product_metrics/web/translation/1.0.0.yaml?ref_type=heads#L12
-				// Passing an empty object should let this pass validation.
-				translation: {}
+				translation: translation || {}
 			};
 
 			if ( actionSubtype ) {
@@ -73,13 +60,6 @@
 			if ( actionSource ) {
 				// eslint-disable-next-line camelcase
 				interactionData.action_source = actionSource;
-			}
-
-			if ( actionContext ) {
-				// action_context is defined as a string under
-				// https://gitlab.wikimedia.org/repos/data-engineering/metrics-platform/-/blob/fcdc361d04792930e5b10f0fd6bd1f3150f34737/js/src/EventData.d.ts#L104
-				// eslint-disable-next-line camelcase
-				interactionData.action_context = JSON.stringify( actionContext );
 			}
 
 			mw.eventLog.submitInteraction( streamName, schemaId, action, interactionData );

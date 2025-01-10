@@ -72,7 +72,7 @@
 					'language_selector',
 					{
 						// eslint-disable-next-line camelcase
-						target_lang: language,
+						target_language: language,
 						// eslint-disable-next-line camelcase
 						translatable_count: stats.total,
 						// eslint-disable-next-line camelcase
@@ -713,9 +713,9 @@
 				getActionSource(),
 				{
 					// eslint-disable-next-line camelcase
-					source_lang: $messageList.data( 'sourcelangcode' ),
+					source_language: $messageList.data( 'sourcelangcode' ),
 					// eslint-disable-next-line camelcase
-					target_lang: state.language,
+					target_language: state.language,
 					// eslint-disable-next-line camelcase
 					source_id: uri.query.group,
 					// eslint-disable-next-line camelcase
