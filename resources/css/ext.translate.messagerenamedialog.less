@@ -1,3 +1,5 @@
+@import 'mediawiki.skin.variables.less';
+
 .smg-rename-dialog {
 	.oo-ui-processDialog-title {
 		padding: 0 6px;
@@ -17,11 +19,12 @@
 
 	.smg-rename-list {
 		padding: 0.4em 0.6em;
+		background-color: @background-color-interactive-subtle;
 	}
 
 	.smg-rename-list:hover {
 		cursor: pointer;
-		background-color: #e8e8e8;
+		background-color: @background-color-interactive-subtle--hover;
 	}
 
 	.smg-rename-notice {
@@ -42,7 +45,7 @@
 	}
 
 	.smg-rename-selected {
-		background-color: #dadada;
+		background-color: @background-color-interactive-subtle--active;
 	}
 
 	.smg-rename-msg-content {
