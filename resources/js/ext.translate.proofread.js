@@ -140,7 +140,7 @@
 						// `status` class is documented elsewhere
 						// eslint-disable-next-line mediawiki/class-doc
 						$( '<div>' )
-							.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
+							.addClass( 'one column tux-proofread-status skin-invert ' + this.message.properties.status ),
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-source' )
 							.attr( {

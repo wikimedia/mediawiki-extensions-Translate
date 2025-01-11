@@ -2,10 +2,10 @@
 @import 'mediawiki.mixins';
 
 .tux-workflow-status {
-	background: #eee;
-	color: #222;
-	border: 1px solid #ddd;
-	cursor: pointer;
+	background: @background-color-neutral;
+	color: @color-base;
+	border: @border-width-base @border-style-base @border-color-muted;
+	cursor: @cursor-base--hover;
 	display: inline-block;
 	padding: 2px 4px;
 	margin-top: 5px;
@@ -13,7 +13,7 @@
 	margin-bottom: 5px;
 
 	&:hover {
-		border: 1px solid #c9c9c9;
+		border: @border-subtle;
 	}
 
 	&-triangle {
@@ -23,7 +23,7 @@
 			margin: 3px;
 			border-left: 3px solid transparent;
 			border-right: 3px solid transparent;
-			border-top: 3px solid #555;
+			border-top: 3px solid @color-base;
 			content: '';
 			display: inline-block;
 			vertical-align: middle;
@@ -36,7 +36,7 @@ ul.tux-workflow-status-selector {
 	margin-top: -1px;
 
 	li {
-		color: #54595d;
+		color: @color-subtle;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -44,9 +44,9 @@ ul.tux-workflow-status-selector {
 		padding: 0 2px;
 
 		&.changeable:hover {
-			background-color: #f0f0f0;
-			color: #222;
-			cursor: pointer;
+			background-color: @background-color-interactive;
+			color: @color-base;
+			cursor: @cursor-base--hover;
 		}
 
 		&.selected::after {

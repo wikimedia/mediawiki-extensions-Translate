@@ -16,7 +16,7 @@
 	background-color: @background-color-neutral;
 	color: @color-base;
 	border-radius: 5px;
-	box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
+	box-shadow: @box-shadow-drop-xx-large;
 	display: flex;
 	flex-direction: column;
 
@@ -79,14 +79,14 @@
 	color: @color-base;
 	line-height: 30px;
 	height: 30px;
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 	padding: 2px 5px;
 	margin: 0 4px;
 	display: inline-block;
 }
 
 .tux-grouptab--selected {
-	border-bottom: 2px solid #0645ad;
+	border-bottom: 2px solid @border-color-progressive;
 }
 
 /*
@@ -119,7 +119,7 @@
 	position: relative;
 	border-bottom: 1px solid @border-color-muted;
 	height: 50px;
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 
 	&:hover {
 		background-color: @background-color-neutral-subtle;
@@ -130,7 +130,7 @@
 	padding-bottom: 0; /* grid override */
 	padding-left: 15px; /* grid override */
 	line-height: 32px;
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 	white-space: nowrap;
 }
 

@@ -92,7 +92,7 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$out->addHTML( Html::openElement( 'div', [
 			// FIXME: Temporary hack. Add better support for dark mode.
-			'class' => 'grid ext-translate-container notheme skin-invert',
+			'class' => 'grid ext-translate-container',
 		] ) );
 
 		$out->addHTML( $this->tuxSettingsForm() );

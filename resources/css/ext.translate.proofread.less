@@ -7,7 +7,6 @@
 			min-height: 50px;
 			margin: 0 auto;
 			vertical-align: middle;
-			background: #f8f8f8;
 
 			.tux-message-item-compact {
 				padding: 30px 0;
@@ -15,32 +14,32 @@
 				margin-right: auto;
 				margin-left: auto;
 				vertical-align: middle;
-				border-bottom: 1px solid #f0f0f0;
-				border-left: 1px solid #ddd;
-				border-right: 1px solid #ddd;
-				background: #fff;
+				border-bottom: @border-width-base @border-style-base @border-color-muted;
+				border-left: @border-subtle;
+				border-right: @border-subtle;
+				background: @background-color-base;
 				max-width: 900px;
 
 				&:hover {
-					background: #fcfcfc;
+					background: @background-color-interactive-subtle;
 				}
 			}
 
 			&:first-child .tux-message-item-compact {
 				margin-top: 10px;
 				padding-top: 60px;
-				border-top: 1px solid #ddd;
+				border-top: @border-subtle;
 			}
 
 			&:last-child .tux-message-item-compact {
 				margin-bottom: 10px;
 				padding-bottom: 60px;
-				border-bottom: 1px solid #ddd;
+				border-bottom: @border-subtle;
 			}
 
 			&.own-translation,
 			&.own-translation:hover {
-				background: #fbfbfb;
+				background: @background-color-interactive-subtle;
 			}
 		}
 	}
@@ -64,7 +63,7 @@
 .tux-messagelist {
 	.tux-message-proofread {
 		.tux-proofread-source {
-			color: #54595d;
+			color: @color-subtle;
 			font-size: 16px;
 			line-height: 1.5em;
 			padding-right: 25px;
@@ -72,7 +71,7 @@
 		}
 
 		.tux-proofread-translation {
-			color: #222;
+			color: @color-base;
 			font-size: 16px;
 			line-height: 1.5em;
 			padding-left: 20px;
@@ -120,14 +119,14 @@
 	background-image: /* @embed */ url( ../images/check-sprite-ltr.svg );
 	/* There is 1px white row between each icon */
 	height: 30px;
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 
 	&:hover {
 		background-position: right -31px;
 	}
 
 	&.accepted {
-		cursor: default;
+		cursor: @cursor-base;
 		background-position: right -62px;
 	}
 }
@@ -140,7 +139,7 @@
 	}
 
 	&.accepted {
-		cursor: default;
+		cursor: @cursor-base;
 		background-position: right -186px;
 	}
 }
@@ -151,7 +150,7 @@
 	margin-top: @spacing-50;
 	margin-right: @spacing-25;
 	height: 50px;
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 	visibility: hidden;
 	text-align: right;
 
@@ -174,7 +173,7 @@
 }
 
 .tux-proofread-count {
-	color: #72777d;
+	color: @color-subtle;
 	font-size: 15px;
 	padding-right: 5px;
 	text-align: right;

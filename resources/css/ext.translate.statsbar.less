@@ -1,8 +1,10 @@
+@import 'mediawiki.skin.variables.less';
+
 .tux-statsbar {
 	max-width: 400px;
 	padding: 0;
 	height: 5px;
-	background-color: #bbb;
+	background-color: @color-disabled;
 
 	span {
 		height: 5px;
@@ -12,14 +14,17 @@
 	}
 
 	.tux-proofread {
+		// Intentionally left as absolute color when adding dark mode support
 		background-color: #00af89;
 	}
 
 	.tux-translated {
+		// Intentionally left as absolute color when adding dark mode support
 		background-color: #2a4b8d;
 	}
 
 	.tux-fuzzy {
+		// Intentionally left as absolute color when adding dark mode support
 		background-color: #fc3;
 	}
 
@@ -28,7 +33,7 @@
 	}
 
 	.tux-statsbar-info {
-		color: #72777d;
+		color: @color-subtle;
 		font-weight: normal;
 		line-height: 1.25em;
 		font-size: 10pt;

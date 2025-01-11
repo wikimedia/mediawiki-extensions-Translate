@@ -5,7 +5,7 @@
  * Breadcrumb for message group selector
  */
 .tux-breadcrumb {
-	color: #222;
+	color: @color-base;
 	margin-top: 5px;
 	font-size: 14pt;
 	line-height: 1.25em;
@@ -24,7 +24,7 @@
 
 		/* Arrow between breadcrumb items */
 		&::after {
-			border-left: 4px solid #777;
+			border-left: 4px solid @color-subtle;
 			border-top: 4px solid transparent;
 			border-bottom: 4px solid transparent;
 			content: '';
@@ -53,8 +53,8 @@
 	/* Color clickable groups to look as links */
 	&__item--aggregate,
 	.grouplink.tux-breadcrumb__item--aggregate:last-of-type > span > span {
-		cursor: pointer;
-		color: #0645ad;
+		cursor: @cursor-base--hover;
+		color: @color-progressive;
 	}
 
 	.grouplink.tux-breadcrumb__item--aggregate:last-of-type {
@@ -117,7 +117,7 @@
 	.column {
 		border: medium none;
 		font-size: 14pt;
-		cursor: pointer;
+		cursor: @cursor-base--hover;
 		font-weight: normal;
 		line-height: 1.25em;
 		top: 1px;
@@ -130,13 +130,13 @@
 
 		ul {
 			display: none;
-			cursor: default;
-			border: 1px solid #777;
+			cursor: @cursor-base;
+			border: @border-width-base @border-style-base @border-color-interactive;
 			border-top: 2px solid transparent;
 			padding: 3px 5px 10px 5px;
 			width: 300px;
 			z-index: 10;
-			background: #fff;
+			background: @background-color-base;
 			top: 100%;
 			left: -5px;
 
@@ -161,15 +161,15 @@
 
 	li {
 		&.selected {
-			border-bottom: 2px solid #36c;
+			border-bottom: @border-width-thick @border-style-base @border-color-progressive;
 
 			a {
-				color: #36c;
+				color: @color-progressive;
 			}
 		}
 
 		a {
-			color: #54595d;
+			color: @color-subtle;
 			text-decoration: none;
 			white-space: nowrap;
 			margin-left: 1px;
@@ -177,14 +177,14 @@
 	}
 
 	label {
-		color: #54595d;
+		color: @color-subtle;
 		font-size: 12pt;
 		top: 1px;
 	}
 }
 
 .tux-editor-header {
-	color: #222;
+	color: @color-base;
 	font-size: 14px;
 	padding-bottom: 10px;
 
@@ -207,16 +207,15 @@
 
 .tux-messagetable-header {
 	padding-top: 5px;
-	border-bottom: 1px solid #777;
-	/* @noflip */
-	box-shadow: 0 3px 3px -3px rgba( 0, 0, 0, 0.5 );
+	border-bottom: @border-width-base @border-style-base @border-color-interactive;
+	box-shadow: @box-shadow-drop-medium;
 	font-size: 14px;
 	margin: 0;
 	list-style: none;
 	transition: width 250ms;
 
 	@media screen and ( min-height: 600px ) {
-		background: #fff;
+		background: @background-color-base;
 		position: sticky;
 		padding-top: 5px;
 		top: 0;
@@ -244,7 +243,7 @@
 		As soon as https://phabricator.wikimedia.org/T276896 is resolved, next line should be removed */
 		box-sizing: border-box !important;
 		height: 28px;
-		border: 1px solid #c9c9c9;
+		border: @border-subtle;
 		width: 100%;
 		padding: 0 5px 0 34px;
 		margin: 0;

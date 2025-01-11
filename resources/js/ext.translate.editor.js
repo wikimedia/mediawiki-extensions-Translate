@@ -654,8 +654,8 @@
 			var $notices = $( '<div>' )
 				.addClass( 'tux-notice hide' );
 
-			var $moreNoticesTab = $( '<div>' )
-				.addClass( 'tux-more-notices hide' )
+			var $moreNoticesButton = $( '<button>' )
+				.addClass( 'tux-more-notices hide cdx-button cdx-button--weight-quiet' )
 				.on( 'click', function () {
 					var $this = $( this ),
 						$moreNotices = $notices.children(),
@@ -772,7 +772,7 @@
 
 			var $noticesBlock = $( '<div>' )
 				.addClass( 'tux-notices-block' )
-				.append( $moreNoticesTab, $notices );
+				.append( $moreNoticesButton, $notices );
 
 			var $editAreaBlock = $( '<div>' )
 				.addClass( 'row tux-editor-editarea-block' )
@@ -1154,7 +1154,8 @@
 		 * Displays the supplied notice above the translation edit area.
 		 * Newer notices are added to the top while older notices are
 		 * added to the bottom. This also means that older notices will
-		 * not be shown by default unless the user clicks "more notices" tab.
+		 * not be shown by default unless the user clicks the "more notices"
+		 * button.
 		 *
 		 * @private
 		 * @param {string} notice used as html for the notices display
@@ -1163,7 +1164,7 @@
 		 */
 		addNotice: function ( notice, type ) {
 			var $notices = this.$editor.find( '.tux-notice' ),
-				$moreNoticesTab = this.$editor.find( '.tux-more-notices' ),
+				$moreNoticesButton = this.$editor.find( '.tux-more-notices' ),
 				// `noticeTypes` documented above
 				// eslint-disable-next-line mediawiki/class-doc
 				$newNotice = $( '<div>' )
@@ -1179,11 +1180,11 @@
 			var noticeCount = $notices.find( '.tux-notice-message' ).length;
 
 			if ( noticeCount > 1 ) {
-				$moreNoticesTab
+				$moreNoticesButton
 					.text( mw.msg( 'tux-notices-more', noticeCount - 1 ) )
 					.removeClass( 'hide open' );
 			} else {
-				$moreNoticesTab.addClass( 'hide' );
+				$moreNoticesButton.addClass( 'hide' );
 			}
 			this.toggleMoreButtonClass();
 
@@ -1519,12 +1520,12 @@
 		 * @private
 		 */
 		showMoreNotices: function () {
-			var $moreNoticesTab = this.$editor.find( '.tux-more-notices' );
-			if ( $moreNoticesTab.hasClass( 'open' ) ) {
+			var $moreNoticesButton = this.$editor.find( '.tux-more-notices' );
+			if ( $moreNoticesButton.hasClass( 'open' ) ) {
 				return;
 			}
 
-			$moreNoticesTab.trigger( 'click' );
+			$moreNoticesButton.trigger( 'click' );
 		},
 
 		/**

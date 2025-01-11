@@ -3,7 +3,7 @@
 
 /* Default colors */
 .tux-messagelist {
-	background-color: #f8f9fa;
+	background-color: @background-color-interactive-subtle;
 	color: @color-base;
 	max-width: 800px;
 }
@@ -25,7 +25,7 @@
 
 .tux-message {
 	height: auto;
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 }
 
 /* The "block" views of page mode and proofreading mode have 0 margin on
@@ -44,17 +44,21 @@
 	vertical-align: middle;
 	border-bottom: @border-subtle;
 	background: @background-color-base;
+
+	.last-message & {
+		border-bottom: 0;
+	}
 }
 
 .tux-message-item.translated,
 .tux-message-item.translated:hover,
 .tux-message-item.proofread,
 .tux-message-item.proofread:hover {
-	background-color: #f0f0f0;
+	background-color: @background-color-interactive-subtle;
 }
 
 .tux-message-item:hover {
-	background-color: #f8f8f8;
+	background-color: @background-color-interactive-subtle--hover;
 }
 
 .tux-list-status span,
@@ -64,7 +68,7 @@
 }
 
 .tux-info {
-	background-color: #f0f0f0;
+	background-color: @background-color-neutral;
 }
 
 .tux-list-source {
@@ -121,8 +125,7 @@
 	color: @color-subtle;
 	padding: 15px;
 	top: 0;
-	background: #f0f0f0 16px 50%;
-	box-shadow: 0 1px 4px rgba( 0, 0, 0, 0.3 ), 0 0 20px rgba( 0, 0, 0, 0.1 ) inset;
+	background: @background-color-neutral;
 }
 
 .tux-messagetable-loader-info {
@@ -131,15 +134,12 @@
 }
 
 .tux-action-bar {
-	background-color: #f0f0f0;
+	background-color: @background-color-neutral;
+	border-top: @border-subtle;
 	color: @color-base;
-	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.3 );
 	transition: width 250ms;
-}
 
-@media screen and ( min-height: 600px ) {
-	.tux-action-bar {
-		border-top: 1px solid #ddd;
+	@media screen and ( min-height: 600px ) {
 		position: sticky;
 		bottom: 0;
 		z-index: 200;
@@ -164,31 +164,29 @@
 	min-height: 40px;
 	font-size: 14px;
 	margin: 5px 0;
-	cursor: pointer;
-	background-color: #e6e6e6;
+	cursor: @cursor-base--hover;
+	background-color: @background-color-interactive;
 	font-weight: bold;
 	line-height: 1;
-	background-image: linear-gradient( #f0f0f0, #e6e6e6 );
 	border: @border-subtle;
 }
 
 .tux-action-bar button:hover {
-	background-color: #f0f0f0;
-	background-image: linear-gradient( #f8f8f8, #f0f0f0 );
+	background-color: @background-color-interactive--hover;
 }
 
 .tux-action-bar button:active,
 .tux-action-bar button.down {
-	background: #222;
+	background: @background-color-inverted;
 	color: @color-inverted;
 }
 
 .tux-action-bar button.disabled,
 .tux-action-bar button.disabled:hover {
-	color: #c9c9c9;
-	cursor: default;
-	background-color: #f0f0f0;
-	border-color: #e3e3e3;
+	color: @color-disabled;
+	cursor: @cursor-base;
+	background-color: @background-color-disabled;
+	border-color: @border-color-disabled;
 }
 
 .tux-view-switcher button {
@@ -196,12 +194,12 @@
 }
 
 .tux-view-switcher button:first-child {
-	border-radius: 3px 0 0 3px;
+	border-radius: @border-radius-base @border-radius-sharp @border-radius-sharp @border-radius-base;
 	border-right: 0;
 }
 
 .tux-view-switcher button:last-child {
-	border-radius: 0 3px 3px 0;
+	border-radius: @border-radius-sharp @border-radius-base @border-radius-base @border-radius-sharp;
 	border-left: 0;
 }
 
@@ -245,7 +243,7 @@
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: @border-subtle;
-	background: #fff5aa;
+	background: @background-color-warning-subtle;
 	padding: 5px;
 
 	& button {
@@ -274,6 +272,6 @@
 }
 
 .tux-empty-list-actions a {
-	cursor: pointer;
+	cursor: @cursor-base--hover;
 	margin: 0 10px;
 }
