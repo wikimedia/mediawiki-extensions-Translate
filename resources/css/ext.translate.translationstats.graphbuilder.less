@@ -3,6 +3,8 @@
  * when loading the translation stats graph.
  * @license GPL-2.0-or-later
  */
+@import 'mediawiki.skin.variables.less';
+
 .mw-translate-translationstats-container {
 	@keyframes mw-translate-loading-spinner {
 		from {
@@ -44,8 +46,8 @@
 		width: 100%;
 		top: 1em;
 		position: absolute;
-		background-color: #fee7e6;
-		color: #b32424;
+		background-color: @background-color-error-subtle;
+		color: @color-error;
 		padding: 0.6em 1em;
 		text-align: center;
 		display: none;
