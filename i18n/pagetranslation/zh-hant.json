@@ -140,6 +140,7 @@
 	"tpt-aggregategroup-add": "新增",
 	"tpt-aggregategroup-save": "儲存",
 	"tpt-aggregategroup-close": "關閉",
+	"tpt-aggregategroup-no-groups": "此wiki上目前沒有集合群組。",
 	"tpt-aggregategroup-add-new": "新增集合群組",
 	"tpt-aggregategroup-select-source-language": "自訂來源語言（非必填）：",
 	"tpt-aggregategroup-new-name": "名稱：",

@@ -117,6 +117,7 @@
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Зачувај",
 	"tpt-aggregategroup-close": "Затвори",
+	"tpt-aggregategroup-no-groups": "Во моментов нема збирни групи на ова вики.",
 	"tpt-aggregategroup-add-new": "Додај нова збирна група",
 	"tpt-aggregategroup-select-source-language": "Кориснички зададен изворен јазик (незадолжително):",
 	"tpt-aggregategroup-new-name": "Назив:",
