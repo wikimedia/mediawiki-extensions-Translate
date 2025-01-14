@@ -427,6 +427,7 @@
 	"log-action-filter-translationreview": "Врста радње:",
 	"log-action-filter-translationreview-message": "Провера појединачних порука",
 	"log-action-filter-translationreview-group": "Промена статуса превода",
+	"translate-hidetranslations": "Сакриј преводиве странице",
 	"notification-header-message-group-subscription": "Ажурирања превода за $1",
 	"notification-link-mgs-group-translate": "Преведи $1",
 	"tpt-cleanchanges-language": "Језик:",

@@ -64,6 +64,7 @@
 	"translate-tag-markthis": "Bu versiyanı tərcümə üçün işarələ",
 	"tpt-translation-intro": "Bu səhifə [[$2]] səhifəsinin <span class=\"plainlinks\">[$1 tərcümə edilmiş versiyasıdır]</span> və tərcümə $3% tamamlanıb.",
 	"tpt-languages-nonzero": "$1 ($2% tərcümə edilib)",
+	"tpt-tab-translate": "Tərcümə et",
 	"aggregategroups": "Aqreqat qrupları",
 	"tpt-aggregategroup-add": "Əlavə et",
 	"tpt-aggregategroup-save": "Saxla",
