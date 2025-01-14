@@ -1126,18 +1126,25 @@
 				"tpt-aggregategroup-collapse-all-groups",
 				"tpt-aggregategroup-expand-group",
 				"tpt-aggregategroup-collapse-group",
+				"tpt-aggregategroup-remove-item",
 				"tpt-aggregategroup-empty-name",
 				"tpt-invalid-group",
 				"tpt-aggregategroup-load-error",
 				"tpt-aggregategroup-not-found",
-				"tpt-aggregategroup-disassociate-error"
+				"tpt-aggregategroup-disassociate-error",
+				"translate-tes-server-error",
+				"translate-tes-type-to-search",
+				"translate-tes-entity-not-found"
 			],
 			"packageFiles": [
 				"resources/src/ext.translate.aggregategroups.refresh/init.js",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupsToolboxApp.vue",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDialog.vue",
 				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupDeleteDialog.vue",
+				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupAssociation.vue",
+				"resources/src/ext.translate.aggregategroups.refresh/components/AggregateGroupSubGroupItem.vue",
 				"resources/src/services/aggregategroup.api.factory.js",
+				"resources/src/services/translationentitysearch.api.js",
 				{
 					"name": "resources/src/ext.translate.aggregategroups.refresh/icons.json",
 					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
@@ -1159,7 +1166,8 @@
 				"CdxTextArea",
 				"CdxTextInput",
 				"CdxSelect",
-				"CdxMessage"
+				"CdxMessage",
+				"CdxLookup"
 			]
 		},
 		"ext.translate.special.importtranslations": {

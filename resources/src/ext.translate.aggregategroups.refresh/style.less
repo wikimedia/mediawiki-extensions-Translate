@@ -25,6 +25,32 @@
 	.cdx-aggregate-group-subgroup-icon--delete {
 		.cdx-mixin-css-icon( @cdx-icon-trash, @param-is-button-icon: true );
 	}
+
+	.mw-translate-aggregategroup-associate form {
+		margin-inline-start: @size-200;
+		margin-top: @size-50;
+		width: @size-half;
+		display: flex;
+		justify-content: flex-start;
+		gap: @size-25;
+
+		.cdx-field {
+			flex-grow: 1;
+		}
+
+		.cdx-button {
+			height: @min-size-interactive-pointer;
+		}
+
+		/** Only disabled item that appears in the selector is about API error */
+		.cdx-menu .cdx-menu-item--disabled {
+			color: @color-error;
+
+			.cdx-menu-item__icon {
+				color: @color-error;
+			}
+		}
+	}
 }
 
 html.client-nojs .mw-translate-aggregategroup-container {

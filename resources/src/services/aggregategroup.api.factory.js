@@ -68,6 +68,22 @@ module.exports = ( function () {
 		} );
 	}
 
+	/**
+	 * Associate a sub message group to an aggregate group
+	 *
+	 * @param {string} aggregateGroupId
+	 * @param {string} groupId
+	 * @return {mw.Api~AbortablePromise}
+	 */
+	function associateMessageGroup( aggregateGroupId, groupId ) {
+		return api.postWithToken( 'csrf', {
+			action: ACTION,
+			do: 'associate',
+			group: groupId,
+			aggregategroup: aggregateGroupId
+		} );
+	}
+
 	function getSaveParams( { name, description, languageCode } ) {
 		return {
 			action: ACTION,
@@ -81,6 +97,7 @@ module.exports = ( function () {
 		add,
 		update,
 		remove,
-		removeMessageGroup
+		removeMessageGroup,
+		associateMessageGroup
 	};
 } );

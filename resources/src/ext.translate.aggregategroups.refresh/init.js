@@ -2,7 +2,10 @@ const Vue = require( 'vue' );
 const App = require( './components/AggregateGroupsToolboxApp.vue' );
 const DeleteDialogApp = require( './components/AggregateGroupDeleteDialog.vue' );
 const AggregateGroupDialog = require( './components/AggregateGroupDialog.vue' );
+const AggregateGroupAssociation = require( './components/AggregateGroupAssociation.vue' );
+const AggregateGroupSubGroupItem = require( './components/AggregateGroupSubGroupItem.vue' );
 const createAggregateGroupApiFactory = require( '../services/aggregategroup.api.factory.js' );
+const performEntitySearch = require( '../services/translationentitysearch.api.js' );
 
 const aggregateGroupApi = createAggregateGroupApiFactory();
 const aggregateGroupsManageApp = Vue.createMwApp( App );
@@ -149,6 +152,65 @@ function addDeleteSubGroupAction() {
 	}
 }
 
+function addAssociateSubGroupAction() {
+	const associationContainer =
+		document.querySelectorAll( '.mw-translate-aggregategroup-associate' );
+
+	associationContainer.forEach( ( element ) => {
+		const parentAggregateGroup = element.closest( '.mw-translate-aggregategroup-container' );
+
+		/**
+		 * Callback to gather groups that are already part of the aggregate group.
+		 *
+		 * @return {Set<string>}
+		 */
+		function getExistingGroups() {
+			const existingGroupListItems = parentAggregateGroup.querySelectorAll( 'ol li' );
+			const existingGroupIds = new Set();
+			existingGroupListItems.forEach( ( listItem ) => {
+				const groupId = listItem.dataset.groupId;
+				if ( groupId ) {
+					existingGroupIds.add( groupId );
+				}
+			} );
+
+			return existingGroupIds;
+		}
+
+		function onSubGroupAdded( groupDetails ) {
+			const vmSubGroupItemApp = Vue.createMwApp(
+				AggregateGroupSubGroupItem,
+				{
+					groupId: groupDetails.id,
+					groupLabel: groupDetails.label,
+					groupURL: groupDetails.url
+				}
+			);
+			const tempDiv = document.createElement( 'div' );
+			// Use the HTML from the template only component to create the list item
+			const instance = vmSubGroupItemApp.mount( tempDiv );
+			parentAggregateGroup.querySelector( 'ol' ).appendChild( instance.$el );
+		}
+
+		// Create and mount the app.
+		const vmGroupAssociationApp = Vue.createMwApp( {
+			setup() {
+				return () => Vue.h(
+					AggregateGroupAssociation,
+					{
+						aggregateGroupId: parentAggregateGroup.dataset.groupId,
+						getExistingGroups,
+						onSaved: onSubGroupAdded
+					}
+				);
+			}
+		} );
+		vmGroupAssociationApp.provide( 'performEntitySearch', performEntitySearch );
+		vmGroupAssociationApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+		vmGroupAssociationApp.mount( element );
+	} );
+}
+
 function getParentGroupId( element ) {
 	return element.closest( 'details.cdx-accordion' ).dataset.groupId;
 }
@@ -156,3 +218,4 @@ function getParentGroupId( element ) {
 addDeleteAction();
 addEditAction();
 addDeleteSubGroupAction();
+addAssociateSubGroupAction();
