@@ -238,7 +238,7 @@
 	"pm-pagetitle-missing": "Skriv inn sidetittelen.",
 	"pm-langcode-missing": "Sidemigrasjon fungerer kun for oversettelsessider, for eksempel «Page/de». Den gitte tittelen er ikke en oversettelsesside.",
 	"pm-summary-import": "Importerte oversettelse med [[Special:PageMigration|sidemigrasjon]]",
-	"pm-on-import-message-text": "De gamle oversettelsene har blitt importert. Bruk add-, swap- og delete-valgene for å justere oversettelsesenhetene og klikk på «{{int:pm-savepages-button-label}}»-knappen for å lagre dem. Klikk på «{{unt:pm-cancel-button-label}}» for å forkaste.",
+	"pm-on-import-message-text": "De gamle oversettelsene har blitt importert. Bruk add-, swap- og delete-valgene for å justere oversettelsesenhetene og klikk på «{{int:pm-savepages-button-label}}»-knappen for å lagre dem. Klikk på «{{int:pm-cancel-button-label}}» for å forkaste.",
 	"pm-on-save-message-text": "Oversettelsesenhetene har blitt lagret. Du kan nå skrive inn tittelen på en ny oversettelsesside for å migrere den, eller gjøre endringer i enhetene nedenfor og lagre en ny sideversjon.",
 	"pm-pagetitle-not-translatable": "$1 er ikke del av en oversettbar side.",
 	"pm-translation-unit-fetch-failed": "En feil oppsto under henting av oversettelsesenheter for siden.",
