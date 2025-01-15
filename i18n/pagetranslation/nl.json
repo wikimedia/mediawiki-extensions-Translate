@@ -131,6 +131,7 @@
 	"tpt-aggregategroup-add": "Toevoegen",
 	"tpt-aggregategroup-save": "Opslaan",
 	"tpt-aggregategroup-close": "Sluiten",
+	"tpt-aggregategroup-no-groups": "Er zijn momenteel geen samengevoegde groepen op deze wiki.",
 	"tpt-aggregategroup-add-new": "Nieuwe samengestelde groep toevoegen",
 	"tpt-aggregategroup-select-source-language": "Aangepaste brontaal (optioneel):",
 	"tpt-aggregategroup-new-name": "Naam:",
