@@ -124,10 +124,10 @@
 		if ( isLoading ) {
 			// hide all the rename buttons, but show the current one with loading animation
 			$( '.smg-rename-actions' ).addClass( 'mw-translate-hide' );
-			$element.removeClass( 'mw-translate-hide' ).addClass( 'loading' );
+			$element.removeClass( 'mw-translate-hide' ).addClass( 'tux-loading-indicator' );
 		} else {
 			$( '.smg-rename-actions' ).removeClass( 'mw-translate-hide' );
-			$element.removeClass( 'loading' );
+			$element.removeClass( 'tux-loading-indicator' );
 		}
 	}
 

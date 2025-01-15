@@ -42,7 +42,7 @@
 			$graphWrapper = $( '<div>' )
 				.attr( 'class', 'mw-translationstats-graph-container' ),
 			$loadingElement = $( '<div>' )
-				.attr( 'class', 'mw-translate-loading-spinner' ),
+				.attr( 'class', 'tux-loading-indicator tux-loading-indicator--centered' ),
 			$errorElement = $( '<div>' )
 				.attr( 'class', 'mw-translate-error-container' ),
 			$tableElement = $( '<table>' )

@@ -29,6 +29,7 @@
 	}
 
 	.smg-rename-actions {
+		background-color: @background-color-transparent;
 		border: 0;
 		padding: 0;
 		cursor: pointer;
@@ -36,14 +37,12 @@
 		top: 5px;
 		right: 0;
 
-		// In order to make the background styling for `.loading` work correctly
-		&:not( .loading ) {
+		// In order to make the background styling for the loader work correctly
+		&:not( .tux-loading-indicator ) {
 			.cdx-mixin-css-icon( @cdx-icon-ellipsis );
 		}
 
-		&.loading {
-			background: transparent url( ../images/loading.gif ) center center no-repeat;
-			background-size: 90%;
+		&.tux-loading-indicator {
 			width: @size-icon-medium;
 			height: @size-icon-medium;
 		}

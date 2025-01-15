@@ -6,15 +6,6 @@
 @import 'mediawiki.skin.variables.less';
 
 .mw-translate-translationstats-container {
-	@keyframes mw-translate-loading-spinner {
-		from {
-			transform: rotate( 0deg );
-		}
-
-		to {
-			transform: rotate( 360deg );
-		}
-	}
 	position: relative;
 	display: inline-block;
 	margin-right: 40px;
@@ -23,23 +14,6 @@
 
 	.mw-translationstats-graph-container {
 		margin: auto;
-	}
-
-	.mw-translate-loading-spinner {
-		/* @embed */
-		background-image: url( ../images/loading.svg );
-		background-size: 100%;
-		animation-name: mw-translate-loading-spinner;
-		animation-duration: 1.5s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-		height: 34px;
-		width: 34px;
-		backface-visibility: hidden;
-		position: absolute;
-		left: 48%;
-		top: 15%;
-		display: none;
 	}
 
 	.mw-translate-error-container {
@@ -53,8 +27,8 @@
 		display: none;
 	}
 
-	&.mw-translate-loading .mw-translate-loading-spinner {
-		display: block;
+	&:not( .mw-translate-loading ) .tux-loading-indicator {
+		display: none;
 	}
 
 	&.mw-translate-has-error .mw-translate-error-container {

@@ -1,39 +1,11 @@
+@import 'mediawiki.mixins.rotation.less';
+
 /* Loading indicator: */
-
-@-webkit-keyframes tux-loading-indicator-spin {
-	from {
-		-webkit-transform: rotate( 0deg );
-	}
-
-	to {
-		-webkit-transform: rotate( 360deg );
-	}
-}
-
-@keyframes tux-loading-indicator-spin {
-	from {
-		transform: rotate( 0deg );
-	}
-
-	to {
-		transform: rotate( 360deg );
-	}
-}
-
 .tux-loading-indicator {
+	.rotation( 1.5s );
 	float: left;
-	background: transparent url( ../images/loading.gif ) right bottom no-repeat;
-	/* @embed */
 	background-image: url( ../images/loading.svg );
 	background-size: 100%;
-	-webkit-animation-name: tux-loading-indicator-spin;
-	-webkit-animation-duration: 1.5s;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
-	animation-name: tux-loading-indicator-spin;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
 	height: 34px;
 	width: 34px;
 	backface-visibility: hidden;
@@ -45,7 +17,6 @@
 	}
 
 	&--stopped {
-		-webkit-animation: none;
 		animation: none;
 	}
 }

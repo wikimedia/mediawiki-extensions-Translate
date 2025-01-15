@@ -1029,7 +1029,8 @@
 			],
 			"dependencies": [
 				"mediawiki.api",
-				"mediawiki.language"
+				"mediawiki.language",
+				"ext.translate.loader"
 			],
 			"styles": [
 				"resources/lib/Chart.js/Chart.css",
@@ -1097,7 +1098,6 @@
 		"ext.translate.special.managetranslatorsandbox": {
 			"scripts": "resources/js/ext.translate.special.managetranslatorsandbox.js",
 			"dependencies": [
-				"ext.translate.loader",
 				"ext.uls.mediawiki",
 				"mediawiki.api",
 				"mediawiki.jqueryMsg",
@@ -1144,7 +1144,8 @@
 		},
 		"ext.translate.special.managegroups": {
 			"dependencies": [
-				"ext.translate.messagerenamedialog"
+				"ext.translate.messagerenamedialog",
+				"ext.translate.loader"
 			],
 			"messages": [
 				"translate-smg-rename-new",
