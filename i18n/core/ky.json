@@ -58,7 +58,7 @@
 	"translations": "Бүт котормолор",
 	"translate-translations-count": "{{PLURAL:$1|$1 котормо}} табылды.",
 	"translate-translations-fieldset-title": "Билдирүү",
-	"translate-translations-messagename": "Ат:",
+	"translate-translations-messagename": "Аталыш:",
 	"translate-translations-project": "Долбоор:",
 	"translate-translations-history-short": "т",
 	"languagestats": "Тил статистикасы",
