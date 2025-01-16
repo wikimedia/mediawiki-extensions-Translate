@@ -426,5 +426,6 @@
 	"translate-messagebundle-error-empty-value": "Кључ ”$1” нема вредност",
 	"log-action-filter-translationreview": "Врста радње:",
 	"log-action-filter-translationreview-message": "Провера појединачних порука",
-	"log-action-filter-translationreview-group": "Промена статуса превода"
+	"log-action-filter-translationreview-group": "Промена статуса превода",
+	"translate-hidetranslations": "Сакриј преводиве странице"
 }
