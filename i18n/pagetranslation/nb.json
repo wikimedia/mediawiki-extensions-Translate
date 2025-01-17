@@ -121,6 +121,7 @@
 	"tpt-aggregategroup-add": "Legg til",
 	"tpt-aggregategroup-save": "Lagre",
 	"tpt-aggregategroup-close": "Lukk",
+	"tpt-aggregategroup-no-groups": "Det er for tiden ingen samlingsgrupper på denne wikien.",
 	"tpt-aggregategroup-add-new": "Legg til en ny samlet gruppe",
 	"tpt-aggregategroup-select-source-language": "Egendefinert kildespråk (valgfritt):",
 	"tpt-aggregategroup-new-name": "Navn:",
@@ -303,5 +304,9 @@
 	"visualeditor-annotations-tvar-start": "Begynnelsen av det uoversettbare innholdet",
 	"visualeditor-annotations-tvar-end": "Slutten på det uoversettbare innholdet",
 	"visualeditor-annotations-tvar-description": "Dette området er markert som uoversettbart. Se [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation segmentering av kildetekst] for mer informasjon.",
-	"tag-translate-translation-pages-description": "Automatiske redigeringer på oversatte sider av Translate-utvidelsen"
+	"tag-translate-translation-pages-description": "Automatiske redigeringer på oversatte sider av Translate-utvidelsen",
+	"tpt-manage-message-group-subscriptions-normal-submit": "Fjern abonnementer",
+	"special-tab-managemessagegroupsubscriptions-short": "Vis og rediger",
+	"special-tab-managemessagegroupsubscriptions-raw-short": "Rediger rå liste",
+	"tpt-manage-message-group-subscriptions-edit-raw-title": "Rediger rå abonnementer"
 }

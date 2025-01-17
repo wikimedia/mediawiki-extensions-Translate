@@ -341,6 +341,7 @@
 	"translate-msggroupselector-search-recent": "Siste",
 	"translate-msggroupselector-search-watched": "Overvåket",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|undergruppe|undergrupper}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Behandle abonnementene dine",
 	"tux-languageselector": "Oversett til",
 	"tux-select-target-language": "Målspråk for oversettelse",
 	"tux-watch-group": "Overvåk",
@@ -463,6 +464,10 @@
 	"translate-messagebundle-group-description": "Beskjeder i en beskjedbunt definert på siden [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Setter kildespråk for meldingsknippet i samsvar med metadataene.",
 	"translate-messagebundle-sourcelanguage-changed": "Kildespråket til et meldingsknippe kan ikke endres etter at det har blitt opprettet.",
+	"translate-error-association-failure": "Følgende {{PLURAL:$2|meldingsgruppe|meldingsgrupper}} kan ikke assosieres med samlingsgruppa: $1",
+	"translate-error-invalid-aggregategroup": "Ugyldig samlingsgruppe  $1",
+	"translate-error-aggregategroup-source-language-mismatch": "{{PLURAL:$3|Gruppa|Gruppene}} $1 har ikke samme kildespråk som samlingsgruppa ($2).",
+	"translate-error-duplicate-aggregategroup": "Det finnes allerede ei samlingsgruppe med navnet $1.",
 	"log-action-filter-translationreview": "Handlingstype:",
 	"log-action-filter-translationreview-message": "Gjennomgang av individuelle oversettelsesmeldinger",
 	"log-action-filter-translationreview-group": "Endringer i framgangsstatusen til oversettelser",
@@ -476,5 +481,7 @@
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|ny eller oppdatert melding|nye eller oppdaterte meldinger}}",
 	"notification-link-mgs-group-translate": "Oversett $1",
 	"tpt-cleanchanges-language": "Språk:",
-	"tpt-cleanchanges-language-na": "Alle"
+	"tpt-cleanchanges-language-na": "Alle",
+	"namespaceinfo-description-ns1198": "Navnerommet som inneholder oversettelsesenheter, dvs. individuelle oversettbare og oversatte deler av [[Special:PageTranslation|oversettbare sider]] og [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|meldingsbunter]].",
+	"namespaceinfo-description-ns1199": "Diskusjonssider for oversettelsesenheter"
 }
