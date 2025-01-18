@@ -63,6 +63,7 @@ class TranslatorActivity {
 		return $queriedValue;
 	}
 
+	/** @return array|false */
 	private function getFromCache( string $language ) {
 		$cacheKey = $this->getCacheKey( $language );
 		return $this->cache->get( $cacheKey );

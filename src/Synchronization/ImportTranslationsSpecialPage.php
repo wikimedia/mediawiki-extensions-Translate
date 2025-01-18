@@ -226,6 +226,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		$this->cache->set( $key, $data, 60 * 30 );
 	}
 
+	/** @return array|false */
 	private function getCachedData() {
 		$key = $this->cache->makeKey( 'translate', 'webimport', $this->getUser()->getId() );
 

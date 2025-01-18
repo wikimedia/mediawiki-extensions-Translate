@@ -446,6 +446,10 @@ class GroupSynchronizationCache {
 			->getTimestamp();
 	}
 
+	/**
+	 * @param mixed $value
+	 * @param string $expectedType
+	 */
 	private function invalidArgument( $value, string $expectedType ): RuntimeException {
 		$valueType = get_debug_type( $value );
 		return new RuntimeException( "Expected $expectedType, got $valueType" );
