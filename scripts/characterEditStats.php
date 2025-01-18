@@ -116,7 +116,7 @@ class CharacterEditStats extends Maintenance {
 		$this->output( "Total\t\t$total\n" );
 	}
 
-	private function getRevisionsFromHistory( $days, array $namespaces ) {
+	private function getRevisionsFromHistory( int $days, array $namespaces ): array {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 

@@ -1177,7 +1177,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		);
 	}
 
-	private function sendNotificationsForChangedMessages( string $groupId, Title $title, $type, bool $fuzzy ): void {
+	private function sendNotificationsForChangedMessages(
+		string $groupId, Title $title, string $type, bool $fuzzy
+	): void {
 		$subscriptionState = $type === MessageSourceChange::ADDITION ?
 			MessageGroupSubscription::STATE_ADDED :
 			MessageGroupSubscription::STATE_UPDATED;

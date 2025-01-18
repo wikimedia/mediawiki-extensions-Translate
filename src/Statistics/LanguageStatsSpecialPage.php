@@ -197,7 +197,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		return MessageGroupStats::forLanguage( $target, $flags );
 	}
 
-	private function getCacheRebuildJobParameters( $target ): array {
+	private function getCacheRebuildJobParameters( string $target ): array {
 		return [ 'languagecode' => $target ];
 	}
 

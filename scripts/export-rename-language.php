@@ -114,7 +114,7 @@ class ExportRenameLanguage extends Maintenance {
 		return $return;
 	}
 
-	private function renameFile( $source, $target ) {
+	private function renameFile( string $source, string $target ) {
 		// In case %CODE% is in the path
 		if ( !is_dir( dirname( $target ) ) ) {
 			mkdir( dirname( $target ), 0777, true );
@@ -123,11 +123,11 @@ class ExportRenameLanguage extends Maintenance {
 		rename( $source, $target );
 	}
 
-	private function isDirectoryEmpty( $dir ) {
+	private function isDirectoryEmpty( string $dir ): bool {
 		return array_diff( scandir( $dir ), [ '..', '.' ] ) === [];
 	}
 
-	private function needsCleanup( $pathPattern, $sourceLanguage, &$pathToRemove ) {
+	private function needsCleanup( string $pathPattern, string $sourceLanguage, string &$pathToRemove ): string {
 		do {
 			$currentComponent = basename( $pathPattern );
 			if ( !str_contains( $currentComponent, self::MARKER ) ) {

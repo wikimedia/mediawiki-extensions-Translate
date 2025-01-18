@@ -70,10 +70,10 @@ class GettextPluralValidator implements MessageValidator {
 	}
 
 	private function pluralPresenceCheck(
-		$definitionHasPlural,
-		$translationHasPlural,
-		$expectedPluralCount
-	) {
+		bool $definitionHasPlural,
+		bool $translationHasPlural,
+		int $expectedPluralCount
+	): string {
 		if ( !$definitionHasPlural && $translationHasPlural ) {
 			return 'unsupported';
 		} elseif ( $definitionHasPlural && !$translationHasPlural ) {
@@ -91,7 +91,7 @@ class GettextPluralValidator implements MessageValidator {
 		return 'ok';
 	}
 
-	private function pluralFormCountCheck( $text, $expectedPluralCount ) {
+	private function pluralFormCountCheck( string $text, int $expectedPluralCount ): array {
 		[ , $instanceMap ] = GettextPlural::parsePluralForms( $text );
 
 		foreach ( $instanceMap as $forms ) {

@@ -78,7 +78,7 @@ class CDBMessageIndex extends MessageIndexStore {
 		$this->index = $array;
 	}
 
-	private function getReader() {
+	private function getReader(): Reader {
 		if ( $this->reader ) {
 			return $this->reader;
 		}
