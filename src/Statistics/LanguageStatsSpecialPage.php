@@ -338,7 +338,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		if ( $this->getConfig()->get( 'TranslateWorkflowStates' ) ) {
 			$this->states = $this->groupReviewStore->getWorkflowStatesForLanguage(
 				$this->target,
-				array_keys( $structure )
+				array_map( 'strval', array_keys( $structure ) )
 			);
 			// An array where keys are state names and values are numbers
 			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );

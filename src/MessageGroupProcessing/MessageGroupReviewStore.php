@@ -146,6 +146,10 @@ class MessageGroupReviewStore {
 		return $result->fetchRow()['tgr_state'] ?? null;
 	}
 
+	/**
+	 * @param string $languageCode
+	 * @param string[] $groupIds
+	 */
 	public function getWorkflowStatesForLanguage( string $languageCode, array $groupIds ): array {
 		$result = $this->getWorkflowStates( $groupIds, [ $languageCode ] );
 		$states = $this->result2map( $result, 'tgr_group', 'tgr_state' );
@@ -166,6 +170,10 @@ class MessageGroupReviewStore {
 		return $this->result2map( $result, 'tgr_lang', 'tgr_state' );
 	}
 
+	/**
+	 * @param string[]|null $groupIds
+	 * @param string[]|null $languageCodes
+	 */
 	private function getWorkflowStates( ?array $groupIds, ?array $languageCodes ): IResultWrapper {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 		$conditions = array_filter(
@@ -198,9 +206,7 @@ class MessageGroupReviewStore {
 		return $map;
 	}
 
-	private static function getGroupIdForDatabase( $groupId ): string {
-		$groupId = strval( $groupId );
-
+	private static function getGroupIdForDatabase( string $groupId ): string {
 		// Check if length is more than 200 bytes
 		if ( strlen( $groupId ) <= 200 ) {
 			return $groupId;
