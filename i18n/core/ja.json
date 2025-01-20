@@ -111,7 +111,7 @@
 	"translate-checks-parametersnotequal": "引数の数が{{PLURAL:$1|$1}}個ですが、{{PLURAL:$2|$2}}個である必要があります。",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> の形式に誤りがあります。",
 	"translate-checks-fudforum-syntax": "このプロジェクトでは<nowiki>$2</nowiki>の代わりに<nowiki>$1</nowiki>を使用します。",
-	"translate-checks-newline-missing-start": "翻訳の冒頭で新しい行の{{PLURAL:$1|文字列|文字列}}$1個{{PLURAL:$1|が|が}}不足しています。",
+	"translate-checks-newline-missing-start": "翻訳の冒頭で$1個の改行{{PLURAL:$1|文字}}が不足しています。",
 	"translate-checks-newline-missing-end": "翻訳の末尾に $1 {{PLURAL:$1|個の改行文字}}が不足しています。",
 	"translate-checks-newline-extra-start": "翻訳の先頭に余分な $1 {{PLURAL:$1|個の改行文字}}があります。",
 	"translate-checks-newline-extra-end": "翻訳の末尾に余分な $1 {{PLURAL:$1|個の改行文字}}があります。",
