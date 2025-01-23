@@ -232,7 +232,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		}
 
 		$reader = Reader::open( $this->cdb );
-		$groups = $this->getGroupsFromCdb( $reader );
+		$groups = self::getGroupsFromCdb( $reader );
 		foreach ( $groups as $id => $group ) {
 			$sourceChanges = MessageSourceChange::loadModifications(
 				Utilities::deserialize( $reader->get( $id ) )
@@ -480,7 +480,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		}
 
 		$reader = Reader::open( $this->cdb );
-		$groups = $this->getGroupsFromCdb( $reader );
+		$groups = self::getGroupsFromCdb( $reader );
 		$groupSyncCacheEnabled = $this->getConfig()->get( 'TranslateGroupSynchronizationCache' );
 		$postponed = [];
 
@@ -1079,7 +1079,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	}
 
 	/** @return array<int|string, MessageGroup> */
-	private function getGroupsFromCdb( Reader $reader ): array {
+	public static function getGroupsFromCdb( Reader $reader ): array {
+		// TODO: Move this function to a seperate class.
 		$groups = [];
 		$groupIds = Utilities::deserialize( $reader->get( '#keys' ) );
 		foreach ( $groupIds as $id ) {
