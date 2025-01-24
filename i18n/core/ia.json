@@ -469,5 +469,7 @@
 	"notification-body-translate-mgs-message-added": "$1 message{{PLURAL:$1||s}} nove o actualisate",
 	"notification-link-mgs-group-translate": "Traducer $1",
 	"tpt-cleanchanges-language": "Lingua:",
-	"tpt-cleanchanges-language-na": "Totes"
+	"tpt-cleanchanges-language-na": "Totes",
+	"namespaceinfo-description-ns1198": "Spatio de nomines que contine unitates de traduction, p.ex. pecias individual traducibile e traducite de [[Special:PageTranslation|paginas traducibile]] e [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|pacchettos de messages]]",
+	"namespaceinfo-description-ns1199": "Paginas de discussion pro unitates de traduction"
 }

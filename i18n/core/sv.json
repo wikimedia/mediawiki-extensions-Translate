@@ -356,6 +356,7 @@
 	"translate-msggroupselector-search-recent": "Senaste",
 	"translate-msggroupselector-search-watched": "Bevakas",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|undergrupp|undergrupper}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Hantera dina prenumerationer",
 	"tux-languageselector": "Översätt till",
 	"tux-select-target-language": "Målspråk för översättning",
 	"tux-watch-group": "Bevaka",
@@ -478,6 +479,10 @@
 	"translate-messagebundle-group-description": "Meddelanden i meddelandebunt som definierats på sidan [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Ändrar meddelandepaketets källspråk enligt metadata.",
 	"translate-messagebundle-sourcelanguage-changed": "Meddelandepaketets källspråk kan inte ändras efter det väl har skapats.",
+	"translate-error-association-failure": "Följande meddelande{{PLURAL:$2|grupp|grupper}} kan inte associeras med den aggregerade gruppen: $1",
+	"translate-error-invalid-aggregategroup": "$1 är en ogiltig aggregerad meddelandegrupp",
+	"translate-error-aggregategroup-source-language-mismatch": "{{PLURAL:$3|Gruppen $1|Grupperna $1}} har inte samma källspråk som den aggregerade gruppen ($2).",
+	"translate-error-duplicate-aggregategroup": "Aggregerad meddelandegrupp med namnet $1 finns redan.",
 	"log-action-filter-translationreview": "Typ av åtgärd:",
 	"log-action-filter-translationreview-message": "Granskning av individuella översättningsmeddelanden",
 	"log-action-filter-translationreview-group": "Ändringar i förloppsstatus för översättningar",
@@ -491,5 +496,6 @@
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|nytt eller uppdaterat meddelande|nya eller uppdaterade meddelanden}}",
 	"notification-link-mgs-group-translate": "Översätt $1",
 	"tpt-cleanchanges-language": "Språk:",
-	"tpt-cleanchanges-language-na": "Alla"
+	"tpt-cleanchanges-language-na": "Alla",
+	"namespaceinfo-description-ns1199": "Diskussionssidor för översättningsenheter"
 }
