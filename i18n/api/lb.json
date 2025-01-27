@@ -38,7 +38,7 @@
 	"apierror-translate-duplicateaggregategroup": "De Grupp vu Message gëtt et schonn",
 	"apierror-translate-fuzzymessage": "Fuzzy Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-invalidlanguage": "Déi gefrot Sprooch ass net valabel.",
-	"apierror-translate-invalidupdate": "Net valabel Datum",
+	"apierror-translate-invalidupdate": "Ongülteg Aktualiséierung",
 	"apierror-translate-language-disabled": "Iwwersetzung op $1 ass ausgeschalt.",
 	"apierror-translate-language-disabled-reason": "Iwwersetzung op $1 ass desaktivéiert: $2",
 	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",
