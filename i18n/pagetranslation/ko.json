@@ -108,6 +108,7 @@
 	"tpt-aggregategroup-save": "저장",
 	"tpt-aggregategroup-close": "닫기",
 	"tpt-aggregategroup-add-new": "새 집계 그룹 추가",
+	"tpt-aggregategroup-language-none": "(없음)",
 	"tpt-aggregategroup-new-name": "이름:",
 	"tpt-aggregategroup-new-description": "설명 (선택):",
 	"tpt-aggregategroup-remove-confirm": "이 집계 그룹을 정말 삭제하겠습니까?",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Kavya Manohar",
+			"Naveen Sankar",
 			"Praveenp",
 			"Santhosh.thottingal"
 		]
@@ -35,8 +36,12 @@
 	"tpt-target-page": "ഈ താൾ താങ്കൾക്ക് പുതുക്കാൻ കഴിയില്ല.\nഈ താൾ [[$1]] എന്ന താളിന്റെ പരിഭാഷയാണ്, പരിഭാഷ പുതുക്കാൻ [$2 പരിഭാഷാ ഉപകരണം] ഉപയോഗിക്കുക.",
 	"tpt-aggregategroup-add": "കൂട്ടിച്ചേർക്കുക",
 	"tpt-aggregategroup-save": "സേവ് ചെയ്യുക",
+	"tpt-aggregategroup-edit": "മൊത്തം ഗ്രൂപ്പും എഡിറ്റ് ചെയ്യുക",
+	"tpt-aggregategroup-delete": "മൊത്തം ഗ്രൂപ്പും കളയുക",
+	"tpt-aggregategroup-language-none": "(ഒന്നുമില്ല)",
 	"tpt-aggregategroup-new-name": "പേര്:",
 	"tpt-aggregategroup-new-description": "വിവരണം (ഐച്ഛികം):",
+	"tpt-aggregategroup-remove-confirm-title": "മൊത്തം ഗ്രൂപ്പും കളയുക",
 	"log-name-pagetranslation": "താൾ പരിഭാഷാ രേഖ",
 	"pt-movepage-list-pages": "മാറ്റേണ്ട താളുകളുടെ പട്ടിക",
 	"pt-movepage-list-translation": "പരിഭാഷാ{{PLURAL:$1|താൾ|താളുകൾ}}",

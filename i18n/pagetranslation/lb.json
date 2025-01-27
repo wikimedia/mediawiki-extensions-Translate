@@ -93,6 +93,7 @@
 	"tpt-aggregategroup-close": "Zoumaachen",
 	"tpt-aggregategroup-add-new": "Eng nei zesummegeluechte Grupp dobäisetzen",
 	"tpt-aggregategroup-select-source-language": "Benotzerdefinéiert Ausgangssprooch (optional):",
+	"tpt-aggregategroup-language-none": "(Keng)",
 	"tpt-aggregategroup-new-name": "Numm:",
 	"tpt-aggregategroup-new-description": "Beschreiwung (optional):",
 	"tpt-aggregategroup-remove-confirm": "Sidd Dir sécher datt Dir dëse Grupp läsche wëllt?",

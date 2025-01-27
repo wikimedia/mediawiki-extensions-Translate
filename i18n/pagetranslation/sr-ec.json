@@ -92,6 +92,7 @@
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Сачувај",
 	"tpt-aggregategroup-close": "Затвори",
+	"tpt-aggregategroup-language-none": "(ништа)",
 	"tpt-aggregategroup-new-name": "Име:",
 	"tpt-aggregategroup-new-description": "Опис (опционално):",
 	"tpt-aggregategroup-invalid-group": "Група не постоји",
