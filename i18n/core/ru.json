@@ -273,7 +273,7 @@
 	"supportedlanguages-activity": "{{BIDI:$1}}: $2 {{PLURAL:$2|правка|правки|правок}} — последняя правка $3 {{PLURAL:$3|день|дня|дней}} назад",
 	"translate-supportedlanguages-cached": "Эта информация была кеширована $1 назад.",
 	"translate-activelanguages-invalid-code": "Языковой код «$1» не распознан или не был активирован для переводов.",
-	"abusefilter-edit-builder-vars-translate-source-text": "Исходный текст элемента перевода",
+	"abusefilter-edit-builder-vars-translate-source-text": "Исходный текст единицы перевода",
 	"abusefilter-edit-builder-vars-translate-target-language": "Целевой язык для перевода",
 	"translate-jssti-add": "Добавить в список",
 	"managemessagegroups": "Управление группами сообщений",
