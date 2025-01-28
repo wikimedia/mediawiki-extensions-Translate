@@ -150,6 +150,8 @@
 	"tpt-aggregategroup-expand-group": "Gruppen ausklappen",
 	"tpt-aggregategroup-collapse-group": "Gruppen einklappen",
 	"tpt-aggregategroup-empty-name": "Der Name der aggregierten Nachrichtengruppe darf nicht leer sein",
+	"tpt-aggregategroup-load-error": "Beim Versuch, aggregierte Gruppeninformationen zu laden, ist ein Fehler aufgetreten.",
+	"tpt-aggregategroup-not-found": "Aggregatgruppe konnte nicht gefunden werden. Möglicherweise wurde sie gelöscht.",
 	"tpt-invalid-group": "Ungültige Gruppe",
 	"pt-parse-open": "Eine &lt;translate&gt;-Markierung hat kein Gegenstück.\nÜbersetzungsvorlage: <pre>$1</pre>",
 	"pt-parse-close": "Eine &lt;/translate>-Markierung hat kein Gegenstück.\nÜbersetzungsvorlage: <pre>$1</pre>",
