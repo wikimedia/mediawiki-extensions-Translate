@@ -20,30 +20,30 @@ class TranslationQuery {
 	/** @var mixed Arbitrary data that is returned with TranslationQueryResponse */
 	private $instructions;
 
-	public static function factory( string $url ): TranslationQuery {
+	public static function factory( string $url ): self {
 		$obj = new self();
 		$obj->url = $url;
 		return $obj;
 	}
 
 	/** Make this a POST request with given data. */
-	public function postWithData( string $data ): TranslationQuery {
+	public function postWithData( string $data ): self {
 		$this->method = 'POST';
 		$this->body = $data;
 		return $this;
 	}
 
-	public function queryParameters( array $params ): TranslationQuery {
+	public function queryParameters( array $params ): self {
 		$this->params = $params;
 		return $this;
 	}
 
-	public function queryHeaders( array $headers ): TranslationQuery {
+	public function queryHeaders( array $headers ): self {
 		$this->headers = $headers;
 		return $this;
 	}
 
-	public function timeout( float $timeout ): TranslationQuery {
+	public function timeout( float $timeout ): self {
 		$this->timeout = $timeout;
 		return $this;
 	}
@@ -53,7 +53,7 @@ class TranslationQuery {
 	 * @param mixed $data
 	 * @since 2017.04
 	 */
-	public function attachProcessingInstructions( $data ): TranslationQuery {
+	public function attachProcessingInstructions( $data ): self {
 		$this->instructions = $data;
 		return $this;
 	}

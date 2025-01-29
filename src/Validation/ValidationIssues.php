@@ -28,7 +28,7 @@ class ValidationIssues implements Countable, IteratorAggregate {
 	}
 
 	/** Merge another collection to this collection. */
-	public function merge( ValidationIssues $issues ) {
+	public function merge( self $issues ) {
 		$this->issues = array_merge( $this->issues, $issues->issues );
 	}
 
