@@ -146,6 +146,8 @@
 	"tpt-aggregategroup-expand-group": "להציג את הקבוצה",
 	"tpt-aggregategroup-collapse-group": "להסתיר את הקבוצה",
 	"tpt-aggregategroup-empty-name": "שם קבוצת ההודעות המשולבת לא יכול להיות ריק",
+	"tpt-aggregategroup-load-error": "אירעה שגיאה בעת ניסיון לטעון מידע על הקבוצות המשולבות.",
+	"tpt-aggregategroup-not-found": "לא היה אפשר למצוא את הקבוצה המשולבת. ייתכן שהיא נמחקה.",
 	"tpt-invalid-group": "קבוצה בלתי־תקינה",
 	"pt-parse-open": "תג &lt;translate> לא מאוזן.\nתבנית תרגום: <pre>$1</pre>",
 	"pt-parse-close": "תג &lt;/translate> לא מאוזן.\nתבנית תרגום: <pre>$1</pre>",

@@ -137,6 +137,8 @@
 	"tpt-aggregategroup-expand-group": "расклопи група",
 	"tpt-aggregategroup-collapse-group": "собери група",
 	"tpt-aggregategroup-empty-name": "Збирната група пораки мора да има име",
+	"tpt-aggregategroup-load-error": "Се јави грешка при вчитувањето на информации за збирната група.",
+	"tpt-aggregategroup-not-found": "Не можев да ја најдам збирната група. Може да е избришана.",
 	"tpt-invalid-group": "Неважечка група",
 	"pt-parse-open": "Неврамнотежена &lt;translate> ознака.\nПредлошка за преводот: <pre>$1</pre>",
 	"pt-parse-close": "Неврамнотежена &lt;/translate> ознака.\nПредлошка за преводот: <pre>$1</pre>",
