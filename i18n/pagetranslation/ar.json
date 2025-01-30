@@ -15,7 +15,8 @@
 			"محمد أحمد عبد الفتاح",
 			"Dr-Taher",
 			"Mohammed Qays",
-			"بهتين شوكت"
+			"بهتين شوكت",
+			"XIDME"
 		]
 	},
 	"pagetranslation": "ترجمة صفحة",
@@ -95,7 +96,7 @@
 	"tpt-aggregategroup-edit-name": "الاسم:",
 	"tpt-aggregategroup-edit-description": "الوصف:",
 	"tpt-aggregategroup-update": "حفظ",
-	"tpt-aggregategroup-update-cancel": "ألغ",
+	"tpt-aggregategroup-update-cancel": "إلغاء",
 	"tpt-invalid-group": "مجموعة غير صالحة",
 	"pt-parse-open": "وسم &lt;translate> غير متوازن.\nقالب الترجمة: <pre>$1</pre>",
 	"pt-parse-close": "وسم &lt;/translate> غير متوازن.\nقالب الترجمة: <pre>$1</pre>",
@@ -187,7 +188,7 @@
 	"pagemigration-summary": "حدد صفحة ترجمة واستعد أي ترجمة تمت قبل تفعيل نظام الترجمة على هذه الصفحة.",
 	"pm-import-button-label": "استورد",
 	"pm-savepages-button-label": "حفظ",
-	"pm-cancel-button-label": "ألغ",
+	"pm-cancel-button-label": "إلغاء",
 	"pm-page-does-not-exist": "الصفحة $1 غير موجودة.",
 	"pm-old-translations-missing": "الصفحة $1 لا تحتوي على ترجمات قديمة.",
 	"pm-extra-units-warning": "ربما تكون هناك وحدات إضافية. من فضلط طابق المصد ووحدات الترجمة جيدا.",
@@ -208,7 +209,7 @@
 	"pp-pagename-placeholder": "أدخل اسم الصفحة",
 	"pp-prepare-button-label": "جهز",
 	"pp-save-button-label": "نشر",
-	"pp-cancel-button-label": "ألغ",
+	"pp-cancel-button-label": "إلغاء",
 	"pp-save-message": "الصفحة تم حفظها. أنت يمكنك [$1 تعديلها].",
 	"pp-prepare-message": "الصفحة تم تحضيرها للترجمة. انظر الفرق بالأسفل. اضغط على زر \"{{int:pp-save-button-label}}\" لو موافق!",
 	"pp-already-prepared-message": "يبدو أن الصفحة إما قد تم إعدادها بالفعل لترجمة، أو لا يمكن إعدادها تلقائيًا. لا يوجد أي تغييرات مقارنة بالنسخة السابقة.",

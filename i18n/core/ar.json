@@ -22,7 +22,9 @@
 			"زكريا",
 			"لطرش أحمد الهاشمي",
 			"لطرش احمد الهاشمي",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Mohanad",
+			"XIDME"
 		]
 	},
 	"translate": "ترجمة",
@@ -325,7 +327,7 @@
 	"tux-editor-discard-changes-button-label": "تجاهل التغييرات",
 	"tux-editor-save-button-label": "حفظ الترجمة",
 	"tux-editor-skip-button-label": "تخط إلى التالية",
-	"tux-editor-cancel-button-label": "ألغ",
+	"tux-editor-cancel-button-label": "إلغاء",
 	"tux-editor-confirm-button-label": "أكد الترجمة",
 	"tux-editor-proofread-button-label": "قبول الترجمة",
 	"tux-editor-shortcut-info": "اضغط على \"$1\" للتأكيد والانتقال إلى الرسالة التالية، أو \"$2\" للتخطي، أو \"$4\" لتقديم ملخص أو اضغط على \"$3\" لمشاهدة اختصارات أخرى.",
@@ -357,7 +359,7 @@
 	"tux-editor-outdated-notice-diff-link": "أظهر الفروق",
 	"tux-editor-doc-editor-placeholder": "توثيق الرسالة",
 	"tux-editor-doc-editor-save": "حفظ التوثيق",
-	"tux-editor-doc-editor-cancel": "ألغ",
+	"tux-editor-doc-editor-cancel": "إلغاء",
 	"tux-messagetable-more-messages": "{{PLURAL:$1|رسالة أخرى|رسالتان أخرتان|$1 رسائل أخرى|$1 رسالة أخرى}}",
 	"tux-messagetable-loading-messages": "جار تحميل {{PLURAL:$1|الرسالة|الرسائل}}...",
 	"tux-message-filter-placeholder": "صفِّ القائمة",
