@@ -37,7 +37,7 @@ class MessageBundleLuaLibrary extends LibraryBase {
 		// the parser cache should be invalidated so that the error goes away.
 		$this->getParser()->getOutput()->addTemplate( $mbTitle, $mbTitle->getId(), $mbTitle->getLatestRevID() );
 		if ( !MessageBundle::isSourcePage( $mbTitle ) ) {
-			throw new LuaError( "$messageBundleTitle is not a valid message bundle." );
+			throw new LuaError( "$messageBundleTitle is not a valid message bundle" );
 		}
 	}
 
