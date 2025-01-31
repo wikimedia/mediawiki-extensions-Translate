@@ -90,7 +90,7 @@ class UpdateMessageBundleJob extends Job {
 		foreach ( $messages as $key => $value ) {
 			$title = Title::makeTitle( $namespace, "$key/$code" );
 			$subscriptionState = $this->getMessageSubscriptionState( $previousMessages, $newKeys, $key, $value );
-			$fuzzy = $subscriptionState === null;
+			$fuzzy = $subscriptionState === MessageGroupSubscription::STATE_UPDATED;
 			$jobs[] = UpdateMessageJob::newJob( $title, $value, $fuzzy );
 
 			if ( $subscriptionState ) {
