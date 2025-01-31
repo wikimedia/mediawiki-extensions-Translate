@@ -67,7 +67,7 @@ class HookDocTest extends MediaWikiIntegrationTestCase {
 			$file = readdir( $dh );
 			while ( $file !== false ) {
 				if ( filetype( $path . $file ) === 'file' ) {
-					$hooks = array_merge( $hooks, call_user_func( $callback, $path . $file ) );
+					$hooks = array_merge( $hooks, $callback( $path . $file ) );
 				}
 				$file = readdir( $dh );
 			}

@@ -647,14 +647,14 @@ class MessageGroupStats {
 			}
 
 			$dbw->commit( $functionName, 'flush' );
-			call_user_func( $callback, $dbw, $functionName );
+			$callback( $dbw, $functionName );
 			$dbw->commit( $functionName, 'flush' );
 
 			$dbw->unlock( $lockName, $functionName );
 		};
 
 		if ( $flags & self::FLAG_IMMEDIATE_WRITES ) {
-			call_user_func( $updateOp );
+			$updateOp();
 		} else {
 			DeferredUpdates::addCallableUpdate( $updateOp );
 		}

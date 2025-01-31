@@ -119,7 +119,7 @@ class PoImporter {
 	protected function reportProgress( $text, $channel = null, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
 			$useErrorOutput = $severity === 'error';
-			call_user_func( $this->progressCallback, $text, $channel, $useErrorOutput );
+			( $this->progressCallback )( $text, $channel, $useErrorOutput );
 		}
 	}
 
@@ -261,7 +261,7 @@ class WikiWriter {
 	protected function reportProgress( $text, $channel, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
 			$useErrorOutput = $severity === 'error';
-			call_user_func( $this->progressCallback, $text, $channel, $useErrorOutput );
+			( $this->progressCallback )( $text, $channel, $useErrorOutput );
 		}
 	}
 

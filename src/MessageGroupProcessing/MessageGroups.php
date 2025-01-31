@@ -62,7 +62,7 @@ class MessageGroups {
 	protected function initGroupsFromDefinitions( array $groups ): void {
 		foreach ( $groups as $id => $mixed ) {
 			if ( !is_object( $mixed ) ) {
-				$groups[$id] = call_user_func( $mixed, $id );
+				$groups[$id] = $mixed( $id );
 			}
 		}
 

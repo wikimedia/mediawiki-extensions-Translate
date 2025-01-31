@@ -163,7 +163,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		if ( $this->importInProgress ) {
 			$this->bundleTitle ??= $title;
 			if ( $this->pageImportCompleteCallback ) {
-				call_user_func( $this->pageImportCompleteCallback, $title, $foreignTitle );
+				( $this->pageImportCompleteCallback )( $title, $foreignTitle );
 			}
 		}
 	}

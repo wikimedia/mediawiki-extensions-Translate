@@ -76,7 +76,7 @@ class TranslatableBundleExporter {
 	 */
 	private function exportPages( array $pagesForExport, string $pageType ): void {
 		if ( $this->exportPageCallback ) {
-			call_user_func( $this->exportPageCallback, $pagesForExport, $pageType );
+			( $this->exportPageCallback )( $pagesForExport, $pageType );
 		}
 
 		foreach ( $pagesForExport as $page ) {

@@ -244,8 +244,7 @@ class MessageSourceChange {
 			if ( $matchedMsgState === self::CHANGE ) {
 				$matchedMsg['key'] = $msg['key'];
 			}
-			call_user_func(
-				$this->addFunctionMap[ $matchedMsgState ],
+			$this->addFunctionMap[ $matchedMsgState ](
 				$languageCode,
 				$matchedMsg['key'],
 				$matchedMsg['content']
@@ -256,8 +255,7 @@ class MessageSourceChange {
 			if ( $msgState === self::CHANGE ) {
 				$msg['key'] = $matchedMsg['key'];
 			}
-			call_user_func(
-				$this->addFunctionMap[ $msgState ],
+			$this->addFunctionMap[ $msgState ](
 				$languageCode,
 				$msg['key'],
 				$msg['content']
@@ -343,7 +341,7 @@ class MessageSourceChange {
 			);
 		}
 
-		call_user_func( $callable, $language, $keysToRemove );
+		$callable( $language, $keysToRemove );
 	}
 
 	/**

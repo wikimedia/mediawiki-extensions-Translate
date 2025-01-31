@@ -73,7 +73,7 @@ class TestMT extends Maintenance {
 			}
 
 			public function log( $level, $msg, array $context = [] ) {
-				call_user_func( $this->logger, "[$level] $msg\n" );
+				( $this->logger )( "[$level] $msg\n" );
 			}
 		};
 

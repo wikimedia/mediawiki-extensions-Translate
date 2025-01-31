@@ -174,7 +174,7 @@ class MessageGroupConfigurationParser {
 
 	private function callGetExtraSchema( ?string $className ): array {
 		if ( $className && is_callable( [ $className, 'getExtraSchema' ] ) ) {
-			return call_user_func( [ $className, 'getExtraSchema' ] );
+			return $className::getExtraSchema();
 		}
 
 		return [];

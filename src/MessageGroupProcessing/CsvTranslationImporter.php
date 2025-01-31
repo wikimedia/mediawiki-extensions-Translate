@@ -172,8 +172,7 @@ class CsvTranslationImporter {
 
 			++$currentTranslation;
 			if ( $progressReporter ) {
-				call_user_func(
-					$progressReporter,
+				$progressReporter(
 					$messageTitle,
 					$translationImportStatuses,
 					count( $messagesWithTranslations ),
