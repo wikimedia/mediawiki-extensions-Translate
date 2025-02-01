@@ -44,7 +44,7 @@ class UnicodePluralValidator implements MessageValidator {
 		} elseif ( $presence === 'ok' ) {
 			[ $msgcode, $actualKeywords ] = $this->pluralFormCheck( $translation, $expectedKeywords );
 			if ( $msgcode === 'invalid' ) {
-				$formatter = fn ( string $x ) => [ $x, '…' ];
+				$formatter = static fn ( string $x ) => [ $x, '…' ];
 				$expectedExample = UnicodePlural::flattenList(
 					array_map( $formatter, $expectedKeywords ?? UnicodePlural::KEYWORDS )
 				);
