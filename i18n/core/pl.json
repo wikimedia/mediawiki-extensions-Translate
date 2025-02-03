@@ -224,6 +224,7 @@
 	"translate-mgs-invalid-group": "Nie istnieje grupa „$1“.",
 	"translate-mgs-nothing": "Brak czegokolwiek do wyświetlenia dla żądanych statystyk.",
 	"translate-tes-server-error": "Nie udało się pobrać podpowiedzi wyszukiwania",
+	"translate-tes-type-to-search": "Wpisuj, aby rozpocząć wyszukiwanie",
 	"supportedlanguages": "Aktywne języki",
 	"supportedlanguages-summary": "Na tej stronie znajduje się lista aktywnych języków w {{GRAMMAR:MS.lp|{{SITENAME}}}}, razem z pseudonimami tłumaczy, pracującymi w danym języku.\nWiększa czcionka świadczy o większej liczbie edycji wykonanych przez tłumacza.\nKolorem podkreślenia wyróżniono jak dawno tłumacz był aktywny.",
 	"supportedlanguages-colorlegend": "Znaczenie koloru – ostatnie tłumaczenie $1 dni temu.",
