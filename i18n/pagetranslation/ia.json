@@ -136,6 +136,8 @@
 	"tpt-aggregategroup-expand-group": "expander gruppo",
 	"tpt-aggregategroup-collapse-group": "contraher gruppo",
 	"tpt-aggregategroup-empty-name": "Le nomine del gruppo de messages aggregate non pote esser vacue",
+	"tpt-aggregategroup-load-error": "Un error ha occurrite durante le tentativa de cargar informationes de gruppos aggregate.",
+	"tpt-aggregategroup-not-found": "Le gruppo aggregate non ha potite esser trovate. Pote esser que illo ha essite delite.",
 	"tpt-invalid-group": "Gruppo non valide",
 	"pt-parse-open": "Etiquetta &lt;translate> asymmetric.\nPatrono de traduction: <pre>$1</pre>",
 	"pt-parse-close": "Etiquetta &lt;/translate> asymmetric.\nPatrono de traduction: <pre>$1</pre>",
