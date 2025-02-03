@@ -17,7 +17,7 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 		parent::__construct( 'PageMigration', 'pagetranslation' );
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 

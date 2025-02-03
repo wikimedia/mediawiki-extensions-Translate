@@ -646,7 +646,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		);
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 }

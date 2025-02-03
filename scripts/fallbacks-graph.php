@@ -75,7 +75,7 @@ class FallbacksCompare extends Maintenance {
 		echo str_replace( '$1', $output, $template );
 	}
 
-	protected function createNode( $code ) {
+	protected function createNode( string $code ): string {
 		return Xml::openElement( 'node', [ 'id' => $code ] )
 			. Xml::openElement( 'data', [ 'key' => 'code' ] )
 			. Xml::openElement( 'y:Shapenode' )

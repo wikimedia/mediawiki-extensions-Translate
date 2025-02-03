@@ -44,7 +44,7 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 		$this->searchEngineFactory = $searchEngineFactory;
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 

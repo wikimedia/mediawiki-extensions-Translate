@@ -275,7 +275,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	protected static function addContext( Message $message, ?IContextSource $context = null ) {
+	protected static function addContext( Message $message, ?IContextSource $context = null ): Message {
 		if ( $context ) {
 			$message->inLanguage( $context->getLanguage() );
 		} else {

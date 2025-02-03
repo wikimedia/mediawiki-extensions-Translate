@@ -61,7 +61,7 @@ abstract class CxserverWebService extends TranslationWebService {
 			->postWithData( wfArrayToCgi( [ 'html' => $text ] ) );
 	}
 
-	protected function parseResponse( TranslationQueryResponse $response ) {
+	protected function parseResponse( TranslationQueryResponse $response ): string {
 		$body = $response->getBody();
 		$parsedBody = FormatJson::decode( $body, true );
 		if ( !is_array( $parsedBody ) ) {

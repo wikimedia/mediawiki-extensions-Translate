@@ -74,7 +74,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 
@@ -359,7 +359,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$this->getOutput()->addHTML( $html );
 	}
 
-	protected function formatStyle( $styles ) {
+	protected function formatStyle( array $styles ): string {
 		$stylestr = '';
 		foreach ( $styles as $key => $value ) {
 			$stylestr .= "$key:$value;";
@@ -379,7 +379,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$lb->execute();
 	}
 
-	protected function getColorLegend() {
+	protected function getColorLegend(): string {
 		$legend = '';
 		$period = $this->period;
 

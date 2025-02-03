@@ -86,7 +86,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $this->groups;
 	}
 
-	protected function loadMessagesFromCache( $groups ) {
+	protected function loadMessagesFromCache( array $groups ): array {
 		$messages = [];
 		foreach ( $groups as $group ) {
 			if ( $group instanceof self ) {

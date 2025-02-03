@@ -43,7 +43,7 @@ class QueryTranslationStatsActionApi extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'count' => [
 				ParamValidator::PARAM_TYPE => $this->dataProvider->getGraphTypes(),
@@ -75,7 +75,7 @@ class QueryTranslationStatsActionApi extends ApiBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=translationstats&count=edits&days=30'
 				=> 'apihelp-translationstats-example-1',

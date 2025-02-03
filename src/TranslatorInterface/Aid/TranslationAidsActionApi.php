@@ -146,7 +146,7 @@ class TranslationAidsActionApi extends ApiBase {
 		];
 	}
 
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=translationaids&title=MediaWiki:January/fi'
 				=> 'apihelp-translationaids-example-1',

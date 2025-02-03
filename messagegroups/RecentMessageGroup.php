@@ -60,7 +60,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return $msg->plain();
 	}
 
-	protected function getRCCutoff() {
+	protected function getRCCutoff(): int {
 		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$max = $db->newSelectQueryBuilder()
 			->select( 'MAX(rc_id)' )

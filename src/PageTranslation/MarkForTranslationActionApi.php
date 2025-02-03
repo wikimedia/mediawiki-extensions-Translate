@@ -169,7 +169,7 @@ class MarkForTranslationActionApi extends ApiBase {
 		return 'csrf';
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'title' => [
 				ParamValidator::PARAM_TYPE => 'string',

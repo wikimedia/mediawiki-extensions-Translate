@@ -35,7 +35,7 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		return $msg->plain();
 	}
 
-	protected function getQueryConditions() {
+	protected function getQueryConditions(): array {
 		global $wgTranslateMessageNamespaces;
 		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		return [

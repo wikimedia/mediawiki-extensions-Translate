@@ -113,7 +113,7 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 		] );
 	}
 
-	protected function getAllowedParams() {
+	protected function getAllowedParams(): array {
 		return [
 			'operation' => [
 				ParamValidator::PARAM_TYPE => self::VALID_OPS,

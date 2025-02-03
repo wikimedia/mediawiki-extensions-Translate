@@ -98,7 +98,7 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 		return array_map( [ $this, 'mapInsertables' ], $matches );
 	}
 
-	protected function mapInsertables( array $match ) {
+	protected function mapInsertables( array $match ): Insertable {
 		if ( $this->display === null ) {
 			return new Insertable( $match[0], $match[0] );
 		}

@@ -21,7 +21,7 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		$this->templateParser = new TemplateParser( __DIR__ . '/templates' );
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 

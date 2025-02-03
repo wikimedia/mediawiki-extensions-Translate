@@ -21,7 +21,7 @@ class LanguagesMultiselectWidget extends TagMultiselectWidget {
 		$this->languages = $config['languages'];
 	}
 
-	protected function getJavaScriptClassName() {
+	protected function getJavaScriptClassName(): string {
 		return 'LanguagesMultiselectWidget';
 	}
 

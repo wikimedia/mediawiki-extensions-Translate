@@ -59,7 +59,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return true;
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 

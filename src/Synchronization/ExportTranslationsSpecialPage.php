@@ -356,7 +356,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		fclose( $fp );
 	}
 
-	protected function getGroupName() {
+	protected function getGroupName(): string {
 		return 'translation';
 	}
 }

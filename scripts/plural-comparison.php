@@ -66,7 +66,7 @@ class PluralCompare extends Maintenance {
 		}
 	}
 
-	protected function tryMatch( $code, $mws, $gtLanguages, $clLanguages ) {
+	protected function tryMatch( string $code, string $mws, array $gtLanguages, array $clLanguages ): string {
 		if ( $mws !== '' ) {
 			$mwExp = true;
 			$lang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $code );
@@ -114,7 +114,7 @@ class PluralCompare extends Maintenance {
 		return $a === '?' || $b === '?' || $a === $b;
 	}
 
-	protected function loadPluralFile( $fileName ) {
+	protected function loadPluralFile( string $fileName ): array {
 		$doc = new DOMDocument;
 		$doc->load( $fileName );
 		$rulesets = $doc->getElementsByTagName( 'pluralRules' );

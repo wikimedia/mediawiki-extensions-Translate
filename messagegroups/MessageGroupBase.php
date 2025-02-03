@@ -94,7 +94,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $defs;
 	}
 
-	protected function getFromConf( $section, $key = null ) {
+	protected function getFromConf( string $section, ?string $key = null ) {
 		if ( $key === null ) {
 			return $this->conf[$section] ?? null;
 		}
@@ -203,7 +203,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 	}
 
-	protected function parseTags( $patterns ) {
+	protected function parseTags( array $patterns ): array {
 		$messageKeys = $this->getKeys();
 
 		$matches = [];
@@ -237,7 +237,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $matches;
 	}
 
-	protected function getRawTags( $type = null ) {
+	protected function getRawTags( ?string $type = null ): array {
 		if ( !isset( $this->conf['TAGS'] ) ) {
 			return [];
 		}
@@ -277,7 +277,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $index;
 	}
 
-	protected function isSourceLanguage( $code ) {
+	protected function isSourceLanguage( string $code ): bool {
 		return $code === $this->getSourceLanguage();
 	}
 
