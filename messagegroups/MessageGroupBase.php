@@ -94,6 +94,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $defs;
 	}
 
+	/** @return mixed|array|null */
 	protected function getFromConf( string $section, ?string $key = null ) {
 		if ( $key === null ) {
 			return $this->conf[$section] ?? null;
