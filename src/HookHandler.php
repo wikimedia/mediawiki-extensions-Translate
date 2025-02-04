@@ -643,7 +643,7 @@ class HookHandler implements
 				$search->msg( 'translate-searchprofile-note', $href )->parse(),
 				'plainlinks'
 			);
-
+			$search->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 			return;
 		}
 
