@@ -499,7 +499,7 @@
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Error message.",
 	"translate-messagebundle-error-invalid-description": "Error message.",
 	"translate-messagebundle-error-invalid-label": "Error message.",
-	"translate-messagebundle-group-description": "Group description for message bundle message groups.\n\nParameters:\n* $1 - the message bundle page title\n* $2 - the message bundle source page usable as link target",
+	"translate-messagebundle-group-description": "Group description for message bundle message groups. Appears, for example, on [[Special:Translate]].\n\nParameters:\n* $1 - the message bundle page title\n* $2 - the message bundle source page usable as link target",
 	"translate-messagebundle-change-sourcelanguage": "Reason when changing the source language of a message bundle.",
 	"translate-messagebundle-sourcelanguage-changed": "Error message if source language is changed after message bundle is created",
 	"log-action-filter-translationreview": "{{Doc-log-action-filter-type|translationreview}}\n{{Identical|Type of action}}\n{{Related|Log-action-filter}}",

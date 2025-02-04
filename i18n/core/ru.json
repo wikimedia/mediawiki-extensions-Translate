@@ -512,7 +512,7 @@
 	"translate-hidetranslations": "Скрыть страницы перевода",
 	"echo-category-title-translate-message-group-subscription": "Подписки на группы сообщений для перевода",
 	"echo-pref-tooltip-translate-message-group-subscription": "Сообщать мне об изменениях в группах сообщений для перевода, на которые я подписан",
-	"notification-header-message-group-subscription": "Есть обновления перевода для $1",
+	"notification-header-message-group-subscription": "Обновления перевода для $1",
 	"notification-link-mgs-group-translate": "Перевести $1",
 	"tpt-cleanchanges-language": "Язык:",
 	"tpt-cleanchanges-language-na": "Все"
