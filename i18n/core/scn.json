@@ -4,7 +4,8 @@
 			"Ajeje Brazorf",
 			"Aushulz",
 			"Gmelfi",
-			"Sarvaturi"
+			"Sarvaturi",
+			"GianAntonucci"
 		]
 	},
 	"translate": "Traduci",
@@ -78,7 +79,7 @@
 	"supportedlanguages-recenttranslations": "ùrtimi traduzzioni",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|lingui}} n tutali.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|canciamentu|canciamenti}} - ùrtimu canciamentu $3 {{PLURAL:$3|jornu|jorna}} fa",
-	"translate-jssti-add": "Agghiunci a l'elencu",
+	"translate-jssti-add": "Junci â lista",
 	"translate-smg-left": "Cuntinutu dû missaggiu ntû wiki",
 	"translate-smg-rename-cancel": "Annulla",
 	"translate-smg-rename-new": "Agghiunci comu novu...",
