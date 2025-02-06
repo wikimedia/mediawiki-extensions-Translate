@@ -48,7 +48,7 @@
 	"translate-tag-markthis": "กำหนดให้หน้านี้เพื่อการแปลภาษา",
 	"translate-tag-markthisagain": "หน้านี้มี<span class=\"plainlinks\">[$1 ความเปลี่ยนแปลง]</span> นับตั้งแต่ครั้งสุดท้ายที่<span class=\"plainlinks\">[$2 ถูกกำหนดเพื่อการแปลภาษา]</span>.",
 	"translate-tag-hasnew": "หน้านี้มี<span class=\"plainlinks\">[$1 ความเปลี่ยนแปลง]</span> ที่ไม่ได้ถูกกำหนดเพื่อการแปลภาษา",
-	"tpt-translation-intro": "หน้านี้คือ <span class=\"plainlinks\">[$1 รุ่นปรับปรุงที่เริ่มแปลแล้ว]</span> ของ [[$2]] และการแปลภาษาเสร็จสิ้นแล้ว $3% ของทั้งหมดและเป็นรุ่นล่าสุด",
+	"tpt-translation-intro": "หน้านี้คือ<span class=\"plainlinks\">[$1 รุ่นปรับปรุงที่เริ่มแปลแล้ว]</span>ของ [[$2]] และการแปลภาษาเสร็จสิ้นแล้ว $3% ของทั้งหมดและเป็นรุ่นล่าสุด",
 	"tpt-translation-intro-fuzzy": "การแปลภาษาที่ตกรุ่นแล้วจะถูกทำเครื่องหมายในลักษณะนี้",
 	"tpt-languages-legend": "ภาษาอื่น ๆ:",
 	"tpt-languages-nonzero": "$1 (แปลแล้ว $2%)",

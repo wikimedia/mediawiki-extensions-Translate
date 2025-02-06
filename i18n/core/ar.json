@@ -33,6 +33,7 @@
 	"translate-fuzzybot-desc": "هذا حساب نظام خاص يستخدمه [https://www.mediawiki.org/wiki/Extension:Translate امتداد ترجمة] ميدياويكي ومستخدم للحفاظ على الترجمات،\nهذا الحساب جزء من برنامج ميدياويكي وليس مملوك لأي مستخدم.",
 	"translate-taskui-export-to-file": "صدر في صيغة أصلية",
 	"translate-taskui-export-as-po": "تصدير للترجمة بدون إنترنت",
+	"translate-taskui-export-as-csv": "تصدير بصيغة CSV",
 	"translate-taction-translate": "ترجم",
 	"translate-taction-proofread": "راجع",
 	"translate-taction-lstats": "إحصاءات اللغة",
@@ -404,5 +405,6 @@
 	"tux-nojs": "هذه الأداة لا تعمل بدون جافا سكريبت. الجافا سكريبت معطلة، فشلت في العمل، أو هذا المتصفح غير مدعوم.",
 	"specialpages-group-translation": "ترجمة",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|imported}} حزمة قابلة للترجمة $3",
-	"log-action-filter-import-translatable-bundle": "استيراد حزمة قابلة للترجمة"
+	"log-action-filter-import-translatable-bundle": "استيراد حزمة قابلة للترجمة",
+	"translate-hidetranslations": "أخف صفحات الترجمة"
 }
