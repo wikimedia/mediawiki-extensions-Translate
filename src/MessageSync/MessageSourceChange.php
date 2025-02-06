@@ -364,6 +364,7 @@ class MessageSourceChange {
 	 */
 	protected function removeModification( $language, $type, $keysToRemove = null ) {
 		if ( !isset( $this->changes[$language][$type] ) || $keysToRemove === [] ) {
+			// Nothing to do
 			return;
 		}
 
@@ -427,42 +428,14 @@ class MessageSourceChange {
 	 * @return bool
 	 */
 	public function hasOnly( $language, $type ) {
-		$deletions = $this->getDeletions( $language );
-		$additions = $this->getAdditions( $language );
-		$renames = $this->getRenames( $language );
-		$changes = $this->getChanges( $language );
-		$hasOnlyAdditions = $hasOnlyRenames =
-			$hasOnlyChanges = $hasOnlyDeletions = true;
-
-		if ( $deletions ) {
-			$hasOnlyAdditions = $hasOnlyRenames = $hasOnlyChanges = false;
+		$modifications = $this->getModificationsForLanguage( $language );
+		foreach ( [ self::ADDITION, self::CHANGE, self::DELETION, self::RENAME ] as $t ) {
+			// Stop if modifications of any type other than the allowed type exist
+			if ( $t !== $type && ( $modifications[$t] ?? null ) ) {
+				return false;
+			}
 		}
-
-		if ( $renames ) {
-			$hasOnlyDeletions = $hasOnlyAdditions = $hasOnlyChanges = false;
-		}
-
-		if ( $changes ) {
-			$hasOnlyAdditions = $hasOnlyRenames = $hasOnlyDeletions = false;
-		}
-
-		if ( $additions ) {
-			$hasOnlyDeletions = $hasOnlyRenames = $hasOnlyChanges = false;
-		}
-
-		if ( $type === self::DELETION ) {
-			$response = $hasOnlyDeletions;
-		} elseif ( $type === self::RENAME ) {
-			$response = $hasOnlyRenames;
-		} elseif ( $type === self::CHANGE ) {
-			$response = $hasOnlyChanges;
-		} elseif ( $type === self::ADDITION ) {
-			$response = $hasOnlyAdditions;
-		} else {
-			throw new InvalidArgumentException( "Unknown $type passed." );
-		}
-
-		return $response;
+		return true;
 	}
 
 	/**
