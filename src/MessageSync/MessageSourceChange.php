@@ -33,12 +33,12 @@ class MessageSourceChange {
 
 	/**
 	 * Contains a mapping of message type, and the corresponding addition function
-	 * @var callable[]
+	 * @var array<string,callable>
 	 */
 	protected $addFunctionMap;
 	/**
 	 * Contains a mapping of message type, and the corresponding removal function
-	 * @var callable[]
+	 * @var array<string,callable>
 	 */
 	protected $removeFunctionMap;
 
@@ -113,6 +113,11 @@ class MessageSourceChange {
 		];
 	}
 
+	/**
+	 * @param string $language
+	 * @param string $msgKey
+	 * @param string $state
+	 */
 	public function setRenameState( $language, $msgKey, $state ) {
 		$possibleStates = [ self::ADDITION, self::CHANGE, self::DELETION,
 			self::NONE, self::RENAME ];
@@ -291,7 +296,7 @@ class MessageSourceChange {
 	/**
 	 * Remove additions for a language under the group.
 	 * @param string $language
-	 * @param array|null $keysToRemove
+	 * @param string[]|null $keysToRemove
 	 */
 	public function removeAdditions( $language, $keysToRemove ) {
 		$this->removeModification( $language, self::ADDITION, $keysToRemove );
@@ -300,7 +305,7 @@ class MessageSourceChange {
 	/**
 	 * Remove deletions for a language under the group.
 	 * @param string $language
-	 * @param array|null $keysToRemove
+	 * @param string[]|null $keysToRemove
 	 */
 	public function removeDeletions( $language, $keysToRemove ) {
 		$this->removeModification( $language, self::DELETION, $keysToRemove );
@@ -309,7 +314,7 @@ class MessageSourceChange {
 	/**
 	 * Remove changes for a language under the group.
 	 * @param string $language
-	 * @param array|null $keysToRemove
+	 * @param string[]|null $keysToRemove
 	 */
 	public function removeChanges( $language, $keysToRemove ) {
 		$this->removeModification( $language, self::CHANGE, $keysToRemove );
@@ -318,7 +323,7 @@ class MessageSourceChange {
 	/**
 	 * Remove renames for a language under the group.
 	 * @param string $language
-	 * @param array|null $keysToRemove
+	 * @param string[]|null $keysToRemove
 	 */
 	public function removeRenames( $language, $keysToRemove ) {
 		$this->removeModification( $language, self::RENAME, $keysToRemove );
@@ -328,7 +333,7 @@ class MessageSourceChange {
 	 * Remove modifications based on the type. Avoids usage of ugly if / switch
 	 * statement.
 	 * @param string $language
-	 * @param array $keysToRemove
+	 * @param string[] $keysToRemove
 	 * @param string $type One of ADDITION, CHANGE, DELETION
 	 */
 	public function removeBasedOnType( $language, $keysToRemove, $type ) {
@@ -352,6 +357,11 @@ class MessageSourceChange {
 		unset( $this->changes[ $language ] );
 	}
 
+	/**
+	 * @param string $language
+	 * @param string $type
+	 * @param string[]|null $keysToRemove Use null to remove all
+	 */
 	protected function removeModification( $language, $type, $keysToRemove = null ) {
 		if ( !isset( $this->changes[$language][$type] ) || $keysToRemove === [] ) {
 			return;
