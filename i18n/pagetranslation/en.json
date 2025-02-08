@@ -314,7 +314,7 @@
 	"visualeditor-annotations-tvar-description": "This range is marked as untranslatable. Please refer to [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] for more information.",
 	"tag-translate-translation-pages": "-",
 	"tag-translate-translation-pages-description": "Automatic edits to translation pages by Translate extension",
-	"tpt-cant-edit-source-language": "Cannot manually edit translation units in the source language. Please make the change to base page ([[$1]]) instead, and then mark it for translation.",
+	"tpt-cant-edit-source-language": "Cannot manually edit translation units in the source language. Please make the change to base page ([[:$1]]) instead, and then mark it for translation.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Please log in to view or edit items on your message group subscriptions.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Unsubscribe from message groups",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Message groups you are subscribed to are shown below. To remove a message group, check the box next to it, and click 'Remove subscriptions'. You can also edit the [[Special:ManageMessageGroupSubscriptions/raw|raw list]].",
