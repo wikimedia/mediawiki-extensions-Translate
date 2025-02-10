@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aristorkle"
+		]
+	},
+	"translate-tag-translate-link-desc": "Traduci este pagina",
+	"tpt-languages-nonzero": "$1 ($2% ya traduci)",
+	"tpt-tab-translate": "Traduci",
+	"tpt-discouraged-language-force-header": "Este pagina no puede traduci na $1."
+}

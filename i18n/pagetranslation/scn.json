@@ -4,7 +4,8 @@
 			"Ajeje Brazorf",
 			"Aushulz",
 			"Pippinu",
-			"Sarvaturi"
+			"Sarvaturi",
+			"GianAntonucci"
 		]
 	},
 	"pagetranslation": "Traduzzioni pàggini",
@@ -44,7 +45,7 @@
 	"pt-deletepage-reason-details": "Àutru/ultiriuri mutivu:",
 	"pt-deletepage-reason-other": "Àutru mutivu",
 	"pt-deletepage-subpages": "Cancella tutti li suttapàggini",
-	"pt-deletepage-list-pages": "Elencu di pàggini da cancillari",
+	"pt-deletepage-list-pages": "Lista dî pàggini di scancillari",
 	"pt-deletepage-list-other": "Àutri suttapàggini",
 	"pt-deletepage-list-count": "N tutali $1 {{PLURAL:$1|pàggina|pàggini}} e $2 {{PLURAL:$2|suttapàggina|suttapàggini}} da cancillari.",
 	"pt-deletepage-list-no-pages": "Nuḍḍa pàggina attruvata.",
