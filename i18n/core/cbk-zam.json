@@ -4,5 +4,7 @@
 			"Aristorkle"
 		]
 	},
-	"translate-documentation-language": "Documentacion del mensaje"
+	"translate": "Traduci",
+	"translate-documentation-language": "Documentacion del mensaje",
+	"translate-searchprofile": "Maga traduccion"
 }
