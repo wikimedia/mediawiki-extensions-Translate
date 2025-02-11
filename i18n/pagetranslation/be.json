@@ -309,7 +309,7 @@
 	"visualeditor-annotations-tvar-end": "Канец неперакладальнага зместу",
 	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны як неперакладальны. Калі ласка, звярніцеся да старонкі [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation of the source text] для дадатковай інфармацыі.",
 	"tag-translate-translation-pages-description": "Аўтаматычнае рэдагаванне старонак перакладу пашырэннем Translate",
-	"tpt-cant-edit-source-language": "Немагчыма ўручную правіць адзінкі перакладу на зыходнай мове. Замест гэтага ўнясіце змены ў базавую старонку ([[$1]]), а потым пазначце яе для перакладу.",
+	"tpt-cant-edit-source-language": "Немагчыма ўручную правіць адзінкі перакладу на зыходнай мове. Замест гэтага ўнясіце змены ў базавую старонку ([[:$1]]), а потым пазначце яе для перакладу.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Калі ласка, увайдзіце ў сістэму, каб праглядаць або правіць элементы вашых падпісак на групы паведамленняў.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Адпісацца ад груп паведамленняў",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Групы паведамленняў, на якія вы падпісаны, паказаны ніжэй. Каб выдаліць групу паведамленняў, пастаўце побач з ёй галачку і націсніце «Выдаліць падпіскі». Вы таксама можаце рэдагаваць [[Special:ManageMessageGroupSubscriptions/raw|неапрацаваны спіс]].",

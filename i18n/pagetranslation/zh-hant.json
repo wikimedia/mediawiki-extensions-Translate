@@ -329,7 +329,7 @@
 	"visualeditor-annotations-tvar-end": "不可翻譯內容的結尾",
 	"visualeditor-annotations-tvar-description": "該範圍被標記為不可翻譯。更多相關資訊請參閱[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/zh#Segmentation 來源文字的分割]。",
 	"tag-translate-translation-pages-description": "透過翻譯擴充功能的自動翻譯頁面編輯",
-	"tpt-cant-edit-source-language": "無法手動編輯來源語言的譯文單元。請改由對基本頁面（[[$1]]）進行更改，然後將其標記為翻譯。",
+	"tpt-cant-edit-source-language": "無法手動編輯來源語言的譯文單元。請改由對基本頁面（[[:$1]]）進行更改，然後將其標記為翻譯。",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "請登入以檢視或編輯訊息群組訂閱中的項目。",
 	"tpt-manage-message-group-subscriptions-normal-legend": "取消訂閱訊息群組",
 	"tpt-manage-message-group-subscriptions-normal-explain": "下方列出了您訂閱的訊息群組。要移除訊息群組，請勾選該訊息群組旁的核選方塊並點選「移除訊息群組訂閱」。您也可以[[Special:ManageMessageGroupSubscriptions/raw|raw list|編輯原始訂閱清單]]。",

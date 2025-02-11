@@ -318,7 +318,7 @@
 	"visualeditor-annotations-tvar-end": "סוף תוכן לא לתרגום",
 	"visualeditor-annotations-tvar-description": "הטווח הזה סומן \"לא לתרגום\". נא לקרוא על [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/he#Segmentation חלוקת טקסט המקור למקטעים] למידע נוסף.",
 	"tag-translate-translation-pages-description": "עריכות אוטומטיות של דפי תרגום על ידי ההרחבה Translate",
-	"tpt-cant-edit-source-language": "לא ניתן לערוך ידנית יחידות תרגום בשפת המקור. נא לעשות במקום זאת את השינוי לדף הבסיס ([[$1]]), ולאחר מכן לסמן אותו לתרגום.",
+	"tpt-cant-edit-source-language": "לא ניתן לערוך ידנית יחידות תרגום בשפת המקור. נא לעשות במקום זאת את השינוי לדף הבסיס ([[:$1]]), ולאחר מכן לסמן אותו לתרגום.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "נא להיכנס לחשבון כדי להציג או לערוך פריטים במינויים שלך לקבוצות הודעות.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "ביטול מינוי לקבוצות הודעות",
 	"tpt-manage-message-group-subscriptions-normal-explain": "קבוצות הודעות {{GENDER:|שאתה מנוי|שאת מנויה}} אליהן מוצגות למטה. כדי להסיר קבוצת הודעות, {{GENDER:|סמן|סמני}} את התיבה שלצידה {{GENDER:|ולחץ|ולחצי}} על \"הסרת מינויים\". אפשר גם לערוך את [[Special:ManageMessageGroupSubscriptions/raw|הרשימה הגולמית]].",

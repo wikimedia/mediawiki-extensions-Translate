@@ -342,7 +342,7 @@
 	"visualeditor-annotations-tvar-end": "Fin du contenu intraductible",
 	"visualeditor-annotations-tvar-description": "Cette partie est marquée comme intraductible. Consultez la documentation sur la [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/fr#Segmentation Segmentation du texte source] pour plus d’informations.",
 	"tag-translate-translation-pages-description": "Modifications automatiques aux pages de traduction par l’extension Traduction",
-	"tpt-cant-edit-source-language": "Impossible de modifier manuellement les unités de traduction dans la langue source. Veuillez plutôt modifier à partir de la page de base ([[$1]]), puis l'indiquer pour traduction.",
+	"tpt-cant-edit-source-language": "Impossible de modifier manuellement les unités de traduction dans la langue source. Veuillez plutôt modifier à partir de la page de base ([[:$1]]), puis l'indiquer pour traduction.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Veuillez vous connecter pour afficher ou modifier les éléments de vos abonnements aux groupes de messages.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Se désabonner des groupes de messages",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Les groupes de messages auxquels vous êtes abonné sont indiqués ci-dessous. Pour supprimer un groupe de messages, cochez la case à côté de celui-ci et cliquez sur « Supprimer les abonnements ». Vous pouvez également modifier directement la [[Special:ManageMessageGroupSubscriptions/raw|liste]].",

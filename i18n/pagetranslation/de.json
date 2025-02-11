@@ -322,7 +322,7 @@
 	"visualeditor-annotations-tvar-end": "Ende des nicht übersetzbaren Inhalts",
 	"visualeditor-annotations-tvar-description": "Dieser Bereich ist als nicht übersetzbar gekennzeichnet. Weitere Informationen findest du unter [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentierung des Ausgangstextes].",
 	"tag-translate-translation-pages-description": "Automatische Bearbeitungen von Übersetzungsseiten durch die Translate-Erweiterung",
-	"tpt-cant-edit-source-language": "Übersetzungseinheiten können in der Ausgangssprache nicht manuell bearbeitet werden. Nimm stattdessen die Änderung an der Basisseite ([[$1]]) vor und markiere sie dann zur Übersetzung.",
+	"tpt-cant-edit-source-language": "Übersetzungseinheiten können in der Ausgangssprache nicht manuell bearbeitet werden. Nimm stattdessen die Änderung an der Basisseite ([[:$1]]) vor und markiere sie dann zur Übersetzung.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Bitte melde dich an, um Elemente deiner Nachrichtengruppenabonnements anzuzeigen oder zu bearbeiten.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Abbestellen von Nachrichtengruppen",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Unten werden die Nachrichtengruppen angezeigt, die du abonniert hast. Um eine Nachrichtengruppe zu entfernen, aktiviere das Kontrollkästchen daneben und klicke auf „Abonnements entfernen“. Du kannst auch die [[Special:ManageMessageGroupSubscriptions/raw|Rohdatenliste]] bearbeiten.",

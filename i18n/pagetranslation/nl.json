@@ -323,7 +323,7 @@
 	"visualeditor-annotations-tvar-end": "Einde van de onvertaalbare inhoud",
 	"visualeditor-annotations-tvar-description": "Dit bereik is als niet vertaalbaar gemarkeerd. Zie [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/nl#Segmentation Segmentatie van de brontekst] voor meer informatie.",
 	"tag-translate-translation-pages-description": "Automatische bewerkingen van vertalingspagina’s via de uitbreiding Translate",
-	"tpt-cant-edit-source-language": "De vertalingseenheden in de brontaal kunnen niet handmatig bewerkt worden. Breng in plaats daarvan de wijziging aan op de basispagina ([[$1]]) en markeer deze dan voor vertaling.",
+	"tpt-cant-edit-source-language": "De vertalingseenheden in de brontaal kunnen niet handmatig bewerkt worden. Breng in plaats daarvan de wijziging aan op de basispagina ([[:$1]]) en markeer deze dan voor vertaling.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Meld u aan om vermeldingen in uw berichtengroep-abonnementen te bekijken of te bewerken.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Afmelden voor berichtengroepen",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Hieronder staan de berichtengroepen waarop u bent geabonneerd. Om een berichtengroep te verwijderen vinkt u het vakje ernaast aan en klikt u op ‘Abonnementen verwijderen’. U kunt ook de [[Special:ManageMessageGroupSubscriptions/raw|ruwe lijst]] bewerken.",

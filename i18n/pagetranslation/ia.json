@@ -308,7 +308,7 @@
 	"visualeditor-annotations-tvar-end": "Fin del contento non traducibile",
 	"visualeditor-annotations-tvar-description": "Iste parte es marcate como non traducibile. Consulta [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Segmentation del texto fonte] pro plus information.",
 	"tag-translate-translation-pages-description": "Modificationes automatic de paginas de traduction effectuate per le extension Translate",
-	"tpt-cant-edit-source-language": "Impossibile modificar manualmente le unitates de traduction in le lingua de origine. Per favor modifica in su loco le pagina de base ([[$1]]), e alora marca lo pro traduction.",
+	"tpt-cant-edit-source-language": "Impossibile modificar manualmente le unitates de traduction in le lingua de origine. Per favor modifica in su loco le pagina de base ([[:$1]]), e alora marca lo pro traduction.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Per favor aperi session pro examinar o modificar le elementos de tu subscriptiones a gruppos de messages.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Disabonar se de gruppos de messages",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Le gruppos de messages al quales tu es abonate appare infra. Pro remover un gruppo de messages, marca le quadrato vicin e clicca sur ‘Disabonar’. Tu pote tamben modificar le [[Special:ManageMessageGroupSubscriptions/raw|lista crude]].",

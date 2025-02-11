@@ -318,7 +318,7 @@
 	"visualeditor-annotations-tvar-end": "Кінець неперекладального вмісту",
 	"visualeditor-annotations-tvar-description": "Цей діапазон позначений як неперекладний. Для отримання додаткової інформації зверніться до [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сегментації вихідного тексту].",
 	"tag-translate-translation-pages-description": "Автоматичні редагування сторінок перекладу розширенням Translate",
-	"tpt-cant-edit-source-language": "Не можна вручну редагувати блоки перекладу вихідною мовою. Натомість внесіть зміни до основної сторінки ([[$1]]), а потім позначте її на переклад.",
+	"tpt-cant-edit-source-language": "Не можна вручну редагувати блоки перекладу вихідною мовою. Натомість внесіть зміни до основної сторінки ([[:$1]]), а потім позначте її на переклад.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Будь ласка, увійдіть, щоб переглянути або редагувати елементи у своїх підписках на групи повідомлень.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Скасувати підписку на групи повідомлень",
 	"tpt-manage-message-group-subscriptions-normal-explain": "Групи повідомлень, на які ви підписані, показані нижче. Щоб прибрати групу повідомлень, поставте прапорець біля неї та натисніть «Прибрати підписки». Ви також можете редагувати [[Special:ManageMessageGroupSubscriptions/raw|необроблений список]].",

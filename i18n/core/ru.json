@@ -359,6 +359,8 @@
 	"log-description-translationreview": "Журнал всех проверок переводов и групп сообщений.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|проверил|проверила}} перевод «$3»",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|изменил|изменила}} состояние переводов страницы «$3» на $4 язык с «$6» на «$7»",
+	"right-unfuzzy": "Отмечание единиц перевода в качестве обновлённых",
+	"action-unfuzzy": "отметить единицы перевода в качестве обновлённых",
 	"translate-unfuzzy-comment": "Единица перевода помечена как устаревшая без изменений.",
 	"group-translate-sandboxed": "Неутвержденные переводчики",
 	"group-translate-sandboxed-member": "{{GENDER:$1|неутверждённый переводчик|неутверждённая переводчица}}",
@@ -381,7 +383,9 @@
 	"translate-msggroupselector-search-placeholder": "Поиск групп",
 	"translate-msggroupselector-search-all": "Все",
 	"translate-msggroupselector-search-recent": "Недавние",
+	"translate-msggroupselector-search-watched": "Наблюдается",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|$1 подгруппа|$1 подгруппы|$1 подгрупп|1=Одна подгруппа}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Управление всеми подписками",
 	"tux-languageselector": "Переводить на",
 	"tux-select-target-language": "Целевой язык для перевода",
 	"tux-watch-group": "Следить",
@@ -504,6 +508,7 @@
 	"translate-messagebundle-group-description": "Сообщения набора сообщений определены на странице [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Устанавливается исходный язык для набора сообщений в соответствии с метаданными.",
 	"translate-messagebundle-sourcelanguage-changed": "Исходный язык набора сообщений невозможно изменить после его создания.",
+	"translate-error-invalid-aggregategroup": "Недействительная группа объединённых сообщений $1",
 	"log-action-filter-translationreview": "Тип действия:",
 	"log-action-filter-translationreview-message": "Проверка отдельных переведённых сообщений",
 	"log-action-filter-translationreview-group": "Изменения в статусе выполнения перевода",
@@ -515,5 +520,6 @@
 	"notification-header-message-group-subscription": "Обновления перевода для $1",
 	"notification-link-mgs-group-translate": "Перевести $1",
 	"tpt-cleanchanges-language": "Язык:",
-	"tpt-cleanchanges-language-na": "Все"
+	"tpt-cleanchanges-language-na": "Все",
+	"namespaceinfo-description-ns1199": "Страницы обсуждений для единиц перевода"
 }
