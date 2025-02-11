@@ -79,13 +79,17 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModuleStyles( [ 'ext.translate.special.aggregategroups.refresh.nojs' ] );
+		$out->addModules( 'ext.translate.special.aggregategroups.refresh' );
 
-		// Check permissions
-		if ( $this->hasPermission ) {
-			$out->addModules( 'ext.translate.special.aggregategroups.refresh' );
-		}
-
-		$out->addHTML( Html::element( 'div', [ 'id' => 'ext-translate-aggregategroups-refresh' ] ) );
+		$out->addHTML(
+			Html::element(
+				'div',
+				[
+					'id' => 'ext-translate-aggregategroups-refresh',
+					'data-haspermission' => $this->hasPermission ? 'true' : null,
+				]
+			)
+		);
 
 		$aggregateGroups = $this->aggregateGroupManager->getAll();
 		if ( $aggregateGroups === [] ) {

@@ -6,11 +6,7 @@ const AggregateGroupAssociation = require( './components/AggregateGroupAssociati
 const AggregateGroupSubGroupItem = require( './components/AggregateGroupSubGroupItem.vue' );
 const createAggregateGroupApiFactory = require( '../services/aggregategroup.api.factory.js' );
 const performEntitySearch = require( '../services/translationentitysearch.api.js' );
-
 const aggregateGroupApi = createAggregateGroupApiFactory();
-const aggregateGroupsManageApp = Vue.createMwApp( App );
-aggregateGroupsManageApp.provide( 'aggregateGroupApi', aggregateGroupApi );
-aggregateGroupsManageApp.mount( '#ext-translate-aggregategroups-refresh' );
 
 /**
  * Adds the delete click handler, and loads the AggregateGroupDeleteDialog component in order to
@@ -211,11 +207,43 @@ function addAssociateSubGroupAction() {
 	} );
 }
 
+function addAggregateGroupToggle() {
+	let isExpanded = false;
+
+	const toggleButton = document.createElement( 'button' );
+	toggleButton.textContent = mw.msg( 'tpt-aggregategroup-expand-all-groups' );
+	toggleButton.classList.add( 'tpt-toggle-groups', 'cdx-button' );
+	toggleButton.addEventListener( 'click', () => {
+		isExpanded = !isExpanded;
+		toggleButton.textContent = isExpanded ?
+			mw.msg( 'tpt-aggregategroup-collapse-all-groups' ) :
+			mw.msg( 'tpt-aggregategroup-expand-all-groups' );
+		const aggregateGroupContainers =
+			document.querySelectorAll( 'details.mw-translate-aggregategroup-container' );
+		aggregateGroupContainers.forEach( ( container ) => {
+			container.open = isExpanded;
+		} );
+	} );
+
+	document.querySelector( '.mw-translate-aggregategroup-container' )
+		.before( toggleButton );
+}
+
 function getParentGroupId( element ) {
 	return element.closest( 'details.cdx-accordion' ).dataset.groupId;
 }
 
-addDeleteAction();
-addEditAction();
-addDeleteSubGroupAction();
-addAssociateSubGroupAction();
+const appContainer = document.querySelector( '#ext-translate-aggregategroups-refresh' );
+const hasPermissionToManage = appContainer.dataset.haspermission;
+if ( hasPermissionToManage ) {
+	const aggregateGroupsManageApp = Vue.createMwApp( App );
+	aggregateGroupsManageApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+	aggregateGroupsManageApp.mount( appContainer );
+
+	addDeleteAction();
+	addEditAction();
+	addDeleteSubGroupAction();
+	addAssociateSubGroupAction();
+}
+
+addAggregateGroupToggle();
