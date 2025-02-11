@@ -9,7 +9,7 @@
 				v-model:selected="selection"
 				v-model:input-value="inputValue"
 				:menu-items="menuItems"
-				:menu-config="menuConfig"
+				:menu-config="{ visibleItemLimit: 10 }"
 				:aria-label="$i18n( 'translate-tes-type-to-search' )"
 				:placeholder="$i18n( 'translate-tes-type-to-search' )"
 				:disabled="isLookupDisabled"
@@ -55,9 +55,10 @@ module.exports = {
 	data() {
 		return {
 			selection: null,
-			menuItems: [],
+			// FIXME: Without the empty object, assigning the array of initial message groups doesn't display
+			// them. Check with design system team
+			menuItems: [ { label: '', value: '' } ],
 			inputValue: '',
-			menuConfig: {},
 			status: 'default',
 			messages: { error: '' },
 			debounce: null,
@@ -146,6 +147,11 @@ module.exports = {
 		resetError() {
 			this.status = 'default';
 			this.messages.error = '';
+		}
+	},
+	mounted() {
+		if ( !this.inputValue ) {
+			this.fetchResults( '' );
 		}
 	}
 };
