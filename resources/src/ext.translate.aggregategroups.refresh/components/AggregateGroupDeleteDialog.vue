@@ -60,10 +60,9 @@ module.exports = {
 	methods: {
 		onPrimaryAction() {
 			this.apiSaveError = null;
-
 			this.aggregateGroupApi.remove( this.aggregateGroupId )
-				.done( () => this.$emit( 'deleted' ) )
-				.fail( ( code, data ) => {
+				.then( () => this.$emit( 'deleted' ) )
+				.catch( ( code, data ) => {
 					this.apiSaveError = data.error && data.error.info;
 				} );
 		},

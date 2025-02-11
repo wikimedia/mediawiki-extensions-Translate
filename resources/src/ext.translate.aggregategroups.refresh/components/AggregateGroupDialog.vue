@@ -170,11 +170,11 @@ module.exports = {
 			}
 
 			apiPromise
-				.done( () => {
+				.then( () => {
 					this.resetErrors();
 					this.$emit( 'saved' );
 				} )
-				.fail( ( code, data ) => {
+				.catch( ( code, data ) => {
 					this.apiSaveError = data.error && data.error.info;
 				} );
 		},
