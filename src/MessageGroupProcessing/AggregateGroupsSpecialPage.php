@@ -364,8 +364,8 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			'description' => $group->getDescription(),
 			'subGroups' => $this->getSubGroupInfoForTemplate( $subGroupIds ),
 			'shouldExpand' => count( $subGroupIds ) <= 3,
-			'editLabel' => $this->msg( 'tpt-aggregategroup-edit' ),
-			'deleteLabel' => $this->msg( 'tpt-aggregategroup-delete' ),
+			'editLabel' => $this->msg( 'tpt-aggregategroup-edit' )->text(),
+			'deleteLabel' => $this->msg( 'tpt-aggregategroup-delete' )->text(),
 			'removeItemLabel' => $this->msg( 'tpt-aggregategroup-remove-item' )->text(),
 			'hasManageRights' => $this->hasPermission,
 		] );
