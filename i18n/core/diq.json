@@ -136,6 +136,7 @@
 	"translate-mgs-group": "Gruba mesacan",
 	"translate-mgs-group-or-prefix": "Gruba mesacan ya zi verbend:",
 	"translate-mgs-nocomplete": "Açarnayışê cı baş bıyaye zıwana mocnayış",
+	"translate-mgs-noempty": "Tamamen tadeyê zıwana mêasenê.",
 	"translate-mgs-submit": "İstatistikan bımocne",
 	"translate-mgs-column-language": "Zıwan",
 	"translate-mgs-totals": "Pêroy cı $1 {{PLURAL:$1|zıwan|zıwani}}",
