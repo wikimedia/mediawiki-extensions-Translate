@@ -135,6 +135,7 @@ class MessageIndex {
 		return $this->messageIndexStore->get( $key );
 	}
 
+	/** @return mixed|null */
 	public function get( string $key ) {
 		return $this->messageIndexStore->get( $key );
 	}

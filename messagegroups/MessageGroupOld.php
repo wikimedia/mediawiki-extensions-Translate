@@ -187,6 +187,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->messages[$code][$key] ?? null;
 	}
 
+	/** @param mixed $array */
 	public static function normaliseKeys( $array ): ?array {
 		if ( !is_array( $array ) ) {
 			return null;

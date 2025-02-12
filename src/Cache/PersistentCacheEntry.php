@@ -22,6 +22,12 @@ class PersistentCacheEntry {
 	private ?int $exptime;
 	private ?string $tag;
 
+	/**
+	 * @param string $key
+	 * @param mixed|null $value
+	 * @param int|null $exptime
+	 * @param string|null $tag
+	 */
 	public function __construct(
 		string $key,
 		$value = null,

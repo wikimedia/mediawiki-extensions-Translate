@@ -11,6 +11,7 @@ namespace MediaWiki\Extension\Translate\MessageLoading;
 abstract class MessageIndexStore {
 	abstract public function retrieve( bool $readLatest = false ): array;
 
+	/** @return mixed|null */
 	public function get( string $key ) {
 		// Default implementation
 		$mi = $this->retrieve();

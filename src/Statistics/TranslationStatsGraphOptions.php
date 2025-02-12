@@ -55,10 +55,15 @@ class TranslationStatsGraphOptions {
 		return isset( $this->formOptions[$key] );
 	}
 
+	/**
+	 * @param string $key
+	 * @param mixed $value
+	 */
 	public function setValue( string $key, $value ): void {
 		$this->formOptions[$key] = $value;
 	}
 
+	/** @return mixed */
 	public function getValue( string $key ) {
 		return $this->formOptions[$key];
 	}
