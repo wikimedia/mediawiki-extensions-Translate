@@ -110,7 +110,7 @@ class PluralCompare extends Maintenance {
 		return '';
 	}
 
-	public static function comp( $a, $b ) {
+	public static function comp( string $a, string $b ): bool {
 		return $a === '?' || $b === '?' || $a === $b;
 	}
 

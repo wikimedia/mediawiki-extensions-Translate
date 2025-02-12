@@ -64,7 +64,7 @@ class MessageUpdateParameter implements JsonSerializable, JsonDeserializable {
 		return $this->otherLangs;
 	}
 
-	public static function newFromJsonArray( JsonDeserializer $deserializer, array $params ) {
+	public static function newFromJsonArray( JsonDeserializer $deserializer, array $params ): self {
 		return new self( $params );
 	}
 

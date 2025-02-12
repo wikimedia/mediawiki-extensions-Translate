@@ -95,7 +95,7 @@ function wfGauss() {
 	}
 }
 
-function wfGaussMs( $mean, $stddev ) {
+function wfGaussMs( int $mean, int $stddev ): int {
 	// Adjust our gaussian random to fit the mean and standard deviation.
 	// The division by 4 is an arbitrary value to help fit the distribution
 	// within our required range, and gives a best fit for $stddev = 1.0.

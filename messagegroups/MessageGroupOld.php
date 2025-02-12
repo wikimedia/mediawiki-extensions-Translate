@@ -97,7 +97,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->description;
 	}
 
-	public function setDescription( $value ) {
+	public function setDescription( string $value ) {
 		$this->description = $value;
 	}
 
@@ -187,7 +187,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->messages[$code][$key] ?? null;
 	}
 
-	public static function normaliseKeys( $array ) {
+	public static function normaliseKeys( $array ): ?array {
 		if ( !is_array( $array ) ) {
 			return null;
 		}

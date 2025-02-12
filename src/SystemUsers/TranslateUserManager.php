@@ -13,11 +13,11 @@ use MediaWiki\User\User;
 
 /** @since 2019.08 */
 class TranslateUserManager {
-	public static function getUser() {
+	public static function getUser(): User {
 		return User::newSystemUser( self::getName(), [ 'steal' => true ] );
 	}
 
-	public static function getName() {
+	public static function getName(): string {
 		global $wgTranslateUserManagerName;
 
 		return $wgTranslateUserManagerName;

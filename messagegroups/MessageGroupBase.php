@@ -54,7 +54,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $obj;
 	}
 
-	public function getConfiguration() {
+	public function getConfiguration(): array {
 		return $this->conf;
 	}
 

@@ -54,7 +54,7 @@ class GroupSynchronizationResponse implements JsonSerializable, JsonDeserializab
 		return get_object_vars( $this );
 	}
 
-	public static function newFromJsonArray( JsonDeserializer $deserializer, array $params ) {
+	public static function newFromJsonArray( JsonDeserializer $deserializer, array $params ): self {
 		return new self(
 			$params['groupId'],
 			$params['remainingMessages'],

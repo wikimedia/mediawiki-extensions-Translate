@@ -13,6 +13,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
 use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\Linker\LinkTarget;
@@ -187,7 +188,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		return $validator;
 	}
 
-	public function getInsertablesSuggester() {
+	public function getInsertablesSuggester(): InsertablesSuggester {
 		return new TranslatablePageInsertablesSuggester();
 	}
 

@@ -38,7 +38,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	public function __construct() {
 	}
 
-	public function setLanguage( $code ) {
+	public function setLanguage( string $code ) {
 		$this->language = $code;
 	}
 

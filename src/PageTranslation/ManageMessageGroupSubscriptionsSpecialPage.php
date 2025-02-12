@@ -236,7 +236,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		return $labels;
 	}
 
-	public function submitNormal( $data ): bool {
+	public function submitNormal( array $data ): bool {
 		$toRemove = [];
 
 		foreach ( $data as $messageGroups ) {

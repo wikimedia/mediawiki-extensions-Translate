@@ -19,7 +19,7 @@ class TranslateStatsOutput extends WikiStatsOutput {
 			'border: 1px #AAAAAA solid; border-collapse: collapse; clear:both;"' . "\n";
 	}
 
-	public function addFreeText( $freeText ) {
+	public function addFreeText( string $freeText ) {
 		echo $freeText;
 	}
 }

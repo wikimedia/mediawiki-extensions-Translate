@@ -73,7 +73,7 @@ class TTMServerBootstrap extends Maintenance {
 		$this->start = microtime( true );
 	}
 
-	public function statusLine( $text, $channel = null ) {
+	public function statusLine( string $text, ?string $channel = null ) {
 		$pid = sprintf( '%5s', getmypid() );
 		$prefix = sprintf( '%6.2f', microtime( true ) - $this->start );
 		$mem = sprintf( '%5.1fM', memory_get_usage( true ) / ( 1024 * 1024 ) );

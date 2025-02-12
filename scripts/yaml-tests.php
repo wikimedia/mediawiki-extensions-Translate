@@ -61,7 +61,7 @@ class YamlTests extends Maintenance {
 		var_dump( $mempeaks );
 	}
 
-	public static function parseGroupFile( $filename ) {
+	public static function parseGroupFile( string $filename ): array {
 		$data = file_get_contents( $filename );
 		$documents = preg_split( "/^---$/m", $data, -1, PREG_SPLIT_NO_EMPTY );
 		$groups = [];
@@ -85,7 +85,7 @@ class YamlTests extends Maintenance {
 		}, $groups );
 	}
 
-	public static function sortNestedArrayAssoc( &$a ) {
+	public static function sortNestedArrayAssoc( array &$a ) {
 		ksort( $a );
 		foreach ( $a as &$value ) {
 			if ( is_array( $value ) ) {

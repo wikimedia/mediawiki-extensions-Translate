@@ -9,7 +9,7 @@ namespace RomaricDrigon\MetaYaml;
 
 class MetaYaml {
 
-	public function __construct( array $schema, $validate = false ) {
+	public function __construct( array $schema, bool $validate = false ) {
 	}
 
 	/** @return bool */

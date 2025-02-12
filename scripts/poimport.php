@@ -111,7 +111,7 @@ class PoImporter {
 		$this->file = $file;
 	}
 
-	public function setProgressCallback( $callback ) {
+	public function setProgressCallback( callable $callback ) {
 		$this->progressCallback = $callback;
 	}
 
@@ -253,7 +253,7 @@ class WikiWriter {
 		$this->dryrun = $dryrun;
 	}
 
-	public function setProgressCallback( $callback ) {
+	public function setProgressCallback( ?callable $callback ) {
 		$this->progressCallback = $callback;
 	}
 

@@ -129,7 +129,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		return $this->replaceVariables( $pattern, $code );
 	}
 
-	public function getTargetFilename( $code ) {
+	public function getTargetFilename( string $code ): string {
 		// Check if targetPattern explicitly defined
 		$pattern = $this->getFromConf( 'FILES', 'targetPattern' );
 		if ( $pattern !== null ) {
