@@ -48,10 +48,12 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'translations' );
 	}
 
+	/** @inheritDoc */
 	public function prefixSearchSubpages( $search, $limit, $offset ) {
 		return $this->prefixSearchString( $search, $limit, $offset, $this->searchEngineFactory );
 	}

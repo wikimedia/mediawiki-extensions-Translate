@@ -42,10 +42,12 @@ class RecentMessageGroup extends WikiMessageGroup {
 		$this->language = $code;
 	}
 
+	/** @inheritDoc */
 	public function getId() {
 		return '!recent';
 	}
 
+	/** @inheritDoc */
 	public function getLabel( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-recent-label' );
 		$msg = self::addContext( $msg, $context );
@@ -53,6 +55,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return $msg->plain();
 	}
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-recent-desc' );
 		$msg = self::addContext( $msg, $context );
@@ -99,6 +102,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return MessageGroups::isTranslatableMessage( $handle, $this->language );
 	}
 
+	/** @inheritDoc */
 	public function getDefinitions() {
 		if ( !$this->language ) {
 				throw new BadMethodCallException( 'Language not set' );
@@ -145,6 +149,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return $defs;
 	}
 
+	/** @inheritDoc */
 	public function getValidator() {
 		return null;
 	}

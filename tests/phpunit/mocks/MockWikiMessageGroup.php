@@ -19,10 +19,12 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 		$this->messages = $messages;
 	}
 
+	/** @inheritDoc */
 	public function getDefinitions() {
 		return $this->messages;
 	}
 
+	/** @inheritDoc */
 	public function getMessage( $key, $code ) {
 		if ( $code === $this->getSourceLanguage() ) {
 			return $this->messages[strtolower( $key )] ?? null;

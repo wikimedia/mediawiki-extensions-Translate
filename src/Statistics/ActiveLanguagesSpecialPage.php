@@ -78,10 +78,12 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'supportedlanguages' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ): void {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();

@@ -102,6 +102,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites(): bool {
 		return true;
 	}
@@ -110,6 +111,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $parameters ) {
 		$this->setHeaders();
 

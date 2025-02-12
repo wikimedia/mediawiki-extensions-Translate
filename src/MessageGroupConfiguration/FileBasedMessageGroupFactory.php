@@ -80,6 +80,7 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 		return $value;
 	}
 
+	/** @inheritDoc */
 	public function createGroups( $data ): array {
 		global $wgAutoloadClasses;
 		self::appendAutoloader( $data['autoload'], $wgAutoloadClasses );

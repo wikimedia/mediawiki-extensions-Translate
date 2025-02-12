@@ -56,6 +56,7 @@ final class AggregateGroupMessageGroupFactory implements CachedMessageGroupFacto
 		return $groups;
 	}
 
+	/** @inheritDoc */
 	public function createGroups( $data ): array {
 		// Parts that do not vary per group and do not need to be stored in the cache
 		$template = [

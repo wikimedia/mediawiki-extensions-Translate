@@ -40,20 +40,24 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		$this->language = $code;
 	}
 
+	/** @inheritDoc */
 	public function getId() {
 		return '!sandbox';
 	}
 
+	/** @inheritDoc */
 	public function getLabel( ?IContextSource $context = null ) {
 		// Should not be visible
 		return 'Sandbox messages';
 	}
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		// Should not be visible
 		return 'Suggests messages to translate for sandboxed users';
 	}
 
+	/** @inheritDoc */
 	public function getDefinitions() {
 		global $wgTranslateSandboxLimit;
 
@@ -133,6 +137,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		return $list;
 	}
 
+	/** @inheritDoc */
 	public function getValidator() {
 		return null;
 	}

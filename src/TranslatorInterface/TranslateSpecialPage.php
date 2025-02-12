@@ -55,6 +55,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$this->isMessageGroupSubscriptionEnabled = $config->get( 'TranslateEnableMessageGroupSubscription' );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

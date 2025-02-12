@@ -68,10 +68,12 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'translate-mgs-pagename' );
 	}
 
+	/** @inheritDoc */
 	public function isIncludable() {
 		return true;
 	}
@@ -80,6 +82,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$request = $this->getRequest();
 

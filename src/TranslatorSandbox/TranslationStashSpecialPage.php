@@ -52,6 +52,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$this->options = $options;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
@@ -60,6 +61,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $params ) {
 		$limit = $this->options->get( 'TranslateSandboxLimit' );
 

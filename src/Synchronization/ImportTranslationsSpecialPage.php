@@ -30,6 +30,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		$this->cache = $cache;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

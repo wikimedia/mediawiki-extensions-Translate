@@ -74,6 +74,7 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$this->movePageSpec = $movePageSpec;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites(): bool {
 		return true;
 	}

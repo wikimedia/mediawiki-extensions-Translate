@@ -17,10 +17,12 @@ use MediaWiki\MediaWikiServices;
  * @ingroup MessageGroup
  */
 class RecentAdditionsMessageGroup extends RecentMessageGroup {
+	/** @inheritDoc */
 	public function getId() {
 		return '!additions';
 	}
 
+	/** @inheritDoc */
 	public function getLabel( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-additions-label' );
 		$msg = self::addContext( $msg, $context );
@@ -28,6 +30,7 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		return $msg->plain();
 	}
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-dynagroup-additions-desc' );
 		$msg = self::addContext( $msg, $context );

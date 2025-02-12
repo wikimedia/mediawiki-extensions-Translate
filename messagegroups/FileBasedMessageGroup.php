@@ -79,10 +79,12 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		}
 	}
 
+	/** @inheritDoc */
 	public function exists(): bool {
 		return $this->getMessageGroupCache( $this->getSourceLanguage() )->exists();
 	}
 
+	/** @inheritDoc */
 	public function load( $code ) {
 		$ffs = $this->getFFS();
 		$data = $ffs->read( $code );

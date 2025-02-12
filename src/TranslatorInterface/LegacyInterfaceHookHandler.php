@@ -1,6 +1,8 @@
 <?php
 declare( strict_types = 1 );
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use DifferenceEngine;
@@ -51,7 +53,6 @@ class LegacyInterfaceHookHandler
 	 * @param EditPage $editPage
 	 * @param OutputPage $out
 	 */
-	// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
 	public function onEditPage__showEditForm_initial( $editPage, $out ): void {
 		// phpcs:enable
 		$handle = new MessageHandle( $editPage->getTitle() );
@@ -70,6 +71,7 @@ class LegacyInterfaceHookHandler
 		}
 	}
 
+	/** @inheritDoc */
 	public function onTitleGetEditNotices( $title, $oldid, &$notices ) {
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {

@@ -44,6 +44,7 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 		return [ new MainConfigDependency( 'TranslateEnableMessageBundleIntegration' ) ];
 	}
 
+	/** @inheritDoc */
 	public function getData( IReadableDatabase $db ) {
 		if ( !$this->enableIntegration ) {
 			return [];
@@ -70,6 +71,7 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 		return $cacheData;
 	}
 
+	/** @inheritDoc */
 	public function createGroups( $data ): array {
 		$groups = [];
 		$groupIds = [];

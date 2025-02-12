@@ -159,6 +159,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		}
 	}
 
+	/** @inheritDoc */
 	public function onAfterImportPage( $title, $foreignTitle, $revCount, $sRevCount, $pageInfo ) {
 		if ( $this->importInProgress ) {
 			$this->bundleTitle ??= $title;

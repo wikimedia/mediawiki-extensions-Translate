@@ -850,6 +850,7 @@ class HookHandler implements
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function onParserFirstCallInit( $parser ) {
 		$parser->setFunctionHook( 'translation', [ $this, 'translateRenderParserFunction' ] );
 	}

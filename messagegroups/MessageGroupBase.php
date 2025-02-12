@@ -58,36 +58,44 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->conf;
 	}
 
+	/** @inheritDoc */
 	public function getId() {
 		return $this->getFromConf( 'BASIC', 'id' );
 	}
 
+	/** @inheritDoc */
 	public function getLabel( ?IContextSource $context = null ) {
 		return $this->getFromConf( 'BASIC', 'label' );
 	}
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		return $this->getFromConf( 'BASIC', 'description' );
 	}
 
+	/** @inheritDoc */
 	public function getIcon() {
 		return $this->getFromConf( 'BASIC', 'icon' );
 	}
 
+	/** @inheritDoc */
 	public function getNamespace() {
 		return $this->namespace;
 	}
 
+	/** @inheritDoc */
 	public function isMeta() {
 		return $this->getFromConf( 'BASIC', 'meta' );
 	}
 
+	/** @inheritDoc */
 	public function getSourceLanguage() {
 		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
 
 		return $conf ?? 'en';
 	}
 
+	/** @inheritDoc */
 	public function getDefinitions() {
 		$defs = $this->load( $this->getSourceLanguage() );
 
@@ -102,6 +110,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $this->conf[$section][$key] ?? null;
 	}
 
+	/** @inheritDoc */
 	public function getValidator() {
 		$validatorConfigs = $this->getFromConf( 'VALIDATORS' );
 		if ( $validatorConfigs === null ) {
@@ -126,6 +135,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $msgValidator;
 	}
 
+	/** @inheritDoc */
 	public function getMangler() {
 		if ( $this->mangler === null ) {
 			$class = $this->getFromConf( 'MANGLER', 'class' ) ?? StringMatcher::class;
@@ -190,6 +200,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		return array_keys( $this->getDefinitions() );
 	}
 
+	/** @inheritDoc */
 	public function getTags( $type = null ) {
 		if ( $type === null ) {
 			$taglist = [];

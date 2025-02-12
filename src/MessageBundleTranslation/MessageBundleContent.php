@@ -26,6 +26,7 @@ class MessageBundleContent extends JsonContent {
 	private ?array $messages = null;
 	private ?MessageBundleMetadata $metadata = null;
 
+	/** @inheritDoc */
 	public function __construct( $text, $modelId = self::CONTENT_MODEL_ID ) {
 		parent::__construct( $text, $modelId );
 	}

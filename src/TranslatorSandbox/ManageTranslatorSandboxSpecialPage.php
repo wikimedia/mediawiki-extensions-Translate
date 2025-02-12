@@ -48,6 +48,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		);
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
@@ -56,6 +57,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $params ) {
 		$this->setHeaders();
 		$this->checkPermissions();

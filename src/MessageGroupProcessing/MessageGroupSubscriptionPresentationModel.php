@@ -14,10 +14,12 @@ use MediaWiki\SpecialPage\SpecialPage;
  * @license GPL-2.0-or-later
  */
 class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationModel {
+	/** @inheritDoc */
 	public function getIconType() {
 		return 'translate-mgs-icon';
 	}
 
+	/** @inheritDoc */
 	public function getPrimaryLink() {
 		if ( $this->isBundled() ) {
 			return false;
@@ -31,12 +33,14 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHeaderMessage() {
 		$msg = $this->msg( 'notification-header-message-group-subscription' );
 		$msg->params( $this->event->getExtraParam( 'groupLabel' ) );
 		return $msg;
 	}
 
+	/** @inheritDoc */
 	public function getCompactHeaderMessageKey(): string {
 		$type = $this->event->getType();
 		if ( $type === 'translate-mgs-message-added' ) {
@@ -46,12 +50,14 @@ class MessageGroupSubscriptionPresentationModel extends EchoEventPresentationMod
 		return parent::getCompactHeaderMessageKey();
 	}
 
+	/** @inheritDoc */
 	public function getCompactHeaderMessage() {
 		$msg = $this->msg( $this->getCompactHeaderMessageKey() );
 		$msg->params( $this->getNumberOfChangedMessages( $this->event ) );
 		return $msg;
 	}
 
+	/** @inheritDoc */
 	public function getBodyMessage() {
 		$type = $this->event->getType();
 		if ( $type === 'translate-mgs-message-added' ) {

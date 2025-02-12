@@ -18,6 +18,7 @@ use const CONTENT_FORMAT_JSON;
  * @since 2021.05
  */
 class MessageBundleContentHandler extends TextContentHandler {
+	/** @inheritDoc */
 	public function __construct( $modelId = MessageBundleContent::CONTENT_MODEL_ID ) {
 		parent::__construct( $modelId, [ CONTENT_FORMAT_JSON ] );
 	}
@@ -31,6 +32,7 @@ class MessageBundleContentHandler extends TextContentHandler {
 		return new $class( '{}' );
 	}
 
+	/** @inheritDoc */
 	public function validateSave( Content $content, ValidationParams $validationParams ) {
 		// This will give an informative error message when trying to change the content model
 		try {

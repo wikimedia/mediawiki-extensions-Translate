@@ -93,6 +93,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected $description = null;
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		return $this->description;
 	}
@@ -101,6 +102,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		$this->description = $value;
 	}
 
+	/** @inheritDoc */
 	public function getIcon() {
 		return null;
 	}
@@ -112,10 +114,12 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected $meta = false;
 
+	/** @inheritDoc */
 	public function isMeta() {
 		return $this->meta;
 	}
 
+	/** @inheritDoc */
 	public function getSourceLanguage() {
 		return 'en';
 	}
@@ -136,6 +140,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		return $this->mangler;
 	}
 
+	/** @inheritDoc */
 	public function load( $code ) {
 		return [];
 	}
@@ -241,10 +246,12 @@ abstract class MessageGroupOld implements MessageGroup {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getValidator() {
 		return null;
 	}
 
+	/** @inheritDoc */
 	public function getTags( $type = null ) {
 		return [];
 	}

@@ -40,6 +40,7 @@ class RecentChangesTranslationFilterHookHandler implements
 		$this->config = $config;
 	}
 
+	/** @inheritDoc */
 	public function onChangesListSpecialPageQuery(
 		$pageName,
 		&$tables,

@@ -32,6 +32,7 @@ abstract class QueryStatsActionApi extends ApiQueryBase {
 		$this->jobQueueGroup = $jobQueueGroup;
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ): string {
 		return 'public';
 	}

@@ -45,6 +45,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $parameters ): void {
 		$this->setHeaders();
 		$this->addHelpLink( 'Help:Extension:Translate/Page translation administration' );

@@ -161,10 +161,12 @@ class MarkForTranslationActionApi extends ApiBase {
 		return Status::newGood();
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'csrf';
 	}

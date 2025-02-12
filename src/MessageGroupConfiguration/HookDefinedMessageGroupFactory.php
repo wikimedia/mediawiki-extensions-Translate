@@ -53,6 +53,7 @@ final class HookDefinedMessageGroupFactory implements CachedMessageGroupFactory 
 		return $value;
 	}
 
+	/** @inheritDoc */
 	public function createGroups( $data ): array {
 		global $wgAutoloadClasses;
 		self::appendAutoloader( $data['autoload'], $wgAutoloadClasses );

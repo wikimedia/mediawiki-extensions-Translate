@@ -21,10 +21,12 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'pagemigration' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$output = $this->getOutput();
 		$this->setHeaders();

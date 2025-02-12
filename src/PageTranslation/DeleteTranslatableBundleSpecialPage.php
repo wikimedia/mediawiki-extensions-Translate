@@ -65,10 +65,12 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		$this->bundleDeleter = $bundleDeleter;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->addHelpLink( 'Help:Deletion_and_undeletion' );
 

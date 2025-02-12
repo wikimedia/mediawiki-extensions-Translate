@@ -25,10 +25,12 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	public function __construct() {
 	}
 
+	/** @inheritDoc */
 	public function getId() {
 		return 'translate-workflow-states';
 	}
 
+	/** @inheritDoc */
 	public function getLabel( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-workflowgroup-label' );
 		$msg = self::addContext( $msg, $context );
@@ -36,6 +38,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		return $msg->plain();
 	}
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		$msg = wfMessage( 'translate-workflowgroup-desc' );
 		$msg = self::addContext( $msg, $context );
@@ -43,6 +46,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		return $msg->plain();
 	}
 
+	/** @inheritDoc */
 	public function getDefinitions() {
 		$groups = MessageGroups::getAllGroups();
 		$keys = [];

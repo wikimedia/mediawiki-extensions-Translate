@@ -41,6 +41,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		$this->title = $title;
 	}
 
+	/** @inheritDoc */
 	public function getSourceLanguage() {
 		return $this->getTitle()->getPageLanguage()->getCode();
 	}
@@ -128,6 +129,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		$this->definitions = null;
 	}
 
+	/** @inheritDoc */
 	public function load( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			return $this->getDefinitions();
@@ -192,6 +194,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		return new TranslatablePageInsertablesSuggester();
 	}
 
+	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
 		$title = $this->getTitle()->getPrefixedText();
 		$target = ":$title";

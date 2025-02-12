@@ -20,6 +20,7 @@ class PageTranslationHookHandler implements
 	SpecialWhatLinksHereQueryHook
 {
 
+	/** @inheritDoc */
 	public function onSpecialPrefixIndexGetFormFilters( IContextSource $contextSource, array &$filters ) {
 		$filters[ 'translate-hidetranslations' ] = [
 			'class' => HTMLCheckField::class,
@@ -28,6 +29,7 @@ class PageTranslationHookHandler implements
 		];
 	}
 
+	/** @inheritDoc */
 	public function onSpecialPrefixIndexQuery( array $fieldData, SelectQueryBuilder $queryBuilder ) {
 		if ( $fieldData[ 'translate-hidetranslations' ] === true ) {
 			$queryBuilder->leftJoin(
@@ -41,6 +43,7 @@ class PageTranslationHookHandler implements
 		}
 	}
 
+	/** @inheritDoc */
 	public function onLonelyPagesQuery( &$tables, &$conds, &$joinConds ) {
 		$tables[ 'translate_pp' ] = 'page_props';
 		$joinConds['translate_pp'] = [
@@ -52,6 +55,7 @@ class PageTranslationHookHandler implements
 		$conds['translate_pp.pp_value'] = null;
 	}
 
+	/** @inheritDoc */
 	public function onSpecialPageBeforeFormDisplay( $name, $form ): void {
 		if ( $name === 'Whatlinkshere' ) {
 			$form->addFields( [
@@ -65,6 +69,7 @@ class PageTranslationHookHandler implements
 		}
 	}
 
+	/** @inheritDoc */
 	public function onSpecialWhatLinksHereQuery( $table, $data, $queryBuilder ) {
 		$isSupportedTable = in_array( $table, [ 'pagelinks', 'templatelinks', 'imagelinks' ] );
 

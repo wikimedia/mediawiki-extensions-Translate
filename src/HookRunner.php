@@ -56,34 +56,42 @@ class HookRunner implements
 		$this->hookContainer = $hookContainer;
 	}
 
+	/** @inheritDoc */
 	public function onTranslate_TranslatorSandbox_UserPromoted( UserIdentity $user ): void {
 		$this->hookContainer->run( 'Translate:TranslatorSandbox:UserPromoted', [ $user ], [ 'abortable' => false ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslatePrefillTranslation( ?string &$translation, MessageHandle $handle ) {
 		return $this->hookContainer->run( 'TranslatePrefillTranslation', [ &$translation, $handle ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateBeforeAddModules( array &$modules ) {
 		return $this->hookContainer->run( 'TranslateBeforeAddModules', [ &$modules ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateEventTranslationReview( MessageHandle $handle ) {
 		return $this->hookContainer->run( 'TranslateEventTranslationReview', [ $handle ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateGetSpecialTranslateOptions( array &$defaults, array &$nonDefaults ) {
 		return $this->hookContainer->run( 'TranslateGetSpecialTranslateOptions', [ &$defaults, &$nonDefaults ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslate_newTranslation( MessageHandle $handle, int $revisionId, string $text, User $user ) {
 		return $this->hookContainer->run( 'Translate:newTranslation', [ $handle, $revisionId, $text, $user ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslate_modifyMessageGroupStates( string $groupId, array &$conf ) {
 		return $this->hookContainer->run( 'Translate:modifyMessageGroupStates', [ $groupId, &$conf ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateEventMessageGroupStateChange(
 		MessageGroup $group,
 		string $code,
@@ -94,14 +102,17 @@ class HookRunner implements
 			[ $group, $code, $oldState, $newState ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateInitGroupLoaders( array &$groupLoader, array $deps ) {
 		return $this->hookContainer->run( 'TranslateInitGroupLoaders', [ &$groupLoader, $deps ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslatePostInitGroups( array &$groups, array &$deps, array &$autoload ) {
 		return $this->hookContainer->run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateProcessAPIMessageGroupsProperties(
 		array &$a,
 		array $props,
@@ -111,14 +122,17 @@ class HookRunner implements
 		return $this->hookContainer->run( 'TranslateProcessAPIMessageGroupsProperties', [ &$a, $props, $params, $g ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateSupportedLanguages( array &$list, ?string $language ) {
 		return $this->hookContainer->run( 'TranslateSupportedLanguages', [ &$list, $language ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslateEventMessageMembershipChange( MessageHandle $handle, array $old, array $new ) {
 		return $this->hookContainer->run( 'TranslateEventMessageMembershipChange', [ $handle, $old, $new ] );
 	}
 
+	/** @inheritDoc */
 	public function onTranslate_GettextFormat_headerFields(
 		array &$headers,
 		MessageGroup $group,

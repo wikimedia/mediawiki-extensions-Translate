@@ -93,6 +93,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$this->messageGroupSubscription = $messageGroupSubscription;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
@@ -101,10 +102,12 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function getDescription() {
 		return $this->msg( 'managemessagegroups' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->setHeaders();
 

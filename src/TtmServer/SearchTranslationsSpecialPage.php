@@ -64,6 +64,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$this->logger = LoggerFactory::getInstance( LogNames::MAIN );
 	}
 
+	/** @inheritDoc */
 	public function execute( $subPage ) {
 		$this->setHeaders();
 		$this->checkPermissions();

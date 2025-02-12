@@ -131,10 +131,12 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function isInternal() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'csrf';
 	}

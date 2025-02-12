@@ -16,6 +16,7 @@ class LanguagesMultiselectWidget extends TagMultiselectWidget {
 	/** @var array */
 	private $languages;
 
+	/** @inheritDoc */
 	public function __construct( array $config = [] ) {
 		parent::__construct( $config );
 		$this->languages = $config['languages'];
@@ -25,6 +26,7 @@ class LanguagesMultiselectWidget extends TagMultiselectWidget {
 		return 'LanguagesMultiselectWidget';
 	}
 
+	/** @inheritDoc */
 	public function getConfig( &$config ) {
 		$config['languages'] = $this->languages;
 

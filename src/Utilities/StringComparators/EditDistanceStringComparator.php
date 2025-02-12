@@ -17,6 +17,7 @@ class EditDistanceStringComparator implements StringComparator {
 		$this->simpleStringComparator = new SimpleStringComparator();
 	}
 
+	/** @inheritDoc */
 	public function getSimilarity( $a, $b ) {
 		$similarity = $this->simpleStringComparator->getSimilarity( $a, $b );
 		if ( $similarity > 0.9 ) {

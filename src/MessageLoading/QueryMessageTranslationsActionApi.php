@@ -22,6 +22,7 @@ class QueryMessageTranslationsActionApi extends ApiQueryBase {
 		parent::__construct( $query, $moduleName, 'mt' );
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}

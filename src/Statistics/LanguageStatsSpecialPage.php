@@ -84,6 +84,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
+	/** @inheritDoc */
 	public function isIncludable() {
 		return true;
 	}
@@ -92,6 +93,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->target = $this->getLanguage()->getCode();
 		$request = $this->getRequest();

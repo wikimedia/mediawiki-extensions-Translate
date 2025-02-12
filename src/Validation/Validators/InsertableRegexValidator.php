@@ -20,6 +20,7 @@ class InsertableRegexValidator extends RegexInsertablesSuggester implements Mess
 	/** @var string */
 	private $validationRegex;
 
+	/** @inheritDoc */
 	public function __construct( $params ) {
 		parent::__construct( $params );
 

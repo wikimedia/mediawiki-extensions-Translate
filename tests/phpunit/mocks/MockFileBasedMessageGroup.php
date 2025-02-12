@@ -9,6 +9,7 @@
  */
 
 class MockFileBasedMessageGroup extends FileBasedMessageGroup {
+	/** @inheritDoc */
 	public function load( $code ): array {
 		return [ $this->getId() . '-messagekey' => 'üga' ];
 	}

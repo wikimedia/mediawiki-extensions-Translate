@@ -25,6 +25,7 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		return 'translation';
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
