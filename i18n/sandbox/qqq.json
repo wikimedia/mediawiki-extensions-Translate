@@ -10,7 +10,9 @@
 			"Purodha",
 			"Raymond",
 			"Shirayuki",
-			"Verdy p"
+			"Verdy p",
+			"Matma Rex",
+			"Tacsipacsi"
 		]
 	},
 	"managetranslatorsandbox": "{{doc-special|TranslateSandbox}}",
@@ -55,7 +57,7 @@
 	"tsb-create-user-page": "Edit summary for user page creation once approved as translator. Will be in content language.",
 	"log-name-translatorsandbox": "{{doc-logpage}}",
 	"log-description-translatorsandbox": "Log page description",
-	"logentry-translatorsandbox-promoted": "{{logentry}}\n* $4 - The name of the user that was promoted, can be used for GENDER.",
+	"logentry-translatorsandbox-promoted": "{{logentry}}\nAdditional parameters:\n* $4 - the name of the user that was promoted, can be used for GENDER",
 	"logentry-translatorsandbox-rejected": "{{logentry}}\n----\n$3 is a user (usually linked), who has made a request, which was rejected by $1.<br/>\n'''FIXME''': we need $4 for the plain user name which can be used with <nowiki>{{GENDER:$4|translator}}</nowiki>",
 	"logentry-newusers-tsbpromoted": "{{logentry}}\n'''FIXME''': we need $4 for the plain user name which can be used with <nowiki>{{GENDER:$4|translator}}</nowiki>"
 }
