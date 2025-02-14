@@ -127,6 +127,7 @@
 	"tpt-aggregategroup-remove-confirm-title": "Deler gruppo aggregate",
 	"tpt-aggregategroup-remove-confirm": "Es tu secur de voler deler iste gruppo aggregate?",
 	"tpt-aggregategroup-invalid-group": "Gruppo non existe",
+	"tpt-aggregategroup-remove-item": "Remover iste gruppo de messages del gruppo aggregate",
 	"tpt-aggregategroup-edit-name": "Nomine:",
 	"tpt-aggregategroup-edit-description": "Description:",
 	"tpt-aggregategroup-update": "Salveguardar",
