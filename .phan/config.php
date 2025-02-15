@@ -8,9 +8,6 @@ $cfg['null_casts_as_any_type'] = true;
 // Gives false positives for uninitialized properties
 $cfg['suppress_issue_types'][] = 'PhanCoalescingNeverNull';
 
-// Ignored to allow upgrading Phan, to be fixed later.
-$cfg['suppress_issue_types'][] = 'MediaWikiNoIssetIfDefined';
-
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],
 	[

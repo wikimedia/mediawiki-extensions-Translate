@@ -29,7 +29,7 @@ abstract class GenericTranslateJob extends Job {
 	/** @phan-return array{0:string,1:array} */
 	private function formatLogEntry( string $msg, array $context = [] ): array {
 		$prefix = $this->getType();
-		if ( isset( $this->title ) ) {
+		if ( $this->title !== null ) {
 			$prefix .= ' [{job_title}]';
 			$context['job_title'] = $this->title->getPrefixedText();
 		}

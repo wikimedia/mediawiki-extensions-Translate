@@ -115,7 +115,7 @@ class YamlFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		$output = "# Messages for $name ($native)\n";
 		$output .= "# Exported from $wgSitename\n";
 
-		if ( isset( $wgTranslateYamlLibrary ) ) {
+		if ( $wgTranslateYamlLibrary !== null ) {
 			$output .= "# Export driver: $wgTranslateYamlLibrary\n";
 		}
 
