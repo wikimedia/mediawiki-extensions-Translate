@@ -313,7 +313,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			$header[] = $this->language;
 		}
 
-		fputcsv( $fp, $header );
+		fputcsv( $fp, $header, ',', '"', "\\" );
 
 		$titleFormatter = MediaWikiServices::getInstance()->getTitleFormatter();
 
@@ -330,7 +330,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				$row[] = $message->translation();
 			}
 
-			fputcsv( $fp, $row );
+			fputcsv( $fp, $row, ',', '"', "\\" );
 		}
 
 		fclose( $fp );

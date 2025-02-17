@@ -51,7 +51,7 @@ class CsvTranslationImporter {
 			// at various placaes
 			++$currentRowCount;
 
-			$csvRow = $csvFileContent->fgetcsv();
+			$csvRow = $csvFileContent->fgetcsv( ',', '"', "\\" );
 			if ( $this->isCsvRowEmpty( $csvRow ) ) {
 				continue;
 			}
