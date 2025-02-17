@@ -56,12 +56,17 @@ class MessageBundleContentHandler extends TextContentHandler {
 			);
 		}
 
+		if ( !$content->isValid() ) {
+			$parserOutput->setRawText( null );
+			return;
+		}
+
 		$label = $content->getMetadata()->getLabel();
 		if ( $label !== null ) {
 			$parserOutput->setDisplayTitle( $label );
 		}
 
-		if ( $cpoParams->getGenerateHtml() && $content->isValid() ) {
+		if ( $cpoParams->getGenerateHtml() ) {
 			/** @param $content JsonContent::class */
 			$parserOutput->setRawText( $content->rootValueTable( $content->getData()->getValue() ) );
 			$parserOutput->addModuleStyles( [ 'mediawiki.content.json' ] );
