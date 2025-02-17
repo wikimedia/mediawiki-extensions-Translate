@@ -8,7 +8,8 @@
 			"NGC 54",
 			"Paloi Sciurala",
 			"Stelistcristi",
-			"Strainu"
+			"Strainu",
+			"Trotinel Iftode"
 		]
 	},
 	"pagetranslation": "Traducere pagini",
@@ -62,6 +63,7 @@
 	"tpt-aggregategroup-new-description": "Descriere (opțională):",
 	"tpt-aggregategroup-remove-confirm": "Sigur doriți să ștergeți acest grup de agregare?",
 	"tpt-aggregategroup-invalid-group": "Grupul nu există",
+	"tpt-aggregategroup-remove-item": "Eliminați acest grup de mesaje din grupul agregat",
 	"log-name-pagetranslation": "Jurnal traducere pagini",
 	"pt-movepage-title": "Mută pagina traductibilă „$1”",
 	"pt-movepage-list-pages": "Listă de pagini de mutat",

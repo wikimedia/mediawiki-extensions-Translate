@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"BOKOBA VEROLY",
 			"Bergerdias"
 		]
 	},
 	"action-translate-watch-message-group": "Kimvuka ya bansangu ya kutala",
+	"translate-documentation-language": "Bansangu",
 	"tux-watch-group": "Tala $1",
 	"tux-unwatch-group": "Yambula kutala $1",
 	"tux-subscription-error": "Bo me kuka ve kutomisa lisiti ya bantu yina ke talaka bansangu"

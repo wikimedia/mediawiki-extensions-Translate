@@ -9,6 +9,7 @@
 	"apihelp-aggregategroups-param-do": "Que facer con le gruppo de messages aggregate.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID del gruppo de messages aggregate.",
 	"apihelp-aggregategroups-param-group": "ID del gruppo de messages. Vide <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-aggregategroups-param-groups": "Lista de IDs de gruppos de messages. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Nomine del gruppo de messages aggregate.",
 	"apihelp-aggregategroups-param-groupdescription": "Description del gruppo de messages aggregate.",
 	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Codice de lingua fonte del gruppo de messages aggregate, o <kbd>-</kbd> pro non definir un lingua fonte o remover le existente.",
