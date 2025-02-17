@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kumkumuk",
-			"Mirzali"
+			"Mirzali",
+			"GolyatGeri"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Kamiya Gruba mesacan",
@@ -19,6 +20,7 @@
 	"apihelp-query+managemessagegroups-param-messageKey": "Kılitê mesaci",
 	"apihelp-query+messagecollection-param-group": "Gruba mesaca.",
 	"apihelp-query+messagecollection-param-language": "Kodê zıwani.",
+	"apihelp-query+messagegroupstats-param-suppressempty": "Tamamen tadeyê zıwana mêasenê.",
 	"apihelp-translatesandbox-param-do": "Çıçi.",
 	"apihelp-translationstash-param-subaction": "Kerdış.",
 	"apihelp-translationstash-param-metadata": "JSON çi.",

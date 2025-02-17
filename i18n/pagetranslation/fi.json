@@ -60,6 +60,7 @@
 	"tpt-old-pages": "Viimeisin versio {{PLURAL:$1|tästä sivusta on|näistä sivuista on}} merkitty käännettäväksi.",
 	"tpt-other-pages": "Vanha versio {{PLURAL:$1|tästä sivusta|näistä sivuista}} on merkitty käännettäväksi,\nmutta viimeisintä versiota ei voi merkitä käännettäväksi.",
 	"tpt-outdated-pages": "{{PLURAL:$1|Tällä sivulla on muutos, jota ei ole merkitty käännettäväksi.|Näillä sivuilla on muutoksia, joita ei ole merkitty käännettäväksi.}}",
+	"tpt-tag-discouraged": "vältä uusia käännöksiä",
 	"tpt-tag-oldsyntax": "vanha syntaksi",
 	"tpt-select-prioritylangs": "Pilkuin erotettu lista ensisijaisista kielikoodeista:",
 	"tpt-select-prioritylangs-force": "Estä kääntäminen muille kuin ensisijaisille kielille",

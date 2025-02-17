@@ -7,7 +7,8 @@
 			"Mormegil",
 			"Rudko",
 			"Teslaton",
-			"TomášPolonec"
+			"TomášPolonec",
+			"TreeIsLife"
 		]
 	},
 	"pagetranslation": "Preklad stránky",
@@ -40,6 +41,7 @@
 	"tpt-translation-intro-fuzzy": "Zastarané preklady sú označené takto.",
 	"tpt-languages-legend": "Iné jazyky:",
 	"tpt-languages-nonzero": "$1 ({{PLURAL:$2|preložené|preložené|preložených}} $2 %)",
+	"tpt-tab-translate": "Preložiť",
 	"tpt-target-page": "Túto stránku nemožno aktualizovať ručne.\nTáto stránka je prekladom stránky [[$1]] a preklad možno aktualizovať pomocou [$2 nástroja na preklad].",
 	"tpt-unknown-page": "Tento menný priestor je vyhradený na preklady stránok s obsahom.\nZdá sa, že stránka, ktorú sa pokúšate upravovať, nezodpovedá žiadnej stránke označenej na preklad.",
 	"tpt-render-summary": "Aktualizácia na novú verziu zdrojovej stránky",
