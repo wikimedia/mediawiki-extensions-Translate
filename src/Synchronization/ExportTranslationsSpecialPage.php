@@ -335,7 +335,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			$header[] = $this->language;
 		}
 
-		fputcsv( $fp, $header );
+		fputcsv( $fp, $header, ',', '"', "\\" );
 
 		foreach ( $collection->keys() as $messageKey => $titleValue ) {
 			$message = $collection[ $messageKey ];
@@ -350,7 +350,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 				$row[] = $message->translation();
 			}
 
-			fputcsv( $fp, $row );
+			fputcsv( $fp, $row, ',', '"', "\\" );
 		}
 
 		fclose( $fp );
