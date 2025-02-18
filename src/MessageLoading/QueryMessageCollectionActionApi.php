@@ -14,7 +14,6 @@ use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Title\Title;
-use MessageGroup;
 use RecentMessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\EnumDef;
@@ -87,26 +86,14 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			$this->addWarning( [ 'apiwarn-translate-language-disabled-source', wfEscapeWikiText( $name ) ] );
 		}
 
-		$languages = $group->getTranslatableLanguages();
-		if ( $languages === MessageGroup::DEFAULT_LANGUAGES ) {
-			$checks = [
-				$group->getId(),
-				strtok( $group->getId(), '-' ),
-				'*'
-			];
-
-			$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
-			foreach ( $checks as $check ) {
-				if ( isset( $disabledLanguages[ $check ][ $languageCode ] ) ) {
-					$name = $this->getLanguageName( $languageCode );
-					$reason = $disabledLanguages[ $check ][ $languageCode ];
-					$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
-				}
-			}
-		} elseif ( !isset( $languages[ $languageCode ] ) ) {
-			// Not a translatable language
+		$isDisabled = $this->configHelper->isTargetLanguageDisabled( $group, $languageCode, $reason );
+		if ( $isDisabled ) {
 			$name = $this->getLanguageName( $languageCode );
-			$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
+			if ( $reason === null ) {
+				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
+			} else {
+				$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
+			}
 		}
 
 		// A check for cases where the source language of group messages

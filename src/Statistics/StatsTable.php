@@ -299,36 +299,7 @@ class StatsTable {
 	 * @param string $code Language code
 	 */
 	public function isExcluded( MessageGroup $group, string $code ): bool {
-		$excluded = null;
-		$groupId = $group->getId();
-
-		$checks = [
-			$groupId,
-			strtok( $groupId, '-' ),
-			'*'
-		];
-
-		$disabledLanguages = $this->configHelper->getDisabledTargetLanguages();
-
-		foreach ( $checks as $check ) {
-			if ( isset( $disabledLanguages[$check] ) && isset( $disabledLanguages[$check][$code] ) ) {
-				$excluded = $disabledLanguages[$check][$code];
-			}
-
-			if ( $excluded !== null ) {
-				break;
-			}
-		}
-
-		$languages = $group->getTranslatableLanguages();
-		if ( $languages !== MessageGroup::DEFAULT_LANGUAGES && !isset( $languages[$code] ) ) {
-			$excluded = true;
-		}
-
-		if ( $this->messageGroupMetadata->isExcluded( $groupId, $code ) ) {
-			$excluded = true;
-		}
-
-		return (bool)$excluded;
+		return $this->configHelper->isTargetLanguageDisabled( $group, $code )
+			|| $this->messageGroupMetadata->isExcluded( $group->getId(), $code );
 	}
 }

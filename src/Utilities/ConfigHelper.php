@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
+use MessageGroup;
+
 /**
  * A helper class added to work with configuration values of the Translate Extension
  *
@@ -29,6 +31,42 @@ class ConfigHelper {
 	public function getDisabledTargetLanguages(): array {
 		global $wgTranslateDisabledTargetLanguages;
 		return $wgTranslateDisabledTargetLanguages;
+	}
+
+	/**
+	 * Helper to validate MessageGroup::getTranslatableLanguage against site configuration.
+	 * @param MessageGroup $group The message group to check.
+	 * @param string $languageCode Target language code.
+	 * @param string|null &$reason Store the reason why the language is disabled, if applicable.
+	 * @return bool True if the target language is disabled, false otherwise.
+	 */
+	public function isTargetLanguageDisabled(
+		MessageGroup $group,
+		string $languageCode,
+		?string &$reason = null
+	): bool {
+		$languages = $group->getTranslatableLanguages();
+		if ( $languages === MessageGroup::DEFAULT_LANGUAGES ) {
+			$groupId = $group->getId();
+
+			$checks = [
+				$groupId,
+				strtok( $groupId, '-' ),
+				'*'
+			];
+
+			$disabledLanguages = $this->getDisabledTargetLanguages();
+			foreach ( $checks as $check ) {
+				if ( isset( $disabledLanguages[$check][$languageCode] ) ) {
+					$reason = $disabledLanguages[$check][$languageCode];
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		return !array_key_exists( $languageCode, $languages );
 	}
 
 	public function isAuthorExcluded( string $groupId, string $languageCode, string $username ): bool {

@@ -29,28 +29,21 @@ class QueryMessageCollectionActionApiTest extends ApiTestCase {
 		$exampleMessageGroup->setNamespace( 5 ); // Example
 		$list['theid'] = $exampleMessageGroup;
 
-		$anotherExampleMessageGroup = new WikiMessageGroup( 'anotherid', 'thesource' );
-		$anotherExampleMessageGroup->setLabel( 'thelabel' ); // Example
-		$anotherExampleMessageGroup->setNamespace( 5 ); // Example
-		$list['anotherid'] = $anotherExampleMessageGroup;
-
 		return $list;
 	}
 
 	public function testSameAsSourceLanguage(): void {
-		global $wgLanguageCode;
-
-		$groups = MessageGroups::getAllGroups();
+		$group = MessageGroups::getGroup( 'theid' );
 		[ $response ] = $this->doApiRequest(
 			[
-				'mcgroup' => $groups['anotherid']->getId(),
+				'mcgroup' => $group->getId(),
 				'action' => 'query',
 				'list' => 'messagecollection',
 				'mcprop' => 'definition|translation|tags|properties',
 				// @see https://gerrit.wikimedia.org/r/#/c/160222/
 				'continue' => '',
 				'errorformat' => 'html',
-				'mclanguage' => $wgLanguageCode
+				'mclanguage' => $group->getSourceLanguage()
 			]
 		);
 

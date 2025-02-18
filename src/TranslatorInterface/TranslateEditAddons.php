@@ -21,7 +21,6 @@ use MediaWiki\Storage\EditResult;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use MessageGroup;
 use WikiPage;
 
 /**
@@ -68,37 +67,19 @@ class TranslateEditAddons {
 		}
 
 		$group = $handle->getGroup();
-		$languages = $group->getTranslatableLanguages();
-
-		if ( $languages !== MessageGroup::DEFAULT_LANGUAGES ) {
-			if ( isset( $languages[$langCode] ) ) {
-				// If language is explicitly listed as enabled in configuration,
-				// override the general disabled target language configuration check below.
-				// See e.g. https://phabricator.wikimedia.org/T385816
-				return true;
-			} else {
-				$result = [ 'translate-language-disabled' ];
-				return false;
-			}
+		$configHelper = Services::getInstance()->getConfigHelper();
+		$isDisabled = $configHelper->isTargetLanguageDisabled( $group, $langCode, $reason );
+		if ( !$isDisabled ) {
+			return true;
 		}
 
-		$groupId = $group->getId();
-		$checks = [
-			$groupId,
-			strtok( $groupId, '-' ),
-			'*'
-		];
-
-		$disabledLanguages = Services::getInstance()->getConfigHelper()->getDisabledTargetLanguages();
-		foreach ( $checks as $check ) {
-			if ( isset( $disabledLanguages[$check][$langCode] ) ) {
-				$reason = $disabledLanguages[$check][$langCode];
-				$result = [ 'translate-page-disabled', $reason ];
-				return false;
-			}
+		if ( $reason === null ) {
+			$result = [ 'translate-language-disabled' ];
+		} else {
+			$result = [ 'translate-page-disabled', $reason ];
 		}
 
-		return true;
+		return false;
 	}
 
 	/**
