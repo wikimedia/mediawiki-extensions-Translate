@@ -1,15 +1,15 @@
 <?php
-/**
- * @file
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextPluralException;
 
-/** @since 2019.09 */
+/**
+ * @license GPL-2.0-or-later
+ * @since 2019.09
+ */
 class GettextPlural {
 	private const PRE = '{{PLURAL:GETTEXT|';
 	private const POST = '}}';
@@ -20,7 +20,7 @@ class GettextPlural {
 	 * @param string $code Language tag in MediaWiki internal format.
 	 * @return string Empty string if no plural rule found
 	 */
-	public static function getPluralRule( $code ) {
+	public static function getPluralRule( string $code ): string {
 		global $wgTranslateDocumentationLanguageCode;
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
@@ -46,10 +46,9 @@ class GettextPlural {
 	 * Returns how many plural forms are expected by a given plural rule.
 	 *
 	 * @param string $rule Gettext style plural rule.
-	 * @return int
 	 * @throws InvalidArgumentException
 	 */
-	public static function getPluralCount( $rule ) {
+	public static function getPluralCount( string $rule ): int {
 		$m = [];
 		$ok = preg_match( '/nplurals=([0-9]+).*;/', $rule, $m );
 		if ( !$ok ) {
@@ -60,11 +59,8 @@ class GettextPlural {
 
 	/**
 	 * Quick way to check if the text contains plural syntax.
-	 *
-	 * @param string $text
-	 * @return bool
 	 */
-	public static function hasPlural( $text ) {
+	public static function hasPlural( string $text ): bool {
 		return str_contains( $text, self::PRE );
 	}
 
@@ -72,9 +68,8 @@ class GettextPlural {
 	 * Format plural forms as single string suitable for translation.
 	 *
 	 * @param string[] $forms
-	 * @return string
 	 */
-	public static function flatten( array $forms ) {
+	public static function flatten( array $forms ): string {
 		return self::PRE . implode( '|', $forms ) . self::POST;
 	}
 
@@ -85,11 +80,9 @@ class GettextPlural {
 	 * translators can place part of the text outside the plural markup or use multiple
 	 * instances of the markup.
 	 *
-	 * @param string $text
-	 * @param int $expectedPluralCount
 	 * @return string[]
 	 */
-	public static function unflatten( $text, $expectedPluralCount ) {
+	public static function unflatten( string $text, int $expectedPluralCount ): array {
 		[ $template, $instanceMap ] = self::parsePluralForms( $text );
 		return self::expandTemplate( $template, $instanceMap, $expectedPluralCount );
 	}
@@ -97,10 +90,9 @@ class GettextPlural {
 	/**
 	 * Replaces problematic markup which can confuse our plural syntax markup with placeholders
 	 *
-	 * @param string $text
-	 * @return array [ string $text, array $map ]
+	 * @return array{0:string,1:array} [ string $text, array $map ]
 	 */
-	private static function armour( $text ) {
+	private static function armour( string $text ): array {
 		// |/| is commonly used in KDE to support inflections. It needs to be escaped
 		// to avoid it messing up the plural markup.
 		$replacements = [
@@ -123,19 +115,18 @@ class GettextPlural {
 	 *
 	 * @param string $text
 	 * @param array $map Map returned by armour.
-	 * @return string
 	 */
-	private static function unarmour( $text, array $map ) {
+	private static function unarmour( string $text, array $map ): string {
 		return strtr( $text, $map );
 	}
 
 	/**
 	 * Parses plural markup into a structure form.
 	 *
-	 * @param string $text
-	 * @return array [ string $template, array $instanceMap ]
+	 * @return array{0:string,1:array} [ string $template, array $instanceMap ]
+	 * @throws GettextPluralException
 	 */
-	public static function parsePluralForms( $text ) {
+	public static function parsePluralForms( string $text ): array {
 		$m = [];
 		$pre = preg_quote( self::PRE, '/' );
 		$post = preg_quote( self::POST, '/' );
@@ -172,12 +163,9 @@ class GettextPlural {
 	/**
 	 * Gives fully expanded forms given a template and parsed plural markup instances.
 	 *
-	 * @param string $template
-	 * @param array $instanceMap
-	 * @param int $expectedPluralCount
 	 * @return string[]
 	 */
-	public static function expandTemplate( $template, array $instanceMap, $expectedPluralCount ) {
+	public static function expandTemplate( string $template, array $instanceMap, int $expectedPluralCount ): array {
 		$formArray = [];
 		for ( $formIndex = 0; $formIndex < $expectedPluralCount; $formIndex++ ) {
 			// Start with the whole string
