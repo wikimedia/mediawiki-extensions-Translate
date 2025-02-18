@@ -22,7 +22,7 @@ class TS extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Script to gather translator stats in tsv format. ' .
-			'You can further process the output with translate-stats-process.php' );
+			'You can further process the output with translator-stats-process.php' );
 	}
 
 	public function execute() {
@@ -84,7 +84,7 @@ class TS extends Maintenance {
 				->caller( __METHOD__ )
 				->fetchResultSet();
 
-			$promoted = null;
+			$promoted = '';
 			$method = 'normal';
 			foreach ( $logs as $log ) {
 				if ( $log->log_action === 'promoted' ) {
@@ -111,7 +111,7 @@ class TS extends Maintenance {
 			}
 
 			echo "{$u->user_name}\t{$u->user_registration}\t{$u->user_editcount}" .
-			"\t{$u->ug_group}\t{$promoted}\t{$method}\n";
+				"\t{$u->ug_group}\t{$promoted}\t{$method}\n";
 		}
 	}
 }
