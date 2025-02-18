@@ -211,9 +211,7 @@
 		"AfterImportPage": "translatableBundleImporter",
 		"LonelyPagesQuery": "pageTranslation",
 		"ArticleViewHeader": "messageBundle",
-		"TitleQuickPermissions": "translateSandbox",
-		"SpecialPageBeforeFormDisplay": "pageTranslation",
-		"SpecialWhatLinksHereQuery": "pageTranslation"
+		"TitleQuickPermissions": "translateSandbox"
 	},
 	"HookHandlers": {
 		"cleanChanges": {

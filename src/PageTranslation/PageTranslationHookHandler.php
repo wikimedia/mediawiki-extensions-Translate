@@ -19,7 +19,6 @@ class PageTranslationHookHandler implements
 	SpecialPageBeforeFormDisplayHook,
 	SpecialWhatLinksHereQueryHook
 {
-
 	/** @inheritDoc */
 	public function onSpecialPrefixIndexGetFormFilters( IContextSource $contextSource, array &$filters ) {
 		$filters[ 'translate-hidetranslations' ] = [
@@ -57,6 +56,7 @@ class PageTranslationHookHandler implements
 
 	/** @inheritDoc */
 	public function onSpecialPageBeforeFormDisplay( $name, $form ): void {
+		// Temporarily disabled: https://phabricator.wikimedia.org/T385139#10559646
 		if ( $name === 'Whatlinkshere' ) {
 			$form->addFields( [
 				'translate-hidetranslations' => [
@@ -71,6 +71,7 @@ class PageTranslationHookHandler implements
 
 	/** @inheritDoc */
 	public function onSpecialWhatLinksHereQuery( $table, $data, $queryBuilder ) {
+		// Temporarily disabled: https://phabricator.wikimedia.org/T385139#10559646
 		$isSupportedTable = in_array( $table, [ 'pagelinks', 'templatelinks', 'imagelinks' ] );
 
 		if ( $data[ 'translate-hidetranslations' ] && $isSupportedTable ) {
