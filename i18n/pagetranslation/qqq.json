@@ -33,7 +33,8 @@
 			"Verdy p",
 			"Wangombe",
 			"Zoranzoki21",
-			"Pppery"
+			"Pppery",
+			"Matma Rex"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -184,10 +185,10 @@
 	"logentry-pagetranslation-encourage": "{{logentry|[[Special:Log/pagetranslation]]}}",
 	"logentry-pagetranslation-discourage": "{{logentry|[[Special:Log/pagetranslation]]}}",
 	"logentry-pagetranslation-prioritylanguages-unset": "{{logentry|[[Special:Log/pagetranslation]]}}",
-	"logentry-pagetranslation-prioritylanguages": "{{logentry|[[Special:Log/pagetranslation]]}}\n* $5 is list of languages (A, B and C)",
-	"logentry-pagetranslation-prioritylanguages-force": "{{logentry|[[Special:Log/pagetranslation]]}}\n* $5 is list of languages (A, B and C)",
-	"logentry-pagetranslation-associate": "{{logentry|[[Special:Log/pagetranslation]]}}\n* $4 is the name of the aggregate group",
-	"logentry-pagetranslation-dissociate": "{{logentry|[[Special:Log/pagetranslation]]}}\n* $4 is the name of the aggregate group",
+	"logentry-pagetranslation-prioritylanguages": "{{logentry|[[Special:Log/pagetranslation]]}}\nAdditional parameters:\n* $5 - list of languages (e.g. \"A, B and C\")",
+	"logentry-pagetranslation-prioritylanguages-force": "{{logentry|[[Special:Log/pagetranslation]]}}\nAdditional parameters:\n* $5 - list of languages (e.g. \"A, B and C\")",
+	"logentry-pagetranslation-associate": "{{logentry|[[Special:Log/pagetranslation]]}}\nAdditional parameters:\n* $4 - the name of the aggregate group",
+	"logentry-pagetranslation-dissociate": "{{logentry|[[Special:Log/pagetranslation]]}}\nAdditional parameters:\n* $4 - the name of the aggregate group",
 	"log-action-filter-pagetranslation": "{{Doc-log-action-filter-type|pagetranslation}}\n{{Identical|Type of action}}\n{{Related|Log-action-filter}}",
 	"log-action-filter-pagetranslation-mark": "{{doc-log-action-filter-action|pagetranslation|mark}}",
 	"log-action-filter-pagetranslation-unmark": "{{doc-log-action-filter-action|pagetranslation|unmark}}",
