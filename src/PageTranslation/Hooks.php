@@ -219,7 +219,7 @@ class Hooks {
 			return;
 		}
 
-		$templateTitle = Title::castFromLinkTarget( $templateLink );
+		$templateTitle = Title::newFromLinkTarget( $templateLink );
 
 		$templateTranslationPage = TranslatablePage::isTranslationPage( $templateTitle );
 		if ( $templateTranslationPage ) {
@@ -252,7 +252,7 @@ class Hooks {
 		if ( $contextLink ) {
 			// Fetch the context page language, and then check if template is present in that language
 			$templateTranslationTitle = $templateTitle->getSubpage(
-				Title::castFromLinkTarget( $contextLink )->getPageLanguage()->getCode()
+				Title::newFromLinkTarget( $contextLink )->getPageLanguage()->getCode()
 			 );
 
 			if ( $templateTranslationTitle ) {

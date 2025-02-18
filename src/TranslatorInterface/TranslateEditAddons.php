@@ -134,7 +134,7 @@ class TranslateEditAddons {
 			$wasFuzzy = $revTagStore->isRevIdFuzzy( $title->getArticleID(), $parentId );
 		}
 		if ( !$fuzzy && $wasFuzzy ) {
-			$title = $mwServices->getTitleFactory()->castFromPageIdentity( $wikiPage );
+			$title = $mwServices->getTitleFactory()->newFromPageIdentity( $wikiPage );
 			$user = $mwServices->getUserFactory()->newFromUserIdentity( $userIdentity );
 
 			if ( !$mwServices->getPermissionManager()->userCan( 'unfuzzy', $user, $title ) ) {

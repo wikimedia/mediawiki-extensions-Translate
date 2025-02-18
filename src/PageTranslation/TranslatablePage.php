@@ -112,7 +112,7 @@ class TranslatablePage extends TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTitle(): Title {
-		return Title::castFromPageIdentity( $this->title );
+		return Title::newFromPageIdentity( $this->title );
 	}
 
 	public function getPageIdentity(): PageIdentity {
@@ -334,7 +334,7 @@ class TranslatablePage extends TranslatableBundle {
 		$translationPages = [];
 		foreach ( $linkBatch->getPageIdentities() as $pageIdentity ) {
 			if ( $pageIdentity->exists() ) {
-				$translationPages[] = Title::castFromPageIdentity( $pageIdentity );
+				$translationPages[] = Title::newFromPageIdentity( $pageIdentity );
 			}
 		}
 
