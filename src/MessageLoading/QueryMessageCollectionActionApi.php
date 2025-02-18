@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Title\Title;
+use MessageGroup;
 use RecentMessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\EnumDef;
@@ -87,7 +88,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		}
 
 		$languages = $group->getTranslatableLanguages();
-		if ( $languages === null ) {
+		if ( $languages === MessageGroup::DEFAULT_LANGUAGES ) {
 			$checks = [
 				$group->getId(),
 				strtok( $group->getId(), '-' ),

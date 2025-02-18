@@ -223,7 +223,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 
 	/** @inheritDoc */
 	public function getTranslatableLanguages(): ?array {
-		return null;
+		return self::DEFAULT_LANGUAGES;
 	}
 
 	/** @inheritDoc */

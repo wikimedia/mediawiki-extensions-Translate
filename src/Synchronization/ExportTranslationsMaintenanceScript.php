@@ -238,10 +238,8 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			$langStartTime = microtime( true );
 			foreach ( $languageExportActions as $lang => $action ) {
-				// Do not export languages that are excluded (or not included).
-				// Also check that inclusion list is not null, which means that all
-				// languages are allowed for translation and export.
-				if ( is_array( $inclusionList ) && !isset( $inclusionList[$lang] ) ) {
+				// Check for customized list of translatable languages
+				if ( $inclusionList !== MessageGroup::DEFAULT_LANGUAGES && !isset( $inclusionList[$lang] ) ) {
 					continue;
 				}
 

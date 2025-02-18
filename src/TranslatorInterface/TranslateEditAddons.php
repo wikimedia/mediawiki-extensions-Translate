@@ -21,6 +21,7 @@ use MediaWiki\Storage\EditResult;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use MessageGroup;
 use WikiPage;
 
 /**
@@ -69,7 +70,7 @@ class TranslateEditAddons {
 		$group = $handle->getGroup();
 		$languages = $group->getTranslatableLanguages();
 
-		if ( $languages !== null ) {
+		if ( $languages !== MessageGroup::DEFAULT_LANGUAGES ) {
 			if ( isset( $languages[$langCode] ) ) {
 				// If language is explicitly listed as enabled in configuration,
 				// override the general disabled target language configuration check below.

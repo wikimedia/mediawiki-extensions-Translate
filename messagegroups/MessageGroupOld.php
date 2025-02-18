@@ -280,7 +280,7 @@ abstract class MessageGroupOld implements MessageGroup {
 
 	/** @inheritDoc */
 	public function getTranslatableLanguages() {
-		return null;
+		return self::DEFAULT_LANGUAGES;
 	}
 
 	protected static function addContext( Message $message, ?IContextSource $context = null ): Message {

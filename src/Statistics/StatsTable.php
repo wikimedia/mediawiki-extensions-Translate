@@ -321,7 +321,7 @@ class StatsTable {
 		}
 
 		$languages = $group->getTranslatableLanguages();
-		if ( $languages !== null && !isset( $languages[$code] ) ) {
+		if ( $languages !== MessageGroup::DEFAULT_LANGUAGES && !isset( $languages[$code] ) ) {
 			$excluded = true;
 		}
 

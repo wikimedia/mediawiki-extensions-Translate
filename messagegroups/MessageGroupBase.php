@@ -312,7 +312,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		$groupConfiguration = $this->getConfiguration();
 		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
 			// No LANGUAGES section in the configuration.
-			return null;
+			return self::DEFAULT_LANGUAGES;
 		}
 
 		$codes = array_flip( array_keys( Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS ) ) );
