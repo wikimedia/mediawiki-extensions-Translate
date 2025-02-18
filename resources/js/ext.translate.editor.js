@@ -292,7 +292,7 @@
 						logger.logEvent(
 							'edit',
 							'publish_success',
-							'translation_text',
+							editResp.oldrevid === 0 ? 'translation_text' : 'translation_modified',
 							{
 								// eslint-disable-next-line camelcase
 								modification_rate: mtModificationPercentage,
