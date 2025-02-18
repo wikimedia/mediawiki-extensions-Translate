@@ -61,12 +61,24 @@ class TranslateEditAddons {
 			return true;
 		}
 
+		$langCode = $handle->getCode();
+		if ( $langCode === '' ) {
+			return true;
+		}
+
 		$group = $handle->getGroup();
 		$languages = $group->getTranslatableLanguages();
-		$langCode = $handle->getCode();
-		if ( $languages !== null && $langCode && !isset( $languages[$langCode] ) ) {
-			$result = [ 'translate-language-disabled' ];
-			return false;
+
+		if ( $languages !== null ) {
+			if ( isset( $languages[$langCode] ) ) {
+				// If language is explicitly listed as enabled in configuration,
+				// override the general disabled target language configuration check below.
+				// See e.g. https://phabricator.wikimedia.org/T385816
+				return true;
+			} else {
+				$result = [ 'translate-language-disabled' ];
+				return false;
+			}
 		}
 
 		$groupId = $group->getId();
