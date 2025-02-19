@@ -52,6 +52,7 @@
 			"Yfdyh000",
 			"Zazzzz",
 			"乌拉跨氪",
+			"人间百态",
 			"列维劳德",
 			"沈澄心",
 			"铁桶"
@@ -270,8 +271,8 @@
 	"supportedlanguages-activity": "$1：$2个编辑 - 最后编辑于$3天前",
 	"translate-supportedlanguages-cached": "此消息在$1前已缓存。",
 	"translate-activelanguages-invalid-code": "语言代码“$1”未知或没有为此语言启用翻译。",
-	"abusefilter-edit-builder-vars-translate-source-text": "翻译单元的原始文本",
-	"abusefilter-edit-builder-vars-translate-target-language": "翻译目标语言",
+	"abusefilter-edit-builder-vars-translate-source-text": "翻译单元的原始文本（$1）",
+	"abusefilter-edit-builder-vars-translate-target-language": "翻译目标语言（$1）",
 	"translate-jssti-add": "添加至列表",
 	"managemessagegroups": "管理消息组",
 	"translate-smg-notallowed": "您不被允许执行该操作。",

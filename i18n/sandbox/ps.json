@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"managetranslatorsandbox": "ژباړن شگبکس مهارول",
@@ -29,6 +30,6 @@
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|ژباړه بشپړه شوې|ژباړې بشپړې شوي}}",
 	"translate-translationstash-skip-button-label": "بل آزمويل",
 	"tsb-limit-reached-title": "له ژباړو څخه مو مننه",
-	"tsb-create-user-page": "يو بنسټيز کارن‌مخ جوړول",
+	"tsb-create-user-page": "يو بنسټيز کارنمخ جوړول",
 	"log-name-translatorsandbox": "د ژباړې شگبکس يادښت"
 }

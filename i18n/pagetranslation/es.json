@@ -296,6 +296,8 @@
 	"tpt-unlink-confirm": "Confirma que realmente quieres eliminar esta página del sistema de traducción.\nEl selector de idiomas y los nombres de las páginas traducidas dejarán de funcionar.\nLas páginas de traducción se volverán editables.",
 	"tpt-unlink-button": "Eliminar de la traducción",
 	"tpt-unlink-summary": "Eliminar página de la traducción",
+	"tpt-general-area-header": "Área general",
+	"tpt-fuzzy-select-custom": "Selección personalizada",
 	"tpt-generic-confirm": "Confirma la acción.",
 	"tpt-generic-button": "Confirmar",
 	"tpt-validation-not-insertable": "El nombre de la variable de traducción \"$1\" no funciona como insertable en la interfaz de traducción. Evita el uso de caracteres especiales.",
@@ -306,5 +308,6 @@
 	"visualeditor-annotations-tvar-start": "Inicio del contenido intraducible",
 	"visualeditor-annotations-tvar-end": "Fin del contenido intraducible",
 	"visualeditor-annotations-tvar-description": "Este intervalo está marcado como intraducible. Consulta [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration/es#Segmentación Segmentación del texto de origen] para obtener más información.",
-	"tag-translate-translation-pages-description": "Ediciones automáticas a páginas de traducción mediante la extensión Traducir"
+	"tag-translate-translation-pages-description": "Ediciones automáticas a páginas de traducción mediante la extensión Traducir",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Grupos:"
 }
