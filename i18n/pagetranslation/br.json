@@ -121,7 +121,7 @@
 	"pt-deletepage-list-no-pages": "Pajenn ebet kavet.",
 	"pt-deletepage-full-logreason": "Perzh eus ar bajenn da dreiñ \"$1\"",
 	"pt-deletepage-lang-logreason": "Perzh eus ar bajenn da dreiñ \"$1\"",
-	"pm-page-does-not-exist": "N'eus ket eus $1.",
+	"pm-page-does-not-exist": "N'eus ket eus ar bajenn $1.",
 	"pp-prepare-button-label": "Prientiñ",
 	"pp-save-button-label": "Embann"
 }
