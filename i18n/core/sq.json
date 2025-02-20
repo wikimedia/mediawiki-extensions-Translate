@@ -6,7 +6,8 @@
 			"GretaDoci",
 			"Kosovastar",
 			"Liridon",
-			"Puntori"
+			"Puntori",
+			"INNERLMNT"
 		]
 	},
 	"translate": "Përkthime",
@@ -29,6 +30,8 @@
 	"translate-statsf-count-users": "Përkthyesit aktiv",
 	"translate-statsf-submit": "Parapamja",
 	"translate-mgs-pagename": "Statistikat e mesazhit të grupit",
+	"supportedlanguages": "Gjuhë aktive",
+	"supportedlanguages-summary": "Kjo faqe tregon një listë të gjuhëve aktive në {{SITENAME}}, së bashku me emrat e përkthyesve që punojnë në atë gjuhë. Emri i një përkthyesi shfaqet më i madh, sa më shumë redaktime të ketë kontribuar përkthyesi. Ngjyra e një nënvizimi tregon se sa kohët e fundit një përkthyes ka qenë aktiv këtu.",
 	"translate-documentation-language": "Dokumentimi i mesazhit",
 	"tux-editor-save-button-label": "Ruaj përkthimin",
 	"tux-editor-shortcut-info": "Shtypni \"$1\" për të ruajtur ose \"$2\" për të kaluar në mesazhin tjetër, ose \"$3\" për shkurtesa të tjera."
