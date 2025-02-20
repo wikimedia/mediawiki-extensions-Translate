@@ -172,8 +172,8 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 			$this->createStub( MessageGroups::class ),
 			$mediaWikiServices->getNamespaceInfo(),
 			$this->getMessageIndexStub(),
-			$mediaWikiServices->getTitleFormatter(),
-			$mediaWikiServices->getTitleParser()
+			$mediaWikiServices->getTitleParser(),
+			$mediaWikiServices->getTitleFormatter()
 		);
 
 		$actual = $entitySearch->searchMessages( $query, $maxResults );
