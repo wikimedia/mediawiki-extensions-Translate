@@ -78,7 +78,7 @@ class LegacyTranslationAids {
 
 	private function getDefinitionBox(): string {
 		$definition = $this->getDefinition();
-		if ( (string)$definition === '' ) {
+		if ( $definition === null || $definition === '' ) {
 			throw new TranslationHelperException( 'Message lacks definition' );
 		}
 
@@ -126,7 +126,7 @@ class LegacyTranslationAids {
 		// The information is most likely in English
 		$divAttribs = [ 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr mw-parser-output' ];
 
-		if ( (string)$info === '' ) {
+		if ( $info === null || $info === '' ) {
 			$info = $this->context->msg( 'translate-edit-no-information' )->plain();
 			$class = 'mw-sp-translate-edit-noinfo';
 			$lang = $this->context->getLanguage();

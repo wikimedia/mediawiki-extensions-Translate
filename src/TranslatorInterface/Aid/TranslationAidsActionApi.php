@@ -34,7 +34,7 @@ class TranslationAidsActionApi extends ApiBase {
 			$this->dieWithError( 'apierror-translate-nomessagefortitle', 'nomessagefortitle' );
 		}
 
-		if ( (string)$params['group'] !== '' ) {
+		if ( $params['group'] !== null && $params['group'] !== '' ) {
 			$group = MessageGroups::getGroup( $params['group'] );
 		} else {
 			$group = $handle->getGroup();

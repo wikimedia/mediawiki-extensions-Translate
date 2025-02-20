@@ -674,7 +674,7 @@ class Hooks {
 		$messageGroupMetadata = Services::getInstance()->getMessageGroupMetadata();
 		// If priority languages have been set, always show those languages
 		$priorityLanguages = $messageGroupMetadata->get( $page->getMessageGroupId(), 'prioritylangs' );
-		if ( (string)$priorityLanguages !== '' ) {
+		if ( $priorityLanguages !== null && $priorityLanguages !== '' ) {
 			$status += array_fill_keys( explode( ',', $priorityLanguages ), 0 );
 		}
 

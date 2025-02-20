@@ -836,7 +836,7 @@ class HookHandler implements
 
 		[ $name, $subpage ] = MediaWikiServices::getInstance()
 			->getSpecialPageFactory()->resolveAlias( $target->getDBkey() );
-		if ( $name !== 'MyLanguage' || (string)$subpage === '' ) {
+		if ( $name !== 'MyLanguage' || $subpage === null || $subpage === '' ) {
 			return true;
 		}
 
