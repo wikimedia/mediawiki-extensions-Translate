@@ -54,8 +54,10 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		/** @var $g MessageGroup */
 		foreach ( $groups as $g ) {
 			$states = $g->getMessageGroupStates()->getStates();
-			foreach ( array_keys( $states ) as $state ) {
-				$keys["Translate-workflow-state-$state"] = $state;
+			if ( $states !== null ) {
+				foreach ( $states as $state => $_ ) {
+					$keys["Translate-workflow-state-$state"] = $state;
+				}
 			}
 		}
 
