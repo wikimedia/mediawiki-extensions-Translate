@@ -39,20 +39,6 @@
 		} );
 	} );
 
-	// ES5-compatible Chrome, IE 9+, FF 4+, or Safari 5+ has Object.keys.
-	// Make other old browsers happy
-	if ( !Object.keys ) {
-		Object.keys = function ( obj ) {
-			var keys = [];
-			for ( var k in obj ) {
-				if ( Object.prototype.hasOwnProperty.call( obj, k ) ) {
-					keys.push( k );
-				}
-			}
-			return keys;
-		};
-	}
-
 	function showLanguages() {
 		var ulslanguages = [],
 			selectedClasss = '',
