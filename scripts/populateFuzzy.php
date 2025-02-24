@@ -60,7 +60,7 @@ class PopulateFuzzy extends Maintenance {
 		$limit = $this->getBatchSize();
 		$offset = 0;
 		while ( true ) {
-			$this->output( '.', 0 );
+			$this->output( '.', '0' );
 			$res = $revStore->newSelectQueryBuilder( $dbw )
 				->joinPage()
 				->joinComment()

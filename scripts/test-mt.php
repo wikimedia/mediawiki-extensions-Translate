@@ -100,7 +100,7 @@ class TestMT extends Maintenance {
 		$agg->run();
 		$res = $agg->getResponse( $id );
 
-		$this->output( $service->getResultData( $res ), 1 );
+		$this->output( $service->getResultData( $res ), '1' );
 	}
 }
 
