@@ -27,7 +27,7 @@ class DocumentationAid extends TranslationAid {
 		$info = Utilities::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns ) ?? '';
 
 		return [
-			'language' => MediaWikiServices::getInstance()->getContentLanguage()->getCode(),
+			'language' => MediaWikiServices::getInstance()->getContentLanguageCode()->toString(),
 			'value' => $info,
 			'html' => $this->context->getOutput()->parseAsInterface( $info )
 		];
