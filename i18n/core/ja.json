@@ -297,6 +297,7 @@
 	"translate-manage-intro-other": "以下は言語 $1 での翻訳の変更の一覧です。\nそれぞれの更新について、変更を精査して、行いたい操作を選択してください。\n変更を無視することを選択した場合、この操作は一時的なものに留まります。",
 	"translate-manage-import-ok": "取り込みました: $1",
 	"translate-manage-import-done": "取り込みました。",
+	"translate-manage-empty-content": "コンテンツが空です",
 	"translate-manage-source-message-not-found": "メッセージの意味が見つかりませんでした",
 	"importtranslations": "翻訳の取り込み",
 	"translate-import-from-local": "ローカルファイルをアップロード:",
