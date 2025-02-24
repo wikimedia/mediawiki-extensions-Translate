@@ -275,7 +275,7 @@
 			// is added, the values will appear again.
 			$aggGroupNameInputName.val( '' );
 			$aggGroupNameInputDesc.val( '' );
-			$aggGroupNameInputLanguage.val( '-' );
+			$aggGroupNameInputLanguage.val( 'und' );
 
 			var successFunction = function ( data ) {
 				var aggregateGroupId = data.aggregategroups.aggregategroupId;

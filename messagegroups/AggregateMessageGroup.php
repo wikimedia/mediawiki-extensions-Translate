@@ -22,6 +22,7 @@ use MediaWiki\Title\Title;
  * @ingroup MessageGroup
  */
 class AggregateMessageGroup extends MessageGroupBase {
+	public const UNDETERMINED_LANGUAGE_CODE = 'und';
 	/** @var MessageGroup[] */
 	private $groups;
 
@@ -183,6 +184,6 @@ class AggregateMessageGroup extends MessageGroupBase {
 	public function getSourceLanguage(): string {
 		// Return undetermined language code (und) if no language is defined for the web configured
 		// aggregate group
-		return $this->conf['BASIC']['sourcelanguage'] ?? 'und';
+		return $this->conf['BASIC']['sourcelanguage'] ?? self::UNDETERMINED_LANGUAGE_CODE;
 	}
 }

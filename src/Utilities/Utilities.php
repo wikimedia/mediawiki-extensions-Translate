@@ -175,17 +175,20 @@ class Utilities {
 	/**
 	 * Standard language selector in Translate extension.
 	 * @param string $language Language code of the language the names should be localised to.
-	 * @param ?string $labelOption
+	 * @param string $emptyOptionLabel
+	 * @param string $emptyOptionValue
 	 * @return XmlSelect
 	 */
-	public static function getLanguageSelector( $language, ?string $labelOption = null ) {
+	public static function getLanguageSelector(
+		$language,
+		string $emptyOptionLabel,
+		string $emptyOptionValue
+	) {
 		$languages = self::getLanguageNames( $language );
 		ksort( $languages );
 
 		$selector = new XmlSelect();
-		if ( $labelOption !== null ) {
-			$selector->addOption( $labelOption, '-' );
-		}
+		$selector->addOption( $emptyOptionLabel, $emptyOptionValue );
 
 		foreach ( $languages as $code => $name ) {
 			$selector->addOption( "$code - $name", $code );

@@ -123,7 +123,10 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$remove = Html::element( 'span', [ 'class' => 'tp-aggregate-remove-ag-button' ] );
 
 			// Edit group div
-			$languageSelector = $this->getLanguageSelector( 'edit', $sourceLanguage ?: '-' );
+			$languageSelector = $this->getLanguageSelector(
+				'edit',
+				$sourceLanguage ?: AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE
+			);
 
 			$editGroupNameLabel = $this->msg( 'tpt-aggregategroup-edit-name' )->escaped();
 			$editGroupName = Html::input(
@@ -233,7 +236,10 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 					$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 					'</a>'
 			);
-			$languageSelector = $this->getLanguageSelector( 'add', '-' );
+			$languageSelector = $this->getLanguageSelector(
+				'add',
+				AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE
+			);
 			$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
 			$newGroupName = Html::element( 'input', [ 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' ] );
 			$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
@@ -347,7 +353,8 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			// This should be set according to UI language
 			$this->languageSelector = Utilities::getLanguageSelector(
 				$this->getContext()->getLanguage()->getCode(),
-				'-'
+				'-',
+				AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE
 			);
 		}
 

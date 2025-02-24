@@ -30,8 +30,6 @@ class AggregateGroupsActionApi extends ApiBase {
 	private MessageGroupMetadata $messageGroupMetadata;
 	private AggregateGroupManager $aggregateGroupManager;
 
-	private const NO_LANGUAGE_CODE = '-';
-
 	public function __construct(
 		ApiMain $main,
 		string $action,
@@ -144,10 +142,10 @@ class AggregateGroupsActionApi extends ApiBase {
 			}
 
 			$desc = trim( $params['groupdescription'] );
-
+			$languageCode = trim( $params['groupsourcelanguagecode'] );
+			$languageCode = $languageCode === AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE ?
+				null : $languageCode;
 			try {
-				$languageCode = $params['groupsourcelanguagecode'] === self::NO_LANGUAGE_CODE ?
-					null : trim( $params['groupsourcelanguagecode'] );
 				$aggregateGroupId = $this->aggregateGroupManager->add( $name, $desc, $languageCode );
 			} catch ( DuplicateAggregateGroupException $e ) {
 				$this->dieWithException( $e );
@@ -185,7 +183,10 @@ class AggregateGroupsActionApi extends ApiBase {
 			$oldDesc = $this->messageGroupMetadata->get( $aggregateGroupId, 'description' );
 			$currentLanguageCode = $this->messageGroupMetadata->get( $aggregateGroupId, 'sourcelanguagecode' );
 
-			if ( $newLanguageCode !== self::NO_LANGUAGE_CODE && $newLanguageCode !== $currentLanguageCode ) {
+			if (
+				$newLanguageCode !== AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE &&
+				$newLanguageCode !== $currentLanguageCode
+			) {
 				$groupsWithDifferentLanguage =
 					$this->getGroupsWithDifferentLanguage( $aggregateGroupId, $newLanguageCode );
 
@@ -208,7 +209,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			}
 			$this->messageGroupMetadata->set( $aggregateGroupId, 'name', $name );
 			$this->messageGroupMetadata->set( $aggregateGroupId, 'description', $desc );
-			if ( $newLanguageCode === self::NO_LANGUAGE_CODE ) {
+			if ( $newLanguageCode === AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE ) {
 				$this->messageGroupMetadata->clearMetadata( $aggregateGroupId, [ 'sourcelanguagecode' ] );
 			} else {
 				$this->messageGroupMetadata->set( $aggregateGroupId, 'sourcelanguagecode', $newLanguageCode );
@@ -281,7 +282,7 @@ class AggregateGroupsActionApi extends ApiBase {
 			],
 			'groupsourcelanguagecode' => [
 				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_DEFAULT => self::NO_LANGUAGE_CODE,
+				ParamValidator::PARAM_DEFAULT => AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE,
 			],
 		];
 	}

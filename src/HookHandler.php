@@ -3,6 +3,7 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate;
 
+use AggregateMessageGroup;
 use ALItem;
 use ALTree;
 use LogFormatter;
@@ -990,6 +991,9 @@ class HookHandler implements
 	}
 
 	public static function getLanguageJson( Context $context ): array {
-		return Utilities::getLanguageNames( $context->getLanguage() );
+		return [
+			'supportedLanguages' => Utilities::getLanguageNames( $context->getLanguage() ),
+			'undeterminedLanguageCode' => AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE
+		];
 	}
 }
