@@ -35,6 +35,7 @@
 	"tpt-sections-oldnew": "Uudet ja olemassa olevat käännösosiot",
 	"tpt-sections-deleted": "Poistetut käännösosiot",
 	"tpt-sections-template": "Käännössivun mallipohja",
+	"tpt-action-fuzzy": "Vaadi päivityksiä käännökseen",
 	"tpt-badtitle": "Sivun nimi ($1) ei ole kelvollinen otsikko",
 	"tpt-nosuchpage": "Sivua $1 ei ole olemassa",
 	"tpt-oldrevision": "$2 ei ole uusin versio sivusta [[:$1]].\nAinoastaan uusin versio voidaan merkitä käännettäviksi.",
