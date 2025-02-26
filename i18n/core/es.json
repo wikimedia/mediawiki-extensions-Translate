@@ -298,6 +298,7 @@
 	"translate-manage-intro-other": "A continuación está la lista de modificaciones de traducción en el idioma $1.\nRevísalas y elige la acción apropiada para cada una.\nSi prefieres ignorar los cambios, esta acción es sólo temporal.",
 	"translate-manage-import-ok": "Importada: $1",
 	"translate-manage-import-done": "¡Se completó la importación de $3 traducciones para el grupo [[Special:Translate/$1|$2]]!",
+	"translate-manage-empty-content": "El contenido está vacío",
 	"translate-manage-source-message-not-found": "Definición de mensaje no encontrada",
 	"importtranslations": "Importar traducciones",
 	"translate-import-from-local": "Importación de archivo local:",
