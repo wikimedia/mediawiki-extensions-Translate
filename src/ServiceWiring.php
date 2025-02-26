@@ -35,6 +35,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\WorkflowStatesMessageGroupLoader;
 use MediaWiki\Extension\Translate\MessageLoading\CDBMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\DatabaseMessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\HashMessageIndex;
@@ -523,5 +524,16 @@ return [
 		}
 
 		return new TtmServerFactory( $config->get( 'TranslateTranslationServices' ), $default );
-	}
+	},
+
+	'Translate:WorkflowStatesMessageGroupLoader' => static function (
+		MediaWikiServices $services
+	): WorkflowStatesMessageGroupLoader {
+		return new WorkflowStatesMessageGroupLoader(
+			new ServiceOptions(
+				WorkflowStatesMessageGroupLoader::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+		);
+	},
 ];

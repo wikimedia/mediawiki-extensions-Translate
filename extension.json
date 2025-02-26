@@ -114,7 +114,6 @@
 		"WikiMessageGroup": "messagegroups/WikiMessageGroup.php",
 		"WikiPageMessageGroup": "messagegroups/WikiPageMessageGroup.php",
 		"WorkflowStatesMessageGroup": "messagegroups/WorkflowStatesMessageGroup.php",
-		"WorkflowStatesMessageGroupLoader": "messagegroups/loaders/WorkflowStatesMessageGroupLoader.php",
 		"YamlFFS": "src/FileFormatSupport/YamlFormat.php",
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\YamlFormat": "src/FileFormatSupport/YamlFormat.php"
 	},
@@ -185,9 +184,6 @@
 		"TranslateEventTranslationReview": [
 			"MediaWiki\\Extension\\Translate\\Statistics\\MessageGroupStats::clear",
 			"MessageGroupStatesUpdaterJob::onChange"
-		],
-		"TranslateInitGroupLoaders": [
-			"WorkflowStatesMessageGroupLoader::registerLoader"
 		],
 		"AdminLinks": "MediaWiki\\Extension\\Translate\\HookHandler::onAdminLinks",
 		"MergeAccountFromTo": "MediaWiki\\Extension\\Translate\\HookHandler::onMergeAccountFromTo",

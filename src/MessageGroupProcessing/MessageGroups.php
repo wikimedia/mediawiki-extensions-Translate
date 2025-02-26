@@ -161,6 +161,10 @@ class MessageGroups {
 			);
 		}
 
+		// TODO: To decide if we should load this like we load other message group factories.
+		// See Ie95f25e18816f48d1d663ae392ecf5f9bbcf0b56 for related discussion
+		$this->groupLoaders[] = $services->getWorkflowStatesMessageGroupLoader();
+
 		return $this->groupLoaders;
 	}
 

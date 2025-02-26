@@ -23,6 +23,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFacto
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleImporter;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleStatusStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\WorkflowStatesMessageGroupLoader;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
@@ -277,5 +278,10 @@ class Services implements ContainerInterface {
 	/** @since 2021.01 */
 	public function getTtmServerFactory(): TtmServerFactory {
 		return $this->get( 'Translate:TtmServerFactory' );
+	}
+
+	/** @since 2025.03 */
+	public function getWorkflowStatesMessageGroupLoader(): WorkflowStatesMessageGroupLoader {
+		return $this->get( 'Translate:WorkflowStatesMessageGroupLoader' );
 	}
 }
