@@ -73,7 +73,10 @@ class ValidationRunner {
 		}
 	}
 
-	/** Add a validator for this group. */
+	/**
+	 * Add a validator for this group.
+	 * @throws InvalidArgumentException
+	 */
 	public function addValidator( array $validatorConfig ): void {
 		$validatorId = $validatorConfig['id'] ?? null;
 		$className = $validatorConfig['class'] ?? null;

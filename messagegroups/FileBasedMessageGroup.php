@@ -64,8 +64,8 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	}
 
 	public function getFFS(): SimpleFormat {
-		$class = $this->getFromConf( 'FILES', 'class' );
-		$format = $this->getFromConf( 'FILES', 'format' );
+		$format = $this->conf['FILES']['format'] ?? null;
+		$class = $this->conf['FILES']['class'] ?? null;
 
 		if ( $format !== null ) {
 			return Services::getInstance()->getFileFormatFactory()->create( $format, $this );
@@ -117,13 +117,13 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	 */
 	public function getSourceFilePath( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
-			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
+			$pattern = $this->conf['FILES']['definitionFile'] ?? null;
 			if ( $pattern !== null ) {
 				return $this->replaceVariables( $pattern, $code );
 			}
 		}
 
-		$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
+		$pattern = $this->conf['FILES']['sourcePattern'] ?? null;
 		if ( $pattern === null ) {
 			throw new RuntimeException( 'No source file pattern defined.' );
 		}
@@ -133,18 +133,18 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 
 	public function getTargetFilename( string $code ): string {
 		// Check if targetPattern explicitly defined
-		$pattern = $this->getFromConf( 'FILES', 'targetPattern' );
+		$pattern = $this->conf['FILES']['targetPattern'] ?? null;
 		if ( $pattern !== null ) {
 			return $this->replaceVariables( $pattern, $code );
 		}
 
 		// Check if definitionFile is explicitly defined
 		if ( $this->isSourceLanguage( $code ) ) {
-			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
+			$pattern = $this->conf['FILES']['definitionFile'] ?? null;
 		}
 
 		// Fallback to sourcePattern which must be defined
-		$pattern ??= $this->getFromConf( 'FILES', 'sourcePattern' );
+		$pattern ??= $this->conf['FILES']['sourcePattern'] ?? null;
 
 		if ( $pattern === null ) {
 			throw new RuntimeException( 'No source file pattern defined.' );
@@ -302,8 +302,8 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	}
 
 	public function getSourceLanguage(): string {
-		$conf = $this->getFromConf( 'BASIC', 'sourcelanguage' );
-
-		return $conf ?? 'en';
+		// This is set in FileBasedMessageGroupFactory, so the fallback is only used if
+		// something is creating these groups manually.
+		return $this->conf['BASIC']['sourcelanguage'] ?? 'en';
 	}
 }

@@ -1,12 +1,5 @@
 <?php
-/**
- * This file contains a base implementation of managed message groups.
- *
- * @file
- * @author Niklas Laxström
- * @copyright Copyright © 2010-2013, Niklas Laxström
- * @license GPL-2.0-or-later
- */
+declare( strict_types = 1 );
 
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
@@ -27,26 +20,22 @@ use MediaWiki\MediaWikiServices;
  * and are managed with Special:ManageMessageGroups and
  * importExternalTranslations.php.
  *
+ * @author Niklas Laxström
+ * @copyright Copyright © 2010-2013, Niklas Laxström
+ * @license GPL-2.0-or-later
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  * @ingroup MessageGroup
  */
 abstract class MessageGroupBase implements MessageGroup {
-	/** @var array */
-	protected $conf;
-	/** @var int|false */
-	protected $namespace;
-	/** @var StringMatcher|null */
-	protected $mangler;
+	protected array $conf;
+	protected int $namespace;
+	protected ?StringMatcher $mangler = null;
 
 	protected function __construct() {
 	}
 
-	/**
-	 * @param array $conf
-	 *
-	 * @return MessageGroup
-	 */
-	public static function factory( $conf ) {
+	public static function factory( array $conf ): MessageGroup {
+		/** @var MessageGroupBase $obj */
 		$obj = new $conf['BASIC']['class']();
 		$obj->conf = $conf;
 		$obj->namespace = $obj->parseNamespace();
@@ -60,22 +49,22 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	/** @inheritDoc */
 	public function getId() {
-		return $this->getFromConf( 'BASIC', 'id' );
+		return $this->conf['BASIC']['id'] ?? null;
 	}
 
 	/** @inheritDoc */
 	public function getLabel( ?IContextSource $context = null ) {
-		return $this->getFromConf( 'BASIC', 'label' );
+		return $this->conf['BASIC']['label'] ?? null;
 	}
 
 	/** @inheritDoc */
 	public function getDescription( ?IContextSource $context = null ) {
-		return $this->getFromConf( 'BASIC', 'description' );
+		return $this->conf['BASIC']['description'] ?? null;
 	}
 
 	/** @inheritDoc */
 	public function getIcon() {
-		return $this->getFromConf( 'BASIC', 'icon' );
+		return $this->conf['BASIC']['icon'] ?? null;
 	}
 
 	/** @inheritDoc */
@@ -85,28 +74,18 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	/** @inheritDoc */
 	public function isMeta() {
-		return $this->getFromConf( 'BASIC', 'meta' );
+		return $this->conf['BASIC']['meta'] ?? null;
 	}
 
 	/** @inheritDoc */
 	public function getDefinitions() {
-		$defs = $this->load( $this->getSourceLanguage() );
-
-		return $defs;
-	}
-
-	/** @return mixed|array|null */
-	protected function getFromConf( string $section, ?string $key = null ) {
-		if ( $key === null ) {
-			return $this->conf[$section] ?? null;
-		}
-		return $this->conf[$section][$key] ?? null;
+		return $this->load( $this->getSourceLanguage() );
 	}
 
 	/** @inheritDoc */
 	public function getValidator() {
-		$validatorConfigs = $this->getFromConf( 'VALIDATORS' );
-		if ( $validatorConfigs === null ) {
+		$validatorConfigs = $this->conf['VALIDATORS'] ?? [];
+		if ( !$validatorConfigs ) {
 			return null;
 		}
 
@@ -115,7 +94,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		foreach ( $validatorConfigs as $config ) {
 			try {
 				$msgValidator->addValidator( $config );
-			} catch ( Exception $e ) {
+			} catch ( InvalidArgumentException $e ) {
 				$id = $this->getId();
 				throw new InvalidArgumentException(
 					"Unable to construct validator for message group $id: " . $e->getMessage(),
@@ -131,7 +110,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	/** @inheritDoc */
 	public function getMangler() {
 		if ( $this->mangler === null ) {
-			$class = $this->getFromConf( 'MANGLER', 'class' ) ?? StringMatcher::class;
+			$class = $this->conf['MANGLER']['class'] ?? StringMatcher::class;
 
 			if ( $class === 'StringMatcher' || $class === StringMatcher::class ) {
 				$this->mangler = new StringMatcher();
@@ -139,14 +118,12 @@ abstract class MessageGroupBase implements MessageGroup {
 				if ( $manglerConfig ) {
 					$this->mangler->setConf( $manglerConfig );
 				}
-
-				return $this->mangler;
+			} else {
+				throw new InvalidArgumentException(
+					"Unable to create StringMangler for group {$this->getId()}: " .
+					"Custom StringManglers ($class) are currently not supported."
+				);
 			}
-
-			throw new InvalidArgumentException(
-				'Unable to create StringMangler for group ' . $this->getId() . ': ' .
-				"Custom StringManglers ($class) are currently not supported."
-			);
 		}
 
 		return $this->mangler;
@@ -159,7 +136,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	public function getInsertablesSuggester() {
 		$suggesters = [];
-		$insertableConf = $this->getFromConf( 'INSERTABLES' ) ?? [];
+		$insertableConf = $this->conf['INSERTABLES'] ?? [];
 
 		foreach ( $insertableConf as $config ) {
 			if ( !isset( $config['class'] ) ) {
@@ -196,13 +173,10 @@ abstract class MessageGroupBase implements MessageGroup {
 	/** @inheritDoc */
 	public function getTags( $type = null ) {
 		if ( $type === null ) {
-			$taglist = [];
-
-			foreach ( $this->getRawTags() as $type => $patterns ) {
-				$taglist[$type] = $this->parseTags( $patterns );
-			}
-
-			return $taglist;
+			return array_map(
+				fn ( $patterns ) => $this->parseTags( $patterns ),
+				$this->getRawTags()
+			);
 		} else {
 			return $this->parseTags( $this->getRawTags( $type ) );
 		}
@@ -213,9 +187,7 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		$matches = [];
 
-		/**
-		 * Collect exact keys, no point running them trough string matcher
-		 */
+		// Collect exact keys, no point running them through string matcher
 		foreach ( $patterns as $index => $pattern ) {
 			if ( !str_contains( $pattern, '*' ) ) {
 				$matches[] = $pattern;
@@ -224,14 +196,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		if ( count( $patterns ) ) {
-			/**
-			 * Rest of the keys contain wildcards.
-			 */
+			// Rest of the keys contain wildcards.
 			$mangler = new StringMatcher( '', $patterns );
 
-			/**
-			 * Use mangler to find messages that match.
-			 */
+			// Use mangler to find messages that match.
 			foreach ( $messageKeys as $key ) {
 				if ( $mangler->matches( $key ) ) {
 					$matches[] = $key;
@@ -243,11 +211,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	protected function getRawTags( ?string $type = null ): array {
-		if ( !isset( $this->conf['TAGS'] ) ) {
-			return [];
-		}
-
-		$tags = $this->conf['TAGS'];
+		$tags = $this->conf['TAGS'] ?? [];
 		if ( !$type ) {
 			return $tags;
 		}
@@ -255,14 +219,14 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $tags[$type] ?? [];
 	}
 
-	protected function setTags( MessageCollection $collection ) {
+	protected function setTags( MessageCollection $collection ): void {
 		foreach ( $this->getTags() as $type => $tags ) {
 			$collection->setTags( $type, $tags );
 		}
 	}
 
-	protected function parseNamespace() {
-		$ns = $this->getFromConf( 'BASIC', 'namespace' );
+	protected function parseNamespace(): int {
+		$ns = $this->conf['BASIC']['namespace'] ?? null;
 
 		if ( is_int( $ns ) ) {
 			return $ns;
@@ -275,7 +239,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		$index = MediaWikiServices::getInstance()->getContentLanguage()
 			->getNsIndex( $ns );
 
-		if ( !$index ) {
+		if ( $index === false ) {
 			throw new RuntimeException( "No valid namespace defined, got $ns." );
 		}
 
@@ -286,11 +250,8 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $code === $this->getSourceLanguage();
 	}
 
-	/**
-	 * Get the message group workflow state configuration.
-	 * @return MessageGroupStates
-	 */
-	public function getMessageGroupStates() {
+	/** @inheritDoc */
+	public function getMessageGroupStates(): MessageGroupStates {
 		global $wgTranslateWorkflowStates;
 		$conf = $wgTranslateWorkflowStates ?: [];
 
@@ -302,16 +263,15 @@ abstract class MessageGroupBase implements MessageGroup {
 
 	/** @inheritDoc */
 	public function getTranslatableLanguages() {
-		$groupConfiguration = $this->getConfiguration();
-		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
+		$languageConfig = $this->conf['LANGUAGES'] ?? null;
+		if ( $languageConfig === null ) {
 			// No LANGUAGES section in the configuration.
 			return self::DEFAULT_LANGUAGES;
 		}
 
 		$codes = array_flip( array_keys( Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS ) ) );
 
-		$lists = $groupConfiguration['LANGUAGES'];
-		$exclusionList = $lists['exclude'] ?? null;
+		$exclusionList = $languageConfig['exclude'] ?? null;
 		if ( $exclusionList !== null ) {
 			if ( $exclusionList === '*' ) {
 				// All excluded languages
@@ -332,14 +292,14 @@ abstract class MessageGroupBase implements MessageGroup {
 		// be enabled when an inclusion list is used to include any language.
 		$checks = [ $this->getId(), strtok( $this->getId(), '-' ), '*' ];
 		foreach ( $checks as $check ) {
-			if ( isset( $disabledLanguages[ $check ] ) ) {
-				foreach ( array_keys( $disabledLanguages[ $check ] ) as $excludedCode ) {
-					unset( $codes[ $excludedCode ] );
+			if ( isset( $disabledLanguages[$check] ) ) {
+				foreach ( array_keys( $disabledLanguages[$check] ) as $excludedCode ) {
+					unset( $codes[$excludedCode] );
 				}
 			}
 		}
 
-		$inclusionList = $lists['include'] ?? null;
+		$inclusionList = $languageConfig['include'] ?? null;
 		if ( $inclusionList !== null ) {
 			if ( $inclusionList === '*' ) {
 				// All languages included (except $wgTranslateDisabledTargetLanguages)
@@ -354,8 +314,9 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $codes;
 	}
 
+	/** @inheritDoc */
 	public function getSupportConfig(): ?array {
-		return $this->getFromConf( 'BASIC', 'support' );
+		return $this->conf['BASIC']['support'] ?? null;
 	}
 
 	/** @inheritDoc */
