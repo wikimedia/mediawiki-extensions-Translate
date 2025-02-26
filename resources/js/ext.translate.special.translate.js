@@ -744,7 +744,7 @@
 					// eslint-disable-next-line camelcase
 					target_language: state.language,
 					// eslint-disable-next-line camelcase
-					source_id: uri.query.group,
+					source_title: uri.query.group,
 					// eslint-disable-next-line camelcase
 					source_type: 'page',
 					// eslint-disable-next-line camelcase
