@@ -18,7 +18,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\Xml\Xml;
-use MediaWiki\Xml\XmlSelect;
 use MessageGroup;
 use UnexpectedValueException;
 use Wikimedia\Rdbms\IDatabase;
@@ -170,31 +169,6 @@ class Utilities {
 	public static function getLanguageName( string $code, ?string $language = 'en' ): string {
 		$languages = self::getLanguageNames( $language );
 		return $languages[$code] ?? $code;
-	}
-
-	/**
-	 * Standard language selector in Translate extension.
-	 * @param string $language Language code of the language the names should be localised to.
-	 * @param string $emptyOptionLabel
-	 * @param string $emptyOptionValue
-	 * @return XmlSelect
-	 */
-	public static function getLanguageSelector(
-		$language,
-		string $emptyOptionLabel,
-		string $emptyOptionValue
-	) {
-		$languages = self::getLanguageNames( $language );
-		ksort( $languages );
-
-		$selector = new XmlSelect();
-		$selector->addOption( $emptyOptionLabel, $emptyOptionValue );
-
-		foreach ( $languages as $code => $name ) {
-			$selector->addOption( "$code - $name", $code );
-		}
-
-		return $selector;
 	}
 
 	/**

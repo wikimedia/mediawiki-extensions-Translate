@@ -351,11 +351,15 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	private function getLanguageSelector( string $action, string $languageToSelect ): string {
 		if ( $this->languageSelector == null ) {
 			// This should be set according to UI language
-			$this->languageSelector = Utilities::getLanguageSelector(
-				$this->getContext()->getLanguage()->getCode(),
-				'-',
-				AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE
-			);
+			$languages = Utilities::getLanguageNames( $this->getContext()->getLanguage()->getCode() );
+			ksort( $languages );
+
+			$this->languageSelector = new XmlSelect();
+			$this->languageSelector->addOption( '-', AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE );
+
+			foreach ( $languages as $code => $name ) {
+				$this->languageSelector->addOption( "$code - $name", $code );
+			}
 		}
 
 		$this->languageSelector->setAttribute( 'class', "tp-aggregategroup-$action-source-language" );
