@@ -159,17 +159,19 @@ class MessageBundleStore implements TranslatableBundleStore {
 
 			$this->jobQueue->push( $job );
 
-			// A new message bundle, set the source language.
-			$definedLanguageCode = $content->getMetadata()->getSourceLanguageCode();
-			$pageLanguageCode = $pageTitle->getPageLanguage()->getCode();
+			$metadata = $content->getMetadata();
+
 			if ( $previousRevisionId === null ) {
-				if ( $definedLanguageCode !== $pageLanguageCode ) {
+				// A new message bundle, set the source language.
+				$definedLanguageCode = $metadata->getSourceLanguageCode();
+				$pageLanguageCode = $pageTitle->getPageLanguage()->getCode();
+				if ( $definedLanguageCode !== null && $definedLanguageCode !== $pageLanguageCode ) {
 					$context = RequestContext::getMain();
 					SpecialPageLanguage::changePageLanguage(
 						$context,
 						$pageTitle,
 						$definedLanguageCode,
-						wfMessage( 'translate-messagebundle-change-sourcelanguage' )->inContentLanguage()
+						$context->msg( 'translate-messagebundle-change-sourcelanguage' )->inContentLanguage()->text()
 					);
 				}
 			}
@@ -178,7 +180,6 @@ class MessageBundleStore implements TranslatableBundleStore {
 			$messageBundle = new MessageBundle( $pageTitle );
 			$groupId = $messageBundle->getMessageGroupId();
 
-			$metadata = $content->getMetadata();
 			$priorityForce = $metadata->areOnlyPriorityLanguagesAllowed() ? 'on' : false;
 			$priorityLanguages = $metadata->getPriorityLanguages();
 			$priorityLanguages = $priorityLanguages ? implode( ',', $priorityLanguages ) : false;
