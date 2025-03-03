@@ -209,6 +209,7 @@ function addAssociateSubGroupAction() {
 
 function addAggregateGroupToggle() {
 	let isExpanded = false;
+	const batchSize = 10;
 
 	const toggleButton = document.createElement( 'button' );
 	toggleButton.textContent = mw.msg( 'tpt-aggregategroup-expand-all-groups' );
@@ -220,9 +221,21 @@ function addAggregateGroupToggle() {
 			mw.msg( 'tpt-aggregategroup-expand-all-groups' );
 		const aggregateGroupContainers =
 			document.querySelectorAll( 'details.mw-translate-aggregategroup-container' );
-		aggregateGroupContainers.forEach( ( container ) => {
-			container.open = isExpanded;
-		} );
+		const totalContainers = aggregateGroupContainers.length;
+		let currentIndex = 0;
+
+		function processBatch() {
+			const endIndex = Math.min( currentIndex + batchSize, totalContainers );
+			for ( let i = currentIndex; i < endIndex; i++ ) {
+				aggregateGroupContainers[ i ].open = isExpanded;
+			}
+			currentIndex = endIndex;
+			if ( currentIndex < totalContainers ) {
+				requestAnimationFrame( processBatch );
+			}
+		}
+
+		requestAnimationFrame( processBatch );
 	} );
 
 	document.querySelector( '.mw-translate-aggregategroup-container' )
