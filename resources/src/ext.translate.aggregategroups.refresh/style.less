@@ -44,6 +44,7 @@ button.tpt-toggle-groups {
 
 		.cdx-button {
 			height: @min-size-interactive-pointer;
+			width: fit-content;
 		}
 
 		/** Only disabled item that appears in the selector is about API error */
@@ -53,6 +54,20 @@ button.tpt-toggle-groups {
 			.cdx-menu-item__icon {
 				color: @color-error;
 			}
+		}
+	}
+
+	@media screen and ( max-width: @min-width-breakpoint-tablet ) {
+		/** Let the entity selector grow on smaller screens */
+		.mw-translate-aggregategroup-associate form {
+			width: auto;
+		}
+	}
+
+	@media screen and ( max-width: 420px ) {
+		/** On much smaller screens, put entity selector and associated button on separate lines */
+		.mw-translate-aggregategroup-associate form {
+			flex-direction: column;
 		}
 	}
 }
