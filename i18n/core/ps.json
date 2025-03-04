@@ -5,7 +5,8 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
 			"Baloch Khan",
-			"Waldir"
+			"Waldir",
+			"شاه زمان پټان"
 		]
 	},
 	"translate": "ژباړل",
@@ -131,7 +132,7 @@
 	"translate-import-from-local": "د سيمه ايزې دوتنې پورته کېدل:",
 	"translate-import-load": "دوتنه برسېرول",
 	"translate-import-err-invalid-title": "د ورکړل شوې دوتنې نوم <nowiki>$1</nowiki> ناسم و.",
-	"translate-documentation-language": "د پيغام لاسوند",
+	"translate-documentation-language": "پيغام لاسوند",
 	"translate-searchprofile": "ژباړې",
 	"translate-searchprofile-tooltip": "په ټولو ژباړو کې پلټل",
 	"translate-search-languagefilter": "چاڼگر د ژبې له مخې:",
