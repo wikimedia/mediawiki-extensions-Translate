@@ -31,5 +31,8 @@
 	"translate-smg-strong-sync-help": "Օգնութիւն",
 	"translate-documentation-language": "Հաղորդագրութեան փաստագրութիւն",
 	"translate-searchprofile": "Թարգմանութիւններ",
-	"tux-editor-translate-mode": "Ցանկ"
+	"tux-tab-translated": "Թարգմանուած",
+	"tux-status-translated": "Թարգմանուած է",
+	"tux-editor-translate-mode": "Ցանկ",
+	"translate-statsbar-tooltip": "$1% թարգմանուած, $2% վերանայուած"
 }
