@@ -5,7 +5,8 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
 			"Baloch Khan",
-			"Waldir"
+			"Waldir",
+			"شاه زمان پټان"
 		]
 	},
 	"translate": "ژباړل",
@@ -136,7 +137,7 @@
 	"translate-gs-speakers": "وييونکي",
 	"translate-gs-count": "شمېرل",
 	"translate-gs-total": "ټولټال",
-	"translate-documentation-language": "د پيغام لاسوند",
+	"translate-documentation-language": "پيغام لاسوند",
 	"translate-searchprofile": "ژباړې",
 	"translate-searchprofile-tooltip": "په ټولو ژباړو کې پلټل",
 	"translate-search-languagefilter": "چاڼگر د ژبې له مخې:",
