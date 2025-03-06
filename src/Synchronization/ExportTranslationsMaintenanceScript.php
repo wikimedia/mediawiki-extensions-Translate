@@ -71,12 +71,6 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			self::HAS_ARG
 		);
 		$this->addOption(
-			'skip',
-			'(deprecated) See --never-export-languages',
-			self::OPTIONAL,
-			self::HAS_ARG
-		);
-		$this->addOption(
 			'skipgroup',
 			'(optional) Comma separated list of message group IDs (supports * wildcard) to not export',
 			self::OPTIONAL,
@@ -140,9 +134,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$this->getOption( 'always-export-languages' ) ?? ''
 		);
 		$neverExportLanguages = $this->csv2array(
-			$this->getOption( 'never-export-languages' ) ??
-			$this->getOption( 'skip' ) ??
-			''
+			$this->getOption( 'never-export-languages' ) ?? ''
 		);
 		$skipSourceLanguage = $this->hasOption( 'skip-source-language' );
 
