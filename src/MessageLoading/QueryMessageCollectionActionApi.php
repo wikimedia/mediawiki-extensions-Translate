@@ -16,7 +16,6 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Title\Title;
 use RecentMessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\ParamValidator\TypeDef\EnumDef;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -231,10 +230,6 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			$data['tags'] = $message->getTags();
 			$result->setIndexedTagName( $data['tags'], 'tag' );
 		}
-		// BC
-		if ( isset( $props['revision'] ) ) {
-			$data['revision'] = $message->getProperty( 'revision' );
-		}
 		if ( isset( $props['properties'] ) ) {
 			foreach ( $message->getPropertyNames() as $prop ) {
 				$data['properties'][$prop] = $message->getProperty( $prop );
@@ -279,15 +274,11 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 					'translation',
 					'tags',
 					'properties',
-					'revision',
 				],
 				ParamValidator::PARAM_DEFAULT => 'definition|translation',
 				ParamValidator::PARAM_ISMULTI => true,
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => [
 					'translation' => [ 'apihelp-query+messagecollection-paramvalue-prop-translation', TRANSLATE_FUZZY ],
-				],
-				EnumDef::PARAM_DEPRECATED_VALUES => [
-					'revision' => true,
 				],
 			],
 		];
@@ -303,8 +294,6 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			'action=query&list=messagecollection&mcgroup=page-Example&mclanguage=fi&' .
 				'mcprop=definition|translation|tags&mcfilter=optional'
 				=> 'apihelp-query+messagecollection-example-3',
-			'action=query&generator=messagecollection&gmcgroup=page-Example&gmclanguage=nl&prop=revisions'
-				=> 'apihelp-query+messagecollection-example-4',
 		];
 	}
 }
