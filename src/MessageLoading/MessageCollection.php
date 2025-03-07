@@ -952,7 +952,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		return $this->messages[key( $this->keys )];
 	}
 
-	public function key(): ?string {
+	public function key(): string {
 		return key( $this->keys );
 	}
 
