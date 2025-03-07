@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Asmen",
+			"GolyatGeri",
 			"Gırd",
 			"Kumkumuk",
 			"Marmase",
@@ -14,6 +15,7 @@
 	"tux-sst-view-foreign": "$1 de bıvêne",
 	"tux-sst-search": "Cı geyre",
 	"tux-sst-search-ph": "Şıma tadayışan (çarnayışan) bıgeyrê",
+	"tux-sst-search-info": "Kroterabê cıgeyrayışi zeder quwet kerdışi rê  <code>language:</code> ya zi <code>group:</code> gurekari bıkarnê",
 	"tux-sst-count": "{{PLURAL:$1|Yew peyni vêniya|$1 peyniy vêniyay|0=teba nêvêniya}}",
 	"tux-sst-facet-language": "Zıwani",
 	"tux-sst-facet-group": "Gruba mesacan",

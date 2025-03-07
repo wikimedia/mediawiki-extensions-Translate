@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
+			"GianAntonucci",
 			"Sarvaturi"
 		]
 	},
-	"searchtranslations": "Arricerca traduzzioni",
+	"searchtranslations": "Riscedi li traduzzioni",
 	"tux-sst-edit": "Cancia traduzzioni",
 	"tux-sst-view-foreign": "Talìa supra $1",
 	"tux-sst-count": "{{PLURAL:$1|Nu risurtatu attrauvatu|$1 risurtati attruvati}}",
