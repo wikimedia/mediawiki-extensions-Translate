@@ -149,10 +149,28 @@ function addDeleteSubGroupAction() {
 }
 
 function addAssociateSubGroupAction() {
-	const associationContainer =
+	const batchSize = 5;
+	const associationContainers =
 		document.querySelectorAll( '.mw-translate-aggregategroup-associate' );
 
-	associationContainer.forEach( ( element ) => {
+	// Convert NodeList to Array for easier batch processing
+	const containers = Array.from( associationContainers );
+
+	/** @param {number} startIndex */
+	function processBatch( startIndex ) {
+		const endIndex = Math.min( startIndex + batchSize, containers.length );
+
+		for ( let i = startIndex; i < endIndex; i++ ) {
+			processContainer( containers[ i ] );
+		}
+
+		if ( endIndex < containers.length ) {
+			requestAnimationFrame( () => processBatch( endIndex ) );
+		}
+	}
+
+	/** @param {HTMLElement} element */
+	function processContainer( element ) {
 		const parentAggregateGroup = element.closest( '.mw-translate-aggregategroup-container' );
 
 		/**
@@ -204,7 +222,10 @@ function addAssociateSubGroupAction() {
 		vmGroupAssociationApp.provide( 'performEntitySearch', performEntitySearch );
 		vmGroupAssociationApp.provide( 'aggregateGroupApi', aggregateGroupApi );
 		vmGroupAssociationApp.mount( element );
-	} );
+	}
+
+	// Start processing the first batch
+	requestAnimationFrame( () => processBatch( 0 ) );
 }
 
 function addAggregateGroupToggle() {
