@@ -72,6 +72,7 @@
 	"translate-checks-plural": "A definición usa <nowiki>{{PLURAL:}}</nowiki>, pero a tradución non.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> recibiu {{PLURAL:$1|unha forma|$1 formas}} de plural, pero unicamente {{PLURAL:$2|está soportada unha forma|están soportadas $2 formas}} (excluíndo as formas 0= e 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> ten formas de plural duplicadas ao final. <nowiki>{{PLURAL:$1|lapis|lapis}}</nowiki> debe escribirse así: <nowiki>{{PLURAL:$1|lapis}}</nowiki>.",
+	"translate-checks-gettext-plural-missing": "Esta tradución debe conter <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-unsupported": "Esta mensaxe non é compatible con <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-unicode-plural-invalid": "As formas do plural deben definirse como $1. Esta tradución contén $2.",
 	"translate-checks-pagename": "O espazo de nomes é diferente con respecto ao presente na definición",

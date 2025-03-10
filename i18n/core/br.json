@@ -46,7 +46,7 @@
 	"translate-edit-title": "Kemmañ \"$1\"",
 	"translate-edit-definition": "Termenadur ar gemennadenn",
 	"translate-edit-contribute": "kemer perzh",
-	"translate-edit-no-information": "''N'eus tamm titour ebet diwar-benn ar gemennadenn-mañ. Ma ouzit pelec'h pe benaos emañ da vezañ implijet e c'hallit harpañ troourien all en ur ouzhpennañ titouroù diwar he fenn.''",
+	"translate-edit-no-information": "<em>N'eus teuliadur ebet diwar-benn ar gemennadenn-mañ.\nMa ouzit pelec'h pe benaos emañ da vezañ implijet e c'hallit harpañ troourien all en ur ouzhpennañ titouroù diwar he fenn.</em>",
 	"translate-edit-information": "Titouroù diwar-benn ar gemennadenn ($1)",
 	"translate-edit-warnings": "Kemennoù-diwall diwar-benn an troidigezhioù diglok",
 	"translate-edit-tmmatch-source": "Testenn orin da dreiñ : $1",
