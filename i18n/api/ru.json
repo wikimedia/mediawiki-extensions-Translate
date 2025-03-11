@@ -43,7 +43,6 @@
 	"apihelp-query+messagecollection-example-1": "Список поддерживаемых языков",
 	"apihelp-query+messagecollection-example-2": "Список обязательных определений сообщений для группы «page-Example»",
 	"apihelp-query+messagecollection-example-3": "Список необязательных сообщений на финском языке с метками для группы «page-Example»",
-	"apihelp-query+messagecollection-example-4": "Больше информации о последних версиях перевода для группы «page-Example»",
 	"apihelp-query+messagegroups-summary": "Получить информацию о группах сообщений.",
 	"apihelp-query+messagegroups-extended-description": "Учтите, что параметр uselang влияет на вывод языкозависимых частей.",
 	"apihelp-query+messagegroups-paramvalue-prop-subscription": "Укажите, подписан ли пользователь на группу.",

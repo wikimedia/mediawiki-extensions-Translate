@@ -22,7 +22,6 @@
 	"apihelp-query+messagecollection-param-language": "Kode bahasa.",
 	"apihelp-query+messagecollection-param-limit": "Berapa banyak pesan yang ditampilkan (setelah penyaringan).",
 	"apihelp-query+messagecollection-example-1": "Daftar bahasa yang didukung",
-	"apihelp-query+messagecollection-example-4": "Informasi lebih lanjut mengenai revisi terjemahan terkini untuk kelompok \"page-Example\"",
 	"apihelp-query+messagegroups-example-1": "Tampilkan kelompok pesan",
 	"apihelp-query+messagegroupstats-summary": "Kueri statistik kelompok pesan.",
 	"apihelp-query+messagegroupstats-param-group": "ID kelompok pesan.",

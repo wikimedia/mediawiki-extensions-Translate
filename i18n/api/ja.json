@@ -36,7 +36,6 @@
 	"apihelp-query+messagecollection-example-1": "サポートする言語一覧",
 	"apihelp-query+messagecollection-example-2": "「group-Example」メッセージ群における必須メッセージ定義の一覧",
 	"apihelp-query+messagecollection-example-3": "「group-Example」メッセージ群にタグ付けされたフィンランド語の選択メッセージの一覧",
-	"apihelp-query+messagecollection-example-4": "「group-Example」メッセージ群における翻訳の最近の更新の詳細",
 	"apihelp-query+messagegroups-summary": "メッセージ群に関する情報を返す。",
 	"apihelp-query+messagegroups-extended-description": "利用者言語のパラメーターは言語依存の部分の出力に影響を与えますのでご注意ください。",
 	"apihelp-query+messagegroups-param-format": "ツリー形式の場合、メッセージ群はツリーの複数の場所に存在できます。",

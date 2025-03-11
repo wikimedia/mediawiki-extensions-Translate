@@ -20,7 +20,6 @@
 	"apihelp-query+messagecollection-paramvalue-prop-translation": "Trenutni prevod (brez niza $1, če obstaja; za preverjanje zasterelih ali okvarjeni prevodov uporabite oznake).",
 	"apihelp-query+messagecollection-paramvalue-prop-tags": "Oznake sporočil, kot so »optional« (izbirno), »ignored« (prezrto) in »fuzzy« (ohlapno).",
 	"apihelp-query+messagecollection-paramvalue-prop-properties": "Lastnosti sporočila, kot so status, redakcija, zadnji prevajalec. Lahko se razlikuje med sporočili.",
-	"apihelp-query+messagecollection-paramvalue-prop-revision": "Uporaba $1 prop=properties.",
 	"apihelp-query+messagegroups-param-prop": "Kateri podatki v zvezi s prevodom naj se pridobijo:",
 	"apihelp-query+messagegroups-paramvalue-prop-id": "Vključitev ID-ja skupine.",
 	"apihelp-query+messagegroups-paramvalue-prop-label": "Vključitev oznake skupine.",

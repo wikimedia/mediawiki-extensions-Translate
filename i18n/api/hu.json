@@ -38,7 +38,6 @@
 	"apihelp-query+messagecollection-paramvalue-prop-translation": "Jelenlegi fordítás (az esetleges „$1” előtag nélkül, használd a <kbd>tags</kbd>et az elavult vagy problémás fordítások ellenőrzéséhez).",
 	"apihelp-query+messagecollection-paramvalue-prop-tags": "Üzenetcímkék, például <samp>optional</samp>, <samp>ignored</samp> és <samp>fuzzy</samp>.",
 	"apihelp-query+messagecollection-paramvalue-prop-properties": "Az üzenet tulajdonságai, például <samp>status</samp>, <samp>revision</samp>, <samp>last-translator</samp>. Üzenetenként változhat.",
-	"apihelp-query+messagecollection-paramvalue-prop-revision": "Használd az <kbd>$1prop=properties</kbd>t helyette.",
 	"apihelp-query+messagecollection-example-1": "Támogatott nyelvek listája",
 	"apihelp-query+messagecollection-example-2": "A „page-Example” csoport nem opcionális üzenetdefinícióinak listája.",
 	"apihelp-query+messagecollection-example-3": "A „page-Example” csoport opcionális üzeneteinek listája finnül, címkékkel.",

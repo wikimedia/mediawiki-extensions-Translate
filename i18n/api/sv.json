@@ -40,7 +40,6 @@
 	"apihelp-query+messagecollection-param-offset": "Heltal eller nyckelförskjutning för att starta.",
 	"apihelp-query+messagecollection-param-prop": "Vilka egenskaper som ska hämtas:",
 	"apihelp-query+messagecollection-paramvalue-prop-definition": "Definition av meddelandet.",
-	"apihelp-query+messagecollection-paramvalue-prop-revision": "Använd $1prop=properties.",
 	"apihelp-query+messagecollection-example-1": "Lista över språk som stöds",
 	"apihelp-query+messagecollection-example-3": "List över valfria meddelanden på finska med märken i gruppen \"page-Example\"",
 	"apihelp-query+messagegroups-summary": "Returnera information om meddelandegrupper.",

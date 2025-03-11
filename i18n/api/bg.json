@@ -34,7 +34,6 @@
 	"apihelp-query+messagecollection-param-offset": "Цяло число или ключ от който да се започне.",
 	"apihelp-query+messagecollection-example-1": "Списък на поддържаните езици",
 	"apihelp-query+messagecollection-example-2": "Списък на задължителните дефиниции на съобщения за група „page-Example“",
-	"apihelp-query+messagecollection-example-4": "Повече информация за най-новите версии на превода за групата „page-Example“",
 	"apihelp-query+messagegroups-summary": "Връщане на информация за групи съобщения.",
 	"apihelp-query+messagegroups-example-1": "Показване на групите съобщения",
 	"apihelp-query+messagegroupstats-summary": "Заявка към статистиката на група съобщения.",

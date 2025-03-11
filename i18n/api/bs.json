@@ -31,7 +31,6 @@
 	"apihelp-query+messagecollection-example-1": "Spisak podržanih jezika",
 	"apihelp-query+messagecollection-example-2": "Spisak neobaveznih definicija poruka za grupu \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "Spisak neobaveznih poruka na finskom s oznakama za grupu \"page-Example\"",
-	"apihelp-query+messagecollection-example-4": "Više informacija o najnovijim izmjenama grupe \"page-Example\"",
 	"apihelp-query+messagegroups-summary": "Daj informacije za grupe poruka.",
 	"apihelp-query+messagegroups-extended-description": "Imajte na umu da parametar \"uselang\" utiče za ispis dijelova koji ovise o jeziku.",
 	"apihelp-query+messagegroups-param-depth": "Kad se koristi format \"stablo\", ograniči dubinu na ovoliko nivoa. Vrijednost 0 znači da se neće prikazati nijedna podgrupa. Ako se dostigne granica, na ispisu će se prikazati vrijednost \"groupcount\", koja navodi koliko je neposrednih podgrupa.",

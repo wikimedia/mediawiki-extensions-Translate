@@ -42,7 +42,6 @@
 	"apihelp-query+messagecollection-example-1": "Lista de línguas suportadas.",
 	"apihelp-query+messagecollection-example-2": "Lista de definições obrigatórias de mensagens do grupo \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "Lista de mensagens opcionais em finlandês com etiquetas para o grupo \"page-Example\"",
-	"apihelp-query+messagecollection-example-4": "Mais informação sobre as últimas revisões de traduções para o grupo \"page-Example\"",
 	"apihelp-query+messagegroups-summary": "Devolver informação sobre grupos de mensagens.",
 	"apihelp-query+messagegroups-extended-description": "Nota que o parâmetro \"uselang\" afeta o resultado das partes dependentes da língua.",
 	"apihelp-query+messagegroups-param-depth": "Quando for usado o formato de árvore, limitar a profundidade a esta quantidade de níveis. O valor 0 significa que não serão mostrados subgrupos. Se o limite for atingido, o resultado inclui um valor de \"contagem de grupo\", que indica o número de filhos diretos.",

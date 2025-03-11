@@ -37,7 +37,6 @@
 	"apihelp-query+messagecollection-example-1": "قائمة اللغات المدعومة",
 	"apihelp-query+messagecollection-example-2": "قائمة بتعريفات الرسائل غير الاختيارية للمجموعة \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "قائمة بالرسائل الاختيارية بالفنلندية مع الوسوم للمجموعة \"page-Example\"",
-	"apihelp-query+messagecollection-example-4": "المزيد من المعلومات حول آخر مراجعات الترجمة للمجموعة \"page-Example\"",
 	"apihelp-query+messagegroups-summary": "إرجاع المعلومات حول مجموعات الرسائل.",
 	"apihelp-query+messagegroups-extended-description": "لاحظ أن الوسيط uselang يؤثر على إخراج الأجزاء المعتمدة على اللغة.",
 	"apihelp-query+messagegroups-param-depth": "عند استخدام صيغة الشجرة، حدد العمق لهذا العدد من المستويات. القيمة 0 تعني أنه لا توجد مجموعات فرعية معروضة. لو أن الحد تم الوصول إليه، فالخرج يحتوي على قيمة \"groupcount\"، والتي تحدد عدد الأبناء المباشرين.",

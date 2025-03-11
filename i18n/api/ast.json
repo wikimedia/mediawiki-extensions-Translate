@@ -31,7 +31,6 @@
 	"apihelp-query+messagecollection-example-1": "Llista de llingües con encontu",
 	"apihelp-query+messagecollection-example-2": "Llista de definiciones obligatories de mensaxes del grupu «page-Exemplu»",
 	"apihelp-query+messagecollection-example-3": "Llista de mensaxes opcionales en finlandés con etiquetes pal grupu «page-Exemplu»",
-	"apihelp-query+messagecollection-example-4": "Más información tocante a les últimes revisiones de traducciones pal grupu «page-Exemplu»",
 	"apihelp-query+messagegroups-summary": "Devolver información de los grupos de mensaxes.",
 	"apihelp-query+messagegroups-extended-description": "Alvierte que'l parámetru uselang afeuta a la salida de les páxines dependientes de la llingua.",
 	"apihelp-query+messagegroups-param-depth": "Al utilizar el formatu d'árbol, llendar la fondura a esta cantidá de niveles. El valor 0 significa que nun s'amuesen subgrupos. Si se llega a la llende, el resultáu incluye un valor de \"cuenta de grupos\", qu'indica'l númberu de fíos direutos.",

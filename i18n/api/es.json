@@ -38,7 +38,6 @@
 	"apihelp-query+messagecollection-example-1": "Lista de idiomas admitidos",
 	"apihelp-query+messagecollection-example-2": "Lista de definiciones obligatorias de mensajes del grupo \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "Lista de mensajes opcionales en finlandés con etiquetas para el grupo \"page-Example\"",
-	"apihelp-query+messagecollection-example-4": "Más información acerca de las últimas revisiones de traducción para el grupo \"page-Example\"",
 	"apihelp-query+messagegroups-param-depth": "Cuando se utiliza el formato de árbol, limitar la profundidad a esta cantidad de niveles. El valor 0 significa que no se muestran subgrupos. Si se alcanza el límite, el resultado incluye un valor de \"cuenta de grupal\", que indica el número de hijos directos.",
 	"apihelp-query+messagegroups-paramvalue-prop-priority": "Incluir estado de prioridad como desanimado.",
 	"apihelp-query+messagegroups-paramvalue-prop-subscription": "Incluir si el usuario está suscrito al grupo.",

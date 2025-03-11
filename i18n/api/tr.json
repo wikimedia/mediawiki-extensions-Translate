@@ -46,7 +46,6 @@
 	"apihelp-query+messagecollection-example-1": "Desteklenen dillerin listesi",
 	"apihelp-query+messagecollection-example-2": "\"page-Example\" grubu için isteğe bağlı olmayan mesaj tanımlarının listesi",
 	"apihelp-query+messagecollection-example-3": "Fince isteğe bağlı iletilerin listesi \"page-Example\" grubunun etiketli listesi",
-	"apihelp-query+messagecollection-example-4": "\"page-Example\" grubu için en son çeviri revizyonları hakkında daha fazla bilgi",
 	"apihelp-query+messagegroups-summary": "Mesaj grupları hakkında bilgi verir.",
 	"apihelp-query+messagegroups-extended-description": "Uselang parametresinin dile bağlı bölümlerin çıkışına etkilediğini unutmayın.",
 	"apihelp-query+messagegroups-param-depth": "Ağaç biçimi kullanırken, derinliği bu kadar seviyeyle sınırlandırın. 0 değeri, hiçbir alt grubun gösterilmediği anlamına gelir. Sınıra ulaşıldığında, çıktı doğrudan çocuk sayısını belirten bir \"groupcount\" değeri içerir.",

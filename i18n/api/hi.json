@@ -41,7 +41,6 @@
 	"apihelp-query+messagecollection-example-1": "समर्थित भाषाओं की सूची",
 	"apihelp-query+messagecollection-example-2": "समूह \"page-Example\" में गैर-वैकल्पिक संदेशों की परिभाषाओं की सूची",
 	"apihelp-query+messagecollection-example-3": "फिनिश में \"page-Example\" समूह के टैग वाले वैकल्पिक संदेश",
-	"apihelp-query+messagecollection-example-4": "समूह \"page-Example\" के आखिरी अनुवाद संस्करणों के बारे में अधिक जानकारी",
 	"apihelp-query+messagegroups-summary": "संदेश समूहों के बारे में जानकारी लौटाएँ",
 	"apihelp-query+messagegroups-extended-description": "ध्यान रखें कि uselang पैरामीटर भाषा-अधीन हिस्सों के आउटपुट को बदल सकता है।",
 	"apihelp-query+messagegroups-param-depth": "वृक्ष फॉर्मेट का इस्तेमाल करते समय, गहराई को कई लेवलों तक ही रखें। वैल्यू 0 का मतलब है कि कोई उपसमूह नहीं दिखाया जाता है। अगर सीमा पर कर दी जाती है, आउटपुट में एक \"groupcount\" वेल्यू आ जाता है, जो कि सीधे चाइल्डों की संख्या का बोध कराता है।",
