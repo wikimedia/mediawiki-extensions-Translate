@@ -723,31 +723,36 @@
 					return false;
 				}
 
+				var suggestionsProvided = [];
 				var mtSuggestions = result.helpers.mt;
-				var suggestionsProvided = mtSuggestions.map( function ( suggestion ) {
-					return suggestion.service;
-				} );
-				var ttmSuggestions = result.helpers.ttmserver;
+				if ( Array.isArray( mtSuggestions ) ) {
+					suggestionsProvided = mtSuggestions.map( function ( suggestion ) {
+						return suggestion.service;
+					} );
+				}
 
-				if ( ttmSuggestions.length ) {
+				var ttmSuggestions = result.helpers.ttmserver;
+				if ( Array.isArray( ttmSuggestions ) && ttmSuggestions.length ) {
 					suggestionsProvided.push( 'translation_memory' );
 				}
 
-				logger.logEvent(
-					'suggestion',
-					'',
-					suggestionsProvided.join( '; ' ),
-					{
-						// eslint-disable-next-line camelcase
-						source_title: this.message.group + '|' + this.message.title,
-						// eslint-disable-next-line camelcase
-						target_title: this.message.title,
-						// eslint-disable-next-line camelcase
-						source_language: result.helpers.definition.language,
-						// eslint-disable-next-line camelcase
-						target_language: this.message.targetLanguage
-					}
-				);
+				if ( suggestionsProvided ) {
+					logger.logEvent(
+						'suggestion',
+						'',
+						suggestionsProvided.join( '; ' ),
+						{
+							// eslint-disable-next-line camelcase
+							source_title: this.message.group + '|' + this.message.title,
+							// eslint-disable-next-line camelcase
+							target_title: this.message.title,
+							// eslint-disable-next-line camelcase
+							source_language: result.helpers.definition.language,
+							// eslint-disable-next-line camelcase
+							target_language: this.message.targetLanguage
+						}
+					);
+				}
 
 				this.showMessageDocumentation( result.helpers.documentation );
 				this.showUneditableDocumentation( result.helpers.gettext );
