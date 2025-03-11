@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ewithu"
+		]
+	},
+	"translate": "Толмасьлэн",
+	"translate-taction-translate": "Толмасьлэн",
+	"translate-page-language": "Ла̄тыӈ",
+	"translate-rcfilters-translations": "Толмасьлапыт",
+	"translate-stats-users": "Толмасит",
+	"translate-statsf-scale-years": "Та̄лыт",
+	"translate-statsf-scale-months": "Э̄тпосыт",
+	"translate-statsf-scale-weeks": "Са̄тыт",
+	"translate-statsf-scale-days": "Хо̄талыт",
+	"translate-statsf-scale-hours": "Сё̄сыт",
+	"translate-statsf-count-registrations": "Йильпи рӯпитаптын хо̄тпат",
+	"translate-translations-fieldset-title": "Ля̄ххал",
+	"translate-translations-messagename": "Нам:",
+	"translate-translations-history-short": "ист.",
+	"translate-untranslated": "Толмасьлта̄л",
+	"translate-mgs-column-language": "Ла̄тыӈ",
+	"translate-tes-optgroup-message": "Ля̄ххалыт",
+	"translate-smg-strong-sync-help": "Нё̄тмил",
+	"translate-smg-group-message-message-other-langs": "Мо̄т ла̄тӈыт:",
+	"translate-smg-loading": "Та̄глэ̄кв та̄лттыгла̄таве…",
+	"translate-searchprofile": "Толмасьлапыт",
+	"translate-msggroupselector-search-all": "Пуссын",
+	"translate-msggroupselector-search-recent": "Аньмунт",
+	"tux-languageselector": "Тыин толмасьлэн:",
+	"tux-tab-translated": "Толмасьлам",
+	"tux-status-saving": "Кон-ке̄таве...",
+	"tux-editor-in-other-languages": "Мо̄т ла̄тӈытыл",
+	"tux-editor-page-mode": "Нэ̄пак",
+	"tux-proofread-translated-by-self": "Наӈын толмасьлавес"
+}
