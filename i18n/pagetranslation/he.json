@@ -285,6 +285,7 @@
 	"pm-pagetitle-not-translatable": "הדף $1 אינו חלק מדף לתרגום.",
 	"pm-translation-unit-fetch-failed": "אירעה שגיאה בעת אחזור יחידות תרגום עבור הדף.",
 	"tpt-translate-title": "לאפשר תרגום של כותרת הדף",
+	"tpt-translate-hide-unchanged-units": "להסתיר יחידות תרגום שלא שונו",
 	"pp-save-summary": "הדף הוכן לתרגום",
 	"pagepreparation": "הכנת דף",
 	"pagepreparation-summary": "נא להגדיר איזה דף להכין לתרגום.",

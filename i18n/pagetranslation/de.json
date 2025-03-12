@@ -289,6 +289,7 @@
 	"pm-pagetitle-not-translatable": "$1 ist nicht Teil einer übersetzbaren Seite.",
 	"pm-translation-unit-fetch-failed": "Beim Abrufen der Übersetzungseinheiten für diese Seite ist ein Fehler aufgetreten.",
 	"tpt-translate-title": "Übersetzung des Seitentitels erlauben",
+	"tpt-translate-hide-unchanged-units": "Unveränderte Übersetzungseinheiten ausblenden",
 	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor",
 	"pagepreparation": "Seite zur Übersetzung vorbereiten",
 	"pagepreparation-summary": "Gib einen Seitentitel an, der für die Übersetzung vorbereitet werden soll.",
