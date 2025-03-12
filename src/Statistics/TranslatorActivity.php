@@ -83,7 +83,8 @@ class TranslatorActivity {
 		$this->jobQueue->push( $job );
 	}
 
-	private function doQueryAndCache( string $language ): array {
+	/** @return array|false */
+	private function doQueryAndCache( string $language ) {
 		$now = (int)ConvertibleTimestamp::now( TS_UNIX );
 
 		$work = new PoolCounterWorkViaCallback(
