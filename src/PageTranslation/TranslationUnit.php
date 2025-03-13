@@ -208,8 +208,8 @@ class TranslationUnit {
 		$attributes = [];
 		$headingText = null;
 
-		if ( $msg && $msg->translation() !== null ) {
-			$content = $msg->translation();
+		$content = $msg ? $msg->translation() : null;
+		if ( $content !== null ) {
 			$headingText = $this->getHeading( $msg->definition() );
 
 			if ( $msg->hasTag( 'fuzzy' ) ) {
