@@ -299,6 +299,7 @@
 	"pm-pagetitle-not-translatable": "$1不是可翻譯頁面的一部分。",
 	"pm-translation-unit-fetch-failed": "在取得頁面的譯文單元時發生錯誤。",
 	"tpt-translate-title": "允許翻譯頁面標題",
+	"tpt-translate-hide-unchanged-units": "隱藏未變更的譯文單元",
 	"pp-save-summary": "已準備好等候翻譯的頁面",
 	"pagepreparation": "準備翻譯用頁面",
 	"pagepreparation-summary": "指定準備翻譯的頁面標題。",
