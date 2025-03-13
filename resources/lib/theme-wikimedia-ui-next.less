@@ -1,0 +1,61 @@
+// Created manually to provide variables that are missing from MW 1.43
+// but are used in LESS files across the codebase.
+// Update or remove (if not needed) before MLEB 2025.06 release
+
+@background-color-interactive--hover: #dadde3;
+@background-color-interactive--active: #c8ccd1;
+@background-color-interactive-subtle--hover: #eaecf0;
+@background-color-interactive-subtle--active: #dadde3;
+@background-color-progressive-subtle--hover: #dce3f9;
+@background-color-progressive-subtle--active: #cbd6f6;
+@background-color-destructive-subtle--hover: #ffdad3;
+@background-color-destructive-subtle--active: #ffc8bd;
+@background-color-error-subtle--hover: #ffdad3;
+@background-color-error-subtle--active: #ffc8bd;
+
+@color-destructive--visited--hover: #534fa3;
+@color-destructive--visited--active: #353262;
+@color-visited--hover: #534fa3;
+@color-visited--active: #353262;
+@color-error--hover: #9f3526;
+@color-error--active: #612419;
+@color-link-red--visited--hover: #854848;
+@color-link-red--visited--active: #512e2e;
+@color-icon-error: #f54739;
+@color-icon-warning: #ab7f2a;
+@color-icon-success: #099979;
+@color-icon-notice: #72777d;
+@color-disabled-emphasized: #a2a9b1;
+
+@size-content-min: min-content;
+@size-content-fit: fit-content;
+@size-content-max: max-content;
+
+@border-color-interactive--hover: #27292d;
+@border-color-interactive--active: #202122;
+@border-color-error--active: #bf3c2c;
+
+@box-shadow-outset-small-bottom: 0 1px 0 0;
+@box-shadow-outset-medium-below: 0 4px 4px 0;
+@box-shadow-outset-medium-around: 0 0 8px 0;
+@box-shadow-outset-large-below: 0 4px 8px 0;
+@box-shadow-outset-large-around: 0 0 16px 0;
+@box-shadow-color-alpha-base: rgba( 0, 0, 0, 0.1 );
+@box-shadow-small: @box-shadow-outset-small @box-shadow-color-base;
+@box-shadow-small-top: @box-shadow-outset-small-top @box-shadow-color-base;
+@box-shadow-small-bottom: @box-shadow-outset-small-bottom @box-shadow-color-base;
+@box-shadow-medium: @box-shadow-outset-medium-below @box-shadow-color-alpha-base, @box-shadow-outset-medium-around @box-shadow-color-alpha-base;
+@box-shadow-large: @box-shadow-outset-large-below @box-shadow-color-alpha-base, @box-shadow-outset-large-around @box-shadow-color-alpha-base;
+
+@transform-progress-indicator-spinner-start: rotate( -45deg );
+@transform-progress-indicator-spinner-end: rotate( 315deg );
+@animation-duration-fast: 1000ms;
+@mix-blend-mode-base: normal;
+@mix-blend-mode-blend: multiply;
+
+// Deprecated Codex tokens
+// Since v1.20.2
+@size-tooltip: max-content;
+@box-shadow-drop-small: 0 1px 1px rgba( 0, 0, 0, 0.2 );
+@box-shadow-drop-medium: 0 2px 2px 0 rgba( 0, 0, 0, 0.2 );
+@box-shadow-drop-xx-large: 0 20px 48px 0 rgba( 0, 0, 0, 0.2 );
