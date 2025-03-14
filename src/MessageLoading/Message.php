@@ -45,7 +45,11 @@ abstract class Message {
 	 * Message definition should not be empty, but sometimes is.
 	 * See: https://phabricator.wikimedia.org/T285830
 	 */
-	public function definition(): ?string {
+	public function definition(): string {
+		return $this->definition ?? '';
+	}
+
+	public function rawDefinition(): ?string {
 		return $this->definition;
 	}
 

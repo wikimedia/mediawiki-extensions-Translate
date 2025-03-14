@@ -305,7 +305,7 @@ class MessageHandle {
 		$message = new FatMessage( $key, $en );
 		// Take the contents from edit field as a translation.
 		$message->setTranslation( $text );
-		if ( $message->definition() === null ) {
+		if ( $message->rawDefinition() === null ) {
 			// This should NOT happen, but add a check since it seems to be happening
 			// See: https://phabricator.wikimedia.org/T255669
 			LoggerFactory::getInstance( LogNames::MAIN )->warning(

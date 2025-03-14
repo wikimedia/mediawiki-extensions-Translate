@@ -60,7 +60,7 @@ class FindUnsynchronizedDefinitionsMaintenanceScript extends BaseMaintenanceScri
 
 			foreach ( $collection->keys() as $mkey => $title ) {
 				$message = $collection[$mkey];
-				$definition = $message->definition() ?? '';
+				$definition = $message->definition();
 				$translation = $message->translation() ?? '';
 
 				$differs = $ignoreTrailingWhitespace
