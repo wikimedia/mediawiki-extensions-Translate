@@ -995,11 +995,15 @@ class Hooks {
 
 			if ( $permissionTitleCheck ) {
 				if ( $handle->getCode() === $group->getSourceLanguage() && !$user->equals( FuzzyBot::getUser() ) ) {
-					// Allow revision deletion actions as per T286884 since if something bad somehow gets marked for
-					// translation, deleting revisions everywhere should be possible without deliberately
+					// Allow the same set of actions allowed for translation pages - in particular
+					// if something bad somehow gets marked for translation, deleting
+					// revisions everywhere should be possible without deliberately
 					// invalidating the unit
 					$allowedActionList = [
+						'read', 'deletedtext', 'deletedhistory',
 						'deleterevision', 'suppressrevision', 'viewsuppressed', // T286884
+						'review', // FlaggedRevs
+						'patrol', // T151172
 					];
 					if ( !in_array( $action, $allowedActionList ) ) {
 						$result = [ 'tpt-cant-edit-source-language', $permissionTitleCheck ];
