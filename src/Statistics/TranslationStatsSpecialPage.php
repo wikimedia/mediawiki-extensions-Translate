@@ -85,7 +85,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$out->addWikiMsg( 'translate-statsf-intro' );
 		$out->addHTML(
 			Html::openElement( 'fieldset' ) .
-			Html::element( 'legend', null, $this->msg( 'translate-statsf-options' )->text() ) .
+			Html::element( 'legend', [], $this->msg( 'translate-statsf-options' )->text() ) .
 			Html::openElement(
 				'form',
 				[ 'action' => $script, 'id' => 'translationStatsConfig' ]
