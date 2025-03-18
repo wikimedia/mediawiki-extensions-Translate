@@ -255,7 +255,7 @@
 	"pt-deletepage-mb-title": "Used as page title. Parameters:\n* $1 - page title\n\nSee definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].\n\nSee also:\n* {{msg-mw|Pt-deletepage-lang-title}}, {{msg-mw|Pt-deletepage-tp-title}}",
 	"pt-deletepage-invalid-title": "Error message when trying to delete a translation page or translatable page.",
 	"pt-deletepage-invalid-text": "See definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].",
-	"pt-deletepage-action-check": "This is a button label. \"List\" is an imperative verb.",
+	"pt-deletepage-action-check": "This is a button label. \"List\" describes an action.",
 	"pt-deletepage-action-perform": "Submit button on special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].\n\ni think it's mean delete right now.",
 	"pt-deletepage-action-other": "Button label on the special page 'Deleting translatable page'. See [[mw:File:Translate_manual_-_Page_example_-_25._Delete_confirm.png|screenshot]].",
 	"pt-deletepage-lang-legend": "See definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].",
