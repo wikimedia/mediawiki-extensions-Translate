@@ -87,8 +87,8 @@ class UpdateMessageJob extends GenericTranslateJob {
 		$originalTitle = Title::newFromLinkTarget( $this->title->getTitleValue(), Title::NEW_CLONE );
 
 		if ( $isRename ) {
-			$this->title = $this->handleRename( $params['target'], $params['replacement'] );
-			if ( $this->title === null ) {
+			$renamedTitle = $this->handleRename( $params['target'], $params['replacement'] );
+			if ( $renamedTitle === null ) {
 				// There was a failure, return true, but don't proceed further.
 				$this->logWarning(
 					'Rename process could not find the source title.',
@@ -101,6 +101,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 				$this->removeFromCache( $originalTitle );
 				return true;
 			}
+			$this->title = $renamedTitle;
 		}
 		$title = $this->title;
 		$baseRevId = $title->getLatestRevId();
