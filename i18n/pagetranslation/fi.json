@@ -49,6 +49,8 @@
 	"tpt-mark-nochanges": "Ei tarkistettavia muutoksia. Tämän sivun merkitseminen käännettäväksi ei muokkaa sivua eikä olemassa olevia käännösyksiköitä.",
 	"tpt-edit-failed": "Sivun päivittäminen epäonnistui: $1",
 	"tpt-duplicate": "Käännösosion nimeä <strong><bdi>$1</bdi></strong> on käytetty useammin kuin kerran.",
+	"tpt-invalid": "Käännösosion nimi <strong><bdi>$1</bdi></strong> ei saa sisältää alaviivaa tai kauttaviivaa.",
+	"tpt-unit-title-invalid": "Käännösosion nimi <strong><bdi>$1</bdi></strong> on virheellinen: $2",
 	"tpt-unmarked": "Sivu [[:$1]] ei ole enää käännettävänä.",
 	"tpt-list-nopages": "Yhtään sivua ei ole merkitty käännettäväksi eikä yhtään sivua ole valmiina käännettäväksi merkitsemistä varten.",
 	"tpt-new-pages-title": "Käännettäväksi ehdotetut sivut",
