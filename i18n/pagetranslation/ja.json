@@ -238,6 +238,7 @@
 	"pm-on-import-message-text": "翻訳の旧版がインポートされました。オプションから追加、交換、削除を選んで翻訳単位を調整し、「{{int:pm-savepages-button-label}}」ボタンを押して保存します。中止するには「{{int:pm-cancel-button-label}}」ボタンを押します。",
 	"pm-on-save-message-text": "翻訳単位を保存しました。新しい翻訳ページ名を入力して移入するか、以下の翻訳単位に変更を加え、新しい履歴を保存します。",
 	"tpt-translate-title": "ページ名を翻訳できるようにする",
+	"tpt-translate-hide-unchanged-units": "変更されていない翻訳単位を非表示",
 	"pp-save-summary": "ページの翻訳準備が完了",
 	"pagepreparation": "ページを翻訳用に準備する",
 	"pp-pagename-placeholder": "ページ名を入力",
