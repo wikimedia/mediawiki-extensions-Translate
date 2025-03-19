@@ -13,13 +13,13 @@ use MediaWiki\Title\Title;
  */
 class MessageDefinitions {
 	private ?int $namespace;
-	/** @var string[] */
+	/** @var array<string,mixed> */
 	private array $messages;
-	/** @var Title[]|null */
+	/** @var array<string,Title>|null */
 	private ?array $pages = null;
 
 	/**
-	 * @param string[] $messages
+	 * @param array<string,mixed> $messages
 	 * @param int|false $namespace
 	 */
 	public function __construct( array $messages, $namespace = false ) {
@@ -27,12 +27,12 @@ class MessageDefinitions {
 		$this->namespace = $namespace === false ? null : $namespace;
 	}
 
-	/** @return string[] */
+	/** @return array<string,mixed> */
 	public function getDefinitions(): array {
 		return $this->messages;
 	}
 
-	/** @return Title[] List of title indexed by message key. */
+	/** @return array<string,Title> List of title indexed by message key. */
 	public function getPages(): array {
 		$namespace = $this->namespace;
 		if ( $this->pages !== null ) {
