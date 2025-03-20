@@ -8,7 +8,7 @@
 	"translate": "Tarejama",
 	"translate-submit": "Ala",
 	"translate-page-edit": "padeccéŋ",
-	"translate-edit-no-information": "''Iyyedé méséjeë degaga dokuméntasina. Rékko idi isseŋi kotégaï na pakogaï ripaké, weddiŋi idi maŋinriŋ patare'juma laiŋë menambahkan dokumentasina.''",
-	"translate-edit-information": "Informasina iyyéde leppa ($1)",
+	"translate-edit-no-information": "<em>Rampé-rampé iyaé deqna punnai dokuméntasi. Ko idiq nissengngi kéga na pékkugi rampé-rampéyédé mappaké, weddingngi idoq bantu pattarejama laing sibawa tambai dokuméntasina ku iyaé rampé-rampé.</em>",
+	"translate-edit-information": "Imporomasi aruntukkenna rampé-rampé ($1)",
 	"translate-statsf-submit": "Pribiu"
 }
