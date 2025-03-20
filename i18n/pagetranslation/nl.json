@@ -290,6 +290,7 @@
 	"pm-pagetitle-not-translatable": "$1 maakt geen deel uit van een vertaalbare pagina.",
 	"pm-translation-unit-fetch-failed": "Er is een fout opgetreden bij het ophalen van de vertaaleenheden voor de pagina.",
 	"tpt-translate-title": "Vertaling van de paginanaam toestaan",
+	"tpt-translate-hide-unchanged-units": "Ongewijzigde vertaaleenheden verbergen",
 	"pp-save-summary": "Pagina voorbereid voor vertaling",
 	"pagepreparation": "Pagina voorbereiden voor vertaling",
 	"pagepreparation-summary": "Geef de titel van een ter vertaling voor te bereiden pagina op.",
