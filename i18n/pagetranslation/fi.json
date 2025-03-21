@@ -111,6 +111,8 @@
 	"tpt-discouraged-language-force": "<strong>Tätä sivua ei voi kääntää kielelle $2.</strong>\n\nKäännösylläpitäjä on päättänyt, että tämän sivun voi kääntää vain kielille $3.",
 	"tpt-priority-languages": "Käännösylläpitäjä on asettanut tämän ryhmän ensisijaisiksi käännöskieliksi $1.",
 	"tpt-priority-languages-force": "Käännösylläpitäjä on määritellyt tämän ryhmän prioriteettikieliksi $1. Kääntäminen muille kielille ei ole mahdollista.",
+	"tpt-discouraged-translation-header": "Tätä sivua ei suositella käännettäväksi",
+	"tpt-discouraged-translation-content": "Käännösylläpitäjä on merkinnyt tämän sivun kääntämisen vältettäväksi. Voit siitä huolimatta kääntää sivun, mutta käännöksistä ei välttämättä ole hyötyä.",
 	"tpt-render-summary": "Päivitetty vastaamaan uutta versiota lähdesivusta",
 	"aggregategroups": "Kokoelmaryhmät",
 	"tpt-aggregategroup-add": "Lisää",

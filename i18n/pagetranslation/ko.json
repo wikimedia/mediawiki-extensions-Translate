@@ -229,6 +229,7 @@
 	"pm-langcode-missing": "언어 코드가 제목에 없는 것 같습니다. <page-name>/<language-code> 형식으로 문서 제목을 입력해 주십시오.",
 	"pm-pagetitle-not-translatable": "$1 문서는 번역 가능한 문서의 일부가 아닙니다.",
 	"tpt-translate-title": "문서 제목을 번역할 수 있음",
+	"tpt-translate-hide-unchanged-units": "변경되지 않은 번역 단위 숨기기",
 	"pagepreparation": "문서를 번역할 수 있게 준비",
 	"pagepreparation-summary": "번역 준비를 위한 문서 제목을 지정합니다.",
 	"pp-pagename-placeholder": "문서 이름을 입력하세요",
