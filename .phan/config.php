@@ -5,6 +5,9 @@ $cfg = require __DIR__ . '/../vendor/mediawiki/mediawiki-phan-config/src/config.
 // These are too spammy for now. TODO enable
 $cfg['null_casts_as_any_type'] = true;
 
+// Enable aliases for this repo, as we support multiple MW versions in parallel.
+$cfg['enable_class_alias_support'] = true;
+
 // Gives false positives for uninitialized properties
 $cfg['suppress_issue_types'][] = 'PhanCoalescingNeverNull';
 

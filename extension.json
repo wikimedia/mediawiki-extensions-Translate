@@ -496,7 +496,8 @@
 	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStatesUpdaterJob",
-		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
+		"MessageIndexRebuildJob": "\\MediaWiki\\Extension\\Translate\\MessageLoading\\RebuildMessageIndexJob",
+		"RebuildMessageIndexJob": "\\MediaWiki\\Extension\\Translate\\MessageLoading\\RebuildMessageIndexJob",
 		"MessageUpdateJob": "\\MediaWiki\\Extension\\Translate\\Synchronization\\UpdateMessageJob",
 		"PurgeMessageBundleDependencies": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\PurgeMessageBundleDependenciesJob",
 		"RebuildMessageGroupStatsJob": "\\MediaWiki\\Extension\\Translate\\Statistics\\RebuildMessageGroupStatsJob",
