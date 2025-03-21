@@ -10,9 +10,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptio
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\HTMLForm\OOUIHTMLForm;
-use MediaWiki\Parser\Parser;
-use MediaWiki\Parser\ParserOutput;
-use MediaWiki\Parser\ParserOutputFlags;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Status\Status;
@@ -100,11 +97,6 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 			$out->addReturnTo( SpecialPage::getTitleFor( 'ManageMessageGroupSubscriptions' ) );
 			return;
 		}
-
-		$pout = new ParserOutput;
-		$pout->setOutputFlag( ParserOutputFlags::SHOW_TOC );
-		$pout->setRawText( Parser::TOC_PLACEHOLDER );
-		$out->addParserOutput( $pout );
 
 		$form->displayForm( $result );
 	}
