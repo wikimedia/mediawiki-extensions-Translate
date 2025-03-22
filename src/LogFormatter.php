@@ -72,15 +72,12 @@ class LogFormatter extends CoreLogFormatter {
 
 	/** @return-taint onlysafefor_html */
 	private function makePageLinkWithText(
-		?Title $pageTitle, ?string $text, array $queryParameters = []
+		Title $pageTitle, ?string $text, array $queryParameters = []
 	): string {
 		if ( !$this->plaintext ) {
 			$link = $this->getLinkRenderer()->makeLink( $pageTitle, $text, [], $queryParameters );
 		} else {
-			$target = '***';
-			if ( $pageTitle instanceof Title ) {
-				$target = $pageTitle->getPrefixedText();
-			}
+			$target = $pageTitle->getPrefixedText();
 			$link = "[[$target|$text]]";
 		}
 
