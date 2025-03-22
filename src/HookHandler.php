@@ -27,7 +27,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\MarkForTranslationActionApi;
@@ -130,10 +129,6 @@ class HookHandler implements
 		$wgTranslateYamlLibrary ??= function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 
 		$hooks['PageSaveComplete'][] = [ TranslateEditAddons::class, 'onSaveComplete' ];
-		global $wgJobClasses;
-
-		$wgJobClasses['MessageIndexRebuildJob'] = RebuildMessageIndexJob::class;
-		$wgJobClasses['RebuildMessageIndexJob'] = RebuildMessageIndexJob::class;
 
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
@@ -220,6 +215,7 @@ class HookHandler implements
 
 			$wgLogActionsHandlers['import/translatable-bundle'] = TranslatableBundleLogFormatter::class;
 
+			global $wgJobClasses;
 			$wgJobClasses['RenderTranslationPageJob'] = RenderTranslationPageJob::class;
 			$wgJobClasses['NonPrioritizedRenderTranslationPageJob'] = RenderTranslationPageJob::class;
 			$wgJobClasses['MoveTranslatableBundleJob'] = MoveTranslatableBundleJob::class;

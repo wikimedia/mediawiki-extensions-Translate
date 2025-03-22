@@ -77,12 +77,3 @@ class RebuildMessageIndexJob extends GenericTranslateJob implements GenericParam
 		return $info;
 	}
 }
-
-# T389698: this alias has to be hidden from phan to workaround a phan bug
-# but we don't want to hide it from our "structure test" job which verifies
-# autoload contents.  The commented-out version is still read by the structure
-# test, and phan will reject the 'computed value' version using trim().
-/*
-class_alias( RebuildMessageIndexJob::class, 'MessageIndexRebuildJob' );
-*/
-class_alias( RebuildMessageIndexJob::class, trim( 'MessageIndexRebuildJob' ) );

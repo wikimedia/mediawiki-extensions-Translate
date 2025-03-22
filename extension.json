@@ -99,7 +99,6 @@
 		"MediaWiki\\Extension\\Translate\\MessageGroupConfiguration\\PremadeIntuitionTextdomains": "src/MessageGroupConfiguration/PremadeIntuitionTextdomains.php",
 		"PremadeMediaWikiExtensionGroups": "src/MessageGroupConfiguration/PremadeMediaWikiExtensionGroups.php",
 		"MediaWiki\\Extension\\Translate\\MessageGroupConfiguration\\PremadeMediaWikiExtensionGroups": "src/MessageGroupConfiguration/PremadeMediaWikiExtensionGroups.php",
-		"MessageIndexRebuildJob": "src/MessageLoading/RebuildMessageIndexJob.php",
 		"MediaWiki\\Extension\\Translate\\MessageLoading\\RebuildMessageIndexJob": "src/MessageLoading/RebuildMessageIndexJob.php",
 		"RecentAdditionsMessageGroup": "messagegroups/RecentAdditionsMessageGroup.php",
 		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
@@ -496,7 +495,6 @@
 	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "\\MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\MessageGroupStatesUpdaterJob",
-		"MessageIndexRebuildJob": "\\MediaWiki\\Extension\\Translate\\MessageLoading\\RebuildMessageIndexJob",
 		"RebuildMessageIndexJob": "\\MediaWiki\\Extension\\Translate\\MessageLoading\\RebuildMessageIndexJob",
 		"MessageUpdateJob": "\\MediaWiki\\Extension\\Translate\\Synchronization\\UpdateMessageJob",
 		"PurgeMessageBundleDependencies": "\\MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\PurgeMessageBundleDependenciesJob",
