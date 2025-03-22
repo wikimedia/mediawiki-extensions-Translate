@@ -21,7 +21,7 @@ class PageTitleRenamer {
 	public const INVALID_TITLE = 4;
 
 	private const IMPOSSIBLE = null;
-	/** @var string[][] */
+	/** @var array<int,array{0:?int,1:?string,2:?string}> */
 	private $map = [];
 
 	public function __construct( Title $source, Title $target ) {
