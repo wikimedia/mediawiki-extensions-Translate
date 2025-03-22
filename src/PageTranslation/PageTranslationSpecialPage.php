@@ -179,7 +179,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		}
 
 		if ( $action === 'settings' && $request->wasPosted() ) {
-			$this->handleTranslationState( $title, $request->getRawVal( 'translatable-page-state' ) );
+			$this->handleTranslationState( $title, $request->getRawVal( 'translatable-page-state' ) ?? '' );
 			return;
 		}
 
