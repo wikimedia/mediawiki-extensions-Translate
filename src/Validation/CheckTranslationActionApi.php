@@ -60,6 +60,9 @@ class CheckTranslationActionApi extends ApiBase {
 
 	private function getDefinition( MessageHandle $handle ): ?string {
 		$group = $handle->getGroup();
+		if ( !$group ) {
+			return null;
+		}
 		if ( method_exists( $group, 'getMessageContent' ) ) {
 			// @phan-suppress-next-line PhanUndeclaredMethod
 			return $group->getMessageContent( $handle );

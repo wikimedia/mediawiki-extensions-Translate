@@ -67,6 +67,10 @@ class TranslateEditAddons {
 		}
 
 		$group = $handle->getGroup();
+		if ( !$group ) {
+			return true;
+		}
+
 		$configHelper = Services::getInstance()->getConfigHelper();
 		$isDisabled = $configHelper->isTargetLanguageDisabled( $group, $langCode, $reason );
 		if ( !$isDisabled ) {

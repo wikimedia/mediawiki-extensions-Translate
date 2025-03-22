@@ -18,6 +18,11 @@ class InsertablesAid extends TranslationAid {
 		// We need to get the primary group to get the correct file
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();
+		if ( !$group ) {
+			throw new TranslationHelperException(
+				'Message handle ' . $this->handle->getTitle()->getPrefixedDbKey() . ' has no associated group'
+			);
+		}
 
 		// This was added later, so not all classes have it. In addition
 		// the message group class hierarchy doesn't lend itself easily

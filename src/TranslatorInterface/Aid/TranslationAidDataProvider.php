@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
+use InvalidArgumentException;
 use MediaWiki\Content\Content;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
@@ -32,7 +33,13 @@ class TranslationAidDataProvider {
 
 	public function __construct( MessageHandle $handle ) {
 		$this->handle = $handle;
-		$this->group = $handle->getGroup();
+		$group = $handle->getGroup();
+		if ( !$group ) {
+			throw new InvalidArgumentException(
+				'Message handle ' . $handle->getTitle()->getPrefixedDbKey() . ' has no associated group'
+			);
+		}
+		$this->group = $group;
 	}
 
 	/**

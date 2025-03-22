@@ -150,12 +150,12 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 			$messageGroupStatsTable = $this->messageGroupStatsTableFactory->newFromContext( $this->getContext() );
 			$group = MessageGroups::getGroup( $this->target );
 			$description = $group ? $group->getDescription( $this->getContext() ) : '';
-			$output = $messageGroupStatsTable->get(
+			$output = $group ? $messageGroupStatsTable->get(
 				$stats,
 				$group,
 				$this->noComplete,
 				$this->noEmpty
-			);
+			) : '';
 			// If description is present parse it to HTML and show it above the stats
 			if ( $description ) {
 				$this->getOutput()->addWikiTextAsContent( $description );

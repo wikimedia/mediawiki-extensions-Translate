@@ -90,11 +90,13 @@ class MessageWebImporter {
 
 	/** @param MessageGroup|string $group MessageGroup object or group ID */
 	public function setGroup( $group ): void {
-		if ( $group instanceof MessageGroup ) {
-			$this->group = $group;
-		} else {
-			$this->group = MessageGroups::getGroup( $group );
+		if ( is_string( $group ) ) {
+			$group = MessageGroups::getGroup( $group );
+			if ( !$group ) {
+				throw new InvalidArgumentException( __METHOD__ . ' called with invalid group ID ' . $group );
+			}
 		}
+		$this->group = $group;
 	}
 
 	public function getCode(): string {

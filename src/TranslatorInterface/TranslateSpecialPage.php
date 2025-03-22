@@ -98,10 +98,12 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addHTML( $this->tuxSettingsForm() );
 		$out->addHTML( $this->messageSelector() );
 
-		$table = new MessageTable( $this->getContext(), $this->group, $this->options['language'] );
-		$output = $table->fullTable();
+		if ( $this->group ) {
+			$table = new MessageTable( $this->getContext(), $this->group, $this->options['language'] );
+			$output = $table->fullTable();
 
-		$out->addHTML( $output );
+			$out->addHTML( $output );
+		}
 		$out->addHTML( Html::closeElement( 'div' ) );
 	}
 
@@ -347,7 +349,7 @@ class TranslateSpecialPage extends SpecialPage {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'twelve columns description' ],
-			$this->getGroupDescription( $this->group )
+			$this->group ? $this->getGroupDescription( $this->group ) : ''
 		);
 	}
 

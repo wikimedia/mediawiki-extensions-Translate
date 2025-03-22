@@ -57,6 +57,9 @@ class MessageGroupStatesUpdaterJob extends GenericTranslateJob {
 		$messageGroupReviewStore = Services::getInstance()->getMessageGroupReviewStore();
 		foreach ( $groups as $id => $transitions ) {
 			$group = MessageGroups::getGroup( $id );
+			if ( !$group ) {
+				continue;
+			}
 			$stats = MessageGroupStats::forItem( $id, $code, MessageGroupStats::FLAG_IMMEDIATE_WRITES );
 			$state = self::getNewState( $stats, $transitions );
 			if ( $state ) {

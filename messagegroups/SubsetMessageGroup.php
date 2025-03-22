@@ -15,7 +15,7 @@ use Psr\Log\LoggerInterface;
 class SubsetMessageGroup extends MessageGroupOld {
 	private string $parentId;
 	private array $subsetKeys;
-	private ?MessageGroup $parentGroup;
+	private ?MessageGroup $parentGroup = null;
 	private ?array $keyCache = null;
 	private ?array $tagCache = null;
 	private ?array $definitionsCache = null;
@@ -136,7 +136,15 @@ class SubsetMessageGroup extends MessageGroupOld {
 
 	protected function getParentGroup(): MessageGroup {
 		// Protected for testing, until this code is refactored to not call static methods
-		$this->parentGroup ??= MessageGroups::getGroup( $this->parentId );
+		if ( !$this->parentGroup ) {
+			$group = MessageGroups::getGroup( $this->parentId );
+			if ( !$group ) {
+				throw new LogicException(
+					__METHOD__ . ": {$this->id} has invalid parent group ID {$this->parentId}"
+				);
+			}
+			$this->parentGroup = $group;
+		}
 		return $this->parentGroup;
 	}
 }

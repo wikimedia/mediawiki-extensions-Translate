@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
+use InvalidArgumentException;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\MessageDefinitionAid;
@@ -21,7 +22,7 @@ use MessageGroup;
  */
 class LegacyTranslationAids {
 	private MessageHandle $handle;
-	private ?MessageGroup $group;
+	private MessageGroup $group;
 	private IContextSource $context;
 	private LanguageFactory $languageFactory;
 
@@ -32,7 +33,13 @@ class LegacyTranslationAids {
 	) {
 		$this->handle = $handle;
 		$this->context = $context;
-		$this->group = $handle->getGroup();
+		$group = $handle->getGroup();
+		if ( !$group ) {
+			throw new InvalidArgumentException(
+				'Message handle ' . $handle->getTitle()->getPrefixedDbKey() . ' has no associated group'
+			);
+		}
+		$this->group = $group;
 		$this->languageFactory = $languageFactory;
 	}
 

@@ -235,10 +235,12 @@ class PageTranslationSpecialPage extends SpecialPage {
 			// groups out, or use MessageGroups::getParentGroups, though it has an inconvenient
 			// return value format for this use case.
 			$group = MessageGroups::getGroup( $id );
-			$sharedGroupIds = MessageGroups::getSharedGroups( $group );
-			if ( $sharedGroupIds !== [] ) {
-				$job = RebuildMessageGroupStatsJob::newRefreshGroupsJob( $sharedGroupIds );
-				$this->jobQueueGroup->push( $job );
+			if ( $group ) {
+				$sharedGroupIds = MessageGroups::getSharedGroups( $group );
+				if ( $sharedGroupIds !== [] ) {
+					$job = RebuildMessageGroupStatsJob::newRefreshGroupsJob( $sharedGroupIds );
+					$this->jobQueueGroup->push( $job );
+				}
 			}
 
 			// Show updated page with a notice
@@ -530,6 +532,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$groupId = $page['groupid'];
 			$group = MessageGroups::getGroup( $groupId );
+			if ( !$group ) {
+				continue;
+			}
 			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
 			$page['version'] = $metadata[$groupId]['version'] ?? TranslatablePageMarker::DEFAULT_SYNTAX_VERSION;
 			$page['transclusion'] = $metadata[$groupId]['transclusion'] ?? false;
