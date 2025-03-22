@@ -112,7 +112,7 @@ class MessageIndex {
 		// Optimization 1: skip LRU cache assuming that hit rate is very low for this use case
 		// Optimization 2: skip interim cache as not essential
 
-		return (array)$this->get( $normalisedKey ) ?? [];
+		return (array)$this->get( $normalisedKey );
 	}
 
 	public function getPrimaryGroupId( MessageHandle $handle ): ?string {
