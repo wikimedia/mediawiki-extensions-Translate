@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"Lhanars"
 		]
 	},
 	"pagetranslation": "Traduccion de paginas",
@@ -20,7 +21,7 @@
 	"tpt-oldrevision": "$2 es pas la darrièra version de la pagina [[:$1]].\nSola la darrièra version de la pagina pòt èsser marcada per èsser traduita.",
 	"tpt-notsuitable": "La pagina $1 conven pas per èsser traduita.\nSiatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sintaxi corrècta.",
 	"tpt-saveok": "La pagina [[:$1]] es estada marcada per èsser traduita amb $2 {{PLURAL:$2|unitat de traduccion|unitats de traduccion}}.\nLa pagina pòt èsser <span class=\"plainlinks\">[$3 traduita]</span> tre ara.",
-	"tpt-showpage-intro": "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.\nAbans de marcar aquestas versions per èsser traduitas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
+	"tpt-showpage-intro": "Çaijós, las traduccions nòvas, las qu'existisson e las suprimidas.\nAbans de marcar aquestas versions per èsser traduitas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
 	"tpt-mark-summary": "Aquesta version es estada marcada per èsser traduita",
 	"tpt-edit-failed": "Impossible de metre a jorn la pagina $1",
 	"tpt-list-nopages": "Cap de pagina es pas estada marcada per èsser traduita o prèsta per l'èsser.",
