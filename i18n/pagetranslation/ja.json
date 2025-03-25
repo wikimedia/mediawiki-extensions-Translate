@@ -16,6 +16,7 @@
 			"Waki285",
 			"Whym",
 			"Yamagata Yusuke",
+			"YeBoy371",
 			"Yusuke1109",
 			"そらたこ",
 			"ネイ",
@@ -115,6 +116,7 @@
 	"tpt-aggregategroup-save": "保存",
 	"tpt-aggregategroup-close": "閉じる",
 	"tpt-aggregategroup-add-new": "新しい集約群を追加",
+	"tpt-aggregategroup-language-none": "(なし)",
 	"tpt-aggregategroup-new-name": "名前:",
 	"tpt-aggregategroup-new-description": "説明 (省略可):",
 	"tpt-aggregategroup-remove-confirm": "この集約群を本当に削除しますか?",
@@ -265,5 +267,6 @@
 	"tpt-validation-name-reuse": "翻訳変数「$1」が異なる内容で複数回定義されています。翻訳単位内で一意になるように変数名を変更してください。",
 	"visualeditor-annotations-translate-description": "この範囲は翻訳対象に指定されています。[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text 翻訳元テキストの変更]に記載されているガイドラインに従うようにしてください。",
 	"tag-translate-translation-pages-description": "翻訳拡張機能による翻訳ページへの自動編集",
-	"tpt-cant-edit-source-language": "翻訳元言語の翻訳単位は手動では編集できません。まず先に基底ページ（[[:$1]]）を編集してから、そのページを翻訳対象に指定してください。"
+	"tpt-cant-edit-source-language": "翻訳元言語の翻訳単位は手動では編集できません。まず先に基底ページ（[[:$1]]）を編集してから、そのページを翻訳対象に指定してください。",
+	"tpt-manage-message-group-subscriptions-raw-titles": "グループ:"
 }
