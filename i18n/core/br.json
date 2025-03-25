@@ -253,6 +253,7 @@
 	"tux-status-saving": "Oc'h embann...",
 	"tux-status-unsaved": "Hep embann",
 	"tux-save-unknown-error": "C'hoarvezet ez eus ur fazi dianav.",
+	"tux-editor-placeholder-language": "Ho troidigezh e $1",
 	"tux-editor-paste-original-button-label": "Pegañ an destenn orin",
 	"tux-editor-copied-original-button-label": "Eilet!",
 	"tux-editor-discard-changes-button-label": "Dilezel ar c'hemmoù",
