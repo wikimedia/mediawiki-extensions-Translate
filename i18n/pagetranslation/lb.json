@@ -202,6 +202,7 @@
 	"pm-summary-import": "Iwwersetzung importéiert mat Hëllef vun [[Special:PageMigration|Säitemigratioun]]",
 	"pm-pagetitle-not-translatable": "$1 ass net Deel vun enger iwwersetzbarer Säit.",
 	"tpt-translate-title": "Iwwersetzung vum Titel vun der Säit erlaben",
+	"tpt-translate-hide-unchanged-units": "Onverännert Iwwersetzungseenheete verstoppen",
 	"pp-save-summary": "Huet d'Säit fir d'Iwwersetzung preparéiert",
 	"pagepreparation": "D'Säit fir d'Iwwersetzung virbereeden",
 	"pagepreparation-summary": "Gitt ee Säitentitel un, dee fir d'Iwwersetzung virbereet soll ginn.",
