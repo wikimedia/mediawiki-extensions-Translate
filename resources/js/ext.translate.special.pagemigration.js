@@ -154,7 +154,7 @@
 			var errorMessage = mw.msg( 'pm-translation-unit-fetch-failed' );
 			if (
 				code === 'badparameter' &&
-				result.error && result.error.info.indexOf( 'mcgroup' ) !== -1
+				result.error && result.error.info.includes( 'mcgroup' )
 			) {
 				errorMessage = mw.msg( 'pm-pagetitle-not-translatable', page );
 			}

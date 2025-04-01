@@ -97,7 +97,7 @@
 			/* Whether the current user if the last translator of this message.
 			 * Accepting own translations is prohibited. */
 			var translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
-			var proofreadBySelf = reviewers.indexOf( userId ) > -1;
+			var proofreadBySelf = reviewers.includes( userId );
 
 			var sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
 

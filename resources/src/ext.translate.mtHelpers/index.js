@@ -46,7 +46,7 @@ const tokenize = function ( string, language ) {
 	if ( !string ) {
 		return [];
 	}
-	if ( CJKLanguages.indexOf( language ) !== -1 ) {
+	if ( CJKLanguages.includes( language ) ) {
 		return string.split( '' );
 	}
 	// Match all non whitespace characters for tokens.
@@ -81,7 +81,7 @@ const calculateUnmodifiedContent = {
 			smallSet = tokens1;
 		}
 		// Find the intersection (tokens that did not change) of two token sets
-		const unmodifiedTokens = bigSet.filter( ( token ) => smallSet.indexOf( token ) >= 0 );
+		const unmodifiedTokens = bigSet.filter( ( token ) => smallSet.includes( token ) );
 		// If string1 has 10 tokens and we see that 2 tokens are different or not present in
 		// string2, we are saying that string2 is 80% (ie. 10-2/10) of unmodified version
 		// for string1.

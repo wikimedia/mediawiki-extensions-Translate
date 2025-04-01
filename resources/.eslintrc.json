@@ -22,6 +22,7 @@
 		"no-jquery/no-visibility": "error",
 		"compat/compat": "warn",
 		"no-jquery/no-extend": "warn",
-		"es-x/no-resizable-and-growable-arraybuffers": "warn"
+		"es-x/no-resizable-and-growable-arraybuffers": "warn",
+		"no-jquery/no-done-fail": "warn"
 	}
 }

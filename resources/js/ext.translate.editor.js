@@ -1183,7 +1183,7 @@
 			}
 
 			for ( var index = 0; index < stringTypes.length; index++ ) {
-				if ( allNoticeTypes.indexOf( stringTypes[ index ] ) === -1 ) {
+				if ( !allNoticeTypes.includes( stringTypes[ index ] ) ) {
 					var errMsg = 'tux: Invalid notice type removeNotice - ' + stringTypes[ index ];
 					mw.log.error( errMsg );
 					throw new Error( errMsg );

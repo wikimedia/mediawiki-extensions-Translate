@@ -28,7 +28,7 @@
 
 	function doApiAction( options ) {
 		var api = new mw.Api(),
-			optionsWithDefaults = $.extend( {}, { action: 'translatesandbox' }, options );
+			optionsWithDefaults = Object.assign( {}, { action: 'translatesandbox' }, options );
 
 		return api.postWithToken( 'csrf', optionsWithDefaults ).promise();
 	}
@@ -636,7 +636,7 @@
 			if ( !language ||
 				( requestData.languagepreferences &&
 					requestData.languagepreferences.languages &&
-					requestData.languagepreferences.languages.indexOf( language ) > -1 )
+					requestData.languagepreferences.languages.includes( language ) )
 			) {
 				// Found language
 				$request.removeClass( 'hide' );

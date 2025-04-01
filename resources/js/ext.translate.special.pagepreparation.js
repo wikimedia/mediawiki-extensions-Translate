@@ -124,13 +124,13 @@
 		var headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
 		// This is to ensure that the tags and the anchor are added only once
 
-		if ( pageContent.indexOf( '<span id="' + mw.html.escape( anchorID ) + '"' ) === -1 ) {
+		if ( !pageContent.includes( '<span id="' + mw.html.escape( anchorID ) + '"' ) ) {
 			pageContent = pageContent.replace( headerSearchRegex, '</translate>\n' +
 				'<span id="' + mw.html.escape( anchorID ) + '"></span>\n<translate>\n$1' );
 		}
 
 		// This is to add back the tags which were removed in cleanupTags()
-		if ( pageContent.indexOf( '</translate>\n<span id="' + anchorID + '"' ) === -1 ) {
+		if ( !pageContent.includes( '</translate>\n<span id="' + anchorID + '"' ) ) {
 			var spanSearchRegex = new RegExp( '(<span id="' + mw.util.escapeRegExp( anchorID ) + '"></span>)', 'gi' );
 			pageContent = pageContent.replace( spanSearchRegex, '\n</translate>\n$1\n</translate>\n' );
 		}

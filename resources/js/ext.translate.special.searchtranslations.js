@@ -64,14 +64,14 @@
 
 		// Remove duplicates from the language list
 		quickLanguageList.forEach( function ( lang ) {
-			if ( languages[ lang ] && unique.indexOf( lang ) === -1 ) {
+			if ( languages[ lang ] && !unique.includes( lang ) ) {
 				unique.push( lang );
 			}
 		} );
 
-		if ( currentLanguage && quickLanguageList.indexOf( currentLanguage ) >= 0 ) {
+		if ( currentLanguage && quickLanguageList.includes( currentLanguage ) ) {
 			quickLanguageList = unique.splice( 0, 5 );
-			if ( quickLanguageList.indexOf( currentLanguage ) === -1 ) {
+			if ( !quickLanguageList.includes( currentLanguage ) ) {
 				quickLanguageList = quickLanguageList.concat( currentLanguage );
 			}
 		} else {
@@ -165,7 +165,7 @@
 		}
 		var grouppath = getParameterByName( 'grouppath' ).split( '|' )[ 0 ];
 		if ( currentGroup && resultGroups[ grouppath ] &&
-			groupList.indexOf( grouppath ) < 0 &&
+			!groupList.includes( grouppath ) &&
 			level === 0
 		) {
 			// Make sure current selected group is displayed always.

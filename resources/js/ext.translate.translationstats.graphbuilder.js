@@ -180,7 +180,7 @@
 				maxValue = 0, minValue = 0;
 
 			for ( var labelProp in jsonGraphData ) {
-				if ( labels.indexOf( labelProp ) === -1 ) {
+				if ( !labels.includes( labelProp ) ) {
 					labels.push( labelProp );
 				}
 

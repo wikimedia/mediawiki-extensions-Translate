@@ -33,7 +33,7 @@
 	function MessageTable( container, options, settings ) {
 		this.$container = $( container );
 		this.options = options;
-		this.options = $.extend( {}, $.fn.messagetable.defaults, options );
+		this.options = Object.assign( {}, $.fn.messagetable.defaults, options );
 		this.settings = settings;
 		// mode can be proofread, page or translate
 		this.mode = this.options.mode;
@@ -152,7 +152,7 @@
 			message.proofreadable = false;
 
 			if ( message.tags.length &&
-				message.tags.indexOf( 'optional' ) >= 0 &&
+				message.tags.includes( 'optional' ) &&
 				status === 'untranslated'
 			) {
 				status = 'optional';
@@ -752,7 +752,7 @@
 
 				// Fix the filter if it is untranslated. Untranslated does not make sense
 				// for proofread mode. Keep the filter if it is not 'untranslated'
-				if ( !filter || filter.indexOf( '!translated' ) >= 0 ) {
+				if ( !filter || filter.includes( '!translated' ) ) {
 					messageTable.messages = [];
 					// default filter for proofread mode
 					mw.translate.changeFilter( 'translated|!reviewer:' + userId +
@@ -766,11 +766,11 @@
 				$tuxTabUntranslated.removeClass( 'hide' );
 				$tuxTabUnproofread.addClass( 'hide' );
 
-				if ( filter.indexOf( '!translated' ) > -1 ) {
+				if ( filter.includes( '!translated' ) ) {
 					$hideTranslatedButton.removeClass( 'hide' );
 				}
 
-				if ( filter && filter.indexOf( '!last-translator' ) >= 0 ) {
+				if ( filter && filter.includes( '!last-translator' ) ) {
 					messageTable.messages = [];
 					// default filter for translate mode
 					mw.translate.changeFilter( '!translated' );

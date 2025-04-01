@@ -78,7 +78,7 @@ var EntitySelectorWidget = function ( config ) {
 
 	if ( this.groupTypesToFetch ) {
 		for ( var i = 0; i < this.groupTypesToFetch.length; i++ ) {
-			if ( validGroupTypes.indexOf( this.groupTypesToFetch[ i ] ) === -1 ) {
+			if ( !validGroupTypes.includes( this.groupTypesToFetch[ i ] ) ) {
 				throw new Error(
 					this.groupTypesToFetch[ i ] +
 					' is invalid. Allowed types: ' + validGroupTypes );

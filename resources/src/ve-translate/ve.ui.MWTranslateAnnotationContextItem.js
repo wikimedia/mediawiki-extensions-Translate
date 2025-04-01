@@ -48,7 +48,7 @@ ve.ui.MWTranslateAnnotationContextItem.prototype.getLabelMessage = function () {
 
 ve.ui.MWTranslateAnnotationContextItem.prototype.getDescriptionMessage = function () {
 	var type = this.model.getAttribute( 'type' );
-	if ( type.indexOf( '/End', type.length - 4 ) !== -1 ) {
+	if ( type.includes( '/End', type.length - 4 ) ) {
 		return '';
 	}
 	var map = {

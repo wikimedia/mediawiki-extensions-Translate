@@ -396,7 +396,7 @@
 			return true;
 		}
 
-		return priorityLanguages.indexOf( language ) !== -1;
+		return priorityLanguages.includes( language );
 	}
 
 	function setupLanguageSelector( $element ) {
@@ -625,7 +625,7 @@
 				filter: actualFilter
 			} );
 
-			if ( actualFilter.indexOf( hideOptionalMessages ) === -1 ) {
+			if ( !actualFilter.includes( hideOptionalMessages ) ) {
 				$( '#tux-option-optional' ).prop( 'checked', true );
 			}
 		}
