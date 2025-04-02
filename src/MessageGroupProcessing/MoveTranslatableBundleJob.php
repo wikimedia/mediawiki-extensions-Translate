@@ -54,6 +54,7 @@ class MoveTranslatableBundleJob extends Job {
 		$this->bundleMover = Services::getInstance()->getTranslatableBundleMover();
 	}
 
+	/** @inheritDoc */
 	public function run() {
 		$sourceTitle = Title::newFromText( $this->params['source'] );
 		$targetTitle = Title::newFromText( $this->params['target'] );

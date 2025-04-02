@@ -430,7 +430,7 @@ class MessageWebImporter {
 		}
 	}
 
-	protected function checkProcessTime() {
+	protected function checkProcessTime(): bool {
 		return (int)wfTimestamp() - $this->time >= self::MAX_PROCESSING_TIME;
 	}
 

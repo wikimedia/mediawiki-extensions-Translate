@@ -49,6 +49,7 @@ class ImportTranslationsFromCsv extends BaseMaintenanceScript {
 		$this->requireExtension( 'Translate' );
 	}
 
+	/** @inheritDoc */
 	public function execute() {
 		$csvFilePath = $this->getArg( 0 );
 

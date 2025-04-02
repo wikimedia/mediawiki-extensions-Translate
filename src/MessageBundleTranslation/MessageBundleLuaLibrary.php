@@ -16,6 +16,7 @@ use MediaWiki\MediaWikiServices;
  * @experimental
  */
 class MessageBundleLuaLibrary extends LibraryBase {
+	/** @inheritDoc */
 	public function register() {
 		$extensionLuaPath = __DIR__ . '/lua/MessageBundleLibrary.lua';
 		$lib = [

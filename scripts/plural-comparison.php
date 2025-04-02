@@ -134,13 +134,13 @@ class PluralCompare extends Maintenance {
 		return $plurals;
 	}
 
-	public function loadCLDR() {
+	public function loadCLDR(): array {
 		global $IP;
 
 		return $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 	}
 
-	public function loadMediaWiki() {
+	public function loadMediaWiki(): array {
 		global $IP;
 
 		$rules = $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
@@ -149,7 +149,7 @@ class PluralCompare extends Maintenance {
 		return array_merge( $rules, $rulesMW );
 	}
 
-	public function loadGettext() {
+	public function loadGettext(): array {
 		$gtData = file_get_contents( __DIR__ . '/../data/plural-gettext.txt' );
 		$gtLanguages = [];
 		foreach ( preg_split( '/\n|\r/', $gtData, -1, PREG_SPLIT_NO_EMPTY ) as $line ) {

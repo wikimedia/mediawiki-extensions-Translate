@@ -22,6 +22,7 @@ class UpdateTranslatorActivityJob extends GenericTranslateJob implements Generic
 		return new self( [ 'language' => $language ] );
 	}
 
+	/** @inheritDoc */
 	public function run() {
 		$activity = Services::getInstance()->getTranslatorActivity();
 

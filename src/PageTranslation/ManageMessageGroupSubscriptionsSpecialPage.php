@@ -39,6 +39,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		$this->messageGroupSubscription = $messageGroupSubscription;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

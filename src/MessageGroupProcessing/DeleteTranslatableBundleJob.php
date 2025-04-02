@@ -43,6 +43,7 @@ class DeleteTranslatableBundleJob extends Job {
 		parent::__construct( 'DeleteTranslatableBundleJob', $title, $params );
 	}
 
+	/** @inheritDoc */
 	public function run() {
 		$title = $this->title;
 		$fuzzyBot = FuzzyBot::getUser();

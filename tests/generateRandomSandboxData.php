@@ -69,7 +69,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
  * https://stackoverflow.com/questions/5188900/bell-curve-algorithm-with-php
  */
 
-function wfGauss() {
+function wfGauss(): float {
 	static $useExists = false;
 	static $useValue;
 
@@ -102,12 +102,12 @@ function wfGaussMs( int $mean, int $stddev ): int {
 	return wfGauss() * ( $stddev / 4 ) + $mean;
 }
 
-function wfRandom01() {
+function wfRandom01(): float {
 	// Returns random number using mt_rand() with a flat distribution from 0 to 1 inclusive
 	return (float)mt_rand() / (float)mt_getrandmax();
 }
 
-function wfRandomPn() {
+function wfRandomPn(): float {
 	// Returns random number using mt_rand() with a flat distribution from -1 to 1 inclusive
 	return ( 2.0 * wfRandom01() ) - 1.0;
 }
