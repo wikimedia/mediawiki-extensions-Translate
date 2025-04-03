@@ -4,5 +4,10 @@
 			"Rdwnnr"
 		]
 	},
-	"translate-documentation-language": "ᨑᨇᨙᨑᨇᨙ ᨉᨚᨀᨘᨆᨙᨈᨔᨗ"
+	"translate": "ᨈᨑᨛᨍᨆ",
+	"translate-extensionname": "ᨈᨑᨛᨍᨆ",
+	"translate-taction-translate": "ᨈᨑᨛᨍᨆᨕᨗ",
+	"translate-documentation-language": "ᨑᨇᨙᨑᨇᨙ ᨉᨚᨀᨘᨆᨙᨈᨔᨗ",
+	"tux-empty-list-translated-action": "ᨈᨑᨛᨍᨆ",
+	"specialpages-group-translation": "ᨈᨑᨛᨍᨆ"
 }
