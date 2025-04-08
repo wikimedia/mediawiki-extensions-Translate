@@ -513,9 +513,11 @@
 	"translate-error-association-failure": "{{PLURAL:$2|Следующая группа сообщений не может быть связана|Следующие группы сообщений не могут быть связаны}} с агрегированной группой: $1",
 	"translate-error-invalid-aggregategroup": "Недействительная группа объединённых сообщений $1",
 	"translate-error-aggregategroup-source-language-mismatch": "{{PLURAL:$3|У группы $1|У групп $1}} другой, в отличие от агрегированной группы ($2), исходный язык.",
+	"translate-error-duplicate-aggregategroup": "Группа агрегированных сообщений с именем $1 уже существует.",
 	"log-action-filter-translationreview": "Тип действия:",
 	"log-action-filter-translationreview-message": "Проверка отдельных переведённых сообщений",
 	"log-action-filter-translationreview-group": "Изменения в статусе выполнения перевода",
+	"log-action-filter-translationreview-unfuzzy": "Просмотр переводов отдельных сообщений с целью отметить их как актуальные",
 	"logentry-import-translatable-bundle": "$1 {{GENDER:$2|импортировал|импортировала}} пакет переводов $3",
 	"log-action-filter-import-translatable-bundle": "Импорт переводимого пакета",
 	"translate-hidetranslations": "Скрыть страницы перевода",
@@ -526,5 +528,6 @@
 	"notification-link-mgs-group-translate": "Перевести $1",
 	"tpt-cleanchanges-language": "Язык:",
 	"tpt-cleanchanges-language-na": "Все",
+	"namespaceinfo-description-ns1198": "Пространство имён, содержащее единицы перевода, т. е. отдельные переводимые и переведённые части [[Special:PageTranslation|переводимых страниц]] и [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|пакетов сообщений]]",
 	"namespaceinfo-description-ns1199": "Страницы обсуждений для единиц перевода"
 }
