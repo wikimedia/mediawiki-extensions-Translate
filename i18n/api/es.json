@@ -12,9 +12,11 @@
 			"MarcoAurelio",
 			"No se",
 			"Tiberius1701",
-			"Eulalio"
+			"Eulalio",
+			"Mangoesdeoriente"
 		]
 	},
+	"apihelp-aggregategroups-extended-description": "Puede agregar y eliminar grupos de mensajes agregados y asociar o dessociar grupos de mensajería de ellos (uno a la vez).",
 	"apihelp-aggregategroups-param-do": "Qué hacer con el grupo de mensajes agregados.",
 	"apihelp-aggregategroups-param-aggregategroup": "Identificador del grupo de mensajes agregado.",
 	"apihelp-aggregategroups-param-group": "Identificador del grupo de mensajes.",
