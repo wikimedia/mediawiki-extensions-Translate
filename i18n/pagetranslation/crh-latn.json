@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"TayfunEt.",
-			"Zolgoyo"
+			"Zolgoyo",
+			"Don Alessandro"
 		]
 	},
+	"tpt-diff-old": "Evelki metin",
+	"tpt-diff-new": "Yañı metin",
 	"tpt-select-prioritylangs-reason": "Sebep:",
 	"tpt-languages-legend": "Başqa tiller:",
 	"tpt-aggregategroup-save": "Saqla",
@@ -14,6 +17,7 @@
 	"tpt-aggregategroup-edit-description": "Tasvir:",
 	"tpt-aggregategroup-update": "Saqla",
 	"tpt-aggregategroup-update-cancel": "Lâğu",
+	"pt-deletepage-reason-details": "Başqa/qoşumça sebep:",
 	"pm-savepages-button-label": "Saqla",
 	"pm-cancel-button-label": "Lâğu",
 	"pp-save-button-label": "Yayınla",

@@ -254,7 +254,7 @@
 	"translate-smg-submitted-with-failure": "Atualizando {{PLURAL:$1|definição|definições}} de mensagem falhou pelo seguinte {{PLURAL:$1|grupo|grupos}} - $2. $3",
 	"translate-smg-submitted-others-processing": "As definições de mensagens para outros grupos estão sendo processadas em segundo plano.",
 	"translate-smg-more": "Haverá mais mudanças para processar depois de submeter estas mudanças.",
-	"translate-smg-left": "Mensagem no wiki",
+	"translate-smg-left": "Conteúdo da mensagem na wiki",
 	"translate-smg-right": "Alterações de entrada",
 	"translate-smg-rename-select": "Selecionar",
 	"translate-smg-rename-cancel": "Cancelar",
