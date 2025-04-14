@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Eruedin",
+			"Lydie maliki",
 			"Moyogo"
 		]
 	},
@@ -9,5 +10,6 @@
 	"translate-page-language": "Lokótá",
 	"translate-page-navigation-legend": "Botamboli",
 	"translate-next": "Lonkásá na nsima",
-	"translate-page-edit": "kobɔngisa"
+	"translate-page-edit": "kobɔngisa",
+	"translate-documentation-language": "Mikanda ya nsango"
 }
