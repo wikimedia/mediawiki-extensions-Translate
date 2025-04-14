@@ -532,10 +532,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$groupId = $page['groupid'];
 			$group = MessageGroups::getGroup( $groupId );
-			if ( !$group ) {
-				continue;
+
+			$page['discouraged'] = false;
+			if ( $group ) {
+				$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
 			}
-			$page['discouraged'] = MessageGroups::getPriority( $group ) === 'discouraged';
 			$page['version'] = $metadata[$groupId]['version'] ?? TranslatablePageMarker::DEFAULT_SYNTAX_VERSION;
 			$page['transclusion'] = $metadata[$groupId]['transclusion'] ?? false;
 
