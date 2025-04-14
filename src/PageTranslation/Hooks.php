@@ -7,6 +7,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use Article;
 use Exception;
 use ManualLogEntry;
+use MediaWiki\Category\Category;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Config\Config;
 use MediaWiki\Content\Content;
@@ -959,6 +960,7 @@ class Hooks {
 	 * Prevent editing of translation units relating to the source language (these should only be touched by FuzzyBot)
 	 * Prevent editing of translation units relating to a page if you're blocked from that page
 	 * Prevent editing of translation units relating to a language that the page isn't allowed to be translated into.
+	 * Prevent creating empty categories via Translate
 	 * Hook: getUserPermissionsErrorsExpensive
 	 *
 	 * @param Title $title
@@ -1021,6 +1023,18 @@ class Hooks {
 						$errorMessage = $error->getMessageObject();
 						$result = array_merge( [ $errorMessage->getKey() ], $errorMessage->getParams() );
 						return false;
+					}
+				}
+				if ( $action === 'create' && $permissionTitleCheck->inNamespace( NS_CATEGORY ) ) {
+					$renderedPage = $permissionTitleCheck->getSubpage( $handle->getCode() );
+					if ( !$renderedPage->exists() ) {
+						$cat = Category::newFromTitle( $renderedPage );
+						if ( $cat->getMemberCount() === 0 ) {
+							if ( !$permissionManager->userCan( 'translate-empty-category', $user, $renderedPage ) ) {
+								$result = [ 'tpt-create-empty-category', $renderedPage ];
+								return false;
+							}
+						}
 					}
 				}
 			}
@@ -1155,6 +1169,7 @@ class Hooks {
 			'deleterevision', 'suppressrevision', 'viewsuppressed', // T286884
 			'review', // FlaggedRevs
 			'patrol', // T151172
+			'translate-empty-category' // This is checked below on the page that would be created
 		];
 		$needsPageTranslationRight = in_array( $action, [ 'delete', 'undelete' ] );
 		if ( in_array( $action, $inclusionList ) ||

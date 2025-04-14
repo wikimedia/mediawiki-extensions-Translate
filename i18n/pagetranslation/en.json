@@ -335,5 +335,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Groups:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Check all",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Update subscriptions",
-	"translate-category-summary": "Automatically creating translation of category used on [[$1]]"
+	"translate-category-summary": "Automatically creating translation of category used on [[$1]]",
+	"right-translate-empty-category": "Create translation units for empty categories",
+	"action-translate-empty-category": "create translation units for empty categories",
+	"tpt-create-empty-category": "Cannot create translation unit for category [[:$1]] which is empty."
 }

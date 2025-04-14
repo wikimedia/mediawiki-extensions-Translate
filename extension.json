@@ -1470,6 +1470,7 @@
 	},
 	"AvailableRights": [
 		"translate",
+		"translate-empty-category",
 		"translate-import",
 		"translate-manage",
 		"translate-messagereview",
@@ -1481,12 +1482,14 @@
 			"translate": true,
 			"unfuzzy": true,
 			"translate-manage": true,
-			"pagetranslation": true
+			"pagetranslation": true,
+			"translate-empty-category": true
 		}
 	},
 	"GroupPermissions": {
 		"*": {
-			"unfuzzy": true
+			"unfuzzy": true,
+			"translate-empty-category": true
 		}
 	},
 	"ParsoidModules": [

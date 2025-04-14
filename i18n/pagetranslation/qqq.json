@@ -368,5 +368,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Text above edit box containing items being watched on [[Special:ManageMessageGroupSubscriptions/raw]].",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "'''\"Check\" refers to checking a ☑️ box, not to testing.'''\n\nLabel for checkbox to select all items.",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Text of submit button on [[Special:ManageMessageGroupSubscriptions/raw]].\n\nSee also:\n* {{msg-mw|Tpt-manage-message-group-subscriptions-raw-submit}}",
-	"translate-category-summary": "Edit summary used by FuzzyBot when creating categories.\n\nParameters:\n* $1 - the name of the page that triggered the category creation."
+	"translate-category-summary": "Edit summary used by FuzzyBot when creating categories.\n\nParameters:\n* $1 - the name of the page that triggered the category creation.",
+	"right-translate-empty-category": "{{doc-right|translate-empty-category}}",
+	"action-translate-empty-category": "{{doc-action|translate-empty-category}}",
+	"tpt-create-empty-category": "Error message displayed when editing a translation unit. \n\nParameters:\n* $1 - the name of the category involved"
 }
