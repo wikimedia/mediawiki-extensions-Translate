@@ -257,6 +257,7 @@
 	"tpt-unlink-confirm": "このページを翻訳システムから本当に除去するかどうか確認してください。\n言語選択と、翻訳されたページ名が、動作しなくなります。\n翻訳ページが編集できる状態になります。",
 	"tpt-unlink-button": "翻訳対象から除去",
 	"tpt-unlink-summary": "ページを翻訳対象から除去",
+	"tpt-general-area-header": "全般領域",
 	"tpt-fuzzy-select-label": "編集された翻訳単位の翻訳の更新を必須にする対象",
 	"tpt-fuzzy-select-custom": "カスタム選択",
 	"tpt-generic-confirm": "操作を確認してください。",
