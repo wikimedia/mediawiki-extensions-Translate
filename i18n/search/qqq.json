@@ -35,5 +35,6 @@
 	"tux-sst-match-message": "Used to inform users about an option to get results for all search words. Parameters:\n* $1 - {{msg-mw|tux-sst-link-all-match}}.",
 	"tux-sst-case-sensitive": "Label for a case-sensitive checkbox.",
 	"tux-sst-error-offset": "Shown on Special:SearchTranslations when offset is too large.",
-	"tux-sst-error-language": "Shown on Special:SearchTranslations when search query is invalid."
+	"tux-sst-error-language": "Shown on Special:SearchTranslations when search query is invalid.",
+	"tux-sst-error-unsupported-language": "Shown on Special:SearchTranslations when the language is not supported. Parameters:\n* $1 – the unsupported language code"
 }

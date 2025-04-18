@@ -116,7 +116,14 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		try {
 			if ( $opts->getValue( 'language' ) === '' ) {
 				$options['language'] = $this->getLanguage()->getCode();
+			} elseif ( !Utilities::isSupportedLanguageCode( $options['language'] ) ) {
+				$this->showSearchError(
+					$search,
+					$this->msg( 'tux-sst-error-unsupported-language' )->plaintextParams( $options['language'] )
+				);
+				return;
 			}
+
 			$translationSearch = new CrossLanguageTranslationSearchQuery( $options, $server );
 			if ( in_array( $filter, $translationSearch->getAvailableFilters() ) ) {
 				if ( $options['language'] === $options['sourcelanguage'] ) {
@@ -485,7 +492,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	private function showSearchError( string $search, Message $message ): void {
 		$messageSelector = $this->messageSelector();
 		$messageHTML = Html::errorBox(
-			$message->escaped(),
+			$message->parse(),
 			'',
 			'row'
 		);
