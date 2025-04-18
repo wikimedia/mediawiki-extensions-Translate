@@ -115,6 +115,28 @@ class TranslateEditAddons {
 			return;
 		}
 
+		// TODO: Convert this method to a listener for PageRevisionUpdatedEvent,
+		// which provides a better way to detect dummy revisions and null edits.
+		$isDummyRevision = !$editResult->isNew()
+			&& ( $editResult->getOriginalRevisionId() === $revisionRecord->getParentId() );
+
+		if ( $isDummyRevision ) {
+			// Dummy revisions should not unfuzzy the page, see T392321.
+			// Fuzziness propagation for dummy revisions is handled in
+			// HookHandler::onRevisionRecordInserted.
+			// Returning here also protects against infinite recursion
+			// when we insert a dummy revision below.
+			return;
+		}
+
+		// Check if this is a null edit, i.e. no revision was created,
+		// or a dummy revision, i.e. the content didn't change.
+		// NOTE: $editResult->isNullEdit() does not distinguish between null
+		// edits and dummy revisions (T392333). We need that distinction though,
+		// since we want to create a dummy revision when we are informed about a
+		// null edit.
+		$isNullEdit = $editResult->getOriginalRevisionId() === $revisionRecord->getId();
+
 		// Update it.
 		$revId = $revisionRecord->getId();
 		$mwServices = MediaWikiServices::getInstance();
@@ -122,7 +144,7 @@ class TranslateEditAddons {
 		$fuzzy = $handle->needsFuzzy( $text );
 		$parentId = $revisionRecord->getParentId();
 		$revTagStore = Services::getInstance()->getRevTagStore();
-		if ( $editResult->isNullEdit() || $parentId == 0 ) {
+		if ( $isNullEdit || $parentId == 0 ) {
 			// In this case the page_latest hasn't changed so we can rely on its fuzzy status
 			$wasFuzzy = $handle->isFuzzy();
 		} else {
@@ -138,29 +160,25 @@ class TranslateEditAddons {
 			if ( !$mwServices->getPermissionManager()->userCan( 'unfuzzy', $user, $title ) ) {
 				// No permission to unfuzzy this unit so leave it fuzzy
 				$fuzzy = true;
-			} elseif ( $editResult->isNullEdit() ) {
+			} elseif ( $isNullEdit ) {
 				$entry = new ManualLogEntry( 'translationreview', 'unfuzzy' );
 				// Generate a log entry and null revision for the otherwise
 				// invisible unfuzzying
-				$dbw = $mwServices->getDBLoadBalancer()->getConnection( DB_PRIMARY );
-				$nullRevision = $mwServices->getRevisionStore()->newNullRevision(
-					$dbw,
-					$wikiPage,
-					CommentStoreComment::newUnsavedComment(
-						$summary !== '' ? $summary : wfMessage( "translate-unfuzzy-comment" )
-					),
-					false,
-					$userIdentity
-				);
-				if ( $nullRevision ) {
-					$nullRevision = $mwServices->getRevisionStore()->insertRevisionOn( $nullRevision, $dbw );
-					// Overwrite $revId so the revision ID of the null revision rather than the previous parent
-					// revision is used for any further edits
-					$revId = $nullRevision->getId();
-					$wikiPage->updateRevisionOn( $dbw, $nullRevision, $nullRevision->getParentId() );
-					$entry->setAssociatedRevId( $revId );
-				}
+				// NOTE: This will trigger onSaveComplete again! We have to be
+				//       careful to avoid infinite recursion!
+				$nullRevision = $mwServices->getPageUpdaterFactory()
+					->newPageUpdater( $wikiPage, $userIdentity )
+					->saveDummyRevision(
+						CommentStoreComment::newUnsavedComment(
+							$summary !== '' ? $summary : wfMessage( "translate-unfuzzy-comment" )
+						),
+						EDIT_SILENT
+					);
 
+				// Set $revId to the revision ID of the dummy revision so it (rather than the previous revision)
+				// has the fuzzy and transver tags updated below.
+				$revId = $nullRevision->getId();
+				$entry->setAssociatedRevId( $revId );
 				$entry->setPerformer( $userIdentity );
 				$entry->setTarget( $title );
 				$logId = $entry->insert();
