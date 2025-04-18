@@ -22,6 +22,7 @@ use MediaWiki\User\UserIdentity;
  * @group Database
  * @group medium
  * @covers \MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
+ * @covers \MediaWiki\Extension\Translate\HookHandler::onRevisionRecordInserted
  */
 class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
@@ -156,10 +157,21 @@ class TranslationFuzzyUpdaterTest extends MediaWikiIntegrationTestCase {
 			'Failed unfuzzy should not have generated log entry'
 		);
 
-		// Now add the required rights and try null-edit unfuzzy again
+		// Now add the required rights
 		$rightsCallback = $permissionManager->addTemporaryUserRights( $user,
 			[ 'editinterface', 'unfuzzy' ]
 		);
+
+		// Test that PageUpdater dummy revisions (like page moves, protections, etc. ) don't unfuzzy
+		$page->newPageUpdater( $user )->saveDummyRevision( CommentStoreComment::newUnsavedComment( 'Blah' ) );
+		$this->assertTrue( $handle->isFuzzy(), 'Dummy revision should not unfuzzy' );
+		$this->assertEquals(
+			$oldLastLogId,
+			$this->getLastLogId( $title ),
+			'Failed unfuzzy should not have generated log entry'
+		);
+
+		// Try null-edit unfuzzy again
 		$nullEditUnfuzzySummaries = [
 			[
 				'',
