@@ -51,6 +51,8 @@
 	"pm-import-button-label": "Importacar",
 	"pm-savepages-button-label": "Konservez",
 	"pm-cancel-button-label": "Nuligar",
+	"pm-summary-import": "Tradukuro importacita, per [[Special:PageMigration|migrado di pagino]]",
+	"pagepreparation": "Preparar pagino por tradukar",
 	"pp-cancel-button-label": "Nuligar",
 	"tpt-generic-button": "Konfirmez",
 	"visualeditor-annotations-translate-end": "Fino di kontenajo a tradukar",
