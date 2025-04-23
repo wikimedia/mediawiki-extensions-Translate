@@ -13,7 +13,7 @@ class TranslationQueryResponse {
 	private int $code;
 	private string $reason;
 	private array $headers;
-	private ?string $body;
+	private string $body;
 	private string $error;
 	/** @var TranslationQuery */
 	private $query;
@@ -41,7 +41,7 @@ class TranslationQueryResponse {
 		}
 	}
 
-	public function getBody(): ?string {
+	public function getBody(): string {
 		return $this->body;
 	}
 

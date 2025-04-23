@@ -789,10 +789,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 				'general',
 				$hideUnchangedUnitToggle . $requireUpdatesDropdown
 			) );
-		}
 
-		// Separator
-		$out->addHTML( '<hr>' );
+			$out->addHTML( '<hr>' );
+		}
 
 		foreach ( $operation->getUnits() as $s ) {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {

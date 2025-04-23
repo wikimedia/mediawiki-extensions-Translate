@@ -9,7 +9,7 @@
 		"Abijeet Patro",
 		"..."
 	],
-	"version": "2025-03-15",
+	"version": "2025-03-15 [https://www.mediawiki.org/wiki/MLEB MLEB 2025.03]",
 	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
 	"descriptionmsg": "translate-desc",
 	"namemsg": "translate-extensionname",
@@ -513,7 +513,6 @@
 		"translationreview/message": "\\MediaWiki\\Extension\\Translate\\LogFormatter",
 		"translationreview/group": "\\MediaWiki\\Extension\\Translate\\LogFormatter",
 		"translationreview/unfuzzy": "\\MediaWiki\\Extension\\Translate\\LogFormatter"
-
 	},
 	"ActionFilteredLogs": {
 		"translationreview": {
