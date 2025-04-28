@@ -3,7 +3,8 @@
 		"authors": [
 			"Artsiom91",
 			"Chadyka",
-			"No Sleep till Krupki"
+			"No Sleep till Krupki",
+			"Tomato Cream"
 		]
 	},
 	"searchtranslations": "Пошук перакладаў",
@@ -31,5 +32,6 @@
 	"tux-sst-match-message": "Паказваюцца пераклады, якія адпавядаюць любому з пошукавых слоў. $1",
 	"tux-sst-case-sensitive": "З улікам рэгістра",
 	"tux-sst-error-offset": "Немагчыма паказаць больш вынікаў пошуку. Калі ласка, звузіце пошук.",
-	"tux-sst-error-language": "Гэтую мову нельга выкарыстоўваць з такім гатункам пошуку."
+	"tux-sst-error-language": "Гэтую мову нельга выкарыстоўваць з такім гатункам пошуку.",
+	"tux-sst-error-unsupported-language": "Пошук на мове <code>$1</code> не падтрымліваецца."
 }
