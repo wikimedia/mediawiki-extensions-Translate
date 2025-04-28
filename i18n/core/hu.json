@@ -222,7 +222,7 @@
 	"translate-smg-submitted-with-failure": "A következő {{PLURAL:$1|csoport üzenetdefiníciójának|csoportok üzenetdefinícióinak}} frissítése sikertelen: $2. $3",
 	"translate-smg-submitted-others-processing": "A többi csoport üzenetdefinícióinak feldolgozása folyik a háttérben.",
 	"translate-smg-more": "További feldolgozandó változtatások lesznek ezen módosítások elküldése után.",
-	"translate-smg-left": "Üzenet tartalom wikiben",
+	"translate-smg-left": "Üzenettartalom a wikiben",
 	"translate-smg-right": "Bejövő változtatások",
 	"translate-smg-rename-select": "Kiválasztás",
 	"translate-smg-rename-cancel": "Mégse",
