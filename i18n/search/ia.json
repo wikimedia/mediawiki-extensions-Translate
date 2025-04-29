@@ -29,5 +29,6 @@
 	"tux-sst-match-message": "Se monstra le traductiones que corresponde a qualcunque del parolas a cercar. $1",
 	"tux-sst-case-sensitive": "Distinguer majusculas de minusculas",
 	"tux-sst-error-offset": "Non es possibile monstrar plus resultatos del recerca. Per favor restringe tu recerca.",
-	"tux-sst-error-language": "Iste lingua non pote esser usate con iste typo de recerca."
+	"tux-sst-error-language": "Iste lingua non pote esser usate con iste typo de recerca.",
+	"tux-sst-error-unsupported-language": "Le recerca in lingua <code>$1</code> non es supportate."
 }
