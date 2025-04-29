@@ -9,9 +9,6 @@
 		"Chart": "readonly",
 		"moment": "readonly"
 	},
-	"parserOptions": {
-		"sourceType": "commonjs"
-	},
 	"rules": {
 		"max-len": "off",
 		"no-var": "off",
