@@ -65,6 +65,7 @@
 		this.options = options;
 		this.message = this.options.message;
 		this.$messageItem = this.$editTrigger.find( '.message' );
+		this.translationSuggestion = {};
 		this.dirty = false;
 		this.saving = false;
 		this.expanded = false;
@@ -1422,6 +1423,7 @@
 			this.resizeInsertables( $textarea );
 
 			this.$editTrigger.addClass( 'open' );
+			this.logTranslationSuggestion( `${ this.message.group }|${ this.message.title }` );
 
 			// don't waste time, get ready with next message
 			var $next = this.$editTrigger.next( '.tux-message' );

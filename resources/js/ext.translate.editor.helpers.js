@@ -702,6 +702,24 @@
 		},
 
 		/**
+		 * Log translation suggestions
+		 *
+		 * @param {string} sourceTitle
+		 */
+		logTranslationSuggestion: function ( sourceTitle ) {
+			var translation = this.translationSuggestion[ sourceTitle ];
+			if ( translation ) {
+				logger.logEvent(
+					'suggestion',
+					'',
+					translation.suggestions,
+					translation.actionContext
+				);
+				delete this.translationSuggestion[ sourceTitle ];
+			}
+		},
+
+		/**
 		 * Loads and shows the translation helpers.
 		 *
 		 * @internal
@@ -736,22 +754,25 @@
 					suggestionsProvided.push( 'translation_memory' );
 				}
 
-				if ( suggestionsProvided ) {
-					logger.logEvent(
-						'suggestion',
-						'',
-						suggestionsProvided.join( '; ' ),
-						{
-							// eslint-disable-next-line camelcase
-							source_title: this.message.group + '|' + this.message.title,
-							// eslint-disable-next-line camelcase
-							target_title: this.message.title,
-							// eslint-disable-next-line camelcase
-							source_language: result.helpers.definition.language,
-							// eslint-disable-next-line camelcase
-							target_language: this.message.targetLanguage
-						}
-					);
+				const sourceTitle = `${ this.message.group }|${ this.message.title }`;
+
+				this.translationSuggestion[ sourceTitle ] = {
+					suggestions: suggestionsProvided.join( '; ' ),
+					actionContext: {
+						// eslint-disable-next-line camelcase
+						source_title: sourceTitle,
+						// eslint-disable-next-line camelcase
+						target_title: this.message.title,
+						// eslint-disable-next-line camelcase
+						source_language: result.helpers.definition.language,
+						// eslint-disable-next-line camelcase
+						target_language: this.message.targetLanguage
+					}
+				};
+
+				// Log suggestions immediately if editor is visible
+				if ( suggestionsProvided.length && !this.$editor.hasClass( 'hide' ) ) {
+					this.logTranslationSuggestion( sourceTitle );
 				}
 
 				this.showMessageDocumentation( result.helpers.documentation );
