@@ -8,6 +8,10 @@
 	"pagetranslation": "Барактарды которуу",
 	"nstab-translations": "Котормо бирдиги",
 	"right-pagetranslation": "Которуу үчүн барактардын нускаларын белгилөө",
+	"action-pagetranslation": "которууга мүмкүн болгон барактарды башкаруу",
+	"tpt-section": "Котормо бирдиги $1",
+	"tpt-section-new": "Жаңы котормо бирдиги.\nАталыш: $1",
+	"tpt-section-deleted": "Котормо бирдиги $1",
 	"tpt-diff-old": "Мурдагы текст",
 	"tpt-diff-new": "Жаңы текст",
 	"tpt-tag-oldsyntax": "эски синтаксис",
@@ -43,5 +47,7 @@
 	"pm-cancel-button-label": "Жокко чыгаруу",
 	"pp-save-button-label": "Жарыялоо",
 	"pp-cancel-button-label": "Жокко чыгаруу",
+	"pp-diff-old-header": "Баштапкы текст",
+	"pp-diff-new-header": "Даярдалган текст",
 	"tpt-generic-button": "Ырастоо"
 }
