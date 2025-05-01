@@ -98,7 +98,7 @@ class AppleFormatTest extends MediaWikiIntegrationTestCase {
 			'Messages survive roundtrip through write and read' );
 	}
 
-	public function rowValuesProvider(): array {
+	public static function rowValuesProvider(): array {
 		return [
 			[ 'key', 'value', 'simple row' ],
 			[ 'key', 'value', 'row with different sep' ],

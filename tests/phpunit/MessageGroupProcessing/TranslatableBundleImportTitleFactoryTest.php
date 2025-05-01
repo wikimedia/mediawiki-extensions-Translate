@@ -54,7 +54,7 @@ class TranslatableBundleImportTitleFactoryTest extends MediaWikiIntegrationTestC
 		$this->assertEquals( $expectedTitleText, $actualTitle->getText() );
 	}
 
-	public function provideCreateTitleFromForeignTitle() {
+	public static function provideCreateTitleFromForeignTitle() {
 		$foreignTitleFactory = new NamespaceAwareForeignTitleFactory( self::NAMESPACE_MAPPING );
 		$baseForeignTitle = $foreignTitleFactory->createForeignTitle( 'WMF Resolutions/2008-09 Budget', NS_MAIN );
 		$targetPage = Title::makeTitle( NS_MAIN, 'Resolution:2008-09 Budget' );

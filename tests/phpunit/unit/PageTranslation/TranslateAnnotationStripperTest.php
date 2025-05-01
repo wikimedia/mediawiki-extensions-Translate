@@ -17,7 +17,7 @@ class TranslateAnnotationStripperTest extends TestCase {
 		self::assertEquals( $expected, $res );
 	}
 
-	public function provideTextToStrip() {
+	public static function provideTextToStrip() {
 		return [
 		[
 			'hello, world',

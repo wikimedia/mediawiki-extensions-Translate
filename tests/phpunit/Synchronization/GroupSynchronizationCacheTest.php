@@ -277,7 +277,7 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->groupSyncCache->extendGroupExpiryTime( $groupId );
 	}
 
-	public function provideGetSynchronizationStatus() {
+	public static function provideGetSynchronizationStatus() {
 		$groupId = 'hello';
 		$defaultSyncCacheTimeout = null;
 		$noSyncCacheTimeout = -1;

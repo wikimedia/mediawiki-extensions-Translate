@@ -64,7 +64,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 		$this->subscription->sendNotifications( $info );
 	}
 
-	public function provideTestSendNotifications() {
+	public static function provideTestSendNotifications() {
 		yield 'notification for an aggregate group and another subgroup' => [
 			'changes to process' => [
 				'agg-group-id' => [
