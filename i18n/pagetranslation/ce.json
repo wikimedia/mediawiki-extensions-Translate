@@ -63,6 +63,7 @@
 	"tpt-syntaxversion-label": "ХӀокху агӀонан тӀаьххьара синтаксис лелайе",
 	"tpt-transclusion": "Кепаш гучуйахар",
 	"tpt-transclusion-label": "ХӀокху агӀонна таро ло кепаш шорйан (трансклюзи), гочдар тидаме а оьцуш",
+	"tpt-transclusion-help": "Нагахь санна и параметр дӀахӀоттийна йелахь, тӀаккха хӀара агӀо кеп санна лелош йолчохь, иза хийцалур йу кеп кхойкхучу агӀонан маттаца догӀуш долчу матте гочдарца (йа хьостан матте, нагахь санна лууш долу гочдар хӀинца а кхоьллина дацахь). Масала, хьо хӀара агӀо немцойн агӀонна йукъайаккха гӀортахь, цуьнан метта «$1» агӀо хуьйцур йу. Иза тешаме болх беш ду, нагахь санна кеп йукъайаьккхинчу агӀонаша а лелош йелахь агӀонан гочдаран мотор, амма галйала тарло, нагахь санна уьш куьйга гочйина йелахь. И опци дӀайаккха, нагахь санна агӀоно ша гочдар лелош делахь (масала, куьйга гочйина агӀонашна гӀо дан, йа агӀонан меттан метта лелоран интерфейсан мотт лело), ​​хӀунда аьлча иза ца хилча ша агӀонан викитекст йерриге а тидаме ца оьцур йу гочдеш. ХӀокху хӀоттамо цхьа а Ӏаткъам бийр бац, нагахь санна агӀо цкъа а кеп санна лелош йацахь.",
 	"tpt-rev-mark": "гочдарна билгалойе",
 	"tpt-rev-unmark": "гочдар тӀера дӀайаккха",
 	"tpt-rev-discourage": "йукъара даьккхина",
@@ -119,8 +120,10 @@
 	"tpt-aggregategroup-close": "ДӀачӀагӀа",
 	"tpt-aggregategroup-add-new": "Керла агрегатан тоба тӀетоха",
 	"tpt-aggregategroup-select-source-language": "Лелончан йуьхьанцара мотт (лаамехь):",
+	"tpt-aggregategroup-language-none": "(хӀума а)",
 	"tpt-aggregategroup-new-name": "ЦӀе:",
 	"tpt-aggregategroup-new-description": "Цунах лаьцна (тӀехь дац):",
+	"tpt-aggregategroup-remove-confirm-title": "Агрегатийн тоба дӀайаккха",
 	"tpt-aggregategroup-remove-confirm": "Агрегатийн тоба дӀайаккха лаьий хьуна баккъалла а?",
 	"tpt-aggregategroup-invalid-group": "Тоба йац.",
 	"tpt-aggregategroup-edit-name": "ЦӀе:",
@@ -300,5 +303,12 @@
 	"visualeditor-annotations-tvar-start": "Гочйан ца йезаш йолу кодан йуьхь",
 	"visualeditor-annotations-tvar-end": "Гочйан йиш йоцучу кодан чаккхе",
 	"visualeditor-annotations-tvar-description": "ХӀара диапазон билгалйаьккхина гочйан йиш йоцуш йу аьлла. Дехар до, кхин а хаамаш хьажа [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation йуьхьанцара текстан сегментаци].",
-	"tag-translate-translation-pages-description": "Авто-хийцамаш бар гочдаран агӀонашна, Translate шордаран гӀоьнца"
+	"tag-translate-translation-pages-description": "Авто-хийцамаш бар гочдаран агӀонашна, Translate шордаран гӀоьнца",
+	"special-tab-managemessagegroupsubscriptions-raw-short": "Баланца могӀам хийца",
+	"tpt-manage-message-group-subscriptions-edit-raw-title": "Кечданца тӀейаздаларш хийца",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "ТӀейаздаларш дӀадаха",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Тобанаш:",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Дерриге а талла",
+	"tpt-manage-message-group-subscriptions-raw-submit": "ДӀайаздаларш карладаха",
+	"translate-category-summary": "«[[$1]]» агӀонан тӀехь лелочу категорин гочдар авто кхоллар"
 }
