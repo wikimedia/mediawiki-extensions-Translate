@@ -353,7 +353,7 @@
 				suggestion.sources = [];
 				suggestion.sources.push( translation );
 
-				this.suggestionAdder( suggestion.$element, translation.target, 'translation memory' );
+				this.suggestionAdder( suggestion.$element, translation.target, 'translation_memory' );
 
 				suggestions[ translation.target ] = suggestion;
 			}, this );
