@@ -397,7 +397,7 @@
 	"tux-editor-doc-editor-save": "Ӏалашйе документаци",
 	"tux-editor-doc-editor-cancel": "ДӀадаккхар",
 	"tux-messagetable-more-messages": "Кхин $1 {{PLURAL:$1|хаам|хаамаш}}",
-	"tux-messagetable-loading-messages": "{{PLURAL:$1|1=Чубоккхуш бу хаам|Чубохуш бу хаамаш}}…",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|1=Чубоккхуш бу хаам|Хаамаш чубохуш бу}}…",
 	"tux-message-filter-placeholder": "МогӀаман фильтр",
 	"tux-message-filter-result": "«$2» дехарца {{PLURAL:$1|карийна}} $1 {{PLURAL:$1|хилам}}",
 	"tux-message-filter-advanced-button": "Шуьйра лахар",
