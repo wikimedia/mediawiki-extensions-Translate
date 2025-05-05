@@ -56,6 +56,7 @@
 	"translate-export-form-format": "Format",
 	"translate-export-invalid-format": "Gitt wgl. e gültegt Format un.",
 	"translate-export-not-supported": "Den Export vun Iwwersetzunge gëtt net ënnerstëtzt.",
+	"translate-export-format-notsupported": "D'Exportformat, dat ugi gouf, gëtt vum Grupp vu Messagen net ënnerstëtzt.",
 	"translate-checks-parameters": "{{PLURAL:$2|Dëse Parameter gëtt|Dës Parametere ginn}} net benotzt:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Dëse Parameter ass|Dës Parametere sinn }} onbekannt:\n<strong>$1</strong>",
 	"translate-checks-balance": "Et gëtt eng ongerued Zuel vu {{PLURAL:$2|Klammere|Klammere}} benotzt:\n<strong><nowiki>$1</nowiki></strong>",

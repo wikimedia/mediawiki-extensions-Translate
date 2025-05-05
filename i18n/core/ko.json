@@ -373,7 +373,7 @@
 	"tux-editor-doc-editor-cancel": "취소",
 	"tux-messagetable-more-messages": "다른 {{PLURAL:$1|메시지}} $1개",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|메시지}}를 불러오는 중...",
-	"tux-message-filter-placeholder": "필터 목록",
+	"tux-message-filter-placeholder": "목록 필터",
 	"tux-message-filter-result": "\"$2\"에 대한 {{PLURAL:$1|결과}} $1개를 찾았습니다",
 	"tux-message-filter-advanced-button": "고급 검색",
 	"tux-message-filter-optional-messages-label": "선택적 메시지",
