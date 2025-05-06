@@ -261,7 +261,7 @@
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
-				this.suggestionAdder( $element, translation.value, 'assistant language' );
+				this.suggestionAdder( $element, translation.value, 'assistant_language' );
 
 				return $element;
 			}.bind( this ) );
