@@ -219,6 +219,8 @@
 	"tpt-unlink-button": "Выдаліць зь перакладу",
 	"tpt-unlink-summary": "Старонка выдаленая зь перакладу",
 	"tpt-fuzzy-select-label": "Патрабаваць абнаўленьня перакладу зьмененых блёкаў",
+	"tpt-fuzzy-select-all": "Для ўсіх зьмененых адзінак",
+	"tpt-fuzzy-select-none": "Для ніводнай з адзінак",
 	"tpt-fuzzy-select-custom": "Індывідуальны выбар",
 	"tpt-generic-confirm": "Калі ласка, пацьвердзьце дзеяньне.",
 	"tpt-generic-button": "Пацьвердзіць"
