@@ -65,7 +65,6 @@
 		this.options = options;
 		this.message = this.options.message;
 		this.$messageItem = this.$editTrigger.find( '.message' );
-		this.shown = false;
 		this.dirty = false;
 		this.saving = false;
 		this.expanded = false;
@@ -1422,7 +1421,6 @@
 			autosize( $textarea );
 			this.resizeInsertables( $textarea );
 
-			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
 
 			// don't waste time, get ready with next message
@@ -1464,7 +1462,6 @@
 			this.hideShortcuts();
 			this.$editTrigger.removeClass( 'open' );
 			this.$messageItem.removeClass( 'hide' );
-			this.shown = false;
 
 			return false;
 		},
