@@ -6,7 +6,7 @@
 		]
 	},
 	"translate-tag-translate-link-desc": "Traduci con este pagina",
-	"tpt-languages-nonzero": "$1 ($2% ya ya traduci)",
+	"tpt-languages-nonzero": "$1 ($2% ya el ya traduci)",
 	"tpt-tab-translate": "Traduci",
 	"tpt-discouraged-language-force-header": "Este pagina no puede hace traduci na $1."
 }
