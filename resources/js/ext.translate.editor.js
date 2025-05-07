@@ -492,21 +492,19 @@
 		 *
 		 * @private
 		 * @param {string} className Used as the element's CSS class
-		 * @param {Object} query Used as the query in the mw.Uri object
+		 * @param {Object} query Used as the query in the `URL` object
 		 * @param {string} message The message of the label of the menu item
 		 * @return {jQuery} The new menu item element
 		 */
 		createMessageToolsItem: function ( className, query, message ) {
-			var uri = new mw.Uri();
-
-			uri.path = mw.config.get( 'wgScript' );
-			uri.query = query;
+			var url = new URL( mw.config.get( 'wgScript' ), location.href );
+			url.search = new URLSearchParams( query ).toString();
 
 			return $( '<li>' )
 				.addClass( className )
 				.append( $( '<a>' )
 					.attr( {
-						href: uri.toString(),
+						href: url.toString(),
 						target: '_blank'
 					} )
 					.text( mw.msg( message ) )

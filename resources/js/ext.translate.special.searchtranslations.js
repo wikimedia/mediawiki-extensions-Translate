@@ -53,9 +53,10 @@
 		}
 
 		if ( currentLanguage !== '' ) {
-			var uri = new mw.Uri( location.href );
-			uri.extend( { language: '', filter: '' } );
-			addToSelectedBox( getLanguageLabel( currentLanguage ), uri.toString() );
+			var url = new URL( location.href );
+			url.searchParams.set( 'language', '' );
+			url.searchParams.set( 'filter', '' );
+			addToSelectedBox( getLanguageLabel( currentLanguage ), url.toString() );
 		}
 
 		var resultCount = Object.keys( languages ).length;
@@ -179,21 +180,22 @@
 				continue;
 			}
 
-			var uri = new mw.Uri( location.href );
 			if ( parentGrouppath !== undefined ) {
 				grouppath = parentGrouppath + '|' + groupId;
 			} else {
 				grouppath = groupId;
 			}
-			uri.extend( { group: groupId, grouppath: grouppath } );
 
+			var url = new URL( location.href );
 			if ( currentGroup === groupId ) {
 				selectedClass = 'selected';
-				uri.extend( { group: '', grouppath: '' } );
-				addToSelectedBox( group.label, uri.toString() );
+				url.searchParams.set( 'group', '' );
+				url.searchParams.set( 'grouppath', '' );
+				addToSelectedBox( group.label, url.toString() );
 			} else {
 				selectedClass = '';
-				uri.extend( { group: groupId, grouppath: grouppath } );
+				url.searchParams.set( 'group', groupId );
+				url.searchParams.set( 'grouppath', grouppath );
 			}
 
 			var $groupRow = $( '<div>' )
@@ -208,7 +210,7 @@
 						// Class name documented above
 						.addClass( 'facet-name ' + selectedClass )
 						.append( $( '<a>' )
-							.attr( 'href', uri.toString() )
+							.attr( 'href', url.toString() )
 							.text( group.label )
 						),
 					$( '<span>' )
@@ -253,9 +255,10 @@
 				language: mw.config.get( 'wgUserLanguage' ),
 				position: position,
 				onSelect: function ( selectedGroup ) {
-					var currentUri = new mw.Uri( location.href );
-					currentUri.extend( { group: selectedGroup.id, grouppath: selectedGroup.id } );
-					location.href = currentUri.toString();
+					var currentURL = new URL( location.href );
+					currentURL.searchParams.set( 'group', selectedGroup.id );
+					currentURL.searchParams.set( 'grouppath', selectedGroup.id );
+					location.href = currentURL.toString();
 				},
 				preventSelector: true
 			};
@@ -350,8 +353,7 @@
 	}
 
 	function getParameterByName( name ) {
-		var uri = new mw.Uri();
-		return uri.query[ name ] || '';
+		return mw.util.getParamValue( name ) || '';
 	}
 
 	function getLanguageLabel( languageCode ) {

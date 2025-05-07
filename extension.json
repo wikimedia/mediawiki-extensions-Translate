@@ -572,7 +572,6 @@
 				"ext.translate.base",
 				"ext.translate.loader",
 				"ext.translate.parsers",
-				"mediawiki.Uri",
 				"mediawiki.jqueryMsg",
 				"mediawiki.util"
 			],
@@ -788,7 +787,6 @@
 				"ext.translate.mtHelpers",
 				"jquery.makeCollapsible",
 				"jquery.textSelection",
-				"mediawiki.Uri",
 				"mediawiki.api",
 				"mediawiki.jqueryMsg",
 				"mediawiki.language",
@@ -921,7 +919,6 @@
 				"ext.translate.editor",
 				"ext.translate.groupselector",
 				"ext.uls.mediawiki",
-				"mediawiki.Uri",
 				"mediawiki.language"
 			],
 			"messages": [
@@ -950,7 +947,6 @@
 				"ext.translate.groupselector",
 				"ext.translate.messagetable",
 				"jquery.uls.data",
-				"mediawiki.Uri",
 				"mediawiki.api",
 				"mediawiki.jqueryMsg",
 				"mediawiki.storage"
@@ -1210,7 +1206,6 @@
 				"resources/js/LanguagesMultiselectWidget.js"
 			],
 			"dependencies": [
-				"mediawiki.Uri",
 				"mediawiki.api",
 				"mediawiki.ui.button",
 				"mediawiki.widgets",

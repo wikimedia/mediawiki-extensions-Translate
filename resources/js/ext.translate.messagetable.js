@@ -869,7 +869,7 @@
 	$.fn.messagetable.Constructor = MessageTable;
 
 	$.fn.messagetable.defaults = {
-		mode: new mw.Uri().query.action || 'translate'
+		mode: mw.util.getParamValue( 'action' ) || 'translate'
 	};
 
 	/**

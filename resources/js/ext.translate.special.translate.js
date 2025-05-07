@@ -48,7 +48,6 @@
 			var changes = {
 				group: group.id,
 				showMessage: null
-
 			};
 
 			mw.translate.changeUrl( changes );
@@ -127,27 +126,27 @@
 		 * @param {Object} params
 		 */
 		changeUrl: function ( params ) {
-			var uri = new mw.Uri( window.location.href );
+			var url = new URL( location.href );
 
-			uri.extend( params );
-
-			// Support removing keys from the query
 			Object.keys( params ).forEach( function ( key ) {
 				if ( params[ key ] === null || params[ key ] === undefined ) {
-					delete uri.query[ key ];
+					// Support removing keys from the query
+					url.searchParams.delete( key );
+				} else {
+					url.searchParams.set( key, params[ key ] );
 				}
 			} );
 
 			mw.hook( 'mw.translate.translationView.stateChange' ).fire( state );
 
-			if ( uri.toString() === window.location.href ) {
+			if ( url.toString() === location.href ) {
 				return;
 			}
 
 			if ( $( '.tux-messagelist' ).length ) {
-				history.replaceState( uri, null, uri.toString() );
+				history.replaceState( url.toString(), null, url.toString() );
 			} else {
-				window.location.href = uri.toString();
+				location.href = url.toString();
 			}
 		},
 
@@ -161,9 +160,16 @@
 		updateTabLinks: function ( params ) {
 			$( '.tux-tab a' ).each( function () {
 				var $a = $( this );
-				var uri = new mw.Uri( $a.prop( 'href' ) );
-				uri.extend( params );
-				$a.prop( 'href', uri.toString() );
+				var url = new URL( $a.prop( 'href' ) );
+				Object.keys( params ).forEach( function ( key ) {
+					if ( params[ key ] === null || params[ key ] === undefined ) {
+						// Support removing keys from the query
+						url.searchParams.delete( key );
+					} else {
+						url.searchParams.set( key, params[ key ] );
+					}
+				} );
+				$a.prop( 'href', url.toString() );
 			} );
 		}
 	} );
@@ -187,14 +193,12 @@
 	}
 
 	function getActionSource() {
-		var uri = new mw.Uri( window.location.href );
-		return uri.query.action_source || 'direct_open';
+		return mw.util.getParamValue( 'action_source' ) || 'direct_open';
 	}
 
 	function getActualFilter( filter ) {
 		var realFilters = [ '!ignored' ];
-		var uri = new mw.Uri( window.location.href );
-		if ( uri.query.optional !== '1' ) {
+		if ( mw.util.getParamValue( 'optional' ) !== '1' ) {
 			realFilters.push( hideOptionalMessages );
 		}
 		if ( filter ) {
@@ -577,17 +581,16 @@
 		var $messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
 		state.language = $messageList.data( 'targetlangcode' );
-		var uri = new mw.Uri( window.location.href );
 
 		if ( $messageList.length ) {
 			$messageList.messagetable();
 			state.messageList = $messageList.data( 'messagetable' );
 
-			var filter = uri.query.filter;
-			var offset = uri.query.showMessage;
+			var filter = mw.util.getParamValue( 'filter' );
+			var offset = mw.util.getParamValue( 'showMessage' );
 			var limit;
 			if ( offset ) {
-				limit = uri.query.limit || 1;
+				limit = mw.util.getParamValue( 'limit' ) || 1;
 				// Default to no filters
 				filter = filter || '';
 			}
@@ -726,11 +729,10 @@
 			} );
 
 		$( '#tux-option-optional' ).on( 'change', function () {
-			var currentUri = new mw.Uri( window.location.href ),
-				checked = $( this ).prop( 'checked' );
+			var checked = $( this ).prop( 'checked' );
 
 			mw.translate.changeUrl( { optional: checked ? 1 : 0 } );
-			mw.translate.changeFilter( currentUri.query.filter );
+			mw.translate.changeFilter( mw.util.getParamValue( 'filter' ) );
 		} );
 
 		getTranslationStats( state.language ).done( function ( stats ) {
@@ -744,7 +746,7 @@
 					// eslint-disable-next-line camelcase
 					target_language: state.language,
 					// eslint-disable-next-line camelcase
-					source_title: uri.query.group,
+					source_title: mw.util.getParamValue( 'group' ),
 					// eslint-disable-next-line camelcase
 					source_type: 'page',
 					// eslint-disable-next-line camelcase

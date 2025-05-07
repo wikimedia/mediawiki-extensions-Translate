@@ -29,11 +29,16 @@ function configureLanguageInput( $form, $widget ) {
 
 function configurePostLinks( $container ) {
 	$container.on( 'click', '.mw-translate-jspost', function ( e ) {
-		var uri = new mw.Uri( e.target.href );
+		const url = new URL( e.target.href );
+		// In future use Object.fromEntries()
+		const params = {
+			token: mw.user.tokens.get( 'csrfToken' )
+		};
+		for ( const [ key, value ] of url.searchParams.entries() ) {
+			params[ key ] = value;
+		}
 
-		var params = uri.query;
-		params.token = mw.user.tokens.get( 'csrfToken' );
-		$.post( uri.path, params ).done( function () {
+		$.post( url.pathname, params ).done( function () {
 			location.reload();
 		} );
 
