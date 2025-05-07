@@ -73,7 +73,7 @@
 	"translate-tag-markthisagain": "Оваа страница има <span class=\"plainlinks\">[$1 промени]</span> од последниот пат кога <span class=\"plainlinks\">[$2 обележана за преведување]</span>.",
 	"translate-tag-hasnew": "Оваа страница содржи <span class=\"plainlinks\">[$1 промени]</span> кои не се обележани за преведување.",
 	"tpt-translation-intro": "Оваа страница е <span class=\"plainlinks\">[$1 преведена верзија]</span> на страницата [[$2]], а преводот е $3% потполн и тековен.",
-	"tpt-translation-intro-fuzzy": "Застарените преводи се обележуваат вака.",
+	"tpt-translation-intro-fuzzy": "Застарените преводи се обележани вака.",
 	"tpt-languages-legend": "Други јазици:",
 	"tpt-languages-zero": "Почнете превод на овој јазик",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
