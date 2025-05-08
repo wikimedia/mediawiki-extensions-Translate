@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"咽頭べさ"
+			"咽頭べさ",
+			"ခွန်ဖန်ဒွဲ့"
 		]
 	},
 	"apihelp-groupreview-param-group": "မဲက်သေ့စွုမ်ꩻစွိုꩻ",
-	"apihelp-query+messagecollection-param-group": "မဲက်သေ့စွုမ်ꩻစွိုꩻ"
+	"apihelp-query+languagestats-param-language": "ဘာႏသာႏငဝ်းငွါ ကိုဒ်။",
+	"apihelp-query+messagecollection-param-group": "မဲက်သေ့စွုမ်ꩻစွိုꩻ",
+	"apihelp-query+messagecollection-param-language": "ဘာႏသာႏငဝ်းငွါ ကိုဒ်။"
 }
