@@ -157,8 +157,8 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$summary[$status][] = $language;
 			}
 
-			$numUpdated = count( $summary[ 'updated' ] ?? [] );
-			$numAdded = count( $summary[ 'new' ] ?? [] );
+			$numUpdated = count( $summary['updated'] ?? [] );
+			$numAdded = count( $summary['new'] ?? [] );
 			if ( ( $numUpdated + $numAdded ) > 0 ) {
 				$this->output(
 					sprintf(
@@ -167,7 +167,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 						count( $keyCompatibilityMap ),
 						$numUpdated,
 						$numAdded,
-						implode( ', ', $summary[ 'new' ] ?? [] )
+						implode( ', ', $summary['new'] ?? [] )
 					)
 				);
 			}
@@ -216,7 +216,7 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	private function getKeyCompatibilityMap( array $source, array $target, SimpleFormat $fileFormat ): array {
 		$keys = [];
 		foreach ( $target as $key => $value ) {
-			$keys[$key] = isset( $source[ $key ] ) && $fileFormat->isContentEqual( $source[ $key ], $value );
+			$keys[$key] = isset( $source[$key] ) && $fileFormat->isContentEqual( $source[$key], $value );
 		}
 		return $keys;
 	}
@@ -249,10 +249,10 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$fileFormat = $group->getFFS();
 
 		// This has been checked before, but checking again to keep Phan and IDEs happy.
-		// Remove once support for other file formats are added.
+		// Remove once support for other file formats is added.
 		if ( !$fileFormat instanceof JsonFormat ) {
 			throw new RuntimeException(
-				"Expected file format type: " . JsonFormat::class . '; got: ' . get_class( $fileFormat )
+				'Expected file format type: ' . JsonFormat::class . '; got: ' . get_class( $fileFormat )
 			);
 		}
 
@@ -296,10 +296,10 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			return 'no updates';
 		}
 
-		// Copy over all authors (we do not know per-message level)
+		// Copy over all authors (we do not know authors at the message level)
 		$combinedAuthors = array_merge(
-			$targetTemplate[ 'AUTHORS' ] ?? [],
-			$sourceTemplate[ 'AUTHORS' ] ?? []
+			$targetTemplate['AUTHORS'] ?? [],
+			$sourceTemplate['AUTHORS'] ?? []
 		);
 		$combinedAuthors = array_unique( $combinedAuthors );
 		$combinedAuthors = $fileFormat->filterAuthors( $combinedAuthors, $language );
