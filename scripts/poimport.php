@@ -122,7 +122,10 @@ class PoImporter {
 		$this->progressCallback = $callback;
 	}
 
-	/// @see Maintenance::output for param docs
+	/**
+	 * @see Maintenance::output for param docs
+	 * @inheritDoc
+	 */
 	protected function reportProgress( $text, $channel = null, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
 			$useErrorOutput = $severity === 'error';
@@ -262,7 +265,10 @@ class WikiWriter {
 		$this->progressCallback = $callback;
 	}
 
-	/// @see Maintenance::output for param docs
+	/**
+	 * @see Maintenance::output for param docs
+	 * @inheritDoc
+	 */
 	protected function reportProgress( $text, $channel, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
 			$useErrorOutput = $severity === 'error';
