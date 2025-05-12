@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajiniyaz Nurniyazov"
+			"Ajiniyaz Nurniyazov",
+			"Janabaevazizbek"
 		]
 	},
 	"tpt-select-prioritylangs-reason": "Sebebi:",
 	"tpt-rev-encourage": "qayta tiklew",
 	"translate-tag-translate-link-desc": "Bul betti awdarıw",
+	"translate-tag-hasnew": "Bul bet <span class=\"plainlinks\">[$1 redaktorlawdan]</span> ibarat hám awdarıwǵa belgilenbeydi.",
 	"tpt-translation-intro": "Bul bet [[$2]] betiniń <span class=\"plainlinks\">[$1 awdarılǵan kórinisi]</span> hám awdarma $3%ke juwmaqlanǵan.",
 	"tpt-languages-legend": "Basqa tiller:",
 	"tpt-languages-nonzero": "$1 ($2% awdarılǵan)",
