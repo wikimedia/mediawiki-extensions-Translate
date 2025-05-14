@@ -30,5 +30,6 @@
 	"tux-sst-match-message": "Гойтуш ду лоьхуш долучу муьлхачу дешнашца догӀурш. $1",
 	"tux-sst-case-sensitive": "Регистр лоруш",
 	"tux-sst-error-offset": "Кхин аьтто бац жамӀаш гайта. Дехар до, хьой лоьхург билгалдаккха.",
-	"tux-sst-error-language": "ХӀара мотт оцу тайпана лехамашна лело йиш йац."
+	"tux-sst-error-language": "ХӀара мотт оцу тайпана лехамашна лело йиш йац.",
+	"tux-sst-error-unsupported-language": "<code>$1</code> маттахь леха аьтто бац."
 }
