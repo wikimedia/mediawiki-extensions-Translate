@@ -34,5 +34,6 @@
 	"tux-sst-match-message": "إظهار الترجمات التي تطابق أي من كلمات البحث. $1",
 	"tux-sst-case-sensitive": "مراعاة حالة الأحرف",
 	"tux-sst-error-offset": "لا يمكن عرض المزيد من نتائج البحث؛ يُرجَى تضييق بحثك.",
-	"tux-sst-error-language": "لا يمكن استخدام هذه اللغة مع هذا النوع من البحث."
+	"tux-sst-error-language": "لا يمكن استخدام هذه اللغة مع هذا النوع من البحث.",
+	"tux-sst-error-unsupported-language": "البحث باللغة <code>$1</code> غير مدعوم."
 }
